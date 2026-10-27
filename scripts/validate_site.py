@@ -24,6 +24,7 @@ from build_readme import CATEGORIES, PAPER_SECTIONS, collection_section, paper_s
 from build_feed import FEED_PAGES, FEED_PATHS, FEED_SIZE, feed_entries
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SITE_ALTERNATE_NAMES, SITE_NAME, SOCIAL_IMAGE_ALT, png_size
+from site_footer import DOWNLOADS, site_footer
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'dist'
@@ -814,6 +815,59 @@ def validate_suggestion_links(pages, repository_url='https://github.com/reacher-
             assert pages[route].links.count(f'{repository_url}/issues/new?template={template}') == 1, f'Listing needs one link to its suggestion form: {route}'
 
 
+class FooterLinks(HTMLParser):
+    """Collect the site footer's links, and every link to a site-wide download, as [href, visible text]."""
+
+    def __init__(self, text):
+        super().__init__(convert_charrefs=True)
+        self.lang, self.footer, self.downloads = None, [], []
+        self._in_footer, self._link = False, None
+        self.feed(text)
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if tag == 'html':
+            self.lang = values.get('lang')
+        elif tag == 'footer' and 'site-footer' in values.get('class', '').split():
+            self._in_footer = True
+        elif tag == 'a' and values.get('href'):
+            self._link = [values['href'], '']
+            if self._in_footer:
+                self.footer.append(self._link)
+            target = urlsplit(values['href'])
+            if not target.netloc and target.path in DOWNLOADS:
+                self.downloads.append(self._link)
+
+    def handle_data(self, data):
+        if self._link is not None:
+            self._link[1] += data
+
+    def handle_endtag(self, tag):
+        if tag == 'a':
+            self._link = None
+        elif tag == 'footer':
+            self._in_footer = False
+
+
+def validate_shared_footer(output, repository_url, repository_export):
+    """Every page ends with the same footer links, and each site-wide download keeps one name per language."""
+    labels = defaultdict(set)
+    output = Path(output)
+    not_found = [path for path in (output / '404.html', output / 'zh/404.html') if path.is_file()]
+    for path in [*sorted(output.rglob('index.html')), *not_found]:
+        where = '/' + path.relative_to(output).as_posix()
+        page = FooterLinks(path.read_text(encoding='utf-8'))
+        language = 'zh' if page.lang == 'zh-CN' else 'en'
+        expected = FooterLinks(site_footer(language, note='', repository_url=repository_url, repository_export=repository_export)).footer
+        links = [[href, ' '.join(text.split())] for href, text in page.footer]
+        # The homepage adds its own group (contributors and contribution links) after the shared links.
+        assert links[:len(expected)] == expected and (len(links) == len(expected) or where in ('/index.html', '/zh/index.html')), f'Footer links differ from the shared footer: {where}'
+        for href, text in page.downloads:
+            labels[(urlsplit(href).path, language)].add(' '.join(text.split()))
+    duplicates = {f'{target} ({language})': sorted(names) for (target, language), names in labels.items() if len(names) > 1}
+    assert not duplicates, f'A download has more than one name: {duplicates}'
+
+
 def validate_case_outputs(pages, resources):
     """Bind the script-free case subset, its full evidence, and its navigation."""
     cases = {record['id']: record for record in resources if record['kind'] == 'case-study'}
@@ -1051,6 +1105,9 @@ def main():
     validate_entry_outputs(pages, resources, papers)
     validate_feeds(OUTPUT, pages, resources, papers)
     validate_case_outputs(pages, resources)
+    catalog_meta = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['meta']
+    validate_shared_footer(OUTPUT, catalog_meta['repository_url'],
+                           catalog_meta['source_index'].get('full_export') or 'source-index.json')
     validate_unique_titles(OUTPUT, pages)
     validate_artifact_links(OUTPUT, pages)
     validate_suggestion_links(pages)

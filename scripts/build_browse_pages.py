@@ -10,6 +10,7 @@ from urllib.parse import urlsplit
 
 from build_discovery_pages import breadcrumb_schema, collection_page_schema, jsonld_script
 from open_graph import open_graph_meta
+from site_footer import download_link, site_footer
 from build_repository_index import CATEGORIES
 from source_descriptions import description_fallback
 from source_scope import exclusion_counts, unavailable_clause
@@ -128,6 +129,7 @@ def build_browse_pages(
 
     use_pro = icon_stylesheet_href is not None
     published = source_document.get('meta', {}).get('kind') == 'published-repository-selection'
+    repository_export = 'source-published.json' if published else 'source-index.json'
     scan_date = str(source_document.get('meta', {}).get('published_at' if published else 'completed_at') or '')[:10]
     canonical_urls = []
     rendered = {}
@@ -228,18 +230,17 @@ def build_browse_pages(
     <h1 id="browse-title">{escape(label)}<span class="title-dot" aria-hidden="true">.</span></h1>
     <p>{escape(description)}</p>
   </section>
-  <div class="browse-actions"><a class="button button-primary" href="{search_link}">{icon('search', use_pro)}{('搜索仓库' if zh else 'Search repositories')}</a><a class="button button-outline" href="{curated_link}">{('精选资源' if zh else 'Curated resources')} <span class="browse-count">{curated_count:,}</span></a><a class="browse-download" href="/source-index.json?v={data_revision}" download="awesomerea-repository-index.json" type="application/json">{('下载完整 JSON ↓' if zh else 'Download full JSON ↓')}</a></div>
+  <div class="browse-actions"><a class="button button-primary" href="{search_link}">{icon('search', use_pro)}{('搜索仓库' if zh else 'Search repositories')}</a><a class="button button-outline" href="{curated_link}">{('精选资源' if zh else 'Curated resources')} <span class="browse-count">{curated_count:,}</span></a>{download_link('/' + repository_export, language, css_class='browse-download', query=f'?v={data_revision}')}</div>
   <details class="browse-provenance"><summary>{('关于这个索引' if zh else 'About this index')}</summary><p>{escape(scope_note)}</p><p>{escape(provenance)}</p><p><a href="{escape(repository_url, quote=True)}/blob/main/docs/source-scan.md">{('扫描方法（英文）↗' if zh else 'Scan methodology ↗')}</a> · <a href="{escape(repository_url, quote=True)}/blob/main/data/source-scope.json">{('范围排除记录 ↗' if zh else 'Scope exclusions ↗')}</a></p></details>
   {('<nav class="browse-category-nav" aria-label="' + ('仓库分类' if zh else 'Repository categories') + '">' + ''.join(category_links) + '</nav>' if category else '')}
   <div class="browse-topline"><p>{count_text}</p><p>{date_text}</p></div>
   {content}
 </main>
-<footer class="site-footer"><div class="shell footer-top"><p>{('独立的资源集合，在公开协作中持续更新。' if zh else 'An independent resource collection, updated in public.')}</p><div class="footer-links"><a href="{browse_path(language)}">{('全部分类' if zh else 'All categories')}</a><a href="{curated_link}">{('精选资源' if zh else 'Curated resources')}</a><a href="{('/zh' if zh else '')}/papers/">{('研究论文' if zh else 'Research papers')}</a><a href="{('/zh' if zh else '')}/about/">{('关于与来源' if zh else 'About and sources')}</a><a href="/source-index.json?v={data_revision}" download="awesomerea-repository-index.json" type="application/json">{('仓库索引 JSON ↓' if zh else 'Repository index JSON ↓')}</a><a href="/catalog.json?v={data_revision}" download="awesomerea-curated-catalog.json" type="application/json">{('精选目录 JSON ↓' if zh else 'Curated catalog JSON ↓')}</a></div></div><div class="shell footer-bottom">{('原创内容采用 MIT 许可。链接项目保留各自的许可。' if zh else 'Original content: MIT. Linked projects keep their own licenses.')}</div></footer>
+{site_footer(language, note=escape('原创内容采用 MIT 许可。链接项目保留各自的许可。' if zh else 'Original content: MIT. Linked projects keep their own licenses.'), repository_url=repository_url, repository_export=repository_export)}
 </body>
 </html>
 '''
             if published:
-                document = document.replace('/source-index.json?v=', '/source-published.json?v=')
                 evidence_links = ' · '.join(
                     f'<a href="{escape(entry["archive_url"], quote=True)}">{("原始公开采集证据" if zh else "Original public capture evidence")} {entry["run"]["id"]}</a>'
                     for entry in source_document['meta']['capture_sources'])

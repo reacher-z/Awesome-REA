@@ -187,6 +187,9 @@ def _locale_url(value, origin, language):
     if value.startswith(('#', '//')):
         return value
     path = parsed.path
+    if re.search(r'\.[a-z0-9]+$', path):
+        # Downloads such as /papers/references.bib have one URL in both languages.
+        return value
     if path.startswith('/zh/'):
         path = path[3:]
     if path == '/' or any(path == '/' + area + '/' or path.startswith('/' + area + '/')

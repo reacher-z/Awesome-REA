@@ -12,6 +12,7 @@ from build_discovery_pages import PRIMARY_SOURCE_LABEL, jsonld_script, publicati
 from build_paper_pages import STATUS_LABELS, formatted_date, scholarly_article
 from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, TARGETS
 from open_graph import open_graph_meta
+from site_footer import site_footer
 
 MARKER = '<!-- Generated curated entry page. -->'
 
@@ -210,7 +211,8 @@ def _paper_content(paper: dict, language: str, discussion: str = '') -> tuple[st
 
 
 def _document(record, kind, language, *, site_url, repository_url, styles_href, entry_styles_href,
-              favicon_href, social_image_href, icon_stylesheet_href, survey_discussions, related_entries):
+              favicon_href, social_image_href, icon_stylesheet_href, survey_discussions, related_entries,
+              repository_export):
     zh = language == 'zh'
     label = lambda en, cn: cn if zh else en
     locale, prefix = ('zh-CN', '/zh') if zh else ('en', '')
@@ -259,7 +261,7 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
 <main class="shell entry-main" id="entry-content"><nav class="entry-breadcrumbs" aria-label="{label('Breadcrumb', '当前位置')}"><a href="{prefix}/">{label('Home', '首页')}</a><span aria-hidden="true">/</span><a href="{listing}">{list_name}</a><span aria-hidden="true">/</span><span aria-current="page">{escape(title)}</span></nav>
 <article class="entry-article" data-entry-kind="{kind}" data-entry-id="{record['id']}">{content}</article>
 <nav class="entry-return" aria-label="{label('Collection navigation', '合集导航')}"><a href="{listing}#{record['id']}">← {label('View in the directory', '在目录中查看')}</a><a href="{listing}">{list_name}</a><a href="{prefix}/">{label('Search the collection', '搜索合集')}</a></nav></main>
-<footer class="site-footer"><div class="shell footer-top"><p>{label('An independent, source-reviewed collection.', '依据一手来源整理的独立合集。')}</p><nav class="footer-links" aria-label="{label('More from the collection', '更多合集内容')}"><a href="{prefix}/resources/">{label('Curated resources', '精选资源')}</a><a href="{prefix}/papers/">{label('Research papers', '研究论文')}</a><a href="{prefix}/about/">{label('About and sources', '关于与来源')}</a></nav></div><div class="shell footer-bottom">{label('Original editorial content: MIT. Linked projects, papers and assets retain their own rights and licenses.', '原创说明采用 MIT 许可；外部项目、论文与素材保留各自的权利和许可。')}</div></footer>
+{site_footer(language, note=escape(label('Original editorial content: MIT. Linked projects, papers and assets retain their own rights and licenses.', '原创说明采用 MIT 许可；外部项目、论文与素材保留各自的权利和许可。')), repository_url=repository_url, repository_export=repository_export)}
 </body></html>
 '''
 
@@ -270,7 +272,8 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
                       styles_href: str = '/styles.css', entry_styles_href: str = '/entry.css',
                       favicon_href: str = '/favicon.svg', social_image_href: str = 'https://awesomerea.org/social-card.png',
                       icon_stylesheet_href: str | None = None,
-                      survey_discussions: dict | None = None) -> list[str]:
+                      survey_discussions: dict | None = None,
+                      repository_export: str = 'source-index.json') -> list[str]:
     """Write only curated /resources/<id>/ and /papers/<id>/ pairs; return sitemap URLs."""
     site_dir = Path(site_dir)
     site_url = site_url.rstrip('/')
@@ -281,7 +284,7 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
                    entry_styles_href=entry_styles_href, favicon_href=favicon_href,
                    social_image_href=social_image_href, icon_stylesheet_href=icon_stylesheet_href,
                    survey_discussions=survey_discussions or {},
-                   related_entries=matching_entries(resources, papers))
+                   related_entries=matching_entries(resources, papers), repository_export=repository_export)
     rendered = {}
     for kind, records in (('resource', resources), ('paper', papers)):
         identifiers = set()

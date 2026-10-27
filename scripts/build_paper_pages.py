@@ -11,6 +11,7 @@ import re
 from urllib.parse import urlsplit
 
 from open_graph import open_graph_meta, website_reference
+from site_footer import download_link, site_footer
 
 STATUS_LABELS = {
     'conference-paper': ('Conference paper', '会议论文'),
@@ -201,6 +202,7 @@ def build_paper_pages(
     favicon_href: str = '/favicon.svg',
     social_image_href: str = 'https://awesomerea.org/social-card.png',
     icon_stylesheet_href: str | None = None,
+    repository_export: str = 'source-index.json',
 ) -> list[str]:
     """Write /papers/ and /zh/papers/, shared BibTeX files, and return sitemap URLs."""
     # The README generator imports this module, so its topic map is read when pages are built.
@@ -268,8 +270,6 @@ def build_paper_pages(
         locale = 'zh-CN' if zh else 'en'
         home = '/zh/' if zh else '/'
         browse = '/zh/browse/' if zh else '/browse/'
-        curated = '/zh/resources/' if zh else '/resources/'
-        about = '/zh/about/' if zh else '/about/'
         title = label('Reverse engineering papers & benchmarks · AwesomeREA.org', '逆向工程论文与评测基准 · AwesomeREA.org')
         protocol_scope = label('protocol inference, ', '协议推断、') if any('protocol' in paper['targets'] for paper in papers) else ''
         description = label(f'{len(papers)} source-reviewed papers on binary reverse engineering, decompilation, agent evaluation, {protocol_scope}firmware analysis, and website, game, and app reconstruction, with citations and research limitations.', f'{len(papers)} 篇来源已复核的论文，涵盖二进制逆向、反编译、智能体评估、{protocol_scope}固件分析，以及网站、游戏和应用重建，附引文和研究边界。')
@@ -331,7 +331,7 @@ def build_paper_pages(
 <main id="papers-content" class="shell papers-main">
   <nav class="papers-breadcrumbs" aria-label="{label('Breadcrumb', '当前位置')}"><a href="{home}">{label('Home', '首页')}</a><span aria-hidden="true">/</span><span aria-current="page">{label('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准')}</span></nav>
   <section class="collection-intro papers-intro" aria-labelledby="papers-title"><p class="eyebrow">{label('RESEARCH & EVIDENCE', '研究与证据')}</p><h1 id="papers-title">{label('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准')}<span class="title-dot" aria-hidden="true">.</span></h1><p>{escape(intro)}</p></section>
-  <div class="papers-actions"><a class="button button-outline" href="{web_url(repository_url + "/issues/new?template=paper.yml")}" target="_blank" rel="noopener">{icon("document", use_pro)}{label("Suggest a paper", "推荐论文")}</a><a class="button button-outline" href="{browse}">{icon('layers', use_pro)}{label('Browse repositories', '浏览仓库')}</a><a class="papers-bibliography" href="/papers/references.bib" download="awesomerea-papers.bib" type="application/x-bibtex">{label('Download bibliography', '下载参考文献')} · BibTeX ↓</a></div>
+  <div class="papers-actions"><a class="button button-outline" href="{web_url(repository_url + "/issues/new?template=paper.yml")}" target="_blank" rel="noopener">{icon("document", use_pro)}{label("Suggest a paper", "推荐论文")}</a><a class="button button-outline" href="{browse}">{icon('layers', use_pro)}{label('Browse repositories', '浏览仓库')}</a>{download_link('/papers/references.bib', language, css_class='papers-bibliography')}</div>
   <p class="papers-review-policy">{label('We check primary sources; we do not rerun experiments or independently reproduce results.', '仅复核一手来源，未重新运行实验或独立复现结果。')}</p>
   <form id="paper-search" class="paper-search" role="search" aria-label="{label('Search research papers', '搜索研究论文')}" hidden>
     <div class="paper-search-field paper-search-query"><label for="paper-query">{label('Search papers', '搜索论文')}</label><input id="paper-query" name="q" type="search" maxlength="240" autocomplete="off" placeholder="{label('Title, author, keyword, DOI or arXiv ID', '标题、作者、关键词、DOI 或 arXiv 编号')}" aria-describedby="paper-search-help"></div>
@@ -351,7 +351,7 @@ def build_paper_pages(
   {''.join(sections)}
   <script id="paper-search-data" type="application/json">{search_data}</script>
 </main>
-<footer class="site-footer"><div class="shell footer-top"><p>{label('An independent resource collection, updated in public.', '独立的资源集合，在公开协作中持续更新。')}</p><div class="footer-links"><a href="{home}">{label('Interactive collection', '交互式合集')}</a><a href="{browse}">{label('Repository directory', '仓库分类目录')}</a><a href="{curated}">{label('Curated resources', '精选资源')}</a><a href="{about}">{label('About and sources', '关于与来源')}</a><a href="/papers/references.bib" download="awesomerea-papers.bib" type="application/x-bibtex">BibTeX ↓</a><a href="{web_url(repository_url)}" target="_blank" rel="noopener">GitHub ↗</a></div></div><div class="shell footer-bottom">{label('Paper and code links retain their own licenses. Bibliographic metadata is supplied for citation; follow the original sources for version and access details.', '论文和代码保留各自的许可。引文元数据用于引用；版本和访问详情请以原始来源为准。')}</div></footer>
+{site_footer(language, note=escape(label('Paper and code links retain their own licenses. Bibliographic metadata is supplied for citation; follow the original sources for version and access details.', '论文和代码保留各自的许可。引文元数据用于引用；版本和访问详情请以原始来源为准。')), repository_url=repository_url, repository_export=repository_export)}
 </body>
 </html>
 '''

@@ -12,6 +12,7 @@ import re
 from build_discovery_pages import jsonld_script
 from build_paper_pages import STATUS_LABELS, bibtex_text, icon
 from open_graph import open_graph_meta, website_reference
+from site_footer import site_footer
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ('Reverse Engineering Anything: An Evidence-Centered Survey',
@@ -219,7 +220,8 @@ def repository_bibtex():
 def build_survey(site_dir, papers, resources, *, document=None, site_url='https://awesomerea.org',
                  repository_url='https://github.com/reacher-z/Awesome-REA',
                  styles_href='/styles.css', favicon_href='/favicon.svg',
-                 social_image_href='https://awesomerea.org/social-card.png', icon_stylesheet_href=None):
+                 social_image_href='https://awesomerea.org/social-card.png', icon_stylesheet_href=None,
+                 repository_export='source-index.json'):
     document = read_survey() if document is None else document
     validate_survey(document, papers, resources)
     public_url(site_url); public_url(repository_url)
@@ -325,7 +327,7 @@ def build_survey(site_dir, papers, resources, *, document=None, site_url='https:
 <article class="survey-article" id="survey-content" data-survey-version="{document['version']}"><section class="survey-abstract" id="abstract"><h2>{choose('Abstract', '摘要')}</h2><p>{abstract}</p></section><aside class="survey-findings"><h2>{choose('Main findings', '主要认识')}</h2><ul>{findings}</ul></aside>{''.join(sections)}
 <section class="survey-section" id="references"><h2>{choose('References', '参考文献')}</h2><p class="survey-note">{escape(text(document['reference_note']))}</p><p><a href="/survey/references.bib" download="awesome-rea-survey-references.bib">{choose('Download the paper references', '下载论文参考文献')} · BibTeX ↓</a></p><ol class="survey-references">{''.join(reference_items)}</ol></section>
 <section class="survey-section" id="citation"><h2>{choose('Cite the repository', '引用仓库')}</h2><p>{choose('Use this citation for the Awesome REA repository. Cite individual papers and projects from their original sources.', '此条目用于引用 Awesome REA 仓库。引用单篇论文或项目时，请使用各自的原始来源。')}</p><p><a href="{repository_url}">GitHub · Awesome REA</a> · <a href="{repository_url}/blob/main/CITATION.cff">CITATION.cff</a></p><pre class="survey-citation-block"><code>{escape(citation)}</code></pre><p><a href="{repository_url}/tree/{snapshot['revision']}">{choose('Catalog snapshot used in this survey', '本综述使用的目录快照')}</a> · <a href="{repository_url}/issues">{choose('Suggest a correction', '建议修订')}</a></p></section></article></div></main>
-<footer class="site-footer"><div class="shell footer-top"><p>{choose('A living companion to the Awesome REA collection.', 'Awesome REA 资源合集的持续更新专题。')}</p><div class="footer-links"><a href="{prefix}/">{choose('Search resources', '搜索资源')}</a><a href="{prefix}/cases/">{choose('Case studies', '案例合集')}</a><a href="{prefix}/papers/">{choose('Research papers', '研究论文')}</a><a href="{prefix}/about/">{choose('About and sources', '关于与来源')}</a></div></div><div class="shell footer-bottom">{choose('Original editorial synthesis: MIT. Linked publications and projects retain their own rights.', '原创综述内容采用 MIT 许可；所引论文与项目保留各自权利。')}</div></footer></body></html>'''
+{site_footer(language, note=escape(choose('Original editorial synthesis: MIT. Linked publications and projects retain their own rights.', '原创综述内容采用 MIT 许可；所引论文与项目保留各自权利。')), repository_url=repository_url, repository_export=repository_export)}</body></html>'''
         destination = site_dir / prefix.lstrip('/') / 'survey/index.html'
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(html, encoding='utf-8')
