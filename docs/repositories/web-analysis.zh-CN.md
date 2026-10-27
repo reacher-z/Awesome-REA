@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/web-analysis/) · [English](web-analysis.md)
 
-**214 个仓库** · 2026-10-20 UTC
+**215 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -39,6 +39,7 @@
 - [L018/Trace](https://github.com/L018/Trace) — 用于网页分析的 Chrome 扩展 **[199 星标]**
 - [LostMyCode/javascript-deobfuscator](https://github.com/LostMyCode/javascript-deobfuscator) — 针对 Obfuscator.io 生成的 JavaScript 代码的去混淆工具 **[191 星标]**
 - [irelance/jsc-decompile-mozjs-34](https://github.com/irelance/jsc-decompile-mozjs-34) — Mozilla SpiderMonkey 34 版的 JavaScript 字节码解码器，可用于反编译 Cocos2d-x 编译的 JSC 文件 **[189 星标]**
+- [T14Raptor/go-fAST](https://github.com/T14Raptor/go-fAST) — 使用 Go 编写的 JavaScript AST 解析器、遍历器和生成器 **[186 星标]** · 精选：[go-fAST JavaScript 语法树库](https://awesomerea.org/zh/resources/go-fast-js-ast/)
 - [katana-project/slicer](https://github.com/katana-project/slicer) — 基于网页的现代 Java 逆向工程工具。 **[176 星标]** · 精选：[slicer 浏览器端 Java 逆向工具](https://awesomerea.org/zh/resources/slicer/)
 - [zhongguagua/ai-code-decompile](https://github.com/zhongguagua/ai-code-decompile) — 🚀 AI 驱动的 JavaScript 反编译与去混淆工具，结合 AI 和 AST 进行代码分析与混淆还原，将难以阅读的构建产物转换为易懂的代码。 **[140 星标]**
 - [SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials](https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials) — 我的 JavaScript 逆向工程博客 ReverseJS 配套的去混淆工具源码。 **[125 星标]**
