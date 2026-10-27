@@ -341,7 +341,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [aldelaro5/ghidra-gekko-broadway-lang](https://github.com/aldelaro5/ghidra-gekko-broadway-lang) — Ghidra language definition for the Gekko and Broadway CPU variant used in the Nintendo GameCube and Nintendo Wii respectively **[135 stars]**
 - [LockBlock-dev/pkg-unpacker](https://github.com/LockBlock-dev/pkg-unpacker) — Unpack pkg, nexe, caxa, Node.js SEA and Bun single-file binaries. **[135 stars]**
 - [diommsantos/QtREAnalyzer](https://github.com/diommsantos/QtREAnalyzer) — QtREAnalyzer, a Ghidra extension to reverse-engineer Qt binaries. **[134 stars]**
-- [GaloisInc/grease](https://github.com/GaloisInc/grease) — CLI tool, Ghidra plug-in, and Haskell library for analyzing binaries using under-constrained symbolic execution **[134 stars]**
+- [GaloisInc/grease](https://github.com/GaloisInc/grease) — CLI tool, Ghidra plug-in, and Haskell library for analyzing binaries using under-constrained symbolic execution **[134 stars]** · Curated: [GREASE](https://awesomerea.org/resources/grease/)
 - [0xdea/haruspex](https://github.com/0xdea/haruspex) — Vulnerability research assistant that extracts pseudocode from the IDA Hex-Rays decompiler. **[133 stars]**
 - [darx0r/Stingray](https://github.com/darx0r/Stingray) — IDAPython plugin for finding function strings recursively **[133 stars]**
 - [kotcrab/ghidra-allegrex](https://github.com/kotcrab/ghidra-allegrex) — Ghidra processor module adding support for the Allegrex CPU (PSP) **[132 stars]**

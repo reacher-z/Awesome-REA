@@ -12397,5 +12397,41 @@
       "https://github.com/toniebox-reverse-engineering/teddycloud/releases/tag/tc_v0.7.0",
       "https://tonies-wiki.revvox.de/docs/tools/teddycloud/setup/"
     ]
+  },
+  {
+    "id": "grease",
+    "name": "GREASE",
+    "url": "https://github.com/GaloisInc/grease",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Galois's command-line tool, Ghidra plug-in and Haskell library for checking properties of binaries with under-constrained symbolic execution. It lifts AArch32, PowerPC or x86_64 ELF executables and shared objects, or LLVM bitcode, into a control-flow graph, simulates each function from fully symbolic registers and grows the inferred memory layout after out-of-bounds accesses, then reports likely undefined behavior such as division by zero or invalid memory access together with concretized arguments. Built-in overrides, or user overrides written in Crucible's S-expression language, model external library functions, and the plug-in presents results in Ghidra.",
+    "description_zh": "Galois 开发的命令行工具、Ghidra 插件和 Haskell 库，借助欠约束符号执行检查二进制程序的性质。它把 AArch32、PowerPC 或 x86_64 的 ELF 可执行文件和共享对象（或 LLVM bitcode）转换为控制流图，从所有寄存器均为符号值的状态模拟每个函数，并在发生越界访问后逐步扩充推断出的内存布局，最终报告除零、非法内存访问等可能的未定义行为，并给出具体化的参数。内置覆盖（override）或用户以 Crucible S 表达式语言编写的覆盖可模拟外部库函数，插件则在 Ghidra 中展示结果。",
+    "evidence_url": "https://github.com/GaloisInc/grease/blob/b94e1e010c289cf579fe868307857a417d6e3a2c/doc/overview.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No tagged releases at review: the installation guide offers a nightly Docker image built from main (ghcr.io/galoisinc/grease:nightly) or a source build, and the same documentation is published at galoisinc.github.io/grease. The reviewed main commit is dated 2026-09-24; Galois introduced the tool in a blog post dated 2025-03-19.",
+      "Source builds need GHC 9.6, 9.8 or 9.10, cabal-install 3.6+ and the repository's git submodules, including Galois's macaw, crucible, what4 and elf-edit. A standalone binary also needs one of the SMT solvers bitwuzla, cvc4, cvc5, yices or z3; it defaults to yices, which CI tests at 2.6.5, and the Docker image includes the solvers. The Ghidra plug-in needs Ghidra 11.0+ and a local grease binary.",
+      "Supply the ELF binary or LLVM bitcode yourself. By default every known function is analyzed; entry points can instead be chosen by symbol, address or core dump. The limitations page lists single-threaded analysis only, k-bounded data structures, loops and recursion, skipped calls through symbolic function pointers, no stack-buffer-overflow detection or heap-exhaustion modeling, limited string operations and no support for code that runs before main.",
+      "The repository commits small test fixtures built from adjacent C or assembly sources: about 200 AArch32, PowerPC and x86_64 ELF executables and shared objects under grease-exe/tests, plus test ELFs under grease-x86/test-data, ghidra-ecfs/src/test/resources/ecfs and the bundled screach reachability tool's test-data directories.",
+      "BSD-3-Clause (LICENSE). The README credits DARPA funding and carries Distribution Statement A, approved for public release. Reports depend on the inferred preconditions, bounds and overrides; no binaries were analyzed for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/GaloisInc/grease/blob/b94e1e010c289cf579fe868307857a417d6e3a2c/README.md",
+      "https://github.com/GaloisInc/grease/blob/b94e1e010c289cf579fe868307857a417d6e3a2c/doc/install.md",
+      "https://github.com/GaloisInc/grease/blob/b94e1e010c289cf579fe868307857a417d6e3a2c/doc/usage.md",
+      "https://github.com/GaloisInc/grease/blob/b94e1e010c289cf579fe868307857a417d6e3a2c/doc/dev/dev.md",
+      "https://github.com/GaloisInc/grease/blob/b94e1e010c289cf579fe868307857a417d6e3a2c/doc/ghidra-plugin.md",
+      "https://github.com/GaloisInc/grease/blob/b94e1e010c289cf579fe868307857a417d6e3a2c/doc/limitations.md",
+      "https://github.com/GaloisInc/grease/blob/b94e1e010c289cf579fe868307857a417d6e3a2c/doc/overrides.md",
+      "https://github.com/GaloisInc/grease/tree/b94e1e010c289cf579fe868307857a417d6e3a2c/grease-exe/tests",
+      "https://github.com/GaloisInc/grease/blob/b94e1e010c289cf579fe868307857a417d6e3a2c/LICENSE",
+      "https://galoisinc.github.io/grease/",
+      "https://www.galois.com/articles/introducing-grease"
+    ]
   }
 ]

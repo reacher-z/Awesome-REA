@@ -341,7 +341,7 @@
 - [aldelaro5/ghidra-gekko-broadway-lang](https://github.com/aldelaro5/ghidra-gekko-broadway-lang) — Ghidra 语言定义，支持 Nintendo GameCube 和 Nintendo Wii 分别使用的 Gekko 与 Broadway CPU 变体 **[135 星标]**
 - [LockBlock-dev/pkg-unpacker](https://github.com/LockBlock-dev/pkg-unpacker) — 解包 pkg、nexe、caxa、Node.js SEA 及 Bun 单文件二进制。 **[135 星标]**
 - [diommsantos/QtREAnalyzer](https://github.com/diommsantos/QtREAnalyzer) — QtREAnalyzer：用于逆向分析 Qt 二进制文件的 Ghidra 扩展。 **[134 星标]**
-- [GaloisInc/grease](https://github.com/GaloisInc/grease) — 用于通过欠约束符号执行分析二进制文件的 CLI 工具、Ghidra 插件和 Haskell 库。 **[134 星标]**
+- [GaloisInc/grease](https://github.com/GaloisInc/grease) — 用于通过欠约束符号执行分析二进制文件的 CLI 工具、Ghidra 插件和 Haskell 库。 **[134 星标]** · 精选：[GREASE 欠约束符号执行二进制分析工具](https://awesomerea.org/zh/resources/grease/)
 - [0xdea/haruspex](https://github.com/0xdea/haruspex) — 从 IDA Hex-Rays 反编译器提取伪代码的漏洞研究助手。 **[133 星标]**
 - [darx0r/Stingray](https://github.com/darx0r/Stingray) — 递归查找函数字符串的 IDAPython 插件 **[133 星标]**
 - [kotcrab/ghidra-allegrex](https://github.com/kotcrab/ghidra-allegrex) — 为 Ghidra 添加 Allegrex CPU（PSP）支持的处理器模块 **[132 星标]**

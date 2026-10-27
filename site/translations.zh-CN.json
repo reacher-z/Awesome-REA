@@ -4500,5 +4500,15 @@
       "自定义 tonie JSON 接口的 Python API 测试和 WASM TAF 编码器测试通过 Makefile 目标运行；所审阅的工作流只构建并发布，不运行这些测试。dev-sandbox 提供模拟的 tonie、盒子和 TAF 数据。与真实盒子及 Boxine 云端配合的表现仍属项目报告，本次来源核查未运行任何内容。",
       "采用 GPL-2.0（LICENSE）；内置的 Cyclone 协议栈、Opus、Ogg、cJSON 和 FatFs 保留各自条款。tonie 音频、盒子固件和 Boxine 的服务保留各自权利。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "grease": {
+    "name": "GREASE 欠约束符号执行二进制分析工具",
+    "requirements": [
+      "审阅时没有带标签的发布版本：安装指南提供由 main 分支构建的每夜 Docker 镜像（ghcr.io/galoisinc/grease:nightly），或从源码构建；同一套文档发布在 galoisinc.github.io/grease。所审阅的 main 分支提交日期为 2026-09-24；Galois 在 2025-03-19 的博客文章中介绍了该工具。",
+      "从源码构建需要 GHC 9.6、9.8 或 9.10、cabal-install 3.6+ 以及仓库的 git 子模块，其中包括 Galois 的 macaw、crucible、what4 和 elf-edit。独立运行的程序还需要 bitwuzla、cvc4、cvc5、yices 或 z3 中的一种 SMT 求解器；默认使用 yices，CI 测试的版本为 2.6.5，Docker 镜像已包含这些求解器。Ghidra 插件需要 Ghidra 11.0+ 和本地的 grease 程序。",
+      "需自行提供要分析的 ELF 二进制或 LLVM bitcode。默认分析所有已知函数，也可按符号、地址或核心转储选择入口。局限性页面列出：只分析单线程执行；数据结构、循环和递归受 k 界限制；通过符号函数指针的调用会被跳过；不检测栈缓冲区溢出，也不模拟堆耗尽；字符串操作支持有限；不支持在 main 之前运行的代码。",
+      "仓库提交了由相邻 C 或汇编源码构建的小型测试样本：grease-exe/tests 下约 200 个 AArch32、PowerPC 和 x86_64 ELF 可执行文件与共享对象，另有 grease-x86/test-data、ghidra-ecfs/src/test/resources/ecfs 以及随附的 screach 可达性分析工具各测试数据目录中的测试 ELF。",
+      "BSD-3-Clause 许可证（LICENSE）。README 注明由 DARPA 资助，并附有“Distribution Statement A”（已批准公开发布）声明。报告结果取决于推断出的前置条件、界限和覆盖；本条目未分析任何二进制。"
+    ]
   }
 }
