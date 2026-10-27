@@ -11759,5 +11759,39 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "ghidra-headless-mcp",
+    "name": "Ghidra Headless MCP",
+    "url": "https://github.com/mrphrazer/ghidra-headless-mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Headless-only MCP server that drives Ghidra through PyGhidra and is meant to share a container with the agent rather than attach to a Ghidra GUI. Its 212 tools in 34 groups cover program and project lifecycle, disassembly, decompilation and P-code, patching and memory edits, symbols, references, types and structure layouts, search and graph extraction, with raw Python, Java-API and script access for anything else. Programs open read-only by default, edits run in transactions with undo and redo, a fake backend lets development and CI run without Ghidra, and a ghidra_cli client exposes the same tools to shells and agents without MCP.",
+    "description_zh": "仅以无界面方式运行的 MCP 服务器，通过 PyGhidra 驱动 Ghidra，设计为与智能体运行在同一容器中，而不是连接 Ghidra 图形界面。其 34 组共 212 个工具涵盖程序与项目生命周期、反汇编、反编译与 P-code、补丁与内存修改、符号、引用、类型与结构布局、搜索和图提取，其他需求可通过直接执行 Python、调用 Java API 或运行脚本完成。程序默认以只读方式打开，修改在支持撤销与重做的事务中进行；伪后端让开发和 CI 无需安装 Ghidra 即可运行，ghidra_cli 客户端则把同一套工具提供给不使用 MCP 的命令行和智能体。",
+    "evidence_url": "https://github.com/mrphrazer/ghidra-headless-mcp/blob/307b461cdbbedfbafb3771333f21875b745f940e/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit (2026-09-16) reports version 0.1.0, with no tags or releases; the changelog keeps all changes under Unreleased, and RELEASING.md says source releases go to GitHub only, not PyPI, and that no public release tag should be created until a license is chosen. Install from a checkout with pip. The README says the code, tests and documentation are entirely vibe coded.",
+      "Python 3.11+ with pyghidra 3.0.2+ and a local Ghidra installation given through GHIDRA_INSTALL_DIR or --ghidra-install-dir; the README names no minimum Ghidra release. MCP runs over stdio or TCP, with setup examples for Claude Code, Codex and generic MCP hosts and a sample Kali-based Dockerfile that installs Ghidra beside the agent. Debugger, Version Tracking, FID, BSim and emulator workflows are listed as not exposed.",
+      "ghidra.eval, ghidra.call and ghidra.script run arbitrary Python, Java and scripts inside the Ghidra runtime, and both transports are unauthenticated; the TCP server binds 127.0.0.1, and the README limits use to trusted, containerized environments. Read-only sessions protect program state but do not sandbox filesystem or process access.",
+      "The repository bundles a stripped AArch64 GNU coreutils ls executable in samples/ as the feature fuzzer’s default target, and a small compiled hello test fixture with its C source. The README says CI also runs live Ghidra tests and a wheel check, but the reviewed workflow runs only Ruff and the non-live pytest suite on the fake backend. This review read source and documentation without running the server.",
+      "GitHub detects GPL-2.0 from the LICENSE file added in the initial commit, while the README and RELEASING.md still treat the license as unchosen and pyproject.toml declares none. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mrphrazer/ghidra-headless-mcp/blob/307b461cdbbedfbafb3771333f21875b745f940e/FEATURE_SUPPORT.md",
+      "https://github.com/mrphrazer/ghidra-headless-mcp/blob/307b461cdbbedfbafb3771333f21875b745f940e/CHANGELOG.md",
+      "https://github.com/mrphrazer/ghidra-headless-mcp/blob/307b461cdbbedfbafb3771333f21875b745f940e/RELEASING.md",
+      "https://github.com/mrphrazer/ghidra-headless-mcp/blob/307b461cdbbedfbafb3771333f21875b745f940e/pyproject.toml",
+      "https://github.com/mrphrazer/ghidra-headless-mcp/blob/307b461cdbbedfbafb3771333f21875b745f940e/.github/workflows/ci.yml",
+      "https://github.com/mrphrazer/ghidra-headless-mcp/blob/307b461cdbbedfbafb3771333f21875b745f940e/LICENSE",
+      "https://github.com/mrphrazer/ghidra-headless-mcp/blob/307b461cdbbedfbafb3771333f21875b745f940e/ghidra_headless_mcp/_version.py",
+      "https://github.com/mrphrazer/ghidra-headless-mcp/tree/307b461cdbbedfbafb3771333f21875b745f940e/samples",
+      "https://github.com/mrphrazer/ghidra-headless-mcp/tree/307b461cdbbedfbafb3771333f21875b745f940e/tests/fixtures"
+    ]
   }
 ]

@@ -4310,5 +4310,14 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "ghidra-headless-mcp": {
+    "requirements": [
+      "所审阅的 main 提交（2026-09-16）标为 0.1.0 版，没有标签或发行版；更新日志把所有改动都列在 Unreleased 下，RELEASING.md 称源码发行版只发布到 GitHub、不发布到 PyPI，并要求在选定许可证之前不要创建公开发行标签。需从检出的源码用 pip 安装。README 称代码、测试和文档全部是“vibe coding”写成的。",
+      "需要 Python 3.11+、pyghidra 3.0.2+，以及通过 GHIDRA_INSTALL_DIR 或 --ghidra-install-dir 指定的本地 Ghidra 安装；README 未注明最低 Ghidra 版本。MCP 可经 stdio 或 TCP 运行，README 给出了 Claude Code、Codex 和通用 MCP 主机的配置示例，以及一个在智能体旁安装 Ghidra 的 Kali 基础 Dockerfile 示例。调试器、Version Tracking、FID、BSim 和模拟器相关工作流被列为尚未提供。",
+      "ghidra.eval、ghidra.call 和 ghidra.script 会在 Ghidra 运行时中执行任意 Python、Java 代码和脚本，两种传输方式均无身份验证；TCP 服务器只绑定 127.0.0.1，README 要求仅在受信任的容器化环境中使用。只读会话可保护程序状态，但不会隔离文件系统或进程访问。",
+      "仓库在 samples/ 中附带一个已剥离符号的 AArch64 GNU coreutils ls 可执行文件，作为功能模糊测试器的默认目标，另有一个小型已编译的 hello 测试样本及其 C 源码。README 称 CI 还会运行真实 Ghidra 测试和 wheel 检查，但所审阅的工作流只运行 Ruff 和基于伪后端的非真实环境 pytest 测试。本次审阅阅读了源码和文档，未运行该服务器。",
+      "GitHub 依据初始提交中加入的 LICENSE 文件识别为 GPL-2.0，而 README 和 RELEASING.md 仍视许可证为尚未选定，pyproject.toml 也未声明许可证。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
