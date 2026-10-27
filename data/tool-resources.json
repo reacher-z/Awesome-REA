@@ -11759,5 +11759,37 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "simba-mba-simplifier",
+    "name": "SiMBA",
+    "url": "https://github.com/DenuvoSoftwareSolutions/SiMBA",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Research tool from Denuvo that simplifies linear mixed Boolean-arithmetic (MBA) expressions, which combine bitwise and integer operations and are used in code obfuscation. Like MBA-Blast and MBA-Solver it works algebraically, using the fact that a linear MBA is fully determined by its values on inputs of zeros and ones: it evaluates the expression on every such combination and rewrites it as a linear combination of basic bitwise expressions, without first translating it to 1-bit space. Python scripts simplify single expressions or whole datasets, can check that an input is linear and can prove the result equivalent with Z3.",
+    "description_zh": "Denuvo 发布的研究工具，用于化简线性混合布尔-算术（MBA）表达式；这类表达式混合使用位运算和整数运算，常见于代码混淆。它与 MBA-Blast、MBA-Solver 一样采用纯代数方法，依据线性 MBA 完全由其在 0/1 输入上的取值决定这一性质：对所有 0/1 输入组合求值，再把表达式改写为基本位运算表达式的线性组合，而无需先转换到 1 位空间。所附 Python 脚本可化简单个表达式或整个数据集，可检查输入是否为线性 MBA，并可用 Z3 证明结果与原式等价。",
+    "evidence_url": "https://github.com/DenuvoSoftwareSolutions/SiMBA/blob/228179970f5906ed763afb33fc8649de2846696e/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Accompanies Benjamin Reichenwallner and Peter Meerwald-Stadler's paper at the CheckMATE 2022 workshop, co-located with ACM CCS 2022 (DOI 10.1145/3560831.3564256, arXiv 2209.06335); the repository also holds the paper PDF, slides and a talk video. The reviewed main commit dates from 2022-12-12, and there are no releases or packages: the scripts run directly from src/.",
+      "Needs Python 3; Z3's Python bindings are required by simplify_dataset.py and by the -z verification option of simplify.py. Input is expression text, or a file with one complex expression and its simpler equivalent per line, built from variables, constants and the operators ~, unary minus, *, +, -, &, ^ and |; the tool has no disassembler or decompiler integration. Output constants depend on the bit width, 64 by default and set with -b.",
+      "Only linear MBAs are handled: the optional -l check rejects nonlinear input such as products of variables, and the README warns that operator precedence follows Python, so parentheses are needed. Result refinement through lookup tables of bitwise expressions covers up to three variables; expressions with more variables keep the generic linear-combination form.",
+      "For reproducing part of the paper's experiments, data/ holds generated sets of 1,000 equivalent linear MBAs per target function with 2 to 4 variables, plus 5- and 6-variable sets for x+y; the README also mentions 7 variables, which are not in the tree. The datasets assume 64 bits, and simplify_dataset.py reports how many results Z3 verified or matched exactly and the average runtime. There is no test suite or CI, and no results were reproduced in this review.",
+      "GPL-3.0, copyright 2022 Denuvo GmbH. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/DenuvoSoftwareSolutions/SiMBA/blob/228179970f5906ed763afb33fc8649de2846696e/src/simplify.py",
+      "https://github.com/DenuvoSoftwareSolutions/SiMBA/blob/228179970f5906ed763afb33fc8649de2846696e/src/simplify_dataset.py",
+      "https://github.com/DenuvoSoftwareSolutions/SiMBA/blob/228179970f5906ed763afb33fc8649de2846696e/src/check_linear_mba.py",
+      "https://github.com/DenuvoSoftwareSolutions/SiMBA/tree/228179970f5906ed763afb33fc8649de2846696e/data",
+      "https://github.com/DenuvoSoftwareSolutions/SiMBA/blob/228179970f5906ed763afb33fc8649de2846696e/paper/paper.pdf",
+      "https://github.com/DenuvoSoftwareSolutions/SiMBA/blob/228179970f5906ed763afb33fc8649de2846696e/LICENSE",
+      "https://arxiv.org/abs/2209.06335"
+    ]
   }
 ]
