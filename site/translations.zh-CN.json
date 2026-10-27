@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "wallbreaker": {
+    "name": "Wallbreaker Java 堆查看工具",
+    "requirements": [
+      "仓库已由所有者归档，处于只读状态。审阅时最新版本为 1.0.3，于 2022-05-10 打标签并上传到 PyPI，没有发布附件；此后唯一的提交是添加 GPL-3.0 LICENSE 文件（2023-03-26）。",
+      "README 的用法是先用 pip 安装 objection，把仓库克隆到 objection 的插件目录，再用 explore -P 或 plugin load 加载，并以 plugin wallbreaker … 的形式运行命令。PyPI 包依赖 frida 和 click，以库的形式提供命令代理；其连接辅助函数通过 Frida 按进程名或 PID 附加到 USB 或远程设备，wallbreaker/main.py 未定义命令行入口。setup.py 的分类信息列出 macOS、Windows 和 Linux 上的 Python 3.4–3.8。",
+      "分析对象是 Frida 可连接的、正在运行的 Android 应用。随附的 agent.js 由仓库自己的 TypeScript 源码经 frida-compile 9 和 Frida 14 时期的类型定义编译而成；它调用全局 Java 桥接，没有打包 frida-java-bridge，而 Frida 17（2025 年 5 月）起普通脚本已不再自带该桥接。未测试与当前 Frida 和 objection 版本的兼容性。",
+      "GPL-3.0 许可。输出是某一进程在某一时刻的对象结构视图，而非反编译源码。本次审阅未安装或运行任何内容；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
