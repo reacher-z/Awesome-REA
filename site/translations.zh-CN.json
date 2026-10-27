@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "grpc-tools": {
+    "name": "grpc-tools gRPC 流量调试工具集",
+    "requirements": [
+      "审阅对象为 master 分支提交 928b1b9（2023-11-14），也是最后一次推送。最新发行版为 v0.2.6（2020-06-30），master 在其后另有六个提交，主要是依赖升级，另将消息大小上限提高到 64 MB。README 称这些工具仍处于 alpha 阶段，并提醒各版本之间可能有不兼容的改动。",
+      "可通过作者的 Homebrew tap、发行版压缩包（Linux、macOS 和 Windows 的 amd64 构建）或 go install 安装；go.mod 声明 Go 1.13，并要求 grpc-go v1.26.0、golang/protobuf v1.4.2 和 protoreflect v1.7.0。被测应用需要指向该代理；README 提醒，连接 localhost 的客户端通常会忽略代理设置。system_proxy 选项的说明针对 macOS。",
+      "要求 TLS 的客户端需要信任为被拦截域名准备的证书；README 推荐用 mkcert 生成证书，并安装在用户自己的机器上。提供 .proto 根目录或描述符后可以精确解码，而不必依赖启发式解码。集成测试使用一个小型 test.proto 以及项目自己录制的转储和 fixture 文件；仓库附带 CircleCI 配置。",
+      "采用 MIT 许可证。转储包含完整的消息内容和元数据，其中也包括请求头里的凭据，因此应作为敏感数据处理。本条目只涉及检查用户自己的应用和服务；本次审阅未运行任何程序。"
+    ]
   }
 }
