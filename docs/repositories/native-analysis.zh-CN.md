@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**851 个仓库** · 2026-10-20 UTC
+**850 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -409,7 +409,6 @@
 - [kweatherman/yara4ida](https://github.com/kweatherman/yara4ida) — 非官方 YARA IDA Pro 插件，附基于 Luigi Auriemma 的 signsrch 特征签名构建、无与伦比的密码学、哈希和压缩规则集。 **[88 星标]**
 - [lifting-bits/patchestry](https://github.com/lifting-bits/patchestry) — Patchestry 是基于 MLIR 和 Ghidra 构建的二进制补丁框架。 **[88 星标]**
 - [vega-979/Sigga](https://github.com/vega-979/Sigga) — Ghidra 特征码生成器。 **[88 星标]**
-- [alexander-pick/shannon\_modem\_loader](https://github.com/alexander-pick/shannon_modem_loader) — 适用于 IDA Pro 8.x/9.x 的 Exynos Modem / Shannon 基带固件加载器 **[87 星标]**
 - [fjqisba/QtMetaParser](https://github.com/fjqisba/QtMetaParser) — 解析 Qt 元数据的 IDA 插件 **[87 星标]**
 - [firstfault/Trinity](https://github.com/firstfault/Trinity) — Java 软件逆向工程工具 **[86 星标]**
 - [rsc-dev/pbd](https://github.com/rsc-dev/pbd) — Pbd 是用于反汇编序列化 Protocol Buffers 描述符的 Python 模块（https<span>:</span>//developers.google.com/protocol-buffers/）。 **[86 星标]**

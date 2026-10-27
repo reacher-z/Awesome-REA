@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/firmware/) · [简体中文](firmware.zh-CN.md)
 
-**221 repositories** · 2026-10-20 UTC
+**222 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -43,6 +43,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [DavidClawson/OpenScope-2C53T](https://github.com/DavidClawson/OpenScope-2C53T) — Open-source reverse engineering and firmware development for the FNIRSI 2C53T oscilloscope/multimeter/signal generator **[119 stars]**
 - [djr-747/nokia-dct3-emulator](https://github.com/djr-747/nokia-dct3-emulator) — Open-source emulator + analysis toolkit for Nokia DCT3 phones (3310/3410/5210/8210/8250/8850…). Boots real firmware in the browser (WASM) and a native SDL GUI. Bring-your-own firmware — none included. GPL-2. **[92 stars]**
 - [nmatt0/firmwaretools](https://github.com/nmatt0/firmwaretools) — a set of scripts and tools for various firmware analysis tasks **[90 stars]**
+- [alexander-pick/shannon\_modem\_loader](https://github.com/alexander-pick/shannon_modem_loader) — Exynos Modem / Shannon baseband firmware loader for IDA Pro 8.x/9.x **[87 stars]** · Curated: [Shannon Modem Loader for IDA Pro](https://awesomerea.org/resources/shannon-modem-loader/)
 - [matiaspl/LinkPi-ENCx](https://github.com/matiaspl/LinkPi-ENCx) — Reverse engineering and unofficial documentation of LinkPi ENC series (ENC1/ENC5/ENC9) and TBS 2603SE video encoders based on the F3520D platform — hardware analysis, firmware internals, streaming fixes, and hidden features. **[86 stars]**
 - [onehouwong/Firmware-Analysis-Papers](https://github.com/onehouwong/Firmware-Analysis-Papers) — Recent security papers on firmware analysis **[85 stars]**
 - [Cr4sh/smram\_parse](https://github.com/Cr4sh/smram_parse) — System Management RAM analysis tool **[83 stars]**

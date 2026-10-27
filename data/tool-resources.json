@@ -11759,5 +11759,39 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "shannon-modem-loader",
+    "name": "Shannon Modem Loader for IDA Pro",
+    "url": "https://github.com/alexander-pick/shannon_modem_loader",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "IDA Pro loader and post-processing scripts for Samsung Exynos \"Shannon\" baseband modem images that carry a TOC header, including crash dumps. The loader maps the TOC entries to aligned segments and entry points; after auto-analysis the post-processor restores debug-trace structures, names functions from strings and debug-log calls, rebuilds the MPU table and memory map, comments MMU-related coprocessor instructions, performs the ARM scatter-load with its decompression, and labels platform-abstraction-layer and task-initialization functions. The README adds the author's notes on ShannonOS, the PAL and the move from Cortex-R to Cortex-A cores.",
+    "description_zh": "用于 IDA Pro 的加载器和后处理脚本，处理带 TOC 头的三星 Exynos“Shannon”基带调制解调器镜像，也支持崩溃转储。加载器把 TOC 条目映射为对齐的段并设置入口点；自动分析完成后，后处理程序会恢复调试跟踪结构，依据字符串和调试日志调用为函数命名，重建 MPU 表和内存映射，为 MMU 相关的协处理器指令添加注释，执行 ARM 分散加载及其解压，并标注平台抽象层与任务初始化函数。README 还附有作者对 ShannonOS、PAL 以及从 Cortex-R 转向 Cortex-A 内核的说明。",
+    "evidence_url": "https://github.com/alexander-pick/shannon_modem_loader/blob/2dc27f01782eaaa55ef626e15ef6b4154bf0e392/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 01.2025, published 2025-01-01; the reviewed main commit of 2025-01-03 only adds IDA Essential 9.0 to the installer's search list. The README calls the code work in progress and reports testing on a larger set of images from older models such as the G8700 and S7 up to the S22 and S24, with task identification working on recent images.",
+      "The README reports testing with IDA Pro 9.0, IDA Pro 8.3 to 8.4 SP2 and IDA Home ARM, and says 7.x with the revamped IDAPython API might work. install.sh copies the loader, Python modules and signatures into a Linux IDA installation; on macOS or Windows the files are copied by hand following the README's table.",
+      "Users supply a TOC-format Shannon modem image or crash dump; the repository contains no modem firmware. The README reports that a complete analysis takes about 10 minutes on average hardware.",
+      "sig/ holds 17 premade FLIRT signature files for ARM Compiler/RVCT runtime functions, from version 3.1 to 5.06u7. The post-processor reads the image's RVCT build string, applies the matching signature, and on Linux offers to use the include directory of a matching legacy ARM compiler installed in the user's home directory. There are no tests or CI, and this review loaded no images.",
+      "MIT License. Modem firmware, IDA Pro and ARM compilers keep their own terms."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/alexander-pick/shannon_modem_loader/blob/2dc27f01782eaaa55ef626e15ef6b4154bf0e392/shannon_load.py",
+      "https://github.com/alexander-pick/shannon_modem_loader/blob/2dc27f01782eaaa55ef626e15ef6b4154bf0e392/shannon_postprocess.py",
+      "https://github.com/alexander-pick/shannon_modem_loader/blob/2dc27f01782eaaa55ef626e15ef6b4154bf0e392/shannon_pal_reconstructor.py",
+      "https://github.com/alexander-pick/shannon_modem_loader/blob/2dc27f01782eaaa55ef626e15ef6b4154bf0e392/shannon_scatterload.py",
+      "https://github.com/alexander-pick/shannon_modem_loader/blob/2dc27f01782eaaa55ef626e15ef6b4154bf0e392/shannon_mpu.py",
+      "https://github.com/alexander-pick/shannon_modem_loader/blob/2dc27f01782eaaa55ef626e15ef6b4154bf0e392/install.sh",
+      "https://github.com/alexander-pick/shannon_modem_loader/tree/2dc27f01782eaaa55ef626e15ef6b4154bf0e392/sig",
+      "https://github.com/alexander-pick/shannon_modem_loader/blob/2dc27f01782eaaa55ef626e15ef6b4154bf0e392/LICENSE",
+      "https://github.com/alexander-pick/shannon_modem_loader/releases/tag/01.2025"
+    ]
   }
 ]
