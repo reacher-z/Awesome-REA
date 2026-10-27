@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "enjarify": {
+    "name": "Enjarify Dalvik 转 Java 字节码工具",
+    "requirements": [
+      "仓库已归档。审阅时最新版本为 1.0.3，发布于 2016-12-20，没有附件；最后一次提交在 2017-01-30。README 指出本仓库可能已过时，后续开发转到 Storyyeller/enjarify；该仓库的 master 分支领先 15 个提交，最后一次提交在 2020-03-07。",
+      "从克隆的仓库直接用 Python 3 运行，无需其他依赖。enjarify.sh 优先使用 PyPy3（README 称其比 CPython 快得多），enjarify.bat 则始终调用 python3。输入是分析者自己的 APK 或 DEX 文件；输出默认为 [输入文件名]-enjarify.jar，-o 指定文件名，-f 允许覆盖，--fast 跳过优化。",
+      "不会转换源文件属性、行号和注解等可选元数据；README 还提到少数刻意构造的情况受 Android 或 Java 自身限制而无法转换。输出的是字节码，要阅读源码需另用 Java 反编译器。runtests.py 会转换随附的测试夹具（tests/test1 至 tests/test7 中的小型 classes.dex 及其 smali 源码和预期输出），加入 tests/stubs 中的小型 Android API 桩类，再用 java 运行结果。",
+      "Apache-2.0 许可；README 声明它不是 Google 的官方产品。本次审阅未安装或运行；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
