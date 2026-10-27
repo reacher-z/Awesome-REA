@@ -4301,5 +4301,15 @@
       "技术说明称，在早期人工尝试受阻后，长时间运行的 Claude Code（Opus 4.6）与 Codex 会话借助维护者自己已 root 的 S7、其固件、python-roborock 及反编译后的应用，帮助找到了配网中剩余的关键一步。说明致谢了 Dennis Giese 的固件研究、Valetudo 及其他社区工作；未提及使用 REA。",
       "采用 MIT 许可并附“按现状提供”的免责声明；项目与 Roborock 无关联。这是兼容的服务器实现，并非恢复的 Roborock 服务端代码，厂商固件或应用的变化可能使其失效。"
     ]
+  },
+  "iblessing": {
+    "name": "iblessing iOS 应用与 Mach-O 分析工具集",
+    "requirements": [
+      "审阅时最新版本为 v1.0.4-beta，发布于 2021-11-26，标签正对应所审阅的 master 提交；所有版本均标为预发布。近期各版本附带 macOS 与 Linux 的命令行程序和一体化构建、含共享核心库及头文件的框架压缩包，以及一份 Foundation 与 UIKit 方法签名的 JSON 表。README 功能列表中，Swift 类解析、跟随分支与调用以及 Android 扫描器仍未完成。",
+      "app-info 扫描器需要使用者提供 iOS .app 应用包，其他扫描器需要 arm64 Mach-O 二进制；README 示例先用另一个工具恢复符号，再分析商业第三方应用，但仓库未提交任何应用二进制。类引用和 objc_msgSend 交叉引用扫描器只接受 arm64 二进制，app-info 仍依赖 Cocoa，因此无法在 Linux 上使用。README 提醒，二进制扫描器加载每个 Mach-O 文件都会预留 12 GB 虚拟内存，物理内存或交换空间须足以容纳。",
+      "递归克隆后可在 macOS 或 Linux 上用 CMake 3.5+ 和 C++17 编译器构建；compile-cmake.sh 会先把固定版本的 Capstone、Unicorn（arm、aarch64 和 x86）和 Keystone 子模块编译为静态库。仓库还附带 Xcode 工程。只有应用生成的脚本时才需要 IDA Pro。",
+      "GitHub Actions 在 Ubuntu 和 macOS 上构建，并仅在 macOS 上扫描随附的示例应用基准文件、运行内置的 objc_msgSend 交叉引用测试；Travis CI 负责构建并发布带标签的版本。README 说明 objc-msg-xref 为提高速度不跟随任何调用，因此结果会有部分缺失。本次审阅未运行工具或测试。",
+      "采用 GPL-3.0（LICENSE）。项目自称 iOS 安全漏洞利用工具集，本条目只介绍其分析功能。被分析的应用和 Apple 框架适用各自条款，Capstone、Unicorn 与 Keystone 子模块也有各自的许可证。"
+    ]
   }
 }
