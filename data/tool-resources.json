@@ -11759,5 +11759,35 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "imsprog",
+    "name": "IMSProg",
+    "url": "https://github.com/bigbigmdm/IMSProg",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Qt desktop programmer that reads, writes, erases and verifies I2C, SPI and MicroWire EEPROMs, FeRAM, DataFlash and SPI NOR/NAND flash chips through low-cost CH341A, CH347T and FT232H USB programmers. It identifies SPI flash by JEDEC ID against an editable chip database, shows SFDP, status and security registers, scans NAND bad blocks, and keeps the chip image in a hex-editor buffer that can save or load parts of the image and import or export Intel HEX. Companion programs edit the chip database and update it from the author's web server.",
+    "description_zh": "基于 Qt 的桌面编程器，通过低成本的 CH341A、CH347T 和 FT232H USB 编程器读取、写入、擦除和校验 I2C、SPI 与 MicroWire EEPROM、FeRAM、DataFlash 以及 SPI NOR/NAND 闪存芯片。它根据 JEDEC ID 在可编辑的芯片数据库中识别 SPI 闪存，显示 SFDP、状态寄存器和安全寄存器，可扫描 NAND 坏块，并把芯片镜像放在十六进制编辑缓冲区中，支持按区段保存或载入以及导入导出 Intel HEX。配套程序用于编辑芯片数据库，并从作者的网站更新数据库。",
+    "evidence_url": "https://github.com/bigbigmdm/IMSProg/blob/a9c0a5d943e0f2d05a4012f215a2801a6c4d51e1/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.9.1, published 2026-09-04 with a Flatpak and a macOS arm64 build; the ChangeLog says it added FT232H v1.2 support. The reviewed main commit is 41 commits ahead, mostly macOS packaging and path fixes. README lists Debian, Fedora, openSUSE, AUR, ALT, ROSA and RED OS packages and an Ubuntu PPA; a Windows build is maintained separately by a third party.",
+      "Builds with CMake, g++ or clang, Qt5 or Qt6 with the Linguist tools, libusb 1.0, libftdi, pkg-config and udev on Linux, where README says Debian before 11 and Ubuntu before 20.04 are unsupported, or with Homebrew packages and the Xcode command-line tools on macOS. build_all.sh compiles and installs the programmer, database editor and updater with the udev rules and chip database. CI builds Ubuntu 22.04, 24.04 and 26.04 DEB packages, a Fedora 44 RPM checked with rpmlint and a macOS 15 build; no automated tests are published.",
+      "Needs one of the supported USB programmers and, per README, adapters for 93xxx MicroWire, 45xxx DataFlash, WSON-8 SPI NAND and 1.8 V chips. CH347 devices do not support MicroWire, and Verify and Check erase do not skip bad blocks on NAND chips. Images come from the user's own chips; the repository holds no firmware dumps, only its IMSProg.Dat chip database, which the updater downloads from the author's antenna-dvb-t2.ru site.",
+      "GPL-3.0-or-later per README, with SNANDer-derived parts under GPL-2.0+, QHexEdit2 under LGPL-2.1 and CH347 code under BSD-1-Clause. IMSProg transfers chip contents only; analysing a dump needs other tools. No programmer or chip was used in this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bigbigmdm/IMSProg/blob/a9c0a5d943e0f2d05a4012f215a2801a6c4d51e1/ChangeLog",
+      "https://github.com/bigbigmdm/IMSProg/blob/a9c0a5d943e0f2d05a4012f215a2801a6c4d51e1/build_all.sh",
+      "https://github.com/bigbigmdm/IMSProg/blob/a9c0a5d943e0f2d05a4012f215a2801a6c4d51e1/.github/workflows/build.yml",
+      "https://github.com/bigbigmdm/IMSProg/blob/a9c0a5d943e0f2d05a4012f215a2801a6c4d51e1/IMSProg_database_update/main.cpp",
+      "https://github.com/bigbigmdm/IMSProg/blob/a9c0a5d943e0f2d05a4012f215a2801a6c4d51e1/LICENSE",
+      "https://github.com/bigbigmdm/IMSProg/releases/tag/v1.9.1"
+    ]
   }
 ]
