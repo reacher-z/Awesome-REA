@@ -11759,5 +11759,38 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "mytechnotalent-embedded-hacking",
+    "name": "Embedded Hacking (mytechnotalent)",
+    "url": "https://github.com/mytechnotalent/Embedded-Hacking",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A free English course by mytechnotalent on developing, debugging and reverse engineering firmware for the Raspberry Pi Pico 2 (RP2350, Arm Cortex-M33). A fourteen-week syllabus with slides, Markdown notebooks and a 40-chapter PDF textbook follows a write, debug, then hack pattern from hello-world through variables, data types, constants, operators, conditionals, structures and functions, using GDB with OpenOCD and Ghidra, with Binary Ninja and IDA versions of the notebooks from week 4; an I2C LCD, GPS, LoRa radio, servo and IR remote supply the exercises. Graded CTFs, story-driven classified-brief challenges and a secure-boot custom bootloader ship as author-built binaries alongside their source.",
+    "description_zh": "mytechnotalent 编写的免费英文课程，讲解 Raspberry Pi Pico 2（RP2350，Arm Cortex-M33）固件的开发、调试与逆向。14 周的课程大纲配有幻灯片、Markdown 笔记和 40 章 PDF 教材，按“编写、调试、再破解”的模式，从 hello world 讲到变量、数据类型、常量、运算符、条件语句、结构体和函数，使用 GDB 配合 OpenOCD 以及 Ghidra，第 4 周起的笔记另有 Binary Ninja 和 IDA 版本；练习围绕 I2C LCD、GPS、LoRa 无线模块、舵机和红外遥控展开。计分 CTF、剧情式“机密简报”挑战和一个安全启动自定义引导程序均以作者构建的二进制文件形式提供，并附有源码。",
+    "evidence_url": "https://github.com/mytechnotalent/Embedded-Hacking/blob/76fa253e9b54aba39b9b02d7738664a65864b425/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit 76fa253 (2026-10-19). The repository dates from October 2023, but its current history restarts with an initial commit on 2026-10-07 and has received commits almost daily since; there are no releases. Weeks 1–7 and 9–11 have slides and notebooks; Week 8 is a midterm built on CTF-02, Weeks 12–13 list only topics, and the two Week 14 final projects are scenario descriptions with no linked files. A supplemental section, which the README places beyond the course, links Rust, Arm-assembly and RISC-V-assembly tutorials, drivers and IoT CTF projects in the author's other repositories.",
+      "The README expects intermediate C including pointers, bare-metal assembly basics, a working model of registers and the stack, command-line use and breadboarding. Hardware is a Raspberry Pi Pico 2 with a Raspberry Pi Debug Probe and the listed parts, among them LEDs, a push button, a 1602 I2C LCD, a DHT11 sensor, an SG90 servo, a VS1838B IR receiver with an NEC remote, a u-blox NEO-6M GPS module, two REYAX RYLR998 LoRa modules and an FT232RL USB-serial adapter; Fritzing and wiring diagrams are in hardware/.",
+      "Setup is native on Windows x64, Apple-silicon macOS and Linux x64: the VS Code Raspberry Pi Pico extension installs the Pico SDK, Arm GNU Toolchain, picotool and OpenOCD, builds use CMake and Ninja, and the course adds Ghidra with JDK 21, a serial terminal and a licensed Binary Ninja Personal; the IDA notebook variants additionally assume IDA. Root flash and debug-server scripts wrap flashing and the debug server.",
+      "No third-party firmware is needed: the exercises target programs the author wrote, and the repository commits their source with build outputs (ELF, BIN, UF2, HEX, disassembly and map files), two Binary Ninja databases, CTF-02's static libraries (its auth module, an mbedTLS subset and the Argon2 reference implementation), the RP2350 SVD file and the custom bootloader's signed images. datasheets/ holds copies of the RP2350 datasheet, the Pico C/C++ SDK book, Arm's Cortex-M33 Technical Reference Manual, the Armv8-M Architecture Reference Manual, AAPCS32 and Application Note 132, which keep their publishers' terms.",
+      "Apache-2.0 for the repository. The README's legal disclaimer limits use to educational, research and defensive work on devices the user owns or is explicitly authorized to test. A bundled OpenCode skill only enforces the author's C coding standard, and no REA connection is established. This collection read the README, the repository tree and selected challenge files; it did not work through the lessons, build or flash firmware, or review the textbook, slides or linked repositories."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mytechnotalent/Embedded-Hacking/tree/76fa253e9b54aba39b9b02d7738664a65864b425",
+      "https://github.com/mytechnotalent/Embedded-Hacking/blob/76fa253e9b54aba39b9b02d7738664a65864b425/README.md#L44-L180",
+      "https://github.com/mytechnotalent/Embedded-Hacking/blob/76fa253e9b54aba39b9b02d7738664a65864b425/README.md#L244-L641",
+      "https://github.com/mytechnotalent/Embedded-Hacking/tree/76fa253e9b54aba39b9b02d7738664a65864b425/datasheets",
+      "https://github.com/mytechnotalent/Embedded-Hacking/blob/76fa253e9b54aba39b9b02d7738664a65864b425/WEEK07/0x0017a_ctf/CMakeLists.txt",
+      "https://github.com/mytechnotalent/Embedded-Hacking/blob/76fa253e9b54aba39b9b02d7738664a65864b425/WEEK11/0x0026a_custom-bootloader/README.md",
+      "https://github.com/mytechnotalent/Embedded-Hacking/blob/76fa253e9b54aba39b9b02d7738664a65864b425/.opencode/skill/embedded-c-standard/SKILL.md",
+      "https://github.com/mytechnotalent/Embedded-Hacking/blob/76fa253e9b54aba39b9b02d7738664a65864b425/LICENSE"
+    ]
   }
 ]
