@@ -138,7 +138,7 @@
 - [aimardcr/akane-injector](https://github.com/aimardcr/akane-injector) — 适用于 Android、由内核辅助的共享库注入器。将任意 .so 加载到目标进程，无需 ptrace、进程内 dlopen，也不在 /proc/&lt;pid&gt;/maps 中留下可见痕迹。支持 GKI 2.0（Android 12–16）。 **[174 星标]**
 - [okankurtuluss/FridaBypassKit](https://github.com/okankurtuluss/FridaBypassKit) — Android 通用反检测绕过框架：绕过 Root、SSL 证书固定、模拟器及调试检测。 **[170 星标]**
 - [user1342/AutoDroid](https://github.com/user1342/AutoDroid) — 自动化 Android 设备交互的工具，包含 ADB、AndroGuard 及 Frida 交互。 **[164 星标]**
-- [huuck/Katalina](https://github.com/huuck/Katalina) — Katalina 类似于面向 Dalvik 字节码的 Unicorn，提供可逐条执行 Android 字节码指令的环境。 **[162 星标]**
+- [huuck/Katalina](https://github.com/huuck/Katalina) — Katalina 类似于面向 Dalvik 字节码的 Unicorn，提供可逐条执行 Android 字节码指令的环境。 **[162 星标]** · 精选：[Katalina Dalvik 字节码模拟器](https://awesomerea.org/zh/resources/katalina/)
 - [ZSA233/frida-analykit](https://github.com/ZSA233/frida-analykit) — Frida 工具包 - 主要面向安卓端逆向，解决frida环境版本管理和对Agent端常用底层工具方法封装，支持MCP。（目前主要由AI开发维护代码） **[156 星标]**
 - [in1nit1t/uniref](https://github.com/in1nit1t/uniref) — 用于分析 Unity 应用的 Python 编程框架。 **[154 星标]**
 - [ivan-sincek/malware-apk](https://github.com/ivan-sincek/malware-apk) — 作为漏洞猎人，你的漏洞赏金报告是否因未使用“恶意”概念验证（PoC）应用来利用漏洞而遭到拒绝？本项目可以帮上忙！ **[154 星标]**
