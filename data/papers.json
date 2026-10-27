@@ -7294,5 +7294,52 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-binsum",
+    "title": "Binary Code Summarization: Benchmarking ChatGPT/GPT-4 and Other Large Language Models",
+    "title_zh": "二进制代码摘要：ChatGPT／GPT-4 及其他大语言模型的基准评测",
+    "authors": [
+      "Xin Jin",
+      "Jonathan Larson",
+      "Weiwei Yang",
+      "Zhiqiang Lin"
+    ],
+    "year": 2023,
+    "publication_date": "2023-12-15",
+    "date_precision": "day",
+    "date_basis": "arXiv v1 submission date; no later version, journal reference or proceedings publication was found.",
+    "date_basis_zh": "arXiv v1 首次提交日期；未找到后续版本、期刊引用信息或会议论文集出版记录。",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2312.09601",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2023-12-15",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2312.09601",
+    "pdf_url": "https://arxiv.org/pdf/2312.09601v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "BinSum benchmarks LLMs on summarizing binary functions in natural language. The authors compile 44 GNU projects with GCC 7.5 for x86, x64, ARM and MIPS at -O0 to -O3, match 557,664 binary functions to developer comments as reference summaries, and present each function as raw bytes, assembly, IDA microcode or decompiled code with and without symbols. GPT-4, ChatGPT, Llama 2 and Code Llama receive prompts selected from 320 GPT-4-generated candidates, with the fine-tuned BinT5 as a baseline; outputs are scored by embedding similarity alongside BLEU, METEOR and ROUGE-L. Decompiled code is the most useful representation, and stripping symbols lowers the average similarity score from 0.449 to 0.202.",
+    "description_zh": "BinSum 评测大语言模型以自然语言概括二进制函数的能力。作者使用 GCC 7.5 将 44 个 GNU 项目编译为 x86、x64、ARM 和 MIPS 架构、-O0 至 -O3 优化级别的二进制，把 557,664 个二进制函数与开发者注释匹配作为参考摘要，并以原始字节、汇编、IDA 微码，以及带或不带符号的反编译代码等形式呈现每个函数。GPT-4、ChatGPT、Llama 2 与 Code Llama 使用从 320 个由 GPT-4 生成的候选中选出的提示词，并以经过微调的 BinT5 作为基线；输出以嵌入相似度并结合 BLEU、METEOR 与 ROUGE-L 评分。反编译代码是最有用的表示形式，剥离符号会使平均相似度分数从 0.449 降至 0.202。",
+    "scope_limitations_en": "Reference summaries are developer comments extracted from source, which the authors note may be inconsistent with the code. Embedding similarity with all-mpnet-base-v2 and n-gram metrics measure closeness to those comments, not whether a summary is correct or useful to an analyst, and no human evaluation is reported. All binaries are open-source GNU programs built with one GCC version, and the authors note that firmware, malware and obfuscated code are not covered. Prompts were chosen on 1,000 randomly sampled functions. The results describe the June 2023 gpt-4-0613 and gpt-3.5-turbo-16k-0613 snapshots and the 7B and 13B Llama 2 and Code Llama models, so they do not rank current models.",
+    "scope_limitations_zh": "参考摘要是从源码中提取的开发者注释，作者指出这些注释可能与代码不一致。基于 all-mpnet-base-v2 的嵌入相似度和 n-gram 指标衡量的是与这些注释的接近程度，而非摘要是否正确或对分析人员有用；论文未报告人工评估。所有二进制均为使用同一 GCC 版本构建的开源 GNU 程序，作者指出固件、恶意软件和混淆代码不在覆盖范围内。提示词基于随机抽取的 1,000 个函数选出。结果对应 2023 年 6 月的 gpt-4-0613 与 gpt-3.5-turbo-16k-0613 快照，以及 7B 和 13B 规模的 Llama 2 与 Code Llama 模型，不能据此对当前模型排名。",
+    "why_fits_en": "Adds a dedicated large-scale benchmark for natural-language summaries of binary functions, a task that appears elsewhere in the bibliography only as one part of broader binary-analysis benchmarks.",
+    "why_fits_zh": "补充一个专门针对二进制函数自然语言摘要的大规模基准；该任务在本书目的其他条目中仅作为更广泛二进制分析基准的一部分出现。",
+    "metadata_notes": "Reviewed arXiv v1, the only version, which has no comment, journal reference or DOI; a Crossref search found no peer-reviewed version. The paper says its code and dataset are released at github.com/xinjin95/BinSum, but at the reviewed commit, last pushed on 2023-12-18, that repository holds only a README whose Dataset section reads “Coming soon”. It has no license file, and its arXiv badge shows the wrong identifier 2312.02120 while linking to 2312.09601. No code link is recorded. The authors report 4,058,297,977 inference tokens, US$11,418 in model execution costs and 873 A100 GPU hours. No data was downloaded, and no code or experiments were run.",
+    "metadata_notes_zh": "审阅了 arXiv v1，即唯一版本，其中没有注释、期刊引用信息或 DOI；在 Crossref 中检索未找到经同行评审的版本。论文称代码与数据集发布于 github.com/xinjin95/BinSum，但在所审阅的提交（最后推送于 2023-12-18）中，该仓库只有一个 README，其 Dataset 章节写着“Coming soon”。仓库没有许可证文件，其 arXiv 徽章显示错误的编号 2312.02120，链接却指向 2312.09601。因此不记录代码链接。作者报告共消耗 4,058,297,977 个推理词元、11,418 美元模型运行费用和 873 个 A100 GPU 小时。本次未下载数据，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2312.09601v1",
+      "https://arxiv.org/pdf/2312.09601v1",
+      "https://github.com/xinjin95/BinSum/blob/bb2e56778349da36a4609a223fa8d84d39517db4/README.md",
+      "https://github.com/xinjin95/BinSum/tree/bb2e56778349da36a4609a223fa8d84d39517db4"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

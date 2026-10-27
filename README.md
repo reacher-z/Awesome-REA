@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 492](https://img.shields.io/badge/resources-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 208](https://img.shields.io/badge/cases-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 492](https://img.shields.io/badge/resources-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 208](https://img.shields.io/badge/cases-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 135](https://img.shields.io/badge/papers-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-492 curated resources (208 cases) · 134 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 489 because 3 of these appear only under Papers.
+492 curated resources (208 cases) · 135 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 489 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (134) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (135) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
 
 **More ways to browse**
 
@@ -639,13 +639,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**134 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**135 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (57) · [Websites](#papers-website-reconstruction) (22)
+- [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (58) · [Websites](#papers-website-reconstruction) (22)
 - [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (12) · [Firmware](#papers-firmware-analysis) (13)
 - [Protocols](#papers-protocol-analysis) (13)
 
@@ -718,6 +718,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**SLaDe: A Portable Small Language Model Decompiler for Optimized Assembly**](https://ieeexplore.ieee.org/document/10444788) - SLaDe translates function-level assembly into C with a 200M-parameter encoder–decoder model, code-specific tokenization and PsycheC type completion. <sub>IEEE/ACM CGO 2024 · Conference paper · Jordi Armengol-Estapé et al. · [PDF](https://arxiv.org/pdf/2305.12520v3) · [Code](https://zenodo.org/records/10205121) · [Full entry](https://awesomerea.org/papers/paper-slade/)</sub>
 - [**“Len or index or count, anything but v1”: Predicting Variable Names in Decompilation Output with Transfer Learning**](https://ieeexplore.ieee.org/document/10646727) - VarBERT suggests variable names for IDA Hex-Rays and Ghidra decompiler output with a BERT-style model pre-trained on 5.2M human-written C functions from Debian and fine-tuned on decompiled code; it also predicts whether each variable came from the developer or was introduced by the decompiler. <sub>IEEE S&amp;P 2024 · Conference paper · Kuntal Kumar Pal et al. · [PDF](https://www.atipriya.com/files/papers/varbert_oakland24.pdf) · [Code](https://github.com/sefcom/VarBERT/tree/76f221a5e0af43a36169818cbbfd6e8dd3c98cdc) · [Full entry](https://awesomerea.org/papers/paper-varbert/)</sub>
 - [**DeGPT: Optimizing Decompiler Output with LLM**](https://www.ndss-symposium.org/ndss-paper/degpt-optimizing-decompiler-output-with-llm/) - Refines existing C-like decompiler output through three coordinated roles that select, propose and check changes. <sub>NDSS 2024 · Conference paper · Peiwei Hu et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-401-paper.pdf) · [Code](https://github.com/PeiweiHu/DeGPT) · [Full entry](https://awesomerea.org/papers/paper-degpt/)</sub>
+- [**Binary Code Summarization: Benchmarking ChatGPT/GPT-4 and Other Large Language Models**](https://arxiv.org/abs/2312.09601) - BinSum benchmarks LLMs on summarizing binary functions in natural language. <sub>arXiv 2023 · Preprint · Xin Jin et al. · [PDF](https://arxiv.org/pdf/2312.09601v1) · [Full entry](https://awesomerea.org/papers/paper-binsum/)</sub>
 - [**XFL: Naming Functions in Binaries with Extreme Multi-label Learning**](https://ieeexplore.ieee.org/document/10179439) - XFL treats function naming in stripped binaries as extreme multi-label classification: names are split into tokens, and PfastreXML ranks which tokens from a vocabulary of frequent labels fit each function. <sub>IEEE S&amp;P 2023 · Conference paper · James Patrick-Evans et al. · [PDF](https://arxiv.org/pdf/2107.13404v4) · [Code](https://github.com/lmu-plai/xfl) · [Full entry](https://awesomerea.org/papers/paper-xfl/)</sub>
 - [**SymLM: Predicting Function Names in Stripped Binaries via Context-Sensitive Execution-Aware Code Embeddings**](https://dl.acm.org/doi/10.1145/3548606.3560612) - SymLM predicts function names for stripped binaries as sets of name words. <sub>ACM CCS 2022 · Conference paper · Xin Jin et al. · [PDF](https://xinjin95.github.io/assets/pdf/SymLM_ccs2022_paper.pdf) · [Code](https://github.com/OSUSecLab/SymLM) · [Full entry](https://awesomerea.org/papers/paper-symlm/)</sub>
 - [**Augmenting Decompiler Output with Learned Variable Names and Types**](https://www.usenix.org/conference/usenixsecurity22/presentation/chen-qibin) - Introduces DIRTY, a Transformer model that recommends variable names and types from decompiled code and layout information, together with the DIRT corpus for training and evaluation. <sub>USENIX Security 2022 · Conference paper · Qibin Chen et al. · [PDF](https://arxiv.org/pdf/2108.06363) · [Code](https://github.com/CMUSTRUDEL/DIRTY) · [Full entry](https://awesomerea.org/papers/paper-dirty/)</sub>
