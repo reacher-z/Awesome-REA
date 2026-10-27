@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 210 | 208 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 88 | 88 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 293 | 293 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 87 | 87 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 294 | 294 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 225 occurrences have catalog links. They reference 215 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 441 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 442 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -448,6 +448,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Dhaedalida: an AI reverse-engineering comparison on a self-made licensing sample | Insufficient evidence | [Source](https://x.com/i/status/2111560797855916293) |
 | FormEasy: an agent-native forms project reportedly based on studying Google Forms | Insufficient evidence | [Source](https://x.com/i/status/2111562194660016471) |
 | Coding harnesses into skills: a plan to study agent orchestration implementations | Insufficient evidence | [Source](https://x.com/YashasGunderia/status/2111579690532278697) |
+| Gemini Web To API: an agent installation test against stand-in services only | Insufficient evidence | [Source](https://x.com/argusiccom/status/2111585716195004425) |
 | DeepSeek V4.1: a reported V8 n-day to Electron IPC investigation | Insufficient evidence | [Source](https://x.com/i/status/2111587595750637954) |
 | An offline Linux reverse-engineering workspace: separating Codex from private files | Insufficient evidence | [Source](https://x.com/i/status/2111588450969231812) |
 | CM 01-02 to FM26: an idea to study football-manager data migration with REA | Insufficient evidence | [Source](https://x.com/i/status/2111591082119106953) |
