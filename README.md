@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 519](https://img.shields.io/badge/resources-519-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 220](https://img.shields.io/badge/cases-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 144](https://img.shields.io/badge/papers-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 520](https://img.shields.io/badge/resources-520-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 221](https://img.shields.io/badge/cases-221-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 144](https://img.shields.io/badge/papers-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)** · **[Suggest a resource](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)** · **[Contributing](#contributing)**
@@ -21,11 +21,11 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-519 curated resources (220 cases) · 144 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 516 because 3 of these appear only under Papers.
+520 curated resources (221 cases) · 144 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 517 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
-- [Website](#website) (29) · [Game](#game) (199) · [App](#app) (83)
+- [Website](#website) (29) · [Game](#game) (200) · [App](#app) (83)
 - [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (24) · [Protocol](#protocol) (22)
 
 **Research and workflows**
@@ -34,7 +34,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (220) · [Related Collections](#related-collections) (11) · [Full Repository Index](#full-repository-index) (3,309) · [Contributing](#contributing)
+- [All cases](https://awesomerea.org/cases/) (221) · [Related Collections](#related-collections) (11) · [Full Repository Index](#full-repository-index) (3,309) · [Contributing](#contributing)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -263,6 +263,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**sead: a decompilation of Nintendo’s first-party C++ standard library**](https://github.com/open-ead/sead) - Decompiles sead, the C++ standard library that Nintendo statically links into its first-party games, covering containers, heaps, strings, math, file devices, threads, the game framework and graphics. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sead-nintendo-library-decomp-case/)</sub>
 - [**Animal Forest: an in-progress matching N64 decompilation**](https://github.com/zeldaret/af) - Rebuilds the Japanese Nintendo 64 release of Animal Forest (Dōbutsu no Mori) from C code reverse-engineered from the ROM, combined with assets and assembly extracted from a user-supplied ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/animal-forest-n64-decomp-case/)</sub>
 - [**Phantom Hourglass: an early-stage matching Nintendo DS decompilation**](https://github.com/zeldaret/ph) - Recreates C++ source for The Legend of Zelda: Phantom Hourglass by hand-decompiling its European and US Nintendo DS releases, using the dsd toolkit to delink code from a user-supplied ROM and rebuild the ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/phantom-hourglass-ds-decomp-case/)</sub>
+- [**Kinoko: reimplementing Mario Kart Wii’s physics engine for exact ghost replay**](https://github.com/vabold/Kinoko) - Re-implements Mario Kart Wii’s physics engine in C++ as a command-line simulator, continuing stblr/Hanachan’s goal of perfectly accurate time-trial ghost replay. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/kinoko-mkwii-physics-reimplementation-case/)</sub>
 
 #### Tools, projects and integrations
 

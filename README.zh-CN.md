@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 519](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-519-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 220](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 144](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 520](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-520-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 221](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-221-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 144](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)** · **[推荐资源](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)** · **[参与贡献](#参与贡献)**
@@ -21,11 +21,11 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-519 项精选资源（220 个案例）· 144 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 516。
+520 项精选资源（221 个案例）· 144 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 517。
 
 **按目标找工具与案例**
 
-- [网站](#website) (29) · [游戏](#game) (199) · [应用](#app) (83)
+- [网站](#website) (29) · [游戏](#game) (200) · [应用](#app) (83)
 - [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (24) · [协议](#protocol) (22)
 
 **论文与工作流**
@@ -34,7 +34,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (220) · [相关合集](#related-collections) (11) · [完整仓库索引](#完整仓库索引) (3,309) · [参与贡献](#参与贡献)
+- [全部案例](https://awesomerea.org/zh/cases/) (221) · [相关合集](#related-collections) (11) · [完整仓库索引](#完整仓库索引) (3,309) · [参与贡献](#参与贡献)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -264,6 +264,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**sead：Nintendo 第一方 C++ 标准库的反编译重建**](https://github.com/open-ead/sead) - 反编译 sead，即 Nintendo 静态链接进其第一方游戏的 C++ 标准库，涵盖容器、堆、字符串、数学、文件设备、线程、游戏框架和图形等模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sead-nintendo-library-decomp-case/)</sub>
 - [**《动物之森》：进行中的 N64 一致性反编译**](https://github.com/zeldaret/af) - 将从 ROM 逆向得到的 C 代码与从使用者自备 ROM 中提取的素材和汇编结合，重建日版 Nintendo 64《动物之森》（どうぶつの森）。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/animal-forest-n64-decomp-case/)</sub>
 - [**《幻影沙漏》：早期阶段的 Nintendo DS 一致性反编译**](https://github.com/zeldaret/ph) - 通过手工反编译，为《塞尔达传说 幻影沙漏》的欧版与美版 Nintendo DS 重建 C++ 源码：借助 dsd 工具集从使用者自备的 ROM 中拆分代码，再重新构建 ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/phantom-hourglass-ds-decomp-case/)</sub>
+- [**Kinoko：为精确回放幽灵记录而重新实现 Mario Kart Wii 物理引擎**](https://github.com/vabold/Kinoko) - 以 C++ 将 Mario Kart Wii 的物理引擎重新实现为命令行模拟器，延续 stblr/Hanachan 的目标：完全准确地回放计时赛幽灵记录。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kinoko-mkwii-physics-reimplementation-case/)</sub>
 
 #### 工具、项目与集成
 
