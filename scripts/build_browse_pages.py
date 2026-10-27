@@ -8,7 +8,7 @@ from pathlib import Path
 import shutil
 from urllib.parse import urlsplit
 
-from build_discovery_pages import collection_page_schema, jsonld_script
+from build_discovery_pages import EXTERNAL_TITLE_ARROW, collection_page_schema, jsonld_script
 from open_graph import open_graph_meta
 from build_repository_index import CATEGORIES
 from source_descriptions import description_fallback
@@ -40,7 +40,7 @@ def icon(name: str, use_pro: bool) -> str:
     if name == 'github':
         return '<span class="icon browse-github-fallback" aria-hidden="true">GH</span>'
     if name == 'external':
-        return '<span class="browse-text-arrow" aria-hidden="true">↗</span>'
+        return EXTERNAL_TITLE_ARROW
     return ''
 
 
