@@ -1,6 +1,6 @@
 # Games
 
-[All categories](README.md) · [简体中文](game-analysis.zh-CN.md)
+[All categories](README.md) · [On the website](https://awesomerea.org/browse/game-analysis/) · [简体中文](game-analysis.zh-CN.md)
 
 **484 repositories** · 2026-10-20 UTC
 

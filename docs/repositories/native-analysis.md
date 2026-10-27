@@ -1,6 +1,6 @@
 # Native binaries
 
-[All categories](README.md) · [简体中文](native-analysis.zh-CN.md)
+[All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
 **851 repositories** · 2026-10-20 UTC
 

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 490](https://img.shields.io/badge/resources-490-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 206](https://img.shields.io/badge/cases-206-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 492](https://img.shields.io/badge/resources-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 208](https://img.shields.io/badge/cases-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,10 +21,12 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
+492 curated resources (208 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 489 because 3 of these appear only under Papers.
+
 **Tools and cases by target**
 
-- [Website](#website) (29) · [Game](#game) (193) · [App](#app) (77)
-- [Native Binary](#native-binary) (64) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (18)
+- [Website](#website) (29) · [Game](#game) (193) · [App](#app) (78)
+- [Native Binary](#native-binary) (64) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (19)
 
 **Research and workflows**
 
@@ -32,7 +34,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (206) · [Related Collections](#related-collections) (7) · [Full Repository Index](#full-repository-index) (3,309)
+- [All cases](https://awesomerea.org/cases/) (208) · [Related Collections](#related-collections) (7) · [Full Repository Index](#full-repository-index) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -328,6 +330,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Open Scrantic: reconstructing the Johnny Castaway screensaver engine**](https://github.com/glauberlima/open-scrantic) - Reconstructs the Johnny Castaway screensaver engine in Rust, with author-disclosed REA and Claude Code use. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/open-scrantic-screensaver-case/)</sub>
 - [**Screen Studio: an author-reported REA study of auto-zoom rules**](https://x.com/i/article/2109834677343432704) - The author reports using REA to map Screen Studio’s Electron package, reading six auto-zoom and cursor rules from its obfuscated code with Claude Code’s help, and having Claude Code write an independent recorder and renderer from those rules. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/screen-studio-auto-zoom-case/)</sub>
 - [**Claude Code background lab: an REA-informed reimplementation of a desktop animation**](https://github.com/Henry-fan88/claude-code-background) - Reimplements the glyph-wind background of the Claude desktop app’s Claude Code New session view as an offline WebGL2 page with a 38-slider control panel. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/claude-code-background-lab-case/)</sub>
+- [**Notes CSV export: an author-reported REA check of reconstruction oracles**](https://x.com/i/article/2110962506604929025) - A Chinese article breaks three versions of a Python CSV exporter that reproduces the Notes teaching app shipped with REA. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/rea-notes-csv-oracle-mutation-case/)</sub>
 - [**LSX II Volume Fixer: reconstructing volume behavior**](https://github.com/roberdorfer/kef-lsx-volume) - Uses measured USB-volume behavior and a macOS audio proxy to map volume keys to a KEF LSX II’s LAN control. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/kef-lsx-volume-case/)</sub>
 - [**UU Remote on Linux: an unofficial protocol implementation**](https://github.com/VallierDev/uu-remote-linux) - Implements an unofficial native Linux host for NetEase UU Remote, using protocol behavior the maintainer says was recovered from official-client traffic and shipped programs. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/uu-remote-linux-protocol-case/)</sub>
 - [**TCLimate: reconstructing selected TCL Home cloud controls**](https://github.com/umarz317/TCLimate) - Implements selected TCL Home air-conditioner controls and electricity reporting in a native macOS menu-bar app. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/tclimate-cloud-controls-case/)</sub>
@@ -510,6 +513,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**cooler-lcd: a Thermalright display protocol implementation**](https://github.com/kristjaningi/cooler-lcd) - Implements a USB picture-transfer driver for Thermalright Vision cooler displays, with a Rust dashboard replacing the vendor display application. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/cooler-lcd-case/)</sub>
 - [**NJFE: a Soulear camera protocol bridge for desktop inspection**](https://github.com/WildweaselMS/NJFE) - Reuses otoscope's reverse-engineered i4season/Soulear protocol in an ESP32-C3 bridge and Python desktop viewer. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/njfe-ear-camera-bridge-case/)</sub>
 - [**hw-harness: scanner USB protocol investigation**](https://github.com/cschalle/hw-harness) - Documents an author-reported scanner investigation comparing vendor-driver USB control transfers with Linux-driver traces to infer initialization, timing and resolution parameters. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/hw-harness-reference-case/)</sub>
+- [**Roborock Local Server: a self-hosted stand-in for Roborock’s vacuum cloud**](https://github.com/Python-roborock/local_roborock_server) - Runs a local HTTPS and MQTT stack in place of Roborock’s cloud, so supported vacuums keep live maps and controls on an isolated network without rooting or hardware changes. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/roborock-local-server-cloud-case/)</sub>
 
 #### Tools, projects and integrations
 

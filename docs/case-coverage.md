@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 210 | 208 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 100 | 100 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 281 | 281 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Already curated (`already-curated`) | 212 | 210 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 70 | 70 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 309 | 309 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-224 occurrences have catalog links. They reference 214 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+227 occurrences have catalog links. They reference 217 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 429 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 460 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -203,10 +203,28 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | WHOOP and Zhoop: an iPhone data path for a health agent | Insufficient evidence | [Source](https://x.com/0xLogicrw/status/2110659108076769728) |
 | macOS Notes: a reported REA-assisted SwiftUI rebuild | Insufficient evidence | [Source](https://x.com/xiyue0803/status/2110670751087137197) |
 | reverse-skill: investigation workflows for coding agents | Pending | [Source](https://x.com/i/status/2110680583634366777) |
+| A thermofluid equation solver: ongoing REA/Opus work | Insufficient evidence | [Source](https://x.com/iamsupersocks/status/2110684985900355622) |
+| A booking funnel investigated and rebuilt as a personal calendar | Insufficient evidence | [Source](https://x.com/JulianGoldieSEO/status/2110686215846699236) |
+| Watch5 Pro: a reported Claude/REA health-sensor app | Insufficient evidence | [Source](https://x.com/Sp00kyD00kyXRS/status/2110693137773392155) |
+| REA with local Qwen and pi: multi-target commercial-software tests | Insufficient evidence | [Source](https://x.com/deluxebear/status/2110696564335214807) |
+| QUICKSURFACE AI: announced scan-to-parametric-CAD automation | Insufficient evidence | [Source](https://x.com/ManMetrologyLTD/status/2110699093333000322) |
+| Spider-Man swinging in GTA V: an internally inconsistent REA claim | Insufficient evidence | [Source](https://x.com/vmrmax/status/2110699414792642732) |
+| Humidity readings through an agent-built Bluetooth app | Insufficient evidence | [Source](https://x.com/real_kai42/status/2110700189912912155) |
+| Grok Bot: a worker-network reverse-engineering idea not pursued | Insufficient evidence | [Source](https://x.com/leaf_sanren/status/2110702662270460232) |
 | From a Little Prince game to Dragon Ball-themed HTML 3D | Insufficient evidence | [Source](https://x.com/i/status/2110713533193453572) |
 | SentinelOne and Daybreak: a reported malware-analysis time reduction | Insufficient evidence | [Source](https://x.com/i/status/2110726263392387158) |
+| A construction firm's SaaS workflows, observed and rebuilt | Insufficient evidence | [Source](https://x.com/andywalters/status/2110726879665660172) |
 | Reversed with AI | Already curated | [Source](https://reversedwithai.com/about) |
+| Mario Odyssey on macOS: a secondary Claude-assisted report | Insufficient evidence | [Source](https://x.com/swordBluesy/status/2110735780842999962) |
 | REA plugin for Hermes Agent | Already curated | [Source](https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/README.md) |
+| Mario's jump in Halo: an unverified six-parameter REA claim | Insufficient evidence | [Source](https://x.com/Capslock404/status/2110741739732435179) |
+| Roborock Local Server: a self-hosted stand-in for Roborock’s vacuum cloud | Already curated | [Source](https://x.com/whyamas/status/2110741945874350429) |
+| Arkham: a Grok Bot/REA research-workbench rebuild | Insufficient evidence | [Source](https://x.com/monokern/status/2110743454959509801) |
+| A plate reader's filter-wheel fault: a Claude-assisted repair report | Insufficient evidence | [Source](https://x.com/r_gross_/status/2110745676875227179) |
+| Grok Build: exploratory code study with REA and Claude Code | Insufficient evidence | [Source](https://x.com/omerfrkdemiral/status/2110749141710028914) |
+| Codex CLI: inspecting model-identity prompts and routing fields | Insufficient evidence | [Source](https://x.com/jiangkoumo_/status/2110751118343164066) |
+| Rust Duty: reconstructing gameplay from video, not decompilation | Insufficient evidence | [Source](https://x.com/reidhslaughter/status/2110752844328419587) |
+| 2010 Rust Rewrite Mashup: Skate 3 in MW2 maps | Pending | [Source](https://x.com/thenuntheia/status/2110757135009112576) |
 | Linux EAC: an AI devirtualization claim via IDA Assist MCP | Insufficient evidence | [Source](https://x.com/i/status/2110759663822352852) |
 | BINNY | Already curated | [Source](https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/README.md) |
 | An illustrative game.exe demo: two rooms and three reconstruction oracles | Insufficient evidence | [Source](https://x.com/i/status/2110783611800522897) |
@@ -225,8 +243,14 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Plustek 8200i / ThinkPad MIPI: improve Linux drivers using Windows reference behavior | Pending | [Source](https://github.com/cschalle/hw-harness/blob/093afc5c576c200f29b771d01624a327d0ff1806/examples/plustek-film-scanner/README.md) |
 | Open-BFME: a report of AI-assisted Battle for Middle Earth decompilation and byte matching | Insufficient evidence | [Source](https://x.com/i/status/2110857508470604174) |
 | Greenlight video API: query fields with AI, then probe actual validation with invalid values | Insufficient evidence | [Source](https://x.com/i/status/2110868326528303367) |
+| Electron Notes sample: an REA static IPC test with an answer key | Insufficient evidence | [Source](https://x.com/i/status/2110869440762196138) |
+| A character on a video homepage: a report of Fu Sheng's REA mashup demonstration | Insufficient evidence | [Source](https://x.com/i/status/2110873715810660594) |
+| A personal YouTube version: an REA-assisted niche-video and AI-topic dashboard report | Insufficient evidence | [Source](https://x.com/i/status/2110878456611319835) |
 | decomp.wtf | Already curated | [Source](https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/README.md) |
+| A local REA workbench: combine investigation and personal office workflows | Insufficient evidence | [Source](https://x.com/i/status/2110904597900673267) |
 | Ledger Opus: an unverified finance-agent promotion referencing Claude for Finance | Insufficient evidence | [Source](https://x.com/i/status/2110916629244641548) |
+| Immersive Portals: an AI-assisted Minecraft JE 26.2 compatibility report | Insufficient evidence | [Source](https://x.com/i/status/2110918344886927696) |
+| TV firmware: an AI ad-removal idea and two implementation accounts | Insufficient evidence | [Source](https://x.com/i/status/2110919403961192504) |
 | Excel reconciliation workbooks: infer a procedure from an accepted artifact for agents | Insufficient evidence | [Source](https://x.com/i/status/2110919658748719318) |
 | OpenCodex / Antigravity: REA investigation of missing multi-turn tool-call signatures | Insufficient evidence | [Source](https://x.com/i/status/2110921946418602001) |
 | Minesweeper and Bilibili: a secondary roundup of REA demonstration titles | Insufficient evidence | [Source](https://x.com/i/status/2110936629221450214) |
@@ -234,7 +258,13 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Obfuscated old games: a report of Claude guessing structure sizes incorrectly | Insufficient evidence | [Source](https://x.com/i/status/2110942707074183405) |
 | Saturn Sonic 3D Blast: byte-matching decompilation and a native PC port | Insufficient evidence | [Source](https://x.com/i/status/2110939629516186067) |
 | UU Remote on Linux: an unofficial protocol implementation | Already curated | [Source](https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/README.en.md) |
+| Notes CSV export: an author-reported REA check of reconstruction oracles | Already curated | [Source](https://x.com/i/status/2110963427791487391) |
+| Obfuscated JavaScript request signatures: an author reports restoring data retrieval with REA | Insufficient evidence | [Source](https://x.com/i/status/2110968095850561701) |
+| Immersive-translation-style extensions: investigating a bring-your-own-token alternative with Codex | Insufficient evidence | [Source](https://x.com/i/status/2110976193671709123) |
+| ChatGPT Intelligent UI: asking Codex to investigate the implementation | Insufficient evidence | [Source](https://x.com/i/status/2110983483271286909) |
 | Claude Code background lab: an REA-informed reimplementation of a desktop animation | Already curated | [Source](https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/README.md) |
+| ChatGPT Work Cloud: probing a cloud agent's tools through introspection | Insufficient evidence | [Source](https://x.com/i/status/2111009945865097386) |
+| Indian Kanoon: a reported Claude Code legal-search integration | Insufficient evidence | [Source](https://x.com/i/status/2111027056234627119) |
 | JPCERT/CC: APK analysis and API probing on attack servers | Already curated | [Source](https://blogs.jpcert.or.jp/ja/2026/10/web_api_attacks.html) |
 | crashlens | Already curated | [Source](https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/README.md) |
 | RKD Telemetry Extractor: decoding Race-Keeper track-day recordings | Already curated | [Source](https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/RESEARCH_NOTES.md) |
@@ -436,6 +466,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Dhaedalida: an AI reverse-engineering comparison on a self-made licensing sample | Insufficient evidence | [Source](https://x.com/i/status/2111560797855916293) |
 | FormEasy: an agent-native forms project reportedly based on studying Google Forms | Insufficient evidence | [Source](https://x.com/i/status/2111562194660016471) |
 | Coding harnesses into skills: a plan to study agent orchestration implementations | Insufficient evidence | [Source](https://x.com/YashasGunderia/status/2111579690532278697) |
+| Gemini Web To API: an agent installation test against stand-in services only | Insufficient evidence | [Source](https://x.com/argusiccom/status/2111585716195004425) |
 | DeepSeek V4.1: a reported V8 n-day to Electron IPC investigation | Insufficient evidence | [Source](https://x.com/i/status/2111587595750637954) |
 | An offline Linux reverse-engineering workspace: separating Codex from private files | Insufficient evidence | [Source](https://x.com/i/status/2111588450969231812) |
 | CM 01-02 to FM26: an idea to study football-manager data migration with REA | Insufficient evidence | [Source](https://x.com/i/status/2111591082119106953) |
@@ -480,6 +511,7 @@ Partial or related catalog mappings:
 - `song:pokemon-hgss-multi-agent-decompile-report` — Three posts are cited. @autoaiadvantage (2026-10-15) says someone decompiled Pokémon HeartGold and SoulSilver in a month with several AI agents, using about 71 billion API tokens at an estimated $56k; the cited @Pirat_Nation post was deleted by its author, and @Alex_Vainshtein replies that the work builds on pret’s existing decompilation and tooling. None names or links the project. The fork ctrl-cheeb-del/pokeheartgold says it is fully decompiled with LLM agents and builds both ROMs byte-for-byte, but it reports no token use or cost and no post identifies it as the work described. Retain the lead without a curated case; the related mapping records only the pret baseline the reply names.
 - `song:ringfall-th04-bullet-hell-report` — The post (@0xMoryo, 2026-10-15) says someone used REA’s Ghidra provider on the 1997 PC-98 TH04 executable, recovered two bullet-ring formulas into clean-room notes, and had Claude Code build RINGFALL, a browser bullet-hell boss fight, in one session; it carries only a video. It says REA and “the TH04 study” are linked in replies, which the post API does not expose; the quoted post is a general REA tutorial article, and no RINGFALL source or build was found. Retain the lead without a curated case; the related mapping points to REA’s separately curated TH04 bullet-ring evidence, not to RINGFALL.
 - `song:schaller-opticfilm-thinkpad-linux` — The existing scanner investigation and the separate ThinkPad IMX471 tuning/driver case cover two bounded components of this report. Their mappings remain partial: neither asserts complete scanner/camera behavior, all-device compatibility or independent runtime reproduction.
+- `song:rea-electron-notes-ipc-answer-key-test` — A two-post thread (@ofmyslippers, 2026-10-15) reports three runs of REA’s static Electron analysis on a small notes app with a known answer key: 4 of 4 IPC channels, handler pairs and preload API members, correctly no sender checks, 2.5–3 s a run, and 1.0 MB of JSON from 2.3 KB of source. The test app, answer key and outputs are not published (the thread links only the REA repository), and the work evaluates REA rather than reconstructing software. Retain the lead without a curated case; the related mapping points to REA’s JavaScript guide, whose own Notes Electron fixture has one IPC channel and so is not the app tested.
 - `song:rea-game-function-matcher-audit-report` — The post (@xmyttle, 2026-10-16) retells REA’s Calculator demo and the REA blog essay “Does reverse engineering need a bigger model?” (N0zoM1z0, 2026-10-13): a relay of GPT-6 models closing stubborn Touhou function matches, and an audit that found accepted functions with wrong constants, including 1.0f where the original added 32.0f. The essay’s pinned evidence notes and TH08 commit a393f400 document that floating-literal audit, and the essay calls the reward-learning risk an inference, not an observed exploit. The catalog already covers the audit through the Touhou reconstruction-method essay, so this is a partial mapping; the model-relay essay itself is not catalogued, and the lead stays pending.
 - `song:rea-reconstruction-companion` — The pinned repository establishes the named Companion: an MIT Agent Skill that works with REA to turn evidence into scoped requirements, design, staged implementation and validation, with an optional installer-managed routing block in REA’s skill and a source-exposed evaluation kit. The full mapping covers it as a community REA integration; the existing partial mapping covers the separate Pocket Tasks worked reconstruction. Example and checker results remain maintainer-reported teaching material, and no model trial, independent evaluation or runtime reproduction is established.
 - `song:valdiorn-audio-effects-firmware-report` — valdiorn’s Hacker News comment (2026-10-15), summarized by @RealYDT, reports using Opus 5.5 to run three competitors’ effects firmware in an emulator, convert it to standalone C++ libraries and compare the results, plus Lexicon 224 and Ursa Major work. No code, emulator, library, comparison data or product versions are published, and the comment names no Lexicon repository. A reply by the author of the public reflecticon-224 emulation guesses that it was the one found; that project is recorded separately and mapped as related, not as this report’s work. Retain the lead as insufficient evidence; the reported decompilations and comparisons are unestablished.

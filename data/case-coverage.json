@@ -5419,12 +5419,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110684985900355622"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@iamsupersocks, 2026-10-15, in French) says Opus 5.5 has run around the clock since Monday reverse-engineering two projects with T3 Code and REA, an Age of Empires-like RTS and an equation solver for thermodynamics, fluid mechanics and mechanics; it calls both nearly finished and says the solver cuts a five-hour simulation to five minutes. It names no original software and links no artifact, benchmark or method write-up, and the author’s GitHub account (iamsupersocks), which names this X handle, has no repository for either project. Retain the lead without a catalog mapping; the solver, its results and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@iamsupersocks，2026-10-15，法语）称自周一起 Opus 5.5 借助 T3 Code 和 REA 全天候对两个项目做逆向：一款类《帝国时代》的 RTS，以及一个面向热力学、流体力学和力学的方程求解器；作者称两者都已接近完成，求解器把 5 小时的模拟缩短到 5 分钟。帖子未指明原软件，也未链接任何成果、基准或方法说明；作者的 GitHub 账号（iamsupersocks，其资料注明了此 X 账号）下也没有这两个项目的仓库。保留此线索而不建立目录映射；该求解器、其结果及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/iamsupersocks/status/2110684985900355622"
+      ],
       "catalog_matches": []
     },
     {
@@ -5459,12 +5461,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110686215846699236"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@JulianGoldieSEO, 2026-10-15) says Claude, given the REA repository and a link to the author’s own booking funnel, inferred its slot settings, calendar type, team members and API from the front end and rebuilt a personal calendar app with a shareable booking link in ten minutes; it shows a video and offers the procedure by direct message. It names no booking service and publishes no code, API notes or comparison, and no repository for the app was found under a GitHub account matching the handle. Retain the lead without a catalog mapping; the rebuild and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@JulianGoldieSEO，2026-10-15）称，把 REA 仓库和作者自己的预约漏斗链接交给 Claude 后，它仅凭前端推断出时段设置、日历类型、销售团队成员和 API，并在十分钟内重建了一个带可分享预约链接的个人日历应用；帖子附视频，并称操作流程可私信索取。帖子未指明所用预约服务，也未公开代码、API 说明或对照结果；在与该账号名对应的 GitHub 账号下也未找到该应用的仓库。保留此线索而不建立目录映射；该重建及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/JulianGoldieSEO/status/2110686215846699236"
+      ],
       "catalog_matches": []
     },
     {
@@ -5499,12 +5503,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110693137773392155"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited reply (@Sp00kyD00kyXRS, 2026-10-15) says Claude used REA on the author’s Watch5 Pro and added its own app that tracks health through the sensors Samsung Health uses. It names no sensors, interfaces or app and links no artifact, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the app and REA’s contribution are unestablished.",
+      "reason_zh": "所引回复（@Sp00kyD00kyXRS，2026-10-15）称让 Claude 用 REA 分析作者的 Watch5 Pro，并加装了一个自制应用，借助 Samsung Health 所用的传感器追踪健康数据。回复未说明涉及哪些传感器、接口或应用，也未链接任何成果；未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该应用及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/Sp00kyD00kyXRS/status/2110693137773392155"
+      ],
       "catalog_matches": []
     },
     {
@@ -5519,12 +5525,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110696564335214807"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@deluxebear, 2026-10-15) says REA, a self-hosted Qwen model and pi were used over two days on several commercial Java and C++ developer libraries, a disassembler’s demo registration, a video platform’s API request encryption and a slider CAPTCHA, mostly without human intervention, and credits REA’s skills with encoding reverse-engineering practice. It names no versions and links no artifact or write-up, and the author’s GitHub account (deluxebear), which names this X handle, has no repository for this work. Several targets are licensing or anti-automation protections; no method is recorded here. Retain the lead without a catalog mapping; no result or REA contribution is established.",
+      "reason_zh": "作者帖子（@deluxebear，2026-10-15）称这两天用 REA、自部署的 Qwen 模型和 pi 做逆向测试，对象包括若干商业 Java 与 C++ 开发库、一款反汇编工具演示版的注册机制、某视频平台的接口加密以及滑块验证码，基本无需人工介入，并认为 REA 的作用是把逆向最佳实践做成了 skills。帖子未指明版本，也未链接任何成果或说明文档；作者的 GitHub 账号（deluxebear，其资料注明了此 X 账号）下也没有相关仓库。其中多个目标属于授权或反自动化保护机制，此处不记录任何方法。保留此线索而不建立目录映射；任何结果及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/deluxebear/status/2110696564335214807"
+      ],
       "catalog_matches": []
     },
     {
@@ -5559,12 +5567,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110699093333000322"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post (@ManMetrologyLTD, 2026-10-15), from a metrology reseller, announces that QUICKSURFACE AI will launch on 17 November 2026 with QUICKSURFACE Pro 2027 and turn 3D scan data into editable parametric CAD models in one click; it shows a video and gives a sales contact. This is a forthcoming commercial feature for physical-part reverse engineering, not software reconstruction, and no evaluation, sample output or documentation is linked. Retain the lead without a catalog mapping; the feature’s results are unestablished.",
+      "reason_zh": "所引帖子（@ManMetrologyLTD，2026-10-15）来自一家计量设备经销商，宣布 QUICKSURFACE AI 将于 2026 年 11 月 17 日随 QUICKSURFACE Pro 2027 推出，可一键把 3D 扫描数据转为可编辑的参数化 CAD 模型；帖子附视频并给出销售联系方式。这是面向实物零件逆向工程、尚未推出的商业功能，并非软件重建，帖子也未链接任何评估、示例输出或文档。保留此线索而不建立目录映射；该功能的效果未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/ManMetrologyLTD/status/2110699093333000322"
+      ],
       "catalog_matches": []
     },
     {
@@ -5579,12 +5589,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110699414792642732"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@vmrmax, 2026-10-15) says REA and Opus 5.5 found the swing mechanics in a Spider-Man PC game within 60 minutes and that Spider-Man then web-swung through GTA V’s Los Santos; it shows a video and quotes the author’s own course article. Its own playbook, however, ends with Claude rebuilding the mechanic as Godot code with the user’s own assets, which does not explain the GTA V result. It names no game builds, publishes no SPEC.md, code, mod or tests, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the result and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@vmrmax，2026-10-15）称借助 REA 与 Opus 5.5，60 分钟内找到了 PC 版蜘蛛侠游戏的摆荡机制，随后蜘蛛侠便在《GTA V》的洛圣都摩天楼间荡蛛丝；帖子附视频，并引用了作者自己的教程长文。然而帖子给出的流程最后是让 Claude 用用户自己的素材把机制重写为 Godot 代码，这无法解释所称的《GTA V》效果。帖子未指明游戏版本，也未公开 SPEC.md、代码、模组或测试，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该成果及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/vmrmax/status/2110699414792642732"
+      ],
       "catalog_matches": []
     },
     {
@@ -5599,12 +5611,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110700189912912155"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@real_kai42, 2026-10-15) says that measuring humidity showed the author’s humidifier only helps with both nozzles running, and that the app used was written by an agent that reverse-engineered the device’s Bluetooth protocol; it shows one image. It names no device or protocol and links no app or source, and the author’s GitHub account (RealKai42), which names this X handle, lists no repository pushed after 2026-09-10. Retain the lead without a catalog mapping; the app and the recovered protocol are unestablished, and no REA use is stated.",
+      "reason_zh": "作者帖子（@real_kai42，2026-10-15）称，通过量化湿度数据发现加湿器只有两个喷嘴同时工作才有效果，并称所用的 app 是纯由智能体逆向蓝牙协议写出来的；帖子附一张图片。帖子未说明设备或协议，也未链接应用或源码；作者的 GitHub 账号（RealKai42，其资料注明了此 X 账号）没有在 2026-09-10 之后推送过的仓库。保留此线索而不建立目录映射；该应用及所恢复的协议均未确立，帖子也未提及使用 REA。",
+      "primary_evidence_urls": [
+        "https://x.com/real_kai42/status/2110700189912912155"
+      ],
       "catalog_matches": []
     },
     {
@@ -5640,12 +5654,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110702662270460232"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@leaf_sanren, 2026-10-15) says that after a Grok Bot update its local-Mac worker ignored the author’s network routing rules, that Gemini suggested decompiling the Grok Bot app to change this, and that the author instead fixed it with a network setting and advises others not to follow the AI’s suggestion. No reverse engineering was carried out, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; this records a suggestion that was not pursued.",
+      "reason_zh": "作者帖子（@leaf_sanren，2026-10-15）称，Grok Bot 自动更新后，负责连接本地 Mac 的 worker 进程不遵循作者设置的网络出口规则；Gemini 建议反编译 Grok Bot 应用来改变这一行为，而作者改用一项网络设置解决了问题，并提醒他人不要听从 AI 的建议。实际并未进行任何逆向，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这记录的是一个未被采纳的建议。",
+      "primary_evidence_urls": [
+        "https://x.com/leaf_sanren/status/2110702662270460232"
+      ],
       "catalog_matches": []
     },
     {
@@ -5749,12 +5765,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110726879665660172"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@andywalters, 2026-10-15), from the founder of an automation company, says his team is building a back-office system to move a construction firm off ProCore and Salesforce early next year, and is developing tools that interview employees and watch computer use so that agents can reverse-engineer each SaaS screen and workflow. It describes planned and in-progress commercial work, names no client and links no artifact or results. Retain the lead without a catalog mapping; no reconstruction is established.",
+      "reason_zh": "作者帖子（@andywalters，2026-10-15）来自一家自动化公司的创始人，称其团队正在开发一套后台系统，计划明年初让一家建筑公司彻底摆脱 ProCore 和 Salesforce，并在开发访谈员工、记录电脑使用情况的工具，以便让智能体逆向现有 SaaS 的每个界面和流程。帖子描述的是计划中或进行中的商业工作，未指明客户，也未链接任何成果或结果。保留此线索而不建立目录映射；任何重建成果均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/andywalters/status/2110726879665660172"
+      ],
       "catalog_matches": []
     },
     {
@@ -5822,12 +5840,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110735780842999962"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post (@swordBluesy, 2026-10-15) is a secondary write-up of a @Wiggin_Han post saying that Claude, left running overnight, produced a native macOS version of Super Mario Odyssey after studying another developer’s approach. The write-up itself says it found no project page, could not verify the claim and only guesses which approach was meant. No repository or release by the original author was found. Retain the lead without a catalog mapping; the port and any AI contribution are unestablished, and game rights are not addressed here.",
+      "reason_zh": "所引帖子（@swordBluesy，2026-10-15）是对 @Wiggin_Han 一条帖子的二手解读：原帖称让 Claude 学习另一位开发者的思路、挂机一晚上做出了《超级马力欧：奥德赛》的 macOS 本地版。该解读本身说明未找到项目页、无法核实，所谓“思路”也只是其推测。未找到原作者的仓库或发布版本。保留此线索而不建立目录映射；该移植及任何 AI 作用均未确立，此处也不涉及游戏权利问题。",
+      "primary_evidence_urls": [
+        "https://x.com/swordBluesy/status/2110735780842999962"
+      ],
       "catalog_matches": []
     },
     {
@@ -5899,12 +5919,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110741739732435179"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@Capslock404, 2026-10-15) says REA and Opus 5.5 took six jump parameters from the Super Mario 64 ROM and put Mario’s jump into Halo; it shows a video, gives generic REA setup steps, offers the prompt by reply and quotes another author’s REA course article. It names no game builds, values or mod and publishes no source, tests or download, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the mod and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@Capslock404，2026-10-15）称借助 REA 与 Opus 5.5 从《超级马力欧 64》ROM 中取出六个跳跃参数，把马力欧的跳跃放进了《光环》；帖子附视频，给出通用的 REA 安装步骤，称回复即可获取提示词，并引用了另一位作者的 REA 教程长文。帖子未指明游戏版本、参数值或模组，也未公开源码、测试或下载，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该模组及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/Capslock404/status/2110741739732435179"
+      ],
       "catalog_matches": []
     },
     {
@@ -5919,13 +5941,27 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110741945874350429"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited reply (@whyamas, 2026-10-15), listing entries from the author’s Reversed with AI directory, says agents dug through Roborock’s firmware and app to rebuild its cloud at home; the directory entry links Python-roborock/local_roborock_server. At the pinned commit the project documents a local HTTPS and MQTT stand-in for Roborock’s cloud, a technical write-up crediting Claude Code and Codex in the investigation, per-model compatibility reports and a CI-run test suite. This mapping covers that server, not every model or independent runtime reproduction.",
+      "reason_zh": "所引回复（@whyamas，2026-10-15）列举了作者 Reversed with AI 目录中的条目，称智能体深入研究 Roborock 的固件和应用，在家中重建了其云端；目录条目链接到 Python-roborock/local_roborock_server。在固定提交中，项目记录了替代 Roborock 云端的本地 HTTPS 与 MQTT 服务、将调查归功于 Claude Code 与 Codex 协助的技术说明、按型号的兼容性报告，以及由 CI 运行的测试套件。映射覆盖该服务器，不代表所有型号或独立运行复现。",
+      "primary_evidence_urls": [
+        "https://x.com/whyamas/status/2110741945874350429",
+        "https://reversedwithai.com/p/roborock-local-cloud-server",
+        "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/docs/technical_writeup.md",
+        "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/README.md",
+        "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/docs/known_limitations.md",
+        "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/docs/tested_vacuums.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "roborock-local-server-cloud-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:arkham-grok-rea-research-workbench",
@@ -5939,12 +5975,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110743454959509801"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@monokern, 2026-10-15) pitches using Grok Bot with REA to study how the Arkham on-chain analytics interface behaves and to build a personal research tool with custom watchlists, transfer filters and alerts; it shows a video of agents drafting the reconstruction and says testing against real data is the next step. It links no code, findings or results, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; by the author’s own account the rebuild is unfinished, and it is unestablished.",
+      "reason_zh": "作者帖子（@monokern，2026-10-15）推介借助 Grok Bot 与 REA 研究 Arkham 链上分析界面的行为，并据此打造带自定义关注地址、转账筛选和提醒的个人研究工具；帖子附一段智能体起草重建方案的视频，并称下一步是用真实数据测试。帖子未链接代码、调查结果或成果，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；按作者自己的说法重建尚未完成，相关成果未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/monokern/status/2110743454959509801"
+      ],
       "catalog_matches": []
     },
     {
@@ -5981,12 +6019,15 @@
         "https://x.com/i/status/2110745676875227179",
         "https://x.com/i/status/2110744888543510712"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited reply (@r_gross_, 2026-10-15) follows the author’s post that Claude, given the reader software and a webcam view of the screen, fixed a plate reader that had been written off for months. The reply says the fault was a filter-wheel alignment error failing start-up QC, and that Claude worked out how to communicate with the reader, reset its firmware, ran tests and set up a monitoring script. Neither post names the instrument model or protocol or links scripts or logs, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the repair method is undocumented, and no REA use is stated.",
+      "reason_zh": "所引回复（@r_gross_，2026-10-15）承接作者的另一条帖子：作者让 Claude 借助读板仪软件和对准屏幕的摄像头，修好了一台已坏数月、被技术人员判定报废的酶标仪。回复称故障为滤光轮对位错误导致开机自检失败，而 Claude 弄清了与仪器的通信方式、重置了固件、运行了测试并设置了监控脚本。两条帖子均未说明仪器型号或协议，也未链接脚本或日志，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；维修方法无记录，帖子也未提及使用 REA。",
+      "primary_evidence_urls": [
+        "https://x.com/r_gross_/status/2110745676875227179",
+        "https://x.com/r_gross_/status/2110744888543510712"
+      ],
       "catalog_matches": []
     },
     {
@@ -6002,12 +6043,14 @@
         "https://x.com/i/status/2110749141710028914",
         "https://x.com/i/status/2110835777248862262"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@omerfrkdemiral, 2026-10-15, in Turkish) says the author likes studying how others solved a problem, now opens open-source projects with REA through Claude Code, and is currently exploring the open-source Grok Build repository out of curiosity, with no particular goal. This describes reading publicly available source code rather than a reconstruction; it links no findings, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; no result is reported.",
+      "reason_zh": "作者帖子（@omerfrkdemiral，2026-10-15，土耳其语）称作者喜欢研究别人如何解决问题，如今借助接入 Claude Code 的 REA 打开开源项目阅读，目前正出于好奇、没有特定目标地研究开源的 Grok Build 仓库。这描述的是阅读公开源码，而非重建；帖子未链接任何调查结果，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；帖子未报告任何结果。",
+      "primary_evidence_urls": [
+        "https://x.com/omerfrkdemiral/status/2110749141710028914"
+      ],
       "catalog_matches": []
     },
     {
@@ -6042,12 +6085,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110751118343164066"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@jiangkoumo_, 2026-10-15) relays a public exchange about Codex not stating the concrete model in its system prompt, and adds that the author’s local codex-cli 0.162.1 install gives four GPT-6 model entries the same prompt opening and contains model-reroute fields. This is a brief inspection supporting a product critique, not a reconstruction; it shows two images but publishes no method, extracted files or analysis. Retain the lead without a catalog mapping; no reconstruction or REA use is established.",
+      "reason_zh": "作者帖子（@jiangkoumo_，2026-10-15）转述了一场关于 Codex 为何不在系统提示词中写明具体模型的公开争论，并补充称作者本地安装的 codex-cli 0.162.1 中，四个 GPT-6 模型条目的提示词开头完全相同，且包含模型改路由相关字段。这是为产品批评提供佐证的简短检查，而非重建；帖子附两张图片，但未公开方法、提取文件或分析。保留此线索而不建立目录映射；任何重建成果或 REA 使用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/jiangkoumo_/status/2110751118343164066"
+      ],
       "catalog_matches": []
     },
     {
@@ -6062,12 +6107,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110752844328419587"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@reidhslaughter, 2026-10-15) gives a progress update on Rust Duty, which asks whether LLMs can distill gameplay from Modern Warfare videos alone rather than decompilation, and lists renderer, telemetry, lighting and UI work by several agents. The author’s MIT-licensed rust_duty repository, pinned here, has a short README posing that question and describing an original city level; it documents no footage inputs, comparison method or results. The project builds new gameplay rather than recovering original software. Retain the lead without a catalog mapping; this is not a finding about the project.",
+      "reason_zh": "作者帖子（@reidhslaughter，2026-10-15）是 Rust Duty 的进展更新：该项目探讨大模型能否仅凭《使命召唤：现代战争》的视频（而非反编译）提炼出玩法，并列出多个智能体完成的渲染器、遥测、光照与界面工作。作者以 MIT 许可公开的 rust_duty 仓库（此处固定版本）只有一份简短 README，提出了这一问题并介绍了一个原创城市关卡，未记录所用视频素材、对照方法或结果。该项目是在构建新的玩法，而非恢复原软件。保留此线索而不建立目录映射；这不是对该项目的评判。",
+      "primary_evidence_urls": [
+        "https://x.com/reidhslaughter/status/2110752844328419587",
+        "https://github.com/RHS059/rust_duty/blob/c04706de2e559a08532be78e4bd37c989f62938e/README.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -6123,11 +6171,16 @@
         "https://x.com/i/status/2110757135009112576"
       ],
       "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post (@thenuntheia, 2026-10-15) relays the 2010 Rust Rewrite Mashup, which its pinned README describes as MW2 multiplayer, a Skate 3 mode and a Minecraft world map on IW4L, a separate from-scratch Rust MW2 runtime, requiring the user’s own MW2 and extracted Xbox 360 Skate 3 files. The skate mode vendors crates from a separate Skate 3 Rust engine project, and the world map uses MinecraftOSS. Whether the mashup adds reconstruction work of its own beyond integrating those projects, and how its Skate 3 physics were derived, needs a dedicated review; IW4L and the Skate 3 engine are not yet catalogued.",
+      "reason_zh": "所引帖子（@thenuntheia，2026-10-15）介绍了 2010 Rust Rewrite Mashup：其固定版本 README 称项目在 IW4L（另一个从零编写的 Rust 版 MW2 运行时）之上整合了 MW2 多人模式、Skate 3 模式和 Minecraft 世界地图，需要用户自备 MW2 以及从 Xbox 360 版 Skate 3 提取的文件。滑板模式内置了另一个 Skate 3 Rust 引擎项目的 crate，世界地图使用 MinecraftOSS。该项目在整合这些项目之外是否有自身的重建工作、其 Skate 3 物理如何得出，需要专门审阅；IW4L 与该 Skate 3 引擎尚未收录。",
+      "primary_evidence_urls": [
+        "https://x.com/thenuntheia/status/2110757135009112576",
+        "https://github.com/chasmlol/2010-rust-rewrite-mashup/blob/f608f85e407ff1b7689d54a9aafdd16e95711ac4/README.md",
+        "https://github.com/chasmlol/2010-rust-rewrite-mashup/blob/f608f85e407ff1b7689d54a9aafdd16e95711ac4/docs/SKATE.md",
+        "https://github.com/chasmlol/2010-rust-rewrite-mashup/blob/f608f85e407ff1b7689d54a9aafdd16e95711ac4/skate/Cargo.toml"
+      ],
       "catalog_matches": []
     },
     {
@@ -6967,13 +7020,24 @@
         "https://x.com/i/status/2110869440762196138",
         "https://x.com/i/status/2110869444922610114"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "A two-post thread (@ofmyslippers, 2026-10-15) reports three runs of REA’s static Electron analysis on a small notes app with a known answer key: 4 of 4 IPC channels, handler pairs and preload API members, correctly no sender checks, 2.5–3 s a run, and 1.0 MB of JSON from 2.3 KB of source. The test app, answer key and outputs are not published (the thread links only the REA repository), and the work evaluates REA rather than reconstructing software. Retain the lead without a curated case; the related mapping points to REA’s JavaScript guide, whose own Notes Electron fixture has one IPC channel and so is not the app tested.",
+      "reason_zh": "两条帖子组成的串文（@ofmyslippers，2026-10-15）报告用一个带已知答案的小型笔记应用对 REA 的 Electron 静态分析测试三次：IPC 通道、处理器配对和 preload API 成员均为 4/4，且正确地未发现发送方检查，每次 2.5–3 秒，2.3 KB 源码生成 1.0 MB JSON。测试应用、答案和输出均未公开（串文只链接 REA 仓库），这项工作是在评估 REA，而非重建软件。保留此线索而不建立整理案例；相关映射指向 REA 的 JavaScript 指南，其自带的 Notes Electron 示例只有一个 IPC 通道，因此并非所测应用。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110869440762196138",
+        "https://x.com/i/status/2110869444922610114",
+        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/guide-examples.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-electron-guide",
+          "kind": "documentation",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:fu-sheng-video-homepage-character-demo",
@@ -6987,12 +7051,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110873715810660594"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The post (@Edward913413, 2026-10-15) relays that Fu Sheng deployed REA himself and, with a single sentence, had a game character rampaging across his video homepage within minutes, then comments on how REA lowers the bar for mashups. It is a secondhand account with no media from the demonstration and no link to Fu Sheng’s own post, code or output, and the GitHub account named edward913413 holds only two unrelated repositories. Retain the lead without a catalog mapping; neither the demonstration nor REA’s part in it can be checked.",
+      "reason_zh": "帖子（@Edward913413，2026-10-15）转述：傅盛自行部署 REA 后，只用一句话就在几分钟内让一个游戏角色在他的视频主页上一通乱砸，帖子随后就 REA 降低混搭二创门槛发表评论。这是二手转述，没有演示素材，也没有链接傅盛本人的帖子、代码或输出；名为 edward913413 的 GitHub 账号只有两个无关仓库。保留此线索而不建立目录映射；该演示及 REA 在其中的作用均无法核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110873715810660594"
+      ],
       "catalog_matches": []
     },
     {
@@ -7029,12 +7095,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110878456611319835"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@riteshkv_, 2026-10-15) says they used REA to make a non-doomscrolling version of YouTube that surfaces outlier videos in their niche and sorts new AI videos into automations, agents, news and other groups; it shows only a video. It does not say what REA analyzed and links no code or app, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; neither the tool nor REA’s contribution is documented.",
+      "reason_zh": "作者帖子（@riteshkv_，2026-10-15）称借助 REA 做了一个“不让人无限刷”的 YouTube 版本，能找出其细分领域中表现突出的异常视频，并把新的 AI 视频按自动化、智能体、新闻等类别归类；帖子只附视频。帖子未说明 REA 分析了什么，也没有链接代码或应用，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该工具及 REA 的作用均无记录。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110878456611319835"
+      ],
       "catalog_matches": []
     },
     {
@@ -7090,12 +7158,15 @@
         "https://x.com/i/status/2110904597900673267",
         "https://x.com/i/status/2110941073434701893"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Two posts by @ModengSir (2026-10-16) describe a local desktop workbench that wraps REA in a GUI, built by asking Codex, and propose adding a topic radar, workflows, notes, planning and image or video generation to it; a reply says the author uploads whatever they want to reverse engineer through its REA screen. The quoted 2026-10-15 post credits two tutorials and shows a screenshot. No workbench code, analyses or results are linked, and the author’s GitHub account modengsir has no workbench repository. Retain the lead without a catalog mapping; this is a GUI wrapper idea, not a reconstruction case.",
+      "reason_zh": "@ModengSir 的两条帖子（2026-10-16）介绍了一个让 Codex 搭建、为 REA 套上图形界面的本地桌面工作台，并提议加入内容选题雷达、工作流、灵感记录、计划安排及生图生视频等功能；一条回复称作者想逆向什么，就通过其中的 REA 界面上传。所引 2026-10-15 的帖子感谢了两份教程并附截图。帖子未链接工作台代码、分析或结果，作者的 GitHub 账号 modengsir 中也没有工作台仓库。保留此线索而不建立目录映射；这是图形界面封装的构想，而非重建案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110904597900673267",
+        "https://x.com/i/status/2110941073434701893"
+      ],
       "catalog_matches": []
     },
     {
@@ -7155,12 +7226,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110918344886927696"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@Tre1in, 2026-10-16) says they used AI to make the Immersive Portals mod compatible with Minecraft Java Edition 26.2, nearly perfectly on the first try, and that it works with shaders, the latest Fabric and many other mods; it shows only a video. It names no model or method and links no build or source, and the GitHub account named Tre1in has no public repositories. A separate Immersive Portals update by another account exists on GitHub but is not linked from the post. Retain the lead without a catalog mapping.",
+      "reason_zh": "作者帖子（@Tre1in，2026-10-16）称借助 AI 让 Immersive Portals 模组兼容 Minecraft Java 版 26.2，第一次尝试就近乎完美，并且兼容光影、最新版 Fabric 及许多其他模组；帖子只附视频。帖子未说明模型或方法，也没有链接构建或源码，名为 Tre1in 的 GitHub 账号没有公开仓库。GitHub 上另有其他账号对 Immersive Portals 的升级项目，但帖子未链接。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110918344886927696"
+      ],
       "catalog_matches": []
     },
     {
@@ -7179,12 +7252,18 @@
         "https://x.com/i/status/2110902155783885210",
         "https://x.com/i/status/2111247870565167560"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Five posts are cited. @DCinvestor (2026-10-16) asks whether AI could make TV firmware that does not spy on him; @j_larrieux suggests decompiling, editing and reflashing it with AI-run testing. @xLexemeX says Claude dug into their TV firmware to disable tracking and ads, with AdGuard blocking outgoing data, and later says Claude raised no objection; @meta_syntactic says Codex reverse engineered a firmware but the project stopped there. None names the TV or firmware or links notes, code or results, and the GitHub accounts found have no related repository. Retain the lead without a catalog mapping.",
+      "reason_zh": "所引五条帖子中：@DCinvestor（2026-10-16）问能否用 AI 制作不会监视他的电视固件；@j_larrieux 建议借助 AI 反编译、修改并重新刷入固件，再让 AI 充分测试；@xLexemeX 称用 Claude 深入分析自家电视固件并关闭追踪和广告，再用 AdGuard 阻止外发数据，后来又补充说 Claude 对此没有异议；@meta_syntactic 称曾让 Codex 逆向某款固件，但项目止步于逆向阶段。各帖均未说明电视或固件型号，也没有链接笔记、代码或结果，所找到的 GitHub 账号中也没有相关仓库。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110919403961192504",
+        "https://x.com/i/status/2111098983997186126",
+        "https://x.com/i/status/2111108975454281750",
+        "https://x.com/i/status/2110902155783885210",
+        "https://x.com/i/status/2111247870565167560"
+      ],
       "catalog_matches": []
     },
     {
@@ -7402,13 +7481,23 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110963427791487391"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@superfang119, 2026-10-16) links an X article that documents REA 6.5.0 over MCP on REA’s own Notes teaching app, an evidence-tampering check, and three deliberately broken Python CSV exporters that pass a read-back test but fail byte comparisons on 215 inputs against the official formatter. Full mapping covers that article. Its scripts and outputs are unpublished, analysis and implementation shared one Codex context, and the earlier walkthrough it builds on is a separate lead.",
+      "reason_zh": "作者帖子（@superfang119，2026-10-16）链接了一篇 X 文章，记录了通过 MCP 在 REA 自带的 Notes 教学应用上使用 REA 6.5.0、一次证据篡改检查，以及三个故意改坏的 Python CSV 导出器：它们能通过读回测试，却在以官方格式化函数为参照的 215 组输入逐字节比较中失败。完整映射覆盖该文章。其脚本和输出未公开，分析与实现共用同一个 Codex 上下文，文章所承接的前一篇实测属于另一条线索。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110963427791487391",
+        "https://x.com/i/article/2110962506604929025"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-notes-csv-oracle-mutation-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:rea-obfuscated-web-request-signature",
@@ -7422,12 +7511,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110968095850561701"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@mtxdev, 2026-10-16) says two days of breakpoints failed to explain a changing request signature hidden in a website’s obfuscated JavaScript, while REA produced an evidence-tagged report on how it was computed in five minutes, after which a few code changes restored data retrieval. The site, the report and the code are neither named nor published, the quoted post is a general REA tutorial, and the GitHub account named mtxdev has no public repositories. Retain the lead without a catalog mapping; the method is not recorded here.",
+      "reason_zh": "作者帖子（@mtxdev，2026-10-16）称，为弄清某网站混淆 JS 中每次请求都会变化的签名，自己打了两天断点仍无结果，而 REA 五分钟就写出了标注证据的计算过程报告，随后改几行代码就恢复了数据获取。帖子既未说明网站，也未公开报告或代码，其引用的帖子是一篇 REA 通用教程，名为 mtxdev 的 GitHub 账号也没有公开仓库。保留此线索而不建立目录映射；此处不记录具体方法。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110968095850561701"
+      ],
       "catalog_matches": []
     },
     {
@@ -7443,12 +7534,15 @@
         "https://x.com/i/status/2110976193671709123",
         "https://x.com/i/status/2110985668969328852"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Two posts by @jmlx2008 (2026-10-16) say they are having Codex reverse engineer an Immersive Translate–style Chrome extension, which they see as a window plus an AI API, so they can use their own tokens instead of paying a subscription; a reply says the Codex CLI run is still in progress. No result, code or notes are linked, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the work was unfinished when posted.",
+      "reason_zh": "@jmlx2008 的两条帖子（2026-10-16）称正在让 Codex 逆向一款类似“沉浸式翻译”的 Chrome 插件，认为它不过是窗口加上 AI API，想直接自购 token 而不付订阅费；一条回复称 Codex CLI 仍在运行。帖子未链接任何结果、代码或笔记，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；发帖时这项工作尚未完成。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110976193671709123",
+        "https://x.com/i/status/2110985668969328852"
+      ],
       "catalog_matches": []
     },
     {
@@ -7463,12 +7557,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110983483271286909"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@buaaxhm, 2026-10-16) says only that they asked Codex to reverse engineer how ChatGPT’s Intelligent UI is implemented, and wonders whether OpenAI will ban them. It reports no findings and links no output, and the GitHub account in the author’s profile, hongmaoxiao, has no repository for this study. Retain the lead without a catalog mapping; neither method nor results are documented.",
+      "reason_zh": "作者帖子（@buaaxhm，2026-10-16）只说让 Codex 去逆向 ChatGPT 的 Intelligent UI 是怎么实现的，并担心 OpenAI 会不会封号。帖子没有报告任何发现，也没有链接输出，作者资料中列出的 GitHub 账号 hongmaoxiao 里也没有与此研究对应的仓库。保留此线索而不建立目录映射；方法和结果均无记录。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110983483271286909"
+      ],
       "catalog_matches": []
     },
     {
@@ -7579,12 +7675,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111009945865097386"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The post (@userHandle, 2026-10-16) relays Simon Willison’s analysis of ChatGPT Work Cloud: web access, code execution, headless Chrome, persistent workspace files, sites deployed on Cloudflare Workers, and 44 skills and 223 tools found through introspection prompts. Willison’s 2026-08-30 post documents hands-on testing and a model-generated tool reference that he does not check against the system prompt; it reimplements no software. Retain the lead without a catalog mapping; capability and risk analysis is not a reconstruction case.",
+      "reason_zh": "帖子（@userHandle，2026-10-16）转述 Simon Willison 对 ChatGPT Work Cloud 的分析：可联网、执行代码、操作无头 Chrome、保留工作区文件、在 Cloudflare Workers 上部署网站，并通过自省式提示发现 44 项技能和 223 个工具。Willison 2026-08-30 的文章记录的是上手测试和由模型生成的工具参考，他并未将其与系统提示核对；文章没有重新实现任何软件。保留此线索而不建立目录映射；能力与风险分析不属于重建案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111009945865097386",
+        "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/"
+      ],
       "catalog_matches": []
     },
     {
@@ -7599,12 +7698,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111027056234627119"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@akshitsoni_, 2026-10-16) says that, with reverse engineering bundled into Claude Code, the Indian Kanoon API integrates so well that they open SCC only for citations. It names no tool, method or code and links nothing, and the GitHub account named akshitsoni holds no related repository. Retain the lead without a catalog mapping; neither the integration nor any reverse engineering is documented.",
+      "reason_zh": "作者帖子（@akshitsoni_，2026-10-16）称，借助 Claude Code 中捆绑的逆向工程能力，Indian Kanoon API 集成得非常好，以至于只有查引注时才会打开 SCC。帖子未说明工具、方法或代码，也没有任何链接，名为 akshitsoni 的 GitHub 账号中也没有相关仓库。保留此线索而不建立目录映射；该集成及任何逆向工程均无记录。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111027056234627119"
+      ],
       "catalog_matches": []
     },
     {
@@ -15457,12 +15558,17 @@
         "https://x.com/i/status/2111585716195004425",
         "https://github.com/ntthanh2603/gemini-web-to-api/blob/3633170/README.md"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "reason_en": "Argusic's post (2026-10-17) reports that its agent built and launched gemini-web-to-api at commit 3633170 on a clean machine, passed the test suites and saw authentication fail with dummy cookies; it says the run used stand-in services only and attaches a video. The repository, reviewed at 3633170 and 1f1577d, implements a local server that uses a user's Gemini web-session cookies to expose OpenAI-, Claude- and Gemini-compatible endpoints; its live end-to-end tests are opt-in and need a real account. It publishes no protocol investigation or comparison evidence, and its README warns that the approach may not comply with Google's terms. Retain the lead without a catalog mapping; neither a documented reconstruction nor a real-service result is established, and no REA use is stated.",
+      "reason_zh": "Argusic 的帖子（2026-10-17）称其智能体在全新机器上构建并启动了 gemini-web-to-api 的提交 3633170，测试套件全部通过，使用占位 cookie 时认证按预期失败；帖子说明整个运行只针对替身服务，并附有视频。所审阅的仓库（提交 3633170 与 1f1577d）实现了一个本地服务器，借助使用者的 Gemini 网页会话 cookie 提供兼容 OpenAI、Claude 和 Gemini 的接口；其真实端到端测试需手动开启并使用真实账号。仓库未公开协议调查过程或对照证据，README 也提醒这种做法可能不符合 Google 的服务条款。保留此线索而不建立目录映射；既未确立有记录的重建，也没有针对真实服务的结果，且未说明使用了 REA。",
+      "primary_evidence_urls": [
+        "https://x.com/argusiccom/status/2111585716195004425",
+        "https://github.com/ntthanh2603/gemini-web-to-api/blob/363317054e02068f7f3e72a7a97a83f9597457e3/README.md",
+        "https://github.com/ntthanh2603/gemini-web-to-api/blob/1f1577dbd479d5b61a1c5f03de742ffcdeb51f6d/README.md",
+        "https://github.com/ntthanh2603/gemini-web-to-api/blob/1f1577dbd479d5b61a1c5f03de742ffcdeb51f6d/tests/e2e/e2e_test.go"
+      ],
       "catalog_matches": []
     },
     {
@@ -16288,18 +16394,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 210,
-      "insufficient-evidence": 281,
-      "pending": 100
+      "already-curated": 212,
+      "insufficient-evidence": 309,
+      "pending": 70
     },
     "units_by_state": {
-      "already-curated": 208,
-      "insufficient-evidence": 281,
-      "pending": 100
+      "already-curated": 210,
+      "insufficient-evidence": 309,
+      "pending": 70
     },
-    "primary_reviewed_units": 429,
-    "catalog_linked_occurrences": 224,
-    "distinct_resource_ids": 214,
+    "primary_reviewed_units": 460,
+    "catalog_linked_occurrences": 227,
+    "distinct_resource_ids": 217,
     "distinct_paper_ids": 2,
     "unique_projects": null
   }

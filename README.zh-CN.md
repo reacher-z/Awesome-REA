@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 490](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-490-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 206](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-206-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 136](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 492](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 208](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 136](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,10 +21,12 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
+492 项精选资源（208 个案例）· 136 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 489。
+
 **按目标找工具与案例**
 
-- [网站](#website) (29) · [游戏](#game) (193) · [应用](#app) (77)
-- [原生二进制](#native-binary) (64) · [固件与硬件](#firmware) (23) · [协议](#protocol) (18)
+- [网站](#website) (29) · [游戏](#game) (193) · [应用](#app) (78)
+- [原生二进制](#native-binary) (64) · [固件与硬件](#firmware) (23) · [协议](#protocol) (19)
 
 **论文与工作流**
 
@@ -32,7 +34,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (206) · [相关合集](#related-collections) (7) · [完整仓库索引](#完整仓库索引) (3,309)
+- [全部案例](https://awesomerea.org/zh/cases/) (208) · [相关合集](#related-collections) (7) · [完整仓库索引](#完整仓库索引) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -329,6 +331,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Open Scrantic：重建 Johnny Castaway 屏幕保护程序引擎**](https://github.com/glauberlima/open-scrantic) - 以 Rust 重建 Johnny Castaway 屏幕保护程序引擎，作者明确披露使用 REA 与 Claude Code。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/open-scrantic-screensaver-case/)</sub>
 - [**Screen Studio：作者报告的 REA 自动缩放规则研究**](https://x.com/i/article/2109834677343432704) - 作者报告借助 REA 梳理 Screen Studio 的 Electron 安装包，在 Claude Code 协助下从混淆代码中读出六条自动缩放与光标规则，再让 Claude Code 依据这些规则编写独立的录屏和渲染程序。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/screen-studio-auto-zoom-case/)</sub>
 - [**Claude Code 背景动画实验室：基于 REA 调查的桌面动画重新实现**](https://github.com/Henry-fan88/claude-code-background) - 将 Claude 桌面应用中 Claude Code“新会话”界面的字符风场背景，重新实现为可离线运行的 WebGL2 页面，并附带 38 个滑块的控制面板。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/claude-code-background-lab-case/)</sub>
+- [**Notes CSV 导出：作者报告的 REA 重建验收器检查**](https://x.com/i/article/2110962506604929025) - 一篇中文文章把复刻 REA 自带 Notes 教学应用的 Python CSV 导出器故意改坏三个版本，展示简单的“导出再读回”测试能让三者全部通过，而以官方 JavaScript 格式化函数为参照、在 215 组固定输入上逐字节比较则能逐一识破。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/rea-notes-csv-oracle-mutation-case/)</sub>
 - [**LSX II 音量修正器：重建音量行为**](https://github.com/roberdorfer/kef-lsx-volume) - 根据实测 USB 音量行为，通过 macOS 音频代理将音量键映射到 KEF LSX II 的局域网控制。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kef-lsx-volume-case/)</sub>
 - [**Linux 上的 UU 远程：非官方协议实现**](https://github.com/VallierDev/uu-remote-linux) - 实现网易 UU 远程的非官方原生 Linux 被控端；维护者称协议行为来自对官方客户端流量及已发布程序的调查。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/uu-remote-linux-protocol-case/)</sub>
 - [**TCLimate：重建选定的 TCL Home 云端控制**](https://github.com/umarz317/TCLimate) - 在原生 macOS 菜单栏应用中实现选定的 TCL Home 空调控制与用电量报告。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/tclimate-cloud-controls-case/)</sub>
@@ -511,6 +514,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**cooler-lcd：Thermalright 显示屏协议实现**](https://github.com/kristjaningi/cooler-lcd) - 为 Thermalright Vision 散热器显示屏实现 USB 图像传输驱动，并用 Rust 仪表盘替代厂商显示应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cooler-lcd-case/)</sub>
 - [**NJFE：用于电脑检查的 Soulear 相机协议桥接**](https://github.com/WildweaselMS/NJFE) - 在 ESP32-C3 桥接器与 Python 电脑查看器中复用 otoscope 经逆向得到的 i4season／Soulear 协议。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/njfe-ear-camera-bridge-case/)</sub>
 - [**hw-harness：扫描仪 USB 协议调查**](https://github.com/cschalle/hw-harness) - 记录作者报告的扫描仪调查：比较厂商驱动的 USB 控制传输与 Linux 驱动的记录，推断初始化、时序及分辨率参数。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hw-harness-reference-case/)</sub>
+- [**Roborock Local Server：自托管替代 Roborock 扫地机云端**](https://github.com/Python-roborock/local_roborock_server) - 运行一套本地 HTTPS 与 MQTT 服务来替代 Roborock 云端，使受支持的扫地机在隔离网络中无需 root 或改装硬件即可保留实时地图与控制。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/roborock-local-server-cloud-case/)</sub>
 
 #### 工具、项目与集成
 
