@@ -64,6 +64,24 @@ class PaperSourceLabelTests(unittest.TestCase):
                 self.assertIn('GitHub · example/world-models · ' + ('修订' if language == 'zh' else 'Revision'), items[0])
                 self.assertIn('>' + OTHER + '</a>', items[1])
                 self.assertNotIn('entry-source-context', items[1])
+                # Compact labels carry the repository and revision in their name; full URLs need none.
+                revision = '修订' if language == 'zh' else 'revision'
+                separator = '，' if language == 'zh' else ', '
+                self.assertIn(f'aria-label="src/agent.py#L10-L20{separator}GitHub example/world-models{separator}{revision} e17e787"', items[0])
+                self.assertNotIn('aria-label', items[1])
+
+    def test_evidence_link_names_are_distinct_across_the_paper_directory(self):
+        papers = json.loads((ROOT / 'data/papers.json').read_text())
+        for language in ('en', 'zh'):
+            destinations = {}
+            for record in papers:
+                for item in source_items(paper_card(record, language, False)):
+                    href = unescape(re.search(r'href="([^"]+)"', item)[1])
+                    named = re.search(r'aria-label="([^"]+)"', item)
+                    name = unescape(named[1]) if named else unescape(re.search(r'>([^<]+)</a>', item)[1])
+                    self.assertTrue(name.startswith(unescape(re.search(r'>([^<]+)</a>', item)[1])))
+                    destinations.setdefault(name, set()).add(href)
+            self.assertEqual([name for name, hrefs in destinations.items() if len(hrefs) > 1], [])
 
     def test_repeated_urls_stay_in_the_directory_list(self):
         # The detail page lists each source once; the directory keeps the record's list untouched.
