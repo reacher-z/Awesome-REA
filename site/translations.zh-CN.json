@@ -7339,5 +7339,14 @@
       "所列论文中，Firmadyne、FirmAE 和 HALucinator 三篇已收入本合集的论文目录，FirmAE 工具以及所列 Avatar 框架的后继项目 avatar² 也已作为工具条目收录；其余条目本次未作审阅。",
       "仓库只有 README.md，没有许可证文件，因此清单本身未声明复用条款；各论文的权利归其作者和出版方。这是独立的阅读清单；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "xpeviewer": {
+    "name": "XPEViewer PE 文件查看与编辑工具",
+    "requirements": [
+      "审阅时最新的正式版本为 0.05，发布于 2024-07-02，提供 Linux AppImage、Debian 10–12 和 Ubuntu 14.04–24.04 的 .deb 安装包、macOS x86_64 和 Qt 6 arm64 安装包、Windows x86、x64 和 XP 便携版压缩包以及源码包。0.06 版（2025-12-22）被标为预发布，且未附带文件；滚动更新的 Beta 预发布提供 0.06 版的 Ubuntu 22.04/24.04 安装包和 Windows 便携版压缩包，所审阅 master 分支提交中的 release_version.txt 为 0.06。",
+      "从源码构建需要递归克隆 56 个 horsicq 子模块，其中包括 Detect-It-Easy、signatures 和 XYara。docs/BUILD.md 介绍了 Docker、Debian 打包脚本、autotools、基于 Qt 6 的 qmake6、CMake、使用 Qt 5.15.2 的 macOS、使用 Visual Studio 2019 和 Qt 5.15.2 的 Windows 7–10，以及使用 Visual Studio 2013 和 Qt 5.6.3 的 Windows XP 构建方式。",
+      "需自行提供 PE 文件。主窗口在可行时以可写方式打开文件，否则退回只读，因此编辑会修改所打开的文件，请在副本上操作。VirusTotal 视图会使用该在线服务。",
+      "MIT 许可证（LICENSE）。README 本身很简短，只有下载、运行和构建链接、更新日志及截图；此处列出的可解析结构来自所固定 FormatWidgets 子模块中的 PE 组件源码。主仓库未提交示例二进制，除该组件外未审阅子模块内容。本条目未打开任何文件。"
+    ]
   }
 }
