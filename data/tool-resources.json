@@ -11759,5 +11759,43 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "knife",
+    "name": "knife",
+    "url": "https://github.com/bl4ckr0ss3/knife",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Static reverse-engineering toolkit in Rust, installed as the knife command, that parses PE, ELF, Mach-O and WebAssembly files without running them. It triages hashes, sections, mitigations, imports, strings, indicators and crypto constants; recovers functions, call graphs and CFGs through recursive-descent disassembly for x86/x64 and AArch64; and lifts functions to experimental pseudocode. Analysts' names, notes, types and staged patches persist in a per-binary database shared by the CLI, a terminal UI and an MCP server, and further passes rank risky API call sites by argument provenance and summarize Windows driver dispatch and IOCTL surfaces.",
+    "description_zh": "以 Rust 编写的静态逆向工程工具包，安装后为 knife 命令，可在不运行目标的情况下解析 PE、ELF、Mach-O 和 WebAssembly 文件。它能分诊哈希、节区、缓解措施、导入、字符串、威胁指标和加密常量；通过面向 x86/x64 与 AArch64 的递归下降反汇编恢复函数、调用图和控制流图；还能把函数提升为实验性伪代码。分析者添加的命名、注释、类型和暂存补丁保存在按二进制区分的数据库中，由命令行、终端界面和 MCP 服务器共享；另有分析步骤按参数来源对有风险的 API 调用点排序，并汇总 Windows 驱动的派发例程和 IOCTL 接口。",
+    "evidence_url": "https://github.com/bl4ckr0ss3/knife/blob/f260b87ffc54ae5c8c56cc31351334d209228745/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository was created on 2026-08-08. Release v1.8.3 (2026-10-11) ships Linux x86_64, macOS arm64/x86_64 and Windows x86_64 archives, while the reknife crate on crates.io stops at 1.8.0 (2026-09-15); the reviewed main commit is 48 commits past v1.8.3, with unreleased changes listed in CHANGELOG. Source builds need Rust 1.88+, and the README says no system libraries are needed beyond the platform default; knife update needs curl.",
+      "Input is a binary the analyst supplies, which knife only reads. Disassembly covers x86/x64 and AArch64, the audit data-flow checks are x86/x64 only, and the README says empty reachability results do not prove unreachability because indirect dispatch is outside the direct call graph. WebAssembly gets section, import/export and WAT views without code analysis. The repository contains no target binaries: tests build synthetic PE and ELF fixtures in code, and data/loldrivers.json is a snapshot of the public LOLDrivers list used for SHA-256 matching.",
+      "knife mcp speaks MCP over stdio; docs/MCP.md lists 58 tools, four of which write names, notes, prototypes or staged patches to the project database rather than the binary. The optional investigation desk sends prompts and tool results to the model provider the user configures (local Ollama, OpenRouter, OpenAI or another OpenAI-compatible endpoint) and keeps hosted API keys in the OS credential vault. Optional adapters call a separately installed Rizin, and the provider docs also describe Ghidra headless and capa adapters; YARA-X 1.12 is linked in for rule scans, and a GDB runtime exporter is documented but not yet exposed.",
+      "CI runs cargo build and test on Ubuntu, Windows and macOS, plus cargo fmt and clippy. The README presents audit hits as call sites whose argument provenance matches a bug pattern, and its 7z.dll, kernel32.dll and CVE-2017-11882 figures are the author's results; none were reproduced here.",
+      "MIT (2026, 0xblack). The LOLDrivers snapshot comes from that project's public API, and Rizin, Ghidra, capa and YARA-X keep their own licenses. The repository's AGENTS.md is contributor guidance for coding agents; the reviewed sources establish no REA connection, and nothing was installed or run for this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bl4ckr0ss3/knife/blob/f260b87ffc54ae5c8c56cc31351334d209228745/Cargo.toml",
+      "https://github.com/bl4ckr0ss3/knife/blob/f260b87ffc54ae5c8c56cc31351334d209228745/LICENSE",
+      "https://github.com/bl4ckr0ss3/knife/blob/f260b87ffc54ae5c8c56cc31351334d209228745/CHANGELOG.md",
+      "https://github.com/bl4ckr0ss3/knife/blob/f260b87ffc54ae5c8c56cc31351334d209228745/docs/MCP.md",
+      "https://github.com/bl4ckr0ss3/knife/blob/f260b87ffc54ae5c8c56cc31351334d209228745/docs/external-providers.md",
+      "https://github.com/bl4ckr0ss3/knife/blob/f260b87ffc54ae5c8c56cc31351334d209228745/docs/investigation-desk.md",
+      "https://github.com/bl4ckr0ss3/knife/blob/f260b87ffc54ae5c8c56cc31351334d209228745/docs/gdb-provider-validation.md",
+      "https://github.com/bl4ckr0ss3/knife/blob/f260b87ffc54ae5c8c56cc31351334d209228745/docs/case-study-eqnedt32.md",
+      "https://github.com/bl4ckr0ss3/knife/blob/f260b87ffc54ae5c8c56cc31351334d209228745/scripts/gen-loldrivers.mjs",
+      "https://github.com/bl4ckr0ss3/knife/blob/f260b87ffc54ae5c8c56cc31351334d209228745/.github/workflows/ci.yml",
+      "https://github.com/bl4ckr0ss3/knife/blob/f260b87ffc54ae5c8c56cc31351334d209228745/AGENTS.md",
+      "https://github.com/bl4ckr0ss3/knife/releases/tag/v1.8.3",
+      "https://docs.rs/crate/reknife/1.8.0"
+    ]
   }
 ]
