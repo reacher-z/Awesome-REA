@@ -11799,5 +11799,34 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "paradiseduo-dsdump",
+    "name": "dsdump (paradiseduo wrapper)",
+    "url": "https://github.com/paradiseduo/dsdump",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Python wrapper around a prebuilt copy of Derek Selander's dsdump, an improved nm and Objective-C and Swift class-dump for Mach-O binaries, that writes each dumped protocol, class, category and Swift type to its own .h or .swift file instead of a single console stream. It runs the bundled executable once with --objc and once with --swift for the chosen arm64 or armv7 slice, and -d demangles Swift names through Xcode's swift-demangle at a speed cost. The README now points users to the author's resymbol instead.",
+    "description_zh": "围绕 Derek Selander 的 dsdump 预编译副本编写的 Python 封装。dsdump 是改进版的 nm 及 Objective-C 与 Swift class-dump 工具，用于 Mach-O 二进制；该封装把导出的每个协议、类、分类和 Swift 类型分别写入单独的 .h 或 .swift 文件，而不是全部输出到控制台。它针对所选的 arm64 或 armv7 架构分别以 --objc 和 --swift 运行随附的可执行文件，-d 选项借助 Xcode 的 swift-demangle 还原 Swift 名称，但会降低速度。README 现已建议用户改用作者的 resymbol。",
+    "evidence_url": "https://github.com/paradiseduo/dsdump/blob/16b15c6b83bb441bcf07d4e1a361161f1756c906/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Superseded by its author: the README opens by saying resymbol can now replace this tool, the reviewed main commit of 2023-11-20 only reformatted the Python script, and there are no releases or tags. The upstream DerekSelander/dsdump repository it is based on is archived.",
+      "Runs on macOS from the repository directory with Python 3, calling ./dsdump through a shell. The committed dsdump file is a 5.2 MB x86_64 Mach-O executable added in the first commit of 2020-12-16, with no source, build files or checksum tying it to an upstream revision. -a accepts only arm64 or armv7, and -d needs Xcode's command-line tools for xcrun swift-demangle.",
+      "The analyst supplies a Mach-O executable they may examine; the README example reads the main executable inside an extracted .app bundle. The wrapper only parses dsdump's text output; it does not obtain, decrypt or modify apps.",
+      "Output is reconstructed declarations with method addresses, not source code, and the README sample shows Swift method names as <stripped>. There are no tests, and nothing was run for this entry.",
+      "Neither this repository nor the archived upstream has a license file, so neither the wrapper nor the redistributed executable states reuse terms. This entry covers analysis use only; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/paradiseduo/dsdump/blob/16b15c6b83bb441bcf07d4e1a361161f1756c906/dsdump.py",
+      "https://github.com/DerekSelander/dsdump/blob/e8782ddb0f9d6ac173b8769444b0537ca6d71ef9/README.md",
+      "https://github.com/paradiseduo/resymbol/blob/ce3f0a7b2254759436aee08c765315172129cd84/README.md",
+      "https://derekselander.github.io/dsdump/"
+    ]
   }
 ]

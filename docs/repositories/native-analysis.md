@@ -325,7 +325,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [openbin-ai/binny](https://github.com/openbin-ai/binny) — BINNY: an open source agent harness for reverse engineering. Plug in any model, or a local one. **[148 stars]** · Curated: [BINNY](https://awesomerea.org/resources/binny-agent-harness/)
 - [cmu-sei/kaiju](https://github.com/cmu-sei/kaiju) — CERT Kaiju is a binary analysis framework extension for the Ghidra software reverse engineering suite. This repository is a "mirror" -- please file tickets, bug reports, or pull requests at the upstream home in <span>@</span>CERTCC: https<span>:</span>//github.com/certcc/kaiju **[147 stars]**
 - [liuzhengyang/hsdis](https://github.com/liuzhengyang/hsdis) — hotspot disassembler hsdis **[147 stars]**
-- [paradiseduo/dsdump](https://github.com/paradiseduo/dsdump) — An improved nm + Objective-C &amp; Swift class-dump **[146 stars]**
+- [paradiseduo/dsdump](https://github.com/paradiseduo/dsdump) — An improved nm + Objective-C &amp; Swift class-dump **[146 stars]** · Curated: [dsdump (paradiseduo wrapper)](https://awesomerea.org/resources/paradiseduo-dsdump/)
 - [radareorg/radare2-pm](https://github.com/radareorg/radare2-pm) — Package Manager for Radare2 **[146 stars]**
 - [0x00ctrl/CyberSec-Books](https://github.com/0x00ctrl/CyberSec-Books) — Some useful books related to Cybersecurity, Linux and more. **[145 stars]**
 - [mcdulltii/obfDetect](https://github.com/mcdulltii/obfDetect) — IDA plugin to pinpoint obfuscated code **[145 stars]**
