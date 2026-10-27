@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**670 repositories** · 2026-10-20 UTC
+**671 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -134,6 +134,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [pret/pokediamond](https://github.com/pret/pokediamond) — Decompilation of Pokémon Diamond/Pearl **[540 stars]**
 - [ruvnet/open-claude-code](https://github.com/ruvnet/open-claude-code) — Nightly Claude Code CLI Decompile — Reverse Engineered &amp; Rebuilt **[533 stars]**
 - [MaxPixelStudios/MinecraftDecompiler](https://github.com/MaxPixelStudios/MinecraftDecompiler) — Minecraft Decompiler. A useful tool/library to deobfuscate and decompile Minecraft(or any jar file) through popular mappings and various decompilers. Or use it as a lib to process obfuscation mappings such as converting a mapping to another format **[493 stars]**
+- [vmallet/ida-plugins](https://github.com/vmallet/ida-plugins) — An interactive list of plugins for hex-rays' IDA Pro **[491 stars]** · Curated: [Interactive IDA Plugin List](https://awesomerea.org/resources/interactive-ida-plugin-list/)
 - [marsinator358/luajit-decompiler-v2](https://github.com/marsinator358/luajit-decompiler-v2) — LuaJIT bytecode decompiler **[487 stars]**
 - [aozhimin/iOS-APM-Secrets](https://github.com/aozhimin/iOS-APM-Secrets) — <span>:</span>secret: WIP: An in-depth look at the core technologies and implementation details behind major APM vendors' iOS SDKs. Updates ongoing... **[474 stars]**
 - [holly-hacker/EazFixer](https://github.com/holly-hacker/EazFixer) — A deobfuscation tool for Eazfuscator. **[456 stars]**

@@ -11759,5 +11759,37 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "interactive-ida-plugin-list",
+    "name": "Interactive IDA Plugin List",
+    "url": "https://github.com/vmallet/ida-plugins",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A sortable, filterable list of 618 plugins, loaders, processor modules and scripts for Hex-Rays' IDA Pro, published as a GitHub Pages table with a static copy generated into the README. Each entry links to its project, almost always on GitHub, with a short description and, where recorded, its language (C++ or Python), category tags such as decompiler, deobfuscation, loader, debug or integration, and the date the project was last updated. The list grew out of onethawt's idaplugins-list of about 200 plugins.",
+    "description_zh": "可排序、可筛选的 Hex-Rays IDA Pro 插件清单，收录 618 个插件、加载器、处理器模块和脚本，以 GitHub Pages 表格发布，并在 README 中生成静态副本。每个条目链接到对应项目（几乎都在 GitHub 上），附简短说明；如有记录，还标出实现语言（C++ 或 Python）、反编译器、反混淆、加载器、调试、集成等分类标签，以及项目的最近更新日期。该清单由 onethawt 约 200 个插件的 idaplugins-list 扩展而来。",
+    "evidence_url": "https://github.com/vmallet/ida-plugins/blob/825941fe4eea969fc5909bb790e3e2cc9a86e082/README-template.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit, of 2024-11-19, refreshed every last-updated date and holds 618 entries in data.js, mirrored in the README. Those dates record each project's latest activity at refresh time, from 2006 to 2024 with 136 in 2024; they are not reviews of the plugins.",
+      "Category tags cover 313 entries; the most common are integration (97), decompiler (63), development (51), loader (42) and debug (39). data.js also notes an IDA version for 385 entries, the highest being 8.4, but the table does not show it, and no entry is marked for IDA 9 or later, so compatibility must be checked at each plugin's source.",
+      "The list itself is a static page that needs only a browser; tools/gen_readme.py regenerates the README from data.js and depends on demjson. Listed plugins need the user's own IDA installation, and the list records no license, edition or install requirements for them.",
+      "LICENSE is MIT, and lib/DEPENDENCIES.md lists the bundled Tabulator 5.1.8, moment.js and jQuery 3.6.0 files as MIT; listed plugins keep their own licenses. An independent discovery list; the reviewed source establishes no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/vmallet/ida-plugins/blob/825941fe4eea969fc5909bb790e3e2cc9a86e082/README.md",
+      "https://github.com/vmallet/ida-plugins/blob/825941fe4eea969fc5909bb790e3e2cc9a86e082/data.js",
+      "https://github.com/vmallet/ida-plugins/blob/825941fe4eea969fc5909bb790e3e2cc9a86e082/index.html",
+      "https://github.com/vmallet/ida-plugins/blob/825941fe4eea969fc5909bb790e3e2cc9a86e082/main.js",
+      "https://github.com/vmallet/ida-plugins/blob/825941fe4eea969fc5909bb790e3e2cc9a86e082/tools/gen_readme.py",
+      "https://github.com/vmallet/ida-plugins/blob/825941fe4eea969fc5909bb790e3e2cc9a86e082/lib/DEPENDENCIES.md",
+      "https://github.com/vmallet/ida-plugins/blob/825941fe4eea969fc5909bb790e3e2cc9a86e082/LICENSE",
+      "https://vmallet.github.io/ida-plugins/"
+    ]
   }
 ]
