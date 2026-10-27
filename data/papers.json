@@ -7294,5 +7294,67 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-binkit",
+    "title": "Revisiting Binary Code Similarity Analysis Using Interpretable Feature Engineering and Lessons Learned",
+    "title_zh": "基于可解释特征工程重新审视二进制代码相似性分析及经验教训",
+    "authors": [
+      "Dongkwan Kim",
+      "Eunsoo Kim",
+      "Sang Kil Cha",
+      "Sooel Son",
+      "Yongdae Kim"
+    ],
+    "year": 2023,
+    "publication_date": "2023-04",
+    "date_precision": "month",
+    "date_basis": "IEEE’s Crossref deposit gives the volume 49, issue 4 print issue date as 2023-04-01, represented at month precision. The 2020-11-21 arXiv v1 date and the June 2022 acceptance note are not substituted for the journal issue date.",
+    "date_basis_zh": "IEEE 向 Crossref 登记的第 49 卷第 4 期纸本刊期日期为 2023-04-01，本目录采用月份精度；不以 2020-11-21 的 arXiv v1 日期或 2022 年 6 月的录用说明替代期刊刊期日期。",
+    "venue": "IEEE Transactions on Software Engineering",
+    "publication_status": "journal-article",
+    "arxiv_id": "2011.10749",
+    "arxiv_version_reviewed": "v4",
+    "first_arxiv_date": "2020-11-21",
+    "doi": "10.1109/TSE.2022.3187689",
+    "citation": {
+      "container_title": "IEEE Transactions on Software Engineering",
+      "volume": "49",
+      "issue": "4",
+      "pages": "1661-1682",
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "sources": [
+        "https://api.crossref.org/works/10.1109/TSE.2022.3187689"
+      ]
+    },
+    "url": "https://doi.org/10.1109/TSE.2022.3187689",
+    "pdf_url": "https://arxiv.org/pdf/2011.10749v4",
+    "code_url": "https://github.com/SoftSec-KAIST/BinKit",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Builds BinKit, a reproducible cross-compilation benchmark of 243,128 binaries and 36,256,322 functions from 51 GNU packages, covering 1,352 combinations of eight architectures, nine GCC and Clang versions, five optimization levels, and PIE, LTO, no-inline and Obfuscator-LLVM options. TikNib, an interpretable baseline over simple presemantic function features, measures how compilers, options and architectures change those features. The authors report that a few basic features approach a deep-learning tool’s accuracy, that type features push AUC above 0.99, and trace failures to IDA Pro analysis errors, compiler back-end differences and architecture-specific code.",
+    "description_zh": "构建可复现的交叉编译基准 BinKit，包含由 51 个 GNU 软件包生成的 243,128 个二进制和 36,256,322 个函数，覆盖八种架构、九个 GCC 与 Clang 版本、五个优化级别，以及 PIE、LTO、禁止内联和 Obfuscator-LLVM 等选项构成的 1,352 种组合。可解释基线 TikNib 基于简单的前语义函数特征，衡量编译器、编译选项与架构如何改变这些特征。作者报告称，少量基本特征即可接近深度学习工具的准确率，加入类型特征后 AUC 超过 0.99，并将失败案例归因于 IDA Pro 分析错误、编译器后端差异和架构特定代码。",
+    "scope_limitations_en": "Studies function-level, presemantic (syntactic and structural) features on Linux GNU packages compiled from source with debugging information for ground truth; semantic features, NLP-based models and whole-binary or other similarity tasks are outside the evaluation. The above-0.99 AUC uses argument and return types derived from source via Ctags and debugging information, not types recovered from stripped binaries. The state-of-the-art comparison sets TikNib’s AUC on VulSeeker’s ASE datasets against VulSeeker’s author-reported numbers rather than a re-run, and omits the original firmware images. Obfuscation covers Obfuscator-LLVM substitution, bogus control flow and flattening applied once. Experiments used IDA Pro 6.95, and the authors cannot rule out erroneous MIPS feature extraction. The results do not rank later learned or LLM-based models.",
+    "scope_limitations_zh": "研究对象是函数级的前语义（语法与结构）特征，样本为从源码编译、带调试信息以构建真实标签的 Linux GNU 软件包；语义特征、基于 NLP 的模型以及整个二进制或其他相似性任务不在评测范围内。AUC 超过 0.99 的结果所用参数与返回类型通过 Ctags 和调试信息从源码获得，并非从剥离符号的二进制中恢复。与现有最优方法的比较是将 TikNib 在 VulSeeker 的 ASE 数据集上的 AUC 与 VulSeeker 作者报告的数值对照，而非重新运行，并且省略了原论文使用的固件映像。混淆仅涵盖 Obfuscator-LLVM 的指令替换、虚假控制流和控制流平坦化，且只应用一次。实验使用 IDA Pro 6.95，作者也无法排除 MIPS 特征提取有误的可能。结果不能用于对后续学习模型或大语言模型方法排名。",
+    "why_fits_en": "Adds a public, reproducible benchmark and interpretable baseline for binary function matching, and documents how compiler settings and disassembler errors bias similarity results, complementing learned models such as jTrans.",
+    "why_fits_zh": "补充二进制函数匹配的公开可复现基准与可解释基线，并记录编译设置和反汇编器错误如何使相似性结果产生偏差，与 jTrans 等学习模型互补。",
+    "metadata_notes": "IEEE TSE 49(4), pages 1661–1682; Crossref records a CC BY 4.0 license from 2023-04-01. The reviewed arXiv v4 (2022-07-07) notes acceptance in June 2022; its running header still reads November 2020, a template date rather than the publication date. The IEEE and Crossref title capitalizes “Using”, while arXiv uses “using”. At reviewed BinKit commit f6565a3 (2023-12-15, MIT), the README describes BinKit 2.0 with 371,928 binaries, 1,904 option combinations, 23 compilers and an added Ofast level, which the paper did not evaluate; its BinKit 1.0 section matches the paper’s 243,128 binaries and 1,352 combinations, counting four obfuscation options as compilers (13 in total), and was tested on Ubuntu 16.04. Paper-version datasets, feature pickles and toolchains download from Google Drive. TikNib, the analysis tool, is a separate MIT repository reviewed at 3b7c165 (2025-05-18); its README gives IDA Pro 6.95 scripts for the paper setup and separate IDA Pro 7.5 scripts. No datasets were downloaded and no code or experiments were run.",
+    "metadata_notes_zh": "IEEE TSE 第 49 卷第 4 期，页码 1661–1682；Crossref 记录自 2023-04-01 起适用 CC BY 4.0 许可。所审阅的 arXiv v4（2022-07-07）注明于 2022 年 6 月录用；其页眉仍为 2020 年 11 月，这是模板日期而非出版日期。IEEE 与 Crossref 标题中的 “Using” 首字母大写，arXiv 则写作 “using”。在所审阅的 BinKit 提交 f6565a3（2023-12-15，MIT）中，README 介绍了 BinKit 2.0，包含 371,928 个二进制、1,904 种选项组合、23 个编译器并新增 Ofast 级别，论文并未评测该版本；README 的 BinKit 1.0 部分与论文的 243,128 个二进制和 1,352 种组合一致，将四种混淆选项计为编译器（共 13 个），并在 Ubuntu 16.04 上测试。论文版数据集、特征 pickle 文件与工具链需从 Google Drive 下载。分析工具 TikNib 是独立的 MIT 仓库，审阅提交为 3b7c165（2025-05-18）；其 README 为论文设置提供 IDA Pro 6.95 脚本，另提供 IDA Pro 7.5 脚本。本次未下载数据集，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://doi.org/10.1109/TSE.2022.3187689",
+      "https://api.crossref.org/works/10.1109/TSE.2022.3187689",
+      "https://arxiv.org/abs/2011.10749",
+      "https://arxiv.org/pdf/2011.10749v4",
+      "https://github.com/SoftSec-KAIST/BinKit/blob/f6565a37049d94a1835dd8459a9d40460daf7fe0/README.md",
+      "https://github.com/SoftSec-KAIST/BinKit/blob/f6565a37049d94a1835dd8459a9d40460daf7fe0/LICENSE.txt",
+      "https://github.com/SoftSec-KAIST/TikNib/blob/3b7c16566726d52fff12ba896749cd9da8d96f67/README.md",
+      "https://github.com/SoftSec-KAIST/TikNib/blob/3b7c16566726d52fff12ba896749cd9da8d96f67/LICENSE.txt"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

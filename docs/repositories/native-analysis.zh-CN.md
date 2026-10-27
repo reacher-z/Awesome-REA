@@ -283,7 +283,7 @@
 - [fugue-re/fugue-core](https://github.com/fugue-re/fugue-core) — 使用 Rust 编写的二进制分析框架。 **[186 星标]**
 - [harlamism/IdaClu](https://github.com/harlamism/IdaClu) — IdaClu 是不依赖特定 IDA Pro 版本的插件，用于对相似函数分组，可选择已有分组算法，也可自建算法。 **[186 星标]**
 - [matiaszanolli/sega-vr-disasm](https://github.com/matiaszanolli/sega-vr-disasm) — Sega 32X 版《Virtua Racing》的完整静态重编译，优化仍在进行中。 **[183 星标]**
-- [SoftSec-KAIST/BinKit](https://github.com/SoftSec-KAIST/BinKit) — 二进制代码相似性分析（BCSA）基准 **[183 星标]**
+- [SoftSec-KAIST/BinKit](https://github.com/SoftSec-KAIST/BinKit) — 二进制代码相似性分析（BCSA）基准 **[183 星标]** · 论文：[基于可解释特征工程重新审视二进制代码相似性分析及经验教训](https://awesomerea.org/zh/papers/paper-binkit/)
 - [vallejocc/Reverse-Engineering-Arsenal](https://github.com/vallejocc/Reverse-Engineering-Arsenal) — 辅助逆向工程的实用脚本 **[183 星标]**
 - [Decompollaborate/rabbitizer](https://github.com/Decompollaborate/rabbitizer) — MIPS 指令解码器 **[182 星标]**
 - [romainthomas/reverse-engineering-workshop](https://github.com/romainthomas/reverse-engineering-workshop) — 逆向工程工作坊的幻灯片及实践材料 **[182 星标]**
