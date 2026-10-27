@@ -47,7 +47,7 @@
 - [onehouwong/Firmware-Analysis-Papers](https://github.com/onehouwong/Firmware-Analysis-Papers) — 近期固件分析安全研究论文 **[85 星标]**
 - [Cr4sh/smram\_parse](https://github.com/Cr4sh/smram_parse) — 系统管理内存（SMRAM）分析工具 **[83 星标]**
 - [fkie-cad/LuckyCAT](https://github.com/fkie-cad/LuckyCAT) — 分布式模糊测试管理框架 **[70 星标]**
-- [RiS3-Lab/DICE-DMA-Emulation](https://github.com/RiS3-Lab/DICE-DMA-Emulation) — DICE：自动仿真 DMA 输入通道，用于固件动态分析 **[67 星标]**
+- [RiS3-Lab/DICE-DMA-Emulation](https://github.com/RiS3-Lab/DICE-DMA-Emulation) — DICE：自动仿真 DMA 输入通道，用于固件动态分析 **[67 星标]** · 论文：[DICE：面向动态固件分析的 DMA 输入通道自动仿真](https://awesomerea.org/zh/papers/paper-dice/)
 - [C00kie-/IoT-workshop-materials](https://github.com/C00kie-/IoT-workshop-materials) — 自 2019 年起开展的硬件逆向工程工作坊资料 **[65 星标]**
 - [jowinjohnchemban/winbinwalk](https://github.com/jowinjohnchemban/winbinwalk) — Windows 版 binwalk **[60 星标]**
 - [soyersoyer/basefind2](https://github.com/soyersoyer/basefind2) — 速度更快的固件基址扫描器。 **[60 星标]**
