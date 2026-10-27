@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**851 repositories** · 2026-10-20 UTC
+**850 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -366,7 +366,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [doronz88/fa](https://github.com/doronz88/fa) — Automation tool for locating symbols &amp; structs in binary (primary IDA focused) **[112 stars]**
 - [guedou/jupyter-radare2](https://github.com/guedou/jupyter-radare2) — Just a simple radare2 Jupyter kernel **[110 stars]**
 - [abenkhadra/spedi](https://github.com/abenkhadra/spedi) — Speculative disassembly, CFG recovery, and call-graph recovery from stripped binaries. **[109 stars]**
-- [Accenture/FirmLoader](https://github.com/Accenture/FirmLoader) — No description supplied by the upstream repository. **[109 stars]**
 - [0xroman1/Scuffed\_Low\_Level\_Stash](https://github.com/0xroman1/Scuffed_Low_Level_Stash) — Stash for Binary Exploitation and Reverse Engineering Resources **[108 stars]**
 - [garyttierney/intellij-ghidra](https://github.com/garyttierney/intellij-ghidra) — An IntelliJ IDEA plugin for working on Ghidra Extensions. **[107 stars]**
 - [aerosoul94/ida\_gel](https://github.com/aerosoul94/ida_gel) — A collection of IDA loaders for various game console ELF's. (PS3, PSVita, WiiU) **[106 stars]**

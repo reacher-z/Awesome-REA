@@ -4330,5 +4330,14 @@
       "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
       "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
     ]
+  },
+  "firmloader": {
+    "name": "FirmLoader 微控制器固件内存布局 IDA 插件",
+    "requirements": [
+      "唯一的发布版本是标签 1.0，标题为“IDA 8.X”，发布于 2024-12-05，指向 2024 年 2 月的一次提交。所审阅的 main 分支提交 5c9c1a1 是 2024-12-05 的最后一次改动，比该标签多四个提交：一个外部贡献的拉取请求加入了 IDA 9.0 支持，另一个为 STM32L4x1 增加了 SRAM2 内存段。未核实更早的 IDA 版本能否使用。",
+      "安装方法是把 firmloader.py 和 firmloader_data 文件夹复制到 IDA 的 plugins 目录；需要带 IDAPython 的 IDA，插件代码使用 Python 3.8+ 语法。分析者需按处理器文档给出的基址加载镜像，把主代码段重命名为 ROM，再在 Edit > FirmLoader 菜单中选择型号；应用后插件会将 ROM 段交给 IDA 自动分析。",
+      "输入是分析者已从微控制器中读出的固件镜像；仓库不含任何固件，只有插件本身、MCU 描述 JSON 文件、data_template.json 和两张 README 配图。813 个描述文件中有 812 个为 32 位；16 位的 ATmega328 描述文件未列出外设，另有四个 SPC5 和 AURIX TC27x 芯片的描述文件没有中断向量表；README 说明，若同一系列有多种内存容量，所有型号都按最大 RAM 生成。其他 MCU 需要手工编写描述文件。",
+      "采用 Apache-2.0 许可。README 指出 SPC560B64x 是完全手工编写的描述文件，其余文件则只称作 SVD 数据的补充，未说明其生成方式；本次未对照厂商文档核对其中的寄存器与向量，也未加载任何固件。"
+    ]
   }
 }

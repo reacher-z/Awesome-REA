@@ -11799,5 +11799,35 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "firmloader",
+    "name": "FirmLoader",
+    "url": "https://github.com/Accenture/FirmLoader",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "IDA plugin that applies a microcontroller's memory map to a raw firmware image: once the analyst picks an MCU model, it creates RAM and other memory segments, adds peripheral segments with named registers and, where a vector table is described, labels its entries and turns the handlers they point to into functions. The README compares it to IDA's built-in SVD loader, but it uses a simpler JSON description that can be written by hand from public datasheets. The reviewed commit bundles 813 descriptions for Microchip/Atmel, ST, NXP, TI, Silicon Labs and other MCUs.",
+    "description_zh": "为原始微控制器固件镜像套用芯片内存布局的 IDA 插件：分析者选定 MCU 型号后，它会创建 RAM 等内存段，添加带有寄存器命名的外设段，并在描述文件包含中断向量表时标注各表项，把它们指向的处理程序创建为函数。README 称其类似 IDA 内置的 SVD 加载器，但采用更简单的 JSON 描述格式，可依据公开的数据手册手工编写。所审阅提交附带 813 个描述文件，涵盖 Microchip/Atmel、ST、NXP、TI、Silicon Labs 等厂商的 MCU。",
+    "evidence_url": "https://github.com/Accenture/FirmLoader/blob/5c9c1a149b2b638d1e2b65d39723b6a45379fdb1/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The only release is tag 1.0, titled “IDA 8.X” and published 2024-12-05; it points to a February 2024 commit. The reviewed main commit 5c9c1a1, the last change on 2024-12-05, is four commits ahead: a contributed pull request adds IDA 9.0 support and another adds an STM32L4x1 SRAM2 segment. Older IDA releases were not checked.",
+      "Installed by copying firmloader.py and the firmloader_data folder into IDA's plugins directory; it needs IDA with IDAPython, and the plugin code uses Python 3.8+ syntax. The analyst loads the image at the base address the processor documentation gives, renames the main code segment to ROM and chooses the model under Edit > FirmLoader; applying it marks the ROM segment for IDA auto-analysis.",
+      "Input is a firmware image the analyst has already read out of a microcontroller; the repository contains no firmware, only the plugin, MCU description JSON files, a data_template.json and two README images. Of the 813 descriptions, 812 are 32-bit; the 16-bit ATmega328 one lists no peripherals, and four for SPC5 and AURIX TC27x parts have no vector table; README says that where a series has several memory sizes, every unit was generated with the largest RAM. Other MCUs need a hand-written description.",
+      "Apache-2.0. README names SPC560B64x as a purely hand-written description and otherwise presents the files as a supplement to SVD data without documenting how they were generated; their registers and vectors were not checked against vendor documentation, and no firmware was loaded."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Accenture/FirmLoader/blob/5c9c1a149b2b638d1e2b65d39723b6a45379fdb1/firmloader.py",
+      "https://github.com/Accenture/FirmLoader/blob/5c9c1a149b2b638d1e2b65d39723b6a45379fdb1/data_template.json",
+      "https://github.com/Accenture/FirmLoader/tree/5c9c1a149b2b638d1e2b65d39723b6a45379fdb1/firmloader_data",
+      "https://github.com/Accenture/FirmLoader/blob/5c9c1a149b2b638d1e2b65d39723b6a45379fdb1/LICENSE",
+      "https://github.com/Accenture/FirmLoader/pull/5",
+      "https://github.com/Accenture/FirmLoader/releases/tag/1.0"
+    ]
   }
 ]
