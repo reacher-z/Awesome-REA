@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "pawitp-protobuf-decoder": {
+    "name": "Protobuf Decoder 无定义 Protobuf 网页解码器",
+    "requirements": [
+      "没有发行版或标签；package.json 声明的是私有的 0.1.0 软件包。所审阅的 2026-10-17 master 提交是 Dependabot 依赖升级，最近的功能性改动是 2024 年加入的文件上传和 2025 年加入的 varint 长度前缀输入。CircleCI 在 Node 20.11 上运行 Vitest 单元测试，并将覆盖率上传到 Codecov。",
+      "托管在 protobuf-decoder.netlify.app 的页面只需浏览器即可使用，应用说明所有解码都在本地通过 JavaScript 完成。在本地运行需要 Node.js 和 npm：先运行 npm install，再用 npm start 启动 Vite 开发服务器，或用 npm run build 生成静态构建。",
+      "解码不依赖定义文件，属于启发式推断：无法恢复字段名称和声明类型；每个长度分隔字段都要猜测是嵌套报文、字符串还是字节；源码将重复字段支持标为待办；也不处理 group 线路类型，遇到时解码会停止，剩余输入显示为未解析字节。它只负责解码，不能编辑、重新编码，也没有代理集成；待分析的报文需由用户自行获取。",
+      "采用 MIT 许可（Copyright 2019 Pawit Pornkitprasan）。本条目未解码任何报文，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

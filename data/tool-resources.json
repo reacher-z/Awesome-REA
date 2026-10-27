@@ -12616,5 +12616,37 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "pawitp-protobuf-decoder",
+    "name": "Protobuf Decoder",
+    "url": "https://github.com/pawitp/protobuf-decoder",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Pawit Pornkitprasan's React web application for decoding Protocol Buffers data without the original .proto files, offered as a hosted page or run locally, with all decoding done in the browser. Pasted hex or base64 input, or an uploaded file, is split into a table of byte ranges, field numbers, wire types and contents: varints are shown as unsigned, two's-complement and zigzag integers, fixed32 and fixed64 values as integers and floating-point numbers, and length-delimited fields as nested messages when they parse cleanly, otherwise as UTF-8 strings or bytes. It skips a leading gRPC message header and can optionally split a stream of varint length-delimited messages.",
+    "description_zh": "Pawit Pornkitprasan 开发的 React 网页应用，用于在没有原始 .proto 文件的情况下解码 Protocol Buffers 数据；既有在线托管页面，也可在本地运行，所有解码都在浏览器中完成。粘贴的十六进制或 base64 数据（也可上传文件）会被拆分成表格，列出字节范围、字段编号、线路类型和内容：varint 同时显示为无符号整数、补码整数和 zigzag 编码整数，fixed32 和 fixed64 显示为整数和浮点数，长度分隔字段若能完整解析则显示为嵌套报文，否则显示为 UTF-8 字符串或字节。它会跳过开头的 gRPC 报文头，还可选择按 varint 长度前缀拆分连续的多条报文。",
+    "evidence_url": "https://github.com/pawitp/protobuf-decoder/blob/7d0b5edecbbbd38c1230ba9301359cc27e373c23/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No releases or tags; package.json declares a private 0.1.0 package. The reviewed master commit of 2026-10-17 is a Dependabot dependency bump, and the most recent functional changes added file upload in 2024 and varint length-delimited input in 2025. CircleCI runs the Vitest unit tests on Node 20.11 and uploads coverage to Codecov.",
+      "The hosted page at protobuf-decoder.netlify.app needs only a browser, and the app states that all decoding is done locally in JavaScript. Running it locally needs Node.js and npm: npm install, then npm start for the Vite development server, or npm run build for a static build.",
+      "Decoding is schema-less and heuristic: field names and declared types are not recovered, each length-delimited field is guessed to be a nested message, string or bytes, the source marks repeated-field support as a TODO, and the group wire types are not handled, so decoding stops there and the remaining input is shown as left-over bytes. It only decodes; there is no editing, re-encoding or proxy integration, and users supply their own captured messages.",
+      "MIT (Copyright 2019 Pawit Pornkitprasan). No messages were decoded for this entry, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pawitp/protobuf-decoder/blob/7d0b5edecbbbd38c1230ba9301359cc27e373c23/src/App.jsx",
+      "https://github.com/pawitp/protobuf-decoder/blob/7d0b5edecbbbd38c1230ba9301359cc27e373c23/src/protobufDecoder.js",
+      "https://github.com/pawitp/protobuf-decoder/blob/7d0b5edecbbbd38c1230ba9301359cc27e373c23/src/protobufPartDecoder.jsx",
+      "https://github.com/pawitp/protobuf-decoder/blob/7d0b5edecbbbd38c1230ba9301359cc27e373c23/src/ProtobufPart.jsx",
+      "https://github.com/pawitp/protobuf-decoder/blob/7d0b5edecbbbd38c1230ba9301359cc27e373c23/package.json",
+      "https://github.com/pawitp/protobuf-decoder/blob/7d0b5edecbbbd38c1230ba9301359cc27e373c23/.circleci/config.yml",
+      "https://github.com/pawitp/protobuf-decoder/blob/7d0b5edecbbbd38c1230ba9301359cc27e373c23/LICENSE",
+      "https://protobuf-decoder.netlify.app/"
+    ]
   }
 ]
