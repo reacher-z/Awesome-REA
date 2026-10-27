@@ -12616,5 +12616,37 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "enjarify",
+    "name": "Enjarify",
+    "url": "https://github.com/google/enjarify",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Pure-Python 3 translator from Dalvik bytecode to equivalent Java bytecode, so Java analysis tools and decompilers can be applied to Android apps: given an APK, with every DEX file of a multidex APK combined into one jar, or a single DEX file, it writes a jar of class files. Its README contrasts it with dex2jar and lists edge cases it handles, such as Unicode class names, constants used as several types, implicit casts, exception handlers that jump into normal control flow, very long methods and classes that reference too many constants. By default it also applies readability optimizations such as copy propagation and unused-value removal.",
+    "description_zh": "用纯 Python 3 编写的转换工具，把 Dalvik 字节码转换为等价的 Java 字节码，使 Java 分析工具和反编译器可以用于 Android 应用：输入 APK（多 dex APK 中的所有 DEX 文件会合并到同一个 jar）或单个 DEX 文件，即可输出由 class 文件组成的 jar。README 将其与 dex2jar 对比，并列出它能处理的边缘情况，例如 Unicode 类名、被当作多种类型使用的常量、隐式类型转换、跳入正常控制流的异常处理器、超长方法，以及引用常量过多的类。默认还会进行复制传播、删除未使用值等提高可读性的优化。",
+    "evidence_url": "https://github.com/google/enjarify/blob/f2db0563aa83885ce6e6acd5b7dc9a8a1a1e1987/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Archived. Latest release at review: 1.0.3, published 2016-12-20 with no assets; the last commit is from 2017-01-30. The README says this repository may be out of date and that future development moved to Storyyeller/enjarify, whose master branch is 15 commits ahead, with its last commit on 2020-03-07.",
+      "Runs from a clone with Python 3 and no other dependencies. enjarify.sh prefers PyPy3, which the README calls much faster than CPython, and enjarify.bat always calls python3. Input is the analyst's own APK or DEX file; the output defaults to [inputname]-enjarify.jar, -o sets the name, -f allows overwriting and --fast skips the optimizations.",
+      "Optional metadata such as source-file attributes, line numbers and annotations is not translated, and the README notes contrived cases that cannot be translated because of Android or Java limits. The output is bytecode, so reading it as source needs a separate Java decompiler. runtests.py translates the bundled fixtures, small classes.dex files with their smali sources and expected outputs in tests/test1 to tests/test7, adds the small Android API stub classes from tests/stubs and runs the result with java.",
+      "Apache-2.0; the README states that it is not an official Google product. Nothing was installed or run in this review; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/google/enjarify/blob/f2db0563aa83885ce6e6acd5b7dc9a8a1a1e1987/enjarify/main.py",
+      "https://github.com/google/enjarify/blob/f2db0563aa83885ce6e6acd5b7dc9a8a1a1e1987/enjarify.sh",
+      "https://github.com/google/enjarify/blob/f2db0563aa83885ce6e6acd5b7dc9a8a1a1e1987/enjarify.bat",
+      "https://github.com/google/enjarify/blob/f2db0563aa83885ce6e6acd5b7dc9a8a1a1e1987/enjarify/runtests.py",
+      "https://github.com/google/enjarify/tree/f2db0563aa83885ce6e6acd5b7dc9a8a1a1e1987/tests",
+      "https://github.com/google/enjarify/blob/f2db0563aa83885ce6e6acd5b7dc9a8a1a1e1987/LICENSE.txt",
+      "https://github.com/google/enjarify/releases/tag/1.0.3",
+      "https://github.com/Storyyeller/enjarify/tree/6364dfb30f7862873b84ec5fad1d1286c526ba0b"
+    ]
   }
 ]
