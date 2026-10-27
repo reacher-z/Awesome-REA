@@ -7294,5 +7294,65 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-btd",
+    "title": "Decompiling x86 Deep Neural Network Executables",
+    "title_zh": "反编译 x86 深度神经网络可执行文件",
+    "authors": [
+      "Zhibo Liu",
+      "Yuanyuan Yuan",
+      "Shuai Wang",
+      "Xiaofei Xie",
+      "Lei Ma"
+    ],
+    "year": 2023,
+    "publication_date": "2023-08",
+    "date_precision": "month",
+    "date_basis": "The BibTeX on the USENIX presentation page gives August 2023 for the 32nd USENIX Security Symposium proceedings. Month precision is retained; the August 9–11 symposium dates are not substituted for a publication day, and the 2022 arXiv dates belong to the extended preprint.",
+    "date_basis_zh": "USENIX 论文页面的 BibTeX 将第 32 届 USENIX Security 研讨会论文集的出版时间列为 2023 年 8 月。本条目保留月份精度，不以 8 月 9–11 日的会议日期代替具体出版日；2022 年的 arXiv 日期属于扩展版预印本。",
+    "venue": "USENIX Security 2023",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2210.01075",
+    "arxiv_version_reviewed": "v2",
+    "first_arxiv_date": "2022-10-03",
+    "doi": null,
+    "citation": {
+      "container_title": "32nd USENIX Security Symposium (USENIX Security 23)",
+      "publisher": "USENIX Association",
+      "pages": "7357-7374",
+      "sources": [
+        "https://www.usenix.org/conference/usenixsecurity23/presentation/liu-zhibo"
+      ]
+    },
+    "url": "https://www.usenix.org/conference/usenixsecurity23/presentation/liu-zhibo",
+    "pdf_url": "https://www.usenix.org/system/files/usenixsecurity23-liu-zhibo.pdf",
+    "code_url": "https://github.com/monkbai/DNN-decompiler/tree/33227a0b34f87c490efc734d667ac56530f5074a",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "BTD (Bin to DNN) decompiles stripped 64-bit x86 executables emitted by deep-learning compilers into model specifications: operator types, network topology, dimensions and parameters. A learned classifier labels disassembled functions as DNN operators, Intel Pin dynamic analysis chains them, and taint-reduced, trace-based symbolic execution with per-operator patterns recovers dimensions and parameter layouts. The authors rebuild recovered models in PyTorch and recompile them to compare behaviour with the original executable.",
+    "description_zh": "BTD（Bin to DNN）将深度学习编译器生成、已剥离符号的 64 位 x86 可执行文件反编译为模型规格：算子类型、网络拓扑、维度与参数。学习得到的分类器把反汇编函数标注为 DNN 算子，Intel Pin 动态分析将算子串联起来，再在经污点分析裁剪的执行轨迹上进行符号执行，借助针对各算子的模式恢复维度与参数布局。作者在 PyTorch 中重建恢复出的模型并重新编译，以便与原可执行文件比较行为。",
+    "scope_limitations_en": "Evaluated only on 64-bit x86 executables from TVM v0.7, v0.8 and v0.9.dev (-O0 and -O3), three Glow snapshots from 2020–2022 and NNFusion v0.2/v0.3; GPU, accelerator and other-architecture executables are discussed, not decompiled. It assumes flawless disassembly and function recovery (IDA Pro 7.5 in the paper) and known compilation provenance, and dimension/parameter patterns are hand-designed per operator: 22 of 36 ONNX operators needing such patterns are covered, excluding quantized operators such as QLinearConv. The authors report correct specifications for 59 of 65 executables from seven CV models and FastText; one TVM -O3 ResNet18 Conv layout required manual fixing with ground truth, and NNFusion compiled only its own VGG11. Recompiled behaviour is compared on 100 ImageNet images or 50 crafted FastText inputs, not proven for all inputs. Obfuscated executables were not evaluated.",
+    "scope_limitations_zh": "评测仅覆盖由 TVM v0.7、v0.8、v0.9.dev（-O0 与 -O3）、2020–2022 年的三个 Glow 快照以及 NNFusion v0.2/v0.3 生成的 64 位 x86 可执行文件；GPU、加速器及其他架构的可执行文件只作讨论，未被反编译。方法假定反汇编与函数恢复完全正确（论文使用 IDA Pro 7.5），且编译来源已知；维度与参数模式需针对各算子人工设计：需要此类模式的 36 个 ONNX 算子中覆盖了 22 个，不含 QLinearConv 等量化算子。作者报告在来自七个计算机视觉模型和 FastText 的 65 个可执行文件中，有 59 个得到正确规格；一个 TVM -O3 ResNet18 卷积算子的参数布局需借助真实标签人工修正，NNFusion 也只能编译其自带的 VGG11。重新编译后的行为仅在 100 张 ImageNet 图片或 50 条人工构造的 FastText 输入上比较，并未证明对全部输入一致。未评测经过混淆的可执行文件。",
+    "why_fits_en": "Extends decompilation beyond C/C++ programs to compiled machine-learning models, recovering a rebuildable high-level specification from optimized native code.",
+    "why_fits_zh": "将反编译从 C/C++ 程序扩展到已编译的机器学习模型，从优化后的本机代码中恢复可重建的高层规格。",
+    "metadata_notes": "The USENIX presentation-page BibTeX establishes the five-author order, proceedings title, pages 7357–7374 and August 2023. arXiv v2 (2022-10-04; v1 2022-10-03) is the authors' 25-page extended version, which the 19-page final paper cites for omitted details; figures in this record follow the final paper. The final PDF's usenixsecurity23- name is outside the reviewed USENIX identity profile, so publication identity rests on the arXiv ID. The paper-linked monkbai/DNN-decompiler snapshot reviewed at commit 33227a0 (2026-03-13) carries HKUST's Academic Software License, which limits use to academic or nonprofit research and directs commercial users to the institution; GitHub reports no SPDX license. README prerequisites include Ubuntu 18.04, Python 3.6.9+, PyTorch 1.9+, Intel Pin 3.14 and optionally IDA Pro 7.5, which is commercial and not included; disassembly outputs are supplied instead. The authors report more than a week of single-threaded trace logging and nearly 1 TB of storage for the full evaluation, so the artifact ships filtered traces via a Docker image and Dropbox/Zenodo archives. Zenodo dataset DOI 10.5281/zenodo.7219867 (CC BY 4.0) identifies the artifact, not the paper. The README's 63-executable evaluation covers TVM and Glow only, omitting the paper's two NNFusion builds, and reports Available, Functional and Reproduced badges. No archives, executables or models were downloaded, and no upstream code or experiments were run.",
+    "metadata_notes_zh": "USENIX 论文页面的 BibTeX 确认了五位作者的顺序、论文集名称、页码 7357–7374 以及 2023 年 8 月。arXiv v2（2022-10-04；v1 为 2022-10-03）是作者 25 页的扩展版，19 页的正式论文以其补充省略的细节；本条目中的数据以正式论文为准。正式 PDF 采用 usenixsecurity23- 命名，不在已审阅的 USENIX 出版身份规则之内，因此出版身份依靠 arXiv 标识。论文链接的 monkbai/DNN-decompiler 仓库在所审阅的提交 33227a0（2026-03-13）中采用香港科技大学的 Academic Software License，仅允许学术或非营利研究使用，商业用户需联系该机构；GitHub 未识别出 SPDX 许可证。README 列出的前提包括 Ubuntu 18.04、Python 3.6.9+、PyTorch 1.9+、Intel Pin 3.14，以及可选的 IDA Pro 7.5；IDA Pro 为商业软件且未随附，仓库改为提供反汇编结果。作者称完整评测需要单线程记录轨迹超过一周、占用近 1 TB 存储，因此产物通过 Docker 镜像与 Dropbox／Zenodo 压缩包提供过滤后的轨迹。Zenodo 数据集 DOI 10.5281/zenodo.7219867（CC BY 4.0）标识的是产物而非论文。README 中 63 个可执行文件的评测只覆盖 TVM 与 Glow，未包括论文中的两个 NNFusion 构建，并说明产物获得 Available、Functional 与 Reproduced 徽章。本次未下载压缩包、可执行文件或模型，也未运行上游代码或实验。",
+    "evidence_urls": [
+      "https://www.usenix.org/conference/usenixsecurity23/presentation/liu-zhibo",
+      "https://www.usenix.org/system/files/usenixsecurity23-liu-zhibo.pdf",
+      "https://arxiv.org/abs/2210.01075",
+      "https://arxiv.org/pdf/2210.01075v2",
+      "https://github.com/monkbai/DNN-decompiler/blob/33227a0b34f87c490efc734d667ac56530f5074a/README.md",
+      "https://github.com/monkbai/DNN-decompiler/blob/33227a0b34f87c490efc734d667ac56530f5074a/LICENSE",
+      "https://github.com/monkbai/DNN-decompiler/blob/33227a0b34f87c490efc734d667ac56530f5074a/COPYING",
+      "https://zenodo.org/records/7219867"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
