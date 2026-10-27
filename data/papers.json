@@ -7294,5 +7294,62 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-decompiler-fidelity-taxonomy",
+    "title": "A Taxonomy of C Decompiler Fidelity Issues",
+    "title_zh": "C 语言反编译器保真度问题分类",
+    "authors": [
+      "Luke Dramko",
+      "Jeremy Lacomis",
+      "Edward J. Schwartz",
+      "Bogdan Vasilescu",
+      "Claire Le Goues"
+    ],
+    "year": 2024,
+    "publication_date": "2024-08",
+    "date_precision": "month",
+    "date_basis": "Publication month from the official USENIX BibTeX (month = aug) and the final PDF cover for the 33rd USENIX Security Symposium, August 14–16, 2024; no exact publication day is asserted.",
+    "date_basis_zh": "采用 USENIX 官方 BibTeX（month = aug）及第 33 届 USENIX Security Symposium（2024 年 8 月 14–16 日）最终版 PDF 封面所载的出版月份，不推定具体出版日。",
+    "venue": "USENIX Security 2024",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": null,
+    "citation": {
+      "container_title": "33rd USENIX Security Symposium (USENIX Security 24)",
+      "publisher": "USENIX Association",
+      "pages": "379-396",
+      "sources": [
+        "https://www.usenix.org/conference/usenixsecurity24/presentation/dramko",
+        "https://www.usenix.org/system/files/usenixsecurity24-dramko.pdf"
+      ]
+    },
+    "url": "https://www.usenix.org/conference/usenixsecurity24/presentation/dramko",
+    "pdf_url": "https://www.usenix.org/system/files/usenixsecurity24-dramko.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Open-codes decompiled/original C function pairs to classify how decompiler output departs from the source beyond missing names and types. Using a statement-alignment abstraction and thematic analysis, the authors build a hierarchical codebook of 15 top-level categories and 52 codes, covering correctness issues such as nonequivalent expressions and incorrect return behavior and readability issues such as extraneous variables, non-idiomatic control flow and decompiler-specific macros. The codebook, developed on Hex-Rays output, is applied to Ghidra, retdec and angr, and the authors suggest type prediction, rule-based fixes and whole-program learned techniques to address classes of defects.",
+    "description_zh": "对反编译所得与原始 C 函数构成的代码对进行开放式编码，归纳反编译器输出在缺失名称与类型之外如何偏离源码。作者借助语句对齐抽象与主题分析，构建包含 15 个顶层类别、共 52 个编码的层级化编码手册，既涵盖不等价表达式、错误返回行为等正确性问题，也涵盖多余变量、不符合惯用写法的控制流及反编译器特有宏等可读性问题。该编码手册基于 Hex-Rays 输出建立，并应用于 Ghidra、retdec 与 angr；作者据此提出以类型预测、基于规则的修正及整程序级学习技术来应对各类缺陷。",
+    "scope_limitations_en": "A qualitative taxonomy, not a benchmark score or decompiler ranking. Coding centres on a random sample of 200 Hex-Rays decompiled/original pairs from the small-function set plus ten large functions; the authors report 235 coded pairs in total. Ghidra, retdec and angr were compared with Hex-Rays only on a 25-function subsample. Inputs are Hex-Rays decompilations of GHCC builds of majority-C GitHub repositories, biased toward projects with recognizable, working build scripts and filtered by a step that also removed some valid functions; the dataset contains no obfuscated binaries and is unlikely to include malware. Missing variable names and types were deliberately not labeled. The Java check applies the codebook to 25 Defects4J functions decompiled with JD-GUI as a side study. The issues’ effect on reverse-engineer productivity is left to future work.",
+    "scope_limitations_zh": "这是定性分类，并非基准分数或反编译器排名。编码主要基于从小函数集中随机抽取的 200 个 Hex-Rays 反编译／原始函数对，另加十个大型函数；作者报告共编码 235 个函数对。Ghidra、retdec 与 angr 仅在 25 个函数的子样本上与 Hex-Rays 比较。输入是对多数代码为 C 的 GitHub 仓库经 GHCC 构建后的 Hex-Rays 反编译结果，偏向具有可识别且可用构建脚本的项目，并经过一个也误删部分有效函数的过滤步骤；数据集不含混淆二进制，也不太可能包含恶意软件。缺失的变量名与类型被有意不作标注。Java 检查作为附带研究，将编码手册应用于 25 个经 JD-GUI 反编译的 Defects4J 函数。这些问题对逆向工程人员工作效率的影响留待后续研究。",
+    "why_fits_en": "Adds an empirical taxonomy of what decompiled C gets wrong, complementing decompiler benchmarks with automated scores and LLM repair methods such as FidelityGPT.",
+    "why_fits_zh": "补充关于反编译 C 代码错在何处的实证分类，与采用自动评分的反编译基准及 FidelityGPT 等大语言模型修复方法互补。",
+    "metadata_notes": "No paper DOI or arXiv identifier was verified; the record uses the reviewed USENIX Security 2024 presentation-page and usenixsecurity24-dramko.pdf profile. The USENIX BibTeX gives the 33rd USENIX Security Symposium, pages 379–396, USENIX Association and month August; the presentation page also links a prepublication PDF. The paper’s Availability section points to Zenodo DOI 10.5281/zenodo.8419614, a CC BY 4.0 dataset record dated 2023-11-07 by the same five creators with codebook.pdf and dataset.zip; that DOI identifies the coded examples and codebook, not this paper, so it is recorded here rather than as the paper DOI or a code link. The paper versions only JD-GUI (1.6.6) and names no Hex-Rays, Ghidra, retdec or angr versions. Intercoder agreement is reported as Cohen’s kappa and is weaker for rare issues. The Zenodo files were not downloaded, and no decompilers were run.",
+    "metadata_notes_zh": "未核实论文 DOI 或 arXiv 标识符；本条目采用经审阅的 USENIX Security 2024 报告页面与 usenixsecurity24-dramko.pdf 配对规则。USENIX BibTeX 给出第 33 届 USENIX Security Symposium、页码 379–396、出版方 USENIX Association 及八月份；报告页面另链接预发表版 PDF。论文“可用性”一节指向 Zenodo DOI 10.5281/zenodo.8419614，这是同五位作者于 2023-11-07 发布的 CC BY 4.0 数据集记录，包含 codebook.pdf 与 dataset.zip；该 DOI 标识编码示例与编码手册，并非本论文，因此仅在此说明，不作为论文 DOI 或代码链接。论文只注明 JD-GUI 的版本（1.6.6），未给出 Hex-Rays、Ghidra、retdec 或 angr 的版本。编码者间一致性以 Cohen’s kappa 报告，罕见问题的一致性较弱。本次未下载 Zenodo 文件，也未运行任何反编译器。",
+    "evidence_urls": [
+      "https://www.usenix.org/conference/usenixsecurity24/presentation/dramko",
+      "https://www.usenix.org/system/files/usenixsecurity24-dramko.pdf",
+      "https://zenodo.org/records/8419614",
+      "https://zenodo.org/api/records/8419614"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
