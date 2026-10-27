@@ -7355,5 +7355,50 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-websight",
+    "title": "Unlocking the conversion of Web Screenshots into HTML Code with the WebSight Dataset",
+    "title_zh": "借助 WebSight 数据集实现网页截图到 HTML 代码的转换",
+    "authors": [
+      "Hugo Laurençon",
+      "Léo Tronchon",
+      "Victor Sanh"
+    ],
+    "year": 2024,
+    "publication_date": "2024-03-14",
+    "date_precision": "day",
+    "date_basis": "arXiv v1 submission date; no later version, journal reference or proceedings publication was found.",
+    "date_basis_zh": "arXiv v1 首次提交日期；未找到后续版本、期刊引用信息或会议论文集出版记录。",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2403.09029",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2024-03-14",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2403.09029",
+    "pdf_url": "https://arxiv.org/pdf/2403.09029v1",
+    "code_url": null,
+    "project_url": "https://huggingface.co/datasets/HuggingFaceM4/WebSight/tree/b11f8172f89c992b56ac702319e02c428cca4a4e",
+    "targets": [
+      "website"
+    ],
+    "description_en": "WebSight is a synthetic dataset of 2 million HTML documents paired with full-page screenshots for training screenshot-to-HTML models. Mistral-7B-Instruct generates website concepts, Deepseek-Coder-33B-Instruct writes each page in HTML with Tailwind CSS, images come from keyword-based stock-photo URLs, and Playwright renders the screenshots after filtering. This v0.2 release replaces the 823K-pair v0.1, which used traditional CSS and colored rectangles instead of images. The authors fine-tune an 8B vision-language model, Sightseer, on the data with DoRA and show qualitative conversions, including one from a hand-drawn sketch.",
+    "description_zh": "WebSight 是一个合成数据集，含 200 万份与整页截图配对的 HTML 文档，用于训练截图到 HTML 的模型。Mistral-7B-Instruct 生成网站构思，Deepseek-Coder-33B-Instruct 以 HTML 加 Tailwind CSS 编写每个页面，图片来自基于关键词的图库链接，经过筛选后由 Playwright 渲染截图。该 v0.2 版本取代了含 82.3 万对样本的 v0.1，后者使用传统 CSS，并以彩色矩形代替图片。作者用 DoRA 在该数据上微调了 8B 视觉语言模型 Sightseer，并展示了定性转换示例，其中包括一个由手绘草图转换的例子。",
+    "scope_limitations_en": "The websites are synthetic, LLM-generated single pages, not crawled real sites, so training on them does not establish reconstruction of real websites, their source or their behavior. Evaluation is qualitative only: no benchmark scores are reported, checkpoints were selected by manual inspection because validation loss did not track output quality, and the authors note failures on complex layouts, long text and designs unlike the training data, as well as Tailwind syntax errors. v0.2 pages load Tailwind CSS from a CDN link and images from source.unsplash.com URLs, so re-rendering depends on those external services. The base model was unreleased at the time, and the report is not peer-reviewed.",
+    "scope_limitations_zh": "这些网站均为大语言模型生成的合成单页，并非爬取的真实网站，因此基于其训练并不能证明可以重建真实网站、其源码或其行为。评估仅为定性：论文未报告基准分数；由于验证损失与输出质量不一致，检查点通过人工检查选取；作者也指出模型在复杂布局、长文本以及与训练数据差异较大的设计上会失败，并存在 Tailwind 语法错误。v0.2 页面通过 CDN 链接加载 Tailwind CSS，并从 source.unsplash.com 链接加载图片，因此重新渲染依赖这些外部服务。基础模型当时尚未发布，该报告也未经同行评审。",
+    "why_fits_en": "Adds the synthetic screenshot-to-HTML training dataset that later website reconstruction work, including Design2Code and Web2Code, builds on.",
+    "why_fits_zh": "补充后续网站重建研究（包括 Design2Code 与 Web2Code）所依托的合成截图到 HTML 训练数据集。",
+    "metadata_notes": "Reviewed arXiv v1, the only version, a technical report with no comment, journal reference or DOI; a Crossref search found no peer-reviewed version. The project link pins the Hugging Face dataset card at revision b11f817 (last modified 2024-03-26). The card declares CC BY 4.0, asks users to follow the licenses of the source content and to disclose use when releasing trained models, documents v0.1 in detail and still marks the v0.2 split size and creation section “TO DO”. The paper does not link code or the Sightseer weights, so no code link is recorded. The dataset was not downloaded, and no code or experiments were run.",
+    "metadata_notes_zh": "审阅了 arXiv v1，即唯一版本，这是一份技术报告，没有注释、期刊引用信息或 DOI；在 Crossref 中检索未找到经同行评审的版本。项目链接将 Hugging Face 数据卡固定在 b11f817 修订版（最后修改于 2024-03-26）。数据卡声明 CC BY 4.0，要求用户遵守源内容的许可证，并在发布训练所得模型时披露使用情况；其中详细记录了 v0.1，而 v0.2 的划分规模与构建章节仍标为“TO DO”。论文未链接代码或 Sightseer 权重，因此不记录代码链接。本次未下载数据集，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2403.09029v1",
+      "https://arxiv.org/pdf/2403.09029v1",
+      "https://huggingface.co/datasets/HuggingFaceM4/WebSight/blob/b11f8172f89c992b56ac702319e02c428cca4a4e/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
