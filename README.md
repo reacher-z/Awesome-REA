@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 507](https://img.shields.io/badge/resources-507-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 214](https://img.shields.io/badge/cases-214-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 508](https://img.shields.io/badge/resources-508-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 215](https://img.shields.io/badge/cases-215-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,11 +21,11 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-507 curated resources (214 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 504 because 3 of these appear only under Papers.
+508 curated resources (215 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 505 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
-- [Website](#website) (29) · [Game](#game) (196) · [App](#app) (82)
+- [Website](#website) (29) · [Game](#game) (196) · [App](#app) (83)
 - [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (21)
 
 **Research and workflows**
@@ -34,7 +34,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (214) · [Related Collections](#related-collections) (8) · [Full Repository Index](#full-repository-index) (3,309)
+- [All cases](https://awesomerea.org/cases/) (215) · [Related Collections](#related-collections) (8) · [Full Repository Index](#full-repository-index) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -349,6 +349,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**iX500 Scan: a macOS client for the reverse-engineered ScanSnap Wi-Fi protocol**](https://github.com/jonaswagnr/ix500-scan) - Replaces ScanSnap Home for a Fujitsu/PFU ScanSnap iX500 on macOS with a SwiftUI app and Python service that scan over Wi-Fi through the community-reverse-engineered VENS protocol, or over USB through SANE, and produce searchable PDFs. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/ix500-scan-scansnap-wifi-case/)</sub>
 - [**WristBeam: reconstructing Garmin’s watch protocol for a Mac companion**](https://github.com/kongdayan/wristbeam) - Implements a Garmin watch companion as a native macOS menu-bar app that pairs over Bluetooth, receives live health notifications and original FIT files, and can upload them to Garmin Connect. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/wristbeam-garmin-watch-protocol-case/)</sub>
 - [**usque: an open reimplementation of Cloudflare WARP’s MASQUE mode**](https://github.com/Diniboy1123/usque) - Reimplements the MASQUE mode of Cloudflare’s WARP client in Go, tunnelling IP traffic over QUIC/HTTP/3 with Connect-IP (RFC 9484) and exposing it as a native TUN device, SOCKS5 or HTTP proxies, TCP-only L4 proxies or port forwarding. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/usque-warp-masque-client-case/)</sub>
+- [**Webamp: a browser reimplementation of Winamp 2**](https://github.com/captbaritone/webamp) - Reimplements Winamp 2's main, equalizer and playlist windows in HTML5 and JavaScript, with Web Audio playback, volume, balance and equalizer, and renders original classic .wsz skins, which its documentation says match Winamp 2.9 pixel for pixel; Milkdrop presets run through the Butterchurn WebGL port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/webamp-winamp-reimplementation-case/)</sub>
 
 #### Tools, projects and integrations
 
