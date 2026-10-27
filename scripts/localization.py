@@ -6,6 +6,8 @@ from pathlib import Path
 import re
 import sys
 
+import strict_json
+
 ROOT = Path(__file__).resolve().parents[1]
 LOCALE_FILES = tuple(f'data/locales/repositories-{part}.json' for part in (1, 2, 3))
 # Binds each reviewed translation to the source text and omission evidence it was written from.
@@ -83,15 +85,10 @@ def read_fingerprints(root=ROOT):
     path = Path(root) / FINGERPRINT_FILE
     if not path.exists():
         return None
-
-    def unique_object(pairs):
-        result = {}
-        for key, value in pairs:
-            if key in result:
-                raise ValueError(f'{FINGERPRINT_FILE}: duplicate JSON key')
-            result[key] = value
-        return result
-    return json.loads(path.read_text(encoding='utf-8'), object_pairs_hook=unique_object)
+    try:
+        return strict_json.loads(path.read_text(encoding='utf-8'))
+    except ValueError as error:
+        raise ValueError(f'{FINGERPRINT_FILE}: {error}') from error
 
 
 def fingerprint_status(records, translations, document):
