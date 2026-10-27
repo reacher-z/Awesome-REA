@@ -4566,5 +4566,15 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "openbaud-serial-device-mcp": {
+    "name": "OpenBaud 串口设备 MCP 服务器",
+    "requirements": [
+      "这是一个很新的项目：仓库创建于 2026-08-23，截至 2026-10-09 的所审 v0.3.0 发布提交共有 48 次提交。Cargo.toml 声明版本为 0.3.0，rust-toolchain.toml 固定使用 Rust 1.96.0。README 和插件指南只记载了面向 Codex 的安装方式，即通过 codex plugin marketplace add 使用 stable 分支或发布归档；服务器本身以 openbaud mcp 经 stdio 运行，未说明其他 MCP 客户端的用法。",
+      "v0.3.0 发布版提供 macOS ARM64 与 Intel、Linux x64 与 ARM64、Windows x64 的插件归档以及一个通用包，均附 SHA-256 文件。Node 启动器需要 Node.js 18+，macOS 二进制仅为临时签名，尚未公证。源码检出中只提交了项目自己构建的 macOS ARM64 运行时 plugins/openbaud/bin/darwin-arm64/openbaud 及其 SHA-256 附属文件；其他主机需用 plugins/openbaud/scripts/build-runtime 和 Rust 工具链自行构建。",
+      "需要用户自己的串口或 USB 串口硬件。MCP 工具涵盖列出和打开端口、原始读取、发送与请求、运行已保存的命令和工作流、捕获、帧诊断以及会话统计。原始写入和设备命令被标记为可能具有破坏性，写入会记入只追加的审计日志；声明为 risk: danger 的命令需要明确确认，带 requires 前提条件的命令在会话确立相应设备状态之前会被拒绝。README 提醒串口写入可能重新配置或驱动硬件，建议对未知设备先从只读操作开始。",
+      "示例工作区收录 2026-08-24 从作者的 ESP32-S3 开发板录得的一次真实 OBP/1 请求与响应，其中雷达点由测试固件生成，并在报文中以 simulated_scene 标明；另有若干捕获文件，其说明记载了用串口协议测试器扫描 AT、ELM327 OBD-II、Marlin、GPS NMEA 和颗粒物传感器等帧格式的过程。所审代码树不含任何固件（包括该测试固件），README 引用的演示视频源码目录 media/pv 在此提交中也不存在。CI 在五种支持的主机上运行 Clippy、打包校验、测试、原生构建和 MCP 冒烟测试；本次审阅均未运行，也未连接任何硬件。",
+      "采用 MIT 许可（LICENSE、Cargo.toml）。随附技能要求智能体使用 OpenBaud 的工具而不是临时的 shell 串口访问，并把验证过的行为记录为可复用命令；这些是项目自身的工作流规则。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
