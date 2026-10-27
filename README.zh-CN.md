@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 492](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 208](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 135](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 492](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 208](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 136](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-492 项精选资源（208 个案例）· 135 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 489。
+492 项精选资源（208 个案例）· 136 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 489。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (135) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (136) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -640,7 +640,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**135 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**136 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -648,7 +648,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [智能体评测](#papers-agent-evaluation) (10) · [反编译](#papers-decompilation) (57) · [网站](#papers-website-reconstruction) (22)
 - [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (12) · [固件](#papers-firmware-analysis) (13)
-- [协议](#papers-protocol-analysis) (13)
+- [协议](#papers-protocol-analysis) (14)
 
 每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。部分论文也出现在精选资源目录中，两者数量不可相加。
 
@@ -819,6 +819,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**RFCLLM：评估大语言模型对网络协议状态机的推理能力**](https://arxiv.org/abs/2609.13389) - 以 16 种协议的 1,482 个问题评测协议状态机推理。 <sub>原题：*RFCLLM: Evaluating LLMs' Reasoning Ability of Network Protocol State Machines* · Findings of EMNLP 2026 · 已接收 · Anqi Chen 等 · [PDF](https://arxiv.org/pdf/2609.13389v1) · [代码](https://anonymous.4open.science/r/rfcllm) · [完整条目](https://awesomerea.org/zh/papers/paper-rfcllm/)</sub>
 - [**基于搜索优化从工业网络流量恢复过程变量**](https://arxiv.org/abs/2608.16403) - PVParser 根据工业流量与历史过程记录恢复过程变量布局：周期模式检测定位相关载荷，改进的蒙特卡洛树搜索推断字段边界、类型和字节序，再将解码序列与已观察的过程变量对齐。 <sub>原题：*Recovering Process Variables from Industrial Network Traffic via Search-Based Optimization* · CCS 2026 · 已接收 · Chuan Sheng 等 · [PDF](https://arxiv.org/pdf/2608.16403v2) · [完整条目](https://awesomerea.org/zh/papers/paper-pvparser/)</sub>
 - [**ICEPRE：基于数据驱动混合符号执行的工控协议逆向工程**](https://dl.acm.org/doi/10.1145/3728982) - 在二进制协议解析器中沿具体报文引导的路径分析，再进行符号化重放，提取字节级数据流以推断报文字段边界。 <sub>原题：*ICEPRE: ICS Protocol Reverse Engineering via Data-Driven Concolic Execution* · Proceedings of the ACM on Software Engineering (ISSTA 2025) · 期刊论文 · Yibo Qu 等 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728982) · [代码](https://github.com/QYbPtqyb/ICEPRE) · [完整条目](https://awesomerea.org/zh/papers/paper-icepre/)</sub>
+- [**释放大语言模型潜力：从协议实现推断状态机**](https://doi.org/10.1109/IWQoS65803.2025.11143461) - ProtocolGPT 借助检索增强的大语言模型，从协议实现源码推断协议状态机。 <sub>原题：*Unleashing the Power of LLM to Infer State Machine From the Protocol Implementation* · IWQoS 2025 · 会议论文 · Haiyang Wei 等 · [PDF](https://arxiv.org/pdf/2405.00393v4) · [完整条目](https://awesomerea.org/zh/papers/paper-protocolgpt/)</sub>
 - [**BinPRE：增强基于二进制分析的协议逆向工程中的字段推断**](https://dl.acm.org/doi/10.1145/3658644.3690299) - 根据受插桩监测的服务端二进制及输入报文，推断协议报文的字段边界与语义。 <sub>原题：*BinPRE: Enhancing Field Inference in Binary Analysis Based Protocol Reverse Engineering* · ACM CCS 2024 · 会议论文 · Jiayi Jiang 等 · [PDF](https://tingsu.github.io/files/ccs24-BinPRE.pdf) · [代码](https://github.com/ecnusse/BinPRE) · [完整条目](https://awesomerea.org/zh/papers/paper-binpre/)</sub>
 - [**DynPRE：基于动态推断的协议逆向工程**](https://www.ndss-symposium.org/ndss-paper/dynpre-protocol-reverse-engineering-via-dynamic-inference/) - DynPRE 以捕获的客户端—服务端流量为起点，再与在线协议服务端交互，推断报文格式与类型。 <sub>原题：*DynPRE: Protocol Reverse Engineering via Dynamic Inference* · NDSS 2024 · 会议论文 · Zhengxiong Luo 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-83-paper.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-dynpre/)</sub>
 - [**从网络协议实现提取精确格式规范及其安全应用**](https://dl.acm.org/doi/10.1145/3576915.3616614) - NetLifter 将可获取源码的 C 协议解析器静态转换为 BNF 风格的报文文法及报文字段之间的一阶逻辑约束。 <sub>原题：*Lifting Network Protocol Implementation to Precise Format Specification with Security Applications* · ACM CCS 2023 · 会议论文 · Qingkai Shi 等 · [PDF](https://qingkaishi.github.io/public_pdfs/CCS23.pdf) · [代码](https://github.com/qingkaishi/netlifter) · [完整条目](https://awesomerea.org/zh/papers/paper-netlifter/)</sub>

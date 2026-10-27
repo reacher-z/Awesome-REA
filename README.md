@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 492](https://img.shields.io/badge/resources-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 208](https://img.shields.io/badge/cases-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 135](https://img.shields.io/badge/papers-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 492](https://img.shields.io/badge/resources-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 208](https://img.shields.io/badge/cases-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-492 curated resources (208 cases) · 135 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 489 because 3 of these appear only under Papers.
+492 curated resources (208 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 489 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (135) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (136) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
 
 **More ways to browse**
 
@@ -639,7 +639,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**135 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**136 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -647,7 +647,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [Agent evaluation](#papers-agent-evaluation) (10) · [Decompilation](#papers-decompilation) (57) · [Websites](#papers-website-reconstruction) (22)
 - [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (12) · [Firmware](#papers-firmware-analysis) (13)
-- [Protocols](#papers-protocol-analysis) (13)
+- [Protocols](#papers-protocol-analysis) (14)
 
 Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation. Some papers also appear among curated resources; counts are not additive.
 
@@ -818,6 +818,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**RFCLLM: Evaluating LLMs' Reasoning Ability of Network Protocol State Machines**](https://arxiv.org/abs/2609.13389) - Tests reasoning over protocol state machines using 1,482 questions across 16 protocols. <sub>Findings of EMNLP 2026 · Accepted · Anqi Chen et al. · [PDF](https://arxiv.org/pdf/2609.13389v1) · [Code](https://anonymous.4open.science/r/rfcllm) · [Full entry](https://awesomerea.org/papers/paper-rfcllm/)</sub>
 - [**Recovering Process Variables from Industrial Network Traffic via Search-Based Optimization**](https://arxiv.org/abs/2608.16403) - PVParser recovers process-variable layouts from industrial traffic and historian records. <sub>CCS 2026 · Accepted · Chuan Sheng et al. · [PDF](https://arxiv.org/pdf/2608.16403v2) · [Full entry](https://awesomerea.org/papers/paper-pvparser/)</sub>
 - [**ICEPRE: ICS Protocol Reverse Engineering via Data-Driven Concolic Execution**](https://dl.acm.org/doi/10.1145/3728982) - Infers message-field boundaries by following concrete message-guided paths through binary protocol parsers, then symbolically replaying them to extract byte-level data flow. <sub>Proceedings of the ACM on Software Engineering (ISSTA 2025) · Journal article · Yibo Qu et al. · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728982) · [Code](https://github.com/QYbPtqyb/ICEPRE) · [Full entry](https://awesomerea.org/papers/paper-icepre/)</sub>
+- [**Unleashing the Power of LLM to Infer State Machine From the Protocol Implementation**](https://doi.org/10.1109/IWQoS65803.2025.11143461) - ProtocolGPT infers protocol state machines from implementation source code with a retrieval-augmented LLM. <sub>IWQoS 2025 · Conference paper · Haiyang Wei et al. · [PDF](https://arxiv.org/pdf/2405.00393v4) · [Full entry](https://awesomerea.org/papers/paper-protocolgpt/)</sub>
 - [**BinPRE: Enhancing Field Inference in Binary Analysis Based Protocol Reverse Engineering**](https://dl.acm.org/doi/10.1145/3658644.3690299) - Infers protocol-message field boundaries and semantics from instrumented server binaries and input messages. <sub>ACM CCS 2024 · Conference paper · Jiayi Jiang et al. · [PDF](https://tingsu.github.io/files/ccs24-BinPRE.pdf) · [Code](https://github.com/ecnusse/BinPRE) · [Full entry](https://awesomerea.org/papers/paper-binpre/)</sub>
 - [**DynPRE: Protocol Reverse Engineering via Dynamic Inference**](https://www.ndss-symposium.org/ndss-paper/dynpre-protocol-reverse-engineering-via-dynamic-inference/) - DynPRE starts from captured client–server traces and then interacts with a live protocol server to infer message formats and types. <sub>NDSS 2024 · Conference paper · Zhengxiong Luo et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-83-paper.pdf) · [Full entry](https://awesomerea.org/papers/paper-dynpre/)</sub>
 - [**Lifting Network Protocol Implementation to Precise Format Specification with Security Applications**](https://dl.acm.org/doi/10.1145/3576915.3616614) - NetLifter statically lifts source-available C protocol parsers into BNF-style message grammars and first-order constraints between packet fields. <sub>ACM CCS 2023 · Conference paper · Qingkai Shi et al. · [PDF](https://qingkaishi.github.io/public_pdfs/CCS23.pdf) · [Code](https://github.com/qingkaishi/netlifter) · [Full entry](https://awesomerea.org/papers/paper-netlifter/)</sub>
