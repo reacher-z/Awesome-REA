@@ -7294,5 +7294,66 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-rico",
+    "title": "Rico: A Mobile App Dataset for Building Data-Driven Design Applications",
+    "title_zh": "Rico：用于构建数据驱动设计应用的移动应用数据集",
+    "authors": [
+      "Biplab Deka",
+      "Zifeng Huang",
+      "Chad Franzen",
+      "Joshua Hibschman",
+      "Daniel Afergan",
+      "Yang Li",
+      "Jeffrey Nichols",
+      "Ranjitha Kumar"
+    ],
+    "year": 2017,
+    "publication_date": "2017-10-20",
+    "date_precision": "day",
+    "date_basis": "ACM-deposited Crossref metadata gives 20 October 2017 for both online and print publication; this precedes the October 22–25 conference dates printed in the paper and is not inferred from them.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将在线及印刷出版日期均列为 2017 年 10 月 20 日；该日期早于论文所印 10 月 22 日至 25 日的会议日期，并非据会议日程推定。",
+    "venue": "UIST 2017",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3126594.3126651",
+    "citation": {
+      "container_title": "Proceedings of the 30th Annual ACM Symposium on User Interface Software and Technology",
+      "publisher": "ACM",
+      "pages": "845-854",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3126594.3126651"
+      ]
+    },
+    "url": "https://doi.org/10.1145/3126594.3126651",
+    "pdf_url": "https://ranjithakumar.net/resources/rico.pdf",
+    "code_url": null,
+    "project_url": "https://www.interactionmining.org/archive/rico",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Rico is a dataset of Android app designs and a runtime mining system that needs no access to or modification of app source code. Crowd workers used free Google Play apps through a web interface to a device farm, recording interaction traces. An automated crawler then replayed each trace and kept exploring, using a screenshot-and-resource-id similarity heuristic to identify new UI states. The paper reports 10,811 traces and 72,219 unique UIs from 9,772 apps in 27 categories. Each UI has a screenshot, augmented view hierarchy, explored interactions, transition animations and a 64-dimensional autoencoder layout vector.",
+    "description_zh": "Rico 是一个 Android 应用设计数据集，也是一套无需获取或修改应用源码的运行时挖掘系统。众包人员通过网页界面使用设备农场中的免费 Google Play 应用，并记录交互轨迹。自动爬虫随后重放每条轨迹并继续探索，借助基于截图与 resource-id 的相似度启发式识别新的界面状态。论文报告共获得来自 27 个类别、9,772 个应用的 10,811 条轨迹和 72,219 个唯一界面。每个界面附有截图、增强的视图层级、已探索的交互、转场动画，以及由自编码器得到的 64 维布局向量。",
+    "scope_limitations_en": "A dataset and collection system, not a reconstruction method: the paper proposes UI code generation and interaction modeling as possible uses but does not generate code or reconstruct apps. It records UIs and interactions reached during human sessions capped at 10 minutes, each followed by one hour of automated crawling, not complete app behavior, backend logic or source code. Multimedia, productivity and personalization categories were excluded, and only free apps were mined. Coverage was evaluated on 10 popular apps by counting unique UIs, a measure that depends on the similarity heuristic (6% false-positive and 3% false-negative rates on 1,044 labeled pairs). The demonstrated application is autoencoder-based layout similarity search with qualitative examples. The 2017 snapshot will age as apps change.",
+    "scope_limitations_zh": "这是数据集与采集系统，而非重建方法：论文将界面代码生成和交互建模列为可能用途，但本身并不生成代码或重建应用。它记录的是每次不超过 10 分钟的人工会话及其后各一小时自动爬取所触达的界面与交互，并非完整应用行为、后端逻辑或源码。多媒体、效率与个性化类别被排除，且只挖掘免费应用。覆盖率在 10 个热门应用上以唯一界面数衡量，该度量依赖相似度启发式（在 1,044 对标注样本上假阳性率 6%、假阴性率 3%）。论文展示的应用是基于自编码器的布局相似度检索，并以定性示例说明。随着应用更新，这份 2017 年快照会逐渐过时。",
+    "why_fits_en": "Adds a large runtime-mined corpus of Android screenshots, view hierarchies and interaction traces that the paper proposes for UI code generation and interaction modeling, complementing the collection's screenshot-to-code app reconstruction papers.",
+    "why_fits_zh": "补充一个通过运行时挖掘获得的大规模 Android 截图、视图层级与交互轨迹语料，论文将其提出用于界面代码生成与交互建模，与本合集中从截图生成代码的应用重建论文互补。",
+    "metadata_notes": "Crossref, the paper PDF and the project's BibTeX agree on the eight-author order, UIST ’17 proceedings and DOI; Crossref supplies pages 845–854. The author-hosted PDF is the 10-page ACM-formatted paper; no arXiv version was found. The paper's link interactionmining.org/rico now redirects to the archive page, while the older rico.html path returns 404. The archive page differs from the paper: its abstract and dataset description cite more than 9.3k apps and 66k unique UIs, so the released v0.1 files should not be assumed to match the paper's 9,772 apps and 72,219 UIs. Separate downloads include screenshots with view hierarchies (6 GB), traces (6 GB), animations (214 GB), metadata, layout vectors and later semantic annotations. The linked copyright notice says screenshots may contain copyrighted work and makes downloaders accept University of Illinois terms. These disclaim warranties, require the researcher to indemnify the Rico team and university, permit sharing with associates who accept the same terms, and bind a commercial employer. No separate code release is linked. Download links answered HEAD requests, but no dataset files were downloaded or analyzed.",
+    "metadata_notes_zh": "Crossref、论文 PDF 与项目提供的 BibTeX 在八位作者顺序、UIST ’17 会议论文集及 DOI 上一致；页码 845–854 取自 Crossref。作者托管的 PDF 是 10 页 ACM 排版论文；未找到 arXiv 版本。论文中的链接 interactionmining.org/rico 现重定向至存档页面，旧路径 rico.html 返回 404。存档页面与论文不同：其摘要和数据集说明给出的是超过 9.3k 个应用与 66k 个唯一界面，因此不应假定发布的 v0.1 文件与论文中的 9,772 个应用和 72,219 个界面一致。可分别下载截图及视图层级（6 GB）、轨迹（6 GB）、动画（214 GB）、元数据、布局向量以及后来加入的语义标注。所链接的版权声明指出截图可能含受版权保护的作品，下载者须接受伊利诺伊大学的条款：条款不提供任何担保，要求研究者就使用产生的索赔为 Rico 团队与该大学提供补偿，允许与同样接受条款的合作者共享，并约束商业机构雇主。未链接单独的代码发布。下载链接响应了 HEAD 请求，但本次未下载或分析任何数据集文件。",
+    "evidence_urls": [
+      "https://doi.org/10.1145/3126594.3126651",
+      "https://api.crossref.org/works/10.1145/3126594.3126651",
+      "https://ranjithakumar.net/resources/rico.pdf",
+      "https://www.interactionmining.org/archive/rico",
+      "https://www.interactionmining.org/archive/rico/copyright.txt",
+      "https://www.interactionmining.org/archive/rico/rico.txt"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

@@ -183,6 +183,7 @@ class ReviewedContainerRecordTests(unittest.TestCase):
                     'paper-webcode2m',
                     'paper-xfl',
                     'paper-wadec',
+                    'paper-rico',
                     'paper-symlm', 'paper-codeinverter-suite', 'paper-notdec', 'paper-binjudge',
                     'paper-requirements-generation-viability', 'paper-khost', 'paper-transre', 'paper-satbleed'}
         self.assertEqual({identifier for identifier, record in PAPERS.items() if 'citation' in record}, expected)

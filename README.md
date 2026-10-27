@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 490](https://img.shields.io/badge/resources-490-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 206](https://img.shields.io/badge/cases-206-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 490](https://img.shields.io/badge/resources-490-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 206](https://img.shields.io/badge/cases-206-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 135](https://img.shields.io/badge/papers-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (134) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (135) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
 
 **More ways to browse**
 
@@ -635,14 +635,14 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**134 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**135 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
 - [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (57) · [Websites](#papers-website-reconstruction) (22)
-- [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (12) · [Firmware](#papers-firmware-analysis) (13)
+- [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (13) · [Firmware](#papers-firmware-analysis) (13)
 - [Protocols](#papers-protocol-analysis) (13)
 
 Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation. Some papers also appear among curated resources; counts are not additive.
@@ -782,6 +782,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Machine Learning-Based Prototyping of Graphical User Interfaces for Mobile Apps**](https://doi.org/10.1109/TSE.2018.2844788) - ReDraw turns screenshots or design mock-ups into native Android GUI prototypes by detecting components, classifying widget types with a CNN, and assembling a plausible view hierarchy with a data-driven nearest-neighbor method. <sub>IEEE Transactions on Software Engineering 2020 · Journal article · Kevin Moran et al. · [PDF](https://arxiv.org/pdf/1802.02312v2) · [Full entry](https://awesomerea.org/papers/paper-redraw/)</sub>
 - [**pix2code: Generating Code from a Graphical User Interface Screenshot**](https://doi.org/10.1145/3220134.3220135) - Learns screenshot-to-DSL generation for native Android XML, iOS Storyboards and web HTML/CSS interfaces, then compiles the DSL into platform UI code. <sub>EICS 2018 · Conference paper · Tony Beltramelli · [PDF](https://arxiv.org/pdf/1705.07962v2) · [Code](https://github.com/tonybeltramelli/pix2code) · [Full entry](https://awesomerea.org/papers/paper-pix2code/)</sub>
 - [**From UI Design Image to GUI Skeleton: A Neural Machine Translator to Bootstrap Mobile GUI Implementation**](https://doi.org/10.1145/3180155.3180240) - UI2code translates a mobile UI image into an Android component hierarchy and layout skeleton using a neural encoder-decoder. <sub>ICSE 2018 · Conference paper · Chunyang Chen et al. · [PDF](https://chunyang-chen.github.io/publication/ui2code.pdf) · [Code](https://github.com/ccywch/UI2code) · [Full entry](https://awesomerea.org/papers/paper-ui2code/)</sub>
+- [**Rico: A Mobile App Dataset for Building Data-Driven Design Applications**](https://doi.org/10.1145/3126594.3126651) - Rico is a dataset of Android app designs and a runtime mining system that needs no access to or modification of app source code. <sub>UIST 2017 · Conference paper · Biplab Deka et al. · [PDF](https://ranjithakumar.net/resources/rico.pdf) · [Full entry](https://awesomerea.org/papers/paper-rico/)</sub>
 - [**Statistical Deobfuscation of Android Applications**](https://dl.acm.org/doi/10.1145/2976749.2978422) - DeGuard reverses layout obfuscation in Android APKs, predicting original names for the fields, methods, classes and packages that ProGuard renames. <sub>ACM CCS 2016 · Conference paper · Benjamin Bichsel et al. · [PDF](https://files.sri.inf.ethz.ch/website/papers/deguard.pdf) · [Full entry](https://awesomerea.org/papers/paper-deguard/)</sub>
 - [**Reverse Engineering Mobile Application User Interfaces with REMAUI (T)**](https://ieeexplore.ieee.org/abstract/document/7372013) - Reconstructs native Android UI code from screenshots or design bitmaps using OCR, computer vision, and layout heuristics; evaluates visual similarity and view hierarchies on 488 screenshots from over 100 Android and iOS applications. <sub>ASE 2015 · Conference paper · Tuan Anh Nguyen et al. · [PDF](https://c.csallner.org/papers/nguyen15reverse.pdf) · [Code](https://github.com/soumikmohianuta/pixtoapp) · [Full entry](https://awesomerea.org/papers/paper-remaui/)</sub>
 
