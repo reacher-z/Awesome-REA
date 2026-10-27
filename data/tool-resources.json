@@ -11727,5 +11727,36 @@
       "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/LICENSE",
       "https://github.com/bramheerink/scansnap/blob/5706688db58f45a4d3db239de6e2e93bab36bb0f/LICENSE"
     ]
+  },
+  {
+    "id": "binary-ninja-headless-mcp",
+    "name": "Binary Ninja Headless MCP",
+    "url": "https://github.com/mrphrazer/binary-ninja-headless-mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A third-party, headless-only MCP server by Ruben Marks (mrphrazer) that gives agents a large Binary Ninja tool surface the project counts as 181 tools across 36 feature groups, including disassembly, intermediate languages, cross-references, types, search, patching with undo/redo transactions, and arbitrary scripting through binja.eval and binja.call. It speaks MCP over stdio or TCP, ships a schema-derived command-line client (binja_cli), and is meant to run in the same container as the agent runtime. A fake-backend mode runs the CLI, tests and a feature fuzzer without a Binary Ninja license, while real analysis needs a headless-capable license.",
+    "description_zh": "Ruben Marks（mrphrazer）开发的第三方、仅无界面运行的 MCP 服务器，向智能体提供庞大的 Binary Ninja 工具集，项目称共 181 个工具、分 36 个功能组，涵盖反汇编、中间语言、交叉引用、类型、搜索、带撤销/重做事务的打补丁，以及通过 binja.eval 和 binja.call 执行任意脚本。它通过 stdio 或 TCP 使用 MCP 协议，附带一个由模式生成参数的命令行客户端 binja_cli，设计上与智能体运行时位于同一容器内。假后端模式可在没有 Binary Ninja 许可证的情况下运行 CLI、测试和功能模糊器，实际分析则需要支持无界面模式的许可证。",
+    "evidence_url": "https://github.com/mrphrazer/binary-ninja-headless-mcp/blob/7fafd7523838fa2627a972869e34815fc461834f/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main 7fafd75 (2026-09-19); the pyproject declares package version 0.2.0 and there are no tagged releases. The README positions it against GUI-bound or limited Binary Ninja MCP servers as a headless-only, agent-driven alternative with mutation workflows and scripting, and states the whole project, including its code, tests and documentation, is vibe coded.",
+      "Needs Python 3.11+. Real analysis requires a Binary Ninja installation with a headless-capable license and the binaryninja Python module importable; the README notes enterprise and debugger APIs are not covered. A fake-backend mode (BINARY_NINJA_HEADLESS_MCP_FAKE_BACKEND=1) runs the CLI, the pytest suite and the feature fuzzer without a license, which is what CI exercises on Python 3.11 with ruff and pytest.",
+      "Install with pip from a clone or straight from the repository. Register it with an MCP host such as Claude Code or Codex over stdio (default) or TCP; the recommended deployment runs the agent and this server in one container. The repository bundles a sample binary, samples/ls (a stripped aarch64 GNU coreutils ls), as the fuzzer and verification target, plus small C fixtures.",
+      "The README's security model states that stdio and TCP transports are unauthenticated by default and that binja.eval and binja.call expose arbitrary scripting and broad API access, intended only for trusted containerized environments and not to be exposed to untrusted users or networks. Read-only mode is the session default, memory.read is capped at 65536 bytes, and mutations use undo/redo transactions.",
+      "The bundled CLI_VERIFICATION.md reports native coverage of all 181 tools on Binary Ninja 6.0.10601 Ultimate (AArch64 Linux host) across both architectures, transports and argument styles, but its evidence links point to files in the authors' analysis environment rather than the shipped package. GPL-2.0. This record describes analysis use of binaries the operator is authorized to examine; it reviewed the README and repository metadata without installing the server or running Binary Ninja, and establishes no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mrphrazer/binary-ninja-headless-mcp/blob/7fafd7523838fa2627a972869e34815fc461834f/README.md#L15-L25",
+      "https://github.com/mrphrazer/binary-ninja-headless-mcp/blob/7fafd7523838fa2627a972869e34815fc461834f/README.md#L197-L203",
+      "https://github.com/mrphrazer/binary-ninja-headless-mcp/blob/7fafd7523838fa2627a972869e34815fc461834f/pyproject.toml",
+      "https://github.com/mrphrazer/binary-ninja-headless-mcp/blob/7fafd7523838fa2627a972869e34815fc461834f/.github/workflows/ci.yml",
+      "https://github.com/mrphrazer/binary-ninja-headless-mcp/blob/7fafd7523838fa2627a972869e34815fc461834f/CLI_VERIFICATION.md",
+      "https://github.com/mrphrazer/binary-ninja-headless-mcp/blob/7fafd7523838fa2627a972869e34815fc461834f/LICENSE"
+    ]
   }
 ]

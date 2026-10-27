@@ -4291,5 +4291,15 @@
       "耗时数据来自一台轻负载虚拟机，仅作数量级参考。调用由作者编写的脚本化测试驱动程序以熟悉接口的调用方身份发出，文章也未说明具体分析对象。对安全智能体的对应分析属于论证，而非已构建的系统。文中称逐次调用记录、测试配置和脚本随研究提供，但页面并未给出链接，因此本合集无法也未曾重新运行任何内容。",
       "本文评估的是 REA 的证据模型与工具接口，未报告任何重建、漏洞利用或漏洞。页面未声明许可；REA、第三方引擎及被分析对象保留各自条款。"
     ]
+  },
+  "binary-ninja-headless-mcp": {
+    "name": "Binary Ninja Headless MCP（无界面）",
+    "requirements": [
+      "审阅基于 main 分支 7fafd75（2026-09-19）；pyproject 声明包版本为 0.2.0，没有任何标签发布。README 将其定位为相对于受图形界面限制或工具较少的 Binary Ninja MCP 服务器的替代方案，强调仅无界面运行、面向智能体，并带有变更工作流和脚本能力；README 声明整个项目（包括代码、测试和文档）均为 vibe coded。",
+      "需要 Python 3.11+。实际分析需要安装 Binary Ninja，且具备支持无界面模式的许可证，并能导入 binaryninja Python 模块；README 指出不覆盖企业版和调试器 API。假后端模式（BINARY_NINJA_HEADLESS_MCP_FAKE_BACKEND=1）可在无许可证的情况下运行 CLI、pytest 测试套件和功能模糊器，这也是 CI 在 Python 3.11 上配合 ruff 和 pytest 所运行的内容。",
+      "可用 pip 从克隆目录或直接从仓库安装。通过 Claude Code、Codex 等 MCP 宿主以 stdio（默认）或 TCP 注册；推荐的部署方式是让智能体与该服务器位于同一容器内。仓库附带一个示例二进制 samples/ls（去符号的 aarch64 GNU coreutils ls）作为模糊器和验证目标，另有少量 C 测试样本。",
+      "README 的安全模型说明 stdio 和 TCP 传输默认不进行身份验证，binja.eval 和 binja.call 会暴露任意脚本执行和广泛的 API 访问，仅面向受信任的容器化环境，不应暴露给不受信任的用户或网络。会话默认只读，memory.read 上限为 65536 字节，变更操作使用撤销/重做事务。",
+      "仓库附带的 CLI_VERIFICATION.md 报告称在 Binary Ninja 6.0.10601 Ultimate（AArch64 Linux 主机）上对全部 181 个工具进行了原生覆盖，涵盖两种架构、传输方式和参数风格，但其证据链接指向作者分析环境中的文件，而非随包发布的文件。许可证为 GPL-2.0。本条目描述的是对操作者有权分析的二进制的分析用途，仅审阅了 README 和仓库元数据，未安装该服务器或运行 Binary Ninja，也未确立与 REA 的关联。"
+    ]
   }
 }
