@@ -38,6 +38,21 @@ class PaperDiagnosticsTest(unittest.TestCase):
         self.assertIn('paper[1]: unknown fields abstract', errors)
         self.assertIn('paper[1].id: must be a nonempty string', errors)
 
+    def test_displayed_text_must_not_name_schema_fields(self):
+        errors = errors_for([paper(metadata_notes='No repository was found, so code_url remains null.',
+                                   metadata_notes_zh='未找到仓库，因此 code_url 留空。',
+                                   scope_limitations_en='The first_arxiv_date and project_url are recorded.')])
+        for field, name in (('metadata_notes', 'code_url'), ('metadata_notes_zh', 'code_url'),
+                            ('scope_limitations_en', 'first_arxiv_date')):
+            self.assertIn(f"paper 'paper-diagnostic-fixture'.{field}: describe {name} in reader terms instead of naming the field", errors)
+        self.assertEqual(len(errors), 3)
+        plain = paper(metadata_notes='No repository was found, so no code link is listed; see the code_urls_v2 page.')
+        self.assertEqual(errors_for([plain]), [])
+
+    def test_catalog_text_uses_reader_terms(self):
+        records = json.loads((ROOT / 'data/papers.json').read_text(encoding='utf-8'))
+        self.assertEqual([error for error in errors_for(records) if 'in reader terms' in error], [])
+
     def test_valid_records_still_pass(self):
         self.assertEqual(errors_for([paper()]), [])
 
