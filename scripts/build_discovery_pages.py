@@ -86,6 +86,53 @@ def _url(value: str) -> str:
     return escape(value, quote=True)
 
 
+def file_size_label(size: int) -> str:
+    """Decimal megabytes with one place (2.3 MB); whole kilobytes below 0.1 MB."""
+    return f'{size / 1_000_000:.1f} MB' if size >= 100_000 else f'{max(1, round(size / 1000))} KB'
+
+
+def _about_link_groups(site_dir: Path, language: str, repository_url: str, source_index: dict | None,
+                       source_export: str, published: bool) -> str:
+    """Group the /about/ links by purpose: site pages, sized downloads, and GitHub documents."""
+    zh = language == 'zh'
+    prefix = '/zh' if zh else ''
+    pages = [('/resources/', '精选资源', 'Curated resources'), ('/cases/', '案例合集', 'Case studies'),
+             ('/browse/', '仓库目录', 'Repository directory'), ('/papers/', '研究论文', 'Research papers'),
+             ('/survey/', '专题综述', 'Editorial survey')]
+    downloads = [('/catalog.json', 'awesomerea-curated-catalog.json', 'JSON', '精选目录', 'Curated catalog'),
+                 ('/' + source_export, 'awesomerea-repository-index.json', 'JSON',
+                  *(('仓库选集', 'Repository selection') if published else ('仓库索引', 'Repository index'))),
+                 ('/papers.json', 'awesomerea-papers.json', 'JSON', '论文元数据', 'Paper metadata')]
+    if published:
+        downloads.append(('/source-index.json', 'awesomerea-repository-scan-baseline.json', 'JSON', '原始扫描基线', 'Original scan baseline'))
+        # The archive keeps its run-specific filename; the label says what it holds.
+        downloads.extend((entry['archive_url'], '', 'ZIP', f"原始扫描证据（运行 {entry['run']['id']}）",
+                          f"Original scan evidence, run {entry['run']['id']}")
+                         for entry in source_index['meta']['capture_sources'])
+    documents = [('README.zh-CN.md' if zh else 'README.md', 'GitHub README', 'GitHub README'),
+                 ('docs/source-scan.md', '扫描方法（英文）', 'Scan methodology'),
+                 ('data/source-scope.json', '范围排除记录', 'Scope exclusion records'),
+                 ('data/README.md', '数据格式与维护（英文）', 'Data format and maintenance'),
+                 ('LICENSE', 'MIT 许可证', 'MIT license'),
+                 ('CONTRIBUTING.zh-CN.md' if zh else 'CONTRIBUTING.md', '贡献指南', 'Contribution guide')]
+    browse_items = ''.join(f'<li><a href="{prefix}{path}">{(cn if zh else en)}</a></li>' for path, cn, en in pages)
+    download_items = []
+    for url, filename, file_format, cn, en in downloads:
+        # Sizes describe the files already written to site_dir; a fixture without them shows the format only.
+        local = site_dir / unquote(urlsplit(url).path).lstrip('/')
+        size = ' · ' + file_size_label(local.stat().st_size) if local.is_file() else ''
+        attribute = f' download="{filename}"' if filename else ' download'
+        download_items.append(f'<li><a href="{escape(url, quote=True)}"{attribute}>{escape(cn if zh else en)}'
+                              f'<span class="about-file-meta"> {file_format}{size} ↓</span></a></li>')
+    document_items = ''.join(f'<li><a href="{_url(repository_url + "/blob/main/" + path)}" target="_blank" rel="noopener">'
+                             f'{escape(cn if zh else en)}<span aria-hidden="true"> ↗</span></a></li>' for path, cn, en in documents)
+    groups = [('browse', '浏览', 'Browse', browse_items), ('download', '下载', 'Download', ''.join(download_items)),
+              ('methods', 'GitHub 上的方法与规则', 'Methods and policy on GitHub', document_items)]
+    return '<div class="about-link-groups">' + ''.join(
+        f'<section class="about-link-group" aria-labelledby="about-links-{key}"><h3 id="about-links-{key}">{(cn if zh else en)}</h3><ul>{items}</ul></section>'
+        for key, cn, en, items in groups) + '</div>'
+
+
 def _asset(site_dir: Path, filename: str) -> str:
     path = site_dir / filename
     revision = hashlib.sha256(path.read_bytes()).hexdigest()[:16] if path.is_file() else ''
@@ -401,28 +448,8 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         companion_description = ('收录 AI 参与开发的游戏、网站与应用，以及智能体训练和评测使用的环境、基准和数据集。每个项目保留原始来源、开发方式说明和使用限制。'
                                  if zh else 'A directory of games, websites, and apps made with AI, plus environments, benchmarks, and datasets for training and evaluating agents. Each project retains original sources, development evidence, and practical limits.')
         fact_cards += f'<section class="source-card browse-repository"><h2>{("相关目录" if zh else "Companion directory")}</h2><p class="card-description"><a href="{companion_url}">AI Can What?</a> — {companion_description}</p></section>'
-        links = [
-            (prefix + '/resources/', '精选资源' if zh else 'Curated resources'),
-            (prefix + '/browse/', '完整仓库目录' if zh else 'Repository directory'),
-            (prefix + '/papers/', '研究论文目录' if zh else 'Research papers'),
-            (prefix + '/survey/', '专题综述' if zh else 'Editorial survey'),
-            ('/catalog.json', '精选资源 JSON' if zh else 'Curated catalog JSON'),
-            ('/' + source_export, ('已发布仓库选集 JSON' if zh else 'Published repository selection JSON') if published
-             else ('完整双语扫描 JSON' if zh else 'Complete bilingual scan JSON')),
-            ('/papers.json', '论文元数据 JSON' if zh else 'Paper metadata JSON'),
-            (repository_url + '/blob/main/' + ('README.zh-CN.md' if zh else 'README.md'), 'GitHub README'),
-            (repository_url + '/blob/main/docs/source-scan.md', '扫描方法（英文）' if zh else 'Scan methodology'),
-            (repository_url + '/blob/main/data/source-scope.json', '范围排除记录' if zh else 'Scope exclusion records'),
-            (repository_url + '/blob/main/data/README.md', '数据格式与维护（英文）' if zh else 'Data format and maintenance'),
-            (repository_url + '/blob/main/LICENSE', 'MIT 许可证' if zh else 'MIT license'),
-            (repository_url + '/blob/main/' + ('CONTRIBUTING.zh-CN.md' if zh else 'CONTRIBUTING.md'), '贡献指南' if zh else 'Contribution guide'),
-        ]
-        if published:
-            links.append(('/source-index.json', '原始规范扫描基线 JSON' if zh else 'Original canonical scan baseline JSON'))
-            links.extend((entry['archive_url'], ('原始公开采集证据 ' if zh else 'Original public capture evidence ')
-                          + str(entry['run']['id'])) for entry in source_index['meta']['capture_sources'])
-        link_html = ''.join(f'<a href="{(_url(url) if url.startswith("http") else escape(url, quote=True))}">{escape(label)}</a>' for url, label in links)
-        content = f'<div class="source-results">{fact_cards}</div><section><div class="browse-topline"><h2>{("浏览、下载与来源" if zh else "Browse, download, and inspect sources")}</h2></div><nav class="browse-category-nav" aria-label="{("来源与下载" if zh else "Sources and downloads")}">{link_html}</nav></section>'
+        links = _about_link_groups(site_dir, language, repository_url, source_index, source_export, published)
+        content = f'<div class="source-results">{fact_cards}</div><section class="about-links" aria-labelledby="about-links-heading"><div class="browse-topline"><h2 id="about-links-heading">{("浏览、下载与来源" if zh else "Browse, download, and inspect sources")}</h2></div>{links}</section>'
         schema = {'@context': 'https://schema.org', '@type': 'AboutPage', 'url': site_url + path, 'name': title, 'description': description, 'inLanguage': locale, 'about': website_reference(site_url)}
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=schema, assets=assets, icon_stylesheet=icons.href, source_export=source_export)
         paths.append(path)
