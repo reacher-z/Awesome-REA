@@ -7355,5 +7355,63 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-dice",
+    "title": "DICE: Automatic Emulation of DMA Input Channels for Dynamic Firmware Analysis",
+    "title_zh": "DICE：面向动态固件分析的 DMA 输入通道自动仿真",
+    "authors": [
+      "Alejandro Mera",
+      "Bo Feng",
+      "Long Lu",
+      "Engin Kirda"
+    ],
+    "year": 2021,
+    "publication_date": "2021-05",
+    "date_precision": "month",
+    "date_basis": "The publisher's Crossref deposit records print publication in May 2021, the month of the May 24–27 symposium. IEEE Xplore could not be retrieved automatically, and no publication day is asserted.",
+    "date_basis_zh": "出版方提交的 Crossref 元数据记录印刷出版时间为 2021 年 5 月，即 5 月 24 日至 27 日研讨会所在月份。无法自动访问 IEEE Xplore，本条目不记录具体出版日。",
+    "venue": "IEEE S&P 2021",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2007.01502",
+    "arxiv_version_reviewed": "v3",
+    "first_arxiv_date": "2020-07-03",
+    "doi": "10.1109/SP40001.2021.00018",
+    "citation": {
+      "container_title": "2021 IEEE Symposium on Security and Privacy (SP)",
+      "publisher": "IEEE",
+      "pages": "1938-1954",
+      "sources": [
+        "https://api.crossref.org/works/10.1109/SP40001.2021.00018"
+      ]
+    },
+    "url": "https://ieeexplore.ieee.org/document/9519398",
+    "pdf_url": "https://arxiv.org/pdf/2007.01502v3",
+    "code_url": "https://github.com/RiS3-Lab/DICE-DMA-Emulation/tree/2b3b8c8b722abdbd7ff9e35fc7b02914fddf75df",
+    "project_url": null,
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "DICE adds DMA input emulation to microcontroller firmware emulators that model neither peripherals nor DMA controllers. It watches firmware writes to the memory-mapped DMA controller region for pairs of source and destination transfer pointers, and infers the transfer direction from later firmware accesses. When firmware reads a peripheral-to-RAM destination buffer, DICE answers with analyzer-supplied input such as fuzzer data, growing buffer bounds conservatively. Prototypes patch the QEMU forks of P2IM (ARM Cortex-M) and a PIC32 emulator (MIPS M4K/M-Class). On 83 sample firmware covering 9 DMA controllers from 5 vendors, the authors report 33 of 37 input channels detected with no false positives, correct input for 21 of 22 buffers and 3.4% average overhead. Fuzzing 7 real firmware for 48 hours found 5 previously unknown bugs.",
+    "description_zh": "DICE 为既不模拟外设也不模拟 DMA 控制器的微控制器固件仿真器增加 DMA 输入仿真。它监视固件向内存映射 DMA 控制器区域写入的源与目的传输指针对，并根据固件随后的访问推断传输方向。当固件读取外设到 RAM 的目的缓冲区时，DICE 以分析器提供的输入（如模糊测试数据）作答，并以保守方式扩展缓冲区边界。原型修改了 P2IM（ARM Cortex-M）与一款 PIC32 仿真器（MIPS M4K/M-Class）所用的 QEMU 分支。在覆盖 5 家厂商 9 种 DMA 控制器的 83 个示例固件上，作者报告检测出 37 个输入通道中的 33 个且无误报，为 22 个缓冲区中的 21 个提供了正确输入，平均开销为 3.4%。对 7 个真实固件进行 48 小时模糊测试，发现 5 个此前未知的缺陷。",
+    "scope_limitations_en": "Emulates DMA input channels only; it does not model peripheral behavior, recover peripheral semantics or produce a faithful device replica, and supplied inputs are analyzer data rather than real peripheral traffic. It assumes transfer descriptors are written to DMA controller registers, so descriptors stored in RAM are unsupported. Destination-only configurations, used by two controller models such as nRF52832 EasyDMA, are also missed, accounting for 7 of 52 stream configurations. Buffer sizes are heuristic estimates. Ground truth came from datasheets and firmware inspection, and results cover the authors' 83 sample firmware and 7 fuzzed firmware. Bugs were found in two of the seven fuzzed firmware with a basic memory sanitizer. The PIC32 prototype runs only firmware whose other peripherals can be handled by simple default register handlers.",
+    "scope_limitations_zh": "仅仿真 DMA 输入通道；它不模拟外设行为、不恢复外设语义，也不构建精确的设备复刻，所提供的输入是分析器数据而非真实外设流量。它假定传输描述符写入 DMA 控制器寄存器，因此不支持存放在 RAM 中的描述符。仅需目的地址的配置（如 nRF52832 EasyDMA 等两种控制器型号）也无法识别，占 52 个流配置中的 7 个。缓冲区大小为启发式估计。真实标签来自数据手册与固件检查，结果仅覆盖作者的 83 个示例固件及 7 个模糊测试固件。缺陷是在七个模糊测试固件中的两个里、借助简单的内存检测器发现的。PIC32 原型只能运行其他外设可由简单默认寄存器处理器应付的固件。",
+    "why_fits_en": "Adds DMA input-channel emulation for firmware rehosting, complementing the collection's MMIO-modeling and fuzzing-oriented MCU rehosting research.",
+    "why_fits_zh": "补充面向固件重托管的 DMA 输入通道仿真研究，与本合集中侧重 MMIO 建模及模糊测试的微控制器重托管研究互补。",
+    "metadata_notes": "Crossref establishes the four-author order, the 2021 IEEE S&P proceedings, pages 1938–1954 and the DOI; IEEE Xplore refused automated retrieval. Reviewed arXiv v3 of 2021-01-15 (v1 2020-07-03) carries journal reference “42nd IEEE Symposium on Security and Privacy, S&P 2021” and links the repository. The reviewed master snapshot 2b3b8c8b was pushed on 2023-10-14. Its LICENSE releases DICE under Apache-2.0 unless otherwise stated, while AFL and P2IM's AFL changes are Apache-2.0 and QEMU, P2IM's QEMU changes, the PIC32 extensions and P2IM itself are GPL-2.0; GitHub reports no single SPDX license. The p2im and mips-emulator directories are submodules pinned to RiS3-Lab/p2im 0a4870b4 and sergev/qemu a2e0277d. README supports Ubuntu 16.04 or 18.04 only, noting problems on 20.04. It applies DICE as patches to QEMU and supplies precompiled QEMU binaries plus evaluation firmware binaries, sources and scripts; bundled vendor sample firmware keeps its own terms. Source files were read; nothing was built, emulated or fuzzed.",
+    "metadata_notes_zh": "Crossref 确认四位作者顺序、2021 年 IEEE S&P 会议论文集、第 1938–1954 页及 DOI；IEEE Xplore 拒绝自动访问。所审阅的 2021-01-15 arXiv v3（v1 为 2020-07-03）载有期刊引用“42nd IEEE Symposium on Security and Privacy, S&P 2021”，并链接代码仓库。所审阅的 master 快照 2b3b8c8b 推送于 2023-10-14。其 LICENSE 规定除另有说明外 DICE 采用 Apache-2.0；AFL 及 P2IM 对 AFL 的修改为 Apache-2.0，QEMU、P2IM 对 QEMU 的修改、PIC32 扩展以及 P2IM 本身为 GPL-2.0；GitHub 未识别出单一 SPDX 许可证。p2im 与 mips-emulator 目录为子模块，分别固定在 RiS3-Lab/p2im 0a4870b4 与 sergev/qemu a2e0277d。README 仅支持 Ubuntu 16.04 或 18.04，并说明 20.04 上存在问题。DICE 以 QEMU 补丁形式应用，仓库还提供预编译 QEMU 二进制，以及评估用固件二进制、源码和脚本；其中收录的厂商示例固件保留各自条款。本次仅阅读源码文件，未构建、仿真或模糊测试任何内容。",
+    "evidence_urls": [
+      "https://ieeexplore.ieee.org/document/9519398",
+      "https://api.crossref.org/works/10.1109/SP40001.2021.00018",
+      "https://arxiv.org/abs/2007.01502",
+      "https://arxiv.org/pdf/2007.01502v3",
+      "https://github.com/RiS3-Lab/DICE-DMA-Emulation/blob/2b3b8c8b722abdbd7ff9e35fc7b02914fddf75df/README.md",
+      "https://github.com/RiS3-Lab/DICE-DMA-Emulation/blob/2b3b8c8b722abdbd7ff9e35fc7b02914fddf75df/LICENSE",
+      "https://github.com/RiS3-Lab/DICE-DMA-Emulation/blob/2b3b8c8b722abdbd7ff9e35fc7b02914fddf75df/.gitmodules"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

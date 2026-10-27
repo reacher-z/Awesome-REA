@@ -47,7 +47,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [onehouwong/Firmware-Analysis-Papers](https://github.com/onehouwong/Firmware-Analysis-Papers) — Recent security papers on firmware analysis **[85 stars]**
 - [Cr4sh/smram\_parse](https://github.com/Cr4sh/smram_parse) — System Management RAM analysis tool **[83 stars]**
 - [fkie-cad/LuckyCAT](https://github.com/fkie-cad/LuckyCAT) — A distributed fuzzing management framework **[70 stars]**
-- [RiS3-Lab/DICE-DMA-Emulation](https://github.com/RiS3-Lab/DICE-DMA-Emulation) — DICE: Automatic Emulation of DMA Input Channels for Dynamic Firmware Analysis **[67 stars]**
+- [RiS3-Lab/DICE-DMA-Emulation](https://github.com/RiS3-Lab/DICE-DMA-Emulation) — DICE: Automatic Emulation of DMA Input Channels for Dynamic Firmware Analysis **[67 stars]** · Paper: [DICE: Automatic Emulation of DMA Input Channels for Dynamic Firmware Analysis](https://awesomerea.org/papers/paper-dice/)
 - [C00kie-/IoT-workshop-materials](https://github.com/C00kie-/IoT-workshop-materials) — Presented hardware reverse engineering workshops since 2019 **[65 stars]**
 - [jowinjohnchemban/winbinwalk](https://github.com/jowinjohnchemban/winbinwalk) — binwalk for Windows **[60 stars]**
 - [soyersoyer/basefind2](https://github.com/soyersoyer/basefind2) — A faster firmware base address scanner. **[60 stars]**
