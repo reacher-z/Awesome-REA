@@ -4538,5 +4538,13 @@
       "Python 单元测试覆盖转换函数和 Flipper 文件解析；项目没有 CI。各种效果由作者和贡献者在自己的手环上报告，本次来源核查未运行任何代码或硬件。",
       "采用 MIT 许可（LICENSE）。PixMob 的硬件、固件和商标不在该许可范围内，X 光图片注明来自 Samy Kamkar。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "esp32-image-parser": {
+    "name": "esp32_image_parser ESP32 固件镜像解析工具",
+    "requirements": [
+      "自 2020-02-29 起没有新提交，也没有发布版本或标签。安装方式为 pip install -r requirements.txt，其中列出 makeelf、esptool 和 hexdump，均未指定版本；脚本直接导入 esptool 的模块命名空间，并针对初代 esp32 芯片类型调用其 LoadFirmwareImage，因此未核实它与当前 esptool 版本及更新的 ESP32 系列芯片是否兼容。",
+      "输入为分析者自有设备的完整闪存转储。解析器从默认偏移 0x8000 读取分区表；create_elf 只接受应用类型分区，并需指定输出文件名；RTC IRAM 等无法映射的段只会给出提示，不会被转换。",
+      "仓库不含任何固件镜像：除 Python 脚本外，只有 symbols_dump.txt，这是一份约 890 个符号的 readelf 格式符号表，大多位于 ESP32 ROM 地址，create_elf 会从当前工作目录读取它并写入每个 ELF。采用 MIT 许可（LICENSE.md）。本次未解析任何闪存转储。"
+    ]
   }
 }

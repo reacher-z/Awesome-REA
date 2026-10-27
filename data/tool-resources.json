@@ -12521,5 +12521,34 @@
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/tree/b372420e1e1ff818a8d25ba50f0c71e97e62f138/raw_wild_ir_captures",
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/LICENSE"
     ]
+  },
+  {
+    "id": "esp32-image-parser",
+    "name": "esp32_image_parser",
+    "url": "https://github.com/tenable/esp32_image_parser",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Tenable's Python command-line tool, described in its repository as a toolkit for reverse engineering ESP32 firmware, that reads the partition table of an ESP32 flash dump and rebuilds an app partition such as factory or ota_0 as an Xtensa ELF file. Other actions list the partitions, dump a partition's raw bytes and parse an NVS partition's key-value entries as text or JSON; create_elf loads the app image with esptool, maps its flash, DRAM and IRAM segments to ELF sections and adds symbols from a bundled ROM symbol table.",
+    "description_zh": "Tenable 发布的 Python 命令行工具，其仓库简介称之为辅助逆向 ESP32 固件的工具包：它读取 ESP32 闪存转储中的分区表，并将 factory、ota_0 等应用分区重建为 Xtensa ELF 文件。其他操作可列出分区、导出某个分区的原始字节，并将 NVS 分区的键值条目解析为文本或 JSON；create_elf 借助 esptool 载入应用镜像，把其中的闪存、DRAM 和 IRAM 段映射为 ELF 节区，并加入仓库自带 ROM 符号表中的符号。",
+    "evidence_url": "https://github.com/tenable/esp32_image_parser/blob/0c9ff48d56c8e1e65ba93213400b4d469b84c8ce/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No commits since 2020-02-29 and no releases or tags. Setup is pip install -r requirements.txt, which lists makeelf, esptool and hexdump without versions; the script imports esptool's module namespace and calls its LoadFirmwareImage for the original esp32 chip type, so compatibility with current esptool releases and newer ESP32-series chips was not checked.",
+      "Input is a full flash dump from the analyst's own device. The parser reads the partition table at the default 0x8000 offset, and create_elf accepts only app-type partitions and needs an output file name; segments it cannot map, such as RTC IRAM, are reported rather than converted.",
+      "The repository commits no firmware images: besides the Python scripts it holds symbols_dump.txt, a readelf-style table of about 890 symbols mostly at ESP32 ROM addresses, which create_elf reads from the current working directory into every ELF. MIT licensed (LICENSE.md). No flash dumps were parsed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/tenable/esp32_image_parser/blob/0c9ff48d56c8e1e65ba93213400b4d469b84c8ce/esp32_image_parser.py",
+      "https://github.com/tenable/esp32_image_parser/blob/0c9ff48d56c8e1e65ba93213400b4d469b84c8ce/esp32_firmware_reader.py",
+      "https://github.com/tenable/esp32_image_parser/blob/0c9ff48d56c8e1e65ba93213400b4d469b84c8ce/read_nvs.py",
+      "https://github.com/tenable/esp32_image_parser/blob/0c9ff48d56c8e1e65ba93213400b4d469b84c8ce/requirements.txt",
+      "https://github.com/tenable/esp32_image_parser/blob/0c9ff48d56c8e1e65ba93213400b4d469b84c8ce/symbols_dump.txt",
+      "https://github.com/tenable/esp32_image_parser/blob/0c9ff48d56c8e1e65ba93213400b4d469b84c8ce/LICENSE.md"
+    ]
   }
 ]
