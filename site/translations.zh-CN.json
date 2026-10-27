@@ -4310,5 +4310,15 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "ida-skill-malware-analysis": {
+    "name": "IDA-Skill IDA Pro 恶意样本分析智能体技能",
+    "requirements": [
+      "审阅基于 main 分支 2026-10-21 的提交 4595864；没有发布版本或版本号，近期提交的说明都只写着“update”。该技能是一个带 name 与 description 前置元数据的 SKILL.md，供可加载技能文件夹的智能体客户端使用；README 用作者自己的 Spore 多智能体框架演示，未列出其他测试过的客户端。命令采用 Windows PowerShell 的 here-string 写法，路径位于 skills/IDA-Skill/tools/ 下。",
+      "需要已授权的 IDA Pro，并在 config.json 中填写 idat 可执行文件路径（README 示例为 IDA Pro 9.0 的 idat64.exe），宿主机还需 Python 来启动它；反编译调用依赖 Hex-Rays 反编译器。样本由使用者自备，SKILL.md 禁止调试或运行样本。REAI 需要 openai 1.0+，并须在 tools/reai.py 中写入 API 密钥、接口地址和模型名，它会把反编译伪代码发送到该接口。",
+      "API.md 和 docs/ 收录 Markdown 格式的 IDAPython API 参考，未注明来源与使用条款；analysis/ 收录针对协议、算法、固件、驱动等任务的简短方法说明；movie.mp4 是 25 MB 的演示视频。TOOLS.md 要求智能体先运行 reai check，调用链超过 40 个函数时不得运行 analyze。",
+      "仓库没有测试或 CI，也未报告任何评估样本或准确率。REAI 给出的函数名和说明属于模型输出，需要分析人员复核；本次审阅未运行任何内容。",
+      "LICENSE 文件为 AGPL-3.0 文本，而中英文 README 都称项目采用 GPL-3.0，并附加“仅限学习研究、禁止商用”的条件，这两种许可证均无此限制，因此再利用条款并不明确。IDA Pro 与模型 API 适用各自条款。所审来源未确立与 REA 的关联。"
+    ]
   }
 }

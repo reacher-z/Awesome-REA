@@ -243,7 +243,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [quarkslab/qbindiff](https://github.com/quarkslab/qbindiff) — Quarkslab Bindiffer but not only ! **[247 stars]**
 - [akiselev/ghidra-cli](https://github.com/akiselev/ghidra-cli) — Automate Ghidra reverse engineering from the command line — headless analysis, decompilation, and structured JSON output for AI agents like Claude Code **[245 stars]**
 - [mentebinaria/fundamentos-engenharia-reversa](https://github.com/mentebinaria/fundamentos-engenharia-reversa) — Book: Reverse Engineering — Fundamentals and Practice **[238 stars]**
-- [miunasu/IDA-Skill](https://github.com/miunasu/IDA-Skill) — An AI agent skill for automated malware analysis with IDA Pro, enabling agents to analyze malicious samples like a security analyst. **[237 stars]**
+- [miunasu/IDA-Skill](https://github.com/miunasu/IDA-Skill) — An AI agent skill for automated malware analysis with IDA Pro, enabling agents to analyze malicious samples like a security analyst. **[237 stars]** · Curated: [IDA-Skill](https://awesomerea.org/resources/ida-skill-malware-analysis/)
 - [Nalen98/eBPF-for-Ghidra](https://github.com/Nalen98/eBPF-for-Ghidra) — eBPF Processor for Ghidra **[237 stars]**
 - [ReversecLabs/z3\_and\_angr\_binary\_analysis\_workshop](https://github.com/ReversecLabs/z3_and_angr_binary_analysis_workshop) — Code and exercises for a workshop on z3 and angr **[237 stars]**
 - [fkie-cad/dewolf](https://github.com/fkie-cad/dewolf) — A research decompiler implemented as a Binary Ninja plugin. **[236 stars]** · Curated: [dewolf](https://awesomerea.org/resources/dewolf/)
