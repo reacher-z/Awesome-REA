@@ -35,6 +35,15 @@ CITATION_PATTERNS = {
     'pages': re.compile(r'([1-9]\d*)(?:-([1-9]\d*))?'), 'article_number': re.compile(r'[A-Za-z0-9]+'),
 }
 ARXIV_ID = re.compile(r'\d{4}\.\d{4,5}')
+# Prose shown on /papers/ and the paper pages describes links and dates in reader terms
+# ("no code link is listed"), never by schema field names such as code_url.
+DISPLAYED_TEXT_FIELDS = (
+    'title', 'title_zh', 'venue', 'date_basis', 'date_basis_zh', 'description_en', 'description_zh',
+    'scope_limitations_en', 'scope_limitations_zh', 'why_fits_en', 'why_fits_zh',
+    'metadata_notes', 'metadata_notes_zh',
+)
+SCHEMA_FIELD_NAME = re.compile(r'\b(?:' + '|'.join(sorted(
+    field for field in FIELDS | OPTIONAL_FIELDS | set(CITATION_PATTERNS) if '_' in field)) + r')\b')
 
 
 def read_papers(root=ROOT):
@@ -162,6 +171,11 @@ def validate_papers(records, errors, *, url_check, now=None):
                 errors.append(f'{where}.{chinese}: needs Chinese text')
             if isinstance(en, str) and (not re.search(r'[A-Za-z]', en) or en == zh):
                 errors.append(f'{where}.{english}: needs distinct English text')
+        for field in DISPLAYED_TEXT_FIELDS:
+            value = record.get(field)
+            match = SCHEMA_FIELD_NAME.search(value) if isinstance(value, str) else None
+            if match:
+                errors.append(f'{where}.{field}: describe {match[0]} in reader terms instead of naming the field')
 
         year, precision, published = record.get('year'), record.get('date_precision'), record.get('publication_date')
         if type(year) is not int or not 1900 <= year <= today.year:
