@@ -42,7 +42,7 @@ Run every test with one command from the repository root. It needs Node.js for t
 python3 -m unittest discover -s tests -v
 ```
 
-The `validate` check runs exactly these steps: it byte-compiles every script and test, runs the same tests split by test class into three parallel shards (`CI_TEST_SHARD=0 CI_TEST_SHARDS=3 python3 tests/unit_shards.py` runs the first), then runs the production build with the asset-URL option used by Cloudflare Pages. That build repeats catalog validation, the JavaScript syntax check, the site build and both site validators without fetching the asset origin. Last, the [browser smoke test](docs/website.md#browser-smoke-test) rebuilds the site and loads it in headless Chrome; locally it skips with a message when Chrome or its pinned driver is missing.
+The `validate` check runs exactly these steps: it byte-compiles every script and test, runs the same tests in three parallel shards that keep each test class whole (`CI_TEST_SHARD=0 CI_TEST_SHARDS=3 python3 tests/unit_shards.py` runs the first), then runs the production build with the asset-URL option used by Cloudflare Pages. That build repeats catalog validation, the JavaScript syntax check, the site build and both site validators without fetching the asset origin. Last, the [browser smoke test](docs/website.md#browser-smoke-test) rebuilds the site and loads it in headless Chrome; locally it skips with a message when Chrome or its pinned driver is missing.
 
 ```sh
 python3 -m compileall -q scripts tests

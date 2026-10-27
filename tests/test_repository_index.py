@@ -19,10 +19,16 @@ def snapshot(directory):
     return {path.name: path.read_bytes() for path in directory.glob('*.md')}
 
 
+def setUpModule():
+    """Render the index once for both classes; neither test class changes what it returns."""
+    global RENDERED
+    RENDERED = build_repository_index.rendered_files()
+
+
 class RepositoryIndexTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.rendered = build_repository_index.rendered_files()
+        cls.rendered = RENDERED
 
     def run_generator(self, output, *arguments):
         stdout, stderr = io.StringIO(), io.StringIO()
@@ -85,7 +91,7 @@ class RepositoryIndexTests(unittest.TestCase):
 class RelatedMarkerTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.files, _ = build_repository_index.rendered_files()
+        cls.files, _ = RENDERED
 
     def line(self, page, repository):
         lines = [line for line in self.files[page].splitlines() if line.startswith(f'- [{repository}](https://github.com/')]

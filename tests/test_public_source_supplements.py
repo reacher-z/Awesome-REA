@@ -1,6 +1,7 @@
 """Public evidence membership, publication holds and truthful export boundaries."""
 import copy
 from contextlib import redirect_stdout
+import functools
 import hashlib
 import io
 import json
@@ -21,6 +22,28 @@ from source_scope import apply_scope, read_scope
 from source_browser import project_source_browser, validate_source_browser, compact_json_bytes
 
 BATCH_NAME = 'public-cloud-39323601991-batch-01'
+
+
+def reuses_class_evidence(test):
+    """Serve the full evidence re-check from setUpClass to calls with the same source and archive bytes.
+
+    Each decorated test checks an unchanged regular-file copy of the checked-in archive, so load_evidence
+    would repeat the identical multi-second check. Such a call gets its own deep copy of the class result;
+    any other source or archive still goes through the real load_evidence.
+    """
+    @functools.wraps(test)
+    def run(self):
+        check = supplements.load_evidence
+
+        def load(root, source):
+            archive = Path(root) / 'data/source-evidence' / source['archive_filename']
+            if (source == self.source and archive.is_file() and not archive.is_symlink()
+                    and archive.read_bytes() == self.archive):
+                return copy.deepcopy(self.evidence)
+            return check(root, source)
+        with patch.object(supplements, 'load_evidence', load):
+            return test(self)
+    return run
 
 
 class PublicSourceSupplementTests(unittest.TestCase):
@@ -79,6 +102,7 @@ class PublicSourceSupplementTests(unittest.TestCase):
         }
         return supplements.json_bytes(document)
 
+    @reuses_class_evidence
     def test_real_500_are_held_without_fake_translations(self):
         # The missing-language fixture remains held even after real translations
         # are reviewed and the actual batch is admitted in a later data change.
@@ -94,6 +118,7 @@ class PublicSourceSupplementTests(unittest.TestCase):
             'qualified': 9194, 'legacy_unknown': 2999, 'mismatched': 18})
         self.assertTrue(all(row['readme_git_sha_matches_content'] is True for row in self.batch['resources']))
 
+    @reuses_class_evidence
     def test_held_candidate_is_reproducible_from_exact_public_ids(self):
         prepared = supplements.prepare_batch(ROOT, BATCH_NAME, self.source,
                                              self.batch['selection']['selected_ids'])
@@ -222,6 +247,7 @@ class PublicSourceSupplementTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'symlink'):
                 supplements.cache_output(root, root / '.cache/alias/prepared.json')
 
+    @reuses_class_evidence
     def test_missing_translation_cannot_be_published(self):
         with tempfile.TemporaryDirectory() as directory:
             root = self.fixture(directory, ready=True)
@@ -261,6 +287,7 @@ class PublicSourceSupplementTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'source-context'):
             supplements.apply_supplement_scope(self.batch['resources'], changed_scope, context)
 
+    @reuses_class_evidence
     def test_ready_empty_description_and_separate_publication_semantics(self):
         # This real source has no description. Empty EN/ZH strings are correct,
         # unlike invented translations for any of the other 495 descriptions.
@@ -306,6 +333,7 @@ class PublicSourceSupplementTests(unittest.TestCase):
             self.assertEqual(copied.read_bytes(), self.archive)
             self.assertEqual(original, self.canonical_export())
 
+    @reuses_class_evidence
     def test_composition_preserves_capture_fields_but_allows_faithful_locale_and_labels(self):
         from artifact_links import with_curated_labels
         with tempfile.TemporaryDirectory() as directory:
@@ -344,6 +372,7 @@ class PublicSourceSupplementTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     supplements.compose_published(baseline, self.baseline_sha, admitted, changed)
 
+    @reuses_class_evidence
     def test_ready_build_routes_and_curated_machine_boundary(self):
         import build_site
         import validate_site
@@ -379,6 +408,7 @@ class PublicSourceSupplementTests(unittest.TestCase):
                 self.assertFalse(any(row['id'].startswith('scan-') for row in rows))
                 self.assertEqual(len(rows), len(json.loads((output / 'catalog.json').read_text())['resources']))
 
+    @reuses_class_evidence
     def test_publication_time_normalizes_offsets_and_utc_calendar_date(self):
         import build_repository_index
         for recorded, expected in (
