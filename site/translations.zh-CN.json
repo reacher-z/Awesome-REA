@@ -4547,5 +4547,15 @@
       "“练习”部分把 crackme 和 CTF 网站与公开的恶意软件样本库并列，只附有一句注意恶意软件的提醒；“Mac 解密”部分只列出工具名称，未说明用法。本记录仅把该清单视为分析资源目录。",
       "package.json 和 .travis.yml 在 Travis CI 上以 Node.js 8 配置了 remark-lint 检查，涵盖列表顺序、重复链接和失效链接。GitHub 未检测到许可证，仓库没有许可证文件，package.json 的 license 字段也为空，因此清单未声明复用条款；所链接的工具和书籍保留各自条款。这是独立的发现清单；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "smda": {
+    "name": "SMDA 递归反汇编库",
+    "requirements": [
+      "审阅对象为 2026-10-20 的 v5.0.1 发布提交，它也是 GitHub 和 PyPI 上的最新版本；2026-10-16 的 v5.0.0 新增了 32 位 ARM 后端。CHANGELOG 说明版本号只是发布计数，并非语义化版本；pyproject.toml 将该包标为 Beta。",
+      "pip install smda 需要 Python 3.11+，并会安装 5.0.2 及以上但低于 6 的 capstone、demangle 0.6.0、dncil、dnfile、LIEF 0.16+ 和 purepdb。CI 在 Ubuntu 上用 Python 3.11 至 3.14、在 Windows 和 macOS 上用 3.11 运行测试。analyze.py、batch_analyze.py 和导出脚本不会随 pip 安装，需要克隆仓库；IDA 前端需要 IDA Pro 8.4+，无界面 IDA 导出需要 IDA 9.1+ 及可选的 ida-domain 包，Binary Ninja 导出则需要可导入其 Python API 的正版 Binary Ninja。",
+      "README 将 intel 后端评为生产级并已与其他反汇编器对比测试，称 AArch64 在其测试语料上与 IDA 的结果非常接近，ARM、CIL 和 Dalvik 后端则较新；两个托管代码后端未在混淆代码上做过基准测试，报告的是文件偏移而非虚拟地址。Dalvik 只接受原始的单个 DEX 文件，不支持 APK、多 DEX、ODEX 或 CDEX；大端 ARM32、MIPS、PowerPC、SPARC、RISC-V 等可识别的机器类型没有对应后端。二进制文件、内存转储以及 IDA 或 Binary Ninja 数据库均由分析者提供；分析无文件头的转储时应传入架构和基址，ApiScout 解析需要与被转储系统相符的 WinAPI 配置文件，data/ 目录附带 Windows 7 SP1 和 Windows XP SP3 的配置文件。默认分析预算为 300 秒，以协作方式执行，超时的报告只是下限；根据报告合成二进制文件的功能仍属实验性质。",
+      "测试使用在内存中解码的 XOR 编码二进制文件：为项目构建的程序、一个类均为 Apache HttpClient 代码的 DEX 文件（blockblast_classes_xored），以及恶意软件样本，包括 12 种架构的 Mirai 构建、Asprox、Cutwail、Bashlite、Komplex 和 njRAT，另有 tests/aarch64_macho_corpus 下来自 Objective-See 和 Malpedia 的 AArch64 Mach-O 恶意软件，其 README 禁止执行这些样本。CI 基准测试还使用 .github/workflows/data/malpedia.zip，这是一个 74 MB、带密码保护的 Malpedia 语料包，密码保存在仓库机密中，因此 AGENTS.md 说明该基准无法在本地复现。",
+      "采用 BSD-2-Clause 许可（LICENSE）；NOTICE 列出第三方部分，包括以 MIT 许可、源自 rust_demangler 的代码，以及取自 LLVM 符号还原测试、以 Apache-2.0 加 LLVM 例外许可的 MSVC 符号名。AGENTS.md 为参与开发的 AI 编程代理提供指引；所审来源未确立与 REA 的关联。本次审阅未运行 SMDA 分析，也未执行任何测试样本。"
+    ]
   }
 }

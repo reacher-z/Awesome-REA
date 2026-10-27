@@ -229,7 +229,7 @@
 - [secrary/DrSemu](https://github.com/secrary/DrSemu) — DrSemu：基于动态行为的沙箱恶意软件检测与分类工具 **[280 星标]**
 - [mebeim/systrack](https://github.com/mebeim/systrack) — 📡🐧 Linux 内核系统调用实现追踪工具 **[275 星标]**
 - [argp/iBoot64helper](https://github.com/argp/iBoot64helper) — 辅助 AArch64 iBoot、iBEC 和 SecureROM 逆向工程的 IDAPython 加载器 **[266 星标]**
-- [danielplohmann/smda](https://github.com/danielplohmann/smda) — SMDA 是精简的递归反汇编库，专门优化了从内存转储中准确恢复控制流图（CFG）的能力。 **[264 星标]**
+- [danielplohmann/smda](https://github.com/danielplohmann/smda) — SMDA 是精简的递归反汇编库，专门优化了从内存转储中准确恢复控制流图（CFG）的能力。 **[264 星标]** · 精选：[SMDA 递归反汇编库](https://awesomerea.org/zh/resources/smda/)
 - [blacktop/docker-ghidra](https://github.com/blacktop/docker-ghidra) — Ghidra 客户端/服务器 Docker 镜像 **[263 星标]**
 - [JustasMasiulis/ida\_bitfields](https://github.com/JustasMasiulis/ida_bitfields) — 让位域访问更易于使用 grep 搜索的 IDA Pro 插件 **[262 星标]**
 - [mooncat-greenpy/Ghidra\_GolangAnalyzerExtension](https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension) — 使用 Ghidra 分析 Golang **[262 星标]**

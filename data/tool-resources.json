@@ -12548,5 +12548,43 @@
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/package.json",
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/.travis.yml"
     ]
+  },
+  {
+    "id": "smda",
+    "name": "SMDA",
+    "url": "https://github.com/danielplohmann/smda",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Python recursive disassembler library built on Capstone that recovers control-flow graphs from PE, ELF and Mach-O files, .NET assemblies, raw DEX files and memory dumps with a known base address, through x86/x64, AArch64, 32-bit ARM/Thumb, CIL and Dalvik backends. Its JSON reports list functions, basic blocks, instructions and the edges between them, enriched with symbols from imports, exports, PDB, Go, Rust and Delphi metadata, referenced strings, Windows API references inferred with the ApiScout method and position-independent code hashes. Function discovery deliberately favours completeness over precision; the README names SMDA as capa's disassembler backend and MCRIT's code-analysis layer, and IDA Pro or Binary Ninja analyses can be exported into the same report format.",
+    "description_zh": "基于 Capstone 的 Python 递归反汇编库，借助 x86/x64、AArch64、32 位 ARM/Thumb、CIL 和 Dalvik 后端，从 PE、ELF、Mach-O 文件、.NET 程序集、原始 DEX 文件以及已知基址的内存转储中恢复控制流图。其 JSON 报告列出函数、基本块、指令及其间的边，并补充来自导入表、导出表、PDB、Go、Rust 与 Delphi 元数据的符号、被引用的字符串、用 ApiScout 方法推断的 Windows API 引用以及位置无关代码哈希。函数发现有意以完整性优先于精确性；README 称 SMDA 是 capa 的反汇编后端和 MCRIT 的代码分析层，IDA Pro 或 Binary Ninja 的分析结果也可导出为同一报告格式。",
+    "evidence_url": "https://github.com/danielplohmann/smda/blob/04652e6662fde57d146a14d80399e2c1d128e26b/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the v5.0.1 release commit of 2026-10-20, which is also the latest GitHub release and PyPI version; v5.0.0 of 2026-10-16 added the 32-bit ARM backend. The CHANGELOG states that version numbers are a release counter, not semantic versioning, and pyproject.toml classifies the package as Beta.",
+      "pip install smda needs Python 3.11+ and pulls in capstone 5.0.2 or later below 6, demangle 0.6.0, dncil, dnfile, LIEF 0.16+ and purepdb. CI runs the tests on Python 3.11 to 3.14 on Ubuntu and on 3.11 on Windows and macOS. The analyze.py, batch_analyze.py and export scripts are not installed by pip and need a clone; the IDA frontend needs IDA Pro 8.4+, headless IDA export needs IDA 9.1+ with the optional ida-domain package, and Binary Ninja export needs a licensed Binary Ninja whose Python API is importable.",
+      "The README rates the intel backend as production quality and benchmarked against other disassemblers, AArch64 as matching IDA closely on its test corpora, and the ARM, CIL and Dalvik backends as recent; the managed backends are not benchmarked on obfuscated code and report file offsets rather than virtual addresses. Dalvik accepts raw single-DEX files only, not APKs, multi-dex, ODEX or CDEX, and recognized machine types such as big-endian ARM32, MIPS, PowerPC, SPARC and RISC-V have no backend. Binaries, memory dumps and IDA or Binary Ninja databases come from the analyst; for a headerless dump pass the architecture and base address, and ApiScout resolution needs WinAPI profiles matching the dumped system, of which data/ bundles Windows 7 SP1 and Windows XP SP3 profiles. The default analysis budget is 300 seconds, enforced cooperatively, a timed-out report is a lower bound, and synthesizing binaries from reports is experimental.",
+      "The tests use XOR-encoded binaries that are decoded in memory: programs built for the project, a DEX file whose classes are Apache HttpClient code (blockblast_classes_xored), and malware samples including Mirai builds for 12 architectures, Asprox, Cutwail, Bashlite, Komplex and njRAT, plus AArch64 Mach-O malware from Objective-See and Malpedia under tests/aarch64_macho_corpus, whose README forbids executing them. The CI benchmark additionally uses .github/workflows/data/malpedia.zip, a 74 MB password-protected Malpedia corpus whose password is a repository secret, so AGENTS.md says the benchmark cannot be reproduced locally.",
+      "BSD-2-Clause (LICENSE); NOTICE lists third-party parts, including rust_demangler-derived code under MIT and MSVC symbol names from LLVM's demangler tests under Apache-2.0 with the LLVM exception. AGENTS.md gives guidance to AI coding agents working on the code; the reviewed sources establish no REA connection. This review ran no SMDA analysis and executed no fixture."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/danielplohmann/smda/blob/04652e6662fde57d146a14d80399e2c1d128e26b/README.md#L170-L199",
+      "https://github.com/danielplohmann/smda/blob/04652e6662fde57d146a14d80399e2c1d128e26b/pyproject.toml",
+      "https://github.com/danielplohmann/smda/blob/04652e6662fde57d146a14d80399e2c1d128e26b/CHANGELOG.md",
+      "https://github.com/danielplohmann/smda/blob/04652e6662fde57d146a14d80399e2c1d128e26b/.github/workflows/ci.yml",
+      "https://github.com/danielplohmann/smda/blob/04652e6662fde57d146a14d80399e2c1d128e26b/.github/workflows/perf_benchmark.yml",
+      "https://github.com/danielplohmann/smda/blob/04652e6662fde57d146a14d80399e2c1d128e26b/AGENTS.md",
+      "https://github.com/danielplohmann/smda/blob/04652e6662fde57d146a14d80399e2c1d128e26b/tests/aarch64_macho_corpus/README.md",
+      "https://github.com/danielplohmann/smda/tree/04652e6662fde57d146a14d80399e2c1d128e26b/tests",
+      "https://github.com/danielplohmann/smda/tree/04652e6662fde57d146a14d80399e2c1d128e26b/data",
+      "https://github.com/danielplohmann/smda/blob/04652e6662fde57d146a14d80399e2c1d128e26b/LICENSE",
+      "https://github.com/danielplohmann/smda/blob/04652e6662fde57d146a14d80399e2c1d128e26b/NOTICE",
+      "https://github.com/danielplohmann/smda/releases/tag/v5.0.1",
+      "https://pypi.org/project/smda/5.0.1/"
+    ]
   }
 ]
