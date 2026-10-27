@@ -219,7 +219,7 @@
 - [Nalen98/GhidraEmu](https://github.com/Nalen98/GhidraEmu) — 原生 Pcode 模拟器 **[308 星标]**
 - [0xdea/ghidra-scripts](https://github.com/0xdea/ghidra-scripts) — 我编写的 Ghidra 脚本合集，用于辅助逆向工程与漏洞研究。 **[303 星标]**
 - [TorgoTorgo/ghidra-findcrypt](https://github.com/TorgoTorgo/ghidra-findcrypt) — 用于定位密码学常量的 Ghidra 分析插件 **[302 星标]**
-- [Karmaz95/Snake\_Apple](https://github.com/Karmaz95/Snake_Apple) — 与 Apple 环境（主要为 macOS）研究相关的文章和工具。 **[300 星标]**
+- [Karmaz95/Snake\_Apple](https://github.com/Karmaz95/Snake_Apple) — 与 Apple 环境（主要为 macOS）研究相关的文章和工具。 **[300 星标]** · 精选：[Snake &amp; Apple：macOS 内部机制与安全系列文章](https://awesomerea.org/zh/resources/snake-apple-macos-security-series/)
 - [tintinweb/ida-batch\_decompile](https://github.com/tintinweb/ida-batch_decompile) — “反编译一切”：适用于 Hex-Rays IDA Pro 的 IDA 批量反编译插件及脚本，可批量反编译多个文件及其导入项，并在伪代码 .c 文件中添加交叉引用、栈变量大小等注释。 **[300 星标]**
 - [ubfx/BinDiffHelper](https://github.com/ubfx/BinDiffHelper) — 集成 BinDiff 以进行函数匹配的 Ghidra 扩展 **[297 星标]**
 - [thetacom/hexabyte](https://github.com/thetacom/hexabyte) — 现代、模块化且稳健的终端界面十六进制编辑器。 **[294 星标]**
