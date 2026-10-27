@@ -12397,5 +12397,42 @@
       "https://github.com/toniebox-reverse-engineering/teddycloud/releases/tag/tc_v0.7.0",
       "https://tonies-wiki.revvox.de/docs/tools/teddycloud/setup/"
     ]
+  },
+  {
+    "id": "repriseos-ipod-classic-firmware-case",
+    "name": "RepriseOS (osos-lab): extending Apple's iPod Classic firmware",
+    "url": "https://github.com/lgreitis/osos-lab",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Adds features to Apple's original iPod Classic firmware 2.0.5, including a three-band custom EQ, Play Next and Play Last, Album Artists browsing, Song Info and Dark Mode, while keeping Apple's interface and playback system. The repository holds the C patches, a Python patch-recipe builder and Rust device tools together with reverse-engineering notes on the boot sequence, NOR bootloader and OSOS runtime, and it tracks its Ghidra annotations of Apple's firmware as re-importable SARIF exports. A patched Rockbox bootloader chooses RepriseOS, the Apple OS or Rockbox at startup.",
+    "description_zh": "在保留 Apple 原有界面和播放系统的前提下，为原版 iPod Classic 固件 2.0.5 增加新功能，包括三段自定义均衡器、“下一首播放”和“最后播放”、按专辑艺人浏览、歌曲信息以及深色模式。仓库包含 C 补丁、Python 补丁配方构建器和 Rust 设备工具，并附有关于启动流程、NOR 引导程序和 OSOS 运行时的逆向笔记；其对 Apple 固件的 Ghidra 注释以可重新导入的 SARIF 导出形式纳入版本管理。经修补的 Rockbox 引导程序在启动时选择进入 RepriseOS、Apple 原系统或 Rockbox。",
+    "evidence_url": "https://github.com/lgreitis/osos-lab/blob/ad98aa61b4c86f3f93441b5cfcaaaf9ab2a30619/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit of 2026-10-26 follows the GitHub release RepriseOS v0.3.0, published the same day. Builds target Apple firmware 2.0.5 on iPod Classic 6G, 6.5G and 7G with FAT32 storage, while the reference addresses in docs/ describe 2.0.4 on a Classic 7G Rev B and are version-specific. The project modifies Apple's binaries through patch recipes instead of recovering their source; the README marks the game SDK and Doom port unfinished, and resources still come from the installed Apple resource partition.",
+      "Building firmware needs Apple's iPod_38.2.0.5.ipsw, the decrypted OSOS and AUPD images whose sizes and SHA-256 hashes firmware/apple.json pins, and the target iPod's NOR image, which supplies its identity. None of these Apple inputs are committed; the recipe targets and the release bundle are built without them, and assembly combines the bundle with them on the user's machine. Device commands use BootROM DFU through code ported from wInd3x, and the README warns never to copy a personalized companion image between devices.",
+      "Builds need Python 3.11+, Git, Make, Perl, a host C compiler and Rockbox's arm-elf-eabi GCC 9.5.0 toolchain; the Rust host tools need Cargo, libusb and pkg-config, with CI pinning Rust 1.96.0 on Ubuntu 24.04. tools/setup.py checks out Rockbox at a pinned commit and applies the project's two bootloader patches. The Ghidra import and export round trip needs Ghidra 12.1.4 and JDK 21+. Players install through the separate RepriseOS Installer app.",
+      "CI runs ruff and rustfmt checks, the Python unit tests for the patch builder, themes, tools and USB helper, and the Rust host-tool tests, then builds the Classic bundle without Apple inputs; the Rust tests compare payload assembly with golden output from wInd3x's Go assembler. The Ghidra importer verifies a temporary project before publishing it. None of these checks exercise an iPod, and this collection did not build, install or run anything.",
+      "GPL-3.0-only (COPYING and SPDX headers); Apple's firmware, Rockbox and wInd3x keep their own terms. The replacement Dark Mode artwork for Apple's interface bitmaps in themes/dark carries no separate provenance or license note. Five of the 84 commits carry Co-Authored-By: Claude trailers, but the README describes no AI workflow and no REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/lgreitis/osos-lab/blob/ad98aa61b4c86f3f93441b5cfcaaaf9ab2a30619/docs/README.md",
+      "https://github.com/lgreitis/osos-lab/blob/ad98aa61b4c86f3f93441b5cfcaaaf9ab2a30619/docs/boot.md",
+      "https://github.com/lgreitis/osos-lab/blob/ad98aa61b4c86f3f93441b5cfcaaaf9ab2a30619/docs/nor.md",
+      "https://github.com/lgreitis/osos-lab/blob/ad98aa61b4c86f3f93441b5cfcaaaf9ab2a30619/docs/osos.md",
+      "https://github.com/lgreitis/osos-lab/blob/ad98aa61b4c86f3f93441b5cfcaaaf9ab2a30619/firmware/apple.json",
+      "https://github.com/lgreitis/osos-lab/blob/ad98aa61b4c86f3f93441b5cfcaaaf9ab2a30619/host/README.md",
+      "https://github.com/lgreitis/osos-lab/blob/ad98aa61b4c86f3f93441b5cfcaaaf9ab2a30619/dependencies.lock",
+      "https://github.com/lgreitis/osos-lab/blob/ad98aa61b4c86f3f93441b5cfcaaaf9ab2a30619/.github/workflows/firmware.yml",
+      "https://github.com/lgreitis/osos-lab/blob/ad98aa61b4c86f3f93441b5cfcaaaf9ab2a30619/host/crates/reprise-device/src/testdata/README.md",
+      "https://github.com/lgreitis/osos-lab/tree/ad98aa61b4c86f3f93441b5cfcaaaf9ab2a30619/ghidra/analysis",
+      "https://github.com/lgreitis/osos-lab/blob/ad98aa61b4c86f3f93441b5cfcaaaf9ab2a30619/COPYING",
+      "https://github.com/lgreitis/osos-lab/releases"
+    ]
   }
 ]

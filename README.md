@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 512](https://img.shields.io/badge/resources-512-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 217](https://img.shields.io/badge/cases-217-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 137](https://img.shields.io/badge/papers-137-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 513](https://img.shields.io/badge/resources-513-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 218](https://img.shields.io/badge/cases-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 137](https://img.shields.io/badge/papers-137-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,12 +21,12 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-512 curated resources (217 cases) · 137 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 509 because 3 of these appear only under Papers.
+513 curated resources (218 cases) · 137 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 510 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
 - [Website](#website) (29) · [Game](#game) (197) · [App](#app) (83)
-- [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (24) · [Protocol](#protocol) (21)
+- [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (25) · [Protocol](#protocol) (21)
 
 **Research and workflows**
 
@@ -34,7 +34,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (217) · [Related Collections](#related-collections) (9) · [Full Repository Index](#full-repository-index) (3,309)
+- [All cases](https://awesomerea.org/cases/) (218) · [Related Collections](#related-collections) (9) · [Full Repository Index](#full-repository-index) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -490,6 +490,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**OpenDMCUFirm: a reimplemented Wii U DMCU display firmware**](https://github.com/GaryOderNichts/OpenDMCUFirm) - Reimplements in C the firmware of the Wii U’s DMCU, the M68HC11-compatible display microcontroller in its AMD graphics controller, which in Wii mode reads the Video Interface state and configures display output, deinterlacing, scaling and overscan. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opendmcufirm-wii-u-dmcu-firmware-case/)</sub>
 - [**reflecticon-224: running Lexicon 224 reverb firmware on emulated hardware**](https://github.com/joelanders/reflecticon-224) - Emulates the Lexicon 224, 224X and 224XL digital reverbs so that their own firmware runs in a browser page or a JUCE plugin. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reflecticon-224-lexicon-emulation-case/)</sub>
 - [**TeddyCloud: a self-hosted replacement for the Toniebox cloud**](https://github.com/toniebox-reverse-engineering/teddycloud) - Reimplements the Boxine cloud services a Toniebox talks to as a self-hosted C server, so the box can fetch audio, settings and over-the-air content locally while the owner controls what reaches the manufacturer. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/teddycloud-toniebox-server-case/)</sub>
+- [**RepriseOS (osos-lab): extending Apple's iPod Classic firmware**](https://github.com/lgreitis/osos-lab) - Adds features to Apple's original iPod Classic firmware 2.0.5, including a three-band custom EQ, Play Next and Play Last, Album Artists browsing, Song Info and Dark Mode, while keeping Apple's interface and playback system. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/repriseos-ipod-classic-firmware-case/)</sub>
 
 #### Tools, projects and integrations
 

@@ -4500,5 +4500,15 @@
       "自定义 tonie JSON 接口的 Python API 测试和 WASM TAF 编码器测试通过 Makefile 目标运行；所审阅的工作流只构建并发布，不运行这些测试。dev-sandbox 提供模拟的 tonie、盒子和 TAF 数据。与真实盒子及 Boxine 云端配合的表现仍属项目报告，本次来源核查未运行任何内容。",
       "采用 GPL-2.0（LICENSE）；内置的 Cyclone 协议栈、Opus、Ogg、cJSON 和 FatFs 保留各自条款。tonie 音频、盒子固件和 Boxine 的服务保留各自权利。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "repriseos-ipod-classic-firmware-case": {
+    "name": "RepriseOS（osos-lab）：扩展 Apple iPod Classic 原版固件",
+    "requirements": [
+      "所审阅的 main 分支提交日期为 2026-10-26，晚于同日发布的 GitHub 版本 RepriseOS v0.3.0。构建目标是 iPod Classic 6G、6.5G 和 7G 上的 Apple 固件 2.0.5，需使用 FAT32 存储；docs/ 中的参考地址则针对 Classic 7G Rev B 上的 2.0.4，并且随版本而变。项目通过补丁配方修改 Apple 的二进制，并不恢复其源码；README 标明游戏 SDK 和 Doom 移植尚未完成，资源仍取自已安装的 Apple 资源分区。",
+      "构建固件需要 Apple 的 iPod_38.2.0.5.ipsw、尺寸和 SHA-256 哈希与 firmware/apple.json 固定值相符的已解密 OSOS 与 AUPD 镜像，以及提供设备身份信息的目标 iPod NOR 镜像。仓库不含这些 Apple 输入；配方目标和发布包在构建时都不使用它们，由使用者在本机将发布包与这些输入组装。设备命令通过移植自 wInd3x 的代码使用 BootROM DFU；README 提醒切勿在设备之间复制个性化的配套镜像。",
+      "构建需要 Python 3.11+、Git、Make、Perl、宿主 C 编译器以及 Rockbox 的 arm-elf-eabi GCC 9.5.0 工具链；Rust 主机工具需要 Cargo、libusb 和 pkg-config，CI 在 Ubuntu 24.04 上固定使用 Rust 1.96.0。tools/setup.py 会检出固定提交的 Rockbox 并应用项目的两个引导程序补丁。Ghidra 导入与导出往返需要 Ghidra 12.1.4 和 JDK 21+。普通用户通过独立的 RepriseOS Installer 应用安装。",
+      "CI 运行 ruff 和 rustfmt 检查、补丁构建器、主题、工具及 USB 辅助程序的 Python 单元测试，以及 Rust 主机工具测试，然后在不使用 Apple 输入的情况下构建 Classic 发布包；Rust 测试将载荷汇编结果与 wInd3x Go 汇编器生成的基准输出比较。Ghidra 导入器会先验证临时项目再发布。这些检查都不涉及真实 iPod；本合集未构建、安装或运行任何内容。",
+      "采用 GPL-3.0-only（见 COPYING 和 SPDX 文件头）；Apple 固件、Rockbox 和 wInd3x 适用其各自条款。themes/dark 中替换 Apple 界面位图的深色模式图像没有单独的来源或许可说明。84 个提交中有 5 个带有 Co-Authored-By: Claude 署名行，但 README 未描述 AI 工作流，也不确立 REA 使用。"
+    ]
   }
 }
