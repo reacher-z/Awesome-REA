@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 212 | 210 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 70 | 70 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 309 | 309 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 65 | 65 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 314 | 314 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 227 occurrences have catalog links. They reference 217 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 460 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 466 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -225,7 +225,13 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Codex CLI: inspecting model-identity prompts and routing fields | Insufficient evidence | [Source](https://x.com/jiangkoumo_/status/2110751118343164066) |
 | Rust Duty: reconstructing gameplay from video, not decompilation | Insufficient evidence | [Source](https://x.com/reidhslaughter/status/2110752844328419587) |
 | 2010 Rust Rewrite Mashup: Skate 3 in MW2 maps | Pending | [Source](https://x.com/thenuntheia/status/2110757135009112576) |
+| A wireless CarPlay adapter: a reported REA/Grok firmware change | Insufficient evidence | [Source](https://x.com/omercoskun_tech/status/2110759012266332509) |
+| A daily voice-input app: quick client inspection, hours of rebuilding | Insufficient evidence | [Source](https://x.com/pirrer/status/2110759506003304641) |
 | Linux EAC: an AI devirtualization claim via IDA Assist MCP | Insufficient evidence | [Source](https://x.com/i/status/2110759663822352852) |
+| Browser Counter-Strike: a colleague's AI-build claim | Insufficient evidence | [Source](https://x.com/FuSheng_0306/status/2110760621113548854) |
+| REA JavaScript demo: a stale-price check at 400 ms | Insufficient evidence | [Source](https://x.com/0xAlhimik/status/2110761684411572247) |
+| Galaxy-Android: a reported AI-assisted native Super Mario Galaxy port | Pending | [Source](https://x.com/ToniCipriani007/status/2110763621768716353) |
+| An old phone: an author reports running OEM firmware in Wasm with Claude | Insufficient evidence | [Source](https://x.com/ShishirTandale/status/2110765881768747173) |
 | BINNY | Already curated | [Source](https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/README.md) |
 | An illustrative game.exe demo: two rooms and three reconstruction oracles | Insufficient evidence | [Source](https://x.com/i/status/2110783611800522897) |
 | H1Z1: research followed by an MMO built with Opus, Astra and Tripo | Insufficient evidence | [Source](https://x.com/i/status/2110784230687125852) |
