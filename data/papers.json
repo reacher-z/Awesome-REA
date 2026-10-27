@@ -7355,5 +7355,70 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-assemblage",
+    "title": "Assemblage: Automatic Binary Dataset Construction for Machine Learning",
+    "title_zh": "Assemblage：面向机器学习的二进制数据集自动构建",
+    "authors": [
+      "Chang Liu",
+      "Rebecca Saul",
+      "Yihao Sun",
+      "Edward Raff",
+      "Maya Fuchs",
+      "Townsend Southard Pantano",
+      "James Holt",
+      "Kristopher Micinski"
+    ],
+    "year": 2024,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "The official NeurIPS proceedings and publisher-deposited Crossref metadata identify publication year 2024; Crossref provides no finer publication date. The first arXiv submission date is recorded separately.",
+    "date_basis_zh": "NeurIPS 官方论文集与出版方提交的 Crossref 元数据标明出版年份为 2024；Crossref 未提供更精确的出版日期。arXiv 首次提交日期另行记录。",
+    "venue": "NeurIPS 2024 Datasets and Benchmarks",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2405.03991",
+    "arxiv_version_reviewed": "v2",
+    "first_arxiv_date": "2024-05-07",
+    "doi": "10.52202/079017-1871",
+    "citation": {
+      "container_title": "Advances in Neural Information Processing Systems",
+      "volume": "37",
+      "pages": "58698-58715",
+      "sources": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/hash/6bbefc73a187dd42e0dc065b4e7a0615-Abstract-Datasets_and_Benchmarks_Track.html",
+        "https://api.crossref.org/works/10.52202/079017-1871"
+      ]
+    },
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/6bbefc73a187dd42e0dc065b4e7a0615-Abstract-Datasets_and_Benchmarks_Track.html",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/6bbefc73a187dd42e0dc065b4e7a0615-Paper-Datasets_and_Benchmarks_Track.pdf",
+    "code_url": "https://github.com/Assemblage-Dataset/Assemblage",
+    "project_url": "https://assemblage-dataset.net/",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Assemblage is a distributed system that crawls GitHub and vcpkg, builds C/C++ projects under many compiler configurations, and records source-to-binary mappings such as function addresses, source code, comments and PDB or DWARF debug information. Run on AWS for about a year, it produced 890k Windows PE binaries built with Visual Studio 2015–2022 across optimization levels, architectures and Debug/Release modes, plus 428k Linux ELF binaries from GCC and Clang, in 29 configurations. Case studies use the data for compiler provenance with PassTell, function similarity with a graph neural network and jTrans, and function-boundary identification comparing XDA with IDA.",
+    "description_zh": "Assemblage 是一个分布式系统，从 GitHub 与 vcpkg 爬取 C/C++ 项目，在多种编译器配置下构建，并记录源码到二进制的映射，包括函数地址、源代码、注释以及 PDB 或 DWARF 调试信息。该系统在 AWS 上运行约一年，以 Visual Studio 2015–2022 在不同优化级别、架构及 Debug／Release 模式下构建出 89 万个 Windows PE 二进制，另以 GCC 与 Clang 构建出 42.8 万个 Linux ELF 二进制，共涵盖 29 种配置。案例研究将这些数据用于 PassTell 编译器溯源、图神经网络与 jTrans 函数相似性检测，以及比较 XDA 与 IDA 的函数边界识别。",
+    "scope_limitations_en": "The binaries are builds of open-source GitHub and vcpkg projects, many of them small student projects or utilities, so they do not represent commercial, packed or obfuscated software. Assemblage does not independently scan for malware; the authors rely on GitHub’s policy against malware and plan scanning for a later version. The reported build success rate was about 30% on Windows and 7% on Linux. Public datasets include only repositories with permissive licenses, so the downloadable copy is a subset of the paper’s corpus, and repository links in the metadata tie binaries to authors’ GitHub profiles. The case studies retrain existing models under their original protocols with minimal changes; they show Windows/Linux generalization gaps, such as jTrans MRR of 0.52 on Windows against 0.83 on Linux, rather than new analysis methods.",
+    "scope_limitations_zh": "这些二进制均由 GitHub 与 vcpkg 上的开源项目构建，其中许多是小型学生项目或实用工具，因此不能代表商业、加壳或混淆软件。Assemblage 不独立检测恶意软件，作者依赖 GitHub 禁止恶意软件的政策，并计划在后续版本中加入扫描。论文报告的构建成功率在 Windows 上约为 30%，在 Linux 上为 7%。公开数据集仅包含采用宽松许可证的仓库，因此可下载的副本只是论文语料的子集；元数据中的仓库链接会把二进制与作者的 GitHub 主页关联起来。案例研究在原有协议下以最小改动重新训练现有模型，展示的是 Windows 与 Linux 之间的泛化差距（例如 jTrans 在 Windows 上的 MRR 为 0.52，在 Linux 上为 0.83），而非新的分析方法。",
+    "why_fits_en": "Adds a dataset paper for Windows PE binaries with source and debug mappings, complementing the Linux ELF function corpora used by decompilation research in this section.",
+    "why_fits_zh": "补充一篇提供源码与调试信息映射的 Windows PE 二进制数据集论文，与本节反编译研究所用的 Linux ELF 函数语料互补。",
+    "metadata_notes": "Crossref and the NeurIPS proceedings page give the eight-author order, volume 37 and pages 58698–58715; Crossref records only the year. The proceedings page’s 2024-12-16 citation date also appears on another NeurIPS 2024 paper page, so year precision is kept. Reviewed arXiv v2 (2024-11-02), which carries the NeurIPS comment; v1 dates from 2024-05-07. At the reviewed f8ac584 commit (2026-08-08), the repository README says the code is MIT-licensed and the published dataset is a permissively licensed subset; pyproject.toml declares MIT, but there is no LICENSE file and GitHub detects none. The README also says the codebase was refactored in July 2026 and extended with a Rust worker, that Windows/MSVC builds sit under backend/assemblage/legacy/ and need a Windows host, and that a pre-refactor branch keeps the earlier code. The Hugging Face cards for changliu8541/Assemblage_PE, whose public copy has 91k Windows PE binaries, and Assemblage_LinuxELF declare license “other” and ask users to follow each source repository’s license. The repository’s separate DeepHistory corpus is not covered by this record. No binaries or datasets were downloaded, and no code or experiments were run.",
+    "metadata_notes_zh": "Crossref 与 NeurIPS 论文集页面给出八位作者顺序、第 37 卷及第 58698–58715 页；Crossref 只记录年份。论文集页面的 2024-12-16 引用日期也出现在另一篇 NeurIPS 2024 论文的页面上，因此保留年份精度。审阅了 arXiv v2（2024-11-02），其注释标明 NeurIPS；v1 提交于 2024-05-07。在所审阅的 f8ac584 提交（2026-08-08）中，仓库 README 称代码采用 MIT 许可证，公开数据集是宽松许可子集；pyproject.toml 声明 MIT，但没有 LICENSE 文件，GitHub 也未识别出许可证。README 还说明代码库于 2026 年 7 月重构并加入 Rust 构建器，Windows／MSVC 构建位于 backend/assemblage/legacy/ 下且需要 Windows 主机，pre-refactor 分支保留了此前的代码。Hugging Face 上的 changliu8541/Assemblage_PE（公开副本含 9.1 万个 Windows PE 二进制）与 Assemblage_LinuxELF 数据卡声明许可证为“other”，并要求用户遵守各源仓库的许可证。仓库中独立的 DeepHistory 语料不在本条目范围内。本次未下载二进制或数据集，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://proceedings.neurips.cc/paper_files/paper/2024/hash/6bbefc73a187dd42e0dc065b4e7a0615-Abstract-Datasets_and_Benchmarks_Track.html",
+      "https://proceedings.neurips.cc/paper_files/paper/2024/file/6bbefc73a187dd42e0dc065b4e7a0615-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "https://api.crossref.org/works/10.52202/079017-1871",
+      "https://arxiv.org/abs/2405.03991v2",
+      "https://arxiv.org/pdf/2405.03991v2",
+      "https://github.com/Assemblage-Dataset/Assemblage/blob/f8ac584038ea2c0a9f0732dd4a64bbfa6f41c012/README.md",
+      "https://github.com/Assemblage-Dataset/Assemblage/blob/f8ac584038ea2c0a9f0732dd4a64bbfa6f41c012/pyproject.toml",
+      "https://huggingface.co/datasets/changliu8541/Assemblage_PE/blob/19a8f947f5a04d03edea78e61790226b55f92ac2/README.md",
+      "https://huggingface.co/datasets/changliu8541/Assemblage_LinuxELF/blob/5d58b08b500ea279a9880f80fd4b217e1897035a/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
