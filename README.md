@@ -1,8 +1,6 @@
-<p align="center">
-  <a href="https://awesomerea.org/"><img src="assets/featured-by-awesome-rea-compact.svg" alt="Featured by Awesome REA" width="200" height="48"></a>
-</p>
-
 # Awesome Reverse Engineering Anything
+
+<a href="https://awesomerea.org/"><img src="assets/featured-by-awesome-rea-compact.svg" alt="Featured by Awesome REA" width="200" height="48"></a>
 
 An independent collection of tools, case studies and research for websites, games, apps, native binaries, firmware and communication protocols.
 
@@ -41,13 +39,13 @@ An independent collection of tools, case studies and research for websites, game
 
 ## Find by task
 
-| Task | Relevant sections |
-| --- | --- |
-| Inspect a website or app interface | [Websites](#website) · [Apps](#app) |
-| Rebuild a game or check matching code | [Games](#game) · [Game cases](https://awesomerea.org/cases/#cases-game) |
-| Analyze compiled code or recover symbols | [Native binaries](#native-binary) · [Agents and MCP](#agents-and-mcp) |
-| Investigate firmware or device protocols | [Firmware](#firmware) · [Protocols](#protocol) |
-| Compare methods and evaluation evidence | [Papers](#papers) · [Survey comparisons](https://awesomerea.org/survey/#comparative-studies) |
+| Task                                     | Relevant sections                                                                            |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Inspect a website or app interface       | [Websites](#website) · [Apps](#app)                                                          |
+| Rebuild a game or check matching code    | [Games](#game) · [Game cases](https://awesomerea.org/cases/#cases-game)                      |
+| Analyze compiled code or recover symbols | [Native binaries](#native-binary) · [Agents and MCP](#agents-and-mcp)                        |
+| Investigate firmware or device protocols | [Firmware](#firmware) · [Protocols](#protocol)                                               |
+| Compare methods and evaluation evidence  | [Papers](#papers) · [Survey comparisons](https://awesomerea.org/survey/#comparative-studies) |
 
 <a id="resource-catalog"></a>
 ## Resources
