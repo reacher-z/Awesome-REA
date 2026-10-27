@@ -177,7 +177,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [horsicq/XOpcodeCalc](https://github.com/horsicq/XOpcodeCalc) — Opcode calculator / ASM calculator **[413 stars]**
 - [pfalcon/ScratchABit](https://github.com/pfalcon/ScratchABit) — Easily retargetable and hackable interactive disassembler with IDAPython-compatible plugin API **[413 stars]**
 - [DSecurity/efiSeek](https://github.com/DSecurity/efiSeek) — Ghidra analyzer for UEFI firmware. **[408 stars]**
-- [BoomerangDecompiler/boomerang](https://github.com/BoomerangDecompiler/boomerang) — Boomerang Decompiler - Fighting the code-rot :) **[405 stars]**
+- [BoomerangDecompiler/boomerang](https://github.com/BoomerangDecompiler/boomerang) — Boomerang Decompiler - Fighting the code-rot :) **[405 stars]** · Curated: [Boomerang Decompiler](https://awesomerea.org/resources/boomerang-decompiler/)
 - [evyatar9/GptHidra](https://github.com/evyatar9/GptHidra) — GptHidra is a Ghidra plugin that uses the OpenAI Chat GPT to explain functions. With GptHidra, you can easily understand the purpose and behavior of functions in your codebase. Now with GPT4 Support! **[405 stars]**
 - [serfend/pydumpck](https://github.com/serfend/pydumpck) — a multi-threads tool for decompile exe,elf,pyz,pyc packed by python which is base on pycdc and uncompyle6. **[400 stars]**
 - [radareorg/radeco](https://github.com/radareorg/radeco) — radare2-based decompiler and symbol executor **[399 stars]**
