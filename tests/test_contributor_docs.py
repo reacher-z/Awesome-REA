@@ -73,6 +73,22 @@ class ContributorReferenceTests(unittest.TestCase):
         self.assertEqual((rows['kind'], rows['verification'], rows['runtime_tested']),
                          ('`research`', '`source-reviewed`', '`false`'))
 
+    def test_worked_examples_match_their_records_and_pinned_evidence(self):
+        text = (ROOT / 'CONTRIBUTING.md').read_text(encoding='utf-8')
+        records = {record['id']: record for name in ('rea-resources.json', 'tool-resources.json')
+                   for record in json.loads((ROOT / 'data' / name).read_text(encoding='utf-8'))}
+        examples = re.findall(r'^- \*\*[^*]+:\*\* \[`([a-z0-9-]+)`\]\(data/[a-z-]+\.json\) uses (.+)$', text, re.MULTILINE)
+        self.assertEqual(len(examples), 4)
+        for identifier, line in examples:
+            record = records[identifier]
+            with self.subTest(example=identifier):
+                for field in ('kind', 'relationship', 'category'):
+                    self.assertIn(f'`{field}: {record[field]}`', line)
+                self.assertIn(f"`targets: [{', '.join(record['targets'])}]`", line)
+                # The source link is the record's own evidence, pinned to the reviewed commit.
+                self.assertEqual(re.findall(r'\[source\]\((https://[^)]+)\)', line, re.IGNORECASE), [record['evidence_url']])
+                self.assertRegex(record['evidence_url'], r'/blob/[0-9a-f]{40}/')
+
     def test_resource_form_offers_each_kind_once(self):
         options = form_options('resource.yml', 'kind')
         labels = {labels[0]: kind for kind, labels in KIND_LABELS.items()}
