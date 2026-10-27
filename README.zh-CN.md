@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 514](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-514-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 218](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 138](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 515](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-515-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 219](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-219-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 138](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,12 +21,12 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-514 项精选资源（218 个案例）· 138 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 511。
+515 项精选资源（219 个案例）· 138 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 512。
 
 **按目标找工具与案例**
 
 - [网站](#website) (29) · [游戏](#game) (198) · [应用](#app) (83)
-- [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (24) · [协议](#protocol) (21)
+- [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (25) · [协议](#protocol) (21)
 
 **论文与工作流**
 
@@ -34,7 +34,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (218) · [相关合集](#related-collections) (9) · [完整仓库索引](#完整仓库索引) (3,309)
+- [全部案例](https://awesomerea.org/zh/cases/) (219) · [相关合集](#related-collections) (9) · [完整仓库索引](#完整仓库索引) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -492,6 +492,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**OpenDMCUFirm：重新实现的 Wii U DMCU 显示固件**](https://github.com/GaryOderNichts/OpenDMCUFirm) - 用 C 语言重新实现 Wii U 的 DMCU 固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendmcufirm-wii-u-dmcu-firmware-case/)</sub>
 - [**reflecticon-224：在模拟硬件上运行 Lexicon 224 混响器固件**](https://github.com/joelanders/reflecticon-224) - 模拟 Lexicon 224、224X 与 224XL 数字混响器，使其原厂固件能在浏览器页面或 JUCE 插件中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reflecticon-224-lexicon-emulation-case/)</sub>
 - [**TeddyCloud：可自托管的 Toniebox 云端替代服务器**](https://github.com/toniebox-reverse-engineering/teddycloud) - 以可自托管的 C 服务器重新实现 Toniebox 所连接的 Boxine 云服务，使盒子能在本地获取音频、设置和无线下发内容，同时由用户控制哪些数据发往厂商。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/teddycloud-toniebox-server-case/)</sub>
+- [**open-desk-lamp-firmware：小米台灯的替代固件**](https://github.com/fvollmer/open-desk-lamp-firmware) - 以一个小型开源固件替换基于 ESP8266 的小米台灯原厂固件，依据台灯硬件编写；README 介绍了主板，其中 ESP8266 通过 PWM 控制两路开关稳压器，分别驱动冷光和暖光 LED，并读取旋转编码器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xiaomi-desk-lamp-open-firmware-case/)</sub>
 
 #### 工具、项目与集成
 

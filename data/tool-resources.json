@@ -12456,5 +12456,38 @@
       "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/LICENSE",
       "https://decomp.dev/zeldaret/af"
     ]
+  },
+  {
+    "id": "xiaomi-desk-lamp-open-firmware-case",
+    "name": "open-desk-lamp-firmware: replacement firmware for the Xiaomi desk lamp",
+    "url": "https://github.com/fvollmer/open-desk-lamp-firmware",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Replaces the stock firmware of the ESP8266-based Xiaomi desk lamp with a small open firmware written from the lamp's hardware: the README documents the main board, where the ESP8266 drives two switching regulators for the cold and warm LEDs by PWM and reads a rotary encoder. The firmware reimplements only the local controls, toggling the lamp, dimming and changing colour temperature from the knob, and deliberately leaves out the IoT and cloud features.",
+    "description_zh": "以一个小型开源固件替换基于 ESP8266 的小米台灯原厂固件，依据台灯硬件编写；README 介绍了主板，其中 ESP8266 通过 PWM 控制两路开关稳压器，分别驱动冷光和暖光 LED，并读取旋转编码器。该固件只重新实现本地控制，即用旋钮开关灯、调光和调节色温，并有意舍弃物联网与云端功能。",
+    "evidence_url": "https://github.com/fvollmer/open-desk-lamp-firmware/blob/043aeb9f95c0454b92200cded4b7e4cc3b23011e/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit of 2019-03-19 is the last of ten commits and follows the only release, v0.0.1 of 2019-01-12, whose zip holds a CI build. The README covers basic functionality only; the stock firmware's behaviour, app protocol and cloud communication are not analysed or reproduced, and only the author's lamp variant is described. The README notes that esptool.py identifies the module as an ESP8285 even though the board has an external flash chip.",
+      "Installing means opening the lamp, soldering to the U0RX, U0TX, GPIO0 and GND pads for a USB serial adapter and overwriting the stock firmware. No vendor firmware is committed; the README advises backing up the original flash first, warns that such a backup contains the owner's Wi-Fi credentials and asks users to check the flash size in case other variants exist.",
+      "Builds use CMake 2.8+ and the xtensa-lx106-elf toolchain from esp-open-sdk, which downloads Espressif's ESP8266 NONOS SDK; the firmware links that SDK's binary-only Wi-Fi and PHY libraries and its PWM driver, and esptool.py converts and flashes the images. The CI configuration builds esp-open-sdk from source on Travis CI's Ubuntu 16.04 image; esp-open-sdk itself has had no commits since 2018.",
+      "There are no tests: CI only compiles the firmware and attaches the zip to tagged releases. The README reports no measurements or tested lamp revisions beyond the author's own, and this collection did not build or flash it.",
+      "MIT License (2018, Felix Vollmer). Espressif's SDK libraries keep their own modified MIT license, and the stock firmware and Xiaomi's app keep their own terms. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/fvollmer/open-desk-lamp-firmware/blob/043aeb9f95c0454b92200cded4b7e4cc3b23011e/src/CMakeLists.txt",
+      "https://github.com/fvollmer/open-desk-lamp-firmware/blob/043aeb9f95c0454b92200cded4b7e4cc3b23011e/src/main.c",
+      "https://github.com/fvollmer/open-desk-lamp-firmware/blob/043aeb9f95c0454b92200cded4b7e4cc3b23011e/src/leds.c",
+      "https://github.com/fvollmer/open-desk-lamp-firmware/blob/043aeb9f95c0454b92200cded4b7e4cc3b23011e/.travis.yml",
+      "https://github.com/fvollmer/open-desk-lamp-firmware/blob/043aeb9f95c0454b92200cded4b7e4cc3b23011e/LICENSE",
+      "https://github.com/fvollmer/open-desk-lamp-firmware/releases/tag/v0.0.1",
+      "https://github.com/pfalcon/esp-open-sdk/blob/c70543e57fb18e5be0315aa217bca27d0e26d23d/README.md",
+      "https://github.com/pfalcon/esp-open-sdk/blob/c70543e57fb18e5be0315aa217bca27d0e26d23d/Makefile"
+    ]
   }
 ]
