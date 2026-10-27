@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 213 | 211 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 52 | 52 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 326 | 326 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 51 | 51 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 327 | 327 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 228 occurrences have catalog links. They reference 218 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 479 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 480 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -490,6 +490,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | CM 01-02 to FM26: an idea to study football-manager data migration with REA | Insufficient evidence | [Source](https://x.com/i/status/2111591082119106953) |
 | Six-app two-room reconstruction: a report of 299 claims and a negative-control judge rule | Insufficient evidence | [Source](https://x.com/i/status/2111591362449592514) |
 | Windows loader: static malware analysis with REA and Codex | Already curated | [Source](https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/) |
+| T3 Code: an unverified claim of reconstruction and open-source release with 100 Claude agents | Insufficient evidence | [Source](https://x.com/axmed_bl/status/2111544615669014664) |
 | An 1,842-file AI desktop shell: an animated demonstration of local/server boundaries | Insufficient evidence | [Source](https://x.com/i/status/2111446154713964643) |
 | Mario Kart 8 Deluxe: 0xsvsv's Claude/REA PC-port account | Insufficient evidence | [Source](https://x.com/i/status/2111431983691862272) |
 | Kerbal Space Program 2: an AI-decompilation idea for community maintenance | Insufficient evidence | [Source](https://x.com/i/status/2111434708575805636) |
