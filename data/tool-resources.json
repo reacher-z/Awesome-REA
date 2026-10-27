@@ -12616,5 +12616,35 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "kuizuo-js-deobfuscator",
+    "name": "JS Deobfuscator (kuizuo)",
+    "url": "https://github.com/kuizuo/js-deobfuscator",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Babel AST-based JavaScript deobfuscator with a CLI, a TypeScript API in the workspace package deob, and a browser playground built with Nuxt 3 and Monaco. It locates string-array decoders by array length, call count or analyst-supplied setup code and decoder names, evaluates them to inline the decoded strings, unflattens control flow, removes dead code and self-defending or anti-debug logic, merges object properties and renames mangled identifiers, repeating passes for heavily obfuscated input. The README credits webcrack as an inspiration, and its examples include javascript-obfuscator and jsjiami v6 output, the string-array style the catalog's obfuscator-io-deobfuscator entry also covers.",
+    "description_zh": "基于 Babel AST 的 JavaScript 反混淆工具，提供命令行、工作区软件包 deob 中的 TypeScript API，以及用 Nuxt 3 和 Monaco 构建的浏览器在线演练场。它可按字符串数组长度、调用次数，或分析者提供的预置代码与解密函数名来定位字符串数组解密函数，执行这些函数以内联解密后的字符串，并能还原控制流平坦化、删除死代码及自我防护和反调试逻辑、合并对象属性、重命名被混淆的标识符，对重度混淆的代码会多轮处理。README 称其受 webcrack 启发；示例包含 javascript-obfuscator 和 jsjiami v6 的输出，与本目录 obfuscator-io-deobfuscator 条目所处理的字符串数组混淆属于同一类。",
+    "evidence_url": "https://github.com/kuizuo/js-deobfuscator/blob/21598ad5865a9e29b5c50c94f629a2e7528c7fbd/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest GitHub release at review: v0.4.2, published 2026-08-11 without attached files; the reviewed main commit is one commit later and only adds Vercel deployment configuration. The README runs it from a clone: pnpm install (the workspace pins pnpm 11.21.0), then pnpm exec deob on a file or standard input, or pnpm tmp for tmp/input.js. The playground is hosted at js-deobfuscator.vercel.app; only the repository was reviewed.",
+      "Decoders are executed. In Node the extracted string array, rotator and decoder code run in isolated-vm, a native module, with a 10-second timeout, but if that call fails the code falls back to the host's global eval; the playground calls the same function inside a web worker. Process untrusted scripts in an isolated environment. Heavily customized samples need analyst-prepared setupCode and decoder names, as the pdd and lamz examples show.",
+      "The example/ directory commits what the README calls real obfuscation samples, each with the obfuscated input.js, the tool's restored output.js and, for two samples, a setupCode.js; several directories are named after Chinese websites, such as pdd, maoyan and wangyi, and the repository documents neither their origin nor redistribution terms. The root LICENSE is MIT, while packages/deob/package.json declares no license. Documentation is in English and Chinese. No scripts were deobfuscated for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/kuizuo/js-deobfuscator/blob/21598ad5865a9e29b5c50c94f629a2e7528c7fbd/README.zh-CN.md",
+      "https://github.com/kuizuo/js-deobfuscator/blob/21598ad5865a9e29b5c50c94f629a2e7528c7fbd/packages/deob/package.json",
+      "https://github.com/kuizuo/js-deobfuscator/blob/21598ad5865a9e29b5c50c94f629a2e7528c7fbd/package.json",
+      "https://github.com/kuizuo/js-deobfuscator/blob/21598ad5865a9e29b5c50c94f629a2e7528c7fbd/packages/deob/src/deobfuscate/vm.ts",
+      "https://github.com/kuizuo/js-deobfuscator/blob/21598ad5865a9e29b5c50c94f629a2e7528c7fbd/website/utils/deobfuscate.worker.ts",
+      "https://github.com/kuizuo/js-deobfuscator/blob/21598ad5865a9e29b5c50c94f629a2e7528c7fbd/LICENSE",
+      "https://github.com/kuizuo/js-deobfuscator/releases/tag/v0.4.2"
+    ]
   }
 ]
