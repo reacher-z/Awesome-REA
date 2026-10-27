@@ -12616,5 +12616,40 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "wallbreaker",
+    "name": "Wallbreaker",
+    "url": "https://github.com/hluwa/Wallbreaker",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Frida-based explorer for the live Java heap of a running Android app, loaded as an objection plugin or used through its small Python package. classsearch and objectsearch find loaded classes by pattern and live instances of a class, returning object handles; classdump prints a class's declared fields, static field values and methods, and objectdump prints an instance's field values, can view it as a superclass and lists every entry of a collection or map. Analysts use it to see the runtime data and concrete implementations that static decompilation leaves open.",
+    "description_zh": "基于 Frida 的工具，用于查看正在运行的 Android 应用的实时 Java 堆，可作为 objection 插件加载，也可通过其小型 Python 包调用。classsearch 与 objectsearch 按模式查找已加载的类，或查找某个类的存活实例并返回对象句柄；classdump 打印类声明的字段、静态字段值和方法，objectdump 打印实例的字段值，可将其按父类查看，并列出集合或映射中的全部条目。分析者借此查看静态反编译无法确定的运行时数据和具体实现。",
+    "evidence_url": "https://github.com/hluwa/Wallbreaker/blob/f27f2daf2d74c000446a520c8e1c906fb416efb9/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Archived by its owner and read-only. Latest release at review: 1.0.3, tagged and uploaded to PyPI on 2022-05-10 with no release assets; the only later commit adds the GPL-3.0 LICENSE file (2023-03-26).",
+      "README installs objection with pip and clones the repository into objection's plugin folder, then loads it with explore -P or plugin load and runs the commands as plugin wallbreaker …. The PyPI package depends on frida and click and ships the command agent as a library; its connection helper attaches through Frida to a USB or remote device by process name or PID, and wallbreaker/main.py defines no command-line entry point. setup.py classifiers list Python 3.4–3.8 on macOS, Windows and Linux.",
+      "The target is a running Android app reachable by Frida. The bundled agent.js is compiled from the repository's own TypeScript sources with frida-compile 9 and Frida 14-era typings; it calls the global Java bridge and does not bundle frida-java-bridge, which Frida 17 (May 2025) no longer provides to ordinary scripts. Compatibility with current Frida and objection releases was not tested.",
+      "GPL-3.0. Output is a structural view of objects at one moment in one process, not decompiled source. Nothing was installed or run in this review; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/hluwa/Wallbreaker/blob/f27f2daf2d74c000446a520c8e1c906fb416efb9/setup.py",
+      "https://github.com/hluwa/Wallbreaker/blob/f27f2daf2d74c000446a520c8e1c906fb416efb9/__init__.py",
+      "https://github.com/hluwa/Wallbreaker/blob/f27f2daf2d74c000446a520c8e1c906fb416efb9/wallbreaker/connection.py",
+      "https://github.com/hluwa/Wallbreaker/blob/f27f2daf2d74c000446a520c8e1c906fb416efb9/wallbreaker/agent/command/__init__.py",
+      "https://github.com/hluwa/Wallbreaker/blob/f27f2daf2d74c000446a520c8e1c906fb416efb9/agent/package.json",
+      "https://github.com/hluwa/Wallbreaker/blob/f27f2daf2d74c000446a520c8e1c906fb416efb9/agent/src/objectkit.ts",
+      "https://github.com/hluwa/Wallbreaker/blob/f27f2daf2d74c000446a520c8e1c906fb416efb9/makefile",
+      "https://github.com/hluwa/Wallbreaker/blob/f27f2daf2d74c000446a520c8e1c906fb416efb9/LICENSE",
+      "https://github.com/hluwa/Wallbreaker/releases/tag/1.0.3",
+      "https://pypi.org/project/wallbreaker/1.0.3/",
+      "https://frida.re/news/2025/05/17/frida-17-0-0-released/"
+    ]
   }
 ]
