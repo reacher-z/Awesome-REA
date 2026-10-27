@@ -177,7 +177,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [VelocityRa/awesome-game-file-format-reversing](https://github.com/VelocityRa/awesome-game-file-format-reversing) — Collection of docs/tools/resources for reverse engineering and working with video game file formats. **[225 stars]**
 - [psxrestore/Condemned2Recomp](https://github.com/psxrestore/Condemned2Recomp) — A static recompilation of Condemned 2: Bloodshot done with RexGlue. **[223 stars]**
 - [emu-russia/breaks](https://github.com/emu-russia/breaks) — Nintendo Entertainment System (NES) / Famicom / Famiclones chip reversing **[221 stars]**
-- [koopthekoopa/wii-ipl](https://github.com/koopthekoopa/wii-ipl) — Wii Menu Decompilation brought to you by fans. **[218 stars]**
+- [koopthekoopa/wii-ipl](https://github.com/koopthekoopa/wii-ipl) — Wii Menu Decompilation brought to you by fans. **[218 stars]** · Curated: [wii-ipl: a decompilation of the Wii Menu (System Menu 4.3)](https://awesomerea.org/resources/wii-menu-ipl-decomp-case/)
 - [xxDark/SSVM](https://github.com/xxDark/SSVM) — Java VM running on a JVM **[216 stars]**
 - [resilar/crchack](https://github.com/resilar/crchack) — Reversing CRC for fun and profit **[212 stars]**
 - [xuemian168/qqpet\_automation](https://github.com/xuemian168/qqpet_automation) — A macOS port of QQ Pet (Retro): reverse engineering, telemetry removal, Ruffle Flash, and an automated pet-care CLI. **[211 stars]**
