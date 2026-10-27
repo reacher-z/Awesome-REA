@@ -12397,5 +12397,40 @@
       "https://github.com/toniebox-reverse-engineering/teddycloud/releases/tag/tc_v0.7.0",
       "https://tonies-wiki.revvox.de/docs/tools/teddycloud/setup/"
     ]
+  },
+  {
+    "id": "http-toolkit",
+    "name": "HTTP Toolkit",
+    "url": "https://github.com/httptoolkit/httptoolkit",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website",
+      "app",
+      "protocol"
+    ],
+    "description_en": "Open-source HTTP(S) debugging proxy for Windows, Linux and macOS that sets up interception for browsers, terminals, backend runtimes, Electron apps and Android devices, then shows the full headers and body of every request and response with body decoding, inline header documentation and filtering. Its transparent proxy handles plain HTTP, HTTPS, HTTP/2 and WebSockets on one port; breakpoints rewrite live requests or responses, and a built-in client sends custom requests. This repository is the project's umbrella README and issue tracker, while the UI, server, Mockttp proxy library, Android app and desktop shell live in sibling repositories.",
+    "description_zh": "面向 Windows、Linux 和 macOS 的开源 HTTP(S) 调试代理，可为浏览器、终端、后端运行时、Electron 应用和 Android 设备配置拦截，并完整展示每个请求与响应的头部和正文，提供正文解码、标准头部内联说明和过滤功能。其透明代理在同一端口处理明文 HTTP、HTTPS、HTTP/2 和 WebSocket；断点可改写实时请求或响应，内置客户端可发送自定义请求。本仓库是项目的总说明与问题追踪仓库，界面、服务端、Mockttp 代理库、Android 应用和桌面外壳位于同一组织的其他仓库。",
+    "evidence_url": "https://github.com/httptoolkit/httptoolkit/blob/bb579a8ceadfe86b98160843c0447a5b9eec554f/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "At the reviewed commit this umbrella repository holds only the README, a security policy and a demo animation, and serves as the project's issue tracker. The product is built from sibling repositories: httptoolkit-ui (TypeScript and React), httptoolkit-server (Node.js, whose interceptor list covers Chromium-based browsers, Firefox, terminals, Electron, Android over ADB, Frida on Android and iOS, JVM processes and Docker containers), the Mockttp proxy library, the Android app and the Electron desktop shell; only their READMEs and the server's interceptor list were reviewed.",
+      "Latest desktop release at review: v1.27.3, published 2026-10-20, with a Windows installer and zip, macOS x64 and arm64 DMGs and Linux x64 and arm64 AppImage, deb, rpm and zip builds. The desktop shell bundles the server and opens the UI in Electron; the server can also run standalone as a CLI with the hosted web UI opened in a browser, and both update themselves separately from the desktop executable.",
+      "HTTPS inspection needs the client to trust HTTP Toolkit's CA certificate: interceptors launch preconfigured browsers, terminals and apps, and the server's certificate check downloads or installs the certificate where it is not yet trusted. The Android app trusts the certificate and forwards device traffic through a local VPN; its README says a rooted device is not required but widens the real app traffic that can be tested. Inspect only traffic from your own clients and devices or ones you are authorized to test.",
+      "The pricing page lists interception of all supported clients, raw inspection, filtering, manual rewriting and manual requests in the free Hobbyist tier, while mock rules and automatic transforms, edit-and-resend, rule and traffic import/export (including HAR), API validation and advanced proxy settings such as TLS passthrough and upstream proxies need a paid Pro account. The README describes the HTTP Toolkit-specific components as AGPL-3.0 and the reusable libraries as Apache-2.0 or MIT; this repository has no license file, and the desktop README offers its binaries under AGPL-3.0 or CC BY-ND 4.0. No traffic was intercepted."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/httptoolkit/httptoolkit/blob/bb579a8ceadfe86b98160843c0447a5b9eec554f/README.md#L28-L40",
+      "https://github.com/httptoolkit/httptoolkit/blob/bb579a8ceadfe86b98160843c0447a5b9eec554f/README.md#L64-L79",
+      "https://github.com/httptoolkit/httptoolkit/tree/bb579a8ceadfe86b98160843c0447a5b9eec554f",
+      "https://github.com/httptoolkit/httptoolkit-server/blob/3973d10b7ae8d67632dd6105ee9c70c867baf0ac/README.md",
+      "https://github.com/httptoolkit/httptoolkit-server/blob/3973d10b7ae8d67632dd6105ee9c70c867baf0ac/src/interceptors/index.ts",
+      "https://github.com/httptoolkit/httptoolkit-desktop/blob/71c10c78abe09bdb025063b28025f5c65bc6812c/README.md",
+      "https://github.com/httptoolkit/httptoolkit-android/blob/53d7e356b1872d9ad20716113fc01b9388bdf4c3/README.md",
+      "https://github.com/httptoolkit/httptoolkit-desktop/releases/tag/v1.27.3",
+      "https://httptoolkit.com/get-pro/"
+    ]
   }
 ]
