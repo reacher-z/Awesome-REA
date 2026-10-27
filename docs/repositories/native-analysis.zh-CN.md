@@ -209,7 +209,7 @@
 - [mattcurrie/mgbdis](https://github.com/mattcurrie/mgbdis) — Game Boy ROM 反汇编器，输出兼容 RGBDS。 **[327 星标]**
 - [reetamdan/hypervisor-crack-audit](https://github.com/reetamdan/hypervisor-crack-audit) — 对用于绕过 Denuvo 的 hypervisor DRM 方法进行安全分析，使用 Ghidra 逆向分析驱动加载器与启动组件。 **[327 星标]**
 - [radareorg/radare2-mcp](https://github.com/radareorg/radare2-mcp) — 适用于 radare2 的 MCP 标准输入输出服务器。 **[325 星标]** · 精选：[Radare2 MCP Server](https://awesomerea.org/zh/resources/radare2-mcp/)
-- [w00tzenheimer/d810-ng](https://github.com/w00tzenheimer/d810-ng) — D810-ng（Next Generation）是经过更新、测试、重构和优化的 IDA Pro 插件，通过修改 IDA Pro 微代码，在反编译时对代码去混淆。 **[325 星标]**
+- [w00tzenheimer/d810-ng](https://github.com/w00tzenheimer/d810-ng) — D810-ng（Next Generation）是经过更新、测试、重构和优化的 IDA Pro 插件，通过修改 IDA Pro 微代码，在反编译时对代码去混淆。 **[325 星标]** · 精选：[D-810 ng IDA 反混淆插件](https://awesomerea.org/zh/resources/d810-ng/)
 - [mandiant/xrefer](https://github.com/mandiant/xrefer) — FLARE 团队的二进制导航工具。 **[323 星标]**
 - [Cuyler36/Ghidra-GameCube-Loader](https://github.com/Cuyler36/Ghidra-GameCube-Loader) — Ghidra 的 Nintendo GameCube 二进制加载器。 **[322 星标]**
 - [mwemuorg/mwemu](https://github.com/mwemuorg/mwemu) — x86 恶意软件模拟器 **[316 星标]**

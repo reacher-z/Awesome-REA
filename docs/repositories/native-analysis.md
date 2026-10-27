@@ -209,7 +209,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [mattcurrie/mgbdis](https://github.com/mattcurrie/mgbdis) — Game Boy ROM disassembler with RGBDS compatible output **[327 stars]**
 - [reetamdan/hypervisor-crack-audit](https://github.com/reetamdan/hypervisor-crack-audit) — Security analysis of the hypervisor drm method used to bypass denuvo. Reverse engineering of the driver loaders and boot components using Ghidra **[327 stars]**
 - [radareorg/radare2-mcp](https://github.com/radareorg/radare2-mcp) — MCP stdio server for radare2 **[325 stars]** · Curated: [Radare2 MCP Server](https://awesomerea.org/resources/radare2-mcp/)
-- [w00tzenheimer/d810-ng](https://github.com/w00tzenheimer/d810-ng) — D810-ng (Next Generation) is an updated, tested, refactored, and optimized IDA Pro plugin used to deobfuscate code at decompilation time by modifying IDA Pro microcode. **[325 stars]**
+- [w00tzenheimer/d810-ng](https://github.com/w00tzenheimer/d810-ng) — D810-ng (Next Generation) is an updated, tested, refactored, and optimized IDA Pro plugin used to deobfuscate code at decompilation time by modifying IDA Pro microcode. **[325 stars]** · Curated: [D-810 ng](https://awesomerea.org/resources/d810-ng/)
 - [mandiant/xrefer](https://github.com/mandiant/xrefer) — FLARE Team's Binary Navigator **[323 stars]**
 - [Cuyler36/Ghidra-GameCube-Loader](https://github.com/Cuyler36/Ghidra-GameCube-Loader) — A Nintendo GameCube binary loader for Ghidra **[322 stars]**
 - [mwemuorg/mwemu](https://github.com/mwemuorg/mwemu) — x86 malware emulator **[316 stars]**
