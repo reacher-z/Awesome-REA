@@ -37,7 +37,7 @@
 - [0xricksanchez/dlink-decrypt](https://github.com/0xricksanchez/dlink-decrypt) — D-Link 固件解密概念验证 **[201 星标]**
 - [quarkslab/pyrrha](https://github.com/quarkslab/pyrrha) — 固件结构测绘工具 **[172 星标]**
 - [dslsdzc/rev-skills](https://github.com/dslsdzc/rev-skills) — 122 个逆向工程 AI 技能，涵盖恶意软件分析、软件逆向、固件与嵌入式、协议逆向、移动应用、脱壳与去混淆、软件破解、漏洞挖掘、托管代码、取证情报及 CTF。 **[162 星标]**
-- [MCUSec/uEmu](https://github.com/MCUSec/uEmu) — 不依赖任何硬件、用于动态分析的通用 MCU 固件仿真器。 **[152 星标]**
+- [MCUSec/uEmu](https://github.com/MCUSec/uEmu) — 不依赖任何硬件、用于动态分析的通用 MCU 固件仿真器。 **[152 星标]** · 论文：[基于无效性引导知识推断的自动化固件仿真](https://awesomerea.org/zh/papers/paper-uemu/)
 - [SamuelTulach/PatchBoot](https://github.com/SamuelTulach/PatchBoot) — 修补 AMI Aptio V UEFI 固件以绕过安全启动检查的指南 **[144 星标]**
 - [patois/RETracker](https://github.com/patois/RETracker) — Polyend Tracker 逆向工程框架 **[136 星标]**
 - [DavidClawson/OpenScope-2C53T](https://github.com/DavidClawson/OpenScope-2C53T) — FNIRSI 2C53T 示波器/万用表/信号发生器的开源逆向工程与固件开发 **[119 星标]**

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 514](https://img.shields.io/badge/resources-514-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 218](https://img.shields.io/badge/cases-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 138](https://img.shields.io/badge/papers-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 514](https://img.shields.io/badge/resources-514-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 218](https://img.shields.io/badge/cases-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 139](https://img.shields.io/badge/papers-139-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-514 curated resources (218 cases) · 138 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 511 because 3 of these appear only under Papers.
+514 curated resources (218 cases) · 139 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 511 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (138) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (38)
+- [Papers](#papers) (139) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (38)
 
 **More ways to browse**
 
@@ -661,14 +661,14 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**138 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**139 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
 - [Agent evaluation](#papers-agent-evaluation) (10) · [Decompilation](#papers-decompilation) (59) · [Websites](#papers-website-reconstruction) (23)
-- [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (12) · [Firmware](#papers-firmware-analysis) (13)
+- [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (12) · [Firmware](#papers-firmware-analysis) (14)
 - [Protocols](#papers-protocol-analysis) (13)
 
 Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation. Some papers also appear among curated resources; counts are not additive.
@@ -830,6 +830,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**User-Space Dependency-Aware Rehosting for Linux-Based Firmware Binaries**](https://www.ndss-symposium.org/ndss-paper/user-space-dependency-aware-rehosting-for-linux-based-firmware-binaries/) - FIRMWELL reconstructs the execution environment of Linux firmware services by running their initialization processes, locating blocking dependencies and repairing missing system-level behavior. <sub>NDSS 2026 · Conference paper · Chuan Qin et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s249-paper.pdf) · [Code](https://github.com/qc9c/Firmwell) · [Full entry](https://awesomerea.org/papers/paper-firmwell/)</sub>
 - [**Target-Centric Firmware Rehosting with Penguin**](https://www.ndss-symposium.org/ndss-paper/auto-draft-634/) - Penguin rehosts embedded Linux firmware from an extracted filesystem by deriving an editable configuration of emulation transformations, such as file changes, pseudofiles, NVRAM values and network interfaces, from static analysis. <sub>Workshop on Binary Analysis Research (BAR) 2025 · Conference paper · Andrew Fasano et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2025-final10.pdf) · [Code](https://github.com/rehosting/penguin) · [Full entry](https://awesomerea.org/papers/paper-penguin/)</sub>
 - [**Fuzzware: Using Precise MMIO Modeling for Effective Firmware Fuzzing**](https://www.usenix.org/conference/usenixsecurity22/presentation/scharnowski) - Rehosts monolithic ARM Cortex-M firmware for fuzzing, using locally scoped symbolic execution to model memory-mapped I/O accesses and focus input mutations on values relevant to firmware logic. <sub>USENIX Security 2022 · Conference paper · Tobias Scharnowski et al. · [PDF](https://www.usenix.org/system/files/sec22-scharnowski.pdf) · [Code](https://github.com/fuzzware-fuzzer/fuzzware) · [Full entry](https://awesomerea.org/papers/paper-fuzzware/)</sub>
+- [**Automatic Firmware Emulation through Invalidity-guided Knowledge Inference**](https://www.usenix.org/conference/usenixsecurity21/presentation/zhou) - µEmu emulates ARM Cortex-M microcontroller firmware without real hardware or hand-written peripheral models by symbolically executing the image with unknown peripheral registers as symbols. <sub>USENIX Security 2021 · Conference paper · Wei Zhou et al. · [PDF](https://www.usenix.org/system/files/sec21-zhou.pdf) · [Code](https://github.com/MCUSec/uEmu/tree/c82fc0a36a28ab5f96001b0682adcf9783e20346) · [Full entry](https://awesomerea.org/papers/paper-uemu/)</sub>
 - [**FirmAE: Towards Large-Scale Emulation of IoT Firmware for Dynamic Analysis**](https://doi.org/10.1145/3427228.3427294) - Extends Firmadyne with empirically derived interventions for boot, networking, NVRAM, kernel behavior, and other runtime failures, enabling Linux router and IP-camera firmware web services to run for dynamic analysis. <sub>ACSAC 2020 · Conference paper · Mingeun Kim et al. · [PDF](https://syssec.kaist.ac.kr/pub/2020/kim_acsac2020.pdf) · [Code](https://github.com/pr0v3rbs/FirmAE) · [Full entry](https://awesomerea.org/papers/paper-firmae/)</sub>
 - [**HALucinator: Firmware Re-hosting Through Abstraction Layer Emulation**](https://www.usenix.org/conference/usenixsecurity20/presentation/clements) - HALucinator rehosts monolithic ARM Cortex-M firmware by identifying hardware-abstraction-library functions and replacing them with authored Python handlers and peripheral models. <sub>USENIX Security 2020 · Conference paper · Abraham A Clements et al. · [PDF](https://www.usenix.org/system/files/sec20-clements.pdf) · [Code](https://github.com/embedded-sec/halucinator) · [Full entry](https://awesomerea.org/papers/paper-halucinator/)</sub>
 - [**Towards Automated Dynamic Analysis for Linux-based Embedded Firmware**](https://doi.org/10.14722/ndss.2016.23415) - Firmadyne crawls, extracts and emulates Linux-based firmware for network-connected commercial devices such as routers and IP cameras. <sub>NDSS 2016 · Conference paper · Daming D. Chen et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/towards-automated-dynamic-analysis-linux-based-embedded-firmware.pdf) · [Code](https://github.com/firmadyne/firmadyne) · [Full entry](https://awesomerea.org/papers/paper-firmadyne/)</sub>

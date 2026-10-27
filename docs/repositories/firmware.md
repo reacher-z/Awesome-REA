@@ -37,7 +37,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [0xricksanchez/dlink-decrypt](https://github.com/0xricksanchez/dlink-decrypt) — D-Link firmware decryption PoC **[201 stars]**
 - [quarkslab/pyrrha](https://github.com/quarkslab/pyrrha) — A tool for firmware cartography **[172 stars]**
 - [dslsdzc/rev-skills](https://github.com/dslsdzc/rev-skills) — 122 AI skills for reverse engineering: malware analysis, software reversing, firmware and embedded systems, protocol reversing, mobile apps, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensics and intelligence, and CTFs. **[162 stars]**
-- [MCUSec/uEmu](https://github.com/MCUSec/uEmu) — A Universal MCU Firmware Emulator for Dynamic Analysis without Any Hardware Dependence. **[152 stars]**
+- [MCUSec/uEmu](https://github.com/MCUSec/uEmu) — A Universal MCU Firmware Emulator for Dynamic Analysis without Any Hardware Dependence. **[152 stars]** · Paper: [Automatic Firmware Emulation through Invalidity-guided Knowledge Inference](https://awesomerea.org/papers/paper-uemu/)
 - [SamuelTulach/PatchBoot](https://github.com/SamuelTulach/PatchBoot) — Guide for patching AMI Aptio V UEFI firmware to circumvent Secure Boot checks **[144 stars]**
 - [patois/RETracker](https://github.com/patois/RETracker) — Reverse Engineering Framework for the Polyend Tracker **[136 stars]**
 - [DavidClawson/OpenScope-2C53T](https://github.com/DavidClawson/OpenScope-2C53T) — Open-source reverse engineering and firmware development for the FNIRSI 2C53T oscilloscope/multimeter/signal generator **[119 stars]**

@@ -7519,5 +7519,61 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-uemu",
+    "title": "Automatic Firmware Emulation through Invalidity-guided Knowledge Inference",
+    "title_zh": "基于无效性引导知识推断的自动化固件仿真",
+    "authors": [
+      "Wei Zhou",
+      "Le Guan",
+      "Peng Liu",
+      "Yuqing Zhang"
+    ],
+    "year": 2021,
+    "publication_date": "2021-08",
+    "date_precision": "month",
+    "date_basis": "The BibTeX on the USENIX presentation page gives August 2021 for the 30th USENIX Security Symposium proceedings. Month precision is retained; the symposium dates are not substituted for a publication day, and the July 2021 arXiv dates belong to the extended version.",
+    "date_basis_zh": "USENIX 论文页面的 BibTeX 将第 30 届 USENIX Security 研讨会论文集的出版时间列为 2021 年 8 月。本条目保留月份精度，不以会议日期代替具体出版日；2021 年 7 月的 arXiv 日期属于扩展版。",
+    "venue": "USENIX Security 2021",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2107.07759",
+    "arxiv_version_reviewed": "v2",
+    "first_arxiv_date": "2021-07-16",
+    "doi": null,
+    "citation": {
+      "container_title": "30th USENIX Security Symposium (USENIX Security 21)",
+      "publisher": "USENIX Association",
+      "pages": "2007-2024",
+      "sources": [
+        "https://www.usenix.org/conference/usenixsecurity21/presentation/zhou"
+      ]
+    },
+    "url": "https://www.usenix.org/conference/usenixsecurity21/presentation/zhou",
+    "pdf_url": "https://www.usenix.org/system/files/sec21-zhou.pdf",
+    "code_url": "https://github.com/MCUSec/uEmu/tree/c82fc0a36a28ab5f96001b0682adcf9783e20346",
+    "project_url": null,
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "µEmu emulates ARM Cortex-M microcontroller firmware without real hardware or hand-written peripheral models by symbolically executing the image with unknown peripheral registers as symbols. Invalidity-guided exploration detects invalid states such as unexpected infinite loops and steers execution toward valid paths, caching the chosen responses at individual peripheral access points in a tiered knowledge base whose rules range from simple storage to PC- and calling-context-based matching. During dynamic analysis the knowledge base answers peripheral reads while an integrated, modified AFL fuzzer supplies data-register input. The prototype extends S2E 2.0 with Cortex-M support.",
+    "description_zh": "µEmu 将未知外设寄存器表示为符号，对固件映像进行符号执行，从而在没有真实硬件或人工编写外设模型的情况下仿真 ARM Cortex-M 微控制器固件。无效性引导的探索会检测意外死循环等无效状态，并把执行引向有效路径；所选响应按单个外设访问点缓存在分层知识库中，规则从简单存储到基于程序计数器和调用上下文的匹配。动态分析阶段由知识库响应外设读取，集成的改造版 AFL 模糊测试器则提供数据寄存器输入。原型在 S2E 2.0 基础上增加了 Cortex-M 支持。",
+    "scope_limitations_en": "Targets ARM Cortex-M firmware; the repository lists DMA and other architectures as unsupported help-wanted items. Responses only have to satisfy the firmware's own checks rather than reproduce real peripheral values, so successful emulation does not establish hardware equivalence. Invalidity checks can miss unhandled error paths, data registers can be mis-categorized (3 of 43 were missed against ground truth taken from chip manuals), and long loops whose concrete counters depend on symbols may go undetected. On P2IM's 66 unit tests the final paper reports 63 passes (95%) without manual help, and all after adding one invalid program point to each failure. Across 21 real-world firmware samples, 6 needed a user-defined invalid point and 3 a manually added data register. Coverage counts QEMU translation blocks against IDA-counted basic blocks, following P2IM.",
+    "scope_limitations_zh": "面向 ARM Cortex-M 固件；仓库将 DMA 及其他架构列为尚未支持、征求帮助的事项。响应只需通过固件自身的检查，而不必复现真实外设的取值，因此仿真成功不能证明与硬件等价。无效性检查可能漏掉未处理的错误路径，数据寄存器可能被错误分类（以芯片手册得出的真实标签衡量，43 个中漏掉 3 个），计数器为具体值但依赖符号的长循环也可能检测不到。在 P2IM 的 66 个单元测试上，正式论文报告无需人工协助即通过 63 个（95%），为每个失败样本添加一个无效程序点后全部通过。在 21 个真实固件样本中，6 个需要用户定义一个无效点，3 个需要人工补充一个数据寄存器。覆盖率沿用 P2IM 的做法，以 QEMU 翻译块数对比 IDA 统计的基本块数。",
+    "why_fits_en": "Adds symbolic-execution-based inference of peripheral behaviour for rehosting microcontroller firmware, complementing the catalog's HAL-replacement and MMIO-modelling approaches.",
+    "why_fits_zh": "补充借助符号执行推断外设行为、用于重托管微控制器固件的方法，与本目录中替换硬件抽象层和建模 MMIO 的方法互补。",
+    "metadata_notes": "The USENIX presentation-page BibTeX establishes the four-author order, proceedings title, pages 2007–2024 and August 2021. A footnote in the final PDF points to the authors' extended version on arXiv, titled with an \"(Extended Version)\" suffix (v1 2021-07-16, v2 2021-07-27), which is recorded as the arXiv identifier; no publisher DOI was found. The presentation-page abstract reports a 93% unit-test passing rate, whereas the final paper and the arXiv abstract report 95%; this record follows the final paper. The MCUSec/uEmu snapshot at c82fc0a (2023-11-20) has mixed terms: its add-on plugins use the Cyberhaven Research License of S2E 2.0 (non-commercial use only), its AFL changes Apache-2.0, QEMU GPL-2.0, and other S2E libraries LGPL-2.1, BSD/MIT or NCSA licenses; GitHub reports NOASSERTION. The README supports Ubuntu 18.04 or 20.04 (64-bit) or a Vagrant VM, fetches sources through a repo manifest, estimates about an hour to build on four cores, keeps unit-test and real-world firmware configurations in separate repositories, and uses an IDA script to count basic blocks for coverage. No firmware, builds or experiments were run.",
+    "metadata_notes_zh": "USENIX 论文页面的 BibTeX 确认了四位作者的顺序、论文集名称、页码 2007–2024 以及 2021 年 8 月。正式 PDF 的脚注指向作者在 arXiv 上的扩展版，标题带有“(Extended Version)”后缀（v1 为 2021-07-16，v2 为 2021-07-27），本条目将其记为 arXiv 标识；未找到出版方 DOI。论文页面摘要称单元测试通过率为 93%，正式论文与 arXiv 摘要则为 95%；本条目以正式论文为准。MCUSec/uEmu 快照 c82fc0a（2023-11-20）的许可条款不一：附加插件采用 S2E 2.0 的 Cyberhaven Research License（仅限非商业用途），AFL 修改部分采用 Apache-2.0，QEMU 采用 GPL-2.0，其他 S2E 库分别采用 LGPL-2.1、BSD/MIT 或 NCSA 许可；GitHub 显示为 NOASSERTION。README 支持 Ubuntu 18.04 或 20.04（64 位）或 Vagrant 虚拟机，通过 repo 清单获取源码，在四核机器上构建约需一小时；单元测试与真实固件配置放在独立仓库中，并使用 IDA 脚本统计基本块以计算覆盖率。本次未获取固件、构建程序或运行实验。",
+    "evidence_urls": [
+      "https://www.usenix.org/conference/usenixsecurity21/presentation/zhou",
+      "https://www.usenix.org/system/files/sec21-zhou.pdf",
+      "https://arxiv.org/abs/2107.07759",
+      "https://github.com/MCUSec/uEmu/blob/c82fc0a36a28ab5f96001b0682adcf9783e20346/README.md",
+      "https://github.com/MCUSec/uEmu/blob/c82fc0a36a28ab5f96001b0682adcf9783e20346/LICENSE"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
