@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "gr-lora": {
+    "name": "gr-lora LoRa 物理层解码模块",
+    "requirements": [
+      "master 分支最新提交（2021-12-10）合并了向 GNU Radio 3.9 的移植：CMake 要求 GNU Radio 3.9，Python 绑定改用 pybind11，库链接 liquid-dsp 和 log4cpp。README 未随移植更新，仍列出 Python 2、SWIG 和 wx 依赖，其 Docker 镜像在未固定版本的 Arch Linux 基础镜像上安装 python2 软件包；Travis CI 配置构建的是 GNU Radio maint-3.8。gr3.7 分支保留了旧代码；所审来源未涉及 GNU Radio 3.10 及更高版本。",
+      "输入为来自 SDR 或录制文件的 IQ 采样。接收器模块的采样率、中心频率、信道列表、带宽、扩频因子、编码率、隐式报头、CRC 和低速率模式等参数必须与发射端一致。apps/lora_receive_file_nogui.py 可从作者所在大学的服务器下载一段 868.1 MHz、SF7 的示例信号，更多信号样本见独立的 gr-lora-samples 仓库。README 列出 LoPy、Dragino HAT、Adafruit Feather 32u4、Microchip RN2483 和 SX1276 板卡为经过测试的发射设备。",
+      "README 说明不校验载荷和报头的 CRC，也不能同时解码多个信道；其更新日志把 0.7 版的下行链路、隐式报头低速率模式和任意带宽支持标为实验性功能。最新的版本标签是 v0.6.2，因此 0.7 版只存在于 master 分支。docs/test-results 收录了作者在移植期间于 2021-12-01 重新运行测试集得到的解码率，例如短 USRP 信号样本为 100%；作者还认为自 0.6 版起 LoRa 已被完全逆向，理由是信号清晰时解码准确率接近 100%。这些都是作者报告的结果。",
+      "GPL-3.0（LICENSE）。README 请研究用户引用 Zenodo 记录 10.5281/zenodo.853201。它只涉及 LoRa 物理层，未提及 LoRaWAN。所审来源未提及任何 AI 或 REA 用途，本条目也未构建或运行该模块。"
+    ]
   }
 }
