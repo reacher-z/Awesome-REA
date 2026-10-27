@@ -12487,5 +12487,40 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "fermion",
+    "name": "Fermion",
+    "url": "https://github.com/FuzzySecurity/Fermion",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Ruben Boonen's Electron desktop application that wraps frida-node and the Monaco editor into one window for writing, injecting and refining Frida scripts. The editor brings linting, IntelliSense and Frida API type definitions, a device menu reaches local, USB and remote Frida servers to attach to or spawn processes, scripts reload in the target with a keyboard shortcut and their output appears beside the code. A prototype CALL tracer follows every call a thread makes from a chosen pointer or module symbol until it returns and renders the result as a Graphviz SVG graph, and Frida's JavaScript API documentation is built in.",
+    "description_zh": "Ruben Boonen 开发的 Electron 桌面应用，把 frida-node 和 Monaco 编辑器整合到同一个窗口中，用于编写、注入和反复调整 Frida 脚本。编辑器提供代码检查、IntelliSense 和 Frida API 类型定义；设备菜单可连接本地、USB 和远程 Frida 服务端，附加到进程或启动新进程；脚本可用快捷键在目标中重新加载，输出显示在代码旁边。原型阶段的 CALL 追踪器从选定的指针或模块符号开始，跟踪线程发出的每一次调用直至返回，并将结果渲染为 Graphviz SVG 图；应用还内置了 Frida JavaScript API 文档。",
+    "evidence_url": "https://github.com/FuzzySecurity/Fermion/blob/79b26434f85a9f4d5e812553ec8e2c08d2ab82c5/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.9.3, published 2023-04-20 by the repository's CI with zipped Windows, Linux and macOS builds, pinning Electron 21.0.0, Frida 16.0.17 and frida-gum types 18.3.1. Every later commit, up to the reviewed master commit of 2025-03-20, is an automated keepalive commit, and the release workflow builds only when the package version changes, so the app has not followed the Frida 17 series (17.24.3 at review); compatibility with current Frida servers was not checked.",
+      "Running from source needs Node.js and npm: in the Fermion folder, set npm_config_runtime=electron and npm_config_target=21.0.0, then run npm install and npm start; release packages are built with electron-packager, and the CI uses Node 16. Remote and mobile targets need a reachable Frida server, which the README says is often detected automatically over USB or in emulators such as Genymotion, or can be given as an IP address and port.",
+      "On Windows, attaching to SYSTEM processes needs Fermion running as Administrator with SeDebugPrivilege, because the README says running it as SYSTEM has frozen it since Electron 8; on Linux, attaching may need root or a relaxed kernel.yama.ptrace_scope. The README calls the tracer a prototype whose window can lag on large graphs and which can make the traced process unstable.",
+      "The repository commits 22 example Frida scripts, most of them hooks on Windows APIs, a Graphviz library compiled to WebAssembly (Fermion/pages/graphvizlib.wasm) for rendering traces, and bundled jQuery, Semantic UI (with Lato fonts), Split.js and Tailwind CSS assets. Users supply their own devices, processes and apps.",
+      "BSD-3-Clause (Copyright 2019 Ruben Boonen); bundled frameworks and fonts keep their own licenses. No device or process was instrumented for this entry, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/FuzzySecurity/Fermion/blob/79b26434f85a9f4d5e812553ec8e2c08d2ab82c5/CHANGELOG.txt",
+      "https://github.com/FuzzySecurity/Fermion/blob/79b26434f85a9f4d5e812553ec8e2c08d2ab82c5/Fermion/package.json",
+      "https://github.com/FuzzySecurity/Fermion/blob/79b26434f85a9f4d5e812553ec8e2c08d2ab82c5/.github/workflows/auto-update.yml",
+      "https://github.com/FuzzySecurity/Fermion/blob/79b26434f85a9f4d5e812553ec8e2c08d2ab82c5/.github/workflows/populate_variables.py",
+      "https://github.com/FuzzySecurity/Fermion/tree/79b26434f85a9f4d5e812553ec8e2c08d2ab82c5/Examples",
+      "https://github.com/FuzzySecurity/Fermion/tree/79b26434f85a9f4d5e812553ec8e2c08d2ab82c5/Fermion/pages",
+      "https://github.com/FuzzySecurity/Fermion/blob/79b26434f85a9f4d5e812553ec8e2c08d2ab82c5/LICENSE",
+      "https://github.com/FuzzySecurity/Fermion/releases/tag/v1.9.3",
+      "https://github.com/frida/frida/releases/tag/17.24.3"
+    ]
   }
 ]

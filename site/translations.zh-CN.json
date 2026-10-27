@@ -4528,5 +4528,15 @@
       "POLICY.md 要求代码独立编写，不得包含泄露或未经授权的源码、二进制文件或素材，不收录原软件的分支、移植、启动器和模组，并将净室开发的声明交由各项目作者负责；Remade 表示不审核代码来源或合法性。只有一条记录提到净室流程，因此某个条目依靠的是净室开发、逆向工程还是公开文档，需在其自身来源中核实。",
       "仓库的 MIT 许可证适用于目录本身的代码和数据；所收录项目各自保留许可证，从 MIT、Apache-2.0 到 GPL 和 AGPL 不等，其中一项记为 Unlicensed。项目自己于 2026-10-17 对 119 个条目做的文档审查，仍有无法访问的仓库和许可证冲突未解决，并声明不构成软件、法律或兼容性认证。这是独立的目录；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "fermion": {
+    "name": "Fermion Frida 脚本图形化开发环境",
+    "requirements": [
+      "审阅时最新版本为 v1.9.3，由仓库 CI 于 2023-04-20 发布，附带 Windows、Linux 和 macOS 的压缩构建包，固定使用 Electron 21.0.0、Frida 16.0.17 和 frida-gum 类型定义 18.3.1。此后直到所审阅的 2025-03-20 master 提交，所有提交都是自动生成的保活提交；发布工作流只在软件包版本号变化时才构建，因此应用未跟进 Frida 17 系列（审阅时为 17.24.3），本次也未检查它与当前 Frida 服务端的兼容性。",
+      "从源码运行需要 Node.js 和 npm：在 Fermion 目录中设置 npm_config_runtime=electron 和 npm_config_target=21.0.0，然后运行 npm install 和 npm start；发行包用 electron-packager 构建，CI 使用 Node 16。远程和移动目标需要可访问的 Frida 服务端；README 称通过 USB 或在 Genymotion 等模拟器中通常可自动发现，也可手动填写 IP 地址和端口。",
+      "在 Windows 上附加 SYSTEM 进程，需要以管理员身份并具备 SeDebugPrivilege 运行 Fermion，因为 README 指出自 Electron 8 起以 SYSTEM 身份运行会导致程序卡死；在 Linux 上附加进程可能需要 root 权限或放宽 kernel.yama.ptrace_scope。README 称追踪器仍是原型功能，图很大时窗口可能卡顿，还可能导致被追踪进程不稳定。",
+      "仓库提交了 22 个 Frida 示例脚本（大多是对 Windows API 的 Hook）、一个编译为 WebAssembly 的 Graphviz 库（Fermion/pages/graphvizlib.wasm，用于渲染追踪结果），以及随附的 jQuery、Semantic UI（含 Lato 字体）、Split.js 和 Tailwind CSS 资源。设备、进程和应用均需用户自备。",
+      "采用 BSD-3-Clause 许可（Copyright 2019 Ruben Boonen）；随附的框架和字体保留各自许可。本条目未对任何设备或进程进行插桩，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
