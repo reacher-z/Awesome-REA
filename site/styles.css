@@ -173,6 +173,9 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .footer-top{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .footer-top p{margin:0;color:var(--muted);font-size:13px}
 .footer-links{display:flex;gap:10px 20px;align-items:center;flex-wrap:wrap;color:var(--link);font-size:12px}
+/* The shared footer: one row of sections, one of downloads and GitHub, then any page extras. */
+.footer-nav{display:grid;gap:10px;justify-items:end}
+.footer-nav>.footer-links{justify-content:flex-end}
 .footer-submit{display:none}
 .footer-links a:hover{text-decoration:underline;text-underline-offset:4px}
 .footer-bottom{margin-top:17px;color:var(--muted);font:11px/1.75 var(--sans)}
@@ -232,6 +235,8 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .source-record-details dl{grid-template-columns:112px minmax(0,1fr);gap:8px 12px}
   .footer-top{align-items:flex-start;flex-direction:column;gap:15px}
   .footer-links{gap:10px 18px}
+  .footer-nav{justify-items:start;gap:16px}
+  .footer-nav>.footer-links{justify-content:flex-start}
 }
 @media(max-width:520px){
   .header-nav>.github-link,.header-nav>.submit-link{display:none}

@@ -13,6 +13,7 @@ from urllib.parse import unquote, urlsplit
 
 from build_readme import KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
 from open_graph import open_graph_meta, website_reference
+from site_footer import SECTION_LINKS, download_label, download_link, site_footer
 from source_scope import exclusion_counts, unavailable_clause
 
 
@@ -281,7 +282,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
   <section class="collection-intro browse-intro"><p class="eyebrow">{('逆向工程资源集合' if zh else 'THE REVERSE ENGINEERING COLLECTION')}</p><h1>{escape(title)}<span class="title-dot" aria-hidden="true">.</span></h1><p>{escape(description)}</p></section>
   {content}
 </main>
-<footer class="site-footer"><div class="shell footer-top"><p>{('独立的资源集合，在公开协作中持续更新。' if zh else 'An independent resource collection, updated in public.')}</p><div class="footer-links"><a href="{prefix}/resources/">{('精选资源' if zh else 'Curated resources')}</a><a href="{prefix}/cases/">{('案例合集' if zh else 'Case studies')}</a><a href="{prefix}/browse/">{('仓库目录' if zh else 'Repository directory')}</a><a href="{prefix}/papers/">{('研究论文' if zh else 'Research papers')}</a><a href="{prefix}/about/">{('关于与来源' if zh else 'About and sources')}</a><a href="/catalog.json" download="awesomerea-curated-catalog.json">{('精选 JSON ↓' if zh else 'Curated JSON ↓')}</a><a href="/{source_export}" download="awesomerea-repository-index.json">{('仓库 JSON ↓' if zh else 'Repository JSON ↓')}</a></div></div><div class="shell footer-bottom">{footer}</div></footer>
+{site_footer(language, note=escape(footer), repository_url=repository_url, repository_export=source_export)}
 </body>
 </html>
 '''
@@ -356,7 +357,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
                 name = (record.get('name_zh') or record['name']) if zh else record['name']
                 # Items identify the site's own entry pages, as /cases/ does; card titles still link upstream.
                 items.append({'name': name, 'url': f"{site_url}{prefix}/resources/{record['id']}/", 'description': record[f'description_{language}']})
-        content = f'''<div class="browse-actions"><a class="button button-primary" href="{('/zh/?view=curated' if zh else '/?view=curated&amp;lang=en')}">{('搜索与筛选' if zh else 'Search and filter')}</a><a class="button button-outline" href="{prefix}/browse/">{('浏览仓库' if zh else 'Browse repositories')}</a><a class="button button-outline" href="{prefix}/papers/">{('研究论文' if zh else 'Research papers')}</a>{_suggest_link(repository_url, 'resource.yml', '推荐资源' if zh else 'Suggest a resource')}<a class="browse-download" href="/catalog.json" download="awesomerea-curated-catalog.json">{('下载精选 JSON ↓' if zh else 'Download curated JSON ↓')}</a></div>
+        content = f'''<div class="browse-actions"><a class="button button-primary" href="{('/zh/?view=curated' if zh else '/?view=curated&amp;lang=en')}">{('搜索与筛选' if zh else 'Search and filter')}</a><a class="button button-outline" href="{prefix}/browse/">{('浏览仓库' if zh else 'Browse repositories')}</a><a class="button button-outline" href="{prefix}/papers/">{('研究论文' if zh else 'Research papers')}</a>{_suggest_link(repository_url, 'resource.yml', '推荐资源' if zh else 'Suggest a resource')}{download_link('/catalog.json', language, css_class='browse-download')}</div>
 <details class="browse-provenance"><summary>{("来源复核与验证范围" if zh else "Source review and testing limits")}</summary><p>{escape(note)}</p></details><nav class="browse-category-nav" aria-label="{('资源分类' if zh else 'Resource categories')}">{''.join(navigation)}</nav>{''.join(sections)}'''
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=collection_page_schema(site_url + path, title, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href, source_export=source_export)
         paths.append(path)
@@ -402,14 +403,9 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
                                  if zh else 'A directory of games, websites, and apps made with AI, plus environments, benchmarks, and datasets for training and evaluating agents. Each project retains original sources, development evidence, and practical limits.')
         fact_cards += f'<section class="source-card browse-repository"><h2>{("相关目录" if zh else "Companion directory")}</h2><p class="card-description"><a href="{companion_url}">AI Can What?</a> — {companion_description}</p></section>'
         links = [
-            (prefix + '/resources/', '精选资源' if zh else 'Curated resources'),
-            (prefix + '/browse/', '完整仓库目录' if zh else 'Repository directory'),
-            (prefix + '/papers/', '研究论文目录' if zh else 'Research papers'),
-            (prefix + '/survey/', '专题综述' if zh else 'Editorial survey'),
-            ('/catalog.json', '精选资源 JSON' if zh else 'Curated catalog JSON'),
-            ('/' + source_export, ('已发布仓库选集 JSON' if zh else 'Published repository selection JSON') if published
-             else ('完整双语扫描 JSON' if zh else 'Complete bilingual scan JSON')),
-            ('/papers.json', '论文元数据 JSON' if zh else 'Paper metadata JSON'),
+            # The same names as the footer's sections and downloads.
+            *((prefix + path, chinese if zh else english) for path, english, chinese in SECTION_LINKS if path in ('/resources/', '/browse/', '/papers/', '/survey/')),
+            *((path, download_label(path, language)) for path in ('/catalog.json', '/' + source_export, '/papers.json')),
             (repository_url + '/blob/main/' + ('README.zh-CN.md' if zh else 'README.md'), 'GitHub README'),
             (repository_url + '/blob/main/docs/source-scan.md', '扫描方法（英文）' if zh else 'Scan methodology'),
             (repository_url + '/blob/main/data/source-scope.json', '范围排除记录' if zh else 'Scope exclusion records'),
