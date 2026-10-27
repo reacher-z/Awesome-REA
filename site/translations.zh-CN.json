@@ -4528,5 +4528,15 @@
       "POLICY.md 要求代码独立编写，不得包含泄露或未经授权的源码、二进制文件或素材，不收录原软件的分支、移植、启动器和模组，并将净室开发的声明交由各项目作者负责；Remade 表示不审核代码来源或合法性。只有一条记录提到净室流程，因此某个条目依靠的是净室开发、逆向工程还是公开文档，需在其自身来源中核实。",
       "仓库的 MIT 许可证适用于目录本身的代码和数据；所收录项目各自保留许可证，从 MIT、Apache-2.0 到 GPL 和 AGPL 不等，其中一项记为 Unlicensed。项目自己于 2026-10-17 对 119 个条目做的文档审查，仍有无法访问的仓库和许可证冲突未解决，并声明不构成软件、法律或兼容性认证。这是独立的目录；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "pulsar": {
+    "name": "PULSAR 协议学习研究原型",
+    "requirements": [
+      "审阅对象为 master 分支提交 3c61178（2022-06-07），也是最后一次推送；仓库没有发行版或标签，命令行工具自称 v0.1-dev。2021 年合并的社区贡献用 2to3 把代码从 Python 2 转换为 Python 3。仓库没有测试或 CI 配置。",
+      "学习过程以所研究协议的 PCAP 流量记录为输入，也可使用 Cuckoo 沙箱为所分析样本保存的抓包。仓库提交了一个示例模型 models/itunes-xbmc，附带用来学习该模型的约 3 MB iTunes–XBMC 抓包（itunes-xbmc.pcap，来自 2015 年的初始提交）及其 Derrick、Sally 和 Harry 中间文件；除此之外不附带其他目标数据。",
+      "按 INSTALL.md，用户需把 PRISMA R 模块克隆到 pulsar/modules，从 Konrad Rieck 的仓库构建 Derrick 和 Sally 这两个 C 工具，安装 R、Wireshark 的 mergecap 和 Graphviz，再用 pip 安装 pygraphviz、progressBar、NumPy 和 python-Levenshtein；文档只给出 CentOS 的安装命令。依赖均未固定版本；PRISMA 最后更新于 2018 年，Derrick 和 Sally 最后更新于 2019 年。",
+      "README 让读者参阅 2015 年 SecureComm 论文了解方法，并引用一篇 2012 年 AISec 关于为网络蜜罐学习有状态模型的论文；其中报告的结果出自作者，本合集未复现。学到的模板和状态机只是统计近似，需要分析人员验证。",
+      "采用 BSD-3-Clause（Copyright 2014 Hugo Gascon）；附带的 pulsar/core/sippy SIP 协议栈保留其自身的 GPL-2.0-or-later 声明。本次审阅未运行任何程序，本条目也不介绍模糊测试流程。"
+    ]
   }
 }

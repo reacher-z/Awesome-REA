@@ -12487,5 +12487,41 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "pulsar",
+    "name": "PULSAR",
+    "url": "https://github.com/hgascon/pulsar",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Research prototype by Hugo Gascon and colleagues that learns a model of an unknown network protocol from recorded traffic. Messages extracted from PCAP traces are embedded as token or n-gram vectors, clustered by matrix factorization through the PRISMA R module, and turned into a Markov-chain state model with message templates and rules linking fields to earlier messages, written out as model files and a Graphviz state graph. The same models drive the tool's session simulator and stateful fuzzer, described in the authors' SecureComm 2015 paper; this entry covers only the protocol-learning part.",
+    "description_zh": "由 Hugo Gascon 等人开发的研究原型，可从记录下来的流量中学习未知网络协议的模型。它从 PCAP 记录中提取报文，将其嵌入为词元或 n-gram 向量，借助 PRISMA R 模块用矩阵分解进行聚类，再生成马尔可夫链状态模型，以及报文模板和把字段与先前报文关联起来的规则，输出为模型文件和 Graphviz 状态图。同一模型还驱动工具中的会话模拟器和有状态模糊测试器，详见作者 2015 年的 SecureComm 论文；本条目只介绍协议学习部分。",
+    "evidence_url": "https://github.com/hgascon/pulsar/blob/3c6117818ef24de246bda2cdf12d9caa5c557177/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at master commit 3c61178 (2022-06-07), the last push; the repository has no releases or tags, and the CLI reports itself as v0.1-dev. Contributed changes merged in 2021 converted the code from Python 2 to Python 3 with 2to3. There are no tests or CI configuration.",
+      "Learning takes PCAP traces of the protocol under study, or the captures that Cuckoo sandbox stored for analyzed samples. The repository commits one example model, models/itunes-xbmc, with the roughly 3 MB iTunes–XBMC capture it was learned from (itunes-xbmc.pcap, part of the 2015 initial commit) and its intermediate Derrick, Sally and Harry files; it bundles no other target data.",
+      "INSTALL.md has users clone the PRISMA R module into pulsar/modules, build Konrad Rieck's Derrick and Sally C tools from their repositories, install R, Wireshark's mergecap and Graphviz, and pip-install pygraphviz, progressBar, NumPy and python-Levenshtein, giving package commands for CentOS only. Dependencies are unpinned; PRISMA was last updated in 2018, and Derrick and Sally in 2019.",
+      "The README points to the SecureComm 2015 paper for the method and to an AISec 2012 paper on learning stateful models for network honeypots; results reported there are the authors' and were not reproduced. Learned templates and state machines are statistical approximations that need analyst validation.",
+      "BSD-3-Clause (Copyright 2014 Hugo Gascon); the bundled pulsar/core/sippy SIP stack keeps its own GPL-2.0-or-later notices. This review ran nothing, and the record does not describe the fuzzing workflow."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/hgascon/pulsar/blob/3c6117818ef24de246bda2cdf12d9caa5c557177/INSTALL.md",
+      "https://github.com/hgascon/pulsar/blob/3c6117818ef24de246bda2cdf12d9caa5c557177/LICENSE",
+      "https://github.com/hgascon/pulsar/blob/3c6117818ef24de246bda2cdf12d9caa5c557177/pulsar.py",
+      "https://github.com/hgascon/pulsar/blob/3c6117818ef24de246bda2cdf12d9caa5c557177/pulsar/core/model.py",
+      "https://github.com/hgascon/pulsar/blob/3c6117818ef24de246bda2cdf12d9caa5c557177/pulsar/core/cluster_generator.R",
+      "https://github.com/hgascon/pulsar/blob/3c6117818ef24de246bda2cdf12d9caa5c557177/pulsar/conf/model.conf",
+      "https://github.com/hgascon/pulsar/tree/3c6117818ef24de246bda2cdf12d9caa5c557177/models/itunes-xbmc",
+      "https://github.com/hgascon/pulsar/blob/3c6117818ef24de246bda2cdf12d9caa5c557177/pulsar/core/sippy/SipCSeq.py",
+      "https://hugogascon.com/publications/2015-securecomm.pdf",
+      "https://doi.org/10.1007/978-3-319-28865-9_18",
+      "https://github.com/tammok/PRISMA/blob/a48624f5102875984975ce99ddd687e0ddd6dee5/README.md"
+    ]
   }
 ]
