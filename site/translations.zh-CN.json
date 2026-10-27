@@ -4330,5 +4330,15 @@
       "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
       "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
     ]
+  },
+  "dji-mimo-ble-reveng-case": {
+    "name": "DJI MIMO BLE 逆向素材：重建 DJI Osmo 控制协议",
+    "requirements": [
+      "在 2025-06-08 的 main 分支最新提交处审阅。该仓库是一组逆向工程笔记，而非可运行的应用：配套工具 djictl 位于另一个独立仓库，本次核查未对其评估。README 描述的是 DJI Osmo Pocket 3，未声称覆盖其他 DJI Osmo 型号。",
+      "方法使用使用者自己的 Android 手机：README 通过 adb 错误报告导出蓝牙 HCI 抓包日志，再用 Wireshark 打开。本仓库既不收录也不要求任何 DJI 固件、应用二进制或账号，除一张 Wireshark 截图外也未包含抓包日志。",
+      "mimo/ble/message_types.md 为约二十余种消息类型列出带注释的样本帧，mimo/ble/wireshark-dissector/ 中的 Wireshark 解析插件将消息类型编码映射为名称；许多条目带有问号或标为未知，因此该目录是部分、经作者解读的内容，而非完整规范。",
+      "构建解析插件需要 Wireshark 开发头文件、pkg-config 以及 C 编译器；其 Makefile 会将共享库插件安装到 Wireshark 4.2 的插件目录。笔记仅记录协议观察；本次核查既未运行插件，也未连接任何设备。",
+      "仓库采用 CC0-1.0（公有领域贡献）许可。DJI、MIMO 与 Osmo 仍为其权利人的商标；所审阅来源未确立任何 AI 或 REA 使用。"
+    ]
   }
 }

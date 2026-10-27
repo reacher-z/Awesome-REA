@@ -11799,5 +11799,34 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "dji-mimo-ble-reveng-case",
+    "name": "DJI MIMO BLE artifacts: reconstructing the DJI Osmo control protocol",
+    "url": "https://github.com/xaionaro/reverse-engineering-dji",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "relationship": "independent-reconstruction",
+    "description_en": "Documents the Bluetooth Low Energy message format that DJI's proprietary MIMO app uses to control DJI Osmo devices, as artifacts produced while building the independent djictl CLI. The author derives the framing — a magic byte, length, protocol version, header CRC8, subsystem and message-id fields, a payload and a message CRC16 — from the author's own Android BLE logs, and ships a Wireshark dissector plus an annotated catalog of message types. Many message types are labelled as guesses or unknown; the author reports reaching working livestreaming on a DJI Osmo Pocket 3 and pausing further analysis.",
+    "description_zh": "记录 DJI 专有 MIMO 应用用于控制 DJI Osmo 设备的低功耗蓝牙报文格式，是作者在开发独立 CLI 工具 djictl 时产出的逆向工程素材。作者依据自己手机的蓝牙日志推断出报文结构——魔数、长度、协议版本、头部 CRC8、子系统与消息 ID 字段、载荷以及消息 CRC16——并提供一个 Wireshark 解析插件和一份带注释的消息类型目录。许多消息类型被标注为推测或未知；作者报告在 DJI Osmo Pocket 3 上实现了可用的直播推流后暂停了进一步分析。",
+    "evidence_url": "https://github.com/xaionaro/reverse-engineering-dji/blob/5c9278ff0b53bbe0d03ea6c830aab13ac775871e/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the main-branch head of 2025-06-08. The repository is a set of reverse-engineering notes, not a runnable application: the companion tool djictl lives in a separate repository, which this review did not assess. The README describes a DJI Osmo Pocket 3; coverage of other DJI Osmo models is not claimed.",
+      "The method uses the user's own Android phone: the README captures a Bluetooth HCI snoop log through an adb bug report, then opens it in Wireshark. No DJI firmware, app binary or account is committed to or required by this repository, and no captured log is included beyond one Wireshark screenshot.",
+      "mimo/ble/message_types.md lists annotated sample frames for about two dozen message types, and the Wireshark dissector in mimo/ble/wireshark-dissector/ maps message-type codes to names; many entries are marked with a question mark or as unknown, so the catalog is partial and author-interpreted rather than a complete specification.",
+      "Building the dissector needs Wireshark development headers and pkg-config on a system with a C compiler; its Makefile installs a shared-object plugin into the Wireshark 4.2 plugin directory. The notes record protocol observations only; this review ran neither the dissector nor any device.",
+      "The repository is licensed CC0-1.0 (public-domain dedication). DJI, MIMO and Osmo remain trademarks of their owners, and the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/xaionaro/reverse-engineering-dji/blob/5c9278ff0b53bbe0d03ea6c830aab13ac775871e/mimo/ble/message_types.md",
+      "https://github.com/xaionaro/reverse-engineering-dji/blob/5c9278ff0b53bbe0d03ea6c830aab13ac775871e/mimo/ble/wireshark-dissector/dji-ble-message.c",
+      "https://github.com/xaionaro/reverse-engineering-dji/blob/5c9278ff0b53bbe0d03ea6c830aab13ac775871e/mimo/ble/wireshark-dissector/Makefile",
+      "https://github.com/xaionaro/reverse-engineering-dji/blob/5c9278ff0b53bbe0d03ea6c830aab13ac775871e/LICENSE"
+    ]
   }
 ]
