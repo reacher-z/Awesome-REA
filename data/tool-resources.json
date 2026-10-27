@@ -12548,5 +12548,37 @@
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/package.json",
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/.travis.yml"
     ]
+  },
+  {
+    "id": "nowsecure-frida-trace",
+    "name": "frida-trace (NowSecure library)",
+    "url": "https://github.com/nowsecure/frida-trace",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "JavaScript library for Frida agents that traces native functions from a declarative description: each function is listed with its return type and input and output arguments, including pointers, UTF-8 and UTF-16 strings and byte arrays whose length is bound to another argument or the return value, with conditions such as reading an output pointer only when the call succeeds. It resolves the functions from a module's exports or a vtable, attaches Frida's Interceptor and hands one event per call to callbacks. Helper scripts in the same repository generate trace boilerplate from C headers through libclang.",
+    "description_zh": "供 Frida 代理脚本使用的 JavaScript 库，按声明式描述跟踪原生函数：每个函数都列出返回类型及输入、输出参数，参数类型包括指针、UTF-8 与 UTF-16 字符串，以及长度绑定到其他参数或返回值的字节数组，还可设置条件，例如仅在调用成功时读取输出指针。它从模块导出表或虚函数表解析函数，挂接 Frida 的 Interceptor，并为每次调用向回调传递一个事件。同一仓库中的辅助脚本可借助 libclang 从 C 头文件生成跟踪样板代码。",
+    "evidence_url": "https://github.com/nowsecure/frida-trace/blob/9b92c1762373dcfc7458c34fa8f5826606bbcc8b/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Not Frida's own frida-trace command-line tool, which shares the name. The latest npm release, 4.0.1 of 2025-06-16, matches the reviewed main commit 9b92c17 and ports the library to Frida 17; 4.0.0 of January 2024 moved it to ES modules.",
+      "It runs inside an agent script that the user writes, compiles (for example with frida-compile) and loads into a process Frida can attach to; it has no command-line interface of its own. Types cover bool, byte, short, int, pointer, byte arrays, UTF-8, UTF-16 and C strings, and the captured values are only as accurate as the signatures the user declares.",
+      "The header tools live in frida-trace-tools, version 3.3.0 in the repository and not published on npm; they need Node.js and frida-libclang, and the README still runs them from an older ./bin path. The bundled example host application and agent still depend on frida 16 and frida-trace ^3.0.0. The repository has no tests or CI.",
+      "MIT. Instrumentation needs a target process the user is entitled to inspect; no REA connection is stated, and nothing was run in this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nowsecure/frida-trace/blob/9b92c1762373dcfc7458c34fa8f5826606bbcc8b/index.js",
+      "https://github.com/nowsecure/frida-trace/blob/9b92c1762373dcfc7458c34fa8f5826606bbcc8b/package.json",
+      "https://github.com/nowsecure/frida-trace/blob/9b92c1762373dcfc7458c34fa8f5826606bbcc8b/frida-trace-tools/package.json",
+      "https://github.com/nowsecure/frida-trace/blob/9b92c1762373dcfc7458c34fa8f5826606bbcc8b/example/package.json",
+      "https://github.com/nowsecure/frida-trace/blob/9b92c1762373dcfc7458c34fa8f5826606bbcc8b/LICENSE.md",
+      "https://github.com/nowsecure/frida-trace/pull/40",
+      "https://www.npmjs.com/package/frida-trace/v/4.0.1"
+    ]
   }
 ]

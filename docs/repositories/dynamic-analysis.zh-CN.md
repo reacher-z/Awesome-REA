@@ -57,7 +57,7 @@
 - [andreafioraldi/IDAngr](https://github.com/andreafioraldi/IDAngr) — 在 IDA Pro 调试器中使用 angr，根据当前调试会话生成状态 **[286 星标]**
 - [raoshaab/Pen-Andro](https://github.com/raoshaab/Pen-Andro) — 自动安装应用和 frida-server，并将 Burp Suite 证书移至根文件夹的脚本 **[273 星标]**
 - [aadog/fd-back](https://github.com/aadog/fd-back) — Frida 运行时，无需 Python，仅需单个文件，一键支持 iOS 转储 **[250 星标]**
-- [nowsecure/frida-trace](https://github.com/nowsecure/frida-trace) — 通过 Frida 以声明式方式跟踪 API。 **[237 星标]**
+- [nowsecure/frida-trace](https://github.com/nowsecure/frida-trace) — 通过 Frida 以声明式方式跟踪 API。 **[237 星标]** · 精选：[frida-trace（NowSecure 声明式跟踪库）](https://awesomerea.org/zh/resources/nowsecure-frida-trace/)
 - [std-microblock/fripack](https://github.com/std-microblock/fripack) — 将 Frida 脚本打包为可执行文件。 **[233 星标]**
 - [dmaivel/ntoseye](https://github.com/dmaivel/ntoseye) — 可从 Linux 和 macOS 使用、类似 WinDbg 的 Windows 内核调试器 **[218 星标]**
 - [Warxim/deluder](https://github.com/Warxim/deluder) — Deluder 用于拦截不支持代理的应用流量，目前开箱即用地支持 OpenSSL、GnuTLS、SChannel、WinSock 和 Linux Sockets。⚡ **[215 星标]**
