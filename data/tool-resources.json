@@ -11759,5 +11759,35 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "rbasefind",
+    "name": "rbasefind",
+    "url": "https://github.com/sgayou/rbasefind",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Multithreaded Rust command-line tool that brute-forces the load address of a flat 32-bit firmware image, reimplementing mncoppola's basefind.py and rsaxvc's basefind.cpp. It records the offsets of ASCII strings, reads every 32-bit word as a possible pointer, and ranks candidate base addresses by how many strings each one would turn into pointer targets. The README calls it a simple heuristic that works rather well on some ARM (non-Thumb) binaries and will not work miracles.",
+    "description_zh": "一个多线程 Rust 命令行工具，以暴力搜索推算平面 32 位固件镜像的加载基址，是 mncoppola 的 basefind.py 和 rsaxvc 的 basefind.cpp 的重新实现。它记录 ASCII 字符串的偏移，把每个 32 位字都当作可能的指针，再按候选基址能让多少字符串成为指针目标来排序。README 称这只是一个简单的启发式方法，对部分 ARM（非 Thumb）二进制效果相当好，但不会创造奇迹。",
+    "evidence_url": "https://github.com/sgayou/rbasefind/blob/a661118d19f0e2b282c48f2e8019d493868d4dd2/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest tag at review: v0.1.3, on the reviewed master commit of 2020-09-27, with no GitHub release binaries and no crates.io package. Build it from source with Cargo; Cargo.toml declares no edition and Cargo.lock is ignored, so dependencies such as clap 2.33 and regex 1.3 resolve within their version ranges at build time. The README's TODO lists an automatic mode that would detect endianness and narrow the offset around the best match.",
+      "Input is a flat 32-bit image supplied by the user, little-endian by default or big-endian with -b; no firmware or samples are included. By default it takes NUL-terminated printable ASCII strings of at least 10 characters, reads 4-byte-aligned words from the start of the file as pointers, and tests candidate bases every 0x1000 bytes across the 32-bit address space, splitting the range across one thread per CPU core. The whole file is loaded into memory.",
+      "Results are a ranked list of candidate bases with match counts, 10 by default, that the analyst must confirm. The README's example takes about 41 seconds on 8 threads for one image and shows that raising the minimum string length to 100 cuts the time at some cost in accuracy. Unit tests cover only the address-range split between threads, there is no CI, and this review scanned no files.",
+      "MIT License (2017, Scott Gayou). Analyzed firmware keeps its own terms."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sgayou/rbasefind/blob/a661118d19f0e2b282c48f2e8019d493868d4dd2/src/lib.rs",
+      "https://github.com/sgayou/rbasefind/blob/a661118d19f0e2b282c48f2e8019d493868d4dd2/src/main.rs",
+      "https://github.com/sgayou/rbasefind/blob/a661118d19f0e2b282c48f2e8019d493868d4dd2/Cargo.toml",
+      "https://github.com/sgayou/rbasefind/blob/a661118d19f0e2b282c48f2e8019d493868d4dd2/.gitignore",
+      "https://github.com/sgayou/rbasefind/blob/a661118d19f0e2b282c48f2e8019d493868d4dd2/LICENSE",
+      "https://github.com/sgayou/rbasefind/releases/tag/v0.1.3"
+    ]
   }
 ]
