@@ -4556,5 +4556,13 @@
       "无需任何游戏文件：后期课程改编自 README 致谢的开源反编译项目（Star Fox Adventures、Pikmin 2、Metroid Prime、Mario Party 4）中的函数，目标汇编由服务器根据每课的参考 C 代码生成。本仓库不含任何编译器，后端 README 也称其只提交了 wibo，未提交 MWCC；README 说明本地开发需要 Node 18+，以及一个同级目录下提供 MWCC 和 binutils 的 Star Fox Adventures 反编译项目检出，而 .env.example 称全新克隆默认使用托管的编译 API。",
       "前端采用 AGPL-3.0 许可证，修改后作为网络服务运行的版本同样受其约束。本合集阅读了 README、课程元数据、一节真实函数课程和在线首页，没有解答课程或检验评分。仓库中提交了一份供 Claude Code 使用的课程编写指南 CLAUDE.md，但 README 未说明课程是如何编写的，也未提及 REA。"
     ]
+  },
+  "appshark": {
+    "name": "Appshark Android 静态污点分析引擎",
+    "requirements": [
+      "需要 JDK 11；README 称由于依赖兼容性问题，它无法在 JDK 8 或 JDK 16 上运行。执行 ./gradlew build -x test 可生成 AppShark-0.1.2-all.jar。审阅时最新版本为 v0.1.2，发布于 2022-09-22，附预构建 jar；所审阅的 main 提交版本号仍为 0.1.2，但比该版本多 123 个提交，其中包括 2026 年 9 月加入扫描资源预算、受限的 jadx 工作区以及对不可信规则图进行校验的提交。入门指南仍链接 v0.1.1 的 jar。",
+      "输入为待分析的 APK，由传给 jar 的 JSON5 配置中的 apkPath 指定；规则取自 config/rules，其中有 unZipSlip、PendingIntentMutable、ContentProviderPathTraversal 等七条示例规则。仓库自带 18 个 Android SDK 平台存根 jar，即 config/tools/platforms/android-14 至 android-33/android.jar（缺 API 15 和 21，每个约 18 至 47 MB），作为默认 SDK 路径，另有五个很小的已编译测试类；javaSource 选项会从 config/tools/jadx/bin 调用 jadx，而仓库并未包含 jadx。",
+      "发现结果是静态的源到汇路径，覆盖范围取决于规则和设置：参数说明称 maxPointerAnalyzeTime 过短可能导致误报和漏报，FAQ 也举例说明切片模式的入口会漏掉别名路径。README 的安全提示称界面与服务端仅限本地测试使用。采用 Apache-2.0 许可。本次未分析任何 APK。"
+    ]
   }
 }
