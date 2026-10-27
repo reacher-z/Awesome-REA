@@ -11759,5 +11759,36 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "d810-ng",
+    "name": "D-810 ng",
+    "url": "https://github.com/w00tzenheimer/d810-ng",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A refactored, updated fork of Boris Batteux's D-810 IDA Pro plugin that deobfuscates code at decompilation time by rewriting Hex-Rays microcode. Z3-verified instruction rules simplify mixed-boolean-arithmetic, opaque predicates and constant obfuscation across maturity levels, while control-flow unflatteners restore natural flow from O-LLVM, Tigress, Approov and Hodur (PlugX) dispatcher patterns. Rules are declared in a configurable DSL and project JSON, so new patterns can be added without editing the source, and optional Cython extensions speed up the hot paths with pure-Python fallbacks.",
+    "description_zh": "对 Boris Batteux 的 D-810 IDA Pro 插件进行重构和更新的分支，在反编译时通过改写 Hex-Rays 微码来反混淆代码。经 Z3 验证的指令规则可在多个成熟度层级上简化混合布尔算术、不透明谓词和常量混淆，控制流反扁平化器则可从 O-LLVM、Tigress、Approov 和 Hodur（PlugX）等分发器模式中还原自然控制流。规则以可配置的 DSL 和项目 JSON 声明，无需修改源码即可添加新模式；可选的 Cython 扩展用于加速热点路径，并提供纯 Python 回退实现。",
+    "evidence_url": "https://github.com/w00tzenheimer/d810-ng/blob/2e59ab4ce18e5e82911880137d1285d95279981a/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main 2e59ab4 (2026-08-08; latest tag v0.6.6, 2026-02-17). The README supports only IDA 9 or later with Python 3.10+, because the plugin uses the Hex-Rays microcode Python API; install it by copying the repository into IDA's plugins directory and load it with Ctrl-Shift-D. The README warns the plugin is still early and that incorrectly modifying microcode can crash IDA, advising frequent database saves.",
+      "A pure-Python install (pip install -e .) works on every platform and needs no compiler or IDA SDK. The optional [speedups] extra compiles Cython extensions: that build auto-downloads the IDA SDK by cloning Hex-Rays' public MIT-licensed github.com/HexRaysSA/ida-sdk into a local .ida-sdk/ unless IDA_SDK points at an existing copy. A separate helper (python -m d810.speedups.install) installs a matching z3-solver into an isolated per-user directory (overridable with D810_SPEEDUPS_DIR) to avoid conflicting with the Z3 DLL that ships with IDA.",
+      "Deobfuscation targets are binaries loaded in IDA that the analyst is authorized to examine. The repository commits its own test fixtures under samples/: C sources in samples/src/c build, via the provided clang-based Makefile, into the Windows DLLs, macOS dylibs and PDBs under samples/bins (fake_jumps, libobfuscated, ollvm_obfuscated and others). samples/bins/zygiskd-flattening is a stripped Android aarch64 build of the open-source zygiskd daemon, committed as a real-world control-flow-flattening test target.",
+      "The named obfuscators and malware families (O-LLVM, Tigress, Approov, Hodur/PlugX) are the patterns the unflatteners recognize for analysis, not software included here. Rule maturity levels gate which rules run, and rules can be scoped per project through JSON configs.",
+      "The committed LICENSE file is the GNU AGPL-3.0 text, while the README's Licenses section states LGPL v3; a reviewer should confirm the intended license with the maintainer. The project credits Boris Batteux's original D-810 and Rolf Rolles's HexRaysDeob work. This collection read the README, samples guide, build files and license at the reviewed commit without installing the plugin or running IDA, and establishes no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/w00tzenheimer/d810-ng/blob/2e59ab4ce18e5e82911880137d1285d95279981a/README.md#L174-L270",
+      "https://github.com/w00tzenheimer/d810-ng/blob/2e59ab4ce18e5e82911880137d1285d95279981a/samples/README.md",
+      "https://github.com/w00tzenheimer/d810-ng/blob/2e59ab4ce18e5e82911880137d1285d95279981a/samples/Makefile",
+      "https://github.com/w00tzenheimer/d810-ng/blob/2e59ab4ce18e5e82911880137d1285d95279981a/setup.py",
+      "https://github.com/w00tzenheimer/d810-ng/blob/2e59ab4ce18e5e82911880137d1285d95279981a/pyproject.toml",
+      "https://github.com/w00tzenheimer/d810-ng/blob/2e59ab4ce18e5e82911880137d1285d95279981a/LICENSE"
+    ]
   }
 ]

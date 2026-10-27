@@ -4310,5 +4310,15 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "d810-ng": {
+    "name": "D-810 ng IDA 反混淆插件",
+    "requirements": [
+      "审阅基于 main 分支 2e59ab4（2026-08-08；最新标签 v0.6.6，2026-02-17）。README 仅支持 IDA 9 及以上版本、Python 3.10+，因为插件使用 Hex-Rays 微码 Python API；安装方式是把仓库内容复制到 IDA 的 plugins 目录，并用 Ctrl-Shift-D 加载。README 提醒该插件仍处于早期阶段，错误地修改微码可能导致 IDA 崩溃，建议经常保存数据库。",
+      "纯 Python 安装（pip install -e .）可在所有平台使用，无需编译器或 IDA SDK。可选的 [speedups] 扩展会编译 Cython 扩展：该构建会自动下载 IDA SDK，即在未通过 IDA_SDK 指定现有副本时，将 Hex-Rays 公开、采用 MIT 许可的 github.com/HexRaysSA/ida-sdk 克隆到本地 .ida-sdk/ 目录。另有一个辅助命令（python -m d810.speedups.install）将匹配的 z3-solver 安装到隔离的用户目录（可用 D810_SPEEDUPS_DIR 指定），以避免与 IDA 自带的 Z3 DLL 冲突。",
+      "反混淆对象是在 IDA 中加载、分析者有权分析的二进制。仓库在 samples/ 下提交了自己的测试样本：samples/src/c 中的 C 源码通过所提供的基于 clang 的 Makefile 构建成 samples/bins 下的 Windows DLL、macOS dylib 和 PDB（fake_jumps、libobfuscated、ollvm_obfuscated 等）。samples/bins/zygiskd-flattening 是开源 zygiskd 守护进程的去符号 Android aarch64 构建，作为真实世界的控制流扁平化测试目标提交。",
+      "所列的混淆器和恶意软件家族（O-LLVM、Tigress、Approov、Hodur/PlugX）是反扁平化器用于分析所识别的模式，并非此处包含的软件。规则成熟度层级控制哪些规则运行，规则也可通过 JSON 配置按项目限定范围。",
+      "仓库提交的 LICENSE 文件为 GNU AGPL-3.0 全文，而 README 的 Licenses 部分写的是 LGPL v3；审阅者应向维护者确认预期许可证。项目致谢 Boris Batteux 的原版 D-810 以及 Rolf Rolles 的 HexRaysDeob 工作。本合集在所审阅提交中阅读了 README、样本说明、构建文件和许可证，没有安装插件或运行 IDA，也未确立与 REA 的关联。"
+    ]
   }
 }
