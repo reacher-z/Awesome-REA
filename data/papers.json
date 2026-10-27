@@ -7355,5 +7355,65 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-elipmoc",
+    "title": "Elipmoc: Advanced Decompilation of Ethereum Smart Contracts",
+    "title_zh": "Elipmoc：以太坊智能合约的高级反编译",
+    "authors": [
+      "Neville Grech",
+      "Sifis Lagouvardos",
+      "Ilias Tsatiris",
+      "Yannis Smaragdakis"
+    ],
+    "year": 2022,
+    "publication_date": "2022-04-29",
+    "date_precision": "day",
+    "date_basis": "ACM’s Crossref deposit records published/print and online publication on 2022-04-29; the article footer gives April 2022. The OOPSLA conference dates are not substituted for this publication date.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将 published／纸质与在线出版日期均记为 2022-04-29，文章页脚标注为 2022 年 4 月；本条目不以 OOPSLA 会议日期替代该出版日期。",
+    "venue": "Proceedings of the ACM on Programming Languages (OOPSLA 2022)",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3527321",
+    "citation": {
+      "container_title": "Proceedings of the ACM on Programming Languages",
+      "volume": "6",
+      "issue": "OOPSLA1",
+      "pages": "1-27",
+      "article_number": "77",
+      "publisher": "Association for Computing Machinery (ACM)",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3527321",
+        "https://yanniss.github.io/elipmoc-oopsla22.pdf"
+      ]
+    },
+    "url": "https://dl.acm.org/doi/10.1145/3527321",
+    "pdf_url": "https://yanniss.github.io/elipmoc-oopsla22.pdf",
+    "code_url": "https://github.com/nevillegrech/gigahorse-toolchain",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Elipmoc decompiles Ethereum Virtual Machine bytecode into a structured three-address intermediate representation for security analyses and reverse engineering. Built as an evolution of the Datalog-based Gigahorse decompiler, it adds transactional context sensitivity, path-sensitive inference of function arguments and returns with path merging, and fully context-sensitive reconstruction of private functions. On a uniform random sample of 5,000 unique mainnet contracts first deployed between April and September 2021, the authors report fully resolved operands for 99.5% of contracts versus 62.8% for Gigahorse, 67% more unique external-call signatures than Etherscan’s Panoramix, and over 5x faster decompilation.",
+    "description_zh": "Elipmoc 将以太坊虚拟机字节码反编译为结构化的三地址中间表示，服务于安全分析与逆向工程。它由基于 Datalog 的 Gigahorse 反编译器演进而来，新增事务上下文敏感性、结合路径合并的路径敏感函数参数与返回值推断，以及完全上下文敏感的私有函数重建。作者在 2021 年 4 月至 9 月间首次部署于主网的 5,000 个唯一合约的均匀随机样本上，报告 99.5% 的合约操作数被完全解析（Gigahorse 为 62.8%），识别出的唯一外部调用签名比 Etherscan 的 Panoramix 多 67%，且反编译速度快 5 倍以上。",
+    "scope_limitations_en": "Targets EVM bytecode only. The metrics are operand resolution, structured control flow, function and jump-target precision, external-call and event coverage, timeouts and speed against the 2022 Gigahorse artifact and Panoramix; they do not measure equivalence to or recovery of original Solidity source, and the output is three-address IR rather than recompilable code. Experiments used one 5,000-contract sample from a five-month 2021 deployment window, a 120-second per-contract cutoff and Souffle 2.0.2. JEB, Trustlook SECaaS and EtherSolve were not compared, and EtherVM, Porosity and Vandal were excluded as inferior or unmaintained. Reported vulnerability discoveries built on Elipmoc are described as end-to-end impact, not a systematic evaluation.",
+    "scope_limitations_zh": "仅面向 EVM 字节码。评测指标包括操作数解析、结构化控制流、函数与跳转目标精度、外部调用与事件覆盖率、超时及速度，对比对象为 2022 年的 Gigahorse 产物与 Panoramix；这些指标不衡量与原始 Solidity 源码的等价性或源码恢复，输出也是三地址中间表示而非可重新编译的代码。实验使用 2021 年五个月部署窗口内的一个 5,000 合约样本、每个合约 120 秒的时限以及 Souffle 2.0.2。未与 JEB、Trustlook SECaaS 和 EtherSolve 比较，EtherVM、Porosity 与 Vandal 则因较弱或已停止维护而被排除。基于 Elipmoc 的漏洞发现被描述为端到端影响，并非系统性评测。",
+    "why_fits_en": "Adds a static EVM bytecode decompiler that DiSCo uses as a baseline, extending the bibliography’s smart-contract decompilation coverage.",
+    "why_fits_zh": "补充被 DiSCo 用作基线的静态 EVM 字节码反编译器，扩展本书目对智能合约反编译的覆盖。",
+    "metadata_notes": "Crossref and the author-hosted final PDF agree on the four-author order, the DOI, volume 6, issue OOPSLA1 and pages 1–27; the PDF numbers the article 77, and Crossref records a CC BY 4.0 license. Crossref’s title is in sentence case, while the PDF uses title case. No arXiv preprint was found. The code link is the Gigahorse toolchain that implements Elipmoc; its README cites this paper and a later 2025 paper on further changes. At reviewed master commit 1b06cef (2026-09-14), the LICENSE file is BSD 3-Clause with material from the University of Sydney marked in individual files, while the GitHub API reports NOASSERTION. Current setup requires recursive submodules, Souffle 2.3 or 2.4.1, Boost, Z3 and Python 3.13 through uv, unlike the paper’s Souffle 2.0.2 and Python 3.8.2, so the snapshot is not the paper’s experimental configuration. The gigahorse-toolchain repository is not curated here as a tool record. No code or experiments were run.",
+    "metadata_notes_zh": "Crossref 与作者托管的最终版 PDF 在四位作者顺序、DOI、第 6 卷、OOPSLA1 期及页码 1–27 上一致；PDF 将文章编号列为 77，Crossref 记录其采用 CC BY 4.0 许可。Crossref 标题为句首大写形式，PDF 则为标题式大写。未找到 arXiv 预印本。代码链接是实现 Elipmoc 的 Gigahorse 工具链，其 README 引用本论文及 2025 年介绍后续改动的另一篇论文。在所审阅的 master 提交 1b06cef（2026-09-14）中，LICENSE 文件为 BSD 3-Clause，并包含在各文件中标注的悉尼大学材料，而 GitHub API 报告为 NOASSERTION。当前环境需要递归子模块、Souffle 2.3 或 2.4.1、Boost、Z3，以及通过 uv 提供的 Python 3.13，不同于论文使用的 Souffle 2.0.2 与 Python 3.8.2，因此该快照并非论文的实验配置。本条目不将 gigahorse-toolchain 仓库收录为工具记录。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3527321",
+      "https://api.crossref.org/works/10.1145/3527321",
+      "https://yanniss.github.io/elipmoc-oopsla22.pdf",
+      "https://github.com/nevillegrech/gigahorse-toolchain/blob/1b06cef82f0a29790e87f576eba6d6d793170d70/README.md",
+      "https://github.com/nevillegrech/gigahorse-toolchain/blob/1b06cef82f0a29790e87f576eba6d6d793170d70/LICENSE"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

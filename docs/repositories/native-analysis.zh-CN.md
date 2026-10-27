@@ -183,7 +183,7 @@
 - [radareorg/radeco](https://github.com/radareorg/radeco) — 基于 radare2 的反编译器与符号执行器。 **[399 星标]**
 - [saferwall/pe](https://github.com/saferwall/pe) — 一个 <span>:</span>zap: 轻量 Go 包，用于解析、分析可移植可执行文件（PE）二进制文件并提取元数据，面向恶意软件分析任务设计，可稳健处理畸形 PE 文件。 **[397 星标]**
 - [secrary/idenLib](https://github.com/secrary/idenLib) — idenLib：库函数识别工具［本项目已停止维护］。 **[395 星标]**
-- [nevillegrech/gigahorse-toolchain](https://github.com/nevillegrech/gigahorse-toolchain) — 面向 Ethereum 智能合约的二进制提升工具与分析框架。 **[388 星标]**
+- [nevillegrech/gigahorse-toolchain](https://github.com/nevillegrech/gigahorse-toolchain) — 面向 Ethereum 智能合约的二进制提升工具与分析框架。 **[388 星标]** · 论文：[Elipmoc：以太坊智能合约的高级反编译](https://awesomerea.org/zh/papers/paper-elipmoc/)
 - [DMaroo/GhidRust](https://github.com/DMaroo/GhidRust) — GhidRust：Ghidra 的 Rust 反编译插件。 **[385 星标]**
 - [GrammaTech/gtirb](https://github.com/GrammaTech/gtirb) — 用于二进制分析与转换的中间表示。 **[382 星标]**
 - [bl4ckr0ss3/knife](https://github.com/bl4ckr0ss3/knife) — 以终端为核心、使用 Rust 编写的逆向工程工具包，通过 CLI、TUI 和 MCP 分析 PE/ELF/Mach-O 文件，安装后的命令名为 knife。 **[380 星标]**
