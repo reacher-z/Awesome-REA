@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "sasquatch": {
+    "name": "sasquatch 厂商改版 SquashFS 解包补丁",
+    "requirements": [
+      "审阅对象为 master 分支提交 bd864a1（2021-03-25），即补丁集的最后一次改动；仓库没有发行版，README 称项目仍处于非常早期的 beta 阶段。2020 至 2026 年间的未关闭 issue 和未合并的拉取请求报告了在 GCC 10 及更新版本上的链接失败，例如在 -fno-common 下 verbose 被重复定义，并提出了修复方案。unblob 的安装指南则改为安装 ONEKEY 另行维护的 onekey-sec/sasquatch 仓库提供的 .deb 包（发行版 sasquatch-v4.5.1-6）。",
+      "build.sh 会从 SourceForge 下载 squashfs-tools 4.3 源码包，应用 patches/patch0.txt，编译后以 sudo make install 安装；在使用 apt 的系统上，它会先用 sudo 安装 build-essential 以及 liblzma、liblzo2 和 zlib 的开发包。",
+      "输入为用户自行提供的 SquashFS 镜像或固件文件；仓库没有提交任何固件镜像。仓库只有 README、build.sh 和这个 1.1 MB 的补丁；补丁加入了附带 LGPL/CPL 文本的 LZMA SDK 解码器副本，并在 lzmalt 解码器中加入了一个 289 行的 VxWorks 类型头文件（vxTypesOld.h），标注 Copyright 1984-1997 Wind River Systems，且没有任何许可声明。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证；squashfs-tools 本身采用 GPL 许可，附带的 LZMA 代码保留各自条款。本次审阅未运行任何程序。"
+    ]
   }
 }

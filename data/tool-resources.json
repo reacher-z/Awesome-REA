@@ -12616,5 +12616,35 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "sasquatch",
+    "name": "sasquatch",
+    "url": "https://github.com/devttys0/sasquatch",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Patches to the unsquashfs utility from squashfs-tools 4.3 that try to read as many vendor-modified SquashFS implementations from embedded firmware as possible. Simple header changes are handled automatically; when a vendor has altered the LZMA compression options or how they are stored in data blocks, it tries to resolve them by brute force with added lzma-adaptive, lzma-alt and lzma-ddwrt decompressors. Extra options let analysts force the decompressor, SquashFS version, endianness and lzma-adaptive parameters and turn on trace output.",
+    "description_zh": "针对 squashfs-tools 4.3 中 unsquashfs 工具的一组补丁，力求读取嵌入式固件中尽可能多的厂商改版 SquashFS 实现。头部字段的简单改动会被自动识别；若厂商改动了 LZMA 压缩参数或其在数据块中的存放方式，它会借助新增的 lzma-adaptive、lzma-alt 和 lzma-ddwrt 解压器以暴力尝试的方式加以识别。新增的命令行选项可让分析人员强制指定解压器、SquashFS 版本、字节序和 lzma-adaptive 参数，并开启跟踪输出。",
+    "evidence_url": "https://github.com/devttys0/sasquatch/blob/bd864a1b037bf57ca7d64a292a60ba0d6459611f/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at master commit bd864a1 (2021-03-25), the last change to the patch set; there are no releases, and the README calls the project very beta. Open issues and unmerged pull requests from 2020 to 2026 report link failures with GCC 10 and later, such as multiple definitions of verbose under -fno-common, and propose fixes. unblob's installation guide instead installs a .deb from ONEKEY's separate onekey-sec/sasquatch repository (release sasquatch-v4.5.1-6).",
+      "build.sh downloads the squashfs-tools 4.3 tarball from SourceForge, applies patches/patch0.txt, builds, and installs with sudo make install; on apt systems it first installs build-essential and the liblzma, liblzo2 and zlib development packages with sudo.",
+      "Input is a SquashFS image or firmware file the user supplies; the repository commits no firmware images. Its only files are the README, build.sh and the 1.1 MB patch, which adds bundled LZMA SDK decoder copies under their LGPL/CPL texts and, in the lzmalt decoder, a 289-line VxWorks type header (vxTypesOld.h) marked Copyright 1984-1997 Wind River Systems with no license notice.",
+      "No license file is present and GitHub detects none; squashfs-tools itself is GPL-licensed, and the bundled LZMA code keeps its own terms. This review ran nothing."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/devttys0/sasquatch/blob/bd864a1b037bf57ca7d64a292a60ba0d6459611f/build.sh",
+      "https://github.com/devttys0/sasquatch/blob/bd864a1b037bf57ca7d64a292a60ba0d6459611f/patches/README.md",
+      "https://github.com/devttys0/sasquatch/blob/bd864a1b037bf57ca7d64a292a60ba0d6459611f/patches/patch0.txt",
+      "https://github.com/devttys0/sasquatch/pull/34",
+      "https://github.com/devttys0/sasquatch/issues/36",
+      "https://github.com/onekey-sec/unblob/blob/0f40c3c6940fa2bcfd2945f519fe8caf99e31e44/docs/installation.md"
+    ]
   }
 ]
