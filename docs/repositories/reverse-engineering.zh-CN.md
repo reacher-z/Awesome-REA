@@ -49,7 +49,7 @@
 - [ivRodriguezCA/RE-iOS-Apps](https://github.com/ivRodriguezCA/RE-iOS-Apps) — 完全免费、开源的 iOS 应用逆向工程在线课程。 **[2,917 星标]** · 精选：[iOS 应用逆向工程课程](https://awesomerea.org/zh/resources/re-ios-apps-course/)
 - [wzhudev/reverse-linear-sync-engine](https://github.com/wzhudev/reverse-linear-sync-engine) — 对 Linear 同步引擎的逆向工程。 **[2,865 星标]**
 - [onethawt/reverseengineering-reading-list](https://github.com/onethawt/reverseengineering-reading-list) — 逆向工程文章、书籍和论文列表。 **[2,750 星标]** · 精选：[逆向工程阅读清单（onethawt）](https://awesomerea.org/zh/resources/onethawt-re-reading-list/)
-- [user1342/Awesome-Android-Reverse-Engineering](https://github.com/user1342/Awesome-Android-Reverse-Engineering) — 精选 Android 逆向工程培训、资源和工具列表。 **[2,739 星标]**
+- [user1342/Awesome-Android-Reverse-Engineering](https://github.com/user1342/Awesome-Android-Reverse-Engineering) — 精选 Android 逆向工程培训、资源和工具列表。 **[2,739 星标]** · 精选：[Awesome Android Reverse Engineering Android 逆向工程资源清单](https://awesomerea.org/zh/resources/awesome-android-reverse-engineering/)
 - [rockbruno/swiftshield](https://github.com/rockbruno/swiftshield) — 🔒 Swift 混淆工具，保护 iOS 应用免受逆向工程攻击。 **[2,548 星标]**
 - [Vineflower/vineflower](https://github.com/Vineflower/vineflower) — 现代化 Java 反编译器，追求尽可能准确的结果，注重输出质量。基于 Fernflower 反编译器分支开发。 **[2,409 星标]** · 精选：[Vineflower Java 反编译器](https://awesomerea.org/zh/resources/vineflower/)
 - [P4nda0s/reverse-skills](https://github.com/P4nda0s/reverse-skills) — 面向 Claude Code 的逆向工程技能插件。 **[2,285 星标]**

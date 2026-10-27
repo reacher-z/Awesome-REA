@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 521](https://img.shields.io/badge/resources-521-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 221](https://img.shields.io/badge/cases-221-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 144](https://img.shields.io/badge/papers-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 522](https://img.shields.io/badge/resources-522-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 221](https://img.shields.io/badge/cases-221-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 144](https://img.shields.io/badge/papers-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)** · **[Suggest a resource](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)** · **[Contributing](#contributing)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-521 curated resources (221 cases) · 144 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 518 because 3 of these appear only under Papers.
+522 curated resources (221 cases) · 144 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 519 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -34,7 +34,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (221) · [Related Collections](#related-collections) (11) · [Full Repository Index](#full-repository-index) (3,309) · [Contributing](#contributing)
+- [All cases](https://awesomerea.org/cases/) (221) · [Related Collections](#related-collections) (12) · [Full Repository Index](#full-repository-index) (3,309) · [Contributing](#contributing)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -616,6 +616,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**awesome-decompilation**](https://github.com/nforest/awesome-decompilation) - A short, link-only reading list on decompiling machine code, last updated in 2023. <sub>Collection · Targets: Binary · [Full entry](https://awesomerea.org/resources/nforest-awesome-decompilation/)</sub>
 - [**Remade**](https://github.com/replicraft/remade) - The source repository of remade.wiki, a community-curated directory of open-source reimplementations of closed-source software, mostly creative, productivity and engineering applications. <sub>Collection · Targets: App · [Full entry](https://awesomerea.org/resources/remade-reimplementation-directory/)</sub>
 - [**Reverse Engineering resources (wtsxDev)**](https://github.com/wtsxDev/reverse-engineering) - A single-README awesome list, started in January 2017 and maintained under the KaliTut name, of 139 reverse-engineering links in 16 sections: books, courses, practice targets, hex editors, binary-format tools, disassemblers, binary analysis, bytecode analysis, import reconstruction, dynamic analysis, debugging, Mac decryption, document analysis, scripting, Android and YARA. <sub>Collection · Targets: App, Binary · [Full entry](https://awesomerea.org/resources/wtsxdev-reverse-engineering-list/)</sub>
+- [**Awesome Android Reverse Engineering**](https://github.com/user1342/Awesome-Android-Reverse-Engineering) - An awesome list of Android reverse-engineering training, tools and resources started in 2023 by James Stevenson, with 92 one-line entries, 16 of them starred as great and up to date. <sub>Collection · Targets: App · [Full entry](https://awesomerea.org/resources/awesome-android-reverse-engineering/)</sub>
 
 <a id="references-and-learning"></a>
 ### References and Learning
