@@ -4547,5 +4547,13 @@
       "“练习”部分把 crackme 和 CTF 网站与公开的恶意软件样本库并列，只附有一句注意恶意软件的提醒；“Mac 解密”部分只列出工具名称，未说明用法。本记录仅把该清单视为分析资源目录。",
       "package.json 和 .travis.yml 在 Travis CI 上以 Node.js 8 配置了 remark-lint 检查，涵盖列表顺序、重复链接和失效链接。GitHub 未检测到许可证，仓库没有许可证文件，package.json 的 license 字段也为空，因此清单未声明复用条款；所链接的工具和书籍保留各自条款。这是独立的发现清单；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "willnode-deobfuscator": {
+    "name": "willnode JavaScript 手动反混淆编辑器",
+    "requirements": [
+      "没有发布版或标签；所审阅的 master 分支 2023-06-29 提交是最近一次代码改动，CI 工作流在每次推送到 master 时构建 Vite 站点并部署到 gh-pages 分支，由该分支提供在线版本。本地运行需要 Node.js 和 npm 来执行 vite serve 或 vite build；package.json 依赖 Monaco Editor ^0.39.0、js-beautify ^1.14.8 和 Vite ^4.3.9，未声明 Node.js 版本。",
+      "求值命令会把选中的代码和代码栈直接交给页面中的 JavaScript eval 执行，因此混淆脚本的这些部分会在使用者的浏览器中不经沙箱运行；README 建议保持浏览器控制台打开。字符串、数字和重命名辅助功能以及只能从控制台调用的实验功能都基于正则表达式，README 提醒它们可能破坏复杂字符串，十六进制重命名也无法检测命名冲突。",
+      "待分析的脚本由使用者粘贴，编辑器内容只保存在当前标签页的 sessionStorage 中。package.json 声明 MIT，但仓库没有许可证文件，GitHub 也未检测到许可证。本次审阅未对任何脚本进行反混淆；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
