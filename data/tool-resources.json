@@ -12397,5 +12397,37 @@
       "https://github.com/toniebox-reverse-engineering/teddycloud/releases/tag/tc_v0.7.0",
       "https://tonies-wiki.revvox.de/docs/tools/teddycloud/setup/"
     ]
+  },
+  {
+    "id": "andromeda",
+    "name": "Andromeda",
+    "url": "https://github.com/secrary/Andromeda",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Interactive command-line tool by Lasha Khasaia for first-pass reverse engineering of Android APKs, written in C/C++ for speed. It unpacks an APK, parses AndroidManifest.xml, the signing certificate and the DEX files at the archive root, then opens a shell with tab completion for listing permissions, activities, services, receivers and likely entry points, listing and searching classes, methods and strings, disassembling a method's Dalvik bytecode and listing, hashing or extracting native libraries. Further commands report whether the app is debuggable, a creation date taken from its certificate, URL and email strings, and a guess at whether it was written in Java, Kotlin or Xamarin .NET.",
+    "description_zh": "Lasha Khasaia 开发的交互式命令行工具，用于对 Android APK 做初步逆向分析，以 C/C++ 编写以求速度。它解包 APK，解析 AndroidManifest.xml、签名证书和压缩包根目录下的 DEX 文件，随后打开一个支持 Tab 补全的交互环境，可列出权限、Activity、Service、Receiver 和可能的入口点，列出并搜索类、方法和字符串，反汇编某个方法的 Dalvik 字节码，以及列出、计算哈希或提取原生库。其他命令可报告应用是否可调试、依据证书得出的创建日期、URL 和电子邮件字符串，并推测应用使用 Java、Kotlin 还是 Xamarin .NET 编写。",
+    "evidence_url": "https://github.com/secrary/Andromeda/blob/50fdaaf59328fb3430d76d92c6319d2232766f7a/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Inactive early-stage project: the README says the tool is in the early development stage, and its 29 commits run from 2019-09-22 to the reviewed master commit of 2020-03-14, which removes an editor folder. There are no tags or releases, and GitHub does not mark the repository archived. Documenting the tool is still a TODO; the README shows the command list only as a screenshot, and the author notes very limited Android experience.",
+      "Built from source with make, which compiles everything with clang++ in C++17 mode (-std=c++1z) and debug flags (-g -O0), linking zlib and OpenSSL's libcrypto; the README's apt commands install clang, libz-dev and libssl-dev. The Makefile adds libstdc++fs on Linux and Homebrew openssl@1.1 paths on macOS; Windows is not covered.",
+      "Input is an APK supplied by the user, run as ./bin/andromeda app.apk. The path must end in .apk, and the tool stops if the unpacked archive lacks AndroidManifest.xml or a DEX file at its root, so bare DEX files are not accepted. The repository contains no sample APKs.",
+      "Apache-2.0 license. third_party.md lists the bundled libraries with their own licenses: Google's dexter slicer (Apache-2.0), Claud Xiao's AxmlParser, linenoise-cpp, miniz and pugixml; the tree also bundles the digestpp hashing headers. The tool was not built or run, and no APK was analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/secrary/Andromeda/blob/50fdaaf59328fb3430d76d92c6319d2232766f7a/Andromeda/Andromeda.cpp",
+      "https://github.com/secrary/Andromeda/blob/50fdaaf59328fb3430d76d92c6319d2232766f7a/Andromeda/APK.hpp",
+      "https://github.com/secrary/Andromeda/blob/50fdaaf59328fb3430d76d92c6319d2232766f7a/Andromeda/patterns.hpp",
+      "https://github.com/secrary/Andromeda/blob/50fdaaf59328fb3430d76d92c6319d2232766f7a/Makefile",
+      "https://github.com/secrary/Andromeda/blob/50fdaaf59328fb3430d76d92c6319d2232766f7a/third_party.md",
+      "https://github.com/secrary/Andromeda/tree/50fdaaf59328fb3430d76d92c6319d2232766f7a/slicer",
+      "https://github.com/secrary/Andromeda/blob/50fdaaf59328fb3430d76d92c6319d2232766f7a/LICENSE",
+      "https://github.com/secrary/Andromeda/commits/50fdaaf59328fb3430d76d92c6319d2232766f7a"
+    ]
   }
 ]

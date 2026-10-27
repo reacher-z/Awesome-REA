@@ -4500,5 +4500,14 @@
       "自定义 tonie JSON 接口的 Python API 测试和 WASM TAF 编码器测试通过 Makefile 目标运行；所审阅的工作流只构建并发布，不运行这些测试。dev-sandbox 提供模拟的 tonie、盒子和 TAF 数据。与真实盒子及 Boxine 云端配合的表现仍属项目报告，本次来源核查未运行任何内容。",
       "采用 GPL-2.0（LICENSE）；内置的 Cyclone 协议栈、Opus、Ogg、cJSON 和 FatFs 保留各自条款。tonie 音频、盒子固件和 Boxine 的服务保留各自权利。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "andromeda": {
+    "name": "Andromeda Android 应用交互式逆向工具",
+    "requirements": [
+      "处于早期阶段且已不再活跃：README 称该工具仍处于早期开发阶段；仓库共 29 个提交，时间从 2019-09-22 到所审阅的 2020-03-14 master 提交，后者只删除了一个编辑器配置目录。仓库没有标签或发行版，GitHub 也未将其标为已归档。为工具编写文档仍列在 TODO 中；README 只以截图展示命令列表，作者也说明自己的 Android 经验非常有限。",
+      "需用 make 从源码构建：以 clang++ 的 C++17 模式（-std=c++1z）和调试参数（-g -O0）编译全部源码，并链接 zlib 与 OpenSSL 的 libcrypto；README 给出的 apt 命令安装 clang、libz-dev 和 libssl-dev。Makefile 在 Linux 上额外链接 libstdc++fs，在 macOS 上使用 Homebrew 的 openssl@1.1 路径；未涉及 Windows。",
+      "输入为使用者自备的 APK，用法为 ./bin/andromeda app.apk。路径必须以 .apk 结尾；若解包后的压缩包根目录缺少 AndroidManifest.xml 或 DEX 文件，工具即停止，因此不接受单独的 DEX 文件。仓库中没有示例 APK。",
+      "采用 Apache-2.0 许可。third_party.md 列出随附的第三方库及其各自许可证：Google 的 dexter slicer（Apache-2.0）、Claud Xiao 的 AxmlParser、linenoise-cpp、miniz 和 pugixml；代码树中还附带 digestpp 哈希头文件库。本次未构建或运行该工具，也未分析任何 APK。"
+    ]
   }
 }

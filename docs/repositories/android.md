@@ -61,7 +61,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [venshine/decompile-apk](https://github.com/venshine/decompile-apk) — 🔥 Decompile APK **[823 stars]**
 - [zinja-coder/jadx-mcp-server](https://github.com/zinja-coder/jadx-mcp-server) — MCP server for JADX-AI Plugin **[803 stars]**
 - [lixi5338619/lxBook](https://github.com/lixi5338619/lxBook) — Code repository for the book Advanced Practical Web Scraping Reverse Engineering. **[768 stars]**
-- [secrary/Andromeda](https://github.com/secrary/Andromeda) — Andromeda - Interactive Reverse Engineering Tool for Android Applications **[714 stars]**
+- [secrary/Andromeda](https://github.com/secrary/Andromeda) — Andromeda - Interactive Reverse Engineering Tool for Android Applications **[714 stars]** · Curated: [Andromeda](https://awesomerea.org/resources/andromeda/)
 - [horsicq/XAPKDetector](https://github.com/horsicq/XAPKDetector) — APK/DEX detector for Windows, Linux and MacOS. **[696 stars]**
 - [SlickAmogus/silent-hill-decomp](https://github.com/SlickAmogus/silent-hill-decomp) — Multiplatform and Feature-rich Port based on PSX decompilation of Silent Hill 1 made with Claude and Psycross. Still in beta and is in active development. **[682 stars]**
 - [darbra/sign](https://github.com/darbra/sign) — Ideas and experiences in reverse engineering app parameters, focused on Android. **[675 stars]**

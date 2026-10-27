@@ -61,7 +61,7 @@
 - [venshine/decompile-apk](https://github.com/venshine/decompile-apk) — 🔥 APK 反编译。 **[823 星标]**
 - [zinja-coder/jadx-mcp-server](https://github.com/zinja-coder/jadx-mcp-server) — 适用于 JADX-AI 插件的 MCP 服务器。 **[803 星标]**
 - [lixi5338619/lxBook](https://github.com/lixi5338619/lxBook) — 《爬虫逆向进阶实战》书籍代码库。 **[768 星标]**
-- [secrary/Andromeda](https://github.com/secrary/Andromeda) — Andromeda：面向 Android 应用的交互式逆向工程工具。 **[714 星标]**
+- [secrary/Andromeda](https://github.com/secrary/Andromeda) — Andromeda：面向 Android 应用的交互式逆向工程工具。 **[714 星标]** · 精选：[Andromeda Android 应用交互式逆向工具](https://awesomerea.org/zh/resources/andromeda/)
 - [horsicq/XAPKDetector](https://github.com/horsicq/XAPKDetector) — 适用于 Windows、Linux 和 MacOS 的 APK/DEX 检测器。 **[696 星标]**
 - [SlickAmogus/silent-hill-decomp](https://github.com/SlickAmogus/silent-hill-decomp) — 基于《寂静岭 1》PSX 反编译成果，借助 Claude 和 Psycross 制作的多平台、功能丰富的移植版。目前仍处于 beta 阶段，正在积极开发。 **[682 星标]**
 - [darbra/sign](https://github.com/darbra/sign) — 逆向分析应用参数的思路与经验，聚焦 Android 逆向。 **[675 星标]**
