@@ -12397,5 +12397,33 @@
       "https://github.com/toniebox-reverse-engineering/teddycloud/releases/tag/tc_v0.7.0",
       "https://tonies-wiki.revvox.de/docs/tools/teddycloud/setup/"
     ]
+  },
+  {
+    "id": "ringverse-oura-ring-protocol-case",
+    "name": "Smart ring protocol: documenting the Oura Ring BLE protocol and event format",
+    "url": "https://github.com/ringverse/protocol",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Documents reverse-engineered smart-ring communication, currently only for the Oura Ring: the request and response framing over Bluetooth Low Energy, a catalog of request tags with their payload fields, and the ring's binary event stream. The BLE notes are stated as confirmed only on the Oura Ring 4, and many packets remain marked unknown. The author states that the event-format reference and its Node.js parser were AI-generated from the Oura app's event-parser library and are not yet fully verified.",
+    "description_zh": "记录经逆向得到的智能戒指通信方式，目前仅涵盖 Oura Ring：低功耗蓝牙上的请求与响应帧结构、请求标签及其载荷字段目录，以及戒指的二进制事件流。蓝牙笔记注明仅在 Oura Ring 4 上确认，许多数据包仍标为未知。作者称，事件格式参考文档及其 Node.js 解析器由 AI 依据 Oura 应用的事件解析库生成，尚未完全核实。",
+    "evidence_url": "https://github.com/ringverse/protocol/blob/1826a352611c7220708b555a15de13e28e24b33a/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the main-branch head of 2026-06-18, after five commits since 2024-11. The repository is documentation plus one parser script, not a client application: oura/BLE.md covers framing, flows and packets, oura/events/ covers the event stream, and oura/data.md is an empty placeholder. Only the Oura Ring is covered so far.",
+      "Applying the notes needs the user's own Oura Ring; BLE.md says its information is confirmed only for the Oura Ring 4. No Oura firmware, app package or native library is committed, and no captures are included. BLE.md also documents the ring's per-device authentication exchange, and storage.md describes recovering that key from the user's own iOS app backup; this record repeats neither procedure, and no key values are committed.",
+      "oura/events/parse.js is a standalone Node.js script decoding the event stream's common header and per-type payloads. EVENTS.md says it was derived from libringeventparser.so in Oura Android app version 6.2.0, so newer app or firmware versions may differ.",
+      "EVENTS.md warns that it and parse.js are AI-generated and not fully verified, and that the author plans a manual rewrite. The repository has no tests or CI; this review ran neither the parser nor a ring, and decoded fields remain author-reported.",
+      "The repository has no license file, so reuse rights for the notes and the parser are unstated. Oura and Oura Ring remain trademarks of their owner, and the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ringverse/protocol/blob/1826a352611c7220708b555a15de13e28e24b33a/oura/BLE.md",
+      "https://github.com/ringverse/protocol/blob/1826a352611c7220708b555a15de13e28e24b33a/oura/events/EVENTS.md",
+      "https://github.com/ringverse/protocol/blob/1826a352611c7220708b555a15de13e28e24b33a/oura/events/parse.js"
+    ]
   }
 ]

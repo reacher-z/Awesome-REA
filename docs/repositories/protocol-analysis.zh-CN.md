@@ -26,7 +26,7 @@
 - [yapengye/NetPlier](https://github.com/yapengye/NetPlier) — NetPlier：基于消息轨迹的概率式网络协议逆向工程 **[75 星标]** · 论文：[NetPlier：基于报文记录的概率网络协议逆向工程](https://awesomerea.org/zh/papers/paper-netplier/)
 - [seemoo-lab/aristoteles](https://github.com/seemoo-lab/aristoteles) — Apple Remote Invocation（ARI）协议的 Wireshark 解析器；该协议在 Intel 基带芯片与 iOS CommCenter 之间用于各类管理任务、短信、电话及更多功能。 **[74 星标]**
 - [HalilDeniz/ICMPWatch](https://github.com/HalilDeniz/ICMPWatch) — ICMPWatch：ICMP 数据包嗅探器 **[60 星标]**
-- [ringverse/protocol](https://github.com/ringverse/protocol) — 智能戒指协议逆向工程 **[56 星标]**
+- [ringverse/protocol](https://github.com/ringverse/protocol) — 智能戒指协议逆向工程 **[56 星标]** · 精选：[Smart ring protocol：记录 Oura Ring 蓝牙协议与事件格式](https://awesomerea.org/zh/resources/ringverse-oura-ring-protocol-case/)
 - [bitpeach/Protocol-Informatics](https://github.com/bitpeach/Protocol-Informatics) — Protocol Informatics 项目旨在基于帧或数据包分析自动进行网络协议逆向工程。项目简称 PI，引入了局部和全局序列比对算法，在基于网络轨迹的协议逆向工程领域颇有名气。我不是 PI 项目的作者，但此前保存该项目的网站已经消失，因此我在 GitHub 上开设一个议题，以保存 PI 项目的代码。 **[53 星标]**
 - [NotYuSheng/TracePcap](https://github.com/NotYuSheng/TracePcap) — 可自行托管的 PCAP 分析平台，提供 LLM 驱动的事件分诊、基于特征签名的威胁检测及 AI 生成的事件叙述。支持跨抓包文件监测网络变化、通过 nDPI 深度检测数据包，以及自动生成 Wireshark 过滤器。配合本地 LLM（Ollama、LM Studio）可完全离线运行。 **[51 星标]**
 - [KevenPotter/k-cloud-charge-analysis](https://github.com/KevenPotter/k-cloud-charge-analysis) — 高性能、轻量级 GB/T 27930-2023（云快充 1.6）协议 SDK，采用不依赖框架的设计，专为充电桩与平台对接场景打造，简化协议解析、指令生成与校验流程。 **[44 星标]**
