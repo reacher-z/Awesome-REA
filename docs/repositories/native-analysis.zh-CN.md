@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**851 个仓库** · 2026-10-20 UTC
+**852 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -272,6 +272,7 @@
 - [WPeace-HcH/SysNR-FuncFinder](https://github.com/WPeace-HcH/SysNR-FuncFinder) — 根据系统调用号重命名函数的 IDA 插件。 **[208 星标]**
 - [biniamf/ai-reverse-engineering](https://github.com/biniamf/ai-reverse-engineering) — 使用 AI 辅助 Ghidra 逆向工程 **[206 星标]**
 - [buggerlogger/arkose-solver](https://github.com/buggerlogger/arkose-solver) — 面向 Go、Python 和 Node 的 Arkose Labs / FunCaptcha 解题工具，生成 sup=1 免挑战令牌。每次解题均从 api.js 推导站点 RSA 密钥，无需抓取、重放或无头浏览器，并附完整虚拟机反汇编。 **[202 星标]**
+- [monkbai/DNN-decompiler](https://github.com/monkbai/DNN-decompiler) — BTD（Bin To DNN）：DNN 可执行文件反编译器 **[199 星标]** · 精选：[BTD（Bin To DNN）DNN 可执行文件反编译器](https://awesomerea.org/zh/resources/btd-dnn-decompiler/)
 - [RevEngAI/plugin-ghidra](https://github.com/RevEngAI/plugin-ghidra) — RevEng.AI 的 Ghidra 插件 **[195 星标]** · 精选：[RevEng.AI Ghidra 插件](https://awesomerea.org/zh/resources/revengai-ghidra/)
 - [cdlewis/snowboardkids2-decomp](https://github.com/cdlewis/snowboardkids2-decomp) — Snowboard Kids 2（N64）反编译项目 **[193 星标]** · 精选：[Snowboard Kids 2：大模型辅助的 N64 匹配反编译](https://awesomerea.org/zh/resources/snowboardkids2-decomp-case/)
 - [lifting-bits/sleigh](https://github.com/lifting-bits/sleigh) — Ghidra C++ SLEIGH 代码的非官方 CMake 构建 **[193 星标]**
