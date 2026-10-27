@@ -11799,5 +11799,35 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "jsc-decompile-mozjs-34",
+    "name": "jsc-decompile-mozjs-34",
+    "url": "https://github.com/irelance/jsc-decompile-mozjs-34",
+    "category": "javascript-electron",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "app"
+    ],
+    "description_en": "PHP decoder and decompiler for SpiderMonkey 34 JavaScript bytecode, which the README says may handle .jsc files compiled by cocos2d-x. It parses the XDR-serialized scripts with their atoms, constants, objects, regular expressions and try and scope notes, decodes instructions from a SpiderMonkey 34 opcode table and rebuilds approximate JavaScript for each function context, while a second script prints the decoded operations instead. The author describes it as unfinished and as an example of how a JavaScript virtual machine works.",
+    "description_zh": "用 PHP 编写的 SpiderMonkey 34 JavaScript 字节码解码与反编译工具，README 称它可能可以处理 cocos2d-x 编译生成的 .jsc 文件。它解析以 XDR 序列化的脚本及其中的原子（atom）、常量、对象、正则表达式和 try/作用域注记，依据 SpiderMonkey 34 的操作码表解码指令，并为每个函数上下文重建近似的 JavaScript 代码；另一个脚本则改为输出解码后的操作序列。作者称该项目尚未完成，可作为理解 JavaScript 虚拟机工作方式的示例。",
+    "evidence_url": "https://github.com/irelance/jsc-decompile-mozjs-34/blob/44ffa1b0bb5ffc42231fcfcb60c5e6a3bc366062/readme.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No releases; the last commit, on 2021-07-27, fixed global-variable and object-initialization opcodes, and the README says the project may no longer be updated and is not complete. It targets SpiderMonkey 34 bytecode: the README notes that opcodes differ between SpiderMonkey versions, lists the magic values for bytecode versions 33 to 47, and says the tool does not check the magic, so files from nearby versions may partly decode.",
+      "Runs on PHP 7.0 or later (the README says it still works on 7.4) after composer install, which only generates the autoloader. php run.php prints reconstructed code for each script context, and php scan.php prints atoms, decoded operations, constants and regular expressions for files that do not decompile. Input .jsc files come from the user; the repository holds no sample files or tests, and the source has no decryption or decompression step, so it reads only plain XDR bytecode.",
+      "The README reports a fatal bug when decompiling deeply nested contexts and says output is not runnable, with generated names for local variables that the compiler discarded, so results should be checked against the scan.php operations. There is no license file, and composer.json declares the package proprietary, so the repository grants no reuse terms; recovered scripts remain subject to the rights of the application's owner. Nothing was run and no bytecode was decompiled; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/irelance/jsc-decompile-mozjs-34/blob/44ffa1b0bb5ffc42231fcfcb60c5e6a3bc366062/composer.json",
+      "https://github.com/irelance/jsc-decompile-mozjs-34/blob/44ffa1b0bb5ffc42231fcfcb60c5e6a3bc366062/run.php",
+      "https://github.com/irelance/jsc-decompile-mozjs-34/blob/44ffa1b0bb5ffc42231fcfcb60c5e6a3bc366062/scan.php",
+      "https://github.com/irelance/jsc-decompile-mozjs-34/blob/44ffa1b0bb5ffc42231fcfcb60c5e6a3bc366062/src/Decompile.php",
+      "https://github.com/irelance/jsc-decompile-mozjs-34/blob/44ffa1b0bb5ffc42231fcfcb60c5e6a3bc366062/src/Constant.php",
+      "https://github.com/irelance/jsc-decompile-mozjs-34/tree/44ffa1b0bb5ffc42231fcfcb60c5e6a3bc366062/src/Xdr"
+    ]
   }
 ]

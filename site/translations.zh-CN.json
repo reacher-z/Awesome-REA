@@ -4330,5 +4330,13 @@
       "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
       "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
     ]
+  },
+  "jsc-decompile-mozjs-34": {
+    "name": "jsc-decompile-mozjs-34 SpiderMonkey 字节码反编译器",
+    "requirements": [
+      "没有发布版本；最后一次提交在 2021-07-27，修复了全局变量和对象初始化相关的操作码，README 称项目可能不再更新且尚未完成。它面向 SpiderMonkey 34 的字节码：README 指出不同 SpiderMonkey 版本的操作码各不相同，列出了字节码版本 33 至 47 的魔数，并说明工具不检查魔数，因此相近版本的文件可能部分可解码。",
+      "需要 PHP 7.0 或更高版本（README 称在 7.4 上仍可运行），并先执行 composer install，该步骤只生成自动加载文件。php run.php 输出每个脚本上下文重建出的代码；对无法反编译的文件，php scan.php 会输出原子、解码后的操作、常量和正则表达式。输入的 .jsc 文件由使用者提供；仓库不含样例文件或测试，源码中也没有解密或解压步骤，因此只能读取未经处理的 XDR 字节码。",
+      "README 报告在反编译深层嵌套的上下文时存在严重缺陷，并称输出无法直接运行，编译器丢弃的局部变量名会以自动生成的名称代替，因此结果应与 scan.php 输出的操作序列对照核实。仓库没有许可证文件，composer.json 将该包声明为 proprietary，因此仓库未授予任何复用条款；恢复出的脚本仍受应用权利人的权利约束。本次未运行任何内容，也未反编译任何字节码；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
