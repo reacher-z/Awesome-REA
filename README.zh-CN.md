@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 496](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-496-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 211](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-211-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 136](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 497](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-497-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 211](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-211-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 136](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,11 +21,11 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-496 项精选资源（211 个案例）· 136 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 493。
+497 项精选资源（211 个案例）· 136 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 494。
 
 **按目标找工具与案例**
 
-- [网站](#website) (29) · [游戏](#game) (193) · [应用](#app) (80)
+- [网站](#website) (29) · [游戏](#game) (194) · [应用](#app) (80)
 - [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (23) · [协议](#protocol) (20)
 
 **论文与工作流**
@@ -303,6 +303,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**ps3recomp PS3 静态重编译工具包**](https://github.com/sp00nznet/ps3recomp) - 用于将 PlayStation 3 游戏静态重编译为原生可执行文件的工具包与运行时。 <sub>工具 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/ps3recomp/)</sub>
 - [**Nebula（NebulaFD）Clickteam Fusion 反编译器**](https://github.com/AITYunivers/NebulaFD) - 面向 Clickteam Fusion 2.5 游戏的反编译器，仍在开发中，也针对更早的 Multimedia Fusion 1.5 文件做了修复。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/nebulafd/)</sub>
 - [**swe1r-assets-unity：Racer 模型块编辑器样例**](https://github.com/akopetsch/swe1r-assets-unity) - 尚在开发中的 Unity 编辑器样例，可导入和修改《星球大战：极速飞车》的模型块，再通过 swe1r-assets 序列化回原格式。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/swe1r-assets-unity/)</sub>
+- [**LuaJIT Decompiler v2 字节码反编译器**](https://github.com/marsinator358/luajit-decompiler-v2) - 将 LuaJIT 字节码文件反编译回 Lua 源码，作为旧版 Python LuaJIT 反编译器的替代品编写。 <sub>工具 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/luajit-decompiler-v2/)</sub>
 
 <a id="app"></a>
 ### App · 应用

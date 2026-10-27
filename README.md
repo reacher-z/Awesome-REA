@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 496](https://img.shields.io/badge/resources-496-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 211](https://img.shields.io/badge/cases-211-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 497](https://img.shields.io/badge/resources-497-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 211](https://img.shields.io/badge/cases-211-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,11 +21,11 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-496 curated resources (211 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 493 because 3 of these appear only under Papers.
+497 curated resources (211 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 494 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
-- [Website](#website) (29) · [Game](#game) (193) · [App](#app) (80)
+- [Website](#website) (29) · [Game](#game) (194) · [App](#app) (80)
 - [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (20)
 
 **Research and workflows**
@@ -302,6 +302,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**ps3recomp**](https://github.com/sp00nznet/ps3recomp) - Toolkit and runtime for statically recompiling PlayStation 3 games into native executables. <sub>Tool · Also: Binary · [Full entry](https://awesomerea.org/resources/ps3recomp/)</sub>
 - [**Nebula (NebulaFD)**](https://github.com/AITYunivers/NebulaFD) - Work-in-progress decompiler for games made with Clickteam Fusion 2.5, with fixes for older Multimedia Fusion 1.5 files. <sub>Tool · [Full entry](https://awesomerea.org/resources/nebulafd/)</sub>
 - [**swe1r-assets-unity: Racer model-block editor sample**](https://github.com/akopetsch/swe1r-assets-unity) - Work-in-progress Unity editor sample for importing and modifying Star Wars Episode I: Racer model blocks, then serializing them back through swe1r-assets. <sub>Tool · [Full entry](https://awesomerea.org/resources/swe1r-assets-unity/)</sub>
+- [**LuaJIT Decompiler v2**](https://github.com/marsinator358/luajit-decompiler-v2) - Decompiles LuaJIT bytecode files back into Lua source, written as a replacement for the older Python LuaJIT decompiler. <sub>Tool · Also: Binary · [Full entry](https://awesomerea.org/resources/luajit-decompiler-v2/)</sub>
 
 <a id="app"></a>
 ### App
