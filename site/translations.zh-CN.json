@@ -4500,5 +4500,14 @@
       "自定义 tonie JSON 接口的 Python API 测试和 WASM TAF 编码器测试通过 Makefile 目标运行；所审阅的工作流只构建并发布，不运行这些测试。dev-sandbox 提供模拟的 tonie、盒子和 TAF 数据。与真实盒子及 Boxine 云端配合的表现仍属项目报告，本次来源核查未运行任何内容。",
       "采用 GPL-2.0（LICENSE）；内置的 Cyclone 协议栈、Opus、Ogg、cJSON 和 FatFs 保留各自条款。tonie 音频、盒子固件和 Boxine 的服务保留各自权利。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "smali-baksmali": {
+    "name": "smali/baksmali Dalvik dex 汇编与反汇编器",
+    "requirements": [
+      "GitHub 已将该仓库标为归档；最后一次推送在 2024-01-17，所审阅的 master 头提交日期为 2022-03-08，比最后一个版本 v2.5.2 多十个提交，该版本于 2021-03-03 以 org.smali 构件发布到 Maven Central。README 仍将下载地址指向作者的 Bitbucket 页面。Google 维护着一个分支，其 README 说明该分支因原仓库不再维护而设立；它将命名空间改为 com.android.tools.smali，并在 Google Maven 上发布 3.x 版本（审阅时为 3.0.7）。",
+      "以 Java 命令行工具和库的形式提供，编译目标为 Java 8，使用仓库自带的 Gradle 6.8.2 wrapper 构建；scripts/smali 和 scripts/baksmali 是调用 jar 的启动脚本。使用者需自备 dex、APK、odex 或 oat 文件，并可指定 API 级别；分析或去优化已优化的文件需要相匹配的启动类路径，对 oat 文件可直接使用设备上的 boot.oat。该提交中 dexlib2 的版本映射止于 dex 039（API 28），较新的 ART 版本一律映射为 API 29，因此未核实对更新 Android 版本文件的支持。",
+      "仓库包含 baksmali/src/test/resources 和 dexlib2/src/test/resources 下体积很小的测试用 dex 文件、手写的 smali 示例，以及 deodexerant——一个需在 AOSP 源码树中构建、在设备端运行的 C 辅助程序，用于导出 Dalvik 的内联方法表，供 baksmali 的 -T 选项使用。仓库未提交其他 dex、APK 或系统镜像。",
+      "仓库没有 LICENSE 文件，因此 GitHub 未识别出许可证；NOTICE 说明 Ben Gruver 编写的代码和 Google 版权的修改均采用 BSD 风格的三条款许可，取自 Android 开源项目的部分按 Apache-2.0 使用。本次未汇编或反汇编任何文件。"
+    ]
   }
 }

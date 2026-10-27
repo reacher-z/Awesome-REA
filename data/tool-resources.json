@@ -12397,5 +12397,43 @@
       "https://github.com/toniebox-reverse-engineering/teddycloud/releases/tag/tc_v0.7.0",
       "https://tonies-wiki.revvox.de/docs/tools/teddycloud/setup/"
     ]
+  },
+  {
+    "id": "smali-baksmali",
+    "name": "smali/baksmali",
+    "url": "https://github.com/JesusFreke/smali",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Assembler and disassembler for the dex format used by Android's Dalvik VM: baksmali turns dex, APK, odex and oat files into smali text, and smali assembles that text back into a dex file. The README says the syntax, loosely based on Jasmin's and dedexer's, supports the full dex format, including annotations and debug and line information. baksmali can also deodex odex and oat files and list a dex file's classes, methods, fields, strings and references, while the dexlib2 library reads and writes dex files from Java.",
+    "description_zh": "面向 Android Dalvik 虚拟机 dex 格式的汇编器与反汇编器：baksmali 将 dex、APK、odex 和 oat 文件反汇编为 smali 文本，smali 再把这些文本汇编回 dex 文件。README 称其语法大致参照 Jasmin 和 dedexer，支持 dex 格式的全部功能，包括注解、调试信息和行号信息。baksmali 还能对 odex 和 oat 文件做去优化（deodex），并列出 dex 文件中的类、方法、字段、字符串和引用；dexlib2 库则供 Java 程序读写 dex 文件。",
+    "evidence_url": "https://github.com/JesusFreke/smali/blob/2771eae0a11f07bd892732232e6ee4e32437230d/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "GitHub lists the repository as archived; its last push was on 2024-01-17, and the reviewed master head of 2022-03-08 is ten commits past v2.5.2, the last version, published as org.smali artifacts on Maven Central on 2021-03-03. The README still points downloads to the author's Bitbucket page. Google maintains a fork whose README says it exists because the original is not maintained; it renames the namespace to com.android.tools.smali and publishes 3.x releases (3.0.7 at review) on Google Maven.",
+      "Java command-line tools and libraries compiled for Java 8 and built with the bundled Gradle 6.8.2 wrapper; scripts/smali and scripts/baksmali are launcher wrappers for the jars. Users supply their own dex, APK, odex or oat files and can set the API level; analyzing or deodexing optimized files needs a matching boot classpath, which for oat files can be the device's boot.oat. dexlib2's version map at this commit stops at dex 039 (API 28) and maps newer ART versions to API 29, so files from later Android releases were not checked.",
+      "The repository includes small test-fixture dex files under baksmali/src/test/resources and dexlib2/src/test/resources, hand-written smali examples, and deodexerant, a device-side C helper built in an AOSP tree that dumps Dalvik's inline method table for baksmali's -T option. No other dex, APK or system images are committed.",
+      "There is no LICENSE file, so GitHub detects none; NOTICE releases Ben Gruver's code and Google-copyrighted changes under BSD-style three-clause licenses and says portions taken from the Android Open Source Project are used under Apache-2.0. No file was assembled or disassembled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/JesusFreke/smali/blob/2771eae0a11f07bd892732232e6ee4e32437230d/NOTICE",
+      "https://github.com/JesusFreke/smali/blob/2771eae0a11f07bd892732232e6ee4e32437230d/build.gradle#L34",
+      "https://github.com/JesusFreke/smali/blob/2771eae0a11f07bd892732232e6ee4e32437230d/build.gradle#L88-L91",
+      "https://github.com/JesusFreke/smali/blob/2771eae0a11f07bd892732232e6ee4e32437230d/gradle/wrapper/gradle-wrapper.properties",
+      "https://github.com/JesusFreke/smali/blob/2771eae0a11f07bd892732232e6ee4e32437230d/baksmali/src/main/java/org/jf/baksmali/DisassembleCommand.java",
+      "https://github.com/JesusFreke/smali/blob/2771eae0a11f07bd892732232e6ee4e32437230d/baksmali/src/main/java/org/jf/baksmali/DeodexCommand.java",
+      "https://github.com/JesusFreke/smali/blob/2771eae0a11f07bd892732232e6ee4e32437230d/baksmali/src/main/java/org/jf/baksmali/AnalysisArguments.java#L54-L74",
+      "https://github.com/JesusFreke/smali/blob/2771eae0a11f07bd892732232e6ee4e32437230d/smali/src/main/java/org/jf/smali/AssembleCommand.java",
+      "https://github.com/JesusFreke/smali/blob/2771eae0a11f07bd892732232e6ee4e32437230d/dexlib2/src/main/java/org/jf/dexlib2/VersionMap.java",
+      "https://github.com/JesusFreke/smali/blob/2771eae0a11f07bd892732232e6ee4e32437230d/deodexerant/README",
+      "https://github.com/JesusFreke/smali/tree/2771eae0a11f07bd892732232e6ee4e32437230d/baksmali/src/test/resources",
+      "https://github.com/JesusFreke/smali/compare/v2.5.2...2771eae0a11f07bd892732232e6ee4e32437230d",
+      "https://repo1.maven.org/maven2/org/smali/baksmali/2.5.2/",
+      "https://github.com/google/smali/blob/1a36aa30d18d92e63994f4b1e67a055931f5a707/README.md"
+    ]
   }
 ]
