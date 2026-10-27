@@ -12616,5 +12616,34 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "sigdigger",
+    "name": "SigDigger",
+    "url": "https://github.com/BatchDrake/SigDigger",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Qt graphical digital signal analyzer by Gonzalo José Carracedo Carballal, built on his Suscan and Sigutils libraries; its user manual names reverse engineering of radio signals with unknown parameters as the main use. It receives from SoapySDR-supported SDRs or plays back recorded I/Q and WAV files, shows spectrum and waterfall views, and lets analysts measure captured stretches in a time window with carrier recovery, transforms and symbol sampling. Inspector tabs run user-tunable PSK, FSK and ASK demodulators with parameter estimation and can forward demodulated samples; it also decodes analog video and previews AM, FM and SSB audio.",
+    "description_zh": "由 Gonzalo José Carracedo Carballal 开发的 Qt 图形化数字信号分析器，基于他编写的 Suscan 与 Sigutils 库；用户手册称其主要用途是对参数未知的无线电信号进行逆向分析。它可从 SoapySDR 支持的 SDR 设备接收信号，或回放录制的 I/Q 与 WAV 文件，提供频谱和瀑布图视图，并可在时间窗口中测量截取的片段，支持载波恢复、变换和符号采样。检查器（inspector）标签页运行可由用户调节的 PSK、FSK 和 ASK 解调器，提供参数估计，并可转发解调后的样本；它还能解码模拟视频，并预听 AM、FM 和 SSB 音频。",
+    "evidence_url": "https://github.com/BatchDrake/SigDigger/blob/70f688bb1ee7532fd45df079f753f7f92e841c08/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at master commit 70f688b (2026-02-11); the README says SigDigger, SuWidgets, Suscan and Sigutils all keep their latest working changes on master. The last stable release is v0.3.0 (2022-07-05, with an x86-64 Linux AppImage and a macOS DMG); a rolling pre-release tagged latest, rebuilt on 2025-04-08, provides a 0.3.0 Linux AppImage and a Windows zip. The bundled user manual is version 0.3.0, dated 2022-06-27, and calls itself a draft.",
+      "The README targets GNU/Linux and macOS: Linux users can run the AppImage (the manual asks for glibc 2.27 or newer), macOS DMGs are made on request, and the README says reproducible Windows builds with all DLL dependencies are not currently possible, leaving Windows users to build from source. Source builds install Sigutils and Suscan (CMake), then SuWidgets and SigDigger (qmake with Qt 5.9+ or Qt 6), in that order; SigDigger.pro also links FFTW through pkg-config. The README also offers the author's blsd script, which builds everything in a local directory.",
+      "Live analysis needs an SDR receiver supported by SoapySDR; without one, recorded RF/IF data can be loaded from WAV or raw complex-float I/Q files. The repository commits no signal recordings. Plugins such as AmateurDSN, APTPlugin, AntSDRPlugin and ZeroMQPlugin live in separate repositories.",
+      "LGPL-3.0 (LICENSE); the README says the spectrum widget is Gqrx's plotter with modifications. The manual describes symbol decision as human-guided, so recovered symbols and any protocol interpretation remain the analyst's work. This review ran nothing and received no signals."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BatchDrake/SigDigger/blob/70f688bb1ee7532fd45df079f753f7f92e841c08/doc/SigDigger_User_Manual.pdf",
+      "https://github.com/BatchDrake/SigDigger/blob/70f688bb1ee7532fd45df079f753f7f92e841c08/SigDigger.pro",
+      "https://github.com/BatchDrake/SigDigger/blob/70f688bb1ee7532fd45df079f753f7f92e841c08/LICENSE",
+      "https://github.com/BatchDrake/SigDigger/releases/tag/v0.3.0",
+      "https://github.com/BatchDrake/SigDigger/releases/tag/latest"
+    ]
   }
 ]
