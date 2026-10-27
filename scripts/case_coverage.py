@@ -15,6 +15,8 @@ TOP_FIELDS = {'schema_version', 'reviewed_at', 'catalog_revision', 'runtime_repr
 ENTRY_FIELDS = {'id', 'unit_id', 'collection_id', 'title', 'collection_urls', 'reported_source_urls',
                 'state', 'review_level', 'reviewed_at', 'reason_en', 'reason_zh',
                 'primary_evidence_urls', 'catalog_matches'}
+MATCH_FIELDS = {'catalog', 'id', 'kind', 'scope'}
+SCOPES = {'full', 'partial', 'related'}
 PRIVATE = re.compile(r'/(?:Users|home)/[^/\s]+/|\.cache/|gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----')
 
 
@@ -231,7 +233,7 @@ def validate_case_coverage(document, resources, papers, errors, *, url_check):
             continue
         matched, full = set(), False
         for match in entry['catalog_matches']:
-            if not fields(match, {'catalog', 'id', 'kind', 'scope'}, identifier + ' match'):
+            if not fields(match, MATCH_FIELDS, identifier + ' match'):
                 continue
             catalog, key = match['catalog'], match['id']
             if not isinstance(catalog, str) or catalog not in catalogs or not isinstance(key, str):
@@ -247,7 +249,7 @@ def validate_case_coverage(document, resources, papers, errors, *, url_check):
                 if not any(url in entry['primary_evidence_urls'] for url in target_sources if isinstance(url, str)):
                     fail(identifier + ' catalog mapping is not bound to that record’s sources')
             matched.add((catalog, key))
-            if not isinstance(match['scope'], str) or match['scope'] not in {'full', 'partial', 'related'}:
+            if not isinstance(match['scope'], str) or match['scope'] not in SCOPES:
                 fail(identifier + ' has unsupported match scope')
             full |= match['scope'] == 'full'
         if entry['state'] == 'already-curated' and (not full or entry['review_level'] == 'inventory-only'):

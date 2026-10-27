@@ -103,6 +103,47 @@ The schema-2 companion is emitted only when a supplement is ready for publicatio
 
 The ledger's `catalog_revision` names the `main` commit whose curated catalog and bibliography all `catalog_matches` were last checked against together. Use a commit that is already on `main`, such as the one your branch starts from; a commit that exists only on a pull-request branch is discarded by the squash merge. Validation resolves every mapping against the current catalog, so a pull request that adds or edits individual mappings may leave the field unchanged; update it after rechecking the ledger as a whole. With full Git history, `python3 scripts/validate.py` warns, without failing, when the revision is not an ancestor of `HEAD`; shallow clones skip this check.
 
+Each object in the ledger's `entries` array is one collection occurrence with exactly these fields; the validator in [case_coverage.py](../scripts/case_coverage.py) rejects missing or extra keys. URLs are public HTTPS links without duplicates in a list, and text fields are nonempty and at most 800 characters.
+
+| Entry field | Value | Meaning |
+| --- | --- | --- |
+| `id` | `<collection_id>:<slug>`, a lowercase hyphenated slug | Stable occurrence ID, unique in the ledger |
+| `unit_id` | The `id` of an entry in the same unit | Report unit; equals `id` unless an alias decision merges occurrences of one report |
+| `collection_id` | A `collections[].id` | Pinned collection that lists the occurrence; it also prefixes `id` |
+| `title` | English text | The collection's label for the entry, not a verified capability claim |
+| `collection_urls` | Nonempty list of pinned URLs | The entry's files at the collection's pinned commit, formed from its `locator_templates` |
+| `reported_source_urls` | Nonempty list of URLs | Links the collection entry reports |
+| `state` | `already-curated`, `pending` or `insufficient-evidence` | Fully covered by a catalog record; review or complete coverage still pending, including partial matches; retained as a lead whose evidence does not support curation |
+| `review_level` | `inventory-only`, `catalog-mapped` or `primary-source-reviewed` | Listed from the collection only; mapped to catalog records; primary sources reviewed |
+| `reviewed_at` | ISO date, not in the future | Date of the latest review of the entry |
+| `reason_en` / `reason_zh` | English / Chinese text | Why the entry has its state and what remains unestablished |
+| `primary_evidence_urls` | List of URLs; nonempty unless `review_level` is `inventory-only` | Primary sources reviewed for the entry |
+| `catalog_matches` | List of match objects, possibly empty | Typed mappings to curated records or papers |
+
+Each catalog match has exactly these fields:
+
+| Match field | Value | Meaning |
+| --- | --- | --- |
+| `catalog` | `resource` or `paper` | A curated record in `rea-resources.json` or `tool-resources.json`, or a paper in `papers.json` |
+| `id` | Record ID | The matched record, at most once per entry |
+| `kind` | The record's `kind` | Must equal the matched record's `kind`, such as `case-study` or `research` |
+| `scope` | `full`, `partial` or `related` | The record covers the whole report; part of it; or a related project only |
+
+The validator also enforces these cross-field rules:
+
+- A match must be bound to the record's sources: the resource's `url`, `evidence_url` or one of its `additional_evidence_urls`, or the paper's `url` or one of its `evidence_urls`, appears in the entry's `primary_evidence_urls`.
+- `already-curated` requires a `full` match and a review level other than `inventory-only`, and any match requires a review level other than `inventory-only`.
+- Entries that share a `unit_id` need one alias in `aliases` listing exactly their occurrence IDs, with `basis_en`, `basis_zh` and evidence URLs that identify every merged occurrence; they share one state and review level.
+- Each collection's `entry_count` equals its number of entries, and `counts` equals the values `coverage_counts()` derives from the entries.
+
+To resolve a lead:
+
+1. Review the pinned collection entry and the primary sources behind its reported links, pinning GitHub file evidence to the reviewed commit.
+2. If they support curation, add the record to the catalog, then set `state` to `already-curated` and `review_level` to `primary-source-reviewed`, add a `full` match, and list the record's evidence in `primary_evidence_urls`. A match that covers only part of the report is `partial` and the entry stays `pending`.
+3. Otherwise set `state` to `insufficient-evidence` and `review_level` to `primary-source-reviewed`, list the primary evidence you reviewed, and explain what it does and does not establish in `reason_en` and `reason_zh`.
+
+In either case update `reviewed_at` and `counts`, then run `python3 scripts/build_case_coverage.py` and `python3 scripts/validate.py`.
+
 ## Get the catalog with Git
 
 ```sh
