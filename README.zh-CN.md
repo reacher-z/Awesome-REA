@@ -134,7 +134,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**UltraSunnyMoon：以 REA 主导的部分《宝可梦 究极之日》重建**](https://github.com/tylergraydev/UltraSunnyMoon) - 作者使用固定版本的 REA 与 Ghidra，分析使用者自备的《宝可梦 究极之日》基础版可执行文件，由拆分出的对象逐字节重建该文件，并替换进两个编译后的小型 C 运行时例程。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/ultrasunnymoon-rea-case/)</sub>
 - [**DX-Ball：借助 REA 并由 Codex 完成的函数级重建**](https://github.com/N0zoM1z0/dx-ball) - 作者让 Codex 通过 REA 的 Ghidra 工具检查英文版 DX-Ball 1.07 可执行文件并恢复为带类型的 C/C++，再用同时代的 Visual C++ 4.0 编译每个函数，在映射重定位后与原文件逐字节比较。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/dx-ball-rea-reconstruction-case/)</sub>
 - [**re2ds：Resident Evil 2 的原生 Nintendo DS 引擎**](https://github.com/eray1605/re2ds) - 在原生 Nintendo DS 引擎中重新实现 Resident Evil 2 PS1 版的游戏规则，并用转换工具把使用者自有光盘中的数据转为 DS 格式。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/re2ds-nds-engine-case/)</sub>
-- [**LASRecomp：《织梦岛》静态重编译案例**](https://github.com/peiikai/LASRecomp) - 通过静态重编译，将 2019 年 Switch 版《塞尔达传说：织梦岛》重建为原生桌面程序。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/lasrecomp/)</sub>
+- [**LASRecomp：《织梦岛》静态重编译案例**](https://github.com/peiikai/LASRecomp) - 通过静态重编译，将 2019 年 Switch 版《塞尔达传说：织梦岛》重建为原生桌面程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lasrecomp/)</sub>
 - [**ArkWeb：双游戏动作与碰撞桥接实验**](https://github.com/luki-1/ArkWeb) - 同时运行《漫威蜘蛛侠：重制版》与《蝙蝠侠：阿卡姆骑士》，将哥谭碰撞数据传入蜘蛛侠的物理世界，再将其渲染画面合成到阿卡姆中。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/arkweb-two-game-case/)</sub>
 - [**Perfect Dark：生成一致 ROM 的 Nintendo 64 反编译重建**](https://github.com/n64decomp/perfect_dark) - 重建 Perfect Dark 的 Nintendo 64 代码，并提供生成一致 ROM 的构建流程。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/perfect-dark-matching-decomp-case/)</sub>
 - [**Super Mario Sunshine：基于 AI 辅助反编译的原生 PC 移植**](https://github.com/chasem-dev/sms-pc-port) - 以固定版本的一致性反编译分支为基础，构建 Super Mario Sunshine 北美版的原生 PC 移植，并为图形、光盘、音频、输入和系统服务提供宿主平台层。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sms-pc-port-case/)</sub>
@@ -428,7 +428,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Capstone**](https://github.com/capstone-engine/capstone) - 提供统一 API 和指令细节的多架构反汇编库，适合构建自定义二进制分析流程。 <sub>工具 · 程序库 · [完整条目](https://awesomerea.org/zh/resources/capstone/)</sub>
 - [**ImHex**](https://github.com/WerWolv/ImHex) - 带二进制模式语言、结构化数据检查及可视化功能的十六进制编辑器，适合理解文件格式。 <sub>工具 · 也适用：游戏、固件 · [完整条目](https://awesomerea.org/zh/resources/imhex/)</sub>
 - [**x64dbg**](https://github.com/x64dbg/x64dbg) - Windows 二进制调试器，通过反汇编、内存视图和插件分析没有源码的程序。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/x64dbg/)</sub>
-- [**GDB**](https://sourceware.org/gdb/) - 支持本地与远程调试，可控制执行并检查运行中或崩溃后的程序状态。 <sub>工具 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/gdb/)</sub>
+- [**GDB**](https://sourceware.org/gdb/) - 支持本地与远程调试，可控制执行并检查运行中或崩溃后的程序状态。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/gdb/)</sub>
 - [**rr**](https://github.com/rr-debugger/rr) - 记录进程执行并在 GDB 下重放，便于重复检查现场和反向执行。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/rr/)</sub>
 - [**Diaphora**](https://github.com/joxeankoret/diaphora) - 基于 IDA 的二进制差异分析工具，可匹配函数并迁移名称、注释与类型信息。 <sub>工具 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/diaphora/)</sub>
 - [**BinDiff**](https://github.com/google/bindiff) - 比较反汇编后的二进制文件，定位不同版本中的对应函数与代码变化。 <sub>工具 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/bindiff/)</sub>
@@ -437,7 +437,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Kaitai Struct 二进制格式描述与解析工具**](https://github.com/kaitai-io/kaitai_struct) - 将已描述的二进制布局转换为可复用的文件与网络报文解析器；同一份 .ksy 规范可通过可视化工具检查，并编译为多种语言，便于把逆向获得的格式知识落实为可互操作的实现。 <sub>工具 · 程序库 · 也适用：固件、协议 · [完整条目](https://awesomerea.org/zh/resources/kaitai-struct/)</sub>
 - [**GoReSym Go 符号恢复工具**](https://github.com/mandiant/GoReSym) - 从 Go 二进制中恢复构建元数据、函数名与地址范围、源文件和行号表、内嵌类型及字符串，也可处理已剥离符号以及部分经 UPX 等脱壳后结构异常的样本。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/goresym/)</sub>
 - [**rev.ng 二进制分析框架与反编译器**](https://github.com/revng/revng) - 开源反编译流水线：借助 QEMU 将 x86-64、AArch64、i386、ARM 和 MIPS 代码提升为与架构无关的表示，以 LLVM 进行分析，并输出以合法、可重新编译为设计目标的 C 代码。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/revng/)</sub>
-- [**Rizin 逆向工程框架**](https://github.com/rizinorg/rizin) - 源自 radare2 分支的命令行逆向工程框架。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/rizin/)</sub>
+- [**Rizin 逆向工程框架**](https://github.com/rizinorg/rizin) - 源自 radare2 分支的命令行逆向工程框架。 <sub>工具 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/rizin/)</sub>
 - [**Decompiler Explorer 反编译器对比服务**](https://dogbolt.org) - 位于 dogbolt.org 的网络服务：将上传的单个小型可执行文件交给多款反编译器处理，并排显示它们输出的类 C 代码，自称“反向的 Compiler Explorer”。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/decompiler-explorer/)</sub>
 - [**pwndbg GDB/LLDB 调试增强插件**](https://github.com/pwndbg/pwndbg) - 可加载到 GDB 中、或作为 LLDB 外层 REPL 运行的 Python 插件，使运行中程序的状态更易检查。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/pwndbg/)</sub>
 - [**DynamoRIO 动态二进制插桩框架**](https://github.com/DynamoRIO/dynamorio) - 运行时代码操作系统，用于构建在未修改程序运行期间观察或变换其任意部分的动态工具。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/dynamorio/)</sub>
