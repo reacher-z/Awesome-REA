@@ -7072,5 +7072,14 @@
       "分析需要使用者自己的 CAN 数据：来自自有车辆和接口的日志或实时总线、Panda 设备，或来自自己 comma 设备或 comma connect 账户的 openpilot 行车记录；--demo 则改为打开演示路线。该工具会标出候选位和信号，但不能确定其含义；本次审阅未分析任何抓包数据。",
       "采用 MIT 许可（LICENSE，版权归 Dean Lee，2025）；openpilot-replay 子模块同样为 MIT，data/opendbc 收录 93 个来自 comma.ai MIT 许可 opendbc 的 DBC 文件。所审来源未提及 REA 或 AI 使用，本次也未进行构建。"
     ]
+  },
+  "awesome-re-mcp": {
+    "name": "Awesome RE-MCP 逆向工具 MCP 服务器清单",
+    "requirements": [
+      "全部 7 个提交都在 2025-07-26，此后清单未再变动，因此其中的条目、星标数和状态说明都是 2025 年 7 月的快照。部分“缺失”列表已不再准确：例如它称 WinDbg 尚无 MCP 服务器，而本合集已收录 mcp-windbg。",
+      "每行只有名称、链接和简短说明，未注明实现语言、传输方式、维护状态或许可证，尽管其贡献指南要求提交者注明实现状态和传输方式。调试器部分有一行链接的是 PulseMCP 目录页面而非项目本身。清单链接的服务器中有 8 个已在本合集中收录，包括 GhidraMCP、ReVa、mrexodia 的 ida-pro-mcp、radare2-mcp、LLDB 的 MCP 支持和 Burp Suite MCP Server。",
+      "网络分析与安全测试类条目（例如封装 SQLMap、Nmap 等扫描工具的合集）属于两用工具，使用前应查看各项目自身的文档、适用范围和许可证。清单本身没有测试，也未验证其条目。",
+      "README 称清单以 MIT 许可发布，但仓库没有许可证文件，GitHub 也未识别出许可证。这是独立的发现清单；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
