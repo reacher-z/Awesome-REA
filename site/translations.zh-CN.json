@@ -4509,5 +4509,14 @@
       "书籍链接指向 Amazon 商品页，IDA Pro、Binary Ninja 和 Hopper 为商业产品。Windows 部分还链接了一些较早的内核保护绕过文章，本记录不作进一步介绍。",
       "GitHub 未检测到许可证，仓库也没有许可证文件，因此清单未声明复用条款；所链接的作品保留各自权利。作者表示可通过个人联系页面索取已无法访问的文档副本。清单中未提及 AI 或 REA。"
     ]
+  },
+  "plasma-disassembler": {
+    "name": "PLASMA 交互式反汇编器",
+    "requirements": [
+      "已停止维护：master 分支最后一次提交 ec7df9b 的日期为 2019-03-04，没有发布版本或标签；GitHub 未将该仓库标为归档。README 仍称项目处于大规模开发中，并提醒在实现结构体和类型定义之前，数据库格式可能不兼容。",
+      "需要 Python 3.4+、Capstone（install.sh 从源码构建 4.0-alpha5）、pyelftools、pefile 及 python3-future、msgpack-python 0.4.6+、binutils 中的 c++filt，以及支持 UTF-8 和 256 色的终端；内存映射所需的 python-qt4 和 asm.py 所需的 Keystone 为可选项。Dockerfile 基于 Ubuntu 16.04，这些旧版本依赖未在当前的 Python 或 Capstone 版本上测试。",
+      "make 运行回归测试，将附带测试二进制的输出与预期的 .rev 清单比对；tests/ 中有 96 个小型已编译测试二进制，大多附有 C 源码。分析对象是使用者自己的二进制；本次审阅未分析任何二进制，也未运行测试。",
+      "采用 GPL-3.0；取自 angr cle 项目的重定位定义保留其 BSD 风格许可证。"
+    ]
   }
 }

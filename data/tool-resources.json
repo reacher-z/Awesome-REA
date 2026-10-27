@@ -12422,5 +12422,37 @@
     "additional_evidence_urls": [
       "https://github.com/onethawt/reverseengineering-reading-list/blob/a1ee767b5cf8504c398763b2b6304c20507ef1e3/malwareanalysis.md"
     ]
+  },
+  {
+    "id": "plasma-disassembler",
+    "name": "PLASMA",
+    "url": "https://github.com/plasma-disassembler/plasma",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Interactive terminal disassembler, formerly named Reverse, for x86 and x86-64 with partial ARM and MIPS/MIPS64 support, reading ELF, PE and raw binaries. Its visual mode shows functions as indented, colored pseudo-code and lets the analyst reshape the flow by inverting conditional jumps, while a Python API runs scripts for strings, cross-reference call graphs, crypto-constant detection and Keystone assembly. Development stopped in 2019, and the repository has no releases.",
+    "description_zh": "交互式终端反汇编器，旧名 Reverse，支持 x86 与 x86-64，并部分支持 ARM 和 MIPS/MIPS64，可读取 ELF、PE 和原始二进制。其可视化模式以缩进、着色的伪代码显示函数，分析者可通过反转条件跳转来调整控制流；Python API 可运行脚本，用于提取字符串、生成交叉引用调用图、检测加密常量以及调用 Keystone 汇编。项目自 2019 年起停止开发，仓库没有发布版本。",
+    "evidence_url": "https://github.com/plasma-disassembler/plasma/blob/ec7df9b2b9b356dd5d8caf01b7e68c0ab5a1ef42/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Inactive: the last commit on master, ec7df9b, is dated 2019-03-04, and there are no releases or tags; GitHub does not mark the repository archived. The README still describes the project as in heavy development and warns that the database format may break until structures and type definitions are implemented.",
+      "Requires Python 3.4+, Capstone (install.sh builds 4.0-alpha5 from source), pyelftools, pefile with python3-future, msgpack-python 0.4.6+, c++filt from binutils and a UTF-8, 256-colour terminal; python-qt4 for the memory map and Keystone for asm.py are optional. The Dockerfile builds on Ubuntu 16.04, and these old pins were not tested with current Python or Capstone releases.",
+      "make runs the regression suite, comparing output for the bundled test binaries with expected .rev listings; tests/ holds 96 small compiled test binaries, most next to their C sources. Analysis inputs are the user's own binaries; no binary was analysed and no test was run in this review.",
+      "GPL-3.0; the relocation definitions taken from angr's cle keep their BSD-style license."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/plasma-disassembler/plasma/blob/ec7df9b2b9b356dd5d8caf01b7e68c0ab5a1ef42/install.sh",
+      "https://github.com/plasma-disassembler/plasma/blob/ec7df9b2b9b356dd5d8caf01b7e68c0ab5a1ef42/requirements.txt",
+      "https://github.com/plasma-disassembler/plasma/blob/ec7df9b2b9b356dd5d8caf01b7e68c0ab5a1ef42/Dockerfile",
+      "https://github.com/plasma-disassembler/plasma/blob/ec7df9b2b9b356dd5d8caf01b7e68c0ab5a1ef42/Makefile",
+      "https://github.com/plasma-disassembler/plasma/tree/ec7df9b2b9b356dd5d8caf01b7e68c0ab5a1ef42/tests",
+      "https://github.com/plasma-disassembler/plasma/tree/ec7df9b2b9b356dd5d8caf01b7e68c0ab5a1ef42/plasma/scripts",
+      "https://github.com/plasma-disassembler/plasma/blob/ec7df9b2b9b356dd5d8caf01b7e68c0ab5a1ef42/plasma/lib/fileformat/relocations/LICENSE",
+      "https://github.com/plasma-disassembler/plasma/blob/ec7df9b2b9b356dd5d8caf01b7e68c0ab5a1ef42/LICENSE"
+    ]
   }
 ]
