@@ -80,10 +80,10 @@ def repository_card(record: dict, language: str, use_pro: bool) -> str:
     if not isinstance(license_name, str) or not license_name.strip() or license_name.upper() == 'NOASSERTION':
         license_name = '许可证未识别' if zh else 'License not identified'
     return f'''<article class="source-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}">
-  <div class="source-card-head"><h2><a class="source-title-link" href="{external_url(record['url'])}" target="_blank" rel="noopener">{title}{icon('external', use_pro)}</a></h2>{star_html}</div>
+  <div class="source-card-head"><h2><a class="source-title-link" href="{external_url(record['url'])}" target="_blank" rel="noopener">{title}{icon('external', use_pro)}</a></h2></div>
   <p class="source-card-description">{escape(description)}</p>
 {related_links(record, language)}
-  <div class="source-card-footer"><a href="{external_url(record.get('readme_url') or record['url'])}" target="_blank" rel="noopener">README ↗</a><span class="source-card-license">{escape(license_name)}</span></div>
+  <div class="source-card-footer">{star_html}<a href="{external_url(record.get('readme_url') or record['url'])}" target="_blank" rel="noopener">README ↗</a><span class="source-card-license">{escape(license_name)}</span></div>
 </article>'''
 
 

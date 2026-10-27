@@ -37,7 +37,20 @@
 .browse-repository h2{flex:1;min-width:0;margin:0;font:700 18px/1.5 var(--sans);letter-spacing:0;overflow-wrap:anywhere}
 .browse-github-fallback{font:700 12px/22px var(--sans);text-align:center}
 .browse-text-arrow{display:inline-block;margin-left:6px;font-size:13px;color:var(--steel)}
-.browse-repository .source-card-footer{margin-top:18px;padding-top:13px;border-top:1px solid var(--line)}
+/* Repository cards stay compact: tighter padding and type, related entries on one labelled line, and
+   stars, README and license on one plain meta line instead of a ruled footer. */
+.source-card.browse-repository{padding:14px 20px}
+.source-card.browse-repository h2{line-height:1.4}
+.source-card.browse-repository .source-card-description{max-width:none;margin:4px 0 0;font-size:15px;line-height:1.65}
+.source-card.browse-repository .source-related{gap:2px;margin:4px 0 0}
+.source-card.browse-repository .source-related-group{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 8px}
+.source-card.browse-repository .source-related-label{display:inline;margin:0;line-height:1.6}
+.source-card.browse-repository .source-related-label::after{content:":"}
+html[lang="zh-CN"] .source-card.browse-repository .source-related-label::after{content:"："}
+.source-card.browse-repository .source-related-links{display:flex;flex-wrap:wrap;gap:0 14px}
+.source-card.browse-repository .source-related-link{line-height:1.6}
+.browse-repository .source-card-footer{margin-top:4px;line-height:1.6}
+.browse-repository .source-card-footer .source-stars{padding:0;border:0;background:none;font-size:14px;line-height:1.6;color:var(--muted)}
 /* Scope static reading rules here; homepage cards keep their own layout. */
 .browse-main .card-description,.browse-main .source-card-description{max-width:68ch;font-size:16px;line-height:1.8;color:var(--body)}
 /* Links inside static card prose (the /about/ cards) need more than colour to read as links. */
@@ -50,8 +63,8 @@
 .browse-main .requirements ul a{color:var(--link);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 .browse-main .requirements summary{min-height:44px;padding:10px 0;font-size:15px;line-height:1.6;color:var(--link)}
 html[lang="zh-CN"] .browse-main .card-description,html[lang="zh-CN"] .browse-main .source-card-description,html[lang="zh-CN"] .browse-main .requirements ul{max-width:36em;line-height:1.85}
+html[lang="zh-CN"] .source-card.browse-repository .source-card-description{max-width:none;line-height:1.7}
 @media(max-width:1050px){.browse-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:900px){.browse-repository h2{flex-basis:100%}}
 @media(max-width:700px){
   .browse-breadcrumbs{margin-top:20px}
   .browse-intro{padding:22px 0}
@@ -62,7 +75,7 @@ html[lang="zh-CN"] .browse-main .card-description,html[lang="zh-CN"] .browse-mai
   .browse-category-card{min-height:108px;padding:20px}
   .browse-category-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding-top:16px;padding-bottom:8px}
   .browse-category-nav a{min-width:0;white-space:normal;justify-content:space-between;font-size:14px;line-height:1.5;padding:8px 10px}.browse-category-nav a span{flex-shrink:0}
-  .browse-repository h2{flex-basis:auto}
+  .source-card.browse-repository{padding:14px 16px}
 }
 
 .browse-category-nav a{min-height:44px}
