@@ -12487,5 +12487,32 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "xiaomi-kettle-ble-protocol-case",
+    "name": "Xiaomi Kettle BLE protocol: reconstructing a smart kettle's control interface",
+    "url": "https://github.com/anna-oake/xiaomi-kettle",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Documents the closed Bluetooth Low Energy GATT protocol of the Xiaomi Kettle, which the author reconstructed by decompiling the Mi Home Android app and disassembling its native encryption library. The write-up covers the connection and authentication handshake, the layout of status notifications and the writable settings characteristics, with a small Go reimplementation of the cipher helpers. The author built a kettle-to-MQTT bridge for Home Assistant from it but did not publish that code, and gives no guarantee that the notes work for others.",
+    "description_zh": "记录 Xiaomi 电水壶封闭的低功耗蓝牙 GATT 协议；作者通过反编译 Mi Home Android 应用并反汇编其负责加密的原生库重建了该协议。文档涵盖连接与认证握手、状态通知的数据布局以及可写入的设置特征值，并附有用 Go 重新实现的少量加密辅助函数。作者据此开发了接入 Home Assistant 的水壶–MQTT 桥接程序，但未公开其代码，也不保证这些笔记对他人同样适用。",
+    "evidence_url": "https://github.com/anna-oake/xiaomi-kettle/blob/fbc0b513bed9fbe08edaa97d33e2e12e04d02544/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the final commit of 2018-11-29; the repository is archived and consists of a README and one Go file. README says the kettle is built on a QN9020 MCU, and it names no specific model or firmware version.",
+      "Applying the notes needs the user's own kettle and any BLE library that can read, write and subscribe to characteristics; the author used Go with currantlabs/ble. The Mi Home app, its native library and any decompiled output are not included, and the handshake uses a token the client generates itself, so no vendor key is committed or needed.",
+      "README lists device limits it observed: heating cannot be started over BLE unless Keep Warm mode is already active, Keep Warm can only be re-enabled with the physical button, and its time limit tops out at 12 hours.",
+      "cipher.go contains only the cipher and byte-mixing helpers, not a client. There are no tests, captures or verification records, so the protocol description is author-reported; the README credits jadx-gui and IDA Pro, and this review ran neither the code nor a kettle.",
+      "WTFPL version 2 (LICENSE.txt). Xiaomi and Mi Home remain trademarks of their owner, and the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/anna-oake/xiaomi-kettle/blob/fbc0b513bed9fbe08edaa97d33e2e12e04d02544/cipher.go",
+      "https://github.com/anna-oake/xiaomi-kettle/blob/fbc0b513bed9fbe08edaa97d33e2e12e04d02544/LICENSE.txt"
+    ]
   }
 ]
