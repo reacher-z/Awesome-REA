@@ -12616,5 +12616,41 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "ktool",
+    "name": "ktool",
+    "url": "https://github.com/0cyn/ktool",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Pure-Python toolkit for static Mach-O and Objective-C analysis, used as the ktool command line, a terminal browser (ktool open) or a library, with no compiled dependencies. Its commands print load commands, linked libraries, symbol tables, imports and exports, Objective-C classes and protocols, Swift types, function starts and code-signing entitlements, and dump reconstructed Objective-C headers or .tbd stubs. It can also list and extract kexts from kernel caches, split and combine fat binaries, change install names and insert load commands.",
+    "description_zh": "纯 Python 编写的 Mach-O 与 Objective-C 静态分析工具包，可作为 ktool 命令行、终端浏览界面（ktool open）或程序库使用，没有需要编译的依赖。其命令可列出加载命令、链接库、符号表、导入与导出符号、Objective-C 类和协议、Swift 类型、函数起始地址以及代码签名权限（entitlements），并可导出重建的 Objective-C 头文件或 .tbd 存根。它还能列出并提取内核缓存中的 kext，拆分和合并 fat 二进制文件，修改安装名并插入加载命令。",
+    "evidence_url": "https://github.com/0cyn/ktool/blob/faed829b838dc4060b7e36f90239a52cd37f2a45/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest PyPI release at review: k2l 2.0.0, uploaded 2024-01-10 and also tagged on GitHub. The reviewed master head of 2026-03-07 declares version 2.1.2 in pyproject.toml, which has not been published. The README marks the terminal GUI as still in active development and lists file and img4 utilities that the reviewed command parser does not define.",
+      "Install with pip install k2l: the package requires Python 3.6.2 or later, depends on Pygments and adds windows-curses on Windows. The README reports running it on Windows, macOS, Linux (including ARM64), iOS through iSH, Android through Termux, WebAssembly and Brython. Unless KTOOL_NO_UPDATE_CHECK is set, each run asks PyPI for a newer k2l in a background thread.",
+      "Inputs are Mach-O files, fat binaries or kernel caches the user supplies; the repository commits no Mach-O binaries. tests/src holds two small Objective-C test sources, an entitlements plist and libSystem.tbd, a text-based stub of the watchOS libSystem export list of the kind found in Apple's SDKs, used to link the arm64_32 test build; tests/build.ninja compiles the test binaries locally with Xcode's clang, lipo and codesign.",
+      "The macOS GitHub Actions workflow builds those test binaries, runs tests/unit.py and exercises the insert, edit, lipo, dump and symbols commands; its run on the reviewed commit failed.",
+      "MIT (LICENSE, copyright 2021 _kritanta). EXTERNAL_LICENSES notes that the chained-fixup code is based on the author's code for Binary Ninja's Mach-O view plugin and includes an Apache-2.0 license for it. The reviewed sources mention no AI or REA use, and nothing was installed or run for this record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/0cyn/ktool/blob/faed829b838dc4060b7e36f90239a52cd37f2a45/pyproject.toml",
+      "https://github.com/0cyn/ktool/blob/faed829b838dc4060b7e36f90239a52cd37f2a45/src/ktool/ktool_script.py",
+      "https://github.com/0cyn/ktool/tree/faed829b838dc4060b7e36f90239a52cd37f2a45/tests/src",
+      "https://github.com/0cyn/ktool/blob/faed829b838dc4060b7e36f90239a52cd37f2a45/tests/build.ninja",
+      "https://github.com/0cyn/ktool/blob/faed829b838dc4060b7e36f90239a52cd37f2a45/.github/workflows/tests.yml",
+      "https://github.com/0cyn/ktool/blob/faed829b838dc4060b7e36f90239a52cd37f2a45/LICENSE",
+      "https://github.com/0cyn/ktool/blob/faed829b838dc4060b7e36f90239a52cd37f2a45/EXTERNAL_LICENSES/README.md",
+      "https://github.com/0cyn/ktool/releases/tag/2.0.0",
+      "https://pypi.org/project/k2l/2.0.0/",
+      "https://github.com/0cyn/ktool/actions/runs/22801141527"
+    ]
   }
 ]
