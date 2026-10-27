@@ -12487,5 +12487,36 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "doldrums",
+    "name": "Doldrums",
+    "url": "https://github.com/rscloura/Doldrums",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Python parser for the Dart AOT snapshots inside libapp.so, the compiled Dart code of an Android Flutter app. It finds the VM and isolate snapshot symbols with pyelftools, deserializes the snapshot clusters and writes a text dump of every class in the isolate snapshot, with fields, method signatures and each method's absolute code offset in libapp.so. It recovers declarations and offsets for further disassembly, not decompiled function bodies.",
+    "description_zh": "用 Python 编写的解析器，处理 Android Flutter 应用中存放编译后 Dart 代码的 libapp.so 里的 Dart AOT 快照。它借助 pyelftools 定位 VM 与 isolate 快照符号，反序列化快照中的各个簇（cluster），并把 isolate 快照中的全部类导出为文本，列出字段、方法签名以及每个方法在 libapp.so 中的绝对代码偏移。它恢复的是声明和偏移，供进一步反汇编使用，并不反编译函数体。",
+    "evidence_url": "https://github.com/rscloura/Doldrums/blob/7430196818673ca5c5e10d65685e2b4a8de38dbb/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main commit 7430196 (2022-05-01), the last push; there are no releases, and the README calls the tool beta and still missing some deserialization routines and class information. main.py accepts only the snapshot hashes of Dart 2.10 and Dart 2.12, rejects Dart 2.13 as work in progress and any other SDK as unsupported, so apps built with newer Dart releases are out of scope.",
+      "Input is the libapp.so ELF of an Android Flutter app the user may analyze, with its _kDartVmSnapshot* and _kDartIsolateSnapshot* symbols. The tests directory commits Dart 2.10 libapp.so builds of a small sample counter app (package sandbox_flutter) for arm64-v8a, armv7 and x64, plus text dumps of the arm64 and x64 builds as reference output; there is no test runner.",
+      "Runs as python3 src/main.py [-v] libapp.so output with pyelftools as the only dependency; there is no packaging or declared Python version. The README notes that the verbose option works only for Dart 2.12 snapshots, and that darter is a fully tested parser for the older Dart 2.5.",
+      "The author's blog post documents the snapshot format the parser follows. No license file is present and GitHub detects none, so reuse terms are unstated. This review ran nothing and analyzed no apps."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/rscloura/Doldrums/blob/7430196818673ca5c5e10d65685e2b4a8de38dbb/src/main.py",
+      "https://github.com/rscloura/Doldrums/blob/7430196818673ca5c5e10d65685e2b4a8de38dbb/src/BaseConstants.py",
+      "https://github.com/rscloura/Doldrums/blob/7430196818673ca5c5e10d65685e2b4a8de38dbb/src/v2_12/Snapshot.py",
+      "https://github.com/rscloura/Doldrums/blob/7430196818673ca5c5e10d65685e2b4a8de38dbb/src/v2_12/Resolver.py",
+      "https://github.com/rscloura/Doldrums/tree/7430196818673ca5c5e10d65685e2b4a8de38dbb/tests",
+      "https://rloura.wordpress.com/2020/12/04/reversing-flutter-for-android-wip/"
+    ]
   }
 ]
