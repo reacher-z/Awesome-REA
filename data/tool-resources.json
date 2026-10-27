@@ -12548,5 +12548,40 @@
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/package.json",
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/.travis.yml"
     ]
+  },
+  {
+    "id": "mirage-wireless-framework",
+    "name": "Mirage",
+    "url": "https://github.com/RCayre/mirage",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Python framework from IoT-security research at LAAS-CNRS for analysing wireless communications, with lightweight protocol stacks for Bluetooth Low Energy, Bluetooth, Enhanced ShockBurst, Mosart, Zigbee, Wi-Fi and infrared that a command-line interpreter drives through chainable modules. For protocol analysis it offers per-protocol scan, information and sniffing modules, BLE ATT/GATT discovery that saves the discovered attribute table, HCI monitoring of an Android phone through its btsnoop log over ADB, PCAP reading and writing, and an experimental HackRF software-radio receive path with FSK demodulators and BLE and Zigbee decoders. Its author has deprecated it in favour of the WHAD tool suite.",
+    "description_zh": "源自 LAAS-CNRS 物联网安全研究的 Python 无线通信分析框架，内置低功耗蓝牙（BLE）、经典蓝牙、Enhanced ShockBurst、Mosart、Zigbee、Wi-Fi 和红外等轻量协议栈，由命令行解释器调用可串联的模块。用于协议分析时，它为各协议提供扫描、信息查询和嗅探模块，可发现 BLE 的 ATT/GATT 层并保存所得属性表，可通过 ADB 读取 Android 手机的 btsnoop 日志来监视 HCI 通信，支持读写 PCAP，并提供基于 HackRF 的实验性软件无线电接收路径，包含 FSK 解调器以及 BLE 和 Zigbee 解码器。作者已宣布弃用该项目，转而开发 WHAD 工具集。",
+    "evidence_url": "https://github.com/RCayre/mirage/blob/b6cd39eb779a94a11ebf9f7cba4e77435d885434/readme.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Version 1.2 according to mirage/__init__.py; the repository has no tags or GitHub releases. The README, last edited 2025-04-13 at the reviewed commit, declares the project officially deprecated and no longer maintained and points to its successor WHAD (whad-team/whad-client); the last code change is from 2022-11-24. It installs from this source tree with setup.py, since the PyPI package named mirage is an unrelated JWST data simulator.",
+      "setup.py depends on scapy, pyusb, pyserial, pycryptodomex, keyboard, psutil, terminaltables and matplotlib, and its classifiers list Python 3.6 and Linux. Live capture needs supported radio hardware: Bluetooth HCI adapters, a BBC micro:bit running BTLEJack firmware, Nordic and Sniffle sniffers, Ubertooth, a Crazyradio PA for Enhanced ShockBurst and Mosart, an RZUSBStick for Zigbee, a Wi-Fi interface, the IRma infrared device, a ButteRFly nRF52840 dongle or a HackRF One for the experimental SDR path. Their firmware lives in separate repositories; this repository holds only Python sources and no firmware images.",
+      "Without radio hardware, PCAP files serve as input interfaces (BLE link-layer PCAPs use DLT 256), and the ADB and hcidump interfaces read HCI traffic recorded on an Android phone or Linux host. The documentation site linked from the README returned HTTP 404 at review; its Sphinx sources are on the LAAS Redmine.",
+      "The README and setup.py describe Mirage as an offensive framework whose modules and example scenarios also cover man-in-the-middle, jamming, hijacking, cloning and injection, including experimental InjectaBLE attacks; this record covers only the scanning, sniffing, dissection and information-gathering features and does not document the others. Capture only devices and networks you are authorised to observe.",
+      "MIT (LICENSE.txt, copyright 2019 Romain Cayre). The README cites SSTIC 2019 and IEEE ISSRE 2019 papers describing the framework. No hardware was used and nothing was installed or run in this review; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/RCayre/mirage/blob/b6cd39eb779a94a11ebf9f7cba4e77435d885434/setup.py",
+      "https://github.com/RCayre/mirage/blob/b6cd39eb779a94a11ebf9f7cba4e77435d885434/CHANGELOG.md",
+      "https://github.com/RCayre/mirage/blob/b6cd39eb779a94a11ebf9f7cba4e77435d885434/mirage/__init__.py",
+      "https://github.com/RCayre/mirage/tree/b6cd39eb779a94a11ebf9f7cba4e77435d885434/mirage/modules",
+      "https://github.com/RCayre/mirage/blob/b6cd39eb779a94a11ebf9f7cba4e77435d885434/mirage/modules/ble_discover.py",
+      "https://github.com/RCayre/mirage/blob/b6cd39eb779a94a11ebf9f7cba4e77435d885434/mirage/libs/ble_utils/adb.py",
+      "https://github.com/RCayre/mirage/blob/b6cd39eb779a94a11ebf9f7cba4e77435d885434/mirage/libs/wireless_utils/pcapDevice.py",
+      "https://github.com/RCayre/mirage/blob/b6cd39eb779a94a11ebf9f7cba4e77435d885434/mirage/libs/ble_utils/pcap.py",
+      "https://github.com/RCayre/mirage/blob/b6cd39eb779a94a11ebf9f7cba4e77435d885434/LICENSE.txt",
+      "https://hal.science/hal-02346074"
+    ]
   }
 ]

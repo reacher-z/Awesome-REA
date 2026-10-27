@@ -4547,5 +4547,15 @@
       "“练习”部分把 crackme 和 CTF 网站与公开的恶意软件样本库并列，只附有一句注意恶意软件的提醒；“Mac 解密”部分只列出工具名称，未说明用法。本记录仅把该清单视为分析资源目录。",
       "package.json 和 .travis.yml 在 Travis CI 上以 Node.js 8 配置了 remark-lint 检查，涵盖列表顺序、重复链接和失效链接。GitHub 未检测到许可证，仓库没有许可证文件，package.json 的 license 字段也为空，因此清单未声明复用条款；所链接的工具和书籍保留各自条款。这是独立的发现清单；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "mirage-wireless-framework": {
+    "name": "Mirage 无线通信分析框架",
+    "requirements": [
+      "据 mirage/__init__.py，版本为 1.2；仓库没有标签或 GitHub 发布版本。README 于所审提交（2025-04-13）最后修改，宣布项目正式弃用、不再维护，并指向后继项目 WHAD（whad-team/whad-client）；最后一次代码改动在 2022-11-24。需从本源码树用 setup.py 安装，因为 PyPI 上名为 mirage 的包是无关的 JWST 数据模拟器。",
+      "setup.py 依赖 scapy、pyusb、pyserial、pycryptodomex、keyboard、psutil、terminaltables 和 matplotlib，分类信息列出 Python 3.6 与 Linux。实时采集需要受支持的无线电硬件：蓝牙 HCI 适配器、运行 BTLEJack 固件的 BBC micro:bit、Nordic 与 Sniffle 嗅探器、Ubertooth、用于 Enhanced ShockBurst 和 Mosart 的 Crazyradio PA、用于 Zigbee 的 RZUSBStick、Wi-Fi 网卡、IRma 红外设备、ButteRFly nRF52840 加密狗，或用于实验性软件无线电路径的 HackRF One。这些设备的固件在其他仓库中；本仓库只有 Python 源码，不含固件镜像。",
+      "没有无线电硬件时，可把 PCAP 文件当作输入接口（BLE 链路层 PCAP 使用 DLT 256），ADB 与 hcidump 接口则读取 Android 手机或 Linux 主机记录的 HCI 通信。README 链接的文档网站在审阅时返回 HTTP 404；其 Sphinx 源文件位于 LAAS 的 Redmine。",
+      "README 和 setup.py 称 Mirage 为攻击性框架，其模块和示例场景还涉及中间人、干扰、劫持、克隆和注入，包括实验性的 InjectaBLE 攻击；本条目只涵盖扫描、嗅探、解析和信息收集功能，不介绍其他部分。只应采集自己有权观察的设备和网络。",
+      "MIT 许可（LICENSE.txt，版权 2019 Romain Cayre）。README 引用了介绍该框架的 SSTIC 2019 和 IEEE ISSRE 2019 论文。本次审阅未使用任何硬件，也未安装或运行；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
