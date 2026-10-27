@@ -7859,5 +7859,14 @@
       "笔记本只涉及报文类型聚类，不包括字段、语义或状态机推断。其中标为 K-Means 的结果用 K-means 肘部法确定聚类数，实际却用凝聚聚类完成聚类；保存的输出只显示一次 GSM 运行。准确率数据来自论文，本合集未复现，撰写本记录时也未运行任何单元格。",
       "GitHub 未检测到许可证，仓库也没有许可证文件，因此代码和预处理数据集均未声明复用条款；论文的许可只适用于文章本身，不适用于仓库，捕获流量遵循其来源的条款。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "termshark": {
+    "name": "termshark tshark 终端界面",
+    "requirements": [
+      "审阅时最新版本为 v2.4.0，发布于 2022-07-11，提供 Linux（x64、arm64、armv6）、macOS（x64、arm64）、FreeBSD、NetBSD、OpenBSD 和 Windows x64 构建。README 还列出了 Arch、Debian、FreeBSD、Homebrew、MacPorts、Kali、NixOS、Snapcraft、Termux 和 Ubuntu 软件包。所审阅的 master 提交（2022-11-01）比该版本多 14 个提交，其中包括尚未发布的十六进制视图导航改进；此后 master 再无新提交。",
+      "运行时需要 PATH 中有 Wireshark 的 tshark（1.10.2 或更高版本），因为 termshark 的全部数据包分析都依赖它，能解析哪些协议也取决于所安装的 tshark。实时抓包使用 dumpcap，只能在用户有抓包权限的环境中进行。抓到的数据包默认保存在用户的缓存目录中（Linux 上为 .cache/termshark/pcaps），也可用 -w 指定文件。通过 SSH 把数据包复制到剪贴板时，需要 X11 转发或自定义复制命令。",
+      "可用 go install 构建为单个 Go 可执行文件（模块为 github.com/gcla/termshark/v2，go.mod 声明 Go 1.13）。除主题文件外，仓库只提交了少量小型测试抓包文件（pkg/pcap/testdata 和 scripts/pcaps/telnet-cooked.pcap）。",
+      "采用 MIT 许可。README 指出，tshark 的许多功能 termshark 尚未提供。本次未安装该工具，也未读取或抓取任何数据包。"
+    ]
   }
 }
