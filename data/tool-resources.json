@@ -11831,5 +11831,38 @@
       "https://github.com/ohos-decompiler/abcde",
       "https://github.com/ohos-decompiler/abc-decompiler/issues/6"
     ]
+  },
+  {
+    "id": "autoprober",
+    "name": "AutoProber",
+    "url": "https://github.com/GainSec/AutoProber",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Flying-probe control stack meant to let a coding agent or an operator take a circuit board on a GRBL 3018-style CNC from locating it on the plate, through XYZ-tagged USB-microscope frames and an annotated map of pads, pins and chips, to probing targets the operator has approved. Python wrappers, a Flask dashboard and AGENTS.md safety rules run every move under an oscilloscope-monitored optical endstop that triggers feed hold and a STOP state with no automatic recovery. The published code covers device control, camera-to-motion calibration and map and probe-candidate review; the README presents locating, stitching and annotating the board as agent tasks.",
+    "description_zh": "飞针探测控制套件，旨在让编程智能体或操作员在 GRBL 3018 型 CNC 上处理电路板：先在平台上定位电路板，再拍摄带 XYZ 坐标的 USB 显微镜画面并生成标注焊盘、引脚和芯片的地图，最后探测经操作员批准的目标点。Python 封装、Flask 仪表盘和 AGENTS.md 安全规则让每次移动都处于示波器监测的光电限位之下，一旦触发即暂停进给并进入 STOP 状态，不会自动恢复。公开的代码涵盖设备控制、相机与运动的标定，以及地图和探测候选点的审核；README 把定位、拼接和标注电路板描述为智能体的任务。",
+    "evidence_url": "https://github.com/GainSec/AutoProber/blob/ff0e01fe556c7e183d46462dbc1ebce7b6a10e74/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls the reviewed commit ff0e01f (\"1st Release\", 2026-04-16) a source-available release candidate; pyproject.toml declares version 0.1.0, no releases are published, and the RELEASE_MANIFEST.md the README cites is not in the repository. There have been no commits since.",
+      "The tested hardware is a GRBL-compatible 3018-style CNC over USB serial, a UVC USB microscope served by mjpg_streamer, a Siglent oscilloscope over LAN/SCPI (Channel 4 for the optical endstop, Channel 1 for pogo-probe measurement), an optical endstop on an external 5 V supply, an optional Matter power strip controlled through chip-tool, and the 3D-printed toolhead parts in cad/. docs/BOM.md lists the parts.",
+      "Runs on a Linux control host with Python 3.8+ via uv; pyproject.toml declares only Flask and pyserial, while the calibration script also imports OpenCV. Lab hosts, ports and paths come from environment variables in the example config. README says calibration must be generated on the machine that moves and the microscope-to-probe offset measured before real probing, and that the dashboard must not be exposed to untrusted networks. No automated tests are published.",
+      "Works with whatever agent the operator uses: README has it ingest the project and drive the dashboard or Python scripts, and AGENTS.md sets the safety rules; no MCP server or specific agent is bundled. README limits use to equipment and targets the user is authorized to test, and this review moved no hardware.",
+      "PolyForm Noncommercial 1.0.0 with a required copyright notice for GainSec; commercial use needs a separate paid license. No REA use is stated."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/GainSec/AutoProber/blob/ff0e01fe556c7e183d46462dbc1ebce7b6a10e74/AGENTS.md",
+      "https://github.com/GainSec/AutoProber/blob/ff0e01fe556c7e183d46462dbc1ebce7b6a10e74/docs/BOM.md",
+      "https://github.com/GainSec/AutoProber/blob/ff0e01fe556c7e183d46462dbc1ebce7b6a10e74/docs/safety.md",
+      "https://github.com/GainSec/AutoProber/blob/ff0e01fe556c7e183d46462dbc1ebce7b6a10e74/autoprober/safety.py",
+      "https://github.com/GainSec/AutoProber/blob/ff0e01fe556c7e183d46462dbc1ebce7b6a10e74/apps/calibrate.py",
+      "https://github.com/GainSec/AutoProber/blob/ff0e01fe556c7e183d46462dbc1ebce7b6a10e74/apps/dashboard.py",
+      "https://github.com/GainSec/AutoProber/blob/ff0e01fe556c7e183d46462dbc1ebce7b6a10e74/pyproject.toml",
+      "https://github.com/GainSec/AutoProber/blob/ff0e01fe556c7e183d46462dbc1ebce7b6a10e74/LICENSE"
+    ]
   }
 ]

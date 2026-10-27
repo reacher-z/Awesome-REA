@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 495](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-495-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 210](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 135](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 496](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-496-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 210](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 135](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-495 项精选资源（210 个案例）· 135 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 492。
+496 项精选资源（210 个案例）· 135 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 493。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (135) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (135) · [智能体与 MCP](#agents-and-mcp) (45) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -586,6 +586,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**DeepExtract：把 PE 文件导出给 AI 智能体的 IDA 插件**](https://github.com/marcosd4h/DeepExtractIDA) - IDA Pro 9.x 插件与 PowerShell 批量提取脚本，可把 Windows PE 文件转换为 AI 编程智能体能够读取的材料：每个二进制文件对应一个 SQLite 数据库，内含 PE 元数据、函数签名、反汇编、Hex-Rays 伪代码、交叉引用、字符串、栈帧、循环与危险 API 调用；还可选择输出分组的 C++ 与汇编文件，每个函数附带调用者、被调者与字符串信息头，并生成 JSON 索引。 <sub>集成 · 独立智能体 · 目标：二进制 · [完整条目](https://awesomerea.org/zh/resources/deepextract-ida/)</sub>
 - [**Mizuchi 匹配反编译流水线**](https://github.com/macabeus/mizuchi) - 面向匹配反编译的插件式流水线，在现有反编译项目中逐个处理函数：m2c 生成 C 初稿，decomp-permuter 对其做变异，Claude 借助编译并比对的工具改写代码，只有编译出的目标文件与目标汇编一致时才由 objdiff 判定通过。 <sub>集成 · 独立智能体 · 目标：游戏、二进制 · [完整条目](https://awesomerea.org/zh/resources/mizuchi-matching-decompilation-pipeline/)</sub>
 - [**ReAgent C/C++ 函数重建智能体**](https://github.com/Dryxio/reagent) - 开源 Python 智能体，以 auto-re-agent 之名发布于 PyPI。 <sub>集成 · 独立智能体 · 目标：游戏、二进制 · [完整条目](https://awesomerea.org/zh/resources/reagent-cpp-reconstruction-agent/)</sub>
+- [**AutoProber 飞针探测自动化套件**](https://github.com/GainSec/AutoProber) - 飞针探测控制套件，旨在让编程智能体或操作员在 GRBL 3018 型 CNC 上处理电路板：先在平台上定位电路板，再拍摄带 XYZ 坐标的 USB 显微镜画面并生成标注焊盘、引脚和芯片的地图，最后探测经操作员批准的目标点。 <sub>集成 · 独立智能体 · 目标：固件 · [完整条目](https://awesomerea.org/zh/resources/autoprober/)</sub>
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集
