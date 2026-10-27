@@ -12521,5 +12521,38 @@
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/tree/b372420e1e1ff818a8d25ba50f0c71e97e62f138/raw_wild_ir_captures",
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/LICENSE"
     ]
+  },
+  {
+    "id": "tocode",
+    "name": "ToCode",
+    "url": "https://github.com/buzzer-re/ToCode",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "Python CLI that exports a binary, IDA database, Android APK, .NET assembly or whole application folder into a source-like project tree for coding agents: recovered C (Java for APKs, C# and IL for .NET) with matching assembly and function summaries, recovered headers and types, section dumps, JSON indexes of functions, strings, imports, exports, reachability and call-graph clusters, and generated AGENTS.md and CLAUDE.md files. It drives IDA, Binary Ninja, radare2 with r2ghidra or angr, and for folders links each import to the defining file's function using the platform's loader rules. Its tocode mcp server keeps the decompiler open so an agent can record names, types and comments and re-render only the affected files.",
+    "description_zh": "一个 Python 命令行工具，可把二进制、IDA 数据库、Android APK、.NET 程序集或整个应用目录导出为供编码智能体阅读的类源码项目树：还原的 C 代码（APK 为 Java，.NET 为 C# 和 IL）及对应汇编与函数摘要、还原的头文件和类型、节区数据转储，函数、字符串、导入、导出、可达性和调用图聚类的 JSON 索引，以及生成的 AGENTS.md 和 CLAUDE.md。它可调用 IDA、Binary Ninja、配合 r2ghidra 的 radare2 或 angr；处理目录时按各平台加载器规则，把每个导入项链接到定义它的文件中的函数。其 tocode mcp 服务会保持反编译器打开，让智能体记录名称、类型和注释，并只重新生成受影响的文件。",
+    "evidence_url": "https://github.com/buzzer-re/ToCode/blob/216f1f9d808f0c125ef5edb5652021e9c3c96f51/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "PyPI release at review: tocode-cli 0.3.2, uploaded 2026-10-16; the reviewed main commit is a merge commit one commit ahead of tag v0.3.2. The repository was created on 2026-05-20. It needs Python 3.10+ on Windows, Linux or macOS and installs with pip or uv, or with install.sh or install.ps1 from a clone.",
+      "A decompiler backend is not bundled: IDA through the ida-domain and idapro libraries, Binary Ninja headless where the license allows it or through its built-in MCP server or an RPC bridge in a running UI, radare2 with r2ghidra, or the optional angr extra of about 450 MB, whose pseudo-C the README calls lower quality. .NET exports need a .NET 9+ runtime and download dnlib and ICSharpCode.Decompiler from nuget.org after a prompt, checked against pinned SHA-256 hashes; APKs use the droidasc package.",
+      "Supply the binaries or application folders yourself. Exports copy section data, non-code APK entries and native libraries from the input, so they are as sensitive as the analyzed files. The README warns that the Binary Ninja RPC bridge exposes the whole Python VM without authentication and must stay bound to 127.0.0.1.",
+      "The eval directory defines a blind source-recovery benchmark: nine small C programs are built with and without debug info, a headless Claude Code agent restricted to the ToCode MCP server and file tools works on the stripped build, and a judge scores names, types, an LLM grade per function, behavior on test inputs and leakage. No benchmark results are committed; tests use generated fixtures and a fake Binary Ninja module, and the repository commits no binaries.",
+      "MIT (LICENSE, pyproject.toml). tocode skill install adds a workflow skill for Claude Code and Codex. The reviewed sources establish no REA connection, and nothing was exported or run for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/buzzer-re/ToCode/blob/216f1f9d808f0c125ef5edb5652021e9c3c96f51/eval/README.md",
+      "https://github.com/buzzer-re/ToCode/blob/216f1f9d808f0c125ef5edb5652021e9c3c96f51/pyproject.toml",
+      "https://github.com/buzzer-re/ToCode/blob/216f1f9d808f0c125ef5edb5652021e9c3c96f51/DEVELOPMENT.md",
+      "https://github.com/buzzer-re/ToCode/tree/216f1f9d808f0c125ef5edb5652021e9c3c96f51/src/tocode/backends",
+      "https://github.com/buzzer-re/ToCode/blob/216f1f9d808f0c125ef5edb5652021e9c3c96f51/src/tocode/skill/SKILL.md",
+      "https://github.com/buzzer-re/ToCode/blob/216f1f9d808f0c125ef5edb5652021e9c3c96f51/LICENSE",
+      "https://pypi.org/project/tocode-cli/0.3.2/"
+    ]
   }
 ]

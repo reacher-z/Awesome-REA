@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 516](https://img.shields.io/badge/resources-516-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 219](https://img.shields.io/badge/cases-219-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 140](https://img.shields.io/badge/papers-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 517](https://img.shields.io/badge/resources-517-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 219](https://img.shields.io/badge/cases-219-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 140](https://img.shields.io/badge/papers-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-516 curated resources (219 cases) · 140 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 513 because 3 of these appear only under Papers.
+517 curated resources (219 cases) · 140 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 514 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (140) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (38)
+- [Papers](#papers) (140) · [Agents and MCP](#agents-and-mcp) (45) · [References and Learning](#references-and-learning) (38)
 
 **More ways to browse**
 
@@ -597,6 +597,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**DeepExtract (DeepExtractIDA)**](https://github.com/marcosd4h/DeepExtractIDA) - IDA Pro 9.x plugin and PowerShell batch extractor that turn Windows PE files into material AI coding agents can read: a per-binary SQLite database of PE metadata, signatures, disassembly, Hex-Rays pseudocode, cross-references, strings, stack frames, loops and dangerous API calls, plus optional grouped C++ and assembly files with per-function caller, callee and string headers and JSON indexes. <sub>Integration · Independent agent · Targets: Binary · [Full entry](https://awesomerea.org/resources/deepextract-ida/)</sub>
 - [**Mizuchi**](https://github.com/macabeus/mizuchi) - Plugin pipeline for matching decompilation that loops over functions in an existing decomp project: m2c drafts C, decomp-permuter mutates it, Claude rewrites it through a compile-and-diff tool, and objdiff accepts a result only when the compiled object matches the target assembly. <sub>Integration · Independent agent · Targets: Game, Binary · [Full entry](https://awesomerea.org/resources/mizuchi-matching-decompilation-pipeline/)</sub>
 - [**ReAgent**](https://github.com/Dryxio/reagent) - An open-source Python agent, published on PyPI as auto-re-agent, that drafts C/C++ implementations of functions in a compiled program from Ghidra evidence and has a separately configurable checker model review each draft in a bounded fix loop. <sub>Integration · Independent agent · Targets: Game, Binary · [Full entry](https://awesomerea.org/resources/reagent-cpp-reconstruction-agent/)</sub>
+- [**ToCode**](https://github.com/buzzer-re/ToCode) - Python CLI that exports a binary, IDA database, Android APK, .NET assembly or whole application folder into a source-like project tree for coding agents: recovered C (Java for APKs, C# and IL for .NET) with matching assembly and function summaries, recovered headers and types, section dumps, JSON indexes of functions, strings, imports, exports, reachability and call-graph clusters, and generated AGENTS.md and CLAUDE.md files. <sub>Integration · Independent agent · Targets: App, Binary · [Full entry](https://awesomerea.org/resources/tocode/)</sub>
 
 <a id="related-collections"></a>
 ### Related Collections

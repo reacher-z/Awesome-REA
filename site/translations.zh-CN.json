@@ -4538,5 +4538,15 @@
       "Python 单元测试覆盖转换函数和 Flipper 文件解析；项目没有 CI。各种效果由作者和贡献者在自己的手环上报告，本次来源核查未运行任何代码或硬件。",
       "采用 MIT 许可（LICENSE）。PixMob 的硬件、固件和商标不在该许可范围内，X 光图片注明来自 Samy Kamkar。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "tocode": {
+    "name": "ToCode 面向智能体的二进制类源码导出工具",
+    "requirements": [
+      "审阅时的 PyPI 版本为 tocode-cli 0.3.2，于 2026-10-16 上传；所审阅的 main 分支提交是 v0.3.2 标签之后的一次合并提交。仓库创建于 2026-05-20。需要 Windows、Linux 或 macOS 上的 Python 3.10+，可用 pip 或 uv 安装，也可在克隆仓库后运行 install.sh 或 install.ps1。",
+      "不附带反编译后端：可通过 ida-domain 和 idapro 库使用 IDA；在许可证允许时以无界面方式使用 Binary Ninja，或通过其内置 MCP 服务器或运行中界面里的 RPC 桥接使用；也可使用配合 r2ghidra 的 radare2，或约 450 MB 的可选 angr 扩展，README 称后者生成的伪 C 代码质量较低。导出 .NET 需要 .NET 9+ 运行时，并会在提示后从 nuget.org 下载 dnlib 和 ICSharpCode.Decompiler，按固定的 SHA-256 哈希校验；APK 使用 droidasc 包。",
+      "需自行提供二进制或应用目录。导出结果会复制输入中的节区数据、APK 非代码条目和原生库，因此其敏感程度与被分析文件相同。README 警告 Binary Ninja RPC 桥接会在无认证的情况下暴露整个 Python 虚拟机，必须只绑定到 127.0.0.1。",
+      "eval 目录定义了一项盲源码还原基准：九个小型 C 程序分别带调试信息和去符号构建，一个只能使用 ToCode MCP 服务器和文件工具的无界面 Claude Code 智能体处理去符号版本，再由评判程序对名称、类型、逐函数的 LLM 评分、测试输入上的行为以及信息泄漏打分。仓库未提交基准结果；测试使用生成的样本和模拟的 Binary Ninja 模块，仓库未提交任何二进制。",
+      "MIT 许可证（LICENSE、pyproject.toml）。tocode skill install 会为 Claude Code 和 Codex 安装工作流技能。所审阅来源未确立与 REA 的关联，本条目未导出或运行任何内容。"
+    ]
   }
 }

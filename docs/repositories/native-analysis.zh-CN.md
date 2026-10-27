@@ -510,7 +510,7 @@
 - [pcyin/dire](https://github.com/pcyin/dire) — 使用神经网络为反编译二进制文件中的变量重命名 **[45 星标]** · 论文：[DIRE：基于神经网络的反编译标识符命名方法](https://awesomerea.org/zh/papers/paper-dire/)
 - [radareorg/r2pipe.rs](https://github.com/radareorg/r2pipe.rs) — r2pipe 的 Rust 包 **[45 星标]**
 - [TouchFriend/BiliBiliTweak](https://github.com/TouchFriend/BiliBiliTweak) — 哔哩哔哩无广告越狱插件，感谢使用，欢迎 Star。 **[45 星标]**
-- [buzzer-re/ToCode](https://github.com/buzzer-re/ToCode) — 将二进制文件转换为类似源码的项目，让编程智能体能够遍历、分析，并将其作为大型二进制文件的参考依据。支持 IDA Pro、radare2、angr 和 Binary Ninja。 **[43 星标]**
+- [buzzer-re/ToCode](https://github.com/buzzer-re/ToCode) — 将二进制文件转换为类似源码的项目，让编程智能体能够遍历、分析，并将其作为大型二进制文件的参考依据。支持 IDA Pro、radare2、angr 和 Binary Ninja。 **[43 星标]** · 精选：[ToCode 面向智能体的二进制类源码导出工具](https://awesomerea.org/zh/resources/tocode/)
 - [ltlly/MikuCffHelper](https://github.com/ltlly/MikuCffHelper) — 使用 Binary Ninja 工作流还原 OLLVM 控制流平坦化 **[42 星标]**
 - [tinysec/rtypes](https://github.com/tinysec/rtypes) — 一个简单但实用的项目，或许能帮助你逆向分析 Windows。 **[41 星标]**
 - [MatrixEditor/caterpillar](https://github.com/MatrixEditor/caterpillar) — 用于打包和解包结构化二进制数据的 Python 3.10+ 库。 **[40 星标]**

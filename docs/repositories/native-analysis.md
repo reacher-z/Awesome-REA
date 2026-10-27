@@ -510,7 +510,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [pcyin/dire](https://github.com/pcyin/dire) — Neural Variable Renaming for Decompiled Binaries **[45 stars]** · Paper: [DIRE: A Neural Approach to Decompiled Identifier Naming](https://awesomerea.org/papers/paper-dire/)
 - [radareorg/r2pipe.rs](https://github.com/radareorg/r2pipe.rs) — Rust crate for r2pipe **[45 stars]**
 - [TouchFriend/BiliBiliTweak](https://github.com/TouchFriend/BiliBiliTweak) — An ad-free BiliBili jailbreak tweak. Thanks for using it; stars are welcome. **[45 stars]**
-- [buzzer-re/ToCode](https://github.com/buzzer-re/ToCode) — Transform binaries into source-code-like projects that coding agents can traverse, analyze, and use as an oracle for large binaries. Supports IDA Pro, radare2, angr and Binary Ninja. **[43 stars]**
+- [buzzer-re/ToCode](https://github.com/buzzer-re/ToCode) — Transform binaries into source-code-like projects that coding agents can traverse, analyze, and use as an oracle for large binaries. Supports IDA Pro, radare2, angr and Binary Ninja. **[43 stars]** · Curated: [ToCode](https://awesomerea.org/resources/tocode/)
 - [ltlly/MikuCffHelper](https://github.com/ltlly/MikuCffHelper) — Use binaryninja workflow to deflat ollvm cff **[42 stars]**
 - [tinysec/rtypes](https://github.com/tinysec/rtypes) — A simple but useful project maybe help you reverse Windows. **[41 stars]**
 - [MatrixEditor/caterpillar](https://github.com/MatrixEditor/caterpillar) — A Python 3.10+ library to pack and unpack structured binary data. **[40 stars]**
