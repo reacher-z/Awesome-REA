@@ -375,7 +375,7 @@
 - [davep/dhv](https://github.com/davep/dhv) — 深入探索 Python 代码 **[103 星标]**
 - [guedou/r2m2](https://github.com/guedou/r2m2) — radare2 与 miasm2 的组合 = ♥ **[103 星标]**
 - [Karib0u/kernagent](https://github.com/Karib0u/kernagent) — 用于确定性逆向工程的无界面 AI 智能体。 **[103 星标]**
-- [fdrechsler/mcp-server-idapro](https://github.com/fdrechsler/mcp-server-idapro) — 模型上下文协议（MCP）服务器，让 AI 助手与 IDA Pro 交互，执行逆向工程和二进制分析任务。 **[101 星标]**
+- [fdrechsler/mcp-server-idapro](https://github.com/fdrechsler/mcp-server-idapro) — 模型上下文协议（MCP）服务器，让 AI 助手与 IDA Pro 交互，执行逆向工程和二进制分析任务。 **[101 星标]** · 精选：[IDA Pro MCP 服务器（fdrechsler）](https://awesomerea.org/zh/resources/mcp-server-idapro-fdrechsler/)
 - [zyantific/zydis-rs](https://github.com/zyantific/zydis-rs) — Zydis 的 Rust 绑定。 **[101 星标]**
 - [extremecoders-re/ghidra-jni](https://github.com/extremecoders-re/ghidra-jni) — 为 Ghidra 编译的 jni.h。 **[100 星标]**
 - [ferib/LuaToolkit](https://github.com/ferib/LuaToolkit) — 用 C# 编写的 Lua 编码器、解码器、反汇编器和反编译器。 **[100 星标]**

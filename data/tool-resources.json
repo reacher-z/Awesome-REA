@@ -11759,5 +11759,36 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "mcp-server-idapro-fdrechsler",
+    "name": "IDA Pro MCP Server (fdrechsler)",
+    "url": "https://github.com/fdrechsler/mcp-server-idapro",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "An IDA Pro plugin and a TypeScript MCP server by Florian Drechsler: the plugin starts an HTTP server inside IDA on 127.0.0.1:9045, and the stdio MCP server forwards agent requests to it. Its twelve tools run IDAPython scripts passed inline or by file path, list functions, exports and strings, search names, immediate values and byte sequences, return cross-references to and from an address, and disassemble address ranges. It is a separate codebase from the mrexodia and Hex-Rays IDA MCP servers listed here.",
+    "description_zh": "由 Florian Drechsler 编写，包含一个 IDA Pro 插件和一个 TypeScript MCP 服务器：插件在 IDA 内的 127.0.0.1:9045 启动 HTTP 服务，stdio 方式运行的 MCP 服务器把智能体请求转发给它。其 12 个工具可执行以内联代码或文件路径传入的 IDAPython 脚本，列出函数、导出项和字符串，搜索名称、立即数和字节序列，返回某地址的入向与出向交叉引用，并反汇编指定地址范围。它与本合集已收录的 mrexodia 版和 Hex-Rays 官方 IDA MCP 服务器是不同的代码库。",
+    "evidence_url": "https://github.com/fdrechsler/mcp-server-idapro/blob/6f960148a7a5def5a895ec7a31e7e80567bb215e/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Dormant: its six commits date from 2025-03-24 to 2025-03-26, with no tags, releases or npm package, so this entry pins the last main commit. The README asks for IDA Pro 8.3 or later, Node.js 18+ and TypeScript; the MCP server is built from a clone with npm install and npm run build, and ida_remote_server.py is copied into IDA's plugins directory, where it starts its server when IDA loads. MCP clients launch the built dist/index.js over stdio.",
+      "IDA Pro is commercial software installed separately, and the tools act on whatever database the analyst has open; the repository holds only source files and a screenshot. The README documents eight of the twelve tools and an npm test command, but package.json defines no test script and the project has no tests. At the pinned commit index.ts imports llamaindex, which package.json does not declare, and the search_text tool queries a MongoDB strings collection at localhost:27017 instead of IDA, with its IDA call commented out.",
+      "Script tools run arbitrary IDAPython inside IDA, and while a script runs the plugin overrides IDA's prompt functions so that dialogs are auto-confirmed or suppressed. The HTTP server has no authentication: the README's security note relies on the localhost-only default bind and warns about the implications of changing DEFAULT_HOST.",
+      "The LICENSE file and README state MIT, while package.json declares ISC. IDA Pro, MCP clients and analysed binaries keep their own terms. This record reviewed source only and ran neither component; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/fdrechsler/mcp-server-idapro/blob/6f960148a7a5def5a895ec7a31e7e80567bb215e/index.ts#L1-L24",
+      "https://github.com/fdrechsler/mcp-server-idapro/blob/6f960148a7a5def5a895ec7a31e7e80567bb215e/index.ts#L200-L424",
+      "https://github.com/fdrechsler/mcp-server-idapro/blob/6f960148a7a5def5a895ec7a31e7e80567bb215e/index.ts#L510-L564",
+      "https://github.com/fdrechsler/mcp-server-idapro/blob/6f960148a7a5def5a895ec7a31e7e80567bb215e/ida_remote_server.py#L267-L380",
+      "https://github.com/fdrechsler/mcp-server-idapro/blob/6f960148a7a5def5a895ec7a31e7e80567bb215e/ida_remote_server.py#L1308-L1335",
+      "https://github.com/fdrechsler/mcp-server-idapro/blob/6f960148a7a5def5a895ec7a31e7e80567bb215e/package.json",
+      "https://github.com/fdrechsler/mcp-server-idapro/blob/6f960148a7a5def5a895ec7a31e7e80567bb215e/LICENSE"
+    ]
   }
 ]

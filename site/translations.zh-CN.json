@@ -4301,5 +4301,14 @@
       "技术说明称，在早期人工尝试受阻后，长时间运行的 Claude Code（Opus 4.6）与 Codex 会话借助维护者自己已 root 的 S7、其固件、python-roborock 及反编译后的应用，帮助找到了配网中剩余的关键一步。说明致谢了 Dennis Giese 的固件研究、Valetudo 及其他社区工作；未提及使用 REA。",
       "采用 MIT 许可并附“按现状提供”的免责声明；项目与 Roborock 无关联。这是兼容的服务器实现，并非恢复的 Roborock 服务端代码，厂商固件或应用的变化可能使其失效。"
     ]
+  },
+  "mcp-server-idapro-fdrechsler": {
+    "name": "IDA Pro MCP 服务器（fdrechsler）",
+    "requirements": [
+      "项目已停止更新：6 个提交均在 2025-03-24 至 2025-03-26 之间，没有标签、发布版或 npm 软件包，因此本条目固定到 main 分支的最后一个提交。README 要求 IDA Pro 8.3 或更高版本、Node.js 18+ 和 TypeScript；MCP 服务器需克隆仓库后运行 npm install 和 npm run build 构建，ida_remote_server.py 则复制到 IDA 的插件目录，IDA 加载插件时即启动其服务。MCP 客户端通过 stdio 启动构建出的 dist/index.js。",
+      "IDA Pro 是需另行安装的商业软件，各工具作用于分析者当前打开的数据库；仓库只包含源码文件和一张截图。README 只记录了 12 个工具中的 8 个，并给出 npm test 命令，但 package.json 未定义测试脚本，项目也没有测试。在所固定的提交中，index.ts 导入了 package.json 未声明的 llamaindex，search_text 工具查询的是 localhost:27017 上 MongoDB 的 strings 集合而非 IDA，对应的 IDA 调用已被注释掉。",
+      "脚本类工具会在 IDA 内执行任意 IDAPython 代码；脚本运行期间，插件会替换 IDA 的提示函数，使对话框被自动确认或屏蔽。HTTP 服务没有身份验证：README 的安全说明依赖其默认只绑定本机地址，并提醒修改 DEFAULT_HOST 会带来的安全影响。",
+      "LICENSE 文件和 README 声明采用 MIT 许可，而 package.json 写的是 ISC。IDA Pro、MCP 客户端及被分析的二进制仍受各自条款约束。本条目只审阅了源码，未运行任何组件；所审来源未确立与 REA 的关联。"
+    ]
   }
 }

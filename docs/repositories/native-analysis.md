@@ -375,7 +375,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [davep/dhv](https://github.com/davep/dhv) — Dive into Python code **[103 stars]**
 - [guedou/r2m2](https://github.com/guedou/r2m2) — radare2 + miasm2 = ♥ **[103 stars]**
 - [Karib0u/kernagent](https://github.com/Karib0u/kernagent) — Headless AI agent for deterministic reverse engineering. **[103 stars]**
-- [fdrechsler/mcp-server-idapro](https://github.com/fdrechsler/mcp-server-idapro) — A Model Context Protocol (MCP) server that enables AI assistants to interact with IDA Pro for reverse engineering and binary analysis tasks. **[101 stars]**
+- [fdrechsler/mcp-server-idapro](https://github.com/fdrechsler/mcp-server-idapro) — A Model Context Protocol (MCP) server that enables AI assistants to interact with IDA Pro for reverse engineering and binary analysis tasks. **[101 stars]** · Curated: [IDA Pro MCP Server (fdrechsler)](https://awesomerea.org/resources/mcp-server-idapro-fdrechsler/)
 - [zyantific/zydis-rs](https://github.com/zyantific/zydis-rs) — Zydis Rust Bindings **[101 stars]**
 - [extremecoders-re/ghidra-jni](https://github.com/extremecoders-re/ghidra-jni) — jni.h compiled for Ghidra **[100 stars]**
 - [ferib/LuaToolkit](https://github.com/ferib/LuaToolkit) — Lua Encode/Decoder/Disassembler/Decompiler in C# **[100 stars]**
