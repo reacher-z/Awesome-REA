@@ -40,6 +40,9 @@
 .browse-repository .source-card-footer{margin-top:18px;padding-top:13px;border-top:1px solid var(--line)}
 /* Scope static reading rules here; homepage cards keep their own layout. */
 .browse-main .card-description,.browse-main .source-card-description{max-width:68ch;font-size:16px;line-height:1.8;color:var(--body)}
+/* Links inside static card prose (the /about/ cards) need more than colour to read as links. */
+.browse-main .card-description a,.browse-main .source-card-description a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.browse-main .card-description a:hover,.browse-main .source-card-description a:hover{text-decoration-thickness:2px}
 .browse-main .requirements ul{max-width:68ch;font-size:15px;line-height:1.8;color:var(--body)}
 .browse-main .requirements li+li{margin-top:12px}
 /* Evidence links carry the entry pages' labels; a pinned GitHub path is followed by its repository and revision. */
