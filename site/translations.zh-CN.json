@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "brida": {
+    "name": "Brida Burp Suite 与 Frida 桥接扩展",
+    "requirements": [
+      "审阅时最新版本为 v0.6，于 2025-10-23 以单个 Brida_0.6.jar 发布；所审阅的 master 提交比它多两个提交，先添加后又删除了一段 BApp Store 简介。0.6 版针对 Frida 17 的 JavaScript API 做了重构，需要 Frida 17 或更高版本；较旧的 Frida 仍需使用 v0.6pre，并搭配 frida-compile 10.2.5。README 也提到可从 Burp 的 BApp Store 安装，但那里的版本可能落后于 GitHub。",
+      "需要 Burp Suite（Community 或 Pro 版）、已加入系统路径的 Node.js 和 npm（README 提醒在 macOS 上这一步可能比较麻烦），以及 frida、frida-tools 和 pyro4 这几个 Python 包；扩展通过附带的 Pyro4 服务脚本连接 Frida。README 称 Brida 支持 Frida 支持的所有平台（Windows、macOS、Linux、iOS、Android 和 QNX）。移动端目标需要运行 frida-server 的已越狱 iOS 或已 root 的 Android 设备，或者已打包 Frida gadget 的应用。",
+      "可用 Gradle 的 jar 任务构建；若用 Maven，需先在本地安装仓库附带的修改版 RSyntaxTextArea jar（libs/rsyntaxtextarea-2.6.1.edited.jar）。扩展使用的是旧版 Burp Extender API。Demo/ 目录收录作者自己为会议演示制作的应用和后端（HIP2021_demo.apk、DemoHIP.ipa、DemoHITB.ipa 和 BridaTestAppBackend-0.0.1-SNAPSHOT.jar）、演示用 TLS 证书和密钥，以及导出的演示插件。iOS 演示的 README 提醒，其后端以 root 身份、空密码登录 MySQL，只应在有防火墙隔离的系统或虚拟机中运行。",
+      "采用 MIT 许可。本条目所述用途限于分析者自有或已获授权测试的应用和后端。条目不介绍 res/ 下默认的 Android 和 iOS 挂钩集合，README 注明这些代码来自多位 Frida CodeShare 和 GitHub 作者。本次未对任何应用插桩，也未处理任何流量。"
+    ]
   }
 }

@@ -12616,5 +12616,38 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "brida",
+    "name": "Brida",
+    "url": "https://github.com/federicodotta/Brida",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "Burp Suite extension by Federico Dotta and Piergiovanni Cipolloni that bridges Burp and Frida, so an analyst can run an app's own functions on the HTTP messages it exchanges with its backend instead of reimplementing its encryption, encoding or signing. A graphical plugin engine connects Frida-exported functions to Burp: they can process requests and responses in every Burp tool, or run from custom message-editor tabs, context-menu entries and buttons, and a Generate Stubs tool emits Java or Python code for external Burp extensions. An analysis tab shows the app's Java and Objective-C classes, methods, imports and exports as a tree, from which hooks that log arguments and return values, or replace return values, can be added; an editor holds the analyst's own Frida exports.",
+    "description_zh": "由 Federico Dotta 和 Piergiovanni Cipolloni 开发的 Burp Suite 扩展，在 Burp 与 Frida 之间架起桥梁，让分析者直接调用应用自身的函数处理它与后端交换的 HTTP 消息，而不必重新实现其中的加密、编码或签名逻辑。图形化插件引擎把 Frida 导出函数接入 Burp：既可在所有 Burp 工具中处理请求和响应，也可通过自定义消息编辑标签页、右键菜单项和按钮调用；Generate Stubs 工具还能为外部 Burp 扩展生成 Java 或 Python 代码。分析标签页以树形展示应用的 Java 和 Objective-C 类、方法以及导入导出，可从中添加挂钩，记录参数和返回值，或替换返回值；内置编辑器用于编写分析者自己的 Frida 导出函数。",
+    "evidence_url": "https://github.com/federicodotta/Brida/blob/f3350346c10713a0bb558b9bc018a0c0e250479d/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.6, published 2025-10-23 as a single Brida_0.6.jar; the reviewed master commit is two commits ahead, adding and then removing a BApp Store description. Version 0.6 was refactored for Frida 17's JavaScript API and needs Frida 17 or later; v0.6pre, used with frida-compile 10.2.5, remains the release for older Frida versions. The README also points to Burp's BApp Store and notes that the copy there can lag behind GitHub.",
+      "Needs Burp Suite Community or Pro, Node.js and npm on the system path (the README warns that this can be hard on macOS), and the frida, frida-tools and pyro4 Python packages; a bundled Pyro4 service script connects the extension to Frida. The README says Brida supports every platform Frida does (Windows, macOS, Linux, iOS, Android and QNX). Mobile targets need a jailbroken iOS or rooted Android device running frida-server, or an app patched with the Frida gadget.",
+      "Builds use Gradle's jar task, or Maven once the bundled modified RSyntaxTextArea jar (libs/rsyntaxtextarea-2.6.1.edited.jar) is installed locally; the extension uses the legacy Burp Extender API. Demo/ holds the authors' own conference demo apps and backend (HIP2021_demo.apk, DemoHIP.ipa, DemoHITB.ipa and BridaTestAppBackend-0.0.1-SNAPSHOT.jar), demo TLS certificates and keys, and exported demo plugins. The iOS demo README asks that its backend, which logs in to MySQL as root with an empty password, run only on a firewalled system or VM.",
+      "MIT license. This entry covers Brida for apps and backends the analyst owns or is authorized to test. It does not describe the default Android and iOS hook collections under res/, which the README credits to various Frida CodeShare and GitHub authors. No app was instrumented and no traffic was processed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/federicodotta/Brida/blob/f3350346c10713a0bb558b9bc018a0c0e250479d/README.md#L13-L39",
+      "https://github.com/federicodotta/Brida/blob/f3350346c10713a0bb558b9bc018a0c0e250479d/README.md#L41-L89",
+      "https://github.com/federicodotta/Brida/blob/f3350346c10713a0bb558b9bc018a0c0e250479d/build.gradle",
+      "https://github.com/federicodotta/Brida/blob/f3350346c10713a0bb558b9bc018a0c0e250479d/res/bridaServicePyro.py",
+      "https://github.com/federicodotta/Brida/tree/f3350346c10713a0bb558b9bc018a0c0e250479d/Demo",
+      "https://github.com/federicodotta/Brida/blob/f3350346c10713a0bb558b9bc018a0c0e250479d/Demo/iOS/README.md",
+      "https://github.com/federicodotta/Brida/blob/f3350346c10713a0bb558b9bc018a0c0e250479d/LICENSE",
+      "https://github.com/federicodotta/Brida/releases/tag/v0.6"
+    ]
   }
 ]
