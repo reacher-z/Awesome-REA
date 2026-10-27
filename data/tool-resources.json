@@ -12456,5 +12456,27 @@
       "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/LICENSE",
       "https://decomp.dev/zeldaret/af"
     ]
+  },
+  {
+    "id": "firmware-analysis-papers-list",
+    "name": "Firmware-Analysis-Papers",
+    "url": "https://github.com/onehouwong/Firmware-Analysis-Papers",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A single-README reading list of 28 academic security papers on firmware and embedded-system analysis, grouped by year from 2013 to 2021. It covers rehosting and emulation, firmware fuzzing, symbolic execution, Bluetooth and baseband analysis and bug detection in Linux-based and bare-metal firmware. Each entry is a title linked to a PDF or publisher page, with its venue such as USENIX Security, NDSS, IEEE S&P or CCS.",
+    "description_zh": "以单个 README 维护的学术安全论文阅读清单，收录 28 篇固件与嵌入式系统分析论文，按年份分组，时间跨度为 2013 至 2021 年。内容涵盖固件重托管与仿真、固件模糊测试、符号执行、蓝牙与基带分析，以及基于 Linux 和裸机固件中的缺陷检测。每个条目是链接到 PDF 或出版方页面的论文标题，并注明 USENIX Security、NDSS、IEEE S&P、CCS 等发表场合。",
+    "evidence_url": "https://github.com/onehouwong/Firmware-Analysis-Papers/blob/3cfec539b6570307412909a3959b6fbc24c75af6/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README, last changed 2021-08-30, lists 28 papers: 10 from 2021, 7 from 2020, 4 from 2019, one from 2018 and 6 under “2017 and Before”, the oldest from 2013. The list has not been updated since, so later work such as Fuzzware (USENIX Security 2022) is absent.",
+      "Entries give only a title, a link and a venue label, with no summaries, code, artifact or citation details. Most links go to PDFs on conference, author or arXiv sites; the rest go to an IEEE Xplore page, ResearchGate, or ACM Digital Library URLs carrying session tokens, which may stop working. Year labels can differ from publication years: Firmadyne is labeled NDSS 2017, matching its link's 2017 upload folder, while this collection's paper directory records it as NDSS 2016.",
+      "Three listed papers, Firmadyne, FirmAE and HALucinator, already have records in this collection's paper directory, and the FirmAE tool and avatar², the successor to the listed Avatar framework, are curated tool entries; the other entries were not reviewed here.",
+      "The repository holds only README.md and no license file, so the list states no reuse terms; the papers keep their authors' and publishers' rights. An independent reading list; the reviewed source establishes no REA connection."
+    ]
   }
 ]
