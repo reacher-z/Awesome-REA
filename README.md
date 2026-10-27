@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 509](https://img.shields.io/badge/resources-509-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 215](https://img.shields.io/badge/cases-215-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 137](https://img.shields.io/badge/papers-137-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 510](https://img.shields.io/badge/resources-510-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 215](https://img.shields.io/badge/cases-215-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 137](https://img.shields.io/badge/papers-137-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-509 curated resources (215 cases) · 137 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 506 because 3 of these appear only under Papers.
+510 curated resources (215 cases) · 137 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 507 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (137) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (36)
+- [Papers](#papers) (137) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (37)
 
 **More ways to browse**
 
@@ -650,6 +650,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Nintendo Switch Reverse Engineering**](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering) - Notes begun by dekuNukem in 2017 and extended by contributors on how the Joy-Con, Pro Controller and parts of the Switch console and dock work, worked out from teardowns, logic-analyzer captures and packet logs. <sub>Learning resource · Targets: Firmware, Protocol · [Full entry](https://awesomerea.org/resources/nintendo-switch-joycon-re-notes/)</sub>
 - [**Android App Reverse Engineering 101**](https://www.ragingrock.com/AndroidAppRE/) - Maddie Stone's free English workshop introducing static reverse engineering of Android apps, published as GitHub Pages. <sub>Learning resource · Targets: App, Binary · [Full entry](https://awesomerea.org/resources/android-app-re-101/)</sub>
 - [**Reverse Engineering iOS Applications**](https://github.com/ivRodriguezCA/RE-iOS-Apps) - Ivan Rodriguez's free English course (version 1.1) on reverse engineering iOS applications, aimed at beginners in iOS app security. <sub>Learning resource · Targets: App, Binary · [Full entry](https://awesomerea.org/resources/re-ios-apps-course/)</sub>
+- [**tiny-dec**](https://github.com/ZhangZhuoSJTU/tiny-dec) - Zhuo Zhang's small educational decompiler for 32-bit RISC-V (RV32I) ELF files, written in Python to teach how decompilation works rather than to compete with production decompilers. <sub>Learning resource · Targets: Binary · [Full entry](https://awesomerea.org/resources/tiny-dec/)</sub>
 <!-- END GENERATED CATALOG -->
 
 <!-- BEGIN GENERATED PAPERS -->

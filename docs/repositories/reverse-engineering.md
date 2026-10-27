@@ -168,7 +168,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [mahaloz/decompilation-wiki](https://github.com/mahaloz/decompilation-wiki) — The Decompilation Wiki: info on all things decompilation **[254 stars]**
 - [MlgmXyysd/libil2cpp](https://github.com/MlgmXyysd/libil2cpp) — Collection of source code for Unity IL2CPP **[252 stars]**
 - [DenuvoSoftwareSolutions/GAMBA](https://github.com/DenuvoSoftwareSolutions/GAMBA) — Simplification of General Mixed Boolean-Arithmetic Expressions: GAMBA **[249 stars]**
-- [ZhangZhuoSJTU/tiny-dec](https://github.com/ZhangZhuoSJTU/tiny-dec) — A tiny educational decompiler that helps people understand how decompilation works. **[249 stars]**
+- [ZhangZhuoSJTU/tiny-dec](https://github.com/ZhangZhuoSJTU/tiny-dec) — A tiny educational decompiler that helps people understand how decompilation works. **[249 stars]** · Curated: [tiny-dec](https://awesomerea.org/resources/tiny-dec/)
 - [zifeihan/friday](https://github.com/zifeihan/friday) — Java runtime decompiler **[248 stars]**
 - [SimplyProgrammer/Minecraft-Deobfuscator3000](https://github.com/SimplyProgrammer/Minecraft-Deobfuscator3000) — Powerful and universal deobfuscator for Minecraft mods and java decompiler! **[246 stars]**
 - [CFSworks/wavebird-reversing](https://github.com/CFSworks/wavebird-reversing) — Reverse-engineering the WaveBird protocol for the betterment of mankind **[244 stars]**

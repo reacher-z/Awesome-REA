@@ -168,7 +168,7 @@
 - [mahaloz/decompilation-wiki](https://github.com/mahaloz/decompilation-wiki) — 反编译维基：涵盖反编译各方面的信息 **[254 星标]**
 - [MlgmXyysd/libil2cpp](https://github.com/MlgmXyysd/libil2cpp) — Unity IL2CPP 源码合集 **[252 星标]**
 - [DenuvoSoftwareSolutions/GAMBA](https://github.com/DenuvoSoftwareSolutions/GAMBA) — GAMBA：通用布尔算术混合表达式的简化 **[249 星标]**
-- [ZhangZhuoSJTU/tiny-dec](https://github.com/ZhangZhuoSJTU/tiny-dec) — 一个用于教学的小型反编译器，帮助人们理解反编译的工作原理。 **[249 星标]**
+- [ZhangZhuoSJTU/tiny-dec](https://github.com/ZhangZhuoSJTU/tiny-dec) — 一个用于教学的小型反编译器，帮助人们理解反编译的工作原理。 **[249 星标]** · 精选：[tiny-dec 教学用反编译器](https://awesomerea.org/zh/resources/tiny-dec/)
 - [zifeihan/friday](https://github.com/zifeihan/friday) — Java 运行时反编译工具 **[248 星标]**
 - [SimplyProgrammer/Minecraft-Deobfuscator3000](https://github.com/SimplyProgrammer/Minecraft-Deobfuscator3000) — 强大的通用 Minecraft 模组去混淆工具及 Java 反编译器！ **[246 星标]**
 - [CFSworks/wavebird-reversing](https://github.com/CFSworks/wavebird-reversing) — 对 WaveBird 协议进行逆向工程，造福人类 **[244 星标]**
