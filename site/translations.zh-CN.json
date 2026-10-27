@@ -7256,5 +7256,15 @@
       "文件选择器用于选取使用者自备的 DEX 文件。README 未提及的“AI Explanation”界面会把从方法列表中选出的 smali 方法，连同默认的寄存器用法提示词或用户修改后的提示词，通过设置中填写的 API 密钥发送到 Google 的 Gemini 2.0 Flash API；方法流程图则使用内置的 Graphviz viz.js 在本地绘制。",
       "LICENSE 为 Apache-2.0（版权 2024-26 Krushna Chandra），但 README 另称不得在私有项目中使用这些代码，且只欢迎在本仓库内贡献，这些限制并不在 Apache-2.0 条款之中，因此再利用条款并不明确；仓库内的 smali 代码保留了 Google 的 BSD 式许可声明。本次审阅未构建任何内容，也未编辑任何 DEX 文件；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "grease": {
+    "name": "GREASE 欠约束符号执行二进制分析工具",
+    "requirements": [
+      "审阅时没有带标签的发布版本：安装指南提供由 main 分支构建的每夜 Docker 镜像（ghcr.io/galoisinc/grease:nightly），或从源码构建；同一套文档发布在 galoisinc.github.io/grease。所审阅的 main 分支提交日期为 2026-09-24；Galois 在 2025-03-19 的博客文章中介绍了该工具。",
+      "从源码构建需要 GHC 9.6、9.8 或 9.10、cabal-install 3.6+ 以及仓库的 git 子模块，其中包括 Galois 的 macaw、crucible、what4 和 elf-edit。独立运行的程序还需要 bitwuzla、cvc4、cvc5、yices 或 z3 中的一种 SMT 求解器；默认使用 yices，CI 测试的版本为 2.6.5，Docker 镜像已包含这些求解器。Ghidra 插件需要 Ghidra 11.0+ 和本地的 grease 程序。",
+      "需自行提供要分析的 ELF 二进制或 LLVM bitcode。默认分析所有已知函数，也可按符号、地址或核心转储选择入口。局限性页面列出：只分析单线程执行；数据结构、循环和递归受 k 界限制；通过符号函数指针的调用会被跳过；不检测栈缓冲区溢出，也不模拟堆耗尽；字符串操作支持有限；不支持在 main 之前运行的代码。",
+      "仓库提交了由相邻 C 或汇编源码构建的小型测试样本：grease-exe/tests 下约 200 个 AArch32、PowerPC 和 x86_64 ELF 可执行文件与共享对象，另有 grease-x86/test-data、ghidra-ecfs/src/test/resources/ecfs 以及随附的 screach 可达性分析工具各测试数据目录中的测试 ELF。",
+      "BSD-3-Clause 许可证（LICENSE）。README 注明由 DARPA 资助，并附有“Distribution Statement A”（已批准公开发布）声明。报告结果取决于推断出的前置条件、界限和覆盖；本条目未分析任何二进制。"
+    ]
   }
 }
