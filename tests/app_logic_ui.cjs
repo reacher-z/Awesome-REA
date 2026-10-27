@@ -432,7 +432,8 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.equal(app.api.state.group, 'all');
     assert.deepEqual(app.marked.filter(node => 'count' in node.dataset).map(node => node.textContent), [3, 1]);
     const localized = app.marked.filter(node => node.dataset.localePath === 'about' || node.dataset.localeFragment === 'game').map(node => node.href);
-    assert.deepEqual(localized, ['/zh/about/', '/zh/resources/#game']);
+    // The directory's About link, a subject link and the collection note under the curated filters.
+    assert.deepEqual(localized, ['/zh/about/', '/zh/resources/#game', '/zh/about/']);
     assert(app.marked.filter(node => 'i18nPlaceholder' in node.dataset).every(node => node.placeholder && node.placeholder !== node.dataset.i18nPlaceholder));
     assert(app.marked.filter(node => 'i18nAria' in node.dataset).every(node => /[一-鿿]/.test(node.attrs['aria-label'])));
     const group = app.marked.find(node => node.dataset.group === 'rea');
