@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 500](https://img.shields.io/badge/resources-500-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 212](https://img.shields.io/badge/cases-212-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 501](https://img.shields.io/badge/resources-501-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 212](https://img.shields.io/badge/cases-212-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,12 +21,12 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-500 curated resources (212 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 497 because 3 of these appear only under Papers.
+501 curated resources (212 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 498 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
 - [Website](#website) (29) · [Game](#game) (195) · [App](#app) (81)
-- [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (20)
+- [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (21)
 
 **Research and workflows**
 
@@ -537,6 +537,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**FISSURE**](https://github.com/ainfosec/FISSURE) - GNU Radio-based RF framework that carries a signal from survey and detection through IQ capture, inspection, conditioning, feature extraction and classification into a protocol discovery workflow. <sub>Tool · [Full entry](https://awesomerea.org/resources/fissure/)</sub>
 - [**friTap**](https://github.com/fkie-cad/friTap) - Frida-based tool that hooks TLS libraries such as OpenSSL, BoringSSL, NSS and GnuTLS inside a running process and writes NSS key logs and decrypted payloads as PCAP, so analysts can inspect an application's encrypted traffic in Wireshark. <sub>Tool · Also: App · [Full entry](https://awesomerea.org/resources/fritap/)</sub>
 - [**pbtk**](https://github.com/marin-m/pbtk) - Recover Protobuf message definitions from compiled programs as readable .proto files. <sub>Tool · Also: App · [Full entry](https://awesomerea.org/resources/pbtk/)</sub>
+- [**SteamKit**](https://github.com/SteamRE/SteamKit) - .NET library that implements the client side of Valve’s Steam network protocol: connection-manager sessions, authentication, friends, unified service and Game Coordinator messages, Web API calls and CDN depot downloads. <sub>Tool · Also: Game · [Full entry](https://awesomerea.org/resources/steamkit/)</sub>
 
 <a id="agents-and-mcp"></a>
 ### Agents and MCP
