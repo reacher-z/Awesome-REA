@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 492](https://img.shields.io/badge/resources-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 208](https://img.shields.io/badge/cases-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 135](https://img.shields.io/badge/papers-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 492](https://img.shields.io/badge/resources-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 208](https://img.shields.io/badge/cases-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-492 curated resources (208 cases) · 135 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 489 because 3 of these appear only under Papers.
+492 curated resources (208 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 489 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (135) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (136) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
 
 **More ways to browse**
 
@@ -639,13 +639,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**135 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**136 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (10) · [Decompilation](#papers-decompilation) (57) · [Websites](#papers-website-reconstruction) (22)
+- [Agent evaluation](#papers-agent-evaluation) (10) · [Decompilation](#papers-decompilation) (57) · [Websites](#papers-website-reconstruction) (23)
 - [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (12) · [Firmware](#papers-firmware-analysis) (13)
 - [Protocols](#papers-protocol-analysis) (13)
 
@@ -754,6 +754,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**WebUIBench: A Comprehensive Benchmark for Evaluating Multimodal Large Language Models in WebUI-to-Code**](https://aclanthology.org/2025.findings-acl.815/) - Diagnoses webpage-to-code capability through visual perception, HTML programming, image-to-HTML understanding, and screenshot reconstruction tasks. <sub>Findings of ACL 2025 · Conference paper · Zhiyu Lin et al. · [PDF](https://aclanthology.org/2025.findings-acl.815.pdf) · [Full entry](https://awesomerea.org/papers/paper-webuibench/)</sub>
 - [**Divide-and-Conquer: Generating UI Code from Screenshots**](https://doi.org/10.1145/3729364) - Recursively divides a webpage screenshot along visual separation lines, has a multimodal model generate HTML/CSS for each leaf segment, and assembles child code upward into the full page; evaluated with GPT-4o, Gemini and Claude models and a small developer study. <sub>Proceedings of the ACM on Software Engineering 2025 · Journal article · Yuxuan Wan et al. · [PDF](https://arxiv.org/pdf/2406.16386v3) · [Code](https://github.com/WebPAI/DCGen) · [Full entry](https://awesomerea.org/papers/paper-dcgen/)</sub>
 - [**WebCode2M: A Real-World Dataset for Code Generation from Webpage Designs**](https://dl.acm.org/doi/10.1145/3696410.3714889) - WebCode2M pairs about 2.56 million real-world webpage screenshots with purified HTML/CSS code and element bounding-box layout trees. <sub>WWW 2025 · Conference paper · Yi Gui et al. · [PDF](https://arxiv.org/pdf/2404.06369v2) · [Code](https://github.com/CGCL-codes/naturalcc/tree/main/examples/webcode2m) · [Full entry](https://awesomerea.org/papers/paper-webcode2m/)</sub>
+- [**Sketch2Code: Evaluating Vision-Language Models for Interactive Web Design Prototyping**](https://aclanthology.org/2025.naacl-long.198/) - Sketch2Code benchmarks vision-language models on turning rough hand-drawn wireframe sketches into HTML webpage prototypes. <sub>NAACL 2025 · Conference paper · Ryan Li et al. · [PDF](https://aclanthology.org/2025.naacl-long.198.pdf) · [Code](https://github.com/SALT-NLP/Sketch2Code) · [Full entry](https://awesomerea.org/papers/paper-sketch2code/)</sub>
 - [**Design2Code: Benchmarking Multimodal Code Generation for Automated Front-End Engineering**](https://aclanthology.org/2025.naacl-long.199/) - Evaluates reconstruction of frontend code from webpage screenshots using real-world reference pages, visual-element and layout metrics, and human assessment. <sub>NAACL 2025 · Conference paper · Chenglei Si et al. · [PDF](https://aclanthology.org/2025.naacl-long.199.pdf) · [Code](https://github.com/NoviScl/Design2Code) · [Full entry](https://awesomerea.org/papers/paper-design2code/)</sub>
 - [**Large Language Models for Code Analysis: Do LLMs Really Do Their Job?**](https://www.usenix.org/conference/usenixsecurity24/presentation/fang) - Evaluates GPT-3.5-turbo, GPT-4, LLaMA-2-13B, Code-LLaMA-2-13B-Instruct and StarChat-Beta on explaining what de-commented JavaScript, Python and C code does, then repeats the task on JavaScript obfuscated with JavaScript Obfuscator (identifier renaming, dead-code injection, control-flow flattening and string splitting) and with Wobfuscator’s WebAssembly transformation. <sub>USENIX Security 2024 · Conference paper · Chongzhou Fang et al. · [PDF](https://www.usenix.org/system/files/usenixsecurity24-fang.pdf) · [Full entry](https://awesomerea.org/papers/paper-llm-code-analysis/)</sub>
 - [**Web2Code: A Large-scale Webpage-to-Code Dataset and Evaluation Framework for Multimodal LLMs**](https://proceedings.nips.cc/paper_files/paper/2024/hash/cb66be286795d71f89367d596bf78ea7-Abstract-Datasets_and_Benchmarks_Track.html) - Studies screenshot-to-HTML reconstruction through instruction tuning and two evaluation benchmarks. <sub>NeurIPS 2024 Datasets and Benchmarks · Conference paper · Sukmin Yun et al. · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/cb66be286795d71f89367d596bf78ea7-Paper-Datasets_and_Benchmarks_Track.pdf) · [Code](https://github.com/MBZUAI-LLM/web2code) · [Full entry](https://awesomerea.org/papers/paper-web2code/)</sub>
