@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**669 repositories** · 2026-10-20 UTC
+**668 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -230,7 +230,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [colealanroberts/OpenAlpha](https://github.com/colealanroberts/OpenAlpha) — A Swift package for retrieving images from Sony digital cameras **[134 stars]**
 - [crackmes/crackmes](https://github.com/crackmes/crackmes) — Open and censorship resistant crackmes repository **[131 stars]**
 - [localh0t/backfuzz](https://github.com/localh0t/backfuzz) — protocol fuzzing toolkit **[131 stars]**
-- [DerekSelander/mobdevim](https://github.com/DerekSelander/mobdevim) — Command line utility that interacts with plugged in iOS devices. Uses Apple's MobileDevice framework **[129 stars]**
 - [minaminao/erever](https://github.com/minaminao/erever) — My swiss army knife for reversing EVM bytecodes (super experimental) **[128 stars]**
 - [extremecoders-re/bytecode\_simplifier](https://github.com/extremecoders-re/bytecode_simplifier) — A generic deobfuscator for PjOrion obfuscated python scripts **[126 stars]**
 - [hgarrereyn/STRIDE](https://github.com/hgarrereyn/STRIDE) — simple type recognition in decompiled executables **[123 stars]**

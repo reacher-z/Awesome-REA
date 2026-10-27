@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/dynamic-analysis/) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**145 repositories** · 2026-10-20 UTC
+**146 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -81,6 +81,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Pilfer/ultimate-guitar-scraper](https://github.com/Pilfer/ultimate-guitar-scraper) — A simple scraper for Ultimate-Guitar.com's mobile API, written in Go. **[132 stars]**
 - [diommsantos/Gx64Sync](https://github.com/diommsantos/Gx64Sync) — A set of plugins for Ghidra and x64Dbg synchronization. A faster, more flexible ret-sync. **[131 stars]**
 - [vibheksoni/dma-spoofer](https://github.com/vibheksoni/dma-spoofer) — First open-source DMA-based HWID spoofer written in Rust. Spoof hardware IDs via direct memory access. **[130 stars]**
+- [DerekSelander/mobdevim](https://github.com/DerekSelander/mobdevim) — Command line utility that interacts with plugged in iOS devices. Uses Apple's MobileDevice framework **[129 stars]** · Curated: [mobdevim](https://awesomerea.org/resources/mobdevim/)
 - [lautarovculic/frida-ipa-extract](https://github.com/lautarovculic/frida-ipa-extract) — Robust Frida-based tool to dump decrypted iOS apps as .ipa from a jailbroken device supports App Store, sideloaded and system. **[129 stars]**
 - [NSEcho/furlzz](https://github.com/NSEcho/furlzz) — Fuzz iOS URL schemes **[129 stars]**
 - [iamtorsten/SherlockElf](https://github.com/iamtorsten/SherlockElf) — SherlockElf is a powerful tool designed for both static and dynamic analysis of Android ELF binaries and dynamic iOS Macho-O binaries (experimental). **[119 stars]**
