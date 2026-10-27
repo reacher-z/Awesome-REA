@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/protocol-analysis/) · [English](protocol-analysis.md)
 
-**109 个仓库** · 2026-10-20 UTC
+**110 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -22,6 +22,7 @@
 - [Annyfee/spider-js-reverse](https://github.com/Annyfee/spider-js-reverse) — 精选不同网站的 JavaScript 逆向实例，提供详细讲解、知识点概括、加密算法、难度对比及跳转链接，涵盖补环境、提取 JavaScript、webpack 和瑞数等难点。 **[111 星标]**
 - [HackingLZ/maps\_scanner](https://github.com/HackingLZ/maps_scanner) — 用于 Microsoft Defender 研究的 MAPS 云扫描器及响应解析器。 **[96 星标]**
 - [leodesigner/powmr\_comm](https://github.com/leodesigner/powmr_comm) — PowMr 逆变器串行通信协议逆向工程 **[96 星标]**
+- [seemoo-lab/apple-continuity-tools](https://github.com/seemoo-lab/apple-continuity-tools) — 面向 Apple 无线生态系统的逆向工程工具集 **[90 星标]** · 精选：[Apple Continuity 逆向工程工具包](https://awesomerea.org/zh/resources/apple-continuity-tools/)
 - [yapengye/NetPlier](https://github.com/yapengye/NetPlier) — NetPlier：基于消息轨迹的概率式网络协议逆向工程 **[75 星标]** · 论文：[NetPlier：基于报文记录的概率网络协议逆向工程](https://awesomerea.org/zh/papers/paper-netplier/)
 - [seemoo-lab/aristoteles](https://github.com/seemoo-lab/aristoteles) — Apple Remote Invocation（ARI）协议的 Wireshark 解析器；该协议在 Intel 基带芯片与 iOS CommCenter 之间用于各类管理任务、短信、电话及更多功能。 **[74 星标]**
 - [HalilDeniz/ICMPWatch](https://github.com/HalilDeniz/ICMPWatch) — ICMPWatch：ICMP 数据包嗅探器 **[60 星标]**

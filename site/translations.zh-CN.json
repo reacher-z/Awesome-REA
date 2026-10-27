@@ -4310,5 +4310,15 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "apple-continuity-tools": {
+    "name": "Apple Continuity 逆向工程工具包",
+    "requirements": [
+      "仓库只有三个提交：2021-04-12 的初始发布与论文链接，以及 2026-08-17 对 README 的修改，把原 Open Wireless Link 网站链接换成说明该网站已与项目无关的提示。没有发布版本。process_recon 的示例记录于 macOS 11.0，断点针对的是私有 Rapport 框架的方法；未说明是否支持当前 macOS 版本。",
+      "在分析者自己的 Mac 上运行，需要虚拟环境中的 Python 3 和 Node.js；make install 会安装锁定版本的依赖，包括 2021 年的 frida 14.2.7 和 frida-tools 9.1.0，以及开发依赖 prettier。continuity_messages 需要 lldb，并需关闭 SIP 的调试保护；keychain_access 用于系统进程时需完全关闭 SIP；README 提醒注意其安全影响。",
+      "输入来自分析者自己的设备和账号：rapportd 示例涉及放在 Mac 旁的 iPhone 以及分析者 iCloud 设备的密钥，因此 keychain_access 的输出包含真实机密，应妥善处理。keychain_access/tests 中有小型 Swift 和 Objective-C hackme 程序，以及先存入再提取一个虚拟钥匙串密码的 test.sh；除此之外没有测试。",
+      "这些工具观察的是主机上的日志、钥匙串调用和守护进程消息，并不捕获或解码空中的蓝牙低功耗或 AWDL 流量；这一点不同于另行收录、针对 Continuity 广播的 furiousMAC Continuity 笔记与 Wireshark 解析器。README 将作者的 USENIX Security 2021 Continuity 论文、2019 年 AWDL 论文和一篇 2020 年博士论文列为相关出版物。",
+      "采用 GPL-3.0。本次未安装或运行任何内容，所审阅的来源也未表明与 REA 有关。"
+    ]
   }
 }

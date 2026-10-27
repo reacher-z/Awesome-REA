@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/dynamic-analysis/) · [English](dynamic-analysis.md)
 
-**145 个仓库** · 2026-10-20 UTC
+**144 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -91,7 +91,6 @@
 - [miyagaw61/exgdb](https://github.com/miyagaw61/exgdb) — GDB 扩展 **[107 星标]**
 - [CYRUS-STUDIO/frida\_stalker](https://github.com/CYRUS-STUDIO/frida_stalker) — 使用 Frida Stalker 反 OLLVM 算法还原（函数调用分析、参数分析、打印调用堆栈、指令&amp;寄存器Trace）。 **[103 星标]**
 - [axhlzy/ARTHookScripts](https://github.com/axhlzy/ARTHookScripts) — 通过 Frida 在运行时解析 smali。 **[94 星标]**
-- [seemoo-lab/apple-continuity-tools](https://github.com/seemoo-lab/apple-continuity-tools) — 面向 Apple 无线生态系统的逆向工程工具集 **[90 星标]**
 - [rubaljain/frida-jb-bypass](https://github.com/rubaljain/frida-jb-bypass) — 绕过 iOS 应用越狱检测的 Frida 脚本。 **[88 星标]**
 - [freehuntx/frida-inject](https://github.com/freehuntx/frida-inject) — 通过 Frida 和 frida-load 轻松注入 JavaScript 的模块。 **[81 星标]**
 - [icloudza/algokiller-plugin](https://github.com/icloudza/algokiller-plugin) — ARM64 跟踪证据分析与密码算法恢复：Claude Desktop 插件，结合技能与本地 MCP 服务器，驱动原生 ak\_search 引擎处理 GB 级跟踪文件。 **[79 星标]**
