@@ -4301,5 +4301,14 @@
       "技术说明称，在早期人工尝试受阻后，长时间运行的 Claude Code（Opus 4.6）与 Codex 会话借助维护者自己已 root 的 S7、其固件、python-roborock 及反编译后的应用，帮助找到了配网中剩余的关键一步。说明致谢了 Dennis Giese 的固件研究、Valetudo 及其他社区工作；未提及使用 REA。",
       "采用 MIT 许可并附“按现状提供”的免责声明；项目与 Roborock 无关联。这是兼容的服务器实现，并非恢复的 Roborock 服务端代码，厂商固件或应用的变化可能使其失效。"
     ]
+  },
+  "mgbdis": {
+    "name": "mgbdis Game Boy ROM 反汇编器",
+    "requirements": [
+      "审阅时的最新发布版为 v3.0，发布于 2025-04-22；所审阅的 master 分支提交日期为 2026-07-31，比该标签多 15 个提交，版本号仍为 3.0。它是一个单独的 Python 脚本，需要 Python 3.6+；生成的汇编代码面向 RGBDS v0.8.0 或更高版本，生成的 Makefile 会调用其中的 rgbasm、rgblink、rgbfix 和 rgbgfx。命令行选项可控制十六进制大小写、缩进、操作数对齐和助记符写法，--tiny 模式用于不分存储体的 32 KiB ROM。",
+      "输入是使用者自备的 ROM 文件，可另附同名 .sym 文件；仓库不附带任何游戏 ROM。仓库内置 PyPNG 的 png.py 和 gbdev 的 hardware.inc 副本，唯一的测试 ROM 在测试时由项目自己的汇编源码构建而成。README 建议用作者另行开发的 Beaten Dying Moon 模拟器生成代码区段符号文件，该模拟器会记录实际执行过的指令；本条目未审阅该模拟器。",
+      "GitHub Actions 会安装最新的 RGBDS 发布版，构建测试 ROM 并将其反汇编，把输出与仓库中提交的预期文件逐一比对，再重新汇编反汇编结果，与测试 ROM 逐字节比较。这只是在项目自带样本上检验工具，并未覆盖商业游戏。README 指出，RGBDS 会在 STOP 后自动插入 NOP，因此原 ROM 中后面不是 NOP 的 STOP 会输出为数据字节；README 还说明该工具处理大型 ROM 时速度较慢。",
+      "采用 MIT 许可；png.py 附有其自身的 MIT 声明。mgbdis 输出的是汇编代码而非 C 代码，标签和区段边界来自分析者编写的符号文件。本条目未反汇编任何 ROM。"
+    ]
   }
 }

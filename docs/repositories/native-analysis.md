@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**851 repositories** · 2026-10-20 UTC
+**850 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -206,7 +206,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [manyuegong33/r0crawl\_skills](https://github.com/manyuegong33/r0crawl_skills) — r0crawl\_skills is a massive reverse-engineering skill arsenal for web, Android, iOS, Frida, native binaries, protocols, malware, firmware, and anti-analysis—built for beginners, tuned for pros, and engineered for reproducible results. **[332 stars]**
 - [gaasedelen/microavx](https://github.com/gaasedelen/microavx) — An AVX Lifter for the Hex-Rays Decompiler **[331 stars]**
 - [therealdreg/DbgChild](https://github.com/therealdreg/DbgChild) — Debug Child Process Tool (auto attach) **[328 stars]**
-- [mattcurrie/mgbdis](https://github.com/mattcurrie/mgbdis) — Game Boy ROM disassembler with RGBDS compatible output **[327 stars]**
 - [reetamdan/hypervisor-crack-audit](https://github.com/reetamdan/hypervisor-crack-audit) — Security analysis of the hypervisor drm method used to bypass denuvo. Reverse engineering of the driver loaders and boot components using Ghidra **[327 stars]**
 - [radareorg/radare2-mcp](https://github.com/radareorg/radare2-mcp) — MCP stdio server for radare2 **[325 stars]** · Curated: [Radare2 MCP Server](https://awesomerea.org/resources/radare2-mcp/)
 - [w00tzenheimer/d810-ng](https://github.com/w00tzenheimer/d810-ng) — D810-ng (Next Generation) is an updated, tested, refactored, and optimized IDA Pro plugin used to deobfuscate code at decompilation time by modifying IDA Pro microcode. **[325 stars]**

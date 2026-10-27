@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/game-analysis/) · [English](game-analysis.md)
 
-**484 个仓库** · 2026-10-20 UTC
+**485 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -58,6 +58,7 @@
 - [adonis-singh/re4](https://github.com/adonis-singh/re4) — 《生化危机 4》（GameCube，G4BE08 调试版本）：完整反编译为 C/C++，生成与原版逐字节一致的结果。 **[345 星标]**
 - [xensik/gsc-tool](https://github.com/xensik/gsc-tool) — 用于编译和反编译 IW 引擎游戏脚本的实用工具。 **[335 星标]**
 - [snuri00/psp-web-recomp](https://github.com/snuri00/psp-web-recomp) — 在浏览器中运行 PSP 游戏：静态重编译为 WebAssembly，配备高层仿真（HLE）内核与 WebGL2 渲染器。 **[329 星标]** · 精选：[PSP Web Recomp 浏览器游戏重编译项目](https://awesomerea.org/zh/resources/psp-web-recomp/)
+- [mattcurrie/mgbdis](https://github.com/mattcurrie/mgbdis) — Game Boy ROM 反汇编器，输出兼容 RGBDS。 **[327 星标]** · 精选：[mgbdis Game Boy ROM 反汇编器](https://awesomerea.org/zh/resources/mgbdis/)
 - [SpeedBreakerProject/speedbreaker](https://github.com/SpeedBreakerProject/speedbreaker) — Xbox 360 版 Need for Speed: Most Wanted（2005）的非官方静态重编译项目：面向 Steam Deck、Steam Machine、Steam Frame、Linux 和 Mac 的原生移植；iPhone/iPad 可侧载实验性 IPA 或自行构建。需自备光盘，不附带游戏文件。与 EA 或 Valve 无关联。 **[326 星标]** · 精选：[SpeedBreaker：对 Xbox 360 版《极品飞车：最高通缉》的静态重编译](https://awesomerea.org/zh/resources/speedbreaker-nfs-most-wanted-case/)
 - [g0aty/SickoMenu](https://github.com/g0aty/SickoMenu) — 功能强大的 Among Us 实用工具，通过自定义功能丰富游戏体验！ **[316 星标]**
 - [encounter/decomp-toolkit](https://github.com/encounter/decomp-toolkit) — GameCube 和 Wii 反编译工具包 **[311 星标]** · 精选：[decomp-toolkit GameCube/Wii 反编译工具包](https://awesomerea.org/zh/resources/decomp-toolkit/)

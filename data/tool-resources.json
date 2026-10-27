@@ -11759,5 +11759,38 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "mgbdis",
+    "name": "mgbdis",
+    "url": "https://github.com/mattcurrie/mgbdis",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Python disassembler that turns a Game Boy or Game Boy Color ROM, including multi-bank ROMs, into RGBDS-compatible assembly plus a Makefile that reassembles it, so the rebuilt ROM can be compared with the input. An optional .sym file beside the ROM supplies labels and marks code, data, text, padding and 1bpp/2bpp tile-image blocks; images are written as PNG files that rgbgfx converts back, text can use custom character maps, and hardware registers get hardware.inc names. The README explains that SM83 instructions vary in length and data is interleaved with code, so marked code blocks keep it from disassembling mid-instruction.",
+    "description_zh": "用 Python 编写的反汇编器，可把 Game Boy 或 Game Boy Color ROM（包括多存储体 ROM）转换为与 RGBDS 兼容的汇编代码，并生成用于重新汇编的 Makefile，以便将重建出的 ROM 与输入文件比对。ROM 旁可放置同名 .sym 文件，用来提供标签，并标出代码、数据、文本、填充以及 1bpp/2bpp 图块图像区段；图像会输出为 PNG，再由 rgbgfx 转换回去，文本可使用自定义字符映射，硬件寄存器则采用 hardware.inc 中的名称。README 解释说，SM83 指令长度不一，且数据与代码交错存放，因此需要标出代码区段，避免从指令中间开始反汇编。",
+    "evidence_url": "https://github.com/mattcurrie/mgbdis/blob/95d951a9881a0d7ff1a42a94d1be175da92b1777/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v3.0, published 2025-04-22; the reviewed master commit of 2026-07-31 is 15 commits ahead of that tag and still reports version 3.0. It is a single Python script that needs Python 3.6+, and the generated assembly targets RGBDS v0.8.0 or later, whose rgbasm, rgblink, rgbfix and rgbgfx the generated Makefile calls. Options control hexadecimal case, indentation, operand alignment and mnemonic variants, and a --tiny mode handles unbanked 32 KiB ROMs.",
+      "The input is a ROM file the user supplies, optionally with a same-named .sym file; the repository ships no game ROMs. It bundles PyPNG's png.py and a copy of gbdev's hardware.inc, and its only test ROM is assembled during testing from the project's own assembly sources. The README suggests generating code-block symbol files with the author's separate Beaten Dying Moon emulator, which records the instructions actually executed; that emulator was not reviewed.",
+      "GitHub Actions installs the latest RGBDS release, builds the test ROM, disassembles it, diffs the output against committed expected files, then reassembles the disassembly and compares it byte for byte with the test ROM. This checks the tool on its own fixture, not on commercial games. The README notes that RGBDS inserts a NOP after STOP, so a STOP not followed by NOP is emitted as a data byte, and calls the tool slow on large ROMs.",
+      "MIT license; png.py carries its own MIT notice. mgbdis produces assembly rather than C, and labels and block boundaries come from the analyst's symbol file. No ROMs were disassembled for this record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mattcurrie/mgbdis/blob/95d951a9881a0d7ff1a42a94d1be175da92b1777/README.md#L35-L45",
+      "https://github.com/mattcurrie/mgbdis/blob/95d951a9881a0d7ff1a42a94d1be175da92b1777/mgbdis.py#L1314-L1331",
+      "https://github.com/mattcurrie/mgbdis/blob/95d951a9881a0d7ff1a42a94d1be175da92b1777/mgbdis.py#L1235-L1261",
+      "https://github.com/mattcurrie/mgbdis/blob/95d951a9881a0d7ff1a42a94d1be175da92b1777/test/Makefile",
+      "https://github.com/mattcurrie/mgbdis/blob/95d951a9881a0d7ff1a42a94d1be175da92b1777/.github/workflows/test.yml",
+      "https://github.com/mattcurrie/mgbdis/tree/95d951a9881a0d7ff1a42a94d1be175da92b1777/test",
+      "https://github.com/mattcurrie/mgbdis/blob/95d951a9881a0d7ff1a42a94d1be175da92b1777/LICENSE",
+      "https://github.com/mattcurrie/mgbdis/releases/tag/v3.0"
+    ]
   }
 ]
