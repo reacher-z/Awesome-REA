@@ -11759,5 +11759,37 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "gm8decompiler",
+    "name": "GM8Decompiler",
+    "url": "https://github.com/OpenGMK/GM8Decompiler",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Command-line tool that turns games built with GameMaker 8.0 or 8.1 back into editable .gmk or .gm81 project files. It reads the gamedata section that a built executable carries next to the runner and writes its settings, sprites, sounds, backgrounds, paths, scripts, fonts, timelines, objects, rooms, extensions, included files and GML code in the project format matching the game's version. A Rust rewrite on the OpenGMK project's gm8exe library that replaced the team's fork of WastedMeerkat's gm81decompiler, it is now developed in the OpenGMK repository alongside the GM8Emulator runner reimplementation.",
+    "description_zh": "命令行工具，可把用 GameMaker 8.0 或 8.1 构建的游戏还原为可编辑的 .gmk 或 .gm81 项目文件。它读取已构建可执行文件中与运行器（runner）并存的 gamedata 部分，按游戏版本对应的项目格式写出其中的设置、精灵、声音、背景、路径、脚本、字体、时间线、对象、房间、扩展、附带文件以及 GML 代码。该工具基于 OpenGMK 项目的 gm8exe 库用 Rust 重写，取代了团队此前对 WastedMeerkat 的 gm81decompiler 的分支，现与重新实现 GameMaker 运行器的 GM8Emulator 一同在 OpenGMK 仓库中开发。",
+    "evidence_url": "https://github.com/OpenGMK/GM8Decompiler/blob/4cf52818a303e51154e7dc0ec473a22d8c24f21e/README.org",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.2.0, published 2024-02-12 with i686 and x86_64 Windows MSVC builds. Its tag points at the January 2022 commit that leaves only the README and licence in this repository, because development moved to OpenGMK while releases are still published here. The release notes list a Rust update from 1.59 to 1.76, a fix for executables written by gm82, and support for the 810 and 811 room formats; the OpenGMK gm8decompiler crate is also at 2.2.0, and its later commits only raise the Rust version and update dependencies.",
+      "Source builds use the OpenGMK Cargo workspace, cloned with submodules and built with cargo build --release, which also builds GM8Emulator. rust-toolchain.toml pins Rust 1.77 to keep Windows 7 support, and the OpenGMK README says only MSVC targets are supported on Windows and, because releases are rarely updated, recommends building it yourself. The decompiler crate has no tests, and neither repository has CI workflows at the reviewed commits.",
+      "Input is a GameMaker 8.0 or 8.1 game executable the user supplies; neither repository includes games. Usage is gm8decompiler FILENAME: -o names the output, which otherwise is the input path with the .gmk or .gm81 extension for the detected version; -l disables data-integrity checks; -s decompiles on one thread to lower memory use; -p keeps broken custom Execute Code actions instead of converting them to standard ones; and -d sets deobfuscation of GML code processed by Schreib's GM Obfuscator, which the default auto mode enables when assets have empty names.",
+      "The README reports the Rust loader as over ten times faster than the old gm81decompiler fork, safer, more thorough and able to read more games; these are project claims, and no per-game compatibility list or output check is published. GPL-2.0-only per Cargo.toml, with the GPL v2 text in LICENCE.md. Recovered projects contain the game's own assets and code, which remain subject to the rights of the game's owner. Nothing was built or run and no games were decompiled; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/OpenGMK/OpenGMK/blob/9e4282e6d19f4dd00961811840ddc3e11da6dd5a/gm8decompiler/README.md",
+      "https://github.com/OpenGMK/OpenGMK/blob/9e4282e6d19f4dd00961811840ddc3e11da6dd5a/gm8decompiler/src/main.rs",
+      "https://github.com/OpenGMK/OpenGMK/blob/9e4282e6d19f4dd00961811840ddc3e11da6dd5a/gm8decompiler/src/deobfuscate.rs",
+      "https://github.com/OpenGMK/OpenGMK/blob/9e4282e6d19f4dd00961811840ddc3e11da6dd5a/gm8decompiler/Cargo.toml",
+      "https://github.com/OpenGMK/OpenGMK/blob/9e4282e6d19f4dd00961811840ddc3e11da6dd5a/README.md",
+      "https://github.com/OpenGMK/OpenGMK/blob/9e4282e6d19f4dd00961811840ddc3e11da6dd5a/rust-toolchain.toml",
+      "https://github.com/OpenGMK/GM8Decompiler/blob/4cf52818a303e51154e7dc0ec473a22d8c24f21e/LICENCE.md",
+      "https://github.com/OpenGMK/GM8Decompiler/releases/tag/v2.2.0"
+    ]
   }
 ]
