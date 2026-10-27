@@ -7294,5 +7294,55 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-pop-quiz-llm-re",
+    "title": "Pop Quiz! Can a Large Language Model Help With Reverse Engineering?",
+    "title_zh": "随堂测验！大语言模型能帮助逆向工程吗？",
+    "authors": [
+      "Hammond Pearce",
+      "Benjamin Tan",
+      "Prashanth Krishnamurthy",
+      "Farshad Khorrami",
+      "Ramesh Karri",
+      "Brendan Dolan-Gavitt"
+    ],
+    "year": 2022,
+    "publication_date": "2022-02-02",
+    "date_precision": "day",
+    "date_basis": "arXiv v1 submission date; no later version, journal reference or proceedings publication was found.",
+    "date_basis_zh": "arXiv v1 首次提交日期；未找到后续版本、期刊引用信息或会议论文集出版记录。",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2202.01142",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2022-02-02",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2202.01142",
+    "pdf_url": "https://arxiv.org/pdf/2202.01142v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Tests whether OpenAI’s Codex model code-davinci-001 can answer reverse-engineering questions about C code in a zero-shot question-and-answer prompt. Programs come from templates the authors wrote, covering cybersecurity snippets and industrial-control algorithms such as PID controllers and filters, plus five single-file Linux malware samples from vx-underground. Each is presented as original or name-randomized source, or as Ghidra decompilation of gcc -O1 builds with debug information, without it, or stripped. After exploratory open-ended questions, generated true/false and short-answer questions about purpose, capabilities and key variables are graded against an answer oracle; Codex answered 72,754 of 136,260 questions correctly.",
+    "description_zh": "检验 OpenAI 的 Codex 模型 code-davinci-001 能否在零样本问答式提示中回答有关 C 代码的逆向工程问题。程序来自作者编写的模板，涵盖网络安全代码片段以及 PID 控制器、滤波器等工业控制算法，另有五个来自 vx-underground 的单文件 Linux 恶意软件样本。每个程序以原始或名称随机化的源码，或以 gcc -O1 构建（带调试信息、不带调试信息或剥离符号）经 Ghidra 反编译的形式呈现。在探索性的开放式提问之后，作者针对程序用途、能力与关键变量自动生成判断题和简答题，并依据答案标准评分；Codex 在 136,260 个问题中答对 72,754 个。",
+    "scope_limitations_en": "All results come from one model, code-davinci-001, which OpenAI shut down on 2023-03-23, so they cannot be rerun against the original model and do not describe current LLMs. Accuracy is measured with a generated true/false and short-answer quiz, paired as positive and negated questions to expose answer bias, rather than with analyst tasks; the overall 53.4% led the authors to conclude that LLMs are not yet ready for zero-shot reverse engineering. Programs are small single-file C code that fits the model’s roughly 4,000-token window, compiled only at -O1; the real-malware class has five samples. The answer oracle combines the authors’ labels with capability matches from the capa tool.",
+    "scope_limitations_zh": "全部结果均来自单一模型 code-davinci-001，OpenAI 已于 2023-03-23 停用该模型，因此无法针对原模型重跑实验，结果也不代表当前的大语言模型。准确率依据自动生成的判断题与简答题测验衡量，判断题以正反两种表述成对提出以揭示回答偏向，并非真实分析任务；总体 53.4% 的正确率使作者得出大语言模型尚不能胜任零样本逆向工程的结论。程序均为可放入模型约 4,000 词元窗口的小型单文件 C 代码，且只以 -O1 编译；真实恶意软件类别仅有五个样本。答案标准结合了作者标注与 capa 工具的能力匹配结果。",
+    "why_fits_en": "Records the earliest LLM-for-reverse-engineering evaluation in the bibliography, a baseline for the later LLM binary-analysis studies in this section.",
+    "why_fits_zh": "收录本书目中最早的大语言模型逆向工程评测，为本节后续的大语言模型二进制分析研究提供基线。",
+    "metadata_notes": "Reviewed arXiv v1, the only version; its comment reads “18 pages, 19 figures” and links Zenodo record 10.5281/zenodo.5949075, a dataset DOI that is not used as the paper identifier. No peer-reviewed version was found in Crossref. That record (CC BY 4.0, a 692 MB codex-reverse.zip by the same six creators) holds the test framework scripts, recorded Codex responses and generated program instances. Its README, requirements file and build log were read through ranged requests: the README requires Ghidra and an OpenAI API key, and the build log lists compiled instances under experiments/malware, so the archive appears to include the malware samples and is not recorded as a code link. The archive was not downloaded in full or extracted, and no code or experiments were run.",
+    "metadata_notes_zh": "审阅了 arXiv v1，即唯一版本；其注释为“18 pages, 19 figures”，并链接 Zenodo 记录 10.5281/zenodo.5949075。该编号是数据集 DOI，不作为论文标识符。在 Crossref 中未找到经同行评审的版本。该记录（CC BY 4.0，由同样六位作者发布的 692 MB 文件 codex-reverse.zip）包含测试框架脚本、记录的 Codex 回答及生成的程序实例。本次通过分段请求读取了其中的 README、依赖文件与构建日志：README 要求 Ghidra 和 OpenAI API 密钥，构建日志列出了 experiments/malware 下的编译实例，可见压缩包似乎包含这些恶意软件样本，因此不将其记录为代码链接。本次未完整下载或解压该压缩包，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2202.01142v1",
+      "https://arxiv.org/pdf/2202.01142v1",
+      "https://zenodo.org/records/5949075",
+      "https://zenodo.org/api/records/5949075",
+      "https://developers.openai.com/api/docs/deprecations"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 492](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 208](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 492](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 208](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 135](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-492 项精选资源（208 个案例）· 134 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 489。
+492 项精选资源（208 个案例）· 135 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 489。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (134) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (135) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -640,13 +640,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**134 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、发表场所、状态与第一作者，中文标题为译名。
+**135 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (57) · [网站](#papers-website-reconstruction) (22)
+- [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (58) · [网站](#papers-website-reconstruction) (22)
 - [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (12) · [固件](#papers-firmware-analysis) (13)
 - [协议](#papers-protocol-analysis) (13)
 
@@ -724,6 +724,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**利用学习得到的变量名称与类型增强反编译输出**](https://www.usenix.org/conference/usenixsecurity22/presentation/chen-qibin) - 提出 Transformer 模型 DIRTY，根据反编译代码和布局信息推荐变量名与类型，并提供用于训练和评估的 DIRT 语料。 <sub>USENIX Security 2022 · 会议论文 · Qibin Chen 等 · [PDF](https://arxiv.org/pdf/2108.06363) · [代码](https://github.com/CMUSTRUDEL/DIRTY) · [完整条目](https://awesomerea.org/zh/papers/paper-dirty/)</sub>
 - [**jTrans：面向二进制代码相似性检测的跳转感知 Transformer**](https://dl.acm.org/doi/10.1145/3533767.3534367) - jTrans 使用 BERT 风格的 Transformer 为二进制函数生成嵌入，以支持相似性检索。 <sub>ACM ISSTA 2022 · 会议论文 · Hao Wang 等 · [PDF](https://arxiv.org/pdf/2205.12713v1) · [代码](https://github.com/vul337/jTrans) · [完整条目](https://awesomerea.org/zh/papers/paper-jtrans/)</sub>
 - [**ExeBench：机器学习规模的可执行 C 函数数据集**](https://dl.acm.org/doi/10.1145/3520312.3534867) - ExeBench 是数据集，而非反编译器。 <sub>ACM SIGPLAN MAPS 2022 · 会议论文 · Jordi Armengol-Estapé 等 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3520312.3534867) · [代码](https://github.com/jordiae/exebench/tree/8b47d483c2e39ea40a304fbaac46e41a1a14272f) · [完整条目](https://awesomerea.org/zh/papers/paper-exebench/)</sub>
+- [**随堂测验！大语言模型能帮助逆向工程吗？**](https://arxiv.org/abs/2202.01142) - 检验 OpenAI 的 Codex 模型 code-davinci-001 能否在零样本问答式提示中回答有关 C 代码的逆向工程问题。 <sub>arXiv 2022 · 预印本 · Hammond Pearce 等 · [PDF](https://arxiv.org/pdf/2202.01142v1) · [完整条目](https://awesomerea.org/zh/papers/paper-pop-quiz-llm-re/)</sub>
 - [**超越 C：基于神经机器翻译的可重定向反编译**](https://www.ndss-symposium.org/ndss-paper/auto-draft-298/) - BTC（Beyond The C）将反编译视为从编译器输出的 x86-64 汇编到源码的纯文本翻译，分别在汇编与源码上训练字节对编码分词器，并使用标准 fairseq Transformer。 <sub>Workshop on Binary Analysis Research (BAR) 2022 · 会议论文 · Iman Hosseini 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2022_23009_paper.pdf) · [代码](https://figshare.com/s/2c68b9c181e80f4e3b06) · [完整条目](https://awesomerea.org/zh/papers/paper-beyond-the-c/)</sub>
 - [**基于增强控制流图的剥离符号二进制神经逆向工程**](https://dl.acm.org/doi/10.1145/3428293) - Nero 为剥离符号的 x86-64 Linux 可执行文件中的过程预测名称，并不生成反编译代码。 <sub>Proceedings of the ACM on Programming Languages (OOPSLA 2020) · 期刊论文 · Yaniv David 等 · [PDF](https://arxiv.org/pdf/1902.09122v4) · [代码](https://github.com/tech-srl/Nero/tree/7dac9f5748974ea8f39b5f29bb3c7d33f971077e) · [完整条目](https://awesomerea.org/zh/papers/paper-nero/)</sub>
 - [**DIRE：基于神经网络的反编译标识符命名方法**](https://doi.org/10.1109/ASE.2019.00064) - 结合反编译输出中的词法与结构信息预测有意义的变量名，并使用编译 C 项目构建训练和评估语料。 <sub>ASE 2019 · 会议论文 · Jeremy Lacomis 等 · [PDF](https://arxiv.org/pdf/1909.09029) · [代码](https://github.com/pcyin/dire) · [完整条目](https://awesomerea.org/zh/papers/paper-dire/)</sub>
