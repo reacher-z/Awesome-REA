@@ -11759,5 +11759,31 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "linkpi-encx-unofficial-docs",
+    "name": "Link Pi ENCx encoders (unofficial documentation)",
+    "url": "https://github.com/matiaspl/LinkPi-ENCx",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A single-README notebook, kept since 2021 by an owner with no ties to the vendor, on the internals of LinkPi ENC-series video encoders and the TBS 2603SE, which share one firmware line; the author's first units use the F3520D board with a HiSilicon Hi3520DV400. It covers the Linux system and PHP web interface, undocumented features and internal pages, intercom and tally interfaces, default accounts and network services with hardening steps, HiSilicon media-pipeline diagnostics, board pinouts including the UART, firmware recovery, and translated release notes for firmware updates from 2020 to 2026.",
+    "description_zh": "一份自 2021 年起维护的单 README 笔记，作者是与厂商无关的设备用户，记录 LinkPi ENC 系列视频编码器和 TBS 2603SE 的内部结构；这些设备共用同一条固件线，作者最初的设备采用搭载 HiSilicon Hi3520DV400 的 F3520D 主板。内容涵盖 Linux 系统与 PHP 网页界面、未公开功能和内部页面、对讲与 tally 接口、默认账户与网络服务及加固步骤、HiSilicon 媒体管线诊断、包括 UART 在内的主板引脚定义、固件恢复，以及 2020 至 2026 年固件更新的翻译版发布说明。",
+    "evidence_url": "https://github.com/matiaspl/LinkPi-ENCx/blob/a30d20161f6d28805fbb2c040250a7145b5f6655/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit, of 2026-07-13, added release notes for firmware 5.2.0 (build 20260531). Findings come from the author's and contributors' own devices; several sections are marked outdated, the release notes are machine-translated from Chinese, and the README says TinyENC1 appears to ship different firmware that the author has not examined.",
+      "The procedures need the reader's own encoder and shell access to it. Firmware upgrade and full-flash packages come only from LinkPi's official download pages; none are committed. The repository's only other file is v4l2-ctl, a prebuilt ARM uClibc build of the V4L2 control utility added in 2021 without source or a license notice.",
+      "The README lists the vendor's default credentials and exposed services as a security warning, says LinkPi did not answer the author's reports, and gives hardening steps; this entry does not repeat them. A 2026 update credits AI for in-progress LD_PRELOAD timestamp hooks; no REA use is stated.",
+      "There is no license file, so the notes state no reuse terms; LinkPi firmware, software and documentation keep the vendor's rights. Nothing was run on a device for this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/matiaspl/LinkPi-ENCx/blob/a30d20161f6d28805fbb2c040250a7145b5f6655/README.md#L292-L312",
+      "https://github.com/matiaspl/LinkPi-ENCx/blob/a30d20161f6d28805fbb2c040250a7145b5f6655/v4l2-ctl"
+    ]
   }
 ]
