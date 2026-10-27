@@ -12616,5 +12616,35 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "tigard",
+    "name": "Tigard",
+    "url": "https://github.com/tigard-tools/tigard",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "protocol"
+    ],
+    "description_en": "Open-hardware board built around the FTDI FT2232H that connects a computer to a target device's UART, SPI, I2C, JTAG and SWD interfaces through level shifters that operate from 1.8 to 5.5 V. One of the chip's two ports is dedicated to UART and the other is shared by the remaining interfaces; switches select the reference voltage and the SPI/JTAG or I2C/SWD wiring, and a logic-analyzer header lets an external analyzer watch the traffic. Tigard has no software of its own: it is designed to work with existing x232H tools, and the README gives settings for reading SPI flash, JTAG debugging with OpenOCD or Black Magic Debug, SWD debugging with OpenOCD, boundary scan, and iCE40 or AVR programming.",
+    "description_zh": "以 FTDI FT2232H 为核心的开源硬件板卡，通过工作电压为 1.8–5.5 V 的电平转换器，把计算机连接到目标设备的 UART、SPI、I2C、JTAG 和 SWD 接口。芯片的两个端口中，一个专用于 UART，另一个由其余接口共用；拨动开关用于选择参考电压以及 SPI/JTAG 或 I2C/SWD 接线方式，逻辑分析仪排针则可让外接分析仪观察通信。Tigard 本身不带软件，而是按现有 x232H 工具的支持方式设计；README 给出了读取 SPI 闪存、用 OpenOCD 或 Black Magic Debug 进行 JTAG 调试、用 OpenOCD 进行 SWD 调试、边界扫描，以及为 iCE40 或 AVR 编程的设置方法。",
+    "evidence_url": "https://github.com/tigard-tools/tigard/blob/0dd58e710374880a3ae988f2ddfeb46f5ec8061d/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Tigard board, bought assembled from the sellers the README lists (Crowd Supply, Mouser, 1BitSquared and SecuringHardware.com) or built from the published design, plus physical access and wiring to the target. The README's hookup sequence starts with the voltage switch on VTGT and distinguishes target-powered, Tigard-powered and self-powered setups; for in-circuit SPI work it says to make sure no other device is communicating with the flash chip.",
+      "master holds the v1.1 design files for KiCad 5 (schematic, PCB, footprints, 3D models and a render), unchanged since release v1.1 of 2021-09-21 apart from README and .gitignore updates; the newest commit, from 2026-10-08, adds Black Magic Debug to the README. Release v1.2, published 2026-05-29 from a separate v1.2 branch, moves the design to KiCad 9 and attaches Tigard_v1.2.zip, and its notes state no functional difference from v1.1. The repository contains no firmware or host software.",
+      "Host tools are separate projects with FT2232H support: USB-serial drivers for UART, flashrom, pyftdi or libmpsse for SPI and I2C, OpenOCD (the README's JTAG and SWD configurations need v0.12+), Black Magic Debug, UrJTAG and the commercial, Windows-only TopJTAG for boundary scan, iceprog, and avrdude, which has built-in Tigard support from 7.1. The README notes FT2232H limits for I2C (controller mode only, no clock stretching, possible conflicts with other controllers) and reports that UrJTAG runs TCK about five times faster than requested.",
+      "CC-BY-SA 4.0 (LICENSE.txt, copyright 2020 Franklin Harding), which GitHub does not classify. The README encourages home-built boards but asks their makers to use another color, accurate USB manufacturer descriptors and serial numbers without the TG prefix. Data read from a target keeps its owner's rights; the reviewed sources mention no AI or REA use, and no hardware was tested for this record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/tigard-tools/tigard/blob/0dd58e710374880a3ae988f2ddfeb46f5ec8061d/LICENSE.txt",
+      "https://github.com/tigard-tools/tigard/blob/0dd58e710374880a3ae988f2ddfeb46f5ec8061d/tigard.sch",
+      "https://github.com/tigard-tools/tigard/blob/0dd58e710374880a3ae988f2ddfeb46f5ec8061d/tigard.kicad_pcb",
+      "https://github.com/tigard-tools/tigard/releases/tag/v1.1",
+      "https://github.com/tigard-tools/tigard/releases/tag/v1.2"
+    ]
   }
 ]
