@@ -227,6 +227,11 @@ async function homepage(page, language, viewport, data, requested) {
   assert.equal(await count(page, '#resource-grid .resource-card'), Math.min(30, total), `${label}: curated Show More`);
   assert.equal(await count(page, '#resource-grid .resource-card > .card-meta .resource-evidence-link'), 0);
   assert.equal(await count(page, '#resource-grid .resource-card details .resource-evidence-link'), Math.min(30, total));
+  // From 1101 px the compact layout stacks full-entry links above the details toggle; they keep 24 px targets (WCAG 2.5.8).
+  if (viewport.width >= 1101) {
+    const entryHeights = await page.$$eval('#resource-grid .resource-entry-link', links => links.map(link => link.getBoundingClientRect().height));
+    assert(entryHeights.length && entryHeights.every(height => height >= 24), `${label}: full-entry link targets are at least 24 px tall`);
+  }
   await press(page, '#resource-grid .resource-card details.requirements summary');
   const expanded = await page.$eval('#resource-grid .resource-card details.requirements', details => ({open: details.open,
     items: details.querySelectorAll('li:not(.requirements-pending)').length, height: details.querySelector('ul').getBoundingClientRect().height}));
