@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 515](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-515-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 218](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 138](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 516](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-516-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 218](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 138](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,12 +21,12 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-515 项精选资源（218 个案例）· 138 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 512。
+516 项精选资源（218 个案例）· 138 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 513。
 
 **按目标找工具与案例**
 
 - [网站](#website) (29) · [游戏](#game) (198) · [应用](#app) (83)
-- [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (24) · [协议](#protocol) (21)
+- [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (24) · [协议](#protocol) (22)
 
 **论文与工作流**
 
@@ -545,6 +545,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**friTap TLS 密钥提取与流量解密工具**](https://github.com/fkie-cad/friTap) - 基于 Frida 的工具，在运行中的进程内挂钩 OpenSSL、BoringSSL、NSS、GnuTLS 等 TLS 库，输出 NSS 格式的密钥日志和解密后的 PCAP 明文，便于分析者在 Wireshark 中检查应用的加密流量。 <sub>工具 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/fritap/)</sub>
 - [**pbtk Protobuf 逆向工具集**](https://github.com/marin-m/pbtk) - 从已编译程序中恢复 Protobuf 消息定义，并还原为可读的 .proto 文件。 <sub>工具 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/pbtk/)</sub>
 - [**SteamKit Steam 网络协议库**](https://github.com/SteamRE/SteamKit) - 实现 Valve Steam 网络协议客户端的 .NET 库，涵盖连接管理服务器会话、身份验证、好友、统一服务消息与 Game Coordinator 消息、Web API 调用以及 CDN depot 下载。 <sub>工具 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/steamkit/)</sub>
+- [**cantools CAN 总线数据库工具**](https://github.com/cantools/cantools) - 面向 CAN 总线数据库的 Python 3 库和命令行工具，可解析 DBC、KCD、SYM、ARXML 3/4 和 CDD 文件，对 CAN 报文进行编码和解码，支持简单与扩展信号多路复用以及诊断 DID。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/cantools/)</sub>
 
 <a id="agents-and-mcp"></a>
 ### Agents and MCP · 智能体与 MCP
