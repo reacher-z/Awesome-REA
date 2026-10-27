@@ -28,7 +28,21 @@ def source_label(url: str, language: str) -> tuple[str, str]:
     return url, ''
 
 
+def accessible_name(url: str, language: str) -> str | None:
+    """Name a compact link by its visible path plus repository and revision, so paths such as
+    README.md stay distinct in link lists; full-URL labels need no separate name."""
+    label, context = source_label(url, language)
+    if not context:
+        return None
+    owner, repository, _, revision, _ = urlsplit(url).path.lstrip('/').split('/', 4)
+    if language == 'zh':
+        return f'{label}，GitHub {owner}/{repository}，修订 {revision[:7]}'
+    return f'{label}, GitHub {owner}/{repository}, revision {revision[:7]}'
+
+
 def evidence_link(url: str, href: str, language: str) -> str:
     """Render one evidence link from its validated, escaped href, with the full URL as its title."""
     label, context = source_label(url, language)
-    return f'<a href="{href}" title="{href}" target="_blank" rel="noopener">{escape(label)}</a>{context}'
+    name = accessible_name(url, language)
+    aria = f' aria-label="{escape(name, quote=True)}"' if name else ''
+    return f'<a href="{href}" title="{href}" target="_blank" rel="noopener"{aria}>{escape(label)}</a>{context}'
