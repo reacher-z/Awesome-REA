@@ -7355,5 +7355,62 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-deepdi",
+    "title": "DeepDi: Learning a Relational Graph Convolutional Network Model on Instructions for Fast and Accurate Disassembly",
+    "title_zh": "DeepDi：在指令上学习关系图卷积网络模型以实现快速准确的反汇编",
+    "authors": [
+      "Sheng Yu",
+      "Yu Qu",
+      "Xunchao Hu",
+      "Heng Yin"
+    ],
+    "year": 2022,
+    "publication_date": "2022-08",
+    "date_precision": "month",
+    "date_basis": "Publication month from the official USENIX BibTeX (month = aug) and the final PDF cover for the 31st USENIX Security Symposium, August 10–12, 2022; no exact publication day is asserted.",
+    "date_basis_zh": "采用 USENIX 官方 BibTeX（month = aug）及第 31 届 USENIX Security Symposium（2022 年 8 月 10–12 日）最终版 PDF 封面所载的出版月份，不推定具体出版日。",
+    "venue": "USENIX Security 2022",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": null,
+    "citation": {
+      "container_title": "31st USENIX Security Symposium (USENIX Security 22)",
+      "publisher": "USENIX Association",
+      "pages": "2709-2725",
+      "sources": [
+        "https://www.usenix.org/conference/usenixsecurity22/presentation/yu-sheng",
+        "https://www.usenix.org/system/files/sec22-yu-sheng.pdf"
+      ]
+    },
+    "url": "https://www.usenix.org/conference/usenixsecurity22/presentation/yu-sheng",
+    "pdf_url": "https://www.usenix.org/system/files/sec22-yu-sheng.pdf",
+    "code_url": "https://github.com/DeepBitsTechnology/DeepDi",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "DeepDi disassembles x86 and x64 binaries by decoding a superset of candidate instructions, linking them in an Instruction Flow Graph of forward, backward and overlap relations, and classifying true instructions with a Relational Graph Convolutional Network; heuristics and a small classifier then recover function entry points. On BAP corpora, LLVM 11 built with MSVC on Windows, and SPEC CPU2006 and CPU2017, the authors report accuracy comparable or superior to IDA Pro, Binary Ninja, Ghidra, Datalog Disassembly and XDA, robustness on Linn–Debray and Hikari obfuscated binaries, single-core CPU throughput of 146 KB/s (about twice IDA Pro) and GPU throughput of 24.5 MB/s (about 350 times IDA Pro).",
+    "description_zh": "DeepDi 对 x86 与 x64 二进制进行反汇编：先解码候选指令的超集，再以前向、后向与重叠关系将其连接成指令流图，并用关系图卷积网络识别真实指令；随后借助启发式规则和一个小型分类器恢复函数入口。作者在 BAP 语料、Windows 上以 MSVC 构建的 LLVM 11，以及 SPEC CPU2006 与 CPU2017 上报告，其准确率与 IDA Pro、Binary Ninja、Ghidra、Datalog Disassembly 和 XDA 相当或更优，在 Linn–Debray 与 Hikari 混淆二进制上表现稳健，单核 CPU 吞吐量为 146 KB/s（约为 IDA Pro 的两倍），GPU 吞吐量为 24.5 MB/s（约为 IDA Pro 的 350 倍）。",
+    "scope_limitations_en": "Covers x86 and x64 ELF and PE binaries only. ELF ground truth assumes no data in code sections and uses linear disassembly plus symbol tables; PE ground truth comes from PDB files, with data lengths estimated because PDBs give only data addresses. Results are the authors’ 2022 comparisons against Binary Ninja 2.2, IDA Pro 7.2 and Ghidra 9.1.2 on their datasets and hardware, with one GTX 2080Ti GPU; Datalog Disassembly supports only x64 ELF and so covers part of the evaluation. Obfuscation tests use Linn–Debray samples and Hikari-built binaries; the authors note that a strong adversary using the model’s gradients could construct adversarial examples, which they leave to future work. The malware case reports 10-fold cross-validation accuracy on training data and log loss from the challenge’s online judge, because test labels are not public. Disassembly accuracy does not establish correct function boundaries in every case, decompilation or source recovery.",
+    "scope_limitations_zh": "仅覆盖 x86 与 x64 的 ELF 和 PE 二进制。ELF 的真实标签假定代码节中没有数据，并基于线性反汇编与符号表获得；PE 的真实标签来自 PDB 文件，由于 PDB 只提供数据地址而无数据长度，数据长度为估计值。结果是作者 2022 年在自有数据集与硬件上与 Binary Ninja 2.2、IDA Pro 7.2 及 Ghidra 9.1.2 的比较，使用单块 GTX 2080Ti GPU；Datalog Disassembly 仅支持 x64 ELF，因此只覆盖部分评测。混淆测试使用 Linn–Debray 样本和以 Hikari 构建的二进制；作者指出，掌握模型梯度的强攻击者可能构造对抗样本，并将其留作后续工作。恶意软件案例报告训练数据上的十折交叉验证准确率，以及挑战赛在线评测系统返回的对数损失，因为测试标签并未公开。反汇编准确率不等于在所有情况下函数边界正确，也不代表反编译或源码恢复。",
+    "why_fits_en": "Adds learned disassembly, the step whose errors several similarity and decompilation records list as a threat to validity, complementing IDA Pro-dependent pipelines such as jTrans.",
+    "why_fits_zh": "补充基于学习的反汇编研究；多个相似性与反编译条目将反汇编错误列为效度威胁，该研究与 jTrans 等依赖 IDA Pro 的流程互补。",
+    "metadata_notes": "No paper DOI or arXiv identifier was verified; the record uses the reviewed USENIX Security presentation-page and sec22-yu-sheng.pdf profile. The USENIX BibTeX gives the 31st USENIX Security Symposium, pages 2709–2725, USENIX Association and month August; the presentation page also links a prepublication PDF and an abstract PDF. The paper describes a binary release. At reviewed commit e308252 (2026-05-01), the repository ships the model core as a prebuilt DeepDiCore.so under the DeepDi Trial Period Software Demonstration License Agreement, and license.txt applies MIT only to the other code, a Python wrapper, API notes and Dockerfiles; the GitHub API reports NOASSERTION, and the linked license PDF returned HTTP 404 when checked. The README calls this a community edition for non-commercial use, requires Docker and a free key from Deepbits, and supports optional CUDA GPUs. The model and training pipeline are not open source. Nothing was downloaded beyond documentation files, and no code was run.",
+    "metadata_notes_zh": "未核实论文 DOI 或 arXiv 标识符；本条目采用经审阅的 USENIX Security 报告页面与 sec22-yu-sheng.pdf 配对规则。USENIX BibTeX 给出第 31 届 USENIX Security Symposium、页码 2709–2725、出版方 USENIX Association 及八月份；报告页面另链接预发表版 PDF 与摘要 PDF。论文称提供的是二进制发行版。在所审阅的提交 e308252（2026-05-01）中，仓库以预编译的 DeepDiCore.so 提供模型核心，适用 DeepDi Trial Period Software Demonstration License Agreement；license.txt 仅将其余代码（Python 封装、API 说明与 Dockerfile）列为 MIT 许可。GitHub API 报告为 NOASSERTION，所链接的许可证 PDF 在检查时返回 HTTP 404。README 称其为仅限非商业用途的社区版，需要 Docker 及从 Deepbits 免费获取的密钥，并可选用 CUDA GPU。模型与训练流程并未开源。本次仅下载文档文件，未运行代码。",
+    "evidence_urls": [
+      "https://www.usenix.org/conference/usenixsecurity22/presentation/yu-sheng",
+      "https://www.usenix.org/system/files/sec22-yu-sheng.pdf",
+      "https://github.com/DeepBitsTechnology/DeepDi/blob/e3082527d4e71990ccf3a54cff5294c52793c012/README.md",
+      "https://github.com/DeepBitsTechnology/DeepDi/blob/e3082527d4e71990ccf3a54cff5294c52793c012/license.txt",
+      "https://github.com/DeepBitsTechnology/DeepDi/blob/e3082527d4e71990ccf3a54cff5294c52793c012/Dockerfile"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
