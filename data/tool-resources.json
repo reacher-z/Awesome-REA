@@ -12487,5 +12487,41 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "facedancer",
+    "name": "Facedancer",
+    "url": "https://github.com/greatscottgadgets/facedancer",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Python library for implementing USB devices in software, with a hardware peripheral such as Cynthion or GreatFET acting as a remote-controlled USB controller attached to the target host. Its USBProxy mode sits between a real device and a host, forwarding transfers while filters log, decode or modify them for USB protocol analysis; the README notes this suits devices whose software you do not control, such as embedded systems or game consoles. Version 3 is a ground-up rewrite of the emulation core that ships keyboard, mass-storage and FTDI serial device models plus HID and logging proxy filters, and no longer runs legacy 2.9.x scripts.",
+    "description_zh": "用软件实现 USB 设备的 Python 库，借助 Cynthion、GreatFET 等硬件外设充当连接目标主机的可远程控制 USB 控制器。其 USBProxy 模式位于真实设备与主机之间转发传输，并由过滤器记录、解码或修改传输内容，用于 USB 协议分析；README 指出，这适用于无法控制其软件的设备，例如嵌入式系统或游戏主机。第 3 版从头重写了仿真核心，内置键盘、大容量存储和 FTDI 串口设备模型以及 HID 与日志代理过滤器，不再支持旧版 2.9.x 脚本。",
+    "evidence_url": "https://github.com/greatscottgadgets/facedancer/blob/9f1298856e8ec6871cca995ded3076ab89dd72cd/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs a supported board selected with the BACKEND variable: Cynthion (cynthion), GreatFET One and other LPC4330 boards (greatfet), GoodFET-based Facedancers such as the Facedancer21 (goodfet), Raspberry Pi Raspdancer boards (raspdancer) or HydraDancer and HydraUSB3 (hydradancer). The README says MAX3420/MAX3421-based boards cannot emulate more complex devices or act as USBProxy MITM devices, and that HydraDancer boards do not support host mode.",
+      "Latest release at review: 3.1.3, published 2026-05-22 on GitHub and PyPI and identical to the reviewed main commit; pyproject.toml requires Python 3.10+ with pyusb, libusb1, pyserial, prompt-toolkit and hid-parser. The README says Facedancer 3.0 does not work on Windows and runs only on GNU/Linux, while the getting-started guide narrows the warning to Windows control hosts with GreatFET and the proxy guide says USBProxy must run as root on macOS to claim the proxied device.",
+      "USBProxy needs the real device being proxied, identified by its vendor and product IDs, and the analyst's filters decide what is forwarded, logged or changed; the README calls the proxy feature complete but in need of more documentation. The repository holds Python sources, examples, tests and documentation, with no board firmware. Emulate and proxy only hosts and devices you own or are authorized to test.",
+      "BSD-3-Clause licensed. No hardware was connected and no USB traffic was captured."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/greatscottgadgets/facedancer/blob/9f1298856e8ec6871cca995ded3076ab89dd72cd/README.md#L55-L77",
+      "https://github.com/greatscottgadgets/facedancer/blob/9f1298856e8ec6871cca995ded3076ab89dd72cd/README.md#L98-L117",
+      "https://github.com/greatscottgadgets/facedancer/blob/9f1298856e8ec6871cca995ded3076ab89dd72cd/docs/source/using_usb_proxy.rst",
+      "https://github.com/greatscottgadgets/facedancer/blob/9f1298856e8ec6871cca995ded3076ab89dd72cd/docs/source/getting_started.rst",
+      "https://github.com/greatscottgadgets/facedancer/tree/9f1298856e8ec6871cca995ded3076ab89dd72cd/facedancer/filters",
+      "https://github.com/greatscottgadgets/facedancer/tree/9f1298856e8ec6871cca995ded3076ab89dd72cd/facedancer/devices",
+      "https://github.com/greatscottgadgets/facedancer/blob/9f1298856e8ec6871cca995ded3076ab89dd72cd/pyproject.toml",
+      "https://github.com/greatscottgadgets/facedancer/blob/9f1298856e8ec6871cca995ded3076ab89dd72cd/CHANGELOG.md",
+      "https://github.com/greatscottgadgets/facedancer/blob/9f1298856e8ec6871cca995ded3076ab89dd72cd/LICENSE",
+      "https://github.com/greatscottgadgets/facedancer/releases/tag/3.1.3",
+      "https://pypi.org/project/facedancer/3.1.3/",
+      "https://facedancer.readthedocs.io/en/latest/"
+    ]
   }
 ]
