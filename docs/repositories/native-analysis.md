@@ -162,7 +162,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Zfinix/eleven](https://github.com/Zfinix/eleven) — Agent-first reverse engineering for macOS, Windows and Linux: any ACP agent reads, renames and patches binaries, Android apps and GPU kernels next to you. **[478 stars]** · Curated: [Eleven](https://awesomerea.org/resources/eleven-agent-re-workbench/)
 - [VoidSec/DriverBuddyReloaded](https://github.com/VoidSec/DriverBuddyReloaded) — Driver Buddy Reloaded is an IDA Pro Python plugin that helps automate some tedious Windows Kernel Drivers reverse engineering tasks **[472 stars]**
 - [mewmew/dissection](https://github.com/mewmew/dissection) — The dissection of a simple "hello world" ELF binary. **[470 stars]**
-- [radareorg/radare2-r2pipe](https://github.com/radareorg/radare2-r2pipe) — Access radare2 via pipe from any programming language! **[466 stars]**
+- [radareorg/radare2-r2pipe](https://github.com/radareorg/radare2-r2pipe) — Access radare2 via pipe from any programming language! **[466 stars]** · Curated: [r2pipe](https://awesomerea.org/resources/r2pipe/)
 - [patois/dsync](https://github.com/patois/dsync) — IDAPython plugin that synchronizes disassembler and decompiler views **[459 stars]**
 - [jaybosamiya/security-notes](https://github.com/jaybosamiya/security-notes) — <span>:</span>notebook: Some security related notes **[458 stars]**
 - [extremecoders-re/decompyle-builds](https://github.com/extremecoders-re/decompyle-builds) — Precompiled Decompyle++ (pycdc) binaries for Windows &amp; Linux **[454 stars]**

@@ -162,7 +162,7 @@
 - [Zfinix/eleven](https://github.com/Zfinix/eleven) — 面向智能体的 macOS、Windows 和 Linux 逆向工程工具：任意 ACP 智能体均可与你协作，读取、重命名并修补二进制文件、Android 应用和 GPU 内核。 **[478 星标]** · 精选：[Eleven](https://awesomerea.org/zh/resources/eleven-agent-re-workbench/)
 - [VoidSec/DriverBuddyReloaded](https://github.com/VoidSec/DriverBuddyReloaded) — Driver Buddy Reloaded 是 IDA Pro 的 Python 插件，可自动完成部分繁琐的 Windows 内核驱动逆向工程任务。 **[472 星标]**
 - [mewmew/dissection](https://github.com/mewmew/dissection) — 剖析一个简单的“hello world” ELF 二进制文件。 **[470 星标]**
-- [radareorg/radare2-r2pipe](https://github.com/radareorg/radare2-r2pipe) — 通过管道从任意编程语言访问 radare2！ **[466 星标]**
+- [radareorg/radare2-r2pipe](https://github.com/radareorg/radare2-r2pipe) — 通过管道从任意编程语言访问 radare2！ **[466 星标]** · 精选：[r2pipe radare2 多语言脚本接口](https://awesomerea.org/zh/resources/r2pipe/)
 - [patois/dsync](https://github.com/patois/dsync) — 同步反汇编与反编译视图的 IDAPython 插件。 **[459 星标]**
 - [jaybosamiya/security-notes](https://github.com/jaybosamiya/security-notes) — <span>:</span>notebook: 一些安全相关笔记。 **[458 星标]**
 - [extremecoders-re/decompyle-builds](https://github.com/extremecoders-re/decompyle-builds) — 适用于 Windows 与 Linux 的预编译 Decompyle++（pycdc）二进制文件。 **[454 星标]**
