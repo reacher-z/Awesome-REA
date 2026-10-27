@@ -12487,5 +12487,32 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "ford-fiesta-mk5-ms-can-case",
+    "name": "Ford Fiesta MK5 MS-CAN: decoding the dashboard and radio bus",
+    "url": "https://github.com/roncapat/Ford-Fiesta-MK5-MS-CAN-bus",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Documents the medium-speed CAN bus that links the 6000CD radio and the dashboard of a restyled (post-2006) Ford Fiesta MK5, worked out by tapping the bus at the radio's QuadLock connector with a Seeed CAN-BUS Shield on an Arduino Uno. The README describes 18 partly or fully decoded message IDs on the 125 kbit/s bus, with byte layouts and scaling formulas: radio text sent to the dashboard LCD over ISO-TP, station names, volume, CD track and steering-column mode and seek buttons, as well as broadcast clock, door, lock, reverse-gear, indicator, light, handbrake, airbag-lamp, pedal, RPM, speed, coolant, key-position, battery and partial VIN data. An incomplete Kayak .kcd definition encodes only the clock and gas-pedal/RPM/speed messages.",
+    "description_zh": "记录了改款（2006 年后）Ford Fiesta MK5 上连接 6000CD 收音机与仪表盘的中速 CAN 总线。作者在收音机的 QuadLock 连接器处用 Arduino Uno 加 Seeed CAN-BUS Shield 接入总线，据此推断出这些内容。README 描述了这条 125 kbit/s 总线上 18 个已部分或完全解码的报文 ID，给出字节布局和换算公式：包括收音机经 ISO-TP 发往仪表 LCD 的文字、电台名称、音量、CD 曲目以及转向柱旁的模式与搜台按键，还有广播的时钟、车门、门锁、倒挡、转向灯、灯光、手刹、安全气囊指示灯、踏板、转速、车速、冷却液温度、钥匙位置、蓄电池电压和部分 VIN 数据。附带的 Kayak .kcd 定义文件尚不完整，只编码了时钟和油门踏板／转速／车速两条报文。",
+    "evidence_url": "https://github.com/roncapat/Ford-Fiesta-MK5-MS-CAN-bus/blob/7b57901e7ea6a293aacb692c1895110b2ec7175c/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Documentation-only project with 25 commits from 2020-08-22 to the reviewed master commit of 2020-09-30, and no releases or tags. It applies to a Fiesta MK5 built after 2006 (the restyled model) with the 2-DIN 6000CD radio; the README notes that the steering-column volume buttons do not appear on MS-CAN, and the decoding of some IDs is partial.",
+      "No Ford software or files are needed; reading the bus requires a CAN interface on the CANH and CANL lines at the radio's QuadLock connector, which the README says needs no 120-ohm terminator. The author used a Seeed CAN-BUS Shield V2.0 on an Arduino Uno R3, but the repository holds only the README, the Kayak .kcd file, a connector pinout image and dashboard indicator icons, with no capture logs, sniffer code or Arduino sketch.",
+      "Message layouts and formulas such as volume, track time, speed, coolant temperature and battery voltage are author-reported from the author's own car, and the ISO-TP reading of the LCD text messages is credited to a Reddit commenter. Without published captures they cannot be rechecked from the repository, and this review used no vehicle or bus hardware. The README documents decoding of observed traffic and gives no procedure for sending frames to the car.",
+      "The repository has no license file and GitHub detects none. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/roncapat/Ford-Fiesta-MK5-MS-CAN-bus/blob/7b57901e7ea6a293aacb692c1895110b2ec7175c/README.md#L14-L136",
+      "https://github.com/roncapat/Ford-Fiesta-MK5-MS-CAN-bus/blob/7b57901e7ea6a293aacb692c1895110b2ec7175c/Fiesta.kcd",
+      "https://github.com/roncapat/Ford-Fiesta-MK5-MS-CAN-bus/tree/7b57901e7ea6a293aacb692c1895110b2ec7175c"
+    ]
   }
 ]
