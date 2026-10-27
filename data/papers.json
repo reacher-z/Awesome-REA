@@ -7294,5 +7294,64 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-clematis",
+    "title": "Understanding JavaScript Event-Based Interactions",
+    "title_zh": "理解 JavaScript 基于事件的交互",
+    "authors": [
+      "Saba Alimadadi",
+      "Sheldon Sequeira",
+      "Ali Mesbah",
+      "Karthik Pattabiraman"
+    ],
+    "year": 2014,
+    "publication_date": "2014-05-31",
+    "date_precision": "day",
+    "date_basis": "ACM-deposited Crossref metadata gives 31 May 2014 for both online and print publication, which is also the first day of ICSE 2014; the date comes from the deposit, not from the conference schedule.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将在线及印刷出版日期均列为 2014 年 5 月 31 日，这也是 ICSE 2014 的首日；该日期取自出版方元数据，而非会议日程。",
+    "venue": "ICSE 2014",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/2568225.2568268",
+    "citation": {
+      "container_title": "Proceedings of the 36th International Conference on Software Engineering",
+      "publisher": "ACM",
+      "pages": "367-377",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/2568225.2568268"
+      ]
+    },
+    "url": "https://doi.org/10.1145/2568225.2568268",
+    "pdf_url": "https://people.ece.ubc.ca/amesbah/resources/papers/clematis-icse14.pdf",
+    "code_url": "https://github.com/saltlab/clematis/tree/7b2479a09721699eaaa24f6e258df5e2beb35d0a",
+    "project_url": null,
+    "targets": [
+      "website"
+    ],
+    "description_en": "Clematis helps developers understand a JavaScript web application's runtime behavior from a recorded user session. A proxy instruments JavaScript on the fly to log DOM events, timeouts, XMLHttpRequest phases, function calls and DOM mutations. The trace is grouped into episodes, each with its triggering event, executed functions and resulting DOM changes, linked by temporal and causal edges and shown in an interactive visualization. In an industrial study with 20 developers on the Phormer photo gallery, the authors report 61% higher task accuracy and 47% less completion time than developers using their preferred tools.",
+    "description_zh": "Clematis 根据录制的用户会话，帮助开发者理解 JavaScript 网页应用的运行时行为。代理在传输过程中对 JavaScript 进行插桩，记录 DOM 事件、定时器、XMLHttpRequest 各阶段、函数调用及 DOM 变更。轨迹被划分为若干情节，每个情节包含触发事件、执行的函数及由此产生的 DOM 变化，情节之间以时间与因果边连接，并以交互式可视化呈现。在 Phormer 相册应用上开展、有 20 名开发者参加的工业研究中，作者报告其任务准确率比使用各自惯用工具的开发者高 61%，完成时间少 47%。",
+    "scope_limitations_en": "A dynamic program-comprehension aid for client-side behavior exercised in one recorded session; it does not reconstruct server-side logic, generate a replacement application or establish behavioral equivalence. Code run through eval is not captured. Evaluation consists of two small controlled experiments on comprehension tasks: 16 UBC participants on a lab-built survey application against Firebug, and 20 professional developers on Phormer. The authors graded accuracy against a prewritten answer key. Overhead was measured only for one minute of Phormer activity. The 2014 prototype drives Firefox through Selenium and a WebScarab proxy; it is not shown to run on current browsers, and the comparison tools are historical.",
+    "scope_limitations_zh": "这是面向单次录制会话中所触发客户端行为的动态程序理解工具；它不重建服务端逻辑，不生成替代应用，也不确立行为等价性。通过 eval 执行的代码不会被捕获。评估包括两项小规模、针对理解任务的对照实验：16 名 UBC 参与者在实验室自建的问卷应用上与 Firebug 对比，以及 20 名专业开发者在 Phormer 上开展的实验。准确率由作者依据事先编写的答案要点评分。运行开销仅针对一分钟的 Phormer 操作进行测量。2014 年的原型通过 Selenium 与 WebScarab 代理驱动 Firefox；未证明其可在当前浏览器上运行，用于比较的工具也已是历史版本。",
+    "why_fits_en": "Adds execution-trace recovery of a web application's event, timer, request and DOM causality, complementing the collection's screenshot-, design- and video-based website reconstruction research.",
+    "why_fits_zh": "补充从执行轨迹恢复网页应用事件、定时器、请求与 DOM 因果关系的研究，与本合集中基于截图、设计稿和视频的网站重建研究互补。",
+    "metadata_notes": "Crossref establishes the four-author order, the ICSE ’14 proceedings and pages 367–377; it deposits the title in sentence case, while this entry keeps the capitalization printed in the paper. The author-hosted PDF is an 11-page copy carrying the ICSE ’14 permission block. The extended ACM TOSEM 2016 article “Understanding JavaScript Event-Based Interactions with Clematis” (DOI 10.1145/2876441) is a separate work and is not merged into this entry. The paper cites the lab page salt.ece.ubc.ca/software/clematis/, which no longer responds; its 2014-07-08 Internet Archive copy links github.com/saltlab/clematis and technical report UBC-SALT-2014-001. The reviewed repository is GPL-3.0, with master at 7b2479a0 committed on 2015-06-19 and no later pushes. README says the tool runs from Eclipse with the m2e plugin, Maven, a Jetty server and Mozilla Firefox; Chrome support was only planned. It was tested with Phormer and a downloadable survey application. pom.xml targets Java 1.6 and uses Crawljax 2.2 and Rhino 1.7R4, with open-ended ranges for Selenium (from 2.31.0) and WebScarab, so a build today may resolve different dependencies. Source files were read; nothing was built or run, and no experiments were reproduced.",
+    "metadata_notes_zh": "Crossref 确认四位作者顺序、ICSE ’14 会议论文集及第 367–377 页；其标题采用句首大写形式，本条目保留论文所印的大小写。作者托管的 PDF 共 11 页，含 ICSE ’14 版权许可声明。扩展版 ACM TOSEM 2016 文章《Understanding JavaScript Event-Based Interactions with Clematis》（DOI 10.1145/2876441）是独立作品，未并入本条目。论文引用的实验室页面 salt.ece.ubc.ca/software/clematis/ 已无法访问；其 2014-07-08 的 Internet Archive 存档链接至 github.com/saltlab/clematis 及技术报告 UBC-SALT-2014-001。所审阅仓库采用 GPL-3.0 许可，master 分支位于 2015-06-19 提交的 7b2479a0，此后再无推送。README 说明该工具需在 Eclipse（含 m2e 插件）中运行，并需要 Maven、Jetty 服务器和 Mozilla Firefox；Chrome 支持仅在计划中。工具曾用 Phormer 和一个可下载的问卷应用测试。pom.xml 面向 Java 1.6，使用 Crawljax 2.2 与 Rhino 1.7R4，并对 Selenium（自 2.31.0 起）和 WebScarab 使用无上限版本范围，因此现在构建可能解析到不同依赖。本次仅阅读源码文件，未构建或运行工具，也未复现实验。",
+    "evidence_urls": [
+      "https://doi.org/10.1145/2568225.2568268",
+      "https://api.crossref.org/works/10.1145/2568225.2568268",
+      "https://people.ece.ubc.ca/amesbah/resources/papers/clematis-icse14.pdf",
+      "https://api.crossref.org/works/10.1145/2876441",
+      "https://web.archive.org/web/20140708215205/http://salt.ece.ubc.ca/software/clematis/",
+      "https://github.com/saltlab/clematis/blob/7b2479a09721699eaaa24f6e258df5e2beb35d0a/README.md",
+      "https://github.com/saltlab/clematis/blob/7b2479a09721699eaaa24f6e258df5e2beb35d0a/LICENSE.md",
+      "https://github.com/saltlab/clematis/blob/7b2479a09721699eaaa24f6e258df5e2beb35d0a/pom.xml"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
