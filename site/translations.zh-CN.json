@@ -4291,5 +4291,15 @@
       "耗时数据来自一台轻负载虚拟机，仅作数量级参考。调用由作者编写的脚本化测试驱动程序以熟悉接口的调用方身份发出，文章也未说明具体分析对象。对安全智能体的对应分析属于论证，而非已构建的系统。文中称逐次调用记录、测试配置和脚本随研究提供，但页面并未给出链接，因此本合集无法也未曾重新运行任何内容。",
       "本文评估的是 REA 的证据模型与工具接口，未报告任何重建、漏洞利用或漏洞。页面未声明许可；REA、第三方引擎及被分析对象保留各自条款。"
     ]
+  },
+  "osmo-pocket-3-ble-protocol-case": {
+    "name": "lib-osmo-ble：DJI Osmo Pocket 3 低功耗蓝牙协议库",
+    "requirements": [
+      "审阅对象为 2026-02-21 的 main 最新提交，也是仓库最近一次推送；package.json 声明版本 1.0.0，没有发布版本或标签。README 称云台电机指令的构造和解析都正确，但仅通过 BLE 发送时相机会静默忽略，可能要等 Wi-Fi 推流启动后才生效，而遥测工作正常。该库本身只实现配对、云台控制和遥测；Wi-Fi 设置和推流是借助打过补丁的 node-osmo 实现的。",
+      "需要使用者自有的 DJI Osmo Pocket 3 及支持低功耗蓝牙的主机。PROTOCOL.md 报告仅在该型号上、从 macOS 验证过，补丁说明列出的环境为 Apple 芯片 macOS Sequoia、Node.js v25.5.0 和 @stoprocent/noble 1.18.2；其他 DJI 设备可能有所不同。配对时发送由客户端选定的 PIN（命令行默认 love），需用户在相机上确认。仓库未提交 DJI 固件、应用文件或作者自己的抓包。",
+      "使用纯 Node.js ES 模块，运行时依赖只有两个：用于 BLE 的 @stoprocent/noble ^2.3.10 和用于 CRC8／CRC16 校验的 crc-full，无需构建；npm link 可安装 dji-osmo 命令行工具。诊断脚本可扫描 DJI 设备、列出特征值属性，并解码 DUML 十六进制报文、校验 CRC。node-osmo 补丁需用 git am 应用到另行克隆的 datagutt/node-osmo，再用 pnpm 和 TypeScript 构建。",
+      "没有自动化测试；npm test 脚本只是一个以报错退出的占位命令。证据包括作者的过程记录，关于特征值映射、字节序、Node.js 缓冲池缺陷和一次误判运行的分析笔记，以及原始日志已被 gitignore 排除的实验索引。设备上的行为在此仍属作者报告，本次未在硬件上运行任何内容。",
+      "LICENSE 为 MIT，但 package.json 仍写作 ISC。reference 目录复制了 xaionaro/reverse-engineering-dji 中采用 CC0-1.0 的 Wireshark 解析器和报文笔记，node-osmo 采用 MIT。DJI 固件、应用和商标保留各自权利；所审来源未确立任何 AI 或 REA 的使用。"
+    ]
   }
 }

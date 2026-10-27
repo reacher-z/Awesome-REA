@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 490](https://img.shields.io/badge/resources-490-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 206](https://img.shields.io/badge/cases-206-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 491](https://img.shields.io/badge/resources-491-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 207](https://img.shields.io/badge/cases-207-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,12 +21,12 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-490 curated resources (206 cases) · 134 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 487 because 3 of these appear only under Papers.
+491 curated resources (207 cases) · 134 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 488 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
 - [Website](#website) (29) · [Game](#game) (193) · [App](#app) (77)
-- [Native Binary](#native-binary) (64) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (18)
+- [Native Binary](#native-binary) (64) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (19)
 
 **Research and workflows**
 
@@ -34,7 +34,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (206) · [Related Collections](#related-collections) (7) · [Full Repository Index](#full-repository-index) (3,309)
+- [All cases](https://awesomerea.org/cases/) (207) · [Related Collections](#related-collections) (7) · [Full Repository Index](#full-repository-index) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -512,6 +512,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**cooler-lcd: a Thermalright display protocol implementation**](https://github.com/kristjaningi/cooler-lcd) - Implements a USB picture-transfer driver for Thermalright Vision cooler displays, with a Rust dashboard replacing the vendor display application. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/cooler-lcd-case/)</sub>
 - [**NJFE: a Soulear camera protocol bridge for desktop inspection**](https://github.com/WildweaselMS/NJFE) - Reuses otoscope's reverse-engineered i4season/Soulear protocol in an ESP32-C3 bridge and Python desktop viewer. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/njfe-ear-camera-bridge-case/)</sub>
 - [**hw-harness: scanner USB protocol investigation**](https://github.com/cschalle/hw-harness) - Documents an author-reported scanner investigation comparing vendor-driver USB control transfers with Linux-driver traces to infer initialization, timing and resolution parameters. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/hw-harness-reference-case/)</sub>
+- [**lib-osmo-ble: DJI Osmo Pocket 3 Bluetooth LE protocol library**](https://github.com/yigitkonur/lib-osmo-ble) - Reconstructs the DUML-over-BLE protocol that DJI's Mimo app uses with the Osmo Pocket 3 camera as a Node.js library and CLI for scanning, pairing, gimbal commands and roughly 20 Hz position telemetry without the vendor app. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/osmo-pocket-3-ble-protocol-case/)</sub>
 
 #### Tools, projects and integrations
 

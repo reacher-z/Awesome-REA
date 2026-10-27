@@ -11727,5 +11727,44 @@
       "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/LICENSE",
       "https://github.com/bramheerink/scansnap/blob/5706688db58f45a4d3db239de6e2e93bab36bb0f/LICENSE"
     ]
+  },
+  {
+    "id": "osmo-pocket-3-ble-protocol-case",
+    "name": "lib-osmo-ble: DJI Osmo Pocket 3 Bluetooth LE protocol library",
+    "url": "https://github.com/yigitkonur/lib-osmo-ble",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Reconstructs the DUML-over-BLE protocol that DJI's Mimo app uses with the Osmo Pocket 3 camera as a Node.js library and CLI for scanning, pairing, gimbal commands and roughly 20 Hz position telemetry without the vendor app. The author reports working from a third party's Wireshark captures and dissector of Mimo traffic, a Go client and trial-and-error debugging; PROTOCOL.md documents the frame layout, CRC parameters, BLE characteristic roles and command IDs. A write-up and bundled patch trace seven bugs that kept the earlier node-osmo library from working with the camera, and the author reports that the patched library completed pairing, Wi-Fi setup and RTMP streaming.",
+    "description_zh": "重建 DJI Mimo 应用与 Osmo Pocket 3 相机之间基于 BLE 的 DUML 协议，提供 Node.js 库和命令行工具，无需官方应用即可扫描、配对、发送云台指令并接收约 20 Hz 的姿态遥测。作者称其依据第三方对 Mimo 通信的 Wireshark 抓包与解析器、一个 Go 客户端以及反复试验调试完成；PROTOCOL.md 记录了帧结构、CRC 参数、BLE 特征值的用途和命令 ID。一篇过程记录和随附补丁梳理了导致早期 node-osmo 库无法配合该相机工作的七个缺陷，作者报告打过补丁的库完成了配对、Wi-Fi 设置和 RTMP 推流。",
+    "evidence_url": "https://github.com/yigitkonur/lib-osmo-ble/blob/021e96c2bec7e9a2a81296292545bc1ee432af49/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-02-21 main head, which is also the last push; package.json declares 1.0.0, and there are no releases or tags. The README says gimbal motor commands are built and parsed correctly but the camera silently ignores them over BLE alone, probably until Wi-Fi streaming is active, while telemetry works. The library itself implements pairing, gimbal control and telemetry only; Wi-Fi setup and streaming were reached with the patched node-osmo.",
+      "Requires the user's own DJI Osmo Pocket 3 and a Bluetooth LE host. PROTOCOL.md reports verification on that model only, from macOS, and the patch notes list Apple Silicon macOS Sequoia, Node.js v25.5.0 and @stoprocent/noble 1.18.2; other DJI devices may differ. Pairing sends a client-chosen PIN (love by default in the CLI) that the user approves on the camera. No DJI firmware, app files or the author's own captures are committed.",
+      "Plain Node.js ES modules with two runtime dependencies, @stoprocent/noble ^2.3.10 for BLE and crc-full for the CRC8/CRC16 checks, and no build step; npm link installs the dji-osmo CLI. Diagnostic scripts scan for DJI devices, list characteristic properties and decode and CRC-check DUML hex messages. The node-osmo patch applies with git am to a separate clone of datagutt/node-osmo and builds with pnpm and TypeScript.",
+      "There are no automated tests; the npm test script is a placeholder that exits with an error. Evidence is the author's write-up, analysis notes on characteristic mapping, byte order, the Node.js buffer-pool bug and a false-positive run, and an experiment index whose raw logs are gitignored. Device behavior remains author-reported here; nothing was run against hardware.",
+      "LICENSE is MIT, although package.json still says ISC. The reference folder copies the CC0-1.0 Wireshark dissector and message notes from xaionaro/reverse-engineering-dji, and node-osmo is MIT. DJI firmware, apps and trademarks keep their own rights; the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/yigitkonur/lib-osmo-ble/blob/021e96c2bec7e9a2a81296292545bc1ee432af49/PROTOCOL.md",
+      "https://github.com/yigitkonur/lib-osmo-ble/blob/021e96c2bec7e9a2a81296292545bc1ee432af49/JOURNEY.md",
+      "https://github.com/yigitkonur/lib-osmo-ble/blob/021e96c2bec7e9a2a81296292545bc1ee432af49/patches/README.md",
+      "https://github.com/yigitkonur/lib-osmo-ble/blob/021e96c2bec7e9a2a81296292545bc1ee432af49/experiments/README.md",
+      "https://github.com/yigitkonur/lib-osmo-ble/blob/021e96c2bec7e9a2a81296292545bc1ee432af49/analysis/ble-characteristic-mapping.md",
+      "https://github.com/yigitkonur/lib-osmo-ble/blob/021e96c2bec7e9a2a81296292545bc1ee432af49/analysis/false-positive-analysis.md",
+      "https://github.com/yigitkonur/lib-osmo-ble/blob/021e96c2bec7e9a2a81296292545bc1ee432af49/src/connection.mjs",
+      "https://github.com/yigitkonur/lib-osmo-ble/blob/021e96c2bec7e9a2a81296292545bc1ee432af49/src/controllers/gimbal.mjs",
+      "https://github.com/yigitkonur/lib-osmo-ble/blob/021e96c2bec7e9a2a81296292545bc1ee432af49/src/protocol/constants.mjs",
+      "https://github.com/yigitkonur/lib-osmo-ble/blob/021e96c2bec7e9a2a81296292545bc1ee432af49/package.json",
+      "https://github.com/yigitkonur/lib-osmo-ble/tree/021e96c2bec7e9a2a81296292545bc1ee432af49/reference",
+      "https://github.com/yigitkonur/lib-osmo-ble/blob/021e96c2bec7e9a2a81296292545bc1ee432af49/LICENSE",
+      "https://github.com/xaionaro/reverse-engineering-dji/blob/5c9278ff0b53bbe0d03ea6c830aab13ac775871e/LICENSE",
+      "https://github.com/datagutt/node-osmo/blob/cec92aec9304a5cc3dae7f7de541eef38ebb680e/LICENSE"
+    ]
   }
 ]
