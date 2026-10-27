@@ -183,7 +183,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [radareorg/radeco](https://github.com/radareorg/radeco) — radare2-based decompiler and symbol executor **[399 stars]**
 - [saferwall/pe](https://github.com/saferwall/pe) — A <span>:</span>zap: lightweight Go package to parse, analyze and extract metadata from Portable Executable (PE) binaries. Designed for malware analysis tasks and robust against PE malformations. **[397 stars]**
 - [secrary/idenLib](https://github.com/secrary/idenLib) — idenLib - Library Function Identification \[This project is not maintained anymore\] **[395 stars]**
-- [nevillegrech/gigahorse-toolchain](https://github.com/nevillegrech/gigahorse-toolchain) — A binary lifter and analysis framework for Ethereum smart contracts **[388 stars]**
+- [nevillegrech/gigahorse-toolchain](https://github.com/nevillegrech/gigahorse-toolchain) — A binary lifter and analysis framework for Ethereum smart contracts **[388 stars]** · Paper: [Elipmoc: Advanced Decompilation of Ethereum Smart Contracts](https://awesomerea.org/papers/paper-elipmoc/)
 - [DMaroo/GhidRust](https://github.com/DMaroo/GhidRust) — GhidRust: Rust decompiler plugin for Ghidra **[385 stars]**
 - [GrammaTech/gtirb](https://github.com/GrammaTech/gtirb) — Intermediate Representation for Binary analysis and transformation **[382 stars]**
 - [bl4ckr0ss3/knife](https://github.com/bl4ckr0ss3/knife) — A terminal-first reverse engineering toolkit in Rust: PE/ELF/Mach-O analysis through CLI, TUI, and MCP. Installs as knife. **[380 stars]**
