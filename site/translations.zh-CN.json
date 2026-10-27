@@ -4310,5 +4310,15 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "reversejs-ast-deobfuscation-materials": {
+    "name": "ReverseJS AST 反混淆配套资料",
+    "requirements": [
+      "审阅对象为 2023-10-20 的 master 提交，其最后一项改动是将 @babel/traverse 升级到 7.23.2。博客列出该系列在 2022 年 5 月和 6 月发表的七篇文章，而代理函数（Proxy Functions）和序列表达式（Sequence Expressions）等目录没有对应文章；README 提醒，未在博客发表的代码已过时且属实验性质，可能不准确或有缺陷，作者大概率不会再更新，不建议用于生产环境的反混淆工具。",
+      "需要 Node.js 并执行 npm install：package.json 声明 @babel/core 和 js-beautify，锁文件解析出的 @babel/parser、@babel/traverse 和 @babel/generator 为 7.23.x。每个脚本需在其所在目录中用 node 对附带样例运行。String Encryption 示例还导入了 package.json 未列出的 chrome-remote-interface-extra。",
+      "样例都是作者自己编写的简短混淆代码，将这些技术用于其他代码时，需要分析者自备输入并自行核对结果。基于 VM 求值的代理函数示例和 String Encryption 示例会通过 Node 的 vm 模块执行样例中的代码，而 Node.js 文档明确说明该模块不是安全机制。作者后来的博客文章报告了 CVE-2023-45133，即 7.23.2 之前的 @babel/traverse 中存在任意代码执行漏洞；所审阅的锁文件已解析为 7.23.2。",
+      "仓库没有测试或 CI（npm test 脚本只是占位）；各样例旁附有预期输出，本次审阅未运行任何内容。",
+      "采用 MIT 许可（见 LICENSE），但 package.json 仍保留 npm 默认的 ISC 字段。所审来源未确立与 REA 的关联。"
+    ]
   }
 }

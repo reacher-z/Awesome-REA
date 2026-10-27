@@ -11759,5 +11759,40 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "reversejs-ast-deobfuscation-materials",
+    "name": "Supplementary AST-Based Deobfuscation Materials",
+    "url": "https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Companion code for the ReverseJS blog's 2022 series on deobfuscating JavaScript by manipulating abstract syntax trees with Babel. Each folder pairs a small obfuscated sample with a deobfuscator script and its output, covering string concealing (escape sequences, concatenation, string arrays and string encryption), constant folding including JSFuck-style code, substitution of constant variables, bracket-to-dot property access, dead-code removal, proxy functions and sequence expressions. The README presents them as short learning examples rather than a production deobfuscator.",
+    "description_zh": "ReverseJS 博客 2022 年系列文章的配套代码，该系列讲解如何借助 Babel 操作抽象语法树来反混淆 JavaScript。每个目录都包含一个小型混淆样例、对应的反混淆脚本及其输出，主题涵盖字符串隐藏（转义序列、字符串拼接、字符串数组和字符串加密）、常量折叠（含 JSFuck 风格代码）、常量变量替换、方括号属性访问改为点号访问、死代码删除、代理函数以及逗号序列表达式。README 将其定位为简短的学习示例，而非可用于生产的反混淆工具。",
+    "evidence_url": "https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials/blob/37092955c2ad361364a2162149df9119045de3d0/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2023-10-20 master commit, whose last change bumped @babel/traverse to 7.23.2. The blog lists seven posts in the series from May and June 2022, and folders such as Proxy Functions and Sequence Expressions have no matching post; the README warns that code not published on the blog is outdated and experimental, may be inaccurate or buggy, will likely not be updated and should not be used in a production deobfuscator.",
+      "Needs Node.js and npm install: package.json declares @babel/core and js-beautify, and the lockfile resolves @babel/parser, @babel/traverse and @babel/generator 7.23.x. Each script is run with node from its folder against the bundled sample. The String Encryption example also imports chrome-remote-interface-extra, which package.json does not list.",
+      "The samples are short, author-written obfuscations, so applying the techniques to other code needs the analyst's own inputs and checking. The VM-evaluation proxy-function example and the String Encryption example run code from the sample through Node's vm module, which Node.js documents as not a security mechanism. The author's later blog post reports CVE-2023-45133, an arbitrary-code-execution flaw in @babel/traverse before 7.23.2; the reviewed lockfile already resolves 7.23.2.",
+      "There are no tests or CI (the npm test script is a placeholder); expected outputs are committed beside each sample, and nothing was run in this review.",
+      "MIT (LICENSE), although package.json keeps npm's default ISC field. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials/blob/37092955c2ad361364a2162149df9119045de3d0/package.json",
+      "https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials/blob/37092955c2ad361364a2162149df9119045de3d0/package-lock.json",
+      "https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials/tree/37092955c2ad361364a2162149df9119045de3d0/String%20Concealing",
+      "https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials/tree/37092955c2ad361364a2162149df9119045de3d0/Proxy%20Functions",
+      "https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials/blob/37092955c2ad361364a2162149df9119045de3d0/String%20Concealing/String%20Encryption/deobber.js",
+      "https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials/blob/37092955c2ad361364a2162149df9119045de3d0/LICENSE",
+      "https://steakenthusiast.github.io/2022/05/21/Deobfuscating-Javascript-via-AST-An-Introduction-to-Babel/",
+      "https://steakenthusiast.github.io/2023/10/11/CVE-2023-45133-Finding-an-Arbitrary-Code-Execution-Vulnerability-In-Babel/",
+      "https://github.com/babel/babel/security/advisories/GHSA-67hx-6x53-jw92",
+      "https://nodejs.org/api/vm.html"
+    ]
   }
 ]

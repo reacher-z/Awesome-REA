@@ -41,7 +41,7 @@
 - [irelance/jsc-decompile-mozjs-34](https://github.com/irelance/jsc-decompile-mozjs-34) — Mozilla SpiderMonkey 34 版的 JavaScript 字节码解码器，可用于反编译 Cocos2d-x 编译的 JSC 文件 **[189 星标]**
 - [katana-project/slicer](https://github.com/katana-project/slicer) — 基于网页的现代 Java 逆向工程工具。 **[176 星标]**
 - [zhongguagua/ai-code-decompile](https://github.com/zhongguagua/ai-code-decompile) — 🚀 AI 驱动的 JavaScript 反编译与去混淆工具，结合 AI 和 AST 进行代码分析与混淆还原，将难以阅读的构建产物转换为易懂的代码。 **[140 星标]**
-- [SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials](https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials) — 我的 JavaScript 逆向工程博客 ReverseJS 配套的去混淆工具源码。 **[125 星标]**
+- [SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials](https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials) — 我的 JavaScript 逆向工程博客 ReverseJS 配套的去混淆工具源码。 **[125 星标]** · 精选：[ReverseJS AST 反混淆配套资料](https://awesomerea.org/zh/resources/reversejs-ast-deobfuscation-materials/)
 - [spectral-mcp/spectral](https://github.com/spectral-mcp/spectral) — 照常浏览任意应用，Spectral 会捕获流量、理解每次 API 调用的作用，并生成 AI 智能体可直接调用的 MCP 工具。 **[121 星标]** · 精选：[Spectral](https://awesomerea.org/zh/resources/spectral-mcp/)
 - [lfi-project/lfi](https://github.com/lfi-project/lfi) — LFI 顶层仓库：实用、高效且安全的软件沙箱方案 **[120 星标]**
 - [Owl4444/jsdeob-workbench](https://github.com/Owl4444/jsdeob-workbench) — 以可视化方式逆向分析混淆的 JavaScript，串联转换、检查 AST 变化，并编写可复用的去混淆插件。 **[120 星标]** · 精选：[jsdeob-workbench](https://awesomerea.org/zh/resources/jsdeob-workbench/)
