@@ -7599,5 +7599,14 @@
       "CI 在 Python 3.11–3.13 上运行 ruff 与 pytest，并有一个 selftest 任务；README 徽章标示 754 项测试，无需硬件、代理、gpsd 或网络。README 指出 MQTT 与仪表板尚未在真实硬件上运行过，本次核查既未运行测试，也未连接探测器。",
       "采用 MIT 许可。README 称项目与 Uniden 无关联、未获其认可，是诊断软件，不能替代探测器自身的显示或警告。HANDOFF.md 面向接手项目的人或智能体编写，但所审阅来源并未将分析工作归于 AI，也未确立任何 REA 使用。"
     ]
+  },
+  "redress": {
+    "name": "Redress Go 二进制分析工具",
+    "requirements": [
+      "审阅对象为默认分支 develop 上的提交 fe38d96（2024-10-12）。稳定的 master 分支领先 96 个提交，全部是自动生成的“Update Gore version”提交：一个每日工作流会在 GoRE 发布新版本时更新这项依赖，随后打标签并构建发行版。审阅时最新发行版为 v1.2.98（2026-10-20），基于 GoRE v0.14.7 构建，而 develop 的 go.mod 仍固定为 v0.11.5；两个分支的 README 完全相同。",
+      "发行包只有 Linux、macOS 和 Windows 的 amd64 构建。按 go.mod，从源码构建需要 Go 1.21+，各平台都有对应的 Make 目标；r2 子命令应在 radare2 中以 #!pipe redress r2 的方式运行。",
+      "输入为用 Go 编译器构建的可执行文件。README 的示例使用 Malwarebytes 最早报告的一个 macOS 挖矿恶意样本，仓库并未包含该样本，也没有提交任何测试二进制。GoRE 从 pclntab 恢复函数，从 typelink 列表解析类型，完整支持 Go 1.7 及以后版本，对 1.5 和 1.6 仅部分支持；其编译器版本识别依靠字符串搜索，GoRE 的 README 也承认并不完美。",
+      "Redress 采用 AGPL-3.0（LICENSE）。GoRE 大部分代码采用 BSD 许可，但其中 GOROOT 提取等功能采用 AGPL，因此不带 gore_bsd 构建标签编译的程序都须遵循 AGPL。输出重建的是符号、类型和源码布局，而非 Go 源代码；README 也提到部分包无法归类。本次审阅未运行任何程序，也未分析任何二进制。"
+    ]
   }
 }
