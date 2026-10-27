@@ -191,6 +191,8 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 }
 /* Category options use the full catalog wording, so on one-row desktops the select takes the room beside the target buttons. */
 @media(min-width:1181px){.curated-selectors{flex:1 1 362px;min-width:0;flex-wrap:nowrap;justify-content:flex-end}.curated-selectors>.source-field:first-child{flex:none}.curated-selectors>.source-field:last-child{flex:0 1 auto}#category-select{width:auto;max-width:100%}}
+/* The live counts widen the target buttons; tighter gaps keep both selects on the same row at 1280 px. */
+@media(min-width:1181px){#curated-view .filter-row{gap:12px}#curated-view .group-filters{gap:6px}}
 @media(max-width:900px){
   .shell{width:calc(100% - 48px)}
   .header-nav{gap:18px}
