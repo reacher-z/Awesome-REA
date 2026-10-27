@@ -7355,5 +7355,69 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-mappyland",
+    "title": "MappyLand: Fast, Accurate Mapping for Console Games",
+    "title_zh": "MappyLand：快速、准确的主机游戏地图构建",
+    "authors": [
+      "Joseph C. Osborn",
+      "Adam Summerville",
+      "Nathan Dailey",
+      "Soksamnang Lim"
+    ],
+    "year": 2021,
+    "publication_date": "2021-10-04",
+    "date_precision": "day",
+    "date_basis": "The AAAI OJS article page gives publication on 2021-10-04, and the publisher-deposited Crossref record gives the same published-online and issued date. The conference dates are not substituted.",
+    "date_basis_zh": "AAAI OJS 文章页面给出的出版日期为 2021-10-04，出版方提交的 Crossref 记录中的在线出版日期和发行日期与之相同。本条目不以会议日期代替。",
+    "venue": "AIIDE 2021",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1609/aiide.v17i1.18892",
+    "citation": {
+      "container_title": "Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment",
+      "publisher": "Association for the Advancement of Artificial Intelligence (AAAI)",
+      "volume": "17",
+      "issue": "1",
+      "pages": "66-73",
+      "sources": [
+        "https://ojs.aaai.org/index.php/AIIDE/article/view/18892",
+        "https://api.crossref.org/works/10.1609/aiide.v17i1.18892"
+      ]
+    },
+    "url": "https://ojs.aaai.org/index.php/AIIDE/article/view/18892",
+    "pdf_url": "https://ojs.aaai.org/index.php/AIIDE/article/download/18892/18657",
+    "code_url": "https://github.com/faim-lab/mappy/tree/bbf99dd0f53c0986250c9020e3a7a75f9732b19f",
+    "project_url": null,
+    "targets": [
+      "game"
+    ],
+    "description_en": "MappyLand, a Rust rewrite of the earlier Mappy system, instruments the FCEUMM NES emulator core to map action/adventure games as they are played from controller inputs. It hooks accesses to the picture-processing unit's scrolling registers and reads emulator memory to register scrolling, separate the playfield from menus, detect and track sprites, build grid-based tile maps and recognize room transitions. An online merging step combines observed rooms into a consistent room graph across backtracking and multiple play sessions. In a 34,514-frame test the authors report about 1.5 ms of mapping overhead per frame, against about 0.2 ms for emulation alone.",
+    "description_zh": "MappyLand 是早期 Mappy 系统的 Rust 重写版，它对 FCEUMM NES 模拟器核心进行插桩，在依据手柄输入运行动作／冒险游戏的同时绘制地图。系统拦截对图像处理单元滚动寄存器的访问并读取模拟器内存，据此完成滚动配准、区分游戏区域与菜单、检测和跟踪精灵、构建网格化图块地图并识别房间切换。一个在线合并步骤再把观测到的房间整合为一致的房间图，可覆盖折返路线和多次游玩会话。作者在一次 34,514 帧的测试中报告，地图构建每帧约增加 1.5 毫秒开销，而单纯模拟约为每帧 0.2 毫秒。",
+    "scope_limitations_en": "Limited to NES action/adventure games in which the player controls characters moving through a 2D, tile-based space with a single physical layer; independently scrolling layers and parallax backgrounds are unsupported, and other consoles are left to future work. The method relies on emulator instrumentation and memory reads rather than pixels alone, and needs the game image plus controller inputs. Maps were judged accurate only by human inspection of the authors' play on a sample of games; with no reference dataset, no automated quantitative accuracy evaluation was performed. Areas not seen during play stay unmapped, and visually similar rooms can be ambiguous. Timing comes from individual reported runs; the authors expect, but do not measure, similar overhead across NES games. Output is maps, room graphs and entity tracks, not game code, rules or assets.",
+    "scope_limitations_zh": "仅适用于玩家操控角色在单一物理层的二维图块空间中移动的 NES 动作／冒险游戏；不支持各自独立滚动的图层和视差背景，其他主机平台留待后续工作。方法依赖模拟器插桩与内存读取，而非仅凭像素，并需要游戏映像及手柄输入。地图准确性仅由人工检查作者在部分游戏上的游玩结果来判断；由于缺少参考数据集，没有进行自动化的定量准确性评估。游玩中未见到的区域不会被绘制，外观相似的房间也可能产生歧义。耗时数据来自个别报告的运行；作者预期不同 NES 游戏的开销相近，但并未测量。输出是地图、房间图和实体轨迹，而非游戏代码、规则或资源。",
+    "why_fits_en": "Adds emulator-instrumented recovery of game-world structure, namely maps, room graphs and entity tracks, from observed play, complementing pixel-only game replication and code-world-model research.",
+    "why_fits_zh": "补充借助模拟器插桩、从观测到的游玩过程中恢复游戏世界结构（地图、房间图与实体轨迹）的研究，与仅基于像素的游戏复刻和代码世界模型研究互补。",
+    "metadata_notes": "The OJS page and Crossref establish the four-author order, DOI, volume 17, issue 1 and pages 66–73. Crossref types the record as a journal article because AIIDE proceedings appear as an OJS series; this record keeps conference-paper for the AIIDE 2021 Full Oral Papers section. The paper's footnotes link faim-lab/mappy and faim-lab/fceumm-libretro-hooks. The reviewed mappy snapshot at bbf99dd (2025-07-21) includes commits made years after the paper, uses Rust edition 2024 and an unpinned retro-rs Git dependency, declares no license, and bundles prebuilt instrumented emulator cores for Linux, macOS and Windows; the core source in fceumm-libretro-hooks at 4b2001d (2025-02-14) is GPL-2.0. Graphviz renders the map images. Game data is outside this record. The earlier Mappy system (FDG 2017 PCG workshop, arXiv:1707.03908) is a separate paper. No emulator, code or experiment was run.",
+    "metadata_notes_zh": "OJS 页面与 Crossref 确认了四位作者的顺序、DOI、第 17 卷第 1 期及页码 66–73。由于 AIIDE 论文集以 OJS 连续出版物形式发布，Crossref 将该记录归为期刊文章；本条目依据其所属的 AIIDE 2021 Full Oral Papers 栏目保留会议论文类型。论文脚注链接了 faim-lab/mappy 和 faim-lab/fceumm-libretro-hooks。所审阅的 mappy 快照 bbf99dd（2025-07-21）包含论文发表数年后的提交，使用 Rust 2024 版本和未固定版本的 retro-rs Git 依赖，未声明许可证，并附带适用于 Linux、macOS 与 Windows 的预编译插桩模拟器核心；fceumm-libretro-hooks 中的核心源码（4b2001d，2025-02-14）采用 GPL-2.0。地图图片由 Graphviz 渲染。游戏数据不属于本条目范围。早期的 Mappy 系统（FDG 2017 PCG 研讨会，arXiv:1707.03908）是另一篇论文。本次未运行模拟器、代码或实验。",
+    "evidence_urls": [
+      "https://ojs.aaai.org/index.php/AIIDE/article/view/18892",
+      "https://ojs.aaai.org/index.php/AIIDE/article/download/18892/18657",
+      "https://doi.org/10.1609/aiide.v17i1.18892",
+      "https://api.crossref.org/works/10.1609/aiide.v17i1.18892",
+      "https://github.com/faim-lab/mappy/blob/bbf99dd0f53c0986250c9020e3a7a75f9732b19f/README",
+      "https://github.com/faim-lab/mappy/blob/bbf99dd0f53c0986250c9020e3a7a75f9732b19f/Cargo.toml",
+      "https://github.com/faim-lab/mappy/blob/bbf99dd0f53c0986250c9020e3a7a75f9732b19f/mappy/Cargo.toml",
+      "https://github.com/faim-lab/mappy/tree/bbf99dd0f53c0986250c9020e3a7a75f9732b19f/cores",
+      "https://github.com/faim-lab/fceumm-libretro-hooks/blob/4b2001d63071fcfcd49ffdecda5b1f414a1a7496/Copying",
+      "https://github.com/faim-lab/fceumm-libretro-hooks/blob/4b2001d63071fcfcd49ffdecda5b1f414a1a7496/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
