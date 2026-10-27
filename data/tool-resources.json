@@ -11759,5 +11759,43 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "gtirb",
+    "name": "GTIRB",
+    "url": "https://github.com/GrammaTech/gtirb",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "GrammaTech's intermediate representation for passing disassembly, analysis and rewriting results between binary tools, modeled on the role LLVM-IR plays for compilers. An IR holds modules for executables or libraries with their sections, byte intervals, code and data blocks, symbols and symbolic operands, plus an inter-procedural CFG and AuxData tables for analysis results, all referenced by UUID; instruction semantics are deliberately left out, so machine code stays as raw bytes for Capstone/Keystone or any other IL. It serializes as protobuf, with C++, Python and Common Lisp APIs and a partial Java API; the separately listed ddisasm produces it.",
+    "description_zh": "GrammaTech 开发的二进制中间表示，用于在各类二进制工具之间传递反汇编、分析与改写结果，其定位参照 LLVM-IR 在编译器中的作用。一个 IR 包含代表可执行文件或库的模块及其节、字节区间、代码块与数据块、符号和符号化操作数，另有过程间控制流图和存放分析结果的 AuxData 表，所有元素都通过 UUID 引用；它刻意不表示指令语义，机器码以原始字节保存，可交由 Capstone/Keystone 或其他中间语言处理。GTIRB 以 protobuf 序列化，提供 C++、Python 和 Common Lisp API 以及不完整的 Java API；另行收录的 ddisasm 可生成这种表示。",
+    "evidence_url": "https://github.com/GrammaTech/gtirb/blob/98fececb52ba36d86fe6798303a1904574dd5bb6/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "PyPI's newest gtirb is 2.3.2, uploaded 2026-06-16 as a pure-Python wheel for Python 3.8+; the changelog says the PyPI package needs protobuf 4.21.1 or newer. The reviewed master commit of the same day bumps version.txt to 2.3.3, which CHANGELOG marks unreleased. GitHub releases stop at v2.0.0 (2023-12-14, no files), and later versions are git tags. The README says ABI compatibility is not yet provided across any version change, and that stable or unstable packages must match the installed ddisasm and gtirb-pprinter.",
+      "Prebuilt options are Windows .zip builds and Ubuntu 20.04 (focal) apt packages from GrammaTech's download server, and the grammatech/ddisasm Docker image with GTIRB, ddisasm and gtirb-pprinter; the README warns that apt metapackages for stable gtirb 2.0.0 and older conflict on upgrade. Source builds need a 64-bit C++17 compiler (GCC, Clang or Visual Studio), CMake 3.10+, Protobuf 3.0.0+ and Boost 1.68+; the Common Lisp API needs further manual setup, and the Java API is marked incomplete.",
+      "GTIRB is a data structure, not an analyzer: IR comes from a producer such as ddisasm. The schema names file formats including ELF, PE, COFF, XCOFF, Mach-O and raw images, and ISAs from IA-32 and x64 to ARM, MIPS, PowerPC and, from 2.3.2, RISC-V; what a given producer actually supports is up to that tool. Programs in doc/examples walk the C++ API and compute CFG paths, data symbols and functions in several languages.",
+      "The GitLab CI configuration builds and tests on Ubuntu 20.04, 22.04 and 24.04 with GCC and Clang, plus static, Java, Common Lisp, Python and coverage jobs; the GitHub Actions workflow only builds and publishes documentation. No pipeline results were checked and nothing was built for this review.",
+      "LICENSE.txt places GTIRB under MIT (2018, GrammaTech) and appends Apache-2.0 with LLVM Exceptions for included third-party code, which GitHub leaves unclassified; contributors must sign GrammaTech's CLA. gtirb-pprinter and gtirb-rewriting are separate projects that were not reviewed, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/GrammaTech/gtirb/blob/98fececb52ba36d86fe6798303a1904574dd5bb6/LICENSE.txt",
+      "https://github.com/GrammaTech/gtirb/blob/98fececb52ba36d86fe6798303a1904574dd5bb6/CHANGELOG.md",
+      "https://github.com/GrammaTech/gtirb/blob/98fececb52ba36d86fe6798303a1904574dd5bb6/version.txt",
+      "https://github.com/GrammaTech/gtirb/blob/98fececb52ba36d86fe6798303a1904574dd5bb6/CMakeLists.txt",
+      "https://github.com/GrammaTech/gtirb/blob/98fececb52ba36d86fe6798303a1904574dd5bb6/PROTOBUF.md",
+      "https://github.com/GrammaTech/gtirb/blob/98fececb52ba36d86fe6798303a1904574dd5bb6/AuxData.md",
+      "https://github.com/GrammaTech/gtirb/blob/98fececb52ba36d86fe6798303a1904574dd5bb6/proto/Module.proto",
+      "https://github.com/GrammaTech/gtirb/blob/98fececb52ba36d86fe6798303a1904574dd5bb6/CONTRIBUTING.md",
+      "https://github.com/GrammaTech/gtirb/blob/98fececb52ba36d86fe6798303a1904574dd5bb6/.ci/gitlab-ci.yml",
+      "https://github.com/GrammaTech/gtirb/blob/98fececb52ba36d86fe6798303a1904574dd5bb6/.github/workflows/actions.yml",
+      "https://github.com/GrammaTech/gtirb/tree/98fececb52ba36d86fe6798303a1904574dd5bb6/doc/examples",
+      "https://github.com/GrammaTech/gtirb/releases/tag/v2.0.0",
+      "https://pypi.org/project/gtirb/2.3.2/"
+    ]
   }
 ]
