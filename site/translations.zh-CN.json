@@ -4310,5 +4310,14 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "ghidrecomp": {
+    "name": "ghidrecomp 命令行 Ghidra 批量反编译工具",
+    "requirements": [
+      "审阅时最新版本为 v0.5.9，于 2026-01-06 发布到 PyPI 和 GitHub；所审阅的 main 分支提交即该标签。setup.cfg 要求 Python 3.10+ 和 pyghidra 2.2.1+，并将项目标为 alpha 阶段；CodeQL 选项只是占位，运行时仅提示即将推出。",
+      "需要另行安装 Ghidra 及其所需的 Java 运行环境，并通过 GHIDRA_INSTALL_DIR 指定位置。Dockerfile 和 devcontainer 基于作者的 ghidra-python 镜像，并在 Ghidra 11 下固定 pyghidra 2.2.1；CI 在该镜像中针对最新版 Ghidra 以及 11.3、11.3.2 和 11.4.2 运行 pytest。SAST 扫描需要 Semgrep，可通过 sast 可选依赖安装。",
+      "待反编译的二进制须由分析者自备；除非设置 --skip-symbols，符号查询会访问所列的公共符号服务器。测试数据附带 tests/data/afd.sys.10.0.22621.1415（一个 Microsoft Windows 驱动版本，README 示例也使用它）、一个 AArch64 ls 二进制和 ntddk_64.gdt 数据类型库；这些文件遵循各自发布者的条款。",
+      "README 将输出定位为用于研究和分析的反编译结果，未声称可重新编译；测试检查的是函数数量、调用图、应用 GDT 后的一个函数签名、BSim 和 SAST 输出，而非反编译代码的整体准确性。采用 GPL-3.0（LICENSE）；Ghidra 和 Semgrep 各自保留其许可证。本次未反编译任何二进制，所审来源未确立 REA 关联。"
+    ]
   }
 }
