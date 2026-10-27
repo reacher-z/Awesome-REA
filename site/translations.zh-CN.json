@@ -4301,5 +4301,15 @@
       "技术说明称，在早期人工尝试受阻后，长时间运行的 Claude Code（Opus 4.6）与 Codex 会话借助维护者自己已 root 的 S7、其固件、python-roborock 及反编译后的应用，帮助找到了配网中剩余的关键一步。说明致谢了 Dennis Giese 的固件研究、Valetudo 及其他社区工作；未提及使用 REA。",
       "采用 MIT 许可并附“按现状提供”的免责声明；项目与 Roborock 无关联。这是兼容的服务器实现，并非恢复的 Roborock 服务端代码，厂商固件或应用的变化可能使其失效。"
     ]
+  },
+  "mcsema": {
+    "name": "McSema 二进制到 LLVM bitcode 提升器",
+    "requirements": [
+      "该 GitHub 仓库已归档，处于只读状态。最后一次提交（2022-04-26）只是把 README 中支持的 LLVM 版本缩小为 9–11；最新版本 v3.0.26（2021-04-01）没有附带文件，最后一个提供预构建压缩包的是 2021-03-05 的 v3.0.24，面向 Ubuntu 18.04 和 20.04 amd64 上的 LLVM 9、10 和 11。README 仍称 McSema 处于积极维护中，这与归档状态已不相符；它所依赖的指令库 Remill 在独立仓库中继续发展。",
+      "控制流恢复需要 IDA Pro 7.5+；另有实验性的 DynInst 前端，但官方明确不提供支持，且可能已经过时。构建需要 CMake 3.14+、Python 3.8 及所列的 protobuf 与 clang 绑定，以及固定提交的 Remill 和 Anvill。README 说明了在 Ubuntu 18.04 和 20.04 上的本机构建、需由用户自行加入反汇编器的 Docker 镜像、Limitations.md 称未经专门测试的 macOS 构建，以及实验性的 Windows 构建。",
+      "输入为分析者自备、由编译器生成的 ELF 或 PE 二进制。Limitations.md 说明不处理加壳、加密、混淆和自修改代码以及原始固件镜像，忽略异常，以 64 位 double 模拟 x87，并且尚不支持带浮点参数或返回值的外部函数。README 称重新编译的程序功能与原程序相同，这属于项目自述；集成测试需用 IDA 重新生成控制流图，本次未运行。",
+      "代码树附带测试与示例材料：Maze 示例的 x86、amd64 和 AArch64 二进制，若干小型测试程序以及 gzip、ls、nc 和 xz 的预生成控制流图文件，以及测试输入。仓库中还有 scripts/mcsema_binja.tar.gz.enc，这是 2018 年加入的 AES 加密压缩包，供 CI 用密钥解出 Binary Ninja 安装文件和 CI 许可证；本条目不链接该文件。",
+      "采用 AGPL-3.0 许可；IDA Pro、Binary Ninja 和 LLVM 保留各自条款。README 称 McSema 由 DARPA 和美国国防部资助并用于其研究。本次未构建、提升或运行任何内容，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

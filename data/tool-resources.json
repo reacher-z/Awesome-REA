@@ -11759,5 +11759,41 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "mcsema",
+    "name": "McSema",
+    "url": "https://github.com/lifting-bits/mcsema",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Archived Trail of Bits executable lifter that translates 32- and 64-bit Linux ELF and Windows PE binaries into LLVM bitcode for analysis or recompilation. Control-flow recovery runs in mcsema-disass, which relies on IDA Pro to write a protobuf CFG, and mcsema-lift then translates instructions through the Remill library; the README lists most x86 and x86-64 integer, x87, MMX, SSE and AVX instructions plus subsets of AArch64, SPARC32 and SPARC64. Lifted bitcode can go through LLVM passes, KLEE or libFuzzer, or be compiled back into a runnable program.",
+    "description_zh": "Trail of Bits 开发、现已归档的可执行文件提升器，可将 32 位和 64 位 Linux ELF 与 Windows PE 二进制转换为 LLVM bitcode，用于分析或重新编译。控制流恢复由 mcsema-disass 完成，它依赖 IDA Pro 输出 protobuf 格式的控制流图，随后 mcsema-lift 借助 Remill 库翻译指令；README 列出其支持大部分 x86 与 x86-64 整数、x87、MMX、SSE 和 AVX 指令，以及 AArch64、SPARC32 和 SPARC64 的部分指令。提升得到的 bitcode 可交给 LLVM 优化遍、KLEE 或 libFuzzer 处理，也可重新编译成可运行的程序。",
+    "evidence_url": "https://github.com/lifting-bits/mcsema/blob/26368053f761be05dab708bc28fb97090c64b2be/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The GitHub repository is archived and read-only. Its last commit, on 2022-04-26, only narrowed the README's supported LLVM versions to 9–11; the newest release, v3.0.26 of 2021-04-01, has no assets, and v3.0.24 of 2021-03-05 was the last with prebuilt archives, for LLVM 9, 10 and 11 on Ubuntu 18.04 and 20.04 amd64. The README still calls McSema actively maintained, which the archived state no longer supports; Remill, the instruction library it builds on, continues in its own repository.",
+      "Control-flow recovery requires IDA Pro 7.5+; an experimental DynInst frontend exists but is explicitly unsupported and may be out of date. Builds need CMake 3.14+, Python 3.8 with the listed protobuf and clang bindings, and Remill and Anvill at pinned commits. The README documents native builds on Ubuntu 18.04 and 20.04, a Docker image to which the user adds a disassembler, macOS builds that Limitations.md says are not explicitly tested, and an experimental Windows build.",
+      "Inputs are compiler-generated ELF or PE binaries supplied by the analyst. Limitations.md excludes packed, encrypted, obfuscated and self-modifying code and raw firmware blobs, ignores exceptions, models x87 with 64-bit doubles and does not yet support external functions with floating-point arguments or returns. The README's claim that recompiled programs keep identical functionality is project-reported; the integration tests need IDA to regenerate CFGs and were not run.",
+      "The tree bundles test and example material: Maze example binaries for x86, amd64 and AArch64, prebuilt CFG files for small test programs and for gzip, ls, nc and xz, and test inputs. It also holds scripts/mcsema_binja.tar.gz.enc, an AES-encrypted archive added in 2018 so CI could unpack a Binary Ninja installation and CI license with its secret key; this entry does not link it.",
+      "AGPL-3.0; IDA Pro, Binary Ninja and LLVM keep their own terms. The README says McSema was funded by and used in research for DARPA and the US Department of Defense. Nothing was built, lifted or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/lifting-bits/mcsema/blob/26368053f761be05dab708bc28fb97090c64b2be/docs/Limitations.md",
+      "https://github.com/lifting-bits/mcsema/blob/26368053f761be05dab708bc28fb97090c64b2be/docs/McSemaWalkthrough.md",
+      "https://github.com/lifting-bits/mcsema/blob/26368053f761be05dab708bc28fb97090c64b2be/docs/CommandLineReference.md",
+      "https://github.com/lifting-bits/mcsema/blob/26368053f761be05dab708bc28fb97090c64b2be/tests/MakingTests.md",
+      "https://github.com/lifting-bits/mcsema/tree/26368053f761be05dab708bc28fb97090c64b2be/examples/Maze",
+      "https://github.com/lifting-bits/mcsema/tree/26368053f761be05dab708bc28fb97090c64b2be/tests/test_suite_generator/generated/prebuilt_cfg",
+      "https://github.com/lifting-bits/mcsema/blob/26368053f761be05dab708bc28fb97090c64b2be/.github/workflows/vcpkg_ci.yml",
+      "https://github.com/lifting-bits/mcsema/blob/26368053f761be05dab708bc28fb97090c64b2be/LICENSE",
+      "https://github.com/lifting-bits/mcsema/commit/1ef3ed2cd355f52d7ae28b336bdbc59c5ebad5b9",
+      "https://github.com/lifting-bits/mcsema/releases/tag/v3.0.26",
+      "https://github.com/lifting-bits/mcsema/releases/tag/v3.0.24"
+    ]
   }
 ]
