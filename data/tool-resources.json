@@ -11759,5 +11759,40 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "iblessing",
+    "name": "iblessing",
+    "url": "https://github.com/Soulghost/iblessing",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Toolkit for analyzing iOS apps and arm64 Mach-O binaries, built on Capstone, Unicorn and Keystone. Its scanners extract app-bundle metadata such as URL schemes and transport-security settings, locate Objective-C class references and NSPredicate uses, detect symbol wrappers, and partially emulate arm64 code with Unicorn to recover objc_msgSend cross-references, including those passed through blocks. Generators turn the reports into IDA Pro scripts that add cross-references and rename wrappers, or into a local query server, and a shared core library with a plug-in interface supports custom tools.",
+    "description_zh": "用于分析 iOS 应用和 arm64 Mach-O 二进制的工具集，基于 Capstone、Unicorn 与 Keystone 构建。其扫描器可提取应用包元数据（如 URL Scheme 和传输安全设置），定位 Objective-C 类引用和 NSPredicate 用法，识别符号包装函数，并借助 Unicorn 部分模拟 arm64 代码以恢复 objc_msgSend 交叉引用，包括经由 block 传递的调用。生成器可把扫描报告转成 IDA Pro 脚本，用于添加交叉引用和重命名包装函数，也可启动本地查询服务；共享核心库及插件接口可用于开发自定义工具。",
+    "evidence_url": "https://github.com/Soulghost/iblessing/blob/ff14351de3f3c2155e8df47c26d4367523af7628/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.0.4-beta, published 2021-11-26 and tagged at the reviewed master commit; every release is marked as a pre-release. Each recent release attaches macOS and Linux command-line and all-in-one binaries, framework archives with the shared core library and headers, and a JSON table of Foundation and UIKit method signatures. The README's feature list leaves Swift class parsing, following branches and calls, and Android scanners unfinished.",
+      "Users supply an iOS .app bundle for app-info or an arm64 Mach-O binary for the other scanners; README examples analyze commercial third-party apps after restoring symbols with a separate tool, but no app binaries are committed. The class and objc_msgSend cross-reference scanners accept arm64 binaries only, and app-info is unavailable on Linux because it still depends on Cocoa. The README warns that binary scanners reserve 12 GB of virtual memory per Mach-O file, so physical memory or swap must cover that.",
+      "Builds on macOS or Linux with CMake 3.5+ and a C++17 compiler after a recursive clone; compile-cmake.sh first builds the pinned Capstone, Unicorn (arm, aarch64 and x86) and Keystone submodules as static libraries. An Xcode project is also included. IDA Pro is needed only to apply the generated scripts.",
+      "GitHub Actions builds on Ubuntu and macOS and, on macOS only, scans the bundled sample-app benchmark and runs the built-in objc_msgSend cross-reference test; Travis CI builds and publishes tagged releases. The README notes that objc-msg-xref follows no calls to save time, so its results are partly missing. This review ran neither the tools nor the tests.",
+      "GPL-3.0 (LICENSE). The project calls itself an iOS security exploiting toolkit; this record covers its analysis functions only. Analyzed apps and Apple frameworks keep their own terms, and the Capstone, Unicorn and Keystone submodules carry their own licenses."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Soulghost/iblessing/blob/ff14351de3f3c2155e8df47c26d4367523af7628/compile-cmake.command",
+      "https://github.com/Soulghost/iblessing/blob/ff14351de3f3c2155e8df47c26d4367523af7628/.gitmodules",
+      "https://github.com/Soulghost/iblessing/blob/ff14351de3f3c2155e8df47c26d4367523af7628/iblessing/CMakeLists.txt",
+      "https://github.com/Soulghost/iblessing/blob/ff14351de3f3c2155e8df47c26d4367523af7628/.github/workflows/c-cpp.yml",
+      "https://github.com/Soulghost/iblessing/blob/ff14351de3f3c2155e8df47c26d4367523af7628/run-test.command",
+      "https://github.com/Soulghost/iblessing/blob/ff14351de3f3c2155e8df47c26d4367523af7628/.travis.yml",
+      "https://github.com/Soulghost/iblessing/tree/ff14351de3f3c2155e8df47c26d4367523af7628/iblessing/iblessing/tests",
+      "https://github.com/Soulghost/iblessing/blob/ff14351de3f3c2155e8df47c26d4367523af7628/LICENSE",
+      "https://github.com/Soulghost/iblessing/releases/tag/v1.0.4-beta"
+    ]
   }
 ]
