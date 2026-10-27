@@ -51,7 +51,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [C00kie-/IoT-workshop-materials](https://github.com/C00kie-/IoT-workshop-materials) — Presented hardware reverse engineering workshops since 2019 **[65 stars]**
 - [jowinjohnchemban/winbinwalk](https://github.com/jowinjohnchemban/winbinwalk) — binwalk for Windows **[60 stars]**
 - [soyersoyer/basefind2](https://github.com/soyersoyer/basefind2) — A faster firmware base address scanner. **[60 stars]**
-- [8051Enthusiast/allyourbase](https://github.com/8051Enthusiast/allyourbase) — Finds the base address of a firmware by comparing string addresses with target pointer addresses **[57 stars]**
+- [8051Enthusiast/allyourbase](https://github.com/8051Enthusiast/allyourbase) — Finds the base address of a firmware by comparing string addresses with target pointer addresses **[57 stars]** · Curated: [allyourbase](https://awesomerea.org/resources/allyourbase/)
 - [xdarklight/mktplinkfw3](https://github.com/xdarklight/mktplinkfw3) — Firmware format analysis for TP-Link firmwares with the version 3 header (0x03000000) **[56 stars]**
 - [mosajjal/fortitool](https://github.com/mosajjal/fortitool) — Fortinet Firmware decryption and analysis tools **[50 stars]**
 - [giek2000/ipod-classic-firmware-research](https://github.com/giek2000/ipod-classic-firmware-research) — iPod RetailOS firmware research — decryption, analysis, and wInd3x Classic support patch **[45 stars]**

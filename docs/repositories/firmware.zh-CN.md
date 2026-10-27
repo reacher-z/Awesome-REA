@@ -51,7 +51,7 @@
 - [C00kie-/IoT-workshop-materials](https://github.com/C00kie-/IoT-workshop-materials) — 自 2019 年起开展的硬件逆向工程工作坊资料 **[65 星标]**
 - [jowinjohnchemban/winbinwalk](https://github.com/jowinjohnchemban/winbinwalk) — Windows 版 binwalk **[60 星标]**
 - [soyersoyer/basefind2](https://github.com/soyersoyer/basefind2) — 速度更快的固件基址扫描器。 **[60 星标]**
-- [8051Enthusiast/allyourbase](https://github.com/8051Enthusiast/allyourbase) — 通过比较字符串地址与目标指针地址，查找固件基址 **[57 星标]**
+- [8051Enthusiast/allyourbase](https://github.com/8051Enthusiast/allyourbase) — 通过比较字符串地址与目标指针地址，查找固件基址 **[57 星标]** · 精选：[allyourbase 固件基址估算脚本](https://awesomerea.org/zh/resources/allyourbase/)
 - [xdarklight/mktplinkfw3](https://github.com/xdarklight/mktplinkfw3) — 针对采用版本 3 文件头（0x03000000）的 TP-Link 固件进行格式分析 **[56 星标]**
 - [mosajjal/fortitool](https://github.com/mosajjal/fortitool) — Fortinet 固件解密与分析工具 **[50 星标]**
 - [giek2000/ipod-classic-firmware-research](https://github.com/giek2000/ipod-classic-firmware-research) — iPod RetailOS 固件研究，涵盖解密、分析，以及为 wInd3x 添加 Classic 支持的补丁 **[45 星标]**
