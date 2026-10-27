@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 515](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-515-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 218](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 138](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 515](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-515-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 218](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 139](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-139-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-515 项精选资源（218 个案例）· 138 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 512。
+515 项精选资源（218 个案例）· 139 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 512。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (138) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (38)
+- [论文](#papers) (139) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (38)
 
 **更多浏览方式**
 
@@ -663,14 +663,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**138 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**139 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (10) · [反编译](#papers-decompilation) (59) · [网站](#papers-website-reconstruction) (23)
-- [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (12) · [固件](#papers-firmware-analysis) (13)
+- [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (13) · [固件](#papers-firmware-analysis) (13)
 - [协议](#papers-protocol-analysis) (13)
 
 每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -811,6 +811,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**智能体逆向工程：利用发现智能体从输入输出行为恢复代码**](https://arxiv.org/abs/2605.15334) - 通过 LLM 引导的演化搜索、逐步展示的样例、由简到繁的修改及执行错误反馈，从输入输出观察合成可执行程序；主动变体自行选择输入并查询隐藏的参考程序。 <sub>原题：*Agentic Reverse Engineering: From I/O to Code with Discovery Agent* · NeurIPS 2026 · 已接收 · Yihong Dong 等 · [PDF](https://arxiv.org/pdf/2605.15334v2) · [代码](https://github.com/JiaruQian/IO2Code) · [完整条目](https://awesomerea.org/zh/papers/paper-dio-agent/)</sub>
 - [**UIOrchestra：通过多智能体系统将 UI 设计转换为高保真代码**](https://aclanthology.org/2025.findings-emnlp.150/) - UIOrchestra 通过布局描述、代码生成及渲染图像比较三个智能体，将静态移动 UI 设计转换为 React/CSS。 <sub>原题：*UIOrchestra: Generating High-Fidelity Code from UI Designs with a Multi-agent System* · Findings of EMNLP 2025 · 会议论文 · Chuhuai Yue 等 · [PDF](https://aclanthology.org/2025.findings-emnlp.150.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-uiorchestra/)</sub>
 - [**DeclarUI：以自动生成声明式界面代码连接设计与开发**](https://doi.org/10.1145/3715726) - 结合视觉组件提取、多模态模型、页面跳转图与迭代检查，从设计稿或截图重建多页面移动界面代码，并在 React Native、Flutter 和 ArkUI 上评测。 <sub>原题：*DeclarUI: Bridging Design and Development with Automated Declarative UI Code Generation* · Proceedings of the ACM on Software Engineering 2025 · 期刊论文 · Ting Zhou 等 · [PDF](https://xinyi-hou.github.io/files/zhou2024bridging.pdf) · [代码](https://github.com/security-pride/DeclarUI) · [完整条目](https://awesomerea.org/zh/papers/paper-declarui/)</sub>
+- [**面向 Android 恶意软件分析的代码大语言模型基准评测**](https://dl.acm.org/doi/10.1145/3713081.3731745) - CAMA 是一个评测代码大语言模型理解反编译 Android 恶意软件能力的基准框架。 <sub>原题：*On Benchmarking Code LLMs for Android Malware Analysis* · ISSTA Companion 2025 (LLMSC Workshop) · 会议论文 · Yiling He 等 · [PDF](https://arxiv.org/pdf/2504.00694v2) · [完整条目](https://awesomerea.org/zh/papers/paper-cama/)</sub>
 - [**基于机器学习的移动应用图形用户界面原型生成**](https://doi.org/10.1109/TSE.2018.2844788) - ReDraw 通过组件检测、CNN 控件类型分类及数据驱动的近邻层级组装，将截图或设计稿转换为原生 Android 图形界面原型。 <sub>原题：*Machine Learning-Based Prototyping of Graphical User Interfaces for Mobile Apps* · IEEE Transactions on Software Engineering 2020 · 期刊论文 · Kevin Moran 等 · [PDF](https://arxiv.org/pdf/1802.02312v2) · [完整条目](https://awesomerea.org/zh/papers/paper-redraw/)</sub>
 - [**pix2code：从图形用户界面截图生成代码**](https://doi.org/10.1145/3220134.3220135) - 学习从界面截图生成领域专用语言（DSL），再编译为原生 Android XML、iOS Storyboard 或网页 HTML/CSS 界面代码。 <sub>原题：*pix2code: Generating Code from a Graphical User Interface Screenshot* · EICS 2018 · 会议论文 · Tony Beltramelli · [PDF](https://arxiv.org/pdf/1705.07962v2) · [代码](https://github.com/tonybeltramelli/pix2code) · [完整条目](https://awesomerea.org/zh/papers/paper-pix2code/)</sub>
 - [**从 UI 设计图到 GUI 骨架：辅助启动移动界面实现的神经机器翻译器**](https://doi.org/10.1145/3180155.3180240) - UI2code 使用神经编码器—解码器，将移动 UI 图像转换为 Android 组件层级与布局骨架。 <sub>原题：*From UI Design Image to GUI Skeleton: A Neural Machine Translator to Bootstrap Mobile GUI Implementation* · ICSE 2018 · 会议论文 · Chunyang Chen 等 · [PDF](https://chunyang-chen.github.io/publication/ui2code.pdf) · [代码](https://github.com/ccywch/UI2code) · [完整条目](https://awesomerea.org/zh/papers/paper-ui2code/)</sub>
