@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 522](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-522-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 221](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-221-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 144](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 522](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-522-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 221](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-221-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 145](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-145-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)** · **[推荐资源](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)** · **[参与贡献](#参与贡献)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-522 项精选资源（221 个案例）· 144 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 519。
+522 项精选资源（221 个案例）· 145 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 519。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (144) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (40)
+- [论文](#papers) (145) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (40)
 
 **更多浏览方式**
 
@@ -670,13 +670,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**144 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**145 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (11) · [反编译](#papers-decompilation) (63) · [网站](#papers-website-reconstruction) (23)
+- [智能体评测](#papers-agent-evaluation) (11) · [反编译](#papers-decompilation) (64) · [网站](#papers-website-reconstruction) (23)
 - [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (13) · [固件](#papers-firmware-analysis) (13)
 - [协议](#papers-protocol-analysis) (13)
 
@@ -731,6 +731,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**NotDec：通过跨过程类型恢复进行 WebAssembly 反编译**](https://dl.acm.org/doi/10.1145/3744916.3787762) - NotDec 将 WebAssembly 提升为 SSA 中间表示，通过基于 Retypd 的类型约束及指针／数值区分恢复结构，并生成 C。 <sub>原题：*NotDec: WebAssembly Decompilation With Inter-Procedural Type Recovery* · ICSE 2026 · 会议论文 · Jikai Wang 等 · [PDF](https://arxiv.org/pdf/2608.03286v1) · [代码](https://github.com/NotDec/NotDec) · [完整条目](https://awesomerea.org/zh/papers/paper-notdec/)</sub>
 - [**Deception Delta：基于大语言模型的智能合约字节码取证对抗评测**](https://arxiv.org/abs/2609.14098) - 评估语言模型如何解释人工构造的欺骗性合约与对照合约的原始 EVM 字节码，区分识别隐藏转账机制与正确判断其风险，并结合模型评审和不依赖评审模型的检查。 <sub>原题：*The Deception Delta: Adversarial Evaluation of LLM-Based Smart Contract Bytecode Forensics* · ACM CCS 2026 · 会议已接收 · Timo Schefold · [PDF](https://arxiv.org/pdf/2609.14098v2) · [完整条目](https://awesomerea.org/zh/papers/paper-deception-delta/)</sub>
 - [**SK2Decompile：从骨架到皮肤的大语言模型两阶段二进制反编译**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/9132583dd869acb0cafeb0ed25eb031a-Abstract-Conference.html) - 将 LLM 反编译分为两个阶段：结构恢复模型把反编译器伪代码转换为保留控制流和数据结构、但不含标识符的中间表示，并以编译器反馈作为强化学习奖励；标识符命名模型再以语义相似度为奖励恢复名称。 <sub>原题：*SK2Decompile: LLM-based Two-Phase Binary Decompilation from Skeleton to Skin* · ICLR 2026 · 会议论文 · Hanzhuo Tan 等 · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/9132583dd869acb0cafeb0ed25eb031a-Paper-Conference.pdf) · [代码](https://github.com/albertan017/LLM4Decompile/tree/85b364bf093eb2ee4f3687cfe38a203fca89f23e/sk2decompile) · [完整条目](https://awesomerea.org/zh/papers/paper-sk2decompile/)</sub>
+- [**ShieldedCode：学习虚拟机保护代码的鲁棒表示**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/286976486c9bbfa2c2069b01b259b19d-Abstract-Conference.html) - ShieldedCode 从防御方角度研究软件保护：它以 C 源代码函数及其经虚拟化保护（VMP）后的 x86-64 代码组成的配对数据训练代码语言模型，使模型能够生成、比较和排序受保护的变体。 <sub>原题：*ShieldedCode: Learning Robust Representations for Virtual Machine Protected Code* · ICLR 2026 · 会议论文 · Mingqiao Mo 等 · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/286976486c9bbfa2c2069b01b259b19d-Paper-Conference.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-shieldedcode/)</sub>
 - [**Idioms：以明确定义的类型显著增强局部神经反编译的简单有效框架**](https://www.ndss-symposium.org/ndss-paper/idioms-a-simple-and-effective-framework-for-turbo-charging-local-neural-decompilation-with-well-defined-types/) - Idioms 微调代码语言模型，把单个目标函数的 Hex-Rays 输出转换为预测的原始 C 代码，并同时给出其中使用的用户自定义结构体、联合体和类型别名定义。 <sub>原题：*Idioms: A Simple and Effective Framework for Turbo-Charging Local Neural Decompilation with Well-Defined Types* · NDSS 2026 · 会议论文 · Luke Dramko 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f795-paper.pdf) · [代码](https://github.com/squaresLab/idioms) · [完整条目](https://awesomerea.org/zh/papers/paper-idioms/)</sub>
 - [**FidelityGPT：利用检索增强生成纠正反编译失真**](https://www.ndss-symposium.org/ndss-paper/fidelitygpt-correcting-decompilation-distortions-with-retrieval-augmented-generation/) - FidelityGPT 对现有反编译器输出进行后处理：由大语言模型为代码行标注六类失真（如非常规解引用、冗余变量和令人困惑的控制流），再改写被标注的行。 <sub>原题：*FidelityGPT: Correcting Decompilation Distortions with Retrieval Augmented Generation* · NDSS 2026 · 会议论文 · Zhiping Zhou 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s989-paper.pdf) · [代码](https://github.com/ZhouZhiping045/FidelityGPT) · [完整条目](https://awesomerea.org/zh/papers/paper-fidelitygpt/)</sub>
 - [**CHISEL：借助 AI 迭代恢复源码**](https://arxiv.org/abs/2608.27981) - CHISEL 利用编译诊断及针对原函数的类型感知差分模糊测试改进 Ghidra 伪代码，并保留反例与候选历史。 <sub>原题：*CHISEL-ing Back Source Code with AI-enabled Iterative Recovery* · SURE <span>@</span> ACM CCS 2026 · 会议已接收 · Varun Kohli 等 · [PDF](https://arxiv.org/pdf/2608.27981v1) · [代码](https://github.com/VarunKohli18/chisel) · [完整条目](https://awesomerea.org/zh/papers/paper-chisel-iterative-recovery/)</sub>

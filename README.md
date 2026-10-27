@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 522](https://img.shields.io/badge/resources-522-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 221](https://img.shields.io/badge/cases-221-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 144](https://img.shields.io/badge/papers-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 522](https://img.shields.io/badge/resources-522-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 221](https://img.shields.io/badge/cases-221-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 145](https://img.shields.io/badge/papers-145-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)** · **[Suggest a resource](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)** · **[Contributing](#contributing)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-522 curated resources (221 cases) · 144 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 519 because 3 of these appear only under Papers.
+522 curated resources (221 cases) · 145 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 519 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (144) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (40)
+- [Papers](#papers) (145) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (40)
 
 **More ways to browse**
 
@@ -669,13 +669,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**144 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**145 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (11) · [Decompilation](#papers-decompilation) (63) · [Websites](#papers-website-reconstruction) (23)
+- [Agent evaluation](#papers-agent-evaluation) (11) · [Decompilation](#papers-decompilation) (64) · [Websites](#papers-website-reconstruction) (23)
 - [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (13) · [Firmware](#papers-firmware-analysis) (13)
 - [Protocols](#papers-protocol-analysis) (13)
 
@@ -730,6 +730,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**NotDec: WebAssembly Decompilation With Inter-Procedural Type Recovery**](https://dl.acm.org/doi/10.1145/3744916.3787762) - NotDec lifts WebAssembly into SSA-based IR, uses Retypd-derived type constraints and pointer/value distinctions to recover structures, and emits C. <sub>ICSE 2026 · Conference paper · Jikai Wang et al. · [PDF](https://arxiv.org/pdf/2608.03286v1) · [Code](https://github.com/NotDec/NotDec) · [Full entry](https://awesomerea.org/papers/paper-notdec/)</sub>
 - [**The Deception Delta: Adversarial Evaluation of LLM-Based Smart Contract Bytecode Forensics**](https://arxiv.org/abs/2609.14098) - Evaluates how language models interpret raw EVM bytecode from purpose-built deceptive and control contracts. <sub>ACM CCS 2026 · Conference accepted · Timo Schefold · [PDF](https://arxiv.org/pdf/2609.14098v2) · [Full entry](https://awesomerea.org/papers/paper-deception-delta/)</sub>
 - [**SK2Decompile: LLM-based Two-Phase Binary Decompilation from Skeleton to Skin**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/9132583dd869acb0cafeb0ed25eb031a-Abstract-Conference.html) - Splits LLM decompilation into two phases: a Structure Recovery model turns decompiler pseudocode into an identifier-free IR that keeps control flow and data structures, trained with compiler-based RL rewards, and an Identifier Naming model then restores names under a semantic-similarity reward. <sub>ICLR 2026 · Conference paper · Hanzhuo Tan et al. · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/9132583dd869acb0cafeb0ed25eb031a-Paper-Conference.pdf) · [Code](https://github.com/albertan017/LLM4Decompile/tree/85b364bf093eb2ee4f3687cfe38a203fca89f23e/sk2decompile) · [Full entry](https://awesomerea.org/papers/paper-sk2decompile/)</sub>
+- [**ShieldedCode: Learning Robust Representations for Virtual Machine Protected Code**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/286976486c9bbfa2c2069b01b259b19d-Abstract-Conference.html) - ShieldedCode studies software protection from the defender's side: it trains code language models on pairs of C source functions and their virtualization-protected (VMP) x86-64 code so that the models can generate, compare and rank protected variants. <sub>ICLR 2026 · Conference paper · Mingqiao Mo et al. · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/286976486c9bbfa2c2069b01b259b19d-Paper-Conference.pdf) · [Full entry](https://awesomerea.org/papers/paper-shieldedcode/)</sub>
 - [**Idioms: A Simple and Effective Framework for Turbo-Charging Local Neural Decompilation with Well-Defined Types**](https://www.ndss-symposium.org/ndss-paper/idioms-a-simple-and-effective-framework-for-turbo-charging-local-neural-decompilation-with-well-defined-types/) - Idioms fine-tunes code language models to turn Hex-Rays output for one target function into predicted original C together with definitions of the user-defined structs, unions and typedefs it uses. <sub>NDSS 2026 · Conference paper · Luke Dramko et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f795-paper.pdf) · [Code](https://github.com/squaresLab/idioms) · [Full entry](https://awesomerea.org/papers/paper-idioms/)</sub>
 - [**FidelityGPT: Correcting Decompilation Distortions with Retrieval Augmented Generation**](https://www.ndss-symposium.org/ndss-paper/fidelitygpt-correcting-decompilation-distortions-with-retrieval-augmented-generation/) - FidelityGPT post-processes existing decompiler output: an LLM labels lines with six distortion types, such as non-conventional dereferencing, redundant variables and confusing control flow, and then rewrites the labeled lines. <sub>NDSS 2026 · Conference paper · Zhiping Zhou et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s989-paper.pdf) · [Code](https://github.com/ZhouZhiping045/FidelityGPT) · [Full entry](https://awesomerea.org/papers/paper-fidelitygpt/)</sub>
 - [**CHISEL-ing Back Source Code with AI-enabled Iterative Recovery**](https://arxiv.org/abs/2608.27981) - CHISEL refines Ghidra pseudocode using compiler diagnostics and type-aware differential fuzzing against the original function. <sub>SURE <span>@</span> ACM CCS 2026 · Conference accepted · Varun Kohli et al. · [PDF](https://arxiv.org/pdf/2608.27981v1) · [Code](https://github.com/VarunKohli18/chisel) · [Full entry](https://awesomerea.org/papers/paper-chisel-iterative-recovery/)</sub>
