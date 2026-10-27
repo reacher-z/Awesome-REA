@@ -39,7 +39,7 @@ class Page(HTMLParser):
         self.links, self.canonicals, self.ids, self.schemas, self.alternates = [], [], [], [], []
         self.feeds = []
         self.anchor_names = []
-        self.section_links, self._in_related = None, False
+        self.section_links, self._in_siblings = None, False
         self.noindex, self.lang, self.json_script = False, None, None
         self.paper_ids, self.paper_texts, self.paper_links = [], {}, {}
         self.current_paper = None
@@ -64,7 +64,7 @@ class Page(HTMLParser):
         assert len(values) == len(attrs), f'Duplicate HTML attributes on {tag}'
         classes = values.get('class', '').split()
         if tag == 'section' and 'entry-siblings' in classes:
-            self.section_links, self._in_related = [], True
+            self.section_links, self._in_siblings = [], True
         if tag == 'section':
             self._case_sections.append({'section': values.get('data-case-section'), 'anchor': values.get('id')}
                                        if 'case-section' in classes else None)
@@ -140,7 +140,7 @@ class Page(HTMLParser):
             self.detail_links.append(self.current_detail_link)
         if tag in ('a', 'link') and values.get('href'):
             self.links.append(values['href'])
-            if self._in_related and tag == 'a':
+            if self._in_siblings and tag == 'a':
                 self.section_links.append(values['href'])
             if self.current_case is not None:
                 self.current_case['links'].append(values['href'])
@@ -240,7 +240,7 @@ class Page(HTMLParser):
                 self._group_summary = None
             self._div_depth -= 1
         if tag == 'section':
-            self._in_related = False
+            self._in_siblings = False
         if tag == 'section' and self._section_stack:
             self._section_stack.pop()
         if tag == 'section' and self._case_sections:
@@ -946,14 +946,14 @@ def validate_entry_outputs(pages, resources, papers):
     for route, (kind, identifier, language) in routes.items():
         assert route in pages, f'Missing detail page: {route}'
         page, record = pages[route], catalogs[kind][identifier]
-        related = siblings.get(identifier) if kind == 'resource' else None
-        if related and related['siblings']:
+        neighbours = siblings.get(identifier) if kind == 'resource' else None
+        if neighbours and neighbours['siblings']:
             prefix = '/zh' if language == 'zh' else ''
-            expected = [entry_path('resource', sibling['id'], language) for sibling in related['siblings']]
-            expected.append(f"{prefix}/resources/#heading-{related['section']}")
+            expected = [entry_path('resource', sibling['id'], language) for sibling in neighbours['siblings']]
+            expected.append(f"{prefix}/resources/#heading-{neighbours['section']}")
             if record['kind'] == 'case-study':
-                expected.append(f"{prefix}/cases/#cases-{related['section']}")
-            assert 1 <= len(related['siblings']) <= 6 and identifier not in {sibling['id'] for sibling in related['siblings']}, f'Detail page needs one to six other section entries: {route}'
+                expected.append(f"{prefix}/cases/#cases-{neighbours['section']}")
+            assert 1 <= len(neighbours['siblings']) <= 6 and identifier not in {sibling['id'] for sibling in neighbours['siblings']}, f'Detail page needs one to six other section entries: {route}'
             assert page.section_links == expected, f'Section siblings differ from README order: {route}'
         else:
             assert page.section_links is None, f'Only resources in shared sections list section siblings: {route}'
