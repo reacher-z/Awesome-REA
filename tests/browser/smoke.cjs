@@ -196,6 +196,12 @@ async function homepage(page, language, viewport, data, requested) {
   assert(numbers(await text(page, '#results-status')).includes(total), `${label}: status names all ${total} curated resources`);
   assert(await page.$$eval('#resource-grid .card-title-link', links => links.every(link => link.textContent.trim() && link.href.startsWith('http'))));
   await noOverflow(page, label);
+  // Compact rows name each entry's reviewed targets at every width, beside its category.
+  const targets = await page.$$eval('#resource-grid .resource-card', cards => cards.map(card => {
+    const labels = card.querySelector('.card-meta > .card-targets');
+    return Boolean(labels?.textContent.trim() && labels.getClientRects().length && labels.getBoundingClientRect().right <= innerWidth);
+  }));
+  assert(targets.length && targets.every(Boolean), `${label}: every compact row shows its target labels`);
   await dataAccess(page, language, viewport);
 
   // Search, then clear: a record's own displayed name finds it among a narrower result set.
