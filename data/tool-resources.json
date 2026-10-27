@@ -11759,5 +11759,36 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "jnianalyzer",
+    "name": "JNIAnalyzer",
+    "url": "https://github.com/Ayrx/JNIAnalyzer",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "A Ghidra extension by Terry Chia (Ayrx) with scripts for analyzing the native libraries of Android NDK apps. JNIAnalyzer.java uses the bundled JADX decompiler to extract the signatures of all native methods declared in an APK and applies the return types, parameter names and parameter types to the matching functions in the loaded .so. RegisterNatives.java uses Ghidra's P-Code API to find RegisterNatives calls and lay down the JNINativeMethod structures for dynamically registered methods, and TraceRegisterNatives.java applies the output of the author's trace_registernatives tool. A JNI data-type archive sets up the jni.h types.",
+    "description_zh": "Terry Chia（Ayrx）编写的 Ghidra 扩展，包含用于分析 Android NDK 应用原生库的脚本。JNIAnalyzer.java 使用随附的 JADX 反编译器从 APK 中提取所有原生方法的签名，并把返回类型、参数名和参数类型应用到已加载 .so 中的匹配函数。RegisterNatives.java 借助 Ghidra 的 P-Code API 查找 RegisterNatives 调用，为动态注册的方法铺设 JNINativeMethod 结构；TraceRegisterNatives.java 则应用作者 trace_registernatives 工具的输出。随附的 JNI 数据类型归档用于设置 jni.h 类型。",
+    "evidence_url": "https://github.com/Ayrx/JNIAnalyzer/blob/7170ce6bd138caa6be702e357b3aeb74231ae12f/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at master 7170ce6 (2023-01-02); there are no releases and the default branch has had no commits since that date, so treat it as unmaintained and check compatibility with current Ghidra. Build the extension with Gradle against a Ghidra install (gradle -PGHIDRA_INSTALL_DIR=<dir>), then install the produced zip through Ghidra's Install Extensions dialog and restart.",
+      "Analysis runs inside Ghidra on an Android native library the analyst has loaded and is authorized to examine. JNIAnalyzer.java reads a supplied APK with JADX to recover native-method signatures; the README warns it overwrites existing function return types and parameter names and types, and that a function annotated JNIAnalyzer:IGNORE is skipped. RegisterNatives.java is marked experimental.",
+      "No third-party target files are committed. The repository vendors its Java build dependencies as JARs under JNIAnalyzer/lib/, including JADX, smali/baksmali, dexlib2, dx, apksig, Guava, ANTLR, RxJava, logback and others, each keeping its own open-source license; the committed android-5.1.jar is a 4-entry stub (a single android/R$style class plus JADX resources), not the Android SDK. The Gradle wrapper JAR is also committed, and data/jni_all.gdt is a Ghidra data-type archive of the JNI types.",
+      "The repository has no license file, so reuse terms are unstated; a reviewer should confirm licensing with the author, and the vendored dependency JARs remain under their respective licenses. A Binary Ninja port exists in the author's separate binja-JNIAnalyzer repository.",
+      "This collection read the README, script sources, build files and bundled-library listing at the reviewed commit; it did not build or run the extension, and no APK or native library was analyzed. Nothing in the project mentions AI or REA, so no REA connection is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Ayrx/JNIAnalyzer/blob/7170ce6bd138caa6be702e357b3aeb74231ae12f/JNIAnalyzer/ghidra_scripts/JNIAnalyzer.java",
+      "https://github.com/Ayrx/JNIAnalyzer/blob/7170ce6bd138caa6be702e357b3aeb74231ae12f/JNIAnalyzer/ghidra_scripts/RegisterNatives.java",
+      "https://github.com/Ayrx/JNIAnalyzer/blob/7170ce6bd138caa6be702e357b3aeb74231ae12f/JNIAnalyzer/ghidra_scripts/TraceRegisterNatives.java",
+      "https://github.com/Ayrx/JNIAnalyzer/tree/7170ce6bd138caa6be702e357b3aeb74231ae12f/JNIAnalyzer/lib",
+      "https://github.com/Ayrx/JNIAnalyzer/blob/7170ce6bd138caa6be702e357b3aeb74231ae12f/JNIAnalyzer/data/README.txt"
+    ]
   }
 ]

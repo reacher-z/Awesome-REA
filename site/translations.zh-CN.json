@@ -4310,5 +4310,15 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "jnianalyzer": {
+    "name": "JNIAnalyzer Ghidra 扩展",
+    "requirements": [
+      "审阅基于 master 分支 7170ce6（2023-01-02）；项目没有发布版本，默认分支自该日期起再无提交，应视为缺乏维护，并自行核实与当前 Ghidra 的兼容性。使用 Gradle 针对某个 Ghidra 安装构建扩展（gradle -PGHIDRA_INSTALL_DIR=<目录>），再通过 Ghidra 的 Install Extensions 对话框安装生成的 zip 并重启。",
+      "分析在 Ghidra 中进行，针对分析者已加载且有权分析的 Android 原生库。JNIAnalyzer.java 通过 JADX 读取所提供的 APK 以恢复原生方法签名；README 提醒它会覆盖已有的函数返回类型、参数名和参数类型，并会跳过注释为 JNIAnalyzer:IGNORE 的函数。RegisterNatives.java 标注为实验性。",
+      "仓库未提交任何第三方目标文件。它将 Java 构建依赖以 JAR 形式收录在 JNIAnalyzer/lib/ 下，包括 JADX、smali/baksmali、dexlib2、dx、apksig、Guava、ANTLR、RxJava、logback 等，各自保留其开源许可；其中提交的 android-5.1.jar 只有 4 个条目（一个 android/R$style 类加若干 JADX 资源），并非 Android SDK。Gradle wrapper JAR 也被提交，data/jni_all.gdt 是 JNI 类型的 Ghidra 数据类型归档。",
+      "仓库没有许可证文件，复用条款未作说明；审阅者应向作者确认授权情况，收录的依赖 JAR 仍适用各自的许可。作者另有一个 Binary Ninja 移植版，位于其独立的 binja-JNIAnalyzer 仓库。",
+      "本合集在所审阅提交中阅读了 README、脚本源码、构建文件和所收录库的清单，没有构建或运行该扩展，也未分析任何 APK 或原生库。项目中未提及 AI 或 REA，因此不构成与 REA 的关联。"
+    ]
   }
 }

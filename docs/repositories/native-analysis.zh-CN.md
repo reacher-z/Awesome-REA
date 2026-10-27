@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**851 个仓库** · 2026-10-20 UTC
+**850 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -192,7 +192,6 @@
 - [Adubbz/Ghidra-Switch-Loader](https://github.com/Adubbz/Ghidra-Switch-Loader) — Ghidra 的 Nintendo Switch 加载器。 **[374 星标]**
 - [mohitmishra786/underTheHoodOfExecutables](https://github.com/mohitmishra786/underTheHoodOfExecutables) — 解释程序如何从源代码转变为可执行文件的指南，深入介绍 ELF 格式、链接过程与二进制优化技术，适合系统程序员、C 开发者以及对底层编程概念感兴趣的人。 **[374 星标]**
 - [rocky/python-xdis](https://github.com/rocky/python-xdis) — 跨版本 Python 字节码库与反汇编器。 **[372 星标]**
-- [Ayrx/JNIAnalyzer](https://github.com/Ayrx/JNIAnalyzer) — 用于在 Ghidra 中处理 Android NDK 库的分析脚本。 **[365 星标]**
 - [justfoxing/ghidra\_bridge](https://github.com/justfoxing/ghidra_bridge) — 连接 Python 3 与 Ghidra Python 脚本环境的桥接工具。 **[364 星标]**
 - [yukiarrr/Il2cppSpy](https://github.com/yukiarrr/Il2cppSpy) — Unity IL2CPP 反汇编器，适用于 APK。 **[360 星标]**
 - [trailofbits/CoBRA](https://github.com/trailofbits/CoBRA) — 基于系数的算术重建：用于去混淆的混合布尔算术（MBA）表达式化简工具。 **[355 星标]**
