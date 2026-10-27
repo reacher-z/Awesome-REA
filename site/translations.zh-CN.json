@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "ubi-reader": {
+    "name": "UBI Reader UBI/UBIFS 镜像读取工具",
+    "requirements": [
+      "审阅对象为 main 分支提交 5f45e50（2026-09-13）。最新版本为 0.8.16，于 2026-09-04 发布在 GitHub，并以 ubi-reader 包名发布到 PyPI；pyproject 列出的作者为 ONEKEY 和 Jason Pruitt，所审阅的 unblob main 提交依赖 ubi-reader>=0.8.15。README 提到的独立 testing 分支提供修复工具和用于损坏镜像的参数覆盖功能，最后更新于 2018 年。",
+      "需要 Python 3.10+，可从 PyPI 安装，或用 Poetry 从源码安装；依赖包括用于 LZO 的 lzallright、zstandard 和 cryptography。提取时创建特殊文件需要 root 权限，套接字文件默认跳过，除非修改 settings.py。采用 fscrypt v1 策略加密的文件只有在用户提供主密钥时才会被解密。",
+      "输入为用户自行提供的 UBI 或 UBIFS 镜像或 NAND 转储。仓库没有提交任何固件或闪存镜像；唯一的测试检查提取文件名时防止路径穿越的保护逻辑，CI 在 Python 3.10 上用 pytest 运行该测试。",
+      "README 列出的已知问题：不会重放日志，因此无法恢复未提交的数据；视 NAND 的转储方式而定，数据位可能未经纠错。自动推测失败时可手动指定偏移以及 PEB 或 LEB 大小。采用 GPL-3.0（LICENSE；pyproject 写作 GNU GPL）；提取出的固件内容仍归各厂商所有。本次审阅未运行任何程序。"
+    ]
   }
 }

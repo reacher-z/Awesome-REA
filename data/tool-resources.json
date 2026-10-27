@@ -12616,5 +12616,38 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "ubi-reader",
+    "name": "UBI Reader",
+    "url": "https://github.com/onekey-sec/ubi_reader",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Python module and command-line scripts that read UBI and UBIFS images, including ones inside raw NAND dumps, by locating the first UBI or UBIFS data in a file. They extract files or whole UBI and UBIFS images, list and copy single files, display UBI headers, volume tables and the UBIFS super and master nodes, and search physical erase blocks when debugging failed extractions. ubireader_utils_info also derives the mtd-utils parameters, written as a shell script and config file, needed to rebuild an image to the same specification.",
+    "description_zh": "读取 UBI 和 UBIFS 镜像的 Python 模块与命令行脚本，通过定位文件中首个 UBI 或 UBIFS 数据来处理镜像，也适用于原始 NAND 转储。它们可提取文件或完整的 UBI、UBIFS 镜像，列出并复制单个文件，显示 UBI 头部、卷表以及 UBIFS 的超级节点和主节点，并能在提取失败时按条件搜索物理擦除块进行调试。ubireader_utils_info 还能推算出 mtd-utils 参数，生成按相同规格重建镜像所需的 shell 脚本和配置文件。",
+    "evidence_url": "https://github.com/onekey-sec/ubi_reader/blob/5f45e50c813599d689b8cf88e12e7c79dec1728f/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main commit 5f45e50 (2026-09-13). The latest release is 0.8.16, published on 2026-09-04 on GitHub and as the ubi-reader package on PyPI; pyproject lists ONEKEY and Jason Pruitt as authors, and unblob's reviewed main commit depends on ubi-reader>=0.8.15. The README's separate testing branch, with repair tools and parameter overrides for broken images, was last updated in 2018.",
+      "Requires Python 3.10+, installed from PyPI or from source with Poetry; dependencies are lzallright for LZO, zstandard and cryptography. Creating special files during extraction needs root, and socket files are skipped unless settings.py is changed. Files encrypted with an fscrypt v1 policy are decrypted only when the user supplies the master key.",
+      "Input is a UBI or UBIFS image or NAND dump that the user supplies. The repository commits no firmware or flash images; its only test checks the guard against path traversal in extracted file names, and CI runs it with pytest on Python 3.10.",
+      "Known issues in the README: the journal is not replayed, so uncommitted data is not recovered, and depending on how the NAND was dumped the data bits may not be error-corrected. Offsets and PEB or LEB sizes can be given when guessing fails. GPL-3.0 (LICENSE; pyproject says GNU GPL); extracted firmware contents keep their vendors' rights. This review ran nothing."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/onekey-sec/ubi_reader/blob/5f45e50c813599d689b8cf88e12e7c79dec1728f/pyproject.toml",
+      "https://github.com/onekey-sec/ubi_reader/blob/5f45e50c813599d689b8cf88e12e7c79dec1728f/LICENSE",
+      "https://github.com/onekey-sec/ubi_reader/blob/5f45e50c813599d689b8cf88e12e7c79dec1728f/ubireader/scripts/ubireader_extract_files.py",
+      "https://github.com/onekey-sec/ubi_reader/blob/5f45e50c813599d689b8cf88e12e7c79dec1728f/ubireader/ubifs/decrypt.py",
+      "https://github.com/onekey-sec/ubi_reader/blob/5f45e50c813599d689b8cf88e12e7c79dec1728f/tests/test_ubifs_output.py",
+      "https://github.com/onekey-sec/ubi_reader/blob/5f45e50c813599d689b8cf88e12e7c79dec1728f/.github/workflows/tests.yml",
+      "https://github.com/onekey-sec/ubi_reader/releases/tag/0.8.16",
+      "https://pypi.org/project/ubi-reader/0.8.16/",
+      "https://github.com/onekey-sec/unblob/blob/0f40c3c6940fa2bcfd2945f519fe8caf99e31e44/pyproject.toml"
+    ]
   }
 ]
