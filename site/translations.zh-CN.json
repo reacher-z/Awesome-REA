@@ -4310,5 +4310,15 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "mytechnotalent-embedded-hacking": {
+    "name": "Embedded Hacking 嵌入式逆向课程（mytechnotalent）",
+    "requirements": [
+      "审阅提交为 76fa253（2026-10-19）。仓库创建于 2023 年 10 月，但当前历史从 2026-10-07 的一次初始提交重新开始，此后几乎每天都有提交；项目没有发布版本。第 1–7 周和第 9–11 周提供幻灯片和笔记；第 8 周是以 CTF-02 为题的期中考试，第 12–13 周只列出主题，第 14 周的两个期末项目只有情境描述，没有链接文件。README 另有一个补充资料部分，明确列在课程范围之外，链接作者其他仓库中的 Rust、Arm 汇编和 RISC-V 汇编教程、驱动程序以及物联网 CTF 项目。",
+      "README 要求学习者具备中级 C 语言（包括指针）、裸机汇编基础、对寄存器和栈的基本理解、命令行操作能力以及面包板搭建能力。硬件包括 Raspberry Pi Pico 2、Raspberry Pi Debug Probe 和清单所列元件，其中有 LED、按键、1602 I2C LCD、DHT11 传感器、SG90 舵机、VS1838B 红外接收器及 NEC 遥控器、u-blox NEO-6M GPS 模块、两个 REYAX RYLR998 LoRa 模块和 FT232RL USB 转串口适配器；Fritzing 工程和接线图位于 hardware/ 目录。",
+      "可在 Windows x64、Apple 芯片 macOS 和 Linux x64 上原生搭建环境：VS Code 的 Raspberry Pi Pico 扩展会安装 Pico SDK、Arm GNU 工具链、picotool 和 OpenOCD，构建使用 CMake 和 Ninja，课程另需 Ghidra 及 JDK 21、串口终端和已授权的 Binary Ninja Personal；IDA 版本的笔记还需要 IDA。仓库根目录的烧录和调试服务器脚本封装了烧录与调试服务器的启动。",
+      "无需任何第三方固件：练习对象都是作者自己编写的程序，仓库提交了它们的源码和构建产物（ELF、BIN、UF2、HEX、反汇编与 map 文件）、两个 Binary Ninja 数据库、CTF-02 的静态库（其 auth 模块、mbedTLS 子集和 Argon2 参考实现）、RP2350 SVD 文件，以及自定义引导程序的签名镜像。datasheets/ 目录收录 RP2350 数据手册、Pico C/C++ SDK 手册、Arm Cortex-M33 技术参考手册、Armv8-M 架构参考手册、AAPCS32 和 Application Note 132 的副本，这些文档适用各自发布者的条款。",
+      "仓库采用 Apache-2.0 许可证。README 的法律声明将用途限定为教育、研究和防御性工作，且只能针对用户自有或已获明确授权测试的设备。仓库附带的 OpenCode 技能只用于检查作者的 C 代码规范，未确立与 REA 的关联。本合集阅读了 README、仓库文件树和部分挑战文件，没有实际学习课程、构建或烧录固件，也未审阅教材、幻灯片或链接的仓库。"
+    ]
   }
 }
