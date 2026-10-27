@@ -243,7 +243,7 @@
 - [quarkslab/qbindiff](https://github.com/quarkslab/qbindiff) — Quarkslab 二进制差异比对工具，功能还不止于此！ **[247 星标]**
 - [akiselev/ghidra-cli](https://github.com/akiselev/ghidra-cli) — 通过命令行自动执行 Ghidra 逆向工程，为 Claude Code 等 AI 智能体提供无界面分析、反编译和结构化 JSON 输出 **[245 星标]**
 - [mentebinaria/fundamentos-engenharia-reversa](https://github.com/mentebinaria/fundamentos-engenharia-reversa) — 书籍：《逆向工程：基础与实践》 **[238 星标]**
-- [miunasu/IDA-Skill](https://github.com/miunasu/IDA-Skill) — 让 AI 智能体像安全分析师一样使用 IDA Pro 自动分析恶意样本的技能。 **[237 星标]**
+- [miunasu/IDA-Skill](https://github.com/miunasu/IDA-Skill) — 让 AI 智能体像安全分析师一样使用 IDA Pro 自动分析恶意样本的技能。 **[237 星标]** · 精选：[IDA-Skill IDA Pro 恶意样本分析智能体技能](https://awesomerea.org/zh/resources/ida-skill-malware-analysis/)
 - [Nalen98/eBPF-for-Ghidra](https://github.com/Nalen98/eBPF-for-Ghidra) — Ghidra 的 eBPF 处理器模块 **[237 星标]**
 - [ReversecLabs/z3\_and\_angr\_binary\_analysis\_workshop](https://github.com/ReversecLabs/z3_and_angr_binary_analysis_workshop) — z3 与 angr 工作坊的代码及练习 **[237 星标]**
 - [fkie-cad/dewolf](https://github.com/fkie-cad/dewolf) — 以 Binary Ninja 插件形式实现的研究型反编译器。 **[236 星标]** · 精选：[dewolf 研究型反编译器](https://awesomerea.org/zh/resources/dewolf/)

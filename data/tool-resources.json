@@ -11759,5 +11759,39 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "ida-skill-malware-analysis",
+    "name": "IDA-Skill",
+    "url": "https://github.com/miunasu/IDA-Skill",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Agent skill that has an AI agent triage malware samples statically in IDA Pro through headless idat. An initialization script builds the IDA database and exports a summary, imports, exports, entry-point decompilation and filtered strings, and an executor runs IDAPython snippets or files against that database. SKILL.md sets a static-only rule, a top-down method and a rule to hand large string dumps to a sub-agent, and bundled scripts add cryptographic-constant detection, an export-size check and REAI, which sends decompiled functions to a configured OpenAI-compatible model to describe them and rename them with an AI_ prefix.",
+    "description_zh": "一个智能体技能，让 AI 智能体通过无界面的 idat 在 IDA Pro 中对恶意样本进行静态初步分析。初始化脚本会生成 IDA 数据库，并导出基本信息、导入表、导出表、入口点反编译结果和过滤后的字符串；执行脚本则可对该数据库运行 IDAPython 代码片段或脚本文件。SKILL.md 规定只做静态分析、采用自顶向下的分析方法，并要求把大型字符串列表交给子智能体处理；附带脚本提供加密常量识别、导出函数大小检查，以及 REAI——它把反编译出的函数发送给配置好的 OpenAI 兼容模型，生成功能说明并以 AI_ 前缀重命名。",
+    "evidence_url": "https://github.com/miunasu/IDA-Skill/blob/4595864d1423d0f2b9dfb81ede3d814eb02ad22c/README_EN.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main commit 4595864 of 2026-10-21; there are no releases or version numbers, and recent commits are titled only \"update\". The skill is a SKILL.md with name and description front matter for agent clients that load skill folders; the README demonstrates it with the author's Spore multi-agent framework and names no other tested client. Its commands use Windows PowerShell here-strings and paths under skills/IDA-Skill/tools/.",
+      "Requires a licensed IDA Pro installation whose idat executable is set in config.json (the README example is IDA Pro 9.0's idat64.exe) and Python on the host to launch it; decompilation calls rely on the Hex-Rays decompiler. Users supply the samples, and SKILL.md forbids debugging or executing them. REAI needs openai 1.0+ and an API key, endpoint and model edited into tools/reai.py, and it sends decompiled pseudocode to that endpoint.",
+      "API.md and docs/ hold a Markdown IDAPython API reference whose source and terms are not stated, analysis/ holds short method notes for tasks such as protocol, algorithm, firmware and driver analysis, and movie.mp4 is a 25 MB demo video. TOOLS.md tells the agent to run reai check first and not to run analyze when a call chain exceeds 40 functions.",
+      "The repository has no tests or CI and reports no evaluated samples or accuracy. REAI names and descriptions are model output that needs analyst review, and this review ran nothing.",
+      "LICENSE holds the AGPL-3.0 text, while both READMEs call the project GPL-3.0 and add an education-and-research-only, no-commercial-use condition that neither license contains, so reuse terms are unclear. IDA Pro and model APIs keep their own terms. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/miunasu/IDA-Skill/blob/4595864d1423d0f2b9dfb81ede3d814eb02ad22c/README.md",
+      "https://github.com/miunasu/IDA-Skill/blob/4595864d1423d0f2b9dfb81ede3d814eb02ad22c/SKILL.md",
+      "https://github.com/miunasu/IDA-Skill/blob/4595864d1423d0f2b9dfb81ede3d814eb02ad22c/TOOLS.md",
+      "https://github.com/miunasu/IDA-Skill/blob/4595864d1423d0f2b9dfb81ede3d814eb02ad22c/tools/exec_ida.py",
+      "https://github.com/miunasu/IDA-Skill/blob/4595864d1423d0f2b9dfb81ede3d814eb02ad22c/tools/init_analysis.py",
+      "https://github.com/miunasu/IDA-Skill/blob/4595864d1423d0f2b9dfb81ede3d814eb02ad22c/tools/reai.py",
+      "https://github.com/miunasu/IDA-Skill/tree/4595864d1423d0f2b9dfb81ede3d814eb02ad22c/docs",
+      "https://github.com/miunasu/IDA-Skill/blob/4595864d1423d0f2b9dfb81ede3d814eb02ad22c/requirements.txt",
+      "https://github.com/miunasu/IDA-Skill/blob/4595864d1423d0f2b9dfb81ede3d814eb02ad22c/LICENSE"
+    ]
   }
 ]
