@@ -4310,5 +4310,14 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "barf": {
+    "name": "BARF 二进制分析与逆向工程框架",
+    "requirements": [
+      "自 2019 年起不再活跃：所审阅的 master 提交日期为 2019-11-24，标记为 v0.6.0，也是最后一次提交；0.6.0 同样是 barf 在 PyPI 上的最新版本。GitHub 并未将该仓库标为已归档；仓库有标签但没有 GitHub Release 条目，尽管 README 链接了 v0.6.0 的发布页面。setup.py 将其归为 alpha 阶段，README 仍称其处于开发中。",
+      "setup.py 和 Travis CI 配置面向 Python 2.7 与 3.6，Python 3 支持在 0.6.0 中加入。README 称所有软件包均在 Ubuntu 16.04 x86_64 上测试，Dockerfile 则在 Ubuntu 18.04 上通过 Python 2 的 pip 安装。依赖包括 Capstone 3.0.5rc2+、pefile、pyelftools、networkx、pydot 和 pyparsing，并至少需要 Z3 或 CVC4 求解器之一；输出图形需要 Graphviz，部分测试需要 PyAsmJIT。未测试与当前 Python、Capstone 或 Z3 版本的兼容性。",
+      "二进制由分析者自行提供。仓库在 examples/misc/samples 和 tests 下附带由所含 C 源码构建的小型示例二进制，另有两个用于示例演练的挑战程序：Flare-On 2015 第 2 题（examples/flareon-2015/2/bin/very_success）和 kao 的 toy project（examples/kaos-toy-project/bin/toyproject.exe）。Sphinx 手册为西班牙语，其中提到的 install.sh 脚本在所审阅的提交中并不存在。",
+      "采用 BSD 2-Clause 许可，版权归 Fundación Dr. Manuel Sadosky（2014）。README 介绍了检验指令翻译的方法：用 PyAsmJIT 原生运行代码，同时在 REIL 模拟器中运行，再比较两者的最终上下文；本次未运行该 nose 测试套件，也未分析任何二进制。"
+    ]
   }
 }

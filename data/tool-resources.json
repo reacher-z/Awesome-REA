@@ -11759,5 +11759,38 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "barf",
+    "name": "BARF",
+    "url": "https://github.com/programa-stic/barf-project",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Python binary analysis framework that loads ELF and PE programs, disassembles 32- and 64-bit x86 and 32-bit ARM code with Capstone and translates it into the REIL intermediate language, so its analyses do not depend on the source architecture. Modules recover control-flow and call graphs, emulate REIL and turn code fragments into Z3 or CVC4 formulas for checking constraints on registers and memory; release 0.6.0 added basic symbolic execution. Bundled command-line tools recover CFGs and call graphs, replay x86 execution traces and search, classify and verify ROP gadgets.",
+    "description_zh": "一个 Python 二进制分析框架：加载 ELF 和 PE 程序，借助 Capstone 反汇编 32 位与 64 位 x86 及 32 位 ARM 代码，并将其翻译为 REIL 中间语言，使各项分析不依赖源架构。其模块可恢复控制流图和调用图、模拟执行 REIL，并把代码片段转换为 Z3 或 CVC4 公式，以检查寄存器和内存上的约束；0.6.0 版加入了基础的符号执行。随附的命令行工具可恢复 CFG 和调用图、重放 x86 执行轨迹，以及搜索、分类和验证 ROP gadget。",
+    "evidence_url": "https://github.com/programa-stic/barf-project/blob/9547ef843b8eb021c2c32c140e36173c0b4eafa3/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Inactive since 2019: the reviewed master commit, dated 2019-11-24, is tagged v0.6.0 and is the last commit; 0.6.0 is also the newest PyPI release of barf. GitHub does not mark the repository archived, and it has tags but no GitHub release entries, although the README links a v0.6.0 release page. setup.py classifies it as alpha, and the README still calls it under development.",
+      "setup.py and the Travis CI configuration target Python 2.7 and 3.6, with Python 3 support added in 0.6.0. The README says all packages were tested on Ubuntu 16.04 x86_64, and the Dockerfile installs it on Ubuntu 18.04 through Python 2 pip. Dependencies include Capstone 3.0.5rc2+, pefile, pyelftools, networkx, pydot and pyparsing, plus at least one of the Z3 or CVC4 solvers; Graphviz is needed for graph output and PyAsmJIT for some tests. Compatibility with current Python, Capstone or Z3 releases was not tested.",
+      "Binaries come from the analyst. The repository bundles small sample binaries built from included C sources under examples/misc/samples and tests, and two challenge binaries for its worked examples: Flare-On 2015 challenge #2 (examples/flareon-2015/2/bin/very_success) and kao's toy project (examples/kaos-toy-project/bin/toyproject.exe). The Sphinx manual is in Spanish and refers to an install.sh script that is not present at the reviewed commit.",
+      "BSD 2-Clause license, copyright 2014 Fundación Dr. Manuel Sadosky. The README describes checking instruction translations by running code natively through PyAsmJIT and in the REIL emulator and comparing the final contexts; that nose test suite was not run, and no binaries were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/programa-stic/barf-project/blob/9547ef843b8eb021c2c32c140e36173c0b4eafa3/README.md#L196-L320",
+      "https://github.com/programa-stic/barf-project/blob/9547ef843b8eb021c2c32c140e36173c0b4eafa3/setup.py",
+      "https://github.com/programa-stic/barf-project/blob/9547ef843b8eb021c2c32c140e36173c0b4eafa3/CHANGELOG.md",
+      "https://github.com/programa-stic/barf-project/blob/9547ef843b8eb021c2c32c140e36173c0b4eafa3/.travis.yml",
+      "https://github.com/programa-stic/barf-project/blob/9547ef843b8eb021c2c32c140e36173c0b4eafa3/Dockerfile",
+      "https://github.com/programa-stic/barf-project/blob/9547ef843b8eb021c2c32c140e36173c0b4eafa3/doc/manual/source/installation/index.rst",
+      "https://github.com/programa-stic/barf-project/tree/9547ef843b8eb021c2c32c140e36173c0b4eafa3/examples",
+      "https://github.com/programa-stic/barf-project/blob/9547ef843b8eb021c2c32c140e36173c0b4eafa3/LICENSE",
+      "https://pypi.org/project/barf/0.6.0/"
+    ]
   }
 ]
