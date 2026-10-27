@@ -53,6 +53,8 @@
 
 案例可以使用 REA、其他智能体或独立的逆向工具。有记录的重建项目如果与 REA 没有已确认的关联，使用 `relationship: independent-reconstruction` 和 `category: reconstruction-cases`，targets 按实际涉及的领域填写。说明中要区分作者报告的结果、尚未完成的行为、平台限制，以及需要用户自备的原始资源，并可按[目录格式说明（英文）](data/README.md)为每条 `requirements` 填写可选的 `requirement_facets`；填写后页面会把前提条件排在最前。尽量提供固定版本的公开来源；不要包含专有目标二进制文件或私人抓包数据。
 
+[案例覆盖记录](data/case-coverage.json)与目录记录分开，记录固定版本上游案例合集中的条目，格式见[目录格式指南（英文）](data/README.md)。修改其中的条目后，运行 `python3 scripts/build_case_coverage.py` 重新生成[覆盖摘要](docs/case-coverage.zh-CN.md)，再运行 `python3 scripts/validate.py`。
+
 ## 来源已复核不等于运行验证
 
 每条记录都要有一手来源和复核日期。`source-reviewed`（来源已复核）只表示已对照项目文档核对说明，不表示已安装、审计或复现该项目。规模更大的 `data/source-index.json` 是自动建立的仓库索引，保留单独的来源记录，不属于精选资源。要把其中的仓库收录为精选，请填写[复核工作表](docs/promotion-worksheet.zh-CN.md)；扫描记录本身不会因此升级。目录记录目前不收录运行或复现结果：所有精选记录都使用 `verification: source-reviewed`，所有论文的 `runtime_tested` 都为 false，也没有单独提交测试运行的格式。可以在 issue 中说明自己运行了什么，帮助审核者核实某个说法，但这些内容不会作为验证结果发布。

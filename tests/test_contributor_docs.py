@@ -161,5 +161,19 @@ class ContributorReferenceTests(unittest.TestCase):
                     self.assertIn(problem, errors[0])
 
 
+    def test_pull_request_template_commands_match_the_contributor_guide(self):
+        template = (ROOT / '.github/PULL_REQUEST_TEMPLATE.md').read_text(encoding='utf-8')
+        guide = (ROOT / 'CONTRIBUTING.md').read_text(encoding='utf-8')
+        commands = re.findall(r'`((?:python3|node|npm) [^`]+)`', template)
+        self.assertGreaterEqual(len(commands), 10)
+        for command in commands:
+            self.assertIn(command, guide)
+        groups = re.findall(r'^([A-Z][^\n(]+) \(`', template, re.MULTILINE)
+        self.assertEqual(groups, ['Curated record', 'Research paper', 'Case-ledger entry', 'Code or site'])
+        self.assertRegex(template, r'(?m)^Closes #$')
+        self.assertIn('Pull requests are public. Remove tokens, cookies, account identifiers, local filesystem paths', template)
+        for generated in ('README.md', 'README.zh-CN.md', 'docs/repositories/', 'docs/case-coverage*.md'):
+            self.assertIn(generated, template.split('are generated')[0].rsplit('\n', 1)[-1])
+
 if __name__ == '__main__':
     unittest.main()

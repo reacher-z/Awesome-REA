@@ -92,6 +92,8 @@ Use the [reconstruction-case form](https://github.com/reacher-z/Awesome-REA/issu
 
 Cases may use REA, other agents, or independent reverse-engineering tools. Use `independent-reconstruction` for a documented reconstruction project with no established REA connection, and `reconstruction-cases` as its category; validation rejects either value without the other. The `targets` describe the actual Website, Game, App, Binary, Firmware or Protocol domain. Identify author-reported results, incomplete behavior, platform limits and required original assets, and optionally label each `requirements` item with `requirement_facets` from the [catalog format guide](data/README.md); pages then list prerequisites first. Keep a pinned public source where possible; never include proprietary target binaries or private captures.
 
+The [case coverage ledger](data/case-coverage.json) tracks entries of pinned upstream case collections separately from catalog records; the [catalog format guide](data/README.md) describes it. After changing one of its entries, run `python3 scripts/build_case_coverage.py` to regenerate the [coverage summaries](docs/case-coverage.md), then `python3 scripts/validate.py`.
+
 ## Review and publication
 
 Pull requests receive a [rule-based review](docs/automation.md) from trusted base-branch code. It checks catalog structure, duplicates, source fields, and common privacy mistakes without executing contributor code. Maintainers review resource relevance and factual claims. Passing automation does not automatically approve or merge a contribution.
