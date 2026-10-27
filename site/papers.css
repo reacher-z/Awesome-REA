@@ -56,6 +56,7 @@
 .paper-details ul{margin:0 0 14px;padding-left:18px;font-size:15px}
 .paper-details li+li{margin-top:10px}
 .paper-details li a{color:var(--link);overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
+.paper-details .entry-source-context{display:block;margin-top:2px;color:var(--muted);font-size:14px;line-height:1.6;overflow-wrap:anywhere}
 .paper-review-note{font-style:normal}
 @media(max-width:1000px){.paper-grid{grid-template-columns:1fr}.paper-card{padding:24px}.paper-card h3{font-size:20px}}
 @media(max-width:700px){
