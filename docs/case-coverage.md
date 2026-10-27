@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 214 | 212 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 45 | 45 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 332 | 332 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 40 | 40 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 337 | 337 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 229 occurrences have catalog links. They reference 219 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 486 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 492 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -297,11 +297,17 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Three open tools to personal apps: an REA recording, markup and dictation report | Insufficient evidence | [Source](https://x.com/i/status/2111156533002227870) |
 | LmDrum firmware: Claude reportedly stops after decompilation progress | Insufficient evidence | [Source](https://x.com/i/status/2111169026160480290) |
 | 1977 DES test vectors: Claude reportedly traces their random-generation environment | Insufficient evidence | [Source](https://x.com/i/status/2111170587792208361) |
+| jq and Fossify Calculator: REA function identification and early inspection | Insufficient evidence | [Source](https://x.com/i/status/2111171612149985567) |
 | Notion app.asar: a Claude read-only file and domain-string inspection | Insufficient evidence | [Source](https://x.com/0xKurogamii/status/2111182893313613877) |
 | Grok Bot + REA: a reported software-investigation chat template | Insufficient evidence | [Source](https://x.com/ChaiWithAi/status/2111184500093026340) |
+| Owned hardware for voice agents: an REA attempt inspired by earbuds and a smart ring | Insufficient evidence | [Source](https://x.com/i/status/2111158379896877249) |
+| Patrick's AI reverse-engineered games directory: an ongoing resource project | Pending | [Source](https://x.com/i/status/2111185397782880475) |
+| Doom: a claimed clean-room reimplementation with 19 Claude agents | Insufficient evidence | [Source](https://x.com/i/status/2111187899479658673) |
 | NIST ECDSA curves: Claude traces the generation of public parameters | Pending | [Source](https://www.anthropic.com/research/ecdsa-curve-origins) |
 | Niuniu AI / MT5: an REA rebuild report after a reseller relationship ended | Insufficient evidence | [Source](https://x.com/sera00111/status/2111206851606159655) |
+| Mac video export: studying DaVinci and CapCut to improve a personal editor | Insufficient evidence | [Source](https://x.com/i/status/2111214346428686478) |
 | Wiki Lab: a claimed REA-based Wikipedia for agents | Insufficient evidence | [Source](https://x.com/BrianDevoor/status/2111215569047314589) |
+| Set-top-box APK: a short WorkBuddy extraction and analysis report | Insufficient evidence | [Source](https://x.com/i/status/2111216713245364424) |
 | Base arbitrage contract: an unverified REA/Opus bytecode report | Insufficient evidence | [Source](https://x.com/i/status/2111220274226217276) |
 | System UI from video: Claude measures frames and infers animation parameters | Insufficient evidence | [Source](https://x.com/i/status/2111222217849946308) |
 | Linux mouse driver: reverse engineering among a week's AI projects | Insufficient evidence | [Source](https://x.com/i/status/2111224894297870413) |
