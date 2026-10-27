@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**851 repositories** · 2026-10-20 UTC
+**850 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -409,7 +409,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [kweatherman/yara4ida](https://github.com/kweatherman/yara4ida) — Unofficial YARA IDA Pro plugin, along with an unparalleled crypto/hash/compression rule set based on Luigi Auriemma's signsrch signatures. **[88 stars]**
 - [lifting-bits/patchestry](https://github.com/lifting-bits/patchestry) — Patchestry is a binary patching framework built with MLIR and Ghidra. **[88 stars]**
 - [vega-979/Sigga](https://github.com/vega-979/Sigga) — sigmaker for Ghidra **[88 stars]**
-- [alexander-pick/shannon\_modem\_loader](https://github.com/alexander-pick/shannon_modem_loader) — Exynos Modem / Shannon baseband firmware loader for IDA Pro 8.x/9.x **[87 stars]**
 - [fjqisba/QtMetaParser](https://github.com/fjqisba/QtMetaParser) — ida plugin to parse qt meta data **[87 stars]**
 - [firstfault/Trinity](https://github.com/firstfault/Trinity) — Software reverse engineering tool for Java **[86 stars]**
 - [rsc-dev/pbd](https://github.com/rsc-dev/pbd) — Pbd is a Python module to disassemble serialized protocol buffers descriptors (https<span>:</span>//developers.google.com/protocol-buffers/). **[86 stars]**
