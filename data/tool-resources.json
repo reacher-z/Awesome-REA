@@ -12616,5 +12616,34 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "cnnpre",
+    "name": "CNNPRE (IEEE Access 2023)",
+    "url": "https://github.com/JG91/CNNPRE",
+    "category": "protocol-analysis",
+    "relationship": "learning",
+    "kind": "research",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Research code and data for CNNPRE, a message-type identification method for protocol reverse engineering by Javad Garshasbi and Mehdi Teimouri, published in IEEE Access in 2023. A single Colab notebook turns each message's padded bit string into a resized grayscale image, extracts features with an ImageNet-pretrained ResNet50 as transfer learning, adds message direction and length-group encodings, reduces the features with UMAP and clusters messages with agglomerative clustering and HDBSCAN, scoring each clustering against labelled message types. Preprocessed message datasets for twelve protocols, from ARP and DNS to SMTP and GSM, accompany the notebook.",
+    "description_zh": "CNNPRE 的研究代码与数据。CNNPRE 是 Javad Garshasbi 与 Mehdi Teimouri 于 2023 年发表在 IEEE Access 上、用于协议逆向工程的报文类型识别方法。仓库中唯一的 Colab 笔记本把每条报文补齐后的比特串转为缩放的灰度图像，借助在 ImageNet 上预训练的 ResNet50 进行迁移学习以提取特征，加入报文方向和长度分组编码，用 UMAP 降维后再以凝聚聚类和 HDBSCAN 对报文聚类，并将各聚类结果与已标注的报文类型比较评分。笔记本附有从 ARP、DNS 到 SMTP、GSM 等十二种协议的预处理报文数据集。",
+    "evidence_url": "https://github.com/JG91/CNNPRE/blob/c7679ee4fb20fd7c3ff712b3e1287bdbbf171421/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Paper: Javad Garshasbi and Mehdi Teimouri, “CNNPRE: A CNN-Based Protocol Reverse Engineering Method,” IEEE Access, vol. 11, pp. 116255–116268, 2023, DOI 10.1109/ACCESS.2023.3325391; Crossref lists it under CC BY-NC-ND 4.0. The bibliography has no separate record for it yet. The repository was reviewed at its 2026-01-13 head, a README update; the notebook last changed on 2023-07-06, and there are no releases.",
+      "The only code is cnnpre.ipynb, written for Google Colab. It pip-installs umap-learn and hdbscan, apt-installs TeX Live and pandoc for a PDF export, and otherwise relies on Colab's preinstalled TensorFlow, scikit-learn, OpenCV, pandas and yellowbrick without pinned versions. It downloads ImageNet ResNet50 weights, reads one hard-coded CSV (GSM5000-hex.csv) with a message count that must be edited for other datasets, and its last cells mount Google Drive to convert the notebook. There is no package, command-line tool or test.",
+      "Inputs are message-level CSVs with direction, labelled message type and each message as hex and bit strings. Data/ holds preprocessed CSVs for ARP, DHCP, DNS, FTP, GSM, HTTP, ICMP, NBNS, NTP, POP, SMTP and Syslog, PCAP/ holds the GSM capture 44CON-gsm-uplink-downlink-sim-example.pcap, and the README names the public WRCCDC 2021 regional competition captures as the other source. No PCAP-to-CSV preprocessing script is included, so a new protocol needs its own conversion, and the notebook's evaluation metrics need ground-truth message types.",
+      "The notebook covers message-type clustering only, not field, semantic or state-machine inference. Its results labelled K-Means take the cluster count from a K-means elbow search but cluster with agglomerative clustering, and the saved outputs show one GSM run. Accuracy figures are the paper's and were not reproduced; no notebook cell was run for this record.",
+      "GitHub detects no license and the repository has no license file, so the code and preprocessed datasets state no reuse terms; the paper's license covers the article, not the repository, and the captures keep their sources' terms. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/JG91/CNNPRE/blob/c7679ee4fb20fd7c3ff712b3e1287bdbbf171421/cnnpre.ipynb",
+      "https://github.com/JG91/CNNPRE/tree/c7679ee4fb20fd7c3ff712b3e1287bdbbf171421/Data",
+      "https://github.com/JG91/CNNPRE/tree/c7679ee4fb20fd7c3ff712b3e1287bdbbf171421/PCAP",
+      "https://doi.org/10.1109/ACCESS.2023.3325391"
+    ]
   }
 ]
