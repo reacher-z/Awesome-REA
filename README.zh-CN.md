@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 512](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-512-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 217](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-217-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 137](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-137-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 512](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-512-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 217](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-217-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 138](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-512 项精选资源（217 个案例）· 137 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 509。
+512 项精选资源（217 个案例）· 138 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 509。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (137) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (37)
+- [论文](#papers) (138) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (37)
 
 **更多浏览方式**
 
@@ -660,7 +660,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**137 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**138 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -668,7 +668,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [智能体评测](#papers-agent-evaluation) (10) · [反编译](#papers-decompilation) (58) · [网站](#papers-website-reconstruction) (23)
 - [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (12) · [固件](#papers-firmware-analysis) (13)
-- [协议](#papers-protocol-analysis) (13)
+- [协议](#papers-protocol-analysis) (14)
 
 每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。部分论文也出现在精选资源目录中，两者数量不可相加。
 
@@ -848,6 +848,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**越仔细观察，学到的越多：用于协议状态机学习的灰盒方法**](https://doi.org/10.1145/3548606.3559365) - StateInspector 将主动消息查询与运行时内存快照结合起来，学习协议的 Mealy 状态机，无需目标实现的源代码。 <sub>原题：*The Closer You Look, The More You Learn: A Grey-box Approach to Protocol State Machine Learning* · ACM CCS 2022 · 会议论文 · Chris McMahon Stone 等 · [PDF](https://tomchothia.gitlab.io/Papers/greyboxstatelearning_ccs2022.pdf) · [代码](https://github.com/ChrisMcMStone/state-inspector) · [完整条目](https://awesomerea.org/zh/papers/paper-stateinspector/)</sub>
 - [**基于自动机学习的蓝牙设备指纹识别与分析**](https://doi.org/10.1007/s10703-023-00425-y) - 通过主动自动机学习，为实体外设上的低功耗蓝牙（BLE）协议实现推断 Mealy 状态机模型。 <sub>原题：*Fingerprinting and analysis of Bluetooth devices with automata learning* · Formal Methods in System Design 2022 · 期刊论文 · Andrea Pferscher 等 · [PDF](https://arxiv.org/pdf/2211.16074v2) · [代码](https://github.com/apferscher/ble-learning) · [完整条目](https://awesomerea.org/zh/papers/paper-ble-automata-learning/)</sub>
 - [**NetPlier：基于报文记录的概率网络协议逆向工程**](https://www.ndss-symposium.org/ndss-paper/netplier-probabilistic-network-protocol-reverse-engineering-from-message-traces/) - 通过多序列比对与概率式关键字段推断，按类型对网络报文聚类，并在十种协议上评测及开展后续格式与状态机分析。 <sub>原题：*NetPlier: Probabilistic Network Protocol Reverse Engineering from Message Traces* · NDSS 2021 · 会议论文 · Yapeng Ye 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/ndss2021_4A-5_24531_paper.pdf) · [代码](https://github.com/yapengye/NetPlier) · [完整条目](https://awesomerea.org/zh/papers/paper-netplier/)</sub>
+- [**LibreCAN：自动化 CAN 报文翻译器**](https://dl.acm.org/doi/10.1145/3319535.3363190) - LibreCAN 在没有整车厂 DBC 翻译文件的情况下，根据在车辆 OBD-II 接口记录的流量逆向专有的 CAN 报文格式。 <sub>原题：*LibreCAN: Automated CAN Message Translator* · ACM CCS 2019 · 会议论文 · Mert D. Pesé 等 · [PDF](https://rtcl.eecs.umich.edu/rtclweb/assets/publications/2019/fv075-peseA.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-librecan/)</sub>
 - [**无线协议自动逆向工程**](https://www.usenix.org/conference/woot19/presentation/pohl) - 从解调后的物理层捕获数据推断专有无线协议的报文格式：先依据前导码和同步字对齐报文，再结合 RSSI 与专用引擎标注长度、地址、序列号和校验和字段，并可利用已知地址或字段位置等先验信息。 <sub>原题：*Automatic Wireless Protocol Reverse Engineering* · 13th USENIX Workshop on Offensive Technologies (WOOT 19) 2019 · 会议论文 · Johannes Pohl 等 · [PDF](https://www.usenix.org/system/files/woot19-paper_pohl.pdf) · [代码](https://github.com/jopohl/urh) · [完整条目](https://awesomerea.org/zh/papers/paper-wireless-protocol-re/)</sub>
 - [**NEMESYS：通过分析单条报文的内在结构逆向推断网络报文语法**](https://www.usenix.org/conference/woot18/presentation/kleber) - 根据单条二进制协议报文内比特一致性的变化，推断近似字段边界，并提出格式匹配分数，将推断的分段结果与已知协议解析器进行比较。 <sub>原题：*NEMESYS: Network Message Syntax Reverse Engineering by Analysis of the Intrinsic Structure of Individual Messages* · 12th USENIX Workshop on Offensive Technologies (WOOT 18) 2018 · 会议论文 · Stephan Kleber 等 · [PDF](https://www.usenix.org/system/files/conference/woot18/woot18-paper-kleber.pdf) · [代码](https://github.com/vs-uulm/nemesys) · [完整条目](https://awesomerea.org/zh/papers/paper-nemesys/)</sub>
 <!-- END GENERATED PAPERS -->

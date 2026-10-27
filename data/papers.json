@@ -7464,5 +7464,62 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-librecan",
+    "title": "LibreCAN: Automated CAN Message Translator",
+    "title_zh": "LibreCAN：自动化 CAN 报文翻译器",
+    "authors": [
+      "Mert D. Pesé",
+      "Troy Stacer",
+      "C. Andrés Campos",
+      "Eric Newberry",
+      "Dongyao Chen",
+      "Kang G. Shin"
+    ],
+    "year": 2019,
+    "publication_date": "2019-11-06",
+    "date_precision": "day",
+    "date_basis": "ACM's Crossref deposit gives 2019-11-06 for both print and online publication. The November 11–15 conference dates are not substituted.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将纸质和在线出版日期均记为 2019-11-06。本条目不以 11 月 11–15 日的会议日期代替。",
+    "venue": "ACM CCS 2019",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3319535.3363190",
+    "citation": {
+      "container_title": "Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security",
+      "publisher": "ACM",
+      "pages": "2283-2300",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3319535.3363190"
+      ]
+    },
+    "url": "https://dl.acm.org/doi/10.1145/3319535.3363190",
+    "pdf_url": "https://rtcl.eecs.umich.edu/rtclweb/assets/publications/2019/fv075-peseA.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "LibreCAN reverse-engineers proprietary CAN message formats from traffic recorded at a vehicle's OBD-II port, without the OEM's DBC translation files. Phase 0 extracts candidate signal boundaries from bit-flip behaviour, extending the earlier READ algorithm; Phase 1 correlates extracted signals with standard OBD-II PIDs and smartphone IMU data to identify kinematic signals and estimate their scale and offset; Phase 2 filters the CAN IDs recorded while a driver performs 53 scripted body-related events to shortlist candidate IDs for each event.",
+    "description_zh": "LibreCAN 在没有整车厂 DBC 翻译文件的情况下，根据在车辆 OBD-II 接口记录的流量逆向专有的 CAN 报文格式。阶段 0 扩展早期的 READ 算法，依据比特翻转行为提取候选信号边界；阶段 1 将提取出的信号与标准 OBD-II PID 及智能手机惯性测量数据做相关分析，识别运动学相关信号并估计其比例系数和偏移量；阶段 2 对驾驶者执行 53 个预定车身相关事件时记录的 CAN ID 进行过滤，为每个事件筛选候选 ID。",
+    "scope_limitations_en": "Evaluated on four newer vehicles from a single OEM, using DBC files the authors obtained as ground truth and their own judgement of which CAN signals correspond to each reference signal; they call the evaluation partly subjective because the OEM was not involved. Phase 0 recovered 51.6–62.4% of DBC signals, but only 21.0–36.4% of extracted signals had correct boundaries, partly because normal driving rarely exercises high value ranges. With extracted boundaries, Phase 1 precision was 61.1–78.1% and recall 25.6–57.3%; Phase 2 cut candidates more than tenfold, with 8.5–15.0% precision. Only buses reachable through OBD-II were analysed, so signals on other buses were missed. The system reads traffic only and recovers a partial translation table, not complete DBC files, ECU logic or validated injection.",
+    "scope_limitations_zh": "评测使用来自同一整车厂的四辆较新车辆，以作者获得的 DBC 文件作为真实标签，并由作者自行判断哪些 CAN 信号对应各参考信号；作者指出，由于整车厂未参与，评测带有一定主观性。阶段 0 提取了 DBC 中 51.6–62.4% 的信号，但提取结果中只有 21.0–36.4% 的边界正确，部分原因是正常驾驶很少覆盖较高的取值范围。使用提取出的边界时，阶段 1 的精确率为 61.1–78.1%，召回率为 25.6–57.3%；阶段 2 将候选数量减少十倍以上，精确率为 8.5–15.0%。只分析了可经 OBD-II 访问的总线，其他总线上的信号因此被遗漏。系统只读取流量，恢复的是部分翻译表，而非完整的 DBC 文件、ECU 逻辑或经过验证的注入能力。",
+    "why_fits_en": "Adds automated reverse engineering of proprietary in-vehicle CAN message formats from passive traffic and reference signals, complementing the catalog's CAN tooling and network-protocol inference research.",
+    "why_fits_zh": "补充借助被动流量与参考信号自动逆向专有车载 CAN 报文格式的研究，与本目录中的 CAN 工具及网络协议推断研究互补。",
+    "metadata_notes": "Crossref records the title LibreCAN with the subtitle Automated CAN Message Translator, the six-author order and pages 2283–2300. The reviewed 18-page copy on the University of Michigan Real-Time Computing Laboratory site is an ACM-formatted author version created on 2019-09-25; it is not asserted to be identical to the proceedings PDF, which returned HTTP 403 to automated requests. The paper reports roughly 40 minutes of manual data collection (a 30-minute drive and a 10-minute event session) and 70–79 seconds of computation per vehicle; its 10-participant event-recording study received IRB approval. Data came from an ELM327 dongle, an OpenXC dongle on a Y-cable and the Torque Pro Android app, and computation used Python 3 on Ubuntu 16.04. No author code is recorded: the mdp93/LibreCAN_CCS repository at e10aea7 contains only a project README and site configuration, with no license or implementation, and no DBC ground truth or vehicle traces were found in the reviewed sources. No vehicle, trace or code was used.",
+    "metadata_notes_zh": "Crossref 记录的标题为 LibreCAN，副标题为 Automated CAN Message Translator，并给出六位作者顺序和页码 2283–2300。所审阅的 18 页副本托管于密歇根大学实时计算实验室网站，是 2019-09-25 生成的 ACM 排版作者版；本条目不认定其与论文集 PDF 完全相同，后者对自动请求返回 HTTP 403。论文报告每辆车约需 40 分钟人工采集数据（30 分钟驾驶加 10 分钟事件操作）和 70–79 秒计算；其 10 名参与者的事件记录实验获得了 IRB 批准。数据来自 ELM327 适配器、经 Y 型线连接的 OpenXC 适配器和 Torque Pro 安卓应用，计算在 Ubuntu 16.04 上使用 Python 3 完成。本条目不记录作者代码：mdp93/LibreCAN_CCS 仓库在 e10aea7 中只有项目 README 和站点配置，没有许可证或实现代码；在所审阅的来源中也未找到 DBC 真实标签或车辆轨迹数据。本次未使用任何车辆、轨迹数据或代码。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3319535.3363190",
+      "https://api.crossref.org/works/10.1145/3319535.3363190",
+      "https://rtcl.eecs.umich.edu/rtclweb/assets/publications/2019/fv075-peseA.pdf",
+      "https://github.com/mdp93/LibreCAN_CCS/blob/e10aea7bb08de273d9203eb991cd4f529578270b/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
