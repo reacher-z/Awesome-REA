@@ -7849,5 +7849,15 @@
       "README 说明不校验载荷和报头的 CRC，也不能同时解码多个信道；其更新日志把 0.7 版的下行链路、隐式报头低速率模式和任意带宽支持标为实验性功能。最新的版本标签是 v0.6.2，因此 0.7 版只存在于 master 分支。docs/test-results 收录了作者在移植期间于 2021-12-01 重新运行测试集得到的解码率，例如短 USRP 信号样本为 100%；作者还认为自 0.6 版起 LoRa 已被完全逆向，理由是信号清晰时解码准确率接近 100%。这些都是作者报告的结果。",
       "GPL-3.0（LICENSE）。README 请研究用户引用 Zenodo 记录 10.5281/zenodo.853201。它只涉及 LoRa 物理层，未提及 LoRaWAN。所审来源未提及任何 AI 或 REA 用途，本条目也未构建或运行该模块。"
     ]
+  },
+  "cnnpre": {
+    "name": "CNNPRE：基于 CNN 的协议逆向方法（IEEE Access 2023）",
+    "requirements": [
+      "论文：Javad Garshasbi、Mehdi Teimouri，《CNNPRE: A CNN-Based Protocol Reverse Engineering Method》，IEEE Access 第 11 卷，第 116255–116268 页，2023 年，DOI 10.1109/ACCESS.2023.3325391；Crossref 标注其采用 CC BY-NC-ND 4.0 许可。本合集的论文目录尚无该论文的单独记录。仓库审阅对象为 2026-01-13 的最新提交（一次 README 更新）；笔记本最后修改于 2023-07-06，没有发布版本。",
+      "唯一的代码是为 Google Colab 编写的 cnnpre.ipynb。它用 pip 安装 umap-learn 和 hdbscan，用 apt 安装 TeX Live 与 pandoc 以导出 PDF，其余依赖 Colab 预装的 TensorFlow、scikit-learn、OpenCV、pandas 和 yellowbrick，均未固定版本。它会下载 ImageNet 预训练的 ResNet50 权重，读取写死的 CSV 文件（GSM5000-hex.csv），换用其他数据集时需修改报文数量，最后几个单元格还会挂载 Google Drive 来转换笔记本。没有软件包、命令行工具或测试。",
+      "输入是按报文组织的 CSV，包含方向、已标注的报文类型以及每条报文的十六进制和比特串。Data/ 收录 ARP、DHCP、DNS、FTP、GSM、HTTP、ICMP、NBNS、NTP、POP、SMTP 和 Syslog 的预处理 CSV，PCAP/ 收录 GSM 捕获文件 44CON-gsm-uplink-downlink-sim-example.pcap，README 指出其余数据来源是公开的 WRCCDC 2021 地区赛流量。仓库未提供从 PCAP 转换为 CSV 的预处理脚本，因此新协议需要自行转换，而笔记本的评估指标还需要真实的报文类型标注。",
+      "笔记本只涉及报文类型聚类，不包括字段、语义或状态机推断。其中标为 K-Means 的结果用 K-means 肘部法确定聚类数，实际却用凝聚聚类完成聚类；保存的输出只显示一次 GSM 运行。准确率数据来自论文，本合集未复现，撰写本记录时也未运行任何单元格。",
+      "GitHub 未检测到许可证，仓库也没有许可证文件，因此代码和预处理数据集均未声明复用条款；论文的许可只适用于文章本身，不适用于仓库，捕获流量遵循其来源的条款。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
