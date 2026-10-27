@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**851 个仓库** · 2026-10-20 UTC
+**850 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -154,7 +154,6 @@
 - [decomp/decomp](https://github.com/decomp/decomp) — 反编译流程的各个组件。 **[493 星标]**
 - [bontchev/pcodedmp](https://github.com/bontchev/pcodedmp) — VBA p-code 反汇编器。 **[492 星标]**
 - [Bw3ll/sharem](https://github.com/Bw3ll/sharem) — SHAREM 是 shellcode 分析框架，可模拟 45,000 多个 WinAPI 及几乎所有 Windows 系统调用。它还包含自定义反汇编器，具备多项创新功能，例如展示编码后 shellcode 去混淆后的反汇编结果，或结合模拟执行数据增强反汇编。 **[492 星标]**
-- [vmallet/ida-plugins](https://github.com/vmallet/ida-plugins) — Hex-Rays IDA Pro 插件的交互式列表。 **[491 星标]**
 - [radareorg/r2ai](https://github.com/radareorg/r2ai) — 基于 LLM 的 radare2 逆向分析。 **[490 星标]** · 精选：[r2ai](https://awesomerea.org/zh/resources/r2ai/)
 - [kweatherman/sigmakerex](https://github.com/kweatherman/sigmakerex) — 增强版 IDA Pro 签名生成插件。 **[485 星标]**
 - [patois/HexraysToolbox](https://github.com/patois/HexraysToolbox) — Hexrays Toolbox：在 Hex-Rays ctree 中查找代码模式。 **[483 星标]**
