@@ -12548,5 +12548,38 @@
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/package.json",
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/.travis.yml"
     ]
+  },
+  {
+    "id": "icsim",
+    "name": "ICSim (Instrument Cluster Simulator)",
+    "url": "https://github.com/zombieCraig/ICSim",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "OpenGarages' Instrument Cluster Simulator for practising CAN bus reverse engineering on a Linux virtual CAN interface instead of a car. One SDL window draws a dashboard whose speedometer, turn signals and door-lock indicators react to the CAN frames it sniffs, while a separate controls program turns gamepad or keyboard input into those frames and replays a recorded sample of generic CAN traffic as background noise. In training mode the arbitration IDs and byte positions behind each signal are randomized from a seed shared by both programs, and the highest difficulty level adds further random data to the target messages, so learners have to find the relevant messages themselves.",
+    "description_zh": "OpenGarages 开发的仪表盘模拟器，可在 Linux 虚拟 CAN 接口上练习 CAN 总线逆向分析，而无需真车。一个 SDL 窗口绘制仪表盘，其车速表、转向灯和车门锁指示会根据它监听到的 CAN 帧变化；另一个控制程序把手柄或键盘输入转换成这些帧，并回放一段录制的通用 CAN 流量作为背景噪声。训练模式下，两个程序依据共享的随机种子打乱各信号对应的仲裁 ID 和字节位置，最高难度还会在目标报文中加入额外的随机数据，学习者必须自己找出相关报文。",
+    "evidence_url": "https://github.com/zombieCraig/ICSim/blob/2b3333ef866987d8adc9c15ff15b9b9189edf85b/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the master head of 2025-09-18, which merged a fix for canvas glitches; the changes before it, from December 2023 and January 2024, added the Meson build and cleaned up compiler warnings. There are no tags or releases, tests or CI. The default signal layout is generic, and -m bmw switches some signals to IDs that the source labels for a BMW X1.",
+      "Runs on Linux with SocketCAN: the README creates a vcan0 virtual interface by loading the can and vcan kernel modules with sudo, and setup_vcan.sh repeats those commands. Building needs SDL2, SDL2_image and can-utils, which Meson checks for through candump; controls launches canplayer to replay data/sample-can.log and reads data files from ./data/. The README suggests an Xbox-style gamepad, and the source also maps keyboard keys; its troubleshooting notes cover SDL header paths and one Arch Linux report that needed sdl2_gfx.",
+      "The repository commits lib.o, a prebuilt x86-64 ELF object for can-utils' lib.c that both the Makefile and Meson link into icsim; the README says to rebuild it from can-utils when it does not link on another architecture. It also ships data/sample-can.log, a recorded log of generic CAN traffic used as background noise, plus PNG, SVG and layered-image artwork; it includes no vehicle firmware or software.",
+      "The exercise is to sniff the simulated bus, for example with candump, and infer which IDs and bytes drive each gauge; the controls usage text calls disabling the background traffic with -X cheating for that practice. Difficulty runs from 0 to 2, with 1 as the default, and only level 2 adds random bytes.",
+      "GPL-3.0 (LICENSE; meson.build declares GPL-3). lib.c keeps the Volkswagen Group Electronic Research copyright from can-utils, offered under BSD-style terms or GPL-2.0. The reviewed sources mention no AI or REA use, and nothing was built or run for this record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zombieCraig/ICSim/blob/2b3333ef866987d8adc9c15ff15b9b9189edf85b/meson.build",
+      "https://github.com/zombieCraig/ICSim/blob/2b3333ef866987d8adc9c15ff15b9b9189edf85b/Makefile",
+      "https://github.com/zombieCraig/ICSim/blob/2b3333ef866987d8adc9c15ff15b9b9189edf85b/setup_vcan.sh",
+      "https://github.com/zombieCraig/ICSim/blob/2b3333ef866987d8adc9c15ff15b9b9189edf85b/icsim.c",
+      "https://github.com/zombieCraig/ICSim/blob/2b3333ef866987d8adc9c15ff15b9b9189edf85b/controls.c",
+      "https://github.com/zombieCraig/ICSim/blob/2b3333ef866987d8adc9c15ff15b9b9189edf85b/lib.c",
+      "https://github.com/zombieCraig/ICSim/tree/2b3333ef866987d8adc9c15ff15b9b9189edf85b/data",
+      "https://github.com/zombieCraig/ICSim/blob/2b3333ef866987d8adc9c15ff15b9b9189edf85b/LICENSE"
+    ]
   }
 ]
