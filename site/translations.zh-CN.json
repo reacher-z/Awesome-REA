@@ -4339,5 +4339,14 @@
       "该仓库是改造过的 jadx 代码库：jadx 原有的 DEX 输入、测试样本和继承来的 CI 文件仍保留，自身没有 GitHub Actions 工作流，因此未报告针对方舟字节码输出的测试。",
       "沿用 jadx 的 Apache-2.0 许可；abcde 分支同样采用 Apache-2.0。本次未反编译任何文件。"
     ]
+  },
+  "ecapture": {
+    "name": "eCapture eBPF TLS 明文捕获工具",
+    "requirements": [
+      "审阅时最新版本为 v2.9.0，发布于 2026-10-24；所审阅的 master 提交与该标签完全一致。发布文件包括 Linux amd64、arm64、loong64 压缩包和 .deb 安装包，以及 Android amd64、arm64 压缩包；Docker 镜像仅支持 Linux。README 声明不支持 Windows 和 macOS；独立的 eCaptureQ 图形客户端可从这些系统连接远程 eCapture 服务。",
+      "需要 x86_64 上 4.18+、aarch64 上 5.5+ 或 LoongArch64 上 6.6+ 的 Linux 内核，或 x86_64、aarch64 架构的 Android。加载 eBPF 程序需要 root；按最小权限指南，也可在 5.8+ 内核上改授 CAP_BPF、CAP_PERFMON 和 CAP_SYS_PTRACE（旧内核为 CAP_SYS_ADMIN），pcapng 模式另需 CAP_NET_ADMIN。从源码构建需要 Go 1.26+、clang 与 LLVM 9+、cmake 3.18.4+、libelf 以及固定版本的 libpcap 子模块；make nocore 可为不支持 BTF 的内核构建。",
+      "分析者需选定要观察的库或程序：tls 模块通过 ld.so.conf 路径查找系统 OpenSSL，或由 --libssl 指定（也可指向静态链接的程序）；gotls 需要 Go 程序的 ELF 路径；pcapng 模式还需指定网卡和抓包过滤条件。pcap 模式可记录 TCP 上受 TLS 保护的 HTTP/1.x、HTTP/2 以及 QUIC 上的 HTTP/3，而 pcapng 文本数据源只能重建 TCP 上的 HTTP/1.1 和 HTTP/2。项目文档列出了各模块须以 root 运行的端到端测试（make e2e）。",
+      "采用 Apache-2.0；libpcap 以 git 子模块引入，bin、dist、deps 和 bytecode 目录只有占位文件。捕获的明文和密钥可能包含密码、令牌和个人数据：项目的防御与检测指南要求在生产环境使用前取得书面授权，用 --pid 将捕获限定于选定进程，并按组织政策处理数据，同时说明了如何检测 eBPF 捕获工具。本次未跟踪任何进程，也未捕获任何流量。"
+    ]
   }
 }

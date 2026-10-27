@@ -11831,5 +11831,40 @@
       "https://github.com/ohos-decompiler/abcde",
       "https://github.com/ohos-decompiler/abc-decompiler/issues/6"
     ]
+  },
+  {
+    "id": "ecapture",
+    "name": "eCapture",
+    "url": "https://github.com/gojue/ecapture",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "eBPF-based Linux and Android tool that attaches uprobes to TLS libraries such as OpenSSL, BoringSSL, GnuTLS and NSS, and to Go's TLS stack, recording the plaintext a process sends and receives without a proxy or an installed CA certificate, so analysts can inspect an application's encrypted traffic on a host they control. Output modes write plaintext text, NSS key logs, or pcapng files with embedded TLS secrets for Wireshark and tshark, and a text mode can rebuild complete HTTP/1.1 and HTTP/2 messages from the captured stream. Separate modules audit bash and zsh commands and MySQL and PostgreSQL queries.",
+    "description_zh": "基于 eBPF 的 Linux 与 Android 工具，在 OpenSSL、BoringSSL、GnuTLS、NSS 等 TLS 库以及 Go 的 TLS 实现上挂载 uprobe，记录进程收发的明文，无需代理或安装 CA 证书，便于分析者在自己掌控的主机上检查应用的加密流量。输出模式包括明文文本、NSS 密钥日志，以及内嵌 TLS 密钥、可交给 Wireshark 和 tshark 解读的 pcapng 文件；文本模式还能从捕获的数据流中重建完整的 HTTP/1.1 和 HTTP/2 报文。另有独立模块审计 bash、zsh 命令以及 MySQL、PostgreSQL 查询。",
+    "evidence_url": "https://github.com/gojue/ecapture/blob/e834aa060d9308e0462837f29779753f9059d9ff/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.9.0, published 2026-10-24; the reviewed master commit is identical to that tag. Release assets are Linux amd64, arm64 and loong64 archives and .deb packages plus Android amd64 and arm64 archives; the Docker image is Linux only. The README states that Windows and macOS are not supported; the separate eCaptureQ GUI can connect from them to a remote eCapture service.",
+      "Needs Linux kernel 4.18+ on x86_64, 5.5+ on aarch64 or 6.6+ on LoongArch64, or Android on x86_64 or aarch64. Loading the eBPF programs requires root or, per the minimum-privileges guide, CAP_BPF, CAP_PERFMON and CAP_SYS_PTRACE on kernel 5.8+ (CAP_SYS_ADMIN on older kernels), plus CAP_NET_ADMIN for pcapng mode. Source builds need Go 1.26+, clang and LLVM 9+, cmake 3.18.4+, libelf and the pinned libpcap submodule; make nocore builds for kernels without BTF.",
+      "Analysts choose the library or program to observe: the tls module locates the system OpenSSL through ld.so.conf paths or takes --libssl, which can also name a statically linked program, and gotls takes the Go program's ELF path; pcapng mode also needs a network interface and capture filter. Pcap mode records TLS-protected HTTP/1.x and HTTP/2 over TCP and HTTP/3 over QUIC, while the pcapng text source rebuilds only HTTP/1.1 and HTTP/2 over TCP. The project documents root-only end-to-end tests per module (make e2e).",
+      "Apache-2.0; libpcap is a git submodule and the bin, dist, deps and bytecode directories hold only placeholders. Captured plaintext and keys can contain passwords, tokens and personal data: the project's defense-and-detection guide asks for written authorization before production use, scoping capture to chosen processes with --pid and handling the data under organizational policy, and describes how to detect eBPF capture tools. No process was traced and no traffic was captured."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/gojue/ecapture/blob/e834aa060d9308e0462837f29779753f9059d9ff/README.md#L34-L37",
+      "https://github.com/gojue/ecapture/blob/e834aa060d9308e0462837f29779753f9059d9ff/README.md#L120-L198",
+      "https://github.com/gojue/ecapture/blob/e834aa060d9308e0462837f29779753f9059d9ff/docs/compilation.md",
+      "https://github.com/gojue/ecapture/blob/e834aa060d9308e0462837f29779753f9059d9ff/docs/minimum-privileges.md",
+      "https://github.com/gojue/ecapture/blob/e834aa060d9308e0462837f29779753f9059d9ff/docs/defense-detection.md#L151-L166",
+      "https://github.com/gojue/ecapture/blob/e834aa060d9308e0462837f29779753f9059d9ff/docs/e2e-tests.md",
+      "https://github.com/gojue/ecapture/blob/e834aa060d9308e0462837f29779753f9059d9ff/CHANGELOG.md",
+      "https://github.com/gojue/ecapture/blob/e834aa060d9308e0462837f29779753f9059d9ff/.gitmodules",
+      "https://github.com/gojue/ecapture/blob/e834aa060d9308e0462837f29779753f9059d9ff/LICENSE",
+      "https://github.com/gojue/ecapture/releases/tag/v2.9.0"
+    ]
   }
 ]

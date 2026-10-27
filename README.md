@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 495](https://img.shields.io/badge/resources-495-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 210](https://img.shields.io/badge/cases-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 135](https://img.shields.io/badge/papers-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 496](https://img.shields.io/badge/resources-496-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 210](https://img.shields.io/badge/cases-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 135](https://img.shields.io/badge/papers-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,12 +21,12 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-495 curated resources (210 cases) · 135 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 492 because 3 of these appear only under Papers.
+496 curated resources (210 cases) · 135 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 493 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
 - [Website](#website) (29) · [Game](#game) (193) · [App](#app) (80)
-- [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (19)
+- [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (20)
 
 **Research and workflows**
 
@@ -533,6 +533,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**FISSURE**](https://github.com/ainfosec/FISSURE) - GNU Radio-based RF framework that carries a signal from survey and detection through IQ capture, inspection, conditioning, feature extraction and classification into a protocol discovery workflow. <sub>Tool · [Full entry](https://awesomerea.org/resources/fissure/)</sub>
 - [**friTap**](https://github.com/fkie-cad/friTap) - Frida-based tool that hooks TLS libraries such as OpenSSL, BoringSSL, NSS and GnuTLS inside a running process and writes NSS key logs and decrypted payloads as PCAP, so analysts can inspect an application's encrypted traffic in Wireshark. <sub>Tool · Also: App · [Full entry](https://awesomerea.org/resources/fritap/)</sub>
 - [**pbtk**](https://github.com/marin-m/pbtk) - Recover Protobuf message definitions from compiled programs as readable .proto files. <sub>Tool · Also: App · [Full entry](https://awesomerea.org/resources/pbtk/)</sub>
+- [**eCapture**](https://github.com/gojue/ecapture) - eBPF-based Linux and Android tool that attaches uprobes to TLS libraries such as OpenSSL, BoringSSL, GnuTLS and NSS, and to Go's TLS stack, recording the plaintext a process sends and receives without a proxy or an installed CA certificate, so analysts can inspect an application's encrypted traffic on a host they control. <sub>Tool · Also: App · [Full entry](https://awesomerea.org/resources/ecapture/)</sub>
 
 <a id="agents-and-mcp"></a>
 ### Agents and MCP
