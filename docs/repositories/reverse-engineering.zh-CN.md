@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/reverse-engineering/) · [English](reverse-engineering.md)
 
-**669 个仓库** · 2026-10-20 UTC
+**668 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -148,7 +148,6 @@
 - [GenericException/SkidSuite](https://github.com/GenericException/SkidSuite) — Java 逆向工程工具与资料链接合集。 **[355 星标]**
 - [sztupy/luadec51](https://github.com/sztupy/luadec51) — 适用于 Lua 5.1 的 Lua 反编译器。 **[353 星标]**
 - [we11cheng/WCShadowrocket](https://github.com/we11cheng/WCShadowrocket) — iOS Shadowrocket（砸壳重签，仅供参考，添加节点存在问题）。另一个翻墙项目 Potatso 的源码参见：https<span>:</span>//github.com/we11cheng/WCPotatso **[353 星标]**
-- [mildsunrise/darter](https://github.com/mildsunrise/darter) — <span>:</span>detective: Dart / Flutter VM 快照分析器 **[345 星标]**
 - [AngeloD2022/jsxer](https://github.com/AngeloD2022/jsxer) — 快速且准确的 JSXBIN 反编译器。 **[327 星标]**
 - [rrika/cdcEngineDXHR](https://github.com/rrika/cdcEngineDXHR) — 《杀出重围：人类革命》的反编译代码。 **[323 星标]**
 - [everettjf/Yolo](https://github.com/everettjf/Yolo) — 😈 关于 iOS 开发或逆向工程的脚本与演示项目 **[321 星标]**

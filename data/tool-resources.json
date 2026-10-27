@@ -12521,5 +12521,38 @@
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/tree/b372420e1e1ff818a8d25ba50f0c71e97e62f138/raw_wild_ir_captures",
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/LICENSE"
     ]
+  },
+  {
+    "id": "darter",
+    "name": "darter",
+    "url": "https://github.com/mildsunrise/darter",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Python module that parses binary Dart VM snapshots, such as the libapp.so of a release Flutter app, into a navigable graph of VM objects with back-references, including the memory structures the snapshot dumps. It reads old, AppJIT and AppAOT snapshots, usually autodetects flags and settings from the snapshot itself, extracts the snapshot blobs from app.so or .snapshot files, and its darter.asm module disassembles ARM and ARM64 code with Capstone to find references to VM objects. The README's examples include extracting an app's string table, finding where an object is used, generating call and library-dependency graphs, exporting metadata for Radare2 and deobfuscating a snapshot by matching it against a reference one.",
+    "description_zh": "用于解析二进制 Dart VM 快照（例如 Flutter 发布版应用中的 libapp.so）的 Python 模块，可把快照内容还原为带反向引用、便于浏览的 VM 对象图，连同快照中转储的内存结构一并解析。它支持旧式、AppJIT 和 AppAOT 三类快照，通常能从快照本身自动识别编译标志和设置，可从 app.so 或 .snapshot 文件中自动提取快照数据块；其 darter.asm 模块借助 Capstone 反汇编 ARM 和 ARM64 代码，查找其中对 VM 对象的引用。README 列举的用法包括提取应用的字符串表、查找某个对象在何处被使用、生成调用图和库依赖图、为 Radare2 导出元数据，以及与参考快照比对来对快照去混淆。",
+    "evidence_url": "https://github.com/mildsunrise/darter/blob/a6498786ed0f96b2b70635f008fee62dc07796da/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README warns that the project is outdated and that snapshots from a reasonably modern Dart or Flutter version probably will not parse correctly. The parser was written against Dart SDK commit 1ef83b86ae, and info/versions.md names snapshot hash c8562f0ee0ebc38ba217c7955956d1cb as the only supported version, which its Flutter table maps to the 2019 releases v1.9.1+hotfix.2 to v1.9.1+hotfix.6. Parser code last changed in 2021; the reviewed master commit of 2026-02-03 only extends that table, now through Flutter 3.38.9, and the repository has no releases or tags.",
+      "darter is a library with no stand-alone program or CLI; the README recommends using it from Jupyter, starting with the 1-introduction and 2-playground notebooks. Most of the code has no dependencies, but parse_elf_snapshot needs pyelftools and darter.asm needs Capstone and its Python binding; no Python version or package metadata is given.",
+      "The README reports heavy testing only on AppAOT product snapshots for ARM and ARM64 and light testing on x64 AppJIT release snapshots, and the disassembly analysis supports only ARM and ARM64. Kernel AST snapshots, such as .dill files, are not supported. The README recommends practicing on a snapshot one built oneself before analyzing another; users supply the libapp.so or snapshot to study.",
+      "samples/ commits arm-app.so and arm64-app.so, which the introduction notebook describes as builds of the default Flutter app; the samples/appjit.snapshot path it shows for AppJIT input is not committed. utils/ adds Radare2-metadata and import generators and a Node script that replays the pub package registry as of a past date through a local HTTPS proxy, using a committed self-signed CA plus a pub.dartlang.org certificate and key; that certificate expired in 2022.",
+      "AGPL-3.0. No snapshot was parsed for this entry, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mildsunrise/darter/blob/a6498786ed0f96b2b70635f008fee62dc07796da/info/versions.md",
+      "https://github.com/mildsunrise/darter/blob/a6498786ed0f96b2b70635f008fee62dc07796da/1-introduction.ipynb",
+      "https://github.com/mildsunrise/darter/blob/a6498786ed0f96b2b70635f008fee62dc07796da/2-playground.ipynb",
+      "https://github.com/mildsunrise/darter/blob/a6498786ed0f96b2b70635f008fee62dc07796da/darter/file.py",
+      "https://github.com/mildsunrise/darter/tree/a6498786ed0f96b2b70635f008fee62dc07796da/samples",
+      "https://github.com/mildsunrise/darter/blob/a6498786ed0f96b2b70635f008fee62dc07796da/utils/timemachine_pub.js",
+      "https://github.com/mildsunrise/darter/blob/a6498786ed0f96b2b70635f008fee62dc07796da/LICENSE"
+    ]
   }
 ]
