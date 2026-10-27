@@ -11759,5 +11759,33 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "cobra-irad-bluetooth-protocol-walkthrough",
+    "name": "Reverse-Engineering a Bluetooth-Enabled Radar Detector",
+    "url": "https://github.com/brandonasuncion/Reverse-Engineering-Bluetooth-Protocols",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Write-up of how the author decoded the Bluetooth RFCOMM protocol of a Cobra iRAD 900 radar detector so that a Raspberry Pi 3 could receive alerts without the iOS or Android app. Traffic was logged on a jailbroken iPhone with BTServer and filtered in Wireshark; the README then documents the detector's half-second status payload and the 9-byte reply whose ACK byte must echo the detector's sequence byte, and replays recorded responses to the initial settings sync instead of decoding it. A short beginner's case study on RFCOMM traffic analysis with a rough proof-of-concept script, not a maintained client.",
+    "description_zh": "作者记录了如何解析 Cobra iRAD 900 雷达测速预警器的蓝牙 RFCOMM 协议，使 Raspberry Pi 3 无需 iOS 或 Android 应用即可接收警报。作者在越狱 iPhone 上用 BTServer 记录通信，再用 Wireshark 过滤；README 随后说明预警器每半秒发送的状态载荷，以及 9 字节的回复报文，其中 ACK 字节必须回显预警器发来的序号字节；对于连接初期的设置同步，则直接重放录制的响应而不加解析。这是一个面向初学者的 RFCOMM 流量分析简短案例，附带粗略的概念验证脚本，并非持续维护的客户端。",
+    "evidence_url": "https://github.com/brandonasuncion/Reverse-Engineering-Bluetooth-Protocols/blob/daf7c5c4b9d0d11eed45371324cf368c8bad9703/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Written in 2017 and last expanded on 2017-07-06; the latest commit, from January 2025, only updates the contact email. It covers one detector model. The alert-type values are only partly identified because the author had no radar gun, the initial sync is replayed rather than decoded, and the README expects the replay data would need re-recording after app settings change.",
+      "Following the method needs a Cobra iRAD 900 used with its vendor app and a way to log the phone's Bluetooth traffic; the author used BTServer logging on a jailbroken iPhone 5 and Wireshark. The repository commits the author's three .pklg captures, the Wireshark XML export (data.xml) and the processed packetData.dat; no app or device firmware is included.",
+      "radar.py is a self-described extremely rough proof of concept that talks RFCOMM through PyBluez, with the author's detector address and service UUID hard-coded; its setup notes install the Python 2 python-bluez package. parseData.py converts data.xml into packetData.dat, which radar.py loads with pickle, so treat that file as executable input. Nothing was run for this review.",
+      "MIT License. Cobra's detector, app and trademarks keep their own rights. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/brandonasuncion/Reverse-Engineering-Bluetooth-Protocols/blob/daf7c5c4b9d0d11eed45371324cf368c8bad9703/radar.py",
+      "https://github.com/brandonasuncion/Reverse-Engineering-Bluetooth-Protocols/blob/daf7c5c4b9d0d11eed45371324cf368c8bad9703/parseData.py",
+      "https://github.com/brandonasuncion/Reverse-Engineering-Bluetooth-Protocols/tree/daf7c5c4b9d0d11eed45371324cf368c8bad9703/BTServerCaptures",
+      "https://github.com/brandonasuncion/Reverse-Engineering-Bluetooth-Protocols/blob/daf7c5c4b9d0d11eed45371324cf368c8bad9703/LICENSE"
+    ]
   }
 ]
