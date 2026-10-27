@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 494](https://img.shields.io/badge/resources-494-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 210](https://img.shields.io/badge/cases-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 135](https://img.shields.io/badge/papers-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 494](https://img.shields.io/badge/resources-494-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 210](https://img.shields.io/badge/cases-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-494 curated resources (210 cases) · 135 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 491 because 3 of these appear only under Papers.
+494 curated resources (210 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 491 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (135) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (136) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
 
 **More ways to browse**
 
@@ -641,7 +641,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**135 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**136 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -649,7 +649,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [Agent evaluation](#papers-agent-evaluation) (10) · [Decompilation](#papers-decompilation) (57) · [Websites](#papers-website-reconstruction) (22)
 - [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (12) · [Firmware](#papers-firmware-analysis) (13)
-- [Protocols](#papers-protocol-analysis) (13)
+- [Protocols](#papers-protocol-analysis) (14)
 
 Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation. Some papers also appear among curated resources; counts are not additive.
 
@@ -826,6 +826,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**BinaryInferno: A Semantic-Driven Approach to Field Inference for Binary Message Formats**](https://www.ndss-symposium.org/ndss-paper/binaryinferno-a-semantic-driven-approach-to-field-inference-for-binary-message-formats/) - Infers partial binary-message formats from static message samples without instrumenting an executable. <sub>NDSS 2023 · Conference paper · Jared Chandler et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_s131_paper.pdf) · [Code](https://github.com/binaryinferno/binaryinferno) · [Full entry](https://awesomerea.org/papers/paper-binaryinferno/)</sub>
 - [**The Closer You Look, The More You Learn: A Grey-box Approach to Protocol State Machine Learning**](https://doi.org/10.1145/3548606.3559365) - StateInspector learns protocol Mealy machines by combining active message queries with snapshots of runtime memory, without requiring the target’s source code. <sub>ACM CCS 2022 · Conference paper · Chris McMahon Stone et al. · [PDF](https://tomchothia.gitlab.io/Papers/greyboxstatelearning_ccs2022.pdf) · [Code](https://github.com/ChrisMcMStone/state-inspector) · [Full entry](https://awesomerea.org/papers/paper-stateinspector/)</sub>
 - [**Fingerprinting and analysis of Bluetooth devices with automata learning**](https://doi.org/10.1007/s10703-023-00425-y) - Learns Mealy-machine models of Bluetooth Low Energy implementations on physical peripherals by active automata learning. <sub>Formal Methods in System Design 2022 · Journal article · Andrea Pferscher et al. · [PDF](https://arxiv.org/pdf/2211.16074v2) · [Code](https://github.com/apferscher/ble-learning) · [Full entry](https://awesomerea.org/papers/paper-ble-automata-learning/)</sub>
+- [**Noncompliance as Deviant Behavior: An Automated Black-box Noncompliance Checker for 4G LTE Cellular Devices**](https://dl.acm.org/doi/10.1145/3460120.3485388) - DIKEUE checks 4G LTE control-plane (NAS and RRC) implementations in commercial phones and modems for noncompliance through differential testing rather than predefined security properties. <sub>ACM CCS 2021 · Conference paper · Syed Rafiul Hussain et al. · [PDF](https://syed-rafiul-hussain.github.io/wp-content/uploads/2021/09/dikeue.pdf) · [Code](https://github.com/SyNSec-den/DIKEUE/tree/5975807883265e275ef533f18a0c21b56e3b4e8a) · [Full entry](https://awesomerea.org/papers/paper-dikeue/)</sub>
 - [**NetPlier: Probabilistic Network Protocol Reverse Engineering from Message Traces**](https://www.ndss-symposium.org/ndss-paper/netplier-probabilistic-network-protocol-reverse-engineering-from-message-traces/) - Uses multiple sequence alignment and probabilistic keyword-field inference to cluster network messages by type, evaluated across ten protocols with downstream format and state-machine analysis. <sub>NDSS 2021 · Conference paper · Yapeng Ye et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/ndss2021_4A-5_24531_paper.pdf) · [Code](https://github.com/yapengye/NetPlier) · [Full entry](https://awesomerea.org/papers/paper-netplier/)</sub>
 - [**Automatic Wireless Protocol Reverse Engineering**](https://www.usenix.org/conference/woot19/presentation/pohl) - Infers message formats of proprietary wireless protocols from demodulated physical-layer captures: it aligns messages by preamble and sync word, then uses RSSI and dedicated engines to label length, address, sequence-number and checksum fields, optionally using known addresses or field positions. <sub>13th USENIX Workshop on Offensive Technologies (WOOT 19) 2019 · Conference paper · Johannes Pohl et al. · [PDF](https://www.usenix.org/system/files/woot19-paper_pohl.pdf) · [Code](https://github.com/jopohl/urh) · [Full entry](https://awesomerea.org/papers/paper-wireless-protocol-re/)</sub>
 - [**NEMESYS: Network Message Syntax Reverse Engineering by Analysis of the Intrinsic Structure of Individual Messages**](https://www.usenix.org/conference/woot18/presentation/kleber) - Infers approximate field boundaries within individual binary-protocol messages from changes in bit congruence, and introduces Format Match Score to compare inferred segmentation with known protocol dissectors. <sub>12th USENIX Workshop on Offensive Technologies (WOOT 18) 2018 · Conference paper · Stephan Kleber et al. · [PDF](https://www.usenix.org/system/files/conference/woot18/woot18-paper-kleber.pdf) · [Code](https://github.com/vs-uulm/nemesys) · [Full entry](https://awesomerea.org/papers/paper-nemesys/)</sub>
