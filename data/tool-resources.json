@@ -12616,5 +12616,40 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "appmon",
+    "name": "AppMon",
+    "url": "https://github.com/dpnishant/appmon",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Frida-based framework by Nishant Das Patnaik, shown at Black Hat Arsenal 2016, for watching the system API calls that native macOS, iOS and Android apps make. Its Sniffer attaches to or spawns an app, loads hook scripts from a bundled library covering areas such as crypto, keychain, files, SQLite, HTTP, IPC and WebView, and records each intercepted call in a per-app SQLite database that a local Flask web interface displays. Further components trace Java classes, methods and argument types in Android apps and repackage IPAs or APKs with Frida Gadget so they can be inspected on non-jailbroken or non-rooted devices.",
+    "description_zh": "基于 Frida 的框架，由 Nishant Das Patnaik 开发，曾在 2016 年 Black Hat Arsenal 展示，用于观察 macOS、iOS 和 Android 原生应用发起的系统 API 调用。其 Sniffer 组件可附加到应用或启动应用，加载内置脚本库中的挂钩脚本（涵盖加密、钥匙串、文件、SQLite、HTTP、IPC 和 WebView 等方面），并把每次截获的调用记录到按应用划分的 SQLite 数据库中，由本地 Flask 网页界面展示。其他组件可追踪 Android 应用中的 Java 类、方法及参数类型，并可把 IPA 或 APK 与 Frida Gadget 一起重新打包，以便在未越狱或未 root 的设备上进行检查。",
+    "evidence_url": "https://github.com/dpnishant/appmon/blob/f753c4d287cd752fe926d2087236a98c3810d3e4/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository is archived on GitHub and read-only. Its last commit on master, from 2022-11-08, changed the Frida release URL in apk_builder/getlibs.sh, and there are no releases. The usage documentation lives in the project wiki, last edited in 2019; the GitHub Pages site only links to it.",
+      "requirements.txt pins frida 12.2.6 (September 2018), Flask 1.0.2, Werkzeug 0.15.3 and other packages of that period. The hook scripts rely on Frida's Java and ObjC bridges and on legacy calls such as Module.findExportByName and Memory.readUtf8String, which Frida 17.0.0's release notes (May 2025) say are no longer bundled or have been removed, so current Frida releases are unlikely to work without changes.",
+      "The wiki's host setup covers macOS and Ubuntu or Kali Linux, with Android command-line tools on Linux. Jailbroken iOS and rooted Android devices run frida-server. For other devices the IPA Installer injects the committed ipa_installer/release/FridaGadget.dylib (about 14 MB) and re-signs the app with the user's iOS developer provisioning profile, while the APK Builder adds Frida Gadget libraries that getlibs.sh downloads and re-signs the APK with apk_builder/appmon.keystore, a shared key committed with a fixed password. Use these only on apps and devices you are permitted to test.",
+      "The README also lists an Intruder component that changes API-call data to alter an app's behavior; this record covers monitoring and tracing only. Apache-2.0 (LICENSE). The reviewed sources mention no AI or REA use, and nothing was installed or run for this record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/dpnishant/appmon/blob/f753c4d287cd752fe926d2087236a98c3810d3e4/requirements.txt",
+      "https://github.com/dpnishant/appmon/blob/f753c4d287cd752fe926d2087236a98c3810d3e4/appmon.py",
+      "https://github.com/dpnishant/appmon/tree/f753c4d287cd752fe926d2087236a98c3810d3e4/scripts",
+      "https://github.com/dpnishant/appmon/blob/f753c4d287cd752fe926d2087236a98c3810d3e4/apk_builder/apk_builder.py",
+      "https://github.com/dpnishant/appmon/blob/f753c4d287cd752fe926d2087236a98c3810d3e4/apk_builder/getlibs.sh",
+      "https://github.com/dpnishant/appmon/blob/f753c4d287cd752fe926d2087236a98c3810d3e4/ipa_installer/ipa_installer.py",
+      "https://github.com/dpnishant/appmon/tree/f753c4d287cd752fe926d2087236a98c3810d3e4/ipa_installer/release",
+      "https://github.com/dpnishant/appmon/blob/f753c4d287cd752fe926d2087236a98c3810d3e4/LICENSE",
+      "https://github.com/dpnishant/appmon/wiki/4.a-Setup-Host/84516f44cf5ca37f669c8c8429d6cb46c10f0a7e",
+      "https://github.com/dpnishant/appmon/wiki/6.-Usage-Guide:-AppMon-Sniffer/4dc32e5740fdfad523d71fa9e6862bd34d0c1c83",
+      "https://frida.re/news/2025/05/17/frida-17-0-0-released/"
+    ]
   }
 ]

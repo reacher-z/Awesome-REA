@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 519](https://img.shields.io/badge/resources-519-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 220](https://img.shields.io/badge/cases-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 141](https://img.shields.io/badge/papers-141-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 520](https://img.shields.io/badge/resources-520-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 220](https://img.shields.io/badge/cases-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 141](https://img.shields.io/badge/papers-141-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,12 +21,12 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-519 curated resources (220 cases) · 141 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 516 because 3 of these appear only under Papers.
+520 curated resources (220 cases) · 141 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 517 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
 - [Website](#website) (29) · [Game](#game) (199) · [App](#app) (83)
-- [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (24) · [Protocol](#protocol) (22)
+- [Native Binary](#native-binary) (66) · [Firmware and Hardware](#firmware) (24) · [Protocol](#protocol) (22)
 
 **Research and workflows**
 
@@ -478,6 +478,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Kuna**](https://github.com/Noelo-Lab/kuna) - Agent-first decompiler written in Rust that began as a port of Ghidra’s C++ decompiler and SLEIGH compiler, and has since diverged with option-gated features, some ported from angr. <sub>Tool · [Full entry](https://awesomerea.org/resources/kuna/)</sub>
 - [**Binary Ninja API**](https://github.com/Vector35/binaryninja-api) - Vector 35’s public C++, Python and Rust APIs for Binary Ninja, with their documentation, examples and the open-source plugins built on them. <sub>Tool · Also: Firmware · [Full entry](https://awesomerea.org/resources/binary-ninja-api/)</sub>
 - [**capa**](https://github.com/mandiant/capa) - Mandiant FLARE tool that reports what an executable can do by matching a YAML rule set against features extracted from PE, ELF and .NET files or 32/64-bit shellcode, such as API calls, imports, strings and constants. <sub>Tool · [Full entry](https://awesomerea.org/resources/capa/)</sub>
+- [**AppMon**](https://github.com/dpnishant/appmon) - Frida-based framework by Nishant Das Patnaik, shown at Black Hat Arsenal 2016, for watching the system API calls that native macOS, iOS and Android apps make. <sub>Tool · Also: App · [Full entry](https://awesomerea.org/resources/appmon/)</sub>
 
 <a id="firmware"></a>
 ### Firmware and Hardware
