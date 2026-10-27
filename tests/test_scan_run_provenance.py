@@ -87,7 +87,8 @@ class ScanRunProvenanceTests(unittest.TestCase):
         provenance = document['meta']['current_run']['scanner_provenance']
         self.assertEqual(provenance, {'policy': scanner.RUN_PROVENANCE_POLICY, 'seed_inputs': [],
                                       'implementation': [digest(path) for path in (
-                                          'scripts/scan_sources.py', 'scripts/source_descriptions.py', 'scripts/source_scope.py')]})
+                                          'scripts/scan_sources.py', 'scripts/source_descriptions.py', 'scripts/source_scope.py',
+                                          'scripts/strict_json.py')]})
         self.assertNotIn(str(ROOT), text)
         self.assertEqual(private_json_locations(document), [])
         self.assertEqual(self.provenance_errors(document), [])

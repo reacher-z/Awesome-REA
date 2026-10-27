@@ -235,7 +235,7 @@ def read_seed_input(relative):
 
 def scanner_implementation(*components):
     """Digest this scanner, its imported helpers and the modules defining the run's transport and frontier."""
-    modules = [sys.modules[name] for name in ('source_descriptions', 'source_scope')]
+    modules = [sys.modules[name] for name in ('source_descriptions', 'source_scope', 'strict_json')]
     modules += [inspect.getmodule(component) for component in components if component is not None]
     files = {Path(__file__).resolve()} | {Path(module.__file__).resolve() for module in modules
                                           if getattr(module, '__file__', None)}
