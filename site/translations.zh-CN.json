@@ -4339,5 +4339,15 @@
       "该仓库是改造过的 jadx 代码库：jadx 原有的 DEX 输入、测试样本和继承来的 CI 文件仍保留，自身没有 GitHub Actions 工作流，因此未报告针对方舟字节码输出的测试。",
       "沿用 jadx 的 Apache-2.0 许可；abcde 分支同样采用 Apache-2.0。本次未反编译任何文件。"
     ]
+  },
+  "autoprober": {
+    "name": "AutoProber 飞针探测自动化套件",
+    "requirements": [
+      "README 称所审阅的提交 ff0e01f（“1st Release”，2026-04-16）是源码可见的候选发布版；pyproject.toml 声明版本 0.1.0，项目未发布正式版本，README 引用的 RELEASE_MANIFEST.md 也不在仓库中。此后再无新提交。",
+      "经测试的硬件包括：经 USB 串口连接的 GRBL 兼容 3018 型 CNC、由 mjpg_streamer 提供画面的 UVC USB 显微镜、经局域网 SCPI 连接的 Siglent 示波器（通道 4 接光电限位，通道 1 用于弹簧探针测量）、由外部 5 V 电源供电的光电限位、可选的通过 chip-tool 控制的 Matter 电源插排，以及 cad/ 中的 3D 打印探头部件。docs/BOM.md 列出了所需部件。",
+      "运行于 Linux 控制主机，经 uv 使用 Python 3.8+；pyproject.toml 只声明 Flask 和 pyserial，而标定脚本还导入了 OpenCV。实验室主机、端口和路径通过示例配置中的环境变量设置。README 称标定数据必须在实际运动的机器上生成，真正探测前须测量显微镜与探针的偏移，且仪表盘不得暴露于不可信网络。项目未公开自动化测试。",
+      "可配合操作者选用的任意智能体：README 让智能体读取整个项目并操作仪表盘或 Python 脚本，安全规则由 AGENTS.md 规定；未附带 MCP 服务器或特定智能体。README 限定只能用于使用者获授权测试的设备和目标；本次审阅未驱动任何硬件。",
+      "采用 PolyForm Noncommercial 1.0.0 许可证，须保留 GainSec 版权声明；商业使用需另购付费许可。未提及使用 REA。"
+    ]
   }
 }
