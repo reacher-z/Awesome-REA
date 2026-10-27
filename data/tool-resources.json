@@ -12616,5 +12616,37 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "axmlprinter",
+    "name": "axmlprinter",
+    "url": "https://github.com/rednaga/axmlprinter",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Java library and command-line tool that parses Android binary XML, such as the compiled AndroidManifest.xml inside an APK, and prints it as readable XML. Red Naga's near-complete rewrite of the Android4ME AXMLPrinter tolerates manipulated files seen in the wild, including out-of-order string tables and mangled start tags, and can write the classic AXML format back out. Since v2.0.0 it also reads the protobuf XML used in Android App Bundles and detects which format it was given.",
+    "description_zh": "用于解析 Android 二进制 XML（例如 APK 中编译后的 AndroidManifest.xml）并输出为可读 XML 的 Java 库和命令行工具。它是 Red Naga 对 Android4ME AXMLPrinter 几乎全部重写的版本，能够处理实际样本中被篡改的文件，包括字符串表乱序和起始标签被改写等情况，并可重新写出传统 AXML 格式。自 v2.0.0 起，它还能读取 Android App Bundle 使用的 protobuf 格式 XML，并自动识别输入格式。",
+    "evidence_url": "https://github.com/rednaga/axmlprinter/blob/5a8d3e5f37780de48a29acc280c9660e400eceb1/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release v2.0.1, published 2026-03-25 with a prebuilt jar, is tagged at the reviewed master commit 5a8d3e5. v2.0.0 of 2026-01-16 added read-only protobuf support through a contributed pull request; converting between AXML and protobuf is not supported.",
+      "Build with the Gradle wrapper (./gradlew jar) into a self-contained jar run as java -jar axmlprinter-*.jar with a binary XML file and an optional output path, which applies to AXML only. CI builds and tests on JDK 17, and JitPack builds with OpenJDK 17; it depends on protobuf-java 4.34.1 and includes AOSP's Apache-2.0 aapt2 Resources.proto. Framework resource IDs are resolved only for common Android resources.",
+      "Input is a single compiled XML file the analyst has already taken from an APK or app bundle, not the archive itself. The tests include binary manifest fixtures named large_from_malware.xml and qihoo_jiagu_issue8.xml, the latter from an issue about a manifest that failed to parse, plus a smaller test.xml.",
+      "Apache-2.0, crediting Android4ME's 2008 code alongside Red Naga's. No REA connection is stated, and no files were decoded in this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/rednaga/axmlprinter/blob/5a8d3e5f37780de48a29acc280c9660e400eceb1/build.gradle",
+      "https://github.com/rednaga/axmlprinter/blob/5a8d3e5f37780de48a29acc280c9660e400eceb1/.github/workflows/gradle.yml",
+      "https://github.com/rednaga/axmlprinter/tree/5a8d3e5f37780de48a29acc280c9660e400eceb1/src/test/resources",
+      "https://github.com/rednaga/axmlprinter/blob/5a8d3e5f37780de48a29acc280c9660e400eceb1/src/main/proto/Resources.proto",
+      "https://github.com/rednaga/axmlprinter/blob/5a8d3e5f37780de48a29acc280c9660e400eceb1/LICENSE",
+      "https://github.com/rednaga/axmlprinter/releases/tag/v2.0.1",
+      "https://github.com/rednaga/axmlprinter/pull/13",
+      "https://github.com/rednaga/axmlprinter/issues/8"
+    ]
   }
 ]
