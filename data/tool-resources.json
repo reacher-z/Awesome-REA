@@ -11799,5 +11799,39 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "diztinguish",
+    "name": "DiztinGUIsh",
+    "url": "https://github.com/DizTools/DiztinGUIsh",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Windows disassembler for Super NES ROMs in which the user marks bytes as code or data, steps through 65816 code while the tool tracks the M and X flags and the data bank and direct page registers, adds labels and comments, and exports assembly for the asar assembler that the README says compiles back into the original binary. Execution context can come from BizHawk or BSNES trace logs, BSNES usage maps and BizHawk code/data logs, or live capture over a socket from a custom bsnes-plus build. Project files keep the annotations in merge-friendly XML with a link and checksum for the ROM rather than the ROM itself, so several people can work on one disassembly.",
+    "description_zh": "面向 Super NES ROM 的 Windows 反汇编工具：使用者把字节标记为代码或数据，逐步跟踪 65816 代码，工具同时记录 M、X 标志位以及数据库（data bank）和直接页寄存器；使用者添加标签和注释后，可导出供 asar 汇编器使用的汇编代码，README 称其能重新编译回原始二进制。执行上下文可来自 BizHawk 或 BSNES 的跟踪日志、BSNES 使用情况图和 BizHawk 代码/数据日志，也可通过套接字从定制的 bsnes-plus 版本实时采集。项目文件以便于合并的 XML 保存注释，只记录 ROM 的链接和校验和而不包含 ROM 本身，便于多人协作完成同一份反汇编。",
+    "evidence_url": "https://github.com/DizTools/DiztinGUIsh/blob/7484b87c3bd36f4e1a1e9e3c6075dd103855cbfd/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.5.1.0, published 2025-12-07 as a self-contained Windows x64 build; the reviewed master commit of 2026-08-09 is 106 commits later and adds, among other changes, Avalonia versions of several dialogs and a second Diz.AvaloniaUI-Beta executable. The WinForms app targets net10.0-windows, and CI builds, tests and publishes it on Windows with the .NET 10 SDK, while contributing.md still asks for Windows 10+ and .NET SDK 8 or higher.",
+      "Input is a SNES ROM file the user supplies; the repository includes no ROMs. HELP.md says project files (.diz, which is gzip-compressed XML, or uncompressed .dizraw) store a link to the ROM with its internal name and checksum instead of the ROM, so they can be shared without it. Live trace capture needs the custom bsnes-plus build from binary1230/bsnes-plus, which listens on port 27015, rather than stock BSNES+, and the README suggests an asar fork with a relative-addressing fix.",
+      "The test project bundles small .asm samples, a 4 MB binary trace-log fixture (ct-binary-tracelog7.758s-60fps-locked.bin) from a 7.8-second emulator capture that only commented-out performance-test code references, and SuperFamicheck 1.0's superfamicheck.exe as a helper; tools/dizpack holds Python packing scripts and tools/dizpack-game/ct a Chrono Trigger (US) LZSS codec. Disassembly depends on the user's marking and stepping: the README says the program pauses for input whenever it cannot disassemble accurately, and lists SPC700 and SuperFX support as planned. CI runs the repository's xUnit tests, but no per-game results confirm that exported assembly rebuilds the original.",
+      "GPL-3.0 per LICENSE.md, with third-party library licenses listed in Diz.App.Winforms/dist/docs. Exported assembly contains the ROM's code and data and remains subject to the rights of the game's owner. Nothing was built or run and no ROMs were disassembled; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/DizTools/DiztinGUIsh/blob/7484b87c3bd36f4e1a1e9e3c6075dd103855cbfd/Diz.App.Winforms/dist/docs/HELP.md",
+      "https://github.com/DizTools/DiztinGUIsh/blob/7484b87c3bd36f4e1a1e9e3c6075dd103855cbfd/TRACE%20CAPTURE%20INSTRUCTIONS.md",
+      "https://github.com/DizTools/DiztinGUIsh/blob/7484b87c3bd36f4e1a1e9e3c6075dd103855cbfd/contributing.md",
+      "https://github.com/DizTools/DiztinGUIsh/blob/7484b87c3bd36f4e1a1e9e3c6075dd103855cbfd/.github/workflows/dotnet.yml",
+      "https://github.com/DizTools/DiztinGUIsh/blob/7484b87c3bd36f4e1a1e9e3c6075dd103855cbfd/Diz.App.Winforms/Diz.App.Winforms.csproj",
+      "https://github.com/DizTools/DiztinGUIsh/tree/7484b87c3bd36f4e1a1e9e3c6075dd103855cbfd/Diz.Test/Resources",
+      "https://github.com/DizTools/DiztinGUIsh/tree/7484b87c3bd36f4e1a1e9e3c6075dd103855cbfd/Diz.Test/external-tools",
+      "https://github.com/DizTools/DiztinGUIsh/tree/7484b87c3bd36f4e1a1e9e3c6075dd103855cbfd/tools",
+      "https://github.com/DizTools/DiztinGUIsh/blob/7484b87c3bd36f4e1a1e9e3c6075dd103855cbfd/LICENSE.md",
+      "https://github.com/DizTools/DiztinGUIsh/releases/tag/v2.5.1.0"
+    ]
   }
 ]
