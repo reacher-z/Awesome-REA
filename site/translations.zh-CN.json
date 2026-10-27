@@ -7755,5 +7755,15 @@
       "从源码构建需要 Go 1.23 和 Yarn：Makefile 先构建 Next.js 管理界面，再在禁用 CGO 的情况下把它嵌入 Go 程序。README 中源码构建说明的链接仍标注为“即将提供”。",
       "采用 MIT 许可（© 2019–2025 Hetty Software）。README 的功能列表包括可搜索的代理日志、请求发送器、拦截、范围和项目存储。本次未安装该工具，也未代理任何流量。"
     ]
+  },
+  "flowdroid": {
+    "name": "FlowDroid Android 静态污点分析工具",
+    "requirements": [
+      "审阅时最新版本为 v2.15.1，于 2026-02-23 打标签，并以 de.fraunhofer.sit.sse.flowdroid 发布到 Maven Central，其中包括供命令行使用的 soot-infoflow-cmd-2.15.1-jar-with-dependencies.jar。自 v2.14 起 GitHub 发行版不再附带文件，最后一个附带 JAR 的是 2024-04-02 发布的 v2.13；README 中的 Maven 示例仍写着 2.12.0。所审阅的 2026-09-28 develop 提交声明版本为 2.16.0-SNAPSHOT。",
+      "命令行需要 APK、Android SDK 的 platforms 目录和源点汇点定义文件，待分析的应用需由用户自备。README 称 FlowDroid 支持 Windows、macOS 和 Linux，并提醒分析大型应用可能耗时很长；可通过选项跳过静态字段流或异常流，数据流、回调收集和结果收集三个阶段的超时可叠加设置，超时后返回部分结果。",
+      "构建需要 Maven、JDK 和最新的 Soot 快照版本；README 要求 JDK 11 及以上，但所审阅的 pom.xml 以 Java 17 为编译目标，并依赖 Soot 4.8.0-SNAPSHOT。README 称完整测试套件约需 30 分钟，另外还需要 JDK 8 及其 rt.jar、ANDROID_JARS 环境变量，以及 DroidBench 子模块（一个单独的基准测试应用仓库）。",
+      "仓库提交了 25 个 APK 作为测试输入：soot-infoflow-android/testAPKs 和 soot-infoflow-integration/testAPKs 下以所测场景命名的测试应用（如 SourceToSink1.apk、ThreadRunnable.apk），故意留有漏洞的 InsecureBank.apk，以及一个以哈希值命名、清单显示属于其他开发者应用（com.RZStudio.cube）的 APK。soot-infoflow-android/lib 中包含 JUnit、Hamcrest 和 protobuf-java 的 JAR 文件。",
+      "采用 LGPL-2.1 许可；README 说明修改后的版本必须同样以 LGPL 公开。分析结果取决于配置以及所选的源点和汇点。本条目未分析任何应用，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
