@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 515](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-515-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 218](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 139](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-139-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 515](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-515-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 218](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 140](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-515 项精选资源（218 个案例）· 139 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 512。
+515 项精选资源（218 个案例）· 140 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 512。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (139) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (38)
+- [论文](#papers) (140) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (38)
 
 **更多浏览方式**
 
@@ -663,13 +663,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**139 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**140 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (10) · [反编译](#papers-decompilation) (59) · [网站](#papers-website-reconstruction) (23)
+- [智能体评测](#papers-agent-evaluation) (10) · [反编译](#papers-decompilation) (60) · [网站](#papers-website-reconstruction) (23)
 - [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (13) · [固件](#papers-firmware-analysis) (13)
 - [协议](#papers-protocol-analysis) (13)
 
@@ -713,6 +713,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**解耦的必要性：面向优化与混淆、无需识别具体变换的反编译代码恢复**](https://arxiv.org/abs/2608.27889) - ReSource 针对受编译优化与混淆影响的反编译函数进行修复：先从语义失真数据库检索指导信息，再预测控制流骨架，最后调整名称与格式。 <sub>原题：*Decoupling is a Necessity: Transformation-Agnostic Decompiled Code Recovery under Optimization and Obfuscation* · arXiv 2026 · 预印本 · Zhiping Zhou 等 · [PDF](https://arxiv.org/pdf/2608.27889v1) · [完整条目](https://awesomerea.org/zh/papers/paper-resource/)</sub>
 - [**STILL：为 LLM 辅助 C++ 反编译恢复编译后隐藏的 STL 语义**](https://arxiv.org/abs/2608.26408) - STILL 从去符号控制流图预测函数级 STL 容器的存在情况，并将预测转成紧凑提示，供 LLM 改进 Ghidra 输出。 <sub>原题：*STILL: Recovering Lowered STL Semantics for LLM-assisted C++ Decompilation* · arXiv 2026 · 预印本 · Xiaohan Wang 等 · [PDF](https://arxiv.org/pdf/2608.26408v1) · [完整条目](https://awesomerea.org/zh/papers/paper-still-stl/)</sub>
 - [**现代二进制反编译的演进：分类体系、文献回顾与未来展望**](https://arxiv.org/abs/2608.24955) - 该综述梳理传统、动态、匹配及神经反编译方法，并组织类型恢复、控制流重构、命名和改进等任务及其评估指标、基准选择。 <sub>原题：*The Evolution of Binary Decompilation in the Modern Era: A Taxonomy, Literature Review, and Future Perspectives* · arXiv 2026 · 预印本 · Omar Abusabha 等 · [PDF](https://arxiv.org/pdf/2608.24955v1) · [完整条目](https://awesomerea.org/zh/papers/paper-evolution-binary-decompilation/)</sub>
+- [**有本事就骗过我：二进制代码相似性检测模型对语义保持变换的鲁棒性研究**](https://dl.acm.org/doi/10.1145/3797116) - 论文构建 asmFooler，用于检验基于学习的二进制代码相似性检测（BCSD）模型在语义保持的改动后能否继续匹配函数。 <sub>原题：*Fool Me If You Can: On the Robustness of Binary Code Similarity Detection Models against Semantics-Preserving Transformations* · Proceedings of the ACM on Software Engineering (FSE 2026) · 期刊论文 · Jiyong Uhm 等 · [PDF](https://arxiv.org/pdf/2602.12681v1) · [完整条目](https://awesomerea.org/zh/papers/paper-asmfooler/)</sub>
 - [**MirrorCode：仅凭行为重建完整程序的评测**](https://arxiv.org/abs/2606.30182) - 利用仅可执行的参考程序、文档及可见样例，评测 25 个命令行程序的重新实现；在独立评分环境中对可见及留出端到端测试进行精确输出比较。 <sub>原题：*MirrorCode: AI can rebuild entire programs from behavior alone* · arXiv 2026 · 预印本 · Tom Adamczewski 等 · [PDF](https://arxiv.org/pdf/2606.30182v2) · [代码](https://github.com/epoch-research/MirrorCode) · [完整条目](https://awesomerea.org/zh/papers/paper-mirrorcode/)</sub>
 - [**SoK：人工智能增强的二进制逆向工程**](https://arxiv.org/abs/2606.17398) - 一篇系统化知识综述，梳理机器学习、大语言模型与智能体方法在二进制逆向中的应用。 <sub>原题：*SoK: AI-Augmented Binary Reversing* · arXiv 2026 · 预印本 · Yujeong Kwon 等 · [PDF](https://arxiv.org/pdf/2606.17398v2) · [完整条目](https://awesomerea.org/zh/papers/paper-sok-ai-binary-reversing/)</sub>
 - [**基于反馈驱动多轮修正的二进制反编译大语言模型**](https://arxiv.org/abs/2606.16162) - AutoDecompiler 训练函数级反编译模型，利用编译、执行及 I/O 反馈修正汇编或伪代码输入产生的输出。 <sub>原题：*Binary Decompilation LLM with Feedback-Driven Multi-Turn Refinement* · arXiv 2026 · 预印本 · Peipei Liu 等 · [PDF](https://arxiv.org/pdf/2606.16162v2) · [代码](https://zenodo.org/records/23120286) · [完整条目](https://awesomerea.org/zh/papers/paper-autodecompiler/)</sub>

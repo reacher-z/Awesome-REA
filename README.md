@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 515](https://img.shields.io/badge/resources-515-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 218](https://img.shields.io/badge/cases-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 139](https://img.shields.io/badge/papers-139-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 515](https://img.shields.io/badge/resources-515-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 218](https://img.shields.io/badge/cases-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 140](https://img.shields.io/badge/papers-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-515 curated resources (218 cases) · 139 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 512 because 3 of these appear only under Papers.
+515 curated resources (218 cases) · 140 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 512 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (139) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (38)
+- [Papers](#papers) (140) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (38)
 
 **More ways to browse**
 
@@ -662,13 +662,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**139 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**140 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (10) · [Decompilation](#papers-decompilation) (59) · [Websites](#papers-website-reconstruction) (23)
+- [Agent evaluation](#papers-agent-evaluation) (10) · [Decompilation](#papers-decompilation) (60) · [Websites](#papers-website-reconstruction) (23)
 - [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (13) · [Firmware](#papers-firmware-analysis) (13)
 - [Protocols](#papers-protocol-analysis) (13)
 
@@ -712,6 +712,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Decoupling is a Necessity: Transformation-Agnostic Decompiled Code Recovery under Optimization and Obfuscation**](https://arxiv.org/abs/2608.27889) - ReSource refines decompiled functions affected by compiler optimization and obfuscation. <sub>arXiv 2026 · Preprint · Zhiping Zhou et al. · [PDF](https://arxiv.org/pdf/2608.27889v1) · [Full entry](https://awesomerea.org/papers/paper-resource/)</sub>
 - [**STILL: Recovering Lowered STL Semantics for LLM-assisted C++ Decompilation**](https://arxiv.org/abs/2608.26408) - STILL predicts function-level STL container presence from stripped control-flow graphs and turns those predictions into compact hints for LLM refinement of Ghidra output. <sub>arXiv 2026 · Preprint · Xiaohan Wang et al. · [PDF](https://arxiv.org/pdf/2608.26408v1) · [Full entry](https://awesomerea.org/papers/paper-still-stl/)</sub>
 - [**The Evolution of Binary Decompilation in the Modern Era: A Taxonomy, Literature Review, and Future Perspectives**](https://arxiv.org/abs/2608.24955) - This survey maps traditional, dynamic, matching and neural decompilation approaches, then organizes type recovery, control-flow restructuring, naming and refinement tasks alongside evaluation metrics and benchmark choices. <sub>arXiv 2026 · Preprint · Omar Abusabha et al. · [PDF](https://arxiv.org/pdf/2608.24955v1) · [Full entry](https://awesomerea.org/papers/paper-evolution-binary-decompilation/)</sub>
+- [**Fool Me If You Can: On the Robustness of Binary Code Similarity Detection Models against Semantics-Preserving Transformations**](https://dl.acm.org/doi/10.1145/3797116) - The paper builds asmFooler to test whether learned binary code similarity detection (BCSD) models keep matching functions after semantics-preserving changes. <sub>Proceedings of the ACM on Software Engineering (FSE 2026) · Journal article · Jiyong Uhm et al. · [PDF](https://arxiv.org/pdf/2602.12681v1) · [Full entry](https://awesomerea.org/papers/paper-asmfooler/)</sub>
 - [**MirrorCode: AI can rebuild entire programs from behavior alone**](https://arxiv.org/abs/2606.30182) - Tests reimplementation of 25 command-line programs using execute-only reference access, documentation and visible examples. <sub>arXiv 2026 · Preprint · Tom Adamczewski et al. · [PDF](https://arxiv.org/pdf/2606.30182v2) · [Code](https://github.com/epoch-research/MirrorCode) · [Full entry](https://awesomerea.org/papers/paper-mirrorcode/)</sub>
 - [**SoK: AI-Augmented Binary Reversing**](https://arxiv.org/abs/2606.17398) - A systematization-of-knowledge survey of machine-learning, LLM and agentic approaches to binary reversing. <sub>arXiv 2026 · Preprint · Yujeong Kwon et al. · [PDF](https://arxiv.org/pdf/2606.17398v2) · [Full entry](https://awesomerea.org/papers/paper-sok-ai-binary-reversing/)</sub>
 - [**Binary Decompilation LLM with Feedback-Driven Multi-Turn Refinement**](https://arxiv.org/abs/2606.16162) - AutoDecompiler trains function-level decompilation models to revise assembly- or pseudocode-derived outputs using compilation, execution and I/O feedback. <sub>arXiv 2026 · Preprint · Peipei Liu et al. · [PDF](https://arxiv.org/pdf/2606.16162v2) · [Code](https://zenodo.org/records/23120286) · [Full entry](https://awesomerea.org/papers/paper-autodecompiler/)</sub>
