@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "sigdigger": {
+    "name": "SigDigger 数字信号分析器",
+    "requirements": [
+      "审阅对象为 master 分支提交 70f688b（2026-02-11）；README 说明 SigDigger、SuWidgets、Suscan 和 Sigutils 都把最新可用的改动保存在 master 分支。最近的稳定版为 v0.3.0（2022-07-05，提供 x86-64 Linux AppImage 和 macOS DMG）；标签为 latest 的滚动预发布版于 2025-04-08 重新构建，提供 0.3.0 版 Linux AppImage 和 Windows 压缩包。仓库附带的用户手册为 0.3.0 版，日期为 2022-06-27，并自称仍是草稿。",
+      "README 面向 GNU/Linux 和 macOS：Linux 用户可直接运行 AppImage（手册要求 glibc 2.27 或更新版本），macOS DMG 按需制作；README 称目前无法以可复现的方式制作包含全部 DLL 依赖的 Windows 构建，Windows 用户需自行从源码构建。从源码构建须依次安装 Sigutils 和 Suscan（CMake），再构建 SuWidgets 和 SigDigger（qmake，需 Qt 5.9+ 或 Qt 6）；SigDigger.pro 还通过 pkg-config 链接 FFTW。README 另外提供作者的 blsd 脚本，可在本地目录中完成全部构建。",
+      "实时分析需要 SoapySDR 支持的 SDR 接收设备；没有设备时，可从 WAV 或原始复数浮点 I/Q 文件载入录制的射频/中频数据。仓库没有提交任何信号录制文件。AmateurDSN、APTPlugin、AntSDRPlugin 和 ZeroMQPlugin 等插件位于单独的仓库。",
+      "采用 LGPL-3.0（LICENSE）；README 说明其频谱控件是经过修改的 Gqrx 绘图控件。手册指出符号判决需由人工引导，因此恢复出的符号及其协议含义仍需分析人员自行判断。本次审阅未运行任何程序，也未接收任何信号。"
+    ]
   }
 }
