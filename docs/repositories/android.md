@@ -114,7 +114,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Dr-hydra/Better-Endfield](https://github.com/Dr-hydra/Better-Endfield) — Modular Windows/Android toolkit for Arknights: Endfield: BEM model mods and creator tools, native plug-ins, MMD playback, camera/UI controls, character voices, title-screen customization, and PC combat/gacha tools. **[259 stars]**
 - [ViRb3/apk-utilities](https://github.com/ViRb3/apk-utilities) — 🛠 Tools and scripts to manipulate Android APKs **[252 stars]**
 - [Octowolve/Hooking-Template-With-Mod-Menu](https://github.com/Octowolve/Hooking-Template-With-Mod-Menu) — A small template for Android Hooking with Substrate (Or Dobby. See branches). (Includes a mod menu written in Java) **[249 stars]**
-- [adityatelange/frida-ui](https://github.com/adityatelange/frida-ui) — Interact with Frida devices, processes, and scripts directly from your browser. **[245 stars]**
+- [adityatelange/frida-ui](https://github.com/adityatelange/frida-ui) — Interact with Frida devices, processes, and scripts directly from your browser. **[245 stars]** · Curated: [Frida UI](https://awesomerea.org/resources/frida-ui/)
 - [Eltion/Facebook-SSL-Pinning-Bypass](https://github.com/Eltion/Facebook-SSL-Pinning-Bypass) — Bypass Facebook SSL pinning on Android devices. **[233 stars]**
 - [mpast/mobileAudit](https://github.com/mpast/mobileAudit) — Django application that performs SAST and Malware Analysis for Android APKs **[229 stars]**
 - [Mrack/TInjector\_Symbi](https://github.com/Mrack/TInjector_Symbi) — More reliably hijacks Zygote to inject shared libraries before an app starts. **[224 stars]**
