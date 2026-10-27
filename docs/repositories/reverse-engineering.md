@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**670 repositories** · 2026-10-20 UTC
+**669 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -188,7 +188,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [mrphrazer/r2con2021\_deobfuscation](https://github.com/mrphrazer/r2con2021_deobfuscation) — Workshop Material on VM-based Deobfuscation **[201 stars]**
 - [OpenGMK/GM8Decompiler](https://github.com/OpenGMK/GM8Decompiler) — A decompiler for GameMaker 8.x executables **[201 stars]**
 - [monkbai/DNN-decompiler](https://github.com/monkbai/DNN-decompiler) — BTD - Bin To DNN: A DNN Executables Decompiler **[199 stars]**
-- [DenuvoSoftwareSolutions/SiMBA](https://github.com/DenuvoSoftwareSolutions/SiMBA) — Efficient Deobfuscation of Linear Mixed Boolean-Arithmetic Expressions **[197 stars]**
 - [YuAo/MetalLibraryArchive](https://github.com/YuAo/MetalLibraryArchive) — Extract Metal functions from .metallib files. **[193 stars]**
 - [CMUSTRUDEL/DIRTY](https://github.com/CMUSTRUDEL/DIRTY) — DIRTY: Augmenting Decompiler Output with Learned Variable Names and Types **[191 stars]** · Paper: [Augmenting Decompiler Output with Learned Variable Names and Types](https://awesomerea.org/papers/paper-dirty/)
 - [i-soxi/even-g2-protocol](https://github.com/i-soxi/even-g2-protocol) — Let's reverse engineer the EvenRealities G2s! By reverse engineering the BLE protocol, developers can understand how to call G2 services, unleashing the true potential of the G2 smart glasses in a true open-source environment. **[190 stars]**

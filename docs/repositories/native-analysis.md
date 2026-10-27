@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**851 repositories** · 2026-10-20 UTC
+**852 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -272,6 +272,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [WPeace-HcH/SysNR-FuncFinder](https://github.com/WPeace-HcH/SysNR-FuncFinder) — A plugin for IDA that renames functions by system call numbers. **[208 stars]**
 - [biniamf/ai-reverse-engineering](https://github.com/biniamf/ai-reverse-engineering) — AI-Assisted Reverse Engineering with Ghidra **[206 stars]**
 - [buggerlogger/arkose-solver](https://github.com/buggerlogger/arkose-solver) — Arkose Labs / FunCaptcha solver for Go, Python and Node — produces sup=1 suppressed tokens. The site RSA key is derived from api.js on every solve: no capture, no replay, no headless browser. Includes a full VM disassembly. **[202 stars]**
+- [DenuvoSoftwareSolutions/SiMBA](https://github.com/DenuvoSoftwareSolutions/SiMBA) — Efficient Deobfuscation of Linear Mixed Boolean-Arithmetic Expressions **[197 stars]** · Curated: [SiMBA](https://awesomerea.org/resources/simba-mba-simplifier/)
 - [RevEngAI/plugin-ghidra](https://github.com/RevEngAI/plugin-ghidra) — RevEng.AI Ghidra Plugin **[195 stars]** · Curated: [RevEng.AI Ghidra Plugin](https://awesomerea.org/resources/revengai-ghidra/)
 - [cdlewis/snowboardkids2-decomp](https://github.com/cdlewis/snowboardkids2-decomp) — Decompilation of snowboard kids 2 (N64) **[193 stars]** · Curated: [Snowboard Kids 2: an LLM-assisted N64 matching decompilation](https://awesomerea.org/resources/snowboardkids2-decomp-case/)
 - [lifting-bits/sleigh](https://github.com/lifting-bits/sleigh) — Unofficial CMake build for Ghidra's C++ SLEIGH code **[193 stars]**
