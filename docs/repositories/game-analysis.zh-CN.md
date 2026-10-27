@@ -151,7 +151,7 @@
 - [djkaty/Il2CppProtoExtractor-FallGuys](https://github.com/djkaty/Il2CppProtoExtractor-FallGuys) — 针对 Fall Guys: Ultimate Knockout 的 IL2CPP protobuf-net 逆向工程教程 **[47 星标]**
 - [mmzret/rmz3](https://github.com/mmzret/rmz3) — 开发中：《Megaman Zero 3》日版反编译项目 **[45 星标]**
 - [PicoShot/UnityInspectorStandalone](https://github.com/PicoShot/UnityInspectorStandalone) — Unity 游戏的 Mono/IL2CPP 运行时检查器 **[44 星标]**
-- [celophi/lom-decomp](https://github.com/celophi/lom-decomp) — Legend of Mana / 聖剣伝説 LEGEND OF MANA（PS1）的匹配反编译，面向 NTSC-U / NTSC-J。 **[43 星标]**
+- [celophi/lom-decomp](https://github.com/celophi/lom-decomp) — Legend of Mana / 聖剣伝説 LEGEND OF MANA（PS1）的匹配反编译，面向 NTSC-U / NTSC-J。 **[43 星标]** · 精选：[圣剑传说：玛娜传说：PlayStation 游戏的匹配反编译](https://awesomerea.org/zh/resources/legend-of-mana-decomp-case/)
 - [Raikaru/Persona4-Decompilation](https://github.com/Raikaru/Persona4-Decompilation) — PlayStation 2 版 Shin Megami Tensei: Persona 4 的匹配反编译。 **[43 星标]**
 - [svespalec/faultline](https://github.com/svespalec/faultline) — 通过监测工作集缺页事件检测用户态线程劫持。 **[43 星标]**
 - [Azukee/Macaron](https://github.com/Azukee/Macaron) — 面向多种游戏归档格式的轻量解包工具。 **[42 星标]**

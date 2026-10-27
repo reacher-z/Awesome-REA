@@ -4452,5 +4452,213 @@
       "不包含任何游戏内容。发布包面向已经自备 Xbox 360 副本的用户。本合集没有构建或运行发布包。",
       "项目采用 GPL-3.0。Xbox 360 游戏不在该许可内。"
     ]
+  },
+  "blind-walleye-static-case": {
+    "name": "The Blind Walleye：营销网站的静态重建",
+    "requirements": [
+      "审阅提交为 4852d2c9。README 称这是 https://www.theblindwalleye.com 的 1:1 复制，用 Next.js 静态渲染。source/ 保存抓取。应用预渲染 /、/menu 和 /events，并渲染抓到的 404。",
+      "node scripts/compare-visual.mjs 在宽 1440、991 和 390 像素下对抓取源和复刻页截图。脚本默认 MAX_DIFF_PCT 为 0.5。本条没有运行对比，也不声称它目前能通过。",
+      "该提交没有 LICENSE 文件。本条不写许可。本条没有把抓取到的图像放进目录。"
+    ]
+  },
+  "ethercalc-spreadsheet-case": {
+    "name": "EtherCalc：浏览器中的协作电子表格",
+    "requirements": [
+      "审阅提交为 c1a3733a。README 把 EtherCalc 描述为实时协作的网页电子表格，并写明当前分支是 TypeScript 重写，用 docker compose up 自托管，不需要 Cloudflare 账号。",
+      "packages/oracle-harness 的夹具带有 MINIMAL_SCSAVE，这是一张 SocialCalc 存档，单元格为 cell:A1:t:oracle。录制的 CSV 导出正文是 oracle 再加一个换行的字节。录制的 A1 单元格 JSON 中 datavalue 和 displaystring 都是 oracle。",
+      "LICENSE.txt 写明 SocialCalc 时期的代码及其附带依赖由 Common Public Attribution License 和 Artistic License 2.0 覆盖，并有按文件的例外；TypeScript 重写的依赖各自声明许可。本条没有运行 oracle。"
+    ]
+  },
+  "openpencil-design-editor-case": {
+    "name": "OpenPencil：能打开 Figma 文件的浏览器设计编辑器",
+    "requirements": [
+      "审阅提交为 97bb94b2。README 把浏览器编辑器链到 https://app.openpencil.dev/demo，并写明项目能打开和写回原生 Figma 文件。它还描述了一个大约 15 MB 的 Tauri 桌面应用。playwright.config.ts 里的 Playwright 基础端口默认为 1420。",
+      "tests/e2e/canvas/text/path-visual.spec.ts 打开 tests/fixtures/circle-text.fig，选中名为 ArnoCoenen.art 的节点，并期望画布区域截图与 text-path-rendering-and-selection.png 一致。同一配置把 maxDiffPixelRatio 设为 0.01，threshold 设为 0.3。该快照不能说明与 Figma 完全一致。本条没有运行 Playwright。",
+      "LICENSE 是 MIT 许可。Figma 样例在仓库中。本条没有嵌入快照图片。"
+    ]
+  },
+  "oxi-webmail-case": {
+    "name": "oxi：用来替代 Roundcube 的网页邮箱",
+    "requirements": [
+      "审阅提交为 013534df。README 称 oxi 是 Roundcube 的功能完整替代，连接任何已有的 IMAP 和 SMTP 服务器，并且是网页邮箱界面而不是邮件平台。Docker 快速开始在 3001 端口提供客户端。",
+      "frontend/src/lib/__tests__/mail-routing.test.ts 期望：列表里既有名为 Junk 的文件夹，又有带 \\Junk 属性、名为 Unwanted 的文件夹时，findJunkFolder 返回 Unwanted。INBOX 和 Spam 返回 Spam。只有 INBOX 时返回 undefined。本条没有登录邮箱服务器。",
+      "该提交没有 LICENSE 文件。README 徽章指向 LICENSE，但该路径不存在。本条不写许可。"
+    ]
+  },
+  "loremaps-atlas-case": {
+    "name": "LoreMaps：幻想地图图集的静态重写",
+    "requirements": [
+      "审阅提交为 659dc5b7。README 称这是从 aspnet-mvc-live 分支上原来的 ASP.NET MVC 站点从零重写的静态 Astro 站点。Leaflet 1.9 被写明为唯一的运行时依赖。npm run build 把静态输出写到 dist/。本条没有运行该构建。",
+      "src/maps/faerun.ts 把 tilesUrl 设为 https://loremaps.github.io/LoreMaps-Faerun-Tiles/Tiles，宽度 4763，metersPerPixel 为 1287.473。其署名指向 Pocket Plane Group，没有写许可。src/maps/got.ts 把 tilesUrl 设为 https://loremaps.github.io/LoreMaps-GoT-Tiles/Tiles，图像为 4642 乘 4642，metersPerPixel 为 2266.681。该地图数据署名指向 serMountainGoat 和 CC-BY-NC-SA。这些是地图数据的署名，不是客户端仓库的许可。",
+      "该提交没有 LICENSE 文件。本条不为客户端仓库写许可。本条不链接瓦片图片。"
+    ]
+  },
+  "openevv-viavoice-case": {
+    "name": "OpenEVV：把 IBM Embedded ViaVoice 重建为可移植 C",
+    "requirements": [
+      "审阅提交为 d2bc0c68。README 称音频曾与 IBM 二进制逐字节一致，覆盖 SDK 附带的全部九种语言的每一个测试用例，并且 32 位和 64 位构建都是如此。它写明引擎现在被有意修改，因此维持的检查是 979 个用例各自一条已记录的答案。make 构建引擎。./build/openevv-say 朗读字符串。本条没有构建。",
+      "docs/testing.md 称 test/matrix.sh 是门禁，用十二种语言共 1,291 个用例对照先前记录的答案。它称 test/suite.sh 是对照 IBM 引擎的 oracle，并且需要 Wine 和 SDK。这两个数字分别是这两份文档所写的，本条不把它们当成同一个数。",
+      "LICENSE 是 MIT 许可，覆盖项目自己的引擎、两个前端、工具、测试和文档。README 称 lang/ 下的语言数据转录自 IBM 的对象，不在该 MIT 许可内。src 里还有两个被点名为 IBM 数据的表文件。"
+    ]
+  },
+  "glabios-rom-bios-case": {
+    "name": "GLaBIOS：面向 PC 和 XT 的从零编写的 ROM BIOS",
+    "requirements": [
+      "审阅提交为 b98b0fe，即 v0.4.2 标签。README 称 GLaBIOS 是从零编写的开源替代 BIOS，并且能放进 8K ROM。该提交上的 README 开头同时还列出了 Version 0.8b 预览。这不是某份厂商 BIOS 的逐字节副本。",
+      "src/MAKE.BAT 依次运行 MASM GLABIOS、LINK GLABIOS，再用 GLA2ROM 写出 GLABIOS.ROM。src/gla2rom/README.md 称该命令生成 8KiB 的 ROM 镜像。本条没有汇编这份 ROM，也没有核对发布文件的校验和。",
+      "LICENSE 是 GNU GPL 第 3 版。README 也把项目标为 GPLv3。"
+    ]
+  },
+  "hypercard-122-recomp-case": {
+    "name": "HyperCard 1.2.2：经典 Mac 应用的静态重编译",
+    "requirements": [
+      "审阅提交为 708adac7。README 的覆盖表把 HyperCard 1.2.2 列为 326 KB、22 个 CODE 段、418 个不同陷阱、3166 个调用点，站点覆盖 83%。后文又写全部 21 个 CODE 段以 97% 到 100% 的指令覆盖被提升。两个数字都是该 README 所写。它还写明 SANE 以及标题自己的 XCMD 和 XFCN 代码仍是桩。",
+      "tools/corpus.json 把文件命名为 HyperCard，并记录 sites_covered 2642、sites_total 3166。tools/conformance.py 会在覆盖站点低于该基线时失败。README 称语料镜像是受版权保护的 Mac 介质，放在仓库之外，因此缺少的标题报告 SKIP。README 描述了一帧 512 乘 342 的《The Electronic Whole Earth Catalog》卡片。本条没有运行一致性检查，也不链接该图像。",
+      "LICENSE 是 MIT 许可。README 称工具包不附带 Apple ROM、系统软件或受版权保护的光盘数据。光盘不在仓库中。"
+    ]
+  },
+  "openrsync-protocol-case": {
+    "name": "openrsync：rsync 协议 27 的 ISC 实现",
+    "requirements": [
+      "审阅提交为 8235c68f。README 称 openrsync 是带 BSD（ISC）许可的 rsync 实现，兼容 rsync 3.1.3 以及任何支持协议 27 的对端。rsync.5 称该工具兼容参考实现的第 27 版。",
+      "regress/functional/test00_simple.test 建立 dir1/one.txt 和 dir2 下的期望树，用 openrsync -a 把 dir1 同步到 dir3，再对 dir2 和 dir3 调用 compare_trees。compare_trees 对比文件清单、目录清单，再用 diff -ru 对比文件内容。README 称 make regress_functional 运行这些功能场景，并且这些测试也会对上游 rsync 运行。本条没有运行它们。",
+      "LICENSE.md 是 ISC 许可授予。GPL 许可的参考 rsync 是另一个程序。"
+    ]
+  },
+  "wmbusmeters-protocol-case": {
+    "name": "wmbusmeters：读取有线 M-Bus 和无线 wM-Bus",
+    "requirements": [
+      "审阅提交为 21851e71。README 称程序从有线 m-bus 或无线 wm-bus 表计取得读数。它的示例把电报 1844AE4C4455223368077A55000000_041389E20100023B0000 解成 123.529 立方米的用水量。",
+      "simulations/simulation_t1.txt 包含这条未加密的 iPerl 电报，以及 WaterWater、id 33225544、driver iperl、total_m3 123.529 的期望 JSON 行。期望的 fields 行是 WaterWater;33225544;123.529;0;1111-11-11 11:11.11。tests/test_t1_meters.sh 对该仿真运行 wmbusmeters --format=json 和 --format=fields 并 diff 输出。本条没有运行测试。",
+      "LICENSE 是 GNU GPL 第 3 版。"
+    ]
+  },
+  "open-oscar-server-case": {
+    "name": "Open OSCAR Server：可自托管的 AIM 和 ICQ 服务器",
+    "requirements": [
+      "审阅提交为 d63dfb8d。README 描述了一个面向经典 AIM 和 ICQ 客户端的独立开源即时通讯服务器，并写明与 AOL 或 Yahoo 无关。支持功能里列出了 TOC1 和 TOC2 客户端。",
+      "docs/TOC.md 第 10.1 节给出一次 TOC 1 会话：TCP 连接到 9898 端口，发送 FLAPON，以 toctest1 登录，然后服务器回复 SIGN_ON:TOC1.0、一条点名好友 toctest2 的 CONFIG，以及 NICK:toctest1。toc_init_done 之后文档中的回复是 UPDATE_BUDDY:toctest2:T:0:1711036800:0: O。客户端随后向 toctest2 发送文本为 Hello! 的 toc_send_im。",
+      "server/toc/cmd_server_test.go 的 send IM 用例期望 TOC 行 IM_IN:them:F:hello world!。LICENSE 是 MIT 许可。本条没有运行服务器。这不是去连接 AOL 的请求。"
+    ]
+  },
+  "thermal-master-p3-protocol-case": {
+    "name": "Thermal Master P3：厂商 USB 协议的浏览器客户端",
+    "requirements": [
+      "审阅提交为 39024dd1。README 称命令是厂商控制传输上的 18 字节。Linux 说明点名 USB ID 3474:45a2。P3 画面为 256 乘 192。README 称查看器对照 P3 开发，P1 尚未测试。",
+      "tests/test_webusb.mjs 保存了抓到的命令，其中包括等于 0101810001000000000000001e0000004f90 的 read_name。若 VID 不是 0x3474、crc16 不是 0x31c3，或状态缓冲不能解析为日志行 [346871] I/ffc_svc: ffc b update done，测试就会失败。本条没有运行测试，也没有连接相机。",
+      "LICENSE 是 Apache License 2.0。项目写明与 Thermal Master 无关。"
+    ]
+  },
+  "idescriptor-companion-case": {
+    "name": "iDescriptor：已连接 iPhone 或 iPad 的桌面配套应用",
+    "requirements": [
+      "审阅提交为 51251811。README 描述了一个用 Rust 和 Qt 编写、面向 Windows、macOS 和 Linux 的隐私优先 iDevice 管理工具。",
+      "功能表把 USB 连接标为已实现，并在 Windows、macOS 和 Linux 上完全支持。电池信息标为已实现，即从设备读取详细电池信息。设备备份标为已实现且为实验功能，适用于 iOS 13-26，备份一节写明包含相册和设置。相册也标为已实现。本条没有连接设备。",
+      "LICENSE 是 GNU Affero General Public License 第 3 版。本条不链接 README 中的截图。"
+    ]
+  },
+  "viaduct-netnewswire-case": {
+    "name": "Viaduct：NetNewsWire RSS 阅读器的 Linux 移植",
+    "requirements": [
+      "审阅提交为 a0622903。README 称 Viaduct 是用 Rust 和 GTK4 对 NetNewsWire 做的 Linux 移植，并且架构选择追溯到那个程序。功能表里的远程账户是本地 OPML 和 Inoreader。.gitignore 包含 .netnewswire/，因此该对照树不在公开 Git 树中。",
+      "README 记录了 cargo build --release，二进制位于 target/release/viaduct，以及用于系统安装的 Meson 设置。.github/workflows/ci.yml 运行 cargo clippy --workspace --all-targets 和 xvfb-run -a cargo test --workspace。本条没有构建或运行这些测试。",
+      "LICENSE 是 MIT 许可，版权行包括 Brent Simmons、Ranchero Software 和 Brandon LaRocque。"
+    ]
+  },
+  "zalo-linux-desktop-case": {
+    "name": "zalo-linux：Zalo 桌面应用的 Linux 软件包",
+    "requirements": [
+      "审阅提交为 63b72931。README 称 npm run setup 下载 macOS DMG、解出程序包并构建原生模块，npm run build 生成 dist/Zalo-<version>.deb。解出的 app 目录被 gitignore。项目写明不隶属于 VNG，也未获其认可。",
+      "scripts/_smoke-boot.sh 把无界面启动后的 SMOKE_OK 状态视为成功。本条没有下载安装包、构建软件包或运行该脚本。",
+      "LICENSE 是 MIT 许可，并写明授权只覆盖构建工具。Zalo 应用程序包归 VNG 专有，不在仓库中。"
+    ]
+  },
+  "tc66-meter-firmware-case": {
+    "name": "TC66 定制固件：RuiDeng USB-C 功率计的 Rust 替代固件",
+    "requirements": [
+      "审阅提交为 65accb42。README 称带 GD32F150G8 MCU 的 TC66C 已经测试，TC66 使用相同的板型且尚未测试。它点名了原厂 USB 串口命令 getva、gtrec 和 rotat。",
+      "rust/Makefile 称 make release 写出 tc66fw-release.enc.bin，这是给原厂引导程序的 AES 加密镜像。tools/tc66flash.py 把 sha256 ef796b29557c91e0a469740ba1934ca0a838916c76ab55eb6d1253da32830940 对应到原厂 V1.18，并点名 USB ID 0x28E9:0x018A。原厂镜像不在仓库中。本条没有构建或刷写功率计。",
+      "LICENSE 是 MIT 许可。"
+    ]
+  },
+  "freshtomato-ac3200-firmware-case": {
+    "name": "FreshTomato ARM：华硕 RT-AC3200 的替代固件",
+    "requirements": [
+      "审阅提交为 0d73d9d9。README 在支持的路由器中列出华硕 AC3200。它的 SDK 7 示例在 arm-master 上，从 release/src-rt-7.x.main/src 运行 make ac3200-128z，为 RT-AC3200 构建 AIO 镜像。",
+      "release/src-rt-7.x.main/src/help.mak 把 ac3200-128z 描述为 RT-AC3200 build AIO - 128K NVRAM。README 警告刷写替代固件可能永久损坏路由器。本条没有编译镜像或刷写硬件。",
+      "LICENSE.md 是 GNU GPL 第 3 版。"
+    ]
+  },
+  "uv-k5-firmware-case": {
+    "name": "UV-K5：泉盛固件 v2.1.27 的开源重实现",
+    "requirements": [
+      "审阅提交为 6f8afac8。该仓库已归档。README 把项目称为泉盛 UV K5 v2.1.27 固件的开源重实现，并写明这个分支不在该固件之上添加定制。它推荐 arm-none-eabi GCC 10.3.1。",
+      "取回子模块之后，文档中的构建命令是 make。README 称官方更新器使用 firmware.packed.bin，k5prog 使用 firmware.bin。Makefile 以 cortex-m0 编译，并用 fw-pack.py 打包镜像。version.c 把 Version 设为 OEFW- 加上 git 哈希。本条没有编译或刷写电台，也不声称与厂商镜像逐字节一致。",
+      "README 写明 Apache License 2.0。"
+    ]
+  },
+  "gow-psp-recomp-case": {
+    "name": "PSP 战神：奥林匹斯之链与斯巴达之魂的静态重编译",
+    "requirements": [
+      "审阅提交为 ef886b03。README 称游戏从用户自备的美版光盘镜像在 Windows 上原生运行，产品代码为 UCUS98653 和 UCUS98737。它把这描述为静态重编译：光盘上的 Allegrex 代码被翻译并链接进 Windows 程序，播放时不在模拟器里运行。Linux 被写为计划中。",
+      "状态一节称之为预览 v1.2.0，并写明两部游戏都还没有完整通关。docs/phase11-level-tour.md 报告对《奥林匹斯之链》中游戏会到达的 75 个区域做了自动巡游，其中 70 个是剧情、5 个是挑战，并且标题为 The Falls of Oceanum 的存档被重新读出。本条没有构建启动器，也没有游玩。",
+      "LICENSE 是 GNU GPL 第 3 版。游戏光盘不在仓库中。"
+    ]
+  },
+  "destruction-derby-64-decomp-case": {
+    "name": "Destruction Derby 64：美版 ROM 的匹配反编译",
+    "requirements": [
+      "审阅提交为 4820d11b。README 称构建者把《Destruction Derby 64》（USA）放到 baserom.z64，SHA-1 为 a2c0799e13566d1b723299592cfcac9387f25fa7，并且 ROM 不在仓库中。它称匹配的构建会打印 build/dd64.z64: OK，并且 1548 个函数中的 1510 个（按代码大小计 99%）是 C，其余 38 个保留为原程序里本来就是汇编的汇编。",
+      "Makefile 的默认目标是 check，它对 dd64.sha1 运行 sha1sum -c。该文件期望 build/dd64.z64 与点名的 ROM 具有相同的 SHA-1。本条没有运行构建。",
+      "README 把仓库描述为作者未审阅代码的无人值守智能体实验。该树没有 LICENSE 文件。本条不写许可。"
+    ]
+  },
+  "legend-of-mana-decomp-case": {
+    "name": "圣剑传说：玛娜传说：PlayStation 游戏的匹配反编译",
+    "requirements": [
+      "审阅提交为 c34db980。README 称北美版和日版都已 100% 匹配。北美光盘为 SLUS-01013，主程序 SLUS_010.13，SHA-1 为 d11dfdd50d412ac3fa3e2eb80fbde138da118f27。日版为 SLPS-02170，主程序 SLPS_021.70，SHA-1 为 b067188a92e4de9a4db7bb7e5343c757e9884bfa。光盘文件被 gitignore。",
+      "make verify-bins 检查北美模块，make verify-bins VERSION=jp 检查日版模块。README 称主程序和全部 17 个覆盖模块都已完全链接，Psy-Q SDK 库仍以原始汇编链接。本条没有运行构建。",
+      "LICENSE 是 MIT 许可。零售游戏不包含在内。"
+    ]
+  },
+  "daytona-usa-arcade-recomp-case": {
+    "name": "Daytona USA：Model 2 街机游戏的原生重编译",
+    "requirements": [
+      "审阅提交为 32967f60。README 接受两套不在仓库中的 ROM：daytona93（Daytona USA Deluxe '93）放在 roms/daytona93.zip 或 .7z，Revision A（daytona，1994）放在 roms/daytona.zip 或 .7z。原生程序是 build/daytona。Revision A 是 build-daytona/daytona。在 Windows 上使用 Visual Studio 生成器时，程序是 build/Release/daytona.exe。",
+      "README 称启动器把每个 ROM 文件与本次构建所重编译的 ROM 集核对。它还写明 MAME 的锁步和轨迹对比需要默认输出，并且 --build-mame 会构建一个记录验证轨迹的修改版 MAME。GitHub Actions 在没有 ROM 集的情况下构建并测试。本条没有构建游戏或运行轨迹。",
+      "LICENSE 是 BSD 3-Clause 许可，覆盖项目自己的代码。README 称 ROM 以及由它们生成的代码不由该许可分发。"
+    ]
+  },
+  "kingdom-hearts-ps2-decomp-case": {
+    "name": "王国之心：PS2 日版与 Final Mix 可执行文件的反编译",
+    "requirements": [
+      "审阅提交为 0df3b658。README 点名原版日文 ELF SLPS_251.05，SHA-1 为 9dabbf867a7ec2a030df99ba1ed969f2deef0488，以及 Final Mix 的 SLPS_251.98，SHA-1 为 e70bda789916142aafb53d85cef2e806b35ad8d8。用户从自己的光盘中提取 ELF。仓库不发布可执行文件或其他游戏资源。",
+      "configure.py 接上了一条运行 sha1sum -c 的 ninja 规则。config/jp/checksum.sha1 期望 build/jp/SLPS_251.05.rom 匹配 cb85dbab6c05667ed11d94e94abfa079baaf12c2。config/fm/checksum.sha1 期望 build/fm/SLPS_251.98.rom 匹配 b62bf252fdaf0b1a726668e28c244e1d83bcb146。本条没有运行构建。",
+      "该树没有 LICENSE 文件。本条不写许可。游戏本身不包含在内。"
+    ]
+  },
+  "omnispeak-keen-case": {
+    "name": "Omnispeak：Commander Keen 第 4 至 6 代的重实现",
+    "requirements": [
+      "审阅提交为 b88e13b9。README 称 Omnispeak 力求成为第 4、5、6 代的像素级、逐 bug 克隆，并与 DOS 存档兼容。支持的版本是 Keen 4 v1.4 EGA、Keen 5 v1.4 EGA、Keen 6 v1.4 EGA 和 Keen 6 v1.5 EGA。它称其他版本很可能会崩溃。玩家把 GAMEMAPS.CK?、EGAGRAPH.CK? 和 AUDIO.CK? 放在 omnispeak 二进制旁边。",
+      "README 指向 Keen 4 v1.4 EGA 共享版压缩包 https://davidgow.net/keen/4keen14.zip。tests/testdump.sh 运行 ./omnispeak /EPISODE <episode> /PLAYDEMO <n> /DUMPFILE <temp>，匹配时打印 Dump matched。本条没有运行该脚本。",
+      "LICENSE 是 GNU GPL 第 2 版。"
+    ]
+  },
+  "trx-tomb-raider-case": {
+    "name": "TRX：古墓丽影 1、2、3 的开源引擎",
+    "requirements": [
+      "审阅提交为 dce11132。README 称 TRX 通过反编译增强《古墓丽影》1、2 和 3，并且是这三部游戏共用的一个引擎。问答里对三部游戏是否都能从头玩到尾的回答是肯定的，并列出 Windows、Linux 和 macOS。它称《古墓丽影 4》的支持仍处于早期。",
+      "docs/trx/INSTALLING.md 称玩家从自己的 Steam、GOG 或光盘安装中复制 TR1、TR2 和 TR3。安装树包含原来的 .phd 文件，启动检查包括 TRX.exe --mod tr1、--mod tr2 和 --mod tr3。本条没有构建或游玩。本条不声称与原版可执行文件逐字节一致。",
+      "COPYING.md 是 GNU GPL 第 3 版。零售游戏文件不在仓库中。"
+    ]
+  },
+  "pik1wii-decomp-case": {
+    "name": "新玩法控制！皮克敏：Wii 美版 DOL 的反编译",
+    "requirements": [
+      "审阅提交为 051c2975。README 称项目是《新玩法控制！皮克敏》（Wii，2009）的进行中反编译，并把 R9IE01 标为默认的美版。它称仓库不含游戏资源。用户把光盘镜像复制到 orig/R9IE01。点名的格式包括 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC。文档中的构建是先 python configure.py，再 ninja。",
+      "config/R9IE01/config.yml 为 sys/main.dol 记录哈希 551306334183a633d0fde434a930b98809433b70。config/R9IE01/build.sha1 期望 build/R9IE01/main.dol 具有同一个 SHA-1。configure.py 把 check_sha_path 设为 config/<version>/build.sha1。本条没有运行构建。",
+      "LICENSE 以 CC0 1.0 Universal 开头。该奉献针对反编译项目，不是针对游戏。"
+    ]
   }
 }

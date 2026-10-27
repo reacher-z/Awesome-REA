@@ -151,7 +151,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [djkaty/Il2CppProtoExtractor-FallGuys](https://github.com/djkaty/Il2CppProtoExtractor-FallGuys) — IL2CPP protobuf-net reverse engineering tutorial for Fall Guys: Ultimate Knockout **[47 stars]**
 - [mmzret/rmz3](https://github.com/mmzret/rmz3) — WIP: Decompilation of Megaman Zero 3(Japan) **[45 stars]**
 - [PicoShot/UnityInspectorStandalone](https://github.com/PicoShot/UnityInspectorStandalone) — Runtime Inspector for Unity Games Mono/Il2Cpp **[44 stars]**
-- [celophi/lom-decomp](https://github.com/celophi/lom-decomp) — Matching decompilation of Legend of Mana / 聖剣伝説 LEGEND OF MANA (PS1) - NTSC-U / NTSC-J **[43 stars]**
+- [celophi/lom-decomp](https://github.com/celophi/lom-decomp) — Matching decompilation of Legend of Mana / 聖剣伝説 LEGEND OF MANA (PS1) - NTSC-U / NTSC-J **[43 stars]** · Curated: [Legend of Mana: a matching decompilation of the PlayStation game](https://awesomerea.org/resources/legend-of-mana-decomp-case/)
 - [Raikaru/Persona4-Decompilation](https://github.com/Raikaru/Persona4-Decompilation) — Matching decompilation of Shin Megami Tensei: Persona 4 for PlayStation 2 **[43 stars]**
 - [svespalec/faultline](https://github.com/svespalec/faultline) — usermode thread hijacking detection via working set page fault monitoring **[43 stars]**
 - [Azukee/Macaron](https://github.com/Azukee/Macaron) — Lightweight Archive Unpacker for various game archives **[42 stars]**
