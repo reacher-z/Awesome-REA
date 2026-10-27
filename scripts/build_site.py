@@ -288,6 +288,7 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
                     write_source_browser(output, canonical_export)
     if not metadata["source_index"]["available"]:
         source_index_output.unlink(missing_ok=True)
+        html = html.replace('id="download-source-index"', 'id="download-source-index" hidden')
         write_source_browser(output, None)
     topic_labels_path = SOURCE / "topics.i18n.json"
     topic_labels = json.loads(topic_labels_path.read_text(encoding="utf-8")) if topic_labels_path.exists() else {}
@@ -344,11 +345,13 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         data_revision=data_revision, icon_stylesheet_href=icon_stylesheet,
     )
     discovery_paths = build_discovery_pages(output, catalog, browse_document)
+    # Every footer offers the same repository download as the homepage and the browse pages.
+    repository_export = PUBLISHED_FILENAME if metadata["source_index"].get("full_export") == PUBLISHED_FILENAME else "source-index.json"
     paper_urls = build_paper_pages(
         output, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
         styles_href=asset_hrefs["styles.css"], papers_styles_href=fingerprinted_href(output, "papers.css"),
         favicon_href=asset_hrefs["favicon.svg"], social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
-        icon_stylesheet_href=icon_stylesheet,
+        icon_stylesheet_href=icon_stylesheet, repository_export=repository_export,
     )
     survey_document = json.loads((ROOT / "data/survey.json").read_text(encoding="utf-8"))
     survey_urls = build_survey(
@@ -356,13 +359,14 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         site_url=SITE_URL, repository_url=REPOSITORY_URL,
         styles_href=asset_hrefs["styles.css"], favicon_href=asset_hrefs["favicon.svg"],
         social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
-        icon_stylesheet_href=icon_stylesheet,
+        icon_stylesheet_href=icon_stylesheet, repository_export=repository_export,
     )
     entry_urls = build_entry_pages(
         output, resources, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
         styles_href=asset_hrefs["styles.css"], entry_styles_href=fingerprinted_href(output, "entry.css"),
         favicon_href=asset_hrefs["favicon.svg"], social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
         icon_stylesheet_href=icon_stylesheet, survey_discussions=discussion_sections(survey_document),
+        repository_export=repository_export,
     )
     # Feeds list inclusion dates; they link from pages written above and are not sitemap pages.
     build_feeds(output, resources, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL)
