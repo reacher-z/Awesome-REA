@@ -36,7 +36,7 @@
 .browse-category-arrow{margin-left:auto;font-size:20px;color:var(--steel)}
 .browse-repository h2{flex:1;min-width:0;margin:0;font:700 18px/1.5 var(--sans);letter-spacing:0;overflow-wrap:anywhere}
 .browse-github-fallback{font:700 12px/22px var(--sans);text-align:center}
-.browse-text-arrow{display:inline-block;margin-left:6px;font-size:13px;color:var(--steel)}
+.browse-text-arrow{padding-left:6px;font-size:13px;color:var(--steel)}
 .browse-repository .source-card-footer{margin-top:18px;padding-top:13px;border-top:1px solid var(--line)}
 /* Scope static reading rules here; homepage cards keep their own layout. */
 .browse-main .card-description,.browse-main .source-card-description{max-width:68ch;font-size:16px;line-height:1.8;color:var(--body)}
@@ -61,3 +61,5 @@ html[lang="zh-CN"] .browse-main .card-description,html[lang="zh-CN"] .browse-mai
 
 .browse-category-nav a{min-height:44px}
 @media(forced-colors:active){.browse-category-nav a[aria-current="page"]{forced-color-adjust:none;background:Highlight;border-color:Highlight;color:HighlightText}.browse-category-nav a[aria-current="page"]:focus-visible{outline-color:CanvasText}}
+/* Below 380 px the kind badge leaves a resource title too narrow for its last word and arrow; give the title the full width. */
+@media(max-width:380px){.browse-main .card-heading{flex-wrap:wrap;gap:9px}.browse-main .card-heading h3{flex-basis:100%}}
