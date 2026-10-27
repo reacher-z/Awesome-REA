@@ -4330,5 +4330,15 @@
       "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
       "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
     ]
+  },
+  "0x1avram-js-deobfuscator": {
+    "name": "JS-Deobfuscator（0x1Avram）Obfuscator.io 反混淆工具",
+    "requirements": [
+      "自所审阅的 main 分支提交（2023-04-17 的 README 更新）以来没有新的提交。最后一个版本 1.0.7（2022-12-29）附带 binaries.zip，内含用 pkg 构建的独立 Windows 和 Linux 程序，而 package.json 中的版本号仍为 1.0.2。README 称开发时使用 Node.js 16.15，并适用于当时的混淆器版本；旧版混淆器的输出可能生成不同的 AST。",
+      "从源码运行需先执行 npm install（依赖 esprima、escodegen、esquery、estraverse、winston 和 yargs），再用 node index.js -i 输入 -o 输出 调用。自动识别失败时，需用 -s、-w、-n 和 -r 分别以单独文件传入字符串数组、其包装函数、包装函数名和轮转代码。esprima 无法解析所有较新的 JavaScript 语法，README 建议先用 Babel 转译这类输入。",
+      "README 警告该代码并不安全，只应在虚拟机等隔离环境中运行：解码字符串数组时，会在反混淆工具自身的 Node.js 进程中用 eval 执行从样本中取出的代码。标识符和属性重命名阶段只是空的占位实现，因此不会恢复被混淆的名称。",
+      "需自行提供待分析的混淆脚本。Examples 中的文本文件取自简短代码片段、javascript-obfuscator 的示例脚本（BSD-2-Clause）和 javascript-algorithms（MIT），并附有这两份许可证。",
+      "MIT 许可证（LICENSE）。它与本目录收录的 ben-sb javascript-deobfuscator 是不同项目，后者的 npm 包同样名为 js-deobfuscator；本项目需从仓库或发布版程序使用。本条目未对任何脚本进行反混淆。"
+    ]
   }
 }

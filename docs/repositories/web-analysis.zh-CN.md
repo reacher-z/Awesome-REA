@@ -51,7 +51,7 @@
 - [NotDec/NotDec](https://github.com/NotDec/NotDec) — 基于 LLVM IR 的 WebAssembly（Wasm）反编译器与静态分析框架，仍在开发中 **[94 星标]** · 论文：[NotDec：通过跨过程类型恢复进行 WebAssembly 反编译](https://awesomerea.org/zh/papers/paper-notdec/)
 - [proofofbots/web-re-toolkit](https://github.com/proofofbots/web-re-toolkit) — 无需浏览器的无界面 Akamai 和 Kasada 解题工具，以及用于构建它的逆向工程工具包 **[93 星标]**
 - [wxyz-abcd/node-haxball](https://github.com/wxyz-abcd/node-haxball) — 功能最强大且轻量的 API，可在 Node.js 和浏览器环境中开发自己的 Haxball（www<span>.</span>haxball.com）主机、客户端和独立应用，涵盖各种可想象的修改方式与功能。 **[63 星标]**
-- [0x1Avram/js-deobfuscator](https://github.com/0x1Avram/js-deobfuscator) — 针对 obfuscator.io 混淆的 JavaScript 样本的去混淆工具。 **[62 星标]**
+- [0x1Avram/js-deobfuscator](https://github.com/0x1Avram/js-deobfuscator) — 针对 obfuscator.io 混淆的 JavaScript 样本的去混淆工具。 **[62 星标]** · 精选：[JS-Deobfuscator（0x1Avram）Obfuscator.io 反混淆工具](https://awesomerea.org/zh/resources/0x1avram-js-deobfuscator/)
 - [culturally/Instagram-iOS-SSL-pinning-bypass](https://github.com/culturally/Instagram-iOS-SSL-pinning-bypass) — 绕过了 SSL 固定／证书固定的 iOS Instagram。最新版本 395.0.0。 **[60 星标]**
 - [vibheksoni/unbuned](https://github.com/vibheksoni/unbuned) — 用于 Bun 编译可执行文件的反编译风格 JavaScript 提取器。零依赖 Python 工具，面向逆向工程、恶意软件分析和代码恢复。 **[58 星标]**
 - [dreamingmoths/silent-hill-museum](https://github.com/dreamingmoths/silent-hill-museum) — Silent Hill 模型博物馆。 **[54 星标]**

@@ -11799,5 +11799,38 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "0x1avram-js-deobfuscator",
+    "name": "JS-Deobfuscator (0x1Avram)",
+    "url": "https://github.com/0x1Avram/js-deobfuscator",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Node.js deobfuscator for JavaScript produced by Timofey Kachalov's javascript-obfuscator, also offered as obfuscator.io. It parses the sample with esprima and runs eleven stages named after the obfuscator's own, which remove injected self-defending and debug-protection code, unwind control-flow flattening and dead-code injection, restore converted literals and object keys, replace string-array calls with the decoded strings, simplify the result and recursively process code passed to eval. String-array code is detected automatically or supplied as separate files, and an Examples folder pairs original, obfuscated and deobfuscated samples.",
+    "description_zh": "面向 Timofey Kachalov 的 javascript-obfuscator（亦以 obfuscator.io 提供）所生成 JavaScript 的 Node.js 反混淆工具。它用 esprima 解析样本，依次运行十一个与该混淆器同名的阶段：移除注入的自我防护和调试保护代码，还原控制流平坦化和死代码注入，恢复被转换的字面量和对象键，把字符串数组调用替换为解码后的字符串，化简结果，并对传给 eval 的代码递归处理。字符串数组相关代码可自动识别，也可拆成单独文件输入；Examples 目录收录了原始、混淆后和反混淆后的成对样本。",
+    "evidence_url": "https://github.com/0x1Avram/js-deobfuscator/blob/3a4a20ab0d107d168bbef14105c35970c59e4eae/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Inactive since the reviewed main commit, a README update on 2023-04-17. The last release, 1.0.7 (2022-12-29), attaches binaries.zip with standalone Windows and Linux builds made with pkg, while package.json still reports 1.0.2. The README says it was developed with Node.js 16.15 and worked with obfuscator versions current at the time; output from older obfuscator versions may produce a different AST.",
+      "Run from source after npm install (esprima, escodegen, esquery, estraverse, winston and yargs) with node index.js -i input -o output. When automatic detection fails, the string array, its wrappers, the wrapper names and the rotate code are passed as separate files with -s, -w, -n and -r. esprima does not parse all newer JavaScript syntax, so the README suggests transpiling such input with Babel first.",
+      "The README warns that the code is not secure and should run only in an isolated environment such as a virtual machine: string-array decoding evaluates code taken from the sample with eval inside the deobfuscator's own Node.js process. The identifier- and property-renaming stages are empty placeholders, so obfuscated names are not recovered.",
+      "Supply the obfuscated script yourself. The Examples text files are derived from small snippets, javascript-obfuscator's example script (BSD-2-Clause) and javascript-algorithms (MIT), with both licenses included.",
+      "MIT (LICENSE). A different project from the catalog's ben-sb javascript-deobfuscator, whose npm package is also named js-deobfuscator; this one is used from its repository or release binaries. No scripts were deobfuscated for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/0x1Avram/js-deobfuscator/blob/3a4a20ab0d107d168bbef14105c35970c59e4eae/package.json",
+      "https://github.com/0x1Avram/js-deobfuscator/blob/3a4a20ab0d107d168bbef14105c35970c59e4eae/deobfuscator.js",
+      "https://github.com/0x1Avram/js-deobfuscator/blob/3a4a20ab0d107d168bbef14105c35970c59e4eae/Stages/stage_09_preparing.js",
+      "https://github.com/0x1Avram/js-deobfuscator/blob/3a4a20ab0d107d168bbef14105c35970c59e4eae/Stages/stage_03_stringarray.js",
+      "https://github.com/0x1Avram/js-deobfuscator/blob/3a4a20ab0d107d168bbef14105c35970c59e4eae/Stages/stage_04_renameidentifiers.js",
+      "https://github.com/0x1Avram/js-deobfuscator/tree/3a4a20ab0d107d168bbef14105c35970c59e4eae/Examples",
+      "https://github.com/0x1Avram/js-deobfuscator/blob/3a4a20ab0d107d168bbef14105c35970c59e4eae/LICENSE",
+      "https://github.com/0x1Avram/js-deobfuscator/releases/tag/1.0.7"
+    ]
   }
 ]

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 494](https://img.shields.io/badge/resources-494-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 210](https://img.shields.io/badge/cases-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 135](https://img.shields.io/badge/papers-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 495](https://img.shields.io/badge/resources-495-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 210](https://img.shields.io/badge/cases-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 135](https://img.shields.io/badge/papers-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,11 +21,11 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-494 curated resources (210 cases) · 135 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 491 because 3 of these appear only under Papers.
+495 curated resources (210 cases) · 135 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 492 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
-- [Website](#website) (29) · [Game](#game) (193) · [App](#app) (79)
+- [Website](#website) (30) · [Game](#game) (193) · [App](#app) (79)
 - [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (19)
 
 **Research and workflows**
@@ -98,6 +98,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**mitmproxy2swagger**](https://github.com/alufers/mitmproxy2swagger) - Command-line tool that reverse-engineers undocumented REST APIs from captured traffic. <sub>Tool · Also: Protocol · [Full entry](https://awesomerea.org/resources/mitmproxy2swagger/)</sub>
 - [**JPEXS Free Flash Decompiler (FFDec)**](https://github.com/jindrapetrik/jpexs-decompiler) - Java desktop decompiler and editor for Adobe Flash SWF files. <sub>Tool · Also: Game · [Full entry](https://awesomerea.org/resources/jpexs-decompiler/)</sub>
 - [**WasmLens: exploratory WebAssembly inspection**](https://github.com/alexandrmotologa/wasmlens) - Python CLI with static paths for inspecting WebAssembly sections and function signatures, producing WAT-style instruction listings, and reconstructing limited C-like pseudocode. <sub>Tool · WebAssembly · Also: Binary · [Full entry](https://awesomerea.org/resources/wasmlens/)</sub>
+- [**JS-Deobfuscator (0x1Avram)**](https://github.com/0x1Avram/js-deobfuscator) - Node.js deobfuscator for JavaScript produced by Timofey Kachalov's javascript-obfuscator, also offered as obfuscator.io. <sub>Tool · [Full entry](https://awesomerea.org/resources/0x1avram-js-deobfuscator/)</sub>
 
 <a id="game"></a>
 ### Game
