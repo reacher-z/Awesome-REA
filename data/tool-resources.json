@@ -12616,5 +12616,38 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "reverse-api-engineer",
+    "name": "Reverse API Engineer",
+    "url": "https://github.com/kalil0321/reverse-api-engineer",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Python CLI that turns the HTTP traffic a website actually produces into a typed API client. A browser session, driven by the user through Playwright or by an AI agent through Playwright or Chrome DevTools MCP servers or Vercel's agent-browser CLI, is recorded to a HAR file; a coding agent run through the Claude Agent SDK, OpenCode, Cursor or GitHub Copilot then reads the capture and writes a client, README and usage example in one of ten languages. A separate collector mode gathers structured JSON/CSV data with web search and fetch.",
+    "description_zh": "把网站实际产生的 HTTP 流量转换为带类型 API 客户端的 Python 命令行工具。浏览器会话可由用户通过 Playwright 操作，也可由 AI 智能体借助 Playwright 或 Chrome DevTools MCP 服务、或 Vercel 的 agent-browser 命令行来驱动，并记录为 HAR 文件；随后由经 Claude Agent SDK、OpenCode、Cursor 或 GitHub Copilot 运行的编码智能体读取该记录，以十种语言之一编写客户端、README 和用法示例。另有独立的 collector 模式，借助网页搜索与抓取收集 JSON/CSV 结构化数据。",
+    "evidence_url": "https://github.com/kalil0321/reverse-api-engineer/blob/4e150176ec7c50c960d23e35bd3d2c5b82931528/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main commit 4e15017 (2026-10-26). The latest release is v0.14.0, published on GitHub and PyPI on 2026-09-23; the changelog's unreleased section adds security dependency updates. pyproject marks the project beta and requires Python 3.11+, the README supports Linux, Apple Silicon macOS and 64-bit Windows because of its cryptography dependency, and CI runs ruff, mypy and pytest on Linux, macOS and Windows with Python 3.11 to 3.13.",
+      "Agent mode launches its browser tooling through npx, so it needs Node.js; the chrome-mcp provider drives the user's real Chrome with existing sessions and cookies and needs Chrome 146+ and Node.js 20.19+. Manual mode needs the [manual] extra and a Playwright Chromium. Generation needs a model backend: the default SDK is the Claude Agent SDK with Sonnet 4.6, and the README asks for an API key for agent mode, while OpenCode starts with a free default model and can use locally installed Ollama models that support tool calling and a 64k+ context.",
+      "The input is traffic from sites the user browses. The engineer prompt tells the model to hardcode every credential, cookie, token and session value found in the HAR, so captures and generated clients must be handled as secrets. The README warns that generated code runs locally and should be reviewed before it is executed, and that sites with aggressive bot detection may block capture; generated clients call undocumented internal endpoints that can change, and their use stays subject to each site's terms.",
+      "The examples directory holds generated clients for public endpoints of Apple and Uber careers, Ashby job boards, AutoScout24 listings, IKEA's catalog and Mintlify's documentation assistant. An optional local check generates a client for a fixture website and verifies it against changed live responses; these and the examples are the project's own evidence. MIT license. Its RAE abbreviation stands for Reverse API Engineer: the reviewed sources establish no REA connection, and this review ran nothing."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/kalil0321/reverse-api-engineer/blob/4e150176ec7c50c960d23e35bd3d2c5b82931528/pyproject.toml",
+      "https://github.com/kalil0321/reverse-api-engineer/blob/4e150176ec7c50c960d23e35bd3d2c5b82931528/CHANGELOG.md",
+      "https://github.com/kalil0321/reverse-api-engineer/blob/4e150176ec7c50c960d23e35bd3d2c5b82931528/LICENSE",
+      "https://github.com/kalil0321/reverse-api-engineer/blob/4e150176ec7c50c960d23e35bd3d2c5b82931528/src/reverse_api/prompts/engineer/system.md",
+      "https://github.com/kalil0321/reverse-api-engineer/blob/4e150176ec7c50c960d23e35bd3d2c5b82931528/.github/workflows/ci.yml",
+      "https://github.com/kalil0321/reverse-api-engineer/blob/4e150176ec7c50c960d23e35bd3d2c5b82931528/scripts/validation/README.md",
+      "https://github.com/kalil0321/reverse-api-engineer/tree/4e150176ec7c50c960d23e35bd3d2c5b82931528/examples",
+      "https://github.com/kalil0321/reverse-api-engineer/releases/tag/v0.14.0",
+      "https://pypi.org/project/reverse-api-engineer/0.14.0/"
+    ]
   }
 ]
