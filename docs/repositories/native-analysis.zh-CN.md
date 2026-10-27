@@ -325,7 +325,7 @@
 - [openbin-ai/binny](https://github.com/openbin-ai/binny) — BINNY：用于逆向工程的开源智能体运行框架。可接入任意模型，也可使用本地模型。 **[148 星标]** · 精选：[BINNY 逆向分析智能体框架](https://awesomerea.org/zh/resources/binny-agent-harness/)
 - [cmu-sei/kaiju](https://github.com/cmu-sei/kaiju) — CERT Kaiju 是 Ghidra 软件逆向工程套件的二进制分析框架扩展。本仓库为镜像，请到 <span>@</span>CERTCC 的上游仓库提交工单、错误报告或拉取请求：https<span>:</span>//github.com/certcc/kaiju **[147 星标]**
 - [liuzhengyang/hsdis](https://github.com/liuzhengyang/hsdis) — HotSpot 反汇编器 hsdis **[147 星标]**
-- [paradiseduo/dsdump](https://github.com/paradiseduo/dsdump) — 增强版 nm 与 Objective-C、Swift 类转储工具 **[146 星标]**
+- [paradiseduo/dsdump](https://github.com/paradiseduo/dsdump) — 增强版 nm 与 Objective-C、Swift 类转储工具 **[146 星标]** · 精选：[dsdump（paradiseduo 封装版）Mach-O 类信息导出工具](https://awesomerea.org/zh/resources/paradiseduo-dsdump/)
 - [radareorg/radare2-pm](https://github.com/radareorg/radare2-pm) — Radare2 包管理器 **[146 星标]**
 - [0x00ctrl/CyberSec-Books](https://github.com/0x00ctrl/CyberSec-Books) — 网络安全、Linux 等领域的一些实用书籍。 **[145 星标]**
 - [mcdulltii/obfDetect](https://github.com/mcdulltii/obfDetect) — 精确定位混淆代码的 IDA 插件 **[145 星标]**

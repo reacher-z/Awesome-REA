@@ -4330,5 +4330,15 @@
       "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
       "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
     ]
+  },
+  "paradiseduo-dsdump": {
+    "name": "dsdump（paradiseduo 封装版）Mach-O 类信息导出工具",
+    "requirements": [
+      "作者已建议改用其他工具：README 开头说明现在可以用 resymbol 取代本工具，所审阅的 main 提交（2023-11-20）只是重新格式化了 Python 脚本，且没有发布版本或标签。它所基于的上游仓库 DerekSelander/dsdump 已归档。",
+      "需在 macOS 上于仓库目录内用 Python 3 运行，脚本通过 shell 调用 ./dsdump。仓库中的 dsdump 是一个 5.2 MB 的 x86_64 Mach-O 可执行文件，于 2020-12-16 的首次提交中加入，没有源码、构建文件或校验值可将其对应到上游某个版本。-a 只接受 arm64 或 armv7，-d 需要 Xcode 命令行工具以调用 xcrun swift-demangle。",
+      "分析者需提供自己有权检查的 Mach-O 可执行文件；README 示例读取的是已解出的 .app 包中的主可执行文件。该封装只解析 dsdump 的文本输出，不会获取、解密或修改应用。",
+      "输出是带方法地址的重建声明，并非源代码；README 示例中的 Swift 方法名显示为 <stripped>。仓库没有测试，本条目也未运行任何内容。",
+      "本仓库和已归档的上游仓库都没有许可证文件，因此封装脚本和随附的可执行文件均未声明复用条款。本条目仅涵盖分析用途；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
