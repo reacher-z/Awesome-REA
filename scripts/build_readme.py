@@ -399,7 +399,8 @@ def render_totals(records, papers, index_count, language):
 
 
 def render_badges(records, papers, language):
-    """Report catalog populations, not execution verification or additive totals."""
+    """Report catalog populations, not execution verification or additive totals. There is no CI badge:
+    awesome lists must not carry one, and the footer already links the validate workflow's runs."""
     zh = language == 'zh'
     prefix = 'https://awesomerea.org/' + ('zh/' if zh else '')
 
@@ -410,16 +411,13 @@ def render_badges(records, papers, language):
         return f'[![{label}: {value}]({image})]({target})'
 
     cases = sum(record['kind'] == 'case-study' for record in records)
-    workflow = 'https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml'
-    labels = ('精选资源', '案例', '论文', '目录检查', '许可', '网站') if zh else (
-        'resources', 'cases', 'papers', 'Catalog checks', 'license', 'website')
+    labels = ('精选资源', '案例', '论文', '许可', '网站') if zh else ('resources', 'cases', 'papers', 'license', 'website')
     return ' '.join([
         badge(labels[0], f'{len(records):,}', prefix + 'resources/'),
         badge(labels[1], f'{cases:,}', prefix + 'cases/'),
         badge(labels[2], f'{len(papers):,}', prefix + 'papers/'),
-        f'[![{labels[3]}]({workflow}/badge.svg?branch=main)]({workflow})',
-        badge(labels[4], 'MIT', 'LICENSE', '606779'),
-        badge(labels[5], 'awesomerea.org', prefix, '6235B5'),
+        badge(labels[3], 'MIT', 'LICENSE', '606779'),
+        badge(labels[4], 'awesomerea.org', prefix, '6235B5'),
     ]) + '\n'
 
 

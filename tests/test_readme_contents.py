@@ -37,7 +37,6 @@ class ReadmeContentsTest(unittest.TestCase):
         self.assertIn('/badge/resources-3-', en)
         self.assertIn('/badge/cases-1-', en)
         self.assertIn('/badge/papers-1-', en)
-        self.assertIn('/validate.yml/badge.svg?branch=main', en)
         self.assertIn('](LICENSE)', en)
         self.assertNotRegex(en.lower(), r'runtime|reproduced|verified|total-4')
         zh = render_badges(records, [listed], 'zh')
@@ -47,6 +46,18 @@ class ReadmeContentsTest(unittest.TestCase):
         self.assertIn('案例: 1', zh)
         self.assertIn('论文: 1', zh)
         self.assertEqual((records, [listed]), before)
+
+    def test_badges_have_no_ci_badge_and_the_footer_keeps_the_build_link(self):
+        workflow = 'https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml'
+        for language, name, footer in (('en', 'README.md', 'Build status'), ('zh', 'README.zh-CN.md', '构建状态')):
+            with self.subTest(language=language):
+                rendered = render_badges([resource()], [paper()], language)
+                self.assertNotIn('/actions/', rendered)
+                self.assertNotIn('badge.svg', rendered)
+                self.assertEqual(rendered.count('[!['), 5)
+                text = (ROOT / name).read_text(encoding='utf-8')
+                self.assertNotRegex(text, r'actions/workflows/[^)\s]*badge\.svg')
+                self.assertIn(f'[{footer}]({workflow})', text.split(BADGES_END, 1)[1])
 
     def test_badge_generation_preserves_authored_header_and_rejects_ambiguous_markers(self):
         prefix = '<img src="featured.svg">\n# Collection\n<img src="banner.svg">\n'
