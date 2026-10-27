@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 512](https://img.shields.io/badge/resources-512-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 217](https://img.shields.io/badge/cases-217-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 137](https://img.shields.io/badge/papers-137-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 512](https://img.shields.io/badge/resources-512-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 217](https://img.shields.io/badge/cases-217-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 138](https://img.shields.io/badge/papers-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-512 curated resources (217 cases) · 137 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 509 because 3 of these appear only under Papers.
+512 curated resources (217 cases) · 138 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 509 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (137) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (37)
+- [Papers](#papers) (138) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (37)
 
 **More ways to browse**
 
@@ -659,13 +659,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**137 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**138 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (10) · [Decompilation](#papers-decompilation) (58) · [Websites](#papers-website-reconstruction) (23)
+- [Agent evaluation](#papers-agent-evaluation) (10) · [Decompilation](#papers-decompilation) (59) · [Websites](#papers-website-reconstruction) (23)
 - [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (12) · [Firmware](#papers-firmware-analysis) (13)
 - [Protocols](#papers-protocol-analysis) (13)
 
@@ -735,6 +735,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**LLM4Decompile: Decompiling Binary Code with Large Language Models**](https://aclanthology.org/2024.emnlp-main.203/) - Trains language models for assembly-to-C decompilation and for refining Ghidra pseudocode, evaluating whether recovered functions can be recompiled and executed correctly. <sub>EMNLP 2024 · Conference paper · Hanzhuo Tan et al. · [PDF](https://aclanthology.org/2024.emnlp-main.203.pdf) · [Code](https://github.com/albertan017/LLM4Decompile) · [Full entry](https://awesomerea.org/papers/paper-llm4decompile/)</sub>
 - [**WaDec: Decompiling WebAssembly Using Large Language Model**](https://dl.acm.org/doi/10.1145/3691620.3695020) - WaDec decompiles WebAssembly text (wat) into C by fine-tuning CodeLlama-7b with LoRA on loop-level wat–C snippet pairs. <sub>ASE 2024 · Conference paper · Xinyu She et al. · [PDF](https://arxiv.org/pdf/2406.11346v3) · [Code](https://github.com/XinyuShe/WaDec/tree/e244f7172539478a5b64bbb86e1fd03e527cb6be) · [Full entry](https://awesomerea.org/papers/paper-wadec/)</sub>
 - [**CLAP: Learning Transferable Binary Code Representations with Natural Language Supervision**](https://dl.acm.org/doi/10.1145/3650212.3652145) - CLAP (Contrastive Language-Assembly Pre-training) learns assembly-function embeddings aligned with natural-language explanations. <sub>ACM ISSTA 2024 · Conference paper · Hao Wang et al. · [PDF](https://arxiv.org/pdf/2402.16928v1) · [Code](https://github.com/Hustcw/CLAP) · [Full entry](https://awesomerea.org/papers/paper-clap/)</sub>
+- [**CodeArt: Better Code Models by Attention Regularization When Symbols Are Lacking**](https://dl.acm.org/doi/10.1145/3643752) - CodeArt pre-trains a BERT-sized encoder from scratch on 26 million stripped x86-64 functions built from jTrans's BinaryCorp. <sub>Proceedings of the ACM on Software Engineering (FSE 2024) · Journal article · Zian Su et al. · [PDF](https://arxiv.org/pdf/2402.11842v1) · [Code](https://github.com/ziansu/codeart) · [Full entry](https://awesomerea.org/papers/paper-codeart/)</sub>
 - [**StackSight: Unveiling WebAssembly through Large Language Models and Neurosymbolic Chain-of-Thought Decompilation**](https://proceedings.mlr.press/v235/fang24e.html) - StackSight decompiles WebAssembly text-format functions into C++ with LLM prompting. <sub>ICML 2024 · Conference paper · Weike Fang et al. · [PDF](https://raw.githubusercontent.com/mlresearch/v235/main/assets/fang24e/fang24e.pdf) · [Full entry](https://awesomerea.org/papers/paper-stacksight/)</sub>
 - [**BinaryAI: Binary Software Composition Analysis via Intelligent Binary Source Code Matching**](https://dl.acm.org/doi/10.1145/3597503.3639100) - BinaryAI identifies which open-source C/C++ libraries a stripped binary reuses by matching its functions to source code. <sub>ICSE 2024 · Conference paper · Ling Jiang et al. · [PDF](https://arxiv.org/pdf/2401.11161v3) · [Full entry](https://awesomerea.org/papers/paper-binaryai/)</sub>
 - [**SLaDe: A Portable Small Language Model Decompiler for Optimized Assembly**](https://ieeexplore.ieee.org/document/10444788) - SLaDe translates function-level assembly into C with a 200M-parameter encoder–decoder model, code-specific tokenization and PsycheC type completion. <sub>IEEE/ACM CGO 2024 · Conference paper · Jordi Armengol-Estapé et al. · [PDF](https://arxiv.org/pdf/2305.12520v3) · [Code](https://zenodo.org/records/10205121) · [Full entry](https://awesomerea.org/papers/paper-slade/)</sub>
