@@ -75,7 +75,7 @@ node --check site/app.js
 python3 -m unittest discover -s tests -v
 ```
 
-修改论文记录时，再运行 `python3 scripts/validate_papers.py`，重新生成两个 README，然后运行 `python3 scripts/build_production.py`。`python3 scripts/check_links.py` 用于在线检查来源链接，限流和临时网络故障会与确认失效的链接分开报告。CI 的完整步骤见英文指南的[目录更新部分](CONTRIBUTING.md#update-the-catalog)。
+修改论文记录时，再运行 `python3 scripts/validate_papers.py`，重新生成两个 README，然后运行 `python3 scripts/build_production.py`。`python3 scripts/check_links.py` 用于在线检查来源链接，限流和临时网络故障会与确认失效的链接分开报告。必需的 `validate` 检查本身不运行任何步骤，只汇总 `Catalog checks` 工作流中并行任务的结果：两个 `unit` 分片、`production` 和 `browser` 全部成功时才通过，任一任务失败、跳过或取消都会使它失败。检查失败时，请打开失败的那个任务查看日志。各任务的步骤和等效的本地命令见英文指南的[目录更新部分](CONTRIBUTING.md#update-the-catalog)。
 
 ## 审核与发布
 

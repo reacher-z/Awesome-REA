@@ -35,7 +35,7 @@ node --check site/app.js
 python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
 ```
 
-The test command runs every Python test and the Node tests of the browser scripts offline; CI runs the same command. The [browser smoke test](#browser-smoke-test) is a separate step.
+The test command runs every Python test and the Node tests of the browser scripts offline; CI runs the same discovered tests split across its two `unit` shards. The [browser smoke test](#browser-smoke-test) is a separate step.
 
 Open `http://127.0.0.1:8000`. Use HTTP rather than opening `index.html` directly, because the directory fetches `catalog.json` and `source-browser.json`. Stop the preview server with Ctrl+C.
 

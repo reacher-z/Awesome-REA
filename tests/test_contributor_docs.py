@@ -137,6 +137,27 @@ class ContributorReferenceTests(unittest.TestCase):
                     self.assertEqual(len(errors), 1, errors)
                     self.assertIn(problem, errors[0])
 
+    def test_ci_docs_name_the_jobs_behind_the_required_validate_check(self):
+        workflow = (ROOT / '.github/workflows/validate.yml').read_text(encoding='utf-8')
+        jobs = re.findall(r'^  ([a-z][a-z0-9_-]*):$', workflow.split('\njobs:\n', 1)[1], re.MULTILINE)
+        needs = re.search(r'^    needs: \[([^\]]+)\]$', workflow, re.MULTILINE)[1].split(', ')
+        shards = re.search(r'^        shard: \[([^\]]+)\]$', workflow, re.MULTILINE)[1].split(', ')
+        self.assertEqual(sorted(needs + ['validate']), sorted(jobs))
+        for name in ('CONTRIBUTING.md', 'docs/automation.md'):
+            text = (ROOT / name).read_text(encoding='utf-8')
+            with self.subTest(document=name):
+                for job in needs:
+                    self.assertIn(f'`{job}', text)
+                for shard in shards:
+                    self.assertIn(f'`unit ({shard})`', text)
+                self.assertIn('`validate`', text)
+                self.assertNotIn('`validate` check runs exactly', text)
+        chinese = (ROOT / 'CONTRIBUTING.zh-CN.md').read_text(encoding='utf-8')
+        self.assertIn('(CONTRIBUTING.md#update-the-catalog)', chinese)
+        self.assertIn('\n## Update the catalog\n', (ROOT / 'CONTRIBUTING.md').read_text(encoding='utf-8'))
+        for job in needs:
+            self.assertIn(f'`{job}`', chinese)
+
 
 if __name__ == '__main__':
     unittest.main()
