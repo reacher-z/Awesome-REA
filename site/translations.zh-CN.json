@@ -4528,5 +4528,14 @@
       "POLICY.md 要求代码独立编写，不得包含泄露或未经授权的源码、二进制文件或素材，不收录原软件的分支、移植、启动器和模组，并将净室开发的声明交由各项目作者负责；Remade 表示不审核代码来源或合法性。只有一条记录提到净室流程，因此某个条目依靠的是净室开发、逆向工程还是公开文档，需在其自身来源中核实。",
       "仓库的 MIT 许可证适用于目录本身的代码和数据；所收录项目各自保留许可证，从 MIT、Apache-2.0 到 GPL 和 AGPL 不等，其中一项记为 Unlicensed。项目自己于 2026-10-17 对 119 个条目做的文档审查，仍有无法访问的仓库和许可证冲突未解决，并声明不构成软件、法律或兼容性认证。这是独立的目录；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "ghidrathon": {
+    "name": "Ghidrathon Ghidra Python 3 脚本扩展",
+    "requirements": [
+      "该仓库已在 GitHub 归档，处于只读状态。main 分支最后一次提交为 2024-05-08；最新版本 v4.0.0 发布于 2024-02-13，附带一个扩展 zip，由发布工作流针对 Ghidra 11.0 构建，并打包了配置脚本。归档未说明原因；据 Ghidra 自身的变更记录，11.3（2025 年 2 月）集成了 PyGhidra 这一原生 CPython 3 接口，其模块提供 CPython 解释器插件，以及用于 CPython 3 GhidraScript 的脚本提供程序。本条目将 Ghidrathon 视为历史工具。",
+      "README 要求 Python 3.8+、恰好 Jep 4.2.0、Ghidra 10.3.2+ 和 Java 17+。安装时先按 util/requirements.txt 把 Jep 装进选定的解释器或虚拟环境，再针对 Ghidra 安装目录运行 util/ghidrathon_configure.py，它会在该目录或 GHIDRATHON_SAVE_PATH 下写入 ghidrathon.save 文件；随后通过 Ghidra 的扩展管理器安装 zip，README 说明遇到版本不匹配提示时可选择仍然安装。从源码构建需要 Gradle 7.3+，并需把 Jep 4.2.0 JAR 下载到 lib/。",
+      "CI 仅在 Ubuntu、Windows 和 macOS 上，以 Python 3.8 和 3.12 针对 Ghidra 10.3.2 与 11.0 构建测试，并以无界面后处理脚本方式运行仓库中的 Python 测试；所审来源未涵盖更新的 Ghidra 版本。Jep 通过 JNI 把 Python 嵌入 JVM，README 指出 Ghidra 开发者不建议在 Ghidra 中使用 JNI；与 Ghidra 的 Java 和 Jython API 不同，脚本需通过 currentProgram() 这类函数调用读取 GhidraScript 状态。",
+      "Apache-2.0（LICENSE.txt）。仓库提交的是 Java 与 Python 源码、一个示例脚本、Python 测试和三张 README 截图，不含二进制文件；CI 测试分析的是从下载的 Ghidra 发行包中取得的 demangler 可执行文件。所审来源未说明任何 AI 或 REA 用途，本条目也未安装或运行该扩展。"
+    ]
   }
 }

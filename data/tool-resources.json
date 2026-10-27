@@ -12487,5 +12487,39 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "ghidrathon",
+    "name": "Ghidrathon",
+    "url": "https://github.com/mandiant/Ghidrathon",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Mandiant FLARE's Ghidra extension that embeds the user's local CPython 3 interpreter in Ghidra through Jep, as an alternative to Ghidra's Jython-based Python 2.7 scripting. It adds an interactive Python 3 interpreter window, Python 3 scripts in the Script Manager and Python 3 post-scripts in headless analyzeHeadless runs, with GhidraScript state such as currentProgram() and FlatProgramAPI methods available as Python builtins. Because the configured interpreter or virtual environment is used as is, scripts can import installed packages; the README names capa, Unicorn and angr as motivating examples and shows Unicorn emulating ARM code inside Ghidra.",
+    "description_zh": "Mandiant FLARE 团队开发的 Ghidra 扩展，借助 Jep 把用户本机的 CPython 3 解释器嵌入 Ghidra，作为 Ghidra 基于 Jython 的 Python 2.7 脚本支持之外的选择。它提供交互式 Python 3 解释器窗口，可在脚本管理器中编写和运行 Python 3 脚本，也可在无界面的 analyzeHeadless 运行中执行 Python 3 后处理脚本；currentProgram() 等 GhidraScript 状态和 FlatProgramAPI 方法以 Python 内置名称的形式提供。由于直接使用所配置的解释器或虚拟环境，脚本可以导入其中已安装的包；README 以 capa、Unicorn 和 angr 为开发动机举例，并演示在 Ghidra 内用 Unicorn 模拟执行 ARM 代码。",
+    "evidence_url": "https://github.com/mandiant/Ghidrathon/blob/56866ad97ab7cc207ce85542c5ec20e01a10352d/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository is archived on GitHub and read-only. Its last commit on main dates from 2024-05-08, and the latest release, v4.0.0 of 2024-02-13, attaches one extension zip that the release workflow builds against Ghidra 11.0 and bundles with the configure script. The archive states no reason; Ghidra's own change history records that 11.3 (February 2025) integrated PyGhidra, a native CPython 3 interface whose module provides a CPython interpreter plugin and a script provider for CPython 3 GhidraScripts. This record treats Ghidrathon as a historical tool.",
+      "The README requires Python 3.8+, exactly Jep 4.2.0, Ghidra 10.3.2+ and Java 17+. Setup installs Jep from util/requirements.txt into the chosen interpreter or virtual environment and runs util/ghidrathon_configure.py against the Ghidra install directory, which writes a ghidrathon.save file there or under GHIDRATHON_SAVE_PATH; the zip is then installed through Ghidra's extension manager, whose version-mismatch prompt the README says may be overridden. Source builds need Gradle 7.3+ and the Jep 4.2.0 JAR downloaded into lib/.",
+      "CI built and tested only Ghidra 10.3.2 and 11.0 with Python 3.8 and 3.12 on Ubuntu, Windows and macOS, running the repository's Python tests as headless post-scripts; later Ghidra releases are not covered by the reviewed sources. Jep embeds Python in the JVM through JNI, which the README notes Ghidra's developers advise against, and unlike Ghidra's Java and Jython APIs, scripts read GhidraScript state through calls such as currentProgram().",
+      "Apache-2.0 (LICENSE.txt). The repository commits Java and Python sources, an example script, Python tests and three README screenshots, and no binaries; the CI tests analyze a demangler executable taken from the downloaded Ghidra distribution. The reviewed sources state no AI or REA use, and nothing was installed or run for this record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mandiant/Ghidrathon/blob/56866ad97ab7cc207ce85542c5ec20e01a10352d/doc/building.md",
+      "https://github.com/mandiant/Ghidrathon/blob/56866ad97ab7cc207ce85542c5ec20e01a10352d/util/ghidrathon_configure.py",
+      "https://github.com/mandiant/Ghidrathon/blob/56866ad97ab7cc207ce85542c5ec20e01a10352d/util/requirements.txt",
+      "https://github.com/mandiant/Ghidrathon/blob/56866ad97ab7cc207ce85542c5ec20e01a10352d/ghidra_scripts/ghidrathon_example.py",
+      "https://github.com/mandiant/Ghidrathon/blob/56866ad97ab7cc207ce85542c5ec20e01a10352d/.github/workflows/tests.yml",
+      "https://github.com/mandiant/Ghidrathon/blob/56866ad97ab7cc207ce85542c5ec20e01a10352d/.github/workflows/build.yml",
+      "https://github.com/mandiant/Ghidrathon/blob/56866ad97ab7cc207ce85542c5ec20e01a10352d/LICENSE.txt",
+      "https://github.com/mandiant/Ghidrathon/releases/tag/v4.0.0",
+      "https://github.com/NationalSecurityAgency/ghidra/blob/1b9e58a915cf867e106495eaa2a4b18eb4971c9d/Ghidra/Configurations/Public_Release/src/global/docs/ChangeHistory.md#L1283",
+      "https://github.com/NationalSecurityAgency/ghidra/blob/1b9e58a915cf867e106495eaa2a4b18eb4971c9d/Ghidra/Features/PyGhidra/README.md"
+    ]
   }
 ]
