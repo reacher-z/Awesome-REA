@@ -6988,5 +6988,15 @@
       "待反编译的二进制须由分析者自备；除非设置 --skip-symbols，符号查询会访问所列的公共符号服务器。测试数据附带 tests/data/afd.sys.10.0.22621.1415（一个 Microsoft Windows 驱动版本，README 示例也使用它）、一个 AArch64 ls 二进制和 ntddk_64.gdt 数据类型库；这些文件遵循各自发布者的条款。",
       "README 将输出定位为用于研究和分析的反编译结果，未声称可重新编译；测试检查的是函数数量、调用图、应用 GDT 后的一个函数签名、BSim 和 SAST 输出，而非反编译代码的整体准确性。采用 GPL-3.0（LICENSE）；Ghidra 和 Semgrep 各自保留其许可证。本次未反编译任何二进制，所审来源未确立 REA 关联。"
     ]
+  },
+  "arkdecompiler": {
+    "name": "arkdecompiler 鸿蒙 NEXT 反编译器",
+    "requirements": [
+      "审阅对象为 2026-07-23 的 master 提交。README 标注已支持全部指令并完成基础图形界面，而充分覆盖官方编译器和 test262 中的边界情况仍在进行中。v0.1.0 版（2026-04-23）附带 Linux x86、macOS arm64 和 Windows x86 的 Electron 与 Tauri 图形界面构建；反编译仅支持 Linux，反汇编三个平台均可，使用图形界面前需先配置命令行工具的路径。",
+      "xabc 的构建在 Ubuntu 22.04 上测试，需置于 OpenHarmony 方舟编译器独立构建环境中：scripts/prepare.sh 会安装 repo 工具、从 Gitee 同步 ark-standalone-build 清单、下载其预编译工具，并切换到 OpenHarmony v6.0.0.1-Release；之后须将 patches/ 中的补丁应用到 arkcompiler 的 runtime_core、ets_frontend 以及 third_party/protobuf，再用 gn 和 ninja 构建 xabc。Dockerfile 则使用 Ubuntu 20.04 和 OpenHarmony 5.1.0 版本。",
+      "xabc 读取一个 .abc 文件，输出 ArkTS 代码和 AST 转储，默认分别为 demo.abc 和 arkdemo.ts。文档中的流程是用 OpenHarmony 的 es2abc 编译用户自己的 demo.ts，再对结果反编译；其他字节码须来自用户自己的应用包，仓库不附带任何应用或 .abc 样例。",
+      "tests/ 收录 18 个 TypeScript 样例，涵盖类、循环、生成器、异步函数和模块等特性。autotests/scantstests.py 会编译 test262 和 OpenHarmony TypeScript 子模块中的用例，记录反编译是否正常退出、失败、崩溃或超时，并用黑名单跳过部分用例。仓库未报告通过率或语义等价结果，也没有 CI 工作流；本次审阅未构建或运行任何内容。",
+      "采用 Apache-2.0 许可；其构建所依赖的 OpenHarmony 组件保留各自许可证。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
