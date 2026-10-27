@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "img4tool": {
+    "name": "img4tool Apple IMG4 容器工具",
+    "requirements": [
+      "审阅时最新版本为 build 218，发布于 2026-01-29，提供的是 CI 生成的 macOS 和 Ubuntu buildroot 压缩包，而非打包好的安装程序。所审阅的 master 提交（2026-08-20 合并）比它多两个提交，合并了一项 generator 参数修复。版本号即仓库的提交总数。",
+      "从源码构建需要 autoconf、automake、libtool、pkg-config 和支持 C++11 的编译器，并依赖 tihmstar 的 libgeneral。libplist-2.0（用于读取 SHSH、校验和格式转换）以及用于解密和载荷哈希校验的加密后端（OpenSSL，macOS 上也可用 CommonCrypto）均为可选依赖；缺少加密后端时无法解密，校验也会提示无法检查载荷哈希。BVX2 支持需要 Apple 的 libcompression 或 liblzfse；可选的 libfwkeyfetch 构建会增加一个密钥查询选项，本条目不涉及该功能。",
+      "输入文件为使用者自有的 IMG4、IM4P、IM4M 或 SHSH 文件以及 BuildManifest。仓库只有源码，没有提交任何 Apple 固件、票据或密钥；解密载荷所需的 IV 和密钥须由使用者自行提供。按文件头说明，附带的 LZSS 解码器（lzssdec.c）改编自 Jonathan Levin 的 joker 代码。",
+      "采用 LGPL-3.0 许可。容器创建、重命名和 IM4R generator 选项服务于恢复流程，此处不再展开。本次未解析任何固件文件，也未进行构建。"
+    ]
   }
 }

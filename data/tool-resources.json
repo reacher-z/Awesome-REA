@@ -12616,5 +12616,36 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "img4tool",
+    "name": "img4tool",
+    "url": "https://github.com/tihmstar/img4tool",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "tihmstar's command-line tool and C++ library for Apple's IMG4 firmware container format. It prints the ASN.1 contents of IMG4 files, IM4P payload containers and IM4M signing manifests, including payload types, descriptions and key bags, and extracts IM4P or IM4M parts from IMG4 or SHSH files and payloads from IM4P files, decompressing LZSS or BVX2 (LZFSE) data and decrypting it when given an IV and key. It can also check an IM4M ticket or a signed IMG4 against a BuildManifest, convert IM4M files to SHSH, and build or rename containers for restore tooling.",
+    "description_zh": "tihmstar 开发的命令行工具和 C++ 库，用于处理 Apple 的 IMG4 固件容器格式。它可以打印 IMG4 文件、IM4P 载荷容器和 IM4M 签名清单的 ASN.1 内容，包括载荷类型、描述和密钥包（KBAG）；也可从 IMG4 或 SHSH 文件中提取 IM4P 或 IM4M、从 IM4P 中提取载荷，自动解压 LZSS 或 BVX2（LZFSE）压缩数据，并在提供 IV 和密钥时解密。此外，它能根据 BuildManifest 校验 IM4M 票据或已签名的 IMG4，把 IM4M 转换为 SHSH，并为恢复工具构建或重命名容器。",
+    "evidence_url": "https://github.com/tihmstar/img4tool/blob/bb2d63494c58993f5c8ce2ed7df207ab1063587b/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: build 218, published 2026-01-29, which provides the CI's macOS and Ubuntu buildroot archives rather than packaged installers. The reviewed master commit (merged 2026-08-20) is two commits ahead of it, merging a fix to the generator argument. The version number is the repository's commit count.",
+      "Source builds use autoconf, automake, libtool and pkg-config with a C++11 compiler and require tihmstar's libgeneral. libplist-2.0 (for SHSH reading, verification and conversion) and a crypto backend (OpenSSL, or CommonCrypto on macOS) for decryption and payload hash checks are optional; without one, decryption fails and verification warns that it cannot check payload hashes. BVX2 support needs Apple's libcompression or liblzfse, and an optional libfwkeyfetch build adds a key-lookup option that this entry does not cover.",
+      "Input files are the user's own IMG4, IM4P, IM4M or SHSH files and BuildManifests. The repository is source only and commits no Apple firmware, tickets or keys, and decrypting a payload requires an IV and key that the user supplies. The bundled LZSS decoder (lzssdec.c) is adapted, per its header, from Jonathan Levin's joker code.",
+      "LGPL-3.0 license. Container creation, renaming and the IM4R generator option exist for restore workflows and are not described further here. No firmware file was parsed and nothing was built."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/tihmstar/img4tool/blob/bb2d63494c58993f5c8ce2ed7df207ab1063587b/img4tool/main.cpp#L44-L199",
+      "https://github.com/tihmstar/img4tool/blob/bb2d63494c58993f5c8ce2ed7df207ab1063587b/img4tool/img4tool.cpp",
+      "https://github.com/tihmstar/img4tool/blob/bb2d63494c58993f5c8ce2ed7df207ab1063587b/img4tool/lzssdec.c#L1-L8",
+      "https://github.com/tihmstar/img4tool/blob/bb2d63494c58993f5c8ce2ed7df207ab1063587b/configure.ac",
+      "https://github.com/tihmstar/img4tool/blob/bb2d63494c58993f5c8ce2ed7df207ab1063587b/.github/workflows/main.yml",
+      "https://github.com/tihmstar/img4tool/blob/bb2d63494c58993f5c8ce2ed7df207ab1063587b/LICENSE",
+      "https://github.com/tihmstar/img4tool/releases/tag/218"
+    ]
   }
 ]
