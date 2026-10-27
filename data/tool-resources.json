@@ -12616,5 +12616,40 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "grpc-tools",
+    "name": "grpc-tools",
+    "url": "https://github.com/bradleyjkemp/grpc-tools",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "Bradley Kemp's suite of gRPC debugging tools, described as Fiddler or Charles for gRPC. grpc-dump runs as a local HTTP(S) proxy that logs every gRPC and gRPC-Web call an application makes as a JSON stream with service and method names, metadata, any error status and each message both raw and parsed; without the .proto files it decodes messages heuristically. grpc-replay re-sends the recorded requests and checks the server's responses, grpc-fixture answers clients from a saved dump, and the grpc-proxy Go library underlies them.",
+    "description_zh": "Bradley Kemp 编写的一套 gRPC 调试工具，自称相当于 gRPC 版的 Fiddler 或 Charles。grpc-dump 作为本地 HTTP(S) 代理运行，把应用发出的每次 gRPC 与 gRPC-Web 调用记录为 JSON 流，包含服务名、方法名、元数据、可能出现的错误状态，以及每条消息的原始与解析形式；没有 .proto 文件时，它会以启发式方法解码消息。grpc-replay 重新发送记录下的请求并核对服务器响应，grpc-fixture 用保存的转储应答客户端，它们都构建在 grpc-proxy Go 库之上。",
+    "evidence_url": "https://github.com/bradleyjkemp/grpc-tools/blob/928b1b952d0d1345f0ef8fd2702e2df5240068bd/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at master commit 928b1b9 (2023-11-14), the last push. The latest release is v0.2.6 (2020-06-30), and master has six later commits, mostly dependency bumps plus a 64 MB message-size limit. The README calls the tools alpha and warns of breaking changes between releases.",
+      "Install through the author's Homebrew tap, the release zips (amd64 builds for Linux, macOS and Windows) or go install; go.mod declares Go 1.13 and requires grpc-go v1.26.0, golang/protobuf v1.4.2 and protoreflect v1.7.0. The application under test must be pointed at the proxy, and the README notes that clients connecting to localhost usually ignore proxy settings; the system_proxy option is documented for macOS.",
+      "Clients that expect TLS need a certificate they trust for the intercepted domains; the README recommends mkcert-generated certificates installed on the user's own machine. Supplying .proto roots or descriptors gives exact decoding instead of the heuristic one. The integration tests use a small test.proto and their own recorded dump and fixture files; CircleCI configuration is included.",
+      "MIT license. Dumps contain full message contents and metadata, including any credentials in headers, so they should be treated as sensitive. This record covers inspecting the user's own applications and services; this review ran nothing."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bradleyjkemp/grpc-tools/blob/928b1b952d0d1345f0ef8fd2702e2df5240068bd/grpc-dump/README.md",
+      "https://github.com/bradleyjkemp/grpc-tools/blob/928b1b952d0d1345f0ef8fd2702e2df5240068bd/grpc-proxy/README.md",
+      "https://github.com/bradleyjkemp/grpc-tools/blob/928b1b952d0d1345f0ef8fd2702e2df5240068bd/grpc-replay/README.md",
+      "https://github.com/bradleyjkemp/grpc-tools/blob/928b1b952d0d1345f0ef8fd2702e2df5240068bd/grpc-fixture/README.md",
+      "https://github.com/bradleyjkemp/grpc-tools/blob/928b1b952d0d1345f0ef8fd2702e2df5240068bd/CHANGELOG.md",
+      "https://github.com/bradleyjkemp/grpc-tools/blob/928b1b952d0d1345f0ef8fd2702e2df5240068bd/go.mod",
+      "https://github.com/bradleyjkemp/grpc-tools/blob/928b1b952d0d1345f0ef8fd2702e2df5240068bd/.goreleaser.yml",
+      "https://github.com/bradleyjkemp/grpc-tools/blob/928b1b952d0d1345f0ef8fd2702e2df5240068bd/LICENSE",
+      "https://github.com/bradleyjkemp/grpc-tools/tree/928b1b952d0d1345f0ef8fd2702e2df5240068bd/integration_test",
+      "https://github.com/bradleyjkemp/grpc-tools/releases/tag/v0.2.6"
+    ]
   }
 ]
