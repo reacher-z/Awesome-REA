@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**851 个仓库** · 2026-10-20 UTC
+**850 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -366,7 +366,6 @@
 - [doronz88/fa](https://github.com/doronz88/fa) — 自动定位二进制文件中符号与结构体的工具，主要面向 IDA **[112 星标]**
 - [guedou/jupyter-radare2](https://github.com/guedou/jupyter-radare2) — 一个简单的 radare2 Jupyter 内核 **[110 星标]**
 - [abenkhadra/spedi](https://github.com/abenkhadra/spedi) — 对已剥离符号的二进制文件进行推测式反汇编、控制流图恢复和调用图恢复。 **[109 星标]**
-- [Accenture/FirmLoader](https://github.com/Accenture/FirmLoader) — 上游仓库未提供项目简介。 **[109 星标]**
 - [0xroman1/Scuffed\_Low\_Level\_Stash](https://github.com/0xroman1/Scuffed_Low_Level_Stash) — 二进制利用与逆向工程资源库 **[108 星标]**
 - [garyttierney/intellij-ghidra](https://github.com/garyttierney/intellij-ghidra) — 用于开发 Ghidra 扩展的 IntelliJ IDEA 插件。 **[107 星标]**
 - [aerosoul94/ida\_gel](https://github.com/aerosoul94/ida_gel) — 面向多种游戏主机 ELF 文件的 IDA 加载器合集，支持 PS3、PS Vita 和 Wii U **[106 星标]**
