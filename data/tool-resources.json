@@ -11759,5 +11759,38 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "ntrghidra",
+    "name": "NTRGhidra",
+    "url": "https://github.com/pedro-javierf/NTRGhidra",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Ghidra loader and plugin for Nintendo DS programs. It checks the .nds header, maps either the ARM9 or the ARM7 binary at its RAM address together with the console's memory regions and I/O register labels, decompresses SDK-compressed ARM9 code and overlays, and fills the overlays the user selects at import, while an optional overlay-manager plugin swaps overlays in and out afterwards. The repository also keeps a small Ghidra Function ID database of NitroSDK 3.0 routines for function identification.",
+    "description_zh": "面向 Nintendo DS 程序的 Ghidra 加载器与插件。它校验 .nds 文件头，把 ARM9 或 ARM7 二进制映射到其内存地址，并建立主机的内存区域和 I/O 寄存器标签；经 SDK 压缩的 ARM9 代码和覆盖模块（overlay）会被解压，导入时用户选中的覆盖模块会载入内容，可选的覆盖模块管理插件还能在导入后切换各覆盖模块。仓库另附一个小型 Ghidra Function ID 数据库，收录 NitroSDK 3.0 例程，用于识别函数。",
+    "evidence_url": "https://github.com/pedro-javierf/NTRGhidra/blob/9e0674c0b36ef9b816dbe7833a68b17327edc1b9/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.5.1, published 2026-03-24 as NTRGhidra-build.zip for Ghidra 12.0.4, and its tag is the reviewed master commit; earlier releases were built for individual Ghidra 10.x and 11.x versions, and the README names 12.0.4 as the latest supported Ghidra version. The zip installs from the Ghidra project window's File → Install Extensions, and the overlay manager is enabled separately under CodeBrowser's File → Configure → Miscellaneous. The README says the project is looking for maintainers and contributors.",
+      "Source builds need a Ghidra installation: build.gradle applies Ghidra's buildExtension.gradle from GHIDRA_INSTALL_DIR, the README describes an Eclipse build with the GhidraDev extension, and a GitHub Actions workflow builds the zip with Gradle on every push and attaches it to new releases. The repository has no tests; src/test holds only a placeholder README.",
+      "Input is a .nds file the user supplies; the repository contains no ROMs or BIOS files. On import the loader rejects files whose header CRC does not match, asks whether the file is a commercial Nintendo SDK title or homebrew, and asks whether to load the ARM9 or the ARM7 code; commercial titles must carry the expected Nintendo logo CRC and have their ARM9 binary decompressed. The overlay manager re-reads overlays only from the original file at its import path, or from a substitute whose MD5 and SHA-256 match it.",
+      "The fidb folder holds nitrosdk3.0.fidb, a 2 KB Function ID database that its README describes as hashes of NitroSDK 3.0.0 functions from commercial games, covering crt0 and file-system routines in ARM code but not Thumb; the loader does not apply it automatically. The loader names its format Nintendo DS (NTR) and DSi (TWL), and the source carries DSi register and memory-region lists, but import maps only the DS ARM9 and ARM7 lists, and CRT0 autoload handling is marked as a TODO.",
+      "Apache-2.0. The README credits GBATEK for DS technical information and Gericom's Every File Explorer for the original header and ARM9 decompression code. Nothing was installed or run and no programs were loaded; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pedro-javierf/NTRGhidra/blob/9e0674c0b36ef9b816dbe7833a68b17327edc1b9/src/main/java/ntrghidra/NTRGhidraLoader.java",
+      "https://github.com/pedro-javierf/NTRGhidra/blob/9e0674c0b36ef9b816dbe7833a68b17327edc1b9/src/main/java/ntrghidra/plugin/NTRGhidraPlugin.java",
+      "https://github.com/pedro-javierf/NTRGhidra/blob/9e0674c0b36ef9b816dbe7833a68b17327edc1b9/src/main/java/ntrghidra/ARM9.java",
+      "https://github.com/pedro-javierf/NTRGhidra/blob/9e0674c0b36ef9b816dbe7833a68b17327edc1b9/fidb/README.md",
+      "https://github.com/pedro-javierf/NTRGhidra/blob/9e0674c0b36ef9b816dbe7833a68b17327edc1b9/build.gradle",
+      "https://github.com/pedro-javierf/NTRGhidra/blob/9e0674c0b36ef9b816dbe7833a68b17327edc1b9/.github/workflows/build_ntrghidra.yml",
+      "https://github.com/pedro-javierf/NTRGhidra/blob/9e0674c0b36ef9b816dbe7833a68b17327edc1b9/LICENSE",
+      "https://github.com/pedro-javierf/NTRGhidra/releases/tag/v1.5.1"
+    ]
   }
 ]

@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/game-analysis/) · [简体中文](game-analysis.zh-CN.md)
 
-**484 repositories** · 2026-10-20 UTC
+**485 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -68,6 +68,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [jkdansereau/goldeneye-pc-port](https://github.com/jkdansereau/goldeneye-pc-port) — GoldenEye 007 (N64, 1997) as a native PC game for Windows, Linux, Steam Deck and macOS. Built from the open decompilation, with widescreen, mouse and keyboard or controller, and split-screen. Not an emulator. **[255 stars]** · Curated: [GoldenEye 007: an agent-assisted native port from a decompilation](https://awesomerea.org/resources/goldeneye-pc-port-case/)
 - [open-ead/sead](https://github.com/open-ead/sead) — Decompilation of sead: the standard C++ library for first-party Nintendo games **[252 stars]**
 - [kylesmile1103/Learn-Frida](https://github.com/kylesmile1103/Learn-Frida) — Modding Unity app with Frida tutorial. **[249 stars]**
+- [pedro-javierf/NTRGhidra](https://github.com/pedro-javierf/NTRGhidra) — A Nintendo DS binary loader for Ghidra **[228 stars]** · Curated: [NTRGhidra](https://awesomerea.org/resources/ntrghidra/)
 - [AITYunivers/NebulaFD](https://github.com/AITYunivers/NebulaFD) — A work in progress, reimagined decompiler for Clickteam Fusion. **[226 stars]** · Curated: [Nebula (NebulaFD)](https://awesomerea.org/resources/nebulafd/)
 - [dbalatoni13/nfsmw](https://github.com/dbalatoni13/nfsmw) — WIP 1:1 Decompilation of multiple versions of NFS:MW **[226 stars]**
 - [MetaMystia/MetaMystia](https://github.com/MetaMystia/MetaMystia) — A mod for Touhou Mystia's Izakaya. **[204 stars]**
