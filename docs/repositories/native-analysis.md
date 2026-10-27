@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**851 repositories** · 2026-10-20 UTC
+**850 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -457,7 +457,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [aerosoul94/dynlib](https://github.com/aerosoul94/dynlib) — IDA Pro plugin to aid PS4 user mode ELF reverse engineering. **[71 stars]**
 - [anic/ida2pwntools](https://github.com/anic/ida2pwntools) — a IDA 7.0 plugins that helps to attach process created by pwntools and debug pwn **[71 stars]**
 - [lpg2709/emulator-Intel-4004](https://github.com/lpg2709/emulator-Intel-4004) — Simple emulator of the Intel 4004 chip. Mirror from https<span>:</span>//gitlab.com/lpg2709/emulator-Intel-4004 **[71 stars]**
-- [cn0xroot/IFDA](https://github.com/cn0xroot/IFDA) — IoT Firmware Deep Analysis: Automated reverse engineering and vulnerability discovery for IoT firmware binaries. **[70 stars]**
 - [teapotd/xdeobf](https://github.com/teapotd/xdeobf) — A deobfuscation plugin for IDA **[70 stars]**
 - [kohnakagawa/PracticalPCode](https://github.com/kohnakagawa/PracticalPCode) — Practical P-Code examples **[69 stars]**
 - [tacesrever/Il2CppParser](https://github.com/tacesrever/Il2CppParser) — libil2cpp symbol parser for ida **[69 stars]**

@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/firmware/) · [简体中文](firmware.zh-CN.md)
 
-**221 repositories** · 2026-10-20 UTC
+**222 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -46,6 +46,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [matiaspl/LinkPi-ENCx](https://github.com/matiaspl/LinkPi-ENCx) — Reverse engineering and unofficial documentation of LinkPi ENC series (ENC1/ENC5/ENC9) and TBS 2603SE video encoders based on the F3520D platform — hardware analysis, firmware internals, streaming fixes, and hidden features. **[86 stars]**
 - [onehouwong/Firmware-Analysis-Papers](https://github.com/onehouwong/Firmware-Analysis-Papers) — Recent security papers on firmware analysis **[85 stars]**
 - [Cr4sh/smram\_parse](https://github.com/Cr4sh/smram_parse) — System Management RAM analysis tool **[83 stars]**
+- [cn0xroot/IFDA](https://github.com/cn0xroot/IFDA) — IoT Firmware Deep Analysis: Automated reverse engineering and vulnerability discovery for IoT firmware binaries. **[70 stars]** · Curated: [IFDA (IoT Firmware Deep Analysis)](https://awesomerea.org/resources/ifda-iot-firmware-deep-analysis/)
 - [fkie-cad/LuckyCAT](https://github.com/fkie-cad/LuckyCAT) — A distributed fuzzing management framework **[70 stars]**
 - [RiS3-Lab/DICE-DMA-Emulation](https://github.com/RiS3-Lab/DICE-DMA-Emulation) — DICE: Automatic Emulation of DMA Input Channels for Dynamic Firmware Analysis **[67 stars]**
 - [C00kie-/IoT-workshop-materials](https://github.com/C00kie-/IoT-workshop-materials) — Presented hardware reverse engineering workshops since 2019 **[65 stars]**

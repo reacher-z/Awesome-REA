@@ -12397,5 +12397,38 @@
       "https://github.com/toniebox-reverse-engineering/teddycloud/releases/tag/tc_v0.7.0",
       "https://tonies-wiki.revvox.de/docs/tools/teddycloud/setup/"
     ]
+  },
+  {
+    "id": "ifda-iot-firmware-deep-analysis",
+    "name": "IFDA (IoT Firmware Deep Analysis)",
+    "url": "https://github.com/cn0xroot/IFDA",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "binary"
+    ],
+    "description_en": "Static analysis pipeline for extracted IoT firmware: pointed at one ELF or an unpacked root filesystem, it disassembles binaries with Capstone for x86, ARM/Thumb-2, AArch64 and MIPS, recovers functions, call graphs and exploit mitigations, and reports candidate issues from dangerous-function calls, call-graph taint paths, CVE correlation through cve-bin-tool, embedded secrets, script injection patterns and filesystem hardening checks. Reports come out as JSON, Markdown and a CycloneDX SBOM. Optional add-ons are Ghidra headless pseudocode, moria-based extraction of raw images and a Go service with a job queue, REST API, bilingual web UI and an LLM agent that triages a finished scan's findings.",
+    "description_zh": "面向已解包 IoT 固件的静态分析流水线：对单个 ELF 或解包后的根文件系统，它用 Capstone 反汇编 x86、ARM/Thumb-2、AArch64 和 MIPS 二进制，恢复函数、调用图和漏洞缓解措施，并从危险函数调用、调用图污点路径、借助 cve-bin-tool 的 CVE 关联、内嵌密钥、脚本注入模式和文件系统加固检查中报告候选问题。报告以 JSON、Markdown 和 CycloneDX SBOM 输出。可选组件包括 Ghidra 无界面伪代码、基于 moria 的原始镜像解包，以及一个 Go 服务，提供任务队列、REST API、中英双语网页界面，并可由大模型智能体对已完成的扫描结果进行分诊。",
+    "evidence_url": "https://github.com/cn0xroot/IFDA/blob/90c11c2179c8a1c907529a9e866c06b636375077/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit 90c11c2 of 2026-09-21 is the 29th since the project began on 2026-06-10. CHANGELOG calls it v4.4, while the latest tag is V4.1, five commits earlier, there are no GitHub releases and pyproject.toml still declares 2.0.0. README describes a first iteration covering binary reverse engineering and vulnerability discovery; emulated or dynamic validation is listed as planned, not built.",
+      "The Python 3.10+ core needs capstone, pyelftools, cryptography, Pillow and cve-bin-tool, which README calls required: it keeps a local CVE database of 1 GB or more and needs network access on first use, and without it correlation falls back to a small curated database with a warning. Optional parts are yara-python, Ghidra headless with JDK 17+ for pseudocode, CuPy for GPU chart rendering, the Go 1.22+ service for the REST API and web UI, and the moria submodule, built with CMake and a C++20 compiler, for unpacking raw images. Linux and macOS are supported; Windows only through WSL2.",
+      "Input is a single ELF, an extracted firmware tree or, through the service's extract job, a raw image whose filesystem region the analyst chooses. README and the requirements document limit use to firmware the operator owns or is authorized to assess. The repository contains no firmware; its tests build cross-compiled x86_64, MIPS, ARM and AArch64 samples, and README reports 25 passed and 2 skipped with cross-compilers and Ghidra installed.",
+      "README calls decompilation-free static analysis heuristic: findings carry confidence scores, and taint results are candidate paths for analyst validation, not proven exploits. The optional AI analysis sends a finished scan to an OpenAI-compatible or Anthropic-protocol endpoint the user configures, storing API keys encrypted; the model pulls finding evidence, pseudocode, init scripts and service data through tools. README says these features were tested with Claude models.",
+      "Apache-2.0, added on 2026-09-17; cve-bin-tool (GPL-3.0) is only invoked as a subprocess, and moria is MIT. No REA connection is stated, and nothing was run in this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cn0xroot/IFDA/blob/90c11c2179c8a1c907529a9e866c06b636375077/CHANGELOG.md",
+      "https://github.com/cn0xroot/IFDA/blob/90c11c2179c8a1c907529a9e866c06b636375077/firmware-analysis-requirements.md",
+      "https://github.com/cn0xroot/IFDA/blob/90c11c2179c8a1c907529a9e866c06b636375077/ENVIRONMENT.md",
+      "https://github.com/cn0xroot/IFDA/blob/90c11c2179c8a1c907529a9e866c06b636375077/service/README.md",
+      "https://github.com/cn0xroot/IFDA/blob/90c11c2179c8a1c907529a9e866c06b636375077/pyproject.toml",
+      "https://github.com/cn0xroot/IFDA/blob/90c11c2179c8a1c907529a9e866c06b636375077/.gitmodules",
+      "https://github.com/cn0xroot/IFDA/blob/90c11c2179c8a1c907529a9e866c06b636375077/LICENSE"
+    ]
   }
 ]

@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**851 个仓库** · 2026-10-20 UTC
+**850 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -457,7 +457,6 @@
 - [aerosoul94/dynlib](https://github.com/aerosoul94/dynlib) — 辅助 PS4 用户态 ELF 逆向工程的 IDA Pro 插件。 **[71 星标]**
 - [anic/ida2pwntools](https://github.com/anic/ida2pwntools) — IDA 7.0 插件，辅助附加到 pwntools 创建的进程并调试 pwn **[71 星标]**
 - [lpg2709/emulator-Intel-4004](https://github.com/lpg2709/emulator-Intel-4004) — 简单的 Intel 4004 芯片模拟器，镜像自 https<span>:</span>//gitlab.com/lpg2709/emulator-Intel-4004 **[71 星标]**
-- [cn0xroot/IFDA](https://github.com/cn0xroot/IFDA) — IoT Firmware Deep Analysis：面向物联网固件二进制文件的自动化逆向工程与漏洞发现。 **[70 星标]**
 - [teapotd/xdeobf](https://github.com/teapotd/xdeobf) — IDA 去混淆插件 **[70 星标]**
 - [kohnakagawa/PracticalPCode](https://github.com/kohnakagawa/PracticalPCode) — 实用 P-Code 示例。 **[69 星标]**
 - [tacesrever/Il2CppParser](https://github.com/tacesrever/Il2CppParser) — IDA 的 libil2cpp 符号解析器 **[69 星标]**

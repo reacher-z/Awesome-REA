@@ -4500,5 +4500,15 @@
       "自定义 tonie JSON 接口的 Python API 测试和 WASM TAF 编码器测试通过 Makefile 目标运行；所审阅的工作流只构建并发布，不运行这些测试。dev-sandbox 提供模拟的 tonie、盒子和 TAF 数据。与真实盒子及 Boxine 云端配合的表现仍属项目报告，本次来源核查未运行任何内容。",
       "采用 GPL-2.0（LICENSE）；内置的 Cyclone 协议栈、Opus、Ogg、cJSON 和 FatFs 保留各自条款。tonie 音频、盒子固件和 Boxine 的服务保留各自权利。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "ifda-iot-firmware-deep-analysis": {
+    "name": "IFDA IoT 固件深度分析工具",
+    "requirements": [
+      "所审阅的 main 分支提交 90c11c2 日期为 2026-09-21，是项目自 2026-06-10 开始以来的第 29 次提交。CHANGELOG 称其为 v4.4，而最新标签是早五次提交的 V4.1，GitHub 上没有发布版本，pyproject.toml 仍声明为 2.0.0。README 称这是第一阶段，涵盖二进制逆向与漏洞发现；仿真或动态验证列为计划中的功能，尚未实现。",
+      "Python 3.10+ 核心需要 capstone、pyelftools、cryptography、Pillow 以及 README 称为必需的 cve-bin-tool：后者在本地维护 1 GB 以上的 CVE 数据库，首次使用需联网；缺少它时，CVE 关联会退回到一个小型人工整理的数据库并给出警告。可选组件包括 yara-python、用于生成伪代码的 Ghidra 无界面模式与 JDK 17+、用于 GPU 图表渲染的 CuPy、提供 REST API 和网页界面的 Go 1.22+ 服务，以及用 CMake 和 C++20 编译器构建、用于解包原始镜像的 moria 子模块。支持 Linux 和 macOS；Windows 只能通过 WSL2 使用。",
+      "输入可以是单个 ELF、已解包的固件目录，或经服务的解包任务处理、由分析者选定文件系统区域的原始镜像。README 和需求文档限定只能分析操作者拥有或获授权评估的固件。仓库不含任何固件；测试会自行构建 x86_64、MIPS、ARM 和 AArch64 交叉编译样本，README 报告在安装交叉编译器和 Ghidra 的情况下 25 项通过、2 项跳过。",
+      "README 指出这种不依赖反编译的静态分析属于启发式方法：每项结果都带置信度，污点结果只是需要分析者验证的候选路径，并非已证实的漏洞利用。可选的 AI 分析会把已完成的扫描发送到用户配置的 OpenAI 兼容或 Anthropic 协议端点，API 密钥加密存储；模型通过工具调用读取结果证据、伪代码、init 脚本和服务信息。README 称这些功能是在 Claude 模型上测试的。",
+      "采用 Apache-2.0 许可，于 2026-09-17 加入；cve-bin-tool（GPL-3.0）仅以子进程方式调用，moria 采用 MIT 许可。未提及使用 REA，本次审阅未运行任何内容。"
+    ]
   }
 }
