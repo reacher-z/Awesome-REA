@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 495](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-495-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 210](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 135](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 495](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-495-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 210](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 136](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-495 项精选资源（210 个案例）· 135 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 492。
+495 项精选资源（210 个案例）· 136 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 492。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (135) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (136) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -643,13 +643,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**135 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**136 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (10) · [反编译](#papers-decompilation) (57) · [网站](#papers-website-reconstruction) (22)
+- [智能体评测](#papers-agent-evaluation) (10) · [反编译](#papers-decompilation) (57) · [网站](#papers-website-reconstruction) (23)
 - [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (12) · [固件](#papers-firmware-analysis) (13)
 - [协议](#papers-protocol-analysis) (13)
 
@@ -753,6 +753,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**CASCADE：谷歌基于大语言模型的 JavaScript 反混淆器**](https://doi.org/10.1145/3786583.3786873) - 利用 Gemini 定位 Obfuscator.IO 为字符串混淆插入的前置（prelude）函数，再在 JSIR 编译器中间表示上执行常量传播与内联，以确定性方式还原字符串字面量和 API 名称。 <sub>原题：*CASCADE: LLM-powered JavaScript Deobfuscator at Google* · ICSE-SEIP 2026 · 会议论文 · Shan Jiang 等 · [PDF](https://arxiv.org/pdf/2507.17691v2) · [代码](https://github.com/google/jsir) · [完整条目](https://awesomerea.org/zh/papers/paper-cascade/)</sub>
 - [**ScreenCoder：以模块化多模态智能体推进面向前端自动化的视觉到代码生成**](https://arxiv.org/abs/2507.22827) - 将截图到代码的生成分配给定位、规划和生成三个智能体，分别标注界面区域、构建层级布局树并编写 HTML/CSS。 <sub>原题：*ScreenCoder: Advancing Visual-to-Code Generation for Front-End Automation via Modular Multimodal Agents* · EMNLP 2026 · 已接收 · Yilei Jiang 等 · [PDF](https://arxiv.org/pdf/2507.22827v2) · [代码](https://github.com/leigest519/ScreenCoder) · [完整条目](https://awesomerea.org/zh/papers/paper-screencoder/)</sub>
 - [**IWR-Bench：大型视觉语言模型能否根据用户交互视频重建可交互网页？**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/55bfedfd31489e5ae83c9ce8eec7b0e1-Abstract-Conference.html) - 测试模型利用用户交互视频和提供的静态资源重建可交互网页的能力。 <sub>原题：*IWR-Bench: Can LVLMs reconstruct interactive webpage from a user interaction video?* · ICLR 2026 · 会议论文 · Yang Chen 等 · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/55bfedfd31489e5ae83c9ce8eec7b0e1-Paper-Conference.pdf) · [代码](https://github.com/SIGMME/IWR-Bench) · [完整条目](https://awesomerea.org/zh/papers/paper-iwr-bench/)</sub>
+- [**从混淆到清晰：面向安全分析的综合性 JavaScript 反混淆工具**](https://www.ndss-symposium.org/ndss-paper/from-obfuscated-to-obvious-a-comprehensive-javascript-deobfuscation-tool-for-security-analysis/) - JSimplifier 分三个阶段从混淆脚本中恢复可读的 JavaScript：预处理器规范化格式错误或混合编码的输入；反混淆器将基于 AST 的静态简化与在 Node.js vm 上下文中有选择地执行混淆调用点相结合，并把执行结果写回 AST；可选的人性化模块借鉴 HumanifyJS，利用大语言模型重命名标识符，再用 Prettier 格式化输出。 <sub>原题：*From Obfuscated to Obvious: A Comprehensive JavaScript Deobfuscation Tool for Security Analysis* · NDSS 2026 · 会议论文 · Dongchao Zhou 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f2198-paper.pdf) · [代码](https://github.com/XingTuLab/JSIMPLIFIER) · [完整条目](https://awesomerea.org/zh/papers/paper-jsimplifier/)</sub>
 - [**JsDeObsBench：衡量与评测大语言模型的 JavaScript 反混淆能力**](https://doi.org/10.1145/3719027.3744871) - 对附带测试用例的 Project CodeNet 程序施加 JavaScript-Obfuscator 的七种混淆变换，构建可通过执行验证的 JavaScript 反混淆基准，并从语法、执行结果、代码简化程度及与原始代码的相似度评估 LLM 和现有工具的输出。 <sub>原题：*JsDeObsBench: Measuring and Benchmarking LLMs for JavaScript Deobfuscation* · ACM CCS 2025 · 会议论文 · Guoqiang Chen 等 · [PDF](https://arxiv.org/pdf/2506.20170v1) · [代码](https://github.com/Ch3nYe/JsDeObsBench) · [完整条目](https://awesomerea.org/zh/papers/paper-jsdeobsbench/)</sub>
 - [**Interaction2Code：从交互原型生成网页代码的多模态大语言模型评测基准**](https://doi.org/10.1109/ASE63991.2025.00028) - 评测模型根据交互前后的截图重建可交互网页的能力。 <sub>原题：*Interaction2Code: Benchmarking MLLM-based Interactive Webpage Code Generation from Interactive Prototyping* · ASE 2025 · 会议论文 · Jingyu Xiao 等 · [PDF](https://arxiv.org/pdf/2411.03292v3) · [代码](https://github.com/WebPAI/Interaction2Code) · [完整条目](https://awesomerea.org/zh/papers/paper-interaction2code/)</sub>
 - [**WebUIBench：评估多模态大语言模型从网页界面生成代码能力的综合基准**](https://aclanthology.org/2025.findings-acl.815/) - 通过视觉感知、HTML 编程、图像与 HTML 对应理解，以及截图重建任务，诊断从网页界面生成代码的能力；利用来自真实网站的问答对，分别考察各项基础技能。 <sub>原题：*WebUIBench: A Comprehensive Benchmark for Evaluating Multimodal Large Language Models in WebUI-to-Code* · Findings of ACL 2025 · 会议论文 · Zhiyu Lin 等 · [PDF](https://aclanthology.org/2025.findings-acl.815.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-webuibench/)</sub>
