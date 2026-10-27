@@ -4519,5 +4519,15 @@
       "COMPARE 保持默认时，make rom 和 make compress 会按仓库保存的 MD5 值检查两个 ROM。尚未反编译的函数仍以提取出的汇编通过 GLOBAL_ASM 引入，因此校验通过并不代表反编译完成。CI 在提供基础 ROM 和编译器归档的私有容器中构建 jp 版本，比较警告数量并上传 objdiff 格式的报告。decomp.dev 针对该固定提交的报告显示，2,515,744 个代码字节中有 465,796 个（18.52%）、14,415 个函数中有 2,998 个已匹配，尚无完整单元；本合集未运行构建。",
       "README 规定 src 和 include 在可能范围内、以及未声明其他许可的文件采用 CC0-1.0，asm-differ、asm-processor、fado、ultralib 等子仓库不在此列。任天堂的游戏、ROM 内容和下载的编译器各自保留权利。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "xiaomi-desk-lamp-open-firmware-case": {
+    "name": "open-desk-lamp-firmware：小米台灯的替代固件",
+    "requirements": [
+      "所审阅的 master 分支提交日期为 2019-03-19，是十个提交中的最后一个，晚于唯一的发布版本 v0.0.1（2019-01-12），该版本的 zip 包含 CI 构建产物。README 只涵盖基本功能；没有分析或复现原厂固件的行为、应用协议或云端通信，也只描述了作者手中的台灯型号。README 指出，尽管主板带有外置闪存芯片，esptool.py 仍将模块识别为 ESP8285。",
+      "安装需要拆开台灯，在 U0RX、U0TX、GPIO0 和 GND 焊盘上焊线连接 USB 串口转换器，并覆盖原厂固件。仓库不含厂商固件；README 建议先备份原有闪存，提醒备份中含有使用者的 Wi-Fi 凭据，并请使用者核对闪存容量，以防存在其他型号。",
+      "构建使用 CMake 2.8+ 以及 esp-open-sdk 提供的 xtensa-lx106-elf 工具链；esp-open-sdk 会下载 Espressif 的 ESP8266 NONOS SDK，固件链接该 SDK 中仅以二进制提供的 Wi-Fi 与 PHY 库及其 PWM 驱动，再由 esptool.py 转换并烧录镜像。CI 配置在 Travis CI 的 Ubuntu 16.04 镜像上从源码构建 esp-open-sdk；esp-open-sdk 自 2018 年以来已无新提交。",
+      "项目没有测试：CI 只编译固件，并为打标签的版本附上 zip。README 未报告任何测量结果，也未列出作者自用以外的已测台灯版本；本合集未构建或烧录该固件。",
+      "采用 MIT 许可证（2018 年，Felix Vollmer）。Espressif 的 SDK 库适用其自身的修改版 MIT 许可证，原厂固件和小米应用也适用各自条款。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }
