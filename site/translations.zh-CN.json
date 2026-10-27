@@ -7469,5 +7469,15 @@
       "固件是面向 Propeller P8X32A 的 Spin 代码：README 推荐使用 Windows 版 Propeller Tool 1.3.2，称其他开发环境未经测试且不受支持，同时也给出了用 OpenSpin 编译、用 PropLoader 加载到 RAM 或写入 EEPROM 的命令。仓库提交了已编译的固件映像 JTAGulator.eeprom（32 KB），最后一次更新对应 1.12 版。OpenOCD 模式和逻辑分析仪模式分别需要 OpenOCD 的 Bus Pirate 驱动或 Openbench Logic Sniffer 客户端软件，这两种模式在复位和固件更新后仍会保持，只能由用户手动退出。",
       "README 称该设计以 CC BY-SA 4.0 许可发布，JTAGulator 名称和标志是 Grand Idea Studio 的注册商标，未经许可不得用于衍生作品；而 Spin 源码文件头仍写着 CC BY 3.0 United States，GitHub 也未识别出许可证。本条目未测试任何硬件，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "canlab": {
+    "name": "CanLab CAN 总线逆向分析工作站",
+    "requirements": [
+      "README 称 CanLab 是单人开发的测试版项目。所审阅的提交 8aaa6ff（2026-09-23）在 pyproject.toml 中声明版本 2.1.0，而最新发布版本为 v2.0.0（2026-09-15），附 Linux x86_64 构建和演示视频。README 强调分析方法属于启发式，只提示候选结果而非确认信号，且尚未在大量真实车辆上验证。",
+      "需要 Linux、macOS 或 Windows 上的 Python 3.11+（开发使用 3.12），AI、REST、MCP、硬件适配器、MDF4（asammdf）和 openpilot 日志（pycapnp）为可选扩展；README 要求 4 GB 内存，机器学习功能建议 8 GB。实时采集可使用 SocketCAN、comma.ai Panda、GVRET 板卡或 python-can 适配器；README 称只用过一款实体适配器 CANalyst-II，其余仅在虚拟总线上验证。",
+      "分析对象是使用者自己的抓包。附带的样例是由脚本生成的合成 Hyundai 风格抓包，测试夹具每个只有几行；真实数据验收测试会下载 SavvyCAN、CSS Electronics 和 comma.ai 公开的记录，而不是把它们提交进仓库。opendbc 匹配功能首次使用时下载 commaai/opendbc 索引；可选的 AI 分析会把所选 ID 的帧统计发送给配置的 Anthropic、OpenAI、Groq 或 Ollama 服务。",
+      "该应用还具备仅限台架使用的发送功能，受默认关闭的全局 ARM TX 开关和屏蔽 ID 列表约束；README 限定只能在隔离的台架环境中使用，此处不作进一步介绍。MCP 工具无法发送报文。",
+      "README 的测试部分报告 753 个 pytest 测试通过（徽章仍写 578），另有与 can-isotp、udsoncan 和 can-j1939 的互操作测试，以及针对公开真实记录的 99 项检查；诊断请求只在脚本模拟的应答端上测试过。采用 MIT 许可证；NMEA 2000 表源自 CANboat（Apache-2.0），cereal 模式定义来自 comma.ai（MIT）。本次审阅未运行测试，也未打开任何抓包。"
+    ]
   }
 }
