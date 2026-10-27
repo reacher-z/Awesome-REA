@@ -4330,5 +4330,14 @@
       "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
       "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
     ]
+  },
+  "awesome-re-mcp": {
+    "name": "Awesome RE-MCP 逆向工具 MCP 服务器清单",
+    "requirements": [
+      "全部 7 个提交都在 2025-07-26，此后清单未再变动，因此其中的条目、星标数和状态说明都是 2025 年 7 月的快照。部分“缺失”列表已不再准确：例如它称 WinDbg 尚无 MCP 服务器，而本合集已收录 mcp-windbg。",
+      "每行只有名称、链接和简短说明，未注明实现语言、传输方式、维护状态或许可证，尽管其贡献指南要求提交者注明实现状态和传输方式。调试器部分有一行链接的是 PulseMCP 目录页面而非项目本身。清单链接的服务器中有 8 个已在本合集中收录，包括 GhidraMCP、ReVa、mrexodia 的 ida-pro-mcp、radare2-mcp、LLDB 的 MCP 支持和 Burp Suite MCP Server。",
+      "网络分析与安全测试类条目（例如封装 SQLMap、Nmap 等扫描工具的合集）属于两用工具，使用前应查看各项目自身的文档、适用范围和许可证。清单本身没有测试，也未验证其条目。",
+      "README 称清单以 MIT 许可发布，但仓库没有许可证文件，GitHub 也未识别出许可证。这是独立的发现清单；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
