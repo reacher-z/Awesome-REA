@@ -7690,5 +7690,15 @@
       "适用范围是所评测编译器版本生成的 x86 CPU 可执行文件；主要评测覆盖 TVM 和 Glow，NNFusion 由单独的脚本处理。evaluation/ 下按模型编写的反编译脚本即为使用接口，并没有通用的命令行工具。",
       "香港科技大学 Academic Software License（LICENSE、COPYING）：仅允许学术或非营利研究人员为教育或学术研究目的使用、复制和修改，发表成果时须附上指定的致谢；GitHub 未识别出 SPDX 许可证。本条目未下载或运行任何可执行文件、轨迹或模型。"
     ]
+  },
+  "opendash-scanmatik-sm3-protocol-case": {
+    "name": "opendash：重建 Scanmatik SM3 J2534 适配器协议",
+    "requirements": [
+      "在 2026-10-16 的 main 分支最新提交处审阅，该提交位于 v0.4.2-beta 发布之后，只改动了 README。README 报告在一辆 Opel Astra J 1.7 CDTI 上实现了读取识别信息、标准 OBD-II 数据和 GM 0x22 服务参数，以及每个数据包约 98.7 Hz 的模块主动推流；ELM327 桥接已在模拟模块上测试，但尚未在实车上测试，另有两段长时间录制因尚不明确的原因提前中止。",
+      "需要使用者自己的 Scanmatik SM3，并通过其 Wi-Fi 热点连接。标准 SAE J1979 PID 随应用提供；更丰富的各品牌参数目录由使用者已有的 GM GDS2 安装生成，README 称因数据属于 GM 而不予分发。仓库未收录任何参数目录数据、厂商驱动、固件或行车录制数据。",
+      "应用在设计上只读：README 列出了允许的诊断服务，写入数据、控制输入输出或例程、清除故障码或请求安全访问的请求会在到达套接字前被拒绝。唯一已知的执行器命令位于设置开关之后，需要手机的设备锁验证，且默认关闭。",
+      "Android 8.0+ 应用，使用 Gradle、AGP 9.4.1、Kotlin 2.4.20 和 JDK 21 构建。另有一个独立的 Rust 核心实现报文结构、校验字、ISO-TP 与 ELM327 处理，但尚未接入应用；README 称应用中的 Kotlin 桥接已领先于它。CI 运行 cargo test（重放 200 条记录的写入，并将计算出的校验字与设备实际发送的值比对），并在不含 Rust 核心的情况下构建调试版 APK；Kotlin 单元测试虽然存在，但不在 CI 中运行。本次核查既未运行测试，也未运行应用。",
+      "采用 GPL-3.0 许可（LICENSE）。Scanmatik、GM、GDS2 与 Opel 仍为其权利人的商标；所审阅来源未确立任何 AI 或 REA 使用。"
+    ]
   }
 }
