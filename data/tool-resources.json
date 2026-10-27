@@ -12616,5 +12616,37 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "go-fast-js-ast",
+    "name": "go-fAST",
+    "url": "https://github.com/T14Raptor/go-fAST",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Go library for parsing, traversing, transforming and regenerating JavaScript abstract syntax trees, which its README presents for code analysis, obfuscation and deobfuscation. Its parser builds on goja's parsing code, a generated SWC-style visitor API supports depth-first rewriting and cloning of nodes, a resolver tracks scopes and bindings, the ext package adds node-removal, side-effect and value-inference helpers, and a generator prints JavaScript from the tree. The documentation calls it a lightweight, faster alternative to Babel that deliberately omits parent, sibling and reference maps and automated mutation helpers.",
+    "description_zh": "一个用 Go 编写的库，用于解析、遍历、转换和重新生成 JavaScript 抽象语法树，README 将其定位于代码分析以及混淆与反混淆。其解析器基于 goja 的解析代码，自动生成的 SWC 式访问者 API 支持深度优先地改写和克隆节点，解析器（resolver）跟踪作用域与绑定，ext 包提供删除节点、判断副作用和推断取值的辅助函数，代码生成器则从语法树输出 JavaScript。文档称它是比 Babel 更轻、更快的替代品，并刻意省去了父节点、兄弟节点和引用映射以及自动化的修改辅助功能。",
+    "evidence_url": "https://github.com/T14Raptor/go-fAST/blob/379695448820483158b38ed4e6860d347fc5fccc/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest tag at review: v0.1.0, created 2026-07-02 and served by the Go module proxy under the lowercase module path github.com/t14raptor/go-fast; there are no GitHub releases. The reviewed master commit of 2026-10-04 is 11 commits ahead of that tag, with parser, resolver and generator fixes and a new PreserveParens parse option.",
+      "go.mod requires Go 1.24 and depends only on nukilabs/ftoa and nukilabs/unicodeid. Unit tests cover the parser, generator, resolver and statement helpers, but the only CI workflow checks that the generated union, visitor and clone files are up to date and does not run them. Guides and example visitors, such as unrolling sequence expressions and expanding variable declarations, are on the project's GitBook documentation site.",
+      "It is a library rather than a ready-made deobfuscator: users write their own visitors for the transformations they need and supply the JavaScript they analyze. The README does not state which ECMAScript versions it parses.",
+      "MIT (copyright 2024 T14Raptor); the README credits goja for parsing code and SWC for the visitor API design. No scripts were parsed or transformed in this review, and the sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/T14Raptor/go-fAST/blob/379695448820483158b38ed4e6860d347fc5fccc/go.mod",
+      "https://github.com/T14Raptor/go-fAST/blob/379695448820483158b38ed4e6860d347fc5fccc/.github/workflows/verify-generated.yml",
+      "https://github.com/T14Raptor/go-fAST/tree/379695448820483158b38ed4e6860d347fc5fccc/ast/ext",
+      "https://github.com/T14Raptor/go-fAST/blob/379695448820483158b38ed4e6860d347fc5fccc/parser/parser.go",
+      "https://github.com/T14Raptor/go-fAST/blob/379695448820483158b38ed4e6860d347fc5fccc/LICENSE",
+      "https://github.com/T14Raptor/go-fAST/releases/tag/v0.1.0",
+      "https://proxy.golang.org/github.com/t14raptor/go-fast/@v/v0.1.0.info",
+      "https://gofast.disasm.dev/"
+    ]
   }
 ]

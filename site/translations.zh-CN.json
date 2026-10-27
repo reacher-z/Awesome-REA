@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "go-fast-js-ast": {
+    "name": "go-fAST JavaScript 语法树库",
+    "requirements": [
+      "审阅时最新标签为 v0.1.0，创建于 2026-07-02，Go 模块代理以小写模块路径 github.com/t14raptor/go-fast 提供该版本；GitHub 上没有发布版。所审阅的 master 分支 2026-10-04 提交比该标签多 11 个提交，包括解析器、作用域解析器和代码生成器的修复，以及新的 PreserveParens 解析选项。",
+      "go.mod 要求 Go 1.24，只依赖 nukilabs/ftoa 和 nukilabs/unicodeid。单元测试覆盖解析器、代码生成器、作用域解析器和语句辅助函数，但唯一的 CI 工作流只检查自动生成的 union、visitor 和 clone 文件是否最新，并不运行这些测试。使用指南和示例访问者（如展开逗号序列表达式、拆分变量声明）位于项目的 GitBook 文档站点。",
+      "它是一个库而非现成的反混淆工具：使用者需针对所需的转换自行编写访问者，并自备待分析的 JavaScript。README 未说明它能解析哪些 ECMAScript 版本。",
+      "采用 MIT 许可证（版权 2024 T14Raptor）；README 致谢 goja 提供解析代码、SWC 提供访问者 API 设计。本次审阅未解析或转换任何脚本；所审来源未确立与 REA 的关联。"
+    ]
   }
 }

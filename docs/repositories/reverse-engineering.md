@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**669 repositories** · 2026-10-20 UTC
+**668 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -194,7 +194,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [LLVM-but-worse/maple-ir](https://github.com/LLVM-but-worse/maple-ir) — Industrial IR-based static analysis framework for Java bytecode **[189 stars]**
 - [techge/PRE-list](https://github.com/techge/PRE-list) — List of (automatic) protocol reverse engineering tools for network protocols **[188 stars]**
 - [danielkrupinski/vac-hooks](https://github.com/danielkrupinski/vac-hooks) — Hook WinAPI functions used by Valve Anti-Cheat. Log calls and intercept arguments &amp; return values. DLL written in C. **[186 stars]**
-- [T14Raptor/go-fAST](https://github.com/T14Raptor/go-fAST) — A JavaScript AST parser, traverser, and generator written in Go **[186 stars]**
 - [kh4sh3i/Malware-Analysis](https://github.com/kh4sh3i/Malware-Analysis) — A curated list of awesome malware analysis tools and resources **[173 stars]**
 - [mikeroyal/Firmware-Guide](https://github.com/mikeroyal/Firmware-Guide) — Firmware Guide **[171 stars]**
 - [caomod2077/Deobfuscator-Luraph-V15](https://github.com/caomod2077/Deobfuscator-Luraph-V15) — A standalone, high-performance deobfuscator and devirtualizer for Roblox Luau scripts protected by Luraph v15. **[169 stars]**
