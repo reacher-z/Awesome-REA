@@ -12616,5 +12616,40 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "jstillery",
+    "name": "JStillery",
+    "url": "https://github.com/mindedsecurity/JStillery",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Minded Security's JavaScript deobfuscator, which Stefano Di Paola forked from esdeobfuscate in 2015, simplifies scripts by partial evaluation on an esprima AST. It folds constant and string expressions, propagates known values through variables and pure function calls, evaluates calls to built-in String, Array and Number methods and atob/btoa, and parses string arguments passed to eval back into code. It runs as a command-line tool on a file or stdin, as an Express server with a web UI and a REST endpoint, or as a browserified library.",
+    "description_zh": "Minded Security 的 JavaScript 反混淆工具，由 Stefano Di Paola 于 2015 年从 esdeobfuscate 分支而来，在 esprima 语法树上通过部分求值简化脚本。它会折叠常量和字符串表达式，经由变量和纯函数调用传播已知值，对内置 String、Array、Number 方法以及 atob/btoa 的调用求值，并把传给 eval 的字符串参数重新解析为代码。它可作为命令行工具处理文件或标准输入，也可作为带网页界面和 REST 接口的 Express 服务运行，或作为经 browserify 打包的库使用。",
+    "evidence_url": "https://github.com/mindedsecurity/JStillery/blob/512e9af2a54eb4592bf6fa6ac8483ceeb5726b03/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The newest commit on master dates from 2019-04-22, and there are no releases or tags. The 2015 Minded Security blog post that the README links describes JStillery as an internal tool used, among other things, to analyze JavaScript malware samples and normalize scripts for classification. The README also links a hosted REPL at mindedsecurity.github.io/jstillery, which responded at review; only the repository was reviewed.",
+      "Needs Node.js and npm install; package.json declares no Node.js version and leaves esprima, escodegen and esmangle unpinned, and no lockfile is committed, so each install takes their latest releases. The CLI prints the original and the deobfuscated code. npm run build_server copies the web UI and browserifies the library, and npm run start_server then serves the UI and a /deobfuscate endpoint on port 3001, with server_config.json allowing any origin by default.",
+      "Partial evaluation is on by default (the USE_PARTIAL environment variable turns it off only when set to an empty string) and passes selected expressions from the input to Node's vm.runInNewContext. Node's documentation says the vm module is not a security mechanism, so analyze untrusted samples in an isolated environment.",
+      "JStillery predates the newer deobfuscators curated here, such as webcrack, javascript-deobfuscator and the Obfuscator.io Deobfuscator, and its documentation does not mention bundle unpacking, string-array decoding or control-flow unflattening. The mocha suite in tests/ compares output for samples including JSFuck, aaencode, jjencode and Dean Edwards' packer with stored expected results, some of which remain only partly simplified.",
+      "LICENSE and the README state GPL-3.0, while both package.json files declare ISC; src/jstiller.js keeps the BSD-style notice of esdeobfuscate. The web UI vendors jQuery, Bootstrap, CodeMirror, Font Awesome and js-beautify. The reviewed sources mention no AI or REA use, and no scripts were deobfuscated for this record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mindedsecurity/JStillery/blob/512e9af2a54eb4592bf6fa6ac8483ceeb5726b03/package.json",
+      "https://github.com/mindedsecurity/JStillery/blob/512e9af2a54eb4592bf6fa6ac8483ceeb5726b03/jstillery_cli.js",
+      "https://github.com/mindedsecurity/JStillery/blob/512e9af2a54eb4592bf6fa6ac8483ceeb5726b03/src/jstiller.js",
+      "https://github.com/mindedsecurity/JStillery/blob/512e9af2a54eb4592bf6fa6ac8483ceeb5726b03/server/server.js",
+      "https://github.com/mindedsecurity/JStillery/blob/512e9af2a54eb4592bf6fa6ac8483ceeb5726b03/server/server_config.json",
+      "https://github.com/mindedsecurity/JStillery/blob/512e9af2a54eb4592bf6fa6ac8483ceeb5726b03/tests/tests.js",
+      "https://github.com/mindedsecurity/JStillery/tree/512e9af2a54eb4592bf6fa6ac8483ceeb5726b03/tests/tests_OK",
+      "https://github.com/mindedsecurity/JStillery/blob/512e9af2a54eb4592bf6fa6ac8483ceeb5726b03/LICENSE",
+      "https://blog.mindedsecurity.com/2015/10/advanced-js-deobfuscation-via-ast-and.html",
+      "https://nodejs.org/api/vm.html"
+    ]
   }
 ]
