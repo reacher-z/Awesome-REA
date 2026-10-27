@@ -12397,5 +12397,31 @@
       "https://github.com/toniebox-reverse-engineering/teddycloud/releases/tag/tc_v0.7.0",
       "https://tonies-wiki.revvox.de/docs/tools/teddycloud/setup/"
     ]
+  },
+  {
+    "id": "awesome-uefi-security",
+    "name": "Awesome UEFI Security",
+    "url": "https://github.com/river-li/awesome-uefi-security",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A single-README awesome list of UEFI and BIOS security material, which its maintainer describes as a personal and not comprehensive collection. It links UEFI, PI and ACPI specifications, EDK II development resources, firmware analysis tools such as UEFITool, efiXplorer, CHIPSEC and UEFI plugins for Ghidra and Binary Ninja, SMM-themed CTF challenges, analyses of bootkits found in the wild, vulnerability write-ups, conference talks, blog posts, papers and training courses.",
+    "description_zh": "以单个 README 维护的 UEFI 与 BIOS 安全资料 awesome 清单，维护者称其为个人收集、并不全面。清单链接 UEFI、PI 与 ACPI 规范，EDK II 开发资源，UEFITool、efiXplorer、CHIPSEC 及 Ghidra 和 Binary Ninja 的 UEFI 插件等固件分析工具，以 SMM 为主题的 CTF 题目，对在野 bootkit 的分析报告，漏洞分析文章，会议演讲、博客、论文和培训课程。",
+    "evidence_url": "https://github.com/river-li/awesome-uefi-security/blob/970e6c0de787a4cffa41e6d8b14f024526ccdd33/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README was last changed by a pull request merged on 2025-09-04 that fixed the UEFITool link; the last addition, a 2025 arXiv paper, was committed on 2025-02-01. It holds about 230 linked entries in ten sections, including roughly 35 tools, 57 talks, 71 blog posts and 14 papers; these are list rows, not verified projects.",
+      "Most tool entries have no description, and no entry states maintenance status, supported firmware, platform or license, so each linked project must be checked at its own source. The list itself contains no firmware images, SDKs or tools.",
+      "Several sections cover offensive material, including bootkit and SMM backdoor repositories, exploit code and a Secure Boot bypass project. This entry treats the list as a research index for analysis and defence and records no attack method.",
+      "CC0-1.0 for the list; linked works keep their own licenses. CI runs awesome-lint on pull requests. An independent discovery list; the reviewed source establishes no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/river-li/awesome-uefi-security/blob/970e6c0de787a4cffa41e6d8b14f024526ccdd33/LICENSE",
+      "https://github.com/river-li/awesome-uefi-security/blob/970e6c0de787a4cffa41e6d8b14f024526ccdd33/.github/workflows/main.yml"
+    ]
   }
 ]

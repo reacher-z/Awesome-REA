@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 512](https://img.shields.io/badge/resources-512-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 217](https://img.shields.io/badge/cases-217-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 137](https://img.shields.io/badge/papers-137-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 513](https://img.shields.io/badge/resources-513-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 217](https://img.shields.io/badge/cases-217-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 137](https://img.shields.io/badge/papers-137-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-512 curated resources (217 cases) · 137 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 509 because 3 of these appear only under Papers.
+513 curated resources (217 cases) · 137 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 510 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -34,7 +34,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (217) · [Related Collections](#related-collections) (9) · [Full Repository Index](#full-repository-index) (3,309)
+- [All cases](https://awesomerea.org/cases/) (217) · [Related Collections](#related-collections) (10) · [Full Repository Index](#full-repository-index) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -610,6 +610,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Awesome Decomp Games**](https://github.com/SubmitGame/awesome-decomp-games) - A generated, rated index of public game reconstruction projects: decompilations, disassemblies, static recompilations, source ports, engine remakes and browser ports. <sub>Collection · Targets: Game · [Full entry](https://awesomerea.org/resources/submitgame-awesome-decomp-games/)</sub>
 - [**awesome-unofficial-pc-ports**](https://github.com/Sebastrion/awesome-unofficial-pc-ports) - A single-README guide to unofficial PC ports of console games built from decompilations or recompilations and chosen for easy installation by players. <sub>Collection · Targets: Game · [Full entry](https://awesomerea.org/resources/awesome-unofficial-pc-ports/)</sub>
 - [**awesome-decompilation**](https://github.com/nforest/awesome-decompilation) - A short, link-only reading list on decompiling machine code, last updated in 2023. <sub>Collection · Targets: Binary · [Full entry](https://awesomerea.org/resources/nforest-awesome-decompilation/)</sub>
+- [**Awesome UEFI Security**](https://github.com/river-li/awesome-uefi-security) - A single-README awesome list of UEFI and BIOS security material, which its maintainer describes as a personal and not comprehensive collection. <sub>Collection · Targets: Firmware · [Full entry](https://awesomerea.org/resources/awesome-uefi-security/)</sub>
 
 <a id="references-and-learning"></a>
 ### References and Learning
