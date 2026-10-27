@@ -229,7 +229,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [secrary/DrSemu](https://github.com/secrary/DrSemu) — DrSemu - Sandboxed Malware Detection and Classification Tool Based on Dynamic Behavior **[280 stars]**
 - [mebeim/systrack](https://github.com/mebeim/systrack) — 📡🐧 Linux kernel syscall implementation tracker **[275 stars]**
 - [argp/iBoot64helper](https://github.com/argp/iBoot64helper) — IDAPython loader to help with AArch64 iBoot, iBEC, and SecureROM reverse engineering **[266 stars]**
-- [danielplohmann/smda](https://github.com/danielplohmann/smda) — SMDA is a minimalist recursive disassembler library that is optimized for accurate Control Flow Graph (CFG) recovery from memory dumps. **[264 stars]**
+- [danielplohmann/smda](https://github.com/danielplohmann/smda) — SMDA is a minimalist recursive disassembler library that is optimized for accurate Control Flow Graph (CFG) recovery from memory dumps. **[264 stars]** · Curated: [SMDA](https://awesomerea.org/resources/smda/)
 - [blacktop/docker-ghidra](https://github.com/blacktop/docker-ghidra) — Ghidra Client/Server Docker Image **[263 stars]**
 - [JustasMasiulis/ida\_bitfields](https://github.com/JustasMasiulis/ida_bitfields) — IDA Pro plugin to make bitfield accesses easier to grep **[262 stars]**
 - [mooncat-greenpy/Ghidra\_GolangAnalyzerExtension](https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension) — Analyze Golang with Ghidra **[262 stars]**
