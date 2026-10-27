@@ -4566,5 +4566,15 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "jstillery": {
+    "name": "JStillery JavaScript 部分求值反混淆工具",
+    "requirements": [
+      "master 分支最新提交为 2019-04-22，仓库没有发布版本或标签。README 链接的 2015 年 Minded Security 博客文章称，JStillery 是一款内部工具，用途之一是分析 JavaScript 恶意软件样本、对脚本做规范化以便分类。README 还链接了托管在 mindedsecurity.github.io/jstillery 的在线 REPL，审阅时可以访问；本条目只审阅了仓库。",
+      "需要 Node.js 并执行 npm install；package.json 未声明 Node.js 版本，esprima、escodegen 和 esmangle 也未固定版本，且仓库没有锁文件，因此每次安装都会取它们的最新版本。命令行工具会输出原始代码和反混淆后的代码。npm run build_server 会复制网页界面并用 browserify 打包库，随后 npm run start_server 在 3001 端口提供网页界面和 /deobfuscate 接口；server_config.json 默认允许任意来源跨域访问。",
+      "部分求值默认开启（只有把 USE_PARTIAL 环境变量设为空字符串时才会关闭），会把输入中选定的表达式交给 Node 的 vm.runInNewContext 执行。Node 文档说明 vm 模块不是安全机制，因此应在隔离环境中分析不可信样本。",
+      "JStillery 早于本合集收录的较新反混淆工具，例如 webcrack、javascript-deobfuscator 和 Obfuscator.io Deobfuscator；其文档未提及解包打包文件、解码字符串数组或还原控制流平坦化。tests/ 中的 mocha 测试把 JSFuck、aaencode、jjencode 和 Dean Edwards packer 等样本的输出与保存的预期结果比对，其中部分预期结果仍只是部分简化。",
+      "LICENSE 和 README 均声明 GPL-3.0，而两个 package.json 文件都声明 ISC；src/jstiller.js 保留了 esdeobfuscate 的 BSD 式许可声明。网页界面内置了 jQuery、Bootstrap、CodeMirror、Font Awesome 和 js-beautify。所审来源未提及任何 AI 或 REA 用途，本条目也未对任何脚本进行反混淆。"
+    ]
   }
 }
