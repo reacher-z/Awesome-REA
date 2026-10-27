@@ -11759,5 +11759,44 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "rabbitizer",
+    "name": "rabbitizer",
+    "url": "https://github.com/Decompollaborate/rabbitizer",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "MIPS instruction decoder written in C that never allocates on the heap, with Python, C++ and Rust bindings in the same repository and the stated aim of producing matching assembly. It decodes one instruction word at a time, focusing on MIPS I to III with partial MIPS IV support, and also handles the N64 RSP, the PlayStation's R3000 GTE, the PSP's R4000 Allegrex and the PS2's R5900; it offers validation checks, instruction-grouping queries, configurable pseudo-instructions and register names, and small helpers for building pointer and symbol detection. Matching-decompilation tooling builds on it: splat and spimdisasm both list it as a Python dependency.",
+    "description_zh": "使用 C 编写、完全不在堆上分配内存的 MIPS 指令解码器，同一仓库还提供 Python、C++ 和 Rust 绑定，目标是生成可匹配的汇编。它逐条解码指令字，重点支持 MIPS I 至 III，部分支持 MIPS IV，还能处理 N64 的 RSP、PlayStation 的 R3000 GTE、PSP 的 R4000 Allegrex 以及 PS2 的 R5900；提供指令有效性检查、按特征分组查询指令、可配置的伪指令与寄存器命名，以及用于自建指针和符号检测的小工具。匹配式反编译工具以它为基础：splat 和 spimdisasm 都把它列为 Python 依赖。",
+    "evidence_url": "https://github.com/Decompollaborate/rabbitizer/blob/724a49a5b4dbfb99f1a9e6992e63964fd29c90c8/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest stable release at review: 1.16.2, published 2026-05-29 on GitHub, PyPI and crates.io, which matches the reviewed 1.x commit. A 2.0.0 alpha series (2.0.0-alpha.9, 2026-05-20) is published from a separate Rust branch that was not reviewed; splat and spimdisasm both pin versions below 2.0.0.",
+      "Install with pip install rabbitizer or cargo add rabbitizer. The README gives Python 3.9 as the minimum, although pyproject.toml still declares >=3.4, and building the Python bindings from source needs the Python development headers. The C and C++ libraries build with make and clang (C11 and C++17), and the Rust crate declares Rust 1.66.0. Instruction tables for every binding are generated from templates in tables/, and CI checks that the generated files are current.",
+      "Input is raw 32-bit instruction words, so callers must take code from their own binaries, choose the CPU variant and handle addresses and symbols themselves. Pseudo-instructions that expand to more than one instruction are deliberately unsupported; the README says output should match, reports that RSP output reassembles to matching code with armips, and calls MIPS IV support partial.",
+      "GitHub Actions build the C code with warnings as errors on Ubuntu 22.04 and run build-info, logic and instruction checks, and Python unit tests run on Linux, macOS and Windows; tests/asm holds assembly samples for the GTE, Allegrex and R5900. Nothing was built or run in this review. The README's reference list points to third-party CPU manuals and documentation hosted elsewhere, which are not part of this record.",
+      "MIT. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Decompollaborate/rabbitizer/blob/724a49a5b4dbfb99f1a9e6992e63964fd29c90c8/CHANGELOG.md",
+      "https://github.com/Decompollaborate/rabbitizer/blob/724a49a5b4dbfb99f1a9e6992e63964fd29c90c8/pyproject.toml",
+      "https://github.com/Decompollaborate/rabbitizer/blob/724a49a5b4dbfb99f1a9e6992e63964fd29c90c8/Cargo.toml",
+      "https://github.com/Decompollaborate/rabbitizer/blob/724a49a5b4dbfb99f1a9e6992e63964fd29c90c8/Makefile",
+      "https://github.com/Decompollaborate/rabbitizer/blob/724a49a5b4dbfb99f1a9e6992e63964fd29c90c8/.github/workflows/make.yml",
+      "https://github.com/Decompollaborate/rabbitizer/blob/724a49a5b4dbfb99f1a9e6992e63964fd29c90c8/.github/workflows/unit_tests_py.yml",
+      "https://github.com/Decompollaborate/rabbitizer/blob/724a49a5b4dbfb99f1a9e6992e63964fd29c90c8/.github/workflows/check_tables.yml",
+      "https://github.com/Decompollaborate/rabbitizer/blob/724a49a5b4dbfb99f1a9e6992e63964fd29c90c8/LICENSE",
+      "https://github.com/Decompollaborate/rabbitizer/releases/tag/1.16.2",
+      "https://pypi.org/project/rabbitizer/1.16.2/",
+      "https://crates.io/crates/rabbitizer/1.16.2",
+      "https://github.com/ethteck/splat/blob/7548b9771e6f8418507b23434187fb07741af6d4/pyproject.toml",
+      "https://github.com/Decompollaborate/spimdisasm/blob/4b5d4c68eeb9f9eae14b3bb713971433ae2c3c43/requirements.txt"
+    ]
   }
 ]
