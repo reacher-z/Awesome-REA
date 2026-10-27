@@ -12616,5 +12616,38 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "debundle",
+    "name": "debundle",
+    "url": "https://github.com/1egoman/debundle",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Node.js command-line tool that unpacks JavaScript bundles produced by Browserify or Webpack back into a tree of module files, so a bundle can be read file by file instead of as one script. A JSON configuration gives the bundle type, the entry-point module and optional knownPaths that map numeric module IDs to output files or node_modules packages, and it can rewrite a minifier's renamed require identifier inline or through a variable so the output can be rebundled or run in Node. The README says it was built to learn how bundles are structured for a reverse-engineering project and that debundling is lossy: package.json settings and Webpack module names are not recovered, and minified code stays minified.",
+    "description_zh": "Node.js 命令行工具，可把 Browserify 或 Webpack 生成的 JavaScript 打包文件还原为按模块拆分的文件树，便于逐个文件阅读，而不必面对一整个脚本。JSON 配置文件指定打包类型、入口模块，以及可选的 knownPaths（把数字模块 ID 映射为输出文件或 node_modules 中的包路径）；它还能以内联或变量方式改写被压缩工具重命名的 require 标识符，使输出可重新打包或在 Node 中运行。README 称该工具是作者为一个逆向工程项目了解打包结构而编写的，并指出拆包是有损的：无法恢复 package.json 设置和 Webpack 模块名称，压缩过的代码拆出后仍是压缩状态。",
+    "evidence_url": "https://github.com/1egoman/debundle/blob/67531ffe13c3a78db08b51dd37f7ba9c4f77e98c/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README calls this a research project that is no longer maintained and says it works in a laboratory environment most of the time but often fails on real-world bundles. The reviewed master commit dates from 2018-06-16; npm's latest debundle release is 0.5.4 of 2017-09-12, newer than the repository's v0.5.3 tag and package.json, and unfinished v2 branches were last updated in 2020.",
+      "Installs with npm i -g debundle and runs as debundle -i <bundle> -o <directory> -c <config>. package.json requires Node 6 or newer, .nvmrc and the Travis CI configuration use Node 6, and the dependencies date from that period, such as acorn 4 and recast 0.5; behavior on current Node releases was not checked.",
+      "Only Browserify bundles and Webpack bundles whose modules are passed as an array are decoded: the Webpack decoder aborts when the module list is not an array, and other bundlers are not officially supported, although the moduleAst option can point to a module list with the same layout. Webpack output files are named after module IDs unless knownPaths names them.",
+      "test_bundles/ holds four small sample bundles with their configurations and original sources, which CI debundles with test_bundles/run_test.sh; the comparison with the original sources is commented out, so CI only checks that debundling finishes. Users supply the bundles to unpack, and the README's legal note warns that some terms of service forbid reverse engineering.",
+      "package.json and the npm package declare ISC, but the repository has no license file and GitHub detects none; src/extern/replace-method is a vendored MIT-licensed module by Hugh Kennedy. No bundle was unpacked for this entry, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/1egoman/debundle/blob/67531ffe13c3a78db08b51dd37f7ba9c4f77e98c/DOCS.md",
+      "https://github.com/1egoman/debundle/blob/67531ffe13c3a78db08b51dd37f7ba9c4f77e98c/package.json",
+      "https://github.com/1egoman/debundle/blob/67531ffe13c3a78db08b51dd37f7ba9c4f77e98c/.travis.yml",
+      "https://github.com/1egoman/debundle/blob/67531ffe13c3a78db08b51dd37f7ba9c4f77e98c/src/decoders/webpack.js",
+      "https://github.com/1egoman/debundle/tree/67531ffe13c3a78db08b51dd37f7ba9c4f77e98c/test_bundles",
+      "https://github.com/1egoman/debundle/blob/67531ffe13c3a78db08b51dd37f7ba9c4f77e98c/test_bundles/run_test.sh",
+      "https://github.com/1egoman/debundle/blob/67531ffe13c3a78db08b51dd37f7ba9c4f77e98c/src/extern/replace-method/LICENSE.md",
+      "https://www.npmjs.com/package/debundle/v/0.5.4"
+    ]
   }
 ]

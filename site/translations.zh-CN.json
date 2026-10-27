@@ -4566,5 +4566,15 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "debundle": {
+    "name": "debundle JavaScript 打包文件拆包工具",
+    "requirements": [
+      "README 称这是一个已不再维护的研究项目，在实验环境中大多能正常工作，但处理真实环境中的打包文件时经常失败。所审阅的 master 提交日期为 2018-06-16；npm 上 debundle 的最新版本是 2017-09-12 发布的 0.5.4，比仓库的 v0.5.3 标签和 package.json 中的版本更新；未完成的 v2 分支最后更新于 2020 年。",
+      "通过 npm i -g debundle 安装，运行方式为 debundle -i <打包文件> -o <输出目录> -c <配置文件>。package.json 要求 Node 6 及以上，.nvmrc 和 Travis CI 配置使用 Node 6，依赖也是同一时期的版本，如 acorn 4 和 recast 0.5；本次未检查它在当前 Node 版本上的表现。",
+      "只能解析 Browserify 打包文件，以及以数组形式传入模块的 Webpack 打包文件：模块列表不是数组时 Webpack 解码器会中止；其他打包工具未获官方支持，但可用 moduleAst 选项指向布局相同的模块列表。除非在 knownPaths 中指定名称，Webpack 拆出的文件以模块 ID 命名。",
+      "test_bundles/ 目录包含四个小型示例打包文件及其配置和原始源码，CI 通过 test_bundles/run_test.sh 对它们执行拆包；与原始源码比对的部分已被注释掉，因此 CI 只检查拆包能否完成。待拆包的文件需由用户自备，README 的法律提示还提醒，部分服务条款禁止逆向工程。",
+      "package.json 和 npm 软件包声明采用 ISC 许可，但仓库没有许可证文件，GitHub 也未识别出许可证；src/extern/replace-method 是随附的 MIT 许可模块，作者为 Hugh Kennedy。本条目未对任何打包文件拆包，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
