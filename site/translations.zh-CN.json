@@ -4538,5 +4538,14 @@
       "Python 单元测试覆盖转换函数和 Flipper 文件解析；项目没有 CI。各种效果由作者和贡献者在自己的手环上报告，本次来源核查未运行任何代码或硬件。",
       "采用 MIT 许可（LICENSE）。PixMob 的硬件、固件和商标不在该许可范围内，X 光图片注明来自 Samy Kamkar。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "fridump": {
+    "name": "Fridump 基于 Frida 的进程内存转储工具",
+    "requirements": [
+      "README 称当前为 0.1 版，并提醒可能存在缺陷。master 分支最新提交为 2019-04-25，仓库没有标签或发布版本。README 报告的测试仅限于以 Windows 7 和 Mac OS X 为主机，目标为运行 iOS 8.2 的 iPad Air 2、运行 CyanogenMod 4.4.4 的 Galaxy Tab 和一台 Windows 7 笔记本。",
+      "从克隆的仓库运行 fridump.py，需要 Python 和用 pip 安装的 frida 包；仓库没有依赖清单，也未固定 Frida 版本。其内嵌代理脚本调用 Process.enumerateRangesSync 和 Memory.readByteArray，而 Frida 17.0.0 的发布说明（2025 年 5 月）表示这类旧式 API 已被移除，因此未经修改的脚本看来需要更早的 Frida 版本。",
+      "移动设备上需要运行与主机 Frida 版本匹配的 frida-server，README 指出在 Android 上它必须以 root 身份运行；-U 用于选择通过 USB 连接的设备，frida-ps 可列出进程名。输出为每个内存区域一个原始文件，以其基地址命名，不做结构或符号恢复；无法读取的区域会给出警告并跳过。",
+      "转储中可能包含目标进程里的凭据和个人数据，因此只应用于自己拥有或获得授权测试的应用和设备。仓库没有许可证文件，GitHub 也未识别出许可证，因此没有明确的再使用授权；仓库仅包含三个 Python 文件和 README。所审来源未提及任何 AI 或 REA 用途，本条目也未运行该工具。"
+    ]
   }
 }

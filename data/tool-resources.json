@@ -12521,5 +12521,34 @@
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/tree/b372420e1e1ff818a8d25ba50f0c71e97e62f138/raw_wild_ir_captures",
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/LICENSE"
     ]
+  },
+  {
+    "id": "fridump",
+    "name": "Fridump",
+    "url": "https://github.com/Nightbringer21/fridump",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Small Python command-line tool that attaches to a running process through Frida and writes its accessible memory ranges to files, run from a Windows, Linux or macOS host against iOS, Android or Windows applications. By default it saves ranges that are readable and writable, -r also takes read-only ones, ranges above a size limit (20 MiB unless set with --max-size) are split into chunks, and -s runs a basic strings pass that collects printable text from every dump into strings.txt. Its README presents it for penetration testers and developers.",
+    "description_zh": "一个小型 Python 命令行工具，通过 Frida 附加到正在运行的进程，把其中可访问的内存区域写入文件；可在 Windows、Linux 或 macOS 主机上运行，面向 iOS、Android 或 Windows 应用。默认只保存可读写的内存区域，-r 会连同只读区域一并保存；超过大小上限（默认 20 MiB，可用 --max-size 调整）的区域会拆分成多块；-s 会对所有转储文件做一遍简单的字符串提取，把可打印文本汇总到 strings.txt。其 README 称该工具主要面向渗透测试人员和开发者。",
+    "evidence_url": "https://github.com/Nightbringer21/fridump/blob/3e64ee0b0e3dbd7e1aa295077c9ba0728a2bc68f/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README calls this version 0.1 and warns that bugs are expected. The newest commit on master dates from 2019-04-25, and the repository has no tags or releases. The README reports testing only from Windows 7 and Mac OS X hosts, against an iPad Air 2 on iOS 8.2, a Galaxy Tab running CyanogenMod 4.4.4 and a Windows 7 laptop.",
+      "Run fridump.py from a clone with Python and the frida package from pip; there is no requirements file and no Frida version is pinned. Its embedded agent calls Process.enumerateRangesSync and Memory.readByteArray, legacy APIs that Frida's 17.0.0 release notes (May 2025) say are now gone, so the unmodified script appears to need an earlier Frida release.",
+      "Mobile targets need a frida-server matching the host's Frida on the device, which the README says must run as root on Android; -U selects a USB-connected device and frida-ps lists process names. Output is one raw file per memory range, named by its base address, with no structure or symbol recovery; ranges that cannot be read are skipped with a warning.",
+      "Dumps can hold credentials and personal data from the target process, so use it only on apps and devices you own or are authorized to test. The repository has no license file and GitHub detects no license, so it grants no explicit reuse terms; it contains only three Python files and the README. The reviewed sources mention no AI or REA use, and nothing was run for this record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Nightbringer21/fridump/blob/3e64ee0b0e3dbd7e1aa295077c9ba0728a2bc68f/fridump.py",
+      "https://github.com/Nightbringer21/fridump/blob/3e64ee0b0e3dbd7e1aa295077c9ba0728a2bc68f/dumper.py",
+      "https://github.com/Nightbringer21/fridump/blob/3e64ee0b0e3dbd7e1aa295077c9ba0728a2bc68f/utils.py",
+      "https://frida.re/news/2025/05/17/frida-17-0-0-released/"
+    ]
   }
 ]
