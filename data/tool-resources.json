@@ -11799,5 +11799,33 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "ultrasina-android-reverse",
+    "name": "Android Reverse",
+    "url": "https://github.com/UltraSina/androidReverse",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Android app, published only as release APKs, that runs an APK reverse-engineering workflow entirely on the phone, from package extraction and Java decompilation to native analysis, editing and rebuilding. It extracts APK, XAPK and split APKS packages from storage or installed apps, decompiles each class with Jadx (with fallback and IR modes), CFR, Procyon, JD-Core, Krakatau or Vineflower, analyzes native libraries through an embedded radare2 with pseudo-C, assembly, hex, control-flow-graph and call-graph views, and since v20 edits resources, binary XML, the manifest and smali before rebuilding and signing the APK. A built-in MCP server lets MCP clients edit those project files while rebuilding stays a manual step; the README also lists Flutter Dart AOT analysis through Unflutter and Unity il2cpp metadata parsing.",
+    "description_zh": "一款仅以发布版 APK 形式提供的 Android 应用，把 APK 逆向工作流全部放在手机上完成，涵盖安装包提取、Java 反编译、原生代码分析、编辑和重新打包。它可从存储或已安装应用中提取 APK、XAPK 和拆分的 APKS 安装包，逐个类在 Jadx（含回退与 IR 模式）、CFR、Procyon、JD-Core、Krakatau 和 Vineflower 之间选择引擎反编译，通过内嵌的 radare2 分析原生库并提供伪 C、汇编、十六进制、控制流图和调用图视图；自 v20 起还能编辑资源、二进制 XML、清单和 smali，再重新打包并签名 APK。内置的 MCP 服务器允许 MCP 客户端编辑这些项目文件，重新构建仍需用户手动触发；README 还列出借助 Unflutter 分析 Flutter 的 Dart AOT 代码以及解析 Unity il2cpp 元数据。",
+    "evidence_url": "https://github.com/UltraSina/androidReverse/blob/ad9dd7ab4770b089b785039a36be57f50c35f3f0/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v20, published 2026-08-24, with arm64-v8a, armeabi-v7a and universal APKs; the README's badges name those two architectures and mark the project as in active development. The first release, on 2026-06-17, said editing and repacking were not yet available. Neither the README nor the release notes state a minimum Android version.",
+      "At the reviewed commit the repository holds only the README and six screenshots: no app source, build files or license file, and GitHub detects no license, so the app's terms are unstated. The README credits radare2, Sora Editor and the CFR, Procyon, JD-Core, Krakatau, Vineflower and Jadx engines without naming their licenses.",
+      "According to the README everything runs on the device, with no PC, ADB or desktop tools. Users supply the packages or installed apps they analyze, and its disclaimer limits use to education and to security research on apps whose authors have given explicit permission.",
+      "The MCP server is described only in one README paragraph and the release notes, with no transport, port, tool list or setup steps, and open issue #2 reports edits made through MCP that did not appear in the app. The README does not say how its Smali Explainer produces explanations. This review installed no APK and analyzed no apps, and the sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/UltraSina/androidReverse/tree/ad9dd7ab4770b089b785039a36be57f50c35f3f0",
+      "https://github.com/UltraSina/androidReverse/releases/tag/v20",
+      "https://github.com/UltraSina/androidReverse/releases/tag/android",
+      "https://github.com/UltraSina/androidReverse/issues/2"
+    ]
   }
 ]

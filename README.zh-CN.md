@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 494](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-494-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 210](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 135](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 495](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-495-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 210](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 135](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,11 +21,11 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-494 项精选资源（210 个案例）· 135 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 491。
+495 项精选资源（210 个案例）· 135 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 492。
 
 **按目标找工具与案例**
 
-- [网站](#website) (29) · [游戏](#game) (193) · [应用](#app) (79)
+- [网站](#website) (29) · [游戏](#game) (193) · [应用](#app) (80)
 - [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (23) · [协议](#protocol) (19)
 
 **论文与工作流**
@@ -393,6 +393,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Android Security Toolkit：APK 静态初步分析**](https://github.com/abhirampatel/android-security-toolkit) - 本地 Python APK 初步分析工具，调用 apktool 与 strings 检查清单配置、源码及原生库字符串，输出 TXT／JSON 结果供人工核验。 <sub>工具 · Android · [完整条目](https://awesomerea.org/zh/resources/android-security-toolkit/)</sub>
 - [**ilspy-cli：面向 Agent 的定向 .NET 反编译**](https://github.com/akiselev/ilspy-cli) - 通过进程内托管的 ILSpy C# 桥接层，提供程序集、类型和指定方法的反编译、源码搜索及结构化 JSON 输出的 Rust CLI；独立的 PE 头检测器无需加载 .NET 运行时即可识别托管程序集。 <sub>工具 · .NET · [完整条目](https://awesomerea.org/zh/resources/akiselev-ilspy-cli/)</sub>
 - [**React-Decode**](https://github.com/alexandra-seredkina/React-Decode) - 面向已构建 React JavaScript 的静态分析 CLI，可输出更易读的代码，以及推断的 API 请求、路由和应用常量报告；存在 source map 内嵌源码时可将其提取。 <sub>工具 · 也适用：网站 · [完整条目](https://awesomerea.org/zh/resources/react-decode/)</sub>
+- [**Android Reverse 设备端逆向套件**](https://github.com/UltraSina/androidReverse) - 一款仅以发布版 APK 形式提供的 Android 应用，把 APK 逆向工作流全部放在手机上完成，涵盖安装包提取、Java 反编译、原生代码分析、编辑和重新打包。 <sub>工具 · Android · [完整条目](https://awesomerea.org/zh/resources/ultrasina-android-reverse/)</sub>
 
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制

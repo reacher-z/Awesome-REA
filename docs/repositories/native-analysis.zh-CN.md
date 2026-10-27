@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**851 个仓库** · 2026-10-20 UTC
+**850 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -350,7 +350,6 @@
 - [elliiot/ghidra\_darknight](https://github.com/elliiot/ghidra_darknight) — Ghidra 的 DarkNight 主题 **[128 星标]**
 - [L4ys/LazyCross](https://github.com/L4ys/LazyCross) — 在 Hex-Rays 伪代码中展示整个二进制文件对函数或变量交叉引用的 IDA Pro 插件 **[128 星标]**
 - [patois/mrspicky](https://github.com/patois/mrspicky) — MrsPicky：辅助审计 memcpy() 和 memmove() 调用的 IDAPython 反编译器脚本。 **[128 星标]**
-- [UltraSina/androidReverse](https://github.com/UltraSina/androidReverse) — 完全在设备上进行 Android 逆向工程，提供 Radare2 二进制分析、8 种 Java 反编译器，以及 Flutter 和 Unity IL2CPP 支持。 **[127 星标]**
 - [wernsey/chip8](https://github.com/wernsey/chip8) — 使用 C 编写的 CHIP-8 解释器、汇编器和反汇编器 **[127 星标]**
 - [digitalw0lf/hextor](https://github.com/digitalw0lf/hextor) — Hextor：十六进制编辑器与二进制数据分析工具包 **[125 星标]**
 - [XboxDev/ghidra-xbe](https://github.com/XboxDev/ghidra-xbe) — 面向 Ghidra 软件逆向工程框架的 Xbox 可执行格式（XBE）加载器扩展 **[125 星标]**

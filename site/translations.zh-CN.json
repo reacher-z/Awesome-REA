@@ -4330,5 +4330,14 @@
       "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
       "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
     ]
+  },
+  "ultrasina-android-reverse": {
+    "name": "Android Reverse 设备端逆向套件",
+    "requirements": [
+      "审阅时最新版本为 v20，发布于 2026-08-24，提供 arm64-v8a、armeabi-v7a 和通用版 APK；README 徽章列出这两种架构，并将项目标为积极开发中。2026-06-17 的首个版本说明当时尚不支持编辑和重新打包。README 和发布说明均未写明最低 Android 版本。",
+      "在所审阅的提交中，仓库只有 README 和六张截图：没有应用源码、构建文件或许可证文件，GitHub 也未检测到许可证，因此应用的使用条款并未说明。README 致谢 radare2、Sora Editor 以及 CFR、Procyon、JD-Core、Krakatau、Vineflower 和 Jadx 等引擎，但未说明它们的许可证。",
+      "据 README 所述，所有操作都在设备上完成，无需电脑、ADB 或桌面工具。待分析的安装包或已安装应用由使用者自备；其免责声明将用途限定于教育，以及在获得应用作者明确许可后进行的安全研究。",
+      "MCP 服务器仅在 README 的一段文字和发布说明中提及，未说明传输方式、端口、工具列表或配置步骤；未关闭的 issue #2 报告通过 MCP 所做的修改没有出现在应用中。README 也未说明 Smali Explainer 如何生成解释。本次审阅未安装 APK，也未分析任何应用；所审来源未确立与 REA 的关联。"
+    ]
   }
 }

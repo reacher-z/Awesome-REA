@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**851 repositories** · 2026-10-20 UTC
+**850 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -350,7 +350,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [elliiot/ghidra\_darknight](https://github.com/elliiot/ghidra_darknight) — DarkNight theme for Ghidra **[128 stars]**
 - [L4ys/LazyCross](https://github.com/L4ys/LazyCross) — An IDA Pro plugin that display cross-references to functions or variables across the entire binary in Hex-Rays pseudocode **[128 stars]**
 - [patois/mrspicky](https://github.com/patois/mrspicky) — MrsPicky - An IDAPython decompiler script that helps auditing memcpy() and memmove() calls **[128 stars]**
-- [UltraSina/androidReverse](https://github.com/UltraSina/androidReverse) — Android reverse engineering entirely on-device. Radare2 binary analysis, 8 Java decompilers, Flutter &amp; Unity il2cpp support. **[127 stars]**
 - [wernsey/chip8](https://github.com/wernsey/chip8) — A CHIP-8 interpreter, assembler and disassembler in C **[127 stars]**
 - [digitalw0lf/hextor](https://github.com/digitalw0lf/hextor) — Hextor - Hexadecimal editor and binary data analyzing toolkit **[125 stars]**
 - [XboxDev/ghidra-xbe](https://github.com/XboxDev/ghidra-xbe) — Xbox Executable Format (XBE) Loader Extension for Ghidra SRE framework **[125 stars]**

@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/android/) · [English](android.md)
 
-**479 个仓库** · 2026-10-20 UTC
+**480 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -154,6 +154,7 @@
 - [baksmali/smali](https://github.com/baksmali/smali) — smali 和 baksmali 所有版本的发布产物，v3 由 <span>@</span>google 提供，v2 和 v1 由 <span>@</span>JesusFreke 提供 **[131 星标]**
 - [0x742/noia](https://github.com/0x742/noia) — \[开发中\] 简单的移动应用沙盒文件浏览工具，由 \[frida.re\]\(https<span>:</span>//www<span>.</span>frida.re) 提供支持。 **[129 星标]**
 - [BitTheByte/Jarida](https://github.com/BitTheByte/Jarida) — Jarida（Jadx + Frida）是 Jadx 图形界面插件，可直接从 Jadx 反编译视图使用 Frida 在运行时跟踪 Java 方法，并按需修改返回值。 **[127 星标]**
+- [UltraSina/androidReverse](https://github.com/UltraSina/androidReverse) — 完全在设备上进行 Android 逆向工程，提供 Radare2 二进制分析、8 种 Java 反编译器，以及 Flutter 和 Unity IL2CPP 支持。 **[127 星标]** · 精选：[Android Reverse 设备端逆向套件](https://awesomerea.org/zh/resources/ultrasina-android-reverse/)
 - [script-or-script/FlutterTap](https://github.com/script-or-script/FlutterTap) — 拦截 Flutter 应用流量的 Zygisk 模块，可将流量重定向至代理并绕过 BoringSSL TLS 证书固定。持续生效，无需 Frida 会话，可通过 MMRL 安装。 **[126 星标]**
 - [t0thkr1s/frida](https://github.com/t0thkr1s/frida) — 用于移动应用动态分析的 Frida 脚本。 **[126 星标]**
 - [0xSHAK1B/TIKTOK-SSL-Pinning-Bypass](https://github.com/0xSHAK1B/TIKTOK-SSL-Pinning-Bypass) — 在 Android 上绕过 TikTok 的 SSL／TLS 证书固定，以拦截和分析 HTTPS 流量；支持 Root 与无 Root，适配 Burp Suite、mitmproxy 和 Reqable（2026）。 **[122 星标]**

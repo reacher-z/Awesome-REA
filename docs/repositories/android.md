@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/android/) · [简体中文](android.zh-CN.md)
 
-**479 repositories** · 2026-10-20 UTC
+**480 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -154,6 +154,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [baksmali/smali](https://github.com/baksmali/smali) — smali and baksmali - release artifacts for all versions (v3 by <span>@</span>google, v2 and v1 by <span>@</span>JesusFreke) **[131 stars]**
 - [0x742/noia](https://github.com/0x742/noia) — \[WIP\] Simple mobile applications sandbox file browser tool. Powered with \[frida.re\]\(https<span>:</span>//www<span>.</span>frida.re). **[129 stars]**
 - [BitTheByte/Jarida](https://github.com/BitTheByte/Jarida) — Jarida (Jadx + Frida) is a Jadx GUI plugin that lets you trace and optionally patch Java method return values at runtime using Frida, directly from Jadx’s decompiled view. **[127 stars]**
+- [UltraSina/androidReverse](https://github.com/UltraSina/androidReverse) — Android reverse engineering entirely on-device. Radare2 binary analysis, 8 Java decompilers, Flutter &amp; Unity il2cpp support. **[127 stars]** · Curated: [Android Reverse](https://awesomerea.org/resources/ultrasina-android-reverse/)
 - [script-or-script/FlutterTap](https://github.com/script-or-script/FlutterTap) — Zygisk module that intercepts Flutter app traffic — redirects to a proxy and bypasses BoringSSL TLS pinning. Persistent, no Frida session. Installable via MMRL. **[126 stars]**
 - [t0thkr1s/frida](https://github.com/t0thkr1s/frida) — Frida scripts for mobile application dynamic-analysis. **[126 stars]**
 - [0xSHAK1B/TIKTOK-SSL-Pinning-Bypass](https://github.com/0xSHAK1B/TIKTOK-SSL-Pinning-Bypass) — Bypass TikTok SSL/TLS certificate pinning on Android to intercept &amp; analyze HTTPS traffic — root &amp; no-root, works with Burp Suite, mitmproxy &amp; Reqable (2026). **[122 stars]**
