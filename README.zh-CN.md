@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 492](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 208](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 492](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 208](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 135](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-492 项精选资源（208 个案例）· 134 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 489。
+492 项精选资源（208 个案例）· 135 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 489。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (134) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (135) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -640,14 +640,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**134 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、发表场所、状态与第一作者，中文标题为译名。
+**135 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (57) · [网站](#papers-website-reconstruction) (22)
-- [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (12) · [固件](#papers-firmware-analysis) (13)
+- [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (13) · [固件](#papers-firmware-analysis) (13)
 - [协议](#papers-protocol-analysis) (13)
 
 每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -789,6 +789,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**从 UI 设计图到 GUI 骨架：辅助启动移动界面实现的神经机器翻译器**](https://doi.org/10.1145/3180155.3180240) - UI2code 使用神经编码器—解码器，将移动 UI 图像转换为 Android 组件层级与布局骨架。 <sub>ICSE 2018 · 会议论文 · Chunyang Chen 等 · [PDF](https://chunyang-chen.github.io/publication/ui2code.pdf) · [代码](https://github.com/ccywch/UI2code) · [完整条目](https://awesomerea.org/zh/papers/paper-ui2code/)</sub>
 - [**Android 应用的统计式反混淆**](https://dl.acm.org/doi/10.1145/2976749.2978422) - DeGuard 逆转 Android APK 中的布局混淆，为被 ProGuard 重命名的字段、方法、类和包预测原始名称。 <sub>ACM CCS 2016 · 会议论文 · Benjamin Bichsel 等 · [PDF](https://files.sri.inf.ethz.ch/website/papers/deguard.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-deguard/)</sub>
 - [**使用 REMAUI 逆向重建移动应用用户界面**](https://ieeexplore.ieee.org/abstract/document/7372013) - 利用 OCR、计算机视觉和布局启发式规则，从截图或设计位图重建原生 Android 界面代码，并使用来自 100 多款 Android 与 iOS 应用的 488 张截图评估视觉相似性和视图层级。 <sub>ASE 2015 · 会议论文 · Tuan Anh Nguyen 等 · [PDF](https://c.csallner.org/papers/nguyen15reverse.pdf) · [代码](https://github.com/soumikmohianuta/pixtoapp) · [完整条目](https://awesomerea.org/zh/papers/paper-remaui/)</sub>
+- [**以最少重启与近似学习引导的 Android 应用图形界面测试**](https://doi.org/10.1145/2509136.2509552) - SwiftHand 在为 Android 应用生成测试输入的同时，于测试过程中学习近似的图形界面模型。 <sub>OOPSLA 2013 · 会议论文 · Wontae Choi 等 · [PDF](https://people.eecs.berkeley.edu/~ksen/papers/swifthand.pdf) · [代码](https://github.com/wtchoi/SwiftHand/tree/b2b45acd636ab63beb0969401d1ee2c77fa0530d) · [完整条目](https://awesomerea.org/zh/papers/paper-swifthand/)</sub>
 
 <a id="papers-firmware-analysis"></a>
 ### 固件分析与重托管

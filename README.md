@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 492](https://img.shields.io/badge/resources-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 208](https://img.shields.io/badge/cases-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 492](https://img.shields.io/badge/resources-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 208](https://img.shields.io/badge/cases-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 135](https://img.shields.io/badge/papers-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-492 curated resources (208 cases) · 134 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 489 because 3 of these appear only under Papers.
+492 curated resources (208 cases) · 135 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 489 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (134) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (135) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
 
 **More ways to browse**
 
@@ -639,14 +639,14 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**134 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**135 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
 - [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (57) · [Websites](#papers-website-reconstruction) (22)
-- [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (12) · [Firmware](#papers-firmware-analysis) (13)
+- [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (13) · [Firmware](#papers-firmware-analysis) (13)
 - [Protocols](#papers-protocol-analysis) (13)
 
 Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation. Some papers also appear among curated resources; counts are not additive.
@@ -788,6 +788,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**From UI Design Image to GUI Skeleton: A Neural Machine Translator to Bootstrap Mobile GUI Implementation**](https://doi.org/10.1145/3180155.3180240) - UI2code translates a mobile UI image into an Android component hierarchy and layout skeleton using a neural encoder-decoder. <sub>ICSE 2018 · Conference paper · Chunyang Chen et al. · [PDF](https://chunyang-chen.github.io/publication/ui2code.pdf) · [Code](https://github.com/ccywch/UI2code) · [Full entry](https://awesomerea.org/papers/paper-ui2code/)</sub>
 - [**Statistical Deobfuscation of Android Applications**](https://dl.acm.org/doi/10.1145/2976749.2978422) - DeGuard reverses layout obfuscation in Android APKs, predicting original names for the fields, methods, classes and packages that ProGuard renames. <sub>ACM CCS 2016 · Conference paper · Benjamin Bichsel et al. · [PDF](https://files.sri.inf.ethz.ch/website/papers/deguard.pdf) · [Full entry](https://awesomerea.org/papers/paper-deguard/)</sub>
 - [**Reverse Engineering Mobile Application User Interfaces with REMAUI (T)**](https://ieeexplore.ieee.org/abstract/document/7372013) - Reconstructs native Android UI code from screenshots or design bitmaps using OCR, computer vision, and layout heuristics; evaluates visual similarity and view hierarchies on 488 screenshots from over 100 Android and iOS applications. <sub>ASE 2015 · Conference paper · Tuan Anh Nguyen et al. · [PDF](https://c.csallner.org/papers/nguyen15reverse.pdf) · [Code](https://github.com/soumikmohianuta/pixtoapp) · [Full entry](https://awesomerea.org/papers/paper-remaui/)</sub>
+- [**Guided GUI Testing of Android Apps with Minimal Restart and Approximate Learning**](https://doi.org/10.1145/2509136.2509552) - SwiftHand generates test inputs for Android apps while learning an approximate GUI model during testing. <sub>OOPSLA 2013 · Conference paper · Wontae Choi et al. · [PDF](https://people.eecs.berkeley.edu/~ksen/papers/swifthand.pdf) · [Code](https://github.com/wtchoi/SwiftHand/tree/b2b45acd636ab63beb0969401d1ee2c77fa0530d) · [Full entry](https://awesomerea.org/papers/paper-swifthand/)</sub>
 
 <a id="papers-firmware-analysis"></a>
 ### Firmware analysis and rehosting
