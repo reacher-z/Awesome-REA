@@ -12521,5 +12521,38 @@
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/tree/b372420e1e1ff818a8d25ba50f0c71e97e62f138/raw_wild_ir_captures",
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/LICENSE"
     ]
+  },
+  {
+    "id": "biosutilities",
+    "name": "BIOSUtilities",
+    "url": "https://github.com/platomav/BIOSUtilities",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Python collection of 16 parsers and extractors for vendor BIOS/UEFI update formats, including AMI BIOS Guard (PFAT) and UCP, Dell PFS, Insyde iFlash/iFdPacker, Phoenix TDK Packer, Award, Fujitsu, Panasonic, Portwell, Toshiba and VAIO packages and several Apple EFI containers. Each utility checks whether an input matches its format and unpacks the firmware components, such as SPI/BIOS/UEFI, EC and ME images, plus bundled utilities into an output folder, optionally reporting structure information; an Apple EFI identifier names images from their IBIOSI tag. A main.py script tries every utility on the given files, and the biosutilities package exposes the same classes to Python.",
+    "description_zh": "用 Python 编写的厂商 BIOS/UEFI 更新格式解析与提取工具集，共 16 个工具，涵盖 AMI BIOS Guard（PFAT）与 UCP、Dell PFS、Insyde iFlash/iFdPacker、Phoenix TDK Packer、Award、富士通、松下、Portwell、东芝和 VAIO 的更新包，以及多种 Apple EFI 容器。每个工具先判断输入是否属于其格式，再将固件组件（如 SPI/BIOS/UEFI、EC、ME 镜像）及随附的实用程序解包到输出目录，并可选输出结构信息；Apple EFI 识别工具则依据 IBIOSI 标签为镜像命名。main.py 脚本会对给定文件依次尝试所有工具，biosutilities 软件包也向 Python 程序提供同样的类。",
+    "evidence_url": "https://github.com/platomav/BIOSUtilities/blob/f799425af93264b62a2f3c3cc5bbabf8a2226114/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest version at review: 25.07.01, published on PyPI as 25.7.1 on 2025-07-01. The reviewed main commit adds one later change, from 2026-10-18, that falls back to the system PATH when a tool is missing from the external folder. The README targets Python 3.10 to 3.13 on Windows, Linux and macOS; pyproject requires Python 3.10+ and offers pefile 2023.2.7 and dissect.util 3.20 as pinned extras.",
+      "Several utilities call external programs found on PATH or in an external folder next to the package: 7-Zip, UEFIFind and UEFIExtract from UEFITool, TianoCompress from EDK II and ToshibaComExtractor. The README says comextract must be compiled from source on Linux and TianoCompress on Linux and macOS. Decompiling Intel BIOS Guard scripts optionally uses the author's separate BIOS Guard Script Tool.",
+      "Users supply the vendor update executables, packages or images they already have. The repository holds only Python source, documentation and packaging files, with no BIOS images, sample packages or tests. The README warns that AMI PFAT components may have no explicit order, so the merged 00 -- ALL file usually is not a proper SPI/BIOS/UEFI image and trailing OEM data is left for the user to assess.",
+      "BSD-2-Clause-Patent, per LICENSE and pyproject. The README presents the collection for research and modding; this entry covers its parsing and extraction functions only, and extracted firmware remains under its vendors' terms. No package was processed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/platomav/BIOSUtilities/blob/f799425af93264b62a2f3c3cc5bbabf8a2226114/README.md#L7-L87",
+      "https://github.com/platomav/BIOSUtilities/blob/f799425af93264b62a2f3c3cc5bbabf8a2226114/README.md#L220-L258",
+      "https://github.com/platomav/BIOSUtilities/blob/f799425af93264b62a2f3c3cc5bbabf8a2226114/pyproject.toml",
+      "https://github.com/platomav/BIOSUtilities/blob/f799425af93264b62a2f3c3cc5bbabf8a2226114/biosutilities/__init__.py",
+      "https://github.com/platomav/BIOSUtilities/blob/f799425af93264b62a2f3c3cc5bbabf8a2226114/CHANGELOG",
+      "https://github.com/platomav/BIOSUtilities/blob/f799425af93264b62a2f3c3cc5bbabf8a2226114/LICENSE",
+      "https://github.com/platomav/BIOSUtilities/tree/f799425af93264b62a2f3c3cc5bbabf8a2226114/biosutilities",
+      "https://github.com/platomav/BIOSUtilities/commit/f799425af93264b62a2f3c3cc5bbabf8a2226114",
+      "https://pypi.org/project/biosutilities/25.7.1/"
+    ]
   }
 ]
