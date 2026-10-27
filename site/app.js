@@ -406,7 +406,39 @@ function card(record) {
   context.append(external(record.evidence_url,"resource-evidence-link",t("readSource")+" ↗"));
   details.append(context);article.append(details);return article;
 }
-function filtered() { const terms=state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);const found=state.records.filter(r=>(state.group==="all"||r.group===state.group)&&(state.target==="all"||r.targets.includes(state.target))&&(state.category==="all"||r.category===state.category)&&(state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
+// Query ranking reads the filter text by field, most specific first: names, descriptions, labels, then requirements.
+// It also keeps each name without spaces or punctuation, so a query that is the whole name (“ghidra mcp”) can lead.
+const compactText = text => text.toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, "");
+const SEARCH_RANK = new WeakMap();
+function searchRank(record) {
+  if (!SEARCH_RANK.has(record)) SEARCH_RANK.set(record, {names: [record.name, record.name_zh].filter(Boolean).map(compactText),
+    fields: [[record.name, record.name_zh], [record.description_en, record.description_zh],
+      [record.category, ...(state.categoryLabels[record.category] || []), ...(KIND[record.kind] || []), record.relationship, ...record.targets.flatMap(targetSearchLabels)],
+      [].concat(record.requirements || [], record.requirements_zh || [])].map(values => values.filter(Boolean).join(" ").toLocaleLowerCase())});
+  return SEARCH_RANK.get(record);
+}
+// A match starts a word after a non-letter or at the field start; Chinese text has no spaces, so any Han character may.
+const WORD_CHARACTER = /[\p{L}\p{N}]/u, HAN = /\p{Script=Han}/u;
+function startsWord(text, index) { return index === 0 || !WORD_CHARACTER.test(text[index - 1]) || HAN.test(text[index]); }
+// A term scores by its earliest field, and within it a word-start match above one inside a word (“unity” in “community”).
+function termScore(fields, term) {
+  for (const [position, text] of fields.entries()) {
+    let index = text.indexOf(term); if (index < 0) continue;
+    const field = 2 * (fields.length - position);
+    for (; index >= 0; index = text.indexOf(term, index + 1)) if (startsWord(text, index)) return field;
+    return field - 1;
+  }
+  return 0;
+}
+// Every term must occur in the record. A query puts whole-name matches first, then orders by summed term scores;
+// FEATURED order, kind and catalog order break ties and alone order an empty query.
+function filtered() {
+  const terms=state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);const found=state.records.filter(r=>(state.group==="all"||r.group===state.group)&&(state.target==="all"||r.targets.includes(state.target))&&(state.category==="all"||r.category===state.category)&&(state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};
+  // Scores are constant during this render; compute them once per match, not inside the comparator.
+  const whole = compactText(state.q);
+  const scores = new Map(terms.length ? found.map(record => { const {names, fields} = searchRank(record); return [record, (names.includes(whole) ? 1000 : 0) + terms.reduce((sum, term) => sum + termScore(fields, term), 0)]; }) : []);
+  return found.sort((a,b)=>(scores.get(b) ?? 0)-(scores.get(a) ?? 0)||rank(a)-rank(b)||a.order-b.order);
+}
 function renderEmptySearchActions(foundCount = state.loaded ? filtered().length : null) {
   const show = state.loaded && !state.error && sourceState.mode === "curated"
     && foundCount === 0 && state.q.trim() !== "";
