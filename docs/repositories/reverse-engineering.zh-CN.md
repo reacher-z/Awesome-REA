@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/reverse-engineering/) · [English](reverse-engineering.md)
 
-**669 个仓库** · 2026-10-20 UTC
+**668 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -230,7 +230,6 @@
 - [colealanroberts/OpenAlpha](https://github.com/colealanroberts/OpenAlpha) — 用于从 Sony 数码相机获取图像的 Swift 软件包 **[134 星标]**
 - [crackmes/crackmes](https://github.com/crackmes/crackmes) — 开放、抗审查的 crackme 练习程序仓库 **[131 星标]**
 - [localh0t/backfuzz](https://github.com/localh0t/backfuzz) — 协议模糊测试工具包 **[131 星标]**
-- [DerekSelander/mobdevim](https://github.com/DerekSelander/mobdevim) — 与已连接的 iOS 设备交互的命令行工具，使用 Apple 的 MobileDevice 框架。 **[129 星标]**
 - [minaminao/erever](https://github.com/minaminao/erever) — 用于逆向分析 EVM 字节码的个人瑞士军刀工具，处于高度实验阶段 **[128 星标]**
 - [extremecoders-re/bytecode\_simplifier](https://github.com/extremecoders-re/bytecode_simplifier) — 针对 PjOrion 混淆的 Python 脚本的通用去混淆工具 **[126 星标]**
 - [hgarrereyn/STRIDE](https://github.com/hgarrereyn/STRIDE) — 对反编译后的可执行文件进行简单类型识别 **[123 星标]**

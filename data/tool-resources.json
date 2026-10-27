@@ -12456,5 +12456,35 @@
       "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/LICENSE",
       "https://decomp.dev/zeldaret/af"
     ]
+  },
+  {
+    "id": "mobdevim",
+    "name": "mobdevim",
+    "url": "https://github.com/DerekSelander/mobdevim",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Derek Selander's macOS command-line utility for inspecting and controlling iOS devices connected over USB or Wi-Fi through Apple's private MobileDevice framework. It lists devices and installed apps with their Info.plist keys and entitlements, streams the device console, fetches crash logs, shows provisioning profiles and developer certificates, copies an app's data container off the device and back where the sandbox allows, and installs, uninstalls and launches apps with arguments and environment variables. With a Developer Disk Image mounted it also lists and kills processes and simulates location, and output can be printed as plist for scripts.",
+    "description_zh": "Derek Selander 编写的 macOS 命令行工具，通过 Apple 的私有 MobileDevice 框架检查和控制经 USB 或 Wi-Fi 连接的 iOS 设备。它可列出设备和已安装应用及其 Info.plist 键值与权限（entitlements），实时输出设备控制台日志，获取崩溃日志，查看描述文件和开发者证书，在沙盒允许时把应用的数据容器拷出设备并传回，还能安装、卸载应用，并带参数和环境变量启动应用。挂载开发者磁盘映像（DDI）后，还能列出和结束进程、模拟定位；输出可按 plist 格式打印，便于脚本处理。",
+    "evidence_url": "https://github.com/DerekSelander/mobdevim/blob/68cddb31bf80f9adf030d51bc799740f042d5958/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No releases or tags; the reviewed main commit of 2024-02-01, which says it fixed log grabbing, is the latest push. The README's usage text shows a build compiled on 2023-11-07 and still marks log retrieval as broken on iOS 16.5 and device backup as a to-do. The repository also commits a prebuilt compiled/mobdevim binary, last changed on 2023-11-07.",
+      "Build the Xcode project on macOS; it links /System/Library/PrivateFrameworks/MobileDevice.framework, sets macOS deployment targets of 10.12 and 10.13, and a build phase copies mobdevim to /usr/local/bin, which must be writable or the build fails. The README states no supported iOS or Xcode versions.",
+      "Needs an iOS device connected over USB or paired for Wi-Fi. Process listing and killing, app launching and location simulation need a mounted Developer Disk Image, which the -I option mounts from a signature and .dmg pair the user supplies, for example from Xcode. Copying app data goes through the house_arrest service, so it works only for apps the sandbox exposes.",
+      "GitHub detects no license and the repository root has no license file, so the tool's terms are unstated; the process directory carries a 2018 Hex-Rays MIT license for its Instruments client code, and misc/InstrumentsPlugin.h credits codecolorist's FreeTheSandbox. This review ran nothing against a device, and the sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/DerekSelander/mobdevim/blob/68cddb31bf80f9adf030d51bc799740f042d5958/mobdevim.xcodeproj/project.pbxproj",
+      "https://github.com/DerekSelander/mobdevim/blob/68cddb31bf80f9adf030d51bc799740f042d5958/mobdevim/install_ddi/install_ddi.m",
+      "https://github.com/DerekSelander/mobdevim/blob/68cddb31bf80f9adf030d51bc799740f042d5958/mobdevim/yoink/yoink.m",
+      "https://github.com/DerekSelander/mobdevim/blob/68cddb31bf80f9adf030d51bc799740f042d5958/mobdevim/process/LICENSE",
+      "https://github.com/DerekSelander/mobdevim/blob/68cddb31bf80f9adf030d51bc799740f042d5958/mobdevim/misc/InstrumentsPlugin.h",
+      "https://github.com/DerekSelander/mobdevim/tree/68cddb31bf80f9adf030d51bc799740f042d5958/compiled"
+    ]
   }
 ]

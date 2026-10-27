@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/dynamic-analysis/) · [English](dynamic-analysis.md)
 
-**145 个仓库** · 2026-10-20 UTC
+**146 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -81,6 +81,7 @@
 - [Pilfer/ultimate-guitar-scraper](https://github.com/Pilfer/ultimate-guitar-scraper) — 用 Go 编写的简单抓取器，面向 Ultimate-Guitar.com 的移动 API。 **[132 星标]**
 - [diommsantos/Gx64Sync](https://github.com/diommsantos/Gx64Sync) — 用于同步 Ghidra 和 x64dbg 的插件套件，是更快、更灵活的 ret-sync。 **[131 星标]**
 - [vibheksoni/dma-spoofer](https://github.com/vibheksoni/dma-spoofer) — 首个用 Rust 编写、基于 DMA 的开源 HWID 伪装工具。通过直接内存访问伪装硬件 ID。 **[130 星标]**
+- [DerekSelander/mobdevim](https://github.com/DerekSelander/mobdevim) — 与已连接的 iOS 设备交互的命令行工具，使用 Apple 的 MobileDevice 框架。 **[129 星标]** · 精选：[mobdevim iOS 设备命令行工具](https://awesomerea.org/zh/resources/mobdevim/)
 - [lautarovculic/frida-ipa-extract](https://github.com/lautarovculic/frida-ipa-extract) — 基于 Frida 的稳健工具，从越狱设备将已解密的 iOS 应用转储为 .ipa，支持 App Store、侧载及系统应用。 **[129 星标]**
 - [NSEcho/furlzz](https://github.com/NSEcho/furlzz) — 对 iOS URL scheme 进行模糊测试。 **[129 星标]**
 - [iamtorsten/SherlockElf](https://github.com/iamtorsten/SherlockElf) — SherlockElf 是功能强大的分析工具，支持 Android ELF 二进制文件的静态和动态分析，以及 iOS Mach-O 二进制文件的动态分析（实验性）。 **[119 星标]**
