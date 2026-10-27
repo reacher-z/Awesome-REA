@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 514](https://img.shields.io/badge/resources-514-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 218](https://img.shields.io/badge/cases-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 138](https://img.shields.io/badge/papers-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 515](https://img.shields.io/badge/resources-515-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 218](https://img.shields.io/badge/cases-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 138](https://img.shields.io/badge/papers-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,12 +21,12 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-514 curated resources (218 cases) · 138 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 511 because 3 of these appear only under Papers.
+515 curated resources (218 cases) · 138 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 512 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
 - [Website](#website) (29) · [Game](#game) (198) · [App](#app) (83)
-- [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (24) · [Protocol](#protocol) (21)
+- [Native Binary](#native-binary) (66) · [Firmware and Hardware](#firmware) (24) · [Protocol](#protocol) (21)
 
 **Research and workflows**
 
@@ -477,6 +477,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Kuna**](https://github.com/Noelo-Lab/kuna) - Agent-first decompiler written in Rust that began as a port of Ghidra’s C++ decompiler and SLEIGH compiler, and has since diverged with option-gated features, some ported from angr. <sub>Tool · [Full entry](https://awesomerea.org/resources/kuna/)</sub>
 - [**Binary Ninja API**](https://github.com/Vector35/binaryninja-api) - Vector 35’s public C++, Python and Rust APIs for Binary Ninja, with their documentation, examples and the open-source plugins built on them. <sub>Tool · Also: Firmware · [Full entry](https://awesomerea.org/resources/binary-ninja-api/)</sub>
 - [**capa**](https://github.com/mandiant/capa) - Mandiant FLARE tool that reports what an executable can do by matching a YAML rule set against features extracted from PE, ELF and .NET files or 32/64-bit shellcode, such as API calls, imports, strings and constants. <sub>Tool · [Full entry](https://awesomerea.org/resources/capa/)</sub>
+- [**XPEViewer**](https://github.com/horsicq/XPEViewer) - Qt-based PE file viewer and editor for Windows, Linux and macOS by horsicq, the author of the catalog's Detect It Easy. <sub>Tool · [Full entry](https://awesomerea.org/resources/xpeviewer/)</sub>
 
 <a id="firmware"></a>
 ### Firmware and Hardware
