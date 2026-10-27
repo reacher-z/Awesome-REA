@@ -7294,5 +7294,49 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-scdbench",
+    "title": "SCDBench: A Benchmark for LLM-Based Smart Contract Decompilers",
+    "title_zh": "SCDBench：基于大语言模型的智能合约反编译器基准",
+    "authors": [
+      "Kaihua Qin",
+      "Dawn Song",
+      "Arthur Gervais"
+    ],
+    "year": 2026,
+    "publication_date": "2026-05-27",
+    "date_precision": "day",
+    "date_basis": "arXiv v1 submission date; no later version, journal reference or proceedings publication was found.",
+    "date_basis_zh": "arXiv v1 首次提交日期；未找到后续版本、期刊引用信息或会议论文集出版记录。",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2605.29059",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2026-05-27",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2605.29059",
+    "pdf_url": "https://arxiv.org/pdf/2605.29059v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Benchmarks LLM-based EVM decompilation on 600 source-verified Ethereum Solidity contracts, sampled in easy, medium and hard thirds from 772,736 unique bytecode–source pairs after near-duplicate filtering. Each task supplies EVM assembly and optional four-byte selector hints and asks for self-contained Solidity with compiler settings. Outputs are scored in four cumulative stages: format completeness, compilation, ABI recovery, and semantic consistency, where 227,383 recorded test cases for 14,553 public functions are replayed on the recompiled output. With one compiler-feedback repair call, GPT-5.3-Codex compiled 90.3% of contracts, while the best semantic results were 29.4% of functions and 42 of 600 contracts recovered perfectly, both by Claude Opus 4.7.",
+    "description_zh": "在 600 个源码已验证的以太坊 Solidity 合约上评测基于大语言模型的 EVM 反编译。这些合约在近重复过滤后，从 772,736 对唯一的字节码—源码中按简单、中等、困难各三分之一抽样。每个任务提供 EVM 汇编及可选的四字节选择器提示，要求输出自包含的 Solidity 代码与编译器设置。输出按四个累进阶段评分：格式完整性、编译、ABI 恢复，以及语义一致性；最后一阶段在重新编译的输出上重放为 14,553 个公共函数记录的 227,383 个测试用例。借助一次基于编译器反馈的修复调用，GPT-5.3-Codex 使 90.3% 的合约成功编译；语义方面的最佳结果均来自 Claude Opus 4.7，即 29.4% 的函数一致，600 个合约中有 42 个被完全恢复。",
+    "scope_limitations_en": "Replay compares return data, reverts, logs and touched storage on generated inputs that reach 77.8% average code coverage; passing it is not proof of equivalence, and replay needs an Ethereum archive node. The contracts are source-verified Ethereum Solidity from compiler v0.4 to v0.8, so unverified, obfuscated, Vyper or other-chain bytecode is not covered. Three models are evaluated zero-shot through OpenRouter: Claude Opus 4.7 and GPT-5.3-Codex at high reasoning effort, and GLM-5 with and without extended thinking. Results and quoted costs describe those 2026 snapshots. Gigahorse and Heimdall-rs are scored only on selector and prototype recovery because they do not emit compilable Solidity; DiSCo and the fine-tuned decompiler of David et al. are discussed but not run.",
+    "scope_limitations_zh": "重放在生成的输入上比较返回数据、回滚、日志和被访问的存储变化，这些输入平均达到 77.8% 的代码覆盖率；通过重放并不能证明等价，而且重放需要以太坊归档节点。合约均为源码已验证、编译器版本 v0.4 至 v0.8 的以太坊 Solidity 合约，因此不覆盖未验证、经混淆、Vyper 或其他链上的字节码。论文通过 OpenRouter 对三个模型进行零样本评测：高推理强度的 Claude Opus 4.7 与 GPT-5.3-Codex，以及开启和关闭扩展思考的 GLM-5。结果与所列成本仅对应这些 2026 年的模型快照。Gigahorse 与 Heimdall-rs 因不生成可编译的 Solidity，仅评测选择器与函数原型恢复；DiSCo 和 David 等人的微调反编译器仅在文中讨论，并未运行。",
+    "why_fits_en": "Adds a shared benchmark with execution-based semantic checks for smart-contract decompilers, complementing EVM decompilation papers that evaluate on separate datasets and metrics.",
+    "why_fits_zh": "为智能合约反编译器提供带有基于执行的语义检查的共同基准，与使用各自数据集和指标评测的 EVM 反编译论文互补。",
+    "metadata_notes": "Reviewed arXiv v1, the only version, which is labelled a preprint and has no comment, journal reference or DOI. The paper says the benchmark dataset and evaluation artifacts, including prompts, scripts and model outputs, are provided, and its broader-impact appendix describes a released dataset, but v1 gives no URL. GitHub and Hugging Face searches found no release, so no code link is recorded. Compilation and replay use solc and Foundry. No dataset, code or model calls were run.",
+    "metadata_notes_zh": "审阅了 arXiv v1，即唯一版本，其标注为预印本，没有注释、期刊引用信息或 DOI。论文称提供基准数据集及评估产物（包括提示词、脚本和模型输出），其社会影响附录也提到已发布的数据集，但 v1 未给出网址。在 GitHub 与 Hugging Face 上检索未找到相应发布，因此不记录代码链接。编译与重放使用 solc 和 Foundry。本次未运行数据集、代码或模型调用。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2605.29059v1",
+      "https://arxiv.org/pdf/2605.29059v1"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
