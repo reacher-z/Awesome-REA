@@ -7294,5 +7294,62 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-swifthand",
+    "title": "Guided GUI Testing of Android Apps with Minimal Restart and Approximate Learning",
+    "title_zh": "以最少重启与近似学习引导的 Android 应用图形界面测试",
+    "authors": [
+      "Wontae Choi",
+      "George Necula",
+      "Koushik Sen"
+    ],
+    "year": 2013,
+    "publication_date": "2013-10-29",
+    "date_precision": "day",
+    "date_basis": "ACM-deposited Crossref metadata for the proceedings DOI gives 29 October 2013 for both online and print publication. The SIGPLAN Notices copy lists a separate print date of 12 November 2013; neither date is inferred from the SPLASH conference schedule.",
+    "date_basis_zh": "ACM 为会议论文集 DOI 提交的 Crossref 元数据将在线及印刷出版日期均列为 2013 年 10 月 29 日。SIGPLAN Notices 版本另列印刷日期 2013 年 11 月 12 日；两者均非根据 SPLASH 会议日程推定。",
+    "venue": "OOPSLA 2013",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/2509136.2509552",
+    "citation": {
+      "container_title": "Proceedings of the 2013 ACM SIGPLAN international conference on Object oriented programming systems languages & applications",
+      "publisher": "ACM",
+      "pages": "623-640",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/2509136.2509552"
+      ]
+    },
+    "url": "https://doi.org/10.1145/2509136.2509552",
+    "pdf_url": "https://people.eecs.berkeley.edu/~ksen/papers/swifthand.pdf",
+    "code_url": "https://github.com/wtchoi/SwiftHand/tree/b2b45acd636ab63beb0969401d1ee2c77fa0530d",
+    "project_url": null,
+    "targets": [
+      "app"
+    ],
+    "description_en": "SwiftHand generates test inputs for Android apps while learning an approximate GUI model during testing. It instruments Dalvik bytecode to read the GUI component tree and derive each screen's enabled touch, scroll, text, Back and Menu inputs; screens with the same enabled inputs are treated as equivalent states of an extended deterministic labeled transition system. The learned model steers execution toward unexplored frontier states and avoids restarts, since reinstalling an app took about 30 seconds. On 10 F-Droid apps, the authors report higher branch coverage than random and L*-based testing within the time budget, reached faster.",
+    "description_zh": "SwiftHand 在为 Android 应用生成测试输入的同时，于测试过程中学习近似的图形界面模型。它对 Dalvik 字节码插桩，读取界面组件树，并推导每个屏幕可用的触摸、滚动、文本、返回键和菜单键输入；可用输入相同的屏幕被视为扩展确定性标记迁移系统中的等价状态。学习得到的模型引导执行进入尚未探索的前沿状态，并尽量避免重启，因为重新安装一次应用约需 30 秒。在 10 个 F-Droid 应用上，作者报告其在给定时间预算内的分支覆盖率高于随机测试和基于 L* 的测试，且达到覆盖率的速度更快。",
+    "scope_limitations_en": "A test-generation technique whose learned model is an approximate abstraction for guiding exploration, not a complete or exact GUI specification or a reimplementation of the app. States are identified only by their sets of enabled inputs and merged heuristically; tab views and similar designs caused state explosion and low coverage. The implementation rejects apps with a native main entry, works correctly only on Android 4.1 or later, and cannot handle apps that store data on remote servers, so such apps were excluded from the benchmark. Evaluation covers 10 F-Droid apps under Android 4.1.2: eight ran on emulators with a 3-hour budget and two on a Galaxy Nexus phone with 1 hour. Random testing caught up on some small apps given more time. The 2013 tool is not shown to run on current Android releases.",
+    "scope_limitations_zh": "这是一种测试生成技术，所学模型只是用于引导探索的近似抽象，并非完整或精确的图形界面规约，也不是应用的重新实现。状态仅以可用输入集合区分，并以启发式方式合并；标签页视图等设计会导致状态爆炸和覆盖率偏低。实现不支持主入口为原生代码的应用，只在 Android 4.1 及更高版本上正常工作，也无法处理在远程服务器上存储数据的应用，这些应用因此被排除在基准之外。评估覆盖 Android 4.1.2 上的 10 个 F-Droid 应用：其中八个在模拟器上运行、预算 3 小时，两个在 Galaxy Nexus 手机上运行、预算 1 小时。对部分小型应用，随机测试在更长时间后可追平覆盖率。未证明这款 2013 年的工具可在当前 Android 版本上运行。",
+    "why_fits_en": "Adds execution-driven inference of an Android app's GUI state model, complementing the collection's screenshot- and design-based app reconstruction papers with behavioral model recovery.",
+    "why_fits_zh": "补充由执行驱动推断 Android 应用图形界面状态模型的研究，以行为模型恢复补足本合集中基于截图和设计稿的应用重建论文。",
+    "metadata_notes": "Crossref establishes the three-author order, the OOPSLA 2013 proceedings within SPLASH ’13 and pages 623–640; it deposits the title in sentence case, while this entry keeps the capitalization printed in the paper. The same article also appears in ACM SIGPLAN Notices volume 48, issue 10, pages 623–640, under DOI 10.1145/2544173.2509552; this entry uses the proceedings DOI. The author-hosted PDF is a 17-page copy created on 2013-08-11 with the proceedings DOI; its pagination is not assumed to match the 18-page published range. The paper names github.com/wtchoi/SwiftHand. The reviewed master snapshot b2b45acd is dated 2015-01-13, with no later pushes, and README describes it as a working demo of the version submitted to OOPSLA ’13. LICENSE.txt is a three-clause BSD-style text with a 2013 copyright of The Regents of the University of California; GitHub reports no recognized SPDX license. README requires JDK 6 or 7, Maven 3, Android SDK tools including chimpchat, Scala 2.9.1 and ASMDEX revision 1665 or older. To reproduce the paper, it recommends a Nexus S emulator at API level 16, with internet access disabled through a DNS setting. dist/ contains a prebuilt jar plus instrumented APKs of the ten benchmark apps and two unmodified APKs; those third-party apps keep their own terms. Source files were read; no APKs were downloaded, nothing was built or run, and no experiments were reproduced.",
+    "metadata_notes_zh": "Crossref 确认三位作者顺序、SPLASH ’13 中的 OOPSLA 2013 会议论文集及第 623–640 页；其标题采用句首大写形式，本条目保留论文所印的大小写。同一文章也收录于 ACM SIGPLAN Notices 第 48 卷第 10 期第 623–640 页，DOI 为 10.1145/2544173.2509552；本条目使用会议论文集 DOI。作者托管的 PDF 共 17 页，创建于 2013-08-11，载有会议论文集 DOI；不假定其分页与已出版的 18 页范围一致。论文指明代码位于 github.com/wtchoi/SwiftHand。所审阅的 master 快照 b2b45acd 日期为 2015-01-13，此后再无推送；README 称其为提交 OOPSLA ’13 版本的可运行演示。LICENSE.txt 为三条款 BSD 风格文本，版权归加州大学董事会（2013 年）；GitHub 未识别出 SPDX 许可证。README 要求 JDK 6 或 7、Maven 3、含 chimpchat 的 Android SDK 工具、Scala 2.9.1 以及 1665 或更早修订版的 ASMDEX。为复现论文，它建议使用 API 级别 16 的 Nexus S 模拟器，并通过 DNS 设置禁用网络访问。dist/ 包含预构建 jar、十个基准应用的插桩 APK 以及两个未修改的 APK；这些第三方应用保留各自条款。本次仅阅读源码文件，未下载 APK，未构建或运行工具，也未复现实验。",
+    "evidence_urls": [
+      "https://doi.org/10.1145/2509136.2509552",
+      "https://api.crossref.org/works/10.1145/2509136.2509552",
+      "https://api.crossref.org/works/10.1145/2544173.2509552",
+      "https://people.eecs.berkeley.edu/~ksen/papers/swifthand.pdf",
+      "https://github.com/wtchoi/SwiftHand/blob/b2b45acd636ab63beb0969401d1ee2c77fa0530d/README.md",
+      "https://github.com/wtchoi/SwiftHand/blob/b2b45acd636ab63beb0969401d1ee2c77fa0530d/LICENSE.txt",
+      "https://github.com/wtchoi/SwiftHand/tree/b2b45acd636ab63beb0969401d1ee2c77fa0530d/dist"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
