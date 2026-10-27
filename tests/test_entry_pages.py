@@ -3,6 +3,7 @@ from copy import deepcopy
 from html import unescape
 from html.parser import HTMLParser
 import json
+import re
 from pathlib import Path
 import sys
 from tempfile import TemporaryDirectory
@@ -142,6 +143,39 @@ class EntryPageTests(unittest.TestCase):
                         self.assertEqual([x['name'] for x in entity['author']], p['authors'])
                         self.assertNotIn('identifier', entity)  # Published USENIX paper has no invented DOI/arXiv.
             self.assertEqual((r, p), before)
+
+    def test_resource_facts_and_review_date_precede_requirements_once(self):
+        r = resource(targets=['protocol', 'binary'], category='protocol-analysis', relationship='foundation',
+                     verified_at='2026-10-17T01:02:03Z', requirements=['First.', 'Second.', 'Third.'],
+                     requirements_zh=['一。', '二。', '三。'])
+        p = paper()
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            build_entry_pages(root, [r], [p])
+            for language, expected in [
+                    ('en', [('Targets', 'Protocol · Binary'), ('Category', 'Protocol analysis tools'),
+                            ('Relationship', 'Foundation tool'), ('Sources reviewed', '2026-10-17')]),
+                    ('zh', [('目标', '协议 · 二进制'), ('类别', '协议分析工具'),
+                            ('关联', '基础工具'), ('来源复核于', '2026-10-17')])]:
+                text = (root / entry_path('resource', r['id'], language).lstrip('/') / 'index.html').read_text()
+                header = text[text.index('<header class="entry-heading">'):text.index('</header>', text.index('entry-heading'))]
+                summary = header[header.index('<dl class="entry-summary">'):]
+                self.assertEqual(re.findall(r'<dt>([^<]+)</dt><dd>(?:<time[^>]*>)?([^<]+)', summary), expected)
+                self.assertLess(text.index('class="entry-description"'), text.index('class="entry-summary"'))
+                self.assertLess(text.index('class="entry-summary"'), text.index('id="entry-requirements"'))
+                # The facts are not repeated below; the review disclaimer remains in its own section.
+                self.assertEqual(text.count('<time '), 1)
+                self.assertIn('<time datetime="2026-10-17T01:02:03Z">2026-10-17</time>', summary)
+                self.assertNotIn('entry-facts', text)
+                article = text[text.index('<article '):text.index('</article>')]
+                self.assertEqual(unescape(article).count(expected[1][1]), 1)
+                review = text[text.index('id="entry-review"'):text.index('</section>', text.index('id="entry-review"'))]
+                self.assertIn('class="entry-review-note"', review)
+            # Paper detail pages keep their publication and review details section unchanged.
+            paper_text = (root / entry_path('paper', p['id']).lstrip('/') / 'index.html').read_text()
+            self.assertNotIn('entry-summary', paper_text)
+            self.assertIn('<dl class="entry-facts">', paper_text)
+            self.assertLess(paper_text.index('id="entry-citation"'), paper_text.index('class="entry-reviewed"'))
 
     def test_acceptance_date_is_not_invented_and_markup_is_escaped(self):
         hostile = '</script><script>alert("bad")</script>'
