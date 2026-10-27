@@ -6787,5 +6787,14 @@
       "练习编译并插桩工作坊自带的 software/ 中的 C 示例：一个随机休眠循环、一个用于 LD_PRELOAD 的 fake_sleep 库，以及一个 PIN 校验程序，课程会从 Frida 直接调用其中的 test_pin 函数；每一步都配有编号的 JavaScript、TypeScript 和 Python 代码片段。不包含也不需要任何第三方目标二进制；内容针对 x86_64 Linux 用户态进程。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；随附的 docsify 脚本和主题保留各自的许可证，Frida、GEF 和基础镜像按各自条款下载。本次审阅阅读了课程页面、脚本和 Dockerfile，未构建镜像或运行练习。所审来源未确立 REA 或 AI 的使用。"
     ]
+  },
+  "mcp-server-idapro-fdrechsler": {
+    "name": "IDA Pro MCP 服务器（fdrechsler）",
+    "requirements": [
+      "项目已停止更新：6 个提交均在 2025-03-24 至 2025-03-26 之间，没有标签、发布版或 npm 软件包，因此本条目固定到 main 分支的最后一个提交。README 要求 IDA Pro 8.3 或更高版本、Node.js 18+ 和 TypeScript；MCP 服务器需克隆仓库后运行 npm install 和 npm run build 构建，ida_remote_server.py 则复制到 IDA 的插件目录，IDA 加载插件时即启动其服务。MCP 客户端通过 stdio 启动构建出的 dist/index.js。",
+      "IDA Pro 是需另行安装的商业软件，各工具作用于分析者当前打开的数据库；仓库只包含源码文件和一张截图。README 只记录了 12 个工具中的 8 个，并给出 npm test 命令，但 package.json 未定义测试脚本，项目也没有测试。在所固定的提交中，index.ts 导入了 package.json 未声明的 llamaindex，search_text 工具查询的是 localhost:27017 上 MongoDB 的 strings 集合而非 IDA，对应的 IDA 调用已被注释掉。",
+      "脚本类工具会在 IDA 内执行任意 IDAPython 代码；脚本运行期间，插件会替换 IDA 的提示函数，使对话框被自动确认或屏蔽。HTTP 服务没有身份验证：README 的安全说明依赖其默认只绑定本机地址，并提醒修改 DEFAULT_HOST 会带来的安全影响。",
+      "LICENSE 文件和 README 声明采用 MIT 许可，而 package.json 写的是 ISC。IDA Pro、MCP 客户端及被分析的二进制仍受各自条款约束。本条目只审阅了源码，未运行任何组件；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
