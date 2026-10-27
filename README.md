@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 496](https://img.shields.io/badge/resources-496-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 211](https://img.shields.io/badge/cases-211-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 497](https://img.shields.io/badge/resources-497-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 211](https://img.shields.io/badge/cases-211-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-496 curated resources (211 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 493 because 3 of these appear only under Papers.
+497 curated resources (211 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 494 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -34,7 +34,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (211) · [Related Collections](#related-collections) (7) · [Full Repository Index](#full-repository-index) (3,309)
+- [All cases](https://awesomerea.org/cases/) (211) · [Related Collections](#related-collections) (8) · [Full Repository Index](#full-repository-index) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -597,6 +597,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**awesome-rea (yibie): verification-focused projects and practice reports**](https://github.com/yibie/awesome-rea) - Organizes AI-assisted game decompilation, native ports, static recompilation and tooling around stated acceptance checks, alongside a separate track of practitioner write-ups and discussions. <sub>Collection · Community REA · Targets: Game, Binary · [Full entry](https://awesomerea.org/resources/yibie-awesome-rea/)</sub>
 - [**Awesome REA/Decompiled Games**](https://github.com/HaozheH3/awesome-rea-games) - Groups game decompilations, source reconstructions, recompilations, native ports and demos by original game, with comparison rows linking related projects. <sub>Collection · Community REA · Targets: Game · [Full entry](https://awesomerea.org/resources/haozhe-awesome-rea-games/)</sub>
 - [**Reversed with AI**](https://reversedwithai.com/) - A moderated website directory of AI-assisted reverse-engineering projects across games, firmware, file formats, APIs and protocols, apps and legacy software. <sub>Collection · Community REA · Targets: Game, App, Binary, Firmware, Protocol · [Full entry](https://awesomerea.org/resources/reversed-with-ai-directory/)</sub>
+- [**Awesome REA: Reverse Engineer Anything with AI (AIshihzong)**](https://github.com/AIshihzong/awesome-reverse-engineer-anything) - An unofficial, bilingual awesome list of what AI agents have reverse-engineered and rebuilt, tagged by whether each case's own sources show that REA was used. <sub>Collection · Community REA · Targets: Game, App, Binary, Protocol · [Full entry](https://awesomerea.org/resources/aishihzong-awesome-reverse-engineer-anything/)</sub>
 - [**awesome-game-decompilations**](https://github.com/CharlotteCross1998/awesome-game-decompilations) - A single-README list of about 480 game decompilation, recompilation and disassembly projects, grouped by console from the NES and Game Boy to the Xbox 360, PC and mobile, with a large uncategorised section. <sub>Collection · Targets: Game · [Full entry](https://awesomerea.org/resources/awesome-game-decompilations/)</sub>
 - [**Awesome Decomp Games**](https://github.com/SubmitGame/awesome-decomp-games) - A generated, rated index of public game reconstruction projects: decompilations, disassemblies, static recompilations, source ports, engine remakes and browser ports. <sub>Collection · Targets: Game · [Full entry](https://awesomerea.org/resources/submitgame-awesome-decomp-games/)</sub>
 

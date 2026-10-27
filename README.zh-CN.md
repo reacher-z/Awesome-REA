@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 496](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-496-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 211](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-211-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 136](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 497](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-497-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 211](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-211-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 136](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-496 项精选资源（211 个案例）· 136 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 493。
+497 项精选资源（211 个案例）· 136 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 494。
 
 **按目标找工具与案例**
 
@@ -34,7 +34,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (211) · [相关合集](#related-collections) (7) · [完整仓库索引](#完整仓库索引) (3,309)
+- [全部案例](https://awesomerea.org/zh/cases/) (211) · [相关合集](#related-collections) (8) · [完整仓库索引](#完整仓库索引) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -598,6 +598,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**awesome-rea（yibie）：关注验证的项目与实践报告**](https://github.com/yibie/awesome-rea) - 围绕明确的验收检查整理 AI 辅助游戏反编译、原生移植、静态重编译和工具，并另设实践文章与讨论分类。 <sub>合集 · REA 社区 · 目标：游戏、二进制 · [完整条目](https://awesomerea.org/zh/resources/yibie-awesome-rea/)</sub>
 - [**Awesome REA/Decompiled Games：按游戏组织的重建项目目录**](https://github.com/HaozheH3/awesome-rea-games) - 按原游戏整理反编译、源码重建、重编译、原生移植和演示，通过对照表链接相关项目，并区分启动器、引擎工作、作者分享的展示与源码重建成果。 <sub>合集 · REA 社区 · 目标：游戏 · [完整条目](https://awesomerea.org/zh/resources/haozhe-awesome-rea-games/)</sub>
 - [**Reversed with AI：AI 辅助逆向项目目录**](https://reversedwithai.com/) - 经人工审核的网站目录，收录游戏、固件、文件格式、API 与协议、应用及旧软件领域的 AI 辅助逆向项目。 <sub>合集 · REA 社区 · 目标：游戏、应用、二进制、固件、协议 · [完整条目](https://awesomerea.org/zh/resources/reversed-with-ai-directory/)</sub>
+- [**Awesome REA：用 AI 逆向一切（AIshihzong）**](https://github.com/AIshihzong/awesome-reverse-engineer-anything) - 一份非官方的中英双语 awesome 清单，收录 AI 智能体逆向分析并重建过的项目，并按各案例自身来源能否证明使用了 REA 加注标签。 <sub>合集 · REA 社区 · 目标：游戏、应用、二进制、协议 · [完整条目](https://awesomerea.org/zh/resources/aishihzong-awesome-reverse-engineer-anything/)</sub>
 - [**awesome-game-decompilations 游戏反编译项目清单**](https://github.com/CharlotteCross1998/awesome-game-decompilations) - 以单个 README 维护的游戏反编译、重编译和反汇编项目清单，约 480 项，按主机平台分组，从 NES、Game Boy 到 Xbox 360、PC 和移动平台，另有规模较大的未分类部分。 <sub>合集 · 目标：游戏 · [完整条目](https://awesomerea.org/zh/resources/awesome-game-decompilations/)</sub>
 - [**Awesome Decomp Games：附评分、每日刷新的游戏重建项目目录**](https://github.com/SubmitGame/awesome-decomp-games) - 自动生成并附评分的公开游戏重建项目索引，涵盖反编译、反汇编、静态重编译、源码移植、引擎重制及浏览器移植。 <sub>合集 · 目标：游戏 · [完整条目](https://awesomerea.org/zh/resources/submitgame-awesome-decomp-games/)</sub>
 

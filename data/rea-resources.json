@@ -2719,5 +2719,37 @@
       "https://codegeeksai.github.io/it/blog/analisi-statica-malware-rea-codex/",
       "https://github.com/codegeeksai/codegeeksai.github.io/blob/8384782c20b1636362495b9505f1bd597ff5941b/src/content/posts/it/analisi-statica-malware-rea-codex.md"
     ]
+  },
+  {
+    "id": "aishihzong-awesome-reverse-engineer-anything",
+    "name": "Awesome REA: Reverse Engineer Anything with AI (AIshihzong)",
+    "url": "https://github.com/AIshihzong/awesome-reverse-engineer-anything",
+    "category": "related-lists",
+    "relationship": "community-learning-resource",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "app",
+      "binary",
+      "protocol"
+    ],
+    "description_en": "An unofficial, bilingual awesome list of what AI agents have reverse-engineered and rebuilt, tagged by whether each case's own sources show that REA was used. It gathers REA's official resources and showcases; community cases in games, apps, hardware and protocols, and security evaluations; the wider wave of AI reverse engineering and clean-room rebuilds without confirmed REA; plugins, guides and research, related MCP tools, other lists and press; and a section on legal questions and controversy.",
+    "description_zh": "一份非官方的中英双语 awesome 清单，收录 AI 智能体逆向分析并重建过的项目，并按各案例自身来源能否证明使用了 REA 加注标签。内容包括 REA 的官方资源与展示案例；游戏、应用、硬件与协议以及安全评估方面的社区案例；未确认使用 REA 的更广泛 AI 逆向与净室重写项目；插件、指南与研究、相关 MCP 工具、其他清单和媒体报道；另有一节讨论法律问题与争议。",
+    "evidence_url": "https://github.com/AIshihzong/awesome-reverse-engineer-anything/blob/55f9ff058c44a55b63cef83aaf6ea42dcbd6e5b2/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Started 2026-10-13, with 50 commits on six days through 2026-10-26. At the reviewed commit of that day the English README, mirrored in Simplified Chinese, has about 110 one-line entries, with separate pages that index projects by the app they replace, check each \"built with REA\" claim, list new additions and collect X posts and press. The README says figures were checked on 2026-10-21 and partly refreshed on 2026-10-26, and warns that numbers move weekly.",
+      "Tags separate cases whose README, author's post or official showcase says REA was used (REA) from AI reverse engineering with other or unnamed tools (AI-RE), clean-room rewrites without reverse-engineering evidence (Rebuild) and unverified claims (Claim?). Claim checks are the maintainer's reading of public sources; the claim page says X posts could not be opened when it was checked, and no entry was reproduced. A short evidence section summarises two third-party controlled comparisons of REA, rea-lab and leanrea, both also listed in this collection.",
+      "It overlaps heavily with this catalog: about 30 of its linked projects, lists and official pages already have records here, it links this collection among its other lists, and it names other REA case trackers such as awesome-REA-cases. A daily workflow searches GitHub and posts candidates to an issue, but entries are added by hand, and a validator checks entries against the rules stated in the list's CONTRIBUTING.md.",
+      "The README calls the list unofficial and not affiliated with morluto/rea, so it is a community collection, not an REA resource. It excludes mirrors, pure forks and projects mainly aimed at bypassing licensing, copying paid features or distributing copyrighted assets, and accepts takedown requests; each linked case still needs its own rights and original-file review. The list is released under CC0-1.0."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/AIshihzong/awesome-reverse-engineer-anything/blob/55f9ff058c44a55b63cef83aaf6ea42dcbd6e5b2/README.zh-CN.md",
+      "https://github.com/AIshihzong/awesome-reverse-engineer-anything/blob/55f9ff058c44a55b63cef83aaf6ea42dcbd6e5b2/docs/is-it-rea.md",
+      "https://github.com/AIshihzong/awesome-reverse-engineer-anything/blob/55f9ff058c44a55b63cef83aaf6ea42dcbd6e5b2/CONTRIBUTING.md",
+      "https://github.com/AIshihzong/awesome-reverse-engineer-anything/blob/55f9ff058c44a55b63cef83aaf6ea42dcbd6e5b2/.github/workflows/discover-candidates.yml",
+      "https://github.com/AIshihzong/awesome-reverse-engineer-anything/blob/55f9ff058c44a55b63cef83aaf6ea42dcbd6e5b2/LICENSE"
+    ]
   }
 ]
