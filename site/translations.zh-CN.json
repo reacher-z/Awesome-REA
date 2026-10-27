@@ -4330,5 +4330,14 @@
       "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
       "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
     ]
+  },
+  "aptio-v-uefi-editor": {
+    "name": "Aptio V UEFI 设置编辑器",
+    "requirements": [
+      "所审阅的 master 提交 44e8c9b（2026-03-15，改进哈希校验）；此前最近一次源码改动在 2025 年 4 月。项目没有发布版本或标签：源码中标为 0.1.0 版的应用由工作流用 Node 20、npm ci 和 Vite 构建后部署到 GitHub Pages。本地构建使用 package.json 中基于 React、Mantine 和 TypeScript 的脚本。",
+      "输入来自使用者自己的 Aptio V UEFI 镜像，借助 UEFITool NE 定位：Setup PE32 镜像区段、该区段经 IFRExtractor-RS 1.6.1（编辑器唯一接受的版本）导出的文本、AMITSE PE32 镜像区段以及 setupdata 主体。页面在浏览器中读取这些文件，拒绝非 UEFI 的 IFR 输出，并用文件的 SHA-256 哈希核对保存的 JSON。仓库不含任何固件镜像或提取出的区段，只有相关工具的截图。",
+      "README 称修改后的文件用 UEFITool 0.28.0 放回，且控制设置项可见性的方法因固件而异，可能需要逐一尝试；刷写修改后的镜像不在本次审阅范围内。README 另有一节介绍修改隐藏设置的其他方法，与本编辑器无关，此处不作介绍。",
+      "仓库没有许可证文件，package.json 将包标为 private，因此未声明再利用条款。项目未公开自动化测试；本次审阅未打开或修改任何固件。"
+    ]
   }
 }

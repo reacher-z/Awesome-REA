@@ -11799,5 +11799,36 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "aptio-v-uefi-editor",
+    "name": "Aptio V UEFI Editor",
+    "url": "https://github.com/BoringBoredom/UEFI-Editor",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Browser-based editor for the setup menus of AMI Aptio V UEFI firmware, offered as an alternative to AMIBCP. From four sections the user takes from their own BIOS image, it rebuilds the setup forms and their references and shows each setting's VarStore, offset, size, options, failsafe and optimal defaults, access level and Suppress If conditions. Changes to top-level menu targets, suppressions, access levels and defaults are written back into the section files with a change log, and a session can be saved as hash-checked JSON; a separate IFR-Formatter.js script condenses IFRExtractor-RS output into a per-setting VarStore and offset listing.",
+    "description_zh": "在浏览器中运行的 AMI Aptio V UEFI 固件设置菜单编辑器，作为 AMIBCP 的替代工具。它根据使用者从自己的 BIOS 镜像中取得的四个区段重建设置表单及其引用关系，并显示每个设置项的 VarStore、偏移、大小、选项、故障安全和最优默认值、访问级别以及 Suppress If 条件。对顶层菜单目标、隐藏条件、访问级别和默认值的修改会写回区段文件并附带变更日志，会话可另存为带哈希校验的 JSON；另附的 IFR-Formatter.js 脚本可将 IFRExtractor-RS 的输出整理为按设置项列出 VarStore 与偏移的清单。",
+    "evidence_url": "https://github.com/BoringBoredom/UEFI-Editor/blob/44e8c9ba4a05dbd6fc4b1c247ed17948b6e58f8d/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed master commit 44e8c9b (2026-03-15, hash-check changes); the previous source change was in April 2025. There are no releases or tags: the app, version 0.1.0 in its source, is served from GitHub Pages by a workflow that builds it with Node 20, npm ci and Vite. Building locally uses the React, Mantine and TypeScript package.json scripts.",
+      "Inputs come from the user's own Aptio V UEFI image, found with UEFITool NE: the Setup PE32 image section, its text output from IFRExtractor-RS 1.6.1 (the only version the editor accepts), the AMITSE PE32 image section and the setupdata body. The page reads them in the browser, rejects non-UEFI IFR output, and checks saved JSON against the files' SHA-256 hashes. The repository includes no firmware images or extracted sections, only screenshots of the tools.",
+      "README says the modified files are put back with UEFITool 0.28.0 and that setting visibility methods vary between firmware, so either may need trying; flashing a modified image was outside this review. Its separate section on another way to change hidden settings is unrelated to the editor and is not described here.",
+      "The repository has no license file, and package.json marks the package private, so reuse terms are not stated. No automated tests are published, and no firmware was opened or modified in this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BoringBoredom/UEFI-Editor/blob/44e8c9ba4a05dbd6fc4b1c247ed17948b6e58f8d/src/components/scripts/scripts.ts",
+      "https://github.com/BoringBoredom/UEFI-Editor/blob/44e8c9ba4a05dbd6fc4b1c247ed17948b6e58f8d/src/components/scripts/types.ts",
+      "https://github.com/BoringBoredom/UEFI-Editor/blob/44e8c9ba4a05dbd6fc4b1c247ed17948b6e58f8d/src/components/FileUploads/FileUploads.tsx",
+      "https://github.com/BoringBoredom/UEFI-Editor/blob/44e8c9ba4a05dbd6fc4b1c247ed17948b6e58f8d/src/components/FormUi/FormUi.tsx",
+      "https://github.com/BoringBoredom/UEFI-Editor/blob/44e8c9ba4a05dbd6fc4b1c247ed17948b6e58f8d/IFR-Formatter/IFR-Formatter.js",
+      "https://github.com/BoringBoredom/UEFI-Editor/blob/44e8c9ba4a05dbd6fc4b1c247ed17948b6e58f8d/package.json",
+      "https://github.com/BoringBoredom/UEFI-Editor/blob/44e8c9ba4a05dbd6fc4b1c247ed17948b6e58f8d/.github/workflows/deploy.yaml"
+    ]
   }
 ]
