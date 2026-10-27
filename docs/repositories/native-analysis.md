@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**851 repositories** · 2026-10-20 UTC
+**850 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -200,7 +200,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [kweatherman/IDA\_ClassInformer\_PlugIn](https://github.com/kweatherman/IDA_ClassInformer_PlugIn) — IDA ClassInformer PlugIn **[350 stars]**
 - [patois/abyss](https://github.com/patois/abyss) — abyss - augmentation of Hexrays decompiler output **[349 stars]**
 - [ret42/RE-Thing](https://github.com/ret42/RE-Thing) — Reverse Engineering Tools (deobf, decompiler etc..) **[348 stars]**
-- [DizTools/DiztinGUIsh](https://github.com/DizTools/DiztinGUIsh) — A Super NES ROM Disassembler **[343 stars]**
 - [felberj/gotools](https://github.com/felberj/gotools) — Plugin for Ghidra to assist reversing Golang binaries **[343 stars]**
 - [arizvisa/ida-minsc](https://github.com/arizvisa/ida-minsc) — A plugin based on IDAPython for a functional DWIM interface. Current development against most recent IDA is in the "persistence-refactor" branch, ancient (but stable) work is in "master", so... create an issue if you want/need something backported. Use "Wiki" or "Discussions" for examples, and smash that "Star" button if you like this. **[336 stars]**
 - [manyuegong33/r0crawl\_skills](https://github.com/manyuegong33/r0crawl_skills) — r0crawl\_skills is a massive reverse-engineering skill arsenal for web, Android, iOS, Frida, native binaries, protocols, malware, firmware, and anti-analysis—built for beginners, tuned for pros, and engineered for reproducible results. **[332 stars]**

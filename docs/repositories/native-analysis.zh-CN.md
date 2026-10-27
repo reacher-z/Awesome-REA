@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**851 个仓库** · 2026-10-20 UTC
+**850 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -200,7 +200,6 @@
 - [kweatherman/IDA\_ClassInformer\_PlugIn](https://github.com/kweatherman/IDA_ClassInformer_PlugIn) — IDA ClassInformer 插件。 **[350 星标]**
 - [patois/abyss](https://github.com/patois/abyss) — abyss：增强 Hex-Rays 反编译器输出。 **[349 星标]**
 - [ret42/RE-Thing](https://github.com/ret42/RE-Thing) — 逆向工程工具，包括去混淆、反编译等。 **[348 星标]**
-- [DizTools/DiztinGUIsh](https://github.com/DizTools/DiztinGUIsh) — Super NES ROM 反汇编器。 **[343 星标]**
 - [felberj/gotools](https://github.com/felberj/gotools) — 辅助逆向分析 Go 二进制文件的 Ghidra 插件。 **[343 星标]**
 - [arizvisa/ida-minsc](https://github.com/arizvisa/ida-minsc) — 基于 IDAPython 的插件，提供实用的 DWIM（按意图执行）接口。适配最新 IDA 的开发工作位于“persistence-refactor”分支，较旧但稳定的版本位于“master”分支。如需向后移植某项功能，请提交 issue；示例请查看“Wiki”或“Discussions”，喜欢的话请点击“Star”。 **[336 星标]**
 - [manyuegong33/r0crawl\_skills](https://github.com/manyuegong33/r0crawl_skills) — r0crawl\_skills 是一个大型逆向工程技能库，覆盖 Web、Android、iOS、Frida、原生二进制文件、协议、恶意软件、固件和反分析；为初学者构建，为专业人士调优，并注重结果的可复现性。 **[332 星标]**
