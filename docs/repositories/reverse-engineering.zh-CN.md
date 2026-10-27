@@ -46,7 +46,7 @@
 - [Jakeschincariol/replica-skill](https://github.com/Jakeschincariol/replica-skill) — 11 个免费的 Claude 技能，可克隆任意应用：逆向分析、重建、测试缺陷，再修复用户不满意的地方。免费，MIT。 **[3,296 星标]**
 - [hookmaster/frida-all-in-one](https://github.com/hookmaster/frida-all-in-one) — 《FRIDA 操作手册》，作者：<span>@</span>hluwa、<span>@</span>r0ysue。 **[3,153 星标]**
 - [zhizhuodemao/js-reverse-mcp](https://github.com/zhizhuodemao/js-reverse-mcp) — 面向 AI 智能体设计的 JavaScript 逆向 MCP 服务器：支持有界面的 Chrome 调试、断点、网络与 WebSocket 分析、Patchright 反检测，并可选用 CloakBrowser。 **[2,961 星标]**
-- [ivRodriguezCA/RE-iOS-Apps](https://github.com/ivRodriguezCA/RE-iOS-Apps) — 完全免费、开源的 iOS 应用逆向工程在线课程。 **[2,917 星标]**
+- [ivRodriguezCA/RE-iOS-Apps](https://github.com/ivRodriguezCA/RE-iOS-Apps) — 完全免费、开源的 iOS 应用逆向工程在线课程。 **[2,917 星标]** · 精选：[iOS 应用逆向工程课程](https://awesomerea.org/zh/resources/re-ios-apps-course/)
 - [wzhudev/reverse-linear-sync-engine](https://github.com/wzhudev/reverse-linear-sync-engine) — 对 Linear 同步引擎的逆向工程。 **[2,865 星标]**
 - [onethawt/reverseengineering-reading-list](https://github.com/onethawt/reverseengineering-reading-list) — 逆向工程文章、书籍和论文列表。 **[2,750 星标]**
 - [user1342/Awesome-Android-Reverse-Engineering](https://github.com/user1342/Awesome-Android-Reverse-Engineering) — 精选 Android 逆向工程培训、资源和工具列表。 **[2,739 星标]**
