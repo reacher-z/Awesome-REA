@@ -50,7 +50,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [RiS3-Lab/DICE-DMA-Emulation](https://github.com/RiS3-Lab/DICE-DMA-Emulation) — DICE: Automatic Emulation of DMA Input Channels for Dynamic Firmware Analysis **[67 stars]**
 - [C00kie-/IoT-workshop-materials](https://github.com/C00kie-/IoT-workshop-materials) — Presented hardware reverse engineering workshops since 2019 **[65 stars]**
 - [jowinjohnchemban/winbinwalk](https://github.com/jowinjohnchemban/winbinwalk) — binwalk for Windows **[60 stars]**
-- [soyersoyer/basefind2](https://github.com/soyersoyer/basefind2) — A faster firmware base address scanner. **[60 stars]**
+- [soyersoyer/basefind2](https://github.com/soyersoyer/basefind2) — A faster firmware base address scanner. **[60 stars]** · Curated: [basefind2](https://awesomerea.org/resources/basefind2/)
 - [8051Enthusiast/allyourbase](https://github.com/8051Enthusiast/allyourbase) — Finds the base address of a firmware by comparing string addresses with target pointer addresses **[57 stars]**
 - [xdarklight/mktplinkfw3](https://github.com/xdarklight/mktplinkfw3) — Firmware format analysis for TP-Link firmwares with the version 3 header (0x03000000) **[56 stars]**
 - [mosajjal/fortitool](https://github.com/mosajjal/fortitool) — Fortinet Firmware decryption and analysis tools **[50 stars]**
