@@ -33,7 +33,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [ericc-ch/copilot-api](https://github.com/ericc-ch/copilot-api) — Turn GitHub Copilot into OpenAI/Anthropic API compatible server. Usable with Claude Code! **[4,147 stars]**
 - [AloneMonkey/frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump) — pull decrypted ipa from jailbreak device **[3,957 stars]**
 - [dekuNukem/Nintendo\_Switch\_Reverse\_Engineering](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering) — A look at inner workings of Joycon and Nintendo Switch **[3,792 stars]**
-- [JJTech0130/pypush](https://github.com/JJTech0130/pypush) — Python APNs and iMessage client **[3,785 stars]**
+- [JJTech0130/pypush](https://github.com/JJTech0130/pypush) — Python APNs and iMessage client **[3,785 stars]** · Curated: [pypush: a Python client for Apple’s push protocol](https://awesomerea.org/resources/pypush-apns-protocol-case/)
 - [schemaspy/schemaspy](https://github.com/schemaspy/schemaspy) — Database documentation built easy **[3,732 stars]**
 - [momo5502/sogen](https://github.com/momo5502/sogen) — 🪅 Windows &amp; Linux userspace emulator **[3,730 stars]**
 - [pret/pokeemerald](https://github.com/pret/pokeemerald) — Decompilation of Pokémon Emerald **[3,595 stars]** · Curated: [Pokémon Emerald: a matching Game Boy Advance decompilation](https://awesomerea.org/resources/pokemon-emerald-decomp-case/)
