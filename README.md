@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 519](https://img.shields.io/badge/resources-519-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 220](https://img.shields.io/badge/cases-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 141](https://img.shields.io/badge/papers-141-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 520](https://img.shields.io/badge/resources-520-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 220](https://img.shields.io/badge/cases-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 141](https://img.shields.io/badge/papers-141-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,12 +21,12 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-519 curated resources (220 cases) · 141 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 516 because 3 of these appear only under Papers.
+520 curated resources (220 cases) · 141 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 517 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
 - [Website](#website) (29) · [Game](#game) (199) · [App](#app) (83)
-- [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (24) · [Protocol](#protocol) (22)
+- [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (25) · [Protocol](#protocol) (22)
 
 **Research and workflows**
 
@@ -513,6 +513,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Sony-PMCA-RE**](https://github.com/ma1co/Sony-PMCA-RE) - USB tool built from reverse engineering Sony digital cameras. <sub>Tool · Also: Protocol · [Full entry](https://awesomerea.org/resources/sony-pmca-re/)</sub>
 - [**cpu\_rec**](https://github.com/airbus-seclab/cpu_rec) - Statistically recognize the CPU instruction set in an arbitrary binary file, such as an unknown firmware image, by comparing Markov-chain byte statistics with a default corpus covering dozens of architectures, from 6502 and 8051 to ARM, MIPS, PowerPC, RISC-V, x86-64 and WebAssembly. <sub>Tool · Also: Binary · [Full entry](https://awesomerea.org/resources/cpu-rec/)</sub>
 - [**ME Analyzer**](https://github.com/platomav/MEAnalyzer) - Parse Intel Management Engine (CS)ME, TXE and SPS firmware, Graphics System Controller firmware and their independent PMC, PCHC, PHY and option-ROM images to report family, version, release, SKU, platform, size and health status. <sub>Tool · [Full entry](https://awesomerea.org/resources/me-analyzer/)</sub>
+- [**sasquatch**](https://github.com/devttys0/sasquatch) - Patches to the unsquashfs utility from squashfs-tools 4.3 that try to read as many vendor-modified SquashFS implementations from embedded firmware as possible. <sub>Tool · [Full entry](https://awesomerea.org/resources/sasquatch/)</sub>
 
 <a id="protocol"></a>
 ### Protocol
