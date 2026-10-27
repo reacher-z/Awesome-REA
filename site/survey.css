@@ -15,7 +15,9 @@
 .survey-kicker::before {content:"";width:30px;height:2px;flex:none;background:var(--accent)}
 .survey-title {max-width:29ch;margin:0;color:var(--ink);font-family:var(--survey-serif);font-size:clamp(36px,4.4vw,56px);font-weight:500;line-height:1.15;letter-spacing:-.025em;overflow-wrap:break-word;text-wrap:balance}
 .survey-deck {max-width:70ch;margin:22px 0 0;color:var(--body);font-size:19px;line-height:1.8;text-wrap:pretty}
-.survey-meta {display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;max-width:80ch;margin:22px 0 0;color:var(--muted);font-size:14px;line-height:1.75;font-variant-numeric:tabular-nums}
+.survey-meta {display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;max-width:80ch;margin:22px 0 0;color:var(--muted);font-size:14px;line-height:1.75;font-variant-numeric:tabular-nums}
+/* Each byline part is one flex item; its trailing dot sits inside it, so the gap matches the margin. */
+.survey-meta>span:not(:last-child)::after {content:"·";content:"·"/"";margin-left:10px}
 .survey-meta p {margin:0}
 .survey-meta a {color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .survey-actions {display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
@@ -136,7 +138,7 @@ html[lang="zh-CN"] .survey-kicker {letter-spacing:.05em}
   .survey-kicker {margin-bottom:14px;font-size:11px}
   .survey-title {font-size:36px;line-height:1.2;letter-spacing:-.02em}
   .survey-deck {margin-top:18px;font-size:17px;line-height:1.8}
-  .survey-meta {margin-top:18px;font-size:13px;gap:6px 14px}
+  .survey-meta {margin-top:18px;font-size:13px}
   .survey-actions {gap:8px;margin-top:20px}
   .survey-actions a,.survey-actions button {padding:9px 12px}
   .survey-layout {padding-top:26px;gap:26px}

@@ -342,14 +342,29 @@ class SurveyTests(unittest.TestCase):
                 self.assertEqual(len(downloads), 1)
                 self.assertEqual(downloads[0]['download'], 'awesome-rea.bib')
                 self.assertIn(label, downloads[0]['text'])
+                # The desktop and mobile contents lists each link the citation section once.
                 self.assertEqual(sum(link.get('href') == '#citation' and link['text'] == label
                                      for link in page.links), 2)
+                self.assertEqual(sum(link.get('href') == '#citation' for link in page.links), 2)
+                self.assertNotIn('Repository citation', files[path])
+                self.assertNotIn('仓库引用信息', files[path])
                 self.assertIn('id="citation"><h2>' + label + '</h2>', files[path])
                 self.assertIn('https://github.com/reacher-z/Awesome-REA/blob/main/CITATION.cff',
                               {link.get('href') for link in page.links})
                 self.assertNotIn('Cite this survey', files[path])
                 self.assertNotIn('引用本综述', files[path])
                 self.assertNotIn('download="awesome-rea-survey.bib"', files[path])
+
+    def test_byline_parts_are_separate_items_without_inline_separators(self):
+        document, papers, resources = fixture()
+        _, files = self.render(document, papers, resources)
+        for path, version, author in [('survey/index.html', 'Version', 'Awesome REA contributors'),
+                                      ('zh/survey/index.html', '版本', 'Awesome REA 贡献者')]:
+            with self.subTest(path=path):
+                byline = re.search(r'<p class="survey-meta">(.*?)</p>', files[path])[1]
+                # The dots are CSS-generated inside each item, so flex spacing is even on both sides.
+                self.assertEqual(byline, f'<span>{version} {document["version"]}</span><span><time datetime="{document["date"]}">'
+                                         f'{document["date"]}</time></span><span>{author}</span>')
 
     def test_survey_remains_an_editorial_article_not_a_scholarly_publication(self):
         document, papers, resources = fixture()
