@@ -4330,5 +4330,15 @@
       "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
       "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
     ]
+  },
+  "catprinterble-mxw01-printer-case": {
+    "name": "Cat Printer BLE：重建 MXW01 热敏打印机协议",
+    "requirements": [
+      "在 2025-05-22 的 1.2.0 版本提交处审阅。该工具可使用 Bayer 或 Floyd–Steinberg 抖动打印图像、进纸或退纸，并读取电量、纸张、温度和状态信息；README 称它不是编辑器，且作者手头没有其他型号可测，因此不打算支持其他打印机。",
+      "需要使用者自己的 MXW01 打印机。仓库只包含原创 C# 源码和一张照片；作者分析过的厂商应用、任何反编译代码和通信抓包均未收录，运行时也不需要账号或厂商软件。",
+      "仅支持 Windows：项目面向 Windows 10 build 19041 及以上的 .NET 8，并采用原生 AOT 发布，依赖 InTheHand.BluetoothLE 和 SixLabors.ImageSharp 软件包；README 要求安装 .NET 8 Runtime。",
+      "CatPrinter.cs 给出了 GATT 服务及其命令、通知和数据特征值，并列出各命令 ID，注释将其中若干标为未知或推测。仓库没有测试套件或 CI，打印行为为作者报告；本次核查既未运行该工具，也未连接打印机。",
+      "采用 MIT 许可。所审阅来源未确立任何 AI 或 REA 使用。"
+    ]
   }
 }

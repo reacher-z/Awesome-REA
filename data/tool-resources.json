@@ -11799,5 +11799,35 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "catprinterble-mxw01-printer-case",
+    "name": "Cat Printer BLE: reconstructing the MXW01 thermal printer protocol",
+    "url": "https://github.com/MaikelChan/CatPrinterBLE",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Replaces the vendor phone app for the MXW01 “cat printer”, a small Bluetooth Low Energy thermal printer, with a Windows command-line client. The author reports starting from the iOS-only Moblin implementation and then reverse-engineering the vendor's phone app further, and the client sends CRC8-checked commands to one GATT service while streaming 384-pixel image lines in 1-bit or 4-bit grayscale. Several command IDs remain marked as unknown, and the author tested only this one printer model.",
+    "description_zh": "以一个 Windows 命令行客户端替代 MXW01“猫猫打印机”（一款小型低功耗蓝牙热敏打印机）的厂商手机应用。作者称以仅支持 iOS 的 Moblin 实现为起点，再进一步逆向厂商的手机应用；该客户端向一个 GATT 服务发送带 CRC8 校验的命令，并以 1 位或 4 位灰度传输每行 384 像素的图像数据。若干命令 ID 仍标为未知，作者也只测试了这一款打印机。",
+    "evidence_url": "https://github.com/MaikelChan/CatPrinterBLE/blob/007f82151fe40250bd3d5328139e588ea99364ac/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the release 1.2.0 commit of 2025-05-22. The tool prints images with Bayer or Floyd–Steinberg dithering, feeds or retracts paper, and reads battery, paper, temperature and state information; README says it is not an editor and that other printer models are not planned because the author has none to test.",
+      "Requires the user's own MXW01 printer. The repository contains only original C# source and a photo; the vendor app the author analysed, any decompiled code and any traffic captures are not included, and no account or vendor software is needed at runtime.",
+      "Windows only: the project targets .NET 8 for Windows 10 build 19041 or later with native AOT publishing, using the InTheHand.BluetoothLE and SixLabors.ImageSharp packages; the README asks for the .NET 8 Runtime.",
+      "CatPrinter.cs names the GATT service and its command, notification and data characteristics and lists the command IDs, with comments marking several as unknown or guessed. The repository has no test suite or CI, so printing behaviour is author-reported; this review ran neither the tool nor a printer.",
+      "MIT license. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/MaikelChan/CatPrinterBLE/blob/007f82151fe40250bd3d5328139e588ea99364ac/CatPrinterBLE/CatPrinter.cs",
+      "https://github.com/MaikelChan/CatPrinterBLE/blob/007f82151fe40250bd3d5328139e588ea99364ac/CatPrinterBLE/Crc8.cs",
+      "https://github.com/MaikelChan/CatPrinterBLE/blob/007f82151fe40250bd3d5328139e588ea99364ac/CatPrinterBLE/CatPrinterBLE.csproj",
+      "https://github.com/MaikelChan/CatPrinterBLE/blob/007f82151fe40250bd3d5328139e588ea99364ac/CHANGELOG.md",
+      "https://github.com/MaikelChan/CatPrinterBLE/blob/007f82151fe40250bd3d5328139e588ea99364ac/LICENSE"
+    ]
   }
 ]
