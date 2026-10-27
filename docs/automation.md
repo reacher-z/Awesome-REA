@@ -50,7 +50,7 @@ Before replacing a canonical URL, verify that the destination belongs to the sam
 
 ### Submit a correction or retirement proposal
 
-Open an issue or a focused pull request naming the affected IDs, old URLs, observed statuses and check date. For a move, link the public primary evidence establishing the new canonical location. For retirement or replacement, explain the loss of the original resource and the reason for the proposed catalog decision publicly; do not silently substitute an unrelated mirror or reuse an existing ID for a different resource. If the evidence remains inconclusive, report that limitation and leave the entry unchanged pending review.
+Use the [outdated-resource form](https://github.com/reacher-z/Awesome-REA/issues/new?template=broken-resource.yml) or a focused pull request naming the affected IDs, old URLs, observed statuses and check date. For a move, link the public primary evidence establishing the new canonical location. For retirement or replacement, explain the loss of the original resource and the reason for the proposed catalog decision publicly; do not silently substitute an unrelated mirror or reuse an existing ID for a different resource. If the evidence remains inconclusive, report that limitation and leave the entry unchanged pending review.
 
 For a curated catalog correction, regenerate the derived indexes and run the contributor checks:
 

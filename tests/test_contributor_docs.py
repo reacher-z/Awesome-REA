@@ -90,6 +90,21 @@ class ContributorReferenceTests(unittest.TestCase):
         statuses = [value for value in PAPER_FORM_STATUSES.values() if value]
         self.assertEqual(sorted(statuses), sorted(PAPER_STATUSES))
 
+    def test_outdated_resource_form_asks_for_triage_evidence(self):
+        text = (ROOT / '.github/ISSUE_TEMPLATE/broken-resource.yml').read_text(encoding='utf-8')
+        # Correction links prefill `resource`, so it stays the first field under that id.
+        self.assertEqual(re.findall(r'^    id: (\S+)$', text, re.MULTILINE),
+                         ['resource', 'problem', 'observed_status', 'checked_on', 'new_url', 'correction'])
+        self.assertEqual(form_options('broken-resource.yml', 'problem'),
+                         ['Dead link (404 or 410)', 'Moved or renamed', 'Content or requirements changed',
+                          'License changed', 'Other'])
+        guide = (ROOT / 'docs/automation.md').read_text(encoding='utf-8')
+        self.assertIn('\n## Triage source-link results\n', guide)
+        self.assertIn('Two consecutive requests returned 404 or 410.', guide)
+        self.assertIn('docs/automation.md#triage-source-link-results', text)
+        self.assertIn('Remove tokens, cookies, account identifiers, local filesystem paths and private captures', text)
+        self.assertIn('https://github.com/reacher-z/Awesome-REA/security/policy', text)
+
     def test_documented_scans_write_outside_data(self):
         text = (ROOT / 'docs/source-scan.md').read_text(encoding='utf-8')
         text = text.replace('\\' + '\n', '')  # Shell line continuations form one command.
