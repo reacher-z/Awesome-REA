@@ -12487,5 +12487,37 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "paranoid-deobfuscator",
+    "name": "paranoid-deobfuscator",
+    "url": "https://github.com/giacomoferretti/paranoid-deobfuscator",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Python command-line tool that recovers the strings hidden by the Paranoid and LSParanoid Android string-obfuscation plugins, so that smali code becomes readable for static analysis. It scans a smali directory for the obfuscator's string-lookup method and encoded chunk array, decodes the chunks with Python ports of the libraries' DeobfuscatorHelper and RandomHelper classes, and rewrites each lookup call in place as a const-string instruction with a marker comment. Helper commands list the recovered strings, save the chunks to a file and decode a single string from saved chunks.",
+    "description_zh": "一个 Python 命令行工具，用于还原被 Paranoid 和 LSParanoid 这两款 Android 字符串混淆插件隐藏的字符串，使 smali 代码便于静态分析。它在 smali 目录中查找混淆器的字符串查询方法和编码后的分块数组，用移植自这两个库 DeobfuscatorHelper 和 RandomHelper 类的 Python 实现解码分块，并就地把每处查询调用改写为带标记注释的 const-string 指令。辅助命令可列出还原的字符串、把分块保存到文件，以及根据已保存的分块解码单个字符串。",
+    "evidence_url": "https://github.com/giacomoferretti/paranoid-deobfuscator/blob/028bd05fd8a74e8110d0e003b39f06d3bf597642/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v3.0.2, published 2025-02-18 and uploaded to PyPI the same day; install it with pip or pipx. pyproject.toml requires Python 3.10+ with click 8 (8.1.7 or later) and NumPy 2 (2.1.3 or later), and CI runs pytest on Python 3.10 to 3.13 on every push. The reviewed main commit of 2025-03-26 adds only tests and a donation link after that release.",
+      "It works on a smali directory decoded from an APK or DEX file the user supplies, which the README pairs with Apktool or smali/baksmali for decoding and rebuilding, and it overwrites the smali files in place. The README supports only apps obfuscated with Paranoid v0.3.0 or later, released 25 January 2020; a commented-out README warning about Windows refers to issue #14, which is closed.",
+      "The command stops when it finds more than one candidate string-lookup method or obfuscated string array, which the source says is not supported yet, and logs a warning for lookup calls it cannot follow. It restores string constants only, not names or other obfuscation. Tests cover string encoding, smali parsing, Paranoid decoding and the issue #18 regression.",
+      "Apache-2.0 (copyright 2024 Giacomo Ferretti); the decoding modules state that they were converted from Paranoid's and LSParanoid's Java helpers. Analyzed apps keep their own terms. This review ran nothing, and the sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/giacomoferretti/paranoid-deobfuscator/blob/028bd05fd8a74e8110d0e003b39f06d3bf597642/paranoid_deobfuscator/commands/deobfuscate.py",
+      "https://github.com/giacomoferretti/paranoid-deobfuscator/blob/028bd05fd8a74e8110d0e003b39f06d3bf597642/paranoid_deobfuscator/commands/helpers.py",
+      "https://github.com/giacomoferretti/paranoid-deobfuscator/blob/028bd05fd8a74e8110d0e003b39f06d3bf597642/paranoid_deobfuscator/paranoid/DeobfuscatorHelper.py",
+      "https://github.com/giacomoferretti/paranoid-deobfuscator/blob/028bd05fd8a74e8110d0e003b39f06d3bf597642/pyproject.toml",
+      "https://github.com/giacomoferretti/paranoid-deobfuscator/blob/028bd05fd8a74e8110d0e003b39f06d3bf597642/.github/workflows/run_tests.yml",
+      "https://github.com/giacomoferretti/paranoid-deobfuscator/blob/028bd05fd8a74e8110d0e003b39f06d3bf597642/LICENSE",
+      "https://github.com/giacomoferretti/paranoid-deobfuscator/releases/tag/v3.0.2",
+      "https://pypi.org/project/paranoid-deobfuscator/3.0.2/"
+    ]
   }
 ]

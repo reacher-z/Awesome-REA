@@ -173,7 +173,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [darvincisec/DetectTamper](https://github.com/darvincisec/DetectTamper) — Tamper detection in Android **[95 stars]**
 - [cybersecsi/robodroid](https://github.com/cybersecsi/robodroid) — Manage Android machines with pre-defined behaviors for Cyber Range environments. **[91 stars]**
 - [ChupathingyCE/chupathingyce](https://github.com/ChupathingyCE/chupathingyce) — Chupathingy: Halo: Combat Evolved running natively on Windows, Mac, Linux and Android. A port of the Halo CE decomp project, built for stability and community multiplayer, with its own dedicated servers and the Delta network. **[90 stars]**
-- [giacomoferretti/paranoid-deobfuscator](https://github.com/giacomoferretti/paranoid-deobfuscator) — Deobfuscate "paranoid" protected apps **[90 stars]**
+- [giacomoferretti/paranoid-deobfuscator](https://github.com/giacomoferretti/paranoid-deobfuscator) — Deobfuscate "paranoid" protected apps **[90 stars]** · Curated: [paranoid-deobfuscator](https://awesomerea.org/resources/paranoid-deobfuscator/)
 - [0xdad0/PAPIMonitor](https://github.com/0xdad0/PAPIMonitor) — Python API Monitor for Android apps **[89 stars]**
 - [andpalmier/apkingo](https://github.com/andpalmier/apkingo) — extract info from apk files **[89 stars]**
 - [flpflan/u-freecam](https://github.com/flpflan/u-freecam) — Unity Freecam (Internal) **[88 stars]**
