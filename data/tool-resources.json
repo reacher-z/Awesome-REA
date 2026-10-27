@@ -11759,5 +11759,43 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "binassist",
+    "name": "BinAssist",
+    "url": "https://github.com/symgraph/BinAssist",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Binary Ninja plugin by Jason Tang, who also wrote GhidrAssist and IDAssist, that adds a BinAssist sidebar for LLM-assisted analysis of the open binary. Its tabs explain functions at the LLIL, MLIL and HLIL levels and individual instructions, keep chats with context macros, MCP tool calling and an optional ReAct agent mode, propose function and variable renames, retypes and structures with confidence scores for review before they are applied, and build a semantic graph of functions and calls with community detection and source-to-sink taint paths, alongside retrieval over reference documents the analyst adds. A SymGraph tab imports and publishes names, graph data and documents through the hosted symgraph.ai service.",
+    "description_zh": "由 GhidrAssist 与 IDAssist 作者 Jason Tang 开发的 Binary Ninja 插件，在侧边栏加入 BinAssist 面板，借助大语言模型分析当前打开的二进制。各标签页可在 LLIL、MLIL 和 HLIL 层级解释函数，也能解释单条指令；保存支持上下文宏、MCP 工具调用和可选 ReAct 智能体模式的对话；为函数和变量提出带置信度评分的重命名、类型修改及结构体建议，并在审阅后应用；还能构建涵盖函数与调用关系的语义图谱，进行社区检测并查找从输入源到危险调用点的污点路径，同时可检索分析人员添加的参考文档。SymGraph 标签页则通过托管的 symgraph.ai 服务导入和发布名称、图谱数据及文档。",
+    "evidence_url": "https://github.com/symgraph/BinAssist/blob/0f0b01a38cafde662b4ee8a2a35557c3b18df7ad/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 2.1.0, published 2026-05-25 as a source-only GitHub release without notes; the reviewed master commit is four commits later and adds a default Claude Code CLI path on macOS and updated model guidance. plugin.json requires Binary Ninja build 5000 or later and lists Linux, Windows and macOS, while the README gives both 4000 and 5000 as the minimum; the README names Linux as the primary development platform and calls Windows and macOS less tested. The packages in requirements.txt, including openai, anthropic, mcp 1.23.3 and whoosh, plus pywin32 on Windows, are installed into Binary Ninja's Python, and a separate Windows guide covers installing them into its user site-packages.",
+      "Analysis needs at least one configured LLM provider. The reviewed provider types cover Anthropic, OpenAI, Gemini and xAI API keys, OpenAI and Gemini subscription sign-in through OAuth, the local Claude Code CLI, a LiteLLM proxy for services such as AWS Bedrock and Azure, and local Ollama, LM Studio or Open WebUI endpoints; the documentation's provider tables also list an Anthropic OAuth type that the source does not define. Explanations, chats, Actions, agent runs and the graph's Semantic Analysis step send code from the binary to the active provider, so only a local or self-hosted endpoint keeps it on the machine, while the documentation describes re-indexing, Security Analysis and community detection without the model. The settings documentation places the analysis and RLHF feedback SQLite databases and the RAG index in a .binaryninja/binassist folder of the user's home directory, with analysis results keyed by the binary's SHA-256.",
+      "Programs come from the user's own Binary Ninja sessions; the plugin supplies no target binaries. Actions suggestions are applied only for the rows the user selects. Chats can reach MCP servers over streamable HTTP or SSE or launch them over stdio, and the documentation recommends the author's separate BinAssistMCP server for Binary Ninja analysis tools. In the Query tab, calls to tools whose names do not look read-only wait for an allow-once, allow-for-session or deny decision unless the chat accepts all tools, and this classification relies on tool-name keywords.",
+      "The SymGraph tab looks up the binary by SHA-256 without a key, but importing, publishing and uploading need a SymGraph API key, and publishing uploads the raw binary bytes, not the .bndb database, when the service does not already hold them. The repository has no tests or CI workflows. MIT, per LICENSE and plugin.json; Binary Ninja, model providers and SymGraph keep their own terms. The repository moved from jtang613/BinAssist. Nothing was installed or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/symgraph/BinAssist/blob/0f0b01a38cafde662b4ee8a2a35557c3b18df7ad/docs/index.md",
+      "https://github.com/symgraph/BinAssist/blob/0f0b01a38cafde662b4ee8a2a35557c3b18df7ad/docs/tabs/settings-tab.md",
+      "https://github.com/symgraph/BinAssist/blob/0f0b01a38cafde662b4ee8a2a35557c3b18df7ad/docs/tabs/query-tab.md",
+      "https://github.com/symgraph/BinAssist/blob/0f0b01a38cafde662b4ee8a2a35557c3b18df7ad/docs/tabs/semantic-graph-tab.md",
+      "https://github.com/symgraph/BinAssist/blob/0f0b01a38cafde662b4ee8a2a35557c3b18df7ad/docs/tabs/symgraph-tab.md",
+      "https://github.com/symgraph/BinAssist/blob/0f0b01a38cafde662b4ee8a2a35557c3b18df7ad/docs/binassist-on-windows.md",
+      "https://github.com/symgraph/BinAssist/blob/0f0b01a38cafde662b4ee8a2a35557c3b18df7ad/plugin.json",
+      "https://github.com/symgraph/BinAssist/blob/0f0b01a38cafde662b4ee8a2a35557c3b18df7ad/requirements.txt",
+      "https://github.com/symgraph/BinAssist/blob/0f0b01a38cafde662b4ee8a2a35557c3b18df7ad/src/services/models/provider_types.py",
+      "https://github.com/symgraph/BinAssist/blob/0f0b01a38cafde662b4ee8a2a35557c3b18df7ad/src/services/tool_approval_service.py",
+      "https://github.com/symgraph/BinAssist/blob/0f0b01a38cafde662b4ee8a2a35557c3b18df7ad/LICENSE",
+      "https://github.com/symgraph/BinAssist/releases/tag/2.1.0",
+      "https://github.com/symgraph/GhidrAssist/blob/798a5d708124535aeb2ad8b7580ee08cfd14171b/README.md",
+      "https://github.com/symgraph/IDAssist/blob/09dd910d70016c7b3f7e8bc01a4d5bc1035ec302/README.md"
+    ]
   }
 ]

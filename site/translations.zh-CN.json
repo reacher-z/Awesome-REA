@@ -4310,5 +4310,14 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "binassist": {
+    "name": "BinAssist Binary Ninja 大模型辅助分析插件",
+    "requirements": [
+      "审阅时最新版本为 2.1.0，于 2026-05-25 以仅含源码、未附说明的 GitHub 发布形式推出；所审阅的 master 提交比它晚四个提交，增加了 macOS 上 Claude Code CLI 的默认路径并更新了模型建议。plugin.json 要求 Binary Ninja 5000 或更高版本，并列出 Linux、Windows 和 macOS，而 README 同时写有 4000 和 5000 两个最低版本；README 称 Linux 是主要开发平台，Windows 和 macOS 测试较少。requirements.txt 中的依赖（包括 openai、anthropic、mcp 1.23.3 和 whoosh，Windows 上另需 pywin32）需装入 Binary Ninja 的 Python 环境，另有一份 Windows 指南说明如何安装到其用户 site-packages 目录。",
+      "分析需要至少配置一个大模型服务。所审阅的服务类型包括 Anthropic、OpenAI、Gemini 和 xAI 的 API 密钥，通过 OAuth 登录的 OpenAI 与 Gemini 订阅，本地 Claude Code CLI，可接入 AWS Bedrock、Azure 等服务的 LiteLLM 代理，以及本地 Ollama、LM Studio 或 Open WebUI 端点；文档的服务类型表还列出了一个源码中并未定义的 Anthropic OAuth 类型。解释、对话、Actions、智能体运行以及图谱的 Semantic Analysis 步骤都会把二进制中的代码发送给当前服务，只有本地或自托管端点才能让代码不离开本机；文档所述的重建索引、Security Analysis 和社区检测则无需调用模型。设置文档称，分析数据库、RLHF 反馈 SQLite 数据库和 RAG 索引位于用户主目录下的 .binaryninja/binassist 文件夹中，分析结果按二进制的 SHA-256 存储。",
+      "待分析程序来自用户自己的 Binary Ninja 会话，插件本身不提供任何目标二进制。Actions 的建议只对用户选中的行生效。对话可通过 streamable HTTP 或 SSE 连接 MCP 服务器，也可通过 stdio 启动；文档推荐搭配作者另行发布的 BinAssistMCP 服务器获取 Binary Ninja 分析工具。在 Query 标签页中，名称看起来并非只读的工具，调用前需等待用户选择允许一次、本会话允许或拒绝，除非该对话开启了接受所有工具，而这种分类依赖工具名称中的关键词。",
+      "SymGraph 标签页无需密钥即可按 SHA-256 查询二进制，但导入、发布和上传需要 SymGraph API 密钥；若服务中尚无该文件，发布时会上传原始二进制字节，而非 .bndb 数据库。仓库没有测试或 CI 工作流。依据 LICENSE 和 plugin.json 采用 MIT 许可；Binary Ninja、各模型服务和 SymGraph 仍受各自条款约束。仓库已从 jtang613/BinAssist 迁移。本次未安装或运行任何内容，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
