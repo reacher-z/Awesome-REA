@@ -12487,5 +12487,39 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "distorm",
+    "name": "diStorm3",
+    "url": "https://github.com/gdabah/distorm",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Lightweight x86/AMD64 disassembler library in C that the README describes as a decomposer: besides formatted text, distorm_decompose returns a binary structure per instruction with its opcode, operands, prefixes, flow-control class and optionally affected CPU flags. It decodes 16-, 32- and 64-bit code, can stop at calls, returns, branches, interrupts or privileged instructions, and its generated instruction tables cover integer, x87, MMX, 3DNow!, SSE through SSE4.2 and SSE4a, AVX, FMA, AES, CLMUL, VMX and SVM sets. The repository includes the distorm3 Python module, plus example Java and .NET wrappers and sample programs for Linux, Win32 and a Windows kernel driver.",
+    "description_zh": "轻量级的 x86/AMD64 C 语言反汇编库，README 称其为“分解器”：除格式化文本外，distorm_decompose 还会为每条指令返回一个二进制结构，描述其操作码、操作数、前缀、控制流类别，并可选地给出受影响的 CPU 标志位。它可解码 16、32 和 64 位代码，可在遇到调用、返回、分支、中断或特权指令时停止，其生成的指令表涵盖整数、x87、MMX、3DNow!、SSE 至 SSE4.2 和 SSE4a、AVX、FMA、AES、CLMUL、VMX 及 SVM 指令集。仓库还包含 distorm3 Python 模块，以及 Java 和 .NET 的示例封装和面向 Linux、Win32 及 Windows 内核驱动的示例程序。",
+    "evidence_url": "https://github.com/gdabah/distorm/blob/7a02caa1a936f0a653fc75f1aaea9bd3fa654603/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No commits on master since 2021-12-18, the reviewed commit. The latest PyPI release is distorm3 3.5.2, uploaded 2021-03-19 as a source tarball and a Windows 32-bit Python 3.7 wheel; the GitHub release list ends with 3.5.2b (2021-04-03), and setup.py on master already says 3.5.3, which is not on PyPI.",
+      "Install the Python module with pip install distorm3, which compiles the C sources, or build the C library with the Makefiles for Linux, macOS and TinyCC or the Visual Studio solution for Windows. setup.py lists Windows, macOS and Linux, and its newest Python classifier is 3.5; CI last targeted Ubuntu 18.04, Windows and macOS with Python 3.x. The README points to the GitHub wiki for API documentation.",
+      "Input is raw machine code bytes plus a code offset and decoding mode supplied by the caller; it decodes instructions only and does not parse executable formats, build control-flow graphs or lift code. The disOps scripts generate its instruction tables from the x86sets.py database.",
+      "The repository bundles a test helper executable, test-deps/yasm-1.3.0-win64.exe, which the CI workflow copies into place so the Python tests can assemble their instruction samples with yasm on Windows; no other sample binaries are committed.",
+      "BSD three-clause license (COPYING; GitHub reports it as unclassified). No code was disassembled for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/gdabah/distorm/blob/7a02caa1a936f0a653fc75f1aaea9bd3fa654603/include/distorm.h",
+      "https://github.com/gdabah/distorm/blob/7a02caa1a936f0a653fc75f1aaea9bd3fa654603/disOps/x86sets.py",
+      "https://github.com/gdabah/distorm/blob/7a02caa1a936f0a653fc75f1aaea9bd3fa654603/setup.py",
+      "https://github.com/gdabah/distorm/blob/7a02caa1a936f0a653fc75f1aaea9bd3fa654603/.github/workflows/py.yml",
+      "https://github.com/gdabah/distorm/tree/7a02caa1a936f0a653fc75f1aaea9bd3fa654603/examples",
+      "https://github.com/gdabah/distorm/tree/7a02caa1a936f0a653fc75f1aaea9bd3fa654603/test-deps",
+      "https://github.com/gdabah/distorm/blob/7a02caa1a936f0a653fc75f1aaea9bd3fa654603/COPYING",
+      "https://pypi.org/project/distorm3/3.5.2/",
+      "https://github.com/gdabah/distorm/releases/tag/3.5.2b"
+    ]
   }
 ]

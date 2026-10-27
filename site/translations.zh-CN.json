@@ -4528,5 +4528,15 @@
       "POLICY.md 要求代码独立编写，不得包含泄露或未经授权的源码、二进制文件或素材，不收录原软件的分支、移植、启动器和模组，并将净室开发的声明交由各项目作者负责；Remade 表示不审核代码来源或合法性。只有一条记录提到净室流程，因此某个条目依靠的是净室开发、逆向工程还是公开文档，需在其自身来源中核实。",
       "仓库的 MIT 许可证适用于目录本身的代码和数据；所收录项目各自保留许可证，从 MIT、Apache-2.0 到 GPL 和 AGPL 不等，其中一项记为 Unlicensed。项目自己于 2026-10-17 对 119 个条目做的文档审查，仍有无法访问的仓库和许可证冲突未解决，并声明不构成软件、法律或兼容性认证。这是独立的目录；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "distorm": {
+    "name": "diStorm3 x86/AMD64 反汇编库",
+    "requirements": [
+      "自所审阅的提交（2021-12-18）以来 master 分支没有新的提交。PyPI 上最新版本为 distorm3 3.5.2，于 2021-03-19 上传，包括源码包和一个 Windows 32 位 Python 3.7 wheel；GitHub 发布列表止于 3.5.2b（2021-04-03），而 master 上的 setup.py 已写为 3.5.3，该版本并未发布到 PyPI。",
+      "可用 pip install distorm3 安装 Python 模块（安装时会编译 C 源码），也可用面向 Linux、macOS 和 TinyCC 的 Makefile 或 Windows 下的 Visual Studio 解决方案构建 C 库。setup.py 列出 Windows、macOS 和 Linux，最新的 Python 分类标注为 3.5；CI 最后一次针对 Ubuntu 18.04、Windows 和 macOS 以及 Python 3.x。README 指向 GitHub wiki 查看 API 文档。",
+      "输入是调用方提供的原始机器码字节、代码偏移和解码模式；它只解码指令，不解析可执行文件格式，不构建控制流图，也不做代码提升。disOps 脚本根据 x86sets.py 数据库生成其指令表。",
+      "仓库附带一个测试辅助程序 test-deps/yasm-1.3.0-win64.exe，CI 工作流在 Windows 上将其复制到位，供 Python 测试用 yasm 汇编其指令样例；除此之外未提交其他示例二进制。",
+      "BSD 三条款许可证（COPYING；GitHub 将其识别为未分类）。本条目未反汇编任何代码。"
+    ]
   }
 }
