@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 519](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-519-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 220](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 143](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-143-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 519](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-519-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 220](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 144](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)** · **[推荐资源](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)** · **[参与贡献](#参与贡献)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-519 项精选资源（220 个案例）· 143 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 516。
+519 项精选资源（220 个案例）· 144 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 516。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (143) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (39)
+- [论文](#papers) (144) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (39)
 
 **更多浏览方式**
 
@@ -667,13 +667,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**143 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**144 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (11) · [反编译](#papers-decompilation) (62) · [网站](#papers-website-reconstruction) (23)
+- [智能体评测](#papers-agent-evaluation) (11) · [反编译](#papers-decompilation) (63) · [网站](#papers-website-reconstruction) (23)
 - [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (13) · [固件](#papers-firmware-analysis) (13)
 - [协议](#papers-protocol-analysis) (13)
 
@@ -746,6 +746,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**LLM4Decompile：使用大语言模型反编译二进制代码**](https://aclanthology.org/2024.emnlp-main.203/) - 训练语言模型将汇编反编译为 C，并改进 Ghidra 伪代码，以恢复函数能否重新编译并正确执行为评估目标。 <sub>原题：*LLM4Decompile: Decompiling Binary Code with Large Language Models* · EMNLP 2024 · 会议论文 · Hanzhuo Tan 等 · [PDF](https://aclanthology.org/2024.emnlp-main.203.pdf) · [代码](https://github.com/albertan017/LLM4Decompile) · [完整条目](https://awesomerea.org/zh/papers/paper-llm4decompile/)</sub>
 - [**WaDec：基于大语言模型的 WebAssembly 反编译**](https://dl.acm.org/doi/10.1145/3691620.3695020) - WaDec 使用循环级 wat–C 代码片段对，以 LoRA 微调 CodeLlama-7b，将 WebAssembly 文本格式（wat）反编译为 C。 <sub>原题：*WaDec: Decompiling WebAssembly Using Large Language Model* · ASE 2024 · 会议论文 · Xinyu She 等 · [PDF](https://arxiv.org/pdf/2406.11346v3) · [代码](https://github.com/XinyuShe/WaDec/tree/e244f7172539478a5b64bbb86e1fd03e527cb6be) · [完整条目](https://awesomerea.org/zh/papers/paper-wadec/)</sub>
 - [**CLAP：借助自然语言监督学习可迁移的二进制代码表示**](https://dl.acm.org/doi/10.1145/3650212.3652145) - CLAP（对比式语言—汇编预训练）学习与自然语言解释对齐的汇编函数嵌入。 <sub>原题：*CLAP: Learning Transferable Binary Code Representations with Natural Language Supervision* · ACM ISSTA 2024 · 会议论文 · Hao Wang 等 · [PDF](https://arxiv.org/pdf/2402.16928v1) · [代码](https://github.com/Hustcw/CLAP) · [完整条目](https://awesomerea.org/zh/papers/paper-clap/)</sub>
+- [**TYGR：基于图神经网络的剥离符号二进制类型推断**](https://www.usenix.org/conference/usenixsecurity24/presentation/zhu-chang) - TYGR 在 angr 的 VEX 中间表示上执行与架构无关的过程内数据流分析，并用图神经网络对每个变量的数据流图进行分类，从而推断剥离符号二进制中栈变量与堆变量的类型。 <sub>原题：*TYGR: Type Inference on Stripped Binaries using Graph Neural Networks* · USENIX Security 2024 · 会议论文 · Chang Zhu 等 · [PDF](https://www.usenix.org/system/files/usenixsecurity24-zhu-chang.pdf) · [代码](https://github.com/sefcom/TYGR) · [完整条目](https://awesomerea.org/zh/papers/paper-tygr/)</sub>
 - [**代码并非自然语言：释放面向语义的图表示在二进制代码相似性检测中的潜力**](https://www.usenix.org/conference/usenixsecurity24/presentation/he-haojie) - HermesSim 将每个函数提升为 Ghidra P-code，并构建面向语义的图，以显式表示指令内部的操作数结构、定义—使用关系、控制流及副作用顺序，同时舍弃与语义无关的细节，例如由哪个寄存器临时保存某个值。 <sub>原题：*Code is not Natural Language: Unlock the Power of Semantics-Oriented Graph Representation for Binary Code Similarity Detection* · USENIX Security 2024 · 会议论文 · Haojie He 等 · [PDF](https://www.usenix.org/system/files/usenixsecurity24-he-haojie.pdf) · [代码](https://github.com/NSSL-SJTU/HermesSim) · [完整条目](https://awesomerea.org/zh/papers/paper-hermessim/)</sub>
 - [**CodeArt：在缺少符号时通过注意力正则化改进代码模型**](https://dl.acm.org/doi/10.1145/3643752) - CodeArt 基于 jTrans 的 BinaryCorp 构建的 2,600 万个剥离符号的 x86-64 函数，从零开始预训练一个 BERT 规模的编码器。 <sub>原题：*CodeArt: Better Code Models by Attention Regularization When Symbols Are Lacking* · Proceedings of the ACM on Software Engineering (FSE 2024) · 期刊论文 · Zian Su 等 · [PDF](https://arxiv.org/pdf/2402.11842v1) · [代码](https://github.com/ziansu/codeart) · [完整条目](https://awesomerea.org/zh/papers/paper-codeart/)</sub>
 - [**StackSight：借助大语言模型与神经符号思维链反编译揭示 WebAssembly**](https://proceedings.mlr.press/v235/fang24e.html) - StackSight 借助大语言模型提示，将 WebAssembly 文本格式（WAT）函数反编译为 C++。 <sub>原题：*StackSight: Unveiling WebAssembly through Large Language Models and Neurosymbolic Chain-of-Thought Decompilation* · ICML 2024 · 会议论文 · Weike Fang 等 · [PDF](https://raw.githubusercontent.com/mlresearch/v235/main/assets/fang24e/fang24e.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-stacksight/)</sub>
