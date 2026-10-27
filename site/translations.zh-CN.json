@@ -4547,5 +4547,15 @@
       "“练习”部分把 crackme 和 CTF 网站与公开的恶意软件样本库并列，只附有一句注意恶意软件的提醒；“Mac 解密”部分只列出工具名称，未说明用法。本记录仅把该清单视为分析资源目录。",
       "package.json 和 .travis.yml 在 Travis CI 上以 Node.js 8 配置了 remark-lint 检查，涵盖列表顺序、重复链接和失效链接。GitHub 未检测到许可证，仓库没有许可证文件，package.json 的 license 字段也为空，因此清单未声明复用条款；所链接的工具和书籍保留各自条款。这是独立的发现清单；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "icsim": {
+    "name": "ICSim 汽车仪表盘 CAN 总线模拟器",
+    "requirements": [
+      "审阅基于 master 分支 2025-09-18 的最新提交，该提交合并了一处画面闪烁问题的修复；此前的改动集中在 2023 年 12 月至 2024 年 1 月，加入了 Meson 构建并清理了编译警告。仓库没有标签、发布版本、测试或 CI。默认信号布局是通用的，-m bmw 会把部分信号切换为源码中标注为 BMW X1 的 ID。",
+      "需在支持 SocketCAN 的 Linux 上运行：README 用 sudo 加载 can 和 vcan 内核模块来创建 vcan0 虚拟接口，setup_vcan.sh 中是同样的命令。构建需要 SDL2、SDL2_image 和 can-utils，Meson 通过 candump 检查后者；控制程序会调用 canplayer 回放 data/sample-can.log，并从 ./data/ 读取数据文件。README 建议使用 Xbox 式手柄，源码也映射了键盘按键；其故障排除说明涉及 SDL 头文件路径，以及一例 Arch Linux 上需要 sdl2_gfx 的报告。",
+      "仓库提交了 lib.o，这是 can-utils 中 lib.c 的预编译 x86-64 ELF 目标文件，Makefile 和 Meson 都会把它链接进 icsim；README 说明在其他架构上无法链接时，应从 can-utils 重新编译。仓库还附带 data/sample-can.log（一段录制的通用 CAN 流量，用作背景噪声）以及 PNG、SVG 和分层图像素材；不含任何车辆固件或软件。",
+      "练习方式是监听模拟总线（例如使用 candump），推断哪些 ID 和字节驱动各个仪表；控制程序的用法说明把用 -X 关闭背景流量称为这种练习中的作弊。难度分 0 到 2 级，默认为 1，只有第 2 级会加入随机字节。",
+      "GPL-3.0（LICENSE；meson.build 声明 GPL-3）。lib.c 保留了来自 can-utils 的 Volkswagen Group Electronic Research 版权声明，可按 BSD 式条款或 GPL-2.0 使用。所审来源未提及任何 AI 或 REA 用途，本条目也未构建或运行该项目。"
+    ]
   }
 }
