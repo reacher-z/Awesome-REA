@@ -12548,5 +12548,36 @@
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/package.json",
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/.travis.yml"
     ]
+  },
+  {
+    "id": "redress",
+    "name": "Redress",
+    "url": "https://github.com/goretk/redress",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Command-line tool, built on the GoRE library, that recovers metadata from stripped binaries produced by the Go compiler. It reports the compiler version, build ID, GOROOT, main-package path and Go module information; lists project, standard-library and vendored packages; prints interfaces, structs and their methods as Go type declarations; and projects the source tree as packages, files and functions with estimated line ranges. Run inside radare2 through r2pipe, it adds function and type flags and analyzes main.init and main.main.",
+    "description_zh": "基于 GoRE 库的命令行工具，可从 Go 编译器生成、已剥离符号的二进制文件中恢复元数据。它能报告编译器版本、构建 ID、GOROOT、main 包路径和 Go 模块信息；列出项目包、标准库包和 vendor 包；把接口、结构体及其方法输出为 Go 类型声明；并按包、文件和函数推测源码树布局，估计各函数的行号范围。通过 r2pipe 在 radare2 中运行时，它会为函数和类型添加标记，并分析 main.init 与 main.main。",
+    "evidence_url": "https://github.com/goretk/redress/blob/fe38d961b5d8bf0a0ebf58421527da64422a7922/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit fe38d96 (2024-10-12) on develop, the default branch. The stable master branch is 96 commits ahead, all automated \"Update Gore version\" commits: a daily workflow bumps the GoRE dependency whenever GoRE publishes a new release, then tags and builds a release. Latest release at review: v1.2.98 (2026-10-20), built against GoRE v0.14.7, while develop's go.mod still pins v0.11.5; the README is identical on both branches.",
+      "Release archives are amd64-only builds for Linux, macOS and Windows. Source builds need Go 1.21+ according to go.mod, with Make targets for each platform; the r2 subcommand is meant to run from radare2 as #!pipe redress r2.",
+      "Input is an executable built with the Go compiler. The README's examples use a macOS cryptominer sample first reported by Malwarebytes, which the repository does not include; it commits no test binaries. GoRE recovers functions from the pclntab and types from the typelink list, fully supporting Go 1.7 and later and only partially 1.5 and 1.6, and its compiler-version detection is a string search that the GoRE README says is not perfect.",
+      "Redress is AGPL-3.0 (LICENSE). GoRE is mostly BSD-licensed, but its AGPL features such as GOROOT extraction make any build without the gore_bsd tag AGPL. Output reconstructs symbols, types and a source layout, not Go source code, and the README notes that some packages cannot be classified. This review ran nothing and analyzed no binaries."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/goretk/redress/blob/fe38d961b5d8bf0a0ebf58421527da64422a7922/go.mod",
+      "https://github.com/goretk/redress/blob/fe38d961b5d8bf0a0ebf58421527da64422a7922/Makefile",
+      "https://github.com/goretk/redress/blob/fe38d961b5d8bf0a0ebf58421527da64422a7922/LICENSE",
+      "https://github.com/goretk/redress/blob/fe38d961b5d8bf0a0ebf58421527da64422a7922/.github/workflows/gore.yml",
+      "https://github.com/goretk/redress/blob/198e6dc82f17ca6e9edb80b22a85af17f1a3b031/go.mod",
+      "https://github.com/goretk/redress/releases/tag/v1.2.98",
+      "https://github.com/goretk/gore/blob/a49d39670e6137952032277d41430bd734a06404/README.md"
+    ]
   }
 ]
