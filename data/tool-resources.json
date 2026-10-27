@@ -12487,5 +12487,32 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "basefind2",
+    "name": "basefind2",
+    "url": "https://github.com/soyersoyer/basefind2",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Python script that estimates the load address of a flat 32-bit little-endian firmware image without brute-forcing every candidate base, building on mncoppola's basefind.py and rbasefind. It searches the gaps between sorted pointer values for a run of consecutive gaps between string offsets, takes each match as a candidate base, and scores it by the share of sampled strings whose rebased address also appears as a pointer. The README's example finds the correct base of one image in about 26 seconds.",
+    "description_zh": "一个 Python 脚本，无需暴力枚举每个候选基址即可估算平面 32 位小端固件镜像的加载地址，在 mncoppola 的 basefind.py 和 rbasefind 的基础上改进而来。它在排序后指针值的相邻差值中，查找与一段相邻字符串偏移差值完全相同的连续序列，把每处匹配视为候选基址，再按抽样字符串在重定位后的地址同样作为指针出现的比例为其打分。README 中的示例约用 26 秒找出了一个镜像的正确基址。",
+    "evidence_url": "https://github.com/soyersoyer/basefind2/blob/370d0ddf561bf5626c40740f0cc2088578bc35b2/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The whole tool is basefind2.py; the reviewed main commit of 2022-05-02 is the last of six commits made between 2022-04-07 and 2022-05-02, and there are no releases, tags or packages. It needs only Python 3 and its standard library.",
+      "Input is a flat image supplied by the user; no firmware or samples are included. Pointers are read as little-endian 32-bit words at 4-byte alignment, with no big-endian or 64-bit option. Strings are runs of at least 10 printable ASCII characters, tabs or line breaks (-sl), a match needs 10 consecutive gaps by default (-dl), and scoring samples every 20th string (-s). The whole file is read into memory.",
+      "Output lists each candidate base with its sampled match percentage, and the analyst must choose and confirm one. The README's only example raises -dl to 40 and reports the correct base of one image at 81.64% after about 26 seconds. There are no tests or CI, the README gives no comparison with rbasefind or basefind.py on shared images, and this review scanned no files.",
+      "MIT License (2022, soyer). Analyzed firmware keeps its own terms."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/soyersoyer/basefind2/blob/370d0ddf561bf5626c40740f0cc2088578bc35b2/basefind2.py",
+      "https://github.com/soyersoyer/basefind2/blob/370d0ddf561bf5626c40740f0cc2088578bc35b2/LICENSE",
+      "https://github.com/sgayou/rbasefind/blob/a661118d19f0e2b282c48f2e8019d493868d4dd2/README.md"
+    ]
   }
 ]
