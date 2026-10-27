@@ -649,14 +649,48 @@ function loadDetails() {
 function queryTerms() { return normalizeSearchText(state.q).trim().split(/\s+/).filter(Boolean); }
 // skip leaves one facet out, so that facet's choices can be counted against every other active filter.
 function matches(r, terms, skip = "") { return (state.group==="all"||r.group===state.group)&&(skip==="target"||state.target==="all"||r.targets.includes(state.target))&&(skip==="category"||state.category==="all"||r.category===state.category)&&(skip==="kind"||state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)); }
-function filtered() { const terms=queryTerms();const found=state.records.filter(r=>matches(r,terms));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};const byFeatured=(a,b)=>rank(a)-rank(b)||a.order-b.order;return found.sort(curatedOrder(byFeatured)); }
+function filtered() { const terms=queryTerms();const found=state.records.filter(r=>matches(r,terms));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};const byFeatured=(a,b)=>rank(a)-rank(b)||a.order-b.order;return found.sort(curatedOrder(byFeatured,terms,found)); }
 // Optional orders: localized display name (the active language's collator, ties by ID) or the displayed
-// source-review date, newest first. Both fall back deterministically; the default order is unchanged.
-function curatedOrder(byFeatured) {
+// source-review date, newest first. Both fall back deterministically. The default order puts a query's best
+// matches first (queryScores) and otherwise follows FEATURED order, kind and catalog order.
+function curatedOrder(byFeatured, terms = [], found = []) {
   const name = record => state.lang === "zh" ? (record.name_zh || record.name) : record.name;
   if (state.order === "name") return (a,b) => compareLabels(name(a), name(b)) || compareIDs(a.id, b.id);
   if (state.order === "reviewed") return (a,b) => compareIDs(b.verified_at.slice(0,10), a.verified_at.slice(0,10)) || byFeatured(a,b);
-  return byFeatured;
+  if (!terms.length) return byFeatured;
+  // Scores are constant during this sort; compute them once per match, not inside the comparator.
+  const scores = queryScores(found, terms); return (a,b) => scores.get(b)-scores.get(a) || byFeatured(a,b);
+}
+// Query ranking reads the search text by field, most specific first: names, descriptions, labels, then requirements,
+// folded like the search index. Each name is also kept without spaces or punctuation, so a query that is the whole
+// name ("ghidra mcp") can lead. The fields are rebuilt when a record's search text changes (complete catalog.json).
+const compactText = text => normalizeSearchText(text).replace(/[^\p{L}\p{N}]+/gu, "");
+const SEARCH_RANK = new WeakMap();
+function searchRank(record) {
+  const cached = SEARCH_RANK.get(record); if (cached && cached.search === record.search) return cached;
+  const fields = [[record.name, record.name_zh], [record.description_en, record.description_zh],
+    [record.category, ...(state.categoryLabels[record.category] || []), ...(KIND[record.kind] || []), record.relationship, ...(record.targets || []).flatMap(targetSearchLabels)],
+    [].concat(record.requirements || [], record.requirements_zh || [])].map(values => normalizeSearchText(values.filter(Boolean).join(" ")));
+  const rank = {search: record.search, names: [record.name, record.name_zh].filter(Boolean).map(compactText), fields};
+  SEARCH_RANK.set(record, rank); return rank;
+}
+// A match starts a word after a non-letter or at the field start; Chinese text has no spaces, so any Han character may.
+const WORD_CHARACTER = /[\p{L}\p{N}]/u, HAN = /\p{Script=Han}/u;
+function startsWord(text, index) { return index === 0 || !WORD_CHARACTER.test(text[index - 1]) || HAN.test(text[index]); }
+// A term scores by its earliest field, and within it a word-start match above one inside a word ("unity" in "community").
+function termScore(fields, term) {
+  for (const [position, text] of fields.entries()) {
+    let index = text.indexOf(term); if (index < 0) continue;
+    const field = 2 * (fields.length - position);
+    for (; index >= 0; index = text.indexOf(term, index + 1)) if (startsWord(text, index)) return field;
+    return field - 1;
+  }
+  return 0;
+}
+// Whole-name matches lead, then summed term scores. Which records match is decided by matches() alone.
+function queryScores(found, terms) {
+  const whole = compactText(state.q);
+  return new Map(found.map(record => { const {names, fields} = searchRank(record); return [record, (whole && names.includes(whole) ? 1000 : 0) + terms.reduce((sum, term) => sum + termScore(fields, term), 0)]; }));
 }
 // Each target button and Type/Category option shows how many results it would give with the other filters and the query.
 // Empty choices are disabled unless selected, so a shared URL still shows its own choice; counts are not announced.
