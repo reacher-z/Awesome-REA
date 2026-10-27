@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 519](https://img.shields.io/badge/resources-519-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 220](https://img.shields.io/badge/cases-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 140](https://img.shields.io/badge/papers-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 519](https://img.shields.io/badge/resources-519-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 220](https://img.shields.io/badge/cases-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 141](https://img.shields.io/badge/papers-141-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-519 curated resources (220 cases) · 140 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 516 because 3 of these appear only under Papers.
+519 curated resources (220 cases) · 141 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 516 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (140) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (39)
+- [Papers](#papers) (141) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (39)
 
 **More ways to browse**
 
@@ -666,13 +666,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**140 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**141 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (10) · [Decompilation](#papers-decompilation) (60) · [Websites](#papers-website-reconstruction) (23)
+- [Agent evaluation](#papers-agent-evaluation) (10) · [Decompilation](#papers-decompilation) (61) · [Websites](#papers-website-reconstruction) (23)
 - [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (13) · [Firmware](#papers-firmware-analysis) (13)
 - [Protocols](#papers-protocol-analysis) (13)
 
@@ -736,6 +736,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Unleashing the Power of Generative Model in Recovering Variable Names from Stripped Binary**](https://www.ndss-symposium.org/ndss-paper/unleashing-the-power-of-generative-model-in-recovering-variable-names-from-stripped-binary/) - GenNm suggests names for placeholder variables in decompiled code of stripped binaries by fine-tuning generative code models (CodeGemma-2B by default; CodeLlama-7B and a LoRA-tuned CodeLlama-34B are also tested). <sub>NDSS 2025 · Conference paper · Xiangzhe Xu et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2025-276-paper.pdf) · [Code](https://github.com/XZ-X/gennm-ndss-ae/tree/9955139b4c8d43144852a674bf317cbfaf32ed17) · [Full entry](https://awesomerea.org/papers/paper-gennm/)</sub>
 - [**TypeForge: Synthesizing and Selecting Best-Fit Composite Data Types for Stripped Binaries**](https://ieeexplore.ieee.org/document/11023499) - TypeForge recovers composite data types, including struct layouts, unions and pointer or nesting relationships, from stripped binaries. <sub>IEEE S&amp;P 2025 · Conference paper · Yanzhong Wang et al. · [PDF](https://noobone123.github.io/papers/typeforge-sp25.pdf) · [Code](https://github.com/noobone123/TypeForge) · [Full entry](https://awesomerea.org/papers/paper-typeforge/)</sub>
 - [**Nova: Generative Language Models for Assembly Code with Hierarchical Attention and Contrastive Learning**](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ef283d62b4bce30854a8d4827f331229-Abstract-Conference.html) - Nova is a generative LLM for x86-64 assembly, trained from DeepSeek-Coder checkpoints on stripped, normalized gcc -O0 to -O3 assembly built from AnghaBench and The Stack. <sub>ICLR 2025 · Conference paper · Nan Jiang et al. · [PDF](https://proceedings.iclr.cc/paper_files/paper/2025/file/ef283d62b4bce30854a8d4827f331229-Paper-Conference.pdf) · [Code](https://github.com/lt-asset/nova/tree/6dfaf438fb23a8f024d0297653571615631ad8f4) · [Full entry](https://awesomerea.org/papers/paper-nova/)</sub>
+- [**Malsight: Exploring Malicious Source Code and Benign Pseudocode for Iterative Binary Malware Summarization**](https://doi.org/10.1109/TIFS.2025.3583552) - MALSIGHT writes natural-language summaries of stripped binary malware one function at a time. <sub>IEEE Transactions on Information Forensics and Security 2025 · Journal article · Haolang Lu et al. · [PDF](https://arxiv.org/pdf/2406.18379v3) · [Full entry](https://awesomerea.org/papers/paper-malsight/)</sub>
 - [**Decompile-Bench: Million-Scale Binary-Source Function Pairs for Real-World Binary Decompilation**](https://papers.nips.cc/paper_files/paper/2025/hash/079cf13ae174c31f148207d94d213bdc-Abstract-Datasets_and_Benchmarks_Track.html) - Introduces two million C/C++ binary-source function pairs using a Compile-Trace-Filter pipeline, with an evaluation suite spanning translated HumanEval/MBPP tasks and recent GitHub functions. <sub>NeurIPS 2025 Datasets and Benchmarks · Conference paper · Hanzhuo Tan et al. · [PDF](https://papers.nips.cc/paper_files/paper/2025/file/079cf13ae174c31f148207d94d213bdc-Paper-Datasets_and_Benchmarks_Track.pdf) · [Code](https://github.com/albertan017/LLM4Decompile) · [Full entry](https://awesomerea.org/papers/paper-decompile-bench/)</sub>
 - [**Beyond Classification: Inferring Function Names in Stripped Binaries via Domain Adapted LLMs**](https://www.ndss-symposium.org/ndss-paper/beyond-classification-inferring-function-names-in-stripped-binaries-via-domain-adapted-llms/) - SymGen infers function names for stripped binaries by generating them with a LoRA-fine-tuned Code Llama model instead of classifying over a fixed name vocabulary. <sub>NDSS 2025 · Conference paper · Linxi Jiang et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2025-797-paper.pdf) · [Code](https://github.com/OSUSecLab/SymGen) · [Full entry](https://awesomerea.org/papers/paper-symgen/)</sub>
 - [**ReSym: Harnessing LLMs to Recover Variable and Data Structure Symbols from Stripped Binaries**](https://doi.org/10.1145/3658644.3670340) - Combines two fine-tuned language models with Prolog-based cross-function reasoning to infer local-variable symbols and user-defined data structures from stripped-binary decompilation. <sub>ACM CCS 2024 · Conference paper · Danning Xie et al. · [PDF](https://www.cs.purdue.edu/homes/lintan/publications/resym-ccs24.pdf) · [Code](https://github.com/lt-asset/resym) · [Full entry](https://awesomerea.org/papers/paper-resym/)</sub>
