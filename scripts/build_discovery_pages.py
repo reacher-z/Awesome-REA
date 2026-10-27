@@ -32,6 +32,11 @@ SECTIONS = {
     'related-collections': ('Related collections', '相关资源合集'),
     'references-and-learning': ('References and learning', '文档与学习资源'),
 }
+# Target sections and the target tag each one corresponds to; the other sections are not target-based.
+SECTION_TARGETS = {'website': 'website', 'game': 'game', 'app': 'app', 'native-binary': 'binary',
+                   'firmware': 'firmware', 'protocol': 'protocol'}
+# Up to this many entries filed under other sections are named individually after a section's tag count.
+NAMED_ELSEWHERE_LIMIT = 9
 
 
 def jsonld_script(value: dict) -> str:
@@ -162,6 +167,48 @@ def _resource_card(record: dict, language: str) -> str:
 </article>'''
 
 
+def _target_coverage(section: str, records: list[dict], language: str, *, cases: bool = False) -> str:
+    """State how many listed entries carry a target section's tag and link the homepage filter for all of them.
+
+    Each card renders once, under its primary section, so a target section can hold fewer entries than carry
+    its tag. The filter link uses the homepage's own target (and case-study) filter, which counts the same records.
+    """
+    target = SECTION_TARGETS.get(section)
+    if target is None:
+        return ''
+    zh = language == 'zh'
+    tagged = [record for record in records if target in record['targets']]
+    elsewhere = [record for record in tagged if collection_section(record) != section]
+    label, count = TARGETS[target][int(zh)], len(tagged)
+    if zh:
+        unit, noun = ('个', '案例') if cases else ('项', '条目')
+        parts = [f'{count} {unit}{"案例" if cases else ""}带“{label}”标签']
+        if tagged:
+            parts.append(f'其中 {len(elsewhere)} {unit}归入其他{"主题" if cases else "分区"}' if elsewhere else '均在本节')
+        show = f'查看全部 {count} {unit}'
+        accessible = f'在搜索中查看带“{label}”标签的全部 {count} {unit}{noun}'
+    else:
+        noun = ('case' if count == 1 else 'cases') if cases else ('entry' if count == 1 else 'entries')
+        parts = [f'{count} {noun} tagged {label}']
+        if tagged:
+            parts.append(('1 filed in another section' if len(elsewhere) == 1 else f'{len(elsewhere)} filed in other sections')
+                         if elsewhere else ('filed here' if count == 1 else 'all filed here'))
+        show = 'Show in search' if count == 1 else f'Show all {count}'
+        accessible = f'Show all {count} {noun} tagged {label} in search'
+    text = ' · '.join(escape(part) for part in parts)
+    if elsewhere and len(elsewhere) <= NAMED_ELSEWHERE_LIMIT:
+        prefix = '/zh' if zh else ''
+        text += ('：' if zh else ': ') + ('、' if zh else ', ').join(
+            f'<a href="{prefix}/resources/{escape(record["id"], quote=True)}/">'
+            f'{escape((record.get("name_zh") or record["name"]) if zh else record["name"])}</a>' for record in elsewhere)
+    if tagged:
+        query = f'view=curated{"&amp;kind=case-study" if cases else ""}&amp;target={target}'
+        href = f'/zh/?{query}#catalog' if zh else f'/?{query}&amp;lang=en#catalog'
+        text += f' · <a href="{href}" aria-label="{escape(accessible, quote=True)}">{escape(show)} →</a>'
+    return (f'<p class="section-target-count" data-section-target="{target}" data-target-tagged="{count}"'
+            f' data-target-elsewhere="{len(elsewhere)}">{text}</p>')
+
+
 def _case_row(record: dict, language: str, section: str) -> str:
     """Keep reported scope visible; link the original, the full entry and its primary source as /resources/ does."""
     zh = language == 'zh'
@@ -197,16 +244,16 @@ def _case_collection(resources: list[dict], language: str, site_url: str,
     zh = language == 'zh'
     prefix = '/zh' if zh else ''
     groups = defaultdict(list)
-    for record in resources:
-        if record['kind'] == 'case-study':
-            groups[collection_section(record)].append(record)
+    cases = [record for record in resources if record['kind'] == 'case-study']
+    for record in cases:
+        groups[collection_section(record)].append(record)
     sections, navigation, items = [], [], []
     for key, labels in SECTIONS.items():
         if not groups[key]:
             continue
         label = labels[int(zh)]
         navigation.append(f'<a href="#cases-{key}">{escape(label)}<span>{len(groups[key])}</span></a>')
-        sections.append(f'<section class="case-section" id="cases-{key}" data-case-section="{key}" aria-labelledby="case-heading-{key}"><div class="browse-topline"><h2 id="case-heading-{key}">{escape(label)}</h2><p>{len(groups[key])} {("个案例" if zh else ("case" if len(groups[key]) == 1 else "cases"))}</p></div><div class="case-list">' + '\n'.join(_case_row(record, language, key) for record in groups[key]) + '</div></section>')
+        sections.append(f'<section class="case-section" id="cases-{key}" data-case-section="{key}" aria-labelledby="case-heading-{key}"><div class="browse-topline"><h2 id="case-heading-{key}">{escape(label)}</h2><p>{len(groups[key])} {("个案例" if zh else ("case" if len(groups[key]) == 1 else "cases"))}</p></div>{_target_coverage(key, cases, language, cases=True)}<div class="case-list">' + '\n'.join(_case_row(record, language, key) for record in groups[key]) + '</div></section>')
         for record in groups[key]:
             name = (record.get('name_zh') or record['name']) if zh else record['name']
             items.append({'name': name, 'url': f"{site_url}{prefix}/resources/{record['id']}/", 'description': record[f'description_{language}']})
@@ -351,7 +398,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
                 continue
             label = labels[1 if zh else 0]
             navigation.append(f'<a href="#{key}">{escape(label)}<span>{len(groups[key])}</span></a>')
-            sections.append(f'<section aria-labelledby="heading-{key}"><div class="browse-topline"><h2 id="heading-{key}"><a id="{key}"></a>{escape(label)}</h2><p>{len(groups[key])} {("项资源" if zh else "resources")}</p></div><div class="resource-grid">' + '\n'.join(_resource_card(record, language) for record in groups[key]) + '</div></section>')
+            sections.append(f'<section aria-labelledby="heading-{key}"><div class="browse-topline"><h2 id="heading-{key}"><a id="{key}"></a>{escape(label)}</h2><p>{len(groups[key])} {("项资源" if zh else "resources")}</p></div>{_target_coverage(key, resources, language)}<div class="resource-grid">' + '\n'.join(_resource_card(record, language) for record in groups[key]) + '</div></section>')
             for record in groups[key]:
                 name = (record.get('name_zh') or record['name']) if zh else record['name']
                 # Items identify the site's own entry pages, as /cases/ does; card titles still link upstream.

@@ -26,6 +26,10 @@
 .browse-topline p{margin:0}
 .browse-topline h2{margin:0;max-width:100%;font-size:22px;line-height:1.4;color:var(--ink);overflow-wrap:break-word;text-wrap:balance}
 .browse-topline p:last-child{font-size:14px}
+/* Target sections also count entries carrying that tag but filed under another section. */
+.section-target-count{max-width:80ch;margin:-6px 0 16px;font-size:14px;line-height:1.75;color:var(--muted);overflow-wrap:anywhere}
+.section-target-count a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.section-target-count a:last-child{white-space:nowrap}
 .browse-category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .browse-category-card{display:flex;align-items:center;gap:15px;min-height:126px;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 2px 5px var(--shadow)}
 .browse-category-card:hover{border-color:var(--strong);background:var(--soft)}
