@@ -7395,5 +7395,15 @@
       "它只读取录制文件，源码中没有软件无线电设备、采集或发射相关代码。使用者需自备 SigMF 录制文件或原始采样文件，格式从复数 cf32、cf64、cs32、cs16、cs8、cu8 到实数 f32、f64、s16、s8、u8，按扩展名或 --format 选择（未知扩展名按 cf32 读取），并通过 --rate 或界面控件设置采样率。64 位采样在内部会被截断为 32 位。",
       "符号定时依靠分析者放置的游标确定，工具不会推断调制方式、帧结构或协议字段。采用 GPL-3.0，源码文件头允许使用第 3 版或更高版本；仓库只包含源码、CMake 模块和一张截图。本次未打开或分析任何录制文件。"
     ]
+  },
+  "pulsar": {
+    "name": "PULSAR 协议学习研究原型",
+    "requirements": [
+      "审阅对象为 master 分支提交 3c61178（2022-06-07），也是最后一次推送；仓库没有发行版或标签，命令行工具自称 v0.1-dev。2021 年合并的社区贡献用 2to3 把代码从 Python 2 转换为 Python 3。仓库没有测试或 CI 配置。",
+      "学习过程以所研究协议的 PCAP 流量记录为输入，也可使用 Cuckoo 沙箱为所分析样本保存的抓包。仓库提交了一个示例模型 models/itunes-xbmc，附带用来学习该模型的约 3 MB iTunes–XBMC 抓包（itunes-xbmc.pcap，来自 2015 年的初始提交）及其 Derrick、Sally 和 Harry 中间文件；除此之外不附带其他目标数据。",
+      "按 INSTALL.md，用户需把 PRISMA R 模块克隆到 pulsar/modules，从 Konrad Rieck 的仓库构建 Derrick 和 Sally 这两个 C 工具，安装 R、Wireshark 的 mergecap 和 Graphviz，再用 pip 安装 pygraphviz、progressBar、NumPy 和 python-Levenshtein；文档只给出 CentOS 的安装命令。依赖均未固定版本；PRISMA 最后更新于 2018 年，Derrick 和 Sally 最后更新于 2019 年。",
+      "README 让读者参阅 2015 年 SecureComm 论文了解方法，并引用一篇 2012 年 AISec 关于为网络蜜罐学习有状态模型的论文；其中报告的结果出自作者，本合集未复现。学到的模板和状态机只是统计近似，需要分析人员验证。",
+      "采用 BSD-3-Clause（Copyright 2014 Hugo Gascon）；附带的 pulsar/core/sippy SIP 协议栈保留其自身的 GPL-2.0-or-later 声明。本次审阅未运行任何程序，本条目也不介绍模糊测试流程。"
+    ]
   }
 }
