@@ -6979,5 +6979,14 @@
       "CI 运行带覆盖率下限的控制器 pytest 测试、仪表盘与 Go 设备测试、依赖审计和镜像构建；工程日志和验收测试报告记录了在维护者自有设备上的运行。这些检查针对 EchoMuse 自身的行为；它并不复现 Alexa，也没有恢复任何 Amazon 软件或服务。本次审阅未运行测试，也未使用设备。",
       "采用 MIT 许可证；NOTICE.md 列出内置的 SpeexDSP（BSD-3-Clause）、ONNX Runtime 头文件、aioesphomeapi 协议缓冲区定义和一段 CC BY 4.0 计时器音效。项目声明与 Amazon 无关。README 称 EchoMuse 主要在维护者指导下由 Claude 编写，超过一半的提交带有 Co-Authored-By: Claude 署名；未提及使用 REA。"
     ]
+  },
+  "ghidrecomp": {
+    "name": "ghidrecomp 命令行 Ghidra 批量反编译工具",
+    "requirements": [
+      "审阅时最新版本为 v0.5.9，于 2026-01-06 发布到 PyPI 和 GitHub；所审阅的 main 分支提交即该标签。setup.cfg 要求 Python 3.10+ 和 pyghidra 2.2.1+，并将项目标为 alpha 阶段；CodeQL 选项只是占位，运行时仅提示即将推出。",
+      "需要另行安装 Ghidra 及其所需的 Java 运行环境，并通过 GHIDRA_INSTALL_DIR 指定位置。Dockerfile 和 devcontainer 基于作者的 ghidra-python 镜像，并在 Ghidra 11 下固定 pyghidra 2.2.1；CI 在该镜像中针对最新版 Ghidra 以及 11.3、11.3.2 和 11.4.2 运行 pytest。SAST 扫描需要 Semgrep，可通过 sast 可选依赖安装。",
+      "待反编译的二进制须由分析者自备；除非设置 --skip-symbols，符号查询会访问所列的公共符号服务器。测试数据附带 tests/data/afd.sys.10.0.22621.1415（一个 Microsoft Windows 驱动版本，README 示例也使用它）、一个 AArch64 ls 二进制和 ntddk_64.gdt 数据类型库；这些文件遵循各自发布者的条款。",
+      "README 将输出定位为用于研究和分析的反编译结果，未声称可重新编译；测试检查的是函数数量、调用图、应用 GDT 后的一个函数签名、BSim 和 SAST 输出，而非反编译代码的整体准确性。采用 GPL-3.0（LICENSE）；Ghidra 和 Semgrep 各自保留其许可证。本次未反编译任何二进制，所审来源未确立 REA 关联。"
+    ]
   }
 }
