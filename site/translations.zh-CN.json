@@ -4330,5 +4330,14 @@
       "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
       "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
     ]
+  },
+  "r2pipe": {
+    "name": "r2pipe radare2 多语言脚本接口",
+    "requirements": [
+      "审阅时最新的 GitHub 发行版为 6.1.2，于 2026-04-20 发布，仅含源码；所审阅的 master 提交比它多 54 个提交。各语言实现也分别打包发布：Python 包 r2pipe 2.1.0（需 Python 3.6+）于 2026-10-19 上传至 PyPI，与 python/pyproject.toml 一致；npm 上的 r2pipe 为 2024-01-16 发布的 2.8.6，r2pipe-ts 为 0.4.0。Rust crate 位于独立的 r2pipe.rs 仓库；README 中的能力表标明了各语言支持哪些通信后端。",
+      "除 WebAssembly 版本外，所有绑定都要与一个 radare2 进程通信：或在本地启动，或作为 TCP、HTTP、RAP 服务端连接；命令字符串和输出格式取决于所用的 radare2 版本。CI 在 Ubuntu 24.04 上安装 radare2 6.1.4 的 Debian 软件包，测试 Perl、Python、TypeScript、Ruby、Tcl、Vala、Swift 和 .NET 绑定，其他语言未核查。",
+      "python-wasm 是独立的 r2pipe_wasm 包，通过 Wasmer 的 Python SDK 1.1.0 在 Python 内运行 radare2 的 wasi-api WebAssembly 构建，默认下载带有该构建的最新稳定版本。其 README 仅验证了 Linux x86_64 上的 CPython 3.9，示例固定使用 6.1.4，并报告已发布的 6.2.2 API 模块在启动时会触发陷阱。",
+      "GitHub 未识别出覆盖整个仓库的许可证。Python、Python WASM、Go、.NET、Haskell 和 Erlang 目录附有 MIT 许可证文件，npm 包也声明为 MIT；其他目录未核查。待分析的二进制由使用者自行提供；TypeScript 测试附带一个测试文件 typescript/tests/fixtures/wasm-api.wasm。本次未安装或运行任何绑定。"
+    ]
   }
 }

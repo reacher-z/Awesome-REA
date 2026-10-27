@@ -11799,5 +11799,41 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "r2pipe",
+    "name": "r2pipe",
+    "url": "https://github.com/radareorg/radare2-r2pipe",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "radare2's official scripting interface, with implementations for more than two dozen languages in one repository. Every binding sends radare2 command strings and returns their text output, the design behind r_core_cmd_str(), and the README recommends asking for JSON output and decoding it into native objects instead of using the C API. Bindings connect through the R2PIPE_IN/R2PIPE_OUT pipes of a script run from inside r2, a spawned r2 -q0 process, TCP, HTTP or radare2's RAP protocol, many offer asynchronous calls, and r2pipe scripts can also implement radare2 plugins such as disassemblers, IO backends or ESIL syscall handlers.",
+    "description_zh": "radare2 官方的脚本接口，同一仓库内收录了二十多种语言的实现。所有绑定都向 radare2 发送命令字符串并返回其文本输出，这正是 r_core_cmd_str() 背后的设计；README 建议请求 JSON 输出并将其解码为本地语言对象，而不是直接调用 C API。绑定可经由从 r2 内部运行脚本时的 R2PIPE_IN/R2PIPE_OUT 管道、新启动的 r2 -q0 进程、TCP、HTTP 或 radare2 自有的 RAP 协议连接，其中许多支持异步调用；r2pipe 脚本还可用于实现反汇编器、IO 后端或 ESIL 系统调用处理器等 radare2 插件。",
+    "evidence_url": "https://github.com/radareorg/radare2-r2pipe/blob/c3558109db3868f34b7bd6a02775611a9265d81a/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The newest GitHub release at review is 6.1.2, published 2026-04-20 as source only, and the reviewed master commit is 54 commits ahead of it; each language is also packaged separately. The Python package r2pipe 2.1.0 (Python 3.6+) was uploaded to PyPI on 2026-10-19, matching python/pyproject.toml, while npm's r2pipe was at 2.8.6 from 2024-01-16 and r2pipe-ts at 0.4.0. The Rust crate lives in the separate r2pipe.rs repository, and the README's capability table marks which backends each language supports.",
+      "Apart from the WebAssembly variant, every binding talks to a radare2 process, either spawned locally or reached as a TCP, HTTP or RAP server, and command strings and output formats follow the radare2 version in use. CI installs the radare2 6.1.4 Debian packages on Ubuntu 24.04 and tests the Perl, Python, TypeScript, Ruby, Tcl, Vala, Swift and .NET bindings; other languages were not checked.",
+      "python-wasm is a separate r2pipe_wasm package that runs radare2's wasi-api WebAssembly build inside Python through Wasmer's Python SDK 1.1.0, downloading the newest stable release with that asset by default. Its README verifies only CPython 3.9 on Linux x86_64, pins its examples to 6.1.4 and reports that the published 6.2.2 API module traps during startup.",
+      "GitHub detects no repository-wide license. The Python, Python WASM, Go, .NET, Haskell and Erlang directories carry MIT license files and the npm packages declare MIT; other directories were not checked. Binaries to analyze come from the user, and the TypeScript tests bundle one fixture, typescript/tests/fixtures/wasm-api.wasm. No binding was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/radareorg/radare2-r2pipe/blob/c3558109db3868f34b7bd6a02775611a9265d81a/README.md#L56-L82",
+      "https://github.com/radareorg/radare2-r2pipe/blob/c3558109db3868f34b7bd6a02775611a9265d81a/python/README.md",
+      "https://github.com/radareorg/radare2-r2pipe/blob/c3558109db3868f34b7bd6a02775611a9265d81a/python/pyproject.toml",
+      "https://github.com/radareorg/radare2-r2pipe/blob/c3558109db3868f34b7bd6a02775611a9265d81a/python/LICENSE",
+      "https://github.com/radareorg/radare2-r2pipe/blob/c3558109db3868f34b7bd6a02775611a9265d81a/python-wasm/README.md",
+      "https://github.com/radareorg/radare2-r2pipe/blob/c3558109db3868f34b7bd6a02775611a9265d81a/nodejs/r2pipe/package.json",
+      "https://github.com/radareorg/radare2-r2pipe/blob/c3558109db3868f34b7bd6a02775611a9265d81a/typescript/package.json",
+      "https://github.com/radareorg/radare2-r2pipe/blob/c3558109db3868f34b7bd6a02775611a9265d81a/rust/ORIGIN",
+      "https://github.com/radareorg/radare2-r2pipe/blob/c3558109db3868f34b7bd6a02775611a9265d81a/.github/workflows/ci.yml",
+      "https://github.com/radareorg/radare2-r2pipe/releases/tag/6.1.2",
+      "https://pypi.org/project/r2pipe/2.1.0/",
+      "https://www.npmjs.com/package/r2pipe/v/2.8.6"
+    ]
   }
 ]
