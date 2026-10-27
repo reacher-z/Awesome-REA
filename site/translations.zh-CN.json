@@ -6949,5 +6949,15 @@
       "仓库没有测试或 CI。README 称已有其他人在部分情况下成功使用该 API，作者也认为它比官方应用更快、更可靠；本次审阅既未运行该库，也未运行服务器。",
       "采用 BSD-2-Clause 许可，版权归 Alexander Nichol（2021）。这是独立客户端，并非恢复出的厂商源码；厂商的应用、服务和商标保留各自权利，所审来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "shannon-modem-loader": {
+    "name": "Shannon 基带镜像 IDA Pro 加载器",
+    "requirements": [
+      "审阅时最新版本为 01.2025，发布于 2025-01-01；所审阅的 main 分支 2025-01-03 提交只是把 IDA Essential 9.0 加入安装脚本的搜索列表。README 称代码仍在开发中，并报告已用较大量镜像测试，涵盖从 G8700、S7 等旧机型到 S22、S24，较新镜像的任务识别也能正常工作。",
+      "README 报告已在 IDA Pro 9.0、IDA Pro 8.3 至 8.4 SP2 及 IDA Home ARM 上测试，并称采用新版 IDAPython API 的 7.x 也许可用。install.sh 会把加载器、Python 模块和签名复制到 Linux 上的 IDA 安装目录；在 macOS 或 Windows 上需按 README 中的表格手动复制。",
+      "需由使用者提供 TOC 格式的 Shannon 基带镜像或崩溃转储；仓库不含任何基带固件。README 称在普通硬件上完整分析一个镜像约需 10 分钟。",
+      "sig/ 收录 17 个预制的 FLIRT 签名文件，覆盖 ARM Compiler／RVCT 3.1 至 5.06u7 的运行库函数。后处理程序会读取镜像中的 RVCT 构建号并应用匹配的签名；在 Linux 上，若用户主目录中装有对应的旧版 ARM 编译器，还会提示是否把其 include 目录设为头文件路径。仓库没有测试或 CI，本次审阅未加载任何镜像。",
+      "采用 MIT 许可证。基带固件、IDA Pro 与 ARM 编译器适用各自的条款。"
+    ]
   }
 }
