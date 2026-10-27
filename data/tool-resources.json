@@ -11759,5 +11759,34 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "qc-debug-monitor",
+    "name": "qc_debug_monitor",
+    "url": "https://github.com/Cr4sh/qc_debug_monitor",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Python monitor by Dmytro Oleksiuk (Cr4sh) that reads debug messages from Qualcomm cellular-modem firmware in real time over the modem's DIAG serial port, on a rooted Android phone or a USB modem. It enables message reporting for chosen 16-bit subsystem IDs, prints or logs text messages with their firmware source file and line, and decodes terse messages, which carry only a 32-bit format-string hash and arguments, when given a hash database. A discovery mode lists the subsystem ID ranges a modem answers to, and logs can be split into one file per subsystem.",
+    "description_zh": "由 Dmytro Oleksiuk（Cr4sh）编写的 Python 监视工具，通过调制解调器的 DIAG 串口实时读取高通蜂窝调制解调器固件的调试消息，可用于已 root 的 Android 手机或 USB 调制解调器。它为选定的 16 位子系统 ID 开启消息上报，输出或记录附带固件源文件名和行号的文本消息；提供哈希数据库时，还能解码只含 32 位格式字符串哈希及参数的精简（terse）消息。发现模式可列出调制解调器响应的子系统 ID 范围，日志也可按子系统分别写入单独文件。",
+    "evidence_url": "https://github.com/Cr4sh/qc_debug_monitor/blob/d4c2f80c8077adc1b6a9e99b0c1c4bc9ed43b40d/README.MD",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Dormant since publication: the repository's eight commits date from 2020-10-31 and 2020-11-01, with no tags or releases. qc_debug_monitor.py is a Python 2 script, importing the Queue module and using dict.has_key, that needs pySerial; the README runs it with sudo against a serial device such as /dev/ttyUSB0. Options select a baud rate, a single log file or per-subsystem files, subsystem ID ranges, raw terse output and a background daemon mode.",
+      "It needs a Qualcomm-based modem whose DIAG serial port is already exposed, such as a rooted Android phone or USB dongle; the README's worked example is a Quectel EC25 module on the MDM9607 chip and does not explain enabling DIAG on other devices. The built-in subsystem ranges come from that module, so other modems may need ranges found with the discovery mode. The script sends only version and message-mask configuration requests, then reads the messages the modem reports.",
+      "Decoding terse messages needs a hash database that the README describes as over 300,000 Qualcomm firmware debug-message hashes collected from various sources and offers as an external download. It is not in the repository, its provenance and terms are not stated, and this record does not link it; without it, terse messages can only be shown undecoded.",
+      "The repository contains only the script, the README and example logs that the README says were captured from the EC25 while connected to an srsLTE-based eNodeB the author ran on LTE band 7; it holds no firmware images. Those logs include output from the LTE security subsystem of that test network. The README labels its subsystem descriptions as guesses, and the project has no tests.",
+      "No license file or license statement, so reuse terms are unstated. This record reviewed the source only and connected to no modem; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Cr4sh/qc_debug_monitor/blob/d4c2f80c8077adc1b6a9e99b0c1c4bc9ed43b40d/README.MD#L44-L46",
+      "https://github.com/Cr4sh/qc_debug_monitor/blob/d4c2f80c8077adc1b6a9e99b0c1c4bc9ed43b40d/README.MD#L89-L93",
+      "https://github.com/Cr4sh/qc_debug_monitor/blob/d4c2f80c8077adc1b6a9e99b0c1c4bc9ed43b40d/qc_debug_monitor.py",
+      "https://github.com/Cr4sh/qc_debug_monitor/tree/d4c2f80c8077adc1b6a9e99b0c1c4bc9ed43b40d/examples"
+    ]
   }
 ]
