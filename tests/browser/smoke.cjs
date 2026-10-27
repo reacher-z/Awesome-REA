@@ -317,6 +317,9 @@ async function paperDirectory(page, route, viewport, javascript = true) {
   const before = await page.$eval(first, card => ({scope: card.querySelector('.paper-scope').textContent,
     authors: card.querySelector('.paper-authors').textContent, citation: card.querySelector('a[type="application/x-bibtex"]').getAttribute('href')}));
   assert.equal(await page.evaluate(() => document.documentElement.dataset.paperLayout), 'compact');
+  const metaBeside = await page.$$eval('.paper-card', cards => cards.filter(card =>
+    card.querySelector('.paper-meta').getBoundingClientRect().top < card.querySelector('h3').getBoundingClientRect().bottom - 1).length);
+  assert.equal(metaBeside, 0, `${label}: every row puts year, venue and status on their own line under the title (${metaBeside} beside it)`);
   assert.equal(await page.$eval(first + ' .paper-details', node => node.open), false);
   await press(page, first + ' .paper-details > summary');
   const expanded = await page.$eval(first + ' .paper-details', details => ({open: details.open,

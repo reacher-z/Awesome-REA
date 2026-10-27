@@ -113,9 +113,7 @@ html[lang="zh-CN"] .paper-description,html[lang="zh-CN"] .paper-scope p,html[lan
 html[data-paper-layout="compact"] .paper-grid{grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
 html[data-paper-layout="compact"] .paper-card{padding:22px 2px 12px;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none}
 html[data-paper-layout="compact"] .paper-card h3{font-size:19px;text-wrap:pretty}
-/* Year · venue · status follow the title on its last line when they fit. */
-html[data-paper-layout="compact"] .paper-card>header{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:14px}
-html[data-paper-layout="compact"] .paper-card>header>:not(h3,.paper-meta){flex-basis:100%}
+/* Year · venue · status always take their own line under the title, so they line up down the list. */
 html[data-paper-layout="compact"] .paper-meta{margin-top:4px}
 html[data-paper-layout="compact"] .paper-description{margin:10px 0 4px;font-size:15px;line-height:1.75}
 html[data-paper-layout="compact"] .paper-links{margin:8px 0 4px}
