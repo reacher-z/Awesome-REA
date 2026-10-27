@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 515](https://img.shields.io/badge/resources-515-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 218](https://img.shields.io/badge/cases-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 140](https://img.shields.io/badge/papers-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 516](https://img.shields.io/badge/resources-516-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 219](https://img.shields.io/badge/cases-219-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 140](https://img.shields.io/badge/papers-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,11 +21,11 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-515 curated resources (218 cases) · 140 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 512 because 3 of these appear only under Papers.
+516 curated resources (219 cases) · 140 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 513 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
-- [Website](#website) (29) · [Game](#game) (198) · [App](#app) (83)
+- [Website](#website) (29) · [Game](#game) (198) · [App](#app) (84)
 - [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (24) · [Protocol](#protocol) (21)
 
 **Research and workflows**
@@ -34,7 +34,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (218) · [Related Collections](#related-collections) (10) · [Full Repository Index](#full-repository-index) (3,309)
+- [All cases](https://awesomerea.org/cases/) (219) · [Related Collections](#related-collections) (10) · [Full Repository Index](#full-repository-index) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -352,6 +352,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**WristBeam: reconstructing Garmin’s watch protocol for a Mac companion**](https://github.com/kongdayan/wristbeam) - Implements a Garmin watch companion as a native macOS menu-bar app that pairs over Bluetooth, receives live health notifications and original FIT files, and can upload them to Garmin Connect. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/wristbeam-garmin-watch-protocol-case/)</sub>
 - [**usque: an open reimplementation of Cloudflare WARP’s MASQUE mode**](https://github.com/Diniboy1123/usque) - Reimplements the MASQUE mode of Cloudflare’s WARP client in Go, tunnelling IP traffic over QUIC/HTTP/3 with Connect-IP (RFC 9484) and exposing it as a native TUN device, SOCKS5 or HTTP proxies, TCP-only L4 proxies or port forwarding. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/usque-warp-masque-client-case/)</sub>
 - [**Webamp: a browser reimplementation of Winamp 2**](https://github.com/captbaritone/webamp) - Reimplements Winamp 2's main, equalizer and playlist windows in HTML5 and JavaScript, with Web Audio playback, volume, balance and equalizer, and renders original classic .wsz skins, which its documentation says match Winamp 2.9 pixel for pixel; Milkdrop presets run through the Butterchurn WebGL port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/webamp-winamp-reimplementation-case/)</sub>
+- [**Pocket Libre: reconstructing the Pocket AI voice recorder's BLE and Wi-Fi transfer protocol**](https://github.com/shahcolate/pocket-libre) - Replaces the vendor app for the Pocket AI voice recorder (PKT01) with a Python command-line tool and local web interface that pull recordings off the device and process them on the user's machine. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/pocket-libre-recorder-protocol-case/)</sub>
 
 #### Tools, projects and integrations
 

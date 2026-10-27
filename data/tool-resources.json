@@ -12487,5 +12487,37 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "pocket-libre-recorder-protocol-case",
+    "name": "Pocket Libre: reconstructing the Pocket AI voice recorder's BLE and Wi-Fi transfer protocol",
+    "url": "https://github.com/shahcolate/pocket-libre",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "Replaces the vendor app for the Pocket AI voice recorder (PKT01) with a Python command-line tool and local web interface that pull recordings off the device and process them on the user's machine. PROTOCOL.md documents an ASCII APP&/MCU& command protocol over BLE GATT, MP3 audio streaming and a faster Wi-Fi access-point transfer, decoded from HCI captures of the vendor app and reported per firmware version. Transcription, speaker diarization and summaries are added features that use local Whisper and the user's own API keys, not part of the device protocol.",
+    "description_zh": "以一个 Python 命令行工具和本地网页界面替代 Pocket AI 录音笔（PKT01）的厂商应用，从设备上取回录音并在使用者自己的电脑上处理。PROTOCOL.md 记录了基于 BLE GATT 的 ASCII APP&/MCU& 命令协议、MP3 音频传输，以及速度更快的 Wi-Fi 热点传输方式；这些内容依据厂商应用的 HCI 抓包解析得出，并按固件版本分别报告。转写、说话人分离和摘要是额外功能，使用本地 Whisper 和使用者自己的 API 密钥，并不属于设备协议。",
+    "evidence_url": "https://github.com/shahcolate/pocket-libre/blob/5962722710731edbc9a2da22149f0e4fe198366e/PROTOCOL.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the default-branch head after release 1.2.0 (2026-10-12). README's firmware table reports BLE scanning, authentication, status, file listing and downloads working on firmware 1.3.3, 1.7 and 1.8, and Wi-Fi file transfer working on 1.7 and 1.8 with Wi-Fi firmware V9 but untested on 1.3.3; copying over USB mass storage and several files per Wi-Fi connection are listed as not done.",
+      "Requires the user's own Pocket recorder and its 16-character session key. README documents pairing a hardware-reset device with a new random key, which needs neither the vendor app nor a capture, and alternatively recovering the key the vendor app uses from a Bluetooth HCI trace; this record repeats neither procedure. No vendor firmware, app or captures are committed.",
+      "Python 3.10+ with Bluetooth LE support through bleak; openai-whisper handles transcription, the anthropic package handles summaries with the user's own key, and pyannote.audio is an optional diarization extra. The Wi-Fi transfer joins the recorder's access point automatically on Linux and Windows.",
+      "CI runs ruff and pytest on Python 3.10–3.13 and builds the package; the tests cover commands, pairing, downloads, deletion, Wi-Fi transfer and the web interface without hardware. Device behaviour remains project-reported, and this review ran neither the tests nor a recorder.",
+      "MIT license. README asserts that the work is personal interoperability covered by a DMCA Section 1201 exemption and that the audio is unencrypted MP3; that is the author's legal position, not a finding here. Pocket is the vendor's product name, and the reviewed sources establish no REA use or AI-assisted analysis."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/shahcolate/pocket-libre/blob/5962722710731edbc9a2da22149f0e4fe198366e/README.md",
+      "https://github.com/shahcolate/pocket-libre/blob/5962722710731edbc9a2da22149f0e4fe198366e/CHANGELOG.md",
+      "https://github.com/shahcolate/pocket-libre/blob/5962722710731edbc9a2da22149f0e4fe198366e/CONTRIBUTING.md",
+      "https://github.com/shahcolate/pocket-libre/blob/5962722710731edbc9a2da22149f0e4fe198366e/pyproject.toml",
+      "https://github.com/shahcolate/pocket-libre/blob/5962722710731edbc9a2da22149f0e4fe198366e/.github/workflows/ci.yml",
+      "https://github.com/shahcolate/pocket-libre/blob/5962722710731edbc9a2da22149f0e4fe198366e/LICENSE"
+    ]
   }
 ]
