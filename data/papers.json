@@ -7294,5 +7294,60 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-nes-jump-mechanics",
+    "title": "Mechanics Automatically Recognized via Interactive Observation: Jumping",
+    "title_zh": "通过交互式观察自动识别游戏机制：跳跃",
+    "authors": [
+      "Adam Summerville",
+      "Joseph C. Osborn",
+      "Christoffer Holmgård",
+      "Daniel W. Zhang"
+    ],
+    "year": 2017,
+    "publication_date": "2017-08-14",
+    "date_precision": "day",
+    "date_basis": "ACM-deposited Crossref metadata gives 14 August 2017 for both online and print publication, which is also the first day of FDG 2017; the date comes from the deposit, not from the conference schedule.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将在线及印刷出版日期均列为 2017 年 8 月 14 日，这也是 FDG 2017 的首日；该日期取自出版方元数据，而非会议日程。",
+    "venue": "FDG 2017",
+    "publication_status": "conference-paper",
+    "arxiv_id": "1707.03865",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2017-07-12",
+    "doi": "10.1145/3102071.3102104",
+    "citation": {
+      "container_title": "Proceedings of the 12th International Conference on the Foundations of Digital Games",
+      "publisher": "ACM",
+      "pages": "1-10",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3102071.3102104"
+      ]
+    },
+    "url": "https://doi.org/10.1145/3102071.3102104",
+    "pdf_url": "https://arxiv.org/pdf/1707.03865v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "game"
+    ],
+    "description_en": "Infers platform-game jump mechanics by running controlled experiments in a modified FCEUX NES emulator. A person first plays each game to a safe state; the system then repeatedly holds the jump button for 1 to 120 frames, waits 120 frames and resets, recording every sprite from the PPU sprite table. Sprites that usually touch one another are merged into characters and tracked. A hand-designed four-state jump automaton (ground, rising with and without the button, falling) is then fitted with linear support vector regression, giving per-state velocity and gravity parameters plus minimum and maximum button-hold durations. Across 48 games (about 30% of NES platformers) and 52 characters, the authors cluster the learned jumps into three styles.",
+    "description_zh": "该研究在修改后的 FCEUX NES 模拟器中开展受控实验，推断平台游戏的跳跃机制。先由人工将每款游戏玩到安全状态；系统随后反复按住跳跃键 1 至 120 帧、等待 120 帧并复位，同时从 PPU 精灵表记录所有精灵。经常相互接触的精灵被合并为角色并加以跟踪。随后以线性支持向量回归拟合人工设计的四状态跳跃自动机（地面、按键上升、松键上升、下落），得到各状态的速度与重力参数，以及按键持续时间的最小值和最大值。在 48 款游戏（约占 NES 平台游戏的 30%）、52 个角色上，作者将学得的跳跃聚类为三种风格。",
+    "scope_limitations_en": "Models only vertical jumps from a standing position; horizontal movement, running jumps, double jumps and interactions with enemies or terrain are ignored, and no game code, assets or complete mechanics are recovered. The fixed automaton is assumed rather than learned, so non-physical jumps such as Castlevania's fit with systematic errors. Stair-step arcs, delayed jump starts, unusual landings and animation jitter are acknowledged problems. Each game needs human play to reach a safe state, prior knowledge that it has jumping, and a known jump button. The 48 games are not an exhaustive sample, and results are descriptive comparisons and clusters rather than tests against developer-specified parameters.",
+    "scope_limitations_zh": "仅建模原地起跳的垂直跳跃；忽略水平移动、助跑跳、二段跳以及与敌人或地形的交互，也不恢复任何游戏代码、素材或完整机制。固定的自动机是预先设定而非学习得到的，因此《恶魔城》等非物理跳跃的拟合存在系统性误差。阶梯状轨迹、延迟起跳、特殊落地及动画抖动都是作者承认的问题。每款游戏都需要人工游玩至安全状态，并预先知道其存在跳跃及跳跃按键。48 款游戏并非完整样本，结果是描述性的比较与聚类，并未与开发者设定的参数对照检验。",
+    "why_fits_en": "Adds emulator-instrumented, black-box recovery of a game mechanic's parameters from controlled play, complementing the collection's code- and visuals-based game reconstruction research.",
+    "why_fits_zh": "补充借助模拟器插桩、通过受控游玩以黑盒方式恢复游戏机制参数的研究，与本合集中基于代码和画面的游戏重建研究互补。",
+    "metadata_notes": "Crossref establishes the four-author order, FDG ’17 proceedings and page range 1–10; it deposits the title in sentence case with subtitle “jumping”, while this entry keeps the paper's printed capitalization. Crossref lists the second author as Joe Osborn; the paper and arXiv print Joseph C. Osborn, the form used here. arXiv has only v1 of 2017-07-12, with comment “10 pages, 12 figures. Accepted at Foundations of Digital Games 2017” and the same DOI. Its PDF is the 10-page ACM-formatted paper with the FDG ’17 reference block. Neither the paper nor arXiv links code, the modified emulator or the experiment data, and no author release was found. Sources were read only; no emulator, game or experiment was run.",
+    "metadata_notes_zh": "Crossref 确认四位作者顺序、FDG ’17 会议论文集及第 1–10 页；其标题采用句首大写形式，副标题为“jumping”，本条目保留论文所印的大小写。Crossref 将第二作者记为 Joe Osborn；论文与 arXiv 印作 Joseph C. Osborn，本条目采用后者。arXiv 仅有 2017-07-12 的 v1，备注为“10 pages, 12 figures. Accepted at Foundations of Digital Games 2017”，并载有相同 DOI；其 PDF 为含 FDG ’17 引用格式的 10 页 ACM 排版论文。论文与 arXiv 均未链接代码、修改后的模拟器或实验数据，也未找到作者发布。本次仅阅读资料，未运行模拟器、游戏或实验。",
+    "evidence_urls": [
+      "https://doi.org/10.1145/3102071.3102104",
+      "https://api.crossref.org/works/10.1145/3102071.3102104",
+      "https://arxiv.org/abs/1707.03865",
+      "https://arxiv.org/pdf/1707.03865v1"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
