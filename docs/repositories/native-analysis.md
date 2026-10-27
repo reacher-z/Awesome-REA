@@ -283,7 +283,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [fugue-re/fugue-core](https://github.com/fugue-re/fugue-core) — A binary analysis framework written in Rust. **[186 stars]**
 - [harlamism/IdaClu](https://github.com/harlamism/IdaClu) — IdaClu is a version agnostic IDA Pro plugin for grouping similar functions. Pick an existing grouping algorithm or create your own. **[186 stars]**
 - [matiaszanolli/sega-vr-disasm](https://github.com/matiaszanolli/sega-vr-disasm) — Complete static recompilation of Virtua Racing for the Sega 32X (optimization in progress) **[183 stars]**
-- [SoftSec-KAIST/BinKit](https://github.com/SoftSec-KAIST/BinKit) — Binary Code Similarity Analysis (BCSA) Benchmark **[183 stars]**
+- [SoftSec-KAIST/BinKit](https://github.com/SoftSec-KAIST/BinKit) — Binary Code Similarity Analysis (BCSA) Benchmark **[183 stars]** · Paper: [Revisiting Binary Code Similarity Analysis Using Interpretable Feature Engineering and Lessons Learned](https://awesomerea.org/papers/paper-binkit/)
 - [vallejocc/Reverse-Engineering-Arsenal](https://github.com/vallejocc/Reverse-Engineering-Arsenal) — Useful Scripts for helping in reverse engeenering **[183 stars]**
 - [Decompollaborate/rabbitizer](https://github.com/Decompollaborate/rabbitizer) — MIPS instruction decoder **[182 stars]**
 - [romainthomas/reverse-engineering-workshop](https://github.com/romainthomas/reverse-engineering-workshop) — Slides &amp; Hands-on for the reverse engineering workshop **[182 stars]**
