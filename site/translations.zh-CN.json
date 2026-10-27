@@ -4547,5 +4547,14 @@
       "“练习”部分把 crackme 和 CTF 网站与公开的恶意软件样本库并列，只附有一句注意恶意软件的提醒；“Mac 解密”部分只列出工具名称，未说明用法。本记录仅把该清单视为分析资源目录。",
       "package.json 和 .travis.yml 在 Travis CI 上以 Node.js 8 配置了 remark-lint 检查，涵盖列表顺序、重复链接和失效链接。GitHub 未检测到许可证，仓库没有许可证文件，package.json 的 license 字段也为空，因此清单未声明复用条款；所链接的工具和书籍保留各自条款。这是独立的发现清单；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "nowsecure-frida-trace": {
+    "name": "frida-trace（NowSecure 声明式跟踪库）",
+    "requirements": [
+      "它不是 Frida 自带的同名命令行工具 frida-trace。npm 上最新版本为 4.0.1，发布于 2025-06-16，与所审阅的 main 分支提交 9b92c17 一致，将该库移植到 Frida 17；2024 年 1 月发布的 4.0.0 改为 ES 模块。",
+      "它运行在用户自行编写、编译（例如使用 frida-compile）并加载到 Frida 可附加进程中的代理脚本里，本身没有命令行界面。支持的类型包括 bool、byte、short、int、指针、字节数组、UTF-8、UTF-16 和 C 字符串；捕获到的值是否准确，取决于用户声明的函数签名是否正确。",
+      "头文件工具位于 frida-trace-tools，仓库中的版本为 3.3.0，未发布到 npm；需要 Node.js 和 frida-libclang，而 README 仍按旧的 ./bin 路径调用它们。仓库附带的示例宿主程序与代理仍依赖 frida 16 和 frida-trace ^3.0.0。仓库没有测试或持续集成。",
+      "采用 MIT 许可。插桩所需的目标进程须是用户有权检查的进程；未提及使用 REA，本次审阅未运行任何内容。"
+    ]
   }
 }

@@ -57,7 +57,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [andreafioraldi/IDAngr](https://github.com/andreafioraldi/IDAngr) — Use angr in the IDA Pro debugger generating a state from the current debug session **[286 stars]**
 - [raoshaab/Pen-Andro](https://github.com/raoshaab/Pen-Andro) — Script to Automate installtion of Apps ,frida server and moving Burpsuite certificate to root folder **[273 stars]**
 - [aadog/fd-back](https://github.com/aadog/fd-back) — frida runtime (no python required, only a single file),One-click support for ios dump **[250 stars]**
-- [nowsecure/frida-trace](https://github.com/nowsecure/frida-trace) — Trace APIs declaratively through Frida. **[237 stars]**
+- [nowsecure/frida-trace](https://github.com/nowsecure/frida-trace) — Trace APIs declaratively through Frida. **[237 stars]** · Curated: [frida-trace (NowSecure library)](https://awesomerea.org/resources/nowsecure-frida-trace/)
 - [std-microblock/fripack](https://github.com/std-microblock/fripack) — Package your Frida script into an executable. **[233 stars]**
 - [dmaivel/ntoseye](https://github.com/dmaivel/ntoseye) — WinDbg-like kernel debugger for Windows, from Linux and macOS **[218 stars]**
 - [Warxim/deluder](https://github.com/Warxim/deluder) — Deluder is a tool for intercepting traffic of proxy unaware applications. Currently, Deluder supports OpenSSL, GnuTLS, SChannel, WinSock and Linux Sockets out of the box. ⚡ **[215 stars]**
