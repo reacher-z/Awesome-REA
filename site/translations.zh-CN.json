@@ -4310,5 +4310,14 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "vivisect": {
+    "name": "Vivisect 二进制分析与调试框架",
+    "requirements": [
+      "审阅时最新版本为 1.3.2，于 2026-03-31 由 v1.3.2 标签上传到 PyPI（项目不发布 GitHub 发行版页面）；该版本要求 Python 3.8+，图形界面固定使用 PyQt5 5.15.7，AArch64 支持自 1.3.0 起提供。所审阅的 master 提交（2026-09-03）晚十个提交，版本号仍为 1.3.2，但要求 Python 3.11+ 和 PyQt6 6.5+。可用 pip install \"vivisect[gui]\" 安装；1.0.0 之前的版本仅支持 Python 2，Python 2 的工作区通常无法在 Python 3 中载入。",
+      "随附的辅助库：vtrace/platforms/windll 中有 amd64 和 i386 版的 Microsoft dbghelp.dll 和 symsrv.dll，自 2014 年起提交，由 Windows 版 vtrace 后端载入用于符号处理，pyproject.toml 也会把它们打包进 PyPI 发行包。这些是受 Microsoft 条款约束的 Microsoft 二进制文件，不适用项目的 Apache-2.0 许可证，仓库也未附带 Microsoft 的许可证或声明。macOS 后端在其 C 源码和 Makefile 旁附带一个预构建的 machhelper.dylib。",
+      "输入是使用者自行提供的二进制或固件镜像。CircleCI 在 Python 3.11 上运行 unittest 测试套件，使用另行克隆的 vivtestfiles 仓库中的示例二进制；GitHub Actions 工作流检查代码格式；文档托管在 Read the Docs。本次审阅未运行分析器或调试器。",
+      "采用 Apache-2.0 许可证（COPYRIGHT 署名 invisigoth，2014 年）；Microsoft 的 DLL 仍受其自身条款约束。所审来源未确立 REA 或 AI 的使用。"
+    ]
   }
 }

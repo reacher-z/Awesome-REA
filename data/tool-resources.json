@@ -11759,5 +11759,41 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "vivisect",
+    "name": "Vivisect",
+    "url": "https://github.com/vivisect/vivisect",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "firmware"
+    ],
+    "description_en": "Pure-Python reverse-engineering framework that combines the vivisect static analyzer, the vtrace debugging library and the vdb debugger. Vivisect loads PE, ELF, Mach-O, Intel HEX, S-record and raw blob files into workspaces, disassembles and emulates code through envi architecture modules for x86, AMD64, ARM, Thumb, AArch64, MSP430, H8 and Z80, and adds symbolic execution, a Qt GUI and a remote workspace server. vtrace drives processes on Windows, Linux, FreeBSD, macOS and Solaris and has GDB-stub and VMware backends.",
+    "description_zh": "纯 Python 编写的逆向工程框架，集成了 vivisect 静态分析器、vtrace 调试库和 vdb 调试器。Vivisect 可将 PE、ELF、Mach-O、Intel HEX、S-record 和原始数据块文件载入工作区，借助 envi 架构模块对 x86、AMD64、ARM、Thumb、AArch64、MSP430、H8 和 Z80 代码进行反汇编和模拟执行，并提供符号执行、Qt 图形界面和远程工作区服务器。vtrace 可在 Windows、Linux、FreeBSD、macOS 和 Solaris 上控制进程，另有 GDB stub 和 VMware 后端。",
+    "evidence_url": "https://github.com/vivisect/vivisect/blob/66c93f0c1caa949434b9b1ba8bb64c8bad0eb3d9/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 1.3.2, uploaded to PyPI on 2026-03-31 from tag v1.3.2 (the project publishes no GitHub release pages); it requires Python 3.8+ and pins PyQt5 5.15.7 for the GUI, and AArch64 support arrived in 1.3.0. The reviewed master commit (2026-09-03) is ten commits later and, still labelled 1.3.2, requires Python 3.11+ and PyQt6 6.5+. Install with pip install \"vivisect[gui]\"; releases before 1.0.0 are Python 2 only, and Python 2 workspaces are typically not loadable in Python 3.",
+      "Bundled helper libraries: vtrace/platforms/windll holds Microsoft’s dbghelp.dll and symsrv.dll for amd64 and i386, committed since 2014 and loaded by the Windows vtrace backend for symbol handling, and pyproject.toml packages them into the PyPI distribution. They are Microsoft binaries under Microsoft’s terms, not the project’s Apache-2.0 license, and no Microsoft license or notice accompanies them. The macOS backend ships a prebuilt machhelper.dylib next to its C source and Makefile.",
+      "Input is binaries or firmware images the user supplies. CircleCI runs the unittest suite on Python 3.11 against sample binaries from a separately cloned vivtestfiles repository, and a GitHub Actions workflow checks formatting; documentation is on Read the Docs. This review ran neither the analyzer nor the debugger.",
+      "Apache-2.0 license (COPYRIGHT names invisigoth, 2014); the Microsoft DLLs keep their own terms. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/vivisect/vivisect/blob/66c93f0c1caa949434b9b1ba8bb64c8bad0eb3d9/pyproject.toml",
+      "https://github.com/vivisect/vivisect/blob/v1.3.2/pyproject.toml",
+      "https://github.com/vivisect/vivisect/blob/66c93f0c1caa949434b9b1ba8bb64c8bad0eb3d9/CHANGELOG.rst",
+      "https://github.com/vivisect/vivisect/tree/66c93f0c1caa949434b9b1ba8bb64c8bad0eb3d9/vtrace/platforms/windll",
+      "https://github.com/vivisect/vivisect/blob/66c93f0c1caa949434b9b1ba8bb64c8bad0eb3d9/vtrace/platforms/win32.py",
+      "https://github.com/vivisect/vivisect/tree/66c93f0c1caa949434b9b1ba8bb64c8bad0eb3d9/vtrace/platforms/darwin",
+      "https://github.com/vivisect/vivisect/tree/66c93f0c1caa949434b9b1ba8bb64c8bad0eb3d9/envi/archs",
+      "https://github.com/vivisect/vivisect/tree/66c93f0c1caa949434b9b1ba8bb64c8bad0eb3d9/vivisect/parsers",
+      "https://github.com/vivisect/vivisect/blob/66c93f0c1caa949434b9b1ba8bb64c8bad0eb3d9/.circleci/config.yml",
+      "https://github.com/vivisect/vivisect/blob/66c93f0c1caa949434b9b1ba8bb64c8bad0eb3d9/COPYRIGHT",
+      "https://pypi.org/project/vivisect/1.3.2/"
+    ]
   }
 ]
