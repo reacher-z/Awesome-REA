@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "qtty-jadx-mcp-server": {
+    "name": "JADX MCP Server（Qtty）",
+    "requirements": [
+      "仓库只有一次提交，日期为 2026-08-20，没有发布版本或标签。其 GitHub 简介仍称它是纯 Java 的 MCP 服务；README 解释说，由于并发工具调用会让 Java SDK 的传输层卡死，MCP 层已改用 Python。与 JADX-AI-MCP 不同，它不使用 JADX 图形界面插件。",
+      "构建 Spring Boot 守护进程 jar 需要 Java 17+（README 称在 21 上构建和运行）和 Maven 3.6+；MCP 层需要 Python 3.10+，以及固定版本的 mcp 1.27.2 和 httpx 0.27.2。MCP 客户端启动 mcp_server/jadx_mcp.py，后者在首次使用时启动守护进程。守护进程绑定 127.0.0.1:8765，默认堆上限 24 GB，默认只保留一个已加载的 APK；README 称一个大型 APK 约占 26 GB。",
+      "输入是分析者自备的 APK。列表和源码类工具默认设有上限，以控制响应大小；README 指出敏感调用扫描无法发现反射调用和改名封装的操作。仓库提交的测试样本 misc/DivaApplication.apk 是刻意含漏洞的 DIVA 练习应用；需要更大生产 APK 的测试在缺少该文件时会跳过，README 报告 92 项运行、4 项跳过。",
+      "没有许可证文件：README 只说明 JADX 库采用 Apache-2.0，因此服务本身的代码未声明复用条款。README 将其定位为防御性安全分析工具，并以 Claude 演示其用法；未提及使用 REA，本次审阅未运行任何内容。"
+    ]
   }
 }

@@ -233,7 +233,7 @@
 - [argus-sight/BinSight](https://github.com/argus-sight/BinSight) — 通过 LLM + Capstone 分析 APK 中的 so 文件，判断其主要用途和开发者（公司）。 **[33 星标]**
 - [nyancrimew/apkrev](https://github.com/nyancrimew/apkrev) — Android 应用逆向工程流程。 **[33 星标]**
 - [BitTheByte/Orkestra](https://github.com/BitTheByte/Orkestra) — 基于 Web 的 Android 调试器，以 Frida 和 Jadx 为核心并提供检查功能。 **[32 星标]**
-- [Qtty/jadx-mcp-server](https://github.com/Qtty/jadx-mcp-server) — 面向 JaDX Android 逆向工程工具的纯 Java MCP 服务器。 **[32 星标]**
+- [Qtty/jadx-mcp-server](https://github.com/Qtty/jadx-mcp-server) — 面向 JaDX Android 逆向工程工具的纯 Java MCP 服务器。 **[32 星标]** · 精选：[JADX MCP Server（Qtty）](https://awesomerea.org/zh/resources/qtty-jadx-mcp-server/)
 - [andrebrumdev/gow2-recomp](https://github.com/andrebrumdev/gow2-recomp) — 《God of War II HD》静态重编译：整理的工作产物，包括代码提升边界、SPU 代码提升源码、脚本和研究发现。不包含游戏数据与构建产物。 **[29 星标]**
 - [lm060719/reconbridge](https://github.com/lm060719/reconbridge) — 通用逆向分析 KernelSU 模块：手机侧仅提供原子能力，智能处理全部位于 PC 侧（Claude Code + MCP）。仅限授权安全研究与教育用途。 **[29 星标]**
 - [capt-meelo/loupe](https://github.com/capt-meelo/loupe) — 基于浏览器的 Android 控制台、APK 反编译器和安全分析工具。提供屏幕镜像、logcat、Shell、Frida、jadx，以及静态和动态分析，无需驱动程序或 adb 服务器。 **[28 星标]**

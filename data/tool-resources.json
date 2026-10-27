@@ -12616,5 +12616,33 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "qtty-jadx-mcp-server",
+    "name": "JADX MCP Server (Qtty)",
+    "url": "https://github.com/Qtty/jadx-mcp-server",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "app"
+    ],
+    "description_en": "MCP server for Android APK analysis in which a Python FastMCP process talks to the agent over stdio and drives a long-lived local JVM daemon that embeds JADX 1.5.6 as a library, so no JADX GUI is involved and a loaded APK stays warm between sessions. Its 23 tools return classes, decompiled sources with size-capped outlines, methods, fields, smali, cross-references and callees read from a dex-derived index, type hierarchies and overrides, exported and deep-link components, the manifest and resource files, plus a whole-APK sweep for framework sink call sites grouped by impact category.",
+    "description_zh": "用于 Android APK 分析的 MCP 服务：Python FastMCP 进程通过 stdio 与智能体通信，并驱动一个常驻本地的 JVM 守护进程，后者以库的形式内嵌 JADX 1.5.6，因此无需 JADX 图形界面，已加载的 APK 也能在会话之间保持就绪。它的 23 个工具可返回类列表、超出大小上限时改为大纲的反编译源码、方法、字段、smali、基于 dex 索引的交叉引用与被调函数、类型层次与重写关系、导出组件和深层链接组件、清单与资源文件，并能在整个 APK 中按影响类别扫描框架敏感调用点。",
+    "evidence_url": "https://github.com/Qtty/jadx-mcp-server/blob/4e6d890d1d3753d2bb47d492a9523ef98874df85/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository has a single commit, dated 2026-08-20, and no releases or tags. Its GitHub description still calls it a pure-Java MCP server; README explains that the MCP layer moved to Python after concurrent tool calls hung the Java SDK's transport. Unlike JADX-AI-MCP, it uses no JADX GUI plugin.",
+      "Building needs Java 17+ (README says it is built and run on 21) and Maven 3.6+ for the Spring Boot daemon jar; the MCP layer needs Python 3.10+ with the pinned mcp 1.27.2 and httpx 0.27.2. The MCP client launches mcp_server/jadx_mcp.py, which starts the daemon on first use. The daemon binds 127.0.0.1:8765 with a 24 GB default heap and keeps one APK loaded by default; README puts a large APK at about 26 GB.",
+      "Input is an APK the analyst supplies. List and source tools are capped by default to bound response size, and README says the sink sweep is blind to reflection and to wrappers that rename the operation. The committed test fixture misc/DivaApplication.apk is the DIVA deliberately vulnerable training app; tests needing a larger production APK skip without it, and README reports 92 run and 4 skipped.",
+      "No license file: README only notes that the JADX library is Apache-2.0, so the server's own code states no reuse terms. README frames the tool for defensive security analysis and demonstrates it with Claude; no REA connection is stated, and nothing was run in this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Qtty/jadx-mcp-server/blob/4e6d890d1d3753d2bb47d492a9523ef98874df85/mcp_server/jadx_mcp.py",
+      "https://github.com/Qtty/jadx-mcp-server/blob/4e6d890d1d3753d2bb47d492a9523ef98874df85/mcp_server/requirements.txt",
+      "https://github.com/Qtty/jadx-mcp-server/blob/4e6d890d1d3753d2bb47d492a9523ef98874df85/pom.xml",
+      "https://github.com/Qtty/jadx-mcp-server/blob/4e6d890d1d3753d2bb47d492a9523ef98874df85/src/main/resources/application.properties"
+    ]
   }
 ]
