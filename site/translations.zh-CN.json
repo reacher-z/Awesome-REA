@@ -4339,5 +4339,14 @@
       "该仓库是改造过的 jadx 代码库：jadx 原有的 DEX 输入、测试样本和继承来的 CI 文件仍保留，自身没有 GitHub Actions 工作流，因此未报告针对方舟字节码输出的测试。",
       "沿用 jadx 的 Apache-2.0 许可；abcde 分支同样采用 Apache-2.0。本次未反编译任何文件。"
     ]
+  },
+  "mcp-reversing-dataset": {
+    "name": "MCP 逆向数据集（mrexodia）",
+    "requirements": [
+      "共三个任务，提交于 2025-03-28 至 2025-04-14 之间，此后未再更新。每个文件夹的 README 说明输入、提示词和模型，旁边是智能体撰写的 report.md 和导出的 task-history.md 会话记录；crackme03 另附智能体编写的 solve.py，以及一个通过 WSL 运行该 ELF 的启动脚本。三次运行都在 Roo Cline 或 Roo Code 中使用 Claude 3.7 Sonnet，并配合作者的 IDA Pro MCP 服务器；本合集另有该服务器的条目。",
+      "仓库附带所分析的三个挑战二进制：VEHMeme.exe 是 README 注明出自 Brit 和 xenocidewiki、来自早年一场 CTF 的 Windows crackme；crackme03.elf 由 NoraCodes crackmes 中的一个源文件在 Ubuntu 22.04 上用 GCC 11.4.0 编译而成；transformed.elf 则被描述为 babush 的 mcp-job-security 混淆项目的修改版本。它们是小型 CTF 式样本而非商业软件，但仓库未说明其再分发条款。",
+      "按记录跟做需要商业软件 IDA Pro、IDA Pro MCP 服务器以及一个 MCP 客户端。提示词要求模型对数据库进行重命名、修改类型、添加注释并撰写报告，crackme03 的提示词还禁止暴力破解。这些会话记录都是未经评分的单次运行：crackme03 的报告记录了经运行二进制确认的密码，mcp-job-security 的报告给出了它提取的 flag，VEHMeme 的报告解释了基于异常的校验机制，但没有给出 flag。这些均为作者发布的结果，本条目未复现。",
+      "仓库没有许可证文件，因此会话记录和报告的复用条款不明；README 欢迎贡献，但目前只有最初的三个任务。所审来源未确立与 REA 的关联。"
+    ]
   }
 }

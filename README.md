@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 495](https://img.shields.io/badge/resources-495-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 210](https://img.shields.io/badge/cases-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 135](https://img.shields.io/badge/papers-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 496](https://img.shields.io/badge/resources-496-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 210](https://img.shields.io/badge/cases-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 135](https://img.shields.io/badge/papers-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-495 curated resources (210 cases) · 135 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 492 because 3 of these appear only under Papers.
+496 curated resources (210 cases) · 135 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 493 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (135) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (135) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (33)
 
 **More ways to browse**
 
@@ -636,6 +636,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**OWASP Mobile Application Security Testing Guide (MASTG)**](https://mas.owasp.org/MASTG/) - OWASP’s open manual for Android and iOS app security testing and reverse engineering, published at mas.owasp.org. <sub>Learning resource · Targets: App · [Full entry](https://awesomerea.org/resources/owasp-mastg/)</sub>
 - [**The Decompilation Wiki**](https://decompilation.wiki/) - Community wiki explaining how decompilers work, from disassembly, lifting and control-flow recovery to type recovery, control-flow structuring, quality evaluation and neural decompilation, citing the research behind each technique. <sub>Learning resource · Targets: Game, Binary · [Full entry](https://awesomerea.org/resources/decompilation-wiki/)</sub>
 - [**Frontkick vs Rikugan: a CREBench agent comparison**](https://www.synacktiv.com/en/publications/ufc-666-frontkick-vs-rikugan) - Matthieu Breuil’s Synacktiv article explains tool-calling and code-executing agent designs and describes Frontkick, a CodeAct agent that runs generated Python inside Binary Ninja. <sub>Learning resource · Targets: Binary · [Full entry](https://awesomerea.org/resources/frontkick-rikugan-crebench-comparison/)</sub>
+- [**MCP Reversing Dataset (mrexodia)**](https://github.com/mrexodia/mcp-reversing-dataset) - Three worked examples by mrexodia of a language model reverse-engineering crackme binaries in IDA Pro through his IDA Pro MCP server. <sub>Learning resource · Targets: Binary · [Full entry](https://awesomerea.org/resources/mcp-reversing-dataset/)</sub>
 <!-- END GENERATED CATALOG -->
 
 <!-- BEGIN GENERATED PAPERS -->

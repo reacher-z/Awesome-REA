@@ -11831,5 +11831,35 @@
       "https://github.com/ohos-decompiler/abcde",
       "https://github.com/ohos-decompiler/abc-decompiler/issues/6"
     ]
+  },
+  {
+    "id": "mcp-reversing-dataset",
+    "name": "MCP Reversing Dataset (mrexodia)",
+    "url": "https://github.com/mrexodia/mcp-reversing-dataset",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Three worked examples by mrexodia of a language model reverse-engineering crackme binaries in IDA Pro through his IDA Pro MCP server. Each folder holds the input binary, a README giving its origin, the prompt and the model, the agent's own report and the exported session transcript, so readers can follow every tool call, rename, retype and comment the agent made on the database. The tasks cover a small Linux password check, an obfuscated Linux flag checker and a Windows crackme that, according to the agent's report, routes its checks through vectored exception handling.",
+    "description_zh": "mrexodia 发布的三个实例，展示语言模型借助他编写的 IDA Pro MCP 服务器在 IDA Pro 中逆向分析 crackme 二进制。每个文件夹都包含输入二进制、说明其来源、所用提示词和模型的 README、智能体自己撰写的报告以及导出的会话记录，读者可以逐一查看智能体对数据库的每次工具调用、重命名、类型修改和注释。三个任务分别是一个简单的 Linux 密码校验程序、一个经过混淆的 Linux flag 校验程序，以及一个 Windows crackme；据智能体的报告，它借助向量化异常处理来执行校验。",
+    "evidence_url": "https://github.com/mrexodia/mcp-reversing-dataset/blob/523ce22b9b0d3371f6dfc8f344e604064dc0ef97/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Three tasks, committed between 2025-03-28 and 2025-04-14 and unchanged since. Each folder's README gives the input, the prompt and the model, next to the agent's report.md and an exported task-history.md transcript; crackme03 adds the agent's solve.py and a launcher that runs the ELF through WSL. All three runs used Claude 3.7 Sonnet in Roo Cline or Roo Code with the author's IDA Pro MCP server, which this collection lists separately.",
+      "The repository bundles the three challenge binaries it analyzes: VEHMeme.exe, a Windows crackme the README credits to Brit and xenocidewiki from an earlier CTF; crackme03.elf, compiled with GCC 11.4.0 on Ubuntu 22.04 from a NoraCodes crackmes source file; and transformed.elf, described as a modified version of babush's mcp-job-security obfuscation project. They are small CTF-style samples rather than commercial software, but the repository states no redistribution terms for them.",
+      "Following a run needs IDA Pro, which is commercial, the IDA Pro MCP server and an MCP client. The prompts ask the model to rename, retype and comment the database and write a report, and the crackme03 prompt forbids brute forcing. The transcripts are single, unscored runs: the crackme03 report records a password confirmed by running the binary, the mcp-job-security report names the flag it extracted, and the VEHMeme report explains the exception-based check without stating a flag. These are author-published results, not reproduced here.",
+      "There is no license file, so reuse terms for the transcripts and reports are unstated; the README welcomes contributions, but only the original three tasks exist. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mrexodia/mcp-reversing-dataset/blob/523ce22b9b0d3371f6dfc8f344e604064dc0ef97/crackme03/README.md",
+      "https://github.com/mrexodia/mcp-reversing-dataset/blob/523ce22b9b0d3371f6dfc8f344e604064dc0ef97/crackme03/report.md",
+      "https://github.com/mrexodia/mcp-reversing-dataset/blob/523ce22b9b0d3371f6dfc8f344e604064dc0ef97/VEHMeme/README.md",
+      "https://github.com/mrexodia/mcp-reversing-dataset/blob/523ce22b9b0d3371f6dfc8f344e604064dc0ef97/VEHMeme/report.md",
+      "https://github.com/mrexodia/mcp-reversing-dataset/blob/523ce22b9b0d3371f6dfc8f344e604064dc0ef97/mcp-job-security/README.md",
+      "https://github.com/mrexodia/mcp-reversing-dataset/tree/523ce22b9b0d3371f6dfc8f344e604064dc0ef97"
+    ]
   }
 ]
