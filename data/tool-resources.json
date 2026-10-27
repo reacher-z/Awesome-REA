@@ -12616,5 +12616,37 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "termshark",
+    "name": "termshark",
+    "url": "https://github.com/gcla/termshark",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Graham Clark's terminal user interface for tshark, inspired by Wireshark and aimed at inspecting captures on a remote machine, for example over SSH, without copying them back to a desktop. It reads pcap files, fifos or standard input, or captures live from one or more interfaces, and shows a packet list filtered with Wireshark display filters next to the dissected packet structure and a hex view. Analysis views reassemble TCP and UDP streams with search and client- or server-only display, list Ethernet, IPv4, IPv6, UDP and TCP conversations that can be turned into display filters, and search packet contents; Wireshark-style profiles can reuse a linked Wireshark profile's packet colors.",
+    "description_zh": "Graham Clark 开发的 tshark 终端界面，设计上参考 Wireshark，便于在远程机器上（例如通过 SSH）直接检查抓包文件，而不必先拷回桌面。它可读取 pcap 文件、fifo 或标准输入，也可从一个或多个网络接口实时抓包；界面在按 Wireshark 显示过滤器筛选的数据包列表旁，同时显示解析后的数据包结构和十六进制视图。分析视图可以重组 TCP 和 UDP 流，支持搜索并可只看客户端或服务端数据；还能列出 Ethernet、IPv4、IPv6、UDP 和 TCP 会话并据此生成显示过滤器，以及搜索数据包内容。类似 Wireshark 的配置方案可以关联 Wireshark 配置，沿用其中的数据包着色规则。",
+    "evidence_url": "https://github.com/gcla/termshark/blob/e8a1ec6e4f2d517f646d3bba35a2ec4926e0202c/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.4.0, published 2022-07-11, with builds for Linux (x64, arm64, armv6), macOS (x64, arm64), FreeBSD, NetBSD, OpenBSD and Windows x64. The README also lists Arch, Debian, FreeBSD, Homebrew, MacPorts, Kali, NixOS, Snapcraft, Termux and Ubuntu packages. The reviewed master commit (2022-11-01) is 14 commits ahead of that release, including unreleased hex-view navigation changes, and master has had no commits since.",
+      "tshark from Wireshark, version 1.10.2 or later, must be on PATH at run time, because termshark relies on it for all packet analysis; protocol coverage is therefore whatever the installed tshark dissects. Live capture uses dumpcap and works only where the user is permitted to capture. By default, captured packets are saved in the user's cache directory (.cache/termshark/pcaps on Linux), or to a file given with -w. Copying packets to the clipboard over SSH needs X11 forwarding or a custom copy command.",
+      "Builds as a single Go executable with go install (module github.com/gcla/termshark/v2; go.mod declares Go 1.13). Besides theme files, the repository commits only small test captures (pkg/pcap/testdata and scripts/pcaps/telnet-cooked.pcap).",
+      "MIT license. The README notes that tshark has many features termshark does not expose yet. Nothing was installed, and no capture was read or taken."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/gcla/termshark/blob/e8a1ec6e4f2d517f646d3bba35a2ec4926e0202c/docs/UserGuide.md",
+      "https://github.com/gcla/termshark/blob/e8a1ec6e4f2d517f646d3bba35a2ec4926e0202c/docs/UserGuide.md#L87-L195",
+      "https://github.com/gcla/termshark/blob/e8a1ec6e4f2d517f646d3bba35a2ec4926e0202c/docs/UserGuide.md#L313-L360",
+      "https://github.com/gcla/termshark/blob/e8a1ec6e4f2d517f646d3bba35a2ec4926e0202c/docs/Packages.md",
+      "https://github.com/gcla/termshark/blob/e8a1ec6e4f2d517f646d3bba35a2ec4926e0202c/CHANGELOG.md",
+      "https://github.com/gcla/termshark/blob/e8a1ec6e4f2d517f646d3bba35a2ec4926e0202c/go.mod",
+      "https://github.com/gcla/termshark/blob/e8a1ec6e4f2d517f646d3bba35a2ec4926e0202c/LICENSE",
+      "https://github.com/gcla/termshark/releases/tag/v2.4.0"
+    ]
   }
 ]
