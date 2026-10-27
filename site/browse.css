@@ -44,6 +44,16 @@
 .browse-main .requirements li+li{margin-top:12px}
 .browse-main .requirements summary{min-height:44px;padding:10px 0;font-size:15px;line-height:1.6;color:var(--link)}
 html[lang="zh-CN"] .browse-main .card-description,html[lang="zh-CN"] .browse-main .source-card-description,html[lang="zh-CN"] .browse-main .requirements ul{max-width:36em;line-height:1.85}
+/* 404 pages: a script-free search of the curated collection, then the main sections. */
+.not-found{display:grid;gap:30px;max-width:720px;padding:4px 0 32px}
+.not-found-search label{display:block;margin-bottom:8px;color:var(--ink);font-size:15px;font-weight:650;line-height:1.6}
+.not-found-field{display:flex;gap:10px}
+.not-found-field input{flex:1;min-width:0;height:48px;padding:0 14px;border:1px solid var(--control);border-radius:8px;background:var(--surface);color:var(--ink);font:16px/1.4 var(--sans)}
+.not-found-field .button{min-height:48px;padding-inline:20px;font-size:14px}
+.not-found-sections h2{margin:0 0 10px;color:var(--muted);font-size:15px;font-weight:650;line-height:1.6}
+.not-found-sections ul{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.not-found-sections a{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:7px;color:var(--link);font-size:14px;font-weight:550}
+.not-found-sections a:hover{background:var(--soft);border-color:var(--strong)}
 @media(max-width:1050px){.browse-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:900px){.browse-repository h2{flex-basis:100%}}
 @media(max-width:700px){

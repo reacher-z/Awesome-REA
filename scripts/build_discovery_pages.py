@@ -243,9 +243,11 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
     globe_icon = '<span class="icon fa-symbol fa-globe" aria-hidden="true"></span>' if icon_stylesheet else ''
     github_icon = ('<span class="icon fa-symbol fa-github" aria-hidden="true"></span>' if icon_stylesheet
                    else '<span class="icon browse-github-fallback" aria-hidden="true">GH</span>')
-    language_link = '' if noindex else f'<a class="browse-language" href="{counterpart}" lang="{("en" if zh else "zh-CN")}" hreflang="{("en" if zh else "zh-CN")}">{globe_icon}<span>{("English" if zh else "简体中文")}</span></a>'
+    # A 404 page answers any missing path, so its language link opens the other homepage.
+    counterpart = ('/' if zh else '/zh/') if noindex else counterpart
+    language_link = f'<a class="browse-language" href="{counterpart}" lang="{("en" if zh else "zh-CN")}" hreflang="{("en" if zh else "zh-CN")}">{globe_icon}<span>{("English" if zh else "简体中文")}</span></a>'
     prefix = '/zh' if zh else ''
-    # The bilingual 404 template has no canonical address or language counterpart.
+    # The 404 templates have no canonical address or language counterpart.
     social = open_graph_meta(language=language, title=title + ' · AwesomeREA.org', description=description,
                              image_url=site_url + assets['social'],
                              url=None if noindex else canonical, paired=not noindex)
@@ -485,6 +487,23 @@ This file is a navigation aid. Crawl policy is published in [robots.txt]({site_u
         llms = llms.replace(f'- [Full repository index JSON]({site_url}/source-index.json): All scan records, original descriptions, translations, hashes, and exclusions; omit scope_status=excluded when reconstructing the browse list.',
             f'- [Published repository selection JSON]({site_url}/source-published.json): Published records, original descriptions, translations, hashes, exclusions and per-source capture totals; omit scope_status=excluded when reconstructing the browse list.\n- [Canonical capture baseline JSON]({site_url}/source-index.json): The preserved original complete canonical scan export.')
     (site_dir / 'llms.txt').write_text(llms, encoding='utf-8')
-    content = '''<div class="empty-state"><p>This address does not match a page in the collection.</p><p lang="zh-CN">这个地址没有对应的合集页面。</p><div class="browse-actions"><a class="button button-primary" href="/">Home · 首页</a><a class="button button-outline" href="/browse/">Browse repositories</a><a class="button button-outline" href="/zh/browse/" lang="zh-CN">浏览仓库</a></div></div>'''
-    (site_dir / '404.html').write_text(_document(site_url=site_url, repository_url=repository_url, path='/404.html', language='en', title='Page not found · 页面不存在', description='This page could not be found. 这个页面不存在。', content=content, schema=None, assets=assets, icon_stylesheet=icons.href, source_export=source_export, noindex=True), encoding='utf-8')
+    # Cloudflare Pages answers a miss with the nearest 404.html up the path, so /zh/ misses get zh/404.html.
+    for language in ('en', 'zh'):
+        zh = language == 'zh'
+        prefix = '/zh' if zh else ''
+        sections = ''.join(f'<li><a href="{prefix}{path}">{(cn if zh else en)}</a></li>' for path, cn, en in (
+            ('/resources/', '精选资源', 'Curated resources'), ('/cases/', '案例合集', 'Case studies'),
+            ('/papers/', '研究论文', 'Research papers'), ('/browse/', '仓库目录', 'Repository directory'),
+            ('/survey/', '专题综述', 'Editorial survey')))
+        # A plain GET form: the homepage reads ?q= into its curated search, so no script is needed here.
+        content = f'''<div class="not-found"><form class="not-found-search" action="{prefix}/#catalog" method="get" role="search">
+  <label for="not-found-query">{('搜索精选资源' if zh else 'Search the curated collection')}</label>
+  <div class="not-found-field"><input id="not-found-query" name="q" type="search" maxlength="240" autocomplete="off" placeholder="{('工具、项目、案例……' if zh else 'Tools, projects, cases…')}"><button class="button button-primary" type="submit">{('搜索' if zh else 'Search')}</button></div>
+</form>
+<nav class="not-found-sections" aria-label="{('合集栏目' if zh else 'Collection sections')}"><h2>{('或打开栏目' if zh else 'Or open a section')}</h2><ul>{sections}</ul></nav></div>'''
+        title = '页面不存在' if zh else 'Page not found'
+        description = '这个地址没有对应的合集页面。可以搜索精选资源，或从下方栏目继续浏览。' if zh else 'This address does not match a page in the collection. Search the curated resources or continue from a section below.'
+        destination = site_dir / prefix.lstrip('/') / '404.html'
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(_document(site_url=site_url, repository_url=repository_url, path=prefix + '/404.html', language=language, title=title, description=description, content=content, schema=None, assets=assets, icon_stylesheet=icons.href, source_export=source_export, noindex=True), encoding='utf-8')
     return paths

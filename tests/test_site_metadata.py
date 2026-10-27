@@ -18,7 +18,7 @@ from homepage_locales import HOMEPAGE_DESTINATIONS, _ui_strings
 from open_graph import SOCIAL_CARD, SOCIAL_IMAGE_ALT, open_graph_meta, png_size
 from test_source_browser import full_export
 from validate_site import (Page, csp_directives, header_rules, validate_catalog_preload, validate_homepage_destinations,
-                           validate_open_graph, validate_security_headers)
+                           validate_not_found_pages, validate_open_graph, validate_security_headers)
 
 ORIGIN = 'https://awesomerea.org'
 CARD = ORIGIN + '/social-card.png?v=0123456789abcdef'
@@ -76,9 +76,11 @@ class OpenGraphTests(unittest.TestCase):
                     page = Page((output / route.lstrip('/') / 'index.html').read_text())
                     # Discovery pages use their own revisioned asset path; the card URL path is what matters.
                     validate_open_graph(route, page, (1200, 630))
-            not_found = Page((output / '404.html').read_text())
-            validate_open_graph(None, not_found, (1200, 630))
-            self.assertNotIn('og:url', not_found.meta)
+            for language, path in (('en', '404.html'), ('zh', 'zh/404.html')):
+                not_found = Page((output / path).read_text())
+                validate_open_graph(None, not_found, (1200, 630), language=language)
+                self.assertNotIn('og:url', not_found.meta)
+            validate_not_found_pages(output, (1200, 630))
 
     def test_validator_rejects_inconsistent_blocks(self):
         validate_open_graph('/papers/', social_page('/papers/'), (1200, 630))
@@ -133,6 +135,8 @@ class SecurityHeaderTests(unittest.TestCase):
         self.assertEqual(directives['script-src'], ["'self'", 'https://static.cloudflareinsights.com'])
         self.assertEqual(directives['connect-src'], ["'self'", 'https://cloudflareinsights.com'])
         self.assertEqual(directives['font-src'], ["'self'", 'https://awesome-rea.pages.dev'])
+        # The 404 search is a same-origin GET form.
+        self.assertEqual(directives['form-action'], ["'self'"])
         no_cache = {'cache-control': 'no-cache, must-revalidate'}
         bibtex = {'content-type': 'application/x-bibtex; charset=utf-8'}
         self.assertEqual(rules, {
@@ -185,6 +189,7 @@ class SecurityHeaderTests(unittest.TestCase):
                               'preload': headers.replace('max-age=2592000', 'max-age=2592000; includeSubDomains; preload'),
                               'unsafe inline': headers.replace("script-src 'self'", "script-src 'self' 'unsafe-inline'"),
                               'framing allowed': headers.replace('X-Frame-Options: DENY', 'X-Frame-Options: SAMEORIGIN'),
+                              'external form target': headers.replace("form-action 'self'", "form-action 'self' https:"),
                               'no policy': headers.replace('Content-Security-Policy:', 'X-Content-Security-Policy:'),
                               'pages.dev indexable': headers.replace('X-Robots-Tag: noindex', 'X-Robots-Tag: all'),
                               'preview indexable': headers.replace('https://:version.:project.pages.dev/*', '/preview/*'),

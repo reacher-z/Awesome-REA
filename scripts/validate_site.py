@@ -278,10 +278,10 @@ def validate_homepage_destinations(pages, app_source=None):
             assert destination in pages and pages[destination].h1_texts == [name], f'Homepage ItemList name differs from the H1 of {destination}: {name!r}'
 
 
-def validate_open_graph(route, page, card_size):
-    """Every page publishes the shared social block; ``route=None`` is the uncanonical 404 template."""
+def validate_open_graph(route, page, card_size, *, language=None):
+    """Every page publishes the shared social block; ``route=None`` is an uncanonical 404 template."""
     assert len(page.meta_keys) == len(set(page.meta_keys)), f'Duplicate meta tags: {route}'
-    meta, language = page.meta, 'zh' if route and route.startswith('/zh/') else 'en'
+    meta, language = page.meta, language or ('zh' if route and route.startswith('/zh/') else 'en')
     expected = {'og:type': 'website', 'og:site_name': SITE_NAME, 'og:locale': OG_LOCALES[language],
                 'og:image:type': 'image/png', 'og:image:width': str(card_size[0]), 'og:image:height': str(card_size[1]),
                 'og:image:alt': SOCIAL_IMAGE_ALT[language], 'twitter:card': 'summary_large_image',
@@ -430,7 +430,7 @@ def validate_security_headers(output):
     directives = csp_directives(policies[0])
     for directive in ('default-src', 'base-uri', 'frame-ancestors'):
         assert directives.get(directive) == ["'none'"], f'CSP {directive} must be none'
-    assert 'form-action' in directives, 'CSP must restrict form submissions'
+    assert directives.get('form-action') in (["'none'"], ["'self'"]), 'CSP must keep form submissions on this origin'
     for directive in ('script-src', 'style-src'):
         assert not {"'unsafe-inline'", "'unsafe-eval'", '*', 'data:', 'http:', 'https:'} & set(directives.get(directive, [])), f'CSP {directive} is too broad'
     assert csp_allows(directives, 'connect-src', '/catalog.json'), 'CSP must allow same-origin JSON fetches'
@@ -814,6 +814,20 @@ def validate_suggestion_links(pages, repository_url='https://github.com/reacher-
             assert pages[route].links.count(f'{repository_url}/issues/new?template={template}') == 1, f'Listing needs one link to its suggestion form: {route}'
 
 
+def validate_not_found_pages(output, card_size):
+    """English and Chinese 404 templates: noindex, one language each, a homepage search and section links."""
+    for language, prefix in (('en', ''), ('zh', '/zh')):
+        where = prefix + '/404.html'
+        text = (output / where.lstrip('/')).read_text(encoding='utf-8')
+        page = Page(text)
+        assert page.noindex and not page.canonicals and page.lang == ('zh-CN' if language == 'zh' else 'en'), f'404 page language or indexing mismatch: {where}'
+        validate_open_graph(None, page, card_size, language=language)
+        forms = re.findall(r'<form [^>]*>', text)
+        assert forms == [f'<form class="not-found-search" action="{prefix}/#catalog" method="get" role="search">'] and text.count(' name="q"') == 1, f'404 search must submit q to its homepage: {where}'
+        expected = [prefix + path for path in ('/resources/', '/cases/', '/papers/', '/browse/', '/survey/')]
+        assert set(expected) <= set(page.links) and ('/' if language == 'zh' else '/zh/') in page.links, f'404 section or language links missing: {where}'
+
+
 def validate_case_outputs(pages, resources):
     """Bind the script-free case subset, its full evidence, and its navigation."""
     cases = {record['id']: record for record in resources if record['kind'] == 'case-study'}
@@ -1058,9 +1072,7 @@ def main():
     validate_source_browser_output(OUTPUT)
     validate_breadcrumbs(OUTPUT, pages)
     validate_stylesheet_references(OUTPUT)
-    not_found = Page((OUTPUT / '404.html').read_text(encoding='utf-8'))
-    assert not_found.noindex, '404 must be noindex'
-    validate_open_graph(None, not_found, png_size(OUTPUT / 'social-card.png'))
+    validate_not_found_pages(OUTPUT, png_size(OUTPUT / 'social-card.png'))
     validate_security_headers(OUTPUT)
     validate_catalog_preload(OUTPUT)
     validate_website_identity(pages)
