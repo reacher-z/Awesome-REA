@@ -16,7 +16,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Tyrrrz/YoutubeDownloader](https://github.com/Tyrrrz/YoutubeDownloader) — Downloads videos and playlists from YouTube **[16,441 stars]**
 - [seemoo-lab/openhaystack](https://github.com/seemoo-lab/openhaystack) — Build your own 'AirTags' 🏷 today! Framework for tracking personal Bluetooth devices via Apple's massive Find My network. **[13,844 stars]**
 - [majd/ipatool](https://github.com/majd/ipatool) — Command-line tool that allows you to search for iOS, iPadOS, tvOS, watchOS, visionOS, and macOS apps on the App Store, and download .ipa or macOS .pkg app packages. **[11,709 stars]**
-- [wtsxDev/reverse-engineering](https://github.com/wtsxDev/reverse-engineering) — List of awesome reverse engineering resources **[10,580 stars]**
+- [wtsxDev/reverse-engineering](https://github.com/wtsxDev/reverse-engineering) — List of awesome reverse engineering resources **[10,580 stars]** · Curated: [Reverse Engineering resources (wtsxDev)](https://awesomerea.org/resources/wtsxdev-reverse-engineering-list/)
 - [Col-E/Recaf](https://github.com/Col-E/Recaf) — The modern Java bytecode editor **[7,437 stars]** · Curated: [Recaf](https://awesomerea.org/resources/recaf/)
 - [AloneMonkey/MonkeyDev](https://github.com/AloneMonkey/MonkeyDev) — Patch iOS apps without jailbreaking using CaptainHook Tweak, Logos Tweak, and command-line tools. **[6,800 stars]**
 - [rmusser01/Infosec\_Reference](https://github.com/rmusser01/Infosec_Reference) — An Information Security Reference That Doesn't Suck; https<span>:</span>//rmusser.net/git/admin-2/Infosec\_Reference for non-MS Git hosted version. **[6,007 stars]**

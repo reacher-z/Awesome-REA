@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 516](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-516-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 219](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-219-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 140](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 517](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-517-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 219](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-219-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 140](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-516 项精选资源（219 个案例）· 140 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 513。
+517 项精选资源（219 个案例）· 140 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 514。
 
 **按目标找工具与案例**
 
@@ -34,7 +34,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (219) · [相关合集](#related-collections) (10) · [完整仓库索引](#完整仓库索引) (3,309)
+- [全部案例](https://awesomerea.org/zh/cases/) (219) · [相关合集](#related-collections) (11) · [完整仓库索引](#完整仓库索引) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -614,6 +614,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**awesome-unofficial-pc-ports 非官方 PC 移植清单**](https://github.com/Sebastrion/awesome-unofficial-pc-ports) - 以单个 README 维护的非官方 PC 移植指南，收录基于反编译或重编译、且便于玩家安装的主机游戏移植。 <sub>合集 · 目标：游戏 · [完整条目](https://awesomerea.org/zh/resources/awesome-unofficial-pc-ports/)</sub>
 - [**awesome-decompilation 反编译阅读清单**](https://github.com/nforest/awesome-decompilation) - 篇幅不长、只列链接的机器码反编译阅读清单，最近一次更新在 2023 年。 <sub>合集 · 目标：二进制 · [完整条目](https://awesomerea.org/zh/resources/nforest-awesome-decompilation/)</sub>
 - [**Remade 软件重新实现目录**](https://github.com/replicraft/remade) - remade.wiki 的源码仓库。 <sub>合集 · 目标：应用 · [完整条目](https://awesomerea.org/zh/resources/remade-reimplementation-directory/)</sub>
+- [**Reverse Engineering resources 逆向工程资源清单（wtsxDev）**](https://github.com/wtsxDev/reverse-engineering) - 以单个 README 维护的 awesome 清单，2017 年 1 月创建，以 KaliTut 名义维护，共收录 139 个逆向工程链接，分为 16 个部分：书籍、课程、练习目标、十六进制编辑器、二进制格式工具、反汇编器、二进制分析、字节码分析、导入表重建、动态分析、调试、Mac 解密、文档分析、脚本、Android 和 YARA。 <sub>合集 · 目标：应用、二进制 · [完整条目](https://awesomerea.org/zh/resources/wtsxdev-reverse-engineering-list/)</sub>
 
 <a id="references-and-learning"></a>
 ### References and Learning · 文档与学习资源
