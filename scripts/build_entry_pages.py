@@ -86,6 +86,11 @@ def _definitions(items: list[tuple[str, str]]) -> str:
     return '<dl class="entry-facts">' + ''.join(f'<dt>{escape(label)}</dt><dd>{escape(value)}</dd>' for label, value in items) + '</dl>'
 
 
+def _summary(items: list[tuple[str, str]]) -> str:
+    """Compact header facts; values are trusted markup built by the caller."""
+    return '<dl class="entry-summary">' + ''.join(f'<div><dt>{escape(label)}</dt><dd>{value}</dd></div>' for label, value in items) + '</dl>'
+
+
 def _survey_discussion(sections: list[dict], language: str) -> str:
     if not sections:
         return ''
@@ -157,20 +162,22 @@ def _resource_content(record: dict, language: str, discussion: str = '') -> tupl
     title = _text(record, 'name_zh' if zh else 'name')
     description = _text(record, f'description_{language}')
     kind = KIND_LABELS[record['kind']][int(zh)]
-    facts = [(label('Type', '类型'), kind),
-             (label('Category', '类别'), CATEGORIES[record['category']][int(zh)]),
-             (label('Relationship', '关联'), RELATIONSHIPS[record['relationship']][int(zh)]),
-             (label('Targets', '目标'), ' · '.join(TARGETS[t][int(zh)] for t in record['targets']))]
+    # The kind is the eyebrow; the other classification facts and the review date sit under the
+    # description so they stay above long requirement lists. Each fact appears only here.
+    reviewed = f'<time datetime="{escape(record["verified_at"], quote=True)}">{escape(record["verified_at"][:10])}</time>'
+    facts = [(label('Targets', '目标'), escape(' · '.join(TARGETS[t][int(zh)] for t in record['targets']))),
+             (label('Category', '类别'), escape(CATEGORIES[record['category']][int(zh)])),
+             (label('Relationship', '关联'), escape(RELATIONSHIPS[record['relationship']][int(zh)])),
+             (label('Sources reviewed', '来源复核于'), reviewed)]
     requirements = ''.join(f'<li>{escape(item)}</li>' for item in _requirements(record, language))
     links = [_link(record['url'], label('Visit original resource', '访问原始资源'), primary=True)]
     if record['evidence_url'] != record['url']:
         links.append(_link(record['evidence_url'], label(*PRIMARY_SOURCE_LABEL)))
     content = f'''<header class="entry-heading"><p class="entry-eyebrow">{escape(kind)}</p><h1>{escape(title)}</h1>
-  <p class="entry-description">{escape(description)}</p></header>
+  <p class="entry-description">{escape(description)}</p>{_summary(facts)}</header>
 <nav class="entry-actions" aria-label="{label('Resource links', '资源链接')}">{''.join(links)}</nav>
 <section class="entry-section" aria-labelledby="entry-requirements"><h2 id="entry-requirements">{label('Requirements and limitations', '使用条件与局限')}</h2><ul class="entry-requirements">{requirements}</ul></section>
-<section class="entry-section" aria-labelledby="entry-review"><h2 id="entry-review">{label('About this entry', '关于此条目')}</h2>{_definitions(facts)}
-<p class="entry-reviewed">{label('Sources reviewed', '来源复核于')} <time datetime="{escape(record['verified_at'], quote=True)}">{escape(record['verified_at'][:10])}</time></p>
+<section class="entry-section" aria-labelledby="entry-review"><h2 id="entry-review">{label('About this entry', '关于此条目')}</h2>
 <p class="entry-review-note">{label('The description was reviewed against primary sources. This does not establish runtime testing, security auditing or verified compatibility.', '说明已依据一手来源复核；这不代表已运行验证、经过安全审计或确认兼容。')}</p></section>
 {discussion}{_sources([record['evidence_url'], *record.get('additional_evidence_urls', [])], language)}'''
     return title, description, content
