@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 519](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-519-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 220](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 140](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 520](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-520-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 221](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-221-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 140](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,12 +21,12 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-519 项精选资源（220 个案例）· 140 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 516。
+520 项精选资源（221 个案例）· 140 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 517。
 
 **按目标找工具与案例**
 
 - [网站](#website) (29) · [游戏](#game) (199) · [应用](#app) (83)
-- [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (24) · [协议](#protocol) (22)
+- [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (24) · [协议](#protocol) (23)
 
 **论文与工作流**
 
@@ -34,7 +34,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (220) · [相关合集](#related-collections) (11) · [完整仓库索引](#完整仓库索引) (3,309)
+- [全部案例](https://awesomerea.org/zh/cases/) (221) · [相关合集](#related-collections) (11) · [完整仓库索引](#完整仓库索引) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -530,6 +530,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Roborock Local Server：自托管替代 Roborock 扫地机云端**](https://github.com/Python-roborock/local_roborock_server) - 运行一套本地 HTTPS 与 MQTT 服务来替代 Roborock 云端，使受支持的扫地机在隔离网络中无需 root 或改装硬件即可保留实时地图与控制。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/roborock-local-server-cloud-case/)</sub>
 - [**pypush：Apple 推送协议的 Python 客户端**](https://github.com/JJTech0130/pypush) - 以与平台无关的 Python 重新实现 Apple 私有推送通知服务（APNs）协议的客户端：它以 Apple 设备身份完成激活，连接 APNs courier 服务器，生成限定于应用的令牌并接收推送通知。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pypush-apns-protocol-case/)</sub>
 - [**PixMob 红外逆向工程：在家控制活动手环**](https://github.com/danielweidman/pixmob-ir-reverse-engineering) - 从在演唱会和球赛现场用 Flipper Zero 录下的信号出发，把录音重放给手环，恢复出足以在家中点亮 PixMob 活动手环的部分红外协议。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pixmob-ir-protocol-case/)</sub>
+- [**opendash：重建 Scanmatik SM3 J2534 适配器协议**](https://github.com/PabloSoage/opendash) - 直接使用 Scanmatik SM3 未公开的协议——这款 J2534 车辆接口原本只与自家 Windows 软件通信——并以 ELM327 桥接的形式提供给 Android 手机，其上还有一个诊断应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendash-scanmatik-sm3-protocol-case/)</sub>
 
 #### 工具、项目与集成
 

@@ -12616,5 +12616,37 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "opendash-scanmatik-sm3-protocol-case",
+    "name": "opendash: reconstructing the Scanmatik SM3 J2534 adapter protocol",
+    "url": "https://github.com/PabloSoage/opendash",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Speaks the undocumented protocol of the Scanmatik SM3, a J2534 vehicle interface that otherwise talks only to its own Windows software, and exposes it to an Android phone as an ELM327 bridge with a diagnostics app on top. The author recovered the framing — a 16-byte header with sequence, CRC-based and sum-based check words, opcode and length — by capturing the device's bundled driver and measuring the replies, and docs/protocol.md separates what was established from what is still open. Reported results come from one Opel Astra J over five sessions with the car present.",
+    "description_zh": "直接使用 Scanmatik SM3 未公开的协议——这款 J2534 车辆接口原本只与自家 Windows 软件通信——并以 ELM327 桥接的形式提供给 Android 手机，其上还有一个诊断应用。作者通过抓取设备随附驱动的通信并测量响应，恢复了报文结构：包含序号、基于 CRC 与求和的校验字、操作码和长度的 16 字节报头；docs/protocol.md 区分了已确认与仍待解决的部分。所报告的结果来自一辆 Opel Astra J、共五次有车在场的测试。",
+    "evidence_url": "https://github.com/PabloSoage/opendash/blob/7c8d72953d8060f2dc49e606963e1d103eec64d9/docs/protocol.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the main-branch head of 2026-10-16, one README-only commit after the v0.4.2-beta release. README reports reading identification, standard OBD-II data and GM service 0x22 parameters, and module-driven streaming at about 98.7 Hz per packet, on one Opel Astra J 1.7 CDTI; the ELM327 bridge has been exercised against emulated modules but not yet against the car, and two long recordings stopped early for reasons not yet understood.",
+      "Requires the user's own Scanmatik SM3 reached over its Wi-Fi access point. Standard SAE J1979 PIDs ship with the app; richer per-brand catalogues are generated from a GM GDS2 installation the user already has, and README says they are not distributed because the data belongs to GM. No catalogue data, vendor driver, firmware or driving recordings are committed.",
+      "The app is read-only by design: README lists the diagnostic services it permits, and requests that write data, control inputs and outputs or routines, clear codes or request security access are refused before reaching the socket. One known actuator command sits behind a settings switch that requires the phone's device lock and is off by default.",
+      "Android 8.0+ app built with Gradle, AGP 9.4.1, Kotlin 2.4.20 and JDK 21. A separate Rust core implements framing, check words, ISO-TP and ELM327 handling but is not yet wired into the app, whose Kotlin bridge README says has moved ahead of it. CI runs cargo test, which replays 200 recorded writes and checks the computed check word against what the device sent, and builds the debug APK without the Rust core; Kotlin unit tests exist but are not run in CI, and this review ran neither the tests nor the app.",
+      "GPL-3.0 (LICENSE). Scanmatik, GM, GDS2 and Opel remain trademarks of their owners, and the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/PabloSoage/opendash/blob/7c8d72953d8060f2dc49e606963e1d103eec64d9/README.md",
+      "https://github.com/PabloSoage/opendash/blob/7c8d72953d8060f2dc49e606963e1d103eec64d9/core/src/frame.rs",
+      "https://github.com/PabloSoage/opendash/blob/7c8d72953d8060f2dc49e606963e1d103eec64d9/core/src/h4.rs",
+      "https://github.com/PabloSoage/opendash/blob/7c8d72953d8060f2dc49e606963e1d103eec64d9/core/tests/protocol.rs",
+      "https://github.com/PabloSoage/opendash/blob/7c8d72953d8060f2dc49e606963e1d103eec64d9/.github/workflows/ci.yml",
+      "https://github.com/PabloSoage/opendash/blob/7c8d72953d8060f2dc49e606963e1d103eec64d9/LICENSE",
+      "https://github.com/PabloSoage/opendash/releases/tag/v0.4.2-beta"
+    ]
   }
 ]
