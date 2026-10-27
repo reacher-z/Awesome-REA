@@ -4330,5 +4330,14 @@
       "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
       "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
     ]
+  },
+  "openpilot-cabana": {
+    "name": "Cabana CAN 总线分析工具（独立版 openpilot-cabana）",
+    "requirements": [
+      "该仓库创建于 2025-12-30；README 称 Cabana 最初是作为 openpilot 的 CAN 分析工具开发的，现已独立维护，而 openpilot 仍在 openpilot/tools/cabana 下保留自己的 cabana。审阅时最新版本为 v1.1.2，于 2026-03-16 以 Linux x86_64 压缩包发布；所审阅的 main 分支提交日期为 2026-06-09，比该版本多 66 个提交。",
+      "从源码构建需要 SCons、C++20 编译器和带 Charts、SVG、SerialBus、OpenGL 模块的 Qt 6，以及 README 为 Ubuntu/Debian 列出的 capnproto、ZeroMQ、FFmpeg、libusb 等软件包，并需先初始化同一作者的 openpilot-replay 子模块。README 还提到 Arch Linux 的 AUR 软件包；SConstruct 含 macOS arm64 分支，但发布工作流只在 Ubuntu 22.04 上构建。",
+      "分析需要使用者自己的 CAN 数据：来自自有车辆和接口的日志或实时总线、Panda 设备，或来自自己 comma 设备或 comma connect 账户的 openpilot 行车记录；--demo 则改为打开演示路线。该工具会标出候选位和信号，但不能确定其含义；本次审阅未分析任何抓包数据。",
+      "采用 MIT 许可（LICENSE，版权归 Dean Lee，2025）；openpilot-replay 子模块同样为 MIT，data/opendbc 收录 93 个来自 comma.ai MIT 许可 opendbc 的 DBC 文件。所审来源未提及 REA 或 AI 使用，本次也未进行构建。"
+    ]
   }
 }
