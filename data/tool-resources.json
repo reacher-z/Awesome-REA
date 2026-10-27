@@ -12616,5 +12616,38 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "yingjia-emk850-analyzer-mcp",
+    "name": "EMK850+ low-power analyzer serial driver and MCP server",
+    "url": "https://github.com/createskyblue/Yingjia_EMK850_low-power_analyzer_MCP",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Python serial driver and MCP server for the Yingjia EMK850+ low-power analyzer, built on a protocol the author recovered by decompiling the vendor's Windows host software. It reads voltage, current and power at microamp and microwatt resolution, sets the output voltage so that a deep-sleeping MCU can be power-cycled, and runs the no-load zeroing, exposed both as REST endpoints and as MCP tools over Streamable HTTP. A Chinese protocol document gives the 64-byte frame layout with its 0x33 header, the command table, calibration-block reassembly and conversion formulas, marking which entries were confirmed on the author's device.",
+    "description_zh": "面向英加 EMK850+ 低功耗分析仪的 Python 串口驱动与 MCP 服务器，所用协议由作者反编译厂商的 Windows 上位机软件得到。它能以 µA、µW 级精度读取电压、电流和功率，设置输出电压以便让深度休眠的 MCU 断电重启，并执行空载清零；这些功能同时以 REST 接口和基于 Streamable HTTP 的 MCP 工具提供。随附的中文协议文档给出以 0x33 为帧头的 64 字节帧结构、命令表、校准配置块的重组方法和换算公式，并标明哪些条目已在作者的设备上实测确认。",
+    "evidence_url": "https://github.com/createskyblue/Yingjia_EMK850_low-power_analyzer_MCP/blob/ca0f40a25e8f0030c815205b2389b4d2e1f23558/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-08-10 main head. The repository was created on 2026-08-08, has 17 commits and no releases, and pyproject.toml calls it version 1.0.0, while the protocol document labels itself v0.1, a first-stage delivery, and marks entries as confirmed from the host-software source, still to be checked on the device, or not fully confirmed. Its on-device results come from one analyzer: power reading, configuration reading and output-voltage control through command 181 were verified, no-load zeroing was not yet tested, factory mode was not examined in depth and channel 5 conversion is not covered.",
+      "Requires the user's own EMK850+ on a serial port at 115200 8N1. The server holds the port exclusively, so the vendor application cannot run at the same time. Python 3.10+ with pyserial, FastAPI, uvicorn, fastapi-mcp 0.4.0+ and the mcp SDK pinned below 2; uv sync uses the lock file, and pyproject.toml makes an Aliyun PyPI mirror the default index. The CLI offers power, version, config and clear, and the MCP endpoint at http://localhost:37749/mcp is documented for Claude Desktop, Cursor and MCP Inspector.",
+      "The protocol has no true output-off command: 0 mV still leaves about 2.6 V on the sense terminals, and the README says to confirm with a multimeter before assuming the device under test lost power. No-load zeroing needs every load disconnected and an explicit confirm flag, and current on uncalibrated ranges is skipped. The repository has no tests or CI, and this review ran no code and connected no device.",
+      "The protocol document states that it was derived by decompiling the vendor's .NET 4.7.2 EMK850+.exe with ILSpy into tools/decompiled/. That output is not committed, but the document quotes short excerpts of the decompiled code, among them the vendor's serial receive routine and calibration-structure fields, and cites decompiled file and line numbers. Device identifiers in its test log are masked.",
+      "pyproject.toml declares MIT, but there is no LICENSE file and GitHub detects no license, so the reuse terms rest on that metadata alone; the vendor's software and the excerpts from it are outside the author's license. The README disclaims any connection with or endorsement by Yingjia and warns that firmware or model changes may break compatibility. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/createskyblue/Yingjia_EMK850_low-power_analyzer_MCP/blob/ca0f40a25e8f0030c815205b2389b4d2e1f23558/README.zh-CN.md",
+      "https://github.com/createskyblue/Yingjia_EMK850_low-power_analyzer_MCP/blob/ca0f40a25e8f0030c815205b2389b4d2e1f23558/docs/EMK850_PROTOCOL.md",
+      "https://github.com/createskyblue/Yingjia_EMK850_low-power_analyzer_MCP/blob/ca0f40a25e8f0030c815205b2389b4d2e1f23558/emk850_mcp_server.py",
+      "https://github.com/createskyblue/Yingjia_EMK850_low-power_analyzer_MCP/blob/ca0f40a25e8f0030c815205b2389b4d2e1f23558/emk850_analyzer.py",
+      "https://github.com/createskyblue/Yingjia_EMK850_low-power_analyzer_MCP/blob/ca0f40a25e8f0030c815205b2389b4d2e1f23558/tools/emk850_proto.py",
+      "https://github.com/createskyblue/Yingjia_EMK850_low-power_analyzer_MCP/blob/ca0f40a25e8f0030c815205b2389b4d2e1f23558/pyproject.toml",
+      "https://github.com/createskyblue/Yingjia_EMK850_low-power_analyzer_MCP/blob/ca0f40a25e8f0030c815205b2389b4d2e1f23558/requirements.txt",
+      "https://github.com/createskyblue/Yingjia_EMK850_low-power_analyzer_MCP/blob/ca0f40a25e8f0030c815205b2389b4d2e1f23558/.gitignore"
+    ]
   }
 ]
