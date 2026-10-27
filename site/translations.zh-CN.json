@@ -4500,5 +4500,14 @@
       "自定义 tonie JSON 接口的 Python API 测试和 WASM TAF 编码器测试通过 Makefile 目标运行；所审阅的工作流只构建并发布，不运行这些测试。dev-sandbox 提供模拟的 tonie、盒子和 TAF 数据。与真实盒子及 Boxine 云端配合的表现仍属项目报告，本次来源核查未运行任何内容。",
       "采用 GPL-2.0（LICENSE）；内置的 Cyclone 协议栈、Opus、Ogg、cJSON 和 FatFs 保留各自条款。tonie 音频、盒子固件和 Boxine 的服务保留各自权利。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "http-toolkit": {
+    "name": "HTTP Toolkit HTTP(S) 调试代理",
+    "requirements": [
+      "在所审阅的提交中，这个总仓库只有 README、安全策略和一段演示动画，用作项目的问题追踪仓库。产品由同组织的其他仓库构建：httptoolkit-ui（TypeScript 与 React）、httptoolkit-server（Node.js，其拦截器列表涵盖 Chromium 系浏览器、Firefox、终端、Electron、通过 ADB 连接的 Android、Android 和 iOS 上的 Frida、JVM 进程及 Docker 容器）、Mockttp 代理库、Android 应用和 Electron 桌面外壳；本次仅审阅了这些仓库的 README 和服务端的拦截器列表。",
+      "审阅时桌面版最新版本为 v1.27.3，发布于 2026-10-20，提供 Windows 安装程序和 zip 包、macOS x64 与 arm64 DMG，以及 Linux x64 与 arm64 的 AppImage、deb、rpm 和 zip 构建。桌面外壳内置服务端，并在 Electron 窗口中打开界面；服务端也可作为命令行工具单独运行，再在浏览器中打开托管的 Web 界面，两者都独立于桌面可执行文件自行更新。",
+      "检查 HTTPS 需要客户端信任 HTTP Toolkit 的 CA 证书：拦截器会启动预先配置好的浏览器、终端和应用，服务端的证书检查会在证书尚未受信任时下载或安装证书。Android 应用负责信任该证书，并通过本地 VPN 转发设备流量；其 README 称无需 root 设备，但 root 后可测试的真实应用流量更多。只应检查自己的客户端和设备，或已获授权测试对象的流量。",
+      "定价页面列出，免费的 Hobbyist 版即可拦截所有支持的客户端、检查原始数据、过滤、手动改写和手动发送请求；模拟规则与自动转换、编辑后重发、规则和流量的导入导出（含 HAR）、API 校验，以及 TLS 直通、上游代理等高级代理设置则需要付费 Pro 账户。README 称 HTTP Toolkit 专用组件采用 AGPL-3.0，可复用库采用 Apache-2.0 或 MIT；本仓库没有许可证文件，桌面版 README 允许按 AGPL-3.0 或 CC BY-ND 4.0 使用其二进制文件。本次未拦截任何流量。"
+    ]
   }
 }
