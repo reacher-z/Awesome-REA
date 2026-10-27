@@ -7355,5 +7355,63 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-dikeue",
+    "title": "Noncompliance as Deviant Behavior: An Automated Black-box Noncompliance Checker for 4G LTE Cellular Devices",
+    "title_zh": "将不合规视为偏离行为：面向 4G LTE 蜂窝设备的自动化黑盒不合规检查器",
+    "authors": [
+      "Syed Rafiul Hussain",
+      "Imtiaz Karim",
+      "Abdullah Al Ishtiaq",
+      "Omar Chowdhury",
+      "Elisa Bertino"
+    ],
+    "year": 2021,
+    "publication_date": "2021-11-12",
+    "date_precision": "day",
+    "date_basis": "ACM's Crossref deposit records published/print publication on 2021-11-12 and online publication on 2021-11-13. This entry uses the print date, not the November 15–19 conference dates.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将 published／纸质出版日期记为 2021-11-12，在线出版日期为 2021-11-13。本条目采用纸质出版日期，而非 11 月 15–19 日的会议日期。",
+    "venue": "ACM CCS 2021",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3460120.3485388",
+    "citation": {
+      "container_title": "Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security",
+      "publisher": "ACM",
+      "pages": "1082-1099",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3460120.3485388"
+      ]
+    },
+    "url": "https://dl.acm.org/doi/10.1145/3460120.3485388",
+    "pdf_url": "https://syed-rafiul-hussain.github.io/wp-content/uploads/2021/09/dikeue.pdf",
+    "code_url": "https://github.com/SyNSec-den/DIKEUE/tree/5975807883265e275ef533f18a0c21b56e3b4e8a",
+    "project_url": null,
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "DIKEUE checks 4G LTE control-plane (NAS and RRC) implementations in commercial phones and modems for noncompliance through differential testing rather than predefined security properties. Its FSM inference module runs TTT active automata learning in LearnLib through an LTE-specific adapter on a modified srsLTE network with a USRP B210 radio, adding a context checker, query cache, inconsistency resolver and reset without rebooting. An equivalence checker then encodes pairs of learned input-output finite state machines for the nuXmv model checker and enumerates diverse deviation-inducing input sequences, which the authors analyze manually.",
+    "description_zh": "DIKEUE 通过差分测试而非预先定义的安全属性，检查商用手机和调制解调器中 4G LTE 控制面（NAS 与 RRC）实现的不合规之处。其状态机推断模块借助 LearnLib 中的 TTT 主动自动机学习，经由面向 LTE 的适配器在改造后的 srsLTE 网络和 USRP B210 无线电上运行，并加入上下文检查器、查询缓存、不一致消解器以及无需重启的复位机制。随后，等价性检查器将两两学到的输入输出有限状态机编码给 nuXmv 模型检查器，枚举多样的偏离诱发输入序列，再由作者人工分析。",
+    "scope_limitations_en": "Covers control-plane NAS and RRC procedures with a chosen input alphabet and queries up to length 12; session management, data-plane protocols and 5G are left to future work. Learned machines are hypotheses bounded by Wp-method conformance testing and custom termination conditions. The authors list false-negative sources, including omitted message predicates, pruned infeasible sequences, models disconnected by removing deviating transitions, and devices that are noncompliant in the same way. Findings cover 14 devices with basebands from five vendors (Qualcomm, Intel, MediaTek, HiSilicon and Exynos): 17 deviations, 15 of them new, of which the authors class 11 as exploitable and 3 as potential interoperability issues. Deviations were triaged and attacks constructed manually, and the results do not establish the behaviour of other devices, firmware versions or networks.",
+    "scope_limitations_zh": "覆盖控制面的 NAS 与 RRC 流程，使用选定的输入字母表，查询长度最多为 12；会话管理、数据面协议和 5G 留待后续工作。学到的状态机只是假设，受 Wp 方法一致性测试和自定义终止条件的限制。作者列出了漏报来源，包括遗漏的报文谓词、被剪除的不可行序列、移除偏离迁移后断开的模型，以及以相同方式不合规的设备。研究发现覆盖基带来自五家厂商（高通、英特尔、联发科、海思与 Exynos）的 14 台设备：共 17 项偏离，其中 15 项为新发现，作者将其中 11 项归为可利用、3 项归为潜在互操作问题。偏离的甄别与攻击构造均为人工完成，结果不能代表其他设备、固件版本或网络的行为。",
+    "why_fits_en": "Reconstructs protocol state machines of closed cellular basebands through black-box interaction and uses cross-implementation differences to locate noncompliance, extending the catalog's automata-learning work from Bluetooth Low Energy to 4G LTE devices.",
+    "why_fits_zh": "通过黑盒交互重建闭源蜂窝基带的协议状态机，并利用不同实现之间的差异定位不合规行为，将本目录中的自动机学习研究从低功耗蓝牙扩展到 4G LTE 设备。",
+    "metadata_notes": "Crossref and the author-hosted PDF agree on the five-author order; pages 1082–1099 come from ACM's Crossref deposit. The reviewed 17-page author copy, uploaded in September 2021, is not asserted to match the 18-page proceedings version, and the ACM PDF returned HTTP 403 to automated requests. The Apache-2.0 repository snapshot at 5975807 (2023-06-07) contains the FSM learner, modified srsLTE stack and configurations, device resetter and equivalence checker. Its README lists Ubuntu 18.04 (tested), a USRP B210 (tested SDR), adb, Graphviz, JDK 11, Maven, Python 2 and pydot; it also requires a SIM card programmed to srsLTE requirements and per-device airplane-mode reset functions, and reports about 40–45 minutes for the equivalence checker on two sample FSMs. The README bases the modified stack on srsLTE 19.03, whereas the paper names srsLTE v19.10. The authors report responsible disclosure to GSMA and the affected vendors. No radio hardware, devices or upstream code were used.",
+    "metadata_notes_zh": "Crossref 与作者托管的 PDF 在五位作者顺序上一致；页码 1082–1099 来自 ACM 提交的 Crossref 元数据。所审阅的 17 页作者版于 2021 年 9 月上传，本条目不认定其与 18 页的论文集版本完全相同；ACM PDF 对自动请求返回 HTTP 403。采用 Apache-2.0 的仓库快照 5975807（2023-06-07）包含状态机学习器、改造后的 srsLTE 协议栈及配置、设备复位器和等价性检查器。其 README 列出 Ubuntu 18.04（已测试）、USRP B210（已测试的软件无线电）、adb、Graphviz、JDK 11、Maven、Python 2 与 pydot；还需要按 srsLTE 要求写入的 SIM 卡以及针对各设备的飞行模式复位函数，并称等价性检查器处理两个示例状态机约需 40–45 分钟。README 称改造的协议栈基于 srsLTE 19.03，而论文写的是 srsLTE v19.10。作者称已向 GSMA 及受影响厂商进行负责任披露。本次未使用无线电硬件或设备，也未运行上游代码。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3460120.3485388",
+      "https://api.crossref.org/works/10.1145/3460120.3485388",
+      "https://syed-rafiul-hussain.github.io/index.php/publications/noncompliance-as-deviant-behavior-an-automated-black-box-noncompliance-checker-for-4g-lte-cellular-devices/",
+      "https://syed-rafiul-hussain.github.io/wp-content/uploads/2021/09/dikeue.pdf",
+      "https://github.com/SyNSec-den/DIKEUE/blob/5975807883265e275ef533f18a0c21b56e3b4e8a/README.md",
+      "https://github.com/SyNSec-den/DIKEUE/blob/5975807883265e275ef533f18a0c21b56e3b4e8a/LICENSE"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
