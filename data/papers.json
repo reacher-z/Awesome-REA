@@ -7294,5 +7294,65 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-cross-inlining-bfsd",
+    "title": "Cross-Inlining Binary Function Similarity Detection",
+    "title_zh": "跨内联的二进制函数相似性检测",
+    "authors": [
+      "Ang Jia",
+      "Ming Fan",
+      "Xi Xu",
+      "Wuxia Jin",
+      "Haijun Wang",
+      "Ting Liu"
+    ],
+    "year": 2024,
+    "publication_date": "2024-04-12",
+    "date_precision": "day",
+    "date_basis": "ACM’s Crossref deposit records published/print and online publication on 2024-04-12. The date comes from that publisher deposit, not from the April 14–20 conference dates.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将 published／纸质与在线出版日期均记为 2024-04-12；该日期取自出版方元数据，而非 4 月 14–20 日的会议日期。",
+    "venue": "ICSE 2024",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2401.05739",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2024-01-11",
+    "doi": "10.1145/3597503.3639080",
+    "citation": {
+      "container_title": "Proceedings of the IEEE/ACM 46th International Conference on Software Engineering",
+      "publisher": "ACM",
+      "pages": "1-13",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3597503.3639080"
+      ]
+    },
+    "url": "https://dl.acm.org/doi/10.1145/3597503.3639080",
+    "pdf_url": "https://arxiv.org/pdf/2401.05739v1",
+    "code_url": "https://github.com/island255/cross-inlining_binary_function_similarity",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Studies binary function similarity when function inlining makes one binary function correspond to several source functions. From BinKit builds of 51 GNU projects with and without -fno-inline (9 GCC and Clang versions, O0–O3, six x86, ARM and MIPS targets; 216 combinations each), debug-line mappings label 5,621,140 cross-inlining pairs. The authors identify Leaf-, Root- and Internal-Inlining patterns, show that Gemini, SAFE and GMN lose accuracy on them, and propose CI-Detector, which trains one attributed-CFG graph neural network per pattern and aggregates their scores, reporting 81% precision and 97% recall.",
+    "description_zh": "研究函数内联使一个二进制函数对应多个源码函数时的二进制函数相似性检测。作者基于 BinKit，将 51 个 GNU 项目分别在启用与禁用 -fno-inline 的条件下编译（9 个 GCC 与 Clang 版本、O0–O3、x86、ARM 与 MIPS 共六种目标，各 216 种组合），并利用调试行号映射标注 5,621,140 个跨内联函数对。作者归纳出叶内联、根内联与内部内联三种模式，表明 Gemini、SAFE 与 GMN 在这些模式上准确率下降，并提出 CI-Detector：针对每种模式训练一个基于属性控制流图的图神经网络，再聚合各模型得分，报告精确率为 81%、召回率为 97%。",
+    "scope_limitations_en": "The three patterns are derived from the authors’ own matrix of 51 GNU projects, and the authors note that other compilation settings, such as non-default optimizations, or projects with different inlining conventions may not fit the learned models. Labels depend on IDA Pro and DWARF debug tools, which the authors list as threats to construct validity, and ACFGs come from IDA Pro 7.3, so disassembly errors can affect results. Precision and recall come from balanced sets of 40,000 positive and 40,000 negative test pairs with a threshold tuned for F1, not from large-pool search. Baselines are released Gemini, SAFE and GMN models plus Bingo-style inlining strategies with Asm2Vec. Obfuscated binaries and LLM-based similarity models are not evaluated.",
+    "scope_limitations_zh": "三种模式源自作者自行构建的 51 个 GNU 项目编译矩阵；作者指出，非默认优化等其他编译设置，或采用不同内联惯例的项目，可能不适用于已学习的模型。标签依赖 IDA Pro 与 DWARF 调试工具，作者将其列为构造效度威胁；属性控制流图由 IDA Pro 7.3 构建，反汇编错误可能影响结果。精确率与召回率来自各含 40,000 个正例与 40,000 个负例的平衡测试对，并按 F1 调整阈值，而非大规模候选池检索。基线为已发布的 Gemini、SAFE 与 GMN 模型，以及结合 Asm2Vec 的 Bingo 式内联策略。研究未评估混淆二进制或基于大语言模型的相似性模型。",
+    "why_fits_en": "Adds inlining-aware function matching, complementing similarity studies that disable inlining and single-model records such as jTrans.",
+    "why_fits_zh": "补充考虑内联的函数匹配研究，与关闭内联的相似性测量研究及 jTrans 等单一模型条目互补。",
+    "metadata_notes": "Crossref and the arXiv v1 PDF, the only version and marked as the ICSE 2024 camera-ready, agree on the six-author order; Crossref gives pages 1–13. The paper’s reference 16 prints the repository URL with a line break. At reviewed commit ff606dd (2026-04-20), the repository declares AGPL-3.0 in a LICENSE file added that day, about two years after publication, and earlier snapshots carried no license file. The README links two Google Drive archives built with BinKit and says the workflow reuses code from Cisco-Talos/binary_function_similarity; it requires IDA Pro, Docker and nvidia-docker. Its training step builds a NeuralNetwork/ Docker context that is absent from the reviewed tree, and no trained CI-Detector checkpoints are included. No datasets were downloaded and no code or experiments were run.",
+    "metadata_notes_zh": "Crossref 与 arXiv v1 PDF（唯一版本，标注为 ICSE 2024 定稿）的六位作者顺序一致；Crossref 给出页码 1–13。论文参考文献 16 中的仓库 URL 存在换行。在所审阅的提交 ff606dd（2026-04-20）中，仓库通过当日新增的 LICENSE 文件声明 AGPL-3.0，距论文发表约两年，此前的快照没有许可证文件。README 链接两个基于 BinKit 构建的 Google Drive 压缩包，并说明流程复用 Cisco-Talos/binary_function_similarity 的代码；运行需要 IDA Pro、Docker 与 nvidia-docker。其训练步骤构建的 NeuralNetwork/ Docker 上下文不在所审阅的目录树中，仓库也未包含已训练的 CI-Detector 检查点。本次未下载数据集，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3597503.3639080",
+      "https://api.crossref.org/works/10.1145/3597503.3639080",
+      "https://arxiv.org/abs/2401.05739",
+      "https://arxiv.org/pdf/2401.05739v1",
+      "https://github.com/island255/cross-inlining_binary_function_similarity/blob/ff606ddae80eefec770d5df551849c83e2989630/README.md",
+      "https://github.com/island255/cross-inlining_binary_function_similarity/blob/ff606ddae80eefec770d5df551849c83e2989630/LICENSE",
+      "https://github.com/island255/cross-inlining_binary_function_similarity/tree/ff606ddae80eefec770d5df551849c83e2989630/4.training_for_cross_inlining"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
