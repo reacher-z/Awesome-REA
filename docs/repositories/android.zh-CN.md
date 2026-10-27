@@ -107,7 +107,7 @@
 - [f3rb123/kill\_flutter](https://github.com/f3rb123/kill_flutter) — 适用于 Android 和 iOS 的 Flutter SSL 证书固定绕过工具；无需特征数据库，支持任意 Flutter 版本。 **[315 星标]**
 - [LucasFaudman/apkscan](https://github.com/LucasFaudman/apkscan) — 对 Android 文件进行反编译和去混淆后，扫描密钥、端点和其他敏感数据。支持 .apk、.xapk、.dex、.jar、.class、.smali、.zip、.aar、.arsc、.aab、.jadx.kts。 **[312 星标]**
 - [zahidaz/jezail](https://github.com/zahidaz/jezail) — Android 渗透测试工具包，可在已 root 的设备上使用 REST API、网页终端、屏幕镜像、Frida 及完整设备控制功能 **[278 星标]**
-- [loerting/dalvikus](https://github.com/loerting/dalvikus) — Android 逆向工程工具及 smali 编辑器 **[273 星标]**
+- [loerting/dalvikus](https://github.com/loerting/dalvikus) — Android 逆向工程工具及 smali 编辑器 **[273 星标]** · 精选：[dalvikus Android 逆向与 smali 编辑工具](https://awesomerea.org/zh/resources/dalvikus/)
 - [talsec/Free-RASP-Android](https://github.com/talsec/Free-RASP-Android) — 为 Android 设备提供威胁检测和安全监控的 SDK。使用免费的 Android RASP 保护应用，检测逆向工程、root（Magisk）、越狱、Frida、模拟器、机器人、篡改与完整性问题、混淆、VPN 使用及恶意软件，并监控设备标识与指纹。 **[271 星标]**
 - [Hamz-a/frida-android-helper](https://github.com/Hamz-a/frida-android-helper) — Frida Android 实用工具 **[266 星标]**
 - [nbauma109/jd-gui-duo](https://github.com/nbauma109/jd-gui-duo) — 独立桌面图形界面，集成多种反编译器，支持 JD-Core V0 与 V1、CFR、Procyon、Fernflower、Vineflower 和 Jadx **[266 星标]**
