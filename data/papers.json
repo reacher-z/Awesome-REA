@@ -7294,5 +7294,70 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-poe-world",
+    "title": "PoE-World: Compositional World Modeling with Products of Programmatic Experts",
+    "title_zh": "PoE-World：基于程序化专家乘积的组合式世界建模",
+    "authors": [
+      "Wasu Top Piriyakulkij",
+      "Yichao Liang",
+      "Hao Tang",
+      "Adrian Weller",
+      "Marta Kryven",
+      "Kevin Ellis"
+    ],
+    "year": 2025,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "The publisher-deposited Crossref record for the NeurIPS 2025 proceedings gives 2025; no publication month or day is asserted. Neither the proceedings page's 2026-04-23 citation date nor the November–December 2025 conference dates are used as a publication date.",
+    "date_basis_zh": "出版方为 NeurIPS 2025 论文集提交的 Crossref 记录给出 2025 年；不推定出版月份或日期。论文集页面元数据中的 2026-04-23 引用日期和 2025 年 11–12 月的会议日期均不作为出版日期。",
+    "venue": "NeurIPS 2025",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2505.10819",
+    "arxiv_version_reviewed": "v4",
+    "first_arxiv_date": "2025-05-16",
+    "doi": "10.52202/085713-0896",
+    "citation": {
+      "container_title": "Advances in Neural Information Processing Systems",
+      "volume": "38",
+      "sources": [
+        "https://papers.nips.cc/paper_files/paper/2025/hash/262dd62fd1bbb30d6a6b4d578f5e65ff-Abstract-Conference.html",
+        "https://api.crossref.org/works/10.52202/085713-0896"
+      ]
+    },
+    "url": "https://papers.nips.cc/paper_files/paper/2025/hash/262dd62fd1bbb30d6a6b4d578f5e65ff-Abstract-Conference.html",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/262dd62fd1bbb30d6a6b4d578f5e65ff-Paper-Conference.pdf",
+    "code_url": "https://github.com/topwasu/poe-world/tree/b499fb16a60793840a8ad97b3739518c7505ca3a",
+    "project_url": "https://topwasu.github.io/poe-world",
+    "targets": [
+      "game"
+    ],
+    "description_en": "PoE-World represents an Atari world model as an exponentially weighted product of many small Python programs, or programmatic experts, each synthesized by an LLM to explain one aspect of the observed dynamics; learned weights and optional synthesized hard constraints combine them. From object lists that OCAtari parses out of a demonstration of fewer than 1,000 frames, the authors learn stochastic, partially observed models of Pong and Montezuma's Revenge and use them in a planning agent, including on rearranged Pong-Alt and Montezuma's Revenge-Alt variants that have no demonstrations.",
+    "description_zh": "PoE-World 将 Atari 世界模型表示为许多小型 Python 程序（即程序化专家）的指数加权乘积，每个专家由大语言模型合成，用于解释观测动态中的一个方面；学习得到的权重和可选的合成硬约束把它们组合起来。作者从 OCAtari 在不足 1,000 帧的演示中解析出的对象列表出发，学习 Pong 与 Montezuma's Revenge 的随机、部分可观测模型，并将其用于规划智能体，包括没有演示的重排变体 Pong-Alt 和 Montezuma's Revenge-Alt。",
+    "scope_limitations_en": "Models consume symbolic object lists, not pixels, and OCAtari had to be patched manually for each game, so evaluation covers only Pong and Montezuma's Revenge plus two author-built variants. The learned programs approximate observed dynamics and are not the games' original code: next-observation prediction accuracy on 1,000 random test frames is 0.06 for Pong and 0.31 for Montezuma's Revenge, and object-attribute accuracy is 0.66 and 0.76. Synthesized experts build on manually written helper classes and contact functions and were generated with gpt-4o-2024-08-06. Exploration and reward learning are outside the method; agent scores use 5 seeds and at most 3k training steps after the demonstration, and the planner reached the key in 5 of 9 Montezuma's Revenge tries.",
+    "scope_limitations_zh": "模型输入是符号化的对象列表而非像素，且每个游戏都需人工修补 OCAtari，因此评测仅覆盖 Pong 与 Montezuma's Revenge 以及作者构建的两个变体。学到的程序只是对观测动态的近似，并非游戏原始代码：在 1,000 个随机测试帧上，下一观测预测准确率在 Pong 上为 0.06，在 Montezuma's Revenge 上为 0.31；对象属性准确率分别为 0.66 和 0.76。合成的专家依赖人工编写的辅助类和接触判断函数，并由 gpt-4o-2024-08-06 生成。探索与奖励学习不在方法范围内；智能体得分基于 5 个随机种子，演示之后最多训练 3k 步；在 Montezuma's Revenge 上，规划器在 9 次尝试中有 5 次拿到钥匙。",
+    "why_fits_en": "Adds compositional program synthesis of executable game-dynamics models for non-grid Atari games, extending the code-world-model line beyond grid, text and puzzle environments.",
+    "why_fits_zh": "补充面向非网格 Atari 游戏、以组合式程序合成构建可执行游戏动态模型的研究，将代码世界模型从网格、文本和谜题环境向外扩展。",
+    "metadata_notes": "Title, author order and DOI agree across the NeurIPS proceedings page, the Crossref deposit, the final PDF and arXiv. The proceedings metadata and Crossref give the first author as Top Piriyakulkij; this record uses Wasu Top Piriyakulkij as printed in the final PDF, on arXiv and in the repository README. The proceedings page lists pages 26609–26638 while Crossref lists 30165–30194, so no page range is recorded. arXiv v4 (2025-11-19) was reviewed. The README headline calls the paper a NeurIPS 2025 Spotlight, which the proceedings page does not state, and its arXiv badge text reads 2401.02739 while linking to 2505.10819. The MIT-licensed repository snapshot at b499fb1 (2026-02-05) targets Python 3.10, pins most dependencies, and uses MIT-licensed submodules for OpenAI API access and a patched OCAtari fork; runs need a user-supplied OpenAI API key, and the Atari environments come through Gymnasium and the Arcade Learning Environment under their own terms. The snapshot includes seed-0 learned world models for Pong and Montezuma's Revenge and a Pitfall run script that the paper does not evaluate. No code, model calls or environments were run.",
+    "metadata_notes_zh": "NeurIPS 论文集页面、Crossref 记录、正式 PDF 与 arXiv 的标题、作者顺序和 DOI 一致。论文集元数据与 Crossref 将第一作者记为 Top Piriyakulkij；本条目采用正式 PDF、arXiv 和仓库 README 中的 Wasu Top Piriyakulkij。论文集页面列出页码 26609–26638，Crossref 则为 30165–30194，因此不记录页码范围。核查的是 arXiv v4（2025-11-19）。README 标题称论文为 NeurIPS 2025 Spotlight，但论文集页面并未说明；其 arXiv 徽章文字写作 2401.02739，链接却指向 2505.10819。采用 MIT 许可的仓库快照 b499fb1（2026-02-05）面向 Python 3.10，固定了大部分依赖版本，并以同为 MIT 许可的子模块提供 OpenAI API 调用封装和修改过的 OCAtari 分支；运行需要用户自备 OpenAI API 密钥，Atari 环境经由 Gymnasium 与 Arcade Learning Environment 提供，适用其各自条款。该快照包含种子 0 下学到的 Pong 与 Montezuma's Revenge 世界模型，以及论文未评测的 Pitfall 运行脚本。本次未运行代码、调用模型或启动环境。",
+    "evidence_urls": [
+      "https://papers.nips.cc/paper_files/paper/2025/hash/262dd62fd1bbb30d6a6b4d578f5e65ff-Abstract-Conference.html",
+      "https://proceedings.neurips.cc/paper_files/paper/2025/file/262dd62fd1bbb30d6a6b4d578f5e65ff-Paper-Conference.pdf",
+      "https://doi.org/10.52202/085713-0896",
+      "https://api.crossref.org/works/10.52202/085713-0896",
+      "https://arxiv.org/abs/2505.10819",
+      "https://arxiv.org/pdf/2505.10819v4",
+      "https://topwasu.github.io/poe-world",
+      "https://github.com/topwasu/poe-world/blob/b499fb16a60793840a8ad97b3739518c7505ca3a/README.md",
+      "https://github.com/topwasu/poe-world/blob/b499fb16a60793840a8ad97b3739518c7505ca3a/LICENSE",
+      "https://github.com/topwasu/poe-world/blob/b499fb16a60793840a8ad97b3739518c7505ca3a/requirements.txt",
+      "https://github.com/topwasu/poe-world/blob/b499fb16a60793840a8ad97b3739518c7505ca3a/.gitmodules",
+      "https://github.com/topwasu/poe-world/blob/b499fb16a60793840a8ad97b3739518c7505ca3a/run_pitfall.sh"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
