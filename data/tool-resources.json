@@ -12521,5 +12521,36 @@
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/tree/b372420e1e1ff818a8d25ba50f0c71e97e62f138/raw_wild_ir_captures",
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/LICENSE"
     ]
+  },
+  {
+    "id": "probedroid",
+    "name": "ProbeDroid",
+    "url": "https://github.com/ZSShen/ProbeDroid",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Dynamic Java-method instrumentation kit for Android 5.0 that lets analysts write their own tracing and profiling tools for apps whose source code they do not have. A launcher uses ptrace to inject the native engine library and a user-built instrumentation APK into a newly started target app, and the tool subclasses the Instrument API to hook framework or app-defined Java methods and inspect or change their arguments and return values. The README's demos use sample tools that log strings built through StringBuilder and StringBuffer and the activities and services an app starts.",
+    "description_zh": "面向 Android 5.0 的 Java 方法动态插桩工具包，让分析人员在没有应用源码的情况下自行编写跟踪和性能分析工具。启动器通过 ptrace 把原生引擎库和用户构建的插桩 APK 注入新启动的目标应用；插桩工具继承 Instrument API，钩挂系统框架或应用自定义的 Java 方法，查看或修改其参数与返回值。README 的演示使用示例工具，记录经 StringBuilder 和 StringBuffer 构造的字符串，以及应用启动的 Activity 和 Service。",
+    "evidence_url": "https://github.com/ZSShen/ProbeDroid/blob/a6dc602bc59ecd9a4398a10cfe0e27e91bc2ab7c/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No releases or tags; the reviewed master commit of 2018-12-16 only updates the project introduction, and the last code change dates from January 2017. The README calls the kit still under construction, supports only Android 5.0 on x86 and ARM armeabi-v7a devices, and says native methods cannot be instrumented yet.",
+      "The wiki pages of July 2016 list JDK and JRE 7+, Python 2.6+ for the auto.py build and deploy script, the Android SDK, the NDK for the launcher and libProbeDroid.so, and Apache Ant for the ProbeDroid.jar API; tools are written as Android Studio projects with minimum API 21 that import that jar, and no Android source tree is needed. Sample tools are under tools/ and in the separate ProbeDroidTool repository.",
+      "Running it needs a rooted Android 5.0 device or an API 21 emulator image, and the wiki has the analyst set SELinux to permissive on that test device before starting the launcher with the target package, engine library, tool APK and main class; results go to logcat. Users supply the apps they analyze.",
+      "MIT (copyright 2016 ZongXian Shen), except the AOSP-derived ART runtime and common sources under Apache-2.0 and the bundled libffi under its MIT license. This review built and ran nothing, and the sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ZSShen/ProbeDroid/wiki/Prerequisite/470d91e6ec6e201143c73e6f33c83851c46705c9",
+      "https://github.com/ZSShen/ProbeDroid/wiki/Compile-Engine/755f938494534f068f64d504d5418be8c4babac8",
+      "https://github.com/ZSShen/ProbeDroid/wiki/Prepare-Device/8ecdb80097af7a52bf6e9adb106b90b0ba046047",
+      "https://github.com/ZSShen/ProbeDroid/wiki/Start-Instrument/0d2f309e320f8b92660c084e6502671940b50133",
+      "https://github.com/ZSShen/ProbeDroid/blob/a6dc602bc59ecd9a4398a10cfe0e27e91bc2ab7c/engine/src/org/probedroid/Instrument.java",
+      "https://github.com/ZSShen/ProbeDroid/blob/a6dc602bc59ecd9a4398a10cfe0e27e91bc2ab7c/launcher/jni/arch/proc_arm.cc",
+      "https://github.com/ZSShen/ProbeDroid/blob/a6dc602bc59ecd9a4398a10cfe0e27e91bc2ab7c/COPYING"
+    ]
   }
 ]
