@@ -7294,5 +7294,52 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-llm-evm-decompiler",
+    "title": "Decompiling Smart Contracts with a Large Language Model",
+    "title_zh": "利用大语言模型反编译智能合约",
+    "authors": [
+      "Isaac David",
+      "Liyi Zhou",
+      "Dawn Song",
+      "Arthur Gervais",
+      "Kaihua Qin"
+    ],
+    "year": 2025,
+    "publication_date": "2025-06-24",
+    "date_precision": "day",
+    "date_basis": "arXiv v1 submission date; no later version, journal reference or proceedings publication was found.",
+    "date_basis_zh": "arXiv v1 首次提交日期；未找到后续版本、期刊引用信息或会议论文集出版记录。",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2506.19624",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2025-06-24",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2506.19624",
+    "pdf_url": "https://arxiv.org/pdf/2506.19624v1",
+    "code_url": null,
+    "project_url": "https://evmdecompiler.com/",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Converts Ethereum Virtual Machine bytecode into Solidity in two stages. Static analysis first lifts the bytecode into three-address code with recovered control flow; a Llama-3.2-3B model fine-tuned with LoRA on 238,446 TAC-to-Solidity function pairs then writes each function. On 9,731 held-out functions from verified Ethereum contracts, the authors report average semantic similarity of 0.82 to the original source, with 78.3% of functions above 0.8. An ablation compares the untuned base model on 663 functions, and case studies decompile an unverified Dx Protocol contract and an exploited MEV bot.",
+    "description_zh": "分两个阶段将以太坊虚拟机字节码转换为 Solidity。首先通过静态分析把字节码提升为带有恢复控制流的三地址码；随后由基于 238,446 对三地址码—Solidity 函数、以 LoRA 微调的 Llama-3.2-3B 模型逐个生成函数。作者在来自已验证以太坊合约的 9,731 个留出函数上报告，与原始源码的平均语义相似度为 0.82，78.3% 的函数高于 0.8。消融实验在 663 个函数上比较未微调的基础模型，案例研究则反编译了一个未验证的 Dx Protocol 合约和一个遭攻击的 MEV 机器人合约。",
+    "scope_limitations_en": "The 0.82 figure is the paper’s semantic-similarity score, whose computation v1 does not specify. With normalized edit distance and token-frequency comparisons, it measures resemblance to verified source, not behavioral equivalence; v1 reports no compilation, execution or differential tests of the generated Solidity. Training and test functions come from verified contracts, so closed-source deployments appear only in case studies. Comparisons with traditional decompilers are stated in general terms; no head-to-head experiment against a named decompiler such as Elipmoc is reported. The authors show a DeFi staking function whose output lost its fixed-point arithmetic and time-based reward logic (similarity 0.52), and report weaker results on very long functions and on contracts with deep inheritance or nested control flow.",
+    "scope_limitations_zh": "0.82 是论文自定的语义相似度分数，v1 未说明其计算方式。该分数与归一化编辑距离、词元频率比较一起，衡量的是与已验证源码的相似程度，而非行为等价性；v1 未报告对生成的 Solidity 进行编译、执行或差分测试。训练与测试函数均来自已验证合约，闭源部署仅出现在案例研究中。与传统反编译器的比较只是笼统表述，未报告与 Elipmoc 等具名反编译器的直接对比实验。作者展示了一个 DeFi 质押函数，其输出丢失了定点运算与基于时间的奖励逻辑（相似度 0.52），并报告在超长函数以及继承层次深或控制流嵌套深的合约上效果较弱。",
+    "why_fits_en": "Adds fine-tuned LLM decompilation of EVM bytecode through an explicit three-address-code stage, complementing prompt-based EVM decompilation and the native-code LLM decompilers in this section.",
+    "why_fits_zh": "补充经由显式三地址码阶段、使用微调大语言模型反编译 EVM 字节码的方法，与本节基于提示词的 EVM 反编译及面向原生代码的大语言模型反编译器互补。",
+    "metadata_notes": "Reviewed arXiv v1, the only version, which has no comment, journal reference or DOI. Crossref and OpenAlex searches found no peer-reviewed version. The paper says its evaluation dataset and metrics code are publicly available but gives no URL, and it does not name the bytecode-to-TAC analysis it uses; no model weights, training data or code release was found. The project link is the service named in the paper. On 2026-10-20 its landing page described an LLM-based decompiler with pricing and API pages and linked no code or model; the service was not used, and no code or experiments were run.",
+    "metadata_notes_zh": "审阅了 arXiv v1，即唯一版本，其中没有注释、期刊引用信息或 DOI。在 Crossref 与 OpenAlex 中检索未找到经同行评审的版本。论文称评估数据集与指标计算代码已公开，但未给出网址，也未说明所用的字节码到三地址码分析；未找到模型权重、训练数据或代码发布。项目链接是论文所述的在线服务。2026-10-20 其首页介绍的是基于大语言模型的反编译器，并设有定价与 API 页面，未链接代码或模型；本次未使用该服务，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2506.19624v1",
+      "https://arxiv.org/pdf/2506.19624v1",
+      "https://evmdecompiler.com/"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

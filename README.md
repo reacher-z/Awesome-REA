@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 491](https://img.shields.io/badge/resources-491-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 207](https://img.shields.io/badge/cases-207-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 491](https://img.shields.io/badge/resources-491-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 207](https://img.shields.io/badge/cases-207-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 135](https://img.shields.io/badge/papers-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-491 curated resources (207 cases) · 134 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 488 because 3 of these appear only under Papers.
+491 curated resources (207 cases) · 135 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 488 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (134) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (135) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
 
 **More ways to browse**
 
@@ -638,13 +638,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**134 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**135 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (57) · [Websites](#papers-website-reconstruction) (22)
+- [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (58) · [Websites](#papers-website-reconstruction) (22)
 - [Games](#papers-game-reconstruction) (8) · [Apps](#papers-app-reconstruction) (12) · [Firmware](#papers-firmware-analysis) (13)
 - [Protocols](#papers-protocol-analysis) (13)
 
@@ -701,6 +701,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**CHISEL-ing Back Source Code with AI-enabled Iterative Recovery**](https://arxiv.org/abs/2608.27981) - CHISEL refines Ghidra pseudocode using compiler diagnostics and type-aware differential fuzzing against the original function. <sub>SURE <span>@</span> ACM CCS 2026 · Accepted · Varun Kohli et al. · [PDF](https://arxiv.org/pdf/2608.27981v1) · [Code](https://github.com/VarunKohli18/chisel) · [Full entry](https://awesomerea.org/papers/paper-chisel-iterative-recovery/)</sub>
 - [**BinMetric: A Comprehensive Binary Code Analysis Benchmark for Large Language Models**](https://www.ijcai.org/proceedings/2025/858) - BinMetric poses 1,000 questions across six binary-analysis tasks: call-site reconstruction, decompilation, signature recovery, binary code summarization, algorithm classification and assembly instruction generation. <sub>IJCAI 2025 · Conference paper · Xiuwei Shang et al. · [PDF](https://www.ijcai.org/proceedings/2025/0858.pdf) · [Full entry](https://awesomerea.org/papers/paper-binmetric/)</sub>
 - [**DecompileBench: A Comprehensive Benchmark for Evaluating Decompilers in Real-World Scenarios**](https://aclanthology.org/2025.findings-acl.1194/) - Evaluates traditional and LLM-based decompilers using functions from real programs, runtime behavioral checks, and an LLM-assisted assessment of analyst-facing code understandability. <sub>Findings of ACL 2025 · Conference paper · Zeyu Gao et al. · [PDF](https://aclanthology.org/2025.findings-acl.1194.pdf) · [Code](https://github.com/vul337/DecompileBench) · [Full entry](https://awesomerea.org/papers/paper-decompilebench/)</sub>
+- [**Decompiling Smart Contracts with a Large Language Model**](https://arxiv.org/abs/2506.19624) - Converts Ethereum Virtual Machine bytecode into Solidity in two stages. <sub>arXiv 2025 · Preprint · Isaac David et al. · [PDF](https://arxiv.org/pdf/2506.19624v1) · [Full entry](https://awesomerea.org/papers/paper-llm-evm-decompiler/)</sub>
 - [**DecLLM: LLM-Augmented Recompilable Decompilation for Enabling Programmatic Use of Decompiled Code**](https://dl.acm.org/doi/10.1145/3728958) - DecLLM repairs decompiler pseudocode that does not recompile into C that compiles and runs, so source-level tools such as CodeQL can be applied to binaries. <sub>Proceedings of the ACM on Software Engineering (ISSTA 2025) · Journal article · Wai Kin Wong et al. · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728958) · [Full entry](https://awesomerea.org/papers/paper-decllm/)</sub>
 - [**DiSCo: Towards Decompiling EVM Bytecode to Source Code using Large Language Models**](https://dl.acm.org/doi/10.1145/3729373) - DiSCo lifts Ethereum contract creation bytecode to Solidity source by prompting a frozen LLM, instead of emitting decompiler pseudocode. <sub>Proceedings of the ACM on Software Engineering (FSE 2025) · Journal article · Xing Su et al. · [PDF](https://dl.acm.org/doi/pdf/10.1145/3729373) · [Full entry](https://awesomerea.org/papers/paper-disco/)</sub>
 - [**Unleashing the Power of Generative Model in Recovering Variable Names from Stripped Binary**](https://www.ndss-symposium.org/ndss-paper/unleashing-the-power-of-generative-model-in-recovering-variable-names-from-stripped-binary/) - GenNm suggests names for placeholder variables in decompiled code of stripped binaries by fine-tuning generative code models (CodeGemma-2B by default; CodeLlama-7B and a LoRA-tuned CodeLlama-34B are also tested). <sub>NDSS 2025 · Conference paper · Xiangzhe Xu et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2025-276-paper.pdf) · [Code](https://github.com/XZ-X/gennm-ndss-ae/tree/9955139b4c8d43144852a674bf317cbfaf32ed17) · [Full entry](https://awesomerea.org/papers/paper-gennm/)</sub>
