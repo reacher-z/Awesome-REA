@@ -89,6 +89,8 @@ python3 -m unittest discover -s tests -v
 
 Pull request 会收到由基础分支可信代码执行的[规则审核（英文）](docs/automation.md)，检查目录结构、重复项、来源字段和常见隐私问题，不运行贡献者的代码。资源是否相关、说法是否属实由维护者审核；自动检查通过不代表自动批准或合并。
 
+`review` 使用 `main` 上的验证器，而不是你分支中的验证器。如果一个 PR 既新增字段、取值（如分类或关系）、出版方身份规则或其他验证规则，又加入依赖它的数据，那么在验证器修改进入 `main` 之前，`review` 会一直失败，即使运行分支代码的 `validate` 已经通过。请先提交代码修改，合并后再另开 PR 提交依赖它的数据。例如 [#212](https://github.com/reacher-z/Awesome-REA/pull/212) 先加入 WOOT 19 出版方身份规则，[#215](https://github.com/reacher-z/Awesome-REA/pull/215) 随后加入使用该规则的论文；[#228](https://github.com/reacher-z/Awesome-REA/pull/228) 引入可选的论文 `citation` 字段之后，[#234](https://github.com/reacher-z/Awesome-REA/pull/234) 才为论文填写该字段。
+
 快照版本在 `main` 上打 `vMAJOR.MINOR.PATCH` 标签，并在 GitHub Release 中附带数据快照。打标签前，维护者在发布提交中把 [CITATION.cff](CITATION.cff) 的 `version` 改为去掉 `v` 的标签号，`date-released` 改为发布当天的 UTC 日期；`validate.py` 会检查这两个字段同时出现、版本号符合语义化版本且日期不晚于当前。在正式取得 DOI 之前，不添加 DOI 或其他标识符。
 
 ### 更新 pull request
