@@ -266,7 +266,7 @@
 - [NWMonster/ApplySig](https://github.com/NWMonster/ApplySig) — 在 Ghidra 中应用 IDA FLIRT 签名 **[214 星标]**
 - [dod-cyber-crime-center/pyhidra](https://github.com/dod-cyber-crime-center/pyhidra) — Pyhidra 是 Python 库，通过 jpype 在原生 CPython 解释器中直接访问 Ghidra API。 **[212 星标]**
 - [fadden/6502bench](https://github.com/fadden/6502bench) — 用于开发 6502 代码的工作台。 **[212 星标]**
-- [sjkim1127/Reversecore\_MCP](https://github.com/sjkim1127/Reversecore_MCP) — 以安全为先的 MCP 服务器，让 AI 智能体自动执行逆向工程、恶意软件分析、取证、漏洞研究及 SAST，基于 Radare2、YARA、LIEF、Capstone 等工具。 **[211 星标]**
+- [sjkim1127/Reversecore\_MCP](https://github.com/sjkim1127/Reversecore_MCP) — 以安全为先的 MCP 服务器，让 AI 智能体自动执行逆向工程、恶意软件分析、取证、漏洞研究及 SAST，基于 Radare2、YARA、LIEF、Capstone 等工具。 **[211 星标]** · 精选：[Reversecore MCP 逆向与安全分析 MCP 服务器](https://awesomerea.org/zh/resources/reversecore-mcp/)
 - [OpenPort-Labs/Galaxy-Android](https://github.com/OpenPort-Labs/Galaxy-Android) — 将 2007 年的宇宙重力平台游戏原生移植到 Android，采用 100% ARM64，支持 OpenGL ES 3.2、AAudio、Hor+ 超宽屏和触控。 **[210 星标]**
 - [chenxvb/Unicorn-Trace](https://github.com/chenxvb/Unicorn-Trace) — 基于 Unicorn 引擎的轻量级 ARM64 动态追踪模拟工具，支持 IDA Pro、Tenet 日志生成、本地代码模拟、内存转储、寄存器状态追踪和指令级日志记录。 **[209 星标]**
 - [WPeace-HcH/SysNR-FuncFinder](https://github.com/WPeace-HcH/SysNR-FuncFinder) — 根据系统调用号重命名函数的 IDA 插件。 **[208 星标]**

@@ -11759,5 +11759,42 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "reversecore-mcp",
+    "name": "Reversecore MCP",
+    "url": "https://github.com/sjkim1127/Reversecore_MCP",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "MCP server that puts radare2 with r2ghidra, LIEF, Capstone, YARA, CAPA, Detect It Easy, binwalk, angr, Volatility3, Scapy, Sleuth Kit and other engines behind 177 typed tools for AI clients such as Claude and Cursor. The tools cover disassembly and decompilation, binary parsing, string, IOC and capability extraction, ESIL emulation and symbolic execution, YARA scanning, memory, PCAP and disk forensics, source-code pattern scanning and session reports with MITRE ATT&CK mapping, alongside 22 guided analysis prompts and per-binary MCP resources. File access is confined to a configured sample workspace, and the server runs over stdio or HTTP/SSE, typically from the project's Docker image.",
+    "description_zh": "MCP 服务器，将 radare2 及 r2ghidra、LIEF、Capstone、YARA、CAPA、Detect It Easy、binwalk、angr、Volatility3、Scapy、Sleuth Kit 等引擎封装为 177 个带类型的工具，供 Claude、Cursor 等 AI 客户端调用。工具涵盖反汇编与反编译、二进制解析、字符串、IOC 与能力提取、ESIL 模拟与符号执行、YARA 扫描、内存、PCAP 与磁盘取证、源码模式扫描，以及带 MITRE ATT&CK 映射的会话报告，另有 22 种引导式分析提示词和按二进制划分的 MCP 资源。文件访问限定在配置的样本工作目录内，服务器通过 stdio 或 HTTP/SSE 运行，通常使用项目提供的 Docker 镜像。",
+    "evidence_url": "https://github.com/sjkim1127/Reversecore_MCP/blob/c1c576709e47d4947afec6e121111d44c036813c/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v3.0.5, published 2026-09-28 on GitHub with a wheel, sdist, SBOMs and Sigstore bundles, on PyPI as reversecore-mcp and as a GHCR image. The reviewed main commit of 2026-10-17 is 147 commits ahead of that tag, while pyproject.toml still declares 3.0.5. The README's test and coverage figures (3,069 tests, 88%) are hard-coded badges and differ from the older counts in AGENTS.md.",
+      "Python 3.10–3.12, with angr installed only on Python 3.12. Local installs need radare2 on the PATH, plus Volatility3, Scapy and Sleuth Kit for forensics; the README recommends the Docker image, which bundles the engines, with x86 and Apple Silicon compose profiles. It lists Linux or macOS hosts or any Docker environment, at least 4 cores, 8 GB RAM and 20 GB storage; Redis backs the task queue and result cache, and an SQLite memory database keeps notes across sessions.",
+      "Binaries, memory images, PCAPs and disk images come from the analyst and are mounted into the workspace, where path validation confines tool access. Optional container sandboxing for dynamic-analysis tools is disabled by default, and HTTP mode accepts only loopback clients unless MCP_API_KEY is set. Some tools and prompts target exploit and PoC development; this entry covers analysis use only.",
+      "CI runs linting, type checks, Bandit, pip-audit and CodeQL, unit tests on Python 3.10–3.12 with an 85% coverage gate, security-boundary, integration and MCP client end-to-end suites, and a wheel build-and-install check; ClusterFuzzLite and nightly fuzzing run separately. Test fixtures include small synthetic vulnerable C targets with seeds, proof-of-concept inputs and ASan logs, and scratch/binaries holds only a hello.c source. These checks cover the server code, not the accuracy of model-driven conclusions, and none were run here.",
+      "MIT; the wrapped engines and the packages in the Docker image keep their own licenses. ORIGINAL_REQUEST.md records a 2026-08-22 brief asking an orchestrating agent to dispatch subagents for transport hardening, prompt expansion and output optimization, so parts of the code were developed with AI agents. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sjkim1127/Reversecore_MCP/blob/c1c576709e47d4947afec6e121111d44c036813c/pyproject.toml",
+      "https://github.com/sjkim1127/Reversecore_MCP/blob/c1c576709e47d4947afec6e121111d44c036813c/SECURITY.md",
+      "https://github.com/sjkim1127/Reversecore_MCP/blob/c1c576709e47d4947afec6e121111d44c036813c/AGENTS.md",
+      "https://github.com/sjkim1127/Reversecore_MCP/blob/c1c576709e47d4947afec6e121111d44c036813c/ORIGINAL_REQUEST.md",
+      "https://github.com/sjkim1127/Reversecore_MCP/blob/c1c576709e47d4947afec6e121111d44c036813c/Dockerfile",
+      "https://github.com/sjkim1127/Reversecore_MCP/blob/c1c576709e47d4947afec6e121111d44c036813c/docker-compose.yml",
+      "https://github.com/sjkim1127/Reversecore_MCP/blob/c1c576709e47d4947afec6e121111d44c036813c/server.json",
+      "https://github.com/sjkim1127/Reversecore_MCP/blob/c1c576709e47d4947afec6e121111d44c036813c/.github/workflows/main.yml",
+      "https://github.com/sjkim1127/Reversecore_MCP/tree/c1c576709e47d4947afec6e121111d44c036813c/tests/fixtures/benchmarks/targets",
+      "https://github.com/sjkim1127/Reversecore_MCP/blob/c1c576709e47d4947afec6e121111d44c036813c/LICENSE",
+      "https://github.com/sjkim1127/Reversecore_MCP/releases/tag/v3.0.5",
+      "https://pypi.org/project/reversecore-mcp/3.0.5/"
+    ]
   }
 ]
