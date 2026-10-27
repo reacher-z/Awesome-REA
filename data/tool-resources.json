@@ -12487,5 +12487,43 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "usbpcap",
+    "name": "USBPcap",
+    "url": "https://github.com/desowin/usbpcap",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Tomasz Moń's open-source USB packet capture for Windows. A filter driver installed in the Windows USB device stack records the USB Request Blocks (URBs) exchanged with devices on each root hub, and USBPcapCMD writes them to pcap files in the LINKTYPE_USBPCAP format, which Wireshark dissects. Since 1.2.0.0 the project has recommended running USBPcapCMD as a Wireshark extcap: each root hub then appears as a capture interface, with options to capture selected, all or newly connected devices and to add the descriptors of devices that are already attached.",
+    "description_zh": "Tomasz Moń 开发的开源 Windows USB 抓包工具。安装在 Windows USB 设备栈中的过滤驱动会记录各根集线器上设备收发的 USB 请求块（URB），再由 USBPcapCMD 写成 LINKTYPE_USBPCAP 格式的 pcap 文件，供 Wireshark 解析。从 1.2.0.0 版起，项目推荐把 USBPcapCMD 作为 Wireshark extcap 使用：每个根集线器会显示为一个抓包接口，可选择抓取指定设备、全部设备或新接入的设备，还能把已连接设备的描述符补进抓包数据。",
+    "evidence_url": "https://github.com/desowin/usbpcap/blob/477b6edcbd7e99a47f77afc0c4168a9ebee603bb/README",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 1.5.4.0, published 2020-05-22, with a digitally signed USBPcapSetup installer for x86 and x64 Windows 7, 8 and 10 and a source archive that includes debug symbols. The reviewed master commit (2025-01-25) adds two unreleased driver fixes on top of it, one marked critical, for kernel buffer reallocation and the order of read completions. The installer refuses Windows versions older than 7 (1.5.3.0 was the last release for XP and Vista) and Windows To Go, asks Windows 7 users to install a SHA-2 update (KB3033929 or KB4474419) first, and requires a reboot after installation.",
+      "Capture runs on the analyst's own Windows machine. Either run USBPcapCMD.exe to choose a root-hub filter instance and an output file, or copy it into Wireshark's global or personal extcap folder; USBPcap support has been in Wireshark since 1.10.0rc1. The README notes that there is no capture engine DLL. The project's tour recommends capturing newly connected devices, or reconnecting a device after capture starts, so that its descriptors appear in the capture for Wireshark's dissectors.",
+      "Per the README, source builds use Windows Driver Kit 7.1.0 for the Windows 7 driver, or Visual Studio 2013 with WDK 8.1 Update for the Windows 8 build. Release drivers are attestation-signed through Microsoft's Hardware Dev Center with the author's own, non-public certificate. Self-built drivers are signed with the committed test certificate (certificates/USBPcapTestCert.*) and, as the README explains, load on 64-bit Windows only with test signing enabled. The only other committed binaries are the NSIS SysRestore.dll installer plugin and two public CA cross-certificates.",
+      "The project's capture-limitations page says USBPcap records URBs passed between the stack's functional and physical device objects. It therefore does not show bus states, packet IDs, split transactions, wire timing or transfer speed, nor the enumeration that happens before a device has its address; the page says those appear only in a hardware USB sniffer. Interpreting the captured payloads remains the analyst's own protocol work in Wireshark or another dissector.",
+      "The README and SPDX headers license the driver under GPL-2.0 and USBPcapCMD under BSD-2-Clause. GitHub detects no license because there is no license file at the repository root; the texts are in nsis/ and wix/. No driver was built or installed, and no USB traffic was captured."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/desowin/usbpcap/blob/477b6edcbd7e99a47f77afc0c4168a9ebee603bb/USBPcapCMD/cmd.c#L1118-L1182",
+      "https://github.com/desowin/usbpcap/blob/477b6edcbd7e99a47f77afc0c4168a9ebee603bb/USBPcapDriver/USBPcap.inx",
+      "https://github.com/desowin/usbpcap/blob/477b6edcbd7e99a47f77afc0c4168a9ebee603bb/USBPcapDriver/USBPcapMain.c#L1-L5",
+      "https://github.com/desowin/usbpcap/blob/477b6edcbd7e99a47f77afc0c4168a9ebee603bb/nsis/USBPcap.nsi#L84-L125",
+      "https://github.com/desowin/usbpcap/blob/477b6edcbd7e99a47f77afc0c4168a9ebee603bb/config.bat",
+      "https://github.com/desowin/usbpcap/tree/477b6edcbd7e99a47f77afc0c4168a9ebee603bb/certificates",
+      "https://github.com/desowin/usbpcap/blob/477b6edcbd7e99a47f77afc0c4168a9ebee603bb/nsis/gpl-2.0.txt",
+      "https://github.com/desowin/usbpcap/blob/477b6edcbd7e99a47f77afc0c4168a9ebee603bb/nsis/bsd-2clause.txt",
+      "https://github.com/desowin/usbpcap/releases/tag/1.5.4.0",
+      "https://desowin.org/usbpcap/",
+      "https://desowin.org/usbpcap/tour.html",
+      "https://desowin.org/usbpcap/capture_limitations.html",
+      "https://desowin.org/usbpcap/captureformat.html"
+    ]
   }
 ]
