@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 492](https://img.shields.io/badge/resources-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 208](https://img.shields.io/badge/cases-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 493](https://img.shields.io/badge/resources-493-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 208](https://img.shields.io/badge/cases-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,11 +21,11 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-492 curated resources (208 cases) · 134 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 489 because 3 of these appear only under Papers.
+493 curated resources (208 cases) · 134 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 490 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
-- [Website](#website) (29) · [Game](#game) (193) · [App](#app) (78)
+- [Website](#website) (29) · [Game](#game) (193) · [App](#app) (79)
 - [Native Binary](#native-binary) (64) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (19)
 
 **Research and workflows**
@@ -391,6 +391,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Android Security Toolkit**](https://github.com/abhirampatel/android-security-toolkit) - Local Python APK triage tool that drives apktool and strings, checks manifest settings and source/native-library strings, and produces TXT/JSON findings for manual review. <sub>Tool · Android · [Full entry](https://awesomerea.org/resources/android-security-toolkit/)</sub>
 - [**ilspy-cli: targeted .NET decompilation for agents**](https://github.com/akiselev/ilspy-cli) - Rust CLI that hosts an ILSpy C# bridge in-process for assembly, type and named-method decompilation, source search and structured JSON output. <sub>Tool · .NET · [Full entry](https://awesomerea.org/resources/akiselev-ilspy-cli/)</sub>
 - [**React-Decode**](https://github.com/alexandra-seredkina/React-Decode) - Static-analysis CLI for compiled React JavaScript that produces readable bundle output and inferred API-request, route and application-constant reports. <sub>Tool · Also: Website · [Full entry](https://awesomerea.org/resources/react-decode/)</sub>
+- [**arkdecompiler**](https://github.com/jd-opensource/arkdecompiler) - Decompiler for HarmonyOS NEXT apps, published under the jd-opensource GitHub organization, that turns Panda binary files (.abc Ark bytecode) back into ArkTS source. <sub>Tool · Android · [Full entry](https://awesomerea.org/resources/arkdecompiler/)</sub>
 
 <a id="native-binary"></a>
 ### Native Binary

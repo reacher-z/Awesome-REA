@@ -4310,5 +4310,15 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "arkdecompiler": {
+    "name": "arkdecompiler 鸿蒙 NEXT 反编译器",
+    "requirements": [
+      "审阅对象为 2026-07-23 的 master 提交。README 标注已支持全部指令并完成基础图形界面，而充分覆盖官方编译器和 test262 中的边界情况仍在进行中。v0.1.0 版（2026-04-23）附带 Linux x86、macOS arm64 和 Windows x86 的 Electron 与 Tauri 图形界面构建；反编译仅支持 Linux，反汇编三个平台均可，使用图形界面前需先配置命令行工具的路径。",
+      "xabc 的构建在 Ubuntu 22.04 上测试，需置于 OpenHarmony 方舟编译器独立构建环境中：scripts/prepare.sh 会安装 repo 工具、从 Gitee 同步 ark-standalone-build 清单、下载其预编译工具，并切换到 OpenHarmony v6.0.0.1-Release；之后须将 patches/ 中的补丁应用到 arkcompiler 的 runtime_core、ets_frontend 以及 third_party/protobuf，再用 gn 和 ninja 构建 xabc。Dockerfile 则使用 Ubuntu 20.04 和 OpenHarmony 5.1.0 版本。",
+      "xabc 读取一个 .abc 文件，输出 ArkTS 代码和 AST 转储，默认分别为 demo.abc 和 arkdemo.ts。文档中的流程是用 OpenHarmony 的 es2abc 编译用户自己的 demo.ts，再对结果反编译；其他字节码须来自用户自己的应用包，仓库不附带任何应用或 .abc 样例。",
+      "tests/ 收录 18 个 TypeScript 样例，涵盖类、循环、生成器、异步函数和模块等特性。autotests/scantstests.py 会编译 test262 和 OpenHarmony TypeScript 子模块中的用例，记录反编译是否正常退出、失败、崩溃或超时，并用黑名单跳过部分用例。仓库未报告通过率或语义等价结果，也没有 CI 工作流；本次审阅未构建或运行任何内容。",
+      "采用 Apache-2.0 许可；其构建所依赖的 OpenHarmony 组件保留各自许可证。所审来源未确立与 REA 的关联。"
+    ]
   }
 }

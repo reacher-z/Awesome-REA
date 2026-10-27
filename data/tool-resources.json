@@ -11759,5 +11759,40 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "arkdecompiler",
+    "name": "arkdecompiler",
+    "url": "https://github.com/jd-opensource/arkdecompiler",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Decompiler for HarmonyOS NEXT apps, published under the jd-opensource GitHub organization, that turns Panda binary files (.abc Ark bytecode) back into ArkTS source. Its xabc program parses the bytecode, lifts it into the Ark compiler's Panda IR for analysis, rebuilds an ArkTS syntax tree with loop, class, lexical-environment and module-variable reconstruction, and prints that tree as ArkTS code. A cross-platform GUI, built with either Electron or Tauri, adds a file explorer, function and symbol lists, cross-references, search and a hex view; the README links Black Hat Arsenal presentations from 2025 and 2026.",
+    "description_zh": "面向 HarmonyOS NEXT（纯血鸿蒙）应用的反编译器，发布于 jd-opensource GitHub 组织下，可将 Panda 二进制文件（.abc 方舟字节码）还原为 ArkTS 源码。其 xabc 程序解析字节码，将其提升为方舟编译器的 Panda IR 以便分析，再通过循环、类、词法环境和模块变量的重建生成 ArkTS 语法树，最后输出为 ArkTS 代码。跨平台图形界面可基于 Electron 或 Tauri 构建，提供文件浏览、函数与符号列表、交叉引用、搜索和十六进制视图；README 链接了 2025 年和 2026 年的 Black Hat Arsenal 展示。",
+    "evidence_url": "https://github.com/jd-opensource/arkdecompiler/blob/8afb36903127b56edee362ce67aacd823610d3e4/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-07-23 master commit. The README marks all instructions as supported and a basic GUI as done, while covering enough corner cases from the official compiler and test262 is still in progress. Release v0.1.0 (2026-04-23) attaches Electron and Tauri GUI builds for Linux x86, macOS arm64 and Windows x86; decompilation runs only on Linux and disassembly on all three, and the GUI needs the paths of the command-line tools configured first.",
+      "Building xabc is tested on Ubuntu 22.04 inside an OpenHarmony arkcompiler standalone build: scripts/prepare.sh installs the repo tool, syncs the ark-standalone-build manifest from Gitee, downloads its prebuilts and checks out OpenHarmony v6.0.0.1-Release, and the files in patches/ must be applied to arkcompiler runtime_core, ets_frontend and third_party/protobuf before gn and ninja build xabc. The Dockerfile instead uses Ubuntu 20.04 and the OpenHarmony 5.1.0 release.",
+      "xabc reads one .abc file and writes ArkTS plus an AST dump, defaulting to demo.abc and arkdemo.ts. The documented workflow compiles the user's own demo.ts with OpenHarmony's es2abc and decompiles the result; any other bytecode must come from the user's own app packages, and the repository ships no apps or .abc samples.",
+      "tests/ holds 18 TypeScript samples for features such as classes, loops, generators, async functions and modules. autotests/scantstests.py compiles cases from the test262 and OpenHarmony TypeScript submodules and records whether decompilation exits cleanly, fails, crashes or times out, with a blacklist of skipped cases. No pass rates or semantic-equivalence results are reported, the repository has no CI workflow, and nothing was built or run in this review.",
+      "Apache-2.0; the OpenHarmony components it builds against keep their own licenses. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jd-opensource/arkdecompiler/blob/8afb36903127b56edee362ce67aacd823610d3e4/xabc.cpp",
+      "https://github.com/jd-opensource/arkdecompiler/blob/8afb36903127b56edee362ce67aacd823610d3e4/scripts/prepare.sh",
+      "https://github.com/jd-opensource/arkdecompiler/tree/8afb36903127b56edee362ce67aacd823610d3e4/patches",
+      "https://github.com/jd-opensource/arkdecompiler/blob/8afb36903127b56edee362ce67aacd823610d3e4/docker/Dockerfile",
+      "https://github.com/jd-opensource/arkdecompiler/blob/8afb36903127b56edee362ce67aacd823610d3e4/build.sh",
+      "https://github.com/jd-opensource/arkdecompiler/tree/8afb36903127b56edee362ce67aacd823610d3e4/tests",
+      "https://github.com/jd-opensource/arkdecompiler/blob/8afb36903127b56edee362ce67aacd823610d3e4/autotests/scantstests.py",
+      "https://github.com/jd-opensource/arkdecompiler/tree/8afb36903127b56edee362ce67aacd823610d3e4/ui",
+      "https://github.com/jd-opensource/arkdecompiler/blob/8afb36903127b56edee362ce67aacd823610d3e4/LICENSE",
+      "https://github.com/jd-opensource/arkdecompiler/releases/tag/v0.1.0"
+    ]
   }
 ]

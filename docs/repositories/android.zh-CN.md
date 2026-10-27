@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/android/) · [English](android.md)
 
-**479 个仓库** · 2026-10-20 UTC
+**480 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -122,6 +122,7 @@
 - [ADWMC/helm-d](https://github.com/ADWMC/helm-d) — DeepSeek Harness 破甲一体化安全分析插件，聚合 Android、Web、Native、Protocol、Malware 和 AI-Security 全领域功能（9 个 bundle 与 1 个 preset）。 **[217 星标]**
 - [Ablation-Tool/ablation](https://github.com/Ablation-Tool/ablation) — Ablation 是一个自主逆向工程系统。 **[213 星标]**
 - [MlgmXyysd/Il2CppMemoryDumper](https://github.com/MlgmXyysd/Il2CppMemoryDumper) — 从进程内存中转储未受保护的 Il2Cpp ELF 可执行文件及元数据 **[207 星标]**
+- [jd-opensource/arkdecompiler](https://github.com/jd-opensource/arkdecompiler) — HarmonyOS NEXT（纯血鸿蒙）反编译器 **[203 星标]** · 精选：[arkdecompiler 鸿蒙 NEXT 反编译器](https://awesomerea.org/zh/resources/arkdecompiler/)
 - [RevEngiSquad/revengi-app](https://github.com/RevEngiSquad/revengi-app) — 一体化逆向工程工具集：Smali 语法、DexRepair、Flutter 分析等多种功能…… **[202 星标]**
 - [user1342/Obfu-DE-Scate](https://github.com/user1342/Obfu-DE-Scate) — Obfu\[DE\]scate 是 Android APK 去混淆工具，通过模糊比对逻辑识别函数间的相似性，即使函数在混淆时已被重命名也可识别。它比较两个版本的 APK，并输出映射文本文件和交互式 HTML 文件！ **[200 星标]**
 - [hackcatml/frida-ue4dump](https://github.com/hackcatml/frida-ue4dump) — 用于 UE4 转储的 Frida 脚本 **[195 星标]**

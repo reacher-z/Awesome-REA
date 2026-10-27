@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**670 repositories** · 2026-10-20 UTC
+**669 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -183,7 +183,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [resilar/crchack](https://github.com/resilar/crchack) — Reversing CRC for fun and profit **[212 stars]**
 - [xuemian168/qqpet\_automation](https://github.com/xuemian168/qqpet_automation) — A macOS port of QQ Pet (Retro): reverse engineering, telemetry removal, Ruffle Flash, and an automated pet-care CLI. **[211 stars]**
 - [landaire/unfuck](https://github.com/landaire/unfuck) — Python 2.7 bytecode d̶e̶o̶b̶f̶u̶s̶c̶a̶t̶o̶r unfucker **[204 stars]**
-- [jd-opensource/arkdecompiler](https://github.com/jd-opensource/arkdecompiler) — HarmonyOS NEXT decompiler **[203 stars]**
 - [tangosdev/sm64ds-decomp](https://github.com/tangosdev/sm64ds-decomp) — From-scratch, byte-matching decompilation of Super Mario 64 DS into C/C++, with a live progress atlas and matching tools. **[202 stars]** · Curated: [Super Mario 64 DS: matching decompilation with relocation checks](https://awesomerea.org/resources/sm64ds-decomp-case/)
 - [mrphrazer/r2con2021\_deobfuscation](https://github.com/mrphrazer/r2con2021_deobfuscation) — Workshop Material on VM-based Deobfuscation **[201 stars]**
 - [OpenGMK/GM8Decompiler](https://github.com/OpenGMK/GM8Decompiler) — A decompiler for GameMaker 8.x executables **[201 stars]**
