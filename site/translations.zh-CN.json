@@ -4538,5 +4538,14 @@
       "Python 单元测试覆盖转换函数和 Flipper 文件解析；项目没有 CI。各种效果由作者和贡献者在自己的手环上报告，本次来源核查未运行任何代码或硬件。",
       "采用 MIT 许可（LICENSE）。PixMob 的硬件、固件和商标不在该许可范围内，X 光图片注明来自 Samy Kamkar。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "probedroid": {
+    "name": "ProbeDroid Android 动态插桩工具包",
+    "requirements": [
+      "没有发布版或标签；所审阅的 master 分支 2018-12-16 提交只更新了项目简介，最后一次代码改动在 2017 年 1 月。README 称该工具包仍在开发中，只支持 x86 和 ARM armeabi-v7a 设备上的 Android 5.0，且暂不能对原生方法插桩。",
+      "2016 年 7 月的 wiki 页面列出的依赖为 JDK 与 JRE 7+、用于运行 auto.py 构建和部署脚本的 Python 2.6+、Android SDK、用于构建启动器和 libProbeDroid.so 的 NDK，以及用于构建 ProbeDroid.jar API 的 Apache Ant；插桩工具以最低 API 21 的 Android Studio 项目编写并导入该 jar，无需 Android 源码树。示例工具位于 tools/ 目录及独立的 ProbeDroidTool 仓库。",
+      "运行需要已 root 的 Android 5.0 设备或 API 21 模拟器镜像；wiki 要求分析者先在该测试设备上把 SELinux 设为宽容模式，再用目标包名、引擎库、插桩 APK 和主类启动启动器，结果输出到 logcat。待分析的应用由使用者自备。",
+      "采用 MIT 许可证（版权 2016 ZongXian Shen），但源自 AOSP 的 ART 运行时及 common 目录部分源码采用 Apache-2.0，附带的 libffi 采用其自身的 MIT 许可证。本次审阅未构建或运行任何内容；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
