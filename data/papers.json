@@ -7620,5 +7620,68 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-conware",
+    "title": "Conware: Automated Modeling of Hardware Peripherals",
+    "title_zh": "Conware：硬件外设的自动化建模",
+    "authors": [
+      "Chad Spensky",
+      "Aravind Machiry",
+      "Nilo Redini",
+      "Colin Unger",
+      "Graham Foster",
+      "Evan Blasband",
+      "Hamed Okhravi",
+      "Christopher Kruegel",
+      "Giovanni Vigna"
+    ],
+    "year": 2021,
+    "publication_date": "2021-05-24",
+    "date_precision": "day",
+    "date_basis": "ACM's Crossref deposit records published/print publication on 2021-05-24 and online publication on 2021-06-04. This entry uses the print date, not the June 7–11 conference dates.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将 published／纸质出版日期记为 2021-05-24，在线出版日期为 2021-06-04。本条目采用纸质出版日期，而非 6 月 7–11 日的会议日期。",
+    "venue": "ACM ASIA CCS 2021",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3433210.3437532",
+    "citation": {
+      "container_title": "Proceedings of the 2021 ACM Asia Conference on Computer and Communications Security",
+      "publisher": "ACM",
+      "pages": "95-109",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3433210.3437532"
+      ]
+    },
+    "url": "https://dl.acm.org/doi/10.1145/3433210.3437532",
+    "pdf_url": "https://sites.cs.ucsb.edu/~chris/research/doc/asiaccs21_conware.pdf",
+    "code_url": "https://github.com/ucsb-seclab/conware/tree/05dfdf5552d5c05dfca32137487fc8b3aadcd256",
+    "project_url": null,
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Conware builds reusable software models of hardware peripherals from recordings of real firmware–peripheral interactions. An LLVM pass instruments Arduino source code to log MMIO reads, writes and interrupts on the real board, with existing hardware-in-the-loop recording as an alternative. Each recording becomes a per-peripheral graph whose read values are summarized as simple sub-models such as patterns; graphs are merged and optimized into automata that can be combined across peripherals and run in an Avatar²-based emulator. The authors model ten peripherals on an Arduino Due (SAM3X Cortex-M3) and emulate an uninstrumented smart-door-lock firmware from models trained only on vendor example code.",
+    "description_zh": "Conware 根据真实固件与外设交互的记录，构建可复用的硬件外设软件模型。一个 LLVM 编译遍对 Arduino 源码插桩，在真实开发板上记录 MMIO 读写和中断；也可改用已有的硬件在环记录方法。每份记录被转换为按外设划分的图，读取值以模式等简单子模型概括；这些图再经合并与优化形成自动机，可跨外设组合，并在基于 Avatar² 的仿真器中运行。作者在 Arduino Due（SAM3X Cortex-M3）上为十种外设建模，并仅用基于厂商示例代码训练的模型，仿真了一个未经插桩的智能门锁固件。",
+    "scope_limitations_en": "Training needs the real board with the peripherals attached, plus source code for the LLVM-based recorder. The evaluation covers bare-metal Arduino Due firmware with ten hobbyist peripherals, and port-mapped I/O systems are out of scope. Models encode only behaviour observed during recording, assume that state transitions follow MMIO writes, and attach interrupts to transitions rather than to the writes that trigger them, so read-triggered transitions and exact interrupt timing are not supported. The unseen-firmware result is a single door-lock program built from six peripheral models. Its UART output matched real hardware, and it executed 362 of the 609 basic blocks (59%) and 58 of the 68 functions (85%) reachable from loop(); the authors measure survivability of execution rather than full peripheral fidelity. Record-and-replay comparisons ran each sample once for 10 minutes, since replays are deterministic.",
+    "scope_limitations_zh": "训练需要接好外设的真实开发板，以及供基于 LLVM 的记录器使用的源代码。评测覆盖带有十种爱好者常用外设的裸机 Arduino Due 固件，端口映射 I/O 系统不在范围内。模型只编码记录期间观察到的行为，假定状态迁移由 MMIO 写操作驱动，并把中断附在状态迁移上而非触发它的写操作上，因此不支持由读操作触发的迁移和精确的中断时序。针对未见固件的结果只有一个由六个外设模型组合而成的门锁程序：其 UART 输出与真实硬件一致，执行了从 loop() 可达的 609 个基本块中的 362 个（59%）和 68 个函数中的 58 个（85%）；作者衡量的是执行能否持续，而非外设的完整保真度。由于重放是确定性的，记录与重放对比中每个样本只运行一次，每次 10 分钟。",
+    "why_fits_en": "Adds record-and-model reconstruction of peripherals from real hardware interactions, complementing the catalog's HAL-replacement, firmware-guided and specification-guided rehosting approaches.",
+    "why_fits_zh": "补充依据真实硬件交互记录并重建外设模型的方法，与本目录中替换硬件抽象层、以固件为依据和以规范为依据的重托管方法互补。",
+    "metadata_notes": "Crossref records the nine-author order, pages 95–109, print publication on 2021-05-24 and online publication on 2021-06-04. The reviewed 15-page copy on Christopher Kruegel's UCSB site carries the ACM reference format and DOI but is not asserted to be identical to the ACM PDF. The paper cites ucsb-seclab/conware for its code; the snapshot at 05dfdf5 (2020-07-19, committed as the submitted version of the code) declares no license, so no reuse rights are implied. Its README pipeline instruments Arduino code with LLVM, runs it on a real Arduino with the peripheral attached, dumps logs over UART, and then generates, optimizes and emulates models with Avatar² and OpenOCD; the install script builds LLVM. Two submodules, pretender and avatar2-pretender, use SSH URLs on the UCSB lab's own Git server, and the pinned requirements include Python 2 backport packages such as enum34. No hardware, firmware or code was used.",
+    "metadata_notes_zh": "Crossref 记录了九位作者的顺序、页码 95–109、2021-05-24 的纸质出版日期和 2021-06-04 的在线出版日期。所审阅的 15 页副本托管在 Christopher Kruegel 的 UCSB 网站上，带有 ACM 引用格式和 DOI，但本条目不认定其与 ACM PDF 完全相同。论文引用 ucsb-seclab/conware 作为代码；快照 05dfdf5（2020-07-19，提交说明为代码的投稿版本）未声明许可证，因此不默认任何复用权利。其 README 流程是用 LLVM 对 Arduino 代码插桩，在接好外设的真实 Arduino 上运行，通过 UART 导出日志，再借助 Avatar² 和 OpenOCD 生成、优化并仿真模型；安装脚本会编译 LLVM。pretender 与 avatar2-pretender 两个子模块使用指向 UCSB 实验室自有 Git 服务器的 SSH 地址，固定的依赖中还包含 enum34 等 Python 2 向后移植包。本次未使用任何硬件、固件或代码。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3433210.3437532",
+      "https://api.crossref.org/works/10.1145/3433210.3437532",
+      "https://sites.cs.ucsb.edu/~chris/research/doc/asiaccs21_conware.pdf",
+      "https://seclab.cs.ucsb.edu/publications/2021spenskyconware/",
+      "https://github.com/ucsb-seclab/conware/blob/05dfdf5552d5c05dfca32137487fc8b3aadcd256/README.md",
+      "https://github.com/ucsb-seclab/conware/blob/05dfdf5552d5c05dfca32137487fc8b3aadcd256/.gitmodules",
+      "https://github.com/ucsb-seclab/conware/blob/05dfdf5552d5c05dfca32137487fc8b3aadcd256/requirements.txt"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
