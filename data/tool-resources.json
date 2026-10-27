@@ -12487,5 +12487,34 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "katalina",
+    "name": "Katalina",
+    "url": "https://github.com/huuck/Katalina",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Python emulator for Dalvik bytecode that its README likens to Unicorn: it parses a DEX file and executes methods one instruction at a time, substituting Python mocks for common Java and Android APIs such as String, StringBuilder, Base64, ArrayList, AES Cipher and part of reflection. Run over Android entry points, methods matching a name or one method with given arguments, it logs the strings that the code builds or decrypts, optionally as JSON, which helps recover obfuscated strings in apps and malware.",
+    "description_zh": "用 Python 编写的 Dalvik 字节码模拟器，README 将其比作面向 Dalvik 的 Unicorn：它解析 DEX 文件并逐条指令执行方法，用 Python 模拟实现替代 String、StringBuilder、Base64、ArrayList、AES Cipher 及部分反射等常见 Java 与 Android API。它可针对 Android 入口点、名称匹配的方法或带指定参数的单个方法运行，记录代码构造或解密出的字符串，并可输出为 JSON，有助于还原应用和恶意软件中被混淆的字符串。",
+    "evidence_url": "https://github.com/huuck/Katalina/blob/f8e27b9f9d2316579a22fd1e330c7b385e6de995/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "There are no releases or tags. Development ran from May to December 2023; the reviewed main commit f8e27b9 of 2026-10-01 merges a contributed fix that makes the String.valueOf mock follow the called overload's descriptor.",
+      "Requires Python 3.10+ with the pinned requirements.txt packages, including kaitaistruct 0.10 and pycryptodome 3.18.0. main.py takes -xe for Android entry points, -xm for methods matching a name, -x for one fully qualified method with arguments, -dl to skip methods whose names contain listed words and -j for JSON output. Entry-point and name-match runs give each method a SIGALRM time limit, so README says Windows support may be broken and recommends WSL.",
+      "Input is one classes.dex from an APK the analyst already has. README lists most instructions, same-class and static calls and String and Base64 APIs as working, iterator and array APIs and cross-class instance calls as partial, and MultiDex and I/O as broken. Framework behaviour without a mock is not reproduced, and the AES mock only tries ECB and then CBC with a zero IV, so recovered strings must be checked against the code. The repository has no tests or CI.",
+      "MIT. The first commit included DEX samples, many named after Android malware families, that were removed a month later; the reviewed tree holds only the Python sources, and no samples are linked here. No REA connection is stated, and no DEX file was run in this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/huuck/Katalina/blob/f8e27b9f9d2316579a22fd1e330c7b385e6de995/main.py",
+      "https://github.com/huuck/Katalina/blob/f8e27b9f9d2316579a22fd1e330c7b385e6de995/mocks.py",
+      "https://github.com/huuck/Katalina/blob/f8e27b9f9d2316579a22fd1e330c7b385e6de995/requirements.txt",
+      "https://github.com/huuck/Katalina/blob/f8e27b9f9d2316579a22fd1e330c7b385e6de995/LICENSE",
+      "https://github.com/huuck/Katalina/pull/6"
+    ]
   }
 ]
