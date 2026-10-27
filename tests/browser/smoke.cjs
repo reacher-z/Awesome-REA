@@ -351,6 +351,29 @@ async function paperDirectory(page, route, viewport, javascript = true) {
     await press(page, '#paper-more-filters > summary');
   }
   await noOverflow(page, label + ' compact list');
+  if (viewport.name === 'desktop') await midWidthPaperRows(page, label, viewport);
+}
+
+// Between 701 and 1100 px each row keeps its links and the Scope & sources toggle on one line, and an opened panel spans the row.
+async function midWidthPaperRows(page, label, viewport) {
+  await page.setViewport({width: 1024, height: viewport.height});
+  const rows = await page.$$eval('.paper-card:not([hidden])', cards => cards.map(card => {
+    const links = card.querySelector('.paper-links').getBoundingClientRect();
+    const toggle = card.querySelector('.paper-details > summary').getBoundingClientRect();
+    const centre = (toggle.top + toggle.bottom) / 2;
+    return centre > links.top && centre < links.bottom;
+  }));
+  assert(rows.length > 0 && rows.every(Boolean), `${label} at 1024px: ${rows.filter(row => !row).length} rows put the links and the Scope & sources toggle on separate lines`);
+  const panel = await page.$eval('.paper-card', card => {
+    const details = card.querySelector('.paper-details');
+    details.open = true;
+    const widths = [details.getBoundingClientRect().width, card.getBoundingClientRect().width];
+    details.open = false;
+    return widths;
+  });
+  assert(panel[0] >= panel[1] - 8, `${label} at 1024px: an opened panel spans the row (${panel[0]} of ${panel[1]}px)`);
+  await noOverflow(page, label + ' at 1024px');
+  await page.setViewport({width: viewport.width, height: viewport.height});
 }
 
 async function staticPage(page, route, viewport) {

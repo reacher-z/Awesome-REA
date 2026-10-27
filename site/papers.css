@@ -129,6 +129,20 @@ html[data-paper-layout="compact"] .paper-details .paper-scope{margin:0 0 14px}
   html[data-paper-layout="compact"] .paper-card>.paper-details{grid-area:details}
   html[data-paper-layout="compact"] .paper-card>.paper-details[open]{grid-area:auto;grid-column:1/-1}
 }
+/* Between 701 and 1100 px the links share one line with the Scope & sources toggle, pushed right, under a summary
+   as wide as on desktop; from 901 px that line moves up beside the title. An opened panel still spans the row. */
+@media(min-width:701px) and (max-width:1100px){
+  html[data-paper-layout="compact"] .paper-card{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"header header" "description description" "links details";column-gap:16px;align-items:center}
+  html[data-paper-layout="compact"] .paper-card>header{grid-area:header}
+  html[data-paper-layout="compact"] .paper-card>.paper-description{grid-area:description;max-width:90ch}
+  html[data-paper-layout="compact"] .paper-card>.paper-links{grid-area:links}
+  html[data-paper-layout="compact"] .paper-card>.paper-details{grid-area:details}
+  html[data-paper-layout="compact"] .paper-card>.paper-details[open]{grid-area:auto;grid-column:1/-1}
+}
+@media(min-width:901px) and (max-width:1100px){
+  html[data-paper-layout="compact"] .paper-card{grid-template-columns:minmax(0,1fr) auto auto;grid-template-areas:"header links details" "description description description";align-items:start}
+  html[data-paper-layout="compact"] .paper-card>.paper-links{margin-top:0}
+}
 
 /* Secondary actions read as links, leaving titles and research summaries dominant. */
 html[data-paper-layout="compact"] .paper-links{gap:0 16px}
