@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 512](https://img.shields.io/badge/resources-512-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 217](https://img.shields.io/badge/cases-217-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 138](https://img.shields.io/badge/papers-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 513](https://img.shields.io/badge/resources-513-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 218](https://img.shields.io/badge/cases-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 138](https://img.shields.io/badge/papers-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,12 +21,12 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-512 curated resources (217 cases) · 138 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 509 because 3 of these appear only under Papers.
+513 curated resources (218 cases) · 138 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 510 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
 - [Website](#website) (29) · [Game](#game) (197) · [App](#app) (83)
-- [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (24) · [Protocol](#protocol) (21)
+- [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (24) · [Protocol](#protocol) (22)
 
 **Research and workflows**
 
@@ -34,7 +34,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (217) · [Related Collections](#related-collections) (9) · [Full Repository Index](#full-repository-index) (3,309)
+- [All cases](https://awesomerea.org/cases/) (218) · [Related Collections](#related-collections) (9) · [Full Repository Index](#full-repository-index) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -526,6 +526,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**hw-harness: scanner USB protocol investigation**](https://github.com/cschalle/hw-harness) - Documents an author-reported scanner investigation comparing vendor-driver USB control transfers with Linux-driver traces to infer initialization, timing and resolution parameters. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/hw-harness-reference-case/)</sub>
 - [**Roborock Local Server: a self-hosted stand-in for Roborock’s vacuum cloud**](https://github.com/Python-roborock/local_roborock_server) - Runs a local HTTPS and MQTT stack in place of Roborock’s cloud, so supported vacuums keep live maps and controls on an isolated network without rooting or hardware changes. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/roborock-local-server-cloud-case/)</sub>
 - [**pypush: a Python client for Apple’s push protocol**](https://github.com/JJTech0130/pypush) - Reimplements the client side of Apple’s private Apple Push Notification service (APNs) protocol in platform-independent Python: it activates as an Apple device, connects to the APNs courier, mints app-scoped tokens and receives push notifications. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pypush-apns-protocol-case/)</sub>
+- [**Smart ring protocol: documenting the Oura Ring BLE protocol and event format**](https://github.com/ringverse/protocol) - Documents reverse-engineered smart-ring communication, currently only for the Oura Ring: the request and response framing over Bluetooth Low Energy, a catalog of request tags with their payload fields, and the ring's binary event stream. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ringverse-oura-ring-protocol-case/)</sub>
 
 #### Tools, projects and integrations
 
