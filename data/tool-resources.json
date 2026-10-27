@@ -11759,5 +11759,38 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "cbyge-c-by-ge-protocol-case",
+    "name": "cbyge: reconstructing the C by GE smart-bulb cloud protocol",
+    "url": "https://github.com/unixpickle/cbyge",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "Reimplements the cloud control path of the C by GE (now Cync) smart-bulb app as a Go library and a small self-hosted web app. The author reports decompiling the Android app with Apktool, finding its JSON HTTP API for login and device lists and a separate raw TCP protocol to the vendor's server, then working out that protocol's type-and-length message framing and packet encodings from proxied traffic and the Smali code. The resulting API lists devices, reads their status and sets power, brightness, color tone and RGB color.",
+    "description_zh": "以 Go 库和一个可自行部署的小型网页应用，重新实现 C by GE（现名 Cync）智能灯泡应用的云端控制通道。作者称先用 Apktool 反编译 Android 应用，找到用于登录和设备列表的 JSON HTTP 接口，以及另一条连接厂商服务器的原始 TCP 协议，再结合代理记录的通信和 Smali 代码，推断出该协议以类型和长度开头的消息格式及各类数据包编码。最终的 API 可列出设备、读取状态，并设置开关、亮度、色温和 RGB 颜色。",
+    "evidence_url": "https://github.com/unixpickle/cbyge/blob/459be53a48ca75f543f9367094b778559403c1bf/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2021-11-09 main commit; there are no releases. The README states that the code was not informed by a protocol specification and may stop working or fail on some networks and devices. Only the author's own lightbulbs were examined, so the outlets, sensors and switches the same app controls were not reverse-engineered, and whether the current Cync service still accepts the client was not checked.",
+      "Requires the user's own C by GE or Cync account with devices already set up in the official app; newer accounts need the email two-factor login, which the web app or the login_2fa command performs. Control goes through the vendor's cloud rather than local Bluetooth or LAN. The Android app, traffic captures and account data are not in the repository; the README quotes only short Smali excerpts and one status packet from the author's devices.",
+      "Builds with Go; go.mod declares Go 1.14 and two small dependencies. The server directory serves a browser front end and a JSON API protected by an optional web password, and the repository also keeps the small TCP and HTTP logging proxies used during the investigation.",
+      "There are no tests or CI. The README reports that others have used the API successfully in some cases and that the author found it faster and more reliable than the official app; this review ran neither the library nor the server.",
+      "BSD-2-Clause, copyright 2021 Alexander Nichol. This is an independent client, not recovered vendor source; the vendor's apps, services and trademarks keep their own rights, and the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/unixpickle/cbyge/blob/459be53a48ca75f543f9367094b778559403c1bf/controller.go",
+      "https://github.com/unixpickle/cbyge/blob/459be53a48ca75f543f9367094b778559403c1bf/packet.go",
+      "https://github.com/unixpickle/cbyge/blob/459be53a48ca75f543f9367094b778559403c1bf/login.go",
+      "https://github.com/unixpickle/cbyge/blob/459be53a48ca75f543f9367094b778559403c1bf/server/main.go",
+      "https://github.com/unixpickle/cbyge/tree/459be53a48ca75f543f9367094b778559403c1bf/proxy",
+      "https://github.com/unixpickle/cbyge/blob/459be53a48ca75f543f9367094b778559403c1bf/go.mod",
+      "https://github.com/unixpickle/cbyge/blob/459be53a48ca75f543f9367094b778559403c1bf/LICENSE"
+    ]
   }
 ]
