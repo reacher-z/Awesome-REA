@@ -4538,5 +4538,15 @@
       "Python 单元测试覆盖转换函数和 Flipper 文件解析；项目没有 CI。各种效果由作者和贡献者在自己的手环上报告，本次来源核查未运行任何代码或硬件。",
       "采用 MIT 许可（LICENSE）。PixMob 的硬件、固件和商标不在该许可范围内，X 光图片注明来自 Samy Kamkar。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "darter": {
+    "name": "darter Dart 快照解析器",
+    "requirements": [
+      "README 警告该项目已经过时，由较新版本 Dart 或 Flutter 生成的快照很可能无法正确解析。解析器依据 Dart SDK 提交 1ef83b86ae 编写，info/versions.md 称唯一受支持的快照哈希为 c8562f0ee0ebc38ba217c7955956d1cb，其 Flutter 版本表显示它对应 2019 年发布的 v1.9.1+hotfix.2 至 v1.9.1+hotfix.6。解析器代码最后一次修改是在 2021 年；所审阅的 2026-02-03 master 提交只扩充了该版本表（现已列到 Flutter 3.38.9），仓库也没有发行版或标签。",
+      "darter 是一个库，没有独立程序或命令行界面；README 推荐在 Jupyter 中使用，先看 1-introduction，再看 2-playground 两个笔记本。大部分代码没有外部依赖，但 parse_elf_snapshot 需要 pyelftools，darter.asm 需要 Capstone 及其 Python 绑定；仓库未注明 Python 版本，也没有软件包元数据。",
+      "README 称只在 ARM 和 ARM64 的 AppAOT 产品快照上做过大量测试，在 x64 的 AppJIT 发布快照上做过少量测试，反汇编分析也只支持 ARM 和 ARM64。不支持 .dill 等 Kernel AST 快照。README 建议先用自己构建的快照练习，再分析其他快照；要研究的 libapp.so 或快照需由用户自备。",
+      "samples/ 目录提交了 arm-app.so 和 arm64-app.so，入门笔记本称它们是默认 Flutter 应用的构建产物；笔记本中用于演示 AppJIT 输入的 samples/appjit.snapshot 并未提交。utils/ 目录提供 Radare2 元数据生成器和导入文件生成器，以及一个 Node 脚本：它通过本地 HTTPS 代理模拟过去某一日期的 pub 包仓库，为此使用仓库中提交的自签名 CA 以及 pub.dartlang.org 证书和私钥，该证书已于 2022 年过期。",
+      "采用 AGPL-3.0 许可。本条目未解析任何快照，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

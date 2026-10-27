@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/android/) · [简体中文](android.zh-CN.md)
 
-**479 repositories** · 2026-10-20 UTC
+**480 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -101,6 +101,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [hack0z/luject](https://github.com/hack0z/luject) — 🍹A static injector of dynamic library for application (android, iphoneos, macOS, windows, linux) **[359 stars]**
 - [alphaSeclab/android-security](https://github.com/alphaSeclab/android-security) — Android Security Resources. **[356 stars]**
 - [morpheuslord/QuadraInspect](https://github.com/morpheuslord/QuadraInspect) — QuadraInspect is an Android framework that integrates AndroPass, APKUtil, and MobFS, providing a powerful tool for analyzing the security of Android applications. **[354 stars]**
+- [mildsunrise/darter](https://github.com/mildsunrise/darter) — <span>:</span>detective: Dart / Flutter VM snapshot analyzer **[345 stars]** · Curated: [darter](https://awesomerea.org/resources/darter/)
 - [chame1eon/jnitrace-engine](https://github.com/chame1eon/jnitrace-engine) — Engine used by jnitrace to intercept JNI API calls. **[335 stars]**
 - [yazgx97/frida-intercept-encrypted-api](https://github.com/yazgx97/frida-intercept-encrypted-api) — A tool to help you intercept encrypted APIs in iOS or Android apps **[333 stars]**
 - [nathanialf/ico-pc](https://github.com/nathanialf/ico-pc) — PC, Android, iOS and macOS port of the ICO (PS2) decompilation (nathanialf/ico): Windows, Linux, Steam Deck, Android, iPhone via LiveContainer and Apple-silicon Mac (contributed). Contains no game data. **[331 stars]** · Curated: [ico-pc: a native ICO port compiled from the PS2 decompilation](https://awesomerea.org/resources/ico-pc-port-case/)

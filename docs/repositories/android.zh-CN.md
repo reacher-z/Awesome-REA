@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/android/) · [English](android.md)
 
-**479 个仓库** · 2026-10-20 UTC
+**480 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -101,6 +101,7 @@
 - [hack0z/luject](https://github.com/hack0z/luject) — 🍹 为应用静态注入动态库的工具，支持 Android、iPhoneOS、macOS、Windows 和 Linux。 **[359 星标]**
 - [alphaSeclab/android-security](https://github.com/alphaSeclab/android-security) — Android 安全资源。 **[356 星标]**
 - [morpheuslord/QuadraInspect](https://github.com/morpheuslord/QuadraInspect) — QuadraInspect 是集成 AndroPass、APKUtil 和 MobFS 的 Android 框架，为 Android 应用安全分析提供强大工具。 **[354 星标]**
+- [mildsunrise/darter](https://github.com/mildsunrise/darter) — <span>:</span>detective: Dart / Flutter VM 快照分析器 **[345 星标]** · 精选：[darter Dart 快照解析器](https://awesomerea.org/zh/resources/darter/)
 - [chame1eon/jnitrace-engine](https://github.com/chame1eon/jnitrace-engine) — jnitrace 用于拦截 JNI API 调用的引擎。 **[335 星标]**
 - [yazgx97/frida-intercept-encrypted-api](https://github.com/yazgx97/frida-intercept-encrypted-api) — 帮助拦截 iOS 或 Android 应用中加密 API 的工具。 **[333 星标]**
 - [nathanialf/ico-pc](https://github.com/nathanialf/ico-pc) — 基于 ICO（PS2）反编译项目（nathanialf/ico）的 PC、Android、iOS 和 macOS 移植版，支持 Windows、Linux、Steam Deck、Android、通过 LiveContainer 运行的 iPhone，以及由社区贡献的 Apple 芯片 Mac 版本。不包含游戏数据。 **[331 星标]** · 精选：[ico-pc：由 PS2 反编译源码编译而成的《ICO》原生移植](https://awesomerea.org/zh/resources/ico-pc-port-case/)
