@@ -12548,5 +12548,33 @@
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/package.json",
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/.travis.yml"
     ]
+  },
+  {
+    "id": "willnode-deobfuscator",
+    "name": "Javascript Deobfuscator",
+    "url": "https://github.com/willnode/deobfuscator",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Browser-based workbench for deobfuscating JavaScript by hand, also hosted on GitHub Pages, that pairs a Monaco editor with step-by-step rewriting and evaluation commands instead of a one-click pipeline. Formatting commands beautify the code and, on a selection or the whole file, decode escaped strings, convert hex numbers, turn bracketed property access into dot notation and rename _0x-style identifiers to short names; evaluation commands push declarations onto a code stack, evaluate a selected expression against it and substitute JSON results, replace captured variables automatically and collapse chains of aliases. The README says the process is not automatic and expects the analyst to know JavaScript.",
+    "description_zh": "一个在浏览器中手动反混淆 JavaScript 的工作台，也部署在 GitHub Pages 上，以 Monaco 编辑器搭配逐步改写和求值命令，而非一键式流程。格式化命令可美化代码，并对选区或整个文件解码转义字符串、转换十六进制数字、把方括号属性访问改为点号形式、把 _0x 式标识符改为短名称；求值命令可把声明压入代码栈，在其基础上对选中的表达式求值并用 JSON 结果替换，自动替换捕获到的变量，以及合并层层别名。README 说明这一过程并非自动完成，要求分析者熟悉 JavaScript。",
+    "evidence_url": "https://github.com/willnode/deobfuscator/blob/313ab0dcc0211e3c662514b4448153963fce22c6/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No releases or tags; the reviewed master commit of 2023-06-29 is the latest code change, and a CI workflow builds the Vite site on each push to master and deploys it to the gh-pages branch that serves the hosted copy. Running it locally needs Node.js and npm for vite serve or vite build; package.json requires Monaco Editor ^0.39.0, js-beautify ^1.14.8 and Vite ^4.3.9 and declares no Node.js version.",
+      "The evaluation commands pass the selected code and the code stack to JavaScript's eval in the page itself, so those parts of the obfuscated script run unsandboxed in the user's browser; the README suggests keeping the browser console open. The string, number and renaming helpers, and the console-only experimental ones, work by regular expressions, and the README warns that they can corrupt complex strings and that hex renaming does not detect name collisions.",
+      "Users paste in the script they analyze, and the editor contents are kept only in the tab's sessionStorage. package.json declares MIT, but the repository has no license file and GitHub detects none. This review deobfuscated no scripts, and the sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/willnode/deobfuscator/blob/313ab0dcc0211e3c662514b4448153963fce22c6/src/tools.js",
+      "https://github.com/willnode/deobfuscator/blob/313ab0dcc0211e3c662514b4448153963fce22c6/src/index.js",
+      "https://github.com/willnode/deobfuscator/blob/313ab0dcc0211e3c662514b4448153963fce22c6/package.json",
+      "https://github.com/willnode/deobfuscator/blob/313ab0dcc0211e3c662514b4448153963fce22c6/.github/workflows/build.yml",
+      "https://willnode.github.io/deobfuscator/"
+    ]
   }
 ]
