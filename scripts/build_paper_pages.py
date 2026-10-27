@@ -161,14 +161,16 @@ def paper_card(paper: dict, language: str, use_pro: bool) -> str:
     status = STATUS_LABELS[paper['publication_status']][1 if zh else 0]
     title = paper['title_zh'] if zh else paper['title']
     original_title = f'<p class="paper-original-title" lang="en">{escape(paper["title"])}</p>' if zh else ''
-    links = [f'<a class="paper-link" href="{web_url(paper["pdf_url"])}" target="_blank" rel="noopener">PDF{icon("external", use_pro)}</a>']
+    # Every row repeats PDF, Code, Project and BibTeX; accessible names start with that text and add the title.
+    named = lambda visible: escape(f'{visible}：{title}' if zh else f'{visible}: {title}', quote=True)
+    links = [f'<a class="paper-link" href="{web_url(paper["pdf_url"])}" target="_blank" rel="noopener" aria-label="{named("PDF")}">PDF{icon("external", use_pro)}</a>']
     detail_path = f"{'/zh' if zh else ''}/papers/{paper['id']}/"
     detail_label = label('Full entry: ' + title, '完整条目：' + title)
     links.append(f'<a class="paper-link entry-detail-link" data-entry-link="{paper["id"]}" href="{detail_path}" aria-label="{escape(detail_label, quote=True)}">{label("Full entry", "完整条目")}</a>')
     for field, en, cn in (('code_url', 'Code', '代码'), ('project_url', 'Project', '项目')):
         if paper.get(field):
-            links.append(f'<a class="paper-link" href="{web_url(paper[field])}" target="_blank" rel="noopener">{label(en, cn)}{icon("external", use_pro)}</a>')
-    citation_link = f'<a class="paper-link" href="/papers/citations/{paper["id"]}.bib" download="{paper["id"]}.bib" type="application/x-bibtex">BibTeX ↓</a>'
+            links.append(f'<a class="paper-link" href="{web_url(paper[field])}" target="_blank" rel="noopener" aria-label="{named(label(en, cn))}">{label(en, cn)}{icon("external", use_pro)}</a>')
+    citation_link = f'<a class="paper-link" href="/papers/citations/{paper["id"]}.bib" download="{paper["id"]}.bib" type="application/x-bibtex" aria-label="{named('BibTeX')}">BibTeX <span aria-hidden="true">↓</span></a>'
     metadata = [(label('Publication / posting date', '出版／提交日期'), formatted_date(paper.get('publication_date'), language, paper['year'])),
                 (label('Date source', '日期依据'), paper['date_basis_zh' if zh else 'date_basis'])]
     if paper.get('first_arxiv_date'):

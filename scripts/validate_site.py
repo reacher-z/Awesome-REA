@@ -764,6 +764,52 @@ def validate_stylesheet_references(output):
     assert not unlinked, 'Stylesheets not linked by any generated page: ' + ', '.join(unlinked)
 
 
+class LinkNames(HTMLParser):
+    """Each link's href and accessible name: its aria-label, else its text outside aria-hidden elements."""
+    def __init__(self, text):
+        super().__init__()
+        self.links, self._link, self._hidden = [], None, []
+        self.feed(text)
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if self._link is not None and tag not in VOID_TAGS:
+            self._hidden.append(values.get('aria-hidden') == 'true' or bool(self._hidden and self._hidden[-1]))
+        if tag == 'a' and values.get('href'):
+            self._link, self._hidden = {'href': values['href'], 'label': values.get('aria-label'), 'text': []}, []
+
+    def handle_endtag(self, tag):
+        if self._link is None:
+            return
+        if tag == 'a':
+            text = ' '.join(''.join(self._link['text']).split())
+            self.links.append({'href': self._link['href'], 'text': text,
+                               'name': ' '.join((self._link['label'] or text).split())})
+            self._link = None
+        elif self._hidden:
+            self._hidden.pop()
+
+    def handle_data(self, data):
+        if self._link is not None and not (self._hidden and self._hidden[-1]):
+            self._link['text'].append(data)
+
+
+def validate_unique_link_names(output):
+    """On the repository category and paper listings, links sharing an accessible name share a destination."""
+    output = Path(output)
+    pages = [output / 'papers' / 'index.html', output / 'zh' / 'papers' / 'index.html',
+             *sorted((output / 'browse').glob('*/index.html')), *sorted((output / 'zh' / 'browse').glob('*/index.html'))]
+    for page in pages:
+        if not page.is_file():
+            continue
+        destinations = defaultdict(set)
+        for link in LinkNames(page.read_text(encoding='utf-8')).links:
+            destinations[link['name']].add(link['href'])
+        shared = sorted(name for name, hrefs in destinations.items() if len(hrefs) > 1)
+        assert not shared, (f'Links to different destinations share an accessible name on '
+                            f'/{page.parent.relative_to(output).as_posix()}/: ' + '; '.join(shared[:5]))
+
+
 class DocumentTitle(HTMLParser):
     def __init__(self, text):
         super().__init__()
@@ -1077,6 +1123,7 @@ def main():
     validate_source_browser_output(OUTPUT)
     validate_breadcrumbs(OUTPUT, pages)
     validate_stylesheet_references(OUTPUT)
+    validate_unique_link_names(OUTPUT)
     not_found = Page((OUTPUT / '404.html').read_text(encoding='utf-8'))
     assert not_found.noindex, '404 must be noindex'
     validate_open_graph(None, not_found, png_size(OUTPUT / 'social-card.png'))
