@@ -22,13 +22,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 212 | 210 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 53 | 53 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 已收录 (`already-curated`) | 213 | 211 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 52 | 52 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
 | 证据不足 (`insufficient-evidence`) | 326 | 326 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-227 个出现项含目录链接；共关联 217 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+228 个出现项含目录链接；共关联 218 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 478 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 479 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -489,6 +489,7 @@
 | An offline Linux reverse-engineering workspace: separating Codex from private files | 证据不足 | [来源](https://x.com/i/status/2111588450969231812) |
 | CM 01-02 to FM26: an idea to study football-manager data migration with REA | 证据不足 | [来源](https://x.com/i/status/2111591082119106953) |
 | Six-app two-room reconstruction: a report of 299 claims and a negative-control judge rule | 证据不足 | [来源](https://x.com/i/status/2111591362449592514) |
+| Windows 加载器：借助 REA 与 Codex 的静态恶意软件分析 | 已收录 | [来源](https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/) |
 | An 1,842-file AI desktop shell: an animated demonstration of local/server boundaries | 证据不足 | [来源](https://x.com/i/status/2111446154713964643) |
 | Mario Kart 8 Deluxe: 0xsvsv's Claude/REA PC-port account | 证据不足 | [来源](https://x.com/i/status/2111431983691862272) |
 | Kerbal Space Program 2: an AI-decompilation idea for community maintenance | 证据不足 | [来源](https://x.com/i/status/2111434708575805636) |
