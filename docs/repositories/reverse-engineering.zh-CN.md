@@ -32,7 +32,7 @@
 - [0xor0ne/awesome-list](https://github.com/0xor0ne/awesome-list) — 面向网络安全的精选资源列表。 **[4,220 星标]**
 - [ericc-ch/copilot-api](https://github.com/ericc-ch/copilot-api) — 将 GitHub Copilot 转换为兼容 OpenAI/Anthropic API 的服务器，可用于 Claude Code！ **[4,147 星标]**
 - [AloneMonkey/frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump) — 从越狱设备提取已解密的 IPA。 **[3,957 星标]**
-- [dekuNukem/Nintendo\_Switch\_Reverse\_Engineering](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering) — 探索 Joy-Con 与 Nintendo Switch 的内部工作原理。 **[3,792 星标]**
+- [dekuNukem/Nintendo\_Switch\_Reverse\_Engineering](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering) — 探索 Joy-Con 与 Nintendo Switch 的内部工作原理。 **[3,792 星标]** · 精选：[Nintendo Switch 逆向工程笔记](https://awesomerea.org/zh/resources/nintendo-switch-joycon-re-notes/)
 - [JJTech0130/pypush](https://github.com/JJTech0130/pypush) — Python APNs 与 iMessage 客户端。 **[3,785 星标]** · 精选：[pypush：Apple 推送协议的 Python 客户端](https://awesomerea.org/zh/resources/pypush-apns-protocol-case/)
 - [schemaspy/schemaspy](https://github.com/schemaspy/schemaspy) — 轻松构建数据库文档。 **[3,732 星标]**
 - [momo5502/sogen](https://github.com/momo5502/sogen) — 🪅 Windows 与 Linux 用户态模拟器。 **[3,730 星标]**
