@@ -11799,5 +11799,38 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "a0rfid-uhf-reader-protocol-case",
+    "name": "a0rfid: an open driver for A0-protocol UHF RFID readers",
+    "url": "https://github.com/uaih3k9x/a0rfid",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Reconstructs the A0 serial protocol of R2000-family 915 MHz UHF RFID desktop readers, which ship with only Windows software and an Android app, from the vendor app's native command encoder rather than its misleading Java SDK. A userspace CH340 driver, a Python CLI and GUI, and a small Android app then talk to the reader directly for inventory and tag-memory reads. docs/PROTOCOL.md records the frame layout, checksum, command table, response formats and the different field orders of READ and WRITE.",
+    "description_zh": "从厂商安卓应用的原生指令编码器（而非其具有误导性的 Java SDK）重建 R2000 系列 915 MHz UHF RFID 桌面读写头的 A0 串口协议；这类读写头原本只随附 Windows 软件和安卓应用。项目据此提供用户态 CH340 驱动、Python 命令行与图形界面，以及小型安卓应用，直接与读写头通信，进行标签盘存并读取标签存储区。docs/PROTOCOL.md 记录了帧格式、校验和、指令表、响应格式，以及 READ 与 WRITE 不同的字段顺序。",
+    "evidence_url": "https://github.com/uaih3k9x/a0rfid/blob/944ec1581a5c989cc7fbd50fcdba27159ecf7aa1/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit of 2026-09-17 is the second of two commits, with no tags or releases. docs/REVERSE.md describes decompiling the vendor APK, finding that the app bypasses its Java codec and calls libnative-lib.so through JNI, reading per-command field layouts from that library's rfid_encode() jump table, and then confirming the frames on hardware. The result is a protocol description and new host software; no reader firmware or vendor app is recovered, and the reader model is not named beyond the R2000 family.",
+      "Using the tools requires a compatible A0-protocol reader on its CH340 USB-UART at 115200 8N1, plus tags to test with. Repeating the analysis requires the vendor's own software package and manual, which are not included: REVERSE.md states that the repository contains no vendor code, only frames observed on the wire and code written from them. android/RFID助手.apk is the project's own prebuilt app, built from android/app by android/build.sh.",
+      "The Python tools need Python 3 with pyusb and pyserial. --port USB uses the bundled ch340_usb.py userspace driver, which on macOS needs Homebrew libusb; Linux can instead use the stock ch341 kernel driver through /dev/ttyUSB0. The Android app needs Android 7.0+ with USB host; android/build.sh assumes macOS/Homebrew paths, JDK 17, Android SDK platform 34 and build-tools 34.0.0.",
+      "test_offline.py runs 17 hardware-free checks of checksums, frame construction and response parsing, several against frames the author recorded from a reader reporting firmware V2.4.1, and docs/ANDROID.md reports 261 offline Android checks against simulated tags. The author reports confirming the read and write paths on one reader and installing and reading with the app on one DJI Smart Controller Enterprise (Android 7.1.2); the app's multi-bank write features were checked only in simulation. The docs also note occasional firmware hangs and a 20 dBm maximum power on the author's unit. This collection ran none of the tools.",
+      "MIT License (2026, a0rfid contributors); the vendor software, SDK and reader firmware keep their own terms. Write, lock and kill commands change real tags; this entry covers the protocol analysis and read path and does not describe the apps' write workflows. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/uaih3k9x/a0rfid/blob/944ec1581a5c989cc7fbd50fcdba27159ecf7aa1/docs/REVERSE.md",
+      "https://github.com/uaih3k9x/a0rfid/blob/944ec1581a5c989cc7fbd50fcdba27159ecf7aa1/docs/PROTOCOL.md",
+      "https://github.com/uaih3k9x/a0rfid/blob/944ec1581a5c989cc7fbd50fcdba27159ecf7aa1/docs/ANDROID.md",
+      "https://github.com/uaih3k9x/a0rfid/blob/944ec1581a5c989cc7fbd50fcdba27159ecf7aa1/rfid_tool.py",
+      "https://github.com/uaih3k9x/a0rfid/blob/944ec1581a5c989cc7fbd50fcdba27159ecf7aa1/ch340_usb.py",
+      "https://github.com/uaih3k9x/a0rfid/blob/944ec1581a5c989cc7fbd50fcdba27159ecf7aa1/test_offline.py",
+      "https://github.com/uaih3k9x/a0rfid/blob/944ec1581a5c989cc7fbd50fcdba27159ecf7aa1/android/build.sh",
+      "https://github.com/uaih3k9x/a0rfid/blob/944ec1581a5c989cc7fbd50fcdba27159ecf7aa1/LICENSE"
+    ]
   }
 ]
