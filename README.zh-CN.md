@@ -556,8 +556,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 **其他分区中的智能体集成：** [网站](#website)：[Chrome DevTools MCP](https://awesomerea.org/zh/resources/chrome-devtools-mcp/)、[Playwright MCP](https://awesomerea.org/zh/resources/playwright-mcp/)、[Burp Suite MCP Server 扩展](https://awesomerea.org/zh/resources/burp-suite-mcp-server/)、[Spectral](https://awesomerea.org/zh/resources/spectral-mcp/) · [游戏](#game)：[RenderDoc MCP](https://awesomerea.org/zh/resources/renderdoc-mcp/)、[Cheat Engine MCP Bridge 进程内存分析桥接](https://awesomerea.org/zh/resources/cheatengine-mcp-bridge/) · [应用](#app)：[JADX-AI-MCP](https://awesomerea.org/zh/resources/jadx-ai-mcp/)、[apktool-mcp-server Apktool MCP 服务](https://awesomerea.org/zh/resources/apktool-mcp-server/)、[frida-mcp (yfe404)](https://awesomerea.org/zh/resources/frida-mcp-yfe404/)、[Super Trouper](https://awesomerea.org/zh/resources/super-trouper/)
 
-- [**REA — Reverse Engineer Anything**](https://github.com/morluto/rea) - REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。 <sub>项目 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [完整条目](https://awesomerea.org/zh/resources/rea-upstream/)</sub>
-- [**官方 reverse-engineer-anything 技能**](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything) - 官方面向使用者的调查技能，包含目标路由、连接恢复与证据工作流。 <sub>集成 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [完整条目](https://awesomerea.org/zh/resources/rea-official-skill/)</sub>
+- [**REA — Reverse Engineer Anything**](https://github.com/morluto/rea) - REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。 <sub>项目 · REA 官方 · 目标：网站、游戏、应用、二进制、固件、协议 · [完整条目](https://awesomerea.org/zh/resources/rea-upstream/)</sub>
+- [**官方 reverse-engineer-anything 技能**](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything) - 官方面向使用者的调查技能，包含目标路由、连接恢复与证据工作流。 <sub>集成 · REA 官方 · 目标：网站、游戏、应用、二进制、固件、协议 · [完整条目](https://awesomerea.org/zh/resources/rea-official-skill/)</sub>
 - [**dsh-mcp-rea**](https://github.com/Ersith/dsh-mcp-rea) - 社区 MCP 适配桥，以精选工具和 CLI 转发缩小宿主需要处理的工具面。 <sub>集成 · REA 社区 · 目标：网站、游戏、应用、二进制、固件 · [完整条目](https://awesomerea.org/zh/resources/dsh-mcp-rea/)</sub>
 - [**rea-jev**](https://github.com/juan-viox/rea-jev) - Claude Code 社区插件，在固定版本 REA MCP 外增加 Jev 路由和证据检查。 <sub>集成 · REA 社区 · 目标：网站、应用 · [完整条目](https://awesomerea.org/zh/resources/rea-jev/)</sub>
 - [**rea-casebook**](https://github.com/pablodiazjorge/rea-casebook) - Claude Code mod 汇集收到的 REA Evidence、追踪 unknown，并校验发现所引用的证据 ID。 <sub>集成 · REA 社区 · 目标：二进制 · [完整条目](https://awesomerea.org/zh/resources/rea-casebook/)</sub>
@@ -606,8 +606,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 [↑ 返回目录](#目录)
 
-- [**Awesome Reverse Engineering**](https://github.com/morluto/awesome-reverse-engineering) - REA 维护者整理的通用逆向资源目录，适合查找基础知识与相邻工具。 <sub>合集 · REA 维护者 · 目标：网站、游戏、应用、二进制、固件 · [完整条目](https://awesomerea.org/zh/resources/morluto-awesome-re/)</sub>
-- [**Awesome REA Cases**](https://github.com/songshikang0111/awesome-REA-cases) - 中英双语的 REA 与其他 AI 辅助逆向案例合集，附来源并区分作者报告、进行中的工作和复现状态。 <sub>合集 · REA 社区 · 目标：网站、游戏、应用、二进制、固件 · [完整条目](https://awesomerea.org/zh/resources/awesome-rea-cases/)</sub>
+- [**Awesome Reverse Engineering**](https://github.com/morluto/awesome-reverse-engineering) - REA 维护者整理的通用逆向资源目录，适合查找基础知识与相邻工具。 <sub>合集 · REA 维护者 · 目标：网站、游戏、应用、二进制、固件、协议 · [完整条目](https://awesomerea.org/zh/resources/morluto-awesome-re/)</sub>
+- [**Awesome REA Cases**](https://github.com/songshikang0111/awesome-REA-cases) - 中英双语的 REA 与其他 AI 辅助逆向案例合集，附来源并区分作者报告、进行中的工作和复现状态。 <sub>合集 · REA 社区 · 目标：网站、游戏、应用、二进制、固件、协议 · [完整条目](https://awesomerea.org/zh/resources/awesome-rea-cases/)</sub>
 - [**awesome-rea（yibie）：关注验证的项目与实践报告**](https://github.com/yibie/awesome-rea) - 围绕明确的验收检查整理 AI 辅助游戏反编译、原生移植、静态重编译和工具，并另设实践文章与讨论分类。 <sub>合集 · REA 社区 · 目标：游戏、二进制 · [完整条目](https://awesomerea.org/zh/resources/yibie-awesome-rea/)</sub>
 - [**Awesome REA/Decompiled Games：按游戏组织的重建项目目录**](https://github.com/HaozheH3/awesome-rea-games) - 按原游戏整理反编译、源码重建、重编译、原生移植和演示，通过对照表链接相关项目，并区分启动器、引擎工作、作者分享的展示与源码重建成果。 <sub>合集 · REA 社区 · 目标：游戏 · [完整条目](https://awesomerea.org/zh/resources/haozhe-awesome-rea-games/)</sub>
 - [**Reversed with AI：AI 辅助逆向项目目录**](https://reversedwithai.com/) - 经人工审核的网站目录，收录游戏、固件、文件格式、API 与协议、应用及旧软件领域的 AI 辅助逆向项目。 <sub>合集 · REA 社区 · 目标：游戏、应用、二进制、固件、协议 · [完整条目](https://awesomerea.org/zh/resources/reversed-with-ai-directory/)</sub>
