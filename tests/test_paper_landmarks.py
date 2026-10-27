@@ -49,19 +49,20 @@ class PaperLandmarkTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)
             build_paper_pages(output, papers)
-            for path, names, paper_label, entry_label in (
-                    ('papers/index.html', ['Main navigation', 'Breadcrumb', 'Research areas'], 'Paper', 'Full entry'),
-                    ('zh/papers/index.html', ['主导航', '当前位置', '研究方向'], '论文', '完整条目')):
+            for path, names, zh in (
+                    ('papers/index.html', ['Main navigation', 'Breadcrumb', 'Research areas'], False),
+                    ('zh/papers/index.html', ['主导航', '当前位置', '研究方向'], True)):
                 parser = Landmarks()
                 parser.feed((output / path).read_text(encoding='utf-8'))
                 self.assertEqual(parser.navs, names, path)
                 self.assertEqual(set(parser.cards), {paper['id'] for paper in papers})
                 for paper in papers:
-                    # External links end with the fallback ↗ icon text; order and labels are unchanged.
-                    expected = [paper_label + '↗', 'PDF↗', entry_label]
-                    expected += [label + '↗' for field, label in (('code_url', 'Code' if paper_label == 'Paper' else '代码'),
-                                                                  ('project_url', 'Project' if paper_label == 'Paper' else '项目')) if paper.get(field)]
-                    self.assertEqual(parser.cards[paper['id']], expected + ['BibTeX ↓'], paper['id'])
+                    # External links end with the fallback ↗ icon text; order and labels are unchanged. The title
+                    # links to the paper and BibTeX sits in the card's details, so neither is in this list.
+                    expected = ['PDF↗', '完整条目' if zh else 'Full entry']
+                    expected += [label + '↗' for field, label in (('code_url', '代码' if zh else 'Code'),
+                                                                  ('project_url', '项目' if zh else 'Project')) if paper.get(field)]
+                    self.assertEqual(parser.cards[paper['id']], expected, paper['id'])
 
 
 if __name__ == '__main__':
