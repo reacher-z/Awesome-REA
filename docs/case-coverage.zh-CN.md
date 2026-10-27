@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 210 | 208 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 100 | 100 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 281 | 281 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 94 | 94 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 287 | 287 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-224 个出现项含目录链接；共关联 214 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+225 个出现项含目录链接；共关联 215 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 429 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 435 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -225,8 +225,14 @@
 | Plustek 8200i / ThinkPad MIPI: improve Linux drivers using Windows reference behavior | 待核查 | [来源](https://github.com/cschalle/hw-harness/blob/093afc5c576c200f29b771d01624a327d0ff1806/examples/plustek-film-scanner/README.md) |
 | Open-BFME: a report of AI-assisted Battle for Middle Earth decompilation and byte matching | 证据不足 | [来源](https://x.com/i/status/2110857508470604174) |
 | Greenlight video API: query fields with AI, then probe actual validation with invalid values | 证据不足 | [来源](https://x.com/i/status/2110868326528303367) |
+| Electron Notes sample: an REA static IPC test with an answer key | 证据不足 | [来源](https://x.com/i/status/2110869440762196138) |
+| A character on a video homepage: a report of Fu Sheng's REA mashup demonstration | 证据不足 | [来源](https://x.com/i/status/2110873715810660594) |
+| A personal YouTube version: an REA-assisted niche-video and AI-topic dashboard report | 证据不足 | [来源](https://x.com/i/status/2110878456611319835) |
 | decomp.wtf 智能体反编译工具 | 已收录 | [来源](https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/README.md) |
+| A local REA workbench: combine investigation and personal office workflows | 证据不足 | [来源](https://x.com/i/status/2110904597900673267) |
 | Ledger Opus: an unverified finance-agent promotion referencing Claude for Finance | 证据不足 | [来源](https://x.com/i/status/2110916629244641548) |
+| Immersive Portals: an AI-assisted Minecraft JE 26.2 compatibility report | 证据不足 | [来源](https://x.com/i/status/2110918344886927696) |
+| TV firmware: an AI ad-removal idea and two implementation accounts | 证据不足 | [来源](https://x.com/i/status/2110919403961192504) |
 | Excel reconciliation workbooks: infer a procedure from an accepted artifact for agents | 证据不足 | [来源](https://x.com/i/status/2110919658748719318) |
 | OpenCodex / Antigravity: REA investigation of missing multi-turn tool-call signatures | 证据不足 | [来源](https://x.com/i/status/2110921946418602001) |
 | Minesweeper and Bilibili: a secondary roundup of REA demonstration titles | 证据不足 | [来源](https://x.com/i/status/2110936629221450214) |
@@ -480,6 +486,7 @@
 - `song:pokemon-hgss-multi-agent-decompile-report` — 所引三条帖子中：@autoaiadvantage（2026-10-15）称有人用多个 AI 智能体在一个月内反编译了《宝可梦 心金/魂银》，消耗约 710 亿个 API token，估算费用约 5.6 万美元；所引 @Pirat_Nation 的帖子已被作者删除；@Alex_Vainshtein 回复指出，这项工作建立在 pret 现有的反编译和工具之上。三帖均未点名或链接该项目。分支仓库 ctrl-cheeb-del/pokeheartgold 自称已借助 LLM 智能体完全反编译、两个 ROM 均可逐字节构建，但未报告 token 用量或费用，也没有帖子确认它就是所述工作。保留此线索而不建立整理案例；相关映射只记录回复中提到的 pret 基础工作。
 - `song:ringfall-th04-bullet-hell-report` — 帖子（@0xMoryo，2026-10-15）称有人用 REA 的 Ghidra 提供程序分析 1997 年 PC-98 游戏 TH04 的可执行文件，把两条弹幕环公式整理成洁净室笔记，再由 Claude Code 在一次会话中做出浏览器弹幕 Boss 战 RINGFALL；帖子只附视频。帖子说 REA 和“TH04 研究”的链接在回复中，但帖子 API 不提供回复内容；其引用的帖子是一篇 REA 通用教程文章，也未找到 RINGFALL 的源码或构建。保留此线索而不建立整理案例；相关映射指向另行整理的 REA TH04 弹幕环证据，而非 RINGFALL。
 - `song:schaller-opticfilm-thinkpad-linux` — 既有扫描仪调查和独立的 ThinkPad IMX471 调校／驱动案例，覆盖此报告中的两个有限范围组成部分。映射仍为部分覆盖：均不确立完整扫描仪／相机行为、全设备兼容性或独立运行复现。
+- `song:rea-electron-notes-ipc-answer-key-test` — 两条帖子组成的串文（@ofmyslippers，2026-10-15）报告用一个带已知答案的小型笔记应用对 REA 的 Electron 静态分析测试三次：IPC 通道、处理器配对和 preload API 成员均为 4/4，且正确地未发现发送方检查，每次 2.5–3 秒，2.3 KB 源码生成 1.0 MB JSON。测试应用、答案和输出均未公开（串文只链接 REA 仓库），这项工作是在评估 REA，而非重建软件。保留此线索而不建立整理案例；相关映射指向 REA 的 JavaScript 指南，其自带的 Notes Electron 示例只有一个 IPC 通道，因此并非所测应用。
 - `song:rea-game-function-matcher-audit-report` — 帖子（@xmyttle，2026-10-16）转述了 REA 的计算器演示，以及 REA 博客文章《Does reverse engineering need a bigger model?》（N0zoM1z0，2026-10-13）：多个 GPT-6 系列模型接力完成《东方》系列中难以匹配的函数，另有一次审计发现部分已被接受的函数常量有误，例如原程序加 32.0f 的地方重建源码写成了 1.0f。该文固定版本的证据说明和 TH08 提交 a393f400 记录了这次浮点字面量审计，文章也说明对奖励学习的风险只是推断，并非实际观察到的利用。目录已通过《东方》重建方法一文覆盖该审计，因此此处为部分映射；关于模型接力的这篇文章本身尚未收录，此线索保持待处理。
 - `song:rea-reconstruction-companion` — 固定版本仓库确立了具名的 Companion：一个采用 MIT 的 Agent Skill，与 REA 配合把证据整理成限定范围的需求、设计、分阶段实现与验证，并提供由安装程序管理、可选写入 REA 技能的路由段落，以及已接触源码的评估套件。完整映射以社区 REA 集成覆盖该技能；原有的部分映射覆盖另立条目的 Pocket Tasks 重建示例。示例与检查结果仍是维护者报告的教学材料，未确立模型试验、独立评估或运行复现。
 - `song:valdiorn-audio-effects-firmware-report` — valdiorn 在 Hacker News 的评论（2026-10-15，经 @RealYDT 转述）称，借助 Opus 5.5 在模拟器中运行三家竞争对手的效果器固件，再转换成独立 C++ 库并比较结果，另外还处理了 Lexicon 224 与 Ursa Major 产品。评论没有公开代码、模拟器、库、比较数据或产品版本，也未指明所说的 Lexicon 仓库。公开的 reflecticon-224 模拟项目作者在回复中猜测被找到的就是该项目；该项目另立条目并以相关映射关联，并不视为本报告的成果。保留此线索并标为证据不足；所报告的反编译与比较均未确立。
