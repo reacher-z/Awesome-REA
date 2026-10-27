@@ -65,6 +65,19 @@ class SectionSiblingTests(unittest.TestCase):
         small = section_siblings([resource('a'), resource('b')])
         self.assertEqual([r['id'] for r in small['b']['siblings']], ['a'])
 
+    def test_game_case_studies_follow_their_readme_method_groups(self):
+        def game_case(identifier, name, method):
+            record = case(identifier)
+            record.update(name=name, targets=['game'], reconstruction_method=method)
+            return record
+        records = [game_case('zeta', 'zeta port', 'port'), resource('game-tool', category='game-analysis'),
+                   game_case('alpha', 'Alpha port', 'port'), game_case('match', 'Matching', 'matching-decompilation')]
+        related = section_siblings(records)
+        # Method groups in vocabulary order, names ignoring case inside each, then the tools: the README order.
+        self.assertEqual([r['id'] for r in related['match']['siblings']], ['alpha', 'zeta', 'game-tool'])
+        self.assertEqual([r['id'] for r in related['zeta']['siblings']], ['game-tool', 'match', 'alpha'])
+        self.assertEqual((related['alpha']['section'], related['alpha']['cases']), ('game', 3))
+
     def test_pages_link_localized_siblings_and_section_anchors(self):
         records = [case('case-a'), resource('tool-a'), resource('tool-b'), resource('lone', category='protocol-analysis')]
         paper = next(p for p in json.loads((ROOT / 'data/papers.json').read_text(encoding='utf-8')) if p['id'] == 'paper-fuzzware')

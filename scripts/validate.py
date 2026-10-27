@@ -14,7 +14,8 @@ import sys
 from urllib.parse import unquote, urlsplit
 
 from artifact_links import github_repository
-from build_readme import CATEGORIES, RELATIONSHIPS, TARGETS, readme_size_warnings
+from build_readme import (CATEGORIES, METHOD_SECTIONS, RECONSTRUCTION_METHODS, RELATIONSHIPS, TARGETS,
+                          collection_section, readme_size_warnings)
 from catalog import ROOT, RESOURCE_FILES
 from localization import read_fingerprints, read_localizations, validate_fingerprints, validate_localizations
 from requirement_facets import facet_errors
@@ -32,7 +33,7 @@ RESOURCE_FIELDS = {
     'id', 'name', 'url', 'category', 'relationship', 'description_en',
     'description_zh', 'evidence_url', 'verified_at', 'verification', 'requirements', 'targets', 'kind',
 }
-OPTIONAL_RESOURCE_FIELDS = {'additional_evidence_urls', 'added_at', 'requirement_facets'}
+OPTIONAL_RESOURCE_FIELDS = {'additional_evidence_urls', 'added_at', 'reconstruction_method', 'requirement_facets'}
 BENCHMARK_FIELDS = {
     'id', 'full_name', 'url', 'category', 'stars', 'stars_display',
     'stars_precision', 'observed_at', 'description_zh', 'mechanisms',
@@ -254,6 +255,13 @@ def validate_resources(records, errors, *, now=None):
             errors.append(f"{where}: relationship 'independent-reconstruction' requires category 'reconstruction-cases'")
         elif record['category'] == 'reconstruction-cases' and record['relationship'] != 'independent-reconstruction':
             errors.append(f"{where}: category 'reconstruction-cases' requires relationship 'independent-reconstruction'")
+        # The README and /cases/ group these case studies by method; other records do not render the field.
+        if record['kind'] == 'case-study' and collection_section(record) in METHOD_SECTIONS:
+            if record.get('reconstruction_method') not in RECONSTRUCTION_METHODS:
+                errors.append(f'{where}.reconstruction_method: Game case studies need one of '
+                              + ', '.join(RECONSTRUCTION_METHODS) + "; use 'other' when the evidence does not establish one")
+        elif 'reconstruction_method' in record:
+            errors.append(f'{where}.reconstruction_method: only case studies listed under Game take this field')
         if record['verification'] != 'source-reviewed':
             errors.append(f'{where}.verification: use source-reviewed; runtime and reproduction results are out of scope (see CONTRIBUTING.md)')
         if not string_list(record['requirements']):

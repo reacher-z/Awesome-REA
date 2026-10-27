@@ -24,7 +24,8 @@ from source_browser import BROWSER_FILENAME, FULL_EXPORT_FILENAME, validate_sour
 from public_source_supplements import (PUBLISHED_FILENAME, compose_published, json_bytes,
                                       load_supplements, owned_file, bounded_bytes, project_additions)
 from validate_discovery import expected_entry_routes, validate_route_inventory
-from build_readme import CATEGORIES, PAPER_SECTIONS, REQUIREMENTS_LABEL, collection_section, paper_section
+from build_readme import (CATEGORIES, METHOD_SECTIONS, PAPER_SECTIONS, REQUIREMENTS_LABEL, collection_section,
+                          method_groups, paper_section)
 from build_discovery_pages import ABOUT_EXCLUDED_SECTIONS, SECTION_TARGETS, file_size_label
 from build_feed import FEED_PAGES, FEED_PATHS, FEED_SIZE, feed_entries
 from homepage_locales import _ui_strings
@@ -58,7 +59,7 @@ class Page(HTMLParser):
         self.entry_article_depth = 0
         self.case_rows, self.current_case = [], None
         self.case_heading, self.case_time = None, None
-        self._case_sections = []
+        self._case_sections, self._case_methods = [], []
         self.raw_text_tag = None
         self.paper_groups, self._section_stack = [], []
         self._div_depth = 0
@@ -74,6 +75,8 @@ class Page(HTMLParser):
         if tag == 'section':
             self._case_sections.append({'section': values.get('data-case-section'), 'anchor': values.get('id')}
                                        if 'case-section' in classes else None)
+            self._case_methods.append({'method': values.get('data-case-method'), 'anchor': values.get('id')}
+                                      if 'case-method' in classes else None)
             group = None
             if 'paper-section' in classes:
                 group = {'anchor': values.get('aria-labelledby'), 'paper_ids': [],
@@ -113,13 +116,15 @@ class Page(HTMLParser):
         if tag == 'article' and 'data-case-id' in values:
             assert self.current_case is None, 'Nested case articles are invalid'
             case_section = next((section for section in reversed(self._case_sections) if section is not None), {})
+            case_method = next((method for method in reversed(self._case_methods) if method is not None), {})
             self.current_case = {'id': values['data-case-id'], 'anchor': values.get('id'),
                                  'section': values.get('data-case-section'), 'text': [],
                                  'headings': [], 'times': [], 'links': [],
                                  'parent_section': case_section.get('section'),
-                                 'parent_anchor': case_section.get('anchor')}
+                                 'parent_anchor': case_section.get('anchor'),
+                                 'method': case_method.get('method'), 'method_anchor': case_method.get('anchor')}
             self.case_rows.append(self.current_case)
-        if self.current_case is not None and tag == 'h3':
+        if self.current_case is not None and tag in ('h3', 'h4'):
             self.case_heading = []
             self.current_case['headings'].append(self.case_heading)
         if self.current_case is not None and tag == 'time':
@@ -236,7 +241,7 @@ class Page(HTMLParser):
         if tag == 'time':
             self.entry_time = None
             self.case_time = None
-        if tag == 'h3':
+        if tag in ('h3', 'h4'):
             self.case_heading = None
         if tag == 'a':
             self.current_related_link = None
@@ -253,6 +258,7 @@ class Page(HTMLParser):
             self._section_stack.pop()
         if tag == 'section' and self._case_sections:
             self._case_sections.pop()
+            self._case_methods.pop()
 
 
 def structured_checks(value):
@@ -1132,6 +1138,8 @@ def validate_case_outputs(pages, resources):
                                    'url': ORIGIN + detail, 'description': record[f'description_{language}']})
             assert row['anchor'] == row['id'] and row['section'] == collection_section(record), f'Case placement mismatch: {row["id"]}'
             assert row['parent_section'] == row['section'] and row['parent_anchor'] == 'cases-' + row['section'], f'Case belongs to the wrong subject section: {row["id"]}'
+            method = record.get('reconstruction_method') if row['section'] in METHOD_SECTIONS else None
+            assert row['method'] == method and row['method_anchor'] == (method and f'cases-{row["section"]}-{method}'), f'Case belongs to the wrong method group: {row["id"]}'
             assert len(row['headings']) == 1 and normalize(name) in normalize(''.join(row['headings'][0])), f'Case heading lost localized name: {row["id"]}'
             # Requirements and additional sources are on the entry page (validate_entry_outputs); the row links to them.
             text = normalize(' '.join(row['text']))
@@ -1141,6 +1149,11 @@ def validate_case_outputs(pages, resources):
             assert len(row['times']) == 1 and row['times'][0]['datetime'] == record['verified_at'], f'Case review timestamp mismatch: {row["id"]}'
             assert record['verified_at'][:10] in normalize(''.join(row['times'][0]['text'])), f'Case review date is missing: {row["id"]}'
         assert items.get('itemListElement') == expected_items, f'Case structured list differs from rendered entries: {route}'
+        for section in METHOD_SECTIONS:
+            # Method groups follow RECONSTRUCTION_METHODS, and each group is in case_order, as in the READMEs.
+            listed = [cases[identifier] for identifier in ids if collection_section(cases[identifier]) == section]
+            expected = [record['id'] for _, records in method_groups(listed) for record in records]
+            assert [record['id'] for record in listed] == expected, f'Case method groups are out of order: {route}#cases-{section}'
 
 
 class SectionTargetCounts(HTMLParser):

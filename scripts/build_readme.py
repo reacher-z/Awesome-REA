@@ -217,6 +217,44 @@ def collection_section(record):
     return 'native-binary'
 
 
+# How a case study reconstructs its game (`reconstruction_method`), in README and /cases/ order, with each group's
+# English and Chinese heading. Case studies in METHOD_SECTIONS must name one (validate.py); data/README.md defines them.
+RECONSTRUCTION_METHODS = {
+    'matching-decompilation': ('Matching decompilations and disassemblies', '匹配反编译与反汇编'),
+    'decompilation': ('Non-matching decompilations', '非匹配反编译'),
+    'static-recompilation': ('Static recompilations', '静态重编译'),
+    'port': ('Ports of reconstructed source', '基于重建源码的移植'),
+    'engine-reimplementation': ('Engine reimplementations', '引擎重实现'),
+    'other': ('Other methods and analyses', '其他方法与分析'),
+}
+METHOD_SECTIONS = ('game',)
+
+
+def case_order(record):
+    """Locale-independent order inside a method group, the same in both languages: English name ignoring case, then id."""
+    return record['name'].casefold(), record['id']
+
+
+def method_groups(cases):
+    """(method, cases) pairs in RECONSTRUCTION_METHODS order, without empty groups, each ordered by case_order."""
+    groups = {method: [] for method in RECONSTRUCTION_METHODS}
+    for record in cases:
+        method = record.get('reconstruction_method')
+        if method not in groups:
+            raise ValueError(f"{record['id']}: reconstruction_method must be one of {', '.join(RECONSTRUCTION_METHODS)}")
+        groups[method].append(record)
+    return [(method, sorted(entries, key=case_order)) for method, entries in groups.items() if entries]
+
+
+def section_order(section, records):
+    """One section's entries in README order: case studies first (by method group in METHOD_SECTIONS), then the
+    other entries in catalog order. Entry pages' "More in" links and the agent cross-reference follow it."""
+    cases = [record for record in records if record['kind'] == 'case-study']
+    if section in METHOD_SECTIONS:
+        cases = [record for _, block in method_groups(cases) for record in block]
+    return cases + [record for record in records if record['kind'] != 'case-study']
+
+
 def other_targets(record, section, language):
     """Targets the section heading does not imply; sections without a target of their own list every target."""
     index = 0 if language == 'en' else 1
@@ -327,14 +365,23 @@ def render_catalog(records, language, paper_urls=frozenset()):
         for label, entries in subgroups:
             if label:
                 lines.extend([f'#### {label}', ''])
-            for record in entries:
-                name = plain_text((record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if language == 'zh' else record['name'])
-                description = plain_text(lead_sentence(record[f'description_{language}'], language))
-                metadata = plain_text(entry_type(record, language) + other_targets(record, section, language))
-                detail_url = f"https://awesomerea.org/{'zh/' if language == 'zh' else ''}resources/{record['id']}/"
-                lines.append(f"- [**{name}**]({record['url']}) - {description} "
-                             f"<sub>{metadata} · [{FULL_ENTRY[index]}]({detail_url})</sub>")
-            lines.append('')
+            blocks = [(None, entries)]
+            if section in METHOD_SECTIONS and all(record['kind'] == 'case-study' for record in entries):
+                # Case studies here are grouped by reconstruction method, one level below their own heading.
+                blocks = method_groups(entries)
+            for method, block in blocks:
+                if method:
+                    heading = '#' * (5 if label else 4)
+                    lines.extend([f'<a id="{section}-{method}"></a>',
+                                  f'{heading} {RECONSTRUCTION_METHODS[method][index]} ({len(block):,})', ''])
+                for record in block:
+                    name = plain_text((record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if language == 'zh' else record['name'])
+                    description = plain_text(lead_sentence(record[f'description_{language}'], language))
+                    metadata = plain_text(entry_type(record, language) + other_targets(record, section, language))
+                    detail_url = f"https://awesomerea.org/{'zh/' if language == 'zh' else ''}resources/{record['id']}/"
+                    lines.append(f"- [**{name}**]({record['url']}) - {description} "
+                                 f"<sub>{metadata} · [{FULL_ENTRY[index]}]({detail_url})</sub>")
+                lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
 
 
@@ -345,7 +392,7 @@ def agent_cross_reference(groups, language, translations):
     for section in TARGET_SECTIONS:
         names = []
         # Same order as the section renders: case studies first, then tools.
-        for record in sorted(groups[section], key=lambda record: record['kind'] != 'case-study'):
+        for record in section_order(section, groups[section]):
             if record['category'] == 'agent-mcp' or record['relationship'] == 'independent-agent-integration':
                 name = (record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if index else record['name']
                 names.append(f"[{plain_text(name)}](https://awesomerea.org/{'zh/' if index else ''}resources/{record['id']}/)")

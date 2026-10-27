@@ -29,6 +29,8 @@ def resource(identifier, *, kind='case-study', targets=None, **changes):
         'additional_evidence_urls': ['https://example.org/method/' + identifier],
         'verified_at': '2026-10-17T01:02:03Z', 'verification': 'source-reviewed',
     }
+    if kind == 'case-study':
+        record['reconstruction_method'] = 'other'
     record.update(changes)
     return record
 
@@ -140,6 +142,33 @@ class CasePageTests(unittest.TestCase):
                 self.assertIn('Binary · Game' if language == 'en' else '二进制 · 游戏', content)
                 self.assertIn('Game · Website' if language == 'en' else '游戏 · 网站', content)
                 self.assertIn('https://example.org/ordinary-tool', (output / prefix / 'resources/index.html').read_text())
+
+    def test_game_cases_are_grouped_by_method_and_ordered_by_name(self):
+        records = [resource('zeta', name='zeta port', reconstruction_method='port'),
+                   resource('web', targets=['website']),
+                   resource('alpha', name='Alpha port', reconstruction_method='port'),
+                   resource('matching', reconstruction_method='matching-decompilation')]
+        output = self.build(records)
+        for language, prefix in [('en', ''), ('zh', 'zh/')]:
+            with self.subTest(language=language):
+                content = (output / prefix / 'cases/index.html').read_text()
+                page = CaseDocument(content)
+                self.assertEqual([row['id'] for row in page.cases], ['web', 'matching', 'alpha', 'zeta'])
+                self.assertEqual([item['url'].split('/')[-2] for item in schema(content)['mainEntity']['itemListElement']],
+                                 ['web', 'matching', 'alpha', 'zeta'])
+                games = content.split('id="cases-game"', 1)[1]
+                # Methods in vocabulary order, each a headed group with its count, definition and h4 case titles.
+                self.assertEqual(re.findall(r'data-case-method="([a-z-]+)"', games), ['matching-decompilation', 'port'])
+                self.assertEqual(re.findall(r'<a href="#(cases-game-[a-z-]+)">', games),
+                                 ['cases-game-matching-decompilation', 'cases-game-port'])
+                port = games.split('id="cases-game-port"', 1)[1]
+                heading, note = ('基于重建源码的移植', '在新的平台层上') if language == 'zh' else ('Ports of reconstructed source', 'A native or web build')
+                self.assertIn(f'>{heading}</h3><p>{"2 个案例" if language == "zh" else "2 cases"}</p>', port)
+                self.assertIn(f'<p class="case-method-note">{note}', port)
+                self.assertEqual(port.count('<h4>'), 2)
+                self.assertNotIn('<h4>', content.split('id="cases-game"', 1)[0])
+        with self.assertRaisesRegex(ValueError, 'reconstruction_method'):
+            self.build([resource('unsorted', reconstruction_method='guess')])
 
     def test_literal_prose_evidence_and_native_disclosure_are_preserved(self):
         record = resource('quoted-case', name='Case <A> & "B"', name_zh='案例 <甲> 与 "乙"',

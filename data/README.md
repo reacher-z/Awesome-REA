@@ -1,6 +1,6 @@
 # Resource catalog format
 
-`rea-resources.json` and `tool-resources.json` contain the records rendered into both READMEs. They are arrays of objects with these fields. Every field is required except `additional_evidence_urls`, `added_at` and `requirement_facets`.
+`rea-resources.json` and `tool-resources.json` contain the records rendered into both READMEs. They are arrays of objects with these fields. Every field is required except `additional_evidence_urls`, `added_at`, `requirement_facets` and `reconstruction_method`, which case studies listed under Game require and no other record may have.
 
 | Field | Meaning |
 | --- | --- |
@@ -11,6 +11,7 @@
 | `kind` | Resource type: project, tool, integration, case-study, collection, documentation, learning-resource, or research |
 | `targets` | One or more browsing domains: `website`, `game`, `app`, `binary`, `firmware`, `protocol`; these describe task fit, not verified REA integration |
 | `relationship` | Connection to REA, or the independent role the evidence establishes; one of the values listed below |
+| `reconstruction_method` | Game case studies only: how the project reconstructs its game, one of the methods listed below |
 | `description_en` / `description_zh` | Original practical descriptions |
 | `evidence_url` | Primary source supporting the description |
 | `additional_evidence_urls` | Optional supporting documentation, release, or package-metadata URLs; these are validated and included in link checks |
@@ -39,6 +40,15 @@ The validator accepts the category keys defined in `CATEGORIES` in [build_readme
 - `learning` (Learning resource): a course, book, reference or research resource with no established REA connection.
 
 `requirement_facets` labels each `requirements` item with one of: `prerequisites` (Prerequisites / 前提条件: inputs, platforms, toolchains and setup a reader must supply), `scope` (Scope / 范围: what the project or report is and covers), `limits` (Limits / 局限: known gaps and caveats), `testing` (Testing evidence / 测试证据: tests, checks and reported results, or their absence), `license` (License / 许可: code licenses and rights to original assets) and `attribution` (Attribution / 署名: authorship, provenance and AI or REA involvement). The list is parallel to `requirements` and to the Chinese items in `site/translations.zh-CN.json`, so both languages carry the same facets. The field is optional, and most case studies carry it; when present, validation rejects unknown IDs and count mismatches. Records without it keep a plain requirements list. Pages show each facet as a bold lead-in and list prerequisites first; the item text itself is unchanged. [requirement_facets.py](../scripts/requirement_facets.py) defines the vocabulary.
+
+`reconstruction_method` groups the Game case studies in both READMEs and on [/cases/](https://awesomerea.org/cases/#cases-game), in this order; `RECONSTRUCTION_METHODS` in [build_readme.py](../scripts/build_readme.py) holds the values and their headings. Choose it from the case's own evidence, not its name, and use `other` when the evidence does not establish a method. Inside each group, entries are ordered by English `name` compared case-insensitively (Python `str.casefold`), then by `id`, the same order in both languages; `build_readme.py --check` reports a stale order or count.
+
+- `matching-decompilation`: source, or a full disassembly, that the original toolchain rebuilds byte for byte, checked per function or against hashes of the original binaries; an in-progress project that links unmatched code from the original counts.
+- `decompilation`: recovered source checked by behavior or not at all, rather than rebuilt byte for byte.
+- `static-recompilation`: the original machine code or bytecode translated ahead of time into compilable code that runs natively on a replacement runtime, even when a decompilation supplies names or patches.
+- `port`: a native or web build that compiles an existing decompilation or reconstruction on a new platform layer.
+- `engine-reimplementation`: new code that recreates an engine or its rules from file formats and observed behavior, usually running the original game data.
+- `other`: rehosting runtimes that run the original code unchanged, analyses, experiments, and cases whose evidence does not establish one of the methods above.
 
 `added_at` orders the Atom feeds of curated resources and papers (`/feed.xml` and `/zh/feed.xml`); automated scan records have no feed. Set it to the UTC date the record is merged. The validator rejects malformed values and dates beyond the next UTC day, as for review dates. Records without it are left out of the feeds. Source review dates are snapshots; upstream requirements may change. GitHub file and directory evidence links (`/blob/`, `/tree/`) name the reviewed commit, so they keep showing the reviewed text, while `url` remains the moving project link. GitHub wiki evidence names the page revision from its history (`/wiki/<Page>/<revision>`), and an evidence link is never a bare repository root: link the README or tree at the reviewed commit instead. `python3 scripts/validate.py` prints a non-blocking warning for either case, and the pull-request review lists the same warning as an advisory for records the PR adds or changes. Resource and paper review dates allow at most the next UTC calendar day to accommodate reviewers ahead of UTC. Resource review timestamps retain an exact 24-hour allowance; publication and first-arXiv dates must not be in the future. A documentation link on `main` may describe functionality that is not in a released package; keep that distinction in the description or requirements.
 

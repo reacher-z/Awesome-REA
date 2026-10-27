@@ -10,7 +10,8 @@ from urllib.parse import quote, urlencode, urlsplit
 from artifact_links import github_repository
 from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, jsonld_script, publication_keys
 from build_paper_pages import STATUS_LABELS, formatted_date, scholarly_article
-from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section
+from build_readme import (CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section,
+                          section_order)
 from evidence_links import evidence_link
 from open_graph import THEME_COLOR_META, open_graph_meta
 from requirement_facets import item_html, ordered_items
@@ -161,16 +162,17 @@ SIBLING_LIMIT = 6
 def section_siblings(resources: list[dict], limit: int = SIBLING_LIMIT) -> dict[str, dict]:
     """Map each resource ID to its README section and up to ``limit`` following entries there.
 
-    Sections list case studies first, then the other entries, each in catalog order, as the
-    READMEs do. The selection continues from each entry and wraps to the section start, so it
-    is deterministic and every entry is linked from its neighbours.
+    Sections list case studies first, then the other entries, in README order (section_order:
+    Game case studies by reconstruction method, everything else in catalog order). The selection
+    continues from each entry and wraps to the section start, so it is deterministic and every
+    entry is linked from its neighbours.
     """
     groups = defaultdict(list)
     for record in resources:
         groups[collection_section(record)].append(record)
     related = {}
     for section, records in groups.items():
-        ordered = sorted(records, key=lambda record: record['kind'] != 'case-study')
+        ordered = section_order(section, records)
         cases = sum(record['kind'] == 'case-study' for record in ordered)
         for index, record in enumerate(ordered):
             following = ordered[index + 1:] + ordered[:index]

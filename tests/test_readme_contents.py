@@ -78,7 +78,8 @@ class ReadmeContentsTest(unittest.TestCase):
             resource(),
             resource(id='second-web-tool', url='https://example.com/second'),
             resource(id='case', kind='case-study', category='reconstruction-cases',
-                     relationship='independent-reconstruction', targets=['game'], url='https://example.com/case'),
+                     relationship='independent-reconstruction', targets=['game'], url='https://example.com/case',
+                     reconstruction_method='other'),
             resource(id='paper-copy', kind='research', category='learning', relationship='learning',
                      url=listed['url']),
         ]
