@@ -11799,5 +11799,33 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "awesome-te",
+    "name": "awesome-te",
+    "url": "https://github.com/bnjreece/awesome-te",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "firmware",
+      "protocol"
+    ],
+    "description_en": "A public-domain directory, started in June 2026, of hacking projects for Teenage Engineering devices: custom firmware, reverse-engineering notes and protocol documentation, tools, hardware mods, teardown and recovery guides and community hubs for the OP-1, OP-Z, OP-XY, TP-7, SP-1 Stem Player, EP series, Pocket Operators and other gear. One-line entries are grouped by device and task, each with a maintainer-assigned active, dormant or archived marker, and the scope rule admits only released, TE-specific projects.",
+    "description_zh": "一份进入公有领域的目录，始建于 2026 年 6 月，收录 Teenage Engineering 设备的破解与改造项目：涵盖 OP-1、OP-Z、OP-XY、TP-7、SP-1 Stem Player、EP 系列、Pocket Operator 等设备的自定义固件、逆向笔记与协议文档、工具、硬件改装、拆解与恢复指南以及社区站点。每个条目只有一行，按设备和用途分组，并由维护者标注活跃、休眠或归档状态；收录范围仅限已发布、专门针对 TE 设备的项目。",
+    "evidence_url": "https://github.com/bnjreece/awesome-te/blob/02c9fb3c95b7fa4bae954be4d7ae795396d10e93/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README, committed 2026-10-20 and marked as last reviewed that day, has 195 status-marked rows under 11 device sections and a cross-device section, some of them bundling several links: 136 marked active, 56 dormant and 3 archived. Under the contribution guide the marker reflects activity in the past 12 months, not a check that a project works on a given device or firmware version; the weekly lychee workflow only checks that links resolve.",
+      "Entries mix open-source projects, commercial apps and forum, wiki and repair pages, ranging from SysEx, file-transfer and file-format documentation to Ghidra Blackfin support, and include a few AI tools such as an SP-1 reference packaged as a Claude agent skill and an MCP server for the OP-1 field. Several firmware and flashing entries warn that they erase stored data or can brick a device; this record makes no compatibility claim for any of them.",
+      "A few rows point to unofficial mirrors of OP-1 and OP-1 field firmware and to an OP-1 firmware decryptor; the list itself recommends Teenage Engineering's official downloads, and this record links none of them. Device firmware keeps its vendor's terms, and each linked project keeps its own license.",
+      "The list and its contributions are dedicated to the public domain under CC0 1.0. An independent discovery list; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bnjreece/awesome-te/blob/02c9fb3c95b7fa4bae954be4d7ae795396d10e93/CONTRIBUTING.md",
+      "https://github.com/bnjreece/awesome-te/blob/02c9fb3c95b7fa4bae954be4d7ae795396d10e93/.github/workflows/link-check.yml",
+      "https://github.com/bnjreece/awesome-te/blob/02c9fb3c95b7fa4bae954be4d7ae795396d10e93/LICENSE"
+    ]
   }
 ]
