@@ -187,7 +187,8 @@ class ReviewedContainerRecordTests(unittest.TestCase):
                     'paper-symlm', 'paper-codeinverter-suite', 'paper-notdec', 'paper-binjudge',
                     'paper-requirements-generation-viability', 'paper-khost', 'paper-transre', 'paper-satbleed',
                     'paper-clematis',
-                    'paper-wasm-decompiler-study'}
+                    'paper-wasm-decompiler-study',
+                    'paper-binkit'}
         self.assertEqual({identifier for identifier, record in PAPERS.items() if 'citation' in record}, expected)
         for identifier in sorted(PAPERS.keys() - expected):
             # Records without verified container metadata keep the short venue label.
