@@ -7497,5 +7497,14 @@
       "运行方式为 python3 src/main.py [-v] libapp.so output，唯一依赖是 pyelftools；项目没有打包，也未声明 Python 版本。README 说明 verbose 选项只适用于 Dart 2.12 快照，并指出 darter 是针对更早的 Dart 2.5 且经过完整测试的解析器。",
       "作者的博客文章记录了该解析器所依据的快照格式。仓库没有许可证文件，GitHub 也未识别出许可证，因此复用条款未予说明。本次审阅未运行任何程序，也未分析任何应用。"
     ]
+  },
+  "biosutilities": {
+    "name": "BIOSUtilities 厂商 BIOS/UEFI 更新包提取工具集",
+    "requirements": [
+      "审阅时最新版本为 25.07.01，于 2025-07-01 以 25.7.1 发布到 PyPI。所审阅的 main 提交在此之后另有一处 2026-10-18 的修改：当 external 文件夹中缺少某个工具时，改从系统 PATH 查找。README 面向 Windows、Linux 和 macOS 上的 Python 3.10 至 3.13；pyproject 要求 Python 3.10+，并将 pefile 2023.2.7 和 dissect.util 3.20 作为固定版本的可选依赖。",
+      "部分工具需要调用 PATH 中或软件包旁 external 文件夹里的外部程序：7-Zip、UEFITool 附带的 UEFIFind 与 UEFIExtract、EDK II 的 TianoCompress，以及 ToshibaComExtractor。README 说明在 Linux 上须从源码编译 comextract，在 Linux 和 macOS 上须从源码编译 TianoCompress。反编译 Intel BIOS Guard 脚本时可选用作者另行提供的 BIOS Guard Script Tool。",
+      "使用者需自备已有的厂商更新程序、更新包或镜像。仓库只包含 Python 源码、文档和打包文件，没有 BIOS 镜像、示例更新包或测试。README 提醒 AMI PFAT 组件可能没有明确顺序，因此合并生成的 00 -- ALL 文件通常不是完整可用的 SPI/BIOS/UEFI 镜像，结构末尾的 OEM 数据也需使用者自行判断用途。",
+      "依据 LICENSE 和 pyproject 采用 BSD-2-Clause-Patent 许可。README 将该工具集定位于研究和改装用途；本条目只涉及其解析与提取功能，提取出的固件仍受各厂商条款约束。本次未处理任何更新包。"
+    ]
   }
 }
