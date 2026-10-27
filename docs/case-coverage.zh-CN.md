@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 212 | 210 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 59 | 59 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 320 | 320 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 53 | 53 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 326 | 326 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 227 个出现项含目录链接；共关联 217 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 472 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 478 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -282,9 +282,15 @@
 | QQPet: a cross-platform pet rebuilt from Arctic Penguin T800 | 证据不足 | [来源](https://x.com/aigeeknews/status/2111095142790857087) |
 | Website to Next.js: a reported Claude Code template with parallel DOM-based rebuilding | 证据不足 | [来源](https://x.com/0xPascual/status/2111096590387601489) |
 | Black Bot / Blacksidian: reported REA rebuilds with AI-provider choice | 证据不足 | [来源](https://x.com/i/status/2111100877083947405) |
+| iOS on Android hardware: a porting idea and unverified HACKIOS/Redmi claims | 证据不足 | [来源](https://x.com/i/status/2111100973238329497) |
+| VMP-protected sample: a reported failed DeepSeek challenge | 证据不足 | [来源](https://x.com/i/status/2111101746001113381) |
+| Mega Man Battle Network: a secondhand AI decompilation and modding lead | 证据不足 | [来源](https://x.com/i/status/2111103450448572730) |
+| A twelve-year-old Kindle: reported Claude safety refusal during a jailbreak attempt | 证据不足 | [来源](https://x.com/i/status/2111106257431961740) |
+| 1997 audio software: investigating Windows 11 compatibility to continue old work | 证据不足 | [来源](https://x.com/i/status/2111115615628824723) |
 | OpenRiseOfNations：原生 macOS 引擎重新实现 | 已收录 | [来源](https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/README.md) |
 | Computer integrates REA: five app-feature rebuilding demos including Figma | 证据不足 | [来源](https://x.com/AskPerplexity/status/2111120664543596957) |
 | Claude Intercept 流量捕获分析工具 | 已收录 | [来源](https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/README.md) |
+| Claude client: inspecting environment telemetry with REA | 证据不足 | [来源](https://x.com/i/status/2111134289970765964) |
 | Notion app.asar: a Claude read-only file and domain-string inspection | 证据不足 | [来源](https://x.com/0xKurogamii/status/2111182893313613877) |
 | Grok Bot + REA: a reported software-investigation chat template | 证据不足 | [来源](https://x.com/ChaiWithAi/status/2111184500093026340) |
 | NIST ECDSA curves: Claude traces the generation of public parameters | 待核查 | [来源](https://www.anthropic.com/research/ecdsa-curve-origins) |

@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 212 | 210 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 59 | 59 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 320 | 320 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 53 | 53 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 326 | 326 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 227 occurrences have catalog links. They reference 217 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 472 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 478 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -282,9 +282,15 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | QQPet: a cross-platform pet rebuilt from Arctic Penguin T800 | Insufficient evidence | [Source](https://x.com/aigeeknews/status/2111095142790857087) |
 | Website to Next.js: a reported Claude Code template with parallel DOM-based rebuilding | Insufficient evidence | [Source](https://x.com/0xPascual/status/2111096590387601489) |
 | Black Bot / Blacksidian: reported REA rebuilds with AI-provider choice | Insufficient evidence | [Source](https://x.com/i/status/2111100877083947405) |
+| iOS on Android hardware: a porting idea and unverified HACKIOS/Redmi claims | Insufficient evidence | [Source](https://x.com/i/status/2111100973238329497) |
+| VMP-protected sample: a reported failed DeepSeek challenge | Insufficient evidence | [Source](https://x.com/i/status/2111101746001113381) |
+| Mega Man Battle Network: a secondhand AI decompilation and modding lead | Insufficient evidence | [Source](https://x.com/i/status/2111103450448572730) |
+| A twelve-year-old Kindle: reported Claude safety refusal during a jailbreak attempt | Insufficient evidence | [Source](https://x.com/i/status/2111106257431961740) |
+| 1997 audio software: investigating Windows 11 compatibility to continue old work | Insufficient evidence | [Source](https://x.com/i/status/2111115615628824723) |
 | OpenRiseOfNations: a native macOS engine reimplementation | Already curated | [Source](https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/README.md) |
 | Computer integrates REA: five app-feature rebuilding demos including Figma | Insufficient evidence | [Source](https://x.com/AskPerplexity/status/2111120664543596957) |
 | Claude Intercept | Already curated | [Source](https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/README.md) |
+| Claude client: inspecting environment telemetry with REA | Insufficient evidence | [Source](https://x.com/i/status/2111134289970765964) |
 | Notion app.asar: a Claude read-only file and domain-string inspection | Insufficient evidence | [Source](https://x.com/0xKurogamii/status/2111182893313613877) |
 | Grok Bot + REA: a reported software-investigation chat template | Insufficient evidence | [Source](https://x.com/ChaiWithAi/status/2111184500093026340) |
 | NIST ECDSA curves: Claude traces the generation of public parameters | Pending | [Source](https://www.anthropic.com/research/ecdsa-curve-origins) |
