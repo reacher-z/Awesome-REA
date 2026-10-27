@@ -15,7 +15,7 @@ import validate
 RECORDS = [{'id': 'ghidra', 'name': 'Ghidra'}, {'id': 'rea-lab', 'name': 'rea-lab'}, {'id': 'frida', 'name': 'Frida'}]
 TRANSLATIONS = {
     'ghidra': {'name': 'Ghidra 逆向工程框架', 'requirements': ['Java 21', '需要 Ghidra 11 或更高版本。']},
-    'rea-lab': {'name': 'rea-lab', 'requirements': '需要 REA。'},  # An unchanged proper name and a string.
+    'rea-lab': {'name': 'rea-lab', 'requirements': ['需要 REA。']},  # An unchanged proper name.
     'frida': {'requirements': ['需要 Python 3。']},  # Without a name, the English name is kept.
 }
 PIN = '0123456789abcdef0123456789abcdef01234567'
@@ -33,7 +33,7 @@ class CuratedTranslationValidatorTests(unittest.TestCase):
 
     def test_missing_and_unknown_ids_are_reported_by_id(self):
         translations = {key: value for key, value in TRANSLATIONS.items() if key != 'frida'}
-        translations['ghidar'] = {'requirements': '需要 Java。'}
+        translations['ghidar'] = {'requirements': ['需要 Java。']}
         self.assertEqual(errors_for(translations), [
             f"{CURATED_TRANSLATIONS}: no Chinese name/requirements entry for 1 curated resource(s): 'frida'",
             f"{CURATED_TRANSLATIONS}: 1 entry ID(s) name no curated resource: 'ghidar'",
@@ -44,7 +44,7 @@ class CuratedTranslationValidatorTests(unittest.TestCase):
 
     def test_ids_known_to_the_base_branch_are_not_coverage_findings(self):
         stale = {key: value for key, value in TRANSLATIONS.items() if key != 'frida'}
-        stale['removed-on-base'] = {'requirements': '需要 Java。'}
+        stale['removed-on-base'] = {'requirements': ['需要 Java。']}
         self.assertEqual(errors_for(stale, known_ids={'frida', 'removed-on-base'}), [])
         # A record the PR adds still needs its entry.
         added = [*RECORDS, {'id': 'new-tool', 'name': 'New tool'}]
@@ -55,12 +55,13 @@ class CuratedTranslationValidatorTests(unittest.TestCase):
         where = f"{CURATED_TRANSLATIONS}: entry 'ghidra'"
         cases = {
             'not an object': (['需要 Java。'], [f'{where} must be an object']),
-            'unsupported field': ({'requirements': '需要 Java。', 'requirementz': 'x'},
+            'unsupported field': ({'requirements': ['需要 Java。'], 'requirementz': 'x'},
                                   [f'{where} has unsupported fields requirementz']),
-            'empty name': ({'name': ' ', 'requirements': '需要 Java。'}, [f'{where}.name must be a nonempty string']),
+            'empty name': ({'name': ' ', 'requirements': ['需要 Java。']}, [f'{where}.name must be a nonempty string']),
         }
-        requirement_error = [f'{where}.requirements must be a nonempty string or list of nonempty strings']
-        for label, value in {'missing': {}, 'empty list': {'requirements': []}, 'empty item': {'requirements': ['需要 Java。', '']},
+        requirement_error = [f'{where}.requirements must be a nonempty list of nonempty strings']
+        # English requirements are lists (data/README.md), so a single string is rejected here too.
+        for label, value in {'missing': {}, 'string': {'requirements': '需要 Java。'}, 'empty list': {'requirements': []}, 'empty item': {'requirements': ['需要 Java。', '']},
                              'number': {'requirements': 3}, 'nested list': {'requirements': [['需要 Java。']]}}.items():
             cases[f'requirements {label}'] = (value, requirement_error)
         for label, (value, expected) in cases.items():
@@ -100,15 +101,15 @@ class CuratedTranslationReviewTests(unittest.TestCase):
         return errors + findings, reviewed
 
     def test_valid_change_passes_and_is_reported_as_checked(self):
-        findings, reviewed = self.review(json.dumps(TRANSLATIONS | {'frida': {'requirements': '需要 Python 3.10+。'}}))
+        findings, reviewed = self.review(json.dumps(TRANSLATIONS | {'frida': {'requirements': ['需要 Python 3.10+。']}}))
         self.assertEqual(findings, [])
         self.assertTrue(any('Chinese resource names and requirements checked' in line for line in reviewed))
 
     def test_unknown_ids_and_malformed_requirements_fail_review(self):
-        head = TRANSLATIONS | {'frida': {'requirements': []}, 'not-a-record': {'requirements': '需要 Java。'}}
+        head = TRANSLATIONS | {'frida': {'requirements': []}, 'not-a-record': {'requirements': ['需要 Java。']}}
         self.assertEqual(self.review(json.dumps(head, ensure_ascii=False))[0], [
             f"{CURATED_TRANSLATIONS}: 1 entry ID(s) name no curated resource: 'not-a-record'",
-            f"{CURATED_TRANSLATIONS}: entry 'frida'.requirements must be a nonempty string or list of nonempty strings",
+            f"{CURATED_TRANSLATIONS}: entry 'frida'.requirements must be a nonempty list of nonempty strings",
         ])
 
     def test_full_json_is_privacy_checked_even_without_a_diff(self):

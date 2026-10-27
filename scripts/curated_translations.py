@@ -1,6 +1,7 @@
 """Load and validate the curated Chinese resource names and requirements used by the builders."""
-import json
 from pathlib import Path
+
+import strict_json
 
 ROOT = Path(__file__).resolve().parents[1]
 CURATED_TRANSLATIONS = 'site/translations.zh-CN.json'
@@ -9,19 +10,11 @@ MAX_LISTED_IDS = 10
 
 
 def read_curated_translations(root=ROOT):
-    def unique_object(pairs):
-        result = {}
-        for key, value in pairs:
-            if key in result:
-                raise ValueError(f'{CURATED_TRANSLATIONS}: duplicate JSON key')
-            result[key] = value
-        return result
-
-    def invalid_constant(value):
-        raise ValueError(f'{CURATED_TRANSLATIONS}: non-JSON numeric constant')
-
-    return json.loads((Path(root) / CURATED_TRANSLATIONS).read_text(encoding='utf-8'),
-                      object_pairs_hook=unique_object, parse_constant=invalid_constant)
+    """Read the file with the shared strict parser: duplicate keys and NaN/Infinity are errors."""
+    try:
+        return strict_json.loads((Path(root) / CURATED_TRANSLATIONS).read_text(encoding='utf-8'))
+    except ValueError as error:
+        raise ValueError(f'{CURATED_TRANSLATIONS}: {error}') from error
 
 
 def nonempty_text(value):
@@ -36,7 +29,7 @@ def listed(identifiers):
 def validate_curated_translations(records, translations, errors, *, known_ids=frozenset()):
     """Pair each curated record with one entry and check the shapes the builders read.
 
-    A name may repeat the English proper name. Requirements are one string or a list of strings,
+    A name may repeat the English proper name. Requirements are a nonempty list of nonempty strings,
     like the English field. The trusted PR review combines changed files from the PR head with
     unchanged files from the base branch, so it passes the base catalog IDs as `known_ids`:
     those are not reported as missing or unknown, and a branch made before a newer record still
@@ -64,6 +57,5 @@ def validate_curated_translations(records, translations, errors, *, known_ids=fr
         if 'name' in entry and not nonempty_text(entry['name']):
             errors.append(f'{where}.name must be a nonempty string')
         requirements = entry.get('requirements')
-        if not (nonempty_text(requirements) or (isinstance(requirements, list) and requirements
-                                                and all(nonempty_text(item) for item in requirements))):
-            errors.append(f'{where}.requirements must be a nonempty string or list of nonempty strings')
+        if not (isinstance(requirements, list) and requirements and all(nonempty_text(item) for item in requirements)):
+            errors.append(f'{where}.requirements must be a nonempty list of nonempty strings')
