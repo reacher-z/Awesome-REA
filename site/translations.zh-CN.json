@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "appmon": {
+    "name": "AppMon 基于 Frida 的应用 API 监控框架",
+    "requirements": [
+      "该仓库已在 GitHub 归档，处于只读状态。master 分支最后一次提交（2022-11-08）修改了 apk_builder/getlibs.sh 中的 Frida 发布地址，仓库没有发布版本。使用文档在项目 wiki 中，最后编辑于 2019 年；GitHub Pages 站点只提供指向 wiki 的链接。",
+      "requirements.txt 固定了 frida 12.2.6（2018 年 9 月）、Flask 1.0.2、Werkzeug 0.15.3 等同一时期的软件包。挂钩脚本依赖 Frida 的 Java 和 ObjC 桥接，以及 Module.findExportByName、Memory.readUtf8String 等旧式调用；Frida 17.0.0 的发布说明（2025 年 5 月）表示这些桥接已不再随运行时打包、这些旧 API 已被移除，因此当前的 Frida 版本不经修改很可能无法使用。",
+      "wiki 中的主机配置涵盖 macOS 以及 Ubuntu 或 Kali Linux，Linux 上还需 Android 命令行工具。已越狱的 iOS 和已 root 的 Android 设备上运行 frida-server。对于其他设备，IPA Installer 会注入仓库中提交的 ipa_installer/release/FridaGadget.dylib（约 14 MB），并用使用者的 iOS 开发者描述文件重新签名应用；APK Builder 则加入由 getlibs.sh 下载的 Frida Gadget 库，并用 apk_builder/appmon.keystore 重新签名 APK——这是随仓库提交、密码固定的共用密钥。这些功能只应用于获准测试的应用和设备。",
+      "README 还列出一个 Intruder 组件，用于修改 API 调用数据以改变应用行为；本条目只涉及监控与追踪功能。Apache-2.0（LICENSE）。所审来源未提及任何 AI 或 REA 用途，本条目也未安装或运行该工具。"
+    ]
   }
 }
