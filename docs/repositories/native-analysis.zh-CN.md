@@ -285,7 +285,7 @@
 - [matiaszanolli/sega-vr-disasm](https://github.com/matiaszanolli/sega-vr-disasm) — Sega 32X 版《Virtua Racing》的完整静态重编译，优化仍在进行中。 **[183 星标]**
 - [SoftSec-KAIST/BinKit](https://github.com/SoftSec-KAIST/BinKit) — 二进制代码相似性分析（BCSA）基准 **[183 星标]**
 - [vallejocc/Reverse-Engineering-Arsenal](https://github.com/vallejocc/Reverse-Engineering-Arsenal) — 辅助逆向工程的实用脚本 **[183 星标]**
-- [Decompollaborate/rabbitizer](https://github.com/Decompollaborate/rabbitizer) — MIPS 指令解码器 **[182 星标]**
+- [Decompollaborate/rabbitizer](https://github.com/Decompollaborate/rabbitizer) — MIPS 指令解码器 **[182 星标]** · 精选：[rabbitizer MIPS 指令解码器](https://awesomerea.org/zh/resources/rabbitizer/)
 - [romainthomas/reverse-engineering-workshop](https://github.com/romainthomas/reverse-engineering-workshop) — 逆向工程工作坊的幻灯片及实践材料 **[182 星标]**
 - [LAC-Japan/IDA\_Plugin\_AntiDebugSeeker](https://github.com/LAC-Japan/IDA_Plugin_AntiDebugSeeker) — 自动识别并提取恶意软件可能使用的反调试技术。 **[181 星标]**
 - [rocky/elisp-bytecode](https://github.com/rocky/elisp-bytecode) — 一起记录 Emacs Lisp 字节码（Lisp 汇编程序）指令 **[181 星标]**

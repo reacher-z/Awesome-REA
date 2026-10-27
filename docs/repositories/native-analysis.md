@@ -285,7 +285,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [matiaszanolli/sega-vr-disasm](https://github.com/matiaszanolli/sega-vr-disasm) — Complete static recompilation of Virtua Racing for the Sega 32X (optimization in progress) **[183 stars]**
 - [SoftSec-KAIST/BinKit](https://github.com/SoftSec-KAIST/BinKit) — Binary Code Similarity Analysis (BCSA) Benchmark **[183 stars]**
 - [vallejocc/Reverse-Engineering-Arsenal](https://github.com/vallejocc/Reverse-Engineering-Arsenal) — Useful Scripts for helping in reverse engeenering **[183 stars]**
-- [Decompollaborate/rabbitizer](https://github.com/Decompollaborate/rabbitizer) — MIPS instruction decoder **[182 stars]**
+- [Decompollaborate/rabbitizer](https://github.com/Decompollaborate/rabbitizer) — MIPS instruction decoder **[182 stars]** · Curated: [rabbitizer](https://awesomerea.org/resources/rabbitizer/)
 - [romainthomas/reverse-engineering-workshop](https://github.com/romainthomas/reverse-engineering-workshop) — Slides &amp; Hands-on for the reverse engineering workshop **[182 stars]**
 - [LAC-Japan/IDA\_Plugin\_AntiDebugSeeker](https://github.com/LAC-Japan/IDA_Plugin_AntiDebugSeeker) — Automatically identify and extract potential anti-debugging techniques used by malware. **[181 stars]**
 - [rocky/elisp-bytecode](https://github.com/rocky/elisp-bytecode) — Let's document Emacs Lisp Bytecode (Lisp Assembly Program) instructions **[181 stars]**

@@ -4310,5 +4310,15 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "rabbitizer": {
+    "name": "rabbitizer MIPS 指令解码器",
+    "requirements": [
+      "审阅时最新稳定版为 1.16.2，于 2026-05-29 发布到 GitHub、PyPI 和 crates.io，与所审阅的 1.x 提交一致。2.0.0 预览系列（2.0.0-alpha.9，2026-05-20）由另一条 Rust 分支发布，本次未审阅；splat 和 spimdisasm 都把版本限制在 2.0.0 以下。",
+      "可用 pip install rabbitizer 或 cargo add rabbitizer 安装。README 称最低需要 Python 3.9，而 pyproject.toml 仍声明 >=3.4；从源码构建 Python 绑定需要 Python 开发头文件。C 与 C++ 库使用 make 和 clang 构建（C11 与 C++17），Rust crate 声明 Rust 1.66.0。各语言绑定的指令表由 tables/ 中的模板生成，CI 会检查生成文件是否为最新。",
+      "输入为原始 32 位指令字，调用方需自行从自己的二进制中取出代码、选择 CPU 变体，并处理地址和符号。会展开为多条指令的伪指令明确不予支持；README 称输出应当可匹配，报告 RSP 输出经 armips 重新汇编后可得到匹配代码，并说明 MIPS IV 仅部分支持。",
+      "GitHub Actions 在 Ubuntu 22.04 上以“警告视为错误”构建 C 代码，并运行构建信息、逻辑和指令检查；Python 单元测试在 Linux、macOS 和 Windows 上运行；tests/asm 收有 GTE、Allegrex 和 R5900 的汇编样例。本次审阅未构建或运行任何内容。README 的参考资料列表指向托管在别处的第三方 CPU 手册和文档，这些链接不属于本条目。",
+      "采用 MIT 许可。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
