@@ -4310,5 +4310,15 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "quokka-binary-exporter": {
+    "name": "Quokka 二进制导出工具",
+    "requirements": [
+      "审阅时最新版本为 v0.6.2，于 2025-12-08 发布，同时在 PyPI 发布 quokka-project 0.6.2；其 README 称支持 IDA 7.3+，并为 Windows、Linux 和 macOS 提供 IDA 7.4 至 9.2 的预构建插件。所审阅的 main 提交（2026-10-14）比它晚 261 个提交，版本号标为 1.0.0；这里描述的 Ghidra 与 Binary Ninja 导出器、quokka-cli 以及 IDA 9.1+ 要求只存在于 main 分支，尚未进入任何正式发布的软件包。",
+      "导出需要一种反汇编器。main 分支的 C++ 插件面向 IDA Pro 9.1+，可在 9.2+ 上通过 hcli 安装，或用 CMake 构建：9.2+ 会自动获取开源的 IDA SDK，更早的版本则需自行取得 SDK；Java 扩展需要 Ghidra 12.0.3+ 和 JDK 21+；Binary Ninja 插件声明最低版本为 4.0（build 4911），以无界面方式使用 Binary Ninja 需要商业许可证。Python 绑定在 main 上需要 Python 3.10+（0.6.2 为 3.8+），并依赖 capstone、networkx、protobuf 和 python-magic。",
+      "目前只实现了 LIGHT 导出模式：导出文件仅包含基本块级数据，因此载入时需要原始二进制，供 Capstone 解码指令；自包含的 FULL 模式仍在计划中，尚未实现。quokka-cli 仅在使用 IDA 时支持导出反编译代码。README 提醒，Capstone 的反汇编结果可能与反汇编器的不同。",
+      "tests/dataset 中的测试样本以 Git LFS 存储：由随附 many_types 和 sig_test 源码构建的程序、一个 Linux 内核模块（nf_nat_pt.ko）、一个 UEFI PEI 模块（StatusCodeHandlerPei.efi）、一个 puraUpdate 可执行文件及它们的导出文件；docs/samples 另有一个 qb-crackme 示例及其导出文件。工作流会构建 IDA 插件、构建并测试 Ghidra 扩展、测试 Binary Ninja 插件，并在 Python 3.10–3.13 上运行 Python 测试；本次审阅未运行任何程序。",
+      "采用 Apache-2.0 许可证；IDA Pro、Ghidra 和 Binary Ninja 仍受各自条款约束。所审来源未确立 REA 或 AI 的使用。"
+    ]
   }
 }

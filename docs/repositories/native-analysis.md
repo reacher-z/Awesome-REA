@@ -255,7 +255,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [pedro-javierf/NTRGhidra](https://github.com/pedro-javierf/NTRGhidra) — A Nintendo DS binary loader for Ghidra **[228 stars]**
 - [Sidenai/hyperion-disassembler](https://github.com/Sidenai/hyperion-disassembler) — Native multi-arch disassembler &amp; decompiler - PE/ELF/Mach-O, x86/x64/ARM64, Lua scripting, RTTI recovery **[228 stars]**
 - [Buku313/Skate3-Mobile](https://github.com/Buku313/Skate3-Mobile) — Play Skate 3 natively on Android. Download one APK, select your own ISO, and skate. ARM64 recompilation with Vulkan rendering. **[227 stars]**
-- [quarkslab/quokka](https://github.com/quarkslab/quokka) — Quokka: A Fast and Accurate Binary Exporter **[227 stars]**
+- [quarkslab/quokka](https://github.com/quarkslab/quokka) — Quokka: A Fast and Accurate Binary Exporter **[227 stars]** · Curated: [Quokka](https://awesomerea.org/resources/quokka-binary-exporter/)
 - [cesena/ghidra2dwarf](https://github.com/cesena/ghidra2dwarf) — 🐉 Export ghidra decompiled code to dwarf sections inside ELF binary **[226 stars]**
 - [mahmoudimus/ida-sigmaker](https://github.com/mahmoudimus/ida-sigmaker) — sigmaker is a zero-dependency IDA Pro 9.0+ cross-platform signature maker plugin with optional SIMD (e.g. AVX2/NEON/SSE2) speedups that works on MacOS/Linux/Windows. It allows configurable wildcard operand patterns, nibbles, and signature generation just by right clicking. **[226 stars]**
 - [tintinweb/ethereum-dasm](https://github.com/tintinweb/ethereum-dasm) — An ethereum evm bytecode disassembler and static/dynamic analysis tool **[223 stars]**

@@ -11759,5 +11759,40 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "quokka-binary-exporter",
+    "name": "Quokka",
+    "url": "https://github.com/quarkslab/quokka",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Quarkslab’s binary exporter, inspired by BinExport, saves a disassembler’s analysis to a protobuf .quokka file so functions, basic blocks, data, cross-references, segments and optionally decompiled code can be used later without the disassembler. Its Python bindings load an export together with the original binary, decode instructions at runtime with Capstone, or optionally lift them to P-code with pypcode, and expose programs, functions and control-flow graphs through one API. The main branch adds Ghidra and Binary Ninja exporters beside the IDA Pro plugin, a parallel quokka-cli batch exporter and name and type edits that can be written back to an IDA database.",
+    "description_zh": "Quarkslab 的二进制导出工具，受 BinExport 启发，把反汇编器的分析结果保存为 protobuf 格式的 .quokka 文件，此后无需反汇编器即可使用其中的函数、基本块、数据、交叉引用、段以及可选的反编译代码。其 Python 绑定将导出文件与原始二进制一并载入，运行时用 Capstone 解码指令，也可选用 pypcode 将其提升为 P-code，并通过统一的 API 提供程序、函数和控制流图。main 分支在 IDA Pro 插件之外新增了 Ghidra 与 Binary Ninja 导出器、可并行批量导出的 quokka-cli，以及可写回 IDA 数据库的名称和类型编辑。",
+    "evidence_url": "https://github.com/quarkslab/quokka/blob/5afe14bd424835431bbd8015f061a9b551608af4/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.6.2, published 2025-12-08 together with quokka-project 0.6.2 on PyPI; its README supports IDA 7.3+, and it ships prebuilt IDA plugins for IDA 7.4 through 9.2 on Windows, Linux and macOS. The reviewed main commit (2026-10-14) is 261 commits later and declares version 1.0.0; the Ghidra and Binary Ninja exporters, quokka-cli and the IDA 9.1+ requirement described here exist only on main, not in a released package.",
+      "Exporting needs one disassembler. The main-branch C++ plugin targets IDA Pro 9.1+, installs through hcli on 9.2+ or builds with CMake, which fetches the open-source IDA SDK for 9.2+ and needs a separately obtained SDK for older versions; the Java extension needs Ghidra 12.0.3+ and JDK 21+; the Binary Ninja plugin declares version 4.0 build 4911 as its minimum, and headless use there needs a commercial license. The Python bindings need Python 3.10+ on main, or 3.8+ for 0.6.2, with capstone, networkx, protobuf and python-magic.",
+      "Only the LIGHT export mode works: exports hold block-level data, so loading them needs the original binary for Capstone to decode instructions, and the self-contained FULL mode is planned but not implemented. quokka-cli offers decompiled-code export for IDA only. The README warns that Capstone’s disassembly can differ from the disassembler’s.",
+      "Test fixtures in tests/dataset are stored with Git LFS: programs built from the included many_types and sig_test sources, a Linux kernel module (nf_nat_pt.ko), a UEFI PEI module (StatusCodeHandlerPei.efi), a puraUpdate executable and their exports; docs/samples adds a qb-crackme sample and its export. Workflows build the IDA plugin, build and test the Ghidra extension, test the Binary Ninja plugin and run the Python tests on Python 3.10–3.13; this review ran nothing.",
+      "Apache-2.0 license; IDA Pro, Ghidra and Binary Ninja keep their own terms. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/quarkslab/quokka/releases/tag/v0.6.2",
+      "https://github.com/quarkslab/quokka/blob/v0.6.2/README.md",
+      "https://pypi.org/project/quokka-project/0.6.2/",
+      "https://github.com/quarkslab/quokka/blob/5afe14bd424835431bbd8015f061a9b551608af4/pyproject.toml",
+      "https://github.com/quarkslab/quokka/blob/5afe14bd424835431bbd8015f061a9b551608af4/bindings/python/quokka/version.py",
+      "https://github.com/quarkslab/quokka/blob/5afe14bd424835431bbd8015f061a9b551608af4/ghidra_extension/README.md",
+      "https://github.com/quarkslab/quokka/blob/5afe14bd424835431bbd8015f061a9b551608af4/binaryninja_extension/README.md",
+      "https://github.com/quarkslab/quokka/blob/5afe14bd424835431bbd8015f061a9b551608af4/.gitattributes",
+      "https://github.com/quarkslab/quokka/blob/5afe14bd424835431bbd8015f061a9b551608af4/.github/workflows/python.yml",
+      "https://github.com/quarkslab/quokka/blob/5afe14bd424835431bbd8015f061a9b551608af4/LICENSE"
+    ]
   }
 ]
