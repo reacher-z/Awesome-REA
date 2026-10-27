@@ -4330,5 +4330,15 @@
       "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
       "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
     ]
+  },
+  "outrun-sonic-runners-server-case": {
+    "name": "Outrun：Sonic Runners 自定义服务器",
+    "requirements": [
+      "所审阅的 master 提交（2023-12-31）只更新了 README 中的一个链接；最近的代码提交在 2023 年 2 月，先合并后又撤销了一个拉取请求。最新版本 v1.0.1 发布于 2019-12-07，提供 Windows、macOS 和 Linux 的 amd64 与 arm64 服务器构建。README 的目标是实现原服务器的全部非调试端点；其功能列表为作者自述，仓库没有测试。",
+      "使用 Go 构建，依赖 gorilla/mux、bbolt 和 gopsutil。go.mod 声明 Go 1.17，而 README 中基于 GOPATH 的步骤要求 Go 1.15.8，并提醒 Go 1.16+ 会导致部分组件（如 RPC 程序）无法构建。配置来自 config.json 以及可选的活动、信息和游戏配置文件，缺失时使用内置默认值；客户端默认连接 9001 端口。",
+      "游玩需要使用者自有的 Sonic Runners 客户端；README 针对 v2.0.3 Android APK，需要修改后才能连接该服务器，本条目不转述这些客户端修改步骤。仓库不含游戏素材或客户端文件。README 还指向一个为 2019 年公开实例提供应用下载的 Discord 服务器，本条目未收录该链接。",
+      "cryption/basic.go 内嵌了用于客户端通信的 AES 密钥，README 将找到该密钥归功于另一位贡献者；其他致谢的贡献者提供了通信日志和故事模式数据。这些是项目记录的输入来源，本合集既未运行服务器，也未运行客户端。",
+      "服务器代码采用 GPL-3.0；游戏、其客户端、素材和商标保留各自权利。所审来源未确立任何 AI 或 REA 的使用。"
+    ]
   }
 }

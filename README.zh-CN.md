@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 494](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-494-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 210](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-210-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 135](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 495](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-495-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 211](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-211-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 135](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,11 +21,11 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-494 项精选资源（210 个案例）· 135 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 491。
+495 项精选资源（211 个案例）· 135 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 492。
 
 **按目标找工具与案例**
 
-- [网站](#website) (29) · [游戏](#game) (193) · [应用](#app) (79)
+- [网站](#website) (29) · [游戏](#game) (194) · [应用](#app) (79)
 - [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (23) · [协议](#protocol) (19)
 
 **论文与工作流**
@@ -34,7 +34,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (210) · [相关合集](#related-collections) (7) · [完整仓库索引](#完整仓库索引) (3,309)
+- [全部案例](https://awesomerea.org/zh/cases/) (211) · [相关合集](#related-collections) (7) · [完整仓库索引](#完整仓库索引) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -259,6 +259,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**BFM-decomp：Brave Fencer Musashi 匹配反编译**](https://github.com/Druthulu/BFM-decomp) - 记录美版 PlayStation 游戏的智能体辅助重建，使用固定编译器及完整二进制 SHA-1 检查。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/bfm-decomp-case/)</sub>
 - [**Snowboard Kids：智能体辅助的 N64 匹配反编译**](https://github.com/cdlewis/snowboardkids-decomp) - 原版 Nintendo 64 游戏 Snowboard Kids 的匹配反编译，利用使用者自备的 ROM 重新构建 SHA1 一致的北美版与日版 ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/snowboardkids-matching-decomp-case/)</sub>
 - [**Sonic Advance 3：AI 辅助匹配单个敌人模块**](https://gambiconf.substack.com/p/development-journey-on-game-decompilation) - Macabeus 在注明日期的研究文章中，介绍了如何把汇编、相似的已反编译函数和结构体放进提示词，让 Claude Sonnet 3.5 与 DeepSeek R1 为社区 Sonic Advance 3 GBA 反编译项目中的敌人模块 Marun 编写匹配的 C 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sa3-marun-ai-decomp-case/)</sub>
+- [**Outrun：Sonic Runners 自定义服务器**](https://github.com/fluofoxxo/outrun) - 以 Go 服务重新实现手游 Sonic Runners 的游戏服务器，使改为连接它的 Android 和 iOS 客户端能够登录、游玩计时模式和故事模式，并使用商店、轮盘、角色与 Chao 养成、活动、公告和基础排行榜。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/outrun-sonic-runners-server-case/)</sub>
 
 #### 工具、项目与集成
 

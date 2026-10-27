@@ -167,7 +167,7 @@
 - [vw2x/Mira](https://github.com/vw2x/Mira) — 面向 AI 的移动端运行时检测工作台（iOS 和 Android）。 **[106 星标]**
 - [actuator/DEFCON-33](https://github.com/actuator/DEFCON-33) — 攻破热点：针对 5G 和 4G/LTE 路由器的认证前远程代码执行、任意短信及邻近攻击 **[105 星标]**
 - [adityatelange/MobSleuth](https://github.com/adityatelange/MobSleuth) — 搭建个人 Android 📱 应用安全研究实验室的脚本 **[102 星标]**
-- [fluofoxxo/outrun](https://github.com/fluofoxxo/outrun) — Sonic Runners 的自定义服务器。 **[101 星标]**
+- [fluofoxxo/outrun](https://github.com/fluofoxxo/outrun) — Sonic Runners 的自定义服务器。 **[101 星标]** · 精选：[Outrun：Sonic Runners 自定义服务器](https://awesomerea.org/zh/resources/outrun-sonic-runners-server-case/)
 - [SyscallX-18113/Apkx-Hunter](https://github.com/SyscallX-18113/Apkx-Hunter) — Apkx-Hunter 是完全使用 C 编写、以 Debian 软件包提供的 Android 静态分析框架。提供涵盖 15 个类别和 166 种检测模式的 OWASP MASVS 扫描，用于 Android 安全评估、逆向工程、恶意软件分析与渗透测试，并具备基于机器学习的密钥评分和高级静态安全分析功能。 **[101 星标]**
 - [themalwarenews/frida\_rootandsslbypass](https://github.com/themalwarenews/frida_rootandsslbypass) — 该脚本可为你的 Android 应用绕过 Root 检测及 SSL 证书固定。 **[100 星标]**
 - [darvincisec/DetectTamper](https://github.com/darvincisec/DetectTamper) — Android 篡改检测。 **[95 星标]**

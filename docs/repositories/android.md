@@ -167,7 +167,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [vw2x/Mira](https://github.com/vw2x/Mira) — Mobile runtime detection workbench for AI (iOS and Android) **[106 stars]**
 - [actuator/DEFCON-33](https://github.com/actuator/DEFCON-33) — Hacking Hotspots: Pre-Auth Remote Code Execution, Arbitrary SMS &amp; Adjacent Attacks on 5G &amp; 4G/LTE Routers **[105 stars]**
 - [adityatelange/MobSleuth](https://github.com/adityatelange/MobSleuth) — Scripts to set up your own Android 📱 app hacking lab **[102 stars]**
-- [fluofoxxo/outrun](https://github.com/fluofoxxo/outrun) — A Sonic Runners custom server. **[101 stars]**
+- [fluofoxxo/outrun](https://github.com/fluofoxxo/outrun) — A Sonic Runners custom server. **[101 stars]** · Curated: [Outrun: a Sonic Runners custom server](https://awesomerea.org/resources/outrun-sonic-runners-server-case/)
 - [SyscallX-18113/Apkx-Hunter](https://github.com/SyscallX-18113/Apkx-Hunter) — Apkx-Hunter is an Android Static Analysis Framework in Debian Package written entirely in C with OWASP MASVS scanning with 15 categories and 166 detection patterns for Android security assessments, reverse engineering, malware analysis, and penetration testing. It features ML-based secret scoring, and advanced static security analysis. **[101 stars]**
 - [themalwarenews/frida\_rootandsslbypass](https://github.com/themalwarenews/frida_rootandsslbypass) — With this script you can bypass both root detection and ssl pinning for your android app. **[100 stars]**
 - [darvincisec/DetectTamper](https://github.com/darvincisec/DetectTamper) — Tamper detection in Android **[95 stars]**

@@ -11799,5 +11799,37 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "outrun-sonic-runners-server-case",
+    "name": "Outrun: a Sonic Runners custom server",
+    "url": "https://github.com/fluofoxxo/outrun",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "protocol"
+    ],
+    "description_en": "Reimplements the game server for the Sonic Runners mobile game as a Go service, so Android and iOS clients redirected to it can log in, play Timed and Story modes and use the shop, roulettes, character and Chao progression, events, notices and basic rankings. The README says it was reverse engineered from the Sonic Runners Revival server, on whose code it bases much of its own; it serves about 40 HTTP endpoints of the client's API, decrypts and encrypts AES-CBC request payloads and keeps player state in a bbolt database. It is a functional replacement server, not a recovery of the original server code.",
+    "description_zh": "以 Go 服务重新实现手游 Sonic Runners 的游戏服务器，使改为连接它的 Android 和 iOS 客户端能够登录、游玩计时模式和故事模式，并使用商店、轮盘、角色与 Chao 养成、活动、公告和基础排行榜。README 称它是从 Sonic Runners Revival 服务器逆向而来，自身大量代码也以该服务器为基础；它提供客户端 API 的约 40 个 HTTP 端点，对 AES-CBC 请求载荷进行解密和加密，并用 bbolt 数据库保存玩家状态。这是功能上的替代服务器，并非恢复出的原始服务器代码。",
+    "evidence_url": "https://github.com/fluofoxxo/outrun/blob/750d7b9729a199fcc46acd7e55dfad1ccddd5a8b/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit of 2023-12-31 only updated a README link; the last code commits, in February 2023, merged and then reverted a pull request. The latest release, v1.0.1 of 2019-12-07, ships server builds for Windows, macOS and Linux on amd64 and arm64. The README's goal is every non-debug endpoint of the original server; its feature list is author-reported, and the repository has no tests.",
+      "Builds with Go using gorilla/mux, bbolt and gopsutil. go.mod declares Go 1.17, while the README's GOPATH-era steps ask for Go 1.15.8 and warn that Go 1.16+ breaks building some parts, such as the RPC programs. Configuration comes from config.json plus optional event, info and game config files, with built-in defaults when they are missing; clients connect on port 9001 by default.",
+      "Play requires the user's own Sonic Runners client; the README targets the v2.0.3 Android APK, which has to be modified to use the server, and this entry does not reproduce those client-modification steps. The repository contains no game assets or client files. The README also points to a Discord server offering app downloads for a 2019 public instance, which this entry does not link.",
+      "cryption/basic.go embeds the AES key used for client traffic, which the README credits another contributor with finding; other credited contributors supplied traffic logs and story-mode data. These are the project's documented inputs, and this collection ran neither the server nor a client.",
+      "GPL-3.0 for the server code; the game, its client, assets and trademarks keep their own rights. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/fluofoxxo/outrun/blob/750d7b9729a199fcc46acd7e55dfad1ccddd5a8b/main1.go",
+      "https://github.com/fluofoxxo/outrun/blob/750d7b9729a199fcc46acd7e55dfad1ccddd5a8b/go.mod",
+      "https://github.com/fluofoxxo/outrun/tree/750d7b9729a199fcc46acd7e55dfad1ccddd5a8b/muxhandlers",
+      "https://github.com/fluofoxxo/outrun/tree/750d7b9729a199fcc46acd7e55dfad1ccddd5a8b/config",
+      "https://github.com/fluofoxxo/outrun/blob/750d7b9729a199fcc46acd7e55dfad1ccddd5a8b/LICENSE",
+      "https://github.com/fluofoxxo/outrun/releases/tag/v1.0.1"
+    ]
   }
 ]
