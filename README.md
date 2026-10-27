@@ -34,7 +34,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (220) · [Related Collections](#related-collections) (11) · [Full Repository Index](#full-repository-index) (3,309)
+- [All cases](https://awesomerea.org/cases/) (220) · [Related Collections](#related-collections) (11) · [Full Repository Index](#full-repository-index) (3,309) · [Contributing](#contributing)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task

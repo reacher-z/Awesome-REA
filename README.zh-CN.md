@@ -34,7 +34,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (220) · [相关合集](#related-collections) (11) · [完整仓库索引](#完整仓库索引) (3,309)
+- [全部案例](https://awesomerea.org/zh/cases/) (220) · [相关合集](#related-collections) (11) · [完整仓库索引](#完整仓库索引) (3,309) · [参与贡献](#参与贡献)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
