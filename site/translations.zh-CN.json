@@ -4528,5 +4528,15 @@
       "POLICY.md 要求代码独立编写，不得包含泄露或未经授权的源码、二进制文件或素材，不收录原软件的分支、移植、启动器和模组，并将净室开发的声明交由各项目作者负责；Remade 表示不审核代码来源或合法性。只有一条记录提到净室流程，因此某个条目依靠的是净室开发、逆向工程还是公开文档，需在其自身来源中核实。",
       "仓库的 MIT 许可证适用于目录本身的代码和数据；所收录项目各自保留许可证，从 MIT、Apache-2.0 到 GPL 和 AGPL 不等，其中一项记为 Unlicensed。项目自己于 2026-10-17 对 119 个条目做的文档审查，仍有无法访问的仓库和许可证冲突未解决，并声明不构成软件、法律或兼容性认证。这是独立的目录；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "canlab": {
+    "name": "CanLab CAN 总线逆向分析工作站",
+    "requirements": [
+      "README 称 CanLab 是单人开发的测试版项目。所审阅的提交 8aaa6ff（2026-09-23）在 pyproject.toml 中声明版本 2.1.0，而最新发布版本为 v2.0.0（2026-09-15），附 Linux x86_64 构建和演示视频。README 强调分析方法属于启发式，只提示候选结果而非确认信号，且尚未在大量真实车辆上验证。",
+      "需要 Linux、macOS 或 Windows 上的 Python 3.11+（开发使用 3.12），AI、REST、MCP、硬件适配器、MDF4（asammdf）和 openpilot 日志（pycapnp）为可选扩展；README 要求 4 GB 内存，机器学习功能建议 8 GB。实时采集可使用 SocketCAN、comma.ai Panda、GVRET 板卡或 python-can 适配器；README 称只用过一款实体适配器 CANalyst-II，其余仅在虚拟总线上验证。",
+      "分析对象是使用者自己的抓包。附带的样例是由脚本生成的合成 Hyundai 风格抓包，测试夹具每个只有几行；真实数据验收测试会下载 SavvyCAN、CSS Electronics 和 comma.ai 公开的记录，而不是把它们提交进仓库。opendbc 匹配功能首次使用时下载 commaai/opendbc 索引；可选的 AI 分析会把所选 ID 的帧统计发送给配置的 Anthropic、OpenAI、Groq 或 Ollama 服务。",
+      "该应用还具备仅限台架使用的发送功能，受默认关闭的全局 ARM TX 开关和屏蔽 ID 列表约束；README 限定只能在隔离的台架环境中使用，此处不作进一步介绍。MCP 工具无法发送报文。",
+      "README 的测试部分报告 753 个 pytest 测试通过（徽章仍写 578），另有与 can-isotp、udsoncan 和 can-j1939 的互操作测试，以及针对公开真实记录的 99 项检查；诊断请求只在脚本模拟的应答端上测试过。采用 MIT 许可证；NMEA 2000 表源自 CANboat（Apache-2.0），cereal 模式定义来自 comma.ai（MIT）。本次审阅未运行测试，也未打开任何抓包。"
+    ]
   }
 }
