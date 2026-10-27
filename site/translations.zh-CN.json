@@ -4310,5 +4310,15 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "echomuse-echo-dot-voice-satellite-case": {
+    "name": "EchoMuse：把第二代 Echo Dot 变成 Home Assistant 语音终端的替换软件",
+    "requirements": [
+      "所审阅的 main 提交 4bbf7ff（2026-10-27）仍在积极开发。审阅时最新稳定版设备固件为 v2.18.1（2026-10-15），emOS 为 0.10（2026-10-02），控制器加载项声明版本 2.26.3，其后又发布了抢先体验版 v2.19.0-ea.2 和 emos-v0.11-ea.1。目前只支持第二代 Echo Dot；README 称 Echo Dot 3、Echo 2 和 Echo Show 8 的移植仍在进行，并列出未解决的问题，例如 FireOS 6 下的 emOS 不支持 WPA3。",
+      "需要使用者自己的第二代 Echo Dot，并先用第三方工具（运行 R0rt1z2 的 amonet-biscuit 的 firebreak）解锁；README 称此步骤风险自负，可能导致设备软变砖，本次未审阅该解锁工具。安装向导会保存设备自身启动分区的副本，并用其中的内核和设备树构建 emOS 镜像；emOS 以只读方式挂载设备 /system 中的 bionic 和 tinyalsa。emOS README 称不发布可启动镜像，因为其中会包含 Amazon 的内核；发布内容只有项目自己的固件程序、init、用户空间负载包，以及附带源码的 busybox。",
+      "需要配置好 Assist 流程的 Home Assistant、一台常开主机以 Home Assistant 加载项或 Docker 容器运行控制器，以及一次性 WebUSB 设置所用的 Chrome 或 Edge。从源码构建时，Go 设备固件使用项目的 Docker 编译器镜像，控制器使用 Python 3.12，emOS 使用 emos/build.sh，其发布流程用固定版本的 Android NDK 编译 init。",
+      "CI 运行带覆盖率下限的控制器 pytest 测试、仪表盘与 Go 设备测试、依赖审计和镜像构建；工程日志和验收测试报告记录了在维护者自有设备上的运行。这些检查针对 EchoMuse 自身的行为；它并不复现 Alexa，也没有恢复任何 Amazon 软件或服务。本次审阅未运行测试，也未使用设备。",
+      "采用 MIT 许可证；NOTICE.md 列出内置的 SpeexDSP（BSD-3-Clause）、ONNX Runtime 头文件、aioesphomeapi 协议缓冲区定义和一段 CC BY 4.0 计时器音效。项目声明与 Amazon 无关。README 称 EchoMuse 主要在维护者指导下由 Claude 编写，超过一半的提交带有 Co-Authored-By: Claude 署名；未提及使用 REA。"
+    ]
   }
 }

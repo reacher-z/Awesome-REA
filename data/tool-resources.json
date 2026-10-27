@@ -11759,5 +11759,43 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "echomuse-echo-dot-voice-satellite-case",
+    "name": "EchoMuse: replacement software that turns the Echo Dot 2nd gen into a Home Assistant voice satellite",
+    "url": "https://github.com/wilbowes/EchoMuse",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Replaces the software on an unlocked second-generation Amazon Echo Dot (2016, codename biscuit) so it works as a local Home Assistant voice satellite over the ESPHome API: EchoMuse's own Go firmware drives the microphones, speaker, LED ring and buttons, and a controller on the LAN handles wake words, devices and a dashboard. Its default emOS mode swaps Amazon's Android userspace for the project's own init and busybox while keeping the Dot's kernel from the owner's boot image. An engineering journal records how codec routes, the mute key and other hardware behavior were worked out by measuring the device and diffing the mixer and DAPM state while stock FireOS plays a sound.",
+    "description_zh": "替换已解锁的第二代 Amazon Echo Dot（2016 年款，代号 biscuit）上的软件，使其通过 ESPHome API 成为本地 Home Assistant 语音终端：EchoMuse 自己的 Go 固件驱动麦克风、扬声器、LED 灯环和按键，局域网中的控制器负责唤醒词、设备管理和仪表盘。默认的 emOS 模式用项目自有的 init 和 busybox 取代 Amazon 的 Android 用户空间，同时保留取自机主自身启动镜像的 Dot 内核。工程日志记录了如何通过在设备上测量，并在原厂 FireOS 播放声音时对比混音器和 DAPM 状态，摸清编解码器通路、静音键等硬件行为。",
+    "evidence_url": "https://github.com/wilbowes/EchoMuse/blob/4bbf7ff6eb9c97faea9080e0a2a6032921ef8108/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed main commit 4bbf7ff (2026-10-27) is in active development. At review the latest stable device firmware is v2.18.1 (2026-10-15) and emOS 0.10 (2026-10-02), the controller add-on declares 2.26.3, and early-access v2.19.0-ea.2 and emos-v0.11-ea.1 builds followed. Only the Echo Dot 2nd gen is supported; README calls ports to the Echo Dot 3, Echo 2 and Echo Show 8 in progress and lists open issues, including no WPA3 on emOS under FireOS 6.",
+      "Needs the user's own Echo Dot 2nd gen, first unlocked with third-party tools (firebreak running R0rt1z2's amonet-biscuit); README says this is done at the user's own risk and can soft-brick the device, and that unlock was not reviewed here. The setup wizard keeps a copy of the device's own boot partition and builds the emOS image from its kernel and device trees, and emOS mounts bionic and tinyalsa read-only from the device's /system. The emOS README says no bootable image is published because it would contain Amazon's kernel; releases carry the project's own firmware binary, init and userspace payload, and busybox with its source.",
+      "Requires a working Home Assistant with an Assist pipeline, an always-on host for the controller as a Home Assistant add-on or Docker container, and Chrome or Edge for the one-time WebUSB setup. Source builds use the project's Docker compiler image for the Go device firmware, Python 3.12 for the controller, and emos/build.sh, whose release workflow compiles the init with a pinned Android NDK.",
+      "CI runs the controller pytest suite with coverage floors, dashboard and Go device tests, dependency audits and image builds, and the journal and acceptance-test reports describe runs on the maintainer's own devices. These check EchoMuse's own behavior; it does not reproduce Alexa, and no Amazon software or service is recovered. This review ran no tests and used no device.",
+      "MIT, with vendored SpeexDSP (BSD-3-Clause), an ONNX Runtime header, aioesphomeapi protocol buffers and a CC BY 4.0 timer sound listed in NOTICE.md; the project states it is not affiliated with Amazon. README says EchoMuse is written largely with Claude, directed by the maintainer, and that more than half the commits carry a Co-Authored-By: Claude line; no REA use is stated."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/wilbowes/EchoMuse/blob/4bbf7ff6eb9c97faea9080e0a2a6032921ef8108/emos/README.md",
+      "https://github.com/wilbowes/EchoMuse/blob/4bbf7ff6eb9c97faea9080e0a2a6032921ef8108/docs/rooting.md",
+      "https://github.com/wilbowes/EchoMuse/blob/4bbf7ff6eb9c97faea9080e0a2a6032921ef8108/JOURNAL.md",
+      "https://github.com/wilbowes/EchoMuse/blob/4bbf7ff6eb9c97faea9080e0a2a6032921ef8108/porting/README.md",
+      "https://github.com/wilbowes/EchoMuse/blob/4bbf7ff6eb9c97faea9080e0a2a6032921ef8108/CONTRIBUTING.md",
+      "https://github.com/wilbowes/EchoMuse/blob/4bbf7ff6eb9c97faea9080e0a2a6032921ef8108/controller/config.yaml",
+      "https://github.com/wilbowes/EchoMuse/blob/4bbf7ff6eb9c97faea9080e0a2a6032921ef8108/.github/workflows/ci.yml",
+      "https://github.com/wilbowes/EchoMuse/blob/4bbf7ff6eb9c97faea9080e0a2a6032921ef8108/.github/workflows/emos-release.yml",
+      "https://github.com/wilbowes/EchoMuse/blob/4bbf7ff6eb9c97faea9080e0a2a6032921ef8108/docs/uat-results/2.26.0.md",
+      "https://github.com/wilbowes/EchoMuse/blob/4bbf7ff6eb9c97faea9080e0a2a6032921ef8108/NOTICE.md",
+      "https://github.com/wilbowes/EchoMuse/blob/4bbf7ff6eb9c97faea9080e0a2a6032921ef8108/LICENSE",
+      "https://github.com/wilbowes/EchoMuse/releases/tag/v2.18.1",
+      "https://github.com/wilbowes/EchoMuse/releases/tag/emos-v0.10"
+    ]
   }
 ]
