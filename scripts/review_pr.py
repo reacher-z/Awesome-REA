@@ -11,7 +11,8 @@ import tempfile
 import urllib.parse
 import urllib.request
 
-from validate import validate_benchmarks, validate_resources, validate_source_index, public_https_error
+from validate import (evidence_pin_warnings, validate_benchmarks, validate_resources, validate_source_index,
+                      public_https_error)
 from validate_papers import validate_papers
 from localization import LOCALE_FILES, validate_localizations
 from source_scope import validate_scope
@@ -356,6 +357,24 @@ def review_data(contents, changed):
     return errors, reviewed
 
 
+def review_advisories(contents, changed):
+    """Evidence-pin warnings for curated records this PR adds or changes; they never become findings."""
+    if not set(CATALOGS) & changed:
+        return []
+    records, base = [], {}
+    try:
+        for filename in CATALOGS:
+            rows, base_rows = parse_json(contents[filename]), parse_json((ROOT / filename).read_text(encoding='utf-8'))
+            if not isinstance(rows, list) or not isinstance(base_rows, list):
+                return []
+            records.extend(rows)
+            base.update((row['id'], row) for row in base_rows if isinstance(row, dict) and isinstance(row.get('id'), str))
+    except (KeyError, OSError, UnicodeError, ValueError, TypeError, RecursionError):
+        return []  # Unreadable catalogs are already findings; an advisory needs both versions.
+    # Records are compared by ID across both trusted base catalogs, so moving one between files is not a change.
+    return evidence_pin_warnings([row for row in records if isinstance(row, dict)
+                                  and (not isinstance(row.get('id'), str) or base.get(row['id']) != row)])
+
 def safe_text(value):
     # Strip controls and join whitespace before redacting, so neither can rejoin a hidden value.
     value = re.sub(r'[\x00-\x08\x0b-\x1f\x7f\u202a-\u202e\u2066-\u2069]', '', str(value))
@@ -446,6 +465,7 @@ def main():
         reviewed.extend(checked)
     except (ValueError, TypeError, KeyError):
         errors.append('Required catalog, localization, or source-scope JSON could not be parsed or validated. Check its shape locally.')
+    advisories = review_advisories(contents, changed & REVIEW_FILES)
     manual = any(path.startswith(('scripts/', '.github/', 'site/')) for path in changed)
     if errors:
         status = '**Changes need attention.**'
@@ -460,6 +480,11 @@ def main():
         body.extend('- ' + safe_text(item) for item in errors[:30])
         if len(errors) > 30:
             body.append(f'- {len(errors) - 30} additional findings; run the local validator for the complete list.')
+    if advisories:
+        body.extend(['', 'Advisory (does not affect this check):'])
+        body.extend('- ' + safe_text(item) for item in advisories[:30])
+        if len(advisories) > 30:
+            body.append(f'- {len(advisories) - 30} additional advisories; run the local validator for the complete list.')
     if not_inspected:
         body.extend(['', 'Not inspected automatically: GitHub omitted the diff, and the file could not be retrieved as text within the review limits. A maintainer should check these files:'])
         body.extend('- ' + safe_text(path) for path in not_inspected[:30])
