@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/game-analysis/) · [English](game-analysis.md)
 
-**484 个仓库** · 2026-10-20 UTC
+**485 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -72,6 +72,7 @@
 - [dbalatoni13/nfsmw](https://github.com/dbalatoni13/nfsmw) — 对多个版本的《极品飞车：最高通缉》进行 1:1 反编译，仍在开发中 **[226 星标]**
 - [MetaMystia/MetaMystia](https://github.com/MetaMystia/MetaMystia) — 《东方夜雀食堂》的模组 **[204 星标]**
 - [parappadev/parappa2](https://github.com/parappadev/parappa2) — PaRappa the Rapper 2（2001，PS2）反编译项目 **[202 星标]**
+- [OpenGMK/GM8Decompiler](https://github.com/OpenGMK/GM8Decompiler) — GameMaker 8.x 可执行文件反编译器 **[201 星标]** · 精选：[GM8Decompiler GameMaker 8 游戏反编译器](https://awesomerea.org/zh/resources/gm8decompiler/)
 - [open-ribbon/open-ribbon](https://github.com/open-ribbon/open-ribbon) — vib-ribbon 的 PAL 版反编译项目 **[188 星标]**
 - [ImaterialC/PriconneRe-TL](https://github.com/ImaterialC/PriconneRe-TL) — 《公主连结！Re:Dive》日服 64 位 IL2CPP 版本的英文补丁 **[185 星标]**
 - [Herringway/ebsrc](https://github.com/Herringway/ebsrc) — 游戏 EarthBound 的源码重建项目 **[183 星标]**

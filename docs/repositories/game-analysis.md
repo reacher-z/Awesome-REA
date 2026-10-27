@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/game-analysis/) · [简体中文](game-analysis.zh-CN.md)
 
-**484 repositories** · 2026-10-20 UTC
+**485 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -72,6 +72,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [dbalatoni13/nfsmw](https://github.com/dbalatoni13/nfsmw) — WIP 1:1 Decompilation of multiple versions of NFS:MW **[226 stars]**
 - [MetaMystia/MetaMystia](https://github.com/MetaMystia/MetaMystia) — A mod for Touhou Mystia's Izakaya. **[204 stars]**
 - [parappadev/parappa2](https://github.com/parappadev/parappa2) — PaRappa the Rapper 2 (2001, PS2) decompilation **[202 stars]**
+- [OpenGMK/GM8Decompiler](https://github.com/OpenGMK/GM8Decompiler) — A decompiler for GameMaker 8.x executables **[201 stars]** · Curated: [GM8Decompiler](https://awesomerea.org/resources/gm8decompiler/)
 - [open-ribbon/open-ribbon](https://github.com/open-ribbon/open-ribbon) — vib-ribbon decompilation (PAL version) **[188 stars]**
 - [ImaterialC/PriconneRe-TL](https://github.com/ImaterialC/PriconneRe-TL) — An English patch for Princess Connect! ReDive JP server 64bit IL2CPP version **[185 stars]**
 - [Herringway/ebsrc](https://github.com/Herringway/ebsrc) — Source code recreation for the game Earthbound **[183 stars]**
