@@ -10,6 +10,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit
 
+from evidence_links import evidence_link
 from open_graph import open_graph_meta, website_reference
 
 STATUS_LABELS = {
@@ -181,7 +182,8 @@ def paper_card(paper: dict, language: str, use_pro: bool) -> str:
         metadata.append(('DOI', paper['doi']))
     metadata.append((label('Sources checked', '来源复核日期'), formatted_date(paper['verified_at'], language)))
     details = ''.join(f'<dt>{escape(key)}</dt><dd>{escape(value)}</dd>' for key, value in metadata)
-    source_links = ''.join(f'<li><a href="{web_url(url)}" target="_blank" rel="noopener">{escape(url)}</a></li>' for url in paper['evidence_urls'])
+    # Same labels as the detail page: pinned GitHub links show their path, repository and revision.
+    source_links = ''.join(f'<li>{evidence_link(url, web_url(url), language)}</li>' for url in paper['evidence_urls'])
     return f'''<article class="paper-card" id="{paper['id']}" data-paper-id="{paper['id']}">
   <header><h3><a href="{web_url(paper['url'])}" target="_blank" rel="noopener">{escape(title)}{icon('external', use_pro)}</a></h3><div class="paper-meta"><span class="paper-year">{paper['year']}</span><span class="paper-venue" lang="en">{escape(paper['venue'])}</span><span class="paper-status paper-status-{paper['publication_status']}">{status}</span></div></header>
   <p class="paper-description">{escape(paper[f'description_{language}'])}</p>
