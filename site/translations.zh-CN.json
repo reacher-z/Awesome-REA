@@ -4538,5 +4538,14 @@
       "Python 单元测试覆盖转换函数和 Flipper 文件解析；项目没有 CI。各种效果由作者和贡献者在自己的手环上报告，本次来源核查未运行任何代码或硬件。",
       "采用 MIT 许可（LICENSE）。PixMob 的硬件、固件和商标不在该许可范围内，X 光图片注明来自 Samy Kamkar。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "frida-ui": {
+    "name": "Frida UI 浏览器端 Frida 操作界面",
+    "requirements": [
+      "最新发布版本为 v1.1.0，发布于 2026-01-18，也已上架 PyPI；所审阅的 main 分支提交 4b25e28（2026-03-08）比它多 16 个提交，包括布局调整、远程设备设置保存、CodeShare 缓存和键盘快捷键。可在 Python 3.7+ 上通过 uv tool、pipx 或 pip 安装；依赖 fastapi、uvicorn、pydantic 和 frida Python 包。",
+      "设备上须运行与所装 frida 包版本一致的 frida-server，可通过 ADB 经 USB 连接，或经网络连接；README 只介绍了 Android 的配置方法。目标应用由分析者自备，且须已安装在该设备上。",
+      "服务默认绑定 127.0.0.1:8000，其 REST API 没有身份验证；README 提醒它会在目标进程中执行任意 JavaScript，只应向可信网络和用户开放。Monaco 编辑器从 cdnjs 加载，失败时退回普通文本框；CodeShare 脚本从 codeshare.frida.re 获取并原样运行，使用前应先审阅。",
+      "采用 MIT 许可。README 称这是独立项目，不属于 Frida 官方，也未获其赞助，并致谢 GitHub Copilot 提供代码建议。仓库没有自动化测试或持续集成；本次审阅未安装或运行，也未提及使用 REA。"
+    ]
   }
 }

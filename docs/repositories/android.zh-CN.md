@@ -114,7 +114,7 @@
 - [Dr-hydra/Better-Endfield](https://github.com/Dr-hydra/Better-Endfield) — 面向《明日方舟：终末地》的模块化 Windows/Android 工具包：提供 BEM 模型模组及创作工具、原生插件、MMD 播放、相机与界面控制、角色语音、标题画面定制，以及 PC 战斗和抽卡工具。 **[259 星标]**
 - [ViRb3/apk-utilities](https://github.com/ViRb3/apk-utilities) — 🛠 操作 Android APK 的工具与脚本 **[252 星标]**
 - [Octowolve/Hooking-Template-With-Mod-Menu](https://github.com/Octowolve/Hooking-Template-With-Mod-Menu) — 使用 Substrate（或 Dobby，参见分支）进行 Android Hook 的小型模板，内含 Java 编写的模组菜单。 **[249 星标]**
-- [adityatelange/frida-ui](https://github.com/adityatelange/frida-ui) — 直接在浏览器中与 Frida 设备、进程和脚本交互。 **[245 星标]**
+- [adityatelange/frida-ui](https://github.com/adityatelange/frida-ui) — 直接在浏览器中与 Frida 设备、进程和脚本交互。 **[245 星标]** · 精选：[Frida UI 浏览器端 Frida 操作界面](https://awesomerea.org/zh/resources/frida-ui/)
 - [Eltion/Facebook-SSL-Pinning-Bypass](https://github.com/Eltion/Facebook-SSL-Pinning-Bypass) — 在 Android 设备上绕过 Facebook 的 SSL 证书固定。 **[233 星标]**
 - [mpast/mobileAudit](https://github.com/mpast/mobileAudit) — 对 Android APK 执行静态应用安全测试（SAST）和恶意软件分析的 Django 应用 **[229 星标]**
 - [Mrack/TInjector\_Symbi](https://github.com/Mrack/TInjector_Symbi) — 通过更稳定地劫持 Zygote，在应用启动前注入 SO。 **[224 星标]**

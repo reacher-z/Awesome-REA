@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 516](https://img.shields.io/badge/resources-516-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 219](https://img.shields.io/badge/cases-219-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 140](https://img.shields.io/badge/papers-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 517](https://img.shields.io/badge/resources-517-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 219](https://img.shields.io/badge/cases-219-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 140](https://img.shields.io/badge/papers-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,11 +21,11 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-516 curated resources (219 cases) · 140 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 513 because 3 of these appear only under Papers.
+517 curated resources (219 cases) · 140 papers · 3,309 indexed repositories · latest source review 2026-10-27. Section counts add up to 514 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
-- [Website](#website) (29) · [Game](#game) (198) · [App](#app) (83)
+- [Website](#website) (29) · [Game](#game) (198) · [App](#app) (84)
 - [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (24) · [Protocol](#protocol) (22)
 
 **Research and workflows**
@@ -401,6 +401,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**React-Decode**](https://github.com/alexandra-seredkina/React-Decode) - Static-analysis CLI for compiled React JavaScript that produces readable bundle output and inferred API-request, route and application-constant reports. <sub>Tool · Also: Website · [Full entry](https://awesomerea.org/resources/react-decode/)</sub>
 - [**abc-decompiler**](https://github.com/ohos-decompiler/abc-decompiler) - Decompiler for HarmonyOS Ark bytecode (.abc), the format HarmonyOS app packages carry in modules.abc, built by adapting the jadx decompiler and reading files through a patched copy of the abcde library. <sub>Tool · Android · [Full entry](https://awesomerea.org/resources/abc-decompiler/)</sub>
 - [**slicer**](https://github.com/katana-project/slicer) - Browser-based Java reverse-engineering tool that loads class files and JAR/ZIP archives and disassembles or decompiles them with Vineflower (the default), CFR, Procyon or JASM, compiled to run in the browser, next to its own bytecode disassembler. <sub>Tool · JVM · [Full entry](https://awesomerea.org/resources/slicer/)</sub>
+- [**Frida UI**](https://github.com/adityatelange/frida-ui) - Local browser interface for Frida aimed at Android app testing: a FastAPI server lists USB, local and remote frida-server devices with their installed apps and running processes, and lets the analyst attach to a process, spawn an app, spawn it with a script injected at launch, detach or kill it. <sub>Tool · Android · [Full entry](https://awesomerea.org/resources/frida-ui/)</sub>
 
 <a id="native-binary"></a>
 ### Native Binary

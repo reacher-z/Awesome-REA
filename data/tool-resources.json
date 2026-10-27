@@ -12521,5 +12521,35 @@
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/tree/b372420e1e1ff818a8d25ba50f0c71e97e62f138/raw_wild_ir_captures",
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/LICENSE"
     ]
+  },
+  {
+    "id": "frida-ui",
+    "name": "Frida UI",
+    "url": "https://github.com/adityatelange/frida-ui",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Local browser interface for Frida aimed at Android app testing: a FastAPI server lists USB, local and remote frida-server devices with their installed apps and running processes, and lets the analyst attach to a process, spawn an app, spawn it with a script injected at launch, detach or kill it. Scripts are written in a Monaco editor or loaded from files or Frida CodeShare, whose scripts can be queued to run at spawn, and each session's console output is kept and can be exported as text.",
+    "description_zh": "面向 Android 应用测试的 Frida 本地浏览器界面：FastAPI 服务会列出通过 USB、本机或远程 frida-server 连接的设备，以及其中已安装的应用和正在运行的进程，分析者可在浏览器中附加到进程、启动应用、在启动时注入脚本，或断开、结束进程。脚本可在 Monaco 编辑器中编写，也可从本地文件或 Frida CodeShare 载入，CodeShare 脚本可排队在启动时运行；每个会话的控制台输出都会保留，并可导出为文本。",
+    "evidence_url": "https://github.com/adityatelange/frida-ui/blob/4b25e28013bd142c7ef80462491e4db31d3c143f/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release v1.1.0, published 2026-01-18 and also on PyPI; the reviewed main commit 4b25e28 of 2026-03-08 is 16 commits ahead with layout changes, saved remote-device settings, CodeShare caching and keyboard shortcuts. Install with uv tool, pipx or pip on Python 3.7+; it depends on fastapi, uvicorn, pydantic and the frida Python package.",
+      "The device must run a frida-server whose version matches the installed frida package, reached over USB through ADB or over the network; README documents Android setup only. The analyst supplies the target app, which must already be installed on that device.",
+      "The server binds 127.0.0.1:8000 by default and its REST API has no authentication; README warns that it executes arbitrary JavaScript in target processes and should be exposed only to trusted networks and users. The Monaco editor is loaded from cdnjs, falling back to a plain text area, and CodeShare scripts are fetched from codeshare.frida.re and run unchanged, so review them before use.",
+      "MIT. README says it is an independent project, not part of or sponsored by Frida, and credits GitHub Copilot for code suggestions. The repository has no automated tests or CI; nothing was installed or run in this review, and no REA connection is stated."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/adityatelange/frida-ui/blob/4b25e28013bd142c7ef80462491e4db31d3c143f/frida_ui/server.py",
+      "https://github.com/adityatelange/frida-ui/blob/4b25e28013bd142c7ef80462491e4db31d3c143f/frida_ui/modules/codeshare.py",
+      "https://github.com/adityatelange/frida-ui/blob/4b25e28013bd142c7ef80462491e4db31d3c143f/setup.py",
+      "https://github.com/adityatelange/frida-ui/blob/4b25e28013bd142c7ef80462491e4db31d3c143f/LICENSE",
+      "https://github.com/adityatelange/frida-ui/releases/tag/v1.1.0",
+      "https://pypi.org/project/frida-ui/1.1.0/"
+    ]
   }
 ]
