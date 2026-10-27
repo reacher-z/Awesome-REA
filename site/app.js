@@ -446,6 +446,11 @@ function renderMoreFilters() {
   if (state.loaded && !moreFiltersSynced) { moreFiltersSynced = true; if (active) setMoreFilters(true); }
 }
 function reset() { state.q = ""; state.group = "all"; state.category = "all"; state.kind = "all"; $("#kind-select").value="all"; state.target = "all"; state.visible = 15; $("#search-input").value = ""; $("#category-select").value = "all"; updateURL(); render(); }
+// The lowercase owner/repo of a github.com URL, or "" for any other address.
+function githubRepo(value) { try { const url = new URL(value); if (url.hostname.toLowerCase() !== "github.com") return ""; const parts = url.pathname.split("/").filter(Boolean); return parts.length >= 2 ? parts.slice(0,2).join("/").replace(/\.git$/i, "").toLowerCase() : ""; } catch (_) { return ""; } }
+// Curated search also finds an entry by the GitHub owner/repo of its URL and, when another, of its primary source.
+// The paths stay in the search text only; cards and the catalog download are unchanged.
+function repositoryPaths(record) { return [...new Set([record.url, record.evidence_url].map(githubRepo).filter(Boolean))]; }
 async function load() {
   state.error = false; $("#error-state").hidden = true; $("#resource-grid").setAttribute("aria-busy", "true"); $("#results-status").textContent = t("loading");
   try {
@@ -453,7 +458,7 @@ async function load() {
     state.topicLabels = data.topic_labels || {};
     // build_site.py writes build_readme.CATEGORIES here, the same labels the entry pages use.
     state.categoryLabels = data.category_labels || {};
-    state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: [r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(state.categoryLabels[r.category] || []),...(KIND[r.kind] || []),r.relationship,...r.requirements,...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels)].join(" ").toLocaleLowerCase()}));
+    state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: [r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(state.categoryLabels[r.category] || []),...(KIND[r.kind] || []),r.relationship,...r.requirements,...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels),...repositoryPaths(r)].join(" ").toLocaleLowerCase()}));
     if (!["all","rea","agents","tools","learn"].includes(state.group)) state.group = "all";
     $('[data-target="protocol"]').hidden = !state.records.some(record => record.targets.includes("protocol"));
     if (!["all","website","game","app","binary","firmware","protocol"].includes(state.target)) state.target = "all";
@@ -595,7 +600,6 @@ function sourceFiltered() {
     result.sort((a,b) => scores.get(b)-scores.get(a) || a.order-b.order);
   }
   else {
-    const githubRepo = value => { try { const url = new URL(value); if (url.hostname.toLowerCase() !== "github.com") return ""; const parts = url.pathname.split("/").filter(Boolean); return parts.length >= 2 ? parts.slice(0,2).join("/").replace(/\.git$/i, "").toLowerCase() : ""; } catch (_) { return ""; } };
     const curatedRepos = new Set(state.records.map(record => githubRepo(record.url)).filter(Boolean));
     const reverseEngineering = /\b(?:reverse[-\s]engineering|binary[-\s]analysis|decompil\w*|disassembl\w*|ghidra|ida|frida|firmware[-\s]analysis)\b/i;
     const priority = record => curatedRepos.has(githubRepo(record.url)) ? 2 : reverseEngineering.test([...record.topics,record.description_en || ""].join(" ")) ? 1 : 0;
