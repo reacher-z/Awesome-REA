@@ -4310,5 +4310,14 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "snake-apple-macos-security-series": {
+    "name": "Snake & Apple：macOS 内部机制与安全系列文章",
+    "requirements": [
+      "所审阅的 main 提交日期为 2026-10-04，没有发行版。文章发布在 Medium、Patreon 和 AFINE 博客上，另有一篇刊于 Phrack；带星号的文章仅向付费 Patreon 支持者开放，README 中的 Apple Intelligence 一章尚未完成。仓库收录的是代码和参考资料，而非文章正文，本次审阅未阅读这些文章。",
+      "这些工具针对 macOS 和 Mach-O 文件。CrimsonUroboros 需要 Python 及固定版本的依赖，包括 LIEF 0.15.1、pyimg4、asn1crypto、treelib、xattr 和 python-magic；各章文件夹中还保留了它的旧版本。许多文章涉及针对 macOS 防护机制的漏洞研究；本条目只列出其分析主题，不描述任何方法。",
+      "权利方面的疑虑：README 称每章的 mac 文件夹存放供参考的 macOS 源码以及演讲幻灯片副本。所审阅的代码树中有六份第三方演讲和指南的 PDF 副本，以及至少一份对 Apple 私有 LaunchServices 函数的 Hex-Rays 反编译输出；其再分发条款均未说明。",
+      "仓库声明采用 GPL-3.0；Apple 软件、反编译出的 Apple 代码以及第三方演讲资料仍受各自权利约束，该许可证并不授予这些权利。仓库有一个针对 CrimsonUroboros 的测试模块，本次审阅未运行任何程序。两篇仅限 Patreon 的文章讨论在漏洞研究中使用 AI，未经审阅；所审来源未确立与 REA 的关联。"
+    ]
   }
 }

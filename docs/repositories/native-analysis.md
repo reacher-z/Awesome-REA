@@ -219,7 +219,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Nalen98/GhidraEmu](https://github.com/Nalen98/GhidraEmu) — Native Pcode emulator **[308 stars]**
 - [0xdea/ghidra-scripts](https://github.com/0xdea/ghidra-scripts) — A collection of my Ghidra scripts to facilitate reverse engineering and vulnerability research. **[303 stars]**
 - [TorgoTorgo/ghidra-findcrypt](https://github.com/TorgoTorgo/ghidra-findcrypt) — Ghidra analysis plugin to locate cryptographic constants **[302 stars]**
-- [Karmaz95/Snake\_Apple](https://github.com/Karmaz95/Snake_Apple) — Articles and tools related to research in the Apple environment (mainly macOS). **[300 stars]**
+- [Karmaz95/Snake\_Apple](https://github.com/Karmaz95/Snake_Apple) — Articles and tools related to research in the Apple environment (mainly macOS). **[300 stars]** · Curated: [Snake &amp; Apple: macOS internals and security article series](https://awesomerea.org/resources/snake-apple-macos-security-series/)
 - [tintinweb/ida-batch\_decompile](https://github.com/tintinweb/ida-batch_decompile) — \*Decompile All the Things\* - IDA Batch Decompile plugin and script for Hex-Ray's IDA Pro that adds the ability to batch decompile multiple files and their imports with additional annotations (xref, stack var size) to the pseudocode .c file **[300 stars]**
 - [ubfx/BinDiffHelper](https://github.com/ubfx/BinDiffHelper) — Ghidra Extension to integrate BinDiff for function matching **[297 stars]**
 - [thetacom/hexabyte](https://github.com/thetacom/hexabyte) — A modern, modular, and robust TUI hex editor. **[294 stars]**

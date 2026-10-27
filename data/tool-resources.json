@@ -11759,5 +11759,35 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "snake-apple-macos-security-series",
+    "name": "Snake & Apple: macOS internals and security article series",
+    "url": "https://github.com/Karmaz95/Snake_Apple",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "Code repository for Karol Mazurek’s Snake & Apple article series on macOS internals and security research. Chapters cover Mach-O, code signing, binary hardening checks, dylibs and dyld, AMFI, antivirus components, the App Sandbox and SIP, TCC and the XNU kernel, plus app bundles, and the README links each article and its follow-ups. CrimsonUroboros, the series’ LIEF-based Python analysis tool, grows with each chapter and groups its options by those topics, and smaller scripts parse trust caches, code signatures, sandbox profiles and TCC databases.",
+    "description_zh": "Karol Mazurek 的 Snake & Apple 系列文章的代码仓库，内容是 macOS 内部机制与安全研究。各章涵盖 Mach-O、代码签名、二进制加固检查、dylib 与 dyld、AMFI、防病毒组件、App Sandbox 与 SIP、TCC 和 XNU 内核，另有应用包相关主题，README 链接了每篇文章及其后续文章。系列的核心工具 CrimsonUroboros 基于 LIEF 用 Python 编写，随章节逐步扩充，并按上述主题分组提供选项；另有一些小脚本用于解析信任缓存、代码签名、沙盒配置文件和 TCC 数据库。",
+    "evidence_url": "https://github.com/Karmaz95/Snake_Apple/blob/ef5aca06a00c4627de16ce8983b17a897a7ce138/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit dates from 2026-10-04, with no releases. The articles are hosted on Medium, Patreon and the AFINE blog, plus one Phrack article; entries marked with an asterisk are reserved for paying Patreon supporters, and the README leaves its Apple Intelligence chapter unfinished. The repository holds code and reference material, not the article text, and this review did not read the articles.",
+      "The tools target macOS and Mach-O files. CrimsonUroboros needs Python with the pinned requirements, including LIEF 0.15.1, pyimg4, asn1crypto, treelib, xattr and python-magic; older versions of it remain in each chapter folder. Many articles concern vulnerability research on macOS protections; this record lists only their analysis topics and describes no methods.",
+      "Rights concern: the README says each chapter’s mac folder holds macOS source code for reference and copies of presentations. The reviewed tree includes six PDF copies of third-party talks and guides, and at least one Hex-Rays decompiler listing of a private Apple LaunchServices function; their redistribution terms are not stated.",
+      "The repository declares GPL-3.0; Apple software, decompiled Apple code and third-party presentations keep their own rights, which that license does not grant. A test module covers CrimsonUroboros, and this review ran nothing. Two Patreon-only articles discuss using AI in vulnerability research and were not reviewed; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Karmaz95/Snake_Apple/blob/ef5aca06a00c4627de16ce8983b17a897a7ce138/TOOLS.md",
+      "https://github.com/Karmaz95/Snake_Apple/blob/ef5aca06a00c4627de16ce8983b17a897a7ce138/Article_tags.md",
+      "https://github.com/Karmaz95/Snake_Apple/blob/ef5aca06a00c4627de16ce8983b17a897a7ce138/requirements.txt",
+      "https://github.com/Karmaz95/Snake_Apple/blob/ef5aca06a00c4627de16ce8983b17a897a7ce138/LICENSE",
+      "https://github.com/Karmaz95/Snake_Apple/tree/ef5aca06a00c4627de16ce8983b17a897a7ce138/tests"
+    ]
   }
 ]
