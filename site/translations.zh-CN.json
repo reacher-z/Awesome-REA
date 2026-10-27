@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "termshark": {
+    "name": "termshark tshark 终端界面",
+    "requirements": [
+      "审阅时最新版本为 v2.4.0，发布于 2022-07-11，提供 Linux（x64、arm64、armv6）、macOS（x64、arm64）、FreeBSD、NetBSD、OpenBSD 和 Windows x64 构建。README 还列出了 Arch、Debian、FreeBSD、Homebrew、MacPorts、Kali、NixOS、Snapcraft、Termux 和 Ubuntu 软件包。所审阅的 master 提交（2022-11-01）比该版本多 14 个提交，其中包括尚未发布的十六进制视图导航改进；此后 master 再无新提交。",
+      "运行时需要 PATH 中有 Wireshark 的 tshark（1.10.2 或更高版本），因为 termshark 的全部数据包分析都依赖它，能解析哪些协议也取决于所安装的 tshark。实时抓包使用 dumpcap，只能在用户有抓包权限的环境中进行。抓到的数据包默认保存在用户的缓存目录中（Linux 上为 .cache/termshark/pcaps），也可用 -w 指定文件。通过 SSH 把数据包复制到剪贴板时，需要 X11 转发或自定义复制命令。",
+      "可用 go install 构建为单个 Go 可执行文件（模块为 github.com/gcla/termshark/v2，go.mod 声明 Go 1.13）。除主题文件外，仓库只提交了少量小型测试抓包文件（pkg/pcap/testdata 和 scripts/pcaps/telnet-cooked.pcap）。",
+      "采用 MIT 许可。README 指出，tshark 的许多功能 termshark 尚未提供。本次未安装该工具，也未读取或抓取任何数据包。"
+    ]
   }
 }
