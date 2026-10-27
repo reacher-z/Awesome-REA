@@ -12616,5 +12616,38 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "gr-lora",
+    "name": "gr-lora",
+    "url": "https://github.com/rpp0/gr-lora",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "GNU Radio out-of-tree module by Pieter Robyns and co-authors for receiving and decoding LoRa physical-layer frames with a software-defined radio, implementing the modulation features described in patents and blog posts. Its receiver channelizes the input, detects and synchronizes to LoRa chirps with clock-drift correction, and decodes symbols through Gray mapping, deinterleaving, dewhitening and Hamming decoding into header and payload bytes, which a message socket sink can forward over UDP port 40868. The bundled flowgraphs decode recorded traces or live captures, and the README lists HackRF One, USRP B201, RTL-SDR and LimeSDR as tested receivers.",
+    "description_zh": "由 Pieter Robyns 等人开发的 GNU Radio 树外模块，借助软件定义无线电接收并解码 LoRa 物理层帧，实现了专利和博客文章中描述的调制特性。其接收器先对输入进行信道化，检测 LoRa 线性调频信号并与之同步、校正时钟漂移，再经格雷映射、解交织、去白化和汉明译码把符号还原为报头和载荷字节；消息套接字汇点可把结果通过 UDP 端口 40868 转发。附带的流图可解码录制的信号或实时采集的信号，README 列出 HackRF One、USRP B201、RTL-SDR 和 LimeSDR 为经过测试的接收设备。",
+    "evidence_url": "https://github.com/rpp0/gr-lora/blob/90343d45a3c73c84d32d74b8603b6c01de025b08/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The newest commit on master, from 2021-12-10, merged a port to GNU Radio 3.9: CMake requests GNU Radio 3.9, the Python bindings use pybind11, and the library links liquid-dsp and log4cpp. The README was not updated for the port and still lists Python 2, SWIG and wx dependencies, and its Docker image installs python2 packages on an unpinned Arch Linux base; the Travis CI configuration builds GNU Radio maint-3.8. A gr3.7 branch keeps the older code, and GNU Radio 3.10 or later is not covered by the reviewed sources.",
+      "Input is IQ samples from an SDR or a recorded file. The receiver block takes sample rate, center frequency, channel list, bandwidth, spreading factor, coding rate, implicit-header, CRC and reduced-rate settings that must match the transmission. apps/lora_receive_file_nogui.py offers to download an example 868.1 MHz SF7 trace from the authors' university server, and further traces are in the separate gr-lora-samples repository. The README lists LoPy, Dragino HAT, Adafruit Feather 32u4, Microchip RN2483 and SX1276 boards as tested transmitters.",
+      "The README states that payload and header CRCs are not checked and that several channels cannot be decoded at once; its changelog marks version 0.7's downlink, reduced-rate implicit-header and arbitrary-bandwidth support as experimental. The newest version tag is v0.6.2, so 0.7 exists only on master. docs/test-results holds the authors' decoding rates from suites rerun on 2021-12-01 during the port, such as 100% on the short USRP traces, and the author considers LoRa fully reverse engineered as of version 0.6, citing close to 100% accuracy on clear signals; these are author-reported results.",
+      "GPL-3.0 (LICENSE). The README asks research users to cite the Zenodo record 10.5281/zenodo.853201. It covers the LoRa physical layer only and does not mention LoRaWAN. The reviewed sources mention no AI or REA use, and nothing was built or run for this record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/rpp0/gr-lora/blob/90343d45a3c73c84d32d74b8603b6c01de025b08/CMakeLists.txt",
+      "https://github.com/rpp0/gr-lora/blob/90343d45a3c73c84d32d74b8603b6c01de025b08/lib/CMakeLists.txt",
+      "https://github.com/rpp0/gr-lora/blob/90343d45a3c73c84d32d74b8603b6c01de025b08/grc/lora_receiver.block.yml",
+      "https://github.com/rpp0/gr-lora/blob/90343d45a3c73c84d32d74b8603b6c01de025b08/lib/decoder_impl.cc",
+      "https://github.com/rpp0/gr-lora/blob/90343d45a3c73c84d32d74b8603b6c01de025b08/apps/lora_receive_file_nogui.py",
+      "https://github.com/rpp0/gr-lora/blob/90343d45a3c73c84d32d74b8603b6c01de025b08/docker/Dockerfile",
+      "https://github.com/rpp0/gr-lora/blob/90343d45a3c73c84d32d74b8603b6c01de025b08/.travis.yml",
+      "https://github.com/rpp0/gr-lora/tree/90343d45a3c73c84d32d74b8603b6c01de025b08/docs/test-results",
+      "https://github.com/rpp0/gr-lora/blob/90343d45a3c73c84d32d74b8603b6c01de025b08/LICENSE"
+    ]
   }
 ]
