@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/reverse-engineering/) · [English](reverse-engineering.md)
 
-**669 个仓库** · 2026-10-20 UTC
+**670 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -268,6 +268,7 @@
 - [anvilsecure/lookinsidethebox](https://github.com/anvilsecure/lookinsidethebox) — 破解 Dropbox 为其修改版 Python 解释器添加的加密与混淆层。 **[89 星标]**
 - [Biswa96/WslReverse](https://github.com/Biswa96/WslReverse) — 对 WSL 中隐藏 COM 接口和 LxBus IPC 机制的实验 **[88 星标]**
 - [ByteV0rtex/CVE-2026-65343](https://github.com/ByteV0rtex/CVE-2026-65343) — CVE-2026-65343 概念验证：通过 AppleKeyStore 越界读取绕过 KASLR（iOS 26.6 / 23G71） **[86 星标]**
+- [onehouwong/Firmware-Analysis-Papers](https://github.com/onehouwong/Firmware-Analysis-Papers) — 近期固件分析安全研究论文 **[85 星标]** · 精选：[Firmware-Analysis-Papers 固件分析论文清单](https://awesomerea.org/zh/resources/firmware-analysis-papers-list/)
 - [therealFoxster/DontEatMyContent](https://github.com/therealFoxster/DontEatMyContent) — 防止刘海或灵动岛遮挡 YouTube 中宽高比为 2:1 的视频内容 **[85 星标]**
 - [avatarone/avatar-python](https://github.com/avatarone/avatar-python) — 嵌入式系统固件的动态安全分析 **[84 星标]**
 - [Biswa96/PDBDownloader](https://github.com/Biswa96/PDBDownloader) — 无需 WDK 即可下载调试所需 PDB 符号文件的独立程序 **[84 星标]**

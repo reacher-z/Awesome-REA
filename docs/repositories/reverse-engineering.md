@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**669 repositories** · 2026-10-20 UTC
+**670 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -268,6 +268,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [anvilsecure/lookinsidethebox](https://github.com/anvilsecure/lookinsidethebox) — Breaks the encryption and obfuscation layers that Dropbox applies to their modified Python interpreter. **[89 stars]**
 - [Biswa96/WslReverse](https://github.com/Biswa96/WslReverse) — Experiments with hidden COM interface and LxBus IPC mechanism in WSL **[88 stars]**
 - [ByteV0rtex/CVE-2026-65343](https://github.com/ByteV0rtex/CVE-2026-65343) — CVE-2026-65343 PoC — AppleKeyStore OOB read → KASLR defeat (iOS 26.6 / 23G71) **[86 stars]**
+- [onehouwong/Firmware-Analysis-Papers](https://github.com/onehouwong/Firmware-Analysis-Papers) — Recent security papers on firmware analysis **[85 stars]** · Curated: [Firmware-Analysis-Papers](https://awesomerea.org/resources/firmware-analysis-papers-list/)
 - [therealFoxster/DontEatMyContent](https://github.com/therealFoxster/DontEatMyContent) — Prevent the notch/Dynamic Island from munching on 2:1 video content in YouTube **[85 stars]**
 - [avatarone/avatar-python](https://github.com/avatarone/avatar-python) — Dynamic security analysis of embedded systems’ firmwares **[84 stars]**
 - [Biswa96/PDBDownloader](https://github.com/Biswa96/PDBDownloader) — Standalone program to download PDB Symbol files for debugging without WDK **[84 stars]**

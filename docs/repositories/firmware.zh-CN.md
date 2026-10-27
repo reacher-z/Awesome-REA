@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/firmware/) · [English](firmware.md)
 
-**221 个仓库** · 2026-10-20 UTC
+**220 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -44,7 +44,6 @@
 - [djr-747/nokia-dct3-emulator](https://github.com/djr-747/nokia-dct3-emulator) — 面向 Nokia DCT3 手机（3310/3410/5210/8210/8250/8850 等）的开源仿真器与分析工具集，可在浏览器（WASM）和原生 SDL 图形界面中启动真实固件。需自行提供固件，项目不附带固件。采用 GPL-2 许可证。 **[92 星标]**
 - [nmatt0/firmwaretools](https://github.com/nmatt0/firmwaretools) — 用于各种固件分析任务的一组脚本和工具 **[90 星标]**
 - [matiaspl/LinkPi-ENCx](https://github.com/matiaspl/LinkPi-ENCx) — 基于 F3520D 平台的 LinkPi ENC 系列（ENC1/ENC5/ENC9）和 TBS 2603SE 视频编码器的逆向工程与非官方文档，涵盖硬件分析、固件内部机制、流媒体修复和隐藏功能。 **[86 星标]**
-- [onehouwong/Firmware-Analysis-Papers](https://github.com/onehouwong/Firmware-Analysis-Papers) — 近期固件分析安全研究论文 **[85 星标]**
 - [Cr4sh/smram\_parse](https://github.com/Cr4sh/smram_parse) — 系统管理内存（SMRAM）分析工具 **[83 星标]**
 - [fkie-cad/LuckyCAT](https://github.com/fkie-cad/LuckyCAT) — 分布式模糊测试管理框架 **[70 星标]**
 - [RiS3-Lab/DICE-DMA-Emulation](https://github.com/RiS3-Lab/DICE-DMA-Emulation) — DICE：自动仿真 DMA 输入通道，用于固件动态分析 **[67 星标]**
