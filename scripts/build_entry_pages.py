@@ -241,6 +241,11 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
     counterpart = entry_path(kind, record['id'], 'en' if zh else 'zh')
     listing = f'{prefix}/{kind}s/'
     list_name = label('Curated resources', '精选资源') if kind == 'resource' else label('Research papers', '研究论文')
+    extra_return = ''
+    if kind == 'resource' and record['kind'] == 'case-study':
+        # /cases/ groups case studies by subject with scope and evidence; /resources/ stays one link away.
+        extra_return = f'<a href="{listing}">{list_name}</a>'
+        listing, list_name = f'{prefix}/cases/', label('Case studies', '案例合集')
     discussion = (_related_entries(related_entries.get((kind, record['id']), []), language)
                   + _survey_discussion(survey_discussions.get(record['id'], []), language))
     feedback = _feedback(kind, record, language, repository_url)
@@ -280,7 +285,7 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
 <nav class="header-nav" aria-label="{label('Main navigation', '主导航')}"><a class="entry-language" href="{counterpart}" lang="{('en' if zh else 'zh-CN')}" hreflang="{('en' if zh else 'zh-CN')}">{label('简体中文', 'English')}</a><a class="github-link" href="{_public_url(repository_url)}" target="_blank" rel="noopener" aria-label="GitHub">{github_icon}<span>GitHub</span></a></nav></div></header>
 <main class="shell entry-main" id="entry-content"><nav class="entry-breadcrumbs" aria-label="{label('Breadcrumb', '当前位置')}"><a href="{prefix}/">{label('Home', '首页')}</a><span aria-hidden="true">/</span><a href="{listing}">{list_name}</a><span aria-hidden="true">/</span><span aria-current="page">{escape(title)}</span></nav>
 <article class="entry-article" data-entry-kind="{kind}" data-entry-id="{record['id']}">{content}</article>
-<nav class="entry-return" aria-label="{label('Collection navigation', '合集导航')}"><a href="{listing}#{record['id']}">← {label('View in the directory', '在目录中查看')}</a><a href="{listing}">{list_name}</a><a href="{prefix}/">{label('Search the collection', '搜索合集')}</a></nav></main>
+<nav class="entry-return" aria-label="{label('Collection navigation', '合集导航')}"><a href="{listing}#{record['id']}">← {label('View in the directory', '在目录中查看')}</a><a href="{listing}">{list_name}</a>{extra_return}<a href="{prefix}/">{label('Search the collection', '搜索合集')}</a></nav></main>
 <footer class="site-footer"><div class="shell footer-top"><p>{label('An independent, source-reviewed collection.', '依据一手来源整理的独立合集。')}</p><nav class="footer-links" aria-label="{label('More from the collection', '更多合集内容')}"><a href="{prefix}/resources/">{label('Curated resources', '精选资源')}</a><a href="{prefix}/papers/">{label('Research papers', '研究论文')}</a><a href="{prefix}/about/">{label('About and sources', '关于与来源')}</a></nav></div><div class="shell footer-bottom">{label('Original editorial content: MIT. Linked projects, papers and assets retain their own rights and licenses.', '原创说明采用 MIT 许可；外部项目、论文与素材保留各自的权利和许可。')}</div></footer>
 </body></html>
 '''

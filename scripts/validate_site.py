@@ -958,8 +958,10 @@ def validate_entry_outputs(pages, resources, papers):
         assert [item.get('position') for item in items] == [1, 2, 3], f'Detail breadcrumb positions mismatch: {route}'
         destinations = [item.get('item', {}).get('@id') if isinstance(item.get('item'), dict) else item.get('item') for item in items]
         prefix = '/zh' if language == 'zh' else ''
-        directory = 'resources' if kind == 'resource' else 'papers'
+        directory = 'papers' if kind == 'paper' else 'cases' if record['kind'] == 'case-study' else 'resources'
         assert destinations == [ORIGIN + prefix + '/', ORIGIN + prefix + '/' + directory + '/', canonical], f'Detail breadcrumb destinations mismatch: {route}'
+        # The visible breadcrumb and "View in the directory" use the same listing as the BreadcrumbList.
+        assert {f'{prefix}/{directory}/', f'{prefix}/{directory}/#{identifier}'} <= set(page.links), f'Detail return links mismatch: {route}'
         assert len(page.entry_contents) == 1, f'Detail page needs one marked article: {route}'
         article = page.entry_contents[0]
         text = normalize(' '.join(article['text']))

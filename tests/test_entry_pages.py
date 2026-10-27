@@ -167,6 +167,27 @@ class EntryPageTests(unittest.TestCase):
                         self.assertNotIn('identifier', entity)  # Published USENIX paper has no invented DOI/arXiv.
             self.assertEqual((r, p), before)
 
+    def test_case_study_pages_return_to_cases_and_other_resources_to_resources(self):
+        case, tool = resource(id='example-case', kind='case-study'), resource()
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            build_entry_pages(root, [case, tool], [])
+            for language, prefix, cases, resources in [('en', '', 'Case studies', 'Curated resources'),
+                                                       ('zh', '/zh', '案例合集', '精选资源')]:
+                for record, listing, name in [(case, '/cases/', cases), (tool, '/resources/', resources)]:
+                    text = (root / entry_path('resource', record['id'], language).lstrip('/') / 'index.html').read_text()
+                    page = Page(text)
+                    graph = {x['@type']: x for x in page.schema['@graph']}
+                    crumb = graph['BreadcrumbList']['itemListElement'][1]
+                    self.assertEqual((crumb['name'], crumb['item']), (name, 'https://awesomerea.org' + prefix + listing))
+                    breadcrumbs = text[text.index('class="entry-breadcrumbs"'):text.index('</nav>', text.index('class="entry-breadcrumbs"'))]
+                    self.assertIn(f'<a href="{prefix}{listing}">{name}</a>', breadcrumbs)
+                    returns = text[text.index('class="entry-return"'):text.index('</nav>', text.index('class="entry-return"'))]
+                    self.assertIn(f'<a href="{prefix}{listing}#{record["id"]}">', returns)
+                    # Case studies keep the full curated directory as an extra return link.
+                    self.assertEqual(f'<a href="{prefix}/resources/">{resources}</a>' in returns, True)
+                    self.assertEqual(f'href="{prefix}/cases/' in text, record is case)
+
     def test_acceptance_date_is_not_invented_and_markup_is_escaped(self):
         hostile = '</script><script>alert("bad")</script>'
         r = resource(name='A & B ' + hostile, description_zh='原始说明 ' + hostile)
