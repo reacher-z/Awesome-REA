@@ -76,6 +76,8 @@ def repository_card(record: dict, language: str, use_pro: bool) -> str:
     stars = record.get('stars')
     star_html = (f'<span class="source-stars" title="{("采集时的星标快照" if zh else "Stars at collection time")}">'
                  f'{stars:,} {("星标" if zh else "stars")}</span>' if isinstance(stars, int) else '')
+    # Hundreds of cards share the visible “README” text; the name keeps it first and adds the repository.
+    readme_label = f'README：{name}' if zh else f'README: {name}'
     license_name = record.get('license')
     if not isinstance(license_name, str) or not license_name.strip() or license_name.upper() == 'NOASSERTION':
         license_name = '许可证未识别' if zh else 'License not identified'
@@ -83,7 +85,7 @@ def repository_card(record: dict, language: str, use_pro: bool) -> str:
   <div class="source-card-head"><h2><a class="source-title-link" href="{external_url(record['url'])}" target="_blank" rel="noopener">{title}{icon('external', use_pro)}</a></h2>{star_html}</div>
   <p class="source-card-description">{escape(description)}</p>
 {related_links(record, language)}
-  <div class="source-card-footer"><a href="{external_url(record.get('readme_url') or record['url'])}" target="_blank" rel="noopener">README ↗</a><span class="source-card-license">{escape(license_name)}</span></div>
+  <div class="source-card-footer"><a href="{external_url(record.get('readme_url') or record['url'])}" target="_blank" rel="noopener" aria-label="{escape(readme_label, quote=True)}">README <span aria-hidden="true">↗</span></a><span class="source-card-license">{escape(license_name)}</span></div>
 </article>'''
 
 
