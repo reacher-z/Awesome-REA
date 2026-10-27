@@ -1047,7 +1047,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 [完整论文列表](docs/papers.zh-CN.md) · [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
-**按主题：** <a id="papers-agent-evaluation"></a>[智能体评测](docs/papers.zh-CN.md#papers-agent-evaluation) (13) · <a id="papers-decompilation"></a>[反编译](docs/papers.zh-CN.md#papers-decompilation) (91) · <a id="papers-website-reconstruction"></a>[网站](docs/papers.zh-CN.md#papers-website-reconstruction) (31) · <a id="papers-game-reconstruction"></a>[游戏](docs/papers.zh-CN.md#papers-game-reconstruction) (15) · <a id="papers-app-reconstruction"></a>[应用](docs/papers.zh-CN.md#papers-app-reconstruction) (16) · <a id="papers-firmware-analysis"></a>[固件](docs/papers.zh-CN.md#papers-firmware-analysis) (20) · <a id="papers-protocol-analysis"></a>[协议](docs/papers.zh-CN.md#papers-protocol-analysis) (20)
+**按主题：** <a id="papers-agent-evaluation"></a>[智能体评测](docs/papers.zh-CN.md#papers-agent-evaluation) (14) · <a id="papers-decompilation"></a>[反编译](docs/papers.zh-CN.md#papers-decompilation) (90) · <a id="papers-website-reconstruction"></a>[网站](docs/papers.zh-CN.md#papers-website-reconstruction) (31) · <a id="papers-game-reconstruction"></a>[游戏](docs/papers.zh-CN.md#papers-game-reconstruction) (15) · <a id="papers-app-reconstruction"></a>[应用](docs/papers.zh-CN.md#papers-app-reconstruction) (16) · <a id="papers-firmware-analysis"></a>[固件](docs/papers.zh-CN.md#papers-firmware-analysis) (20) · <a id="papers-protocol-analysis"></a>[协议](docs/papers.zh-CN.md#papers-protocol-analysis) (20)
 
 每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。部分论文也出现在精选资源目录中，两者数量不可相加。
 
