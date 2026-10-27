@@ -399,7 +399,10 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
       curatedRecord(4, {kind: 'tool', category: 'dynamic-analysis', targets: ['binary'], name: 'Decompiler tracer'}),
       curatedRecord(5, {kind: 'integration', category: 'agent-mcp', targets: ['binary', 'protocol']}),
     ];
-    const app = await loaded(`?lang=${lang}&kind=case-study&category=dotnet`, {catalog: catalogOf(rows)});
+    // build_site.py supplies category labels in the catalog; the option text pairs each label with its count.
+    const category_labels = {'reconstruction-cases': ['Reconstruction cases', '重建案例'], dotnet: ['.NET', '.NET'],
+                             'dynamic-analysis': ['Dynamic analysis', '动态分析'], 'agent-mcp': ['MCP servers', 'MCP 服务']};
+    const app = await loaded(`?lang=${lang}&kind=case-study&category=dotnet`, {catalog: catalogOf(rows, {category_labels})});
     const counts = () => Object.fromEntries(app.marked.filter(node => 'targetCount' in node.dataset).map(node => [node.dataset.targetCount, node.textContent]));
     const disabledTargets = () => app.marked.filter(node => 'target' in node.dataset && node.disabled).map(node => node.dataset.target);
     const options = id => app.element(id).children.map(option => [option.value, option.textContent, Boolean(option.disabled)]);
@@ -428,7 +431,8 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.deepEqual(counts(), {all: '2', website: '0', game: '0', app: '1', binary: '1', firmware: '0', protocol: '0'});
     assert.deepEqual(options('kind-select').find(([value]) => value === 'tool').slice(1), [n(lang === 'zh' ? '工具' : 'Tool', 2), false]);
     assert.deepEqual(options('kind-select').find(([value]) => value === 'case-study').slice(1), [n(lang === 'zh' ? '案例' : 'Case study', 0), true]);
-    assert.deepEqual(app.marked.filter(node => node.attrs['aria-live']).map(node => node.id).sort(), ['results-status', 'source-status']);
+    // The counts add no live region: only the page's existing status lines (results, repositories, Get data) are announced.
+    assert.deepEqual(app.marked.filter(node => node.attrs['aria-live']).map(node => node.id).sort(), ['data-clone-status', 'data-copy-status', 'results-status', 'source-status']);
     assert(app.element('kind-select').children.every(option => !option.attrs['aria-live']));
   }
 
