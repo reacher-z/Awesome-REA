@@ -12581,5 +12581,40 @@
       "https://github.com/JackPriceBurns/decomp-academy-fe/blob/a21f9d00dcdcb00936c3f0369f396b555e893d93/LICENSE",
       "https://github.com/JackPriceBurns/decomp-academy-be/blob/d80447dad332e9c15ac4549d8d42a28a0a9daedd/README.md"
     ]
+  },
+  {
+    "id": "appshark",
+    "name": "Appshark",
+    "url": "https://github.com/bytedance/appshark",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "ByteDance's static taint-analysis engine for Android APKs, designed for very large apps, that scans an app against JSON rules naming entry methods, sources, sinks and sanitizers as Jimple signatures, for vulnerability and privacy-compliance review. It works on Soot's Jimple IR and reuses FlowDroid's manifest and resource parsing, but implements its own field-sensitive pointer and taint analysis. Results go to results.json, which records app, component and permission information, deep links and JavaScript bridge interfaces alongside each source-to-sink path, with an HTML page per finding.",
+    "description_zh": "字节跳动开发的 Android APK 静态污点分析引擎，面向超大型应用设计：它依据 JSON 规则扫描应用，规则以 Jimple 签名指定入口方法、源、汇和净化器，用于漏洞与隐私合规审查。它基于 Soot 的 Jimple 中间表示，并复用 FlowDroid 的清单与资源解析模块，但指针分析和污点分析均为自行实现，且区分字段。结果写入 results.json，其中记录应用、组件和权限信息、深层链接及 JavaScript 桥接接口，以及每条从源到汇的路径，每项发现另有一个 HTML 页面。",
+    "evidence_url": "https://github.com/bytedance/appshark/blob/487fa2175c4a6ccbfb5a330b5e3ed0081de3bfeb/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires JDK 11; the README says it does not work on JDK 8 or JDK 16 because of dependency compatibility. ./gradlew build -x test produces AppShark-0.1.2-all.jar. Latest release at review: v0.1.2, published 2022-09-22 with prebuilt jars; the reviewed main commit, still versioned 0.1.2, is 123 commits ahead of it, including September 2026 commits that add scan resource budgets, a bounded jadx workspace and validation of untrusted rule graphs. The startup guide still links the v0.1.1 jar.",
+      "Input is the APK to analyze, named by apkPath in a JSON5 config passed to the jar, with rules taken from config/rules, which holds seven sample rules such as unZipSlip, PendingIntentMutable and ContentProviderPathTraversal. The repository bundles 18 Android SDK platform stub jars, config/tools/platforms/android-14 through android-33/android.jar (API levels 15 and 21 absent, about 18 to 47 MB each), used as the default SDK path, plus five small compiled test classes; the javaSource option runs jadx from config/tools/jadx/bin, which the repository does not include.",
+      "Findings are static source-to-sink paths whose coverage depends on the rules and settings: the argument guide says too short a maxPointerAnalyzeTime can cause false positives and negatives, and the FAQ shows a slice-mode entry missing an aliased path. The README's security notice limits the UI and server to local testing. Apache-2.0. No APK was analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bytedance/appshark/blob/487fa2175c4a6ccbfb5a330b5e3ed0081de3bfeb/doc/en/overview.md",
+      "https://github.com/bytedance/appshark/blob/487fa2175c4a6ccbfb5a330b5e3ed0081de3bfeb/doc/en/how_to_write_rules.md",
+      "https://github.com/bytedance/appshark/blob/487fa2175c4a6ccbfb5a330b5e3ed0081de3bfeb/doc/en/argument.md",
+      "https://github.com/bytedance/appshark/blob/487fa2175c4a6ccbfb5a330b5e3ed0081de3bfeb/doc/en/result.md",
+      "https://github.com/bytedance/appshark/blob/487fa2175c4a6ccbfb5a330b5e3ed0081de3bfeb/doc/en/startup.md",
+      "https://github.com/bytedance/appshark/blob/487fa2175c4a6ccbfb5a330b5e3ed0081de3bfeb/doc/en/faq.md",
+      "https://github.com/bytedance/appshark/tree/487fa2175c4a6ccbfb5a330b5e3ed0081de3bfeb/config/rules",
+      "https://github.com/bytedance/appshark/tree/487fa2175c4a6ccbfb5a330b5e3ed0081de3bfeb/config/tools/platforms",
+      "https://github.com/bytedance/appshark/blob/487fa2175c4a6ccbfb5a330b5e3ed0081de3bfeb/build.gradle.kts",
+      "https://github.com/bytedance/appshark/blob/487fa2175c4a6ccbfb5a330b5e3ed0081de3bfeb/src/main/kotlin/net/bytedance/security/app/StaticAnalyzeMain.kt",
+      "https://github.com/bytedance/appshark/blob/487fa2175c4a6ccbfb5a330b5e3ed0081de3bfeb/LICENSE",
+      "https://github.com/bytedance/appshark/releases/tag/v0.1.2"
+    ]
   }
 ]

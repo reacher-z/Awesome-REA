@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 518](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-518-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 219](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-219-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 140](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 519](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-519-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 219](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-219-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 140](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-140-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,11 +21,11 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-518 项精选资源（219 个案例）· 140 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 515。
+519 项精选资源（219 个案例）· 140 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 516。
 
 **按目标找工具与案例**
 
-- [网站](#website) (29) · [游戏](#game) (198) · [应用](#app) (83)
+- [网站](#website) (29) · [游戏](#game) (198) · [应用](#app) (84)
 - [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (24) · [协议](#protocol) (22)
 
 **论文与工作流**
@@ -402,6 +402,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**React-Decode**](https://github.com/alexandra-seredkina/React-Decode) - 面向已构建 React JavaScript 的静态分析 CLI，可输出更易读的代码，以及推断的 API 请求、路由和应用常量报告；存在 source map 内嵌源码时可将其提取。 <sub>工具 · 也适用：网站 · [完整条目](https://awesomerea.org/zh/resources/react-decode/)</sub>
 - [**abc-decompiler 鸿蒙方舟字节码反编译器**](https://github.com/ohos-decompiler/abc-decompiler) - 面向鸿蒙方舟字节码（.abc）的反编译工具；HarmonyOS 应用包中的 modules.abc 即为此格式。 <sub>工具 · Android · [完整条目](https://awesomerea.org/zh/resources/abc-decompiler/)</sub>
 - [**slicer 浏览器端 Java 逆向工具**](https://github.com/katana-project/slicer) - 基于浏览器的 Java 逆向工程工具：可加载 class 文件和 JAR/ZIP 归档，使用编译为可在浏览器中运行的 Vineflower（默认）、CFR、Procyon 或 JASM 进行反汇编或反编译，另有自带的字节码反汇编器。 <sub>工具 · JVM · [完整条目](https://awesomerea.org/zh/resources/slicer/)</sub>
+- [**Appshark Android 静态污点分析引擎**](https://github.com/bytedance/appshark) - 字节跳动开发的 Android APK 静态污点分析引擎，面向超大型应用设计：它依据 JSON 规则扫描应用，规则以 Jimple 签名指定入口方法、源、汇和净化器，用于漏洞与隐私合规审查。 <sub>工具 · Android · [完整条目](https://awesomerea.org/zh/resources/appshark/)</sub>
 
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制
