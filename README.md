@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 502](https://img.shields.io/badge/resources-502-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 212](https://img.shields.io/badge/cases-212-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 503](https://img.shields.io/badge/resources-503-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 212](https://img.shields.io/badge/cases-212-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 136](https://img.shields.io/badge/papers-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,7 +21,7 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-502 curated resources (212 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 499 because 3 of these appear only under Papers.
+503 curated resources (212 cases) · 136 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 500 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
@@ -30,7 +30,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (136) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (34)
+- [Papers](#papers) (136) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (35)
 
 **More ways to browse**
 
@@ -643,6 +643,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Frontkick vs Rikugan: a CREBench agent comparison**](https://www.synacktiv.com/en/publications/ufc-666-frontkick-vs-rikugan) - Matthieu Breuil’s Synacktiv article explains tool-calling and code-executing agent designs and describes Frontkick, a CodeAct agent that runs generated Python inside Binary Ninja. <sub>Learning resource · Targets: Binary · [Full entry](https://awesomerea.org/resources/frontkick-rikugan-crebench-comparison/)</sub>
 - [**FLARE Learning Hub**](https://github.com/mandiant/flare-learning-hub) - Free English reverse-engineering and malware-analysis modules from Mandiant's FLARE team, published as Google Docs, with lab binaries, IDA databases and scripts kept in this repository. <sub>Learning resource · Targets: Binary · [Full entry](https://awesomerea.org/resources/flare-learning-hub/)</sub>
 - [**Nintendo Switch Reverse Engineering**](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering) - Notes begun by dekuNukem in 2017 and extended by contributors on how the Joy-Con, Pro Controller and parts of the Switch console and dock work, worked out from teardowns, logic-analyzer captures and packet logs. <sub>Learning resource · Targets: Firmware, Protocol · [Full entry](https://awesomerea.org/resources/nintendo-switch-joycon-re-notes/)</sub>
+- [**Android App Reverse Engineering 101**](https://www.ragingrock.com/AndroidAppRE/) - Maddie Stone's free English workshop introducing static reverse engineering of Android apps, published as GitHub Pages. <sub>Learning resource · Targets: App, Binary · [Full entry](https://awesomerea.org/resources/android-app-re-101/)</sub>
 <!-- END GENERATED CATALOG -->
 
 <!-- BEGIN GENERATED PAPERS -->
