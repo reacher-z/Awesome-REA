@@ -7358,5 +7358,15 @@
       "仓库提交了 22 个 Frida 示例脚本（大多是对 Windows API 的 Hook）、一个编译为 WebAssembly 的 Graphviz 库（Fermion/pages/graphvizlib.wasm，用于渲染追踪结果），以及随附的 jQuery、Semantic UI（含 Lato 字体）、Split.js 和 Tailwind CSS 资源。设备、进程和应用均需用户自备。",
       "采用 BSD-3-Clause 许可（Copyright 2019 Ruben Boonen）；随附的框架和字体保留各自许可。本条目未对任何设备或进程进行插桩，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "usbpcap": {
+    "name": "USBPcap Windows USB 抓包工具",
+    "requirements": [
+      "审阅时最新版本为 1.5.4.0，发布于 2020-05-22，提供经数字签名的 USBPcapSetup 安装程序（适用于 x86 和 x64 的 Windows 7、8 和 10），以及附带调试符号的源码包。所审阅的 master 提交（2025-01-25）在此基础上新增两项尚未发布的驱动修复，其中一项标为关键修复，分别涉及内核缓冲区重新分配和读取请求的完成顺序。安装程序不支持早于 Windows 7 的系统（1.5.3.0 是最后支持 XP 和 Vista 的版本），也不支持 Windows To Go；Windows 7 用户需先安装 SHA-2 更新（KB3033929 或 KB4474419），安装后须重启。",
+      "抓包在分析者自己的 Windows 电脑上进行。可直接运行 USBPcapCMD.exe，选择根集线器过滤实例和输出文件；也可以把它复制到 Wireshark 的全局或个人 extcap 文件夹，Wireshark 自 1.10.0rc1 起支持 USBPcap。README 提到目前没有抓包引擎 DLL。项目教程建议抓取新接入的设备，或在开始抓包后重新插拔设备，使设备描述符进入抓包数据，供 Wireshark 解析器使用。",
+      "按 README 说明，从源码构建 Windows 7 驱动需要 Windows Driver Kit 7.1.0，Windows 8 版本则需要 Visual Studio 2013 和 WDK 8.1 Update。正式发布的驱动由作者使用自己未公开的证书，经 Microsoft Hardware Dev Center 进行认证签名。自行构建的驱动使用仓库中的测试证书（certificates/USBPcapTestCert.*）签名；README 说明，在 64 位 Windows 上需开启测试签名模式才能加载。仓库中其余的二进制文件只有 NSIS 安装插件 SysRestore.dll 和两份公开的 CA 交叉证书。",
+      "项目的抓包限制页面说明，USBPcap 记录的是在设备栈的功能设备对象与物理设备对象之间传递的 URB，因此看不到总线状态、包标识（PID）、拆分事务、线上时序和传输速率，也看不到设备获得地址之前的枚举过程；该页面称这些只能由硬件 USB 嗅探器看到。抓到的数据如何解读，仍需分析者在 Wireshark 或其他解析器中自行完成协议分析。",
+      "README 和 SPDX 文件头声明，驱动采用 GPL-2.0，USBPcapCMD 采用 BSD-2-Clause。仓库根目录没有许可证文件，许可证文本位于 nsis/ 和 wix/ 中，因此 GitHub 未识别出许可证。本次未构建或安装驱动，也未抓取任何 USB 流量。"
+    ]
   }
 }
