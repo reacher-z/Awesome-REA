@@ -11759,5 +11759,35 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "retoolkit",
+    "name": "retoolkit",
+    "url": "https://github.com/mentebinaria/retoolkit",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Windows setup program, built with Inno Setup, that installs a ready-made x86/x64 reverse-engineering and malware-analysis toolkit as selectable components: debuggers, decompilers, hex editors, PE, ELF, .NET, Java, Go, Delphi and AutoIt analyzers, and process-inspection, unpacking, network, OLE/PDF and signature tools. Tools open from a desktop launcher or from a retoolkit entry in Explorer's right-click menu that passes the selected file; the README says some come preconfigured, such as x64dbg with plugins and command-line tools that run from any directory. The repository holds only the installer scripts, while the bundled programs are third-party tools under their own terms.",
+    "description_zh": "基于 Inno Setup 构建的 Windows 安装程序，以可选组件的形式安装一套现成的 x86/x64 逆向工程与恶意软件分析工具集：调试器、反编译器、十六进制编辑器，PE、ELF、.NET、Java、Go、Delphi 和 AutoIt 分析工具，以及进程检查、脱壳、网络、OLE/PDF 和特征匹配工具。可从桌面启动器打开工具，也可通过资源管理器右键菜单中的 retoolkit 项把所选文件直接交给工具；README 称部分工具已预先配置，例如带插件的 x64dbg，以及可在任意目录运行的命令行工具。仓库只包含安装脚本，打包的程序都是第三方工具，各自适用其条款。",
+    "evidence_url": "https://github.com/mentebinaria/retoolkit/blob/8a5d1197c07ab0635c2948d42f53bda696680125/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 2026.04, published 2026-05-16 on the repository's Releases page as a single 7z archive of about 2 GB containing the setup program. The reviewed main commit is five commits ahead of that tag; they add copyright and attribution notices and adjust the Nmap and Wireshark scripts. CHANGELOG.md lists the tools added and changed in each release.",
+      "For x86 and x64 Windows hosts; the JDK component, which is also installed with Ghidra, runs only in 64-bit install mode. The README says some included tools are not open source and come from uncertain sources, advises installing the toolkit only in a virtual machine at the user's own responsibility, and notes that Windows Defender may flag files during installation. Analysis inputs are the user's own samples.",
+      "The .iss scripts copy tool files from a local source folder that is not in the repository, so the setup program cannot be rebuilt from the repository alone; CHECKSUMS.txt lists MD5 hashes for 35,444 bundled files.",
+      "COPYING.txt applies Apache-2.0 to the installer scripts; every bundled program keeps its own license. Besides open-source tools such as Ghidra, x64dbg and ImHex, CHECKSUMS.txt lists executables for pestudio, HxD, API Monitor with its kernel drivers, Exeinfo PE and Resource Hacker, and the installers jdk-25_windows-x64_bin.exe and npcap-1.87.exe. The README states that only software authorized for redistribution by its license or by its authors is included; this review did not check each tool's terms, and neither the setup program nor any tool was run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mentebinaria/retoolkit/blob/8a5d1197c07ab0635c2948d42f53bda696680125/src/installer/retoolkit.iss",
+      "https://github.com/mentebinaria/retoolkit/blob/8a5d1197c07ab0635c2948d42f53bda696680125/src/installer/utilities/jdk.iss",
+      "https://github.com/mentebinaria/retoolkit/blob/8a5d1197c07ab0635c2948d42f53bda696680125/src/installer/debuggers/x64dbg.iss",
+      "https://github.com/mentebinaria/retoolkit/blob/8a5d1197c07ab0635c2948d42f53bda696680125/CHANGELOG.md",
+      "https://github.com/mentebinaria/retoolkit/blob/8a5d1197c07ab0635c2948d42f53bda696680125/CHECKSUMS.txt",
+      "https://github.com/mentebinaria/retoolkit/blob/8a5d1197c07ab0635c2948d42f53bda696680125/COPYING.txt"
+    ]
   }
 ]

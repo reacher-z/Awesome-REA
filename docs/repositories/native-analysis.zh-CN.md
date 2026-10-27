@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**851 个仓库** · 2026-10-20 UTC
+**852 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -23,6 +23,7 @@
 - [0xZ0F/Z0FCourse\_ReverseEngineering](https://github.com/0xZ0F/Z0FCourse_ReverseEngineering) — 专注于 x64 Windows 的逆向工程。 **[5,962 星标]** · 精选：[Z0FCourse 逆向工程课程](https://awesomerea.org/zh/resources/z0f-reverse-engineering-course/)
 - [bethington/ghidra-mcp](https://github.com/bethington/ghidra-mcp) — Ghidra MCP Server：提供 200 多个 MCP 工具，支持 AI 逆向工程。包含 GUI 插件与无界面服务器、工具延迟加载、约定约束、批量操作、Ghidra Server 集成和 Docker 部署。 **[5,659 星标]** · 精选：[Ghidra MCP Server（bethington）](https://awesomerea.org/zh/resources/ghidra-mcp-bethington/)
 - [lief-project/LIEF](https://github.com/lief-project/LIEF) — LIEF：用于可执行文件格式插桩的库，支持 C++、Python 和 Rust。 **[5,595 星标]** · 精选：[LIEF](https://awesomerea.org/zh/resources/lief/)
+- [mentebinaria/retoolkit](https://github.com/mentebinaria/retoolkit) — 逆向工程师工具包。 **[5,315 星标]** · 精选：[retoolkit 逆向工程工具集安装程序](https://awesomerea.org/zh/resources/retoolkit/)
 - [pret/pokered](https://github.com/pret/pokered) — 《宝可梦 红/蓝》的反汇编代码。 **[4,993 星标]** · 精选：[pokered：一致构建的《精灵宝可梦 红／蓝》反汇编](https://awesomerea.org/zh/resources/pokered-disassembly-case/)
 - [kaitai-io/kaitai\_struct](https://github.com/kaitai-io/kaitai_struct) — Kaitai Struct：用于生成二进制数据解析器的声明式语言，支持 C++ / C# / Go / Java / JavaScript / Lua / Nim / Perl / PHP / Python / Ruby / Rust。 **[4,712 星标]** · 精选：[Kaitai Struct 二进制格式描述与解析工具](https://awesomerea.org/zh/resources/kaitai-struct/)
 - [zrax/pycdc](https://github.com/zrax/pycdc) — 以 C++ 编写的 Python 字节码反汇编器与反编译器。 **[4,651 星标]** · 精选：[Decompyle++（pycdc）Python 字节码反编译器](https://awesomerea.org/zh/resources/pycdc/)
