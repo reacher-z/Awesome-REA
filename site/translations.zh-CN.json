@@ -7524,5 +7524,14 @@
       "内核镜像由分析者自行提供：作为单个 Mach-O 镜像载入的已解压 iOS kernelcache（README 提醒不要使用批量导入），或来自自有系统或 KDK 的 macOS 内核与 KEXT。恢复符号前，需要先运行 Siguza 的独立工具 iometa（MPL-2.0），该工具自述为 arm64 Darwin 内核类信息提取工具；jtool2 符号为可选。README 指出，撰写时 Ghidra 还无法解析完整的 macOS kernelcache，建议先在 IDA 中完成初步分析，再以 XML 形式导入 Ghidra，但这一步不在其说明范围内。为单个 KEXT 恢复符号前，需要先把内核符号化结果存入共享的 Ghidra 项目归档。",
       "仓库只包含 Python 脚本、signatures/ 下的 C++ 签名文件和 README 截图，没有提交任何 Apple kernelcache、KEXT 或密钥。README 称类型传播功能比较基础，遇到复杂类型转换时很可能失败；还说 Ghidra 无法还原某些 C++ 符号时 kc.process_kernel_kext() 可能失败，需先运行 DemangleAllScript。采用 Apache-2.0 许可。本次未载入任何 kernelcache，也未运行任何脚本。"
     ]
+  },
+  "probedroid": {
+    "name": "ProbeDroid Android 动态插桩工具包",
+    "requirements": [
+      "没有发布版或标签；所审阅的 master 分支 2018-12-16 提交只更新了项目简介，最后一次代码改动在 2017 年 1 月。README 称该工具包仍在开发中，只支持 x86 和 ARM armeabi-v7a 设备上的 Android 5.0，且暂不能对原生方法插桩。",
+      "2016 年 7 月的 wiki 页面列出的依赖为 JDK 与 JRE 7+、用于运行 auto.py 构建和部署脚本的 Python 2.6+、Android SDK、用于构建启动器和 libProbeDroid.so 的 NDK，以及用于构建 ProbeDroid.jar API 的 Apache Ant；插桩工具以最低 API 21 的 Android Studio 项目编写并导入该 jar，无需 Android 源码树。示例工具位于 tools/ 目录及独立的 ProbeDroidTool 仓库。",
+      "运行需要已 root 的 Android 5.0 设备或 API 21 模拟器镜像；wiki 要求分析者先在该测试设备上把 SELinux 设为宽容模式，再用目标包名、引擎库、插桩 APK 和主类启动启动器，结果输出到 logcat。待分析的应用由使用者自备。",
+      "采用 MIT 许可证（版权 2016 ZongXian Shen），但源自 AOSP 的 ART 运行时及 common 目录部分源码采用 Apache-2.0，附带的 libffi 采用其自身的 MIT 许可证。本次审阅未构建或运行任何内容；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
