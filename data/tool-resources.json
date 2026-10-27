@@ -12616,5 +12616,37 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "boomerang-decompiler",
+    "name": "Boomerang Decompiler",
+    "url": "https://github.com/BoomerangDecompiler/boomerang",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Fork of the SourceForge Boomerang project, a general machine-code decompiler that translates executables into C. The README lists x86 (IA-32 only), PowerPC and ST20 code in ELF, PE, DOS MZ, DOS/4GW LE and Mach-O files; instruction semantics are defined in SSL specification files, and library signature files plus printf- and scanf-style format strings help recover types. It provides a boomerang-cli command-line tool and a Qt boomerang-gui application, with unit, regression and recompilation test suites.",
+    "description_zh": "SourceForge 上 Boomerang 项目的分支，是一款通用的机器码反编译器，可将可执行文件转换为 C 代码。README 列出的支持范围为 ELF、PE、DOS MZ、DOS/4GW LE 和 Mach-O 文件中的 x86（仅 IA-32）、PowerPC 和 ST20 代码；指令语义由 SSL 规格文件定义，库函数签名文件以及 printf、scanf 类格式字符串可辅助恢复类型。它提供 boomerang-cli 命令行工具和基于 Qt 的 boomerang-gui 图形界面，并附有单元、回归和重编译测试套件。",
+    "evidence_url": "https://github.com/BoomerangDecompiler/boomerang/blob/411041305f90d1d7c994f67255b5c03ea8666e60/Readme.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Inactive legacy project: the reviewed develop commit of 2020-12-28 is the repository's last push, and the Changelog still marks v0.6.0 as in development. The last release, v0.5.2 (2020-01-11), provides Linux x86_64 and Windows x64 builds, while the README recommends building develop from source.",
+      "Building needs a 64-bit OS, a C++17 compiler (GCC 7+, Clang 6+ or MSVC 2017+), CMake 3.13+, Qt5 (5.12+ known to work), Capstone 4.0.1+, GNU bison 3.3+ and flex 2.6+; Python 3 runs the regression tests, which are not supported on Windows. The README documents Linux, macOS 10.13+ with Xcode 10 and Homebrew, and Windows with Visual Studio 2017.",
+      "Supply the executable to decompile. x86 support covers 32-bit code only, the v0.6.0 development line removed SPARC support, and the generated C needs analyst review.",
+      "data/samples commits about 240 small test binaries for macOS, DOS, ELF, PowerPC, Windows and x86, most named after the test programs in tests/recompilation-tests and tests/sources, plus three Linux distribution builds of the true utility; tests/regression-tests stores the expected decompiler output for them. data/signatures holds hand-written library prototype files, not vendor headers.",
+      "BSD-style terms in LICENSE.TERMS, carried over from the University of Queensland, Sun Microsystems and the original authors; GitHub reports no SPDX match. No binaries were decompiled for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BoomerangDecompiler/boomerang/blob/411041305f90d1d7c994f67255b5c03ea8666e60/Changelog.md",
+      "https://github.com/BoomerangDecompiler/boomerang/blob/411041305f90d1d7c994f67255b5c03ea8666e60/LICENSE.TERMS",
+      "https://github.com/BoomerangDecompiler/boomerang/tree/411041305f90d1d7c994f67255b5c03ea8666e60/data/samples",
+      "https://github.com/BoomerangDecompiler/boomerang/tree/411041305f90d1d7c994f67255b5c03ea8666e60/data/signatures",
+      "https://github.com/BoomerangDecompiler/boomerang/tree/411041305f90d1d7c994f67255b5c03ea8666e60/data/ssl",
+      "https://github.com/BoomerangDecompiler/boomerang/tree/411041305f90d1d7c994f67255b5c03ea8666e60/tests",
+      "https://github.com/BoomerangDecompiler/boomerang/releases/tag/v0.5.2"
+    ]
   }
 ]
