@@ -16,6 +16,14 @@ The job can write a review comment but does not check out or run the contributor
 
 The `main` branch requires the GitHub Actions `validate` and `review` checks, an up-to-date branch, and a pull request before merging. These rules also apply to administrators; force pushes and branch deletion are disabled. No human approval count is imposed, and the bot's review comment is not an approval. Use a feature branch and merge after the required checks pass.
 
+`README lint` is a separate, non-required report. It runs the pinned awesome-lint 2.2.1 on README.md for pull requests and pushes to `main` that change a README, CONTRIBUTING.md, the README builder or the lint files, installing it from the [lockfile](../tests/awesome-lint/package-lock.json) without install scripts. Its job is not part of the `validate` aggregate and does not block merging. The job summary counts findings per rule, and the `awesome-lint-report` artifact keeps every finding with its line for 14 days. The workflow token is read-only; awesome-lint uses it only to read repository metadata. Spell-check findings that flag correct names, such as webpack, ReAct, Llama and Wasm, or ordinary words are recorded with a reason in the [allowlist](../tests/awesome-lint/allowlist.json) instead of being rewritten. Its `enforced_rules` names the rules whose unrecorded findings fail the job; none is enforced yet. To produce the same report locally:
+
+```sh
+npm ci --prefix tests/awesome-lint --ignore-scripts
+node tests/awesome-lint/lint.mjs README.md
+python3 scripts/awesome_lint_report.py .cache/awesome-lint/findings.json
+```
+
 The localization path was exercised in [PR #2](https://github.com/reacher-z/Awesome-REA/pull/2): valid data passed, an intentionally missing Chinese description failed both jobs, and restored data passed. Rerunning the reviewer updated the same head-specific bot review.
 
 `Source links` runs weekly and on manual request. It checks the curated catalog, papers, benchmarks and the case ledger's reported and primary evidence links, and distinguishes confirmed missing links from rate limits and inconclusive network responses.

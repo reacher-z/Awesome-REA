@@ -1,0 +1,10 @@
+{
+  "name": "awesome-rea-awesome-lint",
+  "private": true,
+  "description": "Pinned awesome-lint for the non-required README lint report.",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "awesome-lint": "2.2.1"
+  }
+}
