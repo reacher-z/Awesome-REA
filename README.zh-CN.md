@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 492](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 208](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 135](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 492](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 208](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 136](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-492 项精选资源（208 个案例）· 135 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 489。
+492 项精选资源（208 个案例）· 136 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 489。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (135) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (136) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -640,13 +640,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**135 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**136 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (10) · [反编译](#papers-decompilation) (57) · [网站](#papers-website-reconstruction) (22)
+- [智能体评测](#papers-agent-evaluation) (10) · [反编译](#papers-decompilation) (58) · [网站](#papers-website-reconstruction) (22)
 - [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (12) · [固件](#papers-firmware-analysis) (13)
 - [协议](#papers-protocol-analysis) (13)
 
@@ -722,6 +722,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**DeGPT：使用大语言模型优化反编译器输出**](https://www.ndss-symposium.org/ndss-paper/degpt-optimizing-decompiler-output-with-llm/) - 通过三个协同角色选择、提出并检查修改，改进已有的类 C 反编译输出。 <sub>原题：*DeGPT: Optimizing Decompiler Output with LLM* · NDSS 2024 · 会议论文 · Peiwei Hu 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-401-paper.pdf) · [代码](https://github.com/PeiweiHu/DeGPT) · [完整条目](https://awesomerea.org/zh/papers/paper-degpt/)</sub>
 - [**XFL：基于极端多标签学习的二进制函数命名**](https://ieeexplore.ieee.org/document/10179439) - XFL 将去符号二进制中的函数命名视为极端多标签分类：函数名被拆分为词元，再由 PfastreXML 从常见标签词表中为每个函数排序合适的词元。 <sub>原题：*XFL: Naming Functions in Binaries with Extreme Multi-label Learning* · IEEE S&amp;P 2023 · 会议论文 · James Patrick-Evans 等 · [PDF](https://arxiv.org/pdf/2107.13404v4) · [代码](https://github.com/lmu-plai/xfl) · [完整条目](https://awesomerea.org/zh/papers/paper-xfl/)</sub>
 - [**SymLM：基于上下文敏感、执行感知代码嵌入的去符号二进制函数名预测**](https://dl.acm.org/doi/10.1145/3548606.3560612) - SymLM 将去符号二进制的函数名预测为一组名称单词。 <sub>原题：*SymLM: Predicting Function Names in Stripped Binaries via Context-Sensitive Execution-Aware Code Embeddings* · ACM CCS 2022 · 会议论文 · Xin Jin 等 · [PDF](https://xinjin95.github.io/assets/pdf/SymLM_ccs2022_paper.pdf) · [代码](https://github.com/OSUSecLab/SymLM) · [完整条目](https://awesomerea.org/zh/papers/paper-symlm/)</sub>
+- [**Decomperson：人类如何反编译以及我们能从中学到什么**](https://www.usenix.org/conference/usenixsecurity22/presentation/burk) - 将人工逆向工程重新表述为“完美反编译”：编写源码，使其在原始工具链与编译选项下编译后，能完全复现目标函数的二进制代码。 <sub>原题：*Decomperson: How Humans Decompile and What We Can Learn From It* · USENIX Security 2022 · 会议论文 · Kevin Burk 等 · [PDF](https://www.usenix.org/system/files/sec22-burk.pdf) · [代码](https://github.com/decompetition/server) · [完整条目](https://awesomerea.org/zh/papers/paper-decomperson/)</sub>
 - [**利用学习得到的变量名称与类型增强反编译输出**](https://www.usenix.org/conference/usenixsecurity22/presentation/chen-qibin) - 提出 Transformer 模型 DIRTY，根据反编译代码和布局信息推荐变量名与类型，并提供用于训练和评估的 DIRT 语料。 <sub>原题：*Augmenting Decompiler Output with Learned Variable Names and Types* · USENIX Security 2022 · 会议论文 · Qibin Chen 等 · [PDF](https://arxiv.org/pdf/2108.06363) · [代码](https://github.com/CMUSTRUDEL/DIRTY) · [完整条目](https://awesomerea.org/zh/papers/paper-dirty/)</sub>
 - [**jTrans：面向二进制代码相似性检测的跳转感知 Transformer**](https://dl.acm.org/doi/10.1145/3533767.3534367) - jTrans 使用 BERT 风格的 Transformer 为二进制函数生成嵌入，以支持相似性检索。 <sub>原题：*jTrans: Jump-Aware Transformer for Binary Code Similarity Detection* · ACM ISSTA 2022 · 会议论文 · Hao Wang 等 · [PDF](https://arxiv.org/pdf/2205.12713v1) · [代码](https://github.com/vul337/jTrans) · [完整条目](https://awesomerea.org/zh/papers/paper-jtrans/)</sub>
 - [**ExeBench：机器学习规模的可执行 C 函数数据集**](https://dl.acm.org/doi/10.1145/3520312.3534867) - ExeBench 是数据集，而非反编译器。 <sub>原题：*ExeBench: an ML-scale dataset of executable C functions* · ACM SIGPLAN MAPS 2022 · 会议论文 · Jordi Armengol-Estapé 等 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3520312.3534867) · [代码](https://github.com/jordiae/exebench/tree/8b47d483c2e39ea40a304fbaac46e41a1a14272f) · [完整条目](https://awesomerea.org/zh/papers/paper-exebench/)</sub>
