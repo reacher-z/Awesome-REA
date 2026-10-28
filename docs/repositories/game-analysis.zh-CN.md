@@ -56,7 +56,7 @@
 - [ethteck/splat](https://github.com/ethteck/splat) — 用于辅助反编译和模组制作项目的二进制拆分工具。 **[368 星标]** · 精选：[splat 二进制拆分工具](https://awesomerea.org/zh/resources/splat/)
 - [PrimeDecomp/prime](https://github.com/PrimeDecomp/prime) — 可生成匹配原始二进制结果的《密特罗德 Prime》反编译项目。 **[367 星标]** · 精选：[《密特罗德 Prime》：PrimeDecomp 的 GameCube 版一致性反编译](https://awesomerea.org/zh/resources/primedecomp-metroid-prime-decomp-case/)
 - [0xDC00/agent](https://github.com/0xDC00/agent) — 基于脚本的通用文本 hook 工具，由 Frida 驱动。 **[357 星标]**
-- [adonis-singh/re4](https://github.com/adonis-singh/re4) — 《生化危机 4》（GameCube，G4BE08 调试版本）：完整反编译为 C/C++，生成与原版逐字节一致的结果。 **[345 星标]**
+- [adonis-singh/re4](https://github.com/adonis-singh/re4) — 《生化危机 4》（GameCube，G4BE08 调试版本）：完整反编译为 C/C++，生成与原版逐字节一致的结果。 **[345 星标]** · 精选：[re4：Resident Evil 4 GameCube 调试版的字节一致反编译](https://awesomerea.org/zh/resources/re4-gamecube-debug-decomp-case/)
 - [xensik/gsc-tool](https://github.com/xensik/gsc-tool) — 用于编译和反编译 IW 引擎游戏脚本的实用工具。 **[335 星标]**
 - [snuri00/psp-web-recomp](https://github.com/snuri00/psp-web-recomp) — 在浏览器中运行 PSP 游戏：静态重编译为 WebAssembly，配备高层仿真（HLE）内核与 WebGL2 渲染器。 **[329 星标]** · 精选：[PSP Web Recomp 浏览器游戏重编译项目](https://awesomerea.org/zh/resources/psp-web-recomp/)
 - [SpeedBreakerProject/speedbreaker](https://github.com/SpeedBreakerProject/speedbreaker) — Xbox 360 版 Need for Speed: Most Wanted（2005）的非官方静态重编译项目：面向 Steam Deck、Steam Machine、Steam Frame、Linux 和 Mac 的原生移植；iPhone/iPad 可侧载实验性 IPA 或自行构建。需自备光盘，不附带游戏文件。与 EA 或 Valve 无关联。 **[326 星标]** · 精选：[SpeedBreaker：对 Xbox 360 版《极品飞车：最高通缉》的静态重编译](https://awesomerea.org/zh/resources/speedbreaker-nfs-most-wanted-case/)
