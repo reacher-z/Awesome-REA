@@ -122,7 +122,7 @@
 - [yincongcyincong/wechat\_chatter](https://github.com/yincongcyincong/wechat_chatter) — 微信 macOS 版消息收发逆向与 hook。 **[655 星标]**
 - [pret/pokeheartgold](https://github.com/pret/pokeheartgold) — 《宝可梦 心金/魂银》的反编译代码。 **[649 星标]** · 精选：[《宝可梦 心金／魂银》：校验一致的进行中 DS 反汇编项目](https://awesomerea.org/zh/resources/pokemon-heartgold-soulsilver-disassembly-case/)
 - [ThomasThelen/Anti-Debugging](https://github.com/ThomasThelen/Anti-Debugging) — 一组 C++ 程序，演示检测调试器附加状态的常用方法。 **[630 星标]**
-- [GRAnimated/MinecraftLCE](https://github.com/GRAnimated/MinecraftLCE) — 《Minecraft：Legacy Console Edition》反编译项目，进度 11.217%。 **[620 星标]**
+- [GRAnimated/MinecraftLCE](https://github.com/GRAnimated/MinecraftLCE) — 《Minecraft：Legacy Console Edition》反编译项目，进度 11.217%。 **[620 星标]** · 精选：[MinecraftLCE：处于早期阶段的 Minecraft: Nintendo Switch Edition 反编译](https://awesomerea.org/zh/resources/minecraft-lce-switch-decomp-case/)
 - [NoviScl/Design2Code](https://github.com/NoviScl/Design2Code) — 上游仓库未提供项目简介。 **[603 星标]** · 论文：[Design2Code：面向自动化前端工程的多模态代码生成评测](https://awesomerea.org/zh/papers/paper-design2code/)
 - [Fausto-404/js-reverse-automation--skill](https://github.com/Fausto-404/js-reverse-automation--skill) — 结合 chrome-devtools-mcp 的能力与 Skill 规范，基于 JSRPC、Flask 和 autoDecoder 方案，实现前端 JavaScript 逆向的自动化分析，提升逆向效率。 **[598 星标]**
 - [uttambodara/TryHackMeRoadmap](https://github.com/uttambodara/TryHackMeRoadmap) — 350+ 个免费的 TryHackMe 房间💻列表，帮助开始网络安全学习，按主题组织，便于探索和培养实践技能！💀💥 **[597 星标]**
