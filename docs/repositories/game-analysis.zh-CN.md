@@ -144,7 +144,7 @@
 - [VOTV-MP/Multivoid](https://github.com/VOTV-MP/Multivoid) — 《Voices of the Void》多人合作模组，适用于 UE4.27 的 UE4SS，可在一台主机与最多三个客户端之间同步游戏，无需修改任何游戏文件。 **[57 星标]**
 - [vyanhursky/DefJamFFNY-recomp](https://github.com/vyanhursky/DefJamFFNY-recomp) — 《Def Jam: Fight for NY》PC 移植版：将初代 Xbox 游戏静态重编译为原生 Windows 和 macOS 版本，使用 Direct3D 11／Vulkan。需自备游戏转储。 **[57 星标]**
 - [DaZombieKiller/TypeTreeDumper](https://github.com/DaZombieKiller/TypeTreeDumper) — 用于从 Unity 编辑器导出类型树信息的实验性工具。 **[56 星标]**
-- [gustavocanepa/gt4-decomp](https://github.com/gustavocanepa/gt4-decomp) — 借助 AI 对 Gran Turismo 4（PS2）引擎进行匹配反编译。不包含游戏数据。 **[55 星标]**
+- [gustavocanepa/gt4-decomp](https://github.com/gustavocanepa/gt4-decomp) — 借助 AI 对 Gran Turismo 4（PS2）引擎进行匹配反编译。不包含游戏数据。 **[55 星标]** · 精选：[Gran Turismo 4：借助智能体的 PS2 引擎匹配反编译](https://awesomerea.org/zh/resources/gran-turismo-4-matching-decomp-case/)
 - [OpenRAC/rac1-decomp](https://github.com/OpenRAC/rac1-decomp) — 正在进行的原版 Ratchet &amp; Clank（2002，PlayStation 2，SCES\_509.16，PAL v2.00）匹配反编译项目。重点是重建整洁、惯用且与零售版可执行文件一致的 C/C++ 源代码，为原生 PC 重新实现和游戏保存铺路。 **[55 星标]** · 精选：[Ratchet &amp; Clank：记录了代理流程的 PS2 一致性反编译](https://awesomerea.org/zh/resources/rac1-matching-decomp-case/)
 - [korobetski/Vagrant-Story-Unity-Parser](https://github.com/korobetski/Vagrant-Story-Unity-Parser) — 从 Square 的原版游戏《Vagrant Story》中读取数据，以构建预制体和数据库的编辑器脚本。 **[51 星标]**
 - [HalmyLyseas/VandalHearts-PcPort](https://github.com/HalmyLyseas/VandalHearts-PcPort) — PlayStation 游戏 Vandal Hearts 的原生 PC 移植版，基于逐字节精确匹配的反编译。支持 Windows 和 Linux；需自备光盘。 **[50 星标]** · 精选：[Vandal Hearts：基于一致性反编译的原生 PC 移植](https://awesomerea.org/zh/resources/vandal-hearts-pc-port-case/)
