@@ -117,7 +117,7 @@
 - [cristianzsh/forensictools](https://github.com/cristianzsh/forensictools) — 取证工具合集。 **[706 星标]**
 - [bahattinkoc/ipaverse](https://github.com/bahattinkoc/ipaverse) — 无需 Xcode 或终端即可下载、重新签名并侧载 iOS、iPadOS、macOS、tvOS 和 visionOS 应用，并提供用于授权安全测试的工具集，包括 ATS 绕过、Frida 注入、静态扫描和 FairPlay 转储。 **[679 星标]**
 - [google/jsir](https://github.com/google/jsir) — 新一代 JavaScript 分析工具。 **[672 星标]** · 论文：[CASCADE：谷歌基于大语言模型的 JavaScript 反混淆器](https://awesomerea.org/zh/papers/paper-cascade/)
-- [arcanite24/pinyon-shift](https://github.com/arcanite24/pinyon-shift) — Forza Horizon 静态重编译项目的可玩预览版。 **[671 星标]**
+- [arcanite24/pinyon-shift](https://github.com/arcanite24/pinyon-shift) — Forza Horizon 静态重编译项目的可玩预览版。 **[671 星标]** · 精选：[Pinyon Shift：以 ShiftGlue 将 Forza Horizon 静态重编译到 PC](https://awesomerea.org/zh/resources/pinyon-shift-forza-horizon-recomp-case/)
 - [Spacial/awesome-csirt](https://github.com/Spacial/awesome-csirt) — Awesome CSIRT 是一个精选列表，收集安全和 CSIRT 日常活动相关的链接与资源。 **[656 星标]**
 - [yincongcyincong/wechat\_chatter](https://github.com/yincongcyincong/wechat_chatter) — 微信 macOS 版消息收发逆向与 hook。 **[655 星标]**
 - [pret/pokeheartgold](https://github.com/pret/pokeheartgold) — 《宝可梦 心金/魂银》的反编译代码。 **[649 星标]** · 精选：[《宝可梦 心金／魂银》：校验一致的进行中 DS 反汇编项目](https://awesomerea.org/zh/resources/pokemon-heartgold-soulsilver-disassembly-case/)
