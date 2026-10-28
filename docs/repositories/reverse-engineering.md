@@ -144,7 +144,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Arenukvern/mcp\_flutter](https://github.com/Arenukvern/mcp_flutter) — MCP Toolkit for Flutter AI Agent Driven Development (MCP/CLI + custom client side tools) - via closed feedback loop (visual &amp; semantic snapshot) and high client side customization adaptable for any Flutter app. Nowadays it is often called as agentic harness. **[389 stars]**
 - [ResistanceTo/MiniWatts](https://github.com/ResistanceTo/MiniWatts) — An iPhone battery, charging and thermal instrument built on private iOS APIs — real charger watts, what actually reaches the cell, all 30 temperature sensors, and the USB-PD handshake. **[386 stars]**
 - [lifting-bits/anvill](https://github.com/lifting-bits/anvill) — anvill forges beautiful LLVM bitcode out of raw machine code **[384 stars]**
-- [projectPiki/pikmin2](https://github.com/projectPiki/pikmin2) — A decompilation of Pikmin 2 (USA) brought to you by fans of the series. **[380 stars]**
+- [projectPiki/pikmin2](https://github.com/projectPiki/pikmin2) — A decompilation of Pikmin 2 (USA) brought to you by fans of the series. **[380 stars]** · Curated: [Pikmin 2: a fully matched GameCube decompilation across five releases](https://awesomerea.org/resources/pikmin-2-matching-decomp-case/)
 - [richinfante/iphonebackuptools](https://github.com/richinfante/iphonebackuptools) — iOS Backup Data Extraction **[361 stars]**
 - [GenericException/SkidSuite](https://github.com/GenericException/SkidSuite) — A collection of java reverse engineering tools and informational links **[355 stars]**
 - [sztupy/luadec51](https://github.com/sztupy/luadec51) — Lua Decompiler for Lua version 5.1 **[353 stars]**

@@ -144,7 +144,7 @@
 - [Arenukvern/mcp\_flutter](https://github.com/Arenukvern/mcp_flutter) — 面向 Flutter AI 智能体驱动开发的 MCP 工具集（MCP／CLI 加自定义客户端工具），通过闭环反馈（视觉与语义快照）和高度可定制的客户端能力适配任意 Flutter 应用。如今这类系统常被称为智能体执行框架。 **[389 星标]**
 - [ResistanceTo/MiniWatts](https://github.com/ResistanceTo/MiniWatts) — 基于 iOS 私有 API 构建的 iPhone 电池、充电与温度检测工具，可展示充电器实际功率、真正到达电芯的功率、全部 30 个温度传感器读数，以及 USB-PD 握手过程。 **[386 星标]**
 - [lifting-bits/anvill](https://github.com/lifting-bits/anvill) — anvill 将原始机器码转换为优雅的 LLVM bitcode。 **[384 星标]**
-- [projectPiki/pikmin2](https://github.com/projectPiki/pikmin2) — 由系列爱好者制作的《皮克敏 2》（美版）反编译项目。 **[380 星标]**
+- [projectPiki/pikmin2](https://github.com/projectPiki/pikmin2) — 由系列爱好者制作的《皮克敏 2》（美版）反编译项目。 **[380 星标]** · 精选：[《皮克敏2》：覆盖五个版本、已完全匹配的 GameCube 反编译](https://awesomerea.org/zh/resources/pikmin-2-matching-decomp-case/)
 - [richinfante/iphonebackuptools](https://github.com/richinfante/iphonebackuptools) — iOS 备份数据提取 **[361 星标]**
 - [GenericException/SkidSuite](https://github.com/GenericException/SkidSuite) — Java 逆向工程工具与资料链接合集。 **[355 星标]**
 - [sztupy/luadec51](https://github.com/sztupy/luadec51) — 适用于 Lua 5.1 的 Lua 反编译器。 **[353 星标]**
