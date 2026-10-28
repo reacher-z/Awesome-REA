@@ -233,7 +233,7 @@
 - [DerekSelander/mobdevim](https://github.com/DerekSelander/mobdevim) — 与已连接的 iOS 设备交互的命令行工具，使用 Apple 的 MobileDevice 框架。 **[129 星标]**
 - [minaminao/erever](https://github.com/minaminao/erever) — 用于逆向分析 EVM 字节码的个人瑞士军刀工具，处于高度实验阶段 **[128 星标]**
 - [extremecoders-re/bytecode\_simplifier](https://github.com/extremecoders-re/bytecode_simplifier) — 针对 PjOrion 混淆的 Python 脚本的通用去混淆工具 **[126 星标]**
-- [hgarrereyn/STRIDE](https://github.com/hgarrereyn/STRIDE) — 对反编译后的可执行文件进行简单类型识别 **[123 星标]**
+- [hgarrereyn/STRIDE](https://github.com/hgarrereyn/STRIDE) — 对反编译后的可执行文件进行简单类型识别 **[123 星标]** · 论文：[STRIDE：反编译可执行文件中的简单类型识别](https://awesomerea.org/zh/papers/paper-stride/)
 - [imugee/pegasus](https://github.com/imugee/pegasus) — WinDbg 逆向工程扩展插件 **[123 星标]**
 - [mahaloz/sailr-eval](https://github.com/mahaloz/sailr-eval) — SAILR 论文中用于衡量反编译质量的评估流水线 **[121 星标]**
 - [zedxxx/rccextended](https://github.com/zedxxx/rccextended) — Qt 资源编译器与反编译器（RccExtended）。 **[120 星标]**

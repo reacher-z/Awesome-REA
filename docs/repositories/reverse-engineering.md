@@ -233,7 +233,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [DerekSelander/mobdevim](https://github.com/DerekSelander/mobdevim) — Command line utility that interacts with plugged in iOS devices. Uses Apple's MobileDevice framework **[129 stars]**
 - [minaminao/erever](https://github.com/minaminao/erever) — My swiss army knife for reversing EVM bytecodes (super experimental) **[128 stars]**
 - [extremecoders-re/bytecode\_simplifier](https://github.com/extremecoders-re/bytecode_simplifier) — A generic deobfuscator for PjOrion obfuscated python scripts **[126 stars]**
-- [hgarrereyn/STRIDE](https://github.com/hgarrereyn/STRIDE) — simple type recognition in decompiled executables **[123 stars]**
+- [hgarrereyn/STRIDE](https://github.com/hgarrereyn/STRIDE) — simple type recognition in decompiled executables **[123 stars]** · Paper: [STRIDE: Simple Type Recognition In Decompiled Executables](https://awesomerea.org/papers/paper-stride/)
 - [imugee/pegasus](https://github.com/imugee/pegasus) — reverse engineering extension plugin for windbg **[123 stars]**
 - [mahaloz/sailr-eval](https://github.com/mahaloz/sailr-eval) — The SAILR paper's evaluation pipline for measuring the quality of decompilation **[121 stars]**
 - [zedxxx/rccextended](https://github.com/zedxxx/rccextended) — Qt Resource Compiler and Decompiler (RccExtended) **[120 stars]**
