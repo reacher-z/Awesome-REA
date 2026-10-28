@@ -172,7 +172,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [zifeihan/friday](https://github.com/zifeihan/friday) — Java runtime decompiler **[248 stars]**
 - [SimplyProgrammer/Minecraft-Deobfuscator3000](https://github.com/SimplyProgrammer/Minecraft-Deobfuscator3000) — Powerful and universal deobfuscator for Minecraft mods and java decompiler! **[246 stars]**
 - [CFSworks/wavebird-reversing](https://github.com/CFSworks/wavebird-reversing) — Reverse-engineering the WaveBird protocol for the betterment of mankind **[244 stars]**
-- [Patoke/re-plants-vs-zombies](https://github.com/Patoke/re-plants-vs-zombies) — A project to rebuild all functionality via reverse engineering from the GOTY version of Plants VS Zombies (and expand upon it) **[234 stars]**
+- [Patoke/re-plants-vs-zombies](https://github.com/Patoke/re-plants-vs-zombies) — A project to rebuild all functionality via reverse engineering from the GOTY version of Plants VS Zombies (and expand upon it) **[234 stars]** · Curated: [re-plants-vs-zombies: decompiling and modernizing Plants vs. Zombies GOTY](https://awesomerea.org/resources/re-plants-vs-zombies-decomp-case/)
 - [macmade/dyld\_cache\_extract](https://github.com/macmade/dyld_cache_extract) — A macOS utility to extract dynamic libraries from the dyld\_shared\_cache of macOS and iOS. **[225 stars]**
 - [VelocityRa/awesome-game-file-format-reversing](https://github.com/VelocityRa/awesome-game-file-format-reversing) — Collection of docs/tools/resources for reverse engineering and working with video game file formats. **[225 stars]**
 - [psxrestore/Condemned2Recomp](https://github.com/psxrestore/Condemned2Recomp) — A static recompilation of Condemned 2: Bloodshot done with RexGlue. **[223 stars]**

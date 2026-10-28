@@ -172,7 +172,7 @@
 - [zifeihan/friday](https://github.com/zifeihan/friday) — Java 运行时反编译工具 **[248 星标]**
 - [SimplyProgrammer/Minecraft-Deobfuscator3000](https://github.com/SimplyProgrammer/Minecraft-Deobfuscator3000) — 强大的通用 Minecraft 模组去混淆工具及 Java 反编译器！ **[246 星标]**
 - [CFSworks/wavebird-reversing](https://github.com/CFSworks/wavebird-reversing) — 对 WaveBird 协议进行逆向工程，造福人类 **[244 星标]**
-- [Patoke/re-plants-vs-zombies](https://github.com/Patoke/re-plants-vs-zombies) — 通过逆向工程重建《植物大战僵尸》年度版全部功能，并在此基础上扩展的项目 **[234 星标]**
+- [Patoke/re-plants-vs-zombies](https://github.com/Patoke/re-plants-vs-zombies) — 通过逆向工程重建《植物大战僵尸》年度版全部功能，并在此基础上扩展的项目 **[234 星标]** · 精选：[re-plants-vs-zombies：反编译并现代化改造 Plants vs. Zombies 年度版](https://awesomerea.org/zh/resources/re-plants-vs-zombies-decomp-case/)
 - [macmade/dyld\_cache\_extract](https://github.com/macmade/dyld_cache_extract) — macOS 工具，用于从 macOS 和 iOS 的 dyld\_shared\_cache 中提取动态库。 **[225 星标]**
 - [VelocityRa/awesome-game-file-format-reversing](https://github.com/VelocityRa/awesome-game-file-format-reversing) — 用于逆向分析和处理电子游戏文件格式的文档、工具与资源合集。 **[225 星标]**
 - [psxrestore/Condemned2Recomp](https://github.com/psxrestore/Condemned2Recomp) — 使用 RexGlue 对《Condemned 2: Bloodshot》进行的静态重编译。 **[223 星标]**
