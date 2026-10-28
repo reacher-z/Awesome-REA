@@ -36,7 +36,7 @@
 - [nmlgc/ReC98](https://github.com/nmlgc/ReC98) — 东方 PC-98 修复项目。 **[875 星标]**
 - [AxioDL/metaforce](https://github.com/AxioDL/metaforce) — Metroid Prime 引擎的原生重新实现。 **[808 星标]** · 精选：[Metaforce：在反编译之上重建的《密特罗德 Prime》引擎重实现](https://awesomerea.org/zh/resources/metaforce-metroid-prime-case/)
 - [EstebanPdN/zelda-tmc-3ds](https://github.com/EstebanPdN/zelda-tmc-3ds) — 基于 Project Picori 的 The Legend of Zelda: The Minish Cap 原生 Nintendo 3DS 移植版。 **[757 星标]**
-- [SAT-R/sa2](https://github.com/SAT-R/sa2) — 使用 C 编写的 Game Boy Advance 游戏《索尼克进化 1 与 2》的反编译和移植项目。 **[678 星标]**
+- [SAT-R/sa2](https://github.com/SAT-R/sa2) — 使用 C 编写的 Game Boy Advance 游戏《索尼克进化 1 与 2》的反编译和移植项目。 **[678 星标]** · 精选：[《索尼克 Advance》1 与 2：一致性 GBA 反编译及宽屏移植](https://awesomerea.org/zh/resources/sonic-advance-1-2-decomp-port-case/)
 - [axhlzy/Il2CppHookScripts](https://github.com/axhlzy/Il2CppHookScripts) — 基于 Frida 的 libil2cpp.so 运行时解析脚本。 **[664 星标]**
 - [OpenRakis/Spice86](https://github.com/OpenRakis/Spice86) — 逆向分析并重写实模式 DOS 程序！ **[662 星标]** · 精选：[Spice86 实模式 DOS 逆向与重写模拟器](https://awesomerea.org/zh/resources/spice86/)
 - [matt-kempster/m2c](https://github.com/matt-kempster/m2c) — 面向 MIPS、PowerPC、ARM 和 SuperH 的反编译器。 **[658 星标]** · 精选：[m2c 匹配反编译器](https://awesomerea.org/zh/resources/m2c/)

@@ -36,7 +36,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [nmlgc/ReC98](https://github.com/nmlgc/ReC98) — The Touhou PC-98 Restoration Project **[875 stars]**
 - [AxioDL/metaforce](https://github.com/AxioDL/metaforce) — A native reimplementation of the Metroid Prime engine **[808 stars]** · Curated: [Metaforce: a Metroid Prime engine reimplementation rebuilt on the decompilation](https://awesomerea.org/resources/metaforce-metroid-prime-case/)
 - [EstebanPdN/zelda-tmc-3ds](https://github.com/EstebanPdN/zelda-tmc-3ds) — Native Nintendo 3DS port of The Legend of Zelda: The Minish Cap based on Project Picori **[757 stars]**
-- [SAT-R/sa2](https://github.com/SAT-R/sa2) — A decompilation and port of Sonic Advance 1 &amp; 2 - GameBoy Advance game's written in C **[678 stars]**
+- [SAT-R/sa2](https://github.com/SAT-R/sa2) — A decompilation and port of Sonic Advance 1 &amp; 2 - GameBoy Advance game's written in C **[678 stars]** · Curated: [Sonic Advance 1 &amp; 2: a matching GBA decompilation with widescreen ports](https://awesomerea.org/resources/sonic-advance-1-2-decomp-port-case/)
 - [axhlzy/Il2CppHookScripts](https://github.com/axhlzy/Il2CppHookScripts) — Frida-based libil2cpp.so runtime parsing script **[664 stars]**
 - [OpenRakis/Spice86](https://github.com/OpenRakis/Spice86) — Reverse engineer and rewrite real mode DOS programs! **[662 stars]** · Curated: [Spice86](https://awesomerea.org/resources/spice86/)
 - [matt-kempster/m2c](https://github.com/matt-kempster/m2c) — A decompiler targeting MIPS, PowerPC, ARM, and SuperH. **[658 stars]** · Curated: [m2c](https://awesomerea.org/resources/m2c/)
