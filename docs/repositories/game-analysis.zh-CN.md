@@ -105,7 +105,7 @@
 - [JackandBeans/Snap64Recomp](https://github.com/JackandBeans/Snap64Recomp) — 通过静态重编译将 N64 版《Pokémon Snap》原生移植至 Windows、Linux 和 macOS。默认保留卡带版的游玩体验，所有增强功能均需自行开启。需自备转储文件，不包含游戏数据。 **[109 星标]** · 精选：[Snap64 Recomp：Pokémon Snap 的静态重编译移植](https://awesomerea.org/zh/resources/snap64-recomp-case/)
 - [ExtraJuiceMan/ChristWareAmongUs](https://github.com/ExtraJuiceMan/ChristWareAmongUs) — 针对近期热门游戏 Among Us 的作弊工具 **[105 星标]**
 - [mukaschultze/grand-theft-auto-for-unity](https://github.com/mukaschultze/grand-theft-auto-for-unity) — 适用于 Unity 引擎的 Grand Theft Auto 地图加载器。 **[105 星标]**
-- [Yharnam-Hunters/Paleblood](https://github.com/Yharnam-Hunters/Paleblood) — Bloodborne（CUSA03173 v1.09）反编译项目，带有独立运行时；逐个验证函数，将游戏代码重写为可读的 C++。游戏尚无法运行，已验证 21 个函数，不包含游戏文件。 **[104 星标]**
+- [Yharnam-Hunters/Paleblood](https://github.com/Yharnam-Hunters/Paleblood) — Bloodborne（CUSA03173 v1.09）反编译项目，带有独立运行时；逐个验证函数，将游戏代码重写为可读的 C++。游戏尚无法运行，已验证 21 个函数，不包含游戏文件。 **[104 星标]** · 精选：[Paleblood：带自有运行时的 Bloodborne 功能等价反编译](https://awesomerea.org/zh/resources/paleblood-bloodborne-functional-decomp-case/)
 - [yannicksuter/smstrikers-decomp](https://github.com/yannicksuter/smstrikers-decomp) — Super Mario Strikers 反编译项目 **[102 星标]**
 - [EquiFox/MInjector](https://github.com/EquiFox/MInjector) — 使用 MInject 库的 Mono 框架注入器（C#）。 **[95 星标]**
 - [GrahamBest/dll\_hook-rs](https://github.com/GrahamBest/dll_hook-rs) — 演示如何在 Rust 中通过 DLL 实现 Hook 的 Rust 代码。 **[95 星标]**
