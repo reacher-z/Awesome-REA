@@ -3122,5 +3122,915 @@
       "https://codegeeksai.github.io/it/blog/analisi-statica-malware-rea-codex/",
       "https://github.com/codegeeksai/codegeeksai.github.io/blob/8384782c20b1636362495b9505f1bd597ff5941b/src/content/posts/it/analisi-statica-malware-rea-codex.md"
     ]
+  },
+  {
+    "id": "cadcraft-case",
+    "name": "CADCraft: a clean-room AutoCAD-style CAD application in Rust",
+    "url": "https://github.com/storytold/cadcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "An open-source computer-aided design and drafting application written from scratch in pure Rust, following an AutoCAD-style workflow, per the project README. Release packages and demo material are available; the project self-reports alpha status.",
+    "description_zh": "据项目 README，这是用纯 Rust 从零编写的开源计算机辅助设计与制图应用，采用 AutoCAD 风格工作流。提供发布包与演示材料；项目自述仍处 alpha 阶段。",
+    "evidence_url": "https://github.com/storytold/cadcraft/blob/896a390b4272e89bd5de416f3afaf44292670fd4/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Self-described alpha status; the tracker screening notes it does not establish professional CAD usability.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/cadcraft/896a390b4272e89bd5de416f3afaf44292670fd4/docs/images/ui-apartment.png",
+      "https://github.com/storytold/cadcraft/releases/tag/v0.10.0"
+    ]
+  },
+  {
+    "id": "designcraft-case",
+    "name": "DesignCraft: a from-scratch page and layout design editor in Rust",
+    "url": "https://github.com/storytold/designcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "An open-source page and layout design editor written from scratch in pure Rust, per the project README. Release packages and demo material are available; the project self-reports alpha status.",
+    "description_zh": "据项目 README，这是用纯 Rust 从零编写的开源页面与版式设计编辑器。提供发布包与演示材料；项目自述仍处 alpha 阶段。",
+    "evidence_url": "https://github.com/storytold/designcraft/blob/4d62a501c18fb3cf453c6e9f19f15cbc9c558e26/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Self-described alpha status; the tracker screening notes it does not establish professional design-tool usability.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/designcraft/4d62a501c18fb3cf453c6e9f19f15cbc9c558e26/docs/images/ui-spread.png",
+      "https://github.com/storytold/designcraft/releases/tag/v0.10.0"
+    ]
+  },
+  {
+    "id": "effectcraft-case",
+    "name": "EffectCraft: a from-scratch motion graphics and compositing tool in Rust",
+    "url": "https://github.com/storytold/effectcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "An open-source motion graphics and compositing tool written from scratch in pure Rust, per the project README. Release packages and demo material are available; the project self-reports alpha status.",
+    "description_zh": "据项目 README，这是用纯 Rust 从零编写的开源动效图形与合成工具。提供发布包与演示材料；项目自述仍处 alpha 阶段。",
+    "evidence_url": "https://github.com/storytold/effectcraft/blob/ec2d51a17a4cacc6b2907c875879f85ba895eed3/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Self-described alpha status; the tracker screening notes it does not establish professional post-production usability.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/effectcraft/ec2d51a17a4cacc6b2907c875879f85ba895eed3/docs/images/effectcraft-hero.png",
+      "https://github.com/storytold/effectcraft/releases/tag/v0.13.0"
+    ]
+  },
+  {
+    "id": "figcraft-case",
+    "name": "FigCraft: a from-scratch interface design and prototyping tool in Rust",
+    "url": "https://github.com/storytold/figcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "An open-source interface design and prototyping tool that re-creates collaborative design workflows, written from scratch in pure Rust, per the project README. Release packages and demo material are available; the project self-reports alpha status.",
+    "description_zh": "据项目 README，这是用纯 Rust 从零编写的开源界面设计与原型工具，重建协作设计工作流。提供发布包与演示材料；项目自述仍处 alpha 阶段。",
+    "evidence_url": "https://github.com/storytold/figcraft/blob/28de91d9ae72fc7fbc2199ac5ee2c8be237980d5/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Self-described alpha status; the tracker screening notes it does not establish professional design-tool usability.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/figcraft/28de91d9ae72fc7fbc2199ac5ee2c8be237980d5/docs/images/shot-1-hero.png",
+      "https://github.com/storytold/figcraft/releases/tag/v0.8.0"
+    ]
+  },
+  {
+    "id": "filmcraft-case",
+    "name": "FilmCraft: a from-scratch nonlinear video editor in Rust",
+    "url": "https://github.com/storytold/filmcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "An open-source nonlinear video editor written from scratch in pure Rust, per the project README. Release packages and demo material are available; the project self-reports alpha status.",
+    "description_zh": "据项目 README，这是用纯 Rust 从零编写的开源非线性视频编辑器。提供发布包与演示材料；项目自述仍处 alpha 阶段。",
+    "evidence_url": "https://github.com/storytold/filmcraft/blob/d643a886650bfbf16f24762274054575aa1e8f20/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Self-described alpha status; the tracker screening notes it does not establish professional editing usability.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/filmcraft/d643a886650bfbf16f24762274054575aa1e8f20/docs/images/filmcraft-hero.png",
+      "https://github.com/storytold/filmcraft/releases/tag/v0.10.0"
+    ]
+  },
+  {
+    "id": "lightcraft-case",
+    "name": "LightCraft: a from-scratch non-destructive photo editor in Rust",
+    "url": "https://github.com/storytold/lightcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "An open-source non-destructive photo editor written from scratch in pure Rust, per the project README. Release packages and demo material are available; the project self-reports alpha status.",
+    "description_zh": "据项目 README，这是用纯 Rust 从零编写的开源非破坏性照片编辑器。提供发布包与演示材料；项目自述仍处 alpha 阶段。",
+    "evidence_url": "https://github.com/storytold/lightcraft/blob/ec0cda9a6f320e3b32f659f16718f7bce6c3f12f/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Self-described alpha status; the tracker screening notes it does not establish professional photo-editing usability.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/lightcraft/ec0cda9a6f320e3b32f659f16718f7bce6c3f12f/docs/images/hero-tetons.jpg",
+      "https://github.com/storytold/lightcraft/releases/tag/v0.10.0"
+    ]
+  },
+  {
+    "id": "pdfcraft-case",
+    "name": "PdfCraft: a from-scratch PDF reader and editor in Rust",
+    "url": "https://github.com/storytold/pdfcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "An open-source PDF reader and editor written from scratch in pure Rust, per the project README. Release packages and demo material are available; the project self-reports alpha status.",
+    "description_zh": "据项目 README，这是用纯 Rust 从零编写的开源 PDF 阅读与编辑器。提供发布包与演示材料；项目自述仍处 alpha 阶段。",
+    "evidence_url": "https://github.com/storytold/pdfcraft/blob/416495145354828a9efefc39df381ba3ee8f864f/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Self-described alpha status; the tracker screening notes it does not establish professional document-tool usability.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/pdfcraft/416495145354828a9efefc39df381ba3ee8f864f/docs/images/pdfcraft-viewer.png",
+      "https://github.com/storytold/pdfcraft/releases/tag/v0.10.1"
+    ]
+  },
+  {
+    "id": "soundcraft-case",
+    "name": "SoundCraft: a clean-room DAW reimplementation in Rust",
+    "url": "https://github.com/storytold/soundcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "An open-source, clean-room reimplementation of Avid Pro Tools written from scratch in pure Rust, as the project README describes itself. Release packages and demo material are available; the project self-reports alpha status.",
+    "description_zh": "据项目 README 自述，这是用纯 Rust 从零对 Avid Pro Tools 做的开源净室重实现。提供发布包与演示材料；项目自述仍处 alpha 阶段。",
+    "evidence_url": "https://github.com/storytold/soundcraft/blob/b74fca0fb0f8b4a8474c447c1b6043a5028a5de2/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Self-described alpha status; the tracker screening notes it does not establish professional audio-production usability.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/soundcraft/b74fca0fb0f8b4a8474c447c1b6043a5028a5de2/docs/images/edit.png",
+      "https://github.com/storytold/soundcraft/releases/tag/v0.11.0"
+    ]
+  },
+  {
+    "id": "vectorcraft-case",
+    "name": "VectorCraft: a from-scratch vector art tool in Rust",
+    "url": "https://github.com/storytold/vectorcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "An open-source vector art tool written from scratch in pure Rust, per the project README. Release packages and demo material are available; the project self-reports alpha status.",
+    "description_zh": "据项目 README，这是用纯 Rust 从零编写的开源矢量绘图工具。提供发布包与演示材料；项目自述仍处 alpha 阶段。",
+    "evidence_url": "https://github.com/storytold/vectorcraft/blob/875f98d211a303e90c15141385bbbb1ff7e2b233/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Self-described alpha status; the tracker screening notes it does not establish professional illustration usability.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/vectorcraft/875f98d211a303e90c15141385bbbb1ff7e2b233/docs/images/shot-2-ribbons.png",
+      "https://github.com/storytold/vectorcraft/releases/tag/v0.14.0"
+    ]
+  },
+  {
+    "id": "woxi-case",
+    "name": "Woxi: a Wolfram Language reimplementation in Rust",
+    "url": "https://github.com/ad-si/Woxi",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A Rust reimplementation of a subset of the Wolfram Language (Wolfram oxidized), per the project README. It does not claim full Mathematica compatibility.",
+    "description_zh": "据项目 README，这是用 Rust 重实现 Wolfram Language（Mathematica）的一个子集（Wolfram oxidized）。项目不以完整 Mathematica 兼容为目标。",
+    "evidence_url": "https://github.com/ad-si/Woxi/blob/1cc9fcb7458c5ad7f0e8dc453d236828534c6cc7/readme.md",
+    "verified_at": "2026-10-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers a subset of the Wolfram Language; full Mathematica compatibility is not claimed or established.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/ad-si/Woxi/1cc9fcb7458c5ad7f0e8dc453d236828534c6cc7/images/2026-02-12t1501_jupyter.png",
+      "https://github.com/ad-si/Woxi/releases/tag/v0.3.0"
+    ]
+  },
+  {
+    "id": "chupathingy-case",
+    "name": "Chupathingy: a native multiplatform port of Halo: Combat Evolved",
+    "url": "https://github.com/ChupathingyCE/chupathingyce",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Per the README, runs the Halo: Combat Evolved decompilation natively on Windows, Mac, Linux and Android, built for stability and community multiplayer with dedicated servers and the Delta netcode. Original game assets are not included.",
+    "description_zh": "据 README，该项目把《光环：战斗进化》的反编译版本原生移植到 Windows、Mac、Linux 和 Android，面向稳定性和社区联机，自带专用服务器与 Delta 网络代码；不包含原版游戏资产。",
+    "evidence_url": "https://github.com/ChupathingyCE/chupathingyce/blob/6635796e0a189d7fe0e16ad5b6460389865b8f3a/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game assets; the project does not distribute game data.",
+      "Public release packages include a macOS build; Android, Windows and Linux packages are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/ChupathingyCE/chupathingyce/6635796e0a189d7fe0e16ad5b6460389865b8f3a/docs/screenshots/lobby.jpg",
+      "https://github.com/ChupathingyCE/chupathingyce/releases/tag/nightly"
+    ]
+  },
+  {
+    "id": "ngpcraft-case",
+    "name": "Ngpcraft: a Neo Geo Pocket emulator with ROM-hacking tools",
+    "url": "https://github.com/Tixul/Ngpcraft_emulator",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A Neo Geo Pocket / Color emulator with a full debugger and fan-translation and ROM-hacking tools (.tbl tables, relative search, pointer finder, ROM diff), plus save states and rewind; Windows, Linux and macOS builds.",
+    "description_zh": "Neo Geo Pocket／Color 模拟器，内置完整调试器与翻译、魔改工具（.tbl 表、相对搜索、指针查找、ROM diff），支持即时存档与倒带；提供 Windows、Linux 与 macOS 版本。",
+    "evidence_url": "https://github.com/Tixul/Ngpcraft_emulator/blob/fec48a1058493a47b93ac3ef17e2c0493501b30a/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires user-provided console BIOS or game ROMs; the project does not distribute them.",
+      "Public release packages include a macOS build; Windows and Linux packages are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/user-attachments/assets/24dd060d-5b35-4ef6-83dd-916a618ba244",
+      "https://github.com/Tixul/Ngpcraft_emulator/releases/tag/v3.9.1"
+    ]
+  },
+  {
+    "id": "zelda-tmc-3ds-case",
+    "name": "A native 3DS port of The Legend of Zelda: The Minish Cap",
+    "url": "https://github.com/EstebanPdN/zelda-tmc-3ds",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A native Nintendo 3DS port of The Legend of Zelda: The Minish Cap based on the Project Picori decompilation, per the README. Original game assets are not included.",
+    "description_zh": "据 README，这是基于 Project Picori 反编译的《塞尔达传说：缩小帽》Nintendo 3DS 原生移植；不包含原版游戏资产。",
+    "evidence_url": "https://github.com/EstebanPdN/zelda-tmc-3ds/blob/57fe1a998761d5c1021904cee3cca1067989ba5a/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game assets; the project does not distribute game data.",
+      "No macOS package was confirmed at review time; supported platforms are listed in the README.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/EstebanPdN/zelda-tmc-3ds/57fe1a998761d5c1021904cee3cca1067989ba5a/docs/images/showcase-rounded.webp",
+      "https://github.com/EstebanPdN/zelda-tmc-3ds/releases/tag/v2.2"
+    ]
+  },
+  {
+    "id": "galaxyquest-case",
+    "name": "GalaxyQuest: Super Mario Galaxy in VR on Meta Quest 3",
+    "url": "https://github.com/bigmak94/GalaxyQuest",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A native VR port of Super Mario Galaxy for Meta Quest 3 built on the Petari decompilation; the README states it is AI-generated and requires the user's own game files.",
+    "description_zh": "基于 Petari 反编译的《超级马里奥银河》Meta Quest 3 原生 VR 移植；README 说明由 AI 生成，并需自备游戏文件。",
+    "evidence_url": "https://github.com/bigmak94/GalaxyQuest/blob/179739d6d1538ba64f7544e601ccc95748de846a/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game files; the project does not distribute game data.",
+      "Targets Meta Quest 3 hardware; no macOS package was confirmed at review time.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/bigmak94/GalaxyQuest/179739d6d1538ba64f7544e601ccc95748de846a/docs/images/diorama.jpg",
+      "https://github.com/bigmak94/GalaxyQuest/releases/tag/v0.1.9"
+    ]
+  },
+  {
+    "id": "opencmr2-case",
+    "name": "OpenCMR2: an SDL3 port of Colin McRae Rally 2.0",
+    "url": "https://github.com/pablocpas/OpenCMR2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A native SDL3 port of Colin McRae Rally 2.0 built from the CMR2Decomp decompilation; no game data is included.",
+    "description_zh": "基于 CMR2Decomp 反编译的《科林·麦克雷拉力赛 2.0》SDL3 原生移植；不包含游戏数据。",
+    "evidence_url": "https://github.com/pablocpas/OpenCMR2/blob/392cdd9ad07e26353f5906f2582dcce4c3d125dc/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game data; the project does not distribute it.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/user-attachments/assets/3c7322dc-576b-4fb0-8d6a-4d17de6fe17d",
+      "https://github.com/pablocpas/OpenCMR2/releases/tag/v1.5.2"
+    ]
+  },
+  {
+    "id": "openphantom-case",
+    "name": "OpenPhantom: a modernized co-op port of The Phantom Menace (1999)",
+    "url": "https://github.com/OpenPhantom/OpenPhantom",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Modernizes the 1999 Star Wars: Episode I – The Phantom Menace PC game with online co-op for up to four players, a modern installer, and widescreen and ultrawide support, targeting Windows 10/11 and Steam Deck with Proton.",
+    "description_zh": "把 1999 年的《星球大战前传Ⅰ：幽灵的威胁》PC 游戏现代化：支持至多四人的在线合作、现代安装器与宽屏／超宽屏，面向 Windows 10/11 及 Steam Deck（Proton）。",
+    "evidence_url": "https://github.com/OpenPhantom/OpenPhantom/blob/1eb1ea70b618dc7991f4e9b8c878ecf1fd3dc431/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game assets; the project does not distribute game data.",
+      "Targets Windows 10/11 and Steam Deck; no macOS package was confirmed at review time.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/user-attachments/assets/ad9cd6fb-8bcd-4b25-8d0a-65e221888bfc",
+      "https://github.com/OpenPhantom/OpenPhantom/releases/tag/i2.0.1"
+    ]
+  },
+  {
+    "id": "openrac-case",
+    "name": "OpenRAC: a matching decompilation and PC port of the Ratchet & Clank series",
+    "url": "https://github.com/OpenRAC/OpenRAC",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A matching decompilation and PC port for the Ratchet & Clank series, per the README. Original game assets are not included.",
+    "description_zh": "据 README，这是《瑞奇与叮当》系列的反编译对照项目与 PC 移植；不包含原版游戏资产。",
+    "evidence_url": "https://github.com/OpenRAC/OpenRAC/blob/7814e7a418eb2b4f7638a9886ac949cef835902d/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game assets; the project does not distribute game data.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/OpenRAC/OpenRAC/7814e7a418eb2b4f7638a9886ac949cef835902d/launcher/docs/screenshots/game.jpg",
+      "https://github.com/OpenRAC/OpenRAC/releases/tag/launcher-dev-master"
+    ]
+  },
+  {
+    "id": "breathoffire3-pc-port-case",
+    "name": "A renovation of the 2001 Chinese PC port of Breath of Fire III",
+    "url": "https://github.com/kerokline/BreathOfFire3PCPort",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A renovation project for the 2001 Chinese Windows port of Breath of Fire III, per the README. Original game assets are not included.",
+    "description_zh": "据 README，这是对 2001 年《 Breath of Fire III》中文 Windows 版的翻新修复项目；不包含原版游戏资产。",
+    "evidence_url": "https://github.com/kerokline/BreathOfFire3PCPort/blob/31249d0c183ce484ef8e929a68d7952a75219af7/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game assets; the project does not distribute game data.",
+      "No macOS package was confirmed at review time; supported platforms are listed in the README.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/kerokline/BreathOfFire3PCPort/31249d0c183ce484ef8e929a68d7952a75219af7/docs/images/widescreenIntro.png",
+      "https://github.com/kerokline/BreathOfFire3PCPort/releases/tag/latest"
+    ]
+  },
+  {
+    "id": "rust-gta-3-case",
+    "name": "RustGta3: a GTA III reimplementation in Rust with Bevy ECS",
+    "url": "https://github.com/imbevystar/rust-gta-3",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "An unofficial work-in-progress reimplementation of GTA III in Rust using Bevy ECS, per the README. At review time it is source-install only, with no release packages.",
+    "description_zh": "据 README，这是用 Rust 和 Bevy ECS 重实现《GTA III》的非官方进行中项目；核验时仅能从源码安装，没有发布包。",
+    "evidence_url": "https://github.com/imbevystar/rust-gta-3/blob/599c47eb3bacaa6cb10e8981faaca42c017f9089/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Work in progress; the README marks the project as unofficial and incomplete.",
+      "Source installation only at review time; no release packages were found.",
+      "README demo and install instructions were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/imbevystar/rust-gta-3/599c47eb3bacaa6cb10e8981faaca42c017f9089/assets/screenshots/driving.webp",
+      "https://github.com/imbevystar/rust-gta-3/blob/599c47eb3bacaa6cb10e8981faaca42c017f9089/README.md"
+    ]
+  },
+  {
+    "id": "red-devil-re-case",
+    "name": "Browser re-creations of the J2ME games 红魔特种兵 1 & 2",
+    "url": "https://github.com/geeknull/red-devil-re",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "TypeScript and Canvas re-creations of two J2ME feature-phone games, Red Devil Commando 1 & 2 (红魔特种兵), playable in the browser; at review time it is source-install only.",
+    "description_zh": "用 TypeScript 和 Canvas 复刻两款 J2ME 功能机游戏《红魔特种兵》1 和 2，可在浏览器中运行；核验时仅能从源码安装。",
+    "evidence_url": "https://github.com/geeknull/red-devil-re/blob/95ec712c7031abb0569fda73975ca5afdd019e4d/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs in a browser; at review time the project is source-install only, with no release packages.",
+      "README demo and install instructions were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/geeknull/red-devil-re/95ec712c7031abb0569fda73975ca5afdd019e4d/docs/screenshots/game1-menu.png",
+      "https://github.com/geeknull/red-devil-re/blob/95ec712c7031abb0569fda73975ca5afdd019e4d/README.md"
+    ]
+  },
+  {
+    "id": "noah-case",
+    "name": "Noah: a decompilation of Xenogears",
+    "url": "https://github.com/yaz0r/Noah",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A decompilation project for Xenogears; the README describes it as an experimental, partially playable build and makes no completeness guarantee.",
+    "description_zh": "《异度装甲》（Xenogears）的反编译项目；README 自述为实验性、部分可玩的版本，不保证完整流程。",
+    "evidence_url": "https://github.com/yaz0r/Noah/blob/d725fe231e56a895c17df0554042b9e2bd1acb78/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Experimental and partially playable per the README; completion of the full game is not guaranteed.",
+      "Source installation only at review time; no release packages were found.",
+      "README demo and install instructions were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/user-attachments/assets/2ac5617d-24ae-40f0-9639-99b79fd790f0",
+      "https://github.com/yaz0r/Noah/blob/d725fe231e56a895c17df0554042b9e2bd1acb78/README.md"
+    ]
+  },
+  {
+    "id": "linewarsii-dos-case",
+    "name": "LineWars II reconstructed in C from its shipped binary",
+    "url": "https://github.com/fredangstadt-lang/LineWarsII-DOS",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Reconstructs the 1994 DOS game LineWars II in C from its shipped binary, held against the original by 41 test gates, 27 of which execute the 1994 machine code in an emulator; builds with Open Watcom and runs in DOSBox-X.",
+    "description_zh": "从发行二进制出发，用 C 重建 1994 年的 DOS 游戏 LineWars II，并以 41 道测试门与原版对照，其中 27 道在模拟器中执行 1994 年的机器码；用 Open Watcom 构建，在 DOSBox-X 中运行。",
+    "evidence_url": "https://github.com/fredangstadt-lang/LineWarsII-DOS/blob/89d52a5c03f0b71301374097b587b3c6587375dc/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs in DOSBox-X; the original game files are required and not distributed by the project.",
+      "No macOS package was confirmed at review time; supported platforms are listed in the README.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project or its test gates.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/fredangstadt-lang/LineWarsII-DOS/89d52a5c03f0b71301374097b587b3c6587375dc/docs/captures/title.png",
+      "https://github.com/fredangstadt-lang/LineWarsII-DOS/releases/tag/v1.0.0"
+    ]
+  },
+  {
+    "id": "dirplayer-case",
+    "name": "Dirplayer: a web-compatible Shockwave Player emulator in Rust",
+    "url": "https://github.com/igorlira/dirplayer-rs",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A web-compatible Shockwave Player emulator written in Rust, able to run Director content; per the tracker screening it needs user-provided content files.",
+    "description_zh": "用 Rust 编写的兼容 Web 的 Shockwave Player 模拟器，可运行 Director 内容；据初筛记录，需要用户自行提供内容文件。",
+    "evidence_url": "https://github.com/igorlira/dirplayer-rs/blob/68376fbb4494a6bbad4c70081ecdcb99814a74c9/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires user-provided Director/Shockwave content; the project does not distribute content files.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/igorlira/dirplayer-rs/68376fbb4494a6bbad4c70081ecdcb99814a74c9/app-screenshot.gif",
+      "https://github.com/igorlira/dirplayer-rs/releases/tag/v0.8.1"
+    ]
+  },
+  {
+    "id": "cameo-case",
+    "name": "Cameo: desktop pets",
+    "url": "https://github.com/wquguru/cameo",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A desktop pets application; the reviewed README is short, and the tracked evidence is its demo material and release download.",
+    "description_zh": "一个桌面宠物应用；已核验的 README 较简短，可查证据为其演示材料与发布下载。",
+    "evidence_url": "https://github.com/wquguru/cameo/blob/14362578326b5ed5d1fc3c34bd2abed896f5e6de/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README gives little detail on scope or roadmap; treat feature claims as unverified.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/wquguru/cameo/14362578326b5ed5d1fc3c34bd2abed896f5e6de/docs/hero.jpg",
+      "https://github.com/wquguru/cameo/releases/tag/v0.6.1"
+    ]
+  },
+  {
+    "id": "qqpet-case",
+    "name": "QQ宠物单机复刻版",
+    "url": "https://github.com/AnkioTomas/qqpet",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A standalone re-creation of the QQ Pet desktop mascot, marked at the source as AI-assisted; the reviewed evidence is its demo material and release download.",
+    "description_zh": "QQ 宠物桌面形象的单机复刻版，来源标注为 AI 参与；可查证据为其演示材料与发布下载。",
+    "evidence_url": "https://github.com/AnkioTomas/qqpet/blob/81d7152a1c07ccde98f1abbf67a97e3e15acfab5/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README gives little detail on scope or roadmap; treat feature claims as unverified.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/AnkioTomas/qqpet/81d7152a1c07ccde98f1abbf67a97e3e15acfab5/docs/screenshots/pet.png",
+      "https://github.com/AnkioTomas/qqpet/releases/tag/v0.7.1"
+    ]
+  },
+  {
+    "id": "open-health-case",
+    "name": "Open Health: local-first health apps built on open_oura",
+    "url": "https://github.com/Th0rgal/open_health",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Local-first health applications built on the open_oura project; per the README, the web dashboard runs locally and the iOS app requires building with Xcode.",
+    "description_zh": "基于 open_oura 项目的本地优先健康应用；按 README，Web 仪表盘可本地运行，iOS 应用需用 Xcode 构建。",
+    "evidence_url": "https://github.com/Th0rgal/open_health/blob/c14eaf6f41c73917252f6765df35abc3cfcc4326/README.md",
+    "verified_at": "2026-10-21",
+    "verification": "source-reviewed",
+    "requirements": [
+      "iOS requires an Xcode build; the web dashboard runs locally per the README, and neither path was tested by this catalog.",
+      "Source installation only at review time; no release packages were found.",
+      "README demo and install instructions were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/Th0rgal/open_health/c14eaf6f41c73917252f6765df35abc3cfcc4326/docs/screenshots/overview.png",
+      "https://github.com/Th0rgal/open_health/blob/c14eaf6f41c73917252f6765df35abc3cfcc4326/README.md"
+    ]
+  },
+  {
+    "id": "openenroth-case",
+    "name": "OpenEnroth: a reimplementation of the Might and Magic VI–VIII engine",
+    "url": "https://github.com/OpenEnroth/OpenEnroth",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "An open reimplementation of the Might and Magic 6, 7 and 8 game engine; at review time only MM7 is playable, and the original game data is required.",
+    "description_zh": "《魔法门 6、7、8》游戏引擎的开源重实现；核验时仅 MM7 可玩，需原版游戏数据。",
+    "evidence_url": "https://github.com/OpenEnroth/OpenEnroth/blob/f9be066de4f40dca3cc819e0028350959701284d/README.md",
+    "verified_at": "2026-10-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "At review time only Might and Magic VII is playable; MM6 and MM8 support is incomplete per the tracker screening.",
+      "Requires the original game data; the project does not distribute it.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://user-images.githubusercontent.com/24377109/79051217-491a7800-7c2f-11ea-85c7-f9120b7d79dd.png",
+      "https://github.com/OpenEnroth/OpenEnroth/releases/tag/nightly"
+    ]
+  },
+  {
+    "id": "notepadnext-case",
+    "name": "Notepad Next: a cross-platform reimplementation of Notepad++",
+    "url": "https://github.com/dail8859/NotepadNext",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A cross-platform reimplementation of Notepad++ built on Qt; the README acknowledges remaining bugs and partially implemented features.",
+    "description_zh": "基于 Qt 跨平台重实现 Notepad++；README 自述仍存在缺陷与部分未实现的功能。",
+    "evidence_url": "https://github.com/dail8859/NotepadNext/blob/88fd13c65a35fec60f8ea0055c081a39108911cb/README.md",
+    "verified_at": "2026-10-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README acknowledges remaining bugs and partially implemented features.",
+      "Public release packages include a macOS build; Windows and Linux packages are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/dail8859/NotepadNext/88fd13c65a35fec60f8ea0055c081a39108911cb/doc/screenshot.png",
+      "https://github.com/dail8859/NotepadNext/releases/tag/v0.15"
+    ]
+  },
+  {
+    "id": "opengothic-case",
+    "name": "OpenGothic: a reimplementation of Gothic II: Night of the Raven",
+    "url": "https://github.com/Try/OpenGothic",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A reimplementation of the Gothic II: Night of the Raven engine; it requires the original game data, and the README lists supported game versions.",
+    "description_zh": "《哥特王朝 2：黑夜之鸦》引擎的重实现；需原版游戏数据，支持的游戏版本见 README。",
+    "evidence_url": "https://github.com/Try/OpenGothic/blob/01540fe20fe75181e11e004b4adc4da214bfaec0/README.md",
+    "verified_at": "2026-10-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game data; supported game versions are listed in the README.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/Try/OpenGothic/01540fe20fe75181e11e004b4adc4da214bfaec0/scr0.png",
+      "https://github.com/Try/OpenGothic/releases/tag/v0.92"
+    ]
+  },
+  {
+    "id": "jazz2-native-case",
+    "name": "Jazz² Resurrection: a native C++ reimplementation of Jazz Jackrabbit 2",
+    "url": "https://github.com/deathkiller/jazz2-native",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A native C++ reimplementation of Jazz Jackrabbit 2. This is the source repository; binary releases are published through the deathkiller/jazz2 repository, and the original game assets are required.",
+    "description_zh": "《爵士兔子 2》（Jazz Jackrabbit 2）的原生 C++ 重实现。此为源码仓库，二进制发布由 deathkiller/jazz2 仓库承载，需原版游戏资源。",
+    "evidence_url": "https://github.com/deathkiller/jazz2-native/blob/36a1414d691142443ef7ad9078995e2be4755f11/README.md",
+    "verified_at": "2026-10-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game assets; the project does not distribute them.",
+      "Binary releases for this project live in the deathkiller/jazz2 repository; the two repositories are one project, not two pieces of software.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/deathkiller/jazz2/master/Docs/Screen2.gif",
+      "https://github.com/deathkiller/jazz2/releases/tag/3.9.0"
+    ]
+  },
+  {
+    "id": "openjkdf2-case",
+    "name": "OpenJKDF2: a cross-platform reimplementation of Jedi Knight in C",
+    "url": "https://github.com/shinyquagsire23/OpenJKDF2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A cross-platform reimplementation of Star Wars Jedi Knight: Dark Forces II written in C; the original game assets are required.",
+    "description_zh": "用 C 跨平台重实现《星球大战：绝地武士：黑暗力量 2》；需原版游戏资源。",
+    "evidence_url": "https://github.com/shinyquagsire23/OpenJKDF2/blob/75a13ba2de99a1824978385bfd6e93aaff99306e/README.md",
+    "verified_at": "2026-10-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game assets; the project does not distribute them.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/shinyquagsire23/OpenJKDF2/75a13ba2de99a1824978385bfd6e93aaff99306e/docs/images/screenshot.png",
+      "https://github.com/shinyquagsire23/OpenJKDF2/releases/tag/v0.9.9"
+    ]
+  },
+  {
+    "id": "carnage3d-case",
+    "name": "Carnage3D: a reimplementation of Grand Theft Auto 1",
+    "url": "https://github.com/codenamecpp/carnage3d",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A reimplementation of Grand Theft Auto 1; the README marks it as a very early build.",
+    "description_zh": "《侠盗猎车手 1》（GTA1）的重实现；README 标注为非常早期的版本。",
+    "evidence_url": "https://github.com/codenamecpp/carnage3d/blob/3dc03b2bed32d16315abae3c17d7d9276f450e0b/README.md",
+    "verified_at": "2026-10-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Very early build per the README; feature coverage should not be assumed.",
+      "No macOS package was confirmed at review time; supported platforms are listed in the README.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/codenamecpp/carnage3d/master/screenshots/WorksOnLinux.png",
+      "https://github.com/codenamecpp/carnage3d/releases/tag/test_2"
+    ]
+  },
+  {
+    "id": "neko-case",
+    "name": "Neko: a cross-platform cursor-chasing cat in Go",
+    "url": "https://github.com/crgimenes/neko",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A Go reimplementation of the classic X11 oneko desktop cat that chases the cursor; the README states it does not aim for behavior-identical fidelity to the original.",
+    "description_zh": "用 Go 重实现的经典 X11 oneko 追光标桌面猫；README 明确不以与原版行为一致为目标。",
+    "evidence_url": "https://github.com/crgimenes/neko/blob/193f6ee2448f0e47bea6ab9d4243401ad74f7905/README.md",
+    "verified_at": "2026-10-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README states the project does not aim for behavior-identical fidelity to the original oneko.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/crgimenes/neko/193f6ee2448f0e47bea6ab9d4243401ad74f7905/imgs/neko.webp",
+      "https://github.com/crgimenes/neko/releases/tag/v0.1.46"
+    ]
+  },
+  {
+    "id": "theseus-case",
+    "name": "Theseus: a reverse-engineered Xbox Dashboard",
+    "url": "https://github.com/MrMilenko/Theseus",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A reverse-engineered Xbox Dashboard that runs on Xbox and PC operating systems; distributed as pre-release packages per the tracker screening.",
+    "description_zh": "逆向重建的 Xbox 仪表盘，可运行于 Xbox 与 PC 操作系统；据初筛记录，以预发布包形式分发。",
+    "evidence_url": "https://github.com/MrMilenko/Theseus/blob/5fc7ddddd03b4b5a7e6233769ad6a8fe46009965/README.md",
+    "verified_at": "2026-10-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Pre-release packages; scope and stability should not be assumed.",
+      "Public release packages include a macOS build; other platforms are listed on the release page.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/MrMilenko/Theseus/5fc7ddddd03b4b5a7e6233769ad6a8fe46009965/docs/images/desktop-launcher.png",
+      "https://github.com/MrMilenko/Theseus/releases/tag/v0.3.3.3-testing"
+    ]
+  },
+  {
+    "id": "jazz2-case",
+    "name": "Jazz² Resurrection: release distribution for the Jazz Jackrabbit 2 reimplementation",
+    "url": "https://github.com/deathkiller/jazz2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The release distribution repository of Jazz² Resurrection, the open-source reimplementation of Jazz Jackrabbit 2 whose source code lives at deathkiller/jazz2-native; the two repositories are one project, not two pieces of software.",
+    "description_zh": "《爵士兔子 2》开源重实现 Jazz² Resurrection 的发布仓库，其源码位于 deathkiller/jazz2-native；两个仓库属于同一软件，不是两个独立软件。",
+    "evidence_url": "https://github.com/deathkiller/jazz2/blob/80246b3617db61daa3ee9cb12224521f076ba724/README.md",
+    "verified_at": "2026-10-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the original game assets; the project does not distribute them.",
+      "This repository carries the binary releases; the source code lives in deathkiller/jazz2-native.",
+      "README demo and download links were checked at the pinned commit; this catalog has not installed or run the project.",
+      "The reviewed sources do not establish REA involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/deathkiller/jazz2/main/Docs/Preview.gif",
+      "https://github.com/deathkiller/jazz2/releases/tag/3.9.0"
+    ]
   }
 ]

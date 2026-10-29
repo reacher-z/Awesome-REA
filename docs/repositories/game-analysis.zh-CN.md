@@ -35,7 +35,7 @@
 - [shdecompilations/silent-hill-decomp](https://github.com/shdecompilations/silent-hill-decomp) — 正在进行中的 PlayStation 1 游戏《寂静岭》美版 1.1 反编译项目。 **[902 星标]**
 - [nmlgc/ReC98](https://github.com/nmlgc/ReC98) — 东方 PC-98 修复项目。 **[875 星标]**
 - [AxioDL/metaforce](https://github.com/AxioDL/metaforce) — Metroid Prime 引擎的原生重新实现。 **[808 星标]** · 精选：[Metaforce：在反编译之上重建的《密特罗德 Prime》引擎重实现](https://awesomerea.org/zh/resources/metaforce-metroid-prime-case/)
-- [EstebanPdN/zelda-tmc-3ds](https://github.com/EstebanPdN/zelda-tmc-3ds) — 基于 Project Picori 的 The Legend of Zelda: The Minish Cap 原生 Nintendo 3DS 移植版。 **[757 星标]**
+- [EstebanPdN/zelda-tmc-3ds](https://github.com/EstebanPdN/zelda-tmc-3ds) — 基于 Project Picori 的 The Legend of Zelda: The Minish Cap 原生 Nintendo 3DS 移植版。 **[757 星标]** · 精选：[《塞尔达传说：缩小帽》的 3DS 原生移植](https://awesomerea.org/zh/resources/zelda-tmc-3ds-case/)
 - [SAT-R/sa2](https://github.com/SAT-R/sa2) — 使用 C 编写的 Game Boy Advance 游戏《索尼克进化 1 与 2》的反编译和移植项目。 **[678 星标]**
 - [axhlzy/Il2CppHookScripts](https://github.com/axhlzy/Il2CppHookScripts) — 基于 Frida 的 libil2cpp.so 运行时解析脚本。 **[664 星标]**
 - [OpenRakis/Spice86](https://github.com/OpenRakis/Spice86) — 逆向分析并重写实模式 DOS 程序！ **[662 星标]** · 精选：[Spice86 实模式 DOS 逆向与重写模拟器](https://awesomerea.org/zh/resources/spice86/)
@@ -110,7 +110,7 @@
 - [EquiFox/MInjector](https://github.com/EquiFox/MInjector) — 使用 MInject 库的 Mono 框架注入器（C#）。 **[95 星标]**
 - [GrahamBest/dll\_hook-rs](https://github.com/GrahamBest/dll_hook-rs) — 演示如何在 Rust 中通过 DLL 实现 Hook 的 Rust 代码。 **[95 星标]**
 - [ridpath/gamehacking-cheatsheet](https://github.com/ridpath/gamehacking-cheatsheet) — 面向安全研究人员、逆向工程人员及 CTF 参与者的综合游戏破解速查表，覆盖内存分析、反作弊规避、漏洞利用开发及游戏引擎逆向，用于授权安全测试与教育。 **[95 星标]**
-- [bigmak94/GalaxyQuest](https://github.com/bigmak94/GalaxyQuest) — GalaxyQuest：在 Meta Quest 3 上以 VR 运行 Super Mario Galaxy，基于 Petari 反编译项目构建的原生移植。需自备游戏文件。100% 由 AI 制作（Claude Code 中的 Claude Opus 5.5）。 **[94 星标]**
+- [bigmak94/GalaxyQuest](https://github.com/bigmak94/GalaxyQuest) — GalaxyQuest：在 Meta Quest 3 上以 VR 运行 Super Mario Galaxy，基于 Petari 反编译项目构建的原生移植。需自备游戏文件。100% 由 AI 制作（Claude Code 中的 Claude Opus 5.5）。 **[94 星标]** · 精选：[GalaxyQuest：《超级马里奥银河》Meta Quest 3 VR 版](https://awesomerea.org/zh/resources/galaxyquest-case/)
 - [Yokimitsuro/khdays-decomp](https://github.com/Yokimitsuro/khdays-decomp) — 《王国之心 358/2 天》（Nintendo DS）完整匹配反编译项目，结果与游戏逐字节一致。 **[90 星标]** · 精选：[《王国之心 358/2 Days》：逐字节一致的 Nintendo DS 反编译重建](https://awesomerea.org/zh/resources/kingdom-hearts-days-matching-decomp-case/)
 - [alexbatalov/iwd2-re](https://github.com/alexbatalov/iwd2-re) — 对 Icewind Dale 2 进行逆向工程。 **[89 星标]**
 - [Taiga74164/UnityModTemplate](https://github.com/Taiga74164/UnityModTemplate) — 收到 NEXON 的停止侵权通知后，项目已停止开发 **[89 星标]**
@@ -127,13 +127,13 @@
 - [AlembicOrg/UniResolver](https://github.com/AlembicOrg/UniResolver) — 轻量化的 Unity 游戏插件开发框架，带来出色体验 **[72 星标]**
 - [nikolaygorb/ArmyOfTwoRecomp](https://github.com/nikolaygorb/ArmyOfTwoRecomp) — 基于 RexGlue-SDK 的 Army of Two（Army of 2，2008，Xbox360）游戏静态重编译项目。 **[70 星标]**
 - [moleworld-dev/MoleWorld-5.5.0-touchHLE-offline](https://github.com/moleworld-dev/MoleWorld-5.5.0-touchHLE-offline) — 《摩尔庄园》移动版／豪华版 5.5.0 的离线移植（touchHLE），内置修改器，并对 1.1.5、2.4.3、5.4.0、5.5.0 四个版本开展逆向研究。让这款于 2015 年停运下架的 2D 模拟经营老游戏离线复活。 **[69 星标]**
-- [pablocpas/OpenCMR2](https://github.com/pablocpas/OpenCMR2) — 基于 CMR2Decomp 反编译项目构建的 Colin McRae Rally 2.0 原生 SDL3 移植，不包含游戏数据。 **[69 星标]**
+- [pablocpas/OpenCMR2](https://github.com/pablocpas/OpenCMR2) — 基于 CMR2Decomp 反编译项目构建的 Colin McRae Rally 2.0 原生 SDL3 移植，不包含游戏数据。 **[69 星标]** · 精选：[OpenCMR2：《科林·麦克雷拉力赛 2.0》SDL3 移植](https://awesomerea.org/zh/resources/opencmr2-case/)
 - [wivi514/Dead\_Rising\_2\_Case\_West\_Xenon\_Recomp](https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp) — 通过静态重编译，将 Xbox 360 XBLA 游戏 Dead Rising 2: Case West 原生移植到 PC。支持 Windows 和 Linux、Vulkan、键鼠及手柄。需自行提供游戏副本。 **[69 星标]** · 精选：[Dead Rising 2: Case West：同系列的 Xbox 360 XBLA 静态重编译移植](https://awesomerea.org/zh/resources/dead-rising-2-case-west-recomp-case/)
 - [jedijosh920/SWROTS-PC](https://github.com/jedijosh920/SWROTS-PC) — Star Wars: Episode III - Revenge of the Sith（Xbox）的非官方原生 Windows 移植版。需自备游戏副本。 **[67 星标]**
 - [kiocode/IL2CPPBaseByKio](https://github.com/kiocode/IL2CPPBaseByKio) — Kio 为 IL2CPP Unity 游戏修改制作的新基础框架，采用 Lua 实现，提供通用 ESP 连线、ESP 方框、ESP 骨骼、Chams 和自动瞄准功能 **[66 星标]**
 - [Alexbeav/fm4-recomp](https://github.com/Alexbeav/fm4-recomp) — 使用 ReXGlue 对 Forza Motorsport 4 进行实验性静态重编译。不包含游戏文件。 **[65 星标]**
 - [invinceble55-wq/Estacado-The-Darkness-Recomp](https://github.com/invinceble55-wq/Estacado-The-Darkness-Recomp) — Estacado：The Darkness（Xbox 360）的原生 PC 重编译项目。非官方粉丝移植，需自备游戏副本。 **[65 星标]**
-- [OpenPhantom/OpenPhantom](https://github.com/OpenPhantom/OpenPhantom) — 将 Star Wars Episode I: The Phantom Menace（1999）PC 版现代化，提供最多 4 人在线合作。可在 Windows 10／11、Steam Deck 和 Proton 上游玩，具备现代安装程序、宽屏及超宽屏支持、不限帧率、视野（FOV）修正、改进的控制、恢复的音乐与视频、引擎重新实现及模组工具。 **[65 星标]**
+- [OpenPhantom/OpenPhantom](https://github.com/OpenPhantom/OpenPhantom) — 将 Star Wars Episode I: The Phantom Menace（1999）PC 版现代化，提供最多 4 人在线合作。可在 Windows 10／11、Steam Deck 和 Proton 上游玩，具备现代安装程序、宽屏及超宽屏支持、不限帧率、视野（FOV）修正、改进的控制、恢复的音乐与视频、引擎重新实现及模组工具。 **[65 星标]** · 精选：[OpenPhantom：《幽灵的威胁》(1999) 现代化合作移植](https://awesomerea.org/zh/resources/openphantom-case/)
 - [Yokimitsuro/khdays-port](https://github.com/Yokimitsuro/khdays-port) — 《Kingdom Hearts 358/2 Days》的实验性原生 PC 运行时，与对应的 Nintendo DS 反编译项目同步开发。不包含受版权保护的游戏数据。 **[65 星标]** · 精选：[Kingdom Hearts 358/2 Days：基于一致性反编译的原生 PC 移植](https://awesomerea.org/zh/resources/khdays-native-pc-port-case/)
 - [abedegno/underworld-exhumed](https://github.com/abedegno/underworld-exhumed) — Underworld Exhumed：将 Ultima Underworld I 和 II 重建为逐字节匹配的源代码，以及 macOS、Windows 和 Linux 原生移植版。 **[63 星标]** · 精选：[Underworld Exhumed：重建 Ultima Underworld I 与 II](https://awesomerea.org/zh/resources/underworld-exhumed-case/)
 - [jozsefsallai/il2cpp-stringliteral-patcher](https://github.com/jozsefsallai/il2cpp-stringliteral-patcher) — 从 Unity 的 global-metadata.dat 文件提取并修改字符串字面量。 **[62 星标]**
@@ -208,7 +208,7 @@
 - [aharonahdoot/RecompCore](https://github.com/aharonahdoot/RecompCore) — 用于 Dolphin 的静态重编译 CPU 核心，以原生代码运行 GameCube 游戏，并可透明回退到解释器。 **[21 星标]**
 - [andkorzh/FPGA-DENDY](https://github.com/andkorzh/FPGA-DENDY) — 用于 8 位游戏机的时钟精确 FPGA 设计，开发中。 **[21 星标]**
 - [FMZNkdv/ScKey](https://github.com/FMZNkdv/ScKey) — 获取 Supercell 游戏公钥的简单指南。 **[21 星标]**
-- [OpenRAC/OpenRAC](https://github.com/OpenRAC/OpenRAC) — Ratchet &amp; Clank 系列的匹配反编译与 PC 移植项目。 **[21 星标]**
+- [OpenRAC/OpenRAC](https://github.com/OpenRAC/OpenRAC) — Ratchet &amp; Clank 系列的匹配反编译与 PC 移植项目。 **[21 星标]** · 精选：[OpenRAC：《瑞奇与叮当》系列反编译对照与 PC 移植](https://awesomerea.org/zh/resources/openrac-case/)
 - [OpenRAC/rac2-gc-decomp](https://github.com/OpenRAC/rac2-gc-decomp) — Going Commando USA v1.01：逐字节精确重建工具和原生移植研究。不包含游戏资源。 **[20 星标]**
 - [creaffy/libil2cpp](https://github.com/creaffy/libil2cpp) — C++ Unity IL2CPP 破解 API。 **[19 星标]**
 - [jessetbh/AkiLauncher](https://github.com/jessetbh/AkiLauncher) — 用于 AKI 引擎 N64 摔跤游戏重编译项目的原生 Windows 管理中心，可下载并启动各移植版。不包含游戏资源。 **[19 星标]**
@@ -219,7 +219,7 @@
 - [veritr1x/nfsmw-recomp](https://github.com/veritr1x/nfsmw-recomp) — 基于 recomp-kit 重编译 Need for Speed: Most Wanted（2005 年 PC Black Edition），提供 macOS、iPad、Linux、Windows 和浏览器宿主，支持 Metal、Vulkan 和 WebGPU 渲染。需自备游戏文件。 **[17 星标]**
 - [clauadv/ue\_aes\_finder](https://github.com/clauadv/ue_aes_finder) — 从 Unreal Engine 游戏中查找 AES 密钥的轻量工具。 **[16 星标]**
 - [jaenster/libd2](https://github.com/jaenster/libd2) — 以净室方式用 Zig 重新实现 Diablo II 1.14d 的确定性引擎核心，包括地图生成、物品生成和运行时模拟。 **[16 星标]** · 精选：[libd2：《暗黑破坏神II》1.14d 引擎组件库](https://awesomerea.org/zh/resources/libd2-engine-core-reconstruction-case/)
-- [kerokline/BreathOfFire3PCPort](https://github.com/kerokline/BreathOfFire3PCPort) — 对 2001 年中文版 Breath of Fire III PC 移植版的改造。 **[16 星标]**
+- [kerokline/BreathOfFire3PCPort](https://github.com/kerokline/BreathOfFire3PCPort) — 对 2001 年中文版 Breath of Fire III PC 移植版的改造。 **[16 星标]** · 精选：[《Breath of Fire III》2001 年中文 PC 版的翻新修复](https://awesomerea.org/zh/resources/breathoffire3-pc-port-case/)
 - [mr-finster/vf1-recomp](https://github.com/mr-finster/vf1-recomp) — 将《Virtua Fighter》（Sega Model 1，1993 年）静态重编译至 Mac、Windows 和 Steam Deck：最高 6 倍、宽屏、流畅的 120 fps。需自备 vf.zip。 **[16 星标]**
 - [NeonTeam58/HSR-OWNER](https://github.com/NeonTeam58/HSR-OWNER) — 做主人，不做奴隶。 **[16 星标]**
 - [OpenRAC/rac-deadlocked-decomp](https://github.com/OpenRAC/rac-deadlocked-decomp) — Ratchet: Deadlocked（2005，PS2）的匹配反编译。 **[16 星标]**
@@ -274,7 +274,7 @@
 - [Pedroj-64/DownHill-Port-PC](https://github.com/Pedroj-64/DownHill-Port-PC) — 由社区制作的 Downhill Domination（PS2）原生 PC 移植版，支持 Linux/Windows。重新实现的引擎从自备光盘加载数据：关卡、碰撞和自行车物理已可工作。这是由社区制作、服务于社区的原生移植版。不包含游戏数据。 **[8 星标]**
 - [sp00nznet/model2recomp](https://github.com/sp00nznet/model2recomp) — 用于静态重编译游戏的 Sega Model 2 硬件运行时，涵盖几何引擎、光栅化器、瓦片地图与 TGP 协处理器。 **[8 星标]**
 - [gididaf/pokemon-yellow-typescript](https://github.com/gididaf/pokemon-yellow-typescript) — 用 TypeScript 重写的《宝可梦：皮卡丘》，在浏览器中运行，所有数据均从你自己的 ROM 提取 **[7 星标]**
-- [imbevystar/rust-gta-3](https://github.com/imbevystar/rust-gta-3) — RustGta3：使用 Rust 和 Bevy ECS 重新实现 GTA 3（GTA III）。非官方项目，仍在开发中。 **[7 星标]**
+- [imbevystar/rust-gta-3](https://github.com/imbevystar/rust-gta-3) — RustGta3：使用 Rust 和 Bevy ECS 重新实现 GTA 3（GTA III）。非官方项目，仍在开发中。 **[7 星标]** · 精选：[RustGta3：用 Rust 与 Bevy ECS 重实现《GTA III》](https://awesomerea.org/zh/resources/rust-gta-3-case/)
 - [infinuts/port2browser](https://github.com/infinuts/port2browser) — 一项开源 AI 智能体技能，帮助编码智能体将离线游戏移植到现代网页浏览器中运行。 **[7 星标]**
 - [Junior-Jones/Top-Gear-SNES-Static-Recomp](https://github.com/Junior-Jones/Top-Gear-SNES-Static-Recomp) — 将 Top Gear（SNES）静态重编译到 Windows 10 和 11。不包含 ROM。 **[7 星标]**
 - [N0zoM1z0/siglusengine-reverse-engineering](https://github.com/N0zoM1z0/siglusengine-reverse-engineering) — 以证据为先的 SiglusEngine 逆向工程笔记，以及原创资源提取工具。 **[7 星标]**
@@ -385,7 +385,7 @@
 - [ChrisVilches/Handwriting-Game](https://github.com/ChrisVilches/Handwriting-Game) — 将手写文字识别制作成游戏，使用逆向得到的 Google Translate API，并采用简单的间隔重复系统（SRS）算法。 **[1 星标]**
 - [ellingtoncody81-ctrl/xiuxian-offline](https://github.com/ellingtoncody81-ctrl/xiuxian-offline) — 《忆游十三道》手游的离线单机化改造层，包含垫片、启动器和文档，不含游戏资源。 **[1 星标]**
 - [FindMuck/SnowRunner\_Noclip](https://github.com/FindMuck/SnowRunner_Noclip) — SnowRunner（Havok Physics）逆向工程项目，附带可用的 Cheat Engine 车辆穿墙 Lua 脚本。 **[1 星标]**
-- [geeknull/red-devil-re](https://github.com/geeknull/red-devil-re) — 两款 J2ME 功能机游戏《红魔特种兵》1 &amp; 2 的浏览器复刻（TypeScript + Canvas）。 **[1 星标]**
+- [geeknull/red-devil-re](https://github.com/geeknull/red-devil-re) — 两款 J2ME 功能机游戏《红魔特种兵》1 &amp; 2 的浏览器复刻（TypeScript + Canvas）。 **[1 星标]** · 精选：[《红魔特种兵》1 和 2 的浏览器复刻](https://awesomerea.org/zh/resources/red-devil-re-case/)
 - [Junior-Jones/BattleTech-C64-Static-Recomp](https://github.com/Junior-Jones/BattleTech-C64-Static-Recomp) — 将 BattleTech: The Crescent Hawk's Inception（C64）静态重编译到 Windows 10 和 11。不包含游戏磁盘镜像。 **[1 星标]**
 - [kandowontu2/blood-pong-native](https://github.com/kandowontu2/blood-pong-native) — Blood Pong 的原生 Windows 保存移植版及静态审查。 **[1 星标]**
 - [kingabzpro/neon-rooftops](https://github.com/kingabzpro/neon-rooftops) — 🐱🌙 原创像素风无尽跑酷游戏。通过逆向分析 Chrome 小恐龙游戏，将其重建为霓虹屋顶上的猫咪跑酷，提供 Web 版和独立 Windows 应用。 **[1 星标]**

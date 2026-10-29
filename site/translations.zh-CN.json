@@ -4667,5 +4667,320 @@
       "构建成功时，ninja 应在最后报告 100% 匹配并完成链接，按 config/G4BE08/build.sha1 运行 dtk shasum 应对全部 115 个二进制文件输出 OK；tools/bytecmp.py 用于比较单个单元，tools/asmcheck.py --all 统计由 asm 模板生成的指令数，任何修改都不得改变该总数。仓库没有 CI 工作流或发布版本，因此这些结果均为项目报告，本合集未进行任何构建。",
       "LICENSE 仅将 CC0 用于项目自行编写的构建脚本、工具、配置与文档。README 与 LICENSE 声明，src/ 与 include/ 中重建的游戏、SDK 及中间件源码仍归 Capcom、Nintendo 与 CRI Middleware 所有，仅为研究与保存目的发布。docs/research/README.md 称其中的匹配笔记由完成匹配工作的 AI 智能体撰写；未记录 REA 的使用。"
     ]
+  },
+  "cadcraft-case": {
+    "requirements": [
+      "自述为 alpha 阶段；初筛记录不构成对专业 CAD 可用性的认定。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "CADCraft：纯 Rust 从零编写的净室 CAD 应用"
+  },
+  "designcraft-case": {
+    "requirements": [
+      "自述为 alpha 阶段；初筛记录不构成对专业设计工具可用性的认定。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "DesignCraft：纯 Rust 从零编写的页面与版式设计编辑器"
+  },
+  "effectcraft-case": {
+    "requirements": [
+      "自述为 alpha 阶段；初筛记录不构成对专业后期制作可用性的认定。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "EffectCraft：纯 Rust 从零编写的动效图形与合成工具"
+  },
+  "figcraft-case": {
+    "requirements": [
+      "自述为 alpha 阶段；初筛记录不构成对专业设计工具可用性的认定。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "FigCraft：纯 Rust 从零编写的界面设计与原型工具"
+  },
+  "filmcraft-case": {
+    "requirements": [
+      "自述为 alpha 阶段；初筛记录不构成对专业视频剪辑可用性的认定。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "FilmCraft：纯 Rust 从零编写的非线性视频编辑器"
+  },
+  "lightcraft-case": {
+    "requirements": [
+      "自述为 alpha 阶段；初筛记录不构成对专业照片编辑可用性的认定。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "LightCraft：纯 Rust 从零编写的非破坏性照片编辑器"
+  },
+  "pdfcraft-case": {
+    "requirements": [
+      "自述为 alpha 阶段；初筛记录不构成对专业文档工具可用性的认定。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "PdfCraft：纯 Rust 从零编写的 PDF 阅读与编辑器"
+  },
+  "soundcraft-case": {
+    "requirements": [
+      "自述为 alpha 阶段；初筛记录不构成对专业音频制作可用性的认定。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "SoundCraft：纯 Rust 净室重实现的数字音频工作站"
+  },
+  "vectorcraft-case": {
+    "requirements": [
+      "自述为 alpha 阶段；初筛记录不构成对专业插画可用性的认定。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "VectorCraft：纯 Rust 从零编写的矢量绘图工具"
+  },
+  "woxi-case": {
+    "requirements": [
+      "覆盖 Wolfram Language 的一个子集；未声明亦未确立完整 Mathematica 兼容。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "Woxi：用 Rust 重实现的 Wolfram Language"
+  },
+  "chupathingy-case": {
+    "requirements": [
+      "需自备原版游戏资产；项目不分发游戏数据。",
+      "公开发布包含 macOS 版本；Android、Windows 与 Linux 包见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "Chupathingy：《光环：战斗进化》原生多平台移植"
+  },
+  "ngpcraft-case": {
+    "requirements": [
+      "需自备主机 BIOS 或游戏 ROM；项目不分发这些文件。",
+      "公开发布包含 macOS 版本；Windows 与 Linux 包见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "Ngpcraft：带 ROM 魔改工具的 Neo Geo Pocket 模拟器"
+  },
+  "zelda-tmc-3ds-case": {
+    "requirements": [
+      "需自备原版游戏资产；项目不分发游戏数据。",
+      "核验时未确认 macOS 包；支持的平台见 README。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "《塞尔达传说：缩小帽》的 3DS 原生移植"
+  },
+  "galaxyquest-case": {
+    "requirements": [
+      "需自备原版游戏文件；项目不分发游戏数据。",
+      "面向 Meta Quest 3 硬件；核验时未确认 macOS 包。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "GalaxyQuest：《超级马里奥银河》Meta Quest 3 VR 版"
+  },
+  "opencmr2-case": {
+    "requirements": [
+      "需自备原版游戏数据；项目不分发该数据。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "OpenCMR2：《科林·麦克雷拉力赛 2.0》SDL3 移植"
+  },
+  "openphantom-case": {
+    "requirements": [
+      "需自备原版游戏资产；项目不分发游戏数据。",
+      "面向 Windows 10/11 与 Steam Deck；核验时未确认 macOS 包。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "OpenPhantom：《幽灵的威胁》(1999) 现代化合作移植"
+  },
+  "openrac-case": {
+    "requirements": [
+      "需自备原版游戏资产；项目不分发游戏数据。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "OpenRAC：《瑞奇与叮当》系列反编译对照与 PC 移植"
+  },
+  "breathoffire3-pc-port-case": {
+    "requirements": [
+      "需自备原版游戏资产；项目不分发游戏数据。",
+      "核验时未确认 macOS 包；支持的平台见 README。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "《Breath of Fire III》2001 年中文 PC 版的翻新修复"
+  },
+  "rust-gta-3-case": {
+    "requirements": [
+      "项目进行中；README 标注其为非官方且未完成。",
+      "核验时仅能从源码安装；未发现发布包。",
+      "已按固定提交核对 README 演示与安装说明；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "RustGta3：用 Rust 与 Bevy ECS 重实现《GTA III》"
+  },
+  "red-devil-re-case": {
+    "requirements": [
+      "在浏览器中运行；核验时仅能从源码安装，没有发布包。",
+      "已按固定提交核对 README 演示与安装说明；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "《红魔特种兵》1 和 2 的浏览器复刻"
+  },
+  "noah-case": {
+    "requirements": [
+      "据 README 为实验性、部分可玩；不保证完整通关流程。",
+      "核验时仅能从源码安装；未发现发布包。",
+      "已按固定提交核对 README 演示与安装说明；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "Noah：《异度装甲》反编译"
+  },
+  "linewarsii-dos-case": {
+    "requirements": [
+      "在 DOSBox-X 中运行；需自备原版游戏文件，项目不分发。",
+      "核验时未确认 macOS 包；支持的平台见 README。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目，也未执行其测试门。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "从发行二进制用 C 重建的 LineWars II"
+  },
+  "dirplayer-case": {
+    "requirements": [
+      "需自备 Director／Shockwave 内容文件；项目不分发内容。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "Dirplayer：用 Rust 编写的兼容 Web 的 Shockwave Player 模拟器"
+  },
+  "cameo-case": {
+    "requirements": [
+      "README 对范围与路线着墨很少；功能声明应视为未核实。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "Cameo：桌面宠物"
+  },
+  "qqpet-case": {
+    "requirements": [
+      "README 对范围与路线着墨很少；功能声明应视为未核实。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "QQ宠物单机复刻版"
+  },
+  "open-health-case": {
+    "requirements": [
+      "iOS 需用 Xcode 构建；按 README，Web 仪表盘可本地运行；两条路径本目录均未测试。",
+      "核验时仅能从源码安装；未发现发布包。",
+      "已按固定提交核对 README 演示与安装说明；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "Open Health：基于 open_oura 的本地优先健康应用"
+  },
+  "openenroth-case": {
+    "requirements": [
+      "核验时仅《魔法门7》可玩；据初筛记录，MM6 与 MM8 的支持尚未完成。",
+      "需自备原版游戏数据；项目不分发该数据。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "OpenEnroth：《魔法门 6–8》引擎重实现"
+  },
+  "notepadnext-case": {
+    "requirements": [
+      "README 自述仍存在缺陷与部分未实现的功能。",
+      "公开发布包含 macOS 版本；Windows 与 Linux 包见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "Notepad Next：跨平台重实现 Notepad++"
+  },
+  "opengothic-case": {
+    "requirements": [
+      "需自备原版游戏数据；支持的游戏版本见 README。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "OpenGothic：《哥特王朝 2：黑夜之鸦》引擎重实现"
+  },
+  "jazz2-native-case": {
+    "requirements": [
+      "需自备原版游戏资产；项目不分发。",
+      "本项目的二进制发布位于 deathkiller/jazz2 仓库；两个仓库属于同一项目，不是两款软件。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "Jazz² Resurrection：《爵士兔子 2》原生 C++ 重实现"
+  },
+  "openjkdf2-case": {
+    "requirements": [
+      "需自备原版游戏资产；项目不分发。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "OpenJKDF2：用 C 跨平台重实现《绝地武士》"
+  },
+  "carnage3d-case": {
+    "requirements": [
+      "据 README 为非常早期的版本；不应假设功能覆盖范围。",
+      "核验时未确认 macOS 包；支持的平台见 README。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "Carnage3D：《侠盗猎车手 1》重实现"
+  },
+  "neko-case": {
+    "requirements": [
+      "README 说明该项目不以与原版 oneko 行为一致为目标。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "Neko：用 Go 跨平台重实现的追光标桌面猫"
+  },
+  "theseus-case": {
+    "requirements": [
+      "预发布包；不应假设其范围与稳定性。",
+      "公开发布包含 macOS 版本；其他平台见发布页。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "Theseus：逆向重建的 Xbox 仪表盘"
+  },
+  "jazz2-case": {
+    "requirements": [
+      "需自备原版游戏资产；项目不分发。",
+      "本仓库承载二进制发布；源码位于 deathkiller/jazz2-native。",
+      "已按固定提交核对 README 演示与下载链接；本目录未安装或运行该项目。",
+      "已核验的来源不能确立 REA 的参与。"
+    ],
+    "name": "Jazz² Resurrection：《爵士兔子 2》重实现的发布仓库"
   }
 }

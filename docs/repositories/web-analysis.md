@@ -33,7 +33,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [aoyunyang/spider-king-skill](https://github.com/aoyunyang/spider-king-skill) — Protocol-first reverse engineering skill for turning hostile web clients into pure-protocol Python collectors. **[515 stars]**
 - [HynekPetrak/malware-jail](https://github.com/HynekPetrak/malware-jail) — Sandbox for semi-automatic Javascript malware analysis, deobfuscation and payload extraction. Written for Node.js **[480 stars]**
 - [wwwg/wasmdec](https://github.com/wwwg/wasmdec) — WebAssembly to C decompiler **[428 stars]**
-- [igorlira/dirplayer-rs](https://github.com/igorlira/dirplayer-rs) — A web-compatible Shockwave Player emulator written in Rust **[417 stars]**
+- [igorlira/dirplayer-rs](https://github.com/igorlira/dirplayer-rs) — A web-compatible Shockwave Player emulator written in Rust **[417 stars]** · Curated: [Dirplayer: a web-compatible Shockwave Player emulator in Rust](https://awesomerea.org/resources/dirplayer-case/)
 - [numandev1/react-native-decompiler](https://github.com/numandev1/react-native-decompiler) — Decompile React Native Android/IOS Bundle. **[371 stars]** · Curated: [React Native Decompiler](https://awesomerea.org/resources/react-native-decompiler/)
 - [helins/wasm.cljc](https://github.com/helins/wasm.cljc) — Spec compliant WebAssembly compiler, decompiler, and generator **[264 stars]**
 - [L018/Trace](https://github.com/L018/Trace) — A Chrome extension for web analytics **[199 stars]**
