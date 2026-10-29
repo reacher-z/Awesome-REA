@@ -118,7 +118,7 @@
 - [Toxocious/Aetherim](https://github.com/Toxocious/Aetherim) — 在运行时访问 Unity IL2CPP 类、方法和字段的 C++ 库。 **[88 星标]**
 - [encounter/dtk-template](https://github.com/encounter/dtk-template) — decomp-toolkit 的项目模板。 **[86 星标]** · 精选：[dtk-template GameCube/Wii 反编译项目模板](https://awesomerea.org/zh/resources/dtk-template/)
 - [ChrisNonyminus/mml1](https://github.com/ChrisNonyminus/mml1) — 正在进行中的 PlayStation 1 版 Megaman Legends（又名 Rockman Dash）反编译项目。 **[85 星标]**
-- [KIexster/god-of-war-recomp](https://github.com/KIexster/god-of-war-recomp) — 通过 PS2Recomp 静态重编译实现 God of War（PS2）的原生 PC 移植。 **[85 星标]**
+- [KIexster/god-of-war-recomp](https://github.com/KIexster/god-of-war-recomp) — 通过 PS2Recomp 静态重编译实现 God of War（PS2）的原生 PC 移植。 **[85 星标]** · 精选：[《战神》PS2 静态重编译：基于 PS2Recomp 的 Windows 原生移植](https://awesomerea.org/zh/resources/god-of-war-ps2-recomp-case/)
 - [wivi514/Dead\_Rising\_2\_Case\_Zero\_Xenon\_Recomp](https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp) — 通过静态重编译将 Xbox 360 XBLA 游戏《Dead Rising 2: Case Zero》原生移植至 PC。支持 Windows、Linux、Vulkan、键盘鼠标和手柄，需自行提供游戏副本。 **[85 星标]** · 精选：[Dead Rising 2: Case Zero：Xbox 360 XBLA 游戏的静态重编译移植](https://awesomerea.org/zh/resources/dead-rising-2-case-zero-recomp-case/)
 - [phikill/RE\_PUBG\_LITE](https://github.com/phikill/RE_PUBG_LITE) — PUBG LITE 游戏逆向工程。 **[80 星标]**
 - [BlackLineInteractive/Driveclub-Port](https://github.com/BlackLineInteractive/Driveclub-Port) — PS4 游戏 Driveclub 的 PC 移植。 **[79 星标]**
