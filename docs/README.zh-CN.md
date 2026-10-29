@@ -44,3 +44,9 @@
 | [对标与首月计划](benchmark-research.zh-CN.md) | 中文 | 快照，观察于 2026-10-16（UTC） | 19 个仓库的对标、首发计划与 Star 目标 |
 
 对标研究对应 [benchmarks.json](../data/benchmarks.json)：2026-10-16T00:47:46Z 至 00:47:48Z 期间通过 GitHub REST API 对 19 个仓库（2 个指定锚点和 17 个对标仓库）做的一次观察。这些仓库是为覆盖高关注参考和直接近邻而有意挑选的，不是随机样本，因此不支持因果比较或增长估计。其中的 Star 目标和 30 天计划是首发时的规划存档，不是增长预测，也不是当前计划；当前优先事项见合集路线图（英文）。
+
+## 评测基线
+
+| 文档 | 语言 | 状态 | 内容 |
+| --- | --- | --- | --- |
+| [rea-tracker 条目证据强度分](eval-platform-scores.zh-CN.md) | 中文 | 第一版基线，2026-10-29 | 对 rea-tracker `taxonomy.html` 全部条目的证据强度打分，附生成的 CSV、JSON 与离线查看页（[scores/](scores/)） |

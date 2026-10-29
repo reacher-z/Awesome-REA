@@ -44,3 +44,9 @@ These Chinese-only notes record research from the collection's launch on 2026-10
 | [Benchmark study and first-month plan](benchmark-research.zh-CN.md) | Chinese | Snapshot, observed 2026-10-16 UTC | Comparison of 19 repositories, and the launch plan and Star target |
 
 The benchmark study explains [benchmarks.json](../data/benchmarks.json): one GitHub REST API observation of 19 repositories (2 designated anchors and 17 comparison repositories) between 2026-10-16T00:47:46Z and 00:47:48Z. The repositories were chosen deliberately to cover high-profile references and direct neighbors, not sampled at random, so the data supports neither causal comparisons nor growth estimates. Its Star target and 30-day plan are archived launch proposals, not forecasts or the current plan; current priorities are in the roadmap.
+
+## Evaluation baselines
+
+| Document | Language | Status | Covers |
+| --- | --- | --- | --- |
+| [rea-tracker entry evidence scores](eval-platform-scores.zh-CN.md) | Chinese | Baseline v1, 2026-10-29 | Evidence-strength scoring of all rea-tracker `taxonomy.html` entries, with generated CSV, JSON and an offline viewer under [scores/](scores/) |
