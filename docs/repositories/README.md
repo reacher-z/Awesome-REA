@@ -1,24 +1,24 @@
-# Scanned Repository Index
+# Published Repository Index
 
-[Curated collection](../../README.md) · [Search website](https://awesomerea.org/?lang=en&view=source-index) · [Download bilingual JSON](https://awesomerea.org/source-index.json) · [简体中文](README.zh-CN.md)
+[Curated collection](../../README.md) · [Search website](https://awesomerea.org/?lang=en&view=source-index) · [Download bilingual JSON](https://awesomerea.org/source-published.json) · [简体中文](README.zh-CN.md)
 
-Browse **2,836** repositories from **3,000** successful README scans. **161** clearly out-of-scope entries and **3** whose upstream repository is no longer available remain in the underlying scan record.
+This published selection contains **3,500** captured repository records and **3,309** browsable entries. **187** scope-excluded entries and **4** whose upstream repository is no longer available remain in the published JSON. Original capture totals remain separate in the source evidence.
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
+These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
-Scan date: **2026-10-16 UTC**.
+Publication date: **2026-10-20 UTC**.
 
-| Category | Repositories |
-| --- | ---: |
-| [Websites](web-analysis.md) | 177 |
-| [Games](game-analysis.md) | 386 |
-| [Apps · Android](android.md) | 432 |
-| [Apps · Managed code](managed-code.md) | 131 |
-| [Native binaries](native-analysis.md) | 680 |
-| [Runtime and debugging](dynamic-analysis.md) | 98 |
-| [Firmware](firmware.md) | 207 |
-| [Protocols](protocol-analysis.md) | 103 |
-| [General tools and collections](reverse-engineering.md) | 622 |
+| Category | Repositories | Linked to curated entries or papers |
+| --- | ---: | ---: |
+| [Websites](web-analysis.md) | 214 | 25 |
+| [Games](game-analysis.md) | 485 | 63 |
+| [Apps · Android](android.md) | 479 | 31 |
+| [Apps · Managed code](managed-code.md) | 135 | 5 |
+| [Native binaries](native-analysis.md) | 850 | 76 |
+| [Runtime and debugging](dynamic-analysis.md) | 145 | 18 |
+| [Firmware](firmware.md) | 221 | 18 |
+| [Protocols](protocol-analysis.md) | 110 | 8 |
+| [General tools and collections](reverse-engineering.md) | 670 | 63 |
 
 [Scan methodology](../source-scan.md) · [Scope exclusions](../../data/source-scope.json)
 

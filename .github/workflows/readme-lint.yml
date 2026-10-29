@@ -1,0 +1,62 @@
+name: README lint
+# A report, not a gate: this workflow is separate from `Catalog checks`, and its job must not
+# join the required `validate` aggregate or the branch's required checks.
+# Both triggers use the files awesome-lint reads and the files that produce or report them. The
+# repository-metadata rule also reads repository settings; rerun manually after changing them.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'README*.md'
+      - CONTRIBUTING.md
+      - scripts/build_readme.py
+      - scripts/awesome_lint_report.py
+      - 'tests/awesome-lint/**'
+      - .github/workflows/readme-lint.yml
+  pull_request:
+    paths:
+      - 'README*.md'
+      - CONTRIBUTING.md
+      - scripts/build_readme.py
+      - scripts/awesome_lint_report.py
+      - 'tests/awesome-lint/**'
+      - .github/workflows/readme-lint.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref == 'refs/heads/main' && github.run_id || github.ref }}
+  cancel-in-progress: true
+jobs:
+  awesome-lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '26'
+      - name: Install the pinned awesome-lint
+        run: npm ci --prefix tests/awesome-lint --ignore-scripts --no-audit --no-fund
+      # awesome-lint reads `github_token` for its repository-metadata rule; the workflow token is read-only.
+      - name: Lint README.md
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        run: node tests/awesome-lint/lint.mjs README.md .cache/awesome-lint/findings.json
+      - name: Summarize findings per rule
+        if: ${{ !cancelled() }}
+        run: python3 scripts/awesome_lint_report.py .cache/awesome-lint/findings.json --summary "$GITHUB_STEP_SUMMARY"
+      - name: Keep every finding for review
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: awesome-lint-report
+          path: .cache/awesome-lint/findings.json
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 14

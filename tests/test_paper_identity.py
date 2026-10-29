@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_paper_pages import bibtex_text, scholarly_article
 from validate import public_https_error
-from validate_papers import validate_papers
+from validate_papers import canonical_paper_url, validate_papers
 
 
 def publisher_paper():
@@ -49,7 +49,101 @@ def woot19_paper():
     return record
 
 
+def security24_paper():
+    record = publisher_paper()
+    record.update(year=2024, publication_date=None, date_precision='year',
+                  venue='USENIX Security 2024',
+                  url='https://www.usenix.org/conference/usenixsecurity24/presentation/he-haojie',
+                  pdf_url='https://www.usenix.org/system/files/usenixsecurity24-he-haojie.pdf')
+    record['evidence_urls'] = [record['url'], record['pdf_url']]
+    return record
+
+
 class PaperIdentityTests(unittest.TestCase):
+    def test_security26_final_pdf_requires_matching_identity_and_evidence(self):
+        record = publisher_paper()
+        record.update(year=2026, publication_date='2026-08',
+                      venue='USENIX Security 2026',
+                      url='https://www.usenix.org/conference/usenixsecurity26/presentation/wang-chunlin',
+                      pdf_url='https://www.usenix.org/system/files/usenixsecurity26-wang-chunlin.pdf')
+        record['evidence_urls'] = [record['url'], record['pdf_url']]
+        self.assertEqual(errors_for([record]), [])
+        self.assertTrue(bibtex_text(record).startswith('@inproceedings{'))
+        self.assertNotIn('identifier', scholarly_article(record, 'en'))
+        for pdf in (
+            'https://www.usenix.org/system/files/sec26-wang-chunlin.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity25-wang-chunlin.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity26-wang.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity26-wang-chunlin_0.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity26_slides-wang-chunlin.pdf',
+            'https://www.usenix.org/system/files/conference/usenixsecurity26/usenixsecurity26-wang-chunlin.pdf',
+        ):
+            with self.subTest(pdf=pdf):
+                altered = deepcopy(record)
+                altered['pdf_url'] = pdf
+                altered['evidence_urls'][1] = pdf
+                self.assertTrue(any('URL/PDF identity' in e for e in errors_for([altered])))
+        for change in (
+            {'year': 2025, 'publication_date': '2025-08'},
+            {'evidence_urls': [record['url']]},
+            {'evidence_urls': [record['pdf_url']]},
+            {'url': record['url'].replace('/usenixsecurity26/', '/woot26/')},
+        ):
+            with self.subTest(change=change):
+                altered = deepcopy(record)
+                altered.update(change)
+                self.assertTrue(any('URL/PDF identity' in e for e in errors_for([altered])))
+
+    def test_security24_accepts_only_its_exact_final_pdf(self):
+        record = security24_paper()
+        self.assertEqual(errors_for([record]), [])
+        self.assertTrue(bibtex_text(record).startswith('@inproceedings{'))
+        self.assertNotIn('identifier', scholarly_article(record, 'en'))
+        for pdf in (
+            'https://www.usenix.org/system/files/sec24-he-haojie.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity23-he-haojie.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity24-zhu-chang.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity24-he.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity24_slides-he-haojie.pdf',
+            'https://www.usenix.org/system/files/sec24summer-prepub-346-he.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity24-he-haojie_0.pdf',
+            'https://www.usenix.org/system/files/conference/usenixsecurity24/usenixsecurity24-he-haojie.pdf',
+        ):
+            with self.subTest(pdf=pdf):
+                altered = deepcopy(record)
+                altered['pdf_url'] = pdf
+                altered['evidence_urls'][1] = pdf
+                self.assertTrue(any('URL/PDF identity' in error for error in errors_for([altered])))
+
+    def test_security24_prefix_needs_matching_series_year_and_evidence(self):
+        cases = []
+        for year, landing, pdf in (
+            (2023, 'https://www.usenix.org/conference/usenixsecurity23/presentation/he-haojie',
+             'https://www.usenix.org/system/files/usenixsecurity23-he-haojie.pdf'),
+            (2023, 'https://www.usenix.org/conference/usenixsecurity23/presentation/he-haojie',
+             'https://www.usenix.org/system/files/usenixsecurity24-he-haojie.pdf'),
+            (2025, 'https://www.usenix.org/conference/usenixsecurity25/presentation/he-haojie',
+             'https://www.usenix.org/system/files/usenixsecurity25-he-haojie.pdf'),
+            (2024, 'https://www.usenix.org/conference/woot24/presentation/he-haojie',
+             'https://www.usenix.org/system/files/usenixsecurity24-he-haojie.pdf'),
+        ):
+            record = security24_paper()
+            record.update(year=year, url=landing, pdf_url=pdf)
+            record['evidence_urls'] = [landing, pdf]
+            cases.append(record)
+        record = security24_paper()
+        record['year'] = 2023
+        cases.append(record)
+        for evidence in ([security24_paper()['url']], [security24_paper()['pdf_url']],
+                         [security24_paper()['url'], security24_paper()['pdf_url'] + '?download=1']):
+            record = security24_paper()
+            record['evidence_urls'] = evidence
+            cases.append(record)
+        for record in cases:
+            with self.subTest(url=record['url'], pdf=record['pdf_url'], year=record['year'],
+                              evidence=record['evidence_urls']):
+                self.assertTrue(any('URL/PDF identity' in error for error in errors_for([record])))
+
     def test_woot19_accepts_only_its_exact_underscore_final_pdf(self):
         record = woot19_paper()
         self.assertEqual(errors_for([record]), [])
@@ -152,7 +246,8 @@ class PaperIdentityTests(unittest.TestCase):
         for language in ('en', 'zh'):
             article = scholarly_article(record, language)
             self.assertNotIn('identifier', article)
-            self.assertEqual(article['@id'], record['url'])
+            self.assertNotIn('sameAs', article)
+            self.assertEqual(article['@id'], f"https://awesomerea.org{'/zh' if language == 'zh' else ''}/papers/{record['id']}/#paper")
 
     def test_unpublished_and_unreviewed_publication_profiles_are_rejected(self):
         for status in ('preprint', 'conference-accepted', 'journal-article'):
@@ -229,6 +324,11 @@ class PaperIdentityTests(unittest.TestCase):
                             for error in errors_for([first, second])))
         existing = json.loads((ROOT / 'data/papers.json').read_text())
         self.assertEqual(errors_for(existing), [])
+
+    def test_openreview_papers_are_keyed_by_their_forum_id(self):
+        forum = canonical_paper_url('https://openreview.net/forum?id=LWfDcI6txJ')
+        self.assertNotEqual(forum, canonical_paper_url('https://openreview.net/forum?id=tLYdf8hWJB'))
+        self.assertEqual(forum, canonical_paper_url('https://www.openreview.net/forum/?id=LWfDcI6txJ&noteId=x'))
 
 
 if __name__ == '__main__':

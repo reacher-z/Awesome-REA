@@ -1500,5 +1500,24 @@
       "recorded_name_current_full_name": "Shellghostt/De-Caffeinator"
     },
     "reviewed_at": "2026-10-17"
+  },
+  "scan-1417013841": {
+    "decision": "exclude",
+    "reason_code": "upstream-unavailable",
+    "reason_en": "Metadata recheck on 2026-10-20: repository ID 1417013841 returned HTTP 404; albertolicea00/transfermovil-src-reversed now resolves to public repository ID 1423698173 (HTTP 200). The historical capture is retained, but its link no longer identifies the scanned repository.",
+    "reason_zh": "2026-10-20 元数据复查：仓库 ID 1417013841 返回 HTTP 404；albertolicea00/transfermovil-src-reversed 现指向公开仓库 ID 1423698173（HTTP 200）。保留历史采集记录，但其链接已不再对应当时扫描的仓库。",
+    "readme_sha256": "1530ac107640676f69c7f8654819cc0ead165e2d6c2f006de0d480e1b111e403",
+    "availability_check": {
+      "id": "scan-1417013841",
+      "recorded_full_name": "albertolicea00/transfermovil-src-reversed",
+      "observed_at": "2026-10-20T15:17:40.277450+00:00",
+      "outcome": "name-reassigned",
+      "http_status": 404,
+      "recorded_name_status": "other-repository",
+      "recorded_name_http_status": 200,
+      "recorded_name_repository_id": "scan-1423698173",
+      "recorded_name_current_full_name": "albertolicea00/transfermovil-src-reversed"
+    },
+    "reviewed_at": "2026-10-20T15:20:53.249852+00:00"
   }
 }

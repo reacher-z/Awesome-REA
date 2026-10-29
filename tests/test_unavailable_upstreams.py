@@ -13,7 +13,8 @@ from source_scope import (UNAVAILABLE_UPSTREAM_REASON, apply_scope, exclusion_co
                           unavailable_clause, validate_scope)
 
 DIGEST = 'c' * 64
-REVIEWED = {'scan-1377172300': 'not-found', 'scan-1409072094': 'not-found', 'scan-1238268014': 'name-reassigned'}
+REVIEWED = {'scan-1377172300': 'not-found', 'scan-1409072094': 'not-found',
+            'scan-1238268014': 'name-reassigned', 'scan-1417013841': 'name-reassigned'}
 
 
 def scan(number, full_name):
@@ -181,22 +182,30 @@ class CollectionTests(unittest.TestCase):
                          REVIEWED)
         self.assertEqual(unavailable['scan-1238268014']['availability_check']['recorded_name_repository_id'],
                          'scan-1244345068')
+        replaced = unavailable['scan-1417013841']['availability_check']
+        self.assertEqual((replaced['http_status'], replaced['recorded_name_http_status'],
+                          replaced['recorded_name_repository_id']), (404, 200, 'scan-1423698173'))
+        historical = next(record for record in self.records if record['id'] == 'scan-1417013841')
+        self.assertEqual(historical['observed_at'], '2026-10-16T01:36:34.940061Z')
+        self.assertEqual(historical['readme_sha256'],
+                         '1530ac107640676f69c7f8654819cc0ead165e2d6c2f006de0d480e1b111e403')
+        self.assertNotIn('scan-1423698173', {record['id'] for record in self.records})
         scoped = apply_scope(self.records, self.scope)
         self.assertEqual(len(scoped), 3000)
-        self.assertEqual(exclusion_counts(scoped)[1], 3)
+        self.assertEqual(exclusion_counts(scoped)[1], 4)
         self.assertEqual({record['id'] for record in scoped if record['id'] in REVIEWED
                           and record['scope_status'] == 'excluded'}, set(REVIEWED))
 
     def test_directories_and_readmes_do_not_link_unavailable_names(self):
         names = [record['full_name'] for record in self.records if record['id'] in REVIEWED]
-        self.assertEqual(len(names), 3)
+        self.assertEqual(len(names), 4)
         paths = [ROOT / 'README.md', ROOT / 'README.zh-CN.md', *sorted((ROOT / 'docs/repositories').glob('*.md'))]
         for path in paths:
             text = path.read_text(encoding='utf-8')
             for name in names:
                 self.assertNotIn('github.com/' + name, text, f'{path.name} links {name}')
         index = (ROOT / 'docs/repositories/README.md').read_text(encoding='utf-8')
-        self.assertIn('**3** whose upstream repository is no longer available', index)
+        self.assertIn('**4** whose upstream repository is no longer available', index)
 
 
 if __name__ == '__main__':

@@ -24,7 +24,7 @@ def minimal_resource(verified_at):
         'evidence_url': 'https://example.com/evidence',
         'verified_at': verified_at,
         'verification': 'source-reviewed',
-        'requirements': 'Python 3',
+        'requirements': ['Python 3'],
     }
 
 

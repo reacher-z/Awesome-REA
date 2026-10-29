@@ -41,8 +41,9 @@ PAPERS = [
 ]
 WEBSITE_ORDER = ['paper-day', 'paper-tie-b', 'paper-tie-a', 'paper-month',
                  'paper-year-z', 'paper-year-a', 'paper-older']
-GROUP_ORDER = {'research-website': WEBSITE_ORDER, 'research-app': ['paper-app'],
-               'research-game': ['paper-multi'], 'research-protocol': ['paper-protocol-new', 'paper-protocol-old']}
+GROUP_ORDER = {'research-website-reconstruction': WEBSITE_ORDER, 'research-game-reconstruction': ['paper-multi'],
+               'research-app-reconstruction': ['paper-app'],
+               'research-protocol-analysis': ['paper-protocol-new', 'paper-protocol-old']}
 DOM_ORDER = [identifier for group in GROUP_ORDER.values() for identifier in group]
 
 
@@ -64,7 +65,6 @@ class PaperOrderTests(unittest.TestCase):
 
     def test_bilingual_dom_itemlist_and_search_projection_share_deterministic_order(self):
         original = deepcopy(PAPERS)
-        by_id = {row['id']: row for row in PAPERS}
         with TemporaryDirectory() as first, TemporaryDirectory() as second:
             outputs = [Path(first), Path(second)]
             for output, input_rows in zip(outputs, (PAPERS, list(reversed(PAPERS)))):
@@ -83,9 +83,9 @@ class PaperOrderTests(unittest.TestCase):
                     self.assertEqual([item['position'] for item in listing['itemListElement']], list(range(1, len(PAPERS) + 1)))
                     prefix = '/zh' if language == 'zh' else ''
                     self.assertEqual([item['url'] for item in listing['itemListElement']],
-                                     ['https://awesomerea.org' + prefix + '/papers/#' + identifier for identifier in DOM_ORDER])
+                                     ['https://awesomerea.org' + prefix + '/papers/' + identifier + '/' for identifier in DOM_ORDER])
                     self.assertEqual([row['@id'] for row in graph if row['@type'] == 'ScholarlyArticle'],
-                                     [by_id[identifier]['url'] for identifier in DOM_ORDER])
+                                     ['https://awesomerea.org' + prefix + '/papers/' + identifier + '/#paper' for identifier in DOM_ORDER])
                     self.assertIn('各分区按年份从新到旧排列' if language == 'zh' else 'newest year first within each section', html)
                 for row in input_rows:
                     self.assertEqual((output / 'papers/citations' / (row['id'] + '.bib')).read_text(), bibtex_text(row))
@@ -101,9 +101,9 @@ class PaperOrderTests(unittest.TestCase):
         for language in ('en', 'zh'):
             text = render_papers(PAPERS, language)
             for section, identifiers in [('website-reconstruction', WEBSITE_ORDER), ('game-reconstruction', ['paper-multi']),
-                                         ('app-reconstruction', ['paper-app']), ('protocol-analysis', GROUP_ORDER['research-protocol'])]:
+                                         ('app-reconstruction', ['paper-app']), ('protocol-analysis', GROUP_ORDER['research-protocol-analysis'])]:
                 content = text.split(f'<a id="papers-{section}"></a>', 1)[1].split('<a id="papers-', 1)[0]
-                actual = re.findall(r'^- \[\*\*.*?\*\*\]\(https://example.org/papers/(paper-[a-z-]+)\)$', content, re.M)
+                actual = re.findall(r'^- \[\*\*.*?\*\*\]\(https://example.org/papers/(paper-[a-z-]+)\) - ', content, re.M)
                 self.assertEqual(actual, identifiers)
             agent = paper('paper-programbench', 2026, None, 'Agent benchmark', ('protocol',))
             special = render_papers([agent], language)

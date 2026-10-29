@@ -1,26 +1,30 @@
 # 固件
 
-[全部分类](README.zh-CN.md) · [English](firmware.md)
+[全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/firmware/) · [English](firmware.md)
 
-**207 个仓库** · 2026-10-16 UTC
+**221 个仓库** · 2026-10-20 UTC
 
-这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
+这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
-- [ReFirmLabs/binwalk](https://github.com/ReFirmLabs/binwalk) — 固件分析工具。 **[14,491 星标]**
-- [LongSoft/UEFITool](https://github.com/LongSoft/UEFITool) — UEFI 固件镜像查看与编辑工具 **[5,752 星标]**
-- [e-m-b-a/emba](https://github.com/e-m-b-a/emba) — EMBA：固件安全分析器。 **[3,712 星标]**
-- [onekey-sec/unblob](https://github.com/onekey-sec/unblob) — 从各种容器格式中提取文件。 **[2,577 星标]**
-- [firmadyne/firmadyne](https://github.com/firmadyne/firmadyne) — 用于仿真和动态分析基于 Linux 的固件的平台 **[2,114 星标]**
-- [redballoonsecurity/ofrak](https://github.com/redballoonsecurity/ofrak) — OFRAK：解包、修改并重新打包二进制文件。 **[2,080 星标]**
-- [marin-m/vmlinux-to-elf](https://github.com/marin-m/vmlinux-to-elf) — 通过提取内核符号表（kallsyms），从原始内核恢复可完整分析的 .ELF 文件的工具。 **[1,832 星标]**
-- [fkie-cad/FACT\_core](https://github.com/fkie-cad/FACT_core) — 固件分析与比较工具。 **[1,468 星标]**
-- [platomav/MEAnalyzer](https://github.com/platomav/MEAnalyzer) — Intel Engine 与图形固件分析工具 **[1,335 星标]**
+- [ReFirmLabs/binwalk](https://github.com/ReFirmLabs/binwalk) — 固件分析工具。 **[14,491 星标]** · 精选：[Binwalk](https://awesomerea.org/zh/resources/binwalk/)
+- [LongSoft/UEFITool](https://github.com/LongSoft/UEFITool) — UEFI 固件镜像查看与编辑工具 **[5,752 星标]** · 精选：[UEFITool 固件镜像分析工具](https://awesomerea.org/zh/resources/uefitool/)
+- [e-m-b-a/emba](https://github.com/e-m-b-a/emba) — EMBA：固件安全分析器。 **[3,712 星标]** · 精选：[EMBA](https://awesomerea.org/zh/resources/emba/)
+- [ma1co/Sony-PMCA-RE](https://github.com/ma1co/Sony-PMCA-RE) — Sony 数码相机逆向工程。 **[2,916 星标]** · 精选：[Sony-PMCA-RE Sony 数码相机逆向工具](https://awesomerea.org/zh/resources/sony-pmca-re/)
+- [onekey-sec/unblob](https://github.com/onekey-sec/unblob) — 从各种容器格式中提取文件。 **[2,577 星标]** · 精选：[unblob](https://awesomerea.org/zh/resources/unblob/)
+- [firmadyne/firmadyne](https://github.com/firmadyne/firmadyne) — 用于仿真和动态分析基于 Linux 的固件的平台 **[2,114 星标]** · 论文：[面向基于 Linux 的嵌入式固件的自动化动态分析](https://awesomerea.org/zh/papers/paper-firmadyne/)
+- [redballoonsecurity/ofrak](https://github.com/redballoonsecurity/ofrak) — OFRAK：解包、修改并重新打包二进制文件。 **[2,080 星标]** · 精选：[OFRAK](https://awesomerea.org/zh/resources/ofrak/)
+- [marin-m/vmlinux-to-elf](https://github.com/marin-m/vmlinux-to-elf) — 通过提取内核符号表（kallsyms），从原始内核恢复可完整分析的 .ELF 文件的工具。 **[1,832 星标]** · 精选：[vmlinux-to-elf 内核符号恢复工具](https://awesomerea.org/zh/resources/vmlinux-to-elf/)
+- [fkie-cad/FACT\_core](https://github.com/fkie-cad/FACT_core) — 固件分析与比较工具。 **[1,468 星标]** · 精选：[固件分析与比较工具（FACT）](https://awesomerea.org/zh/resources/fact-core/)
+- [platomav/MEAnalyzer](https://github.com/platomav/MEAnalyzer) — Intel Engine 与图形固件分析工具 **[1,335 星标]** · 精选：[ME Analyzer Intel 引擎与图形固件分析工具](https://awesomerea.org/zh/resources/me-analyzer/)
+- [REhints/efiXplorer](https://github.com/REhints/efiXplorer) — 用于自动化 UEFI 固件分析与逆向工程的 IDA 插件和加载器。 **[1,138 星标]** · 精选：[efiXplorer UEFI 固件分析 IDA 插件](https://awesomerea.org/zh/resources/efixplorer/)
 - [Anime4000/RTL960x](https://github.com/Anime4000/RTL960x) — 破解和逆向分析基于 RTL960x 的 xPON ONT，使其适配你的 OLT。 **[1,053 星标]**
 - [gcarmix/HexWalk](https://github.com/gcarmix/HexWalk) — 兼容 Linux、Windows 和 macOS 的十六进制查看器、编辑器与分析器。 **[1,027 星标]**
-- [pr0v3rbs/FirmAE](https://github.com/pr0v3rbs/FirmAE) — 面向动态分析的物联网固件大规模模拟执行研究。 **[949 星标]**
+- [pr0v3rbs/FirmAE](https://github.com/pr0v3rbs/FirmAE) — 面向动态分析的物联网固件大规模模拟执行研究。 **[949 星标]** · 论文：[FirmAE：面向动态分析的物联网固件大规模仿真](https://awesomerea.org/zh/papers/paper-firmae/) · 精选：[FirmAE](https://awesomerea.org/zh/resources/firmae/)
 - [FirmWire/FirmWire](https://github.com/FirmWire/FirmWire) — FirmWire 是一个全系统基带固件仿真平台，用于对智能手机基带固件进行模糊测试、调试和根因分析 **[891 星标]**
-- [sigrokproject/pulseview](https://github.com/sigrokproject/pulseview) — 官方仓库 git<span>:</span>//sigrok.org/pulseview 的只读镜像。欢迎提交拉取请求。请在 sigrok.org/bugzilla 提交缺陷报告。 **[805 星标]**
-- [al3xtjames/ghidra-firmware-utils](https://github.com/al3xtjames/ghidra-firmware-utils) — 用于分析 PC 固件的 Ghidra 实用工具。 **[506 星标]**
+- [sigrokproject/pulseview](https://github.com/sigrokproject/pulseview) — 官方仓库 git<span>:</span>//sigrok.org/pulseview 的只读镜像。欢迎提交拉取请求。请在 sigrok.org/bugzilla 提交缺陷报告。 **[805 星标]** · 精选：[PulseView 信号与协议分析工具](https://awesomerea.org/zh/resources/pulseview/)
+- [airbus-seclab/cpu\_rec](https://github.com/airbus-seclab/cpu_rec) — 识别任意二进制文件中的 CPU 指令。 **[757 星标]** · 精选：[cpu\_rec CPU 指令集统计识别工具](https://awesomerea.org/zh/resources/cpu-rec/)
+- [avatartwo/avatar2](https://github.com/avatartwo/avatar2) — avatar² 的 Python 核心。 **[579 星标]** · 精选：[avatar² 多目标固件动态分析编排框架](https://awesomerea.org/zh/resources/avatar2/)
+- [al3xtjames/ghidra-firmware-utils](https://github.com/al3xtjames/ghidra-firmware-utils) — 用于分析 PC 固件的 Ghidra 实用工具。 **[506 星标]** · 精选：[Ghidra 固件工具集](https://awesomerea.org/zh/resources/ghidra-firmware-utils/)
 - [scriptingxss/owasp-fstm](https://github.com/scriptingxss/owasp-fstm) — 固件安全测试方法（FSTM）包含九个阶段，专为帮助安全研究人员、软件开发人员、顾问及信息安全专业人员开展固件安全评估而设计。 **[502 星标]**
 - [ChrisTheCoolHut/Firmware\_Slap](https://github.com/ChrisTheCoolHut/Firmware_Slap) — 通过结合具体执行与符号执行的分析，以及函数聚类，发现固件中的漏洞。 **[476 星标]**
 - [nmatt0/moria](https://github.com/nmatt0/moria) — 物联网固件识别与提取。 **[418 星标]**
@@ -57,6 +61,7 @@
 - [HexLasso/FF-16-TUI](https://github.com/HexLasso/FF-16-TUI) — 交互式静态模式发现工具，通过频繁模式定位结构 **[39 星标]**
 - [zhang-xr/FirmLLM](https://github.com/zhang-xr/FirmLLM) — 使用大语言模型对固件进行自主推理与分析 **[35 星标]**
 - [schlarpc/insta360-link-firmware-re](https://github.com/schlarpc/insta360-link-firmware-re) — Insta360 Link 网络摄像头固件逆向工程：UVC 扩展单元控制协议、手势处理流程、云台／PTZ 命令路径和固件容器格式 **[32 星标]**
+- [lumirth/pw](https://github.com/lumirth/pw) — Pokéwalker 固件的人类可读匹配反编译。 **[31 星标]** · 精选：[pw：Pokéwalker 固件的一致性反编译重建](https://awesomerea.org/zh/resources/pokewalker-matching-decomp-case/)
 - [rweijnen/marstek-venus-e-firmware-notes](https://github.com/rweijnen/marstek-venus-e-firmware-notes) — 针对 Marstek Venus E 插电式家用电池的逆向工程笔记、固件分析及提取内容 **[31 星标]**
 - [HelgeSverre/sony-vp-extract](https://github.com/HelgeSverre/sony-vp-extract) — 解密并提取 Sony WH-1000XM4 加密语音包中的语音提示 MP3。AES 密钥通过蓝牙转储 Airoha MT2811 SoC 固件获得。 **[30 星标]**
 - [chris-ritsen/samsung-tv-root](https://github.com/chris-ritsen/samsung-tv-root) — Samsung QN90B 和 QN90F 的 root 工具。 **[28 星标]**
@@ -106,6 +111,7 @@
 - [omarelshopky/pax-pos-app-pentest-guide](https://github.com/omarelshopky/pax-pos-app-pentest-guide) — 面向基于 Linux 的 PAX 销售终端（PoS）商户应用的全面渗透测试与逆向工程指南，涵盖固件分析、网络拦截和应用逆向。 **[8 星标]**
 - [paulwuertz/pexplorer](https://github.com/paulwuertz/pexplorer) — 静态固件分析：针对 puncover 生成的符号文件，同时尝试仅凭调试 ELF 文件在浏览器中完成全部分析。 **[8 星标]**
 - [TheMalwareGuardian/SANS-SEC556-IoT-Penetration-Testing](https://github.com/TheMalwareGuardian/SANS-SEC556-IoT-Penetration-Testing) — SANS SEC556 IoT 渗透测试课程的复习资料、资源和实验预习练习，涵盖硬件安全研究、固件分析、无线协议和软件定义无线电。 **[8 星标]**
+- [VimRev/dma-lab](https://github.com/VimRev/dma-lab) — DMA Lab：硬件层面的反作弊研究、固件配置、FPGA 指南及 PCILeech 资源。 **[8 星标]**
 - [aw-junaid/embedded-and-iot-security](https://github.com/aw-junaid/embedded-and-iot-security) — 探索嵌入式与物联网安全：安全固件、设备加固、加密及漏洞分析，并提供安全物联网开发的实用示例。 **[7 星标]**
 - [Bin2Own/CINDY](https://github.com/Bin2Own/CINDY) — 通过静态回溯分析加速发现嵌入式固件中的命令注入漏洞。 **[7 星标]**
 - [Excalibra/scripts](https://github.com/Excalibra/scripts) — 平台：Windows/Mac/Linux。脚本语言多样、无限制，可按需定制。任务包括桌面检查、软件破解、杀毒软件规避、特权执行、固件读写、密码检查、Wi-Fi 扫描、云安全、日志分析、自然语言处理，以及人文社科数据分析。 **[7 星标]**
@@ -141,6 +147,7 @@
 - [andrew867/CoinLine-emu](https://github.com/andrew867/CoinLine-emu) — 基于 MAME、忠实还原硬件的模拟器，面向兼容 Millennium 的 Z180 投币电话终端。在周期精确的 Z180 上启动真实固件，配备完整设备树和字节透明的主机桥接，作为 CoinLine 公用电话管理平台的配套项目。 **[2 星标]**
 - [atellaluca/humax-mstar-guardian](https://github.com/atellaluca/humax-mstar-guardian) — 基于 ESP32 的 UART 守护装置和 Python 工具，用于安全、受控地逆向分析 MStar MBoot 嵌入式系统。 **[2 星标]**
 - [djnnvx/balrog](https://github.com/djnnvx/balrog) — 固件提取后的 ELF 文件初步分析。 **[2 星标]**
+- [dsirov/docker-binwalk-cpurec](https://github.com/dsirov/docker-binwalk-cpurec) — 集成 cpu\_rec 插件的 Binwalk Docker 镜像，用于识别 CPU 指令集。 **[2 星标]**
 - [EngineerMazeed/Vendor](https://github.com/EngineerMazeed/Vendor) — 针对专用 OEM 和运营商硬件的固件转储，用于研究、分析及旧设备保存。 **[2 星标]**
 - [HexLasso/FF-16](https://github.com/HexLasso/FF-16) — 静态模式发现工具，通过高频模式定位结构并理解文件布局。 **[2 星标]**
 - [Hosbulduk/Hosbulduk-Profil-Analiz](https://github.com/Hosbulduk/Hosbulduk-Profil-Analiz) — 用于解锁智能电视 PVR、Netflix 和隐藏功能的工具。包含固件编辑器和 UART 解析器，可通过 USB 重新应用硬件/软件配置，支持基于 Vestel 的主板。 **[2 星标]**
@@ -159,12 +166,14 @@
 - [carbon-evolution/ics-yara-scanner](https://github.com/carbon-evolution/ics-yara-scanner) — Go + YARA-X 聚合与扫描引擎：收集 18,000 多条公开 YARA 规则，扫描工程工作站（EWS）和固件转储中的 ICS/OT 恶意软件及常见恶意软件。 **[1 星标]**
 - [cas1m1r/Certshaker](https://github.com/cas1m1r/Certshaker) — 从固件中提取硬编码的密钥、证书及其他产物。 **[1 星标]**
 - [Chaz-Ortiz/EMBA-CS-4613-901](https://github.com/Chaz-Ortiz/EMBA-CS-4613-901) — EMBA 是一个固件安全分析工具。我为其创建了 p51 mustang binwalk extractor 模块，用于检查所分析的固件文件系统是否具有较大的最大深度（超过 50 层），以判断能否受益于优化的提取器；该模块利用 GPU 加速处理，并对文件操作进行并行化。 **[1 星标]**
+- [daedalus/mcp\_reverse\_engineering](https://github.com/daedalus/mcp_reverse_engineering) — MCP 逆向工程工具。 **[1 星标]**
 - [DroidKali/iot-firmware-vuln-hunting](https://github.com/DroidKali/iot-firmware-vuln-hunting) — IoT 固件漏洞挖掘技能。 **[1 星标]**
 - [ericyoc/cyber-domain-tools-ref-poc](https://github.com/ericyoc/cyber-domain-tools-ref-poc) — 用于网络安全不同领域的网络分析工具。 **[1 星标]**
 - [eth-man/ps3-cell-re-tools](https://github.com/eth-man/ps3-cell-re-tools) — “Execution Is Not Extraction”背后的 Cell/SPU 逆向工程工具，包含 SPU 模拟器、可靠的 SLEIGH 反编译器、离线 lv1 执行器和隔离测试框架，仅提供工具。 **[1 星标]**
 - [hideouts-io/StarSecurity-SURamDisk](https://github.com/hideouts-io/StarSecurity-SURamDisk) — 对 Apple 软件更新 RAMDisk（macOS Monterey 21G115 x86\_64）、ramrod 恢复流程、APFS SSV 密封及固件 Option ROM 的取证与架构研究。 **[1 星标]**
 - [kacper-serewis/smartbox-re](https://github.com/kacper-serewis/smartbox-re) — 针对 AliExpress 上出售的 SmartBox HW501 USB CarPlay 适配器开展逆向工程、固件分析及实验性修改。 **[1 星标]**
 - [kevinmuoz/pybinwalk](https://github.com/kevinmuoz/pybinwalk) — 使用 PyO3 和 maturin 构建的 Binwalk v3 Python 绑定。 **[1 星标]**
+- [kittennbfive/fsfuzz](https://github.com/kittennbfive/fsfuzz) — 用于在固件转储中查找单独混淆或加密的文件系统的工具。 **[1 星标]**
 - [MikeeI/tp-link-pg2400p-reverse-engineering](https://github.com/MikeeI/tp-link-pg2400p-reverse-engineering) — TP-Link PG2400P 逆向工程。 **[1 星标]**
 - [njones920/parrot-drone-tools](https://github.com/njones920/parrot-drone-tools) — 面向 Parrot OS 的无人航空系统安全工具包，涵盖 SDR/RF 分析、Remote ID 和 DJI DroneID、MAVLink/DroneCAN、GNSS、反无人机系统认知、固件分析及飞控硬件工作流。 **[1 星标]**
 - [NurMohammadDuari/mw325r-hack-lab](https://github.com/NurMohammadDuari/mw325r-hack-lab) — 完整安全案例档案：Mercusys MW325R v2 侦察、UPnP 演示、现代化面板及固件取证，使用自有设备。 **[1 星标]**
@@ -175,10 +184,14 @@
 - [tony102741/firmware\_project](https://github.com/tony102741/firmware_project) — 用于逆向分析以复杂编排为主的嵌入式固件、由分析人员辅助使用的工具。 **[1 星标]**
 - [Tureto/sasquatch-deb](https://github.com/Tureto/sasquatch-deb) — SquashFS 固件提取工具 sasquatch 的非官方 Ubuntu/Debian .deb 软件包。 **[1 星标]**
 - [xusheng6/tv-acr-research](https://github.com/xusheng6/tv-acr-research) — 以固件为依据，研究智能电视和流媒体设备中的自动内容识别。 **[1 星标]**
+- [aayes89/jBinWalk](https://github.com/aayes89/jBinWalk) — 纯 Java 编写的 Binwalk 风格实现。 **[0 星标]**
 - [arunsigood/nforceit\_IoT](https://github.com/arunsigood/nforceit_IoT) — 用于从已提取的物联网设备固件中自动发现漏洞的程序。 **[0 星标]**
 - [boyatoid/tp-link-lua-decompile](https://github.com/boyatoid/tp-link-lua-decompile) — 恢复 TP-Link 重新编号的 Lua 5.1 操作码表，再转换并反编译其路由器固件中的 LuCI Lua 字节码。基于 Archer AX21（美版）V5.46、固件 1.1.2 推导并验证。 **[0 星标]**
+- [catiomic/forewalk](https://github.com/catiomic/forewalk) — 轻量级、自定义的 Python GUI 取证工具，提供特征扫描、熵与随机性分析及文件雕刻恢复功能。 **[0 星标]**
 - [clinton-oppong/mcp-servers](https://github.com/clinton-oppong/mcp-servers) — 面向生产实践的 AI 智能体 MCP 服务，涵盖被动网站安全审计、RSS 摘要和固件侦察。核心仅使用标准库，SSRF 防护已针对完整公开绕过语料进行红队测试，附有 42 项离线测试。 **[0 星标]**
 - [Dellon-Technology-Pvt-Ltd/Trilokya](https://github.com/Dellon-Technology-Pvt-Ltd/Trilokya) — 为硬件、无线电、Web 与物联网安全评估提供支持的 Trilokya OS：面向硬件安全、射频（RF）分析、Web 应用安全和物联网渗透测试领域的渗透测试人员、安全研究人员及道德黑客的强大安全操作系统。 **[0 星标]**
+- [DerrickDW/car710w-research](https://github.com/DerrickDW/car710w-research) — 对作者的 Jensen CAR710W 车机固件进行逆向工程，以定位和修改启动动画、背景等界面资源。 **[0 星标]**
+- [dvdarkin/gamekb-k17](https://github.com/dvdarkin/gamekb-k17) — GAMEKB-K17 / HCY-K017 宏键盘（USB 0816:0220）的离线配置工具和协议规格：键位重映射、固件宏、逐键 RGB。 **[0 星标]** · 精选：[GAMEKB-K17：重建宏键盘配置协议](https://awesomerea.org/zh/resources/gamekb-k17-case/)
 - [essquireo0o/rom-bios-public](https://github.com/essquireo0o/rom-bios-public) — Windows BIOS/UEFI 备份工具与 Nick Squires BIOS ROM 恢复服务。欢迎所有 Toughbook 型号，其他品牌另行评估。公开构建不含密码哈希提取器。 **[0 星标]**
 - [gblongiu/nw-a306-open](https://github.com/gblongiu/nw-a306-open) — 针对 Sony NW-A306 的独立研究与 Linux／Rockbox 工具。 **[0 星标]**
 - [GHSFS/firm-carver](https://github.com/GHSFS/firm-carver) — 使用纯 Rust 编写、零依赖的物联网与嵌入式固件解包器、多格式魔数文件雕刻工具和静态漏洞审计引擎。 **[0 星标]**
@@ -200,6 +213,7 @@
 - [OpenWebNet-HA/own-firmware-oracle](https://github.com/OpenWebNet-HA/own-firmware-oracle) — 可复现的流程，将网关固件镜像转化为关于 OpenWebNet 协议的事实，包括帧格式、代码表和网关行为。 **[0 星标]**
 - [RayWilliamsII/k2plus-maintenance](https://github.com/RayWilliamsII/k2plus-maintenance) — 用于探测 K2Plus 以开展分析，并生成文件系统快照供审阅的脚本。 **[0 星标]**
 - [rudra-patell/tp-link\_UART-root-shell](https://github.com/rudra-patell/tp-link_UART-root-shell) — 通过 UART 和少量逆向工程，访问 TP-Link 路由器（TL-WR850n）的 root shell。 **[0 星标]**
+- [samyoon727ca/firmware-security-research](https://github.com/samyoon727ca/firmware-security-research) — 针对公开目标的固件安全研究：路由器命令注入的补丁差异案例（DrayTek 和 D-Link 已知漏洞）、可复用的初筛／差异比较／报告工具链，以及用于 PX4／ArduPilot SITL 的 MAVLink 安全测试框架。 **[0 星标]**
 - [sanisapatrikar/SWD-Recon](https://github.com/sanisapatrikar/SWD-Recon) — SWD（Serial Wire Debug）探查、内存映射与固件获取的实践教程；毕竟调试接口很难长久保守秘密 :) **[0 星标]**
 - [sanisapatrikar/UART-Recon](https://github.com/sanisapatrikar/UART-Recon) — 从 PCB 到 Root Shell 的实践之旅，因为 4 个铜焊盘原来藏着不少信息 :) **[0 星标]**
 - [santhoshgandham/FirmEx](https://github.com/santhoshgandham/FirmEx) — FirmEx 是统一的嵌入式设备安全框架，将自动固件提取与实时传感器异常检测相结合。该工作已被 IEEE Intelligent Computing and Systems at the Edge（ICEEdge）Student Forum 2025 接收。 **[0 星标]**

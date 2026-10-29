@@ -10,9 +10,13 @@
 | --- | --- | --- | --- |
 | [中文贡献指南](../CONTRIBUTING.zh-CN.md) | 中文 | 当前（摘要） | 推荐资源与论文、字段选择、检查命令和术语对照 |
 | [贡献指南](../CONTRIBUTING.md) | 英文 | 当前（以此为准） | 完整的贡献、字段、论文、检查与审核规则 |
+| 第一个资源完整示例：[中文](first-resource.zh-CN.md)、[英文](first-resource.md) | 中英 | 当前 | 以一条已有记录说明需编辑与重新生成的文件、检查命令和 pull request |
 | [安全策略](../SECURITY.md#中文摘要) | 英文，附中文摘要 | 当前 | 私下报告安全问题 |
+| 论文更新指南：[中文](paper-updates.zh-CN.md)、[英文](paper-updates.md) | 中英 | 当前 | 预印本被接收或发表后原地更新记录，附完整示例 |
 | [目录格式](../data/README.md) | 英文 | 当前 | 精选、论文、对标、扫描与案例覆盖数据 |
+| 研究产物与许可证据：[中文](artifact-evidence.zh-CN.md)、[英文](artifact-evidence.md) | 中英 | 当前 | 不可用、受限或仅有演示的研究产物、版本差异与许可冲突的措辞 |
 | [仓库简介本地化](../data/locales/README.md) | 英文 | 当前 | 自动扫描仓库的中英文简介 |
+| 仓库索引转精选复核工作表：[中文](promotion-worksheet.zh-CN.md)、[英文](promotion-worksheet.md) | 中英 | 当前 | 把已扫描仓库追溯为精选记录或暂缓，附完整示例 |
 
 ## 维护指南
 
@@ -21,6 +25,7 @@
 | [仓库自动化](automation.md) | 英文 | 当前 | Pull request 规则审核与 CI |
 | [网站维护](website.md) | 英文 | 当前 | 网站构建、预览与托管 |
 | [搜索发现](search-discovery.md) | 英文 | 当前 | 搜索与问答引擎的收录、提交和衡量限制 |
+| [社区推广](community-outreach.md) | 英文 | 当前，平台规则复核于 2026-10-20 | 向 Hacker News、Reddit 等公开社区发帖前的检查清单 |
 | [人工发现观察](discovery/README.md) | 英文 | 当前 | 版本化检索问题与人工观察模板 |
 | [扫描方法](source-scan.md) | 英文 | 当前 | 自动仓库索引的采集方法 |
 | 案例合集覆盖记录：[中文](case-coverage.zh-CN.md)、[英文](case-coverage.md) | 中英 | 自动生成 | 固定版本上游案例合集的清点记录 |

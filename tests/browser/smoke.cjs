@@ -121,22 +121,78 @@ async function press(page, selector) {
   await page.click(selector);
 }
 
-// The deferred app.js reuses the catalog preload, so its one request starts before DOMContentLoaded.
+// The deferred app.js reuses the catalog index preload, so its one request starts before DOMContentLoaded.
 async function preloadedCatalog(page, label) {
   const entries = await page.evaluate(() => ({dcl: performance.getEntriesByType('navigation')[0].domContentLoadedEventStart,
-    catalog: performance.getEntriesByType('resource').filter(entry => new URL(entry.name).pathname === '/catalog.json')
+    catalog: performance.getEntriesByType('resource').filter(entry => new URL(entry.name).pathname === '/catalog-index.json')
       .map(entry => ({initiator: entry.initiatorType, start: entry.startTime}))}));
   assert.equal(entries.catalog.length, 1, `${label}: one catalog request`);
   assert.equal(entries.catalog[0].initiator, 'link', `${label}: the catalog response comes from the preload`);
   assert(entries.catalog[0].start < entries.dcl, `${label}: the catalog request starts before DOMContentLoaded`);
 }
 const requests = (requested, file) => requested.filter(pathname => pathname === '/' + file).length;
+// The complete catalog, with requirement text, is requested once right after the first render.
+const completeCatalog = page => page.waitForFunction(() => performance.getEntriesByType('resource').some(entry => new URL(entry.name).pathname === '/catalog.json'));
+
+async function dataAccess(page, language, viewport) {
+  const label = `${language} data dialog ${viewport.name}`;
+  // Mock writes in this isolated browser; never replace the user's clipboard during verification.
+  await page.evaluate(() => Object.defineProperty(navigator, 'clipboard', {configurable: true,
+    value: {writeText: async value => { window.copiedDataInstructions = value; }}}));
+  await press(page, '[data-open-data]');
+  assert.equal(await page.$eval('#data-dialog', dialog => dialog.open), true, `${label}: opens`);
+  assert.equal(await text(page, '#data-title'), language === 'zh' ? '把资源合集带走。' : 'Take the collection with you.');
+  const command = 'git clone https://github.com/reacher-z/Awesome-REA.git';
+  assert.equal(await text(page, '#data-clone-command'), command);
+  assert.equal(await count(page, 'a[href$=".zip"]'), 0, `${label}: no ZIP download links`);
+  assert.equal(await page.$eval('#data-agent-details', details => details.open), false);
+  for (let i = 0; i < 12; i++) {
+    await page.keyboard.press('Tab');
+    assert(await page.evaluate(() => document.querySelector('#data-dialog').contains(document.activeElement)), `${label}: focus stays inside`);
+  }
+  await press(page, '#data-clone-copy');
+  await page.waitForFunction(() => window.copiedDataInstructions);
+  assert.equal(await page.evaluate(() => window.copiedDataInstructions), command);
+  assert.equal(await text(page, '#data-clone-status'), language === 'zh' ? '克隆命令已复制。' : 'Clone command copied.');
+  await shot(page, label + ' clone');
+  await page.evaluate(() => { navigator.clipboard.writeText = async () => { throw new Error('Unavailable'); }; });
+  await press(page, '#data-clone-copy');
+  await page.waitForFunction(() => document.activeElement.id === 'data-clone-command');
+  assert.equal(await page.evaluate(() => window.getSelection().toString()), command);
+  await page.evaluate(() => { navigator.clipboard.writeText = async value => { window.copiedDataInstructions = value; }; });
+  await press(page, '#data-agent-details > summary');
+  await press(page, '#data-copy');
+  await page.waitForFunction(() => window.copiedDataInstructions.includes('data/README.md'));
+  const instructions = await page.evaluate(() => window.copiedDataInstructions);
+  assert(instructions.includes('https://github.com/reacher-z/Awesome-REA.git'));
+  assert(instructions.includes('site/translations.zh-CN.json'));
+  assert.equal(await text(page, '#data-copy-status'), language === 'zh' ? '指令已复制。' : 'Instructions copied.');
+  await page.evaluate(() => { navigator.clipboard.writeText = async () => { throw new Error('Unavailable'); }; });
+  await press(page, '#data-copy');
+  await page.waitForFunction(() => document.activeElement.id === 'data-instructions');
+  assert.equal(await page.evaluate(() => window.getSelection().toString()), await text(page, '#data-instructions'));
+  await page.keyboard.press('/');
+  assert(await page.evaluate(() => document.querySelector('#data-dialog').contains(document.activeElement)), `${label}: search shortcut leaves modal focus intact`);
+  await noOverflow(page, label);
+  assert(await page.$eval('#data-dialog', dialog => dialog.scrollWidth <= dialog.clientWidth), `${label}: no modal overflow`);
+  await shot(page, label);
+  await page.keyboard.press('Escape');
+  assert.equal(await page.$eval('#data-dialog', dialog => dialog.open), false, `${label}: Escape closes`);
+  assert(await page.evaluate(() => document.activeElement.matches('[data-open-data]')), `${label}: trigger regains focus`);
+  await press(page, '[data-open-data]');
+  assert.equal(await text(page, '#data-copy-status'), '', `${label}: old status clears`);
+  assert.equal(await text(page, '#data-clone-status'), '', `${label}: old clone status clears`);
+  await press(page, '#data-close');
+  assert.equal(await page.$eval('#data-dialog', dialog => dialog.open), false, `${label}: close button`);
+}
 
 async function homepage(page, language, viewport, data, requested) {
   const label = `${language} homepage ${viewport.name}`;
   const total = data.catalog.resources.length;
   await loaded(page, '#resource-grid .resource-card', '#error-state');
   await preloadedCatalog(page, label);
+  await completeCatalog(page);
+  assert.equal(requests(requested, 'catalog-index.json'), 1, `${label}: one catalog-index.json request per load`);
   assert.equal(requests(requested, 'catalog.json'), 1, `${label}: one catalog.json request per load`);
   assert.equal(requests(requested, 'source-browser.json'), 0, `${label}: repository data waits for the Repositories view`);
   assert.equal(await hidden(page, '#error-state'), true, `${label}: the curated catalog loads`);
@@ -144,6 +200,7 @@ async function homepage(page, language, viewport, data, requested) {
   assert(numbers(await text(page, '#results-status')).includes(total), `${label}: status names all ${total} curated resources`);
   assert(await page.$$eval('#resource-grid .card-title-link', links => links.every(link => link.textContent.trim() && link.href.startsWith('http'))));
   await noOverflow(page, label);
+  await dataAccess(page, language, viewport);
 
   // Search, then clear: a record's own displayed name finds it among a narrower result set.
   const title = (await text(page, '#resource-grid .card-title-link')).trim();
@@ -162,9 +219,11 @@ async function homepage(page, language, viewport, data, requested) {
   // Show More reveals the next 15 curated cards; requirements open in place.
   await press(page, '#load-more');
   assert.equal(await count(page, '#resource-grid .resource-card'), Math.min(30, total), `${label}: curated Show More`);
+  assert.equal(await count(page, '#resource-grid .resource-card > .card-meta .resource-evidence-link'), 0);
+  assert.equal(await count(page, '#resource-grid .resource-card details .resource-evidence-link'), Math.min(30, total));
   await press(page, '#resource-grid .resource-card details.requirements summary');
   const expanded = await page.$eval('#resource-grid .resource-card details.requirements', details => ({open: details.open,
-    items: details.querySelectorAll('li').length, height: details.querySelector('ul').getBoundingClientRect().height}));
+    items: details.querySelectorAll('li:not(.requirements-pending)').length, height: details.querySelector('ul').getBoundingClientRect().height}));
   assert(expanded.open && expanded.items > 0 && expanded.height > 0, `${label}: requirements expand visibly`);
   await noOverflow(page, label + ' with requirements open');
   await shot(page, `${language} homepage ${viewport.name} curated`);
@@ -180,7 +239,23 @@ async function homepage(page, language, viewport, data, requested) {
   assert.equal(await text(page, '#source-more-count'), '+' + Math.min(24, Math.max(0, repositories - 24)));
   await press(page, '#source-more');
   assert.equal(await count(page, '#source-results .source-card'), Math.min(48, repositories), `${label}: repository Show More`);
-  await press(page, '#source-results .source-card details.source-record-details summary');
+  await press(page, '#source-results .source-card details.source-record-details > summary');
+  const firstSource = await page.$eval('#source-results .source-card', card => ({id:card.dataset.recordId,
+    topics:card.querySelectorAll('.source-topic-chip').length, evidenceOpen:card.querySelector('.source-scan-evidence').open}));
+  const expectedSource = data.browser.resources.find(record => record.id === firstSource.id);
+  assert.equal(firstSource.topics, expectedSource.topics.length, `${label}: every topic appears once`);
+  assert.equal(firstSource.evidenceOpen, false);
+  await press(page, '#source-results .source-card .source-scan-evidence > summary');
+  const fingerprints = await page.$$eval('#source-results .source-card:first-child .source-scan-evidence code', nodes => nodes.map(node => node.textContent));
+  assert(fingerprints.includes(expectedSource.readme_sha256), `${label}: complete SHA256 available`);
+  if (expectedSource.readme_git_sha) assert(fingerprints.includes(expectedSource.readme_git_sha), `${label}: complete advertised Git revision available`);
+  await noOverflow(page, label + ' full scan evidence');
+  await press(page, '#source-results .source-card details.source-record-details > summary');
+  await press(page, '#source-more');
+  const restoredSource = await page.$eval('#source-results .source-card', card => ({outer:card.querySelector('.source-record-details').open, inner:card.querySelector('.source-scan-evidence').open}));
+  assert.deepEqual(restoredSource, {outer:false,inner:true}, `${label}: independent disclosure states survive Show More`);
+  await press(page, '#source-results .source-card details.source-record-details > summary');
+  await press(page, '#source-results .source-card .source-scan-evidence > summary');
   await noOverflow(page, label + ' repositories');
   await shot(page, `${language} homepage ${viewport.name} repositories`);
 
@@ -205,6 +280,8 @@ async function homepage(page, language, viewport, data, requested) {
   await Promise.all([page.waitForNavigation({waitUntil: 'networkidle0'}), page.keyboard.press('Enter')]);
   await loaded(page, '#resource-grid .resource-card', '#error-state');
   await preloadedCatalog(page, label + ' after switching language');
+  await completeCatalog(page);
+  assert.equal(requests(requested, 'catalog-index.json'), 2, `${label}: one catalog-index.json request on each homepage`);
   assert.equal(requests(requested, 'catalog.json'), 2, `${label}: one catalog.json request on each homepage`);
   const switched = new URL(page.url());
   assert.equal(switched.pathname, other === 'zh' ? '/zh/' : '/');
@@ -219,6 +296,7 @@ async function homepage(page, language, viewport, data, requested) {
 // Without scripting, the catalog's inert controls and loading text give way to the static directory links.
 async function withoutScript(page, language, viewport) {
   const label = `${language} homepage without JavaScript ${viewport.name}`;
+  assert(await page.$eval('[data-open-data]', link => !link.hasAttribute('download') && link.getAttribute('href') === 'https://github.com/reacher-z/Awesome-REA' && link.getClientRects().length > 0), `${label}: repository access works without a dialog`);
   const view = await page.evaluate(() => {
     const shown = selector => [...document.querySelectorAll(selector)].filter(node => node.getClientRects().length).length;
     const heading = document.querySelector('#catalog-title').getBoundingClientRect(), note = document.querySelector('.noscript-note');
@@ -233,10 +311,76 @@ async function withoutScript(page, language, viewport) {
   await noOverflow(page, label);
 }
 
+async function paperDirectory(page, route, viewport, javascript = true) {
+  const label = `${route} ${viewport.name}`;
+  const first = '.paper-card';
+  const before = await page.$eval(first, card => ({scope: card.querySelector('.paper-scope').textContent,
+    authors: card.querySelector('.paper-authors').textContent, citation: card.querySelector('a[type="application/x-bibtex"]').getAttribute('href')}));
+  assert.equal(await page.evaluate(() => document.documentElement.dataset.paperLayout), 'compact');
+  const metaBeside = await page.$$eval('.paper-card', cards => cards.filter(card =>
+    card.querySelector('.paper-meta').getBoundingClientRect().top < card.querySelector('h3').getBoundingClientRect().bottom - 1).length);
+  assert.equal(metaBeside, 0, `${label}: every row puts year, venue and status on their own line under the title (${metaBeside} beside it)`);
+  assert.equal(await page.$eval(first + ' .paper-details', node => node.open), false);
+  await press(page, first + ' .paper-details > summary');
+  const expanded = await page.$eval(first + ' .paper-details', details => ({open: details.open,
+    scopeVisible: details.querySelector('.paper-scope').getBoundingClientRect().height > 0,
+    scope: details.querySelector('.paper-scope').textContent, authors: details.querySelector('.paper-authors').textContent,
+    citation: details.querySelector('a[type="application/x-bibtex"]').getAttribute('href')}));
+  assert.equal(expanded.open, true); assert.equal(expanded.scopeVisible, true);
+  for (const key of ['scope', 'authors', 'citation']) assert.equal(expanded[key], before[key], `${label}: ${key} survives disclosure`);
+  await noOverflow(page, label + ' expanded evidence');
+  await press(page, first + ' .paper-details > summary');
+  if (javascript) {
+    assert.equal(await page.$eval('#paper-more-filters', node => node.open), false);
+    await press(page, '#paper-more-filters > summary');
+    await page.select('#paper-layout', 'cards');
+    assert.equal(new URL(page.url()).searchParams.get('layout'), 'cards');
+    assert.equal(await page.$eval(first, card => card.querySelector('.paper-scope').parentElement === card), true);
+    await page.select('#paper-layout', 'compact');
+    const restored = await page.$eval(first, card => ({scope: card.querySelector('.paper-scope').textContent,
+      copies: card.querySelectorAll('.paper-scope').length, inDetails: !!card.querySelector('.paper-details > .paper-scope')}));
+    assert.equal(restored.scope, before.scope); assert.equal(restored.copies, 1); assert.equal(restored.inDetails, true);
+    const selectedYear = await page.$eval('#paper-year option:not([value="all"])', option => option.value);
+    await page.select('#paper-year', selectedYear);
+    const visibleYears = await page.$$eval('.paper-card:not([hidden]) .paper-year', nodes => nodes.map(node => node.textContent));
+    assert(visibleYears.length > 0 && visibleYears.every(year => year === selectedYear));
+    assert.equal(numbers(await text(page, '#paper-results'))[0], visibleYears.length);
+    const language = new URL(await page.$eval('.papers-language', link => link.href));
+    assert.equal(language.searchParams.get('year'), selectedYear);
+    await press(page, '#paper-clear');
+    await press(page, '#paper-more-filters > summary');
+  }
+  await noOverflow(page, label + ' compact list');
+  if (viewport.name === 'desktop') await midWidthPaperRows(page, label, viewport);
+}
+
+// Between 701 and 1100 px each row keeps its links and the Scope & sources toggle on one line, and an opened panel spans the row.
+async function midWidthPaperRows(page, label, viewport) {
+  await page.setViewport({width: 1024, height: viewport.height});
+  const rows = await page.$$eval('.paper-card:not([hidden])', cards => cards.map(card => {
+    const links = card.querySelector('.paper-links').getBoundingClientRect();
+    const toggle = card.querySelector('.paper-details > summary').getBoundingClientRect();
+    const centre = (toggle.top + toggle.bottom) / 2;
+    return centre > links.top && centre < links.bottom;
+  }));
+  assert(rows.length > 0 && rows.every(Boolean), `${label} at 1024px: ${rows.filter(row => !row).length} rows put the links and the Scope & sources toggle on separate lines`);
+  const panel = await page.$eval('.paper-card', card => {
+    const details = card.querySelector('.paper-details');
+    details.open = true;
+    const widths = [details.getBoundingClientRect().width, card.getBoundingClientRect().width];
+    details.open = false;
+    return widths;
+  });
+  assert(panel[0] >= panel[1] - 8, `${label} at 1024px: an opened panel spans the row (${panel[0]} of ${panel[1]}px)`);
+  await noOverflow(page, label + ' at 1024px');
+  await page.setViewport({width: viewport.width, height: viewport.height});
+}
+
 async function staticPage(page, route, viewport) {
   const label = `${route} ${viewport.name}`;
   assert((await page.$eval('h1', heading => heading.textContent.trim())).length > 0, `${label}: visible heading`);
   await noOverflow(page, label);
+  if (route === '/papers/' || route === '/zh/papers/') await paperDirectory(page, route, viewport);
 }
 
 (async () => {
@@ -256,19 +400,29 @@ async function staticPage(page, route, viewport) {
     try { await run(); console.log(`ok   ${label}`); } catch (error) { failures.push(label); console.error(`FAIL ${label}\n     ${error.message}`); }
   };
   try {
-    for (const viewport of VIEWPORTS) {
+    // Viewports are independent. Separate contexts isolate cookies, storage and
+    // clipboard mocks; each viewport keeps its complete sequential interaction suite.
+    const runs = await Promise.allSettled(VIEWPORTS.map(async viewport => {
+      const context = await browser.createBrowserContext();
+      try {
       for (const language of ['en', 'zh']) {
-        await check(`${language} homepage at ${viewport.width}px`, () => visit(browser, origin, language === 'zh' ? '/zh/' : '/', viewport,
+        await check(`${language} homepage at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
           `${language} homepage ${viewport.name} switched to ${language === 'zh' ? 'en' : 'zh'}`, (page, requested) => homepage(page, language, viewport, data, requested)));
       }
       for (const language of ['en', 'zh']) {
-        await check(`${language} homepage without JavaScript at ${viewport.width}px`, () => visit(browser, origin, language === 'zh' ? '/zh/' : '/', viewport,
+        await check(`${language} homepage without JavaScript at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
           `${language} homepage ${viewport.name} without JavaScript`, page => withoutScript(page, language, viewport), {javascript: false}));
       }
-      for (const route of routes) {
-        await check(`${route} at ${viewport.width}px`, () => visit(browser, origin, route, viewport, `${route} ${viewport.name}`, page => staticPage(page, route, viewport)));
+      for (const route of ['/papers/', '/zh/papers/']) {
+        await check(`${route} without JavaScript at ${viewport.width}px`, () => visit(context, origin, route, viewport,
+          `${route} ${viewport.name} without JavaScript`, page => paperDirectory(page, route, viewport, false), {javascript: false}));
       }
-    }
+      for (const route of routes) {
+        await check(`${route} at ${viewport.width}px`, () => visit(context, origin, route, viewport, `${route} ${viewport.name}`, page => staticPage(page, route, viewport)));
+      }
+      } finally { await context.close(); }
+    }));
+    for (const result of runs) if (result.status === 'rejected') throw result.reason;
   } finally {
     await browser.close(); site.close();
   }

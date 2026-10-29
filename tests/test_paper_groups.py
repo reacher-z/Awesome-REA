@@ -18,6 +18,8 @@ LABELS = {
     'app': ('App reconstruction and analysis', '应用重建与分析'),
     'website': ('Website reconstruction', '网站重建'),
 }
+# Sections use the README's paper topic keys.
+TOPICS = {'game': 'game-reconstruction', 'app': 'app-reconstruction', 'website': 'website-reconstruction'}
 
 
 def section(target, identifiers, language='en', count=None, label=None):
@@ -25,8 +27,8 @@ def section(target, identifiers, language='en', count=None, label=None):
     count = len(identifiers) if count is None else count
     count_text = f'{count} ' + ('篇论文' if language == 'zh' else ('paper' if count == 1 else 'papers'))
     cards = ''.join(f'<article id="{identifier}" data-paper-id="{identifier}"><h3>Paper</h3><p>Text</p></article>' for identifier in identifiers)
-    return (f'<section class="paper-section" aria-labelledby="research-{target}">'
-            f'<div class="paper-section-heading"><h2 id="research-{target}">{label}</h2>'
+    return (f'<section class="paper-section" aria-labelledby="research-{TOPICS[target]}">'
+            f'<div class="paper-section-heading"><h2 id="research-{TOPICS[target]}">{label}</h2>'
             f'<span>{count_text}</span></div><div class="paper-grid">{cards}</div></section>')
 
 
@@ -82,7 +84,7 @@ class PaperGroupTests(unittest.TestCase):
         cases = [
             original.replace(section('app', ['paper-remaui']), ''),
             original + section('app', ['paper-remaui']),
-            original.replace('id="research-app"', 'id="research-wrong"'),
+            original.replace('id="research-app-reconstruction"', 'id="research-wrong"'),
         ]
         for document in cases:
             with self.subTest(document=document):

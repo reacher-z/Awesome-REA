@@ -58,21 +58,59 @@
     return url;
   }
 
+  const readLayout = params => params.get("layout") === "cards" ? "cards" : "compact";
+
+  // The static index is already compact. Cards bring only the scope panel out;
+  // full authors, original titles, citations and sources remain in native details.
+  function initializeLayout(document, browser, cards, afterChange) {
+    const control = document.getElementById("paper-layout");
+    if (!control) return null;
+    const moves = [];
+    for (const card of cards) {
+      const summary = card.querySelector(".paper-details > summary");
+      const scope = card.querySelector(".paper-scope");
+      const links = card.querySelector(".paper-links");
+      if (!summary || !scope || !links) return null;
+      moves.push({card, summary, scope, links});
+    }
+    function apply(layout) {
+      document.documentElement.dataset.paperLayout = layout;
+      control.value = layout;
+      for (const {card, summary, scope, links} of moves) {
+        if (layout === "cards") card.insertBefore(scope, links);
+        else if (summary.nextSibling !== scope) summary.after(scope);
+      }
+    }
+    control.addEventListener("change", () => {
+      const url = new URL(browser.location.href);
+      if (control.value === "cards") url.searchParams.set("layout", "cards"); else url.searchParams.delete("layout");
+      if (url.href !== browser.location.href) browser.history.replaceState(null, "", url);
+      apply(readLayout(url.searchParams));
+      afterChange();
+    });
+    apply(readLayout(new URL(browser.location.href).searchParams));
+    return apply;
+  }
+
   function initialize(document, browser) {
     const form = document.getElementById("paper-search");
+    if (!form) return false;
+    // The form is laid out from the start so revealing it cannot shift the page; a failed check hides its inert controls.
+    const fail = () => { form.hidden = true; return false; };
     const data = document.getElementById("paper-search-data");
-    if (!form || !data) return false;
+    if (!data) return fail();
     const controls = Object.fromEntries(KEYS.map(key => [key, document.getElementById("paper-" + (key === "q" ? "query" : key))]));
     const count = document.getElementById("paper-results");
     const empty = document.getElementById("paper-empty");
     const clear = document.getElementById("paper-clear");
+    const moreFilters = document.getElementById("paper-more-filters");
     const emptyReset = document.getElementById("paper-empty-reset");
-    if (!count || !empty || !clear || !emptyReset || Object.values(controls).some(control => !control)) return false;
+    if (!count || !empty || !clear || !emptyReset || Object.values(controls).some(control => !control)) return fail();
     let records;
-    try { records = readRecords(JSON.parse(data.textContent)); } catch (_) { return false; }
+    try { records = readRecords(JSON.parse(data.textContent)); } catch (_) { return fail(); }
     const cards = [...document.querySelectorAll("[data-paper-id]")];
     const cardMap = new Map(cards.map(card => [card.dataset.paperId, card]));
-    if (cards.length !== records.length || cardMap.size !== records.length || records.some(paper => !cardMap.has(paper.id))) return false;
+    if (cards.length !== records.length || cardMap.size !== records.length || records.some(paper => !cardMap.has(paper.id))) return fail();
     const sections = [...document.querySelectorAll("[data-paper-section]")];
     const topics = [...document.querySelectorAll("[data-paper-topic]")];
     const languageLink = document.querySelector(".papers-language");
@@ -84,6 +122,8 @@
 
     function showState() {
       for (const key of KEYS) controls[key].value = state[key];
+      // Active URL filters must remain visible, even before a visitor opens the panel.
+      if (moreFilters && (state.status !== "all" || state.year !== "all" || readLayout(new URL(browser.location.href).searchParams) === "cards")) moreFilters.open = true;
     }
 
     function updateLanguageLink() {
@@ -150,19 +190,20 @@
     clear.addEventListener("click", reset);
     emptyReset.addEventListener("click", reset);
     if (languageLink) languageLink.addEventListener("click", updateLanguageLink);
+    const applyLayout = initializeLayout(document, browser, cards, updateLanguageLink);
     browser.addEventListener("popstate", () => {
       composing = false;
       state = readState(new URL(browser.location.href).searchParams, allowed);
       showState(); render();
+      if (applyLayout) applyLayout(readLayout(new URL(browser.location.href).searchParams));
     });
     showState();
     const canonicalState = stateURL(browser.location.href, state);
     if (canonicalState.href !== browser.location.href) browser.history.replaceState(null, "", canonicalState);
     render();
-    form.hidden = false;
     return true;
   }
 
-  if (typeof module === "object" && module.exports) module.exports = {readRecords, allowedValues, readState, matches, stateURL, initialize};
+  if (typeof module === "object" && module.exports) module.exports = {readRecords, allowedValues, readState, matches, stateURL, initialize, initializeLayout, readLayout};
   if (typeof document !== "undefined") initialize(document, window);
 }());

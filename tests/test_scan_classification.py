@@ -2,6 +2,7 @@
 import base64
 import contextlib
 import copy
+import hashlib
 import io
 from itertools import permutations
 import json
@@ -37,12 +38,16 @@ print(json.dumps([classify(fixture) for fixture in json.loads(sys.argv[2])]))
 '''
 
 
-def readme_api(body=b'# Example\nA small README for a test fixture.\n'):
+def readme_api(body=b'# Example\nA small README for a test fixture.\n', full_name='example/demo'):
     class FakeAPI:
         def json(self, path):
+            if path.startswith('/repositories/'):
+                return {**repository(), 'full_name': full_name, 'html_url': 'https://github.com/' + full_name,
+                        'private': False, 'fork': False, 'archived': False}
             return {'type': 'file', 'size': len(body), 'encoding': 'base64',
-                    'content': base64.b64encode(body).decode(), 'sha': '0' * 40, 'path': 'README.md',
-                    'html_url': 'https://github.com/example/demo/blob/main/README.md'}
+                    'content': base64.b64encode(body).decode(),
+                    'sha': hashlib.sha1(b'blob ' + str(len(body)).encode() + b'\0' + body).hexdigest(), 'path': 'README.md',
+                    'html_url': 'https://github.com/' + full_name + '/blob/main/README.md'}
     return FakeAPI()
 
 
@@ -96,7 +101,7 @@ class ClassificationDeterminismTests(unittest.TestCase):
 
     def test_new_captures_record_the_engine_and_leave_curated_labels_to_the_build(self):
         # morluto/rea is a curated repository root; the scanner must not copy its labels.
-        record, _ = scan_readme(readme_api(), repository(full_name='morluto/rea', html_url='https://github.com/morluto/rea'))
+        record, _ = scan_readme(readme_api(full_name='morluto/rea'), repository(full_name='morluto/rea', html_url='https://github.com/morluto/rea'))
         self.assertEqual(record['classification_engine_version'], CLASSIFICATION_ENGINE_VERSION)
         self.assertEqual(record['classification_origin'], 'automatic-metadata')
         self.assertEqual(record['classification_reference_ids'], [])

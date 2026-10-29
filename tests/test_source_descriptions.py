@@ -106,17 +106,24 @@ class DescriptionCaptureTests(unittest.TestCase):
             self.assertNotIn('x' * 1001, html)
         self.assertNotEqual(description_fallback(result, 'en'), description_fallback({}, 'en'))
 
-    def test_scanner_keeps_received_content_when_advertised_blob_disagrees(self):
+    def test_scanner_rejects_received_content_when_advertised_blob_disagrees(self):
         body = b'# Example\nA small README for a test fixture.\n'
         actual_git_sha = hashlib.sha1(b'blob ' + str(len(body)).encode() + b'\0' + body).hexdigest()
         class FakeAPI:
             def __init__(self, advertised):
                 self.advertised = advertised
             def json(self, path):
+                if path.startswith('/repositories/'):
+                    return {'id': 1, 'full_name': 'example/demo', 'html_url': 'https://github.com/example/demo',
+                            'private': False, 'archived': False, 'fork': False}
                 return {'type': 'file', 'size': len(body), 'encoding': 'base64', 'content': base64.b64encode(body).decode(), 'sha': self.advertised, 'path': 'README.md', 'html_url': 'https://github.com/example/demo/blob/main/README.md'}
         repository = {'id': 1, 'full_name': 'example/demo', 'html_url': 'https://github.com/example/demo', 'description': 'x' * 1001, '_metadata_observed_at': '2026-10-16T00:00:00Z', '_matched_queries': [], 'topics': []}
         for advertised in (actual_git_sha, '0' * 40):
             record, failure = scan_readme(FakeAPI(advertised), repository)
+            if advertised != actual_git_sha:
+                self.assertIsNone(record)
+                self.assertEqual(failure['reason'], 'readme-git-sha-mismatch')
+                continue
             self.assertIsNone(failure)
             self.assertEqual(record['readme_git_sha'], advertised)
             self.assertEqual(record['readme_content_git_sha'], actual_git_sha)

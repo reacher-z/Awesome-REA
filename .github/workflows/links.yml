@@ -34,10 +34,13 @@ jobs:
               summary = (
                   '## Source link checks\n\n'
                   f"Finished: {report['finished_at']}\n\n"
-                  '| Checked URLs | Responded | Confirmed dead | Inconclusive |\n'
-                  '| ---: | ---: | ---: | ---: |\n'
-                  f"| {report['checked']} | {counts['ok']} | {counts['dead']} | {counts['inconclusive']} |\n\n"
+                  '| Checked URLs | Responded | Confirmed dead | Ledger: recorded missing | Ledger: reported source missing | Inconclusive |\n'
+                  '| ---: | ---: | ---: | ---: | ---: | ---: |\n'
+                  f"| {report['checked']} | {counts['ok']} | {counts['dead']} | {counts.get('recorded-missing', 0)} "
+                  f"| {counts.get('reported-source-missing', 0)} | {counts['inconclusive']} |\n\n"
                   'Only HTTP 404/410 confirmed by a second request fails the link check. '
+                  'Case-ledger links that their entries already record as not found, or that only the upstream '
+                  'collection reports, are listed separately and do not fail it. '
                   'Access blocks, rate limits and network failures remain inconclusive; '
                   'they are not an all-links-passed result.\n\n'
                   'The JSON report retains timestamps, per-URL status and affected record IDs. '

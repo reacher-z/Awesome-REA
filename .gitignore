@@ -4,7 +4,6 @@ __pycache__/
 node_modules/
 .venv/
 .cache/
-labs/**/output/
 *.local.json
 dist/
 .env
@@ -16,3 +15,5 @@ secrets.json
 credentials*.json
 *.pem
 *.key
+# Explicit private-worker bootstrap packages must never enter this public repo.
+scan-seed-*.json.gz

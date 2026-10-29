@@ -10,6 +10,7 @@ const script = fs.readFileSync(path.join(root, 'site/app.js'), 'utf8');
 class Element {
   constructor(tag = 'div') { this.tag = tag; this.children = []; this.dataset = {}; this.attrs = {}; this.handlers = {}; this.value = ''; this.className = ''; this.classList = {toggle() {}, add() {}, remove() {}}; }
   append(...nodes) { for (const node of nodes) this.children.push(...(node.tag === 'fragment' ? node.children : [node])); }
+  prepend(...nodes) { this.children.unshift(...nodes); }
   replaceChildren(...nodes) { this.children = []; this.append(...nodes); }
   setAttribute(key, value) { this.attrs[key] = value; }
   addEventListener(event, callback) { this.handlers[event] = callback; }
@@ -62,7 +63,7 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
   const windowListeners = {};
   const context = {document, location, URL, URLSearchParams, console, window: {addEventListener(event, callback) { windowListeners[event] = callback; }},
     history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
-    fetch: async url => { requests.push(String(url)); return {ok: true, json: async () => new URL(url).pathname.endsWith('catalog.json') ? {resources: curatedRows, meta: {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: rows.length}}} : browser}; }};
+    fetch: async url => { requests.push(String(url)); return {ok: true, json: async () => /^\/catalog(-index)?\.json$/.test(new URL(url).pathname) ? {resources: curatedRows, meta: {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: rows.length}}} : browser}; }};
   vm.createContext(context);
   vm.runInContext(script.replace('applyLanguage(); load();', '') + '\nglobalThis.audit = {state,sourceState,load,loadSources,filtered,sourceFiltered,applyLanguage,reset,resetSources,setIndexMode,sourceRelatedEntries};', context);
   return {api: context.audit, context, elements, buttons, protocolLabels, repositoryLinks, languageLinks, windowListeners, requests};
@@ -186,8 +187,8 @@ if (require.main === module) (async () => {
   assert.equal(new URL(layouts.context.location.href).searchParams.get('layout'), 'cards');
   const sourceCard = layouts.elements.get('#source-results').children[0];
   const scanDetails = sourceCard.children.find(child => child.className === 'source-record-details');
-  const compactContext = scanDetails.children.find(child => child.className === 'source-compact-context');
-  const compactTopics = compactContext.children.find(child => child.className === 'source-topics');
+  const recordContext = scanDetails.children.find(child => child.className === 'source-record-context');
+  const compactTopics = recordContext.children.find(child => child.className === 'source-topics');
   assert.equal(compactTopics.children.length, 2);
   compactTopics.children[0].emit('click');
   assert.equal(layouts.api.sourceState.topic, 'protocol-analysis');
@@ -226,10 +227,12 @@ if (require.main === module) (async () => {
       sorted.api.sourceState.sort = sort; orders[sort] = Array.from(sorted.api.sourceFiltered(), record => record.full_name);
     }
   }
-  assert.deepEqual(orders.en.kinds, ['Case study', 'Collection', 'Documentation', 'Integration', 'Learning resource', 'Project', 'Research', 'Tool']);
-  assert.deepEqual(orders.zh.kinds, ['案例', '工具', '合集', '集成', '文档', '项目', '学习资源', '研究']);
-  assert.deepEqual(orders.en.categories, ['JVM bytecode', 'MCP servers', 'REA essentials']);
-  assert.deepEqual(orders.zh.categories, ['JVM 字节码', 'MCP 服务', 'REA 核心']);
+  // Options sort by label; each also shows its live result count.
+  assert.deepEqual(orders.en.kinds, ['Case study', 'Collection', 'Documentation', 'Integration', 'Learning resource', 'Project', 'Research', 'Tool'].map(kind => kind + ' (1)'));
+  assert.deepEqual(orders.zh.kinds, ['案例', '工具', '合集', '集成', '文档', '项目', '学习资源', '研究'].map(kind => kind + '（1）'));
+  // This fixture's catalog has no category_labels, so options fall back to their keys; each still shows its count.
+  assert.deepEqual(orders.en.categories, ['agent mcp (2)', 'core (3)', 'jvm (3)']);
+  assert.deepEqual(orders.zh.categories, ['agent mcp（2）', 'core（3）', 'jvm（3）']);
   assert.deepEqual(orders.topics, ['aadog', 'zeta', 'reverse-engineering']);
   assert.deepEqual(orders.name, ['aadog/fd-back', 'Beta/viewer', 'delta/list', 'echo/docs', 'fox/course', 'gamma/paper', 'mid/reverse-engineering', 'zeta/project']);
   assert.deepEqual(orders.stars, ['mid/reverse-engineering', 'aadog/fd-back', 'zeta/project', 'Beta/viewer', 'delta/list', 'echo/docs', 'gamma/paper', 'fox/course']);

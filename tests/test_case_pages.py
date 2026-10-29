@@ -41,6 +41,7 @@ class CaseDocument(HTMLParser):
         self.links = []
         self.styles = []
         self.tags = []
+        self.images = []
         self.canonical = []
         self.alternates = {}
         self.current = None
@@ -50,6 +51,8 @@ class CaseDocument(HTMLParser):
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
         self.tags.append(tag)
+        if tag == 'img':
+            self.images.append(values)
         if tag == 'section' and 'data-case-section' in values:
             self.sections.append(values['data-case-section'])
         if tag == 'article' and 'data-case-id' in values:
@@ -146,8 +149,13 @@ class CasePageTests(unittest.TestCase):
         for language, prefix in [('en', ''), ('zh', 'zh/')]:
             content = (output / prefix / 'cases/index.html').read_text()
             page = CaseDocument(content)
-            self.assertNotIn('img', page.tags)
-            self.assertEqual(page.tags.count('script'), 1)  # JSON-LD only, never contributed markup.
+            self.assertEqual(len(page.images), 1)  # Only the static site logo, never contributed markup.
+            self.assertEqual(page.images[0]['class'], 'brand-mark')
+            self.assertRegex(page.images[0]['src'], r'^/favicon\.svg(?:\?v=[a-f0-9]{16})?$')
+            self.assertNotIn('onerror', page.images[0])
+            # Collection and breadcrumb JSON-LD only, never contributed markup.
+            self.assertEqual(content.count('<script'), content.count('<script type="application/ld+json">'))
+            self.assertEqual(page.tags.count('script'), 2)
             text = ''.join(page.cases[0]['text'])
             self.assertIn(record['name' if language == 'en' else 'name_zh'], text)
             self.assertIn(record['description_' + language], text)

@@ -1,10 +1,12 @@
 # Site-wide security headers. The policy allows same-origin scripts, styles, images and JSON
 # fetches, plus the licensed icon stylesheet and fonts served from awesome-rea.pages.dev.
+# Linked sites receive only the origin https://awesomerea.org/ as referrer, never a path or search query.
 /*
   Content-Security-Policy: default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://awesome-rea.pages.dev; font-src 'self' https://awesome-rea.pages.dev; img-src 'self'; connect-src 'self' https://cloudflareinsights.com; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), geolocation=(), microphone=(), payment=(), usb=()
   Strict-Transport-Security: max-age=2592000
+  Referrer-Policy: strict-origin-when-cross-origin
 /fonts/*
   Access-Control-Allow-Origin: *
 /fontawesome.css
@@ -15,15 +17,41 @@
   Cache-Control: no-cache, must-revalidate
 /catalog.json
   Cache-Control: no-cache, must-revalidate
+/catalog-index.json
+  Cache-Control: no-cache, must-revalidate
 /source-index.json
   Cache-Control: no-cache, must-revalidate
 /source-browser.json
   Cache-Control: no-cache, must-revalidate
+/source-published.json
+  Cache-Control: no-cache, must-revalidate
+/evidence/source-scans/*
+  Content-Type: application/zip
 /papers.json
   Cache-Control: no-cache, must-revalidate
 /build-manifest.json
   Cache-Control: no-cache, must-revalidate
+/feed.xml
+  Content-Type: application/atom+xml; charset=utf-8
+/zh/feed.xml
+  Content-Type: application/atom+xml; charset=utf-8
 /papers/references.bib
   Content-Type: application/x-bibtex; charset=utf-8
 /papers/citations/*.bib
   Content-Type: application/x-bibtex; charset=utf-8
+# Keep *.pages.dev copies (production alias, previews and the icon-asset Direct Upload project)
+# out of search results; absolute-URL rules never match the canonical awesomerea.org host.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
+/data-manifest.json
+  Cache-Control: no-cache, must-revalidate
+/downloads/*
+  Cache-Control: no-cache, must-revalidate
+/downloads/records.jsonl
+  Content-Type: application/x-ndjson; charset=utf-8
+/downloads/references.bib
+  Content-Type: application/x-bibtex; charset=utf-8
+/downloads/awesome-rea-data.zip
+  Content-Type: application/zip

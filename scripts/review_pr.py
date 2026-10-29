@@ -7,24 +7,36 @@ import os
 from pathlib import Path
 import re
 import sys
+import tempfile
 import urllib.parse
 import urllib.request
 
 from validate import validate_benchmarks, validate_resources, validate_source_index, public_https_error
 from validate_papers import validate_papers
 from localization import LOCALE_FILES, validate_localizations
+from curated_translations import CURATED_TRANSLATIONS, validate_curated_translations
 from source_scope import validate_scope
 from case_coverage import validate_case_coverage
+import strict_json
 
 ROOT = Path(__file__).resolve().parents[1]
 MARKER = '<!-- awesome-rea-automated-review -->'
 CATALOGS = ('data/rea-resources.json', 'data/tool-resources.json')
+CURATED_INPUTS = (*CATALOGS, CURATED_TRANSLATIONS)
 SOURCE_INDEX = 'data/source-index.json'
 SOURCE_SCOPE = 'data/source-scope.json'
 SOURCE_INPUTS = (SOURCE_INDEX, SOURCE_SCOPE, *LOCALE_FILES)
 CASE_COVERAGE = 'data/case-coverage.json'
 CASE_INPUTS = (CASE_COVERAGE, *CATALOGS, 'data/papers.json')
-REVIEW_FILES = frozenset((*CATALOGS, 'data/benchmarks.json', 'data/papers.json', *SOURCE_INPUTS, CASE_COVERAGE))
+SUPPLEMENT_INDEX = 'data/source-supplements/index.json'
+SUPPLEMENT_BATCH = 'data/source-supplements/public-cloud-39323601991-batch-01.json'
+SUPPLEMENT_SCOPE = 'data/source-supplements/public-cloud-39323601991-batch-01.scope.json'
+SUPPLEMENT_LOCALE = 'data/locales/source-supplements/public-cloud-39323601991-batch-01.json'
+# New batches require an explicit trusted-base review extension, not a path glob.
+SUPPLEMENT_INPUTS = (SUPPLEMENT_INDEX, SUPPLEMENT_BATCH, SUPPLEMENT_SCOPE, SUPPLEMENT_LOCALE)
+OPTIONAL_SUPPLEMENT_INPUTS = frozenset((SUPPLEMENT_SCOPE, SUPPLEMENT_LOCALE))
+REVIEW_FILES = frozenset((*CURATED_INPUTS, 'data/benchmarks.json', 'data/papers.json',
+                          *SOURCE_INPUTS, CASE_COVERAGE, *SUPPLEMENT_INPUTS))
 LOCALE_FIELDS = {'description_en', 'description_zh', 'english_retains_name', 'technical_only'}
 SENSITIVE = re.compile(r'gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[A-Z0-9]{16}|-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY(?: BLOCK)?-----')
 # Personal paths: macOS/Linux homes, Windows or WSL profiles with either separator, /root, ~ and $HOME.
@@ -46,7 +58,7 @@ JSON_ESCAPE = re.compile(r'\\(?:u([0-9A-Fa-f]{4})|([\\/]))')
 SAFE_LABEL = re.compile(r'[A-Za-z0-9][A-Za-z0-9_.:/-]{0,99}')
 # File-name rules cover every .gitignore pattern (tests/test_review_pr.py checks this) plus keys, captures and fonts.
 PRIVATE_NAMES = ('.env', '.env.*', 'secrets.json', 'credentials*.json', '*.local.json', '*.pem', '*.key',
-                 'id_rsa', 'id_dsa', 'id_ecdsa', 'id_ed25519', '*.har', '*.pcap', '*.pcapng')
+                 'id_rsa', 'id_dsa', 'id_ecdsa', 'id_ed25519', '*.har', '*.pcap', '*.pcapng', 'scan-seed-*.json.gz')
 PRIVATE_DIRS = {'.cloudflare', '.wrangler'}
 GENERATED_NAMES = ('*.py[cod]', '.ds_store', '*.woff', '*.woff2')
 GENERATED_DIRS = {'__pycache__', '.cache', '.venv', 'dist', 'node_modules', 'output'}
@@ -151,19 +163,18 @@ def json_privacy_findings(filename, text):
     return findings
 
 
-def parse_json(text):
-    def unique_object(pairs):
-        result = {}
-        for key, value in pairs:
-            if key in result:
-                raise ValueError('Duplicate JSON key')
-            result[key] = value
-        return result
+class InvalidJSON(ValueError):
+    """A review input that is not strict JSON; the message names only its allowlisted path."""
 
-    def invalid_constant(value):
-        raise ValueError('Non-JSON numeric constant')
 
-    return json.loads(text, object_pairs_hook=unique_object, parse_constant=invalid_constant)
+def parse_json(text, filename=None):
+    # The same parser as local validation, so both reject duplicate keys and NaN/Infinity.
+    try:
+        return strict_json.loads(text)
+    except ValueError as error:
+        if filename is None:
+            raise
+        raise InvalidJSON(f'{filename}: expected strict JSON without duplicate keys or NaN/Infinity.') from error
 
 
 def review_localizations(records, contents, errors):
@@ -197,19 +208,36 @@ def review_localizations(records, contents, errors):
     return len(translations)
 
 
+def changes_public_archive(entry):
+    paths = [entry['filename']]
+    if entry['status'] == 'renamed':
+        paths.append(entry.get('previous_filename', ''))
+    return any(name.startswith('data/source-evidence/') and name.endswith('.zip')
+               for name in paths)
+
+
 def load_review_contents(repository, sha, token, files, changed, errors):
     needed = set(changed & REVIEW_FILES)
-    if set(CATALOGS) & changed:
-        needed.update(CATALOGS)
+    if set(CURATED_INPUTS) & changed:
+        needed.update(CURATED_INPUTS)
     if set(SOURCE_INPUTS) & changed:
         needed.update(SOURCE_INPUTS)
     if set(CASE_INPUTS) & changed:
         needed.update(CASE_INPUTS)
+    if (set(SUPPLEMENT_INPUTS) & changed
+            or ((ROOT / SUPPLEMENT_INDEX).is_file()
+                and {SOURCE_INDEX, SOURCE_SCOPE} & changed)):
+        needed.update(SUPPLEMENT_INPUTS)
+        needed.update((SOURCE_INDEX, SOURCE_SCOPE))
     removed = {entry['filename'] for entry in files if entry['status'] == 'removed'}
     removed.update(entry['previous_filename'] for entry in files
                    if entry['status'] == 'renamed' and 'previous_filename' in entry)
+    archive_targets = {entry['filename'] for entry in files if changes_public_archive(entry)}
     contents = {}
     for filename in sorted(needed):
+        if filename in archive_targets:
+            errors.append(f'{filename}: a public archive change is not fetched as review data.')
+            continue
         if filename in removed:
             errors.append(f'{filename}: removing or renaming catalog, localization, or scope data requires maintainer review.')
             continue
@@ -218,7 +246,9 @@ def load_review_contents(repository, sha, token, files, changed, errors):
                 contents[filename] = content_at(repository, filename, sha, token)
             else:
                 # Unchanged source, locale, and scope dependencies come from the trusted base.
-                contents[filename] = (ROOT / filename).read_text(encoding='utf-8')
+                path = ROOT / filename
+                contents[filename] = ('{}' if filename in OPTIONAL_SUPPLEMENT_INPUTS and not path.exists()
+                                      else path.read_text(encoding='utf-8'))
             if filename in changed:
                 errors.extend(json_privacy_findings(filename, contents[filename]))
         except (OSError, UnicodeError, ValueError):
@@ -226,46 +256,88 @@ def load_review_contents(repository, sha, token, files, changed, errors):
     return contents
 
 
+def review_public_supplements(contents):
+    """Validate PR JSON with base code and the base's immutable public archive."""
+    # These imports resolve in the trusted base checkout. This validator only
+    # materializes the fixed JSON inputs; it never loads PR code or archives.
+    from public_source_supplements import (
+        MAX_ARCHIVE_BYTES, bounded_bytes, check_source, load_supplements,
+        owned_file, project_additions, strict_json,
+    )
+    base_batch = strict_json(bounded_bytes(owned_file(
+        ROOT, 'data/source-supplements', Path(SUPPLEMENT_BATCH).name)))
+    source = base_batch['source']
+    check_source(source)
+    archive_name = source['archive_filename']
+    archive = bounded_bytes(owned_file(ROOT, 'data/source-evidence', archive_name),
+                            MAX_ARCHIVE_BYTES)
+    with tempfile.TemporaryDirectory(prefix='trusted-supplement-review-') as directory:
+        temporary = Path(directory)
+        for filename in (*SUPPLEMENT_INPUTS, SOURCE_INDEX, SOURCE_SCOPE):
+            path = temporary / filename
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(contents[filename], encoding='utf-8')
+        archive_path = temporary / 'data/source-evidence' / archive_name
+        archive_path.parent.mkdir(parents=True, exist_ok=True)
+        archive_path.write_bytes(archive)
+        admitted = load_supplements(temporary)
+        visible = sum(row.get('scope_status') != 'excluded'
+                      for row in project_additions(admitted))
+        return len(admitted['ready']), len(admitted['records']), visible, len(admitted['held'])
+
+
 def review_data(contents, changed):
     errors, reviewed = [], []
     if set(CASE_INPUTS) & changed:
         case_records = []
         for filename in CATALOGS:
-            data = parse_json(contents[filename])
+            data = parse_json(contents[filename], filename)
             if not isinstance(data, list):
                 errors.append(f'{filename}: expected a JSON array for coverage mappings.')
             else:
                 case_records.extend(data)
-        case_papers = parse_json(contents['data/papers.json'])
+        case_papers = parse_json(contents['data/papers.json'], 'data/papers.json')
         if not isinstance(case_papers, list):
             errors.append('Research papers must be an array for coverage mappings.')
         else:
-            validate_case_coverage(parse_json(contents[CASE_COVERAGE]), case_records,
+            validate_case_coverage(parse_json(contents[CASE_COVERAGE], CASE_COVERAGE), case_records,
                                    case_papers, errors, url_check=public_https_error)
             reviewed.append('Case inventory checked for pinned sources, typed catalog mappings, alias decisions and occurrence/report counts; no project count or runtime reproduction inferred.')
     if 'data/papers.json' in changed:
-        papers = parse_json(contents['data/papers.json'])
+        papers = parse_json(contents['data/papers.json'], 'data/papers.json')
         validate_papers(papers, errors, url_check=public_https_error)
         reviewed.append('Research papers checked separately for bibliography, bilingual scope, dates, duplicate identifiers and public source URLs.')
     if set(CATALOGS) & changed:
         records = []
         for filename in CATALOGS:
-            data = parse_json(contents[filename])
+            data = parse_json(contents[filename], filename)
             if not isinstance(data, list):
                 errors.append(f'{filename}: expected a JSON array.')
             else:
                 records.extend(data)
         validate_resources(records, errors)
         reviewed.append(f'{len(records)} curated records checked together for schema, duplicate IDs/URLs, provenance, targets, dates, and review labels.')
+    if set(CURATED_INPUTS) & changed and CURATED_TRANSLATIONS in contents:
+        records = []
+        for filename in CATALOGS:
+            data = parse_json(contents[filename], filename)
+            records.extend(data if isinstance(data, list) else [])
+        # IDs in the base catalogs are not coverage findings: the PR head may predate them.
+        base_ids = {record.get('id') for filename in CATALOGS
+                    for record in parse_json((ROOT / filename).read_text(encoding='utf-8'), filename)
+                    if isinstance(record, dict)}
+        validate_curated_translations(records, parse_json(contents[CURATED_TRANSLATIONS], CURATED_TRANSLATIONS),
+                                      errors, known_ids=base_ids)
+        reviewed.append('Chinese resource names and requirements checked for value shapes and one entry per curated record the PR adds.')
     if 'data/benchmarks.json' in changed:
-        data = parse_json(contents['data/benchmarks.json'])
+        data = parse_json(contents['data/benchmarks.json'], 'data/benchmarks.json')
         if not isinstance(data, list):
             errors.append('Benchmarks must be an array.')
         else:
             validate_benchmarks(data, errors)
             reviewed.append(f'{len(data)} benchmark records checked for timestamp, count, and source consistency.')
     if set(SOURCE_INPUTS) & changed:
-        data = parse_json(contents[SOURCE_INDEX])
+        data = parse_json(contents[SOURCE_INDEX], SOURCE_INDEX)
         validate_source_index(data, errors)
         reviewed.append('Automated source-index records checked separately from curated resources.')
         if (isinstance(data, dict) and isinstance(data.get('resources'), list)
@@ -283,6 +355,18 @@ def review_data(contents, changed):
                 else:
                     validate_scope(data['resources'], scope, errors)
                     reviewed.append('Source-scope exclusions checked against repository IDs, README hashes, evidence links or availability rechecks, dates, and bilingual reasons.')
+    if (set(SUPPLEMENT_INPUTS) & changed
+            or ((ROOT / SUPPLEMENT_INDEX).is_file()
+                and {SOURCE_INDEX, SOURCE_SCOPE} & changed)):
+        try:
+            ready, selected, visible, held = review_public_supplements(contents)
+        except (OSError, UnicodeError, ValueError, KeyError, TypeError):
+            errors.append('Public source supplements could not be validated against trusted-base capture evidence, localization coverage and scope decisions.')
+        else:
+            reviewed.append(
+                f'Public source supplements checked with trusted-base code and archive evidence: '
+                f'{ready} ready batch(es), {selected} selected records, {visible} browsable additions, '
+                f'{held} held batch(es). Original capture counts remain separate.')
     return errors, reviewed
 
 
@@ -343,16 +427,22 @@ def main():
         if rule:
             # Named by path only; such files are never fetched.
             errors.append(f'{path}: {rule}')
+        archive_change = changes_public_archive(entry)
+        if archive_change:
+            errors.append(f'{path}: immutable public source archives cannot be changed by a data-admission PR; a separate source-pin review is required.')
+        unknown_locale = (path.startswith('data/locales/')
+                          and path not in (*LOCALE_FILES, SUPPLEMENT_LOCALE)
+                          and path != 'data/locales/README.md')
         patch = entry.get('patch')
         if patch:
             added = '\n'.join(line[1:] for line in patch.splitlines() if line.startswith('+') and not line.startswith('+++'))
             if private_text(added):
                 errors.append(f'{path}: added text contains a credential-like value or personal path; inspect locally. The value is omitted here.')
-        elif entry['status'] not in ('removed', 'unchanged') and not rule and path not in REVIEW_FILES:
+        elif (entry['status'] not in ('removed', 'unchanged') and not rule
+              and not archive_change and not unknown_locale and path not in REVIEW_FILES):
             # GitHub omits the patch of binary files and very large diffs.
             omitted.append(path)
-        if (path.startswith('data/locales/') and path not in LOCALE_FILES
-                and path != 'data/locales/README.md'):
+        if unknown_locale:
             errors.append(f'{path}: locale file is not in the trusted review allowlist; maintainer review is required.')
     for index, path in enumerate(omitted):
         try:
@@ -368,9 +458,11 @@ def main():
         findings, checked = review_data(contents, changed & REVIEW_FILES)
         errors.extend(findings)
         reviewed.extend(checked)
+    except InvalidJSON as error:
+        errors.append(str(error))
     except (ValueError, TypeError, KeyError):
         errors.append('Required catalog, localization, or source-scope JSON could not be parsed or validated. Check its shape locally.')
-    manual = any(path.startswith(('scripts/', '.github/', 'site/')) for path in changed)
+    manual = any(path.startswith(('scripts/', '.github/', 'site/')) and path not in REVIEW_FILES for path in changed)
     if errors:
         status = '**Changes need attention.**'
     elif not_inspected:

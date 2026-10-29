@@ -1,24 +1,30 @@
 # 协议
 
-[全部分类](README.zh-CN.md) · [English](protocol-analysis.md)
+[全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/protocol-analysis/) · [English](protocol-analysis.md)
 
-**103 个仓库** · 2026-10-16 UTC
+**110 个仓库** · 2026-10-20 UTC
 
-这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
+这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
-- [alufers/mitmproxy2swagger](https://github.com/alufers/mitmproxy2swagger) — 通过捕获流量，自动逆向分析 REST API。 **[9,652 星标]**
 - [Mouseww/anything-analyzer](https://github.com/Mouseww/anything-analyzer) — 全能协议分析工具：内置浏览器抓包、MITM 代理、JS hook、指纹伪装、AI 分析及 MCP Server，可无缝对接 AI 智能体与 IDE。 **[3,776 星标]**
+- [commaai/opendbc](https://github.com/commaai/opendbc) — 适用于你汽车的 Python API。 **[3,493 星标]** · 精选：[opendbc 汽车 CAN 报文定义库](https://awesomerea.org/zh/resources/opendbc/)
+- [SteamRE/SteamKit](https://github.com/SteamRE/SteamKit) — SteamKit2 是与 Valve 的 Steam 网络互操作的 .NET 库，旨在提供简单且可扩展的接口，以执行网络上的各种操作。 **[3,210 星标]** · 精选：[SteamKit Steam 网络协议库](https://awesomerea.org/zh/resources/steamkit/)
+- [ainfosec/FISSURE](https://github.com/ainfosec/FISSURE) — 面向所有人的射频与逆向工程框架。欢迎关注并点亮 ★ 表示支持！ **[2,069 星标]** · 精选：[FISSURE 射频信号分析与协议发现框架](https://awesomerea.org/zh/resources/fissure/)
+- [marin-m/pbtk](https://github.com/marin-m/pbtk) — 用于逆向工程和模糊测试基于 Protobuf 的应用的工具集。 **[1,691 星标]** · 精选：[pbtk Protobuf 逆向工具集](https://awesomerea.org/zh/resources/pbtk/)
 - [alphaSeclab/awesome-network-stuff](https://github.com/alphaSeclab/awesome-network-stuff) — 网络安全资源，涵盖代理/GFW/反向代理/隧道/VPN/Tor/I2P，以及中间人攻击、端口敲门、网络嗅探、网络分析等。目前收录 1700 多个开源工具，后续将补充文章。 **[926 星标]**
-- [netzob/netzob](https://github.com/netzob/netzob) — Netzob：协议逆向工程、建模与模糊测试 **[838 星标]**
-- [furiousMAC/continuity](https://github.com/furiousMAC/continuity) — Apple Continuity 协议逆向工程与协议解析器 **[688 星标]**
+- [netzob/netzob](https://github.com/netzob/netzob) — Netzob：协议逆向工程、建模与模糊测试 **[838 星标]** · 论文：[利用语义信息实现自动化协议逆向工程](https://awesomerea.org/zh/papers/paper-netzob/) · 精选：[Netzob 协议建模与推断框架](https://awesomerea.org/zh/resources/netzob/)
+- [furiousMAC/continuity](https://github.com/furiousMAC/continuity) — Apple Continuity 协议逆向工程与协议解析器 **[688 星标]** · 精选：[furiousMAC Apple Continuity 协议逆向与解析器](https://awesomerea.org/zh/resources/furiousmac-continuity/)
+- [fkie-cad/friTap](https://github.com/fkie-cad/friTap) — 让协议解密更轻松，简化研究人员的加密流量分析工作。 **[556 星标]** · 精选：[friTap TLS 密钥提取与流量解密工具](https://awesomerea.org/zh/resources/fritap/)
 - [brent-stone/CAN\_Reverse\_Engineering](https://github.com/brent-stone/CAN_Reverse_Engineering) — 面向控制器局域网（CAN）协议的自动化载荷逆向工程流程 **[456 星标]**
 - [0xMH/fichero-printer](https://github.com/0xMH/fichero-printer) — Fichero D11s 热敏标签打印机的 BLE 协议逆向工程与 Python 命令行工具 **[302 星标]**
 - [niloofarkheirkhah/nili](https://github.com/niloofarkheirkhah/nili) — Nili 是一个用于网络扫描、中间人操作、协议逆向工程和模糊测试的工具。 **[219 星标]**
+- [asiamina/A-Course-on-Digital-Forensics](https://github.com/asiamina/A-Course-on-Digital-Forensics) — 在 Texas Tech University 计算机科学系设计并开设的“数字取证”课程。 **[203 星标]**
 - [symbolicsoft/verifpal](https://github.com/symbolicsoft/verifpal) — 对现实世界中的密码协议进行分析。 **[133 星标]**
 - [Annyfee/spider-js-reverse](https://github.com/Annyfee/spider-js-reverse) — 精选不同网站的 JavaScript 逆向实例，提供详细讲解、知识点概括、加密算法、难度对比及跳转链接，涵盖补环境、提取 JavaScript、webpack 和瑞数等难点。 **[111 星标]**
 - [HackingLZ/maps\_scanner](https://github.com/HackingLZ/maps_scanner) — 用于 Microsoft Defender 研究的 MAPS 云扫描器及响应解析器。 **[96 星标]**
 - [leodesigner/powmr\_comm](https://github.com/leodesigner/powmr_comm) — PowMr 逆变器串行通信协议逆向工程 **[96 星标]**
-- [yapengye/NetPlier](https://github.com/yapengye/NetPlier) — NetPlier：基于消息轨迹的概率式网络协议逆向工程 **[75 星标]**
+- [yapengye/NetPlier](https://github.com/yapengye/NetPlier) — NetPlier：基于消息轨迹的概率式网络协议逆向工程 **[75 星标]** · 论文：[NetPlier：基于报文记录的概率网络协议逆向工程](https://awesomerea.org/zh/papers/paper-netplier/)
+- [seemoo-lab/aristoteles](https://github.com/seemoo-lab/aristoteles) — Apple Remote Invocation（ARI）协议的 Wireshark 解析器；该协议在 Intel 基带芯片与 iOS CommCenter 之间用于各类管理任务、短信、电话及更多功能。 **[74 星标]**
 - [HalilDeniz/ICMPWatch](https://github.com/HalilDeniz/ICMPWatch) — ICMPWatch：ICMP 数据包嗅探器 **[60 星标]**
 - [ringverse/protocol](https://github.com/ringverse/protocol) — 智能戒指协议逆向工程 **[56 星标]**
 - [bitpeach/Protocol-Informatics](https://github.com/bitpeach/Protocol-Informatics) — Protocol Informatics 项目旨在基于帧或数据包分析自动进行网络协议逆向工程。项目简称 PI，引入了局部和全局序列比对算法，在基于网络轨迹的协议逆向工程领域颇有名气。我不是 PI 项目的作者，但此前保存该项目的网站已经消失，因此我在 GitHub 上开设一个议题，以保存 PI 项目的代码。 **[53 星标]**
@@ -52,6 +58,7 @@
 - [tatikoma/mitm-research](https://github.com/tatikoma/mitm-research) — 对 WhatsApp 协议的安全研究，涵盖加密握手分析、逆向工程和受控的本地中间人实验。 **[9 星标]**
 - [kendojitsu/Kendo](https://github.com/kendojitsu/Kendo) — Kendo：强大的网络抓包和协议分析软件。🚀 使用 MFC 和 WinPcap 进行实时与离线分析，提供全面的协议解析器、显示过滤器、高效的数据包管理和便捷的快捷键交互，轻松探索网络流量。 **[8 星标]**
 - [karlvbiron/MATRIX](https://github.com/karlvbiron/MATRIX) — Modbus Attack Tool for Remote Industrial eXploitation（M.A.T.R.I.X）是一款面向 Modbus TCP 协议实现的综合安全测试工具。 **[6 星标]**
+- [Liruitao1993/South\_Network\_Protocol\_Analysis\_Tool](https://github.com/Liruitao1993/South_Network_Protocol_Analysis_Tool) — 电力通信协议解析 / 组帧 / 校验 / 收发一站式桌面工具：支持南网、国网、DL/T 698.45、DLT645-2007、DLMS/HDLC、新一代载波、HDC 1.0 等 15 种协议，覆盖单帧解析、批量分析、串口与蓝牙收发、虚拟表、通信时序图、测试方案与 Lua 脚本。Windows 免安装。 **[6 星标]**
 - [mahumadad/ubox-p4p](https://github.com/mahumadad/ubox-p4p) — 对 UBox/UBIA 智能摄像机 P4P 协议的完整逆向工程，涵盖自定义分组密码、KCP + RDT 视频、类似 ICE 的 NAT 穿透和独立 Python 客户端。该协议为 TUTK IOTC 的改名版本，提供端到端文档。 **[6 星标]**
 - [bsu-tool/bsu-tool](https://github.com/bsu-tool/bsu-tool) — 开源 AI 辅助 USB 协议分析工具和 MCP 服务器。 **[5 星标]**
 - [eogod/wireprism](https://github.com/eogod/wireprism) — 面向实时流量和 PCAP 的高吞吐网络流检查工具。使用 Rust 构建，提供流重组、协议解析、变换、模式匹配和实时 Web 界面。 **[5 星标]**

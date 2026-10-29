@@ -149,7 +149,8 @@ class ReviewerDataSelectionTest(unittest.TestCase):
                                           {'commit_id': SHA, 'event': 'COMMENT', 'body': github.body()})])
 
     def test_current_data_raises_no_finding(self):
-        names = sorted(review_pr.REVIEW_FILES)
+        # Held public selections may legitimately have no locale file yet.
+        names = sorted(name for name in review_pr.REVIEW_FILES if (ROOT / name).is_file())
         github = FakeGitHub([entry(name, added(*base(name).splitlines())) for name in names],
                             {name: base(name) for name in names})
         status, output = run_review(github)
@@ -255,12 +256,12 @@ class ReviewerPrivacyTest(unittest.TestCase):
 
 class ReviewerOmittedPatchTest(unittest.TestCase):
     def test_patch_less_text_files_are_fetched_and_checked(self):
-        github = FakeGitHub([entry('docs/large.md'), entry('site/translations.zh-CN.json'), entry('docs/clean.md', status='added')],
+        github = FakeGitHub([entry('docs/large.md'), entry('docs/data.json'), entry('docs/clean.md', status='added')],
                             {'docs/large.md': 'Intro\n' + PERSONAL_PATHS['Windows profile'],
-                             'site/translations.zh-CN.json': '{"k": "' + ESCAPED_JSON['unicode-escaped token'] + '"}',
+                             'docs/data.json': '{"k": "' + ESCAPED_JSON['unicode-escaped token'] + '"}',
                              'docs/clean.md': 'Plain text.'})
         self.assertEqual(run_review(github)[0], 1)
-        self.assertEqual(github.fetched(), ['docs/large.md', 'site/translations.zh-CN.json', 'docs/clean.md'])
+        self.assertEqual(github.fetched(), ['docs/large.md', 'docs/data.json', 'docs/clean.md'])
         body = github.body()
         self.assertEqual(body.count('GitHub omitted this diff, and the file text at this commit contains'), 2)
         self.assertNotIn('Not inspected', body)

@@ -1,5 +1,7 @@
 """Reject inventory inflation, unsupported review claims and unsafe evidence/mappings."""
+import contextlib
 import copy
+import io
 import json
 from pathlib import Path
 import sys
@@ -9,6 +11,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from case_coverage import coverage_counts, read_case_coverage, validate_case_coverage
+import build_case_coverage
 from build_case_coverage import linked_repository_count, render
 from validate import public_https_error
 import review_pr
@@ -147,6 +150,24 @@ class CaseCoverageTests(unittest.TestCase):
             self.assertIn('`one:first`, `one:alias` → `one:first`', summary)
             self.assertNotIn('decomp.wtf', summary)
 
+    def test_primary_review_table_names_a_record_only_for_full_matches(self):
+        document = fixture()
+        entry = document['entries'][2]
+        entry.update({'state': 'insufficient-evidence', 'review_level': 'primary-source-reviewed', 'title': 'Broader claim'})
+        entry['catalog_matches'][0]['scope'] = 'partial'
+        document['counts'] = coverage_counts(document['entries'])
+        self.assertEqual(self.errors(document), [])
+        resources = {row['id']: dict(row, name='Example record') for row in RESOURCES}
+        for zh in (False, True):
+            summary = render(document, resources, {}, zh)
+            self.assertIn('| Broader claim |', summary)
+            self.assertNotIn('| Example record |', summary)
+        entry.update({'state': 'already-curated'})
+        entry['catalog_matches'][0]['scope'] = 'full'
+        document['counts'] = coverage_counts(document['entries'])
+        self.assertEqual(self.errors(document), [])
+        self.assertIn('| Example record |', render(document, resources, {}, False))
+
     def test_partial_or_unreviewed_match_cannot_claim_full_coverage(self):
         for field, value in [('scope', 'partial'), ('scope', 'related'), ('id', 'missing'), ('kind', 'tool')]:
             document = fixture(); document['entries'][2]['catalog_matches'][0][field] = value
@@ -199,6 +220,76 @@ class CaseCoverageTests(unittest.TestCase):
             elif mutation == 'raw-body': document['entries'][0]['readme_body'] = 'Do not publish full source.'
             else: document['entries'][0]['state'] = []
             self.assertTrue(self.errors(document))
+
+    def run_builder(self, root, *arguments):
+        with patch.object(build_case_coverage, 'ROOT', root), \
+                patch.object(sys, 'argv', ['build_case_coverage.py', *arguments]), \
+                contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()) as stderr:
+            return build_case_coverage.main(), stderr.getvalue()
+
+    def builder_root(self, directory, document):
+        root = Path(directory)
+        for folder in ('data', 'docs', 'site'):
+            (root / folder).mkdir()
+        for filename, value in (('data/rea-resources.json', RESOURCES), ('data/tool-resources.json', []),
+                                ('data/papers.json', []), ('site/translations.zh-CN.json', {})):
+            (root / filename).write_text(json.dumps(value), encoding='utf-8')
+        (root / 'data/case-coverage.json').write_text(json.dumps(document, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+        return root
+
+    def snapshot(self, root):
+        return {path: (root / path).read_bytes() if (root / path).exists() else None
+                for path in ('data/case-coverage.json', 'docs/case-coverage.md', 'docs/case-coverage.zh-CN.md')}
+
+    def test_builder_rewrites_stale_counts_once_and_check_stays_read_only(self):
+        document = fixture()
+        for entry in document['entries'][:2]:
+            entry['state'] = 'insufficient-evidence'
+        with tempfile.TemporaryDirectory() as directory:
+            root = self.builder_root(directory, document)
+            before = self.snapshot(root)
+            status, message = self.run_builder(root, '--check')
+            self.assertEqual(status, 1)
+            self.assertIn('case-coverage.json', message)
+            self.assertEqual(self.snapshot(root), before)
+            self.assertEqual(self.run_builder(root)[0], 0)
+            written = read_case_coverage(root)
+            self.assertEqual(written['counts'], coverage_counts(document['entries']))
+            self.assertEqual(written['counts']['units_by_state'], {'already-curated': 1, 'insufficient-evidence': 1})
+            self.assertEqual({key: value for key, value in written.items() if key != 'counts'},
+                             {key: value for key, value in document.items() if key != 'counts'})
+            self.assertEqual(self.errors(written), [])
+            once = self.snapshot(root)
+            self.assertEqual(self.run_builder(root)[0], 0)
+            self.assertEqual(self.snapshot(root), once)
+            self.assertEqual(self.run_builder(root, '--check'), (0, ''))
+            path = root / 'docs/case-coverage.md'
+            path.write_text(path.read_text(encoding='utf-8') + 'edited\n', encoding='utf-8')
+            edited = self.snapshot(root)
+            status, message = self.run_builder(root, '--check')
+            self.assertEqual((status, self.snapshot(root)), (1, edited))
+            self.assertIn('case-coverage.md', message)
+            self.assertNotIn('case-coverage.json', message)
+
+    def test_builder_reports_boolean_counts_and_never_writes_invalid_entries(self):
+        document = fixture(); document['counts']['distinct_resource_ids'] = True
+        with tempfile.TemporaryDirectory() as directory:
+            root = self.builder_root(directory, document)
+            self.assertEqual(self.run_builder(root)[0], 0)
+            self.assertIs(type(read_case_coverage(root)['counts']['distinct_resource_ids']), int)
+        document = fixture(); document['entries'][0]['state'] = 'unknown'
+        with tempfile.TemporaryDirectory() as directory:
+            root = self.builder_root(directory, document)
+            before = self.snapshot(root)
+            status, message = self.run_builder(root)
+            self.assertEqual((status, self.snapshot(root)), (1, before))
+            self.assertIn('unsupported state', message)
+        document = fixture(); document['entries'][0].pop('unit_id')
+        with tempfile.TemporaryDirectory() as directory:
+            root = self.builder_root(directory, document)
+            before = self.snapshot(root)
+            self.assertEqual(self.run_builder(root)[0], 1)
+            self.assertEqual(self.snapshot(root), before)
 
     def test_strict_loader_rejects_duplicate_keys(self):
         with tempfile.TemporaryDirectory() as directory:

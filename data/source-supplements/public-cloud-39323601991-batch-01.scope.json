@@ -1,0 +1,236 @@
+{
+  "scan-1421991239": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/LieveAnastasiou84205/MobileRE-Skill/blob/368e4d3480ae2b8153ce1d6a618ff193e275fe1f/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1422086903": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/Maja152/rev-skills/blob/4c878e474885ba12dd5a812804739b0e03a42e58/README.md",
+    "readme_sha256": "fbce34be0aa0108b202f9485039352ca560f2aeee0e79a28a81e4c39fa7d737f",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained dslsdzc/rev-skills (scan-1337420546). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 dslsdzc/rev-skills（scan-1337420546）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1422504573": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/Nathanh65/MobileRE-Skill/blob/e4832aca7daf4505ddd948cf585254e0148b0bb5/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1422521970": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/Bastiaan5203/rev-skills/blob/02324191e573e4dad7efd7374492f888f02ee5dd/README.md",
+    "readme_sha256": "fbce34be0aa0108b202f9485039352ca560f2aeee0e79a28a81e4c39fa7d737f",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained dslsdzc/rev-skills (scan-1337420546). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 dslsdzc/rev-skills（scan-1337420546）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1422525301": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/ginoue26398/rev-skills/blob/a1ee1319028f4a77ee7df1362051a0c54961a168/README.md",
+    "readme_sha256": "fbce34be0aa0108b202f9485039352ca560f2aeee0e79a28a81e4c39fa7d737f",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained dslsdzc/rev-skills (scan-1337420546). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 dslsdzc/rev-skills（scan-1337420546）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1422980767": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/Nora41513/MobileRE-Skill/blob/7b8f6954cb25d2f4f1be51ae418199e1480e5296/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1423049263": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/Jorge4748/MobileRE-Skill/blob/b2e282bcc4783a180f7511349818724a5c70ddd3/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1423049365": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/Morales453/MobileRE-Skill/blob/f7d178ec265f85fd738e34528eb5ebe6196667d7/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1423057167": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/hunter093/rev-skills/blob/aa87d274f4c3d8f2be921e4af0249d575785c367/README.md",
+    "readme_sha256": "fbce34be0aa0108b202f9485039352ca560f2aeee0e79a28a81e4c39fa7d737f",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained dslsdzc/rev-skills (scan-1337420546). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 dslsdzc/rev-skills（scan-1337420546）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1423153796": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/Lee6882/rev-skills/blob/19ffe0923d262e48de2c1eb7d5fa8ed5395a34d3/README.md",
+    "readme_sha256": "fbce34be0aa0108b202f9485039352ca560f2aeee0e79a28a81e4c39fa7d737f",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained dslsdzc/rev-skills (scan-1337420546). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 dslsdzc/rev-skills（scan-1337420546）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1423158461": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/aBrito98/MobileRE-Skill/blob/d18504b3862865820dddc2a1f74a6e5c1571b96e/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1423171903": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/DmitryKarahan/MobileRE-Skill/blob/7986430cb754a895a94fde3ac47473b7298c6a03/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1423178064": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/acollins1276/MobileRE-Skill/blob/2b2d89e78e8c347191c3833fe64768bf1dff4624/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1423192969": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/ShotaroSanders49/MobileRE-Skill/blob/85b49c139e78c7be2f92c6d9f1442b3c4fe5a193/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1423746310": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/fkrylov351/MobileRE-Skill/blob/3db376f0480034dea089d429d7998d1b5d963e40/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1423775660": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/pmczbexxpp/MobileRE-Skill/blob/0d240575d82d987133be3e8fcc075514895f0346/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1423779609": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/sofiagupta89/MobileRE-Skill/blob/404b3a02220976ab7c9cc87d0db61353f2d0e39a/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1424001947": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/rebeccamattsson13565/MobileRE-Skill/blob/bf77c1411a3d17b377ae2b1f19cace2c19fa6860/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1424009703": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/cReeves85779/rev-skills/blob/1650234ea5abe3ad23a741214e72ba573dd20dbb/README.md",
+    "readme_sha256": "fbce34be0aa0108b202f9485039352ca560f2aeee0e79a28a81e4c39fa7d737f",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained dslsdzc/rev-skills (scan-1337420546). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 dslsdzc/rev-skills（scan-1337420546）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1424079077": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/Evans0081/rev-skills/blob/348912fe2d6a784282162047100da7b16f532849/README.md",
+    "readme_sha256": "fbce34be0aa0108b202f9485039352ca560f2aeee0e79a28a81e4c39fa7d737f",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained dslsdzc/rev-skills (scan-1337420546). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 dslsdzc/rev-skills（scan-1337420546）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1424082162": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/kleone699/MobileRE-Skill/blob/5bcfbd8b0b2663606e0d7441a75ed086c9812d2e/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1424196122": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/Egorov1365/MobileRE-Skill/blob/1bba287aec6dd3e867f2c3c04d58dd6a5ed0ff3a/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1424203573": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/Bakker011/rev-skills/blob/f19a14513a8cfb52f725f47260c57a1f936b3f3c/README.md",
+    "readme_sha256": "fbce34be0aa0108b202f9485039352ca560f2aeee0e79a28a81e4c39fa7d737f",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained dslsdzc/rev-skills (scan-1337420546). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 dslsdzc/rev-skills（scan-1337420546）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1424209275": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/SomchaiZhang5005/MobileRE-Skill/blob/7117dee0147d8975792735a1f5058cb2a7262306/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1424211873": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/Omarc91002/MobileRE-Skill/blob/704b0050eddf99fc703d12eab66909a9032db40b/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  },
+  "scan-1424213524": {
+    "decision": "exclude",
+    "evidence_url": "https://github.com/Maja6726/MobileRE-Skill/blob/98ff285f9f316d36004738287a9091b2ac711899/README.md",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The scanned README bytes match the retained index-login/MobileRE-Skill (scan-1255951226). Preserve this capture in the full data and omit the repeated discovery entry.",
+    "reason_zh": "所扫描的 README 字节与保留条目 index-login/MobileRE-Skill（scan-1255951226）完全相同；完整数据保留此采集记录，浏览结果省略重复发现条目。",
+    "reviewed_at": "2026-10-20T09:57:30.269664+00:00"
+  }
+}

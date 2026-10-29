@@ -2,7 +2,7 @@
 
 [简体中文](case-coverage.zh-CN.md) · [Machine-readable ledger](../data/case-coverage.json)
 
-Reviewed 2026-10-18 (UTC). **591 collection occurrences** become **589 inventory units** after 2 documented duplicate merges. These are reports, tools, papers, discussions and ideas—not a count of unique verified projects.
+Reviewed 2026-10-20 (UTC). **591 collection occurrences** become **589 inventory units** after 2 documented duplicate merges. These are reports, tools, papers, discussions and ideas—not a count of unique verified projects.
 
 Project identity resolution is incomplete, so the unique-project count is `null`, not zero. English/Chinese copies of one upstream entry are counted once. Separate reports about one project remain separate units unless an explicit alias decision joins them.
 
@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 65 | 64 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 460 | 459 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 66 | 66 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Already curated (`already-curated`) | 214 | 212 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 34 | 34 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 343 | 343 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-72 occurrences have catalog links. They reference 63 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+232 occurrences have catalog links. They reference 220 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 76 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 498 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -37,93 +37,549 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Case | State | Primary evidence |
 | --- | --- | --- |
 | Universal Modder | Already curated | [Source](https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/README.md) |
+| Firefighter: a decompiled DOS game ported to Rust | Already curated | [Source](https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/history.adoc) |
 | PlxNative: reconstructing a native webOS media-client interface | Already curated | [Source](https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/README.md) |
 | Agent decompilation: a byte-matching retrospective | Already curated | [Source](https://momo5502.com/posts/2026-10-09-game-decompilation/) |
 | open-appleremote: Siri Remote protocol reconstruction | Already curated | [Source](https://github.com/a-funk/open-appleremote/blob/1e6e190c3c29a3d2d8cad2c38c09f8953e9633e3/README.md) |
+| Tuya RGB lights from a Mac | Insufficient evidence | [Source](https://x.com/luchoalfonso_/status/2108200739495362718) |
 | BaoCut Slides: adapting an interactive web editor | Already curated | [Source](https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/docs/design/slides/slides-design.md) |
+| Claude Code: inspecting a compressed codebase | Insufficient evidence | [Source](https://x.com/servasyy_ai/status/2108846931183378537) |
 | Urban Terror in the browser | Insufficient evidence | [Source](https://x.com/levelsio/status/2106150888289009666) |
+| Binary-library rewrite | Insufficient evidence | [Source](https://x.com/leeoxiang/status/2109159806183538768) |
 | Flutter build identification | Already curated | [Source](https://github.com/morluto/rea/pull/1582) |
-| TH08: exact-source reconstruction and separately tested ports | Pending | [Source](https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/README.md) |
+| MIPS ELF analysis through Ghidra | Already curated | [Source](https://github.com/morluto/rea/issues/1620) |
+| PSP static ELF analysis through Ghidra | Already curated | [Source](https://github.com/morluto/rea/issues/1330) |
+| Touhou reconstructions: an agent-driven method across three games | Already curated | [Source](https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/website/evidence/touhou-reconstruction-method.md) |
 | Dinosaur runner: recovering one acceleration rule | Already curated | [Source](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md) |
-| PhotoCraft: editor workflow reconstruction and PSD round-trip boundaries | Pending | [Source](https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/README.md) |
+| Smart toilet from the desktop | Insufficient evidence | [Source](https://x.com/thinkszyg/status/2109309251533570509) |
+| flipper-telink: replacement firmware for Tuya Zigbee remotes | Already curated | [Source](https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/custom_fw/ss6400zb/README.md) |
+| Website rebuild: delivery report | Insufficient evidence | [Source](https://x.com/goan999999/status/2109080288823562734) |
+| TradingView: reconstruction workflow claim | Insufficient evidence | [Source](https://x.com/RohOnChain/status/2109347169316839434) |
+| WHOOP Android app investigation | Insufficient evidence | [Source](https://x.com/uwwgo/status/2109217632758976755) |
+| ArtCraft: not proven Adobe or Office reverse engineering | Insufficient evidence | [Source](https://getartcraft.com/apps) |
+| Obsidian ASAR: large-package analysis | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/746) |
 | Unity/Valheim assemblies | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/1801) |
 | Large multidex Android APK | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/893) |
-| .NET NativeAOT recovery request | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/744) |
+| NativeAOT metadata recovery with Ghidra | Already curated | [Source](https://github.com/morluto/rea/issues/744) |
 | Windows Calculator: reconstructing percentage rules | Already curated | [Source](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md) |
 | Android ApiDemos: tracing Java methods from an APK | Insufficient evidence | [Source](https://github.com/morluto/rea/pull/738) |
 | Static HarmonyOS package inventory | Already curated | [Source](https://github.com/morluto/rea/pull/1447) |
 | Firmware analysis | Already curated | [Source](https://github.com/morluto/rea/pull/741) |
+| macOS Preview: rebuilds with and without REA and the limits of self-tests | Insufficient evidence | [Source](https://x.com/maheshboda006/status/2109154423712977359) |
+| Codex browser annotations: finding the interaction bridge | Insufficient evidence | [Source](https://x.com/dotey/status/2109417222724600172) |
+| BaoCut Design: porting reconstructed canvas and design-system editors | Already curated | [Source](https://github.com/JimLiu/baocut/blob/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-runtime/README.md) |
+| Bluetooth gamepad on Windows | Insufficient evidence | [Source](https://x.com/fexisnpc/status/2103865671608307838) |
 | Browserbase plugin: re-hosting Claude in Chrome’s browser bridge | Already curated | [Source](https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/forwarding-server.js) |
 | pi-computer-use: desktop interaction for other models | Insufficient evidence | [Source](https://github.com/injaneity/pi-computer-use/blob/67e9e2f77643f84605b738a3198048a88e92190e/README.md) |
 | Background Computer Use in Swift | Insufficient evidence | [Source](https://github.com/actuallyepic/background-computer-use/blob/52116acfe0f2f57174f5e0166881abe944cb6eeb/README.md) |
+| GarageBand format for automated composition | Insufficient evidence | [Source](https://x.com/anshuc/status/2106131543752122774) |
+| Boba Fett in Red Dead Redemption 2 | Insufficient evidence | [Source](https://x.com/ChrisGPT/status/2106925689190354989) |
+| Apple Notes migration to Grape | Insufficient evidence | [Source](https://x.com/ozgrozer/status/2035124755854979272) |
 | GameCube/Wii PowerPC support request | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/1741) |
+| Gamepad settings after Bluetooth analysis | Insufficient evidence | [Source](https://x.com/corndogjpn2/status/2109289076243525916) |
+| ASUS ACPI and Linux GPU support | Insufficient evidence | [Source](https://x.com/200Tabs1Brain/status/2108983700776186112) |
+| Poker table organizer | Insufficient evidence | [Source](https://x.com/lipinhobeats/status/2109435654962655526) |
+| Aerobiz 2: REA and Kimi decompilation | Insufficient evidence | [Source](https://x.com/TSFisher24nrex/status/2109452544913326086) |
+| Codex computer-use interoperability research | Insufficient evidence | [Source](https://x.com/thisishars/status/2109461719789735948) |
+| Pump.fun reconstruction report | Insufficient evidence | [Source](https://x.com/0rdlibrary/status/2109464346103263523) |
+| Super Mario Sunshine: a native PC port from an AI-assisted decompilation | Already curated | [Source](https://github.com/chasem-dev/sms-pc-port/blob/a2ff4eef099b22b2af487d1b5e3ac09ffe667d31/README.md) |
+| Gaoding-inspired cover workbench | Insufficient evidence | [Source](https://x.com/Astronaut_1216/status/2109487167726903560) |
+| Gaming mouse settings on macOS | Insufficient evidence | [Source](https://x.com/MovingCharts11/status/2109491501013377526) |
+| Hermes Agent: Hark-assisted harness reconstruction | Insufficient evidence | [Source](https://x.com/pablothethinker/status/2109509759044854087) |
+| Apple Preview: adding AI directly to a compiled app | Insufficient evidence | [Source](https://github.com/Pasta-Lab/edit-my-app/blob/7f469c1f179e2552cd3c5b46ab29b21aeadc838f/README.md) |
+| PS5 security: reported AI-assisted investigation | Insufficient evidence | [Source](https://x.com/0x0SojalSec/status/2109517461921902780) |
+| Air-conditioner protocol for AR gesture control | Insufficient evidence | [Source](https://x.com/justhalfbit/status/2109524402765488499) |
+| wine-uwp: running packaged Windows Store apps on a patched Wine | Already curated | [Source](https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/README.md) |
+| Redmi TV: browser inspection for a dashboard | Insufficient evidence | [Source](https://x.com/zxlie_fehelper/status/2109533072370917846) |
+| CleanMyMac: reported native-app prototype | Insufficient evidence | [Source](https://x.com/xiaoshan0413/status/2109540598633877515) |
+| Nexalytics: testing REA on the author's own app | Insufficient evidence | [Source](https://x.com/wikwanat/status/2109542201927647588) |
+| MetaTrader: a reported signal-analysis use case | Insufficient evidence | [Source](https://x.com/TheKing_Rapture/status/2109547879199056181) |
+| Red Alert 2: an engine rewrite for reinforcement learning | Insufficient evidence | [Source](https://x.com/Chen1090874226/status/2109548112281055674) |
+| Business software: an ongoing agent-assisted rebuild | Insufficient evidence | [Source](https://x.com/iamsupersocks/status/2109553690595979371) |
+| CapCut transitions: a module-reconstruction lead | Insufficient evidence | [Source](https://x.com/fireandstart/status/2109554617004466397) |
 | CF632BLE: a local client from scale-protocol research | Already curated | [Source](https://github.com/guyru/cf632ble/blob/c029ef5cfefbd323ffe2a194a75db5cc47aa6d5c/README.md) |
+| Android app: inspecting root checks and certificate pinning | Insufficient evidence | [Source](https://x.com/IanJKerins/status/2109559519584088093) |
+| Kindle: Android firmware for WeRead | Insufficient evidence | [Source](https://x.com/hbyxabc/status/2109583911483519202) |
+| Proxy client: restoring a Clash subscription bridge | Insufficient evidence | [Source](https://x.com/web3_fising/status/2109601382273880327) |
+| Controlled JS/.NET samples: Codex with and without REA | Insufficient evidence | [Source](https://x.com/0xlangeai/status/2109603485914206498) |
+| The Incredible Machine: a Claude-assisted browser rebuild | Insufficient evidence | [Source](https://x.com/staskulesh/status/2109605915175596275) |
+| DLSS on AMD: reported AI-assisted compute-shader reconstruction | Pending | [Source](https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/README.md) |
 | Netflix/Prime: a reported unified streaming interface | Insufficient evidence | [Source](https://x.com/HigbeyMyrta/status/2109596534350524664) |
 | fowlbrowser: an existing-session browser bridge for agents | Insufficient evidence | [Source](https://github.com/argofowl/FowlBrowser/blob/18f7519fa27289885c95b67eff714401ffff51f0/README.md) |
 | OpenSetter: rebuilding comment-to-DM flows with an AI setter | Insufficient evidence | [Source](https://github.com/xbirimensah/opensetter/blob/40dc5ae2fde0b3930e6b59132eaf061edb0da0a8/README.md) |
+| Street Fighter III: AI refactoring of decompiled C | Insufficient evidence | [Source](https://x.com/renmu2017/status/2109581250424123651) |
 | zee-rp: reconstructing supported Axure RP 11 document operations | Already curated | [Source](https://github.com/LilZeeCN/zee-rp/blob/473761e6a08f051e1666944db690332ef27a6038/README.md) |
+| CapCut: a REA/Claude video-editor rebuild | Insufficient evidence | [Source](https://x.com/Mehal_Kay/status/2109665456735076494) |
+| ClearSpace: a CleanMyMac-inspired native cleanup app | Insufficient evidence | [Source](https://x.com/iceman_shen/status/2109665812017746132) |
+| Home devices: a reported desktop controller | Insufficient evidence | [Source](https://x.com/Jumpan1111/status/2109664718499762606) |
+| Discontinued accounting app: blocked by encryption | Insufficient evidence | [Source](https://x.com/liguozzz/status/2109671680977367085) |
+| REA analysis: a binary prompt-injection test idea | Insufficient evidence | [Source](https://x.com/riyoway/status/2109670989319868863) |
 | Classic shooters: reported AI-assisted browser ports | Insufficient evidence | [Source](https://x.com/i/status/2109639780577190171) |
+| Obsidian: a GPT-selected reconstruction attempt | Insufficient evidence | [Source](https://x.com/tokyo10086/status/2109676911500951649) |
+| Web Flow: a REA-assisted REST specification report | Insufficient evidence | [Source](https://x.com/GeekCatX/status/2109689282336346575) |
 | Nanolathe: a documented Total Annihilation engine reimplementation | Already curated | [Source](https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/README.md) |
+| Android priv-app: GPT-assisted permission inspection | Insufficient evidence | [Source](https://x.com/sisiisthinking/status/2109711257779765741) |
 | cooler-lcd: a Thermalright display protocol implementation | Already curated | [Source](https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/README.md) |
-| AYN Odin 2 Portal: Codex-assisted native Omarchy bring-up | Pending | [Source](https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/README.md) |
+| Camera firmware: a Codex-driven VM boot investigation | Insufficient evidence | [Source](https://x.com/elliehuxtable/status/2109715839117316150) |
+| Helm Chart API v2: an AI-assisted specification draft | Pending | [Source](https://github.com/mattfarina/specs/blob/7d0395726d712e654a9aaf167603e82007811517/charts/v2.md) |
+| Mobile game interactions: Codex and REA evidence mapping | Insufficient evidence | [Source](https://x.com/Steven_Soto/status/2109721540245782843) |
+| Homatics ATV14: a reported Dolby Vision firmware fix | Insufficient evidence | [Source](https://x.com/qwerty__cs/status/2109722857207115879) |
+| Personal website: a REA-assisted design reconstruction | Insufficient evidence | [Source](https://x.com/khaled_cli/status/2109733299115475393) |
+| SaaS feature subsets: Codex observation and Replit rebuilding | Insufficient evidence | [Source](https://x.com/Andrew_Blumson/status/2109733493202981247) |
+| Star Fox and Sonic CD: reported AI-assisted native ports | Pending | [Source](https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/README.md) |
+| AYN Odin 2 Portal: Codex-assisted native Omarchy bring-up | Insufficient evidence | [Source](https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/README.md) |
 | Virtual Desktop Streamer: rehosting the platform layer on Linux | Already curated | [Source](https://github.com/cudanexus/vd-streamer-linux/blob/e65c302f13639f044742bdc4951ab1a424c1c929/README.md) |
+| LG TV: a reported native Claude Code terminal | Insufficient evidence | [Source](https://x.com/ceoico/status/2109774258738176000) |
+| WeChat local chats: a reported Codex-assisted decryption task | Insufficient evidence | [Source](https://x.com/trendtranslate1/status/2109779123778490858) |
+| Sixteen note files: a reported REA/no-REA decoder comparison | Insufficient evidence | [Source](https://x.com/operatranscend/status/2109783203892597103) |
+| Android touchscreen photo frame: Codex-assisted device research | Insufficient evidence | [Source](https://x.com/LeonardVolner/status/2109785163475591510) |
+| LightBurn: a reported personal laser-control rebuild | Insufficient evidence | [Source](https://x.com/LIQUID8RPF/status/2109789864891940904) |
+| Echo Show 5 Gen 2: a reported Hermes intercom and camera system | Insufficient evidence | [Source](https://x.com/Kurcide/status/2109791974014496983) |
+| Elgato HDR: a userspace capture path for the Elgato 4K X’s 10-bit mode | Already curated | [Source](https://x.com/talkaboutdesign/status/2109795113807630735) |
+| Gardena mower: reported Codex motor control and firmware work | Insufficient evidence | [Source](https://x.com/BderKhan/status/2109840164004737341) |
+| MarkText: a REA-assisted HTML export rebuild | Insufficient evidence | [Source](https://x.com/KKetemepi/status/2109839329933824026) |
+| LGwebOS-menubar: a native macOS remote for LG webOS TVs | Already curated | [Source](https://x.com/greco_dev/status/2109842197654692349) |
+| Screen Studio: an author-reported REA study of auto-zoom rules | Already curated | [Source](https://x.com/HanZhang415188/status/2109843188341207283) |
+| Armed and Dangerous: exploring remastering approaches with Ghidra and AI | Insufficient evidence | [Source](https://x.com/NikhilVerma/status/2109911827203358998) |
 | Open Claude UI: REA-informed interface reference components | Already curated | [Source](https://github.com/Caho1/open-claude-ui/blob/ddf3aea1711db62fd6d24343bbab500a5ae69f64/README.md) |
+| Fort Apocalypse: a reported Codex/Ghidra Android port | Insufficient evidence | [Source](https://x.com/JesperAdolf/status/2109865837477716324) |
+| Minecraft × Plants vs. Zombies: a reported playable REA-assisted mashup | Insufficient evidence | [Source](https://x.com/Relph35432/status/2109912103813599539) |
+| Three Kingdoms XIV: a reported trainer-to-MCP project | Insufficient evidence | [Source](https://x.com/0xMcDonald/status/2109913567428592046) |
+| Virtua Fighter 2.1 / 3 TB: AI-assisted decompilation in progress | Pending | [Source](https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/README.md) |
+| Typeless: a reported local voice-input alternative built with REA | Insufficient evidence | [Source](https://x.com/TuyetloanP81840/status/2109971905336037671) |
+| Supermodel: initial Real3D Pro-1000 image-generator emulation | Already curated | [Source](https://x.com/BartronPolygon/status/2110028302215999825) |
 | Eleven | Already curated | [Source](https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/README.md) |
+| 48-million-row database: a second-hand REA query-optimization report | Insufficient evidence | [Source](https://x.com/mika_systems/status/2110037357164441796) |
 | GTM tool: a reported REA-assisted lead and email workflow | Insufficient evidence | [Source](https://github.com/tashfeenahmed/kinetic/blob/6ccbff87d190aea8e11be993e25783f099b55a93/README.md) |
 | TCLimate: reconstructing selected TCL Home cloud controls | Already curated | [Source](https://github.com/umarz317/TCLimate/blob/2a33c2013dbf3f297238131ca9eb6e287b2beb67/Docs/Investigation.md) |
 | Tea-export website: reported REA-assisted rebuild | Insufficient evidence | [Source](https://x.com/i/status/2110010062597230838) |
+| iTerm: Arabic text rendering informed by REA | Insufficient evidence | [Source](https://x.com/khaled_cli/status/2110091122517410164) |
+| Bloomberg-style research terminal: a reported REA/Claude build | Insufficient evidence | [Source](https://x.com/ludoonchart/status/2110082824371908790) |
+| Projector IR remote: inferring and testing a missing focus command | Insufficient evidence | [Source](https://x.com/notyroon/status/2110090047579926826) |
+| Closed-source coding agent: reverse-engineered collaboration logic and a pi plugin | Insufficient evidence | [Source](https://x.com/aloosekite/status/2110151664846139425) |
+| Smart pen: Codex-assisted decompilation and integration | Insufficient evidence | [Source](https://x.com/xhfloz/status/2110108201043775589) |
+| ChatGPT app: a reported REA-assisted gradient-background modification | Insufficient evidence | [Source](https://x.com/LinearUncle/status/2110207568090198474) |
+| Dragon Ball Budokai: an unverified AI-assisted browser-port report | Insufficient evidence | [Source](https://x.com/0x0SojalSec/status/2110230860717060262) |
 | Ledger Reborn: an independent accounting app informed by QuickBooks study | Already curated | [Source](https://github.com/lxistired/ledger-reborn/blob/d7f6b8a1f4ad6c4ae8b10100d1c93cf15940c21d/docs/CASE_STUDY.md) |
+| Visor: an independent Ray-Ban Meta glasses client | Already curated | [Source](https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/README.md) |
+| Hongguo Short Drama: REA-assisted reverse engineering to remove ads and overlays | Insufficient evidence | [Source](https://x.com/web3_goto/status/2110320554049941661) |
+| Profound: a reported REA-assisted SaaS reconstruction | Insufficient evidence | [Source](https://github.com/yaojingang/profound-clone/blob/93e87c901b9c51f444b243110dd643e066aa6e22/README.md) |
+| Codex Desktop: author reports trying REA to study its differences from CLI | Insufficient evidence | [Source](https://x.com/ZhenHan261538/status/2110377021402661320) |
+| Mac desktop app: REA-assisted analysis and reference materials | Insufficient evidence | [Source](https://x.com/fantexi997/status/2110382256829386935) |
+| Apple Weather: reported REA-assisted rebuild | Insufficient evidence | [Source](https://x.com/jasonjias/status/2110459951365980334) |
+| Friday Night Funkin’: a Claude-assisted gameplay variant | Insufficient evidence | [Source](https://x.com/i/status/2110407024731439392) |
+| Linux cal: tracing the 1752 calendar switch | Insufficient evidence | [Source](https://x.com/fahdmirza/status/2110453427209916612) |
+| TicTacToe-AI: a bounded REA-fork reconstruction of one game method | Already curated | [Source](https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/benchmarks/native-windows-ports/reports/targets/tictactoe.md) |
+| Home-device protocols connected to a local LLM | Insufficient evidence | [Source](https://x.com/bitfish/status/2110539823572463953) |
 | GAMEKB-K17: reconstructing a macropad configuration protocol | Already curated | [Source](https://github.com/dvdarkin/gamekb-k17/blob/e61f444793857c0e10a31692674335ee4ee9c89e/README.md) |
+| Kirby: a reported REA investigation in progress | Insufficient evidence | [Source](https://x.com/oh_Roach/status/2110553648787013950) |
+| REA in Claude Code: an isolated static-analysis A/B trial | Already curated | [Source](https://zenn.dev/keigoly/articles/8738d8d241b5a1) |
+| REA 6.4.0: Windows .NET and Electron sample tests | Insufficient evidence | [Source](https://x.com/i/status/2110563764886266167) |
+| CPU kernels: Claude Code orchestrates Astra with REA | Insufficient evidence | [Source](https://x.com/nkeilar/status/2110566660113625486) |
+| A saved website investigated with WorkBuddy International | Insufficient evidence | [Source](https://x.com/Muma102kMichael/status/2110593537872175256) |
+| apk-reverse: an Android analysis skill for coding agents | Insufficient evidence | [Source](https://github.com/zzusec/apk-reverse/blob/1b94651b1e3c4479336406b8b5c06d4c1fd7082e/README.md) |
+| Hailo: a planned agent-assisted reverse-engineering run | Insufficient evidence | [Source](https://x.com/TheCogArchitect/status/2110600631144919232) |
+| Wyze scale: weight data in a custom iOS app | Insufficient evidence | [Source](https://x.com/Boards86/status/2110604057287217339) |
+| A license-compliance comparison during reverse engineering | Insufficient evidence | [Source](https://x.com/i/status/2110614074941927618) |
+| Codex: a personal library following REA research | Insufficient evidence | [Source](https://x.com/LinearUncle/status/2110616441611542781) |
+| Richman 4: REA research to a Flutter iPhone rebuild | Insufficient evidence | [Source](https://x.com/iam678/status/2110618564608880843) |
+| Tuya AC: local Mac controls exposed to Claude over MCP | Insufficient evidence | [Source](https://x.com/sarequl_basar/status/2110620776915411243) |
+| A HyperOS monitor: exploring exposed control services | Insufficient evidence | [Source](https://x.com/binaryify/status/2110622119419838752) |
+| Notes example: tracing a CSV export button | Insufficient evidence | [Source](https://x.com/0xCortexq/status/2110623921611432090) |
 | IsaacRecomp: translating Flash game bytecode to native C++ | Already curated | [Source](https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/README.md) |
+| A legacy binary: an agent invents nonexistent APIs | Insufficient evidence | [Source](https://x.com/harden_369741/status/2110630792049115198) |
+| Codex next-input prediction recreated for Pi | Insufficient evidence | [Source](https://x.com/a1chzt/status/2110631522403512760) |
+| DOOM and Terraria: reported no-source mod experiments | Insufficient evidence | [Source](https://x.com/i/status/2110641024389271883) |
 | Feishu: an author-reported isolated second app instance | Already curated | [Source](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/) |
+| Roko Input: Apple on-device dictation after Typeless research | Insufficient evidence | [Source](https://github.com/bassnova42/rokoinput/blob/3cd2da84ae83905b961a2de9f06bdf6bac888294/README.en.md) |
 | Mi Health: timestamp repair and a cloud-data exporter | Insufficient evidence | [Source](https://github.com/LilZeeCN/mi-health-exporter/blob/1dc9274a90ccc83f02cbb3706aae2a4d55c8e90a/README.md) |
-| hw-harness: scanner USB protocol investigation | Pending | [Source](https://github.com/cschalle/hw-harness/blob/093afc5c576c200f29b771d01624a327d0ff1806/examples/plustek-film-scanner/README.md) |
+| REA and archify: interactive architecture diagrams | Insufficient evidence | [Source](https://x.com/i/status/2110570919169286424) |
+| A colony-simulation engine: a decompilation research plan | Insufficient evidence | [Source](https://x.com/Promptmethus/status/2110642225361371219) |
+| iX500 Scan: a macOS client for the reverse-engineered ScanSnap Wi-Fi protocol | Already curated | [Source](https://x.com/jonaswagnr/status/2110647905027604700) |
+| Sonic physics in Elden Ring: an unverified REA mod report | Insufficient evidence | [Source](https://x.com/Capslock404/status/2110648710606557644) |
+| iriver E30: personalizing an unsupported player's main screen | Insufficient evidence | [Source](https://x.com/MikeS190477/status/2110651009181851731) |
+| A radiator-control app bridged to Home Assistant with AI | Insufficient evidence | [Source](https://x.com/Madsoulswe/status/2110651982323310818) |
+| D2R Mobile: rehosting Diablo II: Resurrected’s Switch program on Apple devices | Already curated | [Source](https://x.com/OLD9Gaming/status/2110658894360097141) |
+| WHOOP and Zhoop: an iPhone data path for a health agent | Insufficient evidence | [Source](https://x.com/0xLogicrw/status/2110659108076769728) |
+| macOS Notes: a reported REA-assisted SwiftUI rebuild | Insufficient evidence | [Source](https://x.com/xiyue0803/status/2110670751087137197) |
+| reverse-skill: investigation workflows for coding agents | Pending | [Source](https://x.com/i/status/2110680583634366777) |
+| A thermofluid equation solver: ongoing REA/Opus work | Insufficient evidence | [Source](https://x.com/iamsupersocks/status/2110684985900355622) |
+| A booking funnel investigated and rebuilt as a personal calendar | Insufficient evidence | [Source](https://x.com/JulianGoldieSEO/status/2110686215846699236) |
+| Watch5 Pro: a reported Claude/REA health-sensor app | Insufficient evidence | [Source](https://x.com/Sp00kyD00kyXRS/status/2110693137773392155) |
+| REA with local Qwen and pi: multi-target commercial-software tests | Insufficient evidence | [Source](https://x.com/deluxebear/status/2110696564335214807) |
+| QUICKSURFACE AI: announced scan-to-parametric-CAD automation | Insufficient evidence | [Source](https://x.com/ManMetrologyLTD/status/2110699093333000322) |
+| Spider-Man swinging in GTA V: an internally inconsistent REA claim | Insufficient evidence | [Source](https://x.com/vmrmax/status/2110699414792642732) |
+| Humidity readings through an agent-built Bluetooth app | Insufficient evidence | [Source](https://x.com/real_kai42/status/2110700189912912155) |
+| Grok Bot: a worker-network reverse-engineering idea not pursued | Insufficient evidence | [Source](https://x.com/leaf_sanren/status/2110702662270460232) |
+| From a Little Prince game to Dragon Ball-themed HTML 3D | Insufficient evidence | [Source](https://x.com/i/status/2110713533193453572) |
+| SentinelOne and Daybreak: a reported malware-analysis time reduction | Insufficient evidence | [Source](https://x.com/i/status/2110726263392387158) |
+| A construction firm's SaaS workflows, observed and rebuilt | Insufficient evidence | [Source](https://x.com/andywalters/status/2110726879665660172) |
+| Reversed with AI | Already curated | [Source](https://reversedwithai.com/about) |
+| Mario Odyssey on macOS: a secondary Claude-assisted report | Insufficient evidence | [Source](https://x.com/swordBluesy/status/2110735780842999962) |
+| REA plugin for Hermes Agent | Already curated | [Source](https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/README.md) |
+| Mario's jump in Halo: an unverified six-parameter REA claim | Insufficient evidence | [Source](https://x.com/Capslock404/status/2110741739732435179) |
+| Roborock Local Server: a self-hosted stand-in for Roborock’s vacuum cloud | Already curated | [Source](https://x.com/whyamas/status/2110741945874350429) |
+| Arkham: a Grok Bot/REA research-workbench rebuild | Insufficient evidence | [Source](https://x.com/monokern/status/2110743454959509801) |
+| A plate reader's filter-wheel fault: a Claude-assisted repair report | Insufficient evidence | [Source](https://x.com/r_gross_/status/2110745676875227179) |
+| Grok Build: exploratory code study with REA and Claude Code | Insufficient evidence | [Source](https://x.com/omerfrkdemiral/status/2110749141710028914) |
+| Codex CLI: inspecting model-identity prompts and routing fields | Insufficient evidence | [Source](https://x.com/jiangkoumo_/status/2110751118343164066) |
+| Rust Duty: reconstructing gameplay from video, not decompilation | Insufficient evidence | [Source](https://x.com/reidhslaughter/status/2110752844328419587) |
+| 2010 Rust Rewrite Mashup: Skate 3 in MW2 maps | Pending | [Source](https://x.com/thenuntheia/status/2110757135009112576) |
+| A wireless CarPlay adapter: a reported REA/Grok firmware change | Insufficient evidence | [Source](https://x.com/omercoskun_tech/status/2110759012266332509) |
+| A daily voice-input app: quick client inspection, hours of rebuilding | Insufficient evidence | [Source](https://x.com/pirrer/status/2110759506003304641) |
+| Linux EAC: an AI devirtualization claim via IDA Assist MCP | Insufficient evidence | [Source](https://x.com/i/status/2110759663822352852) |
+| Browser Counter-Strike: a colleague's AI-build claim | Insufficient evidence | [Source](https://x.com/FuSheng_0306/status/2110760621113548854) |
+| REA JavaScript demo: a stale-price check at 400 ms | Insufficient evidence | [Source](https://x.com/0xAlhimik/status/2110761684411572247) |
+| Galaxy-Android: a reported AI-assisted native Super Mario Galaxy port | Pending | [Source](https://x.com/ToniCipriani007/status/2110763621768716353) |
+| An old phone: an author reports running OEM firmware in Wasm with Claude | Insufficient evidence | [Source](https://x.com/ShishirTandale/status/2110765881768747173) |
+| BINNY | Already curated | [Source](https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/README.md) |
+| An illustrative game.exe demo: two rooms and three reconstruction oracles | Insufficient evidence | [Source](https://x.com/i/status/2110783611800522897) |
+| H1Z1: research followed by an MMO built with Opus, Astra and Tripo | Insufficient evidence | [Source](https://x.com/i/status/2110784230687125852) |
+| Uncharted: The Nathan Drake Collection native Windows port | Already curated | [Source](https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/README.md) |
+| Slipstream 5000: an author reports a two-day Codex decompilation | Insufficient evidence | [Source](https://x.com/i/status/2110786958649684035) |
+| A Chrome dark-mode extension: REA research for improvements | Insufficient evidence | [Source](https://x.com/i/status/2110797282308153562) |
+| A construction-bid decryptor: reported Claude Code research into a password error | Insufficient evidence | [Source](https://x.com/i/status/2110802464786264210) |
+| Pokémon HeartGold/SoulSilver: a secondhand multi-agent decompilation and cost report | Insufficient evidence | [Source](https://x.com/i/status/2110816115718824296) |
+| A Resend alternative: reported email APIs and inboxes for agents | Insufficient evidence | [Source](https://x.com/i/status/2110817677778489400) |
+| Two games' RNG: a Codex/ILSpy prediction-tracking report | Insufficient evidence | [Source](https://x.com/i/status/2110817897706582486) |
+| Destiny 2 build 86657: Sunrise/Dawn reconstruction research report | Already curated | [Source](https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/README.md) |
+| Self-owned Android/Windows 95 apps: an Opus reverse-engineering test without REA | Insufficient evidence | [Source](https://x.com/i/status/2110820518983000118) |
+| RINGFALL: a reported browser boss fight built from TH04 bullet-ring notes | Insufficient evidence | [Source](https://x.com/i/status/2110844188178952423) |
+| Apple Watch Ultra 2: an unverified AI-reverse-engineering report of Android connectivity | Insufficient evidence | [Source](https://x.com/i/status/2110844478239945061) |
+| Plustek 8200i / ThinkPad MIPI: improve Linux drivers using Windows reference behavior | Pending | [Source](https://github.com/cschalle/hw-harness/blob/093afc5c576c200f29b771d01624a327d0ff1806/examples/plustek-film-scanner/README.md) |
+| Open-BFME: a report of AI-assisted Battle for Middle Earth decompilation and byte matching | Insufficient evidence | [Source](https://x.com/i/status/2110857508470604174) |
+| Greenlight video API: query fields with AI, then probe actual validation with invalid values | Insufficient evidence | [Source](https://x.com/i/status/2110868326528303367) |
+| Electron Notes sample: an REA static IPC test with an answer key | Insufficient evidence | [Source](https://x.com/i/status/2110869440762196138) |
+| A character on a video homepage: a report of Fu Sheng's REA mashup demonstration | Insufficient evidence | [Source](https://x.com/i/status/2110873715810660594) |
+| A personal YouTube version: an REA-assisted niche-video and AI-topic dashboard report | Insufficient evidence | [Source](https://x.com/i/status/2110878456611319835) |
+| decomp.wtf | Already curated | [Source](https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/README.md) |
+| A local REA workbench: combine investigation and personal office workflows | Insufficient evidence | [Source](https://x.com/i/status/2110904597900673267) |
+| Ledger Opus: an unverified finance-agent promotion referencing Claude for Finance | Insufficient evidence | [Source](https://x.com/i/status/2110916629244641548) |
+| Immersive Portals: an AI-assisted Minecraft JE 26.2 compatibility report | Insufficient evidence | [Source](https://x.com/i/status/2110918344886927696) |
+| TV firmware: an AI ad-removal idea and two implementation accounts | Insufficient evidence | [Source](https://x.com/i/status/2110919403961192504) |
+| Excel reconciliation workbooks: infer a procedure from an accepted artifact for agents | Insufficient evidence | [Source](https://x.com/i/status/2110919658748719318) |
+| OpenCodex / Antigravity: REA investigation of missing multi-turn tool-call signatures | Insufficient evidence | [Source](https://x.com/i/status/2110921946418602001) |
+| Minesweeper and Bilibili: a secondary roundup of REA demonstration titles | Insufficient evidence | [Source](https://x.com/i/status/2110936629221450214) |
+| MoonBit: Claude investigates name mangling to improve VSCode debugging | Insufficient evidence | [Source](https://x.com/i/status/2110938121080631767) |
+| Obfuscated old games: a report of Claude guessing structure sizes incorrectly | Insufficient evidence | [Source](https://x.com/i/status/2110942707074183405) |
+| Saturn Sonic 3D Blast: byte-matching decompilation and a native PC port | Insufficient evidence | [Source](https://x.com/i/status/2110939629516186067) |
 | UU Remote on Linux: an unofficial protocol implementation | Already curated | [Source](https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/README.en.md) |
-| Pocket Tasks: reconstructing task state and persistence | Pending | [Source](https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/reconstruction/README.md) |
+| Notes CSV export: an author-reported REA check of reconstruction oracles | Already curated | [Source](https://x.com/i/status/2110963427791487391) |
+| Obfuscated JavaScript request signatures: an author reports restoring data retrieval with REA | Insufficient evidence | [Source](https://x.com/i/status/2110968095850561701) |
+| Immersive-translation-style extensions: investigating a bring-your-own-token alternative with Codex | Insufficient evidence | [Source](https://x.com/i/status/2110976193671709123) |
+| ChatGPT Intelligent UI: asking Codex to investigate the implementation | Insufficient evidence | [Source](https://x.com/i/status/2110983483271286909) |
+| Claude Code background lab: an REA-informed reimplementation of a desktop animation | Already curated | [Source](https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/README.md) |
+| ChatGPT Work Cloud: probing a cloud agent's tools through introspection | Insufficient evidence | [Source](https://x.com/i/status/2111009945865097386) |
+| Indian Kanoon: a reported Claude Code legal-search integration | Insufficient evidence | [Source](https://x.com/i/status/2111027056234627119) |
+| Amap anti-bot controls: a secondhand Tencent sandbox-agent incident report | Insufficient evidence | [Source](https://x.com/i/status/2111034426066956783) |
+| JPCERT/CC: APK analysis and API probing on attack servers | Already curated | [Source](https://blogs.jpcert.or.jp/ja/2026/10/web_api_attacks.html) |
+| Polymarket Up/Down bot: a promotional REA strategy-analysis and replay report | Insufficient evidence | [Source](https://x.com/i/status/2111049696630194596) |
+| crashlens | Already curated | [Source](https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/README.md) |
+| Halo 3 Reforged: a reader's AI-decompilation and 128-player claim | Insufficient evidence | [Source](https://x.com/i/status/2111052865410375683) |
+| Samsung AC: local-network control with reported partial Claude assistance | Insufficient evidence | [Source](https://x.com/i/status/2111055239378018407) |
+| A 2000 stress.exe: a reported Opus/REA revival for Mac and the web | Insufficient evidence | [Source](https://x.com/i/status/2111061027211395485) |
+| RKD Telemetry Extractor: decoding Race-Keeper track-day recordings | Already curated | [Source](https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/RESEARCH_NOTES.md) |
+| QQPet: a cross-platform pet rebuilt from Arctic Penguin T800 | Insufficient evidence | [Source](https://x.com/aigeeknews/status/2111095142790857087) |
+| Website to Next.js: a reported Claude Code template with parallel DOM-based rebuilding | Insufficient evidence | [Source](https://x.com/0xPascual/status/2111096590387601489) |
+| Black Bot / Blacksidian: reported REA rebuilds with AI-provider choice | Insufficient evidence | [Source](https://x.com/i/status/2111100877083947405) |
+| iOS on Android hardware: a porting idea and unverified HACKIOS/Redmi claims | Insufficient evidence | [Source](https://x.com/i/status/2111100973238329497) |
+| VMP-protected sample: a reported failed DeepSeek challenge | Insufficient evidence | [Source](https://x.com/i/status/2111101746001113381) |
+| Mega Man Battle Network: a secondhand AI decompilation and modding lead | Insufficient evidence | [Source](https://x.com/i/status/2111103450448572730) |
+| A twelve-year-old Kindle: reported Claude safety refusal during a jailbreak attempt | Insufficient evidence | [Source](https://x.com/i/status/2111106257431961740) |
+| 1997 audio software: investigating Windows 11 compatibility to continue old work | Insufficient evidence | [Source](https://x.com/i/status/2111115615628824723) |
+| OpenRiseOfNations: a native macOS engine reimplementation | Already curated | [Source](https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/README.md) |
+| Computer integrates REA: five app-feature rebuilding demos including Figma | Insufficient evidence | [Source](https://x.com/AskPerplexity/status/2111120664543596957) |
+| Claude Intercept | Already curated | [Source](https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/README.md) |
+| Claude client: inspecting environment telemetry with REA | Insufficient evidence | [Source](https://x.com/i/status/2111134289970765964) |
+| Codex cursor: recovering drawing geometry for a Windows pointer | Insufficient evidence | [Source](https://x.com/i/status/2111142820207837308) |
+| Gears of War 3: AI-assisted static recompilation and graphics work | Insufficient evidence | [Source](https://x.com/i/status/2111146922522402943) |
+| WristBeam: reconstructing Garmin’s watch protocol for a Mac companion | Already curated | [Source](https://x.com/i/status/2111155441077977138) |
+| Three open tools to personal apps: an REA recording, markup and dictation report | Insufficient evidence | [Source](https://x.com/i/status/2111156533002227870) |
+| LmDrum firmware: Claude reportedly stops after decompilation progress | Insufficient evidence | [Source](https://x.com/i/status/2111169026160480290) |
+| 1977 DES test vectors: Claude reportedly traces their random-generation environment | Insufficient evidence | [Source](https://x.com/i/status/2111170587792208361) |
+| jq and Fossify Calculator: REA function identification and early inspection | Insufficient evidence | [Source](https://x.com/i/status/2111171612149985567) |
+| Notion app.asar: a Claude read-only file and domain-string inspection | Insufficient evidence | [Source](https://x.com/0xKurogamii/status/2111182893313613877) |
+| Grok Bot + REA: a reported software-investigation chat template | Insufficient evidence | [Source](https://x.com/ChaiWithAi/status/2111184500093026340) |
+| Owned hardware for voice agents: an REA attempt inspired by earbuds and a smart ring | Insufficient evidence | [Source](https://x.com/i/status/2111158379896877249) |
+| Patrick's AI reverse-engineered games directory: an ongoing resource project | Pending | [Source](https://x.com/i/status/2111185397782880475) |
+| Doom: a claimed clean-room reimplementation with 19 Claude agents | Insufficient evidence | [Source](https://x.com/i/status/2111187899479658673) |
+| NIST ECDSA curves: Claude traces the generation of public parameters | Pending | [Source](https://www.anthropic.com/research/ecdsa-curve-origins) |
+| Niuniu AI / MT5: an REA rebuild report after a reseller relationship ended | Insufficient evidence | [Source](https://x.com/sera00111/status/2111206851606159655) |
+| Mac video export: studying DaVinci and CapCut to improve a personal editor | Insufficient evidence | [Source](https://x.com/i/status/2111214346428686478) |
+| Wiki Lab: a claimed REA-based Wikipedia for agents | Insufficient evidence | [Source](https://x.com/BrianDevoor/status/2111215569047314589) |
+| Set-top-box APK: a short WorkBuddy extraction and analysis report | Insufficient evidence | [Source](https://x.com/i/status/2111216713245364424) |
+| Base arbitrage contract: an unverified REA/Opus bytecode report | Insufficient evidence | [Source](https://x.com/i/status/2111220274226217276) |
+| System UI from video: Claude measures frames and infers animation parameters | Insufficient evidence | [Source](https://x.com/i/status/2111222217849946308) |
+| Linux mouse driver: reverse engineering among a week's AI projects | Insufficient evidence | [Source](https://x.com/i/status/2111224894297870413) |
+| Roadster video: a Claude-assisted three.js visual teardown experiment | Insufficient evidence | [Source](https://x.com/i/status/2111225325531074716) |
+| ENS v2 phishing email: a Claude-assisted investigation of dangerous agent repositories | Insufficient evidence | [Source](https://x.com/i/status/2111234225022067029) |
+| Game-function matcher: an audit account of wrong constants passing checks | Pending | [Source](https://x.com/i/status/2111241506006700380) |
+| Google Home: a blocked attempt to revive an old speaker without replacing hardware | Insufficient evidence | [Source](https://x.com/i/status/2111215951857246251) |
+| A 3D home model: a reported REA-assisted Mac menu-bar controller | Insufficient evidence | [Source](https://x.com/0xProbabillity/status/2109978137794883621) |
+| AMABOO Frameo: Claude Code adapts an existing Home HQ frame setup | Insufficient evidence | [Source](https://x.com/InvestingVault/status/2111250941886226471) |
+| Grok Bot real-time features: a Hermes investigation with audio unresolved | Insufficient evidence | [Source](https://x.com/i/status/2111251559275487538) |
+| Jiuchuan Xiaozhi AI speaker: give Muse stock firmware and hardware specifications | Insufficient evidence | [Source](https://x.com/i/status/2111251131665940519) |
+| Fallout 4: a brief claim of fixes after Claude reverse engineering | Insufficient evidence | [Source](https://x.com/i/status/2111262935293038623) |
+| A Windows keyboard utility: Claude builds a Linux version and checks it with a camera | Insufficient evidence | [Source](https://x.com/i/status/2111269740249489643) |
+| REA Reconstruction Companion | Already curated | [Source](https://x.com/xiyue0803/status/2111273763799191896) |
+| Claude Desktop app.asar: Opus reportedly opens the package during feature research | Insufficient evidence | [Source](https://x.com/i/status/2111275332989059193) |
+| CLO3D DLLs: an idea to rebuild a garment-design tool with Claude/Codex | Insufficient evidence | [Source](https://x.com/i/status/2111281354910704058) |
 | NJFE: a Soulear camera protocol bridge for desktop inspection | Already curated | [Source](https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/README.md) |
 | LeanREA | Already curated | [Source](https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/README.md) |
+| MISE.exe: Claude proposes Ghidra-derived rules instead of screenshot guesses | Insufficient evidence | [Source](https://x.com/i/status/2111312368840126836) |
+| Guitar effects: emulate the original firmware, then compare a standalone C++ library | Insufficient evidence | [Source](https://news.ycombinator.com/item?id=50104955) |
+| RetroScope: a local-LLM assistant for ROM instruction references | Insufficient evidence | [Source](https://x.com/i/status/2111332462811087061) |
+| China Mobile app: AI investigates number-selection pages and protocols for local filtering | Insufficient evidence | [Source](https://x.com/i/status/2111337934406484446) |
+| Roku TV: a firmware-modification inquiry blocked by Claude's bootloader assessment | Insufficient evidence | [Source](https://x.com/i/status/2111349282745757858) |
+| Serein's nine-bot workflow: pass REA behavior specifications to an isolated builder | Insufficient evidence | [Source](https://x.com/i/status/2111365135143219711) |
+| Chrome LINE: AI reads JavaScript to build a TUI and messaging API | Insufficient evidence | [Source](https://x.com/i/status/2111366415639064608) |
+| Reverse Engineering Assistant: a framework advertised for offline file-analysis reports | Pending | [Source](https://x.com/i/status/2111230457568227404) |
+| 731 functions: an REA reconstruction account using specification isolation and four negative controls | Insufficient evidence | [Source](https://x.com/i/status/2111165651599663599) |
+| Zenith collaborative editing: a reader asks about investigating it with REA | Insufficient evidence | [Source](https://x.com/i/status/2111358914520600998) |
+| Hue screen-synced lighting: Claude investigates a macOS Bluetooth mode | Insufficient evidence | [Source](https://x.com/i/status/2111385823270625370) |
+| JavaScript divergence: formatting switches the game, an AI reversing-decoy idea | Insufficient evidence | [Source](https://x.com/i/status/2111386823763411016) |
+| Three-model binary research: function maps, competing hypotheses and an original-binary oracle | Insufficient evidence | [Source](https://x.com/i/status/2111389348339827041) |
+| re2ds: a native Nintendo DS engine for Resident Evil 2 | Already curated | [Source](https://www.reddit.com/r/ReverseEngineering/comments/1x85dp5/a_port_of_resident_evil_2_for_the_nintendo_ds/) |
+| Starshield signals: a reader's idea to investigate frequencies with REA | Insufficient evidence | [Source](https://x.com/i/status/2111395824991097074) |
+| Windows kernel: an REA collaboration idea for a free operating system | Insufficient evidence | [Source](https://x.com/i/status/2111405429486211272) |
+| Amazon Prime tvOS: investigating IPA Universal Links to open shows from a personal app | Insufficient evidence | [Source](https://x.com/i/status/2111424789827228006) |
+| Claude and Codex limits: an REA-assisted top-bar display report | Insufficient evidence | [Source](https://x.com/i/status/2111426952162947310) |
+| LLVM ABI: gingerBill's account of using LLMs to investigate undocumented internals | Insufficient evidence | [Source](https://x.com/i/status/2111396413066363009) |
 | Super Mario 64 DS: matching decompilation with relocation checks | Already curated | [Source](https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/README.md) |
+| Define correctness as PASS/FAIL, then let agents iterate | Insufficient evidence | [Source](https://x.com/arpit_bhayani/status/2109505311904309621) |
+| Where "software is solved" is overstated | Insufficient evidence | [Source](https://x.com/wangdou/status/2109404200513708307) |
+| Reverse Engineer Anything, tried on a live game | Insufficient evidence | [Source](https://x.com/AIWarper/status/2109060856466264566) |
+| Snowboard Kids: an agent-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/decompiling-a-nintendo-64-game-in-84-days/) |
 | Snowboard Kids 2: an LLM-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/the-long-tail-of-llm-assisted-decompilation/) |
 | Snowboard Kids 2: an LLM-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/) |
+| All games are open source now | Insufficient evidence | [Source](https://x.com/rehan_shei/status/2106548006350942533) |
+| Sonic Advance 3: an AI-assisted match of one enemy module | Already curated | [Source](https://gambiconf.substack.com/p/development-journey-on-game-decompilation) |
+| Claims that genAI speeds up PC ports of classic games are either "false" or missing the point | Insufficient evidence | [Source](https://www.reddit.com/r/SBCGaming/comments/1wyhd5s/claims_that_genai_speeds_up_pc_ports_of_classic/) |
+| AI-generated decompilations are garbage | Insufficient evidence | [Source](https://www.reddit.com/r/decomps/comments/1v6b9gw/aigenerated_decompilations_are_garbage/) |
+| Why isn't decompilation a solved problem in the AI era? | Insufficient evidence | [Source](https://news.ycombinator.com/item?id=49646640) |
+| How are y'all using ai to make recompilations? | Insufficient evidence | [Source](https://www.reddit.com/r/recomps/comments/1wyle7y/how_are_yall_using_ai_to_make_recompilations/) |
+| Zelda and Banjo Recompiled dev slams the slew of poor-quality "slopcomps" | Insufficient evidence | [Source](https://www.reddit.com/r/technology/comments/1ww1twg/) |
 | Snowboard Kids 2: an LLM-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/snowboard-kids-2-is-100-decompiled/) |
+| Finding Jingle Town: Debugging an N64 Game without Symbols | Already curated | [Source](https://blog.chrislewis.au/finding-jingle-town-debugging-an-n64-game-without-symbols/) |
+| Awesome Decomp Games | Already curated | [Source](https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/README.md) |
 | GoldenEye 007: an agent-assisted native port from a decompilation | Already curated | [Source](https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/README.md) |
 | BattleShip: an AI-assisted Super Smash Bros. native port | Already curated | [Source](https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/README.md) |
 | ssbu-recomp: static recompilation with explicit mode limits | Already curated | [Source](https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/README.md) |
+| Vandal Hearts: native PC port built on matching decompilations | Already curated | [Source](https://github.com/HalmyLyseas/VandalHearts-decomp-SLPM-86007/blob/75017596cc439a7141e405943afdb469b717787c/README.md) |
 | KartPad: platform integration for a Mario Kart Wii recompilation | Already curated | [Source](https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/README.md) |
+| Xenosaga I Decomp Compatibility Kit | Already curated | [Source](https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/README.md) |
+| sm64ex: an enhanced Super Mario 64 PC port from the decompilation | Already curated | [Source](https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/README.md) |
 | Super Mario 64: ROM reconstruction with explicit comparison gates | Already curated | [Source](https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md) |
-| 🗡️ The Legend of Zelda: Breath of the Wild — zeldaret/botw | Pending | [Source](https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/README.md) |
-| 🗡️ The Legend of Zelda: Ocarina of Time — zeldaret/oot | Pending | [Source](https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/README.md) |
+| Ghostship: a libultraship native port of Super Mario 64 | Already curated | [Source](https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/README.md) |
+| 🍄 Super Mario 64 — coop-deluxe/sm64coopdx | Insufficient evidence | [Source](https://github.com/coop-deluxe/sm64coopdx/blob/8cd6e5977d9f920d51ca71f2c61801d019ed79c6/README.md) |
+| Super Mario Sunshine: an in-progress matching GameCube decompilation | Already curated | [Source](https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/README.md) |
+| Super Mario Sunshine (USA): an AI-assisted matching decompilation fork | Already curated | [Source](https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/README.md) |
+| 🍄 Super Mario Sunshine — chasem-dev/sms-launcher | Insufficient evidence | [Source](https://github.com/chasem-dev/sms-launcher/blob/c04b5a40788050ce15deb7955d215cbeea4fa125/README.md) |
+| Petari: a matching Super Mario Galaxy decompilation | Already curated | [Source](https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/README.md) |
+| Breath of the Wild: per-function matching decompilation of the Switch executable | Already curated | [Source](https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/README.md) |
+| Skyward Sword: Wii decompilation with hash-checked relinking | Already curated | [Source](https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/README.md) |
+| Ship of Harkinian: a native Ocarina of Time port built on the decompilation | Already curated | [Source](https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/README.md) |
+| Ocarina of Time: decompilation with MD5-checked ROM builds for 16 versions | Already curated | [Source](https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/README.md) |
+| Dusklight: a native Twilight Princess port built on the decompilation | Already curated | [Source](https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/README.md) |
+| Twilight Princess: a decompilation with fully matching GameCube code | Already curated | [Source](https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/README.md) |
+| The Wind Waker: a GameCube decompilation with hash-checked relinking | Already curated | [Source](https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/README.md) |
+| Wind Waker HD Recomp: a native port by static recompilation of the Wii U game | Already curated | [Source](https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/README.md) |
 | Zelda 64: Recompiled — a native Majora’s Mask port without a full source decompilation | Already curated | [Source](https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/README.md) |
-| 🗡️ The Legend of Zelda: The Minish Cap — zeldaret/tmc | Pending | [Source](https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/README.md) |
-| 🚀 Metroid Prime — AxioDL/metaforce | Pending | [Source](https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/README.md) |
-| 🦔 Sonic Mania — RSDKModding/Sonic-Mania-Decompilation | Pending | [Source](https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/README.md) |
+| Majora’s Mask: matching US N64 decompilation | Already curated | [Source](https://github.com/zeldaret/mm/blob/bf6bd9d0d3a90fe2f8960e034fbfd328e8bdef22/README.md) |
+| 2 Ship 2 Harkinian: a native Majora’s Mask port built on the decompilation | Already curated | [Source](https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/README.md) |
+| The Minish Cap: a GBA decompilation targeting five ROMs | Already curated | [Source](https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/README.md) |
+| z2rs: an incremental Rust reconstruction of Zelda II checked against an emulator | Already curated | [Source](https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/README.md) |
+| Metaforce: a Metroid Prime engine reimplementation rebuilt on the decompilation | Already curated | [Source](https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/README.md) |
+| Metroid Prime Port: an AI-assisted native port of the PrimeDecomp decompilation | Already curated | [Source](https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/README.md) |
+| Sonic Mania: a game-code decompilation for the RSDKv5 engine | Already curated | [Source](https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/README.md) |
+| RSDKv5 Decompilation: reconstructing Retro Engine v5 and v5U | Already curated | [Source](https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/README.md) |
 | Unleashed Recompiled: translating Xbox 360 game code and shaders | Already curated | [Source](https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/README.md) |
+| Donkey Kong 64: Recompiled — an N64Recomp native port | Already curated | [Source](https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/README.md) |
+| c1: a C port of PlayStation Crash Bandicoot | Already curated | [Source](https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/README.md) |
+| Crash Bandicoot 2 Recompiled: a PSXRecomp native build | Already curated | [Source](https://github.com/Zumbo06/Crash2Recomp/blob/48036cf3b49dfe4343e5c093d1df8a7b12617f81/README.md) |
+| C2C: hybrid recompilation and hand decompilation of Crash Bandicoot 2 | Already curated | [Source](https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/README.md) |
+| Conker's Bad Fur Day: Recompiled — an N64Recomp native port | Already curated | [Source](https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/README.md) |
+| Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port | Already curated | [Source](https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/README.md) |
+| Lighthouse: a Banjo-Kazooie PC port built on the decompilation | Already curated | [Source](https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/README.md) |
+| SymphonyRecomp: a RecompOne static recompilation of Symphony of the Night | Already curated | [Source](https://github.com/BlackLabelHQ/SymphonyRecomp/blob/c94a9096bab25bf513cceea50d6838a4c8d7bf5b/README.md) |
+| Castlevania: Symphony of the Night: matching decompilation across PlayStation, PSP and Saturn builds | Already curated | [Source](https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/README.md) |
+| Castlevania 64: Recompiled — a beta static-recompilation port | Already curated | [Source](https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/flatpak/io.github.cv64recomp.cv64recomp.metainfo.xml) |
+| 🏰 Castlevania 64 — spacefarergames/CV64-Recomp | Insufficient evidence | [Source](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
+| ProjectCane: a native PC port of Sly Cooper and the Thievius Raccoonus | Already curated | [Source](https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/README.md) |
+| Sly Cooper and the Thievius Raccoonus: matching PlayStation 2 decompilation | Already curated | [Source](https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/README.md) |
+| Ratchet & Clank: a matching PS2 decompilation with a documented agent workflow | Already curated | [Source](https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/README.md) |
 | OpenGOAL: recovering GOAL code and rebuilding the Jak games | Already curated | [Source](https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/README.md) |
+| The Two Towers Recompiled: an original Xbox static-recompilation port | Already curated | [Source](https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/README.md) |
 | LEGO Island: source reconstruction with separately reported exact rebuilds | Already curated | [Source](https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/README.md) |
-| ⚡ Pokémon FireRed — pret/pokefirered | Pending | [Source](https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/README.md) |
+| LEGO Island, portable: a multi-platform port of the decompiled source | Already curated | [Source](https://github.com/isledecomp/isle-portable/blob/d0bf04fe605d7ec2a291e65df08bf26712452379/README.md) |
+| MediEvil Recomp: a PlayStation static recompilation to C# | Already curated | [Source](https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/README.md) |
+| MediEvil decompilation: an early checksum-gated PlayStation project | Already curated | [Source](https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/README.md) |
+| ico-pc: a native ICO port compiled from the PS2 decompilation | Already curated | [Source](https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/README.md) |
+| King Kong Recompiled: an AI-developed Xbox 360 static recompilation | Already curated | [Source](https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/README.md) |
+| pokered: a matching Pokémon Red and Blue disassembly | Already curated | [Source](https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/README.md) |
+| pokecrystal: a matching Pokémon Crystal disassembly | Already curated | [Source](https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/README.md) |
+| pokeruby: a matching Pokémon Ruby and Sapphire decompilation | Already curated | [Source](https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/README.md) |
+| Pokémon Emerald: a matching Game Boy Advance decompilation | Already curated | [Source](https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/README.md) |
+| Pokémon FireRed and LeafGreen: a matching Game Boy Advance decompilation | Already curated | [Source](https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/README.md) |
+| Pokémon HeartGold and SoulSilver: a work-in-progress, checksum-matched DS disassembly | Already curated | [Source](https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/README.md) |
+| Pokémon Platinum: a checksum-matched Nintendo DS decompilation | Already curated | [Source](https://github.com/pret/pokeplatinum/blob/1dc13dcea40c04ab53f1f607de46023dc409ef20/README.md) |
+| Pokémon Platinum PC Port: a native port built on the pret decompilation | Already curated | [Source](https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/README.md) |
+| UltraSunnyMoon: a partial, REA-led Pokémon Ultra Sun reconstruction | Already curated | [Source](https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/README.md) |
+| Kingdom Hearts 358/2 Days: a matching Nintendo DS decompilation | Already curated | [Source](https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/README.md) |
+| Kingdom Hearts 358/2 Days: native PC port built on a matching decompilation | Already curated | [Source](https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/README.md) |
+| D2R Mobile: rehosting Diablo II: Resurrected’s Switch program on Apple devices | Already curated | [Source](https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/README.md) |
 | DevilutionX: porting Diablo’s reconstructed engine | Already curated | [Source](https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/README.md) |
+| DiabloWeb: a WebAssembly browser port built on Devilution | Already curated | [Source](https://github.com/d07RiV/diabloweb/blob/c61ef19c54ea646aed328bd8cc82c8a5f1ebd81d/README.md) |
 | OpenMW: replacing Morrowind’s engine while reusing original content | Already curated | [Source](https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/README.md) |
-| 🧙 Ultima Underworld: The Stygian Abyss — abedegno/underworld-exhumed | Pending | [Source](https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/README.md) |
-| 🧙 Paper Mario — pmret/papermario | Pending | [Source](https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/README.md) |
-| 🥊 Super Smash Bros. Melee — doldecomp/melee | Pending | [Source](https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/README.md) |
+| FFTARecomp: static recompilation of Final Fantasy Tactics Advance | Already curated | [Source](https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/README.md) |
+| Underworld Exhumed: reconstructing Ultima Underworld I and II | Already curated | [Source](https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/README.md) |
+| Vandal Hearts: native PC port built on matching decompilations | Already curated | [Source](https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/README.md) |
+| 🧙 Paper Mario — lucyawrey/Paper_Mario_64_Recomp | Insufficient evidence | [Source](https://github.com/lucyawrey/Paper_Mario_64_Recomp/blob/09dcb129ab4c3ab5ae4d1838841f05decb6e7b26/README.md) |
+| Paper Mario: matching Nintendo 64 decompilation for four releases | Already curated | [Source](https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/README.md) |
+| PaperBoat: a native Paper Mario port built on the decompilation | Already curated | [Source](https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/README.md) |
+| Lost Odyssey Recomp: statically recompiling an Xbox 360 RPG into native ports | Already curated | [Source](https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/README.md) |
+| GoldenEye 007: matching Nintendo 64 decompilation for three releases | Already curated | [Source](https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/readme.md) |
+| Budokai Tenkaichi 3: a native PC port built on a matching decompilation | Already curated | [Source](https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/README.md) |
+| Halo 2: an agent-assisted matching decompilation of an LTCG Xbox build | Already curated | [Source](https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/README.md) |
+| Super Smash Bros. Melee: a matching GameCube decompilation with a shiftable build | Already curated | [Source](https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/README.md) |
+| Melee Unlocked: a Windows source port and static recompilation of Melee | Already curated | [Source](https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/README.md) |
+| Saints Reborn: a ReXGlue static recompilation of Saints Row | Already curated | [Source](https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/README.md) |
+| Starfox 64: Recompiled — an N64Recomp static-recompilation port | Already curated | [Source](https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/README.md) |
+| Starship: a Star Fox 64 PC port built from the decompilation | Already curated | [Source](https://github.com/HarbourMasters/Starship/blob/3322643f0bbf80d2f8f7e1c0d2c4c578515f6c90/README.md) |
 | ⚔️ Perfect Dark — perfect-dark-pc-port/perfect_dark | Pending | [Source](https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/README.md) |
 | Perfect Dark: matching Nintendo 64 decompilation | Already curated | [Source](https://github.com/n64decomp/perfect_dark/blob/169ed48bdcbfb3b568b028bd5bebb27680073514/README.md) |
+| 🕵️ Syphon Filter — Madxbio97/SF-pc-port | Insufficient evidence | [Source](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
+| Syphon Filter: The Omega Strain — matching PS2 executable decompilation | Already curated | [Source](https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/README.md) |
+| The Darkness Recomp: an Xbox 360 static recompilation with a native D3D11 renderer | Already curated | [Source](https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/README.md) |
+| P.T. for PC: a behavior-based engine reimplementation that reads the PS4 data | Already curated | [Source](https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/README.md) |
+| Dead Rising 2: Case Zero — an Xbox 360 XBLA static recompilation port | Already curated | [Source](https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/blob/a1feb9dd7a61e23b4bcbb1afab8edf3439ee86ac/README.md) |
+| Dead Rising 2: Case West — a sibling Xbox 360 XBLA static recompilation port | Already curated | [Source](https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/README.md) |
+| Himuro: a matching Fatal Frame PS2 decompilation | Already curated | [Source](https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/README.md) |
+| MikuPan: a native Fatal Frame PC port built on the Himuro decompilation | Already curated | [Source](https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/README.md) |
+| 🏎️ Mario Kart 64 — n64decomp/mk64 | Insufficient evidence | [Source](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
+| MarioKart 64: Recompiled — a native port through N64Recomp static recompilation | Already curated | [Source](https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/README.md) |
+| SpaghettiKart: a native Mario Kart 64 port built on decompiled source | Already curated | [Source](https://github.com/HarbourMasters/SpaghettiKart/blob/5073d2e3636cdb2794f4c845ee3bdec5ac4718c4/README.md) |
+| SpeedBreaker: statically recompiling Need for Speed: Most Wanted for Xbox 360 | Already curated | [Source](https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/README.md) |
+| Skate 3 Recomp: a native Xbox 360 recompilation through ReXGlue | Already curated | [Source](https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/README.md) |
+| DOAXVB Native PC Port: statically recompiling Dead or Alive Xtreme Beach Volleyball | Already curated | [Source](https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/README.md) |
+| CTR Turbocharged: a PC sourceport built on the Crash Team Racing decompilation | Already curated | [Source](https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/README.md) |
+| TonyWasAProSkater: a THPS1 native port forked from a matching decompilation | Already curated | [Source](https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/README.md) |
+| SVR2011-Recomp: a ReXGlue recompilation of WWE SmackDown vs. Raw 2011 | Already curated | [Source](https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/README.md) |
+| 🏁 WWE SmackDown vs. Raw 2011 — KaikoClanworth1/wwe-svr2011-pc | Insufficient evidence | [Source](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
+| The Simpsons Wrestling Recompiled: a psxrecomp PlayStation static recompilation | Already curated | [Source](https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/README.md) |
+| Driver Recompiled: a psxrecomp setup host that builds the game locally | Already curated | [Source](https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/README.md) |
 | REDRIVER2: reconstructing Driver 2 through a PlayStation compatibility layer | Already curated | [Source](https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/README.md) |
 | Snowball War: a bounded REA-assisted minigame reconstruction | Already curated | [Source](https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/README.md) |
+| 🏡 Animal Crossing — ACreTeam/forest | Insufficient evidence | [Source](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
+| Animal Crossing: a native PC port of the GameCube decompilation | Already curated | [Source](https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/README.md) |
+| Animal Crossing: matching GameCube decompilation | Already curated | [Source](https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/README.md) |
+| Animal Crossing: Wild World: matching Korean DS decompilation with differential runtime checks | Already curated | [Source](https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/README.md) |
+| The Sims: Bustin' Out: an AI-driven partial GBA matching decompilation | Already curated | [Source](https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/README.md) |
+| OpenRA: an engine reimplementation reimagining early Westwood RTS games | Already curated | [Source](https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/README.md) |
+| OpenRCT2: an open re-implementation of RollerCoaster Tycoon 2 | Already curated | [Source](https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/readme.md) |
+| OpenXcom: an open-source clone of X-COM: UFO Defense and Terror from the Deep | Already curated | [Source](https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/README.md) |
+| CorsixTH: an open reimplementation of Theme Hospital | Already curated | [Source](https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/README.md) |
+| Mario Party 4: matching GameCube decompilation of the USA releases | Already curated | [Source](https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/README.md) |
+| Snap64 Recomp: a static-recompilation port of Pokémon Snap | Already curated | [Source](https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/README.md) |
+| Dinosaur runner: an REA-inspected speed rule rebuilt with Codex | Already curated | [Source](https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/README.md) |
 | SpaceCadetPinball: decompiled game logic adapted to SDL2 | Already curated | [Source](https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/README.md) |
+| Touhou 6: reconstructing Embodiment of Scarlet Devil 1.02h source | Already curated | [Source](https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/README.md) |
+| TH08 Web: a WebAssembly port built from reconstructed source | Already curated | [Source](https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/README.md) |
+| TH095: function-level reconstruction of Shoot the Bullet 1.02a | Already curated | [Source](https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/README.md) |
+| TH04: rebuilding Lotus Land Story’s four PC-98 programs from source | Already curated | [Source](https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/README.md) |
+| DX-Ball: an REA-guided function-level reconstruction with Codex | Already curated | [Source](https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/README.md) |
+| Pre-CU Star Wars Galaxies: an idea to accelerate emulator reverse engineering with AI | Insufficient evidence | [Source](https://x.com/i/status/2111615624678088837) |
+| Animal Jam / Burrow: an unconfirmed account of Claude-assisted decompilation | Insufficient evidence | [Source](https://x.com/i/status/2111623879487795255) |
+| Kernel anticheat privacy: using REA to investigate machine information sent to a vendor | Insufficient evidence | [Source](https://x.com/i/status/2111627155449004086) |
+| LittleBigPlanet: an AI-decompilation idea for a moddable native PC port | Insufficient evidence | [Source](https://x.com/i/status/2111639768270594300) |
+| REDOC: a claimed on-chain platform for agent reverse engineering and capability reconstruction | Insufficient evidence | [Source](https://x.com/i/status/2111668130489549026) |
+| A 231-function reversing studio: a REA and Opus multi-tool workflow demonstration | Insufficient evidence | [Source](https://x.com/i/status/2111563711005745602) |
+| Codex ad-free app reconstruction: a 20-minute report includes wireless ADB troubleshooting | Insufficient evidence | [Source](https://x.com/i/status/2111479225890865430) |
+| A pro-software licensing algorithm: an unverified report of a REA keygen in hours | Insufficient evidence | [Source](https://x.com/i/status/2111423397095723483) |
+| Show Your Work: a measured dissection of REA's evidence architecture | Already curated | [Source](https://no-flag.com/2026/10/18/REA-paper/) |
+| Game ad behavior: a reported Claude inspection of obfuscated JavaScript | Insufficient evidence | [Source](https://x.com/i/status/2111582817251738031) |
+| LG OLED pause ads: an idea to modify firmware with Codex | Insufficient evidence | [Source](https://x.com/i/status/2111556091712581745) |
+| Dhaedalida: an AI reverse-engineering comparison on a self-made licensing sample | Insufficient evidence | [Source](https://x.com/i/status/2111560797855916293) |
+| FormEasy: an agent-native forms project reportedly based on studying Google Forms | Insufficient evidence | [Source](https://x.com/i/status/2111562194660016471) |
+| Coding harnesses into skills: a plan to study agent orchestration implementations | Insufficient evidence | [Source](https://x.com/YashasGunderia/status/2111579690532278697) |
+| Gemini Web To API: an agent installation test against stand-in services only | Insufficient evidence | [Source](https://x.com/argusiccom/status/2111585716195004425) |
+| DeepSeek V4.1: a reported V8 n-day to Electron IPC investigation | Insufficient evidence | [Source](https://x.com/i/status/2111587595750637954) |
+| An offline Linux reverse-engineering workspace: separating Codex from private files | Insufficient evidence | [Source](https://x.com/i/status/2111588450969231812) |
+| CM 01-02 to FM26: an idea to study football-manager data migration with REA | Insufficient evidence | [Source](https://x.com/i/status/2111591082119106953) |
+| Six-app two-room reconstruction: a report of 299 claims and a negative-control judge rule | Insufficient evidence | [Source](https://x.com/i/status/2111591362449592514) |
+| Windows loader: static malware analysis with REA and Codex | Already curated | [Source](https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/) |
+| T3 Code: an unverified claim of reconstruction and open-source release with 100 Claude agents | Insufficient evidence | [Source](https://x.com/axmed_bl/status/2111544615669014664) |
+| An 1,842-file AI desktop shell: an animated demonstration of local/server boundaries | Insufficient evidence | [Source](https://x.com/i/status/2111446154713964643) |
+| Mario Kart 8 Deluxe: 0xsvsv's Claude/REA PC-port account | Insufficient evidence | [Source](https://x.com/i/status/2111431983691862272) |
+| Kerbal Space Program 2: an AI-decompilation idea for community maintenance | Insufficient evidence | [Source](https://x.com/i/status/2111434708575805636) |
+| Cursor: an account of custom relays and personal Codex/Claude Code quotas | Insufficient evidence | [Source](https://x.com/FoxSnowing/status/2111465121126207605) |
 | Open Scrantic: reconstructing the Johnny Castaway screensaver engine | Already curated | [Source](https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/README.md) |
+| ScooterLink: reconstructing Honda RoadSync’s handlebar-button protocol | Already curated | [Source](https://x.com/i/status/2111470520688665052) |
+| Samsung TV: Aswin DG's Claude/REA-skill web-remote account | Insufficient evidence | [Source](https://x.com/dg_aswin/status/2111471785946562815) |
+| REA Workspace Template | Already curated | [Source](https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/README.md) |
+| Hitachi combination oven: a Codex/REA account using an Android app for direct control | Insufficient evidence | [Source](https://x.com/i/status/2111474749855670664) |
+| Frontkick vs Rikugan: a CREBench agent comparison | Already curated | [Source](https://www.synacktiv.com/en/publications/ufc-666-frontkick-vs-rikugan) |
+| Ableton Live 12: an agent reversing attempt running for 96 hours | Insufficient evidence | [Source](https://x.com/i/status/2111506869395337318) |
+| Makara game maker: an idea for scoped analysis of authorized inputs | Insufficient evidence | [Source](https://x.com/i/status/2111507612646699286) |
+| ROM analysis setup: Gemini Argon with REA, Ghidra and libretro | Insufficient evidence | [Source](https://x.com/i/status/2111507777336098897) |
+| EVM contracts: a REA idea for inspecting state-changing entry points | Insufficient evidence | [Source](https://x.com/i/status/2111507955711459554) |
+| Non-open-hardware Xiaozhi box: AI firmware changes for a personal VPS and shared memory | Insufficient evidence | [Source](https://x.com/i/status/2111511824751599721) |
+| Pandemic-relief websites: an idea for AI-assisted investigation of legacy backdoors | Insufficient evidence | [Source](https://x.com/i/status/2111516584976273866) |
+| Forked pi and two Sparks: starting a GLM-5.3-flash/REA trial | Insufficient evidence | [Source](https://x.com/i/status/2111519607928520794) |
+| Mac video downloader: an author-reported rebuild adding transcription | Insufficient evidence | [Source](https://x.com/i/status/2111520950814453895) |
+| Codex/Claude clients: asking whether tokens are hidden in the app package | Insufficient evidence | [Source](https://x.com/i/status/2111521972849193128) |
+| Old game saves in the browser: a REA rules-and-progress migration idea | Insufficient evidence | [Source](https://x.com/i/status/2111527329331638455) |
+| LG TV smoothness: an idea for REA-assisted responsiveness research | Insufficient evidence | [Source](https://x.com/i/status/2111528528374353931) |
+| inFAMOUS Second Son native PC port | Already curated | [Source](https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/README.md) |
+| Illustrative legacy/billing demo: 212 files to a spec and twelve Sonnet agents | Insufficient evidence | [Source](https://x.com/i/status/2111530936441446417) |
+| Windows XP/7: an AI compatibility idea instead of rewriting the whole OS | Insufficient evidence | [Source](https://x.com/i/status/2111546180207317426) |
+| Switch Diablo II to Android: an unverified AI-assisted native-port report | Insufficient evidence | [Source](https://x.com/i/status/2111454921589710905) |
 
 ## Partial coverage and aliases
 
 Partial or related catalog mappings:
 
-- `song:touhou-reconstruction` — The TH08 component is curated; TH04 and TH095 components in this combined report remain outside the mapping.
-- `song:artcraft-boundary` — PhotoCraft, WordCraft, GridCraft and DeckCraft cover four documented application implementations only. The broader Adobe/Office claims remain outside these partial mappings; proprietary source recovery, complete original-application/backend equivalence, legal clean-room certification and independent runtime reproduction are not established.
+- `song:touhou-reconstruction` — The REA-published essay, its pinned evidence notes and merged REA PR #1475 cover this combined report: TH08, TH095 and TH04 milestones, ledger counts under separate definitions, and the TH08 floating-literal oracle gap. The full mapping is to that method case; the TH08 project record remains a partial match. Results stay author-reported, the TH095 and TH04 repositories were not separately reviewed, and no build or runtime reproduction is claimed.
+- `song:artcraft-boundary` — The ArtCraft apps page says every Crafting App is written from scratch in Rust and makes no reverse-engineering claim; the four reviewed READMEs describe clean-room implementations from public specifications and observed behavior, with no proprietary code. No primary source documents decompilation or recovery of Adobe or Microsoft software, and none establishes the third-party REA attribution. PhotoCraft, WordCraft, GridCraft and DeckCraft keep partial mappings to their implementation records; other listed apps such as FilmCraft, LightCraft and CADCraft have public repositories not reviewed here. Retain the lead without a full mapping; this is not a judgment of the apps’ quality.
+- `song:unity-valheim` — Both linked REA issues are tool bug reports, not a reconstruction. #1801 reports that rea-agents 6.4.0 returned no types or methods for a Unity Assembly-CSharp.dll and Valheim's assembly_valheim.dll under the managed decode budget; #1371 reports a CLI JSON-output crash on an unnamed Unity game assembly, which its reporter later found fixed on main. Neither thread publishes recovered Valheim logic, a modification, reconstructed output or a comparison, and no Valheim retest is reported. The related mapping points to REA's managed-code guide, which documents that 64 MiB budget, partial resource-limit results and --type selection of known types, but not Unity, Valheim or the JSON crash. This is not a judgment of REA's managed-code support.
+- `song:large-android-apk` — The linked REA issue is a tool bug report, not a reconstruction: rea-agents 4.1.0's JADX provider ran out of Java heap on an unnamed 133 MB production APK with 11 DEX files. The closing reply describes heap-control and memory changes on main but states that they were not retested against that APK, and the thread names no app, recovered feature, reconstructed output or comparison. The related mapping points to REA's Android guide, which documents one JADX worker with no default heap, optional REA_JADX_HEAP_MIB or Java heap settings, the observed heap in Evidence and per-operation limits, but no test on an APK of this size. This is not a judgment of REA's current Android support.
+- `song:android-apidemos` — Merged REA PR #738 adds five static Android operations through headless JADX: package and manifest inspection, class search, member and selected-method Java/smali inspection, and static caller tracing. It reports a verification lane on Appium's public ApiDemos 6.0.18 APK in which all five CLI and MCP operations passed without executing the APK. This validates a tool integration, not a reconstruction: no ApiDemos feature or behavior is rebuilt or compared. The related mapping points to REA's Android guide, whose real-verification lane uses the same hash-pinned fixture; the guide documents that tool check, not a reconstruction, so the mapping is not full. This does not question the reported verification.
+- `song:super-mario-sunshine-pc` — Pinned port README, build notes, developer guide and license, with the pinned decompilation fork’s README, progress file, build notes and agent guide, support the reported native PC port and the fork’s author-stated extensive AI assistance. Full mapping covers this port built on that decompilation; GMSE01-only scope, disc-image dependence, incomplete matching, per-platform status and project-reported regression checks remain explicit. No REA use or independent runtime reproduction is established. A related mapping links the separately curated sms-english fork, which the port’s README names as its matching decompilation and decompilation submodule.
+- `song:dlss-amd-compute-report` — The linked DLSSNR-AMD repository, reviewed at a pinned commit, documents a Vulkan reimplementation of DLSS 5’s neural-rendering network with user-extracted weights and comparisons against NVIDIA’s DLL; it is curated separately and mapped here as related only. The commented thread quotes an announcement of a different project, HelixSR, which runs a DLSS 3.7 network on AMD, so the comment’s referent is not DLSSNR-AMD as established. Neither DLSSNR-AMD’s documentation nor HelixSR’s README describes AI-assisted reverse engineering. A full mapping needs the thread’s subject reviewed; the AI claim remains unestablished.
+- `song:arwing-littleplanet-ai-port-report` — The post’s three links resolve to carlosrmz009’s arwing, arwing2 and littleplanet repositories, each now curated as its own case: pinned READMEs document coverage-seeded disassemblies that reassemble to the original images, static recompilation to C with interpreter fallback, and recompiled-versus-interpreted hash checks. Each mapping covers one project, so the combined report stays pending. None of the repositories attributes the work to AI, REA or Opus 5.5, leaving the post’s single-prompt account unsupported; matching and runtime results are project-reported, not reproduced.
+- `song:virtua-fighter-ai-decompilation` — The post’s two links resolve to celsowm’s repositories. The pinned vf2-decomp documents a BSD-3-Clause, non-matching C17 recovery of Virtua Fighter 2 Version 2.1 that accepts paths only when they match a reference i960 executor; it is now curated, but that mapping is partial. The pinned vf3-decomp, a work-in-progress Dreamcast Virtua Fighter 3tb C port, has agent notes and coverage logs but no README or license file, so it stays uncurated and the combined report remains pending. REA use is not established; results are project-reported.
+- `song:dragon-ball-budokai-browser` — The cited post (@0x0SojalSec, 2026-10-14) says AI reverse-engineered Dragon Ball Budokai so that it runs at 60 fps in any browser, including mobile and online play; it shows one image and links a third-party play website. It names no author, method or source. That website credits a Tenkaichi3Decomp repository as its engine, while the curated Tenkaichi3Decomp README, pinned here, says the project never ships the game, requires the player’s own disc and is not affiliated with browser-play sites. The website is not cited as evidence. Retain the lead with only a related mapping to the curated PC port; the reported browser port is not a reviewable project.
+- `song:rea-640-windows-managed-electron-test` — A two-post thread reports hands-on tests of npm rea-agents 6.4.0 on Windows with Node 24: about 200 .NET Framework assemblies against the managed decode budget, an AI-built Electron-style sample, a Trap.dll side-effect check and a one-constant assembly comparison. The samples, raw command output and full environment are not published, and the thread evaluates REA's static analysis rather than reconstructing any software. Retain the lead without a curated case; the related mappings point to the catalog's REA managed-code and JavaScript-workflow documentation, which describe the representation budget, --type selection and application-graph analysis that the posts test.
+- `song:pokemon-hgss-multi-agent-decompile-report` — Three posts are cited. @autoaiadvantage (2026-10-15) says someone decompiled Pokémon HeartGold and SoulSilver in a month with several AI agents, using about 71 billion API tokens at an estimated $56k; the cited @Pirat_Nation post was deleted by its author, and @Alex_Vainshtein replies that the work builds on pret’s existing decompilation and tooling. None names or links the project. The fork ctrl-cheeb-del/pokeheartgold says it is fully decompiled with LLM agents and builds both ROMs byte-for-byte, but it reports no token use or cost and no post identifies it as the work described. Retain the lead without a curated case; the related mapping records only the pret baseline the reply names.
+- `song:ringfall-th04-bullet-hell-report` — The post (@0xMoryo, 2026-10-15) says someone used REA’s Ghidra provider on the 1997 PC-98 TH04 executable, recovered two bullet-ring formulas into clean-room notes, and had Claude Code build RINGFALL, a browser bullet-hell boss fight, in one session; it carries only a video. It says REA and “the TH04 study” are linked in replies, which the post API does not expose; the quoted post is a general REA tutorial article, and no RINGFALL source or build was found. Retain the lead without a curated case; the related mapping points to REA’s separately curated TH04 bullet-ring evidence, not to RINGFALL.
 - `song:schaller-opticfilm-thinkpad-linux` — The existing scanner investigation and the separate ThinkPad IMX471 tuning/driver case cover two bounded components of this report. Their mappings remain partial: neither asserts complete scanner/camera behavior, all-device compatibility or independent runtime reproduction.
-- `song:rea-reconstruction-companion` — The Pocket Tasks mapping covers one maintainer-informed command-line reconstruction with published candidate and bounded comparison evidence. It does not cover the broader Companion workflow, other examples or model/host effectiveness. Prior source exposure, pending human review and the historical instruction-packet hash remain explicit; no independent runtime reproduction is established.
-- `hao-games:row-134` — The TH08 reconstruction is curated, but this separate WebAssembly companion repository is not covered as the same artifact. Its own implementation and deployment claims remain pending.
-- `hao-games:row-136` — Only the official TH04 bullet-ring helper showcase is covered. This collection row identifies a broader reconstruction repository, so full repository/game coverage remains pending.
-- `hao-games:row-137` — Only the official DX-Ball sound-pan function showcase is covered. That does not establish curation or completion of this broader game-reconstruction repository.
+- `song:rea-electron-notes-ipc-answer-key-test` — A two-post thread (@ofmyslippers, 2026-10-15) reports three runs of REA’s static Electron analysis on a small notes app with a known answer key: 4 of 4 IPC channels, handler pairs and preload API members, correctly no sender checks, 2.5–3 s a run, and 1.0 MB of JSON from 2.3 KB of source. The test app, answer key and outputs are not published (the thread links only the REA repository), and the work evaluates REA rather than reconstructing software. Retain the lead without a curated case; the related mapping points to REA’s JavaScript guide, whose own Notes Electron fixture has one IPC channel and so is not the app tested.
+- `song:rea-game-function-matcher-audit-report` — The post (@xmyttle, 2026-10-16) retells REA’s Calculator demo and the REA blog essay “Does reverse engineering need a bigger model?” (N0zoM1z0, 2026-10-13): a relay of GPT-6 models closing stubborn Touhou function matches, and an audit that found accepted functions with wrong constants, including 1.0f where the original added 32.0f. The essay’s pinned evidence notes and TH08 commit a393f400 document that floating-literal audit, and the essay calls the reward-learning risk an inference, not an observed exploit. The catalog already covers the audit through the Touhou reconstruction-method essay, so this is a partial mapping; the model-relay essay itself is not catalogued, and the lead stays pending.
+- `song:rea-reconstruction-companion` — The pinned repository establishes the named Companion: an MIT Agent Skill that works with REA to turn evidence into scoped requirements, design, staged implementation and validation, with an optional installer-managed routing block in REA’s skill and a source-exposed evaluation kit. The full mapping covers it as a community REA integration; the existing partial mapping covers the separate Pocket Tasks worked reconstruction. Example and checker results remain maintainer-reported teaching material, and no model trial, independent evaluation or runtime reproduction is established.
+- `song:valdiorn-audio-effects-firmware-report` — valdiorn’s Hacker News comment (2026-10-15), summarized by @RealYDT, reports using Opus 5.5 to run three competitors’ effects firmware in an emulator, convert it to standalone C++ libraries and compare the results, plus Lexicon 224 and Ursa Major work. No code, emulator, library, comparison data or product versions are published, and the comment names no Lexicon repository. A reply by the author of the public reflecticon-224 emulation guesses that it was the one found; that project is recorded separately and mapped as related, not as this report’s work. Retain the lead as insufficient evidence; the reported decompilations and comparisons are unestablished.
+- `yibie:all-games-are-open-source-now` — The author’s X article (@rehan_shei, 2026-10-04) is an essay on what AI decompilation and modding mean for the games industry. It says that Opus 5.5, run overnight, produced a working reverse-engineered Terraria to which the author added weapons and mobs, surveys other people’s reported mods and decompilations, and says the author open-sourced what Claude learned as universal-modder. The Terraria rebuild has no public artifact; the related mapping points to that separately catalogued Universal Modder toolkit, which the article names. Retain the lead without a full mapping; the essay is commentary, and its figures and third-party examples are not verified here.
+- `yibie:how-are-y-all-using-ai-to-make-recompilations` — The source is a discussion: an r/recomps question from 2026-10-05 asking how people use AI to make recompilations and whether a tutorial exists. Replies offer general advice and opinions, such as subscription choices, prompting agents against existing recompilation tools and maintaining recompilation engines, without code, results or comparisons; one reply points to the docs of freefrank/LostOdysseyRecomp, which is already cataloged as its own case and is recorded here only as a related match. Retain the lead without a reconstruction mapping of its own.
+- `yibie:finding-jingle-town-debugging-an-n64-game-without-symbols` — The dated post documents a manual GDB-and-Ares workflow for testing one runtime hypothesis in the Snowboard Kids 2 decompilation, with its tools, steps, three observed values and stated limits. Full mapping covers this debugging write-up as a learning resource; the decompilation it studies keeps its own case record, linked here as related. The observations were not repeated, and the post claims no AI or REA use.
+- `hao-games:row-001` — The pinned README, Makefile, asset extractor, Jenkinsfile and build wiki document an enhanced native port built on decompiled Super Mario 64 source, with assets extracted from an original ROM and output comparison disabled. The full mapping covers this port; the related mapping records its lineage from the separately curated n64decomp reconstruction, not a matching result. The linked post only points to a general archive of decompiled games and was not used as evidence.
+- `hao-games:row-003` — The pinned README, building guide, CMake file, submodules, workflows and license document a native libultraship port that converts a user-supplied US or Japanese ROM and claims no matching output. Full mapping covers this port. The related n64decomp mapping rests on the shared source layout and two sampled files, because the README does not name its upstream.
+- `hao-games:row-004` — The pinned README, wiki and build files present an online-multiplayer and Lua-modding project for the Super Mario 64 PC port, continuing sm64ex-coop, itself a fork of sm64ex. Source checks a user-supplied US ROM, and PC builds force non-matching code. No reconstruction work of its own is documented: no decompilation account, comparison or matching evidence. The related mappings record only its descent: credits.txt says it was built on sm64ex-coop, which was built on the separately curated sm64ex port and, through it, the sm64 decompilation. This is not a finding about the multiplayer project itself.
+- `hao-games:row-006` — The pinned README, progress file, GMSE01 build notes, agent rules and CI workflow document this fork’s own North American matching work, with AI assistance stated by its author. Full mapping covers the fork, not upstream doldecomp/sms or the separate native PC port. Its byte-identical DOL still links unfinished objects from the original disc, its GMSE01 figures are author-reported, and its US map provenance is internally inconsistent. A related mapping records that the README calls it a hobby fork of the separately curated doldecomp/sms decompilation, begun when the upstream Japanese decompilation was about 38% matched.
+- `hao-games:row-013` — Pinned README, build guide, supported-ROM hash list, CMake files and CI workflow support a native Ocarina of Time port built on decompilation source with libultraship. Full mapping covers this port, not the zeldaret/oot decompilation itself or a matching build. The linked post points to a third-party archive of prebuilt games rather than this project and is not used as evidence; ROM dependence and the missing license file remain explicit. The related mapping records the README’s statement that the port depends on source code from the OoT decompilation project, curated separately as zeldaret/oot; it is not a matching result for the port.
+- `hao-games:row-015` — Pinned README, build guide, license, submodule list, platform folders and CI workflow, plus Aurora’s pinned README, support a native Twilight Princess port built on the zeldaret/tp decompilation. Full mapping covers this port, not the decompilation itself, which is a separate lead. Disc-image dependence, the GameCube-only matching base, GPU limits and project-reported accuracy remain explicit. The related mapping records the README’s statement that Dusklight is based on the separately curated zeldaret/tp decompilation; it is not a matching result for the port.
+- `hao-games:row-019` — The published case covers this US N64 Majora’s Mask static recompilation with its original-ROM and platform requirements. Ocarina of Time remains planned, and the project explicitly disclaims generative-AI development. Source review does not mean independent runtime reproduction. A related mapping records that the README credits the separately curated zeldaret/mm decompilation for headers and some function definitions used in patches and enhancements, while stating that the port is not based on decompiled source.
+- `hao-games:row-020` — Pinned README, build rules, checksum and CI configuration support this US N64 Majora’s Mask decompilation report. The full mapping covers this repository, not the post’s linked archive; a related mapping records that Zelda 64: Recompiled credits it for headers and functions but is a separate static recompilation. WIP status, the original-ROM dependency, the absent license and project-reported matching remain explicit.
+- `hao-games:row-021` — Pinned README, build guide, supported-hash list, license and decomp-diff script support this native Majora’s Mask port built on the zeldaret/mm decompilation. The full mapping covers the port, not the separate decompilation or Zelda 64: Recompiled. User-supplied game data, playtest-only nightlies and the absence of published fidelity checks remain explicit. The related mapping records the port’s lineage from the separately curated zeldaret/mm decompilation, which decomp_diff.py names as the official repository its game sources are compared with; it is not a matching result for the port.
+- `hao-games:row-025` — Building on the bounded README look, the pinned build files, decompilation configuration, startup source and CI workflow support Metaforce as an engine reimplementation now rewritten on PrimeDecomp and run from a user-selected disc image. The full mapping covers this repository only, separate from the collection’s MetroidPrimePort row. Unavailable builds, the absent current release, the non-matching native target and unmapped MIT/CC0 license scopes remain explicit. The related mapping records the rewrite’s basis in the separately curated PrimeDecomp decompilation, not a matching result for Metaforce.
+- `hao-games:row-026` — The pinned README, NOTICE, license, native-port guide, Linux CI workflow and v0.29.0 release support this AI-assisted native Metroid Prime port compiled from the PrimeDecomp decompilation. The full mapping covers this repository only, separate from the collection’s Metaforce row. Supported disc revisions, the narrow MIT scope over non-game code and author-reported smoke tests remain explicit; the linked post is not reviewed as evidence. The related mapping records the port’s lineage from the separately curated PrimeDecomp decompilation, not a matching result for the port.
+- `hao-games:row-027` — Building on the bounded README look, the pinned README, custom license, submodule list, CI workflow and v1.1.1 release support this Sonic Mania game-code decompilation built with the RSDKv5 or RSDKv5U engine. The full mapping covers the game repository only; the engine row stays separate. Official-asset dependency, the excluded Netflix version, the default engine/game build combination, non-byte-matching scope and non-commercial license terms remain explicit. The related mapping records that the game builds with the separately curated RSDKv5 engine decompilation, which .gitmodules includes as the dependencies/RSDKv5 submodule; it is not a byte-matching result.
+- `hao-games:row-090` — The pinned README, build guide, recompiler configs, submodule list, CI workflow, project history and GPLv3 licence support the named N64Recomp static recompilation of Star Fox 64. Full mapping covers this port, not the separate sf64 decompilation, the Starship port or independently tested gameplay. The single accepted US 1.1 ROM, private CI input and decompilation-derived patch headers remain explicit. The related mapping records the port’s use of headers and some functions from the separately curated sf64 decompilation, not a matching result for the port.
+- `hao-games:row-091` — The pinned README, build guide, CMake sources, asset-extraction config, CI workflow and CC0 licence, with the sibling project's history notes, support the named Star Fox 64 PC port built from the decompilation on libultraship. Full mapping covers this port, not the sf64 decompilation, the sibling static recompilation or independently tested gameplay. The user-supplied US ROM and project-reported behaviour remain explicit. The related mapping records that this port compiles the separately curated sf64 decompilation’s C code, not a matching result for the port.
+- `hao-games:row-130` — The pinned README, reverse-engineering report, testing notes, game file and notices document the author’s REA MCP inspection of the open-source T-Rex Runner page and a Codex-built reconstruction of its speed rule. Full mapping covers this repository’s bounded acceleration case, not gameplay equivalence; REA’s separate dinosaur teaching case is linked only as related. Author-reported tests and manual checks were not rerun.
+- `hao-games:row-134` — Pinned README, web-porting and architecture documents, build, provenance and deployment scripts, license and the v0.1.0 release support this repository as a separate WebAssembly port built from the TH08 reconstruction source. Full mapping covers the browser port and its author-run checks, not binary identity, hardware performance or independently reproduced play; the curated TH08 reconstruction stays linked as related. Local retail-data requirements and browser limits remain explicit.
+- `hao-games:row-135` — Pinned README, generated progress, oracle and runtime-issue notes, tool lock, bootstrap script, CI and license support the named TH095 1.02a reconstruction report. Full mapping covers this repository’s function-level reconstruction and playable Windows i386 build, not whole-executable identity, planned ports or independently reproduced play; REA’s Touhou method essay is linked as related. Original-executable requirements and project-reported counts remain explicit.
+- `hao-games:row-136` — Pinned README, generated progress, DOS build, toolchain, oracle, runtime and reference notes, CI and license support the named TH04 reconstruction report. Full mapping covers this repository’s four-program DOS reconstruction and its author-reported differential replays, not byte identity, complete campaigns, the native x64 branch or independent reproduction. REA’s one-helper showcase remains a partial match and its Touhou essay a related one.
+- `hao-games:row-137` — Pinned README, REA worked example, matching, build and progress notes, target and tool locks, a differential test, CI and license support the named DX-Ball reconstruction with author-documented REA and Codex use. Full mapping covers this in-progress function-level reconstruction, not byte identity, a finished playable VC4 build or independent reproduction; REA’s one-function sound-pan showcase remains a partial match. The original-archive requirement and its unverified download source remain explicit.
+- `song:synacktiv-frontkick-rikugan-crebench` — The Synacktiv article documents a dated comparison of the Frontkick and Rikugan Binary Ninja agents on two CREBench tasks, with the setup, a per-run table and the author’s own finding that a prompt difference, rather than the agent design, explains most of the gap. The full mapping covers it as a learning resource, and the related mapping links the CREBench paper it uses. Frontkick has no public release, transcripts are unpublished, and nothing was rerun here.
 
 Alias decisions:
 

@@ -1,24 +1,24 @@
-# 仓库扫描索引
+# 已发布仓库索引
 
-[精选资源](../../README.zh-CN.md) · [搜索网站](https://awesomerea.org/zh/?view=source-index) · [下载双语 JSON](https://awesomerea.org/source-index.json) · [English](README.md)
+[精选资源](../../README.zh-CN.md) · [搜索网站](https://awesomerea.org/zh/?view=source-index) · [下载双语 JSON](https://awesomerea.org/source-published.json) · [English](README.md)
 
-从 **3,000** 个已读取 README 的仓库中提供 **2,836** 个浏览条目；**161** 个明确超出范围的条目及 **3** 个上游仓库已无法访问的条目保留在原始扫描记录中。
+此发布选集包含 **3,500** 条已采集仓库记录，提供 **3,309** 个浏览条目。**187** 个范围排除条目及 **4** 个上游仓库已无法访问的条目保留在发布 JSON 中。各原始扫描的累计数量保留在独立的来源证据中。
 
-这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
+这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
-扫描日期: **2026-10-16 UTC**.
+发布日期: **2026-10-20 UTC**.
 
-| 分类 | 仓库数 |
-| --- | ---: |
-| [网站](web-analysis.zh-CN.md) | 177 |
-| [游戏](game-analysis.zh-CN.md) | 386 |
-| [应用 · Android](android.zh-CN.md) | 432 |
-| [应用 · 托管代码](managed-code.zh-CN.md) | 131 |
-| [原生二进制](native-analysis.zh-CN.md) | 680 |
-| [运行时与调试](dynamic-analysis.zh-CN.md) | 98 |
-| [固件](firmware.zh-CN.md) | 207 |
-| [协议](protocol-analysis.zh-CN.md) | 103 |
-| [通用工具与资源合集](reverse-engineering.zh-CN.md) | 622 |
+| 分类 | 仓库数 | 关联精选或论文 |
+| --- | ---: | ---: |
+| [网站](web-analysis.zh-CN.md) | 214 | 25 |
+| [游戏](game-analysis.zh-CN.md) | 485 | 63 |
+| [应用 · Android](android.zh-CN.md) | 479 | 31 |
+| [应用 · 托管代码](managed-code.zh-CN.md) | 135 | 5 |
+| [原生二进制](native-analysis.zh-CN.md) | 850 | 76 |
+| [运行时与调试](dynamic-analysis.zh-CN.md) | 145 | 18 |
+| [固件](firmware.zh-CN.md) | 221 | 18 |
+| [协议](protocol-analysis.zh-CN.md) | 110 | 8 |
+| [通用工具与资源合集](reverse-engineering.zh-CN.md) | 670 | 63 |
 
 [扫描方法（英文）](../source-scan.md) · [范围排除记录](../../data/source-scope.json)
 

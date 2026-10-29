@@ -8,8 +8,9 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_readme import (BADGES_BEGIN, BADGES_END, CONTENTS_BEGIN, CONTENTS_END, plain_text,
-                         render_badges, replace_badges, render_catalog, render_contents, render_papers)
+from build_readme import (BADGES_BEGIN, BADGES_END, BEGIN, CONTENTS_BEGIN, CONTENTS_END, PAPERS_BEGIN, lead_sentence,
+                         plain_text, render_badges, replace_badges, render_catalog, render_contents, render_papers)
+from build_repository_index import SUMMARY_BEGIN
 
 
 def resource(**changes):
@@ -36,7 +37,6 @@ class ReadmeContentsTest(unittest.TestCase):
         self.assertIn('/badge/resources-3-', en)
         self.assertIn('/badge/cases-1-', en)
         self.assertIn('/badge/papers-1-', en)
-        self.assertIn('/validate.yml/badge.svg?branch=main', en)
         self.assertIn('](LICENSE)', en)
         self.assertNotRegex(en.lower(), r'runtime|reproduced|verified|total-4')
         zh = render_badges(records, [listed], 'zh')
@@ -46,6 +46,18 @@ class ReadmeContentsTest(unittest.TestCase):
         self.assertIn('案例: 1', zh)
         self.assertIn('论文: 1', zh)
         self.assertEqual((records, [listed]), before)
+
+    def test_badges_have_no_ci_badge_and_the_footer_keeps_the_build_link(self):
+        workflow = 'https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml'
+        for language, name, footer in (('en', 'README.md', 'Build status'), ('zh', 'README.zh-CN.md', '构建状态')):
+            with self.subTest(language=language):
+                rendered = render_badges([resource()], [paper()], language)
+                self.assertNotIn('/actions/', rendered)
+                self.assertNotIn('badge.svg', rendered)
+                self.assertEqual(rendered.count('[!['), 5)
+                text = (ROOT / name).read_text(encoding='utf-8')
+                self.assertNotRegex(text, r'actions/workflows/[^)\s]*badge\.svg')
+                self.assertIn(f'[{footer}]({workflow})', text.split(BADGES_END, 1)[1])
 
     def test_badge_generation_preserves_authored_header_and_rejects_ambiguous_markers(self):
         prefix = '<img src="featured.svg">\n# Collection\n<img src="banner.svg">\n'
@@ -88,41 +100,43 @@ class ReadmeContentsTest(unittest.TestCase):
         self.assertIn('[完整仓库索引](#完整仓库索引) (10)', rendered)
         self.assertIn('https://awesomerea.org/zh/cases/', rendered)
 
-    def test_resource_title_and_full_caveat_keep_separate_bilingual_paragraphs(self):
+    def test_resource_line_keeps_title_opening_sentence_tags_and_full_entry(self):
         record = resource(name='Fixture [tool]', name_zh='测试 [工具]',
-                          description_en='Recovers a view, not the original backend. Requires A & B.',
-                          description_zh='恢复界面，并非原后端。需要 A & B。')
+                          description_en='Recovers a readable view of the interface, not the original backend. Requires A & B.',
+                          description_zh='恢复已发布界面的可读视图，但并非原始后端实现。需要 A & B。')
         before = deepcopy(record)
         for language, title, description, label, prefix in [
-            ('en', r'Fixture \[tool\]', 'Recovers a view, not the original backend. Requires A &amp; B.',
-             'Requirements & evidence', ''),
-            ('zh', r'测试 \[工具\]', '恢复界面，并非原后端。需要 A &amp; B。', '使用条件与证据', 'zh/'),
+            ('en', r'Fixture \[tool\]', 'Recovers a readable view of the interface, not the original backend.', 'Full entry', ''),
+            ('zh', r'测试 \[工具\]', '恢复已发布界面的可读视图，但并非原始后端实现。', '完整条目', 'zh/'),
         ]:
             with self.subTest(language=language):
                 rendered = render_catalog([record], language)
-                self.assertEqual(rendered.count(f'- [**{title}**]({record["url"]})'), 1)
-                self.assertEqual(rendered.count('\n\n  ' + description + '\n'), 1)
-                self.assertIn(f'[{label}](https://awesomerea.org/{prefix}resources/{record["id"]}/)', rendered)
-                self.assertLess(rendered.index(description), rendered.index(f'[{label}]'))
-                self.assertNotIn('<sub>', rendered)
+                tag = '工具' if language == 'zh' else 'Tool'
+                line = (f'- [**{title}**]({record["url"]}) - {description} '
+                        f'<sub>{tag} · [{label}](https://awesomerea.org/{prefix}resources/{record["id"]}/)</sub>')
+                self.assertEqual(rendered.splitlines().count(line), 1, rendered)
+                # The remaining sentences, like requirements and evidence, stay on the entry page.
+                self.assertNotIn('A &amp; B', rendered)
         self.assertEqual(record, before)
 
-    def test_paper_source_scope_and_publication_survive_detail_navigation(self):
+    def test_paper_line_keeps_source_publication_and_full_entry(self):
         record = paper(id='paper-readme-fixture', targets=['website'], code_url='https://example.com/code')
         before = deepcopy(record)
-        for language, label, prefix in [('en', 'Full entry & citation', ''), ('zh', '完整条目与引用', 'zh/')]:
+        for language, label, prefix in [('en', 'Full entry', ''), ('zh', '完整条目', 'zh/')]:
             with self.subTest(language=language):
                 rendered = render_papers([record], language)
-                self.assertIn(f']({record["url"]})', rendered)
-                self.assertIn(f'[PDF]({record["pdf_url"]})', rendered)
-                self.assertIn('](https://example.com/code)', rendered)
-                self.assertIn(f'[{label}](https://awesomerea.org/{prefix}papers/paper-readme-fixture/)', rendered)
-                self.assertIn(plain_text(record[f'description_{language}']), rendered)
-                self.assertLess(rendered.index(plain_text(record[f'description_{language}'])),
-                                rendered.index('[PDF]'))
-                self.assertIn(plain_text(record[f'scope_limitations_{language}']), rendered)
-                self.assertIn(str(record['year']), rendered)
-                self.assertIn(plain_text(record['venue']), rendered)
+                line = next(line for line in rendered.splitlines() if line.startswith('- [**'))
+                description = plain_text(lead_sentence(record[f'description_{language}'], language))
+                self.assertIn(f']({record["url"]}) - {description} <sub>', line)
+                self.assertIn(f'[PDF]({record["pdf_url"]})', line)
+                self.assertIn('](https://example.com/code)', line)
+                self.assertTrue(line.endswith(f' · [{label}](https://awesomerea.org/{prefix}papers/paper-readme-fixture/)</sub>'), line)
+                self.assertIn(str(record['year']), line)
+                self.assertIn(plain_text(record['venue']), line)
+                self.assertIn(plain_text(record['authors'][0]), line)
+                # Scope and limitations are on the paper's entry page, not in the README.
+                self.assertNotIn(plain_text(record[f'scope_limitations_{language}']), rendered)
+                self.assertNotIn('<details>', rendered)
         self.assertEqual(record, before)
 
 
@@ -139,6 +153,23 @@ class ReadmeContentsTest(unittest.TestCase):
                     heading = explicit[1] if explicit else next(h for h in headings if h.lower().replace(' ', '-') == anchor)
                     # Chinese catalog headings keep the English section name before " · ".
                     self.assertEqual(heading.split(' · ')[-1] if language == 'zh' else heading, label)
+
+    def test_each_generated_block_names_its_generator_and_existing_sources(self):
+        blocks = ((BADGES_BEGIN, 'build_readme.py'), (CONTENTS_BEGIN, 'build_readme.py'), (BEGIN, 'build_readme.py'),
+                  (PAPERS_BEGIN, 'build_readme.py'), (SUMMARY_BEGIN, 'build_repository_index.py'))
+        for name in ('README.md', 'README.zh-CN.md'):
+            text = (ROOT / name).read_text(encoding='utf-8')
+            for marker, script in blocks:
+                with self.subTest(readme=name, marker=marker):
+                    note = text.split(marker + '\n', 1)[1].split('\n', 1)[0]
+                    self.assertRegex(note, rf'^<!-- Generated by scripts/{re.escape(script)} from \S.* '
+                                           r'do not edit this block by hand\. -->$')
+                    sources = re.findall(r'(?:data|site)/[\w.-]+(?:\.json|/)', note)
+                    self.assertTrue(sources)
+                    for source in sources:
+                        self.assertTrue((ROOT / source).exists(), source)
+        zh = (ROOT / 'README.zh-CN.md').read_text(encoding='utf-8').split(BEGIN + '\n', 1)[1]
+        self.assertIn('site/translations.zh-CN.json', zh.split('\n', 1)[0])
 
 
 if __name__ == '__main__':

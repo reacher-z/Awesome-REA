@@ -63,7 +63,16 @@ def project_source_browser(full_export: bytes) -> dict:
             or any(not isinstance(record, dict) for record in source['resources'])):
         raise ValueError('Full source export must contain metadata and resource objects')
     meta = source['meta']
-    if 'status' not in meta or 'completed_at' not in meta:
+    if (meta.get('schema_version', 1) not in (1, 2)
+            or type(meta.get('schema_version', 1)) is not int):
+        raise ValueError('Unsupported source export version')
+    published = meta.get('schema_version') == 2
+    if published:
+        from public_source_supplements import validate_published_document
+        validate_published_document(source)
+    elif (meta.get('kind') == 'published-repository-selection'
+          or meta.get('status') not in ('complete', 'in-progress')
+          or 'completed_at' not in meta):
         raise ValueError('Full source export is missing browser status or completion metadata')
     scanned = [record for record in source['resources'] if record.get('scan_status') == 'readme-scanned']
     visible = [record for record in scanned if record.get('scope_status') != 'excluded']
@@ -82,15 +91,20 @@ def project_source_browser(full_export: bytes) -> dict:
             raise ValueError('Visible source records must have unique nonempty IDs')
         identifiers.add(identifier)
         records.append({field: record[field] for field in RECORD_FIELDS if field in record})
-    return {
-        'meta': {
+    browser_meta = {
             'schema_version': SCHEMA_VERSION, 'status': meta['status'],
-            'completed_at': meta['completed_at'], 'scope': scope,
+            'completed_at': meta.get('completed_at'), 'scope': scope,
             'full_export': FULL_EXPORT_FILENAME,
             'full_export_sha256': hashlib.sha256(full_export).hexdigest(),
-        },
-        'resources': records,
     }
+    if published:
+        browser_meta = {
+            'schema_version': 2, 'kind': 'published-repository-selection',
+            'status': 'published-selection', 'published_at': meta['published_at'],
+            'scope': scope, 'full_export': 'source-published.json',
+            'full_export_sha256': hashlib.sha256(full_export).hexdigest(),
+        }
+    return {'meta': browser_meta, 'resources': records}
 
 
 def validate_source_browser(full_export: bytes, browser_export: bytes) -> dict:

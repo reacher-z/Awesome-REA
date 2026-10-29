@@ -9,7 +9,7 @@ from collections import Counter, defaultdict
 from urllib.parse import quote
 
 from catalog import ROOT, load_resources
-from build_paper_pages import papers_newest_first
+from build_paper_pages import STATUS_LABELS as PAPER_STATUSES, papers_newest_first
 from source_scope import apply_scope, read_scope
 from validate_papers import read_papers
 
@@ -22,6 +22,8 @@ CONTENTS_BEGIN = '<!-- BEGIN GENERATED CONTENTS -->'
 CONTENTS_END = '<!-- END GENERATED CONTENTS -->'
 BADGES_BEGIN = '<!-- BEGIN GENERATED BADGES -->'
 BADGES_END = '<!-- END GENERATED BADGES -->'
+RESOURCE_SOURCES = ('data/rea-resources.json', 'data/tool-resources.json')
+INDEX_SOURCES = ('data/source-index.json', 'data/source-scope.json', 'data/source-supplements/')
 CATEGORIES = {
     'core': ('Official REA: core and setup', 'REA 官方：核心与配置'),
     'workflow-guides': ('Official REA: investigation guides', 'REA 官方：调查指南'),
@@ -63,6 +65,16 @@ RELATIONSHIPS = {
     'foundation': ('Foundation tool', '基础工具'),
     'learning': ('Learning resource', '学习资源'),
 }
+# Same link label as the website's collection pages; the entry page holds what a README line leaves out.
+FULL_ENTRY = ('Full entry', '完整条目')
+# GitHub truncates a README's rendered view after 500 KiB. The builder warns well before that so a
+# reduction can be planned; the warning never fails a build, so open pull requests keep passing.
+GITHUB_README_LIMIT = 512_000
+README_SIZE_WARNING = 420_000
+# One name for each entry's requirements disclosure: homepage cards, /resources/, /cases/ and entry pages.
+# README lines link the entry page as "Full entry" instead. site/app.js repeats the label in its UI
+# strings; validate_site.py checks that copy.
+REQUIREMENTS_LABEL = ('Requirements & limits', '使用条件与局限')
 TARGETS = {
     'website': ('Website', '网站'),
     'game': ('Game', '游戏'),
@@ -97,11 +109,37 @@ def plain_text(value):
     return text
 
 
-def requirements_text(value):
-    """Both supported source formats render as ordinary prose."""
-    if isinstance(value, str):
-        return plain_text(value)
-    return plain_text(' '.join(value))
+# A period after these words does not end an English sentence ("Super Smash Bros. Melee", "SmackDown vs. Raw").
+ABBREVIATIONS = {'al', 'approx', 'bros', 'cf', 'dr', 'e.g', 'etc', 'fig', 'i.e', 'jr', 'mr', 'mrs', 'ms', 'no', 'sr',
+                 'st', 'u.s', 'vol', 'vs'}
+# Sentence punctuation plus any closing quotes or brackets. English sentences may start with a lowercase
+# project name ("... two libraries. ultramodern reimplements ..."), so only the following space is required.
+SENTENCE_END = {
+    'en': re.compile(r'(?P<word>\S*?)[.!?]+[”"’)]*(?=\s)'),
+    'zh': re.compile(r'(?P<word>)[。！？]+[”」）)]*(?=.)'),
+}
+PAIRS = ('()', '（）', '“”', '「」', '[]')
+# Shorter openings ("ExeBench is a dataset, not a decompiler." is 40) read as fragments and keep the next sentence.
+LEAD_MINIMUM = {'en': 40, 'zh': 16}
+
+
+def lead_sentence(text, language):
+    """README lines show a description's opening sentence; the linked entry page keeps the full text."""
+    text = ' '.join(text.split())
+    for match in SENTENCE_END[language].finditer(text):
+        word = re.sub(r'^\W+', '', match['word']).lower()
+        if word in ABBREVIATIONS:
+            continue
+        # An initial after a capitalized name ("Eric S. Raymond") does not end a sentence; "decompiled to C." does.
+        before = text[:match.start()].split()
+        if re.fullmatch(r'[a-z]', word) and before and before[-1][:1].isupper():
+            continue
+        lead = text[:match.end()]
+        if any(lead.count(opening) != lead.count(closing) for opening, closing in PAIRS):
+            continue
+        if len(lead) >= LEAD_MINIMUM[language]:
+            return lead
+    return text
 
 
 # English and Chinese section names. Headings and Contents both use these labels so they cannot drift;
@@ -144,7 +182,7 @@ def collection_section(record):
         return 'references-and-learning'
     if record['id'] in {'chrome-devtools-mcp', 'playwright-mcp', 'burp-suite-mcp-server', 'webcrack', 'humanify'} or category in {'web-analysis', 'webassembly'}:
         return 'website'
-    if record['id'] in {'renderdoc-mcp', 'rea-dxball-case', 'rea-th04-case'} or category == 'game-analysis':
+    if record['id'] in {'renderdoc-mcp', 'cheatengine-mcp-bridge', 'rea-dxball-case', 'rea-th04-case'} or category == 'game-analysis':
         return 'game'
     if record['id'] in {'jadx-ai-mcp', 'apktool-mcp-server', 'frida-mcp-yfe404', 'super-trouper', 'frida', 'grapefruit', 'rea-aegis-case', 'rea-notion-case', 'nibkit'} or category in {'android', 'dotnet', 'jvm', 'javascript-electron'}:
         return 'app'
@@ -162,6 +200,18 @@ def collection_section(record):
     return 'native-binary'
 
 
+def other_targets(record, section, language):
+    """Targets the section heading does not imply; sections without a target of their own list every target."""
+    index = 0 if language == 'en' else 1
+    implied = {'native-binary': 'binary'}.get(section, section) if section in TARGET_SECTIONS else None
+    labels = [names[index] for target, names in TARGETS.items()
+              if target in record.get('targets', []) and target != implied]
+    if not labels:
+        return ''
+    prefix = (('Also: ', '也适用：') if implied else ('Targets: ', '目标：'))[index]
+    return ' · ' + prefix + ('、' if index else ', ').join(labels)
+
+
 def entry_type(record, language):
     index = 0 if language == 'en' else 1
     kind = record.get('kind', 'tool')
@@ -171,13 +221,18 @@ def entry_type(record, language):
     relation, category = record['relationship'], record['category']
     if relation == 'independent-agent-integration':
         tags.append(('Independent MCP' if category == 'agent-mcp' else 'Independent agent') if language == 'en' else ('独立 MCP' if category == 'agent-mcp' else '独立智能体'))
-    elif relation.startswith('official-') or relation == 'community-integration':
-        tags.append('REA')
+    elif relation.startswith('official-'):
+        tags.append('Official REA' if language == 'en' else 'REA 官方')
+    elif relation in {'community-integration', 'community-learning-resource'}:
+        tags.append('Community REA' if language == 'en' else 'REA 社区')
+    elif relation == 'upstream-maintainer-companion-list':
+        tags.append('REA maintainer' if language == 'en' else 'REA 维护者')
     elif relation == 'community-reported-mixed-workflow':
         tags.append('Mixed workflow' if language == 'en' else '混合工具流程')
     elif relation == 'independent-reconstruction':
         tags.append('Independent reconstruction' if language == 'en' else '独立重建')
-    elif category == 'android':
+    # Platform hints come after the relationship tag, never in its place.
+    if category == 'android':
         tags.append('Android')
     elif category == 'dotnet':
         tags.append('.NET')
@@ -190,8 +245,43 @@ def entry_type(record, language):
     return ' · '.join(tags)
 
 
+# Every tag entry_type can render after the type, in legend order: (Chinese tag, English and Chinese definition).
+# Tags that share a definition are listed together.
+TAG_DEFINITIONS = {
+    'Official REA': ('REA 官方', 'published by the REA project', '由 REA 项目发布'),
+    'Community REA': ('REA 社区', 'third-party REA work', '基于 REA 的第三方工作'),
+    'REA maintainer': ('REA 维护者', "an REA maintainer's list", 'REA 维护者整理的目录'),
+    'Independent MCP': ('独立 MCP', 'no established REA connection', '未确认与 REA 有关联'),
+    'Independent agent': ('独立智能体', 'no established REA connection', '未确认与 REA 有关联'),
+    'Mixed workflow': ('混合工具流程', 'REA plus other tools, per the author', '作者报告 REA 与其他工具并用'),
+    'Independent reconstruction': ('独立重建', 'no established REA connection', '未确认与 REA 有关联'),
+    'Android': ('Android', 'platform', '平台'),
+    '.NET': ('.NET', 'platform', '平台'),
+    'JVM': ('JVM', 'platform', '平台'),
+    'WebAssembly': ('WebAssembly', 'platform', '平台'),
+    'Library': ('程序库', 'code library', '供编程调用的库'),
+}
+
+
+def tag_legend(records, language):
+    """Define each relationship and platform tag the listed entries show, and what an untagged entry is."""
+    zh = language == 'zh'
+    shown = {tag for record in records for tag in entry_type(record, 'en').split(' · ')[1:]}
+    if shown - set(TAG_DEFINITIONS):
+        raise ValueError(f'Undefined README tags: {sorted(shown - set(TAG_DEFINITIONS))}')
+    groups = defaultdict(list)
+    for tag, (chinese, english_definition, chinese_definition) in TAG_DEFINITIONS.items():
+        if tag in shown:
+            groups[chinese_definition if zh else english_definition].append(chinese if zh else tag)
+    parts = [('、' if zh else ', ').join(tags) + ('：' if zh else ': ') + definition for definition, tags in groups.items()]
+    if any(' · ' not in entry_type(record, 'en') for record in records):
+        parts.append('仅有类型：基础工具或学习资源' if zh else 'type only: foundation tool or learning resource')
+    return ('**标签：** ' if zh else '**Tags:** ') + plain_text(' · '.join(parts)) + ('。' if zh else '.')
+
+
 def render_catalog(records, language, paper_urls=frozenset()):
-    """Keep each source title and full description distinct; bibliography overlaps appear only there."""
+    """One list line per resource: source link, opening sentence, tags and the entry page that holds
+    the full description, requirements and evidence. Bibliography overlaps appear only under Papers."""
     index = 0 if language == 'en' else 1
     translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')) if language == 'zh' else {}
     groups = defaultdict(list)
@@ -201,12 +291,14 @@ def render_catalog(records, language, paper_urls=frozenset()):
         if record['url'] in paper_urls:
             continue
         groups[collection_section(record)].append(record)
-    lines = []
+    lines = [tag_legend([record for entries in groups.values() for record in entries], language), '']
     for section in COLLECTION_SECTIONS:
         if not groups[section]:
             continue
         contents = '[↑ Contents](#contents)' if language == 'en' else '[↑ 返回目录](#目录)'
         lines.extend([f'<a id="{section}"></a>', f'### {section_heading(section, language)}', '', contents, ''])
+        if section == 'agents-and-mcp':
+            lines.extend(agent_cross_reference(groups, language, translations))
         cases = [record for record in groups[section] if record['kind'] == 'case-study']
         tools = [record for record in groups[section] if record['kind'] != 'case-study']
         subgroups = [(None, groups[section])]
@@ -220,21 +312,39 @@ def render_catalog(records, language, paper_urls=frozenset()):
                 lines.extend([f'#### {label}', ''])
             for record in entries:
                 name = plain_text((record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if language == 'zh' else record['name'])
-                description = plain_text(record[f'description_{language}'])
-                metadata = plain_text(entry_type(record, language))
+                description = plain_text(lead_sentence(record[f'description_{language}'], language))
+                metadata = plain_text(entry_type(record, language) + other_targets(record, section, language))
                 detail_url = f"https://awesomerea.org/{'zh/' if language == 'zh' else ''}resources/{record['id']}/"
-                detail_label = '使用条件与证据' if language == 'zh' else 'Requirements & evidence'
-                lines.extend([
-                    f"- [**{name}**]({record['url']})", '',
-                    f'  {description}', '',
-                    f"  {metadata} · [{detail_label}]({detail_url})", '',
-                ])
+                lines.append(f"- [**{name}**]({record['url']}) - {description} "
+                             f"<sub>{metadata} · [{FULL_ENTRY[index]}]({detail_url})</sub>")
+            lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
 
 
+def agent_cross_reference(groups, language, translations):
+    """Point from Agents and MCP to agent integrations filed under a target section, via their entry pages."""
+    index = 0 if language == 'en' else 1
+    parts = []
+    for section in TARGET_SECTIONS:
+        names = []
+        # Same order as the section renders: case studies first, then tools.
+        for record in sorted(groups[section], key=lambda record: record['kind'] != 'case-study'):
+            if record['category'] == 'agent-mcp' or record['relationship'] == 'independent-agent-integration':
+                name = (record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if index else record['name']
+                names.append(f"[{plain_text(name)}](https://awesomerea.org/{'zh/' if index else ''}resources/{record['id']}/)")
+        if names:
+            parts.append(f'[{COLLECTION_SECTIONS[section][index]}](#{section}){"：" if index else ": "}'
+                         + ('、' if index else ', ').join(names))
+    if not parts:
+        return []
+    return [('**其他分区中的智能体集成：** ' if index else '**Also in target sections:** ') + ' · '.join(parts), '']
+
+
 def browsable_index_count():
+    from public_source_supplements import load_supplements, project_additions
     document = json.loads((ROOT / 'data/source-index.json').read_text(encoding='utf-8'))
-    scoped = apply_scope(document['resources'], read_scope(ROOT))
+    supplements = load_supplements(ROOT)
+    scoped = apply_scope(document['resources'], read_scope(ROOT)) + project_additions(supplements)
     return sum(record.get('scope_status') != 'excluded' for record in scoped)
 
 
@@ -260,6 +370,7 @@ def render_contents(records, papers, index_count, language):
     if counts['related-collections']:
         more.append(section_item('related-collections'))
     more.append(item(INDEX_HEADINGS[int(zh)], '#完整仓库索引' if zh else '#full-repository-index', index_count))
+    more.append('[参与贡献](#参与贡献)' if zh else '[Contributing](#contributing)')
     lines = [f"**{'按目标找工具与案例' if zh else 'Tools and cases by target'}**", '']
     lines += ['- ' + ' · '.join(targets[start:start + 3]) for start in range(0, len(targets), 3)]
     lines += ['', f"**{'论文与工作流' if zh else 'Research and workflows'}**", '', '- ' + ' · '.join(reading)]
@@ -267,8 +378,29 @@ def render_contents(records, papers, index_count, language):
     return '\n'.join(lines) + '\n'
 
 
+def render_totals(records, papers, index_count, language):
+    """One line of collection totals and the newest review date, above the Contents sections."""
+    zh = language == 'zh'
+    paper_urls = {paper['url'] for paper in papers}
+    cases = sum(record.get('kind') == 'case-study' for record in records)
+    listed = sum(record['url'] not in paper_urls for record in records)
+    reviewed = max(entry['verified_at'][:10] for entry in [*records, *papers])
+    if zh:
+        line = (f'{len(records):,} 项精选资源（{cases:,} 个案例）· {len(papers):,} 篇论文 · '
+                f'{index_count:,} 个已索引仓库 · 最近来源复核 {reviewed}。')
+        if listed != len(records):
+            line += f'其中 {len(records) - listed:,} 项仅列于论文部分，因此各分区计数合计 {listed:,}。'
+    else:
+        line = (f'{len(records):,} curated resources ({cases:,} cases) · {len(papers):,} papers · '
+                f'{index_count:,} indexed repositories · latest source review {reviewed}.')
+        if listed != len(records):
+            line += f' Section counts add up to {listed:,} because {len(records) - listed:,} of these appear only under Papers.'
+    return line + '\n\n'
+
+
 def render_badges(records, papers, language):
-    """Report catalog populations, not execution verification or additive totals."""
+    """Report catalog populations, not execution verification or additive totals. There is no CI badge:
+    awesome lists must not carry one, and the footer already links the validate workflow's runs."""
     zh = language == 'zh'
     prefix = 'https://awesomerea.org/' + ('zh/' if zh else '')
 
@@ -279,17 +411,20 @@ def render_badges(records, papers, language):
         return f'[![{label}: {value}]({image})]({target})'
 
     cases = sum(record['kind'] == 'case-study' for record in records)
-    workflow = 'https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml'
-    labels = ('精选资源', '案例', '论文', '目录检查', '许可', '网站') if zh else (
-        'resources', 'cases', 'papers', 'Catalog checks', 'license', 'website')
+    labels = ('精选资源', '案例', '论文', '许可', '网站') if zh else ('resources', 'cases', 'papers', 'license', 'website')
     return ' '.join([
         badge(labels[0], f'{len(records):,}', prefix + 'resources/'),
         badge(labels[1], f'{cases:,}', prefix + 'cases/'),
         badge(labels[2], f'{len(papers):,}', prefix + 'papers/'),
-        f'[![{labels[3]}]({workflow}/badge.svg?branch=main)]({workflow})',
-        badge(labels[4], 'MIT', 'LICENSE', '606779'),
-        badge(labels[5], 'awesomerea.org', prefix, '6235B5'),
+        badge(labels[3], 'MIT', 'LICENSE', '606779'),
+        badge(labels[4], 'awesomerea.org', prefix, '6235B5'),
     ]) + '\n'
+
+
+def source_note(*sources, script='scripts/build_readme.py'):
+    """Name a block's generator and inputs so conflicts are rebuilt rather than merged by hand."""
+    files = ', '.join(sources[:-1]) + ' and ' + sources[-1] if len(sources) > 1 else sources[0]
+    return f'<!-- Generated by {script} from {files}. Edit the source data and rerun the script; do not edit this block by hand. -->\n'
 
 
 def replace_badges(content, rendered):
@@ -322,6 +457,7 @@ def replace_catalog(content, rendered):
     return before + BEGIN + '\n' + rendered + END + after
 
 
+# Paper topics in display order. The /papers/ directory imports these, so both list the same groups.
 PAPER_SECTIONS = {
     'agent-evaluation': ('Reverse-engineering agent evaluation', '逆向工程智能体评测'),
     'decompilation': ('Decompilation and symbol recovery', '反编译与符号恢复'),
@@ -340,16 +476,25 @@ PAPER_TOPIC_LABELS = {
     'firmware-analysis': ('Firmware', '固件'),
     'protocol-analysis': ('Protocols', '协议'),
 }
-PAPER_STATUSES = {
-    'conference-paper': ('Conference paper', '会议论文'),
-    'conference-accepted': ('Accepted', '已接收'),
-    'journal-article': ('Journal article', '期刊论文'),
-    'preprint': ('Preprint', '预印本'),
-}
 AGENT_EVALUATION_PAPERS = {
+    'paper-attacking-re-ai-agents',
+    'paper-llm-resistant-protection',
     'paper-crackmebench', 'paper-crebench', 'paper-sre-bench', 'paper-humans-machines-sre',
+    'paper-decompiling-synergy',
     'paper-programbench',
+    'paper-enigma',
+    'paper-nyu-ctf-bench',
+    'paper-cybench',
 }
+
+
+def paper_section(paper):
+    """Agent benchmarks form their own topic; other papers follow their first target, binaries under decompilation."""
+    if paper['id'] in AGENT_EVALUATION_PAPERS:
+        return 'agent-evaluation'
+    return {'website': 'website-reconstruction', 'game': 'game-reconstruction',
+            'app': 'app-reconstruction', 'firmware': 'firmware-analysis',
+            'protocol': 'protocol-analysis'}.get(paper['targets'][0], 'decompilation')
 
 
 def render_papers(papers, language):
@@ -357,23 +502,19 @@ def render_papers(papers, language):
     index = int(zh)
     directory = 'https://awesomerea.org/zh/papers/' if zh else 'https://awesomerea.org/papers/'
     lines = ['<a id="papers"></a>', '## 论文' if zh else '## Papers', '',
-             (f'**{len(papers)} 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。'
-              if zh else f'**{len(papers)} papers**, grouped by topic and ordered newest first. Each entry shows its publication status.'), '',
+             (f'**{len(papers)} 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。'
+              if zh else f'**{len(papers)} papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.'), '',
              f"[{'浏览论文目录' if zh else 'Browse the paper directory'}]({directory}) · [{'完整书目 JSON' if zh else 'Complete bibliography JSON'}](data/papers.json) · [{'推荐论文' if zh else 'Suggest a paper'}](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)", '']
     groups = defaultdict(list)
     for paper in papers:
-        section = ('agent-evaluation' if paper['id'] in AGENT_EVALUATION_PAPERS else
-                   {'website': 'website-reconstruction', 'game': 'game-reconstruction',
-                    'app': 'app-reconstruction', 'firmware': 'firmware-analysis',
-                    'protocol': 'protocol-analysis'}.get(paper['targets'][0], 'decompilation'))
-        groups[section].append(paper)
+        groups[paper_section(paper)].append(paper)
     topics = [f'[{labels[index]}](#papers-{section}) ({len(groups[section])})'
               for section, labels in PAPER_TOPIC_LABELS.items() if groups[section]]
     lines.extend([f"**{'按主题' if zh else 'By topic'}**", ''])
     lines.extend('- ' + ' · '.join(topics[start:start + 3]) for start in range(0, len(topics), 3))
     lines.extend(['',
-                  ('展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。'
-                   if zh else 'Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.'), ''])
+                  ('每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。部分论文也出现在精选资源目录中，两者数量不可相加。'
+                   if zh else 'Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation. Some papers also appear among curated resources; counts are not additive.'), ''])
     for section, labels in PAPER_SECTIONS.items():
         if not groups[section]:
             continue
@@ -382,25 +523,23 @@ def render_papers(papers, language):
         for paper in papers_newest_first(groups[section]):
             title = plain_text(paper['title_zh'] if zh else paper['title'])
             status = PAPER_STATUSES[paper['publication_status']][index]
-            metadata = plain_text(f"{paper['year']} · {paper['venue']} · {status}")
-            author = plain_text(paper['authors'][0] + ((' 等' if zh else ' et al.') if len(paper['authors']) > 1 else ''))
+            author = paper['authors'][0] + ((' 等' if zh else ' et al.') if len(paper['authors']) > 1 else '')
+            metadata = plain_text(f'{paper_venue(paper)} · {status} · {author}')
             detail_url = f"https://awesomerea.org/{'zh/' if zh else ''}papers/{paper['id']}/"
             links = [f"[PDF]({paper['pdf_url']})"]
             if paper['code_url']:
                 links.append(f"[{'代码' if zh else 'Code'}]({paper['code_url']})")
-            links.append(f"[{'完整条目与引用' if zh else 'Full entry & citation'}]({detail_url})")
-            lines.extend([
-                f"- [**{title}**]({paper['url']})", '',
-                '  ' + plain_text(paper[f'description_{language}']), '',
-                f"  {paper['year']} · {status} · " + ' · '.join(links), '',
-                '  <details>',
-                f"  <summary>{'范围与发表信息' if zh else 'Scope and publication details'}</summary>", '',
-                f"  **{'范围与限制' if zh else 'Scope and limits'}:** "
-                + plain_text(paper[f'scope_limitations_{language}']), '',
-                f"  **{'发表信息' if zh else 'Publication'}:** {metadata} · {author}", '',
-                '  </details>', '',
-            ])
+            links.append(f'[{FULL_ENTRY[index]}]({detail_url})')
+            description = plain_text(lead_sentence(paper[f'description_{language}'], language))
+            lines.append(f"- [**{title}**]({paper['url']}) - {description} <sub>{original_title(paper) if zh else ''}{metadata} · " + ' · '.join(links) + '</sub>')
+        lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
+
+
+def paper_venue(paper):
+    """Most venue names already carry the year; add it once to the rest (arXiv, journals, WOOT 18)."""
+    venue = paper['venue']
+    return venue if re.search(rf"(?<!\d){paper['year']}(?!\d)", venue) else f"{venue} {paper['year']}"
 
 
 def replace_papers(content, rendered, language):
@@ -421,6 +560,29 @@ def replace_papers(content, rendered, language):
     return content
 
 
+def size_warning(name, size):
+    """Advisory size note for a README of `size` UTF-8 bytes, or None while it is within the budget."""
+    if size <= README_SIZE_WARNING:
+        return None
+    if size > GITHUB_README_LIMIT:
+        headroom = f'its last {size - GITHUB_README_LIMIT:,} bytes are already cut off'
+    else:
+        headroom = f'{GITHUB_README_LIMIT - size:,} bytes are left'
+    return (f'{name} is {size:,} bytes, above the {README_SIZE_WARNING:,}-byte budget. GitHub stops rendering a README '
+            f'after {GITHUB_README_LIMIT:,} bytes and {headroom}; move more detail from README lines to entry pages.')
+
+
+def readme_size_warnings(root=ROOT):
+    """Size notes for both READMEs on disk; validate.py prints them without failing."""
+    notes = (size_warning(name, (root / name).stat().st_size) for name in ('README.md', 'README.zh-CN.md'))
+    return [note for note in notes if note]
+
+
+def original_title(paper):
+    """Chinese lines open their metadata with the published title, so readers can search for and cite it."""
+    return f"原题：*{plain_text(paper['title'])}* · "
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true', help='Report stale generated blocks without writing files')
@@ -430,13 +592,24 @@ def main():
         papers = read_papers(ROOT)
         index_count = browsable_index_count()
         stale = []
+        sizes = []
         for name, language in [('README.md', 'en'), ('README.zh-CN.md', 'zh')]:
             path = ROOT / name
             current = path.read_text(encoding='utf-8')
-            expected = replace_catalog(current, render_catalog(records, language, {paper['url'] for paper in papers}))
-            expected = replace_papers(expected, render_papers(papers, language), language)
-            expected = replace_contents(expected, render_contents(records, papers, index_count, language))
-            expected = replace_badges(expected, render_badges(records, papers, language))
+            names = RESOURCE_SOURCES + (('site/translations.zh-CN.json',) if language == 'zh' else ())
+            expected = replace_catalog(current, source_note(*names)
+                                       + render_catalog(records, language, {paper['url'] for paper in papers}))
+            expected = replace_papers(expected, source_note('data/papers.json') + render_papers(papers, language), language)
+            expected = replace_contents(expected, source_note(*RESOURCE_SOURCES, 'data/papers.json', *INDEX_SOURCES)
+                                        + render_totals(records, papers, index_count, language)
+                                        + render_contents(records, papers, index_count, language))
+            expected = replace_badges(expected, source_note(*RESOURCE_SOURCES, 'data/papers.json')
+                                      + render_badges(records, papers, language))
+            size = len(expected.encode('utf-8'))
+            sizes.append(f'{name} {size:,} bytes')
+            note = size_warning(name, size)
+            if note:
+                print(f'Warning: {note}', file=sys.stderr)
             if current != expected:
                 stale.append(name)
                 if not args.check:
@@ -445,10 +618,11 @@ def main():
             print('Stale generated README blocks: ' + ', '.join(stale), file=sys.stderr)
             print('Run python3 scripts/build_readme.py', file=sys.stderr)
             return 1
+        budget = f"{', '.join(sizes)} (budget {README_SIZE_WARNING:,})"
         if args.check:
-            print(f'Both READMEs match {len(records)} resources and {len(papers)} separate research papers.')
+            print(f'Both READMEs match {len(records)} resources and {len(papers)} separate research papers; {budget}.')
         else:
-            print(f"Rendered {len(records)} resources and {len(papers)} separate research papers into both READMEs; updated {len(stale)} files.")
+            print(f"Rendered {len(records)} resources and {len(papers)} separate research papers into both READMEs; updated {len(stale)} files; {budget}.")
         return 0
     except (OSError, ValueError, KeyError, TypeError) as error:
         print(f'Catalog generation failed: {error}', file=sys.stderr)

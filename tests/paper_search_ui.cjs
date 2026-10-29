@@ -42,8 +42,7 @@ class Element {
   focus() { this.focused = true; }
 }
 function setup(lang = "en", query = "", invalidData = false) {
-  const ids = new Map(["paper-search", "paper-search-data", "paper-query", "paper-target", "paper-status", "paper-year", "paper-results", "paper-empty", "paper-clear", "paper-empty-reset"].map(id => [id, new Element()]));
-  ids.get("paper-search").hidden = true;
+  const ids = new Map(["paper-search", "paper-search-data", "paper-query", "paper-target", "paper-status", "paper-year", "paper-results", "paper-empty", "paper-clear", "paper-empty-reset", "paper-more-filters"].map(id => [id, new Element()]));
   ids.get("paper-search-data").textContent = JSON.stringify({schema_version: invalidData ? 2 : 1, papers});
   const cards = papers.map(paper => new Element({paperId: paper.id}));
   const sections = papers.map((paper, i) => { const section = new Element({paperSection: paper.targets[0]}); section.children = [cards[i]]; section.label = new Element(); return section; });
@@ -88,6 +87,7 @@ for (const lang of ["en", "zh"]) {
 const invalid = setup("en", "?status=bad&year=0&target=bad");
 assert.equal(invalid.browser.location.search, ""); assert.equal(invalid.visible().length, 3);
 const broken = setup("en", "?q=no-match", true);
+// The form is visible in the HTML; a failed index check hides it so no inert controls remain.
 assert.equal(broken.initialized, false); assert.equal(broken.ids.get("paper-search").hidden, true); assert.equal(broken.visible().length, 3);
 const canonical = search.readRecords({schema_version: 1, papers: JSON.parse(fs.readFileSync(path.join(__dirname, "../data/papers.json"), "utf8"))});
 const canonicalAllowed = search.allowedValues(canonical);
@@ -95,4 +95,57 @@ for (const [query, id] of [["UI2code", "paper-ui2code"], ["ReDraw", "paper-redra
   const current = search.readState(new URLSearchParams({q: query}), canonicalAllowed);
   assert(canonical.filter(paper => search.matches(paper, current)).some(paper => paper.id === id), query);
 }
-console.log("Paper search: bilingual matching, facets, URLs, IME, history, reset and static fallback passed.");
+
+// Direct links must expose active advanced filters in either language.
+for (const lang of ["en", "zh"]) {
+  assert(!setup(lang).ids.get("paper-more-filters").open);
+  for (const query of ["?year=2025", "?status=preprint", "?layout=cards"]) {
+    assert.equal(setup(lang, query).ids.get("paper-more-filters").open, true);
+  }
+  assert(!setup(lang, "?year=invalid&status=invalid").ids.get("paper-more-filters").open);
+}
+
+// Static compact layout preserves native disclosures; the card option moves only scope, without copies.
+class Node {
+  constructor(name, children = []) { this.name = name; this.children = []; this.parentNode = null; this.dataset = {}; this.handlers = {}; this.value = ""; for (const child of children) this.appendChild(child); }
+  appendChild(child) { child.parentNode?.removeChild(child); child.parentNode = this; this.children.push(child); return child; }
+  removeChild(child) { this.children.splice(this.children.indexOf(child), 1); child.parentNode = null; }
+  insertBefore(child, next) { if (child === next) return child; if (!next) return this.appendChild(child); child.parentNode?.removeChild(child); child.parentNode = this; this.children.splice(this.children.indexOf(next), 0, child); return child; }
+  after(child) { const parent = this.parentNode; const next = parent.children[parent.children.indexOf(this) + 1]; parent.insertBefore(child, next || null); }
+  get nextSibling() { return this.parentNode ? this.parentNode.children[this.parentNode.children.indexOf(this) + 1] || null : null; }
+  all() { return this.children.flatMap(child => [child, ...child.all()]); }
+  querySelector(selector) { return this.all().find(node => selector === ".paper-details > summary" ? node.name === "summary" && node.parentNode.name === "details" : node.name === ({".paper-scope": "scope", ".paper-links": "links"}[selector])) || null; }
+  querySelectorAll(selector) { return selector === ".paper-authors, .paper-scope" ? this.all().filter(node => ["authors", "scope"].includes(node.name)) : []; }
+  addEventListener(type, callback) { this.handlers[type] = callback; }
+}
+function layoutCard() {
+  return new Node("article", [new Node("header", [new Node("h3"), new Node("meta")]), new Node("description"), new Node("links"), new Node("details", [new Node("summary"), new Node("scope"), new Node("authors"), new Node("why")])]);
+}
+const shape = card => card.children.map(child => child.children.length ? child.name + "(" + child.children.map(item => item.name).join(",") + ")" : child.name).join(" ");
+const cardsShape = "header(h3,meta) description scope links details(summary,authors,why)";
+const compactShape = "header(h3,meta) description links details(summary,scope,authors,why)";
+for (const query of ["?layout=compact&q=game#paper-game", "?layout=cards&q=game#paper-game", "", "?layout=bogus"]) {
+  const layoutCards = [layoutCard(), layoutCard()];
+  const control = new Node("select");
+  const document = {documentElement: {dataset: {}}, getElementById: id => id === "paper-layout" ? control : null};
+  const browser = {location: new URL("https://awesomerea.org/papers/" + query), history: {replaceState(_, __, url) { browser.location = new URL(url); }}};
+  let changes = 0;
+  const apply = search.initializeLayout(document, browser, layoutCards, () => { changes++; });
+  const compact = !query.includes("layout=cards");
+  assert.equal(document.documentElement.dataset.paperLayout, compact ? "compact" : "cards");
+  assert.equal(control.value, compact ? "compact" : "cards");
+  assert(layoutCards.every(card => shape(card) === (compact ? compactShape : cardsShape)), shape(layoutCards[0]));
+  control.value = compact ? "cards" : "compact"; control.handlers.change();
+  assert.equal(changes, 1);
+  assert(layoutCards.every(card => shape(card) === (compact ? cardsShape : compactShape)), shape(layoutCards[0]));
+  assert.equal(browser.location.searchParams.get("layout"), compact ? "cards" : null);
+  assert.equal(browser.location.searchParams.get("q"), query.includes("q=game") ? "game" : null);
+  assert.equal(browser.location.hash, query.includes("#paper-game") ? "#paper-game" : "");
+  apply("compact"); apply("compact"); apply("cards");
+  assert(layoutCards.every(card => shape(card) === cardsShape));
+}
+assert.equal(search.initializeLayout({getElementById: () => null}, {}, [], () => {}), null);
+assert.deepEqual(["?layout=compact", "?layout=cards", "?layout=x", ""].map(query => search.readLayout(new URLSearchParams(query))), ["compact", "cards", "compact", "compact"]);
+// Filter URLs, and so the language link, keep the chosen layout.
+assert.equal(search.stateURL("https://awesomerea.org/papers/?layout=compact&q=old#paper-game", state("year=2025")).href, "https://awesomerea.org/papers/?layout=compact&year=2025#paper-game");
+console.log("Paper search: bilingual matching, facets, URLs, IME, history, reset, layout and static fallback passed.");

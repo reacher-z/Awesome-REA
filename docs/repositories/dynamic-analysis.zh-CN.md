@@ -1,31 +1,39 @@
 # 运行时与调试
 
-[全部分类](README.zh-CN.md) · [English](dynamic-analysis.md)
+[全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/dynamic-analysis/) · [English](dynamic-analysis.md)
 
-**98 个仓库** · 2026-10-16 UTC
+**145 个仓库** · 2026-10-20 UTC
 
-这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
+这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
-- [x64dbg/x64dbg](https://github.com/x64dbg/x64dbg) — 面向 Windows 的开源用户态调试器，针对逆向工程和恶意软件分析进行了优化。 **[49,888 星标]**
-- [frida/frida](https://github.com/frida/frida) — 用于托管发布版二进制文件的主仓库。 **[22,317 星标]**
-- [rr-debugger/rr](https://github.com/rr-debugger/rr) — 录制与回放框架。 **[10,707 星标]**
-- [qilingframework/qiling](https://github.com/qilingframework/qiling) — 真正支持插桩的二进制模拟框架。 **[6,139 星标]**
-- [DynamoRIO/dynamorio](https://github.com/DynamoRIO/dynamorio) — 动态插桩工具平台。 **[3,181 星标]**
-- [duty1g/x64dbg-mcp-server](https://github.com/duty1g/x64dbg-mcp-server) — x64dbg-MCP Server 是 x64dbg 的原生 MCP（模型上下文协议）插件，通过 HTTP 提供调试器的全部功能。连接任意兼容 MCP 的 AI 助手，即可通过程序控制 x64dbg：设置断点、单步执行代码、读取内存、转储寄存器等。使用 Zig 构建，零依赖，输出单个二进制文件，cros… **[2,514 星标]**
-- [bootleg/ret-sync](https://github.com/bootleg/ret-sync) — ret-sync 是一组插件，可将调试会话（WinDbg/GDB/LLDB/OllyDbg2/x64dbg）与 IDA/Ghidra/Binary Ninja 反汇编器同步。 **[2,401 星标]**
-- [QBDI/QBDI](https://github.com/QBDI/QBDI) — 基于 LLVM 的动态二进制插桩框架。 **[1,828 星标]**
-- [nowsecure/r2frida](https://github.com/nowsecure/r2frida) — 让 Radare2 与 Frida 更好地协同工作。 **[1,450 星标]**
+- [x64dbg/x64dbg](https://github.com/x64dbg/x64dbg) — 面向 Windows 的开源用户态调试器，针对逆向工程和恶意软件分析进行了优化。 **[49,888 星标]** · 精选：[x64dbg](https://awesomerea.org/zh/resources/x64dbg/)
+- [frida/frida](https://github.com/frida/frida) — 用于托管发布版二进制文件的主仓库。 **[22,317 星标]** · 精选：[Frida](https://awesomerea.org/zh/resources/frida/)
+- [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) — 让使用 GDB 和 LLDB 进行漏洞利用开发与逆向工程变得简单。 **[11,064 星标]** · 精选：[pwndbg GDB/LLDB 调试增强插件](https://awesomerea.org/zh/resources/pwndbg/)
+- [rr-debugger/rr](https://github.com/rr-debugger/rr) — 录制与回放框架。 **[10,707 星标]** · 精选：[rr](https://awesomerea.org/zh/resources/rr/)
+- [hugsy/gef](https://github.com/hugsy/gef) — GEF（GDB Enhanced Features）：为 Linux 上的漏洞利用开发人员和逆向工程师提供现代化 GDB 体验及高级调试功能。 **[8,399 星标]** · 精选：[GEF GDB 增强扩展](https://awesomerea.org/zh/resources/gef/)
+- [qilingframework/qiling](https://github.com/qilingframework/qiling) — 真正支持插桩的二进制模拟框架。 **[6,139 星标]** · 精选：[Qiling](https://awesomerea.org/zh/resources/qiling/)
+- [HyperDbg/HyperDbg](https://github.com/HyperDbg/HyperDbg) — 先进的原生调试工具。 **[4,133 星标]** · 精选：[HyperDbg 虚拟化辅助调试器](https://awesomerea.org/zh/resources/hyperdbg/)
+- [DynamoRIO/dynamorio](https://github.com/DynamoRIO/dynamorio) — 动态插桩工具平台。 **[3,181 星标]** · 精选：[DynamoRIO 动态二进制插桩框架](https://awesomerea.org/zh/resources/dynamorio/)
+- [korcankaraokcu/PINCE](https://github.com/korcankaraokcu/PINCE) — Linux 逆向工程工具。 **[3,124 星标]** · 精选：[PINCE GDB 前端与内存分析工具](https://awesomerea.org/zh/resources/pince/)
+- [duty1g/x64dbg-mcp-server](https://github.com/duty1g/x64dbg-mcp-server) — x64dbg-MCP Server 是 x64dbg 的原生 MCP（模型上下文协议）插件，通过 HTTP 提供调试器的全部功能。连接任意兼容 MCP 的 AI 助手，即可通过程序控制 x64dbg：设置断点、单步执行代码、读取内存、转储寄存器等。使用 Zig 构建，零依赖，输出单个二进制文件，cros… **[2,514 星标]** · 精选：[x64dbg-MCP Server 调试器 MCP 插件](https://awesomerea.org/zh/resources/x64dbg-mcp-server/)
+- [bootleg/ret-sync](https://github.com/bootleg/ret-sync) — ret-sync 是一组插件，可将调试会话（WinDbg/GDB/LLDB/OllyDbg2/x64dbg）与 IDA/Ghidra/Binary Ninja 反汇编器同步。 **[2,401 星标]** · 精选：[ret-sync 调试器与反汇编器同步插件](https://awesomerea.org/zh/resources/ret-sync/)
+- [QBDI/QBDI](https://github.com/QBDI/QBDI) — 基于 LLVM 的动态二进制插桩框架。 **[1,828 星标]** · 精选：[QBDI 动态二进制插桩框架](https://awesomerea.org/zh/resources/qbdi/)
+- [nowsecure/r2frida](https://github.com/nowsecure/r2frida) — 让 Radare2 与 Frida 更好地协同工作。 **[1,450 星标]** · 精选：[r2frida](https://awesomerea.org/zh/resources/r2frida/)
 - [darbra/sperm](https://github.com/darbra/sperm) — 浏览过的精彩逆向文章汇总，值得一看。 **[1,422 星标]**
 - [ansjdnakjdnajkd/iOS](https://github.com/ansjdnakjdnajkd/iOS) — 实用的 iOS 渗透测试工具。 **[1,327 星标]**
 - [LING71671/open-reverselab](https://github.com/LING71671/open-reverselab) — 面向 Ghidra、Frida、x64dbg 和 Rizin 的开源 AI 逆向工程智能体平台与 MCP 服务器，支持自动化 PE/APK/二进制分析、CTF 与恶意软件研究，提供 100 多个 MCP 工具和包含 194 篇可运行内容的知识库。 **[1,265 星标]**
 - [yazgx97/frida-ios-hook](https://github.com/yazgx97/frida-ios-hook) — 帮助你轻松跟踪 iOS 平台上的类和函数，并修改方法返回值的工具。 **[1,191 星标]**
 - [reversenseorg/dexcalibur](https://github.com/reversenseorg/dexcalibur) — Reversense（Dexcalibur2）是对 Dexcalibur 的全面重写与重新设计。它是一个二进制情报平台，可自动化移动和嵌入式应用的逆向工程。 **[1,180 星标]**
+- [GJDuck/e9patch](https://github.com/GJDuck/e9patch) — 功能强大的静态二进制重写工具。 **[1,156 星标]** · 精选：[E9Patch 静态二进制重写工具](https://awesomerea.org/zh/resources/e9patch/)
 - [QQBackup/qq-win-db-key](https://github.com/QQBackup/qq-win-db-key) — 全平台 QQ 聊天数据库解密。 **[1,103 星标]**
 - [frida/frida-gum](https://github.com/frida/frida-gum) — 以 C 编写的跨平台插桩与内省库。 **[1,032 星标]**
 - [darbra/awesome-ai-reverse](https://github.com/darbra/awesome-ai-reverse) — 用 AI 一把梭完成逆向工程。 **[965 星标]**
-- [dyninst/dyninst](https://github.com/dyninst/dyninst) — DyninstAPI：二进制插桩、分析与修改工具。 **[838 星标]**
+- [JLospinoso/gargoyle](https://github.com/JLospinoso/gargoyle) — 历史性的 Windows 时序内存状态研究产物，用于研究有时间边界的内存观测、验证局限和防御可见性。 **[916 星标]**
+- [dyninst/dyninst](https://github.com/dyninst/dyninst) — DyninstAPI：二进制插桩、分析与修改工具。 **[838 星标]** · 精选：[Dyninst 二进制插桩与分析库](https://awesomerea.org/zh/resources/dyninst/)
 - [Simp1er/MobileSec](https://github.com/Simp1er/MobileSec) — 记录我在学习 Android 逆向过程中遇到的一些有趣内容。 **[809 星标]**
 - [frida/frida-core](https://github.com/frida/frida-core) — Frida 核心库。 **[782 星标]**
+- [robalb/x86-64-playground](https://github.com/robalb/x86-64-playground) — 面向 x86-64 架构的在线汇编编辑器、模拟器和调试器。 **[758 星标]**
+- [ChiChou/vscode-frida](https://github.com/ChiChou/vscode-frida) — 非官方的 VSCode Frida 扩展 **[592 星标]** · 精选：[Frida Workbench VS Code 扩展](https://awesomerea.org/zh/resources/vscode-frida/)
 - [a1ext/labeless](https://github.com/a1ext/labeless) — Labeless 是多用途 IDA Pro 插件系统，可与调试器后端同步标签和注释，并具备复杂内存转储和交互式 Python 脚本能力。 **[587 星标]**
 - [wechaty/puppet-xp](https://github.com/wechaty/puppet-xp) — Wechaty Puppet 微信 Windows 协议。 **[551 星标]**
 - [vah13/extractTVpasswords](https://github.com/vah13/extractTVpasswords) — 使用 Frida 从 TeamViewer 内存中提取密码的工具。 **[465 星标]**
@@ -58,26 +66,56 @@
 - [as0ler/r2flutch](https://github.com/as0ler/r2flutch) — 使用 r2frida 解密 iOS 应用的工具 **[184 星标]**
 - [talsec/Free-RASP-iOS](https://github.com/talsec/Free-RASP-iOS) — 提供应用安全与威胁监控的 iOS 库（SDK），通过免费的 RASP 保护应用。可检测逆向工程、越狱、Frida、模拟器、机器人、签名与完整性问题、VPN 使用，并监控设备标识等信息。 **[184 星标]**
 - [antojoseph/diff-gui](https://github.com/antojoseph/diff-gui) — Frida 脚本的图形界面 **[182 星标]**
+- [kaifcodec/freefire-like-and-guest-api](https://github.com/kaifcodec/freefire-like-and-guest-api) — 通过 Frida 自动创建并捕获 Free Fire 游客账户，格式化和管理账户、获取 JWT，并向目标 UID 发送加密点赞请求；具有并发控制，并保证每个游客对每个目标只点赞一次。 **[175 星标]**
 - [ngwg/ceasta](https://github.com/ngwg/ceasta) — 集反汇编器、反编译器和调试器于一体，内置 MCP 服务器，让 AI 不仅能读取二进制文件，还能调试它。提供 IDA 风格列表、伪代码（F5）、x64dbg 风格调试器（Windows 和 Linux）、二进制差异比对及 Lua 插件。可读取 PE、ELF 和 Mach-O，运行于 Windows、Linux 和 macOS。 **[169 星标]**
 - [ReverseApple/gxpc](https://github.com/ReverseApple/gxpc) — 使用 Frida 和 Go 嗅探 XPC 通信 **[167 星标]**
 - [ricardoquesada/regenerator2000](https://github.com/ricardoquesada/regenerator2000) — 面向 Commodore 8 位计算机的 6502 CPU 交互式反汇编器。提供终端界面及交叉引用、撤销/重做、流程箭头、键盘操作、用于自动分析的 MCP 服务器、VICE 调试器等现代功能！ **[164 星标]**
 - [vadim-a-yegorov/iOS-Internals-and-Security-Testing](https://github.com/vadim-a-yegorov/iOS-Internals-and-Security-Testing) — iOS 是 Apple 的专有操作系统，运行于 iPhone、iPod Touch 和 iPad。许多组件为 iOS 特有。这里介绍 iOS 硬件和软件安全架构的关键特性，并提供应用测试指南。 **[154 星标]**
+- [nowsecure/airspy](https://github.com/nowsecure/airspy) — AirSpy：基于 Frida 的工具，从服务端视角探索并跟踪 Apple 在 iOS／macOS 中的 AirDrop 协议实现演变。在 BH USA 2019 培训期间发布：https<span>:</span>//www<span>.</span>nowsecure.com/event/advanced-frida-and-radare-a-hackers-delight/ **[152 星标]**
+- [jiaxw32/iNote](https://github.com/jiaxw32/iNote) — 个人学习研究笔记，OC、C++、iOS 逆向、汇编、Python。 **[150 星标]**
 - [Fleynaro/SDA](https://github.com/Fleynaro/SDA) — SDA 是功能丰富的跨平台逆向工程工具，最初侧重电脑游戏分析。我希望将 Ghidra、Cheat Engine 和 x64dbg 的特点结合，整合程序静态与动态分析。SDA 目前正在开发中。 **[140 星标]**
+- [alphaSeclab/DBI-Stuff](https://github.com/alphaSeclab/DBI-Stuff) — 动态二进制插桩与动态二进制分析资源。 **[139 星标]**
 - [vadim-a-yegorov/Jailbreak-detection-The-modern-way](https://github.com/vadim-a-yegorov/Jailbreak-detection-The-modern-way) — 越狱检测技术多年来不断变化。本项目回顾其历史，并分析 Snapchat 和 Pokemon GO 等现代应用。 **[136 星标]**
 - [ate47/atian-cod-tools](https://github.com/ate47/atian-cod-tools) — 各种杂项 **[135 星标]**
+- [Guardsquare/mocxx](https://github.com/Guardsquare/mocxx) — 多用途 C++ 函数模拟（mock）框架。 **[133 星标]**
+- [Pilfer/ultimate-guitar-scraper](https://github.com/Pilfer/ultimate-guitar-scraper) — 用 Go 编写的简单抓取器，面向 Ultimate-Guitar.com 的移动 API。 **[132 星标]**
 - [diommsantos/Gx64Sync](https://github.com/diommsantos/Gx64Sync) — 用于同步 Ghidra 和 x64dbg 的插件套件，是更快、更灵活的 ret-sync。 **[131 星标]**
+- [vibheksoni/dma-spoofer](https://github.com/vibheksoni/dma-spoofer) — 首个用 Rust 编写、基于 DMA 的开源 HWID 伪装工具。通过直接内存访问伪装硬件 ID。 **[130 星标]**
+- [lautarovculic/frida-ipa-extract](https://github.com/lautarovculic/frida-ipa-extract) — 基于 Frida 的稳健工具，从越狱设备将已解密的 iOS 应用转储为 .ipa，支持 App Store、侧载及系统应用。 **[129 星标]**
+- [NSEcho/furlzz](https://github.com/NSEcho/furlzz) — 对 iOS URL scheme 进行模糊测试。 **[129 星标]**
 - [iamtorsten/SherlockElf](https://github.com/iamtorsten/SherlockElf) — SherlockElf 是功能强大的分析工具，支持 Android ELF 二进制文件的静态和动态分析，以及 iOS Mach-O 二进制文件的动态分析（实验性）。 **[119 星标]**
+- [juliangrtz/frida-iOS-syscall-tracer](https://github.com/juliangrtz/frida-iOS-syscall-tracer) — 通过 Frida 跟踪 iOS 系统调用，包含 Mach 系统调用。 **[111 星标]**
+- [n1ght-w0lf/HawkEye](https://github.com/n1ght-w0lf/HawkEye) — 基于 Frida 框架的恶意软件动态插桩工具。 **[111 星标]**
+- [revercc/gumTVM](https://github.com/revercc/gumTVM) — 使用 frida-gum 的 Stalker 进行跟踪。 **[111 星标]**
+- [davuxcom/frida-scripts](https://github.com/davuxcom/frida-scripts) — 向 Windows 应用注入 JS 和 C#，并调用 COM 与 WinRT API。 **[107 星标]**
 - [miyagaw61/exgdb](https://github.com/miyagaw61/exgdb) — GDB 扩展 **[107 星标]**
+- [CYRUS-STUDIO/frida\_stalker](https://github.com/CYRUS-STUDIO/frida_stalker) — 使用 Frida Stalker 反 OLLVM 算法还原（函数调用分析、参数分析、打印调用堆栈、指令&amp;寄存器Trace）。 **[103 星标]**
+- [axhlzy/ARTHookScripts](https://github.com/axhlzy/ARTHookScripts) — 通过 Frida 在运行时解析 smali。 **[94 星标]**
 - [seemoo-lab/apple-continuity-tools](https://github.com/seemoo-lab/apple-continuity-tools) — 面向 Apple 无线生态系统的逆向工程工具集 **[90 星标]**
+- [rubaljain/frida-jb-bypass](https://github.com/rubaljain/frida-jb-bypass) — 绕过 iOS 应用越狱检测的 Frida 脚本。 **[88 星标]**
+- [freehuntx/frida-inject](https://github.com/freehuntx/frida-inject) — 通过 Frida 和 frida-load 轻松注入 JavaScript 的模块。 **[81 星标]**
+- [icloudza/algokiller-plugin](https://github.com/icloudza/algokiller-plugin) — ARM64 跟踪证据分析与密码算法恢复：Claude Desktop 插件，结合技能与本地 MCP 服务器，驱动原生 ak\_search 引擎处理 GB 级跟踪文件。 **[79 星标]**
+- [Baron-von-Riedesel/DOS-debug](https://github.com/Baron-von-Riedesel/DOS-debug) — Debug 和 DebugX（简称 Debug/X）是 MS DEBUG 的扩展版本。 **[77 星标]**
+- [freehuntx/frida-mono](https://github.com/freehuntx/frida-mono) — 所有 Mono C 导出函数，可直接在 Frida 中使用！ **[76 星标]**
+- [vah13/Win\_ZIP\_password](https://github.com/vah13/Win_ZIP_password) — 在 Windows 10 中通过 hook 获取 ZIP 文件密码的 Python 脚本。 **[75 星标]**
+- [beevik/go6502](https://github.com/beevik/go6502) — 用 Go 编写的 6502 CPU 模拟器、汇编器、反汇编器、调试器及宿主程序。 **[74 星标]**
+- [BullyWiiPlaza/JGeckoU](https://github.com/BullyWiiPlaza/JGeckoU) — Wii U RAM TCP 调试客户端与作弊码管理器。 **[73 星标]**
 - [wwweeeqqu/honor-of-kings-RE-research](https://github.com/wwweeeqqu/honor-of-kings-RE-research) — 全栈移动游戏安全研究，针对《王者荣耀》/sgame：内核态跨进程内存读取（KernelPatch KPM）、腾讯 ACE 反作弊及 IL2CPP/原生引擎逆向工程，以及实时 ESP 叠加显示。仅用于教学与研究，不包含专有二进制文件。 **[73 星标]**
+- [LeanVel/iInject](https://github.com/LeanVel/iInject) — 在 GNU/Linux 上自动将动态库嵌入 iOS 应用的工具。 **[72 星标]**
+- [vichhka-git/universal-flutter-ssl-pinning](https://github.com/vichhka-git/universal-flutter-ssl-pinning) — 对任意 Flutter 和 Shorebird 版本自动绕过 SSL 证书固定；使用 PyGhidra 静态分析自动发现 BoringSSL，并生成可直接运行的 Frida 与 Renef 脚本。 **[69 星标]**
+- [jankais3r/Frida-iOS-15-TLS-Keylogger](https://github.com/jankais3r/Frida-iOS-15-TLS-Keylogger) — 通过 hook libboringssl.dylib 提取 TLS 密钥，使 iOS 应用流量能够被解密。 **[64 星标]**
 - [imugee/xdv](https://github.com/imugee/xdv) — XDV 是基于扩展插件工作的反汇编器或调试器。 **[56 星标]**
-- [crissyfield/super-trouper](https://github.com/crissyfield/super-trouper) — Frida 的 MCP 服务器。 **[54 星标]**
+- [heeeyaaaa/vmem-decrypt](https://github.com/heeeyaaaa/vmem-decrypt) — 使用虚拟机密码解密经 VMware vTPM 加密的 .vmem/.vmsn/.vmss/.nvram，并将 .vmem 扁平化为可供 Volatility 使用的镜像。 **[55 星标]**
+- [crissyfield/super-trouper](https://github.com/crissyfield/super-trouper) — Frida 的 MCP 服务器。 **[54 星标]** · 精选：[Super Trouper](https://awesomerea.org/zh/resources/super-trouper/)
 - [irql/nokd](https://github.com/irql/nokd) — Windows NT 内核调试器协议的逆向工程与重新实现。 **[44 星标]**
+- [StackOverflowExcept1on/ida75demo-linux](https://github.com/StackOverflowExcept1on/ida75demo-linux) — 针对 Linux x86\_64 上 IDA 7.5 Demo 的非官方补丁。受成功所累：仓库被 Hex-Rays SA 提出了 DMCA 下架要求。 **[35 星标]**
 - [andreafioraldi/r2angrdbg](https://github.com/andreafioraldi/r2angrdbg) — 在 radare2 调试器中使用 angr，并根据当前调试器状态创建 angr 状态。 **[34 星标]**
 - [NSEcho/fnoios](https://github.com/NSEcho/fnoios) — 将启动的 iOS 应用的标准输出（stdout）和标准错误（stderr）重定向至伪终端（pty） **[31 星标]**
+- [EmadAbedini/Dumplyzer](https://github.com/EmadAbedini/Dumplyzer) — 用于 DFIR、威胁狩猎、恶意软件分析和事件响应的开源内存取证平台。 **[29 星标]**
+- [Tixul/Ngpcraft\_emulator](https://github.com/Tixul/Ngpcraft_emulator) — Neo Geo Pocket / Color 模拟器，配有完整调试器以及同人翻译和 ROM 修改工具（.tbl 表、相对搜索、指针查找器、ROM 差异比较）。支持即时存档、倒带，提供 Windows/Linux/macOS 构建版本。 **[29 星标]**
 - [AkashaCorporation/HikariSystem-HexCore](https://github.com/AkashaCorporation/HikariSystem-HexCore) — 原生逆向工程 IDE。提供零开销二进制分析、完整 CPU 模拟（PE/ELF）和无界面自动化，通过 N-API 集成 Capstone、Unicorn、LLVM 与 Remill。 **[27 星标]**
 - [riyadmondol2006/ios-ssl-bypass-and-traffic-monitor](https://github.com/riyadmondol2006/ios-ssl-bypass-and-traffic-monitor) — iOS SSL 绕过与实时流量监控：基于 Frida 的脚本，可绕过 SSL 证书固定并实时监控 iOS 应用的网络流量。面向安全研究人员与合乎伦理的测试。📡🔓 **[24 星标]**
-- [yfe404/frida-mcp](https://github.com/yfe404/frida-mcp) — 用于 Frida 17 动态插桩的 MCP 服务器。 **[24 星标]**
+- [yfe404/frida-mcp](https://github.com/yfe404/frida-mcp) — 用于 Frida 17 动态插桩的 MCP 服务器。 **[24 星标]** · 精选：[frida-mcp (yfe404)](https://awesomerea.org/zh/resources/frida-mcp-yfe404/)
 - [qtmleap/revkit](https://github.com/qtmleap/revkit) — iOS 和 Android 应用逆向工程工具包（Frida、mitmproxy、Ghidra、Theos）。 **[19 星标]**
 - [2233admin/reverse-skill-evolver](https://github.com/2233admin/reverse-skill-evolver) — 面向 AI 编程智能体的逆向工程技能，包含 IDA/MCP 集成、APK 和 JavaScript 工作流、受限的智能体集群及路由评估。 **[17 星标]**
 - [Fi5t/iDump](https://github.com/Fi5t/iDump) — 通过 USB 和 SSH／SFTP 解密并转储 iOS 应用二进制文件，生成 IPA 文件 **[17 星标]**
@@ -88,11 +126,18 @@
 - [Cross2pro/FridaMemoryBrowser](https://github.com/Cross2pro/FridaMemoryBrowser) — 通过 Frida 浏览、扫描、修改和定制。 **[6 星标]**
 - [juliangrtz/iOS-re-lab](https://github.com/juliangrtz/iOS-re-lab) — iOS 应用逆向工程实验室。 **[6 星标]**
 - [iss4cf0ng/issac-reverse-toolbox](https://github.com/iss4cf0ng/issac-reverse-toolbox) — 个人逆向工程工具箱，包含自定义工具、脚本和恶意软件分析笔记。 **[5 星标]**
+- [Loonaro/loonaro-sandbox](https://github.com/Loonaro/loonaro-sandbox) — Loonaro：自动化恶意软件分析。 **[5 星标]**
+- [vitri0l/NewWorldInterface](https://github.com/vitri0l/NewWorldInterface) — 由驱动支持的 Windows 内核接口，用于 VAD 树检查与修改、PTE 重链接及跨进程内存操作，并从 ntoskrnl 的 PDB 在运行时解析符号。 **[5 星标]**
+- [AvivShabtay/BlackEnergyDriver](https://github.com/AvivShabtay/BlackEnergyDriver) — 对 Black Energy 驱动进行逆向工程。 **[4 星标]**
+- [chase-irql/StrataDMA](https://github.com/chase-irql/StrataDMA) — MemProcFS／VMMDLL 的现代 C++17 封装，提供结构化 DMA 内存 API、进程内省、扫描、输入支持及无需硬件的测试。 **[4 星标]**
 - [hackThacker/awesome-reverse-engineering](https://github.com/hackThacker/awesome-reverse-engineering) — 专注于二进制分析、恶意软件研究和底层系统内部机制的逆向工程专家，擅长剖析复杂软件、发现漏洞，并超越源代码抽象理解程序。 **[4 星标]**
 - [ahmedMhesham12/flutter-tls-frida-generator](https://github.com/ahmedMhesham12/flutter-tls-frida-generator) — 从 Flutter 引擎二进制生成分层的 Frida TLS 测试代理。 **[3 星标]**
+- [gabryxdev/RuntimeMemoryGuardian](https://github.com/gabryxdev/RuntimeMemoryGuardian) — 防御性 C++20 库，用于 Windows／Linux 上的运行时内存完整性、钩子检测及防篡改监控。 **[3 星标]**
 - [Maxamedxasa/SakoREStudio](https://github.com/Maxamedxasa/SakoREStudio) — 🛡️ 移动优先的交互式反汇编与反编译框架，在 Android 上提供 IDA Pro/Ghidra 级逆向工程能力。支持 APK、ELF、PE、DEX、ARM64、x86-64、IR 反编译器、调用图、ptrace 调试器和 SakoScript 插件，由 Maxamed Xasan Muse 创建。🇸🇴 **[3 星标]**
+- [rahimgujjar/WhatsApp-WAL-XRay](https://github.com/rahimgujjar/WhatsApp-WAL-XRay) — 确定性的内存映射与数据库取证套件，用于审计客户端数据泄露，并通过 SQLite 预写日志（.db-wal）绕过临时性隐私控制。 **[3 星标]**
 - [13shivam/offset-zero](https://github.com/13shivam/offset-zero) — Offset Zero：免费开源的数字取证、逆向工程和检测工程实战指南。从第一个字节开始——这更是一种思维方式！ **[2 星标]**
 - [AlexGRDev/apple-seclab](https://github.com/AlexGRDev/apple-seclab) — 面向 macOS、iOS 和 iPadOS 的可复现 Apple 安全研究环境。 **[2 星标]**
+- [Ashibalt/minusOne-mcp-reverse](https://github.com/Ashibalt/minusOne-mcp-reverse) — 逆向工程 MCP 服务器，提供 77 项语义操作：静态初筛、解包、反编译（Ghidra／IDA）、动态插桩（frida／TTD）、模拟（Unicorn）、符号执行（angr）及证据处理。可用于任何兼容 MCP 的智能体宿主。 **[2 星标]**
 - [ip2867/ctf-re-tool](https://github.com/ip2867/ctf-re-tool) — 基于 Electron、面向 Windows 的 CTF 逆向 AI 解题工作台，结合 AI 工具循环与本地验证闭环，通过 MCP 接入 IDA、JEB 和 Burp，自动求解 APK、PE、ELF、PYC、DEX、JAR、Mach-O、Lua 和 Web-JS，内置 11 个方法论技能、54 页结构化知识库及经验自进化机制。 **[2 星标]**
 - [PyModel/reverse-engineering-skill](https://github.com/PyModel/reverse-engineering-skill) — 面向 AI 编码智能体的确定性二进制分析、运行时插桩和协议逆向工程技能。 **[2 星标]**
 - [siaginw/HexWitness](https://github.com/siaginw/HexWitness) — 为逆向工程智能体提供记忆、地图和证据记录。 **[2 星标]**
@@ -103,6 +148,8 @@
 - [Real-Fruit-Snacks/x86-x64-assembly-lab](https://github.com/Real-Fruit-Snacks/x86-x64-assembly-lab) — 交互式 x86 与 x86-64 汇编模拟器和逆向工程实验室：32/64 位引擎单步执行、栈实验区、寄存器测验、28 篇教程及 7 个工具。纯浏览器运行，无需构建，无依赖。 **[1 星标]**
 - [BattlePriestBarbara/Revlab](https://github.com/BattlePriestBarbara/Revlab) — AI 辅助多平台逆向工程工作台，集成 Ghidra、Frida 和 MCP。提供 APK/ELF/PE 零依赖初步分析、基于熵的加壳检测，以及严格默认拒绝的授权机制，以支持安全、可复现的分析。 **[0 星标]**
 - [Msr7799/Android-Deep-Analysis-Lab](https://github.com/Msr7799/Android-Deep-Analysis-Lab) — 开源 Android 安全审计与道德黑客工具包，用于授权 ADB 检查、APK 分析、逆向工程、动态分析和网络检查，使用 ADB、JADX、Apktool、Ghidra、Frida、MobSF 和 TShark。 **[0 星标]**
+- [Prajwal-kp-18/crypto-firmware-detector](https://github.com/Prajwal-kp-18/crypto-firmware-detector) — 自动化固件分析框架，结合递归提取、基于 Ghidra 的静态分析及动态二进制插桩，检测去符号二进制中的密码学原语及硬编码秘密信息。 **[0 星标]**
 - [SenjuWoo/reverse-this](https://github.com/SenjuWoo/reverse-this) — 一键式 Windows 模组工具包，为智能体应调用的现有 Ghidra、Unity、Unreal 和逆向工程工具提供稳定的 sandbox/bin 路径。 **[0 星标]**
+- [yuw868349-commits/occ](https://github.com/yuw868349-commits/occ) — 在 Linux 上运行 Windows PE 的运行时：原生执行来宾代码、进程内调试及离线去虚拟化。不使用 Wine 或模拟器。 **[0 星标]**
 
 <!-- Generated by scripts/build_repository_index.py. Edit source data, then rebuild. -->

@@ -25,8 +25,18 @@ class PaperSearchTests(unittest.TestCase):
             for lang, path in [('en', 'papers/index.html'), ('zh', 'zh/papers/index.html')]:
                 html = (output / path).read_text()
                 self.assertEqual(len(re.findall(r'<article class="paper-card"', html)), len(papers))
-                self.assertRegex(html, r'<form id="paper-search"[^>]* hidden>')
+                # The form occupies its space from first paint; only scripting:none hides it.
+                form = re.search(r'<form id="paper-search"[^>]*>', html)[0]
+                self.assertIn('class="paper-search script-only"', form)
+                self.assertNotRegex(form, r'\bhidden\b')
+                self.assertIn('@media(scripting:none){.script-only{display:none!important}}', (ROOT / 'site/styles.css').read_text())
+                self.assertRegex(html, r'<button id="paper-clear"[^>]* disabled>')
+                initial = f'Showing {len(papers)} of {len(papers)} papers' if lang == 'en' else f'显示 {len(papers)} / {len(papers)} 篇论文'
+                self.assertIn(f'aria-atomic="true">{initial}</p>', html)
+                self.assertRegex(html, r'<select id="paper-layout"><option value="compact">[^<]+</option><option value="cards">[^<]+</option></select>')
                 self.assertNotRegex(html, r'<article[^>]*\bhidden\b')
+                self.assertIn('data-paper-layout="compact"', html)
+                self.assertIn('适用范围与来源' if lang == 'zh' else 'Scope & sources', html)
                 self.assertIn('/paper-search.js?v=' + hashlib.sha256(script).hexdigest()[:16], html)
                 projection = json.loads(re.search(r'<script id="paper-search-data" type="application/json">(.*?)</script>', html, re.S)[1])
                 self.assertEqual(projection['schema_version'], 1)
@@ -39,7 +49,19 @@ class PaperSearchTests(unittest.TestCase):
                     self.assertIn(escape(original['description_' + lang]), html)
                     self.assertIn(escape(original['scope_limitations_' + lang]), html)
                     self.assertIn(escape(original['metadata_notes_zh' if lang == 'zh' else 'metadata_notes']), html)
-                    self.assertIn('/papers/citations/' + original['id'] + '.bib', html)
+                    card = re.search(r'<article class="paper-card" id="' + original['id'] + r'".*?</article>', html, re.S)[0]
+                    disclosure = re.search(r'<details class="paper-details">(.*?)</details>', card, re.S)[1]
+                    self.assertIn(escape(original['scope_limitations_' + lang]), disclosure)
+                    self.assertIn(escape('; '.join(original['authors'])), disclosure)
+                    self.assertEqual(card.count('class="paper-scope"'), 1)
+                    self.assertEqual(card.count('class="paper-authors"'), 1)
+                    self.assertIn(escape(original['description_' + lang]), card.split('<details', 1)[0])
+                    for source in original['evidence_urls']:
+                        self.assertIn('href="' + escape(source, quote=True) + '"', disclosure)
+                    self.assertIn('/papers/citations/' + original['id'] + '.bib', disclosure)
+                    self.assertIn('href="' + escape(original['url'], quote=True) + '"', card)
+                    if lang == 'zh':
+                        self.assertIn(escape(original['title']), disclosure)
                     self.assertEqual((output / 'papers/citations' / (original['id'] + '.bib')).read_text(), bibtex_text(original))
                 self.assertIn('role="status" aria-live="polite" aria-atomic="true"', html)
                 self.assertIn('aria-describedby="paper-search-help"', html)

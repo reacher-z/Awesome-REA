@@ -126,13 +126,65 @@ class ReviewedContainerRecordTests(unittest.TestCase):
         self.assertEqual((netlifter['booktitle'], netlifter['pages'], netlifter['doi'], netlifter['eprint']),
                          ('{Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security}',
                           '{1287--1301}', '{10.1145/3576915.3616614}', '{2305.11781}'))
+        codeinverter = fields(bibtex_text(PAPERS['paper-codeinverter-suite']))
+        self.assertEqual((codeinverter['booktitle'], codeinverter['pages'], codeinverter['doi'],
+                          codeinverter['year'], codeinverter['month'], codeinverter['eprint']),
+                         ('{Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering}',
+                          '{3278--3289}', '{10.1145/3832783.3837554}', '{2026}', 'oct', '{2503.07215}'))
+        # The published v3 order differs from the earlier preprint and repository citation.
+        self.assertEqual(codeinverter['author'],
+                         '{{Peipei Liu} and {Jian Sun} and {Rongkang Sun} and {Li Chen} and {Zhaoteng Yan} '
+                         'and {Xiaoling Zhang} and {Dawei Wang} and {Dapeng Sun} and {Peizheng Zhang} and {Dan Li}}')
+        notdec = fields(bibtex_text(PAPERS['paper-notdec']))
+        self.assertEqual((notdec['booktitle'], notdec['pages'], notdec['doi'], notdec['month']),
+                         ('{Proceedings of the 2026 IEEE/ACM 48th International Conference on Software Engineering}',
+                          '{3813--3824}', '{10.1145/3744916.3787762}', 'apr'))
+        binjudge = fields(bibtex_text(PAPERS['paper-binjudge']))
+        self.assertEqual((binjudge['booktitle'], binjudge['pages'], binjudge['doi'], binjudge['month']),
+                         ('{Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering}',
+                          '{106--118}', '{10.1145/3832783.3834339}', 'oct'))
+        viability = fields(bibtex_text(PAPERS['paper-requirements-generation-viability']))
+        self.assertEqual((viability['booktitle'], viability['pages'], viability['doi'],
+                          viability['month'], viability['eprint']),
+                         ('{2026 IEEE 34th International Requirements Engineering Conference Workshops (REW)}',
+                          '{94--103}', '{10.1109/rew72749.2026.00023}', 'aug', '{2606.25550}'))
+        khost = fields(bibtex_text(PAPERS['paper-khost']))
+        self.assertEqual((khost['booktitle'], khost['publisher'], khost['pages'], khost['month']),
+                         ('{35th USENIX Security Symposium (USENIX Security 26)}',
+                          '{USENIX Association}', '{573--592}', 'aug'))
+        self.assertFalse({'doi', 'eprint', 'howpublished'} & set(khost))
+        transre = fields(bibtex_text(PAPERS['paper-transre']))
+        self.assertEqual((transre['journal'], transre['volume'], transre['number'],
+                          transre['pages'], transre['doi'], transre['year'], transre['month']),
+                         ('{Proceedings of the ACM on Software Engineering}', '{3}', '{FSE}',
+                          '{636--656}', '{10.1145/3797124}', '{2026}', 'jun'))
+        self.assertFalse({'booktitle', 'eid', 'eprint'} & set(transre))
+        satbleed = fields(bibtex_text(PAPERS['paper-satbleed']))
+        self.assertEqual((satbleed['booktitle'], satbleed['pages'], satbleed['doi'],
+                          satbleed['year'], satbleed['month'], satbleed['eprint']),
+                         ('{2026 IEEE Symposium on Security and Privacy (SP)}', '{2904--2921}',
+                          '{10.1109/SP63933.2026.00213}', '{2026}', 'may', '{2610.06258}'))
+        self.assertEqual(satbleed['author'],
+                         '{{Ulysse Planta} and {Julian Rederlechner} and {Martin Strohmeier} '
+                         'and {Mathias Fischer} and {Ali Abbasi}}')
 
     def test_only_reviewed_records_carry_container_metadata(self):
         expected = {'paper-dire', 'paper-resym', 'paper-redraw', 'paper-declarui', 'paper-fuzzware',
                     'paper-firmae', 'paper-vision2web', 'paper-ui2code', 'paper-worldcoder',
                     'paper-jsdeobsbench', 'paper-cascade', 'paper-dcgen', 'paper-code-world-models',
                     'paper-stateinspector', 'paper-halucinator', 'paper-web2code', 'paper-degpt',
-                    'paper-binpre', 'paper-binaryinferno', 'paper-icepre', 'paper-netlifter', 'paper-uiorchestra', 'paper-slade'}
+                    'paper-binpre', 'paper-binaryinferno', 'paper-icepre', 'paper-netlifter', 'paper-uiorchestra', 'paper-slade',
+                    'paper-debin',
+                    'paper-typeforge',
+                    'paper-decllm',
+                    'paper-idioms',
+                    'paper-deguard',
+                    'paper-symgen',
+                    'paper-webcode2m',
+                    'paper-xfl',
+                    'paper-wadec',
+                    'paper-symlm', 'paper-codeinverter-suite', 'paper-notdec', 'paper-binjudge',
+                    'paper-requirements-generation-viability', 'paper-khost', 'paper-transre', 'paper-satbleed'}
         self.assertEqual({identifier for identifier, record in PAPERS.items() if 'citation' in record}, expected)
         for identifier in sorted(PAPERS.keys() - expected):
             # Records without verified container metadata keep the short venue label.

@@ -15,14 +15,21 @@ from xml.sax.saxutils import escape as xml_escape
 from build_browse_pages import build_browse_pages
 from build_discovery_pages import build_discovery_pages
 from build_paper_pages import build_paper_pages
+from build_readme import CATEGORIES
 from build_survey import build_survey, discussion_sections
 from build_entry_pages import build_entry_pages
+from build_feed import build_feeds
 from build_manifest import write_build_manifest
+from language_fragment import add_language_fragment_script
+from data_downloads import build_data_downloads
+from open_graph import website_node
 from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage
 from artifact_links import with_artifact_links, with_curated_labels
 from source_browser import write_source_browser
 from localization import read_localizations, localized_records
 from source_scope import apply_scope, read_scope
+from public_source_supplements import (PUBLISHED_FILENAME, compose_published,
+                                      copy_public_evidence, json_bytes, load_supplements, project_additions)
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "site"
@@ -30,6 +37,9 @@ OUTPUT = ROOT / "dist"
 SITE_URL = "https://awesomerea.org"
 REPOSITORY_URL = "https://github.com/reacher-z/Awesome-REA"
 TARGETS = {"website", "game", "app", "binary", "firmware", "protocol"}
+# Record fields the homepage needs for its first render; catalog.json keeps every field.
+CATALOG_INDEX_FIELDS = ("id", "name", "name_zh", "url", "evidence_url", "description_en", "description_zh", "kind",
+                        "category", "group", "relationship", "targets", "verified_at")
 FONT_AWESOME_ICONS = {
     "arrow": "arrow-right", "external": "arrow-up-right-from-square",
     "search": "magnifying-glass", "copy": "copy", "check": "check",
@@ -38,6 +48,14 @@ FONT_AWESOME_ICONS = {
     "layers": "layer-group", "document": "file-lines", "book": "book-open",
     "terminal": "terminal", "github": "github", "globe": "globe", "gamepad": "gamepad",
 }
+# Brand icons are drawn from the Brands face; every other key comes from Classic Light.
+FONT_AWESOME_BRANDS = {"github"}
+
+
+def catalog_index(catalog: dict) -> dict:
+    """Project the complete catalog onto the lean index the homepage renders first."""
+    return {"meta": catalog["meta"], "topic_labels": catalog["topic_labels"], "category_labels": catalog["category_labels"],
+            "resources": [{key: record[key] for key in CATALOG_INDEX_FIELDS if key in record} for record in catalog["resources"]]}
 
 
 def fontawesome_markup(html: str, stylesheet_url: str) -> str:
@@ -53,6 +71,34 @@ def fontawesome_markup(html: str, stylesheet_url: str) -> str:
 
     html = re.sub(r'<svg\b([^>]*)>\s*<use href="#i-([a-z-]+)"\s*/>\s*</svg>', replace_icon, html)
     return html
+
+
+def subset_icon_font(source: Path, destination: Path, codepoints: set[int]) -> None:
+    """Write a WOFF2 copy of a licensed face that keeps only the site's icon code points."""
+    try:
+        from fontTools import subset
+        from fontTools.ttLib import TTLibError, woff2
+    except ImportError:
+        woff2 = None
+    if woff2 is None or not woff2.haveBrotli:
+        raise ValueError("Subsetting the licensed icon fonts requires fontTools with Brotli: pip install fonttools brotli")
+    options = subset.Options()
+    options.flavor = "woff2"
+    # Keep every name record, including the copyright and license notices.
+    options.name_IDs = ["*"]
+    options.name_languages = ["*"]
+    try:
+        font = subset.load_font(str(source), options)
+    except (TTLibError, OSError, AssertionError) as error:
+        raise ValueError(f"Font Awesome input is not a readable font: {source.name}") from error
+    with font:
+        subsetter = subset.Subsetter(options)
+        subsetter.populate(unicodes=codepoints)
+        subsetter.subset(font)
+        missing = codepoints - set(font.getBestCmap() or {})
+        if missing:
+            raise ValueError(f"Font Awesome subset of {source.name} is missing icons: " + ", ".join(f"U+{point:04X}" for point in sorted(missing)))
+        subset.save_font(font, str(destination), options)
 
 
 def configure_fontawesome(html: str, licensed_package: Path | None, assets_url: str | None = None, *, output: Path) -> str:
@@ -85,8 +131,11 @@ def configure_fontawesome(html: str, licensed_package: Path | None, assets_url: 
             raise ValueError(f"Required Font Awesome icon is missing: {icon_name}")
         codepoints[key] = match.group(1)
     font_output.mkdir(exist_ok=True)
-    for name in font_names:
-        shutil.copy2(licensed_package / "webfonts" / name, font_output / name)
+    # Ship only the glyphs the site draws instead of the complete faces.
+    light = {int(point, 16) for key, point in codepoints.items() if key not in FONT_AWESOME_BRANDS}
+    brands = {int(codepoints[key], 16) for key in FONT_AWESOME_BRANDS}
+    for name, points in zip(font_names, (light, brands)):
+        subset_icon_font(licensed_package / "webfonts" / name, font_output / name, points)
     copyright_header = "/*! Font Awesome Pro by Fonticons, Inc. https://fontawesome.com — Commercial License: https://fontawesome.com/license. Licensed website assets; do not redistribute in a public source repository. */\n"
     css = copyright_header + """
 @font-face{font-family:'AwesomeREA Icons';font-style:normal;font-weight:300;font-display:block;src:url('fonts/fa-light-300.woff2') format('woff2')}
@@ -146,8 +195,6 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     for filename in ("rea-resources.json", "tool-resources.json"):
         for original in json.loads((ROOT / "data" / filename).read_text(encoding="utf-8")):
             record = dict(original)
-            if isinstance(record["requirements"], str):
-                record["requirements"] = [record["requirements"]]
             translation = translations.get(record["id"], {})
             record["requirements_zh"] = record.get("requirements_zh") or translation.get("requirements", record["requirements"])
             record["name_zh"] = record.get("name_zh") or translation.get("name", record["name"])
@@ -173,6 +220,15 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     html = (output / "index.html").read_text(encoding="utf-8")
     for key, value in {"RESOURCE_COUNT": len(resources), "INTEGRATION_COUNT": metadata["independent_integration_count"], "REVIEWED_AT": latest_review}.items():
         html = html.replace("{{" + key + "}}", str(value))
+    # Unfiltered target counts and the Protocol button are in the HTML, so the first paint matches app.js's first render.
+    for target in ("all", *sorted(TARGETS)):
+        count = len(resources) if target == "all" else sum(target in record["targets"] for record in resources)
+        html = html.replace("{{TARGET_COUNT_" + target.upper() + "}}", str(count))
+    protocol_button = '<button type="button" class="target-filter" data-target="protocol" aria-pressed="false" hidden>'
+    if html.count(protocol_button) != 1:
+        raise ValueError("Homepage needs exactly one curated Protocol target button")
+    if any("protocol" in record["targets"] for record in resources):
+        html = html.replace(protocol_button, protocol_button.replace(" hidden>", ">"))
     html = configure_fontawesome(html, fontawesome_dir, fontawesome_assets_url, output=output)
     source_index_path = ROOT / "data" / "source-index.json"
     source_index_output = output / "source-index.json"
@@ -202,21 +258,47 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
                 index_meta = index_data.get("meta", {})
                 metadata["source_index"] = {"available": True, "resource_count": len(successful) - excluded_count, "scanned_count": len(successful), "excluded_count": excluded_count, "status": index_meta.get("status", ""), "completed_at": index_meta.get("completed_at"), "verification": "automated-readme-scan"}
                 source_index_output.write_text(json.dumps(index_data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-                write_source_browser(output, source_index_output.read_bytes())
+                canonical_export = source_index_output.read_bytes()
+                supplements = load_supplements(ROOT)
+                if supplements['ready']:
+                    additions = project_additions(supplements)
+                    additions = with_curated_labels(with_artifact_links(additions, papers, resources), resources)
+                    browse_document = compose_published(canonical_export,
+                        hashlib.sha256(source_index_path.read_bytes()).hexdigest(), supplements, additions)
+                    published_export = json_bytes(browse_document)
+                    (output / PUBLISHED_FILENAME).write_bytes(published_export)
+                    copy_public_evidence(ROOT, output, supplements)
+                    scope = browse_document['meta']['scope']
+                    metadata['source_index'] = {
+                        'available': True, 'resource_count': scope['browse_count'],
+                        'scanned_count': scope['scanned_count'], 'excluded_count': scope['excluded_count'],
+                        'status': 'published-selection', 'publication_schema_version': 2,
+                        'published_at': browse_document['meta']['published_at'],
+                        'full_export': PUBLISHED_FILENAME, 'verification': 'automated-readme-scan',
+                    }
+                    html = html.replace('href="source-index.json"', 'href="source-published.json"')
+                    html = html.replace('data-i18n="downloadSourceData"', 'data-i18n="downloadPublishedSourceData"')
+                    write_source_browser(output, published_export)
+                else:
+                    write_source_browser(output, canonical_export)
     if not metadata["source_index"]["available"]:
         source_index_output.unlink(missing_ok=True)
         write_source_browser(output, None)
     topic_labels_path = SOURCE / "topics.i18n.json"
     topic_labels = json.loads(topic_labels_path.read_text(encoding="utf-8")) if topic_labels_path.exists() else {}
     metadata["paper_count"] = len(papers)
-    catalog = {"meta": metadata, "resources": resources, "topic_labels": topic_labels}
+    # The homepage reads category labels from here, so filters, cards and entry pages share one wording.
+    category_labels = {category: list(labels) for category, labels in CATEGORIES.items()}
+    catalog = {"meta": metadata, "resources": resources, "topic_labels": topic_labels, "category_labels": category_labels}
     (output / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # Requirement lists and additional evidence stay out of the first-render index; app.js fetches catalog.json afterwards.
+    (output / "catalog-index.json").write_text(json.dumps(catalog_index(catalog), ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     (output / "papers.json").write_text(json.dumps(papers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for key, value in {"BROWSE_COUNT": metadata["source_index"]["resource_count"], "SCANNED_COUNT": metadata["source_index"].get("scanned_count", 0), "PAPER_COUNT": len(papers)}.items():
         html = html.replace("{{" + key + "}}", f"{value:,}")
     navigation = [(path, names[0]) for path, names in HOMEPAGE_DESTINATIONS.items()]
     structured = {"@context": "https://schema.org", "@graph": [
-        {"@type": "WebSite", "@id": SITE_URL + "/#website", "url": SITE_URL + "/", "name": "Awesome Reverse Engineering Anything", "alternateName": "Awesome REA", "inLanguage": ["en", "zh-CN"]},
+        website_node(SITE_URL, REPOSITORY_URL),
         {"@type": "CollectionPage", "@id": SITE_URL + "/#collection", "url": SITE_URL + "/", "name": "Awesome Reverse Engineering Anything", "inLanguage": "en", "isPartOf": {"@id": SITE_URL + "/#website"}, "description": "An independent collection of reverse-engineering tools, projects, case studies and research papers for websites, games, apps, binaries, firmware and communication protocols.", "mainEntity": {"@type": "ItemList", "numberOfItems": len(navigation), "itemListElement": [{"@type": "ListItem", "position": i, "name": name, "url": f"{SITE_URL}/{path}/"} for i, (path, name) in enumerate(navigation, 1)]}}
     ]}
     html = html.replace("</head>", '<script type="application/ld+json">' + json.dumps(structured, ensure_ascii=False).replace("<", "\\u003c") + '</script>\n</head>')
@@ -225,21 +307,22 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         revision = hashlib.sha256((output / filename).read_bytes()).hexdigest()[:16]
         asset_hrefs[filename] = f'/{filename}?v={revision}'
         html = html.replace(f'{attribute}="{filename}"', f'{attribute}="{filename}?v={revision}"')
+    html = html.replace('src="favicon.svg"', f'src="{asset_hrefs["favicon.svg"]}"')
     social_revision = hashlib.sha256((output / "social-card.png").read_bytes()).hexdigest()[:16]
     html = html.replace(f'{SITE_URL}/social-card.png"', f'{SITE_URL}/social-card.png?v={social_revision}"')
     data_digest = hashlib.sha256()
-    for filename in ("catalog.json", "source-index.json", "source-browser.json", "papers.json"):
+    for filename in ("catalog.json", "source-index.json", "source-published.json", "source-browser.json", "papers.json"):
         path = output / filename
         if path.is_file():
             data_digest.update(filename.encode("utf-8") + b"\0" + path.read_bytes())
     data_revision = data_digest.hexdigest()[:16]
     html = html.replace('<html ', f'<html data-catalog-revision="{data_revision}" ', 1)
-    # Start the catalog request while the page parses. The URL and CORS mode match app.js's
-    # fetch(dataURL("catalog.json")), so that fetch reuses this response; source-browser.json stays on demand.
+    # Start the catalog index request while the page parses. The URL and CORS mode match app.js's
+    # fetch(dataURL("catalog-index.json")), so that fetch reuses this response; source-browser.json stays on demand.
     script_tag = f'<script src="{asset_hrefs["app.js"].lstrip("/")}" defer></script>'
     if html.count(script_tag) != 1:
         raise ValueError("Homepage needs exactly one deferred app.js script")
-    html = html.replace(script_tag, f'<link rel="preload" href="/catalog.json?v={data_revision}" as="fetch" crossorigin>\n  ' + script_tag)
+    html = html.replace(script_tag, f'<link rel="preload" href="/catalog-index.json?v={data_revision}" as="fetch" crossorigin>\n  ' + script_tag)
     # Both entry pages contain their own language before JavaScript runs.
     app_source = (SOURCE / "app.js").read_text(encoding="utf-8")
     (output / "index.html").write_text(localized_homepage(html, app_source, "en"), encoding="utf-8")
@@ -278,6 +361,10 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         favicon_href=asset_hrefs["favicon.svg"], social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
         icon_stylesheet_href=icon_stylesheet, survey_discussions=discussion_sections(survey_document),
     )
+    # Feeds list inclusion dates; they link from pages written above and are not sitemap pages.
+    build_feeds(output, resources, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL)
+    # Static pages with a language link keep the reader's card or section on the translated page.
+    add_language_fragment_script(output)
     (output / ".nojekyll").write_text("", encoding="utf-8")
     (output / "CNAME").write_text("awesomerea.org\n", encoding="utf-8")
     (output / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
@@ -286,6 +373,8 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", *browse_urls, *(SITE_URL + path for path in discovery_paths), *paper_urls, *survey_urls, *entry_urls]
     sitemap_entries = [f'<url><loc>{xml_escape(url)}</loc></url>' for url in sitemap_urls]
     (output / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(sitemap_entries) + '\n</urlset>\n', encoding="utf-8")
+    build_data_downloads(output, catalog, papers,
+                         (output / 'papers/references.bib').read_text(encoding='utf-8'))
     write_build_manifest(output)
     return len(resources), len(papers), len(sitemap_urls)
 

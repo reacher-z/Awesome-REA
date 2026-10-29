@@ -1,24 +1,30 @@
 # Protocols
 
-[All categories](README.md) · [简体中文](protocol-analysis.zh-CN.md)
+[All categories](README.md) · [On the website](https://awesomerea.org/browse/protocol-analysis/) · [简体中文](protocol-analysis.zh-CN.md)
 
-**103 repositories** · 2026-10-16 UTC
+**110 repositories** · 2026-10-20 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
+These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
-- [alufers/mitmproxy2swagger](https://github.com/alufers/mitmproxy2swagger) — Automagically reverse-engineer REST APIs via capturing traffic **[9,652 stars]**
 - [Mouseww/anything-analyzer](https://github.com/Mouseww/anything-analyzer) — All-in-one protocol analysis toolkit: built-in browser capture, MITM proxy, JS hooks, fingerprint spoofing, AI analysis, and an MCP server for seamless AI agent and IDE integration. **[3,776 stars]**
+- [commaai/opendbc](https://github.com/commaai/opendbc) — a Python API for your car **[3,493 stars]** · Curated: [opendbc](https://awesomerea.org/resources/opendbc/)
+- [SteamRE/SteamKit](https://github.com/SteamRE/SteamKit) — SteamKit2 is a .NET library designed to interoperate with Valve's Steam network. It aims to provide a simple, yet extensible, interface to perform various actions on the network. **[3,210 stars]** · Curated: [SteamKit](https://awesomerea.org/resources/steamkit/)
+- [ainfosec/FISSURE](https://github.com/ainfosec/FISSURE) — The RF and reverse engineering framework for everyone. Follow and ★ to show your support! **[2,069 stars]** · Curated: [FISSURE](https://awesomerea.org/resources/fissure/)
+- [marin-m/pbtk](https://github.com/marin-m/pbtk) — A toolset for reverse engineering and fuzzing Protobuf-based apps **[1,691 stars]** · Curated: [pbtk](https://awesomerea.org/resources/pbtk/)
 - [alphaSeclab/awesome-network-stuff](https://github.com/alphaSeclab/awesome-network-stuff) — Resources about network security, including: Proxy/GFW/ReverseProxy/Tunnel/VPN/Tor/I2P, and MiTM/PortKnocking/NetworkSniff/NetworkAnalysis/etc。More than 1700 open source tools for now. Post incoming. **[926 stars]**
-- [netzob/netzob](https://github.com/netzob/netzob) — Netzob: Protocol Reverse Engineering, Modeling and Fuzzing **[838 stars]**
-- [furiousMAC/continuity](https://github.com/furiousMAC/continuity) — Apple Continuity Protocol Reverse Engineering and Dissector **[688 stars]**
+- [netzob/netzob](https://github.com/netzob/netzob) — Netzob: Protocol Reverse Engineering, Modeling and Fuzzing **[838 stars]** · Paper: [Towards Automated Protocol Reverse Engineering Using Semantic Information](https://awesomerea.org/papers/paper-netzob/) · Curated: [Netzob](https://awesomerea.org/resources/netzob/)
+- [furiousMAC/continuity](https://github.com/furiousMAC/continuity) — Apple Continuity Protocol Reverse Engineering and Dissector **[688 stars]** · Curated: [furiousMAC Continuity](https://awesomerea.org/resources/furiousmac-continuity/)
+- [fkie-cad/friTap](https://github.com/fkie-cad/friTap) — Simplifying encrypted traffic analysis for researchers by making protocol decryption effortless. **[556 stars]** · Curated: [friTap](https://awesomerea.org/resources/fritap/)
 - [brent-stone/CAN\_Reverse\_Engineering](https://github.com/brent-stone/CAN_Reverse_Engineering) — Automated Payload Reverse Engineering Pipeline for the Controller Area Network (CAN) protocol **[456 stars]**
 - [0xMH/fichero-printer](https://github.com/0xMH/fichero-printer) — Fichero D11s thermal label printer - BLE protocol reverse engineering and Python CLI tool **[302 stars]**
 - [niloofarkheirkhah/nili](https://github.com/niloofarkheirkhah/nili) — Nili is a Tool for Network Scan, Man in the Middle, Protocol Reverse Engineering and Fuzzing. **[219 stars]**
+- [asiamina/A-Course-on-Digital-Forensics](https://github.com/asiamina/A-Course-on-Digital-Forensics) — A course on "Digital Forensics" designed and offered in the Computer Science Department at Texas Tech University **[203 stars]**
 - [symbolicsoft/verifpal](https://github.com/symbolicsoft/verifpal) — Cryptographic protocol analysis for real-world protocols. **[133 stars]**
 - [Annyfee/spider-js-reverse](https://github.com/Annyfee/spider-js-reverse) — Selected JavaScript reverse-engineering examples from various websites, with detailed explanations, concept summaries, cryptographic algorithms, difficulty comparisons, and links. Covers challenges including environment reconstruction, extracting JavaScript, webpack, and Ruishu. **[111 stars]**
 - [HackingLZ/maps\_scanner](https://github.com/HackingLZ/maps_scanner) — MAPS cloud scanner and response parser for Microsoft Defender research. **[96 stars]**
 - [leodesigner/powmr\_comm](https://github.com/leodesigner/powmr_comm) — PowMr Inverter serial communication protocol reverse engineering **[96 stars]**
-- [yapengye/NetPlier](https://github.com/yapengye/NetPlier) — NetPlier: Probabilistic Network Protocol Reverse Engineering from Message Traces **[75 stars]**
+- [yapengye/NetPlier](https://github.com/yapengye/NetPlier) — NetPlier: Probabilistic Network Protocol Reverse Engineering from Message Traces **[75 stars]** · Paper: [NetPlier: Probabilistic Network Protocol Reverse Engineering from Message Traces](https://awesomerea.org/papers/paper-netplier/)
+- [seemoo-lab/aristoteles](https://github.com/seemoo-lab/aristoteles) — A Wireshark dissector for the Apple Remote Invocation (ARI) protocol, used between Intel base band chips and the iOS CommCenter for various management purposes, SMS, telephony and much more. **[74 stars]**
 - [HalilDeniz/ICMPWatch](https://github.com/HalilDeniz/ICMPWatch) — ICMPWatch: ICMP Packet Sniffer **[60 stars]**
 - [ringverse/protocol](https://github.com/ringverse/protocol) — Reverse engineering smart ring protocols **[56 stars]**
 - [bitpeach/Protocol-Informatics](https://github.com/bitpeach/Protocol-Informatics) — “Protocol Informatics” is a project to design for automatically network protocol reverse engineering based on frame or packet analysis. "PI" is short for “Protocol Informatics”, which introduces local and global sequence alignment algorithms. The PI project is famous in network protocol reverse engineering based on network trace. I am not the author of PI project. However, the previous website storing PI project disappeared. That makes me to open a github issue to keep the codes of PI poject. **[53 stars]**
@@ -52,6 +58,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [tatikoma/mitm-research](https://github.com/tatikoma/mitm-research) — Security research on the WhatsApp protocol, cryptographic handshake analysis, reverse engineering, and controlled local MITM experimentation. **[9 stars]**
 - [kendojitsu/Kendo](https://github.com/kendojitsu/Kendo) — Kendo - Powerful Network Packet Capture &amp; Protocol Analysis Software 🚀 Real-time &amp; offline analysis with MFC &amp; WinPcap. Comprehensive protocol parsers &amp; display filters. Efficient packet management. Shortcut keys for seamless user interaction. Explore network traffic effortlessly! **[8 stars]**
 - [karlvbiron/MATRIX](https://github.com/karlvbiron/MATRIX) — Modbus Attack Tool for Remote Industrial eXploitation (M.A.T.R.I.X) is a comprehensive security testing tool for Modbus TCP protocol implementations. **[6 stars]**
+- [Liruitao1993/South\_Network\_Protocol\_Analysis\_Tool](https://github.com/Liruitao1993/South_Network_Protocol_Analysis_Tool) — An all-in-one desktop tool for parsing, framing, checking, sending and receiving power communication protocols. Supports 15 protocols, including China Southern Power Grid, State Grid, DL/T 698.45, DLT645-2007, DLMS/HDLC, next-generation carrier communication and HDC 1.0. Covers single-frame parsing, batch analysis, serial and Bluetooth communication, virtual meters, communication sequence diagrams, test plans and Lua scripts. Portable on Windows; no installation required. **[6 stars]**
 - [mahumadad/ubox-p4p](https://github.com/mahumadad/ubox-p4p) — Full reverse engineering of the UBox/UBIA smart-camera P4P protocol: custom block cipher, KCP+RDT video, ICE-style NAT traversal, and a standalone Python client. TUTK IOTC rebadge, documented end-to-end. **[6 stars]**
 - [bsu-tool/bsu-tool](https://github.com/bsu-tool/bsu-tool) — open-source AI-assisted USB protocol analysis tool and MCP server **[5 stars]**
 - [eogod/wireprism](https://github.com/eogod/wireprism) — High-throughput network stream inspection for live traffic and PCAPs. Built in Rust with flow reassembly, protocol parsing, transforms, pattern matching, and a real-time Web UI. **[5 stars]**

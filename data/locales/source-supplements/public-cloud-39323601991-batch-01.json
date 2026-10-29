@@ -1,0 +1,2012 @@
+{
+  "scan-1000972076": {
+    "description_en": "Android Universal Anti-Bypass Framework - Root, SSL Pinning, Emulator & Debug Detection Bypass",
+    "description_zh": "Android 通用反检测绕过框架：绕过 Root、SSL 证书固定、模拟器及调试检测。"
+  },
+  "scan-1003044927": {
+    "description_en": "Epson S1C33000 support in Ghidra",
+    "description_zh": "在 Ghidra 中支持 Epson S1C33000。"
+  },
+  "scan-100366042": {
+    "description_en": "Portable modification of IDA Pro for macOS.",
+    "description_zh": "IDA Pro for macOS 绿化。"
+  },
+  "scan-1010511574": {
+    "description_en": "Learn reverse-engineering techniques, covering static and dynamic analysis as well as advanced binary protections such as packing, obfuscation and encryption.",
+    "description_zh": "学习逆向工程技术，涵盖静态／动态分析以及加壳、混淆和加密等进阶二进制保护。"
+  },
+  "scan-101184401": {
+    "description_en": "Zydis Rust Bindings",
+    "description_zh": "Zydis 的 Rust 绑定。"
+  },
+  "scan-1016805001": {
+    "description_en": "Nasty Bytes Detector — A Ghidra plugin that identifies tricky byte patterns designed to confuse disassembly and disrupt control flow analysis, helping reverse engineers uncover obfuscated code.",
+    "description_zh": "Nasty Bytes Detector：识别旨在混淆反汇编、干扰控制流分析的特殊字节模式的 Ghidra 插件，帮助逆向工程人员发现混淆代码。"
+  },
+  "scan-1023347102": {
+    "description_en": "A Calculator plugin for Ghidra that adds a GUI calculator and right-click options for adding addresses, memory, and constant values to the calculator, as well as options for calculating distance between addresses.",
+    "description_zh": "Ghidra 计算器插件，添加 GUI 计算器以及将地址、内存和常量值加入计算器的右键选项，还提供计算地址之间距离的选项。"
+  },
+  "scan-1041711491": {
+    "description_en": "IDA Pro + ImGui",
+    "description_zh": "IDA Pro + ImGui",
+    "technical_only": true
+  },
+  "scan-1043889856": {
+    "description_en": "An IDA Pro plugin for binary pattern analysis and generation, featuring ARM64 assembly-to-pattern conversion capabilities.",
+    "description_zh": "用于二进制模式分析与生成的 IDA Pro 插件，支持将 ARM64 汇编转换为模式。"
+  },
+  "scan-1051995327": {
+    "description_en": "apk-patchx a command-line tool that makes APK manipulation & frida-gadget injection fast, automated, modular, and developer-friendly.",
+    "description_zh": "apk-patchx 是命令行工具，让 APK 修改和 frida-gadget 注入更快速、自动化、模块化，并对开发者友好。"
+  },
+  "scan-1055522493": {
+    "description_en": "Automates creating and capturing Free Fire guest accounts via Frida, formats and manages them, obtains JWTs, and sends encrypted like requests to a target UID with concurrency controls and one-like-per-guest-per-target guarantees.",
+    "description_zh": "通过 Frida 自动创建并捕获 Free Fire 游客账户，格式化和管理账户、获取 JWT，并向目标 UID 发送加密点赞请求；具有并发控制，并保证每个游客对每个目标只点赞一次。"
+  },
+  "scan-1059497583": {
+    "description_en": "A collection of personal ghidra scripts",
+    "description_zh": "个人 Ghidra 脚本集合。"
+  },
+  "scan-1059776565": {
+    "description_en": "AArch64 FEAT_CSSC support for IDA Pro (disassembler/Hex-Rays) and Ghidra",
+    "description_zh": "为 IDA Pro（反汇编器／Hex-Rays）和 Ghidra 提供 AArch64 FEAT_CSSC 支持。"
+  },
+  "scan-1060627089": {
+    "description_en": "Advanced reverse engineering platform combining traditional static analysis with AI-powered insights. Supports multiple decompilers (Ghidra, IDA Pro, Binary Ninja), automated function analysis, and interactive web visualization for comprehensive binary analysis workflows.",
+    "description_zh": "将传统静态分析与 AI 洞察相结合的高级逆向工程平台。支持多种反编译器（Ghidra、IDA Pro、Binary Ninja）、自动化函数分析及交互式网页可视化，构建全面的二进制分析工作流。"
+  },
+  "scan-1072274210": {
+    "description_en": "This repository contains a detailed technical report documenting the unpacking process of a Dridex malware sample. The analysis was performed in a controlled virtualized environment using x32dbg, Process Hacker, and PE-bear to locate, extract, and partially reconstruct PE images from memory.",
+    "description_zh": "该仓库包含记录 Dridex 恶意软件样本解包过程的详细技术报告。分析在受控虚拟化环境中使用 x32dbg、Process Hacker 和 PE-bear 进行，从内存定位、提取并部分重建 PE 镜像。"
+  },
+  "scan-1078962432": {
+    "description_en": "Decompilation project of Gauntlet: Dark Legacy for the Nintendo Gamecube.",
+    "description_zh": "Nintendo Gamecube 版 Gauntlet: Dark Legacy 的反编译项目。"
+  },
+  "scan-1087471967": {
+    "description_en": "Loonaro - Automated Malware Analysis",
+    "description_zh": "Loonaro：自动化恶意软件分析。"
+  },
+  "scan-110456210": {
+    "description_en": "Android application tracer powered by Frida",
+    "description_zh": "由 Frida 驱动的 Android 应用跟踪器。"
+  },
+  "scan-1114060911": {
+    "description_en": "Security Research Suite for macOS binaries in Hopper Disassembler",
+    "description_zh": "用于在 Hopper Disassembler 中研究 macOS 二进制文件的安全研究套件。"
+  },
+  "scan-1115688514": {
+    "description_en": "IDA scripts for the REshare reverse-engineering exchange format",
+    "description_zh": "面向 REshare 逆向工程交换格式的 IDA 脚本。"
+  },
+  "scan-1115863763": {
+    "description_en": "Decompilation of Shin Megami Tensei: Persona 3 FES (USA)",
+    "description_zh": "Shin Megami Tensei: Persona 3 FES（美版）反编译项目。"
+  },
+  "scan-1116970730": {
+    "description_en": "Automated firmware analysis framework combining recursive extraction, Ghidra-based static analysis, and dynamic binary instrumentation to detect cryptographic primitives and hardcoded secrets in stripped binaries",
+    "description_zh": "自动化固件分析框架，结合递归提取、基于 Ghidra 的静态分析及动态二进制插桩，检测去符号二进制中的密码学原语及硬编码秘密信息。"
+  },
+  "scan-1125891031": {
+    "description_en": "extracted files from android 6.0.0 (Nexus 5X)",
+    "description_zh": "从 Android 6.0.0（Nexus 5X）提取的文件。"
+  },
+  "scan-1127391502": {
+    "description_en": "AI-Powered Reverse Engineering with 100% Ghidra API Access",
+    "description_zh": "通过 100% 的 Ghidra API 访问能力实现 AI 驱动的逆向工程。"
+  },
+  "scan-1127879583": {
+    "description_en": "AI-assisted reverse engineering tool built on Ghidra and MCP.",
+    "description_zh": "基于 Ghidra 和 MCP 的 AI 辅助逆向工程工具。"
+  },
+  "scan-1128003463": {
+    "description_en": "AIDA-AUDIT: IDA Pro + MCP + AI agents for automated binary audit.",
+    "description_zh": "AIDA-AUDIT：结合 IDA Pro、MCP 和 AI 智能体进行自动化二进制审计。"
+  },
+  "scan-1134211028": {
+    "description_en": "Halo: Reach Reverse Engineering Project",
+    "description_zh": "Halo: Reach 逆向工程项目。"
+  },
+  "scan-1135351843": {
+    "description_en": "reverse engineering assistant for strings, IOCs, imports, and Ghidra assisted analysis",
+    "description_zh": "逆向工程助手，支持字符串、失陷指标（IOC）、导入项及 Ghidra 辅助分析。"
+  },
+  "scan-1136924652": {
+    "description_en": "Robust Frida-based tool to dump decrypted iOS apps as .ipa from a jailbroken device supports App Store, sideloaded and system.",
+    "description_zh": "基于 Frida 的稳健工具，从越狱设备将已解密的 iOS 应用转储为 .ipa，支持 App Store、侧载及系统应用。"
+  },
+  "scan-113866267": {
+    "description_en": "makin - reveal anti-debugging and anti-VM tricks [This project is not maintained anymore]",
+    "description_zh": "makin：揭示反调试和反虚拟机技巧［此项目已不再维护］。"
+  },
+  "scan-1141479021": {
+    "description_en": "Matching decompilation of Legend of Mana / 聖剣伝説 LEGEND OF MANA (PS1) - NTSC-U / NTSC-J ",
+    "description_zh": "Legend of Mana / 聖剣伝説 LEGEND OF MANA（PS1）的匹配反编译，面向 NTSC-U / NTSC-J。",
+    "english_retains_name": true
+  },
+  "scan-1146519069": {
+    "description_en": "A minimal, practical web tool for decompiling WeChat Mini Programs.",
+    "description_zh": "极简实用的微信小程序反编译 Web 工具"
+  },
+  "scan-1147512818": {
+    "description_en": "Anti Cheat runtime import resolver, how it rebuilds its IAT at load time to hide API usage from static   analysis.",
+    "description_zh": "反作弊运行时导入解析器：展示其如何在加载时重建 IAT，以向静态分析隐藏 API 使用情况。"
+  },
+  "scan-1150138101": {
+    "description_en": "Semantic analysis engine for detecting vulnerability fixes in Windows kernel driver patches — 58 YAML rules, Ghidra decompilation, reachability tracing, and scoring",
+    "description_zh": "检测 Windows 内核驱动补丁中漏洞修复的语义分析引擎，包含 58 条 YAML 规则、Ghidra 反编译、可达性跟踪及评分。"
+  },
+  "scan-1151471369": {
+    "description_en": "Graffito Decomp - a matching decompilation of Super Mario Sunshine (GMSJ01), descended from doldecomp/sms.",
+    "description_zh": "Graffito Decomp：Super Mario Sunshine（GMSJ01）的匹配反编译，衍生自 doldecomp/sms。"
+  },
+  "scan-1151582169": {
+    "description_en": "Android Dynamic Class Dumper — dump all DEX files from running Android apps using Frida",
+    "description_zh": "Android 动态类转储器：使用 Frida 从运行中的 Android 应用转储所有 DEX 文件。"
+  },
+  "scan-1152261891": {
+    "description_en": "AI UI compiler & decompiler. Chat to design, paste a screenshot to reverse-engineer into editable layers, export to real React + Tailwind.",
+    "description_zh": "AI 界面编译器与反编译器。通过聊天设计界面，粘贴截图即可逆向为可编辑图层，并导出真正的 React + Tailwind 代码。"
+  },
+  "scan-1157642973": {
+    "description_en": "Bypass TikTok SSL/TLS certificate pinning on Android to intercept & analyze HTTPS traffic — root & no-root, works with Burp Suite, mitmproxy & Reqable (2026).",
+    "description_zh": "在 Android 上绕过 TikTok 的 SSL／TLS 证书固定，以拦截和分析 HTTPS 流量；支持 Root 与无 Root，适配 Burp Suite、mitmproxy 和 Reqable（2026）。"
+  },
+  "scan-1162137041": {
+    "description_en": "Modern C++17 wrapper for MemProcFS/VMMDLL with structured DMA memory APIs, process introspection, scanning, input support, and hardware-free tests.",
+    "description_zh": "MemProcFS／VMMDLL 的现代 C++17 封装，提供结构化 DMA 内存 API、进程内省、扫描、输入支持及无需硬件的测试。"
+  },
+  "scan-1163737358": {
+    "description_en": "A Radiata Stories modding tool that manages the file system and supports format plugins.",
+    "description_zh": "Radiata Stories 模组制作工具，可管理文件系统并支持格式插件。"
+  },
+  "scan-1165991266": {
+    "description_en": "First open-source DMA-based HWID spoofer written in Rust. Spoof hardware IDs via direct memory access.",
+    "description_zh": "首个用 Rust 编写、基于 DMA 的开源 HWID 伪装工具。通过直接内存访问伪装硬件 ID。"
+  },
+  "scan-1168579129": {
+    "description_en": "Bun decompiler-style JavaScript extractor for Bun-compiled executables. Zero-dependency Python tool for reverse engineering, malware analysis, and code recovery.",
+    "description_zh": "用于 Bun 编译可执行文件的反编译风格 JavaScript 提取器。零依赖 Python 工具，面向逆向工程、恶意软件分析和代码恢复。"
+  },
+  "scan-1169182894": {
+    "description_en": "Android Reverse Engineering Command-Line Automation Workspace. AI-driven security analysis with Claude Code.",
+    "description_zh": "Android 逆向工程命令行自动化工作区，借助 Claude Code 开展 AI 驱动的安全分析。"
+  },
+  "scan-1170264090": {
+    "description_en": "Binary Ninja plugin for reverse engineering PTX -- the virtual instruction set architecture of CUDA-based GPUs.",
+    "description_zh": "用于逆向 PTX（CUDA GPU 的虚拟指令集架构）的 Binary Ninja 插件。"
+  },
+  "scan-1172800935": {
+    "description_en": "wasm obfuscator",
+    "description_zh": "wasm 混淆器。"
+  },
+  "scan-1175070606": {
+    "description_en": "A better ghidra mcp, without bridges or external dependecies, just install and run. It uses the natvie MCP protocol",
+    "description_zh": "更好的 Ghidra MCP，无需桥接或外部依赖，安装即可运行。使用原生 MCP 协议。"
+  },
+  "scan-1176558363": {
+    "description_en": "Automated SSL pinning bypass for any Flutter & Shorebird version — PyGhidra static analysis auto-discovers BoringSSL and generates ready-to-run Frida & Renef scripts",
+    "description_zh": "对任意 Flutter 和 Shorebird 版本自动绕过 SSL 证书固定；使用 PyGhidra 静态分析自动发现 BoringSSL，并生成可直接运行的 Frida 与 Renef 脚本。"
+  },
+  "scan-1178344702": {
+    "description_en": "Reverse engineering the firmware of my Jensen CAR710W head unit to locate and modifiy UI assets such as boot animations and backgrounds.",
+    "description_zh": "对作者的 Jensen CAR710W 车机固件进行逆向工程，以定位和修改启动动画、背景等界面资源。"
+  },
+  "scan-1187226113": {
+    "description_en": "VidNest-Decryptor is a specialized backend utility built to address the increasing complexity of web-based video ciphers. Unlike traditional scrapers, it doesn't just \"fetch\" data—it reverse-engineers the bit-stream obfuscation layers at the source Level. ",
+    "description_zh": "VidNest-Decryptor 是一款专用后端工具，用于应对网页视频加密日益增加的复杂性。与传统抓取器不同，它不仅“获取”数据，还在源头层面对比特流混淆层进行逆向工程。"
+  },
+  "scan-1187487703": {
+    "description_en": "MCP reverse engineering tools",
+    "description_zh": "MCP 逆向工程工具。"
+  },
+  "scan-1193654668": {
+    "description_en": "Ghidra extension that parses C/C++ headers using libclang via Panama FFI and imports types into Ghidra's data type manager",
+    "description_zh": "Ghidra 扩展，通过 Panama FFI 调用 libclang 解析 C/C++ 头文件，并将类型导入 Ghidra 数据类型管理器。"
+  },
+  "scan-1195341277": {
+    "description_en": "A simple multi-purpose Frida hook script for spoofing and basic bypass testing.",
+    "description_zh": "简单的多用途 Frida Hook 脚本，用于伪装和基础绕过测试。"
+  },
+  "scan-1196391180": {
+    "description_en": "Ghidra extension that resolves x86 DOS/BIOS interrupt calls using Ralf Brown's Interrupt List",
+    "description_zh": "使用 Ralf Brown’s Interrupt List 解析 x86 DOS／BIOS 中断调用的 Ghidra 扩展。"
+  },
+  "scan-1203816383": {
+    "description_en": "A local reverse-engineering toolkit for Inotia4 Android APK resources. Extracts and parses game assets (maps, text, images, audio) from a single input APK, and generates web-viewable datasets via a built-in viewer.",
+    "description_zh": "面向 Inotia4 Android APK 资源的本地逆向工程工具包。从单个输入 APK 提取并解析游戏资源（地图、文本、图像、音频），并通过内置查看器生成可在网页中查看的数据集。"
+  },
+  "scan-1205248904": {
+    "description_en": "Reverse engineer anything. Paste a repo, website, product, or idea -- get an implementation blueprint, CLAUDE.md, and Initial Build Prompt for any AI coding tool.",
+    "description_zh": "逆向分析任何事物。粘贴仓库、网站、产品或想法，即可获得适用于任意 AI 编程工具的实现蓝图、CLAUDE.md 和初始构建提示。"
+  },
+  "scan-1206193775": {
+    "description_en": "Python library for analyzing malicious binaries through emulation, pattern matching, and integration with reverse engineering tools.",
+    "description_zh": "用于分析恶意二进制文件的 Python 库，结合模拟、模式匹配及逆向工程工具集成。"
+  },
+  "scan-1208112885": {
+    "description_en": "Automated Ghidra headless scripts for batch decompilation, metadata extraction, and programmatic memory constant retrieval. ",
+    "description_zh": "自动化 Ghidra 无界面脚本，用于批量反编译、元数据提取及以程序方式检索内存常量。"
+  },
+  "scan-1208251444": {
+    "description_en": "usermode thread hijacking detection via working set page fault monitoring",
+    "description_zh": "通过监测工作集缺页事件检测用户态线程劫持。"
+  },
+  "scan-1209532995": {
+    "description_en": "An all-in-one desktop tool for parsing, framing, checking, sending and receiving power communication protocols. Supports 15 protocols, including China Southern Power Grid, State Grid, DL/T 698.45, DLT645-2007, DLMS/HDLC, next-generation carrier communication and HDC 1.0. Covers single-frame parsing, batch analysis, serial and Bluetooth communication, virtual meters, communication sequence diagrams, test plans and Lua scripts. Portable on Windows; no installation required.",
+    "description_zh": "电力通信协议解析 / 组帧 / 校验 / 收发一站式桌面工具：支持南网、国网、DL/T 698.45、DLT645-2007、DLMS/HDLC、新一代载波、HDC 1.0 等 15 种协议，覆盖单帧解析、批量分析、串口与蓝牙收发、虚拟表、通信时序图、测试方案与 Lua 脚本。Windows 免安装。"
+  },
+  "scan-1210065377": {
+    "description_en": "An open source reimplementation of the Miles Sound System for older games",
+    "description_zh": "为较早的游戏提供 Miles Sound System 的开源重新实现。"
+  },
+  "scan-1216569752": {
+    "description_en": "Mobile runtime detection workbench for AI (iOS and Android)",
+    "description_zh": "面向 AI 的移动端运行时检测工作台（iOS 和 Android）。"
+  },
+  "scan-1224531": {
+    "description_en": "Disassembler for Racket",
+    "description_zh": "Racket 的反汇编器。"
+  },
+  "scan-1226077142": {
+    "description_en": "Ghidra scripts for SNES ROM reverse engineering",
+    "description_zh": "用于 SNES ROM 逆向工程的 Ghidra 脚本。"
+  },
+  "scan-1227776688": {
+    "description_en": "DMA Lab - Hardware-level anti-cheat research, firmware configs, FPGA guides and PCILeech resources",
+    "description_zh": "DMA Lab：硬件层面的反作弊研究、固件配置、FPGA 指南及 PCILeech 资源。"
+  },
+  "scan-1228126215": {
+    "description_en": "Open community toolkit and bugfix patches for SSI's Dark Sun CRPGs: Shattered Lands (1993) and Wake of the Ravager (1994). Tools first, patches second.",
+    "description_zh": "针对 SSI 的 Dark Sun CRPG——Shattered Lands（1993）和 Wake of the Ravager（1994）——的开放社区工具包和错误修复补丁。以工具为先，补丁其次。"
+  },
+  "scan-1228324910": {
+    "description_en": "Binwalk-style implementation in pure Java",
+    "description_zh": "纯 Java 编写的 Binwalk 风格实现。"
+  },
+  "scan-1233704864": {
+    "description_en": "Android interception tool for component communication and attack-surface mapping",
+    "description_zh": "用于组件通信和攻击面映射的 Android 拦截工具。"
+  },
+  "scan-1234052506": {
+    "description_en": "A malware analysis and reverse-engineering skill package for Claude, Codex, and Gemini",
+    "description_zh": "适用于 Claude、Codex 和 Gemini 的恶意软件分析与逆向工程技能包。"
+  },
+  "scan-1234186609": {
+    "description_en": "Universal decompiler + compiler in Rust: ELF, PE, Mach-O, 6502 round-trip byte-identically through a readable .ud source language.",
+    "description_zh": "用 Rust 编写的通用反编译器与编译器：ELF、PE、Mach-O、6502 可通过可读的 .ud 源语言往返转换，并保持字节完全一致。"
+  },
+  "scan-1235535108": {
+    "description_en": "ARM64 trace evidence analysis & cipher algorithm recovery — Claude Desktop plugin with skills + local MCP server driving the native ak_search engine over GB-scale trace files",
+    "description_zh": "ARM64 跟踪证据分析与密码算法恢复：Claude Desktop 插件，结合技能与本地 MCP 服务器，驱动原生 ak_search 引擎处理 GB 级跟踪文件。"
+  },
+  "scan-1237615680": {
+    "description_en": "Harness for Codex-style agents working on matching decompilation goals",
+    "description_zh": "供 Codex 风格智能体开展匹配反编译任务的运行框架。"
+  },
+  "scan-1238137482": {
+    "description_en": "Ghidra processor module (SLEIGH spec) for the Nintendo SuperFX / GSU-1 / GSU-2 co-processor — the enhancement chip in Star Fox, Yoshi's Island, Stunt Race FX, and Doom SNES.",
+    "description_zh": "适用于 Nintendo SuperFX／GSU-1／GSU-2 协处理器的 Ghidra 处理器模块（SLEIGH 规范）；这些增强芯片用于 Star Fox、Yoshi’s Island、Stunt Race FX 及 SNES 版 Doom。"
+  },
+  "scan-1239797781": {
+    "description_en": "LLMs have ended reverse engineering as a high-barrier skill. Case study: reconstructing 6/7 custom HTTP signing parameters of Douyin (TikTok CN) v38.1.0 native library in 30 days using Claude Opus.",
+    "description_zh": "大型语言模型（LLMs）已经终结了“逆向工程是一项高门槛技能”的时代。案例研究：使用 Claude Opus，在 30 天内成功还原抖音（中国版 TikTok）v38.1.0 原生库中 7 个自定义 HTTP 签名参数中的 6 个。"
+  },
+  "scan-1241151747": {
+    "description_en": "A reverse-engineering research toolkit for the Nicai/MStar CBE game format, including CBE unpacking, a resource viewer, structure probing, system-file samples, and early web emulator experiments.",
+    "description_zh": "尼采/MStar CBE 游戏格式逆向研究工具集，包含 CBE 解包、资源查看器、结构探测、系统文件样本和早期网页模拟器实验。"
+  },
+  "scan-124140216": {
+    "description_en": "A bunch of Windows anti-debugging tricks for x86 and x64.",
+    "description_zh": "一组面向 x86 和 x64 的 Windows 反调试技巧。"
+  },
+  "scan-1244963310": {
+    "description_en": "The AI-friendly binary analysis & decompilation engine — 1:1 lift, built on LLVM [WIP]",
+    "description_zh": "对 AI 友好的二进制分析与反编译引擎，基于 LLVM，进行 1:1 提升转换［开发中］。"
+  },
+  "scan-1246004766": {
+    "description_en": "Enables the development of python ghidra plugins through pyghidra without Java.",
+    "description_zh": "通过 pyghidra 开发 Python Ghidra 插件，无需 Java。"
+  },
+  "scan-1246756745": {
+    "description_en": "Reverse-engineering research and documentation for Final Fantasy XIV 1.x / 1.23b client behavior, packet formats, Lua scripts, static data, and server compatibility requirements.",
+    "description_zh": "有关 Final Fantasy XIV 1.x / 1.23b 客户端行为、数据包格式、Lua 脚本、静态数据和服务器兼容性要求的逆向工程研究与文档。"
+  },
+  "scan-1252701919": {
+    "description_en": "MCP server exposing IDA reverse-engineering tools to LLM clients.",
+    "description_zh": "将 IDA 逆向工程工具提供给 LLM 客户端的 MCP 服务器。"
+  },
+  "scan-1252935537": {
+    "description_en": "Recover symbols, types, interfaces, and method signatures from stripped Go binaries. Ghidra, IDA, and Binary Ninja exporters included.",
+    "description_zh": "从剥离符号的 Go 二进制文件中恢复符号、类型、接口和方法签名。包含 Ghidra、IDA 和 Binary Ninja 导出器。"
+  },
+  "scan-1254634197": {
+    "description_en": "A kernel-assisted shared-library injector for Android. Loads any .so into a target process without ptrace, in-process dlopen, or visible traces in /proc/<pid>/maps. GKI 2.0 (Android 12-16).",
+    "description_zh": "适用于 Android、由内核辅助的共享库注入器。将任意 .so 加载到目标进程，无需 ptrace、进程内 dlopen，也不在 /proc/<pid>/maps 中留下可见痕迹。支持 GKI 2.0（Android 12–16）。"
+  },
+  "scan-1255108081": {
+    "description_en": "",
+    "description_zh": ""
+  },
+  "scan-1259617574": {
+    "description_en": "Horse Star Reconstructed is a reverse engineering and preservation project focused on reconstructing the data and systems of the 2010 Mindscape MMO \"Horse Star\".",
+    "description_zh": "Horse Star Reconstructed 是一个逆向工程与保存项目，重点重建 Mindscape 于 2010 年推出的 MMO“Horse Star”的数据和系统。"
+  },
+  "scan-1259972515": {
+    "description_en": "Extract WhatsApp Web's protocol surface from its JS bundle into a language-neutral IR (+ reference Rust). Independent; not affiliated with WhatsApp/Meta.",
+    "description_zh": "从 WhatsApp Web 的 JS 包中提取协议接口，转换为语言无关的 IR（并提供 Rust 参考实现）。独立项目；与 WhatsApp/Meta 无隶属关系。"
+  },
+  "scan-1263214994": {
+    "description_en": "Read Virtools .cmo/.nmo/.vmo behavior scripts from the command line, on any OS, with no Virtools editor.",
+    "description_zh": "无需 Virtools 编辑器，即可在任意操作系统的命令行中读取 Virtools .cmo/.nmo/.vmo 行为脚本。"
+  },
+  "scan-1265763041": {
+    "description_en": "Matching decompilation of Brave Fencer Musashi (PS1, SLUS-00726): 218 binaries rebuild byte-identical from C",
+    "description_zh": "Brave Fencer Musashi（PS1，SLUS-00726）的匹配反编译：从 C 代码重建 218 个二进制文件，逐字节一致。"
+  },
+  "scan-1266246474": {
+    "description_en": "Opens Olympus and Grundig dictation recordings on any computer, a format locked since 1994. Replaced a paid licence and a chain of Windows machines; the fix is going upstream into FFmpeg.",
+    "description_zh": "在任意计算机上打开 Olympus 和 Grundig 听写录音，这种格式自 1994 年以来一直受限。它替代了付费许可证及一系列 Windows 机器；该修正正在进入 FFmpeg 上游。"
+  },
+  "scan-1267397805": {
+    "description_en": "Driver-backed Windows kernel interface for VAD-tree inspection/manipulation, PTE relinking, and cross-process memory operations, with runtime symbol resolution from ntoskrnl's PDB.",
+    "description_zh": "由驱动支持的 Windows 内核接口，用于 VAD 树检查与修改、PTE 重链接及跨进程内存操作，并从 ntoskrnl 的 PDB 在运行时解析符号。"
+  },
+  "scan-1268575127": {
+    "description_en": "Matching decompilation of Gruntz (1999, Monolith / WAP32 engine)",
+    "description_zh": "Gruntz（1999，Monolith / WAP32 引擎）的匹配反编译。"
+  },
+  "scan-1268598024": {
+    "description_en": "Advanced Ghidra processor module for flawlessly reverse-engineering, disassembling, and decompiling AVR microcontrollers.",
+    "description_zh": "高级 Ghidra 处理器模块，用于无误地逆向、反汇编及反编译 AVR 微控制器。"
+  },
+  "scan-1269475834": {
+    "description_en": "User-mode reverse-engineering memory dumper for Windows. Reconstructs packed, hollowed, and manually-mapped processes into IDA/Ghidra-loadable PEs with rebuilt imports.",
+    "description_zh": "Windows 用户态逆向工程内存转储工具。将加壳、进程空洞化及手动映射的进程重建为可由 IDA／Ghidra 加载的 PE，并重建导入表。"
+  },
+  "scan-1279753077": {
+    "description_en": "Discord Rich Presence extension for Ghidra with customizable display, privacy and session options.",
+    "description_zh": "Ghidra 的 Discord Rich Presence 扩展，可定制显示、隐私及会话选项。"
+  },
+  "scan-1281365567": {
+    "description_en": "Decrypt VMware vTPM-encrypted .vmem/.vmsn/.vmss/.nvram from the VM password, and flatten the .vmem to a Volatility-ready image.",
+    "description_zh": "使用虚拟机密码解密经 VMware vTPM 加密的 .vmem/.vmsn/.vmss/.nvram，并将 .vmem 扁平化为可供 Volatility 使用的镜像。"
+  },
+  "scan-1282289167": {
+    "description_en": "Matching decompilation of Heroes of Might and Magic II",
+    "description_zh": "Heroes of Might and Magic II 的匹配反编译。"
+  },
+  "scan-1282396570": {
+    "description_en": "Browser recreations of the two J2ME feature-phone games 《红魔特种兵》 1 & 2 (TypeScript + Canvas).",
+    "description_zh": "两款 J2ME 功能机游戏《红魔特种兵》1 & 2 的浏览器复刻（TypeScript + Canvas）。",
+    "english_retains_name": true
+  },
+  "scan-1282457730": {
+    "description_en": "Unpacked GML source code for Undertale's Demo.",
+    "description_zh": "解包得到的 Undertale 演示版 GML 源码。"
+  },
+  "scan-128251052": {
+    "description_en": "Advanced PHP deobfuscator",
+    "description_zh": "高级 PHP 反混淆器。"
+  },
+  "scan-1282734491": {
+    "description_en": "Convert websites into clean Next.js codebases using AI coding agents. This template automates extraction, component design, and site reconstruction.",
+    "description_zh": "借助 AI 编码智能体，将网站转换为整洁的 Next.js 代码库。该模板自动处理提取、组件设计及网站重建。"
+  },
+  "scan-1285196814": {
+    "description_en": "Evidence-driven website teardown, faithful cloning, and creative reconstruction, powered by Design DNA and WebGL forensics.",
+    "description_zh": "由 Design DNA 和 WebGL 取证支持、以证据驱动的网站拆解、忠实克隆和创意重建。"
+  },
+  "scan-1287684217": {
+    "description_en": "Clone any website and rebuild it as your own. A Claude Code skill: recon → DNA → rebuild → verify, with a real-source-first evidence gate. Named after the Pokémon that becomes anything.",
+    "description_zh": "克隆任意网站并重建为自己的版本。一项 Claude Code 技能，流程为侦察 → DNA → 重建 → 验证，设有优先采用真实来源的证据门槛。名字源于能变成任何形态的宝可梦。"
+  },
+  "scan-1288001376": {
+    "description_en": "Removes the Netflix Games SDK login gate from a Netflix game APK / IPA and produces a signed APK / unsigned IPA that runs offline with no Netflix account.",
+    "description_zh": "移除 Netflix 游戏 APK / IPA 中的 Netflix Games SDK 登录门槛，生成无需 Netflix 账号即可离线运行的已签名 APK / 未签名 IPA。"
+  },
+  "scan-1289950962": {
+    "description_en": "Self-driven reverse-engineering challenges against escalating protected executables — writeups, methodology, and PDF reports on PyInstaller/PyArmor/Nuitka/UPX/PE analysis.",
+    "description_zh": "自主开展的逆向工程挑战，分析保护强度逐步提升的可执行文件；包含 PyInstaller／PyArmor／Nuitka／UPX／PE 分析的解题记录、方法及 PDF 报告。"
+  },
+  "scan-1290252911": {
+    "description_en": "Rage Racer byte-matching decompilation",
+    "description_zh": "Rage Racer 的逐字节匹配反编译。"
+  },
+  "scan-1290696498": {
+    "description_en": "Static recompilation of Shufflepuck Cafe (Broderbund, 1988): the copy-protected 68k Mac binary reverse-engineered, unpacked byte-exact, and lifted to native C. Runs through a Toolbox HAL over SDL2.",
+    "description_zh": "Shufflepuck Cafe（Broderbund，1988）的静态重编译：对带复制保护的 68k Mac 二进制文件进行逆向工程，逐字节精确解包并转换为原生 C。通过基于 SDL2 的 Toolbox HAL 运行。"
+  },
+  "scan-1291971917": {
+    "description_en": "Matching decompilation of Lemmings Paintball (1996, Windows 95)",
+    "description_zh": "Lemmings Paintball（1996，Windows 95）的匹配反编译。"
+  },
+  "scan-1296975029": {
+    "description_en": "Matching decompilation of Shin Megami Tensei: Persona 4 for PlayStation 2",
+    "description_zh": "PlayStation 2 版 Shin Megami Tensei: Persona 4 的匹配反编译。"
+  },
+  "scan-1297312885": {
+    "description_en": "A deterministic memory-mapping and database forensic suite engineered to audit client-side data leakage and bypass ephemeral privacy controls via SQLite Write-Ahead Logs (.db-wal).",
+    "description_zh": "确定性的内存映射与数据库取证套件，用于审计客户端数据泄露，并通过 SQLite 预写日志（.db-wal）绕过临时性隐私控制。"
+  },
+  "scan-129847959": {
+    "description_en": "Inject JS and C# into Windows apps, call COM and WinRT APIs",
+    "description_zh": "向 Windows 应用注入 JS 和 C#，并调用 COM 与 WinRT API。"
+  },
+  "scan-1301211918": {
+    "description_en": "",
+    "description_zh": ""
+  },
+  "scan-1302781080": {
+    "description_en": "Defensive C++20 library for runtime memory integrity, hook detection, and anti-tamper monitoring on Windows/Linux",
+    "description_zh": "防御性 C++20 库，用于 Windows／Linux 上的运行时内存完整性、钩子检测及防篡改监控。"
+  },
+  "scan-1303345805": {
+    "description_en": "Neo Geo Pocket / Color emulator with a full debugger and fan-translation & ROM hacking tools (.tbl tables, relative search, pointer finder, ROM diff). Save states, rewind, Windows/Linux/macOS builds.",
+    "description_zh": "Neo Geo Pocket / Color 模拟器，配有完整调试器以及同人翻译和 ROM 修改工具（.tbl 表、相对搜索、指针查找器、ROM 差异比较）。支持即时存档、倒带，提供 Windows/Linux/macOS 构建版本。"
+  },
+  "scan-1303492485": {
+    "description_en": "Clean-room pure-native reimplementation research for Syphon Filter: The Omega Strain; user-supplied retail data only.",
+    "description_zh": "针对 Syphon Filter: The Omega Strain 的净室式纯原生重新实现研究；仅使用用户自行提供的零售版数据。"
+  },
+  "scan-1304480869": {
+    "description_en": "The 1994 DOS game LineWars II, reconstructed in C from its shipped binary and held to the original by 41 test gates, 27 of which execute the 1994 machine code in an emulator. Builds with Open Watcom, runs in DOSBox-X. Freeware with the original author's permission.",
+    "description_zh": "从发行版二进制文件将 1994 年 DOS 游戏 LineWars II 重建为 C 代码，并通过 41 项测试关卡对照原作，其中 27 项在模拟器中执行 1994 年的机器码。使用 Open Watcom 构建，在 DOSBox-X 中运行。经原作者许可作为免费软件提供。"
+  },
+  "scan-1304483693": {
+    "description_en": "SDL3 port of LineWars II (1994), built on the emulator-verified C reconstruction. Pixel-exact at 640x480, with high resolution, window resizing, and fullscreen above it. Windows and Linux. Freeware with the original author's permission.",
+    "description_zh": "LineWars II（1994）的 SDL3 移植版，基于经过模拟器验证的 C 代码重建。在 640x480 下逐像素精确，并支持更高分辨率、调整窗口大小和全屏。支持 Windows 和 Linux。经原作者许可作为免费软件提供。"
+  },
+  "scan-1305054820": {
+    "description_en": "Evidence-first SiglusEngine reverse-engineering notes and original resource extraction tools.",
+    "description_zh": "以证据为先的 SiglusEngine 逆向工程笔记，以及原创资源提取工具。"
+  },
+  "scan-1305725616": {
+    "description_en": "Decompilation of Sonic Heroes for the Nintendo GameCube",
+    "description_zh": "Nintendo GameCube 版 Sonic Heroes 的反编译。"
+  },
+  "scan-1309169920": {
+    "description_en": "Reverse-engineering Atari ST binaries back into readable, verified C.",
+    "description_zh": "通过逆向工程，将 Atari ST 二进制文件还原为可读、经过验证的 C 代码。"
+  },
+  "scan-1309777569": {
+    "description_en": "Native PC port of the PlayStation game Vandal Hearts, built on a byte-exact matching decompilation. Windows & Linux; bring your own disc.",
+    "description_zh": "PlayStation 游戏 Vandal Hearts 的原生 PC 移植版，基于逐字节精确匹配的反编译。支持 Windows 和 Linux；需自备光盘。"
+  },
+  "scan-1309907858": {
+    "description_en": "  Matching decompilation of Heroes of Might and Magic III",
+    "description_zh": "Heroes of Might and Magic III 的匹配反编译。"
+  },
+  "scan-1310848701": {
+    "description_en": "Engine-neutral Ocarina of Time Link gameplay SDK, extracted from the zeldaret/oot decomp (inspired by libsm64). No ROM or game asset included.",
+    "description_zh": "不依赖特定引擎的 Ocarina of Time Link 玩法 SDK，提取自 zeldaret/oot 反编译项目（受 libsm64 启发）。不包含 ROM 或游戏资源。"
+  },
+  "scan-1315485882": {
+    "description_en": "Open-source, evidence-driven AI workflow for pixel-accurate website reconstruction, motion analysis, and deterministic QA.",
+    "description_zh": "开源、以证据为依据的 AI 工作流，用于像素精确的网站重建、动画分析及确定性质量检查。"
+  },
+  "scan-1316324701": {
+    "description_en": "Toolkit for recovering the AngelScript code and assets from games built with BGT (BlastBay Gaming Toolkit). Noncommercial license; no warranty.",
+    "description_zh": "用于从 BGT（BlastBay Gaming Toolkit）构建的游戏中恢复 AngelScript 代码和资源的工具包。采用非商业许可证；不提供保证。"
+  },
+  "scan-1316883315": {
+    "description_en": "Fast, accurate Android decompilation for humans and AI agents.",
+    "description_zh": "面向人类和 AI 智能体的快速、准确 Android 反编译。"
+  },
+  "scan-1319479535": {
+    "description_en": "Native Nintendo 3DS port of The Legend of Zelda: The Minish Cap based on Project Picori",
+    "description_zh": "基于 Project Picori 的 The Legend of Zelda: The Minish Cap 原生 Nintendo 3DS 移植版。"
+  },
+  "scan-1321522275": {
+    "description_en": "In-kernel physical memory acquisition agent for Android — a KernelPatch module (KPM) that serves fault-safe physical RAM reads over TCP (PSK auth, ~59 MB/s over adb forward). leechagent-style DFIR/research tool, boot-image embeddable. GPL-2.0.",
+    "description_zh": "Android 内核中的物理内存采集代理：一个 KernelPatch 模块（KPM），通过 TCP 提供具有故障保护的物理 RAM 读取（PSK 认证，经 adb forward 约 59 MB/s）。采用 leechagent 风格的数字取证与事件响应（DFIR）／研究工具，可嵌入启动镜像。GPL-2.0。"
+  },
+  "scan-1322524481": {
+    "description_en": "Matching decompilation of Sonic Battle for Game Boy Advance",
+    "description_zh": "Game Boy Advance 版 Sonic Battle 的匹配反编译。"
+  },
+  "scan-1322553525": {
+    "description_en": "💫 An re-implementation of GameMaker: Studio's runner (YoYo Runner) in Kotlin, targeting Undertale v1.08 (WAD Version 16)",
+    "description_zh": "💫 使用 Kotlin 重新实现 GameMaker: Studio 的运行器（YoYo Runner），目标为 Undertale v1.08（WAD Version 16）。"
+  },
+  "scan-1322641383": {
+    "description_en": "Annotated disassembly of Temptations (Topo Soft, MSX, 1988). All 40,449 bytes of the game are explained, 100%, reproducible byte for byte.",
+    "description_zh": "Temptations（Topo Soft，MSX，1988）的带注释反汇编。游戏的 40,449 字节得到 100% 解释，可逐字节复现。"
+  },
+  "scan-1323425152": {
+    "description_en": "Star Wars Episode I: The Phantom Menace (1999) PC modernized with online co-op multiplayer for up to 4 players. Play on Windows 10/11, Steam Deck and Proton with a modern installer, widescreen and ultrawide support, uncapped FPS, FOV fixes, improved controls, restored music and video, engine reimplementation and modding tools.",
+    "description_zh": "将 Star Wars Episode I: The Phantom Menace（1999）PC 版现代化，提供最多 4 人在线合作。可在 Windows 10／11、Steam Deck 和 Proton 上游玩，具备现代安装程序、宽屏及超宽屏支持、不限帧率、视野（FOV）修正、改进的控制、恢复的音乐与视频、引擎重新实现及模组工具。"
+  },
+  "scan-1324444282": {
+    "description_en": "Forge any website into a clean Next.js app with Cursor, Claude Code, and other AI agents",
+    "description_zh": "借助 Cursor、Claude Code 及其他 AI 智能体，将任意网站重建为简洁的 Next.js 应用。"
+  },
+  "scan-132551361": {
+    "description_en": "A course on \"Digital Forensics\" designed and offered in the Computer Science Department at Texas Tech University ",
+    "description_zh": "在 Texas Tech University 计算机科学系设计并开设的“数字取证”课程。"
+  },
+  "scan-1328429363": {
+    "description_en": "Static recompilation of SimCity (SNES) for Windows 10 and 11. ROM not included.",
+    "description_zh": "将 SimCity（SNES）静态重编译到 Windows 10 和 11。不包含 ROM。"
+  },
+  "scan-1329040358": {
+    "description_en": "AI Assisted Rayman 3 Matching Decompilation targeting Korean PS2 version",
+    "description_zh": "借助 AI 进行的 Rayman 3 匹配反编译，目标为韩版 PS2 版本。"
+  },
+  "scan-132915257": {
+    "description_en": "Python script to hook ZIP files passwords in Windows 10",
+    "description_zh": "在 Windows 10 中通过 hook 获取 ZIP 文件密码的 Python 脚本。"
+  },
+  "scan-1329459029": {
+    "description_en": "Source reconstruction of 東方緋想天 ～ Scarlet Weather Rhapsody 1.06a",
+    "description_zh": "東方緋想天 ～ Scarlet Weather Rhapsody 1.06a 的源代码重建。",
+    "english_retains_name": true
+  },
+  "scan-1330468709": {
+    "description_en": "An agent skill that mirrors a website, rebuilds it from the minified code, and verifies the result with automated diffs.",
+    "description_zh": "复刻网站的 Agent Skill：抓只读镜像、从压缩代码逐行还原、自动比对验收。"
+  },
+  "scan-1332385696": {
+    "description_en": "Offline reverse-engineering toolchain for Bitwig Studio's Nitro DSP format — decrypt, decompile, and read the DSP behind every native device and Grid module. Tools + format specs only; no Bitwig source or keys.",
+    "description_zh": "面向 Bitwig Studio Nitro DSP 格式的离线逆向工程工具链，解密、反编译并读取每个原生设备及 Grid 模块背后的 DSP。仅包含工具和格式规范，不含 Bitwig 源码或密钥。"
+  },
+  "scan-1334857794": {
+    "description_en": "⛩️ A curated, multilingual, and actively maintained index of the Touhou ecosystem ☯️",
+    "description_zh": "⛩️ 精选、多语言且持续维护的 Touhou 生态索引 ☯️"
+  },
+  "scan-1335661336": {
+    "description_en": "Static recompilation of Top Gear (SNES) for Windows 10 and 11. ROM not included.",
+    "description_zh": "将 Top Gear（SNES）静态重编译到 Windows 10 和 11。不包含 ROM。"
+  },
+  "scan-1335877836": {
+    "description_en": "Static recompilation of Bubble Bobble (NES) for Windows 10 and 11. ROM not included.",
+    "description_zh": "将 Bubble Bobble（NES）静态重编译到 Windows 10 和 11。不包含 ROM。"
+  },
+  "scan-1336847206": {
+    "description_en": "Reverse-engineering and research on PyArmor",
+    "description_zh": "对 PyArmor 的逆向工程与研究。"
+  },
+  "scan-1337528289": {
+    "description_en": "A curated list and comprehensive guide of awesome reverse-engineered, decompiled, and rebuilt games powered by AI models and agentic tools",
+    "description_zh": "精选列表与综合指南，收集由 AI 模型和智能体工具支持的逆向工程、反编译和重建游戏。"
+  },
+  "scan-1338133370": {
+    "description_en": "Self-hosted revival backend for The Last of Us: Factions (PS3) multiplayer under RPCS3, plus the protocol reverse-engineering research behind it.",
+    "description_zh": "用于在 RPCS3 下恢复 The Last of Us: Factions（PS3）多人模式的自托管后端，以及支撑它的协议逆向工程研究。"
+  },
+  "scan-1338188146": {
+    "description_en": "Source reconstruction of New Star Soccer 5, rebuilding the game from its own executable back into BlitzMax source.",
+    "description_zh": "New Star Soccer 5 的源代码重建，从游戏自身可执行文件还原为 BlitzMax 源代码。"
+  },
+  "scan-1338770265": {
+    "description_en": "Call of Duty (2003) multiplayer, rebuilt from scratch in Rust. Client, dedicated server and bots that speak the original wire protocol for patch 1.1, 1.5 and United Offensive, dug out of the binaries and held to retail by captures. Bring your own copy of the game. Your 2003 aim is not included.",
+    "description_zh": "用 Rust 从零重建 Call of Duty（2003）多人模式。客户端、专用服务器和机器人使用从二进制文件中挖掘出的原始网络协议，支持补丁 1.1、1.5 和 United Offensive，并通过抓包对照零售版。需自备游戏副本。不附赠你在 2003 年的枪法。"
+  },
+  "scan-1340559581": {
+    "description_en": "I'm building PSXRecompStudio, an open-source project exploring PlayStation analysis, recompilation, and native porting.  Your sponsorship supports the continued development of PSXRecompStudio and my related open-source research and development.",
+    "description_zh": "我正在开发 PSXRecompStudio，这是一个探索 PlayStation 分析、重编译和原生移植的开源项目。你的赞助将支持 PSXRecompStudio 及我相关开源研究与开发工作的持续推进。"
+  },
+  "scan-1342871778": {
+    "description_en": "A lightweight, custom Python GUI forensic utility featuring signature scanning, entropy randomness analysis, and file carving capabilities.",
+    "description_zh": "轻量级、自定义的 Python GUI 取证工具，提供特征扫描、熵与随机性分析及文件雕刻恢复功能。"
+  },
+  "scan-1343142441": {
+    "description_en": "A local server for Seth Robinson's November 2012 Growtopia prototype (\"Buildo\"), plus the reverse-engineering notes that made it playable again. Preservation, not a private server.",
+    "description_zh": "Seth Robinson 于 2012 年 11 月制作的 Growtopia 原型（“Buildo”）的本地服务器，以及使其重新可玩的逆向工程笔记。用于保存，并非私服。"
+  },
+  "scan-1343660796": {
+    "description_en": "Clone any website into a customizable, content-driven Next.js template",
+    "description_zh": "将任意网站克隆为可定制、以内容驱动的 Next.js 模板。"
+  },
+  "scan-1343675457": {
+    "description_en": "Reverse-engineering notes and tooling for Immercenary (3DO, 1995), aiming at a native PC port. Tools and docs only - no game data.",
+    "description_zh": "Immercenary（3DO，1995）的逆向工程笔记和工具，目标是制作原生 PC 移植版。仅含工具和文档，不含游戏数据。"
+  },
+  "scan-1343854589": {
+    "description_en": "Maybe the headless Ghidra MCP you are looking for.",
+    "description_zh": "也许就是你在找的无界面 Ghidra MCP。"
+  },
+  "scan-1345086450": {
+    "description_en": "Reverse engineering notes, format documentation and analysis tooling for Infinite Undiscovery (tri-Ace / Square Enix, Xbox 360, 2008) and its ASKA engine.",
+    "description_zh": "Infinite Undiscovery（tri-Ace / Square Enix，Xbox 360，2008）及其 ASKA 引擎的逆向工程笔记、格式文档和分析工具。"
+  },
+  "scan-1345671513": {
+    "description_en": "Evidence-first website reconstruction skill for static sites, responsive pages, SPA fixtures, and WebGL/WebGPU/Canvas effects.",
+    "description_zh": "以证据为先的网站重建技能，面向静态网站、响应式页面、SPA 测试样例以及 WebGL/WebGPU/Canvas 效果。"
+  },
+  "scan-1345809404": {
+    "description_en": "Static recompilation of BattleTech: The Crescent Hawk's Inception (C64) for Windows 10 and 11. Game disk images not included.",
+    "description_zh": "将 BattleTech: The Crescent Hawk's Inception（C64）静态重编译到 Windows 10 和 11。不包含游戏磁盘镜像。"
+  },
+  "scan-1346367793": {
+    "description_en": "Native PC reimplementation of Highlander: The Last of the MacLeods (Atari Jaguar CD, 1995). Engine documentation, disc-format reverse engineering and extraction tools. BYOA.",
+    "description_zh": "Highlander: The Last of the MacLeods（Atari Jaguar CD，1995）的原生 PC 重新实现。包含引擎文档、光盘格式逆向工程和提取工具。需自备资源（BYOA）。"
+  },
+  "scan-1347616417": {
+    "description_en": "Transliteration of Stalker Mobile 2007 with WASM support",
+    "description_zh": "对 Stalker Mobile 2007 进行代码转写，支持 WASM。"
+  },
+  "scan-1349175055": {
+    "description_en": "FKIAB - f**ks in app billing",
+    "description_zh": "FKIAB：干翻应用内计费。"
+  },
+  "scan-1349428351": {
+    "description_en": "MCP server for reverse engineering — 77 semantic operations: static triage, unpacking, decompilation (Ghidra/IDA), dynamic instrumentation (frida/TTD), emulation (Unicorn), symbolic execution (angr), evidence handling. Works with any MCP-compatible agent host.",
+    "description_zh": "逆向工程 MCP 服务器，提供 77 项语义操作：静态初筛、解包、反编译（Ghidra／IDA）、动态插桩（frida／TTD）、模拟（Unicorn）、符号执行（angr）及证据处理。可用于任何兼容 MCP 的智能体宿主。"
+  },
+  "scan-1350385668": {
+    "description_en": "Source reconstruction of 東方文花帖 ～ Shoot the Bullet 1.02a",
+    "description_zh": "東方文花帖 ～ Shoot the Bullet 1.02a 的源代码重建。",
+    "english_retains_name": true
+  },
+  "scan-1353636426": {
+    "description_en": "Static recompilation of Jungle Strike (SNES) for Windows 10 and 11. ROM not included.",
+    "description_zh": "将 Jungle Strike（SNES）静态重编译到 Windows 10 和 11。不包含 ROM。"
+  },
+  "scan-1355412948": {
+    "description_en": "Source-only Rust/Bevy Skate 3 preservation project with owned-ISO asset setup",
+    "description_zh": "仅含源代码的 Rust/Bevy Skate 3 保存项目，使用自行持有的 ISO 配置资源。"
+  },
+  "scan-1356921823": {
+    "description_en": "An experimental Xbox 360 ahead-of-time recompilation framework and shared native runtime.",
+    "description_zh": "实验性的 Xbox 360 提前编译（AOT）框架和共享原生运行时。"
+  },
+  "scan-1357829995": {
+    "description_en": "Rebuilding SA-MP 0.3.7 R5 from source, byte for byte. AI-assisted reverse engineering with verifiable binary matches.",
+    "description_zh": "从源代码逐字节重建 SA-MP 0.3.7 R5。借助 AI 进行逆向工程，并提供可验证的二进制匹配。"
+  },
+  "scan-1358635228": {
+    "description_en": "A fully self-contained, isolated Ghidra 12.1.2 installation bundled with GhidraMCP, lx-loader, GhidraDosToolbox, and MCP bridge",
+    "description_zh": "完全自包含、隔离的 Ghidra 12.1.2 安装包，集成 GhidraMCP、lx-loader、GhidraDosToolbox 及 MCP 桥接。"
+  },
+  "scan-1359006727": {
+    "description_en": "Source reconstruction of 東方幻想郷 ～ Lotus Land Story",
+    "description_zh": "東方幻想郷 ～ Lotus Land Story 的源代码重建。",
+    "english_retains_name": true
+  },
+  "scan-1359215755": {
+    "description_en": "A browser re-implementation of PopCap's Insaniquarium Deluxe (2004), built on constants recovered by decompiling the original binary rather than tuned by feel. TypeScript, Phaser 3, a pure deterministic simulation, 4,967 tests.",
+    "description_zh": "PopCap 的 Insaniquarium Deluxe（2004）的浏览器重新实现，使用反编译原始二进制恢复的常量，而非凭感觉调参。采用 TypeScript、Phaser 3、纯确定性模拟，包含 4,967 项测试。"
+  },
+  "scan-1359307946": {
+    "description_en": "High-performance standalone C++20 bidirectional converter between Granny 1.2b (.grn) and glTF 2.0 (.glb) with Dear ImGui GUI and CLI",
+    "description_zh": "高性能独立 C++20 双向转换器，可在 Granny 1.2b（.grn）与 glTF 2.0（.glb）之间转换，提供 Dear ImGui GUI 和 CLI。"
+  },
+  "scan-1361920188": {
+    "description_en": "A work-in-progress matching decompilation of the original Ratchet & Clank (2002) for PlayStation 2 (SCES_509.16, PAL v2.00). Focuses on reconstructing clean, idiomatic C/C++ source code identical to the retail executable, paving the way for native PC re-implementation and game preservation.",
+    "description_zh": "正在进行的原版 Ratchet & Clank（2002，PlayStation 2，SCES_509.16，PAL v2.00）匹配反编译项目。重点是重建整洁、惯用且与零售版可执行文件一致的 C/C++ 源代码，为原生 PC 重新实现和游戏保存铺路。"
+  },
+  "scan-1363759506": {
+    "description_en": "BL2 rebased is a project where I try to decode all the files from bl2 and run them through an importer into UE5.8, this is long as hell and i appreciate your patience and any donations to help me pay for any fees i may encounter !",
+    "description_zh": "BL2 rebased 是一个尝试解码 BL2 所有文件并通过导入器将其导入 UE5.8 的项目。这个过程非常漫长，感谢你的耐心，也感谢任何帮助我支付可能产生的费用的捐赠！"
+  },
+  "scan-1364030149": {
+    "description_en": "Firmware security research on public targets: patch-diff case studies of router command injection (DrayTek and D-Link n-days), a reusable triage, diff and report toolchain, and a MAVLink security test harness for PX4/ArduPilot SITL.",
+    "description_zh": "针对公开目标的固件安全研究：路由器命令注入的补丁差异案例（DrayTek 和 D-Link 已知漏洞）、可复用的初筛／差异比较／报告工具链，以及用于 PX4／ArduPilot SITL 的 MAVLink 安全测试框架。"
+  },
+  "scan-1364245544": {
+    "description_en": "",
+    "description_zh": ""
+  },
+  "scan-1364354635": {
+    "description_en": "Source reconstruction of 東方花映塚 ～ Phantasmagoria of Flower View 1.50a",
+    "description_zh": "東方花映塚 ～ Phantasmagoria of Flower View 1.50a 的源代码重建。",
+    "english_retains_name": true
+  },
+  "scan-1367318093": {
+    "description_en": "A IDA CLI tool built on Rust, idalib-rs, and idalib. Supports batch and concurrent IDA analysis processes, design for stateless, agent first, skill first, and automation first. Reduce AI understanding and friction costs, make agents to efficiently execute complex binary analysis tasks.",
+    "description_zh": "基于 Rust、idalib-rs 和 idalib 构建的 IDA CLI 工具。支持批量和并发 IDA 分析进程，面向无状态、智能体优先、技能优先和自动化优先的设计。降低 AI 理解与使用阻力的成本，让智能体高效执行复杂二进制分析任务。"
+  },
+  "scan-1367451072": {
+    "description_en": "Open-source memory forensics platform for DFIR, threat hunting, malware analysis, and incident response.",
+    "description_zh": "用于 DFIR、威胁狩猎、恶意软件分析和事件响应的开源内存取证平台。"
+  },
+  "scan-1368865562": {
+    "description_en": "A human-readable matching decompilation of the Pokéwalker firmware.",
+    "description_zh": "Pokéwalker 固件的人类可读匹配反编译。"
+  },
+  "scan-1369625016": {
+    "description_en": "Micro Machines (PC, 1994) rewritten in TypeScript from the disassembly, running natively in the browser. No emulator. Bring your own copy.",
+    "description_zh": "根据反汇编结果用 TypeScript 重写 Micro Machines（PC，1994），在浏览器中原生运行。不使用模拟器，需自备游戏副本。"
+  },
+  "scan-1370060372": {
+    "description_en": "OpenAI-compatible local shim over DeepSeek's web chat. Proof-of-work reimplemented in Python and verified against the vendor's own wasm module (research tool)",
+    "description_zh": "基于 DeepSeek 网页聊天、兼容 OpenAI 接口的本地适配层。用 Python 重新实现工作量证明，并对照厂商自己的 WASM 模块验证（研究工具）。"
+  },
+  "scan-1374174732": {
+    "description_en": "BrickPark: matching decompilation of LEGOLAND (Windows, 2000). VC6-exact C reconstruction, analysis tools and data-format documentation. Unofficial fan project; no game data included.",
+    "description_zh": "BrickPark：LEGOLAND（Windows，2000）的匹配反编译。包含与 VC6 精确匹配的 C 代码重建、分析工具和数据格式文档。非官方粉丝项目；不含游戏数据。"
+  },
+  "scan-1376047435": {
+    "description_en": "A renovation of the 2001 Chinese PC port of Breath of Fire III",
+    "description_zh": "对 2001 年中文版 Breath of Fire III PC 移植版的改造。"
+  },
+  "scan-1377219845": {
+    "description_en": "Modern Windows UI plugin for IDA Pro 9.3: rounded panels, dark styling, customizable fonts, and persistent appearance settings.",
+    "description_zh": "适用于 IDA Pro 9.3 的现代 Windows 界面插件：圆角面板、深色样式、可定制字体及持久化外观设置。"
+  },
+  "scan-1377958229": {
+    "description_en": "Matching decompilation of `Wild 9` for the Sony PlayStation 1, targeting the NTSC-U SLUS_004.25 executable, built with a reproducible GCC 2.8.1 PSX and GNU binutils 2.42 toolchain",
+    "description_zh": "Sony PlayStation 1 游戏 `Wild 9` 的匹配反编译，目标为 NTSC-U SLUS_004.25 可执行文件，使用可复现的 GCC 2.8.1 PSX 和 GNU binutils 2.42 工具链构建。"
+  },
+  "scan-1382297537": {
+    "description_en": "Best Open-Source Luau Obfuscator and Decompiler Suite 2026",
+    "description_zh": "2026 年最佳开源 Luau 混淆器与反编译器套件。"
+  },
+  "scan-1383363501": {
+    "description_en": "Xbox 360 James Bond games (Quantum of Solace, Blood Stone, 007 Legends) statically recompiled for Windows PC with ReXGlue: Direct3D 12, GDK. Configs and research only, no game files.",
+    "description_zh": "使用 ReXGlue 将 Xbox 360 James Bond 游戏（Quantum of Solace、Blood Stone、007 Legends）静态重编译到 Windows PC：Direct3D 12、GDK。仅含配置和研究内容，不含游戏文件。"
+  },
+  "scan-1383504205": {
+    "description_en": "A de-metaified Meta Glasses client.",
+    "description_zh": "去 Meta 化的 Meta Glasses 客户端。"
+  },
+  "scan-1383679531": {
+    "description_en": "Matching decompilation of Colin McRae Rally 2.0 (PC, 2000), rebuilt with MSVC6 and verified byte-for-byte with reccmp. Playable; SDL3 port planned.",
+    "description_zh": "Colin McRae Rally 2.0（PC，2000）的匹配反编译，使用 MSVC6 重建并以 reccmp 逐字节验证。已可游玩；计划移植到 SDL3。"
+  },
+  "scan-1385569785": {
+    "description_en": "Ben 10 Omniverse (PS3, BLUS31017) — native macOS port by static recompilation. No game code or assets.",
+    "description_zh": "Ben 10 Omniverse（PS3，BLUS31017）的原生 macOS 移植版，通过静态重编译实现。不包含游戏代码或资源。"
+  },
+  "scan-1385841468": {
+    "description_en": "Static recompilation research for The Lord of the Rings: The Third Age on original Xbox; user-supplied game data required",
+    "description_zh": "原版 Xbox 上 The Lord of the Rings: The Third Age 的静态重编译研究；需要用户自行提供游戏数据。"
+  },
+  "scan-1386145457": {
+    "description_en": "Matching decompilation of KKND: Krush Kill 'n Destroy (DOS, 1997) - Watcom C, byte-identical rebuild",
+    "description_zh": "KKND: Krush Kill 'n Destroy（DOS，1997）的匹配反编译，使用 Watcom C 进行逐字节一致的重建。"
+  },
+  "scan-1386470113": {
+    "description_en": "Matching decompilation of Star Ocean: Till the End of Time (PS2)",
+    "description_zh": "Star Ocean: Till the End of Time（PS2）的匹配反编译。"
+  },
+  "scan-1387792203": {
+    "description_en": "Educational Android unpacking & packer-hardening labs — self-built, evidence-based, deterministic-first reverse-engineering study materials.",
+    "description_zh": "用于教学的 Android 脱壳与壳加固实验；自行构建、基于证据、优先保证确定性的逆向工程学习材料。"
+  },
+  "scan-1388590046": {
+    "description_en": "A standalone, high-performance deobfuscator and devirtualizer for Roblox Luau scripts protected by Luraph v15.",
+    "description_zh": "用于经 Luraph v15 保护的 Roblox Luau 脚本的独立高性能反混淆器和去虚拟化工具。"
+  },
+  "scan-1389187407": {
+    "description_en": "Bridge Ghidra to MCP and WebSocket JSON-RPC for program analysis and automation",
+    "description_zh": "通过 MCP 和 WebSocket JSON-RPC 将 Ghidra 接入程序分析与自动化。"
+  },
+  "scan-1389916016": {
+    "description_en": "A byte-matching decompilation of Sheep, Dog 'n' Wolf (Sheep Raider, 2001, PC): source that compiles with the original Visual C++ 6.0 to the exact original exe, plus a mod loader, a 3D level editor and tools. Bring your own copy of the game.",
+    "description_zh": "Sheep, Dog 'n' Wolf（Sheep Raider，2001，PC）的逐字节匹配反编译：源代码使用原版 Visual C++ 6.0 编译后与原始 exe 完全一致，另含模组加载器、3D 关卡编辑器和工具。需自备游戏副本。"
+  },
+  "scan-1394259374": {
+    "description_en": "Unofficial native Windows port of Star Wars: Episode III - Revenge of the Sith (Xbox). Bring your own copy.",
+    "description_zh": "Star Wars: Episode III - Revenge of the Sith（Xbox）的非官方原生 Windows 移植版。需自备游戏副本。"
+  },
+  "scan-1396651270": {
+    "description_en": "Native Windows preservation port and static audit of Blood Pong",
+    "description_zh": "Blood Pong 的原生 Windows 保存移植版及静态审查。"
+  },
+  "scan-1396842451": {
+    "description_en": "Chupathingy: Halo: Combat Evolved running natively on Windows, Mac, Linux and Android. A port of the Halo CE decomp project, built for stability and community multiplayer, with its own dedicated servers and the Delta network.",
+    "description_zh": "Chupathingy：让 Halo: Combat Evolved 原生运行于 Windows、Mac、Linux 和 Android。基于 Halo CE 反编译项目移植，侧重稳定性及社区多人游戏，提供自己的专用服务器和 Delta 网络。"
+  },
+  "scan-1398524778": {
+    "description_en": "Soldat TV & Play: Soldat 1.7.1 ported to the Web ",
+    "description_zh": "Soldat TV & Play：将 Soldat 1.7.1 移植到网页。"
+  },
+  "scan-1398811852": {
+    "description_en": "Underworld Exhumed: Ultima Underworld I and II as byte-matching source code and native ports for macOS, Windows and Linux",
+    "description_zh": "Underworld Exhumed：将 Ultima Underworld I 和 II 重建为逐字节匹配的源代码，以及 macOS、Windows 和 Linux 原生移植版。"
+  },
+  "scan-1398942255": {
+    "description_en": "GalaxyQuest: Super Mario Galaxy in VR on Meta Quest 3, a native port built on the Petari decompilation. Bring your own game files. 100% made by AI (Claude Opus 5.5 in Claude Code).",
+    "description_zh": "GalaxyQuest：在 Meta Quest 3 上以 VR 运行 Super Mario Galaxy，基于 Petari 反编译项目构建的原生移植。需自备游戏文件。100% 由 AI 制作（Claude Code 中的 Claude Opus 5.5）。"
+  },
+  "scan-139948200": {
+    "description_en": "Debug and DebugX (short: Debug/X) are extended versions of MS DEBUG",
+    "description_zh": "Debug 和 DebugX（简称 Debug/X）是 MS DEBUG 的扩展版本。"
+  },
+  "scan-1399568779": {
+    "description_en": "A 1:1 Rust (Bevy) rewrite of Gauntlet: Dark Legacy (GameCube) that aims to play exactly like the original, plus convenient extras: online co-op for up to 4 with invite codes and drop-in joining, Windows/macOS/Linux, widescreen, rebindable keyboard & mouse or any pad. Bring your own disc.",
+    "description_zh": "以 Rust（Bevy）对 Gauntlet: Dark Legacy（GameCube）进行 1:1 重写，目标是与原作玩法完全一致，并加入便捷功能：最多 4 人在线合作、邀请码和随时加入，Windows/macOS/Linux 支持、宽屏，以及可重新绑定的键鼠或任意手柄。需自备光盘。"
+  },
+  "scan-1400228215": {
+    "description_en": "Going Commando USA v1.01: byte-exact reconstruction tools and native-port research. No game assets.",
+    "description_zh": "Going Commando USA v1.01：逐字节精确重建工具和原生移植研究。不包含游戏资源。"
+  },
+  "scan-1400675758": {
+    "description_en": "Matching decompilation of Yu-Gi-Oh! The Eternal Duelist Soul (GBA). Bring your own ROM.",
+    "description_zh": "Yu-Gi-Oh! The Eternal Duelist Soul（GBA）的匹配反编译。需自备 ROM。"
+  },
+  "scan-1400852920": {
+    "description_en": "Matching decompilation research for StarCraft: Brood War 1.16.1 — reproducible x86 function reconstruction and exact byte comparison.",
+    "description_zh": "StarCraft: Brood War 1.16.1 的匹配反编译研究：可复现的 x86 函数重建和精确字节比较。"
+  },
+  "scan-1400862252": {
+    "description_en": "Native PC port of Downhill Domination (PS2) for Linux/Windows, by the community. Engine reimplementation loading data from your own disc: levels, collision and bike physics work. A native port by and for the community. No game data included.",
+    "description_zh": "由社区制作的 Downhill Domination（PS2）原生 PC 移植版，支持 Linux/Windows。重新实现的引擎从自备光盘加载数据：关卡、碰撞和自行车物理已可工作。这是由社区制作、服务于社区的原生移植版。不包含游戏数据。"
+  },
+  "scan-1401311912": {
+    "description_en": "Source reconstruction of 東方萃夢想 ～ Immaterial and Missing Power 1.11",
+    "description_zh": "東方萃夢想 ～ Immaterial and Missing Power 1.11 的源代码重建。",
+    "english_retains_name": true
+  },
+  "scan-1403115747": {
+    "description_en": "Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.",
+    "description_zh": "11 个免费的 Claude 技能，可克隆任意应用：逆向分析、重建、测试缺陷，再修复用户不满意的地方。免费，MIT。"
+  },
+  "scan-1403363659": {
+    "description_en": "A Windows PE runtime for Linux: native guest execution, in-process debugging, offline de-virtualization. No Wine, no emulator.",
+    "description_zh": "在 Linux 上运行 Windows PE 的运行时：原生执行来宾代码、进程内调试及离线去虚拟化。不使用 Wine 或模拟器。"
+  },
+  "scan-1403620078": {
+    "description_en": "Matching decompilation of Medal of Honor: Rising Sun (GameCube, USA / GR8E69). AI-assisted contributors welcome.",
+    "description_zh": "Medal of Honor: Rising Sun（GameCube，美版 / GR8E69）的匹配反编译。欢迎借助 AI 参与贡献。"
+  },
+  "scan-1403633426": {
+    "description_en": "A matching decompilation and PC port for the Ratchet & Clank series.",
+    "description_zh": "Ratchet & Clank 系列的匹配反编译与 PC 移植项目。"
+  },
+  "scan-1403730962": {
+    "description_en": "Grand Theft Auto IV's engine, being rewritten in Rust one function at a time by AI agents, for 64-bit Windows, Windows on ARM and macOS. Contains no game code or assets.",
+    "description_zh": "AI 智能体正用 Rust 逐个函数重写 Grand Theft Auto IV 的引擎，面向 64 位 Windows、Windows on ARM 和 macOS。不包含游戏代码或资源。"
+  },
+  "scan-1404277274": {
+    "description_en": "Matching decompilation of Ratchet: Deadlocked (2005, PS2)",
+    "description_zh": "Ratchet: Deadlocked（2005，PS2）的匹配反编译。"
+  },
+  "scan-1404839492": {
+    "description_en": "Matching decompilation of Medal of Honor: Frontline (GameCube, GMFE69)",
+    "description_zh": "Medal of Honor: Frontline（GameCube，GMFE69）的匹配反编译。"
+  },
+  "scan-1405143439": {
+    "description_en": "Open-source engine for Harry Potter and the Philosopher's Stone / Sorcerer's Stone (2001 PC): widescreen, any resolution, no SafeDisc. Built on SurrealEngine. Requires your own game files.",
+    "description_zh": "Harry Potter and the Philosopher's Stone / Sorcerer's Stone（2001 年 PC 版）的开源引擎：宽屏、任意分辨率、无 SafeDisc。基于 SurrealEngine。需自备游戏文件。"
+  },
+  "scan-1405220757": {
+    "description_en": "Source reconstruction of 東方夢時空 ～ Phantasmagoria of Dim.Dream",
+    "description_zh": "東方夢時空 ～ Phantasmagoria of Dim.Dream 的源代码重建。",
+    "english_retains_name": true
+  },
+  "scan-1405395929": {
+    "description_en": "🛡️ The most comprehensive deobfuscation framework for Ghidra — OLLVM/Tigress deflattening, 60 MBA rules with Z3 proof, opaque predicates, BCF removal, string decryption, VM devirtualization, full pipeline. CLI + Plugin + Analyzer.",
+    "description_zh": "🛡️ 最全面的 Ghidra 去混淆框架：OLLVM／Tigress 控制流去平坦化、60 条经 Z3 证明的 MBA 规则、不透明谓词、BCF 移除、字符串解密、虚拟机去虚拟化及完整处理流程。提供 CLI、插件和分析器。"
+  },
+  "scan-1406175372": {
+    "description_en": "Work-in-progress matching decompilation of Mario Party 9 (Wii)",
+    "description_zh": "正在进行的 Mario Party 9（Wii）匹配反编译。"
+  },
+  "scan-1407089176": {
+    "description_en": "Source reconstruction of 東方錦上京 ~ Fossilized Wonders. Japanese 1.00a (Steamless)",
+    "description_zh": "東方錦上京 ~ Fossilized Wonders 日文版 1.00a（Steamless）的源代码重建。",
+    "english_retains_name": true
+  },
+  "scan-1407941715": {
+    "description_en": "Matching decompilation of the Gran Turismo 4 (PS2) engine, AI-assisted. No game data included.",
+    "description_zh": "借助 AI 对 Gran Turismo 4（PS2）引擎进行匹配反编译。不包含游戏数据。"
+  },
+  "scan-1408027760": {
+    "description_en": "Experimental static recompilation of classic Call of Duty 1.5 for Android. Bring your own original PC game files.",
+    "description_zh": "将经典 Call of Duty 1.5 静态重编译到 Android 的实验项目。需自备原版 PC 游戏文件。"
+  },
+  "scan-1408263128": {
+    "description_en": "Reconstructing DX-Ball 1.07 with REA, backed by original-x86 differential tests and pinned MSVC byte-exact oracles.",
+    "description_zh": "使用 REA 重建 DX-Ball 1.07，以原始 x86 差分测试和固定版本的 MSVC 逐字节精确基准作为依据。"
+  },
+  "scan-1409528062": {
+    "description_en": "Reverse-engineering analysis of hologram-ai: formal functions, Alloy models, exact arithmetic, executable oracle. AGPL-3.0-only.",
+    "description_zh": "对 hologram-ai 的逆向分析：形式化函数、Alloy 模型、精确算术及可执行判定器。AGPL-3.0-only。"
+  },
+  "scan-1410716637": {
+    "description_en": "TypingMaster 12.0.1.981 - full reverse-engineering source tree, analysis and documentation",
+    "description_zh": "TypingMaster 12.0.1.981：完整的逆向工程源码树、分析及文档。"
+  },
+  "scan-1412513166": {
+    "description_en": "Unofficial disassembly-backed native Windows port of SimTower (source only; original game assets excluded)",
+    "description_zh": "基于反汇编的非官方 SimTower 原生 Windows 移植版（仅含源代码；不包含原始游戏资源）。"
+  },
+  "scan-1412537552": {
+    "description_en": "Educational matching decompilation of Need for Speed: Underground 2 (GameCube + PC), aiming at a native PC port",
+    "description_zh": "用于学习的 Need for Speed: Underground 2（GameCube + PC）匹配反编译，目标是制作原生 PC 移植版。"
+  },
+  "scan-1412775677": {
+    "description_en": "BINNY: an open source agent harness for reverse engineering. Plug in any model, or a local one.",
+    "description_zh": "BINNY：用于逆向工程的开源智能体运行框架。可接入任意模型，也可使用本地模型。"
+  },
+  "scan-1413279818": {
+    "description_en": "Native SDL3 port of Colin McRae Rally 2.0 built from the CMR2Decomp decompilation. No game data included.",
+    "description_zh": "基于 CMR2Decomp 反编译项目构建的 Colin McRae Rally 2.0 原生 SDL3 移植，不包含游戏数据。"
+  },
+  "scan-1413299380": {
+    "description_en": "Use a cheap WiFi ear camera / otoscope (Soulear app, Hopefox) on your PC without the phone app. ESP32-C3 USB bridge + Python viewer with recording and auto-rotation. Also a mini endoscope for electronics, DIY and machines.",
+    "description_zh": "无需手机应用，即可在 PC 上使用廉价 WiFi 耳镜摄像头／耳镜（Soulear 应用、Hopefox）。提供 ESP32-C3 USB 桥接及支持录像、自动旋转的 Python 查看器，也可作为电子设备、DIY 和机械用途的微型内窥镜。"
+  },
+  "scan-1413823799": {
+    "description_en": "RustGta3: GTA 3 (GTA III) reimplementation in Rust with Bevy ECS. Unofficial work in progress.",
+    "description_zh": "RustGta3：使用 Rust 和 Bevy ECS 重新实现 GTA 3（GTA III）。非官方项目，仍在开发中。"
+  },
+  "scan-1414109708": {
+    "description_en": "Reimplementation-grade spec of Diablo II: LoD 1.14d: item generation, monster spawning and level generation (DRLG), reverse-engineered from Game.exe with evidence-tagged claims. Documentation only, no game data.",
+    "description_zh": "Diablo II: LoD 1.14d 的可用于重新实现的规格说明：物品生成、怪物生成和关卡生成（DRLG），从 Game.exe 逆向分析而来，相关陈述带有证据标记。仅含文档，不含游戏数据。"
+  },
+  "scan-1414318867": {
+    "description_en": "Reverse engineering experiment of the Snowball War minigame from the 1990 MS-DOS game Ski or Die. Rebuilt from scratch in Rust + SDL2 using REA (Reverse Engineer Anything), an AI-assisted reverse-engineering workflow.",
+    "description_zh": "对 1990 年 MS-DOS 游戏 Ski or Die 中 Snowball War 小游戏的逆向工程实验。使用 REA（Reverse Engineer Anything）这一 AI 辅助逆向工程工作流，以 Rust + SDL2 从零重建。"
+  },
+  "scan-1414348345": {
+    "description_en": "Allegiance - RTS + Space Combat MonoGame Client. Headless client-side game-state library and interactive text client for the AllegianceCore C# Server (2000-era space MMO reimplementation).",
+    "description_zh": "Allegiance：RTS 与太空战斗 MonoGame 客户端。为 AllegianceCore C# 服务器提供无界面的客户端游戏状态库及交互式文本客户端（对 2000 年前后太空 MMO 的重新实现）。"
+  },
+  "scan-141471197": {
+    "description_en": "A Pin Tool for tracing API calls etc",
+    "description_zh": "用于跟踪 API 调用等行为的 Pin 工具。"
+  },
+  "scan-1414732833": {
+    "description_en": "Native reimplementation of Diner Dash (2004) in Rust with Wayland, Windows, Android, and WASM support..",
+    "description_zh": "用 Rust 原生重新实现 Diner Dash（2004），支持 Wayland、Windows、Android 和 WASM。"
+  },
+  "scan-1414983954": {
+    "description_en": "Rust client for WHOOP 4.0 / 5.0 / MG straps over Bluetooth Low Energy — library, CLI, terminal UI and a WebAssembly browser build from one codebase. Fully offline: no account, no cloud.",
+    "description_zh": "通过低功耗蓝牙连接 WHOOP 4.0／5.0／MG 手环的 Rust 客户端；同一代码库提供库、CLI、终端界面及 WebAssembly 浏览器构建。完全离线，无需账户或云端。"
+  },
+  "scan-1415582824": {
+    "description_en": "Project #000001: REA-assisted desktop accounting with a real local ledger, macOS and Windows builds. Personal tax is next on the roadmap.",
+    "description_zh": "项目 #000001：借助 REA 构建的桌面记账应用，具有真正的本地账本以及 macOS 和 Windows 构建版本。路线图下一项是个人税务。"
+  },
+  "scan-1415732841": {
+    "description_en": "Open-source engine & MCP server for AI to read, write, and generate native Axure RP 11 prototype (.rp) files. Zero dependencies. Independent project, not affiliated with Axure.",
+    "description_zh": "供 AI 读取、写入和生成原生 Axure RP 11 原型（.rp）文件的开源引擎和 MCP 服务器。零依赖。独立项目，与 Axure 无隶属关系。"
+  },
+  "scan-1416125728": {
+    "description_en": "Unofficial Linux port of the Virtual Desktop Streamer: stream your Linux desktop, audio and mic to Quest/Pico/Vive headsets. Built with Claude Code + REA.",
+    "description_zh": "Virtual Desktop Streamer 的非官方 Linux 移植版：将 Linux 桌面、音频和麦克风流式传输到 Quest/Pico/Vive 头显。使用 Claude Code + REA 构建。"
+  },
+  "scan-1416272605": {
+    "description_en": "Driveclub PS4 PC Port",
+    "description_zh": "PS4 游戏 Driveclub 的 PC 移植。"
+  },
+  "scan-1416318739": {
+    "description_en": "Matching decompilation of Shadow of the Colossus (PS2, NTSC-U) aiming for a native PC port",
+    "description_zh": "Shadow of the Colossus（PS2，NTSC-U）的匹配反编译，目标是制作原生 PC 移植版。"
+  },
+  "scan-1417574266": {
+    "description_en": "Native 100% ARM64 Android port of the 2007 cosmic gravity platformer with OpenGL ES 3.2, AAudio, Hor+ ultrawide, and touch controls.",
+    "description_zh": "将 2007 年的宇宙重力平台游戏原生移植到 Android，采用 100% ARM64，支持 OpenGL ES 3.2、AAudio、Hor+ 超宽屏和触控。"
+  },
+  "scan-1419078245": {
+    "description_en": "An in-depth REA-based breakdown and high-fidelity reconstruction of the official Claude desktop UI. Reconstructs 30 independent React components and 8 advanced interaction-physics algorithms, with a 3000+ line reverse-engineering analysis manual.",
+    "description_zh": "基于 REA 深度拆解并高保真还原 Claude 官方桌面端 UI。还原 30 个独立 React 组件与 8 项硬核交互物理算法，附带 3000+ 行逆向分析手册。"
+  },
+  "scan-1419978681": {
+    "description_en": "Matching decompilation of The Legend of Zelda: A Link Between Worlds (3DS, USA) - work in progress, 63.7% of functions matched byte-exact",
+    "description_zh": "The Legend of Zelda: A Link Between Worlds（3DS，美版）的匹配反编译，仍在进行中，63.7% 的函数已实现逐字节精确匹配。"
+  },
+  "scan-1419987281": {
+    "description_en": "Offline config tool + protocol spec for the GAMEKB-K17 / HCY-K017 macropad (USB 0816:0220): remaps,  firmware macros, per-key RGB",
+    "description_zh": "GAMEKB-K17 / HCY-K017 宏键盘（USB 0816:0220）的离线配置工具和协议规格：键位重映射、固件宏、逐键 RGB。"
+  },
+  "scan-1420261569": {
+    "description_en": "Open-source, model-independent Agent Skill for evidence-based software reconstruction with REA. Optional integration, portable installer, and validation workflows.",
+    "description_zh": "开源、不依赖特定模型的 Agent Skill，用于借助 REA 基于证据重建软件。提供可选集成、便携式安装程序和验证工作流。"
+  },
+  "scan-1421475696": {
+    "description_en": "The technical handbook for porting Android games (.so loader, FalsoJNI, vitaGL) to PlayStation Vita for developers & AI agents. ",
+    "description_zh": "面向开发者与 AI 智能体的技术手册，介绍将 Android 游戏移植到 PlayStation Vita（.so 加载器、FalsoJNI、vitaGL）。"
+  },
+  "scan-1421991239": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1422086903": {
+    "description_en": "122 publishable, cross-platform AI skills for reverse engineering: malware analysis, software reverse engineering, embedded firmware, protocol reverse engineering, mobile applications, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensic intelligence and CTFs.",
+    "description_zh": "122 个逆向工程 AI 技能（可发布、跨平台）：恶意软件分析 / 软件逆向 / 固件嵌入式 / 协议逆向 / 移动应用 / 脱壳反混淆 / 软件破解 / 漏洞挖掘 / 托管代码 / 取证情报 / CTF。"
+  },
+  "scan-1422126675": {
+    "description_en": "PC port of GE for Windows and Linux, built from the N64 decompilation. Widescreen, mouse look, modern controller support and in-game settings. Co-op, netplay and mods in development.",
+    "description_zh": "面向 Windows 和 Linux 的 GE PC 移植版，基于 N64 反编译项目构建。支持宽屏、鼠标视角、现代手柄和游戏内设置。合作模式、联网游玩和模组仍在开发中。"
+  },
+  "scan-1422155070": {
+    "description_en": "One DSH plugin switch for REA: the REA MCP server (207 reverse-engineering tools) and REA's three workflow skills, enabled and disabled together.",
+    "description_zh": "通过一个 DSH 插件开关统一启用或禁用 REA：包含 REA MCP 服务器（207 项逆向工程工具）和 REA 的三项工作流技能。"
+  },
+  "scan-1422369754": {
+    "description_en": "Reverse-engineered Rust reimplementation of the Johnny Castaway screensaver (Screen Antics, Sierra/Dynamix, 1992) for Windows, macOS and Linux",
+    "description_zh": "通过逆向工程，以 Rust 重新实现 Johnny Castaway 屏保（Screen Antics，Sierra/Dynamix，1992），支持 Windows、macOS 和 Linux。"
+  },
+  "scan-1422494831": {
+    "description_en": "Windows memory scanner and debugger for finding and editing in-game values during modding and analysis.",
+    "description_zh": "Windows 内存扫描器与调试器，用于在模组开发和分析过程中查找、修改游戏内数值。"
+  },
+  "scan-1422504573": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1422521970": {
+    "description_en": "122 publishable, cross-platform AI skills for reverse engineering: malware analysis, software reverse engineering, embedded firmware, protocol reverse engineering, mobile applications, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensic intelligence and CTFs.",
+    "description_zh": "122 个逆向工程 AI 技能（可发布、跨平台）：恶意软件分析 / 软件逆向 / 固件嵌入式 / 协议逆向 / 移动应用 / 脱壳反混淆 / 软件破解 / 漏洞挖掘 / 托管代码 / 取证情报 / CTF。"
+  },
+  "scan-1422525301": {
+    "description_en": "122 publishable, cross-platform AI skills for reverse engineering: malware analysis, software reverse engineering, embedded firmware, protocol reverse engineering, mobile applications, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensic intelligence and CTFs.",
+    "description_zh": "122 个逆向工程 AI 技能（可发布、跨平台）：恶意软件分析 / 软件逆向 / 固件嵌入式 / 协议逆向 / 移动应用 / 脱壳反混淆 / 软件破解 / 漏洞挖掘 / 托管代码 / 取证情报 / CTF。"
+  },
+  "scan-1422539747": {
+    "description_en": "An open-source AI agent skill that helps coding agents port offline games to run in modern web browsers",
+    "description_zh": "一项开源 AI 智能体技能，帮助编码智能体将离线游戏移植到现代网页浏览器中运行。"
+  },
+  "scan-1422980767": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1423026724": {
+    "description_en": "Evidence-driven reverse engineering and unpacking workflows for AI agents, with reproducible Windows experiments.",
+    "description_zh": "面向 AI 智能体、以证据驱动的逆向工程和脱壳工作流，附有可复现的 Windows 实验。"
+  },
+  "scan-1423049263": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1423049365": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1423057167": {
+    "description_en": "122 publishable, cross-platform AI skills for reverse engineering: malware analysis, software reverse engineering, embedded firmware, protocol reverse engineering, mobile applications, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensic intelligence and CTFs.",
+    "description_zh": "122 个逆向工程 AI 技能（可发布、跨平台）：恶意软件分析 / 软件逆向 / 固件嵌入式 / 协议逆向 / 移动应用 / 脱壳反混淆 / 软件破解 / 漏洞挖掘 / 托管代码 / 取证情报 / CTF。"
+  },
+  "scan-1423153796": {
+    "description_en": "122 publishable, cross-platform AI skills for reverse engineering: malware analysis, software reverse engineering, embedded firmware, protocol reverse engineering, mobile applications, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensic intelligence and CTFs.",
+    "description_zh": "122 个逆向工程 AI 技能（可发布、跨平台）：恶意软件分析 / 软件逆向 / 固件嵌入式 / 协议逆向 / 移动应用 / 脱壳反混淆 / 软件破解 / 漏洞挖掘 / 托管代码 / 取证情报 / CTF。"
+  },
+  "scan-1423158461": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1423171903": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1423178064": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1423192969": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1423746310": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1423775660": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1423779609": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1424001947": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1424009703": {
+    "description_en": "122 publishable, cross-platform AI skills for reverse engineering: malware analysis, software reverse engineering, embedded firmware, protocol reverse engineering, mobile applications, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensic intelligence and CTFs.",
+    "description_zh": "122 个逆向工程 AI 技能（可发布、跨平台）：恶意软件分析 / 软件逆向 / 固件嵌入式 / 协议逆向 / 移动应用 / 脱壳反混淆 / 软件破解 / 漏洞挖掘 / 托管代码 / 取证情报 / CTF。"
+  },
+  "scan-1424079077": {
+    "description_en": "122 publishable, cross-platform AI skills for reverse engineering: malware analysis, software reverse engineering, embedded firmware, protocol reverse engineering, mobile applications, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensic intelligence and CTFs.",
+    "description_zh": "122 个逆向工程 AI 技能（可发布、跨平台）：恶意软件分析 / 软件逆向 / 固件嵌入式 / 协议逆向 / 移动应用 / 脱壳反混淆 / 软件破解 / 漏洞挖掘 / 托管代码 / 取证情报 / CTF。"
+  },
+  "scan-1424082162": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1424196122": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1424203573": {
+    "description_en": "122 publishable, cross-platform AI skills for reverse engineering: malware analysis, software reverse engineering, embedded firmware, protocol reverse engineering, mobile applications, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensic intelligence and CTFs.",
+    "description_zh": "122 个逆向工程 AI 技能（可发布、跨平台）：恶意软件分析 / 软件逆向 / 固件嵌入式 / 协议逆向 / 移动应用 / 脱壳反混淆 / 软件破解 / 漏洞挖掘 / 托管代码 / 取证情报 / CTF。"
+  },
+  "scan-1424209275": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1424211873": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-1424213524": {
+    "description_en": "AI-agent skill system for mobile reverse engineering. Features Frida hooks, one-click unpacking, detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP.",
+    "description_zh": "AI 智能体驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。"
+  },
+  "scan-142703549": {
+    "description_en": "All the mono c exports, ready to be used in frida!",
+    "description_zh": "所有 Mono C 导出函数，可直接在 Frida 中使用！"
+  },
+  "scan-147000386": {
+    "description_en": "Ethereum Static Vulnerability Detector for Gas-Focussed Vulnerabilities",
+    "description_zh": "针对 Gas 相关漏洞的以太坊静态漏洞检测器。"
+  },
+  "scan-154313401": {
+    "description_en": "School 42 project // Implementation of programming game “Core War” [Champions + Assembler + Disassembler + Virtual Machine + Visualizer]",
+    "description_zh": "School 42 项目：编程游戏“Core War”的实现［战士程序 + 汇编器 + 反汇编器 + 虚拟机 + 可视化器］。"
+  },
+  "scan-16573287": {
+    "description_en": "IDApro idc and idapython script collection ",
+    "description_zh": "IDApro 的 IDC 和 IDAPython 脚本合集。"
+  },
+  "scan-168618671": {
+    "description_en": "Small Rust utility to decompile Android apks",
+    "description_zh": "用于反编译 Android APK 的小型 Rust 工具。"
+  },
+  "scan-173292349": {
+    "description_en": "EnPHP Decoder written in PHP",
+    "description_zh": "用 PHP 编写的 EnPHP 解码器。"
+  },
+  "scan-173923982": {
+    "description_en": "Frida script to bypass the iOS application Jailbreak Detection",
+    "description_zh": "绕过 iOS 应用越狱检测的 Frida 脚本。"
+  },
+  "scan-175961098": {
+    "description_en": "It does the same thing as plugin FunctionStringAssociate for IDA, Now the script just works, in the future it is planned to increase the speed of work and bring it closer to the speed of the plugin.",
+    "description_zh": "实现与 IDA 的 FunctionStringAssociate 插件相同的功能。目前脚本刚达到可用状态，未来计划提升运行速度，使其接近该插件。"
+  },
+  "scan-177709812": {
+    "description_en": "Breaks the encryption and obfuscation layers that Dropbox applies to their modified Python interpreter.",
+    "description_zh": "破解 Dropbox 为其修改版 Python 解释器添加的加密与混淆层。"
+  },
+  "scan-180158760": {
+    "description_en": "IDA Pro to Ghidra Key Bindings to feel like if you were in IDA Pro when navigating",
+    "description_zh": "将 IDA Pro 键位绑定带到 Ghidra，让导航操作感觉如同在 IDA Pro 中。"
+  },
+  "scan-181188487": {
+    "description_en": "Lightweight Archive Unpacker for various game archives",
+    "description_zh": "面向多种游戏归档格式的轻量解包工具。"
+  },
+  "scan-182981570": {
+    "description_en": "A collection of Frida hooks for experimentation on Windows platforms.",
+    "description_zh": "用于 Windows 平台实验的 Frida hook 集合。"
+  },
+  "scan-185422938": {
+    "description_en": "Docker image for building ghidra RE framework from source",
+    "description_zh": "用于从源码构建 Ghidra 逆向工程框架的 Docker 镜像。"
+  },
+  "scan-186706683": {
+    "description_en": "MrsPicky - An IDAPython decompiler script that helps auditing memcpy() and memmove() calls",
+    "description_zh": "MrsPicky：辅助审计 memcpy() 和 memmove() 调用的 IDAPython 反编译器脚本。"
+  },
+  "scan-188461358": {
+    "description_en": "REVerse ENGineering Environment",
+    "description_zh": "逆向工程环境（REVerse ENGineering Environment）。"
+  },
+  "scan-193283931": {
+    "description_en": "jni.h compiled for Ghidra",
+    "description_zh": "为 Ghidra 编译的 jni.h。"
+  },
+  "scan-19454620": {
+    "description_en": "ElectroPaint Automatic No-source Object reaSsembler (a MIPS to C decompiler)",
+    "description_zh": "ElectroPaint 自动无源码目标文件重新汇编器（MIPS 到 C 的反编译器）。"
+  },
+  "scan-196539831": {
+    "description_en": "A simple scraper for Ultimate-Guitar.com's mobile API, written in Go.",
+    "description_zh": "用 Go 编写的简单抓取器，面向 Ultimate-Guitar.com 的移动 API。"
+  },
+  "scan-201409724": {
+    "description_en": "⚙️ Simple Step to Step Tutorials for Disassembling / Code Injection & getting Pointer Addresses 🔧",
+    "description_zh": "⚙️ 反汇编、代码注入及获取指针地址的简单分步教程 🔧"
+  },
+  "scan-201551895": {
+    "description_en": "AirSpy - Frida-based tool for exploring and tracking the evolution of Apple's AirDrop protocol implementation on i/macOS, from the server's perspective. Released during BH USA 2019 Training https://www.nowsecure.com/event/advanced-frida-and-radare-a-hackers-delight/",
+    "description_zh": "AirSpy：基于 Frida 的工具，从服务端视角探索并跟踪 Apple 在 iOS／macOS 中的 AirDrop 协议实现演变。在 BH USA 2019 培训期间发布：https://www.nowsecure.com/event/advanced-frida-and-radare-a-hackers-delight/"
+  },
+  "scan-206565210": {
+    "description_en": "A machine learning tool that ranks strings based on their relevance for malware analysis.",
+    "description_zh": "根据字符串与恶意软件分析的相关性对其排序的机器学习工具。"
+  },
+  "scan-210814517": {
+    "description_en": "iNES ghidra loader for Flare-on 6 challenge level 8",
+    "description_zh": "用于 Flare-on 6 第 8 关的 iNES Ghidra 加载器。"
+  },
+  "scan-210917802": {
+    "description_en": "This repository contains sample programs that mimick behavior found in real-world malware. The goal is to provide source code that can be compiled and used for learning purposes, without having to worry about handling live malware.",
+    "description_zh": "此仓库包含模仿真实恶意软件行为的示例程序。目标是提供可编译并用于学习的源代码，无需担心处理真实恶意软件。"
+  },
+  "scan-211372679": {
+    "description_en": "Collection of IDA helpers",
+    "description_zh": "IDA 辅助工具合集。"
+  },
+  "scan-213150056": {
+    "description_en": "",
+    "description_zh": ""
+  },
+  "scan-213247696": {
+    "description_en": "Automated Frida hook generation with JEB",
+    "description_zh": "使用 JEB 自动生成 Frida hook。"
+  },
+  "scan-213501816": {
+    "description_en": "GitHub Cloner & Compiler",
+    "description_zh": "GitHub 克隆与编译工具。"
+  },
+  "scan-224829811": {
+    "description_en": "Ghidra Emulates Functions",
+    "description_zh": "使用 Ghidra 模拟函数。"
+  },
+  "scan-224924861": {
+    "description_en": "A Ghidra script to export data to a x64dbg database",
+    "description_zh": "将数据导出到 x64dbg 数据库的 Ghidra 脚本。"
+  },
+  "scan-226532736": {
+    "description_en": "A Ghidra script to paste a raw blob into an analysed binary",
+    "description_zh": "将原始数据块写入已分析二进制文件的 Ghidra 脚本。"
+  },
+  "scan-233795777": {
+    "description_en": "Qt Resource Compiler and Decompiler (RccExtended)",
+    "description_zh": "Qt 资源编译器与反编译器（RccExtended）。"
+  },
+  "scan-237092130": {
+    "description_en": "Android Dex disassembler and Binary Ninja plugin",
+    "description_zh": "Android DEX 反汇编器及 Binary Ninja 插件。"
+  },
+  "scan-241174411": {
+    "description_en": "The essential toolkit for reversing, malware analysis, and cracking",
+    "description_zh": "用于逆向分析、恶意软件分析和破解的必备工具包。"
+  },
+  "scan-241664741": {
+    "description_en": "Python API Monitor for Android apps",
+    "description_zh": "面向 Android 应用的 Python API 监视器。"
+  },
+  "scan-243979912": {
+    "description_en": "Tamper detection in Android",
+    "description_zh": "Android 篡改检测。"
+  },
+  "scan-244806212": {
+    "description_en": "Resources About Dynamic Binary Instrumentation and Dynamic Binary Analysis",
+    "description_zh": "动态二进制插桩与动态二进制分析资源。"
+  },
+  "scan-248540269": {
+    "description_en": "DRAKVUF Sandbox - automated hypervisor-level malware analysis system",
+    "description_zh": "DRAKVUF Sandbox：在虚拟机监控器层进行自动化恶意软件分析的系统。"
+  },
+  "scan-25433327": {
+    "description_en": "6502 CPU emulator, assembler, disassembler, debugger and host written in go",
+    "description_zh": "用 Go 编写的 6502 CPU 模拟器、汇编器、反汇编器、调试器及宿主程序。"
+  },
+  "scan-258725007": {
+    "description_en": "Personal study and research notes on Objective-C, C++, iOS reverse engineering, assembly and Python.",
+    "description_zh": "个人学习研究笔记，OC、C++、iOS 逆向、汇编、Python。"
+  },
+  "scan-259618041": {
+    "description_en": "Lists of .NET Deobfuscator and Unpacker (Open Source)",
+    "description_zh": ".NET 反混淆器和脱壳工具列表（开源）。"
+  },
+  "scan-261816454": {
+    "description_en": "Static unpacker for Exe4J executables",
+    "description_zh": "用于 Exe4J 可执行文件的静态脱壳工具。"
+  },
+  "scan-262445968": {
+    "description_en": "Open Source Static Unpacker for JExePack",
+    "description_zh": "用于 JExePack 的开源静态脱壳工具。"
+  },
+  "scan-270290980": {
+    "description_en": "Malware dynamic instrumentation tool based on frida framework",
+    "description_zh": "基于 Frida 框架的恶意软件动态插桩工具。"
+  },
+  "scan-270353111": {
+    "description_en": "Various scripts for the Hexrays decompiler",
+    "description_zh": "用于 Hex-Rays 反编译器的各种脚本。"
+  },
+  "scan-271652370": {
+    "description_en": "Wasamole is a tasty framework for WebAssembly Source Analysis: (WASA)-mole.",
+    "description_zh": "Wasamole 是用于 WebAssembly 源码分析（WASA）的趣味框架，名字为 (WASA)-mole。"
+  },
+  "scan-272445402": {
+    "description_en": "A Ghidra extension for scripting with GraalVM languages, including Javascript, Python3, R, and Ruby.",
+    "description_zh": "使用 GraalVM 语言（包括 JavaScript、Python 3、R 和 Ruby）编写脚本的 Ghidra 扩展。"
+  },
+  "scan-274694914": {
+    "description_en": "Ghidra plugin for https://analyze.intezer.com",
+    "description_zh": "用于 https://analyze.intezer.com 的 Ghidra 插件。"
+  },
+  "scan-277055977": {
+    "description_en": "APK/DEX detector for Windows, Linux and MacOS.",
+    "description_zh": "适用于 Windows、Linux 和 MacOS 的 APK/DEX 检测器。"
+  },
+  "scan-277093823": {
+    "description_en": "Ghidra analyzer for UEFI firmware.",
+    "description_zh": "用于 UEFI 固件的 Ghidra 分析器。"
+  },
+  "scan-281713969": {
+    "description_en": "Ghidra's development plugins, scripts, contributing. Presentation",
+    "description_zh": "关于 Ghidra 开发插件、脚本及参与贡献的演示文稿。"
+  },
+  "scan-287604879": {
+    "description_en": "Builds of Ghidra 10.1 with additional components included.",
+    "description_zh": "包含附加组件的 Ghidra 10.1 构建版本。"
+  },
+  "scan-289541760": {
+    "description_en": "Frida scripts for mobile application dynamic-analysis.",
+    "description_zh": "用于移动应用动态分析的 Frida 脚本。"
+  },
+  "scan-30181412": {
+    "description_en": "A general purpose machine code manipulation library for x86-32 (IA-32) and x86-64 (AMD64) architectures (Assembler, Disassembler, Library).",
+    "description_zh": "适用于 x86-32（IA-32）和 x86-64（AMD64）架构的通用机器码操作库（汇编器、反汇编器、库）。"
+  },
+  "scan-303782759": {
+    "description_en": "One-click installer for Frida and Burp certs for SSL Pinning bypass",
+    "description_zh": "Frida 及 Burp 证书的一键安装器，用于绕过 SSL 证书固定。"
+  },
+  "scan-304362976": {
+    "description_en": "Ultimate Ghidra loader for the LX/LE executable file format (OS/2, DOS4GW, VxD)",
+    "description_zh": "面向 LX／LE 可执行文件格式（OS/2、DOS4GW、VxD）的终极 Ghidra 加载器。"
+  },
+  "scan-305542097": {
+    "description_en": "Simple emulator of the Intel 4004 chip. Mirror from https://gitlab.com/lpg2709/emulator-Intel-4004",
+    "description_zh": "简单的 Intel 4004 芯片模拟器，镜像自 https://gitlab.com/lpg2709/emulator-Intel-4004"
+  },
+  "scan-305667675": {
+    "description_en": "A versatile C++ function mocking framework.",
+    "description_zh": "多用途 C++ 函数模拟（mock）框架。"
+  },
+  "scan-307779068": {
+    "description_en": "Reverse engineering the Black Energy Driver ",
+    "description_zh": "对 Black Energy 驱动进行逆向工程。"
+  },
+  "scan-309098078": {
+    "description_en": "Simple decompiler for Rizin. It's capable of generating readable pseudo code even on handmade assembly.",
+    "description_zh": "适用于 Rizin 的简单反编译器，即使对手写汇编也能生成可读伪代码。"
+  },
+  "scan-319196970": {
+    "description_en": "MediaTek MD32 processor module for Ghidra.",
+    "description_zh": "Ghidra 的 MediaTek MD32 处理器模块。"
+  },
+  "scan-320381361": {
+    "description_en": "MediaTek PCM (SPM) processor module for Ghidra.",
+    "description_zh": "Ghidra 的 MediaTek PCM（SPM）处理器模块。"
+  },
+  "scan-321876841": {
+    "description_en": "A tracing disassembler & UI for Gameboy ROMs — integrated with Sameboy for emulation & debugging.",
+    "description_zh": "用于 Gameboy ROM 的跟踪式反汇编器和 UI，集成 Sameboy 以进行模拟和调试。"
+  },
+  "scan-325545043": {
+    "description_en": "Advanced Frida-Android techniques",
+    "description_zh": "Frida-Android 进阶"
+  },
+  "scan-327790369": {
+    "description_en": "Alternative API for IDA / Hex-Rays",
+    "description_zh": "IDA / Hex-Rays 的替代 API。"
+  },
+  "scan-332817830": {
+    "description_en": "MediaTek CCPU (GCPU) processor module for Ghidra.",
+    "description_zh": "Ghidra 的 MediaTek CCPU（GCPU）处理器模块。"
+  },
+  "scan-336778956": {
+    "description_en": "Python command-line tool and GDB extension to view and save x86, ARM and objdump assembly files as control-flow graph (CFG) pdf files",
+    "description_zh": "Python 命令行工具与 GDB 扩展，将 x86、ARM 和 objdump 汇编文件查看、保存为控制流图（CFG）PDF。"
+  },
+  "scan-336862428": {
+    "description_en": "Lua Encode/Decoder/Disassembler/Decompiler in C#",
+    "description_zh": "用 C# 编写的 Lua 编码器、解码器、反汇编器和反编译器。"
+  },
+  "scan-337468555": {
+    "description_en": "Practical P-Code examples",
+    "description_zh": "实用 P-Code 示例。"
+  },
+  "scan-338258341": {
+    "description_en": "WIP Space Station Silicon Valley N64 Decomp",
+    "description_zh": "正在进行中的 N64 游戏 Space Station Silicon Valley 反编译项目。"
+  },
+  "scan-340691766": {
+    "description_en": "Plugins for reversing android apps in JEB",
+    "description_zh": "用于在 JEB 中逆向 Android 应用的插件。"
+  },
+  "scan-34196081": {
+    "description_en": "A native reimplementation of the Metroid Prime engine",
+    "description_zh": "Metroid Prime 引擎的原生重新实现。"
+  },
+  "scan-344763809": {
+    "description_en": "Full decompilations of Geometry Dash physics functions",
+    "description_zh": "Geometry Dash 物理函数的完整反编译。"
+  },
+  "scan-345720837": {
+    "description_en": "Ruby, Kotlin, Groovy, Clojure, and JShell support for Ghidra scripting and interactive sessions.",
+    "description_zh": "为 Ghidra 脚本和交互会话提供 Ruby、Kotlin、Groovy、Clojure 和 JShell 支持。"
+  },
+  "scan-360527757": {
+    "description_en": "Framework to automate working with AST in IDA Pro",
+    "description_zh": "在 IDA Pro 中自动处理 AST 的框架。"
+  },
+  "scan-367302231": {
+    "description_en": "Tool that automates some useful structure routines in IDA PRO",
+    "description_zh": "自动执行 IDA PRO 中一些实用结构体操作的工具。"
+  },
+  "scan-36829682": {
+    "description_en": "Yet another crippled decompiler project",
+    "description_zh": "又一个功能残缺的反编译器项目。"
+  },
+  "scan-370219917": {
+    "description_en": "A language for writing regular expressions.",
+    "description_zh": "用于编写正则表达式的语言。"
+  },
+  "scan-370451894": {
+    "description_en": "Mobile application security testing toolkit for Android, iOS & Flutter — ready-to-use FRIDA scripts (SSL pinning, root & anti-debug bypass, crypto monitoring), a full testing methodology, and hands-on guides.",
+    "description_zh": "面向 Android、iOS 和 Flutter 的移动应用安全测试工具包：即用型 Frida 脚本（SSL 证书固定、Root 与反调试绕过、密码学操作监控）、完整测试方法及实践指南。"
+  },
+  "scan-375656792": {
+    "description_en": "In-progress decompilation of mischief makers for the N64.",
+    "description_zh": "正在进行中的 N64 游戏 Mischief Makers 反编译项目。"
+  },
+  "scan-376552653": {
+    "description_en": "A Gradle plugin that adds Vineflower as a Loom decompiler.",
+    "description_zh": "将 Vineflower 添加为 Loom 反编译器的 Gradle 插件。"
+  },
+  "scan-380054052": {
+    "description_en": "Horangi tools for Android penetration testing",
+    "description_zh": "Horangi 的 Android 渗透测试工具。"
+  },
+  "scan-382195048": {
+    "description_en": "Binja (sort of) headless",
+    "description_zh": "让 Binja（某种程度上）以无界面模式运行。"
+  },
+  "scan-386959250": {
+    "description_en": "Fugue database importer and exporter for IDA Pro.",
+    "description_zh": "用于 IDA Pro 的 Fugue 数据库导入器与导出器。"
+  },
+  "scan-389398671": {
+    "description_en": "JObfuscator is a source code obfuscator for the Java language. Protect Java source code & algorithms from hacking, cracking, reverse engineering, decompilation & technology theft. PHP package for the composer.",
+    "description_zh": "JObfuscator 是 Java 源码混淆器，保护 Java 源码与算法免受黑客攻击、破解、逆向工程、反编译及技术窃取。供 Composer 使用的 PHP 包。"
+  },
+  "scan-390364893": {
+    "description_en": "The GhidraLookup plugin aims to help user lookup documentations of Win API functions.",
+    "description_zh": "GhidraLookup 插件旨在帮助用户查阅 Win API 函数文档。"
+  },
+  "scan-391738404": {
+    "description_en": "A Wireshark dissector for the Apple Remote Invocation (ARI) protocol, used between Intel base band chips and the iOS CommCenter for various management purposes, SMS, telephony and much more.",
+    "description_zh": "Apple Remote Invocation（ARI）协议的 Wireshark 解析器；该协议在 Intel 基带芯片与 iOS CommCenter 之间用于各类管理任务、短信、电话及更多功能。"
+  },
+  "scan-403242089": {
+    "description_en": "Automation plugins for various reversing tasks in IDA.",
+    "description_zh": "用于在 IDA 中自动执行各种逆向任务的插件。"
+  },
+  "scan-409594423": {
+    "description_en": "Ghidra NES / Famicom ROM Decompiler Plugin",
+    "description_zh": "Ghidra NES / Famicom ROM 反编译插件。"
+  },
+  "scan-410567459": {
+    "description_en": "A FREE Windows C development course where we will learn the Win32API and reverse engineer each step utilizing IDA Free in both an x86 and x64 environment.",
+    "description_zh": "免费的 Windows C 开发课程，在 x86 和 x64 环境中学习 Win32API，并使用 IDA Free 对每一步进行逆向分析。"
+  },
+  "scan-41105891": {
+    "description_en": "x86 Disassembler and Analyzer",
+    "description_zh": "x86 反汇编器和分析器。"
+  },
+  "scan-413479641": {
+    "description_en": "An open source (GPLv3) deobfuscator and unpacker for Eziriz .NET Reactor",
+    "description_zh": "针对 Eziriz .NET Reactor 的开源（GPLv3）反混淆器和脱壳工具。"
+  },
+  "scan-418620279": {
+    "description_en": "Binwalk docker image with the cpu_rec plugin for CPU instruction set identification.",
+    "description_zh": "集成 cpu_rec 插件的 Binwalk Docker 镜像，用于识别 CPU 指令集。"
+  },
+  "scan-422699116": {
+    "description_en": "Ghidra loader for decrypted iBoot, LLB, iBEC, iBSS and SecureROM images",
+    "description_zh": "用于已解密 iBoot、LLB、iBEC、iBSS 和 SecureROM 镜像的 Ghidra 加载器。"
+  },
+  "scan-430220430": {
+    "description_en": "An easy-to-use library for emulating memory dumps. Useful for malware analysis (config extraction, unpacking) and dynamic analysis in general (sandboxing).",
+    "description_zh": "用于模拟内存转储的易用库。适用于恶意软件分析（配置提取、脱壳）和一般动态分析（沙箱）。"
+  },
+  "scan-431457685": {
+    "description_en": "iMonitor (Bingjing — endpoint behavior analysis system)",
+    "description_zh": "iMonitor（冰镜 - 终端行为分析系统）。"
+  },
+  "scan-432624495": {
+    "description_en": "goodname.cfg for IDA Pro",
+    "description_zh": "用于 IDA Pro 的 goodname.cfg。"
+  },
+  "scan-444523266": {
+    "description_en": "A tool to decompile MSVC PDB files to C++ source code.",
+    "description_zh": "将 MSVC PDB 文件反编译为 C++ 源码的工具。"
+  },
+  "scan-445472642": {
+    "description_en": "A curated list of awesome malware analysis tools and resources",
+    "description_zh": "精选的优秀恶意软件分析工具和资源列表。"
+  },
+  "scan-451312869": {
+    "description_en": "A (SLEIGH) disassembler that supports multiple architectures",
+    "description_zh": "支持多种架构的 SLEIGH 反汇编器。"
+  },
+  "scan-465499442": {
+    "description_en": "Discord Rich Presence plugin for Ghidra",
+    "description_zh": "Ghidra 的 Discord Rich Presence 插件。"
+  },
+  "scan-477773175": {
+    "description_en": "Amiga m68k asm exporter for Ghidra",
+    "description_zh": "用于 Ghidra 的 Amiga m68k 汇编导出器。"
+  },
+  "scan-482510247": {
+    "description_en": "reverse engineering of playstation 3 executables",
+    "description_zh": "PlayStation 3 可执行文件的逆向工程。"
+  },
+  "scan-485253725": {
+    "description_en": "The fastest binary serializer for C#. Source-generated, zero-allocation: services, RPC, messaging, caching, storage, Unity and Godot.",
+    "description_zh": "最快的 C# 二进制序列化器。采用源代码生成，零分配：适用于服务、RPC、消息传递、缓存、存储、Unity 和 Godot。"
+  },
+  "scan-48942190": {
+    "description_en": "Protobuf decompiler",
+    "description_zh": "Protobuf 反编译器。"
+  },
+  "scan-489791988": {
+    "description_en": "A tool for automating interactions with Android devices - including ADB, AndroGuard, and Frida interactivity. ",
+    "description_zh": "自动化 Android 设备交互的工具，包含 ADB、AndroGuard 及 Frida 交互。"
+  },
+  "scan-490077961": {
+    "description_en": "Hashlink bytecode disassembler, analyzer, decompiler and assembler.",
+    "description_zh": "HashLink 字节码反汇编器、分析器、反编译器及汇编器。"
+  },
+  "scan-490379021": {
+    "description_en": "A decompiler to automatically reverse-engineer the DNN semantics from its compiled binary using program analysis",
+    "description_zh": "使用程序分析，从编译后二进制中自动逆向恢复 DNN 语义的反编译器。"
+  },
+  "scan-490518681": {
+    "description_en": "Powerful Ethereum Smart-Contract Toolkit",
+    "description_zh": "强大的以太坊智能合约工具包。"
+  },
+  "scan-491969147": {
+    "description_en": "A multiline (and ultimate) assembler (and disassembler) plugin for x64dbg and OllyDbg. A perfect tool for modifying and extending a compiled executable functionality.",
+    "description_zh": "供 x64dbg 和 OllyDbg 使用的多行（终极）汇编器（及反汇编器）插件。用于修改和扩展已编译可执行文件功能的理想工具。"
+  },
+  "scan-493300140": {
+    "description_en": "Generate data-flow graph and def-use graph for a function based on miasm and IDA Pro.",
+    "description_zh": "基于 miasm 和 IDA Pro，为函数生成数据流图和定义—使用图。"
+  },
+  "scan-50019267": {
+    "description_en": "Pbd is a Python module to disassemble serialized protocol buffers descriptors (https://developers.google.com/protocol-buffers/).",
+    "description_zh": "Pbd 是用于反汇编序列化 Protocol Buffers 描述符的 Python 模块（https://developers.google.com/protocol-buffers/）。"
+  },
+  "scan-501793713": {
+    "description_en": "Decompiler and reverse engineering tool for wasm binaries",
+    "description_zh": "用于 wasm 二进制文件的反编译器和逆向工程工具。"
+  },
+  "scan-51077593": {
+    "description_en": "Wii U RAM TCP Debugger Client/Cheat Code Manager",
+    "description_zh": "Wii U RAM TCP 调试客户端与作弊码管理器。"
+  },
+  "scan-514646939": {
+    "description_en": "A deobfuscator for PyArmor.",
+    "description_zh": "PyArmor 的反混淆器。"
+  },
+  "scan-519606340": {
+    "description_en": "Leveraging CVEs as North Stars in vulnerability discovery and comprehension.",
+    "description_zh": "以 CVE 为指引，开展漏洞发现与理解。"
+  },
+  "scan-521312070": {
+    "description_en": "Unpack pkg, nexe, caxa, Node.js SEA and Bun single-file binaries.",
+    "description_zh": "解包 pkg、nexe、caxa、Node.js SEA 及 Bun 单文件二进制。"
+  },
+  "scan-522147787": {
+    "description_en": "With this script you can bypass both root detection and ssl pinning for your android app.",
+    "description_zh": "该脚本可为你的 Android 应用绕过 Root 检测及 SSL 证书固定。"
+  },
+  "scan-522425569": {
+    "description_en": "Decompiler for luau (https://luau-lang.org/)",
+    "description_zh": "Luau 的反编译器（https://luau-lang.org/）。"
+  },
+  "scan-522941396": {
+    "description_en": "sigmaker for Ghidra",
+    "description_zh": "Ghidra 特征码生成器。"
+  },
+  "scan-527160400": {
+    "description_en": "A Ghidra plugin for native code metrics",
+    "description_zh": "用于原生代码度量的 Ghidra 插件。"
+  },
+  "scan-537577706": {
+    "description_en": "DLL injector for C#/.NET applications, including .NET Core applications. Officially approved by author of Lib.Harmony as method of injection.",
+    "description_zh": "用于 C#／.NET 应用（包括 .NET Core）的 DLL 注入器。Lib.Harmony 作者正式认可其作为注入方法。"
+  },
+  "scan-543293032": {
+    "description_en": "A Ghidra loader for 3DS files",
+    "description_zh": "用于 3DS 文件的 Ghidra 加载器。"
+  },
+  "scan-544534817": {
+    "description_en": "dnSpy but for Python",
+    "description_zh": "面向 Python 的 dnSpy 类工具。"
+  },
+  "scan-547623119": {
+    "description_en": "Work with spice86 data into Ghidra",
+    "description_zh": "在 Ghidra 中处理 spice86 数据。"
+  },
+  "scan-560977364": {
+    "description_en": "Unofficial patches for IDA 7.5 Demo on Linux x86_64. Suffering from success: Hex-Rays SA DMCA’d repository.",
+    "description_zh": "针对 Linux x86_64 上 IDA 7.5 Demo 的非官方补丁。受成功所累：仓库被 Hex-Rays SA 提出了 DMCA 下架要求。"
+  },
+  "scan-567597387": {
+    "description_en": "Reverse engineered Icewind Dale 2",
+    "description_zh": "对 Icewind Dale 2 进行逆向工程。"
+  },
+  "scan-568264859": {
+    "description_en": "A simple and open source (GPLv3) deobfuscator for Agile.NET",
+    "description_zh": "简单、开源（GPLv3）的 Agile.NET 反混淆器。"
+  },
+  "scan-569003123": {
+    "description_en": "Hooks libboringssl.dylib to extract TLS keys and enables the traffic from iOS apps to be decrypted.",
+    "description_zh": "通过 hook libboringssl.dylib 提取 TLS 密钥，使 iOS 应用流量能够被解密。"
+  },
+  "scan-571728989": {
+    "description_en": "Matching decompilation of irix binary makemask",
+    "description_zh": "IRIX 二进制程序 makemask 的匹配反编译。"
+  },
+  "scan-576080606": {
+    "description_en": "",
+    "description_zh": ""
+  },
+  "scan-576645845": {
+    "description_en": "IDA's Lumina feature, reimplemented for Ghidra",
+    "description_zh": "为 Ghidra 重新实现 IDA 的 Lumina 功能。"
+  },
+  "scan-587461720": {
+    "description_en": "a list of 350+ Free TryHackMe rooms to start learning cybersecurity with THM",
+    "description_zh": "350+ 个免费的 TryHackMe 房间列表，帮助使用 THM 开始学习网络安全。"
+  },
+  "scan-59169742": {
+    "description_en": "The Java Disassembler",
+    "description_zh": "Java 反汇编器。"
+  },
+  "scan-59441906": {
+    "description_en": "Awesome CSIRT is an curated list of links and resources in security and CSIRT daily activities.",
+    "description_zh": "Awesome CSIRT 是一个精选列表，收集安全和 CSIRT 日常活动相关的链接与资源。"
+  },
+  "scan-59681758": {
+    "description_en": "Assembler/disassembler of Windows keyboard layouts in flat assembler",
+    "description_zh": "用 flat assembler 编写的 Windows 键盘布局汇编器／反汇编器。"
+  },
+  "scan-60259987": {
+    "description_en": "Learn the fundamentals of Binary Auditing. Know how HLL mapping works, get more inner file understanding than ever.",
+    "description_zh": "学习二进制审查的基础知识。了解高层语言（HLL）映射的工作方式，更深入地理解文件内部结构。"
+  },
+  "scan-616238645": {
+    "description_en": "WIP Decompilation of Megaman Legends (aka Rockman Dash) for the PlayStation 1.",
+    "description_zh": "正在进行中的 PlayStation 1 版 Megaman Legends（又名 Rockman Dash）反编译项目。"
+  },
+  "scan-627504900": {
+    "description_en": "Manage Android machines with pre-defined behaviors for Cyber Range environments.",
+    "description_zh": "使用预定义行为管理网络靶场环境中的 Android 机器。"
+  },
+  "scan-633613735": {
+    "description_en": "Ghidra's plugin recursively search dependencies of the variable and change their names and types.",
+    "description_zh": "Ghidra 插件，递归查找变量的依赖项，并更改其名称和类型。"
+  },
+  "scan-634547043": {
+    "description_en": "frida-codeshare-scripts.collection of useful FRIDA scripts.A curated list of Frida resources. A collection of practical frida scripts, the most comprehensive on the web. Synced and updated periodically without a fixed schedule.",
+    "description_zh": "frida-codeshare-scripts：实用 FRIDA 脚本合集，精选 Frida 资源列表。纯实用 frida 脚本收集，脚本全网最全。不定时同步更新。"
+  },
+  "scan-637871139": {
+    "description_en": "A Ghidra headless analyzer tailored for Qt binary analysis",
+    "description_zh": "专为 Qt 二进制分析设计的 Ghidra 无界面分析器。"
+  },
+  "scan-64392573": {
+    "description_en": "Multi-architecture assembler for IDA Pro. Powered by Keystone Engine.",
+    "description_zh": "面向 IDA Pro 的多架构汇编器，由 Keystone Engine 驱动。"
+  },
+  "scan-651555492": {
+    "description_en": "Frida scripts for intercepting and modifying the behavior of Android apps at runtime.",
+    "description_zh": "在运行时拦截和修改 Android 应用行为的 Frida 脚本。"
+  },
+  "scan-651742989": {
+    "description_en": "A Dynamic Study Vmprotect 1.x-1.9X Unpacking Toolkit, Recovery OEP, FIX PE, IAT and bypass protection with custom Loader and interceptor vmexit(aka context exchange) from packer stub.",
+    "description_zh": "用于动态研究 Vmprotect 1.x-1.9X 脱壳的工具包：恢复 OEP、修复 PE 和 IAT，并通过自定义加载器及从壳存根拦截 vmexit（即上下文交换）来绕过保护。"
+  },
+  "scan-655141160": {
+    "description_en": "XrefsExt plugin for IDA Pro(idapython,ida plugin,ida plugins)",
+    "description_zh": "适用于 IDA Pro 的 XrefsExt 插件（idapython、IDA 插件）。"
+  },
+  "scan-665314064": {
+    "description_en": "PUBG LITE game reverse engineering",
+    "description_zh": "PUBG LITE 游戏逆向工程。"
+  },
+  "scan-666450174": {
+    "description_en": "a tool to find individually obfuscated or encrypted filesystems in firmware dumps",
+    "description_zh": "用于在固件转储中查找单独混淆或加密的文件系统的工具。"
+  },
+  "scan-672003338": {
+    "description_en": "A Frida Mod Menu for Android Games inspired by Android-Mod-Menu by LGLTeam",
+    "description_zh": "用于 Android 游戏的 Frida 模组菜单，灵感来自 LGLTeam 的 Android-Mod-Menu。"
+  },
+  "scan-676657519": {
+    "description_en": "Metroid Fusion Decompilation",
+    "description_zh": "Metroid Fusion 反编译项目。"
+  },
+  "scan-680020151": {
+    "description_en": "Test case to check for emulator detection bypass using frida and termux in android and how your application reacts to js injection.",
+    "description_zh": "在 Android 中使用 Frida 和 Termux 检查模拟器检测绕过，以及应用对 JS 注入反应的测试用例。"
+  },
+  "scan-690763851": {
+    "description_en": "Fuzz iOS URL schemes",
+    "description_zh": "对 iOS URL scheme 进行模糊测试。"
+  },
+  "scan-691278017": {
+    "description_en": "Project template for decomp-toolkit",
+    "description_zh": "decomp-toolkit 的项目模板。"
+  },
+  "scan-711170696": {
+    "description_en": "IDA Pro script to find interesting syscalls and patterns in binaries",
+    "description_zh": "在二进制文件中查找值得关注的系统调用和模式的 IDA Pro 脚本。"
+  },
+  "scan-711455381": {
+    "description_en": "Eden | Version-information extractor for mirai/go-cqhttp",
+    "description_zh": "伊甸 | mirai/go-cqhttp 版本信息提取器"
+  },
+  "scan-713058375": {
+    "description_en": "Add read-only REST API to your Ghidra project",
+    "description_zh": "为 Ghidra 项目添加只读 REST API。"
+  },
+  "scan-715511864": {
+    "description_en": "Simple script for ghidra to rename the default function names into better looking names that can be differed from afar ",
+    "description_zh": "简单的 Ghidra 脚本，将默认函数名改为更易读、远看也容易区分的名称。"
+  },
+  "scan-72311064": {
+    "description_en": "ViDi Visual Disassembler (experimental)",
+    "description_zh": "ViDi 可视化反汇编器（实验性）。"
+  },
+  "scan-723700095": {
+    "description_en": "Traces syscalls on iOS via Frida, including Mach syscalls.",
+    "description_zh": "通过 Frida 跟踪 iOS 系统调用，包含 Mach 系统调用。"
+  },
+  "scan-725948011": {
+    "description_en": "Import Device Tree Information onto your Ghidra memory map",
+    "description_zh": "将设备树信息导入 Ghidra 内存映射。"
+  },
+  "scan-728421563": {
+    "description_en": "A simple Ghidra plugin to keep notes while reverse engineering",
+    "description_zh": "用于在逆向工程过程中记录笔记的简单 Ghidra 插件。"
+  },
+  "scan-729567538": {
+    "description_en": "Useful plugin for reverse engineering code that makes use of C++ protobuf",
+    "description_zh": "用于逆向分析使用 C++ protobuf 的代码的实用插件。"
+  },
+  "scan-731675705": {
+    "description_en": "Tiny RISC-V machine code monitor written in RISC-V assembly.",
+    "description_zh": "用 RISC-V 汇编编写的小型 RISC-V 机器码监控程序。"
+  },
+  "scan-733602499": {
+    "description_en": "A Python 3.10+ library to pack and unpack structured binary data.",
+    "description_zh": "用于打包和解包结构化二进制数据的 Python 3.10+ 库。"
+  },
+  "scan-735217128": {
+    "description_en": "frida runtime resolves smali",
+    "description_zh": "通过 Frida 在运行时解析 smali。"
+  },
+  "scan-753881685": {
+    "description_en": "#supply #chain #attack #detection",
+    "description_zh": "#供应链 #攻击 #检测"
+  },
+  "scan-755501343": {
+    "description_en": "Stealth patch for Frida, stealth knowledge collection",
+    "description_zh": "Frida 隐身补丁及隐身技术知识集合。"
+  },
+  "scan-771342924": {
+    "description_en": "A simple but useful project maybe help you reverse Windows. ",
+    "description_zh": "一个简单但实用的项目，或许能帮助你逆向分析 Windows。"
+  },
+  "scan-772138893": {
+    "description_en": "Patchestry is a binary patching framework built with MLIR and Ghidra.",
+    "description_zh": "Patchestry 是基于 MLIR 和 Ghidra 构建的二进制补丁框架。"
+  },
+  "scan-777427543": {
+    "description_en": "iOS Instagram with SSL pinning / certificate pinning bypassed. Latest version 395.0.0",
+    "description_zh": "绕过了 SSL 固定／证书固定的 iOS Instagram。最新版本 395.0.0。"
+  },
+  "scan-783112296": {
+    "description_en": "What if Ghidra had a responsive UI?",
+    "description_zh": "如果 Ghidra 的 UI 响应流畅，会怎样？"
+  },
+  "scan-783161911": {
+    "description_en": "AMD Radeon F32 processor module for Ghidra.",
+    "description_zh": "Ghidra 的 AMD Radeon F32 处理器模块。"
+  },
+  "scan-788731853": {
+    "description_en": "A web-compatible Shockwave Player emulator written in Rust",
+    "description_zh": "用 Rust 编写、兼容 Web 的 Shockwave Player 模拟器。"
+  },
+  "scan-795213608": {
+    "description_en": "nanoMIPS module for Ghidra",
+    "description_zh": "Ghidra 的 nanoMIPS 模块。"
+  },
+  "scan-80163829": {
+    "description_en": "A python library for reading IDA pro databases.",
+    "description_zh": "用于读取 IDA pro 数据库的 Python 库。"
+  },
+  "scan-807834585": {
+    "description_en": "Browser Assembler/Disassembler/Emulator Tool",
+    "description_zh": "浏览器汇编器／反汇编器／模拟器工具。"
+  },
+  "scan-817556069": {
+    "description_en": "Automatically identify and extract potential anti-debugging techniques used by malware. ",
+    "description_zh": "自动识别并提取恶意软件使用的潜在反调试技术。"
+  },
+  "scan-821809473": {
+    "description_en": "A museum of Silent Hill models",
+    "description_zh": "Silent Hill 模型博物馆。"
+  },
+  "scan-826801414": {
+    "description_en": "As a bug hunter, are your bug bounty reports getting rejected because you don't use a \"malicious\" Proof of Concept (PoC) app to exploit the vulnerabilities? I've got you covered!",
+    "description_zh": "作为漏洞猎人，你的漏洞赏金报告是否因未使用“恶意”概念验证（PoC）应用来利用漏洞而遭到拒绝？本项目可以帮上忙！"
+  },
+  "scan-827323062": {
+    "description_en": "An open-source emulation framework designed as a virtual laboratory for exploring, building, and modifying classic computer systems in real-time.",
+    "description_zh": "开源模拟框架，作为虚拟实验室，用于实时探索、构建和修改经典计算机系统。"
+  },
+  "scan-828726776": {
+    "description_en": "Matching decompilation of Twisted Metal: Harbor City (PS2)",
+    "description_zh": "Twisted Metal: Harbor City（PS2）的匹配反编译。"
+  },
+  "scan-83147491": {
+    "description_en": "Defines a simple custom syntax that trims Smali syntax details to improve the readability of decompiled code.",
+    "description_zh": "通过精简Smali语法细节来增强反编译代码阅读性，自定义了一种简单语法"
+  },
+  "scan-837073478": {
+    "description_en": "Stack String Explorer is a ghidra plugin to find and report stack strings (and other constant strings). Identified strings are commented and placed in the defined strings window for easy analysis.",
+    "description_zh": "Stack String Explorer 是用于查找并报告栈字符串及其他常量字符串的 Ghidra 插件。识别到的字符串会被添加注释，并放入已定义字符串窗口，便于分析。"
+  },
+  "scan-83858471": {
+    "description_en": "Historical Windows temporal memory-state research artifact for studying time-bound memory observations, validation limits, and defensive visibility.",
+    "description_zh": "历史性的 Windows 时序内存状态研究产物，用于研究有时间边界的内存观测、验证局限和防御可见性。"
+  },
+  "scan-842050530": {
+    "description_en": "Docker configuration (and only docker configuration) files for hosting self-hosted Hexvault, Lumina and Hexlicsrv.",
+    "description_zh": "用于自托管 Hexvault、Lumina 和 Hexlicsrv 的 Docker 配置文件（仅含 Docker 配置）。"
+  },
+  "scan-849596405": {
+    "description_en": "An online assembly editor, emulator and debugger for the x86-64 architecture",
+    "description_zh": "面向 x86-64 架构的在线汇编编辑器、模拟器和调试器。"
+  },
+  "scan-853960365": {
+    "description_en": "Bump your ida python script automatically!",
+    "description_zh": "自动升级你的 IDA Python 脚本！"
+  },
+  "scan-862726332": {
+    "description_en": "Assembler for the 6502. Originally written for my online assembler and chiplab at https://www.emulationonline.com/systems/chiplab/6502/assembler/",
+    "description_zh": "6502 汇编器，最初为作者的在线汇编器和 chiplab 编写：https://www.emulationonline.com/systems/chiplab/6502/assembler/"
+  },
+  "scan-874819610": {
+    "description_en": "🚀 The easiest way to manage Frida on Android. Auto-setup, version matching, bypass scripts, wireless ADB.",
+    "description_zh": "🚀 管理 Android Frida 的最简方式：自动配置、版本匹配、绕过脚本及无线 ADB。"
+  },
+  "scan-878410780": {
+    "description_en": "User friendly ways to parse small code snippets into data types in Ghidra.",
+    "description_zh": "以易用的方式将小段代码解析为 Ghidra 中的数据类型。"
+  },
+  "scan-880670822": {
+    "description_en": "A list of 350+ free TryHackMe rooms💻 to kick off your cybersecurity learning, organized by topics for easy exploration and practical skill-building !💀💥  ",
+    "description_zh": "350+ 个免费的 TryHackMe 房间💻列表，帮助开始网络安全学习，按主题组织，便于探索和培养实践技能！💀💥"
+  },
+  "scan-881697317": {
+    "description_en": "Decompilation of Xenogears.",
+    "description_zh": "Xenogears 反编译项目。"
+  },
+  "scan-882829605": {
+    "description_en": "An AI-powered extension for Ghidra that enhances analysis.",
+    "description_zh": "利用 AI 增强分析能力的 Ghidra 扩展。"
+  },
+  "scan-88385953": {
+    "description_en": "This module allows you to easily inject javascript using frida and frida-load.",
+    "description_zh": "通过 Frida 和 frida-load 轻松注入 JavaScript 的模块。"
+  },
+  "scan-886957293": {
+    "description_en": "Tool to dump running processes and search for OEP signatures.",
+    "description_zh": "用于转储运行中进程及搜索 OEP 特征的工具。"
+  },
+  "scan-896663249": {
+    "description_en": "Ctrl+P plugin for Ghidra: quick search and command palette.",
+    "description_zh": "Ghidra 的 Ctrl+P 插件：快速搜索和命令面板。"
+  },
+  "scan-900517732": {
+    "description_en": "A feature-rich markdown editor plugin for Ghidra that supports collections of notes without leaving Ghidra.",
+    "description_zh": "功能丰富的 Ghidra Markdown 编辑器插件，无需离开 Ghidra 即可使用笔记集。"
+  },
+  "scan-917076872": {
+    "description_en": "List any references to undefined memory addresses. Useful for reversing firmware when determining memory mappings.",
+    "description_zh": "列出所有指向未定义内存地址的引用。在固件逆向分析中确定内存映射时很有用。"
+  },
+  "scan-922289790": {
+    "description_en": "A Ghidra script to improve decompiled code readability by re-writing it (Using DeepSeek) in a better way, Along with renaming/assigning variables based on their usage.",
+    "description_zh": "通过 DeepSeek 改写反编译代码来提升可读性的 Ghidra 脚本，同时根据变量用途进行重命名／赋值。"
+  },
+  "scan-92338018": {
+    "description_en": "Light-weight cross platform IL disassembler tool built in C#.",
+    "description_zh": "用 C# 构建的轻量级跨平台 IL 反汇编工具。"
+  },
+  "scan-928565305": {
+    "description_en": "A restrained, modern desktop theme plugin for IDA Pro 9.3, featuring scoped Qt styling and automatic theme persistence.",
+    "description_zh": "适用于 IDA Pro 9.3、设计克制的现代桌面主题插件，提供限定作用范围的 Qt 样式及自动主题持久化。"
+  },
+  "scan-928618874": {
+    "description_en": "AI assisted tools for Ghidra. Azure OpenAI, DeepSeek, Anthropic Claude, Ollama.",
+    "description_zh": "Ghidra 的 AI 辅助工具，支持 Azure OpenAI、DeepSeek、Anthropic Claude、Ollama。"
+  },
+  "scan-93289401": {
+    "description_en": "A runnable jar that generate Javascript hook script to hook Android classes.",
+    "description_zh": "可运行的 JAR，生成用于 hook Android 类的 JavaScript hook 脚本。"
+  },
+  "scan-934071761": {
+    "description_en": "A versatile text transformation toolkit in pure Rust with a dependency-free core. Encoding, decoding, formatting, cryptography, and (de)compression and more through CLI, web UI, or as a library.",
+    "description_zh": "以纯 Rust 编写的多用途文本转换工具包，核心无依赖。通过 CLI、网页 UI 或库提供编码、解码、格式化、密码学、压缩／解压缩等功能。"
+  },
+  "scan-93574736": {
+    "description_en": "Library and tool for reading IDApro databases.",
+    "description_zh": "用于读取 IDApro 数据库的库和工具。"
+  },
+  "scan-936312710": {
+    "description_en": "A Ghidra processor extension for the Altera Nios II",
+    "description_zh": "适用于 Altera Nios II 的 Ghidra 处理器扩展。"
+  },
+  "scan-944720164": {
+    "description_en": "CLI tool, Ghidra plug-in, and Haskell library for analyzing binaries using under-constrained symbolic execution",
+    "description_zh": "用于通过欠约束符号执行分析二进制文件的 CLI 工具、Ghidra 插件和 Haskell 库。"
+  },
+  "scan-946112625": {
+    "description_en": "A set of five plugins designed to work in Ghidra providing support for Debugging, Config Extraction, API Mapping, Visualisation and Taint Analysis",
+    "description_zh": "用于 Ghidra 的五个插件，支持调试、配置提取、API 映射、可视化及污点分析。"
+  },
+  "scan-95218213": {
+    "description_en": "Tool to automate the process of embedding dynamic libraries into iOS applications from GNU/Linux",
+    "description_zh": "在 GNU/Linux 上自动将动态库嵌入 iOS 应用的工具。"
+  },
+  "scan-957211323": {
+    "description_en": "Using Frida Stalker to Bypass OLLVM and Restore (Function Call Analysis, Parameter Analysis, Stack Trace Printing, Instruction & Registers Trace).",
+    "description_zh": "使用 Frida Stalker 反 OLLVM 算法还原（函数调用分析、参数分析、打印调用堆栈、指令&寄存器Trace）。"
+  },
+  "scan-960215907": {
+    "description_en": "A processor module for Ghidra for ASMedia's 8051-based chips.",
+    "description_zh": "面向 ASMedia 基于 8051 的芯片的 Ghidra 处理器模块。"
+  },
+  "scan-964029619": {
+    "description_en": "A Frida toolkit focused on Android reverse engineering. Manages Frida environment versions and wraps commonly used low-level utilities for the Agent side, with MCP support. The code is currently developed and maintained mainly by AI.",
+    "description_zh": "Frida 工具包 - 主要面向安卓端逆向，解决frida环境版本管理和对Agent端常用底层工具方法封装，支持MCP。（目前主要由AI开发维护代码）"
+  },
+  "scan-969272825": {
+    "description_en": "A MCP Server for APK Tool (Part of Android Reverse Engineering MCP Suites)",
+    "description_zh": "APK Tool 的 MCP 服务器（Android Reverse Engineering MCP Suites 的一部分）。"
+  },
+  "scan-969785253": {
+    "description_en": "Scallop is a multi-tool for unpacking, repacking, and script stomping nodejs single executable applications (SEA)s.",
+    "description_zh": "Scallop 是面向 Node.js 单文件可执行应用（SEA）的多用途工具，支持解包、重新打包及脚本覆写（script stomping）。"
+  },
+  "scan-970375978": {
+    "description_en": "A Python-based tool to synchronize Ghidra and x64dbg/x32dbg with minimal setup.",
+    "description_zh": "基于 Python 的工具，以少量配置同步 Ghidra 与 x64dbg／x32dbg。"
+  },
+  "scan-97277067": {
+    "description_en": "A decompiler for clojure, in clojure",
+    "description_zh": "用 Clojure 编写的 Clojure 反编译器。"
+  },
+  "scan-977549405": {
+    "description_en": "A Frida-based Dex unpacking tool",
+    "description_zh": "基于 frida 的 dex 脱壳工具。"
+  },
+  "scan-980706275": {
+    "description_en": "Documenting all the sources from where I'm learning Mobile(adnroid/IOS) bug bounty so if another researcher want to start with mobile bug bounty he/she don't struggle for resources",
+    "description_zh": "记录作者学习移动端（Android／iOS）漏洞赏金的所有来源，帮助其他研究人员入门移动端漏洞赏金时不必为寻找资源费力。"
+  },
+  "scan-986163653": {
+    "description_en": "Use frida-gum's stalker for tracing",
+    "description_zh": "使用 frida-gum 的 Stalker 进行跟踪。"
+  },
+  "scan-99044630": {
+    "description_en": "retools: a reverse engineering toolkit for normies",
+    "description_zh": "retools：面向普通人的逆向工程工具包。"
+  },
+  "scan-992327216": {
+    "description_en": "IDA Taskr is a pure Python library for IDA Pro related parallel computing. It lets you use the power of Qt (built-in to IDA!) and Python's powerful multiprocessing and asyncio systems to quickly process computationally intensive tasks without freezing IDA Pro. Oh, and it's super fast too.",
+    "description_zh": "IDA Taskr 是用于 IDA Pro 相关并行计算的纯 Python 库。它利用 Qt（内置于 IDA！）以及 Python 强大的 multiprocessing 和 asyncio 系统，快速处理计算密集型任务而不让 IDA Pro 卡死。而且速度非常快。"
+  },
+  "scan-995674004": {
+    "description_en": "Comprehensive Game Hacking Cheat Sheet for security researchers, reverse engineers, and CTF participants. Covers memory analysis, anti-cheat evasion, exploit development, and game engine reverse engineering for authorized security testing and educational purposes",
+    "description_zh": "面向安全研究人员、逆向工程人员及 CTF 参与者的综合游戏破解速查表，覆盖内存分析、反作弊规避、漏洞利用开发及游戏引擎逆向，用于授权安全测试与教育。"
+  },
+  "scan-998370302": {
+    "description_en": "A curated list of tools officially presented at Black Hat events",
+    "description_zh": "精选列表，收集在 Black Hat 活动中正式展示的工具。"
+  }
+}

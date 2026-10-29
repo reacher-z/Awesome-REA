@@ -1,5 +1,6 @@
 """Keep contributor-facing references aligned with the vocabularies the validators accept."""
 from copy import deepcopy
+import datetime as dt
 import json
 from pathlib import Path
 import re
@@ -10,7 +11,8 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_readme import KIND_LABELS, RELATIONSHIPS
-from validate import validate_resources
+from case_coverage import ENTRY_FIELDS, LEVELS, MATCH_FIELDS, SCOPES, STATES
+from validate import validate_citation, validate_resources
 from validate_papers import FIELDS as PAPER_FIELDS, OPTIONAL_FIELDS as OPTIONAL_PAPER_FIELDS, STATUSES as PAPER_STATUSES
 
 # Issue-form labels and the record values a maintainer records for them.
@@ -72,6 +74,28 @@ class ContributorReferenceTests(unittest.TestCase):
         self.assertEqual((rows['kind'], rows['verification'], rows['runtime_tested']),
                          ('`research`', '`source-reviewed`', '`false`'))
 
+    def test_case_coverage_tables_match_validator(self):
+        text = (ROOT / 'data/README.md').read_text(encoding='utf-8')
+
+        def table(header):
+            tables = [table for table in markdown_tables(text) if table[0] == f'| {header} | Value | Meaning |']
+            self.assertEqual(len(tables), 1, header)
+            rows = {}
+            for row in tables[0][2:]:
+                cells = [cell.strip() for cell in row.strip('|').split('|')]
+                for field in re.findall(r'`([a-z_]+)`', cells[0]):
+                    self.assertNotIn(field, rows, field + ' is documented twice')
+                    rows[field] = cells[1]
+            return rows
+
+        entries, matches = table('Entry field'), table('Match field')
+        self.assertEqual(set(entries), ENTRY_FIELDS)
+        self.assertEqual(set(matches), MATCH_FIELDS)
+        self.assertEqual(set(re.findall(r'`([a-z-]+)`', entries['state'])), STATES)
+        self.assertEqual(set(re.findall(r'`([a-z-]+)`', entries['review_level'])), LEVELS)
+        self.assertEqual(set(re.findall(r'`([a-z]+)`', matches['scope'])), SCOPES)
+        self.assertEqual(set(re.findall(r'`([a-z]+)`', matches['catalog'])), {'resource', 'paper'})
+
     def test_resource_form_offers_each_kind_once(self):
         options = form_options('resource.yml', 'kind')
         labels = {labels[0]: kind for kind, labels in KIND_LABELS.items()}
@@ -91,6 +115,7 @@ class ContributorReferenceTests(unittest.TestCase):
 
     def test_documented_scans_write_outside_data(self):
         text = (ROOT / 'docs/source-scan.md').read_text(encoding='utf-8')
+        text = text.replace('\\' + '\n', '')  # Shell line continuations form one command.
         commands = re.findall(r'^python3 scripts/scan_sources\.py .+$', text, re.MULTILINE)
         self.assertGreaterEqual(len(commands), 2)
         for command in commands:
@@ -104,12 +129,51 @@ class ContributorReferenceTests(unittest.TestCase):
         keys = set(re.findall(r'^([a-z-]+):', text, re.MULTILINE))
         self.assertTrue({'cff-version', 'message', 'title', 'type', 'authors', 'license',
                          'url', 'repository-code'} <= keys)
-        self.assertFalse(keys & {'doi', 'identifiers', 'version', 'date-released', 'preferred-citation'})
+        # No identifier until one is minted; the release fields come from a published tag.
+        self.assertFalse(keys & {'doi', 'identifiers', 'preferred-citation'})
+        self.assertRegex(text, r'(?m)^version: \d+\.\d+\.\d+\ndate-released: \d{4}-\d{2}-\d{2}$')
+        errors = []
+        validate_citation(text, errors)
+        self.assertEqual(errors, [])
         self.assertIn('license: MIT\n', text)
         self.assertIn('repository-code: https://github.com/reacher-z/Awesome-REA\n', text)
         self.assertIn('name: Awesome REA contributors\n', text)
         self.assertIn('primary sources', text)
 
+    def test_citation_release_fields_are_paired_semantic_and_not_future(self):
+        now = dt.datetime(2026, 10, 18, 12, tzinfo=dt.timezone.utc)
+        base = 'title: Awesome Reverse Engineering Anything\n'
+        for fields, problem in (('', None), ('version: 0.12.0\ndate-released: 2026-10-17\n', None),
+                                ('version: 1.0.0\ndate-released: 2026-10-19\n', None),
+                                ('version: 0.12.0\n', 'together'), ('date-released: 2026-10-17\n', 'together'),
+                                ('version: v0.12.0\ndate-released: 2026-10-17\n', 'MAJOR.MINOR.PATCH'),
+                                ('version: 0.12\ndate-released: 2026-10-17\n', 'MAJOR.MINOR.PATCH'),
+                                ('version: 0.12.0\ndate-released: 2026-10-20\n', 'future'),
+                                ('version: 0.12.0\ndate-released: "2026-10-17"\n', 'unquoted'),
+                                ('version: 0.12.0\ndate-released: 2026-02-30\n', 'unquoted')):
+            errors = []
+            validate_citation(base + fields, errors, now=now)
+            with self.subTest(fields=fields):
+                if problem is None:
+                    self.assertEqual(errors, [])
+                else:
+                    self.assertEqual(len(errors), 1, errors)
+                    self.assertIn(problem, errors[0])
+
+
+    def test_pull_request_template_commands_match_the_contributor_guide(self):
+        template = (ROOT / '.github/PULL_REQUEST_TEMPLATE.md').read_text(encoding='utf-8')
+        guide = (ROOT / 'CONTRIBUTING.md').read_text(encoding='utf-8')
+        commands = re.findall(r'`((?:python3|node|npm) [^`]+)`', template)
+        self.assertGreaterEqual(len(commands), 10)
+        for command in commands:
+            self.assertIn(command, guide)
+        groups = re.findall(r'^([A-Z][^\n(]+) \(`', template, re.MULTILINE)
+        self.assertEqual(groups, ['Curated record', 'Research paper', 'Case-ledger entry', 'Code or site'])
+        self.assertRegex(template, r'(?m)^Closes #$')
+        self.assertIn('Pull requests are public. Remove tokens, cookies, account identifiers, local filesystem paths', template)
+        for generated in ('README.md', 'README.zh-CN.md', 'docs/repositories/', 'docs/case-coverage*.md'):
+            self.assertIn(generated, template.split('are generated')[0].rsplit('\n', 1)[-1])
 
 if __name__ == '__main__':
     unittest.main()

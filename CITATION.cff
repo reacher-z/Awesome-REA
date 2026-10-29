@@ -6,6 +6,8 @@ message: >-
   commit or snapshot date they come from.
 title: Awesome Reverse Engineering Anything
 type: dataset
+version: 0.12.0
+date-released: 2026-10-17
 authors:
   - given-names: Yuxuan
     family-names: Zhang

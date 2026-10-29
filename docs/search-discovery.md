@@ -13,7 +13,7 @@ The canonical website is [AwesomeREA.org](https://awesomerea.org/); the public s
 - `/about/` and `/zh/about/` explain the collection, its relationship to REA, source review, and the separate automated repository index.
 - `/browse/` and `/zh/browse/` provide category pages for the automated index. Their provenance stays distinct from curated resources.
 - Every indexable page has a canonical URL and sitemap entry. Paired language pages have reciprocal `hreflang` links. Detail-page inventory is derived from reviewed resource and paper IDs; automatic scan records do not produce individual pages. Existing fragment IDs still locate entries within lists and are not separate sitemap URLs.
-- Detail pages use `WebPage` and `BreadcrumbList` metadata. A resource's main entity is a `CreativeWork` linked to the original resource; a paper uses `ScholarlyArticle` with its recorded authors, publication status, identifiers and date precision. Source-review dates are not presented as publication dates, and resource pages do not invent authors, licenses or ratings.
+- Detail pages use `WebPage` and `BreadcrumbList` metadata. A resource's main entity is a `CreativeWork` linked to the original resource; a paper uses `ScholarlyArticle` with its recorded authors, publication status, identifiers and date precision. Its `@id` is the detail page's `#paper` node in that language, which `/papers/` and `/zh/papers/` reuse; their ItemList entries point at the detail pages. `sameAs` lists only `https://doi.org/` and `https://arxiv.org/abs/` links built from the recorded `doi` and `arxiv_id`. Source-review dates are not presented as publication dates, and resource pages do not invent authors, licenses or ratings.
 - WebSite, CollectionPage/AboutPage, ItemList, and BreadcrumbList metadata describe the visible content. The site does not claim ratings, official affiliation, or reproduction results it does not have.
 - `/llms.txt` is an optional navigation index for readers and tools. `/catalog.json` is the machine-readable curated catalog. Neither guarantees indexing or citation.
 
@@ -45,6 +45,8 @@ The site's existing `User-agent: *` / `Allow: /` policy permits search crawling,
 
 Do not place account emails, dashboard URLs with private identifiers, session cookies, screenshots of account details, or access credentials in this public repository. Search verification files are intended to be publicly reachable ownership proofs; keep the exact issued contents and filename.
 
+Posting to public communities such as Hacker News or Reddit is a separate, manual step with its own rules; see [community outreach](community-outreach.md).
+
 ## Measurement
 
 Keep a dated private log using the [versioned EN/ZH query set](discovery/queries.v1.json) and [empty observation template](discovery/observation.template.json). The [bilingual observation guide](discovery/README.md) defines provider/version fields, exact-query matching, bounded inspection, distinct failure and citation outcomes, and privacy review before publishing a summary. These files contain no measured results and do not run or schedule searches.
@@ -59,7 +61,7 @@ At launch, use Games / Websites / Apps as content types, platform and Showcase /
 
 ## Repeatable IndexNow submission
 
-A top-level `404.html` makes unknown paths return HTTP 404 instead of the homepage. The sitemap omits modification dates when a significant page-change date cannot be established reliably; a source-review timestamp is not a page-modification timestamp.
+A top-level `404.html` makes unknown paths on awesomerea.org return HTTP 404 instead of the homepage. Every `pages.dev` copy also sends `X-Robots-Tag: noindex`; the icon-asset host must hold only [its icon files](website.md#icon-origin-contents). The sitemap omits modification dates when a significant page-change date cannot be established reliably; a source-review timestamp is not a page-modification timestamp.
 
 Run `python3 scripts/submit_indexnow.py` to preview the sitemap URL batch, then `python3 scripts/submit_indexnow.py --submit` after deployment. The command checks the live ownership file, sitemap, public build manifest and canonical page content against this build before sending a notification. It submits only canonical awesomerea.org URLs. HTTP 200 confirms receipt; HTTP 202 means key validation is pending. Neither confirms indexing. See the [IndexNow protocol](https://www.indexnow.org/documentation).
 
