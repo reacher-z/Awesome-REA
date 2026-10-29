@@ -431,7 +431,7 @@
 - [abatchy17/Introduction-To-Manual-Backdooring](https://github.com/abatchy17/Introduction-To-Manual-Backdooring) — 编写《手动植入后门入门》时创建的可执行文件。 **[79 星标]**
 - [guedou/TS-453Be](https://github.com/guedou/TS-453Be) — 在 QNAP TS-453Be 上运行 Ubuntu **[79 星标]**
 - [elliottophellia/Ryuumonbuchi](https://github.com/elliottophellia/Ryuumonbuchi) — 也许就是你在找的无界面 Ghidra MCP。 **[78 星标]**
-- [yaz0r/Noah](https://github.com/yaz0r/Noah) — Xenogears 反编译项目。 **[78 星标]**
+- [yaz0r/Noah](https://github.com/yaz0r/Noah) — Xenogears 反编译项目。 **[78 星标]** · 精选：[Noah：《异度装甲》反编译](https://awesomerea.org/zh/resources/noah-case/)
 - [cve-north-stars/cve-north-stars.github.io](https://github.com/cve-north-stars/cve-north-stars.github.io) — 以 CVE 为指引，开展漏洞发现与理解。 **[77 星标]**
 - [dukebarman/ghidra-builder](https://github.com/dukebarman/ghidra-builder) — 用于从源码构建 Ghidra 逆向工程框架的 Docker 镜像。 **[77 星标]**
 - [TomashuTTTT7/Hidecall](https://github.com/TomashuTTTT7/Hidecall) — 隐藏函数调用以防止逆向工程 **[77 星标]**
@@ -745,7 +745,7 @@
 - [ChekeEdd/ghidra-superfx](https://github.com/ChekeEdd/ghidra-superfx) — 适用于 Nintendo SuperFX／GSU-1／GSU-2 协处理器的 Ghidra 处理器模块（SLEIGH 规范）；这些增强芯片用于 Star Fox、Yoshi’s Island、Stunt Race FX 及 SNES 版 Doom。 **[2 星标]**
 - [ChowChowSonic/apkhound](https://github.com/ChowChowSonic/apkhound) — 一体化二进制程序，帮助定位、提取和识别不同 APK 版本间的变化。 **[2 星标]**
 - [Fabulu/Mixup](https://github.com/Fabulu/Mixup) — 手工将主机游戏反汇编代码转换为可读、可修改的 JavaScript，而非模拟运行。每个 ROM 例程都变为可自行掌控的 JS 函数，并与模拟器中运行的真实 ROM 逐帧验证。Batman（Game Boy）已完成，Gradius（NES）可从头玩到尾，DoDonPachi DaiOuJou（街机）仍在开发中，不含 ROM。 **[2 星标]**
-- [fredangstadt-lang/LineWarsII-DOS](https://github.com/fredangstadt-lang/LineWarsII-DOS) — 从发行版二进制文件将 1994 年 DOS 游戏 LineWars II 重建为 C 代码，并通过 41 项测试关卡对照原作，其中 27 项在模拟器中执行 1994 年的机器码。使用 Open Watcom 构建，在 DOSBox-X 中运行。经原作者许可作为免费软件提供。 **[2 星标]**
+- [fredangstadt-lang/LineWarsII-DOS](https://github.com/fredangstadt-lang/LineWarsII-DOS) — 从发行版二进制文件将 1994 年 DOS 游戏 LineWars II 重建为 C 代码，并通过 41 项测试关卡对照原作，其中 27 项在模拟器中执行 1994 年的机器码。使用 Open Watcom 构建，在 DOSBox-X 中运行。经原作者许可作为免费软件提供。 **[2 星标]** · 精选：[从发行二进制用 C 重建的 LineWars II](https://awesomerea.org/zh/resources/linewarsii-dos-case/)
 - [gfriloux/dragonsword-save-editor](https://github.com/gfriloux/dragonsword-save-editor) — DragonSword Awakening（2026）的存档编辑器：解密 SQLCipher 存档，并在本地浏览器界面编辑货币、物品、烹饪配方、服装、坐骑与称号。使用纯 Go，无需 CGO，为 Linux 与 Windows 提供单个静态二进制文件。 **[2 星标]**
 - [hexria/GhidraInsight](https://github.com/hexria/GhidraInsight) — 基于 Ghidra 和 MCP 的 AI 辅助逆向工程工具。 **[2 星标]**
 - [huku-/reveal](https://github.com/huku-/reveal) — 采用分治策略的二进制差异比较框架。 **[2 星标]**

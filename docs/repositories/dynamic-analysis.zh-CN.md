@@ -113,7 +113,7 @@
 - [andreafioraldi/r2angrdbg](https://github.com/andreafioraldi/r2angrdbg) — 在 radare2 调试器中使用 angr，并根据当前调试器状态创建 angr 状态。 **[34 星标]**
 - [NSEcho/fnoios](https://github.com/NSEcho/fnoios) — 将启动的 iOS 应用的标准输出（stdout）和标准错误（stderr）重定向至伪终端（pty） **[31 星标]**
 - [EmadAbedini/Dumplyzer](https://github.com/EmadAbedini/Dumplyzer) — 用于 DFIR、威胁狩猎、恶意软件分析和事件响应的开源内存取证平台。 **[29 星标]**
-- [Tixul/Ngpcraft\_emulator](https://github.com/Tixul/Ngpcraft_emulator) — Neo Geo Pocket / Color 模拟器，配有完整调试器以及同人翻译和 ROM 修改工具（.tbl 表、相对搜索、指针查找器、ROM 差异比较）。支持即时存档、倒带，提供 Windows/Linux/macOS 构建版本。 **[29 星标]**
+- [Tixul/Ngpcraft\_emulator](https://github.com/Tixul/Ngpcraft_emulator) — Neo Geo Pocket / Color 模拟器，配有完整调试器以及同人翻译和 ROM 修改工具（.tbl 表、相对搜索、指针查找器、ROM 差异比较）。支持即时存档、倒带，提供 Windows/Linux/macOS 构建版本。 **[29 星标]** · 精选：[Ngpcraft：带 ROM 魔改工具的 Neo Geo Pocket 模拟器](https://awesomerea.org/zh/resources/ngpcraft-case/)
 - [AkashaCorporation/HikariSystem-HexCore](https://github.com/AkashaCorporation/HikariSystem-HexCore) — 原生逆向工程 IDE。提供零开销二进制分析、完整 CPU 模拟（PE/ELF）和无界面自动化，通过 N-API 集成 Capstone、Unicorn、LLVM 与 Remill。 **[27 星标]**
 - [riyadmondol2006/ios-ssl-bypass-and-traffic-monitor](https://github.com/riyadmondol2006/ios-ssl-bypass-and-traffic-monitor) — iOS SSL 绕过与实时流量监控：基于 Frida 的脚本，可绕过 SSL 证书固定并实时监控 iOS 应用的网络流量。面向安全研究人员与合乎伦理的测试。📡🔓 **[24 星标]**
 - [yfe404/frida-mcp](https://github.com/yfe404/frida-mcp) — 用于 Frida 17 动态插桩的 MCP 服务器。 **[24 星标]** · 精选：[frida-mcp (yfe404)](https://awesomerea.org/zh/resources/frida-mcp-yfe404/)
