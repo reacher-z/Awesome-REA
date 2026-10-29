@@ -11,6 +11,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_readme import KIND_LABELS, RELATIONSHIPS
+from case_coverage import ENTRY_FIELDS, LEVELS, MATCH_FIELDS, SCOPES, STATES
 from validate import validate_citation, validate_resources
 from validate_papers import FIELDS as PAPER_FIELDS, OPTIONAL_FIELDS as OPTIONAL_PAPER_FIELDS, STATUSES as PAPER_STATUSES
 
@@ -72,6 +73,28 @@ class ContributorReferenceTests(unittest.TestCase):
             self.assertIn('null', rows[field], field)
         self.assertEqual((rows['kind'], rows['verification'], rows['runtime_tested']),
                          ('`research`', '`source-reviewed`', '`false`'))
+
+    def test_case_coverage_tables_match_validator(self):
+        text = (ROOT / 'data/README.md').read_text(encoding='utf-8')
+
+        def table(header):
+            tables = [table for table in markdown_tables(text) if table[0] == f'| {header} | Value | Meaning |']
+            self.assertEqual(len(tables), 1, header)
+            rows = {}
+            for row in tables[0][2:]:
+                cells = [cell.strip() for cell in row.strip('|').split('|')]
+                for field in re.findall(r'`([a-z_]+)`', cells[0]):
+                    self.assertNotIn(field, rows, field + ' is documented twice')
+                    rows[field] = cells[1]
+            return rows
+
+        entries, matches = table('Entry field'), table('Match field')
+        self.assertEqual(set(entries), ENTRY_FIELDS)
+        self.assertEqual(set(matches), MATCH_FIELDS)
+        self.assertEqual(set(re.findall(r'`([a-z-]+)`', entries['state'])), STATES)
+        self.assertEqual(set(re.findall(r'`([a-z-]+)`', entries['review_level'])), LEVELS)
+        self.assertEqual(set(re.findall(r'`([a-z]+)`', matches['scope'])), SCOPES)
+        self.assertEqual(set(re.findall(r'`([a-z]+)`', matches['catalog'])), {'resource', 'paper'})
 
     def test_resource_form_offers_each_kind_once(self):
         options = form_options('resource.yml', 'kind')
@@ -137,6 +160,20 @@ class ContributorReferenceTests(unittest.TestCase):
                     self.assertEqual(len(errors), 1, errors)
                     self.assertIn(problem, errors[0])
 
+
+    def test_pull_request_template_commands_match_the_contributor_guide(self):
+        template = (ROOT / '.github/PULL_REQUEST_TEMPLATE.md').read_text(encoding='utf-8')
+        guide = (ROOT / 'CONTRIBUTING.md').read_text(encoding='utf-8')
+        commands = re.findall(r'`((?:python3|node|npm) [^`]+)`', template)
+        self.assertGreaterEqual(len(commands), 10)
+        for command in commands:
+            self.assertIn(command, guide)
+        groups = re.findall(r'^([A-Z][^\n(]+) \(`', template, re.MULTILINE)
+        self.assertEqual(groups, ['Curated record', 'Research paper', 'Case-ledger entry', 'Code or site'])
+        self.assertRegex(template, r'(?m)^Closes #$')
+        self.assertIn('Pull requests are public. Remove tokens, cookies, account identifiers, local filesystem paths', template)
+        for generated in ('README.md', 'README.zh-CN.md', 'docs/repositories/', 'docs/case-coverage*.md'):
+            self.assertIn(generated, template.split('are generated')[0].rsplit('\n', 1)[-1])
 
 if __name__ == '__main__':
     unittest.main()

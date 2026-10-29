@@ -10,15 +10,15 @@ Publication date: **2026-10-20 UTC**.
 
 | Category | Repositories | Linked to curated entries or papers |
 | --- | ---: | ---: |
-| [Websites](web-analysis.md) | 214 | 24 |
-| [Games](game-analysis.md) | 484 | 55 |
+| [Websites](web-analysis.md) | 214 | 25 |
+| [Games](game-analysis.md) | 485 | 62 |
 | [Apps · Android](android.md) | 479 | 31 |
-| [Apps · Managed code](managed-code.md) | 136 | 5 |
-| [Native binaries](native-analysis.md) | 851 | 75 |
+| [Apps · Managed code](managed-code.md) | 135 | 5 |
+| [Native binaries](native-analysis.md) | 850 | 76 |
 | [Runtime and debugging](dynamic-analysis.md) | 145 | 18 |
-| [Firmware](firmware.md) | 221 | 17 |
-| [Protocols](protocol-analysis.md) | 109 | 7 |
-| [General tools and collections](reverse-engineering.md) | 670 | 43 |
+| [Firmware](firmware.md) | 221 | 18 |
+| [Protocols](protocol-analysis.md) | 110 | 8 |
+| [General tools and collections](reverse-engineering.md) | 670 | 63 |
 
 [Scan methodology](../source-scan.md) · [Scope exclusions](../../data/source-scope.json)
 

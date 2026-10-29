@@ -34,7 +34,7 @@
   },
   "r2ai": {
     "requirements": [
-      "需要 radare2 插件及本地模型或远程模型服务凭据。"
+      "需要 radare2 及匹配的 r2ai/decai 插件；配置本地模型，或所选远程服务商要求的凭据。"
     ]
   },
   "daila": {
@@ -106,7 +106,7 @@
   },
   "frida": {
     "requirements": [
-      "依赖目标平台的附加、server/Gadget 或签名条件。"
+      "需要主机端绑定或 CLI 工具，以及受支持的目标环境；移动端、server/Gadget 与签名要求因平台而异。"
     ]
   },
   "jadx": {
@@ -126,7 +126,7 @@
   },
   "ilspy": {
     "requirements": [
-      "选择桌面版或 ILSpyCmd 及匹配的 .NET 运行时。"
+      "选择桌面版或 ILSpyCmd 发行版及匹配的 .NET 运行时；前端与操作系统支持取决于具体版本。"
     ]
   },
   "dnspyex": {
@@ -169,7 +169,7 @@
   },
   "unblob": {
     "requirements": [
-      "需 Python 包及外部解包器，或带依赖的容器镜像。"
+      "需 Python 包及外部解包器，或自带依赖的 Docker 镜像；所需格式请查阅项目的依赖清单。"
     ]
   },
   "ghidra-firmware-utils": {
@@ -180,7 +180,7 @@
   },
   "qiling": {
     "requirements": [
-      "需为目标准备对应的根文件系统和依赖库；平台仿真覆盖有边界。"
+      "需要受支持的 Python 环境，并为目标准备对应的根文件系统和依赖库；仿真覆盖范围因平台而异。"
     ]
   },
   "unicorn": {
@@ -215,7 +215,7 @@
   },
   "gdb": {
     "requirements": [
-      "调试器需支持目标架构；可使用本地进程、核心转储或远程调试端点。"
+      "需要支持目标架构的 GDB 构建，以及获准调试的本地进程、核心转储、模拟器或远程调试端点。"
     ]
   },
   "rr": {
@@ -240,12 +240,12 @@
   },
   "ost2": {
     "requirements": [
-      "按课程说明选择前置知识与实验环境。"
+      "需要浏览器访问；按各课程公布的前置知识与实验要求选择课程。"
     ]
   },
   "pwn-college-re": {
     "requirements": [
-      "托管挑战需要平台账户及其运行环境。"
+      "需要浏览器访问；交互式挑战需要平台账户及其环境设置。"
     ],
     "name": "pwn.college：逆向工程"
   },
@@ -370,7 +370,7 @@
     "name": "Aegis：追踪登录验证码计算",
     "requirements": [
       "上游案例环境：Aegis 3.4.3、REA 6.1.0、jadx-headless-mcp 0.7.1、OpenJDK 21，Linux x64。",
-      "复现时使用匹配的官方 APK；本目录未重新运行该案例。"
+      "复现时使用匹配的官方 APK。"
     ]
   },
   "rea-ctf-case": {
@@ -483,7 +483,8 @@
   "il2cppdumper": {
     "name": "Il2CppDumper",
     "requirements": [
-      "需要匹配的 IL2CPP 可执行文件和 global-metadata.dat；文档支持 Unity 5.3–2022.2。"
+      "需要匹配的 IL2CPP 可执行文件和 global-metadata.dat；文档支持 Unity 5.3–2022.2。",
+      "据 2026-10-20 核查，最新发布版本为 v6.7.46（2024-07-06），master 分支最新提交为同日提交，比所审阅的提交晚四个提交，README 未改动；GitHub 记录的最后一次推送为 2024-08-18，仓库未归档，README 未标注其仍在维护、已被取代或已归档。"
     ]
   },
   "renderdoc-mcp": {
@@ -586,7 +587,7 @@
   "garbro": {
     "requirements": [
       "需要 Windows 与 .NET Framework 4.6 或更新版本；归档浏览和转换取决于已支持的游戏及格式。加密归档可能需要凭据或选择已识别的游戏。",
-      "审阅时最新 GitHub 版本仍为 v1.5.44（2019-03-31）。应将其视为旧版格式工具，按具体游戏确认支持情况，不应默认兼容新游戏。"
+      "审阅时最新 GitHub 版本仍为 v1.5.44（2019-03-31）。应将其视为旧版格式工具，按具体游戏确认支持情况，不应默认兼容新游戏。据 2026-10-20 核查，所审阅的 2023-10-27 提交仍是 master 分支最新提交，GitHub 记录的最后一次推送为 2024-07-08，仓库未归档，README 未标注其仍在维护、已被取代或已归档。"
     ]
   },
   "mobsf": {
@@ -828,7 +829,7 @@
   "hbctool": {
     "name": "hbctool Hermes 字节码汇编与反汇编工具",
     "requirements": [
-      "所审阅的软件包元数据版本为 0.1.5，标记为 Alpha，声明依赖 Python ^3.6 和 docopt ^0.6.2。本目录未测试其与当前 Python 解释器的兼容性。",
+      "所审阅的软件包元数据版本为 0.1.5，标记为 Alpha，声明依赖 Python ^3.6 和 docopt ^0.6.2。本目录未测试其与当前 Python 解释器的兼容性。据 2026-10-20 核查，v0.1.5 是最新标签和 PyPI 版本（上传于 2021-09-17），没有 GitHub 发布版本；所审阅的 2023-04-10 提交仍是 main 分支最新提交，GitHub 记录的最后一次推送为 2023-12-10，仓库未归档，README 未标注其仍在维护、已被取代或已归档。",
       "README 明确仅支持 HBC 版本 59、62、74 和 76。需提供兼容的 Hermes 字节码包，不能默认支持当前 Hermes 字节码版本。",
       "这是字节码汇编与反汇编工具，不代表完整恢复原始 JavaScript。溢出修补仍列为后续工作。采用 MIT 许可证。"
     ]
@@ -863,7 +864,7 @@
     "name": "Netzob 协议建模与推断框架",
     "requirements": [
       "上游 README 要求 Python 3.8+；核查的版本元数据列出 Linux x86/x64。源码构建需要原生编译工具、Python 头文件、libpcap／libffi 开发库，以及文档指定的 Graph::Easy 依赖。",
-      "核查时最新 PyPI 版本为 2.0.0，上传于 2023-01-08。所审阅源码头版本标为 2.0.1.dev0，不能视为更新的稳定版。其构建固定使用 Cython 0.29.32，并依赖 NumPy 1.24.1 等较旧版本；未测试与较新 Python 环境的兼容性。",
+      "核查时最新 PyPI 版本为 2.0.0，上传于 2023-01-08。所审阅源码头版本标为 2.0.1.dev0，不能视为更新的稳定版。其构建固定使用 Cython 0.29.32，并依赖 NumPy 1.24.1 等较旧版本；未测试与较新 Python 环境的兼容性。据 2026-10-20 核查，所审阅的 2023-01-08 提交仍是 master 分支最新提交，GitHub 最新发布版本同样是 2.0.0；GitHub 记录的最后一次推送为 2024-04-18，仓库未归档，README 未标注其仍在维护、已被取代或已归档。",
       "需要有代表性的原始报文／PCAP 记录，以及分析者选择的模型或符号。主动语法学习需要输入／输出符号、通信通道和目标进程控制。当前协议推断文档明确尚未完成；旧 GUI 教程不能视为当前 Python 库工作流。",
       "核查的源码声明 GPL-3.0-or-later，文档采用 CC-BY-SA。推断结果及生成模型需要分析者验证，不代表完整恢复协议语义、设备或应用。本次未安装，也未执行主动查询或模糊测试。"
     ]
@@ -923,8 +924,8 @@
       "需要用户自己的卡带转储、固定版本的 mwccarm 匹配编译器、单独的链接器及安装环境，以及 ndspy、Capstone、pyelftools 等 Python 工具。",
       "固定提交 README 报告 11,389/11,389 个函数已匹配，其中包括 108 个字节一致的汇编原语；接入 PC 移植的函数为 10,957 个。这些计数代表不同检查。",
       "同一 README 仍保留接近完成的旧表述，port/README.md 则描述历史冒烟构建阶段。匹配与移植可玩性应按各来源分别理解，不能视为已验证的完整可玩移植。",
-      "文档说明使用智能体辅助匹配，并配合源码审阅和重定位核对。本目录未获取 ROM、运行编译器或复现任何计数。",
-      "仓库有 MIT 许可证；原始游戏数据和外部编译器的权利另行处理。未建立 REA 隶属关系。"
+      "文档说明使用智能体辅助匹配，并配合源码审阅和重定位核对。",
+      "仓库有 MIT 许可证；原始游戏数据和外部编译器的权利另行处理。"
     ]
   },
   "goldeneye-pc-port-case": {
@@ -953,7 +954,7 @@
       "需要用户提供受支持的欧版 PAL RMCP01 revision 0 游戏数据。所审阅 0.8.3 构建的 Retro Rewind 6.13.3 支持需要另行获取匹配内容，并使用兼容的已编译配置。",
       "Android 面向 Android 9+ 的 ARM64/Vulkan 设备；iPhone/iPad 需要 iOS/iPadOS 16+。README 给出了 Apple Silicon macOS 14+ 的 PadMint／源码路线，但固定版本状态表仍将 Mac 标为实验性。tvOS 17+ 也仍为实验性预览。",
       "实体设备和模拟器检查只覆盖特定构建与设备。部分硬件仍有图形缺失、卡死、手柄和性能问题；Pixel 或 iPad 上成功不等于普遍兼容。",
-      "项目披露大量使用 AI 辅助，但没有经审计的代码生成比例。本目录未编译项目、获取游戏数据或复现测试。",
+      "项目披露大量使用 AI 辅助，但没有经审计的代码生成比例。",
       "KartPad 自有成果采用 GPL-3.0-only，保留上游组件条款。RIGHTS_AND_LICENSES 区分软件义务与游戏派生逻辑、资产；GPL 不会重新授权 Mario Kart Wii。"
     ]
   },
@@ -962,9 +963,9 @@
     "requirements": [
       "需要用户自己的 Super Smash Bros. N64 转储，并匹配文档中的哈希：美版 NTSC-U v1.0（NALE）或日版 v1.0（NALJ）。两个地区版本需分别构建；Torch 在源码构建时或打包版首次运行时于本地提取资产。",
       "README 列出 Windows、Linux、Apple Silicon macOS 和 Android 原生版本；原生 C 模组和 GameCube 适配器驱动仅限桌面平台。BUILDING.md 说明桌面源码构建，需要 Git/子模块、CMake 和 Python 3，Linux/macOS 另需 Ninja，Windows 需要 Visual Studio 2022 和 Windows SDK。",
-      "作者自述在 v0.3-beta 之前独自借助 Claude 开发，并表示项目现已不再是纯 AI 项目，感谢社区提供的测试、修复和功能。这些说法属于自述；ROM 身份检查和所描述的渲染、音频对比不能证明完整行为等价。",
+      "作者自述在 v0.3-beta 之前独自借助 Claude 开发，并表示项目现已不再是纯 AI 项目，感谢社区提供的测试、修复和功能；这些说法属于自述。",
       "LICENSE 仅对移植专用代码、构建脚本、工具和文档授予 MIT。反编译子模块及由其派生的文件遵从上游反编译项目，该项目未发布明确许可证；libultraship/Torch、随附字体和手柄映射保留各自条款；游戏权利另行处理。",
-      "本次仅审阅文档和许可范围，没有获取游戏转储、构建、运行模拟器或独立复现。未证实使用 REA。"
+      "ROM 身份检查和所描述的渲染、音频对比不能证明完整行为等价。"
     ]
   },
   "agent-decompilation-oracle-case": {
@@ -1150,7 +1151,8 @@
       "主项目面向桌面 Windows、Linux 和 macOS。列表中的主机、移动端和浏览器移植指向其他项目，不代表此仓库具有同样的平台支持。",
       "源码构建需要 C++11、CMake、SDL2 和 SDL2_mixer。README 给出 Visual Studio、GCC/Clang 和 Xcode 构建路径，macOS 可选择 x86_64 或 arm64。",
       "README 报告所有子程序均已反编译并转为 C++；这不等于独立核验过逐字节一致重构建。Full Tilt 的功能完善及其另外两张球桌的潜在支持仍是单独计划。",
-      "此仓库采用 MIT 许可；原游戏资源和依赖保留各自条款。未证实 REA 使用，本合集未运行游戏、编译器或外部移植项目。"
+      "此仓库采用 MIT 许可；原游戏资源和依赖保留各自条款。未证实 REA 使用，本合集未运行游戏、编译器或外部移植项目。",
+      "据 2026-10-20 核查，最新发布版本为 Release_2.1.0（2023-10-16）；所审阅的 2024-08-21 提交仍是 master 分支最新提交，也是 GitHub 记录的最后一次推送，仓库未归档，README 未标注其仍在维护、已被取代或已归档。"
     ]
   },
   "universal-radio-hacker": {
@@ -1230,7 +1232,8 @@
       "文档中的构建使用 GNU make、Python 3.6+、MIPS binutils、pkgconf 和宿主开发工具。Windows 指南采用 WSL/Linux；macOS 指南要求合适的 MIPS 工具链及较新的 GNU make。",
       "Makefile 通常把输出 ROM 的 SHA-1 与所选参考哈希比较；NON_MATCHING、非 N64 目标或非标准配置会关闭比较。修改构建成功不等于获得匹配结果。",
       "固定版本 Jenkins 配置明确为 iQue 和增强补丁构建设置 COMPARE=0，因此不能把五版本构建矩阵称为五个已独立确认的逐字节一致结果。本合集未构建或运行游戏。",
-      "仓库包含 CC0-1.0 声明；该声明不提供原 Nintendo 内容或其他第三方权利。所审阅文件未证实 REA 或编程智能体参与。"
+      "仓库包含 CC0-1.0 声明；该声明不提供原 Nintendo 内容或其他第三方权利。所审阅文件未证实 REA 或编程智能体参与。",
+      "据 2026-10-20 核查，所审阅的 2023-08-17 提交仍是 master 分支最新提交，GitHub 记录的最后一次推送为 2024-02-04；仅有的 GitHub 发布版本是 2019 年的 qemu-irix 辅助程序，并非游戏构建，仓库未归档，README 未标注其仍在维护、已被取代或已归档。"
     ]
   },
   "unleashed-recompiled-case": {
@@ -1350,45 +1353,45 @@
   "njfe-ear-camera-bridge-case": {
     "name": "NJFE：用于电脑检查的 Soulear 相机协议桥接",
     "requirements": [
-      "输入是相机的 Wi-Fi i4season／Soulear UDP 流量。ESP32-C3 SuperMini 配合文档所列的 0.42 英寸、72×40 SSD1306 OLED，重组 JPEG 帧，并通过自定义 USB CDC 串口将图像与加速度计元数据送入项目提供的 Python 查看器。输出不是 UVC 摄像头接口；文档将相机自身的 USB 口描述为仅供充电。项目没有恢复厂商相机固件或完整配套应用源码。",
-      "文档中的构建使用 PlatformIO espressif32 6.11.0、Arduino core 2.0.17 和 U8g2 ^2.35.30。电脑工具需要带 Tkinter 的 Python，以及 pyserial >=3.5、opencv-python >=4.8、NumPy >=1.24、Pillow >=12.3.0。项目报告在 Windows 上测试；这并不确立对所有桌面系统或外观相似耳镜相机的支持。",
-      "README 与 NOTICE 将数据包格式、命令、帧组装及加速度计／旋转逻辑归功于 rubec 的 rbeilvert/otoscope；该项目说明其逆向了 Soulear 的 libWifiCamera.so。NJFE 报告使用 Claude Code 辅助研究、实现、工具和文档，人类提供硬件、作出决策并进行真机测试。这不代表 Claude 首次发现协议，也不确立 REA 参与；NJFE 未固定其借用的 otoscope 具体修订版本。",
-      "作者报告仅测试一台固件为 HKV41B 的 Hopefox Find T，获得 480×480 JPEG、约 17 fps，并支持拍照、MJPG AVI 录像、旋转和 LED 控制。公开查看器的 --test N 模式接收并解码 N 个实时帧，保存最后一张图像并输出帧率，需连接硬件。所审阅源码树没有单独的离线一致性测试样例集。这些报告与源码中的帧检查不确立完整协议兼容性；本合集未运行工具或复现硬件结果。",
-      "相机网络仍然开放且未经认证。SECURITY.md 说明桥接器接收 UDP 流量时不验证来源，可能收到注入的图像或回复；串口访问被视为可信，录像以未加密形式保存。本地 USB 桥接没有消除这些相机网络限制。项目将其定位为检查工具，而非用于诊断或治疗的医疗器械。",
-      "NJFE 在 README、NOTICE 和 REUSE 元数据中声明 GPL-3.0-or-later，并标明协议代码及姿态角计算派生自 GPL otoscope。第三方构建／运行时库保留各自许可证。公开源码审阅不授予厂商软件或图像的使用权；本次未使用专有应用、固件二进制、图像采集数据、设备或上游运行环境。"
+      "输入是相机的 Wi-Fi i4season／Soulear UDP 流量。ESP32-C3 SuperMini 配合 0.42 英寸、72×40 SSD1306 OLED 重组 JPEG 帧，并通过自定义 USB CDC 串口将图像与加速度计数据送入查看器。输出不是 UVC 摄像头，相机自身的 USB 口仅供充电，项目也未恢复厂商固件或完整应用源码。",
+      "构建使用 PlatformIO espressif32 6.11.0、Arduino core 2.0.17 和 U8g2 ^2.35.30；电脑工具需要带 Tkinter 的 Python，以及 pyserial >=3.5、opencv-python >=4.8、NumPy >=1.24 和 Pillow >=12.3.0。项目只报告了 Windows 测试。",
+      "数据包格式、命令、帧组装与旋转逻辑归功于 rbeilvert/otoscope，该项目逆向了 Soulear 的 libWifiCamera.so；NJFE 未固定所借用的修订版本。借助 Claude Code 不代表 Claude 首次发现该协议，也未显示 REA 参与。",
+      "结果仅来自一台固件为 HKV41B 的 Hopefox Find T（480×480 JPEG，约 17 fps）。--test N 模式需要连接硬件，且没有离线一致性测试集，因此不能确立完整协议兼容性。",
+      "相机网络是开放的：桥接器接收未经认证、可能被注入图像或回复的 UDP 流量，串口访问被视为可信，录像未加密保存。项目定位为检查工具，而非医疗器械。",
+      "采用 GPL-3.0-or-later，协议代码与姿态角计算派生自 GPL otoscope；第三方库保留各自许可证，也不授予厂商软件或图像的使用权。"
     ]
   },
   "leanrea-skill": {
     "name": "LeanREA 命令行逆向分析技能",
     "requirements": [
-      "LeanREA 是供具备终端访问能力的智能体使用的纯文本技能，不安装分析引擎、不实现反编译器，也不要求 REA MCP 服务。手动安装需要兼容的技能客户端；可选的 npx 安装方式需要 Node.js/npm。不同目标的命令依赖各自工具，例如 ripgrep、jq、Go、Electron asar 工具或 Xcode 命令行工具。部分示例需要调整或另行提供文件，包括仓库未附带的 DecompileAll.java。",
-      "作者报告的基准使用 Claude Code 2.1.301、Sonnet 5.5 与 macOS arm64：围绕三个输入产物提出四项问题，三个实验组各重复三次，共 36 次运行。输入为 Notion 7.35.1 的 app.asar、mac_utils.node，以及使用 Go 1.27.1 构建的 gh 二进制；对照组通过 MCP 使用 rea-agents 6.5.0 及其官方技能。复现需要自行获取本地目标、Python 3、Node/npm、相关 macOS 工具及已认证的模型服务；仓库不提供目标二进制。",
-      "公开指标按每组 12 次运行汇总。LeanREA 得到 74/75 项检查，对照 REA 为 75/75；耗时约为 388 对 627 秒，费用为 2.17 对 3.36 美元，交互轮数为 55 对 124。这些是作者提供的记录，并非独立测量，也不是相同准确率。无技能组的原始记录合计为 66/75，正文因一处作者报告的正则误判将其修正为 67/75；对应回答未公开，本合集无法独立确认该修正。",
-      "答案依据是针对部分事实手工编写的正则表达式，不是可执行的行为等价测试或完整功能重建验收。公开文件包含指标与未命中键名，没有回答转录或目标哈希。运行器默认使用可变的 sonnet 别名，并允许通过 BENCH_MODEL 覆盖；公开指标未记录最终解析的模型标识。计时范围是准备工作目录之后的模型子进程，三个实验组并发运行。这些边界限制了复现能力和对耗时差异的归因。",
-      "400.7k token 来自关闭工具检索、一次加载全部工具的独立上下文探针，并非 36 次主对照使用的配置；主对照中的 REA 组采用按需工具检索。实验未安装原生分析引擎，也未评估 Android 任务；其他目标的命令示例不等于经过测试的覆盖能力。REA 本身同时提供 CLI 与 MCP 接口，因此该基准不能证明 LeanREA 替代所有 REA 工作流。",
-      "固定版本的项目为技能和基准代码声明 MIT，并将许多工作流细节归功于 REA 的代码与文档，同时明确声明双方没有隶属关系。外部分析工具、模型服务与目标应用仍有各自要求及条款。基准文档自标日期为 2026-10-16，初始公开提交日期为 2026-10-17；此后至审阅版本只修改了 README。本合集仅审阅源码并重新汇总公开指标，未运行技能、模型、工具或目标。"
+      "供具备终端访问能力的智能体使用的纯文本技能；不安装分析引擎或反编译器，也不需要 REA MCP 服务。手动安装需要兼容的技能客户端，可选的 npx 安装方式需要 Node.js/npm。各类示例依赖各自工具，例如 ripgrep、jq、Go、Electron asar 工具或 Xcode 命令行工具；仓库未附带 DecompileAll.java。",
+      "作者的基准使用 Claude Code 2.1.301、Sonnet 5.5 与 macOS arm64，目标为 Notion 7.35.1 的 app.asar、mac_utils.node 以及用 Go 1.27.1 构建的 gh 二进制，对照组通过 MCP 使用 rea-agents 6.5.0。复现需要自行获取这些本地目标，以及 Python 3、Node/npm、macOS 工具和模型服务。",
+      "每组 12 次运行中，LeanREA 得到 74/75 项检查，REA 为 75/75，耗时、费用和轮数更少；这些是作者记录，并非独立测量。无技能组由 66/75 修正为 67/75，所依据的回答未公开。",
+      "答案依据是手工编写的正则表达式，不是行为等价测试。回答转录、目标哈希及最终解析的模型标识（默认为可变的 sonnet 别名）均未公开，三个实验组并发运行。",
+      "400.7k token 来自一次加载全部工具的独立上下文探针，并非对照实验配置。未测试原生分析引擎与 Android；REA 也提供 CLI，因此不能证明 LeanREA 可替代 REA 工作流。",
+      "技能与基准代码采用 MIT，并将工作流细节归功于 REA 的代码与文档，同时声明没有隶属关系；外部工具、模型服务与目标仍有各自条款。"
     ]
   },
   "baocut-slides-editor-case": {
     "name": "BaoCut Slides：交互式网页编辑器改编",
     "requirements": [
-      "本条目仅覆盖固定版本的 Slides 组件；作者称其实现借鉴自 Claude Slides，并非整个 BaoCut 产品。组件包含编辑器运行时、支持有限 HTML/CSS 子集的幻灯片编译器，以及新建的 BaoCut 宿主。文稿使用 v4 deck.json 索引、逐页 HTML 与本地素材。所审阅的设计／运行时说明未标明 Claude Slides 的确切版本或提取记录，也未确立净室重建过程或对 Anthropic 原有云端后端的恢复。",
-      "构建编辑器需要 Node.js >=22.12.0、npm 工作区依赖及 apps/slides-editor 构建产物；文件、标注和下载能力由 BaoCut Runtime／宿主提供。运行时声明 React ^19.3.0，以及带项目补丁的 PptxGenJS 3.12.0。完整 BaoCut 源码构建另需 Rust/Cargo、CMake 和对应平台的 C++ 工具；Apple Silicon 原生推理需要完整 Xcode／Metal。由智能体创建文稿还需要已配置的 Codex CLI 或 Claude Code 等引擎，并遵守其账号与服务条款。",
-      "文档中的实现采用单用户、本地文件存储，提供带版本／冲突检查的本地保存、素材路由与外部改动通知。冲突检查在写入前完成；逐文件写入不代表具备整批事务回滚能力。明确不包含共享房间／在线状态、分享链接、持久化评论线程，以及发送到 Google Drive／Google Slides。外部更新可能重载编辑器，丢失选中内容与滚动位置。虽然已有导出代码，设计仍把 PPTX/PDF 下载列入 P1；这些文档未确立完整的导出兼容性。",
-      "设计说明报告了 Web 标注流程的端到端验证，同时明确表示该流程未在 Electron 中实测。公开测试覆盖本地文件发布／冲突、HTTP 读写边界及标注转交；部分宿主测试使用模拟 fetch，智能体运行器测试使用模拟驱动。若构建后的编译器不可用，HTML/CSS 编译与往返检查会被跳过。这些是实现自身的测试，并非与原版 Claude 对照的测试基准，也不能证明完整的视觉／行为一致性；本合集未运行这些测试。",
-      "根目录的 BaoCut Community License 1.0 是源码可见许可：允许其规定的个人／内部使用及内容创作，将软件／代码商业化或进行商业托管则需另行许可。第三方组件保留各自条款，包括已列明的 PptxGenJS MIT 与内嵌 mediabunny MPL-2.0 声明。这些依赖声明不能确立所复用的 Claude 相关材料或随包图标字体的复用权；运行时说明指出该字体需要更换。本次来源审阅不授予这些权利，也不将整个组件视为宽松许可的开源项目。",
-      "BaoCut 记录了智能体参与文稿创建与标注的工作流，但所审阅案例来源未确立改编代码所用的具体模型或 REA 参与。支持 Claude Code／Codex 引擎，不等于证明重建方法。请使用已获独立授权的幻灯片内容，并遵守外部素材／字体条款。本次仅审阅固定版本的源码与测试定义，未运行应用、模型或测试，也未获取随包字体、媒体或应用安装包。"
+      "仅覆盖固定版本的 Slides 组件，不涵盖整个 BaoCut：包括编辑器运行时、支持有限 HTML/CSS 子集的幻灯片编译器和新建的 BaoCut 宿主；文稿由 v4 deck.json 索引、逐页 HTML 与本地素材组成。说明未标明 Claude Slides 的版本或提取记录，也未确立净室重建过程。",
+      "需要 Node.js >=22.12.0、npm 工作区依赖、apps/slides-editor 构建产物及 BaoCut Runtime／宿主；运行时声明 React ^19.3.0 与带项目补丁的 PptxGenJS 3.12.0。完整 BaoCut 构建另需 Rust/Cargo、CMake 和 C++ 工具，Apple Silicon 推理需要完整 Xcode／Metal。由智能体创建文稿需要 Codex CLI、Claude Code 或其他已配置引擎，并遵守其条款。",
+      "单用户、本地文件存储，逐文件冲突检查不代表整批回滚。共享房间／在线状态、分享链接、持久化评论线程及发送到 Google Drive／Slides 均不在范围内；PPTX/PDF 下载仍列于 P1。",
+      "端到端验证只覆盖 Web 标注流程，不含 Electron；公开测试使用模拟组件，也未与原版对照。",
+      "BaoCut Community License 1.0 是源码可见许可：允许个人／内部使用及内容创作，将代码商业化或进行商业托管需另行许可。PptxGenJS（MIT）与 mediabunny（MPL-2.0）保留各自条款；来源未确立 Claude 相关材料或随包图标字体的复用权，该字体计划替换。",
+      "来源既未确立所用模型，也未确立 REA 参与；请使用已获独立授权的幻灯片内容。"
     ]
   },
   "pocket-tasks-reconstruction-case": {
     "name": "Pocket Tasks：重建任务状态与持久保存行为",
     "requirements": [
-      "Pocket Tasks 1.0.0 是作者自编的本地命令行应用，不是商业应用或原生二进制评测基准。另行编写的 Node.js 20+ 候选实现支持九条命令与 schema-1 JSON 存储，包括已保存／草稿分离、显式保存、取消、重启及原有按行位置选择的特殊行为。它只需 Node 标准库与一次性本地数据文件；没有图形界面或网络后端。",
-      "历史调查结合了 REA 对 JavaScript 源码的分析、普通源码阅读和记录下来的进程／文件观察。经脱敏的 REA 摘录标识了相同目标字节，但保留语义覆盖未知及 230 项语义未知。这不是规范 Evidence 包或独立证明，解析覆盖也不等于行为等价。后续 Node 验证器不重跑该次 REA 会话。",
-      "实现前，作者已看过目标源码、评审场景、测试及先前答案。候选只导入 Node 的文件系统／路径模块；公开测试定义会单独复制候选文件，再检查保存行为。运行时不依赖参考实现，不代表独立发现、盲测、净室来源或智能体／模型性能结果。",
-      "保存的报告记录了 12 个场景中的 16/16 次检查器进程会话，以及七个场景中捕获观察的 10/10 次回放。两组存在重叠，不能合计为 26 次独立观察。检查器使用固定、人工编写的期望值；响应与保存的 JSON 按语义比较，需保护的畸形数据文件与外来临时文件则检查字节保留。报告仍标注 humanReview=pending、reaTrial=unverified 和 independentEvaluation=false；这些是作者报告的结果，本合集未重新运行。",
-      "报告中的目标／候选／观察／验证器／检查器／证据包工具六项哈希及预期场景摘要，与所审阅源码一致。但证据包中 TASK.md 的哈希对应较早的指令版本：后续修改只调整了审阅／授权措辞，未改变行为约定。应将该证据包记录视为历史证据，而非对当前包中每个文件的新验证。失败历史还保留了受限 Windows 环境下五项通过、四项失败的首次尝试，以及在允许执行的本地环境中、候选代码未变时九项通过的后续尝试。",
-      "约定限制每次调用最多 64 条命令、65,536 个 UTF-8 字节，最多保存 32 个任务，标题最多 80 个 UTF-16 码元。覆盖仅限列明的行为和测试；并发写入、崩溃持久性、恶意文件系统竞态、界面行为、隐藏后端和生产性能均不在一致性主张内。MIT 覆盖作者自编示例；上游 REA 及其他链接材料另行处理。本次未执行目标、候选、检查器、安装器、模型或上游测试。"
+      "Pocket Tasks 1.0.0 是作者自编的本地命令行应用，不是商业应用或原生二进制评测基准。Node.js 20+ 候选实现支持九条命令与 schema-1 JSON 存储，只需标准库和一次性本地数据文件；没有图形界面或网络后端。",
+      "REA 摘录标识了相同目标字节，但语义覆盖仍属未知，保留 230 项语义未知；它不是规范 Evidence 包，后续 Node 验证器也不重跑该次 REA 会话。",
+      "实现前作者已看过目标源码、场景、测试及先前答案，因此运行时独立不代表独立发现、盲测、净室来源或模型结果。",
+      "报告中 12 个场景的 16/16 次检查器会话与七个场景的 10/10 次回放互有重叠，不能合计为 26 次独立观察；期望值为人工编写，报告仍标注 humanReview=pending、reaTrial=unverified 和 independentEvaluation=false。",
+      "六项记录哈希与预期场景摘要和所审阅源码一致，但 TASK.md 证据包哈希对应仅措辞不同的较早版本，因此该证据包属历史证据。受限 Windows 环境下的首次尝试五项通过、四项失败，之后代码未变时九项通过。",
+      "限制：每次调用最多 64 条命令和 65,536 个 UTF-8 字节，最多 32 个任务，标题最多 80 个 UTF-16 码元。并发写入、崩溃持久性、文件系统竞态、界面、隐藏后端和生产性能不在一致性主张内。MIT 仅覆盖作者自编示例。"
     ]
   },
   "open-scrantic-screensaver-case": {
@@ -1437,11 +1440,11 @@
   "universal-modder-agent-toolkit": {
     "name": "Universal Modder 游戏模组智能体工具包",
     "requirements": [
-      "所审阅的固定版本对应 Python 包 0.2.0。它提供十二个 Agent Skills 格式的技能、三份子智能体角色文件、um 命令行工具，以及各客户端连接托管 fal MCP 服务的配置，并说明 Claude Code、Codex、Gemini CLI、VS Code／Copilot、Cursor 与 OpenCode 的安装方式。宿主需 Git、Python 3.10+ 与 ffmpeg，建议使用 uv；只有 3D 转精灵渲染需要 Blender。Windows 截图、输入与启动命令可在本机或通过 WSL 运行。",
-      "工作对象是用户自有的游戏安装。工具包不提供游戏文件、ROM 或反编译代码，并要求智能体把反编译结果与提取的素材放在仓库之外。生成素材需要 fal API 密钥或 fal 的浏览器登录；本地 ComfyUI 服务可替代图像生成，Sprixen 则是另行付费的 API。技能中提到的反编译器、调试器、加载器和 MCP 服务，例如 ILSpy、Cpp2IL、Ghidra、IDA、Cheat Engine、Frida 与 RenderDoc，均需另行安装。",
-      "逆向分析技能要求智能体阅读反编译代码、数据或实时内存，以动态方式确认推测，并在写入新文件前用“解码—编码—解码”往返检查证明逆向得到的文件格式。它报告 Age of Empires II DE 的 .sld 写入器在一个原版精灵上以 0.9/255 的平均误差通过验收，另有一条移植的 Terraria Boss 移动规则与记录的速度数据吻合 99.9%。AoE2 示例报告于 2026 年 9 月在游戏中测试；这些均为作者结果，本合集未复现。",
-      "仓库 CI 运行 Python 测试、全部命令行帮助页面、知识库索引检查，以及阻止发布游戏文件、反编译代码和密钥的发布检查。这些检查覆盖工具包本身，不代表某个模组能在特定游戏中运行。知识库实践笔记由智能体撰写并经 PR 审阅，状态与验证部分为自行声明，并非经独立核实的兼容性记录。本合集仅审阅源码与文档，未运行命令行工具、技能、游戏或示例。",
-      "项目规则将工作限定于用户自有的游戏，且只在离线或用户自建服务器上进行；拒绝注入受反作弊保护的在线客户端、拒绝编写针对其他玩家的作弊程序，也拒绝绕过 DRM、反作弊或所有权检查。仓库为其代码声明 MIT，并附带 SIL OFL 授权的字体；生成素材遵循 fal 及所用模型的条款，游戏、加载器与外部工具仍有各自条款。其安全说明援引了未分发素材的项目仍遭下架的事例。所审来源未确立与 REA 的关联。"
+      "Python 包 0.2.0 提供十二个技能、三份子智能体角色文件、um 命令行工具，以及 Claude Code、Codex、Gemini CLI、VS Code／Copilot、Cursor 与 OpenCode 连接 fal MCP 的配置。宿主需要 Git、Python 3.10+ 与 ffmpeg（建议使用 uv；仅 3D 转精灵渲染需要 Blender）；Windows 截图、输入与启动命令可在本机或通过 WSL 运行。",
+      "工作从用户自有的游戏安装开始；不提供游戏文件、ROM 或反编译代码，反编译结果与提取的素材应放在仓库之外。生成素材需要 fal API 密钥或浏览器登录；本地 ComfyUI 可替代图像生成，Sprixen 是另行付费的 API。技能中提到的 ILSpy、Cpp2IL、Ghidra、IDA、Cheat Engine、Frida 与 RenderDoc 等工具需另行安装。",
+      "AoE2 DE .sld 写入器在原版精灵上 0.9/255 的平均误差、2026 年 9 月的游戏内测试，以及 Terraria 移动规则移植 99.9% 的速度吻合度，均为作者结果。",
+      "CI 检查的是工具包本身（测试、命令行帮助、索引，以及阻止发布游戏文件、反编译代码和密钥的检查），不代表模组能在特定游戏中运行。实践笔记由智能体撰写、验证情况自行声明，并非独立的兼容性记录。",
+      "项目规则将工作限定于自有游戏，且只在离线或自建服务器上进行；拒绝注入受反作弊保护的在线客户端、针对其他玩家的作弊，以及绕过 DRM、反作弊或所有权检查。代码采用 MIT，字体采用 SIL OFL；生成素材遵循 fal 及模型条款，游戏与工具适用各自条款。所审来源未确立与 REA 的关联。"
     ]
   },
   "browserbase-claude-chrome-bridge-case": {
@@ -1624,11 +1627,11 @@
   "baocut-design-canvas-case": {
     "name": "BaoCut Design：移植重建的设计稿与设计系统编辑器",
     "requirements": [
-      "本条目覆盖固定版本提交中加入的设计稿（画布）与设计系统编辑器，不涵盖整个 BaoCut 产品，也不涵盖另行收录的 Slides 编辑器。运行时 README 称二者分别按 1:1 移植自原编辑器类型的 TypeScript 重建（src/design-type、src/design-system-type），保留文件格式、界面、行为与模块结构，BaoCut 托管所需的改动以 BaoCut: 注释标出。这些重建工程及其笔记与证据不在本仓库中，来源也未写明对应的原版确切版本。",
-      "托管改动将原有的 globalThis.claude 宿主接口换成 BaoCut 的 shim，清空父窗口 origin 白名单，关闭使用分析，并去掉多人房间、sample 及从托管地址安装设计系统等能力。移植版不内置 Anthropic Sans 而改用系统字体，但仍内联原有的 Anthropicons 图标字体；README 称其分发许可待确认，且计划替换。请使用已获独立授权的设计内容与素材。",
-      "构建编辑器需要 Node.js >=22.12.0、npm 工作区依赖，以及 apps/design-editor 与 apps/design-system-editor 的构建。画布运行时在工作区的 React 19 之外为画板保留 React 18.3.1，并使用 Babel standalone 7.29.0、happy-dom、jQuery 与 dom-to-svg；完整 BaoCut 源码构建另需 Rust、CMake 及平台构建工具。由智能体制作设计稿时，经已配置的本机智能体 CLI（如 Codex）使用 BaoCut 内置的 design 与 design-system skill，并遵守其账号与服务条款。",
-      "design-runtime 的 README 报告：先对照原脚本修正标识符，再用 Babel 做结构指纹比对，原画布主页面 20463 个函数中有 19111 个完全一致；其余仅绑定不同的函数都在依赖中，而 1019 个结构有差异的最内层函数以及被改名的 property-scrubber 内部属性仍未审阅，属残余风险。公开测试覆盖设计稿检查、文件路由与授权、下载及标注目标，验收用例 UI-11–UI-13 描述了 Web／桌面端的手动流程。这些都不是与原服务对照的行为测试基准；本合集未运行它们。",
-      "根目录的 BaoCut Community License 1.0 是源码可见许可：允许个人、内部使用及内容创作，将 BaoCut 或其代码商业化则需另行许可。第三方声明涵盖随包的 npm 依赖，但不能确立所重建的 Claude Design 代码或图标字体的复用权。作者帖子未说明此次移植使用了 REA；后来的第三方帖子所称的 REA 使用未获作者或仓库证实。本次仅审阅固定版本的来源，未运行编辑器、智能体或测试。"
+      "覆盖固定版本提交中加入的设计稿（画布）与设计系统编辑器，不涵盖整个 BaoCut，也不涵盖另行收录的 Slides 编辑器。作为来源的重建工程（src/design-type、src/design-system-type）及其证据未公开，也未写明对应的原版版本。",
+      "BaoCut shim 取代 globalThis.claude 宿主接口，父窗口 origin 白名单为空，使用分析关闭，多人房间、sample 及托管设计系统安装均被去除。系统字体取代 Anthropic Sans，但仍内联 Anthropicons 图标字体，其许可待确认且计划替换；请使用已获独立授权的内容。",
+      "需要 Node.js >=22.12.0、npm 工作区依赖以及 apps/design-editor 与 apps/design-system-editor 的构建；画布在 React 19 之外为画板保留 React 18.3.1，并使用 Babel standalone 7.29.0。完整构建另需 Rust、CMake 及平台工具；智能体制作设计稿使用已配置的本机智能体 CLI（如 Codex）。",
+      "除函数比对结果外，1,019 个结构有差异的最内层函数及被改名的 property-scrubber 内部属性仍未审阅。公开测试与手动验收用例 UI-11–UI-13 都不是行为测试基准。",
+      "BaoCut Community License 1.0 是源码可见许可：仅允许个人、内部使用及内容创作，将 BaoCut 或其代码商业化需另行许可。第三方声明不能确立所重建的 Claude Design 代码或图标字体的复用权。作者未说明此次移植使用 REA，第三方关于 REA 的说法未获证实。"
     ]
   },
   "project-arwing-star-fox-recomp-case": {
@@ -1914,7 +1917,7 @@
     "name": "C2C：《古惑狼 2》的混合重编译与手工反编译",
     "requirements": [
       "运行需要用户自有的 PAL 版《古惑狼 2》光盘原始 BIN 镜像（含完整扇区头）及该光盘中的 SCES_009.67 可执行文件，另需第三方 PlayStation 模拟器的 GPU、SPU 和两个手柄插件，以及一个 128 KB 记忆卡文件；仓库不附带游戏数据。",
-      "仅支持 Windows：主程序在 Cygwin 下使用 GNU Make、GCC 和 SDL2 构建，模拟器库需要 Microsoft Visual C++ 2005 或更高版本，可选的 C# 反汇编器需要 Visual C# 2005 或更高版本。develop 分支的开发集中在 2015 年 1 月至 4 月，没有发布版本。",
+      "仅支持 Windows：主程序在 Cygwin 下使用 GNU Make、GCC 和 SDL2 构建，模拟器库需要 Microsoft Visual C++ 2005 或更高版本，可选的 C# 反汇编器需要 Visual C# 2005 或更高版本。develop 分支的开发集中在 2015 年 1 月至 4 月，没有发布版本。据 2026-10-20 核查，GitHub 记录的最后一次推送为 2020-09-30，仓库未归档，README 未标注其仍在维护、已被取代或已归档。",
       "README 警告该软件不适合日常使用，也未报告可游玩程度。其转换器几乎不做反编译，也不解析间接跳转或跳转表，因此代码区域须手工列出；docs/FUNCTIONS.md 在列出的 818 个函数入口中仅为 18 个命名。",
       "项目未公布字节一致或等价性检查，本合集也未构建或运行。仓库没有许可证文件；源自 PCSX-R 的模拟器源码带有 GPL-2.0 或更高版本的文件头，原游戏保留各自权利。所审来源未记录 REA 或 AI 参与。"
     ]
@@ -2511,11 +2514,11 @@
   "destiny2-build-86657-reconstruction-report-case": {
     "name": "Destiny 2 build 86657：Sunrise／Dawn 重建研究报告",
     "requirements": [
-      "所审阅版本日期为 2026 年 9 月 21 日，共 20 章、289 条来源记录（280 份 Markdown 笔记、两份 PDF 文本摘录与七份源码摘录），并以哈希清点 2,832 个实现文件和 336 个 lanes 归档文件。内容涵盖 build 86657.20.08.23.1800.d2_rc 的 BAP 安全服务、匹配与对等通道、活动复制、包结构、任务重建、持久化及原生钩子。报告说明其资料不能证明已恢复 Bungie 完整后端，也不构成适用于全部原版任务的通用解释器。",
-      "原生实验依赖另行获得的已归档 Destiny 2 build 86657 客户端及其游戏包；报告既不提供这些文件，也不说明获取方式。游戏二进制、包内容、美术素材、清单数据库、凭据、个人存档、原始运行捕获以及两份所提供的 PDF 均未公开。部分被引用的二进制夹具与跟踪记录同样缺失，报告将此列为无法仅凭本仓库独立复现的限制。",
-      "所描述的重建以代理 DLL 形式运行在游戏进程内，结合 Steam 平台接口与登录模拟、嵌入式服务层、C++ 原生契约，以及 Lua 或 C++ 任务定义。ATTRIBUTION.md 指明独立的 Dawn 项目承担重建与集成工作，并以 Sunrise 与 Sundial 的研究为基础。其源码采集自基于提交 e801e23e、带有修改的工作区，因此以文件哈希而非该提交标识所采集的文件；检查报告本身只需 Python 及仓库自带的两个脚本。",
-      "随附的验证记录报告：报告组装、1,191 个本地链接、引用、证据哈希、37 条论断引用及部分发布排除项均通过检查，但不含游戏或原生运行测试。其验收表记录了一次完整的 Omega 通关、其他任务的若干已验收段落，以及不含屏障战与 Argos 战的 Eater of Worlds 可玩片段；Spark 实机测试、原生世界的一致恢复和分离式镜头行为仍未验证或未实现。本合集只阅读报告与证据元数据，未运行其脚本、游戏或实现。",
-      "仓库未声明整体许可证。ATTRIBUTION.md 为所含源码摘录保留 Dawn 的 GPL-3.0 文本，署名 Sunrise 与 Sundial 贡献者，不声称获得 Bungie 认可，也不对第三方材料重新授权。报告针对已归档版本的本地重建，并说明其安全发现并非针对当前在线游戏的漏洞主张。报告未记录借助 Claude 或其他 AI 反编译，也未记录在引擎内重建素材；所审来源未确立与 REA 的关联。"
+      "所审阅版本日期为 2026 年 9 月 21 日，共 20 章、289 条来源记录，并以哈希清点 build 86657.20.08.23.1800.d2_rc 的 2,832 个实现文件和 336 个 lanes 归档文件。报告不能证明已恢复 Bungie 完整后端，也不构成适用于原版任务的通用解释器。",
+      "原生实验需要自备已归档的 86657 客户端及其游戏包；报告既不提供这些文件，也不说明获取方式。游戏二进制、包内容、美术素材、清单数据库、凭据、存档、原始运行捕获、两份所提供的 PDF 以及部分被引用的夹具与跟踪记录均未公开。",
+      "重建以代理 DLL 形式运行在游戏进程内；ATTRIBUTION.md 指明由独立的 Dawn 项目完成，并以 Sunrise 与 Sundial 的研究为基础。采集自 e801e23e 修改工作区的文件以哈希标识；检查报告本身只需 Python 及其自带的两个脚本。",
+      "随附检查覆盖报告组装、1,191 个本地链接、引用、证据哈希和 37 条论断引用，不含游戏或原生运行测试。Spark 实机测试、原生世界恢复和分离式镜头仍未验证或未实现，Eater of Worlds 片段不含屏障战与 Argos 战。",
+      "仓库未声明整体许可证；ATTRIBUTION.md 为所含摘录保留 Dawn 的 GPL-3.0 文本，不声称获得 Bungie 认可，也不对第三方材料重新授权。安全发现并非针对当前在线游戏的漏洞主张；报告未记录 AI 辅助反编译、在引擎内重建的素材或与 REA 的关联。"
     ]
   },
   "svr2011-recomp-case": {
@@ -2540,22 +2543,22 @@
   "hermes-rea-plugin": {
     "name": "Hermes Agent 的 REA 插件",
     "requirements": [
-      "所审阅的固定版本是 Hermes 插件目录实际安装的 hermes-official-plugins 提交；plugin.json 声明版本 0.1.0，采用 MIT。插件目录将其列为 Nous Research 官方插件，要求 Hermes 0.22.0 或更高版本，通过 hermes plugins install rea 与 hermes plugins enable rea 安装。它是 Hermes 的官方插件，并非 REA 发布的集成。需要 Node.js 22.19+、24.11+ 或 26+ 及 npx，不支持 23 与 25；首次启动会下载固定版本的软件包。若再为 Hermes 运行 rea-agents setup，会写入冲突的服务配置并替换固定版本的服务。",
-      "静态 JavaScript／Electron／ASAR 分析、软件包清点、Go／Rust 元数据、PE 资源、.NET 元数据与 HAR 分析无需其他组件。核心转储与离线 ELF 布局工具需要装有 pwntools 4.15.0、pyelftools 0.33 和 Unicorn 2.1.2 的 Python，并在 Hermes 的 .env 文件中指定。原生反编译需要使用者自备 Ghidra 及 JDK、Hopper 或 IDA；Android 代码需要 JADX 与 Java，固件或抓包格式需要 Binwalk／Unblob、TShark、sigrok 或 WABT。REA 与插件均不会安装这些工具。",
-      "部分 REA 工具会在 PTY 中运行命令、启动或操控应用窗口、改动已连接的 Android 设备，或覆盖指定文件，而 Hermes 在调用前不会提示。改编技能要求智能体先说明具体操作并征得同意，在无人值守运行中跳过此类调用。README 说明 REA 不发送遥测数据，仅访问使用者指定的目标；不受信任的程序应在专门准备的环境中分析。",
-      "README 报告在一台 Linux 主机上以二进制优先方式测试 WinSCP 6.7：控制台启动器约 30 秒完成导入；GUI 可执行文件在需要 Hermes v0.23.0 的 1000 秒调用预算下耗时 663 秒，随后一次真实对话的首个查询耗时 580 秒。两次运行均恢复 28,701 个过程，且未启动该 Windows 可执行文件。这些是作者的观察结果，并非耗时保证；反编译输出也不是重建的原始源码。插件将 Ghidra 启动时限提高到 900 秒，每次调用仍使用 Hermes 默认的 300 秒 MCP 时限。",
-      "2026-10-15 的一次提交删除了 Hermes v0.22.2 拒绝的按服务 timeout 键，使插件包可在该版本上安装；按服务的调用预算须等待 Hermes v0.23.0。约 170 个工具和约 460 KB 工具定义的数字是 README 对 REA 6.4.0 的说明。插件包与改编技能采用 MIT，附有 REA 的 MIT 声明，崩溃分诊流程注明改编自 crashlens（MIT）；外部引擎与被分析目标仍有各自条款。本合集仅审阅源码，未安装 Hermes、插件或 REA。"
+      "plugin.json 声明版本 0.1.0，采用 MIT。Hermes 插件目录将其列为 Nous Research 官方插件，要求 Hermes 0.22.0 或更高版本，通过 hermes plugins install rea 与 hermes plugins enable rea 安装；它并非由 REA 发布。需要 Node.js 22.19+、24.11+ 或 26+ 及 npx，不支持 23 与 25。之后若为 Hermes 运行 rea-agents setup，会替换固定版本的服务配置。",
+      "静态 JavaScript／ASAR、软件包、Go／Rust、PE、.NET 与 HAR 分析无需其他组件。核心转储与 ELF 布局工具需要装有 pwntools 4.15.0、pyelftools 0.33 和 Unicorn 2.1.2 的 Python，并在 Hermes 的 .env 中指定。原生反编译需要 Ghidra 及 JDK、Hopper 或 IDA；Android 需要 JADX 与 Java；固件和抓包格式需要 Binwalk／Unblob、TShark、sigrok 或 WABT。这些工具都需自行安装。",
+      "只有改编技能会先询问：对于在 PTY 中运行命令、操控应用、改动 Android 设备或覆盖文件的 REA 工具，Hermes 本身调用前不会提示；无人值守运行时应跳过。不受信任的程序应在专门准备的环境中分析。",
+      "README 的 WinSCP 6.7 测试中，GUI 程序导入耗时 663 秒，使用 1000 秒调用预算；这是作者的观察结果，并非耗时保证。Ghidra 启动时限为 900 秒，每次调用仍使用 Hermes 默认的 300 秒 MCP 时限。",
+      "Hermes v0.22.2 可安装该插件包；按服务的调用预算需要 v0.23.0。约 170 个工具和约 460 KB 工具定义的数字针对 REA 6.4.0。附有 REA 的 MIT 声明，崩溃分诊流程注明来自 crashlens（MIT）；外部引擎与目标适用各自条款。"
     ]
   },
   "crashlens-rea-crash-triage": {
     "name": "crashlens 崩溃分诊工具",
     "requirements": [
-      "所审阅的固定版本声明软件包版本为 0.1.0、插件版本为 0.2.0，README 称项目处于早期原型阶段。文本输入，即 Go／Rust panic、Python、Java 与 Node.js 堆栈以及 ASan／LSan／UBSan 报告，只需 Node.js 22.19+ 或 24.11+。分析核心转储需要 Linux x86-64、Python 3、rea-agents 包，以及通过 REA_PWNTOOLS_PYTHON 指定的独立 pwntools 环境；gdb、objdump 以及 Ghidra 12.1.x 与 JDK 21 为可选项。Windows minidump 与 macOS 崩溃报告仍在路线图中。",
-      "使用者需提供核心转储及发生崩溃的同一版本二进制。源码调用 rea inspect-recorded-crash 与 inspect-binary-layout，并对无符号函数调用使用 Ghidra 引擎的 rea decompile；加载偏移计算、GNU build ID 比对及不一致警告由 crashlens 自身完成。package.json 将 rea-agents 6.4.0 及以上版本声明为可选对等依赖，作者帖子称其可配合固定的 rea-agents 6.4.0 使用；本合集未检查其他 REA 版本。",
-      "插件包含一个技能和一个 MCP 服务。README 称提供三个只读工具，却列出四个名称；服务源码定义了 analyze_failure、analyze_core_dump、decompile_function 与 analyze_crash_folder，均带只读标记。另有一份可直接粘贴的提示词，供连接 REA 自身 MCP 服务的智能体执行同样的核心转储流程。伪代码标注为反编译器输出，崩溃类型属于启发式判断并附置信度。",
-      "项目称不会运行被分析的程序，gdb 打开核心文件时关闭脚本自动加载与 debuginfod。可选的 --ai 参数会把 Markdown 报告（包括代码片段和日志行）发送至 Anthropic API；本地网页应用只监听 127.0.0.1，并要求会话令牌。核心转储可能含有机密信息，报告也会包含本地路径、日志行和寄存器值。",
-      "CI 在 Node 22 与 24 上运行类型检查和单元测试，另有端到端任务安装 gdb、pwntools 与最新版 rea-agents，并检查一个编译后发生空指针解引用的程序所生成的报告。README 称使用 crashlens 的智能体在七类无符号二进制崩溃中找出了六类的根因，这是作者报告，未公开对话记录。本合集审阅了源码与文档，未运行该工具、REA 或智能体。",
-      "项目声明采用 MIT，并通过公开命令行使用同为 MIT 许可的 REA；Ghidra、Anthropic API 及被分析程序仍适用各自条款。作者帖子提议在 reverse-engineer-anything 技能旁增加崩溃分诊技能，并表示愿向 Hermes 插件仓库提交拉取请求；所审阅来源未确立该请求已提交、合并或被采纳。"
+      "软件包 0.1.0 与插件 0.2.0 仍是早期原型。panic、堆栈及 ASan／LSan／UBSan 文本输入只需 Node.js 22.19+ 或 24.11+。核心转储需要 Linux x86-64、Python 3、rea-agents，以及通过 REA_PWNTOOLS_PYTHON 指定的 pwntools 环境；gdb、objdump 以及 Ghidra 12.1.x 与 JDK 21 为可选项。Windows minidump 与 macOS 崩溃报告仍在路线图中。",
+      "需提供核心转储及发生崩溃的同一二进制；crashlens 比对 GNU build ID，不一致时发出警告。rea-agents 6.4.0 及以上为可选对等依赖，作者只说明可配合固定的 6.4.0 使用。",
+      "插件的 MCP 服务定义了四个只读工具：analyze_failure、analyze_core_dump、decompile_function 与 analyze_crash_folder。伪代码属于反编译器输出，崩溃类型是附带置信度的启发式判断。",
+      "不会运行被分析的程序；gdb 打开核心文件时关闭脚本自动加载与 debuginfod。可选的 --ai 参数会把报告（包括代码片段和日志行）发送至 Anthropic API；本地网页应用只监听 127.0.0.1 并要求会话令牌。核心转储可能含有机密信息，报告也会包含本地路径和寄存器值。",
+      "CI 在 Node 22 与 24 上运行类型检查和单元测试，另有一项使用最新版 rea-agents 的空指针解引用端到端检查；“七类中找出六类根因”的说法未公开对话记录。",
+      "采用 MIT，并通过公开命令行使用同为 MIT 许可的 REA；Ghidra、Anthropic API 及被分析程序适用各自条款。"
     ]
   },
   "decomp-toolkit": {
@@ -2836,7 +2839,7 @@
   "lgwebos-menubar-remote-case": {
     "name": "LGwebOS-menubar：LG webOS 电视的原生 macOS 遥控器",
     "requirements": [
-      "审阅版本为 2026-10-13 的最新提交。需要 macOS 14 及以上、带 Swift 5.9 及以上的 Xcode Command Line Tools，以及位于同一网络的 LG webOS 电视；唯一测试过的机型是 webOS 5.0 的 LG 50UN7310PSC，其他型号和版本未经验证。配对须在电视上确认，需使用 IPv4 地址，网络唤醒还需要电视的 MAC 地址。",
+      "审阅版本为 2026-10-13 的最新提交，当时仓库只包含这一款应用。截至 2026-10-20，GitHub 已将仓库更名为 TVmenubar-MacOS，最新 README 将其拆分为 LG webOS 5.0 和 Roku OS 15.3.4 两款独立应用；本条目只涵盖固定提交中的 webOS 应用。需要 macOS 14 及以上、带 Swift 5.9 及以上的 Xcode Command Line Tools，以及位于同一网络的 LG webOS 电视；唯一测试过的机型是 webOS 5.0 的 LG 50UN7310PSC，其他型号和版本未经验证。配对须在电视上确认，需使用 IPv4 地址，网络唤醒还需要电视的 MAC 地址。",
       "scripts/build.sh 生成本地签名、未经公证的应用包。配对使用 3001 端口上的加密 WebSocket；应用在用户明确同意后固定电视证书，并把配对密钥保存在钥匙串中。仓库不含任何设备地址或配对密钥，另有隐私检查脚本在发布前扫描文件。",
       "离线 --self-check 无需电视即可运行偏好设置、证书、指针、主页、使用统计、资源和本地回环媒体测试。这些属于实现层面的检查，而非针对 LG 接口的一致性测试；本次核查既未运行这些测试，也未连接电视。",
       "README 收窄了作者帖子中的说法：屏幕使用时间只在应用连接期间于本地统计，AirPlay 仅提供 macOS 屏幕镜像的操作指引，画面设置能否修改取决于电视权限，投放媒体则取决于电视支持的编码和 DLNA 服务。",
@@ -3095,7 +3098,7 @@
     "requirements": [
       "通过 PyPI 以 jnitrace 安装（setup.py 标注版本 3.3.1，要求 Python 3），可在 Linux、macOS 或 Windows 主机上运行；从源码构建还需 Node.js。",
       "跟踪目标需要一台 arm、arm64、x86 或 x64 的 Android 设备，并运行 Frida server，README 要求其 Frida 支持版本大于 14，且目标应用包已安装在设备上。",
-      "仅用于分析者有权检查的应用。采用 MIT 许可证；仓库仅包含工具本身。所审阅的上游最新提交为 2023 年，面向 Frida 14 时期的 API。"
+      "仅用于分析者有权检查的应用。采用 MIT 许可证；仓库仅包含工具本身。所审阅的上游最新提交为 2023 年，面向 Frida 14 时期的 API。据 2026-10-20 核查，这一 2023-04-01 的提交仍是 master 分支最新提交，最新发布版本为同日的 v3.3.1；GitHub 记录的最后一次推送为 2023-07-18，仓库未归档，README 未标注其仍在维护、已被取代或已归档。"
     ]
   },
   "flare-vm": {
@@ -3380,7 +3383,7 @@
   "whatsapp-web-reveng-legacy-protocol-case": {
     "name": "whatsapp-web-reveng：记录旧版 WhatsApp Web 协议",
     "requirements": [
-      "审阅对象为 2024-04-22 的 master 最新提交，该提交只修改了 README；后端和 Node 中继最后修改于 2021 年 8 月，protobuf 结构定义最后修改于 2020 年 3 月，没有发布版本或标签。README 描述的配对流程由手机提供电量等会话信息，也就是 WhatsApp 2021 年 7 月工程博客所说被多设备架构取代的手机镜像式配套设备模式。2022 年的一个 issue 报告扫描二维码后服务器返回 upgrade_md_prod 命令；本次未测试该流程目前能否连接。",
+      "审阅对象为 2024-04-22 的 master 最新提交，该提交只修改了 README；后端和 Node 中继最后修改于 2021 年 8 月，protobuf 结构定义最后修改于 2020 年 3 月，没有发布版本或标签。README 描述的配对流程由手机提供电量等会话信息，也就是 WhatsApp 2021 年 7 月工程博客所说被多设备架构取代的手机镜像式配套设备模式。2022 年的一个 issue 报告扫描二维码后服务器返回 upgrade_md_prod 命令；本次未测试该流程目前能否连接。据 2026-10-20 核查，2024-04-22 的最新提交仍是 GitHub 记录的最后一次推送，仓库未归档，README 未标注其仍在维护、已被取代或已归档。",
       "使用时需要用户自己的 WhatsApp 账号和手机来扫描配对码，后端会连接 WhatsApp 服务器。protobuf 定义由一个辅助脚本解析公开的 WhatsApp Web JavaScript 包生成。README 的任务清单仍把二进制解码错误增多、二进制报文写入以及更易用的界面列为待完成工作。",
       "直接安装需要 Node.js 8+ 和 Python 2.7，以及 websocket-client、simple-websocket-server、curve25519-donna、pycrypto（requirements.txt 中为 pycryptodome）、pyqrcode 和 protobuf；Windows 还需要 Visual C++ for Python 9.0 和仓库提供的头文件。项目提供 shell.nix（Python 2.7、Node.js 13）和 Dockerfile，npm start 会同时启动后端、Node API 和前端。README 说明 Docker 版本还不够稳定，不适合生产部署。",
       "项目没有测试套件：package.json 的 test 脚本只是启动各组件。文档给出的正确性检查是对服务器密钥数据和每条二进制报文做 HMAC 校验，另有浏览器内 JavaScript 演示在扫描二维码后输出解密后的报文。本次来源核查没有建立会话，也没有解码任何流量。",
@@ -3622,7 +3625,7 @@
   "sony-pmca-re": {
     "name": "Sony-PMCA-RE Sony 数码相机逆向工具",
     "requirements": [
-      "审阅时最新版本为 v0.18，发布于 2022-04-08，提供 pmca-console 命令行工具和功能较少的 pmca-gui 的 Windows 与 macOS 版本。所审阅的 master 分支提交（2022-08-18）比该版本多 22 个提交。在 Linux 上需按所列依赖和 libusb 运行 Python 3 源码；CI 构建使用 Python 3.6 和 PyInstaller。",
+      "审阅时最新版本为 v0.18，发布于 2022-04-08，提供 pmca-console 命令行工具和功能较少的 pmca-gui 的 Windows 与 macOS 版本。所审阅的 master 分支提交（2022-08-18）比该版本多 22 个提交。在 Linux 上需按所列依赖和 libusb 运行 Python 3 源码；CI 构建使用 Python 3.6 和 PyInstaller。据 2026-10-20 核查，所审阅的 2022-08-18 提交仍是 master 分支最新提交，GitHub 记录的最后一次推送为 2024-07-27，仓库未归档，README 未标注其仍在维护、已被取代或已归档。",
       "需要通过 USB 连接受支持的 Sony 相机；README 链接了外部的 OpenMemories 兼容机型列表。安装应用要求相机支持 PlayMemories Camera Apps。固件更新模式使用操作系统自带的大容量存储驱动，不适用于固件经过加密签名的 CXD90045 和 CXD90057 机型。服务模式仅限命令行使用，在 Windows 上需安装 libusb 驱动；macOS 上以大容量存储模式访问相机需安装 Sony 的相机驱动。",
       "README 称该项目是基于逆向工程的早期实验，并警告可能损坏相机，开发者不承担任何责任。固件文件的解包由独立的 fwtool 项目负责，本次未审阅；其推荐的 OpenMemories 应用和框架也未审阅。",
       "采用 MIT 许可。仓库中没有 Sony 固件或应用；updatershell/fdat 下预先构建的更新程序载荷由 pack.py 用项目自身的源码打包生成。本次未连接相机，也未运行任何程序。"
@@ -3693,7 +3696,7 @@
   "cpu-rec": {
     "name": "cpu_rec CPU 指令集统计识别工具",
     "requirements": [
-      "审阅时最新版本为 v1.1，发布于 2024-03-19，标签正对应所审阅的提交；该版本新增可选的 pickle 语料缓存以加快启动，并可用 LIEF 代替 elfesteem。没有安装包：只需把 cpu_rec.py 和 cpu_rec_corpus 目录复制到同一目录。",
+      "审阅时最新版本为 v1.1，发布于 2024-03-19，标签正对应所审阅的提交；该版本新增可选的 pickle 语料缓存以加快启动，并可用 LIEF 代替 elfesteem。没有安装包：只需把 cpu_rec.py 和 cpu_rec_corpus 目录复制到同一目录。据 2026-10-20 核查，v1.1 发布后没有新的推送，仓库未归档；README 的“Development status”一节只有 CI 徽章，未标注项目仍在维护、已被取代或已归档。",
       "可在 Python 3 或 Python 2 上运行；可移植性工作流在 Ubuntu 和 macOS 上测试 Python 3.10、PyPy 2.7 与 3.9 以及 GraalPy。若没有 lzma 模块，需先解压 .xz 语料文件。可选的 elfesteem 或 LIEF 能提取 ELF、PE、Mach-O 或 COFF 文件的代码段。README 称在作者的笔记本上，每 MB 约需一分钟分析时间，为 70 种架构建立签名需要 1 GB 内存。",
       "binwalk 模式需安装到 binwalk 的模块目录，并要求 binwalk 包含 devttys0/binwalk 第 241 号合并请求的补丁；这些说明针对的是早期的 Python 版 binwalk，未核实其与当前基于 Rust 的 v3 是否兼容。",
       "结果属于启发式判断：README 提醒，一个文件可能包含多种架构，小数据块可能被误判，熵值高于 0.9 的数据所得结果大概没有意义。78k 和 TriCore 因许可问题未收入默认语料库，只能由使用者用自有二进制补充。",
@@ -3713,7 +3716,8 @@
     "requirements": [
       "通过 npm 以全局命令行工具安装，README 要求 Node.js 14+ 与 Java 8+；在 Linux 上修补应用捆绑包还需具备 zip 与 unzip。",
       "对使用者提供的 APK 或应用捆绑包进行操作，仅适用于使用者拥有或有权测试的应用；因修改在安装前静态完成，无需 root 设备。",
-      "README 指出基于 Apktool 的静态方式在大型或复杂应用上可能失败，且无法处理在原生二进制（如 Flutter）中强制执行的证书固定。采用 MIT 许可证；仓库仅包含工具本身，不含任何应用安装包。"
+      "README 指出基于 Apktool 的静态方式在大型或复杂应用上可能失败，且无法处理在原生二进制（如 Flutter）中强制执行的证书固定。采用 MIT 许可证；仓库仅包含工具本身，不含任何应用安装包。",
+      "据 2026-10-20 核查，最新发布版本 v1.3.0（2024-04-21，也是 npm 上的最新版本）即所审阅的提交，仍是 main 分支最新提交；GitHub 记录的最后一次推送为 2024-07-24，仓库未归档，README 未标注其仍在维护、已被取代或已归档。"
     ]
   },
   "fritap": {
@@ -4309,6 +4313,547 @@
       "冻结的字节契约要求每个标题都加双引号、标题内部的双引号写成两个，行尾和文件末尾都使用 LF，输入限定为安全整数 id 和字符串标题。三个变异版本各只改一条规则：仅在需要时加引号、不转义内部引号、删去末尾 LF。单条笔记的读回测试让三者全部通过。以官方 JavaScript 格式化函数在 15 组固定边界输入和 200 组固定种子输入上的输出为参照，基线 215/215 一致，三个变异版本分别有 26、166 和 215 组不一致。",
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
+    ]
+  },
+  "windows-loader-static-analysis-case": {
+    "name": "Windows 加载器：借助 REA 与 Codex 的静态恶意软件分析",
+    "requirements": [
+      "Code Geeks 上这篇由 Fedele Mantuano 撰写的文章标注日期为 2026-10-18，另有意大利文版本，所述分析于 2026-10-17 完成。作者要求 Codex 使用 REA 检查一个取自 MalwareBazaar 的 Windows x64 可执行文件，并撰写 Markdown 报告，涵盖文件、进程、持久化、网络目标、更新、防御指标与局限。智能体生成的技术报告、产物和代码引用均未公开；作者表示可私下提供更多细节。",
+      "分析在 Docker Desktop 的 Linux/amd64 容器中进行，使用 REA 6.5.0 与 Node 24.22.0，无网络，根文件系统与样本挂载均为只读，以非特权用户运行并移除 capabilities。样本及提取出的代码均未执行，也未使用 Wine；作者指出容器离线时 Codex 仍在与模型服务通信。附录另行记录了在 macOS Apple Silicon 上安装 REA 6.5.0、Ghidra 12.1.4、Temurin JDK 25.0.4.1 与 Node.js 24.21.0，并通过 MCP 和 REA 技能接入 Codex 的步骤；该流程未在全新 Mac 上重做，也未在其他宿主上测试。",
+      "初步检查 PE 后，工作集中于从该可执行文件内嵌 Bun 运行时中提取的 JavaScript 代码包；约 98 MB 的原生可执行文件未被完整反编译。作者报告使用分析人员编写的解码器处理代码包的多层字符串混淆，过程中不运行样本代码，并抽查了哈希、提取范围和解码表，部分结果与独立的 Python 实现对照。这些检查支持具体结论，但不能证明去混淆视图整体等价。",
+      "作者将原本疑为信息窃取程序的样本重新归类为加载器：其代码支持收集主机信息与截图、加密回传、下载并在内存中加载后续组件，以及通过固定备用地址和远程查询更换服务器，且代码包中未发现 DGA。这些后续组件未获取，因此挖矿、凭据窃取、持久化以及在受害系统上的实际执行均未确立；报告中一处初始化不一致之处留待动态验证。文中的威胁情报流水线只是设想用途，并未实现或测量。",
+      "本合集不转录文章列出的指标，也不链接样本；处理真实恶意软件需要隔离实验环境及分析者自身获得的授权。文章将成果归于 REA、Ghidra 与 Codex 的共同使用，并依赖经作者审阅的智能体报告，因此不应把结果完全归功于 REA。固定版本的博客仓库没有许可证文件；REA、Ghidra、Codex 及模型服务各有其条款。本次审阅只阅读了文章及其固定版本源文件，未运行任何工具或样本。"
+    ]
+  },
+  "wristbeam-garmin-watch-protocol-case": {
+    "name": "WristBeam：为 Mac 配套应用重建佳明手表协议",
+    "requirements": [
+      "审阅版本为 VERSION 0.3.7 及未发布的改动。需要 macOS 13+、已关闭心率广播的佳明手表；使用云端功能时，还需通过佳明官方页面登录佳明中国或国际账号。本地模式会暂停所有佳明云端访问。不支持应用层加密、原生 MLR／CoreTransfer 和桌面小组件，Mac 休眠时无法同步。",
+      "协议源码注释称，GFDI 分帧（COBS、CRC-16）、多链路注册、设备信息、文件目录与传输、电池状态及账号身份字段均以 Swift 独立实现，并逐项对应自备佳明 Android 安装包中的具名类。Gadgetbridge、garmin-bridge 和 garmin-ble 被列为相互印证的线上协议观察资料，仅作参考而未移植。所审阅文件树不含 APK 或反编译清单；云端历史数据使用 Connect 客户端接口，开发者指南说明这些接口并非佳明公开的 API 约定。",
+      "构建需要 macOS 13+、Swift 5.9+ 和 Command Line Tools；原生 swift test 及 CodeQL 分析需要完整 Xcode，由 CI 提供。CONTRIBUTING 列出了代码检查、本地化、密钥扫描、发布流水线及核心回归脚本。发布包为临时（ad hoc）签名，未经 Apple 公证。",
+      "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
+      "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
+    ]
+  },
+  "abc-decompiler": {
+    "name": "abc-decompiler 鸿蒙方舟字节码反编译器",
+    "requirements": [
+      "README 称项目仍在开发中：用于改善代码可读性的反编译优化模块、定制中间表示以及数据流分析均列为尚未完成。唯一的发布版本 h1 于 2024-12-20 发布，只提供一个由所审阅 master 分支提交构建的 jadx-dev-all.jar，此后仓库再无推送。",
+      "构建需要 JDK 17+；须先将打过补丁的 abcde 分支发布到本地 Maven 仓库，并在 Gradle 文件中替换为实际版本号，再执行 ./gradlew dist。输入为用户自己 HarmonyOS HAP 包中的 modules.abc 文件。",
+      "该仓库是改造过的 jadx 代码库：jadx 原有的 DEX 输入、测试样本和继承来的 CI 文件仍保留，自身没有 GitHub Actions 工作流，因此未报告针对方舟字节码输出的测试。",
+      "沿用 jadx 的 Apache-2.0 许可；abcde 分支同样采用 Apache-2.0。本次未反编译任何文件。"
+    ]
+  },
+  "pypush-apns-protocol-case": {
+    "name": "pypush：Apple 推送协议的 Python 客户端",
+    "requirements": [
+      "审阅对象为 2026-03-15 的 main 最新提交，与 PyPI 上的 v2.0.2 版本一致。README 警告重写版尚不稳定，许多功能已被暂时移除，3.0.0 之前不应期待稳定。IDS、iMessage、GrandSlam 和 CloudKit 包都是空占位，因此早期的 iMessage 成果不在此版本中。",
+      "激活和连接会通过项目所称的 Apple 内部 API 访问 Apple 线上的激活服务器和 APNs 服务器，处于 Apple 官方客户端之外；README 指出部分 API 可能需要设备标识符。Apple 对这些服务的条款另行适用。本条目不记录任何账号、标识符或凭据，也特意不链接测试资源中的证书文件。",
+      "需要 Python 3.9+ 及 anyio、httpx（HTTP/2）和 cryptography；cli 附加依赖会加入 Frida、Rich 和 Typer。命令行可在指定主题上监听通知；其代理模式用于观察 Mac 自身的 APNs 流量，会用 Frida 附加到本机 apsd 守护进程，需要关闭系统完整性保护（SIP）并以 root 运行。",
+      "拉取请求的 CI 在 Linux、macOS 和 Windows 上以 Python 3.9–3.12 运行 Ruff 和 pytest。测试会向 Apple 服务器激活、建立 APNs 连接，并通过限定令牌往返一条沙盒通知，因此依赖线上服务，而非离线协议样本。本次来源核查未运行测试、激活或连接。",
+      "LICENSE 为 Server Side Public License v1，包元数据将其归类为 Other/Proprietary；README 称项目已被 Beeper 收购，许可问题需联系 Beeper。所审阅来源未确立任何 AI 或 REA 的使用。"
+    ]
+  },
+  "luajit-decompiler-v2": {
+    "name": "LuaJIT Decompiler v2 字节码反编译器",
+    "requirements": [
+      "使用者需提供 LuaJIT 字节码文件或包含这些文件的文件夹，可拖放到程序上或通过命令行传入；反编译出的 .lua 文件默认写入可执行文件旁的 output 文件夹，也可另行指定。选项包括按扩展名筛选、忽略调试信息、跳过失败文件而不弹出断言窗口，以及调整输出格式以减少差异。",
+      "读取器接受第 1 和第 2 版字节码格式，拒绝大端字节码；README 将大端支持和改进条件赋值的反编译列为待办事项。仓库没有测试、CI 或公开的准确率结果；程序会报告反编译失败的文件数。",
+      "仅支持 Windows：README 引导使用者下载发布页的可执行文件（Mar_24_2024 版本，其说明称已于 2026-05-14 重新编译），main.h 列出的构建要求为 Visual Studio、C++20、Windows API 以及默认 char 为无符号，仓库未附带项目或构建文件。另有一个 Call-of-Duty 分支，比 master 多四个提交，并有单独的发布可执行文件。审阅时最后一次提交为 2026-05-14。",
+      "许可证为 MIT 文本，并附有 LuaJIT 和 Lua 的版权声明；GitHub 未能识别其类型。所审阅资料未提及使用 REA，本目录未运行该反编译器。"
+    ]
+  },
+  "flare-learning-hub": {
+    "name": "FLARE 学习中心",
+    "requirements": [
+      "在所审阅的提交 ebd4e3a（2026-03-31）中，该仓库首次提交于 2026-03-19，包含三个模块：恶意软件分析速成课（九章、五个实验、汇编修改练习和随堂小测）、时间旅行调试入门（一个演示、一个分诊实验和一份 JavaScript 自动化参考）以及 Go 逆向工程参考手册。模块正文位于网页发布的 Google Docs 中，会在仓库之外更新。README 称会持续完善现有模块并发布新模块，但截至审阅日，3 月 31 日之后没有新提交。",
+      "速成课是入门起点，要求熟悉 Windows 命令行、布尔逻辑、补码，以及基本的编程和网络知识。TTD 模块要求具备基本的 x86 Windows 逆向能力并会使用 WinDbg。Go 参考手册要求具备 x86 逆向基础并熟悉 Go，内容仅限使用 Go 1.24.0 构建的 Windows AMD64 可执行文件。",
+      "README 说明所有模块目前只支持 Intel x86-64 环境，并强烈建议使用隔离且支持快照的 FLARE-VM 虚拟机。速成课使用 IDA 和 FakeNet，练习附带 IDA 数据库文件；TTD 模块使用自带 TTD 的 WinDbg 以及 ttd.exe。实验和演示用的二进制文件、数据库和脚本均由 FLARE 制作，以带密码的压缩包提供。README 提醒其中部分程序具有类似恶意软件的行为，可能被安全软件标记，因此只应在上述虚拟机中使用；TTD 的一个演示跟踪文件需另从 Google Drive 下载。",
+      "本仓库采用 Apache-2.0 许可证；所审阅的 Google Docs 未另附许可声明。项目不接受贡献，勘误通过电子邮件反馈。本合集阅读了 README、各模块目录说明和三份已发布文档，没有运行实验；材料中也未提及 AI 或 REA。"
+    ]
+  },
+  "pokewalker-matching-decomp-case": {
+    "name": "pw：Pokéwalker 固件的一致性反编译重建",
+    "requirements": [
+      "所审阅的 main 分支只有 2026-09-14 的一次初始发布提交，没有标签或发行版。README 称针对单一镜像的一致性重建已经完成；该镜像大小为 49,152 字节，SHA-256 为 f9e210a3…d15607，项目假定它是唯一的 Pokéwalker 固件。源码保留为 40 个 C90 模块，文件名体现观察到的链接顺序，任何修改都必须保持一致。",
+      "使用者需自备合法取得的 Pokéwalker 固件镜像（只用于美术素材），以及 Renesas H8、H8S、H8SX 系列 C 编译器套件；仓库不分发两者，README 也不提供获取方法。据报告只有 6.02.01 和 6.02.02 两个套件能重现该镜像。缺少美术素材时会改用随附的占位素材，通常会使输出哈希不同。",
+      "据报告已在 macOS Arm64（32 位 Windows 编译器经 Wibo 和 Rosetta 运行）及 Windows x86_64（原生运行）上构建成功，其他宿主未经验证。uv 依 uv.lock 提供 Python 3.11 及以上版本（默认 3.12）、Ninja 和 Pillow，configure.py 生成 build.ninja；在 macOS 上，配置步骤会下载并校验记录在案的 Wibo 版本。",
+      "ninja verify 要求与零售镜像的大小及 SHA-256 一致，并写出 verified.json；构建指南要求在两个编译器套件下都完成这项检查，并记录每个模块的输入和输出哈希以发现过期的目标文件。宿主单元测试覆盖构建工具，开发检查另加 clang-format、Ruff 和 Cppcheck，项目没有 CI 工作流。一致性结果为作者报告；本次审阅未构建或运行任何程序。",
+      "项目原创内容以 CC0 1.0 贡献至公有领域，占位美术另附 CC0 声明；零售固件及提取的美术素材仍受各自权利约束。include/startup/iodefine.h 是保留的 Renesas HEW 器件头文件，不在 CC0 贡献范围内，也没有许可授权；编译器归档读取器注明借鉴采用 MIT 许可的 ISx 和 Unshield。项目声明与 Nintendo、The Pokémon Company、GAME FREAK 及 Renesas 均无关联；所审来源未确立 AI 或 REA 的使用。"
+    ]
+  },
+  "slicer": {
+    "name": "slicer 浏览器端 Java 逆向工具",
+    "requirements": [
+      "以 slicer.run 上托管的网页应用形式运行，也可安装为 PWA。仓库没有发布版本或标签，因此本条目固定到所审阅的 main 分支提交（2026-09-19）；本地构建是用 pnpm 构建的 Vite 与 Svelte 应用，仓库没有配置 CI 工作流。文档称 slicer 仍在积极开发中，部分功能可能缺失。",
+      "文档称不会向任何服务器发送数据，反编译器均在浏览器本地运行；JDK 库类会按需从 data.slicer.run 获取，URL 参数还可从其他网站加载 JAR、映射文件或脚本。输入为用户有权分析的软件中的 class 文件或 JAR/ZIP 归档；也可查看 HPROF 堆转储和 Android 二进制 XML。",
+      "文档提醒，反编译输出只是尽力而为的近似结果，未必是合法的 Java 代码，对非 javac 编译器或混淆器生成的代码尤其如此。slicer 没有针对特定混淆器的反混淆功能，其重映射器也不会沿继承关系传播名称。",
+      "slicer 本身采用 MIT 许可；其中包含的 Vineflower 和 Procyon 反编译器等组件采用 Apache-2.0 许可。本次未反编译任何类。"
+    ]
+  },
+  "steamkit": {
+    "name": "SteamKit Steam 网络协议库",
+    "requirements": [
+      "所审阅的 master 最新提交与 2026-10-19 的 GitHub 3.5.0 版完全一致；审阅时 NuGet 上最新的 SteamKit2 包仍为 3.4.0。README 要求使用该库需 .NET 10 运行时、构建需 .NET 10 SDK，但库项目同时面向 net8.0 和 net10.0。文档包括 XML API 文档、wiki 以及按编号排列的示例，涵盖登录、二维码认证、网页 Cookie、好友、Web API 和 Dota Game Coordinator 请求。",
+      "需要身份验证的功能要用用户自己的 Steam 账号；本条目不记录任何账号。该库所跟随的 Valve 协议没有公开文档且不断变化：每周运行的工作流会根据 SteamTracking protobuf 子模块重新生成消息类并提交拉取请求，NetHook2 的说明也指出版本发布可能落后于 Steam 的变化。",
+      "NetHook2 是仅限 Windows 的 C++ DLL，使用 Visual Studio 2022 和 vcpkg 构建，需要 x86 版 Visual C++ 运行库。其说明称它依赖对 Steam 客户端的二进制特征扫描，客户端更新可能使之失效，挂接期间 Steam 也可能崩溃。NetHookAnalyzer2 是 Windows 图形界面工具；CI 会把两者作为工作流产物发布。它们检查的是用户自己客户端的流量，本条目不提供使用步骤。",
+      "CI 在 Windows、macOS 和 Linux（x64 与 ARM）上构建该库、SteamLanguage 解析器、protobuf 工具和示例，并运行 xUnit v3 测试项目；测试样本包括录制的数据包以及小型 depot 清单和数据块样本。测试检查解析、加密辅助函数、异步任务和 depot 处理，并不检验与 Valve 客户端的等价性；本次来源核查未运行任何测试。",
+      "采用 LGPL-2.1（LICENSE）。所跟踪的 Steam protobuf 定义来自独立的子模块，Valve 的服务与条款独立于该库的许可证适用。所审阅来源未确立任何 AI 或 REA 的使用。"
+    ]
+  },
+  "nintendo-switch-joycon-re-notes": {
+    "name": "Nintendo Switch 逆向工程笔记",
+    "requirements": [
+      "审阅提交为 b354f21（2026-08-21）。全部 277 个提交中有 228 个来自 2017 年，其余大多在 2018–2021 年；2026 年的修改补充了主机对摇杆校准数据所做的合理性检查。笔记针对初代 Joy-Con 和 Pro 手柄，列出的最新手柄固件为 3.89，且仍有若干字段标为未知，因此较新的固件和手柄需另行核实。",
+      "照着笔记操作需要自己的手柄。有线协议部分需要拆开 Joy-Con，将其滑轨接口（1.8 V 逻辑电平）接到逻辑分析仪或单片机上；蓝牙与 USB 部分假定主机能收发原始 HID 报告，示例 C 代码使用 hidapi 风格的调用。仓库不含任何手柄或底座固件：README 称已制作底座固件转储，但并未发布。",
+      "joycon_reader 和 joycon_spoofer 两个项目面向 STM32F072，由 STM32CubeMX 生成并使用 Keil MDK-ARM 构建，构建产物与源码一同提交。nxbt 解析器需要在 Wireshark 源码构建中作为插件编译；另有一个 Lua 脚本用于解析经 USB 抓取的蓝牙流量，几个小型 Python 脚本用于解析抓取数据和计算串口校验和。.logicdata 抓取文件需要能读取该格式的逻辑分析仪软件。",
+      "蓝牙笔记还记录了 SPI 闪存写入、扇区擦除和固件更新命令，并提醒擦除会作用于整个扇区；各字段含义来自贡献者自己的抓取与测试，本合集未重做验证。",
+      "GitHub 未检测到许可证，仓库也没有许可证文件，因此笔记未声明复用条款；datasheets 文件夹存放第三方芯片数据手册的副本，Lua 解析器注明不附带许可证。README 致谢了众多贡献者。所审文件均未提及 AI 或 REA。"
+    ]
+  },
+  "android-app-re-101": {
+    "name": "Android 应用逆向工程 101",
+    "requirements": [
+      "审阅提交为 17f9eeb，即默认分支的最后一次提交（2020-04-29）；大部分页面写于 2019 年，内容已不再扩充。导言说明工作坊只讲静态分析，不涉及应用开发、恶意软件分析或漏洞挖掘本身的细节；结语推荐将 Frida 与动态分析作为后续方向。",
+      "练习按作者提供的 Ubuntu 18.04 64 位虚拟机镜像设计，镜像通过 Google Drive 提供 VirtualBox 和 VMware 两种格式，预装 jadx 和 Ghidra。练习用的 APK（若干需判断是否为恶意软件的应用和两个厂商预装应用，多数练习给出其 SHA-256 摘要）只存在于该虚拟机中；仓库本身只包含 Markdown 页面和图片，没有任何 APK。",
+      "原生库一章默认读者具备一定的 ARM 汇编基础，并推荐了外部教程；文中说明每个练习用的原生库都另有 x86 版本。页面最后更新于 2020 年，其截图可能与当前版本的 jadx 和 Ghidra 不一致。",
+      "仓库没有许可证文件，因此正文的复用条款未作说明；页面注明 Android 机器人标志来自 Google，按 CC BY 3.0 使用。本合集阅读了所审阅提交中的页面，没有下载虚拟机或重做练习；工作坊未提及 AI 或 REA 的使用。"
+    ]
+  },
+  "wii-menu-ipl-decomp-case": {
+    "name": "wii-ipl：Wii Menu（System Menu 4.3）的反编译重建",
+    "requirements": [
+      "所审阅的 main 提交没有发行版或标签。decomp.dev 针对该提交的报告显示，4.3U 的代码匹配率为 58.5%，12,563 个函数中有 8,837 个匹配（70.3%），完全链接的代码占 45.2%，其中菜单自身代码的匹配率为 53.6%；各库的 README 标明 RVL_SDK、NW4R、EGG、RevoEX 及中间件各组件是一致、等价还是尚未一致。构建只生成 main.dol 而非 WAD，README 还警告由于不生成 SEL 文件，代码并非完全可移位。",
+      "使用者需自备所选版本的 Wii Menu 4.3 WAD（默认 4.3U，也可选 4.3E、4.3J 或 4.3K）；README 声明仓库不含任何素材或该可执行文件的汇编。每个版本的配置都固定了目标 main.dol 的 SHA-1。",
+      "构建需要 Python 和 Ninja，可在 Windows、macOS 或 Linux 上进行。configure.py 固定 decomp-toolkit v1.7.5、objdiff v3.4.5、binutils 2.42-1 以及 Metrowerks CodeWarrior 的 20251118 编译器包（链接器版本为 GC/3.0a5.2），在 macOS 和 Linux 上由 wibo 运行 32 位 Windows 工具。CONTRIBUTING 列出 Ghidra（含共享项目）、IDA/Hex-Rays、m2c 和 decomp.me 作为反编译辅助，并用 objdiff 做差异比较。",
+      "CI 在提供原始文件的私有容器中构建全部四个版本，并上传映射文件和进度报告；上述百分比即来自这些报告，并不表明已完整或可移位地重建。本次审阅未构建或运行任何程序。",
+      "LICENSE 为 CC0 1.0。BTE 蓝牙库注明含有取自 Android bluedroid 的代码，采用 Apache-2.0；GameSpy SDK 子集采用 BSD-3-Clause。反编译的第三方中间件（JustSystems ATOK、Zi eZiText、TMC JPEG、eSOL PrFILE2）及 Opera WWW 头文件没有单独授权，Wii Menu 本身的权利仍归 Nintendo。CONTRIBUTING 禁止用 AI 反编译代码，并要求避开仅靠 AI 追求完全一致的分叉；所审来源未确立 REA 的使用。"
+    ]
+  },
+  "usque-warp-masque-client-case": {
+    "name": "usque：Cloudflare WARP MASQUE 模式的开源再实现",
+    "requirements": [
+      "审阅对象为 2026-07-20 的 main 最新提交，与 v4.2.1 版一致。README 称项目仍处于早期阶段，作为库使用时 Go API 不稳定，并说明只有 Linux amd64 发布版经过测试，尽管发布内容包括多种架构的 Android、Linux、Windows 和 macOS 构建。RESEARCH.md 是叙述式研究记录；README 计划撰写的简明协议文档尚未完成。",
+      "需要访问 Cloudflare WARP 服务：register 命令会新建 WARP 账号并注册设备密钥，生成的配置文件保存该注册的密钥和令牌。该工具在官方客户端之外使用 Cloudflare 的服务；README 声明它与 Cloudflare 无关，未获其认可或审查，要求用户不要滥用服务，并指出该工具可被识别。ZeroTrust 登录需要该工具无法完成的 SSO；本条目不提供任何令牌、账号或配置细节。",
+      "构建需要 Go 1.26.3+ 并关闭 CGO。README 称 Cloudflare 的实现并不完全符合 RFC 9484，因此项目依赖作者 fork 的 connect-ip-go；连接由 quic-go 承载，gVisor 和 wireguard-go 的网络栈使各代理模式无需 root 即可在用户态运行。原生 TUN 模式仅支持 Linux 和 Windows，但 README 的已知问题列表仍写着仅支持 Linux。仓库提供 Dockerfile。",
+      "CI 会校验模块并运行 go build、go vet、go test 和 golangci-lint，但所审阅的文件树中没有 Go 测试文件，因此正确性证据来自作者自己的使用。README 报告一次 SOCKS5 测速结果，在 1 Gbps 链路上约为 834/773 Mbps，并列出 happy eyeballs、WireGuard 和 DNS-over-HTTPS 等缺失功能。这些结果均为作者报告，本次来源核查未运行任何内容。",
+      "采用 MIT 许可（LICENSE.md）。Cloudflare 的服务条款和商标另行适用，README 将 usque 描述为独立研究项目。所审阅来源未确立任何 AI 或 REA 的使用。"
+    ]
+  },
+  "awesome-unofficial-pc-ports": {
+    "name": "awesome-unofficial-pc-ports 非官方 PC 移植清单",
+    "requirements": [
+      "所审阅的 README 提交于 2026-10-15，共有 78 个可折叠条目：Nintendo 43 个、PlayStation 12 个、Xbox 14 个、SEGA 5 个、独立游戏和 J2ME 各 1 个，另有 2 个启动器类实用工具。其收录标准是通过反编译或重编译移植到 PC、且有简便安装方式（如启动器或拖放即用）的主机游戏；星标表示每款游戏中最易上手的版本。",
+      "条目面向玩家撰写：给出推荐的移植版和一两行安装说明，部分游戏还列出所依据的反编译项目、其他移植版或教程视频。条目未注明匹配、完成度或许可状态；清单还收录了超出其所述标准的项目，例如被其称为“逆向工程原生重制”的 Severed Chains，以及 PC 游戏 Cave Story+ 的移植，因此每个项目都需在其自身来源中核实。",
+      "大多数条目要求玩家自备 ROM、光盘镜像、ISO、游戏转储或 XBLA 包。Ratchet & Clank: Clone Home 条目还链接了第三方在 archive.org 上存放的已寻回的原版 J2ME 构建；本目录不链接该文件，被清单收录也不代表对任何游戏文件拥有权利。",
+      "README 推广 Quiver Launcher，这是一个独立的目录网站和启动器；README 还说明清单由维护者利用业余时间维护，更新可能相隔数月。仓库只有 README.md 和 MIT 许可证（版权 2023 Sebastrion）；所链接的移植项目、原游戏及其素材各自保留权利。这是独立的发现清单；所审来源未确立与 REA 的关联。"
+    ]
+  },
+  "re-ios-apps-course": {
+    "name": "iOS 应用逆向工程课程",
+    "requirements": [
+      "审阅提交为 183873a（2024-04-17）。课程主要写于 2019 年，2020 年年中以后只有少量措辞和命令方面的小修正。设备相关说明覆盖 iOS 10 至 12，许多环境配置工具也出自那一时期，在当前设备上未必可用。导言明确不涉及越狱、iOS 系统漏洞利用、插件（tweak）开发、后端 API 测试以及深入的 ARM 汇编。",
+      "前置知识页没有列出必备条件，但建议使用 Mac（Xcode 没有 Windows 替代品），具备 Objective-C、Swift、JavaScript、HTML、SSH/SCP 和中间人攻击概念的基础，并准备 Ghidra、IDA 或 Hopper 试用版等 ARM 反汇编工具。只有解密模块以及 Cycript 和 Frida 练习需要运行 iOS 10 或更高版本的越狱 iPhone/iPad/iPod。",
+      "练习无需任何第三方应用：作者在配套仓库 RE-iOS-Apps-Extras-Github 中提供已解密的 CoinZa IPA 以及课程的 EPUB 版本。README 称这些漏洞源自正式上架的应用，但只在 CoinZa 中重现，而不针对原应用公开；结语也请读者以负责任的方式报告漏洞。",
+      "仓库没有单独的许可证文件；README 附有 MIT 式许可声明（Copyright 2019 Ivan Rodriguez）和风险自负的免责声明；结语请复用材料的人注明作者。本合集阅读了所审阅提交中的课程页面，没有安装 CoinZa 或按设备步骤操作；课程未提及 AI 或 REA 的使用。"
+    ]
+  },
+  "webamp-winamp-reimplementation-case": {
+    "name": "Webamp：在浏览器中重新实现 Winamp 2",
+    "requirements": [
+      "审阅时的最新版本为 npm 上的 webamp 2.3.1，于 2026-06-16 发布；所审阅的 master 分支提交（2026-10-17）另含更新日志中列出、尚未发布的无障碍和 API 改动。README 称它可在新版 Edge、Firefox、Safari 和 Chrome 中运行。它重新实现的是 Winamp 的行为和皮肤渲染，并非恢复 Winamp 的代码；webamp-modern 仍是原型，尚有一份未完成的 MAKI 与皮肤功能清单。",
+      "无需原版 Winamp：Webamp 自带默认皮肤和示例音轨，用户也可载入自己的 Winamp 2 .wsz 皮肤、音频文件、Milkdrop 预设和 .eqf 均衡器预设。从其他域名获取的皮肤和音频须允许 CORS 访问，因为 Webamp 需要读取其内容。",
+      "开发使用 pnpm 和 Turborepo；.nvmrc 指定 Node.js 22，CI 则用 Node.js 20 构建所有包、执行代码检查和类型检查并运行 Jest 测试。这些测试检验的是 Webamp 自身的解析和渲染，而非与 Winamp 的等价性。编译 webamp-modern 的 MAKI 测试脚本时会调用仓库自带的 Winamp 5.66 mc.exe：在 Windows 上直接运行，在其他系统上通过 Wine 运行。",
+      "代码采用 MIT 许可，README 称 Winamp 的名称、界面和示例音频文件属于 Nullsoft。以下随附文件没有自己的许可声明：packages/webamp-modern/resources/maki_compiler 下的 Nullsoft MAKI 编译器（从 Winamp 3 alpha 8r 到 Winamp 5.66 的五个 mc.exe 版本、nscrt.dll 以及 MAKI .mi 库头文件），以 Winamp 默认皮肤命名的皮肤（base-2.91、Winamp 3 build 499、Winamp Modern 5.66）和用于演示与测试的第三方社区皮肤，llama 示例 MP3，以及 Winamp Modern Skins 教程 PDF。随附的 Perl 版 MAKI 反编译器采用 GPL-2.0 许可。所审阅的资料未表明使用了 REA 或 AI；本次未构建或运行任何内容。"
+    ]
+  },
+  "nforest-awesome-decompilation": {
+    "name": "awesome-decompilation 反编译阅读清单",
+    "requirements": [
+      "这并不是持续维护的索引：所审阅的 master 提交日期为 2023-03-05，是仓库最新的提交，加入了 2022 年 12 月的预印本 Beyond the C（arXiv 2212.08950）。因此“AI 反编译”部分只有六篇神经网络反编译论文和项目，之后的研究（包括基于大语言模型的反编译）均未收录。",
+      "条目只有链接，分布在 13 个标题下，没有注释、日期、状态或许可说明。链接指向论文和学位论文 PDF、厂商产品页、GitHub 仓库以及网店的图书页面，部分 PDF 是第三方镜像；本次审阅未逐一检查链接是否仍然有效。",
+      "范围是本机代码反编译的理论与工具。所列六个项目是 Hex-Rays、Ghidra 反编译器、JEB、RetDec、rev.ng-c 和 jsdec，八种中间表示包括 LLVM IR、VEX、BAP、REIL、ESIL、Binary Ninja 的 LLIL 和 VTIL。这是阅读清单，不是游戏反编译或重建项目索引。",
+      "仓库只有 README.md，没有许可证文件或贡献指南，GitHub 也未识别出许可证，因此清单未声明复用条款。所链接的论文、书籍和工具各自保留权利，其中部分反编译器是商业产品。这是独立的阅读清单；所审来源未确立与 REA 的关联。"
+    ]
+  },
+  "tiny-dec": {
+    "name": "tiny-dec 教学用反编译器",
+    "requirements": [
+      "审阅提交为 4f5f1e0（2026-05-27），也是仓库唯一的提交；软件包版本为 0.1.0，仓库的测试和代码检查工作流在该提交上均已通过。README 称它是教学工具而非生产级反编译器：只支持 RV32I，无法解析的表达式以 raw<...> 形式保留在输出中，而不作猜测。在线演示站点 tiny-dec.zzhang.xyz 展示了各个阶段。",
+      "输入为 RV32I ELF 文件。仓库在 tests/fixtures 下提交了 13 个 C 测试程序及其 39 个 RV32I 构建（-O0 与 -O2，PIE 与非 PIE），因此无需任何外部二进制文件。重新构建这些程序或编译自己的 C 代码，需要支持 RISC-V 的 clang、lld 和 LLVM，可在本地安装，也可使用仓库附带的 Docker 开发镜像。",
+      "需要 Python 3.12+ 和 Poetry，加载器把 ELF 解析交给 pwntools；README 列出了 Ubuntu/Debian 系统依赖，仓库还附带 devcontainer 配置。AI 导师需要 Claude Code，通过仓库中的插件市场清单安装为插件；其技能文件为流水线的每个阶段各准备了一份课程指南。",
+      "采用 MIT 许可证（Copyright 2026 Zhuo Zhang）。500 个测试的数量和示例输出均出自作者。本合集没有安装或运行该反编译器，没有试用 AI 导师，也没有评估输出质量。该导师是 AI 教学辅助，并非 REA 集成，仓库中也没有提到 REA。"
+    ]
+  },
+  "sead-nintendo-library-decomp-case": {
+    "name": "sead：Nintendo 第一方 C++ 标准库的反编译重建",
+    "requirements": [
+      "所审阅的 master 提交（2026-10-11，无发行版）源自 aboood40091/sead，但针对更新的 sead 版本。README 称若干模块目前无法为 Switch 构建，进度请见 GitHub 项目页面；seadVersion.h 在 README 所列之外还加入了《超级马力欧创作家 2》预设和自定义特性组合。",
+      "构建本身不需要任何游戏文件。要核对准确性则需要原始 sead，而它只以静态链接的形式随游戏发布：README 建议合法拥有一款带调试符号的较新第一方游戏，并举出《超级马力欧 奥德赛》1.0.0、《斯普拉遁 2》3.1.0 及以下版本，以及 Nintendo Labo 的试点构建。",
+      "README 要求使用部分支持 C++17 的编译器（如 Clang 3.9 及以上）和 CMake 3.10 及以上版本。CMakeLists 只为 nin（nnSdk，即 Switch）平台构建对象库，并链接宿主项目提供的 NintendoSDK 头文件；根据一个迁移选项，使用 open-ead 的旧版或新版头文件仓库。README 还介绍了 Wii U（cafe）源码，并说明不支持其他平台。",
+      "README 要求贡献者将非内联函数与原始汇编比对并使其一致，仅容许寄存器分配或明显无害的指令重排差异，并须以 NOT_MATCHING 注释标明；还要借助试点构建和断言信息还原内联。MATCHING_HACK_NX_CLANG 用于包裹影响代码生成的技巧。仓库本身没有检查器或进度数据，CI 只运行 clang-format，因此一致性在使用它的项目中检查。本次审阅未运行任何程序。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证；README 称除 Nintendo 外无人拥有 sead 源码。res/ 目录包含反编译的图元渲染器着色器源码，以及随之一同更新的 2 KB 已编译 Wii U 着色器二进制文件。Nintendo 游戏仍受其自身权利约束，所审来源未确立 AI 或 REA 的使用。"
+    ]
+  },
+  "teddycloud-toniebox-server-case": {
+    "name": "TeddyCloud：可自托管的 Toniebox 云端替代服务器",
+    "requirements": [
+      "审阅对象为 2026-08-25 的稳定版 master 最新提交，即 v0.7.0 合并提交；tc_v0.7.0 发布于同日打标签，日常开发在 develop 分支进行。项目的安装指南覆盖使用 CC3200、CC3235 或 ESP32 芯片的 Toniebox 1，README 将 Toniebox 2 支持列为计划中。",
+      "安装过程具有侵入性，且每台盒子各不相同：项目指南要求用户导出自己盒子的客户端证书、向盒子刷入替代 CA 并重定向其 DNS；服务器还可以在 ESP32 固件转储中提取或注入证书。仓库不提供任何盒子证书、固件或 tonie 音频（相应目录只是空占位），本条目也不提供提取或刷写步骤。dev-sandbox 中预先生成的证书为自签名证书，仅用于本地测试。",
+      "构建使用手写的 Makefile、protoc-c 和 C 工具链，并需要 CycloneTCP/SSL/Crypto、cJSON、Opus、Ogg、teddycloud_web 前端及 emsdk 等子模块；Linux 调试构建默认启用 AddressSanitizer 和 UBSan，在 macOS 上推荐使用 Docker 构建。tc_v0.7.0 版附带由 Windows/Linux 发布工作流生成的 amd64 压缩包，并为多个平台发布 Debian、Ubuntu 和 Alpine Docker 镜像。音频流转换使用 ffmpeg。",
+      "自定义 tonie JSON 接口的 Python API 测试和 WASM TAF 编码器测试通过 Makefile 目标运行；所审阅的工作流只构建并发布，不运行这些测试。dev-sandbox 提供模拟的 tonie、盒子和 TAF 数据。与真实盒子及 Boxine 云端配合的表现仍属项目报告，本次来源核查未运行任何内容。",
+      "采用 GPL-2.0（LICENSE）；内置的 Cyclone 协议栈、Opus、Ogg、cJSON 和 FatFs 保留各自条款。tonie 音频、盒子固件和 Boxine 的服务保留各自权利。所审阅来源未确立任何 AI 或 REA 的使用。"
+    ]
+  },
+  "onethawt-re-reading-list": {
+    "name": "逆向工程阅读清单（onethawt）",
+    "requirements": [
+      "审阅提交为 a1ee767（2023-05-02）。53 个提交中有 46 个来自 2015–2016 年；最后新增的条目是 x64dbg（2017）、Binary Ninja（2018）和 Ghidra（2019），2023 年的提交只是合并了一个 2018 年提出、删除失效链接的拉取请求。因此该清单早于当前多数工具和研究，也不涉及任何机器学习或 LLM 辅助的逆向工程。",
+      "多数条目只有一个链接，部分附有引自出版方或项目的介绍，没有难度、平台或时效方面的说明。许多链接指向 2010–2016 年发布在个人或项目网站上的文章和 PDF，README 建议在链接失效时使用 archive.org。审阅时的自动检查中，两个文件中 59 个不重复 URL 里有 6 个无响应、返回 404 或跳转到登录页；TIE 和 HyperV 两个条目链接到了无关文档（一份 iOS 6 安全演讲和一份 IR 合成幻灯片）。",
+      "书籍链接指向 Amazon 商品页，IDA Pro、Binary Ninja 和 Hopper 为商业产品。Windows 部分还链接了一些较早的内核保护绕过文章，本记录不作进一步介绍。",
+      "GitHub 未检测到许可证，仓库也没有许可证文件，因此清单未声明复用条款；所链接的作品保留各自权利。作者表示可通过个人联系页面索取已无法访问的文档副本。清单中未提及 AI 或 REA。"
+    ]
+  },
+  "animal-forest-n64-decomp-case": {
+    "name": "《动物之森》：进行中的 N64 一致性反编译",
+    "requirements": [
+      "README 称其为进行中的反编译项目，代码库可能大幅变动，并提醒 ROM 的部分内容可能尚不能移动。Makefile 与 CI 中唯一配置的版本是 jp，即日版 N64。产物为 N64 ROM；README 声明项目不是移植，明确不以充当移植基础或任何商业用途为目标。其链接的 GameCube 版 Animal Crossing 反编译是另一个项目。",
+      "需将自己的日版《动物之森》ROM 作为基础 ROM 放入 baseroms/jp，可接受 .z64、.n64 和 .v64 文件。make setup 会将其解压并按 baseroms/jp/checksum.md5 校验，随后 make extract 借助 splat 在本地得到汇编和素材。所审代码树不含 ROM、图像或二进制素材文件；源自游戏的内容仅限于 DMA 文件表头文件、src/objects 下的小型地址表等数据表。",
+      "README 记载的环境为 Linux（推荐 Debian 或 Ubuntu），需 make、Git、build-essential、clang、MIPS binutils 以及带 pip 和 venv 的 Python 3；make venv 会安装固定版本的 splat64 0.24.0 以及 spimdisasm 和 mapfile-parser。tools 目录的 Makefile 从 decompals/ido-static-recomp v1.2 下载 IDO 5.3 与 7.1 的静态重编译版本，并下载 pigment64 0.6.3；构建还会用随附的 ultralib 子仓库编译 libultra。NON_MATCHING 构建会关闭校验比较。",
+      "COMPARE 保持默认时，make rom 和 make compress 会按仓库保存的 MD5 值检查两个 ROM。尚未反编译的函数仍以提取出的汇编通过 GLOBAL_ASM 引入，因此校验通过并不代表反编译完成。CI 在提供基础 ROM 和编译器归档的私有容器中构建 jp 版本，比较警告数量并上传 objdiff 格式的报告。decomp.dev 针对该固定提交的报告显示，2,515,744 个代码字节中有 465,796 个（18.52%）、14,415 个函数中有 2,998 个已匹配，尚无完整单元；本合集未运行构建。",
+      "README 规定 src 和 include 在可能范围内、以及未声明其他许可的文件采用 CC0-1.0，asm-differ、asm-processor、fado、ultralib 等子仓库不在此列。任天堂的游戏、ROM 内容和下载的编译器各自保留权利。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
+  },
+  "remade-reimplementation-directory": {
+    "name": "Remade 软件重新实现目录",
+    "requirements": [
+      "这是一个很新的目录：仓库创建于 2026-10-09，截至 2026-10-19 的所审提交，历史共有 308 次提交。目录数据包含 123 条项目记录、13 个配套工具、2 个套件，以及 379 条“项目请求”，后者针对尚无已收录重新实现的软件；remade.wiki 网站由这些文件构建。",
+      "条目针对闭源原软件，以桌面和网页应用为主，Adobe、Autodesk 和 Microsoft 的产品较为常见。按类别计，创意类 53 条、办公类 37 条、工程类 22 条，另有操作系统类 5 条、开发工具类 3 条、其他 2 条和游戏类 1 条。开发状态与兼容程度均为自报：78 条为 experimental，26 条 alpha，13 条 beta，5 条 stable，1 条 planned；107 条自称部分兼容。",
+      "POLICY.md 要求代码独立编写，不得包含泄露或未经授权的源码、二进制文件或素材，不收录原软件的分支、移植、启动器和模组，并将净室开发的声明交由各项目作者负责；Remade 表示不审核代码来源或合法性。只有一条记录提到净室流程，因此某个条目依靠的是净室开发、逆向工程还是公开文档，需在其自身来源中核实。",
+      "仓库的 MIT 许可证适用于目录本身的代码和数据；所收录项目各自保留许可证，从 MIT、Apache-2.0 到 GPL 和 AGPL 不等，其中一项记为 Unlicensed。项目自己于 2026-10-17 对 119 个条目做的文档审查，仍有无法访问的仓库和许可证冲突未解决，并声明不构成软件、法律或兼容性认证。这是独立的目录；所审来源未确立与 REA 的关联。"
+    ]
+  },
+  "pixmob-ir-protocol-case": {
+    "name": "PixMob 红外逆向工程：在家控制活动手环",
+    "requirements": [
+      "审阅对象为 2026-02-06 的 main 最新提交，没有发布版本。主文档针对红外手环；rf 文件夹另外提供射频手环的 915 MHz 与 868 MHz OOK 录音和笔记，其中可能存在的额外编码层和 CRC 仍未解开。项目报告测试了 2014 至 2021 年间生产的六个红外手环版本，硬件表列出了已知的电路板和 MCU。",
+      "需要用户自己的 PixMob 手环（换上新电池），以及连接 940 nm 红外发射器的 Arduino 兼容板或 ESP32，并使用 IRremote 或 IRremoteESP8266 库；也可改用 Flipper Zero，从另一个仓库发送代码。Python 工具需要 pyserial、PySimpleGUI 和 clipboard，网页界面在 Chrome 中运行并直接连接 Arduino。",
+      "证据来自录音和观察到的手环反应：仓库收录多场活动的原始 Flipper 红外录音、整理过的射频录音、已发现的效果定义、暴力枚举尝试记录，以及一只手环的 24C02 EEPROM 转储。README 说明暴力枚举只针对少数几种数据包长度，因此代码列表远未穷尽，活动中使用的编程和编排信号仍未发现。",
+      "Python 单元测试覆盖转换函数和 Flipper 文件解析；项目没有 CI。各种效果由作者和贡献者在自己的手环上报告，本次来源核查未运行任何代码或硬件。",
+      "采用 MIT 许可（LICENSE）。PixMob 的硬件、固件和商标不在该许可范围内，X 光图片注明来自 Samy Kamkar。所审阅来源未确立任何 AI 或 REA 的使用。"
+    ]
+  },
+  "wtsxdev-reverse-engineering-list": {
+    "name": "Reverse Engineering resources 逆向工程资源清单（wtsxDev）",
+    "requirements": [
+      "审阅提交为 b254985（2019-03-07），至今仍是默认分支的最新提交；全部 26 个提交均来自 2017–2019 年，因此清单早于当前多数工具，也不涉及任何 LLM 辅助的工作流程。审阅时的自动检查中，147 个不重复 URL 里有 24 个无响应、返回 404 或 503，其中包括全部 tuts4you 下载链接、Apple 手册页链接、Crackmes.de、malwr.com 以及 CodePlex 上的 z3 页面。",
+      "条目未注明许可证、平台、成熟度或维护状态，每个工具都需在其自身来源中核实；IDA Pro、010 Editor 和 Binary Ninja 等为商业产品。书籍大多使用 amzn.to 短链接，页首图片和末尾五个链接指向 kalitut.com 上的书单。",
+      "“练习”部分把 crackme 和 CTF 网站与公开的恶意软件样本库并列，只附有一句注意恶意软件的提醒；“Mac 解密”部分只列出工具名称，未说明用法。本记录仅把该清单视为分析资源目录。",
+      "package.json 和 .travis.yml 在 Travis CI 上以 Node.js 8 配置了 remark-lint 检查，涵盖列表顺序、重复链接和失效链接。GitHub 未检测到许可证，仓库没有许可证文件，package.json 的 license 字段也为空，因此清单未声明复用条款；所链接的工具和书籍保留各自条款。这是独立的发现清单；所审来源未确立与 REA 的关联。"
+    ]
+  },
+  "decomp-academy": {
+    "name": "Decomp Academy 一致性反编译课程",
+    "requirements": [
+      "审阅的前端提交为 a21f9d0（2026-09-23）；仓库于 2026 年 6 月首次发布，此后大多数月份都有提交。README 仍只描述一门 258 课的 GameCube 课程，但所审阅的课程目录和在线站点列出了三门课程共 755 课：GameCube（263 课）、Game Boy Advance（251 课）和 Nintendo 64（241 课），每门分为从热身到真实函数的四个层级。",
+      "课程在浏览器中进行（decomp-academy.dev），README 称无需注册即可开始，账户用于保存进度。评分时用原版编译器编译学习者的 C 代码，再用 objdiff 比对：GameCube 使用 Metrowerks CodeWarrior GC/2.0，Nintendo 64 使用 SGI IDO 5.3，二者在托管后端运行。后端是另一个 AGPL-3.0 仓库，README 称它在 wibo 下运行 CodeWarrior 编译器；Game Boy Advance 则在浏览器中使用编译为 WebAssembly 的 agbcc。",
+      "无需任何游戏文件：后期课程改编自 README 致谢的开源反编译项目（Star Fox Adventures、Pikmin 2、Metroid Prime、Mario Party 4）中的函数，目标汇编由服务器根据每课的参考 C 代码生成。本仓库不含任何编译器，后端 README 也称其只提交了 wibo，未提交 MWCC；README 说明本地开发需要 Node 18+，以及一个同级目录下提供 MWCC 和 binutils 的 Star Fox Adventures 反编译项目检出，而 .env.example 称全新克隆默认使用托管的编译 API。",
+      "前端采用 AGPL-3.0 许可证，修改后作为网络服务运行的版本同样受其约束。本合集阅读了 README、课程元数据、一节真实函数课程和在线首页，没有解答课程或检验评分。仓库中提交了一份供 Claude Code 使用的课程编写指南 CLAUDE.md，但 README 未说明课程是如何编写的，也未提及 REA。"
+    ]
+  },
+  "phantom-hourglass-ds-decomp-case": {
+    "name": "《幻影沙漏》：早期阶段的 Nintendo DS 一致性反编译",
+    "requirements": [
+      "README 标明项目仍在进行中，目标为欧版和美版，其他版本日后可能支持；configure.py 接受 eur 或 usa。反编译范围是 ARM9 程序及其 TCM 模块和覆盖层，docs/build_system.md 说明 ARM7 程序不在反编译之列。产物是 Nintendo DS ROM，不是 PC 移植。",
+      "需为每个版本将自己的已解密基础 ROM 以 baserom_ph_eur.nds 或 baserom_ph_usa.nds 放入 extract/，并与 extract/README.md 所列 SHA-1 一致；随后由 dsd 在本地从中提取代码和素材。INSTALL.md 称逐字节一致的 ROM 是可选项，要生成它还需使用者自己的 DS ARM7 BIOS 文件，且须与所列两个 SHA-1 之一相符。README 称仓库不含素材或汇编；不过 config/ 提交了源自游戏的 dsd 拆分、符号与重定位表，每个版本 65 个模块。",
+      "INSTALL.md 列出的平台为 Windows（推荐）或 Linux，需 Python 3.11+ 与 pip、GCC 9+、Ninja 以及 pre-commit 钩子；在 Linux 上默认通过 wibo 运行 Windows 编译器，也可改用 Wine。configure.py 从 GitHub 发行版下载 dsd v0.11.0、objdiff v3.4.0、sjiswrap v1.2.2 和 wibo 0.6.16，并从 decomp.aetias.com 下载 Metrowerks mwccarm 编译器包（使用其中的 2.0/sp1p5 版本）。",
+      "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
+      "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
+  },
+  "kinoko-mkwii-physics-reimplementation-case": {
+    "name": "Kinoko：为精确回放幽灵记录而重新实现 Mario Kart Wii 物理引擎",
+    "requirements": [
+      "README 介绍项目是 Mario Kart Wii 物理引擎的 C++ 重新实现，目标是完全准确地回放幽灵记录。所审提交中，STATUS.md 列出 55 个计时赛幽灵测试用例，全部标为逐帧同步；最新 GitHub 发布版 0.6（2025-09-04）附有模拟器的 x86-64 Linux、macOS 和 Windows 二进制文件。源码注释标明了原版游戏中的地址，但项目不会重新构建游戏可执行文件；README 将这一方向指向独立的 riidefi/mkw 一致性反编译项目。",
+      "运行时需要使用者自备 Mario Kart Wii 光盘中的 Race 文件夹（Common 与赛道归档），并按相对可执行文件的路径放置；仓库不附带任何游戏文件，README 也要求贡献的前端不得分发游戏内素材。仓库中的样例是计时赛幽灵文件（.rkg）及逐帧 .krkg 参照轨迹；README 称后者由运行 PAL 版游戏的定制 vabold/mkw-sp 构建生成。这类轨迹是从游戏中采集的验证数据，在重建项目中很常见。",
+      "README 列出 g++ 13.1（C++23）、ninja 1.3 和 Python 3.6；configure.py 生成 ninja 构建，并把 testCases.json 编译为二进制测试套件文件。CMakeLists.txt 还提供 libkinoko 库目标，可将引擎嵌入其他 C++23 项目。CI 在 Ubuntu 上使用 GCC 14 构建；程序是带测试与回放模式的命令行宿主，README 表示暂无 GUI 计划。",
+      "kinoko test 以精确相等的方式，将位置、旋转、内部与外部速度、速率、加速度、软速度上限、比赛完成度和检查点数值与每一帧 .krkg 数据比较，并报告第一个失去同步的帧；kinoko replay 检查幽灵记录完赛时间是否与 .rkg 文件头中的时间一致。CI 使用从机密配置 URL 获取的运行文件执行测试套件，并检查 STATUS.md 是否为最新。这些都是项目报告的结果，本合集未构建或运行任何内容。",
+      "LICENSE 对项目采用 MIT（版权归 vabold，2022–2026）；Mario Kart Wii 及其游戏数据仍归 Nintendo 所有，随附的 doxygen-awesome-css 主题另有许可证文件。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
+  },
+  "owasp-fstm": {
+    "name": "OWASP 固件安全测试方法论（FSTM）",
+    "requirements": [
+      "审阅的默认分支提交为 ec666e8（2025-10-05）。正文大多写于 2019–2020 年，2022 年更新过 EMBA/EMBArk 部分；2025 年 10 月的修订更新了工具引用、删除了商业工具，并加入 SAST、SBOM 和 ISVS 章节，已发布的 GitBook 也包含这些内容。另有一个按阶段补充 ISVS 要求对应关系的功能分支（2026 年 6 月），审阅时尚未合并；一份篇幅较短的 2020 年中文译本位于单独的 zhong-wen-fstm 分支。",
+      "其目标读者为安全研究人员、软件开发人员、顾问、爱好者和信息安全专业人员。全文是一篇很长的参考页面，提供流程和命令，而不是循序渐进的课程；固件以外的硬件、无线、网络和用户界面测试，则请读者参考 OWASP IoT 安全测试指南（ISTG）。",
+      "按此方法操作需要在获得授权的评估中拿到固件镜像或实体设备；方法论要求根据项目目标和约定的测试规则选择获取方式，并遵守当地法律。部分阶段需要硬件调试接口和芯片编程器。工具大多在 Linux 上运行；README 链接了一个 2020 年预配置的 EmbedOS Ubuntu 虚拟机，并推荐 OWASP IoTGoat、DVRF 和 DVID 等故意含漏洞的固件用于练习。",
+      "采用 CC BY-SA 4.0 许可证（License.md）。本合集阅读了所审阅提交中的 README，并确认 GitBook 已包含 2025 年新增的章节，没有运行其中的命令或工具。方法论未描述 AI 或 REA 的使用。"
+    ]
+  },
+  "awesome-android-reverse-engineering": {
+    "name": "Awesome Android Reverse Engineering Android 逆向工程资源清单",
+    "requirements": [
+      "审阅提交为 0ade43d（2025-07-08）。58 个提交中有 51 个来自 2023 年；2025 年 3 月的一次改写重新组织了清单，并新增混淆与固件部分；2025 年 7 月的提交删除了“Cloud API”部分，但目录中仍保留该条目。",
+      "每个条目只有链接和一行简介，没有许可证、版本或维护状态说明，部分简介也不够准确：例如 AFLSmart 被描述为固件镜像模糊测试工具，而其自身 README 介绍的是感知输入结构的灰盒模糊测试工具。审阅时的自动检查中，90 个不重复 URL 里有 8 个无响应、返回 404 或 530：5 个链接的 GitHub 仓库已不存在，其中 4 个（ATDF、Paranoid、libhooker 和 Android 内核漏洞利用条目）是在 2025 年 3 月的改写中加入的；Houseparty 案例文章、Flare-On 页面和 AndroidXref 也无法打开。",
+      "其中 6 个条目是维护者自己的工具，1 个是其博客文章。Burp Suite、IDA Pro、JEB 和 DexGuard 为商业产品；“文档”部分链接了 APKMirror 和 APKPure 这两个 APK 下载站；清单中还列有用于绕过应用防护、转储内存和内核漏洞利用的工具。本记录仅把该清单视为分析资源目录。",
+      "LICENSE 为 MIT 许可（2023 年，James Stevenson），但 README 指向一个并不存在的 LICENSE.md；.github 目录下仍留有仓库模板自带的占位变更日志和待办文件。所链接的工具、书籍和 APK 保留各自条款。这是独立的发现清单；所审来源未确立与 REA 的关联。"
+    ]
+  },
+  "mario-kart-double-dash-decomp-case": {
+    "name": "《马力欧卡丁车：双重冲刺!!》：调试版 GameCube 一致性反编译",
+    "requirements": [
+      "README 称其为进行中的 1:1 反编译，目前只支持调试版，即默认的 MarioClub_us（美版）目标，其 main.dol 的 SHA-1 记录在 config/MarioClub_us/build.sha1 中。configure.py 还列出 Release_eu，但其 config.yml 标注尚不可用，CI 也只构建 MarioClub_us。产物是 GameCube DOL，不是 PC 可执行文件或移植。",
+      "需将自己的该版本光盘镜像复制到 orig/MarioClub_us，可接受 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC 格式。README 称仓库不含任何游戏素材或汇编：decomp-toolkit 依据仓库提交的符号表和拆分表拆分使用者的 DOL，并在构建时于本地从该 DOL 中提取字体、system.arc 和构建时间数据。",
+      "构建需要 Python 与 ninja，可在 Windows（推荐原生工具）、macOS（需 wine-crossover）或 Linux（x86 上自动下载 wibo，其他架构用 Wine）上进行。configure.py 固定 decomp-toolkit v1.6.2、objdiff v3.3.1、binutils 2.42-1、sjiswrap v1.2.1、wibo 0.7.0 及 20250812 编译器包；游戏、JSystem、MSL 和 TRK 代码使用 Metrowerks GC/2.6，Dolphin SDK 库使用 GC/1.2.5n。",
+      "标为 Matching 的目标文件（configure.py 中有 518 个，另有 277 个仍为 NonMatching、13 个为 Equivalent）由源码编译，其余取自拆分出的 DOL，构建会按 build.sha1 校验 main.dol。CI 在提供光盘文件和编译器的容器中构建 MarioClub_us，上传进度报告，并对改动的 C++ 文件校验符号顺序。decomp.dev 针对该固定提交的报告显示，3,222,748 个代码字节中有 1,517,644 个（47.09%）、15,357 个函数中有 8,695 个已匹配，807 个单元中有 518 个已完成；本合集未运行构建。",
+      "仓库采用 CC0-1.0；任天堂的游戏、光盘内容和下载的编译器各自保留权利。README 致谢从其他反编译项目复用的 JSystem 和 SDK 代码，包括 Metroid Prime、Pikmin 2、Super Mario Galaxy、Super Mario Sunshine 和 Twilight Princess。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
+  },
+  "sfiii-3rd-strike-ps2-decomp-case": {
+    "name": "3S Decomp：逐字比对的《街头霸王 III：3rd Strike》PS2 反编译重建",
+    "requirements": [
+      "README 报告游戏代码已全部反编译，CRI 中间件部分反编译，游戏所用的大部分文件系统和声音函数已一致；cri-progress.md 所列 503 个 CRI 函数中已勾选 497 个。在所审提交中，PS2 构建仍有两个游戏函数（sea_write 和 mlt_obj_trans_rgb_ext）及 52 个 CRI C 文件中的 39 个包含汇编；PS2 SDK 和 GCC 库代码不在范围内。产物是 PS2 可执行文件，不是 PC 移植。",
+      "构建需要使用者从自己的游戏副本中取得 THIRD_U.BIN；拆分配置记录其 SHA-1 为 cf58495054c31ad852175c66e9ca04d5094f000e，make split 据此生成汇编和链接脚本。反编译指南还借助该可执行文件中的 DWARF 调试数据（用 decomp-toolkit 导出）获取函数签名和局部变量。另有面向 CPS3 街机版的 split_cps3 目标，需要使用者自备街机 ROM，目前只有代码段配置。",
+      "构建指南涵盖 Linux（需启用 i386 支持的 Debian 软件包、MIPS binutils，以及装有 splat64 0.29.0 和 spimdisasm 1.35.0 的 Python 虚拟环境），macOS 则使用所提供的 Dockerfile。make setup_tools 从 decomp.me 的编译器发布中下载 Metrowerks mwccps2 3.0b38 和 EE GCC 2.96，并下载用于运行 Windows 工具的 wibo；m2c、asm-differ、mwccgap 和 saturn-splitter 是 git 子模块。",
+      "构建成功后，compare_bytes.py 将重建的可执行文件与原文件在偏移 0x80 至 0x478A00 范围内比对，并输出 “Files match ✅”。该检查容许约 20 个游戏与 CRI 函数中列明的 163 个字存在差异，原因注明为寄存器与操作数互换、断言行号、字符串编码、一处错位的 nop 和一处调用错位，因此按项目自身的检查，一致性接近字节级，而非整个文件的哈希一致。最新提交移除了 GitHub Actions 工作流；本合集未自行构建。",
+      "LICENSE 为 AGPL-3.0，适用于项目代码。原可执行文件和游戏内容仍有各自权利约束；include/cri 中有标注 “CRI Middleware SDK” 及 “Copyright (c) … CRI-MW” 的头文件，内置的 zlib 也保留其自身许可证。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
+  },
+  "halo-ce-xbox-reimplementation-case": {
+    "name": "Halo: Combat Evolved：逐步重新实现并修补进原版 Xbox 可执行文件",
+    "requirements": [
+      "README 介绍项目旨在研究并为这款 Xbox 首发游戏打造自由、开源的重新实现；其“当前状态”列表报告修补后的游戏可以运行，主循环和另外若干函数已重新实现，但仍有很长的路要走。README 链接的进度页面（其数据文件最后修改于 2022 年 11 月）报告 .text 段游戏代码已重新实现 0.37%，共 40 个函数。默认分支最后一次提交日期为 2023-07-07。",
+      "需自备零售光盘的游戏文件，以及版本为 01.10.12.2276 的原版可执行文件（README 和 kb.json 以 MD5 标识），并以 cachebeta.xbe 为名放入 halo-patched 目录；tools/patch.py 会校验该哈希。仓库不含游戏可执行文件或素材，README 说明须来自使用者自己的副本。构建会在同一目录写出修补后的 default.xbe，作为使用者本地的修改副本；项目不分发任何游戏构建。",
+      "构建需要 CMake 3.16 及以上、带 libclang、pefile 与 pyxbe 的 Python 3，以及 Windows 上的 32 位 MSVC，或 Linux 和 macOS 上以 i386-pc-win32 为目标的 Clang 与 LLD；Dockerfile 提供 Ubuntu 22.04 构建镜像。产物面向初代 Xbox，可在 xemu 模拟器或主机硬件上运行；构建过程会生成 .gdbinit，便于通过 xemu 的 GDB 服务器用 GDB 调试。",
+      "kb.json 按原始目标文件分组，声明了 323 个原有函数和 71 个数据项及其地址；tools/knowledge.py 据此生成头文件、跳转桩和导入库，gen-struct-checks.py 为 types.h 生成静态大小检查。CI 只构建重新实现的映像（在 Ubuntu、Windows 和 macOS 上分别构建 Debug 与 Release），不使用原版文件，因此只检验能否编译，不检验行为。来源未记录逐字节比较或自动化的游戏行为比较，本合集也未运行任何内容。",
+      "仓库没有许可证文件，GitHub 也未检测到许可证，因此项目代码的再利用条款未作说明；src/xboxkrnl.exe.def 带有 CC0-1.0 声明（2017，Stefan Schmidt）。README 将该工作定位为教育研究，进度页面说明项目与 Microsoft 或 Bungie 无关，游戏本身仍受其权利人的条款约束。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
+  },
+  "paper-mario-ttyd-decomp-case": {
+    "name": "《纸片马力欧 RPG》：早期阶段的 GameCube 一致性反编译",
+    "requirements": [
+      "README 只列出一个支持版本 G8MJ01（Rev 0，日版）；configure.py 未定义其他版本，CI 也只构建 G8MJ01。README 仍留有模板残余：徽章指向另一个项目，克隆命令写的是 NWPlayer123/G8MJ01-dtk，另有一行把 G8MJ01 称为美版。产物是 GameCube DOL 和 REL 组，不是 PC 移植。",
+      "需将自己的 G8MJ01 光盘镜像复制到 orig/G8MJ01，可接受 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC 格式。README 称仓库不含任何游戏素材或汇编：decomp-toolkit 依据仓库提交的符号表和拆分表拆分 main.dol 与各 REL，并从 DOL 中把记忆卡图标和横幅纹理提取为本地头文件。src/pmario_sound.c 等反编译源文件中也包含以 C 重建的游戏数据表。",
+      "构建需要 Python 与 ninja，可在 Windows（推荐原生工具）、macOS（需 wine-crossover）或 Linux（x86 上自动下载 wibo，其他架构用 Wine）上进行。configure.py 固定 decomp-toolkit v1.8.3、objdiff v3.7.1、binutils 2.42-2、sjiswrap v1.2.2、wibo 1.1.0 及 20260305 编译器包；游戏和 REL 代码使用 Metrowerks GC/2.6，Dolphin SDK 使用 GC/1.2.5n。tools/ttydasm 是一个 Rust 辅助工具，可从 build/G8MJ01 中链接好的 DOL 或 REL 产物里解码指定的事件脚本。",
+      "标为 Matching 的目标文件（configure.py 中 547 个里有 100 个）由源码编译，其余取自拆分出的原始文件；默认 ninja 目标会先按 config/G8MJ01/build.sha1 校验 DOL 和全部 REL，再报告进度。CI 在提供光盘文件和编译器的容器中构建 G8MJ01，并上传进度报告。decomp.dev 针对该固定提交的报告显示，3,784,980 个代码字节中有 457,800 个（12.10%）、9,770 个函数中有 2,029 个已匹配，1,239 个单元中有 100 个已完成；本合集未运行构建。",
+      "仓库采用 MIT 许可证（版权归 NWPlayer123），libs/musyx 另有其 MIT 许可证；两者都不涵盖任天堂的游戏、光盘内容或下载的编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
+  },
+  "awesome-frida": {
+    "name": "Awesome Frida Frida 资源清单",
+    "requirements": [
+      "审阅提交为 e20da3b（2026-04-10）。68 个提交中有 43 个来自 2016–2017 年，多数演讲、视频和文章发布于 2015–2017 年；继 2023 年 4 月新增 RoboDroid 之后，唯一的修改是 2026 年 4 月新增 rekit。条目未注明适用的 Frida 版本；frida-load 已标为弃用，Lobotomy 相关条目已被划掉。",
+      "审阅时的自动检查中，110 个不重复 URL 里有 13 个无响应或返回 404，包括 OSDC、ZeroNights 和 RMLL 的活动页面以及一个三篇连载的教程；另有三份演讲 PDF 以相对路径链接，但仓库中并没有这些文件。所链接的 57 个 GitHub 仓库中，4 个已归档，2 个已不存在，13 个自 2019 年以来没有推送。README 请贡献者标出已停止维护或两三年没有提交的条目。",
+      "清单中有些工具用于转储进程内存、解密受保护的应用或记录 TLS 密钥，另有两篇文章讨论如何检测 Frida；本记录仅把该清单视为插桩资源目录。",
+      "LICENSE 文件为 CC0 1.0。贡献指南改编自通用的 awesome 清单指南，其中提到的行为准则和清单创建指南并不在仓库中。所链接的项目保留各自许可证。这是独立的发现清单；所审来源未确立与 REA 的关联。"
+    ]
+  },
+  "3sx-third-strike-native-port-case": {
+    "name": "3SX：延续 PS2 反编译的《街头霸王 III：3rd Strike》原生移植",
+    "requirements": [
+      "README 称 3SX 是原生移植、是 3s-decomp 的延续，并明确表示它既不是重编译也不是模拟。在所审提交中，src/sf33rd 下的游戏代码已没有残留的 INCLUDE_ASM 占位，src/port 提供基于 SDL3 的平台、输入和声音层，包括自行实现的 ADX 解码器。这是经过修改的移植版：其目标包括修复 PS2 版引入的平衡性退化，而街机平衡选项仍标注为进行中。唯一的发布是随 main 分支重建的滚动预发布版；稳定的 PC 体验、以街机 ROM 作为唯一依赖等目标仍列在 1.0 里程碑中。",
+      "游玩需要合法取得的 PS2 版《街头霸王 III：3rd Strike》或 Street Fighter Anniversary Collection：启动向导读取使用者的光盘镜像，或将其中的 SF33RD.AFS 放入 resources 文件夹；发布版构建会将该文件与 resources.c 中的 SHA-256 比对。街机平衡选项还需要使用者自备的 sfiii3nr1.zip CPS3 ROM。仓库不含游戏归档文件，但 src/bin2obj 中有来自反编译项目的大型 C 数据表。",
+      "滚动预发布版提供 Windows、macOS 以及 x86_64 和 arm64 Linux 的预编译程序。源码构建使用 CMake 3.24+ 与 Clang：Windows 需先安装 MSYS2 MinGW64 软件包，Linux 需列出的 Ubuntu 软件包，macOS 需 Xcode 命令行工具；build-deps.sh 会下载并构建 SDL3、SDL_net、GekkoNet、libcdio、minizip-ng 和 TF-PSA-Crypto。CMake 和 CI 还包含借助 Docker 工具构建的 PSP 分支。",
+      "拉取请求的 CI 只构建 Windows、macOS、Linux 和 PSP 目标。与街机版的一致性由可选的 Statcheck 构建检查：tools/fcade-replays（自述为分析 Fightcade 录像数据流的逆向辅助工具）下载录像，定制的 FBNeo 分支记录逐帧的 CPS3 内存转储，Statcheck 在体力、位置、晕眩值、超必杀槽、计时器或回合阶段首次不一致时停止。所审代码树未公布 Statcheck 结果；本合集未构建或运行任何内容。",
+      "仓库包含一个附带 Codex 界面文件的智能体技能，指示编程智能体通过只读的 Ghidra MCP 服务器，将本地函数与 CPS3 程序对比，标注每个函数的一致程度，并在街机平衡开关下加入 CPS3 行为；所审文件未说明有多少代码以这种方式编写，也未确立 REA 使用。LICENSE 为 AGPL-3.0。THIRD_PARTY_NOTICES 列出 GPLv3+ 的 libcdio，以及 zlib、BSD-2-Clause、MIT 和 Apache-2.0 许可的组件；游戏及其素材各自保留权利，README 表示项目不纵容盗版。"
+    ]
+  },
+  "re4-gamecube-debug-decomp-case": {
+    "name": "re4：Resident Evil 4 GameCube 调试版的字节一致反编译",
+    "requirements": [
+      "审阅的是 2026-10-02 的最新提交，距 2026-09-07 的首次提交不到四周。README 称反编译已完成：每个单元都编译为原始字节，src/ 中约有 57 万行 C 与 C++ 代码且没有汇编文件；另有 526 处 `// COMPILER-DIFF:` 标记，在不生成额外指令的前提下引导编译器选择相同的寄存器或指令顺序。其余内联汇编几乎都位于原厂同样以汇编编写的例程中。产物是调试原型版的 DOL 与 REL，不是零售版构建，也不是 PC 移植。",
+      "需将自备的两张调试版光盘镜像放入 orig/G4BE08/：光盘 1 提供 main.dol 和大部分 REL，光盘 2 提供岛屿关卡的四个 REL，configure.py 还会从中读取对应的 Bio4 符号文件。游戏代码所用编译器需从 SN Systems 公开的 ProDG 3.9.3 GCC 移植版 GPL 源码构建，该源码同样由使用者自备。仓库不含游戏素材。",
+      "文档说明的构建宿主为 Linux，需 Python 3 与 ninja。tools/sn-gcc/build.sh 会结合项目的 Linux 宿主补丁和内存标志补丁，一次性在本机构建 SN 的 GCC 2.95.3（SN BUILD v1.79）；CRI 中间件使用 Metrowerks CodeWarrior 2.4.7 构建，取自 dolsdk2004 的 Nintendo SDK 则使用 GC/1.2.5n。首次运行 configure 会下载固定版本的 decomp-toolkit、objdiff、wibo 和 CodeWarrior 编译器包。",
+      "构建成功时，ninja 应在最后报告 100% 匹配并完成链接，按 config/G4BE08/build.sha1 运行 dtk shasum 应对全部 115 个二进制文件输出 OK；tools/bytecmp.py 用于比较单个单元，tools/asmcheck.py --all 统计由 asm 模板生成的指令数，任何修改都不得改变该总数。仓库没有 CI 工作流或发布版本，因此这些结果均为项目报告，本合集未进行任何构建。",
+      "LICENSE 仅将 CC0 用于项目自行编写的构建脚本、工具、配置与文档。README 与 LICENSE 声明，src/ 与 include/ 中重建的游戏、SDK 及中间件源码仍归 Capcom、Nintendo 与 CRI Middleware 所有，仅为研究与保存目的发布。docs/research/README.md 称其中的匹配笔记由完成匹配工作的 AI 智能体撰写；未记录 REA 的使用。"
+    ]
+  },
+  "smash-bros-brawl-decomp-case": {
+    "name": "《任天堂明星大乱斗X》：早期阶段的 Wii 一致性反编译",
+    "requirements": [
+      "README 只列出一个支持版本 RSBE01_02（美版 Rev 2），日版、美版 Rev 1、PAL 版和韩版修订版均被注释掉；configure.py 列出全部七个版本，但只有 RSBE01_02 有配置，CI 也只构建该版本。产物是 Wii 的 main.dol 和 REL 组，不是 PC 移植。",
+      "需将自己的光盘镜像复制到 orig/RSBE01_02，可接受 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC 格式。README 称仓库不含任何游戏素材或汇编：decomp-toolkit 依据仓库提交的各模块符号表和拆分表拆分 DOL 与 REL，并在本地从 DOL 中提取一个内嵌二进制（HomeBtnIcon）。游戏头文件来自 BrawlHeaders 子模块（Sammi-Husky/BrawlHeaders），README 要求构建前先初始化子模块。",
+      "构建需要 Python 与 ninja，可在 Windows（推荐原生工具）、macOS（需 wine-crossover）或 Linux（x86 上自动下载 wibo，其他架构用 Wine）上进行。configure.py 固定 decomp-toolkit v1.7.5、objdiff v3.4.4、binutils 2.42-1、sjiswrap v1.2.2、wibo 1.0.0 及 20250812 编译器包，编译和链接均使用 Metrowerks GC/3.0a5.2。",
+      "标为 Matching 的目标文件（configure.py 中有 184 个，另有 20 个仍为 NonMatching）由源码编译，其余取自拆分出的原始文件；默认 ninja 目标会先按 config/RSBE01_02/build.sha1 校验 main.dol 和各 REL，再报告进度。CI 在提供光盘文件和编译器的容器中构建 RSBE01_02，并上传进度报告。decomp.dev 针对该固定提交的报告显示，15,833,548 个代码字节中有 201,252 个（1.27%）、92,523 个函数中有 2,504 个已匹配，4,415 个单元中有 516 个已完成；本合集未运行构建。",
+      "仓库采用 CC0-1.0；任天堂的游戏、光盘内容和下载的编译器不在该声明范围内，BrawlHeaders 子模块在 GitHub 上也未声明许可证。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
+  },
+  "re-plants-vs-zombies-decomp-case": {
+    "name": "re-plants-vs-zombies：反编译并现代化改造 Plants vs. Zombies 年度版",
+    "requirements": [
+      "README 介绍项目旨在反编译初代 PvZ 的最新功能，并扩展游戏及其引擎；它建立在 Miya（rspforhp）已删除的 0.9.9 版反编译之上，并感谢 ruslan831 将其存档。路线图将 x64 支持和成就标为部分完成，GLFW 渲染器与跨平台替换标为进行中，Zombatar 和模组 API 尚未完成。项目没有发布版；最后一次提交日期为 2026-07-11。",
+      "游玩需要购买所得副本中的原版游戏文件；README 链接 Steam 年度版，但未注明确切的可执行文件版本。构建出的可执行文件在该游戏目录中运行，音频代码在运行时加载 bass.dll 或 fmod.dll，而不是链接仓库内提交的副本。README 称仓库除开源引擎外不含 PopCap 的任何 IP；Resources.cpp/.h 重建了游戏生成的资源 ID 表，属于从游戏导出的数据，这在此类项目中很常见。",
+      "构建需要 CMake 3.16 及以上和 C++23。README 介绍了 Visual Studio Community（CMakeSettings.json 提供 x86 与 x64 的 MSVC 配置）或 CMake 搭配 Ninja 两种方式；toolchain.cmake 使用 x86_64-w64-mingw32 Clang 和 windres 交叉编译。所审构建产出 Windows 可执行文件，仓库没有 CI 工作流。",
+      "来源未记录测试、CI 或与原版可执行文件的比较；贡献者会为逆向出的函数和类成员标注其 GOTY 版地址。与原游戏的一致程度未经衡量，本合集也未构建或运行任何内容。",
+      "LICENSE 以 CC0 1.0 释出仓库。SexyAppFramework 代码源自 PopCap 公开的引擎，但仓库未附 PopCap 的许可证文本；ogg 代码保留 Xiph.org 的 BSD 式声明，FMOD 3（Firelight，1999–2002）与 BASS 2.4（Un4seen，1999–2022）的 API 头文件仍归各自厂商所有。原版游戏及其文件仍受其权利人的条款约束。README 表示项目不纵容盗版；所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
+  },
+  "awesome-ghidra": {
+    "name": "Awesome Ghidra Ghidra 资源清单",
+    "requirements": [
+      "审阅提交为 9265b2f（2026-06-18）。53 个提交中有 42 个来自 2019–2021 年；此后中断数年，维护者于 2026 年 6 月合并了 4 个贡献者的拉取请求，新增 printf-inliner 插件、0xdea 的脚本、IDAObjcTypes 和 GhidrAI 等条目。条目均未注明 Ghidra 版本；GhidrAI 是唯一一个 AI 辅助条目，清单中没有 MCP 服务器。",
+      "每个条目只有链接和一行简介，没有许可证或维护状态信息。所链接的 42 个 GitHub 仓库中，1 个已归档，17 个自 2021 年以来没有推送，因此各项目与 Ghidra 的兼容性需在其自身来源中核实；审阅时的自动检查中，只有 OOAnalyzer 插件路径返回 404。",
+      "其中 5 个条目是维护组织自己的脚本和工具。“资料”部分包括一本日文实践指南、Ghidra 仓库中 NSA 提供的 GhidraClass 课程材料、会议演讲以及 The Ghidra Book。",
+      "GitHub 未检测到许可证，仓库也没有许可证文件或贡献指南，因此清单未声明复用条款；所链接的项目保留各自许可证。这是独立的发现清单；所审来源未确立与 REA 的关联。"
+    ]
+  },
+  "sonic-advance-1-2-decomp-port-case": {
+    "name": "《索尼克 Advance》1 与 2：一致性 GBA 反编译及宽屏移植",
+    "requirements": [
+      "README 标明项目尚未完成、仍在积极开发。它列出六个附 SHA-1 的 ROM 目标：《索尼克 Advance》（欧版），以及《索尼克 Advance 2》的美版、欧版、日版、日本 Virtual Console 版和 2002-10-25 的美版测试版。README 报告 SA2 已 100% 由 C 构建，约 60 个不一致函数从 asm/non_matching 引入汇编；在所审提交中，该目录有 SA2 文件 64 个、SA1 文件 99 个、共享文件 17 个、引擎文件 8 个，另有 600 多个 SA2 函数尚未命名。Tiny Chao Garden 和 Collect Rings 这两个多重启动子游戏为构建一致 ROM 而一并编译，只完成了部分反编译。",
+      "文档所述的构建不读取原 ROM。仓库提交了 12,000 多个 PNG 精灵帧和图块、474 首 MIDI 乐曲、瓦片地图及其他原始数据，其中包括一个 191 KB、分段并入 Tiny Chao Garden 多重启动 ROM 的数据文件。移植版的 CI 任务仍从私有存储下载一个基础 ROM，但 Makefile 并不引用它。",
+      "INSTALL.md 面向 Linux（Windows 用户使用 WSL）和 macOS：需 ARM GCC 与 binutils、libpng、SDL2 和 MinGW-w64，构建 PS2 版另需 mkisofs 或 cdrtools。一致的 GBA 构建需将 SAT-R 的 agbcc 分支编译并安装到仓库中。移植版分别用 make sdl（Linux／macOS）、sdl_win32（Windows）、sdl_psp（PSPDEV）和 ps2（PS2DEV）构建，分辨率为 426×240 宽屏；README 标注 Win32 OpenGL 目标不可用，GitHub 上也没有发布版。",
+      "在 GBA 平台上，make 会按所列哈希值对构建出的 ROM 做 SHA-1 校验。CI 检查代码格式，构建并校验 SA2 美版、SA1 欧版及另外四个 SA2 版本；还在 Ubuntu 和 macOS 上为两款游戏构建 SDL、Win32、PSP 和 PS2 移植目标，并用无界面的 SDL 构建回放仓库中的一段 any% 速通输入录制。一致性只针对 GBA ROM，不适用于宽屏移植版；本合集未自行构建。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证。提取出的图像、音乐和数据，以及在 libagbsyscall、m4a 和 agb_flash 中重建的 Nintendo SDK 库，仍受其权利人条款约束。README 规定对议题和拉取请求严格禁止使用 LLM／AI；所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
+  },
+  "paleblood-bloodborne-functional-decomp-case": {
+    "name": "Paleblood：带自有运行时的 Bloodborne 功能等价反编译",
+    "requirements": [
+      "审阅的是 2026-10-19 的最新提交，距首次提交 12 天。自动生成的状态显示，在 157,757 个函数的 Ghidra 导出中已替换 31 个、验证 21 个；项目自己的加载器可映射可执行文件，启动流程停在第一个尚未实现的系统调用处，686 个系统导入中已实现 247 个。替换内容涵盖帧循环的部分代码，以及事件、内核、输入、AI、角色、物理和渲染层中的函数；BB_TARGET_FPS 以代码方式重现了三个社区帧率补丁。",
+      "需要 Bloodborne CUSA03173（欧版）及 1.09 更新，并须从使用者自己的 PS4 上转储；由此转换得到的可执行文件须与 target.sha256 一致。README 称仓库不含任何游戏代码、素材、二进制文件、反编译器输出或提取数据，预提交钩子和 CI 中的检查会拒绝游戏数据，项目也不提供或指向游戏文件、pkg、固件、密钥或解密工具。",
+      "文档说明的开发环境为 Linux，需 CMake 3.20+ 与 CTest，分析时使用 Ghidra 12.0.3 及 GhidraOrbis 加载器。完整运行游戏目前仍依赖外部脚手架 third_party/bbport：这是项目对采用 GPL-2.0-or-later 的 bloodborne_pc 移植所建的分支，以原生方式运行原始可执行文件，并用源自 shadPS4 的 Vulkan 代码渲染。CI 不获取该子模块。",
+      "README 称 tools/verify.py 会并排运行原始代码与替换函数，比较返回值、寄存器、每个写入的字节和每次库调用，且故意写错的版本必须无法通过；替代社区补丁的选项则与打过该补丁的原版对照验证。CI 使用 GCC 与 Clang 构建，并在没有游戏数据的情况下运行单元、测试框架和规则检查，因此针对游戏本身的验证由贡献者运行、属项目报告；本合集未运行任何内容。",
+      "依 LICENSE 采用 GPL-2.0-or-later；bbport 脚手架另有 GPL-2.0-or-later 声明，README 称该声明不授予游戏或其代码的任何权利。README 称 Paleblood 是与 Sony Interactive Entertainment 和 FromSoftware 无关的粉丝项目，并称运行时以净室方式编写。CONTRIBUTING.md 允许经披露并验证的 AI 辅助工作，近期提交带有署名 Claude Opus 5.5 与 Codex 的 Co-Authored-By 尾注；未记录 REA 的使用。"
+    ]
+  },
+  "pikmin-2-matching-decomp-case": {
+    "name": "《皮克敏2》：覆盖五个版本、已完全匹配的 GameCube 反编译",
+    "requirements": [
+      "README 仍称其为进行中的反编译项目，并列出五个支持版本：GPVE01（美版零售版，默认）、GPVE01_D17 与 GPVE01_D18（美版体验版 17 和 18）、GPVP01（PAL 版）以及 GPVJ01（日版）。每个版本都有各自的配置和 SHA-1 文件，CI 会构建全部五个版本。产物是 GameCube DOL，不是 PC 可执行文件或移植。",
+      "每个版本都需要使用者自有该版本中的 main.dol，放在 orig/<version>/sys/main.dol；decomp-toolkit 在拆分前会按该版本 config.yml 中的哈希进行校验。仓库为每个版本提交了源自游戏的符号表和拆分表；配置注释称 GPVE01 的符号由 pikmin2UP.MAP 链接映射生成，日版和 PAL 版的表则以美版符号为基础从各自 DOL 中恢复。仓库不含光盘镜像或提取出的游戏文件。",
+      "构建需要 Python 与 ninja，可在 Windows（推荐原生工具）、macOS（需 wine-crossover）或 Linux（x86 上自动下载 wibo，其他架构用 Wine）上进行。configure.py 固定 decomp-toolkit v1.7.5、objdiff v3.4.1、binutils 2.42-1、sjiswrap v1.2.2、wibo 1.0.0-beta.5 及 20250812 编译器包；游戏、JSystem 和运行时代码使用 Metrowerks GC/2.6，Dolphin SDK 库使用 GC/1.2.5n。",
+      "configure.py 将 1,154 个目标文件标为对所有支持版本均一致，另有一个仅对日版一致；没有标为 NonMatching 的项。默认 ninja 目标会先按 config/<version>/build.sha1 校验链接出的 DOL，再报告进度；CI 在提供原始文件和编译器的容器中构建全部五个版本。decomp.dev 针对该固定提交的各版本报告均显示代码 100.00% 已匹配并完全链接（GPVE01 为 24,957 个函数、1,153 个单元）；本合集未运行构建。",
+      "README 称使用 --non-matching 时会关闭最终哈希校验，美版 DOL 将完全由 C++ 源码构建，据团队所知在功能上等价，因此每个文件都可修改用于模组制作。仓库在 LICENSE.MD 中采用 CC0-1.0；任天堂的游戏及其文件、下载的编译器不在该声明范围内。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
+  },
+  "gran-turismo-4-matching-decomp-case": {
+    "name": "Gran Turismo 4：借助智能体的 PS2 引擎匹配反编译",
+    "requirements": [
+      "README 称这是只针对引擎可执行文件、仍在进行中的匹配反编译：游戏逻辑大多在 Adhoc 脚本中，由独立的 OpenAdhoc 项目重建；另一个独立项目 GT4 Native PC 移植被描述为尚不可玩。progress 分支针对提交 ba5d800（2026-10-19）的报告（decomp.dev 对所审提交显示相同数字）给出 30,962 个函数中 29,551 个、代码 83.55% 已匹配，82.08% 的代码由源码链接，2.13% 的数据由源码放置；202 个原本就是手写汇编的函数不计入。",
+      "需自备 Gran Turismo 4（美版）v1.01 光盘镜像（SCUS-97328）；orig/README.md 列出 SCUS_973.28、CORE.GT4 及其转换所得 ELF 的 SHA-1。仓库未提交任何游戏内容，因此 SHA-1 构建校验和进度报告只能在具备这些文件的机器上运行，CI 中无法运行。",
+      "文档以 Linux 或 WSL（Ubuntu）为准，需要 Python 3.11 及以上和 rabbitizer。tools/setup_linux.sh 安装 MIPS binutils 和 32 位 libc，下载 decomp.me 的 ee-gcc 2.96 构建，克隆 decomp-permuter，并在虚拟环境中安装 splat；project.toml 还列出其他 decomp.me 编译器，其中 ee-gcc 2.9 用于约 270 个 Sony SDK 函数。",
+      "当 tools/match.py（或智能体使用的 tools/swarm.py）输出 MATCH，且 tools/build.py 将每个函数链接到原始地址并比较已加载段的 SHA-1 时，函数才算匹配。CI 运行单元测试、“C 中不得夹带汇编”的策略检查和布局检查，并编译每个源文件，但没有游戏文件就无法链接或比较；匹配数字为作者报告，本合集未构建或运行任何内容。",
+      "项目的工具、文档和源码采用 MIT 许可。THIRD_PARTY.md 列出按各自条款匹配的公开库（Expat、newlib、带例外条款的 GPL 下的 GNU libio 与 GCC 运行库、SGI STL 头文件、MT19937），可用 build.py --without 排除，并说明专有的 SCE-RT/Medius、Logitech 和 Sony SDK 代码仅作识别、未予复制。Gran Turismo 4 归 Sony Interactive Entertainment 所有。智能体说明位于 AGENTS.md、CLAUDE.md 和 .claude/；所审来源未确立 REA 的使用。"
+    ]
+  },
+  "mario-kart-wii-decomp-case": {
+    "name": "《马力欧卡丁车 Wii》：进行中的 PAL 版一致性反编译",
+    "requirements": [
+      "README 只列出一个支持版本 RMCP01（PAL 版）；configure.py 未定义其他版本，CI 也只构建 RMCP01。仓库由 riidefi/mkw 更名而来，README 的徽章和克隆命令仍使用旧名；CONTRIBUTING.md 和 HACK.md 仍描述早先基于 mkwutil 与 ppcdis 的构建结构，而固定提交中已不含这些内容。产物是 Wii 的 main.dol 和 StaticR.rel，不是 PC 移植。",
+      "需将自己的 RMCP01 光盘镜像复制到 orig/RMCP01，可接受 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC 格式，config.yml 记录了两个二进制的预期 SHA-1。README 称仓库不含任何游戏素材或汇编；decomp-toolkit 依据仓库提交的、源自游戏的符号表和拆分表，在本地拆分 main.dol 与 StaticR.rel。",
+      "构建需要 Python 与 ninja，可在 Windows（推荐原生工具）、macOS（需 wine-crossover）或 Linux（x86 上自动下载 wibo，其他架构用 Wine）上进行。configure.py 固定 decomp-toolkit v1.3.0、objdiff v2.4.0、binutils 2.42-1、sjiswrap v1.2.0、wibo 0.6.16 及 20240706 编译器包；游戏、NW4R、EGG、RFL 和 MSL 代码及链接器使用 Metrowerks Wii/0x4201_127，Revolution SDK、TRK、DWC 和 GameSpy 库使用 GC/3.0a5.2。",
+      "标为 Matching 的目标文件（configure.py 所列 213 个中有 106 个；105 个为 NonMatching，2 个为 Equivalent）由源码编译，各二进制的其余部分取自拆分出的原始文件；默认 ninja 目标会先按 config/RMCP01/build.sha1 校验 main.dol 和 StaticR.rel，再报告进度。CI 在存放原始文件的私有容器中构建 RMCP01，并上传进度报告。审阅时 decomp.dev 在新旧仓库名下均无报告，因此不引用完成度数字；本合集未运行构建。",
+      "仓库采用 CC0-1.0；lib/gamespy 沿用 IGN Entertainment 为 GameSpy SDK 提供的 BSD 式许可证，任天堂的游戏、光盘内容和下载的编译器各自保留权利。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
+  },
+  "pinyon-shift-forza-horizon-recomp-case": {
+    "name": "Pinyon Shift：以 ShiftGlue 将 Forza Horizon 静态重编译到 PC",
+    "requirements": [
+      "审阅的是 2026-10-17 的最新提交，即 v0.6.0 标签；仓库创建于 2026-08-25。仓库包含启动器、构建工具、宿主代码和配置，README 称其中不含游戏、素材、生成的转换代码或预构建可执行文件；v0.6.0 的 Windows 启动器压缩包也只有启动器和一份源码压缩包。这是带原生替换的静态重编译，并非恢复原作者编写的源码。",
+      "需从使用者自己的美版零售光盘（序列号 MS-2505，标题 ID 4D5309C9）转储的 ISO，或从中解出且未经修改的文件夹；安装程序会依据 config/supported-dumps.json 核对其确切大小和 SHA-256，并拒绝未知转储。自有的 DLC 包须经验证后才能导入，Rally 与 1000 Club 扩展需要可选的第 4 版游戏更新构建。",
+      "玩家需使用 Windows 10／11 x64、包括 SteamOS 在内的 x86-64 Linux，或 Apple 芯片上的 macOS 13+，并配备支持 Vulkan 1.3 的 GPU；NVIDIA 已测试，AMD 与 Intel 尚未通过验证。启动器会安装固定版本的构建工具并在本机构建游戏，首次需 20–60 分钟和约 30 GB 空间；Windows 源码构建路径需 Visual Studio 2022 C++ Build Tools 17.1+。Android 13+ arm64 版为开发者预览，在 PC 上交叉编译。",
+      "CI 检查仓库边界，运行发布工具测试与宿主测试，构建各启动器并交叉构建 Android 运行时，全程不使用游戏。脚本化渲染测试路线、黄金帧回放以及 README 中的性能数据（如在 RTX 4080 上 1x 分辨率中位数 119 fps）均来自项目的本地运行；本合集未进行任何构建或运行。",
+      "BSD-3-Clause 仅适用于独立编写的内容。docs/LEGAL.md 称该许可不授予对 Forza Horizon、Xbox 软件、ReXGlue 或使用者自备内容的任何权利，并禁止提交生成的转换代码、依据反汇编或反编译器输出手工翻译的代码，以及从可执行文件复制的数据。README 声明与 Microsoft、Xbox、Turn 10 Studios 或 Playground Games 均无关联。CLAUDE.md 与 AGENTS.md 中的智能体说明禁止在提交中注明 AI 署名；所审来源未说明其他 AI 使用情况，也未记录 REA 的使用。"
+    ]
+  },
+  "th07-decomp-case": {
+    "name": "Touhou 7：重建东方妖妖梦 1.00b 版源码",
+    "requirements": [
+      "README 称这是 th07.exe 1.00b 与 custom.exe 的进行中匹配反编译；仓库内可变的徽章报告 th07.exe 的 694 个函数已全部实现、准确率 99.78%，custom.exe 两项均为 100%。行为力求与原版一致，但可能存在差异。portable 和 reallyportable 分支（桌面、移动端和网页移植）是独立分支，本条目不涵盖。README 致谢 GensokyoClub 的 th06 与 th08 反编译项目，借用了共享的类型、命名和代码。",
+      "需自备 th07.exe 1.00b（README 给出 MD5，reccmp-project.yml 给出 SHA-256）并复制到 resources/，用于提取图标并作为 reccmp 的比较基准；custom.exe 仅在构建设置工具时需要，使用 --no-icon 可在两者都缺失时构建。仓库未提交游戏可执行文件或游戏数据文件；resources/csv 存放 reccmp 使用的函数、全局变量、字符串和浮点数表。",
+      "此分支只能以 MSVC 2002 工具链构建 32 位 Windows 程序，Linux 上通过 Wine 运行，并需要 uv 和 ninja。scripts/download_deps.py 从 archive.org 获取 Visual Studio .NET 2002 和 DirectX 8 SDK，并从 gist 获取 EstexNT 的 var_order 编译器补丁；scripts/build.py 生成并运行 ninja 构建。",
+      "贡献者使用 reccmp 比较差异，它以 HTML 页面或针对单个地址给出相对原程序的逐函数准确率。由于 th07.exe 尚未逐字节一致，README 称匹配构建无法通过游戏的完整性检查，并会在 3,999 个 Supervisor 周期后崩溃；--no-matching 会禁用该检查。仓库没有 CI；徽章数字由项目生成，本合集未构建或运行任何内容。",
+      "仓库以 CC0 1.0 释出；游戏及下载的 Microsoft 工具链和 SDK 各有条款。嵌入进度徽章的 resources/svgicon.png 是游戏封面图，标有 © 2003 上海爱丽丝幻乐团，CC0 声明并不涵盖它。所审来源未确立 AI 或 REA 的使用。"
+    ]
+  },
+  "dkc1-recomp-case": {
+    "name": "DKC1Recomp：《大金刚国度》的静态重编译",
+    "requirements": [
+      "审阅版本为 main 上标记 v0.0.14 的提交（2026-09-15）；v0.0.15 至 v0.0.17 版（截至 2026-09-19）标记在不属于 main 的提交上。README 称移植处于可游玩的初步运行阶段，游戏代码已全部静态生成，并提供无界面验证宿主及 Windows、macOS 和 iOS 宿主。桌面宿主默认开启宽屏，在未经验证的场景中会安全回退到原始画面或黑边；自动生成的宽屏覆盖报告显示 256 个关卡入口中有 252 个从未观测过，Dixie 变体也未经全流程验证。",
+      "需自备无文件头的《大金刚国度》美版 v1.0 ROM（4 MiB），并按 README 给出的 SHA-256 校验；其他镜像会被拒绝，除非以哈希固定某一个经审查、只改动数据的修改版。可选的 Baby Kong 模组还会在内存中校验使用者自有的北美版 DKC3 ROM。README 声明仓库未提交任何 ROM 字节、提取的素材或生成的游戏代码；Dixie 变体内嵌了改版作者公开发布的 IPS 补丁，项目将其记录为刻意的例外，且只应用于经校验的原版 ROM。",
+      "从源码构建需初始化 snesrecomp 子模块，并以 ROM 运行 scripts/generate_snesrecomp.py，C 代码写入被 git 忽略的 generated/ 目录；recomp/*.cfg 只含取自 GPL-3 Yoshifanatic1 反汇编的名称、地址与结构元数据。Windows 构建需 Windows 10／11 x64、Visual Studio 2022 C++ 工具、Python 3、Git、CMake、Ninja 和支持 OpenGL 3.3 的显卡；arm64 macOS 应用面向 macOS 26，需 CMake、Ninja 与 SDL2；iOS 侧载 IPA 需 iOS／iPadOS 16 或更新版本，并须为接收者的设备重新签名。",
+      "验证依靠确定性工具而非一致性构建：带输入回放的无界面宿主、可重放的飞行记录包、存档状态连续性检查、路线脚本与回归约定，以及 C 和 Python 模型测试，其中许多需要私有 ROM。所审阅的代码树没有 CI 工作流；初步运行日志报告，v0.0.10 版 Windows 宿主通过了九次私有启动回放，并检查了实际运行窗口。本合集未构建或运行任何内容。",
+      "项目的宿主与工具代码采用 MIT；固定版本的 snesrecomp 分支采用 PolyForm Noncommercial License 1.0.0，cfg 元数据保留其 GPL-3 来源，Windows 安装包另含 SDL 2.30.9（zlib）和 miniz 3.0.2（MIT），Nintendo 与 Rare 仍保有游戏权利。AGENTS.md 为在仓库中工作的 Codex 及其他编程智能体规定了操作规则；未确立 REA 的使用，也不声称复现了运行结果。"
+    ]
+  },
+  "san-andreas-unity-engine-case": {
+    "name": "San Andreas Unity：在 Unity 中重新实现的《侠盗猎车手：圣安地列斯》引擎",
+    "requirements": [
+      "审阅版本为默认 dev 分支的最新提交，提交于 2022-09-30；没有任何分支有更晚的提交，GitHub 记录的最后一次推送为 2023-06-16，最新发布版为 v4.0（2022-05-24），项目看来已不再活跃。README 表示这不会是完整的重新实现，重点在于游戏玩法、多人模式和可改装的框架；Docs/TODO.md 仍列有异步加载几何体、卸载远处世界区域等待办工作。所审文件没有说明原引擎是如何分析的。",
+      "游玩需要使用者自有的《侠盗猎车手：圣安地列斯》PC 版安装：首次启动时游戏会询问其路径，config.json 让加载器读取 gta.dat、载具、行人与默认 .ide 文件、handling.cfg、water.dat、carcols.dat 和 weapon.dat 等数据文件。Android 版需将这些 PC 文件复制到设备上，wiki 称约 5 GB，audio 文件夹可省略。仓库不附带游戏数据；NavMeshes 子模块提供预先计算的导航网格，wiki 说明它由导入的游戏世界生成，因为原版游戏没有导航网格。",
+      "开发使用 Unity 2020.3.26 或更新版本（项目文件注明 2020.3.26f1），需递归克隆 MirrorLite、UnityStandardAssets、NavMeshes、NetworkDiscoveryUnity 和 UGameCoreUtilities 子模块，并打开 Startup 场景。README 称已在 Linux、Windows、macOS 和 Android 上测试，支持 Mono 与 IL2CPP 两种脚本后端；v4.0 提供 Windows 和 Linux 压缩包以及 Android APK。多人模式可作为专用服务器、主机或客户端运行，游戏模式以 C# DLL 插件形式加载。",
+      "仓库没有针对加载器或游戏玩法的 CI 工作流或自动化测试，也没有发布与原版可执行文件的对比。现有证据为 README 关于多人模式完全可用的说法、v4.0 发布说明、截图和视频；Docs/Performance.md 记录了拉斯云祖华一处视角的顶点数与绘制调用数。本合集未构建或运行该项目。",
+      "LICENSE 为 MIT，版权行为 2015 年 James King；随附的 NVorbis 与 Newtonsoft.Json DLL 以及各子模块是独立项目，遵循各自条款，Rockstar 的游戏文件仍保留其权利。所审来源未确立 REA 或 AI 使用。"
+    ]
+  },
+  "minecraft-lce-switch-decomp-case": {
+    "name": "MinecraftLCE：处于早期阶段的 Minecraft: Nintendo Switch Edition 反编译",
+    "requirements": [
+      "README 称这是 Minecraft: Nintendo Switch Edition v1.0.17 的进行中反编译，无法用来游玩游戏。所审提交时 data/mcswitch_functions.csv 列出 57,972 个函数：6,279 个已匹配，224 个未匹配，51,469 个尚未反编译，即工作流写入 GitHub 简介的 11.217%。已匹配的函数逐个核对，不存在整个可执行文件的重建。",
+      "需从自己的 Minecraft: Nintendo Switch Edition v1.0.17 更新中自备 main NSO 可执行文件；Wii U Edition 的 Minecraft.Client.rpx（Patch 35，v560）仅推荐用于移植符号。README 称这些可执行文件永远不会放入仓库，也不包含游戏素材。",
+      "文档以 Linux 或 WSL 为准（也面向 macOS）：需要 Python 3.6 及以上、Ninja、CMake 3.13 及以上、ccache、llvm-objdump、libncurses5、Rust 工具链和所列 Python 模块。tools/setup.py 会转换可执行文件，从 LLVM 发布页下载 Clang 4.0.1 并应用仓库中的 libc++ 补丁；子模块提供 open-ead 的 nx-decomp-tools、nnheaders、musl 以及 stb 图像库，lib/ 内置 libpng 和 zlib。",
+      "tools/check 将编译出的函数与原程序比较，tools/common/progress.py 汇总函数列表。CI 进行代码检查、在没有游戏文件的情况下编译项目，并按仓库中的函数列表统计并发布进度，因此匹配状态为项目报告；本合集未构建或运行任何内容。",
+      "仓库没有许可证文件，GitHub 也未检测到许可证；Minecraft 归 Microsoft 和 Mojang 所有，内置的库各有许可证。README 称不能使用 Microsoft 授权的 Java Edition 官方映射，并提到研究过程不属于净室方式的项目曾被下架。所审来源未确立 AI 或 REA 的使用。"
+    ]
+  },
+  "ff7-ps1-matching-decomp-case": {
+    "name": "Final Fantasy VII：PlayStation 版一致性反编译",
+    "requirements": [
+      "项目自述为该 PS1 游戏的一致性反编译；config/us.yaml 只定义了 us 一个版本，涵盖 SCUS_941.63 以及战斗、野外、菜单、世界地图、小游戏、魔法及其他覆盖段，共 29 条 SHA-1 记录。源码中的数据表（例如陆行鸟小游戏的反余弦表）取自游戏，这在此类项目中很常见。README 未给出完成度数字；CI 会把进度报告上传为构建产物，本合集未记录任何数字。",
+      "需将 Final Fantasy VII（USA）第 1 张光盘以 BIN/CUE 形式放在 disks/ 下；README 将美版 Interactive Sampler CD 列为可选，但所审配置只构建 us 版本。CONTRIBUTING 说明仓库不含原版游戏数据，也不是可游玩或独立运行的版本。CI 通过机密令牌从一个私有依赖仓库获取光盘镜像。",
+      "README 介绍了 Debian/Ubuntu 与 Arch Linux 下的环境：Go、Python 3（含 splat64、spimdisasm 等的虚拟环境）、ninja、7zip、bchunk 以及 mipsel-linux-gnu binutils 和 GCC；CI 注释指出 Ubuntu 24.04 自带的 binutils 2.42 链接器与游戏不匹配。make 会从项目的 init 发布版下载 cc1-psx-26 与 cc1-psx-272 编译器构建，并以仓库中的 SHA-256 文件校验；maspsx、m2c、asm-differ 与 PsyZ 以子模块引入，另提供 Dockerfile。",
+      "make build 的最后一步是 ninja 规则，以 sha1sum -c 校验每个覆盖段的预期哈希。上游仓库的 CI 检查代码格式、运行该构建、检查符号重叠，并编译 PsyZ 构建。这些检查比较的是美版文件是否一致，并不覆盖游戏流程，本合集未重新运行。",
+      "LICENSE 为 AGPL-3.0；游戏光盘、提取出的数据和下载的编译器另有权利归属。README 表示反编译代码由人编写，拒绝借助 LLM 加速反编译，但允许将 LLM 用于工具开发、对难点函数做排列尝试或排查运行时错误；CONTRIBUTING 禁止自主生成的拉取请求和提交信息。未记录 REA 使用，也不主张运行复现。"
+    ]
+  },
+  "megaman-x-snes-recomp-case": {
+    "name": "Mega Man X Recompiled：基于 snesrecomp 的静态重编译",
+    "requirements": [
+      "审阅版本为 main 上发布版 v2.2.9-alpha（2026-10-18）对应的提交，该版提供 Windows ZIP 与 Linux AppImage。snesrecomp 的 README 将本作列为可完整游玩，本项目 README 称自适应宽屏渲染器已在 Windows 上试玩至结局。执行以解释器为先：编译后的函数体只替换分析能够证明的代码，其余部分仍由解释器执行；Rockman X（日版 v1.1）是单独的变体，保留原始视野。",
+      "需自备《洛克人 X》美版 Rev 1 ROM（.sfc 或 .smc，有无文件头均可）。Zero、合作模式与 X3 武器还需使用者自有的《洛克人 X3》美版 ROM，X2 武器则需《洛克人 X2》美版 ROM；所需素材在使用者的机器上提取。README 声明 ROM、提取的素材及生成的 src/gen C 代码既未提交，也不在下载包中；Saber Zero 的精灵与音效来自 Zashiko Mod，经许可收录，仅限非商业用途。",
+      "从源码构建需克隆 snesrecomp、recomp-ui 与 dizProjects 子模块，放入 ROM 后运行 tools/regen.sh，由 recomp/bank*.cfg 按存储体生成 C 代码。官方维护的构建方式是 CMake 配合 Ninja 与 SDL3（SDL2 作为后备）：Windows 10 及以上通过 MSYS2 mingw64，并需 Python 3.9+ 与 rustup；Linux 使用 gcc 或 clang；macOS 支持 Apple Silicon 与 Intel。",
+      "CI 编译不含 ROM 衍生内容的设置宿主，并运行无需 ROM 的 CTest 回归测试；依赖 ROM 的状态测试，以及在首个 WRAM、合作、镜头或 VRAM 不一致处停止的回放测试，都需要使用者的 ROM。一份注明日期的覆盖率检查点报告称，两条 12,000 帧路线与对照构建的 CPU、WRAM 轨迹及最终快照一致，但未比较音频；v2.2.9 发布说明报告在 Windows 和 Linux 上检查了 Boss Rush 的全部 28 组头目组合。本合集未运行其中任何一项。",
+      "项目及固定版本的 snesrecomp 框架均采用 PolyForm Noncommercial License 1.0.0；解释器源自 LakeSnes（MIT），随附依赖保留各自许可，Capcom 仍保有游戏权利。README 称项目属于 R.A.I.D.（Retro AI Development），这是一个面向 AI 辅助复古逆向工程的 Discord 社区，但未说明本仓库使用了哪种模型或工作流；未确立 REA 的使用。"
+    ]
+  },
+  "opensc4-simcity-4-reimplementation-case": {
+    "name": "OpenSC4：SimCity 4 的早期开源重新实现",
+    "requirements": [
+      "所审阅的 main 快照（2024-03-29）只新增了 README 和 Discord 邀请；最后一次代码改动在 2023-02-17，仓库没有发行版或标签。README 称项目是一个开源“克隆”，旨在利用现代硬件并在其他平台上运行。代码涵盖 DBPF 解析、写死为 Timbuktu 区域的区域视图、城市地形视图和 DAT 浏览器，没有分区、预算或发展模拟；所审文件未说明如何分析 SimCity 4。",
+      "需要使用者自有的 SimCity 4 安装：启动画面会询问其目录，并检查 SimCity 4.ini、Sound.dat、Intro.dat、SimCity_1.dat 至 SimCity_5.dat 以及 EP1.dat，随后从该目录读取 .sc4 城市存档、config.bmp 和区域音乐。.gitignore 排除了 SimCity 4 数据，但仓库中仍有一个“Graphics Rules.sgr.backup”文本文件，其文件头称由 SC4Launcher 生成。",
+      "在 Godot 编辑器中从源码运行：README 的步骤是安装 Godot、导入克隆的项目并运行，未指明版本。project.godot 使用 config_version 4，脚本调用 yield、Directory 等 Godot 3 API；仓库不提供导出预设或打包版本。",
+      "仓库没有测试或 CI 工作流，也未公布与 SimCity 4 行为或输出的对比；本合集未运行该项目。",
+      "GitHub 未检测到许可证，仓库也没有许可证文件；九个 GDScript 文件带有署名“The OpenSC4 contributors”（2023）的 AGPL-3.0-or-later 文件头，utils/logger.gd 则是 KOBUGE Games 的 godot-logger 中采用 MIT 许可的代码。SimCity 4 及其数据的权利仍归其所有者。所审来源未确立 REA 或 AI 的使用。"
+    ]
+  },
+  "synchrony": {
+    "name": "synchrony JavaScript 反混淆工具",
+    "requirements": [
+      "审阅时最新版本为 2.4.6，于 2026-07-07 发布到 GitHub 并以 deobfuscator 之名发布到 npm，与所审阅的 master 提交同日；上一版本 2.4.5 发布于 2023-11-09。README 还指向 deobfuscate.relative.im 上的托管网页版，本次未审阅该部署。",
+      "可用 npm、yarn 或 pnpm 安装，也可直接从 Git 仓库安装；package.json 未声明 Node.js 版本。命令行工具读取单个文件，未指定 --output 时写出 <文件名>.cleaned.<扩展名>，并提供 --rename、--loose 宽松解析、--ecma-version 和 --sourceType 选项。--config 配置文件通过 Node 的 require 加载，因此会作为代码执行；自定义转换器列表会取代默认流程，两个 jsconfuser 转换器只能以这种方式启用，README 也未说明它们。",
+      "README 提醒，旧版 javascript-obfuscator 生成的代码很可能无法正确反混淆，自动字符串解码器也没有可供用户调整的配置。仓库没有测试套件，最新一次提交删除了 GitHub CI 配置。",
+      "package.json 和 LICENSE.md 声明 GPL-3.0-only。本次审阅未对任何脚本进行反混淆，所审来源也未确立与 REA 的关联。"
+    ]
+  },
+  "relive-oddworld-abe-engine-case": {
+    "name": "R.E.L.I.V.E.：Oddworld: Abe’s Oddysee 与 Abe’s Exoddus 引擎的重新实现",
+    "requirements": [
+      "审阅版本为 2026-09-01 合并 SDL3 移植的 master 提交；最新发布版为 github-v1.0.9，标注为“relive stable v1.0.9”（2025-03-21），而 CMake 中的项目版本仍为 0.1。项目网站的 FAQ 称两款游戏都能完整通关，修复了一百多个原版缺陷，与零售版相比不应有明显的玩法差异；PSX 品质的音乐、更深入的改装支持和游戏内关卡编辑器列为未来工作。FAQ 将方法描述为先反编译零售版可执行文件，再用数年时间把输出改写成可读代码。",
+      "游玩需要使用者自有的 Abe’s Oddysee 或 Abe’s Exoddus 安装；FAQ 提到 Steam、GOG 和早期光盘版。可执行文件在存放 .lvl 文件的游戏目录中运行，Linux 启动脚本会查找默认的 Steam 目录，否则请使用者指定该目录。仓库不含游戏数据文件，但源码内嵌了重新实现的代码所用的数据表，例如字体和视频解压表；FAQ 表示团队不会提供游戏文件。",
+      "构建需递归克隆 Detours、googletest、magic_enum、jsonxx、stb、lodepng 和 nlohmann/json 子模块，并使用 CMake 3.10+、C++17 与 SDL3；README 介绍了 Windows 上的 Visual Studio 2022 和 Linux 上的 Ubuntu 软件包，cpack 可生成 Debian 软件包。MSVC 构建还会生成 AliveDllAE 与 AliveDllAO 挂钩 DLL，在 32 位 Windows 上链接 Detours。GitHub Actions 构建 Windows 32 位、Windows 64 位和 Linux 软件包；其 macOS 任务已被注释掉，尽管 FAQ 称游戏可在 macOS 上运行。",
+      "GitHub Actions 工作流只构建和打包，不运行测试。仓库中有针对 relive_api 关卡数据工具的 googletest 单元测试和集成测试，集成测试从硬编码的 GOG 安装路径读取 .lvl 文件；较早的 AppVeyor 和 Azure Pipelines 配置仍会调用 ctest。FAQ 介绍了自动回放：用稳定版录制完整通关过程，再在开发版中检测不同步（录制器保存输入、随机数、时钟和同步点），但没有公布回放结果，本合集也未运行任何内容。",
+      "仓库没有许可证文件，GitHub 也未检测到许可证；README 只说贡献的代码将来会以兼容 GPL 的许可证（很可能是 MIT）发布，因此目前没有明确的复用条款。3rdParty/DxOld 收录了三个 DirectX 7 时期的 Direct3D 头文件，其中一个带有 Microsoft 保留所有权利的声明，各子模块保留各自的许可证。FAQ 声明与 Oddworld Inhabitants 无关，其游戏仍保留各自权利；所审来源未确立 REA 或 AI 使用。"
+    ]
+  },
+  "retdec": {
+    "name": "RetDec 可重定向机器码反编译器",
+    "requirements": [
+      "README 警告 RetDec 处于有限维护模式：拉取请求会优先审阅，议题的回应会有延迟，且除基本维护相关问题外不会主动解决，开发工作也极为有限。最新发行版为 v5.0（2022-12-08）；所审阅的 master 提交（2026-05-26）比它多 81 个提交，版本号仍为 5.0。",
+      "发行包覆盖 Linux、macOS 和 Windows；README 列出 Windows 7+、Linux、macOS 以及实验性的 FreeBSD，每次安装约占 5–6 GB。源码构建需要支持 C++17 的编译器（GCC 7+、Visual Studio 2017 15.7+，或 macOS 10.15+ 上的完整 Xcode）、OpenSSL 1.1.1+、Python 3.4+，Windows 以外还需 autotools；CMakeLists.txt 要求 CMake 3.13，而非 README 所写的 3.6。构建时会下载固定版本的 Capstone、Keystone、YARA 和 yaramod 压缩包、Avast 维护的 LLVM 分支以及 2019 年的支持包。",
+      "输入为使用者自有的可执行文件、目标文件、归档或原始机器码。自 v5.0 起，反编译器也以一组 CMake 库的形式供其他项目调用；独立的 retdec-idaplugin 和 retdec-r2plugin 仓库将其嵌入 IDA 和 radare2。",
+      "GitHub Actions 在 Ubuntu 22.04、Windows（MSYS2）和 macOS 上构建 Release 与 Debug 配置，再运行独立的 retdec-regression-tests 测试套件。README 说明每夜构建不作保证、可能出现回归，Docker 支持则由社区维护。",
+      "采用 MIT 许可（Avast Software）。修改过的 PeLib 保留其 zlib/libpng 许可，LICENSE-THIRD-PARTY 列出其他组件，其中 Keystone 依据其针对 GPLv2 的 FOSS 例外条款使用。"
     ]
   }
 }

@@ -69,6 +69,21 @@ class AboutPageReaTests(unittest.TestCase):
                     self.assertEqual(expected_url, REA_REPOSITORY_URL)
                     # The existing caveat that inclusion does not establish REA integration remains.
                     self.assertTrue(any(caveat in card['text'] for card in cards[1:]))
+                    # Every card link sits in prose that browse.css underlines (WCAG 1.4.1).
+                    page = (output / route / 'index.html').read_text(encoding='utf-8')
+                    self.assertIn('<main id="discovery-content" class="shell browse-main">', page)
+                    self.assertEqual(len(re.findall(r'<p class="card-description">[^<]*<a ', page)),
+                                     sum(len(card['links']) for card in cards))
+
+    def test_card_prose_links_are_underlined_in_the_link_colour(self):
+        styles = (ROOT / 'site/browse.css').read_text(encoding='utf-8')
+        rule = re.search(r'(?m)^\.browse-main \.card-description a,[^{]*\{([^}]*)\}', styles)
+        self.assertIsNotNone(rule)
+        declarations = dict(part.split(':', 1) for part in rule[1].split(';') if part)
+        self.assertEqual(declarations['color'], 'var(--link)')
+        self.assertEqual(declarations['text-decoration'], 'underline')
+        # Homepage cards are styled from styles.css and stay unchanged.
+        self.assertNotIn('.card-description a', (ROOT / 'site/styles.css').read_text(encoding='utf-8'))
 
 
 if __name__ == '__main__':

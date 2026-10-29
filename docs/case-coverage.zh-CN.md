@@ -22,13 +22,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 212 | 210 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 70 | 70 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 309 | 309 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 已收录 (`already-curated`) | 214 | 212 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 34 | 34 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 343 | 343 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-227 个出现项含目录链接；共关联 217 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+232 个出现项含目录链接；共关联 220 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 460 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 498 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -225,7 +225,13 @@
 | Codex CLI: inspecting model-identity prompts and routing fields | 证据不足 | [来源](https://x.com/jiangkoumo_/status/2110751118343164066) |
 | Rust Duty: reconstructing gameplay from video, not decompilation | 证据不足 | [来源](https://x.com/reidhslaughter/status/2110752844328419587) |
 | 2010 Rust Rewrite Mashup: Skate 3 in MW2 maps | 待核查 | [来源](https://x.com/thenuntheia/status/2110757135009112576) |
+| A wireless CarPlay adapter: a reported REA/Grok firmware change | 证据不足 | [来源](https://x.com/omercoskun_tech/status/2110759012266332509) |
+| A daily voice-input app: quick client inspection, hours of rebuilding | 证据不足 | [来源](https://x.com/pirrer/status/2110759506003304641) |
 | Linux EAC: an AI devirtualization claim via IDA Assist MCP | 证据不足 | [来源](https://x.com/i/status/2110759663822352852) |
+| Browser Counter-Strike: a colleague's AI-build claim | 证据不足 | [来源](https://x.com/FuSheng_0306/status/2110760621113548854) |
+| REA JavaScript demo: a stale-price check at 400 ms | 证据不足 | [来源](https://x.com/0xAlhimik/status/2110761684411572247) |
+| Galaxy-Android: a reported AI-assisted native Super Mario Galaxy port | 待核查 | [来源](https://x.com/ToniCipriani007/status/2110763621768716353) |
+| An old phone: an author reports running OEM firmware in Wasm with Claude | 证据不足 | [来源](https://x.com/ShishirTandale/status/2110765881768747173) |
 | BINNY 逆向分析智能体框架 | 已收录 | [来源](https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/README.md) |
 | An illustrative game.exe demo: two rooms and three reconstruction oracles | 证据不足 | [来源](https://x.com/i/status/2110783611800522897) |
 | H1Z1: research followed by an MMO built with Opus, Astra and Tripo | 证据不足 | [来源](https://x.com/i/status/2110784230687125852) |
@@ -265,28 +271,58 @@
 | Claude Code 背景动画实验室：基于 REA 调查的桌面动画重新实现 | 已收录 | [来源](https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/README.md) |
 | ChatGPT Work Cloud: probing a cloud agent's tools through introspection | 证据不足 | [来源](https://x.com/i/status/2111009945865097386) |
 | Indian Kanoon: a reported Claude Code legal-search integration | 证据不足 | [来源](https://x.com/i/status/2111027056234627119) |
+| Amap anti-bot controls: a secondhand Tencent sandbox-agent incident report | 证据不足 | [来源](https://x.com/i/status/2111034426066956783) |
 | JPCERT/CC：攻击服务器上的 APK 解析与 API 探测 | 已收录 | [来源](https://blogs.jpcert.or.jp/ja/2026/10/web_api_attacks.html) |
+| Polymarket Up/Down bot: a promotional REA strategy-analysis and replay report | 证据不足 | [来源](https://x.com/i/status/2111049696630194596) |
 | crashlens 崩溃分诊工具 | 已收录 | [来源](https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/README.md) |
+| Halo 3 Reforged: a reader's AI-decompilation and 128-player claim | 证据不足 | [来源](https://x.com/i/status/2111052865410375683) |
+| Samsung AC: local-network control with reported partial Claude assistance | 证据不足 | [来源](https://x.com/i/status/2111055239378018407) |
+| A 2000 stress.exe: a reported Opus/REA revival for Mac and the web | 证据不足 | [来源](https://x.com/i/status/2111061027211395485) |
 | RKD Telemetry Extractor：解读 Race-Keeper 赛道日录制数据 | 已收录 | [来源](https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/RESEARCH_NOTES.md) |
 | QQPet: a cross-platform pet rebuilt from Arctic Penguin T800 | 证据不足 | [来源](https://x.com/aigeeknews/status/2111095142790857087) |
 | Website to Next.js: a reported Claude Code template with parallel DOM-based rebuilding | 证据不足 | [来源](https://x.com/0xPascual/status/2111096590387601489) |
+| Black Bot / Blacksidian: reported REA rebuilds with AI-provider choice | 证据不足 | [来源](https://x.com/i/status/2111100877083947405) |
+| iOS on Android hardware: a porting idea and unverified HACKIOS/Redmi claims | 证据不足 | [来源](https://x.com/i/status/2111100973238329497) |
+| VMP-protected sample: a reported failed DeepSeek challenge | 证据不足 | [来源](https://x.com/i/status/2111101746001113381) |
+| Mega Man Battle Network: a secondhand AI decompilation and modding lead | 证据不足 | [来源](https://x.com/i/status/2111103450448572730) |
+| A twelve-year-old Kindle: reported Claude safety refusal during a jailbreak attempt | 证据不足 | [来源](https://x.com/i/status/2111106257431961740) |
+| 1997 audio software: investigating Windows 11 compatibility to continue old work | 证据不足 | [来源](https://x.com/i/status/2111115615628824723) |
 | OpenRiseOfNations：原生 macOS 引擎重新实现 | 已收录 | [来源](https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/README.md) |
 | Computer integrates REA: five app-feature rebuilding demos including Figma | 证据不足 | [来源](https://x.com/AskPerplexity/status/2111120664543596957) |
 | Claude Intercept 流量捕获分析工具 | 已收录 | [来源](https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/README.md) |
+| Claude client: inspecting environment telemetry with REA | 证据不足 | [来源](https://x.com/i/status/2111134289970765964) |
+| Codex cursor: recovering drawing geometry for a Windows pointer | 证据不足 | [来源](https://x.com/i/status/2111142820207837308) |
+| Gears of War 3: AI-assisted static recompilation and graphics work | 证据不足 | [来源](https://x.com/i/status/2111146922522402943) |
+| WristBeam：为 Mac 配套应用重建佳明手表协议 | 已收录 | [来源](https://x.com/i/status/2111155441077977138) |
+| Three open tools to personal apps: an REA recording, markup and dictation report | 证据不足 | [来源](https://x.com/i/status/2111156533002227870) |
+| LmDrum firmware: Claude reportedly stops after decompilation progress | 证据不足 | [来源](https://x.com/i/status/2111169026160480290) |
+| 1977 DES test vectors: Claude reportedly traces their random-generation environment | 证据不足 | [来源](https://x.com/i/status/2111170587792208361) |
+| jq and Fossify Calculator: REA function identification and early inspection | 证据不足 | [来源](https://x.com/i/status/2111171612149985567) |
 | Notion app.asar: a Claude read-only file and domain-string inspection | 证据不足 | [来源](https://x.com/0xKurogamii/status/2111182893313613877) |
 | Grok Bot + REA: a reported software-investigation chat template | 证据不足 | [来源](https://x.com/ChaiWithAi/status/2111184500093026340) |
+| Owned hardware for voice agents: an REA attempt inspired by earbuds and a smart ring | 证据不足 | [来源](https://x.com/i/status/2111158379896877249) |
+| Patrick's AI reverse-engineered games directory: an ongoing resource project | 待核查 | [来源](https://x.com/i/status/2111185397782880475) |
+| Doom: a claimed clean-room reimplementation with 19 Claude agents | 证据不足 | [来源](https://x.com/i/status/2111187899479658673) |
 | NIST ECDSA curves: Claude traces the generation of public parameters | 待核查 | [来源](https://www.anthropic.com/research/ecdsa-curve-origins) |
 | Niuniu AI / MT5: an REA rebuild report after a reseller relationship ended | 证据不足 | [来源](https://x.com/sera00111/status/2111206851606159655) |
+| Mac video export: studying DaVinci and CapCut to improve a personal editor | 证据不足 | [来源](https://x.com/i/status/2111214346428686478) |
 | Wiki Lab: a claimed REA-based Wikipedia for agents | 证据不足 | [来源](https://x.com/BrianDevoor/status/2111215569047314589) |
+| Set-top-box APK: a short WorkBuddy extraction and analysis report | 证据不足 | [来源](https://x.com/i/status/2111216713245364424) |
 | Base arbitrage contract: an unverified REA/Opus bytecode report | 证据不足 | [来源](https://x.com/i/status/2111220274226217276) |
 | System UI from video: Claude measures frames and infers animation parameters | 证据不足 | [来源](https://x.com/i/status/2111222217849946308) |
 | Linux mouse driver: reverse engineering among a week's AI projects | 证据不足 | [来源](https://x.com/i/status/2111224894297870413) |
 | Roadster video: a Claude-assisted three.js visual teardown experiment | 证据不足 | [来源](https://x.com/i/status/2111225325531074716) |
 | ENS v2 phishing email: a Claude-assisted investigation of dangerous agent repositories | 证据不足 | [来源](https://x.com/i/status/2111234225022067029) |
 | Game-function matcher: an audit account of wrong constants passing checks | 待核查 | [来源](https://x.com/i/status/2111241506006700380) |
+| Google Home: a blocked attempt to revive an old speaker without replacing hardware | 证据不足 | [来源](https://x.com/i/status/2111215951857246251) |
 | A 3D home model: a reported REA-assisted Mac menu-bar controller | 证据不足 | [来源](https://x.com/0xProbabillity/status/2109978137794883621) |
 | AMABOO Frameo: Claude Code adapts an existing Home HQ frame setup | 证据不足 | [来源](https://x.com/InvestingVault/status/2111250941886226471) |
+| Grok Bot real-time features: a Hermes investigation with audio unresolved | 证据不足 | [来源](https://x.com/i/status/2111251559275487538) |
+| Jiuchuan Xiaozhi AI speaker: give Muse stock firmware and hardware specifications | 证据不足 | [来源](https://x.com/i/status/2111251131665940519) |
+| Fallout 4: a brief claim of fixes after Claude reverse engineering | 证据不足 | [来源](https://x.com/i/status/2111262935293038623) |
+| A Windows keyboard utility: Claude builds a Linux version and checks it with a camera | 证据不足 | [来源](https://x.com/i/status/2111269740249489643) |
 | REA Reconstruction Companion 重建配套技能 | 已收录 | [来源](https://x.com/xiyue0803/status/2111273763799191896) |
+| Claude Desktop app.asar: Opus reportedly opens the package during feature research | 证据不足 | [来源](https://x.com/i/status/2111275332989059193) |
 | CLO3D DLLs: an idea to rebuild a garment-design tool with Claude/Codex | 证据不足 | [来源](https://x.com/i/status/2111281354910704058) |
 | NJFE：用于电脑检查的 Soulear 相机协议桥接 | 已收录 | [来源](https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/README.md) |
 | LeanREA 命令行逆向分析技能 | 已收录 | [来源](https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/README.md) |
@@ -471,6 +507,8 @@
 | An offline Linux reverse-engineering workspace: separating Codex from private files | 证据不足 | [来源](https://x.com/i/status/2111588450969231812) |
 | CM 01-02 to FM26: an idea to study football-manager data migration with REA | 证据不足 | [来源](https://x.com/i/status/2111591082119106953) |
 | Six-app two-room reconstruction: a report of 299 claims and a negative-control judge rule | 证据不足 | [来源](https://x.com/i/status/2111591362449592514) |
+| Windows 加载器：借助 REA 与 Codex 的静态恶意软件分析 | 已收录 | [来源](https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/) |
+| T3 Code: an unverified claim of reconstruction and open-source release with 100 Claude agents | 证据不足 | [来源](https://x.com/axmed_bl/status/2111544615669014664) |
 | An 1,842-file AI desktop shell: an animated demonstration of local/server boundaries | 证据不足 | [来源](https://x.com/i/status/2111446154713964643) |
 | Mario Kart 8 Deluxe: 0xsvsv's Claude/REA PC-port account | 证据不足 | [来源](https://x.com/i/status/2111431983691862272) |
 | Kerbal Space Program 2: an AI-decompilation idea for community maintenance | 证据不足 | [来源](https://x.com/i/status/2111434708575805636) |
@@ -503,6 +541,10 @@
 
 - `song:touhou-reconstruction` — REA 发表的文章、其固定版本的证据说明及已合并的 REA PR #1475 覆盖了这份组合报告：TH08、TH095 与 TH04 的里程碑、各自定义下的进度计数，以及 TH08 浮点字面量判定依据的漏洞。完整映射指向该方法案例；TH08 项目条目仍为部分匹配。结果仍为作者报告，未单独审阅 TH095 与 TH04 仓库，也未主张构建或运行复现。
 - `song:artcraft-boundary` — ArtCraft 应用页面称每个 Crafting App 都用 Rust 从零编写，并未声称进行了逆向工程；所审阅的四份 README 描述的是依据公开规范与观察到的行为完成的净室实现，不含专有代码。没有一手来源记录对 Adobe 或 Microsoft 软件的反编译或代码恢复，也没有来源确立第三方帖子所称的 REA 使用。PhotoCraft、WordCraft、GridCraft 与 DeckCraft 保留指向各自实现条目的部分映射；页面列出的 FilmCraft、LightCraft、CADCraft 等其他应用另有公开仓库，本次未审阅。保留此线索而不建立完整映射；这并非对这些应用质量的评价。
+- `song:unity-valheim` — 两个关联的 REA issue 都是工具缺陷报告，而非重建案例。#1801 报告 rea-agents 6.4.0 受托管解码预算限制，对一个 Unity Assembly-CSharp.dll 和 Valheim 的 assembly_valheim.dll 均未返回任何类型或方法；#1371 报告 CLI 在一个未具名 Unity 游戏程序集上输出 JSON 时崩溃，报告者随后确认 main 分支已修复。两个讨论串均未公开恢复的 Valheim 逻辑、修改、重建产物或对照结果，也未报告对 Valheim 的复测。相关映射指向 REA 托管代码分析指南，该指南说明了这一 64 MiB 预算、以部分覆盖报告的资源限制结果和用 --type 选择已知类型的方法，但未涉及 Unity、Valheim 或该 JSON 崩溃。这不是对 REA 托管代码支持能力的评判。
+- `song:large-android-apk` — 关联的 REA issue 是工具缺陷报告，而非重建案例：rea-agents 4.1.0 的 JADX 提供方在一个未具名、133 MB、含 11 个 DEX 文件的生产 APK 上耗尽 Java 堆内存。关闭时的回复说明 main 分支已加入堆内存控制和内存优化，但明确表示未针对该 APK 复测；讨论串也未写明应用名称，没有恢复的功能、重建产物或对照结果。相关映射指向 REA Android 静态分析指南，该指南说明了只用一个 JADX 工作线程且不设默认堆大小、可通过 REA_JADX_HEAP_MIB 或 Java 选项设置堆内存、Evidence 记录观测到的堆上限以及每次操作的限制，但没有针对这种规模 APK 的测试。这不是对 REA 当前 Android 支持能力的评判。
+- `song:android-apidemos` — 已合并的 REA PR #738 通过无界面 JADX 新增五项静态 Android 操作：包与清单检查、类搜索、成员及选定方法的 Java／smali 检查，以及静态调用者追踪。PR 报告了一条基于 Appium 公开 ApiDemos 6.0.18 APK 的验证流程，五项 CLI 与 MCP 操作均通过，且未执行该 APK。这验证的是工具集成，而非重建：没有重建或对照 ApiDemos 的任何功能或行为。相关映射指向 REA Android 静态分析指南，其真实验证流程使用同一个以哈希固定的测试样本；该指南记录的是工具检查而非重建，因此不作完整映射。这不质疑所报告的验证结果。
+- `song:super-mario-sunshine-pc` — 固定版本的移植 README、构建说明、开发指南和许可，连同固定版本反编译分支的 README、进度文件、构建说明和智能体指南，支持所报告的原生 PC 移植及分支作者自述的大量 AI 辅助。完整映射覆盖基于该反编译的这一移植；仅限 GMSE01、依赖光盘镜像、匹配尚未完成、各平台状态及项目自报的回归检查均明确保留。未确立 REA 使用或独立运行复现。相关映射链接另行收录的 sms-english 分支，移植的 README 将其列为所依据的一致性反编译及反编译子模块。
 - `song:dlss-amd-compute-report` — 所链接的 DLSSNR-AMD 仓库经固定版本审阅，记录了 DLSS 5 神经渲染网络的 Vulkan 重新实现，权重由使用者自行提取，并与 NVIDIA DLL 的输出对比；该项目已另行收录，此处仅作为相关映射。被回复的帖子串引用的是另一个项目 HelixSR 的发布消息（在 AMD 上运行 DLSS 3.7 网络），因此不能确定该评论指的是 DLSSNR-AMD。DLSSNR-AMD 的文档和 HelixSR 的 README 都未描述 AI 辅助的逆向工程。完整映射需先审阅该帖子串所指项目；AI 主张仍未确立。
 - `song:arwing-littleplanet-ai-port-report` — 帖文中的三个链接分别指向 carlosrmz009 的 arwing、arwing2 和 littleplanet 仓库，现各自作为独立案例收录：固定版本 README 记录了以运行覆盖率为种子、可重新汇编为原映像的反汇编，带解释器回退的 C 静态重编译，以及重编译与解释执行的哈希对照。每个映射只覆盖一个项目，因此这份合并报告仍为待定。三个仓库均未将工作归因于 AI、REA 或 Opus 5.5，帖文所称单一提示即完成的说法仍无依据；一致性与运行结果均为项目报告，未经复现。
 - `song:virtua-fighter-ai-decompilation` — 帖文中的两个链接指向 celsowm 的两个仓库。固定版本的 vf2-decomp 记录了 Virtua Fighter 2 Version 2.1 的 BSD-3-Clause、非一致性 C17 恢复，只有与参考 i960 执行器一致的路径才被接受；该项目现已收录，但映射仅为部分覆盖。固定版本的 vf3-decomp 是进行中的 Dreamcast 版 Virtua Fighter 3tb C 移植，有代理说明和覆盖率日志，但没有 README 或许可证文件，因此暂不收录，合并报告仍为待定。REA 的使用未确立；结果均为项目报告。
@@ -520,10 +562,16 @@
 - `yibie:finding-jingle-town-debugging-an-n64-game-without-symbols` — 这篇注明日期的文章记录了在 Snowboard Kids 2 反编译中用 GDB 与 Ares 手动检验一个运行时假设的流程，包括所用工具、步骤、观察到的三个值及作者说明的局限。完整映射将这篇调试记录作为学习资源收录；其研究的反编译项目另有案例条目，此处以相关映射链接。文中观察未经重做，文章也未声称使用 AI 或 REA。
 - `hao-games:row-001` — 固定版本的 README、Makefile、素材提取脚本、Jenkinsfile 和构建 wiki 记录了基于 Super Mario 64 反编译源码的增强版原生移植：素材从原 ROM 提取，输出比较处于关闭状态。完整映射覆盖此移植；相关映射记录其源自另行收录的 n64decomp 重建项目，并不表示一致性结果。所链帖子仅指向一个反编译游戏综合存档，未作为证据使用。
 - `hao-games:row-003` — 固定版本的 README、构建指南、CMake 文件、子模块、工作流和许可证记录了一个基于 libultraship 的原生移植：它转换使用者自备的美版或日版 ROM，不主张生成一致的输出。完整映射覆盖此移植。与 n64decomp 的相关映射依据共同的源码结构和抽查的两个文件，因为 README 没有指明上游项目。
-- `hao-games:row-004` — 固定版本的 README、wiki 与构建文件表明，这是面向 Super Mario 64 PC 移植的在线多人与 Lua 模组项目，延续 sm64ex-coop，后者又是 sm64ex 的分支。源码会校验使用者自备的美版 ROM，PC 构建强制采用非一致性代码。项目没有记录自身的重建工作：没有反编译过程说明、对照或一致性证据。相关映射仅记录它源自另行收录的反编译重建项目，并非对多人项目本身的评价。
+- `hao-games:row-004` — 固定版本的 README、wiki 与构建文件表明，这是面向 Super Mario 64 PC 移植的在线多人与 Lua 模组项目，延续 sm64ex-coop，后者又是 sm64ex 的分支。源码会校验使用者自备的美版 ROM，PC 构建强制采用非一致性代码。项目没有记录自身的重建工作：没有反编译过程说明、对照或一致性证据。相关映射仅记录其来源：credits.txt 称它构建于 sm64ex-coop 之上，后者基于另行收录的 sm64ex 移植，并由此基于 sm64 反编译项目，并非对多人项目本身的评价。
+- `hao-games:row-006` — 固定版本的 README、进度文件、GMSE01 构建说明、智能体规则和 CI 工作流记录了该分支自身的北美版一致性工作，作者明确说明使用了 AI 辅助。完整映射覆盖此分支，不包括上游 doldecomp/sms 或独立的原生 PC 移植。其逐字节一致的 DOL 仍链接取自原光盘的未完成目标文件，GMSE01 数字为作者报告，美版映射文件的来源说明也前后不一。相关映射记录 README 称其为另行收录的 doldecomp/sms 反编译的业余分支，分出时上游日版反编译约有 38% 的代码已匹配。
+- `hao-games:row-013` — 固定版本的 README、构建指南、受支持 ROM 哈希列表、CMake 文件和 CI 工作流，支持这是一个基于反编译源码与 libultraship 的《时之笛》原生移植。完整映射覆盖该移植，不包括 zeldaret/oot 反编译项目本身或一致性构建。所附帖文指向第三方的预构建游戏存档而非本项目，未作为证据；对 ROM 的依赖及缺失的许可证文件均明确保留。相关映射记录 README 所称该移植依赖 OoT 反编译项目提供的源码（即另行收录的 zeldaret/oot），并不表示移植版本身达成一致性构建。
+- `hao-games:row-015` — 固定版本的 README、构建指南、许可证、子模块列表、平台目录和 CI 工作流，以及 Aurora 的固定版本 README，支持这是一个基于 zeldaret/tp 反编译的《黄昏公主》原生移植。完整映射覆盖该移植，不包括作为另一条线索的反编译项目本身。对光盘镜像的依赖、仅 GameCube 版一致的反编译基础、GPU 限制及项目报告的准确性均明确保留。相关映射记录 README 所称 Dusklight 基于另行收录的 zeldaret/tp 反编译，并不表示移植版本身达成一致性构建。
+- `hao-games:row-019` — 已发布案例覆盖此美版 N64《姆吉拉的假面》静态重编译及原 ROM、平台要求。《时之笛》仍在计划中，项目明确声明不使用生成式 AI 开发。来源核查不表示独立运行复现。相关映射记录 README 注明借用另行收录的 zeldaret/mm 反编译中的头文件和部分函数定义来制作补丁或增强功能，同时说明该移植并非基于反编译源码。
 - `hao-games:row-020` — 固定版本的 README、构建规则、校验文件和 CI 配置支持这份美版 N64《姆吉拉的假面》反编译报告。完整映射只覆盖此仓库，不涵盖帖子所链接的存档；相关映射记录 Zelda 64: Recompiled 注明借用其头文件和函数，但它是独立的静态重编译。进行中状态、原 ROM 依赖、许可证缺失和项目报告的一致性均明确保留。
+- `hao-games:row-021` — 固定版本的 README、构建指南、受支持哈希清单、许可证和反编译差异脚本，支持这一基于 zeldaret/mm 反编译的《姆吉拉的假面》原生移植。完整映射只覆盖该移植，不涵盖独立的反编译项目或 Zelda 64: Recompiled。使用者自备游戏数据、每夜构建仅供试玩以及未公开保真度检查等限制均明确保留。相关映射记录该移植源自另行收录的 zeldaret/mm 反编译，decomp_diff.py 将其列为比对游戏源码时所用的官方仓库；这并不表示移植版本身达成一致性构建。
 - `hao-games:row-025` — 在此前有限的 README 核查基础上，固定版本的构建文件、反编译配置、启动源码和 CI 工作流支持将 Metaforce 记为现已基于 PrimeDecomp 重写、读取使用者所选光盘镜像运行的引擎重实现。完整映射仅覆盖此仓库，与合集中的 MetroidPrimePort 项目分开。暂不提供构建、没有对应当前版本的发布、原生目标为非一致构建，以及 MIT／CC0 许可范围未划分等限制均明确保留。相关映射记录此次重写以另行收录的 PrimeDecomp 反编译为基础，并不表示 Metaforce 本身达成一致性构建。
 - `hao-games:row-026` — 固定版本的 README、NOTICE、许可证、原生移植指南、Linux CI 工作流和 v0.29.0 发布，支持这一由 PrimeDecomp 反编译编译而成、借助 AI 辅助完成的《密特罗德 Prime》原生移植。完整映射仅覆盖此仓库，与合集中的 Metaforce 项目分开。受支持的光盘版本、仅覆盖非游戏代码的 MIT 授权范围以及作者报告的冒烟测试均明确保留；所链接帖子未作为证据核查。相关映射记录该移植源自另行收录的 PrimeDecomp 反编译，并不表示移植版本身达成一致性构建。
+- `hao-games:row-027` — 在此前有限的 README 核查基础上，固定版本的 README、自定义许可证、子模块清单、CI 工作流和 v1.1.1 发布，支持这一与 RSDKv5 或 RSDKv5U 引擎一起构建的 Sonic Mania 游戏代码反编译。完整映射只覆盖游戏仓库，引擎项目另行处理。依赖官方素材、不支持 Netflix 版本、默认引擎与游戏版本组合、非逐字节一致的范围以及非商业许可条款均明确保留。相关映射记录该游戏与另行收录的 RSDKv5 引擎反编译一起构建，.gitmodules 将其列为 dependencies/RSDKv5 子模块；这并不表示逐字节一致的结果。
 - `hao-games:row-090` — 固定版本的 README、构建指南、重编译配置、子模块列表、CI 工作流、项目历史与 GPLv3 许可，支持该具名的 Star Fox 64 N64Recomp 静态重编译。完整映射覆盖此移植，不涵盖独立的 sf64 反编译、Starship 移植或经独立测试的游戏行为。仅接受美版 1.1 ROM、CI 使用私有输入及补丁借用反编译头文件均明确保留。相关映射记录该移植从另行收录的 sf64 反编译中取用头文件和部分函数，并不表示移植版本身达成一致性构建。
 - `hao-games:row-091` — 固定版本的 README、构建指南、CMake 源码配置、素材提取配置、CI 工作流和 CC0 许可，连同姊妹项目中的历史说明，支持该基于反编译、运行在 libultraship 上的 Star Fox 64 PC 移植。完整映射覆盖此移植，不涵盖 sf64 反编译、姊妹静态重编译项目或经独立测试的游戏行为。使用者自备美版 ROM 及项目报告的行为均明确保留。相关映射记录该移植编译的是另行收录的 sf64 反编译的 C 代码，并不表示移植版本身达成一致性构建。
 - `hao-games:row-130` — 固定版本的 README、逆向报告、测试说明、游戏文件及第三方声明，记录了作者使用 REA MCP 检查开源 T-Rex Runner 页面，并由 Codex 重建其速度规则。完整映射覆盖此仓库范围有限的加速规则案例，不代表玩法等价；REA 另行发布的恐龙教学案例仅作为相关条目关联。作者报告的测试与手动检查未经重跑。

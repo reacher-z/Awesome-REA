@@ -4,7 +4,7 @@ The repository validates changes in CI and posts a rule-based review on pull req
 
 ## Pull request review
 
-`Automated PR review` uses the trusted base branch's reviewer. It retrieves selected JSON files as data from the exact PR commit and checks schema, duplicate IDs and URLs, source records, bilingual coverage, scope decisions, target labels, dates, and benchmark consistency. Source-index, localization, and scope changes are checked together against unchanged dependencies from the trusted base. Automated source scans retain a separate status from curated resources.
+`Automated PR review` uses the trusted base branch's reviewer. It retrieves selected JSON files as data from the exact PR commit and checks schema, duplicate IDs and URLs, source records, bilingual coverage, scope decisions, target labels, dates, and benchmark consistency. Source-index, localization, and scope changes are checked together against unchanged dependencies from the trusted base. Curated catalog changes and the Chinese names and requirements in `site/translations.zh-CN.json` are also checked together. Their value shapes are always checked. The reviewer reports a missing or unknown translation entry only for IDs the base catalogs do not contain, so a branch made before a newer record still passes; `scripts/validate.py` checks complete coverage on a full checkout. Automated source scans retain a separate status from curated resources.
 
 The reviewer also checks added patch text, and the decoded string values of changed data JSON, for common credential patterns and personal filesystem paths. File names are checked against the private, generated and raw-output entries in `.gitignore`, common key and network-capture names, and licensed font files; these files are reported by path and never fetched. When GitHub omits a file's diff, the reviewer retrieves that file's text from the PR commit as size-bounded data for the same pattern checks. Files it cannot inspect, such as binary or oversized files, are listed for maintainer inspection before merging rather than reported as clean. Reports identify the file, and for data JSON the record and field where possible, without repeating suspected secrets. Pattern checks are a backstop, not a complete secret audit.
 
@@ -16,9 +16,17 @@ The job can write a review comment but does not check out or run the contributor
 
 The `main` branch requires the GitHub Actions `validate` and `review` checks, an up-to-date branch, and a pull request before merging. These rules also apply to administrators; force pushes and branch deletion are disabled. No human approval count is imposed, and the bot's review comment is not an approval. Use a feature branch and merge after the required checks pass.
 
+`README lint` is a separate, non-required report. It runs the pinned awesome-lint 2.2.1 on README.md for pull requests and pushes to `main` that change a README, CONTRIBUTING.md, the README builder or the lint files, installing it from the [lockfile](../tests/awesome-lint/package-lock.json) without install scripts. Its job is not part of the `validate` aggregate and does not block merging. The job summary counts findings per rule, and the `awesome-lint-report` artifact keeps every finding with its line for 14 days. The workflow token is read-only; awesome-lint uses it only to read repository metadata. Spell-check findings that flag correct names, such as webpack, ReAct, Llama and Wasm, or ordinary words are recorded with a reason in the [allowlist](../tests/awesome-lint/allowlist.json) instead of being rewritten. Its `enforced_rules` names the rules whose unrecorded findings fail the job; none is enforced yet. To produce the same report locally:
+
+```sh
+npm ci --prefix tests/awesome-lint --ignore-scripts
+node tests/awesome-lint/lint.mjs README.md
+python3 scripts/awesome_lint_report.py .cache/awesome-lint/findings.json
+```
+
 The localization path was exercised in [PR #2](https://github.com/reacher-z/Awesome-REA/pull/2): valid data passed, an intentionally missing Chinese description failed both jobs, and restored data passed. Rerunning the reviewer updated the same head-specific bot review.
 
-`Source links` runs weekly and on manual request. It distinguishes confirmed missing links from rate limits and inconclusive network responses.
+`Source links` runs weekly and on manual request. It checks the curated catalog, papers, benchmarks and the case ledger's reported and primary evidence links, and distinguishes confirmed missing links from rate limits and inconclusive network responses.
 
 Every workflow action is pinned to a full commit SHA with its exact release version in a comment. Dependabot checks these actions weekly and groups available updates into one pull request, waiting seven days after a release before proposing it. Its pull requests run the same `validate` and `review` checks and, as workflow changes, need maintainer review.
 
@@ -32,19 +40,21 @@ python3 scripts/check_links.py --json ../awesome-rea-link-report.json
 
 The same checker runs in the `Source links` workflow. It saves the JSON report as a run artifact for 14 days and adds a counts summary, including when the checker reports confirmed dead links. Local runs save JSON only when `--json` is supplied. For slower or restricted connections, use `--workers 2 --timeout 30` and retry later rather than treating a timeout as removal.
 
-Inspect `counts`, `complete`, and each result's `url`, `checked_url`, `references`, `status`, `reason`, and `attempts`. References identify the affected records and fields: `resource:<id>:<field>`, `paper:<id>:<field>`, or `benchmark:<full_name>:<field>`. Curated resources are in `data/rea-resources.json` and `data/tool-resources.json`; papers and benchmarks are in `data/papers.json` and `data/benchmarks.json`. One URL can have several references, so review all affected fields.
+Inspect `counts`, `complete`, and each result's `url`, `checked_url`, `references`, `status`, `reason`, and `attempts`. References identify the affected records and fields: `resource:<id>:<field>`, `paper:<id>:<field>`, `benchmark:<full_name>:<field>`, or `ledger:<entry id>:<field>` for a case-ledger entry's `reported_source_urls` or `primary_evidence_urls`. Curated resources are in `data/rea-resources.json` and `data/tool-resources.json`; papers and benchmarks are in `data/papers.json` and `data/benchmarks.json`; ledger entries are in `data/case-coverage.json`. One URL can have several references, so review all affected fields.
 
 | Result | What it establishes | Next step |
 | --- | --- | --- |
 | `ok` | The final HTTP response was 2xx. | Check that the destination still describes the intended resource; an HTTP success alone does not verify its identity or claims. |
 | `dead` | Two consecutive requests returned 404 or 410. | Check the original project's site, repository and release notices for a move, archival notice or removal before proposing a correction. |
-| `inconclusive` | Access restrictions, rate limits, network/server failures or another response prevent a conclusion. | Leave the record in place. Inspect the attempts, retry after the restriction clears, or review the public primary source manually. Do not treat authentication walls, 403/429 responses or transient failures as confirmed removals. |
+| `recorded-missing` | Two consecutive requests returned 404 or 410, and every citing reference is a case-ledger entry whose `reason_en` already says this X post (by its @handle) or GitHub repository (by owner/name) was not found, in the sentence that names it. | Nothing to fix; the ledger already explains the loss. If the source returns, update the entry's reason. |
+| `reported-source-missing` | Two consecutive requests returned 404 or 410 for a link cited only in ledger `reported_source_urls`, the collection's own links, which the ledger lists without adopting as evidence. | Note the loss when the entry is reviewed; a reviewed entry should not rely on it as primary evidence. |
+| `inconclusive` | Access restrictions, rate limits, network/server failures, a [refused redirect](#verify-a-moved-resource) or another response prevent a conclusion. | Leave the record in place. Inspect the attempts, retry after the restriction clears, or review the public primary source manually. Do not treat authentication walls, 403/429 responses or transient failures as confirmed removals. |
 
-The command exits with status 1 when any link is confirmed dead. Inconclusive results alone still produce exit status 0: inspect `complete` and the counts before claiming all links passed. Do not add credentials to a report or commit raw reports to the repository.
+The command exits with status 1 when any link is confirmed dead. `recorded-missing`, `reported-source-missing` and inconclusive results alone still produce exit status 0: inspect `complete` and the counts before claiming all links passed. Do not add credentials to a report or commit raw reports to the repository.
 
 ### Verify a moved resource
 
-The checker follows redirects and records the final URL in each HTTP attempt. Compare the original `url`, the actual `checked_url`, and `attempts[*].final_url`. GitHub blob evidence is deliberately checked through `raw.githubusercontent.com` at the same revision; that conversion is not evidence of a project move. Access restrictions such as HTTP 403 or 429 remain inconclusive. A login or access page returning HTTP 200 can still be reported as `ok`, so inspect the destination manually.
+The checker follows at most five redirects and records the final URL in each HTTP attempt. Before requesting a redirect target, it applies the same public HTTPS URL check as catalog validation: a redirect to plain HTTP, to a URL with embedded credentials, or to a local, reserved or non-public literal IP host is not followed. Such a refusal, and a sixth redirect, make the result `inconclusive`; the attempt keeps the last URL actually requested as `final_url`, the reason in `redirect_refused` and the refused target, without any credentials, in `refused_redirect_url`. The check is syntactic: hostnames are not resolved, so it does not detect a public name that resolves to a private address and does not protect against DNS rebinding. Compare the original `url`, the actual `checked_url`, and `attempts[*].final_url`. GitHub blob evidence is deliberately checked through `raw.githubusercontent.com` at the same revision; that conversion is not evidence of a project move. Access restrictions such as HTTP 403 or 429 remain inconclusive. A login or access page returning HTTP 200 can still be reported as `ok`, so inspect the destination manually.
 
 Before replacing a canonical URL, verify that the destination belongs to the same upstream resource using a maintainer announcement, a repository transfer/rename, or another primary-source statement linking the old and new locations. Check that the title, authors or owner, and relevant content agree. A redirect to a generic homepage, login page or unrelated mirror is insufficient. Preserve the stable catalog `id` and update only the affected URL/evidence fields and any review metadata supported by the new review; keep pinned evidence at a verified revision where appropriate.
 
@@ -63,6 +73,18 @@ node --check site/app.js
 ```
 
 For paper changes, also follow the paper-specific validation and production-build steps in [the contribution guide](../CONTRIBUTING.md#suggest-a-research-paper). Review the diff for unrelated generated changes, then include the validation commands and results in the pull request. Keep source review distinct from runtime testing of the linked project.
+
+## Plan source-review rechecks
+
+`python3 scripts/review_age.py` lists curated resources and papers by the age of their last source review, so maintainers can plan rechecks. It runs offline from the repository root and reads `data/rea-resources.json`, `data/tool-resources.json` and `data/papers.json`; no workflow runs it.
+
+```sh
+python3 scripts/review_age.py --as-of 2027-04-01 --type paper --min-age-days 90
+```
+
+Age is the number of days from a record's `verified_at` date, converted to UTC, to `--as-of` (default: the current UTC date). Records are grouped into age bands and by record type, oldest first; `--bands` sets the day boundaries (default `30,90,180,365`). Each listed record gives its stable ID, catalog file, recorded review date, age and primary evidence link: `evidence_url` for a resource, the first `evidence_urls` entry for a paper. `--type` and `--min-age-days` narrow the list while the band counts still cover every record, and `--json` prints the full report. Records reviewed after the as-of date are counted separately.
+
+The report is a planning queue, not a finding. An older review date does not show that a description is wrong or that a project is unmaintained, and the report never edits or removes a record or changes a paper's publication status. The automated index's README `observed_at` times are summarized on a separate line and are never listed as source reviews. Updating a record after a recheck is a separate reviewed change; follow the [correction steps](#submit-a-correction-or-retirement-proposal).
 
 ## Website delivery
 

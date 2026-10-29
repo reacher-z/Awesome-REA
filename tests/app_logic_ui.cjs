@@ -79,7 +79,7 @@ function setup(query = '', {catalog, browser, extraMarkup = ''} = {}) {
   const context = {document, location, URL, URLSearchParams, console, window: {addEventListener() {}},
     history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
     fetch: async url => {
-      const body = responses[new URL(url).pathname === '/catalog.json' ? 'catalog' : 'browser'];
+      const body = responses[/^\/catalog(-index)?\.json$/.test(new URL(url).pathname) ? 'catalog' : 'browser'];
       return body === undefined ? {ok: false, status: 503} : {ok: true, json: async () => structuredClone(body)};
     }};
   vm.createContext(context);
@@ -243,14 +243,14 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     const [card] = app.element('resource-grid').children;
     const [title] = byClass(card, 'card-title-link');
     assert.equal(title.textContent, lang === 'zh' ? '精选 1' : 'Curated 1');
-    assert.deepEqual([title.href, title.target, title.rel], ['https://github.com/curated/tool-1', '_blank', 'noopener noreferrer']);
+    assert.deepEqual([title.href, title.target, title.rel], ['https://github.com/curated/tool-1', '_blank', 'noopener']);
     assert.equal(byClass(card, 'resource-kind')[0].textContent, lang === 'zh' ? '案例' : 'Case study');
     assert.equal(byClass(card, 'card-description')[0].textContent, lang === 'zh' ? '精选测试 1' : 'Curated fixture 1');
     assert.equal(byClass(card, 'card-meta')[0].children[0].className, 'card-targets');
     assert.equal(byClass(card, 'card-targets')[0].textContent, lang === 'zh' ? '应用' : 'App');
     assert.equal(byClass(byClass(card, 'card-meta')[0], 'resource-evidence-link').length, 0);
     const evidence = byClass(card.querySelector('details'), 'resource-evidence-link')[0];
-    assert.deepEqual([evidence.target, evidence.rel], ['_blank', 'noopener noreferrer']);
+    assert.deepEqual([evidence.target, evidence.rel], ['_blank', 'noopener']);
     assert.deepEqual([evidence.textContent, evidence.href], [lang === 'zh' ? '一手来源 ↗' : 'Primary source ↗', 'https://github.com/curated/tool-1#readme']);
     assert.equal(byClass(card, 'resource-entry-link')[0].href, `${lang === 'zh' ? '/zh' : ''}/resources/curated-1/`);
     const details = card.querySelector('details');
@@ -390,6 +390,52 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     }
   }
 
+  // Target buttons and Type/Category options count what they would show given the other filters and the query.
+  for (const lang of ['en', 'zh']) {
+    const rows = [
+      curatedRecord(1, {kind: 'case-study', category: 'reconstruction-cases', targets: ['game', 'website']}),
+      curatedRecord(2, {kind: 'case-study', category: 'reconstruction-cases', targets: ['app']}),
+      curatedRecord(3, {kind: 'tool', category: 'dotnet', targets: ['app'], name: 'Decompiler fixture'}),
+      curatedRecord(4, {kind: 'tool', category: 'dynamic-analysis', targets: ['binary'], name: 'Decompiler tracer'}),
+      curatedRecord(5, {kind: 'integration', category: 'agent-mcp', targets: ['binary', 'protocol']}),
+    ];
+    // build_site.py supplies category labels in the catalog; the option text pairs each label with its count.
+    const category_labels = {'reconstruction-cases': ['Reconstruction cases', '重建案例'], dotnet: ['.NET', '.NET'],
+                             'dynamic-analysis': ['Dynamic analysis', '动态分析'], 'agent-mcp': ['MCP servers', 'MCP 服务']};
+    const app = await loaded(`?lang=${lang}&kind=case-study&category=dotnet`, {catalog: catalogOf(rows, {category_labels})});
+    const counts = () => Object.fromEntries(app.marked.filter(node => 'targetCount' in node.dataset).map(node => [node.dataset.targetCount, node.textContent]));
+    const disabledTargets = () => app.marked.filter(node => 'target' in node.dataset && node.disabled).map(node => node.dataset.target);
+    const options = id => app.element(id).children.map(option => [option.value, option.textContent, Boolean(option.disabled)]);
+    const n = (text, count) => lang === 'zh' ? `${text}（${count}）` : `${text} (${count})`;
+    // A shared URL with no results keeps both of its selected values enabled.
+    assert.equal(app.api.filtered().length, 0);
+    assert.deepEqual(counts(), {all: '0', website: '0', game: '0', app: '0', binary: '0', firmware: '0', protocol: '0'});
+    assert.deepEqual(disabledTargets(), ['website', 'game', 'app', 'binary', 'firmware', 'protocol']);
+    const category = Object.fromEntries(options('category-select').map(([value, text, disabled]) => [value, [text, disabled]]));
+    assert.deepEqual(category.dotnet, [n('.NET', 0), false]);
+    assert.equal(category['reconstruction-cases'][1], false);
+    assert.equal(category['agent-mcp'][1], true, 'no case study is an MCP server');
+    assert.deepEqual(options('kind-select').find(([value]) => value === 'tool'), ['tool', n(lang === 'zh' ? '工具' : 'Tool', 1), false]);
+    assert.deepEqual(options('kind-select').find(([value]) => value === 'case-study'), ['case-study', n(lang === 'zh' ? '案例' : 'Case study', 0), false]);
+    // Clearing the category recounts targets and types; the Type menu ignores its own selection.
+    app.element('category-select').emit('change', 'all');
+    assert.deepEqual(counts(), {all: '2', website: '1', game: '1', app: '1', binary: '0', firmware: '0', protocol: '0'});
+    assert.deepEqual(disabledTargets(), ['binary', 'firmware', 'protocol']);
+    assert.deepEqual(options('kind-select').map(([, text]) => text)[0], n(lang === 'zh' ? '所有类型' : 'All types', 5));
+    assert.deepEqual(options('category-select')[0].slice(1), [n(lang === 'zh' ? '所有类别' : 'All categories', 2), false]);
+    // Typing recounts without moving focus; the results status stays the only live region.
+    app.element('kind-select').emit('change', 'all');
+    const search = app.element('search-input'); search.focus();
+    search.emit('input', 'decompiler');
+    assert.equal(app.document.activeElement, search);
+    assert.deepEqual(counts(), {all: '2', website: '0', game: '0', app: '1', binary: '1', firmware: '0', protocol: '0'});
+    assert.deepEqual(options('kind-select').find(([value]) => value === 'tool').slice(1), [n(lang === 'zh' ? '工具' : 'Tool', 2), false]);
+    assert.deepEqual(options('kind-select').find(([value]) => value === 'case-study').slice(1), [n(lang === 'zh' ? '案例' : 'Case study', 0), true]);
+    // The counts add no live region: only the page's status lines (results, repositories, Get data, exports) are announced.
+    assert.deepEqual(app.marked.filter(node => node.attrs['aria-live']).map(node => node.id).sort(), ['data-clone-status', 'data-copy-status', 'export-matches-status', 'results-status', 'source-export-matches-status', 'source-status']);
+    assert(app.element('kind-select').children.every(option => !option.attrs['aria-live']));
+  }
+
   // Show More adds 15 curated or 24 repository records and hides its row when none remain.
   for (const lang of ['en', 'zh']) {
     const app = await loaded(`?lang=${lang}`, {catalog: catalogOf(Array.from({length: 40}, (_, index) => curatedRecord(index))),
@@ -412,6 +458,27 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     // Any new filter starts again from the first page.
     app.element('source-search').emit('input', 'repo');
     assert.deepEqual(sourceShown(), [24, false, '+24', lang === 'zh' ? '已显示 24 / 60 个仓库' : '24 of 60 repositories shown']);
+  }
+
+  // Show More appends the next batch to the cards already shown; the result equals a full rebuild at the same depth.
+  {
+    const kinds = ['documentation', 'tool', 'case-study', 'integration', 'project'];
+    const app = await loaded('', {catalog: catalogOf(Array.from({length: 50}, (_, index) => curatedRecord(index, {kind: kinds[index % kinds.length]}))),
+      browser: browserOf(Array.from({length: 90}, (_, index) => repository(`order/repo-${index}`, {stars: (index * 37) % 11})))});
+    const ids = container => app.element(container).children.map(card => card.dataset.recordId);
+    for (const [container, more, page, total] of [['resource-grid', 'load-more', 15, 50], ['source-results', 'source-more', 24, 90]]) {
+      if (container === 'source-results') app.api.setIndexMode('source-index');
+      const kept = app.element(container).children.slice();
+      for (let shown = page; shown < total; shown += page) {
+        app.element(more).handlers.click();
+        assert.deepEqual(app.element(container).children.slice(0, kept.length), kept, `${more} keeps the cards already shown`);
+        kept.splice(0, kept.length, ...app.element(container).children);
+      }
+      const appended = ids(container);
+      assert.equal(appended.length, total);
+      app.api.applyLanguage();
+      assert.deepEqual(ids(container), appended, `${more} shows the same records in the same order as a full render`);
+    }
   }
 
   {

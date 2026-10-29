@@ -1,11 +1,11 @@
 # Resource catalog format
 
-`rea-resources.json` and `tool-resources.json` contain the records rendered into both READMEs. They are arrays of objects with these fields. Every field is required except `additional_evidence_urls`.
+`rea-resources.json` and `tool-resources.json` contain the records rendered into both READMEs. They are arrays of objects with these fields. Every field is required except `additional_evidence_urls` and `added_at`.
 
 | Field | Meaning |
 | --- | --- |
 | `id` | Stable lowercase slug, unique across both files |
-| `name` | Upstream project or resource name |
+| `name` | Upstream project or resource name as published. A `case-study` name is a title instead, `<lead>: <what was reconstructed or found>`, of at most 100 characters. The lead is the project name as its README or page presents it, or the game, app or device when the work has no separate project name (a report, a post, or a repository titled after its game, such as `n64decomp/sm64`). Name the game, app or device in the summary when the lead does not. When the lead itself contains a colon, separate the summary with an em dash, as in `Zelda 64: Recompiled — a native Majora’s Mask port …`. The Chinese name in `site/translations.zh-CN.json` keeps the lead and puts a full-width colon（：）before the translated summary |
 | `url` | Canonical public destination |
 | `category` | Task or tool family; `python3 scripts/catalog.py --list-categories` prints the values in use |
 | `kind` | Resource type: project, tool, integration, case-study, collection, documentation, learning-resource, or research |
@@ -15,8 +15,12 @@
 | `evidence_url` | Primary source supporting the description |
 | `additional_evidence_urls` | Optional supporting documentation, release, or package-metadata URLs; these are validated and included in link checks |
 | `verified_at` | ISO date or timestamp of source review |
+| `added_at` | Optional `YYYY-MM-DD` UTC date on which the record first reached `main`; it orders the Atom feeds and is not a review date |
 | `verification` | `source-reviewed`; not a runtime compatibility claim |
-| `requirements` | Platform, engine, release, license, or input prerequisites |
+| `requirements` | Nonempty list of platform, engine, release, license, or input prerequisites, one nonempty string per item; the Chinese list in `site/translations.zh-CN.json` translates the same items |
+| `requirement_facets` | Optional: one facet ID per `requirements` item, in the same order |
+
+`requirements` items describe the project: prerequisites first, then project-specific limits such as author-reported results, unpublished artifacts, platform gaps or missing licenses. Do not add sentences about this catalog's own review, such as "this collection did not run it" or "no REA use is established": every entry page already states that source review does not establish runtime testing, and `relationship` records the REA connection. When a record's sources invite the opposite reading, for example by reporting runtime results a reader could take as checked here, end the relevant item with the one phrase "Not run or reproduced for this catalog." and its Chinese item with "本目录未运行或复现。". `python3 scripts/review_disclaimers.py` lists requirement sentences that still refer to the catalog's review, so a reviewer can keep only those specific to their record.
 
 The validator accepts the category keys defined in `CATEGORIES` in [build_readme.py](../scripts/build_readme.py). Their English and Chinese labels are the only category wording on the site: the build copies them into `catalog.json` for the homepage filter and cards, and entry pages read the same map. It accepts exactly these `relationship` values from `RELATIONSHIPS` in the same file, shown with their English labels. REA here is the upstream [REA project](https://github.com/morluto/rea).
 
@@ -34,13 +38,17 @@ The validator accepts the category keys defined in `CATEGORIES` in [build_readme
 - `foundation` (Foundation tool): an established analysis tool, library or framework that works independently of REA.
 - `learning` (Learning resource): a course, book, reference or research resource with no established REA connection.
 
-Source review dates are snapshots; upstream requirements may change. GitHub file and directory evidence links (`/blob/`, `/tree/`) name the reviewed commit, so they keep showing the reviewed text, while `url` remains the moving project link. GitHub wiki evidence names the page revision from its history (`/wiki/<Page>/<revision>`), and an evidence link is never a bare repository root: link the README or tree at the reviewed commit instead. `python3 scripts/validate.py` prints a non-blocking warning for either case. Resource and paper review dates allow at most the next UTC calendar day to accommodate reviewers ahead of UTC. Resource review timestamps retain an exact 24-hour allowance; publication and first-arXiv dates must not be in the future. A documentation link on `main` may describe functionality that is not in a released package; keep that distinction in the description or requirements.
+`requirement_facets` labels each `requirements` item with one of: `prerequisites` (Prerequisites / 前提条件: inputs, platforms, toolchains and setup a reader must supply), `scope` (Scope / 范围: what the project or report is and covers), `limits` (Limits / 局限: known gaps and caveats), `testing` (Testing evidence / 测试证据: tests, checks and reported results, or their absence), `license` (License / 许可: code licenses and rights to original assets) and `attribution` (Attribution / 署名: authorship, provenance and AI or REA involvement). The list is parallel to `requirements` and to the Chinese items in `site/translations.zh-CN.json`, so both languages carry the same facets. The field is optional, and most case studies carry it; when present, validation rejects unknown IDs and count mismatches. Records without it keep a plain requirements list. Pages show each facet as a bold lead-in and list prerequisites first; the item text itself is unchanged. [requirement_facets.py](../scripts/requirement_facets.py) defines the vocabulary.
+
+`added_at` orders the Atom feeds of curated resources and papers (`/feed.xml` and `/zh/feed.xml`); automated scan records have no feed. Set it to the UTC date the record is merged. The validator rejects malformed values and dates beyond the next UTC day, as for review dates. Records without it are left out of the feeds. Source review dates are snapshots; upstream requirements may change. GitHub file and directory evidence links (`/blob/`, `/tree/`) name the reviewed commit, so they keep showing the reviewed text, while `url` remains the moving project link. GitHub wiki evidence names the page revision from its history (`/wiki/<Page>/<revision>`), and an evidence link is never a bare repository root: link the README or tree at the reviewed commit instead. `python3 scripts/validate.py` prints a non-blocking warning for either case. Resource and paper review dates allow at most the next UTC calendar day to accommodate reviewers ahead of UTC. Resource review timestamps retain an exact 24-hour allowance; publication and first-arXiv dates must not be in the future. A documentation link on `main` may describe functionality that is not in a released package; keep that distinction in the description or requirements.
+
+Keep a record's English `requirements` within about 1,500 characters in total, preferably in five items or fewer, and list prerequisites first: platform, versions, required inputs, then license terms. Keep every version minimum, license condition, required input and exclusion; leave out project history, detailed result narratives and sentences that repeat the description. The Chinese items in `site/translations.zh-CN.json` translate the same items. `python3 scripts/validate.py` prints one warning naming the records above the budget, longest first, without failing.
 
 `benchmarks.json` is a separate repository comparison dataset. Star counts are observations at `observed_at`, not a live ranking, quality score, or predicted growth rate. It holds one GitHub REST API observation of 19 repositories (2 designated anchors and 17 comparison repositories) between 2026-10-16T00:47:46Z and 00:47:48Z. Each README evidence link names the default-branch commit that served the observed README, whose file matches `readme_blob_sha`. The repositories were chosen deliberately to cover high-profile references and direct neighbors, not sampled at random, so the data supports neither causal comparisons nor growth estimates. The [comparison notes](../docs/benchmark-research.zh-CN.md) (Chinese, dated snapshot) explain the selection and limitations.
 
 `papers.json` is a separate bibliography, rendered into the [English paper directory](https://awesomerea.org/papers/), [Chinese paper directory](https://awesomerea.org/zh/papers/), and both READMEs. The bibliography is counted separately from the repository scans. Some papers also appear in the curated collection, so paper and curated totals must not be added as unique entries. Records preserve original titles and author names, publication venue and status, date precision, DOI/arXiv identifiers, public primary sources, bilingual summaries and scope limitations. Chinese titles are translations. A preprint is labeled as such; an open paper does not imply an open dataset or evaluation service. Code links require an author-provided source. Review dates describe bibliography checks, not publication dates or reproduced results.
 
-Each paper record has exactly these fields; the validator rejects missing or extra keys. Nullable fields stay present with `null`. Text fields are nonempty, each `_zh` field needs Chinese text, and its English counterpart must be distinct English text.
+Each paper record has exactly these fields; the validator rejects missing or extra keys. Only `citation` and `added_at` may be omitted. Nullable fields stay present with `null`. Text fields are nonempty, each `_zh` field needs Chinese text, and its English counterpart must be distinct English text.
 
 | Field | Value | Meaning |
 | --- | --- | --- |
@@ -51,7 +59,7 @@ Each paper record has exactly these fields; the validator rejects missing or ext
 | `date_precision` | `year`, `month` or `day` | Finest verified precision of the publication date |
 | `publication_date` | `null`, `YYYY-MM` or `YYYY-MM-DD` | `null` for `year` precision, otherwise a month or day matching `date_precision`; within `year` and not in the future |
 | `date_basis` / `date_basis_zh` | Text | Source that establishes the recorded date |
-| `venue` | Text | Conference, workshop, journal or preprint server; journal articles use the journal title |
+| `venue` | Text | Conference, workshop, journal or preprint server; journal articles use the journal title. A Proceedings of the ACM (PACM) journal adds its conference issue and year in parentheses, as in `Proceedings of the ACM on Software Engineering (FSE 2025)`; BibTeX `journal` omits the parenthesized issue |
 | `publication_status` | `conference-paper`, `conference-accepted`, `journal-article` or `preprint` | Published conference or workshop paper; accepted but proceedings not verified; journal article, exported as BibTeX `@article`; preprint |
 | `arxiv_id` | arXiv identifier such as `2403.05286`, or `null` | arXiv paper identifier without a version suffix |
 | `arxiv_version_reviewed` | `v1`, `v2`, … or `null` | arXiv version checked; `null` when there is no `arxiv_id` |
@@ -65,14 +73,15 @@ Each paper record has exactly these fields; the validator rejects missing or ext
 | `description_en` / `description_zh` | Text | Original summary |
 | `scope_limitations_en` / `scope_limitations_zh` | Text | Evaluation scope, unavailable artifacts and other limits |
 | `why_fits_en` / `why_fits_zh` | Text | Why the paper belongs in the collection |
-| `evidence_urls` | Nonempty list of HTTPS URLs | Primary sources checked for the record |
+| `evidence_urls` | Nonempty list of HTTPS URLs | Primary sources checked for the record. Files in a code repository name the reviewed commit (`/blob/<commit>/…`), as for resource evidence; a paper with a GitHub `code_url` cites at least its README at that commit, while `code_url` stays the moving repository link |
 | `metadata_notes` / `metadata_notes_zh` | Text | Notes on identifiers, dates, acceptance or artifacts |
 | `kind` | `research` | Fixed value |
 | `verified_at` | ISO date | Date of the bibliography review; at most one calendar day ahead of UTC for timezone differences |
+| `added_at` | Optional `YYYY-MM-DD` | UTC date on which the paper first reached `main`; orders the Atom feeds, never a review or publication date |
 | `verification` | `source-reviewed` | Fixed value; sources were checked, not reproduced |
 | `runtime_tested` | `false` | Fixed value; reproduction results are not recorded |
 
-`date_precision` states how much of the date a source verifies, and `publication_date` holds exactly that much: nothing for `year`, a month for `month`, a day for `day`. `year` is always recorded. `targets[0]` places the paper in one section of the READMEs and the paper directory; the agent-evaluation papers listed in `AGENT_EVALUATION_PAPERS` in [build_readme.py](../scripts/build_readme.py) form their own README section.
+`date_precision` states how much of the date a source verifies, and `publication_date` holds exactly that much: nothing for `year`, a month for `month`, a day for `day`. `year` is always recorded. `targets[0]` places the paper in one section of the READMEs and the paper directory; the agent-evaluation papers listed in `AGENT_EVALUATION_PAPERS` in [build_readme.py](../scripts/build_readme.py) form their own section in both.
 
 Search the bibliography with `python3 scripts/catalog.py --papers --target website`, add a query such as `interaction`, or use `--language zh` for Chinese output. `--json` returns matching source records for tools and agents. Paper search is separate from `--source-index` and the default curated-resource search.
 
@@ -82,7 +91,7 @@ Paper DOI/arXiv fields may both be null only for a published conference or works
 
 `source-index.json` is the preserved canonical scan baseline: 3,000 distinct repository READMEs were retrieved and hashed. It preserves collection queries, successful and failed counts, source URLs, README hashes, timestamps, metadata, and automatic topic labels. Retained upstream descriptions remain unchanged. Oversized new descriptions are omitted with length/SHA-256 evidence; historical source records are preserved. See the [scan method](../docs/source-scan.md).
 
-The [repository locales](locales/README.md) provide derived English and Simplified Chinese descriptions for all 3,000 records. The website build combines these files with the source index and retains available upstream text as `description_original` in its generated data. New or changed source records also require locale updates. Translation helps browse the collection; it does not verify upstream claims or promote a record to `source-reviewed`.
+The [repository locales](locales/README.md) provide derived English and Simplified Chinese descriptions for all 3,000 records. The website build combines these files with the source index and retains available upstream text as `description_original` in its generated data. New or changed source records also require locale updates; [locale-source-fingerprints.json](locale-source-fingerprints.json) binds each translation to the source text it was written from, so a changed description is reported as stale. Translation helps browse the collection; it does not verify upstream claims or promote a record to `source-reviewed`.
 
 For wider repository discovery, start with the generated [source-browser.json](https://awesomerea.org/source-browser.json). It contains only browsable records and the fields needed for search, cards, details and evidence annotations. Follow `meta.full_export` for its complete companion and verify that file against `meta.full_export_sha256`: schema 1 names `source-index.json`; schema 2 names `source-published.json`. These are generated website exports; `data/source-index.json` in a clone remains the raw baseline.
 
@@ -90,7 +99,50 @@ The schema-2 companion is emitted only when a supplement is ready for publicatio
 
 [source-scope.json](source-scope.json) records evidence-bound exclusions for the baseline; published supplements retain their own scope decisions. The website and [bilingual GitHub directory](../docs/repositories/README.md) omit excluded records from browsing. Each complete export keeps the records in its selection and their exclusion reasons; the separate curated catalog contains only curated entries.
 
-`case-coverage.json` is a separate inventory of entries in pinned upstream case collections. Its [English](../docs/case-coverage.md) and [Chinese](../docs/case-coverage.zh-CN.md) summaries distinguish collection occurrences, deduplicated report units, typed catalog matches, and unresolved project identities. A README scan does not establish case review or runtime reproduction. Regenerate the summaries with `python3 scripts/build_case_coverage.py`; catalog validation also checks the ledger and its mappings.
+`case-coverage.json` is a separate inventory of entries in pinned upstream case collections. Its [English](../docs/case-coverage.md) and [Chinese](../docs/case-coverage.zh-CN.md) summaries distinguish collection occurrences, deduplicated report units, typed catalog matches, and unresolved project identities. A README scan does not establish case review or runtime reproduction. After changing entries, run `python3 scripts/build_case_coverage.py`: it validates the ledger, rewrites its derived `counts` block and regenerates both summaries, so the counts are never edited by hand. Its `--check` option only reports stale counts or summaries, and catalog validation also checks the ledger and its mappings.
+
+The ledger's `catalog_revision` names the `main` commit whose curated catalog and bibliography all `catalog_matches` were last checked against together. Use a commit that is already on `main`, such as the one your branch starts from; a commit that exists only on a pull-request branch is discarded by the squash merge. Validation resolves every mapping against the current catalog, so a pull request that adds or edits individual mappings may leave the field unchanged; update it after rechecking the ledger as a whole. With full Git history, `python3 scripts/validate.py` warns, without failing, when the revision is not an ancestor of `HEAD`; shallow clones skip this check.
+
+Each object in the ledger's `entries` array is one collection occurrence with exactly these fields; the validator in [case_coverage.py](../scripts/case_coverage.py) rejects missing or extra keys. URLs are public HTTPS links without duplicates in a list, and text fields are nonempty and at most 800 characters.
+
+| Entry field | Value | Meaning |
+| --- | --- | --- |
+| `id` | `<collection_id>:<slug>`, a lowercase hyphenated slug | Stable occurrence ID, unique in the ledger |
+| `unit_id` | The `id` of an entry in the same unit | Report unit; equals `id` unless an alias decision merges occurrences of one report |
+| `collection_id` | A `collections[].id` | Pinned collection that lists the occurrence; it also prefixes `id` |
+| `title` | English text | The collection's label for the entry, not a verified capability claim |
+| `collection_urls` | Nonempty list of pinned URLs | The entry's files at the collection's pinned commit, formed from its `locator_templates` |
+| `reported_source_urls` | Nonempty list of URLs | Links the collection entry reports |
+| `state` | `already-curated`, `pending` or `insufficient-evidence` | Fully covered by a catalog record; review or complete coverage still pending, including partial matches; retained as a lead whose evidence does not support curation |
+| `review_level` | `inventory-only`, `catalog-mapped` or `primary-source-reviewed` | Listed from the collection only; mapped to catalog records; primary sources reviewed |
+| `reviewed_at` | ISO date, not in the future | Date of the latest review of the entry |
+| `reason_en` / `reason_zh` | English / Chinese text | Why the entry has its state and what remains unestablished |
+| `primary_evidence_urls` | List of URLs; nonempty unless `review_level` is `inventory-only` | Primary sources reviewed for the entry |
+| `catalog_matches` | List of match objects, possibly empty | Typed mappings to curated records or papers |
+
+Each catalog match has exactly these fields:
+
+| Match field | Value | Meaning |
+| --- | --- | --- |
+| `catalog` | `resource` or `paper` | A curated record in `rea-resources.json` or `tool-resources.json`, or a paper in `papers.json` |
+| `id` | Record ID | The matched record, at most once per entry |
+| `kind` | The record's `kind` | Must equal the matched record's `kind`, such as `case-study` or `research` |
+| `scope` | `full`, `partial` or `related` | The record covers the whole report; part of it; or a related project only |
+
+The validator also enforces these cross-field rules:
+
+- A match must be bound to the record's sources: the resource's `url`, `evidence_url` or one of its `additional_evidence_urls`, or the paper's `url` or one of its `evidence_urls`, appears in the entry's `primary_evidence_urls`.
+- `already-curated` requires a `full` match and a review level other than `inventory-only`, and any match requires a review level other than `inventory-only`.
+- Entries that share a `unit_id` need one alias in `aliases` listing exactly their occurrence IDs, with `basis_en`, `basis_zh` and evidence URLs that identify every merged occurrence; they share one state and review level.
+- Each collection's `entry_count` equals its number of entries, and `counts` equals the values `coverage_counts()` derives from the entries.
+
+To resolve a lead:
+
+1. Review the pinned collection entry and the primary sources behind its reported links, pinning GitHub file evidence to the reviewed commit.
+2. If they support curation, add the record to the catalog, then set `state` to `already-curated` and `review_level` to `primary-source-reviewed`, add a `full` match, and list the record's evidence in `primary_evidence_urls`. A match that covers only part of the report is `partial` and the entry stays `pending`.
+3. Otherwise set `state` to `insufficient-evidence` and `review_level` to `primary-source-reviewed`, list the primary evidence you reviewed, and explain what it does and does not establish in `reason_en` and `reason_zh`.
+
+In either case update `reviewed_at` and `counts`, then run `python3 scripts/build_case_coverage.py` and `python3 scripts/validate.py`.
 
 ## Get the catalog with Git
 

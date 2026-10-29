@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/game-analysis/) · [简体中文](game-analysis.zh-CN.md)
 
-**484 repositories** · 2026-10-20 UTC
+**485 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -36,7 +36,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [nmlgc/ReC98](https://github.com/nmlgc/ReC98) — The Touhou PC-98 Restoration Project **[875 stars]**
 - [AxioDL/metaforce](https://github.com/AxioDL/metaforce) — A native reimplementation of the Metroid Prime engine **[808 stars]** · Curated: [Metaforce: a Metroid Prime engine reimplementation rebuilt on the decompilation](https://awesomerea.org/resources/metaforce-metroid-prime-case/)
 - [EstebanPdN/zelda-tmc-3ds](https://github.com/EstebanPdN/zelda-tmc-3ds) — Native Nintendo 3DS port of The Legend of Zelda: The Minish Cap based on Project Picori **[757 stars]**
-- [SAT-R/sa2](https://github.com/SAT-R/sa2) — A decompilation and port of Sonic Advance 1 &amp; 2 - GameBoy Advance game's written in C **[678 stars]**
+- [SAT-R/sa2](https://github.com/SAT-R/sa2) — A decompilation and port of Sonic Advance 1 &amp; 2 - GameBoy Advance game's written in C **[678 stars]** · Curated: [Sonic Advance 1 &amp; 2: a matching GBA decompilation with widescreen ports](https://awesomerea.org/resources/sonic-advance-1-2-decomp-port-case/)
 - [axhlzy/Il2CppHookScripts](https://github.com/axhlzy/Il2CppHookScripts) — Frida-based libil2cpp.so runtime parsing script **[664 stars]**
 - [OpenRakis/Spice86](https://github.com/OpenRakis/Spice86) — Reverse engineer and rewrite real mode DOS programs! **[662 stars]** · Curated: [Spice86](https://awesomerea.org/resources/spice86/)
 - [matt-kempster/m2c](https://github.com/matt-kempster/m2c) — A decompiler targeting MIPS, PowerPC, ARM, and SuperH. **[658 stars]** · Curated: [m2c](https://awesomerea.org/resources/m2c/)
@@ -45,9 +45,10 @@ These are automatically discovered projects, not individually curated or tested 
 - [encounter/objdiff](https://github.com/encounter/objdiff) — A local diffing tool for decompilation projects **[586 stars]** · Curated: [objdiff](https://awesomerea.org/resources/objdiff/)
 - [jac3km4/redscript](https://github.com/jac3km4/redscript) — Compiler/decompiler toolkit for redscript **[520 stars]** · Curated: [REDscript](https://awesomerea.org/resources/redscript/)
 - [EliotVU/Unreal-Library](https://github.com/EliotVU/Unreal-Library) — Decompiler for Unreal package files (.upk, .u, .uasset; etc), with support for Unreal Engine 1, 2, and 3 **[490 stars]**
+- [marsinator358/luajit-decompiler-v2](https://github.com/marsinator358/luajit-decompiler-v2) — LuaJIT bytecode decompiler **[487 stars]** · Curated: [LuaJIT Decompiler v2](https://awesomerea.org/resources/luajit-decompiler-v2/)
 - [sneakyevil/IL2CPP\_Resolver](https://github.com/sneakyevil/IL2CPP_Resolver) — A run-time API resolver for IL2CPP Unity. **[475 stars]**
 - [TeamGDB/Yakumo](https://github.com/TeamGDB/Yakumo) — Static recompilation of a PSP game into a native executable. Vulkan and SDL3. Bring your own copy of the game. **[447 stars]**
-- [AliveTeam/alive\_reversing](https://github.com/AliveTeam/alive_reversing) — Re-implementation of Oddworld: Abe's Exoddus and Oddworld: Abe's Oddysee **[441 stars]**
+- [AliveTeam/alive\_reversing](https://github.com/AliveTeam/alive_reversing) — Re-implementation of Oddworld: Abe's Exoddus and Oddworld: Abe's Oddysee **[441 stars]** · Curated: [R.E.L.I.V.E.: an Oddworld Abe’s Oddysee and Abe’s Exoddus engine reimplementation](https://awesomerea.org/resources/relive-oddworld-abe-engine-case/)
 - [LazyDuchess/OpenTS2](https://github.com/LazyDuchess/OpenTS2) — Open source re-implementation of The Sims 2 in Unity **[432 stars]**
 - [alexbatalov/fallout2-re](https://github.com/alexbatalov/fallout2-re) — Reverse engineered Fallout 2 **[411 stars]**
 - [CTR-tools/ctr-native](https://github.com/CTR-tools/ctr-native) — A Crash Team Racing Decompilation Project **[405 stars]**
@@ -55,7 +56,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [ethteck/splat](https://github.com/ethteck/splat) — A binary splitting tool to assist with decompilation and modding projects **[368 stars]** · Curated: [splat](https://awesomerea.org/resources/splat/)
 - [PrimeDecomp/prime](https://github.com/PrimeDecomp/prime) — A matching decompilation of Metroid Prime **[367 stars]** · Curated: [Metroid Prime: the PrimeDecomp matching GameCube decompilation](https://awesomerea.org/resources/primedecomp-metroid-prime-decomp-case/)
 - [0xDC00/agent](https://github.com/0xDC00/agent) — Universal script based text hooker (powered by FRIDA). **[357 stars]**
-- [adonis-singh/re4](https://github.com/adonis-singh/re4) — Resident Evil 4 (GameCube, G4BE08 debug build) — complete byte-identical decompilation to C/C++ **[345 stars]**
+- [adonis-singh/re4](https://github.com/adonis-singh/re4) — Resident Evil 4 (GameCube, G4BE08 debug build) — complete byte-identical decompilation to C/C++ **[345 stars]** · Curated: [re4: a byte-identical decompilation of the Resident Evil 4 GameCube debug build](https://awesomerea.org/resources/re4-gamecube-debug-decomp-case/)
 - [xensik/gsc-tool](https://github.com/xensik/gsc-tool) — A utility to compile &amp; decompile IW engine game scripts. **[335 stars]**
 - [snuri00/psp-web-recomp](https://github.com/snuri00/psp-web-recomp) — PSP games in the browser, static recompilation to WebAssembly, an HLE kernel and a WebGL2 renderer **[329 stars]** · Curated: [PSP Web Recomp](https://awesomerea.org/resources/psp-web-recomp/)
 - [SpeedBreakerProject/speedbreaker](https://github.com/SpeedBreakerProject/speedbreaker) — Unofficial static recompilation of the Xbox 360 version of Need for Speed: Most Wanted (2005): a native port for Steam Deck, Steam Machine, Steam Frame, Linux and Mac (iPhone/iPad: sideload the experimental IPA or build it yourself). Bring your own disc: no game files included. Not affiliated with EA or Valve. **[326 stars]** · Curated: [SpeedBreaker: statically recompiling Need for Speed: Most Wanted for Xbox 360](https://awesomerea.org/resources/speedbreaker-nfs-most-wanted-case/)
@@ -66,7 +67,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [TheOnlyZac/sly1](https://github.com/TheOnlyZac/sly1) — Decompilation of Sly Cooper and the Thievius Raccoonus for PS2 **[272 stars]** · Curated: [Sly Cooper and the Thievius Raccoonus: matching PlayStation 2 decompilation](https://awesomerea.org/resources/sly1-matching-decomp-case/)
 - [IIIImmmyyy/frida-il2cppDumper](https://github.com/IIIImmmyyy/frida-il2cppDumper) — An enhanced Riru Il2cppDumper that dumps source-code information directly from memory (with NetEase Yidun support). **[258 stars]**
 - [jkdansereau/goldeneye-pc-port](https://github.com/jkdansereau/goldeneye-pc-port) — GoldenEye 007 (N64, 1997) as a native PC game for Windows, Linux, Steam Deck and macOS. Built from the open decompilation, with widescreen, mouse and keyboard or controller, and split-screen. Not an emulator. **[255 stars]** · Curated: [GoldenEye 007: an agent-assisted native port from a decompilation](https://awesomerea.org/resources/goldeneye-pc-port-case/)
-- [open-ead/sead](https://github.com/open-ead/sead) — Decompilation of sead: the standard C++ library for first-party Nintendo games **[252 stars]**
+- [open-ead/sead](https://github.com/open-ead/sead) — Decompilation of sead: the standard C++ library for first-party Nintendo games **[252 stars]** · Curated: [sead: a decompilation of Nintendo’s first-party C++ standard library](https://awesomerea.org/resources/sead-nintendo-library-decomp-case/)
 - [kylesmile1103/Learn-Frida](https://github.com/kylesmile1103/Learn-Frida) — Modding Unity app with Frida tutorial. **[249 stars]**
 - [AITYunivers/NebulaFD](https://github.com/AITYunivers/NebulaFD) — A work in progress, reimagined decompiler for Clickteam Fusion. **[226 stars]** · Curated: [Nebula (NebulaFD)](https://awesomerea.org/resources/nebulafd/)
 - [dbalatoni13/nfsmw](https://github.com/dbalatoni13/nfsmw) — WIP 1:1 Decompilation of multiple versions of NFS:MW **[226 stars]**
@@ -104,7 +105,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [JackandBeans/Snap64Recomp](https://github.com/JackandBeans/Snap64Recomp) — Native Windows, Linux and macOS port of Pokémon Snap (N64) by static recompilation. Plays like the cartridge by default; every enhancement is opt-in. Bring your own dump; no game data is included. **[109 stars]** · Curated: [Snap64 Recomp: a static-recompilation port of Pokémon Snap](https://awesomerea.org/resources/snap64-recomp-case/)
 - [ExtraJuiceMan/ChristWareAmongUs](https://github.com/ExtraJuiceMan/ChristWareAmongUs) — A cheat for the recently popular fad game Among Us **[105 stars]**
 - [mukaschultze/grand-theft-auto-for-unity](https://github.com/mukaschultze/grand-theft-auto-for-unity) — Grand Theft Auto map loader for Unity Engine **[105 stars]**
-- [Yharnam-Hunters/Paleblood](https://github.com/Yharnam-Hunters/Paleblood) — A decompilation of Bloodborne (CUSA03173 v1.09) with its own runtime: the game's code rewritten as readable C++, one verified function at a time. The game doesn't run on it yet; 21 functions verified. No game files included. **[104 stars]**
+- [Yharnam-Hunters/Paleblood](https://github.com/Yharnam-Hunters/Paleblood) — A decompilation of Bloodborne (CUSA03173 v1.09) with its own runtime: the game's code rewritten as readable C++, one verified function at a time. The game doesn't run on it yet; 21 functions verified. No game files included. **[104 stars]** · Curated: [Paleblood: a functional decompilation of Bloodborne with its own runtime](https://awesomerea.org/resources/paleblood-bloodborne-functional-decomp-case/)
 - [yannicksuter/smstrikers-decomp](https://github.com/yannicksuter/smstrikers-decomp) — Decompilation of Super Mario Strikers **[102 stars]**
 - [EquiFox/MInjector](https://github.com/EquiFox/MInjector) — Mono Framework Injector (C#) using MInject Library **[95 stars]**
 - [GrahamBest/dll\_hook-rs](https://github.com/GrahamBest/dll_hook-rs) — Rust code to show how hooking in rust with a dll works. **[95 stars]**
@@ -143,7 +144,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [VOTV-MP/Multivoid](https://github.com/VOTV-MP/Multivoid) — Multiplayer co-op mod for Voices of the Void — a UE4SS mod for UE4.27 that syncs the game between a host and up to three clients, without modifying any game files. **[57 stars]**
 - [vyanhursky/DefJamFFNY-recomp](https://github.com/vyanhursky/DefJamFFNY-recomp) — Def Jam: Fight for NY PC port — static recompilation of the original Xbox game for native Windows and macOS (Direct3D 11 / Vulkan). Bring your own game dump. **[57 stars]**
 - [DaZombieKiller/TypeTreeDumper](https://github.com/DaZombieKiller/TypeTreeDumper) — Experimental tool to export type tree information from the Unity editor. **[56 stars]**
-- [gustavocanepa/gt4-decomp](https://github.com/gustavocanepa/gt4-decomp) — Matching decompilation of the Gran Turismo 4 (PS2) engine, AI-assisted. No game data included. **[55 stars]**
+- [gustavocanepa/gt4-decomp](https://github.com/gustavocanepa/gt4-decomp) — Matching decompilation of the Gran Turismo 4 (PS2) engine, AI-assisted. No game data included. **[55 stars]** · Curated: [Gran Turismo 4: an agent-assisted PS2 engine matching decompilation](https://awesomerea.org/resources/gran-turismo-4-matching-decomp-case/)
 - [OpenRAC/rac1-decomp](https://github.com/OpenRAC/rac1-decomp) — A work-in-progress matching decompilation of the original Ratchet &amp; Clank (2002) for PlayStation 2 (SCES\_509.16, PAL v2.00). Focuses on reconstructing clean, idiomatic C/C++ source code identical to the retail executable, paving the way for native PC re-implementation and game preservation. **[55 stars]** · Curated: [Ratchet &amp; Clank: a matching PS2 decompilation with a documented agent workflow](https://awesomerea.org/resources/rac1-matching-decomp-case/)
 - [korobetski/Vagrant-Story-Unity-Parser](https://github.com/korobetski/Vagrant-Story-Unity-Parser) — An editor script that reads data from the original Square game Vagrant Story to build prefabs and databases. **[51 stars]**
 - [HalmyLyseas/VandalHearts-PcPort](https://github.com/HalmyLyseas/VandalHearts-PcPort) — Native PC port of the PlayStation game Vandal Hearts, built on a byte-exact matching decompilation. Windows &amp; Linux; bring your own disc. **[50 stars]** · Curated: [Vandal Hearts: native PC port built on matching decompilations](https://awesomerea.org/resources/vandal-hearts-pc-port-case/)

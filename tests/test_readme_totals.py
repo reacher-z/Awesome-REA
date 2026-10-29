@@ -66,7 +66,8 @@ class ReadmeTotalsTest(unittest.TestCase):
         for name, language in (('README.md', 'en'), ('README.zh-CN.md', 'zh')):
             with self.subTest(readme=name):
                 text = (ROOT / name).read_text(encoding='utf-8')
-                block = text.split(CONTENTS_BEGIN + '\n', 1)[1].split(CONTENTS_END, 1)[0]
+                # The block's first line names its generator; the totals line follows it.
+                block = text.split(CONTENTS_BEGIN + '\n', 1)[1].split(CONTENTS_END, 1)[0].split('\n', 1)[1]
                 line = render_totals(records, papers, index_count, language)
                 self.assertTrue(block.startswith(line), block[:200])
                 newer = deepcopy(records)

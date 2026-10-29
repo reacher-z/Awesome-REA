@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate catalog data, benchmark snapshots, local Markdown links and generated READMEs."""
 import datetime as dt
+import difflib
 import html
 import ipaddress
 import json
@@ -12,20 +13,26 @@ import subprocess
 import sys
 from urllib.parse import unquote, urlsplit
 
+from artifact_links import github_repository
 from build_readme import CATEGORIES, RELATIONSHIPS, TARGETS, readme_size_warnings
 from catalog import ROOT, RESOURCE_FILES
-from localization import read_localizations, validate_localizations
+from localization import read_fingerprints, read_localizations, validate_fingerprints, validate_localizations
+from requirement_facets import facet_errors
+from curated_translations import CURATED_TRANSLATIONS, read_curated_translations, validate_curated_translations
 from source_scope import read_scope, validate_scope
 from validate_papers import validate_papers
-from review_dates import review_date_is_future
+from review_dates import inclusion_date_error, review_date_is_future
 from source_descriptions import validate_description_capture
-from case_coverage import read_case_coverage, validate_case_coverage
+from scan_sources import CURATED_SEED_FILES, PAPER_SEED_FILE, RUN_PROVENANCE_POLICY
+from case_coverage import catalog_revision_warning, read_case_coverage, validate_case_coverage
+import strict_json
 
 
 RESOURCE_FIELDS = {
     'id', 'name', 'url', 'category', 'relationship', 'description_en',
     'description_zh', 'evidence_url', 'verified_at', 'verification', 'requirements', 'targets', 'kind',
 }
+OPTIONAL_RESOURCE_FIELDS = {'additional_evidence_urls'}
 BENCHMARK_FIELDS = {
     'id', 'full_name', 'url', 'category', 'stars', 'stars_display',
     'stars_precision', 'observed_at', 'description_zh', 'mechanisms',
@@ -46,6 +53,28 @@ def nonempty_string(value):
 
 def string_list(value):
     return isinstance(value, list) and bool(value) and all(nonempty_string(item) for item in value)
+
+
+# Soft budget for the English requirement items of one record; data/README.md explains what to keep.
+REQUIREMENTS_BUDGET = 1500
+
+
+def requirement_budget_warning(records):
+    """Advisory only: one line naming records whose English requirements exceed the budget, longest first."""
+    over = []
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        value = record.get('requirements')
+        items = [value] if isinstance(value, str) else value if isinstance(value, list) else []
+        length = sum(len(item) for item in items if isinstance(item, str))
+        if length > REQUIREMENTS_BUDGET:
+            over.append((-length, str(record.get('id'))))
+    if not over:
+        return None
+    listed = ', '.join(f'{identifier} ({-length:,})' for length, identifier in sorted(over))
+    return (f'{len(over)} curated records exceed the {REQUIREMENTS_BUDGET:,}-character requirements budget '
+            f'in data/README.md: {listed}')
 
 
 def public_https_error(value):
@@ -95,6 +124,10 @@ def parse_iso(value, require_time=False):
 
 def normalized_url(value):
     parsed = urlsplit(value)
+    repository = github_repository(value)
+    if repository:
+        # Root repository URLs compare as artifact matching does: case, one trailing slash and `.git` are aliases.
+        return 'https', 'github.com', '/' + repository, parsed.query, parsed.fragment
     path = parsed.path.rstrip('/')
     if parsed.hostname and parsed.hostname.lower() == 'github.com':
         parts = path.split('/')
@@ -135,6 +168,30 @@ def evidence_pin_warnings(records):
     return warnings
 
 
+def unknown_resource_fields(record):
+    """Return (field, closest supported field or None) for each key outside the record schema."""
+    supported = RESOURCE_FIELDS | OPTIONAL_RESOURCE_FIELDS
+    return [(field, next(iter(difflib.get_close_matches(field, supported, n=1, cutoff=0.9)), None))
+            for field in sorted(set(record) - supported)]
+
+
+def unknown_field_warnings(records):
+    """Advisory only: unlisted resource fields that are not near-misspellings of a supported one.
+
+    validate_resources rejects near-misspellings such as `requirementz`. Any other new field only
+    warns, so a pull request that proposes one together with its schema change keeps passing the
+    trusted base-branch review.
+    """
+    users = {}
+    for record in records:
+        if isinstance(record, dict):
+            for field, suggestion in unknown_resource_fields(record):
+                if suggestion is None:
+                    users.setdefault(field, []).append(record.get('id'))
+    return [f'resource {ids[0]!r}.{field}: unsupported field (in {len(ids)} record(s)); add it to the '
+            'catalog format guide and validator, or remove it' for field, ids in users.items()]
+
+
 def validate_resources(records, errors, *, now=None):
     now = dt.datetime.now(dt.timezone.utc) if now is None else now.astimezone(dt.timezone.utc)
     ids, urls = set(), set()
@@ -144,6 +201,9 @@ def validate_resources(records, errors, *, now=None):
             errors.append(f'{where}: must be an object')
             continue
         where = f"resource {record.get('id', index)!r}"
+        for field, suggestion in unknown_resource_fields(record):
+            if suggestion:
+                errors.append(f'{where}.{field}: unknown field; did you mean {suggestion}?')
         missing = RESOURCE_FIELDS - record.keys()
         if missing:
             errors.append(f"{where}: missing fields {', '.join(sorted(missing))}")
@@ -196,8 +256,8 @@ def validate_resources(records, errors, *, now=None):
             errors.append(f"{where}: category 'reconstruction-cases' requires relationship 'independent-reconstruction'")
         if record['verification'] != 'source-reviewed':
             errors.append(f'{where}.verification: use source-reviewed; runtime and reproduction results are out of scope (see CONTRIBUTING.md)')
-        if not (nonempty_string(record['requirements']) or string_list(record['requirements'])):
-            errors.append(f'{where}.requirements: use a nonempty string or list of nonempty strings')
+        if not string_list(record['requirements']):
+            errors.append(f'{where}.requirements: use a nonempty list of nonempty strings')
         try:
             reviewed = parse_iso(record['verified_at'])
             future = (review_date_is_future(reviewed.date(), now)
@@ -207,6 +267,10 @@ def validate_resources(records, errors, *, now=None):
                 errors.append(f'{where}.verified_at: review date is in the future')
         except (ValueError, TypeError):
             errors.append(f'{where}.verified_at: invalid ISO date or timezone-aware timestamp')
+        if 'added_at' in record:
+            problem = inclusion_date_error(record['added_at'], now)
+            if problem:
+                errors.append(f'{where}.added_at: {problem}')
 
 
 def validate_benchmarks(records, errors):
@@ -298,6 +362,31 @@ def scan_run_entries(meta):
         if isinstance(reconciliation, dict):
             for key in ('canonical_current_run', 'checkpoint_current_run'):
                 yield f'checkpoint_reconciliations[{index}].{key}', reconciliation.get(key)
+
+
+def validate_run_provenance(meta, errors):
+    """Recorded run provenance names only repository files: scanner code and the seed inputs the run enabled."""
+    seed_flags = {**dict.fromkeys(CURATED_SEED_FILES, 'seed_curated'), PAPER_SEED_FILE: 'seed_papers'}
+    for location, run in scan_run_entries(meta):
+        if not isinstance(run, dict) or 'scanner_provenance' not in run:
+            continue  # Earlier runs did not record it; absence is never backfilled.
+        provenance = run['scanner_provenance']
+        if (not isinstance(provenance, dict) or set(provenance) != {'policy', 'implementation', 'seed_inputs'}
+                or provenance['policy'] != RUN_PROVENANCE_POLICY
+                or not all(isinstance(provenance[field], list) for field in ('implementation', 'seed_inputs'))
+                or any(not isinstance(row, dict) or set(row) != {'path', 'sha256', 'bytes'}
+                       or not isinstance(row['path'], str) or not re.fullmatch(r'[0-9a-f]{64}', str(row['sha256']))
+                       or type(row['bytes']) is not int or row['bytes'] < 0
+                       for row in provenance['implementation'] + provenance['seed_inputs'])):
+            errors.append(f'Source index {location} scanner_provenance must list path, sha256 and bytes under its policy.')
+            continue
+        code = [row['path'] for row in provenance['implementation']]
+        seeds = [row['path'] for row in provenance['seed_inputs']]
+        if (len(set(code)) != len(code) or 'scripts/scan_sources.py' not in code
+                or any(not re.fullmatch(r'scripts/[a-z0-9_]+\.py', path) for path in code)):
+            errors.append(f'Source index {location} scanner_provenance must name unique repository scanner scripts.')
+        if len(set(seeds)) != len(seeds) or any(run.get(seed_flags.get(path)) is not True for path in seeds):
+            errors.append(f'Source index {location} scanner_provenance lists a seed input the run did not enable.')
 
 
 def validate_scan_discovery(meta, records, errors, failures=()):
@@ -490,6 +579,26 @@ def validate_scan_discovery(meta, records, errors, failures=()):
             errors.append(f'{where}: paper references require paper discovery')
 
 
+def validate_failure_metadata(failure, where, errors):
+    """Check the outcome fields the scanner writes for a failed README attempt."""
+    if failure.get('scan_status') != 'failed':
+        errors.append(f'{where}: preserve the failed scan status')
+    reason = failure.get('reason')
+    # Codes such as `http-404`, `empty-readme` or `worker-TimeoutError`; never free-form error text.
+    if not isinstance(reason, str) or len(reason) > 100 or not re.fullmatch(r'[A-Za-z0-9]+(?:[-_.][A-Za-z0-9]+)*', reason):
+        errors.append(f'{where}: reason must be a nonempty error code of at most 100 characters')
+        reason = None
+    status = failure.get('http_status')
+    if 'http_status' not in failure or status is not None and (type(status) is not int or not 100 <= status <= 599):
+        errors.append(f'{where}: http_status must be an HTTP status code, or null for a transport or content failure')
+    elif reason and re.fullmatch(r'http-[0-9]{3}', reason) and status != int(reason[5:]):
+        errors.append(f'{where}: http_status does not match the {reason} reason')
+    try:
+        parse_iso(failure.get('observed_at'), require_time=True)
+    except (ValueError, TypeError):
+        errors.append(f'{where}: invalid timezone-aware observed_at timestamp')
+
+
 def validate_source_index(document, errors, *, allow_incomplete=False):
     if not isinstance(document, dict) or not isinstance(document.get('meta'), dict) or not isinstance(document.get('resources'), list):
         errors.append('Source index must contain meta and resources.')
@@ -611,6 +720,7 @@ def validate_source_index(document, errors, *, allow_incomplete=False):
                 or failure.get('url') != 'https://github.com/' + name
                 or public_https_error(failure.get('url'))):
             errors.append(f'source index failure {index}: invalid public GitHub repository URL')
+        validate_failure_metadata(failure, f'source index failure {index}', errors)
 
     def nonnegative_integer(value):
         return type(value) is int and value >= 0
@@ -722,6 +832,7 @@ def validate_source_index(document, errors, *, allow_incomplete=False):
                                         if isinstance(entry, dict) and isinstance(entry.get('id'), str)}
                         if retained_ids.intersection(current_ids):
                             errors.append('Source index current_run metadata lookups must exclude retained README attempts.')
+    validate_run_provenance(meta, errors)
     validate_scan_discovery(meta, records, errors, failures)
     return len(records)
 
@@ -1011,11 +1122,19 @@ def validate_citation(text, errors, *, now=None):
         errors.append('CITATION.cff.date-released: use the unquoted YYYY-MM-DD release date')
 
 
+def validate_requirement_facets(records, translations, errors):
+    """Every facet comes from the vocabulary and labels the same item in English and Chinese."""
+    for record in records:
+        if isinstance(record, dict) and 'requirements' in record:
+            chinese = record.get('requirements_zh') or translations.get(record.get('id'), {}).get('requirements')
+            errors.extend(f"resource {record.get('id')!r}.{message}" for message in facet_errors(record, chinese))
+
+
 def read_array(path, errors):
     try:
-        value = json.loads(path.read_text(encoding='utf-8'))
+        value = strict_json.loads(path.read_text(encoding='utf-8'))
     except (OSError, ValueError) as error:
-        errors.append(f'{path.relative_to(ROOT)}: cannot read JSON: {error}')
+        errors.append(f'{path.relative_to(ROOT)}: cannot read strict JSON: {error}')
         return []
     if not isinstance(value, list) or not value:
         errors.append(f'{path.relative_to(ROOT)}: expected a nonempty JSON array')
@@ -1030,21 +1149,30 @@ def main():
     papers = read_array(ROOT / 'data/papers.json', errors)
     validate_papers(papers, errors, url_check=public_https_error)
     validate_resources(records, errors)
-    for warning in evidence_pin_warnings(records):
+    for warning in unknown_field_warnings(records) + evidence_pin_warnings(records):
         print(f'Warning: {warning}', file=sys.stderr)
+    validate_requirement_facets(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), errors)
     validate_benchmarks(benchmarks, errors)
     try:
-        validate_case_coverage(read_case_coverage(ROOT), records, papers, errors,
-                               url_check=public_https_error)
+        validate_curated_translations(records, read_curated_translations(ROOT), errors)
+    except (OSError, ValueError):
+        errors.append(f'{CURATED_TRANSLATIONS}: could not be read as strict JSON.')
+    try:
+        coverage = read_case_coverage(ROOT)
+        validate_case_coverage(coverage, records, papers, errors, url_check=public_https_error)
     except (OSError, ValueError):
         errors.append('Case coverage could not be read as strict JSON.')
+    else:
+        revision_warning = catalog_revision_warning(coverage, ROOT)
+        if revision_warning:
+            print(f'Warning: case coverage {revision_warning}', file=sys.stderr)
     scanned = 0
     index_path = ROOT / 'data/source-index.json'
     if index_path.exists():
         try:
-            index_document = json.loads(index_path.read_text(encoding='utf-8'))
-        except (OSError, ValueError):
-            errors.append('Source index could not be read as JSON.')
+            index_document = strict_json.loads(index_path.read_text(encoding='utf-8'))
+        except (OSError, ValueError) as error:
+            errors.append(f'data/source-index.json: cannot read strict JSON: {error}')
         else:
             scanned = validate_source_index(index_document, errors)
             source_records = index_document.get('resources') if isinstance(index_document, dict) else None
@@ -1052,9 +1180,14 @@ def main():
                     and all(isinstance(record, dict) and isinstance(record.get('id'), str)
                             for record in source_records)):
                 try:
-                    validate_localizations(source_records, read_localizations(ROOT), errors)
+                    translations = read_localizations(ROOT)
+                    validate_localizations(source_records, translations, errors)
+                    warnings = []
+                    validate_fingerprints(source_records, translations, read_fingerprints(ROOT), errors, warnings)
+                    for warning in warnings:
+                        print(f'Warning: {warning}', file=sys.stderr)
                 except (OSError, ValueError):
-                    errors.append('Repository localizations could not be read as valid JSON.')
+                    errors.append('Repository localizations or their source fingerprints could not be read as valid JSON.')
                 try:
                     validate_scope(source_records, read_scope(ROOT), errors)
                 except (OSError, ValueError):
@@ -1068,6 +1201,9 @@ def main():
                     errors.append('Public source supplements failed evidence, identity, locale or scope validation.')
     validate_citation((ROOT / 'CITATION.cff').read_text(encoding='utf-8'), errors)
     count = validate_markdown(ROOT, errors)
+    budget_warning = requirement_budget_warning(records)
+    if budget_warning:
+        print(f'Warning: {budget_warning}', file=sys.stderr)
     for script in ('build_readme.py', 'build_repository_index.py', 'build_case_coverage.py'):
         result = subprocess.run([sys.executable, str(ROOT / 'scripts' / script), '--check'],
                                 cwd=ROOT, encoding='utf-8', capture_output=True, check=False,

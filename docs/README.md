@@ -10,9 +10,13 @@ Guides describe the current process. Research notes are dated snapshots, kept fo
 | --- | --- | --- | --- |
 | [Contribution guide](../CONTRIBUTING.md) | English | Current, authoritative | Suggestions, catalog fields, papers, validation and review |
 | [Chinese contribution quick start](../CONTRIBUTING.zh-CN.md) | Chinese | Current summary | Main contribution rules and the Chinese terminology glossary |
+| First resource walkthrough: [English](first-resource.md), [Chinese](first-resource.zh-CN.md) | English, Chinese | Current | One existing record traced through each edited and generated file, checks and the pull request |
 | [Security policy](../SECURITY.md) | English, with a Chinese summary | Current | Private reporting of security problems |
+| Paper update guide: [English](paper-updates.md), [Chinese](paper-updates.zh-CN.md) | English, Chinese | Current | Updating a preprint record in place after acceptance or publication, with a worked example |
 | [Catalog format](../data/README.md) | English | Current | Curated, paper, benchmark, scan and case-coverage data |
+| Artifact and license evidence: [English](artifact-evidence.md), [Chinese](artifact-evidence.zh-CN.md) | English, Chinese | Current | Wording for unavailable, gated or demo-only artifacts, version differences and conflicting licenses |
 | [Repository locales](../data/locales/README.md) | English | Current | English and Chinese descriptions of scanned repositories |
+| Index-to-curated review worksheet: [English](promotion-worksheet.md), [Chinese](promotion-worksheet.zh-CN.md) | English, Chinese | Current | Tracing a scanned repository to a curated record or a hold, with a completed example |
 
 ## Maintenance guides
 
@@ -21,6 +25,7 @@ Guides describe the current process. Research notes are dated snapshots, kept fo
 | [Repository automation](automation.md) | English | Current | Pull request review and CI |
 | [Website maintenance](website.md) | English | Current | Site build, preview and hosting |
 | [Search discovery](search-discovery.md) | English | Current | Search and answer-engine discovery, submission and limits |
+| [Community outreach](community-outreach.md) | English | Current, rules reviewed 2026-10-20 | Checklist for posting to public communities such as Hacker News and Reddit |
 | [Discovery observations](discovery/README.md) | English | Current | Versioned queries and a manual observation template |
 | [Source scan method](source-scan.md) | English | Current | How the automated repository index is collected |
 | Case coverage: [English](case-coverage.md), [Chinese](case-coverage.zh-CN.md) | English, Chinese | Generated | Inventory of pinned upstream case collections |

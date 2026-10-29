@@ -8,8 +8,8 @@ from pathlib import Path
 import shutil
 from urllib.parse import urlsplit
 
-from build_discovery_pages import collection_page_schema, jsonld_script
-from open_graph import open_graph_meta
+from build_discovery_pages import breadcrumb_schema, collection_page_schema, jsonld_script
+from open_graph import THEME_COLOR_META, open_graph_meta
 from build_repository_index import CATEGORIES
 from source_descriptions import description_fallback
 from source_scope import exclusion_counts, unavailable_clause
@@ -80,10 +80,10 @@ def repository_card(record: dict, language: str, use_pro: bool) -> str:
     if not isinstance(license_name, str) or not license_name.strip() or license_name.upper() == 'NOASSERTION':
         license_name = '许可证未识别' if zh else 'License not identified'
     return f'''<article class="source-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}">
-  <div class="source-card-head"><h2><a class="source-title-link" href="{external_url(record['url'])}" target="_blank" rel="noopener noreferrer">{title}{icon('external', use_pro)}</a></h2>{star_html}</div>
+  <div class="source-card-head"><h2><a class="source-title-link" href="{external_url(record['url'])}" target="_blank" rel="noopener">{title}{icon('external', use_pro)}</a></h2></div>
   <p class="source-card-description">{escape(description)}</p>
 {related_links(record, language)}
-  <div class="source-card-footer"><a href="{external_url(record.get('readme_url') or record['url'])}" target="_blank" rel="noopener noreferrer">README ↗</a><span class="source-card-license">{escape(license_name)}</span></div>
+  <div class="source-card-footer">{star_html}<a href="{external_url(record.get('readme_url') or record['url'])}" target="_blank" rel="noopener">README ↗</a><span class="source-card-license">{escape(license_name)}</span></div>
 </article>'''
 
 
@@ -186,6 +186,8 @@ def build_browse_pages(
                     schema_items.append({'name': category_labels[language_index], 'url': site_url + browse_path(language, slug), 'description': count_label})
                 content = '<div class="browse-category-grid">\n' + '\n'.join(cards) + '\n</div>'
             structured_data = jsonld_script(collection_page_schema(canonical, label, description, locale, schema_items, site_url))
+            trail = [('首页' if zh else 'Home', site_url + root_link), ('全部分类' if zh else 'All categories', site_url + browse_path(language))]
+            breadcrumb_data = jsonld_script(breadcrumb_schema(canonical, trail + ([(label, canonical)] if category else [])))
             breadcrumbs = (f'<a href="{root_link}">{("首页" if zh else "Home")}</a><span aria-hidden="true">/</span>'
                            + (f'<a href="{browse_path(language)}">{("全部分类" if zh else "All categories")}</a><span aria-hidden="true">/</span><span aria-current="page">{escape(label)}</span>'
                               if category else f'<span aria-current="page">{("全部分类" if zh else "All categories")}</span>'))
@@ -195,7 +197,7 @@ def build_browse_pages(
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  {THEME_COLOR_META}
   <title>{escape(title)}</title>
   <meta name="description" content="{escape(description, quote=True)}">
   <link rel="canonical" href="{canonical}">
@@ -208,14 +210,15 @@ def build_browse_pages(
   <link rel="stylesheet" href="{escape(browse_styles_href, quote=True)}">
   {icon_css}
   {structured_data}
+  {breadcrumb_data}
 </head>
 <body>
 <a class="skip-link" href="#browse-content">{('跳到仓库目录' if zh else 'Skip to the directory')}</a>
 <header class="site-header"><div class="shell header-inner">
   <a class="wordmark" href="{root_link}" aria-label="{('AwesomeREA.org 首页' if zh else 'AwesomeREA.org home')}"><img class="brand-mark" src="{escape(favicon_href, quote=True)}" alt="" width="33" height="33" aria-hidden="true"><span>Awesome<span class="wordmark-rea">REA</span><span class="wordmark-domain">.org</span></span></a>
   <nav class="header-nav" aria-label="{('主导航' if zh else 'Main navigation')}">
-    <a class="browse-language" href="{counterpart}" lang="{('en' if zh else 'zh-CN')}" hreflang="{('en' if zh else 'zh-CN')}" aria-label="{('切换为英文' if zh else 'Switch to Simplified Chinese')}">{icon('globe', use_pro)}<span>{('English' if zh else '简体中文')}</span></a>
-    <a class="github-link" href="{escape(repository_url, quote=True)}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">{icon('github', use_pro)}<span>GitHub</span></a>
+    <a class="browse-language" href="{counterpart}" lang="{('en' if zh else 'zh-CN')}" hreflang="{('en' if zh else 'zh-CN')}">{icon('globe', use_pro)}<span>{('English' if zh else '简体中文')}</span></a>
+    <a class="github-link" href="{escape(repository_url, quote=True)}" target="_blank" rel="noopener" aria-label="GitHub">{icon('github', use_pro)}<span>GitHub</span></a>
   </nav>
 </div></header>
 <main id="browse-content" class="shell browse-main">

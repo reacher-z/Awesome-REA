@@ -10,13 +10,14 @@ from source_scope import apply_scope, read_scope
 from validate_papers import read_papers
 from build_paper_pages import STATUS_LABELS
 from source_descriptions import description_fallback
+import strict_json
 
 ROOT = Path(__file__).resolve().parents[1]
 RESOURCE_FILES = (ROOT / 'data/rea-resources.json', ROOT / 'data/tool-resources.json')
 
 
 def load_resources():
-    return [record for path in RESOURCE_FILES for record in json.loads(path.read_text(encoding='utf-8'))]
+    return [record for path in RESOURCE_FILES for record in strict_json.load_path(path)]
 
 
 def main():
