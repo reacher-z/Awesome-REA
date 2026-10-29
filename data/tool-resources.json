@@ -14700,5 +14700,672 @@
       "https://github.com/avast/retdec/blob/9450585772e6f1c18e5f0b2ad5518a18d6bce71e/LICENSE-THIRD-PARTY",
       "https://github.com/avast/retdec/releases/tag/v5.0"
     ]
+  },
+  {
+    "id": "keystone",
+    "name": "Keystone",
+    "url": "https://github.com/keystone-engine/keystone",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Assemble instruction text into machine code through a common API covering x86, Arm, MIPS and other architectures.",
+    "description_zh": "通过统一 API 将汇编指令文本转换为机器码，覆盖 x86、Arm、MIPS 等架构。",
+    "evidence_url": "https://github.com/keystone-engine/keystone/blob/0d9567f08c0c23e8f604b2cad3d49450c93cfb40/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Use the native C/C++ library or a supported language binding; build instructions cover Windows and Unix-like hosts, with vcpkg as an alternative installation route.",
+      "The project offers GPLv2 with its EXCEPTIONS-CLIENT terms or a commercial license. It is an assembler framework; decompilation and executable reconstruction require other tools."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/keystone-engine/keystone/blob/0d9567f08c0c23e8f604b2cad3d49450c93cfb40/docs/COMPILE.md"
+    ]
+  },
+  {
+    "id": "pyelftools",
+    "name": "pyelftools",
+    "url": "https://github.com/eliben/pyelftools",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Parse ELF executables and DWARF debugging information from Python for scripted binary inspection.",
+    "description_zh": "通过 Python 解析 ELF 可执行文件和 DWARF 调试信息，用于编写二进制检查脚本。",
+    "evidence_url": "https://github.com/eliben/pyelftools/blob/beedcc43293cef2dfd22d424ce6f1d4808dc223e/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The pinned README requires Python 3.11+ and no external dependencies; install the pyelftools package or import a source checkout.",
+      "Inputs are ELF files and available DWARF data. The API exposes format and debug information rather than reconstructing missing source code."
+    ]
+  },
+  {
+    "id": "pefile",
+    "name": "pefile",
+    "url": "https://github.com/erocarrera/pefile",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Inspect PE headers, sections, resources and malformed values through a Python API with limited in-place editing.",
+    "description_zh": "通过 Python API 检查 PE 头、节、资源及异常字段值，并进行有限的原位编辑。",
+    "evidence_url": "https://github.com/erocarrera/pefile/blob/274e0b8ce0b804a09a3cb68314f41b00ae2ed8a0/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Install pefile with Python 3; the module is self-contained and documents Windows, macOS and Linux operation. Understanding the PE layout is needed to interpret its structures.",
+      "Its editing helpers do not rearrange PE structures to make room for new fields. Signature verification is referred to a separate project."
+    ]
+  },
+  {
+    "id": "dnlib",
+    "name": "dnlib",
+    "url": "https://github.com/0xd4d/dnlib",
+    "category": "dotnet",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Read and rewrite .NET assemblies, metadata, CIL method bodies and debugging symbols without using a decompiler GUI.",
+    "description_zh": "无需反编译 GUI，即可读取和重写 .NET 程序集、元数据、CIL 方法体及调试符号。",
+    "evidence_url": "https://github.com/0xd4d/dnlib/blob/9ab9b58ab31b99b3f6cdef36efec613fc11ddbe2/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Use a compatible .NET project; the pinned project targets .NET Standard 2.0, .NET Framework 4.5 and .NET 6, with a conditional .NET Framework 3.5 target. Assembly resolution needs appropriate reference search paths.",
+      "Use NativeWrite for mixed C++/CLI modules. Writing Windows PDBs requires Windows; portable PDBs can be written across operating systems. Obfuscated Unity/Mono inputs have a separate runtime-reader option."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/0xd4d/dnlib/blob/9ab9b58ab31b99b3f6cdef36efec613fc11ddbe2/src/dnlib.csproj"
+    ]
+  },
+  {
+    "id": "mono-cecil",
+    "name": "Mono.Cecil",
+    "url": "https://github.com/jbevain/cecil",
+    "category": "dotnet",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Inspect and modify .NET metadata and CIL code without loading target assemblies through Reflection.",
+    "description_zh": "无需通过 Reflection 加载目标程序集，即可检查和修改 .NET 元数据及 CIL 代码。",
+    "evidence_url": "https://github.com/jbevain/cecil/blob/882ca5eedda1e62eb41bd5869aeb15d8f1538e51/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Integrate the library into a .NET application and supply ECMA CIL assemblies; the pinned project targets .NET Standard 2.0 and .NET Framework 4.0.",
+      "The object model supports metadata and IL rewriting; it is a programming library rather than a standalone source-code recovery interface."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jbevain/cecil/blob/882ca5eedda1e62eb41bd5869aeb15d8f1538e51/Mono.Cecil.csproj"
+    ]
+  },
+  {
+    "id": "cfr",
+    "name": "CFR",
+    "url": "https://github.com/leibnitz27/cfr",
+    "category": "jvm",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Decompile Java class files or complete JARs into Java text for reviewing JVM application behavior.",
+    "description_zh": "将 Java 类文件或整个 JAR 反编译为 Java 文本，以检查 JVM 应用行为。",
+    "evidence_url": "https://github.com/leibnitz27/cfr/blob/c4145259dfcd8ad3e99004e4d9ecb0aed55dcc5a/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Run the versioned JAR with a Java runtime and supply class files or a JAR. Source builds use Maven; the README recommends JDK 8–11 where Java 6 source/target compilation is still accepted.",
+      "Language-feature handling depends on the input and version. Its regression tests compare against previous expected output, which the README explicitly says is not a correctness gold standard."
+    ]
+  },
+  {
+    "id": "krakatau",
+    "name": "Krakatau",
+    "url": "https://github.com/Storyyeller/Krakatau",
+    "category": "jvm",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Disassemble JVM class files into editable assembly and reassemble them, including an explicit byte-preserving roundtrip mode.",
+    "description_zh": "将 JVM 类文件反汇编为可编辑汇编文本后重新汇编，并提供明确保持原字节的往返模式。",
+    "evidence_url": "https://github.com/Storyyeller/Krakatau/blob/dd91bcd9c57d77f6f6e117a9edfcaec649bafbe4/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The current v2 assembler/disassembler builds with Rust and Cargo and accepts class files or JAR/ZIP archives. Ordinary disassembly optimizes readability; use its roundtrip mode when exact encoding matters.",
+      "The v2 decompiler remains unfinished. Decompilation uses the separate v1 branch, whose README notes missing Java 8+ features such as lambdas; v2 bytecode support must not be read as equivalent source-decompiler coverage."
+    ]
+  },
+  {
+    "id": "jd-gui",
+    "name": "JD-GUI",
+    "url": "https://github.com/java-decompiler/jd-gui",
+    "category": "jvm",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Browse reconstructed Java source, methods and fields from class files in a standalone graphical interface.",
+    "description_zh": "在独立图形界面中浏览类文件重建出的 Java 源码、方法和字段。",
+    "evidence_url": "https://github.com/java-decompiler/jd-gui/blob/b3c1ced04e571fc316648d114ff0c8121e051d8f/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Use a Java runtime for the JAR distribution or an appropriate desktop package. Source builds use the Gradle wrapper and produce JAR, Windows, macOS and Linux distribution artifacts.",
+      "The project declares GPLv3. Its graphical source browser is distinct from the embeddable JD-Core engine; reconstructed Java is not the original authoring source."
+    ]
+  },
+  {
+    "id": "jd-core",
+    "name": "JD-Core",
+    "url": "https://github.com/java-decompiler/jd-core",
+    "category": "jvm",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Embed the Java decompiler engine used by JD-GUI through loader and printer interfaces.",
+    "description_zh": "通过加载器和输出接口嵌入 JD-GUI 使用的 Java 反编译引擎。",
+    "evidence_url": "https://github.com/java-decompiler/jd-core/blob/fafc65682647deee757b7698e1c872469be1a211/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supply JVM class bytes and implement the Loader and Printer interfaces in a Java application; the Gradle wrapper builds the library JAR.",
+      "The pinned README documents Java 1.1.8–12.0, including lambdas, method references and default methods, and declares GPLv3. Support for later Java class versions is not established by that range."
+    ]
+  },
+  {
+    "id": "google-smali",
+    "name": "smali/baksmali (Google fork)",
+    "url": "https://github.com/google/smali",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Assemble and disassemble Android DEX bytecode using Google’s continuation of smali/baksmali.",
+    "description_zh": "使用 Google 延续维护的 smali／baksmali 汇编和反汇编 Android DEX 字节码。",
+    "evidence_url": "https://github.com/google/smali/blob/1a36aa30d18d92e63994f4b1e67a055931f5a707/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Build and test with OpenJDK 11; the README states newer OpenJDK versions are unsupported by parts of the build. Command-line use requires the fat JAR build.",
+      "This fork changes the namespace to com.android.tools.smali and publishes 3.x artifacts through Google Maven. It is distinct from the unmaintained original org.jf 2.x project and provides bytecode assembly/disassembly, not Java-source decompilation."
+    ]
+  },
+  {
+    "id": "mtkclient",
+    "name": "MTKClient",
+    "url": "https://github.com/bkerler/mtkclient",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Inspect MediaTek device flash and partitions through chipset-specific boot-ROM or preloader interfaces.",
+    "description_zh": "通过与芯片相关的 boot-ROM 或 preloader 接口检查联发科设备的闪存及分区。",
+    "evidence_url": "https://github.com/bkerler/mtkclient/blob/118a000a83ea31c4f427fe5225abfe964546e05e/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs compatible MediaTek hardware, its USB interface and the project dependencies. Linux instructions specify Python 3.10+; Windows instructions specify Python 3.9+, MTK port drivers and UsbDk. macOS has separate macFUSE/libusb setup and Apple Silicon notes.",
+      "The listed V6 chipsets require a suitable device loader and preloader mode; their patched boot ROM is not supported through the older boot-ROM route. Flash writes and loader support are device-specific."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bkerler/mtkclient/blob/118a000a83ea31c4f427fe5225abfe964546e05e/README-WINDOWS.md",
+      "https://github.com/bkerler/mtkclient/blob/118a000a83ea31c4f427fe5225abfe964546e05e/README-INSTALL.md"
+    ]
+  },
+  {
+    "id": "firmadyne",
+    "name": "FIRMADYNE",
+    "url": "https://github.com/firmadyne/firmadyne",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Rehost extracted Linux-based embedded firmware with instrumented kernels, NVRAM emulation and inferred network configuration.",
+    "description_zh": "通过插桩内核、NVRAM 模拟和网络配置推断，重托管提取出的嵌入式 Linux 固件。",
+    "evidence_url": "https://github.com/firmadyne/firmadyne/blob/11cb574cda0a5540ab7e36aa9b43679dc02c5788/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The documented environment uses Linux, QEMU, PostgreSQL, extraction dependencies and recursively cloned components, with modified MIPS/ARM kernels. The README explicitly excludes x86 firmware emulation.",
+      "The project is marked a research prototype, not production-ready. Its setup includes legacy Python/binwalk tooling, and missing NVRAM values or unsuccessful network inference can require manual adaptation."
+    ]
+  },
+  {
+    "id": "mc-extractor",
+    "name": "MC Extractor",
+    "url": "https://github.com/platomav/MCExtractor",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Find and extract CPU microcode from firmware images, inspect microcode headers and compare entries against a version database.",
+    "description_zh": "从固件镜像中查找并提取 CPU 微码，检查微码头，并与版本数据库中的记录比较。",
+    "evidence_url": "https://github.com/platomav/MCExtractor/blob/1f309bd8897fd6bce90283bc2b222d6967e4dad8/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supply MCE.py together with its required MCE.db database, Python 3.7+, colorama and pltable. The README documents Windows, Linux and macOS.",
+      "The documented families are Intel, AMD, VIA and Freescale. New/unknown and outdated classifications depend on the database; header/checksum analysis does not decompile microcode instructions."
+    ]
+  },
+  {
+    "id": "flashrom",
+    "name": "flashrom",
+    "url": "https://github.com/flashrom/flashrom",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Identify and read supported flash chips to obtain firmware images for offline inspection, with separate write and verification operations.",
+    "description_zh": "识别并读取受支持的闪存芯片，获取用于离线检查的固件镜像，另提供写入和验证操作。",
+    "evidence_url": "https://github.com/flashrom/flashrom/blob/26bdd4a416845c37ec6d5b590b25f9d543307e8e/README.rst",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a supported programmer or mainboard/chip combination. Source builds use Meson; the tool covers interfaces including SPI, LPC, FWH and parallel flash.",
+      "The README warns against laptop use because embedded-controller interactions can damage the device, and calls for a backup before writing. Chip access is hardware-specific rather than a universal firmware extractor."
+    ]
+  },
+  {
+    "id": "umap2",
+    "name": "Umap2",
+    "url": "https://github.com/nccgroup/umap2",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Explore a USB host’s supported device classes and vendor-specific behavior through programmable device emulation.",
+    "description_zh": "通过可编程设备模拟，研究 USB 主机支持的设备类别及厂商特定行为。",
+    "evidence_url": "https://github.com/nccgroup/umap2/blob/a428667306f6bbc51ca02370aaf84d58f1283756/README.rst",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs supported USB-device hardware such as Facedancer or Raspdancer; GadgetFS support is partial. The README installs the experimental package from source rather than PyPI.",
+      "The project is alpha-stage legacy tooling. Most components claim Python 2/3 compatibility, but the kitty fuzzer requires Python 2; host-OS detection is unimplemented and the tool does not fuzz the MTP layer."
+    ]
+  },
+  {
+    "id": "libsigrokdecode",
+    "name": "libsigrokdecode",
+    "url": "https://github.com/sigrokproject/libsigrokdecode",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Run sigrok’s Python protocol decoders through a C library to interpret captured digital signals.",
+    "description_zh": "通过 C 库运行 sigrok 的 Python 协议解码器，解释采集到的数字信号。",
+    "evidence_url": "https://github.com/sigrokproject/libsigrokdecode/blob/71f451443029322d57376214c330b518efd84f88/README",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds require a C compiler, make, pkg-config, GLib 2.34+ and Python 3.2+; Git builds additionally need Autoconf, Automake and Libtool. A client supplies captured signal data.",
+      "The library and its integral decoders use GPLv3-or-later. Git snapshots have no stable-API guarantee; the README recommends release tarballs for distribution packaging."
+    ]
+  },
+  {
+    "id": "can-utils",
+    "name": "can-utils",
+    "url": "https://github.com/linux-can/can-utils",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Record, filter, compare and replay SocketCAN traffic with tools for raw CAN, ISO-TP and J1939 analysis.",
+    "description_zh": "使用面向原始 CAN、ISO-TP 和 J1939 分析的工具，记录、过滤、比较及重放 SocketCAN 流量。",
+    "evidence_url": "https://github.com/linux-can/can-utils/blob/834ceef1f1eabec67625389172eebf1050d2f42b/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs the Linux SocketCAN subsystem and an appropriate CAN or virtual-CAN interface. The project documents native Linux and cross-compiled Android/Raspberry Pi builds using CMake.",
+      "candump and cansniffer expose frames and changing bytes; they do not infer proprietary signal semantics. ISO-TP and J1939 commands additionally depend on the corresponding kernel support."
+    ]
+  },
+  {
+    "id": "caring-caribou",
+    "name": "Caring Caribou",
+    "url": "https://github.com/caringcaribou/caringcaribou",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Investigate CAN traffic and ECU diagnostic services through modules for capture, arbitration-ID discovery, UDS, DoIP and XCP.",
+    "description_zh": "通过流量采集、仲裁 ID 发现、UDS、DoIP 和 XCP 模块研究 CAN 流量及 ECU 诊断服务。",
+    "evidence_url": "https://github.com/caringcaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The documented requirements are Python 3.7+, python-can, a recent Linux kernel and a CAN interface. Individual modules expose separate help and configuration.",
+      "Service discovery depends on the ECU and transport. The older DCM module is deprecated in favor of UDS; active diagnostic and transmission modules are separate from passive dumping."
+    ]
+  },
+  {
+    "id": "btlejack",
+    "name": "BtleJack",
+    "url": "https://github.com/virtualabs/btlejack",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Capture Bluetooth Low Energy connections with compatible nRF51822-based boards and export packets for Wireshark analysis.",
+    "description_zh": "使用兼容的 nRF51822 开发板采集低功耗蓝牙连接，并导出数据包供 Wireshark 分析。",
+    "evidence_url": "https://github.com/virtualabs/btlejack/blob/c487859888450f6a33f618180bac5358f104e367/README.rst",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a POSIX system, the Python 3 client and compatible hardware with matching firmware, such as one to three BBC Micro:Bit devices or the listed nRF51822 sniffers.",
+      "BLE 5/5.1 support is limited to the 1 Mbps uncoded PHY and excludes channel-map updates. The README’s broader radio features must not be read as support for every BLE PHY or connection type."
+    ]
+  },
+  {
+    "id": "btlejuice",
+    "name": "BtleJuice",
+    "url": "https://github.com/DigitalSecurity/btlejuice",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Inspect and export Bluetooth LE GATT exchanges through a proxy, web interface and Python or Node.js bindings.",
+    "description_zh": "通过代理、Web 界面及 Python 或 Node.js 绑定检查并导出低功耗蓝牙 GATT 交互。",
+    "evidence_url": "https://github.com/DigitalSecurity/btlejuice/blob/981b2e3fcaeca3d0c8faf6d61b4efd8130984bf4/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The documented Linux setup uses Node.js/npm, BlueZ and native Bluetooth dependencies. The core and proxy require two Bluetooth 4.0+ adapters on independent hosts or host/VM environments.",
+      "The upstream repository is archived. The proxy does not work in Docker. The README describes a legacy Node.js 4.3.2+ environment; that historical minimum is not evidence of compatibility with current Node.js releases."
+    ],
+    "additional_evidence_urls": [
+      "https://api.github.com/repos/DigitalSecurity/btlejuice"
+    ]
+  },
+  {
+    "id": "ubertooth",
+    "name": "Ubertooth",
+    "url": "https://github.com/greatscottgadgets/ubertooth",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Capture Bluetooth radio traffic using the Ubertooth hardware platform and its host analysis tools.",
+    "description_zh": "使用 Ubertooth 硬件平台及宿主分析工具采集蓝牙无线流量。",
+    "evidence_url": "https://github.com/greatscottgadgets/ubertooth/blob/c9dfdbd76a95107685b7e43a18719b2f7b1ad4af/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs Ubertooth hardware, compatible firmware, host tools and libbtbb. The pinned README names the paired 2020-12-R1 firmware/software and libbtbb releases.",
+      "The documented scope includes BLE sniffing and some Basic Rate Bluetooth Classic data. It is not a claim of complete capture or decoding of all Bluetooth modes."
+    ]
+  },
+  {
+    "id": "internalblue",
+    "name": "InternalBlue",
+    "url": "https://github.com/seemoo-lab/internalblue",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "protocol"
+    ],
+    "description_en": "Study and patch supported Broadcom/Cypress Bluetooth firmware while observing link-layer traffic on the participating device.",
+    "description_zh": "研究和修补受支持的 Broadcom／Cypress 蓝牙固件，并观察参与通信设备的链路层流量。",
+    "evidence_url": "https://github.com/seemoo-lab/internalblue/blob/f524380672564dc4869f3d9a6cbcdeaf5b8a6b85/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a supported chipset, firmware profile and OS-specific backend. The README lists rooted Android 6–11, jailbroken iOS 12–14, specified macOS versions, Linux BlueZ excluding WSL, and a separate BTstack route.",
+      "Monitoring is from the device running InternalBlue rather than a general passive radio sniffer. Firmware protections can disable RAM read/write commands after driver initialization and require device-specific adaptations."
+    ]
+  },
+  {
+    "id": "polytracker",
+    "name": "PolyTracker",
+    "url": "https://github.com/trailofbits/polytracker",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Trace how parser functions consume input bytes by rebuilding programs with LLVM data-flow instrumentation and inspecting the resulting trace.",
+    "description_zh": "通过 LLVM 数据流插桩重新构建程序，跟踪解析器函数如何使用输入字节，并检查产生的跟踪数据。",
+    "evidence_url": "https://github.com/trailofbits/polytracker/blob/ae7b5f12e608f0c9a896cf1af797e4588c7624f9/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs a target that can be built and instrumented, typically C/C++, plus the specialized LLVM environment. The documented quickstart uses Python tooling and Docker.",
+      "This is build-time instrumentation, not drop-in tracing of arbitrary closed binaries. Grammar extraction is experimental; host-mounted trace databases can cause severe virtual-machine/container slowdown."
+    ]
+  },
+  {
+    "id": "panda",
+    "name": "PANDA",
+    "url": "https://github.com/panda-re/panda",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Record and replay whole-system execution for repeated inspection, plugin analysis and dynamic taint tracking.",
+    "description_zh": "记录和重放全系统执行，用于重复检查、插件分析及动态污点跟踪。",
+    "evidence_url": "https://github.com/panda-re/panda/blob/36502113107ff260e7499065c9d4b764d387a7da/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs guest images or compatible recordings and the PANDA/PyPANDA runtime. The README’s distributed binaries target 64-bit Ubuntu 22.04; LLVM-based taint features require LLVM 14.",
+      "The README documents record/replay for x86, x86-64 and ARM guests; MIPS and PowerPC emulation do not imply replay support. Recordings cannot be moved between 32-bit and 64-bit PANDA builds."
+    ]
+  },
+  {
+    "id": "volatility3",
+    "name": "Volatility 3",
+    "url": "https://github.com/volatilityfoundation/volatility3",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Inspect operating-system memory samples to recover processes, modules and other runtime artifacts through forensic plugins.",
+    "description_zh": "通过取证插件检查操作系统内存样本，恢复进程、模块及其他运行时制品。",
+    "evidence_url": "https://github.com/volatilityfoundation/volatility3/blob/77ff0b1932d77527f850c8ced01d85805ea7bf97/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a supported memory image, appropriate symbol tables and Python; the pinned README specifies Python 3.8+. The default branch is develop, while stable is the release branch.",
+      "Windows symbols may be downloaded and cached automatically; Linux and macOS symbols can need manual generation with matching kernel information. The project uses the custom Volatility Software License."
+    ]
+  },
+  {
+    "id": "dr-memory",
+    "name": "Dr. Memory",
+    "url": "https://github.com/DynamoRIO/drmemory",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "Instrument running application binaries to diagnose invalid memory access, uninitialized reads, use-after-free and leaks.",
+    "description_zh": "对运行中的应用二进制插桩，诊断非法内存访问、未初始化读取、释放后使用及泄漏。",
+    "evidence_url": "https://github.com/DynamoRIO/drmemory/blob/3d2b5f9b055dba86c41a75e58c53b59760cc2a6e/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Built on DynamoRIO and distributed in platform-specific packages. The README describes Windows, Linux, macOS and Android operation on IA-32, AMD64 and ARM; supported package/host combinations must match the selected release.",
+      "The target runs under instrumentation. Windows adds handle/GDI/TLS diagnostics and the drstrace system-call tracer; these Windows-specific features do not apply to every host."
+    ]
+  },
+  {
+    "id": "intel-xed",
+    "name": "Intel XED",
+    "url": "https://github.com/intelxed/xed",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Encode and decode x86 instructions through Intel’s library and example analysis utilities.",
+    "description_zh": "通过 Intel 的库及分析示例工具编码和解码 x86 指令。",
+    "evidence_url": "https://github.com/intelxed/xed/blob/0bcb6237345c5066726dcc08b3d87928df3b5b26/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds require Python, a native build toolchain and the separate mbuild checkout alongside xed. The build produces platform-specific static or shared libraries and optional examples.",
+      "The scope is x86 instruction encoding/decoding, not executable loading or high-level decompilation. Encoder-only and decoder-only configurations are available when library size matters."
+    ]
+  },
+  {
+    "id": "microsoft-detours",
+    "name": "Microsoft Detours",
+    "url": "https://github.com/microsoft/Detours",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "Monitor Windows API calls by embedding instrumentation into a program’s execution path.",
+    "description_zh": "在程序执行路径中嵌入插桩代码，以监测 Windows API 调用。",
+    "evidence_url": "https://github.com/microsoft/Detours/blob/1dbd4ea281d73d478aa8d09a8b83fbd265f715f7/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Windows and a native application/toolchain that can integrate the Detours library. The README describes the Windows NT family and identifies the source as version 4.0.1.",
+      "Windows Store applications cannot use it because required APIs are unavailable there. Detours is MIT-licensed instrumentation infrastructure, not a standalone decompiler."
+    ]
+  },
+  {
+    "id": "scylla",
+    "name": "Scylla",
+    "url": "https://github.com/NtQuery/Scylla",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Inspect and rebuild x86/x64 PE import tables and repair process dumps during executable analysis.",
+    "description_zh": "在可执行文件分析中检查和重建 x86／x64 PE 导入表，并修复进程转储。",
+    "evidence_url": "https://github.com/NtQuery/Scylla/blob/e87fd578a3fa0e68b873dcc98951788f3a40e055/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "This is a legacy Windows C/C++ tool, designed around Windows 7 x64, with x86/x64 input support and optional import-reconstruction plugins. Its source is GPLv3.",
+      "The README documents unresolved GetProcAddress cases, ambiguous Windows XP x64 exports and incompatible older plugins. Repaired imports can require manual review and do not establish original source recovery."
+    ]
+  },
+  {
+    "id": "titanengine",
+    "name": "TitanEngine Community Edition",
+    "url": "https://github.com/x64dbg/TitanEngine",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Embed a Windows debugging engine with breakpoint, exception, process-dump and import-reconstruction support.",
+    "description_zh": "嵌入提供断点、异常、进程转储和导入表重建功能的 Windows 调试引擎。",
+    "evidence_url": "https://github.com/x64dbg/TitanEngine/blob/947ad6107f348489350838470d5a69394e1c5f13/readme.txt",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Use the native C/C++ headers and a Windows build environment. The pinned CMake configuration requires CMake 3.15+ and an out-of-source build, and includes diStorm and Scylla-derived components.",
+      "The README warns that Lua, Python, MASM and Delphi bindings may not work correctly because their headers were not updated. It is a debugger engine, not a complete debugger UI."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/x64dbg/TitanEngine/blob/947ad6107f348489350838470d5a69394e1c5f13/CMakeLists.txt"
+    ]
+  },
+  {
+    "id": "compiler-explorer",
+    "name": "Compiler Explorer",
+    "url": "https://github.com/compiler-explorer/compiler-explorer",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Compare source constructs with compiler-generated assembly to study optimizations and recognize code patterns during reverse engineering.",
+    "description_zh": "比较源码结构与编译器生成的汇编，研究优化方式并辅助识别逆向分析中的代码模式。",
+    "evidence_url": "https://github.com/compiler-explorer/compiler-explorer/blob/c655710e809d203f988ce34653e2aa854937177c/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Use the hosted interface or run a local instance with Node.js and configured compiler binaries. The pinned checkout’s .node-version is 22.23.4; the README accepts that version or newer and documents make-based setup.",
+      "The tool compiles supplied source for comparison; it does not recover source from an arbitrary binary. The hosted compiler inventory and a local instance’s configured compilers can differ."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/compiler-explorer/compiler-explorer/blob/c655710e809d203f988ce34653e2aa854937177c/.node-version"
+    ]
+  },
+  {
+    "id": "rustc-demangle",
+    "name": "rustc-demangle",
+    "url": "https://github.com/rust-lang/rustc-demangle",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Turn mangled Rust symbols into readable names for symbol inspection and binary-analysis tooling.",
+    "description_zh": "将经过名称修饰的 Rust 符号转为可读名称，用于符号检查和二进制分析工具。",
+    "evidence_url": "https://github.com/rust-lang/rustc-demangle/blob/7778bc992a4b75cc9385c32494903c0a3a10f3a9/README.md",
+    "verified_at": "2026-10-29",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Use the Rust crate through Cargo, or build the separate C API wrapper with Cargo. A mostly equivalent native C implementation is available but described as less supported.",
+      "The library operates on supplied symbol strings and does not recover stripped identifiers. It offers a choice of MIT or Apache-2.0 licensing and does not require allocation or OS support."
+    ]
   }
 ]
