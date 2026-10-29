@@ -50,7 +50,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [yetone/native-feel-skill](https://github.com/yetone/native-feel-skill) — An Agent Skill for designing cross-platform desktop apps that feel native — distilled from Raycast's 2.0 deep-dive and reverse engineering of Raycast Beta.app. Eight architectural tenets, four-layer architecture, WebKit/WebView2 survival guide, 75-item ship audit. **[1,931 stars]**
 - [keystone-engine/keypatch](https://github.com/keystone-engine/keypatch) — Multi-architecture assembler for IDA Pro. Powered by Keystone Engine. **[1,882 stars]**
 - [airbus-seclab/bincat](https://github.com/airbus-seclab/bincat) — Binary code static analyser, with IDA integration. Performs value and taint analysis, type reconstruction, use-after-free and double-free detection **[1,880 stars]** · Curated: [BinCAT](https://awesomerea.org/resources/bincat/)
-- [redasm-dev/redasm](https://github.com/redasm-dev/redasm) — The Open Source Disassembler **[1,822 stars]**
+- [redasm-dev/redasm](https://github.com/redasm-dev/redasm) — The Open Source Disassembler **[1,822 stars]** · Curated: [REDasm](https://awesomerea.org/resources/redasm/)
 - [cmu-sei/pharos](https://github.com/cmu-sei/pharos) — Automated static analysis tools for binary programs **[1,739 stars]**
 - [KeenSecurityLab/BinAbsInspector](https://github.com/KeenSecurityLab/BinAbsInspector) — BinAbsInspector: Vulnerability Scanner for Binaries **[1,681 stars]**
 - [mytechnotalent/Hacking-Windows](https://github.com/mytechnotalent/Hacking-Windows) — A FREE Windows C development course where we will learn the Win32API and reverse engineer each step utilizing IDA Free in both an x86 and x64 environment. **[1,637 stars]**
