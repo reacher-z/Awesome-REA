@@ -4855,5 +4855,229 @@
       "GitHub Actions 在 Ubuntu 22.04、Windows（MSYS2）和 macOS 上构建 Release 与 Debug 配置，再运行独立的 retdec-regression-tests 测试套件。README 说明每夜构建不作保证、可能出现回归，Docker 支持则由社区维护。",
       "采用 MIT 许可（Avast Software）。修改过的 PeLib 保留其 zlib/libpng 许可，LICENSE-THIRD-PARTY 列出其他组件，其中 Keystone 依据其针对 GPLv2 的 FOSS 例外条款使用。"
     ]
+  },
+  "keystone": {
+    "name": "Keystone",
+    "requirements": [
+      "使用原生 C／C++ 库或受支持的语言绑定；构建文档覆盖 Windows 和类 Unix 宿主，也可通过 vcpkg 安装。",
+      "项目提供附带 EXCEPTIONS-CLIENT 条款的 GPLv2 许可或商业许可。它是汇编框架；反编译和可执行文件重建需要其他工具。"
+    ]
+  },
+  "pyelftools": {
+    "name": "pyelftools",
+    "requirements": [
+      "固定版本 README 要求 Python 3.11+，无需外部依赖；可安装 pyelftools 包或从源码检出目录导入。",
+      "输入为 ELF 文件及可用的 DWARF 数据。API 提供格式和调试信息，不负责重建缺失源码。"
+    ]
+  },
+  "pefile": {
+    "name": "pefile",
+    "requirements": [
+      "使用 Python 3 安装 pefile；该模块无需额外运行依赖，文档列出 Windows、macOS 和 Linux。解释其结构需要理解 PE 布局。",
+      "编辑辅助方法不会重新排列 PE 结构来为新字段腾出空间。签名验证由文档指向的独立项目处理。"
+    ]
+  },
+  "dnlib": {
+    "name": "dnlib",
+    "requirements": [
+      "需兼容的 .NET 项目；固定版本项目目标为 .NET Standard 2.0、.NET Framework 4.5 和 .NET 6，并有条件启用 .NET Framework 3.5。程序集解析需要适当的引用搜索路径。",
+      "混合 C++／CLI 模块需使用 NativeWrite。写入 Windows PDB 需要 Windows；可移植 PDB 可跨操作系统写入。混淆的 Unity／Mono 输入有单独的运行时读取器选项。"
+    ]
+  },
+  "mono-cecil": {
+    "name": "Mono.Cecil",
+    "requirements": [
+      "将库集成进 .NET 应用，并提供 ECMA CIL 程序集；固定版本项目目标为 .NET Standard 2.0 和 .NET Framework 4.0。",
+      "其对象模型支持元数据和 IL 重写；它是编程库，不是独立的源码恢复界面。"
+    ]
+  },
+  "cfr": {
+    "name": "CFR",
+    "requirements": [
+      "使用 Java 运行时执行相应版本的 JAR，并提供类文件或 JAR。源码构建使用 Maven；README 建议采用仍接受 Java 6 source／target 编译设置的 JDK 8–11。",
+      "语言特性处理能力取决于输入和版本。回归测试与既有预期输出比较，README 明确说明这些预期输出不是正确性的金标准。"
+    ]
+  },
+  "krakatau": {
+    "name": "Krakatau",
+    "requirements": [
+      "当前 v2 汇编器／反汇编器使用 Rust 和 Cargo 构建，接受类文件或 JAR／ZIP。普通反汇编优先可读性；需要保持精确编码时使用往返模式。",
+      "v2 反编译器仍未完成。反编译需使用单独的 v1 分支，README 说明它缺少 lambda 等 Java 8+ 特性；v2 字节码支持不能等同于源码反编译覆盖。"
+    ]
+  },
+  "jd-gui": {
+    "name": "JD-GUI",
+    "requirements": [
+      "JAR 发行包需要 Java 运行时，也可使用相应桌面发行包。源码构建使用 Gradle wrapper，生成 JAR 以及 Windows、macOS、Linux 发行产物。",
+      "项目声明采用 GPLv3。其图形源码浏览器与可嵌入的 JD-Core 引擎不同；重建的 Java 文本不是原作者源码。"
+    ]
+  },
+  "jd-core": {
+    "name": "JD-Core",
+    "requirements": [
+      "在 Java 应用中提供 JVM 类字节，并实现 Loader 和 Printer 接口；可通过 Gradle wrapper 构建库 JAR。",
+      "固定版本 README 列出的范围为 Java 1.1.8–12.0，包含 lambda、方法引用和默认方法，并声明采用 GPLv3。该范围不确立对更高 Java 类版本的支持。"
+    ]
+  },
+  "google-smali": {
+    "name": "smali/baksmali (Google fork)",
+    "requirements": [
+      "构建和测试需要 OpenJDK 11；README 说明部分构建工具不支持更高版本的 OpenJDK。命令行使用需要构建 fat JAR。",
+      "此分支将命名空间改为 com.android.tools.smali，并通过 Google Maven 发布 3.x 制品。它与停止维护的原 org.jf 2.x 项目不同，提供字节码汇编／反汇编，不负责 Java 源码反编译。"
+    ]
+  },
+  "mtkclient": {
+    "name": "MTKClient",
+    "requirements": [
+      "需要兼容的联发科硬件、USB 接口和项目依赖。Linux 文档列出 Python 3.10+；Windows 文档列出 Python 3.9+、MTK 端口驱动及 UsbDk。macOS 有独立的 macFUSE／libusb 配置和 Apple Silicon 说明。",
+      "文档列出的 V6 芯片需要合适的设备加载器及 preloader 模式；其修补后的 boot ROM 不能采用旧 boot-ROM 路径。闪存写入和加载器支持均取决于设备。"
+    ]
+  },
+  "firmadyne": {
+    "name": "FIRMADYNE",
+    "requirements": [
+      "文档中的环境使用 Linux、QEMU、PostgreSQL、提取依赖及递归检出的组件，并需要修改后的 MIPS／ARM 内核。README 明确不支持 x86 固件模拟。",
+      "项目标为研究原型，尚不适合生产使用。其设置包含旧 Python／binwalk 工具链，缺失的 NVRAM 值或失败的网络推断可能需要人工调整。"
+    ]
+  },
+  "mc-extractor": {
+    "name": "MC Extractor",
+    "requirements": [
+      "需同时提供 MCE.py 及其必需的 MCE.db 数据库、Python 3.7+、colorama 和 pltable。README 列出 Windows、Linux 和 macOS。",
+      "文档中的处理器家族为 Intel、AMD、VIA 和 Freescale。新版本／未知版本及过时状态判断依赖数据库；头部与校验和分析不等于反编译微码指令。"
+    ]
+  },
+  "flashrom": {
+    "name": "flashrom",
+    "requirements": [
+      "需要受支持的编程器或主板／芯片组合。源码使用 Meson 构建；工具覆盖 SPI、LPC、FWH 和并行闪存等接口。",
+      "README 警告不应在笔记本上使用，以免与嵌入式控制器交互损坏设备，并要求写入前备份。芯片访问依赖具体硬件，不是通用固件提取器。"
+    ]
+  },
+  "umap2": {
+    "name": "Umap2",
+    "requirements": [
+      "需要 Facedancer、Raspdancer 等受支持的 USB 设备硬件；GadgetFS 仅部分支持。README 从源码安装实验性包，而非通过 PyPI。",
+      "该项目是 alpha 阶段的旧工具。多数组件声称兼容 Python 2／3，但 kitty 模糊测试器需要 Python 2；主机操作系统识别尚未实现，也不直接对 MTP 层进行模糊测试。"
+    ]
+  },
+  "libsigrokdecode": {
+    "name": "libsigrokdecode",
+    "requirements": [
+      "源码构建需要 C 编译器、make、pkg-config、GLib 2.34+ 和 Python 3.2+；Git 构建还需要 Autoconf、Automake 和 Libtool。采集到的信号数据由调用端提供。",
+      "库及其组成部分中的解码器采用 GPLv3 或更高版本。Git 快照不保证 API 稳定；README 建议发行版打包使用正式版本的源码包。"
+    ]
+  },
+  "can-utils": {
+    "name": "can-utils",
+    "requirements": [
+      "需要 Linux SocketCAN 子系统及合适的 CAN 或虚拟 CAN 接口。项目说明了使用 CMake 的 Linux 原生构建及 Android／树莓派交叉编译。",
+      "candump 和 cansniffer 显示帧及变化字节，不负责推断专有信号语义。ISO-TP 和 J1939 命令还依赖相应的内核支持。"
+    ]
+  },
+  "caring-caribou": {
+    "name": "Caring Caribou",
+    "requirements": [
+      "文档要求 Python 3.7+、python-can、较新的 Linux 内核和 CAN 接口。各模块有独立帮助及配置。",
+      "服务发现取决于 ECU 和传输方式。旧 DCM 模块已弃用，由 UDS 替代；主动诊断及发送模块与被动流量转储分别提供。"
+    ]
+  },
+  "btlejack": {
+    "name": "BtleJack",
+    "requirements": [
+      "需要 POSIX 系统、Python 3 客户端，以及装有匹配固件的兼容硬件，例如一至三块 BBC Micro:Bit 或文档列出的 nRF51822 嗅探设备。",
+      "BLE 5／5.1 支持限于 1 Mbps 非编码 PHY，不支持信道图更新。README 中更广的无线功能不能解释为支持所有 BLE PHY 或连接类型。"
+    ]
+  },
+  "btlejuice": {
+    "name": "BtleJuice",
+    "requirements": [
+      "文档中的 Linux 配置使用 Node.js／npm、BlueZ 及原生蓝牙依赖。核心和代理需要两块 Bluetooth 4.0+ 适配器，分别运行在独立宿主或宿主／虚拟机环境中。",
+      "上游仓库已归档。代理不能运行在 Docker 中。README 描述的是旧 Node.js 4.3.2+ 环境；这一历史最低版本不能证明兼容当前 Node.js 发行版。"
+    ]
+  },
+  "ubertooth": {
+    "name": "Ubertooth",
+    "requirements": [
+      "需要 Ubertooth 硬件、兼容固件、宿主工具及 libbtbb。固定版本 README 列出了配套的 2020-12-R1 固件／软件及 libbtbb 版本。",
+      "文档范围包括 BLE 嗅探及部分 Basic Rate 经典蓝牙数据，不代表能完整采集或解码所有蓝牙模式。"
+    ]
+  },
+  "internalblue": {
+    "name": "InternalBlue",
+    "requirements": [
+      "需要受支持的芯片、固件配置及操作系统后端。README 列出已 root 的 Android 6–11、越狱的 iOS 12–14、指定 macOS 版本、不含 WSL 的 Linux BlueZ，以及独立的 BTstack 路径。",
+      "监测来自运行 InternalBlue 的设备，不是通用的被动无线嗅探器。固件保护可能在驱动初始化后禁用 RAM 读写命令，需要针对设备调整。"
+    ]
+  },
+  "polytracker": {
+    "name": "PolyTracker",
+    "requirements": [
+      "需要能重新构建和插桩的目标，通常为 C／C++，以及专门的 LLVM 环境。文档中的快速入门使用 Python 工具和 Docker。",
+      "它采用构建时插桩，不能直接跟踪任意闭源二进制。文法提取仍是实验功能；将跟踪数据库放在宿主挂载目录可能使虚拟机／容器明显变慢。"
+    ]
+  },
+  "panda": {
+    "name": "PANDA",
+    "requirements": [
+      "需要客户机镜像或兼容录制数据，以及 PANDA／PyPANDA 运行环境。README 中的分发二进制面向 64 位 Ubuntu 22.04；基于 LLVM 的污点功能需要 LLVM 14。",
+      "README 列出的记录／重放目标为 x86、x86-64 和 ARM 客户机；可模拟 MIPS 或 PowerPC 不代表支持重放。录制数据不能在 32 位和 64 位 PANDA 构建间迁移。"
+    ]
+  },
+  "volatility3": {
+    "name": "Volatility 3",
+    "requirements": [
+      "需要受支持的内存镜像、合适的符号表及 Python；固定版本 README 列出 Python 3.8+。默认分支为 develop，stable 为稳定发行分支。",
+      "Windows 符号可能自动下载并缓存；Linux 和 macOS 符号可能需要依据匹配的内核信息手动生成。项目采用自定义 Volatility Software License。"
+    ]
+  },
+  "dr-memory": {
+    "name": "Dr. Memory",
+    "requirements": [
+      "工具基于 DynamoRIO，按平台分发安装包。README 列出 Windows、Linux、macOS、Android 及 IA-32、AMD64、ARM；所选发行版的安装包与宿主组合须匹配。",
+      "目标在插桩环境下执行。Windows 另有句柄／GDI／TLS 诊断及 drstrace 系统调用跟踪器；这些 Windows 功能不适用于所有宿主。"
+    ]
+  },
+  "intel-xed": {
+    "name": "Intel XED",
+    "requirements": [
+      "源码构建需要 Python、原生构建工具链，以及与 xed 并列检出的独立 mbuild。构建生成相应平台的静态库或共享库，也可构建示例。",
+      "范围为 x86 指令编码／解码，不负责加载可执行文件或高级语言反编译。对体积有要求时可只构建编码器或解码器。"
+    ]
+  },
+  "microsoft-detours": {
+    "name": "Microsoft Detours",
+    "requirements": [
+      "需要 Windows，以及能集成 Detours 库的原生应用／工具链。README 列出 Windows NT 系列，并将源码标为 4.0.1。",
+      "Windows Store 应用缺少它需要的 API，因此不能使用。Detours 是采用 MIT 许可的插桩基础库，不是独立反编译器。"
+    ]
+  },
+  "scylla": {
+    "name": "Scylla",
+    "requirements": [
+      "这是面向旧 Windows 环境的 C／C++ 工具，主要围绕 Windows 7 x64 设计，支持 x86／x64 输入及可选导入重建插件。源码采用 GPLv3。",
+      "README 记录了未解决的 GetProcAddress 情形、Windows XP x64 导出歧义及部分旧插件兼容问题。修复的导入表可能需要人工检查，也不代表恢复了原始源码。"
+    ]
+  },
+  "titanengine": {
+    "name": "TitanEngine Community Edition",
+    "requirements": [
+      "使用原生 C／C++ 头文件及 Windows 构建环境。固定版本 CMake 配置要求 CMake 3.15+ 和源码外构建，并包含 diStorm 及源自 Scylla 的组件。",
+      "README 警告 Lua、Python、MASM 和 Delphi 绑定的头文件尚未更新，可能无法正常工作。它是调试引擎，不是完整调试器界面。"
+    ]
+  },
+  "compiler-explorer": {
+    "name": "Compiler Explorer",
+    "requirements": [
+      "可使用托管界面，或使用 Node.js 和已配置的编译器运行本地实例。固定版本 .node-version 为 22.23.4；README 接受该版本或更高版本，并说明基于 make 的设置方式。",
+      "工具编译用户提供的源码供比较，不会从任意二进制恢复源码。托管服务的编译器清单可能与本地实例的配置不同。"
+    ]
+  },
+  "rustc-demangle": {
+    "name": "rustc-demangle",
+    "requirements": [
+      "通过 Cargo 使用 Rust crate，或使用 Cargo 构建独立 C API 包装层。另有基本等价的原生 C 实现，但文档说明其支持程度较低。",
+      "库处理用户提供的符号字符串，不会恢复已剥离的标识符。可选择 MIT 或 Apache-2.0 许可，并且无需内存分配或操作系统支持。"
+    ]
   }
 }

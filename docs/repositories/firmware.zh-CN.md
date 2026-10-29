@@ -11,7 +11,7 @@
 - [e-m-b-a/emba](https://github.com/e-m-b-a/emba) — EMBA：固件安全分析器。 **[3,712 星标]** · 精选：[EMBA](https://awesomerea.org/zh/resources/emba/)
 - [ma1co/Sony-PMCA-RE](https://github.com/ma1co/Sony-PMCA-RE) — Sony 数码相机逆向工程。 **[2,916 星标]** · 精选：[Sony-PMCA-RE Sony 数码相机逆向工具](https://awesomerea.org/zh/resources/sony-pmca-re/)
 - [onekey-sec/unblob](https://github.com/onekey-sec/unblob) — 从各种容器格式中提取文件。 **[2,577 星标]** · 精选：[unblob](https://awesomerea.org/zh/resources/unblob/)
-- [firmadyne/firmadyne](https://github.com/firmadyne/firmadyne) — 用于仿真和动态分析基于 Linux 的固件的平台 **[2,114 星标]** · 论文：[面向基于 Linux 的嵌入式固件的自动化动态分析](https://awesomerea.org/zh/papers/paper-firmadyne/)
+- [firmadyne/firmadyne](https://github.com/firmadyne/firmadyne) — 用于仿真和动态分析基于 Linux 的固件的平台 **[2,114 星标]** · 论文：[面向基于 Linux 的嵌入式固件的自动化动态分析](https://awesomerea.org/zh/papers/paper-firmadyne/) · 精选：[FIRMADYNE](https://awesomerea.org/zh/resources/firmadyne/)
 - [redballoonsecurity/ofrak](https://github.com/redballoonsecurity/ofrak) — OFRAK：解包、修改并重新打包二进制文件。 **[2,080 星标]** · 精选：[OFRAK](https://awesomerea.org/zh/resources/ofrak/)
 - [marin-m/vmlinux-to-elf](https://github.com/marin-m/vmlinux-to-elf) — 通过提取内核符号表（kallsyms），从原始内核恢复可完整分析的 .ELF 文件的工具。 **[1,832 星标]** · 精选：[vmlinux-to-elf 内核符号恢复工具](https://awesomerea.org/zh/resources/vmlinux-to-elf/)
 - [fkie-cad/FACT\_core](https://github.com/fkie-cad/FACT_core) — 固件分析与比较工具。 **[1,468 星标]** · 精选：[固件分析与比较工具（FACT）](https://awesomerea.org/zh/resources/fact-core/)
