@@ -1,65 +1,45 @@
-name: Source links
+name: Public discovery diagnostic
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '37 6 * * 1'
-permissions:
-  contents: read
+permissions: {}
 jobs:
-  links:
+  probe:
     runs-on: ubuntu-latest
-    # Runs usually take under a minute; this also covers every request reaching its 15-second timeout.
-    timeout-minutes: 30
+    timeout-minutes: 3
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
-        with:
-          python-version: '3.12'
-      - name: Check source links
-        run: python3 scripts/check_links.py --json link-check-report.json
-      - name: Summarize source link checks
-        if: ${{ always() }}
+      - name: Observe public discovery responses
+        shell: bash
         run: |
           python3 - <<'PY'
           import json
           import os
-          from pathlib import Path
-
-          report_path = Path('link-check-report.json')
-          if report_path.is_file():
-              report = json.loads(report_path.read_text(encoding='utf-8'))
-              counts = report['counts']
-              summary = (
-                  '## Source link checks\n\n'
-                  f"Finished: {report['finished_at']}\n\n"
-                  '| Checked URLs | Responded | Confirmed dead | Ledger: recorded missing | Ledger: reported source missing | Inconclusive |\n'
-                  '| ---: | ---: | ---: | ---: | ---: | ---: |\n'
-                  f"| {report['checked']} | {counts['ok']} | {counts['dead']} | {counts.get('recorded-missing', 0)} "
-                  f"| {counts.get('reported-source-missing', 0)} | {counts['inconclusive']} |\n\n"
-                  'Only HTTP 404/410 confirmed by a second request fails the link check. '
-                  'Case-ledger links that their entries already record as not found, or that only the upstream '
-                  'collection reports, are listed separately and do not fail it. '
-                  'Access blocks, rate limits and network failures remain inconclusive; '
-                  'they are not an all-links-passed result.\n\n'
-                  'The JSON report retains timestamps, per-URL status and affected record IDs. '
-                  'The upload step retains that single file for 14 days.\n'
-              )
-          else:
-              summary = (
-                  '## Source link checks\n\n'
-                  'No JSON report was produced. Check the preceding step logs; '
-                  'no link counts or success result can be inferred.\n'
-              )
-          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as output:
-              output.write(summary)
+          import urllib.request
+          import urllib.error
+          targets = [
+              ('https://awesomerea.org/', 'awesome'),
+              ('https://awesomerea.org/robots.txt', 'user-agent:'),
+              ('https://awesomerea.org/sitemap.xml', '<urlset'),
+              ('https://awesomerea.org/llms.txt', '# awesome'),
+          ]
+          rows = []
+          for url, marker in targets:
+              row = {'url': url}
+              try:
+                  request = urllib.request.Request(url, headers={'User-Agent': 'AwesomeREA-public-discovery-check/1.0'})
+                  with urllib.request.urlopen(request, timeout=12) as response:
+                      sample = response.read(32768).decode('utf-8', 'replace')
+                      row.update(status=response.status, content_type=response.headers.get('Content-Type'),
+                                 expected_content=marker in sample.lower())
+              except urllib.error.HTTPError as error:
+                  row.update(status=error.code, expected_content=False)
+              except Exception as error:
+                  row.update(error=type(error).__name__, expected_content=False)
+              rows.append(row)
+          print(json.dumps(rows, indent=2))
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as summary:
+              summary.write('## Public discovery HTTP observation\n\n| URL | Status | Expected content |\n| --- | --- | --- |\n')
+              for row in rows:
+                  summary.write('| ' + row['url'] + ' | ' + str(row.get('status', row.get('error'))) + ' | ' + str(row['expected_content']) + ' |\n')
+              summary.write('\nThis checks ordinary HTTP access from this runner. It does not establish search indexing or genuine crawler access.\n')
+          raise SystemExit(0 if all(row.get('status') == 200 and row['expected_content'] for row in rows) else 1)
           PY
-      - name: Retain source link report
-        if: ${{ always() && hashFiles('link-check-report.json') != '' }}
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-        with:
-          name: source-links-${{ github.run_id }}-${{ github.run_attempt }}
-          path: link-check-report.json
-          if-no-files-found: error
-          retention-days: 14
