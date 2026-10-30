@@ -12,6 +12,7 @@ import shutil
 from urllib.parse import unquote, urlsplit
 
 from build_readme import KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section
+from contribution_pages import TITLES as CONTRIBUTION_TITLES, contribution_content
 from evidence_links import evidence_link
 from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
 from requirement_facets import item_html, ordered_items
@@ -278,14 +279,14 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
   <section class="collection-intro browse-intro"><p class="eyebrow">{('逆向工程资源集合' if zh else 'THE REVERSE ENGINEERING COLLECTION')}</p><h1>{escape(title)}<span class="title-dot" aria-hidden="true">.</span></h1><p>{escape(description)}</p></section>
   {content}
 </main>
-<footer class="site-footer"><div class="shell footer-top"><p>{('独立的资源集合，在公开协作中持续更新。' if zh else 'An independent resource collection, updated in public.')}</p><div class="footer-links"><a href="{prefix}/resources/">{('精选资源' if zh else 'Curated resources')}</a><a href="{prefix}/cases/">{('案例合集' if zh else 'Case studies')}</a><a href="{prefix}/browse/">{('仓库目录' if zh else 'Repository directory')}</a><a href="{prefix}/papers/">{('研究论文' if zh else 'Research papers')}</a><a href="{prefix}/about/">{('关于与来源' if zh else 'About and sources')}</a><a href="/catalog.json" download="awesomerea-curated-catalog.json">{('精选 JSON ↓' if zh else 'Curated JSON ↓')}</a><a href="/{source_export}" download="awesomerea-repository-index.json">{('仓库 JSON ↓' if zh else 'Repository JSON ↓')}</a></div></div><div class="shell footer-bottom">{footer}</div></footer>
+<footer class="site-footer"><div class="shell footer-top"><p>{('独立的资源集合，在公开协作中持续更新。' if zh else 'An independent resource collection, updated in public.')}</p><div class="footer-links"><a href="{prefix}/resources/">{('精选资源' if zh else 'Curated resources')}</a><a href="{prefix}/cases/">{('案例合集' if zh else 'Case studies')}</a><a href="{prefix}/browse/">{('仓库目录' if zh else 'Repository directory')}</a><a href="{prefix}/papers/">{('研究论文' if zh else 'Research papers')}</a><a href="{prefix}/about/">{('关于与来源' if zh else 'About and sources')}</a><a href="{prefix}/contribute/">{('投稿与贡献' if zh else 'Contribute')}</a><a href="/catalog.json" download="awesomerea-curated-catalog.json">{('精选 JSON ↓' if zh else 'Curated JSON ↓')}</a><a href="/{source_export}" download="awesomerea-repository-index.json">{('仓库 JSON ↓' if zh else 'Repository JSON ↓')}</a></div></div><div class="shell footer-bottom">{footer}</div></footer>
 </body>
 </html>
 '''
 
 
 def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | None) -> list[str]:
-    """Write discovery assets and return six root-relative HTML sitemap paths.
+    """Write discovery assets and return eight root-relative HTML sitemap paths.
 
     ``catalog`` is the built catalog object with localized names and requirements.
     ``source_index`` is the full localized/scoped scan, including excluded records.
@@ -424,6 +425,19 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=schema, assets=assets, icon_stylesheet=icons.href, source_export=source_export)
         paths.append(path)
 
+        path = prefix + '/contribute/'
+        title = CONTRIBUTION_TITLES[int(zh)]
+        description = ('向 Awesome REA 推荐逆向工程工具、重建案例和论文：GitHub 表单、Agent 贡献指南、一手证据、双语字段、校验和 PR 提交流程。'
+                       if zh else 'Submit reverse-engineering tools, reconstruction cases and papers to Awesome REA: GitHub forms, agent guidance, primary evidence, bilingual fields, validation and pull requests.')
+        schema = {'@context': 'https://schema.org', '@type': 'WebPage', 'url': site_url + path,
+                  'name': title, 'description': description, 'inLanguage': locale,
+                  'isPartOf': website_reference(site_url)}
+        rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path,
+            language=language, title=title, description=description,
+            content=contribution_content(repository_url, language), schema=schema,
+            assets=assets, icon_stylesheet=icons.href, source_export=source_export)
+        paths.append(path)
+
     # Remove only this generator's former route outputs; redirects belong to the site build.
     for legacy in ('curated', 'zh/curated'):
         directory = site_dir / legacy
@@ -451,6 +465,7 @@ Source review checks documentation, not successful execution, security, or REA c
 - [Research papers]({site_url}/papers/): A separate research bibliography.
 - [Editorial survey]({site_url}/survey/): A bilingual synthesis of the collection’s evidence, methods and limits; a versioned editorial companion, not an additional research paper.
 - [About and provenance]({site_url}/about/): Scope, source methods, counts, translations, and licenses.
+- [Contribute to Awesome REA]({site_url}/contribute/): Submission forms, primary-evidence requirements and the PR workflow for humans and agents.
 
 ## 简体中文
 
@@ -460,6 +475,15 @@ Source review checks documentation, not successful execution, security, or REA c
 - [研究论文]({site_url}/zh/papers/): 单独维护的研究文献目录。
 - [专题综述]({site_url}/zh/survey/): 综合比较证据、方法与边界的双语编辑性综述，单独版本化，不计入研究论文数量。
 - [关于与来源]({site_url}/zh/about/): 收录范围、来源方法、数量、翻译与许可。
+- [投稿与参与贡献]({site_url}/zh/contribute/): 人工与 Agent 的提交表单、一手证据要求和 PR 流程。
+
+## Contribute with an agent
+
+- [Repository agent instructions]({repository_url}/blob/main/AGENTS.md): Start here before editing the repository.
+- [Agent contribution guide]({repository_url}/blob/main/docs/agent-contributing.md): Deduplicate, review primary sources, edit the right data, run checks and submit an authenticated GitHub PR.
+- [Agent 投稿指南]({repository_url}/blob/main/docs/agent-contributing.zh-CN.md): 中文提交、证据和校验说明。
+- [Catalog schema]({repository_url}/blob/main/data/README.md): Authoritative resource and paper fields and classification vocabulary.
+- [Choose an issue form]({repository_url}/issues/new/choose): Suggest a resource, case, paper or correction; unknown details are not verified facts.
 
 ## Public data and sources
 

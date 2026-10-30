@@ -8,6 +8,7 @@
 
 | 文档 | 语言 | 状态 | 内容 |
 | --- | --- | --- | --- |
+| Agent 投稿与 PR 指南：[中文](agent-contributing.zh-CN.md)、[英文](agent-contributing.md) | 中英 | 当前 | Agent 指令、提交入口、证据、校验和 PR 流程 |
 | [中文贡献指南](../CONTRIBUTING.zh-CN.md) | 中文 | 当前（摘要） | 推荐资源与论文、字段选择、检查命令和术语对照 |
 | [贡献指南](../CONTRIBUTING.md) | 英文 | 当前（以此为准） | 完整的贡献、字段、论文、检查与审核规则 |
 | 第一个资源完整示例：[中文](first-resource.zh-CN.md)、[英文](first-resource.md) | 中英 | 当前 | 以一条已有记录说明需编辑与重新生成的文件、检查命令和 pull request |
