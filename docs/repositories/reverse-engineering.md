@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**670 repositories** · 2026-10-20 UTC
+**669 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -69,7 +69,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [scadastrangelove/awesome-ai-security-tools](https://github.com/scadastrangelove/awesome-ai-security-tools) — A curated list of public-source, research, and commercial tools for AI security and AI-assisted cybersecurity — autotriage, agent security, AI/ML supply chain, pentest agents, AI SAST, LLM-driven fuzzing, threat intelligence, SOC/SIEM triage, reverse engineering, LLM red-teaming, and more. **[1,658 stars]**
 - [pmret/papermario](https://github.com/pmret/papermario) — Decompilation of Paper Mario (Nintendo 64) **[1,632 stars]** · Curated: [Paper Mario: matching Nintendo 64 decompilation for four releases](https://awesomerea.org/resources/paper-mario-matching-decomp-case/)
 - [packing-box/awesome-executable-packing](https://github.com/packing-box/awesome-executable-packing) — A curated list of awesome resources related to executable packing **[1,631 stars]**
-- [mgechev/ngrev](https://github.com/mgechev/ngrev) — Tool for reverse engineering of Angular applications **[1,573 stars]**
 - [JonathanSalwan/VMProtect-devirtualization](https://github.com/JonathanSalwan/VMProtect-devirtualization) — Playing with the VMProtect software protection. Automatic deobfuscation of pure functions using symbolic execution and LLVM. **[1,536 stars]**
 - [HACKE-RC/awesome-reversing](https://github.com/HACKE-RC/awesome-reversing) — A collection of resources to learn Reverse Engineering from start! **[1,530 stars]**
 - [AllsafeCyberSecurity/awesome-ghidra](https://github.com/AllsafeCyberSecurity/awesome-ghidra) — A curated list of awesome Ghidra materials **[1,442 stars]** · Curated: [Awesome Ghidra](https://awesomerea.org/resources/awesome-ghidra/)
