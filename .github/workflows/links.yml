@@ -18,8 +18,10 @@ jobs:
           targets = [
               ('https://awesomerea.org/', 'awesome'),
               ('https://awesomerea.org/robots.txt', 'user-agent:'),
-              ('https://awesomerea.org/sitemap.xml', '<urlset'),
-              ('https://awesomerea.org/llms.txt', '# awesome'),
+              ('https://awesomerea.org/sitemap.xml', 'https://awesomerea.org/zh/contribute/'),
+              ('https://awesomerea.org/llms.txt', '/blob/main/agents.md'),
+              ('https://awesomerea.org/contribute/', 'choose a submission form'),
+              ('https://awesomerea.org/zh/contribute/', '选择提交入口'),
           ]
           rows = []
           for url, marker in targets:
