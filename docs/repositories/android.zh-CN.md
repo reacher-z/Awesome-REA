@@ -27,7 +27,7 @@
 - [CalebFenton/simplify](https://github.com/CalebFenton/simplify) — Android 虚拟机与去混淆工具。 **[4,671 星标]** · 精选：[Simplify Android 反混淆工具](https://awesomerea.org/zh/resources/simplify-android-deobfuscator/)
 - [ReVanced/revanced-patches-template](https://github.com/ReVanced/revanced-patches-template) — 👋🧩 ReVanced Patches 模板仓库。 **[4,613 星标]**
 - [APKLab/APKLab](https://github.com/APKLab/APKLab) — 适用于 VS Code 的 Android 逆向工程工作台。 **[4,011 星标]** · 精选：[APKLab Android 逆向工作台](https://awesomerea.org/zh/resources/apklab/)
-- [ax/apk.sh](https://github.com/ax/apk.sh) — 自动完成 APK 提取、解码、重建和打补丁等重复任务，让 Android 应用逆向工程更轻松。 **[3,842 星标]**
+- [ax/apk.sh](https://github.com/ax/apk.sh) — 自动完成 APK 提取、解码、重建和打补丁等重复任务，让 Android 应用逆向工程更轻松。 **[3,842 星标]** · 精选：[apk.sh Android 应用分析脚本](https://awesomerea.org/zh/resources/apk-sh/)
 - [ReVanced/revanced-patcher](https://github.com/ReVanced/revanced-patcher) — 💉 用于为 Android 应用打补丁的 ReVanced Patcher。 **[3,525 星标]**
 - [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — 使用 Zygisk 在运行时转储 il2cpp 数据。 **[3,343 星标]**
 - [m0bilesecurity/RMS-Runtime-Mobile-Security](https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security) — Runtime Mobile Security（RMS）📱🔥：功能强大的 Web 界面，帮助你在运行时操控 Android 和 iOS 应用。 **[3,111 星标]**

@@ -12,7 +12,7 @@ Publication date: **2026-10-20 UTC**.
 | --- | ---: | ---: |
 | [Websites](web-analysis.md) | 215 | 26 |
 | [Games](game-analysis.md) | 485 | 63 |
-| [Apps · Android](android.md) | 479 | 32 |
+| [Apps · Android](android.md) | 479 | 33 |
 | [Apps · Managed code](managed-code.md) | 135 | 5 |
 | [Native binaries](native-analysis.md) | 849 | 82 |
 | [Runtime and debugging](dynamic-analysis.md) | 145 | 18 |

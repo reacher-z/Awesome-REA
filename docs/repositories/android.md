@@ -27,7 +27,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [CalebFenton/simplify](https://github.com/CalebFenton/simplify) — Android virtual machine and deobfuscator **[4,671 stars]** · Curated: [Simplify](https://awesomerea.org/resources/simplify-android-deobfuscator/)
 - [ReVanced/revanced-patches-template](https://github.com/ReVanced/revanced-patches-template) — 👋🧩Template repository for ReVanced Patches **[4,613 stars]**
 - [APKLab/APKLab](https://github.com/APKLab/APKLab) — Android Reverse-Engineering Workbench for VS Code **[4,011 stars]** · Curated: [APKLab](https://awesomerea.org/resources/apklab/)
-- [ax/apk.sh](https://github.com/ax/apk.sh) — Makes reverse engineering Android apps easier, automating repetitive tasks like pulling, decoding, rebuilding and patching an APK. **[3,842 stars]**
+- [ax/apk.sh](https://github.com/ax/apk.sh) — Makes reverse engineering Android apps easier, automating repetitive tasks like pulling, decoding, rebuilding and patching an APK. **[3,842 stars]** · Curated: [apk.sh](https://awesomerea.org/resources/apk-sh/)
 - [ReVanced/revanced-patcher](https://github.com/ReVanced/revanced-patcher) — 💉 ReVanced Patcher used to patch Android applications **[3,525 stars]**
 - [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — Using Zygisk to dump il2cpp data at runtime **[3,343 stars]**
 - [m0bilesecurity/RMS-Runtime-Mobile-Security](https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security) — Runtime Mobile Security (RMS) 📱🔥 - is a powerful web interface that helps you to manipulate Android and iOS Apps at Runtime **[3,111 stars]**
