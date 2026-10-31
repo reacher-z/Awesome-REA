@@ -5242,5 +5242,14 @@
       "CI 构建并测试每个 Swift 包，其中包括 WhoopProtocol 的帧格式和解码器测试，并构建 Android 调试版 APK、运行其单元测试。协议约定注明了观察所依据的固件版本（WHOOP 4 为 41.17.6.0，WHOOP 5/MG 以 50.42.1.0 为基准），PROTOCOL.md 说明其构造的解析示例并非设备测试。docs/VALIDATION_PROTOCOL.md 规定了声称评分改进时须遵守的规则；本合集未构建这些应用，也未连接手环运行。",
       "LICENSE 对 NOOP 自身的代码和文档适用 PolyForm Noncommercial 1.0.0，GitHub 将其识别为 NOASSERTION；随附的 GRDB.swift 和 ZIPFoundation 采用 MIT。README 称 github.com/ryanbr/noop 是正式主页，但 GitHub 将其列为 muftiarfan/noop 的分叉。NOOP 声明与 WHOOP 或 Oura 无关联；AGENTS.md 面向人类与 AI 智能体贡献者，可选的教练功能使用使用者自备的模型，但所审来源未确立 REA 的使用。"
     ]
+  },
+  "pe-bear": {
+    "name": "PE-bear PE 文件分析工具",
+    "requirements": [
+      "最新发行版为 v0.7.2（2026-06-05），提供 Windows 的 Qt6 与 Qt5 版本、面向 XP 等旧版 Windows 的 Qt4 x86 旧版构建、Linux 的 tar.xz 与 AppImage 版本以及 macOS 的 Qt6 应用；Chocolatey、Scoop 和 WinGet 也提供安装包。所审阅的 main 提交（2026-10-14）比它多 16 个提交，包括 Capstone 更新和尚未发布的更新检查功能；据其 README，该功能每天最多查询一次 GitHub 发行版 API，且只发送 PE-bear 的 User-Agent。",
+      "Linux 版本需要安装对应版本的 Qt；用 Visual Studio 2017 或更高版本构建的 Windows 版本需要 Visual C++ 2015–2022 运行库。源码构建需要 Git、CMake 3.12+、Qt6（或 Qt5/Qt4）以及 bearparser、Capstone 和 sig_finder 子模块，并提供 Linux 与 macOS 的构建脚本。AppVeyor 会为 main 分支的每个提交构建测试包，README 提醒这些构建可能不稳定。",
+      "输入为分析者选定的 PE 文件，也包括从进程中转储的映像，PE-bear 会提示将其还原为原始格式。Wiki 页面介绍了添加导入项、移除附加数据、填充内容以及搜索字符串或带掩码的字节签名。加壳识别使用 SIG.txt，它由第三方脚本从 PEiD 的 UserDB 转换而来，最后更新于 2022-10-17。",
+      "采用 GPL-2.0 许可；作者页面称 PE-bear 自 2022-09-18 起开源，此前其开发曾于 2014 年停止，后又重新启动。bearparser 和 sig_finder 子模块采用 BSD-2-Clause 许可，Capstone 保留其自身许可。"
+    ]
   }
 }
