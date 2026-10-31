@@ -55,7 +55,7 @@
 
 主体 1,270 项中：237 项有带产物的发布包，149 项仅有源码安装说明；macOS 包状态仅对 Class 0/1 的 118 项做过补查（64 有包、1 仅 CI、53 未确认），其余类别该字段为空；167 项经过人工逐项复核；6 项有文档二筛正向信号。
 
-数据文件：[CSV 明细](scores/tracker-evidence-scores.csv)（含逐项加分构成）、[JSON](scores/tracker-evidence-scores.json)、[离线查看页](scores/tracker-scores.html)（可按类别/macOS/关键词筛选、按分数排序）。
+数据文件：[CSV 明细](scores/tracker-evidence-scores.csv)（含逐项加分构成）、[JSON](scores/tracker-evidence-scores.json)、[可视化看板](scores/tracker-scores.html)（各类别分布、macOS 包状态、获取入口构成三组图 + 可筛选排序的数据表，明暗双主题，`#light`/`#dark` 可固定主题）。
 
 ## 4. 与完成度实测的衔接（提案，未执行）
 
