@@ -51,7 +51,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [keystone-engine/keypatch](https://github.com/keystone-engine/keypatch) — Multi-architecture assembler for IDA Pro. Powered by Keystone Engine. **[1,882 stars]**
 - [airbus-seclab/bincat](https://github.com/airbus-seclab/bincat) — Binary code static analyser, with IDA integration. Performs value and taint analysis, type reconstruction, use-after-free and double-free detection **[1,880 stars]** · Curated: [BinCAT](https://awesomerea.org/resources/bincat/)
 - [redasm-dev/redasm](https://github.com/redasm-dev/redasm) — The Open Source Disassembler **[1,822 stars]** · Curated: [REDasm](https://awesomerea.org/resources/redasm/)
-- [cmu-sei/pharos](https://github.com/cmu-sei/pharos) — Automated static analysis tools for binary programs **[1,739 stars]**
+- [cmu-sei/pharos](https://github.com/cmu-sei/pharos) — Automated static analysis tools for binary programs **[1,739 stars]** · Curated: [Pharos](https://awesomerea.org/resources/pharos/)
 - [KeenSecurityLab/BinAbsInspector](https://github.com/KeenSecurityLab/BinAbsInspector) — BinAbsInspector: Vulnerability Scanner for Binaries **[1,681 stars]** · Curated: [BinAbsInspector](https://awesomerea.org/resources/binabsinspector/)
 - [mytechnotalent/Hacking-Windows](https://github.com/mytechnotalent/Hacking-Windows) — A FREE Windows C development course where we will learn the Win32API and reverse engineer each step utilizing IDA Free in both an x86 and x64 environment. **[1,637 stars]**
 - [illera88/Ponce](https://github.com/illera88/Ponce) — IDA 2016 plugin contest winner! Symbolic Execution just one-click away! **[1,635 stars]**
