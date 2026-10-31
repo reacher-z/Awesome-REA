@@ -5203,5 +5203,15 @@
       "Web 界面默认使用 5491 端口；rms.js 调用 server.listen 时只传入端口，因此适用 Node 默认的全接口绑定，所审阅的代码也没有登录验证。README 提到复杂方法有时无法加载，且不支持 Safari。",
       "采用 GPL-3.0 许可。随附的自定义 Frida 脚本未经审阅，本条目也不作介绍。本次未安装或运行该工具。"
     ]
+  },
+  "pharos": {
+    "name": "Pharos 二进制静态分析框架",
+    "requirements": [
+      "项目没有打标签的发布版本；所审阅的 master 提交日期为 2026-08-03。README 称 Pharos 是仍在积极开发的研究项目，文档尚不完整，可移植性也未经主动测试；README 还说明 DumpMASM 已不再维护，建议改用 ROSE 自带的工具。",
+      "最简便的方式是使用预构建的 ghcr.io/cmu-sei/pharos Docker 镜像，GitHub 工作流会在每次推送时及每周为 amd64 和 arm64 构建该镜像。从源码构建负担较重：需要 C++14、CMake、Boost、yaml-cpp、SQLite、Z3、SWI-Prolog 和 ROSE，构建脚本固定使用 ROSE v2.6.0、Z3 4.8.7 和 SWI-Prolog 8.5.12。INSTALL.md 建议在 CPU 数量较少时每个构建 CPU 配约 4 GiB 内存，构建脚本仅支持最新版 Ubuntu，列出的手动测试配置则较旧，包括 RHEL 7、Ubuntu 19.04 和 openSUSE 15.1。",
+      "待分析的可执行文件需自行提供。OOAnalyzer 仅支持 32 位 MSVC 二进制，对 64 位可执行文件或其他编译器的测试很少；其 JSON 输出可供仓库中的 IDA 插件或独立的 Kaiju Ghidra 插件使用，分析非常大的可执行文件需要按 oorules 说明执行额外步骤。",
+      "Dockerfile 包含一个测试阶段，会针对由 tests/ 中源码编译的测试程序运行 ctest，但 GitHub 工作流只构建发布镜像。本次审阅未构建或运行任何内容。",
+      "LICENSE.md 是 SEI 的 BSD 风格许可（版权归卡内基梅隆大学所有，2021 年），并限制使用 CMU 和 SEI 名称，因此 GitHub 显示为 NOASSERTION。ROSE、SWI-Prolog、Z3、Boost、yaml-cpp 和 SQLite 各自适用其许可证。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
