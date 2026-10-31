@@ -15838,5 +15838,40 @@
       "https://github.com/CommitteeOfZero/impacto/issues/1",
       "https://github.com/CommitteeOfZero/impacto/releases/tag/0.10.8.887"
     ]
+  },
+  {
+    "id": "caringcaribou",
+    "name": "Caring Caribou",
+    "url": "https://github.com/CaringCaribou/caringcaribou",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Python automotive security exploration tool, begun in the HEAVENS research project, that the README describes as a zero-knowledge tool to drop onto a CAN network and collect information about the services present. Passive modules dump CAN traffic to the terminal or a candump-format file and list every arbitration ID seen on the bus, while the UDS (ISO 14229-1), DoIP (ISO 13400-2) and XCP modules discover ECUs that answer diagnostic requests, enumerate their supported services and subservices, read data identifiers and query XCP capabilities. Its utilities provide reusable ISO-TP (ISO 15765-2) and UDS implementations, and new modules plug into a drop-in module architecture.",
+    "description_zh": "Python 编写的汽车安全探索工具，起源于 HEAVENS 研究项目；README 称它是一种无需预先了解目标的工具，可接入任意 CAN 网络并收集其中存在哪些服务的信息。被动模块可将 CAN 流量输出到终端或 candump 格式文件，并列出总线上出现的所有仲裁 ID；UDS（ISO 14229-1）、DoIP（ISO 13400-2）和 XCP 模块则可发现响应诊断请求的 ECU，枚举其支持的服务和子服务，读取数据标识符并查询 XCP 能力。其工具库提供可复用的 ISO-TP（ISO 15765-2）和 UDS 实现，新模块可通过即插即用的模块架构加入。",
+    "evidence_url": "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest GitHub release at review: 0.6, published 2024-03-28; the reviewed master commit is 45 commits ahead and its packaging already reports 0.7. The README installs it from the source tree; PyPI had no caringcaribou project at review.",
+      "Needs a CAN interface supported by python-can and configured in python-can's .canrc file. The install guide uses a PEAK PCAN-USB adapter with SocketCAN on Linux (kernel 3.4 or newer there, while the README asks for a pretty modern kernel) and suggests a Linux VM on Windows. The README requires Python 3.7+; the DoIP module also needs the doipclient and udsoncan packages.",
+      "Discovery and service scans transmit diagnostic requests on the connected bus or network. Other modules send, replay or fuzz frames and perform intrusive diagnostic operations; those are outside this entry, which covers traffic capture and diagnostic-service discovery only.",
+      "GPL-3.0. The bundled unit tests run against mock ECUs on a virtual CAN bus. No CAN traffic was captured or sent."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/howtoinstall.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/howtouse.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/dump.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/listener.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/uds.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/doip.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/xcp.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/pyproject.toml",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/caringcaribou/tests/mock/mock_ecu.py",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/LICENSE",
+      "https://github.com/CaringCaribou/caringcaribou/releases/tag/0.6"
+    ]
   }
 ]

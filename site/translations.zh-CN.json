@@ -5185,5 +5185,14 @@
       "CI 运行 clang-format 代码检查并构建软件包；所审工作流没有自动化测试套件，也没有发布与原版引擎的对比。README 欢迎贡献者通过黑盒观察原版行为和白盒检查其内部实现来进行逆向工程，但没有说明具体方法或工具。本合集未构建或运行 impacto。",
       "LICENSE 规定源码整体采用 ISC 许可；THIRDPARTY.md 列出了基于 vgmstream、Ryujinx、OpenImageIO、FFplay 等项目的代码以及外部库，并提醒二进制发行版可能适用更严格的条款。各游戏、其数据以及图标中使用的官方插画均归权利人所有。所审来源未确立 REA 或 AI 使用。"
     ]
+  },
+  "caringcaribou": {
+    "name": "Caring Caribou 汽车 CAN 总线安全探索工具",
+    "requirements": [
+      "审阅时 GitHub 上的最新版本为 0.6，发布于 2024-03-28；所审阅的 master 分支提交领先 45 个提交，其打包元数据已标为 0.7。README 介绍从源码目录安装；审阅时 PyPI 上没有 caringcaribou 项目。",
+      "需要 python-can 支持的 CAN 接口，并在 python-can 的 .canrc 配置文件中设置。安装指南在 Linux 上使用 PEAK PCAN-USB 适配器和 SocketCAN（指南要求内核 3.4 或更高，README 则只说需要较新的内核），在 Windows 上建议使用 Linux 虚拟机。README 要求 Python 3.7+；DoIP 模块还需要 doipclient 和 udsoncan 软件包。",
+      "发现和服务扫描会在所连接的总线或网络上发送诊断请求。其他模块会发送、重放或模糊测试帧，并执行侵入性诊断操作；这些不在本条目范围内，本条目只涵盖流量捕获和诊断服务发现。",
+      "采用 GPL-3.0 许可。附带的单元测试在虚拟 CAN 总线上针对模拟 ECU 运行。本次未捕获或发送任何 CAN 流量。"
+    ]
   }
 }
