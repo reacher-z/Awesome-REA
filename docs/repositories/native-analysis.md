@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**850 repositories** · 2026-10-20 UTC
+**849 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -136,7 +136,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [falconre/falcon](https://github.com/falconre/falcon) — Binary Analysis Framework in Rust **[593 stars]**
 - [JonathanSalwan/PinTools](https://github.com/JonathanSalwan/PinTools) — Pintool example and PoC for dynamic binary analysis **[593 stars]**
 - [nikolaydubina/go-binsize-treemap](https://github.com/nikolaydubina/go-binsize-treemap) — 🔍 Go binary size SVG treemap **[587 stars]**
-- [quarkslab/binbloom](https://github.com/quarkslab/binbloom) — Raw binary firmware analysis software **[586 stars]**
 - [B2R2-org/B2R2](https://github.com/B2R2-org/B2R2) — B2R2 is a fully managed binary analysis framework written in F#. It provides a rich set of algorithms, functions, and tools for reverse engineering, program analysis, and binary-level inspection. **[552 stars]** · Curated: [B2R2](https://awesomerea.org/resources/b2r2/)
 - [d3v1l401/FindCrypt-Ghidra](https://github.com/d3v1l401/FindCrypt-Ghidra) — IDA Pro's FindCrypt ported to Ghidra, with an updated and customizable signature database **[550 stars]**
 - [BeaEngine/beaengine](https://github.com/BeaEngine/beaengine) — BeaEngine disasm project **[549 stars]**

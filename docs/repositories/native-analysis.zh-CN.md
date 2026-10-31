@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**850 个仓库** · 2026-10-20 UTC
+**849 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -136,7 +136,6 @@
 - [falconre/falcon](https://github.com/falconre/falcon) — 使用 Rust 编写的二进制分析框架。 **[593 星标]**
 - [JonathanSalwan/PinTools](https://github.com/JonathanSalwan/PinTools) — 用于动态二进制分析的 Pintool 示例与概念验证。 **[593 星标]**
 - [nikolaydubina/go-binsize-treemap](https://github.com/nikolaydubina/go-binsize-treemap) — 🔍 展示 Go 二进制文件大小的 SVG 矩形树图。 **[587 星标]**
-- [quarkslab/binbloom](https://github.com/quarkslab/binbloom) — 原始二进制固件分析软件。 **[586 星标]**
 - [B2R2-org/B2R2](https://github.com/B2R2-org/B2R2) — B2R2 是使用 F# 编写的完全托管二进制分析框架，提供丰富的算法、函数和工具，用于逆向工程、程序分析和二进制级检查。 **[552 星标]** · 精选：[B2R2 二进制分析框架](https://awesomerea.org/zh/resources/b2r2/)
 - [d3v1l401/FindCrypt-Ghidra](https://github.com/d3v1l401/FindCrypt-Ghidra) — 将 IDA Pro 的 FindCrypt 移植到 Ghidra，附带更新且可自定义的特征库。 **[550 星标]**
 - [BeaEngine/beaengine](https://github.com/BeaEngine/beaengine) — BeaEngine 反汇编项目。 **[549 星标]**
