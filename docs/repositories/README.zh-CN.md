@@ -12,10 +12,10 @@
 | --- | ---: | ---: |
 | [网站](web-analysis.zh-CN.md) | 215 | 26 |
 | [游戏](game-analysis.zh-CN.md) | 485 | 63 |
-| [应用 · Android](android.zh-CN.md) | 479 | 33 |
+| [应用 · Android](android.zh-CN.md) | 478 | 33 |
 | [应用 · 托管代码](managed-code.zh-CN.md) | 135 | 5 |
 | [原生二进制](native-analysis.zh-CN.md) | 849 | 83 |
-| [运行时与调试](dynamic-analysis.zh-CN.md) | 145 | 18 |
+| [运行时与调试](dynamic-analysis.zh-CN.md) | 146 | 19 |
 | [固件](firmware.zh-CN.md) | 222 | 19 |
 | [协议](protocol-analysis.zh-CN.md) | 110 | 8 |
 | [通用工具与资源合集](reverse-engineering.zh-CN.md) | 669 | 64 |
