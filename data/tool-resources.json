@@ -16373,7 +16373,8 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/codingncaffeine/SiegeFX/releases/tag/v0.5.0"
-    ]
+    ],
+    "added_at": "2026-11-01"
   },
   {
     "id": "legend-of-legaia-rust-port-case",
@@ -16404,6 +16405,7 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://andrewaltimit.github.io/legend-of-legaia-re/"
-    ]
+    ],
+    "added_at": "2026-11-01"
   }
 ]

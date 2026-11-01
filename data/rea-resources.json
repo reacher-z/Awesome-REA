@@ -3189,7 +3189,8 @@
     "additional_evidence_urls": [
       "https://az9713.github.io/untangle-rebuild/receipt/rebuild-receipt.html",
       "https://az9713.github.io/untangle-rebuild/rebuild/index.html"
-    ]
+    ],
+    "added_at": "2026-11-01"
   },
   {
     "id": "sofa-tv-browser-browsehere-case",
@@ -3221,7 +3222,8 @@
     "additional_evidence_urls": [
       "https://www.reddit.com/r/AndroidTVApps/comments/1xa9tv3/i_had_ai_reverseengineer_tcls_browsehere_and/",
       "https://github.com/sonalder-darlene/sofa-tv-browser/releases"
-    ]
+    ],
+    "added_at": "2026-11-01"
   },
   {
     "id": "netcat-openbsd-rea-static-case",
@@ -3249,7 +3251,8 @@
     "targets": [
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "added_at": "2026-11-01"
   },
   {
     "id": "fastview-rea-relay-analysis-rebuild-case",
@@ -3280,7 +3283,8 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/dmytrobsp/fastview-rea/releases"
-    ]
+    ],
+    "added_at": "2026-11-01"
   },
   {
     "id": "openbattlefield2-refractor-engine-case",
@@ -3315,7 +3319,8 @@
     "additional_evidence_urls": [
       "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/CLAUDE.md",
       "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/docs/functions/hud-crosshair.md"
-    ]
+    ],
+    "added_at": "2026-11-01"
   },
   {
     "id": "keen-clone-rea-commander-keen-case",
@@ -3344,7 +3349,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "added_at": "2026-11-01"
   },
   {
     "id": "samp-client-rea-partial-reconstruction-case",
@@ -3373,7 +3379,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "added_at": "2026-11-01"
   },
   {
     "id": "desktop-games-nostalgia-rea-port-case",
@@ -3402,7 +3409,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "added_at": "2026-11-01"
   },
   {
     "id": "gunzrs-rea-rust-reimplementation-case",
@@ -3433,7 +3441,8 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/OpenRsG/GunZRs/releases/tag/v0.1.0"
-    ]
+    ],
+    "added_at": "2026-11-01"
   },
   {
     "id": "mxqpro-rk3229-rea-repurposing-case",
@@ -3464,7 +3473,8 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/morluto/rea/discussions/8248"
-    ]
+    ],
+    "added_at": "2026-11-01"
   },
   {
     "id": "icsee-localmod-rea-camera-case",
@@ -3498,7 +3508,8 @@
     "additional_evidence_urls": [
       "https://github.com/Vittuu/icsee-localmod/blob/52f0ca06064faa2e62ee6d9c600f048bd1768207/docs/REA-GHIDRA-WORKFLOW.md",
       "https://github.com/morluto/rea/discussions/8070"
-    ]
+    ],
+    "added_at": "2026-11-01"
   },
   {
     "id": "app-xray-rea-evidence-reports",
@@ -3531,7 +3542,8 @@
     "additional_evidence_urls": [
       "https://github.com/Eliot5566/app-xray/blob/66a7b06fb45d99e0e1d1dbcf221856a62639faab/docs/en/guide.md",
       "https://github.com/morluto/rea/discussions/7974"
-    ]
+    ],
+    "added_at": "2026-11-01"
   },
   {
     "id": "disklens-windirstat-rea-case",
@@ -3563,7 +3575,8 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/KarlssonChristoffer/DiskLens/blob/c7d67f4b084b408d9b3e1bb22ee8723727494488/docs/research.md"
-    ]
+    ],
+    "added_at": "2026-11-01"
   },
   {
     "id": "soundconnect-desktop-rea-engine-case",
@@ -3595,7 +3608,8 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/B-Howell/soundconnect-desktop/blob/481f4af2da2c96026bd14d19f366c76aa737ccd0/docs/research/SoundConnect%20Desktop%20-%20Upstream%20Security%20Review.md"
-    ]
+    ],
+    "added_at": "2026-11-01"
   },
   {
     "id": "rec-rs-obs-rea-recorder-case",
@@ -3629,7 +3643,8 @@
     "additional_evidence_urls": [
       "https://github.com/michaelshimeles/rec-rs/blob/93dd4948cdc8919e8b444a5af0141cf7c3628e7c/analysis/OBS_ARCHITECTURE.md",
       "https://github.com/michaelshimeles/rec-rs/releases/tag/v0.1.2"
-    ]
+    ],
+    "added_at": "2026-11-01"
   },
   {
     "id": "sketch-paper-rea-canvas-case",
@@ -3663,7 +3678,8 @@
     "additional_evidence_urls": [
       "https://github.com/michaelshimeles/sketch/blob/af814b7ab2bd77328a906a1986a048c233e25f9c/analysis/PAPER_ARCHITECTURE.md",
       "https://github.com/michaelshimeles/sketch/releases/tag/v0.1.0"
-    ]
+    ],
+    "added_at": "2026-11-01"
   },
   {
     "id": "terminal-tradingview-rea-chart-case",
@@ -3695,6 +3711,7 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/michaelshimeles/terminal/blob/94bb329d683471518dcd210f9ca9fca073c15d0b/docs/analysis/README.md"
-    ]
+    ],
+    "added_at": "2026-11-01"
   }
 ]
