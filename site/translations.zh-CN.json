@@ -5362,6 +5362,7 @@
     "name": "OpenBattlefield2：尚未完成的 Refractor 2 引擎重实现",
     "requirements": [
       "需要自有 Battlefield 2 1.5 安装、CMake 3.24+、Ninja、C++20 编译器及 SDL3；Flash 菜单还需要 Rust 和 Ruffle。",
+      "公开的准星研究引用 REA Evidence ID；CLAUDE.md 说明混合 REA/Ghidra 工作流及其大载荷、临时项目限制，不代表每个子系统都由 REA 重建。",
       "主要平台为 macOS arm64；Windows 预设维持构建但未实际测试。依赖游戏数据的测试在缺少文件时可提示后通过。",
       "弹药与装填、后坐力、弹道、音频、驾驶和完整指挥官/小队交互仍未完成；这是引擎研究项目，并非完整游戏移植。",
       "MIT 覆盖项目代码，不分发原始 Battlefield 2 游戏内容。"

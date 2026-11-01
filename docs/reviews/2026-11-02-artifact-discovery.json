@@ -124,11 +124,11 @@
     {
       "catalog_id": "openbattlefield2-refractor-engine-case",
       "canonical_url": "https://github.com/Moxnatiy/OpenBattlefield2",
-      "reviewed_at": "2026-11-01T16:36:25Z",
+      "reviewed_at": "2026-11-01",
       "evidence_url": "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/README.md",
       "reviewed_readme_sha256": "4a5a66f890c15439a3bef880f7c03a1a9fc469c6a7a81e7decaefd7da38d9489",
       "reviewed_readme_bytes": 12597,
-      "relationship": "independent-reconstruction",
+      "relationship": "community-reported-mixed-workflow",
       "artifact_scope": "Partial engine and server interoperation; major gameplay remains unfinished.",
       "runtime_tested_by_catalog": false,
       "duplicate_search": {
@@ -136,7 +136,12 @@
         "total": 0,
         "items": []
       },
-      "baseline_scan_snapshot": []
+      "baseline_scan_snapshot": [],
+      "additional_primary_evidence_urls": [
+        "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/CLAUDE.md",
+        "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/docs/functions/hud-crosshair.md"
+      ],
+      "attribution_decision": "README alone did not establish REA use. A follow-up at the same commit found the documented mixed workflow and crosshair research citing REA Evidence IDs; classify as author-reported mixed workflow, without extending that attribution to every subsystem."
     },
     {
       "catalog_id": "siegefx-dungeon-siege-engine-case",

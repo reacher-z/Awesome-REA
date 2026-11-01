@@ -2,9 +2,9 @@
 
 Reviewed between **2026-11-01 16:36 and 16:43 UTC**. Catalog baseline: `2771f980588a45b7eb5c9a3d4195ea3406e57fe9`. [Machine-readable review receipts](2026-11-02-artifact-discovery.json).
 
-This batch adds seven documentation-reviewed cases: four author-reported REA mixed workflows and three independent reconstruction projects. It does not assign completeness scores or report independent runtime tests. Netcat produces analysis artifacts, not a rebuilt app.
+This batch adds seven documentation-reviewed cases: five author-reported REA mixed workflows and two independent reconstruction projects. It does not assign completeness scores or report independent runtime tests. Netcat produces analysis artifacts, not a rebuilt app.
 
-本批新增七个文档核查案例：四个有作者报告支持的 REA 混合工作流，三个独立重建项目。不评定完整度分数，也不声称独立实测。netcat 的产物是分析资料，不是重建应用。
+本批新增七个文档核查案例：五个有作者报告支持的 REA 混合工作流，两个独立重建项目。不评定完整度分数，也不声称独立实测。netcat 的产物是分析资料，不是重建应用。
 
 ## Discovery and duplicate checks
 
@@ -36,3 +36,5 @@ The catalog records retain bilingual prerequisites, licenses, evidence, review d
 - Classification: case-study / independent-reconstruction / reconstruction-cases / Game. The README establishes a Rust port of a named game; Ghidra research supports provenance but the result being cataloged is the game reconstruction, rather than a Binary-analysis tool.
 - Inputs and limits: owned NA SCUS-94254 disc image; Rust edition 2024 for source builds; author-reported full-game ladder, enhancements differing from retail, disc-gated tests that skip without input. Unlicense/MIT covers code and docs, not original game content.
 - Decision: add a separate source-reviewed record and Chinese translation. Retain the baseline automated scan unchanged; generators add the curated cross-link. Nothing upstream was installed or executed.
+
+OpenBattlefield2 attribution follow-up: its README alone did not identify REA. The same pinned commit’s [workflow notes](https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/CLAUDE.md) describe REA/Ghidra use and limits, and its [crosshair research](https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/docs/functions/hud-crosshair.md) cites REA Evidence IDs and binary addresses. The case therefore uses author-reported mixed workflow and Game/Binary targets; this does not attribute every subsystem to REA or establish completed gameplay.

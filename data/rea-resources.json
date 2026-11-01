@@ -3281,5 +3281,40 @@
     "additional_evidence_urls": [
       "https://github.com/dmytrobsp/fastview-rea/releases"
     ]
+  },
+  {
+    "id": "openbattlefield2-refractor-engine-case",
+    "name": "OpenBattlefield2: an unfinished Refractor 2 engine reimplementation",
+    "url": "https://github.com/Moxnatiy/OpenBattlefield2",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A C++20 reimplementation of Battlefield 2’s Refractor 2 engine reads original game data and documents menu rendering, level loading and server interoperability. Published crosshair research cites REA/Ghidra evidence IDs and binary addresses; major gameplay systems remain unfinished.",
+    "description_zh": "C++20 重实现 Battlefield 2 的 Refractor 2 引擎，读取原始游戏数据，记录菜单渲染、关卡载入及服务器互通；公开的准星研究引用 REA/Ghidra 证据 ID 和二进制地址，主要玩法系统仍未完成。",
+    "evidence_url": "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an owned Battlefield 2 1.5 installation, CMake 3.24+, Ninja, a C++20 compiler and SDL3; the Flash menu additionally needs Rust and Ruffle.",
+      "Published crosshair research cites REA Evidence IDs; CLAUDE.md describes the mixed REA/Ghidra workflow and its payload and temporary-project limitations. This attribution does not establish that every subsystem was reconstructed with REA.",
+      "macOS arm64 is the primary platform; the Windows preset is kept building but is not exercised. Tests needing game files can pass with a note when those files are absent.",
+      "Ammunition/reloading, recoil, projectiles, audio, driving and full commander/squad interaction remain unfinished; this is an engine research project, not a complete game port.",
+      "MIT covers the project code; no original Battlefield 2 game content is redistributed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/CLAUDE.md",
+      "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/docs/functions/hud-crosshair.md"
+    ]
   }
 ]
