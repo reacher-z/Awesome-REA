@@ -146,6 +146,7 @@ class SecurityHeaderTests(unittest.TestCase):
             '/downloads/records.jsonl': {'content-type': 'application/x-ndjson; charset=utf-8'},
             '/downloads/awesome-rea-data.zip': {'content-type': 'application/zip'},
             '/evidence/source-scans/*': {'content-type': 'application/zip'},
+            '/badges/*': {'content-type': 'image/svg+xml'},
             **{host: {'x-robots-tag': 'noindex'} for host in ('https://:project.pages.dev/*',
                                                               'https://:version.:project.pages.dev/*')},
         })
