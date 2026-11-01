@@ -1,4 +1,6 @@
 /* Scholarly reading layout. Uses the shared palette and system fonts only. */
+:root{--abstract:#fbfaff}
+@media (prefers-color-scheme: dark){:root{--abstract:#1f1e2c}}
 .survey-page {
   --survey-serif:Georgia,"Times New Roman","Songti SC","Noto Serif CJK SC",SimSun,serif;
   --survey-measure:72ch;
@@ -60,7 +62,7 @@
 .survey-section>:last-child {margin-bottom:0}
 .survey-section-intro {color:var(--ink);font-size:18px;line-height:1.8}
 
-.survey-abstract {margin:0 0 32px;padding:25px 28px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;background:#fbfaff}
+.survey-abstract {margin:0 0 32px;padding:25px 28px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;background:var(--abstract)}
 .survey-abstract h2 {margin-bottom:14px;font-size:25px}
 .survey-abstract p:last-child {margin-bottom:0}
 .survey-findings {margin:28px 0;padding:24px 28px;border-block:1px solid var(--strong);background:var(--soft)}
@@ -81,7 +83,7 @@
 .survey-table th,.survey-table td {padding:13px 15px;border-top:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
 .survey-table thead th {background:var(--soft);color:var(--ink);font-weight:650;border-bottom:1px solid var(--strong)}
 .survey-table tbody th {color:var(--ink);font-weight:600}
-.survey-table tbody tr:nth-child(even) {background:#fcfcfe}
+.survey-table tbody tr:nth-child(even) {background:var(--faint)}
 .survey-table p {margin:0 0 8px}
 .survey-table p:last-child {margin-bottom:0}
 .survey-table :is(ul,ol) {margin:0;padding-left:18px}
@@ -221,7 +223,7 @@ html[lang="zh-CN"] .survey-kicker {letter-spacing:.05em}
 
 /* Short task-oriented navigation keeps the article close on small screens. */
 .survey-toc-mobile{display:none}
-.survey-actions .button-primary{background:var(--ink);border-color:var(--ink);color:#fff}
+.survey-actions .button-primary{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
 .survey-actions .button-primary:hover{background:var(--link)}
 .survey-header{padding-top:40px;padding-bottom:28px}
 .survey-toc-desktop a{min-height:36px;padding-block:6px}

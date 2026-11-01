@@ -36,7 +36,7 @@
 - [nmlgc/ReC98](https://github.com/nmlgc/ReC98) — 东方 PC-98 修复项目。 **[875 星标]**
 - [AxioDL/metaforce](https://github.com/AxioDL/metaforce) — Metroid Prime 引擎的原生重新实现。 **[808 星标]** · 精选：[Metaforce：在反编译之上重建的《密特罗德 Prime》引擎重实现](https://awesomerea.org/zh/resources/metaforce-metroid-prime-case/)
 - [EstebanPdN/zelda-tmc-3ds](https://github.com/EstebanPdN/zelda-tmc-3ds) — 基于 Project Picori 的 The Legend of Zelda: The Minish Cap 原生 Nintendo 3DS 移植版。 **[757 星标]**
-- [SAT-R/sa2](https://github.com/SAT-R/sa2) — 使用 C 编写的 Game Boy Advance 游戏《索尼克进化 1 与 2》的反编译和移植项目。 **[678 星标]**
+- [SAT-R/sa2](https://github.com/SAT-R/sa2) — 使用 C 编写的 Game Boy Advance 游戏《索尼克进化 1 与 2》的反编译和移植项目。 **[678 星标]** · 精选：[《索尼克 Advance》1 与 2：一致性 GBA 反编译及宽屏移植](https://awesomerea.org/zh/resources/sonic-advance-1-2-decomp-port-case/)
 - [axhlzy/Il2CppHookScripts](https://github.com/axhlzy/Il2CppHookScripts) — 基于 Frida 的 libil2cpp.so 运行时解析脚本。 **[664 星标]**
 - [OpenRakis/Spice86](https://github.com/OpenRakis/Spice86) — 逆向分析并重写实模式 DOS 程序！ **[662 星标]** · 精选：[Spice86 实模式 DOS 逆向与重写模拟器](https://awesomerea.org/zh/resources/spice86/)
 - [matt-kempster/m2c](https://github.com/matt-kempster/m2c) — 面向 MIPS、PowerPC、ARM 和 SuperH 的反编译器。 **[658 星标]** · 精选：[m2c 匹配反编译器](https://awesomerea.org/zh/resources/m2c/)
@@ -48,7 +48,7 @@
 - [marsinator358/luajit-decompiler-v2](https://github.com/marsinator358/luajit-decompiler-v2) — LuaJIT 字节码反编译器。 **[487 星标]** · 精选：[LuaJIT Decompiler v2 字节码反编译器](https://awesomerea.org/zh/resources/luajit-decompiler-v2/)
 - [sneakyevil/IL2CPP\_Resolver](https://github.com/sneakyevil/IL2CPP_Resolver) — 面向 Unity IL2CPP 的运行时 API 解析器。 **[475 星标]**
 - [TeamGDB/Yakumo](https://github.com/TeamGDB/Yakumo) — 将一款 PSP 游戏静态重编译为原生可执行文件，使用 Vulkan 和 SDL3。需自备游戏副本。 **[447 星标]**
-- [AliveTeam/alive\_reversing](https://github.com/AliveTeam/alive_reversing) — 《Oddworld: Abe’s Exoddus》与《Oddworld: Abe’s Oddysee》的重新实现。 **[441 星标]**
+- [AliveTeam/alive\_reversing](https://github.com/AliveTeam/alive_reversing) — 《Oddworld: Abe’s Exoddus》与《Oddworld: Abe’s Oddysee》的重新实现。 **[441 星标]** · 精选：[R.E.L.I.V.E.：Oddworld: Abe’s Oddysee 与 Abe’s Exoddus 引擎的重新实现](https://awesomerea.org/zh/resources/relive-oddworld-abe-engine-case/)
 - [LazyDuchess/OpenTS2](https://github.com/LazyDuchess/OpenTS2) — 使用 Unity 开源重新实现《模拟人生 2》。 **[432 星标]**
 - [alexbatalov/fallout2-re](https://github.com/alexbatalov/fallout2-re) — 通过逆向工程重建的《辐射 2》。 **[411 星标]**
 - [CTR-tools/ctr-native](https://github.com/CTR-tools/ctr-native) — 《古惑狼赛车》反编译项目。 **[405 星标]**
@@ -56,7 +56,7 @@
 - [ethteck/splat](https://github.com/ethteck/splat) — 用于辅助反编译和模组制作项目的二进制拆分工具。 **[368 星标]** · 精选：[splat 二进制拆分工具](https://awesomerea.org/zh/resources/splat/)
 - [PrimeDecomp/prime](https://github.com/PrimeDecomp/prime) — 可生成匹配原始二进制结果的《密特罗德 Prime》反编译项目。 **[367 星标]** · 精选：[《密特罗德 Prime》：PrimeDecomp 的 GameCube 版一致性反编译](https://awesomerea.org/zh/resources/primedecomp-metroid-prime-decomp-case/)
 - [0xDC00/agent](https://github.com/0xDC00/agent) — 基于脚本的通用文本 hook 工具，由 Frida 驱动。 **[357 星标]**
-- [adonis-singh/re4](https://github.com/adonis-singh/re4) — 《生化危机 4》（GameCube，G4BE08 调试版本）：完整反编译为 C/C++，生成与原版逐字节一致的结果。 **[345 星标]**
+- [adonis-singh/re4](https://github.com/adonis-singh/re4) — 《生化危机 4》（GameCube，G4BE08 调试版本）：完整反编译为 C/C++，生成与原版逐字节一致的结果。 **[345 星标]** · 精选：[re4：Resident Evil 4 GameCube 调试版的字节一致反编译](https://awesomerea.org/zh/resources/re4-gamecube-debug-decomp-case/)
 - [xensik/gsc-tool](https://github.com/xensik/gsc-tool) — 用于编译和反编译 IW 引擎游戏脚本的实用工具。 **[335 星标]**
 - [snuri00/psp-web-recomp](https://github.com/snuri00/psp-web-recomp) — 在浏览器中运行 PSP 游戏：静态重编译为 WebAssembly，配备高层仿真（HLE）内核与 WebGL2 渲染器。 **[329 星标]** · 精选：[PSP Web Recomp 浏览器游戏重编译项目](https://awesomerea.org/zh/resources/psp-web-recomp/)
 - [SpeedBreakerProject/speedbreaker](https://github.com/SpeedBreakerProject/speedbreaker) — Xbox 360 版 Need for Speed: Most Wanted（2005）的非官方静态重编译项目：面向 Steam Deck、Steam Machine、Steam Frame、Linux 和 Mac 的原生移植；iPhone/iPad 可侧载实验性 IPA 或自行构建。需自备光盘，不附带游戏文件。与 EA 或 Valve 无关联。 **[326 星标]** · 精选：[SpeedBreaker：对 Xbox 360 版《极品飞车：最高通缉》的静态重编译](https://awesomerea.org/zh/resources/speedbreaker-nfs-most-wanted-case/)
@@ -105,7 +105,7 @@
 - [JackandBeans/Snap64Recomp](https://github.com/JackandBeans/Snap64Recomp) — 通过静态重编译将 N64 版《Pokémon Snap》原生移植至 Windows、Linux 和 macOS。默认保留卡带版的游玩体验，所有增强功能均需自行开启。需自备转储文件，不包含游戏数据。 **[109 星标]** · 精选：[Snap64 Recomp：Pokémon Snap 的静态重编译移植](https://awesomerea.org/zh/resources/snap64-recomp-case/)
 - [ExtraJuiceMan/ChristWareAmongUs](https://github.com/ExtraJuiceMan/ChristWareAmongUs) — 针对近期热门游戏 Among Us 的作弊工具 **[105 星标]**
 - [mukaschultze/grand-theft-auto-for-unity](https://github.com/mukaschultze/grand-theft-auto-for-unity) — 适用于 Unity 引擎的 Grand Theft Auto 地图加载器。 **[105 星标]**
-- [Yharnam-Hunters/Paleblood](https://github.com/Yharnam-Hunters/Paleblood) — Bloodborne（CUSA03173 v1.09）反编译项目，带有独立运行时；逐个验证函数，将游戏代码重写为可读的 C++。游戏尚无法运行，已验证 21 个函数，不包含游戏文件。 **[104 星标]**
+- [Yharnam-Hunters/Paleblood](https://github.com/Yharnam-Hunters/Paleblood) — Bloodborne（CUSA03173 v1.09）反编译项目，带有独立运行时；逐个验证函数，将游戏代码重写为可读的 C++。游戏尚无法运行，已验证 21 个函数，不包含游戏文件。 **[104 星标]** · 精选：[Paleblood：带自有运行时的 Bloodborne 功能等价反编译](https://awesomerea.org/zh/resources/paleblood-bloodborne-functional-decomp-case/)
 - [yannicksuter/smstrikers-decomp](https://github.com/yannicksuter/smstrikers-decomp) — Super Mario Strikers 反编译项目 **[102 星标]**
 - [EquiFox/MInjector](https://github.com/EquiFox/MInjector) — 使用 MInject 库的 Mono 框架注入器（C#）。 **[95 星标]**
 - [GrahamBest/dll\_hook-rs](https://github.com/GrahamBest/dll_hook-rs) — 演示如何在 Rust 中通过 DLL 实现 Hook 的 Rust 代码。 **[95 星标]**
@@ -118,7 +118,7 @@
 - [Toxocious/Aetherim](https://github.com/Toxocious/Aetherim) — 在运行时访问 Unity IL2CPP 类、方法和字段的 C++ 库。 **[88 星标]**
 - [encounter/dtk-template](https://github.com/encounter/dtk-template) — decomp-toolkit 的项目模板。 **[86 星标]** · 精选：[dtk-template GameCube/Wii 反编译项目模板](https://awesomerea.org/zh/resources/dtk-template/)
 - [ChrisNonyminus/mml1](https://github.com/ChrisNonyminus/mml1) — 正在进行中的 PlayStation 1 版 Megaman Legends（又名 Rockman Dash）反编译项目。 **[85 星标]**
-- [KIexster/god-of-war-recomp](https://github.com/KIexster/god-of-war-recomp) — 通过 PS2Recomp 静态重编译实现 God of War（PS2）的原生 PC 移植。 **[85 星标]**
+- [KIexster/god-of-war-recomp](https://github.com/KIexster/god-of-war-recomp) — 通过 PS2Recomp 静态重编译实现 God of War（PS2）的原生 PC 移植。 **[85 星标]** · 精选：[《战神》PS2 静态重编译：基于 PS2Recomp 的 Windows 原生移植](https://awesomerea.org/zh/resources/god-of-war-ps2-recomp-case/)
 - [wivi514/Dead\_Rising\_2\_Case\_Zero\_Xenon\_Recomp](https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp) — 通过静态重编译将 Xbox 360 XBLA 游戏《Dead Rising 2: Case Zero》原生移植至 PC。支持 Windows、Linux、Vulkan、键盘鼠标和手柄，需自行提供游戏副本。 **[85 星标]** · 精选：[Dead Rising 2: Case Zero：Xbox 360 XBLA 游戏的静态重编译移植](https://awesomerea.org/zh/resources/dead-rising-2-case-zero-recomp-case/)
 - [phikill/RE\_PUBG\_LITE](https://github.com/phikill/RE_PUBG_LITE) — PUBG LITE 游戏逆向工程。 **[80 星标]**
 - [BlackLineInteractive/Driveclub-Port](https://github.com/BlackLineInteractive/Driveclub-Port) — PS4 游戏 Driveclub 的 PC 移植。 **[79 星标]**
@@ -144,7 +144,7 @@
 - [VOTV-MP/Multivoid](https://github.com/VOTV-MP/Multivoid) — 《Voices of the Void》多人合作模组，适用于 UE4.27 的 UE4SS，可在一台主机与最多三个客户端之间同步游戏，无需修改任何游戏文件。 **[57 星标]**
 - [vyanhursky/DefJamFFNY-recomp](https://github.com/vyanhursky/DefJamFFNY-recomp) — 《Def Jam: Fight for NY》PC 移植版：将初代 Xbox 游戏静态重编译为原生 Windows 和 macOS 版本，使用 Direct3D 11／Vulkan。需自备游戏转储。 **[57 星标]**
 - [DaZombieKiller/TypeTreeDumper](https://github.com/DaZombieKiller/TypeTreeDumper) — 用于从 Unity 编辑器导出类型树信息的实验性工具。 **[56 星标]**
-- [gustavocanepa/gt4-decomp](https://github.com/gustavocanepa/gt4-decomp) — 借助 AI 对 Gran Turismo 4（PS2）引擎进行匹配反编译。不包含游戏数据。 **[55 星标]**
+- [gustavocanepa/gt4-decomp](https://github.com/gustavocanepa/gt4-decomp) — 借助 AI 对 Gran Turismo 4（PS2）引擎进行匹配反编译。不包含游戏数据。 **[55 星标]** · 精选：[Gran Turismo 4：借助智能体的 PS2 引擎匹配反编译](https://awesomerea.org/zh/resources/gran-turismo-4-matching-decomp-case/)
 - [OpenRAC/rac1-decomp](https://github.com/OpenRAC/rac1-decomp) — 正在进行的原版 Ratchet &amp; Clank（2002，PlayStation 2，SCES\_509.16，PAL v2.00）匹配反编译项目。重点是重建整洁、惯用且与零售版可执行文件一致的 C/C++ 源代码，为原生 PC 重新实现和游戏保存铺路。 **[55 星标]** · 精选：[Ratchet &amp; Clank：记录了代理流程的 PS2 一致性反编译](https://awesomerea.org/zh/resources/rac1-matching-decomp-case/)
 - [korobetski/Vagrant-Story-Unity-Parser](https://github.com/korobetski/Vagrant-Story-Unity-Parser) — 从 Square 的原版游戏《Vagrant Story》中读取数据，以构建预制体和数据库的编辑器脚本。 **[51 星标]**
 - [HalmyLyseas/VandalHearts-PcPort](https://github.com/HalmyLyseas/VandalHearts-PcPort) — PlayStation 游戏 Vandal Hearts 的原生 PC 移植版，基于逐字节精确匹配的反编译。支持 Windows 和 Linux；需自备光盘。 **[50 星标]** · 精选：[Vandal Hearts：基于一致性反编译的原生 PC 移植](https://awesomerea.org/zh/resources/vandal-hearts-pc-port-case/)

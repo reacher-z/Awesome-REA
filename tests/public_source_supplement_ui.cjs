@@ -16,6 +16,8 @@ const context = {
   },
   document: {createDocumentFragment: () => ({append() {}})},
   expandedRecords: () => new Set(), restoreExpanded() {}, sourceCard: () => ({}),
+  // renderSources also reveals the filtered-export button; tests/filtered_export_ui.cjs covers that.
+  showExport() {},
   sourceFiltered: () => context.sourceState.records,
   sourceTime: value => value, dataURL: filename => "/" + filename + "?v=test",
   t: key => ({

@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/firmware/) · [简体中文](firmware.zh-CN.md)
 
-**221 repositories** · 2026-10-20 UTC
+**222 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -23,6 +23,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [FirmWire/FirmWire](https://github.com/FirmWire/FirmWire) — FirmWire is a full-system baseband firmware emulation platform for fuzzing, debugging, and root-cause analysis of smartphone baseband firmwares **[891 stars]**
 - [sigrokproject/pulseview](https://github.com/sigrokproject/pulseview) — Read-only mirror of the official repo at git<span>:</span>//sigrok.org/pulseview. Pull requests welcome. Please file bugreports at sigrok.org/bugzilla. **[805 stars]** · Curated: [PulseView](https://awesomerea.org/resources/pulseview/)
 - [airbus-seclab/cpu\_rec](https://github.com/airbus-seclab/cpu_rec) — Recognize cpu instructions in an arbitrary binary file **[757 stars]** · Curated: [cpu\_rec](https://awesomerea.org/resources/cpu-rec/)
+- [quarkslab/binbloom](https://github.com/quarkslab/binbloom) — Raw binary firmware analysis software **[586 stars]** · Curated: [binbloom](https://awesomerea.org/resources/binbloom/)
 - [avatartwo/avatar2](https://github.com/avatartwo/avatar2) — Python core of avatar² **[579 stars]** · Curated: [avatar²](https://awesomerea.org/resources/avatar2/)
 - [al3xtjames/ghidra-firmware-utils](https://github.com/al3xtjames/ghidra-firmware-utils) — Ghidra utilities for analyzing PC firmware **[506 stars]** · Curated: [Ghidra Firmware Utilities](https://awesomerea.org/resources/ghidra-firmware-utils/)
 - [scriptingxss/owasp-fstm](https://github.com/scriptingxss/owasp-fstm) — The Firmware Security Testing Methodology (FSTM) is composed of nine stages tailored to enable security researchers, software developers, consultants, and Information Security professionals with conducting firmware security assessments. **[502 stars]**

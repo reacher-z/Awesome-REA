@@ -25,7 +25,14 @@ class PaperSearchTests(unittest.TestCase):
             for lang, path in [('en', 'papers/index.html'), ('zh', 'zh/papers/index.html')]:
                 html = (output / path).read_text()
                 self.assertEqual(len(re.findall(r'<article class="paper-card"', html)), len(papers))
-                self.assertRegex(html, r'<form id="paper-search"[^>]* hidden>')
+                # The form occupies its space from first paint; only scripting:none hides it.
+                form = re.search(r'<form id="paper-search"[^>]*>', html)[0]
+                self.assertIn('class="paper-search script-only"', form)
+                self.assertNotRegex(form, r'\bhidden\b')
+                self.assertIn('@media(scripting:none){.script-only{display:none!important}}', (ROOT / 'site/styles.css').read_text())
+                self.assertRegex(html, r'<button id="paper-clear"[^>]* disabled>')
+                initial = f'Showing {len(papers)} of {len(papers)} papers' if lang == 'en' else f'显示 {len(papers)} / {len(papers)} 篇论文'
+                self.assertIn(f'aria-atomic="true">{initial}</p>', html)
                 self.assertRegex(html, r'<select id="paper-layout"><option value="compact">[^<]+</option><option value="cards">[^<]+</option></select>')
                 self.assertNotRegex(html, r'<article[^>]*\bhidden\b')
                 self.assertIn('data-paper-layout="compact"', html)

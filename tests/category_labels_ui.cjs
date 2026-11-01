@@ -29,7 +29,9 @@ async function loaded(lang, categoryLabels) {
     const {options, cardLabels} = await loaded(lang, labels);
     // The filter, every card and the entry pages (build_entry_pages.py) show the same wording.
     for (const row of rows) assert.equal(cardLabels[row.id], labels[row.category][index]);
-    assert.deepEqual(new Map(options), new Map(rows.map(row => [row.category, labels[row.category][index]])));
+    // Each option also shows its live result count (one record per category here).
+    const counted = text => lang === 'zh' ? `${text}（1）` : `${text} (1)`;
+    assert.deepEqual(new Map(options), new Map(rows.map(row => [row.category, counted(labels[row.category][index])])));
     const collator = new Intl.Collator(lang === 'zh' ? 'zh-CN' : 'en');
     assert.deepEqual(options.map(([, text]) => text), options.map(([, text]) => text).sort(collator.compare));
   }

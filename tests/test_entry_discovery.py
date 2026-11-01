@@ -80,7 +80,7 @@ class EntryDiscoveryValidationTests(unittest.TestCase):
                 record['additional_evidence_urls'] = ['https://example.org/secondary-evidence']
                 html = _resource_card(record, language)
                 disclosure = re.search(r'<details class="requirements">(.*?)</details>', html, re.S)[1]
-                self.assertIn('使用条件与来源' if language == 'zh' else 'Requirements & sources', disclosure)
+                self.assertIn('使用条件与局限' if language == 'zh' else 'Requirements &amp; limits', disclosure)
                 for url in (record['evidence_url'], *record['additional_evidence_urls']):
                     self.assertIn('href="' + escape(url, quote=True) + '"', disclosure)
                 for requirement in record['requirements_zh' if language == 'zh' else 'requirements']:
@@ -90,7 +90,7 @@ class EntryDiscoveryValidationTests(unittest.TestCase):
 
     def test_sitemap_inventory_is_derived_and_rejects_missing_extra_duplicate_pages(self):
         base = [ORIGIN + prefix + path for prefix in ('', '/zh')
-                for path in ('/', '/resources/', '/cases/', '/papers/', '/survey/', '/about/', '/browse/',
+                for path in ('/', '/resources/', '/cases/', '/papers/', '/survey/', '/about/', '/contribute/', '/browse/',
                              *(f'/browse/{category}/' for category in CATEGORIES))]
         urls = base + self.detail_urls
         validate_route_inventory(urls, self.resources, self.papers)

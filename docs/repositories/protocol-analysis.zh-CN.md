@@ -12,7 +12,7 @@
 - [ainfosec/FISSURE](https://github.com/ainfosec/FISSURE) — 面向所有人的射频与逆向工程框架。欢迎关注并点亮 ★ 表示支持！ **[2,069 星标]** · 精选：[FISSURE 射频信号分析与协议发现框架](https://awesomerea.org/zh/resources/fissure/)
 - [marin-m/pbtk](https://github.com/marin-m/pbtk) — 用于逆向工程和模糊测试基于 Protobuf 的应用的工具集。 **[1,691 星标]** · 精选：[pbtk Protobuf 逆向工具集](https://awesomerea.org/zh/resources/pbtk/)
 - [alphaSeclab/awesome-network-stuff](https://github.com/alphaSeclab/awesome-network-stuff) — 网络安全资源，涵盖代理/GFW/反向代理/隧道/VPN/Tor/I2P，以及中间人攻击、端口敲门、网络嗅探、网络分析等。目前收录 1700 多个开源工具，后续将补充文章。 **[926 星标]**
-- [netzob/netzob](https://github.com/netzob/netzob) — Netzob：协议逆向工程、建模与模糊测试 **[838 星标]** · 精选：[Netzob 协议建模与推断框架](https://awesomerea.org/zh/resources/netzob/)
+- [netzob/netzob](https://github.com/netzob/netzob) — Netzob：协议逆向工程、建模与模糊测试 **[838 星标]** · 论文：[利用语义信息实现自动化协议逆向工程](https://awesomerea.org/zh/papers/paper-netzob/) · 精选：[Netzob 协议建模与推断框架](https://awesomerea.org/zh/resources/netzob/)
 - [furiousMAC/continuity](https://github.com/furiousMAC/continuity) — Apple Continuity 协议逆向工程与协议解析器 **[688 星标]** · 精选：[furiousMAC Apple Continuity 协议逆向与解析器](https://awesomerea.org/zh/resources/furiousmac-continuity/)
 - [fkie-cad/friTap](https://github.com/fkie-cad/friTap) — 让协议解密更轻松，简化研究人员的加密流量分析工作。 **[556 星标]** · 精选：[friTap TLS 密钥提取与流量解密工具](https://awesomerea.org/zh/resources/fritap/)
 - [brent-stone/CAN\_Reverse\_Engineering](https://github.com/brent-stone/CAN_Reverse_Engineering) — 面向控制器局域网（CAN）协议的自动化载荷逆向工程流程 **[456 星标]**

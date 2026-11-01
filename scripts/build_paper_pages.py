@@ -10,7 +10,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit
 
-from open_graph import open_graph_meta, website_reference
+from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
 
 STATUS_LABELS = {
     'conference-paper': ('Conference paper', '会议论文'),
@@ -75,6 +75,12 @@ def formatted_date(value: str | None, language: str, year: int | None = None) ->
     return f'{MONTHS[month - 1]} ' + (f'{int(parts[2])}, ' if len(parts) == 3 else '') + parts[0]
 
 
+def journal_title(venue: str) -> str:
+    """A PACM venue names its conference issue in parentheses; the journal is the title before it."""
+    match = re.fullmatch(r'(.+?) \([A-Z][A-Za-z0-9]* \d{4}\)', venue)
+    return match[1] if match else venue
+
+
 def bibtex_text(paper: dict) -> str:
     def literal(value):
         replacements = {'\\': r'\textbackslash{}', '{': r'\{', '}': r'\}', '&': r'\&', '%': r'\%', '$': r'\$', '#': r'\#', '_': r'\_', '~': r'\textasciitilde{}', '^': r'\textasciicircum{}'}
@@ -89,10 +95,11 @@ def bibtex_text(paper: dict) -> str:
         ('url', paper['url']),
     ]
     # Container fields come only from the publisher metadata cited in `citation`;
-    # without it, published entries keep the short venue label.
+    # without it, published entries keep the short venue label, minus a journal's conference issue.
     container = paper.get('citation') or {}
     if kind in {'inproceedings', 'article'}:
-        fields.append(('booktitle' if kind == 'inproceedings' else 'journal', literal(container.get('container_title') or paper['venue'])))
+        label = paper['venue'] if kind == 'inproceedings' else journal_title(paper['venue'])
+        fields.append(('booktitle' if kind == 'inproceedings' else 'journal', literal(container.get('container_title') or label)))
         for key, field in (('volume', 'volume'), ('issue', 'number'), ('series', 'series'), ('pages', 'pages'),
                            ('article_number', 'eid'), ('publisher', 'publisher')):
             if container.get(key):
@@ -185,7 +192,7 @@ def paper_card(paper: dict, language: str, use_pro: bool) -> str:
     return f'''<article class="paper-card" id="{paper['id']}" data-paper-id="{paper['id']}">
   <header><h3><a href="{web_url(paper['url'])}" target="_blank" rel="noopener">{escape(title)}{icon('external', use_pro)}</a></h3><div class="paper-meta"><span class="paper-year">{paper['year']}</span><span class="paper-venue" lang="en">{escape(paper['venue'])}</span><span class="paper-status paper-status-{paper['publication_status']}">{status}</span></div></header>
   <p class="paper-description">{escape(paper[f'description_{language}'])}</p>
-  <nav class="paper-links" aria-label="{escape(label('Links for ' + paper['title'], title + '的相关链接'), quote=True)}">{''.join(links)}</nav>
+  <ul class="paper-links">{''.join(f'<li>{link}</li>' for link in links)}</ul>
   <details class="paper-details"><summary>{label('Scope & sources', '适用范围与来源')}</summary><div class="paper-scope"><h4>{label('Scope & limitations', '研究范围与局限')}</h4><p>{escape(paper[f'scope_limitations_{language}'])}</p></div><h4>{label('Authors & citation', '作者与引文')}</h4>{original_title}<p class="paper-authors" lang="en">{escape('; '.join(paper['authors']))}</p><p class="paper-citation-download">{citation_link}</p><h4>{label('Why it fits this collection', '与本合集的关联')}</h4><p>{escape(paper[f'why_fits_{language}'])}</p><dl>{details}</dl><p>{escape(paper['metadata_notes_zh' if zh else 'metadata_notes'])}</p><h4>{label('Primary sources', '一手来源')}</h4><ul>{source_links}</ul><p class="paper-review-note">{label('Source review only; experiments were not rerun for this collection.', '本合集仅做来源复核，未重新运行论文实验。')}</p></details>
 </article>'''
 
@@ -309,7 +316,7 @@ def build_paper_pages(
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  {THEME_COLOR_META}
   <title>{title}</title>
   <meta name="description" content="{escape(description, quote=True)}">
   <link rel="canonical" href="{canonical}">
@@ -327,13 +334,13 @@ def build_paper_pages(
 </head>
 <body>
 <a class="skip-link" href="#papers-content">{label('Skip to the papers', '跳到论文目录')}</a>
-<header class="site-header"><div class="shell header-inner"><a class="wordmark" href="{home}" aria-label="{label('AwesomeREA.org home', 'AwesomeREA.org 首页')}"><img class="brand-mark" src="{escape(favicon_href, quote=True)}" alt="" width="33" height="33" aria-hidden="true"><span>Awesome<span class="wordmark-rea">REA</span><span class="wordmark-domain">.org</span></span></a><nav class="header-nav" aria-label="{label('Main navigation', '主导航')}"><a class="papers-language" href="{counterpart}" lang="{label('zh-CN', 'en')}" hreflang="{label('zh-CN', 'en')}" aria-label="{label('Switch to Simplified Chinese', '切换为英文')}">{icon('globe', use_pro)}<span>{label('简体中文', 'English')}</span></a><a class="github-link" href="{web_url(repository_url)}" target="_blank" rel="noopener" aria-label="GitHub">{icon('github', use_pro)}<span>GitHub</span></a></nav></div></header>
+<header class="site-header"><div class="shell header-inner"><a class="wordmark" href="{home}" aria-label="{label('AwesomeREA.org home', 'AwesomeREA.org 首页')}"><img class="brand-mark" src="{escape(favicon_href, quote=True)}" alt="" width="33" height="33" aria-hidden="true"><span>Awesome<span class="wordmark-rea">REA</span><span class="wordmark-domain">.org</span></span></a><nav class="header-nav" aria-label="{label('Main navigation', '主导航')}"><a class="papers-language" href="{counterpart}" lang="{label('zh-CN', 'en')}" hreflang="{label('zh-CN', 'en')}">{icon('globe', use_pro)}<span>{label('简体中文', 'English')}</span></a><a class="github-link" href="{web_url(repository_url)}" target="_blank" rel="noopener" aria-label="GitHub">{icon('github', use_pro)}<span>GitHub</span></a></nav></div></header>
 <main id="papers-content" class="shell papers-main">
   <nav class="papers-breadcrumbs" aria-label="{label('Breadcrumb', '当前位置')}"><a href="{home}">{label('Home', '首页')}</a><span aria-hidden="true">/</span><span aria-current="page">{label('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准')}</span></nav>
   <section class="collection-intro papers-intro" aria-labelledby="papers-title"><p class="eyebrow">{label('RESEARCH & EVIDENCE', '研究与证据')}</p><h1 id="papers-title">{label('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准')}<span class="title-dot" aria-hidden="true">.</span></h1><p>{escape(intro)}</p></section>
   <div class="papers-actions"><a class="button button-outline" href="{web_url(repository_url + "/issues/new?template=paper.yml")}" target="_blank" rel="noopener">{icon("document", use_pro)}{label("Suggest a paper", "推荐论文")}</a><a class="button button-outline" href="{browse}">{icon('layers', use_pro)}{label('Browse repositories', '浏览仓库')}</a><a class="papers-bibliography" href="/papers/references.bib" download="awesomerea-papers.bib" type="application/x-bibtex">{label('Download bibliography', '下载参考文献')} · BibTeX ↓</a></div>
   <p class="papers-review-policy">{label('We check primary sources; we do not rerun experiments or independently reproduce results.', '仅复核一手来源，未重新运行实验或独立复现结果。')}</p>
-  <form id="paper-search" class="paper-search" role="search" aria-label="{label('Search research papers', '搜索研究论文')}" hidden>
+  <form id="paper-search" class="paper-search script-only" role="search" aria-label="{label('Search research papers', '搜索研究论文')}">
     <div class="paper-search-field paper-search-query"><label for="paper-query">{label('Search papers', '搜索论文')}</label><input id="paper-query" name="q" type="search" maxlength="240" autocomplete="off" placeholder="{label('Title, author, keyword, DOI or arXiv ID', '标题、作者、关键词、DOI 或 arXiv 编号')}" aria-describedby="paper-search-help"></div>
     <div class="paper-search-field"><label for="paper-target">{label('Target', '目标')}</label><select id="paper-target" name="target"><option value="all">{label('All targets', '全部目标')}</option>{target_options}</select></div>
     <details class="paper-search-more" id="paper-more-filters"><summary>{label('More filters', '更多筛选')}</summary><div class="paper-search-options">
@@ -343,8 +350,8 @@ def build_paper_pages(
     </div>
     <p id="paper-search-help" class="paper-search-help">{label('Search in English or Chinese. Filters match every listed target; papers stay in their main section.', '支持中英文搜索。筛选匹配全部目标，论文仍按主要目标分组。')}</p>
     </details>
-    <button id="paper-clear" class="button button-outline" type="button">{label('Clear filters', '清除筛选')}</button>
-    <p id="paper-results" class="paper-search-results" role="status" aria-live="polite" aria-atomic="true"></p>
+    <button id="paper-clear" class="button button-outline" type="button" disabled>{label('Clear filters', '清除筛选')}</button>
+    <p id="paper-results" class="paper-search-results" role="status" aria-live="polite" aria-atomic="true">{label(f'Showing {len(papers)} of {len(papers)} papers', f'显示 {len(papers)} / {len(papers)} 篇论文')}</p>
   </form>
   <div id="paper-empty" class="paper-search-empty" hidden><p>{label('No papers match these filters.', '没有符合这些条件的论文。')}</p><button id="paper-empty-reset" class="button button-outline" type="button">{label('Clear filters and show all papers', '清除筛选并显示全部论文')}</button></div>
   <nav class="papers-topic-nav" aria-label="{label('Research areas', '研究方向')}">{''.join(nav)}</nav>

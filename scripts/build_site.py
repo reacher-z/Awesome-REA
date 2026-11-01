@@ -20,6 +20,7 @@ from build_survey import build_survey, discussion_sections
 from build_entry_pages import build_entry_pages
 from build_feed import build_feeds
 from build_manifest import write_build_manifest
+from language_fragment import add_language_fragment_script
 from data_downloads import build_data_downloads
 from open_graph import website_node
 from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage
@@ -38,6 +39,9 @@ REPOSITORY_URL = "https://github.com/reacher-z/Awesome-REA"
 TARGETS = {"website", "game", "app", "binary", "firmware", "protocol"}
 # Listed projects may link back to their entries with this badge, so its public URL must stay stable.
 LISTED_BADGE = "featured-by-awesome-rea-inline.svg"
+# Record fields the homepage needs for its first render; catalog.json keeps every field.
+CATALOG_INDEX_FIELDS = ("id", "name", "name_zh", "url", "evidence_url", "description_en", "description_zh", "kind",
+                        "category", "group", "relationship", "targets", "verified_at")
 FONT_AWESOME_ICONS = {
     "arrow": "arrow-right", "external": "arrow-up-right-from-square",
     "search": "magnifying-glass", "copy": "copy", "check": "check",
@@ -46,6 +50,14 @@ FONT_AWESOME_ICONS = {
     "layers": "layer-group", "document": "file-lines", "book": "book-open",
     "terminal": "terminal", "github": "github", "globe": "globe", "gamepad": "gamepad",
 }
+# Brand icons are drawn from the Brands face; every other key comes from Classic Light.
+FONT_AWESOME_BRANDS = {"github"}
+
+
+def catalog_index(catalog: dict) -> dict:
+    """Project the complete catalog onto the lean index the homepage renders first."""
+    return {"meta": catalog["meta"], "topic_labels": catalog["topic_labels"], "category_labels": catalog["category_labels"],
+            "resources": [{key: record[key] for key in CATALOG_INDEX_FIELDS if key in record} for record in catalog["resources"]]}
 
 
 def fontawesome_markup(html: str, stylesheet_url: str) -> str:
@@ -61,6 +73,34 @@ def fontawesome_markup(html: str, stylesheet_url: str) -> str:
 
     html = re.sub(r'<svg\b([^>]*)>\s*<use href="#i-([a-z-]+)"\s*/>\s*</svg>', replace_icon, html)
     return html
+
+
+def subset_icon_font(source: Path, destination: Path, codepoints: set[int]) -> None:
+    """Write a WOFF2 copy of a licensed face that keeps only the site's icon code points."""
+    try:
+        from fontTools import subset
+        from fontTools.ttLib import TTLibError, woff2
+    except ImportError:
+        woff2 = None
+    if woff2 is None or not woff2.haveBrotli:
+        raise ValueError("Subsetting the licensed icon fonts requires fontTools with Brotli: pip install fonttools brotli")
+    options = subset.Options()
+    options.flavor = "woff2"
+    # Keep every name record, including the copyright and license notices.
+    options.name_IDs = ["*"]
+    options.name_languages = ["*"]
+    try:
+        font = subset.load_font(str(source), options)
+    except (TTLibError, OSError, AssertionError) as error:
+        raise ValueError(f"Font Awesome input is not a readable font: {source.name}") from error
+    with font:
+        subsetter = subset.Subsetter(options)
+        subsetter.populate(unicodes=codepoints)
+        subsetter.subset(font)
+        missing = codepoints - set(font.getBestCmap() or {})
+        if missing:
+            raise ValueError(f"Font Awesome subset of {source.name} is missing icons: " + ", ".join(f"U+{point:04X}" for point in sorted(missing)))
+        subset.save_font(font, str(destination), options)
 
 
 def configure_fontawesome(html: str, licensed_package: Path | None, assets_url: str | None = None, *, output: Path) -> str:
@@ -93,8 +133,11 @@ def configure_fontawesome(html: str, licensed_package: Path | None, assets_url: 
             raise ValueError(f"Required Font Awesome icon is missing: {icon_name}")
         codepoints[key] = match.group(1)
     font_output.mkdir(exist_ok=True)
-    for name in font_names:
-        shutil.copy2(licensed_package / "webfonts" / name, font_output / name)
+    # Ship only the glyphs the site draws instead of the complete faces.
+    light = {int(point, 16) for key, point in codepoints.items() if key not in FONT_AWESOME_BRANDS}
+    brands = {int(codepoints[key], 16) for key in FONT_AWESOME_BRANDS}
+    for name, points in zip(font_names, (light, brands)):
+        subset_icon_font(licensed_package / "webfonts" / name, font_output / name, points)
     copyright_header = "/*! Font Awesome Pro by Fonticons, Inc. https://fontawesome.com — Commercial License: https://fontawesome.com/license. Licensed website assets; do not redistribute in a public source repository. */\n"
     css = copyright_header + """
 @font-face{font-family:'AwesomeREA Icons';font-style:normal;font-weight:300;font-display:block;src:url('fonts/fa-light-300.woff2') format('woff2')}
@@ -154,8 +197,6 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     for filename in ("rea-resources.json", "tool-resources.json"):
         for original in json.loads((ROOT / "data" / filename).read_text(encoding="utf-8")):
             record = dict(original)
-            if isinstance(record["requirements"], str):
-                record["requirements"] = [record["requirements"]]
             translation = translations.get(record["id"], {})
             record["requirements_zh"] = record.get("requirements_zh") or translation.get("requirements", record["requirements"])
             record["name_zh"] = record.get("name_zh") or translation.get("name", record["name"])
@@ -183,6 +224,15 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     html = (output / "index.html").read_text(encoding="utf-8")
     for key, value in {"RESOURCE_COUNT": len(resources), "INTEGRATION_COUNT": metadata["independent_integration_count"], "REVIEWED_AT": latest_review}.items():
         html = html.replace("{{" + key + "}}", str(value))
+    # Unfiltered target counts and the Protocol button are in the HTML, so the first paint matches app.js's first render.
+    for target in ("all", *sorted(TARGETS)):
+        count = len(resources) if target == "all" else sum(target in record["targets"] for record in resources)
+        html = html.replace("{{TARGET_COUNT_" + target.upper() + "}}", str(count))
+    protocol_button = '<button type="button" class="target-filter" data-target="protocol" aria-pressed="false" hidden>'
+    if html.count(protocol_button) != 1:
+        raise ValueError("Homepage needs exactly one curated Protocol target button")
+    if any("protocol" in record["targets"] for record in resources):
+        html = html.replace(protocol_button, protocol_button.replace(" hidden>", ">"))
     html = configure_fontawesome(html, fontawesome_dir, fontawesome_assets_url, output=output)
     source_index_path = ROOT / "data" / "source-index.json"
     source_index_output = output / "source-index.json"
@@ -245,6 +295,8 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     category_labels = {category: list(labels) for category, labels in CATEGORIES.items()}
     catalog = {"meta": metadata, "resources": resources, "topic_labels": topic_labels, "category_labels": category_labels}
     (output / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # Requirement lists and additional evidence stay out of the first-render index; app.js fetches catalog.json afterwards.
+    (output / "catalog-index.json").write_text(json.dumps(catalog_index(catalog), ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     (output / "papers.json").write_text(json.dumps(papers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for key, value in {"BROWSE_COUNT": metadata["source_index"]["resource_count"], "SCANNED_COUNT": metadata["source_index"].get("scanned_count", 0), "PAPER_COUNT": len(papers)}.items():
         html = html.replace("{{" + key + "}}", f"{value:,}")
@@ -269,12 +321,12 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
             data_digest.update(filename.encode("utf-8") + b"\0" + path.read_bytes())
     data_revision = data_digest.hexdigest()[:16]
     html = html.replace('<html ', f'<html data-catalog-revision="{data_revision}" ', 1)
-    # Start the catalog request while the page parses. The URL and CORS mode match app.js's
-    # fetch(dataURL("catalog.json")), so that fetch reuses this response; source-browser.json stays on demand.
+    # Start the catalog index request while the page parses. The URL and CORS mode match app.js's
+    # fetch(dataURL("catalog-index.json")), so that fetch reuses this response; source-browser.json stays on demand.
     script_tag = f'<script src="{asset_hrefs["app.js"].lstrip("/")}" defer></script>'
     if html.count(script_tag) != 1:
         raise ValueError("Homepage needs exactly one deferred app.js script")
-    html = html.replace(script_tag, f'<link rel="preload" href="/catalog.json?v={data_revision}" as="fetch" crossorigin>\n  ' + script_tag)
+    html = html.replace(script_tag, f'<link rel="preload" href="/catalog-index.json?v={data_revision}" as="fetch" crossorigin>\n  ' + script_tag)
     # Both entry pages contain their own language before JavaScript runs.
     app_source = (SOURCE / "app.js").read_text(encoding="utf-8")
     (output / "index.html").write_text(localized_homepage(html, app_source, "en"), encoding="utf-8")
@@ -315,6 +367,8 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     )
     # Feeds list inclusion dates; they link from pages written above and are not sitemap pages.
     build_feeds(output, resources, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL)
+    # Static pages with a language link keep the reader's card or section on the translated page.
+    add_language_fragment_script(output)
     (output / ".nojekyll").write_text("", encoding="utf-8")
     (output / "CNAME").write_text("awesomerea.org\n", encoding="utf-8")
     (output / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")

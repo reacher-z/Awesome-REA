@@ -63,7 +63,7 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
   const windowListeners = {};
   const context = {document, location, URL, URLSearchParams, console, window: {addEventListener(event, callback) { windowListeners[event] = callback; }},
     history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
-    fetch: async url => { requests.push(String(url)); return {ok: true, json: async () => new URL(url).pathname.endsWith('catalog.json') ? {resources: curatedRows, meta: {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: rows.length}}} : browser}; }};
+    fetch: async url => { requests.push(String(url)); return {ok: true, json: async () => /^\/catalog(-index)?\.json$/.test(new URL(url).pathname) ? {resources: curatedRows, meta: {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: rows.length}}} : browser}; }};
   vm.createContext(context);
   vm.runInContext(script.replace('applyLanguage(); load();', '') + '\nglobalThis.audit = {state,sourceState,load,loadSources,filtered,sourceFiltered,applyLanguage,reset,resetSources,setIndexMode,sourceRelatedEntries};', context);
   return {api: context.audit, context, elements, buttons, protocolLabels, repositoryLinks, languageLinks, windowListeners, requests};
@@ -143,7 +143,7 @@ if (require.main === module) (async () => {
   const legacyChinese = setup('?lang=zh'); await legacyChinese.api.load();
   for (const app of [chinese, legacyChinese]) {
     assert.deepEqual(contribution(app), ['https://github.com/reacher-z/Awesome-REA/blob/main/CONTRIBUTING.zh-CN.md']);
-    assert(app.repositoryLinks.some(node => node.href === 'https://github.com/reacher-z/Awesome-REA/blob/main/data/README.md'));
+    assert(app.repositoryLinks.some(node => node.href === 'https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml'));
   }
   assert.equal(home.api.sourceState.mode, 'curated');
   for (const lang of ['en', 'zh']) {
@@ -227,8 +227,12 @@ if (require.main === module) (async () => {
       sorted.api.sourceState.sort = sort; orders[sort] = Array.from(sorted.api.sourceFiltered(), record => record.full_name);
     }
   }
-  assert.deepEqual(orders.en.kinds, ['Case study', 'Collection', 'Documentation', 'Integration', 'Learning resource', 'Project', 'Research', 'Tool']);
-  assert.deepEqual(orders.zh.kinds, ['案例', '工具', '合集', '集成', '文档', '项目', '学习资源', '研究']);
+  // Options sort by label; each also shows its live result count.
+  assert.deepEqual(orders.en.kinds, ['Case study', 'Collection', 'Documentation', 'Integration', 'Learning resource', 'Project', 'Research', 'Tool'].map(kind => kind + ' (1)'));
+  assert.deepEqual(orders.zh.kinds, ['案例', '工具', '合集', '集成', '文档', '项目', '学习资源', '研究'].map(kind => kind + '（1）'));
+  // This fixture's catalog has no category_labels, so options fall back to their keys; each still shows its count.
+  assert.deepEqual(orders.en.categories, ['agent mcp (2)', 'core (3)', 'jvm (3)']);
+  assert.deepEqual(orders.zh.categories, ['agent mcp（2）', 'core（3）', 'jvm（3）']);
   assert.deepEqual(orders.topics, ['aadog', 'zeta', 'reverse-engineering']);
   assert.deepEqual(orders.name, ['aadog/fd-back', 'Beta/viewer', 'delta/list', 'echo/docs', 'fox/course', 'gamma/paper', 'mid/reverse-engineering', 'zeta/project']);
   assert.deepEqual(orders.stars, ['mid/reverse-engineering', 'aadog/fd-back', 'zeta/project', 'Beta/viewer', 'delta/list', 'echo/docs', 'gamma/paper', 'fox/course']);

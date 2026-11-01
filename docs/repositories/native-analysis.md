@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**851 repositories** · 2026-10-20 UTC
+**849 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -50,12 +50,12 @@ These are automatically discovered projects, not individually curated or tested 
 - [yetone/native-feel-skill](https://github.com/yetone/native-feel-skill) — An Agent Skill for designing cross-platform desktop apps that feel native — distilled from Raycast's 2.0 deep-dive and reverse engineering of Raycast Beta.app. Eight architectural tenets, four-layer architecture, WebKit/WebView2 survival guide, 75-item ship audit. **[1,931 stars]**
 - [keystone-engine/keypatch](https://github.com/keystone-engine/keypatch) — Multi-architecture assembler for IDA Pro. Powered by Keystone Engine. **[1,882 stars]**
 - [airbus-seclab/bincat](https://github.com/airbus-seclab/bincat) — Binary code static analyser, with IDA integration. Performs value and taint analysis, type reconstruction, use-after-free and double-free detection **[1,880 stars]** · Curated: [BinCAT](https://awesomerea.org/resources/bincat/)
-- [redasm-dev/redasm](https://github.com/redasm-dev/redasm) — The Open Source Disassembler **[1,822 stars]**
-- [cmu-sei/pharos](https://github.com/cmu-sei/pharos) — Automated static analysis tools for binary programs **[1,739 stars]**
-- [KeenSecurityLab/BinAbsInspector](https://github.com/KeenSecurityLab/BinAbsInspector) — BinAbsInspector: Vulnerability Scanner for Binaries **[1,681 stars]**
+- [redasm-dev/redasm](https://github.com/redasm-dev/redasm) — The Open Source Disassembler **[1,822 stars]** · Curated: [REDasm](https://awesomerea.org/resources/redasm/)
+- [cmu-sei/pharos](https://github.com/cmu-sei/pharos) — Automated static analysis tools for binary programs **[1,739 stars]** · Curated: [Pharos](https://awesomerea.org/resources/pharos/)
+- [KeenSecurityLab/BinAbsInspector](https://github.com/KeenSecurityLab/BinAbsInspector) — BinAbsInspector: Vulnerability Scanner for Binaries **[1,681 stars]** · Curated: [BinAbsInspector](https://awesomerea.org/resources/binabsinspector/)
 - [mytechnotalent/Hacking-Windows](https://github.com/mytechnotalent/Hacking-Windows) — A FREE Windows C development course where we will learn the Win32API and reverse engineer each step utilizing IDA Free in both an x86 and x64 environment. **[1,637 stars]**
 - [illera88/Ponce](https://github.com/illera88/Ponce) — IDA 2016 plugin contest winner! Symbolic Execution just one-click away! **[1,635 stars]**
-- [Jon-Becker/heimdall-rs](https://github.com/Jon-Becker/heimdall-rs) — Heimdall is an advanced EVM smart contract toolkit specializing in bytecode analysis and extracting information from unverified contracts. **[1,626 stars]**
+- [Jon-Becker/heimdall-rs](https://github.com/Jon-Becker/heimdall-rs) — Heimdall is an advanced EVM smart contract toolkit specializing in bytecode analysis and extracting information from unverified contracts. **[1,626 stars]** · Curated: [heimdall-rs](https://awesomerea.org/resources/heimdall-rs/)
 - [attify/firmware-analysis-toolkit](https://github.com/attify/firmware-analysis-toolkit) — Firmware security research platform combining binary analysis, taint tracing, and emulation across IoT, edge AI, mobile devices, and robotics. **[1,615 stars]**
 - [vtil-project/VTIL-Core](https://github.com/vtil-project/VTIL-Core) — Virtual-machine Translation Intermediate Language **[1,607 stars]** · Curated: [VTIL-Core](https://awesomerea.org/resources/vtil-core/)
 - [m4b/goblin](https://github.com/m4b/goblin) — An impish, cross-platform binary parsing crate, written in Rust **[1,555 stars]** · Curated: [goblin](https://awesomerea.org/resources/goblin/)
@@ -65,7 +65,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [hteso/iaito](https://github.com/hteso/iaito) — This project has been moved to: **[1,461 stars]**
 - [programa-stic/barf-project](https://github.com/programa-stic/barf-project) — BARF : A multiplatform open source Binary Analysis and Reverse engineering Framework **[1,455 stars]**
 - [L4ys/LazyIDA](https://github.com/L4ys/LazyIDA) — Make your IDA Lazy! **[1,447 stars]**
-- [AllsafeCyberSecurity/awesome-ghidra](https://github.com/AllsafeCyberSecurity/awesome-ghidra) — A curated list of awesome Ghidra materials **[1,442 stars]**
 - [WPeace-HcH/WPeGPT](https://github.com/WPeace-HcH/WPeGPT) — An IDA plugin for binary file analysis, powered by AI models such as OpenAI and DeepSeek. **[1,425 stars]**
 - [syssec-utd/pylingual](https://github.com/syssec-utd/pylingual) — Python decompiler for modern Python versions. **[1,420 stars]** · Curated: [PyLingual](https://awesomerea.org/resources/pylingual/)
 - [fkie-cad/cwe\_checker](https://github.com/fkie-cad/cwe_checker) — cwe\_checker finds vulnerable patterns in binary executables **[1,362 stars]** · Curated: [cwe\_checker](https://awesomerea.org/resources/cwe-checker/)
@@ -90,7 +89,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [CheckPointSW/Karta](https://github.com/CheckPointSW/Karta) — Karta - source code assisted fast binary matching plugin for IDA **[912 stars]** · Curated: [Karta](https://awesomerea.org/resources/karta/)
 - [NaC-L/Mergen](https://github.com/NaC-L/Mergen) — Deobfuscation via optimization with usage of LLVM IR and parsing assembly. **[912 stars]**
 - [HackOvert/GhidraSnippets](https://github.com/HackOvert/GhidraSnippets) — Python snippets for Ghidra's Program and Decompiler APIs **[893 stars]**
-- [vulhunt-re/vulhunt](https://github.com/vulhunt-re/vulhunt) — Vulnerability detection framework by Binarly's REsearch team **[893 stars]**
+- [vulhunt-re/vulhunt](https://github.com/vulhunt-re/vulhunt) — Vulnerability detection framework by Binarly's REsearch team **[893 stars]** · Curated: [VulHunt Community Edition](https://awesomerea.org/resources/vulhunt/)
 - [mrexodia/dumpulator](https://github.com/mrexodia/dumpulator) — An easy-to-use library for emulating memory dumps. Useful for malware analysis (config extraction, unpacking) and dynamic analysis in general (sandboxing). **[887 stars]**
 - [n0mi1k/apk2url](https://github.com/n0mi1k/apk2url) — An OSINT tool to quickly extract IP and URL endpoints from APKs by disassembling and decompiling **[880 stars]**
 - [symgraph/IDAssist](https://github.com/symgraph/IDAssist) — AI-Powered Reverse Engineering Plugin for IDA Pro **[880 stars]**
@@ -110,8 +109,8 @@ These are automatically discovered projects, not individually curated or tested 
 - [danigargu/heap-viewer](https://github.com/danigargu/heap-viewer) — IDA Pro plugin to examine the glibc heap, focused on exploit development **[773 stars]**
 - [fay59/fcd](https://github.com/fay59/fcd) — An optimizing decompiler **[773 stars]**
 - [symgraph/GhidrAssist](https://github.com/symgraph/GhidrAssist) — An LLM extension for Ghidra to enable AI assistance in RE. **[760 stars]**
-- [binsync/binsync](https://github.com/binsync/binsync) — A reversing plugin for cross-decompiler collaboration, built on git. **[752 stars]**
-- [HexHive/retrowrite](https://github.com/HexHive/retrowrite) — RetroWrite -- Retrofitting compiler passes through binary rewriting **[751 stars]**
+- [binsync/binsync](https://github.com/binsync/binsync) — A reversing plugin for cross-decompiler collaboration, built on git. **[752 stars]** · Curated: [BinSync](https://awesomerea.org/resources/binsync/)
+- [HexHive/retrowrite](https://github.com/HexHive/retrowrite) — RetroWrite -- Retrofitting compiler passes through binary rewriting **[751 stars]** · Paper: [RetroWrite: Statically Instrumenting COTS Binaries for Fuzzing and Sanitization](https://awesomerea.org/papers/paper-retrowrite/)
 - [radareorg/awesome-radare2](https://github.com/radareorg/awesome-radare2) — A curated list of awesome projects, articles and the other materials powered by Radare2 **[739 stars]**
 - [larkmjc/rv8](https://github.com/larkmjc/rv8) — RISC-V simulator for x86-64 **[727 stars]**
 - [yhs0602/Android-Disassembler](https://github.com/yhs0602/Android-Disassembler) — Disassemble any file on Android, including .so (NDK, JNI), Windows PE (EXE, DLL, SYS, etc.), Linux binaries and libraries, and even pictures, audio, and other files for fun. A Capstone-based Android disassembler and reversing app for Android NDK shared libraries, Windows binaries, and more. **[717 stars]**
@@ -119,7 +118,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [maddiestone/IDAPythonEmbeddedToolkit](https://github.com/maddiestone/IDAPythonEmbeddedToolkit) — IDA Python Embedded Toolkit -- IDAPython scripts for automating analysis of firmware of embedded devices **[690 stars]**
 - [Soulghost/iblessing](https://github.com/Soulghost/iblessing) — iblessing is an iOS security exploiting toolkit, it mainly includes application information gathering, static analysis and dynamic analysis. It can be used for reverse engineering, binary analysis and vulnerability mining. **[687 stars]**
 - [aozhimin/iOS-Debug-Hacks](https://github.com/aozhimin/iOS-Debug-Hacks) — <span>:</span>dart: Advanced debugging skills used in iOS project development, including dynamic debugging, static analysis, and decompilation of third-party libraries. **[682 stars]**
-- [gaasedelen/lucid](https://github.com/gaasedelen/lucid) — An Interactive Hex-Rays Microcode Explorer **[679 stars]**
+- [gaasedelen/lucid](https://github.com/gaasedelen/lucid) — An Interactive Hex-Rays Microcode Explorer **[679 stars]** · Curated: [Lucid](https://awesomerea.org/resources/lucid-microcode-explorer/)
 - [chainguard-dev/malcontent](https://github.com/chainguard-dev/malcontent) — #supply #chain #attack #detection **[678 stars]**
 - [lkimuk/ReArk](https://github.com/lkimuk/ReArk) — An intelligent reverse engineering and AI-assisted analysis tool for HarmonyOS NEXT (HAP/APP/ABC), Android (APK/AAB), iOS (IPA), and native PE/ELF/Mach-O binaries. **[675 stars]**
 - [SentineLabs/AlphaGolang](https://github.com/SentineLabs/AlphaGolang) — IDApython Scripts for Analyzing Golang Binaries **[675 stars]**
@@ -131,13 +130,12 @@ These are automatically discovered projects, not individually curated or tested 
 - [Nalen98/AngryGhidra](https://github.com/Nalen98/AngryGhidra) — Use angr in Ghidra **[623 stars]**
 - [lifting-bits/rellic](https://github.com/lifting-bits/rellic) — Rellic produces goto-free C output from LLVM bitcode **[621 stars]** · Curated: [Rellic](https://awesomerea.org/resources/rellic/)
 - [Noelo-Lab/kuna](https://github.com/Noelo-Lab/kuna) — An agent-first decompiler designed to be refined by other agents. Kuna is written in Rust and was originally ported from Ghidra. **[614 stars]** · Curated: [Kuna](https://awesomerea.org/resources/kuna/)
-- [wargio/r2dec-js](https://github.com/wargio/r2dec-js) — r2dec-js is a JavaScript-based decompiler that converts assembly code into pseudo-C. It aids users in understanding assembly by providing readable high-level explanations, making low-level programming more accessible and facilitating debugging across diverse hardware platforms. **[611 stars]**
+- [wargio/r2dec-js](https://github.com/wargio/r2dec-js) — r2dec-js is a JavaScript-based decompiler that converts assembly code into pseudo-C. It aids users in understanding assembly by providing readable high-level explanations, making low-level programming more accessible and facilitating debugging across diverse hardware platforms. **[611 stars]** · Curated: [r2dec](https://awesomerea.org/resources/r2dec/)
 - [boricj/ghidra-delinker-extension](https://github.com/boricj/ghidra-delinker-extension) — Ghidra extension for exporting relocatable object files **[608 stars]** · Curated: [ghidra-delinker-extension](https://awesomerea.org/resources/ghidra-delinker-extension/)
 - [c3rb3ru5d3d53c/binlex](https://github.com/c3rb3ru5d3d53c/binlex) — A Binary Genetic Traits Lexer Framework **[604 stars]**
 - [falconre/falcon](https://github.com/falconre/falcon) — Binary Analysis Framework in Rust **[593 stars]**
 - [JonathanSalwan/PinTools](https://github.com/JonathanSalwan/PinTools) — Pintool example and PoC for dynamic binary analysis **[593 stars]**
 - [nikolaydubina/go-binsize-treemap](https://github.com/nikolaydubina/go-binsize-treemap) — 🔍 Go binary size SVG treemap **[587 stars]**
-- [quarkslab/binbloom](https://github.com/quarkslab/binbloom) — Raw binary firmware analysis software **[586 stars]**
 - [B2R2-org/B2R2](https://github.com/B2R2-org/B2R2) — B2R2 is a fully managed binary analysis framework written in F#. It provides a rich set of algorithms, functions, and tools for reverse engineering, program analysis, and binary-level inspection. **[552 stars]** · Curated: [B2R2](https://awesomerea.org/resources/b2r2/)
 - [d3v1l401/FindCrypt-Ghidra](https://github.com/d3v1l401/FindCrypt-Ghidra) — IDA Pro's FindCrypt ported to Ghidra, with an updated and customizable signature database **[550 stars]**
 - [BeaEngine/beaengine](https://github.com/BeaEngine/beaengine) — BeaEngine disasm project **[549 stars]**

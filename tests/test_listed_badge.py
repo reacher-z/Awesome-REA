@@ -38,22 +38,20 @@ class ListedBadgeTests(unittest.TestCase):
             with self.subTest(message=message), self.assertRaisesRegex(AssertionError, message):
                 validate_listed_badge(root)
 
-    def test_both_guides_show_an_optional_badge_for_a_real_entry(self):
-        records = {record['id'] for name in ('rea-resources.json', 'tool-resources.json')
-                   for record in json.loads((ROOT / 'data' / name).read_text(encoding='utf-8'))}
-        for name in ('CONTRIBUTING.md', 'CONTRIBUTING.zh-CN.md'):
+    def test_both_guides_document_optional_listing_without_certification(self):
+        for name, optional, scope in (('CONTRIBUTING.md', 'optional', 'does not certify'),
+                                      ('CONTRIBUTING.zh-CN.md', '可选', '不认证')):
             text = (ROOT / name).read_text(encoding='utf-8')
             with self.subTest(guide=name):
-                examples = re.findall(r'\[!\[Featured by Awesome REA\]\(' + re.escape(BADGE_URL)
-                                      + r'\)\]\(https://awesomerea\.org/(?:zh/)?resources/([a-z0-9-]+)/\)', text)
-                self.assertTrue(examples)
-                self.assertTrue(set(examples) <= records, examples)
-        self.assertIn('optional', (ROOT / 'CONTRIBUTING.md').read_text(encoding='utf-8'))
-        self.assertIn('可选', (ROOT / 'CONTRIBUTING.zh-CN.md').read_text(encoding='utf-8'))
+                self.assertIn('[![Featured by Awesome REA](' + BADGE_URL
+                              + ')](https://github.com/reacher-z/Awesome-REA)', text)
+                self.assertIn(optional, text)
+                self.assertIn(scope, text)
         # Listing never depends on the badge, so no form or template asks for it.
         for path in sorted((ROOT / '.github').rglob('*')):
             if path.is_file() and path.suffix in {'.md', '.yml', '.yaml'}:
                 self.assertNotIn('featured-by', path.read_text(encoding='utf-8'), path.name)
+
 
 
 if __name__ == '__main__':

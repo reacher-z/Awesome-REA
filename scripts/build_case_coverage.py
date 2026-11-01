@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Render short bilingual summaries of the public case inventory."""
+"""Refresh the case ledger's derived counts and render its short bilingual summaries."""
 import argparse
 import json
 from pathlib import Path
 import sys
 
-from case_coverage import read_case_coverage, validate_case_coverage
+from case_coverage import coverage_counts, read_case_coverage, validate_case_coverage
 from artifact_links import github_repository
 from validate import public_https_error
 
@@ -102,7 +102,13 @@ def main():
     records = [row for filename in ('rea-resources.json', 'tool-resources.json')
                for row in json.loads((ROOT / 'data' / filename).read_text(encoding='utf-8'))]
     papers = json.loads((ROOT / 'data/papers.json').read_text(encoding='utf-8'))
-    document = read_case_coverage(ROOT)
+    ledger = ROOT / 'data/case-coverage.json'
+    stored = read_case_coverage(ROOT)
+    document = stored
+    try:
+        document = {**stored, 'counts': coverage_counts(stored['entries'])}
+    except (AttributeError, KeyError, TypeError):
+        pass  # Malformed entries keep their stored counts; validation below reports them.
     errors = []
     validate_case_coverage(document, records, papers, errors, url_check=public_https_error)
     if errors:
@@ -111,18 +117,22 @@ def main():
     translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8'))
     resources = {row['id']: row for row in records}
     stale = []
+    # Serialized comparison also treats a stored boolean count as stale; key order is ignored.
+    if json.dumps(stored.get('counts'), sort_keys=True) != json.dumps(document['counts'], sort_keys=True):
+        stale.append((ledger, json.dumps(document, indent=2, ensure_ascii=False) + '\n'))
     for suffix, zh in (('', False), ('.zh-CN', True)):
         path = ROOT / ('docs/case-coverage' + suffix + '.md')
         expected = render(document, resources, translations, zh)
-        if args.check:
-            if not path.exists() or path.read_text(encoding='utf-8') != expected:
-                stale.append(path.name)
-        else:
-            path.write_text(expected, encoding='utf-8')
-    if stale:
-        print('Case coverage summaries need regeneration: ' + ', '.join(stale), file=sys.stderr)
+        if not path.exists() or path.read_text(encoding='utf-8') != expected:
+            stale.append((path, expected))
+    if args.check and stale:
+        print('Case coverage files need regeneration with python3 scripts/build_case_coverage.py: '
+              + ', '.join(path.name for path, _ in stale), file=sys.stderr)
         return 1
-    print('Checked case coverage summaries.' if args.check else 'Generated bilingual case coverage summaries.')
+    for path, expected in stale:
+        path.write_text(expected, encoding='utf-8')
+    print('Checked case coverage counts and summaries.' if args.check
+          else 'Refreshed case coverage counts and generated bilingual summaries.')
     return 0
 
 

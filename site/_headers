@@ -17,6 +17,8 @@
   Cache-Control: no-cache, must-revalidate
 /catalog.json
   Cache-Control: no-cache, must-revalidate
+/catalog-index.json
+  Cache-Control: no-cache, must-revalidate
 /source-index.json
   Cache-Control: no-cache, must-revalidate
 /source-browser.json

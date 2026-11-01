@@ -13,6 +13,22 @@ body:
       description: Link to the original maintainer's repository or documentation.
     validations:
       required: true
+  - type: checkboxes
+    id: duplicate_check
+    attributes:
+      label: Duplicate check
+      description: Search the [website](https://awesomerea.org/) or README, and open issues and pull requests, for the resource's name and URL.
+      options:
+        - label: I searched the catalog and open issues and pull requests for this resource.
+          required: true
+  - type: input
+    id: existing_id
+    attributes:
+      label: Existing catalog ID (optional)
+      description: If the resource is already listed, give the ID from its entry page address (/resources/<id>/) and describe the update below instead of requesting a second entry.
+      placeholder: e.g. r2frida
+    validations:
+      required: false
   - type: textarea
     id: use
     attributes:
@@ -53,6 +69,7 @@ body:
     id: relation
     attributes:
       label: Relationship to REA
+      description: How the resource itself relates to REA, as its own documentation establishes. Your personal connection is asked separately below.
       options:
         - Official REA resource
         - Community REA resource
@@ -60,6 +77,19 @@ body:
         - Independent reconstruction or case study
         - Foundation tool
         - Learning resource
+    validations:
+      required: true
+  - type: dropdown
+    id: affiliation
+    attributes:
+      label: Your connection to the resource
+      description: This is about you, not the resource. Disclosure helps reviewers and does not imply endorsement, official REA status or runtime verification. No real name, employer or account details are needed.
+      options:
+        - None
+        - I maintain or co-maintain it
+        - I have contributed to it
+        - Other connection, described in the evidence field
+        - Prefer not to say
     validations:
       required: true
   - type: textarea

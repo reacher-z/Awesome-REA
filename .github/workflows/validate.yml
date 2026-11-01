@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1]
+        shard: [0, 1, 2]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -30,31 +30,13 @@ jobs:
           node-version: '26'
       - name: Compile Python scripts and tests
         run: python3 -m compileall -q scripts tests
+      # tests/unit_shards.py keeps each test class in one shard, balances the shards by class weight and
+      # checks that the shards are non-empty, pairwise disjoint and together equal the whole discovery.
       - name: Run unit tests
         env:
           CI_TEST_SHARD: ${{ matrix.shard }}
-        run: |
-          python3 - <<'PY'
-          import os
-          import sys
-          import unittest
-
-          def cases(suite):
-              for test in suite:
-                  if isinstance(test, unittest.TestSuite):
-                      yield from cases(test)
-                  else:
-                      yield test
-
-          discovered = list(cases(unittest.defaultTestLoader.discover('tests')))
-          shard = int(os.environ['CI_TEST_SHARD'])
-          assert shard in (0, 1) and discovered
-          selected = discovered[shard::2]
-          assert selected
-          print(f'Shard {shard + 1}/2: {len(selected)} of {len(discovered)} discovered tests', flush=True)
-          result = unittest.TextTestRunner(verbosity=2).run(unittest.TestSuite(selected))
-          sys.exit(0 if result.wasSuccessful() else 1)
-          PY
+          CI_TEST_SHARDS: ${{ strategy.job-total }}
+        run: python3 tests/unit_shards.py
   production:
     runs-on: ubuntu-latest
     timeout-minutes: 10
