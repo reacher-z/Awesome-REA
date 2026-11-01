@@ -962,6 +962,14 @@ def orchestrate(directory, *, manual_seed=None, execution_source=None, bootstrap
     if sum(info['bytes'] for info in infos.values()) + receipt_info['bytes'] > MAX_TOTAL_BYTES:
         raise ValueError('Checkpoint pair exceeds its aggregate byte bound')
     emit_summary(directory, receipt, upload=True)
+    # A scheduled invocation is a bounded increment, not a promise to fill the
+    # batch. Only accept expected partial exits after the paired checkpoint and
+    # every newly qualified capture have passed all checks above. Keep the child
+    # exit, incomplete status and unmet targets in the receipt for consumers.
+    if code in (1, 124) and qualified_added > 0:
+        print(f'CHECKPOINT_PROGRESS new_verified={qualified_added} planned={planned} '
+              f'outcome={outcome} scanner_exit_code={code} run_target_reached={added == planned}; checkpoint saved', flush=True)
+        return 0
     return 0 if code == 0 else 1
 
 

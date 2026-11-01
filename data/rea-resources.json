@@ -3157,5 +3157,282 @@
       "https://github.com/ludovic111/horizon/releases/tag/v2026.10.19.12",
       "https://www.npmjs.com/package/rea-agents/v/6.4.0"
     ]
+  },
+  {
+    "id": "untangle-rea-evidence-rebuild-case",
+    "name": "Untangle: a browser rebuild from REA and Ghidra evidence",
+    "url": "https://github.com/az9713/untangle-rebuild",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "An author-documented REA/Ghidra investigation of the shipped Untangle Windows binary produces a single-page playable rebuild and a claim-by-claim grading receipt. The report separates frozen findings, a later source-code answer key and a prior-knowledge audit.",
+    "description_zh": "作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。",
+    "evidence_url": "https://github.com/az9713/untangle-rebuild/blob/6e9925105247268befeb6faed69025dfce4778fc/README.md",
+    "verified_at": "2026-11-01T16:36:25Z",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The recorded run uses REA 6.3.0, Ghidra 12.1.4 and Windows 11 against puzzles version 20260923.616da16; the rebuild is available as a browser page.",
+      "The reported 52/54 correct claims and L3 seed fidelity are the author's grading results; ten names absent from REA output indicate possible prior-knowledge contamination. Not run or reproduced for this catalog.",
+      "The 72 MB evidence export is omitted; its hash is retained. The README documents a pre-publication history rewrite and maps old commit hashes to new ones.",
+      "Original puzzle binary and source retain Simon Tatham and contributors' MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://az9713.github.io/untangle-rebuild/receipt/rebuild-receipt.html",
+      "https://az9713.github.io/untangle-rebuild/rebuild/index.html"
+    ]
+  },
+  {
+    "id": "sofa-tv-browser-browsehere-case",
+    "name": "Sofa TV Browser: a remote-friendly BrowseHere alternative",
+    "url": "https://github.com/sonalder-darlene/sofa-tv-browser",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "An Android TV browser follows BrowseHere's remote-control interaction design with its own implementation. The author reports using REA to inspect the BrowseHere APK and Claude to build Sofa; the repository documents APK releases, screenshots and current feature limits.",
+    "description_zh": "Android TV 浏览器以自己的实现沿用 BrowseHere 的遥控交互设计；作者报告先用 REA 检查 BrowseHere APK，再用 Claude 构建 Sofa，仓库提供 APK 发布、截图及当前功能限制。",
+    "evidence_url": "https://github.com/sonalder-darlene/sofa-tv-browser/blob/6b3afc9544d8e7d2893ed85f184904c8382c02fb/README.md",
+    "verified_at": "2026-11-01T16:36:25Z",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Android 7.0+ with Android System WebView; APKs are linked from GitHub releases. Source builds need the documented JDK/Android SDK or Nix environment.",
+      "The author's REA attribution is in the linked Reddit report, rather than a published REA evidence bundle; this is an author-reported mixed workflow.",
+      "Tabs, reader mode, phone typing, translations and user scripts are listed as missing or planned. DRM playback and frame-rate switching depend on the TV and WebView.",
+      "GPL-3.0-only; the README states that BrowseHere code, assets and text are not included. Third-party components retain their own notices."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://www.reddit.com/r/AndroidTVApps/comments/1xa9tv3/i_had_ai_reverseengineer_tcls_browsehere_and/",
+      "https://github.com/sonalder-darlene/sofa-tv-browser/releases"
+    ]
+  },
+  {
+    "id": "netcat-openbsd-rea-static-case",
+    "name": "OpenBSD netcat: static REA and Ghidra investigation",
+    "url": "https://github.com/NullLabTests/OpenBSD_netcat_REA",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A REA/Ghidra report studies the Ubuntu netcat-openbsd 1.234-1 ELF binary and publishes evidence envelopes, decompiled functions and a function inventory. Its output is a static investigation, rather than a rebuilt netcat application.",
+    "description_zh": "REA/Ghidra 报告研究 Ubuntu netcat-openbsd 1.234-1 ELF 二进制，公开证据封套、反编译函数及函数清单；产物是静态调查，而非重建后的 netcat 应用。",
+    "evidence_url": "https://github.com/NullLabTests/OpenBSD_netcat_REA/blob/cc1870d34e83bad0b8a6ca2489f6fa177efa6a2a/README.md",
+    "verified_at": "2026-11-01T16:36:25Z",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reproducing the documented analysis needs the target package binary, REA, Ghidra 12.1.x and JDK 21; the README records additional pwntools tooling.",
+      "The author explicitly reports no target execution or dynamic analysis. Function roles remain inferred, and compiler inlining or hot/cold splitting obscures boundaries.",
+      "Upstream netcat.c was consulted for function naming; recovered pseudocode is not an independently reconstructed or behaviorally validated program.",
+      "Analysis and documentation use MIT; upstream BSD attribution is retained in NOTICE."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "binary"
+    ],
+    "kind": "case-study"
+  },
+  {
+    "id": "fastview-rea-relay-analysis-rebuild-case",
+    "name": "FastView-REA: a Rust reconstruction of Fast View 5",
+    "url": "https://github.com/dmytrobsp/fastview-rea",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A Rust desktop reconstruction of Mekhanotronika Fast View 5 uses REA and Ghidra research to reproduce oscillogram analysis and relay-characteristic views. The project publishes behavioral specifications, factual indexes, screenshots and cross-platform builds, with explicit format and visual-fidelity gaps.",
+    "description_zh": "Rust 桌面重建以 REA 与 Ghidra 的研究复现 Mekhanotronika Fast View 5 的录波分析和继电保护特性视图，公开行为规格、事实索引、截图及跨平台构建，并列明格式与视觉保真度缺口。",
+    "evidence_url": "https://github.com/dmytrobsp/fastview-rea/blob/deb89ea4134414a894ba887508ad5d320449be41/README.md",
+    "verified_at": "2026-11-01T16:43:00Z",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds need the documented Rust toolchain; release archives target Linux, Windows and macOS. Linux needs GTK 3 and a Wayland or X11 session.",
+      "The README attributes the reverse engineering to REA and Ghidra 12.1.3. Its behavioral-identity and validation statements are author-reported, not an independent compatibility certification. Not run or reproduced for this catalog.",
+      "Native .sto input lacks a supplied sample, and the egui interface is not pixel-identical to original GDI/MFC rendering; original bitmaps are replaced.",
+      "Reconstruction code offers MIT or Apache-2.0. Embedded fonts and Intel-derived trigonometry keep separate licenses; the bundled FastView.fvb characteristic data remains original-vendor data."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/dmytrobsp/fastview-rea/releases"
+    ]
+  },
+  {
+    "id": "openbattlefield2-refractor-engine-case",
+    "name": "OpenBattlefield2: an unfinished Refractor 2 engine reimplementation",
+    "url": "https://github.com/Moxnatiy/OpenBattlefield2",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A C++20 reimplementation of Battlefield 2’s Refractor 2 engine reads original game data and documents menu rendering, level loading and server interoperability. Published crosshair research cites REA/Ghidra evidence IDs and binary addresses; major gameplay systems remain unfinished.",
+    "description_zh": "C++20 重实现 Battlefield 2 的 Refractor 2 引擎，读取原始游戏数据，记录菜单渲染、关卡载入及服务器互通；公开的准星研究引用 REA/Ghidra 证据 ID 和二进制地址，主要玩法系统仍未完成。",
+    "evidence_url": "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an owned Battlefield 2 1.5 installation, CMake 3.24+, Ninja, a C++20 compiler and SDL3; the Flash menu additionally needs Rust and Ruffle.",
+      "Published crosshair research cites REA Evidence IDs; CLAUDE.md describes the mixed REA/Ghidra workflow and its payload and temporary-project limitations. This attribution does not establish that every subsystem was reconstructed with REA.",
+      "macOS arm64 is the primary platform; the Windows preset is kept building but is not exercised. Tests needing game files can pass with a note when those files are absent.",
+      "Ammunition/reloading, recoil, projectiles, audio, driving and full commander/squad interaction remain unfinished; this is an engine research project, not a complete game port.",
+      "MIT covers the project code; no original Battlefield 2 game content is redistributed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/CLAUDE.md",
+      "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/docs/functions/hud-crosshair.md"
+    ]
+  },
+  {
+    "id": "keen-clone-rea-commander-keen-case",
+    "name": "keen-clone: a Commander Keen 1 C/SDL2 port",
+    "url": "https://github.com/carlhako/keen-clone",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A native Linux and browser port of Commander Keen Episode One is documented as a function-by-function REA/Ghidra reconstruction of KEEN1.EXE. Published analysis artifacts accompany the C/SDL2 game; the scope is the first episode, rather than the entire series.",
+    "description_zh": "Linux 原生与浏览器移植面向 Commander Keen 第一章，作者记录以 REA/Ghidra 对 KEEN1.EXE 逐函数研究并重建 C/SDL2 游戏，附带公开分析资料；范围仅为第一章，并非全系列。",
+    "evidence_url": "https://github.com/carlhako/keen-clone/blob/9c6ac72734c95c3260c23b57158ea5876abc14b3/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Native builds need a C compiler, make and SDL2 development files, plus the user's Keen 1 data files including KEEN1.EXE; the README lists v1.1 and shareware v1.31.",
+      "Browser builds require Emscripten and supplied game data; the documented web packaging is restricted to the shareware episode. Browser shortcuts and per-origin IndexedDB storage differ from the native host.",
+      "The repository lists decompilation/disassembly, a call graph and raw REA output as analysis artifacts. It does not provide an independent behavioral-parity or full-playthrough evaluation.",
+      "No project license file was present in the reviewed root. Commander Keen and its original data retain their owners' rights; public source access supplies no additional reuse grant."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "kind": "case-study"
+  },
+  {
+    "id": "samp-client-rea-partial-reconstruction-case",
+    "name": "samp-client-re: a partial SA-MP client reconstruction",
+    "url": "https://github.com/NathanKanaeru/samp-client-re",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A documented REA/Ghidra investigation maps SA-MP 0.3.DL-R1 client subsystems to a new C++ DLL, loader and smoke-test executable. The result is an architectural reconstruction with explicitly unresolved network and graphics behavior, not an established retail-compatible client.",
+    "description_zh": "REA/Ghidra 调查将 SA-MP 0.3.DL-R1 客户端子系统映射到新的 C++ DLL、加载器和冒烟测试程序，产物属于架构重建，网络与图形行为仍有明确未知项，未建立零售版兼容性。",
+    "evidence_url": "https://github.com/NathanKanaeru/samp-client-re/blob/6efde5d3042ee87f0c183a6c68b7e1b26a000cac/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README reports a Windows/MinGW x64 build and a GTA-independent smoke executable; actual GTA: San Andreas use requires a separate 32-bit toolchain/build. Not run or reproduced for this catalog.",
+      "The architecture table attributes addresses and recovered procedures to REA/Ghidra 12.1.4; names inferred from the stripped binary remain analyst interpretations.",
+      "Full RCON/RPC handling, the default-port wire format and the exact Present trampoline are marked unknown/TODO. The archive parser is described as behavior-equivalent, not a complete decryptor.",
+      "No project license file was present in the reviewed root. Original GTA and SA-MP components remain separate prerequisites with their own rights."
+    ],
+    "requirement_facets": [
+      "testing",
+      "attribution",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "kind": "case-study"
+  },
+  {
+    "id": "desktop-games-nostalgia-rea-port-case",
+    "name": "Desktop Games Nostalgia: a macOS and browser port",
+    "url": "https://github.com/ucodia/desktop-games-nostalgia",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A Swift/macOS and JavaScript/browser port recreates the Desktop Games screen-smashing toy from a captured image. The author documents Claude and REA/Ghidra work on the Peter interpreter, a decompiled program tree and extracted assets, with explicit visual differences and no project license.",
+    "description_zh": "Swift/macOS 与 JavaScript/浏览器移植在截图上重现 Desktop Games 的桌面破坏玩具；作者记录 Claude 与 REA/Ghidra 对 Peter 解释器的研究、反编译程序树及提取素材，并明确列出视觉差异和未提供项目许可。",
+    "evidence_url": "https://github.com/ucodia/desktop-games-nostalgia/blob/27946dfe49d4a9b522dfe017c14eefbc0ca40b2a/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Native use requires macOS 14+; Screen Recording access captures one screen image, while wallpaper mode is available without it. The browser version uses a simulated desktop and needs a mouse/keyboard.",
+      "The README attributes interpreter analysis to REA/Ghidra and the port to Claude Code; extracted images/sounds are included upstream. The effects alter an image, not the real desktop files.",
+      "True-color rendering and translucent sprite shadows differ from the original palette renderer. The browser cannot capture the actual desktop; no independent parity measurements are supplied.",
+      "The author explicitly provides no project license and retains Gemtree credit for original design/art/sound. Desktop decoration and other upstream assets retain their separate rights; this record grants no redistribution permission."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "kind": "case-study"
+  },
+  {
+    "id": "gunzrs-rea-rust-reimplementation-case",
+    "name": "GunZRs: a Rust reimplementation of GunZ: The Duel",
+    "url": "https://github.com/OpenRsG/GunZRs",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A Rust/Bevy port reads GunZ: The Duel files from the user's installation and provides native releases, browser build tooling, screenshots and a documented REA/Ghidra investigation framework. Its LAN protocol and inferred movement behavior remain distinct from retail-server compatibility and proven gameplay parity.",
+    "description_zh": "Rust/Bevy 移植从用户安装中读取 GunZ: The Duel 数据，提供原生发布包、浏览器构建工具、截图及 REA/Ghidra 调查框架；自有局域网协议和推断的移动行为不代表兼容零售服务器或已证明玩法一致。",
+    "evidence_url": "https://github.com/OpenRsG/GunZRs/blob/485575b7451912ed1d62661c388663b08dce4faf/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user's GunZ: The Duel installation; no original game files are included. Native downloads target Linux/Windows, with Linux builds requiring the documented system libraries; WebGPU needs localhost or HTTPS and packs built from the user's data.",
+      "The README documents REA/Ghidra use for static questions about retail files. This supports a mixed investigation workflow, not attribution of every gameplay subsystem to REA.",
+      "LAN uses the port's own protocol and does not connect to retail servers; several round/quest/Blitzkrieg modes are not played over LAN. Movement constants and some content choices are inferred, and parity with the Steam client is unproven.",
+      "The project says gameplay has been exercised on Linux; Windows/macOS CI builds are not reported gameplay tests. Code is Apache-2.0, bundled fonts retain OFL terms, and original game files remain separately owned."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/OpenRsG/GunZRs/releases/tag/v0.1.0"
+    ]
   }
 ]
