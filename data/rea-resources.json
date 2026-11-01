@@ -7,12 +7,12 @@
     "relationship": "official-core",
     "description_en": "The upstream CLI and MCP server for evidence-based investigations of shipped software and runtime behavior.",
     "description_zh": "REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。",
-    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/README.md",
-    "verified_at": "2026-10-15",
+    "evidence_url": "https://github.com/morluto/rea/blob/d3ab0faf52a02ff5a618f3ed7beb608b78752abd/README.md",
+    "verified_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
-      "rea-agents 6.5.0 was the published npm version at review time.",
-      "Node.js ^22.19.0 || ^24.11.0 || >=26.0.0; additional tools depend on the target."
+      "rea-agents 6.8.0 was the published npm version at review time.",
+      "Node.js ^22.23.4 || ^24.22.1 || >=26.12.1; additional tools depend on the target."
     ],
     "targets": [
       "website",
@@ -22,7 +22,11 @@
       "firmware",
       "protocol"
     ],
-    "kind": "project"
+    "kind": "project",
+    "additional_evidence_urls": [
+      "https://github.com/morluto/rea/blob/d3ab0faf52a02ff5a618f3ed7beb608b78752abd/package.json",
+      "https://registry.npmjs.org/rea-agents/6.8.0"
+    ]
   },
   {
     "id": "rea-official-skill",
@@ -3712,6 +3716,164 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/michaelshimeles/terminal/blob/94bb329d683471518dcd210f9ca9fca073c15d0b/docs/analysis/README.md"
+    ]
+  },
+  {
+    "id": "yanyu-alphapai-rea-workflows-case",
+    "name": "Yanyu (研屿): selected AlphaPai research workflows",
+    "url": "https://github.com/lxistired/yanyu",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "An author-reported REA/Codex preview independently implements selected AlphaPai-style workspace, document and research-plan flows after client analysis. Its acceptance records separate component/synthetic checks and static HTTP startup from unvalidated browser, device, external-service and original-backend behavior.",
+    "description_zh": "作者报告以 REA/Codex 分析客户端后，独立实现部分 Alpha 派式工作区、文档和研究计划流程；验收记录区分组件/合成检查、静态 HTTP 启动与尚未验证的浏览器、设备、外部服务及原后台行为。",
+    "evidence_url": "https://github.com/lxistired/yanyu/blob/ed21937f8c18c6dd566ffe0db5e373743a34554d/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Linux startup requires the documented Node 24.x/npm 11.x environment; PDF support additionally needs Poppler and prlimit. The base workspace needs no model key; institutions supply their own models and authorized data for real integrations.",
+      "This is a public source preview, not a reproduction of the original backend or a production acceptance. Summaries and general automation are simulated; PDF find uses extracted text without OCR or original-page coordinates.",
+      "Published checks cover bounded component regressions, type/build and local static HTTP. Real-browser interaction, audio/ASR, external AI/notifications/sync and a clean-install end-to-end path remain unvalidated. Not run or reproduced for this catalog.",
+      "Own code is MIT; third-party notices remain separate. Private institutional snapshots and original AlphaPai source/data are not distributed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/lxistired/yanyu/blob/ed21937f8c18c6dd566ffe0db5e373743a34554d/ACCEPTANCE.md",
+      "https://github.com/morluto/rea/discussions/7200"
+    ]
+  },
+  {
+    "id": "adamterm-ghostty-rea-shell-case",
+    "name": "AdamTerm: a Ghostty-informed macOS terminal shell",
+    "url": "https://github.com/AdamLinCodes/AdamTerm",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A small macOS terminal shell is informed by REA inspection of Ghostty 1.3.1 exports, frameworks and native UI metadata. It maps selected window/tab behavior onto AppKit and SwiftTerm; the terminal core is reused rather than reconstructed as libghostty.",
+    "description_zh": "小型 macOS 终端壳层参考 REA 对 Ghostty 1.3.1 导出、框架和原生 UI 元数据的检查，将部分窗口/标签行为映射到 AppKit 与 SwiftTerm；终端核心来自复用，并非重新恢复 libghostty。",
+    "evidence_url": "https://github.com/AdamLinCodes/AdamTerm/blob/5278f12a7e885c793bbf5aeb567950fa17798ba5/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Package.swift targets macOS 13 with Swift tools 5.9 and SwiftTerm from 1.2.0; the repository provides a local build script and screenshot/self-check mode.",
+      "REA findings cover Mach-O exports, plist/signature, native dispatch metadata, interface archives and dylib resolution; no Hopper/Ghidra decompilation is claimed.",
+      "Splits, quick terminal, config files, find bar, updater, surface dragging and AppleScript are intentionally omitted; the shell is not feature-equivalent to Ghostty.",
+      "No project license file was identified in the reviewed root; SwiftTerm and original Ghostty components retain their own terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/AdamLinCodes/AdamTerm/blob/5278f12a7e885c793bbf5aeb567950fa17798ba5/Package.swift"
+    ]
+  },
+  {
+    "id": "mi-tv-remote-rea-milink-case",
+    "name": "Mi TV Remote: clients built from MiLink protocol research",
+    "url": "https://github.com/EndLess728/MiTV-Remote",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "Remote clients for Xiaomi TVs follow REA-assisted APK analysis of the MiLink server and owner-reported packet/logcat verification. The macOS, Android and iOS apps share the protocol implementation and offer a paired Android TV Remote fallback with a smaller key set.",
+    "description_zh": "小米电视遥控客户端基于 REA 辅助的 MiLink 服务 APK 分析及作者报告的报文/logcat 核对，macOS、Android 和 iOS 共享协议实现，并提供需配对、按键范围较小的 Android TV Remote 备用路径。",
+    "evidence_url": "https://github.com/EndLess728/MiTV-Remote/blob/6aff7949de88d98a0ec9347bd132761b36ab1d99/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a compatible TV owned by the user on the same local network, offering MiLink or Android TV Remote. macOS requires 14+, Android 7+, and iOS 16.4+; iOS sideloading needs the user's own signing setup.",
+      "REA device/package discovery, APK extraction and static class analysis informed the frame/TLV layout. The author reports macOS tests on two named Mi TV models; mobile clients were tested against mocks, and other models are unverified. Not run or reproduced for this catalog.",
+      "The Android TV Remote path needs pairing and has a limited key set; recent-app switching is unavailable there. The project uses existing TV services without modifying the TV.",
+      "No project license file was identified in the reviewed root; the TV service, mobile signing and third-party components retain separate requirements and rights."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "kind": "case-study"
+  },
+  {
+    "id": "vsl-dsp-rea-vendor-control-case",
+    "name": "VSL-DSP: AudioBox detection and vendor-control research",
+    "url": "https://github.com/grisuno/VSL-DSP",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A passive AudioBox VSL USB detector and userspace DSP tools incorporate REA/Ghidra findings from Universal Control native libraries. Published UCNET discovery and parameter-registry notes support specific control-model changes; standard snd-usb-audio continues to own audio I/O.",
+    "description_zh": "被动 AudioBox VSL USB 检测模块和用户态 DSP 工具采用 REA/Ghidra 对 Universal Control 原生库的研究，公开 UCNET 发现机制及参数注册表笔记以支持具体控制模型修改；音频 I/O 仍由标准 snd-usb-audio 驱动负责。",
+    "evidence_url": "https://github.com/grisuno/VSL-DSP/blob/1a1b9bd7b6ac0cf22bf6f9e87928a35caa36d3d0/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs compatible AudioBox VSL hardware and the documented Linux kernel headers/build environment; userspace/control tests have separate libusb/CMocka dependencies.",
+      "The kernel module logs USB identity/connection events without claiming the audio interface. This is not evidence that it replaces the standard audio driver or fully reproduces the vendor DSP.",
+      "Tests exercise detector lookup, DSP encoding, packet construction and null-handle guards; bulk I/O still needs hardware fault injection. The vendor mute wire code is unknown, so a zero gain value is not a recovered mute command.",
+      "Project tools are GPL-3.0-or-later; kernel detector sources carry GPL-2.0-or-later SPDX headers. Optional host audio transformations are separate from the hardware DSP."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "firmware",
+      "binary",
+      "protocol"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/grisuno/VSL-DSP/blob/1a1b9bd7b6ac0cf22bf6f9e87928a35caa36d3d0/spec/ucnet_discovery.md",
+      "https://github.com/grisuno/VSL-DSP/blob/1a1b9bd7b6ac0cf22bf6f9e87928a35caa36d3d0/spec/fatchannel_registry.md"
+    ]
+  },
+  {
+    "id": "reafuse-rea-project-fusion",
+    "name": "ReaFuse",
+    "url": "https://github.com/sickpyramid/ReaFuse",
+    "category": "community-integrations",
+    "relationship": "community-integration",
+    "description_en": "A CLI/MCP workflow uses REA static JavaScript analysis of two repository donors to propose and generate a new library or CLI with test-contract and copy-fingerprint reports. App names and websites resolve to open-source donor projects; direct closed-app or live-website reconstruction is not established.",
+    "description_zh": "CLI/MCP 工作流以 REA 静态 JavaScript 分析两个仓库输入，提出并生成带测试契约和复制指纹报告的新库或命令行程序；应用名和网站会映射到开源输入项目，不能据此认定直接恢复闭源应用或实时网站。",
+    "evidence_url": "https://github.com/sickpyramid/ReaFuse/blob/c64502a2827832c042d894ba90dc678a95772cb1/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Node >=22.19.0 and pinned rea-agents 6.4.0; generation uses a configured model provider/CLI or the host MCP agent, with the user's own network/account requirements.",
+      "Version 0.1 supports JS/TS donor analysis and library/CLI outputs. Runnable web-app outputs, direct REA website analysis and Python outputs are listed as future work.",
+      "ALIVE means the generated contract tests pass; originality fingerprints and SHA-256 certificates do not prove original-product equivalence, general safety or legal originality.",
+      "MIT covers the tool; donor and third-party licenses remain separate, and the optional strict-license policy is not a substitute for reviewing intended reuse."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "integration",
+    "additional_evidence_urls": [
+      "https://github.com/sickpyramid/ReaFuse/blob/c64502a2827832c042d894ba90dc678a95772cb1/package.json"
     ]
   }
 ]

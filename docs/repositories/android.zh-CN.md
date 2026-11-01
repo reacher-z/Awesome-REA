@@ -336,7 +336,7 @@
 - [BhattJayD/react-native-vulnerability-scanner](https://github.com/BhattJayD/react-native-vulnerability-scanner) — react-native-vulnerability-scanner：通过扫描 modules.json，分析 React Native APK 中存在漏洞的 npm 依赖的 Python 工具。它使用 Snyk 漏洞数据库检查软件包，并提供详细安全报告。🔍 轻松发现 React Native 应用中的易受攻击依赖！ **[3 星标]**
 - [boy-offi9-inc/apk-unravel](https://github.com/boy-offi9-inc/apk-unravel) — 将 apktool 和 jadx 封装为单一反编译流程的命令行工具。 **[3 星标]**
 - [d-ismlv/tull](https://github.com/d-ismlv/tull) — 带有 Claude 智能体初步分析层的 Android APK 静态分析流程：APKLeaks + JADX + MobSF → 按严重程度排序的报告。 **[3 星标]**
-- [EndLess728/MiTV-Remote](https://github.com/EndLess728/MiTV-Remote) — 面向 macOS、Android 与 iOS 的 Mi TV 遥控器，通过 Wi-Fi 控制小米电视。使用 REA 逆向分析 MiLink 协议。 **[3 星标]**
+- [EndLess728/MiTV-Remote](https://github.com/EndLess728/MiTV-Remote) — 面向 macOS、Android 与 iOS 的 Mi TV 遥控器，通过 Wi-Fi 控制小米电视。使用 REA 逆向分析 MiLink 协议。 **[3 星标]** · 精选：[Mi TV Remote：基于 MiLink 协议研究的遥控客户端](https://awesomerea.org/zh/resources/mi-tv-remote-rea-milink-case/)
 - [fuho/hnd-viewer](https://github.com/fuho/hnd-viewer) — HND-NE3／NATFIRE NE3 无线耳道摄像头的免费、开放、离线查看器，支持 Android、macOS、Windows 与 Linux。 **[3 星标]**
 - [ifeng113/debug4j-jdk8](https://github.com/ifeng113/debug4j-jdk8) — 高效易用的 Java 调试工具（JDK 8）。 **[3 星标]**
 - [indrarahul/d4rkc0de-Android-CTF](https://github.com/indrarahul/d4rkc0de-Android-CTF) — d4rkc0de Android 夺旗赛（CTF）。 **[3 星标]**

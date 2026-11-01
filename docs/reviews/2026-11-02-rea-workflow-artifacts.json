@@ -1,0 +1,133 @@
+{
+  "reviewed_at": "2026-11-01",
+  "catalog_base_revision": "ff25d8f6f0390dac8e8c3ba3f707964157bc3d6b",
+  "curated": [
+    {
+      "catalog_id": "yanyu-alphapai-rea-workflows-case",
+      "canonical_url": "https://github.com/lxistired/yanyu",
+      "repository_id": 1433856109,
+      "evidence_url": "https://github.com/lxistired/yanyu/blob/ed21937f8c18c6dd566ffe0db5e373743a34554d/README.md",
+      "additional_evidence_urls": [
+        "https://github.com/lxistired/yanyu/blob/ed21937f8c18c6dd566ffe0db5e373743a34554d/ACCEPTANCE.md",
+        "https://github.com/morluto/rea/discussions/7200"
+      ],
+      "reviewed_at": "2026-11-01",
+      "readme_sha256": "6425673dba83fe1c3b6e4a02a8426e271621d77057fed57de4148af61ff88af5",
+      "readme_bytes": 7168,
+      "runtime_tested_by_catalog": false,
+      "open_submission_matches": [],
+      "baseline_scan_snapshot": [],
+      "root_license_files": [
+        "LICENSE",
+        "THIRD_PARTY_NOTICES"
+      ]
+    },
+    {
+      "catalog_id": "adamterm-ghostty-rea-shell-case",
+      "canonical_url": "https://github.com/AdamLinCodes/AdamTerm",
+      "repository_id": 1417399376,
+      "evidence_url": "https://github.com/AdamLinCodes/AdamTerm/blob/5278f12a7e885c793bbf5aeb567950fa17798ba5/README.md",
+      "additional_evidence_urls": [
+        "https://github.com/AdamLinCodes/AdamTerm/blob/5278f12a7e885c793bbf5aeb567950fa17798ba5/Package.swift"
+      ],
+      "reviewed_at": "2026-11-01",
+      "readme_sha256": "7de9e8f5c424561af7282ab900ba52db0469bff96a9d8b897cb3f681a575ccdb",
+      "readme_bytes": 3587,
+      "runtime_tested_by_catalog": false,
+      "open_submission_matches": [],
+      "baseline_scan_snapshot": [],
+      "root_license_files": []
+    },
+    {
+      "catalog_id": "mi-tv-remote-rea-milink-case",
+      "canonical_url": "https://github.com/EndLess728/MiTV-Remote",
+      "repository_id": 1419550722,
+      "evidence_url": "https://github.com/EndLess728/MiTV-Remote/blob/6aff7949de88d98a0ec9347bd132761b36ab1d99/README.md",
+      "additional_evidence_urls": [],
+      "reviewed_at": "2026-11-01",
+      "readme_sha256": "6e0d6ae9f4c872166ef47ddae9d1129712241f38b066503ecb91b4f8c34e9ac4",
+      "readme_bytes": 16712,
+      "runtime_tested_by_catalog": false,
+      "open_submission_matches": [],
+      "baseline_scan_snapshot": [
+        {
+          "id": "scan-1419550722",
+          "full_name": "EndLess728/MiTV-Remote",
+          "observed_at": "2026-10-16T11:54:37.746349Z",
+          "readme_git_sha": "f928c1bbd306e444be09e2069acd92e7df09e4f1",
+          "readme_sha256": "61d8ac787889be0d2c9b779c7396bac7f1cf130827458becb869ba2fbbdd3b07",
+          "readme_bytes": 9716,
+          "targets": [
+            "app",
+            "binary"
+          ],
+          "category": "android",
+          "verification": "automated-readme-scan"
+        }
+      ],
+      "root_license_files": []
+    },
+    {
+      "catalog_id": "vsl-dsp-rea-vendor-control-case",
+      "canonical_url": "https://github.com/grisuno/VSL-DSP",
+      "repository_id": 1083294877,
+      "evidence_url": "https://github.com/grisuno/VSL-DSP/blob/1a1b9bd7b6ac0cf22bf6f9e87928a35caa36d3d0/README.md",
+      "additional_evidence_urls": [
+        "https://github.com/grisuno/VSL-DSP/blob/1a1b9bd7b6ac0cf22bf6f9e87928a35caa36d3d0/spec/ucnet_discovery.md",
+        "https://github.com/grisuno/VSL-DSP/blob/1a1b9bd7b6ac0cf22bf6f9e87928a35caa36d3d0/spec/fatchannel_registry.md"
+      ],
+      "reviewed_at": "2026-11-01",
+      "readme_sha256": "92248cb2da1f92bfb8f34fc40fc540b72d7a6837b80a770528999c6e95aaf6f1",
+      "readme_bytes": 19787,
+      "runtime_tested_by_catalog": false,
+      "open_submission_matches": [],
+      "baseline_scan_snapshot": [],
+      "root_license_files": [
+        "LICENSE"
+      ]
+    },
+    {
+      "catalog_id": "reafuse-rea-project-fusion",
+      "canonical_url": "https://github.com/sickpyramid/ReaFuse",
+      "repository_id": 1417024444,
+      "evidence_url": "https://github.com/sickpyramid/ReaFuse/blob/c64502a2827832c042d894ba90dc678a95772cb1/README.md",
+      "additional_evidence_urls": [
+        "https://github.com/sickpyramid/ReaFuse/blob/c64502a2827832c042d894ba90dc678a95772cb1/package.json"
+      ],
+      "reviewed_at": "2026-11-01",
+      "readme_sha256": "bd625962894a39973a6001c90156e09d1d6fa1e8ff0561e5f34f5e7662c1b539",
+      "readme_bytes": 17967,
+      "runtime_tested_by_catalog": false,
+      "open_submission_matches": [],
+      "baseline_scan_snapshot": [],
+      "root_license_files": [
+        "LICENSE",
+        "NOTICE.md"
+      ]
+    }
+  ],
+  "updated_core": {
+    "canonical": "morluto/rea",
+    "sha": "d3ab0faf52a02ff5a618f3ed7beb608b78752abd",
+    "package_evidence_url": "https://github.com/morluto/rea/blob/d3ab0faf52a02ff5a618f3ed7beb608b78752abd/package.json",
+    "repo_version": "6.8.0",
+    "repo_engines": {
+      "node": "^22.23.4 || ^24.22.1 || >=26.12.1"
+    },
+    "npm_version": "6.8.0",
+    "npm_engines": {
+      "node": "^22.23.4 || ^24.22.1 || >=26.12.1"
+    },
+    "npm_git_head": null,
+    "npm_time_source": "https://registry.npmjs.org/rea-agents/latest"
+  },
+  "held": [
+    {
+      "canonical_url": "https://github.com/chilliesdev/fmseasonhub-re",
+      "reviewed_commit": "2d478a1c6be27b9f0f0c625de6e81c4c0c02d19a",
+      "state": "held-port-source-and-provenance-scope",
+      "evidence_url": "https://github.com/chilliesdev/fmseasonhub-re/blob/2d478a1c6be27b9f0f0c625de6e81c4c0c02d19a/macos/README.md",
+      "reason": "The macOS notes say the frontend is tracked prebuilt runtime assets with no frontend build source; the reviewed root has no project license. Do not count a release/package check as proof of independently rebuildable or fully reconstructed software. The static analysis dossier remains a lead for separate scoped review."
+    }
+  ]
+}

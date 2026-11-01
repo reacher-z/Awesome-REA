@@ -264,8 +264,8 @@
   "rea-upstream": {
     "name": "REA — Reverse Engineer Anything",
     "requirements": [
-      "复核时 npm 已发布 rea-agents 6.5.0。",
-      "Node.js ^22.19.0、^24.11.0 或 >=26.0.0；额外工具取决于分析目标。"
+      "核查时发布的 npm 版本为 rea-agents 6.8.0。",
+      "Node.js ^22.23.4、^24.22.1 或 >=26.12.1；其他工具依目标而定。"
     ]
   },
   "rea-official-skill": {
@@ -5512,6 +5512,51 @@
       "该扩展申请 tabs、storage、右键菜单、downloads 和 declarativeContent 权限，以及访问 Google CRX 下载端点的权限；获取托管在其他位置的扩展包前，会请求可选的全部网站访问权限。其 Firefox 构建会把对 addons.mozilla.org 的请求改经 services.addons.mozilla.org 发送，源码说明这是应对 Firefox 限制扩展读取部分 Mozilla 域名的变通做法，目前仍用于开发者提交的版本等非公开 XPI 文件。",
       "查看器按原样展示扩展包内容：格式化只重新排版代码，不会还原混淆。下载的扩展仍受其作者权利及商店条款约束。",
       "采用 MPL-2.0 许可；内置的 zip.js、Prism、js-beautify 和 SparkMD5 等库保留各自的许可证。本次未构建或安装。"
+    ]
+  },
+  "yanyu-alphapai-rea-workflows-case": {
+    "name": "Yanyu (研屿)：局部 Alpha 派投研工作流",
+    "requirements": [
+      "Linux 启动需要文档指定的 Node 24.x/npm 11.x，PDF 支持另需 Poppler 和 prlimit；基础工作区不需要模型密钥，真实集成所用模型及授权数据由机构自行提供。",
+      "这是公开源码预览，不是原后台复现或生产验收；摘要和通用自动化为模拟，PDF 查找基于提取文本，没有 OCR 或原页坐标。",
+      "公开检查覆盖限定组件回归、类型/构建及本地静态 HTTP；真实浏览器、音频/ASR、外部 AI/提醒/同步和干净安装端到端仍未验证。本目录未运行或复现。",
+      "自有代码采用 MIT，第三方 notices 独立保留；不分发机构私有快照或 Alpha 派原始源码/数据。"
+    ]
+  },
+  "adamterm-ghostty-rea-shell-case": {
+    "name": "AdamTerm：参考 Ghostty 研究的 macOS 终端壳层",
+    "requirements": [
+      "Package.swift 指定 macOS 13、Swift tools 5.9 和从 1.2.0 起的 SwiftTerm，仓库提供本地构建脚本及截图/自检模式。",
+      "REA 发现来自 Mach-O 导出、plist/签名、原生分发元数据、界面归档和动态库解析，不声称进行 Hopper/Ghidra 反编译。",
+      "有意省略分屏、快速终端、配置文件、查找栏、更新器、表面拖移及 AppleScript，壳层不等同于 Ghostty 的完整功能。",
+      "核查的根目录未发现项目许可文件；SwiftTerm 与原始 Ghostty 组件保留各自条款。"
+    ]
+  },
+  "mi-tv-remote-rea-milink-case": {
+    "name": "Mi TV Remote：基于 MiLink 协议研究的遥控客户端",
+    "requirements": [
+      "需要用户自有、与客户端处于同一本地网络且提供 MiLink 或 Android TV Remote 的兼容电视；macOS 需 14+、Android 7+、iOS 16.4+，iOS 侧载使用用户自己的签名配置。",
+      "REA 设备/包清点、APK 提取和静态类分析用于恢复帧/TLV 布局；作者报告 macOS 在两款指定电视实测，移动端仅对模拟电视测试，其他型号未验证。本目录未运行或复现。",
+      "Android TV Remote 路径需要配对，按键集合较小且无法切换最近应用；项目使用电视现有服务，不修改电视。",
+      "核查的根目录未发现项目许可文件；电视服务、移动端签名及第三方组件仍有独立要求和权利。"
+    ]
+  },
+  "vsl-dsp-rea-vendor-control-case": {
+    "name": "VSL-DSP：AudioBox 检测与厂商控制研究",
+    "requirements": [
+      "需要兼容的 AudioBox VSL 硬件及文档列出的 Linux 内核头文件/构建环境，用户态控制和测试另有 libusb/CMocka 依赖。",
+      "内核模块记录 USB 身份和连接事件，不占用音频接口，不能据此认为其替换标准音频驱动或完整复现厂商 DSP。",
+      "测试覆盖检测查表、DSP 编码、报文构造及空句柄保护，bulk I/O 仍需硬件故障注入；厂商静音报文码未知，零增益不等于已恢复的静音命令。",
+      "项目工具采用 GPL-3.0-or-later，内核检测源码带 GPL-2.0-or-later SPDX；可选的宿主音频变换与硬件 DSP 分开。"
+    ]
+  },
+  "reafuse-rea-project-fusion": {
+    "name": "ReaFuse",
+    "requirements": [
+      "需要 Node >=22.19.0 和固定的 rea-agents 6.4.0，生成使用已配置的模型提供商/CLI 或宿主 MCP 智能体，并遵守用户自己的网络/账户要求。",
+      "0.1 版支持 JS/TS 输入分析和库/命令行输出；可运行网页应用、直接 REA 网站分析及 Python 输出仍列为后续工作。",
+      "ALIVE 表示所生成的契约测试通过；复制指纹和 SHA-256 证书不能证明与原产品一致、普遍安全或法律意义上的原创性。",
+      "工具采用 MIT，输入项目和第三方许可独立保留；可选严格许可策略不能替代对实际复用方式的审核。"
     ]
   }
 }
