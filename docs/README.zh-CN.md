@@ -49,4 +49,4 @@
 
 | 文档 | 语言 | 状态 | 内容 |
 | --- | --- | --- | --- |
-| [精选条目证据档位](evidence-classes.zh-CN.md) | 中文 | v1，自动生成 | 全部 594 条精选条目的 Class 0-3 证据档位，展示并支持筛选于主页；由 [classify_evidence_classes.py](../scripts/classify_evidence_classes.py) 生成到 [data/evidence-classes.json](../data/evidence-classes.json) |
+| [精选条目证据档位](evidence-classes.zh-CN.md) | 中文 | v1，自动生成 | 全部 595 条精选条目的 Class 0-3 证据档位，展示并支持筛选于主页；由 [classify_evidence_classes.py](../scripts/classify_evidence_classes.py) 生成到 [data/evidence-classes.json](../data/evidence-classes.json) |

@@ -249,6 +249,13 @@ def main() -> int:
     document = json.loads(CLASSES_PATH.read_text(encoding="utf-8"))
     targets = [entry for entry in document["entries"] if entry["evidence_class"] in (0, 1)]
     client = HttpClient(args.token or os_environ_token(), "awesome-rea-preview-classifier")
+    previous: dict[str, dict] = {}
+    if OUTPUT_PATH.is_file():
+        try:
+            previous = {entry["id"]: entry for entry in
+                        json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))["entries"]}
+        except (json.JSONDecodeError, KeyError):
+            previous = {}
 
     entries: list[dict] = []
     missing: list[str] = []
@@ -262,15 +269,18 @@ def main() -> int:
                 print(f"warning: {entry['id']}: {error}", file=sys.stderr)
                 preview = None
             if preview:
-                entries.append({
+                chosen = {
                     "id": entry["id"],
                     "image_url": preview["image_url"],
                     "kind": preview["kind"],
                     "basis": preview["basis"],
                     "source_url": preview["source_url"],
                     **({"revision": preview["revision"]} if preview.get("revision") else {}),
-                    "checked_at": utc_now(),
-                })
+                }
+                old = previous.get(entry["id"])
+                unchanged = old and all(old.get(key) == value for key, value in chosen.items())
+                chosen["checked_at"] = old["checked_at"] if unchanged else utc_now()
+                entries.append(chosen)
             else:
                 missing.append(entry["id"])
             print(f"preview {done}/{len(targets)} {entry['id']}", file=sys.stderr)

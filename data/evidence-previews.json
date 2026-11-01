@@ -2,14 +2,14 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-01T10:08:36+00:00",
+    "generated_at": "2026-11-01T10:43:08+00:00",
     "entry_count": 219,
-    "class_entry_count": 268,
+    "class_entry_count": 269,
     "class_counts": {
       "image": 208,
       "video": 11
     },
-    "missing_count": 49,
+    "missing_count": 50,
     "missing": [
       "2ship2harkinian-mm-port-case",
       "aotopsy",
@@ -42,6 +42,7 @@
       "paperboat-paper-mario-port-case",
       "playwright-mcp",
       "pocket-tasks-reconstruction-case",
+      "pyatv-apple-tv-airplay-protocols-case",
       "rea-reconstruction-companion",
       "react-native-decompiler",
       "reverify-claim-verifier",
