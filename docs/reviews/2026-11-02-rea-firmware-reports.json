@@ -1,0 +1,66 @@
+{
+  "catalog_base_revision": "fef37bd7cdb4d1a73503d263b07a8baa5eb02d9f",
+  "discovery": "Latest 25 updated public morluto/rea Discussions; project requests and generic questions are not artifacts.",
+  "reviewed_at": "2026-11-01",
+  "curated": [
+    {
+      "catalog_id": "mxqpro-rk3229-rea-repurposing-case",
+      "kind": "case-study",
+      "canonical_url": "https://github.com/bigtower17/mxqpro-rk3229",
+      "evidence_url": "https://github.com/bigtower17/mxqpro-rk3229/blob/b9079b419373eec439d85df4a8a11be549cd2f56/README.md",
+      "additional_evidence_urls": [
+        "https://github.com/morluto/rea/discussions/8248"
+      ],
+      "reviewed_at": "2026-11-01",
+      "readme_sha256": "99c1f4d55e4aa3cb86c466bd1a57868665354076bc61be8d000387e14313c01d",
+      "readme_bytes": 12608,
+      "runtime_tested_by_catalog": false,
+      "duplicate_check": {
+        "canonical_url": "https://github.com/bigtower17/mxqpro-rk3229",
+        "curated": [],
+        "open_submissions": []
+      },
+      "baseline_scan_ids": []
+    },
+    {
+      "catalog_id": "icsee-localmod-rea-camera-case",
+      "kind": "case-study",
+      "canonical_url": "https://github.com/Vittuu/icsee-localmod",
+      "evidence_url": "https://github.com/Vittuu/icsee-localmod/blob/52f0ca06064faa2e62ee6d9c600f048bd1768207/README.md",
+      "additional_evidence_urls": [
+        "https://github.com/Vittuu/icsee-localmod/blob/52f0ca06064faa2e62ee6d9c600f048bd1768207/docs/REA-GHIDRA-WORKFLOW.md",
+        "https://github.com/morluto/rea/discussions/8070"
+      ],
+      "reviewed_at": "2026-11-01",
+      "readme_sha256": "8fcb690a4846b28e10a70e05d102463375750dc1da25f4d5dabc42c464a3a5fe",
+      "readme_bytes": 5277,
+      "runtime_tested_by_catalog": false,
+      "duplicate_check": {
+        "canonical_url": "https://github.com/Vittuu/icsee-localmod",
+        "curated": [],
+        "open_submissions": []
+      },
+      "baseline_scan_ids": []
+    },
+    {
+      "catalog_id": "app-xray-rea-evidence-reports",
+      "kind": "integration",
+      "canonical_url": "https://github.com/Eliot5566/app-xray",
+      "evidence_url": "https://github.com/Eliot5566/app-xray/blob/66a7b06fb45d99e0e1d1dbcf221856a62639faab/README.md",
+      "additional_evidence_urls": [
+        "https://github.com/Eliot5566/app-xray/blob/66a7b06fb45d99e0e1d1dbcf221856a62639faab/docs/en/guide.md",
+        "https://github.com/morluto/rea/discussions/7974"
+      ],
+      "reviewed_at": "2026-11-01",
+      "readme_sha256": "5b901e5edd698178ec3bf2f60e237e138b23164188b8bef786f7bc3b774e8705",
+      "readme_bytes": 4897,
+      "runtime_tested_by_catalog": false,
+      "duplicate_check": {
+        "canonical_url": "https://github.com/Eliot5566/app-xray",
+        "curated": [],
+        "open_submissions": []
+      },
+      "baseline_scan_ids": []
+    }
+  ]
+}

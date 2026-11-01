@@ -3434,5 +3434,103 @@
     "additional_evidence_urls": [
       "https://github.com/OpenRsG/GunZRs/releases/tag/v0.1.0"
     ]
+  },
+  {
+    "id": "mxqpro-rk3229-rea-repurposing-case",
+    "name": "MXQ PRO RK3229: an Android firmware investigation and Linux repurposing",
+    "url": "https://github.com/bigtower17/mxqpro-rk3229",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "An owner documents identifying an RK3229 TV box, investigating its stock Android ROM and repurposing it with a userspace gamepad driver and Armbian. REA assisted ADB inventory and Android-provider routing; APK analysis and device changes are reported as a mixed workflow, not firmware reconstruction.",
+    "description_zh": "设备所有者记录了 RK3229 电视盒的硬件识别、原厂 Android ROM 调查、用户态手柄驱动及 Armbian 改造；REA 用于 ADB 清点和 Android 分析引擎引导，APK 分析与设备修改属于混合工作流，并非固件重建。",
+    "evidence_url": "https://github.com/bigtower17/mxqpro-rk3229/blob/b9079b419373eec439d85df4a8a11be549cd2f56/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an owned, correctly identified RK3228/RK3229-class board and its matching firmware/backups; the MXQ PRO sales label alone does not identify the hardware.",
+      "The author limits REA's role to device inventory and the Android provider pointer; JADX and separate host/device tools perform other parts of the work.",
+      "The report covers one unit and describes replacing its stock system. Partition layout, board support and boot behavior are device-specific. Not run or reproduced for this catalog.",
+      "Large/proprietary images, system APKs and decompiled third-party source are excluded upstream. A project-wide license grant is not stated in the reviewed README."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "firmware"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/morluto/rea/discussions/8248"
+    ]
+  },
+  {
+    "id": "icsee-localmod-rea-camera-case",
+    "name": "iCSee LocalMod: a stock-firmware camera control extension",
+    "url": "https://github.com/Vittuu/icsee-localmod",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "An owner-authorized XM530V200 camera case uses REA/Ghidra to investigate native Sofia command handlers, then adds local control and Home Assistant integration while preserving stock drivers and recording. The source-only extension documents separate static, emulated-protocol and physical-device evidence.",
+    "description_zh": "XM530V200 摄像头所有者授权案例以 REA/Ghidra 调查原生 Sofia 命令处理器，再添加本地控制及 Home Assistant 集成，保留原厂驱动和录像；源码扩展明确区分静态、模拟协议及实机证据。",
+    "evidence_url": "https://github.com/Vittuu/icsee-localmod/blob/52f0ca06064faa2e62ee6d9c600f048bd1768207/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Tested only on one XM530V200 / IPG-X2-WQ-BL unit. There is no universal image or public flash installer; source builds need a compatible ARM toolchain and matching Dropbear crypto library.",
+      "The documented investigation used REA 6.8.0 and Ghidra 12.1.4. Binary addresses are specific to the analyzed Sofia build; the project is stock firmware with additions, not OpenIPC or a full DVRIP implementation.",
+      "The owner reports physical PTZ/LED/audio and restart/SD-recording checks. QEMU tests use fake backends and do not prove hardware portability. Not run or reproduced for this catalog.",
+      "The local bridge uses the existing device account over plain HTTP; the route-removal guard is not a firewall. Original additions are MIT, while stock firmware/drivers and third-party components retain their own rights."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "testing",
+      "limits"
+    ],
+    "targets": [
+      "firmware",
+      "protocol",
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/Vittuu/icsee-localmod/blob/52f0ca06064faa2e62ee6d9c600f048bd1768207/docs/REA-GHIDRA-WORKFLOW.md",
+      "https://github.com/morluto/rea/discussions/8070"
+    ]
+  },
+  {
+    "id": "app-xray-rea-evidence-reports",
+    "name": "App X-Ray",
+    "url": "https://github.com/Eliot5566/app-xray",
+    "category": "community-integrations",
+    "relationship": "community-integration",
+    "description_en": "Builds evidence-linked HTML/JSON reports, summary cards and diffs from REA analysis of app packages, native build metadata and model files. Its component and configuration findings come from static inputs; they are not observed runtime traffic, a complete security audit or reconstructed software.",
+    "description_zh": "基于 REA 对应用包、原生构建元数据和模型文件的分析生成带证据链接的 HTML/JSON 报告、摘要卡片及差异；组件与配置发现来自静态输入，并非实测流量、完整安全审计或重建软件。",
+    "evidence_url": "https://github.com/Eliot5566/app-xray/blob/66a7b06fb45d99e0e1d1dbcf221856a62639faab/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README requires Node.js 22+; supported inputs include Electron/app.asar/source folders, APKs, Go/Rust executables and listed model formats. REA analysis requirements vary with the input.",
+      "Rules see literal values and metadata; runtime-generated addresses are missed. A detected setting or dependency does not prove runtime behavior or exploitability, and unsupported/obfuscated inputs can leave unknowns.",
+      "The public gallery uses open-source app snapshots. Report-derived REA-Bench answers reuse those reports as their reference, not an independent runtime ground truth.",
+      "Code is MIT; bundled Inter fonts retain SIL OFL 1.1. Reports omit target app code, and upstream software/model rights remain separate."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "kind": "integration",
+    "additional_evidence_urls": [
+      "https://github.com/Eliot5566/app-xray/blob/66a7b06fb45d99e0e1d1dbcf221856a62639faab/docs/en/guide.md",
+      "https://github.com/morluto/rea/discussions/7974"
+    ]
   }
 ]
