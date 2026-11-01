@@ -31,18 +31,42 @@
   "x_attempts": [
     {
       "url": "https://x.com/i/status/2110835101583966520",
-      "status": "403 Forbidden",
-      "decision": "Retain as a lead only. Secondary text does not verify the original post, a software artifact or reconstruction completeness."
+      "decision": "Original excerpt retrieved through the official public embed. No new artifact promoted: two long posts are truncated; one describes an existing official example, while the other two do not identify a target or inspectable reconstruction artifact.",
+      "direct_page_status": "403 Forbidden",
+      "official_public_embed": {
+        "endpoint": "https://publish.twitter.com/oembed?url=https%3A%2F%2Fx.com%2Fi%2Fstatus%2F2110835101583966520&omit_script=true&dnt=true",
+        "status": 200,
+        "author": "Myttle",
+        "content_sha256": "358fb6f097c372914644fb49888770f30d0852222eecccf7898d2dd00fe3021a",
+        "content_bytes": 642,
+        "long_post_truncated": true
+      }
     },
     {
       "url": "https://x.com/i/status/2109631618088566843",
-      "status": "403 Forbidden",
-      "decision": "Retain as a lead only. Secondary text does not verify the original post, a software artifact or reconstruction completeness."
+      "decision": "Original excerpt retrieved through the official public embed. No new artifact promoted: two long posts are truncated; one describes an existing official example, while the other two do not identify a target or inspectable reconstruction artifact.",
+      "direct_page_status": "403 Forbidden",
+      "official_public_embed": {
+        "endpoint": "https://publish.twitter.com/oembed?url=https%3A%2F%2Fx.com%2Fi%2Fstatus%2F2109631618088566843&omit_script=true&dnt=true",
+        "status": 200,
+        "author": "Md Ismail Šojal 🕷️",
+        "content_sha256": "65f448357aeb973d38b295016a2aab3fa6b2fa06343740acbb947bb5eae6a3d5",
+        "content_bytes": 662,
+        "long_post_truncated": true
+      }
     },
     {
       "url": "https://x.com/i/status/2109620830103802283",
-      "status": "403 Forbidden",
-      "decision": "Retain as a lead only. Secondary text does not verify the original post, a software artifact or reconstruction completeness."
+      "decision": "Original excerpt retrieved through the official public embed. No new artifact promoted: two long posts are truncated; one describes an existing official example, while the other two do not identify a target or inspectable reconstruction artifact.",
+      "direct_page_status": "403 Forbidden",
+      "official_public_embed": {
+        "endpoint": "https://publish.twitter.com/oembed?url=https%3A%2F%2Fx.com%2Fi%2Fstatus%2F2109620830103802283&omit_script=true&dnt=true",
+        "status": 200,
+        "author": "れいな@底なし沼の魔女",
+        "content_sha256": "6928b24bbb0f6919ae00e7d417dd2140303223192cadbacc129f3fb6bc2fd146",
+        "content_bytes": 641,
+        "long_post_truncated": false
+      }
     }
   ],
   "curated": [
