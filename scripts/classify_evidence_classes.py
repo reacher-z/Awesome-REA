@@ -3,13 +3,15 @@
 
 Reads data/rea-resources.json and data/tool-resources.json, observes public
 evidence for each entry's URL (GitHub REST API, or the page itself for other
-hosts), and writes data/evidence-classes.json. The class measures how strong
-the public evidence is, not whether a reproduction is complete:
+hosts), and writes data/evidence-classes.json. Class 0 is reserved for full
+software reconstruction cases; the other classes measure evidence strength:
 
-- Class 0: documentation covers the full feature set, plus a download method
-  and an image or video demo.
-- Class 1: download method and image/video demo exist, but the documented
-  scope is partial — single features, patches, ports, investigations.
+- Class 0: a full software reconstruction case (`kind: case-study`) whose
+  documentation covers the feature set, plus a download method and an image
+  or video demo.
+- Class 1: download method and image/video demo exist, but the documented scope
+  is partial, or the entry is not a software reconstruction (tools,
+  integrations, guides and binary-analysis entries stay here).
 - Class 2: demo or download missing, but code and documentation exist;
   whether it builds is unknown.
 - Class 3: no code or no documentation — progress notes or shared notebook
@@ -39,7 +41,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CACHE_DIR = ROOT / ".cache" / "evidence-scan"
 OUTPUT_PATH = ROOT / "data" / "evidence-classes.json"
 OVERRIDES_PATH = ROOT / "data" / "evidence-class-overrides.json"
-SPEC_VERSION = "evidence-class-v1"
+SPEC_VERSION = "evidence-class-v2"
 README_MIN_BYTES = 400
 MAX_WORKERS = 8
 
@@ -368,6 +370,16 @@ def collect_download_signals(text: str, links: list[tuple[str, str]]) -> bool:
     return False
 
 
+def is_full_reconstruction(record: dict) -> bool:
+    """Class 0 is reserved for complete software reconstruction cases.
+
+    Analysis tools, integrations, guides and other resources may carry complete
+    evidence, but they are not software reconstructions; binary-targeted entries
+    are treated the same way.
+    """
+    return record.get("kind") == "case-study" and "binary" not in (record.get("targets") or [])
+
+
 def classify(record: dict, signals: dict) -> tuple[int, str]:
     """Apply the class rubric to one entry; returns (class, reason)."""
     kind = record.get("kind", "")
@@ -479,6 +491,9 @@ def main() -> None:
             entry["evidence_class"] = int(correction["evidence_class"])
             entry["basis"] = "override"
             entry["reason"] = correction.get("note", "manual override")
+        if entry["evidence_class"] == 0 and not is_full_reconstruction(record):
+            entry["evidence_class"] = 1
+            entry["reason"] = "not a full software reconstruction: analysis entry"
         counts[entry["evidence_class"]] += 1
         entries.append(entry)
 
@@ -490,10 +505,10 @@ def main() -> None:
             "entry_count": len(entries),
             "class_counts": {str(key): value for key, value in counts.items()},
             "override_count": sum(entry["basis"] == "override" for entry in entries),
-            "method": "GitHub REST API observations (repo meta, releases, README) for GitHub URLs; page observations for other hosts. Manual corrections in data/evidence-class-overrides.json win. Classes measure public evidence strength only.",
+            "method": "GitHub REST API observations (repo meta, releases, README) for GitHub URLs; page observations for other hosts. Manual corrections in data/evidence-class-overrides.json win. Classes measure public evidence strength only; Class 0 is reserved for full software reconstruction cases.",
             "rubric": {
-                "0": "Documentation covers the full feature set, plus a download method and an image or video demo.",
-                "1": "Download method and image/video demo exist, but the documented scope is partial: single features, patches, ports, investigations.",
+                "0": "A full software reconstruction case (kind: case-study) whose documentation covers the feature set, plus a download method and an image or video demo. Analysis tools, integrations, guides and other non-reconstruction entries stay at Class 1 even with complete evidence.",
+                "1": "Download method and image/video demo exist, but the documented scope is partial, or the entry is not a full software reconstruction (tools, integrations, guides, binary-analysis entries).",
                 "2": "Demo or download missing; code and documentation exist, so buildability stays unknown.",
                 "3": "No code or no documentation: progress notes or notebook entries only.",
             },

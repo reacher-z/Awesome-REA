@@ -561,7 +561,7 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
       // Counts use full-width parentheses in Chinese; the rubric legend carries the localized wording.
       assert.equal(localized.element('class-select').children[1].textContent, lang === 'zh' ? 'Class 0（1）' : 'Class 0 (1)');
       const detail = localized.marked.find(node => node.dataset.i18n === 'evidenceClassDetail0');
-      assert.equal(detail.innerHTML, lang === 'zh' ? '文档完整，有下载和演示' : 'full docs, download, demo');
+      assert.equal(detail.innerHTML, lang === 'zh' ? '完整软件复现' : 'full software reconstruction');
     }
   }
   // Phones fold Type and Category behind “More filters”: the toggle counts active selects and opens when the page starts filtered.

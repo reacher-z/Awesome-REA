@@ -10,14 +10,16 @@ class EvidenceClassDataTests(unittest.TestCase):
     def setUp(self):
         self.document = json.loads((ROOT / 'data/evidence-classes.json').read_text(encoding='utf-8'))
         self.catalog_ids = []
+        self.catalog = {}
         for filename in ('rea-resources.json', 'tool-resources.json'):
-            self.catalog_ids.extend(record['id'] for record in
-                                    json.loads((ROOT / 'data' / filename).read_text(encoding='utf-8')))
+            for record in json.loads((ROOT / 'data' / filename).read_text(encoding='utf-8')):
+                self.catalog_ids.append(record['id'])
+                self.catalog[record['id']] = record
 
     def test_schema_and_counts_agree(self):
         self.assertEqual(self.document['schema_version'], 1)
         meta = self.document['meta']
-        self.assertEqual(meta['spec_version'], 'evidence-class-v1')
+        self.assertEqual(meta['spec_version'], 'evidence-class-v2')
         entries = self.document['entries']
         counts = {}
         for entry in entries:
@@ -35,6 +37,15 @@ class EvidenceClassDataTests(unittest.TestCase):
             self.assertIn(entry['basis'], ('github-rest', 'gitlab-rest', 'page-fetch', 'override'), entry['id'])
             self.assertTrue(entry['reason'], entry['id'])
             self.assertIn('code', entry['signals'], entry['id'])
+
+    def test_class_zero_is_a_full_software_reconstruction(self):
+        self.assertTrue(any(entry['evidence_class'] == 0 for entry in self.document['entries']))
+        for entry in self.document['entries']:
+            if entry['evidence_class'] != 0:
+                continue
+            record = self.catalog[entry['id']]
+            self.assertEqual(record['kind'], 'case-study', entry['id'])
+            self.assertNotIn('binary', record.get('targets', []), entry['id'])
 
     def test_overrides_exist_in_catalog_and_carry_notes(self):
         path = ROOT / 'data/evidence-class-overrides.json'

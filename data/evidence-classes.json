@@ -1,20 +1,20 @@
 {
  "schema_version": 1,
  "meta": {
-  "spec_version": "evidence-class-v1",
-  "generated_at": "2026-11-01T10:40:43+00:00",
-  "entry_count": 595,
+  "spec_version": "evidence-class-v2",
+  "generated_at": "2026-11-01T11:22:32+00:00",
+  "entry_count": 596,
   "class_counts": {
-   "0": 141,
-   "1": 128,
-   "2": 297,
+   "0": 46,
+   "1": 223,
+   "2": 298,
    "3": 29
   },
   "override_count": 38,
-  "method": "GitHub REST API observations (repo meta, releases, README) for GitHub URLs; page observations for other hosts. Manual corrections in data/evidence-class-overrides.json win. Classes measure public evidence strength only.",
+  "method": "GitHub REST API observations (repo meta, releases, README) for GitHub URLs; page observations for other hosts. Manual corrections in data/evidence-class-overrides.json win. Classes measure public evidence strength only; Class 0 is reserved for full software reconstruction cases.",
   "rubric": {
-   "0": "Documentation covers the full feature set, plus a download method and an image or video demo.",
-   "1": "Download method and image/video demo exist, but the documented scope is partial: single features, patches, ports, investigations.",
+   "0": "A full software reconstruction case (kind: case-study) whose documentation covers the feature set, plus a download method and an image or video demo. Analysis tools, integrations, guides and other non-reconstruction entries stay at Class 1 even with complete evidence.",
+   "1": "Download method and image/video demo exist, but the documented scope is partial, or the entry is not a full software reconstruction (tools, integrations, guides, binary-analysis entries); Class 3 evidence is never raised.",
    "2": "Demo or download missing; code and documentation exist, so buildability stays unknown.",
    "3": "No code or no documentation: progress notes or notebook entries only."
   }
@@ -23,7 +23,7 @@
   {
    "id": "rea-upstream",
    "url": "https://github.com/morluto/rea",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -42,13 +42,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: project entry targeting binary analysis",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
    "id": "rea-official-skill",
    "url": "https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -67,13 +67,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry targeting binary analysis",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
    "id": "rea-installation",
    "url": "https://github.com/morluto/rea/blob/main/docs/installation.md",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -92,13 +92,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry targeting binary analysis",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
    "id": "rea-cli-evidence",
    "url": "https://github.com/morluto/rea/blob/main/docs/cli.md",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -117,13 +117,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry targeting binary analysis",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
    "id": "rea-mcp-contracts",
    "url": "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md#generated-catalog",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -142,7 +142,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry targeting binary analysis",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
@@ -173,7 +173,7 @@
   {
    "id": "rea-js-workflows",
    "url": "https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -192,13 +192,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
    "id": "rea-android-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/android-analysis.md",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -217,13 +217,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
    "id": "rea-managed-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -242,13 +242,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
    "id": "rea-web-captures",
    "url": "https://github.com/morluto/rea/blob/main/docs/web-network-captures.md",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -267,13 +267,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
    "id": "rea-firmware-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -292,13 +292,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
    "id": "rea-packet-captures",
    "url": "https://github.com/morluto/rea/blob/main/docs/packet-captures.md",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -317,13 +317,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
    "id": "rea-pcap-summaries",
    "url": "https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -342,13 +342,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
    "id": "rea-signal-recordings",
    "url": "https://github.com/morluto/rea/blob/main/docs/signal-recordings.md",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -367,7 +367,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
@@ -535,7 +535,7 @@
   {
    "id": "rea-playbook",
    "url": "https://github.com/jinshi666888/rea-playbook",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -554,7 +554,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: learning-resource entry",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
@@ -1836,7 +1836,7 @@
   {
    "id": "rea-harmony-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/harmony-analysis.md",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -1855,13 +1855,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
    "id": "rea-ghidra-mips-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/ghidra-mips.md",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -1880,13 +1880,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry targeting binary analysis",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
    "id": "rea-ghidra-psp-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/ghidra-psp.md",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -1905,7 +1905,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: documentation entry targeting binary analysis",
    "checked_at": "2026-10-31T15:14:56+00:00"
   },
   {
@@ -2429,7 +2429,7 @@
   {
    "id": "binary-ninja-community-mcp",
    "url": "https://github.com/fosdickio/binary_ninja_mcp",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2449,7 +2449,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry targeting binary analysis",
    "checked_at": "2026-10-31T15:15:43+00:00"
   },
   {
@@ -2480,7 +2480,7 @@
   {
    "id": "radare2-mcp",
    "url": "https://github.com/radareorg/radare2-mcp",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2498,7 +2498,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry targeting binary analysis",
    "checked_at": "2026-11-01T04:53:52+00:00"
   },
   {
@@ -2526,7 +2526,7 @@
   {
    "id": "daila",
    "url": "https://github.com/mahaloz/DAILA",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2546,7 +2546,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry targeting binary analysis",
    "checked_at": "2026-10-31T15:15:50+00:00"
   },
   {
@@ -2576,7 +2576,7 @@
   {
    "id": "jadx-ai-mcp",
    "url": "https://github.com/zinja-coder/jadx-ai-mcp",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2594,13 +2594,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry",
    "checked_at": "2026-10-31T15:15:51+00:00"
   },
   {
    "id": "apktool-mcp-server",
    "url": "https://github.com/zinja-coder/apktool-mcp-server",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2618,7 +2618,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry",
    "checked_at": "2026-10-31T15:15:53+00:00"
   },
   {
@@ -2646,7 +2646,7 @@
   {
    "id": "super-trouper",
    "url": "https://github.com/crissyfield/super-trouper",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2664,7 +2664,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry",
    "checked_at": "2026-10-31T15:15:58+00:00"
   },
   {
@@ -2692,7 +2692,7 @@
   {
    "id": "claude-reverse-engineering-skill",
    "url": "https://github.com/EncidXVII/claude-reverse-engineering-skill",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2710,7 +2710,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry targeting binary analysis",
    "checked_at": "2026-10-31T15:15:56+00:00"
   },
   {
@@ -2738,7 +2738,7 @@
   {
    "id": "ghidra",
    "url": "https://github.com/NationalSecurityAgency/ghidra",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2756,13 +2756,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:15:57+00:00"
   },
   {
    "id": "radare2",
    "url": "https://github.com/radareorg/radare2",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2781,13 +2781,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:53:54+00:00"
   },
   {
    "id": "cutter",
    "url": "https://github.com/rizinorg/cutter",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2805,7 +2805,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:16:09+00:00"
   },
   {
@@ -2833,7 +2833,7 @@
   {
    "id": "jadx",
    "url": "https://github.com/skylot/jadx",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2851,7 +2851,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:16:06+00:00"
   },
   {
@@ -2925,7 +2925,7 @@
   {
    "id": "dnspyex",
    "url": "https://github.com/dnSpyEx/dnSpy",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2943,7 +2943,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-11-01T04:53:55+00:00"
   },
   {
@@ -3017,7 +3017,7 @@
   {
    "id": "wabt",
    "url": "https://github.com/WebAssembly/wabt",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3035,7 +3035,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:53:54+00:00"
   },
   {
@@ -3087,7 +3087,7 @@
   {
    "id": "unblob",
    "url": "https://github.com/onekey-sec/unblob",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3106,7 +3106,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:16:17+00:00"
   },
   {
@@ -3134,7 +3134,7 @@
   {
    "id": "qiling",
    "url": "https://github.com/qilingframework/qiling",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3154,7 +3154,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:53:56+00:00"
   },
   {
@@ -3204,7 +3204,7 @@
   {
    "id": "lief",
    "url": "https://github.com/lief-project/LIEF",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3222,7 +3222,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:54:00+00:00"
   },
   {
@@ -3250,7 +3250,7 @@
   {
    "id": "imhex",
    "url": "https://github.com/WerWolv/ImHex",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3268,13 +3268,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:16:29+00:00"
   },
   {
    "id": "x64dbg",
    "url": "https://github.com/x64dbg/x64dbg",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3293,7 +3293,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:16:24+00:00"
   },
   {
@@ -3345,7 +3345,7 @@
   {
    "id": "diaphora",
    "url": "https://github.com/joxeankoret/diaphora",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3363,13 +3363,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:53:59+00:00"
   },
   {
    "id": "bindiff",
    "url": "https://github.com/google/bindiff",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3387,13 +3387,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:16:27+00:00"
   },
   {
    "id": "detect-it-easy",
    "url": "https://github.com/horsicq/Detect-It-Easy",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3411,7 +3411,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:53:59+00:00"
   },
   {
@@ -3669,7 +3669,7 @@
   {
    "id": "playwright-mcp",
    "url": "https://github.com/microsoft/playwright-mcp",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3687,7 +3687,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry",
    "checked_at": "2026-10-31T15:16:40+00:00"
   },
   {
@@ -3786,7 +3786,7 @@
   {
    "id": "undertalemodtool",
    "url": "https://github.com/UnderminersTeam/UndertaleModTool",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3804,7 +3804,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:16:45+00:00"
   },
   {
@@ -3832,7 +3832,7 @@
   {
    "id": "objdiff",
    "url": "https://github.com/encounter/objdiff",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3850,7 +3850,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:16:46+00:00"
   },
   {
@@ -3904,7 +3904,7 @@
   {
    "id": "ue-explorer",
    "url": "https://github.com/UE-Explorer/UE-Explorer",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3924,7 +3924,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:54:08+00:00"
   },
   {
@@ -3976,7 +3976,7 @@
   {
    "id": "objection",
    "url": "https://github.com/sensepost/objection",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3994,13 +3994,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:16:53+00:00"
   },
   {
    "id": "grapefruit",
    "url": "https://github.com/ChiChou/grapefruit",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4018,13 +4018,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:16:52+00:00"
   },
   {
    "id": "r2frida",
    "url": "https://github.com/nowsecure/r2frida",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4042,13 +4042,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:16:54+00:00"
   },
   {
    "id": "emba",
    "url": "https://github.com/e-m-b-a/emba",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4068,13 +4068,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:16:55+00:00"
   },
   {
    "id": "fact-core",
    "url": "https://github.com/fkie-cad/FACT_core",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4092,13 +4092,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:16:54+00:00"
   },
   {
    "id": "ofrak",
    "url": "https://github.com/redballoonsecurity/ofrak",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4116,7 +4116,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:16:56+00:00"
   },
   {
@@ -4350,7 +4350,7 @@
   {
    "id": "recaf",
    "url": "https://github.com/Col-E/Recaf",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4368,7 +4368,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:17:03+00:00"
   },
   {
@@ -4624,7 +4624,7 @@
   {
    "id": "hbctool",
    "url": "https://github.com/bongtrop/hbctool",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4642,7 +4642,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:17:09+00:00"
   },
   {
@@ -4740,7 +4740,7 @@
   {
    "id": "scapy",
    "url": "https://github.com/secdev/scapy",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4759,13 +4759,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:17:14+00:00"
   },
   {
    "id": "universal-radio-hacker",
    "url": "https://github.com/jopohl/urh",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4784,7 +4784,7 @@
     "archived": true,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:17:16+00:00"
   },
   {
@@ -6973,7 +6973,7 @@
   {
    "id": "rtl-433",
    "url": "https://github.com/merbanan/rtl_433",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -6991,7 +6991,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:18:38+00:00"
   },
   {
@@ -7362,7 +7362,7 @@
   {
    "id": "decomp-toolkit",
    "url": "https://github.com/encounter/decomp-toolkit",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -7380,7 +7380,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:18:56+00:00"
   },
   {
@@ -7457,7 +7457,7 @@
   {
    "id": "rizin",
    "url": "https://github.com/rizinorg/rizin",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -7475,13 +7475,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:54:36+00:00"
   },
   {
    "id": "cheatengine-mcp-bridge",
    "url": "https://github.com/miscusi-peek/cheatengine-mcp-bridge",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -7499,7 +7499,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry targeting binary analysis",
    "checked_at": "2026-11-01T04:54:35+00:00"
   },
   {
@@ -7645,7 +7645,7 @@
   {
    "id": "binny-agent-harness",
    "url": "https://github.com/openbin-ai/binny",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -7663,7 +7663,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry targeting binary analysis",
    "checked_at": "2026-11-01T04:54:37+00:00"
   },
   {
@@ -8528,7 +8528,7 @@
   {
    "id": "cwe-checker",
    "url": "https://github.com/fkie-cad/cwe_checker",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -8546,13 +8546,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:54:49+00:00"
   },
   {
    "id": "jnitrace",
    "url": "https://github.com/chame1eon/jnitrace",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -8570,7 +8570,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-11-01T04:54:48+00:00"
   },
   {
@@ -8625,7 +8625,7 @@
   {
    "id": "rz-ghidra",
    "url": "https://github.com/rizinorg/rz-ghidra",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -8643,7 +8643,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:19:45+00:00"
   },
   {
@@ -8717,7 +8717,7 @@
   {
    "id": "ghidrassistmcp",
    "url": "https://github.com/symgraph/GhidrAssistMCP",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -8735,13 +8735,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry targeting binary analysis",
    "checked_at": "2026-10-31T15:19:43+00:00"
   },
   {
    "id": "dewolf",
    "url": "https://github.com/fkie-cad/dewolf",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -8759,13 +8759,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:54:50+00:00"
   },
   {
    "id": "dembrandt",
    "url": "https://github.com/dembrandt/dembrandt",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -8783,7 +8783,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-11-01T04:54:51+00:00"
   },
   {
@@ -8905,7 +8905,7 @@
   {
    "id": "react-native-decompiler",
    "url": "https://github.com/numandev1/react-native-decompiler",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -8923,7 +8923,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-11-01T04:54:53+00:00"
   },
   {
@@ -9045,7 +9045,7 @@
   {
    "id": "kong-agentic-reverse-engineer",
    "url": "https://github.com/amruth-sn/kong",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -9063,13 +9063,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry targeting binary analysis",
    "checked_at": "2026-11-01T04:54:53+00:00"
   },
   {
    "id": "spice86",
    "url": "https://github.com/OpenRakis/Spice86",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -9087,7 +9087,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:54:53+00:00"
   },
   {
@@ -9209,7 +9209,7 @@
   {
    "id": "decomp2dbg",
    "url": "https://github.com/mahaloz/decomp2dbg",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -9229,7 +9229,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:20:06+00:00"
   },
   {
@@ -9422,7 +9422,7 @@
   {
    "id": "binexport",
    "url": "https://github.com/google/binexport",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -9440,7 +9440,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:55:00+00:00"
   },
   {
@@ -9514,7 +9514,7 @@
   {
    "id": "vscode-frida",
    "url": "https://github.com/ChiChou/vscode-frida",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -9533,7 +9533,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:20:20+00:00"
   },
   {
@@ -9563,7 +9563,7 @@
   {
    "id": "vmlinux-to-elf",
    "url": "https://github.com/marin-m/vmlinux-to-elf",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -9581,7 +9581,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:55:00+00:00"
   },
   {
@@ -9655,7 +9655,7 @@
   {
    "id": "ret-sync",
    "url": "https://github.com/bootleg/ret-sync",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -9673,7 +9673,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:20:20+00:00"
   },
   {
@@ -9818,7 +9818,7 @@
   {
    "id": "mitmproxy2swagger",
    "url": "https://github.com/alufers/mitmproxy2swagger",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -9836,7 +9836,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-11-01T04:55:05+00:00"
   },
   {
@@ -9888,7 +9888,7 @@
   {
    "id": "zydis",
    "url": "https://github.com/zyantific/zydis",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -9907,7 +9907,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:55:07+00:00"
   },
   {
@@ -9957,7 +9957,7 @@
   {
    "id": "medusa-framework",
    "url": "https://github.com/Ch0pin/medusa",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -9976,13 +9976,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-11-01T04:55:07+00:00"
   },
   {
    "id": "binsider",
    "url": "https://github.com/orhun/binsider",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10002,7 +10002,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:55:07+00:00"
   },
   {
@@ -10033,7 +10033,7 @@
   {
    "id": "coop-anything",
    "url": "https://github.com/cranebeaker/coop-anything",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10051,13 +10051,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: integration entry",
    "checked_at": "2026-10-31T15:20:36+00:00"
   },
   {
    "id": "fissure",
    "url": "https://github.com/ainfosec/FISSURE",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10077,7 +10077,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:20:34+00:00"
   },
   {
@@ -10291,7 +10291,7 @@
   {
    "id": "reflutter",
    "url": "https://github.com/Impact-I/reFlutter",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10309,7 +10309,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:20:47+00:00"
   },
   {
@@ -10337,7 +10337,7 @@
   {
    "id": "me-analyzer",
    "url": "https://github.com/platomav/MEAnalyzer",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10355,7 +10355,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:20:50+00:00"
   },
   {
@@ -10383,7 +10383,7 @@
   {
    "id": "simplify-android-deobfuscator",
    "url": "https://github.com/CalebFenton/simplify",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10401,13 +10401,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-10-31T15:20:50+00:00"
   },
   {
    "id": "gda-android-decompiler",
    "url": "https://github.com/charles2gan/GDA-android-reversing-Tool",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10425,7 +10425,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-11-01T04:55:11+00:00"
   },
   {
@@ -10502,7 +10502,7 @@
   {
    "id": "triton",
    "url": "https://github.com/JonathanSalwan/Triton",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10520,13 +10520,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:20:55+00:00"
   },
   {
    "id": "pylingual",
    "url": "https://github.com/syssec-utd/pylingual",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10545,7 +10545,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:55:12+00:00"
   },
   {
@@ -10875,7 +10875,7 @@
   {
    "id": "bytecode-viewer",
    "url": "https://github.com/Konloch/bytecode-viewer",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10895,7 +10895,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-11-01T04:55:18+00:00"
   },
   {
@@ -11044,7 +11044,7 @@
   {
    "id": "ps3recomp",
    "url": "https://github.com/sp00nznet/ps3recomp",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -11062,7 +11062,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-10-31T15:21:13+00:00"
   },
   {
@@ -12958,7 +12958,7 @@
   {
    "id": "lighthouse",
    "url": "https://github.com/gaasedelen/lighthouse",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -12976,7 +12976,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:55:53+00:00"
   },
   {
@@ -13048,7 +13048,7 @@
   {
    "id": "apk-studio",
    "url": "https://github.com/vaibhavpandeyvpz/apkstudio",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -13066,7 +13066,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-11-01T04:55:52+00:00"
   },
   {
@@ -13186,7 +13186,7 @@
   {
    "id": "ngrev",
    "url": "https://github.com/mgechev/ngrev",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -13205,13 +13205,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-11-01T04:55:58+00:00"
   },
   {
    "id": "apkid",
    "url": "https://github.com/rednaga/APKiD",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -13229,7 +13229,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-11-01T04:55:57+00:00"
   },
   {
@@ -13349,7 +13349,7 @@
   {
    "id": "binsync",
    "url": "https://github.com/binsync/binsync",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -13367,7 +13367,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:56:00+00:00"
   },
   {
@@ -13465,7 +13465,7 @@
   {
    "id": "packetry",
    "url": "https://github.com/greatscottgadgets/packetry",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -13483,13 +13483,13 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-11-01T04:56:05+00:00"
   },
   {
    "id": "lucid-microcode-explorer",
    "url": "https://github.com/gaasedelen/lucid",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -13507,7 +13507,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:56:03+00:00"
   },
   {
@@ -13560,7 +13560,7 @@
   {
    "id": "r2dec",
    "url": "https://github.com/wargio/r2dec-js",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -13578,7 +13578,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:56:07+00:00"
   },
   {
@@ -13672,7 +13672,7 @@
   {
    "id": "rms-runtime-mobile-security",
    "url": "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -13692,7 +13692,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry",
    "checked_at": "2026-11-01T04:56:09+00:00"
   },
   {
@@ -13720,7 +13720,7 @@
   {
    "id": "heimdall-rs",
    "url": "https://github.com/Jon-Becker/heimdall-rs",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -13738,7 +13738,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "full-coverage docs, download method and demo all present",
+   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
    "checked_at": "2026-11-01T04:56:11+00:00"
   },
   {
@@ -13923,6 +13923,28 @@
    },
    "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-01T10:40:43+00:00"
+  },
+  {
+   "id": "lisa-lldb-mcp",
+   "url": "https://github.com/ant4g0nist/lisa.py",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5122,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-01T11:22:32+00:00"
   }
  ]
 }
