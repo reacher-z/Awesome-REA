@@ -5456,5 +5456,52 @@
       "公开画廊使用开源应用快照；从报告生成的 REA-Bench 答案仍以这些报告为参考，不是独立运行真值。",
       "代码采用 MIT，内嵌 Inter 字体保留 SIL OFL 1.1；报告不包含目标应用代码，上游软件/模型权利独立保留。"
     ]
+  },
+  "disklens-windirstat-rea-case": {
+    "name": "DiskLens：基于 WinDirStat 研究的磁盘用量分析器",
+    "requirements": [
+      "源码构建需要 Windows 10/11、Rust MSVC/Visual Studio 构建工具及 Node.js；Mica 样式需要 Windows 11。",
+      "REA/Ghidra 核对已安装的 WinDirStat 二进制，而大量算法来自其公开源码；不能据此视为对闭源程序的净室恢复。",
+      "作者报告了引擎测试及磁盘扫描，但新文件操作路径、清理集成和若干对话框尚未在应用中实测；缺少快速 MFT 扫描，硬链接会重复计数。本目录未运行或复现。",
+      "README 将 DiskLens 标为 GPL-3.0-or-later，并署名 GPL-2.0-or-later 的 WinDirStat 代码移植；第三方组件保留独立许可。"
+    ]
+  },
+  "soundconnect-desktop-rea-engine-case": {
+    "name": "SoundConnect Desktop：复用已调查耳机引擎的 Windows 客户端",
+    "requirements": [
+      "需要 Windows 10/11 和兼容的蓝牙耳机；源码构建需 Node 24、pnpm 10、Rust MSVC，以及固定版本的引擎 DLL 或其 Visual Studio/CMake 构建环境。",
+      "REA 在采用引擎前检查上游 PE 资源、字符串与来源，记录的是依赖调查，不是重新恢复索尼协议或独立安全认证。",
+      "仅报告 WH-1000XM4 实机测试，其他型号依赖上游支持；不支持手机应用同时控制、XM4 配对设备修改及 360 Reality Audio 设置，安装器未签名。",
+      "应用及署名的引擎采用 MIT，索尼识别图片保留索尼权利。"
+    ]
+  },
+  "rec-rs-obs-rea-recorder-case": {
+    "name": "rec-rs：参考 OBS 架构的 Rust macOS 录制器",
+    "requirements": [
+      "通用发布包面向 macOS 15+；源码构建需要文档列出的 Rust/macOS 工具链，屏幕、麦克风与摄像头捕获依赖相应系统权限。",
+      "REA 6.4.0 的 plist/签名检查成功，但原生 analyze/layout 操作失败或不可用；笔记也参考 OBS 源码并使用独立 macOS 检查工具。",
+      "没有自由场景编辑器、转场、应用/多屏捕获或音频滤镜；输出为 8 位 SDR，摄像头叠层直接合成，区域捕获仅支持命令行。",
+      "README 提供自测与持续录制测试工具；YouTube HEVC 推流仅对本地服务器测试。本目录未运行或复现。",
+      "代码声明采用 MIT 或 Apache-2.0；作者声明不包含原始 OBS 代码或素材。"
+    ]
+  },
+  "sketch-paper-rea-canvas-case": {
+    "name": "Sketch：基于 Paper 壳层研究的原生 Rust 画布",
+    "requirements": [
+      "源码构建需要 Rust 1.95+；macOS 发布包面向 11+，Linux 使用文档列出的图形库，文件对话框需要 XDG portal。",
+      "研究目标为合法安装的 Paper Desktop 0.5.15；软件包不含托管编辑器，多项编辑器能力来自壳层集成推断或实现需求。",
+      "没有 HTML/CSS 文档模型、CSS/代码导出、旋转或复杂文字排版，部分混合、裁切和 SVG 导入行为为近似实现。",
+      "Linux 窗口测试使用 Xvfb；macOS 冒烟证据不覆盖完整输入、菜单及 Intel 实测。本目录未运行或复现。",
+      "代码采用 MIT 或 Apache-2.0，Inter 字体保留 SIL OFL 1.1，内嵌智能体技能另有许可说明。"
+    ]
+  },
+  "terminal-tradingview-rea-chart-case": {
+    "name": "Terminal：参考 TradingView 图表研究的 Rust 终端",
+    "requirements": [
+      "源码构建需要 Rust 及文档列出的平台图形环境；数据可使用离线样例或外部提供商，可选券商连接需要用户自己的提供商/账户配置。",
+      "REA 从公开、未登录图表捕获浏览器场景；登录功能、部分指针手势和无法触发的交互仍未知，作者不声称包含 TradingView/Bloomberg 原始代码或素材。",
+      "macOS/Linux 支持及 CI 截图不代表与原产品一致；扫描版披露 PDF 未进行 OCR，非官方数据接口受限流，披露数据仍适用上游使用条款。",
+      "核查的根目录/README 未识别出统一项目许可；仓库访问不授予外部市场数据权利。"
+    ]
   }
 }
