@@ -1,0 +1,131 @@
+{
+  "reviewed_at": "2026-11-01",
+  "catalog_base_revision": "f03202004caec7a418a044dac7525e6c4610f96a",
+  "method": "Primary README and research documents; current GitHub IDs/canonical names; no upstream runtime tests.",
+  "curated": [
+    {
+      "catalog_id": "disklens-windirstat-rea-case",
+      "canonical_url": "https://github.com/KarlssonChristoffer/DiskLens",
+      "queried_alias": "KarlssonChristoffer/DiskLens",
+      "repository_id": 1416823712,
+      "evidence_url": "https://github.com/KarlssonChristoffer/DiskLens/blob/c7d67f4b084b408d9b3e1bb22ee8723727494488/README.md",
+      "additional_evidence_urls": [
+        "https://github.com/KarlssonChristoffer/DiskLens/blob/c7d67f4b084b408d9b3e1bb22ee8723727494488/docs/research.md"
+      ],
+      "reviewed_at": "2026-11-01",
+      "reviewed_readme_sha256": "65affecb48025f17f52b0e9aed67958938611b005bcea96bb99def8239f74126",
+      "reviewed_readme_bytes": 7491,
+      "runtime_tested_by_catalog": false,
+      "duplicate_check": {
+        "queried_alias": "KarlssonChristoffer/DiskLens",
+        "canonical_url": "https://github.com/KarlssonChristoffer/DiskLens",
+        "repository_id": 1416823712,
+        "query": "repo:reacher-z/Awesome-REA is:open \"KarlssonChristoffer/DiskLens\"",
+        "open_matches": [],
+        "baseline_matches": []
+      }
+    },
+    {
+      "catalog_id": "soundconnect-desktop-rea-engine-case",
+      "canonical_url": "https://github.com/B-Howell/soundconnect-desktop",
+      "queried_alias": "B-Howell/soundconnect-desktop",
+      "repository_id": 1415025200,
+      "evidence_url": "https://github.com/B-Howell/soundconnect-desktop/blob/481f4af2da2c96026bd14d19f366c76aa737ccd0/README.md",
+      "additional_evidence_urls": [
+        "https://github.com/B-Howell/soundconnect-desktop/blob/481f4af2da2c96026bd14d19f366c76aa737ccd0/docs/research/SoundConnect%20Desktop%20-%20Upstream%20Security%20Review.md"
+      ],
+      "reviewed_at": "2026-11-01",
+      "reviewed_readme_sha256": "5a54ea59dbd59d53f4e40dec82b1218cdf9bd0b82c051f127f990dbe39f90f8e",
+      "reviewed_readme_bytes": 10921,
+      "runtime_tested_by_catalog": false,
+      "duplicate_check": {
+        "queried_alias": "B-Howell/soundconnect-desktop",
+        "canonical_url": "https://github.com/B-Howell/soundconnect-desktop",
+        "repository_id": 1415025200,
+        "query": "repo:reacher-z/Awesome-REA is:open \"B-Howell/soundconnect-desktop\"",
+        "open_matches": [],
+        "baseline_matches": []
+      }
+    },
+    {
+      "catalog_id": "rec-rs-obs-rea-recorder-case",
+      "canonical_url": "https://github.com/michaelshimeles/rec-rs",
+      "queried_alias": "michaelshimeles/rec-rs",
+      "repository_id": 1414342052,
+      "evidence_url": "https://github.com/michaelshimeles/rec-rs/blob/93dd4948cdc8919e8b444a5af0141cf7c3628e7c/README.md",
+      "additional_evidence_urls": [
+        "https://github.com/michaelshimeles/rec-rs/blob/93dd4948cdc8919e8b444a5af0141cf7c3628e7c/analysis/OBS_ARCHITECTURE.md",
+        "https://github.com/michaelshimeles/rec-rs/releases/tag/v0.1.2"
+      ],
+      "reviewed_at": "2026-11-01",
+      "reviewed_readme_sha256": "ddde181d4cd52a27901c3b778fc12255fddd5ce27ed72e69b03badd262131323",
+      "reviewed_readme_bytes": 28944,
+      "runtime_tested_by_catalog": false,
+      "duplicate_check": {
+        "queried_alias": "michaelshimeles/rec-rs",
+        "canonical_url": "https://github.com/michaelshimeles/rec-rs",
+        "repository_id": 1414342052,
+        "query": "repo:reacher-z/Awesome-REA is:open \"michaelshimeles/rec-rs\"",
+        "open_matches": [],
+        "baseline_matches": []
+      }
+    },
+    {
+      "catalog_id": "sketch-paper-rea-canvas-case",
+      "canonical_url": "https://github.com/michaelshimeles/sketch",
+      "queried_alias": "michaelshimeles/sketch",
+      "repository_id": 1414341949,
+      "evidence_url": "https://github.com/michaelshimeles/sketch/blob/af814b7ab2bd77328a906a1986a048c233e25f9c/README.md",
+      "additional_evidence_urls": [
+        "https://github.com/michaelshimeles/sketch/blob/af814b7ab2bd77328a906a1986a048c233e25f9c/analysis/PAPER_ARCHITECTURE.md",
+        "https://github.com/michaelshimeles/sketch/releases/tag/v0.1.0"
+      ],
+      "reviewed_at": "2026-11-01",
+      "reviewed_readme_sha256": "76416312bb71f2c3c7c6337338d4794c20f4c37a207686e43d4007d3366baf28",
+      "reviewed_readme_bytes": 22380,
+      "runtime_tested_by_catalog": false,
+      "duplicate_check": {
+        "queried_alias": "michaelshimeles/sketch",
+        "canonical_url": "https://github.com/michaelshimeles/sketch",
+        "repository_id": 1414341949,
+        "query": "repo:reacher-z/Awesome-REA is:open \"michaelshimeles/sketch\"",
+        "open_matches": [],
+        "baseline_matches": []
+      }
+    },
+    {
+      "catalog_id": "terminal-tradingview-rea-chart-case",
+      "canonical_url": "https://github.com/michaelshimeles/terminal",
+      "queried_alias": "michaelshimeles/terminal-rs",
+      "repository_id": 1415619130,
+      "evidence_url": "https://github.com/michaelshimeles/terminal/blob/94bb329d683471518dcd210f9ca9fca073c15d0b/README.md",
+      "additional_evidence_urls": [
+        "https://github.com/michaelshimeles/terminal/blob/94bb329d683471518dcd210f9ca9fca073c15d0b/docs/analysis/README.md"
+      ],
+      "reviewed_at": "2026-11-01",
+      "reviewed_readme_sha256": "10718277f4240acd08949e064ddc37a712d589012d213c8f0dc09cf44ba5e8c6",
+      "reviewed_readme_bytes": 38140,
+      "runtime_tested_by_catalog": false,
+      "duplicate_check": {
+        "queried_alias": "michaelshimeles/terminal-rs",
+        "canonical_url": "https://github.com/michaelshimeles/terminal",
+        "repository_id": 1415619130,
+        "query": "repo:reacher-z/Awesome-REA is:open \"michaelshimeles/terminal\"",
+        "open_matches": [],
+        "baseline_matches": []
+      }
+    }
+  ],
+  "held": [
+    {
+      "canonical_url": "https://github.com/MiaAI-Lab/sparkDash",
+      "reviewed_commit": "51daebb6aaecfd3dfaeb2ef9055e867024c84c84",
+      "state": "held-current-rea-relationship-not-established",
+      "evidence": [
+        "https://github.com/MiaAI-Lab/sparkDash/blob/51daebb6aaecfd3dfaeb2ef9055e867024c84c84/README.md",
+        "https://github.com/MiaAI-Lab/sparkDash/commit/8af0ab37eac8fb87737cf0cf0fdf2d0b15178e9e"
+      ],
+      "reason": "The earlier REA integration was explicitly reverted on 2026-10-22; the reviewed current README/tree contain no corresponding module. Historical discovery labels must not be promoted as a current integration."
+    }
+  ]
+}

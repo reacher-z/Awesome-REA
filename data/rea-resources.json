@@ -3532,5 +3532,169 @@
       "https://github.com/Eliot5566/app-xray/blob/66a7b06fb45d99e0e1d1dbcf221856a62639faab/docs/en/guide.md",
       "https://github.com/morluto/rea/discussions/7974"
     ]
+  },
+  {
+    "id": "disklens-windirstat-rea-case",
+    "name": "DiskLens: a WinDirStat-derived disk usage analyzer",
+    "url": "https://github.com/KarlssonChristoffer/DiskLens",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A Rust/Tauri disk analyzer combines REA/Ghidra investigation of WinDirStat 2.5.0 with source-code ports of its treemap and color handling. Its documentation distinguishes binary-confirmed findings from source-derived algorithms and leaves several file actions and Windows integrations untested.",
+    "description_zh": "Rust/Tauri 磁盘分析器结合 REA/Ghidra 对 WinDirStat 2.5.0 的调查及其树图、色彩算法的源码移植；文档区分二进制核对结果与源码来源，并列明多项文件操作和 Windows 集成尚未经实机测试。",
+    "evidence_url": "https://github.com/KarlssonChristoffer/DiskLens/blob/c7d67f4b084b408d9b3e1bb22ee8723727494488/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Windows 10/11, Rust MSVC/Visual Studio build tools and Node.js for source builds; Mica styling needs Windows 11.",
+      "REA/Ghidra cross-checked the installed WinDirStat binary, while much algorithm work used its public source. This is not established as clean-room recovery of a closed program.",
+      "The author reports engine tests and drive scans, but new file-action routes, cleanup integrations and several dialogs are untested in the app. Fast MFT scanning is absent and hard links are counted repeatedly. Not run or reproduced for this catalog.",
+      "README states GPL-3.0-or-later for DiskLens and credits GPL-2.0-or-later WinDirStat code ports; third-party components keep separate licenses."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/KarlssonChristoffer/DiskLens/blob/c7d67f4b084b408d9b3e1bb22ee8723727494488/docs/research.md"
+    ]
+  },
+  {
+    "id": "soundconnect-desktop-rea-engine-case",
+    "name": "SoundConnect Desktop: a Windows client reusing a reviewed headset engine",
+    "url": "https://github.com/B-Howell/soundconnect-desktop",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A Windows Sony-headphone client adopts existing libmdr/libmdr-bt engine DLLs after a documented REA-assisted binary inventory and source review. The desktop interface is modeled on Sound Connect, while protocol implementation and device support are inherited rather than newly reconstructed.",
+    "description_zh": "Windows 索尼耳机客户端在 REA 辅助二进制清点及源码检查后采用既有 libmdr/libmdr-bt 引擎 DLL，桌面界面参考 Sound Connect；协议实现和设备支持来自上游复用，并非本项目重新恢复。",
+    "evidence_url": "https://github.com/B-Howell/soundconnect-desktop/blob/481f4af2da2c96026bd14d19f366c76aa737ccd0/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Windows 10/11 and compatible Bluetooth headphones. Source builds need Node 24, pnpm 10, Rust MSVC and pinned engine DLLs or their Visual Studio/CMake build environment.",
+      "REA inspected upstream PE resources, strings and provenance before engine adoption. This documents dependency investigation, not a new Sony protocol reconstruction or independent security certification.",
+      "Only WH-1000XM4 hardware is reported tested; other models rely on upstream support. Concurrent phone-app control, XM4 paired-device mutations and 360 Reality Audio setup are unsupported; the installer is unsigned.",
+      "MIT covers the app and credited engine; Sony identification images retain Sony rights."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/B-Howell/soundconnect-desktop/blob/481f4af2da2c96026bd14d19f366c76aa737ccd0/docs/research/SoundConnect%20Desktop%20-%20Upstream%20Security%20Review.md"
+    ]
+  },
+  {
+    "id": "rec-rs-obs-rea-recorder-case",
+    "name": "rec-rs: an OBS-informed Rust recorder for macOS",
+    "url": "https://github.com/michaelshimeles/rec-rs",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A macOS recorder is informed by OBS architecture research using REA package inspection, platform tools and public source references. It offers screen/camera recording and streaming with a deliberately smaller scene/source feature set; the research notes record unavailable native-analysis providers.",
+    "description_zh": "macOS 录制器参考 OBS 架构，研究结合 REA 软件包检查、平台工具及公开源码资料；提供屏幕/摄像头录制和推流，但场景、输入源功能范围更小，研究笔记明确记录原生分析引擎不可用。",
+    "evidence_url": "https://github.com/michaelshimeles/rec-rs/blob/93dd4948cdc8919e8b444a5af0141cf7c3628e7c/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Universal releases target macOS 15+; building needs the documented Rust/macOS toolchain. Screen, microphone and camera capture depend on the relevant system permissions.",
+      "REA 6.4.0 plist/signature inspection succeeded, but native analyze/layout operations failed or were unavailable; notes also studied OBS source and used separate macOS inspection tools.",
+      "No free scene-layout editor, transitions, application/multi-display capture or audio filters; output is 8-bit SDR and the webcam overlay is baked in. Region capture is CLI-only.",
+      "The README supplies self-test/soak tooling; YouTube HEVC streaming was checked only against a local server. Not run or reproduced for this catalog.",
+      "Code is documented as MIT OR Apache-2.0; the author states that original OBS code/assets are not included."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "limits",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/michaelshimeles/rec-rs/blob/93dd4948cdc8919e8b444a5af0141cf7c3628e7c/analysis/OBS_ARCHITECTURE.md",
+      "https://github.com/michaelshimeles/rec-rs/releases/tag/v0.1.2"
+    ]
+  },
+  {
+    "id": "sketch-paper-rea-canvas-case",
+    "name": "Sketch: a Paper-shell-informed native Rust canvas",
+    "url": "https://github.com/michaelshimeles/sketch",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A Rust canvas models Paper-like editing behavior after REA investigation of the Paper Desktop shell. The hosted editor was not recovered: research separates observed shell integration from inferred editor features, and the new geometric document model differs from Paper HTML/CSS.",
+    "description_zh": "Rust 画布在 REA 调查 Paper Desktop 壳层后参考其编辑行为；没有恢复托管编辑器，研究区分已观察的壳层集成与推断的编辑器功能，新几何文档模型也不同于 Paper 的 HTML/CSS。",
+    "evidence_url": "https://github.com/michaelshimeles/sketch/blob/af814b7ab2bd77328a906a1986a048c233e25f9c/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Rust 1.95+ for source builds; macOS releases target 11+, Linux uses the documented graphics libraries and XDG portal for file dialogs.",
+      "Research targeted licensed Paper Desktop 0.5.15. The hosted editor was absent from the bundle; several editor-level capabilities were inferred from shell integration or the implementation brief.",
+      "No HTML/CSS document model, CSS/code export, rotation or complex-script shaping; several blend, clipping and SVG-import behaviors are approximations.",
+      "Linux window tests used Xvfb; macOS smoke evidence is narrower than complete input/menu/Intel testing. Not run or reproduced for this catalog.",
+      "Code is MIT OR Apache-2.0; Inter fonts retain SIL OFL 1.1 and bundled agent skills have separate notices."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "limits",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/michaelshimeles/sketch/blob/af814b7ab2bd77328a906a1986a048c233e25f9c/analysis/PAPER_ARCHITECTURE.md",
+      "https://github.com/michaelshimeles/sketch/releases/tag/v0.1.0"
+    ]
+  },
+  {
+    "id": "terminal-tradingview-rea-chart-case",
+    "name": "Terminal: a Rust terminal informed by TradingView chart research",
+    "url": "https://github.com/michaelshimeles/terminal",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "An independent Rust market interface uses REA browser-scenario research on public logged-out TradingView chart interactions. The notes retain observed/documented/inferred/unknown labels; the result supplies its own chart engine and data providers rather than recovering TradingView or Bloomberg server software.",
+    "description_zh": "独立 Rust 市场界面参考 REA 对公开、未登录 TradingView 图表交互的场景研究；笔记保留观察、文档、推断及未知标签，产物使用自己的图表引擎和数据源，而非恢复 TradingView 或 Bloomberg 服务端软件。",
+    "evidence_url": "https://github.com/michaelshimeles/terminal/blob/94bb329d683471518dcd210f9ca9fca073c15d0b/README.md",
+    "verified_at": "2026-11-01",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds need Rust and the documented platform graphics setup. Data can use an offline sample or external providers; brokerage connectivity is optional and requires the user's own provider/account setup.",
+      "REA captured browser scenarios from a public logged-out chart. Login-only behavior, some pointer gestures and unavailable interactions remain unknown; no original TradingView/Bloomberg code or assets are claimed.",
+      "macOS/Linux support and CI screenshots do not establish original-product parity. Scanned disclosure PDFs are not OCR-processed; unofficial data endpoints are rate-limited and upstream filing-use terms still apply.",
+      "No project-wide license was identified in the reviewed root/README; repository access does not grant rights to external market data."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "website",
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/michaelshimeles/terminal/blob/94bb329d683471518dcd210f9ca9fca073c15d0b/docs/analysis/README.md"
+    ]
   }
 ]
