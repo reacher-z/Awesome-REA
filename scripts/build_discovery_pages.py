@@ -213,7 +213,20 @@ def _case_collection(resources: list[dict], language: str, site_url: str,
             if zh else 'These cases are part of the curated total and appear once under their primary subject, with all target labels retained. Source review does not imply independent runtime verification or REA involvement.')
     nav = f'<nav class="browse-category-nav cases-nav" aria-label="{("案例主题" if zh else "Case subjects")}">{"".join(navigation)}</nav>' if navigation else ''
     empty = '' if items else f'<p class="cases-empty">{("当前目录还没有案例条目。" if zh else "No case studies are currently listed.")}</p>'
+    review_title = '软件重建产物评审 · Beta' if zh else 'Software reconstruction artifact reviews · Beta'
+    review_intro = ('从 REA 工作流和独立重建项目中，核对实际产物、复现范围与公开证据。分析报告、局部重建和完整软件的声明按各自范围阅读。'
+                    if zh else 'Explore REA workflows and independent reconstructions through their artifacts, scope and public evidence. Read analysis reports, partial rebuilds and full-software claims within their documented boundaries.')
+    review_dimensions = ([('复现范围', '查看重建了哪些功能、仍有哪些缺口，以及需要自备的原始素材。'),
+                          ('产物入口', '沿原始来源查看代码、发布包或演示；截图与可运行软件分别判断。'),
+                          ('证据与归因', '核对固定来源、复核日期与 REA 的实际角色；保留作者自报结果。'),
+                          ('运行状态', '当前评审核查公开资料，尚未独立实测；不据此认证完整度或兼容性。')]
+                         if zh else [('Reconstruction scope', 'Check the implemented features, documented gaps and original assets you must supply.'),
+                                     ('Available artifacts', 'Follow original sources to code, releases or demos; assess screenshots and runnable software separately.'),
+                                     ('Evidence and attribution', 'Inspect pinned sources, review dates and REA’s documented role; results remain attributed to their authors.'),
+                                     ('Runtime status', 'Current reviews examine public documentation without independent runtime tests; they do not certify completeness or compatibility.')])
+    review = f'<section class="case-review-method" id="review-method" aria-labelledby="review-method-title"><h2 id="review-method-title">{review_title}</h2><p>{review_intro}</p><dl>' + ''.join(f'<div><dt>{escape(label)}</dt><dd>{escape(value)}</dd></div>' for label, value in review_dimensions) + '</dl></section>'
     content = f'''<div class="cases-collection" data-case-count="{len(items)}" data-curated-count="{len(resources)}">
+{review}
 <div class="browse-actions"><a class="button button-primary" href="{search}">{('搜索案例' if zh else 'Search cases')}</a><a class="button button-outline" href="{prefix}/resources/">{('全部精选资源' if zh else 'All resources')}</a>{_suggest_link(repository_url, 'case-study.yml', '推荐重建案例' if zh else 'Suggest a case study')}</div>
 <details class="cases-note"><summary>{('关于这些案例' if zh else 'About these cases')}</summary><p>{escape(note)}</p></details>{nav}{''.join(sections)}{empty}
 </div>'''

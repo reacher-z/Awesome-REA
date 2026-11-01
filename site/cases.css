@@ -2,6 +2,13 @@
 .cases-main{background:var(--paper)}
 .cases-main .browse-intro{padding-bottom:18px}
 .cases-main .browse-actions{margin-bottom:14px}
+.case-review-method{margin:0 0 24px;padding:20px;border:1px solid var(--line);border-radius:12px}
+.case-review-method h2{margin:0;font-size:20px;line-height:1.4}
+.case-review-method>p{max-width:80ch;margin:10px 0 18px;line-height:1.7;color:var(--body)}
+.case-review-method dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px;margin:0}
+.case-review-method dt{font-weight:650}
+.case-review-method dd{margin:5px 0 0;color:var(--body);font-size:15px;line-height:1.65}
+@media(max-width:600px){.case-review-method{padding:16px}.case-review-method dl{grid-template-columns:1fr;gap:14px}}
 .cases-note{margin:0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.75;color:var(--body)}
 .cases-note summary{width:fit-content;min-height:44px;padding:8px 0;cursor:pointer;color:var(--link)}
 .cases-note>p{max-width:76ch;margin:0 0 16px}
