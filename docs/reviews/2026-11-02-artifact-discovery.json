@@ -1,0 +1,179 @@
+{
+  "reviewed_at": "2026-11-01T16:43:07Z",
+  "catalog_base_revision": "2771f980588a45b7eb5c9a3d4195ea3406e57fe9",
+  "scope": "A bounded discovery and documentation-review batch, not a whole-web coverage claim or runtime benchmark.",
+  "discovery_sources": [
+    "https://github.com/kaixinbaba/awesome-rea",
+    "https://reamcp.dev/zh-cn/search",
+    "https://reamcp.dev/zh-cn/types/x"
+  ],
+  "github_queries": [
+    {
+      "query": "\"rea-agents\" reconstruction in:readme fork:false",
+      "requested_results": 50,
+      "retrieved_results": 50,
+      "total_hits": 688
+    },
+    {
+      "query": "\"morluto/rea\" rebuilt in:readme fork:false",
+      "requested_results": 50,
+      "retrieved_results": 50,
+      "total_hits": 87
+    },
+    {
+      "query": "\"Reverse Engineer Anything\" \"reimplementation\" in:readme fork:false",
+      "requested_results": 50,
+      "retrieved_results": 50,
+      "total_hits": 112
+    }
+  ],
+  "github_query_notes": "Counts are search hits, overlap and include mirrors/lists; never treated as unique artifacts. Queries and channel limitations are in the companion review.",
+  "x_attempts": [
+    {
+      "url": "https://x.com/i/status/2110835101583966520",
+      "status": "403 Forbidden",
+      "decision": "Retain as a lead only. Secondary text does not verify the original post, a software artifact or reconstruction completeness."
+    },
+    {
+      "url": "https://x.com/i/status/2109631618088566843",
+      "status": "403 Forbidden",
+      "decision": "Retain as a lead only. Secondary text does not verify the original post, a software artifact or reconstruction completeness."
+    },
+    {
+      "url": "https://x.com/i/status/2109620830103802283",
+      "status": "403 Forbidden",
+      "decision": "Retain as a lead only. Secondary text does not verify the original post, a software artifact or reconstruction completeness."
+    }
+  ],
+  "curated": [
+    {
+      "catalog_id": "untangle-rea-evidence-rebuild-case",
+      "canonical_url": "https://github.com/az9713/untangle-rebuild",
+      "reviewed_at": "2026-11-01T16:36:25Z",
+      "evidence_url": "https://github.com/az9713/untangle-rebuild/blob/6e9925105247268befeb6faed69025dfce4778fc/README.md",
+      "reviewed_readme_sha256": "030e4b7ee4d76a559d3b62c38b45c7b708facbb37171fd68bf75edc5234427c1",
+      "reviewed_readme_bytes": 4745,
+      "relationship": "community-reported-mixed-workflow",
+      "artifact_scope": "Playable single-page reconstruction, claim grading and contamination audit; author-reported fidelity.",
+      "runtime_tested_by_catalog": false,
+      "duplicate_search": {
+        "query": "repo:reacher-z/Awesome-REA is:open \"az9713/untangle-rebuild\"",
+        "total": 0,
+        "items": []
+      },
+      "baseline_scan_snapshot": []
+    },
+    {
+      "catalog_id": "sofa-tv-browser-browsehere-case",
+      "canonical_url": "https://github.com/sonalder-darlene/sofa-tv-browser",
+      "reviewed_at": "2026-11-01T16:36:25Z",
+      "evidence_url": "https://github.com/sonalder-darlene/sofa-tv-browser/blob/6b3afc9544d8e7d2893ed85f184904c8382c02fb/README.md",
+      "reviewed_readme_sha256": "05a405e52363cf0eeda61328e62989a73ad4e9359de9305c220df6374d3ed8b3",
+      "reviewed_readme_bytes": 16643,
+      "relationship": "community-reported-mixed-workflow",
+      "artifact_scope": "A new Android TV browser inspired by a specific remote-control UX, not full BrowseHere equivalence.",
+      "runtime_tested_by_catalog": false,
+      "duplicate_search": {
+        "query": "repo:reacher-z/Awesome-REA is:open \"sonalder-darlene/sofa-tv-browser\"",
+        "total": 0,
+        "items": []
+      },
+      "baseline_scan_snapshot": []
+    },
+    {
+      "catalog_id": "netcat-openbsd-rea-static-case",
+      "canonical_url": "https://github.com/NullLabTests/OpenBSD_netcat_REA",
+      "reviewed_at": "2026-11-01T16:36:25Z",
+      "evidence_url": "https://github.com/NullLabTests/OpenBSD_netcat_REA/blob/cc1870d34e83bad0b8a6ca2489f6fa177efa6a2a/README.md",
+      "reviewed_readme_sha256": "0466b1c5aac6a2e0f4e5f9f06010f182c90c14c234a66ff392212c4e9a9a7c4d",
+      "reviewed_readme_bytes": 13194,
+      "relationship": "community-reported-mixed-workflow",
+      "artifact_scope": "Static investigation and pseudocode only; no reconstructed executable.",
+      "runtime_tested_by_catalog": false,
+      "duplicate_search": {
+        "query": "repo:reacher-z/Awesome-REA is:open \"NullLabTests/OpenBSD_netcat_REA\"",
+        "total": 0,
+        "items": []
+      },
+      "baseline_scan_snapshot": []
+    },
+    {
+      "catalog_id": "openbattlefield2-refractor-engine-case",
+      "canonical_url": "https://github.com/Moxnatiy/OpenBattlefield2",
+      "reviewed_at": "2026-11-01T16:36:25Z",
+      "evidence_url": "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/README.md",
+      "reviewed_readme_sha256": "4a5a66f890c15439a3bef880f7c03a1a9fc469c6a7a81e7decaefd7da38d9489",
+      "reviewed_readme_bytes": 12597,
+      "relationship": "independent-reconstruction",
+      "artifact_scope": "Partial engine and server interoperation; major gameplay remains unfinished.",
+      "runtime_tested_by_catalog": false,
+      "duplicate_search": {
+        "query": "repo:reacher-z/Awesome-REA is:open \"Moxnatiy/OpenBattlefield2\"",
+        "total": 0,
+        "items": []
+      },
+      "baseline_scan_snapshot": []
+    },
+    {
+      "catalog_id": "siegefx-dungeon-siege-engine-case",
+      "canonical_url": "https://github.com/codingncaffeine/SiegeFX",
+      "reviewed_at": "2026-11-01T16:36:25Z",
+      "evidence_url": "https://github.com/codingncaffeine/SiegeFX/blob/6a1a4ade725a860651a06a0d7ddb50d5a3a688d1/README.md",
+      "reviewed_readme_sha256": "40cdfa48f4e69523ffe4f44a8e8bfcf4600c8c52941c392182335daa666d4a9d",
+      "reviewed_readme_bytes": 11551,
+      "relationship": "independent-reconstruction",
+      "artifact_scope": "Alpha engine and modding tools; campaign claims are author-reported, parity gaps remain.",
+      "runtime_tested_by_catalog": false,
+      "duplicate_search": {
+        "query": "repo:reacher-z/Awesome-REA is:open \"codingncaffeine/SiegeFX\"",
+        "total": 0,
+        "items": []
+      },
+      "baseline_scan_snapshot": []
+    },
+    {
+      "catalog_id": "legend-of-legaia-rust-port-case",
+      "canonical_url": "https://github.com/AndrewAltimit/legend-of-legaia-re",
+      "reviewed_at": "2026-11-01T16:36:25Z",
+      "evidence_url": "https://github.com/AndrewAltimit/legend-of-legaia-re/blob/f801d3c319386f7686d7fde45e114e1e2ba6aff5/README.md",
+      "reviewed_readme_sha256": "4e449558dea27396ec65497e801f1a1cda3e33453beb7f86e7a8e320f307c1c1",
+      "reviewed_readme_bytes": 36694,
+      "relationship": "independent-reconstruction",
+      "artifact_scope": "Native/browser port and disc-local tools; source reports full-game ladder, disc-gated tests can skip.",
+      "runtime_tested_by_catalog": false,
+      "duplicate_search": {
+        "query": "repo:reacher-z/Awesome-REA is:open \"AndrewAltimit/legend-of-legaia-re\"",
+        "total": 0,
+        "items": []
+      },
+      "baseline_scan_snapshot": [
+        {
+          "id": "scan-1229734860",
+          "full_name": "AndrewAltimit/legend-of-legaia-re",
+          "observed_at": "2026-10-16T07:15:04.753548Z",
+          "readme_git_sha": "4807db30bb2381af34c64aa3c59fce5108297b9b",
+          "readme_sha256": "9ae9592b6055f1772645956a30a06256a11a5a2a28ec1713f67e02388ad9e3c7",
+          "readme_bytes": 24422,
+          "verification": "automated-readme-scan"
+        }
+      ]
+    },
+    {
+      "catalog_id": "fastview-rea-relay-analysis-rebuild-case",
+      "canonical_url": "https://github.com/dmytrobsp/fastview-rea",
+      "reviewed_at": "2026-11-01T16:43:00Z",
+      "evidence_url": "https://github.com/dmytrobsp/fastview-rea/blob/deb89ea4134414a894ba887508ad5d320449be41/README.md",
+      "reviewed_readme_sha256": "4df4a4a529d138ef9c246219a86ad11a48a418fb8675d0f577c6d472190b9a95",
+      "reviewed_readme_bytes": 12175,
+      "relationship": "community-reported-mixed-workflow",
+      "artifact_scope": "Rust desktop reconstruction with specs and builds; .sto and pixel-level UI parity remain incomplete.",
+      "runtime_tested_by_catalog": false,
+      "duplicate_search": {
+        "query": "repo:reacher-z/Awesome-REA is:open \"dmytrobsp/fastview-rea\"",
+        "total": 0,
+        "items": []
+      },
+      "baseline_scan_snapshot": []
+    }
+  ]
+}

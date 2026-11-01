@@ -3157,5 +3157,129 @@
       "https://github.com/ludovic111/horizon/releases/tag/v2026.10.19.12",
       "https://www.npmjs.com/package/rea-agents/v/6.4.0"
     ]
+  },
+  {
+    "id": "untangle-rea-evidence-rebuild-case",
+    "name": "Untangle: a browser rebuild from REA and Ghidra evidence",
+    "url": "https://github.com/az9713/untangle-rebuild",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "An author-documented REA/Ghidra investigation of the shipped Untangle Windows binary produces a single-page playable rebuild and a claim-by-claim grading receipt. The report separates frozen findings, a later source-code answer key and a prior-knowledge audit.",
+    "description_zh": "作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。",
+    "evidence_url": "https://github.com/az9713/untangle-rebuild/blob/6e9925105247268befeb6faed69025dfce4778fc/README.md",
+    "verified_at": "2026-11-01T16:36:25Z",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The recorded run uses REA 6.3.0, Ghidra 12.1.4 and Windows 11 against puzzles version 20260923.616da16; the rebuild is available as a browser page.",
+      "The reported 52/54 correct claims and L3 seed fidelity are the author's grading results; ten names absent from REA output indicate possible prior-knowledge contamination. Not run or reproduced for this catalog.",
+      "The 72 MB evidence export is omitted; its hash is retained. The README documents a pre-publication history rewrite and maps old commit hashes to new ones.",
+      "Original puzzle binary and source retain Simon Tatham and contributors' MIT license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://az9713.github.io/untangle-rebuild/receipt/rebuild-receipt.html",
+      "https://az9713.github.io/untangle-rebuild/rebuild/index.html"
+    ]
+  },
+  {
+    "id": "sofa-tv-browser-browsehere-case",
+    "name": "Sofa TV Browser: a remote-friendly BrowseHere alternative",
+    "url": "https://github.com/sonalder-darlene/sofa-tv-browser",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "An Android TV browser follows BrowseHere's remote-control interaction design with its own implementation. The author reports using REA to inspect the BrowseHere APK and Claude to build Sofa; the repository documents APK releases, screenshots and current feature limits.",
+    "description_zh": "Android TV 浏览器以自己的实现沿用 BrowseHere 的遥控交互设计；作者报告先用 REA 检查 BrowseHere APK，再用 Claude 构建 Sofa，仓库提供 APK 发布、截图及当前功能限制。",
+    "evidence_url": "https://github.com/sonalder-darlene/sofa-tv-browser/blob/6b3afc9544d8e7d2893ed85f184904c8382c02fb/README.md",
+    "verified_at": "2026-11-01T16:36:25Z",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Android 7.0+ with Android System WebView; APKs are linked from GitHub releases. Source builds need the documented JDK/Android SDK or Nix environment.",
+      "The author's REA attribution is in the linked Reddit report, rather than a published REA evidence bundle; this is an author-reported mixed workflow.",
+      "Tabs, reader mode, phone typing, translations and user scripts are listed as missing or planned. DRM playback and frame-rate switching depend on the TV and WebView.",
+      "GPL-3.0-only; the README states that BrowseHere code, assets and text are not included. Third-party components retain their own notices."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://www.reddit.com/r/AndroidTVApps/comments/1xa9tv3/i_had_ai_reverseengineer_tcls_browsehere_and/",
+      "https://github.com/sonalder-darlene/sofa-tv-browser/releases"
+    ]
+  },
+  {
+    "id": "netcat-openbsd-rea-static-case",
+    "name": "OpenBSD netcat: static REA and Ghidra investigation",
+    "url": "https://github.com/NullLabTests/OpenBSD_netcat_REA",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A REA/Ghidra report studies the Ubuntu netcat-openbsd 1.234-1 ELF binary and publishes evidence envelopes, decompiled functions and a function inventory. Its output is a static investigation, rather than a rebuilt netcat application.",
+    "description_zh": "REA/Ghidra 报告研究 Ubuntu netcat-openbsd 1.234-1 ELF 二进制，公开证据封套、反编译函数及函数清单；产物是静态调查，而非重建后的 netcat 应用。",
+    "evidence_url": "https://github.com/NullLabTests/OpenBSD_netcat_REA/blob/cc1870d34e83bad0b8a6ca2489f6fa177efa6a2a/README.md",
+    "verified_at": "2026-11-01T16:36:25Z",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reproducing the documented analysis needs the target package binary, REA, Ghidra 12.1.x and JDK 21; the README records additional pwntools tooling.",
+      "The author explicitly reports no target execution or dynamic analysis. Function roles remain inferred, and compiler inlining or hot/cold splitting obscures boundaries.",
+      "Upstream netcat.c was consulted for function naming; recovered pseudocode is not an independently reconstructed or behaviorally validated program.",
+      "Analysis and documentation use MIT; upstream BSD attribution is retained in NOTICE."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "binary"
+    ],
+    "kind": "case-study"
+  },
+  {
+    "id": "fastview-rea-relay-analysis-rebuild-case",
+    "name": "FastView-REA: a Rust reconstruction of Fast View 5",
+    "url": "https://github.com/dmytrobsp/fastview-rea",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "A Rust desktop reconstruction of Mekhanotronika Fast View 5 uses REA and Ghidra research to reproduce oscillogram analysis and relay-characteristic views. The project publishes behavioral specifications, factual indexes, screenshots and cross-platform builds, with explicit format and visual-fidelity gaps.",
+    "description_zh": "Rust 桌面重建以 REA 与 Ghidra 的研究复现 Mekhanotronika Fast View 5 的录波分析和继电保护特性视图，公开行为规格、事实索引、截图及跨平台构建，并列明格式与视觉保真度缺口。",
+    "evidence_url": "https://github.com/dmytrobsp/fastview-rea/blob/deb89ea4134414a894ba887508ad5d320449be41/README.md",
+    "verified_at": "2026-11-01T16:43:00Z",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds need the documented Rust toolchain; release archives target Linux, Windows and macOS. Linux needs GTK 3 and a Wayland or X11 session.",
+      "The README attributes the reverse engineering to REA and Ghidra 12.1.3. Its behavioral-identity and validation statements are author-reported, not an independent compatibility certification. Not run or reproduced for this catalog.",
+      "Native .sto input lacks a supplied sample, and the egui interface is not pixel-identical to original GDI/MFC rendering; original bitmaps are replaced.",
+      "Reconstruction code offers MIT or Apache-2.0. Embedded fonts and Intel-derived trigonometry keep separate licenses; the bundled FastView.fvb characteristic data remains original-vendor data."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/dmytrobsp/fastview-rea/releases"
+    ]
   }
 ]

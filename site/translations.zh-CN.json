@@ -5330,5 +5330,67 @@
       "每个函数在两个随机种子上各运行 10,000 组生成输入，须覆盖原函数几乎所有基本块，并经过变异测试；README 报告 2026 年 10 月可读性重写后已对整个源码树重新验证。tools/verify/README.md 说明，等价性是相对于重编译代码对 Espresso CPU 的模拟，而非主机本身，且不检查时序、线程和精确的栈帧布局。游戏内替换测试所用的构建不在发布内容中，仓库没有 CI 工作流，本合集也未运行任何内容。",
       "CC0 1.0 适用于反编译源码、工具和文档；游戏本身、任天堂的数据及移植运行时保留各自条款。README 称其为非官方、非商业的粉丝项目，不接受捐助，也没有付费构建。tools/verify/README.md 报告了一个智能体使用这些工具时的试点耗时，以及由并行智能体编写的两个函数；所审来源未确立 REA 的使用。"
     ]
+  },
+  "untangle-rea-evidence-rebuild-case": {
+    "name": "Untangle：基于 REA 与 Ghidra 证据的浏览器重建",
+    "requirements": [
+      "记录使用 REA 6.3.0、Ghidra 12.1.4 和 Windows 11，目标为 puzzles 20260923.616da16；重建提供浏览器页面。",
+      "52/54 条正确及 L3 同种子一致性来自作者评分；十个未出现在 REA 输出中的名称提示可能受先验知识影响。本目录未运行或复现。",
+      "72 MB 证据导出未提交，仅保留哈希；README 说明发布前曾重写历史，并提供新旧提交对应关系。",
+      "原始谜题二进制与源码保留 Simon Tatham 等贡献者的 MIT 许可。"
+    ]
+  },
+  "sofa-tv-browser-browsehere-case": {
+    "name": "Sofa TV Browser：面向遥控操作的 BrowseHere 替代应用",
+    "requirements": [
+      "需要 Android 7.0+ 和 Android System WebView；GitHub releases 提供 APK，源码构建需要文档列出的 JDK/Android SDK 或 Nix 环境。",
+      "REA 使用归因来自所链接的作者 Reddit 报告，未发布 REA 证据包；属于作者报告的混合工具工作流。",
+      "标签页、阅读模式、手机输入、翻译和用户脚本仍缺失或待实现；DRM 播放与帧率切换取决于电视和 WebView。",
+      "采用 GPL-3.0-only；README 声明不含 BrowseHere 的代码、素材及文字，第三方组件保留各自许可说明。"
+    ]
+  },
+  "netcat-openbsd-rea-static-case": {
+    "name": "OpenBSD netcat：REA 与 Ghidra 静态调查",
+    "requirements": [
+      "复做文档中的分析需要目标软件包二进制、REA、Ghidra 12.1.x 和 JDK 21；README 还列出 pwntools 工具环境。",
+      "作者明确未执行目标或开展动态分析；函数角色仍含推断，编译器内联及冷热分割会模糊函数边界。",
+      "作者参考上游 netcat.c 为函数命名；恢复的伪代码并非独立重建或经过行为验证的程序。",
+      "分析与文档采用 MIT，NOTICE 保留上游 BSD 署名。"
+    ]
+  },
+  "openbattlefield2-refractor-engine-case": {
+    "name": "OpenBattlefield2：尚未完成的 Refractor 2 引擎重实现",
+    "requirements": [
+      "需要自有 Battlefield 2 1.5 安装、CMake 3.24+、Ninja、C++20 编译器及 SDL3；Flash 菜单还需要 Rust 和 Ruffle。",
+      "主要平台为 macOS arm64；Windows 预设维持构建但未实际测试。依赖游戏数据的测试在缺少文件时可提示后通过。",
+      "弹药与装填、后坐力、弹道、音频、驾驶和完整指挥官/小队交互仍未完成；这是引擎研究项目，并非完整游戏移植。",
+      "MIT 覆盖项目代码，不分发原始 Battlefield 2 游戏内容。"
+    ]
+  },
+  "siegefx-dungeon-siege-engine-case": {
+    "name": "SiegeFX：处于 alpha 阶段的 Dungeon Siege 引擎重实现",
+    "requirements": [
+      "需要自有 Dungeon Siege 安装；提供 Windows 与 Linux 构建。源码构建需要 .NET 10；Linux 需要 OpenGL 3.3，互联网联机另需 OpenSSL 3。",
+      "README 明确称其为 alpha；作者报告自 v0.4.0 可推进至最终首领，但 Bink 影片、室内光照保真度和战斗平衡仍待完善。本目录未运行或复现。",
+      "代码采用 GPL-3.0-only，不附带原始游戏素材；联机使用 Epic Online Services，另受 SDK 条款约束。"
+    ]
+  },
+  "legend-of-legaia-rust-port-case": {
+    "name": "Legend of Legaia：Rust 移植与本地读盘的浏览器工具",
+    "requirements": [
+      "自行提供北美 SCUS-94254 版光盘镜像；浏览器工具在本地读取镜像。源码构建需要支持 edition 2024 的 Rust 工具链。",
+      "README 报告覆盖新游戏至片尾并提供一致性测试，但未设置 LEGAIA_DISC_BIN 时依赖光盘的测试会跳过并通过；无素材的 CI 绿灯不代表完整游戏已复现。本目录未运行或复现。",
+      "增强功能可与零售版行为不同；README 另述忠实模式，不分发 Sony 游戏可执行文件、ROM 或素材。",
+      "项目代码与文档可选 Unlicense 或 MIT；这些许可不授予原始游戏的权利。"
+    ]
+  },
+  "fastview-rea-relay-analysis-rebuild-case": {
+    "name": "FastView-REA：Fast View 5 的 Rust 重建",
+    "requirements": [
+      "源码构建需要文档列出的 Rust 工具链；发布包面向 Linux、Windows 和 macOS，Linux 需要 GTK 3 及 Wayland 或 X11 会话。",
+      "README 将逆向研究归于 REA 和 Ghidra 12.1.3；行为一致性与验证结果为作者报告，不是独立兼容性认证。本目录未运行或复现。",
+      "原生 .sto 输入缺少所需样例；egui 界面与原版 GDI/MFC 并非像素一致，原版位图由自绘图形替代。",
+      "重建代码可选 MIT 或 Apache-2.0；内嵌字体及源自 Intel 的三角函数保留独立许可，附带的 FastView.fvb 特性数据仍属原始厂商数据。"
+    ]
   }
 }

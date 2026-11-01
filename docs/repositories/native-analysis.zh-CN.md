@@ -594,7 +594,7 @@
 - [radareorg/radare2-skel](https://github.com/radareorg/radare2-skel) — radare2 项目模板示例。 **[17 星标]**
 - [sp00nznet/xboxdashboard](https://github.com/sp00nznet/xboxdashboard) — 原版 Xbox Dashboard（构建 3944）的首个原生 PC 移植版：使用 xboxrecomp 工具集静态重编译 xboxdash.xbe（x86 → C），并采用 D3D8 → D3D11 后端。 **[17 星标]**
 - [alexdu/ARM-console](https://github.com/alexdu/ARM-console) — 用于 Magic Lantern 的固件分析控制台。 **[16 星标]**
-- [AndrewAltimit/legend-of-legaia-re](https://github.com/AndrewAltimit/legend-of-legaia-re) — 《Legend of Legaia》（PSX，1999）逆向工程：依据 Ghidra 跟踪编写的格式文档、覆盖光盘全部资源的 Rust 提取器，以及面向 wgpu/SDL3、可选支持 WASM 的引擎重新实现。需自备光盘，不分发游戏资源。 **[16 星标]**
+- [AndrewAltimit/legend-of-legaia-re](https://github.com/AndrewAltimit/legend-of-legaia-re) — 《Legend of Legaia》（PSX，1999）逆向工程：依据 Ghidra 跟踪编写的格式文档、覆盖光盘全部资源的 Rust 提取器，以及面向 wgpu/SDL3、可选支持 WASM 的引擎重新实现。需自备光盘，不分发游戏资源。 **[16 星标]** · 精选：[Legend of Legaia：Rust 移植与本地读盘的浏览器工具](https://awesomerea.org/zh/resources/legend-of-legaia-rust-port-case/)
 - [Aspasia1337/IATResolution](https://github.com/Aspasia1337/IATResolution) — 反作弊运行时导入解析器：展示其如何在加载时重建 IAT，以向静态分析隐藏 API 使用情况。 **[16 星标]**
 - [cyrozap/ghidra-md32](https://github.com/cyrozap/ghidra-md32) — Ghidra 的 MediaTek MD32 处理器模块。 **[16 星标]**
 - [nesclab/ProtocolTaint](https://github.com/nesclab/ProtocolTaint) — 基于 Pin 工具的工业二进制协议逆向工程工具。 **[16 星标]**
