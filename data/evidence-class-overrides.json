@@ -1,0 +1,205 @@
+{
+ "schema_version": 1,
+ "meta": {
+  "note": "Manual evidence-class corrections. Entries here override the automated result of scripts/classify_evidence_classes.py; each carries the reason a reviewer disagreed with the heuristic. Add entries as {\"id\", \"evidence_class\", \"note\"}; IDs must exist in the curated catalog.",
+  "review_pass": "2026-11-01: narrowed Class 0 to full software reconstruction cases; six partial case studies moved to Class 1.",
+  "policy": "Whole-product reconstructions with a real demo (non-branding raster screenshot, video or playable link) count as Class 0; logos, badges, SVG progress charts and chat invitations do not count as demos, so such entries stay at the evidence-based class."
+ },
+ "entries": [
+  {
+   "id": "goldeneye-pc-port-case",
+   "evidence_class": 0,
+   "note": "Complete GoldenEye 007 native port from the decompilation; releases and screenshots."
+  },
+  {
+   "id": "ssbu-recomp-case",
+   "evidence_class": 1,
+   "note": "Not a complete reconstruction: the project documents explicit mode limits."
+  },
+  {
+   "id": "battleship-port-case",
+   "evidence_class": 2,
+   "note": "Complete Super Smash Bros. N64 port via libultraship; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
+  },
+  {
+   "id": "plx-native-case",
+   "evidence_class": 1,
+   "note": "Reconstructs a media-client interface rather than the full application."
+  },
+  {
+   "id": "zelda64recomp-case",
+   "evidence_class": 0,
+   "note": "Complete Majora's Mask static recompilation (Zelda 64: Recompiled); releases and screenshots."
+  },
+  {
+   "id": "opengoal-jak-case",
+   "evidence_class": 0,
+   "note": "OpenGOAL: Jak & Daxter decompilation and playable reimplementation; releases and media."
+  },
+  {
+   "id": "lego-island-decomp-case",
+   "evidence_class": 0,
+   "note": "Complete LEGO Island 1.1 source reconstruction with matching builds; releases and media."
+  },
+  {
+   "id": "open-scrantic-screensaver-case",
+   "evidence_class": 0,
+   "note": "Full Johnny Castaway screensaver engine reconstruction in Rust; playable output."
+  },
+  {
+   "id": "lasrecomp",
+   "evidence_class": 0,
+   "note": "Complete static recompilation of the shipped game; releases and screenshots."
+  },
+  {
+   "id": "sms-pc-port-case",
+   "evidence_class": 2,
+   "note": "Complete Super Mario Sunshine PC port from the matching decompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
+  },
+  {
+   "id": "2ship2harkinian-mm-port-case",
+   "evidence_class": 2,
+   "note": "Complete Majora's Mask 2Ship port for Windows/Linux/macOS; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
+  },
+  {
+   "id": "ship-of-harkinian-oot-port-case",
+   "evidence_class": 2,
+   "note": "Complete Ocarina of Time PC port (Ship of Harkinian); releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
+  },
+  {
+   "id": "project-arwing-star-fox-recomp-case",
+   "evidence_class": 0,
+   "note": "Complete Star Fox recompilation to a runnable PC build; releases and screenshots."
+  },
+  {
+   "id": "project-arwing-2-star-fox-2-recomp-case",
+   "evidence_class": 0,
+   "note": "Complete Star Fox 2 recompilation to a runnable PC build; releases and screenshots."
+  },
+  {
+   "id": "ghostship-sm64-port-case",
+   "evidence_class": 2,
+   "note": "Complete SM64 port build; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
+  },
+  {
+   "id": "dk64-recompiled-case",
+   "evidence_class": 0,
+   "note": "Complete Donkey Kong 64 static recompilation with a runtime; releases and video."
+  },
+  {
+   "id": "rsdkv5-engine-decomp-case",
+   "evidence_class": 0,
+   "note": "Complete RSDKv5 (Sonic Mania) engine decompilation; releases and screenshots."
+  },
+  {
+   "id": "rsdkv4-sonic-1-2-decomp-case",
+   "evidence_class": 0,
+   "note": "Complete RSDKv4 (Sonic 1/2) engine decompilation; releases and screenshots."
+  },
+  {
+   "id": "d2r-mobile-switch-rehost-case",
+   "evidence_class": 1,
+   "note": "Rehosts the original Switch program; not a source reconstruction of the software."
+  },
+  {
+   "id": "banjo-recompiled-case",
+   "evidence_class": 2,
+   "note": "Complete Banjo-Kazooie static recompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
+  },
+  {
+   "id": "paperboat-paper-mario-port-case",
+   "evidence_class": 2,
+   "note": "Complete Paper Mario native port from the decompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
+  },
+  {
+   "id": "lost-odyssey-recomp-case",
+   "evidence_class": 0,
+   "note": "Complete Lost Odyssey XenonRecomp translation with a runtime; releases and screenshots."
+  },
+  {
+   "id": "melee-matching-decomp-case",
+   "evidence_class": 0,
+   "note": "Matching decompilation that rebuilds Melee's main.dol from C; builds and screenshots."
+  },
+  {
+   "id": "melee-unlocked-case",
+   "evidence_class": 1,
+   "note": "Beta source port and static recompilation; incomplete build."
+  },
+  {
+   "id": "vandal-hearts-pc-port-case",
+   "evidence_class": 0,
+   "note": "Complete Vandal Hearts PC port; releases and screenshots."
+  },
+  {
+   "id": "starfox64-recompiled-case",
+   "evidence_class": 2,
+   "note": "Complete Star Fox 64 static recompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
+  },
+  {
+   "id": "ctr-turbocharged-port-case",
+   "evidence_class": 0,
+   "note": "Complete Crash Team Racing PC port; downloads and media."
+  },
+  {
+   "id": "mariokart64-recompiled-case",
+   "evidence_class": 2,
+   "note": "Complete Mario Kart 64 static recompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
+  },
+  {
+   "id": "spaghettikart-mk64-port-case",
+   "evidence_class": 2,
+   "note": "Complete Mario Kart 64 port build (SpaghettiKart); releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
+  },
+  {
+   "id": "king-kong-recompiled-case",
+   "evidence_class": 0,
+   "note": "Complete King Kong static recompilation; releases and media."
+  },
+  {
+   "id": "speedbreaker-nfs-most-wanted-case",
+   "evidence_class": 0,
+   "note": "Complete NFS Most Wanted static recompilation (Speedbreaker); releases and screenshots."
+  },
+  {
+   "id": "snap64-recomp-case",
+   "evidence_class": 0,
+   "note": "Complete Snap64 recompilation; releases and media."
+  },
+  {
+   "id": "simpsons-wrestling-recompiled-case",
+   "evidence_class": 0,
+   "note": "Complete Simpsons Wrestling recompilation; releases and media."
+  },
+  {
+   "id": "driver-recomp-setup-host-case",
+   "evidence_class": 1,
+   "note": "A setup host and packaging layer for psxrecomp, not a reconstruction of the game."
+  },
+  {
+   "id": "doaxvb-native-port-case",
+   "evidence_class": 0,
+   "note": "Complete DOA Xtreme Beach Volleyball native port; releases and screenshots."
+  },
+  {
+   "id": "uncharted-collection-pc-port-case",
+   "evidence_class": 0,
+   "note": "Complete Uncharted collection PC port work; builds and video."
+  },
+  {
+   "id": "skate3-recomp-case",
+   "evidence_class": 0,
+   "note": "Complete Skate 3 static recompilation; releases and video."
+  },
+  {
+   "id": "himuro-fatal-frame-decomp-case",
+   "evidence_class": 2,
+   "note": "Fatal Frame decompilation with US/EU code reported fully matched; builds and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
+  },
+  {
+   "id": "whatsapp-web-reveng-legacy-protocol-case",
+   "evidence_class": 1,
+   "note": "Documents the legacy WhatsApp Web protocol; no software reconstruction."
+  }
+ ]
+}

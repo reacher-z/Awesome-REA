@@ -31,6 +31,11 @@
   --monogram:#f3f1fb;
   --monogram-line:#e8e4f4;
   --faint:#fcfcfe;
+  /* Evidence-class dots: C0 full evidence, C1 partial scope, C2 code and docs, C3 notes. */
+  --class-0:#2f8f4e;
+  --class-1:#b08a1e;
+  --class-2:#4a7fb5;
+  --class-3:#98a0ad;
   --mono:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;
 }
@@ -67,6 +72,10 @@
     --monogram:#25243a;
     --monogram-line:#36345a;
     --faint:#1e1f29;
+    --class-0:#5bc987;
+    --class-1:#d3ac4e;
+    --class-2:#79abe0;
+    --class-3:#818897;
   }
 }
 *{box-sizing:border-box}
@@ -201,6 +210,15 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 
 /* Resource cards keep their content readable at both desktop and phone widths. */
 .resource-grid,.source-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+/* Curated entries use a three-column card grid on wide screens; the repository
+   browser keeps two columns because its cards carry more metadata. */
+@media(min-width:1101px){.collection-home .resource-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+@media(min-width:701px) and (max-width:1100px){.collection-home .resource-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
+html[data-layout="cards"] .collection-home .resource-card{padding:18px 18px 14px}
+html[data-layout="cards"] .collection-home .resource-card h3{font-size:17px}
+html[data-layout="cards"] .collection-home .card-description{font-size:15px;margin:10px 0 12px}
+html[data-layout="cards"] .collection-home .card-preview{margin:10px 0 0}
+html[data-layout="cards"] .collection-home .card-preview img{max-height:150px}
 .resource-card,.source-card{min-width:0;padding:24px 24px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 2px 5px var(--shadow);transition:border-color .15s ease,box-shadow .15s ease}
 .resource-card:hover,.source-card:hover{border-color:var(--strong);box-shadow:0 5px 18px #1737540c}
 .card-heading,.source-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
@@ -210,6 +228,27 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .card-title-link:hover,.source-title-link:hover{text-decoration:underline;text-decoration-color:var(--steel);text-underline-offset:4px}
 .card-title-link .icon,.source-title-link .icon{width:12px;height:12px;font-size:11px;vertical-align:baseline;margin-left:6px;color:var(--steel)}
 .resource-kind,.source-stars{flex:none;color:var(--muted);font:500 13px/1.5 var(--sans);font-variant-numeric:tabular-nums;border:1px solid var(--line);border-radius:6px;padding:3px 7px;background:var(--soft);white-space:nowrap}
+.evidence-class{flex:none;display:inline-flex;align-items:center;gap:6px;color:var(--muted);font:500 13px/1.5 var(--sans);border:1px solid var(--line);border-radius:6px;padding:3px 7px;background:var(--soft);white-space:nowrap;cursor:help}
+.evidence-class::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--class-3)}
+.evidence-class-0::before{background:var(--class-0)}
+.evidence-class-1::before{background:var(--class-1)}
+.evidence-class-2::before{background:var(--class-2)}
+.evidence-class-3::before{background:var(--class-3)}
+.evidence-legend{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin:0 0 16px;color:var(--muted);font:500 13px/1.6 var(--sans)}
+.evidence-legend-label{color:var(--body);font-weight:600}
+.evidence-legend-item{display:inline-flex;align-items:center;gap:6px;white-space:normal}
+.evidence-legend-dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--class-3)}
+.evidence-legend-dot-0{background:var(--class-0)}
+.evidence-legend-dot-1{background:var(--class-1)}
+.evidence-legend-dot-2{background:var(--class-2)}
+.evidence-legend-dot-3{background:var(--class-3)}
+.evidence-legend-note{font-style:italic}
+/* Demo previews exist only for Class 0/1 entries that document an image or video demo. */
+.card-preview{position:relative;display:flex;justify-content:center;margin:14px 0 0}
+.card-preview img{display:block;max-width:100%;max-height:220px;width:auto;height:auto;border-radius:8px}
+.card-preview-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--on-ink);font-size:30px;line-height:1;text-shadow:0 2px 10px rgba(0,0,0,.65);pointer-events:none}
+.card-preview-demo{min-height:110px;align-items:center;gap:8px;border-radius:8px;background:var(--soft);color:var(--muted);font:500 13px/1.5 var(--sans)}
+.card-preview-demo-icon{color:var(--ink);font-size:15px;line-height:1}
 .card-description,.source-card-description{max-width:68ch;margin:14px 0 16px;color:var(--body);font-size:16px;line-height:1.8;overflow-wrap:anywhere}
 .source-card-empty{font-style:italic;color:var(--muted)}
 .source-related{display:grid;gap:10px;min-width:0;margin:0 0 17px}
@@ -275,9 +314,10 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .source-field{flex:1}
   .source-field>input,.source-field>select{width:100%}
 }
-/* Category options use the full catalog wording, so on one-row desktops the select takes the room beside the target buttons. */
-@media(min-width:1181px){.curated-selectors{flex:1 1 362px;min-width:0;flex-wrap:nowrap;justify-content:flex-end}.curated-selectors>.source-field:first-child{flex:none}.curated-selectors>.source-field:last-child{flex:0 1 auto}#category-select{width:auto;max-width:100%}}
-/* The live counts widen the target buttons; tighter gaps keep both selects on the same row at 1280 px. */
+/* Three selects need about 550 px, so below ~1460 px the block wraps under the target buttons instead of
+   overflowing the viewport; its own flex-end keeps the fields right-aligned. */
+@media(min-width:1181px){.curated-selectors{flex:1 1 550px;min-width:0;flex-wrap:nowrap;justify-content:flex-end}.curated-selectors>.source-field:first-child{flex:none}.curated-selectors>.source-field:last-child{flex:0 1 auto}#category-select,#class-select{width:auto;max-width:100%}}
+/* The live counts widen the target buttons; tighter gaps keep the filter row compact at 1280 px. */
 @media(min-width:1181px){#curated-view .filter-row{gap:12px}#curated-view .group-filters{gap:6px}}
 @media(max-width:900px){
   .shell{width:calc(100% - 48px)}
@@ -314,6 +354,9 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .source-controls,.filter-row{padding:12px 0;gap:10px}
   .source-selectors,.curated-selectors{gap:12px}
   .source-field{flex:1 1 0}
+  /* Three selects do not fit on one phone row; pair Type with Category and give Evidence class its own row. */
+  #curated-view .source-field{flex:1 1 calc(50% - 6px)}
+  #curated-view .source-field:last-child{flex-basis:100%}
   .source-field>input,.source-field>select{height:40px;font-size:14px}
   .collection-note{gap:6px 14px;padding-bottom:12px}
   .results-topline{min-height:48px;padding:12px 0}
@@ -336,6 +379,8 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .index-mode-switch{gap:20px}
   .index-mode{font-size:13px;gap:6px}
   .index-mode>.icon{width:16px;height:16px;font-size:16px}
+  /* Below 520 px one select per row keeps the counted option labels readable. */
+  #curated-view .source-field{flex-basis:100%}
 }
 @media(max-width:390px){
   .shell{width:calc(100% - 32px)}
@@ -483,7 +528,9 @@ html[lang="zh-CN"] .card-description,html[lang="zh-CN"] .source-card-description
 .layout-control select{min-height:44px;padding:7px 30px 7px 10px;border:1px solid var(--control);border-radius:7px;background:var(--surface);font-size:14px}
 .source-record-context{margin-top:14px}
 html[data-layout="compact"] .collection-home .resource-grid,html[data-layout="compact"] .collection-home .source-results{grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
-html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{display:grid;grid-template-columns:fit-content(70%) minmax(0,1fr);grid-template-areas:"heading heading" "description description" "meta details";gap:8px 24px;padding:20px 8px;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;align-items:start}
+html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{display:grid;grid-template-columns:fit-content(70%) minmax(0,1fr);grid-template-areas:"heading heading" "preview preview" "description description" "meta details";gap:8px 24px;padding:20px 8px;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;align-items:start}
+html[data-layout="compact"] .collection-home .card-preview{grid-area:preview;margin:6px 0 0}
+html[data-layout="compact"] .collection-home .card-preview img{max-height:190px}
 html[data-layout="compact"] .collection-home .resource-card:hover,html[data-layout="compact"] .collection-home .source-card:hover{background:var(--faint);box-shadow:none}
 html[data-layout="compact"] .collection-home .card-heading,html[data-layout="compact"] .collection-home .source-card-head{grid-area:heading;display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:baseline;gap:6px 12px}
 html[data-layout="compact"] .collection-home .card-heading h3,html[data-layout="compact"] .collection-home .source-card-head h3{flex:0 1 auto;font-size:18px;line-height:1.5;font-weight:700;text-wrap:pretty}
@@ -535,7 +582,9 @@ html[lang="zh-CN"][data-layout="compact"] .collection-home .card-description,htm
 /* Wide compact rows: targets, links and the details toggle sit in a right column beside the title and description.
    DOM and focus order are unchanged, and an opened details panel still spans the row. */
 @media(min-width:1101px){
-  html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{grid-template-columns:minmax(0,1fr) minmax(18rem,34%);grid-template-areas:"heading meta" "description meta" "description details";gap:0 40px}
+  html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{grid-template-columns:minmax(0,1fr) minmax(18rem,34%);grid-template-areas:"heading meta" "preview preview" "description meta" "description details";gap:0 40px}
+  html[data-layout="compact"] .collection-home .card-preview{grid-area:preview;margin:8px 0 4px}
+  html[data-layout="compact"] .collection-home .card-preview img{max-height:200px}
   html[data-layout="compact"] .collection-home .card-description,html[data-layout="compact"] .collection-home .source-card-description{margin-top:6px}
   html[data-layout="compact"] .collection-home .card-meta,html[data-layout="compact"] .collection-home .source-card-footer{flex-wrap:wrap;align-content:flex-start;gap:0 16px;padding-block:2px 0}
   /* Labels on the first line, links on the next: a zero-height break item, and links keep their DOM order. */

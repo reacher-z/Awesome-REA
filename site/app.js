@@ -43,6 +43,22 @@ const UI = {
     "shelfResearchDescription": "Papers, artifacts and the limits of their results.",
     "shelfNote": "Each collection links to its original sources.",
     "surveyLink": "Read the editorial survey ↗",
+    "classLabel": "Evidence class",
+    "allEvidenceClasses": "All classes",
+    "evidenceClass0": "Class 0",
+    "evidenceClass1": "Class 1",
+    "evidenceClass2": "Class 2",
+    "evidenceClass3": "Class 3",
+    "evidenceClassDetail0": "full software reconstruction",
+    "evidenceClassDetail1": "partial scope or analysis entry",
+    "evidenceClassDetail2": "code & docs, no demo or download",
+    "evidenceClassDetail3": "notes only",
+    "evidenceClassTitle": "Class 0 marks a full software reconstruction; C1–C3 measure public evidence strength, not completeness.",
+    "evidenceLegendLabel": "Evidence classes:",
+    "evidenceLegendNote": "Class 0 is a full software reconstruction; C1–C3 measure evidence.",
+    "previewImageAlt": "Demo screenshot from the project's public documentation",
+    "previewVideoAlt": "Demo video thumbnail from the project's public documentation",
+    "demoPlaceholder": "Demo available · no screenshot",
     "subjectNav": "Explore reverse engineering by target",
     "subjectBrowse": "Browse subject directories",
     "contributorsEyebrow": "BUILT WITH THE COMMUNITY",
@@ -206,6 +222,22 @@ const UI = {
     "shelfResearchDescription": "论文、研究产物与结论的适用范围。",
     "shelfNote": "各合集均提供原始来源链接。",
     "surveyLink": "阅读专题综述 ↗",
+    "classLabel": "证据档位",
+    "allEvidenceClasses": "全部档位",
+    "evidenceClass0": "Class 0",
+    "evidenceClass1": "Class 1",
+    "evidenceClass2": "Class 2",
+    "evidenceClass3": "Class 3",
+    "evidenceClassDetail0": "完整软件复现",
+    "evidenceClassDetail1": "部分范围或非复现条目",
+    "evidenceClassDetail2": "有代码和文档，缺演示或下载",
+    "evidenceClassDetail3": "仅笔记或进度记录",
+    "evidenceClassTitle": "Class 0 表示完整软件复现；C1–C3 衡量公开证据强度，不代表复现完整度。",
+    "evidenceLegendLabel": "证据档位：",
+    "evidenceLegendNote": "Class 0 为完整软件复现；C1–C3 衡量证据强度。",
+    "previewImageAlt": "项目公开文档中的演示截图",
+    "previewVideoAlt": "项目公开文档中演示视频的封面",
+    "demoPlaceholder": "有 demo · 暂无截图",
     "subjectNav": "按目标领域探索逆向工程",
     "subjectBrowse": "浏览各领域资源目录",
     "contributorsEyebrow": "与社区共同整理",
@@ -339,7 +371,7 @@ const params = new URLSearchParams(location.search);
 document.documentElement.dataset.indexMode = ["source-index", "repositories"].includes(params.get("view")) ? "source-index" : "curated";
 // The path selects the default language; valid legacy query overrides still work.
 const pathLanguage = location.pathname.startsWith("/zh/") ? "zh" : "en";
-const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
+const state = { layout: params.get("layout") === "compact" ? "compact" : "cards", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", class: ["all", "0", "1", "2", "3"].includes(params.get("class")) ? params.get("class") : "all", visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const t = (key) => UI[state.lang][key] || UI.en[key] || key;
@@ -365,7 +397,7 @@ function entryHref(kind, identifier, language = state.lang) {
 }
 function curatedURL() {
   const next = new URL(location.href);
-  for (const [key, defaultValue] of [["q", ""], ["group", "all"], ["category", "all"], ["kind", "all"], ["target", "all"], ["lang", pathLanguage], ["layout", "compact"]]) {
+  for (const [key, defaultValue] of [["q", ""], ["group", "all"], ["category", "all"], ["kind", "all"], ["target", "all"], ["class", "all"], ["lang", pathLanguage], ["layout", "cards"]]) {
     if (state[key] !== defaultValue) next.searchParams.set(key, state[key]);
     else next.searchParams.delete(key);
   }
@@ -409,8 +441,9 @@ function applyLanguage() {
 function renderCategories() {
   const select = $("#category-select"); select.replaceChildren(); const first = node("option", "", t("allCategories")); first.value = "all"; select.append(first);
   [...new Set(state.records.map(r => r.category))].sort((a,b) => compareLabels(label(state.categoryLabels,a), label(state.categoryLabels,b))).forEach(category => { const option = node("option", "", label(state.categoryLabels, category)); option.value = category; select.append(option); });
-  if (state.loaded && ![...select.options].some(o => o.value === state.category)) state.category = "all"; select.value = [...select.options].some(o => o.value === state.category) ? state.category : "all"; renderKinds();
+  if (state.loaded && ![...select.options].some(o => o.value === state.category)) state.category = "all"; select.value = [...select.options].some(o => o.value === state.category) ? state.category : "all"; renderClasses(); renderKinds();
 }
+function renderClasses() { const select=$("#class-select"); select.replaceChildren(); const all=node("option","",t("allEvidenceClasses")); all.value="all"; select.append(all); ["0","1","2","3"].forEach(value => { const option=node("option","",t("evidenceClass"+value)); option.value=value; select.append(option); }); select.value = [...select.options].some(o => o.value === state.class) ? state.class : "all"; }
 const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资源"],"research":["Research","研究"]};
 const FEATURED = ["rea-upstream","chrome-devtools-mcp","renderdoc","jadx-ai-mcp","ghidra","webcrack","assetripper","ilspy","awesome-rea-cases","rea-dxball-case","mitmproxy","rea-notion-case","hex-rays-ida-mcp","picoprint-rea-investigation","morluto-awesome-re"];
 function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>compareLabels(label(KIND,a),label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
@@ -423,7 +456,12 @@ function requirementItems(record) {
   });
 }
 function card(record) {
-  const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
+  const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));
+  if(record.evidence_class!==undefined){const classBadge=node("span","evidence-class evidence-class-"+record.evidence_class,"C"+record.evidence_class);const detail=t("evidenceClassDetail"+record.evidence_class);classBadge.title=t("evidenceClass"+record.evidence_class)+" · "+detail+". "+t("evidenceClassTitle");classBadge.setAttribute("aria-label",t("classLabel")+" "+t("evidenceClass"+record.evidence_class)+": "+detail);head.append(classBadge);}article.append(head);
+  // Class 0/1 entries with a documented demo carry a local preview image; a demo
+  // without an extractable screenshot shows a small placeholder instead.
+  if(record.preview){const figure=node("figure","card-preview");const image=node("img");image.src=record.preview;image.alt=t(record.preview_kind==="video"?"previewVideoAlt":"previewImageAlt");image.setAttribute("loading","lazy");image.setAttribute("decoding","async");figure.append(image);if(record.preview_kind==="video"){const play=node("span","card-preview-play","▶");play.setAttribute("aria-hidden","true");figure.append(play);}article.append(figure);}
+  else if(record.preview_kind==="demo"){const figure=node("figure","card-preview card-preview-demo");const play=node("span","card-preview-demo-icon","▶");play.setAttribute("aria-hidden","true");figure.append(play,node("span","card-preview-demo-label",t("demoPlaceholder")));article.append(figure);}
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
   const meta=node("div","card-meta");meta.append(node("span","card-category",label(state.categoryLabels,record.category)));article.append(meta);
   const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");if(!fillRequirements(list,record)){state.pendingRequirements.push([list,record]);details.addEventListener("toggle",()=>{if(details.open)loadDetails();});}details.append(list);
@@ -457,9 +495,9 @@ function loadDetails() {
 }
 function queryTerms() { return state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean); }
 // skip leaves one facet out, so that facet's choices can be counted against every other active filter.
-function matches(r, terms, skip = "") { return (state.group==="all"||r.group===state.group)&&(skip==="target"||state.target==="all"||r.targets.includes(state.target))&&(skip==="category"||state.category==="all"||r.category===state.category)&&(skip==="kind"||state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)); }
+function matches(r, terms, skip = "") { return (state.group==="all"||r.group===state.group)&&(skip==="target"||state.target==="all"||r.targets.includes(state.target))&&(skip==="category"||state.category==="all"||r.category===state.category)&&(skip==="kind"||state.kind==="all"||r.kind===state.kind)&&(skip==="evidence_class"||state.class==="all"||String(r.evidence_class)===state.class)&&terms.every(term=>r.search.includes(term)); }
 function filtered() { const terms=queryTerms();const found=state.records.filter(r=>matches(r,terms));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
-// Each target button and Type/Category option shows how many results it would give with the other filters and the query.
+// Each target button and each Type/Category/evidence-class option shows how many results it would give with the other filters and the query.
 // Empty choices are disabled unless selected, so a shared URL still shows its own choice; counts are not announced.
 function renderFacets() {
   const terms = queryTerms();
@@ -472,6 +510,8 @@ function renderFacets() {
     const counts = tally(facet, r => [r[facet]]);
     for (const option of $(selector).options) { const count = counts.get(option.value) || 0; option.textContent = counted(option.value === "all" ? t(allKey) : label(map, option.value), count); option.disabled = count === 0 && option.value !== state[facet]; }
   }
+  const classCounts = tally("evidence_class", r => [String(r.evidence_class)]);
+  for (const option of $("#class-select").options) { const count = classCounts.get(option.value) || 0; option.textContent = counted(option.value === "all" ? t("allEvidenceClasses") : t("evidenceClass" + option.value), count); option.disabled = count === 0 && option.value !== state.class; }
 }
 function renderEmptySearchActions(foundCount = state.loaded ? filtered().length : null) {
   const show = state.loaded && !state.error && sourceState.mode === "curated"
@@ -502,21 +542,21 @@ function render(shown = 0) {
   renderEmptySearchActions(found.length);
   showExport("");
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
-  $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all";
+  $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all" && state.class === "all";
   renderMoreFilters();
   $$('[data-group]').forEach(el => { const active = el.dataset.group === state.group; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
   $$('[data-target]').forEach(el => { const active = el.dataset.target === state.target; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
   renderFacets();
 }
-// Phones fold Type and Category behind “More filters” (styles.css); the toggle counts active selects, and a page
-// opened with one active starts expanded. Wider layouts hide the toggle and always show both selects.
+// Phones fold Type, Category and Evidence class behind “More filters” (styles.css); the toggle counts active selects, and a page
+// opened with one active starts expanded. Wider layouts hide the toggle and always show all three selects.
 let moreFiltersSynced = false;
 function setMoreFilters(open) { $("#more-filters").setAttribute("aria-expanded", String(open)); $("#curated-selectors").classList.toggle("is-open", open); }
 function renderMoreFilters() {
-  const active = (state.kind !== "all") + (state.category !== "all"); const count = $("#more-filters-count"); count.textContent = String(active); count.hidden = !active;
+  const active = (state.kind !== "all") + (state.category !== "all") + (state.class !== "all"); const count = $("#more-filters-count"); count.textContent = String(active); count.hidden = !active;
   if (state.loaded && !moreFiltersSynced) { moreFiltersSynced = true; if (active) setMoreFilters(true); }
 }
-function reset() { state.q = ""; state.group = "all"; state.category = "all"; state.kind = "all"; $("#kind-select").value="all"; state.target = "all"; state.visible = 15; $("#search-input").value = ""; $("#category-select").value = "all"; updateURL(); render(); }
+function reset() { state.q = ""; state.group = "all"; state.category = "all"; state.kind = "all"; $("#kind-select").value="all"; state.target = "all"; state.class = "all"; $("#class-select").value = "all"; state.visible = 15; $("#search-input").value = ""; $("#category-select").value = "all"; updateURL(); render(); }
 async function load() {
   state.error = false; $("#error-state").hidden = true; $("#resource-grid").setAttribute("aria-busy", "true"); $("#results-status").textContent = t("loading");
   try {
@@ -536,6 +576,7 @@ async function load() {
 $("#search-input").value = state.q;
 $("#search-input").addEventListener("input", event => { state.q = event.target.value; state.visible = 15; updateURL(); if (state.loaded) { loadDetails(); render(); } });
 $("#kind-select").addEventListener("change", event => { state.kind=event.target.value; state.visible=15; updateURL(); if(state.loaded)render(); });
+$("#class-select").addEventListener("change", event => { state.class = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
 $("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
 $$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(); if (state.loaded) render(); }));
 $$('[data-target]').forEach(el => el.addEventListener("click", () => { state.target = el.dataset.target; state.visible = 15; updateURL(); if (state.loaded) render(); }));
@@ -603,7 +644,7 @@ function curatedExport() {
   const found = filtered();
   return {count: found.length, filename: "awesomerea-curated-matches.json", value: {export: {...exportMetadata("curated-catalog", "curated-resource",
     "Curated resources matching the homepage filters, copied unchanged from catalog.json. Each record keeps its own source review (verification, verified_at, evidence_url); this export adds none.",
-    {q: state.q, target: state.target, kind: state.kind, category: state.category, group: state.group}, "displayed", found.length, state.records.length),
+    {q: state.q, target: state.target, kind: state.kind, category: state.category, group: state.group, class: state.class}, "displayed", found.length, state.records.length),
     full_download: dataURL("catalog.json").href}, resources: exportRecords(found.map(record => state.fullRecords?.get(record.id) || record))}};
 }
 function sourceExport() {

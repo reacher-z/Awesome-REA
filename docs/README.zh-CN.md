@@ -44,3 +44,9 @@
 | [对标与首月计划](benchmark-research.zh-CN.md) | 中文 | 快照，观察于 2026-10-16（UTC） | 19 个仓库的对标、首发计划与 Star 目标 |
 
 对标研究对应 [benchmarks.json](../data/benchmarks.json)：2026-10-16T00:47:46Z 至 00:47:48Z 期间通过 GitHub REST API 对 19 个仓库（2 个指定锚点和 17 个对标仓库）做的一次观察。这些仓库是为覆盖高关注参考和直接近邻而有意挑选的，不是随机样本，因此不支持因果比较或增长估计。其中的 Star 目标和 30 天计划是首发时的规划存档，不是增长预测，也不是当前计划；当前优先事项见合集路线图（英文）。
+
+## 评测基线
+
+| 文档 | 语言 | 状态 | 内容 |
+| --- | --- | --- | --- |
+| [精选条目证据档位](evidence-classes.zh-CN.md) | 中文 | v2，自动生成 | 全部 596 条精选条目的 Class 0-3 证据档位，Class 0 只保留完整的软件复现案例；展示并支持筛选于主页，由 [classify_evidence_classes.py](../scripts/classify_evidence_classes.py) 生成到 [data/evidence-classes.json](../data/evidence-classes.json) |

@@ -182,9 +182,9 @@ if (require.main === module) (async () => {
   assert.equal(shared.searchParams.get('view'), 'source-index');
   assert.equal(shared.searchParams.get('target'), 'protocol');
   assert.equal(shared.hash, '#catalog');
-  assert.equal(shared.searchParams.has('layout'), false);
+  assert.equal(shared.searchParams.get('layout'), 'compact');
   layoutControl.value = 'cards'; layoutControl.emit('change');
-  assert.equal(new URL(layouts.context.location.href).searchParams.get('layout'), 'cards');
+  assert.equal(new URL(layouts.context.location.href).searchParams.has('layout'), false);
   const sourceCard = layouts.elements.get('#source-results').children[0];
   const scanDetails = sourceCard.children.find(child => child.className === 'source-record-details');
   const recordContext = scanDetails.children.find(child => child.className === 'source-record-context');
@@ -195,8 +195,8 @@ if (require.main === module) (async () => {
   assert.equal(new URL(layouts.context.location.href).searchParams.get('topic'), 'protocol-analysis');
   assert.equal(layouts.api.sourceFiltered().length, 1);
   const unknownLayout = setup('?layout=invalid'); unknownLayout.api.applyLanguage();
-  assert.equal(unknownLayout.context.document.documentElement.dataset.layout, 'compact');
-  assert.equal(home.api.state.layout, 'compact');
+  assert.equal(unknownLayout.context.document.documentElement.dataset.layout, 'cards');
+  assert.equal(home.api.state.layout, 'cards');
   const invalid = setup('?view=curated&target=unrecognized&source-target=unrecognized');
   await invalid.api.load();
   assert.equal(invalid.api.state.target, 'all');

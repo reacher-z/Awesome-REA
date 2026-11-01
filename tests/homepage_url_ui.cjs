@@ -41,7 +41,7 @@ const tests = {
       assert.equal(app.replacements.length, 0, 'a bare canonical URL needs no history replacement');
       assert.equal(app.api.state.lang, pathname === '/zh/' ? 'zh' : 'en');
       assert.equal(app.api.sourceState.mode, 'curated');
-      assert.equal(app.api.state.layout, 'compact');
+      assert.equal(app.api.state.layout, 'cards');
       assert.deepEqual(paths(app), CATALOG_REQUESTS, 'normalization must not fetch repository data');
       for (const query of ['应用 & UI', 'all', 'relevance', '  literal  ']) {
         input(app, '#search-input', query);
@@ -49,13 +49,14 @@ const tests = {
         assert.equal(value(app, 'lang'), null);
         assert.equal(value(app, 'view'), null);
         assert.equal(value(app, 'layout'), null);
+        assert.equal(value(app, 'class'), null);
       }
       input(app, '#layout-select', 'cards', 'change');
-      assert.equal(value(app, 'layout'), 'cards');
-      input(app, '#layout-select', 'compact', 'change');
       assert.equal(value(app, 'layout'), null);
+      input(app, '#layout-select', 'compact', 'change');
+      assert.equal(value(app, 'layout'), 'compact');
       element(app, '#empty-reset').emit('click');
-      assert.equal(app.context.location.search, '');
+      assert.equal(app.context.location.search, '?layout=compact', 'reset clears filters but keeps the layout preference');
       const count = app.replacements.length;
       app.api.setIndexMode('curated'); app.api.applyLanguage(); app.api.reset();
       assert.equal(app.replacements.length, count, 'unchanged states must not rewrite the URL');
@@ -63,7 +64,7 @@ const tests = {
   },
   async rejected() {
     for (const pathname of ['/', '/zh/']) {
-      const query = '?category=bogus&kind=nope&target=moon&group=bogus&lang=invalid'
+      const query = '?category=bogus&kind=nope&target=moon&group=bogus&class=ten&lang=invalid'
         + '&view=unknown&layout=invalid&source-target=moon&sort=bogus&keep=one&keep=two#catalog';
       const app = application(query, {pathname});
       assert.equal(app.replacements.length, 0, 'do not remove unvalidated catalog fields before load');
@@ -73,13 +74,14 @@ const tests = {
       assert.equal(app.context.location.href, 'https://awesomerea.org' + pathname + '?keep=one&keep=two#catalog');
       assert.deepEqual(Array.from(app.context.location.searchParams.getAll('keep')), ['one', 'two']);
       for (const key of ['group', 'category', 'kind', 'target']) assert.equal(app.api.state[key], 'all');
+      assert.equal(app.api.state.class, 'all', 'a rejected evidence class normalizes too');
       assert.equal(app.api.sourceState.target, 'all');
       assert.equal(app.api.sourceState.sort, 'relevance');
       assert.equal(app.api.state.lang, pathname === '/zh/' ? 'zh' : 'en');
       app.api.applyLanguage(); await app.api.load();
       assert.equal(app.replacements.length, 1, 'render/reload after normalization is idempotent');
     }
-    const defaults = application('?view=curated&layout=compact&lang=zh&group=all&category=all&kind=all&target=all'
+    const defaults = application('?view=curated&layout=cards&lang=zh&group=all&category=all&kind=all&target=all&class=all'
       + '&q=&sourceq=&source-target=all&topic=&sort=relevance', {pathname: '/zh/'});
     await defaults.api.load();
     assert.equal(defaults.context.location.href, 'https://awesomerea.org/zh/');
@@ -96,15 +98,15 @@ const tests = {
       ['/', 'zh', 'zh'], ['/zh/', 'en', 'en'], ['/', 'en', null], ['/zh/', 'zh', null],
     ]) {
       for (const view of ['repositories', 'source-index']) {
-        const app = application(`?lang=${language}&view=${view}&layout=cards&sort=updated#catalog`, {pathname});
+        const app = application(`?lang=${language}&view=${view}&layout=compact&sort=updated#catalog`, {pathname});
         await app.api.load(); await settle();
         assert.equal(app.api.state.lang, language);
         assert.equal(app.context.document.documentElement.lang, language === 'zh' ? 'zh-CN' : 'en');
         assert.equal(value(app, 'lang'), expectedOverride);
         assert.equal(app.api.sourceState.mode, 'source-index');
         assert.equal(value(app, 'view'), 'source-index');
-        assert.equal(app.api.state.layout, 'cards');
-        assert.equal(value(app, 'layout'), 'cards');
+        assert.equal(app.api.state.layout, 'compact');
+        assert.equal(value(app, 'layout'), 'compact');
         assert.equal(app.api.sourceState.sort, 'pushed');
         assert.equal(value(app, 'sort'), 'pushed');
         assert.equal(app.api.sourceState.loaded, true);
@@ -114,14 +116,14 @@ const tests = {
       }
     }
     const earlyLayout = application('?view=repositories&category=dynamic-analysis&kind=tool');
-    input(earlyLayout, '#layout-select', 'cards', 'change');
+    input(earlyLayout, '#layout-select', 'compact', 'change');
     assert.equal(value(earlyLayout, 'view'), 'repositories', 'an interaction before load must retain the requested view');
     await earlyLayout.api.load(); await settle();
     assert.equal(earlyLayout.api.sourceState.mode, 'source-index');
     assert.equal(value(earlyLayout, 'category'), 'dynamic-analysis');
     assert.equal(value(earlyLayout, 'kind'), 'tool');
-    assert.equal(value(earlyLayout, 'layout'), 'cards');
-    const canonical = application('?view=source-index&layout=cards&lang=zh');
+    assert.equal(value(earlyLayout, 'layout'), 'compact');
+    const canonical = application('?view=source-index&layout=compact&lang=zh');
     await canonical.api.load(); await settle();
     assert.equal(canonical.replacements.length, 0, 'working nondefault legacy language override is already canonical');
     const unavailable = application('?view=repositories&sourceq=Fixture&source-target=protocol&topic=fixtures&sort=stars', {unavailable: true});
@@ -135,7 +137,7 @@ const tests = {
     assert.deepEqual(paths(unavailable), CATALOG_REQUESTS);
   },
   async inactive() {
-    const filters = '?q=Fixture&group=tools&category=dynamic-analysis&kind=tool&target=app'
+    const filters = '?q=Fixture&group=tools&category=dynamic-analysis&kind=tool&target=app&class=2'
       + '&sourceq=project&source-target=protocol&topic=not-a-known-topic&sort=stars&keep=x&keep=y#details';
     for (const mode of ['curated', 'source-index']) {
       const query = mode === 'source-index' ? filters.replace('?', '?view=source-index&') : filters;
@@ -144,7 +146,7 @@ const tests = {
       await app.api.load(); await settle();
       assert.equal(app.context.location.href, original);
       assert.equal(app.replacements.length, 0);
-      const curatedKeys = ['q', 'group', 'category', 'kind', 'target'];
+      const curatedKeys = ['q', 'group', 'category', 'kind', 'target', 'class'];
       const sourceKeys = ['sourceq', 'source-target', 'topic', 'sort'];
       const saved = Object.fromEntries([...curatedKeys, ...sourceKeys].map(key => [key, value(app, key)]));
       app.api.setIndexMode(mode === 'curated' ? 'source-index' : 'curated'); await settle();
@@ -183,15 +185,15 @@ const tests = {
       await app.api.load();
       expect('?q=ghidra&target=binary#catalog');
       input(app, '#search-input', 'mitm proxy');
-      input(app, '#layout-select', 'cards', 'change');
-      expect('?q=mitm+proxy&target=binary&layout=cards#catalog');
+      input(app, '#layout-select', 'compact', 'change');
+      expect('?q=mitm+proxy&target=binary&layout=compact#catalog');
       element(app, '#mode-sources').emit('click'); await settle();
-      expect('?q=mitm+proxy&target=binary&layout=cards&view=source-index#catalog');
+      expect('?q=mitm+proxy&target=binary&layout=compact&view=source-index#catalog');
       // Fragment navigation does not pass through replaceState.
       app.context.location.hash = '#contributors'; app.windowListeners.hashchange();
-      expect('?q=mitm+proxy&target=binary&layout=cards&view=source-index#contributors');
+      expect('?q=mitm+proxy&target=binary&layout=compact&view=source-index#contributors');
       element(app, '#mode-curated').emit('click'); element(app, '#empty-reset').emit('click');
-      input(app, '#layout-select', 'compact', 'change');
+      input(app, '#layout-select', 'cards', 'change');
       expect('#contributors');
       assert.equal(app.context.location.lastNavigation, undefined, 'the links navigate only when activated');
     }

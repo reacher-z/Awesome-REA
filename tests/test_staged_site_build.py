@@ -64,6 +64,14 @@ class StagedSiteBuildTests(unittest.TestCase):
         for filename, record in [('rea-resources.json', case), ('papers.json', paper)]:
             (data / filename).write_text(json.dumps([record]))
         (data / 'tool-resources.json').write_text('[]')
+        # The build refuses a catalog entry without an evidence class; ship one for the fixture.
+        (data / 'evidence-classes.json').write_text(json.dumps({
+            'schema_version': 1,
+            'meta': {'spec_version': 'evidence-class-v1', 'entry_count': 1, 'class_counts': {'2': 1}, 'override_count': 0},
+            'entries': [{'id': case['id'], 'url': case['url'], 'evidence_class': 2,
+                         'basis': 'page-fetch', 'signals': {'code': True, 'docs': True},
+                         'reason': 'synthetic staged-build fixture', 'checked_at': '2026-11-01T00:00:00+00:00'}],
+        }))
         # Exercise the real survey renderer against this same bounded catalog.
         pair = lambda en, zh: {'en': en, 'zh': zh}
         survey = {

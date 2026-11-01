@@ -56,7 +56,7 @@ function application(query, pathname = '/') {
     assert.equal(data.export.collection, 'curated-catalog');
     assert.equal(data.export.record_class, 'curated-resource');
     assert.equal(data.export.subset, 'filtered');
-    assert.deepEqual(data.export.filters, {q: 'decompiler', target: 'app', kind: 'all', category: 'all', group: 'all'});
+    assert.deepEqual(data.export.filters, {q: 'decompiler', target: 'app', kind: 'all', category: 'all', group: 'all', class: 'all'});
     assert.equal(data.export.order, 'displayed');
     assert.equal(data.export.matched_count, 20);
     assert.equal(data.export.total_count, 40);
