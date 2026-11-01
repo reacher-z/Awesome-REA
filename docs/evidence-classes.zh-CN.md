@@ -35,7 +35,7 @@
 
 ## 2. 方法与局限
 
-- 596 条中，519 条通过 GitHub REST 读取仓库元数据、releases（含产物数）和 README；2 条走 GitLab REST；37 条（如 `rea.tools`、博客、文档站）抓取页面本身，并检测页面内的仓库链接、图片与视频；另有 38 条人工覆盖，见下文。
+- 596 条中，519 条通过 GitHub REST 读取仓库元数据、releases（含产物数）和 README；2 条走 GitLab REST；37 条（如 `rea.tools`、博客、文档站）抓取页面本身，并检测页面内的仓库链接、图片与视频；另有 39 条人工覆盖，见下文。
 - 图片过滤掉徽章类（shields.io、CI badge、logo 等），避免把项目徽章当成 demo。
 - 主页对 Class 0/1 显示**示范截图**：`scripts/build_evidence_previews.py` 在 README 或页面中挑选评分最高的可用 demo 图片（优先截图/演示章节和描述性 alt；logo、徽章、二维码、群聊与赞助链接会被排除），视频 demo 取 YouTube 封面，写入 [`data/evidence-previews.json`](../data/evidence-previews.json)。`scripts/fetch_previews.py` 在构建前把图片下载到 `.cache/previews/`，构建再复制到站点的 `previews/` 目录，页面不外链第三方图片。没有合格图片的条目保持纯文字。
 - 抓取时间写入每条记录的 `checked_at`；信号保存在 `signals` 字段，供逐条审计。
