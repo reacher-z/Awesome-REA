@@ -2,12 +2,12 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v1",
-  "generated_at": "2026-11-01T01:25:29+00:00",
-  "entry_count": 529,
+  "generated_at": "2026-11-01T04:56:16+00:00",
+  "entry_count": 594,
   "class_counts": {
-   "0": 129,
-   "1": 113,
-   "2": 258,
+   "0": 141,
+   "1": 127,
+   "2": 297,
    "3": 29
   },
   "override_count": 38,
@@ -414,7 +414,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-10-31T14:50:11+00:00"
+   "checked_at": "2026-11-01T04:53:32+00:00"
   },
   {
    "id": "rea-ctf-case",
@@ -462,7 +462,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-10-31T14:50:11+00:00"
+   "checked_at": "2026-11-01T04:53:31+00:00"
   },
   {
    "id": "rea-notion-case",
@@ -484,7 +484,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-10-31T14:50:10+00:00"
+   "checked_at": "2026-11-01T04:53:31+00:00"
   },
   {
    "id": "rea-th04-case",
@@ -508,7 +508,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-10-31T14:50:11+00:00"
+   "checked_at": "2026-11-01T04:53:31+00:00"
   },
   {
    "id": "rea-electron-guide",
@@ -692,7 +692,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:14:54+00:00"
+   "checked_at": "2026-11-01T04:53:34+00:00"
   },
   {
    "id": "awesome-rea-cases",
@@ -741,7 +741,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:15:00+00:00"
+   "checked_at": "2026-11-01T04:53:34+00:00"
   },
   {
    "id": "open-appleremote-case",
@@ -763,7 +763,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:15:00+00:00"
+   "checked_at": "2026-11-01T04:53:34+00:00"
   },
   {
    "id": "gamekb-k17-case",
@@ -833,7 +833,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:15:01+00:00"
+   "checked_at": "2026-11-01T04:53:34+00:00"
   },
   {
    "id": "sm64ds-decomp-case",
@@ -881,7 +881,7 @@
     "unavailable": false
    },
    "reason": "Complete GoldenEye 007 native port from the decompilation; releases and screenshots.",
-   "checked_at": "2026-10-31T15:15:04+00:00"
+   "checked_at": "2026-11-01T04:53:35+00:00"
   },
   {
    "id": "ssbu-recomp-case",
@@ -905,7 +905,7 @@
     "unavailable": false
    },
    "reason": "Full Smash Bros. Ultimate 13.0.4 static recompilation with a runtime; releases and screenshots.",
-   "checked_at": "2026-10-31T15:15:10+00:00"
+   "checked_at": "2026-11-01T04:53:42+00:00"
   },
   {
    "id": "kartpad-case",
@@ -916,18 +916,18 @@
     "code": true,
     "code_basis": "repo",
     "docs": true,
-    "docs_bytes": 31231,
+    "docs_bytes": 31019,
     "docs_full": false,
     "download": "release-assets",
-    "release_count": 25,
-    "release_asset_count": 138,
+    "release_count": 26,
+    "release_asset_count": 144,
     "demo": [],
     "media_count": 0,
     "archived": false,
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:15:08+00:00"
+   "checked_at": "2026-11-01T04:53:38+00:00"
   },
   {
    "id": "battleship-port-case",
@@ -975,7 +975,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T14:50:23+00:00"
+   "checked_at": "2026-11-01T04:53:34+00:00"
   },
   {
    "id": "snowboardkids2-decomp-case",
@@ -1021,7 +1021,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:15:07+00:00"
+   "checked_at": "2026-11-01T04:53:38+00:00"
   },
   {
    "id": "cooler-lcd-case",
@@ -1045,7 +1045,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:15:10+00:00"
+   "checked_at": "2026-11-01T04:53:38+00:00"
   },
   {
    "id": "isaacrecomp-case",
@@ -1069,7 +1069,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:15:08+00:00"
+   "checked_at": "2026-11-01T04:53:39+00:00"
   },
   {
    "id": "vd-streamer-linux-case",
@@ -1091,7 +1091,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:15:09+00:00"
+   "checked_at": "2026-11-01T04:53:38+00:00"
   },
   {
    "id": "open-claude-ui-case",
@@ -1115,7 +1115,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:15:12+00:00"
+   "checked_at": "2026-11-01T04:53:40+00:00"
   },
   {
    "id": "nanolathe-case",
@@ -1166,7 +1166,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:15:15+00:00"
+   "checked_at": "2026-11-01T04:53:39+00:00"
   },
   {
    "id": "plx-native-case",
@@ -1312,7 +1312,7 @@
     "unavailable": false
    },
    "reason": "Complete Majora's Mask static recompilation (Zelda 64: Recompiled); releases and screenshots.",
-   "checked_at": "2026-10-31T15:15:15+00:00"
+   "checked_at": "2026-11-01T04:53:42+00:00"
   },
   {
    "id": "opengoal-jak-case",
@@ -1474,7 +1474,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:15:24+00:00"
+   "checked_at": "2026-11-01T04:53:44+00:00"
   },
   {
    "id": "redriver2-case",
@@ -1498,7 +1498,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:15:22+00:00"
+   "checked_at": "2026-11-01T04:53:42+00:00"
   },
   {
    "id": "photocraft-case",
@@ -1546,7 +1546,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:15:26+00:00"
+   "checked_at": "2026-11-01T04:53:44+00:00"
   },
   {
    "id": "gridcraft-case",
@@ -1594,7 +1594,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:15:32+00:00"
+   "checked_at": "2026-11-01T04:53:45+00:00"
   },
   {
    "id": "devilutionx-case",
@@ -1734,7 +1734,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:15:35+00:00"
+   "checked_at": "2026-11-01T04:53:47+00:00"
   },
   {
    "id": "pocket-tasks-reconstruction-case",
@@ -1758,7 +1758,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:15:35+00:00"
+   "checked_at": "2026-11-01T04:53:47+00:00"
   },
   {
    "id": "open-scrantic-screensaver-case",
@@ -1806,7 +1806,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but the described scope is a partial feature or patch",
-   "checked_at": "2026-10-31T15:15:35+00:00"
+   "checked_at": "2026-11-01T04:53:48+00:00"
   },
   {
    "id": "rea-flutter-guide",
@@ -2024,7 +2024,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:15:33+00:00"
+   "checked_at": "2026-11-01T04:53:47+00:00"
   },
   {
    "id": "reversed-with-ai-directory",
@@ -2124,7 +2124,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:15:39+00:00"
+   "checked_at": "2026-11-01T04:53:46+00:00"
   },
   {
    "id": "screen-studio-auto-zoom-case",
@@ -2264,7 +2264,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but the described scope is a partial feature or patch",
-   "checked_at": "2026-10-31T15:15:35+00:00"
+   "checked_at": "2026-11-01T04:53:47+00:00"
   },
   {
    "id": "noflag-rea-evidence-architecture-study",
@@ -2286,7 +2286,7 @@
     "unavailable": true
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-10-31T15:02:57+00:00"
+   "checked_at": "2026-11-01T04:53:45+00:00"
   },
   {
    "id": "rea-notes-csv-oracle-mutation-case",
@@ -2332,7 +2332,31 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T14:51:04+00:00"
+   "checked_at": "2026-11-01T04:53:46+00:00"
+  },
+  {
+   "id": "horizon-minecraft-rust-rewrite-case",
+   "url": "https://github.com/ludovic111/horizon",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 12610,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 100,
+    "release_asset_count": 685,
+    "demo": [
+     "image"
+    ],
+    "media_count": 8,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-01T04:53:56+00:00"
   },
   {
    "id": "hex-rays-ida-mcp",
@@ -2451,7 +2475,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but docs do not cover the full feature set",
-   "checked_at": "2026-10-31T15:15:51+00:00"
+   "checked_at": "2026-11-01T04:53:50+00:00"
   },
   {
    "id": "radare2-mcp",
@@ -2475,7 +2499,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:15:51+00:00"
+   "checked_at": "2026-11-01T04:53:52+00:00"
   },
   {
    "id": "r2ai",
@@ -2758,7 +2782,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:16:06+00:00"
+   "checked_at": "2026-11-01T04:53:54+00:00"
   },
   {
    "id": "cutter",
@@ -2896,7 +2920,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:16:13+00:00"
+   "checked_at": "2026-11-01T04:53:54+00:00"
   },
   {
    "id": "dnspyex",
@@ -2920,7 +2944,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:16:13+00:00"
+   "checked_at": "2026-11-01T04:53:55+00:00"
   },
   {
    "id": "electron-asar",
@@ -3012,7 +3036,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:16:18+00:00"
+   "checked_at": "2026-11-01T04:53:54+00:00"
   },
   {
    "id": "wasm-tools",
@@ -3058,7 +3082,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but docs do not cover the full feature set",
-   "checked_at": "2026-10-31T15:16:19+00:00"
+   "checked_at": "2026-11-01T04:53:53+00:00"
   },
   {
    "id": "unblob",
@@ -3131,7 +3155,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:16:18+00:00"
+   "checked_at": "2026-11-01T04:53:56+00:00"
   },
   {
    "id": "unicorn",
@@ -3199,7 +3223,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:16:26+00:00"
+   "checked_at": "2026-11-01T04:54:00+00:00"
   },
   {
    "id": "capstone",
@@ -3221,7 +3245,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:16:26+00:00"
+   "checked_at": "2026-11-01T04:53:58+00:00"
   },
   {
    "id": "imhex",
@@ -3340,7 +3364,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:16:25+00:00"
+   "checked_at": "2026-11-01T04:53:59+00:00"
   },
   {
    "id": "bindiff",
@@ -3388,7 +3412,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:16:31+00:00"
+   "checked_at": "2026-11-01T04:53:59+00:00"
   },
   {
    "id": "ost2",
@@ -3410,7 +3434,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-10-31T14:51:48+00:00"
+   "checked_at": "2026-11-01T04:54:01+00:00"
   },
   {
    "id": "pwn-college-re",
@@ -3708,7 +3732,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:16:45+00:00"
+   "checked_at": "2026-11-01T04:54:01+00:00"
   },
   {
    "id": "spectral-mcp",
@@ -3757,7 +3781,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:16:38+00:00"
+   "checked_at": "2026-11-01T04:54:01+00:00"
   },
   {
    "id": "undertalemodtool",
@@ -3803,7 +3827,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:16:45+00:00"
+   "checked_at": "2026-11-01T04:54:02+00:00"
   },
   {
    "id": "objdiff",
@@ -3901,7 +3925,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:16:48+00:00"
+   "checked_at": "2026-11-01T04:54:08+00:00"
   },
   {
    "id": "garbro",
@@ -4115,7 +4139,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:16:56+00:00"
+   "checked_at": "2026-11-01T04:54:05+00:00"
   },
   {
    "id": "llm4decompile-paper",
@@ -4229,7 +4253,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but the described scope is a partial feature or patch",
-   "checked_at": "2026-10-31T15:17:00+00:00"
+   "checked_at": "2026-11-01T04:54:06+00:00"
   },
   {
    "id": "ue4ss",
@@ -4321,7 +4345,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:17:00+00:00"
+   "checked_at": "2026-11-01T04:54:03+00:00"
   },
   {
    "id": "recaf",
@@ -4389,7 +4413,7 @@
     "unavailable": true
    },
    "reason": "no usable documentation at the code source",
-   "checked_at": "2026-11-01T01:25:23+00:00"
+   "checked_at": "2026-11-01T04:54:02+00:00"
   },
   {
    "id": "pulseview",
@@ -4435,7 +4459,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but docs do not cover the full feature set",
-   "checked_at": "2026-10-31T15:17:06+00:00"
+   "checked_at": "2026-11-01T04:54:09+00:00"
   },
   {
    "id": "browser-reverse-engineering-toolkit",
@@ -4503,7 +4527,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:17:07+00:00"
+   "checked_at": "2026-11-01T04:54:06+00:00"
   },
   {
    "id": "psp-web-recomp",
@@ -4527,7 +4551,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:17:09+00:00"
+   "checked_at": "2026-11-01T04:54:06+00:00"
   },
   {
    "id": "n64recomp",
@@ -4549,7 +4573,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:17:08+00:00"
+   "checked_at": "2026-11-01T04:54:07+00:00"
   },
   {
    "id": "xenonrecomp",
@@ -4571,7 +4595,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:17:14+00:00"
+   "checked_at": "2026-11-01T04:54:08+00:00"
   },
   {
    "id": "aotopsy",
@@ -4643,7 +4667,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:17:12+00:00"
+   "checked_at": "2026-11-01T04:54:10+00:00"
   },
   {
    "id": "arkweb-two-game-case",
@@ -4689,7 +4713,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:17:11+00:00"
+   "checked_at": "2026-11-01T04:54:10+00:00"
   },
   {
    "id": "netzob",
@@ -4711,7 +4735,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:17:14+00:00"
+   "checked_at": "2026-11-01T04:54:10+00:00"
   },
   {
    "id": "scapy",
@@ -4939,7 +4963,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:17:19+00:00"
+   "checked_at": "2026-11-01T04:54:11+00:00"
   },
   {
    "id": "uu-remote-linux-protocol-case",
@@ -5055,7 +5079,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:17:25+00:00"
+   "checked_at": "2026-11-01T04:54:11+00:00"
   },
   {
    "id": "visor-ray-ban-meta-client-case",
@@ -5079,7 +5103,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:17:26+00:00"
+   "checked_at": "2026-11-01T04:54:13+00:00"
   },
   {
    "id": "sms-pc-port-case",
@@ -5090,7 +5114,7 @@
     "code": true,
     "code_basis": "repo",
     "docs": true,
-    "docs_bytes": 40344,
+    "docs_bytes": 40401,
     "docs_full": true,
     "download": "release-assets",
     "release_count": 1,
@@ -5103,7 +5127,7 @@
     "unavailable": false
    },
    "reason": "Complete Super Mario Sunshine PC port from the matching decompilation; releases and screenshots.",
-   "checked_at": "2026-10-31T15:17:29+00:00"
+   "checked_at": "2026-11-01T04:54:13+00:00"
   },
   {
    "id": "zelda-mm-decomp-case",
@@ -5125,7 +5149,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:17:25+00:00"
+   "checked_at": "2026-11-01T04:54:13+00:00"
   },
   {
    "id": "wine-uwp-store-apps-case",
@@ -5171,7 +5195,7 @@
     "unavailable": true
    },
    "reason": "no usable documentation at the code source",
-   "checked_at": "2026-11-01T01:25:23+00:00"
+   "checked_at": "2026-11-01T04:54:11+00:00"
   },
   {
    "id": "botw-decomp-case",
@@ -5333,7 +5357,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:15:35+00:00"
+   "checked_at": "2026-11-01T04:53:47+00:00"
   },
   {
    "id": "project-arwing-star-fox-recomp-case",
@@ -5381,7 +5405,7 @@
     "unavailable": false
    },
    "reason": "Complete Star Fox 2 recompilation to a runnable PC build; releases and screenshots.",
-   "checked_at": "2026-10-31T15:17:43+00:00"
+   "checked_at": "2026-11-01T04:54:19+00:00"
   },
   {
    "id": "little-planet-sonic-cd-recomp-case",
@@ -5568,7 +5592,7 @@
     "unavailable": true
    },
    "reason": "no usable documentation at the code source",
-   "checked_at": "2026-11-01T01:25:23+00:00"
+   "checked_at": "2026-11-01T04:54:11+00:00"
   },
   {
    "id": "sms-english-gmse01-decomp-case",
@@ -5592,7 +5616,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:17:44+00:00"
+   "checked_at": "2026-11-01T04:54:16+00:00"
   },
   {
    "id": "dk64-recompiled-case",
@@ -5616,7 +5640,7 @@
     "unavailable": false
    },
    "reason": "Complete Donkey Kong 64 static recompilation with a runtime; releases and video.",
-   "checked_at": "2026-10-31T15:17:45+00:00"
+   "checked_at": "2026-11-01T04:54:16+00:00"
   },
   {
    "id": "twilight-princess-decomp-case",
@@ -5664,7 +5688,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:17:46+00:00"
+   "checked_at": "2026-11-01T04:54:17+00:00"
   },
   {
    "id": "lego-island-portable-case",
@@ -5688,7 +5712,7 @@
     "unavailable": false
    },
    "reason": "case study documenting a complete reimplementation",
-   "checked_at": "2026-10-31T15:17:46+00:00"
+   "checked_at": "2026-11-01T04:54:16+00:00"
   },
   {
    "id": "crash-bandicoot-c1-port-case",
@@ -5778,7 +5802,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:17:52+00:00"
+   "checked_at": "2026-11-01T04:54:19+00:00"
   },
   {
    "id": "medievil-recomp-case",
@@ -5824,7 +5848,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:17:51+00:00"
+   "checked_at": "2026-11-01T04:54:17+00:00"
   },
   {
    "id": "petari-smg-decomp-case",
@@ -5892,7 +5916,7 @@
     "unavailable": false
    },
    "reason": "no usable documentation at the code source",
-   "checked_at": "2026-10-31T15:17:53+00:00"
+   "checked_at": "2026-11-01T04:54:17+00:00"
   },
   {
    "id": "rsdkv5-engine-decomp-case",
@@ -5916,7 +5940,7 @@
     "unavailable": false
    },
    "reason": "Complete RSDKv5 (Sonic Mania) engine decompilation; releases and screenshots.",
-   "checked_at": "2026-10-31T15:17:55+00:00"
+   "checked_at": "2026-11-01T04:54:20+00:00"
   },
   {
    "id": "c2c-crash2-hybrid-recompilation-case",
@@ -6004,7 +6028,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:18:02+00:00"
+   "checked_at": "2026-11-01T04:54:21+00:00"
   },
   {
    "id": "firefighter-rust-port-case",
@@ -6026,7 +6050,7 @@
     "unavailable": true
    },
    "reason": "no usable documentation at the code source",
-   "checked_at": "2026-11-01T01:25:23+00:00"
+   "checked_at": "2026-11-01T04:54:18+00:00"
   },
   {
    "id": "flipper-telink-tuya-remote-firmware-case",
@@ -6050,7 +6074,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:18:02+00:00"
+   "checked_at": "2026-11-01T04:54:22+00:00"
   },
   {
    "id": "khdays-native-pc-port-case",
@@ -6094,7 +6118,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:18:07+00:00"
+   "checked_at": "2026-11-01T04:54:24+00:00"
   },
   {
    "id": "sly1-matching-decomp-case",
@@ -6174,15 +6198,15 @@
     "docs_bytes": 13156,
     "docs_full": false,
     "download": "release-assets",
-    "release_count": 56,
-    "release_asset_count": 118,
+    "release_count": 57,
+    "release_asset_count": 124,
     "demo": [],
     "media_count": 0,
     "archived": false,
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:18:10+00:00"
+   "checked_at": "2026-11-01T04:54:22+00:00"
   },
   {
    "id": "d2r-mobile-switch-rehost-case",
@@ -6230,7 +6254,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:18:07+00:00"
+   "checked_at": "2026-11-01T04:54:23+00:00"
   },
   {
    "id": "banjo-recompiled-case",
@@ -6254,7 +6278,7 @@
     "unavailable": false
    },
    "reason": "Complete Banjo-Kazooie static recompilation; releases and screenshots.",
-   "checked_at": "2026-10-31T15:18:11+00:00"
+   "checked_at": "2026-11-01T04:54:24+00:00"
   },
   {
    "id": "pokemon-firered-leafgreen-decomp-case",
@@ -6276,7 +6300,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:18:12+00:00"
+   "checked_at": "2026-11-01T04:54:23+00:00"
   },
   {
    "id": "paperboat-paper-mario-port-case",
@@ -6300,7 +6324,7 @@
     "unavailable": false
    },
    "reason": "Complete Paper Mario native port from the decompilation; releases and screenshots.",
-   "checked_at": "2026-10-31T15:18:11+00:00"
+   "checked_at": "2026-11-01T04:54:24+00:00"
   },
   {
    "id": "halo2-matching-decomp-case",
@@ -6344,7 +6368,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:18:16+00:00"
+   "checked_at": "2026-11-01T04:54:25+00:00"
   },
   {
    "id": "pokered-disassembly-case",
@@ -6414,7 +6438,7 @@
     "unavailable": false
    },
    "reason": "Complete Lost Odyssey XenonRecomp translation with a runtime; releases and screenshots.",
-   "checked_at": "2026-10-31T15:18:20+00:00"
+   "checked_at": "2026-11-01T04:54:28+00:00"
   },
   {
    "id": "melee-matching-decomp-case",
@@ -6482,7 +6506,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:18:18+00:00"
+   "checked_at": "2026-11-01T04:54:29+00:00"
   },
   {
    "id": "fftarecomp-gba-static-recomp-case",
@@ -6504,7 +6528,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:18:22+00:00"
+   "checked_at": "2026-11-01T04:54:28+00:00"
   },
   {
    "id": "symphonyrecomp-case",
@@ -6550,7 +6574,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:18:23+00:00"
+   "checked_at": "2026-11-01T04:54:29+00:00"
   },
   {
    "id": "melee-unlocked-case",
@@ -6621,7 +6645,7 @@
     "unavailable": false
    },
    "reason": "Complete Vandal Hearts PC port; releases and screenshots.",
-   "checked_at": "2026-10-31T15:18:24+00:00"
+   "checked_at": "2026-11-01T04:54:29+00:00"
   },
   {
    "id": "pokemon-platinum-decomp-case",
@@ -6737,7 +6761,7 @@
     "unavailable": false
    },
    "reason": "Complete Star Fox 64 static recompilation; releases and screenshots.",
-   "checked_at": "2026-10-31T15:18:28+00:00"
+   "checked_at": "2026-11-01T04:54:31+00:00"
   },
   {
    "id": "syphon-filter-omega-strain-decomp-case",
@@ -6874,7 +6898,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:18:31+00:00"
+   "checked_at": "2026-11-01T04:54:29+00:00"
   },
   {
    "id": "mariokart64-recompiled-case",
@@ -6922,7 +6946,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:18:33+00:00"
+   "checked_at": "2026-11-01T04:54:30+00:00"
   },
   {
    "id": "kingdom-hearts-days-matching-decomp-case",
@@ -6990,7 +7014,7 @@
     "unavailable": true
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-10-31T15:02:59+00:00"
+   "checked_at": "2026-11-01T04:54:28+00:00"
   },
   {
    "id": "thps1-decomp-native-port-case",
@@ -7012,7 +7036,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:18:36+00:00"
+   "checked_at": "2026-11-01T04:54:33+00:00"
   },
   {
    "id": "pt-pc-port-case",
@@ -7060,7 +7084,7 @@
     "unavailable": false
    },
    "reason": "Complete Mario Kart 64 port build (SpaghettiKart); releases and screenshots.",
-   "checked_at": "2026-10-31T15:18:36+00:00"
+   "checked_at": "2026-11-01T04:54:33+00:00"
   },
   {
    "id": "animal-crossing-wild-world-decomp-case",
@@ -7084,7 +7108,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:18:36+00:00"
+   "checked_at": "2026-11-01T04:54:33+00:00"
   },
   {
    "id": "king-kong-recompiled-case",
@@ -7131,7 +7155,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:18:40+00:00"
+   "checked_at": "2026-11-01T04:54:34+00:00"
   },
   {
    "id": "splat",
@@ -7221,7 +7245,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:18:43+00:00"
+   "checked_at": "2026-11-01T04:54:34+00:00"
   },
   {
    "id": "sims-bustin-out-gba-decomp-case",
@@ -7404,7 +7428,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:18:53+00:00"
+   "checked_at": "2026-11-01T04:54:35+00:00"
   },
   {
    "id": "openra-engine-case",
@@ -7452,7 +7476,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:18:54+00:00"
+   "checked_at": "2026-11-01T04:54:36+00:00"
   },
   {
    "id": "cheatengine-mcp-bridge",
@@ -7476,7 +7500,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:18:55+00:00"
+   "checked_at": "2026-11-01T04:54:35+00:00"
   },
   {
    "id": "dead-rising-2-case-west-recomp-case",
@@ -7498,7 +7522,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:18:53+00:00"
+   "checked_at": "2026-11-01T04:54:38+00:00"
   },
   {
    "id": "decompiler-explorer",
@@ -7544,7 +7568,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:18:53+00:00"
+   "checked_at": "2026-11-01T04:54:38+00:00"
   },
   {
    "id": "simpsons-wrestling-recompiled-case",
@@ -7616,7 +7640,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:19:01+00:00"
+   "checked_at": "2026-11-01T04:54:39+00:00"
   },
   {
    "id": "binny-agent-harness",
@@ -7640,7 +7664,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:19:00+00:00"
+   "checked_at": "2026-11-01T04:54:37+00:00"
   },
   {
    "id": "rkd-telemetry-extractor-case",
@@ -7712,7 +7736,7 @@
     "unavailable": false
    },
    "reason": "Complete Driver static recompilation with host runtime; releases and screenshots.",
-   "checked_at": "2026-10-31T15:19:05+00:00"
+   "checked_at": "2026-11-01T04:54:41+00:00"
   },
   {
    "id": "himuro-fatal-frame-decomp-case",
@@ -7736,7 +7760,7 @@
     "unavailable": false
    },
    "reason": "Fatal Frame decompilation with US/EU code reported fully matched; builds and screenshots.",
-   "checked_at": "2026-10-31T15:19:01+00:00"
+   "checked_at": "2026-11-01T04:54:39+00:00"
   },
   {
    "id": "doaxvb-native-port-case",
@@ -7947,7 +7971,7 @@
     "unavailable": false
    },
    "reason": "Complete Uncharted collection PC port work; builds and video.",
-   "checked_at": "2026-10-31T15:19:14+00:00"
+   "checked_at": "2026-11-01T04:54:41+00:00"
   },
   {
    "id": "th095-reconstruction-case",
@@ -8019,7 +8043,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:19:16+00:00"
+   "checked_at": "2026-11-01T04:54:41+00:00"
   },
   {
    "id": "ps2recomp",
@@ -8063,7 +8087,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:19:20+00:00"
+   "checked_at": "2026-11-01T04:54:43+00:00"
   },
   {
    "id": "openriseofnations-engine-case",
@@ -8134,7 +8158,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:19:23+00:00"
+   "checked_at": "2026-11-01T04:54:44+00:00"
   },
   {
    "id": "blackbox-protobuf",
@@ -8202,7 +8226,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-10-31T14:54:31+00:00"
+   "checked_at": "2026-11-01T04:54:40+00:00"
   },
   {
    "id": "jpcert-apk-api-attack-infrastructure-report",
@@ -8295,7 +8319,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:19:24+00:00"
+   "checked_at": "2026-11-01T04:54:45+00:00"
   },
   {
    "id": "ghidra-mcp-bethington",
@@ -8317,7 +8341,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:19:28+00:00"
+   "checked_at": "2026-11-01T04:54:46+00:00"
   },
   {
    "id": "librw-renderware-reimplementation-case",
@@ -8339,7 +8363,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:19:27+00:00"
+   "checked_at": "2026-11-01T04:54:44+00:00"
   },
   {
    "id": "awesome-game-decompilations",
@@ -8363,7 +8387,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:19:29+00:00"
+   "checked_at": "2026-11-01T04:54:46+00:00"
   },
   {
    "id": "vineflower",
@@ -8477,7 +8501,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but docs do not cover the full feature set",
-   "checked_at": "2026-10-31T15:19:35+00:00"
+   "checked_at": "2026-11-01T04:54:49+00:00"
   },
   {
    "id": "avatar2",
@@ -8499,7 +8523,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:19:35+00:00"
+   "checked_at": "2026-11-01T04:54:45+00:00"
   },
   {
    "id": "cwe-checker",
@@ -8523,7 +8547,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:19:36+00:00"
+   "checked_at": "2026-11-01T04:54:49+00:00"
   },
   {
    "id": "jnitrace",
@@ -8547,7 +8571,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:19:34+00:00"
+   "checked_at": "2026-11-01T04:54:48+00:00"
   },
   {
    "id": "flare-vm",
@@ -8736,7 +8760,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:19:42+00:00"
+   "checked_at": "2026-11-01T04:54:50+00:00"
   },
   {
    "id": "dembrandt",
@@ -8760,7 +8784,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:19:46+00:00"
+   "checked_at": "2026-11-01T04:54:51+00:00"
   },
   {
    "id": "android-reverse-engineering-skill",
@@ -8782,7 +8806,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:19:49+00:00"
+   "checked_at": "2026-11-01T04:54:50+00:00"
   },
   {
    "id": "gb-recompiled",
@@ -8876,7 +8900,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but docs do not cover the full feature set",
-   "checked_at": "2026-10-31T15:19:48+00:00"
+   "checked_at": "2026-11-01T04:54:53+00:00"
   },
   {
    "id": "react-native-decompiler",
@@ -8900,7 +8924,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:19:54+00:00"
+   "checked_at": "2026-11-01T04:54:53+00:00"
   },
   {
    "id": "decompai",
@@ -9040,7 +9064,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:19:56+00:00"
+   "checked_at": "2026-11-01T04:54:53+00:00"
   },
   {
    "id": "spice86",
@@ -9064,7 +9088,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:20:01+00:00"
+   "checked_at": "2026-11-01T04:54:53+00:00"
   },
   {
    "id": "ps2-web-recomp",
@@ -9088,7 +9112,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but docs do not cover the full feature set",
-   "checked_at": "2026-10-31T15:19:58+00:00"
+   "checked_at": "2026-11-01T04:54:56+00:00"
   },
   {
    "id": "shuji",
@@ -9112,7 +9136,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:19:58+00:00"
+   "checked_at": "2026-11-01T04:54:53+00:00"
   },
   {
    "id": "xboxrecomp",
@@ -9276,7 +9300,7 @@
     "unavailable": false
    },
    "reason": "case study documenting a complete reimplementation",
-   "checked_at": "2026-10-31T15:20:08+00:00"
+   "checked_at": "2026-11-01T04:54:56+00:00"
   },
   {
    "id": "e9patch",
@@ -9301,7 +9325,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but the described scope is a partial feature or patch",
-   "checked_at": "2026-10-31T15:20:07+00:00"
+   "checked_at": "2026-11-01T04:54:54+00:00"
   },
   {
    "id": "melonloader",
@@ -9347,7 +9371,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:20:12+00:00"
+   "checked_at": "2026-11-01T04:54:57+00:00"
   },
   {
    "id": "ghidra-delinker-extension",
@@ -9369,7 +9393,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:20:14+00:00"
+   "checked_at": "2026-11-01T04:54:59+00:00"
   },
   {
    "id": "bepinex",
@@ -9393,7 +9417,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but the described scope is a partial feature or patch",
-   "checked_at": "2026-10-31T15:20:12+00:00"
+   "checked_at": "2026-11-01T04:55:02+00:00"
   },
   {
    "id": "binexport",
@@ -9417,7 +9441,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:20:13+00:00"
+   "checked_at": "2026-11-01T04:55:00+00:00"
   },
   {
    "id": "karta",
@@ -9461,7 +9485,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:20:12+00:00"
+   "checked_at": "2026-11-01T04:54:57+00:00"
   },
   {
    "id": "efixplorer",
@@ -9485,7 +9509,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but docs do not cover the full feature set",
-   "checked_at": "2026-10-31T15:20:18+00:00"
+   "checked_at": "2026-11-01T04:54:58+00:00"
   },
   {
    "id": "vscode-frida",
@@ -9558,7 +9582,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:20:17+00:00"
+   "checked_at": "2026-11-01T04:55:00+00:00"
   },
   {
    "id": "ddisasm",
@@ -9580,7 +9604,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:20:17+00:00"
+   "checked_at": "2026-11-01T04:55:02+00:00"
   },
   {
    "id": "pince",
@@ -9694,7 +9718,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:20:25+00:00"
+   "checked_at": "2026-11-01T04:55:03+00:00"
   },
   {
    "id": "furiousmac-continuity",
@@ -9719,7 +9743,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:20:26+00:00"
+   "checked_at": "2026-11-01T04:55:02+00:00"
   },
   {
    "id": "reko",
@@ -9743,7 +9767,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but the described scope is a partial feature or patch",
-   "checked_at": "2026-10-31T15:20:23+00:00"
+   "checked_at": "2026-11-01T04:55:04+00:00"
   },
   {
    "id": "dyninst",
@@ -9765,7 +9789,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:20:26+00:00"
+   "checked_at": "2026-11-01T04:55:04+00:00"
   },
   {
    "id": "goblin",
@@ -9789,7 +9813,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:20:26+00:00"
+   "checked_at": "2026-11-01T04:55:05+00:00"
   },
   {
    "id": "mitmproxy2swagger",
@@ -9813,7 +9837,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:20:26+00:00"
+   "checked_at": "2026-11-01T04:55:05+00:00"
   },
   {
    "id": "opendbc",
@@ -9884,7 +9908,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:20:29+00:00"
+   "checked_at": "2026-11-01T04:55:07+00:00"
   },
   {
    "id": "sony-pmca-re",
@@ -9906,7 +9930,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:20:32+00:00"
+   "checked_at": "2026-11-01T04:55:06+00:00"
   },
   {
    "id": "qbdi",
@@ -9953,7 +9977,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:20:31+00:00"
+   "checked_at": "2026-11-01T04:55:07+00:00"
   },
   {
    "id": "binsider",
@@ -9979,7 +10003,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:20:33+00:00"
+   "checked_at": "2026-11-01T04:55:07+00:00"
   },
   {
    "id": "mytechnotalent-reverse-engineering",
@@ -10004,7 +10028,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:20:33+00:00"
+   "checked_at": "2026-11-01T04:55:09+00:00"
   },
   {
    "id": "coop-anything",
@@ -10192,7 +10216,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but the described scope is a partial feature or patch",
-   "checked_at": "2026-10-31T15:20:46+00:00"
+   "checked_at": "2026-11-01T04:55:09+00:00"
   },
   {
    "id": "frida-interception-and-unpinning",
@@ -10216,7 +10240,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:20:43+00:00"
+   "checked_at": "2026-11-01T04:55:10+00:00"
   },
   {
    "id": "bincat",
@@ -10402,7 +10426,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:20:59+00:00"
+   "checked_at": "2026-11-01T04:55:11+00:00"
   },
   {
    "id": "gef",
@@ -10522,7 +10546,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:20:56+00:00"
+   "checked_at": "2026-11-01T04:55:12+00:00"
   },
   {
    "id": "sf64-matching-decomp-case",
@@ -10544,7 +10568,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:20:57+00:00"
+   "checked_at": "2026-11-01T04:55:12+00:00"
   },
   {
    "id": "galaxy-buds-client-protocol-case",
@@ -10568,7 +10592,7 @@
     "unavailable": false
    },
    "reason": "case study demo is documented but docs do not cover the full feature set",
-   "checked_at": "2026-10-31T15:20:58+00:00"
+   "checked_at": "2026-11-01T04:55:13+00:00"
   },
   {
    "id": "owasp-mastg",
@@ -10579,7 +10603,7 @@
     "code": false,
     "code_basis": null,
     "docs": true,
-    "docs_bytes": 34226,
+    "docs_bytes": 34386,
     "docs_full": false,
     "download": null,
     "release_count": 0,
@@ -10590,7 +10614,7 @@
     "unavailable": false
    },
    "reason": "no code behind the entry URL",
-   "checked_at": "2026-10-31T14:56:01+00:00"
+   "checked_at": "2026-11-01T04:55:13+00:00"
   },
   {
    "id": "wino-mail-case",
@@ -10614,7 +10638,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:20:57+00:00"
+   "checked_at": "2026-11-01T04:55:14+00:00"
   },
   {
    "id": "primedecomp-metroid-prime-decomp-case",
@@ -10636,7 +10660,7 @@
     "unavailable": true
    },
    "reason": "no usable documentation at the code source",
-   "checked_at": "2026-11-01T01:25:23+00:00"
+   "checked_at": "2026-11-01T04:55:11+00:00"
   },
   {
    "id": "batla-3d-server-emulator-case",
@@ -10706,7 +10730,7 @@
     "unavailable": false
    },
    "reason": "Complete RSDKv4 (Sonic 1/2) engine decompilation; releases and screenshots.",
-   "checked_at": "2026-10-31T15:21:02+00:00"
+   "checked_at": "2026-11-01T04:55:14+00:00"
   },
   {
    "id": "miasm",
@@ -10750,7 +10774,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:21:04+00:00"
+   "checked_at": "2026-11-01T04:55:16+00:00"
   },
   {
    "id": "hyperdbg",
@@ -10775,7 +10799,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but the described scope is a partial feature or patch",
-   "checked_at": "2026-10-31T15:21:05+00:00"
+   "checked_at": "2026-11-01T04:55:17+00:00"
   },
   {
    "id": "jpexs-decompiler",
@@ -10822,7 +10846,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:21:05+00:00"
+   "checked_at": "2026-11-01T04:55:16+00:00"
   },
   {
    "id": "kuna",
@@ -10846,7 +10870,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but the described scope is a partial feature or patch",
-   "checked_at": "2026-10-31T15:21:10+00:00"
+   "checked_at": "2026-11-01T04:55:19+00:00"
   },
   {
    "id": "bytecode-viewer",
@@ -10872,7 +10896,7 @@
     "unavailable": false
    },
    "reason": "full-coverage docs, download method and demo all present",
-   "checked_at": "2026-10-31T15:21:06+00:00"
+   "checked_at": "2026-11-01T04:55:18+00:00"
   },
   {
    "id": "binary-ninja-api",
@@ -10918,7 +10942,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:21:05+00:00"
+   "checked_at": "2026-11-01T04:55:16+00:00"
   },
   {
    "id": "rexglue-sdk",
@@ -10942,7 +10966,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but the described scope is a partial feature or patch",
-   "checked_at": "2026-10-31T15:21:14+00:00"
+   "checked_at": "2026-11-01T04:55:19+00:00"
   },
   {
    "id": "reagent-cpp-reconstruction-agent",
@@ -10966,7 +10990,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but the described scope is a partial feature or patch",
-   "checked_at": "2026-10-31T15:21:12+00:00"
+   "checked_at": "2026-11-01T04:55:19+00:00"
   },
   {
    "id": "capa",
@@ -11005,7 +11029,7 @@
     "docs_full": false,
     "download": "release-assets",
     "release_count": 100,
-    "release_asset_count": 1035,
+    "release_asset_count": 1036,
     "demo": [
      "image",
      "demo-link"
@@ -11015,7 +11039,7 @@
     "unavailable": false
    },
    "reason": "case study demo is documented but docs do not cover the full feature set",
-   "checked_at": "2026-10-31T15:21:15+00:00"
+   "checked_at": "2026-11-01T04:55:23+00:00"
   },
   {
    "id": "ps3recomp",
@@ -11224,7 +11248,7 @@
     "unavailable": false
    },
    "reason": "case study: download and demo exist, scope stays partial",
-   "checked_at": "2026-10-31T15:21:19+00:00"
+   "checked_at": "2026-11-01T04:55:21+00:00"
   },
   {
    "id": "bfm-decomp-case",
@@ -11248,7 +11272,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:21:22+00:00"
+   "checked_at": "2026-11-01T04:55:20+00:00"
   },
   {
    "id": "logic-lens",
@@ -11294,7 +11318,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:21:22+00:00"
+   "checked_at": "2026-11-01T04:55:23+00:00"
   },
   {
    "id": "littlebird-static-rebuild-case",
@@ -11319,7 +11343,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:21:22+00:00"
+   "checked_at": "2026-11-01T04:55:23+00:00"
   },
   {
    "id": "akiselev-ilspy-cli",
@@ -11341,7 +11365,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:21:25+00:00"
+   "checked_at": "2026-11-01T04:55:22+00:00"
   },
   {
    "id": "swe1r-assets-unity",
@@ -11365,7 +11389,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:21:27+00:00"
+   "checked_at": "2026-11-01T04:55:25+00:00"
   },
   {
    "id": "react-decode",
@@ -11389,7 +11413,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:21:23+00:00"
+   "checked_at": "2026-11-01T04:55:24+00:00"
   },
   {
    "id": "wasmlens",
@@ -11485,7 +11509,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:21:28+00:00"
+   "checked_at": "2026-11-01T04:55:25+00:00"
   },
   {
    "id": "sa3-marun-ai-decomp-case",
@@ -11532,7 +11556,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:21:28+00:00"
+   "checked_at": "2026-11-01T04:55:26+00:00"
   },
   {
    "id": "roborock-local-server-cloud-case",
@@ -11554,7 +11578,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:21:30+00:00"
+   "checked_at": "2026-11-01T04:55:27+00:00"
   },
   {
    "id": "wristbeam-garmin-watch-protocol-case",
@@ -11603,7 +11627,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but docs do not cover the full feature set",
-   "checked_at": "2026-10-31T15:21:32+00:00"
+   "checked_at": "2026-11-01T04:55:28+00:00"
   },
   {
    "id": "pypush-apns-protocol-case",
@@ -11647,7 +11671,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:21:32+00:00"
+   "checked_at": "2026-11-01T04:55:27+00:00"
   },
   {
    "id": "flare-learning-hub",
@@ -11669,7 +11693,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:21:34+00:00"
+   "checked_at": "2026-11-01T04:55:29+00:00"
   },
   {
    "id": "pokewalker-matching-decomp-case",
@@ -11691,7 +11715,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:21:35+00:00"
+   "checked_at": "2026-11-01T04:55:29+00:00"
   },
   {
    "id": "slicer",
@@ -11855,7 +11879,7 @@
     "unavailable": false
    },
    "reason": "download and demo exist, but the described scope is a partial feature or patch",
-   "checked_at": "2026-10-31T15:21:39+00:00"
+   "checked_at": "2026-11-01T04:55:29+00:00"
   },
   {
    "id": "re-ios-apps-course",
@@ -11902,7 +11926,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:21:39+00:00"
+   "checked_at": "2026-11-01T04:55:31+00:00"
   },
   {
    "id": "nforest-awesome-decompilation",
@@ -11924,7 +11948,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:21:42+00:00"
+   "checked_at": "2026-11-01T04:55:29+00:00"
   },
   {
    "id": "tiny-dec",
@@ -12016,7 +12040,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:21:45+00:00"
+   "checked_at": "2026-11-01T04:55:31+00:00"
   },
   {
    "id": "animal-forest-n64-decomp-case",
@@ -12038,7 +12062,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:21:45+00:00"
+   "checked_at": "2026-11-01T04:55:32+00:00"
   },
   {
    "id": "remade-reimplementation-directory",
@@ -12062,7 +12086,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:21:45+00:00"
+   "checked_at": "2026-11-01T04:55:32+00:00"
   },
   {
    "id": "pixmob-ir-protocol-case",
@@ -12087,7 +12111,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method",
-   "checked_at": "2026-10-31T15:21:45+00:00"
+   "checked_at": "2026-11-01T04:55:32+00:00"
   },
   {
    "id": "wtsxdev-reverse-engineering-list",
@@ -12133,7 +12157,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T14:56:56+00:00"
+   "checked_at": "2026-11-01T04:55:33+00:00"
   },
   {
    "id": "phantom-hourglass-ds-decomp-case",
@@ -12155,7 +12179,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:21:53+00:00"
+   "checked_at": "2026-11-01T04:55:33+00:00"
   },
   {
    "id": "kinoko-mkwii-physics-reimplementation-case",
@@ -12177,7 +12201,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no demo",
-   "checked_at": "2026-10-31T15:21:49+00:00"
+   "checked_at": "2026-11-01T04:55:34+00:00"
   },
   {
    "id": "owasp-fstm",
@@ -12271,7 +12295,7 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:21:51+00:00"
+   "checked_at": "2026-11-01T04:55:35+00:00"
   },
   {
    "id": "halo-ce-xbox-reimplementation-case",
@@ -12386,7 +12410,1495 @@
     "unavailable": false
    },
    "reason": "code and docs only: no download method and no demo",
-   "checked_at": "2026-10-31T15:21:59+00:00"
+   "checked_at": "2026-11-01T04:55:35+00:00"
+  },
+  {
+   "id": "smash-bros-brawl-decomp-case",
+   "url": "https://github.com/doldecomp/brawl",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3598,
+    "docs_full": false,
+    "download": "package",
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-01T04:55:35+00:00"
+  },
+  {
+   "id": "re-plants-vs-zombies-decomp-case",
+   "url": "https://github.com/Patoke/re-plants-vs-zombies",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4733,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-01T04:55:36+00:00"
+  },
+  {
+   "id": "awesome-ghidra",
+   "url": "https://github.com/AllsafeCyberSecurity/awesome-ghidra",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 8598,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 7,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-01T04:55:37+00:00"
+  },
+  {
+   "id": "sonic-advance-1-2-decomp-port-case",
+   "url": "https://github.com/SAT-R/sa2",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 8081,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-01T04:55:37+00:00"
+  },
+  {
+   "id": "paleblood-bloodborne-functional-decomp-case",
+   "url": "https://github.com/Yharnam-Hunters/Paleblood",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 11737,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-01T04:55:37+00:00"
+  },
+  {
+   "id": "pikmin-2-matching-decomp-case",
+   "url": "https://github.com/projectPiki/pikmin2",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5345,
+    "docs_full": false,
+    "download": "package",
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-01T04:55:37+00:00"
+  },
+  {
+   "id": "gran-turismo-4-matching-decomp-case",
+   "url": "https://github.com/gustavocanepa/gt4-decomp",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 7978,
+    "docs_full": false,
+    "download": "package",
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-01T04:55:39+00:00"
+  },
+  {
+   "id": "mario-kart-wii-decomp-case",
+   "url": "https://github.com/snailspeed3/mkw",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3165,
+    "docs_full": false,
+    "download": "package",
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-01T04:55:39+00:00"
+  },
+  {
+   "id": "pinyon-shift-forza-horizon-recomp-case",
+   "url": "https://github.com/arcanite24/pinyon-shift",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 9495,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 20,
+    "release_asset_count": 32,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-01T04:55:41+00:00"
+  },
+  {
+   "id": "th07-decomp-case",
+   "url": "https://github.com/some100/th07",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3708,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-01T04:55:40+00:00"
+  },
+  {
+   "id": "dkc1-recomp-case",
+   "url": "https://github.com/elliotttate/DKC1Recomp",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 15518,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 16,
+    "release_asset_count": 50,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:55:42+00:00"
+  },
+  {
+   "id": "san-andreas-unity-engine-case",
+   "url": "https://github.com/in0finite/SanAndreasUnity",
+   "evidence_class": 0,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4335,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 10,
+    "release_asset_count": 22,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 18,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study documenting a complete reimplementation",
+   "checked_at": "2026-11-01T04:55:42+00:00"
+  },
+  {
+   "id": "minecraft-lce-switch-decomp-case",
+   "url": "https://github.com/GRAnimated/MinecraftLCE",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3395,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-01T04:55:41+00:00"
+  },
+  {
+   "id": "ff7-ps1-matching-decomp-case",
+   "url": "https://github.com/Xeeynamo/ff7-decomp",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3501,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 1,
+    "release_asset_count": 4,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:55:42+00:00"
+  },
+  {
+   "id": "megaman-x-snes-recomp-case",
+   "url": "https://github.com/mstan/MegaManXSNESRecomp",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 28478,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 95,
+    "release_asset_count": 166,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 7,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-01T04:55:45+00:00"
+  },
+  {
+   "id": "opensc4-simcity-4-reimplementation-case",
+   "url": "https://github.com/OpenSC4-org/OpenSC4",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 803,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-01T04:55:42+00:00"
+  },
+  {
+   "id": "synchrony",
+   "url": "https://github.com/relative/synchrony",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 1896,
+    "docs_full": false,
+    "download": "release",
+    "release_count": 17,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "download and demo exist, but the described scope is a partial feature or patch",
+   "checked_at": "2026-11-01T04:55:45+00:00"
+  },
+  {
+   "id": "relive-oddworld-abe-engine-case",
+   "url": "https://github.com/AliveTeam/alive_reversing",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3029,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 10,
+    "release_asset_count": 55,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:55:47+00:00"
+  },
+  {
+   "id": "retdec",
+   "url": "https://github.com/avast/retdec",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 20069,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 6,
+    "release_asset_count": 25,
+    "demo": [
+     "video"
+    ],
+    "media_count": 2,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "download and demo exist, but the described scope is a partial feature or patch",
+   "checked_at": "2026-11-01T04:55:46+00:00"
+  },
+  {
+   "id": "aoe-free-software-remake-case",
+   "url": "https://github.com/FolkertVanVerseveld/aoe",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 2664,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "demo-link"
+    ],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-01T04:55:46+00:00"
+  },
+  {
+   "id": "god-of-war-ps2-recomp-case",
+   "url": "https://github.com/KIexster/god-of-war-recomp",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 13751,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 3,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-01T04:55:48+00:00"
+  },
+  {
+   "id": "redasm",
+   "url": "https://github.com/redasm-dev/redasm",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 8271,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 13,
+    "release_asset_count": 48,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:55:47+00:00"
+  },
+  {
+   "id": "protobuf-inspector",
+   "url": "https://github.com/mildsunrise/protobuf-inspector",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4156,
+    "docs_full": false,
+    "download": "package",
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 3,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "download and demo exist, but docs do not cover the full feature set",
+   "checked_at": "2026-11-01T04:55:47+00:00"
+  },
+  {
+   "id": "lighthouse",
+   "url": "https://github.com/gaasedelen/lighthouse",
+   "evidence_class": 0,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 9269,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 11,
+    "release_asset_count": 9,
+    "demo": [
+     "image"
+    ],
+    "media_count": 13,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full-coverage docs, download method and demo all present",
+   "checked_at": "2026-11-01T04:55:53+00:00"
+  },
+  {
+   "id": "racewave46-wave-race-64-recomp-case",
+   "url": "https://github.com/DomazinUS/RaceWave46",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 15204,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 1,
+    "release_asset_count": 4,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:55:50+00:00"
+  },
+  {
+   "id": "opendrop-airdrop-reimplementation-case",
+   "url": "https://github.com/seemoo-lab/opendrop",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 6725,
+    "docs_full": true,
+    "download": "release",
+    "release_count": 6,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:55:50+00:00"
+  },
+  {
+   "id": "chipsec",
+   "url": "https://github.com/chipsec/chipsec",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 2880,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 100,
+    "release_asset_count": 33,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:55:52+00:00"
+  },
+  {
+   "id": "apk-studio",
+   "url": "https://github.com/vaibhavpandeyvpz/apkstudio",
+   "evidence_class": 0,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 6052,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 18,
+    "release_asset_count": 62,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full-coverage docs, download method and demo all present",
+   "checked_at": "2026-11-01T04:55:52+00:00"
+  },
+  {
+   "id": "valetudo-robot-cloud-replacement-case",
+   "url": "https://github.com/Hypfer/Valetudo",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 7296,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 81,
+    "release_asset_count": 412,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-01T04:55:54+00:00"
+  },
+  {
+   "id": "sourcemapper",
+   "url": "https://github.com/denandz/sourcemapper",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 7997,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-01T04:55:51+00:00"
+  },
+  {
+   "id": "jazz2-resurrection-engine-case",
+   "url": "https://github.com/deathkiller/jazz2-native",
+   "evidence_class": 0,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 24875,
+    "docs_full": true,
+    "download": "package",
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study documenting a complete reimplementation",
+   "checked_at": "2026-11-01T04:55:53+00:00"
+  },
+  {
+   "id": "binabsinspector",
+   "url": "https://github.com/KeenSecurityLab/BinAbsInspector",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 7387,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 1,
+    "release_asset_count": 1,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:55:55+00:00"
+  },
+  {
+   "id": "libimobiledevice",
+   "url": "https://github.com/libimobiledevice/libimobiledevice",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 8269,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 3,
+    "release_asset_count": 2,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:55:55+00:00"
+  },
+  {
+   "id": "ngrev",
+   "url": "https://github.com/mgechev/ngrev",
+   "evidence_class": 0,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3366,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 34,
+    "release_asset_count": 113,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 7,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full-coverage docs, download method and demo all present",
+   "checked_at": "2026-11-01T04:55:58+00:00"
+  },
+  {
+   "id": "apkid",
+   "url": "https://github.com/rednaga/APKiD",
+   "evidence_class": 0,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 7211,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 13,
+    "release_asset_count": 4,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full-coverage docs, download method and demo all present",
+   "checked_at": "2026-11-01T04:55:57+00:00"
+  },
+  {
+   "id": "jsluice",
+   "url": "https://github.com/BishopFox/jsluice",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5674,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-01T04:55:56+00:00"
+  },
+  {
+   "id": "lba2remake-little-big-adventure-case",
+   "url": "https://github.com/LBALab/lba2remake",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4737,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image",
+     "video",
+     "demo-link"
+    ],
+    "media_count": 11,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-01T04:55:57+00:00"
+  },
+  {
+   "id": "vulhunt",
+   "url": "https://github.com/vulhunt-re/vulhunt",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 6178,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 1,
+    "release_asset_count": 4,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:55:57+00:00"
+  },
+  {
+   "id": "sniffle",
+   "url": "https://github.com/nccgroup/Sniffle",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 35035,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 15,
+    "release_asset_count": 97,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:55:59+00:00"
+  },
+  {
+   "id": "dex2jar",
+   "url": "https://github.com/pxb1988/dex2jar",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 2133,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 8,
+    "release_asset_count": 6,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:55:59+00:00"
+  },
+  {
+   "id": "binsync",
+   "url": "https://github.com/binsync/binsync",
+   "evidence_class": 0,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 11621,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 100,
+    "release_asset_count": 19,
+    "demo": [
+     "image"
+    ],
+    "media_count": 9,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full-coverage docs, download method and demo all present",
+   "checked_at": "2026-11-01T04:56:00+00:00"
+  },
+  {
+   "id": "class-dump",
+   "url": "https://github.com/nygard/class-dump",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3563,
+    "docs_full": false,
+    "download": "release",
+    "release_count": 3,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:56:00+00:00"
+  },
+  {
+   "id": "openawe-alan-wake-engine-case",
+   "url": "https://github.com/OpenAWE-Project/OpenAWE",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 3511,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-01T04:56:01+00:00"
+  },
+  {
+   "id": "cps2recomp-arcade-static-recomp-case",
+   "url": "https://github.com/tmcleroy/cps2recomp",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 14208,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 12,
+    "release_asset_count": 79,
+    "demo": [
+     "image"
+    ],
+    "media_count": 7,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-01T04:56:03+00:00"
+  },
+  {
+   "id": "binbloom",
+   "url": "https://github.com/quarkslab/binbloom",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5098,
+    "docs_full": true,
+    "download": "release",
+    "release_count": 3,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:56:03+00:00"
+  },
+  {
+   "id": "packetry",
+   "url": "https://github.com/greatscottgadgets/packetry",
+   "evidence_class": 0,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 2210,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 7,
+    "release_asset_count": 13,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full-coverage docs, download method and demo all present",
+   "checked_at": "2026-11-01T04:56:05+00:00"
+  },
+  {
+   "id": "lucid-microcode-explorer",
+   "url": "https://github.com/gaasedelen/lucid",
+   "evidence_class": 0,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4571,
+    "docs_full": true,
+    "download": "release",
+    "release_count": 2,
+    "release_asset_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 5,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full-coverage docs, download method and demo all present",
+   "checked_at": "2026-11-01T04:56:03+00:00"
+  },
+  {
+   "id": "bluefluff-furby-connect-ble-case",
+   "url": "https://github.com/Jeija/bluefluff",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 11757,
+    "docs_full": true,
+    "download": "package",
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image",
+     "video"
+    ],
+    "media_count": 4,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-01T04:56:04+00:00"
+  },
+  {
+   "id": "apk-sh",
+   "url": "https://github.com/ax/apk.sh",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 6292,
+    "docs_full": true,
+    "download": "release",
+    "release_count": 13,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:56:06+00:00"
+  },
+  {
+   "id": "r2dec",
+   "url": "https://github.com/wargio/r2dec-js",
+   "evidence_class": 0,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5996,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 28,
+    "release_asset_count": 79,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full-coverage docs, download method and demo all present",
+   "checked_at": "2026-11-01T04:56:07+00:00"
+  },
+  {
+   "id": "m1n1",
+   "url": "https://github.com/AsahiLinux/m1n1",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 5395,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 2,
+    "release_asset_count": 4,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:56:06+00:00"
+  },
+  {
+   "id": "svd-loader-ghidra",
+   "url": "https://github.com/leveldown-security/SVD-Loader-Ghidra",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 1425,
+    "docs_full": true,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-01T04:56:08+00:00"
+  },
+  {
+   "id": "impacto-mages-engine-case",
+   "url": "https://github.com/CommitteeOfZero/impacto",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 2786,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 100,
+    "release_asset_count": 600,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:56:09+00:00"
+  },
+  {
+   "id": "caringcaribou",
+   "url": "https://github.com/CaringCaribou/caringcaribou",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 7426,
+    "docs_full": true,
+    "download": "release",
+    "release_count": 2,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:56:08+00:00"
+  },
+  {
+   "id": "rms-runtime-mobile-security",
+   "url": "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security",
+   "evidence_class": 0,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 12591,
+    "docs_full": true,
+    "download": "release",
+    "release_count": 27,
+    "release_asset_count": 0,
+    "demo": [
+     "image",
+     "video",
+     "demo-link"
+    ],
+    "media_count": 33,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full-coverage docs, download method and demo all present",
+   "checked_at": "2026-11-01T04:56:09+00:00"
+  },
+  {
+   "id": "pharos",
+   "url": "https://github.com/cmu-sei/pharos",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4408,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-01T04:56:09+00:00"
+  },
+  {
+   "id": "heimdall-rs",
+   "url": "https://github.com/Jon-Becker/heimdall-rs",
+   "evidence_class": 0,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 8093,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 56,
+    "release_asset_count": 100,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "full-coverage docs, download method and demo all present",
+   "checked_at": "2026-11-01T04:56:11+00:00"
+  },
+  {
+   "id": "uefi-firmware-parser",
+   "url": "https://github.com/theopolis/uefi-firmware-parser",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 7891,
+    "docs_full": true,
+    "download": "release",
+    "release_count": 15,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:56:10+00:00"
+  },
+  {
+   "id": "noop-whoop-ble-client-case",
+   "url": "https://github.com/ryanbr/noop",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 43706,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 34,
+    "release_asset_count": 103,
+    "demo": [
+     "image"
+    ],
+    "media_count": 5,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-01T04:56:15+00:00"
+  },
+  {
+   "id": "pe-bear",
+   "url": "https://github.com/hasherezade/pe-bear",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4661,
+    "docs_full": true,
+    "download": "release-assets",
+    "release_count": 11,
+    "release_asset_count": 88,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:56:13+00:00"
+  },
+  {
+   "id": "protodump",
+   "url": "https://github.com/arkadiyt/protodump",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 413,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [
+     "image",
+     "demo-link"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method",
+   "checked_at": "2026-11-01T04:56:12+00:00"
+  },
+  {
+   "id": "pre-list",
+   "url": "https://github.com/techge/PRE-list",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 40939,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-01T04:56:13+00:00"
+  },
+  {
+   "id": "restringer",
+   "url": "https://github.com/HumanSecurity/restringer",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 10467,
+    "docs_full": true,
+    "download": "release",
+    "release_count": 40,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no demo",
+   "checked_at": "2026-11-01T04:56:14+00:00"
+  },
+  {
+   "id": "emproof-firmware-re-workshop",
+   "url": "https://github.com/emproof-com/workshop_firmware_reverse_engineering",
+   "evidence_class": 2,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 6307,
+    "docs_full": false,
+    "download": null,
+    "release_count": 0,
+    "release_asset_count": 0,
+    "demo": [],
+    "media_count": 0,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "code and docs only: no download method and no demo",
+   "checked_at": "2026-11-01T04:56:15+00:00"
   }
  ]
 }
