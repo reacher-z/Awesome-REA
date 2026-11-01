@@ -13,10 +13,13 @@ from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 import datetime as dt
 import hashlib
 from functools import lru_cache
+import inspect
 import json
 from pathlib import Path
 import re
+import signal
 import subprocess
+import sys
 import threading
 import time
 from urllib.error import HTTPError, URLError
@@ -24,6 +27,7 @@ from urllib.parse import quote, unquote, urlencode, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 from source_descriptions import SOURCE_DESCRIPTION_POLICY, capture_description
 from source_scope import DUPLICATE_README_REASON, read_scope
+import strict_json
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -82,6 +86,12 @@ CLASSIFICATION_POLICY = ('Automatic labels use repository names, URL-stripped pu
 PROTOCOL_TOPICS = frozenset({'protocol-analysis', 'protocol-analyser', 'packet-analysis', 'pcap', 'wireshark', 'network-forensics'})
 PROTOCOL_WORDING = r'\bpcap\b|\bwireshark\b|\bnetwork[- ]protocol\b|\bprotocol[- ](?:analy|revers)'
 MCP_WORDING = r'model[\s-]*context[\s-]*protocol|\bmodelcontextprotocol\b|\bmcp\b'
+# Each new run records repository-relative paths and SHA-256 digests of its scanner code and of the
+# seed files it actually read; nothing else about the environment is retained.
+RUN_PROVENANCE_POLICY = 'scanner-files-and-seed-inputs-sha256-v1'
+CURATED_SEED_FILES = ('data/rea-resources.json', 'data/tool-resources.json')
+PAPER_SEED_FILE = 'data/papers.json'
+SEED_INPUT_DIGESTS = {}
 
 
 def now():
@@ -207,15 +217,42 @@ class GitHub:
             raise ScanError('invalid-api-json') from None
 
 
+def file_digest(path):
+    """Describe a repository file by relative path, size and SHA-256 of its bytes."""
+    content = path.read_bytes()
+    return {'path': path.resolve().relative_to(ROOT).as_posix(),
+            'sha256': hashlib.sha256(content).hexdigest(), 'bytes': len(content)}
+
+
+def read_seed_input(relative):
+    """Parse a seed file once and remember the digest of exactly the bytes that were parsed."""
+    path = ROOT / relative
+    if not path.exists():
+        return None
+    content = path.read_bytes()
+    SEED_INPUT_DIGESTS[relative] = {'path': relative, 'sha256': hashlib.sha256(content).hexdigest(), 'bytes': len(content)}
+    return json.loads(content.decode('utf-8'))
+
+
+def scanner_implementation(*components):
+    """Digest this scanner, its imported helpers and the modules defining the run's transport and frontier."""
+    modules = [sys.modules[name] for name in ('source_descriptions', 'source_scope', 'strict_json')]
+    modules += [inspect.getmodule(component) for component in components if component is not None]
+    files = {Path(__file__).resolve()} | {Path(module.__file__).resolve() for module in modules
+                                          if getattr(module, '__file__', None)}
+    # Only repository files are named, so no local checkout path is recorded.
+    return sorted((file_digest(path) for path in files if path.is_relative_to(ROOT)), key=lambda row: row['path'])
+
+
 @lru_cache(maxsize=1)
 def curated_references():
     """Seed explicit curated GitHub repositories; labels are derived at build time."""
     result = {}
-    for filename in ('rea-resources.json', 'tool-resources.json'):
-        path = ROOT / 'data' / filename
-        if not path.exists():
+    for relative in CURATED_SEED_FILES:
+        records = read_seed_input(relative)
+        if records is None:
             continue
-        for record in json.loads(path.read_text(encoding='utf-8')):
+        for record in records:
             parsed = urlsplit(record['url'])
             parts = parsed.path.strip('/').split('/')
             if parsed.hostname != 'github.com' or len(parts) < 2:
@@ -229,10 +266,10 @@ def curated_references():
 def paper_references():
     """Seed only explicit bibliography artifact links, without changing labels."""
     result = {}
-    path = ROOT / 'data/papers.json'
-    if not path.exists():
+    papers = read_seed_input(PAPER_SEED_FILE)
+    if papers is None:
         return result
-    for paper in json.loads(path.read_text(encoding='utf-8')):
+    for paper in papers:
         for field in ('code_url', 'project_url'):
             url = paper.get(field)
             if not isinstance(url, str):
@@ -472,6 +509,128 @@ def duplicate_readme_report(document, scope):
     }
 
 
+SKIP_FIELDS = {'retained_attempts_skipped': 'retained_attempts', 'name_collisions_skipped': 'name_collisions',
+               'held_candidates_skipped': 'held', 'deferred_candidates_skipped': 'deferred',
+               'invalid_items_skipped': 'invalid_items'}
+
+
+def run_segments(meta, records, failures):
+    """Split retained evidence by run from the counts each resume recorded, or explain why that is not possible."""
+    queries, history = meta.get('queries', []), meta.get('resume_history') or []
+    if meta.get('checkpoint_reconciliations'):
+        return None, 'a checkpoint union can reorder entries, so run boundaries are not recoverable', 0
+    if not all(isinstance(entry, dict) for entry in history):
+        return None, 'resume history is malformed', 0
+    bounds = [(0, 0, 0)] + [(entry.get('query_count'), entry.get('successful_readme_scans'), entry.get('failed'))
+                            for entry in history] + [(len(queries), len(records), len(failures))]
+    if any(type(value) is not int for bound in bounds for value in bound) or any(
+            later[index] < earlier[index] for earlier, later in zip(bounds, bounds[1:]) for index in range(3)):
+        return None, 'resume history counts do not increase monotonically', 0
+    run = meta.get('current_run') if isinstance(meta.get('current_run'), dict) else None
+    if run is not None and (run.get('retained_successful_readme_scans'), run.get('retained_failed_readme_scans')) != bounds[-2][1:]:
+        return None, 'current_run retained counts disagree with the last resume', 0
+    # Each resume stores the state before the next run, including that state's own run, if any.
+    labels = [entry.get('run') or ({'started_at': entry.get('started_at'), 'completed_at': entry.get('completed_at')}
+                                   if index == 0 else {}) for index, entry in enumerate(history)]
+    labels.append(run or ({} if history else {'started_at': meta.get('started_at'), 'completed_at': meta.get('completed_at')}))
+    by_run = {label['run_id']: index for index, label in enumerate(labels) if label.get('run_id')}
+    assigned, unmatched = [[] for _ in labels], 0
+    for position, entry in enumerate(queries):
+        run_id = entry.get('run_id') if isinstance(entry, dict) else None
+        if run_id is None:
+            # Legacy observations carry no run ID; their position within the recorded query counts places them.
+            assigned[max(index for index, bound in enumerate(bounds[:-1]) if bound[0] <= position)].append(entry)
+        elif run_id in by_run:
+            assigned[by_run[run_id]].append(entry)
+        else:
+            unmatched += 1  # For example, observations recovered from an unrecorded run; never attributed.
+    segments = [({key: label.get(key) for key in ('run_id', 'started_at', 'completed_at', 'mode')},
+                 assigned[index], records[s0:s1], f1 - f0)
+                for index, (label, (_, s0, f0), (_, s1, f1)) in enumerate(zip(labels, bounds, bounds[1:]))]
+    return segments, None, unmatched
+
+
+def discovery_summary(run, queries, records, new_failures):
+    """Summarize one run's searches; successes are attributed only through their recorded matched queries."""
+    rows = {}
+    for entry in queries:
+        row = rows.setdefault(entry.get('query'), {
+            'query': entry.get('query'), 'requests': 0, 'failed_requests': 0, 'failure_reasons': {}, 'pages': [],
+            'total_count': None, 'returned': 0, 'incomplete_requests': 0, 'capped': False,
+            'skipped': {}, 'successes': 0, 'exclusive_successes': 0})
+        row['requests'] += 1
+        row['pages'].append(entry.get('page'))
+        if entry.get('status') != 'ok':
+            row['failed_requests'] += 1
+            reason = str(entry.get('reason'))
+            row['failure_reasons'][reason] = row['failure_reasons'].get(reason, 0) + 1
+            continue
+        total = entry.get('total_count')
+        if type(total) is int:
+            row['total_count'] = max(total, row['total_count'] or 0)
+            # GitHub serves at most 1,000 results per search; the rest cannot be paged.
+            row['capped'] |= total > 1000
+        if type(entry.get('returned')) is int:
+            row['returned'] += entry['returned']
+        row['incomplete_requests'] += entry.get('incomplete_results') is True
+        for field, name in SKIP_FIELDS.items():
+            if type(entry.get(field)) is int and entry[field]:
+                row['skipped'][name] = row['skipped'].get(name, 0) + entry[field]
+    unmatched, union, memberships = 0, 0, 0
+    for record in records:
+        matched = [query for query in dict.fromkeys(record.get('matched_queries') or [])]
+        union += bool(matched)
+        unmatched += not matched
+        memberships += len(matched)
+        for query in matched:
+            row = rows.get(query)
+            if row is None:
+                continue  # The search observation was not retained in this run's range.
+            row['successes'] += 1
+            row['exclusive_successes'] += len(matched) == 1
+    for row in rows.values():
+        row['pages'] = sorted({page for page in row['pages'] if type(page) is int})
+        # Results still reachable within the 1,000-result window but never requested.
+        row['unrequested_within_cap'] = (max(0, min(row['total_count'], 1000) - row['returned'])
+                                         if row['total_count'] is not None else None)
+        row['successes_per_returned'] = round(row['successes'] / row['returned'], 4) if row['returned'] else None
+    requests = len(queries)
+    return {
+        **run, 'search_requests': requests,
+        'failed_search_requests': sum(row['failed_requests'] for row in rows.values()),
+        'incomplete_search_requests': sum(row['incomplete_requests'] for row in rows.values()),
+        'capped_queries': sum(row['capped'] for row in rows.values()),
+        'returned_items': sum(row['returned'] for row in rows.values()),
+        'new_successful_readme_scans': len(records), 'new_failed_readme_scans': new_failures,
+        'successes_with_matched_query': union, 'successes_without_matched_query': unmatched,
+        'query_memberships': memberships, 'overlapping_memberships': memberships - union,
+        'new_successes_per_search_request': round(len(records) / requests, 4) if requests else None,
+        'queries': sorted(rows.values(), key=lambda row: (-row['successes'], -row['returned'], str(row['query']))),
+    }
+
+
+def discovery_report(document):
+    """Report per-run search coverage and yield from retained observations only; nothing is rewritten."""
+    meta, records, failures = document['meta'], document['resources'], document.get('failures', [])
+    segments, problem, unmatched = run_segments(meta, records, failures)
+    if segments is None:
+        segments = [({'run_id': None, 'started_at': meta.get('started_at'), 'completed_at': meta.get('completed_at'),
+                      'mode': 'all-retained-evidence'}, meta.get('queries', []), records, len(failures))]
+    ledger = meta.get('discovered_repository_ids')
+    return {
+        'policy': ('Offline report from retained query observations and matched_queries on successful records. A success counts '
+                   'toward every query that returned it; overlapping memberships are reported separately from the distinct '
+                   'union. README failures carry no query evidence and are never attributed to a query. Count-only legacy '
+                   'candidates without persisted IDs are not reconstructed. Search results change over time, so yield is '
+                   'descriptive, not a completeness claim.'),
+        'run_segmentation': 'resume-history-counts' if problem is None else 'unavailable: ' + problem,
+        'successful_readme_scans': len(records), 'failed_readme_scans': len(failures),
+        'persisted_discovered_ids': len(ledger) if isinstance(ledger, list) else None,
+        'unattributed_query_observations': unmatched,
+        'runs': [discovery_summary(run, queries, rows, new_failures) for run, queries, rows, new_failures in segments],
+    }
+
+
 def readme_record(repo, metadata, content, *, api_url=None):
     """Extract shared document evidence from actual bytes; never retain README text."""
     if not content:
@@ -683,7 +842,10 @@ def save(output, meta, records, failures, complete=False):
 def load_resume(path):
     """Validate retained evidence before any authentication or network access."""
     raw = path.read_bytes()
-    document = json.loads(raw)
+    try:
+        document = strict_json.loads(raw)
+    except ValueError as error:
+        raise ValueError(f'{path}: {error}') from error
     if not isinstance(document, dict):
         raise ValueError('Resume snapshot must be an object')
     meta, records, failures = document.get('meta'), document.get('resources'), document.get('failures', [])
@@ -832,6 +994,11 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
         'retained_unattempted_repository_ids': len(known_ids - attempted_ids),
         'query_plan': list(args.queries),
         'held_repository_ids': sorted(held_ids, key=lambda value: int(value[5:])),
+        'scanner_provenance': {'policy': RUN_PROVENANCE_POLICY,
+                               # A scheduled wrapper keeps the GraphQL reader as its `transport`.
+                               'implementation': scanner_implementation(readme_transport, getattr(readme_transport, 'transport', None),
+                                                                        frontier_api),
+                               'seed_inputs': []},
     }
     candidates, candidate_names, exhausted = {}, set(), set()
     meta.setdefault('seed_observations', [])
@@ -985,11 +1152,15 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
                 checkpoint()
         print(f'RESUME_METADATA_COMPLETE observations={len(meta["resume_observations"]) - meta["current_run"]["resume_observation_start_index"]} new_readme_candidates={len(candidates)}', flush=True)
         checkpoint()
-    seed_groups = []
+    seed_groups, seed_files = [], []
     if args.seed_curated:
         seed_groups.append(('curated-repository-reference', curated_references()))
+        seed_files += CURATED_SEED_FILES
     if args.seed_papers:
         seed_groups.append(('paper-artifact-reference', paper_references()))
+        seed_files.append(PAPER_SEED_FILE)
+    meta['current_run']['scanner_provenance']['seed_inputs'] = [
+        SEED_INPUT_DIGESTS[relative] for relative in seed_files if relative in SEED_INPUT_DIGESTS]
     for method, references in seed_groups:
         for name, reference in sorted(references.items()):
             if name in retained_names:
@@ -1079,7 +1250,14 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
             break
     print(f'DISCOVERY_COMPLETE known_repositories={len(known_ids)} new_readme_candidates={len(candidates)}; starting actual README reads', flush=True)
     checkpoint()
-    deferred = False
+    deferred = interrupted = False
+
+    def interrupted_checkpoint():
+        # A record appended before the interruption is kept; an ID whose record was not is retried later.
+        attempted_ids.intersection_update(entry['id'] for entry in records + failures)
+        checkpoint()
+        print(f'INTERRUPTED success={len(records)} failed={len(failures)}; in-progress checkpoint saved', flush=True)
+
     def delivery_candidates():
         for candidate in candidates.values():
             if not delivery_block('scan-' + str(candidate['id'])):
@@ -1096,136 +1274,161 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
             'request_count': 0, 'response_bytes': 0, 'reported_query_cost': 0,
             'queries_with_cost': 0, 'queries_without_cost': 0, 'elapsed_seconds': 0.0, 'last_rate_limit': {}}
         checkpoint_attempts = len(attempted_ids)
-        while len(records) < args.target:
-            batch = []
-            for _ in range(min(readme_transport.batch_size, args.target - len(records))):
-                item = next(source, None)
-                if item is not None:
-                    batch.append(item)
-            if not batch:
-                break
-            batch_clock = time.monotonic()
-            results = readme_transport.fetch_batch(batch)
-            batch_seconds = time.monotonic() - batch_clock
-            if diagnostics is not None:
-                diagnostics.record_batch(getattr(readme_transport, 'last_batch_diagnostics', []))
-            transport_receipt = meta['current_run']['readme_transport']
-            receipts = getattr(readme_transport, 'last_batch_receipts', [])
-            transport_receipt['elapsed_seconds'] += batch_seconds
-            transport_receipt['request_count'] += len(receipts)
-            transport_receipt['queries_with_cost'] += sum('cost' in (row.get('rate_limit') or {}) for row in receipts)
-            transport_receipt['queries_without_cost'] += sum('cost' not in (row.get('rate_limit') or {}) for row in receipts)
-            transport_receipt['response_bytes'] += sum(row.get('response_bytes', 0) for row in receipts)
-            transport_receipt['reported_query_cost'] += sum((row.get('rate_limit') or {}).get('cost', 0) for row in receipts)
-            transport_receipt['last_rate_limit'] = dict(getattr(readme_transport, 'rate_limit', {}))
-            batch_paused = any(results.get(item['id'], {'status': 'retry'}).get('status') in ('retry', 'deferred') for item in batch)
-            batch_retry_after = max([60] + [int(value.get('retry_after') or 60) for value in results.values()])
-            for candidate in batch:
-                result = results.get(candidate['id'], {'status': 'retry'})
-                status = result.get('status')
-                if status not in transport_counts:
-                    raise ValueError('Unexpected README transport outcome')
-                transport_counts[status] += 1
-                if status in ('retry', 'deferred') or status == 'fallback' and batch_paused:
-                    deferred = True
-                    if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
-                        frontier_api.defer_candidates(frontier_state, [candidate['id']], reason='deferred',
-                            retry_after_seconds=max(60, min(604800, batch_retry_after)))
-                    continue
-                if status == 'rejected':
-                    if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
-                        frontier_api.defer_candidates(frontier_state, [candidate['id']], reason='ineligible', retry_after_seconds=86400)
-                    continue  # Eligibility is metadata evidence, not a README attempt.
-                repo = dict(result['repository'])
-                repo.update({key: value for key, value in candidate.items() if key.startswith('_')})
-                repo['_metadata_observed_at'] = result['repository']['_metadata_observed_at']
-                if (repository_ineligibility(repo) or repo['id'] != candidate['id']
-                        or repo['full_name'].casefold() in retained_names):
-                    raise ValueError('README transport returned inconsistent repository identity')
-                if status == 'fallback':
-                    record, failure = scan_readme(api, repo)
-                    if failure and failure['reason'] in ('readme-repository-identity-unconfirmed', 'readme-repository-unavailable'):
-                        pending_delivery_blocked = True
-                        if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
-                            reason = 'not-found' if failure['reason'] == 'readme-repository-unavailable' else 'ineligible'
-                            frontier_api.defer_candidates(frontier_state, [candidate['id']], reason=reason,
-                                                          retry_after_seconds=86400)
-                        continue  # Only public-identity metadata was requested; no README attempt.
-                    if failure and (failure.get('http_status') in (401, 403, 408, 429)
-                                    or (failure.get('http_status') or 0) >= 500
-                                    or failure['reason'] in ('network-failure', 'retry-limit', 'rate-limited', 'invalid-api-json')):
-                        # An exhausted REST retry must not become a permanent
-                        # source failure or trigger another sibling fallback.
-                        deferred = batch_paused = True
+        try:
+            while len(records) < args.target:
+                batch = []
+                for _ in range(min(readme_transport.batch_size, args.target - len(records))):
+                    item = next(source, None)
+                    if item is not None:
+                        batch.append(item)
+                if not batch:
+                    break
+                batch_clock = time.monotonic()
+                results = readme_transport.fetch_batch(batch)
+                batch_seconds = time.monotonic() - batch_clock
+                if diagnostics is not None:
+                    diagnostics.record_batch(getattr(readme_transport, 'last_batch_diagnostics', []))
+                transport_receipt = meta['current_run']['readme_transport']
+                receipts = getattr(readme_transport, 'last_batch_receipts', [])
+                transport_receipt['elapsed_seconds'] += batch_seconds
+                transport_receipt['request_count'] += len(receipts)
+                transport_receipt['queries_with_cost'] += sum('cost' in (row.get('rate_limit') or {}) for row in receipts)
+                transport_receipt['queries_without_cost'] += sum('cost' not in (row.get('rate_limit') or {}) for row in receipts)
+                transport_receipt['response_bytes'] += sum(row.get('response_bytes', 0) for row in receipts)
+                transport_receipt['reported_query_cost'] += sum((row.get('rate_limit') or {}).get('cost', 0) for row in receipts)
+                transport_receipt['last_rate_limit'] = dict(getattr(readme_transport, 'rate_limit', {}))
+                batch_paused = any(results.get(item['id'], {'status': 'retry'}).get('status') in ('retry', 'deferred') for item in batch)
+                batch_retry_after = max([60] + [int(value.get('retry_after') or 60) for value in results.values()])
+                for candidate in batch:
+                    result = results.get(candidate['id'], {'status': 'retry'})
+                    status = result.get('status')
+                    if status not in transport_counts:
+                        raise ValueError('Unexpected README transport outcome')
+                    transport_counts[status] += 1
+                    if status in ('retry', 'deferred') or status == 'fallback' and batch_paused:
+                        deferred = True
                         if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
                             frontier_api.defer_candidates(frontier_state, [candidate['id']], reason='deferred',
                                 retry_after_seconds=max(60, min(604800, batch_retry_after)))
                         continue
-                else:
-                    try:
-                        record = readme_record(repo, result['metadata'], result['content'])
-                    except ScanError as error:
-                        record, failure = None, {
-                            'id': 'scan-' + str(repo['id']), 'full_name': repo['full_name'],
-                            'url': repo['html_url'], 'observed_at': now(), 'scan_status': 'failed',
-                            'reason': error.reason, 'http_status': error.status}
+                    if status == 'rejected':
+                        if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
+                            frontier_api.defer_candidates(frontier_state, [candidate['id']], reason='ineligible', retry_after_seconds=86400)
+                        continue  # Eligibility is metadata evidence, not a README attempt.
+                    repo = dict(result['repository'])
+                    repo.update({key: value for key, value in candidate.items() if key.startswith('_')})
+                    repo['_metadata_observed_at'] = result['repository']['_metadata_observed_at']
+                    if (repository_ineligibility(repo) or repo['id'] != candidate['id']
+                            or repo['full_name'].casefold() in retained_names):
+                        raise ValueError('README transport returned inconsistent repository identity')
+                    if status == 'fallback':
+                        record, failure = scan_readme(api, repo)
+                        if failure and failure['reason'] in ('readme-repository-identity-unconfirmed', 'readme-repository-unavailable'):
+                            pending_delivery_blocked = True
+                            if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
+                                reason = 'not-found' if failure['reason'] == 'readme-repository-unavailable' else 'ineligible'
+                                frontier_api.defer_candidates(frontier_state, [candidate['id']], reason=reason,
+                                                              retry_after_seconds=86400)
+                            continue  # Only public-identity metadata was requested; no README attempt.
+                        if failure and (failure.get('http_status') in (401, 403, 408, 429)
+                                        or (failure.get('http_status') or 0) >= 500
+                                        or failure['reason'] in ('network-failure', 'retry-limit', 'rate-limited', 'invalid-api-json')):
+                            # An exhausted REST retry must not become a permanent
+                            # source failure or trigger another sibling fallback.
+                            deferred = batch_paused = True
+                            if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
+                                frontier_api.defer_candidates(frontier_state, [candidate['id']], reason='deferred',
+                                    retry_after_seconds=max(60, min(604800, batch_retry_after)))
+                            continue
                     else:
-                        record['readme_transport'] = 'github-graphql-blob'
-                        record['readme_graphql_endpoint'] = 'https://api.github.com/graphql'
-                        record['readme_commit_sha'] = result['metadata']['commit_oid']
-                        if record['readme_git_sha_matches_content'] is not True:
-                            raise ValueError('GraphQL README bytes do not match the immutable blob')
-                        failure = None
-                observed = record or failure
-                if observed['id'] in attempted_ids:
-                    raise ValueError('Duplicate repository attempt')
-                attempted_ids.add(observed['id'])
-                retained_names.add(observed['full_name'].casefold())
-                (records if record else failures).append(observed)
-            if len(attempted_ids) - checkpoint_attempts >= 100 or deferred:
-                checkpoint()
-                checkpoint_attempts = len(attempted_ids)
-                print(f'README_PROGRESS success={len(records)} failed={len(failures)} transport=graphql', flush=True)
-            if deferred:
-                break  # Do not evade rate/backpressure by switching transports.
+                        try:
+                            record = readme_record(repo, result['metadata'], result['content'])
+                        except ScanError as error:
+                            record, failure = None, {
+                                'id': 'scan-' + str(repo['id']), 'full_name': repo['full_name'],
+                                'url': repo['html_url'], 'observed_at': now(), 'scan_status': 'failed',
+                                'reason': error.reason, 'http_status': error.status}
+                        else:
+                            record['readme_transport'] = 'github-graphql-blob'
+                            record['readme_graphql_endpoint'] = 'https://api.github.com/graphql'
+                            record['readme_commit_sha'] = result['metadata']['commit_oid']
+                            if record['readme_git_sha_matches_content'] is not True:
+                                raise ValueError('GraphQL README bytes do not match the immutable blob')
+                            failure = None
+                    observed = record or failure
+                    if observed['id'] in attempted_ids:
+                        raise ValueError('Duplicate repository attempt')
+                    attempted_ids.add(observed['id'])
+                    retained_names.add(observed['full_name'].casefold())
+                    (records if record else failures).append(observed)
+                if len(attempted_ids) - checkpoint_attempts >= 100 or deferred:
+                    checkpoint()
+                    checkpoint_attempts = len(attempted_ids)
+                    print(f'README_PROGRESS success={len(records)} failed={len(failures)} transport=graphql', flush=True)
+                if deferred:
+                    break  # Do not evade rate/backpressure by switching transports.
+        except KeyboardInterrupt:
+            interrupted = True
+            interrupted_checkpoint()
     else:
         source = iter(delivery_candidates())
+
+        def accept(future, repo):
+            nonlocal pending_delivery_blocked
+            try:
+                record, failure = future.result()
+            except Exception as error:
+                record, failure = None, {
+                    'id': 'scan-' + str(repo['id']), 'full_name': repo['full_name'],
+                    'url': repo['html_url'], 'observed_at': now(),
+                    'scan_status': 'failed', 'reason': 'worker-' + type(error).__name__,
+                    'http_status': None,
+                }
+            metadata_only = failure and failure['reason'] in ('readme-repository-identity-unconfirmed', 'readme-repository-unavailable')
+            if metadata_only:
+                pending_delivery_blocked = True
+                return
+            result = record or failure
+            if result['id'] in attempted_ids:
+                raise ValueError('Duplicate repository attempt')
+            attempted_ids.add(result['id'])
+            (records if record else failures).append(result)
+            new_attempts = len(records) + len(failures) - retained_successes - retained_failures
+            if new_attempts % 100 == 0 and not interrupted:
+                print(f'README_PROGRESS success={len(records)} failed={len(failures)} new_attempts={new_attempts}', flush=True)
+                checkpoint()
+
         with ThreadPoolExecutor(max_workers=args.workers) as pool:
             pending = {}
             for _ in range(min(args.workers, max(0, args.target - len(records)))):
                 repo = next(source, None)
                 if repo is not None:
                     pending[pool.submit(scan_readme, api, repo)] = repo
-            while pending:
-                completed, _ = wait(pending, return_when=FIRST_COMPLETED)
-                for future in completed:
-                    repo = pending.pop(future)
-                    try:
-                        record, failure = future.result()
-                    except Exception as error:
-                        record, failure = None, {
-                            'id': 'scan-' + str(repo['id']), 'full_name': repo['full_name'],
-                            'url': repo['html_url'], 'observed_at': now(),
-                            'scan_status': 'failed', 'reason': 'worker-' + type(error).__name__,
-                            'http_status': None,
-                        }
-                    metadata_only = failure and failure['reason'] in ('readme-repository-identity-unconfirmed', 'readme-repository-unavailable')
-                    if metadata_only:
-                        pending_delivery_blocked = True
-                    else:
-                        result = record or failure
-                        if result['id'] in attempted_ids:
-                            raise ValueError('Duplicate repository attempt')
-                        attempted_ids.add(result['id'])
-                        (records if record else failures).append(result)
-                        new_attempts = len(records) + len(failures) - retained_successes - retained_failures
-                        if new_attempts % 100 == 0:
-                            print(f'README_PROGRESS success={len(records)} failed={len(failures)} new_attempts={new_attempts}', flush=True)
-                            checkpoint()
-                    if len(records) + len(pending) < args.target:
-                        following = next(source, None)
-                        if following is not None:
-                            pending[pool.submit(scan_readme, api, following)] = following
+            try:
+                while pending:
+                    completed, _ = wait(pending, return_when=FIRST_COMPLETED)
+                    for future in completed:
+                        # Remove the future only after its result is recorded.
+                        accept(future, pending[future])
+                        del pending[future]
+                        if len(records) + len(pending) < args.target:
+                            following = next(source, None)
+                            if following is not None:
+                                pending[pool.submit(scan_readme, api, following)] = following
+            except KeyboardInterrupt:
+                interrupted = True
+                # Stop queued reads, record each already finished one once, and save before
+                # waiting for requests still in flight; their results are not retained.
+                for future in pending:
+                    future.cancel()
+                attempted_ids.intersection_update(entry['id'] for entry in records + failures)
+                for future, repo in pending.items():
+                    if (future.done() and not future.cancelled()
+                            and 'scan-' + str(repo['id']) not in attempted_ids):
+                        accept(future, repo)
+                interrupted_checkpoint()
+    if interrupted:
+        return 130
     # Keep the prior snapshot as an unchanged prefix; order only the new evidence.
     records[retained_successes:] = sorted(records[retained_successes:], key=lambda record: (-record['stars'], record['full_name'].casefold()))
     failures[retained_failures:] = sorted(failures[retained_failures:], key=lambda record: record['full_name'].casefold())
@@ -1259,6 +1462,7 @@ def main():
     parser.add_argument('--relabel-report', type=Path, help='Offline: print retained automatic labels that differ from this engine, without rewriting the snapshot')
     parser.add_argument('--protocol-report', type=Path, help='Offline: print retained automatic records whose protocol target or category this engine would change')
     parser.add_argument('--duplicate-readme-report', type=Path, help='Offline: group successful scans by README hash and propose scope reviews for same-named copies')
+    parser.add_argument('--discovery-report', type=Path, help='Offline: print per-run query coverage, capped searches and attributable new successes')
     args = parser.parse_args()
     try:
         held_repository_ids(args.hold_repository_ids)
@@ -1279,7 +1483,8 @@ def main():
         parser.error('query bases must be nonempty')
     args.queries = [value.strip() + ' is:public fork:false archived:false' for value in args.query] if args.query else QUERIES
     for path, report in ((args.relabel_report, relabel_report), (args.protocol_report, protocol_report),
-                         (args.duplicate_readme_report, lambda document: duplicate_readme_report(document, read_scope()))):
+                         (args.duplicate_readme_report, lambda document: duplicate_readme_report(document, read_scope())),
+                         (args.discovery_report, discovery_report)):
         if not path:
             continue
         try:
@@ -1344,6 +1549,9 @@ def main():
                                                       approved_queries=approved))
             search_frontier.save_frontier(args.frontier, state, approved_queries=approved)
             frontier = state, args.frontier, approved
+        def stop(signum, frame):
+            raise KeyboardInterrupt  # Termination saves completed reads like Ctrl-C.
+        signal.signal(signal.SIGTERM, stop)
         return run_scan(api, args, resumed, resume_sha256, readme_transport=transport, frontier=frontier,
                         diagnostics=diagnostics)
     finally:

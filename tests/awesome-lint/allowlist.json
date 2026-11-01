@@ -1,0 +1,30 @@
+{
+  "enforced_rules": [],
+  "false_positives": [
+    {
+      "rule": "awesome-spell-check",
+      "reason": "Text \"webpack\" should be written as \"Webpack\"",
+      "why": "webpack is the bundler's own lowercase name."
+    },
+    {
+      "rule": "awesome-spell-check",
+      "reason": "Text \"ReAct\" should be written as \"React\"",
+      "why": "ReAct is the reason-and-act agent method, not the React UI library."
+    },
+    {
+      "rule": "awesome-spell-check",
+      "reason": "Text \"Llama\" should be written as \"LLaMA\"",
+      "why": "Meta names Code Llama and Llama 2 and later as Llama; LLaMA is only the first release's styling."
+    },
+    {
+      "rule": "awesome-spell-check",
+      "reason": "Text \"Wasm\" should be written as \"WebAssembly\"",
+      "why": "Wasm is the abbreviation used by the WebAssembly specification."
+    },
+    {
+      "rule": "awesome-spell-check",
+      "reason": "Text \"windows\" should be written as \"Windows\"",
+      "why": "Ordinary plural noun, such as context windows or tool windows, not the operating system."
+    }
+  ]
+}

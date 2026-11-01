@@ -16,6 +16,7 @@ The canonical website is [AwesomeREA.org](https://awesomerea.org/); the public s
 - Detail pages use `WebPage` and `BreadcrumbList` metadata. A resource's main entity is a `CreativeWork` linked to the original resource; a paper uses `ScholarlyArticle` with its recorded authors, publication status, identifiers and date precision. Its `@id` is the detail page's `#paper` node in that language, which `/papers/` and `/zh/papers/` reuse; their ItemList entries point at the detail pages. `sameAs` lists only `https://doi.org/` and `https://arxiv.org/abs/` links built from the recorded `doi` and `arxiv_id`. Source-review dates are not presented as publication dates, and resource pages do not invent authors, licenses or ratings.
 - WebSite, CollectionPage/AboutPage, ItemList, and BreadcrumbList metadata describe the visible content. The site does not claim ratings, official affiliation, or reproduction results it does not have.
 - `/llms.txt` is an optional navigation index for readers and tools. `/catalog.json` is the machine-readable curated catalog. Neither guarantees indexing or citation.
+- `/contribute/` and `/zh/contribute/` answer where to suggest a resource, case, paper or correction and how to prepare a PR, in ordinary HTML with canonical and language links. The homepage, static discovery-page footers and `/llms.txt` link to them. Repository agents start at [AGENTS.md](../AGENTS.md) and the [bilingual agent contribution guide](agent-contributing.md); schema definitions and contributor rules remain the authoritative source.
 
 Run `python3 scripts/build_production.py` before publication. It validates the source catalogs and generated READMEs, checks the browser script, builds the site, and validates canonical pages, language links, exact detail-page inventory, static resource coverage, metadata, and crawler permissions. These checks establish crawlable structure and source consistency; they do not demonstrate indexing or ranking.
 
@@ -44,6 +45,8 @@ The site's existing `User-agent: *` / `Allow: /` policy permits search crawling,
 4. Bing Webmaster Tools can also accept the sitemap. IndexNow can notify participating engines of changed public URLs after its ownership key is deployed; it does not submit pages to Google or guarantee indexing. [Bing IndexNow guide](https://www.bing.com/indexnow/IndexNowView/IndexNowGetStartedView)
 
 Do not place account emails, dashboard URLs with private identifiers, session cookies, screenshots of account details, or access credentials in this public repository. Search verification files are intended to be publicly reachable ownership proofs; keep the exact issued contents and filename.
+
+Posting to public communities such as Hacker News or Reddit is a separate, manual step with its own rules; see [community outreach](community-outreach.md).
 
 ## Measurement
 

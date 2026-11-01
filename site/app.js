@@ -26,7 +26,7 @@ const UI = {
     "moreFilters": "More filters",
     "layoutCompact": "Compact list",
     "layoutCards": "Cards",
-    "requirementsShort": "Details & limits",
+    "requirementsShort": "Requirements & limits",
     "openEntry": "Open full entry",
     "sourceTopicsLabel": "Topics",
     "noscriptNote": "JavaScript enables search and filters. Read the complete <a href=\"/browse/\">repository directory</a>, <a href=\"/resources/\">curated collection</a> and <a href=\"/papers/\">research papers</a> without JavaScript. <a href=\"/zh/\" lang=\"zh-CN\">简体中文</a>.",
@@ -93,6 +93,7 @@ const UI = {
     "sourceLanguageNote": "Repository descriptions are available in English and Chinese. Translations are AI-assisted; original descriptions remain in the downloadable data.",
     "sourceLoading": "Loading repositories…",
     "clearFilters": "Clear filters ×",
+    "exportMatches": "Export matches (JSON) ↓",
     "emptyTitle": "No matching resources.",
     "sourceEmptyDescription": "Try another search term or broaden your filters.",
     "resetFilters": "Reset filters",
@@ -119,7 +120,8 @@ const UI = {
     "loadMore": "Show more resources",
     "footerDescription": "An independent resource collection, updated in public.",
     "footerSubmitResource": "Submit a resource ↗",
-    "contributeButton": "Contribute ↗",
+    "contributeButton": "Contribute",
+    "contributionRules": "Contributor rules ↗",
     "downloadSourceData": "Repository index JSON ↓",
     "downloadPublishedSourceData": "Published repository index JSON ↓",
     "browseDirectory": "Browse by category ↗",
@@ -127,9 +129,17 @@ const UI = {
     "viewSource": "GitHub ↗",
     "footerLicense": "Original content: MIT. Linked projects keep their own licenses.",
     "readSource": "Primary source",
-    "requirements": "Details & requirements",
+    "requirements": "Requirements & limits",
+    "requirementsLoading": "Loading requirements…",
+    "requirementsError": "Requirements couldn’t load. Close and reopen these details to try again.",
     "reviewed": "Reviewed",
     "sourceReviewed": "Source-reviewed",
+    "facetPrerequisites": "Prerequisites",
+    "facetScope": "Scope",
+    "facetLimits": "Limits",
+    "facetTesting": "Testing evidence",
+    "facetLicense": "License",
+    "facetAttribution": "Attribution",
     "sourceNotRecorded": "Not recorded",
     "sourceStars": "stars",
     "sourceStarsTitle": "GitHub stars at metadata collection time; not a live count.",
@@ -179,7 +189,7 @@ const UI = {
     "moreFilters": "更多筛选",
     "layoutCompact": "紧凑列表",
     "layoutCards": "卡片",
-    "requirementsShort": "详情与局限",
+    "requirementsShort": "使用条件与局限",
     "openEntry": "查看完整条目",
     "sourceTopicsLabel": "主题",
     "noscriptNote": "JavaScript 用于搜索和筛选。关闭 JavaScript 仍可阅读完整的<a href=\"/zh/browse/\">仓库目录</a>、<a href=\"/zh/resources/\">精选资源</a>与<a href=\"/zh/papers/\">研究论文</a>。<a href=\"/\" lang=\"en\">English</a>。",
@@ -246,6 +256,7 @@ const UI = {
     "sourceLanguageNote": "项目简介提供中英双语，翻译由 AI 辅助完成；下载数据中保留上游原文。",
     "sourceLoading": "正在加载仓库…",
     "clearFilters": "清除筛选 ×",
+    "exportMatches": "导出匹配项（JSON）↓",
     "emptyTitle": "没有匹配的资源。",
     "sourceEmptyDescription": "换一个关键词，或扩大筛选范围。",
     "resetFilters": "重置筛选",
@@ -272,7 +283,8 @@ const UI = {
     "loadMore": "加载更多资源",
     "footerDescription": "独立的资源集合，在公开协作中持续更新。",
     "footerSubmitResource": "提交资源 ↗",
-    "contributeButton": "参与贡献 ↗",
+    "contributeButton": "参与贡献",
+    "contributionRules": "贡献规则 ↗",
     "downloadSourceData": "仓库索引 JSON ↓",
     "downloadPublishedSourceData": "已发布仓库索引 JSON ↓",
     "browseDirectory": "按分类浏览 ↗",
@@ -280,9 +292,17 @@ const UI = {
     "viewSource": "GitHub ↗",
     "footerLicense": "原创内容采用 MIT 许可。链接项目保留各自的许可。",
     "readSource": "一手来源",
-    "requirements": "详情与使用条件",
+    "requirements": "使用条件与局限",
+    "requirementsLoading": "正在加载使用条件…",
+    "requirementsError": "使用条件未能加载。请收起后重新展开以重试。",
     "reviewed": "复核于",
     "sourceReviewed": "来源已复核",
+    "facetPrerequisites": "前提条件",
+    "facetScope": "范围",
+    "facetLimits": "局限",
+    "facetTesting": "测试证据",
+    "facetLicense": "许可",
+    "facetAttribution": "署名",
     "sourceNotRecorded": "未记录",
     "sourceStars": "星标",
     "sourceStarsTitle": "元数据采集时的 GitHub 星标快照，不是实时数量。",
@@ -319,7 +339,7 @@ const params = new URLSearchParams(location.search);
 document.documentElement.dataset.indexMode = ["source-index", "repositories"].includes(params.get("view")) ? "source-index" : "curated";
 // The path selects the default language; valid legacy query overrides still work.
 const pathLanguage = location.pathname.startsWith("/zh/") ? "zh" : "en";
-const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false };
+const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const t = (key) => UI[state.lang][key] || UI.en[key] || key;
@@ -394,11 +414,19 @@ function renderCategories() {
 const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资源"],"research":["Research","研究"]};
 const FEATURED = ["rea-upstream","chrome-devtools-mcp","renderdoc","jadx-ai-mcp","ghidra","webcrack","assetripper","ilspy","awesome-rea-cases","rea-dxball-case","mitmproxy","rea-notion-case","hex-rays-ida-mcp","picoprint-rea-investigation","morluto-awesome-re"];
 function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>compareLabels(label(KIND,a),label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
+// Faceted requirements (scripts/requirement_facets.py): prerequisites first, each item led by its facet in bold.
+function requirementItems(record) {
+  const items = state.lang === "zh" ? (record.requirements_zh || record.requirements) : record.requirements;
+  const pairs = (Array.isArray(items) ? items : [items]).map((text, index) => [record.requirement_facets[index], text]);
+  return [...pairs.filter(([facet]) => facet === "prerequisites"), ...pairs.filter(([facet]) => facet !== "prerequisites")].map(([facet, text]) => {
+    const item = node("li"); item.append(node("strong", "requirement-facet", t("facet" + facet[0].toUpperCase() + facet.slice(1)) + (state.lang === "zh" ? "：" : ": ")), node("span", "", text)); return item;
+  });
+}
 function card(record) {
   const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
   const meta=node("div","card-meta");meta.append(node("span","card-category",label(state.categoryLabels,record.category)));article.append(meta);
-  const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");const requirements=state.lang==="zh"?(record.requirements_zh||record.requirements):record.requirements;(Array.isArray(requirements)?requirements:[requirements]).forEach(item=>list.append(node("li","",item)));details.append(list);
+  const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");if(!fillRequirements(list,record)){state.pendingRequirements.push([list,record]);details.addEventListener("toggle",()=>{if(details.open)loadDetails();});}details.append(list);
   const context=node("div","resource-detail-meta");const time=node("time","",t("reviewed")+" "+record.verified_at.slice(0,10));time.dateTime=record.verified_at;time.title=record.verified_at;context.append(node("span","",label(RELATION,record.relationship)),node("span","",t("sourceReviewed")),time);
   const href=entryHref("curated",record.id);
   if(record.targets.length)meta.prepend(node("span","card-targets",targetLabels(record)));
@@ -406,7 +434,45 @@ function card(record) {
   context.append(external(record.evidence_url,"resource-evidence-link",t("readSource")+" ↗"));
   details.append(context);article.append(details);return article;
 }
-function filtered() { const terms=state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);const found=state.records.filter(r=>(state.group==="all"||r.group===state.group)&&(state.target==="all"||r.targets.includes(state.target))&&(state.category==="all"||r.category===state.category)&&(state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
+// The lean catalog-index.json has no requirement lists; a card shows a placeholder until catalog.json supplies them.
+function fillRequirements(list, record) {
+  const requirements = state.lang === "zh" ? (record.requirements_zh || record.requirements) : record.requirements;
+  if (!requirements) { list.replaceChildren(node("li", "requirements-pending", t(state.detailsError ? "requirementsError" : "requirementsLoading"))); return false; }
+  list.replaceChildren(...(Array.isArray(record.requirement_facets) ? requirementItems(record) : (Array.isArray(requirements) ? requirements : [requirements]).map(item => node("li", "", item))));
+  return true;
+}
+function searchText(r) { return [r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(state.categoryLabels[r.category] || []),...(KIND[r.kind] || []),r.relationship,...(r.requirements || []),...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels)].join(" ").toLocaleLowerCase(); }
+// The complete catalog.json follows the first render, so searches cover requirement text and open details fill in place.
+// Typing a query or opening details retries it after a failure.
+function loadDetails() {
+  if (!state.loaded || state.details) return state.details;
+  if (state.detailsError) { state.detailsError = false; state.pendingRequirements.forEach(([list, record]) => fillRequirements(list, record)); }
+  state.details = fetch(dataURL("catalog.json"), {cache: "no-cache"}).then(response => { if (!response.ok) throw new Error("Catalog HTTP " + response.status); return response.json(); }).then(data => {
+    const complete = new Map(data.resources.map(r => [r.id, r])); state.fullRecords = complete;
+    for (const record of state.records) { const full = complete.get(record.id); if (full) { record.requirements = full.requirements; record.requirements_zh = full.requirements_zh; if (full.requirement_facets) record.requirement_facets = full.requirement_facets; record.search = searchText(record); } }
+    const pending = state.pendingRequirements; state.pendingRequirements = [];
+    if (state.q.trim()) render(); else pending.forEach(([list, record]) => fillRequirements(list, record));
+  }).catch(() => { state.details = null; state.detailsError = true; state.pendingRequirements.forEach(([list, record]) => fillRequirements(list, record)); });
+  return state.details;
+}
+function queryTerms() { return state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean); }
+// skip leaves one facet out, so that facet's choices can be counted against every other active filter.
+function matches(r, terms, skip = "") { return (state.group==="all"||r.group===state.group)&&(skip==="target"||state.target==="all"||r.targets.includes(state.target))&&(skip==="category"||state.category==="all"||r.category===state.category)&&(skip==="kind"||state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)); }
+function filtered() { const terms=queryTerms();const found=state.records.filter(r=>matches(r,terms));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
+// Each target button and Type/Category option shows how many results it would give with the other filters and the query.
+// Empty choices are disabled unless selected, so a shared URL still shows its own choice; counts are not announced.
+function renderFacets() {
+  const terms = queryTerms();
+  const tally = (facet, values) => { const counts = new Map([["all", 0]]); for (const r of state.records) if (matches(r, terms, facet)) { counts.set("all", counts.get("all") + 1); for (const value of values(r)) counts.set(value, (counts.get(value) || 0) + 1); } return counts; };
+  const counted = (text, count) => state.lang === "zh" ? `${text}（${count}）` : `${text} (${count})`;
+  const targets = tally("target", r => r.targets);
+  $$('[data-target-count]').forEach(el => { el.textContent = String(targets.get(el.dataset.targetCount) || 0); });
+  $$('[data-target]').forEach(button => { button.disabled = !targets.get(button.dataset.target) && button.dataset.target !== state.target; });
+  for (const [selector, facet, map, allKey] of [["#kind-select", "kind", KIND, "allKinds"], ["#category-select", "category", state.categoryLabels, "allCategories"]]) {
+    const counts = tally(facet, r => [r[facet]]);
+    for (const option of $(selector).options) { const count = counts.get(option.value) || 0; option.textContent = counted(option.value === "all" ? t(allKey) : label(map, option.value), count); option.disabled = count === 0 && option.value !== state[facet]; }
+  }
+}
 function renderEmptySearchActions(foundCount = state.loaded ? filtered().length : null) {
   const show = state.loaded && !state.error && sourceState.mode === "curated"
     && foundCount === 0 && state.q.trim() !== "";
@@ -426,16 +492,21 @@ function renderEmptySearchActions(foundCount = state.loaded ? filtered().length 
   $("#empty-repositories-note").hidden = !showRepositories;
   if (showRepositories) button.textContent = t("emptySearchRepositoriesFor").replace("{query}", () => state.q.trim());
 }
-function render() {
-  const expanded = expandedRecords(".resource-card");
-  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(0, state.visible).forEach(r => fragment.append(card(r))); grid.replaceChildren(fragment); restoreExpanded(".resource-card", expanded); grid.setAttribute("aria-busy", "false");
+// Show More passes the number of cards already shown and appends only the next batch; every other change rebuilds the list.
+function render(shown = 0) {
+  // A full rebuild replaces every card; appended batches keep the earlier cards and their pending requirement lists.
+  if (!shown) state.pendingRequirements = [];
+  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(shown, state.visible).forEach(r => fragment.append(card(r)));
+  if (shown) grid.append(fragment); else { const expanded = expandedRecords(".resource-card"); grid.replaceChildren(fragment); restoreExpanded(".resource-card", expanded); } grid.setAttribute("aria-busy", "false");
   $("#results-status").textContent = state.lang === "zh" ? (found.length === state.records.length ? `${found.length} 项资源` : `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项`) : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`);
   renderEmptySearchActions(found.length);
+  showExport("");
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
   $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all";
   renderMoreFilters();
   $$('[data-group]').forEach(el => { const active = el.dataset.group === state.group; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
   $$('[data-target]').forEach(el => { const active = el.dataset.target === state.target; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
+  renderFacets();
 }
 // Phones fold Type and Category behind “More filters” (styles.css); the toggle counts active selects, and a page
 // opened with one active starts expanded. Wider layouts hide the toggle and always show both selects.
@@ -449,21 +520,21 @@ function reset() { state.q = ""; state.group = "all"; state.category = "all"; st
 async function load() {
   state.error = false; $("#error-state").hidden = true; $("#resource-grid").setAttribute("aria-busy", "true"); $("#results-status").textContent = t("loading");
   try {
-    const response = await fetch(dataURL("catalog.json"), {cache: "no-cache"}); if (!response.ok) throw new Error("Catalog HTTP " + response.status); const data = await response.json();
+    const response = await fetch(dataURL("catalog-index.json"), {cache: "no-cache"}); if (!response.ok) throw new Error("Catalog HTTP " + response.status); const data = await response.json();
     state.topicLabels = data.topic_labels || {};
     // build_site.py writes build_readme.CATEGORIES here, the same labels the entry pages use.
     state.categoryLabels = data.category_labels || {};
-    state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: [r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(state.categoryLabels[r.category] || []),...(KIND[r.kind] || []),r.relationship,...r.requirements,...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels)].join(" ").toLocaleLowerCase()}));
+    state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: searchText(r)}));
     if (!["all","rea","agents","tools","learn"].includes(state.group)) state.group = "all";
     $('[data-target="protocol"]').hidden = !state.records.some(record => record.targets.includes("protocol"));
     if (!["all","website","game","app","binary","firmware","protocol"].includes(state.target)) state.target = "all";
     $$('[data-count]').forEach(el => el.textContent = el.dataset.count === "all" ? state.records.length : state.records.filter(r => r.group === el.dataset.count).length);
     $$('[data-repo-path]').forEach(el => { const path = (state.lang === "zh" && ZH_REPOSITORY_PATHS[el.dataset.repoPath]) || el.dataset.repoPath; el.href = data.meta.repository_url + (path ? "/" + path : ""); });
-    state.loaded = true; renderCategories(); render(); configureSourceIndex(data.meta.source_index);
+    state.loaded = true; renderCategories(); render(); configureSourceIndex(data.meta.source_index); loadDetails();
   } catch (error) { document.documentElement.dataset.indexMode = "curated"; state.error = true; state.loaded = false; renderEmptySearchActions(); $("#resource-grid").replaceChildren(); $("#resource-grid").setAttribute("aria-busy", "false"); $("#results-status").textContent = t("errorTitle"); $("#error-state").hidden = false; $("#empty-state").hidden = true; $("#load-more-row").hidden = true; }
 }
 $("#search-input").value = state.q;
-$("#search-input").addEventListener("input", event => { state.q = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
+$("#search-input").addEventListener("input", event => { state.q = event.target.value; state.visible = 15; updateURL(); if (state.loaded) { loadDetails(); render(); } });
 $("#kind-select").addEventListener("change", event => { state.kind=event.target.value; state.visible=15; updateURL(); if(state.loaded)render(); });
 $("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
 $$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(); if (state.loaded) render(); }));
@@ -472,7 +543,7 @@ $("#layout-select").addEventListener("change", event => changeLayout(event.targe
 $("#more-filters").addEventListener("click", () => setMoreFilters($("#more-filters").getAttribute("aria-expanded") !== "true"));
 window.addEventListener("hashchange", syncLanguageLinks);
 $("#clear-filters").addEventListener("click",reset); $("#empty-reset").addEventListener("click", () => { reset(); $("#search-input").focus(); }); $("#retry-load").addEventListener("click",load);
-$("#load-more").addEventListener("click", () => { const previous = state.visible; state.visible += 15; render(); const next = $$(".card-title-link")[previous]; if (next) next.focus({preventScroll:true}); });
+$("#load-more").addEventListener("click", () => { const previous = state.visible; state.visible += 15; render(previous); const next = $$(".card-title-link")[previous]; if (next) next.focus({preventScroll:true}); });
 document.addEventListener("keydown", event => { if (event.key === "/" && !$("#data-dialog")?.open && !event.ctrlKey && !event.metaKey && !event.altKey && !["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName) && !document.activeElement.isContentEditable) { event.preventDefault(); const search = sourceState.mode === "source-index" ? $("#source-search") : $("#search-input"); search.focus(); search.scrollIntoView({block:"center",behavior:"smooth"}); } });
 
 const sourceState = { available: false, loaded: false, loading: false, error: false, mode: "curated", records: [], meta: {}, q: params.get("sourceq") || "", target: params.get("source-target") || "all", topic: params.get("topic") || "", sort: params.get("sort") || "relevance", visible: 24, topicIDs: new Set(), topicCounts: [] };
@@ -519,6 +590,55 @@ function searchRepositoriesFromEmpty() {
   $("#source-search").focus();
 }
 $("#empty-search-repositories").addEventListener("click", searchRepositoriesFromEmpty);
+// Filtered exports hold every match in display order, including cards Show More has not revealed, and name the filters
+// and data snapshot. Curated records keep their own source review; repository records stay automatic README observations.
+function showExport(prefix) { $(`#${prefix}export-matches`).hidden = false; $(`#${prefix}export-matches-status`).textContent = ""; }
+const exportRecords = records => records.map(({order, search, ...record}) => record);
+function exportMetadata(collection, recordClass, description, filters, order, matched, total) {
+  return {schema_version: 1, collection, record_class: recordClass, subset: "filtered", description, filters, order,
+    matched_count: matched, total_count: total, data_revision: document.documentElement.dataset.catalogRevision || null,
+    page: location.href, language: state.lang, exported_at: new Date().toISOString()};
+}
+function curatedExport() {
+  const found = filtered();
+  return {count: found.length, filename: "awesomerea-curated-matches.json", value: {export: {...exportMetadata("curated-catalog", "curated-resource",
+    "Curated resources matching the homepage filters, copied unchanged from catalog.json. Each record keeps its own source review (verification, verified_at, evidence_url); this export adds none.",
+    {q: state.q, target: state.target, kind: state.kind, category: state.category, group: state.group}, "displayed", found.length, state.records.length),
+    full_download: dataURL("catalog.json").href}, resources: exportRecords(found.map(record => state.fullRecords?.get(record.id) || record))}};
+}
+function sourceExport() {
+  const found = sourceFiltered(); const meta = sourceState.meta;
+  return {count: found.length, filename: "awesomerea-repository-matches.json", value: {export: {...exportMetadata("repository-index", "automatically-indexed-repository",
+    "Automatically indexed repositories matching the homepage filters, copied from the browsing projection source-browser.json. READMEs were fetched automatically; these records are not curated, individually reviewed or executed, and their target labels are inferred. Repositories excluded from browsing are omitted; the full source-index.json download keeps them.",
+    {sourceq: sourceState.q, "source-target": sourceState.target, topic: sourceState.topic, sort: sourceState.sort}, sourceState.sort, found.length, sourceState.records.length),
+    snapshot: {status: meta.status || null, completed_at: meta.completed_at || null, scope: meta.scope || null, full_export_sha256: meta.full_export_sha256 || null},
+    full_download: dataURL("source-index.json").href}, repositories: exportRecords(found)}};
+}
+function downloadJSON(filename, value) {
+  const href = URL.createObjectURL(new Blob([JSON.stringify(value, null, 2) + "\n"], {type: "application/json"}));
+  const link = node("a"); link.href = href; link.download = filename; link.hidden = true;
+  document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(href), 1000);
+}
+async function exportMatches(prefix) {
+  const source = prefix === "source-", zh = state.lang === "zh", status = $(`#${prefix}export-matches-status`);
+  if (source ? !sourceState.loaded : !state.loaded) return;
+  // Cards render from the lean catalog-index.json; a curated export copies the complete catalog.json records, so it waits for them.
+  if (!source && !state.fullRecords) {
+    status.textContent = zh ? "正在加载完整目录…" : "Loading the complete catalog…";
+    await loadDetails();
+    if (!state.fullRecords) { status.textContent = zh ? "完整目录未能加载，未导出任何内容；页脚的完整精选目录 JSON 仍可下载。" : "The complete catalog couldn’t load, so nothing was exported. The full curated catalog JSON in the footer still works."; return; }
+  }
+  const result = source ? sourceExport() : curatedExport(); const count = result.count.toLocaleString(zh ? "zh-CN" : "en-US");
+  if (!result.count) { status.textContent = zh ? `没有可导出的匹配${source ? "仓库" : "资源"}。` : `No matching ${source ? "repositories" : "resources"} to export.`; return; }
+  try {
+    downloadJSON(result.filename, result.value);
+    status.textContent = zh ? `已下载 ${count} ${source ? "个匹配仓库" : "项匹配资源"}（JSON）。` : `Downloaded ${count} matching ${source ? (result.count === 1 ? "repository" : "repositories") : (result.count === 1 ? "resource" : "resources")} as JSON.`;
+  } catch (_) {
+    status.textContent = zh ? `此浏览器无法生成导出文件；页脚的完整${source ? "仓库索引" : "精选目录"} JSON 仍可下载。` : `This browser couldn’t create the export. The full ${source ? "repository index" : "curated catalog"} JSON in the footer still works.`;
+  }
+}
+for (const prefix of ["", "source-"]) $(`#${prefix}export-matches`).addEventListener("click", () => exportMatches(prefix));
 function topicLabel(topic) { return state.topicLabels[topic]?.[state.lang] || topic; }
 function topicSearch(topic) { const entry = state.topicLabels[topic]; return [topic, entry?.en || "", entry?.zh || ""].join(" ").toLocaleLowerCase(); }
 function topicDisplay(topic) { const translated = topicLabel(topic); return translated === topic ? topic : `${translated} · ${topic}`; }
@@ -633,8 +753,10 @@ function sourceCard(record) {
   [[t("indexStatusLabel"),t("sourceScanStatus")],[t("sourceHash"),record.readme_sha256 || t("sourceNotRecorded")],[t("sourceRevision"),record.readme_git_sha || t("sourceNotRecorded")],[t("sourceReadmeSize"),record.readme_bytes != null ? Number(record.readme_bytes).toLocaleString() : t("sourceNotRecorded")]].forEach(([label,value]) => { const dd=node("dd"); dd.append(node(label===t("sourceHash")||label===t("sourceRevision")?"code":"span","",String(value))); dl.append(node("dt","",label),dd); });
   evidence.append(dl); details.append(context,dates,evidence); article.append(details); return article;
 }
-function renderSources() {
-  if (!sourceState.loaded) return; const expanded = expandedRecords(".source-card", ".source-record-details[open]"); const expandedEvidence = expandedRecords(".source-card", ".source-scan-evidence[open]"); const found = sourceFiltered(); const fragment = document.createDocumentFragment(); found.slice(0,sourceState.visible).forEach(record => fragment.append(sourceCard(record))); $("#source-results").replaceChildren(fragment); restoreExpanded(".source-card", expanded, ".source-record-details"); restoreExpanded(".source-card", expandedEvidence, ".source-scan-evidence"); $("#source-results").setAttribute("aria-busy","false");
+// Like render(): Show More appends the next batch after the cards already shown.
+function renderSources(shown = 0) {
+  if (!sourceState.loaded) return; const found = sourceFiltered(); const results = $("#source-results"); const fragment = document.createDocumentFragment(); found.slice(shown,sourceState.visible).forEach(record => fragment.append(sourceCard(record)));
+  if (shown) results.append(fragment); else { const expanded = expandedRecords(".source-card", ".source-record-details[open]"); const expandedEvidence = expandedRecords(".source-card", ".source-scan-evidence[open]"); results.replaceChildren(fragment); restoreExpanded(".source-card", expanded, ".source-record-details"); restoreExpanded(".source-card", expandedEvidence, ".source-scan-evidence"); } results.setAttribute("aria-busy","false");
   $("#source-status").textContent = state.lang === "zh" ? (found.length === sourceState.records.length ? `${found.length.toLocaleString()} 个仓库` : `${found.length.toLocaleString()} 个匹配仓库 · 共 ${sourceState.records.length.toLocaleString()} 个仓库`) : (found.length === sourceState.records.length ? `${found.length.toLocaleString()} ${found.length === 1 ? "repository" : "repositories"}` : `${found.length.toLocaleString()} ${found.length === 1 ? "result" : "results"} · ${sourceState.records.length.toLocaleString()} ${sourceState.records.length === 1 ? "repository" : "repositories"}`);
   const topic = sourceState.topic.toLocaleLowerCase().trim(); const hint = $("#source-topic-match");
   hint.hidden = !topic; hint.textContent = topic ? t(sourceState.topicIDs.has(topic) ? "sourceTopicExact" : "sourceTopicContains") : "";
@@ -645,6 +767,7 @@ function renderSources() {
   $("#source-snapshot").textContent = (state.lang === "zh" ? "自动目标标签仅用于发现项目。星标为采集时快照。" : "Automatic target labels aid discovery. Stars are collection-time snapshots.") + (completed ? (state.lang === "zh" ? (published ? " 选集发布于 " : " 扫描完成于 ") : (published ? " Selection published " : " Scan completed ")) + sourceTime(completed) + (state.lang === "zh" ? "。" : ".") : "") + (sourceState.meta.status === "in-progress" ? (state.lang === "zh" ? " 扫描进行中；此处显示已读取的快照。" : " Scan in progress; this is the successfully fetched snapshot.") : "") + scopeNote;
   $("#source-empty").hidden = found.length > 0; $("#source-error").hidden = true; $("#source-more-row").hidden = found.length <= sourceState.visible; $("#source-more-count").textContent = "+"+Math.min(24,Math.max(0,found.length-sourceState.visible)); $("#source-shown").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length,sourceState.visible)} / ${found.length} 个仓库` : `${Math.min(found.length,sourceState.visible)} of ${found.length} ${found.length === 1 ? "repository" : "repositories"} shown`;
   $("#source-clear").hidden = !sourceState.q && !sourceState.topic && sourceState.target === "all" && sourceState.sort === "relevance";
+  showExport("source-");
   $$('[data-source-target]').forEach(button => { const active = button.dataset.sourceTarget === sourceState.target; button.classList.toggle("active",active); button.setAttribute("aria-pressed",String(active)); });
 }
 function sourceBrowserPayload(data) {
@@ -694,7 +817,7 @@ if (!["relevance","stars","stars-asc","pushed","name"].includes(sourceState.sort
 $("#source-search").value=sourceState.q; $("#source-topic").value=sourceState.topic; $("#source-sort").value=sourceState.sort;
 for (const [selector,key,event] of [["#source-search","q","input"],["#source-topic","topic","input"],["#source-sort","sort","change"]]) $(selector).addEventListener(event,e => { sourceState[key]=key === "topic" ? canonicalTopic(e.target.value) : e.target.value; if (key === "topic") renderTopicOptions(e.target.value); sourceState.visible=24; sourceURL(); renderSources(); });
 $$('[data-source-target]').forEach(button => button.addEventListener("click",() => { sourceState.target=button.dataset.sourceTarget; sourceState.visible=24; sourceURL(); renderSources(); }));
-$("#source-clear").addEventListener("click",resetSources); $("#source-reset").addEventListener("click",resetSources); $("#source-retry").addEventListener("click",loadSources); $("#source-more").addEventListener("click",() => { const previous=sourceState.visible; sourceState.visible+=24; renderSources(); $$(".source-title-link")[previous]?.focus({preventScroll:true}); });
+$("#source-clear").addEventListener("click",resetSources); $("#source-reset").addEventListener("click",resetSources); $("#source-retry").addEventListener("click",loadSources); $("#source-more").addEventListener("click",() => { const previous=sourceState.visible; sourceState.visible+=24; renderSources(previous); $$(".source-title-link")[previous]?.focus({preventScroll:true}); });
 
 $("#download-source-index").href = dataURL("source-index.json");
 $("#download-curated-catalog").href = dataURL("catalog.json");

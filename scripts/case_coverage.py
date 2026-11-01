@@ -4,6 +4,7 @@ from datetime import date, datetime, timezone
 import json
 from pathlib import Path
 import re
+import subprocess
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,6 +15,8 @@ TOP_FIELDS = {'schema_version', 'reviewed_at', 'catalog_revision', 'runtime_repr
 ENTRY_FIELDS = {'id', 'unit_id', 'collection_id', 'title', 'collection_urls', 'reported_source_urls',
                 'state', 'review_level', 'reviewed_at', 'reason_en', 'reason_zh',
                 'primary_evidence_urls', 'catalog_matches'}
+MATCH_FIELDS = {'catalog', 'id', 'kind', 'scope'}
+SCOPES = {'full', 'partial', 'related'}
 PRIVATE = re.compile(r'/(?:Users|home)/[^/\s]+/|\.cache/|gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----')
 
 
@@ -49,6 +52,32 @@ def coverage_counts(entries):
         'distinct_paper_ids': len({match['id'] for match in matches if match['catalog'] == 'paper'}),
         'unique_projects': None,
     }
+
+
+def catalog_revision_warning(document, root=ROOT):
+    """Advisory: name a catalog_revision that is not on the checked-out history, or None.
+
+    Squash merges discard branch commits, so the revision must be a commit already on main. The check
+    needs full Git history; it is skipped without Git, outside a work tree and in shallow clones.
+    """
+    revision = document.get('catalog_revision') if isinstance(document, dict) else None
+    if not isinstance(revision, str) or not re.fullmatch(r'[a-f0-9]{40}', revision):
+        return None  # validate_case_coverage reports the format.
+
+    def git(*arguments):
+        return subprocess.run(['git', '-C', str(root), *arguments], capture_output=True, encoding='utf-8', check=False)
+
+    try:
+        shallow = git('rev-parse', '--is-shallow-repository')
+        if shallow.returncode or shallow.stdout.strip() != 'false':
+            return None
+        if git('cat-file', '-e', revision + '^{commit}').returncode:
+            return f'catalog_revision {revision} is not a commit in this clone; use a commit on main'
+        if git('merge-base', '--is-ancestor', revision, 'HEAD').returncode:
+            return f'catalog_revision {revision} is not an ancestor of HEAD; use a commit on main'
+    except OSError:
+        return None
+    return None
 
 
 def validate_case_coverage(document, resources, papers, errors, *, url_check):
@@ -204,7 +233,7 @@ def validate_case_coverage(document, resources, papers, errors, *, url_check):
             continue
         matched, full = set(), False
         for match in entry['catalog_matches']:
-            if not fields(match, {'catalog', 'id', 'kind', 'scope'}, identifier + ' match'):
+            if not fields(match, MATCH_FIELDS, identifier + ' match'):
                 continue
             catalog, key = match['catalog'], match['id']
             if not isinstance(catalog, str) or catalog not in catalogs or not isinstance(key, str):
@@ -220,7 +249,7 @@ def validate_case_coverage(document, resources, papers, errors, *, url_check):
                 if not any(url in entry['primary_evidence_urls'] for url in target_sources if isinstance(url, str)):
                     fail(identifier + ' catalog mapping is not bound to that record’s sources')
             matched.add((catalog, key))
-            if not isinstance(match['scope'], str) or match['scope'] not in {'full', 'partial', 'related'}:
+            if not isinstance(match['scope'], str) or match['scope'] not in SCOPES:
                 fail(identifier + ' has unsupported match scope')
             full |= match['scope'] == 'full'
         if entry['state'] == 'already-curated' and (not full or entry['review_level'] == 'inventory-only'):

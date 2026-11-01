@@ -1,5 +1,6 @@
 """Keep static Chinese navigation on /zh/ routes and BibTeX months in macro form."""
 from copy import deepcopy
+from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
@@ -30,6 +31,41 @@ def navigation(html):
     wordmark = re.search(r'<a class="wordmark" href="([^"]+)"', html)[1]
     breadcrumb = re.search(r'<nav class="(?:browse|papers)-breadcrumbs"[^>]*><a href="([^"]+)"', html)[1]
     return wordmark, breadcrumb
+
+
+class LanguageSwitch(HTMLParser):
+    """Record the header language link's attributes and its text outside aria-hidden icons."""
+    def __init__(self):
+        super().__init__()
+        self.links, self.hidden, self.inside = [], [], False
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == 'a' and attrs.get('class') in ('browse-language', 'papers-language'):
+            self.links.append({**attrs, 'text': ''}); self.inside = True
+        if self.inside:
+            self.hidden.append(attrs.get('aria-hidden') == 'true')
+
+    def handle_endtag(self, tag):
+        if self.inside:
+            self.hidden.pop()
+            self.inside = bool(self.hidden)
+
+    def handle_data(self, data):
+        if self.inside and not any(self.hidden):
+            self.links[-1]['text'] += data
+
+
+def build_static_pages(output):
+    resource = deepcopy(json.loads((ROOT / 'data/tool-resources.json').read_text())[0])
+    resource['requirements_zh'] = ['测试前置条件']
+    papers = json.loads((ROOT / 'data/papers.json').read_text())
+    build_browse_pages(output, full_export(), curated_count=1, site_url='https://awesomerea.org',
+                       repository_url='https://github.com/reacher-z/Awesome-REA', styles_href='/styles.css',
+                       browse_styles_href='/browse.css', favicon_href='/favicon.svg',
+                       social_image_href='https://awesomerea.org/social-card.png', data_revision='0' * 16)
+    build_discovery_pages(output, {'resources': [resource], 'meta': {}}, None)
+    build_paper_pages(output, papers)
 
 
 class BibtexMonthTests(unittest.TestCase):
@@ -70,17 +106,9 @@ class LanguageLinkTests(unittest.TestCase):
         validate_language_links('/zh/about/', Page(accepted))
 
     def test_generated_chinese_pages_link_home_and_search_to_zh_routes(self):
-        resource = deepcopy(json.loads((ROOT / 'data/tool-resources.json').read_text())[0])
-        resource['requirements_zh'] = ['测试前置条件']
-        papers = json.loads((ROOT / 'data/papers.json').read_text())
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)
-            build_browse_pages(output, full_export(), curated_count=1, site_url='https://awesomerea.org',
-                               repository_url='https://github.com/reacher-z/Awesome-REA', styles_href='/styles.css',
-                               browse_styles_href='/browse.css', favicon_href='/favicon.svg',
-                               social_image_href='https://awesomerea.org/social-card.png', data_revision='0' * 16)
-            build_discovery_pages(output, {'resources': [resource], 'meta': {}}, None)
-            build_paper_pages(output, papers)
+            build_static_pages(output)
             searches = {'browse': ('/zh/?view=source-index', '/?view=source-index&amp;lang=en'),
                         'resources': ('/zh/?view=curated', '/?view=curated&amp;lang=en')}
             for route in ('browse/', 'browse/android/', 'resources/', 'about/', 'papers/'):
@@ -93,6 +121,22 @@ class LanguageLinkTests(unittest.TestCase):
                         search = searches.get(route.split('/')[0])
                         if search:
                             self.assertIn(f'href="{search[language == "en"]}"', html)
+
+    def test_language_switch_is_named_by_its_visible_text_in_its_own_language(self):
+        # WCAG 2.5.3: the accessible name is the visible label, spoken in the link's own language.
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            build_static_pages(output)
+            for route in ('browse/', 'browse/android/', 'resources/', 'cases/', 'about/', 'papers/'):
+                for prefix, counterpart, visible, lang in (('', '/zh/', '简体中文', 'zh-CN'), ('zh/', '/', 'English', 'en')):
+                    with self.subTest(route=route, prefix=prefix):
+                        parser = LanguageSwitch()
+                        parser.feed((output / prefix / route / 'index.html').read_text())
+                        self.assertEqual(len(parser.links), 1)
+                        link = parser.links[0]
+                        self.assertNotIn('aria-label', link)
+                        self.assertEqual(link['text'].strip(), visible)
+                        self.assertEqual((link['lang'], link['hreflang'], link['href']), (lang, lang, counterpart + route))
 
 
 if __name__ == '__main__':

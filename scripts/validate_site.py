@@ -8,7 +8,8 @@ import re
 from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
-from build_entry_pages import entry_path, feedback_urls, matching_entries
+from build_entry_pages import entry_path, feedback_urls, matching_entries, section_siblings
+from build_site import catalog_index
 from build_manifest import read_build_manifest
 from build_paper_pages import bibtex_text, paper_entity_id, papers_newest_first
 from validate_papers import read_papers
@@ -20,7 +21,7 @@ from source_browser import BROWSER_FILENAME, FULL_EXPORT_FILENAME, validate_sour
 from public_source_supplements import (PUBLISHED_FILENAME, compose_published, json_bytes,
                                       load_supplements, owned_file, bounded_bytes, project_additions)
 from validate_discovery import expected_entry_routes, validate_route_inventory
-from build_readme import CATEGORIES, PAPER_SECTIONS, collection_section, paper_section
+from build_readme import CATEGORIES, PAPER_SECTIONS, REQUIREMENTS_LABEL, collection_section, paper_section
 from build_feed import FEED_PAGES, FEED_PATHS, FEED_SIZE, feed_entries
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SITE_ALTERNATE_NAMES, SITE_NAME, SOCIAL_IMAGE_ALT, png_size
@@ -39,6 +40,7 @@ class Page(HTMLParser):
         self.links, self.canonicals, self.ids, self.schemas, self.alternates = [], [], [], [], []
         self.feeds = []
         self.anchor_names = []
+        self.section_links, self._in_siblings = None, False
         self.noindex, self.lang, self.json_script = False, None, None
         self.paper_ids, self.paper_texts, self.paper_links = [], {}, {}
         self.current_paper = None
@@ -62,6 +64,8 @@ class Page(HTMLParser):
         values = dict(attrs)
         assert len(values) == len(attrs), f'Duplicate HTML attributes on {tag}'
         classes = values.get('class', '').split()
+        if tag == 'section' and 'entry-siblings' in classes:
+            self.section_links, self._in_siblings = [], True
         if tag == 'section':
             self._case_sections.append({'section': values.get('data-case-section'), 'anchor': values.get('id')}
                                        if 'case-section' in classes else None)
@@ -137,6 +141,8 @@ class Page(HTMLParser):
             self.detail_links.append(self.current_detail_link)
         if tag in ('a', 'link') and values.get('href'):
             self.links.append(values['href'])
+            if self._in_siblings and tag == 'a':
+                self.section_links.append(values['href'])
             if self.current_case is not None:
                 self.current_case['links'].append(values['href'])
             if self.current_paper:
@@ -158,7 +164,9 @@ class Page(HTMLParser):
             self.noindex = True
         if tag == 'meta':
             self.meta[values.get('name') or values.get('property')] = values.get('content')
-            self.meta_keys.append(values.get('name') or values.get('property'))
+            # A media-qualified tag (theme-color per color scheme) is distinct from its unqualified name.
+            key = values.get('name') or values.get('property')
+            self.meta_keys.append(key + ' @' + values['media'] if key and values.get('media') else key)
         # Visible H1 text, without decorative aria-hidden descendants such as the title dot.
         if self._h1 is not None and tag not in VOID_TAGS:
             self._h1_stack.append((tag, values.get('aria-hidden') == 'true'))
@@ -234,6 +242,8 @@ class Page(HTMLParser):
             if self._group_summary is not None and self._group_summary['depth'] == self._div_depth:
                 self._group_summary = None
             self._div_depth -= 1
+        if tag == 'section':
+            self._in_siblings = False
         if tag == 'section' and self._section_stack:
             self._section_stack.pop()
         if tag == 'section' and self._case_sections:
@@ -278,6 +288,14 @@ def validate_homepage_destinations(pages, app_source=None):
             assert destination in pages and pages[destination].h1_texts == [name], f'Homepage ItemList name differs from the H1 of {destination}: {name!r}'
 
 
+def validate_requirements_label(app_source=None):
+    """Homepage cards name the requirements disclosure exactly as the generated pages and README do."""
+    strings = _ui_strings(app_source if app_source is not None else (ROOT / 'site/app.js').read_text(encoding='utf-8'))
+    for language, expected in zip(('en', 'zh'), REQUIREMENTS_LABEL):
+        for key in ('requirements', 'requirementsShort'):
+            assert strings[language][key] == expected, f'app.js {language}.{key} must read {expected!r}'
+
+
 def validate_open_graph(route, page, card_size):
     """Every page publishes the shared social block; ``route=None`` is the uncanonical 404 template."""
     assert len(page.meta_keys) == len(set(page.meta_keys)), f'Duplicate meta tags: {route}'
@@ -294,6 +312,12 @@ def validate_open_graph(route, page, card_size):
     image = urlsplit(meta.get('og:image') or '')
     assert (image.scheme, image.netloc, image.path) == ('https', 'awesomerea.org', '/social-card.png') and meta.get('twitter:image') == meta['og:image'], f'Social image URL mismatch: {route}'
     assert meta['og:image:alt'] not in {meta.get('og:title'), meta.get('twitter:title')}, f'og:image:alt repeats the page title: {route}'
+
+
+def validate_theme_color(route, page):
+    """Each page names its browser chrome color for the light and the dark scheme, in that order."""
+    themes = [key for key in page.meta_keys if key and key.split(' @')[0] == 'theme-color']
+    assert themes == ['theme-color @(prefers-color-scheme: light)', 'theme-color @(prefers-color-scheme: dark)'], f'Expected light and dark theme-color tags: {route}'
 
 
 def validate_website_identity(pages):
@@ -457,13 +481,20 @@ def validate_security_headers(output):
 
 
 def validate_catalog_preload(output):
-    """Each homepage preloads exactly the catalog URL app.js fetches for its data revision, and nothing else."""
+    """Each homepage preloads exactly the catalog index URL app.js fetches for its data revision, and nothing else."""
     for route in ('index.html', 'zh/index.html'):
         page = PageResources((Path(output) / route).read_text(encoding='utf-8'))
         revision = page.catalog_revision
         assert revision and re.fullmatch(r'[0-9a-f]{16}', revision), f'Homepage needs a data-catalog-revision: /{route}'
-        expected = [{'as': 'fetch', 'href': '/catalog.json?v=' + revision, 'cors': True}]
-        assert page.preloads == expected, f'Homepage preloads must be one CORS fetch of /catalog.json?v={revision}: /{route} has {page.preloads}'
+        expected = [{'as': 'fetch', 'href': '/catalog-index.json?v=' + revision, 'cors': True}]
+        assert page.preloads == expected, f'Homepage preloads must be one CORS fetch of /catalog-index.json?v={revision}: /{route} has {page.preloads}'
+
+
+def validate_catalog_index(output):
+    """The first-render index is the complete catalog's projection: same records, order, metadata and topic labels."""
+    catalog = json.loads((Path(output) / 'catalog.json').read_text(encoding='utf-8'))
+    index = json.loads((Path(output) / 'catalog-index.json').read_text(encoding='utf-8'))
+    assert index == catalog_index(catalog), 'catalog-index.json must project catalog.json record for record'
 
 
 def validate_category_labels(output):
@@ -935,9 +966,21 @@ def validate_entry_outputs(pages, resources, papers):
                 recorded_links = listing.record_links if kind == 'resource' else listing.paper_links
                 assert upstream <= set(recorded_links.get(link['id'], [])), f'External listing title/source links missing: {expected}'
 
+    siblings = section_siblings(resources)
     for route, (kind, identifier, language) in routes.items():
         assert route in pages, f'Missing detail page: {route}'
         page, record = pages[route], catalogs[kind][identifier]
+        neighbours = siblings.get(identifier) if kind == 'resource' else None
+        if neighbours and neighbours['siblings']:
+            prefix = '/zh' if language == 'zh' else ''
+            expected = [entry_path('resource', sibling['id'], language) for sibling in neighbours['siblings']]
+            expected.append(f"{prefix}/resources/#heading-{neighbours['section']}")
+            if record['kind'] == 'case-study':
+                expected.append(f"{prefix}/cases/#cases-{neighbours['section']}")
+            assert 1 <= len(neighbours['siblings']) <= 6 and identifier not in {sibling['id'] for sibling in neighbours['siblings']}, f'Detail page needs one to six other section entries: {route}'
+            assert page.section_links == expected, f'Section siblings differ from README order: {route}'
+        else:
+            assert page.section_links is None, f'Only resources in shared sections list section siblings: {route}'
         canonical = ORIGIN + route
         locale = 'zh-CN' if language == 'zh' else 'en'
         assert page.entry_markers == [(kind, identifier)], f'Detail page identity mismatch: {route}'
@@ -1045,9 +1088,11 @@ def main():
             if target.fragment:
                 fragment_links.append((parsed.path, link, local))
         validate_open_graph(parsed.path, page, png_size(OUTPUT / 'social-card.png'))
+        validate_theme_color(parsed.path, page)
     validate_link_fragments(OUTPUT, pages, fragment_links)
     validate_homepage_destinations(pages)
     validate_resource_listing(pages, resources)
+    validate_requirements_label()
     validate_paper_outputs(OUTPUT, pages)
     validate_entry_outputs(pages, resources, papers)
     validate_feeds(OUTPUT, pages, resources, papers)
@@ -1061,14 +1106,16 @@ def main():
     not_found = Page((OUTPUT / '404.html').read_text(encoding='utf-8'))
     assert not_found.noindex, '404 must be noindex'
     validate_open_graph(None, not_found, png_size(OUTPUT / 'social-card.png'))
+    validate_theme_color('/404.html', not_found)
     validate_security_headers(OUTPUT)
     validate_catalog_preload(OUTPUT)
+    validate_catalog_index(OUTPUT)
     validate_website_identity(pages)
     validate_category_labels(OUTPUT)
     assert (OUTPUT / 'llms.txt').read_text(encoding='utf-8').startswith('# '), 'llms.txt must contain Markdown'
     assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
     read_build_manifest(OUTPUT)
-    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, security headers, Atom feeds, the homepage catalog preload and the deployment manifest.')
+    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, security headers, Atom feeds, the homepage catalog index and its preload, and the deployment manifest.')
 
 
 if __name__ == '__main__':

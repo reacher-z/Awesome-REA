@@ -121,16 +121,18 @@ async function press(page, selector) {
   await page.click(selector);
 }
 
-// The deferred app.js reuses the catalog preload, so its one request starts before DOMContentLoaded.
+// The deferred app.js reuses the catalog index preload, so its one request starts before DOMContentLoaded.
 async function preloadedCatalog(page, label) {
   const entries = await page.evaluate(() => ({dcl: performance.getEntriesByType('navigation')[0].domContentLoadedEventStart,
-    catalog: performance.getEntriesByType('resource').filter(entry => new URL(entry.name).pathname === '/catalog.json')
+    catalog: performance.getEntriesByType('resource').filter(entry => new URL(entry.name).pathname === '/catalog-index.json')
       .map(entry => ({initiator: entry.initiatorType, start: entry.startTime}))}));
   assert.equal(entries.catalog.length, 1, `${label}: one catalog request`);
   assert.equal(entries.catalog[0].initiator, 'link', `${label}: the catalog response comes from the preload`);
   assert(entries.catalog[0].start < entries.dcl, `${label}: the catalog request starts before DOMContentLoaded`);
 }
 const requests = (requested, file) => requested.filter(pathname => pathname === '/' + file).length;
+// The complete catalog, with requirement text, is requested once right after the first render.
+const completeCatalog = page => page.waitForFunction(() => performance.getEntriesByType('resource').some(entry => new URL(entry.name).pathname === '/catalog.json'));
 
 async function dataAccess(page, language, viewport) {
   const label = `${language} data dialog ${viewport.name}`;
@@ -189,6 +191,8 @@ async function homepage(page, language, viewport, data, requested) {
   const total = data.catalog.resources.length;
   await loaded(page, '#resource-grid .resource-card', '#error-state');
   await preloadedCatalog(page, label);
+  await completeCatalog(page);
+  assert.equal(requests(requested, 'catalog-index.json'), 1, `${label}: one catalog-index.json request per load`);
   assert.equal(requests(requested, 'catalog.json'), 1, `${label}: one catalog.json request per load`);
   assert.equal(requests(requested, 'source-browser.json'), 0, `${label}: repository data waits for the Repositories view`);
   assert.equal(await hidden(page, '#error-state'), true, `${label}: the curated catalog loads`);
@@ -219,7 +223,7 @@ async function homepage(page, language, viewport, data, requested) {
   assert.equal(await count(page, '#resource-grid .resource-card details .resource-evidence-link'), Math.min(30, total));
   await press(page, '#resource-grid .resource-card details.requirements summary');
   const expanded = await page.$eval('#resource-grid .resource-card details.requirements', details => ({open: details.open,
-    items: details.querySelectorAll('li').length, height: details.querySelector('ul').getBoundingClientRect().height}));
+    items: details.querySelectorAll('li:not(.requirements-pending)').length, height: details.querySelector('ul').getBoundingClientRect().height}));
   assert(expanded.open && expanded.items > 0 && expanded.height > 0, `${label}: requirements expand visibly`);
   await noOverflow(page, label + ' with requirements open');
   await shot(page, `${language} homepage ${viewport.name} curated`);
@@ -276,6 +280,8 @@ async function homepage(page, language, viewport, data, requested) {
   await Promise.all([page.waitForNavigation({waitUntil: 'networkidle0'}), page.keyboard.press('Enter')]);
   await loaded(page, '#resource-grid .resource-card', '#error-state');
   await preloadedCatalog(page, label + ' after switching language');
+  await completeCatalog(page);
+  assert.equal(requests(requested, 'catalog-index.json'), 2, `${label}: one catalog-index.json request on each homepage`);
   assert.equal(requests(requested, 'catalog.json'), 2, `${label}: one catalog.json request on each homepage`);
   const switched = new URL(page.url());
   assert.equal(switched.pathname, other === 'zh' ? '/zh/' : '/');
@@ -311,6 +317,9 @@ async function paperDirectory(page, route, viewport, javascript = true) {
   const before = await page.$eval(first, card => ({scope: card.querySelector('.paper-scope').textContent,
     authors: card.querySelector('.paper-authors').textContent, citation: card.querySelector('a[type="application/x-bibtex"]').getAttribute('href')}));
   assert.equal(await page.evaluate(() => document.documentElement.dataset.paperLayout), 'compact');
+  const metaBeside = await page.$$eval('.paper-card', cards => cards.filter(card =>
+    card.querySelector('.paper-meta').getBoundingClientRect().top < card.querySelector('h3').getBoundingClientRect().bottom - 1).length);
+  assert.equal(metaBeside, 0, `${label}: every row puts year, venue and status on their own line under the title (${metaBeside} beside it)`);
   assert.equal(await page.$eval(first + ' .paper-details', node => node.open), false);
   await press(page, first + ' .paper-details > summary');
   const expanded = await page.$eval(first + ' .paper-details', details => ({open: details.open,
@@ -342,6 +351,29 @@ async function paperDirectory(page, route, viewport, javascript = true) {
     await press(page, '#paper-more-filters > summary');
   }
   await noOverflow(page, label + ' compact list');
+  if (viewport.name === 'desktop') await midWidthPaperRows(page, label, viewport);
+}
+
+// Between 701 and 1100 px each row keeps its links and the Scope & sources toggle on one line, and an opened panel spans the row.
+async function midWidthPaperRows(page, label, viewport) {
+  await page.setViewport({width: 1024, height: viewport.height});
+  const rows = await page.$$eval('.paper-card:not([hidden])', cards => cards.map(card => {
+    const links = card.querySelector('.paper-links').getBoundingClientRect();
+    const toggle = card.querySelector('.paper-details > summary').getBoundingClientRect();
+    const centre = (toggle.top + toggle.bottom) / 2;
+    return centre > links.top && centre < links.bottom;
+  }));
+  assert(rows.length > 0 && rows.every(Boolean), `${label} at 1024px: ${rows.filter(row => !row).length} rows put the links and the Scope & sources toggle on separate lines`);
+  const panel = await page.$eval('.paper-card', card => {
+    const details = card.querySelector('.paper-details');
+    details.open = true;
+    const widths = [details.getBoundingClientRect().width, card.getBoundingClientRect().width];
+    details.open = false;
+    return widths;
+  });
+  assert(panel[0] >= panel[1] - 8, `${label} at 1024px: an opened panel spans the row (${panel[0]} of ${panel[1]}px)`);
+  await noOverflow(page, label + ' at 1024px');
+  await page.setViewport({width: viewport.width, height: viewport.height});
 }
 
 async function staticPage(page, route, viewport) {
@@ -356,7 +388,7 @@ async function staticPage(page, route, viewport) {
   const read = file => JSON.parse(fs.readFileSync(path.join(dist, file), 'utf8'));
   const data = {catalog: read('catalog.json'), browser: read('source-browser.json')};
   const category = fs.readdirSync(path.join(dist, 'zh/browse')).filter(name => fs.statSync(path.join(dist, 'zh/browse', name)).isDirectory()).sort()[0];
-  const routes = ['/papers/', '/zh/papers/', '/resources/', '/zh/resources/', '/cases/', '/about/', '/zh/about/',
+  const routes = ['/papers/', '/zh/papers/', '/resources/', '/zh/resources/', '/cases/', '/about/', '/zh/about/', '/contribute/', '/zh/contribute/',
     '/browse/', `/zh/browse/${category}/`, `/resources/${data.catalog.resources[0].id}/`];
   fs.rmSync(screenshots, {recursive: true, force: true}); fs.mkdirSync(screenshots, {recursive: true});
   const site = server(headerRules(fs.readFileSync(path.join(dist, '_headers'), 'utf8')));
