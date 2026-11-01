@@ -5393,5 +5393,41 @@
       "原生 .sto 输入缺少所需样例；egui 界面与原版 GDI/MFC 并非像素一致，原版位图由自绘图形替代。",
       "重建代码可选 MIT 或 Apache-2.0；内嵌字体及源自 Intel 的三角函数保留独立许可，附带的 FastView.fvb 特性数据仍属原始厂商数据。"
     ]
+  },
+  "keen-clone-rea-commander-keen-case": {
+    "name": "keen-clone：Commander Keen 1 的 C/SDL2 移植",
+    "requirements": [
+      "原生构建需要 C 编译器、make、SDL2 开发文件及自有 Keen 1 数据（含 KEEN1.EXE）；README 列出 v1.1 与共享软件 v1.31。",
+      "浏览器构建需要 Emscripten 和自备游戏数据；文档将网页打包限定于共享软件章节，浏览器快捷键及按来源隔离的 IndexedDB 存储与原生宿主不同。",
+      "仓库列出反编译/反汇编、调用图和原始 REA 输出等分析资料，未提供独立的行为一致性或完整通关评估。",
+      "核查时仓库根目录没有项目许可文件；Commander Keen 及原始数据保留各自权利，公开源码不额外授予复用许可。"
+    ]
+  },
+  "samp-client-rea-partial-reconstruction-case": {
+    "name": "samp-client-re：局部重建的 SA-MP 客户端",
+    "requirements": [
+      "README 报告 Windows/MinGW x64 构建及不依赖 GTA 的冒烟程序；用于 GTA: San Andreas 另需 32 位工具链和构建。本目录未运行或复现。",
+      "架构表将地址及恢复过程归于 REA/Ghidra 12.1.4；被剥离二进制中的推断名称仍是分析者解释。",
+      "完整 RCON/RPC 处理、默认端口报文格式及精确 Present 跳板仍标为未知/TODO；归档解析器自述为行为等效实现，不是完整解密器。",
+      "核查时仓库根目录没有项目许可文件；原始 GTA 与 SA-MP 组件仍是独立前提，保留各自权利。"
+    ]
+  },
+  "desktop-games-nostalgia-rea-port-case": {
+    "name": "Desktop Games Nostalgia：macOS 与浏览器移植",
+    "requirements": [
+      "原生版本需要 macOS 14+；屏幕录制权限用于截取一次屏幕图像，也可无权限使用壁纸模式。浏览器版本使用模拟桌面，需要鼠标和键盘。",
+      "README 将解释器分析归于 REA/Ghidra、移植归于 Claude Code；上游包含提取的图像/声音，效果作用于图像而不修改真实桌面文件。",
+      "真彩色渲染和半透明精灵阴影与原版调色板渲染不同；浏览器无法捕获真实桌面，未提供独立一致性测量。",
+      "作者明确未提供项目许可，原始设计、图像与声音保留 Gemtree 署名；桌面装饰等上游素材保留独立权利，本条目不授予再分发许可。"
+    ]
+  },
+  "gunzrs-rea-rust-reimplementation-case": {
+    "name": "GunZRs：GunZ: The Duel 的 Rust 重实现",
+    "requirements": [
+      "需要自有 GunZ: The Duel 安装，不附带原始游戏文件；原生下载面向 Linux/Windows，Linux 需文档列出的系统库。WebGPU 需要 localhost 或 HTTPS，并从自有数据构建资源包。",
+      "README 记录以 REA/Ghidra 静态调查零售文件，支持混合调查工作流归因，不代表每个玩法子系统都由 REA 重建。",
+      "局域网采用移植版自有协议，无法连接零售服务器；若干回合、任务及 Blitzkrieg 模式尚未支持局域网，移动常量和部分内容为推断，与 Steam 版的一致性未获证明。",
+      "项目仅报告在 Linux 实际游玩；Windows/macOS 的 CI 构建不等于玩法测试。代码采用 Apache-2.0，内嵌字体保留 OFL 条款，原始游戏文件仍属各自权利人。"
+    ]
   }
 }
