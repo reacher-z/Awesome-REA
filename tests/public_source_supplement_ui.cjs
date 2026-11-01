@@ -34,7 +34,8 @@ const context = {
   $$: () => [],
 };
 vm.createContext(context);
-vm.runInContext(section("function sourceBrowserPayload(", "\nasync function loadSources")
+vm.runInContext(section("function normalizeSearchText(", "\nfunction dataURL")
+  + section("function sourceBrowserPayload(", "\nasync function loadSources")
   + section("function sourceDownload(", "\nfunction setIndexMode")
   + section("function renderSources(", "\nfunction sourceBrowserPayload")
   + "\nglobalThis.api = {sourceBrowserPayload,sourceDownload,renderSources};", context);

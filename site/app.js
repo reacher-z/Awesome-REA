@@ -350,6 +350,9 @@ const compareIDs = COLLATORS.en.compare;
 // Card metadata names the reviewed targets in the target buttons' wording, as /resources/ cards do.
 function targetLabels(record) { return record.targets.map(target => t("target" + target[0].toUpperCase() + target.slice(1))).join(" · "); }
 function targetSearchLabels(target) { const key = "target" + target[0].toUpperCase() + target.slice(1); return [target, UI.en[key] || "", UI.zh[key] || ""]; }
+// Search text replaces only the already-invalid C0/DEL controls with spaces, then applies NFKC and
+// locale-neutral lowercase. Index fields and queries must both pass through this contract.
+function normalizeSearchText(value) { return String(value ?? "").replace(/[\u0000-\u001f\u007f]/g, " ").normalize("NFKC").toLowerCase(); }
 function dataURL(filename) { const url = new URL("/" + filename, location.origin); const revision = document.documentElement.dataset.catalogRevision; if (revision) url.searchParams.set("v", revision); return url; }
 const label = (map, key) => map[key] ? map[key][state.lang === "zh" ? 1 : 0] : key.replaceAll("-", " ");
 const node = (tag, className, text) => { const el = document.createElement(tag); if (className) el.className = className; if (text !== undefined) el.textContent = text; return el; };
@@ -441,7 +444,7 @@ function fillRequirements(list, record) {
   list.replaceChildren(...(Array.isArray(record.requirement_facets) ? requirementItems(record) : (Array.isArray(requirements) ? requirements : [requirements]).map(item => node("li", "", item))));
   return true;
 }
-function searchText(r) { return [r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(state.categoryLabels[r.category] || []),...(KIND[r.kind] || []),r.relationship,...(r.requirements || []),...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels)].join(" ").toLocaleLowerCase(); }
+function searchText(r) { return normalizeSearchText([r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(state.categoryLabels[r.category] || []),...(KIND[r.kind] || []),r.relationship,...(r.requirements || []),...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels)].join(" ")); }
 // The complete catalog.json follows the first render, so searches cover requirement text and open details fill in place.
 // Typing a query or opening details retries it after a failure.
 function loadDetails() {
@@ -455,7 +458,7 @@ function loadDetails() {
   }).catch(() => { state.details = null; state.detailsError = true; state.pendingRequirements.forEach(([list, record]) => fillRequirements(list, record)); });
   return state.details;
 }
-function queryTerms() { return state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean); }
+function queryTerms() { return normalizeSearchText(state.q).trim().split(/\s+/).filter(Boolean); }
 // skip leaves one facet out, so that facet's choices can be counted against every other active filter.
 function matches(r, terms, skip = "") { return (state.group==="all"||r.group===state.group)&&(skip==="target"||state.target==="all"||r.targets.includes(state.target))&&(skip==="category"||state.category==="all"||r.category===state.category)&&(skip==="kind"||state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)); }
 function filtered() { const terms=queryTerms();const found=state.records.filter(r=>matches(r,terms));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
@@ -640,16 +643,16 @@ async function exportMatches(prefix) {
 }
 for (const prefix of ["", "source-"]) $(`#${prefix}export-matches`).addEventListener("click", () => exportMatches(prefix));
 function topicLabel(topic) { return state.topicLabels[topic]?.[state.lang] || topic; }
-function topicSearch(topic) { const entry = state.topicLabels[topic]; return [topic, entry?.en || "", entry?.zh || ""].join(" ").toLocaleLowerCase(); }
+function topicSearch(topic) { const entry = state.topicLabels[topic]; return normalizeSearchText([topic, entry?.en || "", entry?.zh || ""].join(" ")); }
 function topicDisplay(topic) { const translated = topicLabel(topic); return translated === topic ? topic : `${translated} · ${topic}`; }
-function canonicalTopic(value) { const trimmed=value.trim().toLocaleLowerCase(); const match=Object.entries(state.topicLabels).find(([key, entry]) => [key, `${entry.en} · ${key}`, `${entry.zh} · ${key}`].some(label=>label.toLocaleLowerCase()===trimmed)); return match ? match[0] : value; }
+function canonicalTopic(value) { const trimmed=normalizeSearchText(value).trim(); const match=Object.entries(state.topicLabels).find(([key, entry]) => [key, `${entry.en} · ${key}`, `${entry.zh} · ${key}`].some(label=>normalizeSearchText(label)===trimmed)); return match ? match[0] : value; }
 function indexSourceTopics() {
   const topicCounts = new Map(); sourceState.records.forEach(r => r.topics.forEach(topic => topicCounts.set(topic,(topicCounts.get(topic)||0)+1)));
   sourceState.topicIDs = new Set(topicCounts.keys());
   sourceState.topicCounts = [...topicCounts].sort((a,b) => b[1]-a[1] || compareIDs(a[0],b[0]));
 }
 function topicSuggestions(value = "") {
-  const query = canonicalTopic(value).toLocaleLowerCase().trim();
+  const query = normalizeSearchText(canonicalTopic(value)).trim();
   const matches = sourceState.topicCounts.filter(([topic]) => !query || topicSearch(topic).includes(query));
   const exact = matches.findIndex(([topic]) => topic === query);
   if (exact > 0) matches.unshift(...matches.splice(exact,1));
@@ -701,9 +704,9 @@ function sourceRelatedLinks(record) {
   return container;
 }
 function sourceFiltered() {
-  const terms = sourceState.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean); const topic = sourceState.topic.toLocaleLowerCase().trim();
+  const terms = normalizeSearchText(sourceState.q).trim().split(/\s+/).filter(Boolean); const topic = normalizeSearchText(sourceState.topic).trim();
   const result = sourceState.records.filter(r => (sourceState.target === "all" || r.targets.includes(sourceState.target)) && (!topic || r.topics.some(item => sourceState.topicIDs.has(topic) ? item === topic : topicSearch(item).includes(topic))) && terms.every(term => r.search.includes(term)));
-  const score = r => terms.reduce((sum,term) => sum + (r.full_name.toLocaleLowerCase().includes(term) ? 4 : 0) + (r.topics.some(topic => topicSearch(topic).includes(term)) ? 2 : 0),0);
+  const score = r => terms.reduce((sum,term) => sum + (normalizeSearchText(r.full_name).includes(term) ? 4 : 0) + (r.topics.some(topic => topicSearch(topic).includes(term)) ? 2 : 0),0);
   if (sourceState.sort === "stars") result.sort((a,b) => (b.stars ?? -1)-(a.stars ?? -1) || compareIDs(a.full_name,b.full_name));
   else if (sourceState.sort === "stars-asc") result.sort((a,b) => (a.stars ?? Infinity)-(b.stars ?? Infinity) || compareIDs(a.full_name,b.full_name));
   else if (sourceState.sort === "pushed") result.sort((a,b) => compareIDs(String(b.pushed_at || ""),String(a.pushed_at || "")) || compareIDs(a.full_name,b.full_name));
@@ -758,7 +761,7 @@ function renderSources(shown = 0) {
   if (!sourceState.loaded) return; const found = sourceFiltered(); const results = $("#source-results"); const fragment = document.createDocumentFragment(); found.slice(shown,sourceState.visible).forEach(record => fragment.append(sourceCard(record)));
   if (shown) results.append(fragment); else { const expanded = expandedRecords(".source-card", ".source-record-details[open]"); const expandedEvidence = expandedRecords(".source-card", ".source-scan-evidence[open]"); results.replaceChildren(fragment); restoreExpanded(".source-card", expanded, ".source-record-details"); restoreExpanded(".source-card", expandedEvidence, ".source-scan-evidence"); } results.setAttribute("aria-busy","false");
   $("#source-status").textContent = state.lang === "zh" ? (found.length === sourceState.records.length ? `${found.length.toLocaleString()} 个仓库` : `${found.length.toLocaleString()} 个匹配仓库 · 共 ${sourceState.records.length.toLocaleString()} 个仓库`) : (found.length === sourceState.records.length ? `${found.length.toLocaleString()} ${found.length === 1 ? "repository" : "repositories"}` : `${found.length.toLocaleString()} ${found.length === 1 ? "result" : "results"} · ${sourceState.records.length.toLocaleString()} ${sourceState.records.length === 1 ? "repository" : "repositories"}`);
-  const topic = sourceState.topic.toLocaleLowerCase().trim(); const hint = $("#source-topic-match");
+  const topic = normalizeSearchText(sourceState.topic).trim(); const hint = $("#source-topic-match");
   hint.hidden = !topic; hint.textContent = topic ? t(sourceState.topicIDs.has(topic) ? "sourceTopicExact" : "sourceTopicContains") : "";
   const published = sourceState.meta.schema_version === 2;
   const completed = published ? sourceState.meta.published_at : sourceState.meta.completed_at || sourceState.meta.finished_at || "";
@@ -803,7 +806,7 @@ async function loadSources() {
   if (sourceState.loading) return; sourceState.loading = true; sourceState.error = false; $("#source-results").setAttribute("aria-busy","true"); $("#source-error").hidden = true; $("#source-status").textContent = t("sourceLoading");
   try {
     const response = await fetch(dataURL("source-browser.json"), {cache: "no-cache"}); if (!response.ok) throw new Error("Source index HTTP "+response.status); const data = sourceBrowserPayload(await response.json()); sourceState.meta = data.meta; sourceDownload(data.meta.full_export);
-    sourceState.records = (data.resources || []).filter(r => r.scan_status === "readme-scanned" && r.scope_status !== "excluded").map((r,index) => { const topics = Array.isArray(r.topics) ? r.topics.map(String) : []; const targets = Array.isArray(r.targets) ? r.targets : []; const full_name = r.full_name || r.name || r.id; const related_entries = sourceRelatedEntries(r); return {...r,full_name,topics,targets,related_entries,order:index,search:[full_name,r.description_en || "",r.description_zh || "",r.description_original || "",r.category || "",...topics.map(topicSearch),...related_entries.flatMap(entry => [entry.title_en,entry.title_zh]),...targets.flatMap(targetSearchLabels)].join(" ").toLocaleLowerCase()}; });
+    sourceState.records = (data.resources || []).filter(r => r.scan_status === "readme-scanned" && r.scope_status !== "excluded").map((r,index) => { const topics = Array.isArray(r.topics) ? r.topics.map(String) : []; const targets = Array.isArray(r.targets) ? r.targets : []; const full_name = r.full_name || r.name || r.id; const related_entries = sourceRelatedEntries(r); return {...r,full_name,topics,targets,related_entries,order:index,search:normalizeSearchText([full_name,r.description_en || "",r.description_zh || "",r.description_original || "",r.category || "",...topics.map(topicSearch),...related_entries.flatMap(entry => [entry.title_en,entry.title_zh]),...targets.flatMap(targetSearchLabels)].join(" "))}; });
     $('[data-source-target="protocol"]').hidden = !sourceState.records.some(record => record.targets.includes("protocol"));
     sourceState.loaded = true; indexSourceTopics(); syncTopicInput(); $("#mode-source-count").textContent = sourceState.records.length.toLocaleString(); renderSources();
   } catch (_) { sourceState.error = true; $("#source-status").textContent = t("sourceErrorTitle"); $("#source-results").setAttribute("aria-busy","false"); $("#source-error").hidden = false; $("#source-empty").hidden = true; $("#source-more-row").hidden = true; }
