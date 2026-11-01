@@ -3168,6 +3168,7 @@
     "description_zh": "作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。",
     "evidence_url": "https://github.com/az9713/untangle-rebuild/blob/6e9925105247268befeb6faed69025dfce4778fc/README.md",
     "verified_at": "2026-11-01T16:36:25Z",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "The recorded run uses REA 6.3.0, Ghidra 12.1.4 and Windows 11 against puzzles version 20260923.616da16; the rebuild is available as a browser page.",
@@ -3189,8 +3190,7 @@
     "additional_evidence_urls": [
       "https://az9713.github.io/untangle-rebuild/receipt/rebuild-receipt.html",
       "https://az9713.github.io/untangle-rebuild/rebuild/index.html"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "sofa-tv-browser-browsehere-case",
@@ -3202,6 +3202,7 @@
     "description_zh": "Android TV 浏览器以自己的实现沿用 BrowseHere 的遥控交互设计；作者报告先用 REA 检查 BrowseHere APK，再用 Claude 构建 Sofa，仓库提供 APK 发布、截图及当前功能限制。",
     "evidence_url": "https://github.com/sonalder-darlene/sofa-tv-browser/blob/6b3afc9544d8e7d2893ed85f184904c8382c02fb/README.md",
     "verified_at": "2026-11-01T16:36:25Z",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Android 7.0+ with Android System WebView; APKs are linked from GitHub releases. Source builds need the documented JDK/Android SDK or Nix environment.",
@@ -3222,8 +3223,7 @@
     "additional_evidence_urls": [
       "https://www.reddit.com/r/AndroidTVApps/comments/1xa9tv3/i_had_ai_reverseengineer_tcls_browsehere_and/",
       "https://github.com/sonalder-darlene/sofa-tv-browser/releases"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "netcat-openbsd-rea-static-case",
@@ -3235,6 +3235,7 @@
     "description_zh": "REA/Ghidra 报告研究 Ubuntu netcat-openbsd 1.234-1 ELF 二进制，公开证据封套、反编译函数及函数清单；产物是静态调查，而非重建后的 netcat 应用。",
     "evidence_url": "https://github.com/NullLabTests/OpenBSD_netcat_REA/blob/cc1870d34e83bad0b8a6ca2489f6fa177efa6a2a/README.md",
     "verified_at": "2026-11-01T16:36:25Z",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Reproducing the documented analysis needs the target package binary, REA, Ghidra 12.1.x and JDK 21; the README records additional pwntools tooling.",
@@ -3251,8 +3252,7 @@
     "targets": [
       "binary"
     ],
-    "kind": "case-study",
-    "added_at": "2026-11-01"
+    "kind": "case-study"
   },
   {
     "id": "fastview-rea-relay-analysis-rebuild-case",
@@ -3264,6 +3264,7 @@
     "description_zh": "Rust 桌面重建以 REA 与 Ghidra 的研究复现 Mekhanotronika Fast View 5 的录波分析和继电保护特性视图，公开行为规格、事实索引、截图及跨平台构建，并列明格式与视觉保真度缺口。",
     "evidence_url": "https://github.com/dmytrobsp/fastview-rea/blob/deb89ea4134414a894ba887508ad5d320449be41/README.md",
     "verified_at": "2026-11-01T16:43:00Z",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Source builds need the documented Rust toolchain; release archives target Linux, Windows and macOS. Linux needs GTK 3 and a Wayland or X11 session.",
@@ -3283,8 +3284,7 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/dmytrobsp/fastview-rea/releases"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "openbattlefield2-refractor-engine-case",
@@ -3296,6 +3296,7 @@
     "description_zh": "C++20 重实现 Battlefield 2 的 Refractor 2 引擎，读取原始游戏数据，记录菜单渲染、关卡载入及服务器互通；公开的准星研究引用 REA/Ghidra 证据 ID 和二进制地址，主要玩法系统仍未完成。",
     "evidence_url": "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/README.md",
     "verified_at": "2026-11-01",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Requires an owned Battlefield 2 1.5 installation, CMake 3.24+, Ninja, a C++20 compiler and SDL3; the Flash menu additionally needs Rust and Ruffle.",
@@ -3319,8 +3320,7 @@
     "additional_evidence_urls": [
       "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/CLAUDE.md",
       "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/docs/functions/hud-crosshair.md"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "keen-clone-rea-commander-keen-case",
@@ -3332,6 +3332,7 @@
     "description_zh": "Linux 原生与浏览器移植面向 Commander Keen 第一章，作者记录以 REA/Ghidra 对 KEEN1.EXE 逐函数研究并重建 C/SDL2 游戏，附带公开分析资料；范围仅为第一章，并非全系列。",
     "evidence_url": "https://github.com/carlhako/keen-clone/blob/9c6ac72734c95c3260c23b57158ea5876abc14b3/README.md",
     "verified_at": "2026-11-01",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Native builds need a C compiler, make and SDL2 development files, plus the user's Keen 1 data files including KEEN1.EXE; the README lists v1.1 and shareware v1.31.",
@@ -3349,8 +3350,7 @@
       "game",
       "binary"
     ],
-    "kind": "case-study",
-    "added_at": "2026-11-01"
+    "kind": "case-study"
   },
   {
     "id": "samp-client-rea-partial-reconstruction-case",
@@ -3362,6 +3362,7 @@
     "description_zh": "REA/Ghidra 调查将 SA-MP 0.3.DL-R1 客户端子系统映射到新的 C++ DLL、加载器和冒烟测试程序，产物属于架构重建，网络与图形行为仍有明确未知项，未建立零售版兼容性。",
     "evidence_url": "https://github.com/NathanKanaeru/samp-client-re/blob/6efde5d3042ee87f0c183a6c68b7e1b26a000cac/README.md",
     "verified_at": "2026-11-01",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "The README reports a Windows/MinGW x64 build and a GTA-independent smoke executable; actual GTA: San Andreas use requires a separate 32-bit toolchain/build. Not run or reproduced for this catalog.",
@@ -3379,8 +3380,7 @@
       "game",
       "binary"
     ],
-    "kind": "case-study",
-    "added_at": "2026-11-01"
+    "kind": "case-study"
   },
   {
     "id": "desktop-games-nostalgia-rea-port-case",
@@ -3392,6 +3392,7 @@
     "description_zh": "Swift/macOS 与 JavaScript/浏览器移植在截图上重现 Desktop Games 的桌面破坏玩具；作者记录 Claude 与 REA/Ghidra 对 Peter 解释器的研究、反编译程序树及提取素材，并明确列出视觉差异和未提供项目许可。",
     "evidence_url": "https://github.com/ucodia/desktop-games-nostalgia/blob/27946dfe49d4a9b522dfe017c14eefbc0ca40b2a/README.md",
     "verified_at": "2026-11-01",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Native use requires macOS 14+; Screen Recording access captures one screen image, while wallpaper mode is available without it. The browser version uses a simulated desktop and needs a mouse/keyboard.",
@@ -3409,8 +3410,7 @@
       "game",
       "binary"
     ],
-    "kind": "case-study",
-    "added_at": "2026-11-01"
+    "kind": "case-study"
   },
   {
     "id": "gunzrs-rea-rust-reimplementation-case",
@@ -3422,6 +3422,7 @@
     "description_zh": "Rust/Bevy 移植从用户安装中读取 GunZ: The Duel 数据，提供原生发布包、浏览器构建工具、截图及 REA/Ghidra 调查框架；自有局域网协议和推断的移动行为不代表兼容零售服务器或已证明玩法一致。",
     "evidence_url": "https://github.com/OpenRsG/GunZRs/blob/485575b7451912ed1d62661c388663b08dce4faf/README.md",
     "verified_at": "2026-11-01",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Requires the user's GunZ: The Duel installation; no original game files are included. Native downloads target Linux/Windows, with Linux builds requiring the documented system libraries; WebGPU needs localhost or HTTPS and packs built from the user's data.",
@@ -3441,8 +3442,7 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/OpenRsG/GunZRs/releases/tag/v0.1.0"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "mxqpro-rk3229-rea-repurposing-case",
@@ -3454,6 +3454,7 @@
     "description_zh": "设备所有者记录了 RK3229 电视盒的硬件识别、原厂 Android ROM 调查、用户态手柄驱动及 Armbian 改造；REA 用于 ADB 清点和 Android 分析引擎引导，APK 分析与设备修改属于混合工作流，并非固件重建。",
     "evidence_url": "https://github.com/bigtower17/mxqpro-rk3229/blob/b9079b419373eec439d85df4a8a11be549cd2f56/README.md",
     "verified_at": "2026-11-01",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Requires an owned, correctly identified RK3228/RK3229-class board and its matching firmware/backups; the MXQ PRO sales label alone does not identify the hardware.",
@@ -3473,8 +3474,7 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/morluto/rea/discussions/8248"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "icsee-localmod-rea-camera-case",
@@ -3486,6 +3486,7 @@
     "description_zh": "XM530V200 摄像头所有者授权案例以 REA/Ghidra 调查原生 Sofia 命令处理器，再添加本地控制及 Home Assistant 集成，保留原厂驱动和录像；源码扩展明确区分静态、模拟协议及实机证据。",
     "evidence_url": "https://github.com/Vittuu/icsee-localmod/blob/52f0ca06064faa2e62ee6d9c600f048bd1768207/README.md",
     "verified_at": "2026-11-01",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Tested only on one XM530V200 / IPG-X2-WQ-BL unit. There is no universal image or public flash installer; source builds need a compatible ARM toolchain and matching Dropbear crypto library.",
@@ -3508,8 +3509,7 @@
     "additional_evidence_urls": [
       "https://github.com/Vittuu/icsee-localmod/blob/52f0ca06064faa2e62ee6d9c600f048bd1768207/docs/REA-GHIDRA-WORKFLOW.md",
       "https://github.com/morluto/rea/discussions/8070"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "app-xray-rea-evidence-reports",
@@ -3521,6 +3521,7 @@
     "description_zh": "基于 REA 对应用包、原生构建元数据和模型文件的分析生成带证据链接的 HTML/JSON 报告、摘要卡片及差异；组件与配置发现来自静态输入，并非实测流量、完整安全审计或重建软件。",
     "evidence_url": "https://github.com/Eliot5566/app-xray/blob/66a7b06fb45d99e0e1d1dbcf221856a62639faab/README.md",
     "verified_at": "2026-11-01",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "README requires Node.js 22+; supported inputs include Electron/app.asar/source folders, APKs, Go/Rust executables and listed model formats. REA analysis requirements vary with the input.",
@@ -3542,8 +3543,7 @@
     "additional_evidence_urls": [
       "https://github.com/Eliot5566/app-xray/blob/66a7b06fb45d99e0e1d1dbcf221856a62639faab/docs/en/guide.md",
       "https://github.com/morluto/rea/discussions/7974"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "disklens-windirstat-rea-case",
@@ -3555,6 +3555,7 @@
     "description_zh": "Rust/Tauri 磁盘分析器结合 REA/Ghidra 对 WinDirStat 2.5.0 的调查及其树图、色彩算法的源码移植；文档区分二进制核对结果与源码来源，并列明多项文件操作和 Windows 集成尚未经实机测试。",
     "evidence_url": "https://github.com/KarlssonChristoffer/DiskLens/blob/c7d67f4b084b408d9b3e1bb22ee8723727494488/README.md",
     "verified_at": "2026-11-01",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Requires Windows 10/11, Rust MSVC/Visual Studio build tools and Node.js for source builds; Mica styling needs Windows 11.",
@@ -3575,8 +3576,7 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/KarlssonChristoffer/DiskLens/blob/c7d67f4b084b408d9b3e1bb22ee8723727494488/docs/research.md"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "soundconnect-desktop-rea-engine-case",
@@ -3588,6 +3588,7 @@
     "description_zh": "Windows 索尼耳机客户端在 REA 辅助二进制清点及源码检查后采用既有 libmdr/libmdr-bt 引擎 DLL，桌面界面参考 Sound Connect；协议实现和设备支持来自上游复用，并非本项目重新恢复。",
     "evidence_url": "https://github.com/B-Howell/soundconnect-desktop/blob/481f4af2da2c96026bd14d19f366c76aa737ccd0/README.md",
     "verified_at": "2026-11-01",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Requires Windows 10/11 and compatible Bluetooth headphones. Source builds need Node 24, pnpm 10, Rust MSVC and pinned engine DLLs or their Visual Studio/CMake build environment.",
@@ -3608,8 +3609,7 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/B-Howell/soundconnect-desktop/blob/481f4af2da2c96026bd14d19f366c76aa737ccd0/docs/research/SoundConnect%20Desktop%20-%20Upstream%20Security%20Review.md"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "rec-rs-obs-rea-recorder-case",
@@ -3621,6 +3621,7 @@
     "description_zh": "macOS 录制器参考 OBS 架构，研究结合 REA 软件包检查、平台工具及公开源码资料；提供屏幕/摄像头录制和推流，但场景、输入源功能范围更小，研究笔记明确记录原生分析引擎不可用。",
     "evidence_url": "https://github.com/michaelshimeles/rec-rs/blob/93dd4948cdc8919e8b444a5af0141cf7c3628e7c/README.md",
     "verified_at": "2026-11-01",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Universal releases target macOS 15+; building needs the documented Rust/macOS toolchain. Screen, microphone and camera capture depend on the relevant system permissions.",
@@ -3643,8 +3644,7 @@
     "additional_evidence_urls": [
       "https://github.com/michaelshimeles/rec-rs/blob/93dd4948cdc8919e8b444a5af0141cf7c3628e7c/analysis/OBS_ARCHITECTURE.md",
       "https://github.com/michaelshimeles/rec-rs/releases/tag/v0.1.2"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "sketch-paper-rea-canvas-case",
@@ -3656,6 +3656,7 @@
     "description_zh": "Rust 画布在 REA 调查 Paper Desktop 壳层后参考其编辑行为；没有恢复托管编辑器，研究区分已观察的壳层集成与推断的编辑器功能，新几何文档模型也不同于 Paper 的 HTML/CSS。",
     "evidence_url": "https://github.com/michaelshimeles/sketch/blob/af814b7ab2bd77328a906a1986a048c233e25f9c/README.md",
     "verified_at": "2026-11-01",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Requires Rust 1.95+ for source builds; macOS releases target 11+, Linux uses the documented graphics libraries and XDG portal for file dialogs.",
@@ -3678,8 +3679,7 @@
     "additional_evidence_urls": [
       "https://github.com/michaelshimeles/sketch/blob/af814b7ab2bd77328a906a1986a048c233e25f9c/analysis/PAPER_ARCHITECTURE.md",
       "https://github.com/michaelshimeles/sketch/releases/tag/v0.1.0"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "terminal-tradingview-rea-chart-case",
@@ -3691,6 +3691,7 @@
     "description_zh": "独立 Rust 市场界面参考 REA 对公开、未登录 TradingView 图表交互的场景研究；笔记保留观察、文档、推断及未知标签，产物使用自己的图表引擎和数据源，而非恢复 TradingView 或 Bloomberg 服务端软件。",
     "evidence_url": "https://github.com/michaelshimeles/terminal/blob/94bb329d683471518dcd210f9ca9fca073c15d0b/README.md",
     "verified_at": "2026-11-01",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Source builds need Rust and the documented platform graphics setup. Data can use an offline sample or external providers; brokerage connectivity is optional and requires the user's own provider/account setup.",
@@ -3711,7 +3712,6 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/michaelshimeles/terminal/blob/94bb329d683471518dcd210f9ca9fca073c15d0b/docs/analysis/README.md"
-    ],
-    "added_at": "2026-11-01"
+    ]
   }
 ]

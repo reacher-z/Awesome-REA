@@ -16356,6 +16356,7 @@
     "description_zh": "C#/.NET 10 引擎加载 Dungeon Siege 原始归档、脚本与模型，提供 alpha 构建和审计/一致性清单，并附带 SiegeSmith 模组工具；项目仍记录保真度和通关行为风险。",
     "evidence_url": "https://github.com/codingncaffeine/SiegeFX/blob/6a1a4ade725a860651a06a0d7ddb50d5a3a688d1/README.md",
     "verified_at": "2026-11-01T16:36:25Z",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Requires an owned Dungeon Siege installation; Windows and Linux builds are linked. Source builds need .NET 10; Linux needs OpenGL 3.3 and internet multiplayer additionally needs OpenSSL 3.",
@@ -16373,8 +16374,7 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/codingncaffeine/SiegeFX/releases/tag/v0.5.0"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "legend-of-legaia-rust-port-case",
@@ -16386,6 +16386,7 @@
     "description_zh": "从零编写的 Rust 移植面向北美 PlayStation 版 Legend of Legaia，附带原生/浏览器游玩、素材提取及光盘补丁工具；作者记录 Ghidra/模拟器研究与全流程测试阶梯，项目不是匹配反编译或静态重编译。",
     "evidence_url": "https://github.com/AndrewAltimit/legend-of-legaia-re/blob/f801d3c319386f7686d7fde45e114e1e2ba6aff5/README.md",
     "verified_at": "2026-11-01T16:36:25Z",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Supply an owned North American SCUS-94254 disc image; browser tooling reads the image locally. Source builds require a Rust toolchain supporting edition 2024.",
@@ -16405,8 +16406,7 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://andrewaltimit.github.io/legend-of-legaia-re/"
-    ],
-    "added_at": "2026-11-01"
+    ]
   },
   {
     "id": "crxviewer",
@@ -16422,6 +16422,7 @@
     "description_zh": "Rob Wu 开发的浏览器扩展及网页版工具，无需安装即可查看已打包的浏览器扩展。在 Chrome 网上应用店、Opera、Firefox、Thunderbird 和 Microsoft Edge 的扩展页面上，它会添加一个按钮，可将扩展包下载为 zip 或在查看器中打开；托管在其他位置的扩展包链接也能打开。查看器支持 CRX、NEX、XPI 和 ZIP 文件：可列出并筛选文件，按字符串或正则表达式搜索内容，格式化代码并高亮语法，预览图片，打开嵌套的 zip，显示各文件的哈希值，还能根据扩展包的公钥、签名或 manifest 推算扩展 ID。",
     "evidence_url": "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "requirements": [
       "Version 1.7.1, committed on 2026-09-01 as the reviewed master head, is the version in all three manifests: Manifest V3 builds for Chrome 88+ and Opera 74+, and a Manifest V2 build for Firefox 115+. The repository has no tags or releases; the README links the Chrome Web Store, Opera and addons.mozilla.org listings and an online demo page that opens local files or URLs.",
@@ -16438,7 +16439,6 @@
       "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/src/domain-fronter.js",
       "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/make.js",
       "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/LICENSE"
-    ],
-    "added_at": "2026-11-01"
+    ]
   }
 ]
