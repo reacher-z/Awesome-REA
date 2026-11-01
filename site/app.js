@@ -369,7 +369,7 @@ const params = new URLSearchParams(location.search);
 document.documentElement.dataset.indexMode = ["source-index", "repositories"].includes(params.get("view")) ? "source-index" : "curated";
 // The path selects the default language; valid legacy query overrides still work.
 const pathLanguage = location.pathname.startsWith("/zh/") ? "zh" : "en";
-const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", class: ["all", "0", "1", "2", "3"].includes(params.get("class")) ? params.get("class") : "all", visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
+const state = { layout: params.get("layout") === "compact" ? "compact" : "cards", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", class: ["all", "0", "1", "2", "3"].includes(params.get("class")) ? params.get("class") : "all", visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const t = (key) => UI[state.lang][key] || UI.en[key] || key;
@@ -395,7 +395,7 @@ function entryHref(kind, identifier, language = state.lang) {
 }
 function curatedURL() {
   const next = new URL(location.href);
-  for (const [key, defaultValue] of [["q", ""], ["group", "all"], ["category", "all"], ["kind", "all"], ["target", "all"], ["class", "all"], ["lang", pathLanguage], ["layout", "compact"]]) {
+  for (const [key, defaultValue] of [["q", ""], ["group", "all"], ["category", "all"], ["kind", "all"], ["target", "all"], ["class", "all"], ["lang", pathLanguage], ["layout", "cards"]]) {
     if (state[key] !== defaultValue) next.searchParams.set(key, state[key]);
     else next.searchParams.delete(key);
   }

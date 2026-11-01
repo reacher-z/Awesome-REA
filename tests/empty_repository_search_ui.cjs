@@ -47,7 +47,7 @@ async function main() {
   for (const language of ['en', 'zh']) {
     const pathname = language === 'zh' ? '/zh/' : '/';
     const query = '?q=protobuf&group=tools&category=dynamic-analysis&kind=tool&target=game'
-      + '&sourceq=previous&source-target=protocol&topic=fixtures&sort=stars&layout=cards&keep=yes#catalog';
+      + '&sourceq=previous&source-target=protocol&topic=fixtures&sort=stars&layout=compact&keep=yes#catalog';
     const app = application(query, {pathname});
     await app.api.load();
     const button = element(app, '#empty-search-repositories');
@@ -85,7 +85,7 @@ async function main() {
     assert.equal(location.searchParams.get('source-target'), 'protocol');
     assert.equal(location.searchParams.get('topic'), 'fixtures');
     assert.equal(location.searchParams.get('sort'), 'stars');
-    assert.equal(location.searchParams.get('layout'), 'cards');
+    assert.equal(location.searchParams.get('layout'), 'compact');
     assert.equal(location.searchParams.get('keep'), 'yes');
     const other = app.languageLinks.find(link => link.dataset.languageLink === (language === 'zh' ? 'en' : 'zh'));
     const counterpart = new URL(other.href, location.href);
@@ -94,7 +94,7 @@ async function main() {
     assert.equal(counterpart.searchParams.get('q'), 'protobuf');
     assert.equal(counterpart.searchParams.get('target'), 'game');
     assert.equal(counterpart.searchParams.get('view'), 'source-index');
-    assert.equal(counterpart.searchParams.get('layout'), 'cards');
+    assert.equal(counterpart.searchParams.get('layout'), 'compact');
     assert.equal(counterpart.hash, '#catalog');
     await settle();
     assert.equal(sourceRequests(app).length, 1);
