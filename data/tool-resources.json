@@ -16407,5 +16407,38 @@
       "https://andrewaltimit.github.io/legend-of-legaia-re/"
     ],
     "added_at": "2026-11-01"
+  },
+  {
+    "id": "crxviewer",
+    "name": "Chrome extension source viewer (CRX Viewer)",
+    "url": "https://github.com/Rob--W/crxviewer",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Browser extension and web page by Rob Wu for inspecting packaged browser extensions without installing them. On Chrome Web Store, Opera, Firefox, Thunderbird and Microsoft Edge add-on pages it adds a button that downloads the package as a zip or opens it in a viewer, and links to extension packages hosted elsewhere can be opened as well. The viewer reads CRX, NEX, XPI and ZIP files: it lists and filters files, searches content by string or regular expression, beautifies and syntax-highlights code, previews images, opens nested zips, shows per-file hashes and derives the extension ID from the package key, signature or manifest.",
+    "description_zh": "Rob Wu 开发的浏览器扩展及网页版工具，无需安装即可查看已打包的浏览器扩展。在 Chrome 网上应用店、Opera、Firefox、Thunderbird 和 Microsoft Edge 的扩展页面上，它会添加一个按钮，可将扩展包下载为 zip 或在查看器中打开；托管在其他位置的扩展包链接也能打开。查看器支持 CRX、NEX、XPI 和 ZIP 文件：可列出并筛选文件，按字符串或正则表达式搜索内容，格式化代码并高亮语法，预览图片，打开嵌套的 zip，显示各文件的哈希值，还能根据扩展包的公钥、签名或 manifest 推算扩展 ID。",
+    "evidence_url": "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Version 1.7.1, committed on 2026-09-01 as the reviewed master head, is the version in all three manifests: Manifest V3 builds for Chrome 88+ and Opera 74+, and a Manifest V2 build for Firefox 115+. The repository has no tags or releases; the README links the Chrome Web Store, Opera and addons.mozilla.org listings and an online demo page that opens local files or URLs.",
+      "Store listings are the documented install route; the README gives no build instructions. make.js builds the Chrome, Opera, Firefox and web packages with shelljs and the less compiler from npm and zips them with 7z.",
+      "The extension requests tabs, storage, context-menu, downloads and declarativeContent permissions and access to Google's CRX download endpoints, and asks for optional access to all sites before fetching packages hosted elsewhere. Its Firefox build routes addons.mozilla.org requests through services.addons.mozilla.org, a workaround the source documents for Firefox's restrictions on add-ons reading some Mozilla domains and still uses for non-public XPI files such as developer submissions.",
+      "The viewer shows package contents as published: beautification only reformats code and does not reverse obfuscation. Downloaded extensions keep their authors' rights and store terms.",
+      "MPL-2.0; bundled libraries such as zip.js, Prism, js-beautify and SparkMD5 keep their own licenses. Nothing was built or installed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/src/manifest.json",
+      "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/src/manifest_firefox.json",
+      "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/src/lib/crx-to-zip.js",
+      "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/src/crxviewer.js#L997-L1056",
+      "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/src/domain-fronter.js",
+      "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/make.js",
+      "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/LICENSE"
+    ],
+    "added_at": "2026-11-01"
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "purpose": "Actual first-main dates for the 19 records added in these merged batches; not upstream publication or runtime dates.",
+  "purpose": "Actual first-main dates for 20 records added in these five merged batches; not upstream publication or runtime dates.",
   "merge_evidence": [
     {
       "html_url": "https://github.com/reacher-z/Awesome-REA/pull/2554",
@@ -54,6 +54,16 @@
         "rec-rs-obs-rea-recorder-case",
         "sketch-paper-rea-canvas-case",
         "terminal-tradingview-rea-chart-case"
+      ]
+    },
+    {
+      "html_url": "https://github.com/reacher-z/Awesome-REA/pull/1650",
+      "merge_commit_sha": "af6f44f469a5928c765c2cfbdf73920a6ba140c5",
+      "merged": true,
+      "merged_at": "2026-11-01T19:22:49Z",
+      "number": 1650,
+      "catalog_ids": [
+        "crxviewer"
       ]
     }
   ]
