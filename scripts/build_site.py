@@ -37,6 +37,8 @@ OUTPUT = ROOT / "dist"
 SITE_URL = "https://awesomerea.org"
 REPOSITORY_URL = "https://github.com/reacher-z/Awesome-REA"
 TARGETS = {"website", "game", "app", "binary", "firmware", "protocol"}
+# Listed projects may link back to their entries with this badge, so its public URL must stay stable.
+LISTED_BADGE = "featured-by-awesome-rea-inline.svg"
 # Record fields the homepage needs for its first render; catalog.json keeps every field.
 CATALOG_INDEX_FIELDS = ("id", "name", "name_zh", "url", "evidence_url", "description_en", "description_zh", "kind",
                         "category", "group", "relationship", "targets", "verified_at")
@@ -217,6 +219,8 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
             shutil.copytree(path, output / path.name)
         else:
             shutil.copy2(path, output / path.name)
+    (output / "badges").mkdir()
+    shutil.copy2(ROOT / "assets" / LISTED_BADGE, output / "badges" / LISTED_BADGE)
     html = (output / "index.html").read_text(encoding="utf-8")
     for key, value in {"RESOURCE_COUNT": len(resources), "INTEGRATION_COUNT": metadata["independent_integration_count"], "REVIEWED_AT": latest_review}.items():
         html = html.replace("{{" + key + "}}", str(value))
