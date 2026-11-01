@@ -1,0 +1,40 @@
+name: Public artifact lead discovery
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 0,8,16 * * *'
+      timezone: America/Los_Angeles
+permissions:
+  contents: read
+  discussions: read
+concurrency:
+  group: public-artifact-lead-discovery
+  cancel-in-progress: false
+jobs:
+  collect:
+    if: ${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Capture bounded public source links
+        id: collect
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/collect_public_artifact_leads.py
+      - name: Retain validated discovery snapshot
+        if: ${{ always() && steps.collect.outputs.artifact_ready == 'true' }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: public-artifact-leads-${{ github.run_attempt }}
+          path: |
+            .cache/public-artifact-leads/leads.json
+            .cache/public-artifact-leads/receipt.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 7
