@@ -94,6 +94,8 @@ The production build command runs `scripts/build_production.py`. It stops deploy
 
 ## Scheduled README discovery
 
+For complementary GitHub Discussion, public-directory and X-excerpt link snapshots, see [public artifact lead discovery](public-artifact-discovery.md). It runs separately three times daily and retains an unreviewed URL queue; it does not change the README scanner, its goal, or the curated catalog.
+
 `Scheduled README discovery` runs at **00:17, 08:17 and 16:17 America/Los_Angeles** and can be started manually from the default branch. [GitHub's timezone-aware schedule](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule) follows daylight saving changes. GitHub can delay scheduled jobs; these are requested start times.
 
 The scheduled collection target is **160,000 distinct README captures with an explicit Git blob hash match** (`readme_git_sha_matches_content: true`). Each run seeks at most **2,000 new verified captures**, clamped to the qualified count remaining after reconciling the published index with the last checkpoint. Legacy records without a comparison flag and known mismatches remain in the raw evidence, but consume none of this goal. A raw total of 160,000 with only 159,950 qualified captures therefore still plans 50. The child receives a raw-record target of retained records plus the planned verified additions; the parent rejects any new success without explicit verified integrity. At the qualified goal, no discovery or README requests are made. Search results, metadata lookups, failed reads and duplicate IDs do not count toward the goal. The target does not assert that this many relevant repositories exist or that the collection is complete.
