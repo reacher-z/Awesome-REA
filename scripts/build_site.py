@@ -202,7 +202,7 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     """Render a complete site into a fresh, caller-owned staging directory."""
     translations = json.loads((SOURCE / "translations.zh-CN.json").read_text(encoding="utf-8"))
     papers = json.loads((ROOT / "data" / "papers.json").read_text(encoding="utf-8"))
-    evidence_classes = {entry["id"]: entry["evidence_class"] for entry
+    evidence_entries = {entry["id"]: entry for entry
                         in json.loads((ROOT / "data" / "evidence-classes.json").read_text(encoding="utf-8"))["entries"]}
     previews = {}
     if PREVIEWS_PATH.is_file():
@@ -213,19 +213,23 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     for filename in ("rea-resources.json", "tool-resources.json"):
         for original in json.loads((ROOT / "data" / filename).read_text(encoding="utf-8")):
             record = dict(original)
-            if record["id"] not in evidence_classes:
+            if record["id"] not in evidence_entries:
                 raise ValueError(f"Evidence class missing: {record['id']}. Rerun scripts/classify_evidence_classes.py.")
-            if evidence_classes[record["id"]] not in EVIDENCE_CLASSES:
-                raise ValueError(f"Invalid evidence class for {record['id']}: {evidence_classes[record['id']]}")
-            record["evidence_class"] = evidence_classes[record["id"]]
-            preview = previews.get(record["id"])
-            if preview and record["evidence_class"] in (0, 1):
-                cached = cached_preview(preview["image_url"])
+            evidence_entry = evidence_entries[record["id"]]
+            if evidence_entry["evidence_class"] not in EVIDENCE_CLASSES:
+                raise ValueError(f"Invalid evidence class for {record['id']}: {evidence_entry['evidence_class']}")
+            record["evidence_class"] = evidence_entry["evidence_class"]
+            if record["evidence_class"] in (0, 1):
+                preview = previews.get(record["id"])
+                cached = cached_preview(preview["image_url"]) if preview else None
                 if cached:
                     relative = f"previews/{record['id']}{cached.suffix}"
                     record["preview"] = "/" + relative  # root-relative so /zh/ resolves it too
                     record["preview_kind"] = preview["kind"]
                     preview_files.append((cached, relative))
+                elif evidence_entry.get("signals", {}).get("demo"):
+                    # A demo exists but no screenshot could be extracted or downloaded.
+                    record["preview_kind"] = "demo"
             translation = translations.get(record["id"], {})
             record["requirements_zh"] = record.get("requirements_zh") or translation.get("requirements", record["requirements"])
             record["name_zh"] = record.get("name_zh") or translation.get("name", record["name"])

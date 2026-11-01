@@ -5,9 +5,9 @@
   "generated_at": "2026-11-01T11:22:32+00:00",
   "entry_count": 596,
   "class_counts": {
-   "0": 40,
-   "1": 229,
-   "2": 298,
+   "0": 27,
+   "1": 202,
+   "2": 338,
    "3": 29
   },
   "override_count": 39,
@@ -932,7 +932,7 @@
   {
    "id": "battleship-port-case",
    "url": "https://github.com/JRickey/BattleShip",
-   "evidence_class": 0,
+   "evidence_class": 2,
    "basis": "override",
    "signals": {
     "code": true,
@@ -943,14 +943,12 @@
     "download": "release-assets",
     "release_count": 33,
     "release_asset_count": 146,
-    "demo": [
-     "image"
-    ],
-    "media_count": 3,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Super Smash Bros. N64 port via libultraship; releases and screenshots.",
+   "reason": "no usable demo evidence: no screenshot, video or playable demo",
    "checked_at": "2026-10-31T15:15:08+00:00"
   },
   {
@@ -1354,10 +1352,9 @@
     "release_count": 1,
     "release_asset_count": 21,
     "demo": [
-     "image",
      "video"
     ],
-    "media_count": 3,
+    "media_count": 1,
     "archived": false,
     "unavailable": false
    },
@@ -1739,7 +1736,7 @@
   {
    "id": "pocket-tasks-reconstruction-case",
    "url": "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/tree/main/evals/reference/reconstruction",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -1750,14 +1747,12 @@
     "download": "release-assets",
     "release_count": 67,
     "release_asset_count": 134,
-    "demo": [
-     "image"
-    ],
-    "media_count": 2,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study: download and demo exist, scope stays partial",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T04:53:47+00:00"
   },
   {
@@ -2245,7 +2240,7 @@
   {
    "id": "rea-reconstruction-companion",
    "url": "https://github.com/ShadowSwaps/REA-Reconstruction-Companion",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2256,14 +2251,12 @@
     "download": "release-assets",
     "release_count": 67,
     "release_asset_count": 134,
-    "demo": [
-     "image"
-    ],
-    "media_count": 2,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "download and demo exist, but the described scope is a partial feature or patch",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T04:53:47+00:00"
   },
   {
@@ -2857,7 +2850,7 @@
   {
    "id": "apktool",
    "url": "https://github.com/iBotPeaches/Apktool",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2868,14 +2861,12 @@
     "download": "release-assets",
     "release_count": 30,
     "release_asset_count": 29,
-    "demo": [
-     "image"
-    ],
-    "media_count": 2,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "download and demo exist, but docs do not cover the full feature set",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:16:05+00:00"
   },
   {
@@ -3035,7 +3026,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
+   "reason": "not a full software reconstruction: analysis entry",
    "checked_at": "2026-11-01T04:53:54+00:00"
   },
   {
@@ -3369,7 +3360,7 @@
   {
    "id": "bindiff",
    "url": "https://github.com/google/bindiff",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3380,14 +3371,12 @@
     "download": "release-assets",
     "release_count": 2,
     "release_asset_count": 8,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:16:27+00:00"
   },
   {
@@ -3645,7 +3634,7 @@
   {
    "id": "mitmproxy",
    "url": "https://github.com/mitmproxy/mitmproxy",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3656,20 +3645,18 @@
     "download": "release-assets",
     "release_count": 83,
     "release_asset_count": 145,
-    "demo": [
-     "image"
-    ],
-    "media_count": 2,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "download and demo exist, but docs do not cover the full feature set",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:16:36+00:00"
   },
   {
    "id": "playwright-mcp",
    "url": "https://github.com/microsoft/playwright-mcp",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3680,14 +3667,12 @@
     "download": "release-assets",
     "release_count": 73,
     "release_asset_count": 35,
-    "demo": [
-     "image"
-    ],
-    "media_count": 4,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: integration entry",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:16:40+00:00"
   },
   {
@@ -3856,7 +3841,7 @@
   {
    "id": "decomp-permuter",
    "url": "https://github.com/simonlindholm/decomp-permuter",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3867,14 +3852,12 @@
     "download": "package",
     "release_count": 0,
     "release_asset_count": 0,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "download and demo exist, but docs do not cover the full feature set",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:16:46+00:00"
   },
   {
@@ -4074,7 +4057,7 @@
   {
    "id": "fact-core",
    "url": "https://github.com/fkie-cad/FACT_core",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4085,14 +4068,12 @@
     "download": "release",
     "release_count": 25,
     "release_asset_count": 0,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: tool entry",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:16:54+00:00"
   },
   {
@@ -4282,7 +4263,7 @@
   {
    "id": "fmodel",
    "url": "https://github.com/4sval/FModel",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4293,14 +4274,12 @@
     "download": "release-assets",
     "release_count": 78,
     "release_asset_count": 182,
-    "demo": [
-     "image"
-    ],
-    "media_count": 2,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "download and demo exist, but the described scope is a partial feature or patch",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:17:04+00:00"
   },
   {
@@ -4440,7 +4419,7 @@
   {
    "id": "uefitool",
    "url": "https://github.com/LongSoft/UEFITool",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4451,14 +4430,12 @@
     "download": "release-assets",
     "release_count": 46,
     "release_asset_count": 427,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "download and demo exist, but docs do not cover the full feature set",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T04:54:09+00:00"
   },
   {
@@ -4752,14 +4729,13 @@
     "release_count": 17,
     "release_asset_count": 0,
     "demo": [
-     "image",
      "demo-link"
     ],
-    "media_count": 1,
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: tool entry",
+   "reason": "not a full software reconstruction: analysis entry",
    "checked_at": "2026-10-31T15:17:14+00:00"
   },
   {
@@ -4900,7 +4876,7 @@
   {
    "id": "goresym",
    "url": "https://github.com/mandiant/GoReSym",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4911,14 +4887,12 @@
     "download": "release-assets",
     "release_count": 37,
     "release_asset_count": 56,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "download and demo exist, but the described scope is a partial feature or patch",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:17:20+00:00"
   },
   {
@@ -5084,7 +5058,7 @@
   {
    "id": "visor-ray-ban-meta-client-case",
    "url": "https://github.com/macedonga/visor",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -5095,20 +5069,18 @@
     "download": "release-assets",
     "release_count": 33,
     "release_asset_count": 66,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study: download and demo exist, scope stays partial",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T04:54:13+00:00"
   },
   {
    "id": "sms-pc-port-case",
    "url": "https://github.com/chasem-dev/sms-pc-port",
-   "evidence_class": 0,
+   "evidence_class": 2,
    "basis": "override",
    "signals": {
     "code": true,
@@ -5119,14 +5091,12 @@
     "download": "release-assets",
     "release_count": 1,
     "release_asset_count": 22,
-    "demo": [
-     "image"
-    ],
-    "media_count": 4,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Super Mario Sunshine PC port from the matching decompilation; releases and screenshots.",
+   "reason": "no usable demo evidence: no screenshot, video or playable demo",
    "checked_at": "2026-11-01T04:54:13+00:00"
   },
   {
@@ -5246,7 +5216,7 @@
   {
    "id": "2ship2harkinian-mm-port-case",
    "url": "https://github.com/2ship2harkinian/2ship2harkinian",
-   "evidence_class": 0,
+   "evidence_class": 2,
    "basis": "override",
    "signals": {
     "code": true,
@@ -5257,20 +5227,18 @@
     "download": "release-assets",
     "release_count": 16,
     "release_asset_count": 48,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Majora's Mask 2Ship port for Windows/Linux/macOS; releases and screenshots.",
+   "reason": "no usable demo evidence: no screenshot, video or playable demo",
    "checked_at": "2026-10-31T15:17:32+00:00"
   },
   {
    "id": "ship-of-harkinian-oot-port-case",
    "url": "https://github.com/HarbourMasters/Shipwright",
-   "evidence_class": 0,
+   "evidence_class": 2,
    "basis": "override",
    "signals": {
     "code": true,
@@ -5281,14 +5249,12 @@
     "download": "release-assets",
     "release_count": 53,
     "release_asset_count": 234,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Ocarina of Time PC port (Ship of Harkinian); releases and screenshots.",
+   "reason": "no usable demo evidence: no screenshot, video or playable demo",
    "checked_at": "2026-10-31T15:17:34+00:00"
   },
   {
@@ -5503,7 +5469,7 @@
   {
    "id": "ghostship-sm64-port-case",
    "url": "https://github.com/HarbourMasters/Ghostship",
-   "evidence_class": 0,
+   "evidence_class": 2,
    "basis": "override",
    "signals": {
     "code": true,
@@ -5514,14 +5480,12 @@
     "download": "release-assets",
     "release_count": 5,
     "release_asset_count": 17,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete SM64 port build; releases and screenshots.",
+   "reason": "no usable demo evidence: no screenshot, video or playable demo",
    "checked_at": "2026-10-31T15:17:40+00:00"
   },
   {
@@ -5551,7 +5515,7 @@
   {
    "id": "dusklight-twilight-princess-port-case",
    "url": "https://github.com/TwilitRealm/dusklight",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -5562,14 +5526,12 @@
     "download": "release-assets",
     "release_count": 24,
     "release_asset_count": 129,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study demo is documented but docs do not cover the full feature set",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:17:41+00:00"
   },
   {
@@ -5669,7 +5631,7 @@
   {
    "id": "sotn-matching-decomp-case",
    "url": "https://github.com/Xeeynamo/sotn-decomp",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -5680,14 +5642,12 @@
     "download": "release-assets",
     "release_count": 1,
     "release_asset_count": 7,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study: download and demo exist, scope stays partial",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T04:54:17+00:00"
   },
   {
@@ -6259,7 +6219,7 @@
   {
    "id": "banjo-recompiled-case",
    "url": "https://github.com/BanjoRecomp/BanjoRecomp",
-   "evidence_class": 0,
+   "evidence_class": 2,
    "basis": "override",
    "signals": {
     "code": true,
@@ -6270,14 +6230,12 @@
     "download": "release-assets",
     "release_count": 3,
     "release_asset_count": 14,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Banjo-Kazooie static recompilation; releases and screenshots.",
+   "reason": "no usable demo evidence: no screenshot, video or playable demo",
    "checked_at": "2026-11-01T04:54:24+00:00"
   },
   {
@@ -6305,7 +6263,7 @@
   {
    "id": "paperboat-paper-mario-port-case",
    "url": "https://github.com/HarbourMasters/PaperBoat",
-   "evidence_class": 0,
+   "evidence_class": 2,
    "basis": "override",
    "signals": {
     "code": true,
@@ -6316,14 +6274,12 @@
     "download": "release-assets",
     "release_count": 4,
     "release_asset_count": 12,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Paper Mario native port from the decompilation; releases and screenshots.",
+   "reason": "no usable demo evidence: no screenshot, video or playable demo",
    "checked_at": "2026-11-01T04:54:24+00:00"
   },
   {
@@ -6395,7 +6351,7 @@
   {
    "id": "lighthouse-banjo-kazooie-port-case",
    "url": "https://github.com/HarbourMasters/Lighthouse",
-   "evidence_class": 0,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -6406,14 +6362,12 @@
     "download": "release-assets",
     "release_count": 8,
     "release_asset_count": 24,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study documenting a complete reimplementation",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:18:16+00:00"
   },
   {
@@ -6533,7 +6487,7 @@
   {
    "id": "symphonyrecomp-case",
    "url": "https://github.com/BlackLabelHQ/SymphonyRecomp",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -6544,14 +6498,12 @@
     "download": "release-assets",
     "release_count": 10,
     "release_asset_count": 47,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study: download and demo exist, scope stays partial",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:18:18+00:00"
   },
   {
@@ -6718,7 +6670,7 @@
   {
    "id": "mikupan-fatal-frame-port-case",
    "url": "https://github.com/Mikompilation/MikuPan",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -6729,20 +6681,18 @@
     "download": "release-assets",
     "release_count": 1,
     "release_asset_count": 3,
-    "demo": [
-     "image"
-    ],
-    "media_count": 2,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study: download and demo exist, scope stays partial",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:18:28+00:00"
   },
   {
    "id": "starfox64-recompiled-case",
    "url": "https://github.com/sonicdcer/Starfox64Recomp",
-   "evidence_class": 0,
+   "evidence_class": 2,
    "basis": "override",
    "signals": {
     "code": true,
@@ -6753,14 +6703,12 @@
     "download": "release-assets",
     "release_count": 4,
     "release_asset_count": 24,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Star Fox 64 static recompilation; releases and screenshots.",
+   "reason": "no usable demo evidence: no screenshot, video or playable demo",
    "checked_at": "2026-11-01T04:54:31+00:00"
   },
   {
@@ -6832,7 +6780,7 @@
   {
    "id": "starship-sf64-pc-port-case",
    "url": "https://github.com/HarbourMasters/Starship",
-   "evidence_class": 0,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -6843,14 +6791,12 @@
     "download": "release-assets",
     "release_count": 2,
     "release_asset_count": 4,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study documenting a complete reimplementation",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:18:32+00:00"
   },
   {
@@ -6903,7 +6849,7 @@
   {
    "id": "mariokart64-recompiled-case",
    "url": "https://github.com/sonicdcer/MarioKart64Recomp",
-   "evidence_class": 0,
+   "evidence_class": 2,
    "basis": "override",
    "signals": {
     "code": true,
@@ -6914,14 +6860,12 @@
     "download": "release-assets",
     "release_count": 2,
     "release_asset_count": 10,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Mario Kart 64 static recompilation; releases and screenshots.",
+   "reason": "no usable demo evidence: no screenshot, video or playable demo",
    "checked_at": "2026-10-31T15:18:34+00:00"
   },
   {
@@ -7065,7 +7009,7 @@
   {
    "id": "spaghettikart-mk64-port-case",
    "url": "https://github.com/HarbourMasters/SpaghettiKart",
-   "evidence_class": 0,
+   "evidence_class": 2,
    "basis": "override",
    "signals": {
     "code": true,
@@ -7076,14 +7020,12 @@
     "download": "release-assets",
     "release_count": 3,
     "release_asset_count": 9,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Mario Kart 64 port build (SpaghettiKart); releases and screenshots.",
+   "reason": "no usable demo evidence: no screenshot, video or playable demo",
    "checked_at": "2026-11-01T04:54:33+00:00"
   },
   {
@@ -7362,7 +7304,7 @@
   {
    "id": "decomp-toolkit",
    "url": "https://github.com/encounter/decomp-toolkit",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -7373,14 +7315,12 @@
     "download": "release-assets",
     "release_count": 77,
     "release_asset_count": 611,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:18:56+00:00"
   },
   {
@@ -7433,7 +7373,7 @@
   {
    "id": "openra-engine-case",
    "url": "https://github.com/OpenRA/OpenRA",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -7444,20 +7384,18 @@
     "download": "release-assets",
     "release_count": 100,
     "release_asset_count": 667,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study demo is documented but docs do not cover the full feature set",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:18:55+00:00"
   },
   {
    "id": "rizin",
    "url": "https://github.com/rizinorg/rizin",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -7468,14 +7406,12 @@
     "download": "release-assets",
     "release_count": 29,
     "release_asset_count": 279,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: tool entry targeting binary analysis",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T04:54:36+00:00"
   },
   {
@@ -7499,7 +7435,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: integration entry targeting binary analysis",
+   "reason": "not a full software reconstruction: analysis entry",
    "checked_at": "2026-11-01T04:54:35+00:00"
   },
   {
@@ -7741,7 +7677,7 @@
   {
    "id": "himuro-fatal-frame-decomp-case",
    "url": "https://github.com/Mikompilation/Himuro",
-   "evidence_class": 0,
+   "evidence_class": 2,
    "basis": "override",
    "signals": {
     "code": true,
@@ -7752,14 +7688,12 @@
     "download": "release",
     "release_count": 1,
     "release_asset_count": 0,
-    "demo": [
-     "image"
-    ],
-    "media_count": 6,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Fatal Frame decompilation with US/EU code reported fully matched; builds and screenshots.",
+   "reason": "no usable demo evidence: no screenshot, video or playable demo",
    "checked_at": "2026-11-01T04:54:39+00:00"
   },
   {
@@ -8601,7 +8535,7 @@
   {
    "id": "b2r2",
    "url": "https://github.com/B2R2-org/B2R2",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -8612,14 +8546,12 @@
     "download": "release-assets",
     "release_count": 15,
     "release_asset_count": 12,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "download and demo exist, but the described scope is a partial feature or patch",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:19:39+00:00"
   },
   {
@@ -8765,7 +8697,7 @@
   {
    "id": "dembrandt",
    "url": "https://github.com/dembrandt/dembrandt",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -8776,14 +8708,12 @@
     "download": "release",
     "release_count": 71,
     "release_asset_count": 0,
-    "demo": [
-     "image"
-    ],
-    "media_count": 3,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: tool entry",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T04:54:51+00:00"
   },
   {
@@ -8857,7 +8787,7 @@
   {
    "id": "reverify-claim-verifier",
    "url": "https://github.com/2akouwu/reverify",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -8868,14 +8798,12 @@
     "download": "release",
     "release_count": 15,
     "release_asset_count": 0,
-    "demo": [
-     "image"
-    ],
-    "media_count": 2,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "download and demo exist, but the described scope is a partial feature or patch",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:19:51+00:00"
   },
   {
@@ -8923,7 +8851,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: tool entry",
+   "reason": "not a full software reconstruction: analysis entry",
    "checked_at": "2026-11-01T04:54:53+00:00"
   },
   {
@@ -9398,7 +9326,7 @@
   {
    "id": "bepinex",
    "url": "https://github.com/BepInEx/BepInEx",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -9409,14 +9337,12 @@
     "download": "release-assets",
     "release_count": 49,
     "release_asset_count": 152,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "download and demo exist, but the described scope is a partial feature or patch",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T04:55:02+00:00"
   },
   {
@@ -10033,7 +9959,7 @@
   {
    "id": "coop-anything",
    "url": "https://github.com/cranebeaker/coop-anything",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10044,14 +9970,12 @@
     "download": "package",
     "release_count": 0,
     "release_asset_count": 0,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: integration entry",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-10-31T15:20:36+00:00"
   },
   {
@@ -10947,7 +10871,7 @@
   {
    "id": "rexglue-sdk",
    "url": "https://github.com/rexglue/rexglue-sdk",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10958,14 +10882,12 @@
     "download": "release-assets",
     "release_count": 34,
     "release_asset_count": 104,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "download and demo exist, but the described scope is a partial feature or patch",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T04:55:19+00:00"
   },
   {
@@ -11031,10 +10953,9 @@
     "release_count": 100,
     "release_asset_count": 1036,
     "demo": [
-     "image",
      "demo-link"
     ],
-    "media_count": 16,
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
@@ -12558,7 +12479,7 @@
   {
    "id": "gran-turismo-4-matching-decomp-case",
    "url": "https://github.com/gustavocanepa/gt4-decomp",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -12569,14 +12490,12 @@
     "download": "package",
     "release_count": 0,
     "release_asset_count": 0,
-    "demo": [
-     "image"
-    ],
-    "media_count": 2,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study: download and demo exist, scope stays partial",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T04:55:39+00:00"
   },
   {
@@ -13903,7 +13822,7 @@
   {
    "id": "pyatv-apple-tv-airplay-protocols-case",
    "url": "https://github.com/postlund/pyatv",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -13914,14 +13833,12 @@
     "download": "release-assets",
     "release_count": 71,
     "release_asset_count": 52,
-    "demo": [
-     "image"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study: download and demo exist, scope stays partial",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T10:40:43+00:00"
   },
   {

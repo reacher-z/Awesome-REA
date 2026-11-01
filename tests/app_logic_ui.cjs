@@ -551,6 +551,10 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.deepEqual([badge.textContent, hasClass(badge, 'evidence-class-2'), badge.title.includes('evidence strength'), badge.attrs['aria-label']], ['C2', true, true, 'Evidence class Class 2: code & docs, no demo or download']);
     const preview = byClass(app.element('resource-grid').children[0], 'card-preview')[0];
     assert.deepEqual([preview.children[0].src, preview.children[0].alt, preview.children[0].attrs.loading, preview.children.length], ['previews/curated-2.png', "Demo screenshot from the project's public documentation", 'lazy', 1]);
+    // A demo without an extractable screenshot shows a compact placeholder instead.
+    const demo = await loaded('?class=1', {catalog: catalogOf([curatedRecord(1, {preview_kind: 'demo'})])});
+    const demoFigure = byClass(demo.element('resource-grid').children[0], 'card-preview')[0];
+    assert.deepEqual([hasClass(demoFigure, 'card-preview-demo'), demoFigure.children[1].textContent, byClass(demoFigure, 'img').length], [true, 'Demo available · no screenshot', 0]);
     // A rejected shared URL normalizes to "all" and every option then carries a count.
     const rejected = await loaded('?class=nine', {catalog: catalogOf(rows)});
     assert.equal(rejected.api.state.class, 'all');

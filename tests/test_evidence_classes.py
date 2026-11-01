@@ -47,6 +47,11 @@ class EvidenceClassDataTests(unittest.TestCase):
             self.assertEqual(record['kind'], 'case-study', entry['id'])
             self.assertNotIn('binary', record.get('targets', []), entry['id'])
 
+    def test_class_zero_entries_have_demo_evidence(self):
+        for entry in self.document['entries']:
+            if entry['evidence_class'] == 0:
+                self.assertTrue(entry['signals'].get('demo'), entry['id'])
+
     def test_overrides_exist_in_catalog_and_carry_notes(self):
         path = ROOT / 'data/evidence-class-overrides.json'
         document = json.loads(path.read_text(encoding='utf-8'))

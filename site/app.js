@@ -58,6 +58,7 @@ const UI = {
     "evidenceLegendNote": "Class 0 is a full software reconstruction; C1–C3 measure evidence.",
     "previewImageAlt": "Demo screenshot from the project's public documentation",
     "previewVideoAlt": "Demo video thumbnail from the project's public documentation",
+    "demoPlaceholder": "Demo available · no screenshot",
     "subjectNav": "Explore reverse engineering by target",
     "subjectBrowse": "Browse subject directories",
     "contributorsEyebrow": "BUILT WITH THE COMMUNITY",
@@ -236,6 +237,7 @@ const UI = {
     "evidenceLegendNote": "Class 0 为完整软件复现；C1–C3 衡量证据强度。",
     "previewImageAlt": "项目公开文档中的演示截图",
     "previewVideoAlt": "项目公开文档中演示视频的封面",
+    "demoPlaceholder": "有 demo · 暂无截图",
     "subjectNav": "按目标领域探索逆向工程",
     "subjectBrowse": "浏览各领域资源目录",
     "contributorsEyebrow": "与社区共同整理",
@@ -456,8 +458,10 @@ function requirementItems(record) {
 function card(record) {
   const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));
   if(record.evidence_class!==undefined){const classBadge=node("span","evidence-class evidence-class-"+record.evidence_class,"C"+record.evidence_class);const detail=t("evidenceClassDetail"+record.evidence_class);classBadge.title=t("evidenceClass"+record.evidence_class)+" · "+detail+". "+t("evidenceClassTitle");classBadge.setAttribute("aria-label",t("classLabel")+" "+t("evidenceClass"+record.evidence_class)+": "+detail);head.append(classBadge);}article.append(head);
-  // Class 0/1 entries with a documented demo carry a local preview image; others stay text-only.
+  // Class 0/1 entries with a documented demo carry a local preview image; a demo
+  // without an extractable screenshot shows a small placeholder instead.
   if(record.preview){const figure=node("figure","card-preview");const image=node("img");image.src=record.preview;image.alt=t(record.preview_kind==="video"?"previewVideoAlt":"previewImageAlt");image.setAttribute("loading","lazy");image.setAttribute("decoding","async");figure.append(image);if(record.preview_kind==="video"){const play=node("span","card-preview-play","▶");play.setAttribute("aria-hidden","true");figure.append(play);}article.append(figure);}
+  else if(record.preview_kind==="demo"){const figure=node("figure","card-preview card-preview-demo");const play=node("span","card-preview-demo-icon","▶");play.setAttribute("aria-hidden","true");figure.append(play,node("span","card-preview-demo-label",t("demoPlaceholder")));article.append(figure);}
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
   const meta=node("div","card-meta");meta.append(node("span","card-category",label(state.categoryLabels,record.category)));article.append(meta);
   const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");if(!fillRequirements(list,record)){state.pendingRequirements.push([list,record]);details.addEventListener("toggle",()=>{if(details.open)loadDetails();});}details.append(list);
