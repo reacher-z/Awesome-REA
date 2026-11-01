@@ -1,8 +1,8 @@
-# 精选条目证据档位（Class 0-3，v1）
+# 精选条目证据档位（Class 0-3，v2）
 
-状态：v1，自动生成后人工覆盖修订。口径版本：`evidence-class-v1`。生成脚本：[`scripts/classify_evidence_classes.py`](../scripts/classify_evidence_classes.py)。数据：[`data/evidence-classes.json`](../data/evidence-classes.json)。
+状态：v2，自动生成后人工覆盖修订。口径版本：`evidence-class-v2`。生成脚本：[`scripts/classify_evidence_classes.py`](../scripts/classify_evidence_classes.py)。数据：[`data/evidence-classes.json`](../data/evidence-classes.json)。
 
-本文件定义主页精选目录全部 595 个条目的**证据档位**。档位衡量"公开证据能支撑多强的结论"：文档覆盖度、下载方式、图片或视频演示。它**不是**复现完整度或质量判断；档位也不代表本目录安装、运行或验证过任何条目。
+本文件定义主页精选目录全部 596 个条目的**证据档位**。**Class 0 只保留完整的软件复现案例**（`kind: case-study`）；C1–C3 衡量"公开证据能支撑多强的结论"：文档覆盖度、下载方式、图片或视频演示。C1–C3 **不是**复现完整度或质量判断；所有档位都不代表本目录安装、运行或验证过任何条目。
 
 档位展示在主页每张卡片的 `C0`–`C3` 徽章上，筛选栏下方有档位图例，并可通过"证据档位"下拉筛选。
 
@@ -10,8 +10,8 @@
 
 | 档位 | 定义 | 徽章 |
 | --- | --- | --- |
-| Class 0 | 文档讲完整功能，有下载方式，有图片或视频 demo | C0 |
-| Class 1 | 有下载方式和图片视频 demo，但更多是部分功能或功能补丁，不够完整复现 | C1 |
+| Class 0 | **完整的软件复现案例**（`kind: case-study`）：文档讲完整功能，有下载方式和图片或视频 demo；工具、集成、指南等非复现条目即使证据完整也不进入 Class 0 | C0 |
+| Class 1 | 有下载方式和图片视频 demo，但更多是部分功能或功能补丁，或本身不是软件复现（工具、集成、指南、binary 分析条目） | C1 |
 | Class 2 | 缺少 demo 或下载方式，但至少有 code 和文档；不确定能不能 build | C2 |
 | Class 3 | 无 code 或无文档，只是进度记录或笔记分享 | C3 |
 
@@ -35,7 +35,7 @@
 
 ## 2. 方法与局限
 
-- 595 条中，518 条通过 GitHub REST 读取仓库元数据、releases（含产物数）和 README；2 条走 GitLab REST；37 条（如 `rea.tools`、博客、文档站）抓取页面本身，并检测页面内的仓库链接、图片与视频；另有 38 条人工覆盖，见下文。
+- 596 条中，519 条通过 GitHub REST 读取仓库元数据、releases（含产物数）和 README；2 条走 GitLab REST；37 条（如 `rea.tools`、博客、文档站）抓取页面本身，并检测页面内的仓库链接、图片与视频；另有 38 条人工覆盖，见下文。
 - 图片过滤掉徽章类（shields.io、CI badge、logo 等），避免把项目徽章当成 demo。
 - 主页对 Class 0/1 显示**示范截图**：`scripts/build_evidence_previews.py` 在 README 或页面中挑选评分最高的可用 demo 图片（优先截图/演示章节和描述性 alt；logo、徽章、二维码、群聊与赞助链接会被排除），视频 demo 取 YouTube 封面，写入 [`data/evidence-previews.json`](../data/evidence-previews.json)。`scripts/fetch_previews.py` 在构建前把图片下载到 `.cache/previews/`，构建再复制到站点的 `previews/` 目录，页面不外链第三方图片。没有合格图片的条目保持纯文字。
 - 抓取时间写入每条记录的 `checked_at`；信号保存在 `signals` 字段，供逐条审计。
