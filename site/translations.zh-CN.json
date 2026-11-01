@@ -5503,5 +5503,15 @@
       "macOS/Linux 支持及 CI 截图不代表与原产品一致；扫描版披露 PDF 未进行 OCR，非官方数据接口受限流，披露数据仍适用上游使用条款。",
       "核查的根目录/README 未识别出统一项目许可；仓库访问不授予外部市场数据权利。"
     ]
+  },
+  "crxviewer": {
+    "name": "CRX Viewer 浏览器扩展源码查看器",
+    "requirements": [
+      "版本 1.7.1 于 2026-09-01 提交，即所审阅的 master 最新提交，三份 manifest 均为此版本：面向 Chrome 88+ 和 Opera 74+ 的 Manifest V3 构建，以及面向 Firefox 115+ 的 Manifest V2 构建。仓库没有标签或发布版本；README 链接了 Chrome 网上应用店、Opera 和 addons.mozilla.org 的商店页面，以及一个可打开本地文件或 URL 的在线演示页面。",
+      "README 说明的安装方式是各扩展商店，未给出构建说明。make.js 使用 npm 中的 shelljs 和 less 编译器构建 Chrome、Opera、Firefox 及网页版软件包，并用 7z 打包。",
+      "该扩展申请 tabs、storage、右键菜单、downloads 和 declarativeContent 权限，以及访问 Google CRX 下载端点的权限；获取托管在其他位置的扩展包前，会请求可选的全部网站访问权限。其 Firefox 构建会把对 addons.mozilla.org 的请求改经 services.addons.mozilla.org 发送，源码说明这是应对 Firefox 限制扩展读取部分 Mozilla 域名的变通做法，目前仍用于开发者提交的版本等非公开 XPI 文件。",
+      "查看器按原样展示扩展包内容：格式化只重新排版代码，不会还原混淆。下载的扩展仍受其作者权利及商店条款约束。",
+      "采用 MPL-2.0 许可；内置的 zip.js、Prism、js-beautify 和 SparkMD5 等库保留各自的许可证。本次未构建或安装。"
+    ]
   }
 }
