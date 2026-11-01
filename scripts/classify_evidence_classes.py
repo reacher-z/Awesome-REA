@@ -54,6 +54,18 @@ IMAGE_URL_EXCLUDES = ("shields.io", "badge", "travis-ci", "codecov", "coveralls"
 VIDEO_HOSTS = ("youtube.com", "youtu.be", "vimeo.com", "bilibili.com", "b23.tv", "youku.com",
                "ixigua.com", "douyin.com")
 MEDIA_EXTENSIONS = (".png", ".jpg", ".jpeg", ".gif", ".webp", ".apng", ".svg", ".mp4", ".webm", ".mov")
+# A demo image is a raster screenshot, not branding, a badge wall, a progress
+# chart or a chat-group invitation.
+DEMO_IMAGE_EXTENSIONS = (".png", ".jpg", ".jpeg", ".gif", ".webp", ".apng")
+DEMO_IMAGE_EXCLUDES = re.compile(
+    r"logo|badge|icon|banner|sponsor|powered\s*by|qr\s*code|二维码|群号|加群|\bqq\b|qq\s*群|"
+    r"微信|wechat|weixin|discord|telegram|donate|patreon|ko-?fi|star[- ]history|shields|"
+    r"progress|license|\bci\b|downloads?",
+    re.IGNORECASE)
+DEMO_IMAGE_HOSTS = ("user-images.githubusercontent.com", "cloud.githubusercontent.com",
+                    "cdn.discordapp.com", "media.discordapp.net")
+MARKDOWN_IMAGE_WITH_ALT = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)")
+HTML_IMAGE_TAG = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
 # Files that only appear when an author ships something to run.
 DOWNLOAD_EXTENSIONS = (".apk", ".exe", ".dmg", ".msi", ".appimage", ".deb", ".rpm", ".whl",
                        ".vsix", ".crx", ".xpi", ".ipa", ".tar.gz", ".7z")
@@ -338,16 +350,28 @@ def github_signals(meta: dict) -> dict:
     return signals
 
 
+def is_demo_image(src: str, alt: str) -> bool:
+    """A usable demo image: raster, and not branding, a badge or a chat invite."""
+    if not src or DEMO_IMAGE_EXCLUDES.search(src + " " + alt):
+        return False
+    path = src.lower().split("?", 1)[0]
+    if path.endswith(DEMO_IMAGE_EXTENSIONS):
+        return True
+    host = (urllib.parse.urlsplit(src).hostname or "").lower()
+    return host in DEMO_IMAGE_HOSTS
+
+
 def collect_media_signals(text: str, links: list[tuple[str, str]]) -> tuple[list[str], int]:
     demo: list[str] = []
     media_count = 0
-    image_urls = MARKDOWN_IMAGE.findall(text) + HTML_IMAGE.findall(text)
     kept_images = 0
-    for image_url in image_urls:
-        lowered = image_url.lower()
-        if any(marker in lowered for marker in IMAGE_URL_EXCLUDES):
-            continue
-        if any(lowered.split("?")[0].endswith(extension) for extension in MEDIA_EXTENSIONS):
+    for alt, src in MARKDOWN_IMAGE_WITH_ALT.findall(text):
+        if is_demo_image(src, alt):
+            kept_images += 1
+    for tag in HTML_IMAGE_TAG.findall(text):
+        src = re.search(r"\bsrc=[\"']([^\"']+)[\"']", tag, re.IGNORECASE)
+        alt = re.search(r"\balt=[\"']([^\"']*)[\"']", tag, re.IGNORECASE)
+        if src and is_demo_image(src.group(1), alt.group(1) if alt else ""):
             kept_images += 1
     if kept_images:
         demo.append("image")
@@ -491,7 +515,10 @@ def main() -> None:
             entry["evidence_class"] = int(correction["evidence_class"])
             entry["basis"] = "override"
             entry["reason"] = correction.get("note", "manual override")
-        if entry["evidence_class"] == 0 and not is_full_reconstruction(record):
+        if entry["evidence_class"] == 0 and not signals["demo"]:
+            entry["evidence_class"] = 2
+            entry["reason"] = "no usable demo evidence: no screenshot, video or playable demo"
+        elif entry["evidence_class"] == 0 and not is_full_reconstruction(record):
             entry["evidence_class"] = 1
             entry["reason"] = "not a full software reconstruction: analysis entry"
         counts[entry["evidence_class"]] += 1

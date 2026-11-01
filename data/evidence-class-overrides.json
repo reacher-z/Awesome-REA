@@ -3,7 +3,7 @@
  "meta": {
   "note": "Manual evidence-class corrections. Entries here override the automated result of scripts/classify_evidence_classes.py; each carries the reason a reviewer disagreed with the heuristic. Add entries as {\"id\", \"evidence_class\", \"note\"}; IDs must exist in the curated catalog.",
   "review_pass": "2026-11-01: narrowed Class 0 to full software reconstruction cases; six partial case studies moved to Class 1.",
-  "policy": "Whole-product reconstructions (native ports of a complete game, complete matching decompilations, static recompilations of a shipped release) with download, demo and full docs count as Class 0 even when the description's wording ('builds a port') matches the partial-scope heuristic."
+  "policy": "Whole-product reconstructions with a real demo (non-branding raster screenshot, video or playable link) count as Class 0; logos, badges, SVG progress charts and chat invitations do not count as demos, so such entries stay at the evidence-based class."
  },
  "entries": [
   {
@@ -18,8 +18,8 @@
   },
   {
    "id": "battleship-port-case",
-   "evidence_class": 0,
-   "note": "Complete Super Smash Bros. N64 port via libultraship; releases and screenshots."
+   "evidence_class": 2,
+   "note": "Complete Super Smash Bros. N64 port via libultraship; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
   },
   {
    "id": "plx-native-case",
@@ -53,18 +53,18 @@
   },
   {
    "id": "sms-pc-port-case",
-   "evidence_class": 0,
-   "note": "Complete Super Mario Sunshine PC port from the matching decompilation; releases and screenshots."
+   "evidence_class": 2,
+   "note": "Complete Super Mario Sunshine PC port from the matching decompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
   },
   {
    "id": "2ship2harkinian-mm-port-case",
-   "evidence_class": 0,
-   "note": "Complete Majora's Mask 2Ship port for Windows/Linux/macOS; releases and screenshots."
+   "evidence_class": 2,
+   "note": "Complete Majora's Mask 2Ship port for Windows/Linux/macOS; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
   },
   {
    "id": "ship-of-harkinian-oot-port-case",
-   "evidence_class": 0,
-   "note": "Complete Ocarina of Time PC port (Ship of Harkinian); releases and screenshots."
+   "evidence_class": 2,
+   "note": "Complete Ocarina of Time PC port (Ship of Harkinian); releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
   },
   {
    "id": "project-arwing-star-fox-recomp-case",
@@ -78,8 +78,8 @@
   },
   {
    "id": "ghostship-sm64-port-case",
-   "evidence_class": 0,
-   "note": "Complete SM64 port build; releases and screenshots."
+   "evidence_class": 2,
+   "note": "Complete SM64 port build; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
   },
   {
    "id": "dk64-recompiled-case",
@@ -103,13 +103,13 @@
   },
   {
    "id": "banjo-recompiled-case",
-   "evidence_class": 0,
-   "note": "Complete Banjo-Kazooie static recompilation; releases and screenshots."
+   "evidence_class": 2,
+   "note": "Complete Banjo-Kazooie static recompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
   },
   {
    "id": "paperboat-paper-mario-port-case",
-   "evidence_class": 0,
-   "note": "Complete Paper Mario native port from the decompilation; releases and screenshots."
+   "evidence_class": 2,
+   "note": "Complete Paper Mario native port from the decompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
   },
   {
    "id": "lost-odyssey-recomp-case",
@@ -133,8 +133,8 @@
   },
   {
    "id": "starfox64-recompiled-case",
-   "evidence_class": 0,
-   "note": "Complete Star Fox 64 static recompilation; releases and screenshots."
+   "evidence_class": 2,
+   "note": "Complete Star Fox 64 static recompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
   },
   {
    "id": "ctr-turbocharged-port-case",
@@ -143,13 +143,13 @@
   },
   {
    "id": "mariokart64-recompiled-case",
-   "evidence_class": 0,
-   "note": "Complete Mario Kart 64 static recompilation; releases and screenshots."
+   "evidence_class": 2,
+   "note": "Complete Mario Kart 64 static recompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
   },
   {
    "id": "spaghettikart-mk64-port-case",
-   "evidence_class": 0,
-   "note": "Complete Mario Kart 64 port build (SpaghettiKart); releases and screenshots."
+   "evidence_class": 2,
+   "note": "Complete Mario Kart 64 port build (SpaghettiKart); releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
   },
   {
    "id": "king-kong-recompiled-case",
@@ -193,8 +193,8 @@
   },
   {
    "id": "himuro-fatal-frame-decomp-case",
-   "evidence_class": 0,
-   "note": "Fatal Frame decompilation with US/EU code reported fully matched; builds and screenshots."
+   "evidence_class": 2,
+   "note": "Fatal Frame decompilation with US/EU code reported fully matched; builds and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
   },
   {
    "id": "whatsapp-web-reveng-legacy-protocol-case",
