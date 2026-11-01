@@ -5,12 +5,12 @@
   "generated_at": "2026-11-01T11:22:32+00:00",
   "entry_count": 596,
   "class_counts": {
-   "0": 46,
-   "1": 223,
+   "0": 40,
+   "1": 229,
    "2": 298,
    "3": 29
   },
-  "override_count": 38,
+  "override_count": 39,
   "method": "GitHub REST API observations (repo meta, releases, README) for GitHub URLs; page observations for other hosts. Manual corrections in data/evidence-class-overrides.json win. Classes measure public evidence strength only; Class 0 is reserved for full software reconstruction cases.",
   "rubric": {
    "0": "A full software reconstruction case (kind: case-study) whose documentation covers the feature set, plus a download method and an image or video demo. Analysis tools, integrations, guides and other non-reconstruction entries stay at Class 1 even with complete evidence.",
@@ -886,7 +886,7 @@
   {
    "id": "ssbu-recomp-case",
    "url": "https://github.com/Denkishi/ssbu-recomp",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "override",
    "signals": {
     "code": true,
@@ -904,7 +904,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Full Smash Bros. Ultimate 13.0.4 static recompilation with a runtime; releases and screenshots.",
+   "reason": "Not a complete reconstruction: the project documents explicit mode limits.",
    "checked_at": "2026-11-01T04:53:42+00:00"
   },
   {
@@ -1171,7 +1171,7 @@
   {
    "id": "plx-native-case",
    "url": "https://github.com/GLinnik21/plx-native",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "override",
    "signals": {
     "code": true,
@@ -1189,7 +1189,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Prototype native port; releases and screenshots.",
+   "reason": "Reconstructs a media-client interface rather than the full application.",
    "checked_at": "2026-10-31T15:15:25+00:00"
   },
   {
@@ -6211,7 +6211,7 @@
   {
    "id": "d2r-mobile-switch-rehost-case",
    "url": "https://github.com/jhaizhou-ops/d2r-mobile",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "override",
    "signals": {
     "code": true,
@@ -6229,7 +6229,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Full Diablo II Resurrected rehosting onto Switch/mobile hardware; builds and screenshots.",
+   "reason": "Rehosts the original Switch program; not a source reconstruction of the software.",
    "checked_at": "2026-10-31T15:18:11+00:00"
   },
   {
@@ -6579,7 +6579,7 @@
   {
    "id": "melee-unlocked-case",
    "url": "https://github.com/Hero88go/melee-unlocked",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "override",
    "signals": {
     "code": true,
@@ -6598,7 +6598,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Playable Melee source-port build with two engines; releases and media.",
+   "reason": "Beta source port and static recompilation; incomplete build.",
    "checked_at": "2026-10-31T15:18:23+00:00"
   },
   {
@@ -7717,7 +7717,7 @@
   {
    "id": "driver-recomp-setup-host-case",
    "url": "https://github.com/alexbeavs-ps1-ports/driver-recomp",
-   "evidence_class": 0,
+   "evidence_class": 1,
    "basis": "override",
    "signals": {
     "code": true,
@@ -7735,7 +7735,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Driver static recompilation with host runtime; releases and screenshots.",
+   "reason": "A setup host and packaging layer for psxrecomp, not a reconstruction of the game.",
    "checked_at": "2026-11-01T04:54:41+00:00"
   },
   {
@@ -9281,8 +9281,8 @@
   {
    "id": "whatsapp-web-reveng-legacy-protocol-case",
    "url": "https://github.com/sigalor/whatsapp-web-reveng",
-   "evidence_class": 0,
-   "basis": "github-rest",
+   "evidence_class": 1,
+   "basis": "override",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -9299,7 +9299,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study documenting a complete reimplementation",
+   "reason": "Documents the legacy WhatsApp Web protocol; no software reconstruction.",
    "checked_at": "2026-11-01T04:54:56+00:00"
   },
   {
