@@ -968,7 +968,7 @@ def orchestrate(directory, *, manual_seed=None, execution_source=None, bootstrap
     # exit, incomplete status and unmet targets in the receipt for consumers.
     if code in (1, 124) and qualified_added > 0:
         print(f'CHECKPOINT_PROGRESS new_verified={qualified_added} planned={planned} '
-              f'outcome={outcome} scanner_exit_code={code}; target not reached, checkpoint saved', flush=True)
+              f'outcome={outcome} scanner_exit_code={code} run_target_reached={added == planned}; checkpoint saved', flush=True)
         return 0
     return 0 if code == 0 else 1
 
