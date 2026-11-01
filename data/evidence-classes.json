@@ -2,11 +2,11 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v1",
-  "generated_at": "2026-11-01T04:56:16+00:00",
-  "entry_count": 594,
+  "generated_at": "2026-11-01T10:40:43+00:00",
+  "entry_count": 595,
   "class_counts": {
    "0": 141,
-   "1": 127,
+   "1": 128,
    "2": 297,
    "3": 29
   },
@@ -13899,6 +13899,30 @@
    },
    "reason": "code and docs only: no download method and no demo",
    "checked_at": "2026-11-01T04:56:15+00:00"
+  },
+  {
+   "id": "pyatv-apple-tv-airplay-protocols-case",
+   "url": "https://github.com/postlund/pyatv",
+   "evidence_class": 1,
+   "basis": "github-rest",
+   "signals": {
+    "code": true,
+    "code_basis": "repo",
+    "docs": true,
+    "docs_bytes": 4546,
+    "docs_full": false,
+    "download": "release-assets",
+    "release_count": 71,
+    "release_asset_count": 52,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
+    "archived": false,
+    "unavailable": false
+   },
+   "reason": "case study: download and demo exist, scope stays partial",
+   "checked_at": "2026-11-01T10:40:43+00:00"
   }
  ]
 }
