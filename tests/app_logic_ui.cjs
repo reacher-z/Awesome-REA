@@ -536,7 +536,7 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
   // The evidence-class select filters curated records like the other facets: URL-carried values apply,
   // options carry live counts, rejected shared URLs fall back to "all", and cards carry the C badge.
   {
-    const rows = [curatedRecord(1), curatedRecord(2), curatedRecord(3), curatedRecord(4), curatedRecord(5)];
+    const rows = [curatedRecord(1), curatedRecord(2, {preview: 'previews/curated-2.png', preview_kind: 'image'}), curatedRecord(3), curatedRecord(4), curatedRecord(5)];
     const classOptions = a => a.element('class-select').children.map(option => [option.value, option.textContent, Boolean(option.disabled)]);
     const app = await loaded('?class=1', {catalog: catalogOf(rows)});
     assert.deepEqual(app.api.filtered().map(record => record.id), ['curated-1', 'curated-5'], '?class=1 filters before the first render');
@@ -544,10 +544,13 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.deepEqual(classOptions(app).find(([value]) => value === 'all'), ['all', 'All classes (5)', false]);
     assert.deepEqual(classOptions(app).find(([value]) => value === '0'), ['0', 'Class 0 (1)', false]);
     assert.deepEqual(classOptions(app).find(([value]) => value === '2'), ['2', 'Class 2 (1)', false]);
+    assert.equal(byClass(app.element('resource-grid').children[0], 'card-preview').length, 0, 'entries without a documented demo stay text-only');
     app.element('class-select').emit('change', '2');
     assert.deepEqual([urlParam(app, 'class'), app.api.filtered().map(record => record.id), app.element('clear-filters').hidden], ['2', ['curated-2'], false]);
     const badge = byClass(app.element('resource-grid').children[0], 'evidence-class')[0];
     assert.deepEqual([badge.textContent, hasClass(badge, 'evidence-class-2'), badge.title.includes('evidence strength'), badge.attrs['aria-label']], ['C2', true, true, 'Evidence class Class 2: code & docs, no demo or download']);
+    const preview = byClass(app.element('resource-grid').children[0], 'card-preview')[0];
+    assert.deepEqual([preview.children[0].src, preview.children[0].alt, preview.children[0].attrs.loading, preview.children.length], ['previews/curated-2.png', "Demo screenshot from the project's public documentation", 'lazy', 1]);
     // A rejected shared URL normalizes to "all" and every option then carries a count.
     const rejected = await loaded('?class=nine', {catalog: catalogOf(rows)});
     assert.equal(rejected.api.state.class, 'all');

@@ -15,6 +15,9 @@ def main():
     commands = [
         [sys.executable, 'scripts/validate.py'],
         ['node', '--check', 'site/app.js'],
+        # Preview images are downloaded into .cache/previews; build_site then
+        # copies them into dist so the page never hotlinks an external image.
+        [sys.executable, 'scripts/fetch_previews.py'],
     ]
     build = [sys.executable, 'scripts/build_site.py']
     if args.fontawesome_assets_url:

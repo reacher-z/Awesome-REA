@@ -234,6 +234,10 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .evidence-legend-dot-2{background:var(--class-2)}
 .evidence-legend-dot-3{background:var(--class-3)}
 .evidence-legend-note{font-style:italic}
+/* Demo previews exist only for Class 0/1 entries that document an image or video demo. */
+.card-preview{position:relative;display:flex;justify-content:center;margin:14px 0 0}
+.card-preview img{display:block;max-width:100%;max-height:220px;width:auto;height:auto;border-radius:8px}
+.card-preview-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--on-ink);font-size:30px;line-height:1;text-shadow:0 2px 10px rgba(0,0,0,.65);pointer-events:none}
 .card-description,.source-card-description{max-width:68ch;margin:14px 0 16px;color:var(--body);font-size:16px;line-height:1.8;overflow-wrap:anywhere}
 .source-card-empty{font-style:italic;color:var(--muted)}
 .source-related{display:grid;gap:10px;min-width:0;margin:0 0 17px}
@@ -513,7 +517,9 @@ html[lang="zh-CN"] .card-description,html[lang="zh-CN"] .source-card-description
 .layout-control select{min-height:44px;padding:7px 30px 7px 10px;border:1px solid var(--control);border-radius:7px;background:var(--surface);font-size:14px}
 .source-record-context{margin-top:14px}
 html[data-layout="compact"] .collection-home .resource-grid,html[data-layout="compact"] .collection-home .source-results{grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
-html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{display:grid;grid-template-columns:fit-content(70%) minmax(0,1fr);grid-template-areas:"heading heading" "description description" "meta details";gap:8px 24px;padding:20px 8px;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;align-items:start}
+html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{display:grid;grid-template-columns:fit-content(70%) minmax(0,1fr);grid-template-areas:"heading heading" "preview preview" "description description" "meta details";gap:8px 24px;padding:20px 8px;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;align-items:start}
+html[data-layout="compact"] .collection-home .card-preview{grid-area:preview;margin:6px 0 0}
+html[data-layout="compact"] .collection-home .card-preview img{max-height:190px}
 html[data-layout="compact"] .collection-home .resource-card:hover,html[data-layout="compact"] .collection-home .source-card:hover{background:var(--faint);box-shadow:none}
 html[data-layout="compact"] .collection-home .card-heading,html[data-layout="compact"] .collection-home .source-card-head{grid-area:heading;display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:baseline;gap:6px 12px}
 html[data-layout="compact"] .collection-home .card-heading h3,html[data-layout="compact"] .collection-home .source-card-head h3{flex:0 1 auto;font-size:18px;line-height:1.5;font-weight:700;text-wrap:pretty}
@@ -565,7 +571,9 @@ html[lang="zh-CN"][data-layout="compact"] .collection-home .card-description,htm
 /* Wide compact rows: targets, links and the details toggle sit in a right column beside the title and description.
    DOM and focus order are unchanged, and an opened details panel still spans the row. */
 @media(min-width:1101px){
-  html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{grid-template-columns:minmax(0,1fr) minmax(18rem,34%);grid-template-areas:"heading meta" "description meta" "description details";gap:0 40px}
+  html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{grid-template-columns:minmax(0,1fr) minmax(18rem,34%);grid-template-areas:"heading meta" "preview preview" "description meta" "description details";gap:0 40px}
+  html[data-layout="compact"] .collection-home .card-preview{grid-area:preview;margin:8px 0 4px}
+  html[data-layout="compact"] .collection-home .card-preview img{max-height:200px}
   html[data-layout="compact"] .collection-home .card-description,html[data-layout="compact"] .collection-home .source-card-description{margin-top:6px}
   html[data-layout="compact"] .collection-home .card-meta,html[data-layout="compact"] .collection-home .source-card-footer{flex-wrap:wrap;align-content:flex-start;gap:0 16px;padding-block:2px 0}
   /* Labels on the first line, links on the next: a zero-height break item, and links keep their DOM order. */

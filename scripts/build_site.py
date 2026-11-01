@@ -39,8 +39,11 @@ REPOSITORY_URL = "https://github.com/reacher-z/Awesome-REA"
 TARGETS = {"website", "game", "app", "binary", "firmware", "protocol"}
 # Record fields the homepage needs for its first render; catalog.json keeps every field.
 CATALOG_INDEX_FIELDS = ("id", "name", "name_zh", "url", "evidence_url", "description_en", "description_zh", "kind",
-                        "category", "group", "relationship", "targets", "verified_at", "evidence_class")
+                        "category", "group", "relationship", "targets", "verified_at", "evidence_class",
+                        "preview", "preview_kind")
 EVIDENCE_CLASSES = (0, 1, 2, 3)
+PREVIEWS_PATH = ROOT / "data" / "evidence-previews.json"
+PREVIEW_CACHE = ROOT / ".cache" / "previews"
 FONT_AWESOME_ICONS = {
     "arrow": "arrow-right", "external": "arrow-up-right-from-square",
     "search": "magnifying-glass", "copy": "copy", "check": "check",
@@ -187,6 +190,13 @@ def default_targets(record: dict) -> list[str]:
     return sorted(found or {"binary"})
 
 
+def cached_preview(url: str) -> Path | None:
+    """The locally downloaded preview for a URL, if scripts/fetch_previews.py ran."""
+    digest = hashlib.sha256(url.encode("utf-8")).hexdigest()
+    matches = sorted(PREVIEW_CACHE.glob(digest + ".*"))
+    return matches[0] if matches else None
+
+
 def build_site(output: Path, *, fontawesome_dir: Path | None = None,
                fontawesome_assets_url: str | None = None) -> tuple[int, int, int]:
     """Render a complete site into a fresh, caller-owned staging directory."""
@@ -194,6 +204,11 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     papers = json.loads((ROOT / "data" / "papers.json").read_text(encoding="utf-8"))
     evidence_classes = {entry["id"]: entry["evidence_class"] for entry
                         in json.loads((ROOT / "data" / "evidence-classes.json").read_text(encoding="utf-8"))["entries"]}
+    previews = {}
+    if PREVIEWS_PATH.is_file():
+        previews = {entry["id"]: entry for entry
+                    in json.loads(PREVIEWS_PATH.read_text(encoding="utf-8"))["entries"]}
+    preview_files = []
     resources = []
     for filename in ("rea-resources.json", "tool-resources.json"):
         for original in json.loads((ROOT / "data" / filename).read_text(encoding="utf-8")):
@@ -203,6 +218,14 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
             if evidence_classes[record["id"]] not in EVIDENCE_CLASSES:
                 raise ValueError(f"Invalid evidence class for {record['id']}: {evidence_classes[record['id']]}")
             record["evidence_class"] = evidence_classes[record["id"]]
+            preview = previews.get(record["id"])
+            if preview and record["evidence_class"] in (0, 1):
+                cached = cached_preview(preview["image_url"])
+                if cached:
+                    relative = f"previews/{record['id']}{cached.suffix}"
+                    record["preview"] = "/" + relative  # root-relative so /zh/ resolves it too
+                    record["preview_kind"] = preview["kind"]
+                    preview_files.append((cached, relative))
             translation = translations.get(record["id"], {})
             record["requirements_zh"] = record.get("requirements_zh") or translation.get("requirements", record["requirements"])
             record["name_zh"] = record.get("name_zh") or translation.get("name", record["name"])
@@ -225,6 +248,10 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
             shutil.copytree(path, output / path.name)
         else:
             shutil.copy2(path, output / path.name)
+    if preview_files:
+        (output / "previews").mkdir()
+        for cached, relative in preview_files:
+            shutil.copy2(cached, output / relative)
     html = (output / "index.html").read_text(encoding="utf-8")
     for key, value in {"RESOURCE_COUNT": len(resources), "INTEGRATION_COUNT": metadata["independent_integration_count"], "REVIEWED_AT": latest_review}.items():
         html = html.replace("{{" + key + "}}", str(value))
