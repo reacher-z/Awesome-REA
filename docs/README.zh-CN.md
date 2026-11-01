@@ -49,4 +49,4 @@
 
 | 文档 | 语言 | 状态 | 内容 |
 | --- | --- | --- | --- |
-| [rea-tracker 条目证据强度分](eval-platform-scores.zh-CN.md) | 中文 | 第一版基线，2026-10-29 | 对 rea-tracker `taxonomy.html` 全部条目的证据强度打分，附生成的 CSV、JSON 与离线查看页（[scores/](scores/)） |
+| [精选条目证据档位](evidence-classes.zh-CN.md) | 中文 | v1，自动生成 | 全部 529 条精选条目的 Class 0-3 证据档位，展示并支持筛选于主页；由 [classify_evidence_classes.py](../scripts/classify_evidence_classes.py) 生成到 [data/evidence-classes.json](../data/evidence-classes.json) |

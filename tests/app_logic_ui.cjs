@@ -91,7 +91,7 @@ function setup(query = '', {catalog, browser, extraMarkup = ''} = {}) {
 function curatedRecord(index, changes = {}) {
   return {id: 'curated-' + index, name: 'Curated ' + index, name_zh: '精选 ' + index, url: `https://github.com/curated/tool-${index}`,
     evidence_url: `https://github.com/curated/tool-${index}#readme`, description_en: 'Curated fixture ' + index, description_zh: '精选测试 ' + index,
-    category: 'dynamic-analysis', group: 'tools', kind: 'tool', relationship: 'foundation', targets: ['app'],
+    category: 'dynamic-analysis', group: 'tools', kind: 'tool', relationship: 'foundation', targets: ['app'], evidence_class: index % 4,
     requirements: ['Requirement ' + index], requirements_zh: ['条件 ' + index], verified_at: '2026-01-02T03:04:05Z', ...changes};
 }
 function repository(full_name, changes = {}) {
@@ -532,6 +532,31 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.equal(app.document.activeElement, app.element('source-search'));
     app.element('mode-curated').handlers.click();
     assert.deepEqual([app.api.sourceState.mode, app.element('mode-curated').attrs['aria-pressed'], urlParam(app, 'view')], ['curated', 'true', null], 'The default curated view stays out of the URL');
+  }
+  // The evidence-class select filters curated records like the other facets: URL-carried values apply,
+  // options carry live counts, rejected shared URLs fall back to "all", and cards carry the C badge.
+  {
+    const rows = [curatedRecord(1), curatedRecord(2), curatedRecord(3), curatedRecord(4), curatedRecord(5)];
+    const classOptions = a => a.element('class-select').children.map(option => [option.value, option.textContent, Boolean(option.disabled)]);
+    const app = await loaded('?class=1', {catalog: catalogOf(rows)});
+    assert.deepEqual(app.api.filtered().map(record => record.id), ['curated-1', 'curated-5'], '?class=1 filters before the first render');
+    assert.equal(app.element('class-select').value, '1');
+    assert.deepEqual(classOptions(app).find(([value]) => value === 'all'), ['all', 'All classes (5)', false]);
+    assert.deepEqual(classOptions(app).find(([value]) => value === '0'), ['0', 'Class 0 · full docs, download, demo (1)', false]);
+    assert.deepEqual(classOptions(app).find(([value]) => value === '2'), ['2', 'Class 2 · code & docs only (1)', false]);
+    app.element('class-select').emit('change', '2');
+    assert.deepEqual([urlParam(app, 'class'), app.api.filtered().map(record => record.id), app.element('clear-filters').hidden], ['2', ['curated-2'], false]);
+    const badge = byClass(app.element('resource-grid').children[0], 'evidence-class')[0];
+    assert.deepEqual([badge.textContent, hasClass(badge, 'evidence-class-2'), badge.title.includes('evidence strength')], ['C2', true, true]);
+    // A rejected shared URL normalizes to "all" and every option then carries a count.
+    const rejected = await loaded('?class=nine', {catalog: catalogOf(rows)});
+    assert.equal(rejected.api.state.class, 'all');
+    assert.equal(urlParam(rejected, 'class'), null);
+    assert.deepEqual(classOptions(rejected).find(([value]) => value === '3')[2], false);
+    for (const lang of ['en', 'zh']) {
+      const localized = await loaded(`?lang=${lang}`, {catalog: catalogOf(rows)});
+      assert.equal(localized.element('class-select').children[1].textContent.startsWith(lang === 'zh' ? 'Class 0 · 文档完整' : 'Class 0 · full docs'), true);
+    }
   }
   // Phones fold Type and Category behind “More filters”: the toggle counts active selects and opens when the page starts filtered.
   {

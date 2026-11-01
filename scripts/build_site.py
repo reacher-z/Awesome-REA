@@ -39,7 +39,8 @@ REPOSITORY_URL = "https://github.com/reacher-z/Awesome-REA"
 TARGETS = {"website", "game", "app", "binary", "firmware", "protocol"}
 # Record fields the homepage needs for its first render; catalog.json keeps every field.
 CATALOG_INDEX_FIELDS = ("id", "name", "name_zh", "url", "evidence_url", "description_en", "description_zh", "kind",
-                        "category", "group", "relationship", "targets", "verified_at")
+                        "category", "group", "relationship", "targets", "verified_at", "evidence_class")
+EVIDENCE_CLASSES = (0, 1, 2, 3)
 FONT_AWESOME_ICONS = {
     "arrow": "arrow-right", "external": "arrow-up-right-from-square",
     "search": "magnifying-glass", "copy": "copy", "check": "check",
@@ -191,10 +192,17 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     """Render a complete site into a fresh, caller-owned staging directory."""
     translations = json.loads((SOURCE / "translations.zh-CN.json").read_text(encoding="utf-8"))
     papers = json.loads((ROOT / "data" / "papers.json").read_text(encoding="utf-8"))
+    evidence_classes = {entry["id"]: entry["evidence_class"] for entry
+                        in json.loads((ROOT / "data" / "evidence-classes.json").read_text(encoding="utf-8"))["entries"]}
     resources = []
     for filename in ("rea-resources.json", "tool-resources.json"):
         for original in json.loads((ROOT / "data" / filename).read_text(encoding="utf-8")):
             record = dict(original)
+            if record["id"] not in evidence_classes:
+                raise ValueError(f"Evidence class missing: {record['id']}. Rerun scripts/classify_evidence_classes.py.")
+            if evidence_classes[record["id"]] not in EVIDENCE_CLASSES:
+                raise ValueError(f"Invalid evidence class for {record['id']}: {evidence_classes[record['id']]}")
+            record["evidence_class"] = evidence_classes[record["id"]]
             translation = translations.get(record["id"], {})
             record["requirements_zh"] = record.get("requirements_zh") or translation.get("requirements", record["requirements"])
             record["name_zh"] = record.get("name_zh") or translation.get("name", record["name"])
