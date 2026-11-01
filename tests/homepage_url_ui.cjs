@@ -49,6 +49,7 @@ const tests = {
         assert.equal(value(app, 'lang'), null);
         assert.equal(value(app, 'view'), null);
         assert.equal(value(app, 'layout'), null);
+        assert.equal(value(app, 'class'), null);
       }
       input(app, '#layout-select', 'cards', 'change');
       assert.equal(value(app, 'layout'), 'cards');
@@ -63,7 +64,7 @@ const tests = {
   },
   async rejected() {
     for (const pathname of ['/', '/zh/']) {
-      const query = '?category=bogus&kind=nope&target=moon&group=bogus&lang=invalid'
+      const query = '?category=bogus&kind=nope&target=moon&group=bogus&class=ten&lang=invalid'
         + '&view=unknown&layout=invalid&source-target=moon&sort=bogus&keep=one&keep=two#catalog';
       const app = application(query, {pathname});
       assert.equal(app.replacements.length, 0, 'do not remove unvalidated catalog fields before load');
@@ -73,13 +74,14 @@ const tests = {
       assert.equal(app.context.location.href, 'https://awesomerea.org' + pathname + '?keep=one&keep=two#catalog');
       assert.deepEqual(Array.from(app.context.location.searchParams.getAll('keep')), ['one', 'two']);
       for (const key of ['group', 'category', 'kind', 'target']) assert.equal(app.api.state[key], 'all');
+      assert.equal(app.api.state.class, 'all', 'a rejected evidence class normalizes too');
       assert.equal(app.api.sourceState.target, 'all');
       assert.equal(app.api.sourceState.sort, 'relevance');
       assert.equal(app.api.state.lang, pathname === '/zh/' ? 'zh' : 'en');
       app.api.applyLanguage(); await app.api.load();
       assert.equal(app.replacements.length, 1, 'render/reload after normalization is idempotent');
     }
-    const defaults = application('?view=curated&layout=compact&lang=zh&group=all&category=all&kind=all&target=all'
+    const defaults = application('?view=curated&layout=compact&lang=zh&group=all&category=all&kind=all&target=all&class=all'
       + '&q=&sourceq=&source-target=all&topic=&sort=relevance', {pathname: '/zh/'});
     await defaults.api.load();
     assert.equal(defaults.context.location.href, 'https://awesomerea.org/zh/');
@@ -135,7 +137,7 @@ const tests = {
     assert.deepEqual(paths(unavailable), CATALOG_REQUESTS);
   },
   async inactive() {
-    const filters = '?q=Fixture&group=tools&category=dynamic-analysis&kind=tool&target=app'
+    const filters = '?q=Fixture&group=tools&category=dynamic-analysis&kind=tool&target=app&class=2'
       + '&sourceq=project&source-target=protocol&topic=not-a-known-topic&sort=stars&keep=x&keep=y#details';
     for (const mode of ['curated', 'source-index']) {
       const query = mode === 'source-index' ? filters.replace('?', '?view=source-index&') : filters;
@@ -144,7 +146,7 @@ const tests = {
       await app.api.load(); await settle();
       assert.equal(app.context.location.href, original);
       assert.equal(app.replacements.length, 0);
-      const curatedKeys = ['q', 'group', 'category', 'kind', 'target'];
+      const curatedKeys = ['q', 'group', 'category', 'kind', 'target', 'class'];
       const sourceKeys = ['sourceq', 'source-target', 'topic', 'sort'];
       const saved = Object.fromEntries([...curatedKeys, ...sourceKeys].map(key => [key, value(app, key)]));
       app.api.setIndexMode(mode === 'curated' ? 'source-index' : 'curated'); await settle();

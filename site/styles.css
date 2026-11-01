@@ -31,6 +31,11 @@
   --monogram:#f3f1fb;
   --monogram-line:#e8e4f4;
   --faint:#fcfcfe;
+  /* Evidence-class dots: C0 full evidence, C1 partial scope, C2 code and docs, C3 notes. */
+  --class-0:#2f8f4e;
+  --class-1:#b08a1e;
+  --class-2:#4a7fb5;
+  --class-3:#98a0ad;
   --mono:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;
 }
@@ -67,6 +72,10 @@
     --monogram:#25243a;
     --monogram-line:#36345a;
     --faint:#1e1f29;
+    --class-0:#5bc987;
+    --class-1:#d3ac4e;
+    --class-2:#79abe0;
+    --class-3:#818897;
   }
 }
 *{box-sizing:border-box}
@@ -210,6 +219,12 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .card-title-link:hover,.source-title-link:hover{text-decoration:underline;text-decoration-color:var(--steel);text-underline-offset:4px}
 .card-title-link .icon,.source-title-link .icon{width:12px;height:12px;font-size:11px;vertical-align:baseline;margin-left:6px;color:var(--steel)}
 .resource-kind,.source-stars{flex:none;color:var(--muted);font:500 13px/1.5 var(--sans);font-variant-numeric:tabular-nums;border:1px solid var(--line);border-radius:6px;padding:3px 7px;background:var(--soft);white-space:nowrap}
+.evidence-class{flex:none;display:inline-flex;align-items:center;gap:6px;color:var(--muted);font:500 13px/1.5 var(--sans);border:1px solid var(--line);border-radius:6px;padding:3px 7px;background:var(--soft);white-space:nowrap;cursor:help}
+.evidence-class::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--class-3)}
+.evidence-class-0::before{background:var(--class-0)}
+.evidence-class-1::before{background:var(--class-1)}
+.evidence-class-2::before{background:var(--class-2)}
+.evidence-class-3::before{background:var(--class-3)}
 .card-description,.source-card-description{max-width:68ch;margin:14px 0 16px;color:var(--body);font-size:16px;line-height:1.8;overflow-wrap:anywhere}
 .source-card-empty{font-style:italic;color:var(--muted)}
 .source-related{display:grid;gap:10px;min-width:0;margin:0 0 17px}
