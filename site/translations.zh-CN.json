@@ -5290,5 +5290,15 @@
       "研讨会材料采用 GPL-2.0，但 README 将三个样本文件夹排除在该许可之外，仅供分析和教学使用，不得再分发：其中两个嵌入式 Linux 镜像据练习说明来自 WORMCON CTF 2021，另一个是 Mirai 僵尸网络程序，其练习说明称其为活跃恶意软件、不得执行，并存放在带密码的压缩包中。",
       "材料未提及 AI 或 REA 的使用。本合集阅读了 README、练习文件和容器配置，未打开幻灯片，未构建容器，也未处理任何样本。"
     ]
+  },
+  "pyatv-apple-tv-airplay-protocols-case": {
+    "name": "pyatv：逆向工程实现的 Apple TV 与 AirPlay 协议客户端",
+    "requirements": [
+      "审阅时的版本为 0.18.0，于 2026-06-19 同时发布到 GitHub 和 PyPI，主要为兼容新版 tvOS；所审阅的 master 分支提交即发布提交，而 v0.18.0 标签指向另一个并行提交，两者仅在 CHANGES.md 和 pyatv/const.py 上有差异。协议文档只涵盖已逆向得出的内容：Companion Link 一节自称大多是推测和猜想，OPACK 的描述并不完整且未经验证，MRP 的实现一节仍标为待定。致谢页称 MRP 支持建立在 Jean Regisser 的 mediaremotetv-protocol 研究成果之上。",
+      "仓库未附带任何 Apple 软件、固件或密钥。pyatv 连接使用者自己在局域网中的 Apple TV、HomePod、AirPort Express 或其他 AirPlay 接收器；多数协议需要用设备上显示的 PIN 配对，凭据和设置保存在 pyatv 的存储中。tvOS 15 及更高版本因 MRP 已移入 AirPlay 2 数据流，必须先设置好 AirPlay；RAOP 仅支持旧式配对。",
+      "需要 Python 3.9+，可从 PyPI 或项目的容器镜像安装；安装指南列出在 Debian 类系统上构建依赖所需的 build-essential、libssl-dev、libffi-dev 和 Python 头文件，RAOP 音频推流依赖 miniaudio。CI 在 Ubuntu、macOS 和 Windows 上以 Python 3.9 至 3.14 运行。",
+      "测试以单元测试为主，另有针对 DMAP、MRP、Companion、RAOP、mDNS 和扫描的功能测试；据测试指南，这些测试连接的模拟设备只实现有限功能，且仅求与 pyatv 兼容。它们不能证明与 Apple 实现的一致性；atvproxy 也被描述为处于孵化阶段、依赖内部 API 的脚本。本次审阅未运行测试，也未连接设备。",
+      "采用 MIT 许可（LICENSE.md）。Apple 的协议、设备和软件保留其各自权利；pyatv 是独立实现，并非恢复出的 Apple 源码。所审阅的来源未表明使用了 REA 或 AI。"
+    ]
   }
 }

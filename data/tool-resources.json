@@ -16211,5 +16211,44 @@
       "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/docker_run.sh",
       "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/LICENSE"
     ]
+  },
+  {
+    "id": "pyatv-apple-tv-airplay-protocols-case",
+    "name": "pyatv: a reverse-engineered client for Apple TV and AirPlay protocols",
+    "url": "https://github.com/postlund/pyatv",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Asyncio Python library and command-line tools that act as an independent client for Apple TV and AirPlay devices by reimplementing the DMAP/DACP, Media Remote Protocol, Companion Link, AirPlay and RAOP protocols, which its protocol documentation describes as reverse engineered. That page records the recovered binary formats, Zeroconf properties, the OPACK encoding, pair-setup and pair-verify exchanges and Companion commands, with some request headers taken from Wireshark captures of the iPhone Remote app, and the bundled atvproxy relays MRP, Companion and AirPlay sessions to print decrypted messages for further analysis. On this basis pyatv provides remote control, metadata with push updates, app and account switching, audio-output management and AirPlay streaming to Apple TVs, HomePods and third-party receivers.",
+    "description_zh": "基于 asyncio 的 Python 库和命令行工具，通过重新实现 DMAP/DACP、Media Remote Protocol、Companion Link、AirPlay 和 RAOP 协议，充当 Apple TV 与 AirPlay 设备的独立客户端；其协议文档称这些协议均经逆向工程得出。该文档记录了恢复出的二进制格式、Zeroconf 属性、OPACK 编码、pair-setup 与 pair-verify 交互以及 Companion 命令，其中部分请求头取自 iPhone Remote 应用的 Wireshark 抓包；附带的 atvproxy 可中继 MRP、Companion 和 AirPlay 会话并打印解密后的消息，供进一步分析。在此基础上，pyatv 提供遥控、带推送更新的元数据、应用与账户切换、音频输出管理，以及向 Apple TV、HomePod 和第三方接收器的 AirPlay 推流。",
+    "evidence_url": "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/documentation/protocols.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: 0.18.0, published to GitHub and PyPI on 2026-06-19 as a tvOS-compatibility release; the reviewed master commit is the release commit, while the v0.18.0 tag points to a parallel commit that differs only in CHANGES.md and pyatv/const.py. The protocol page limits itself to what has been reverse engineered: its Companion Link section is called mostly speculation and guesses, the OPACK description is incomplete and unverified, and the MRP implementation section is still marked TBD. The acknowledgements say MRP support builds on Jean Regisser's mediaremotetv-protocol findings.",
+      "No Apple software, firmware or keys are bundled. pyatv connects to the user's own Apple TV, HomePod, AirPort Express or other AirPlay receiver on the local network; most protocols require pairing with a PIN shown on the device, and credentials and settings are kept in pyatv's storage. On tvOS 15 and later AirPlay must be set up because MRP moved into an AirPlay 2 stream, and RAOP supports only legacy pairing.",
+      "Requires Python 3.9+ and installs from PyPI or the project's container images; the installation guide lists build-essential, libssl-dev, libffi-dev and Python headers for building dependencies on Debian-style systems, and RAOP audio streaming relies on miniaudio. CI runs on Ubuntu, macOS and Windows with Python 3.9 to 3.14.",
+      "Tests are mostly unit tests, plus functional tests for DMAP, MRP, Companion, RAOP, mDNS and scanning that run against a fake device which, according to the testing guide, implements limited functionality and is only meant to be compatible with pyatv. They do not establish conformance with Apple's implementations, and atvproxy is described as an incubating script that depends on internal APIs. This review ran neither tests nor devices.",
+      "MIT (LICENSE.md). Apple's protocols, devices and software keep their own rights; pyatv is an independent implementation, not recovered Apple source. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/README.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/documentation/protocols.md#L13-L18",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/documentation/protocols.md#L363-L375",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/documentation/atvproxy.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/documentation/supported_features.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/documentation/documentation.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/internals/testing.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/support/acknowledgements.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/.github/workflows/tests.yml",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/pyproject.toml",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/CHANGES.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/LICENSE.md",
+      "https://github.com/postlund/pyatv/releases/tag/v0.18.0",
+      "https://pypi.org/project/pyatv/0.18.0/"
+    ]
   }
 ]
