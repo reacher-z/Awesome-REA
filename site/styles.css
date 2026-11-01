@@ -210,6 +210,15 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 
 /* Resource cards keep their content readable at both desktop and phone widths. */
 .resource-grid,.source-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+/* Curated entries use a three-column card grid on wide screens; the repository
+   browser keeps two columns because its cards carry more metadata. */
+@media(min-width:1101px){.collection-home .resource-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+@media(min-width:701px) and (max-width:1100px){.collection-home .resource-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
+html[data-layout="cards"] .collection-home .resource-card{padding:18px 18px 14px}
+html[data-layout="cards"] .collection-home .resource-card h3{font-size:17px}
+html[data-layout="cards"] .collection-home .card-description{font-size:15px;margin:10px 0 12px}
+html[data-layout="cards"] .collection-home .card-preview{margin:10px 0 0}
+html[data-layout="cards"] .collection-home .card-preview img{max-height:150px}
 .resource-card,.source-card{min-width:0;padding:24px 24px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 2px 5px var(--shadow);transition:border-color .15s ease,box-shadow .15s ease}
 .resource-card:hover,.source-card:hover{border-color:var(--strong);box-shadow:0 5px 18px #1737540c}
 .card-heading,.source-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
