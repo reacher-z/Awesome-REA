@@ -1,5 +1,7 @@
 # Contributing to Awesome Reverse Engineering Anything
 
+For coding agents: start with [AGENTS.md](AGENTS.md) and the [agent submission and PR guide](docs/agent-contributing.md). The [public contribution page](https://awesomerea.org/contribute/) routes each suggestion to the right GitHub form.
+
 [简体中文快速入门](CONTRIBUTING.zh-CN.md)
 
 Help keep this collection useful, well organized, and current. Contributions can add a project, tool, case study, integration, related collection, or reference; correct an entry; or improve its category and description.

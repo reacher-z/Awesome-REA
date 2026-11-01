@@ -8,6 +8,7 @@ Guides describe the current process. Research notes are dated snapshots, kept fo
 
 | Document | Language | Status | Covers |
 | --- | --- | --- | --- |
+| Agent submission and PR guide: [English](agent-contributing.md), [Chinese](agent-contributing.zh-CN.md) | English, Chinese | Current | Agent instructions, submission forms, evidence, validation and PRs |
 | [Contribution guide](../CONTRIBUTING.md) | English | Current, authoritative | Suggestions, catalog fields, papers, validation and review |
 | [Chinese contribution quick start](../CONTRIBUTING.zh-CN.md) | Chinese | Current summary | Main contribution rules and the Chinese terminology glossary |
 | First resource walkthrough: [English](first-resource.md), [Chinese](first-resource.zh-CN.md) | English, Chinese | Current | One existing record traced through each edited and generated file, checks and the pull request |

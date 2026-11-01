@@ -14903,5 +14903,1447 @@
       "https://github.com/DomazinUS/RaceWave46/blob/5c34f3711426978107707a8f06af9c2af4ee5401/COPYING",
       "https://github.com/DomazinUS/RaceWave46/releases/tag/v1.0.0"
     ]
+  },
+  {
+    "id": "opendrop-airdrop-reimplementation-case",
+    "name": "OpenDrop: an open reimplementation of Apple AirDrop",
+    "url": "https://github.com/seemoo-lab/opendrop",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Python command-line reimplementation of Apple's AirDrop protocol from SEEMOO Lab's reverse-engineering research. It finds receivers via _airdrop._tcp DNS-SD, sends binary-plist /Discover and /Ask requests over HTTPS and uploads gzip-compressed CPIO archives to exchange files with iOS and macOS. It is not affiliated with Apple.",
+    "description_zh": "基于 SEEMOO 实验室逆向研究、用 Python 编写的 Apple AirDrop 协议命令行重新实现。它通过 _airdrop._tcp DNS-SD 发现接收方，经 HTTPS 发送二进制 plist 格式的 /Discover 和 /Ask 请求，并上传 gzip 压缩的 CPIO 归档，与 iOS 和 macOS 设备互传文件。它与 Apple 无关联。",
+    "evidence_url": "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls OpenDrop experimental output of the Open Wireless Link reverse-engineering effort that lacks some AirDrop features and may break with future AirDrop versions, and says Apple neither affiliates with nor endorses it. The latest release is 0.13.0 (PyPI, 2021-04-29); the reviewed master commit of 2026-08-17 adds only a citation file and link edits since.",
+      "AirDrop runs only over Apple Wireless Direct Link, so OpenDrop is supported on macOS or on Linux with an open AWDL implementation such as SEEMOO's OWL; the default interface is awdl0. It needs Python 3.6+ (classifiers list 3.6–3.9), a current libarchive (Homebrew's on macOS), the openssl command and the packages in setup.py, including zeroconf and libarchive-c.",
+      "By default it creates its own self-signed key and certificate. Receivers in the default contacts-only mode need AirDrop keys, a certificate and an Apple ID validation record from the user's own Mac, which README says come from a separate SEEMOO extractor; the repository ships only Apple's public root CA certificate.",
+      "README lists known gaps: no Bluetooth Low Energy trigger, so Apple receivers may stay undiscovered; no peer authentication (neither TLS certificate chains nor validation records are checked) and automatic acceptance of every incoming file; and one file per transfer, with links sent but not received. CI runs black, flake8 and pytest on Python 3.6–3.9; its two tests only start the browser and server on loopback.",
+      "GPL-3.0. README points to the authors' USENIX Security 2019 AWDL paper and 2021 PrivateDrop paper for protocol details; AirDrop and AWDL remain Apple's protocols."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/setup.py",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/opendrop/config.py",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/opendrop/client.py",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/opendrop/server.py",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/.github/workflows/testpackage.yml",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/tests/test_server.py",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/CITATION.cff",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/LICENSE",
+      "https://pypi.org/project/opendrop/0.13.0/",
+      "https://www.usenix.org/conference/usenixsecurity19/presentation/stute"
+    ]
+  },
+  {
+    "id": "chipsec",
+    "name": "CHIPSEC",
+    "url": "https://github.com/chipsec/chipsec",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Platform security assessment framework, with Intel Corporation copyright notices, for analyzing PC hardware configuration, BIOS/UEFI system firmware and platform components from Windows, Linux or the UEFI shell. chipsec_main runs check modules that report whether expected protections are in place, such as BIOS and SPI flash write protection and locks, SMM and SMRR protection, memory-map locks and Secure Boot variables, as PASSED, FAILED, WARNING or informational results with JSON, XML and Markdown output. chipsec_util gives command-line and Python access to low-level interfaces and firmware data, including dumping the SPI flash to an image, decoding flash images into firmware volumes, files and NVRAM variables, and listing UEFI variables and tables.",
+    "description_zh": "平台安全评估框架（源码带有 Intel Corporation 版权声明），可在 Windows、Linux 或 UEFI Shell 中分析 PC 硬件配置、BIOS/UEFI 系统固件及平台组件。chipsec_main 运行检查模块，报告预期的保护措施是否到位，例如 BIOS 与 SPI 闪存的写保护和锁定、SMM 与 SMRR 保护、内存映射锁定及安全启动变量，结果分为 PASSED、FAILED、WARNING 和信息类，并可输出 JSON、XML 和 Markdown。chipsec_util 通过命令行和 Python 访问底层接口和固件数据，包括将 SPI 闪存转储为镜像、把闪存镜像解析为固件卷、文件和 NVRAM 变量，以及列出 UEFI 变量和表。",
+    "evidence_url": "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: 2.0.9, published 2026-09-24 with a source zip; the reviewed chipsec2 commit is five configuration and bug-fix commits ahead. The installation guide says the PyPI package is outdated. The README sends older Intel platforms (clients before 12th-generation Core, servers before 3rd-generation Xeon Scalable) to the chipsec1 branch, and almost all bundled platform configurations are Intel ones.",
+      "Runs as Administrator/root and loads a kernel driver that is distributed as source and built locally. Linux needs Python 3.8+, kernel headers, gcc and nasm; Windows 8 to 11 and Server 2012 to 2025 need Visual Studio with the WDK, and loading the self-built driver requires disabling driver signature enforcement or enabling test signing. The UEFI shell route boots a USB drive with the repository's prebuilt UEFI Python 3.6.8 package and requires Secure Boot to be off; a mkosi recipe builds a live Linux image. The --no-driver option works only for some commands and modules.",
+      "chipsec/WARNING.txt says to use it only on test systems, never production machines: the driver gives user mode access to physical memory and other hardware resources, and incorrect hardware access can hang or crash the OS. Some utility commands write or erase SPI flash or change UEFI variables and can leave a system unbootable; the separate tools modules, which include fuzzers, are outside this entry. A WARNING result requires manual analysis, and the results guide is marked as a draft.",
+      "Flash images and platform data come from the machine under test or the user's own dumps; the repository bundles no vendor firmware images. CI builds the Linux driver across distributions and runs unit tests on recorded platform data plus a QEMU UEFI-shell test. GPL-2.0. Nothing was run on hardware."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/chipsec/WARNING.txt",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/docs/sphinx/installation/InstallLinux.rst",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/docs/sphinx/installation/InstallWindows.rst",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/docs/sphinx/installation/USBwithUEFIShell.rst",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/docs/sphinx/usage/Running-Chipsec.rst",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/docs/sphinx/usage/Interpreting-Results.rst",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/chipsec/utilcmd/decode_cmd.py",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/chipsec/utilcmd/uefi_cmd.py",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/chipsec/modules/common/bios_wp.py",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/live_image/README.md",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/.github/workflows/tests.yml",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/LICENSE",
+      "https://github.com/chipsec/chipsec/releases/tag/2.0.9"
+    ]
+  },
+  {
+    "id": "apk-studio",
+    "name": "APK Studio",
+    "url": "https://github.com/vaibhavpandeyvpz/apkstudio",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Qt6 desktop front end that drives Apktool, JADX, uber-apk-signer and ADB from an IDE-style workspace for Android packages. It decodes an APK into smali and resources, optionally adds JADX Java output, then rebuilds, signs (with optional keystore generation and zipalign) and installs the result on a selected device; manufacturer framework files and extra Apktool arguments can be supplied. Decoded projects open in a file tree with syntax-highlighted smali, Java, XML and YAML editing, an image viewer, a hex editor and search across files.",
+    "description_zh": "基于 Qt6 的桌面前端，在 IDE 式工作区中调用 Apktool、JADX、uber-apk-signer 和 ADB 处理 Android 安装包。它将 APK 解码为 smali 和资源文件，可选附加 JADX 生成的 Java 代码，随后重新打包、签名（可生成密钥库并执行 zipalign）并安装到所选设备；还可指定厂商框架文件和额外的 Apktool 参数。解码后的项目以文件树形式打开，提供 smali、Java、XML 和 YAML 的语法高亮编辑、图片查看器、十六进制编辑器和跨文件搜索。",
+    "evidence_url": "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v6.3.0, published 2026-01-05 from the reviewed master commit, with a Linux x86_64 AppImage, a Windows x64 ZIP and a macOS DMG. The 6.x series began with v6.0.0 on 2025-12-03, following 5.2.4 from 2020, and no commits have landed since 2026-01-05. Source builds need CMake 3.16+, Qt 6.10.1+ (Core, Gui, Network, Widgets), a C++17 compiler, Git and the QHexView submodule.",
+      "The decoding, decompilation, signing and installation are done by the external tools. On first launch APK Studio can download Microsoft OpenJDK 11.0.29, the latest Apktool, JADX and uber-apk-signer GitHub releases and Google's latest platform-tools, or use installations configured in Settings; only the JDK version is pinned, and on macOS the automatic JDK is the Apple-silicon package. Its console shows the commands actually run, and the README asks users to separate Apktool problems from APK Studio issues.",
+      "APKs and any manufacturer framework files are supplied by the user; installation needs a device reachable through ADB. Decoded smali and JADX Java output are reconstructions to be checked, not original source. The README reports CI builds on Windows, Linux and macOS, and its disclaimer says the tool is not intended for piracy or other non-legal uses.",
+      "LGPL-3.0. Nothing was installed and no APKs were decoded."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/README.md#L28-L58",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/sources/tooldownloadworker.cpp#L280-L323",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/sources/apkdecompileworker.cpp",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/sources/apksignworker.cpp",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/CMakeLists.txt",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/.github/workflows/build.yml",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/LICENSE",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/releases/tag/v6.3.0"
+    ]
+  },
+  {
+    "id": "valetudo-robot-cloud-replacement-case",
+    "name": "Valetudo: local replacement for robot-vacuum vendor clouds",
+    "url": "https://github.com/Hypfer/Valetudo",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol",
+      "firmware"
+    ],
+    "description_en": "Replaces the vendor cloud of supported robot vacuums with a local service that runs on the rooted robot beside the vendor firmware and emulates the cloud endpoints that firmware expects, including a miio dummycloud and a counterpart for Midea's MSmart protocol. Its FAQ says each new vendor backend meant reverse engineering data formats, authentication and communication without vendor documentation; Valetudo converts the proprietary map formats into one ValetudoMap format and keeps Kaitai Struct descriptions of Dreame, Roborock and Viomi map files and a Midea protobuf schema as references. It adds a web interface, a REST API with Swagger UI and MQTT/Home Assistant integration, while feature parity with the vendor apps is an explicit non-goal.",
+    "description_zh": "用运行在已 root 机器人上、与厂商固件并存的本地服务取代受支持扫地机器人的厂商云，并模拟固件所期待的云端接口，包括 miio 模拟云（dummycloud）以及对应 Midea MSmart 协议的实现。其 FAQ 说明，每支持一个新厂商，都需要在没有厂商文档的情况下逆向分析数据格式、认证和通信；Valetudo 将各家专有地图格式转换为统一的 ValetudoMap 格式，并保留 Dreame、Roborock、Viomi 地图文件的 Kaitai Struct 描述和一份 Midea protobuf 模式作为参考。它提供网页界面、带 Swagger UI 的 REST API 以及 MQTT／Home Assistant 集成，但明确不以与厂商应用功能对等为目标。",
+    "evidence_url": "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026.10.0 release commit of 2026-10-18. The README says Valetudo is not a custom firmware but a 'brain parasite' for the vendor firmware, whose own functions it relies on. The backend has Dreame, Roborock, Viomi, 3irobotix and Midea implementations, and the supported-robots page lists 50 model entries under 10 brand headings and calls the list exhaustive.",
+      "Requires a supported robot that its owner has already rooted. The docs describe rooting as model-specific and permanent ('Reverting to stock is impossible'), and say the vendor app stops working because cloud connectivity is cut; this record covers no rooting procedure. The repository and its releases ship no vendor firmware: release assets are Valetudo's own armv7, armv7-lowmem and aarch64 binaries with UPX-compressed variants, an OpenAPI schema and a release manifest, while the repository also commits pkg Node.js base binaries for packaging and small captured map files as test fixtures.",
+      "Valetudo runs on the robot's Linux system as a static Node.js 22 binary built with pkg; development needs Node.js >=20 according to the root package.json. The docs require Linux and computer skills, and sometimes hardware work, for installation, and offer peer support only.",
+      "CI on Node.js 22 runs type checks, lint, the frontend and backend builds and the backend node:test suite, including Dreame, Roborock and 3irobotix map-parser tests on captured maps and miio and MSmart packet tests. The supported-robots page says each listed robot was tested by the author personally unless noted. These are project-reported checks; this review ran nothing and compared no behaviour with vendor clouds.",
+      "Apache-2.0, although the README describes its governance as 'Freeware with source available'. The Kaitai structs declare CC-BY-SA-4.0, and a bundled robot model and tracker song are credited under CC-BY-NC-SA. Vendor firmware, apps and clouds keep their own terms. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/docs/pages/faq.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/docs/pages/general/newcomer-guide.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/docs/pages/general/getting-started.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/docs/pages/general/why-not-valetudo.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/docs/pages/general/supported-robots.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/backend/lib/miio/Dummycloud.js",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/backend/lib/msmart/MSmartDummycloud.js",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/assets/kaitai_structs/readme.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/assets/protobuf/midea.proto",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/package.json",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/backend/package.json",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/.github/workflows/nodejs.yml",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/frontend/src/assets/raw/credits.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/LICENSE",
+      "https://github.com/Hypfer/Valetudo/releases/tag/2026.10.0"
+    ]
+  },
+  {
+    "id": "sourcemapper",
+    "name": "sourcemapper",
+    "url": "https://github.com/denandz/sourcemapper",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Go command-line tool that recreates a web front end's original JavaScript source tree from a source map generated by webpack or a similar bundler, writing each embedded source file under the path the map records. It takes a .map file by URL or local path, walks a directory of .map files, or fetches a JavaScript file and follows its sourceMappingURL comment or SourceMap response header, including inline data: maps.",
+    "description_zh": "Go 编写的命令行工具，可根据 webpack 等打包工具生成的源映射（source map）重建网站前端原有的 JavaScript 源码目录树，并把映射中内嵌的每个源文件写到其记录的路径下。它可通过 URL 或本地路径读取 .map 文件，递归处理整个目录中的 .map 文件，也可抓取 JavaScript 文件并跟随其中的 sourceMappingURL 注释或 SourceMap 响应头，内联的 data: 映射同样支持。",
+    "evidence_url": "https://github.com/denandz/sourcemapper/blob/f739bd5dd266b0d0e2cfa17c0a132f79bd9a5ba9/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The project publishes no releases or tags. The README installs it with go install, a clone-and-build, or the BlackArch package; go.mod declares Go 1.16 and lists no third-party modules. The reviewed master commit, dated 2026-07-24, also adds the -dir batch mode and refuses to read a local path named by a remote sourceMappingURL.",
+      "Only one of -url, -jsurl or -dir is accepted per run, and -output is required. Remote fetches can carry extra request headers, go through a proxy or skip TLS verification. The README warns that a JavaScript file parsed with -jsurl can make sourcemapper send a GET request to any URL it names as its source map.",
+      "The input is a source map the user may inspect. The tool reads only the map's version, sources and sourcesContent fields, so maps without embedded sourcesContent are rejected and minified bundles without a map are out of scope; the mappings are not used, and output is the bundler's captured source text, not code verified against the deployed bundle.",
+      "BSD-3-Clause. Recovered front-end code remains subject to the site owner's rights. The README links a 2018 Pulse Security article describing its use for front-end source review in a penetration test. Nothing was built or run against any site."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/denandz/sourcemapper/blob/f739bd5dd266b0d0e2cfa17c0a132f79bd9a5ba9/README.md#L124",
+      "https://github.com/denandz/sourcemapper/blob/f739bd5dd266b0d0e2cfa17c0a132f79bd9a5ba9/main.go#L22-L28",
+      "https://github.com/denandz/sourcemapper/blob/f739bd5dd266b0d0e2cfa17c0a132f79bd9a5ba9/main.go#L290-L327",
+      "https://github.com/denandz/sourcemapper/blob/f739bd5dd266b0d0e2cfa17c0a132f79bd9a5ba9/go.mod",
+      "https://github.com/denandz/sourcemapper/blob/f739bd5dd266b0d0e2cfa17c0a132f79bd9a5ba9/LICENSE",
+      "https://pulsesecurity.co.nz/articles/javascript-from-sourcemaps"
+    ]
+  },
+  {
+    "id": "jazz2-resurrection-engine-case",
+    "name": "Jazz² Resurrection: a native C++ reimplementation of Jazz Jackrabbit 2",
+    "url": "https://github.com/deathkiller/jazz2-native",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements Jazz Jackrabbit 2 (1998) as a native C++ game on an extensively modified nCine engine, converting the user’s original game files into its own cache on first start. It runs on desktop, mobile, web and many homebrew console targets, with multiplayer, an enhanced Reforged mode and partial JJ2+ and MLLE support. A two-sided trajectory probe checks its non-Reforged movement against the original game, and the project reports 376 of 406 scenarios within 25 px/s.",
+    "description_zh": "以原生 C++ 在深度修改的 nCine 引擎上重新实现《爵士兔 2》（Jazz Jackrabbit 2，1998），首次启动时把使用者的原版游戏文件转换为自己的缓存。它可在桌面、移动设备、网页和众多自制软件主机平台上运行，支持多人游戏、增强的 Reforged 模式，并部分支持 JJ2+ 与 MLLE。项目用一个双向轨迹探针把非 Reforged 模式的移动与原版游戏对照，报告 406 个场景中有 376 个误差在 25 px/s 以内。",
+    "evidence_url": "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the master commit of 2026-10-17, just after release 3.9.0 of the same day, which reworked physics; release packages are published in the older deathkiller/jazz2 repository. README lists the Shareware Demo, Holiday Hare ’98, The Secret Files and Christmas Chronicles as supported, with partial JJ2+ and MLLE features, and marks the Nintendo 64, Dreamcast, Wii, GameCube and PlayStation 3 ports as not yet tested on real hardware. README calls the game fully rewritten in C++ and does not describe decompiling the original executable; the non-Reforged movement constants come from measurements of the original game.",
+      "Every build needs the contents of the user’s original Jazz Jackrabbit 2 directory, a retail version or the Shareware Demo, placed in a Source folder and converted into a cache on first start. On Nintendo 64, Dreamcast, PlayStation 2, GameCube and 3DS the content must first be converted with the project’s AssetPacker, and README says the resulting images can’t be distributed. The repository’s Content directory holds the game’s own fonts, extra animations, metadata and translations; the Windows 3.9.0 package contains it with an empty Source placeholder, and README says the Docker server image never contains original files.",
+      "README documents Windows, Linux, macOS, iOS, Android, Nintendo Switch, Web (Emscripten), a libretro core, Xbox (UWP), AmigaOS 3.x, AmigaOS 4.1 and MorphOS, Nintendo 64, Dreamcast, Wii, GameCube, 3DS, PSP, PS2, PS3 and Vita, plus a Docker dedicated server; desktop builds need an OpenGL 3.3 or OpenGL ES 3.0 GPU. Builds use CMake 3.15+, which downloads the prebuilt dependency set by default unless system libraries are used. Console builds use their own homebrew SDKs and toolchain files, and several console targets need custom firmware.",
+      "The Linux and Windows workflows build and package without running a test suite. An optional physics probe (WITH_PHYSICS_PROBE) drives the same scripted scenarios in this engine and in the original game with JJ2+ and logs every tick; the committed traces and comparison scripts let changes be checked without the original. For the 144 FPS engine capture, Results/README.md reports a median speed-distribution error of 0.1 px/s, 376 of 406 scenarios within 25 px/s and 70 of 397 scenarios whose animation-segment counts differ by over 25%. These are project-reported figures; this collection ran nothing.",
+      "LICENSE is GPL-3.0; Docs/ThirdParty.dox lists the third-party components, including parts of nCine (MIT), with their own licenses. Jazz Jackrabbit 2 and its data keep their owners’ rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/LICENSE",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/CMakeLists.txt",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/Docs/ThirdParty.dox",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/Docs/AssetPacker.dox",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/Docs/Consoles.dox",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/Docs/MovementAccuracyReference.dox",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/Sources/Jazz2/Tests/README.md",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/Sources/Jazz2/Tests/Results/README.md",
+      "https://github.com/deathkiller/jazz2-native/tree/c18381c246271d76c70af723a8ab5615028e3c6c/Content",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/.github/workflows/linux.yml",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/.github/workflows/windows.yml",
+      "https://github.com/deathkiller/jazz2/releases/tag/3.9.0"
+    ]
+  },
+  {
+    "id": "binabsinspector",
+    "name": "BinAbsInspector",
+    "url": "https://github.com/KeenSecurityLab/BinAbsInspector",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Static vulnerability scanner from Tencent Keen Lab that runs as a Ghidra extension or headless script and applies abstract interpretation to Ghidra's P-code rather than to assembly, covering x86, x64, ARMv7 and AArch64 binaries. Its flow- and context-sensitive interprocedural analysis, with configurable value-set size and call-string depth, optional Z3 constraint solving and models of external functions, feeds checkers for 13 CWE classes, including command injection, buffer overflows and out-of-bounds access, format strings, integer overflow, double free, use-after-free and NULL dereference. Warnings list the instruction address and its call context, in the Ghidra console or as JSON.",
+    "description_zh": "腾讯科恩实验室开发的二进制静态漏洞扫描工具，以 Ghidra 扩展或无界面脚本方式运行，在 Ghidra 的 P-code 而非汇编上进行抽象解释，支持 x86、x64、ARMv7 和 AArch64 二进制。它执行流敏感、上下文敏感的过程间分析，可配置值集合大小和调用串深度，可选用 Z3 约束求解，并对外部函数建模，在此基础上运行 13 类 CWE 检查，涵盖命令注入、缓冲区溢出与越界访问、格式化字符串、整数溢出、重复释放、释放后使用和空指针解引用等。告警会列出指令地址及其调用上下文，显示在 Ghidra 控制台中或以 JSON 输出。",
+    "evidence_url": "https://github.com/KeenSecurityLab/BinAbsInspector/blob/658b41389b2fc16c2fcd4bfc5610f6c26d31ca6f/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The only release, v0.1 from 2022-04-20, is an extension ZIP built for Ghidra 10.1.2. The reviewed main commit is 20 commits ahead; its Dockerfile and CI workflows use Ghidra 10.4 with JDK 17, and the last commit dates from 2024-05-14, so compatibility with current Ghidra releases is not documented. Source builds use Gradle 7.x (tested with 7.4) against a local Ghidra installation.",
+      "Z3 is required (tested version 4.8.15): the README suggests replacing the Java bindings bundled in lib/ with a matching package and installing the native library separately, not from Linux distribution packages. Runs use Ghidra's headless analyzer, the Script Manager after default auto-analysis in the GUI, or the provided Dockerfile, which builds Z3 from source and defaults to an Ubuntu mirror in China that the UBUNTU_MIRROR argument overrides.",
+      "Binaries are supplied by the user. Warnings are leads for manual review, not confirmed vulnerabilities; Keen Lab's release article reports its own Juliet test-suite comparison with cwe_checker on x86, x64 and ARMv7 for four CWE classes, scored by true and false positives and negatives.",
+      "GPL-3.0. Nothing was built and no binaries were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/KeenSecurityLab/BinAbsInspector/blob/658b41389b2fc16c2fcd4bfc5610f6c26d31ca6f/README.md#L5-L23",
+      "https://github.com/KeenSecurityLab/BinAbsInspector/blob/658b41389b2fc16c2fcd4bfc5610f6c26d31ca6f/README.md#L25-L81",
+      "https://github.com/KeenSecurityLab/BinAbsInspector/blob/658b41389b2fc16c2fcd4bfc5610f6c26d31ca6f/Dockerfile",
+      "https://github.com/KeenSecurityLab/BinAbsInspector/blob/658b41389b2fc16c2fcd4bfc5610f6c26d31ca6f/.github/workflows/integration_test.yml",
+      "https://github.com/KeenSecurityLab/BinAbsInspector/blob/658b41389b2fc16c2fcd4bfc5610f6c26d31ca6f/LICENSE",
+      "https://github.com/KeenSecurityLab/BinAbsInspector/releases/tag/v0.1",
+      "https://keenlab.tencent.com/zh/2022/04/20/2022-BinAbsInspector-public-release/"
+    ]
+  },
+  {
+    "id": "libimobiledevice",
+    "name": "libimobiledevice",
+    "url": "https://github.com/libimobiledevice/libimobiledevice",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "C library and command-line tools that speak iOS devices' native service protocols without Apple's proprietary libraries or a jailbreak. Over usbmuxd or Wi-Fi sync it implements lockdownd pairing and services such as AFC file access, backup, app installation, crash reports, syslog, debugserver and WebKit inspection, plus Cython bindings.",
+    "description_zh": "用 C 编写的库及命令行工具，无需 Apple 的专有库或越狱即可使用 iOS 设备的原生服务协议通信。它经 usbmuxd 或 Wi-Fi 同步连接，实现 lockdownd 配对，以及 AFC 文件访问、备份、应用安装、崩溃报告、系统日志、debugserver 和 WebKit 检查等服务，并提供 Cython 绑定。",
+    "evidence_url": "https://github.com/libimobiledevice/libimobiledevice/blob/fa0f79190142bc309307967c058f89c1b36eb6b8/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release: 1.4.0 (2025-10-10), which NEWS calls a development release; it added MbedTLS support, Apple TV wireless pairing and iOS 17+ personalized developer disk image mounting, among other changes. The reviewed master commit of 2026-06-10 is nine commits ahead, mostly AFC and afcclient fixes.",
+      "Source builds use autotools and pkg-config with libplist 2.3.0+, libusbmuxd 2.0.2+, libimobiledevice-glue 1.3.0+ and libtatsu 1.0.3+ from the same organization (README says libtatsu must be built from source), plus OpenSSL by default, GnuTLS or MbedTLS; Doxygen and Cython are optional. The README dependency list includes the usbmuxd daemon and says the library is tested on Linux, macOS, Windows and Android.",
+      "Work starts from an iOS device the user controls and pairs with the host (idevicepair); the repository contains no Apple software. Screenshots and location simulation need a mounted Apple developer disk image, which is not included. README says library documentation is not yet available and points to the bundled utilities' source; each utility has a manual page.",
+      "GitHub Actions builds and installs the library on Ubuntu, macOS and Windows (MSYS2 MINGW64 and MINGW32) against the latest builds of its sibling libraries, on pushes, pull requests and a monthly schedule. The repository has no test suite, and no workflow exercises a device.",
+      "LGPL-2.1 for the library and utilities. The bundled ed25519 (zlib-style license) and Stanford SRP-based libsrp6a-sha512 (BSD-style) keep their own licenses. README states that the project is independent and not authorized, sponsored or approved by Apple."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/libimobiledevice/libimobiledevice/blob/fa0f79190142bc309307967c058f89c1b36eb6b8/NEWS",
+      "https://github.com/libimobiledevice/libimobiledevice/blob/fa0f79190142bc309307967c058f89c1b36eb6b8/configure.ac",
+      "https://github.com/libimobiledevice/libimobiledevice/blob/fa0f79190142bc309307967c058f89c1b36eb6b8/.github/workflows/build.yml",
+      "https://github.com/libimobiledevice/libimobiledevice/tree/fa0f79190142bc309307967c058f89c1b36eb6b8/src",
+      "https://github.com/libimobiledevice/libimobiledevice/blob/fa0f79190142bc309307967c058f89c1b36eb6b8/3rd_party/README.md",
+      "https://github.com/libimobiledevice/libimobiledevice/blob/fa0f79190142bc309307967c058f89c1b36eb6b8/COPYING",
+      "https://github.com/libimobiledevice/libimobiledevice/releases/tag/1.4.0"
+    ]
+  },
+  {
+    "id": "ngrev",
+    "name": "ngrev",
+    "url": "https://github.com/mgechev/ngrev",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Electron desktop application that statically analyzes an Angular project's TypeScript sources and draws interactive graphs of its NgModules, components, directives, pipes and providers and how they depend on each other, without running the application. A project is loaded through its tsconfig file; views move from the module tree to individual modules, templates and providers, with fuzzy symbol search and PNG export of the current graph.",
+    "description_zh": "一款 Electron 桌面应用，对 Angular 项目的 TypeScript 源码做静态分析，以交互式图形展示其中的 NgModule、组件、指令、管道和服务提供者及其依赖关系，无需运行该应用。通过项目的 tsconfig 文件载入后，可从模块树逐层查看单个模块、模板和提供者，支持符号模糊搜索，并可将当前图形导出为 PNG。",
+    "evidence_url": "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Dormant: the latest release is v0.0.35 of 2021-01-18, with an unsigned macOS .dmg, a Linux AppImage and a Windows .exe. The reviewed master commit dates from 2021-07-26 and package.json already names an unreleased 0.0.36. The README calls it a community side project that the Angular team does not maintain.",
+      "Input is an Angular project's own source tree with its dependencies installed; for Angular CLI apps the README selects src/tsconfig.app.json. Applications must be compatible with the Ivy compiler, and versions older than Angular 11 are untested. The analyzer pins @angular/compiler-cli 11.0.3, ngast 0.6.2 and TypeScript 4.0.5, and support for later Angular releases is not documented. Deployed or minified bundles are not analyzed.",
+      "Source builds use Node.js and yarn (CI uses Node 12), Angular CLI 11 and Electron 11.1.0 packaged by electron-builder. The CI workflow runs a Spectron end-to-end test on macOS, Ubuntu and Windows that opens the app and parses a small Angular 11 fixture project; it does not check graph accuracy on real applications.",
+      "The README states MIT; LICENSE.md is the MIT text carried over from the angular-electron template, with its author's 2020 copyright line. Graphs show what ngast resolves from the sources, not runtime behaviour. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/README.md#L37-L48",
+      "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/package.json",
+      "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/src/electron/model/project.ts",
+      "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/.github/workflows/build.yml",
+      "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/e2e/main.e2e.ts",
+      "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/LICENSE.md",
+      "https://github.com/mgechev/ngrev/releases/tag/v0.0.35"
+    ]
+  },
+  {
+    "id": "apkid",
+    "name": "APKiD",
+    "url": "https://github.com/rednaga/APKiD",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "PEiD-style identifier for Android packages from RedNaga. It scans APK and DEX files, nested ZIP entries and the native ELF libraries, PE DLLs and resources inside them with YARA rules, using the yara-python-dex DEX module, and reports the compilers, packers, protectors, obfuscators and anti-VM or anti-disassembly tricks it recognizes, per file or as JSON. Optional tracker rules attributed to the Exodus API flag embedded tracking SDKs; APKiD only identifies, and does not unpack or deobfuscate anything.",
+    "description_zh": "RedNaga 推出的 Android 安装包识别工具，类似 PEiD。它借助 yara-python-dex 的 DEX 模块，用 YARA 规则扫描 APK、DEX 文件、嵌套的 ZIP 条目及其中的原生 ELF 库、PE 格式 DLL 和资源，报告识别出的编译器、加壳工具、保护工具、混淆工具以及反虚拟机或反反汇编手法，可按文件输出或输出 JSON。可选的追踪器规则注明来自 Exodus API，用于标出内嵌的追踪 SDK；APKiD 只做识别，不会脱壳或反混淆。",
+    "evidence_url": "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 3.1.0, tagged and uploaded to PyPI on 2026-04-09; the reviewed master commit of 2026-10-07 adds later rules. pip install apkid pulls in yara-python-dex>=1.0.1. setup.py declares no python_requires and its classifiers name Python 3.6 and 3.7, while Travis CI uses 3.9 and the Dockerfile uses Python 3.11; on Windows the README pins Yara 3.11.0 and a separately built yara-python-dex wheel.",
+      "Provide APK, DEX or directory inputs you are entitled to examine. By default the CLI picks entries by file magic, searches nested ZIPs two levels deep, scans entries up to 100 MB and stops each YARA scan after 30 seconds; tracker rules are compiled separately and apply only with --scan-trackers. The README's usage block still shows v2.1.2 and omits --scan-trackers and --include-types.",
+      "Detection is signature-based, so unrecognized or modified packers and protectors go unreported; the README asks for unknown samples by file hash to write new rules. Tests compile and lint the rules and scan generated ZIP files; the repository has no sample corpus, and nothing was scanned in this review.",
+      "Dual-licensed: GPL-3.0, or a perpetual commercial license that allows distributing APKiD binaries and rules in commercial products but no source redistribution, which is why GitHub reports NOASSERTION. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/apkid/main.py",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/apkid/apkid.py",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/apkid/rules.py",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/apkid/rules/apk/trackers.yara",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/setup.py",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/apkid/__init__.py",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/Dockerfile",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/.travis.yml",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/tests/test_scanner.py",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/LICENSE.GPL",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/LICENSE.COMMERCIAL",
+      "https://github.com/rednaga/APKiD/releases/tag/v3.1.0",
+      "https://pypi.org/project/apkid/3.1.0/"
+    ]
+  },
+  {
+    "id": "jsluice",
+    "name": "jsluice",
+    "url": "https://github.com/BishopFox/jsluice",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Bishop Fox's Go library and command-line tool that parses JavaScript with tree-sitter to recover the endpoints a script calls, judging values by how the code uses them rather than by regular expressions alone. URL extraction follows location assignments, window.open, fetch, XMLHttpRequest and jQuery request calls, keeps the HTTP method, headers and query or body parameters, and stands in a placeholder for values only known at run time. Other modes flag credential-shaped values, print syntax trees, run tree-sitter queries and reformat minified code.",
+    "description_zh": "Bishop Fox 推出的 Go 库与命令行工具，借助 tree-sitter 解析 JavaScript，还原脚本所调用的接口地址；它依据代码如何使用某个值来判断，而不仅仅依靠正则表达式。URL 提取会跟踪 location 赋值、window.open、fetch、XMLHttpRequest 和 jQuery 请求调用，保留 HTTP 方法、请求头以及查询或请求体参数，并以占位符代替只有运行时才能确定的值。其他模式可标记形似凭据的值、打印语法树、运行 tree-sitter 查询以及格式化压缩代码。",
+    "evidence_url": "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/README.mkd",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The project publishes no releases or tags: the README installs the CLI with go install and the package with go get. go.mod declares Go 1.18 and pins go-tree-sitter, goquery, jsbeautifier-go and a WARC reader. The reviewed main commit dates from 2024-01-10; the repository has Go unit tests and JavaScript fixtures but no CI workflow.",
+      "Inputs are JavaScript files, HTML pages whose inline scripts it extracts, WARC archives, raw source on stdin, or http(s) URLs fetched with optional cookies and headers; output is JSONL. The analysis is static: concatenated runtime values appear as EXPR or a chosen placeholder, and the README calls the approach not foolproof, so extracted endpoints are leads to check against the application.",
+      "secrets mode ships active matchers only for AWS, GCP and GitHub key formats and Firebase configuration objects, plus user-supplied JSON pattern files; the README shows that unanchored custom patterns match unintended values. Matches are pattern hits, not confirmed credentials, and this entry records no values found with the tool.",
+      "MIT, copyright 2023 Bishop Fox. Nothing was built or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/cmd/jsluice/README.mkd",
+      "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/go.mod",
+      "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/analyzer.go#L23-L43",
+      "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/secret-matchers.go#L91-L98",
+      "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/cmd/jsluice/main.go",
+      "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/LICENSE"
+    ]
+  },
+  {
+    "id": "lba2remake-little-big-adventure-case",
+    "name": "LBA2 Remake: a Little Big Adventure 1 and 2 reimplementation in TypeScript and Three.js",
+    "url": "https://github.com/LBALab/lba2remake",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements the engine of Little Big Adventure 2, and now also Little Big Adventure 1, in TypeScript, Three.js and React so that it runs in a browser on resources imported from the user’s copy of the game. README calls it a full re-engineering rather than a disassembly-based approach: every island and building can be explored and most graphics and part of the gameplay work, but the game cannot yet be completed. It adds an editor with an actor-script debugger, VR support and fan-made 3D replacement models for the isometric scenes.",
+    "description_zh": "用 TypeScript、Three.js 和 React 重新实现 Little Big Adventure 2 的引擎，现在也涵盖 Little Big Adventure 1，在浏览器中运行，资源从使用者自有的游戏中导入。README 称这是完全重新设计实现，而非基于反汇编的方法：所有岛屿和建筑都可以探索，大部分图形和部分玩法已经可用，但游戏目前还无法通关。项目另外提供带角色脚本调试器的编辑器、VR 支持，以及由爱好者为等距场景制作的 3D 替换模型。",
+    "evidence_url": "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the master commit of 2026-04-17, the day after tag v0.6.8; recent changelog entries are mostly bug fixes, VR controller mappings and added replacement 3D models. README says every island and building of the original can be visited and most graphics and part of the gameplay are implemented, but the game is not completable. It describes the method only as full re-engineering instead of disassembly and does not document how the original engine was studied.",
+      "Local play requires the user’s own Little Big Adventure 2 from GOG, Steam or itch.io: npm run import (import:win on Windows) unpacks the installation and converts its music, samples, voices and video into the git-ignored www/data folder, and other versions or Linux need the manual import route. The repository holds no original game files; its www/models and assetsSource trees contain replacement 3D models, textures and generated scene meshes, which the art workflow describes as newly made. The FAQ says the hosted live demo is shared publicly with Frederick Raynal’s agreement while the game is a work in progress and will require a legal copy once it is fully playable; its Netlify build downloads game assets from a location outside the repository.",
+      "It runs in a browser with WebGL. Development uses Node.js (README asks for 9 or newer and the Netlify build sets 18), npm, webpack and TypeScript, served by npm run dev on localhost:8080. The apps folder holds Android, iOS and Windows 10 app prototypes, and VR controllers work through WebXR.",
+      "CircleCI runs lint, type-checking and a production bundle build, and a CodeQL workflow scans the code; there are no engine or gameplay tests and no comparison with the original executable. The live demo, editor and gameplay videos are the project’s own demonstrations, and this collection did not build or run it.",
+      "LICENSE is MIT for the project’s code (copyright 2018 Adrien Grandemange and Alexandre Fontoura). README states that the original game executable, assets and intellectual property belong to [2.21] and asks users to buy the original games. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/doc/FAQ.md",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/doc/getting_started.md",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/doc/architecture.md",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/doc/art_workflow.md",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/CHANGELOG.md",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/package.json",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/utils/convert/import.sh",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/netlify.toml",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/.circleci/config.yml",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/.gitignore",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/LICENSE",
+      "https://github.com/LBALab/lba2remake/tree/db54f5de071354939a8b02e71e47c53343ab6ee5/www/models"
+    ]
+  },
+  {
+    "id": "vulhunt",
+    "name": "VulHunt Community Edition",
+    "url": "https://github.com/vulhunt-re/vulhunt",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "firmware"
+    ],
+    "description_en": "Open-source Community Edition of Binarly REsearch's VulHunt engine for hunting vulnerabilities in POSIX binaries and UEFI firmware on x86 and ARM. Lua rules run on the Rust BIAS framework, which lifts code to Ghidra's P-code and bundles Ghidra's C++ decompiler, and combine taint and dataflow tracking, Weggli-based queries over decompiled code, byte patterns, FLIRT signatures and type libraries; findings are written as JSON with annotated decompiled code. The CLI scans single binaries, Binarly BA2 archives or Binary Ninja databases, and can also run as an MCP server that lets AI assistants open a project, query it with Lua, rename functions and keep notes.",
+    "description_zh": "Binarly REsearch 团队 VulHunt 引擎的开源社区版，用于在 x86 和 ARM 架构的 POSIX 二进制和 UEFI 固件中挖掘漏洞。Lua 规则运行在 Rust 编写的 BIAS 框架之上（该框架将代码提升为 Ghidra P-code，并内置 Ghidra 的 C++ 反编译器），可结合污点与数据流追踪、基于 Weggli 的反编译代码查询、字节模式、FLIRT 签名和类型库进行检测；结果以 JSON 输出，并附带标注后的反编译代码。命令行可扫描单个二进制、Binarly BA2 归档或 Binary Ninja 数据库，也可作为 MCP 服务器运行，让 AI 助手打开项目、用 Lua 查询、重命名函数并记录注释。",
+    "evidence_url": "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v1.0.0, published 2026-03-07, with Linux x86_64/aarch64, macOS arm64 and Windows x86_64 ZIPs; the reviewed dev commit is 7 commits ahead and its CLI crate declares 1.0.1. The documentation recommends its install scripts or a Docker image built from the repository; source builds need Rust, cargo-make, a recent CMake, Clang 20+ and a patched static LuaJIT 2.1, which cargo-make builds.",
+      "Scans need auxiliary data from the separate vulhunt-re/data repository (processor specifications and type libraries, fetched with git-lfs and, for source installs, built with bias-lutil and bias-tutil) and a rules directory, such as the community rules repository with POSIX and UEFI rules; the rules, data and agent-skills repositories had no license file at review. The Binary Ninja loader needs a build with the bndb feature, which links against the Binary Ninja 5.2 stable API, and the btp commands need a Binarly Transparency Platform account.",
+      "Binaries and BA2 archives are supplied by the user. The component loader takes one binary at a time; this repository has no loader for whole UEFI firmware images, since the UEFITool-based loader is published separately and is not part of the reviewed workspace. Binarly describes a commercial Enterprise Edition with further features. Rule findings are analysis aids for manual review, and the reviewed sources report no accuracy evaluation.",
+      "GPL-3.0 for VulHunt; the BIAS framework crates are dual-licensed MIT OR Apache-2.0 according to README.BIAS.md. Nothing was installed and no binaries were scanned."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/README.md#L115-L159",
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/Cargo.toml",
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/bias-vulhunt/Cargo.toml",
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/bias-vulhunt-mcp/src/tools.rs",
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/bias-loader-bndb/Cargo.toml",
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/README.BIAS.md",
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/LICENSE",
+      "https://github.com/vulhunt-re/vulhunt/releases/tag/v1.0.0",
+      "https://github.com/vulhunt-re/data/blob/7015639969be34151c790b3ba8e8e74e0911aa3d/README.md",
+      "https://github.com/vulhunt-re/rules/tree/9da95ac19b0e2a4d9c1b816b9e7dd0b40fe07c7f",
+      "https://vulhunt.re/",
+      "https://vulhunt.re/docs/user-guide/vulhunt-cli/installation/"
+    ]
+  },
+  {
+    "id": "sniffle",
+    "name": "Sniffle",
+    "url": "https://github.com/nccgroup/Sniffle",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "NCC Group's sniffer for Bluetooth 5 and 4.x Low Energy, made of firmware for TI CC1352/CC26x2 radio boards and Python host tools. It captures advertising and connection traffic on the 1M, 2M and coded PHYs, follows connections through channel-map, connection-parameter and PHY changes, captures BT5 extended advertising, and filters by MAC address, IRK, RSSI or advertisement content; for a filtered target it hops all three primary advertising channels, which the README says makes connection detection nearly three times more reliable than single-channel sniffers. Captures are saved as Ubertooth-compatible PCAP, a Wireshark extcap plugin starts captures from the Wireshark GUI, and command-line decoders print advertising data, including Apple and Microsoft manufacturer-specific fields.",
+    "description_zh": "NCC Group 推出的蓝牙 5 与 4.x 低功耗（BLE）嗅探器，由运行在 TI CC1352/CC26x2 射频板上的固件和 Python 主机工具组成。它可在 1M、2M 和编码 PHY 上捕获广播与连接流量，跟随连接经历的信道映射、连接参数和 PHY 变更，捕获 BT5 扩展广播，并按 MAC 地址、IRK、RSSI 或广播内容过滤；对已过滤的目标会在全部三个主广播信道间跳频，README 称这使连接检测的可靠性比只监听单一信道的嗅探器高出近三倍。捕获结果保存为与 Ubertooth 兼容的 PCAP；Wireshark extcap 插件可直接从 Wireshark 界面启动捕获，命令行解码器可打印广播数据，包括 Apple 和 Microsoft 的厂商自定义字段。",
+    "evidence_url": "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v1.11.0, published 2025-07-12 with prebuilt firmware hex files for each supported board; the reviewed master commit adds two relay-script fixes. The README asks users of prebuilt firmware to run the Python code from the matching release tag rather than master. The release notes describe SDR-based sniffing as an incomplete work in progress.",
+      "Needs one of the listed TI Launchpad boards (CC26x2R, CC2652RB, CC1352R, CC1352P, CC2652R7, CC1352P7, CC2651P3 or CC1354P10), a SONOFF CC2652P USB Dongle Plus or a CatSniffer V3. Firmware is flashed with TI UniFlash/DSLite, the cc2538-bsl bootloader utility for the SONOFF dongle or Electronic Cats' uploader; the README warns that flashing the wrong SONOFF build variant can brick the dongle. Building firmware needs the ARM GNU toolchain and TI SimpleLink Low Power F2 SDK 8.30.01.01, which the README patches for recent GCC. Host tools need Python 3.9+ with PySerial.",
+      "Encrypted connections are not decrypted: Sniffle follows their timing and detects parameter updates without the key, and reliable connection following needs a MAC or IRK filter on the peripheral. Later firmware can also transmit for active scanning, advertising, initiating connections and link-layer relaying; this entry covers passive capture and decoding only.",
+      "GPL-3.0; source headers name NCC Group plc as the copyright holder, jointly with Jay Logue for the Wireshark extcap plugin. No hardware was flashed and no traffic was captured."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/README.md#L22-L45",
+      "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/README.md#L494-L537",
+      "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/fw/makefile",
+      "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/python_cli/sniffle/pcap.py",
+      "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/python_cli/pcap_decoder.py",
+      "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/LICENSE",
+      "https://github.com/nccgroup/Sniffle/releases/tag/v1.11.0"
+    ]
+  },
+  {
+    "id": "dex2jar",
+    "name": "dex2jar",
+    "url": "https://github.com/pxb1988/dex2jar",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Java toolkit that converts Android DEX bytecode, including DEX inside APKs, into JVM .class files packed as a jar for Java decompilers and bytecode tools. It also reads and writes DEX through an ASM-like API, disassembles and assembles smali with its own implementation, converts jars back to DEX and ships helpers such as d2j-decrypt-string.",
+    "description_zh": "用 Java 编写的工具集，可将 Android DEX 字节码（包括 APK 内的 DEX 文件）转换为打包成 jar 的 JVM .class 文件，供 Java 反编译器和字节码工具使用。它还通过类似 ASM 的 API 读写 DEX，以自有实现进行 smali 反汇编与汇编，可将 jar 转回 DEX，并附带 d2j-decrypt-string 等辅助工具。",
+    "evidence_url": "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The latest release, v2.4 of 2023-10-03 with the note “bugfix”, is the reviewed 2.x head, and no commits have followed it. Its download is dex-tools-v2.4.zip, while the README build steps still name a 2.1-SNAPSHOT archive. The README lists GitHub as the project's home after earlier Google Code, Bitbucket and SourceForge hosting.",
+      "Everything runs on Java: the build targets Java 8 with the Gradle 6.9.1 wrapper, ASM 9.5 and ANTLR 4.9.3, which d2j-smali keeps because newer ANTLR versions need Java 11+. The d2j-* commands are generated as shell and batch launchers. The CI workflow runs gradle check and distZip on JDK 8 for pushes, pull requests and release tags.",
+      "Input is a .dex or .odex file, or an APK or zip containing DEX, from the user's own app; the reader accepts DEX versions 035 to 040 and tries others with a warning. Output is a jar of class files rather than Java source, so reading code still needs a separate Java decompiler. Test resources hold small DEX and zip samples, and dex-translator/libs carries an Android dx 30.0.2 jar.",
+      "Apache-2.0, with copyright notices in LICENSE.txt and NOTICE.txt."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/build.gradle",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/d2j-smali/build.gradle",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/dex-tools/src/main/bin_gen/class.cfg",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/dex-reader/src/main/java/com/googlecode/d2j/reader/DexFileReader.java",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/.github/workflows/gradle.yml",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/gradle/wrapper/gradle-wrapper.properties",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/LICENSE.txt",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/NOTICE.txt",
+      "https://github.com/pxb1988/dex2jar/releases/tag/v2.4"
+    ]
+  },
+  {
+    "id": "binsync",
+    "name": "BinSync",
+    "url": "https://github.com/binsync/binsync",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Decompiler plugin for collaborative reverse engineering that records each analyst's work in a shared Git repository, one branch per user, so teammates can pull, push or auto-push changes across IDA Pro, Binary Ninja, Ghidra and angr-management. Synced artifacts are function headers (names, arguments and types), stack and global variables, structs, enums and comments, including user-defined types. It is built by mahaloz, the angr team and the SEFCOM research lab and is used by the Shellphish hacking team; scripting goes through the separate DecLib library.",
+    "description_zh": "用于协同逆向工程的反编译器插件，把每位分析者的工作记录在共享 Git 仓库中（每位用户一个分支），队友可在 IDA Pro、Binary Ninja、Ghidra 和 angr-management 之间拉取、推送或自动推送更改。可同步的内容包括函数头（名称、参数和类型）、栈变量和全局变量、结构体、枚举和注释，并支持用户自定义类型。它由 mahaloz、angr 团队和 SEFCOM 研究实验室开发，并被 Shellphish 黑客团队使用；脚本操作需借助独立的 DecLib 库。",
+    "evidence_url": "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: 5.15.4, published 2026-08-21 on PyPI and GitHub (with an IDA plugin ZIP); the reviewed main commit is one commit ahead, adding Ghidra comment sync and auto-push without a version bump. Install with pip and then binsync --install, which places the plugin in each decompiler; Binary Ninja also offers it in its plugin manager. Every setup needs Python 3.10+ and Git.",
+      "Supported hosts per the README: IDA Pro 8.4+ (older IDA versions need BinSync 4.10.1), Binary Ninja 2.4+, angr-management 9.0+ and Ghidra 12.0+ launched in PyGhidra mode. Support differs by decompiler: angr-management does not sync global variables, structs or enums, and although the Ghidra table marks every artifact as supported, the README text still calls Ghidra support early-stage and says to expect only minimal features such as name and comment syncing.",
+      "Collaborators share a Git repository and analyze the same binary, which each of them supplies. The optional extras add an auxiliary server and an AI user that applies DAILA prompt results to a project and requires an OpenAI API key; its changes are model output to be reviewed.",
+      "BSD-2-Clause. The README's term REAs means reverse-engineering artifacts and does not refer to the REA project. Nothing was installed and no projects were synced."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/README.md#L31-L51",
+      "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/README.md#L101-L112",
+      "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/pyproject.toml",
+      "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/binsync/__main__.py#L60-L80",
+      "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/binsync/core/client.py#L26-L27",
+      "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/LICENSE",
+      "https://github.com/binsync/binsync/releases/tag/v5.15.4",
+      "https://pypi.org/project/binsync/5.15.4/"
+    ]
+  },
+  {
+    "id": "class-dump",
+    "name": "class-dump",
+    "url": "https://github.com/nygard/class-dump",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Command-line utility that reads the Objective-C runtime metadata in Mach-O executables, frameworks and bundles and prints it as ordinary Objective-C declarations for the classes, categories and protocols it finds, the same information otool -ov shows in a more compact form. It can write one header file per class, recurse into the frameworks a binary uses, choose one architecture from a universal binary, filter or sort the output, and annotate it with instance-variable offsets and implementation addresses.",
+    "description_zh": "一款命令行工具，读取 Mach-O 可执行文件、框架和 bundle 中的 Objective-C 运行时元数据，并将其中的类、类别和协议输出为常规的 Objective-C 声明；信息与 otool -ov 所显示的相同，但形式更紧凑。它可以为每个类生成一个头文件，递归展开二进制所用的框架，从通用二进制中选择单一架构，对输出进行筛选或排序，并标注实例变量偏移和方法实现地址。",
+    "evidence_url": "https://github.com/nygard/class-dump/blob/2c82b4ff12b2ea5d1ac23e49281d496997370841/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Dormant: the newest tag, 3.5, is dated 2013-11-16, GitHub release entries stop at 3.4, and the README points to the author's website for the latest version. The reviewed master commit, from 2019-03-15, is 75 commits past 3.5 and carries unreleased changes such as building with the macOS 10.14 SDK.",
+      "Builds use Xcode on macOS with the bundled class-dump.xcodeproj, whose targets set macOS 10.8 and 10.9 deployment targets. The README's usage text lists ppc, ppc64, i386 and x86_64, and the 3.5 changelog adds arm64; support for later Apple architectures or metadata formats is not documented.",
+      "Input is a Mach-O file, framework or bundle the user already has, and only Objective-C metadata is decoded; files with an encryption load command are flagged in the output header. The unreleased changelog says Swift types have a blank encoding and are now written as MISSING_TYPE, so Swift types are not recovered. Output is declarations without method bodies.",
+      "Tests/doTests.py is a Python 2 script that diffs an older and a newer build's output over the installed system frameworks; the repository has no CI. The README notice applies GPL-2.0-or-later, copyright 1997-2019 Steve Nygard, and there is no separate license file; ThirdParty/blowfish.c is LGPL-2.1-or-later. Headers generated from closed-source binaries remain subject to their owners' rights. Nothing was built or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nygard/class-dump/blob/2c82b4ff12b2ea5d1ac23e49281d496997370841/CHANGELOG.md#L1-L15",
+      "https://github.com/nygard/class-dump/blob/2c82b4ff12b2ea5d1ac23e49281d496997370841/class-dump.xcodeproj/project.pbxproj",
+      "https://github.com/nygard/class-dump/blob/2c82b4ff12b2ea5d1ac23e49281d496997370841/Source/CDClassDumpVisitor.m#L104-L112",
+      "https://github.com/nygard/class-dump/blob/2c82b4ff12b2ea5d1ac23e49281d496997370841/Tests/doTests.py",
+      "https://github.com/nygard/class-dump/blob/2c82b4ff12b2ea5d1ac23e49281d496997370841/ThirdParty/blowfish.c",
+      "https://github.com/nygard/class-dump/releases/tag/3.4"
+    ]
+  },
+  {
+    "id": "openawe-alan-wake-engine-case",
+    "name": "OpenAWE: an open reimplementation of Remedy’s Alan Wake engine",
+    "url": "https://github.com/OpenAWE-Project/OpenAWE",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements Remedy Entertainment’s Alan Wake engine, later known as Northlight, in C++ and OpenGL, aiming to run Alan Wake and Alan Wake’s American Nightmare portably from the user’s game data, with Quantum Break and possibly Control as later goals. README documents only a free camera for moving through loaded game data, and the American Nightmare script table implements 16 of its 278 native functions. The repository also includes command-line tools for the games’ archive, texture, Havok and sound formats.",
+    "description_zh": "以 C++ 和 OpenGL 重新实现 Remedy Entertainment 的 Alan Wake 引擎（后来称为 Northlight），目标是借助使用者自己的游戏数据，以可移植方式运行《心灵杀手》和《心灵杀手：美国梦魇》，并把《量子破碎》乃至《控制》列为后续目标。README 只介绍了一个用于在已加载游戏数据中移动的自由视角相机，《美国梦魇》的脚本函数表在 278 个原生函数中实现了 16 个。仓库还附带处理这些游戏的归档、纹理、Havok 和音频格式的命令行工具。",
+    "evidence_url": "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the master commit of 2026-10-11; there are no releases or tags, and CMake declares version 0.0.1. README states the goals but gives no gameplay status beyond a keyboard-and-mouse free camera, and the game selector rejects Quantum Break and Alan Wake Remastered as not yet supported. In the reviewed American Nightmare native-function table, 16 of 278 script functions are implemented and the rest are placeholders. The reviewed sources do not describe how the engine’s formats and behaviour were analysed.",
+      "OpenAWE runs from the data directory of the user’s own Alan Wake or Alan Wake’s American Nightmare installation, passed with -p, together with the shaders compiled during the build, passed with -s. The repository contains no game data: the archive tests use small synthetic byte arrays, and data/ holds a single XML file that carries the project’s GPL header.",
+      "Builds use CMake 3.21+ and C++20 with development packages for zlib, GLFW 3.4+, GLM, TinyXML2, OpenAL, Bullet, fmt 9+, Ogg, Theora, Vorbis and spdlog, GTest for the optional tests, the EnTT and CLI11 submodules or system copies, and the glslc shader compiler. CI builds with GCC and Clang on Linux, MSVC on Windows and Clang on Intel macOS.",
+      "Each CI job runs ctest with GoogleTest unit tests for the archive readers, streams, compression, XML and TOML parsing and geometry utilities, then packages the build with cpack. No test reads the games’ data or compares behaviour with the original executables; the README screenshot shows an American Nightmare scene. This collection did not build or run OpenAWE.",
+      "README places the code under GPL-3.0-or-later except the libraries in 3rdparty, which keep their own licenses. Alan Wake and its data keep their owners’ rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/LICENSE",
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/CMakeLists.txt",
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/.gitmodules",
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/.github/workflows/main.yml",
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/src/game.cpp",
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/src/engines/awan/functions_table.cpp",
+      "https://github.com/OpenAWE-Project/OpenAWE/tree/cce15d3bc289df31522d778fb8e99180e6752b58/test",
+      "https://github.com/OpenAWE-Project/OpenAWE/tree/cce15d3bc289df31522d778fb8e99180e6752b58/tools",
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/data/male_player_class.xml"
+    ]
+  },
+  {
+    "id": "cps2recomp-arcade-static-recomp-case",
+    "name": "CPS-2 Recomp: static recompilation of Capcom CPS-2 and CPS-1 arcade games",
+    "url": "https://github.com/tmcleroy/cps2recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Translates the 68000 game programs and Z80 sound programs of Capcom arcade boards ahead of time into C++ and runs them on a machine model written for the project, with an interpreter for code that has not been translated. One launcher covers Street Fighter Alpha and Alpha 2, Super Puzzle Fighter II Turbo, Vampire Savior and its variants, Vampire Hunter 2, Alien vs. Predator and the CPS-1 Cadillacs and Dinosaurs, adding training modes, widescreen and three-player options. Translated code is generated from the user’s own ROM sets, and a check build compares it block by block with the interpreter.",
+    "description_zh": "将 Capcom 街机基板上的 68000 游戏程序与 Z80 声音程序预先转译为 C++，并在为本项目编写的机器模型上运行，尚未转译的代码则交给解释器执行。一个启动器涵盖《街头霸王 Alpha》及《Alpha 2》、《超级益智战士 II Turbo》、《恶魔战士：救世主》及其变体、《恶魔猎人 2》、《异形大战铁血战士》以及 CPS-1 平台的《恐龙新世纪》，并加入训练模式、宽屏和三人游戏选项。转译代码由使用者自有的 ROM 套装生成，专门的检查构建会逐个代码块将其与解释器对比。",
+    "evidence_url": "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main (2026-10-19), eight commits after release v0.4.0-beta.3, published the same day for macOS 13+, Linux x86_64 including Steam Deck, and 64-bit Windows 10/11. README labels the collection beta: the fighting games play from start to ending, the beat-’em-ups have been run through their first stages under automated play, and few machines and controllers have been tried; Street Fighter Alpha has no training mode or widescreen yet.",
+      "Each game needs the user’s own copy of one specific MAME-style ROM set, such as sfa2u (USA 960430) or vsavj (Japan 970519), with its key file for CPS-2 titles; each game.cfg lists the expected files and checksums. THIRD_PARTY_NOTICES states that nothing from any game or board is in the repository and that translated code is made on the machine of someone who has the ROM set; RELEASING.md adds that each released game program contains that game’s translated and compiled 68000 and Z80 code, a risk the maintainer accepted on 2026-10-12.",
+      "Source builds use make with CMake, Ninja, Python 3 and SDL 3.4.16 or later: Apple clang on macOS, GCC 13+ or Clang 16+ with CMake 3.28+ on Linux, and MinGW-w64 cross-compilation or an MSYS2 UCRT64 shell for Windows. The first build writes the deciphered program, and an explore step of about ten minutes finds code through automated play before translating it; code it does not find keeps running on the interpreter.",
+      "docs/VERIFYING.md documents a check build that runs each translated block beside the interpreter and stops at the first difference in registers, flags, cycles, control flow or memory writes, plus per-frame state-hash comparisons between run modes; the optional arcade timing was compared with a simulated jtcps2 model of the board. CI runs an audit for committed game files, keys and unlisted third-party code, and builds and starts each platform’s package with a stand-in game and no game code. This collection ran none of these checks.",
+      "The project is GPL-3.0; machine/cps2crypt.cpp is MAME’s BSD-3-Clause CPS-2 cipher code, the launcher descends from wiiparty-recomp (GPL-3.0-or-later) through the author’s recomp-common, and sound/driver.cpp is a hand rewrite of Capcom’s QSound sound program that reads its tables and samples from the user’s ROMs. Capcom and the other rights holders keep their game rights. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/THIRD_PARTY_NOTICES.md",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/docs/RELEASING.md",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/docs/BUILDING.md",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/docs/VERIFYING.md",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/docs/TIMING.md",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/games/sfa2/game.cfg",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/tools/audit.sh",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/.github/workflows/ci.yml",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/.gitignore",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/LICENSE",
+      "https://github.com/tmcleroy/cps2recomp/releases/tag/v0.4.0-beta.3"
+    ]
+  },
+  {
+    "id": "binbloom",
+    "name": "binbloom",
+    "url": "https://github.com/quarkslab/binbloom",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Quarkslab command-line tool that infers basic properties of a headerless raw firmware image from simple statistics on its content, which is why the README says it works with any architecture. It guesses endianness from how the high bytes of pointer-sized values cluster under each byte order, and ranks candidate loading (base) addresses by how many values would then point at indexed text strings and pointer arrays. Given a base address, it also searches automotive ECU firmware for a table of Unified Diagnostic Services (UDS) command IDs and prints the inferred structure layout for use in a disassembler.",
+    "description_zh": "Quarkslab 开发的命令行工具，通过对内容做简单统计来推断无文件头原始固件镜像的基本属性，因此 README 称其适用于所有架构。它根据指针宽度数值的高位字节在两种字节序下的聚集程度推测端序，并按候选加载地址（基址）下有多少数值会指向已索引的文本字符串和指针数组，对候选地址排序。给定基址后，它还能在汽车 ECU 固件中查找统一诊断服务（UDS）命令 ID 表，并输出推断出的结构体布局，供反汇编器使用。",
+    "evidence_url": "https://github.com/quarkslab/binbloom/blob/95cfaacf2dfcbeba51c7d09132f188331449ec24/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.1, published 2024-06-06 and tagged at the master head, commit 95cfaac from 2022-11-07, whose source reports version 2.1.0. The release adds a -m option for base-address alignment and fixes a crash on very small files and null-pointer and floating-point errors; configure.ac and the man page still say 2.0, and master has no later commits.",
+      "The README documents a Linux-only source build with autoreconf, configure, make and make install; configure.ac needs a C compiler, libm and pthreads. The release attaches no prebuilt binaries.",
+      "Each run takes one raw firmware dump supplied by the user and assumes a 32-bit target unless -a 64 is given. The README warns that endianness detection may be unreliable below about 10 KB and offers -e to force it; -t adds threads, -f takes a file of known function addresses, and the experimental -d deep search is slower. Output is a ranked list of candidate base addresses, sometimes marked not sure, and the UDS search runs only when -b supplies the base address.",
+      "The README calls the UDS search heuristic and prone to false positives, so each candidate table has to be checked by hand. The repository contains no tests or sample firmware and publishes no accuracy results.",
+      "Apache-2.0. Nothing was built and no firmware was analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/quarkslab/binbloom/blob/95cfaacf2dfcbeba51c7d09132f188331449ec24/man/binbloom.1",
+      "https://github.com/quarkslab/binbloom/blob/95cfaacf2dfcbeba51c7d09132f188331449ec24/configure.ac",
+      "https://github.com/quarkslab/binbloom/blob/95cfaacf2dfcbeba51c7d09132f188331449ec24/src/binbloom.c#L1197-L1259",
+      "https://github.com/quarkslab/binbloom/blob/95cfaacf2dfcbeba51c7d09132f188331449ec24/src/binbloom.c#L1422-L1443",
+      "https://github.com/quarkslab/binbloom/blob/95cfaacf2dfcbeba51c7d09132f188331449ec24/LICENSE",
+      "https://github.com/quarkslab/binbloom/releases/tag/v2.1"
+    ]
+  },
+  {
+    "id": "packetry",
+    "name": "Packetry",
+    "url": "https://github.com/greatscottgadgets/packetry",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Great Scott Gadgets' USB 2.0 protocol analysis application for live capture with the Cynthion analyzer or for exploring previously captured traffic, working from physical-layer packet data at High, Full and Low Speed. Its GTK 4 interface offers a hierarchical view that expands high-level events into their transactions and packets, plus chronological transaction and packet views, while a device pane summarizes each observed device from its decoded descriptors, including HID report descriptors. Captures are opened and saved as pcap files with the LINKTYPE_USB_2_0 link type, and v0.5.0 added pcapng with custom blocks for non-packet events.",
+    "description_zh": "Great Scott Gadgets 推出的 USB 2.0 协议分析应用，可配合 Cynthion 分析仪实时捕获，也可浏览已捕获的流量，处理高速、全速和低速 USB 的物理层数据包。其 GTK 4 界面提供分层视图，可将高层事件逐级展开为事务和数据包，另有按时间顺序排列的事务视图和数据包视图；设备面板则根据解码后的描述符（包括 HID 报告描述符）汇总每个观察到的设备。捕获以 LINKTYPE_USB_2_0 链路类型的 pcap 文件打开和保存，v0.5.0 还加入了带有非数据包事件自定义块的 pcapng 格式。",
+    "evidence_url": "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v0.5.0, published 2025-09-30 with a Windows installer and a Linux x86_64 AppImage; the quick-start guide installs it on macOS with Homebrew. The reviewed main commit is 47 commits ahead with interface, dependency and minimum-Rust changes, while Cargo.toml still reports 0.5.0.",
+      "Live capture needs a Cynthion analyzer whose host software is installed and updated with cynthion update; the code also probes iCE40-usbtrace devices, which the documentation does not cover. Viewing existing capture files needs no hardware.",
+      "Source builds need Rust 1.93+ according to the README and Cargo.toml (the quick-start guide still says 1.85.1) and GTK 4 headers discoverable through pkg-config. The documentation warns not to build with --all-features, whose optional features are for debugging and testing and degrade normal use.",
+      "Captures come from the user's own USB devices and buses. The documentation notes that the hierarchical view can show packets out of chronological order. BSD-3-Clause. No capture was made or loaded."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/docs/source/what_is_packetry.rst",
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/docs/source/quick_start.rst",
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/docs/source/user_interface.rst",
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/CHANGELOG.md",
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/Cargo.toml",
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/src/backend/mod.rs#L32-L40",
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/LICENSE",
+      "https://github.com/greatscottgadgets/packetry/releases/tag/v0.5.0"
+    ]
+  },
+  {
+    "id": "lucid-microcode-explorer",
+    "name": "Lucid",
+    "url": "https://github.com/gaasedelen/lucid",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDA Pro plugin by Markus Gaasedelen for studying how the Hex-Rays decompiler transforms its microcode intermediate language. Opened from a Pseudocode window with View microcode, its explorer stays synchronized with the pseudocode and lets the user scroll a selected microinstruction through each microcode maturity level, tracing sub-operands back to their origins and changing the cursor color when the traced code has been optimized away. Nested sub-instructions can be shown as tree graphs; the author labels it a developer-oriented prototype and code resource, not a general-purpose reverse-engineering tool.",
+    "description_zh": "Markus Gaasedelen 开发的 IDA Pro 插件，用于研究 Hex-Rays 反编译器如何逐步变换其微码（microcode）中间语言。在伪代码窗口中选择 View microcode 即可打开浏览器，它与伪代码保持同步，用户可让选中的微指令依次滚动经过各个微码成熟度层级，把子操作数追溯到来源；若追踪的代码已被优化掉，光标会变色提示。嵌套的子指令可显示为树状图；作者将其定位为面向开发者的原型和代码参考，而不是通用逆向工程工具。",
+    "evidence_url": "https://github.com/gaasedelen/lucid/blob/9f2480dc8e6bbb9421b5711533b0a98d2e9fb5af/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Unmaintained since its initial release: v0.1.1, tagged 2020-09-15, is the last release and the reviewed master commit, with no commits since, and a community pull request adding further features has been open and unmerged since 2024. The README's list of known bugs from that release, including a possible IDA crash when double-clicking some address comments and little testing on macOS and Linux, has not been revised.",
+      "Needs IDA Pro 7.5 or newer with a Hex-Rays decompiler for the analyzed architecture. It is a Python 2/3 plugin without third-party dependencies, installed by copying the plugins folder into IDA's user plugin directory; its UI imports IDA's bundled PyQt5, and compatibility with current IDA releases is not documented.",
+      "Works on binaries the user has opened and decompiled in IDA. It is a viewer for decompiler internals; the README lists microcode-optimizer workflows only as possible future work.",
+      "MIT license. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/gaasedelen/lucid/blob/9f2480dc8e6bbb9421b5711533b0a98d2e9fb5af/README.md#L19-L33",
+      "https://github.com/gaasedelen/lucid/blob/9f2480dc8e6bbb9421b5711533b0a98d2e9fb5af/README.md#L71-L98",
+      "https://github.com/gaasedelen/lucid/blob/9f2480dc8e6bbb9421b5711533b0a98d2e9fb5af/plugins/lucid/ui/explorer.py#L1-L10",
+      "https://github.com/gaasedelen/lucid/blob/9f2480dc8e6bbb9421b5711533b0a98d2e9fb5af/LICENSE",
+      "https://github.com/gaasedelen/lucid/releases/tag/v0.1.1",
+      "https://github.com/gaasedelen/lucid/pull/5"
+    ]
+  },
+  {
+    "id": "bluefluff-furby-connect-ble-case",
+    "name": "bluefluff: reverse engineering Furby Connect's Bluetooth LE protocol",
+    "url": "https://github.com/Jeija/bluefluff",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Documents the Bluetooth Low Energy interface of Hasbro's Furby Connect toy, worked out, according to its notes, from the companion app's native library, sniffed BLE traffic and trial and error. It maps the GATT services and the command and response bytes of the toy's Nordic radio and GeneralPlus controller, covering action sequences, antenna colour, mood values, sensor reports and a hidden debug screen. fluffd, a Node.js daemon built on the noble BLE library, exposes these commands through an HTTP API and a browser control page.",
+    "description_zh": "记录 Hasbro 玩具 Furby Connect 的蓝牙低功耗（BLE）接口；据其说明，这些内容来自对配套应用原生库的分析、BLE 流量嗅探和反复试验。文档梳理了 GATT 服务，以及玩具中 Nordic 无线芯片和 GeneralPlus 控制器的命令与响应字节，涵盖动作序列、天线颜色、情绪数值、传感器报告和一个隐藏的调试界面。fluffd 是基于 noble BLE 库的 Node.js 守护进程，通过 HTTP API 和浏览器控制页面提供这些命令。",
+    "evidence_url": "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Most research commits date from 2017 and 2018, with a few later fixes and a Docker setup added in March 2026. The README reports that large parts of the BLE protocol are understood, while the action list is incomplete, the update (DLC) format is only partly explored, and code execution, custom LCD animations and the sleep-mask connector remain untried.",
+      "Requires a Furby Connect and a host with Bluetooth LE, built in or through a USB Bluetooth 4.0+ adapter. The repository contains no Hasbro update files or app code, and this record covers neither obtaining nor modifying them. The README warns that interfacing in unwarranted ways can brick the toy and will almost certainly void its warranty.",
+      "fluffd needs Node.js 7.0 or later according to the README and pins @abandonware/noble 1.9.2-23. The README covers Linux, which needs libudev development files and a running BlueZ, and macOS, which needs xpc-connection, and also names FreeBSD and Windows. The Docker image uses node:16-bullseye, needs host networking for raw HCI access and supports Linux hosts only.",
+      "The findings are the author's documented observations, made without opening the toy. The repository has no tests or CI, and no commands were sent in this review.",
+      "MIT (2017, Florian Euchner); the README's disclaimer says the information is for educational purposes only. Furby Connect, its companion app and Hasbro's content keep their own rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/doc/bluetooth.md",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/doc/generalplus.md",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/doc/nordic.md",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/doc/actions.md",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/fluffd/fluffd.js",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/fluffd/package.json",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/Dockerfile",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/doc/docker.md",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/LICENSE.md"
+    ]
+  },
+  {
+    "id": "apk-sh",
+    "name": "apk.sh",
+    "url": "https://github.com/ax/apk.sh",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Bash script that automates repetitive Android app analysis chores around apktool: pulling an installed package from a device or emulator, decoding resources and disassembling dex code, and rebuilding the decoded directory into an APK. Split APKs from app bundles are combined into a single APK when pulled, and the script can also prepare a copy for Frida instrumentation.",
+    "description_zh": "一个 Bash 脚本，围绕 apktool 自动完成 Android 应用分析中的重复性工作：从设备或模拟器拉取已安装的应用包、解码资源并反汇编 dex 代码，以及将解码后的目录重新构建为 APK。拉取 app bundle 的拆分 APK 时会将其合并为单个 APK，脚本还可以准备一份用于 Frida 插桩的副本。",
+    "evidence_url": "https://github.com/ax/apk.sh/blob/2a1ed25e861dacfb4fec1aef7b099813abff24ed/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.1.3, published 2026-01-26, which matches the reviewed main commit. It is a single Bash script; the README lists apktool, apksigner, unxz, zipalign, aapt and adb as requirements.",
+      "On first use the script creates a hidden apk.sh folder in the home directory and downloads the tools it needs there, including the latest apktool release and Android build tools, so a network connection and a Java runtime are needed.",
+      "Input is an APK or an installed package the user is authorized to analyze; pulling requires adb access to the device or emulator. Rebuilt APKs are modified copies, not the original package.",
+      "GPL-3.0. This entry describes the documented pull, decode and rebuild workflow only. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ax/apk.sh/blob/2a1ed25e861dacfb4fec1aef7b099813abff24ed/README.md#L121-L130",
+      "https://github.com/ax/apk.sh/blob/2a1ed25e861dacfb4fec1aef7b099813abff24ed/apk.sh",
+      "https://github.com/ax/apk.sh/blob/2a1ed25e861dacfb4fec1aef7b099813abff24ed/LICENSE",
+      "https://github.com/ax/apk.sh/releases/tag/v1.1.3"
+    ]
+  },
+  {
+    "id": "r2dec",
+    "name": "r2dec",
+    "url": "https://github.com/wargio/r2dec-js",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Decompiler plugin for radare2 that turns the disassembly of an analyzed function into pseudo-C through the pdd command. Its decompiler is written in JavaScript, with one module per architecture, compiled to QuickJS bytecode and embedded in a native radare2 core plugin; output can sit beside the assembly or offsets, show only scope blocks, casts or cross-references, render as HTML, or be written back into radare2 as comments. The README lists x86/x64, 16/32/64-bit ARM, MIPS, PowerPC (including VLE), SPARC, AVR, V850 and Dalvik, plus experimental 6502, 8051, BPF, m68k, SuperH, WebAssembly and RISC-V support.",
+    "description_zh": "radare2 的反编译插件，通过 pdd 命令把已分析函数的反汇编转换为伪 C 代码。反编译器用 JavaScript 编写，每种架构对应一个模块，编译为 QuickJS 字节码后嵌入原生的 radare2 核心插件；输出可与汇编或偏移并排显示，可只显示作用域块，可显示类型转换或交叉引用，也可输出 HTML 或作为注释写回 radare2。README 列出的架构包括 x86/x64、16/32/64 位 ARM、MIPS、PowerPC（含 VLE）、SPARC、AVR、V850 和 Dalvik，另有实验性的 6502、8051、BPF、m68k、SuperH、WebAssembly 和 RISC-V 支持。",
+    "evidence_url": "https://github.com/wargio/r2dec-js/blob/32ada0dc8bffd1e3ec55d6134531eaae244502ed/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: 6.2.0, published 2026-08-16 from the reviewed master commit, with a Linux amd64 plugin, Windows 32- and 64-bit builds and a source archive that includes dependencies. Release numbers follow radare2's: CI builds against radare2 6.2.0 on Linux and Windows, and the macOS job is commented out. Install through r2pm, or build with meson 0.55.0+ and ninja against the radare2 development files; QuickJS is fetched as a meson subproject.",
+      "Binaries are supplied by the user and the target function must first be analyzed in radare2 (af). Output is readable pseudo-C rather than recovered source; as the README example shows, it can keep register assignments such as eax and generic local names. Regression tests live in the separate r2dec-regression repository, and issue reports use the JSON produced by pddi.",
+      "This repository builds only a radare2 plugin; Rizin's jsdec decompiler is a separate project. Source files carry SPDX headers: BSD-3-Clause for most of the code and MIT for the bundled base64 helper, so GitHub detects no single license. No binaries were decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/wargio/r2dec-js/blob/32ada0dc8bffd1e3ec55d6134531eaae244502ed/README.md#L37-L114",
+      "https://github.com/wargio/r2dec-js/blob/32ada0dc8bffd1e3ec55d6134531eaae244502ed/meson.build",
+      "https://github.com/wargio/r2dec-js/blob/32ada0dc8bffd1e3ec55d6134531eaae244502ed/subprojects/libquickjs.wrap",
+      "https://github.com/wargio/r2dec-js/blob/32ada0dc8bffd1e3ec55d6134531eaae244502ed/.github/workflows/ci.yml",
+      "https://github.com/wargio/r2dec-js/blob/32ada0dc8bffd1e3ec55d6134531eaae244502ed/.ci-scripts/ci-tests.sh",
+      "https://github.com/wargio/r2dec-js/tree/32ada0dc8bffd1e3ec55d6134531eaae244502ed/LICENSES",
+      "https://github.com/wargio/r2dec-js/releases/tag/6.2.0",
+      "https://github.com/rizinorg/jsdec/blob/9fc60988ddfe4231971f2cbf5f1064460072c2b3/README.md"
+    ]
+  },
+  {
+    "id": "m1n1",
+    "name": "m1n1",
+    "url": "https://github.com/AsahiLinux/m1n1",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Asahi Linux's bootloader and hardware-research environment for Apple Silicon Macs. It bridges Apple's boot chain to Linux by loading appended device trees, initramfs and kernels; in proxy mode a USB link lets a Python client probe hardware live and run macOS or Linux under m1n1's hypervisor while tracing its hardware accesses.",
+    "description_zh": "Asahi Linux 面向 Apple Silicon Mac 的引导程序与硬件研究环境。它将 Apple 的启动链衔接到 Linux，加载附加在其后的设备树、initramfs 和内核；在代理模式下，Python 客户端可通过 USB 连接实时探查硬件，并在 m1n1 的虚拟机监控器中运行 macOS 或 Linux，同时追踪其硬件访问。",
+    "evidence_url": "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Under active development: the reviewed main commit (2026-10-19) is 53 commits past the v2.0.0 tag (2026-10-02), whose message calls it the first GPL release, otherwise identical to v1.9.9. The latest GitHub release, v1.9.9, ships a stage-2 m1n1.bin and a UEFI-only package holding just an m1n1 boot.bin.",
+      "Runs only on Apple Silicon Macs. Builds need an aarch64-linux-gnu-gcc cross toolchain (or a native ARM64 one), LLVM and lld on macOS, or the bundled compose setup, plus Rust's aarch64-unknown-none-softfloat target for chainloading builds. The Python proxy client (pyserial, construct, asn1) talks to m1n1 over USB from another host.",
+      "Apple's kmutil installs m1n1 as a custom boot object from macOS recovery, normally via the Asahi Linux installer. run_guest.py takes a Mach-O guest such as an XNU kernelcache from the user's own macOS install; the repository ships no Apple firmware, kernels or macOS components. proxyclient/hv holds 27 tracers for blocks such as AGX, DCP, NVMe and SMC.",
+      "CI builds main, checks C and Rust formatting and runs the proxy client's pytest suite on Ubuntu and macOS 14 and 15; those tests cover its assembler, object loading and toolchain handling, not behavior on Mac hardware.",
+      "Code through v1.9.9 stays MIT; from v2.0.0 m1n1 is GPL-2.0-or-later, and embedded third-party code such as libfdt, Arm Trusted Firmware portions and dlmalloc, and vendored Rust crates keep their own licenses. Asahi Linux's LLM policy broadly forbids generative AI for material contributions, citing its clean-room reverse-engineering rules; AGENTS.md, CLAUDE.md and GEMINI.md say the maintainers forbid any AI or LLM use for legal reasons."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/AsahiLinux/docs/blob/0d1f8917fa88745d62a4c05d802c4a7298c8616b/docs/sw/m1n1-user-guide.md",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/proxyclient/tools/run_guest.py",
+      "https://github.com/AsahiLinux/m1n1/tree/7cde7d1a784d851ebfee5579fa363c38b14150c0/proxyclient/hv",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/requirements.txt",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/.github/workflows/test.yml",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/.github/workflows/build.yml",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/LICENSE",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/LICENSE.MIT",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/AGENTS.md",
+      "https://asahilinux.org/llm-policy/",
+      "https://github.com/AsahiLinux/m1n1/releases/tag/v1.9.9",
+      "https://github.com/AsahiLinux/m1n1/releases/tag/v2.0.0"
+    ]
+  },
+  {
+    "id": "svd-loader-ghidra",
+    "name": "SVD-Loader for Ghidra",
+    "url": "https://github.com/leveldown-security/SVD-Loader-Ghidra",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Ghidra script from leveldown security that reads a CMSIS-SVD file, the XML format describing a microcontroller's memory-mapped peripherals and their registers, and applies it to firmware already loaded in Ghidra. It creates memory blocks for the peripheral address ranges, a structure type for each peripheral with its registers as fields, and a label at each peripheral base address, so register accesses can be read by peripheral and register name. It targets little-endian Arm Cortex-M devices and bundles a fork of the cmsis-svd parser ported to Ghidra's Jython.",
+    "description_zh": "leveldown security 发布的 Ghidra 脚本，读取 CMSIS-SVD 文件（描述微控制器内存映射外设及其寄存器的 XML 格式），并将其应用到已载入 Ghidra 的固件上。它为外设地址范围创建内存块，为每个外设生成以寄存器为字段的结构体类型，并在各外设基址处添加标签，从而可按外设和寄存器名称阅读寄存器访问。它面向小端 Arm Cortex-M 设备，并附带一份移植到 Ghidra Jython 环境的 cmsis-svd 解析器分支。",
+    "evidence_url": "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository has no releases or tags. The reviewed master head is a 2024-02-01 merge that expanded the installation instructions; the last code changes, merged on 2023-03-04, added error handling to the script and fixed derivedFrom handling for peripherals in the bundled parser. The README names no supported Ghidra release, a 2019 commit fixed compatibility with Ghidra 9.1, and the repository has no tests.",
+      "It runs inside Ghidra's CodeBrowser: add the cloned repository as a script directory in the Script Manager, then run SVD-Loader.py on the open program. The script is written for Ghidra's Jython environment, and it imports the bundled cmsis_svd package (version 0.4) from the same directory.",
+      "Supply the CMSIS-SVD file for the target chip, which the README suggests taking from the cmsis-svd collection or a Keil software pack, and the firmware image already imported into Ghidra. The script stops on an SVD that declares a big-endian CPU and warns but continues when the CPU is not a Cortex-M. Peripheral ranges that conflict with existing memory blocks are reported and skipped.",
+      "Only peripherals and registers are applied: the generated memory blocks are uninitialized, volatile and read/write, and register bit fields, enumerated values and interrupts from the SVD are not added. Results depend on the supplied SVD file; when a block or structure cannot be created, the script prints the failure and moves on.",
+      "SVD-Loader.py is GPL-3.0; the forked cmsis_svd/ code keeps upstream cmsis-svd's Apache-2.0 license. The blog post the README links for usage details returned HTTP 404 at review. The script was not run in Ghidra."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/SVD-Loader.py",
+      "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/SVD-Loader.py#L84-L105",
+      "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/SVD-Loader.py#L131-L201",
+      "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/cmsis_svd/__init__.py",
+      "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/LICENSE"
+    ]
+  },
+  {
+    "id": "impacto-mages-engine-case",
+    "name": "impacto: a reimplementation of the MAGES. visual-novel engine",
+    "url": "https://github.com/CommitteeOfZero/impacto",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements the MAGES. visual-novel engine, used by the Science Adventure and Memories Off series, in C++ with OpenGL, running supported titles from the user’s original data files through per-game Lua profiles in one binary. README says all endings can be reached in at least one game, Memories Off 6 T-Wave, but no game is fully complete. The project’s tracking issue lists partial support for titles including Chaos;Head Love Chu Chu, Chaos;Child Love Chu Chu, Steins;Gate and Robotics;Notes Elite.",
+    "description_zh": "以 C++ 和 OpenGL 重新实现《科学冒险》系列和《告别回忆》系列所用的 MAGES. 视觉小说引擎，通过按游戏划分的 Lua 配置，在同一个程序中运行使用者原版数据文件里的受支持作品。README 称至少有一款游戏（Memories Off 6 T-Wave）可以达成全部结局，但还没有任何游戏完全实现。项目的跟踪议题列出了对 Chaos;Head Love Chu Chu、Chaos;Child Love Chu Chu、Steins;Gate、Robotics;Notes Elite 等作品的部分支持。",
+    "evidence_url": "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the master commit of 2026-10-17, which CI published as prerelease 0.10.8.887; all published releases are automatic prereleases. README says impacto is in active development: all endings are reachable in at least Memories Off 6 T-Wave, but some functionality and architecture are missing and no game is fully complete. The support-tracking issue (#1, last updated 2026-02-20) lists per-title progress, from story progression and saving in the Love Chu Chu titles to only graphics and sound in others, and names missing features such as some 2D special effects.",
+      "Each game needs the resource files of a supported version, mostly console releases such as the PS3 Memories Off 6 T-Wave, the PS4 Chaos;Child Love Chu Chu or the Japanese Switch Robotics;Notes DaSH, placed under gamedata/<profile> as listed in that profile’s vfs.lua. The repository holds no game resource files; its resources include font atlases generated with the project’s font tool, Noto CJK fonts, and per-game application icons and cursors, with the icons showing official character artwork. The reviewed Windows prerelease package contains the executable, libraries, profiles, shaders and those resources, but no game data.",
+      "README targets 64-bit Windows 10 and desktop Linux, with experimental runs on macOS, Android, Switch (homebrew and Linux) and WebAssembly; OpenGL is the main renderer, with experimental Vulkan and DirectX 9 options. Builds use CMake 3.28+ presets, C++20 and a vcpkg manifest, with Visual Studio 2019 or newer on Windows and documented Ubuntu and devkitPro Switch builds. CI produces Windows, Linux, macOS (arm64 and x64), Android and Switch packages.",
+      "CI runs clang-format linting and builds the packages; the reviewed workflow has no automated test suite, and no comparison with the original engine is published. README invites both black-box observation of the original’s behaviour and white-box inspection of its internals, without documenting specific methods or tools. This collection did not build or run impacto.",
+      "LICENSE is ISC for the source as a whole; THIRDPARTY.md lists code based on vgmstream, Ryujinx, OpenImageIO, FFplay and others, plus external libraries, and warns that binary distributions may fall under more restrictive terms. The games, their data and the official artwork used in the icons belong to their rights holders. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/doc/getting_started.md",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/doc/font-lb/font-lb.md",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/profiles/mo6tw/vfs.lua",
+      "https://github.com/CommitteeOfZero/impacto/tree/b30493852424d32c7806307486fd33edfa0bc54a/resources",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/resources/cclcc/icondata/icon.png",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/.github/workflows/impacto.yml",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/CMakeLists.txt",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/vcpkg.json",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/THIRDPARTY.md",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/LICENSE",
+      "https://github.com/CommitteeOfZero/impacto/issues/1",
+      "https://github.com/CommitteeOfZero/impacto/releases/tag/0.10.8.887"
+    ]
+  },
+  {
+    "id": "caringcaribou",
+    "name": "Caring Caribou",
+    "url": "https://github.com/CaringCaribou/caringcaribou",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Python automotive security exploration tool, begun in the HEAVENS research project, that the README describes as a zero-knowledge tool to drop onto a CAN network and collect information about the services present. Passive modules dump CAN traffic to the terminal or a candump-format file and list every arbitration ID seen on the bus, while the UDS (ISO 14229-1), DoIP (ISO 13400-2) and XCP modules discover ECUs that answer diagnostic requests, enumerate their supported services and subservices, read data identifiers and query XCP capabilities. Its utilities provide reusable ISO-TP (ISO 15765-2) and UDS implementations, and new modules plug into a drop-in module architecture.",
+    "description_zh": "Python 编写的汽车安全探索工具，起源于 HEAVENS 研究项目；README 称它是一种无需预先了解目标的工具，可接入任意 CAN 网络并收集其中存在哪些服务的信息。被动模块可将 CAN 流量输出到终端或 candump 格式文件，并列出总线上出现的所有仲裁 ID；UDS（ISO 14229-1）、DoIP（ISO 13400-2）和 XCP 模块则可发现响应诊断请求的 ECU，枚举其支持的服务和子服务，读取数据标识符并查询 XCP 能力。其工具库提供可复用的 ISO-TP（ISO 15765-2）和 UDS 实现，新模块可通过即插即用的模块架构加入。",
+    "evidence_url": "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest GitHub release at review: 0.6, published 2024-03-28; the reviewed master commit is 45 commits ahead and its packaging already reports 0.7. The README installs it from the source tree; PyPI had no caringcaribou project at review.",
+      "Needs a CAN interface supported by python-can and configured in python-can's .canrc file. The install guide uses a PEAK PCAN-USB adapter with SocketCAN on Linux (kernel 3.4 or newer there, while the README asks for a pretty modern kernel) and suggests a Linux VM on Windows. The README requires Python 3.7+; the DoIP module also needs the doipclient and udsoncan packages.",
+      "Discovery and service scans transmit diagnostic requests on the connected bus or network. Other modules send, replay or fuzz frames and perform intrusive diagnostic operations; those are outside this entry, which covers traffic capture and diagnostic-service discovery only.",
+      "GPL-3.0. The bundled unit tests run against mock ECUs on a virtual CAN bus. No CAN traffic was captured or sent."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/howtoinstall.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/howtouse.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/dump.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/listener.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/uds.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/doip.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/documentation/xcp.md",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/pyproject.toml",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/caringcaribou/tests/mock/mock_ecu.py",
+      "https://github.com/CaringCaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/LICENSE",
+      "https://github.com/CaringCaribou/caringcaribou/releases/tag/0.6"
+    ]
+  },
+  {
+    "id": "rms-runtime-mobile-security",
+    "name": "Runtime Mobile Security (RMS)",
+    "url": "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Frida-based web interface for observing Android and iOS apps at run time on a test device. It lists the classes and methods loaded in memory, traces method arguments and return values, generates hook templates for a selected class, finds class instances on the heap, and on Android monitors categorized framework APIs and a few libc file functions; a beta file browser covers the app's private folders.",
+    "description_zh": "基于 Frida 的 Web 界面，用于在测试设备上观察运行中的 Android 与 iOS 应用。它可列出内存中已加载的类和方法，跟踪方法参数与返回值，为选定的类生成 Hook 模板，在堆上查找类实例；在 Android 上还能按类别监控框架 API 以及少数 libc 文件函数。另有处于测试阶段的文件浏览器，可查看应用的私有目录。",
+    "evidence_url": "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/blob/d07212e7edec20b14e3108860bebb4f0e8fffe40/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 1.5.25, published 2026-07-01, matching the reviewed master commit; it installs from npm as rms-runtime-mobile-security and its package.json depends on Frida 17 node bindings. The README says it was tested on macOS with Android emulators, an Amazon Fire Stick 4K, an iPhone 7 and Chrome, and may need minor adjustments on Windows and Linux.",
+      "Requires Node.js, Frida's CLI tools and a frida-server already running on a single connected test device; RMS cannot handle several devices at once. It also attaches to a default system process to list preloaded classes. Use it only on apps and devices the user is authorized to analyze.",
+      "The web interface defaults to port 5491; rms.js passes only a port to server.listen, so Node's default all-interface binding applies, and the reviewed code adds no login. The README notes that complex methods sometimes fail to load and that Safari is unsupported.",
+      "GPL-3.0. The bundled custom Frida scripts were not reviewed and are not described here. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/blob/d07212e7edec20b14e3108860bebb4f0e8fffe40/README.md#L36-L60",
+      "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/blob/d07212e7edec20b14e3108860bebb4f0e8fffe40/README.md#L99-L118",
+      "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/blob/d07212e7edec20b14e3108860bebb4f0e8fffe40/package.json",
+      "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/blob/d07212e7edec20b14e3108860bebb4f0e8fffe40/rms.js#L101-L112",
+      "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/blob/d07212e7edec20b14e3108860bebb4f0e8fffe40/LICENSE",
+      "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/releases/tag/1.5.25"
+    ]
+  },
+  {
+    "id": "pharos",
+    "name": "Pharos",
+    "url": "https://github.com/cmu-sei/pharos",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Carnegie Mellon SEI's framework of automated static analysis tools for binary programs, built on LLNL's ROSE compiler infrastructure for disassembly, control-flow analysis and instruction semantics. Its best-known tool, OOAnalyzer, recovers C++ classes, methods and other object-oriented constructs from 32-bit x86 executables built with Microsoft Visual C++ by applying Prolog rules to facts about how object pointers move between functions, as described in a CCS 2018 paper, and exports JSON for an included IDA plugin or the separate Kaiju Ghidra plugin. Other tools find API call sequences (ApiAnalyzer), report static API-call parameters (CallAnalyzer), produce function hashes and YARA signatures for similarity analysis (FN2Hash, FN2Yara) and work out the conditions for reaching one address from another (PathAnalyzer).",
+    "description_zh": "卡内基梅隆大学软件工程研究所（SEI）推出的二进制程序自动化静态分析工具框架，基于劳伦斯利弗莫尔国家实验室的 ROSE 编译器基础设施完成反汇编、控制流分析和指令语义建模。其中最知名的 OOAnalyzer 跟踪对象指针在函数之间的传递，再用 Prolog 规则从这些事实中恢复 C++ 类、方法等面向对象结构，适用于 Microsoft Visual C++ 编译的 32 位 x86 可执行文件，方法见 CCS 2018 论文；结果以 JSON 导出，可供仓库自带的 IDA 插件或独立的 Kaiju Ghidra 插件使用。其他工具可查找 API 调用序列（ApiAnalyzer）、报告 API 调用的静态参数（CallAnalyzer）、生成用于相似性分析的函数哈希和 YARA 签名（FN2Hash、FN2Yara），以及求出从一个地址到达另一地址所需的条件（PathAnalyzer）。",
+    "evidence_url": "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "There are no tagged releases; the reviewed master commit is from 2026-08-03. The README calls Pharos a research project under active development whose documentation is incomplete and whose portability has not been actively tested, and it says DumpMASM is no longer maintained, recommending ROSE's own tools instead.",
+      "The easiest route is the prebuilt ghcr.io/cmu-sei/pharos Docker image, which the GitHub workflow builds for amd64 and arm64 on each push and weekly. Building from source is heavy: C++14 with CMake, Boost, yaml-cpp, SQLite, Z3, SWI-Prolog and ROSE, with the build script pinning ROSE v2.6.0, Z3 4.8.7 and SWI-Prolog 8.5.12. INSTALL.md suggests about 4 GiB of RAM per build CPU for small CPU counts, supports its build script only on the latest Ubuntu, and lists older manually tested configurations on RHEL 7, Ubuntu 19.04 and openSUSE 15.1.",
+      "Provide the executables to analyze yourself. OOAnalyzer is limited to 32-bit MSVC binaries and has been tested little on 64-bit executables or other compilers; its JSON output feeds the IDA plugin in the repository or the separate Kaiju Ghidra plugin, and very large executables need the extra steps in the oorules notes.",
+      "The Dockerfile has a test stage that runs ctest against test executables compiled from the sources in tests/, but the GitHub workflow builds only the release image. Nothing was built or run in this review.",
+      "LICENSE.md is an SEI BSD-style license (Copyright 2021 Carnegie Mellon University) that also restricts use of the CMU and SEI names, which is why GitHub reports NOASSERTION. ROSE, SWI-Prolog, Z3, Boost, yaml-cpp and SQLite keep their own licenses. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/INSTALL.md",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/Dockerfile",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/.github/workflows/docker.yml",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/scripts/build_prereqs.bash",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/CMakeLists.txt",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/tools/ooanalyzer/ooanalyzer.pod",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/tools/ooanalyzer/ida/README.md",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/share/prolog/oorules/README.md",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/tools/apianalyzer/apianalyzer.pod",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/tools/pathanalyzer/pathanalyzer.pod",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/LICENSE.md",
+      "https://edmcman.github.io/papers/ccs18.pdf",
+      "https://github.com/cmu-sei/pharos/pkgs/container/pharos"
+    ]
+  },
+  {
+    "id": "heimdall-rs",
+    "name": "heimdall-rs",
+    "url": "https://github.com/Jon-Becker/heimdall-rs",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Rust toolkit by Jonathan Becker for analyzing EVM smart-contract bytecode, particularly of contracts without verified source. Its CLI disassembles bytecode, builds control-flow graphs, decompiles it through per-function symbolic execution and heuristic post-processing passes into an ABI plus beta Solidity or Yul source, decodes raw calldata, dumps the storage slots a contract accesses over a block range, and inspects transactions by decoding their calldata, traces and logs. Targets can be raw bytecode, files, contract addresses or ENS names; function selectors are resolved against the OpenChain signature database unless that step is skipped.",
+    "description_zh": "Jonathan Becker 用 Rust 编写的 EVM 智能合约字节码分析工具包，尤其适用于未公开验证源码的合约。其命令行可反汇编字节码、生成控制流图，借助逐函数的符号执行和启发式后处理把字节码反编译为 ABI 以及测试阶段的 Solidity 或 Yul 源码，还能解码原始 calldata、导出合约在某一区块范围内访问的存储槽，并通过解码 calldata、调用跟踪和日志来检查交易。分析目标可以是原始字节码、文件、合约地址或 ENS 名称；函数选择器默认通过 OpenChain 签名数据库解析，也可跳过这一步。",
+    "evidence_url": "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: 0.9.3, published 2026-04-30, with Linux and macOS binaries for amd64 and arm64 and no Windows build; the reviewed main commit is 38 commits ahead, and both that tag and main still declare workspace version 0.9.2. Install through the bifrost installer, which builds from source with Cargo or, with -B, fetches a precompiled binary; the repository pins Rust 1.91.0.",
+      "Contract addresses, ENS names, storage dumps and transaction inspection need an Ethereum JSON-RPC endpoint, given as a URL or a MESC reference; an optional Etherscan API key lets decompilation recover creation bytecode of self-destructed contracts. Optional LLM post-processing sends the decompiled Solidity to OpenRouter (default model openai/gpt-4o-mini) and needs an OpenRouter API key.",
+      "Decompiled Solidity and Yul output is marked beta and is a heuristic reconstruction to be checked, not original source. The README lists more than 20 papers and theses that cite Heimdall; those are citations, not an accuracy evaluation of the tool.",
+      "MIT license. Nothing was installed and no contracts were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/README.md#L9-L45",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/README.md#L67-L95",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/crates/cli/src/args.rs#L31-L62",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/crates/decompile/src/interfaces/args.rs#L15-L82",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/crates/common/src/resources/openrouter.rs",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/crates/common/src/ether/signatures.rs",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/bifrost/bifrost",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/Cargo.toml",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/rust-toolchain.toml",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/LICENSE",
+      "https://github.com/Jon-Becker/heimdall-rs/releases/tag/0.9.3"
+    ]
+  },
+  {
+    "id": "uefi-firmware-parser",
+    "name": "UEFI Firmware Parser",
+    "url": "https://github.com/theopolis/uefi-firmware-parser",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Python library and uefi-firmware-parser command for identifying, parsing and extracting PC firmware images: UEFI firmware volumes, capsules, firmware file systems, files and sections, Intel PCH flash descriptors, Intel ME modules and Dell PFS update packages. An AutoParser picks the format, or a brute-force scan looks for volumes and other known objects inside an unidentified blob; results print as an object hierarchy or dump to files, with Tiano/EFI and LZMA sections decompressed by a bundled C extension. Helper scripts replace a section or file by GUID inside a volume, generate an FDF flash description from parsed volumes and output GUID labels for IDA scripts.",
+    "description_zh": "Python 库及 uefi-firmware-parser 命令行工具，用于识别、解析和提取 PC 固件镜像：UEFI 固件卷、胶囊（capsule）、固件文件系统、文件与节（section），以及 Intel PCH Flash Descriptor、Intel ME 模块和 Dell PFS 更新包。AutoParser 可自动判断格式，暴力扫描模式则在未识别的数据块中查找固件卷及其他已知对象；结果可打印为对象层级或导出为文件，Tiano/EFI 与 LZMA 压缩的节由内置 C 扩展解压。附带的脚本可按 GUID 替换固件卷中的节或文件，根据解析出的固件卷生成 FDF 闪存描述文件，并输出供 IDA 脚本使用的 GUID 标签。",
+    "evidence_url": "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/README.rst",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.16, published 2026-06-04 on GitHub and PyPI with abi3 wheels for Linux, Windows and macOS. The reviewed master commit, from 2026-10-12, is three commits ahead: it adds AMI capsule support and a safe-path utility for dumped files and drops the future dependency, so those changes are not yet released.",
+      "Python 3.10+. A source install compiles the bundled efi_compressor C extension, which the README says needs the Python development headers and gcc; the package declares no other runtime dependencies. CI runs the unit tests on Python 3.12 on Ubuntu.",
+      "Input is a firmware file the user supplies, such as a vendor BIOS/UEFI update or a flash dump. The README warns that not every vendor update parses and that some must first be decompressed or unpacked from the update mechanism, typically a PE executable; --test reports the detected type, -b searches a blob for volume headers and --superbrute checks every byte offset for any known object. It lists ASRock, Dell, Gigabyte, Intel, Lenovo, HP, MSI, VMware, Apple and Qualcomm updates as tested, without per-version results.",
+      "GUID injection with fv_injector.py only replaces existing sections or files, with no addition or removal, and asks interactively which section to replace inside a firmware file. It parses containers and extracts their contents; analyzing the extracted modules needs a separate disassembler or decompiler. CI also parses a separately hosted samples repository, which this collection did not review.",
+      "LICENSE carries MIT-style permission text and points to inline licenses in contributed work, while setup.py and the PyPI metadata declare BSD-3-Clause. The bundled Intel Tiano compression sources are BSD-2-Clause-Patent and the LZMA SDK files are public domain. Nothing was installed and no firmware was parsed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/setup.py",
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/uefi_firmware/__init__.py",
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/bin/uefi-firmware-parser",
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/scripts/fv_injector.py",
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/.github/workflows/ci.yml",
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/LICENSE",
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/uefi_firmware/compression/Tiano/Decompress.c",
+      "https://github.com/theopolis/uefi-firmware-parser/releases/tag/v1.16",
+      "https://pypi.org/project/uefi_firmware/1.16/"
+    ]
+  },
+  {
+    "id": "noop-whoop-ble-client-case",
+    "name": "NOOP: an offline WHOOP strap client built from Bluetooth protocol research",
+    "url": "https://github.com/ryanbr/noop",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "Replaces the WHOOP companion app with offline macOS, Android and iOS clients that pair with WHOOP 4.0 and 5.0/MG straps over Bluetooth, decode their vendor GATT frames, offload the strap’s history into local SQLite and compute recovery, strain, HRV and sleep on the device. A versioned protocol reference documents framing, checksums, commands and sensor records per strap family, building on the community my-whoop and goose projects. WHOOP 4.0 is the supported path; deeper WHOOP 5.0/MG metrics and Oura ring support remain experimental.",
+    "description_zh": "以离线的 macOS、Android 和 iOS 客户端取代 WHOOP 官方配套应用：通过蓝牙与 WHOOP 4.0 及 5.0/MG 手环配对，解析其厂商自定义 GATT 帧，将手环中的历史数据转存到本地 SQLite，并在设备上计算恢复度、负荷、HRV 和睡眠。按手环型号分版本编写的协议参考记录了帧格式、校验、命令和传感器记录，建立在社区项目 my-whoop 与 goose 的成果之上。WHOOP 4.0 是受支持的路径；WHOOP 5.0/MG 的深层指标和 Oura 戒指支持仍属实验性。",
+    "evidence_url": "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls NOOP an independent, experimental interoperability project; the reviewed main snapshot follows release v12.0.0 (2026-10-04). WHOOP 4.0 is the tested path; on WHOOP 5.0/MG live heart rate is confirmed while recovery, strain and sleep inputs are still being mapped, and README lists SpO₂ and several overnight inputs as unavailable or incomplete. Scores come from published methods and are approximations, not reproductions of WHOOP’s models; the project says it is not a medical device.",
+      "Live use needs the user’s own WHOOP strap; a 5.0/MG strap holds one encrypted bond at a time, so pairing can take it from the official app. Without a strap, the app can import a WHOOP CSV export or an Apple Health export.xml. README states that NOOP contains no WHOOP proprietary code, firmware, logos or assets; ATTRIBUTION.md says some protocol facts were re-derived from decompiles or static analysis of the vendor’s apps and ship as unvalidated candidates, while implementation and strings are not copied.",
+      "docs/BUILD.md lists macOS 13+, Xcode 26.x (Swift 6.3) and XcodeGen 2.45+ for the macOS reference app; the Swift packages build with swift build alone, and BUILD.md documents Linux test runs for four of them outside CI. The Android app (Jetpack Compose, Android 8+) builds with Gradle and JDK 17 in CI, and iOS builds from source or installs as a sideloaded, unsigned .ipa. The release check is on by default and sends no health data; optional AI Coach and export features send data only when the user configures them.",
+      "CI builds and tests each Swift package, including the WhoopProtocol framing and decoder tests, and builds the Android debug APK with its unit tests. Protocol contracts name the firmware they were observed on (WHOOP 4 41.17.6.0, WHOOP 5/MG baseline 50.42.1.0), and PROTOCOL.md says its constructed parsing examples are not device tests. docs/VALIDATION_PROTOCOL.md sets rules for claiming scoring improvements; this collection did not build the apps or run them against a strap.",
+      "LICENSE applies PolyForm Noncommercial 1.0.0 to NOOP’s own code and documentation, which GitHub reports as NOASSERTION; bundled GRDB.swift and ZIPFoundation are MIT. README names github.com/ryanbr/noop as the canonical home, although GitHub lists it as a fork of muftiarfan/noop. NOOP states it is unaffiliated with WHOOP or Oura; AGENTS.md addresses human and AI-agent contributors and the optional coach uses a user-supplied model, but the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/docs/PROTOCOL.md",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/docs/BLE_REVERSE_ENGINEERING.md",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/ATTRIBUTION.md",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/docs/BUILD.md",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/docs/VALIDATION_PROTOCOL.md",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/.github/workflows/swift-packages.yml",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/.github/workflows/android.yml",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/AGENTS.md",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/LICENSE",
+      "https://github.com/ryanbr/noop/releases/tag/v12.0.0"
+    ]
+  },
+  {
+    "id": "pe-bear",
+    "name": "PE-bear",
+    "url": "https://github.com/hasherezade/pe-bear",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Qt GUI to view and edit Windows Portable Executable files, meant as a fast first look for malware analysts and robust against malformed PE32 and PE64 files. It shows headers and section layout, follows raw, RVA and VA addresses, disassembles from any offset with Capstone, matches packer signatures, compares two files and unmaps dumped images.",
+    "description_zh": "用于查看和编辑 Windows 可移植可执行（PE）文件的 Qt 图形工具，旨在为恶意软件分析人员提供快速的初步查看，并能稳定处理畸形的 PE32 与 PE64 文件。它可显示文件头和节区布局，跟随原始偏移、RVA 和 VA 地址，借助 Capstone 从任意偏移开始反汇编，按签名识别加壳工具，对比两个文件，并能还原从内存转储的映像。",
+    "evidence_url": "https://github.com/hasherezade/pe-bear/blob/b90f1d7d96635e7a029f424a0d1d11a104821685/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release: v0.7.2 (2026-06-05), with Windows Qt6 and Qt5 builds, a legacy Qt4 x86 build for old Windows such as XP, Linux tar.xz and AppImage builds and a macOS Qt6 app; Chocolatey, Scoop and WinGet also package it. The reviewed main commit of 2026-10-14 is 16 commits ahead, with a Capstone update and an unreleased update check that, per its README, queries GitHub's releases API at most once a day and sends only a PE-bear User-Agent.",
+      "Linux builds need a matching Qt installation, and Windows builds made with Visual Studio 2017 or later need the Visual C++ 2015–2022 redistributable. Source builds need Git, CMake 3.12+, Qt6 (or Qt5/Qt4) and the bearparser, Capstone and sig_finder submodules, with build scripts for Linux and macOS. AppVeyor builds test packages from each main commit, which README warns may be unstable.",
+      "Input is a PE file chosen by the analyst, including images dumped from a process, which PE-bear offers to unmap. Wiki pages cover adding imports, removing overlays, filling content and searching strings or masked byte signatures. Packer detection uses SIG.txt, converted from PEiD's UserDB by a third-party script and last updated on 2022-10-17.",
+      "GPL-2.0; the author's page says PE-bear has been open source since 2022-09-18, after development was discontinued in 2014 and later reopened. The bearparser and sig_finder submodules are BSD-2-Clause, and Capstone keeps its own license."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/hasherezade/pe-bear/blob/b90f1d7d96635e7a029f424a0d1d11a104821685/CMakeLists.txt",
+      "https://github.com/hasherezade/pe-bear/blob/b90f1d7d96635e7a029f424a0d1d11a104821685/.gitmodules",
+      "https://github.com/hasherezade/pe-bear/blob/b90f1d7d96635e7a029f424a0d1d11a104821685/pe-bear/updater/README.md",
+      "https://github.com/hasherezade/pe-bear/blob/b90f1d7d96635e7a029f424a0d1d11a104821685/.appveyor.yml",
+      "https://github.com/hasherezade/pe-bear/blob/b90f1d7d96635e7a029f424a0d1d11a104821685/LICENSE",
+      "https://github.com/hasherezade/pe-bear/wiki/Home/54c92bf64d101f3f51a8388f0d83455ce12055bf",
+      "https://github.com/hasherezade/pe-bear/wiki/PE-Unmapping/88701f9546cb03b2e5666958e0e889feaea99ba9",
+      "https://github.com/hasherezade/pe-bear/wiki/Searching-patterns/fd89b1add6e3af972d64b455a6316b74491d9284",
+      "https://hshrzd.wordpress.com/pe-bear/",
+      "https://github.com/hasherezade/pe-bear/releases/tag/v0.7.2"
+    ]
+  },
+  {
+    "id": "protodump",
+    "name": "protodump",
+    "url": "https://github.com/arkadiyt/protodump",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol",
+      "binary"
+    ],
+    "description_en": "Go command-line utility that recovers Protocol Buffers schemas from a compiled binary or any other file: it scans the raw bytes for serialized FileDescriptorProto records embedded by generated code, locating them through their .proto file names, and writes each one back out as a .proto source file under its original descriptor path. The regenerated files use proto2, proto3 or editions syntax and include the package, imports, common file options, messages with reserved ranges, nested enums, oneofs, maps and default values, and services with their RPC methods, giving analysts message and API definitions to work with when decoding Protobuf traffic.",
+    "description_zh": "Go 编写的命令行工具，可从已编译的二进制或其他任意文件中恢复 Protocol Buffers 模式：它在原始字节中搜索生成代码嵌入的序列化 FileDescriptorProto 记录（借助其中的 .proto 文件名定位），并按原描述符路径将每条记录重新写成 .proto 源文件。重新生成的文件采用 proto2、proto3 或 editions 语法，包含包名、导入、常用文件选项，带保留范围的消息、嵌套枚举、oneof、map 与默认值，以及服务及其 RPC 方法，为分析者解码 Protobuf 流量提供消息和接口定义。",
+    "evidence_url": "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No tagged releases at review; the README installs it with go install from the latest module version, and go.mod declares Go 1.26.8. The reviewed main commit of 2026-09-27 confines output writes to the chosen directory and refuses to overwrite existing files. CI tests and builds it on Linux, macOS and Windows.",
+      "Input is a user-supplied binary or other file that embeds complete descriptors. The scan is a byte search rather than executable-format parsing, so descriptors that are absent or not stored as plain serialized records are not found, and records that fail to parse are skipped silently unless -v is given.",
+      "Field, message, enum, oneof, service and method options are not emitted yet (TODOs in the generator), and extension definitions are not written, so regenerated files can differ from the originals and need analyst review.",
+      "No license file or license statement was found at the reviewed commit, and GitHub detects no license, so the project states no reuse terms. No binaries were scanned."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/pkg/protodump/scan.go",
+      "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/pkg/protodump/proto.go",
+      "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/cmd/protodump/main.go",
+      "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/cmd/protodump/output.go",
+      "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/go.mod",
+      "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/.github/workflows/build.yml",
+      "https://github.com/arkadiyt/protodump/tree/d398fada3452b87e6f0879d9cdf3dad31bb74d6e"
+    ]
+  },
+  {
+    "id": "pre-list",
+    "name": "PRE-list",
+    "url": "https://github.com/techge/PRE-list",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A table-based reading list of 71 research papers on automatic protocol reverse engineering for network protocols, from the Protocol Informatics project (2004) to NetPlier (2021). Built from three surveys and extended since, it compares each method by approach, by input (network traces or execution traces) and output (message formats, state machines or other artifacts), and by the text, binary or hybrid protocols it was evaluated on, with full references and a short table of the few papers that released code.",
+    "description_zh": "以表格形式整理的网络协议自动化逆向工程研究清单，收录 71 篇论文，从 2004 年的 Protocol Informatics 项目到 2021 年的 NetPlier。清单以三篇综述为基础并持续扩充，按所用方法、输入（网络流量记录或执行轨迹）与输出（报文格式、状态机或其他产物），以及评估所用的文本、二进制或混合协议对各方法进行比较，附完整参考文献，另有一张列出少数公开代码论文的简表。",
+    "evidence_url": "https://github.com/techge/PRE-list/blob/9c18f7c8f00978ec70ba285a5f13b461ede12e93/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README was last updated on 2024-05-22, when NetPlier and NEMETYL were added; the other changes date from November 2020 to May 2021. Its 71 papers span 2004–2021, so later protocol reverse-engineering work is not covered.",
+      "40 of the 71 overview rows still read “Please review” instead of describing the approach, several input/output rows are empty, and 29 rows of the tested-protocols table name no protocol. The tables summarize what each paper reports; they are not a benchmark or reproduction of the methods.",
+      "The README states that most papers do not provide their code; its source-code table lists eight projects, one only through a Web Archive copy of the Protocol Informatics page. The remaining entries are papers, with PDF links where the maintainer found one.",
+      "CSVtoREADME.py generates the README tables from tools.csv, contributions are requested as additions to tools.ods, and two further spreadsheets keep categorisations from the Duchêne et al. and Sija et al. surveys.",
+      "LICENSE is CC0-1.0, while CSVtoREADME.py carries a GPL-3.0-or-later header; the linked papers keep their publishers' terms. An independent reading list; the reviewed source establishes no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/techge/PRE-list/blob/9c18f7c8f00978ec70ba285a5f13b461ede12e93/README.md#L263-L275",
+      "https://github.com/techge/PRE-list/blob/9c18f7c8f00978ec70ba285a5f13b461ede12e93/tools.csv",
+      "https://github.com/techge/PRE-list/blob/9c18f7c8f00978ec70ba285a5f13b461ede12e93/CSVtoREADME.py",
+      "https://github.com/techge/PRE-list/blob/9c18f7c8f00978ec70ba285a5f13b461ede12e93/LICENSE"
+    ]
+  },
+  {
+    "id": "restringer",
+    "name": "REstringer",
+    "url": "https://github.com/HumanSecurity/restringer",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "HUMAN Security's Node.js JavaScript deobfuscator. It identifies the obfuscation type, runs matching processors for obfuscator.io, Caesar Plus and array-based patterns, then iterates 40+ AST modules that rebuild strings, resolve expressions and calls and simplify control flow; unsafe modules evaluate code in a sandbox. It works as a CLI or library.",
+    "description_zh": "HUMAN Security 推出的 Node.js JavaScript 反混淆工具。它先识别混淆类型，针对 obfuscator.io、Caesar Plus 和基于数组的混淆模式运行相应处理器，再迭代执行 40 多个 AST 模块，重建字符串、求解表达式和函数调用并简化控制流；其中不安全模块会在沙箱中求值代码。可作为命令行工具或库使用。",
+    "evidence_url": "https://github.com/HumanSecurity/restringer/blob/d9eae6907e14581b7934940ee0407f505b7a212b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed HumanSecurity main commit (2025-12-07) is v2.1.0 plus one README edit removing the retired REstringer.tech web tool. The author now continues the project in his fork ctrl-escp/restringer, which the npm package lists as its repository: npm 2.2.0 (2026-05-09) and 2.3.0 (2026-08-30) come from it, and at 2.3.0 its README requires Node.js 22+, makes isolated-vm optional and adds Node, Deno and Bun subprocess sandboxes, so npm installs code newer than the reviewed source.",
+      "The reviewed source needs Node.js 20+ (22+ recommended) and installs as a global CLI or a module. It depends on flast, obfuscation-detector, commander and isolated-vm 5.0.4, a native module that CI builds with Python and g++. Output goes to stdout or <input>-deob.js; -m caps iterations, and -c removes dead nodes, which README marks unsafe.",
+      "Input is an obfuscated JavaScript file or string. Safe modules transform the AST without evaluating code; unsafe modules evaluate parts of the input with eval() inside an isolated-vm sandbox to resolve expressions and calls.",
+      "GitHub Actions runs npm test on Node.js 20 and 22. Besides module and processor unit tests, the full suite deobfuscates 11 bundled obfuscated samples, among them obfuscator.io, JSFuck and Caesar Plus scripts, and compares each result with a stored expected output.",
+      "MIT, copyright 2025 HUMAN Security; the fork adds a 2026 copyright line for Ben Baryo. The repository was formerly PerimeterX/restringer, which now redirects to HumanSecurity/restringer."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HumanSecurity/restringer/blob/d9eae6907e14581b7934940ee0407f505b7a212b/package.json",
+      "https://github.com/HumanSecurity/restringer/blob/d9eae6907e14581b7934940ee0407f505b7a212b/src/processors/README.md",
+      "https://github.com/HumanSecurity/restringer/blob/d9eae6907e14581b7934940ee0407f505b7a212b/.github/workflows/node.js.yml",
+      "https://github.com/HumanSecurity/restringer/blob/d9eae6907e14581b7934940ee0407f505b7a212b/tests/samples.test.js",
+      "https://github.com/HumanSecurity/restringer/tree/d9eae6907e14581b7934940ee0407f505b7a212b/tests/resources",
+      "https://github.com/HumanSecurity/restringer/blob/d9eae6907e14581b7934940ee0407f505b7a212b/LICENSE",
+      "https://github.com/HumanSecurity/restringer/releases/tag/v2.1.0",
+      "https://github.com/ctrl-escp/restringer/blob/5fe8ac8d23723810fba170972c12b4433ffba111/README.md",
+      "https://github.com/ctrl-escp/restringer/blob/5fe8ac8d23723810fba170972c12b4433ffba111/package.json",
+      "https://registry.npmjs.org/restringer/2.2.0",
+      "https://registry.npmjs.org/restringer/2.3.0"
+    ]
+  },
+  {
+    "id": "emproof-firmware-re-workshop",
+    "name": "Emproof workshop: Firmware Reverse Engineering",
+    "url": "https://github.com/emproof-com/workshop_firmware_reverse_engineering",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "firmware",
+      "binary"
+    ],
+    "description_en": "Slides and 14 self-contained exercises from Emproof's firmware reverse-engineering workshop at ScapyCon Automotive 2025, designed by Tim Blazytko for a technical audience with little security experience. The firmware and binary tasks move from reading ELF metadata with binutils and first steps in Ghidra or Binary Ninja, through unpacking two embedded-Linux CTF images with binwalk, to bare-metal analysis: identifying the microcontroller, toolchain and memory map of a model car's firmware ELF, and rebasing a raw STM32F103 flash dump with segments taken from the datasheet. Other tasks decrypt strings statically in a Mirai sample and trace a hardcoded AES key back to its data section.",
+    "description_zh": "Emproof 在 ScapyCon Automotive 2025 上举办的固件逆向工程研讨会的幻灯片和 14 个独立练习，由 Tim Blazytko 设计，面向安全经验不多的技术人员。固件与二进制相关练习由浅入深：先用 binutils 读取 ELF 元数据并初步上手 Ghidra 或 Binary Ninja，再用 binwalk 解包两个嵌入式 Linux CTF 镜像，最后进行裸机分析，包括识别一辆模型车固件 ELF 的微控制器、工具链和内存映射，以及依据数据手册定义内存段，为一份原始 STM32F103 闪存转储重设基址。另有练习在 Mirai 样本中静态解密字符串，并把硬编码的 AES 密钥回溯到其所在数据段。",
+    "evidence_url": "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit, from 2025-09-25, ends a 14-commit history that began on 2025-09-21. It holds slides.pdf and 14 tasks, each a task.md with step-by-step questions next to a samples folder; no model solutions are included, and the two embedded-Linux tasks link an external write-up.",
+      "The README says most samples target ARMv7 (Thumb/ARM32) or AArch64, and many come with C source. A Kali Linux-based Docker image fixed to linux/arm64, emulated on x86_64 hosts, supplies binutils, binwalk, John the Ripper and armhf runtime libraries; on first use docker_run.sh installs QEMU binfmt handlers on the host through a privileged container. Ghidra and Binary Ninja Free are installed on the host, and because Binary Ninja Free lacks AArch64 support, many tasks also ship an .armv7 build.",
+      "Bare-metal tasks expect the analyst to consult the microcontroller's datasheet or reference manual; the STM32F103 task names the flash, SRAM, peripheral and system-control-space ranges to define before re-analysis. Several further tasks are crackme-style license, keygen and anti-patching exercises on the workshop's own binaries; this entry covers the firmware and binary-analysis tasks.",
+      "The workshop materials are GPL-2.0, but the README excludes three sample folders from that license and provides them for analysis and education only, without redistribution: the two embedded-Linux images, which the tasks attribute to WORMCON CTF 2021, and a Mirai botnet binary that its task describes as active malware not to be executed, stored in a password-protected archive.",
+      "The materials mention no AI or REA use. This collection read the README, task files and container setup; it did not open the slides, build the container or handle any sample."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/tasks/hello_world/task.md",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/tasks/embedded_linux_2/task.md",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/tasks/car_demo/task.md",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/tasks/iot_diag/task.md",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/tasks/crypto_detection/task.md",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/Dockerfile",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/docker_run.sh",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/LICENSE"
+    ]
+  },
+  {
+    "id": "pyatv-apple-tv-airplay-protocols-case",
+    "name": "pyatv: a reverse-engineered client for Apple TV and AirPlay protocols",
+    "url": "https://github.com/postlund/pyatv",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Asyncio Python library and command-line tools that act as an independent client for Apple TV and AirPlay devices by reimplementing the DMAP/DACP, Media Remote Protocol, Companion Link, AirPlay and RAOP protocols, which its protocol documentation describes as reverse engineered. That page records the recovered binary formats, Zeroconf properties, the OPACK encoding, pair-setup and pair-verify exchanges and Companion commands, with some request headers taken from Wireshark captures of the iPhone Remote app, and the bundled atvproxy relays MRP, Companion and AirPlay sessions to print decrypted messages for further analysis. On this basis pyatv provides remote control, metadata with push updates, app and account switching, audio-output management and AirPlay streaming to Apple TVs, HomePods and third-party receivers.",
+    "description_zh": "基于 asyncio 的 Python 库和命令行工具，通过重新实现 DMAP/DACP、Media Remote Protocol、Companion Link、AirPlay 和 RAOP 协议，充当 Apple TV 与 AirPlay 设备的独立客户端；其协议文档称这些协议均经逆向工程得出。该文档记录了恢复出的二进制格式、Zeroconf 属性、OPACK 编码、pair-setup 与 pair-verify 交互以及 Companion 命令，其中部分请求头取自 iPhone Remote 应用的 Wireshark 抓包；附带的 atvproxy 可中继 MRP、Companion 和 AirPlay 会话并打印解密后的消息，供进一步分析。在此基础上，pyatv 提供遥控、带推送更新的元数据、应用与账户切换、音频输出管理，以及向 Apple TV、HomePod 和第三方接收器的 AirPlay 推流。",
+    "evidence_url": "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/documentation/protocols.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: 0.18.0, published to GitHub and PyPI on 2026-06-19 as a tvOS-compatibility release; the reviewed master commit is the release commit, while the v0.18.0 tag points to a parallel commit that differs only in CHANGES.md and pyatv/const.py. The protocol page limits itself to what has been reverse engineered: its Companion Link section is called mostly speculation and guesses, the OPACK description is incomplete and unverified, and the MRP implementation section is still marked TBD. The acknowledgements say MRP support builds on Jean Regisser's mediaremotetv-protocol findings.",
+      "No Apple software, firmware or keys are bundled. pyatv connects to the user's own Apple TV, HomePod, AirPort Express or other AirPlay receiver on the local network; most protocols require pairing with a PIN shown on the device, and credentials and settings are kept in pyatv's storage. On tvOS 15 and later AirPlay must be set up because MRP moved into an AirPlay 2 stream, and RAOP supports only legacy pairing.",
+      "Requires Python 3.9+ and installs from PyPI or the project's container images; the installation guide lists build-essential, libssl-dev, libffi-dev and Python headers for building dependencies on Debian-style systems, and RAOP audio streaming relies on miniaudio. CI runs on Ubuntu, macOS and Windows with Python 3.9 to 3.14.",
+      "Tests are mostly unit tests, plus functional tests for DMAP, MRP, Companion, RAOP, mDNS and scanning that run against a fake device which, according to the testing guide, implements limited functionality and is only meant to be compatible with pyatv. They do not establish conformance with Apple's implementations, and atvproxy is described as an incubating script that depends on internal APIs. This review ran neither tests nor devices.",
+      "MIT (LICENSE.md). Apple's protocols, devices and software keep their own rights; pyatv is an independent implementation, not recovered Apple source. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/README.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/documentation/protocols.md#L13-L18",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/documentation/protocols.md#L363-L375",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/documentation/atvproxy.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/documentation/supported_features.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/documentation/documentation.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/internals/testing.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/docs/support/acknowledgements.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/.github/workflows/tests.yml",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/pyproject.toml",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/CHANGES.md",
+      "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/LICENSE.md",
+      "https://github.com/postlund/pyatv/releases/tag/v0.18.0",
+      "https://pypi.org/project/pyatv/0.18.0/"
+    ]
+  },
+  {
+    "id": "lisa-lldb-mcp",
+    "name": "lisa.py",
+    "url": "https://github.com/ant4g0nist/lisa.py",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "LLDB extension that adds an MCP bridge to a debugging session, adapted from ida-pro-mcp: the plugin's mcp start command serves 18 debugger functions over local JSON-RPC, and a FastMCP stdio server generated from those functions exposes them to MCP clients such as Claude Desktop. The tools create, launch or attach to targets, step, manage breakpoints, read backtraces, variables, disassembly and memory, evaluate expressions and run arbitrary LLDB commands. The same script keeps lisa.py's earlier exploit-development helpers, including checksec, a register and stack context view, Mach-O header and load-command display, Capstone disassembly and an exploitable crash-triage command.",
+    "description_zh": "为 LLDB 调试会话加入 MCP 桥接的扩展，改编自 ida-pro-mcp：插件的 mcp start 命令通过本地 JSON-RPC 提供 18 个调试器函数，再由依据这些函数生成的 FastMCP stdio 服务器把它们开放给 Claude Desktop 等 MCP 客户端。这些工具可创建、启动或附加调试目标，单步执行，管理断点，读取调用栈、变量、反汇编和内存，计算表达式，并可执行任意 LLDB 命令。同一脚本还保留了 lisa.py 早先的漏洞利用开发辅助命令，包括 checksec、寄存器与栈上下文视图、Mach-O 文件头与加载命令显示、Capstone 反汇编，以及用于崩溃分级的 exploitable 命令。",
+    "evidence_url": "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The default dev branch was reviewed at commit 9dd61e9 from 2025-03-29, the last of three commits that day adding the MCP integration to a 2021 rewrite of lisa.py. There are no releases or tags, the master branch still holds the 2017 version without MCP support, and the README's TODO list asks for updated manuals and more test cases.",
+      "Python 3.10+ and LLDB with Python bindings; the LLDB Python environment must also import capstone, pinned to 4.0.2 in requirements.txt, and the MCP server needs fastmcp and httpx. The README is partly out of step with the code: it names server.py, lldb_plugin.py and an lldb-mcp clone path, while the repository ships lisa.py and lldb_mcp.py, and the pyproject lldb-mcp entry point names a module that does not exist.",
+      "Load lisa.py into LLDB with command script import, run mcp start, and point the MCP client at lldb_mcp.py; the README shows a Claude Desktop configuration that runs it through uv. The plugin listens on localhost port 13338 without authentication, and the MCP server always connects to that port even if mcp start was given another. run_lldb_command passes any LLDB command through, so a connected client has full control of the debugger and the debugged process.",
+      "The helper commands parse Mach-O headers and load commands and handle x86_64 and arm64/arm64e registers; the README states no supported operating system or LLDB version. The tests directory holds small crash programs, including Objective-C and libdispatch cases, that make rtests runs through LLDB; no CI is configured.",
+      "LICENSE is Apache-2.0, but pyproject.toml declares MIT and lldb_mcp.py carries ida-pro-mcp's MIT notice. The reviewed sources establish no REA connection. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/lldb_mcp.py",
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/lisa.py#L5380-L6322",
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/lisa.py#L6408-L6534",
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/pyproject.toml",
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/requirements.txt",
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/Makefile",
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/LICENSE"
+    ]
+  },
+  {
+    "id": "wiremcp",
+    "name": "WireMCP",
+    "url": "https://github.com/0xKoda/WireMCP",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Node.js MCP server that runs Wireshark's tshark for LLM clients, aimed in its README at threat hunting, network diagnostics and anomaly detection. Three tools capture a few seconds of live traffic and return either a fixed set of IP, port, TCP-flag and HTTP fields, tshark's protocol-hierarchy statistics or TCP conversation statistics; analyze_pcap returns IPs, ports, HTTP URLs and protocol stacks from a saved capture. The remaining tools match captured IPs against the URLhaus blocklist and scan a capture for HTTP Basic, FTP, Telnet and Kerberos credentials, beside the dissection output.",
+    "description_zh": "基于 Node.js 的 MCP 服务器，为 LLM 客户端调用 Wireshark 的 tshark；其 README 将用途定位于威胁狩猎、网络诊断和异常检测。三个工具会实时抓取数秒流量，分别返回一组固定的 IP、端口、TCP 标志和 HTTP 字段，tshark 的协议层级统计，或 TCP 会话统计；analyze_pcap 则从已保存的抓包文件中返回 IP、端口、HTTP URL 和协议栈。解析输出之外，其余工具会把抓到的 IP 与 URLhaus 黑名单比对，或在抓包文件中扫描 HTTP Basic、FTP、Telnet 和 Kerberos 凭据。",
+    "evidence_url": "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main commit 7f45f8b from 2025-07-09, the last of nine commits since 2025-03-28; there are no releases or tags, package.json says 1.0.0 and its test script is a placeholder. It runs with Node.js (the README recommends v16+) after npm install, finds tshark on PATH or in common install locations, and is started by the MCP client as node index.js over stdio; the README lists macOS, Windows and Linux. Each tool also has a matching prompt template.",
+      "The live-capture tools default to interface en0 for 5 seconds and need capture permissions on the host; they write temp_capture.pcap in the working directory and delete it afterwards, and packet JSON is trimmed to about 720,000 characters. The server builds tshark shell commands by inserting the interface and file-path arguments without escaping, so it should be exposed only to trusted clients.",
+      "Field sets are fixed in the code: there is no arbitrary field extraction, display filter, decode-as or protocol-preference control, and the server does not infer unknown message formats. The separately listed Wireshark MCP exposes those dissector controls.",
+      "check_threats and check_ip_threats download the URLhaus text blocklist from abuse.ch and match IPs locally; although the README mentions multiple threat feeds, the reviewed code queries only URLhaus. The credential scan and threat checks are security heuristics rather than protocol reverse engineering, and their findings need analyst review.",
+      "MIT; Wireshark and tshark keep their own GPL terms. The reviewed sources establish no REA connection. No server, capture or analysis was run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/index.js",
+      "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/index.js#L48-L180",
+      "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/index.js#L182-L300",
+      "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/index.js#L301-L364",
+      "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/package.json",
+      "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/LICENSE"
+    ]
+  },
+  {
+    "id": "wind-waker-hd-decomp-case",
+    "name": "Wind Waker HD decompilation: functions verified against the recompiled Wii U game",
+    "url": "https://github.com/ZeldaWWHDDecomp/wwhd",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. README reports 28,244 of the game’s 39,713 functions verified, including 22,068 of 22,215 GameCube-derived functions. The code calls undecompiled functions by address, so it runs only inside the ZeldaWWHDRecomp port, not as a standalone game build.",
+    "description_zh": "将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。README 报告游戏 39,713 个函数中已有 28,244 个通过验证，其中来自 GameCube 版的 22,215 个函数里有 22,068 个。代码通过地址调用尚未反编译的函数，因此只能在 ZeldaWWHDRecomp 移植中运行，不能单独构建成游戏。",
+    "evidence_url": "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a hybrid decompilation of cking.rpx (USA, version 0): decompiled functions call others through their original addresses, so the tree builds no game on its own and runs only with the port’s recompiled code. It reports the HD UI decompiled, while about 11,400 generic-library functions (sead, agl, NW4F, most of JSystem, the Cafe SDK and the C runtime) are not planned. zeldaret/tww is the reference for names and structure, and the docs record HD differences for 838 units compared with the GameCube version.",
+      "Building or verifying needs the user’s own legally obtained game, extracted with the port’s tool from a disc image with its disc key and the Wii U common key. README states that the repository contains no machine code, recompiled code, game assets or keys; small data tables used by the code are included, while model data, the RPX image, recompiled output, game-derived names and recorded inputs are generated locally and git-ignored. The recommended GameCube signature checks also use zeldaret/tww built from the user’s own GameCube disc.",
+      "The harness runs inside a ZeldaWWHDRecomp checkout at the tested commit df2cf51b (v0.2.3), replacing the port’s older tools/verify. It needs Python 3, clang/clang++ with C++20 and the port’s game-extraction requirements; building the port itself is needed only for recording inputs. A full verify_all.py run is long, and some units need tens of GB of memory.",
+      "Each function runs on 10,000 generated inputs on each of two seeds, must reach nearly all basic blocks of the original and is mutation-tested; README reports the whole tree re-verified after the October 2026 readability rewrite. tools/verify/README.md says equivalence is to the recompiled code’s model of the Espresso CPU, not the console, and that timing, threading and the exact stack layout are not checked. The in-game swap-test build is not part of the release, the repository has no CI workflow, and this collection ran nothing.",
+      "CC0 1.0 covers the decompiled source, tools and documentation; the game, Nintendo data and the port runtime keep their own terms. README calls it an unofficial, non-commercial fan project with no donations or paid builds. tools/verify/README.md reports pilot timings for an agent using the tools and two functions written by parallel agents; the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/tools/verify/README.md",
+      "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/docs/review-notes.md",
+      "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/docs/hd-vs-gc-summary.md",
+      "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/docs/decomp-notes.md",
+      "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/tools/verify/assets.py",
+      "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/LICENSE",
+      "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/tree/df2cf51bd6d02e0b310d46a5da062693bac7314f"
+    ]
   }
 ]
