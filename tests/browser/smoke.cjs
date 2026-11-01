@@ -381,6 +381,17 @@ async function staticPage(page, route, viewport) {
   assert((await page.$eval('h1', heading => heading.textContent.trim())).length > 0, `${label}: visible heading`);
   await noOverflow(page, label);
   if (route === '/papers/' || route === '/zh/papers/') await paperDirectory(page, route, viewport);
+  if (route === '/cases/' || route === '/zh/cases/') {
+    const review = await page.$eval('#review-method', section => ({
+      title: section.querySelector('h2').textContent,
+      dimensions: [...section.querySelectorAll('dt')].map(node => node.textContent),
+      runtime: section.querySelector('dl > div:last-child dd').textContent,
+      visible: section.getClientRects().length > 0 && !section.closest('details'),
+    }));
+    assert(review.visible && review.title.includes('Beta'), `${label}: review method is visible before opening disclosures`);
+    assert.equal(review.dimensions.length, 4, `${label}: separate scope, artifacts, evidence and runtime`);
+    assert(review.runtime.includes(route.startsWith('/zh/') ? '尚未独立实测' : 'without independent runtime tests'), `${label}: runtime boundary remains visible`);
+  }
 }
 
 (async () => {
@@ -388,7 +399,7 @@ async function staticPage(page, route, viewport) {
   const read = file => JSON.parse(fs.readFileSync(path.join(dist, file), 'utf8'));
   const data = {catalog: read('catalog.json'), browser: read('source-browser.json')};
   const category = fs.readdirSync(path.join(dist, 'zh/browse')).filter(name => fs.statSync(path.join(dist, 'zh/browse', name)).isDirectory()).sort()[0];
-  const routes = ['/papers/', '/zh/papers/', '/resources/', '/zh/resources/', '/cases/', '/about/', '/zh/about/', '/contribute/', '/zh/contribute/',
+  const routes = ['/papers/', '/zh/papers/', '/resources/', '/zh/resources/', '/cases/', '/zh/cases/', '/about/', '/zh/about/', '/contribute/', '/zh/contribute/',
     '/browse/', `/zh/browse/${category}/`, `/resources/${data.catalog.resources[0].id}/`];
   fs.rmSync(screenshots, {recursive: true, force: true}); fs.mkdirSync(screenshots, {recursive: true});
   const site = server(headerRules(fs.readFileSync(path.join(dist, '_headers'), 'utf8')));
@@ -416,6 +427,10 @@ async function staticPage(page, route, viewport) {
       for (const route of ['/papers/', '/zh/papers/']) {
         await check(`${route} without JavaScript at ${viewport.width}px`, () => visit(context, origin, route, viewport,
           `${route} ${viewport.name} without JavaScript`, page => paperDirectory(page, route, viewport, false), {javascript: false}));
+      }
+      for (const route of ['/cases/', '/zh/cases/']) {
+        await check(`${route} without JavaScript at ${viewport.width}px`, () => visit(context, origin, route, viewport,
+          `${route} ${viewport.name} without JavaScript`, page => staticPage(page, route, viewport), {javascript: false}));
       }
       for (const route of routes) {
         await check(`${route} at ${viewport.width}px`, () => visit(context, origin, route, viewport, `${route} ${viewport.name}`, page => staticPage(page, route, viewport)));

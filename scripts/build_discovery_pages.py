@@ -213,7 +213,20 @@ def _case_collection(resources: list[dict], language: str, site_url: str,
             if zh else 'These cases are part of the curated total and appear once under their primary subject, with all target labels retained. Source review does not imply independent runtime verification or REA involvement.')
     nav = f'<nav class="browse-category-nav cases-nav" aria-label="{("案例主题" if zh else "Case subjects")}">{"".join(navigation)}</nav>' if navigation else ''
     empty = '' if items else f'<p class="cases-empty">{("当前目录还没有案例条目。" if zh else "No case studies are currently listed.")}</p>'
+    review_title = '软件重建产物评审 · Beta' if zh else 'Software reconstruction artifact reviews · Beta'
+    review_intro = ('核查 REA 工作流与独立重建的实际产物，每项保留原始来源和已知局限。'
+                    if zh else 'Review artifacts from REA workflows and independent reconstructions. Each entry retains its original sources and known limits.')
+    review_dimensions = ([('复现范围', '已实现功能、已知缺口及必需的原始素材。'),
+                          ('产物入口', '原始代码、发布包或演示；截图另作判断。'),
+                          ('证据与归因', '固定来源、复核日期与 REA 的实际角色。'),
+                          ('运行状态', '资料核查，尚未独立实测；完整度未认证。')]
+                         if zh else [('Reconstruction scope', 'Implemented features, known gaps and required original assets.'),
+                                     ('Available artifacts', 'Original code, releases or demos; assess screenshots separately.'),
+                                     ('Evidence and attribution', 'Pinned sources, review dates and documented REA roles.'),
+                                     ('Runtime status', 'Documentation review without independent runtime tests; completeness remains unverified.')])
+    review = f'<section class="case-review-method" id="review-method" aria-labelledby="review-method-title"><h2 id="review-method-title">{review_title}</h2><p>{review_intro}</p><dl>' + ''.join(f'<div><dt>{escape(label)}</dt><dd>{escape(value)}</dd></div>' for label, value in review_dimensions) + '</dl></section>'
     content = f'''<div class="cases-collection" data-case-count="{len(items)}" data-curated-count="{len(resources)}">
+{review}
 <div class="browse-actions"><a class="button button-primary" href="{search}">{('搜索案例' if zh else 'Search cases')}</a><a class="button button-outline" href="{prefix}/resources/">{('全部精选资源' if zh else 'All resources')}</a>{_suggest_link(repository_url, 'case-study.yml', '推荐重建案例' if zh else 'Suggest a case study')}</div>
 <details class="cases-note"><summary>{('关于这些案例' if zh else 'About these cases')}</summary><p>{escape(note)}</p></details>{nav}{''.join(sections)}{empty}
 </div>'''
