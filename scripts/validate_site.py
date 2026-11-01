@@ -700,6 +700,18 @@ def validate_paper_outputs(output, pages, source_papers=None):
         assert re.search(rf'(?m)^{re.escape(route)}\n[ \t]+Content-Type: application/x-bibtex; charset=utf-8[ \t]*$', headers), f'BibTeX downloads require an explicit UTF-8 content type: {route}'
 
 
+def validate_listed_badge(output):
+    """Serve the link-back badge byte for byte from its stable URL, as a static image."""
+    output = Path(output)
+    served = output / 'badges' / 'featured-by-awesome-rea-inline.svg'
+    assert served.is_file(), 'The listed-project badge must be served at /badges/featured-by-awesome-rea-inline.svg'
+    content = served.read_bytes()
+    assert content == (ROOT / 'assets' / served.name).read_bytes(), 'The served badge differs from assets/' + served.name
+    assert content.startswith(b'<svg ') and not re.search(rb'<script|\bon[a-z]+=|href=', content), 'The badge must be a static SVG without scripts or links'
+    headers = (output / '_headers').read_text(encoding='utf-8')
+    assert re.search(r'(?m)^/badges/\*\n[ \t]+Content-Type: image/svg\+xml[ \t]*$', headers), 'Badges require an explicit image/svg+xml content type'
+
+
 def validate_artifact_links(output, pages):
     """Bind generated links to reviewed artifacts and retain source assertions."""
     source_path = ROOT / 'data/source-index.json'
@@ -1108,6 +1120,7 @@ def main():
     validate_open_graph(None, not_found, png_size(OUTPUT / 'social-card.png'))
     validate_theme_color('/404.html', not_found)
     validate_security_headers(OUTPUT)
+    validate_listed_badge(OUTPUT)
     validate_catalog_preload(OUTPUT)
     validate_catalog_index(OUTPUT)
     validate_website_identity(pages)
