@@ -96,6 +96,16 @@ Cases may use REA, other agents, or independent reverse-engineering tools. Use `
 
 The [case coverage ledger](data/case-coverage.json) tracks entries of pinned upstream case collections separately from catalog records; the [catalog format guide](data/README.md) describes it. After changing one of its entries, run `python3 scripts/build_case_coverage.py` to regenerate the [coverage summaries](docs/case-coverage.md), then `python3 scripts/validate.py`.
 
+## Badge for listed projects
+
+A listed project may link back to Awesome REA with the badge below. It is optional: adding it is never a condition of listing and does not affect review. The badge identifies a catalog listing; it does not certify software completeness or runtime verification. You may instead link to your specific entry at `https://awesomerea.org/resources/<id>/` (Chinese: `/zh/resources/<id>/`), or a paper entry at `/papers/<id>/`.
+
+```markdown
+[![Featured by Awesome REA](https://awesomerea.org/badges/featured-by-awesome-rea-inline.svg)](https://github.com/reacher-z/Awesome-REA)
+```
+
+The badge is a static 184 × 20 SVG served from the collection website, a copy of [assets/featured-by-awesome-rea-inline.svg](assets/featured-by-awesome-rea-inline.svg).
+
 ## Review and publication
 
 Pull requests receive a [rule-based review](docs/automation.md) from trusted base-branch code. It checks catalog structure, duplicates, source fields, and common privacy mistakes without executing contributor code. Maintainers review resource relevance and factual claims. Passing automation does not automatically approve or merge a contribution.
