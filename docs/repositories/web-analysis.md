@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/web-analysis/) · [简体中文](web-analysis.zh-CN.md)
 
-**214 repositories** · 2026-10-20 UTC
+**215 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -23,6 +23,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [decompiler-explorer/decompiler-explorer](https://github.com/decompiler-explorer/decompiler-explorer) — Decompiler Explorer! Compare tools on the forefront of static analysis, now in your web browser! **[2,711 stars]**
 - [vmoranv/jshookmcp](https://github.com/vmoranv/jshookmcp) — A search-first, profile-aware reverse-engineering workspace for AI agents — 735 tools across 36 domains in one MCP server. **[2,050 stars]**
 - [bytecodealliance/wasm-tools](https://github.com/bytecodealliance/wasm-tools) — CLI and Rust libraries for low-level manipulation of WebAssembly modules **[1,801 stars]** · Curated: [wasm-tools](https://awesomerea.org/resources/wasm-tools/)
+- [mgechev/ngrev](https://github.com/mgechev/ngrev) — Tool for reverse engineering of Angular applications **[1,573 stars]** · Curated: [ngrev](https://awesomerea.org/resources/ngrev/)
 - [boyang-hu/website-rebuild-skill](https://github.com/boyang-hu/website-rebuild-skill) — An agent skill that mirrors a website, rebuilds it from the minified code, and verifies the result with automated diffs. **[1,529 stars]**
 - [paazmaya/shuji](https://github.com/paazmaya/shuji) — Reverse engineering JavaScript and CSS sources from sourcemaps **[1,246 stars]** · Curated: [shuji](https://awesomerea.org/resources/shuji/)
 - [ben-sb/javascript-deobfuscator](https://github.com/ben-sb/javascript-deobfuscator) — General purpose JavaScript deobfuscator **[1,153 stars]** · Curated: [javascript-deobfuscator](https://awesomerea.org/resources/ben-sb-javascript-deobfuscator/)

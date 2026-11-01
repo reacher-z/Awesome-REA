@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/reverse-engineering/) · [English](reverse-engineering.md)
 
-**670 个仓库** · 2026-10-20 UTC
+**669 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -69,7 +69,6 @@
 - [scadastrangelove/awesome-ai-security-tools](https://github.com/scadastrangelove/awesome-ai-security-tools) — 精选 AI 安全与 AI 辅助网络安全工具列表，涵盖公开源码、研究和商业工具：自动分诊、智能体安全、AI/ML 供应链、渗透测试智能体、AI SAST、LLM 驱动的模糊测试、威胁情报、SOC/SIEM 分诊、逆向工程、LLM 红队测试等。 **[1,658 星标]**
 - [pmret/papermario](https://github.com/pmret/papermario) — 《纸片马里奥》（Nintendo 64）的反编译代码。 **[1,632 星标]** · 精选：[Paper Mario：覆盖四个版本的一致性 Nintendo 64 反编译](https://awesomerea.org/zh/resources/paper-mario-matching-decomp-case/)
 - [packing-box/awesome-executable-packing](https://github.com/packing-box/awesome-executable-packing) — 精选可执行文件加壳相关资源列表。 **[1,631 星标]**
-- [mgechev/ngrev](https://github.com/mgechev/ngrev) — 用于逆向工程 Angular 应用的工具。 **[1,573 星标]**
 - [JonathanSalwan/VMProtect-devirtualization](https://github.com/JonathanSalwan/VMProtect-devirtualization) — 探索 VMProtect 软件保护，利用符号执行与 LLVM 自动对纯函数去混淆。 **[1,536 星标]**
 - [HACKE-RC/awesome-reversing](https://github.com/HACKE-RC/awesome-reversing) — 从零开始学习逆向工程的资源合集！ **[1,530 星标]**
 - [AllsafeCyberSecurity/awesome-ghidra](https://github.com/AllsafeCyberSecurity/awesome-ghidra) — 精选 Ghidra 优质资料列表。 **[1,442 星标]** · 精选：[Awesome Ghidra Ghidra 资源清单](https://awesomerea.org/zh/resources/awesome-ghidra/)
@@ -127,7 +126,7 @@
 - [Fausto-404/js-reverse-automation--skill](https://github.com/Fausto-404/js-reverse-automation--skill) — 结合 chrome-devtools-mcp 的能力与 Skill 规范，基于 JSRPC、Flask 和 autoDecoder 方案，实现前端 JavaScript 逆向的自动化分析，提升逆向效率。 **[598 星标]**
 - [uttambodara/TryHackMeRoadmap](https://github.com/uttambodara/TryHackMeRoadmap) — 350+ 个免费的 TryHackMe 房间💻列表，帮助开始网络安全学习，按主题组织，便于探索和培养实践技能！💀💥 **[597 星标]**
 - [nbcraft-org/nbcraft](https://github.com/nbcraft-org/nbcraft) — 全面的跨平台挖矿体验。 **[596 星标]**
-- [Jeija/bluefluff](https://github.com/Jeija/bluefluff) — 对 Furby Connect 的蓝牙协议和更新格式进行逆向工程 **[576 星标]**
+- [Jeija/bluefluff](https://github.com/Jeija/bluefluff) — 对 Furby Connect 的蓝牙协议和更新格式进行逆向工程 **[576 星标]** · 精选：[bluefluff：逆向分析 Furby Connect 的蓝牙低功耗协议](https://awesomerea.org/zh/resources/bluefluff-furby-connect-ble-case/)
 - [pret/pokeplatinum](https://github.com/pret/pokeplatinum) — 《宝可梦 白金》的反编译代码。 **[567 星标]** · 精选：[《宝可梦 白金》：校验一致的 Nintendo DS 反编译重建](https://awesomerea.org/zh/resources/pokemon-platinum-decomp-case/)
 - [morluto/awesome-reverse-engineering](https://github.com/morluto/awesome-reverse-engineering) — 精选逆向工程工具与学习资源，涵盖二进制文件、应用、固件、格式和协议。 **[565 星标]** · 精选：[Awesome Reverse Engineering](https://awesomerea.org/zh/resources/morluto-awesome-re/)
 - [SamidyFR/Game-Decompilations](https://github.com/SamidyFR/Game-Decompilations) — 从互联网上收集的游戏反编译项目列表。 **[559 星标]**
@@ -193,7 +192,7 @@
 - [CMUSTRUDEL/DIRTY](https://github.com/CMUSTRUDEL/DIRTY) — DIRTY：使用学习得到的变量名称和类型增强反编译器输出 **[191 星标]** · 论文：[利用学习得到的变量名称与类型增强反编译输出](https://awesomerea.org/zh/papers/paper-dirty/)
 - [i-soxi/even-g2-protocol](https://github.com/i-soxi/even-g2-protocol) — 一起对 EvenRealities G2 进行逆向工程！通过逆向分析 BLE 协议，开发者可以了解如何调用 G2 服务，在真正开源的环境中释放 G2 智能眼镜的潜力。 **[190 星标]**
 - [LLVM-but-worse/maple-ir](https://github.com/LLVM-but-worse/maple-ir) — 面向 Java 字节码、基于中间表示的工业级静态分析框架 **[189 星标]**
-- [techge/PRE-list](https://github.com/techge/PRE-list) — 网络协议的（自动化）协议逆向工程工具列表 **[188 星标]**
+- [techge/PRE-list](https://github.com/techge/PRE-list) — 网络协议的（自动化）协议逆向工程工具列表 **[188 星标]** · 精选：[PRE-list 网络协议逆向工程论文清单](https://awesomerea.org/zh/resources/pre-list/)
 - [danielkrupinski/vac-hooks](https://github.com/danielkrupinski/vac-hooks) — Hook Valve Anti-Cheat 使用的 WinAPI 函数，记录调用并拦截参数与返回值，DLL 使用 C 编写。 **[186 星标]**
 - [T14Raptor/go-fAST](https://github.com/T14Raptor/go-fAST) — 使用 Go 编写的 JavaScript AST 解析器、遍历器和生成器 **[186 星标]**
 - [kh4sh3i/Malware-Analysis](https://github.com/kh4sh3i/Malware-Analysis) — 精选的优秀恶意软件分析工具和资源列表。 **[173 星标]**

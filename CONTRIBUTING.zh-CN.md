@@ -1,5 +1,7 @@
 # 参与贡献：中文快速入门
 
+Agent 请先阅读 [AGENTS.md（英文）](AGENTS.md)和 [Agent 投稿与 PR 指南](docs/agent-contributing.zh-CN.md)。[公开贡献页面](https://awesomerea.org/zh/contribute/)提供各类 GitHub 提交入口。
+
 [English](CONTRIBUTING.md) · [文档索引](docs/README.zh-CN.md)
 
 本页概述向 Awesome Reverse Engineering Anything 推荐资源、论文和修正的基本规则。完整说明见[英文贡献指南](CONTRIBUTING.md)；两者如有出入，以英文版为准。

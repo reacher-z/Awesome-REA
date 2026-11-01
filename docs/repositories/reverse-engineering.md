@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**670 repositories** · 2026-10-20 UTC
+**669 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -69,7 +69,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [scadastrangelove/awesome-ai-security-tools](https://github.com/scadastrangelove/awesome-ai-security-tools) — A curated list of public-source, research, and commercial tools for AI security and AI-assisted cybersecurity — autotriage, agent security, AI/ML supply chain, pentest agents, AI SAST, LLM-driven fuzzing, threat intelligence, SOC/SIEM triage, reverse engineering, LLM red-teaming, and more. **[1,658 stars]**
 - [pmret/papermario](https://github.com/pmret/papermario) — Decompilation of Paper Mario (Nintendo 64) **[1,632 stars]** · Curated: [Paper Mario: matching Nintendo 64 decompilation for four releases](https://awesomerea.org/resources/paper-mario-matching-decomp-case/)
 - [packing-box/awesome-executable-packing](https://github.com/packing-box/awesome-executable-packing) — A curated list of awesome resources related to executable packing **[1,631 stars]**
-- [mgechev/ngrev](https://github.com/mgechev/ngrev) — Tool for reverse engineering of Angular applications **[1,573 stars]**
 - [JonathanSalwan/VMProtect-devirtualization](https://github.com/JonathanSalwan/VMProtect-devirtualization) — Playing with the VMProtect software protection. Automatic deobfuscation of pure functions using symbolic execution and LLVM. **[1,536 stars]**
 - [HACKE-RC/awesome-reversing](https://github.com/HACKE-RC/awesome-reversing) — A collection of resources to learn Reverse Engineering from start! **[1,530 stars]**
 - [AllsafeCyberSecurity/awesome-ghidra](https://github.com/AllsafeCyberSecurity/awesome-ghidra) — A curated list of awesome Ghidra materials **[1,442 stars]** · Curated: [Awesome Ghidra](https://awesomerea.org/resources/awesome-ghidra/)
@@ -127,7 +126,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Fausto-404/js-reverse-automation--skill](https://github.com/Fausto-404/js-reverse-automation--skill) — Combines chrome-devtools-mcp capabilities with Skill specifications to automate frontend JavaScript reverse-engineering analysis using JSRPC, Flask, and autoDecoder, improving reverse-engineering efficiency. **[598 stars]**
 - [uttambodara/TryHackMeRoadmap](https://github.com/uttambodara/TryHackMeRoadmap) — A list of 350+ free TryHackMe rooms💻 to kick off your cybersecurity learning, organized by topics for easy exploration and practical skill-building !💀💥 **[597 stars]**
 - [nbcraft-org/nbcraft](https://github.com/nbcraft-org/nbcraft) — The ultimate cross-platform mining experience. **[596 stars]**
-- [Jeija/bluefluff](https://github.com/Jeija/bluefluff) — Reverse Engineering Furby Connect's Bluetooth Protocol and Update Format **[576 stars]**
+- [Jeija/bluefluff](https://github.com/Jeija/bluefluff) — Reverse Engineering Furby Connect's Bluetooth Protocol and Update Format **[576 stars]** · Curated: [bluefluff: reverse engineering Furby Connect's Bluetooth LE protocol](https://awesomerea.org/resources/bluefluff-furby-connect-ble-case/)
 - [pret/pokeplatinum](https://github.com/pret/pokeplatinum) — Decompilation of Pokémon Platinum **[567 stars]** · Curated: [Pokémon Platinum: a checksum-matched Nintendo DS decompilation](https://awesomerea.org/resources/pokemon-platinum-decomp-case/)
 - [morluto/awesome-reverse-engineering](https://github.com/morluto/awesome-reverse-engineering) — Curated reverse-engineering tools and learning resources for binaries, apps, firmware, formats, and protocols. **[565 stars]** · Curated: [Awesome Reverse Engineering](https://awesomerea.org/resources/morluto-awesome-re/)
 - [SamidyFR/Game-Decompilations](https://github.com/SamidyFR/Game-Decompilations) — List of Game Decompilations i could gather from around the internet. **[559 stars]**
@@ -193,7 +192,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [CMUSTRUDEL/DIRTY](https://github.com/CMUSTRUDEL/DIRTY) — DIRTY: Augmenting Decompiler Output with Learned Variable Names and Types **[191 stars]** · Paper: [Augmenting Decompiler Output with Learned Variable Names and Types](https://awesomerea.org/papers/paper-dirty/)
 - [i-soxi/even-g2-protocol](https://github.com/i-soxi/even-g2-protocol) — Let's reverse engineer the EvenRealities G2s! By reverse engineering the BLE protocol, developers can understand how to call G2 services, unleashing the true potential of the G2 smart glasses in a true open-source environment. **[190 stars]**
 - [LLVM-but-worse/maple-ir](https://github.com/LLVM-but-worse/maple-ir) — Industrial IR-based static analysis framework for Java bytecode **[189 stars]**
-- [techge/PRE-list](https://github.com/techge/PRE-list) — List of (automatic) protocol reverse engineering tools for network protocols **[188 stars]**
+- [techge/PRE-list](https://github.com/techge/PRE-list) — List of (automatic) protocol reverse engineering tools for network protocols **[188 stars]** · Curated: [PRE-list](https://awesomerea.org/resources/pre-list/)
 - [danielkrupinski/vac-hooks](https://github.com/danielkrupinski/vac-hooks) — Hook WinAPI functions used by Valve Anti-Cheat. Log calls and intercept arguments &amp; return values. DLL written in C. **[186 stars]**
 - [T14Raptor/go-fAST](https://github.com/T14Raptor/go-fAST) — A JavaScript AST parser, traverser, and generator written in Go **[186 stars]**
 - [kh4sh3i/Malware-Analysis](https://github.com/kh4sh3i/Malware-Analysis) — A curated list of awesome malware analysis tools and resources **[173 stars]**

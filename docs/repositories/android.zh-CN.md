@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/android/) · [English](android.md)
 
-**479 个仓库** · 2026-10-20 UTC
+**478 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -23,14 +23,13 @@
 - [niklashigi/apk-mitm](https://github.com/niklashigi/apk-mitm) — 🤖 自动处理 Android APK 文件，使其便于进行 HTTPS 检查的命令行应用。 **[5,128 星标]** · 精选：[apk-mitm](https://awesomerea.org/zh/resources/apk-mitm/)
 - [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) — 覆盖所有平台（Windows/Linux/macOS/Android/iOS/IoT）及各个方面的逆向工程资源！包含 3500 多个开源工具与 2300 多篇文章和视频。 **[5,127 星标]**
 - [charles2gan/GDA-android-reversing-Tool](https://github.com/charles2gan/GDA-android-reversing-Tool) — 面向 APK、DEX、ODEX、OAT、JAR、AAR 和 CLASS 文件的高速强大 Android 反编译器，无需 Java 虚拟机即可运行的原生工具。支持恶意行为检测、隐私泄露检测、漏洞检测、路径求解、加壳识别、变量追踪、去混淆、Python/Java 脚本、设备内存提取、数据解密与加密等。 **[4,859 星标]** · 精选：[GDA Android 反编译器](https://awesomerea.org/zh/resources/gda-android-decompiler/)
-- [vaibhavpandeyvpz/apkstudio](https://github.com/vaibhavpandeyvpz/apkstudio) — 基于 Qt6 的开源跨平台 Android 应用包逆向工程 IDE，提供友好的 IDE 风格布局，包含支持 \*.smali 代码语法高亮的编辑器。 **[4,683 星标]**
+- [vaibhavpandeyvpz/apkstudio](https://github.com/vaibhavpandeyvpz/apkstudio) — 基于 Qt6 的开源跨平台 Android 应用包逆向工程 IDE，提供友好的 IDE 风格布局，包含支持 \*.smali 代码语法高亮的编辑器。 **[4,683 星标]** · 精选：[APK Studio Android 逆向 IDE](https://awesomerea.org/zh/resources/apk-studio/)
 - [CalebFenton/simplify](https://github.com/CalebFenton/simplify) — Android 虚拟机与去混淆工具。 **[4,671 星标]** · 精选：[Simplify Android 反混淆工具](https://awesomerea.org/zh/resources/simplify-android-deobfuscator/)
 - [ReVanced/revanced-patches-template](https://github.com/ReVanced/revanced-patches-template) — 👋🧩 ReVanced Patches 模板仓库。 **[4,613 星标]**
 - [APKLab/APKLab](https://github.com/APKLab/APKLab) — 适用于 VS Code 的 Android 逆向工程工作台。 **[4,011 星标]** · 精选：[APKLab Android 逆向工作台](https://awesomerea.org/zh/resources/apklab/)
-- [ax/apk.sh](https://github.com/ax/apk.sh) — 自动完成 APK 提取、解码、重建和打补丁等重复任务，让 Android 应用逆向工程更轻松。 **[3,842 星标]**
+- [ax/apk.sh](https://github.com/ax/apk.sh) — 自动完成 APK 提取、解码、重建和打补丁等重复任务，让 Android 应用逆向工程更轻松。 **[3,842 星标]** · 精选：[apk.sh Android 应用分析脚本](https://awesomerea.org/zh/resources/apk-sh/)
 - [ReVanced/revanced-patcher](https://github.com/ReVanced/revanced-patcher) — 💉 用于为 Android 应用打补丁的 ReVanced Patcher。 **[3,525 星标]**
 - [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — 使用 Zygisk 在运行时转储 il2cpp 数据。 **[3,343 星标]**
-- [m0bilesecurity/RMS-Runtime-Mobile-Security](https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security) — Runtime Mobile Security（RMS）📱🔥：功能强大的 Web 界面，帮助你在运行时操控 Android 和 iOS 应用。 **[3,111 星标]**
 - [zinja-coder/jadx-ai-mcp](https://github.com/zinja-coder/jadx-ai-mcp) — 为 JADX 集成 MCP 服务器的插件。 **[2,906 星标]** · 精选：[JADX-AI-MCP](https://awesomerea.org/zh/resources/jadx-ai-mcp/)
 - [Impact-I/reFlutter](https://github.com/Impact-I/reFlutter) — Flutter 逆向工程框架。 **[2,775 星标]** · 精选：[reFlutter](https://awesomerea.org/zh/resources/reflutter/)
 - [worawit/blutter](https://github.com/worawit/blutter) — Flutter 移动应用逆向工程工具。 **[2,750 星标]** · 精选：[Blutter](https://awesomerea.org/zh/resources/blutter/)
