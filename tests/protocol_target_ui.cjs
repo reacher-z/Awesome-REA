@@ -143,7 +143,7 @@ if (require.main === module) (async () => {
   const legacyChinese = setup('?lang=zh'); await legacyChinese.api.load();
   for (const app of [chinese, legacyChinese]) {
     assert.deepEqual(contribution(app), ['https://github.com/reacher-z/Awesome-REA/blob/main/CONTRIBUTING.zh-CN.md']);
-    assert(app.repositoryLinks.some(node => node.href === 'https://github.com/reacher-z/Awesome-REA/blob/main/data/README.md'));
+    assert(app.repositoryLinks.some(node => node.href === 'https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml'));
   }
   assert.equal(home.api.sourceState.mode, 'curated');
   for (const lang of ['en', 'zh']) {
