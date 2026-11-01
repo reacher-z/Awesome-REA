@@ -214,16 +214,16 @@ def _case_collection(resources: list[dict], language: str, site_url: str,
     nav = f'<nav class="browse-category-nav cases-nav" aria-label="{("案例主题" if zh else "Case subjects")}">{"".join(navigation)}</nav>' if navigation else ''
     empty = '' if items else f'<p class="cases-empty">{("当前目录还没有案例条目。" if zh else "No case studies are currently listed.")}</p>'
     review_title = '软件重建产物评审 · Beta' if zh else 'Software reconstruction artifact reviews · Beta'
-    review_intro = ('从 REA 工作流和独立重建项目中，核对实际产物、复现范围与公开证据。分析报告、局部重建和完整软件的声明按各自范围阅读。'
-                    if zh else 'Explore REA workflows and independent reconstructions through their artifacts, scope and public evidence. Read analysis reports, partial rebuilds and full-software claims within their documented boundaries.')
-    review_dimensions = ([('复现范围', '查看重建了哪些功能、仍有哪些缺口，以及需要自备的原始素材。'),
-                          ('产物入口', '沿原始来源查看代码、发布包或演示；截图与可运行软件分别判断。'),
-                          ('证据与归因', '核对固定来源、复核日期与 REA 的实际角色；保留作者自报结果。'),
-                          ('运行状态', '当前评审核查公开资料，尚未独立实测；不据此认证完整度或兼容性。')]
-                         if zh else [('Reconstruction scope', 'Check the implemented features, documented gaps and original assets you must supply.'),
-                                     ('Available artifacts', 'Follow original sources to code, releases or demos; assess screenshots and runnable software separately.'),
-                                     ('Evidence and attribution', 'Inspect pinned sources, review dates and REA’s documented role; results remain attributed to their authors.'),
-                                     ('Runtime status', 'Current reviews examine public documentation without independent runtime tests; they do not certify completeness or compatibility.')])
+    review_intro = ('核查 REA 工作流与独立重建的实际产物，每项保留原始来源和已知局限。'
+                    if zh else 'Review artifacts from REA workflows and independent reconstructions. Each entry retains its original sources and known limits.')
+    review_dimensions = ([('复现范围', '已实现功能、已知缺口及必需的原始素材。'),
+                          ('产物入口', '原始代码、发布包或演示；截图另作判断。'),
+                          ('证据与归因', '固定来源、复核日期与 REA 的实际角色。'),
+                          ('运行状态', '资料核查，尚未独立实测；完整度未认证。')]
+                         if zh else [('Reconstruction scope', 'Implemented features, known gaps and required original assets.'),
+                                     ('Available artifacts', 'Original code, releases or demos; assess screenshots separately.'),
+                                     ('Evidence and attribution', 'Pinned sources, review dates and documented REA roles.'),
+                                     ('Runtime status', 'Documentation review without independent runtime tests; completeness remains unverified.')])
     review = f'<section class="case-review-method" id="review-method" aria-labelledby="review-method-title"><h2 id="review-method-title">{review_title}</h2><p>{review_intro}</p><dl>' + ''.join(f'<div><dt>{escape(label)}</dt><dd>{escape(value)}</dd></div>' for label, value in review_dimensions) + '</dl></section>'
     content = f'''<div class="cases-collection" data-case-count="{len(items)}" data-curated-count="{len(resources)}">
 {review}
