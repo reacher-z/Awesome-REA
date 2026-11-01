@@ -45,11 +45,17 @@ const UI = {
     "surveyLink": "Read the editorial survey ↗",
     "classLabel": "Evidence class",
     "allEvidenceClasses": "All classes",
-    "evidenceClass0": "Class 0 · full docs, download, demo",
-    "evidenceClass1": "Class 1 · download & demo, partial scope",
-    "evidenceClass2": "Class 2 · code & docs only",
-    "evidenceClass3": "Class 3 · notes only",
+    "evidenceClass0": "Class 0",
+    "evidenceClass1": "Class 1",
+    "evidenceClass2": "Class 2",
+    "evidenceClass3": "Class 3",
+    "evidenceClassDetail0": "full docs, download, demo",
+    "evidenceClassDetail1": "partial scope, download & demo",
+    "evidenceClassDetail2": "code & docs, no demo or download",
+    "evidenceClassDetail3": "notes only",
     "evidenceClassTitle": "Public evidence strength: documentation, download method, demo. Not a completeness judgment.",
+    "evidenceLegendLabel": "Evidence classes:",
+    "evidenceLegendNote": "Evidence strength, not a completeness judgment.",
     "subjectNav": "Explore reverse engineering by target",
     "subjectBrowse": "Browse subject directories",
     "contributorsEyebrow": "BUILT WITH THE COMMUNITY",
@@ -215,11 +221,17 @@ const UI = {
     "surveyLink": "阅读专题综述 ↗",
     "classLabel": "证据档位",
     "allEvidenceClasses": "全部档位",
-    "evidenceClass0": "Class 0 · 文档完整，有下载和演示",
-    "evidenceClass1": "Class 1 · 有下载和演示，部分功能",
-    "evidenceClass2": "Class 2 · 有代码和文档",
-    "evidenceClass3": "Class 3 · 仅笔记或进度记录",
+    "evidenceClass0": "Class 0",
+    "evidenceClass1": "Class 1",
+    "evidenceClass2": "Class 2",
+    "evidenceClass3": "Class 3",
+    "evidenceClassDetail0": "文档完整，有下载和演示",
+    "evidenceClassDetail1": "部分功能，有下载和演示",
+    "evidenceClassDetail2": "有代码和文档，缺演示或下载",
+    "evidenceClassDetail3": "仅笔记或进度记录",
     "evidenceClassTitle": "公开证据强度：文档、下载方式、图片或视频演示。不是复现完整度判断。",
+    "evidenceLegendLabel": "证据档位：",
+    "evidenceLegendNote": "证据强度，不代表复现完整度。",
     "subjectNav": "按目标领域探索逆向工程",
     "subjectBrowse": "浏览各领域资源目录",
     "contributorsEyebrow": "与社区共同整理",
@@ -439,7 +451,7 @@ function requirementItems(record) {
 }
 function card(record) {
   const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));
-  if(record.evidence_class!==undefined){const classBadge=node("span","evidence-class evidence-class-"+record.evidence_class,"C"+record.evidence_class);classBadge.title=t("evidenceClassTitle");head.append(classBadge);}article.append(head);
+  if(record.evidence_class!==undefined){const classBadge=node("span","evidence-class evidence-class-"+record.evidence_class,"C"+record.evidence_class);const detail=t("evidenceClassDetail"+record.evidence_class);classBadge.title=t("evidenceClass"+record.evidence_class)+" · "+detail+". "+t("evidenceClassTitle");classBadge.setAttribute("aria-label",t("classLabel")+" "+t("evidenceClass"+record.evidence_class)+": "+detail);head.append(classBadge);}article.append(head);
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
   const meta=node("div","card-meta");meta.append(node("span","card-category",label(state.categoryLabels,record.category)));article.append(meta);
   const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");if(!fillRequirements(list,record)){state.pendingRequirements.push([list,record]);details.addEventListener("toggle",()=>{if(details.open)loadDetails();});}details.append(list);
@@ -475,7 +487,7 @@ function queryTerms() { return state.q.toLocaleLowerCase().trim().split(/\s+/).f
 // skip leaves one facet out, so that facet's choices can be counted against every other active filter.
 function matches(r, terms, skip = "") { return (state.group==="all"||r.group===state.group)&&(skip==="target"||state.target==="all"||r.targets.includes(state.target))&&(skip==="category"||state.category==="all"||r.category===state.category)&&(skip==="kind"||state.kind==="all"||r.kind===state.kind)&&(skip==="evidence_class"||state.class==="all"||String(r.evidence_class)===state.class)&&terms.every(term=>r.search.includes(term)); }
 function filtered() { const terms=queryTerms();const found=state.records.filter(r=>matches(r,terms));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
-// Each target button and Type/Category option shows how many results it would give with the other filters and the query.
+// Each target button and each Type/Category/evidence-class option shows how many results it would give with the other filters and the query.
 // Empty choices are disabled unless selected, so a shared URL still shows its own choice; counts are not announced.
 function renderFacets() {
   const terms = queryTerms();
@@ -526,8 +538,8 @@ function render(shown = 0) {
   $$('[data-target]').forEach(el => { const active = el.dataset.target === state.target; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
   renderFacets();
 }
-// Phones fold Type and Category behind “More filters” (styles.css); the toggle counts active selects, and a page
-// opened with one active starts expanded. Wider layouts hide the toggle and always show both selects.
+// Phones fold Type, Category and Evidence class behind “More filters” (styles.css); the toggle counts active selects, and a page
+// opened with one active starts expanded. Wider layouts hide the toggle and always show all three selects.
 let moreFiltersSynced = false;
 function setMoreFilters(open) { $("#more-filters").setAttribute("aria-expanded", String(open)); $("#curated-selectors").classList.toggle("is-open", open); }
 function renderMoreFilters() {

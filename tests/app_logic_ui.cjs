@@ -542,12 +542,12 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.deepEqual(app.api.filtered().map(record => record.id), ['curated-1', 'curated-5'], '?class=1 filters before the first render');
     assert.equal(app.element('class-select').value, '1');
     assert.deepEqual(classOptions(app).find(([value]) => value === 'all'), ['all', 'All classes (5)', false]);
-    assert.deepEqual(classOptions(app).find(([value]) => value === '0'), ['0', 'Class 0 · full docs, download, demo (1)', false]);
-    assert.deepEqual(classOptions(app).find(([value]) => value === '2'), ['2', 'Class 2 · code & docs only (1)', false]);
+    assert.deepEqual(classOptions(app).find(([value]) => value === '0'), ['0', 'Class 0 (1)', false]);
+    assert.deepEqual(classOptions(app).find(([value]) => value === '2'), ['2', 'Class 2 (1)', false]);
     app.element('class-select').emit('change', '2');
     assert.deepEqual([urlParam(app, 'class'), app.api.filtered().map(record => record.id), app.element('clear-filters').hidden], ['2', ['curated-2'], false]);
     const badge = byClass(app.element('resource-grid').children[0], 'evidence-class')[0];
-    assert.deepEqual([badge.textContent, hasClass(badge, 'evidence-class-2'), badge.title.includes('evidence strength')], ['C2', true, true]);
+    assert.deepEqual([badge.textContent, hasClass(badge, 'evidence-class-2'), badge.title.includes('evidence strength'), badge.attrs['aria-label']], ['C2', true, true, 'Evidence class Class 2: code & docs, no demo or download']);
     // A rejected shared URL normalizes to "all" and every option then carries a count.
     const rejected = await loaded('?class=nine', {catalog: catalogOf(rows)});
     assert.equal(rejected.api.state.class, 'all');
@@ -555,7 +555,10 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.deepEqual(classOptions(rejected).find(([value]) => value === '3')[2], false);
     for (const lang of ['en', 'zh']) {
       const localized = await loaded(`?lang=${lang}`, {catalog: catalogOf(rows)});
-      assert.equal(localized.element('class-select').children[1].textContent.startsWith(lang === 'zh' ? 'Class 0 · 文档完整' : 'Class 0 · full docs'), true);
+      // Counts use full-width parentheses in Chinese; the rubric legend carries the localized wording.
+      assert.equal(localized.element('class-select').children[1].textContent, lang === 'zh' ? 'Class 0（1）' : 'Class 0 (1)');
+      const detail = localized.marked.find(node => node.dataset.i18n === 'evidenceClassDetail0');
+      assert.equal(detail.innerHTML, lang === 'zh' ? '文档完整，有下载和演示' : 'full docs, download, demo');
     }
   }
   // Phones fold Type and Category behind “More filters”: the toggle counts active selects and opens when the page starts filtered.

@@ -225,6 +225,15 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .evidence-class-1::before{background:var(--class-1)}
 .evidence-class-2::before{background:var(--class-2)}
 .evidence-class-3::before{background:var(--class-3)}
+.evidence-legend{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin:0 0 16px;color:var(--muted);font:500 13px/1.6 var(--sans)}
+.evidence-legend-label{color:var(--body);font-weight:600}
+.evidence-legend-item{display:inline-flex;align-items:center;gap:6px;white-space:normal}
+.evidence-legend-dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--class-3)}
+.evidence-legend-dot-0{background:var(--class-0)}
+.evidence-legend-dot-1{background:var(--class-1)}
+.evidence-legend-dot-2{background:var(--class-2)}
+.evidence-legend-dot-3{background:var(--class-3)}
+.evidence-legend-note{font-style:italic}
 .card-description,.source-card-description{max-width:68ch;margin:14px 0 16px;color:var(--body);font-size:16px;line-height:1.8;overflow-wrap:anywhere}
 .source-card-empty{font-style:italic;color:var(--muted)}
 .source-related{display:grid;gap:10px;min-width:0;margin:0 0 17px}
@@ -290,9 +299,10 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .source-field{flex:1}
   .source-field>input,.source-field>select{width:100%}
 }
-/* Category options use the full catalog wording, so on one-row desktops the select takes the room beside the target buttons. */
-@media(min-width:1181px){.curated-selectors{flex:1 1 362px;min-width:0;flex-wrap:nowrap;justify-content:flex-end}.curated-selectors>.source-field:first-child{flex:none}.curated-selectors>.source-field:last-child{flex:0 1 auto}#category-select{width:auto;max-width:100%}}
-/* The live counts widen the target buttons; tighter gaps keep both selects on the same row at 1280 px. */
+/* Three selects need about 550 px, so below ~1460 px the block wraps under the target buttons instead of
+   overflowing the viewport; its own flex-end keeps the fields right-aligned. */
+@media(min-width:1181px){.curated-selectors{flex:1 1 550px;min-width:0;flex-wrap:nowrap;justify-content:flex-end}.curated-selectors>.source-field:first-child{flex:none}.curated-selectors>.source-field:last-child{flex:0 1 auto}#category-select,#class-select{width:auto;max-width:100%}}
+/* The live counts widen the target buttons; tighter gaps keep the filter row compact at 1280 px. */
 @media(min-width:1181px){#curated-view .filter-row{gap:12px}#curated-view .group-filters{gap:6px}}
 @media(max-width:900px){
   .shell{width:calc(100% - 48px)}
@@ -329,6 +339,9 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .source-controls,.filter-row{padding:12px 0;gap:10px}
   .source-selectors,.curated-selectors{gap:12px}
   .source-field{flex:1 1 0}
+  /* Three selects do not fit on one phone row; pair Type with Category and give Evidence class its own row. */
+  #curated-view .source-field{flex:1 1 calc(50% - 6px)}
+  #curated-view .source-field:last-child{flex-basis:100%}
   .source-field>input,.source-field>select{height:40px;font-size:14px}
   .collection-note{gap:6px 14px;padding-bottom:12px}
   .results-topline{min-height:48px;padding:12px 0}
@@ -351,6 +364,8 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .index-mode-switch{gap:20px}
   .index-mode{font-size:13px;gap:6px}
   .index-mode>.icon{width:16px;height:16px;font-size:16px}
+  /* Below 520 px one select per row keeps the counted option labels readable. */
+  #curated-view .source-field{flex-basis:100%}
 }
 @media(max-width:390px){
   .shell{width:calc(100% - 32px)}
