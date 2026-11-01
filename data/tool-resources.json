@@ -16345,5 +16345,65 @@
       "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/LICENSE",
       "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/tree/df2cf51bd6d02e0b310d46a5da062693bac7314f"
     ]
+  },
+  {
+    "id": "siegefx-dungeon-siege-engine-case",
+    "name": "SiegeFX: a Dungeon Siege engine reimplementation in alpha",
+    "url": "https://github.com/codingncaffeine/SiegeFX",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A C#/.NET 10 engine loads Dungeon Siege's original archives, scripts and models, with published alpha builds and an audit/parity ledger. The project also provides SiegeSmith modding tools, while describing remaining fidelity and playthrough risks.",
+    "description_zh": "C#/.NET 10 引擎加载 Dungeon Siege 原始归档、脚本与模型，提供 alpha 构建和审计/一致性清单，并附带 SiegeSmith 模组工具；项目仍记录保真度和通关行为风险。",
+    "evidence_url": "https://github.com/codingncaffeine/SiegeFX/blob/6a1a4ade725a860651a06a0d7ddb50d5a3a688d1/README.md",
+    "verified_at": "2026-11-01T16:36:25Z",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires an owned Dungeon Siege installation; Windows and Linux builds are linked. Source builds need .NET 10; Linux needs OpenGL 3.3 and internet multiplayer additionally needs OpenSSL 3.",
+      "The README calls this alpha software. It reports campaign progression to the final boss since v0.4.0, with Bink movies, interior lighting fidelity and combat balance still open. Not run or reproduced for this catalog.",
+      "Code is GPL-3.0-only; original game assets are not bundled. Multiplayer uses Epic Online Services under separate SDK terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/codingncaffeine/SiegeFX/releases/tag/v0.5.0"
+    ]
+  },
+  {
+    "id": "legend-of-legaia-rust-port-case",
+    "name": "Legend of Legaia: a Rust port with disc-local browser tooling",
+    "url": "https://github.com/AndrewAltimit/legend-of-legaia-re",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A from-scratch Rust port of the North American PlayStation Legend of Legaia includes native/browser play, asset extraction and disc patching. The author documents Ghidra/emulator research and a full-game ladder; this is a fresh implementation, not a matching decompilation or static recompilation.",
+    "description_zh": "从零编写的 Rust 移植面向北美 PlayStation 版 Legend of Legaia，附带原生/浏览器游玩、素材提取及光盘补丁工具；作者记录 Ghidra/模拟器研究与全流程测试阶梯，项目不是匹配反编译或静态重编译。",
+    "evidence_url": "https://github.com/AndrewAltimit/legend-of-legaia-re/blob/f801d3c319386f7686d7fde45e114e1e2ba6aff5/README.md",
+    "verified_at": "2026-11-01T16:36:25Z",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supply an owned North American SCUS-94254 disc image; browser tooling reads the image locally. Source builds require a Rust toolchain supporting edition 2024.",
+      "The README reports New Game-to-credits coverage and parity oracles, but disc-dependent tests skip and pass without LEGAIA_DISC_BIN. A green asset-free CI run does not establish full-game reproduction. Not run or reproduced for this catalog.",
+      "Enhancements can differ from retail behavior; the README describes a retail-faithful mode. No Sony game executable, ROM or asset data is distributed.",
+      "Project code and documentation offer Unlicense or MIT; these licenses do not grant rights to the original game."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://andrewaltimit.github.io/legend-of-legaia-re/"
+    ]
   }
 ]
