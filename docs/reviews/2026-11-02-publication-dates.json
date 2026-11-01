@@ -1,0 +1,70 @@
+{
+  "purpose": "Actual first-main dates for 20 records added in these five merged batches; not upstream publication or runtime dates.",
+  "merge_evidence": [
+    {
+      "html_url": "https://github.com/reacher-z/Awesome-REA/pull/2554",
+      "merge_commit_sha": "3b37e89de248d70cc1d3ca0cb7327d7fb0a6306c",
+      "merged": true,
+      "merged_at": "2026-11-01T17:07:34Z",
+      "number": 2554,
+      "catalog_ids": [
+        "untangle-rea-evidence-rebuild-case",
+        "sofa-tv-browser-browsehere-case",
+        "netcat-openbsd-rea-static-case",
+        "openbattlefield2-refractor-engine-case",
+        "siegefx-dungeon-siege-engine-case",
+        "legend-of-legaia-rust-port-case",
+        "fastview-rea-relay-analysis-rebuild-case"
+      ]
+    },
+    {
+      "html_url": "https://github.com/reacher-z/Awesome-REA/pull/2557",
+      "merge_commit_sha": "fef37bd7cdb4d1a73503d263b07a8baa5eb02d9f",
+      "merged": true,
+      "merged_at": "2026-11-01T17:27:00Z",
+      "number": 2557,
+      "catalog_ids": [
+        "keen-clone-rea-commander-keen-case",
+        "samp-client-rea-partial-reconstruction-case",
+        "desktop-games-nostalgia-rea-port-case",
+        "gunzrs-rea-rust-reimplementation-case"
+      ]
+    },
+    {
+      "html_url": "https://github.com/reacher-z/Awesome-REA/pull/2559",
+      "merge_commit_sha": "f03202004caec7a418a044dac7525e6c4610f96a",
+      "merged": true,
+      "merged_at": "2026-11-01T17:50:33Z",
+      "number": 2559,
+      "catalog_ids": [
+        "mxqpro-rk3229-rea-repurposing-case",
+        "icsee-localmod-rea-camera-case",
+        "app-xray-rea-evidence-reports"
+      ]
+    },
+    {
+      "html_url": "https://github.com/reacher-z/Awesome-REA/pull/2560",
+      "merge_commit_sha": "70357aa9f224a7e6a372950ffb3d38e553084b27",
+      "merged": true,
+      "merged_at": "2026-11-01T18:36:33Z",
+      "number": 2560,
+      "catalog_ids": [
+        "disklens-windirstat-rea-case",
+        "soundconnect-desktop-rea-engine-case",
+        "rec-rs-obs-rea-recorder-case",
+        "sketch-paper-rea-canvas-case",
+        "terminal-tradingview-rea-chart-case"
+      ]
+    },
+    {
+      "html_url": "https://github.com/reacher-z/Awesome-REA/pull/1650",
+      "merge_commit_sha": "af6f44f469a5928c765c2cfbdf73920a6ba140c5",
+      "merged": true,
+      "merged_at": "2026-11-01T19:22:49Z",
+      "number": 1650,
+      "catalog_ids": [
+        "crxviewer"
+      ]
+    }
+  ]
+}
