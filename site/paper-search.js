@@ -5,8 +5,10 @@
   const STATUSES = new Set(["conference-paper", "conference-accepted", "journal-article", "preprint"]);
   const TARGETS = new Set(["binary", "website", "app", "game", "firmware", "protocol"]);
   const KEYS = ["q", "target", "status", "year"];
-  const cleanQuery = value => String(value || "").replace(/[\u0000-\u001f\u007f]/g, " ").slice(0, 240).trim();
-  const normalized = value => String(value).normalize("NFKC").toLowerCase();
+  const withoutSearchControls = value => String(value ?? "").replace(/[\u0000-\u001f\u007f]/g, " ");
+  const cleanQuery = value => withoutSearchControls(value).slice(0, 240).trim();
+  // Match the homepage contract: replace only C0/DEL controls, then apply NFKC and locale-neutral lowercase.
+  const normalized = value => withoutSearchControls(value).normalize("NFKC").toLowerCase();
 
   function readRecords(value) {
     if (!value || value.schema_version !== 1 || !Array.isArray(value.papers)) throw new Error("Invalid paper search data");

@@ -5100,5 +5100,235 @@
       "docs/VERIFYING.md 记录了一种检查构建：每个转译代码块都与解释器并行执行，一旦寄存器、标志位、周期数、控制流或内存写入出现差异即停止；此外还在不同运行模式之间逐帧比较状态哈希。可选的街机时序曾与模拟的 jtcps2 基板模型对比。CI 会审计仓库中是否提交了游戏文件、密钥或未列明的第三方代码，并以不含游戏代码的替身游戏构建和启动各平台安装包。本合集未运行其中任何检查。",
       "项目采用 GPL-3.0；machine/cps2crypt.cpp 是 MAME 中采用 BSD-3-Clause 的 CPS-2 加密算法代码，启动器经由作者的 recomp-common 源自 wiiparty-recomp（GPL-3.0-or-later），sound/driver.cpp 则是对 Capcom QSound 声音程序的手工重写，其数据表与采样均从使用者的 ROM 中读取。Capcom 及其他权利人仍保有游戏权利。所审阅的资料未确立任何 AI 或 REA 的使用，也不声称复现了运行结果。"
     ]
+  },
+  "binbloom": {
+    "name": "binbloom 原始固件端序与基址分析工具",
+    "requirements": [
+      "审阅时最新版本为 v2.1，发布于 2024-06-06，标签指向 master 最新提交 95cfaac（2022-11-07），其源码报告的版本号为 2.1.0。该版本新增用于设置基址对齐的 -m 选项，并修复了处理极小文件时的崩溃以及空指针和浮点异常错误；configure.ac 和 man 手册仍写作 2.0，master 分支此后没有新的提交。",
+      "README 只说明了在 Linux 上从源码构建，步骤为 autoreconf、configure、make 和 make install；configure.ac 需要 C 编译器、libm 和 pthreads。该版本未附带预编译程序。",
+      "每次运行处理一个由使用者自备的原始固件转储，未指定 -a 64 时默认按 32 位目标处理。README 提醒，文件小于约 10 KB 时端序检测可能不可靠，此时可用 -e 强制指定；-t 可启用多线程，-f 可提供已知函数地址文件，实验性的 -d 深度搜索速度较慢。输出为按得分排序的候选基址列表，有时会标注不确定；只有用 -b 提供基址时才会执行 UDS 搜索。",
+      "README 称 UDS 搜索基于启发式方法，可能出现误报，因此每个候选表都需要人工核实。仓库不含测试或样例固件，也未公布准确率结果。",
+      "采用 Apache-2.0 许可。本次未构建，也未分析任何固件。"
+    ]
+  },
+  "packetry": {
+    "name": "Packetry USB 2.0 协议分析工具",
+    "requirements": [
+      "审阅时的版本为 v0.5.0，于 2025-09-30 发布，提供 Windows 安装程序和 Linux x86_64 AppImage；快速入门指南介绍在 macOS 上通过 Homebrew 安装。所审阅的 main 分支提交领先 47 个提交，包含界面、依赖和最低 Rust 版本等改动，而 Cargo.toml 仍标为 0.5.0。",
+      "实时捕获需要 Cynthion 分析仪，并安装其主机软件、用 cynthion update 更新；代码还会探测 iCE40-usbtrace 设备，但文档未涉及。查看已有的捕获文件无需硬件。",
+      "从源码构建需要 Rust 1.93+（依据 README 和 Cargo.toml；快速入门指南仍写 1.85.1），以及可通过 pkg-config 找到的 GTK 4 头文件。文档警告不要使用 --all-features 构建，其中的可选功能用于调试和测试，会影响正常使用。",
+      "捕获数据来自使用者自己的 USB 设备和总线。文档指出分层视图中的数据包可能不按时间顺序显示。采用 BSD-3-Clause 许可。本次未进行或载入任何捕获。"
+    ]
+  },
+  "lucid-microcode-explorer": {
+    "name": "Lucid Hex-Rays 微码浏览器",
+    "requirements": [
+      "自首次发布后已无人维护：2020-09-15 打标签的 v0.1.1 是最后一个版本，也就是所审阅的 master 提交，此后再无新提交；一个增加更多功能的社区拉取请求自 2024 年起一直未合并。README 中首次发布时列出的已知问题（包括双击某些地址注释可能导致 IDA 崩溃，以及在 macOS 和 Linux 上测试较少）至今未更新。",
+      "需要 IDA Pro 7.5 或更高版本，并具备所分析架构对应的 Hex-Rays 反编译器。它是没有第三方依赖的 Python 2/3 插件，将 plugins 文件夹复制到 IDA 用户插件目录即可安装；界面代码导入 IDA 自带的 PyQt5，与当前 IDA 版本的兼容性没有文档说明。",
+      "作用于使用者已在 IDA 中打开并反编译的二进制。它只是查看反编译器内部状态的工具；README 仅把微码优化器相关工作流列为未来可能的工作。",
+      "采用 MIT 许可。本次未安装或运行。"
+    ]
+  },
+  "bluefluff-furby-connect-ble-case": {
+    "name": "bluefluff：逆向分析 Furby Connect 的蓝牙低功耗协议",
+    "requirements": [
+      "大部分研究提交集中在 2017 和 2018 年，此后只有少量修复，并于 2026 年 3 月加入了 Docker 配置。README 报告已弄清 BLE 协议的大部分内容，但动作列表尚不完整，更新包（DLC）格式只做了部分探索，代码执行、自定义 LCD 动画和睡眠面罩接口均未尝试。",
+      "需要一台 Furby Connect，以及内置蓝牙低功耗或配有 USB 蓝牙 4.0+ 适配器的主机。仓库不含 Hasbro 的更新文件或应用代码，本条目也不涉及如何获取或修改这些文件。README 警告，以不当方式操作可能使玩具变砖，而且几乎必然导致失去保修。",
+      "README 指出 fluffd 需要 Node.js 7.0 或更高版本，并固定使用 @abandonware/noble 1.9.2-23。README 说明了 Linux（需要 libudev 开发文件和运行中的 BlueZ）和 macOS（需要 xpc-connection）的安装方法，也提到 FreeBSD 和 Windows。Docker 镜像基于 node:16-bullseye，需要使用主机网络以访问原始 HCI，仅支持 Linux 主机。",
+      "这些发现是作者在未拆开玩具的情况下所记录的观察结果。仓库没有测试或 CI，本次审阅也未发送任何命令。",
+      "采用 MIT 许可（2017 年，Florian Euchner）；README 的免责声明称这些信息仅供教育用途。Furby Connect、其配套应用以及 Hasbro 的内容各自保留其权利。所审来源未确立 REA 或 AI 使用。"
+    ]
+  },
+  "apk-sh": {
+    "name": "apk.sh Android 应用分析脚本",
+    "requirements": [
+      "审阅时的最新版本为 v1.1.3，发布于 2026-01-26，与所审阅的 main 提交一致。它是单个 Bash 脚本；README 列出的依赖为 apktool、apksigner、unxz、zipalign、aapt 和 adb。",
+      "首次使用时，脚本会在用户主目录下创建隐藏的 apk.sh 文件夹，并将所需工具下载到其中，包括最新的 apktool 版本和 Android 构建工具，因此需要网络连接和 Java 运行环境。",
+      "输入应为使用者有权分析的 APK 或已安装的应用包；拉取应用需要能通过 adb 访问设备或模拟器。重新构建出的 APK 是修改后的副本，并非原始安装包。",
+      "采用 GPL-3.0 许可。本条目只介绍文档中的拉取、解码和重建流程。本次未安装或运行该工具。"
+    ]
+  },
+  "r2dec": {
+    "name": "r2dec radare2 反编译插件",
+    "requirements": [
+      "审阅时的版本为 6.2.0，于 2026-08-16 基于所审阅的 master 提交发布，提供 Linux amd64 插件、Windows 32 位和 64 位构建，以及包含依赖的源码包。版本号与 radare2 保持一致：CI 在 Linux 和 Windows 上针对 radare2 6.2.0 构建，macOS 任务已被注释停用。可通过 r2pm 安装，也可用 meson 0.55.0+ 和 ninja 结合 radare2 开发文件构建；QuickJS 作为 meson 子项目自动获取。",
+      "二进制由使用者自备，且须先在 radare2 中分析目标函数（af）。输出是可读的伪 C 代码，并非恢复出的源码；从 README 示例可见，结果可能保留 eax 等寄存器赋值和通用的局部变量名。回归测试位于独立的 r2dec-regression 仓库，提交问题时需附上 pddi 生成的 JSON。",
+      "本仓库只构建 radare2 插件；Rizin 使用的 jsdec 反编译器是另一个独立项目。源文件带有 SPDX 标注：大部分代码为 BSD-3-Clause，随附的 base64 辅助代码为 MIT，因此 GitHub 无法识别出单一许可证。本次未反编译任何二进制。"
+    ]
+  },
+  "m1n1": {
+    "name": "m1n1 Apple Silicon 引导与硬件研究工具",
+    "requirements": [
+      "处于活跃开发中：所审阅的 main 提交（2026-10-19）比 v2.0.0 标签（2026-10-02）多 53 个提交；该标签说明称其为首个 GPL 版本，其余与 v1.9.9 相同。GitHub 上最新的发行版 v1.9.9 提供第二阶段 m1n1.bin，以及只含 m1n1 boot.bin 的纯 UEFI 软件包。",
+      "只能在 Apple Silicon Mac 上运行。构建需要 aarch64-linux-gnu-gcc 交叉工具链（或 ARM64 原生工具链）、macOS 上的 LLVM 与 lld，或仓库附带的 compose 环境；支持链式加载的构建还需 Rust 的 aarch64-unknown-none-softfloat 目标。Python 代理客户端（依赖 pyserial、construct、asn1）在另一台主机上通过 USB 与 m1n1 通信。",
+      "m1n1 由 Apple 的 kmutil 在 macOS 恢复环境中安装为自定义启动对象，通常由 Asahi Linux 安装器完成。run_guest.py 接受 Mach-O 格式的客体，例如来自使用者自有 macOS 安装的 XNU kernelcache；仓库不附带任何 Apple 固件、内核或 macOS 组件。proxyclient/hv 收有 27 个追踪脚本，覆盖 AGX、DCP、NVMe 和 SMC 等硬件模块。",
+      "CI 会构建 main 分支、检查 C 与 Rust 代码格式，并在 Ubuntu 及 macOS 14、15 上运行代理客户端的 pytest 测试套件；这些测试覆盖其汇编器、目标文件加载和工具链处理，不涉及在 Mac 硬件上的行为。",
+      "v1.9.9 及以前的代码仍采用 MIT 许可；自 v2.0.0 起 m1n1 采用 GPL-2.0-or-later，内嵌的 libfdt、部分 Arm Trusted Firmware 代码、dlmalloc 等第三方代码及随附的 Rust crate 保留各自许可。Asahi Linux 的 LLM 政策以其净室逆向工程规则为由，广泛禁止在实质性贡献中使用生成式 AI；AGENTS.md、CLAUDE.md 和 GEMINI.md 则称维护者出于法律原因禁止任何 AI 或 LLM 的使用。"
+    ]
+  },
+  "svd-loader-ghidra": {
+    "name": "SVD-Loader：Ghidra CMSIS-SVD 外设映射脚本",
+    "requirements": [
+      "仓库没有发布版本或标签。所审阅的 master 最新提交是 2024-02-01 的一次合并，扩充了安装说明；最近的代码改动于 2023-03-04 合并，为脚本加入了错误处理，并修复了内置解析器对外设 derivedFrom 的处理。README 未说明支持的 Ghidra 版本，2019 年的一次提交修复了与 Ghidra 9.1 的兼容性，仓库也没有测试。",
+      "脚本在 Ghidra 的 CodeBrowser 中运行：在脚本管理器中把克隆下来的仓库添加为脚本目录，再对当前打开的程序运行 SVD-Loader.py。脚本面向 Ghidra 的 Jython 环境编写，并从同一目录导入内置的 cmsis_svd 包（版本 0.4）。",
+      "需要提供目标芯片的 CMSIS-SVD 文件（README 建议从 cmsis-svd 合集或 Keil 软件包获取），并已把固件镜像导入 Ghidra。若 SVD 声明为大端 CPU，脚本会停止运行；若 CPU 不是 Cortex-M，脚本会提示警告但继续执行。与已有内存块冲突的外设地址范围会被报告并跳过。",
+      "脚本只应用外设和寄存器：生成的内存块为未初始化、易失、可读写，不会添加 SVD 中的寄存器位字段、枚举值和中断。结果取决于所提供的 SVD 文件；无法创建内存块或结构体时，脚本只打印失败信息并继续执行。",
+      "SVD-Loader.py 采用 GPL-3.0；分支而来的 cmsis_svd/ 代码沿用上游 cmsis-svd 的 Apache-2.0 许可。README 中提供使用说明的博客链接在审阅时返回 HTTP 404。本次未在 Ghidra 中运行该脚本。"
+    ]
+  },
+  "impacto-mages-engine-case": {
+    "name": "impacto：MAGES. 视觉小说引擎的重新实现",
+    "requirements": [
+      "审阅版本为 2026-10-17 的 master 提交，CI 已将其发布为预发布版 0.10.8.887；所有已发布版本都是自动生成的预发布版。README 称 impacto 仍在积极开发：至少在 Memories Off 6 T-Wave 中可以达成全部结局，但仍缺少部分功能和架构设计，还没有任何游戏完全实现。支持情况跟踪议题（#1，最后更新于 2026-02-20）列出了各作品的进度，从 Love Chu Chu 系列作品已能推进剧情和存档，到其他作品仅能显示图形和播放声音，并列出部分 2D 特效等缺失功能。",
+      "每款游戏都需要受支持版本的资源文件，主要是主机版本，例如 PS3 版 Memories Off 6 T-Wave、PS4 版 Chaos;Child Love Chu Chu 或日版 Switch 的 Robotics;Notes DaSH，并按该配置的 vfs.lua 所列放入 gamedata/<profile> 目录。仓库不含游戏资源文件；其 resources 目录包括用项目字体工具生成的字体图集、Noto CJK 字体，以及各游戏的应用图标和光标，其中图标使用了官方角色插画。所审的 Windows 预发布包含有可执行文件、库、配置、着色器和上述资源，但不含游戏数据。",
+      "README 以 64 位 Windows 10 和桌面 Linux 为目标平台，并在 macOS、Android、Switch（自制软件和 Linux）及 WebAssembly 上做过试验性运行；OpenGL 为主要渲染器，另有实验性的 Vulkan 和 DirectX 9 选项。构建使用 CMake 3.28+ 预设、C++20 和 vcpkg 清单，Windows 上使用 Visual Studio 2019 或更新版本，另有 Ubuntu 和 devkitPro Switch 构建文档。CI 生成 Windows、Linux、macOS（arm64 和 x64）、Android 和 Switch 软件包。",
+      "CI 运行 clang-format 代码检查并构建软件包；所审工作流没有自动化测试套件，也没有发布与原版引擎的对比。README 欢迎贡献者通过黑盒观察原版行为和白盒检查其内部实现来进行逆向工程，但没有说明具体方法或工具。本合集未构建或运行 impacto。",
+      "LICENSE 规定源码整体采用 ISC 许可；THIRDPARTY.md 列出了基于 vgmstream、Ryujinx、OpenImageIO、FFplay 等项目的代码以及外部库，并提醒二进制发行版可能适用更严格的条款。各游戏、其数据以及图标中使用的官方插画均归权利人所有。所审来源未确立 REA 或 AI 使用。"
+    ]
+  },
+  "caringcaribou": {
+    "name": "Caring Caribou 汽车 CAN 总线安全探索工具",
+    "requirements": [
+      "审阅时 GitHub 上的最新版本为 0.6，发布于 2024-03-28；所审阅的 master 分支提交领先 45 个提交，其打包元数据已标为 0.7。README 介绍从源码目录安装；审阅时 PyPI 上没有 caringcaribou 项目。",
+      "需要 python-can 支持的 CAN 接口，并在 python-can 的 .canrc 配置文件中设置。安装指南在 Linux 上使用 PEAK PCAN-USB 适配器和 SocketCAN（指南要求内核 3.4 或更高，README 则只说需要较新的内核），在 Windows 上建议使用 Linux 虚拟机。README 要求 Python 3.7+；DoIP 模块还需要 doipclient 和 udsoncan 软件包。",
+      "发现和服务扫描会在所连接的总线或网络上发送诊断请求。其他模块会发送、重放或模糊测试帧，并执行侵入性诊断操作；这些不在本条目范围内，本条目只涵盖流量捕获和诊断服务发现。",
+      "采用 GPL-3.0 许可。附带的单元测试在虚拟 CAN 总线上针对模拟 ECU 运行。本次未捕获或发送任何 CAN 流量。"
+    ]
+  },
+  "rms-runtime-mobile-security": {
+    "name": "Runtime Mobile Security（RMS）移动应用运行时分析界面",
+    "requirements": [
+      "审阅时的最新版本为 1.5.25，发布于 2026-07-01，与所审阅的 master 提交一致；可通过 npm 安装（包名 rms-runtime-mobile-security），package.json 依赖 Frida 17 的 Node 绑定。README 称它在 macOS 上配合 Android 模拟器、Amazon Fire Stick 4K、iPhone 7 和 Chrome 测试过，在 Windows 和 Linux 上可能需要少量调整。",
+      "需要 Node.js、Frida 命令行工具，并在唯一连接的测试设备上预先运行 frida-server；RMS 无法同时处理多台设备。它还会附加到一个默认系统进程，以列出预先加载的类。仅应在使用者有权分析的应用和设备上使用。",
+      "Web 界面默认使用 5491 端口；rms.js 调用 server.listen 时只传入端口，因此适用 Node 默认的全接口绑定，所审阅的代码也没有登录验证。README 提到复杂方法有时无法加载，且不支持 Safari。",
+      "采用 GPL-3.0 许可。随附的自定义 Frida 脚本未经审阅，本条目也不作介绍。本次未安装或运行该工具。"
+    ]
+  },
+  "pharos": {
+    "name": "Pharos 二进制静态分析框架",
+    "requirements": [
+      "项目没有打标签的发布版本；所审阅的 master 提交日期为 2026-08-03。README 称 Pharos 是仍在积极开发的研究项目，文档尚不完整，可移植性也未经主动测试；README 还说明 DumpMASM 已不再维护，建议改用 ROSE 自带的工具。",
+      "最简便的方式是使用预构建的 ghcr.io/cmu-sei/pharos Docker 镜像，GitHub 工作流会在每次推送时及每周为 amd64 和 arm64 构建该镜像。从源码构建负担较重：需要 C++14、CMake、Boost、yaml-cpp、SQLite、Z3、SWI-Prolog 和 ROSE，构建脚本固定使用 ROSE v2.6.0、Z3 4.8.7 和 SWI-Prolog 8.5.12。INSTALL.md 建议在 CPU 数量较少时每个构建 CPU 配约 4 GiB 内存，构建脚本仅支持最新版 Ubuntu，列出的手动测试配置则较旧，包括 RHEL 7、Ubuntu 19.04 和 openSUSE 15.1。",
+      "待分析的可执行文件需自行提供。OOAnalyzer 仅支持 32 位 MSVC 二进制，对 64 位可执行文件或其他编译器的测试很少；其 JSON 输出可供仓库中的 IDA 插件或独立的 Kaiju Ghidra 插件使用，分析非常大的可执行文件需要按 oorules 说明执行额外步骤。",
+      "Dockerfile 包含一个测试阶段，会针对由 tests/ 中源码编译的测试程序运行 ctest，但 GitHub 工作流只构建发布镜像。本次审阅未构建或运行任何内容。",
+      "LICENSE.md 是 SEI 的 BSD 风格许可（版权归卡内基梅隆大学所有，2021 年），并限制使用 CMU 和 SEI 名称，因此 GitHub 显示为 NOASSERTION。ROSE、SWI-Prolog、Z3、Boost、yaml-cpp 和 SQLite 各自适用其许可证。所审来源未确立与 REA 的关联。"
+    ]
+  },
+  "heimdall-rs": {
+    "name": "heimdall-rs EVM 字节码分析工具包",
+    "requirements": [
+      "审阅时的版本为 0.9.3，发布于 2026-04-30，提供 amd64 和 arm64 的 Linux 与 macOS 二进制，没有 Windows 版本；所审阅的 main 提交比它多 38 个提交，而该标签和 main 的工作区版本号仍为 0.9.2。可通过 bifrost 安装器安装：默认用 Cargo 从源码构建，加 -B 参数则下载预编译二进制；仓库固定使用 Rust 1.91.0。",
+      "分析合约地址或 ENS 名称、导出存储槽和检查交易时，需要以 URL 或 MESC 引用形式提供以太坊 JSON-RPC 端点；可选的 Etherscan API 密钥用于在反编译时取回已自毁合约的创建字节码。可选的 LLM 后处理会把反编译得到的 Solidity 代码发送到 OpenRouter（默认模型为 openai/gpt-4o-mini），需要 OpenRouter API 密钥。",
+      "反编译出的 Solidity 和 Yul 代码标为测试阶段，属于需要核对的启发式重建结果，并非原始源码。README 列出了 20 余篇引用 Heimdall 的论文和学位论文；这些只是引用，并不构成对该工具准确性的评估。",
+      "采用 MIT 许可。本次未安装，也未分析任何合约。"
+    ]
+  },
+  "uefi-firmware-parser": {
+    "name": "UEFI Firmware Parser 固件结构解析工具",
+    "requirements": [
+      "审阅时最新版本为 v1.16，于 2026-06-04 在 GitHub 和 PyPI 发布，提供适用于 Linux、Windows 和 macOS 的 abi3 wheel。所审阅的 master 提交日期为 2026-10-12，领先该版本三个提交：新增 AMI 胶囊支持和用于导出文件路径的安全路径工具，并移除了 future 依赖，这些改动尚未发布。",
+      "需要 Python 3.10+。从源码安装时会编译内置的 efi_compressor C 扩展，README 称这需要 Python 开发头文件和 gcc；该软件包未声明其他运行时依赖。CI 在 Ubuntu 上用 Python 3.12 运行单元测试。",
+      "输入为使用者自备的固件文件，例如厂商 BIOS/UEFI 更新包或闪存转储。README 提醒，并非每个厂商更新包都能解析，有些需要先从更新机制（通常是 PE 可执行文件）中解压或解包；--test 会报告识别出的类型，-b 在数据块中搜索固件卷头，--superbrute 则逐字节检查任何已知对象。README 列出 ASRock、Dell、Gigabyte、Intel、Lenovo、HP、MSI、VMware、Apple 和 Qualcomm 的更新包为已测试来源，但没有按版本给出结果。",
+      "fv_injector.py 的 GUID 注入只能替换已有的节或文件，不能增删；向固件文件注入时会交互式询问要替换哪个节。它负责解析容器结构并提取内容，分析提取出的模块仍需另用反汇编器或反编译器。CI 还会解析一个另行托管的样本仓库，本合集未审阅该仓库。",
+      "LICENSE 文件为 MIT 式授权文本，并提示贡献代码另附内联许可证；而 setup.py 和 PyPI 元数据声明的是 BSD-3-Clause。内置的 Intel Tiano 压缩源码采用 BSD-2-Clause-Patent，LZMA SDK 文件属于公有领域。本次未安装，也未解析任何固件。"
+    ]
+  },
+  "noop-whoop-ble-client-case": {
+    "name": "NOOP：基于蓝牙协议研究构建的离线 WHOOP 手环客户端",
+    "requirements": [
+      "README 称 NOOP 是独立的实验性互操作项目；所审 main 快照晚于 2026-10-04 发布的 v12.0.0。WHOOP 4.0 是经过测试的路径；在 WHOOP 5.0/MG 上，实时心率已确认可用，恢复度、负荷和睡眠所需的输入仍在解析中，README 还列出 SpO₂ 及多项夜间输入尚不可用或不完整。各项评分依据已发表的方法计算，属于近似值，并非复现 WHOOP 的模型；项目说明自己不是医疗设备。",
+      "实时使用需要使用者自己的 WHOOP 手环；5.0/MG 手环同一时间只与一台设备保持加密绑定，因此配对可能使其脱离官方应用。没有手环时，也可导入 WHOOP 的 CSV 导出或 Apple 健康的 export.xml。README 声明 NOOP 不含 WHOOP 的专有代码、固件、标志或素材；ATTRIBUTION.md 说明部分协议事实是从对厂商应用的反编译或静态分析中重新推导的，并作为未经验证的候选值提供，实现代码和字符串均未复制。",
+      "docs/BUILD.md 列出 macOS 参考应用所需的 macOS 13+、Xcode 26.x（Swift 6.3）和 XcodeGen 2.45+；各 Swift 包仅用 swift build 即可构建，BUILD.md 还说明了其中四个包在 CI 之外于 Linux 上运行测试的方法。Android 应用（Jetpack Compose，Android 8+）在 CI 中以 Gradle 和 JDK 17 构建；iOS 版可从源码构建，或以未签名 .ipa 侧载安装。更新检查默认开启，不发送健康数据；可选的 AI 教练和导出功能只有在使用者配置后才会发送数据。",
+      "CI 构建并测试每个 Swift 包，其中包括 WhoopProtocol 的帧格式和解码器测试，并构建 Android 调试版 APK、运行其单元测试。协议约定注明了观察所依据的固件版本（WHOOP 4 为 41.17.6.0，WHOOP 5/MG 以 50.42.1.0 为基准），PROTOCOL.md 说明其构造的解析示例并非设备测试。docs/VALIDATION_PROTOCOL.md 规定了声称评分改进时须遵守的规则；本合集未构建这些应用，也未连接手环运行。",
+      "LICENSE 对 NOOP 自身的代码和文档适用 PolyForm Noncommercial 1.0.0，GitHub 将其识别为 NOASSERTION；随附的 GRDB.swift 和 ZIPFoundation 采用 MIT。README 称 github.com/ryanbr/noop 是正式主页，但 GitHub 将其列为 muftiarfan/noop 的分叉。NOOP 声明与 WHOOP 或 Oura 无关联；AGENTS.md 面向人类与 AI 智能体贡献者，可选的教练功能使用使用者自备的模型，但所审来源未确立 REA 的使用。"
+    ]
+  },
+  "pe-bear": {
+    "name": "PE-bear PE 文件分析工具",
+    "requirements": [
+      "最新发行版为 v0.7.2（2026-06-05），提供 Windows 的 Qt6 与 Qt5 版本、面向 XP 等旧版 Windows 的 Qt4 x86 旧版构建、Linux 的 tar.xz 与 AppImage 版本以及 macOS 的 Qt6 应用；Chocolatey、Scoop 和 WinGet 也提供安装包。所审阅的 main 提交（2026-10-14）比它多 16 个提交，包括 Capstone 更新和尚未发布的更新检查功能；据其 README，该功能每天最多查询一次 GitHub 发行版 API，且只发送 PE-bear 的 User-Agent。",
+      "Linux 版本需要安装对应版本的 Qt；用 Visual Studio 2017 或更高版本构建的 Windows 版本需要 Visual C++ 2015–2022 运行库。源码构建需要 Git、CMake 3.12+、Qt6（或 Qt5/Qt4）以及 bearparser、Capstone 和 sig_finder 子模块，并提供 Linux 与 macOS 的构建脚本。AppVeyor 会为 main 分支的每个提交构建测试包，README 提醒这些构建可能不稳定。",
+      "输入为分析者选定的 PE 文件，也包括从进程中转储的映像，PE-bear 会提示将其还原为原始格式。Wiki 页面介绍了添加导入项、移除附加数据、填充内容以及搜索字符串或带掩码的字节签名。加壳识别使用 SIG.txt，它由第三方脚本从 PEiD 的 UserDB 转换而来，最后更新于 2022-10-17。",
+      "采用 GPL-2.0 许可；作者页面称 PE-bear 自 2022-09-18 起开源，此前其开发曾于 2014 年停止，后又重新启动。bearparser 和 sig_finder 子模块采用 BSD-2-Clause 许可，Capstone 保留其自身许可。"
+    ]
+  },
+  "protodump": {
+    "name": "protodump Protobuf 定义恢复工具",
+    "requirements": [
+      "审阅时没有任何带标签的发布版；README 使用 go install 安装最新模块版本，go.mod 声明 Go 1.26.8。所审阅的 2026-09-27 main 分支提交将输出写入限制在指定目录内，并拒绝覆盖已有文件。CI 在 Linux、macOS 和 Windows 上进行测试和构建。",
+      "输入为使用者提供的、嵌入了完整描述符的二进制或其他文件。扫描是字节搜索而非可执行格式解析，因此缺失或未以普通序列化记录形式存储的描述符无法找到；解析失败的记录除非使用 -v，否则会被静默跳过。",
+      "字段、消息、枚举、oneof、服务和方法的选项尚未输出（生成器中标为 TODO），扩展定义也不会写出，因此重新生成的文件可能与原文件不同，需要分析者复核。",
+      "所审阅的提交中没有许可证文件或许可声明，GitHub 也未检测到许可证，因此项目未声明任何再使用条款。本次未扫描任何二进制。"
+    ]
+  },
+  "pre-list": {
+    "name": "PRE-list 网络协议逆向工程论文清单",
+    "requirements": [
+      "所审阅的 README 最近一次更新于 2024-05-22，当时加入了 NetPlier 和 NEMETYL；其余改动集中在 2020 年 11 月至 2021 年 5 月。所收 71 篇论文发表于 2004–2021 年，此后的协议逆向工程研究未被收录。",
+      "概览表 71 行中有 40 行仍写着“Please review”，未描述所用方法；输入／输出表有若干行为空，“已测试协议”表中有 29 行未列出任何协议。这些表格汇总的是各论文自述的内容，并非对方法的基准测试或复现。",
+      "README 说明大多数论文未公开代码；其源码表列出八个项目，其中一个只能通过 Web Archive 存档的 Protocol Informatics 页面获取。其余条目只有论文，维护者找到 PDF 时附有链接。",
+      "README 中的表格由 CSVtoREADME.py 根据 tools.csv 生成；维护者请贡献者在 tools.ods 中补充论文，另有两份表格保存依据 Duchêne 等人和 Sija 等人综述所做的分类。",
+      "LICENSE 为 CC0-1.0，而 CSVtoREADME.py 文件头声明 GPL-3.0-or-later；所链接的论文仍遵循各出版方的条款。这是独立的阅读清单，所审来源未确立与 REA 的关联。"
+    ]
+  },
+  "restringer": {
+    "name": "REstringer JavaScript 反混淆工具",
+    "requirements": [
+      "所审阅的 HumanSecurity main 提交（2025-12-07）即 v2.1.0 加上一处 README 修改，删去了已停用的 REstringer.tech 网页工具。作者现在其个人分支 ctrl-escp/restringer 中继续开发，npm 包也已将该分支列为其仓库：npm 2.2.0（2026-05-09）和 2.3.0（2026-08-30）均出自该分支；在 2.3.0 时，其 README 要求 Node.js 22+，将 isolated-vm 改为可选，并新增 Node、Deno 和 Bun 子进程沙箱，因此通过 npm 安装的代码比所审阅的源码更新。",
+      "所审阅的源码需要 Node.js 20+（推荐 22+），可作为全局命令行工具或模块安装。依赖 flast、obfuscation-detector、commander 以及 isolated-vm 5.0.4；后者是原生模块，CI 借助 Python 和 g++ 构建。结果输出到标准输出或 <input>-deob.js；-m 限制迭代次数，-c 删除无用节点，README 将其标为不安全。",
+      "输入为经过混淆的 JavaScript 文件或字符串。安全模块只变换 AST、不求值代码；不安全模块则在 isolated-vm 沙箱中用 eval() 求值部分输入，以求解表达式和函数调用。",
+      "GitHub Actions 在 Node.js 20 和 22 上运行 npm test。除模块和处理器单元测试外，完整测试套件还会对 11 个随附的混淆样本（包括 obfuscator.io、JSFuck 和 Caesar Plus 脚本）进行反混淆，并与保存的预期输出逐一比对。",
+      "采用 MIT 许可，版权归 HUMAN Security（2025）；该分支另加了 Ben Baryo 的 2026 年版权行。仓库原为 PerimeterX/restringer，现已重定向到 HumanSecurity/restringer。"
+    ]
+  },
+  "emproof-firmware-re-workshop": {
+    "name": "Emproof 固件逆向工程研讨会",
+    "requirements": [
+      "所审阅的 main 提交日期为 2025-09-25，是自 2025-09-21 起共 14 个提交中的最后一个。仓库包含 slides.pdf 和 14 个练习，每个练习由附带分步问题的 task.md 和一个 samples 文件夹组成；未提供参考答案，两个嵌入式 Linux 练习链接了外部解题文章。",
+      "README 称大多数样本面向 ARMv7（Thumb/ARM32）或 AArch64，其中不少附有 C 源码。基于 Kali Linux 的 Docker 镜像固定为 linux/arm64，在 x86_64 主机上以模拟方式运行，内含 binutils、binwalk、John the Ripper 和 armhf 运行库；首次使用时，docker_run.sh 会通过特权容器在主机上安装 QEMU binfmt 处理程序。Ghidra 和 Binary Ninja Free 需安装在主机上；由于 Binary Ninja Free 不支持 AArch64，许多练习另附 .armv7 构建。",
+      "裸机练习要求分析者查阅微控制器的数据手册或参考手册；STM32F103 练习给出了重新分析前需定义的闪存、SRAM、外设和系统控制空间地址范围。另有若干练习是针对研讨会自带程序的 crackme 式许可证、注册机和反补丁练习；本条目只介绍固件与二进制分析练习。",
+      "研讨会材料采用 GPL-2.0，但 README 将三个样本文件夹排除在该许可之外，仅供分析和教学使用，不得再分发：其中两个嵌入式 Linux 镜像据练习说明来自 WORMCON CTF 2021，另一个是 Mirai 僵尸网络程序，其练习说明称其为活跃恶意软件、不得执行，并存放在带密码的压缩包中。",
+      "材料未提及 AI 或 REA 的使用。本合集阅读了 README、练习文件和容器配置，未打开幻灯片，未构建容器，也未处理任何样本。"
+    ]
+  },
+  "pyatv-apple-tv-airplay-protocols-case": {
+    "name": "pyatv：逆向工程实现的 Apple TV 与 AirPlay 协议客户端",
+    "requirements": [
+      "审阅时的版本为 0.18.0，于 2026-06-19 同时发布到 GitHub 和 PyPI，主要为兼容新版 tvOS；所审阅的 master 分支提交即发布提交，而 v0.18.0 标签指向另一个并行提交，两者仅在 CHANGES.md 和 pyatv/const.py 上有差异。协议文档只涵盖已逆向得出的内容：Companion Link 一节自称大多是推测和猜想，OPACK 的描述并不完整且未经验证，MRP 的实现一节仍标为待定。致谢页称 MRP 支持建立在 Jean Regisser 的 mediaremotetv-protocol 研究成果之上。",
+      "仓库未附带任何 Apple 软件、固件或密钥。pyatv 连接使用者自己在局域网中的 Apple TV、HomePod、AirPort Express 或其他 AirPlay 接收器；多数协议需要用设备上显示的 PIN 配对，凭据和设置保存在 pyatv 的存储中。tvOS 15 及更高版本因 MRP 已移入 AirPlay 2 数据流，必须先设置好 AirPlay；RAOP 仅支持旧式配对。",
+      "需要 Python 3.9+，可从 PyPI 或项目的容器镜像安装；安装指南列出在 Debian 类系统上构建依赖所需的 build-essential、libssl-dev、libffi-dev 和 Python 头文件，RAOP 音频推流依赖 miniaudio。CI 在 Ubuntu、macOS 和 Windows 上以 Python 3.9 至 3.14 运行。",
+      "测试以单元测试为主，另有针对 DMAP、MRP、Companion、RAOP、mDNS 和扫描的功能测试；据测试指南，这些测试连接的模拟设备只实现有限功能，且仅求与 pyatv 兼容。它们不能证明与 Apple 实现的一致性；atvproxy 也被描述为处于孵化阶段、依赖内部 API 的脚本。本次审阅未运行测试，也未连接设备。",
+      "采用 MIT 许可（LICENSE.md）。Apple 的协议、设备和软件保留其各自权利；pyatv 是独立实现，并非恢复出的 Apple 源码。所审阅的来源未表明使用了 REA 或 AI。"
+    ]
+  },
+  "lisa-lldb-mcp": {
+    "name": "lisa.py：LLDB 的 MCP 集成与调试辅助命令",
+    "requirements": [
+      "所审阅的是默认 dev 分支上 2025-03-29 的提交 9dd61e9，即当天为 2021 年重写版 lisa.py 加入 MCP 集成的三个提交中的最后一个。仓库没有发布版本或标签，master 分支仍是不含 MCP 支持的 2017 年版本，README 的待办事项还列出更新使用手册和补充测试用例。",
+      "需要 Python 3.10+ 和带 Python 绑定的 LLDB；LLDB 的 Python 环境还需能导入 capstone（requirements.txt 固定为 4.0.2），MCP 服务器则需要 fastmcp 和 httpx。README 与代码部分脱节：README 提到 server.py、lldb_plugin.py 和 lldb-mcp 克隆路径，而仓库实际提供的是 lisa.py 和 lldb_mcp.py；pyproject 中 lldb-mcp 入口指向的模块并不存在。",
+      "用 command script import 把 lisa.py 载入 LLDB，执行 mcp start，再让 MCP 客户端运行 lldb_mcp.py；README 给出了通过 uv 启动它的 Claude Desktop 配置。插件在 localhost 的 13338 端口监听且没有认证，即使 mcp start 指定了其他端口，MCP 服务器也总是连接 13338。run_lldb_command 会原样执行任意 LLDB 命令，因此已连接的客户端可完全控制调试器及被调试进程。",
+      "辅助命令可解析 Mach-O 文件头和加载命令，并支持 x86_64 与 arm64/arm64e 寄存器；README 未说明支持的操作系统或 LLDB 版本。tests 目录收录了若干小型崩溃程序（包括 Objective-C 和 libdispatch 用例），可通过 make rtests 在 LLDB 中运行；仓库未配置 CI。",
+      "LICENSE 为 Apache-2.0，但 pyproject.toml 声明 MIT，lldb_mcp.py 也保留了 ida-pro-mcp 的 MIT 声明。所审来源未确立与 REA 的关联。本次未安装或运行。"
+    ]
+  },
+  "wiremcp": {
+    "name": "WireMCP 基于 tshark 的流量分析 MCP 服务器",
+    "requirements": [
+      "审阅对象为 main 分支 2025-07-09 的提交 7f45f8b，是自 2025-03-28 以来九个提交中的最后一个；仓库没有发布版本或标签，package.json 标注为 1.0.0，其测试脚本只是占位。执行 npm install 后用 Node.js 运行（README 建议 v16+），程序会在 PATH 或常见安装位置查找 tshark，并由 MCP 客户端通过 stdio 以 node index.js 启动；README 列出 macOS、Windows 和 Linux。每个工具另有对应的提示词模板。",
+      "实时抓包工具默认在 en0 接口上抓取 5 秒，需要主机上的抓包权限；它们会在工作目录写入 temp_capture.pcap，用后删除，数据包 JSON 会被截断到约 720,000 个字符。服务器在构造 tshark shell 命令时直接插入接口名和文件路径参数而不做转义，因此只应向可信客户端开放。",
+      "字段集合在代码中固定：不支持任意字段提取、显示过滤器、decode-as 或协议首选项设置，服务器也不会推断未知报文格式。另行收录的 Wireshark MCP 提供了这些解析器控制功能。",
+      "check_threats 和 check_ip_threats 会从 abuse.ch 下载 URLhaus 文本黑名单，并在本地比对 IP；尽管 README 提到多个威胁情报源，所审阅的代码只查询 URLhaus。凭据扫描和威胁检查属于安全启发式检测，而非协议逆向，其结果需要分析者复核。",
+      "采用 MIT 许可；Wireshark 与 tshark 保留各自的 GPL 条款。所审来源未确立与 REA 的关联。本次未运行服务器，也未进行抓包或分析。"
+    ]
+  },
+  "wind-waker-hd-decomp-case": {
+    "name": "《风之杖 HD》反编译：与重编译的 Wii U 版逐函数比对验证",
+    "requirements": [
+      "README 称这是针对 cking.rpx（美版，版本 0）的混合式反编译：已反编译的函数通过原始地址调用其他函数，因此该源码树本身构建不出游戏，只能与移植项目的重编译代码一起运行。据其报告，HD 界面已完成反编译，而约 11,400 个通用库函数（sead、agl、NW4F、JSystem 的大部分、Cafe SDK 及 C 运行时）暂不计划处理。名称与结构以 zeldaret/tww 为参照，文档还记录了与 GameCube 版比较的 838 个单元中 HD 版的差异。",
+      "构建或验证都需要使用者自己合法取得的游戏，用移植项目的工具从附有光盘密钥和 Wii U 通用密钥的光盘镜像中提取。README 声明仓库不含机器码、重编译代码、游戏素材或密钥；代码本身使用的小型数据表包含在内，而模型数据、RPX 镜像、重编译输出、源自游戏的函数名和录制输入均在本地生成，并被 git 忽略。推荐启用的 GameCube 签名检查还需使用以使用者自己的 GameCube 光盘构建的 zeldaret/tww。",
+      "验证工具须在 ZeldaWWHDRecomp 的指定测试提交 df2cf51b（v0.2.3）的检出中运行，并替换该移植中较旧的 tools/verify。需要 Python 3、支持 C++20 的 clang/clang++，以及移植项目提取游戏所需的条件；只有录制输入时才需要构建移植本身。完整运行 verify_all.py 耗时很长，部分单元需要数十 GB 内存。",
+      "每个函数在两个随机种子上各运行 10,000 组生成输入，须覆盖原函数几乎所有基本块，并经过变异测试；README 报告 2026 年 10 月可读性重写后已对整个源码树重新验证。tools/verify/README.md 说明，等价性是相对于重编译代码对 Espresso CPU 的模拟，而非主机本身，且不检查时序、线程和精确的栈帧布局。游戏内替换测试所用的构建不在发布内容中，仓库没有 CI 工作流，本合集也未运行任何内容。",
+      "CC0 1.0 适用于反编译源码、工具和文档；游戏本身、任天堂的数据及移植运行时保留各自条款。README 称其为非官方、非商业的粉丝项目，不接受捐助，也没有付费构建。tools/verify/README.md 报告了一个智能体使用这些工具时的试点耗时，以及由并行智能体编写的两个函数；所审来源未确立 REA 的使用。"
+    ]
   }
 }

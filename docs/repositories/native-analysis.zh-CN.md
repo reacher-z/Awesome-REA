@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**850 个仓库** · 2026-10-20 UTC
+**849 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -51,11 +51,11 @@
 - [keystone-engine/keypatch](https://github.com/keystone-engine/keypatch) — 面向 IDA Pro 的多架构汇编器，由 Keystone Engine 驱动。 **[1,882 星标]**
 - [airbus-seclab/bincat](https://github.com/airbus-seclab/bincat) — 集成 IDA 的二进制代码静态分析器，可执行值分析、污点分析、类型重建、释放后使用及重复释放检测。 **[1,880 星标]** · 精选：[BinCAT 二进制静态分析工具包](https://awesomerea.org/zh/resources/bincat/)
 - [redasm-dev/redasm](https://github.com/redasm-dev/redasm) — 开源反汇编器。 **[1,822 星标]** · 精选：[REDasm 反汇编器](https://awesomerea.org/zh/resources/redasm/)
-- [cmu-sei/pharos](https://github.com/cmu-sei/pharos) — 面向二进制程序的自动化静态分析工具。 **[1,739 星标]**
+- [cmu-sei/pharos](https://github.com/cmu-sei/pharos) — 面向二进制程序的自动化静态分析工具。 **[1,739 星标]** · 精选：[Pharos 二进制静态分析框架](https://awesomerea.org/zh/resources/pharos/)
 - [KeenSecurityLab/BinAbsInspector](https://github.com/KeenSecurityLab/BinAbsInspector) — BinAbsInspector：二进制文件漏洞扫描器。 **[1,681 星标]** · 精选：[BinAbsInspector 二进制漏洞静态扫描工具](https://awesomerea.org/zh/resources/binabsinspector/)
 - [mytechnotalent/Hacking-Windows](https://github.com/mytechnotalent/Hacking-Windows) — 免费的 Windows C 开发课程，在 x86 和 x64 环境中学习 Win32API，并使用 IDA Free 对每一步进行逆向分析。 **[1,637 星标]**
 - [illera88/Ponce](https://github.com/illera88/Ponce) — IDA 2016 插件竞赛获奖作品！一键即可使用符号执行！ **[1,635 星标]**
-- [Jon-Becker/heimdall-rs](https://github.com/Jon-Becker/heimdall-rs) — Heimdall 是高级 EVM 智能合约工具包，专注于字节码分析与从未经验证的合约中提取信息。 **[1,626 星标]**
+- [Jon-Becker/heimdall-rs](https://github.com/Jon-Becker/heimdall-rs) — Heimdall 是高级 EVM 智能合约工具包，专注于字节码分析与从未经验证的合约中提取信息。 **[1,626 星标]** · 精选：[heimdall-rs EVM 字节码分析工具包](https://awesomerea.org/zh/resources/heimdall-rs/)
 - [attify/firmware-analysis-toolkit](https://github.com/attify/firmware-analysis-toolkit) — 结合二进制分析、污点追踪和模拟执行的固件安全研究平台，覆盖物联网、边缘 AI、移动设备和机器人。 **[1,615 星标]**
 - [vtil-project/VTIL-Core](https://github.com/vtil-project/VTIL-Core) — 虚拟机翻译中间语言。 **[1,607 星标]** · 精选：[VTIL-Core 虚拟机翻译中间语言核心库](https://awesomerea.org/zh/resources/vtil-core/)
 - [m4b/goblin](https://github.com/m4b/goblin) — 使用 Rust 编写的轻巧跨平台二进制解析 crate。 **[1,555 星标]** · 精选：[goblin 二进制格式解析库](https://awesomerea.org/zh/resources/goblin/)
@@ -118,7 +118,7 @@
 - [maddiestone/IDAPythonEmbeddedToolkit](https://github.com/maddiestone/IDAPythonEmbeddedToolkit) — IDA Python Embedded Toolkit：用于自动分析嵌入式设备固件的 IDAPython 脚本 **[690 星标]**
 - [Soulghost/iblessing](https://github.com/Soulghost/iblessing) — iblessing 是一个 iOS 安全利用工具集，主要包括应用信息收集、静态分析和动态分析，可用于逆向工程、二进制分析和漏洞挖掘。 **[687 星标]**
 - [aozhimin/iOS-Debug-Hacks](https://github.com/aozhimin/iOS-Debug-Hacks) — <span>:</span>dart: iOS 项目开发过程中用到的高级调试技巧，涉及第三方库的动态调试、静态分析和反编译等领域。 **[682 星标]**
-- [gaasedelen/lucid](https://github.com/gaasedelen/lucid) — 交互式 Hex-Rays 微代码浏览器。 **[679 星标]**
+- [gaasedelen/lucid](https://github.com/gaasedelen/lucid) — 交互式 Hex-Rays 微代码浏览器。 **[679 星标]** · 精选：[Lucid Hex-Rays 微码浏览器](https://awesomerea.org/zh/resources/lucid-microcode-explorer/)
 - [chainguard-dev/malcontent](https://github.com/chainguard-dev/malcontent) — #供应链 #攻击 #检测 **[678 星标]**
 - [lkimuk/ReArk](https://github.com/lkimuk/ReArk) — 面向 HarmonyOS NEXT（HAP/APP/ABC）、Android（APK/AAB）、iOS（IPA）以及原生 PE/ELF/Mach-O 二进制文件的智能逆向工程与 AI 辅助分析工具。 **[675 星标]**
 - [SentineLabs/AlphaGolang](https://github.com/SentineLabs/AlphaGolang) — 用于分析 Go 二进制文件的 IDAPython 脚本。 **[675 星标]**
@@ -130,13 +130,12 @@
 - [Nalen98/AngryGhidra](https://github.com/Nalen98/AngryGhidra) — 在 Ghidra 中使用 angr。 **[623 星标]**
 - [lifting-bits/rellic](https://github.com/lifting-bits/rellic) — Rellic 可从 LLVM bitcode 生成不含 goto 的 C 代码。 **[621 星标]** · 精选：[Rellic LLVM bitcode 转 C 反编译器](https://awesomerea.org/zh/resources/rellic/)
 - [Noelo-Lab/kuna](https://github.com/Noelo-Lab/kuna) — 以智能体为核心、可由其他智能体持续改进的反编译器。Kuna 使用 Rust 编写，最初从 Ghidra 移植而来。 **[614 星标]** · 精选：[Kuna 智能体优先反编译器](https://awesomerea.org/zh/resources/kuna/)
-- [wargio/r2dec-js](https://github.com/wargio/r2dec-js) — r2dec-js 是基于 JavaScript 的反编译器，可将汇编代码转换为伪 C 代码。它通过可读的高层解释帮助用户理解汇编，降低底层编程门槛，并辅助在不同硬件平台上调试。 **[611 星标]**
+- [wargio/r2dec-js](https://github.com/wargio/r2dec-js) — r2dec-js 是基于 JavaScript 的反编译器，可将汇编代码转换为伪 C 代码。它通过可读的高层解释帮助用户理解汇编，降低底层编程门槛，并辅助在不同硬件平台上调试。 **[611 星标]** · 精选：[r2dec radare2 反编译插件](https://awesomerea.org/zh/resources/r2dec/)
 - [boricj/ghidra-delinker-extension](https://github.com/boricj/ghidra-delinker-extension) — 用于导出可重定位目标文件的 Ghidra 扩展。 **[608 星标]** · 精选：[ghidra-delinker-extension Ghidra 目标文件反链接扩展](https://awesomerea.org/zh/resources/ghidra-delinker-extension/)
 - [c3rb3ru5d3d53c/binlex](https://github.com/c3rb3ru5d3d53c/binlex) — 二进制遗传特征词法分析框架。 **[604 星标]**
 - [falconre/falcon](https://github.com/falconre/falcon) — 使用 Rust 编写的二进制分析框架。 **[593 星标]**
 - [JonathanSalwan/PinTools](https://github.com/JonathanSalwan/PinTools) — 用于动态二进制分析的 Pintool 示例与概念验证。 **[593 星标]**
 - [nikolaydubina/go-binsize-treemap](https://github.com/nikolaydubina/go-binsize-treemap) — 🔍 展示 Go 二进制文件大小的 SVG 矩形树图。 **[587 星标]**
-- [quarkslab/binbloom](https://github.com/quarkslab/binbloom) — 原始二进制固件分析软件。 **[586 星标]**
 - [B2R2-org/B2R2](https://github.com/B2R2-org/B2R2) — B2R2 是使用 F# 编写的完全托管二进制分析框架，提供丰富的算法、函数和工具，用于逆向工程、程序分析和二进制级检查。 **[552 星标]** · 精选：[B2R2 二进制分析框架](https://awesomerea.org/zh/resources/b2r2/)
 - [d3v1l401/FindCrypt-Ghidra](https://github.com/d3v1l401/FindCrypt-Ghidra) — 将 IDA Pro 的 FindCrypt 移植到 Ghidra，附带更新且可自定义的特征库。 **[550 星标]**
 - [BeaEngine/beaengine](https://github.com/BeaEngine/beaengine) — BeaEngine 反汇编项目。 **[549 星标]**

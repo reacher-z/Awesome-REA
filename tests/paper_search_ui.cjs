@@ -5,14 +5,14 @@ const path = require("node:path");
 const search = require("../site/paper-search.js");
 
 const papers = [
-  {id: "paper-game", title: "Game State Reconstruction", title_zh: "游戏状态重建", description_en: "Models observed transitions.", description_zh: "对已观察状态转移建模。", authors: ["Ada Example"], doi: "10.1234/game", arxiv_id: "2601.01234", year: 2026, publication_status: "preprint", targets: ["game", "website"]},
+  {id: "paper-game", title: "Game State Reconstruction", title_zh: "游戏状态重建", description_en: "Models observed transitions and Istanbul workflows.", description_zh: "对已观察状态转移建模，包括剪映／CapCut 工作流。", authors: ["Ada Example"], doi: "10.1234/game", arxiv_id: "2601.01234", year: 2026, publication_status: "preprint", targets: ["game", "website"]},
   {id: "paper-ui2code", title: "All Android Interfaces", title_zh: "全部安卓界面", description_en: "UI2code generates layout skeletons.", description_zh: "UI2code 根据截图生成布局骨架。", authors: ["Bo Researcher"], doi: "10.2345/app", arxiv_id: null, year: 2025, publication_status: "conference-accepted", targets: ["app"]},
   {id: "paper-published", title: "Protocol Formats", title_zh: "协议格式", description_en: "Infers communication fields.", description_zh: "推断通信报文字段。", authors: ["Chen Reviewer"], doi: null, arxiv_id: null, year: 2025, publication_status: "conference-paper", targets: ["protocol"]}
 ];
 const records = search.readRecords({schema_version: 1, papers});
 const allowed = search.allowedValues(records);
 const state = query => search.readState(new URLSearchParams(query), allowed);
-for (const query of ["reconstruction", "游戏状态", "Ada", "10.1234/game", "2601.01234"]) {
+for (const query of ["reconstruction", "游戏状态", "Ada", "10.1234/game", "2601.01234", "剪映/CapCut", "istanbul"]) {
   assert.deepEqual(records.filter(paper => search.matches(paper, state("q=" + encodeURIComponent(query)))).map(paper => paper.id), ["paper-game"]);
 }
 for (const query of ["UI2code", "布局骨架"]) {

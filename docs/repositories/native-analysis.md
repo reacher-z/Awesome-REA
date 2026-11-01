@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**850 repositories** · 2026-10-20 UTC
+**849 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -51,11 +51,11 @@ These are automatically discovered projects, not individually curated or tested 
 - [keystone-engine/keypatch](https://github.com/keystone-engine/keypatch) — Multi-architecture assembler for IDA Pro. Powered by Keystone Engine. **[1,882 stars]**
 - [airbus-seclab/bincat](https://github.com/airbus-seclab/bincat) — Binary code static analyser, with IDA integration. Performs value and taint analysis, type reconstruction, use-after-free and double-free detection **[1,880 stars]** · Curated: [BinCAT](https://awesomerea.org/resources/bincat/)
 - [redasm-dev/redasm](https://github.com/redasm-dev/redasm) — The Open Source Disassembler **[1,822 stars]** · Curated: [REDasm](https://awesomerea.org/resources/redasm/)
-- [cmu-sei/pharos](https://github.com/cmu-sei/pharos) — Automated static analysis tools for binary programs **[1,739 stars]**
+- [cmu-sei/pharos](https://github.com/cmu-sei/pharos) — Automated static analysis tools for binary programs **[1,739 stars]** · Curated: [Pharos](https://awesomerea.org/resources/pharos/)
 - [KeenSecurityLab/BinAbsInspector](https://github.com/KeenSecurityLab/BinAbsInspector) — BinAbsInspector: Vulnerability Scanner for Binaries **[1,681 stars]** · Curated: [BinAbsInspector](https://awesomerea.org/resources/binabsinspector/)
 - [mytechnotalent/Hacking-Windows](https://github.com/mytechnotalent/Hacking-Windows) — A FREE Windows C development course where we will learn the Win32API and reverse engineer each step utilizing IDA Free in both an x86 and x64 environment. **[1,637 stars]**
 - [illera88/Ponce](https://github.com/illera88/Ponce) — IDA 2016 plugin contest winner! Symbolic Execution just one-click away! **[1,635 stars]**
-- [Jon-Becker/heimdall-rs](https://github.com/Jon-Becker/heimdall-rs) — Heimdall is an advanced EVM smart contract toolkit specializing in bytecode analysis and extracting information from unverified contracts. **[1,626 stars]**
+- [Jon-Becker/heimdall-rs](https://github.com/Jon-Becker/heimdall-rs) — Heimdall is an advanced EVM smart contract toolkit specializing in bytecode analysis and extracting information from unverified contracts. **[1,626 stars]** · Curated: [heimdall-rs](https://awesomerea.org/resources/heimdall-rs/)
 - [attify/firmware-analysis-toolkit](https://github.com/attify/firmware-analysis-toolkit) — Firmware security research platform combining binary analysis, taint tracing, and emulation across IoT, edge AI, mobile devices, and robotics. **[1,615 stars]**
 - [vtil-project/VTIL-Core](https://github.com/vtil-project/VTIL-Core) — Virtual-machine Translation Intermediate Language **[1,607 stars]** · Curated: [VTIL-Core](https://awesomerea.org/resources/vtil-core/)
 - [m4b/goblin](https://github.com/m4b/goblin) — An impish, cross-platform binary parsing crate, written in Rust **[1,555 stars]** · Curated: [goblin](https://awesomerea.org/resources/goblin/)
@@ -118,7 +118,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [maddiestone/IDAPythonEmbeddedToolkit](https://github.com/maddiestone/IDAPythonEmbeddedToolkit) — IDA Python Embedded Toolkit -- IDAPython scripts for automating analysis of firmware of embedded devices **[690 stars]**
 - [Soulghost/iblessing](https://github.com/Soulghost/iblessing) — iblessing is an iOS security exploiting toolkit, it mainly includes application information gathering, static analysis and dynamic analysis. It can be used for reverse engineering, binary analysis and vulnerability mining. **[687 stars]**
 - [aozhimin/iOS-Debug-Hacks](https://github.com/aozhimin/iOS-Debug-Hacks) — <span>:</span>dart: Advanced debugging skills used in iOS project development, including dynamic debugging, static analysis, and decompilation of third-party libraries. **[682 stars]**
-- [gaasedelen/lucid](https://github.com/gaasedelen/lucid) — An Interactive Hex-Rays Microcode Explorer **[679 stars]**
+- [gaasedelen/lucid](https://github.com/gaasedelen/lucid) — An Interactive Hex-Rays Microcode Explorer **[679 stars]** · Curated: [Lucid](https://awesomerea.org/resources/lucid-microcode-explorer/)
 - [chainguard-dev/malcontent](https://github.com/chainguard-dev/malcontent) — #supply #chain #attack #detection **[678 stars]**
 - [lkimuk/ReArk](https://github.com/lkimuk/ReArk) — An intelligent reverse engineering and AI-assisted analysis tool for HarmonyOS NEXT (HAP/APP/ABC), Android (APK/AAB), iOS (IPA), and native PE/ELF/Mach-O binaries. **[675 stars]**
 - [SentineLabs/AlphaGolang](https://github.com/SentineLabs/AlphaGolang) — IDApython Scripts for Analyzing Golang Binaries **[675 stars]**
@@ -130,13 +130,12 @@ These are automatically discovered projects, not individually curated or tested 
 - [Nalen98/AngryGhidra](https://github.com/Nalen98/AngryGhidra) — Use angr in Ghidra **[623 stars]**
 - [lifting-bits/rellic](https://github.com/lifting-bits/rellic) — Rellic produces goto-free C output from LLVM bitcode **[621 stars]** · Curated: [Rellic](https://awesomerea.org/resources/rellic/)
 - [Noelo-Lab/kuna](https://github.com/Noelo-Lab/kuna) — An agent-first decompiler designed to be refined by other agents. Kuna is written in Rust and was originally ported from Ghidra. **[614 stars]** · Curated: [Kuna](https://awesomerea.org/resources/kuna/)
-- [wargio/r2dec-js](https://github.com/wargio/r2dec-js) — r2dec-js is a JavaScript-based decompiler that converts assembly code into pseudo-C. It aids users in understanding assembly by providing readable high-level explanations, making low-level programming more accessible and facilitating debugging across diverse hardware platforms. **[611 stars]**
+- [wargio/r2dec-js](https://github.com/wargio/r2dec-js) — r2dec-js is a JavaScript-based decompiler that converts assembly code into pseudo-C. It aids users in understanding assembly by providing readable high-level explanations, making low-level programming more accessible and facilitating debugging across diverse hardware platforms. **[611 stars]** · Curated: [r2dec](https://awesomerea.org/resources/r2dec/)
 - [boricj/ghidra-delinker-extension](https://github.com/boricj/ghidra-delinker-extension) — Ghidra extension for exporting relocatable object files **[608 stars]** · Curated: [ghidra-delinker-extension](https://awesomerea.org/resources/ghidra-delinker-extension/)
 - [c3rb3ru5d3d53c/binlex](https://github.com/c3rb3ru5d3d53c/binlex) — A Binary Genetic Traits Lexer Framework **[604 stars]**
 - [falconre/falcon](https://github.com/falconre/falcon) — Binary Analysis Framework in Rust **[593 stars]**
 - [JonathanSalwan/PinTools](https://github.com/JonathanSalwan/PinTools) — Pintool example and PoC for dynamic binary analysis **[593 stars]**
 - [nikolaydubina/go-binsize-treemap](https://github.com/nikolaydubina/go-binsize-treemap) — 🔍 Go binary size SVG treemap **[587 stars]**
-- [quarkslab/binbloom](https://github.com/quarkslab/binbloom) — Raw binary firmware analysis software **[586 stars]**
 - [B2R2-org/B2R2](https://github.com/B2R2-org/B2R2) — B2R2 is a fully managed binary analysis framework written in F#. It provides a rich set of algorithms, functions, and tools for reverse engineering, program analysis, and binary-level inspection. **[552 stars]** · Curated: [B2R2](https://awesomerea.org/resources/b2r2/)
 - [d3v1l401/FindCrypt-Ghidra](https://github.com/d3v1l401/FindCrypt-Ghidra) — IDA Pro's FindCrypt ported to Ghidra, with an updated and customizable signature database **[550 stars]**
 - [BeaEngine/beaengine](https://github.com/BeaEngine/beaengine) — BeaEngine disasm project **[549 stars]**

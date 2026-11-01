@@ -42,7 +42,7 @@ const byClass = (node, name) => descendants(node).filter(child => hasClass(child
 
 /* Each element with an id or data attribute in the homepage markup (plus optional extra markup) becomes a stub
    node, so querySelectorAll returns what the real page provides instead of an empty list. */
-function setup(query = '', {catalog, browser, extraMarkup = ''} = {}) {
+function setup(query = '', {catalog, browser, extraMarkup = '', turkishLocale = false} = {}) {
   const document = {baseURI: 'https://awesomerea.org/', documentElement: {dataset: {}}, title: '', listeners: {}};
   const make = tag => new Element(document, tag);
   document.activeElement = make('body'); document.activeElement.tagName = 'BODY';
@@ -83,6 +83,8 @@ function setup(query = '', {catalog, browser, extraMarkup = ''} = {}) {
       return body === undefined ? {ok: false, status: 503} : {ok: true, json: async () => structuredClone(body)};
     }};
   vm.createContext(context);
+  // Make locale-dependent lowercasing observably Turkish without depending on the host's installed locales.
+  if (turkishLocale) vm.runInContext('String.prototype.toLocaleLowerCase = function () { return String(this).replace(/\u0130/g, "i").replace(/I/g, "\u0131").toLowerCase(); };', context);
   vm.runInContext(script.replace('applyLanguage(); load();', '') + '\nglobalThis.audit = {state,sourceState,load,loadSources,filtered,sourceFiltered,applyLanguage,setIndexMode,sourceBrowserPayload,sourceRelatedEntries};', context);
   const element = id => document.querySelector('#' + id);
   return {api: context.audit, document, location, responses, element, marked};
@@ -119,6 +121,26 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
   // The integrity guard rejects every malformed payload, and loadSources then shows the error state.
   const valid = browserOf([repository('valid/one'), repository('valid/two')], 1);
   const curated = catalogOf([curatedRecord(1)]);
+  {
+    const compatibilityCatalog = catalogOf([
+      curatedRecord(1, {description_zh: '剪映／CapCut'}),
+      curatedRecord(2, {name: 'Istanbul analyzer'}),
+    ]);
+    const compatibilityRepositories = browserOf([
+      repository('video/editor', {description_zh: '剪映／CapCut'}),
+      repository('example/Istanbul'),
+    ]);
+    const query = '剪映/CapCut';
+    const app = await loaded('?q=' + encodeURIComponent(query) + '&sourceq=' + encodeURIComponent(query),
+      {catalog: compatibilityCatalog, browser: compatibilityRepositories, turkishLocale: true});
+    assert.deepEqual(Array.from(app.api.filtered(), record => record.id), ['curated-1']);
+    assert.deepEqual(names(app.api.sourceFiltered()), ['video/editor']);
+    assert.equal(urlParam(app, 'q'), query, 'matching normalization must not rewrite homepage URL state');
+    assert.equal(urlParam(app, 'sourceq'), query, 'matching normalization must not rewrite repository URL state');
+    app.api.state.q = 'istanbul'; app.api.sourceState.q = 'istanbul';
+    assert.deepEqual(Array.from(app.api.filtered(), record => record.id), ['curated-2']);
+    assert.deepEqual(names(app.api.sourceFiltered()), ['example/Istanbul']);
+  }
   // The compact repository introduction does not wait for a network response, and follows the real view.
   for (const query of ['?view=source-index', '?view=repositories']) {
     const app = setup(query, {catalog: curated, browser: valid});
@@ -499,7 +521,8 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.equal(app.api.state.group, 'all');
     assert.deepEqual(app.marked.filter(node => 'count' in node.dataset).map(node => node.textContent), [3, 1]);
     const localized = app.marked.filter(node => node.dataset.localePath === 'about' || node.dataset.localeFragment === 'game').map(node => node.href);
-    assert.deepEqual(localized, ['/zh/about/', '/zh/resources/#game']);
+    // The directory's About link, a subject link and the collection note under the curated filters.
+    assert.deepEqual(localized, ['/zh/about/', '/zh/resources/#game', '/zh/about/']);
     assert(app.marked.filter(node => 'i18nPlaceholder' in node.dataset).every(node => node.placeholder && node.placeholder !== node.dataset.i18nPlaceholder));
     assert(app.marked.filter(node => 'i18nAria' in node.dataset).every(node => /[一-鿿]/.test(node.attrs['aria-label'])));
     const group = app.marked.find(node => node.dataset.group === 'rea');

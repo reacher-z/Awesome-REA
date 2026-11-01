@@ -12,13 +12,13 @@ Publication date: **2026-10-20 UTC**.
 | --- | ---: | ---: |
 | [Websites](web-analysis.md) | 215 | 26 |
 | [Games](game-analysis.md) | 485 | 63 |
-| [Apps · Android](android.md) | 479 | 32 |
+| [Apps · Android](android.md) | 478 | 33 |
 | [Apps · Managed code](managed-code.md) | 135 | 5 |
-| [Native binaries](native-analysis.md) | 850 | 81 |
-| [Runtime and debugging](dynamic-analysis.md) | 145 | 18 |
-| [Firmware](firmware.md) | 221 | 18 |
+| [Native binaries](native-analysis.md) | 849 | 85 |
+| [Runtime and debugging](dynamic-analysis.md) | 146 | 19 |
+| [Firmware](firmware.md) | 222 | 19 |
 | [Protocols](protocol-analysis.md) | 110 | 8 |
-| [General tools and collections](reverse-engineering.md) | 669 | 63 |
+| [General tools and collections](reverse-engineering.md) | 669 | 65 |
 
 [Scan methodology](../source-scan.md) · [Scope exclusions](../../data/source-scope.json)
 
