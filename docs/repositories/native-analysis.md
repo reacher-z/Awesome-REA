@@ -144,7 +144,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [ITAYC0HEN/A-journey-into-Radare2](https://github.com/ITAYC0HEN/A-journey-into-Radare2) — A series of tutorials about radare2 framework from https<span>:</span>//www<span>.</span>megabeets.net **[528 stars]**
 - [TouchFriend/BiliBiliMApp](https://github.com/TouchFriend/BiliBiliMApp) — An ad-free BiliBili client implemented through iOS reverse engineering. Thanks for using it; stars are welcome. **[518 stars]**
 - [0sec-labs/0](https://github.com/0sec-labs/0) — The multiplayer AI offensive security OS - open, self-improving, extensible. Find, verify, and fix vulnerabilities. **[513 stars]**
-- [airbus-cert/Yagi](https://github.com/airbus-cert/Yagi) — Yet Another Ghidra Integration for IDA **[511 stars]**
+- [airbus-cert/Yagi](https://github.com/airbus-cert/Yagi) — Yet Another Ghidra Integration for IDA **[511 stars]** · Curated: [Yagi](https://awesomerea.org/resources/yagi-ghidra-decompiler-for-ida/)
 - [gfx-rs/rspirv](https://github.com/gfx-rs/rspirv) — Rust implementation of SPIR-V module processing functionalities **[504 stars]**
 - [hasherezade/ida\_ifl](https://github.com/hasherezade/ida_ifl) — IFL - Interactive Functions List (plugin for IDA Pro) **[502 stars]**
 - [grayhatacademy/ghidra\_scripts](https://github.com/grayhatacademy/ghidra_scripts) — Port of devttyS0's IDA plugins to the Ghidra plugin framework, new plugins as well. **[498 stars]**
