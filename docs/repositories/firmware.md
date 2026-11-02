@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/firmware/) · [简体中文](firmware.zh-CN.md)
 
-**223 repositories** · 2026-10-20 UTC
+**224 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -30,6 +30,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [scriptingxss/owasp-fstm](https://github.com/scriptingxss/owasp-fstm) — The Firmware Security Testing Methodology (FSTM) is composed of nine stages tailored to enable security researchers, software developers, consultants, and Information Security professionals with conducting firmware security assessments. **[502 stars]**
 - [ChrisTheCoolHut/Firmware\_Slap](https://github.com/ChrisTheCoolHut/Firmware_Slap) — Discovering vulnerabilities in firmware through concolic analysis and function clustering. **[476 stars]**
 - [nmatt0/moria](https://github.com/nmatt0/moria) — IoT firmware identification and extraction **[418 stars]**
+- [DSecurity/efiSeek](https://github.com/DSecurity/efiSeek) — Ghidra analyzer for UEFI firmware. **[408 stars]** · Curated: [efiSeek](https://awesomerea.org/resources/efiseek/)
 - [e-m-b-a/embark](https://github.com/e-m-b-a/embark) — EMBArk - The firmware security scanning environment **[395 stars]**
 - [sgayou/rbasefind](https://github.com/sgayou/rbasefind) — A firmware base address search tool. **[375 stars]**
 - [nmatt0/mithril](https://github.com/nmatt0/mithril) — IoT static scanner for secrets, SBOM, CVEs and more. **[363 stars]**

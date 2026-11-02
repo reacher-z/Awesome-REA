@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/firmware/) · [English](firmware.md)
 
-**223 个仓库** · 2026-10-20 UTC
+**224 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -30,6 +30,7 @@
 - [scriptingxss/owasp-fstm](https://github.com/scriptingxss/owasp-fstm) — 固件安全测试方法（FSTM）包含九个阶段，专为帮助安全研究人员、软件开发人员、顾问及信息安全专业人员开展固件安全评估而设计。 **[502 星标]**
 - [ChrisTheCoolHut/Firmware\_Slap](https://github.com/ChrisTheCoolHut/Firmware_Slap) — 通过结合具体执行与符号执行的分析，以及函数聚类，发现固件中的漏洞。 **[476 星标]**
 - [nmatt0/moria](https://github.com/nmatt0/moria) — 物联网固件识别与提取。 **[418 星标]**
+- [DSecurity/efiSeek](https://github.com/DSecurity/efiSeek) — 用于 UEFI 固件的 Ghidra 分析器。 **[408 星标]** · 精选：[efiSeek UEFI 模块 Ghidra 分析器](https://awesomerea.org/zh/resources/efiseek/)
 - [e-m-b-a/embark](https://github.com/e-m-b-a/embark) — EMBArk：固件安全扫描环境。 **[395 星标]**
 - [sgayou/rbasefind](https://github.com/sgayou/rbasefind) — 固件基址搜索工具。 **[375 星标]**
 - [nmatt0/mithril](https://github.com/nmatt0/mithril) — 物联网静态扫描器，可扫描秘密信息、SBOM、CVE 等。 **[363 星标]**
