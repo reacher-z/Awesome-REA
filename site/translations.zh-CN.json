@@ -6528,11 +6528,12 @@
   "iw4l-mw2-rust-runtime-case": {
     "name": "IW4L：用使用者已安装的游戏运行《现代战争 2》的 Rust 运行时",
     "requirements": [
-      "README 称其为实验性运行时，将使用者拥有的 MW2 安装载入自己的引擎，不修补也不替换游戏文件；零售版 Shader Model 3 字节码经转换后使用而非直接沿用，素材读取器也支持 MW3 和《黑色行动》。API、缓存和网络协议会随提交变化，因此多人游戏各方必须运行同一构建。发行版均为标注 demo 的构建；v0.1.0-demo.23 于 2026-10-16 在所审提交之后发布。",
-      "需要使用者自己的 MW2 多人游戏安装，BUILD.md 说明使用 Steam 版的 Windows 资源库；《黑色行动》和 MW3 的数据为可选。README 与 NOTICE 声明仓库和发行压缩包均不含游戏数据，CONTRIBUTING.md 禁止附带、提交或链接原版游戏文件。AGENT.md 规定代码中不保留零售版偏移地址和反编译器占位名称；make publish-check 会在受跟踪的文件中检索这类形式，并自述不能证明任何来源问题。",
-      "使用 rustup 安装的稳定版 Rust 和 GNU Make 构建。Linux 需要 C/C++ 工具链及 X11、Wayland、ALSA、udev 和 xkbcommon 开发包；macOS 只需 Xcode 命令行工具，据报告可在使用 Metal 的 Apple 芯片上运行。Windows 玩家可获取设有密码的 iw4l-windows.zip，其中的 iw4l.exe 会查找 Steam 安装，并检查社区清单以获取经 SHA-256 校验的更新；联网游戏需使用服务器运营者提供的 .iw4l-server 描述文件。",
-      "仓库没有 CI 工作流，也没有 cargo 测试套件：make publish-check 会拒绝测试模块，唯一保留的检查是 crates/approved_tests 中两个经所有者批准的端到端场景，它们在 MW2 地图上驱动真实客户端，并检查实体一致性和拆除过程。这些场景及基准测试目标都需要使用者的游戏数据。项目未与原版游戏比对来衡量还原程度，本合集也未运行任何内容。",
-      "源码采用 Apache-2.0，附带两款 OFL 字体，NOTICE 称未内置任何第三方源码。NOTICE 列出开发中参考过的 OpenAssetTools 及其 x64 分支、IW4x、KisakCOD、Plutonium 反编译的《黑色行动 II》脚本、FFmpeg 和 OxideAV。一份来源说明记录：因有报告称某个移动模块与 GPL 实现相似，该模块已由一个隔离的智能体重写替换，但这并不证明发生过复制。README 与 CONTRIBUTING.md 称整个项目由大语言模型编写；所审来源未确立 REA 的使用，游戏素材和商标仍归其所有者。"
+      "需要使用者自己的 MW2 多人游戏安装，BUILD.md 说明使用 Steam 版的 Windows 资源库；《黑色行动》和 MW3 的数据为可选。仓库和发行压缩包均不含游戏数据，CONTRIBUTING.md 禁止附带、提交或链接原版游戏文件。",
+      "使用 rustup 安装的稳定版 Rust 和 GNU Make 构建。Linux 需要 C/C++ 工具链及 X11、Wayland、ALSA、udev 和 xkbcommon 开发包；macOS 只需 Xcode 命令行工具。Windows 发行版是设有密码的 iw4l-windows.zip；放入服务器运营者提供的 .iw4l-server 描述文件后，iw4l.exe 会安装该运营者发布、经 SHA-256 校验的可执行文件更新。",
+      "发行版均为标注 demo 的构建，审阅时为 v0.1.0-demo.23。API、缓存和网络协议会随提交变化，因此多人游戏各方必须运行同一构建。",
+      "没有 CI 工作流，也没有 cargo 测试套件：make publish-check 会拒绝测试模块，唯一保留的检查是两个经所有者批准的端到端场景，它们使用使用者的游戏数据，在 MW2 地图上驱动真实客户端。项目未衡量与原版游戏的一致程度。",
+      "源码采用 Apache-2.0，附带两款 OFL 字体；游戏素材和商标仍归其所有者。",
+      "NOTICE 称未内置任何第三方源码，并列出开发中参考过的项目，包括 OpenAssetTools、IW4x、KisakCOD 和 Plutonium 反编译的《黑色行动 II》脚本。一份来源说明记录：因有报告称某个移动模块与 GPL 代码相似，该模块已被替换，但这并不证明存在复制。"
     ]
   }
 }

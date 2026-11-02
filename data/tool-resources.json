@@ -19927,11 +19927,20 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
-      "README describes an experimental runtime that loads an owned MW2 installation into its own engine without patching or replacing the game’s files; retail Shader Model 3 bytecode is translated rather than reused, and the asset readers also cover MW3 and Black Ops. APIs, caches and the wire protocol change between commits, so multiplayer peers must run the same build. Releases are tagged demo builds; v0.1.0-demo.23 followed the reviewed commit on 2026-10-16.",
-      "Needs the user’s own MW2 Multiplayer installation, which BUILD.md describes as the Windows depot of a Steam copy; Black Ops and MW3 data are optional. README and NOTICE state that neither the repository nor the release archives contain game data, and CONTRIBUTING.md forbids attaching, committing or linking original game files. AGENT.md keeps retail offsets and decompiler placeholder names out of the code; make publish-check greps the tracked tree for such shapes and, by its own description, proves nothing about origin.",
-      "Builds with stable Rust through rustup and GNU Make. Linux needs a C/C++ toolchain and X11, Wayland, ALSA, udev and xkbcommon development packages; macOS needs only the Xcode command-line tools, with Apple silicon on Metal reported working. Windows players get a password-protected iw4l-windows.zip whose iw4l.exe finds Steam installs and checks a community manifest for SHA-256-verified updates; online play uses a server operator’s .iw4l-server descriptor.",
-      "The repository has no CI workflow and no cargo test suite: make publish-check rejects test modules, and the only permanent checks are two owner-approved end-to-end scenarios in crates/approved_tests that drive real clients on MW2 maps and check entity consistency and teardown. These scenarios and the benchmark targets need the user’s game data. Fidelity to the original game is not measured against it, and this collection ran nothing.",
-      "Source is Apache-2.0 with two bundled OFL fonts, and NOTICE says no third-party source is vendored. It lists OpenAssetTools and its x64 fork, IW4x, KisakCOD, Plutonium’s decompiled Black Ops II scripts, FFmpeg and OxideAV as references read during development. A provenance note records replacing a movement module, after reported similarities to GPL implementations, with an isolated agent’s rewrite, without establishing that copying occurred. README and CONTRIBUTING.md say the whole project is written by an LLM; the reviewed sources establish no REA use, and game assets and trademarks remain their owners’."
+      "Needs the user’s own MW2 Multiplayer installation, which BUILD.md describes as the Windows depot of a Steam copy; Black Ops and MW3 data are optional. The repository and release archives contain no game data, and CONTRIBUTING.md forbids attaching, committing or linking original game files.",
+      "Builds with stable Rust through rustup and GNU Make. Linux needs a C/C++ toolchain and X11, Wayland, ALSA, udev and xkbcommon development packages; macOS needs only the Xcode command-line tools. The Windows release is a password-protected iw4l-windows.zip; given a server operator’s .iw4l-server descriptor, iw4l.exe installs SHA-256-verified executable updates from that operator.",
+      "Releases are tagged demo builds, v0.1.0-demo.23 at review. APIs, caches and the wire protocol change between commits, so multiplayer peers must run the same build.",
+      "No CI workflow or cargo test suite: make publish-check rejects test modules, and the only permanent checks are two owner-approved end-to-end scenarios driving real clients on MW2 maps with the user’s game data. Fidelity to the original game is not measured.",
+      "Apache-2.0 source with two bundled OFL fonts; game assets and trademarks remain their owners’.",
+      "NOTICE says no third-party source is vendored and names references read during development, including OpenAssetTools, IW4x, KisakCOD and Plutonium’s decompiled Black Ops II scripts. A provenance note records replacing a movement module after reported similarities to GPL code, without establishing copying."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "testing",
+      "license",
+      "attribution"
     ],
     "additional_evidence_urls": [
       "https://github.com/vladtrc/iw4L/blob/acc57a5c9dd027db8eb5ef17c792fa69f059daa1/NOTICE",
