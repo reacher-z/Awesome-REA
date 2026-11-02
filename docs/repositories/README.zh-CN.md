@@ -10,12 +10,12 @@
 
 | 分类 | 仓库数 | 关联精选或论文 |
 | --- | ---: | ---: |
-| [网站](web-analysis.zh-CN.md) | 215 | 26 |
+| [网站](web-analysis.zh-CN.md) | 214 | 26 |
 | [游戏](game-analysis.zh-CN.md) | 485 | 63 |
 | [应用 · Android](android.zh-CN.md) | 477 | 41 |
 | [应用 · 托管代码](managed-code.zh-CN.md) | 135 | 5 |
 | [原生二进制](native-analysis.zh-CN.md) | 849 | 98 |
-| [运行时与调试](dynamic-analysis.zh-CN.md) | 151 | 26 |
+| [运行时与调试](dynamic-analysis.zh-CN.md) | 152 | 27 |
 | [固件](firmware.zh-CN.md) | 225 | 24 |
 | [协议](protocol-analysis.zh-CN.md) | 111 | 10 |
 | [通用工具与资源合集](reverse-engineering.zh-CN.md) | 661 | 72 |
