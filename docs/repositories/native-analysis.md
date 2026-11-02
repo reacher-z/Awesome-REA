@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**850 repositories** · 2026-10-20 UTC
+**849 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -175,7 +175,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [fjqisba/VmpHelper](https://github.com/fjqisba/VmpHelper) — an ida plugin used to decompile vmp **[416 stars]**
 - [horsicq/XOpcodeCalc](https://github.com/horsicq/XOpcodeCalc) — Opcode calculator / ASM calculator **[413 stars]**
 - [pfalcon/ScratchABit](https://github.com/pfalcon/ScratchABit) — Easily retargetable and hackable interactive disassembler with IDAPython-compatible plugin API **[413 stars]**
-- [DSecurity/efiSeek](https://github.com/DSecurity/efiSeek) — Ghidra analyzer for UEFI firmware. **[408 stars]**
 - [BoomerangDecompiler/boomerang](https://github.com/BoomerangDecompiler/boomerang) — Boomerang Decompiler - Fighting the code-rot :) **[405 stars]**
 - [evyatar9/GptHidra](https://github.com/evyatar9/GptHidra) — GptHidra is a Ghidra plugin that uses the OpenAI Chat GPT to explain functions. With GptHidra, you can easily understand the purpose and behavior of functions in your codebase. Now with GPT4 Support! **[405 stars]**
 - [serfend/pydumpck](https://github.com/serfend/pydumpck) — a multi-threads tool for decompile exe,elf,pyz,pyc packed by python which is base on pycdc and uncompyle6. **[400 stars]**

@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**850 个仓库** · 2026-10-20 UTC
+**849 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -175,7 +175,6 @@
 - [fjqisba/VmpHelper](https://github.com/fjqisba/VmpHelper) — 用于反编译 VMP 的 IDA 插件。 **[416 星标]**
 - [horsicq/XOpcodeCalc](https://github.com/horsicq/XOpcodeCalc) — 操作码计算器 / 汇编计算器。 **[413 星标]**
 - [pfalcon/ScratchABit](https://github.com/pfalcon/ScratchABit) — 易于适配新目标和修改扩展的交互式反汇编器，提供兼容 IDAPython 的插件 API。 **[413 星标]**
-- [DSecurity/efiSeek](https://github.com/DSecurity/efiSeek) — 用于 UEFI 固件的 Ghidra 分析器。 **[408 星标]**
 - [BoomerangDecompiler/boomerang](https://github.com/BoomerangDecompiler/boomerang) — Boomerang 反编译器：对抗代码腐化 :)。 **[405 星标]**
 - [evyatar9/GptHidra](https://github.com/evyatar9/GptHidra) — GptHidra 是使用 OpenAI ChatGPT 解释函数的 Ghidra 插件，帮助你轻松理解代码库中函数的用途与行为。现已支持 GPT-4！ **[405 星标]**
 - [serfend/pydumpck](https://github.com/serfend/pydumpck) — 基于 pycdc 和 uncompyle6 的多线程工具，可反编译由 Python 打包的 EXE、ELF、PYZ 和 PYC 文件。 **[400 星标]**
