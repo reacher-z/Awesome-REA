@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/android/) · [简体中文](android.zh-CN.md)
 
-**476 repositories** · 2026-10-20 UTC
+**477 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -59,6 +59,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [venshine/decompile-apk](https://github.com/venshine/decompile-apk) — 🔥 Decompile APK **[823 stars]**
 - [zinja-coder/jadx-mcp-server](https://github.com/zinja-coder/jadx-mcp-server) — MCP server for JADX-AI Plugin **[803 stars]**
 - [lixi5338619/lxBook](https://github.com/lixi5338619/lxBook) — Code repository for the book Advanced Practical Web Scraping Reverse Engineering. **[768 stars]**
+- [yhs0602/Android-Disassembler](https://github.com/yhs0602/Android-Disassembler) — Disassemble any file on Android, including .so (NDK, JNI), Windows PE (EXE, DLL, SYS, etc.), Linux binaries and libraries, and even pictures, audio, and other files for fun. A Capstone-based Android disassembler and reversing app for Android NDK shared libraries, Windows binaries, and more. **[717 stars]** · Curated: [Android-Disassembler](https://awesomerea.org/resources/android-disassembler/)
 - [secrary/Andromeda](https://github.com/secrary/Andromeda) — Andromeda - Interactive Reverse Engineering Tool for Android Applications **[714 stars]**
 - [horsicq/XAPKDetector](https://github.com/horsicq/XAPKDetector) — APK/DEX detector for Windows, Linux and MacOS. **[696 stars]**
 - [SlickAmogus/silent-hill-decomp](https://github.com/SlickAmogus/silent-hill-decomp) — Multiplatform and Feature-rich Port based on PSX decompilation of Silent Hill 1 made with Claude and Psycross. Still in beta and is in active development. **[682 stars]**
