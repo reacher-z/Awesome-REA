@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/dynamic-analysis/) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**146 repositories** · 2026-10-20 UTC
+**147 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -20,6 +20,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [duty1g/x64dbg-mcp-server](https://github.com/duty1g/x64dbg-mcp-server) — x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugger's full functionality over HTTP. Connect any MCP-compatible AI assistant and control x64dbg programmatically: set breakpoints, step through code, read memory, dump registers, and more. Built with Zig — zero dependencies, single-binary output, cros **[2,514 stars]** · Curated: [x64dbg-MCP Server](https://awesomerea.org/resources/x64dbg-mcp-server/)
 - [bootleg/ret-sync](https://github.com/bootleg/ret-sync) — ret-sync is a set of plugins that helps to synchronize a debugging session (WinDbg/GDB/LLDB/OllyDbg2/x64dbg) with IDA/Ghidra/Binary Ninja disassemblers. **[2,401 stars]** · Curated: [ret-sync](https://awesomerea.org/resources/ret-sync/)
 - [QBDI/QBDI](https://github.com/QBDI/QBDI) — A Dynamic Binary Instrumentation framework based on LLVM. **[1,828 stars]** · Curated: [QBDI](https://awesomerea.org/resources/qbdi/)
+- [hasherezade/tiny\_tracer](https://github.com/hasherezade/tiny_tracer) — A Pin Tool for tracing API calls etc **[1,711 stars]** · Curated: [Tiny Tracer](https://awesomerea.org/resources/tiny-tracer/)
 - [nowsecure/r2frida](https://github.com/nowsecure/r2frida) — Radare2 and Frida better together. **[1,450 stars]** · Curated: [r2frida](https://awesomerea.org/resources/r2frida/)
 - [darbra/sperm](https://github.com/darbra/sperm) — A collection of excellent reverse engineering articles I have read, well worth a look. **[1,422 stars]**
 - [ansjdnakjdnajkd/iOS](https://github.com/ansjdnakjdnajkd/iOS) — Most usable tools for iOS penetration testing **[1,327 stars]**
