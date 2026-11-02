@@ -24983,5 +24983,43 @@
       "https://github.com/ViRb3/magisk-frida/releases/tag/17.25.1-1",
       "https://github.com/frida/frida/blob/783c61434b1936b0b708bcdfb110cf8df1ba730c/COPYING"
     ]
+  },
+  {
+    "id": "raptor-frida-scripts",
+    "name": "frida-scripts (0xdea)",
+    "url": "https://github.com/0xdea/frida-scripts",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Marco Ivaldi's (raptor) collection of Frida JavaScript instrumentation scripts for reverse engineering mobile apps and Linux programs. The main Android and iOS tracers hook Java or Objective-C classes and methods selected by name, wildcard or regular expression, plus native functions matched by Frida ApiResolver patterns such as exports:*!open*, and log each call's arguments and return value; they can also print backtraces. Companion scripts enumerate loaded classes and methods, and a Linux pair traces and enumerates functions in an ELF binary and its shared libraries.",
+    "description_zh": "Marco Ivaldi（raptor）编写的 Frida JavaScript 插桩脚本集，用于逆向移动应用和 Linux 程序。主力 Android 与 iOS 追踪脚本按名称、通配符或正则表达式挂钩 Java 或 Objective-C 的类与方法，并通过 exports:*!open* 等 Frida ApiResolver 模式匹配原生函数，记录每次调用的参数与返回值，并可输出调用栈。配套脚本可枚举已加载的类与方法；另有一对 Linux 脚本用于追踪并枚举 ELF 二进制文件及其共享库中的函数。",
+    "evidence_url": "https://github.com/0xdea/frida-scripts/blob/987ba480812033bbe3a9d2262a9764e1a4ed8547/README.md",
+    "verified_at": "2026-11-02",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Load a script with Frida's CLI from frida-tools, for example frida -U -f <package> -l raptor_frida_android_trace.js for an app on a USB-connected device, after uncommenting or editing the usage examples at the end of the script. Mobile use needs a device that Frida can instrument; the iOS tracer's header records a jailbroken iPhone 8 on iOS 16.5.",
+      "Version 0.2 (2025-10-02) ported the main tracers to Frida 17. Script headers record Frida 17.3.2 on Android 11 and iOS 16.5 and Frida 17.2.1 on Ubuntu, while the android-snippets and ios-snippets directories were tested only with Frida before 17.0.0. The README warns that the iOS and Android scripts may need tweaking and points to Brida as a maintained project that includes some of them.",
+      "The repository has no automated tests or CI, and its TODO lists extensive testing with real-world apps.",
+      "MIT per LICENSE."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/0xdea/frida-scripts/blob/987ba480812033bbe3a9d2262a9764e1a4ed8547/raptor_frida_android_trace.js",
+      "https://github.com/0xdea/frida-scripts/blob/987ba480812033bbe3a9d2262a9764e1a4ed8547/raptor_frida_ios_trace.js",
+      "https://github.com/0xdea/frida-scripts/blob/987ba480812033bbe3a9d2262a9764e1a4ed8547/raptor_frida_linux_trace.js",
+      "https://github.com/0xdea/frida-scripts/blob/987ba480812033bbe3a9d2262a9764e1a4ed8547/raptor_frida_android_enum.js",
+      "https://github.com/0xdea/frida-scripts/blob/987ba480812033bbe3a9d2262a9764e1a4ed8547/CHANGELOG.md",
+      "https://github.com/0xdea/frida-scripts/blob/987ba480812033bbe3a9d2262a9764e1a4ed8547/LICENSE",
+      "https://github.com/0xdea/frida-scripts/releases/tag/v0.2"
+    ]
   }
 ]

@@ -7998,5 +7998,14 @@
       "CI 工作流负责构建并发布 ZIP；仓库没有测试套件。",
       "仓库没有许可证文件，GitHub 也未检测到许可证，因此其脚本未声明任何复用条款。打包的 frida-server 二进制文件是 Frida 官方构建，采用 wxWindows Library Licence。"
     ]
+  },
+  "raptor-frida-scripts": {
+    "name": "frida-scripts（0xdea）Frida 移动应用与 Linux 追踪脚本集",
+    "requirements": [
+      "使用 frida-tools 中的 Frida 命令行加载脚本，例如对 USB 连接设备上的应用运行 frida -U -f <package> -l raptor_frida_android_trace.js；运行前需取消注释或修改脚本末尾的用法示例。移动端使用需要 Frida 能够插桩的设备；iOS 追踪脚本的文件头记录的测试设备是一台越狱的 iPhone 8（iOS 16.5）。",
+      "0.2 版（2025-10-02）将主力追踪脚本移植到 Frida 17。脚本文件头记录的测试环境为 Android 11 和 iOS 16.5 上的 Frida 17.3.2，以及 Ubuntu 上的 Frida 17.2.1；android-snippets 和 ios-snippets 目录中的片段只在 Frida 17.0.0 之前的版本上测试过。README 提醒 iOS 与 Android 脚本可能需要调整，并推荐收录了其中部分脚本、维护更积极的 Brida 项目。",
+      "仓库没有自动化测试或 CI，其 TODO 列出了用真实应用进行充分测试。",
+      "依 LICENSE 采用 MIT 许可。"
+    ]
   }
 }
