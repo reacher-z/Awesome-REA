@@ -33,6 +33,10 @@
 .section-target-count{max-width:80ch;margin:-6px 0 16px;font-size:14px;line-height:1.75;color:var(--muted);overflow-wrap:anywhere}
 .section-target-count a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .section-target-count a:last-child{white-space:nowrap}
+/* /resources/ sections with both case studies and other kinds show them as two labelled sub-groups. */
+.resource-subgroup+.resource-subgroup{margin-top:30px}
+.resource-subgroup-topline{padding:6px 0 14px}
+.resource-subgroup-topline h3{margin:0;font-size:18px;line-height:1.4;font-weight:650;color:var(--ink);overflow-wrap:break-word}
 .browse-category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .browse-category-card{display:flex;align-items:center;gap:15px;min-height:126px;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 2px 5px var(--shadow)}
 .browse-category-card:hover{border-color:var(--strong);background:var(--soft)}
@@ -87,8 +91,8 @@ html[lang="zh-CN"] .source-card.browse-repository .source-card-description{max-w
 
 .browse-category-nav a{min-height:44px}
 @media(forced-colors:active){.browse-category-nav a[aria-current="page"]{forced-color-adjust:none;background:Highlight;border-color:Highlight;color:HighlightText}.browse-category-nav a[aria-current="page"]:focus-visible{outline-color:CanvasText}}
-/* On phones the kind badge moves under a resource title only when one of the title's words, with the arrow after the last,
+/* On phones (card titles are h3, or h4 inside a /resources/ sub-group) the kind badge moves under a resource title only when one of the title's words, with the arrow after the last,
    cannot fit beside it (a wide "Learning resource" badge next to a long single-word name); break-word keeps min-content at that word. */
-@media(max-width:700px){.browse-main .card-heading{flex-wrap:wrap;gap:9px 11px}.browse-main .card-heading h3{flex:1 1 min-content;overflow-wrap:break-word}}
+@media(max-width:700px){.browse-main .card-heading{flex-wrap:wrap;gap:9px 11px}.browse-main .card-heading :is(h3,h4){flex:1 1 min-content;overflow-wrap:break-word}}
 /* Below 380 px the kind badge leaves a resource title too narrow for its last word and arrow; give the title the full width. */
-@media(max-width:380px){.browse-main .card-heading{flex-wrap:wrap;gap:9px}.browse-main .card-heading h3{flex-basis:100%}}
+@media(max-width:380px){.browse-main .card-heading{flex-wrap:wrap;gap:9px}.browse-main .card-heading :is(h3,h4){flex-basis:100%}}
