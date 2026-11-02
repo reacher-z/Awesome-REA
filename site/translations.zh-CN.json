@@ -7989,5 +7989,14 @@
       "每个页面都声明本站是独立社区指南、与 REA 项目无关，并将 rea.tools 和 morluto/rea 列为权威来源；其仿冒副本页面只把 morluto/rea、rea.tools 和 npm 包 rea-agents 列为官方来源。页面没有广告或推广返利链接，会加载 Cloudflare Web Analytics 统计脚本。",
       "页面未说明指南自身文字的许可。REA 采用 MIT 许可；它可驱动的商业分析引擎（如 IDA Pro 和 Hopper）需另行取得许可。"
     ]
+  },
+  "magisk-frida": {
+    "name": "MagiskFrida 开机自启 frida-server 的 root 模块",
+    "requirements": [
+      "需要已通过 Magisk、KernelSU 或 APatch 获取 root 的 Android 设备，架构为 arm64、arm、x86 或 x86_64；README 要求从 GitHub Release 安装 MagiskFrida.zip，而不是已过时的 Magisk 模块仓库。故障排查指南要求 adb shell 可正常使用、Magisk 为稳定的最新版本且已关闭 MagiskHide，并使用基于 AOSP 的 ROM。自行构建 ZIP 需要 uv 和 Python（CI 使用 3.13），并会从 Frida 的 GitHub Release 下载 frida-server。",
+      "发布版本号跟随所打包的 Frida 版本；审阅时最新版为 17.25.1-1（2026-11-01），与 Frida 发布 17.25.1 同日构建。该模块只负责安装和维持 frida-server 运行：插桩本身通过 Frida 自己的客户端和脚本完成。",
+      "CI 工作流负责构建并发布 ZIP；仓库没有测试套件。",
+      "仓库没有许可证文件，GitHub 也未检测到许可证，因此其脚本未声明任何复用条款。打包的 frida-server 二进制文件是 Frida 官方构建，采用 wxWindows Library Licence。"
+    ]
   }
 }
