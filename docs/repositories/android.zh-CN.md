@@ -64,7 +64,7 @@
 - [horsicq/XAPKDetector](https://github.com/horsicq/XAPKDetector) — 适用于 Windows、Linux 和 MacOS 的 APK/DEX 检测器。 **[696 星标]** · 精选：[XAPKDetector APK/DEX 检测工具](https://awesomerea.org/zh/resources/xapkdetector/)
 - [SlickAmogus/silent-hill-decomp](https://github.com/SlickAmogus/silent-hill-decomp) — 基于《寂静岭 1》PSX 反编译成果，借助 Claude 和 Psycross 制作的多平台、功能丰富的移植版。目前仍处于 beta 阶段，正在积极开发。 **[682 星标]**
 - [darbra/sign](https://github.com/darbra/sign) — 逆向分析应用参数的思路与经验，聚焦 Android 逆向。 **[675 星标]**
-- [evilpan/jni\_helper](https://github.com/evilpan/jni_helper) — 在 APK 中查找 JNI 函数签名，并将其应用于逆向工程工具。 **[675 星标]**
+- [evilpan/jni\_helper](https://github.com/evilpan/jni_helper) — 在 APK 中查找 JNI 函数签名，并将其应用于逆向工程工具。 **[675 星标]** · 精选：[jni\_helper JNI 函数签名提取工具](https://awesomerea.org/zh/resources/jni-helper/)
 - [zinja-coder/apktool-mcp-server](https://github.com/zinja-coder/apktool-mcp-server) — APK Tool 的 MCP 服务器（Android Reverse Engineering MCP Suites 的一部分）。 **[674 星标]** · 精选：[apktool-mcp-server Apktool MCP 服务](https://awesomerea.org/zh/resources/apktool-mcp-server/)
 - [yazgx97/frida-android-hook](https://github.com/yazgx97/frida-android-hook) — 帮助你在 Android 平台上轻松使用 Frida 的工具。 **[654 星标]**
 - [bongtrop/hbctool](https://github.com/bongtrop/hbctool) — Hermes 字节码逆向工程工具，可汇编与反汇编 Hermes 字节码。 **[642 星标]** · 精选：[hbctool Hermes 字节码汇编与反汇编工具](https://awesomerea.org/zh/resources/hbctool/)
