@@ -75,7 +75,7 @@
 - [antojoseph/diff-gui](https://github.com/antojoseph/diff-gui) — Frida 脚本的图形界面 **[182 星标]**
 - [kaifcodec/freefire-like-and-guest-api](https://github.com/kaifcodec/freefire-like-and-guest-api) — 通过 Frida 自动创建并捕获 Free Fire 游客账户，格式化和管理账户、获取 JWT，并向目标 UID 发送加密点赞请求；具有并发控制，并保证每个游客对每个目标只点赞一次。 **[175 星标]**
 - [ngwg/ceasta](https://github.com/ngwg/ceasta) — 集反汇编器、反编译器和调试器于一体，内置 MCP 服务器，让 AI 不仅能读取二进制文件，还能调试它。提供 IDA 风格列表、伪代码（F5）、x64dbg 风格调试器（Windows 和 Linux）、二进制差异比对及 Lua 插件。可读取 PE、ELF 和 Mach-O，运行于 Windows、Linux 和 macOS。 **[169 星标]**
-- [ReverseApple/gxpc](https://github.com/ReverseApple/gxpc) — 使用 Frida 和 Go 嗅探 XPC 通信 **[167 星标]**
+- [ReverseApple/gxpc](https://github.com/ReverseApple/gxpc) — 使用 Frida 和 Go 嗅探 XPC 通信 **[167 星标]** · 精选：[gxpc XPC 通信嗅探工具](https://awesomerea.org/zh/resources/gxpc/)
 - [ricardoquesada/regenerator2000](https://github.com/ricardoquesada/regenerator2000) — 面向 Commodore 8 位计算机的 6502 CPU 交互式反汇编器。提供终端界面及交叉引用、撤销/重做、流程箭头、键盘操作、用于自动分析的 MCP 服务器、VICE 调试器等现代功能！ **[164 星标]**
 - [vadim-a-yegorov/iOS-Internals-and-Security-Testing](https://github.com/vadim-a-yegorov/iOS-Internals-and-Security-Testing) — iOS 是 Apple 的专有操作系统，运行于 iPhone、iPod Touch 和 iPad。许多组件为 iOS 特有。这里介绍 iOS 硬件和软件安全架构的关键特性，并提供应用测试指南。 **[154 星标]**
 - [nowsecure/airspy](https://github.com/nowsecure/airspy) — AirSpy：基于 Frida 的工具，从服务端视角探索并跟踪 Apple 在 iOS／macOS 中的 AirDrop 协议实现演变。在 BH USA 2019 培训期间发布：https<span>:</span>//www<span>.</span>nowsecure.com/event/advanced-frida-and-radare-a-hackers-delight/ **[152 星标]**
