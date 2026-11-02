@@ -878,6 +878,13 @@ def load_resume(path):
     elif (not isinstance(meta.get('unique_repos'), int) or meta['unique_repos'] < len(identifiers)
           or meta.get('unattempted_candidates') != meta['unique_repos'] - len(identifiers)):
         raise ValueError('Legacy resume snapshot candidate counts are inconsistent')
+    # The hash, URL and discovery checks publication applies; completion and size are publication-only.
+    # Imported here because validate.py imports this module's seed and provenance constants.
+    from validate import validate_retained_evidence
+    errors = []
+    validate_retained_evidence(document, errors)
+    if errors:
+        raise ValueError(f'Resume snapshot retains invalid evidence ({len(errors)} finding(s)), first: {errors[0]}')
     return document, hashlib.sha256(raw).hexdigest()
 
 
