@@ -6514,5 +6514,15 @@
       "从源码构建需要 Raspberry Pi Pico SDK、CMake 3.13+ 和 GCC ARM 工具链，并以子模块形式引入 FreeRTOS-Kernel、can2040 分支、littlefs、TinyUSB、pico-extras 和 FreeRTOS-FAT-CLI；PICO_BOARD 默认为 pico2_w，网页界面是 Web/ 目录中独立的 Svelte 项目。CI 会在推送到 main 及提交拉取请求时为四种 Pico 开发板构建固件，未见测试套件说明。",
       "依据 LICENSE.txt 和 README 中的声明采用 GPL-3.0-or-later；README 将仅支持 CAN 2.0B 归因于 can2040 的许可限制，附带的 DHCP 服务器代码带有 MIT 声明。KiCad、STL 和 STEP 硬件文件未另行声明许可证。本次未构建、刷写固件，也未连接任何车辆，所审来源未确立与 REA 的关联。"
     ]
+  },
+  "gymnasticon-exercise-bike-bridge-case": {
+    "name": "Gymnasticon：将专有健身单车数据转为标准骑行传感器信号",
+    "requirements": [
+      "审阅时 GitHub 上最新的发布版本为 v1.4.0，于 2021-02-21 发布，附带 Raspberry Pi SD 卡镜像；npm 上最新版本为 2021-03-24 发布的 1.4.1，所审阅的 main 分支提交（2021-04-21）为所有支持的单车加入了自动识别，至今仍是 main 上最新的提交。README 列出已测试的单车包括 Flywheel、Peloton（需额外线缆）、Schwinn IC4/IC8（即 Bowflex C6）以及 Keiser M3i、M3i-TBT 和 M3iX，LifeFitness IC5 则标为大概率可用；另有一个模拟单车用于测试。",
+      "需要用户自有的受支持单车，运行时不使用厂商应用、固件或账号。推荐 Raspberry Pi Zero W，已测试的宿主包括 Pi Zero W、3B+ 和 4 上的 Raspbian Buster、macOS 10.14+ 以及 x86-64 上的 Debian Buster。BLE 单车需要支持多角色的蓝牙 4.1+ 适配器，或使用两个适配器；ANT+ 输出需要 ANT+ USB 接收器，Peloton 单车则需要 README 链接中说明的额外串口线缆。",
+      "SD 卡镜像是项目用 deploy/ 中的 pi-gen 脚本自行构建的 Raspbian Buster 系统，使用默认的 pi/raspberry 账号并关闭 SSH；首次启动时会把根文件系统切换为 overlay 并将 boot 分区设为只读，并从 boot 分区读取 gymnasticon.json。手动安装需通过 npm 使用 Node.js 12.16.1+，Linux 上还需 libudev-dev，并通过 cap_net_raw 权限或 systemd 单元访问蓝牙；依赖 abandonware 维护的 noble 和 bleno 库、gd-ant-plus 及 serialport。",
+      "CI 会构建软件包，并在 Node.js 12 和 14 上运行 tape 单元测试；测试以示例数据包覆盖 Flywheel、IC4、Keiser 和 Peloton 解析器、模拟单车和工具函数，不涉及真实单车或训练应用。power-scale 和 power-offset 选项可用来校正功率读数不准的单车。",
+      "采用 MIT 许可。单车和应用名称归各自权利人所有。本次未安装或运行任何内容，所审来源未确立 AI 或 REA 使用。"
+    ]
   }
 }
