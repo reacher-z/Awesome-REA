@@ -6524,5 +6524,16 @@
       "CI 会构建软件包，并在 Node.js 12 和 14 上运行 tape 单元测试；测试以示例数据包覆盖 Flywheel、IC4、Keiser 和 Peloton 解析器、模拟单车和工具函数，不涉及真实单车或训练应用。power-scale 和 power-offset 选项可用来校正功率读数不准的单车。",
       "采用 MIT 许可。单车和应用名称归各自权利人所有。本次未安装或运行任何内容，所审来源未确立 AI 或 REA 使用。"
     ]
+  },
+  "iw4l-mw2-rust-runtime-case": {
+    "name": "IW4L：用使用者已安装的游戏运行《现代战争 2》的 Rust 运行时",
+    "requirements": [
+      "需要使用者自己的 MW2 多人游戏安装，BUILD.md 说明使用 Steam 版的 Windows 资源库；《黑色行动》和 MW3 的数据为可选。仓库和发行压缩包均不含游戏数据，CONTRIBUTING.md 禁止附带、提交或链接原版游戏文件。",
+      "使用 rustup 安装的稳定版 Rust 和 GNU Make 构建。Linux 需要 C/C++ 工具链及 X11、Wayland、ALSA、udev 和 xkbcommon 开发包；macOS 只需 Xcode 命令行工具。Windows 发行版是设有密码的 iw4l-windows.zip；放入服务器运营者提供的 .iw4l-server 描述文件后，iw4l.exe 会安装该运营者发布、经 SHA-256 校验的可执行文件更新。",
+      "发行版均为标注 demo 的构建，审阅时为 v0.1.0-demo.23。API、缓存和网络协议会随提交变化，因此多人游戏各方必须运行同一构建。",
+      "没有 CI 工作流，也没有 cargo 测试套件：make publish-check 会拒绝测试模块，唯一保留的检查是两个经所有者批准的端到端场景，它们使用使用者的游戏数据，在 MW2 地图上驱动真实客户端。项目未衡量与原版游戏的一致程度。",
+      "源码采用 Apache-2.0，附带两款 OFL 字体；游戏素材和商标仍归其所有者。",
+      "NOTICE 称未内置任何第三方源码，并列出开发中参考过的项目，包括 OpenAssetTools、IW4x、KisakCOD 和 Plutonium 反编译的《黑色行动 II》脚本。一份来源说明记录：因有报告称某个移动模块与 GPL 代码相似，该模块已被替换，但这并不证明存在复制。"
+    ]
   }
 }
