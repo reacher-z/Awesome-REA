@@ -18,6 +18,8 @@ const context = {
   expandedRecords: () => new Set(), restoreExpanded() {}, sourceCard: () => ({}),
   // renderSources also reveals the filtered-export button; tests/filtered_export_ui.cjs covers that.
   showExport() {},
+  // ...and the active-filter chips; tests/active_filters_ui.cjs covers those.
+  renderActiveFilters() {},
   sourceFiltered: () => context.sourceState.records,
   sourceTime: value => value, dataURL: filename => "/" + filename + "?v=test",
   t: key => ({
