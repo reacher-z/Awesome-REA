@@ -141,6 +141,7 @@ class SecurityHeaderTests(unittest.TestCase):
                                              '/source-browser.json', '/source-published.json', '/papers.json', '/build-manifest.json',
                                              '/data-manifest.json', '/downloads/*')},
             **{route: {'content-type': 'application/atom+xml; charset=utf-8'} for route in ('/feed.xml', '/zh/feed.xml')},
+            '/assets/*': {'cache-control': 'public, max-age=31536000, immutable'},
             '/papers/references.bib': bibtex, '/papers/citations/*.bib': bibtex,
             '/downloads/references.bib': bibtex,
             '/downloads/records.jsonl': {'content-type': 'application/x-ndjson; charset=utf-8'},

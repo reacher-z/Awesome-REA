@@ -1,9 +1,10 @@
 """Let static pages keep the current card or section when a reader switches language."""
 from __future__ import annotations
 
-import hashlib
 from pathlib import Path
 import re
+
+from asset_paths import fingerprinted_href
 
 SCRIPT = 'language-fragment.js'
 HEADER = re.compile(r'<header class="site-header">.*?</header>', re.S)
@@ -12,9 +13,8 @@ HOMEPAGES = {'index.html', 'zh/index.html'}
 
 
 def language_fragment_script(site_dir: Path) -> str:
-    """Return the deferred, revisioned tag for the copy of site/language-fragment.js in site_dir."""
-    revision = hashlib.sha256((Path(site_dir) / SCRIPT).read_bytes()).hexdigest()[:16]
-    return f'<script src="/{SCRIPT}?v={revision}" defer></script>'
+    """Return the deferred tag for the content-addressed /assets/ copy of site/language-fragment.js in site_dir."""
+    return f'<script src="{fingerprinted_href(site_dir, SCRIPT)}" defer></script>'
 
 
 def add_language_fragment_script(site_dir: Path) -> int:
