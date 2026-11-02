@@ -106,7 +106,7 @@ html[lang="zh-CN"] .paper-description,html[lang="zh-CN"] .paper-scope p,html[lan
 .paper-search-empty p{margin:0 0 14px}
 @media(max-width:1000px){.paper-search{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.paper-search-query{grid-column:1/-1}.paper-search-more[open]{grid-row:auto}.paper-search .button{justify-self:start}}
 /* Phones: the search keeps the full width, Target sits beside "More filters" and the result count beside "Clear
-   filters", and research areas scroll sideways in one row, so the first paper starts within the first screenful.
+   filters", and research areas scroll sideways in one row, so the first paper starts higher on the page.
    Rows are spaced with margins, so the row the open panel uses takes no space while it is closed. */
 @media(max-width:600px){
   .paper-search{grid-template-columns:minmax(0,1fr) auto;row-gap:0;column-gap:12px;margin:14px 0;padding:14px}
