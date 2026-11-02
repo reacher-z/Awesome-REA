@@ -38,7 +38,7 @@
 - [AngeloD2022/jsxer](https://github.com/AngeloD2022/jsxer) — 快速且准确的 JSXBIN 反编译器。 **[327 星标]** · 精选：[Jsxer JSXBIN 反编译器](https://awesomerea.org/zh/resources/jsxer/)
 - [helins/wasm.cljc](https://github.com/helins/wasm.cljc) — 符合规范的 WebAssembly 编译器、反编译器及生成器 **[264 星标]**
 - [L018/Trace](https://github.com/L018/Trace) — 用于网页分析的 Chrome 扩展 **[199 星标]**
-- [LostMyCode/javascript-deobfuscator](https://github.com/LostMyCode/javascript-deobfuscator) — 针对 Obfuscator.io 生成的 JavaScript 代码的去混淆工具 **[191 星标]**
+- [LostMyCode/javascript-deobfuscator](https://github.com/LostMyCode/javascript-deobfuscator) — 针对 Obfuscator.io 生成的 JavaScript 代码的去混淆工具 **[191 星标]** · 精选：[javascript-deobfuscator Obfuscator.io 字符串还原网页工具（LostMyCode）](https://awesomerea.org/zh/resources/lostmycode-javascript-deobfuscator/)
 - [irelance/jsc-decompile-mozjs-34](https://github.com/irelance/jsc-decompile-mozjs-34) — Mozilla SpiderMonkey 34 版的 JavaScript 字节码解码器，可用于反编译 Cocos2d-x 编译的 JSC 文件 **[189 星标]**
 - [katana-project/slicer](https://github.com/katana-project/slicer) — 基于网页的现代 Java 逆向工程工具。 **[176 星标]** · 精选：[slicer 浏览器端 Java 逆向工具](https://awesomerea.org/zh/resources/slicer/)
 - [zhongguagua/ai-code-decompile](https://github.com/zhongguagua/ai-code-decompile) — 🚀 AI 驱动的 JavaScript 反编译与去混淆工具，结合 AI 和 AST 进行代码分析与混淆还原，将难以阅读的构建产物转换为易懂的代码。 **[140 星标]**
