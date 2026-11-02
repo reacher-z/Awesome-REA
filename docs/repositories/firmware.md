@@ -34,7 +34,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [nmatt0/moria](https://github.com/nmatt0/moria) — IoT firmware identification and extraction **[418 stars]**
 - [DSecurity/efiSeek](https://github.com/DSecurity/efiSeek) — Ghidra analyzer for UEFI firmware. **[408 stars]** · Curated: [efiSeek](https://awesomerea.org/resources/efiseek/)
 - [e-m-b-a/embark](https://github.com/e-m-b-a/embark) — EMBArk - The firmware security scanning environment **[395 stars]** · Curated: [EMBArk](https://awesomerea.org/resources/embark/)
-- [sgayou/rbasefind](https://github.com/sgayou/rbasefind) — A firmware base address search tool. **[375 stars]**
+- [sgayou/rbasefind](https://github.com/sgayou/rbasefind) — A firmware base address search tool. **[375 stars]** · Curated: [rbasefind](https://awesomerea.org/resources/rbasefind/)
 - [nmatt0/mithril](https://github.com/nmatt0/mithril) — IoT static scanner for secrets, SBOM, CVEs and more. **[363 stars]**
 - [binarly-io/fwhunt-scan](https://github.com/binarly-io/fwhunt-scan) — Tools for analyzing UEFI firmware and checking UEFI modules with FwHunt rules **[246 stars]** · Curated: [FwHunt Community Scanner (fwhunt-scan)](https://awesomerea.org/resources/fwhunt-scan/)
 - [chrivers/samsung-firmware-magic](https://github.com/chrivers/samsung-firmware-magic) — Tool for decrypting the firmware files for Samsung SSDs **[238 stars]**
