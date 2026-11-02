@@ -68,12 +68,23 @@ def related_links(record: dict, language: str) -> str:
     return '<div class="source-related">' + ''.join(groups) + '</div>' if groups else ''
 
 
+def title_end(text: str, use_pro: bool) -> str:
+    """The escaped end of a repository title; with the Font Awesome icon, its last character and the icon share a no-wrap span.
+
+    The icon is an inline-block. Chrome may still break before it after a word joiner, because the title's
+    overflow-wrap allows a break between any two characters. Keeping the icon with the title's last character stops it
+    sitting alone on a line. The text-arrow fallback is placed after the title and already starts with a word joiner."""
+    if not use_pro or not text:
+        return escape(text)
+    return f'{escape(text[:-1])}<span class="title-icon-tail">{escape(text[-1])}{icon("external", use_pro)}</span>'
+
+
 def repository_card(record: dict, language: str, use_pro: bool) -> str:
     zh = language == 'zh'
     name = record.get('full_name') or record['name']
     owner, separator, project = name.partition('/')
     title = (f'<span class="source-owner">{escape(owner)}/</span>'
-             f'<span class="source-project">{escape(project)}</span>' if separator else escape(name))
+             f'<span class="source-project">{title_end(project, use_pro)}</span>' if separator else title_end(name, use_pro))
     description = record[f'description_{language}'] or description_fallback(record, language)
     stars = record.get('stars')
     star_html = (f'<span class="source-stars" title="{("采集时的星标快照" if zh else "Stars at collection time")}">'
@@ -90,7 +101,7 @@ def repository_card(record: dict, language: str, use_pro: bool) -> str:
                    f'<span class="source-card-pushed-label">{("最近推送" if zh else "Last push")} </span><time datetime="{escape(pushed, quote=True)}">{pushed[:7]}</time></span>'
                    if isinstance(pushed, str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}T[^<>"&]*', pushed) else '')
     return f'''<article class="source-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}">
-  <div class="source-card-head"><h2><a class="source-title-link" href="{external_url(record['url'])}" target="_blank" rel="noopener">{title}{icon('external', use_pro)}</a></h2></div>
+  <div class="source-card-head"><h2><a class="source-title-link" href="{external_url(record['url'])}" target="_blank" rel="noopener">{title}{'' if use_pro else icon('external', use_pro)}</a></h2></div>
   <p class="source-card-description">{escape(description)}</p>
 {related_links(record, language)}
   <div class="source-card-footer">{star_html}<a href="{external_url(record.get('readme_url') or record['url'])}" target="_blank" rel="noopener" aria-label="{escape(readme_label, quote=True)}">README <span aria-hidden="true">↗</span></a>{pushed_html}<span class="source-card-license">{escape(license_name)}</span></div>

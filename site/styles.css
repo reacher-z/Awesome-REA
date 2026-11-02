@@ -208,6 +208,8 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .source-owner{color:var(--muted);font-weight:450}
 .source-project{color:var(--ink);font-weight:700}
 .card-title-link:hover,.source-title-link:hover{text-decoration:underline;text-decoration-color:var(--steel);text-underline-offset:4px}
+/* A repository title's last character and its external-link icon wrap together. */
+.title-icon-tail{white-space:nowrap}
 .card-title-link .icon,.source-title-link .icon{width:12px;height:12px;font-size:11px;vertical-align:baseline;margin-left:6px;color:var(--steel)}
 .resource-kind,.source-stars{flex:none;color:var(--muted);font:500 13px/1.5 var(--sans);font-variant-numeric:tabular-nums;border:1px solid var(--line);border-radius:6px;padding:3px 7px;background:var(--soft);white-space:nowrap}
 .card-description,.source-card-description{max-width:68ch;margin:14px 0 16px;color:var(--body);font-size:16px;line-height:1.8;overflow-wrap:anywhere}

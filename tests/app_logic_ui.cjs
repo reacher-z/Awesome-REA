@@ -114,7 +114,9 @@ async function loaded(query, options) {
   return app;
 }
 const names = records => Array.from(records, record => record.full_name);
-const shownNames = app => app.element('source-results').children.map(card => byClass(card, 'source-title-link')[0].children.map(part => part.textContent).join(''));
+// A title's text, including the last character that shares a no-wrap span with the external-link icon.
+const textOf = part => (part.textContent || '') + part.children.map(textOf).join('');
+const shownNames = app => app.element('source-results').children.map(card => textOf(byClass(card, 'source-title-link')[0]));
 const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
 
 (async () => {

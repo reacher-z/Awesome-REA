@@ -945,7 +945,9 @@ function sourceMatchHint(record, terms) {
     ["categoryLabel", record.category], ["targetFilterLabel", record.targets.flatMap(targetSearchLabels).join(" · ")]]);
 }
 function sourceCard(record, terms = []) {
-  const article = node("article","source-card"); article.dataset.recordId=record.id; const head = node("div","source-card-head"); const title = node("h3"); const link = external(record.url,"source-title-link"); const separator = record.full_name.indexOf("/"); if (separator > 0) { link.append(node("span","source-owner",record.full_name.slice(0,separator+1)),node("span","source-project",record.full_name.slice(separator+1))); } else { link.append(node("span","source-project",record.full_name)); } link.append(icon("external",true)); title.append(link); head.append(title);
+  const article = node("article","source-card"); article.dataset.recordId=record.id; const head = node("div","source-card-head"); const title = node("h3"); const link = external(record.url,"source-title-link"); const separator = record.full_name.indexOf("/"); if (separator > 0) link.append(node("span","source-owner",record.full_name.slice(0,separator+1)));
+  // The title's last character and the external-link icon share a no-wrap span, so the icon never sits alone on a line.
+  const chars = Array.from(record.full_name.slice(separator+1)); const tail = node("span","title-icon-tail",chars.pop() ?? ""); tail.append(icon("external",true)); const project = node("span","source-project",chars.join("")); project.append(tail); link.append(project); title.append(link); head.append(title);
   if (Number.isFinite(record.stars)) { const stars = node("span","source-stars",record.stars.toLocaleString(state.lang === "zh" ? "zh-CN" : "en-US") + " " + t("sourceStars")); stars.title = t("sourceStarsTitle"); head.append(stars); } article.append(head);
   const description = record[state.lang === "zh" ? "description_zh" : "description_en"];
   article.append(node("p","source-card-description" + (!description ? " source-card-empty" : ""),description || t(record.description_omission ? "sourceOmittedDescription" : "sourceNoDescription")));
