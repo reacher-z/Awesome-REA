@@ -84,8 +84,26 @@ class ResourceSubgroupTests(unittest.TestCase):
                 groups = section.split('<section class="resource-subgroup"')[1:]
                 self.assertEqual([len(re.findall(r'data-record-id=', group)) for group in groups], [3, 2],
                                  'sub-group counts add up to the section count')
-                self.assertEqual(section.count('aria-labelledby="game--case-studies"'), 1)
-                self.assertEqual(section.count('aria-labelledby="game--tools"'), 1)
+                # Regions are named by the section heading and the sub-group heading, so names never repeat across sections.
+                self.assertEqual(section.count('aria-labelledby="heading-game game--case-studies"'), 1)
+                self.assertEqual(section.count('aria-labelledby="heading-game game--tools"'), 1)
+
+    def test_subgroup_region_names_are_unique_on_each_page(self):
+        # Two mixed sections each have a "Case studies" and a tools sub-group; their region names must still differ.
+        website = [record('web-case', 'case-study', 'reconstruction-cases', ['website']),
+                   record('web-tool', 'tool', 'web-analysis', ['website'])]
+        with TemporaryDirectory() as directory:
+            output = Path(directory)
+            build_discovery_pages(output, {'meta': {}, 'resources': GAME + website}, None)
+            pages = {language: (output / route / 'index.html').read_text(encoding='utf-8')
+                     for language, route in (('en', 'resources'), ('zh', 'zh/resources'))}
+        for language, html in pages.items():
+            with self.subTest(language=language):
+                headings = dict(re.findall(r'<h[23] id="([^"]+)">(?:<a id="[^"]+"></a>)?([^<]+)<', html))
+                names = [' '.join(headings[part] for part in labelledby.split())
+                         for labelledby in re.findall(r'<section class="resource-subgroup" aria-labelledby="([^"]+)"', html)]
+                self.assertEqual(len(names), 4, names)
+                self.assertEqual(len(names), len(set(names)), names)
 
     def test_single_kind_sections_stay_one_list(self):
         for language in ('en', 'zh'):
