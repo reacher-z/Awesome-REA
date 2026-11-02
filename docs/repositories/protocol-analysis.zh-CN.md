@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/protocol-analysis/) · [English](protocol-analysis.md)
 
-**111 个仓库** · 2026-10-20 UTC
+**112 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -19,6 +19,7 @@
 - [brent-stone/CAN\_Reverse\_Engineering](https://github.com/brent-stone/CAN_Reverse_Engineering) — 面向控制器局域网（CAN）协议的自动化载荷逆向工程流程 **[456 星标]** · 精选：[CAN 负载自动逆向分析流水线](https://awesomerea.org/zh/resources/can-reverse-engineering/)
 - [0xMH/fichero-printer](https://github.com/0xMH/fichero-printer) — Fichero D11s 热敏标签打印机的 BLE 协议逆向工程与 Python 命令行工具 **[302 星标]**
 - [niloofarkheirkhah/nili](https://github.com/niloofarkheirkhah/nili) — Nili 是一个用于网络扫描、中间人操作、协议逆向工程和模糊测试的工具。 **[219 星标]**
+- [Warxim/deluder](https://github.com/Warxim/deluder) — Deluder 用于拦截不支持代理的应用流量，目前开箱即用地支持 OpenSSL、GnuTLS、SChannel、WinSock 和 Linux Sockets。⚡ **[215 星标]** · 精选：[Deluder 应用流量拦截工具](https://awesomerea.org/zh/resources/deluder/)
 - [asiamina/A-Course-on-Digital-Forensics](https://github.com/asiamina/A-Course-on-Digital-Forensics) — 在 Texas Tech University 计算机科学系设计并开设的“数字取证”课程。 **[203 星标]**
 - [symbolicsoft/verifpal](https://github.com/symbolicsoft/verifpal) — 对现实世界中的密码协议进行分析。 **[133 星标]**
 - [Annyfee/spider-js-reverse](https://github.com/Annyfee/spider-js-reverse) — 精选不同网站的 JavaScript 逆向实例，提供详细讲解、知识点概括、加密算法、难度对比及跳转链接，涵盖补环境、提取 JavaScript、webpack 和瑞数等难点。 **[111 星标]**
