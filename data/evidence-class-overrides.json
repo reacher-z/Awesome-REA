@@ -33,8 +33,8 @@
   },
   {
    "id": "ship-of-harkinian-oot-port-case",
-   "evidence_class": 2,
-   "note": "Complete Ocarina of Time PC port (Ship of Harkinian); releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only)."
+   "evidence_class": 1,
+   "note": "Official site (shipofharkinian.com) hosts the project trailer https://www.youtube.com/watch?v=HrA4fOHXUFU (Ship of Harkinian channel) and splash videos; demo evidence confirmed by manual review, not runtime-verified."
   },
   {
    "id": "ghostship-sm64-port-case",

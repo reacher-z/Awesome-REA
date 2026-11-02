@@ -6,8 +6,8 @@
   "entry_count": 653,
   "class_counts": {
    "0": 11,
-   "1": 170,
-   "2": 428,
+   "1": 171,
+   "2": 427,
    "3": 37
   },
   "unknown_count": 7,
@@ -7575,7 +7575,7 @@
   {
    "id": "ship-of-harkinian-oot-port-case",
    "url": "https://github.com/HarbourMasters/Shipwright",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "override",
    "signals": {
     "code": true,
@@ -7586,15 +7586,17 @@
     "download": "release-assets",
     "release_count": 53,
     "release_asset_count": 234,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "video"
+    ],
+    "media_count": 1,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Ocarina of Time PC port (Ship of Harkinian); releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only).",
+   "reason": "Official site (shipofharkinian.com) hosts the project trailer https://www.youtube.com/watch?v=HrA4fOHXUFU (Ship of Harkinian channel) and splash videos; demo evidence confirmed by manual review, not runtime-verified.",
    "checked_at": "2026-11-01T12:14:53+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },

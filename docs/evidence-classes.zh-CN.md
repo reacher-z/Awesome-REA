@@ -48,11 +48,11 @@
 
 ## 3. 方法与局限
 
-- 653 条中，586 条通过 GitHub REST 读取仓库元数据、releases 和 README；2 条走 GitLab REST；37 条抓取页面；17 条人工边界覆盖；11 条人工确认 Class 0；7 条来源不可读标为 Unknown。
+- 653 条中，586 条通过 GitHub REST 读取仓库元数据、releases 和 README；2 条走 GitLab REST；37 条抓取页面；17 条人工边界覆盖；11 条人工确认 Class 0；7 条来源不可读标为 Unknown。当前分布：Class 0 11 / Class 1 171 / Class 2 427 / Class 3 37 / Unknown 7。
 - GitHub token 只发送到 `api.github.com`；跨域重定向会剥离认证头。页面的普通抓取不携带 token。
 - 图片过滤掉 logo、徽章、二维码、群聊和赞助链接，避免把品牌图当成 demo。
 - 主页示范截图由 [`scripts/build_evidence_previews.py`](../scripts/build_evidence_previews.py) 选取并写入 [`data/evidence-previews.json`](../data/evidence-previews.json)；[`scripts/fetch_previews.py`](../scripts/fetch_previews.py) 在构建前下载到 `.cache/previews/`，构建复制到站点的 `previews/` 目录，页面不外链第三方图片。
-- 181 条 Class 0/1 中 173 条有预览 URL（164 张图片 + 9 个视频封面）；8 条没有合格图片，另有 5 张超过 8MB、3 张不可达，这些条目显示占位。
+- 182 条 Class 0/1 中 174 条有预览 URL（164 张图片 + 10 个视频封面）；8 条没有合格图片，另有 5 张超过 8MB、2 张不可达；共 15 条显示占位。
 - 已知局限：文档完整度靠章节结构推断，不看内容质量；JS 渲染页面可能漏检媒体；“下载方式”不含纯源码构建说明；C0 是人工范围复核，不是运行验收。
 - 人工修订：[`data/evidence-class-overrides.json`](../data/evidence-class-overrides.json) 记录边界修正；Class 0 只能在 [`data/evidence-class-zero-reviews.json`](../data/evidence-class-zero-reviews.json) 中逐条确认。
 

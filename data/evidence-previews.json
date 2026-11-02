@@ -3,11 +3,11 @@
   "meta": {
     "spec_version": "evidence-preview-v1",
     "generated_at": "2026-11-02T03:17:45+00:00",
-    "entry_count": 173,
-    "class_entry_count": 181,
+    "entry_count": 174,
+    "class_entry_count": 182,
     "class_counts": {
       "image": 164,
-      "video": 9
+      "video": 10
     },
     "missing_count": 8,
     "missing": [
@@ -1183,6 +1183,14 @@
       "source_url": "https://github.com/gdorgian/ScooterLink",
       "revision": "a089f6210e863d56b590ed4625b92f886ff6a097",
       "checked_at": "2026-11-01T10:08:16+00:00"
+    },
+    {
+      "id": "ship-of-harkinian-oot-port-case",
+      "image_url": "https://i.ytimg.com/vi/HrA4fOHXUFU/hqdefault.jpg",
+      "kind": "video",
+      "basis": "youtube-thumbnail",
+      "source_url": "https://www.shipofharkinian.com",
+      "checked_at": "2026-11-02T03:40:54+00:00"
     },
     {
       "id": "simplify-android-deobfuscator",
