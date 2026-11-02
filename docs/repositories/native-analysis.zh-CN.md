@@ -78,7 +78,7 @@
 - [google/binexport](https://github.com/google/binexport) — 将反汇编结果导出为 Protocol Buffers。 **[1,214 星标]** · 精选：[BinExport 反汇编导出插件](https://awesomerea.org/zh/resources/binexport/)
 - [petoolse/petools](https://github.com/petoolse/petools) — PE Tools：可移植可执行文件（PE）操作工具包。 **[1,201 星标]**
 - [HexRaysSA/ida-mcp](https://github.com/HexRaysSA/ida-mcp) — Hex-Rays 官方 IDA MCP 服务器。 **[1,196 星标]** · 精选：[Hex-Rays IDA MCP](https://awesomerea.org/zh/resources/hex-rays-ida-mcp/)
-- [ghidraninja/ghidra\_scripts](https://github.com/ghidraninja/ghidra_scripts) — 适用于 Ghidra 软件逆向工程套件的脚本。 **[1,177 星标]**
+- [ghidraninja/ghidra\_scripts](https://github.com/ghidraninja/ghidra_scripts) — 适用于 Ghidra 软件逆向工程套件的脚本。 **[1,177 星标]** · 精选：[Ghidra Ninja Ghidra 脚本合集](https://awesomerea.org/zh/resources/ghidra-ninja-scripts/)
 - [bitdefender/bddisasm](https://github.com/bitdefender/bddisasm) — bddisasm 是快速、轻量的 x86/x64 指令解码器。项目还提供快速、基础的 x86/x64 指令模拟器，专门用于检测类似 shellcode 的行为。 **[1,089 星标]** · 精选：[bddisasm x86/x64 指令解码库](https://awesomerea.org/zh/resources/bddisasm/)
 - [wisk/medusa](https://github.com/wisk/medusa) — 开源交互式反汇编器。 **[1,089 星标]**
 - [Fadi002/de4py](https://github.com/Fadi002/de4py) — 全面的 AI 驱动 Python 逆向工程工具包。 **[1,009 星标]** · 精选：[de4py Python 反混淆与分析工具包](https://awesomerea.org/zh/resources/de4py/)
