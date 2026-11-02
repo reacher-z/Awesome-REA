@@ -77,7 +77,7 @@
 - [rocky/python-decompile3](https://github.com/rocky/python-decompile3) — 适用于 Python 3.7–3.8 的反编译器，从 uncompyle6 精简而来，以便重构并着手修复一些长期存在的问题。 **[1,275 星标]**
 - [OpenStick/OpenStick](https://github.com/OpenStick/OpenStick) — 对基于 msm8916 的 4G 调制解调器进行逆向工程。 **[1,192 星标]**
 - [Caho1/open-claude-ui](https://github.com/Caho1/open-claude-ui) — 基于 REA 深度拆解并高保真还原 Claude 官方桌面端 UI。还原 30 个独立 React 组件与 8 项硬核交互物理算法，附带 3000+ 行逆向分析手册。 **[1,185 星标]** · 精选：[Open Claude UI：基于 REA 调查的界面参考组件](https://awesomerea.org/zh/resources/open-claude-ui-case/)
-- [kpwn/iOSRE](https://github.com/kpwn/iOSRE) — iOS 逆向工程。 **[1,183 星标]**
+- [kpwn/iOSRE](https://github.com/kpwn/iOSRE) — iOS 逆向工程。 **[1,183 星标]** · 精选：[iOSRE：iOS 逆向工程参考资料](https://awesomerea.org/zh/resources/kpwn-iosre/)
 - [mrphrazer/reverser\_ai](https://github.com/mrphrazer/reverser_ai) — 在消费级硬件上使用本地大语言模型（LLM），提供自动化逆向工程辅助。 **[1,158 星标]** · 精选：[ReverserAI：本地大模型函数命名 Binary Ninja 插件](https://awesomerea.org/zh/resources/reverser-ai/)
 - [toniebox-reverse-engineering/teddycloud](https://github.com/toniebox-reverse-engineering/teddycloud) — teddyCloud 是 Boxine Cloud 的开源服务器替代实现。 **[1,072 星标]** · 精选：[TeddyCloud：可自托管的 Toniebox 云端替代服务器](https://awesomerea.org/zh/resources/teddycloud-toniebox-server-case/)
 - [neuroradiology/InsideReCaptcha](https://github.com/neuroradiology/InsideReCaptcha) — 逆向分析新的“无验证码”ReCaptcha 系统…… **[1,051 星标]**
