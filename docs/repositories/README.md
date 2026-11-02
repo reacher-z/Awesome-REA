@@ -15,7 +15,7 @@ Publication date: **2026-10-20 UTC**.
 | [Apps · Android](android.md) | 479 | 45 |
 | [Apps · Managed code](managed-code.md) | 135 | 5 |
 | [Native binaries](native-analysis.md) | 846 | 102 |
-| [Runtime and debugging](dynamic-analysis.md) | 151 | 29 |
+| [Runtime and debugging](dynamic-analysis.md) | 151 | 30 |
 | [Firmware](firmware.md) | 226 | 26 |
 | [Protocols](protocol-analysis.md) | 112 | 11 |
 | [General tools and collections](reverse-engineering.md) | 660 | 75 |
