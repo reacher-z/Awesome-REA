@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**847 个仓库** · 2026-10-20 UTC
+**848 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -113,6 +113,7 @@
 - [symgraph/GhidrAssist](https://github.com/symgraph/GhidrAssist) — 为 Ghidra 提供 AI 逆向工程辅助的 LLM 扩展。 **[760 星标]** · 精选：[GhidrAssist Ghidra 大模型辅助分析扩展](https://awesomerea.org/zh/resources/ghidrassist/)
 - [binsync/binsync](https://github.com/binsync/binsync) — 基于 Git 的逆向工程插件，支持跨反编译器协作。 **[752 星标]** · 精选：[BinSync 协同逆向插件](https://awesomerea.org/zh/resources/binsync/)
 - [HexHive/retrowrite](https://github.com/HexHive/retrowrite) — RetroWrite：通过二进制重写将编译器处理流程应用于现有程序。 **[751 星标]** · 论文：[RetroWrite：为模糊测试与内存检测静态插桩商用现成二进制](https://awesomerea.org/zh/papers/paper-retrowrite/) · 精选：[RetroWrite 静态二进制改写框架](https://awesomerea.org/zh/resources/retrowrite/)
+- [pyinstxtractor/pyinstxtractor-ng](https://github.com/pyinstxtractor/pyinstxtractor-ng) — 新一代 PyInstaller 提取工具。 **[741 星标]** · 精选：[pyinstxtractor-ng 新一代 PyInstaller 程序提取工具](https://awesomerea.org/zh/resources/pyinstxtractor-ng/)
 - [radareorg/awesome-radare2](https://github.com/radareorg/awesome-radare2) — 精选基于 Radare2 的优质项目、文章及其他资料列表。 **[739 星标]**
 - [larkmjc/rv8](https://github.com/larkmjc/rv8) — 面向 x86-64 的 RISC-V 模拟器。 **[727 星标]**
 - [0xb0bb/pwndra](https://github.com/0xb0bb/pwndra) — Ghidra 的 pwn/CTF 相关实用工具合集。 **[710 星标]**
