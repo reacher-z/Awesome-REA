@@ -39,6 +39,14 @@ class LocalShortlistTests(unittest.TestCase):
                      '<p id="shortlist-dialog-status" class="data-copy-status" role="status" aria-live="polite" aria-atomic="true"></p>'):
             self.assertIn(live, HTML)
 
+    def test_a_hidden_shortlist_button_leaves_the_layout_control_right_aligned(self):
+        # [hidden] removes the button from layout but not from the sibling combinator, so the margin reset must
+        # apply only while the button shows; otherwise an empty shortlist pulls Layout next to the tabs.
+        css = (ROOT / 'site/styles.css').read_text(encoding='utf-8')
+        self.assertIn('.shortlist-open:not([hidden])+.layout-control{margin-left:0}', css)
+        self.assertNotRegex(css, r'\.shortlist-open\+\.layout-control')
+        self.assertRegex(css, r'(?m)^\.layout-control\{[^}]*margin-left:auto')
+
     def test_every_shortlist_string_is_bilingual_and_prerendered(self):
         strings = _ui_strings(APP)
         keys = {key for key in strings['en'] if key.startswith('shortlist')}
