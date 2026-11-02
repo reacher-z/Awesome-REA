@@ -366,6 +366,17 @@ class SurveyTests(unittest.TestCase):
                 self.assertEqual(byline, f'<span>{version} {document["version"]}</span><span><time datetime="{document["date"]}">'
                                          f'{document["date"]}</time></span><span>{author}</span>')
 
+    def test_header_github_link_keeps_its_name_when_the_label_is_hidden(self):
+        # Between 521 and 900 px the header hides the "GitHub" text and the icon is aria-hidden, so the link needs
+        # its own name; it opens in a new tab like the other page headers.
+        document, papers, resources = fixture()
+        _, files = self.render(document, papers, resources)
+        for path in ('survey/index.html', 'zh/survey/index.html'):
+            with self.subTest(path=path):
+                link = re.search(r'<a class="github-link"[^>]*>', files[path])[0]
+                self.assertIn('aria-label="GitHub"', link)
+                self.assertIn('target="_blank" rel="noopener"', link)
+
     def test_survey_remains_an_editorial_article_not_a_scholarly_publication(self):
         document, papers, resources = fixture()
         _, files = self.render(document, papers, resources)
