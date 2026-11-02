@@ -7961,5 +7961,15 @@
       "样本在 vm2 中运行，默认超时 10 秒；--dangerous-vm 会改用 Node 的 vm 模块，README 称该沙箱可被突破。--download 会向样本访问的 URL 发出真实请求，除非网络已隔离，否则不要启用。README 建议在临时 Docker 容器中运行以进一步隔离；integrations/docker/Dockerfile 基于 node:8-alpine，REST API 服务器要求运行用户能够启动 Docker 容器。",
       "模拟本身并不完整：遇到尚未支持的 ActiveX 对象或方法时，分析会停止，直到有人实现它们；带有环境或日期检查的样本可能不表现出任何行为。MIT 许可；decoder.c 保留其作者的声明。本次审阅未安装或运行任何内容，也未分析任何样本；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "usb-rea": {
+    "name": "usb-rea：USB 设备协议推断命令行工具与 MCP 服务器",
+    "requirements": [
+      "需要 Python 3.10+，依赖 pyusb 与 MCP SDK；0.7.7 版（2026-11-01 发布）已发布到 PyPI。实时抓包需要 Linux 的 usbmon 加 dumpcap 或 tshark，或 Windows 上的 USBPcap；离线分析读取 pcap 或 pcapng 文件，其中各项操作需带时间戳标记，或按顺序列出且每次点击之间留有停顿。设备及其厂商应用由使用者自备，README 称该工具只分析使用者自有设备的流量。",
+      "README 将项目标为 alpha 阶段，并逐项列出功能局限，其中包括模式只能占一个字节、32 位读数不按有符号数处理、握手令牌必须原样复制，以及图像流至少需要三帧。通过 replay 命令或 MCP 工具向硬件发送数据包需要明确确认。",
+      "CI 在 Python 3.10、3.12 和 3.13 上运行 pytest，其中包括用 tshark 检查生成的解析器。docs/VALIDATION.md 使用的基准包括合成设备、依据 liquidctl 的 Kraken X 与 Hydro H100i Platinum 驱动及 rivalcfg 的 Rival 100 驱动合成的抓包，以及按需下载的两个 Wireshark 示例抓包；仓库还保存了一份用户分享的 ASUS TUF Gaming LC III LCD 抓包，已裁剪并将图像数据清零。模拟 USB 设备测试和真实硬件案例仍是路线图上的未完成项。",
+      "依 LICENSE 与 pyproject.toml 采用 MIT 许可。",
+      "README 把名称解释为“Reverse Engineer any USB gadget”（逆向任意 USB 设备），未提及 REA 项目。"
+    ]
   }
 }

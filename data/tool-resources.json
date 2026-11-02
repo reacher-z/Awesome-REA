@@ -24903,5 +24903,47 @@
       "https://github.com/CapacitorSet/box-js/blob/f4bb9942f73e1b6eede149103fa074e0d408a6a7/LICENSE",
       "https://www.npmjs.com/package/box-js/v/1.9.29"
     ]
+  },
+  {
+    "id": "usb-rea",
+    "name": "usb-rea",
+    "url": "https://github.com/emirmrkaljevic/usb-rea",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Python CLI and stdio MCP server for inferring the USB protocol of a device whose only control software is a vendor app. While the user clicks through the app, it captures traffic with usbmon or USBPcap, takes a label for each action, diffs the packets per action and infers message layouts: constant bytes, rolling counters, scaled 8- to 32-bit values, lookup tables, packed bit fields and sum, XOR or CRC checksums. It also decodes device replies, handshakes with session tokens and image streams sent to device screens, links each inferred field to Wireshark frame numbers in a report, and generates a pyusb driver and a Wireshark Lua dissector.",
+    "description_zh": "Python 命令行工具与 stdio MCP 服务器，用于推断只配有厂商应用的 USB 设备所用的协议。使用者在厂商应用中逐项操作时，它通过 usbmon 或 USBPcap 抓取流量，为每次操作记录标签，按操作比对数据包并推断消息格式：固定字节、滚动计数器、带缩放的 8 至 32 位数值、查找表、打包位字段，以及求和、异或或 CRC 校验。它还能解码设备回复、带会话令牌的握手和发往设备屏幕的图像流，在报告中把每个推断出的字段关联到 Wireshark 帧号，并生成 pyusb 驱动和 Wireshark Lua 解析器。",
+    "evidence_url": "https://github.com/emirmrkaljevic/usb-rea/blob/3b77ccbe3b2c87e344a507937ac3c4a1b2a35eb1/README.md",
+    "verified_at": "2026-11-02",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.10+, with pyusb and the MCP SDK as dependencies; version 0.7.7 (released 2026-11-01) is on PyPI. Live capture needs Linux usbmon with dumpcap or tshark, or USBPcap on Windows; offline analysis reads pcap or pcapng files whose actions are marked with timestamps or listed in order with a pause between clicks. The user supplies the device and its vendor app, and the README says the tool only analyzes traffic of devices the user owns.",
+      "The README marks the project alpha and lists limits per feature, among them one-byte modes, unsigned 32-bit readings, handshake tokens that must be copied verbatim and image streams of at least three frames. Sending packets to hardware through the replay command or MCP tool requires explicit confirmation.",
+      "CI runs pytest on Python 3.10, 3.12 and 3.13, including tshark checks of the generated dissectors. docs/VALIDATION.md uses synthetic devices, captures synthesized from liquidctl's Kraken X and Hydro H100i Platinum drivers and rivalcfg's Rival 100 driver as ground truth, and two Wireshark sample captures downloaded on demand; one user-shared ASUS TUF Gaming LC III LCD capture is stored trimmed, with its image data zeroed. Emulated-gadget tests and real-hardware case studies remain open roadmap items.",
+      "MIT per LICENSE and pyproject.toml.",
+      "The README expands the name as “Reverse Engineer any USB gadget” and does not mention the REA project."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "testing",
+      "license",
+      "attribution"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/emirmrkaljevic/usb-rea/blob/3b77ccbe3b2c87e344a507937ac3c4a1b2a35eb1/docs/VALIDATION.md",
+      "https://github.com/emirmrkaljevic/usb-rea/blob/3b77ccbe3b2c87e344a507937ac3c4a1b2a35eb1/docs/case-study-hydro-platinum.md",
+      "https://github.com/emirmrkaljevic/usb-rea/blob/3b77ccbe3b2c87e344a507937ac3c4a1b2a35eb1/tests/data/SOURCES.md",
+      "https://github.com/emirmrkaljevic/usb-rea/blob/3b77ccbe3b2c87e344a507937ac3c4a1b2a35eb1/.github/workflows/ci.yml",
+      "https://github.com/emirmrkaljevic/usb-rea/blob/3b77ccbe3b2c87e344a507937ac3c4a1b2a35eb1/src/usb_rea/capture.py",
+      "https://github.com/emirmrkaljevic/usb-rea/blob/3b77ccbe3b2c87e344a507937ac3c4a1b2a35eb1/src/usb_rea/replay.py",
+      "https://github.com/emirmrkaljevic/usb-rea/blob/3b77ccbe3b2c87e344a507937ac3c4a1b2a35eb1/pyproject.toml",
+      "https://github.com/emirmrkaljevic/usb-rea/blob/3b77ccbe3b2c87e344a507937ac3c4a1b2a35eb1/LICENSE",
+      "https://github.com/emirmrkaljevic/usb-rea/releases/tag/v0.7.7",
+      "https://pypi.org/project/usb-rea/0.7.7/"
+    ]
   }
 ]
