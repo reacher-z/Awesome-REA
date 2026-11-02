@@ -6360,5 +6360,15 @@
       "README 的支持列表只列出 AArch64（SVC，HVC 标为开发中）和 x64（SYSCALL）上的 Linux 系统调用 API；源码中的 AArch32 Linux 与 macOS 工厂没有说明支持状态。代理跟踪器无法跟随子进程或多个进程，主机端独立跟踪器标为待办。生成覆盖率需要目标进程可写的输出路径。CI 在 Node 16 上运行针对 Linux AArch32 与 arm64 工厂的 Mocha 测试；没有公开设备上的测试结果。仅用于分析者有权检查的软件。",
       "package.json 与 npm 元数据声明 GPL-3.0-only，但 LICENSE 文件是 x64dbg 修改过的 GPL-3.0 文本，其中新增的例外条款针对 x64dbg 插件而非本项目，因此 GitHub 无法识别其许可证。README 还推广另行提供的商业版 Dexcalibur Pro。所审来源未确立与 REA 的关联；本次核查未安装或运行任何内容。"
     ]
+  },
+  "de4js": {
+    "name": "de4js JavaScript 反混淆与解包工具",
+    "requirements": [
+      "仓库已归档。最后一个版本 v1.12.0 发布于 2021-03-28；所审阅的 master 提交日期为 2021-11-12，此后只增加了依赖更新，以及对选项值转换为布尔值方式的修复。README 指出 Obfuscator.IO 始终在更新，包括本工具在内的自动化工具通常跟不上其最新版本。审阅时主页 lelinhtinh.github.io/de4js 经重定向后仍可使用该应用。",
+      "使用托管页面无需安装。本地运行可用 docker-compose，或使用 Ruby 2.1+、Bundler 和 GitHub Pages 的 Jekyll gem，地址为 localhost:4000/de4js/；npm run build 还需要 workbox-cli 来生成离线用的 service worker。Wise 解包器从 NotSoWise git 子模块载入，须一并检出该子模块。",
+      "输入可以是粘贴的代码、打开的文件或从 URL 获取的脚本。Eval、JSFuck、Array、_Number、Obfuscator.IO 和 AAencode 解码器以及表达式计算选项，会在 Web Worker 中用 eval 执行输入的全部或部分内容，因此不可信代码会在浏览器的 worker 环境中运行。JS Nice 用户脚本通过未加密的 HTTP 把代码发送到 jsnice.org，且无法离线使用。",
+      "package.json 未定义测试，仓库也没有自动化测试或 CI。解码能否成功取决于混淆工具及其版本，因此需要阅读输出结果加以核对。",
+      "采用 MIT 许可；随附的 js-beautify、highlight.js、clipboard.js、math.js、Workbox、magic-check 代码以及 AAencode 和 JJencode 解码器保留各自的声明。所审来源未提及 REA 的使用，本收录未对任何代码进行反混淆。"
+    ]
   }
 }
