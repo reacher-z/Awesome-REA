@@ -30,7 +30,7 @@
 - [iGio90/Dwarf](https://github.com/iGio90/Dwarf) — 基于 PyQt5 和 Frida 构建、功能全面的多架构/多操作系统调试器。 **[1,321 星标]** · 精选：[Dwarf 基于 Frida 的多平台调试器](https://awesomerea.org/zh/resources/dwarf-debugger/)
 - [LING71671/open-reverselab](https://github.com/LING71671/open-reverselab) — 面向 Ghidra、Frida、x64dbg 和 Rizin 的开源 AI 逆向工程智能体平台与 MCP 服务器，支持自动化 PE/APK/二进制分析、CTF 与恶意软件研究，提供 100 多个 MCP 工具和包含 194 篇可运行内容的知识库。 **[1,265 星标]**
 - [yazgx97/frida-ios-hook](https://github.com/yazgx97/frida-ios-hook) — 帮助你轻松跟踪 iOS 平台上的类和函数，并修改方法返回值的工具。 **[1,191 星标]**
-- [GJDuck/e9patch](https://github.com/GJDuck/e9patch) — 功能强大的静态二进制重写工具。 **[1,156 星标]** · 精选：[E9Patch 静态二进制重写工具](https://awesomerea.org/zh/resources/e9patch/)
+- [GJDuck/e9patch](https://github.com/GJDuck/e9patch) — 功能强大的静态二进制重写工具。 **[1,156 星标]** · 论文：[无需控制流恢复的二进制重写](https://awesomerea.org/zh/papers/paper-e9patch/) · 精选：[E9Patch 静态二进制重写工具](https://awesomerea.org/zh/resources/e9patch/)
 - [QQBackup/qq-win-db-key](https://github.com/QQBackup/qq-win-db-key) — 全平台 QQ 聊天数据库解密。 **[1,103 星标]**
 - [frida/frida-gum](https://github.com/frida/frida-gum) — 以 C 编写的跨平台插桩与内省库。 **[1,032 星标]**
 - [JLospinoso/gargoyle](https://github.com/JLospinoso/gargoyle) — 历史性的 Windows 时序内存状态研究产物，用于研究有时间边界的内存观测、验证局限和防御可见性。 **[916 星标]**

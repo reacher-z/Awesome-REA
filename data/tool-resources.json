@@ -9650,7 +9650,7 @@
       "binary"
     ],
     "description_en": "Static binary rewriter for x86-64 Linux ELF executables and shared objects that inserts instrumentation without control-flow recovery and writes a drop-in replacement binary, following the PLDI 2020 paper Binary Rewriting without Control Flow Recovery. The e9tool front end selects instructions with a matching language over disassembly attributes and patches them with built-in trampolines, calls into C or C++ functions compiled with e9compile.sh, or hand-written plugin trampolines; the e9patch back end accepts JSON-RPC commands so other tools can drive it. Optional modes add heuristic control-flow recovery for faster rewritten binaries or SIGILL-based fallbacks for full patch coverage.",
-    "description_zh": "面向 x86-64 Linux ELF 可执行文件和共享库的静态二进制重写工具，无需恢复控制流即可插入插桩代码，并生成可直接替换原文件的二进制，方法源自 PLDI 2020 论文 Binary Rewriting without Control Flow Recovery。前端 e9tool 用一套基于反汇编属性的匹配语言选择指令，再通过内置跳板、调用以 e9compile.sh 编译的 C/C++ 函数或手写的插件跳板进行修补；后端 e9patch 接收 JSON-RPC 命令，便于其他工具调用。可选模式包括借助启发式控制流恢复获得更快的重写结果，或借助 SIGILL 回退实现完全的修补覆盖。",
+    "description_zh": "面向 x86-64 Linux ELF 可执行文件和共享库的静态二进制重写工具，无需恢复控制流即可插入插桩代码，并生成可直接替换原文件的二进制，方法源自 PLDI 2020 论文《无需控制流恢复的二进制重写》。前端 e9tool 用一套基于反汇编属性的匹配语言选择指令，再通过内置跳板、调用以 e9compile.sh 编译的 C/C++ 函数或手写的插件跳板进行修补；后端 e9patch 接收 JSON-RPC 命令，便于其他工具调用。可选模式包括借助启发式控制流恢复获得更快的重写结果，或借助 SIGILL 回退实现完全的修补覆盖。",
     "evidence_url": "https://github.com/GJDuck/e9patch/blob/682ab1f7f0480aa45edf1fd94457e5ee2dd01043/README.md",
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
