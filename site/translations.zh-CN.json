@@ -5934,5 +5934,15 @@
       "要调试的应用、进程和设备由使用者自备；仓库只包含 Dwarf 自身的代码、代理、图标和示例。Android 会话依赖 adb 和运行 frida-server 的设备：设备栏可从 Frida 的 GitHub 发布页下载最新的 frida-server，并在已 root 的设备上通过 su 安装，对未检测到 root 权限的设备则加以标注。iOS 会话使用通过 USB 连接的 Frida 设备，本机会话可启动指定路径的程序或附加到 PID，远程会话使用 Frida 的远程设备。",
       "采用 GPL-3.0 许可（setup.py 标注为 GPLv3+）。README 列出 JavaTraceView 的两个已知显示问题，dwarf-strace 只支持 arm64 进程。README 称该工具面向逆向工程师、破解者和安全分析人员；本条目只涉及用于分析的调试和跟踪。本次未安装或运行任何内容，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "fwanalyzer": {
+    "name": "FwAnalyzer 固件文件系统规则检查工具",
+    "requirements": [
+      "审阅时最新版本为 1.4.4，发布于 2022-10-24，未附带二进制文件；1.4.1 至 1.4.3 版附有预编译的 Linux 版 fwanalyzer。所审阅的 master 提交日期为 2023-10-08，仅在该版本之后修正拼写错误，也是最新提交；仓库未归档，Makefile 中的 VERSION 仍为 1.4.1。",
+      "需用 Go 从源码构建（go.mod 声明 Go 1.13，Makefile 默认 GOOS 为 linux），执行 make deps 和 make 后得到 build/fwanalyzer。各文件系统后端都调用外部程序：ext 镜像用 e2tools 的 e2ls 和 e2cp，FAT 用 mtools 的 mdir 和 mcopy，另需 unsquashfs、ubi_reader 的 ubireader_list_files 以及 cpio。读取 SELinux 与 capability 信息需要作者打过补丁的 e2tools 和 squashfs-tools 分支，处理 ext 中的符号链接需要 e2tools 的 link_support 分支；Dockerfile 在 golang:1.13 镜像上列出了完整依赖。",
+      "输入为使用者已有的文件系统镜像或已解包目录；FwAnalyzer 本身不解包固件包。check.py 需要一个把配置映射到镜像的解包脚本，附带的 Android OTA 解包脚本依赖独立的 extract_android_ota_payload 与 mkbootimg_tools 项目。检查结果完全取决于使用者的配置：devices 目录提供 Android user 构建、Android 属性和通用 Linux 根文件系统的示例规则，报告列出的是违反规则的文件，而非经过评估的漏洞。",
+      "make test 运行 Go 单元测试，集成测试目标运行为 Python 2 编写的 test/test.py，所用夹具均位于 test/ 中：小型 ext2、SquashFS、UBIFS、VFAT 和 cpio 镜像，ARM32、ARM64 与 x86-64 的 hello-world ELF 构建，以及预编译的 e2cp 和 unsquashfs 辅助程序；make testsetup 会用到 sudo setcap。CircleCI 在 Docker 镜像中构建并测试，GitHub 工作流仅用 golangci-lint v1.29 做代码检查。",
+      "采用 Apache-2.0 许可，版权属 Cruise LLC；外部文件系统工具各自适用其许可。所审来源未提及 REA 的使用，本收录未构建或运行该工具，也未分析任何镜像。"
+    ]
   }
 }
