@@ -54,7 +54,7 @@
 - [P4nda0s/reverse-skills](https://github.com/P4nda0s/reverse-skills) — 面向 Claude Code 的逆向工程技能插件。 **[2,285 星标]**
 - [dgiese/dustcloud](https://github.com/dgiese/dustcloud) — 小米智能家居设备逆向工程与破解研究。 **[2,282 星标]**
 - [zeldaret/botw](https://github.com/zeldaret/botw) — 《塞尔达传说：旷野之息》（Switch 1.5.0）的反编译代码。 **[2,236 星标]** · 精选：[《旷野之息》：Switch 主程序的逐函数一致性反编译](https://awesomerea.org/zh/resources/botw-decomp-case/)
-- [michalmalik/linux-re-101](https://github.com/michalmalik/linux-re-101) — Linux 逆向工程资源合集。 **[2,083 星标]**
+- [michalmalik/linux-re-101](https://github.com/michalmalik/linux-re-101) — Linux 逆向工程资源合集。 **[2,083 星标]** · 精选：[linux-re-101 Linux 逆向工程阅读清单](https://awesomerea.org/zh/resources/linux-re-101/)
 - [nmikhailov/Validity90](https://github.com/nmikhailov/Validity90) — 逆向分析 Validity/Synaptics 指纹读取器协议，涵盖 138a:0090、138a:0094、138a:0097、06cb:0081 和 06cb:009a。 **[1,879 星标]**
 - [rootkit-io/awesome-malware-development](https://github.com/rootkit-io/awesome-malware-development) — 精选恶意软件开发、逆向工程与防御性安全研究资源。 **[1,855 星标]**
 - [KEV0143/Direct-memory-access-CS2-DMA](https://github.com/KEV0143/Direct-memory-access-CS2-DMA) — 面向 CS2 的底层直接内存访问（DMA）框架，用于内存采集、实体状态解析、同步以及 PCIe/逆向工程研究。 **[1,851 星标]**
