@@ -20015,11 +20015,20 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
-      "The reviewed main commit follows release v1.4.0 (2026-09-25), the version pyproject.toml and both plugin manifests declare. README requires IDA Pro 9.0+ with the Hex-Rays decompiler or Binary Ninja in UI mode, and Python 3.10+, while pyproject.toml asks for 3.11+; ida-plugin.json lists IDA 9.0 to 9.2 on Windows, Linux and macOS. Install scripts piped from raw GitHub detect the hosts, and Windows also needs the latest Visual C++ 2015–2022 x64 redistributable because Rikugan uses IDA’s bundled PySide6/Shiboken.",
-      "At least one model provider is required: the code ships Anthropic, OpenAI, Gemini, MiniMax, Codex and local Ollama providers plus any OpenAI-compatible endpoint, and README recommends a Claude plan with OAuth over API keys. Tool results from the open database go to the chosen provider; profiles limit which data the model may read and which tools it may use. Rikugan can also connect to MCP servers and reuse skills from Claude Code and Codex.",
-      "README says the agent asks permission before running scripts and never executes the target binary. Plan mode, mid-run questions and message queuing run inside the host, and 12 built-in skills can be extended with custom ones. Natural-language patching (/modify) and the Binary Ninja /deobfuscation skill are marked experimental.",
-      "CI runs Ruff format and lint checks, mypy on the core and provider modules, pytest over tests/ with an IDA mock, and a desloppify score-regression gate; the release workflow checks that the tag matches plugin.json. The repository publishes no benchmark; a Synacktiv article of 2026-10-13 compared it with another Binary Ninja agent on two CREBench tasks and attributed most of the gap to a prompt difference. This collection reviewed source and documentation without running the plugin or any model.",
-      "MIT per LICENSE and both plugin manifests; IDA Pro, Hex-Rays, Binary Ninja and model services keep their own licences and terms. README describes the project as a work in progress vibecoded with Claude Code, with the first version built in a single night, and the repository carries an AGENTS.md developer guide. The reviewed sources establish no REA connection."
+      "README requires IDA Pro 9.0+ with the Hex-Rays decompiler or Binary Ninja in UI mode, and Python 3.10+, while pyproject.toml asks for 3.11+; ida-plugin.json lists IDA 9.0 to 9.2 on Windows, Linux and macOS. Windows also needs the latest Visual C++ 2015–2022 x64 redistributable, and the install scripts are piped from raw GitHub.",
+      "Needs at least one model provider: Anthropic, OpenAI, Gemini, MiniMax, Codex, local Ollama or any OpenAI-compatible endpoint. Tool results from the open database go to the chosen provider; profiles limit which data the model may read and which tools it may use.",
+      "Version 1.4.0 (released 2026-09-25) at review. README says the agent asks permission before running scripts and never executes the target binary; natural-language patching (/modify) and the Binary Ninja /deobfuscation skill are marked experimental.",
+      "CI runs Ruff format and lint checks, mypy on the core and provider modules, pytest with an IDA mock and a desloppify score-regression gate. The repository publishes no benchmark; a Synacktiv article of 2026-10-13 compared it with another Binary Ninja agent on two CREBench tasks and attributed most of the gap to a prompt difference.",
+      "MIT per LICENSE and both plugin manifests; IDA Pro, Hex-Rays, Binary Ninja and model services keep their own licences and terms.",
+      "README calls the project a work in progress whose first version was built in a single night, and the repository carries an AGENTS.md developer guide."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "testing",
+      "license",
+      "attribution"
     ],
     "additional_evidence_urls": [
       "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/LICENSE",
