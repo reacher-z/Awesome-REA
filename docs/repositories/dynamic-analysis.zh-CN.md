@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/dynamic-analysis/) · [English](dynamic-analysis.md)
 
-**150 个仓库** · 2026-10-20 UTC
+**151 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -27,6 +27,7 @@
 - [darbra/sperm](https://github.com/darbra/sperm) — 浏览过的精彩逆向文章汇总，值得一看。 **[1,422 星标]**
 - [CERT-Polska/drakvuf-sandbox](https://github.com/CERT-Polska/drakvuf-sandbox) — DRAKVUF Sandbox：在虚拟机监控器层进行自动化恶意软件分析的系统。 **[1,355 星标]** · 精选：[DRAKVUF Sandbox 虚拟机监控器级恶意软件分析沙箱](https://awesomerea.org/zh/resources/drakvuf-sandbox/)
 - [ansjdnakjdnajkd/iOS](https://github.com/ansjdnakjdnajkd/iOS) — 实用的 iOS 渗透测试工具。 **[1,327 星标]**
+- [iGio90/Dwarf](https://github.com/iGio90/Dwarf) — 基于 PyQt5 和 Frida 构建、功能全面的多架构/多操作系统调试器。 **[1,321 星标]** · 精选：[Dwarf 基于 Frida 的多平台调试器](https://awesomerea.org/zh/resources/dwarf-debugger/)
 - [LING71671/open-reverselab](https://github.com/LING71671/open-reverselab) — 面向 Ghidra、Frida、x64dbg 和 Rizin 的开源 AI 逆向工程智能体平台与 MCP 服务器，支持自动化 PE/APK/二进制分析、CTF 与恶意软件研究，提供 100 多个 MCP 工具和包含 194 篇可运行内容的知识库。 **[1,265 星标]**
 - [yazgx97/frida-ios-hook](https://github.com/yazgx97/frida-ios-hook) — 帮助你轻松跟踪 iOS 平台上的类和函数，并修改方法返回值的工具。 **[1,191 星标]**
 - [GJDuck/e9patch](https://github.com/GJDuck/e9patch) — 功能强大的静态二进制重写工具。 **[1,156 星标]** · 精选：[E9Patch 静态二进制重写工具](https://awesomerea.org/zh/resources/e9patch/)
