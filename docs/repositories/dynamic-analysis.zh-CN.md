@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/dynamic-analysis/) · [English](dynamic-analysis.md)
 
-**149 个仓库** · 2026-10-20 UTC
+**150 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -14,6 +14,7 @@
 - [AloneMonkey/MonkeyDev](https://github.com/AloneMonkey/MonkeyDev) — 无需越狱，利用 CaptainHook Tweak、Logos Tweak 和命令行工具为 iOS 应用打补丁。 **[6,800 星标]** · 精选：[MonkeyDev iOS 应用插桩开发工具包](https://awesomerea.org/zh/resources/monkeydev/)
 - [qilingframework/qiling](https://github.com/qilingframework/qiling) — 真正支持插桩的二进制模拟框架。 **[6,139 星标]** · 精选：[Qiling](https://awesomerea.org/zh/resources/qiling/)
 - [HyperDbg/HyperDbg](https://github.com/HyperDbg/HyperDbg) — 先进的原生调试工具。 **[4,133 星标]** · 精选：[HyperDbg 虚拟化辅助调试器](https://awesomerea.org/zh/resources/hyperdbg/)
+- [kevoreilly/CAPEv2](https://github.com/kevoreilly/CAPEv2) — 恶意软件配置与载荷提取。 **[3,570 星标]** · 精选：[CAPEv2 恶意软件沙箱](https://awesomerea.org/zh/resources/capev2/)
 - [DynamoRIO/dynamorio](https://github.com/DynamoRIO/dynamorio) — 动态插桩工具平台。 **[3,181 星标]** · 精选：[DynamoRIO 动态二进制插桩框架](https://awesomerea.org/zh/resources/dynamorio/)
 - [korcankaraokcu/PINCE](https://github.com/korcankaraokcu/PINCE) — Linux 逆向工程工具。 **[3,124 星标]** · 精选：[PINCE GDB 前端与内存分析工具](https://awesomerea.org/zh/resources/pince/)
 - [m0bilesecurity/RMS-Runtime-Mobile-Security](https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security) — Runtime Mobile Security（RMS）📱🔥：功能强大的 Web 界面，帮助你在运行时操控 Android 和 iOS 应用。 **[3,111 星标]** · 精选：[Runtime Mobile Security（RMS）移动应用运行时分析界面](https://awesomerea.org/zh/resources/rms-runtime-mobile-security/)

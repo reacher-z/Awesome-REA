@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/dynamic-analysis/) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**149 repositories** · 2026-10-20 UTC
+**150 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -14,6 +14,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [AloneMonkey/MonkeyDev](https://github.com/AloneMonkey/MonkeyDev) — Patch iOS apps without jailbreaking using CaptainHook Tweak, Logos Tweak, and command-line tools. **[6,800 stars]** · Curated: [MonkeyDev](https://awesomerea.org/resources/monkeydev/)
 - [qilingframework/qiling](https://github.com/qilingframework/qiling) — A True Instrumentable Binary Emulation Framework **[6,139 stars]** · Curated: [Qiling](https://awesomerea.org/resources/qiling/)
 - [HyperDbg/HyperDbg](https://github.com/HyperDbg/HyperDbg) — State-of-the-art native debugging tools **[4,133 stars]** · Curated: [HyperDbg](https://awesomerea.org/resources/hyperdbg/)
+- [kevoreilly/CAPEv2](https://github.com/kevoreilly/CAPEv2) — Malware Configuration And Payload Extraction **[3,570 stars]** · Curated: [CAPE Sandbox (CAPEv2)](https://awesomerea.org/resources/capev2/)
 - [DynamoRIO/dynamorio](https://github.com/DynamoRIO/dynamorio) — Dynamic Instrumentation Tool Platform **[3,181 stars]** · Curated: [DynamoRIO](https://awesomerea.org/resources/dynamorio/)
 - [korcankaraokcu/PINCE](https://github.com/korcankaraokcu/PINCE) — Reverse engineering tool for Linux **[3,124 stars]** · Curated: [PINCE](https://awesomerea.org/resources/pince/)
 - [m0bilesecurity/RMS-Runtime-Mobile-Security](https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security) — Runtime Mobile Security (RMS) 📱🔥 - is a powerful web interface that helps you to manipulate Android and iOS Apps at Runtime **[3,111 stars]** · Curated: [Runtime Mobile Security (RMS)](https://awesomerea.org/resources/rms-runtime-mobile-security/)
