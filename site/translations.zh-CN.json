@@ -5854,5 +5854,13 @@
       "生成配置文件时，系统会把名为 drakshell 的小型 shellcode 代理注入 explorer.exe，用于执行准备命令。仓库包含 drakshell 及其他客户机辅助工具的源码、供完整性测试使用的 15 KB 样本 test/test.exe，以及固定版本的 DRAKVUF 和 Mandiant capa-rules 子模块。该测试套件需在需要项目凭据的 VM-runner 服务上安装沙箱，公开工作流只构建文档、工具、Web 包和 wheel，并检查 Python 代码规范。README 提醒维护沙箱并不容易，某些问题可能只在特定配置下复现；本合集仅审阅源码与文档，未安装该系统，也未分析任何样本。",
       "LICENSE 采用附加了作者澄清与例外条款的 GPL-2.0，其中包括对衍生作品的宽泛解释，并禁止与普通 GPL 软件组合，因此 GitHub 未识别出标准许可证；DRAKVUF 和 capa 规则各有其许可，Windows 客户机仍受 Microsoft 条款约束。这是在隔离客户机中运行不可信样本的防御性分析平台，本条目不描述任何规避技术。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "hexrayspytools": {
+    "name": "HexRaysPyTools 结构体重建插件",
+    "requirements": [
+      "自 2020-02-15 以来没有新的提交，也没有发布版本；ida_6_8 和 ida_7_2 标签对应较早的代码。README 称支持使用 Python 2 或 3 的 IDA Pro 7.x，未提及之后的 IDA 版本；README 还指出 IDA 7.4 已官方实现其结构体交叉引用功能（Shift+X），称 Guessing Allocation 是非常初步的功能，并将 API 标为尚在建设中。",
+      "需要带 Hex-Rays 反编译器的 IDA Pro。安装时将 HexRaysPyTools.py 和 HexRaysPyTools 目录复制到 IDA 的 plugins 目录；配置位于 IDADIR\\cfg\\HexRaysPyTools.cfg，默认会把反编译时收集的交叉引用保存到数据库中（store_xrefs）。插件作用于分析人员自己的 IDA 数据库和类型库。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证，因此未明确授予任何复用条款。未确立与 REA 的关联，本次审阅未安装或运行任何内容。"
+    ]
   }
 }
