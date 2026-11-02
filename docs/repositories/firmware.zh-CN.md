@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/firmware/) · [English](firmware.md)
 
-**225 个仓库** · 2026-10-20 UTC
+**226 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -24,6 +24,7 @@
 - [FirmWire/FirmWire](https://github.com/FirmWire/FirmWire) — FirmWire 是一个全系统基带固件仿真平台，用于对智能手机基带固件进行模糊测试、调试和根因分析 **[891 星标]**
 - [sigrokproject/pulseview](https://github.com/sigrokproject/pulseview) — 官方仓库 git<span>:</span>//sigrok.org/pulseview 的只读镜像。欢迎提交拉取请求。请在 sigrok.org/bugzilla 提交缺陷报告。 **[805 星标]** · 精选：[PulseView 信号与协议分析工具](https://awesomerea.org/zh/resources/pulseview/)
 - [airbus-seclab/cpu\_rec](https://github.com/airbus-seclab/cpu_rec) — 识别任意二进制文件中的 CPU 指令。 **[757 星标]** · 精选：[cpu\_rec CPU 指令集统计识别工具](https://awesomerea.org/zh/resources/cpu-rec/)
+- [maddiestone/IDAPythonEmbeddedToolkit](https://github.com/maddiestone/IDAPythonEmbeddedToolkit) — IDA Python Embedded Toolkit：用于自动分析嵌入式设备固件的 IDAPython 脚本 **[690 星标]** · 精选：[IDAPython Embedded Toolkit 嵌入式固件分析脚本集](https://awesomerea.org/zh/resources/idapython-embedded-toolkit/)
 - [quarkslab/binbloom](https://github.com/quarkslab/binbloom) — 原始二进制固件分析软件。 **[586 星标]** · 精选：[binbloom 原始固件端序与基址分析工具](https://awesomerea.org/zh/resources/binbloom/)
 - [avatartwo/avatar2](https://github.com/avatartwo/avatar2) — avatar² 的 Python 核心。 **[579 星标]** · 精选：[avatar² 多目标固件动态分析编排框架](https://awesomerea.org/zh/resources/avatar2/)
 - [cruise-automation/fwanalyzer](https://github.com/cruise-automation/fwanalyzer) — 用于安全分析文件系统镜像的工具。 **[516 星标]** · 精选：[FwAnalyzer 固件文件系统规则检查工具](https://awesomerea.org/zh/resources/fwanalyzer/)
