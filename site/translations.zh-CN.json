@@ -5590,5 +5590,14 @@
       "审阅时 cargo test 包含 88 个 Rust 单元测试，涵盖已捕获数据包的解码、AES 认证已知答案向量、基于模拟传输层的认证与同步以及移植的指标函数；仓库未提交 CI 工作流。文档中的夜间心率、RMSSD 和 SpO2 比值等生理数据来自作者自己的戒指；本次审阅既未运行测试，也未运行客户端。",
       "采用 MIT 许可（见 LICENSE 和 Cargo 元数据）。Oura 的应用、原生库、模型、固件、反编译输出、抓包数据和密钥均未纳入仓库；仓库中关于固件更新、模型解密和应用修补的笔记，本条目有意不予链接或转述。仓库提交了面向编程智能体的 CLAUDE.md 指南；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "pe-sieve": {
+    "name": "PE-sieve 进程内存植入扫描工具",
+    "requirements": [
+      "审阅时最新版本为 v0.4.1.1，发布于 2025-09-13，提供 32 位和 64 位 EXE 与 DLL；README 还列出 Chocolatey 和 Scoop 软件包。所审阅的 master 提交（2026-06-06）标注版本 0.4.1.5，因此固定的源码可能包含尚未发布的改动。PE-sieve 在 Windows 上运行，每次按 PID 扫描一个进程；扫描多个进程或整个系统需使用独立的 HollowsHunter。",
+      "从源码构建使用 CMake 3.12+（或 MinGW 构建脚本），需递归克隆 libpeconv、paramkit 和 sig_finder 子模块，并可选择构建 EXE、DLL 或静态库。仓库中的 Python 绑定以及独立的 Go 和 Rust 绑定会从 PESIEVE_DIR 或当前目录加载 pe-sieve32.dll 或 pe-sieve64.dll。可选的符号下载功能会为被扫描模块获取符号。",
+      "输入是分析者所掌控机器上正在运行的进程；README 将结果描述为供进一步分析而收集的可能恶意的内容，因此检测结果和转储文件都需要人工复核。AppVeyor 构建 x86 与 x64 的 Release 和 Debug 配置，其唯一的 CTest 检查是运行 pe-sieve -? 并确认输出版本字符串；GitHub 工作流只发布 Doxygen 文档。本次未扫描任何进程。",
+      "采用 BSD-2-Clause 许可证（LICENSE，2017-2026 @hasherezade）；各子模块保留其自身许可证。"
+    ]
   }
 }
