@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/dynamic-analysis/) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**151 repositories** · 2026-10-20 UTC
+**150 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -33,7 +33,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [GJDuck/e9patch](https://github.com/GJDuck/e9patch) — A powerful static binary rewriting tool **[1,156 stars]** · Curated: [E9Patch](https://awesomerea.org/resources/e9patch/)
 - [QQBackup/qq-win-db-key](https://github.com/QQBackup/qq-win-db-key) — Cross-platform decryption of QQ chat databases **[1,103 stars]**
 - [frida/frida-gum](https://github.com/frida/frida-gum) — Cross-platform instrumentation and introspection library written in C **[1,032 stars]**
-- [darbra/awesome-ai-reverse](https://github.com/darbra/awesome-ai-reverse) — Go all-in on AI-powered reverse engineering. **[965 stars]**
 - [JLospinoso/gargoyle](https://github.com/JLospinoso/gargoyle) — Historical Windows temporal memory-state research artifact for studying time-bound memory observations, validation limits, and defensive visibility. **[916 stars]**
 - [dyninst/dyninst](https://github.com/dyninst/dyninst) — DyninstAPI: Tools for binary instrumentation, analysis, and modification. **[838 stars]** · Curated: [Dyninst](https://awesomerea.org/resources/dyninst/)
 - [Simp1er/MobileSec](https://github.com/Simp1er/MobileSec) — Notes on interesting things I encounter while learning Android reverse engineering. **[809 stars]**
