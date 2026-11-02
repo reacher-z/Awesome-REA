@@ -6132,5 +6132,13 @@
       "部分脚本会改写数据库：define_data_as_types.py 会先取消该范围内的已有定义，覆盖其中的代码或字符串；WeddingCake_decrypt.py 会用解密后的内容覆盖加密字符串，并要求 JNI_OnLoad 已被定义和导出。WeddingCake 相关文件配合 Maddie Stone 在 Black Hat USA 2018 上关于该加壳工具的演讲；本条目只涉及将其用于分析。",
       "LICENSE 采用 MIT 许可，版权归 Maddie Stone（2017）；README 中的版权声明则写的是约翰斯·霍普金斯大学应用物理实验室，Android 文件夹的 README 和 WeddingCake 脚本另有 Google LLC 2018 的版权声明，但未给出单独的许可条款。本次未运行任何内容，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "osx-re-101": {
+    "name": "osx & ios re 101 macOS 与 iOS 逆向阅读清单",
+    "requirements": [
+      "所审阅的提交日期为 2019-12-19，也是最新提交，此前的提交历史共 69 个提交，始于 2015-07-13。所链接的资料大多针对 OS X 10.x 和 iOS 8–10 时期的系统内部机制，例如 El Capitan 内核以及 iOS 9 和 10 的越狱分析；清单的更新早于当前的 macOS 和 iOS 版本以及搭载 Apple 芯片的 Mac。2019 年 12 月的一次提交更换了部分失效和过时的链接，但本合集未检查其余链接是否仍可访问。",
+      "清单本身不提供也不需要任何目标文件；所链接的教程和 crackme 自带样本，书籍只列出书名。学习这些资料需要一台 Mac 或 iOS 设备，以及各篇文章所用的工具，例如 LLDB、Hopper，以及用于内核调试的 VMware Fusion 或 VirtualBox。",
+      "清单既收录分析教程，也收录恶意软件感染、rootkit、提权和越狱相关文章；本条目只将其作为分析工作的背景读物。仓库只有 README.md，没有许可证文件，因此清单本身未声明复用条款，所链接作品各自保留权利。本合集只审阅了 README 和提交历史，没有阅读所链接的作品；清单也未提及 AI 或 REA。"
+    ]
   }
 }
