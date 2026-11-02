@@ -39,7 +39,7 @@
 .browse-category-arrow{margin-left:auto;font-size:20px;color:var(--steel)}
 .browse-repository h2{flex:1;min-width:0;margin:0;font:700 18px/1.5 var(--sans);letter-spacing:0;overflow-wrap:anywhere}
 .browse-github-fallback{font:700 12px/22px var(--sans);text-align:center}
-.browse-text-arrow{display:inline-block;margin-left:6px;font-size:13px;color:var(--steel)}
+.browse-text-arrow{padding-left:6px;font-size:13px;color:var(--steel)}
 /* Repository cards stay compact: tighter padding and type, related entries on one labelled line, and
    stars, README and license on one plain meta line instead of a ruled footer. */
 .source-card.browse-repository{padding:14px 20px}
@@ -83,3 +83,8 @@ html[lang="zh-CN"] .source-card.browse-repository .source-card-description{max-w
 
 .browse-category-nav a{min-height:44px}
 @media(forced-colors:active){.browse-category-nav a[aria-current="page"]{forced-color-adjust:none;background:Highlight;border-color:Highlight;color:HighlightText}.browse-category-nav a[aria-current="page"]:focus-visible{outline-color:CanvasText}}
+/* On phones the kind badge moves under a resource title only when one of the title's words, with the arrow after the last,
+   cannot fit beside it (a wide "Learning resource" badge next to a long single-word name); break-word keeps min-content at that word. */
+@media(max-width:700px){.browse-main .card-heading{flex-wrap:wrap;gap:9px 11px}.browse-main .card-heading h3{flex:1 1 min-content;overflow-wrap:break-word}}
+/* Below 380 px the kind badge leaves a resource title too narrow for its last word and arrow; give the title the full width. */
+@media(max-width:380px){.browse-main .card-heading{flex-wrap:wrap;gap:9px}.browse-main .card-heading h3{flex-basis:100%}}
