@@ -8007,5 +8007,14 @@
       "仓库没有自动化测试或 CI，其 TODO 列出了用真实应用进行充分测试。",
       "依 LICENSE 采用 MIT 许可。"
     ]
+  },
+  "zygisk-il2cppdumper": {
+    "name": "Zygisk-Il2CppDumper 运行时导出 IL2CPP 元数据的 Zygisk 模块",
+    "requirements": [
+      "需要已安装 Magisk v24 或更高版本并开启 Zygisk 的 root Android 设备，以及使用者自备、采用 Unity IL2CPP 后端的应用。项目没有发布版本：模块需针对单个包名构建，可在复刻的仓库中用该包名手动运行 Build 工作流，或修改 game.h 中的 GamePackageName 后运行 Gradle 任务 :module:assembleRelease（NDK 25.2.9519653；CI 使用 Java 11），再通过 Magisk 安装。应用启动后，dump.cs 会出现在 /data/data/<package>/files/ 下。",
+      "它只生成 dump.cs；与桌面版 Il2CppDumper 不同，它不会生成虚拟程序集或反汇编器脚本。master 分支最新提交为 2023-05-22，模块版本为 v1.2.0。",
+      "仓库没有测试，唯一的 CI 工作流只在手动触发时构建模块。",
+      "依 LICENSE 采用 MIT 许可，版权行署名为 Rikka；附带的 xDL 符号查找库保留 HexHacking Team 的 MIT 声明。"
+    ]
   }
 }
