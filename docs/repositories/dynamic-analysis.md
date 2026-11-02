@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/dynamic-analysis/) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**148 repositories** · 2026-10-20 UTC
+**149 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -24,6 +24,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [illera88/Ponce](https://github.com/illera88/Ponce) — IDA 2016 plugin contest winner! Symbolic Execution just one-click away! **[1,635 stars]** · Curated: [Ponce](https://awesomerea.org/resources/ponce/)
 - [nowsecure/r2frida](https://github.com/nowsecure/r2frida) — Radare2 and Frida better together. **[1,450 stars]** · Curated: [r2frida](https://awesomerea.org/resources/r2frida/)
 - [darbra/sperm](https://github.com/darbra/sperm) — A collection of excellent reverse engineering articles I have read, well worth a look. **[1,422 stars]**
+- [CERT-Polska/drakvuf-sandbox](https://github.com/CERT-Polska/drakvuf-sandbox) — DRAKVUF Sandbox - automated hypervisor-level malware analysis system **[1,355 stars]** · Curated: [DRAKVUF Sandbox](https://awesomerea.org/resources/drakvuf-sandbox/)
 - [ansjdnakjdnajkd/iOS](https://github.com/ansjdnakjdnajkd/iOS) — Most usable tools for iOS penetration testing **[1,327 stars]**
 - [LING71671/open-reverselab](https://github.com/LING71671/open-reverselab) — Open-source AI reverse-engineering agent platform and MCP server for Ghidra, Frida, x64dbg and Rizin — automated PE/APK/binary analysis, CTF and malware research, with 100+ MCP tools and a 194-article runnable knowledge base. **[1,265 stars]**
 - [yazgx97/frida-ios-hook](https://github.com/yazgx97/frida-ios-hook) — A tool that helps you easy trace classes, functions, and modify the return values of methods on iOS platform **[1,191 stars]**

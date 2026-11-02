@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/dynamic-analysis/) · [English](dynamic-analysis.md)
 
-**148 个仓库** · 2026-10-20 UTC
+**149 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -24,6 +24,7 @@
 - [illera88/Ponce](https://github.com/illera88/Ponce) — IDA 2016 插件竞赛获奖作品！一键即可使用符号执行！ **[1,635 星标]** · 精选：[Ponce IDA 符号执行与污点分析插件](https://awesomerea.org/zh/resources/ponce/)
 - [nowsecure/r2frida](https://github.com/nowsecure/r2frida) — 让 Radare2 与 Frida 更好地协同工作。 **[1,450 星标]** · 精选：[r2frida](https://awesomerea.org/zh/resources/r2frida/)
 - [darbra/sperm](https://github.com/darbra/sperm) — 浏览过的精彩逆向文章汇总，值得一看。 **[1,422 星标]**
+- [CERT-Polska/drakvuf-sandbox](https://github.com/CERT-Polska/drakvuf-sandbox) — DRAKVUF Sandbox：在虚拟机监控器层进行自动化恶意软件分析的系统。 **[1,355 星标]** · 精选：[DRAKVUF Sandbox 虚拟机监控器级恶意软件分析沙箱](https://awesomerea.org/zh/resources/drakvuf-sandbox/)
 - [ansjdnakjdnajkd/iOS](https://github.com/ansjdnakjdnajkd/iOS) — 实用的 iOS 渗透测试工具。 **[1,327 星标]**
 - [LING71671/open-reverselab](https://github.com/LING71671/open-reverselab) — 面向 Ghidra、Frida、x64dbg 和 Rizin 的开源 AI 逆向工程智能体平台与 MCP 服务器，支持自动化 PE/APK/二进制分析、CTF 与恶意软件研究，提供 100 多个 MCP 工具和包含 194 篇可运行内容的知识库。 **[1,265 星标]**
 - [yazgx97/frida-ios-hook](https://github.com/yazgx97/frida-ios-hook) — 帮助你轻松跟踪 iOS 平台上的类和函数，并修改方法返回值的工具。 **[1,191 星标]**
