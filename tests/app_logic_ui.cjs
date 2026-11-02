@@ -77,7 +77,7 @@ function setup(query = '', {catalog, browser, extraMarkup = '', turkishLocale = 
   location.assign = next => { location.lastNavigation = String(next); };
   const responses = {catalog, browser};
   const context = {document, location, URL, URLSearchParams, console, window: {addEventListener() {}},
-    history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
+    history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }, pushState(_, __, next) { location.href = String(next); }},
     fetch: async url => {
       const body = responses[/^\/catalog(-index)?\.json$/.test(new URL(url).pathname) ? 'catalog' : 'browser'];
       return body === undefined ? {ok: false, status: 503} : {ok: true, json: async () => structuredClone(body)};
