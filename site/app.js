@@ -597,16 +597,28 @@ function renderEmptySearchActions(foundCount = state.loaded ? filtered().length 
   $("#empty-repositories-note").hidden = !showRepositories;
   if (showRepositories) button.textContent = t("emptySearchRepositoriesFor").replace("{query}", () => state.q.trim());
 }
+// Status lines change only when their text does, so revealing another page does not repeat an unchanged total.
+function setStatus(element, text) { if (element.textContent !== text) element.textContent = text; }
+// Show More (the only render with shown > 0) reports what it added in a separate polite region after its row;
+// any other render (filters, query, sort, language) clears that message.
+function announceRevealed(prefix, shown, visible, total) {
+  const status = $(`#${prefix}more-status`), added = shown ? Math.min(visible, total) - Math.min(shown, total) : 0;
+  if (added <= 0) { status.textContent = ""; return; }
+  const shownNow = Math.min(visible, total), zh = state.lang === "zh", number = value => value.toLocaleString(zh ? "zh-CN" : "en-US");
+  status.textContent = prefix ? (zh ? `又显示 ${number(added)} 个仓库，已显示 ${number(shownNow)} / ${number(total)} 个。` : `${number(added)} more ${added === 1 ? "repository" : "repositories"} shown: ${number(shownNow)} of ${number(total)}.`)
+    : (zh ? `又显示 ${added} 项资源，已显示 ${shownNow} / ${total} 项。` : `${added} more ${added === 1 ? "resource" : "resources"} shown: ${shownNow} of ${total}.`);
+}
 // Show More passes the number of cards already shown and appends only the next batch; every other change rebuilds the list.
 function render(shown = 0) {
   // A full rebuild replaces every card; appended batches keep the earlier cards and their pending requirement lists.
   if (!shown) state.pendingRequirements = [];
   const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(shown, state.visible).forEach(r => fragment.append(card(r)));
   if (shown) grid.append(fragment); else { const expanded = expandedRecords(".resource-card"); grid.replaceChildren(fragment); restoreExpanded(".resource-card", expanded); } grid.setAttribute("aria-busy", "false");
-  $("#results-status").textContent = state.lang === "zh" ? (found.length === state.records.length ? `${found.length} 项资源` : `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项`) : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`);
+  setStatus($("#results-status"), state.lang === "zh" ? (found.length === state.records.length ? `${found.length} 项资源` : `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项`) : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`));
   renderEmptySearchActions(found.length);
   showExport("");
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
+  announceRevealed("", shown, state.visible, found.length);
   $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all";
   const removeCurated = change => () => { change(); state.visible = 15; updateURL(true); render(); };
   renderActiveFilters($("#active-filters"), [
@@ -883,7 +895,7 @@ function sourceCard(record) {
 function renderSources(shown = 0) {
   if (!sourceState.loaded) return; const found = sourceFiltered(); const results = $("#source-results"); const fragment = document.createDocumentFragment(); found.slice(shown,sourceState.visible).forEach(record => fragment.append(sourceCard(record)));
   if (shown) results.append(fragment); else { const expanded = expandedRecords(".source-card", ".source-record-details[open]"); const expandedEvidence = expandedRecords(".source-card", ".source-scan-evidence[open]"); results.replaceChildren(fragment); restoreExpanded(".source-card", expanded, ".source-record-details"); restoreExpanded(".source-card", expandedEvidence, ".source-scan-evidence"); } results.setAttribute("aria-busy","false");
-  $("#source-status").textContent = state.lang === "zh" ? (found.length === sourceState.records.length ? `${found.length.toLocaleString()} 个仓库` : `${found.length.toLocaleString()} 个匹配仓库 · 共 ${sourceState.records.length.toLocaleString()} 个仓库`) : (found.length === sourceState.records.length ? `${found.length.toLocaleString()} ${found.length === 1 ? "repository" : "repositories"}` : `${found.length.toLocaleString()} ${found.length === 1 ? "result" : "results"} · ${sourceState.records.length.toLocaleString()} ${sourceState.records.length === 1 ? "repository" : "repositories"}`);
+  setStatus($("#source-status"), state.lang === "zh" ? (found.length === sourceState.records.length ? `${found.length.toLocaleString()} 个仓库` : `${found.length.toLocaleString()} 个匹配仓库 · 共 ${sourceState.records.length.toLocaleString()} 个仓库`) : (found.length === sourceState.records.length ? `${found.length.toLocaleString()} ${found.length === 1 ? "repository" : "repositories"}` : `${found.length.toLocaleString()} ${found.length === 1 ? "result" : "results"} · ${sourceState.records.length.toLocaleString()} ${sourceState.records.length === 1 ? "repository" : "repositories"}`));
   const topic = normalizeSearchText(sourceState.topic).trim(); const hint = $("#source-topic-match");
   hint.hidden = !topic; hint.textContent = topic ? t(sourceState.topicIDs.has(topic) ? "sourceTopicExact" : "sourceTopicContains") : "";
   const published = sourceState.meta.schema_version === 2;
@@ -892,6 +904,7 @@ function renderSources(shown = 0) {
   const scopeNote = scanned > 0 && excluded > 0 ? (state.lang === "zh" ? ` ${published ? "本发布选集收录" : "共扫描"} ${scanned.toLocaleString("zh-CN")} 个仓库；其中 ${excluded.toLocaleString("zh-CN")} 个超出本合集范围或上游仓库已无法访问，不在浏览列表中显示，完整 JSON 下载仍保留。` : ` ${published ? "Published selection:" : "Scanned"} ${scanned.toLocaleString("en-US")} repositories; ${excluded.toLocaleString("en-US")} outside this collection’s scope or no longer available upstream are omitted from browsing and retained in the full JSON download.`) : "";
   $("#source-snapshot").textContent = (state.lang === "zh" ? "自动目标标签仅用于发现项目。星标为采集时快照。" : "Automatic target labels aid discovery. Stars are collection-time snapshots.") + (completed ? (state.lang === "zh" ? (published ? " 选集发布于 " : " 扫描完成于 ") : (published ? " Selection published " : " Scan completed ")) + sourceTime(completed) + (state.lang === "zh" ? "。" : ".") : "") + (sourceState.meta.status === "in-progress" ? (state.lang === "zh" ? " 扫描进行中；此处显示已读取的快照。" : " Scan in progress; this is the successfully fetched snapshot.") : "") + scopeNote;
   $("#source-empty").hidden = found.length > 0; $("#source-error").hidden = true; $("#source-more-row").hidden = found.length <= sourceState.visible; $("#source-more-count").textContent = "+"+Math.min(24,Math.max(0,found.length-sourceState.visible)); $("#source-shown").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length,sourceState.visible)} / ${found.length} 个仓库` : `${Math.min(found.length,sourceState.visible)} of ${found.length} ${found.length === 1 ? "repository" : "repositories"} shown`;
+  announceRevealed("source-", shown, sourceState.visible, found.length);
   $("#source-clear").hidden = !sourceState.q && !sourceState.topic && sourceState.target === "all" && sourceState.sort === "relevance";
   showExport("source-");
   const removeSource = change => () => { change(); sourceState.visible = 24; sourceURL(true); renderSources(); };
