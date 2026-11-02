@@ -19998,5 +19998,49 @@
       "https://github.com/SK8-ENGINE/skate-3-rust-engine/blob/2e16697797c8358d16f747a8259354ff2921041a/LICENSE",
       "https://github.com/SK8-ENGINE/skate-3-rust-engine/releases/tag/experimental"
     ]
+  },
+  {
+    "id": "rikugan",
+    "name": "Rikugan",
+    "url": "https://github.com/buzzer-re/Rikugan",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDA Pro and Binary Ninja plugin that runs its own agent loop inside the disassembler: a model the user chooses streams its answers and calls more than 60 in-process tools for navigation, decompilation, disassembly, cross-references, strings, types, annotations, scripting and host IL or microcode edits. An orchestrator can map a binary and spawn parallel subagents, findings persist in a RIKUGAN.md file beside the database, and experimental commands apply plain-language patches or, on Binary Ninja, remove control-flow flattening and other obfuscation. README says it was vibecoded with Claude Code.",
+    "description_zh": "IDA Pro 与 Binary Ninja 插件，在反汇编器内运行自己的智能体循环：使用者选定的模型以流式输出作答，并调用 60 多个进程内工具，涵盖导航、反编译、反汇编、交叉引用、字符串、类型、注释、脚本以及宿主 IL 或微码编辑。编排器可先梳理整个二进制文件，再并行派出子智能体；分析结论保存在数据库旁的 RIKUGAN.md 中；实验性命令可按自然语言描述打补丁，或在 Binary Ninja 上去除控制流平坦化等混淆。README 称该项目是与 Claude Code 一起“氛围编程”完成的。",
+    "evidence_url": "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README requires IDA Pro 9.0+ with the Hex-Rays decompiler or Binary Ninja in UI mode, and Python 3.10+, while pyproject.toml asks for 3.11+; ida-plugin.json lists IDA 9.0 to 9.2 on Windows, Linux and macOS. Windows also needs the latest Visual C++ 2015–2022 x64 redistributable, and the install scripts are piped from raw GitHub.",
+      "Needs at least one model provider: Anthropic, OpenAI, Gemini, MiniMax, Codex, local Ollama or any OpenAI-compatible endpoint. Tool results from the open database go to the chosen provider; profiles limit which data the model may read and which tools it may use.",
+      "Version 1.4.0 (released 2026-09-25) at review. README says the agent asks permission before running scripts and never executes the target binary; natural-language patching (/modify) and the Binary Ninja /deobfuscation skill are marked experimental.",
+      "CI runs Ruff format and lint checks, mypy on the core and provider modules, pytest with an IDA mock and a desloppify score-regression gate. The repository publishes no benchmark; a Synacktiv article of 2026-10-13 compared it with another Binary Ninja agent on two CREBench tasks and attributed most of the gap to a prompt difference.",
+      "MIT per LICENSE and both plugin manifests; IDA Pro, Hex-Rays, Binary Ninja and model services keep their own licences and terms.",
+      "README calls the project a work in progress whose first version was built in a single night, and the repository carries an AGENTS.md developer guide."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "testing",
+      "license",
+      "attribution"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/LICENSE",
+      "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/pyproject.toml",
+      "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/ida-plugin.json",
+      "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/plugin.json",
+      "https://github.com/buzzer-re/Rikugan/tree/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/rikugan/providers",
+      "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/.github/workflows/ci.yml",
+      "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/.github/workflows/release.yml",
+      "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/AGENTS.md",
+      "https://github.com/buzzer-re/Rikugan/releases/tag/v1.4.0",
+      "https://www.synacktiv.com/en/publications/ufc-666-frontkick-vs-rikugan"
+    ]
   }
 ]
