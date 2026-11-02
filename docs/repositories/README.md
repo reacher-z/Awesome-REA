@@ -10,11 +10,11 @@ Publication date: **2026-10-20 UTC**.
 
 | Category | Repositories | Linked to curated entries or papers |
 | --- | ---: | ---: |
-| [Websites](web-analysis.md) | 215 | 28 |
+| [Websites](web-analysis.md) | 216 | 29 |
 | [Games](game-analysis.md) | 485 | 63 |
 | [Apps · Android](android.md) | 479 | 47 |
 | [Apps · Managed code](managed-code.md) | 135 | 5 |
-| [Native binaries](native-analysis.md) | 848 | 110 |
+| [Native binaries](native-analysis.md) | 847 | 110 |
 | [Runtime and debugging](dynamic-analysis.md) | 150 | 30 |
 | [Firmware](firmware.md) | 226 | 27 |
 | [Protocols](protocol-analysis.md) | 112 | 11 |

@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**848 个仓库** · 2026-10-20 UTC
+**847 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -256,7 +256,6 @@
 - [mahmoudimus/ida-sigmaker](https://github.com/mahmoudimus/ida-sigmaker) — sigmaker 是零依赖、跨平台的 IDA Pro 9.0+ 特征码生成插件，支持可选的 SIMD（如 AVX2、NEON、SSE2）加速，可在 macOS、Linux 和 Windows 上运行。可配置操作数通配模式与半字节，只需右键点击即可生成特征码。 **[226 星标]**
 - [macmade/dyld\_cache\_extract](https://github.com/macmade/dyld_cache_extract) — macOS 工具，用于从 macOS 和 iOS 的 dyld\_shared\_cache 中提取动态库。 **[225 星标]** · 精选：[dyld\_cache\_extract dyld 共享缓存提取工具](https://awesomerea.org/zh/resources/dyld-cache-extract/)
 - [tintinweb/ethereum-dasm](https://github.com/tintinweb/ethereum-dasm) — 以太坊 EVM 字节码反汇编器及静态/动态分析工具 **[223 星标]**
-- [vicnaum/bun-demincer](https://github.com/vicnaum/bun-demincer) — 针对 Bun 编译的独立 JavaScript 二进制文件的反编译、反压缩和去混淆工具 **[223 星标]**
 - [angr/pypcode](https://github.com/angr/pypcode) — Ghidra SLEIGH 库的 Python 绑定，用于反汇编及提升至 P-Code 中间表示 **[222 星标]**
 - [aboutcode-org/scancode.io](https://github.com/aboutcode-org/scancode.io) — ScanCode.io 是一个服务器，可通过流水线编写脚本并自动执行软件成分分析。项目获欧盟委员会、NLnet NGI0、Google Summer of Code、nexB 及其他慷慨赞助者支持！ **[220 星标]**
 - [Cararasu/holodec](https://github.com/Cararasu/holodec) — x86 和 x86-64 ELF 二进制文件反编译器 **[220 星标]**
