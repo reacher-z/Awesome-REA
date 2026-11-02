@@ -7971,5 +7971,14 @@
       "依 LICENSE 与 pyproject.toml 采用 MIT 许可。",
       "README 把名称解释为“Reverse Engineer any USB gadget”（逆向任意 USB 设备），未提及 REA 项目。"
     ]
+  },
+  "ai-rebuilds-directory": {
+    "name": "AI Rebuilds：无源码重建软件与游戏的项目目录",
+    "requirements": [
+      "审阅提交为 8092b23；其中 data/projects.json（列表更新于 2026-10-29，GitHub 数据刷新于 2026-11-02）收录七个分类共 81 个项目，并同时生成 README 和 ai-rebuilds.com，审阅时网站显示的是同一份列表。条目、计数与标签可能在审阅后变化。",
+      "方法标签分为净室、重新实现、反编译、重编译、移植、重写和工具。AI 标签（AI 构建、AI 辅助、无 AI 或未知）依据各项目自身的说明，其中 49 个条目标为无 AI 参与。每周运行的工作流会通过 GitHub API 刷新星标数、最近推送日期、归档状态与许可证，并检查链接。收录条目不得分发原作的代码、二进制文件、ROM 或素材；网站不托管任何软件，并受理更正与下架请求。",
+      "REA 在 13 个工具中排第一，且只有 DX-Ball 条目说明使用了 REA。网站的第三方指南《Rebuild something with REA》介绍了安装 rea-agents、按输入类型选择 REA 工具、双智能体净室分工以及与原作对照检查；但其中的 Node.js 最低版本（22.19+、24.11+ 或 26+）早于 REA README 现在要求的 22.23.4+、24.22.1+ 或 26.12.1+。",
+      "代码与列表采用 MIT 许可；LICENSE 说明许可不涵盖原版游戏及其代码与素材。条目说明由网站自行撰写，并注明了收录时参考的列表，其中包括采用 CC BY-SA 4.0 和 CC0 的列表。"
+    ]
   }
 }
