@@ -157,6 +157,15 @@ COLLECTION_SECTIONS = {
 }
 TARGET_SECTIONS = ('website', 'game', 'app', 'native-binary', 'firmware', 'protocol')
 INDEX_HEADINGS = ('Full Repository Index', '完整仓库索引')
+# The authored second-level headings Contents lists around the generated Resources and Papers sections.
+README_HEADINGS = {
+    'find-by-task': ('Find by task', '按任务查找'),
+    'resources': ('Resources', '资源'),
+    'papers': ('Papers', '论文'),
+    'index': INDEX_HEADINGS,
+    'contributors': ('Contributors', '贡献者'),
+    'about': ('About', '关于'),
+}
 
 
 def section_heading(section, language):
@@ -348,33 +357,39 @@ def browsable_index_count():
     return sum(record.get('scope_status') != 'excluded' for record in scoped)
 
 
+def heading_anchor(text):
+    """GitHub's fragment for a heading: lowercase, punctuation dropped, each space a hyphen."""
+    return '#' + re.sub(r'[^\w\- ]', '', text.lower()).replace(' ', '-')
+
+
 def render_contents(records, papers, index_count, language):
-    """Contents mirror the rendered sections and show how many entries each one holds."""
+    """One nested list that mirrors the ## and ### headings in order, as awesome-lint's ToC check expects, with the
+    entry count of each section. English links use the heading slugs that check resolves; Chinese headings repeat
+    the English section name, so Chinese links keep the explicit section anchors (#firmware, #papers-decompilation)."""
     zh = language == 'zh'
     paper_urls = {paper['url'] for paper in papers}
     counts = Counter(collection_section(record) for record in records if record['url'] not in paper_urls)
-    cases = sum(record.get('kind') == 'case-study' for record in records)
+    topics = paper_groups(papers)
 
-    def item(label, href, count):
-        return f'[{label}]({href}) ({count:,})'
+    def item(labels, explicit=None, count=None):
+        label = labels[int(zh)]
+        anchor = f'#{explicit}' if zh and explicit else heading_anchor(label)
+        return f'[{label}]({anchor})' + ('' if count is None else f' ({count:,})')
 
-    def section_item(section):
-        return item(COLLECTION_SECTIONS[section][int(zh)], f'#{section}', counts[section])
-
-    targets = [section_item(section) for section in TARGET_SECTIONS if counts[section]]
-    reading = [item('论文' if zh else 'Papers', '#papers', len(papers))]
-    reading += [section_item(section) for section in ('agents-and-mcp', 'references-and-learning')
-                if counts[section]]
-    more = [item('全部案例' if zh else 'All cases',
-                 f"https://awesomerea.org/{'zh/' if zh else ''}cases/", cases)]
-    if counts['related-collections']:
-        more.append(section_item('related-collections'))
-    more.append(item(INDEX_HEADINGS[int(zh)], '#完整仓库索引' if zh else '#full-repository-index', index_count))
-    more.append('[参与贡献](#参与贡献)' if zh else '[Contributing](#contributing)')
-    lines = [f"**{'按目标找工具与案例' if zh else 'Tools and cases by target'}**", '']
-    lines += ['- ' + ' · '.join(targets[start:start + 3]) for start in range(0, len(targets), 3)]
-    lines += ['', f"**{'论文与工作流' if zh else 'Research and workflows'}**", '', '- ' + ' · '.join(reading)]
-    lines += ['', f"**{'更多浏览方式' if zh else 'More ways to browse'}**", '', '- ' + ' · '.join(more)]
+    sections = [item(COLLECTION_SECTIONS[section], section, counts[section])
+                for section in COLLECTION_SECTIONS if counts[section]]
+    paper_sections = [item(PAPER_SECTIONS[section], f'papers-{section}', len(topics[section]))
+                      for section in PAPER_SECTIONS if topics[section]]
+    lines = ['- ' + item(README_HEADINGS['find-by-task']),
+             '- ' + item(README_HEADINGS['resources'], count=sum(counts.values()))]
+    lines += ['  - ' + line for line in sections]
+    lines += ['- ' + item(README_HEADINGS['papers'], 'papers', len(papers))]
+    lines += ['  - ' + line for line in paper_sections]
+    lines += ['- ' + item(README_HEADINGS['index'], count=index_count),
+              '- ' + item(README_HEADINGS['contributors']),
+              '- ' + item(README_HEADINGS['about'])]
+    # Contributing stays out of the list (awesome-lint's ToC check excludes it) but keeps its Contents link.
+    lines += ['', ('本页还有：[参与贡献](#参与贡献)' if zh else 'Also on this page: [Contributing](#contributing)')]
     return '\n'.join(lines) + '\n'
 
 
@@ -499,22 +514,27 @@ def paper_section(paper):
             'protocol': 'protocol-analysis'}.get(paper['targets'][0], 'decompilation')
 
 
+def paper_groups(papers):
+    """Papers by README topic section, in input order; Contents and the Papers section share this grouping."""
+    groups = defaultdict(list)
+    for paper in papers:
+        groups[paper_section(paper)].append(paper)
+    return groups
+
+
 def render_papers(papers, language):
     zh = language == 'zh'
     index = int(zh)
     directory = 'https://awesomerea.org/zh/papers/' if zh else 'https://awesomerea.org/papers/'
-    lines = ['<a id="papers"></a>', '## 论文' if zh else '## Papers', '',
+    lines = ['<a id="papers"></a>', '## ' + README_HEADINGS['papers'][index], '',
              (f'**{len(papers)} 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。'
               if zh else f'**{len(papers)} papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.'), '',
              f"[{'浏览论文目录' if zh else 'Browse the paper directory'}]({directory}) · [{'完整书目 JSON' if zh else 'Complete bibliography JSON'}](data/papers.json) · [{'推荐论文' if zh else 'Suggest a paper'}](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)", '']
-    groups = defaultdict(list)
-    for paper in papers:
-        groups[paper_section(paper)].append(paper)
+    groups = paper_groups(papers)
     topics = [f'[{labels[index]}](#papers-{section}) ({len(groups[section])})'
               for section, labels in PAPER_TOPIC_LABELS.items() if groups[section]]
-    lines.extend([f"**{'按主题' if zh else 'By topic'}**", ''])
-    lines.extend('- ' + ' · '.join(topics[start:start + 3]) for start in range(0, len(topics), 3))
-    lines.extend(['',
+    # One paragraph rather than a list: awesome-lint reads every list after Contents as resource entries.
+    lines.extend([f"**{'按主题：' if zh else 'By topic:'}** " + ' · '.join(topics), '',
                   ('每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。部分论文也出现在精选资源目录中，两者数量不可相加。'
                    if zh else 'Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation. Some papers also appear among curated resources; counts are not additive.'), ''])
     for section, labels in PAPER_SECTIONS.items():

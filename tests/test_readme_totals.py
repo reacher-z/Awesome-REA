@@ -8,7 +8,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_readme import (COLLECTION_SECTIONS, CONTENTS_BEGIN, CONTENTS_END, browsable_index_count, render_contents,
+from build_readme import (CONTENTS_BEGIN, CONTENTS_END, browsable_index_count, render_contents,
                           render_totals, replace_contents)
 from catalog import load_resources
 from validate_papers import read_papers
@@ -52,8 +52,9 @@ class ReadmeTotalsTest(unittest.TestCase):
     def test_section_sum_in_the_note_matches_contents(self):
         records, papers = load_resources(), read_papers(ROOT)
         contents = render_contents(records, papers, 0, 'en')
-        listed = sum(int(count.replace(',', '')) for section, count in re.findall(r'\]\(#([a-z-]+)\) \(([\d,]+)\)', contents)
-                     if section in COLLECTION_SECTIONS)
+        resources, sections = contents.split('\n- [Papers]', 1)[0].split('\n- [Resources](#resources) (', 1)[1].split(')\n', 1)
+        listed = int(resources.replace(',', ''))
+        self.assertEqual(listed, sum(int(count.replace(',', '')) for count in re.findall(r'^  - .*\(([\d,]+)\)$', sections, re.MULTILINE)))
         line = render_totals(records, papers, 0, 'en')
         if listed == len(records):
             self.assertNotIn('only under Papers', line)
