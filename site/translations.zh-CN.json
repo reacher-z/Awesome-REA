@@ -5645,5 +5645,15 @@
       "每次运行输入一个 APK；文档用 shell 循环或 Python API 扫描整个目录。报告是静态规则匹配的结果，置信度取决于规则通过的阶段数，因此覆盖范围取决于规则集；setup.py 称 Quark 是不受混淆影响的评分系统，本次审阅未测试这一点。可疑样本应在隔离的分析环境中处理；测试套件会从独立的样本仓库下载真实恶意软件和刻意留有漏洞的 APK，本条目不链接该仓库。",
       "CI 会构建 rizin 0.7.3 和 radare2 5.9.0，并在 Python 3.10 上运行带覆盖率统计的 pytest。文档中的恶意软件家族报告是项目自行完成的分析，本次未复现。LICENSE 和 setup.py 的分类信息均为 GPL-3.0。本次未分析任何 APK，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "hollows-hunter": {
+    "name": "Hollows Hunter 进程内存植入扫描器",
+    "requirements": [
+      "审阅时最新版本为 v0.4.1.1，发布于 2025-09-13，提供 32 位和 64 位可执行文件、ZIP 压缩包以及 DLL 构建压缩包；README 还指向 Chocolatey 软件包，wiki 则提到不稳定的 AppVeyor 测试构建。所审阅的 master 提交标为尚未发布的 0.4.1.3，比该版本多 37 个提交，主要是 PE-sieve 子模块更新。",
+      "仅支持 Windows。从源码构建需递归克隆固定版本的 PE-sieve、paramkit 和 Microsoft krabsetw 子模块，并需要 CMake 3.12+；AppVeyor 使用 Visual Studio 2019 构建 x86 和 x64 版本，mingw_build.sh 展示了 MinGW-w64 交叉编译。ETW 模式仅适用于 64 位版本，需以管理员身份运行，并在当前目录写入 HH_ETWProfile.ini。",
+      "它扫描的是分析者自己系统或虚拟机中正在运行的进程，仓库中不含任何样本。钩子与补丁扫描默认关闭，需用 /hooks 启用；未指定 /dir 时转储写入当前目录；wiki 指出循环扫描全系统会占用大量处理器资源。wiki 提醒检测到的进程不一定是恶意的，并链接 PE-sieve 关于误报的 FAQ，因此报告和转储需人工复核；可选的 /suspend 与 /kill 会直接作用于正在运行的进程。",
+      "AppVeyor 在每次构建后运行 ctest：测试检查可执行文件能否启动，以及在干净的构建机上扫描时可疑进程数是否为零，随后执行 IAT、钩子、线程和 shellcode 模式扫描，但只检查报告格式。唯一的 GitHub 工作流用于发布 Doxygen 代码文档。",
+      "与 PE-sieve 一样采用 BSD-2-Clause；krabsetw 采用 MIT，固定版本的 paramkit 提交没有许可证文件。所审来源未提及 REA 的使用，本条目未扫描任何进程。"
+    ]
   }
 }
