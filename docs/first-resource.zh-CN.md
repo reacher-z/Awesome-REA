@@ -92,10 +92,10 @@ node --check site/app.js
 | 编辑的源文件 | 生成命令 | 输出 | r2frida 带来的变化 |
 | --- | --- | --- | --- |
 | `data/tool-resources.json`、`site/translations.zh-CN.json` | `build_readme.py` | `README.md`、`README.zh-CN.md` | 条目出现在“原生二进制”分区并标注“也适用：应用”，资源计数随之更新。分区由 category 决定；中文 README 使用中文名称。 |
-| `data/tool-resources.json` | `build_repository_index.py` | `docs/repositories/` 各页及两个 README 中的仓库计数 | `dynamic-analysis.md` 及其中文页的 nowsecure/r2frida 一行加上“精选”链接，因为 `url` 正是一个已扫描仓库的根地址。其他资源不会改动这些文件。 |
+| `data/tool-resources.json` | `build_repository_index.py` | 未跟踪的 `docs/repositories/` 各页及两个 README 中的仓库计数 | `dynamic-analysis.md` 及其中文页的 nowsecure/r2frida 一行加上“精选”链接，因为 `url` 正是一个已扫描仓库的根地址。其他资源不会改动这些文件。 |
 | 两者 | `build_site.py` | `dist/`（Git 忽略） | 首页目录、`/resources/r2frida/`、`/zh/resources/r2frida/` 和站点地图。 |
 
-提交两个源文件，以及生成命令在 `README.md`、`README.zh-CN.md` 和 `docs/repositories/` 下改动的文件；不要提交 `dist/`。如果案例还对应[案例合集覆盖记录](case-coverage.zh-CN.md)，还需修改 `data/case-coverage.json`，并运行 `python3 scripts/build_case_coverage.py` 重新生成摘要。
+提交两个源文件，以及生成命令在 `README.md`、`README.zh-CN.md` 下改动的文件；不要提交 `docs/repositories/` 或 `dist/`。如果案例还对应[案例合集覆盖记录](../data/case-coverage.json)，还需修改 `data/case-coverage.json`，并运行 `python3 scripts/build_case_coverage.py` 重新生成摘要。
 
 查看页面时，用 `python3 -m http.server 8000 --bind 127.0.0.1 --directory dist` 启动预览，打开 `http://127.0.0.1:8000/resources/r2frida/` 和 `/zh/resources/r2frida/`。CI 还会运行生产构建和浏览器冒烟测试，完整步骤见英文指南的[目录更新部分](../CONTRIBUTING.md#update-the-catalog)；本地缺少 Chrome 时冒烟测试会跳过。
 

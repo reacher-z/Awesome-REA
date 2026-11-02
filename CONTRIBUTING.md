@@ -94,7 +94,7 @@ Use the [reconstruction-case form](https://github.com/reacher-z/Awesome-REA/issu
 
 Cases may use REA, other agents, or independent reverse-engineering tools. Use `independent-reconstruction` for a documented reconstruction project with no established REA connection, and `reconstruction-cases` as its category; validation rejects either value without the other. The `targets` describe the actual Website, Game, App, Binary, Firmware or Protocol domain. Identify author-reported results, incomplete behavior, platform limits and required original assets, and optionally label each `requirements` item with `requirement_facets` from the [catalog format guide](data/README.md); pages then list prerequisites first. Keep a pinned public source where possible; never include proprietary target binaries or private captures.
 
-The [case coverage ledger](data/case-coverage.json) tracks entries of pinned upstream case collections separately from catalog records; the [catalog format guide](data/README.md) describes it. After changing one of its entries, run `python3 scripts/build_case_coverage.py` to regenerate the [coverage summaries](docs/case-coverage.md), then `python3 scripts/validate.py`.
+The [case coverage ledger](data/case-coverage.json) tracks entries of pinned upstream case collections separately from catalog records; the [catalog format guide](data/README.md) describes it. After changing one of its entries, run `python3 scripts/build_case_coverage.py` to regenerate the untracked coverage summaries, then `python3 scripts/validate.py`.
 
 ## Badge for listed projects
 
@@ -131,7 +131,7 @@ git rebase origin/main
 
 Resolve each conflicting file by kind, data first:
 
-- **Generated files:** the `BEGIN GENERATED …` and `BEGIN REPOSITORY INDEX SUMMARY` blocks in `README.md` and `README.zh-CN.md`, every page in `docs/repositories/`, and `docs/case-coverage.md` and `docs/case-coverage.zh-CN.md`. Take `main`'s copy, for example with `git checkout origin/main -- README.md README.zh-CN.md`, and rebuild it once the data conflicts are resolved. Do not merge or edit these files by hand; the first line inside each README block names its generator and source files. If your branch also changes hand-written README text outside the blocks, reapply that edit.
+- **Generated files:** the `BEGIN GENERATED …` and `BEGIN REPOSITORY INDEX SUMMARY` blocks in `README.md` and `README.zh-CN.md`. Take `main`'s copy, for example with `git checkout origin/main -- README.md README.zh-CN.md`, and rebuild it once the data conflicts are resolved. Do not merge or edit these files by hand; the first line inside each README block names its generator and source files. If your branch also changes hand-written README text outside the blocks, reapply that edit. `docs/repositories/` and `docs/case-coverage*.md` are local build outputs ignored by Git; regenerate them with the commands above and do not commit them.
 - **Data files:** `data/*.json` and `site/translations.zh-CN.json`. Keep both sides: the records `main` added or changed and the ones your branch adds or changes. New records go at the end of each array, so such a conflict usually holds both sides' new records; keep `main`'s first, then yours. Each ID appears once: the validators reject a duplicate record ID, and a repeated key in `site/translations.zh-CN.json` silently replaces the earlier one. In `data/case-coverage.json`, keep both sides' entry edits, then recompute `counts` from the merged entries, since `validate.py` reports `derived counts differ` until they match:
 
   ```sh

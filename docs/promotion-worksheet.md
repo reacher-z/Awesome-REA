@@ -50,4 +50,4 @@ The scanned repository mandiant/capa is now the curated entry [`capa`](https://a
 | Target rationale | `binary`: its documented inputs are executable modules, shellcode, sandbox reports on executables and files derived from them. The evidence supports no other target. |
 | Decision | Curate as `capa`, `verified_at: 2026-10-19`. |
 
-After the change, `scan-272815213` is byte-for-byte the same record, still `automated-readme-scan`. Its line in the [native-analysis directory](repositories/native-analysis.md) gains a “Curated: capa” link only because the curated `url` is the exact repository root. Nothing was installed or run; the curated requirements state that no samples were analyzed.
+After the change, `scan-272815213` is byte-for-byte the same record, still `automated-readme-scan`. Its line in the [native-analysis directory](https://awesomerea.org/browse/native-analysis/) gains a “Curated: capa” link only because the curated `url` is the exact repository root. Nothing was installed or run; the curated requirements state that no samples were analyzed.

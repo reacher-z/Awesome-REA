@@ -13,6 +13,12 @@ def main():
     parser.add_argument('--fontawesome-assets-url', help='Existing licensed icon asset origin; no fonts are added to Git')
     args = parser.parse_args()
     commands = [
+        # Generated documentation is untracked. Check tracked summaries first, then
+        # materialize the pages so validation can walk their links.
+        [sys.executable, 'scripts/build_repository_index.py', '--check'],
+        [sys.executable, 'scripts/build_case_coverage.py', '--check'],
+        [sys.executable, 'scripts/build_repository_index.py'],
+        [sys.executable, 'scripts/build_case_coverage.py'],
         [sys.executable, 'scripts/validate.py'],
         ['node', '--check', 'site/app.js'],
         # Preview images are downloaded into .cache/previews; build_site then

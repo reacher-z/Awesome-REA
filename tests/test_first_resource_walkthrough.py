@@ -8,6 +8,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_readme import FULL_ENTRY, collection_section
+import build_repository_index
 
 EXAMPLE = 'r2frida'
 GUIDES = {'en': ROOT / 'docs/first-resource.md', 'zh': ROOT / 'docs/first-resource.zh-CN.md'}
@@ -23,6 +24,10 @@ def catalog_records():
 
 
 class WalkthroughTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.index, _ = build_repository_index.rendered_files()
+
     def test_both_languages_quote_the_example_record_and_translation_exactly(self):
         records = catalog_records()
         self.assertEqual([record['id'] for record in records].count(EXAMPLE), 1)
@@ -59,7 +64,7 @@ class WalkthroughTests(unittest.TestCase):
                 self.assertLess(readme.index('<a id="native-binary"></a>'),
                                 readme.index(f'(https://awesomerea.org{prefix}/resources/{EXAMPLE}/)'))
         for page, label in (('dynamic-analysis.md', 'Curated'), ('dynamic-analysis.zh-CN.md', '精选')):
-            text = (ROOT / 'docs/repositories' / page).read_text(encoding='utf-8')
+            text = self.index[page]
             line = next(line for line in text.splitlines() if line.startswith(f'- [nowsecure/r2frida]({record["url"]})'))
             self.assertIn(f'{label}：' if label == '精选' else f'{label}: ', line)
 

@@ -7,6 +7,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
+import build_repository_index
 from scan_sources import ScanError
 from source_availability import check_record
 from source_scope import (UNAVAILABLE_UPSTREAM_REASON, apply_scope, exclusion_counts, read_scope,
@@ -173,6 +174,7 @@ class CollectionTests(unittest.TestCase):
     def setUpClass(cls):
         cls.records = json.loads((ROOT / 'data/source-index.json').read_text(encoding='utf-8'))['resources']
         cls.scope = read_scope(ROOT)
+        cls.rendered, _ = build_repository_index.rendered_files()
 
     def test_reviewed_records_are_excluded_with_gone_outcomes(self):
         self.assertEqual(errors_for(self.scope, self.records), [])
@@ -199,13 +201,10 @@ class CollectionTests(unittest.TestCase):
     def test_directories_and_readmes_do_not_link_unavailable_names(self):
         names = [record['full_name'] for record in self.records if record['id'] in REVIEWED]
         self.assertEqual(len(names), 4)
-        paths = [ROOT / 'README.md', ROOT / 'README.zh-CN.md', *sorted((ROOT / 'docs/repositories').glob('*.md'))]
-        for path in paths:
-            text = path.read_text(encoding='utf-8')
-            for name in names:
-                self.assertNotIn('github.com/' + name, text, f'{path.name} links {name}')
-        index = (ROOT / 'docs/repositories/README.md').read_text(encoding='utf-8')
-        self.assertIn('**4** whose upstream repository is no longer available', index)
+        for name, text in self.rendered.items():
+            for full_name in names:
+                self.assertNotIn('github.com/' + full_name, text, f'{name} links {full_name}')
+        self.assertIn('**4** whose upstream repository is no longer available', self.rendered['README.md'])
 
 
 if __name__ == '__main__':

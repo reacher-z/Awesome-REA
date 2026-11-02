@@ -116,22 +116,25 @@ def main():
         return 1
     translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8'))
     resources = {row['id']: row for row in records}
-    stale = []
+    stale, missing = [], []
     # Serialized comparison also treats a stored boolean count as stale; key order is ignored.
     if json.dumps(stored.get('counts'), sort_keys=True) != json.dumps(document['counts'], sort_keys=True):
         stale.append((ledger, json.dumps(document, indent=2, ensure_ascii=False) + '\n'))
     for suffix, zh in (('', False), ('.zh-CN', True)):
         path = ROOT / ('docs/case-coverage' + suffix + '.md')
         expected = render(document, resources, translations, zh)
-        if not path.exists() or path.read_text(encoding='utf-8') != expected:
+        if not path.exists():
+            # Generated summaries are build outputs. A fresh checkout does not have them.
+            missing.append((path, expected))
+        elif path.read_text(encoding='utf-8') != expected:
             stale.append((path, expected))
     if args.check and stale:
         print('Case coverage files need regeneration with python3 scripts/build_case_coverage.py: '
               + ', '.join(path.name for path, _ in stale), file=sys.stderr)
         return 1
-    for path, expected in stale:
+    for path, expected in stale + missing:
         path.write_text(expected, encoding='utf-8')
-    print('Checked case coverage counts and summaries.' if args.check
+    print('Checked case coverage counts and existing summaries.' if args.check
           else 'Refreshed case coverage counts and generated bilingual summaries.')
     return 0
 

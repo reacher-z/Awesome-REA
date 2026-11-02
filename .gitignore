@@ -17,3 +17,7 @@ credentials*.json
 *.key
 # Explicit private-worker bootstrap packages must never enter this public repo.
 scan-seed-*.json.gz
+# Generated documentation; rebuilt before validation and never committed.
+/docs/repositories/
+/docs/case-coverage.md
+/docs/case-coverage.zh-CN.md

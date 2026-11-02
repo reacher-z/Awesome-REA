@@ -2,9 +2,13 @@
 import json
 from pathlib import Path
 import re
+import sys
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+import build_repository_index  # noqa: E402
+
 GUIDES = {'en': ROOT / 'docs/promotion-worksheet.md', 'zh': ROOT / 'docs/promotion-worksheet.zh-CN.md'}
 SCAN_ID, CURATED_ID = 'scan-272815213', 'capa'
 
@@ -21,6 +25,10 @@ def table_rows(text, header):
 
 
 class WorksheetTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.rendered, _ = build_repository_index.rendered_files()
+
     def setUp(self):
         index = json.loads((ROOT / 'data/source-index.json').read_text(encoding='utf-8'))['resources']
         self.scan = next(record for record in index if record['id'] == SCAN_ID)
@@ -54,7 +62,7 @@ class WorksheetTests(unittest.TestCase):
             for target in self.record['targets']:
                 self.assertIn(f'`{target}`', text)
         self.assertEqual(self.record['verification'], 'source-reviewed')
-        line = next(line for line in (ROOT / 'docs/repositories/native-analysis.md').read_text(encoding='utf-8').splitlines()
+        line = next(line for line in self.rendered['native-analysis.md'].splitlines()
                     if line.startswith(f'- [{self.scan["full_name"]}]('))
         self.assertIn(f'Curated: [{self.record["name"]}](https://awesomerea.org/resources/{CURATED_ID}/)', line)
 

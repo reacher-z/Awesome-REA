@@ -3,7 +3,7 @@ from contextlib import redirect_stderr, redirect_stdout
 import io
 from pathlib import Path
 import re
-import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -17,6 +17,14 @@ from build_repository_index import CATEGORIES, GENERATED_MARKER
 
 def snapshot(directory):
     return {path.name: path.read_bytes() for path in directory.glob('*.md')}
+
+
+def materialize(output, files):
+    """Write every rendered page, including the root README summaries, below the temp root."""
+    for name, content in files.items():
+        path = output / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content, encoding='utf-8')
 
 
 def setUpModule():
@@ -50,18 +58,15 @@ class RepositoryIndexTests(unittest.TestCase):
                     self.assertEqual(navigation.count('https://awesomerea.org/'), 1)
 
     def test_obsolete_pages_fail_check_and_only_generated_ones_are_removed(self):
-        tracked = ROOT / 'docs/repositories'
-        before = snapshot(tracked)
         files, _ = self.rendered
         pages = {name for name in files if not name.startswith('../')}
         self.assertEqual(len(pages), 2 * (len(CATEGORIES) + 1))
-        self.assertEqual(set(before), pages)
         with tempfile.TemporaryDirectory() as directory:
-            # Mirror the repository layout so the root README summaries resolve inside the copy.
+            # Mirror the repository layout so the root README summaries resolve inside the temp tree.
             output = Path(directory) / 'docs/repositories'
-            shutil.copytree(tracked, output)
-            for name in ('README.md', 'README.zh-CN.md'):
-                shutil.copy2(ROOT / name, Path(directory) / name)
+            materialize(output, files)
+            before = snapshot(output)
+            self.assertEqual(set(before), pages)
             self.assertEqual(self.run_generator(output, '--check'), (0, ''))
 
             (output / 'old-category.md').write_text('# Old category\n\n' + GENERATED_MARKER + '\n', encoding='utf-8')
@@ -78,14 +83,21 @@ class RepositoryIndexTests(unittest.TestCase):
             self.assertIn('Kept docs/repositories/notes.md', message)
             self.assertEqual({name: data for name, data in snapshot(output).items() if name != 'notes.md'}, before)
             for name in ('README.md', 'README.zh-CN.md'):
-                self.assertEqual((Path(directory) / name).read_bytes(), (ROOT / name).read_bytes())
+                self.assertEqual((Path(directory) / name).read_text(encoding='utf-8'),
+                                 files[f'../../{name}'])
 
             code, message = self.run_generator(output, '--check')
             self.assertEqual(code, 1)
             self.assertIn('docs/repositories/notes.md', message)
             self.assertNotIn('old-category.md', message)
             self.assertNotIn('needs regeneration', message)
-        self.assertEqual(snapshot(tracked), before)
+
+    def test_generated_docs_are_not_tracked(self):
+        result = subprocess.run(
+            ['git', 'ls-files', '--', 'docs/repositories', 'docs/case-coverage.md', 'docs/case-coverage.zh-CN.md'],
+            cwd=ROOT, capture_output=True, text=True, encoding='utf-8')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stdout.strip(), '')
 
 
 class RelatedMarkerTests(unittest.TestCase):
@@ -132,9 +144,7 @@ class RelatedMarkerTests(unittest.TestCase):
     def test_check_fails_when_a_marker_is_stale(self):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / 'docs/repositories'
-            shutil.copytree(ROOT / 'docs/repositories', output)
-            for name in ('README.md', 'README.zh-CN.md'):
-                shutil.copy2(ROOT / name, Path(directory) / name)
+            materialize(output, self.files)
             page = output / 'protocol-analysis.md'
             page.write_text(re.sub(r' · Curated: \[Netzob\]\([^)]*\)', '', page.read_text(encoding='utf-8')), encoding='utf-8')
             stderr = io.StringIO()

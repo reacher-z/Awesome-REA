@@ -86,9 +86,9 @@ def rendered_files():
             intro = (f'此发布选集包含 **{len(scanned):,}** 条已采集仓库记录，提供 **{len(records):,}** 个浏览条目。**{out_of_scope}** 个范围排除条目{unavailable_clause(unavailable, zh, "**")}保留在发布 JSON 中。各原始扫描的累计数量保留在独立的来源证据中。'
                      if zh else f'This published selection contains **{len(scanned):,}** captured repository records and **{len(records):,}** browsable entries. **{out_of_scope}** scope-excluded entries{unavailable_clause(unavailable, zh, "**")} remain in the published JSON. Original capture totals remain separate in the source evidence.')
         summary = ([f'已读取 **{len(scanned):,}** 个仓库的 README，当前提供 **{len(records):,}** 个浏览条目，明确超出范围的 {out_of_scope} 个条目{unavailable_clause(unavailable, zh)}保留在扫描数据中。自动发现的项目与上方精选资源分别维护，未逐项运行验证。', '',
-                    '[按分类在 GitHub 浏览](docs/repositories/README.zh-CN.md) · [网站搜索](https://awesomerea.org/zh/?view=source-index) · [完整双语索引 JSON](https://awesomerea.org/source-index.json) · [精选目录 JSON](https://awesomerea.org/catalog.json)']
+                    '[按分类浏览仓库索引](https://awesomerea.org/zh/?view=source-index) · [完整双语索引 JSON](https://awesomerea.org/source-index.json) · [精选目录 JSON](https://awesomerea.org/catalog.json)']
                    if zh else [f'**{len(scanned):,}** repository READMEs scanned; **{len(records):,}** entries available to browse. The {out_of_scope} clearly out-of-scope entries{unavailable_clause(unavailable, zh)} remain in the scan data. This automatically discovered index is separate from the curated resources above and has not been individually execution-tested.', '',
-                               '[Browse by category on GitHub](docs/repositories/README.md) · [Search website](https://awesomerea.org/?view=source-index&lang=en) · [Full bilingual index JSON](https://awesomerea.org/source-index.json) · [Curated catalog JSON](https://awesomerea.org/catalog.json)'])
+                               '[Browse repository index](https://awesomerea.org/?view=source-index&lang=en) · [Full bilingual index JSON](https://awesomerea.org/source-index.json) · [Curated catalog JSON](https://awesomerea.org/catalog.json)'])
         if published:
             summary[0] = intro + (' 自动发现条目不是逐项精选或运行验证后的推荐。' if zh else ' Automatically discovered entries are not individually curated or execution-tested recommendations.')
             summary = [line.replace('/source-index.json', '/source-published.json') for line in summary]
@@ -139,18 +139,38 @@ def obsolete_pages(files):
     return sorted(path for path in OUTPUT.glob('*.md') if path.name not in files)
 
 
+def stale_files(files):
+    """Pages with stale content, plus pages missing from an output directory that already exists.
+
+    A fresh checkout has no generated output at all; the build creates it. Once the
+    directory exists, a missing page means generation was incomplete and must fail.
+    """
+    stale = []
+    for name, content in files.items():
+        # The root READMEs are rendered under ../.. keys; resolve them without requiring
+        # the output directory to exist.
+        path = (OUTPUT / name).resolve()
+        if path.exists():
+            if path.read_text(encoding='utf-8') != content:
+                stale.append(name)
+        elif name.startswith('../') or OUTPUT.is_dir():
+            stale.append(name)
+    return stale
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--check', action='store_true', help='Fail if generated Markdown is missing or stale')
+    parser.add_argument('--check', action='store_true',
+                        help='Fail if the README summary is stale or an existing output directory is incomplete')
     args = parser.parse_args()
     try:
         files, count = rendered_files()
-        stale = [name for name, content in files.items()
-                 if not (OUTPUT / name).exists() or (OUTPUT / name).read_text(encoding='utf-8') != content]
+        stale = stale_files(files)
         obsolete = obsolete_pages(files)
         if args.check and (stale or obsolete):
             if stale:
-                print('Repository index needs regeneration: python3 scripts/build_repository_index.py', file=sys.stderr)
+                print('Repository index or README summary needs regeneration: '
+                      'python3 scripts/build_repository_index.py', file=sys.stderr)
             if obsolete:
                 names = ', '.join(f'docs/repositories/{path.name}' for path in obsolete)
                 print(f'Repository index directory has pages the generator no longer renders: {names}. '

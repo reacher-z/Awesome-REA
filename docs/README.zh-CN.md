@@ -29,8 +29,8 @@
 | [社区推广](community-outreach.md) | 英文 | 当前，平台规则复核于 2026-10-20 | 向 Hacker News、Reddit 等公开社区发帖前的检查清单 |
 | [人工发现观察](discovery/README.md) | 英文 | 当前 | 版本化检索问题与人工观察模板 |
 | [扫描方法](source-scan.md) | 英文 | 当前 | 自动仓库索引的采集方法 |
-| 案例合集覆盖记录：[中文](case-coverage.zh-CN.md)、[英文](case-coverage.md) | 中英 | 自动生成 | 固定版本上游案例合集的清点记录 |
-| 仓库扫描索引：[中文](repositories/README.zh-CN.md)、[英文](repositories/README.md) | 中英 | 自动生成 | 按分类浏览仓库索引 |
+| 案例合集覆盖摘要 | 中英 | 构建产物（未跟踪） | 由 `scripts/build_case_coverage.py` 从[案例覆盖记录](../data/case-coverage.json)生成 |
+| 仓库扫描索引 | 中英 | 构建产物（未跟踪） | 由 `scripts/build_repository_index.py` 生成；可在[网站](https://awesomerea.org/zh/?view=source-index)浏览 |
 | [合集路线图](roadmap.md) | 英文 | 当前 | 收录优先级 |
 
 ## 首发调研快照
@@ -49,4 +49,4 @@
 
 | 文档 | 语言 | 状态 | 内容 |
 | --- | --- | --- | --- |
-| [精选条目证据档位](evidence-classes.zh-CN.md) | 中文 | v4 Beta，自动生成 + 人工复核 | 全部 653 条精选条目的 Class 0-3 证据档位与 Unknown 状态，Class 0 仅限人工确认的完整软件复现；展示并支持筛选于主页，由 [classify_evidence_classes.py](../scripts/classify_evidence_classes.py) 生成到 [data/evidence-classes.json](../data/evidence-classes.json) |
+| [精选条目证据档位](evidence-classes.zh-CN.md) | 中文 | v4 Beta，自动生成 + 人工复核 | 全部精选条目的 Class 0-3 证据档位与 Unknown 状态，Class 0 仅限人工确认的完整软件复现；展示并支持筛选于主页，由 [classify_evidence_classes.py](../scripts/classify_evidence_classes.py) 生成到 [data/evidence-classes.json](../data/evidence-classes.json) |

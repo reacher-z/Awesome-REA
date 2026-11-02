@@ -50,4 +50,4 @@
 | 目标领域理由 | `binary`：文档列出的输入是可执行模块、shellcode、针对可执行文件的沙箱报告以及由它们派生的文件。证据不支持其他目标领域。 |
 | 结论 | 收录为 `capa`，`verified_at: 2026-10-19`。 |
 
-修改之后，`scan-272815213` 逐字节保持不变，仍为 `automated-readme-scan`。它在[原生分析目录](repositories/native-analysis.zh-CN.md)中的那一行多出“精选：capa”链接，仅仅因为精选记录的 `url` 恰好是该仓库的根地址。本次没有安装或运行任何内容；精选记录的使用条件写明未分析任何样本。
+修改之后，`scan-272815213` 逐字节保持不变，仍为 `automated-readme-scan`。它在[原生分析目录](https://awesomerea.org/zh/browse/native-analysis/)中的那一行多出“精选：capa”链接，仅仅因为精选记录的 `url` 恰好是该仓库的根地址。本次没有安装或运行任何内容；精选记录的使用条件写明未分析任何样本。

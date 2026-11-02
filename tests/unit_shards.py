@@ -25,7 +25,10 @@ WEIGHTS = {
     'test_requirement_budget.RequirementBudgetTests': 15,
     'test_review_pr.ReviewerDataSelectionTest': 12,
     'test_readme_size.ReadmeSizeBudgetTest': 10,
-    'test_repository_index': 6,
+    'test_repository_index': 8,
+    'test_first_resource_walkthrough.WalkthroughTests': 8,
+    'test_promotion_worksheet.WorksheetTests': 8,
+    'test_unavailable_upstreams.CollectionTests': 8,
     'test_readme_totals.ReadmeTotalsTest': 6,
 }
 FALLBACK_SECONDS = 0.1

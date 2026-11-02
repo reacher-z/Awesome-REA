@@ -60,7 +60,8 @@ SAFE_LABEL = re.compile(r'[A-Za-z0-9][A-Za-z0-9_.:/-]{0,99}')
 PRIVATE_NAMES = ('.env', '.env.*', 'secrets.json', 'credentials*.json', '*.local.json', '*.pem', '*.key',
                  'id_rsa', 'id_dsa', 'id_ecdsa', 'id_ed25519', '*.har', '*.pcap', '*.pcapng', 'scan-seed-*.json.gz')
 PRIVATE_DIRS = {'.cloudflare', '.wrangler'}
-GENERATED_NAMES = ('*.py[cod]', '.ds_store', '*.woff', '*.woff2')
+GENERATED_NAMES = ('*.py[cod]', '.ds_store', '*.woff', '*.woff2', 'case-coverage.md', 'case-coverage.zh-cn.md')
+GENERATED_PATHS = ('docs/repositories/',)
 GENERATED_DIRS = {'__pycache__', '.cache', '.venv', 'dist', 'node_modules', 'output'}
 PUBLIC_NAMES = {'.env.example'}
 MAX_FILE_BYTES = 8 * 1024 * 1024
@@ -120,7 +121,9 @@ def path_rule(path):
     if ((name not in PUBLIC_NAMES and any(fnmatch.fnmatchcase(name, rule) for rule in PRIVATE_NAMES))
             or PRIVATE_DIRS.intersection(directories)):
         return 'private configuration, keys, and raw captures should not be committed.'
-    if any(fnmatch.fnmatchcase(name, rule) for rule in GENERATED_NAMES) or GENERATED_DIRS.intersection(directories):
+    if (path.lower().lstrip('/').startswith(GENERATED_PATHS)
+            or any(fnmatch.fnmatchcase(name, rule) for rule in GENERATED_NAMES)
+            or GENERATED_DIRS.intersection(directories)):
         return 'generated, raw, or licensed production assets do not belong in this public source repository.'
     return None
 
