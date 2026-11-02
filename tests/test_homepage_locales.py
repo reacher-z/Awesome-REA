@@ -272,7 +272,8 @@ class HomepageLocaleTests(unittest.TestCase):
 
     def test_only_links_that_leave_the_site_show_the_external_arrow(self):
         # ↗ and the external-link icon mark new-tab links off awesomerea.org; same-site links use → or no glyph.
-        changed = ('surveyLink', 'directoryAbout', 'browseDirectory', 'dataManifest', 'dataResources', 'dataPapers')
+        # browseDirectory is now a plain section name in the shared footer, like the other section links.
+        changed = ('surveyLink', 'directoryAbout', 'dataManifest', 'dataResources', 'dataPapers')
         for lang in ('en', 'zh'):
             with self.subTest(language=lang):
                 html = localized_homepage(TEMPLATE, APP, lang)
