@@ -167,6 +167,14 @@ def main():
         files, count = rendered_files()
         stale = stale_files(files)
         obsolete = obsolete_pages(files)
+        if not args.check:
+            # A fresh checkout has no generated output at all, so stale_files()
+            # only sees the tracked README summary. Materialize every page the
+            # generator owns, not just pages that changed in an existing tree.
+            OUTPUT.mkdir(parents=True, exist_ok=True)
+            stale = sorted(set(stale) | {
+                name for name in files if not (OUTPUT / name).resolve().exists()
+            })
         if args.check and (stale or obsolete):
             if stale:
                 print('Repository index or README summary needs regeneration: '
@@ -177,7 +185,6 @@ def main():
                       'Regeneration removes generated pages; move or delete other files.', file=sys.stderr)
             return 1
         if not args.check:
-            OUTPUT.mkdir(parents=True, exist_ok=True)
             for name in stale:
                 (OUTPUT / name).write_text(files[name], encoding='utf-8')
             # Remove only pages this script wrote; anything else stays for a person to review.

@@ -92,6 +92,19 @@ class RepositoryIndexTests(unittest.TestCase):
             self.assertNotIn('old-category.md', message)
             self.assertNotIn('needs regeneration', message)
 
+    def test_generation_writes_every_page_when_the_output_directory_is_missing(self):
+        files, _ = self.rendered
+        pages = {name for name in files if not name.startswith('../')}
+        with tempfile.TemporaryDirectory() as directory:
+            # A fresh checkout has no docs/repositories directory at all.
+            output = Path(directory) / 'docs/repositories'
+            self.assertFalse(output.exists())
+            code, message = self.run_generator(output)
+            self.assertEqual(code, 0, message)
+            self.assertEqual(set(snapshot(output)), pages)
+            # The next validation pass sees a complete directory and stays green.
+            self.assertEqual(self.run_generator(output, '--check'), (0, ''))
+
     def test_generated_docs_are_not_tracked(self):
         result = subprocess.run(
             ['git', 'ls-files', '--', 'docs/repositories', 'docs/case-coverage.md', 'docs/case-coverage.zh-CN.md'],
