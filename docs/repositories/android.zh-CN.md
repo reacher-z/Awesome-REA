@@ -171,7 +171,7 @@
 - [themalwarenews/frida\_rootandsslbypass](https://github.com/themalwarenews/frida_rootandsslbypass) — 该脚本可为你的 Android 应用绕过 Root 检测及 SSL 证书固定。 **[100 星标]**
 - [darvincisec/DetectTamper](https://github.com/darvincisec/DetectTamper) — Android 篡改检测。 **[95 星标]**
 - [cybersecsi/robodroid](https://github.com/cybersecsi/robodroid) — 使用预定义行为管理网络靶场环境中的 Android 机器。 **[91 星标]**
-- [ChupathingyCE/chupathingyce](https://github.com/ChupathingyCE/chupathingyce) — Chupathingy：让 Halo: Combat Evolved 原生运行于 Windows、Mac、Linux 和 Android。基于 Halo CE 反编译项目移植，侧重稳定性及社区多人游戏，提供自己的专用服务器和 Delta 网络。 **[90 星标]**
+- [ChupathingyCE/chupathingyce](https://github.com/ChupathingyCE/chupathingyce) — Chupathingy：让 Halo: Combat Evolved 原生运行于 Windows、Mac、Linux 和 Android。基于 Halo CE 反编译项目移植，侧重稳定性及社区多人游戏，提供自己的专用服务器和 Delta 网络。 **[90 星标]** · 精选：[Chupathingy：《光环：战斗进化》原生多平台移植](https://awesomerea.org/zh/resources/chupathingy-case/)
 - [giacomoferretti/paranoid-deobfuscator](https://github.com/giacomoferretti/paranoid-deobfuscator) — 对“paranoid”保护的应用去混淆 **[90 星标]**
 - [0xdad0/PAPIMonitor](https://github.com/0xdad0/PAPIMonitor) — 面向 Android 应用的 Python API 监视器。 **[89 星标]**
 - [andpalmier/apkingo](https://github.com/andpalmier/apkingo) — 从 APK 文件提取信息 **[89 星标]**
