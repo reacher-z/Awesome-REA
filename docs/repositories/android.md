@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/android/) · [简体中文](android.zh-CN.md)
 
-**477 repositories** · 2026-10-20 UTC
+**478 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -65,6 +65,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [SlickAmogus/silent-hill-decomp](https://github.com/SlickAmogus/silent-hill-decomp) — Multiplatform and Feature-rich Port based on PSX decompilation of Silent Hill 1 made with Claude and Psycross. Still in beta and is in active development. **[682 stars]**
 - [darbra/sign](https://github.com/darbra/sign) — Ideas and experiences in reverse engineering app parameters, focused on Android. **[675 stars]**
 - [evilpan/jni\_helper](https://github.com/evilpan/jni_helper) — Find JNI function signatures in APK and apply to reverse-engineering tools. **[675 stars]** · Curated: [jni\_helper](https://awesomerea.org/resources/jni-helper/)
+- [lkimuk/ReArk](https://github.com/lkimuk/ReArk) — An intelligent reverse engineering and AI-assisted analysis tool for HarmonyOS NEXT (HAP/APP/ABC), Android (APK/AAB), iOS (IPA), and native PE/ELF/Mach-O binaries. **[675 stars]** · Curated: [ReArk](https://awesomerea.org/resources/reark/)
 - [zinja-coder/apktool-mcp-server](https://github.com/zinja-coder/apktool-mcp-server) — A MCP Server for APK Tool (Part of Android Reverse Engineering MCP Suites) **[674 stars]** · Curated: [apktool-mcp-server](https://awesomerea.org/resources/apktool-mcp-server/)
 - [yazgx97/frida-android-hook](https://github.com/yazgx97/frida-android-hook) — A tool that helps you work with frida easily for Android platform **[654 stars]**
 - [bongtrop/hbctool](https://github.com/bongtrop/hbctool) — Hermes Bytecode Reverse Engineering Tool (Assemble/Disassemble Hermes Bytecode) **[642 stars]** · Curated: [hbctool](https://awesomerea.org/resources/hbctool/)

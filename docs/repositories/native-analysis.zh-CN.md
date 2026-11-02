@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**848 个仓库** · 2026-10-20 UTC
+**847 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -120,7 +120,6 @@
 - [aozhimin/iOS-Debug-Hacks](https://github.com/aozhimin/iOS-Debug-Hacks) — <span>:</span>dart: iOS 项目开发过程中用到的高级调试技巧，涉及第三方库的动态调试、静态分析和反编译等领域。 **[682 星标]**
 - [gaasedelen/lucid](https://github.com/gaasedelen/lucid) — 交互式 Hex-Rays 微代码浏览器。 **[679 星标]** · 精选：[Lucid Hex-Rays 微码浏览器](https://awesomerea.org/zh/resources/lucid-microcode-explorer/)
 - [chainguard-dev/malcontent](https://github.com/chainguard-dev/malcontent) — #供应链 #攻击 #检测 **[678 星标]**
-- [lkimuk/ReArk](https://github.com/lkimuk/ReArk) — 面向 HarmonyOS NEXT（HAP/APP/ABC）、Android（APK/AAB）、iOS（IPA）以及原生 PE/ELF/Mach-O 二进制文件的智能逆向工程与 AI 辅助分析工具。 **[675 星标]**
 - [SentineLabs/AlphaGolang](https://github.com/SentineLabs/AlphaGolang) — 用于分析 Go 二进制文件的 IDAPython 脚本。 **[675 星标]**
 - [Accenture/VulFi](https://github.com/Accenture/VulFi) — 用于在二进制文件中进行查询式搜索的 IDA Pro 插件，主要服务于漏洞研究。 **[673 星标]**
 - [tmr232/Sark](https://github.com/tmr232/Sark) — 让 IDAPython 变得简单。 **[672 星标]**
