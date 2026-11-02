@@ -6446,5 +6446,14 @@
       "二进制文件、IDA 数据库和签名均由分析者自行提供：仓库在 fa/signatures 下只附带两个小型测试项目，没有面向真实固件的签名集。README 将签名按项目划分，部分目的在于降低误报；ELF 加载器遇到多处匹配的符号时会如实报告，而不会替用户选定其一。",
       "CI 使用 flake8 做静态检查，并在 Python 3.8 至 3.12 上运行 pytest；测试在模拟内存段上检查 find-bytes，并在测试时用 Keystone 和 simpleelf 生成的小型 ARM ELF 上检查 ELF 符号搜索，均不运行 IDA。许可证文本为 GPL-3.0，pyproject.toml 的分类标注为 GPLv3 或更高版本。本次未安装或运行任何内容。"
     ]
+  },
+  "dexkit": {
+    "name": "DexKit 混淆 DEX 代码检索库",
+    "requirements": [
+      "审阅时最新版本为 2.3.0，发布于 2026-09-22，未附带文件；该版本新增读取数值字面量和匹配原始 DEX 访问标志的功能，并优化了缓存与字符串查询。所审阅的 master 提交（2026-10-10）比该标签多两个核心修复。软件包以 org.luckypray:dexkit 发布在 Maven Central；自 2.0 起构件 ID 由 DexKit 改为 dexkit。",
+      "Android 项目需要 JDK 11+、Kotlin 1.5+、AGP 4.2+ 和 minSdkVersion 21+，建议 23+，因为在较低设置下 libdexkit.so 可能因 APK 中的库被压缩而无法加载。自 1.1.0 起也可在 Windows、Linux 和 macOS 桌面上基于源码运行，需用 gcc 或 clang、CMake 以及 Ninja 或 Make 构建，Windows 上使用 MSYS2；CI 会在这三个平台上构建原生库。要查询的 APK、DEX 数据或类加载器由使用者提供；仓库中唯一的应用是项目自己的演示应用。",
+      "文档将 DexKit 定位为面向 Xposed 模块开发者的工具，README 示例也运行在 Xposed Hook 中；本记录关注的是它对 DEX 代码的查询与检查功能。匹配结果取决于使用者编写的条件，因此只能找出候选的类和成员，而不能恢复原始名称。仓库包含使用 smali 测试样本的单元测试，但所审阅的工作流只构建原生库和软件包；本次审阅未构建或运行任何内容。",
+      "Core/ 以外的部分采用 Apache-2.0，Core/ 中的原生代码采用 LGPL-3.0，但 README 的许可证徽章只链接到 LGPL。README 列出 AOSP 的 slicer、ThreadPool 和 parallel-hashmap 作为第三方来源。用它分析的应用仍受各自条款约束，所审来源未确立与 REA 的关联。"
+    ]
   }
 }
