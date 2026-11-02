@@ -6709,5 +6709,15 @@
       "CI 在 Python 3.12 和 3.14 上针对模拟的 binaryninja 模块运行 pytest，检查发布元数据，并用构建出的 wheel 冒烟测试插件与技能安装，因此并未在真实的 Binary Ninja 中运行。修改操作返回 verified、noop、unsupported 或 verification_failed；README 提示类型修改后反编译显示可能仍是旧内容，需回读类型或刷新分析。",
       "采用 MIT 许可，v0.14.1 起加入仓库；Binary Ninja 保留自身的许可条款。本次未安装或运行任何内容，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "quarkslab-titanm-tools": {
+    "name": "Quarkslab Titan M 安全芯片研究工具",
+    "requirements": [
+      "这是没有标签或软件包的研究发布：最后一次提交在 2022-08-22，添加了 Black Hat USA 2022 幻灯片，两天前 nosclient 已为该演讲更新。幻灯片介绍的基于仿真的模糊测试器不在仓库中，仓库也未提交任何 Titan M 固件镜像、Boot ROM 转储或密钥。",
+      "固件文件须来自分析者自己的 Pixel 设备；白皮书指出 Titan M 首次随 Pixel 3 推出。用 nosclient 发送命令需要设备的 root 权限，白皮书对此有说明；SPI 解析器读取的是分析者自行抓取的 sigrok CSV 导出文件。",
+      "citadelimgloader 使用 Gradle 针对由 GHIDRA_INSTALL_DIR 指定的本地 Ghidra 安装构建，未说明支持的 Ghidra 版本。nosclient 在初始化 libnos（AOSP）、protobuf、libprotobuf-mutator 和 sqlite 子模块后，可用 CMake 构建 Linux 版或借助 NDK 构建 Android arm64 版，也可使用随附的 Debian 10 Docker 镜像（NDK r21e）构建。",
+      "ROOTS'21 论文报告，黑盒模糊测试器在数秒内重新发现了多个已知漏洞，并在当时最新的固件中发现一个新漏洞；这些是作者在自有设备上得到的结果。README 称该工具集还包含针对一个已知漏洞的利用代码；本条目只介绍其分析工具。",
+      "LICENSE 为 Apache-2.0。模糊测试器附带一个生成的 libradamsa.c，文件内没有单独的许可声明；客户端包含由 nugget/app 消息定义生成的 protobuf 源码和少量 KeyMint 枚举头文件；演讲 PDF 未说明许可。本次未构建或运行任何工具，所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }
