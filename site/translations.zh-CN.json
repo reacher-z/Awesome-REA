@@ -7980,5 +7980,14 @@
       "REA 在 13 个工具中排第一，且只有 DX-Ball 条目说明使用了 REA。网站的第三方指南《Rebuild something with REA》介绍了安装 rea-agents、按输入类型选择 REA 工具、双智能体净室分工以及与原作对照检查；但其中的 Node.js 最低版本（22.19+、24.11+ 或 26+）早于 REA README 现在要求的 22.23.4+、24.22.1+ 或 26.12.1+。",
       "代码与列表采用 MIT 许可；LICENSE 说明许可不涵盖原版游戏及其代码与素材。条目说明由网站自行撰写，并注明了收录时参考的列表，其中包括采用 CC BY-SA 4.0 和 CC0 的列表。"
     ]
+  },
+  "reaguide-unofficial-rea-guide": {
+    "name": "REA & AI RE Tools Guide（非官方）：REA 安装、接入与故障排查社区指南",
+    "requirements": [
+      "作为在线网站于 2026-11-02 审阅，当时站点地图列出 32 个页面。网站没有公开的源码仓库或固定版本，因此页面可能在审阅后变化；每个页面都注明其转述命令的核对日期（所审页面为 2026-10-13 至 2026-10-27）。首页写明 rea-agents 6.8.0，以及 Node.js 22.23.4+、24.22.1+ 或 26.12.1+，与审阅时 npm 和 REA README 的信息一致。",
+      "经测试的页面注明了平台与版本：在 Debian 13 上用 rea-agents 6.5.0、JDK 21 和 jadx-headless-mcp 0.7.1 分析一个 F-Droid APK，以及在 rea-agents 6.8.0 上重新运行 Claude Code 配置。Gemini CLI 页面在 6.5.0 和 6.7.0 上扫描了 REA 的工具模式，但没有向 Gemini 发送请求；Windows 页面依据的是 REA 文档和 issue 报告。",
+      "每个页面都声明本站是独立社区指南、与 REA 项目无关，并将 rea.tools 和 morluto/rea 列为权威来源；其仿冒副本页面只把 morluto/rea、rea.tools 和 npm 包 rea-agents 列为官方来源。页面没有广告或推广返利链接，会加载 Cloudflare Web Analytics 统计脚本。",
+      "页面未说明指南自身文字的许可。REA 采用 MIT 许可；它可驱动的商业分析引擎（如 IDA Pro 和 Hopper）需另行取得许可。"
+    ]
   }
 }
