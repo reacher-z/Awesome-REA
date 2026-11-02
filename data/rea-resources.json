@@ -3834,11 +3834,20 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
-      "The essay is dated 13 October 2026, and its evidence notes record a review of repository history, maintained source and comparison notes on that day without running game targets, compiling candidates or repeating historical runtime checks. Its examples are historical function-level comparisons recorded in linked TH09, TH095, TH04 and TH08 commits; whole-game runtime checks are separate milestones. Later sessions inherited earlier source, diagnostics and failed experiments, so the before-and-after closures are not controlled estimates of model-size effects.",
-      "The notes identify the gpt-dots label as GPT-6-Astra and treat gpt-web as a changing label that does not identify an individual run, while explicit gpt-6-sol, gpt-6.1-sol and gpt-6-luna-max commit subjects establish the recorded names. Per-run reasoning effort and budgets are not uniformly recorded, and GPT-6-Luna-max records an effort setting, not a parameter count or specialist training. The Luna closure is presented as a discovery across model tiers, not a measured smaller-model advantage.",
-      "The TH08 example comes from a repository-wide audit in commit a393f400 (2 September) that target-checks every VC7 floating-literal relocation; the follow-up audits 1,548 relocations and corrects 12 stale rows in five accepted units, one of which had 1.0f where the original used 32.0f. The essay’s concern that a reward built on the old check could reinforce wrong source is stated as an inference: the notes record no actual RL exploit or trained model doing so.",
-      "The essay proposes comparing strong and smaller general models, retrieval, supervised specialization and RL on a fixed VC7.1 task family, with held-out source families, the same evidence and tools, repeated trials, and time and cost accounting that includes compilation. It cites LLM4Decompile, AutoDecompiler and a differential-fuzzing preprint on LLM decompilers as related work, and the notes say their setups do not establish a winner for this task. None of the proposed experiments has been run.",
-      "The essay and notes supply no game files, compilers or builds; each Touhou repository documents its own requirements, and game rights stay with their owners. The essay follows the author’s earlier Touhou reconstruction-method essay, which has its own catalog record, and does not describe REA’s part in the cited sessions. This collection reran none of the recorded comparisons."
+      "The essay and its notes supply no game files, compilers or builds; each linked Touhou repository documents its own requirements.",
+      "The essay is dated 13 October 2026, and its evidence notes record a review of repository history, maintained source and comparison notes that day without running game targets, compiling candidates or repeating historical runtime checks. Its examples are function-level comparisons recorded in linked TH09, TH095, TH04 and TH08 commits, not whole-game runtime checks.",
+      "Later sessions inherited earlier source, diagnostics and failed experiments, so the before-and-after closures are not controlled estimates of model-size effects. The notes treat gpt-web as a changing label that does not identify a run’s model, per-run reasoning effort and budgets are not uniformly recorded, and the GPT-6-Luna-max closure is presented as a discovery across model tiers, not a measured smaller-model advantage.",
+      "The TH08 example comes from commit a393f400 (2 September), which target-checks every VC7 floating-literal relocation; the follow-up audits 1,548 relocations and corrects 12 stale rows in five accepted units. The essay’s concern that a reward built on the old check could reinforce wrong source is stated as an inference: the notes record no actual RL exploit or trained model doing so.",
+      "Game rights stay with their owners.",
+      "The essay does not describe REA’s part in the cited sessions."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "testing",
+      "license",
+      "attribution"
     ],
     "additional_evidence_urls": [
       "https://github.com/morluto/rea/blob/e8da7e1edd075feec0e6beedec93d5645fed8125/website/public/blog/reverse-engineering-models/index.html",
