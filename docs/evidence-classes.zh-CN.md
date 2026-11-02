@@ -2,7 +2,7 @@
 
 状态：v4 Beta，自动生成 + 人工复核。口径版本：`evidence-class-v4`。生成脚本：[`scripts/classify_evidence_classes.py`](../scripts/classify_evidence_classes.py)。数据：[`data/evidence-classes.json`](../data/evidence-classes.json)。Class 0 复核：[`data/evidence-class-zero-reviews.json`](../data/evidence-class-zero-reviews.json)。
 
-本文件定义主页精选目录全部 653 个条目的**证据档位**和**复现范围**。这是 Beta 口径：只依据公开证据，**本目录没有运行或验收任何软件**。**Class 0 只授予人工确认的完整软件复现**；自动规则最高只到 Class 1。
+本文件定义主页精选目录全部条目的**证据档位**和**复现范围**。这是 Beta 口径：只依据公开证据，**本目录没有运行或验收任何软件**。**Class 0 只授予人工确认的完整软件复现**；自动规则最高只到 Class 1。
 
 档位、复现范围和运行状态分开记录：
 
@@ -48,11 +48,17 @@
 
 ## 3. 方法与局限
 
-- 653 条中，599 条通过 GitHub REST 读取仓库元数据、releases 和 README；2 条走 GitLab REST；37 条抓取页面；15 条人工确认 Class 0；7 条来源不可读标为 Unknown。当前分布：Class 0 15 / Class 1 201 / Class 2 391 / Class 3 39 / Unknown 7。除 Class 0 外没有逐条 class override。
+- 当前分布、各 `basis` 数量和未知数从 [`data/evidence-classes.json`](../data/evidence-classes.json) 读取，不在本文件维护副本：
+
+  ```bash
+  python3 -c "import collections,json; d=json.load(open('data/evidence-classes.json', encoding='utf-8')); print(d['meta']['class_counts'], d['meta']['unknown_count'], collections.Counter(e['basis'] for e in d['entries']))"
+  ```
+
+  Class 0 是 `evidence_class == 0` 与 [`data/evidence-class-zero-reviews.json`](../data/evidence-class-zero-reviews.json) 中 `scope: full` 的交集。除 Class 0 外没有逐条 class override。
 - GitHub token 只发送到 `api.github.com`；跨域重定向会剥离认证头。页面的普通抓取不携带 token。
 - 图片过滤掉 logo、徽章、二维码、群聊和赞助链接，避免把品牌图当成 demo。
 - 主页示范截图由 [`scripts/build_evidence_previews.py`](../scripts/build_evidence_previews.py) 选取并写入 [`data/evidence-previews.json`](../data/evidence-previews.json)；[`scripts/fetch_previews.py`](../scripts/fetch_previews.py) 在构建前下载到 `.cache/previews/`，构建复制到站点的 `previews/` 目录，页面不外链第三方图片。
-- 216 条 Class 0/1 中 207 条有预览 URL（198 张图片 + 9 个视频封面）；9 条没有合格图片，另有 5 张超过 8MB、1 张不可达；共 15 条显示占位。
+- 预览 URL、缺失条目和占位数量从 [`data/evidence-previews.json`](../data/evidence-previews.json) 的 `entry_count`、`class_entry_count`、`class_counts`、`missing_count` 和 `missing` 读取；图片下载失败和站点占位由构建时的 [`scripts/fetch_previews.py`](../scripts/fetch_previews.py) 决定。
 - 已知局限：文档完整度靠章节结构推断，不看内容质量；JS 渲染页面可能漏检媒体；“下载方式”不含纯源码构建说明；C0 是人工范围复核，不是运行验收。
 - 除 Class 0 人工复核外没有逐条 class override；自动规则是唯一标准。Class 0 只能在 [`data/evidence-class-zero-reviews.json`](../data/evidence-class-zero-reviews.json) 中逐条确认。单条复核使用 [`scripts/verify_evidence_entry.py`](../scripts/verify_evidence_entry.py)。
 
