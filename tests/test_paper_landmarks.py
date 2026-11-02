@@ -1,4 +1,4 @@
-"""The paper directory keeps three navigation landmarks however many papers it lists."""
+"""The paper directory keeps the same four navigation landmarks however many papers it lists."""
 from html.parser import HTMLParser
 import json
 from pathlib import Path
@@ -50,8 +50,9 @@ class PaperLandmarkTests(unittest.TestCase):
             output = Path(directory)
             build_paper_pages(output, papers)
             for path, names, zh in (
-                    ('papers/index.html', ['Main navigation', 'Breadcrumb', 'Research areas'], False),
-                    ('zh/papers/index.html', ['主导航', '当前位置', '研究方向'], True)):
+                    # The last is the shared site footer's navigation (site_footer.py).
+                    ('papers/index.html', ['Main navigation', 'Breadcrumb', 'Research areas', 'More from the collection'], False),
+                    ('zh/papers/index.html', ['主导航', '当前位置', '研究方向', '更多合集内容'], True)):
                 parser = Landmarks()
                 parser.feed((output / path).read_text(encoding='utf-8'))
                 self.assertEqual(parser.navs, names, path)
