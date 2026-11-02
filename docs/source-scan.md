@@ -216,3 +216,13 @@ exactly, with every JSON member checked before an explicit provenance download
 is copied into the site. This is not an import of the private capture campaign
 or an automatic promotion of every row in the cloud checkpoint. Curated
 resources and their machine-data bundle remain separate.
+
+## Prepare translation review
+
+After a scan finishes, generate review inputs for the IDs it added:
+
+```sh
+python3 scripts/locale_review_inputs.py --baseline-ref origin/main --candidate .cache/source-index-next.json
+```
+
+The [helper](../scripts/locale_review_inputs.py) reads a `complete` candidate and the baseline's source index and three locale shards, here from the named git revision or from `--baseline` with `--baseline-locales`. It refuses an in-progress checkpoint, a candidate missing baseline records, and shards that do not cover exactly the baseline IDs. Each candidate ID without a baseline translation is assigned once, in numeric order, to the shard with the fewest entries, ties going to the lowest shard number. The result depends only on the inputs, whatever the batch size. The helper writes `review-repositories-1.json` to `-3.json` and `assignment-manifest.json` to `.cache/locale-review/<candidate hash>/`, or to `--output` outside `data/`. Each entry carries the source ID, name, URL, source description, any omission evidence, and `translation_required: false` for empty or omitted descriptions, which keep both strings empty. The manifest records the SHA-256 of the candidate, the baseline index, each baseline shard and each input, plus every assignment. No translation or placeholder is produced and the canonical shards are not written. Reviewers add both languages to the named shard; existing memberships and values stay unchanged. After that review, record the new translations' [source fingerprints](../data/locales/README.md#source-fingerprints) with `python3 scripts/localization.py --bind-unbound`. The helper covers only added IDs: a changed description on an existing ID is reported as stale by validation instead.
