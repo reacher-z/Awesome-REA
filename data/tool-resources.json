@@ -20080,7 +20080,7 @@
   },
   {
     "id": "lostmycode-javascript-deobfuscator",
-    "name": "javascript-deobfuscator",
+    "name": "javascript-deobfuscator (LostMyCode)",
     "url": "https://github.com/LostMyCode/javascript-deobfuscator",
     "category": "web-analysis",
     "relationship": "foundation",
@@ -20094,10 +20094,18 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "requirements": [
-      "Unversioned: package.json reports 0.1.0 and marks the package private, there are no GitHub releases or npm package, and the reviewed master commit of 2024-05-31 is the latest push. The README covers only the Vue CLI 4 project commands (npm install, serve, build and lint); a GitHub Actions workflow builds the site with Node.js 16 and deploys it to GitHub Pages. The hosted demo was not reviewed, and the README's only result is an example screenshot.",
-      "Supply the obfuscated script and identify the target function name yourself; a built-in tip shows call shapes such as _0x439c[103], _0x439c('0x4') and _0x439c('0x2','f]Xg'). Only these string-array patterns are handled, with a fourth pattern marked experimental, and unrecognized input returns an error. The code has no passes for control-flow flattening, proxy functions, dead code or Obfuscator.io's other transformations, so those remain in the output.",
-      "Decoding evaluates the pasted script with eval inside a browser web worker, so the input's own code runs; it is not a static AST transformation. The page template also loads js-beautify from cdnjs and a Google Analytics tag.",
-      "The repository has no license file and GitHub detects no license, so it grants no stated reuse terms. No scripts were deobfuscated for this entry."
+      "Supply the obfuscated script and identify the target function name yourself; a built-in tip shows call shapes such as _0x439c[103], _0x439c('0x4') and _0x439c('0x2','f]Xg'). The README covers only the Vue CLI 4 project commands (npm install, serve, build and lint), and a GitHub Actions workflow builds the site with Node.js 16 and deploys it to GitHub Pages.",
+      "Unversioned: package.json reports 0.1.0 and marks the package private, there are no GitHub releases or npm package, and the reviewed master commit of 2024-05-31 is the latest push.",
+      "Only these string-array patterns are handled, with a fourth pattern marked experimental, and unrecognized input returns an error. The code has no passes for control-flow flattening, proxy functions, dead code or Obfuscator.io's other transformations, so those remain in the output. Decoding evaluates the pasted script with eval inside a browser web worker, so the input's own code runs; it is not a static AST transformation. The page template also loads js-beautify from cdnjs and a Google Analytics tag.",
+      "The repository has no tests, and the README's only result is an example screenshot.",
+      "The repository has no license file and GitHub detects no license, so it grants no stated reuse terms."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/LostMyCode/javascript-deobfuscator/blob/2cc31bf07d9f870ea0871aabf3af5568d165f57d/src/xDecoder.js",

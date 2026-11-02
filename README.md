@@ -110,7 +110,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Chrome extension source viewer (CRX Viewer)**](https://github.com/Rob--W/crxviewer) - Browser extension and web page by Rob Wu for inspecting packaged browser extensions without installing them. <sub>Tool · [Full entry](https://awesomerea.org/resources/crxviewer/)</sub>
 - [**har-to-openapi**](https://github.com/jonluca/har-to-openapi) - TypeScript library and CLI that infers OpenAPI 3.0 or 3.1 documents from HAR captures of HTTP traffic, loosely based on har2openapi. <sub>Tool · [Full entry](https://awesomerea.org/resources/har-to-openapi/)</sub>
 - [**decode-js**](https://github.com/echo094/decode-js) - Babel-based AST processor that turns obfuscated JavaScript back into readable source, with one target selected per run: javascript-obfuscator (obfuscator.io), JS-Confuser 2.x up to its high preset, sojson and its v7 variant for jsjiami.com.v7, sojson's jjencode variant, and a generic pass for unreachable code, nested blocks and constant expressions. <sub>Tool · [Full entry](https://awesomerea.org/resources/decode-js/)</sub>
-- [**javascript-deobfuscator**](https://github.com/LostMyCode/javascript-deobfuscator) - Browser-based Vue app that restores the strings Obfuscator.io hides behind string-array lookups in JavaScript. <sub>Tool · [Full entry](https://awesomerea.org/resources/lostmycode-javascript-deobfuscator/)</sub>
+- [**javascript-deobfuscator (LostMyCode)**](https://github.com/LostMyCode/javascript-deobfuscator) - Browser-based Vue app that restores the strings Obfuscator.io hides behind string-array lookups in JavaScript. <sub>Tool · [Full entry](https://awesomerea.org/resources/lostmycode-javascript-deobfuscator/)</sub>
 
 <a id="game"></a>
 ### Game

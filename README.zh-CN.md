@@ -111,7 +111,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**CRX Viewer 浏览器扩展源码查看器**](https://github.com/Rob--W/crxviewer) - Rob Wu 开发的浏览器扩展及网页版工具，无需安装即可查看已打包的浏览器扩展。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/crxviewer/)</sub>
 - [**har-to-openapi：从 HAR 抓包推断 OpenAPI 文档**](https://github.com/jonluca/har-to-openapi) - TypeScript 库及命令行工具，可根据 HTTP 流量的 HAR 抓包记录推断 OpenAPI 3.0 或 3.1 文档，大致基于 har2openapi 改写。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/har-to-openapi/)</sub>
 - [**decode-js JavaScript 反混淆 AST 工具**](https://github.com/echo094/decode-js) - 基于 Babel AST 的处理工具，可把混淆过的 JavaScript 还原为可读源码，每次运行选择一个目标：javascript-obfuscator（obfuscator.io）、JS-Confuser 2.x（直至 high 预设）、sojson 及其面向 jsjiami.com.v7 的 v7 变体、sojson 风格的 jjencode，以及处理不可达代码、嵌套代码块和常量表达式的通用目标。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/decode-js/)</sub>
-- [**javascript-deobfuscator Obfuscator.io 字符串还原网页工具**](https://github.com/LostMyCode/javascript-deobfuscator) - 基于浏览器的 Vue 应用，用于还原 Obfuscator.io 藏在字符串数组查找背后的 JavaScript 字符串。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/lostmycode-javascript-deobfuscator/)</sub>
+- [**javascript-deobfuscator Obfuscator.io 字符串还原网页工具（LostMyCode）**](https://github.com/LostMyCode/javascript-deobfuscator) - 基于浏览器的 Vue 应用，用于还原 Obfuscator.io 藏在字符串数组查找背后的 JavaScript 字符串。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/lostmycode-javascript-deobfuscator/)</sub>
 
 <a id="game"></a>
 ### Game · 游戏
