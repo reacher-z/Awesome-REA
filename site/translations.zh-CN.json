@@ -6634,5 +6634,15 @@
       "CI 在 Ubuntu 上用 Python 3.10–3.13 运行 pytest 测试套件。测试覆盖 COBS、CRC16、GFDI、MLR 和 Smart 分帧，以模拟对象测试基于 bleak 的传输，检查帧追踪、抓包文件与回放，并在模拟器上检查手表生命周期、protobuf 与遥测行为。rev_eng.md 记录了如何依据九组带标注的录制数据解出 17 字节的加速度计数据包。在真实手表上的表现仍属作者报告，本次审阅未运行测试。",
       "采用 AGPL-3.0-only，与 README 致谢的 Gadgetbridge 衍生代码一致，尽管 README 同时称其为净室实现。Garmin 手表、应用和商标仍归各自权利人所有。一条提交信息称倾斜游戏示例是对无人监督 vibe coding 的一次测试；所审来源未就协议工作提出 AI 相关说法，也未确立 REA 使用。"
     ]
+  },
+  "vanbus": {
+    "name": "VanBus PSA VAN 总线收发库",
+    "requirements": [
+      "审阅时最新版本为 v0.5.1，发布于 2026-05-29，与 library.properties 和 VanBusVersion.h 声明的版本一致；此后 master 上只有一次提交（2026-08-22），仅在两个示例程序中补充了引脚可能对调的提示。README 称该库目前只支持 125 kbit/s 的 VAN 速率，62.5 kbit/s 等其他速率尚待添加。",
+      "使用 Arduino IDE 构建（作者使用 1.8.19），搭配 ESP8266 开发板包（测试过 2.6.3–3.1.2，CPU 设为 160 MHz）或 ESP32 开发板包（测试过 1.0.6、2.0.17 和 3.3.5，CPU 设为 240 MHz），并通过 Arduino 库管理器安装本库。LiveWebPage 示例另需 arduinoWebSockets 库，网页会让浏览器从 Google CDN 加载 jQuery；把报文转储到字符缓冲区需要 PrintEx。",
+      "实际使用需要一辆装有 VAN 舒适系统总线的 PSA 车辆：README 指出总线通常位于主机（车载收音机）ISO A 插座的第 2、3 针，并说明了三种接法：MCP2551 收发器配合 5 V–3.3 V 电平转换器、SN65HVD230 收发器，或仅供接收、据称只在 ESP8266 开发板上效果较好的电阻分压电路。README 警告收发器板上为 CAN 设计的终端电阻可能导致总线上其他设备工作异常，而发送功能会把报文写入车辆总线。仓库附带的总线数据只有作者的串口监视器日志 examples/PacketParser/example_log.txt。",
+      "CI 针对 ESP8266 D1 mini 以及 ESP32 开发板包 1.0.6、2.0.17 和最新版编译示例程序，并以严格模式运行 Arduino Lint，但不涉及实际总线。PacketParser 称其报文解释“高度实验性”，综合自多方资料以及作者在自己的 2003 款标致 406 上所做的实验；README 还指向外部整理的已知 IDEN 值列表，因此解码含义并非厂商规范。",
+      "采用 MIT 许可证。本次审阅未编译示例程序、未连接硬件，也未采集或发送总线数据；所审阅的资料未确立与 REA 的关联。"
+    ]
   }
 }
