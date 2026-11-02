@@ -6739,5 +6739,15 @@
       "fidb 文件夹中的 nitrosdk3.0.fidb 是一个 2 KB 的 Function ID 数据库，其 README 称收录的是商业游戏中 NitroSDK 3.0.0 函数的哈希，涵盖 ARM 代码中的 crt0 和文件系统例程，尚不支持 Thumb；加载器不会自动应用它。加载器将支持的格式命名为 Nintendo DS（NTR）和 DSi（TWL），源码中也有 DSi 寄存器和内存区域列表，但导入时只映射 DS 的 ARM9 和 ARM7 列表，CRT0 自动加载（autoload）处理也标为待办。",
       "采用 Apache-2.0 许可。README 致谢 GBATEK 提供的 DS 技术资料，以及 Gericom 的 Every File Explorer 提供最初的文件头与 ARM9 解压代码。本次未安装或运行任何内容，也未载入任何程序；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "bosectl-bose-bmap-protocol-case": {
+    "name": "bosectl：重建 Bose BMAP 耳机协议",
+    "requirements": [
+      "所审阅的提交即 2026-09-28 发布的 v0.5.0 版本，该版本提供由 Rust 和 C++ 代码构建的 Linux x86_64 bmapctl 二进制，并附 SHA256SUMS；Rust crate 也以 bose-bmap 0.5.0 发布在 crates.io 上，Python 软件包则需从仓库通过安装脚本或 pipx 安装。README 的设备表将以 QC Ultra Headphones 2 为首的六个型号标为不同程度地已验证，Ultra Open Earbuds 则依据一份设备报告标为部分支持；设备目录中的其他 BMAP 产品虽能按产品 ID 识别，但没有经过测试的配置。",
+      "需要使用者自己已配对的 Bose 耳机和蓝牙适配器：Linux 上使用 BlueZ；macOS 需 10.15+，Python 库通过 PyObjC 的 IOBluetooth 绑定访问蓝牙。Rust crate 仅支持 Linux，在 Linux 上构建 C++ 版本需要 CMake、C++17 编译器和 BlueZ 开发头文件。运行时无需任何 Bose 软件或文件。",
+      "README 报告的方法包括探测 RFCOMM 通道、在 Bose 应用中切换设置时抓取蓝牙 HCI 通信，以及在各功能块上逐一测试操作符；NOTES.md 还引用了 Bose Android 应用中的类名。仓库中没有该应用、反编译代码或原始 HCI／网络抓包：captures/ 中是 bmap-capture.py 记录的八份设置变更前后快照，其中 MAC 地址、序列号等标识已部分遮盖；fixtures/ 中有一份供测试使用的数据包。",
+      "README 称项目只使用耳机无需认证即可接受的 BMAP 操作，不提取密钥、不破解加密，也不重放通信；应用须经云端认证后才能执行的写入操作仍无法使用。尚未实现 USB 控制，NOTES.md 认为 USB 接口用于固件更新。",
+      "CI 在 Ubuntu 和 macOS 上运行 Python、Rust 和 C++ 的测试目标，无需连接耳机；需要已配对设备的集成测试只有在启用时才会运行。本次核查未复现任何设备行为。采用 MIT 许可；未确立任何 REA 使用。"
+    ]
   }
 }
