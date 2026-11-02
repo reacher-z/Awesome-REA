@@ -117,7 +117,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [radareorg/awesome-radare2](https://github.com/radareorg/awesome-radare2) — A curated list of awesome projects, articles and the other materials powered by Radare2 **[739 stars]**
 - [larkmjc/rv8](https://github.com/larkmjc/rv8) — RISC-V simulator for x86-64 **[727 stars]**
 - [0xb0bb/pwndra](https://github.com/0xb0bb/pwndra) — A collection of pwn/CTF related utilities for Ghidra **[710 stars]**
-- [Soulghost/iblessing](https://github.com/Soulghost/iblessing) — iblessing is an iOS security exploiting toolkit, it mainly includes application information gathering, static analysis and dynamic analysis. It can be used for reverse engineering, binary analysis and vulnerability mining. **[687 stars]**
+- [Soulghost/iblessing](https://github.com/Soulghost/iblessing) — iblessing is an iOS security exploiting toolkit, it mainly includes application information gathering, static analysis and dynamic analysis. It can be used for reverse engineering, binary analysis and vulnerability mining. **[687 stars]** · Curated: [iblessing](https://awesomerea.org/resources/iblessing/)
 - [aozhimin/iOS-Debug-Hacks](https://github.com/aozhimin/iOS-Debug-Hacks) — <span>:</span>dart: Advanced debugging skills used in iOS project development, including dynamic debugging, static analysis, and decompilation of third-party libraries. **[682 stars]**
 - [gaasedelen/lucid](https://github.com/gaasedelen/lucid) — An Interactive Hex-Rays Microcode Explorer **[679 stars]** · Curated: [Lucid](https://awesomerea.org/resources/lucid-microcode-explorer/)
 - [chainguard-dev/malcontent](https://github.com/chainguard-dev/malcontent) — #supply #chain #attack #detection **[678 stars]**
