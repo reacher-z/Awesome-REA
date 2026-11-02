@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/web-analysis/) · [English](web-analysis.md)
 
-**214 个仓库** · 2026-10-20 UTC
+**215 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -35,6 +35,7 @@
 - [wwwg/wasmdec](https://github.com/wwwg/wasmdec) — 将 WebAssembly 反编译为 C 的工具。 **[428 星标]**
 - [igorlira/dirplayer-rs](https://github.com/igorlira/dirplayer-rs) — 用 Rust 编写、兼容 Web 的 Shockwave Player 模拟器。 **[417 星标]**
 - [numandev1/react-native-decompiler](https://github.com/numandev1/react-native-decompiler) — 反编译 React Native Android/iOS Bundle。 **[371 星标]** · 精选：[React Native 反编译器](https://awesomerea.org/zh/resources/react-native-decompiler/)
+- [AngeloD2022/jsxer](https://github.com/AngeloD2022/jsxer) — 快速且准确的 JSXBIN 反编译器。 **[327 星标]** · 精选：[Jsxer JSXBIN 反编译器](https://awesomerea.org/zh/resources/jsxer/)
 - [helins/wasm.cljc](https://github.com/helins/wasm.cljc) — 符合规范的 WebAssembly 编译器、反编译器及生成器 **[264 星标]**
 - [L018/Trace](https://github.com/L018/Trace) — 用于网页分析的 Chrome 扩展 **[199 星标]**
 - [LostMyCode/javascript-deobfuscator](https://github.com/LostMyCode/javascript-deobfuscator) — 针对 Obfuscator.io 生成的 JavaScript 代码的去混淆工具 **[191 星标]**
