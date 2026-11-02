@@ -444,9 +444,10 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
             navigation.append(f'<a href="#{key}">{escape(label)}<span>{len(groups[key])}</span></a>')
             subgroups = [(slug, labels, [record for record in groups[key] if belongs(record)]) for slug, labels, belongs in SUBGROUPS]
             if all(entries for _, _, entries in subgroups):
-                # h2 section, h3 sub-group, h4 card: heading levels never skip.
+                # h2 section, h3 sub-group, h4 card: heading levels never skip. Each sub-group region is named by its
+                # section heading and its own ("Websites Case studies"), so the six "Case studies" regions stay distinct.
                 body = ''.join(
-                    f'<section class="resource-subgroup" aria-labelledby="{key}--{slug}"><div class="browse-topline resource-subgroup-topline"><h3 id="{key}--{slug}">{escape(names[1 if zh else 0])}</h3>'
+                    f'<section class="resource-subgroup" aria-labelledby="heading-{key} {key}--{slug}"><div class="browse-topline resource-subgroup-topline"><h3 id="{key}--{slug}">{escape(names[1 if zh else 0])}</h3>'
                     f'<p>{_subgroup_count(slug, len(entries), zh)}</p></div><div class="resource-grid">' + '\n'.join(_resource_card(record, language, 'h4') for record in entries) + '</div></section>'
                     for slug, names, entries in subgroups)
                 ordered = [record for _, _, entries in subgroups for record in entries]
