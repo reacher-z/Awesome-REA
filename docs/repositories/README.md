@@ -17,8 +17,8 @@ Publication date: **2026-10-20 UTC**.
 | [Native binaries](native-analysis.md) | 848 | 89 |
 | [Runtime and debugging](dynamic-analysis.md) | 148 | 22 |
 | [Firmware](firmware.md) | 223 | 20 |
-| [Protocols](protocol-analysis.md) | 110 | 8 |
-| [General tools and collections](reverse-engineering.md) | 667 | 70 |
+| [Protocols](protocol-analysis.md) | 111 | 9 |
+| [General tools and collections](reverse-engineering.md) | 666 | 70 |
 
 [Scan methodology](../source-scan.md) · [Scope exclusions](../../data/source-scope.json)
 
