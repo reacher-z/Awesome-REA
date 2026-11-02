@@ -862,6 +862,15 @@ class LinkNames(HTMLParser):
             self._link['text'].append(data)
 
 
+def link_destination(href):
+    """A same-site link's destination without its ?v= cache-busting revision, which names no other file."""
+    parts = urlsplit(href)
+    if parts.scheme or parts.netloc or not parts.query:
+        return href
+    query = '&'.join(pair for pair in parts.query.split('&') if pair.split('=', 1)[0] != 'v')
+    return parts._replace(query=query).geturl()
+
+
 def validate_unique_link_names(output):
     """On the repository category and paper listings, links sharing an accessible name share a destination."""
     output = Path(output)
@@ -872,7 +881,7 @@ def validate_unique_link_names(output):
             continue
         destinations = defaultdict(set)
         for link in LinkNames(page.read_text(encoding='utf-8')).links:
-            destinations[link['name']].add(link['href'])
+            destinations[link['name']].add(link_destination(link['href']))
         shared = sorted(name for name, hrefs in destinations.items() if len(hrefs) > 1)
         assert not shared, (f'Links to different destinations share an accessible name on '
                             f'/{page.parent.relative_to(output).as_posix()}/: ' + '; '.join(shared[:5]))

@@ -58,6 +58,19 @@ class RepeatedLinkNameTests(unittest.TestCase):
             with self.assertRaisesRegex(AssertionError, r'/browse/firmware/: Docs: b'):
                 validate_unique_link_names(root)
 
+    def test_cache_busting_revision_does_not_make_a_second_destination(self):
+        # The /browse/ hero links /source-published.json?v=<revision>; the shared footer links the same file plainly.
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            page = root / 'browse' / 'android' / 'index.html'
+            page.parent.mkdir(parents=True)
+            page.write_text('<a href="/source-published.json?v=0123">Repository JSON ↓</a><a href="/source-published.json">Repository JSON ↓</a>'
+                            '<a href="https://www.youtube.com/watch?v=a">Video</a>')
+            validate_unique_link_names(root)
+            page.write_text(page.read_text() + '<a href="https://www.youtube.com/watch?v=b">Video</a>')
+            with self.assertRaisesRegex(AssertionError, r'/browse/android/: Video'):
+                validate_unique_link_names(root)
+
     def test_hidden_symbols_are_not_part_of_the_visible_name(self):
         parsed = LinkNames('<a href="/x">README <span aria-hidden="true">↗<b>!</b></span><img alt=""> tail</a>').links
         self.assertEqual(parsed, [{'href': '/x', 'text': 'README tail', 'name': 'README tail'}])
