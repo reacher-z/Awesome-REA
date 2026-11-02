@@ -34,7 +34,8 @@ class ResourceListingTests(unittest.TestCase):
             items = next(schema_entities(page.schemas, 'CollectionPage'))['mainEntity']['itemListElement']
             self.assertEqual([item['url'] for item in items],
                              [f'{ORIGIN}{prefix}/resources/{identifier}/' for identifier in page.record_ids])
-            self.assertEqual(page.record_ids, ['web-case', 'game-tool', 'game-case'])
+            # Games holds a case study and a tool, so it lists its case-studies sub-group first, as the README does.
+            self.assertEqual(page.record_ids, ['web-case', 'game-case', 'game-tool'])
             for record in resources:
                 # Visible title and source links keep pointing at the original resource.
                 self.assertEqual(page.record_links[record['id']][0], record['url'])
