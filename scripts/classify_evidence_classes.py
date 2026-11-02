@@ -18,9 +18,9 @@ Class 1; Class 0 needs a manual scope review:
   rather than treating the entry as notes.
 
 Scope, evidence strength and runtime status are separate fields. Nothing here
-is a runtime verification. Observed signals stay in the output for audit;
-data/evidence-class-overrides.json holds boundary corrections and
-data/evidence-class-zero-reviews.json holds the manual Class 0 review.
+is a runtime verification. Observed signals stay in the output for audit. There
+are no per-entry class overrides; data/evidence-class-zero-reviews.json holds
+the manual Class 0 review.
 """
 from __future__ import annotations
 
@@ -42,9 +42,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CACHE_DIR = ROOT / ".cache" / "evidence-scan"
 OUTPUT_PATH = ROOT / "data" / "evidence-classes.json"
-OVERRIDES_PATH = ROOT / "data" / "evidence-class-overrides.json"
 C0_REVIEWS_PATH = ROOT / "data" / "evidence-class-zero-reviews.json"
-SPEC_VERSION = "evidence-class-v3"
+SPEC_VERSION = "evidence-class-v4"
 README_MIN_BYTES = 400
 MAX_WORKERS = 8
 
@@ -65,15 +64,18 @@ DEMO_IMAGE_EXCLUDES = re.compile(
     r"微信|wechat|weixin|discord|telegram|donate|patreon|ko-?fi|star[- ]history|shields|"
     r"progress|license|\bci\b|downloads?",
     re.IGNORECASE)
-DEMO_IMAGE_HOSTS = ("user-images.githubusercontent.com", "cloud.githubusercontent.com",
-                    "cdn.discordapp.com", "media.discordapp.net")
+DEMO_IMAGE_HOSTS = ("user-images.githubusercontent.com", "private-user-images.githubusercontent.com",
+                    "cloud.githubusercontent.com", "cdn.discordapp.com", "media.discordapp.net")
 MARKDOWN_IMAGE_WITH_ALT = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)")
 HTML_IMAGE_TAG = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
 # Files that only appear when an author ships something to run.
 DOWNLOAD_EXTENSIONS = (".apk", ".exe", ".dmg", ".msi", ".appimage", ".deb", ".rpm", ".whl",
                        ".vsix", ".crx", ".xpi", ".ipa", ".tar.gz", ".7z")
 PACKAGE_INSTALL = re.compile(
-    r"(?:npm\s+(?:i|install)(?:\s+-g)?|npx|yarn\s+(?:add|dlx|global\s+add)|pnpm\s+(?:add|dlx)"
+    r"(?:npm\s+(?:i|install)(?:\s+(?:-[gD]|--global|--save-dev|--save))*"
+    r"|npx(?:\s+(?:-y|--yes))*|bunx(?:\s+(?:-y|--yes))*"
+    r"|bun\s+(?:add|install|create)(?:\s+(?:-g|--global))*"
+    r"|yarn\s+(?:add|dlx|global\s+add)|pnpm\s+(?:add|dlx)"
     r"|pip\s+install|pipx\s+install|uv\s+(?:tool\s+install|run)|cargo\s+install"
     r"|go\s+install|brew\s+install|gem\s+install|conda\s+install"
     r"|dotnet\s+tool\s+(?:install|update)|winget\s+install|scoop\s+install|choco\s+install"
@@ -81,8 +83,8 @@ PACKAGE_INSTALL = re.compile(
     r"\s+([^\s`'\"<>|&;]+)", re.IGNORECASE)
 DEMO_LINK_TEXT = re.compile(r"\b(demo|playable|live\s+preview|try\s+it\s+(?:out|online)|online\s+demo)\b", re.IGNORECASE)
 
-SECTION_INSTALL = re.compile(r"^#{1,4}[^\n#]*\b(install|installation|build|setup|getting\s+started|quick\s?start|compil|prerequisit|requirement)", re.MULTILINE | re.IGNORECASE)
-SECTION_USAGE = re.compile(r"^#{1,4}[^\n#]*\b(usage|use|example|how\s+to|getting\s+started|quick\s?start|run)", re.MULTILINE | re.IGNORECASE)
+SECTION_INSTALL = re.compile(r"^#{1,4}[^\n#]*\b(install|installation|build|setup|getting\s+started|get\s+started|quick\s?start|compil|prerequisit|requirement)", re.MULTILINE | re.IGNORECASE)
+SECTION_USAGE = re.compile(r"^#{1,4}[^\n#]*\b(usage|use|example|how\s+to|getting\s+started|get\s+started|quick\s?start|run)", re.MULTILINE | re.IGNORECASE)
 SECTION_FEATURES = re.compile(r"^#{1,4}[^\n#]*\b(features?|capabilities|功能|highlights|what\s+it\s+does)", re.MULTILINE | re.IGNORECASE)
 SECTION_MEDIA = re.compile(r"^#{1,4}[^\n#]*\b(screenshots?|demo|preview|video|images?|showcase)", re.MULTILINE | re.IGNORECASE)
 MARKDOWN_IMAGE = re.compile(r"!\[[^\]]*\]\(([^)\s]+)")
@@ -93,7 +95,10 @@ HTML_TAG = re.compile(r"<[^>]+>")
 CODE_BLOCK = re.compile(r"```.*?```", re.DOTALL)
 DESCRIPTION_COMPLETE = re.compile(
     r"\bre-?implements?\b|\bre-?implementation\b|\bcomplete\s+(?:re)?implementation\b"
-    r"|\bfull\s+(?:re)?implementation\b|\bfully\s+(?:playable|functional)\b"
+    r"|\bfull\s+(?:re)?implementation\b"
+    # "clean-room Rust implementation of Word" still describes a full reconstruction.
+    r"|\bclean[- ]room\s+(?:[\w-]+\s+){0,3}(?:re)?implementation\b"
+    r"|\bfully\s+(?:playable|functional)\b"
     r"|\bplayable\s+(?:port|recreation|reimplementation)\b|\bfaithful\s+(?:port|recreation)\b"
     r"|\bdrop-?in\s+replacement\b|\bcompatible\s+replacement\b", re.IGNORECASE)
 DESCRIPTION_PARTIAL = re.compile(
@@ -326,6 +331,21 @@ def normalized_package(value: str) -> str:
     return re.sub(r"[^a-z0-9]", "", value.lower())
 
 
+def package_matches_target(raw_package: str, target: str) -> bool:
+    """Exact package name, or a package prefixed with the target token (rea-agents vs rea)."""
+    value = raw_package.strip().strip("`'\"")
+    if value.startswith("@"):
+        _, _, value = value.partition("/")
+    else:
+        value = re.split(r"[@=<>~^]", value)[0]
+    value = value.rsplit("/", 1)[-1]
+    normalized = re.sub(r"[^a-z0-9]", "", value.lower())
+    if normalized == target:
+        return True
+    first = re.split(r"[-_.]", value, 1)[0]
+    return re.sub(r"[^a-z0-9]", "", first.lower()) == target and len(target) >= 3
+
+
 def target_package_name(record: dict) -> str | None:
     """The repository name, used to tell a target install from a build dependency."""
     url = record.get("url", "")
@@ -346,7 +366,7 @@ def has_target_install(text: str, record: dict) -> bool:
     target = target_package_name(record)
     if not target:
         return False
-    return any(normalized_package(match.group(1)) == target for match in PACKAGE_INSTALL.finditer(text))
+    return any(package_matches_target(match.group(1), target) for match in PACKAGE_INSTALL.finditer(text))
 
 
 def page_signals(url: str, page: dict, record: dict) -> dict:
@@ -377,6 +397,14 @@ def page_signals(url: str, page: dict, record: dict) -> dict:
     text = re.sub(r"\s+", " ", text).strip()
     signals["docs_bytes"] = len(text.encode("utf-8"))
     signals["docs"] = signals["docs_bytes"] >= README_MIN_BYTES
+    heading_lines = "\n".join(
+        "## " + HTML_TAG.sub(" ", heading).strip()
+        for heading in re.findall(r"<h[1-4][^>]*>(.*?)</h[1-4]>", html_text, flags=re.IGNORECASE | re.DOTALL))
+    categories = sum(bool(pattern.search(heading_lines)) for pattern in
+                     (SECTION_INSTALL, SECTION_USAGE, SECTION_FEATURES, SECTION_MEDIA))
+    has_install_usage = bool(SECTION_INSTALL.search(heading_lines)) and bool(SECTION_USAGE.search(heading_lines))
+    signals["docs_full"] = signals["docs"] and (
+        has_install_usage or categories >= 3 or (signals["docs_bytes"] >= 4000 and categories >= 2))
     demo, media_count = collect_media_signals(html_text, links)
     signals["demo"] = demo
     signals["media_count"] = media_count
@@ -423,7 +451,9 @@ def is_demo_image(src: str, alt: str) -> bool:
     if path.endswith(DEMO_IMAGE_EXTENSIONS):
         return True
     host = (urllib.parse.urlsplit(src).hostname or "").lower()
-    return host in DEMO_IMAGE_HOSTS
+    if host in DEMO_IMAGE_HOSTS:
+        return True
+    return host in ("github.com", "www.github.com") and ("/user-attachments/" in path or "/assets/" in path)
 
 
 def collect_media_signals(text: str, links: list[tuple[str, str]]) -> tuple[list[str], int]:
@@ -461,8 +491,9 @@ def collect_download_signals(text: str, links: list[tuple[str, str]]) -> bool:
 
 def has_complete_evidence(record: dict, signals: dict) -> bool:
     """Minimum evidence for a manually reviewed Class 0 entry."""
-    return (signals["code"] and signals["docs"] and signals["download"] and signals["demo"]
-            and record.get("kind") == "case-study" and "binary" not in (record.get("targets") or []))
+    return bool(signals["code"] and signals["docs"] and signals["docs_full"] and signals["download"]
+                and signals["demo"] and record.get("kind") == "case-study"
+                and "binary" not in (record.get("targets") or []))
 
 
 def is_c0_candidate(record: dict, signals: dict) -> bool:
@@ -512,13 +543,6 @@ def load_catalog() -> list[dict]:
     return records
 
 
-def load_overrides() -> dict[str, dict]:
-    if not OVERRIDES_PATH.is_file():
-        return {}
-    document = json.loads(OVERRIDES_PATH.read_text(encoding="utf-8"))
-    return {entry["id"]: entry for entry in document.get("entries", [])}
-
-
 def load_c0_reviews() -> dict[str, dict]:
     """Manual Class 0 reviews: scope, version and primary evidence per entry."""
     if not C0_REVIEWS_PATH.is_file():
@@ -541,7 +565,6 @@ def main() -> None:
             cached_file.unlink()
 
     records = load_catalog()
-    overrides = load_overrides()
     c0_reviews = load_c0_reviews()
 
     fetches: dict[str, dict] = {}
@@ -612,11 +635,6 @@ def main() -> None:
             unknown_count += 1
         else:
             evidence_class = rubric_class
-            if record["id"] in overrides:
-                correction = overrides[record["id"]]
-                evidence_class = int(correction["evidence_class"])
-                entry["basis"] = "override"
-                entry["reason"] = correction.get("note", "manual override")
             if evidence_class == 0:
                 # The automatic rubric never assigns Class 0; only the manual review below may.
                 evidence_class = 1
@@ -647,7 +665,6 @@ def main() -> None:
             "entry_count": len(entries),
             "class_counts": {str(key): value for key, value in counts.items()},
             "unknown_count": unknown_count,
-            "override_count": sum(entry["basis"] == "override" for entry in entries),
             "c0_review_count": c0_review_count,
             "c0_review_file": "data/evidence-class-zero-reviews.json",
             "method": "GitHub REST API observations (repo meta, releases, README) for GitHub URLs; page observations for other hosts. The automatic rubric caps at Class 1. Class 0 requires a manual review of scope, version and primary evidence in data/evidence-class-zero-reviews.json. Unavailable or unreadable sources are marked unknown, not as notes.",

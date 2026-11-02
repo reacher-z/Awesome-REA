@@ -1,18 +1,17 @@
 {
  "schema_version": 1,
  "meta": {
-  "spec_version": "evidence-class-v3",
-  "generated_at": "2026-11-02T03:17:13+00:00",
+  "spec_version": "evidence-class-v4",
+  "generated_at": "2026-11-02T06:43:04+00:00",
   "entry_count": 653,
   "class_counts": {
-   "0": 11,
-   "1": 171,
-   "2": 427,
-   "3": 37
+   "0": 15,
+   "1": 201,
+   "2": 391,
+   "3": 39
   },
   "unknown_count": 7,
-  "override_count": 17,
-  "c0_review_count": 11,
+  "c0_review_count": 15,
   "c0_review_file": "data/evidence-class-zero-reviews.json",
   "method": "GitHub REST API observations (repo meta, releases, README) for GitHub URLs; page observations for other hosts. The automatic rubric caps at Class 1. Class 0 requires a manual review of scope, version and primary evidence in data/evidence-class-zero-reviews.json. Unavailable or unreadable sources are marked unknown, not as notes.",
   "rubric": {
@@ -27,7 +26,7 @@
   {
    "id": "rea-upstream",
    "url": "https://github.com/morluto/rea",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -35,7 +34,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -46,17 +45,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-official-skill",
    "url": "https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -64,7 +63,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -75,17 +74,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-installation",
    "url": "https://github.com/morluto/rea/blob/main/docs/installation.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -93,7 +92,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -104,17 +103,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-cli-evidence",
    "url": "https://github.com/morluto/rea/blob/main/docs/cli.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -122,7 +121,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -133,17 +132,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-mcp-contracts",
    "url": "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md#generated-catalog",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -151,7 +150,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -162,17 +161,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-native-workflow",
    "url": "https://github.com/morluto/rea/blob/main/docs/native-investigation.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -180,7 +179,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -191,17 +190,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "download and demo exist, but the described scope is a partial feature or patch",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-js-workflows",
    "url": "https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -209,7 +208,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -220,17 +219,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-android-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/android-analysis.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -238,7 +237,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -249,17 +248,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-managed-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -267,7 +266,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -278,17 +277,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-web-captures",
    "url": "https://github.com/morluto/rea/blob/main/docs/web-network-captures.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -296,7 +295,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -307,17 +306,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-firmware-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -325,7 +324,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -336,17 +335,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-packet-captures",
    "url": "https://github.com/morluto/rea/blob/main/docs/packet-captures.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -354,7 +353,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -365,17 +364,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-pcap-summaries",
    "url": "https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -383,7 +382,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -394,17 +393,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-signal-recordings",
    "url": "https://github.com/morluto/rea/blob/main/docs/signal-recordings.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -412,7 +411,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -423,10 +422,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -572,7 +571,7 @@
     "code_basis": null,
     "docs": true,
     "docs_bytes": 9277,
-    "docs_full": false,
+    "docs_full": true,
     "download": null,
     "release_count": 0,
     "release_asset_count": 0,
@@ -1014,7 +1013,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:56:53+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -1025,7 +1024,7 @@
    "id": "ssbu-recomp-case",
    "url": "https://github.com/Denkishi/ssbu-recomp",
    "evidence_class": 1,
-   "basis": "override",
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -1042,7 +1041,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Not a complete reconstruction: the project documents explicit mode limits.",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:56:58+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -1079,7 +1078,7 @@
    "id": "battleship-port-case",
    "url": "https://github.com/JRickey/BattleShip",
    "evidence_class": 2,
-   "basis": "override",
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -1094,7 +1093,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Super Smash Bros. N64 port via libultraship; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only).",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T12:14:28+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -1339,7 +1338,7 @@
      "image",
      "demo-link"
     ],
-    "media_count": 98,
+    "media_count": 100,
     "archived": false,
     "unavailable": false
    },
@@ -1354,7 +1353,7 @@
    "id": "plx-native-case",
    "url": "https://github.com/GLinnik21/plx-native",
    "evidence_class": 1,
-   "basis": "override",
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -1371,7 +1370,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Reconstructs a media-client interface rather than the full application.",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:57:00+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -1409,7 +1408,7 @@
   {
    "id": "rea-dinosaur-speed-case",
    "url": "https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#dinosaur-speed",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -1417,7 +1416,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -1428,17 +1427,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-calculator-percent-case",
    "url": "https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#windows-calculator",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -1446,7 +1445,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -1457,10 +1456,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -1513,7 +1512,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:57:00+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -1542,7 +1541,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:57:01+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -1570,7 +1569,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-01T12:14:33+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -1740,14 +1739,14 @@
   {
    "id": "photocraft-case",
    "url": "https://github.com/storytold/photocraft",
-   "evidence_class": 1,
-   "basis": "github-rest",
+   "evidence_class": 0,
+   "basis": "manual-review",
    "signals": {
     "code": true,
     "code_basis": "repo",
     "docs": true,
     "docs_bytes": 36719,
-    "docs_full": false,
+    "docs_full": true,
     "download": "release-assets",
     "release_count": 21,
     "release_asset_count": 516,
@@ -1758,18 +1757,24 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study demo is documented but docs do not cover the full feature set",
+   "reason": "Complete clean-room application with release packages and install/usage instructions (\"Get started\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
    "checked_at": "2026-11-02T02:57:05+00:00",
    "evidence_status": "observed",
-   "scope": "partial",
+   "scope": "full",
    "runtime_status": "not-run",
-   "c0_candidate": false
+   "c0_candidate": true,
+   "review": {
+    "version": "README snapshot 2026-11-02",
+    "primary_evidence": "https://github.com/storytold/photocraft/blob/b1b453a3180bb377a200a437ae54fa58a7af27ba/README.md",
+    "reviewed_at": "2026-11-02",
+    "note": "Complete clean-room application with release packages and install/usage instructions (\"Get started\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog."
+   }
   },
   {
    "id": "wordcraft-case",
    "url": "https://github.com/storytold/wordcraft",
-   "evidence_class": 1,
-   "basis": "github-rest",
+   "evidence_class": 0,
+   "basis": "manual-review",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -1786,18 +1791,24 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study: download and demo exist, scope stays partial",
+   "reason": "Complete clean-room application with release packages and install/usage instructions (\"Quick start\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
    "checked_at": "2026-11-02T02:57:05+00:00",
    "evidence_status": "observed",
-   "scope": "partial",
+   "scope": "full",
    "runtime_status": "not-run",
-   "c0_candidate": false
+   "c0_candidate": true,
+   "review": {
+    "version": "README snapshot 2026-11-02",
+    "primary_evidence": "https://github.com/storytold/wordcraft/blob/01d3665100ab0ae9000a7b8bf12ab00b830795fb/README.md",
+    "reviewed_at": "2026-11-02",
+    "note": "Complete clean-room application with release packages and install/usage instructions (\"Quick start\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog."
+   }
   },
   {
    "id": "gridcraft-case",
    "url": "https://github.com/storytold/gridcraft",
-   "evidence_class": 1,
-   "basis": "github-rest",
+   "evidence_class": 0,
+   "basis": "manual-review",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -1814,18 +1825,24 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study: download and demo exist, scope stays partial",
+   "reason": "Complete clean-room application with release packages and install/usage instructions (\"Quick start\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
    "checked_at": "2026-11-02T02:57:06+00:00",
    "evidence_status": "observed",
-   "scope": "partial",
+   "scope": "full",
    "runtime_status": "not-run",
-   "c0_candidate": false
+   "c0_candidate": true,
+   "review": {
+    "version": "README snapshot 2026-11-02",
+    "primary_evidence": "https://github.com/storytold/gridcraft/blob/f2d9a930e4c64fbac71939ef8780c72ad260fc67/README.md",
+    "reviewed_at": "2026-11-02",
+    "note": "Complete clean-room application with release packages and install/usage instructions (\"Quick start\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog."
+   }
   },
   {
    "id": "deckcraft-case",
    "url": "https://github.com/storytold/deckcraft",
-   "evidence_class": 1,
-   "basis": "github-rest",
+   "evidence_class": 0,
+   "basis": "manual-review",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -1842,17 +1859,23 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "case study: download and demo exist, scope stays partial",
+   "reason": "Complete clean-room application with release packages and install/usage instructions (\"Getting started\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
    "checked_at": "2026-11-02T02:57:06+00:00",
    "evidence_status": "observed",
-   "scope": "partial",
+   "scope": "full",
    "runtime_status": "not-run",
-   "c0_candidate": false
+   "c0_candidate": true,
+   "review": {
+    "version": "README snapshot 2026-11-02",
+    "primary_evidence": "https://github.com/storytold/deckcraft/blob/730165a8ecb6192af83e6fda259fe7917f24562d/README.md",
+    "reviewed_at": "2026-11-02",
+    "note": "Complete clean-room application with release packages and install/usage instructions (\"Getting started\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog."
+   }
   },
   {
    "id": "devilutionx-case",
    "url": "https://github.com/diasurgical/DevilutionX",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -1863,15 +1886,17 @@
     "download": "release-assets",
     "release_count": 22,
     "release_asset_count": 273,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:57:06+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -1988,7 +2013,7 @@
   {
    "id": "baocut-slides-editor-case",
    "url": "https://github.com/JimLiu/baocut/tree/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides-runtime",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -1999,15 +2024,17 @@
     "download": "release-assets",
     "release_count": 73,
     "release_asset_count": 733,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:57:11+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -2058,7 +2085,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-01T12:15:52+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -2096,7 +2123,7 @@
   {
    "id": "rea-flutter-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/flutter-analysis.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2104,7 +2131,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -2115,17 +2142,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "download and demo exist, but the described scope is a partial feature or patch",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-harmony-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/harmony-analysis.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2133,7 +2160,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -2144,17 +2171,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-ghidra-mips-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/ghidra-mips.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2162,7 +2189,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -2173,17 +2200,17 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "rea-ghidra-psp-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/ghidra-psp.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2191,7 +2218,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -2202,10 +2229,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -2295,7 +2322,7 @@
   {
    "id": "rea-ghidra-nativeaot-guide",
    "url": "https://github.com/morluto/rea/blob/main/docs/ghidra-nativeaot.md",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2303,7 +2330,7 @@
     "docs": true,
     "docs_bytes": 29837,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 39,
     "release_asset_count": 0,
     "demo": [
@@ -2314,10 +2341,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "download and demo exist, but the described scope is a partial feature or patch",
    "checked_at": "2026-11-02T02:56:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -2408,7 +2435,7 @@
   {
    "id": "crashlens-rea-crash-triage",
    "url": "https://github.com/mingleiw/crashlens",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -2416,7 +2443,7 @@
     "docs": true,
     "docs_bytes": 29406,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 0,
     "release_asset_count": 0,
     "demo": [
@@ -2427,10 +2454,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:57:12+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -3280,7 +3307,7 @@
     "code_basis": "repo",
     "docs": true,
     "docs_bytes": 27321,
-    "docs_full": false,
+    "docs_full": true,
     "download": "release-assets",
     "release_count": 20,
     "release_asset_count": 472,
@@ -3291,7 +3318,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "reason": "Complete clean-room application with release packages and complete install/usage instructions (\"Get started\"); confirmed in use by the maintainer. Runtime not verified by this catalog.",
    "checked_at": "2026-11-02T03:15:35+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -3301,7 +3328,7 @@
     "version": "README snapshot 2026-10-21",
     "primary_evidence": "https://github.com/storytold/effectcraft/blob/ec2d51a17a4cacc6b2907c875879f85ba895eed3/README.md",
     "reviewed_at": "2026-11-02",
-    "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here."
+    "note": "Complete clean-room application with release packages and complete install/usage instructions (\"Get started\"); confirmed in use by the maintainer. Runtime not verified by this catalog."
    }
   },
   {
@@ -3314,7 +3341,7 @@
     "code_basis": "repo",
     "docs": true,
     "docs_bytes": 34347,
-    "docs_full": false,
+    "docs_full": true,
     "download": "release-assets",
     "release_count": 14,
     "release_asset_count": 392,
@@ -3325,7 +3352,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "reason": "Complete clean-room application with release packages and complete install/usage instructions (\"Get started\"); confirmed in use by the maintainer. Runtime not verified by this catalog.",
    "checked_at": "2026-11-02T03:15:35+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -3335,7 +3362,7 @@
     "version": "README snapshot 2026-10-21",
     "primary_evidence": "https://github.com/storytold/figcraft/blob/28de91d9ae72fc7fbc2199ac5ee2c8be237980d5/README.md",
     "reviewed_at": "2026-11-02",
-    "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here."
+    "note": "Complete clean-room application with release packages and complete install/usage instructions (\"Get started\"); confirmed in use by the maintainer. Runtime not verified by this catalog."
    }
   },
   {
@@ -3348,7 +3375,7 @@
     "code_basis": "repo",
     "docs": true,
     "docs_bytes": 39738,
-    "docs_full": false,
+    "docs_full": true,
     "download": "release-assets",
     "release_count": 17,
     "release_asset_count": 410,
@@ -3359,7 +3386,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "reason": "Complete clean-room application with release packages and complete install/usage instructions (\"Get started\"); confirmed in use by the maintainer. Runtime not verified by this catalog.",
    "checked_at": "2026-11-02T03:15:36+00:00",
    "evidence_status": "observed",
    "scope": "full",
@@ -3369,7 +3396,7 @@
     "version": "README snapshot 2026-10-21",
     "primary_evidence": "https://github.com/storytold/filmcraft/blob/d643a886650bfbf16f24762274054575aa1e8f20/README.md",
     "reviewed_at": "2026-11-02",
-    "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here."
+    "note": "Complete clean-room application with release packages and complete install/usage instructions (\"Get started\"); confirmed in use by the maintainer. Runtime not verified by this catalog."
    }
   },
   {
@@ -3567,7 +3594,7 @@
   {
    "id": "ngpcraft-case",
    "url": "https://github.com/Tixul/Ngpcraft_emulator",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3578,15 +3605,17 @@
     "download": "release-assets",
     "release_count": 38,
     "release_asset_count": 107,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T03:15:40+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -3675,7 +3704,7 @@
   {
    "id": "openphantom-case",
    "url": "https://github.com/OpenPhantom/OpenPhantom",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -3686,15 +3715,17 @@
     "download": "release-assets",
     "release_count": 21,
     "release_asset_count": 113,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 4,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T03:15:40+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -3824,12 +3855,14 @@
     "download": null,
     "release_count": 0,
     "release_asset_count": 0,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 4,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method and no demo",
+   "reason": "code and docs only: no download method",
    "checked_at": "2026-11-02T03:15:43+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -3941,7 +3974,7 @@
     "unavailable": true
    },
    "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-02T03:17:12+00:00",
+   "checked_at": "2026-11-02T06:43:02+00:00",
    "evidence_status": "unknown",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -3957,7 +3990,7 @@
     "code_basis": "repo",
     "docs": true,
     "docs_bytes": 1323,
-    "docs_full": false,
+    "docs_full": true,
     "download": null,
     "release_count": 0,
     "release_asset_count": 0,
@@ -4282,7 +4315,7 @@
   {
    "id": "binary-ninja-community-mcp",
    "url": "https://github.com/fosdickio/binary_ninja_mcp",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4290,7 +4323,7 @@
     "docs": true,
     "docs_bytes": 20726,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 14,
     "release_asset_count": 0,
     "demo": [
@@ -4302,10 +4335,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:57:23+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -4341,7 +4374,7 @@
   {
    "id": "radare2-mcp",
    "url": "https://github.com/radareorg/radare2-mcp",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4352,15 +4385,17 @@
     "download": "release-assets",
     "release_count": 18,
     "release_asset_count": 54,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:57:25+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -4465,7 +4500,7 @@
     "demo": [
      "image"
     ],
-    "media_count": 10,
+    "media_count": 11,
     "archived": false,
     "unavailable": false
    },
@@ -4479,7 +4514,7 @@
   {
    "id": "apktool-mcp-server",
    "url": "https://github.com/zinja-coder/apktool-mcp-server",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -4490,15 +4525,17 @@
     "download": "release-assets",
     "release_count": 6,
     "release_asset_count": 6,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:57:27+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -4513,7 +4550,7 @@
     "docs": true,
     "docs_bytes": 22617,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 1,
     "release_asset_count": 0,
     "demo": [],
@@ -4521,7 +4558,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method and no demo",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-02T02:57:27+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -4566,7 +4603,7 @@
     "code_basis": "linked-repo",
     "docs": true,
     "docs_bytes": 14668,
-    "docs_full": false,
+    "docs_full": true,
     "download": null,
     "release_count": 0,
     "release_asset_count": 0,
@@ -5237,7 +5274,7 @@
   {
    "id": "imhex",
    "url": "https://github.com/WerWolv/ImHex",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -5248,15 +5285,17 @@
     "download": "release-assets",
     "release_count": 82,
     "release_asset_count": 869,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 5,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:57:43+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -5358,7 +5397,7 @@
     "demo": [
      "image"
     ],
-    "media_count": 12,
+    "media_count": 13,
     "archived": false,
     "unavailable": false
    },
@@ -5797,7 +5836,7 @@
   {
    "id": "spectral-mcp",
    "url": "https://github.com/spectral-mcp/spectral",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -5805,7 +5844,7 @@
     "docs": true,
     "docs_bytes": 4337,
     "docs_full": false,
-    "download": null,
+    "download": "package",
     "release_count": 18,
     "release_asset_count": 0,
     "demo": [
@@ -5815,10 +5854,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method",
+   "reason": "download and demo exist, but docs do not cover the full feature set",
    "checked_at": "2026-11-02T02:57:51+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -5882,7 +5921,7 @@
   {
    "id": "frida-il2cpp-bridge",
    "url": "https://github.com/vfsfitvnm/frida-il2cpp-bridge",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -5893,15 +5932,17 @@
     "download": "package",
     "release_count": 34,
     "release_asset_count": 0,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:57:51+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -6060,7 +6101,7 @@
     "demo": [
      "image"
     ],
-    "media_count": 15,
+    "media_count": 16,
     "archived": false,
     "unavailable": false
    },
@@ -6364,7 +6405,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:58:03+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -6679,12 +6720,14 @@
     "download": null,
     "release_count": 0,
     "release_asset_count": 0,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 3,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method and no demo",
+   "reason": "code and docs only: no download method",
    "checked_at": "2026-11-02T02:58:08+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -7134,12 +7177,14 @@
     "download": null,
     "release_count": 15,
     "release_asset_count": 0,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method and no demo",
+   "reason": "code and docs only: no download method",
    "checked_at": "2026-11-02T02:58:15+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -7389,8 +7434,8 @@
   {
    "id": "sms-pc-port-case",
    "url": "https://github.com/chasem-dev/sms-pc-port",
-   "evidence_class": 2,
-   "basis": "override",
+   "evidence_class": 3,
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -7405,10 +7450,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Super Mario Sunshine PC port from the matching decompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only).",
+   "reason": "no usable documentation at the code source",
    "checked_at": "2026-11-01T12:14:40+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "notes",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -7486,7 +7531,7 @@
     "unavailable": true
    },
    "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-02T03:17:12+00:00",
+   "checked_at": "2026-11-02T06:43:00+00:00",
    "evidence_status": "unknown",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -7550,7 +7595,7 @@
    "id": "2ship2harkinian-mm-port-case",
    "url": "https://github.com/2ship2harkinian/2ship2harkinian",
    "evidence_class": 2,
-   "basis": "override",
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -7565,7 +7610,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Majora's Mask 2Ship port for Windows/Linux/macOS; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only).",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T12:14:46+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -7575,8 +7620,8 @@
   {
    "id": "ship-of-harkinian-oot-port-case",
    "url": "https://github.com/HarbourMasters/Shipwright",
-   "evidence_class": 1,
-   "basis": "override",
+   "evidence_class": 2,
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -7586,17 +7631,15 @@
     "download": "release-assets",
     "release_count": 53,
     "release_asset_count": 234,
-    "demo": [
-     "video"
-    ],
-    "media_count": 1,
+    "demo": [],
+    "media_count": 0,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Official site (shipofharkinian.com) hosts the project trailer https://www.youtube.com/watch?v=HrA4fOHXUFU (Ship of Harkinian channel) and splash videos; demo evidence confirmed by manual review, not runtime-verified.",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T12:14:53+00:00",
    "evidence_status": "observed",
-   "scope": "partial",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -7655,7 +7698,7 @@
   {
    "id": "baocut-design-canvas-case",
    "url": "https://github.com/JimLiu/baocut/tree/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-runtime",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -7666,15 +7709,17 @@
     "download": "release-assets",
     "release_count": 73,
     "release_asset_count": 733,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:57:11+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -7699,7 +7744,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:58:29+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -7727,7 +7772,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:58:30+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -7752,7 +7797,7 @@
      "image",
      "video"
     ],
-    "media_count": 10,
+    "media_count": 11,
     "archived": false,
     "unavailable": false
    },
@@ -7845,7 +7890,7 @@
    "id": "ghostship-sm64-port-case",
    "url": "https://github.com/HarbourMasters/Ghostship",
    "evidence_class": 2,
-   "basis": "override",
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -7860,7 +7905,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete SM64 port build; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only).",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T12:15:00+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -7941,7 +7986,7 @@
     "unavailable": true
    },
    "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-02T03:17:12+00:00",
+   "checked_at": "2026-11-02T06:43:03+00:00",
    "evidence_status": "unknown",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -7996,7 +8041,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:58:31+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -8200,7 +8245,7 @@
   {
    "id": "medievil-recomp-case",
    "url": "https://github.com/BlackLabelHQ/MediEvilRecomp",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -8211,15 +8256,17 @@
     "download": "release-assets",
     "release_count": 4,
     "release_asset_count": 20,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:58:34+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -8350,7 +8397,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:58:35+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -8412,7 +8459,7 @@
   {
    "id": "cbfd-recompiled-case",
    "url": "https://github.com/sciaschi/CBFD-Recompiled",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -8423,15 +8470,17 @@
     "download": "release-assets",
     "release_count": 7,
     "release_asset_count": 24,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:58:37+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -8674,8 +8723,8 @@
   {
    "id": "d2r-mobile-switch-rehost-case",
    "url": "https://github.com/jhaizhou-ops/d2r-mobile",
-   "evidence_class": 1,
-   "basis": "override",
+   "evidence_class": 2,
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -8690,10 +8739,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Rehosts the original Switch program; not a source reconstruction of the software.",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-02T02:58:43+00:00",
    "evidence_status": "observed",
-   "scope": "partial",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -8727,7 +8776,7 @@
    "id": "banjo-recompiled-case",
    "url": "https://github.com/BanjoRecomp/BanjoRecomp",
    "evidence_class": 2,
-   "basis": "override",
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -8742,7 +8791,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Banjo-Kazooie static recompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only).",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T12:15:06+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -8779,7 +8828,7 @@
    "id": "paperboat-paper-mario-port-case",
    "url": "https://github.com/HarbourMasters/PaperBoat",
    "evidence_class": 2,
-   "basis": "override",
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -8794,7 +8843,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Paper Mario native port from the decompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only).",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T12:15:10+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -8926,7 +8975,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:58:47+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -8936,7 +8985,7 @@
   {
    "id": "melee-matching-decomp-case",
    "url": "https://github.com/doldecomp/melee",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -8954,10 +9003,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "code and docs only: no download method",
    "checked_at": "2026-11-02T02:58:46+00:00",
    "evidence_status": "observed",
-   "scope": "partial",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -9068,7 +9117,7 @@
   {
    "id": "two-towers-recompiled-case",
    "url": "https://github.com/Gumpolas/TooTawersRecomp",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -9079,23 +9128,25 @@
     "download": "release-assets",
     "release_count": 18,
     "release_asset_count": 78,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 11,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "case study demo is documented but docs do not cover the full feature set",
    "checked_at": "2026-11-02T02:58:48+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
   {
    "id": "melee-unlocked-case",
    "url": "https://github.com/Hero88go/melee-unlocked",
-   "evidence_class": 1,
-   "basis": "override",
+   "evidence_class": 2,
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -9109,14 +9160,14 @@
      "image",
      "video"
     ],
-    "media_count": 14,
+    "media_count": 15,
     "archived": false,
     "unavailable": false
    },
-   "reason": "Beta source port and static recompilation; incomplete build.",
+   "reason": "code and docs only: no download method",
    "checked_at": "2026-11-02T02:58:52+00:00",
    "evidence_status": "observed",
-   "scope": "partial",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -9167,7 +9218,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:58:50+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -9284,7 +9335,7 @@
    "id": "starfox64-recompiled-case",
    "url": "https://github.com/sonicdcer/Starfox64Recomp",
    "evidence_class": 2,
-   "basis": "override",
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -9299,7 +9350,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Star Fox 64 static recompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only).",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T12:15:23+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -9413,7 +9464,7 @@
   {
    "id": "ctr-turbocharged-port-case",
    "url": "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -9432,10 +9483,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "code and docs only: no download method",
    "checked_at": "2026-11-02T02:58:53+00:00",
    "evidence_status": "observed",
-   "scope": "partial",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -9469,7 +9520,7 @@
    "id": "mariokart64-recompiled-case",
    "url": "https://github.com/sonicdcer/MarioKart64Recomp",
    "evidence_class": 2,
-   "basis": "override",
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -9484,7 +9535,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Mario Kart 64 static recompilation; releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only).",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T12:15:34+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -9657,7 +9708,7 @@
    "id": "spaghettikart-mk64-port-case",
    "url": "https://github.com/HarbourMasters/SpaghettiKart",
    "evidence_class": 2,
-   "basis": "override",
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -9672,7 +9723,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete Mario Kart 64 port build (SpaghettiKart); releases and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only).",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T12:15:40+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -9729,7 +9780,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:58:59+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -9835,7 +9886,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:59:01+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -10046,7 +10097,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:59:04+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -10258,7 +10309,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:59:05+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -10282,7 +10333,7 @@
     "demo": [
      "image"
     ],
-    "media_count": 4,
+    "media_count": 7,
     "archived": false,
     "unavailable": false
    },
@@ -10384,7 +10435,7 @@
   {
    "id": "pwndbg",
    "url": "https://github.com/pwndbg/pwndbg",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10395,15 +10446,17 @@
     "download": "release-assets",
     "release_count": 29,
     "release_asset_count": 446,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T03:15:52+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -10411,7 +10464,7 @@
    "id": "driver-recomp-setup-host-case",
    "url": "https://github.com/alexbeavs-ps1-ports/driver-recomp",
    "evidence_class": 1,
-   "basis": "override",
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -10428,7 +10481,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "A setup host and packaging layer for psxrecomp, not a reconstruction of the game.",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:59:08+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -10439,7 +10492,7 @@
    "id": "himuro-fatal-frame-decomp-case",
    "url": "https://github.com/Mikompilation/Himuro",
    "evidence_class": 2,
-   "basis": "override",
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -10454,7 +10507,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Fatal Frame decompilation with US/EU code reported fully matched; builds and screenshots. Kept at Class 2: the README has no usable demo image (logo, badge or SVG only).",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-01T12:15:46+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -10464,7 +10517,7 @@
   {
    "id": "doaxvb-native-port-case",
    "url": "https://github.com/NoRain211/doaxvb-re",
-   "evidence_class": 1,
+   "evidence_class": 2,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -10480,10 +10533,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-02T03:15:52+00:00",
    "evidence_status": "observed",
-   "scope": "partial",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -10643,7 +10696,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T02:59:13+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -10699,7 +10752,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-01T12:16:03+00:00",
    "evidence_status": "observed",
    "scope": "partial",
@@ -10830,12 +10883,14 @@
     "download": null,
     "release_count": 0,
     "release_asset_count": 0,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method and no demo",
+   "reason": "code and docs only: no download method",
    "checked_at": "2026-11-02T02:59:21+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -11689,7 +11744,7 @@
     "code_basis": "repo",
     "docs": true,
     "docs_bytes": 5449,
-    "docs_full": false,
+    "docs_full": true,
     "download": "release-assets",
     "release_count": 3,
     "release_asset_count": 13,
@@ -11700,7 +11755,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "download and demo exist, but docs do not cover the full feature set",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:59:32+00:00",
    "evidence_status": "observed",
    "scope": "analysis",
@@ -12046,7 +12101,7 @@
     "docs": true,
     "docs_bytes": 4424,
     "docs_full": true,
-    "download": null,
+    "download": "package",
     "release_count": 0,
     "release_asset_count": 0,
     "demo": [],
@@ -12054,7 +12109,7 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no download method and no demo",
+   "reason": "code and docs only: no demo",
    "checked_at": "2026-11-02T02:59:43+00:00",
    "evidence_status": "observed",
    "scope": "unknown",
@@ -12228,8 +12283,8 @@
   {
    "id": "whatsapp-web-reveng-legacy-protocol-case",
    "url": "https://github.com/sigalor/whatsapp-web-reveng",
-   "evidence_class": 1,
-   "basis": "override",
+   "evidence_class": 2,
+   "basis": "github-rest",
    "signals": {
     "code": true,
     "code_basis": "repo",
@@ -12246,10 +12301,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "Documents the legacy WhatsApp Web protocol; no software reconstruction.",
+   "reason": "code and docs only: no download method",
    "checked_at": "2026-11-02T03:15:52+00:00",
    "evidence_status": "observed",
-   "scope": "partial",
+   "scope": "unknown",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -12542,7 +12597,7 @@
     "demo": [
      "image"
     ],
-    "media_count": 1,
+    "media_count": 6,
     "archived": false,
     "unavailable": false
    },
@@ -12608,7 +12663,7 @@
   {
    "id": "pince",
    "url": "https://github.com/korcankaraokcu/PINCE",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -12619,15 +12674,17 @@
     "download": "release-assets",
     "release_count": 12,
     "release_asset_count": 18,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 5,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "complete evidence, but this is not a software reconstruction",
    "checked_at": "2026-11-02T02:59:53+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -12893,9 +12950,10 @@
     "release_count": 4,
     "release_asset_count": 0,
     "demo": [
+     "image",
      "video"
     ],
-    "media_count": 8,
+    "media_count": 10,
     "archived": false,
     "unavailable": false
    },
@@ -12909,7 +12967,7 @@
   {
    "id": "flare-floss",
    "url": "https://github.com/mandiant/flare-floss",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -12920,15 +12978,17 @@
     "download": "release-assets",
     "release_count": 35,
     "release_asset_count": 110,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "download and demo exist, but the described scope is a partial feature or patch",
    "checked_at": "2026-11-02T02:59:59+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -13031,7 +13091,7 @@
      "image",
      "video"
     ],
-    "media_count": 25,
+    "media_count": 26,
     "archived": false,
     "unavailable": false
    },
@@ -13829,7 +13889,7 @@
     "unavailable": true
    },
    "reason": "source unavailable or unreadable; not classified",
-   "checked_at": "2026-11-02T03:17:12+00:00",
+   "checked_at": "2026-11-02T06:43:00+00:00",
    "evidence_status": "unknown",
    "scope": "unknown",
    "runtime_status": "not-run",
@@ -13892,7 +13952,7 @@
   {
    "id": "rsdkv4-sonic-1-2-decomp-case",
    "url": "https://github.com/RSDKModding/RSDKv4-Decompilation",
-   "evidence_class": 1,
+   "evidence_class": 3,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -13908,10 +13968,10 @@
     "archived": false,
     "unavailable": false
    },
-   "reason": "not a full software reconstruction: analysis entry",
+   "reason": "no usable documentation at the code source",
    "checked_at": "2026-11-02T03:00:21+00:00",
    "evidence_status": "observed",
-   "scope": "partial",
+   "scope": "notes",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -14040,7 +14100,7 @@
      "image",
      "video"
     ],
-    "media_count": 3,
+    "media_count": 9,
     "archived": false,
     "unavailable": false
    },
@@ -14230,7 +14290,7 @@
     "demo": [
      "image"
     ],
-    "media_count": 2,
+    "media_count": 3,
     "archived": false,
     "unavailable": false
    },
@@ -14793,7 +14853,7 @@
   {
    "id": "reflecticon-224-lexicon-emulation-case",
    "url": "https://github.com/joelanders/reflecticon-224",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -14804,15 +14864,17 @@
     "download": "release-assets",
     "release_count": 3,
     "release_asset_count": 12,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 2,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "case study: download and demo exist, scope stays partial",
    "checked_at": "2026-11-02T03:00:33+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -14906,7 +14968,7 @@
     "code_basis": "repo",
     "docs": true,
     "docs_bytes": 3012,
-    "docs_full": false,
+    "docs_full": true,
     "download": "release-assets",
     "release_count": 15,
     "release_asset_count": 67,
@@ -15602,7 +15664,7 @@
   {
    "id": "kinoko-mkwii-physics-reimplementation-case",
    "url": "https://github.com/vabold/Kinoko",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -15613,15 +15675,17 @@
     "download": "release-assets",
     "release_count": 7,
     "release_asset_count": 26,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "case study demo is documented but docs do not cover the full feature set",
    "checked_at": "2026-11-02T03:00:46+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "partial",
    "runtime_status": "not-run",
    "c0_candidate": false
   },
@@ -15635,7 +15699,7 @@
     "code_basis": null,
     "docs": true,
     "docs_bytes": 52931,
-    "docs_full": false,
+    "docs_full": true,
     "download": null,
     "release_count": 0,
     "release_asset_count": 0,
@@ -16401,9 +16465,10 @@
     "release_count": 0,
     "release_asset_count": 0,
     "demo": [
+     "image",
      "demo-link"
     ],
-    "media_count": 0,
+    "media_count": 2,
     "archived": false,
     "unavailable": false
    },
@@ -16445,7 +16510,7 @@
   {
    "id": "redasm",
    "url": "https://github.com/redasm-dev/redasm",
-   "evidence_class": 2,
+   "evidence_class": 1,
    "basis": "github-rest",
    "signals": {
     "code": true,
@@ -16456,15 +16521,17 @@
     "download": "release-assets",
     "release_count": 13,
     "release_asset_count": 48,
-    "demo": [],
-    "media_count": 0,
+    "demo": [
+     "image"
+    ],
+    "media_count": 1,
     "archived": false,
     "unavailable": false
    },
-   "reason": "code and docs only: no demo",
+   "reason": "download and demo exist, but the described scope is a partial feature or patch",
    "checked_at": "2026-11-02T03:01:00+00:00",
    "evidence_status": "observed",
-   "scope": "unknown",
+   "scope": "analysis",
    "runtime_status": "not-run",
    "c0_candidate": false
   },

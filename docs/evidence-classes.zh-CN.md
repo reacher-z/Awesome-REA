@@ -1,6 +1,6 @@
-# 精选条目证据档位（Class 0-3 + Unknown，v3）
+# 精选条目证据档位（Class 0-3 + Unknown，v4）
 
-状态：v3 Beta，自动生成 + 人工复核。口径版本：`evidence-class-v3`。生成脚本：[`scripts/classify_evidence_classes.py`](../scripts/classify_evidence_classes.py)。数据：[`data/evidence-classes.json`](../data/evidence-classes.json)。Class 0 复核：[`data/evidence-class-zero-reviews.json`](../data/evidence-class-zero-reviews.json)。
+状态：v4 Beta，自动生成 + 人工复核。口径版本：`evidence-class-v4`。生成脚本：[`scripts/classify_evidence_classes.py`](../scripts/classify_evidence_classes.py)。数据：[`data/evidence-classes.json`](../data/evidence-classes.json)。Class 0 复核：[`data/evidence-class-zero-reviews.json`](../data/evidence-class-zero-reviews.json)。
 
 本文件定义主页精选目录全部 653 个条目的**证据档位**和**复现范围**。这是 Beta 口径：只依据公开证据，**本目录没有运行或验收任何软件**。**Class 0 只授予人工确认的完整软件复现**；自动规则最高只到 Class 1。
 
@@ -48,13 +48,13 @@
 
 ## 3. 方法与局限
 
-- 653 条中，586 条通过 GitHub REST 读取仓库元数据、releases 和 README；2 条走 GitLab REST；37 条抓取页面；17 条人工边界覆盖；11 条人工确认 Class 0；7 条来源不可读标为 Unknown。当前分布：Class 0 11 / Class 1 171 / Class 2 427 / Class 3 37 / Unknown 7。
+- 653 条中，599 条通过 GitHub REST 读取仓库元数据、releases 和 README；2 条走 GitLab REST；37 条抓取页面；15 条人工确认 Class 0；7 条来源不可读标为 Unknown。当前分布：Class 0 15 / Class 1 201 / Class 2 391 / Class 3 39 / Unknown 7。除 Class 0 外没有逐条 class override。
 - GitHub token 只发送到 `api.github.com`；跨域重定向会剥离认证头。页面的普通抓取不携带 token。
 - 图片过滤掉 logo、徽章、二维码、群聊和赞助链接，避免把品牌图当成 demo。
 - 主页示范截图由 [`scripts/build_evidence_previews.py`](../scripts/build_evidence_previews.py) 选取并写入 [`data/evidence-previews.json`](../data/evidence-previews.json)；[`scripts/fetch_previews.py`](../scripts/fetch_previews.py) 在构建前下载到 `.cache/previews/`，构建复制到站点的 `previews/` 目录，页面不外链第三方图片。
-- 182 条 Class 0/1 中 174 条有预览 URL（164 张图片 + 10 个视频封面）；8 条没有合格图片，另有 5 张超过 8MB、2 张不可达；共 15 条显示占位。
+- 216 条 Class 0/1 中 207 条有预览 URL（198 张图片 + 9 个视频封面）；9 条没有合格图片，另有 5 张超过 8MB、1 张不可达；共 15 条显示占位。
 - 已知局限：文档完整度靠章节结构推断，不看内容质量；JS 渲染页面可能漏检媒体；“下载方式”不含纯源码构建说明；C0 是人工范围复核，不是运行验收。
-- 人工修订：[`data/evidence-class-overrides.json`](../data/evidence-class-overrides.json) 记录边界修正；Class 0 只能在 [`data/evidence-class-zero-reviews.json`](../data/evidence-class-zero-reviews.json) 中逐条确认。
+- 除 Class 0 人工复核外没有逐条 class override；自动规则是唯一标准。Class 0 只能在 [`data/evidence-class-zero-reviews.json`](../data/evidence-class-zero-reviews.json) 中逐条确认。单条复核使用 [`scripts/verify_evidence_entry.py`](../scripts/verify_evidence_entry.py)。
 
 ## 4. 重新生成
 
@@ -64,6 +64,7 @@ python3 scripts/classify_evidence_classes.py --fresh    # 忽略缓存全部重�
 python3 scripts/build_evidence_previews.py
 python3 scripts/fetch_previews.py
 python3 scripts/build_site.py
+python3 scripts/verify_evidence_entry.py <entry-url>
 ```
 
 `build_site.py` 把 `evidence_class`、`evidence_status`、`scope`、`runtime_status` 合并进 `catalog.json` / `catalog-index.json`，并在精选条目缺少档位时直接报错。

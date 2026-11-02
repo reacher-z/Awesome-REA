@@ -15,6 +15,14 @@
    "reviewed_at": "2026-11-02"
   },
   {
+   "id": "deckcraft-case",
+   "scope": "full",
+   "version": "README snapshot 2026-11-02",
+   "primary_evidence": "https://github.com/storytold/deckcraft/blob/730165a8ecb6192af83e6fda259fe7917f24562d/README.md",
+   "note": "Complete clean-room application with release packages and install/usage instructions (\"Getting started\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
    "id": "designcraft-case",
    "scope": "full",
    "version": "README snapshot 2026-10-21",
@@ -27,7 +35,7 @@
    "scope": "full",
    "version": "README snapshot 2026-10-21",
    "primary_evidence": "https://github.com/storytold/effectcraft/blob/ec2d51a17a4cacc6b2907c875879f85ba895eed3/README.md",
-   "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "note": "Complete clean-room application with release packages and complete install/usage instructions (\"Get started\"); confirmed in use by the maintainer. Runtime not verified by this catalog.",
    "reviewed_at": "2026-11-02"
   },
   {
@@ -35,7 +43,7 @@
    "scope": "full",
    "version": "README snapshot 2026-10-21",
    "primary_evidence": "https://github.com/storytold/figcraft/blob/28de91d9ae72fc7fbc2199ac5ee2c8be237980d5/README.md",
-   "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "note": "Complete clean-room application with release packages and complete install/usage instructions (\"Get started\"); confirmed in use by the maintainer. Runtime not verified by this catalog.",
    "reviewed_at": "2026-11-02"
   },
   {
@@ -43,7 +51,15 @@
    "scope": "full",
    "version": "README snapshot 2026-10-21",
    "primary_evidence": "https://github.com/storytold/filmcraft/blob/d643a886650bfbf16f24762274054575aa1e8f20/README.md",
-   "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "note": "Complete clean-room application with release packages and complete install/usage instructions (\"Get started\"); confirmed in use by the maintainer. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "gridcraft-case",
+   "scope": "full",
+   "version": "README snapshot 2026-11-02",
+   "primary_evidence": "https://github.com/storytold/gridcraft/blob/f2d9a930e4c64fbac71939ef8780c72ad260fc67/README.md",
+   "note": "Complete clean-room application with release packages and install/usage instructions (\"Quick start\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
    "reviewed_at": "2026-11-02"
   },
   {
@@ -63,6 +79,14 @@
    "reviewed_at": "2026-11-02"
   },
   {
+   "id": "photocraft-case",
+   "scope": "full",
+   "version": "README snapshot 2026-11-02",
+   "primary_evidence": "https://github.com/storytold/photocraft/blob/b1b453a3180bb377a200a437ae54fa58a7af27ba/README.md",
+   "note": "Complete clean-room application with release packages and install/usage instructions (\"Get started\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
    "id": "soundcraft-case",
    "scope": "full",
    "version": "README snapshot 2026-10-21",
@@ -76,6 +100,14 @@
    "version": "README snapshot 2026-10-21",
    "primary_evidence": "https://github.com/storytold/vectorcraft/blob/875f98d211a303e90c15141385bbbb1ff7e2b233/README.md",
    "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "wordcraft-case",
+   "scope": "full",
+   "version": "README snapshot 2026-11-02",
+   "primary_evidence": "https://github.com/storytold/wordcraft/blob/01d3665100ab0ae9000a7b8bf12ab00b830795fb/README.md",
+   "note": "Complete clean-room application with release packages and install/usage instructions (\"Quick start\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
    "reviewed_at": "2026-11-02"
   },
   {

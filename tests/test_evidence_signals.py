@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 
-from classify_evidence_classes import github_signals  # noqa: E402
+from classify_evidence_classes import github_signals, is_c0_candidate  # noqa: E402
 
 FILLER = 'Documentation for the project. ' * 20
 RECORD = {'id': 'foo', 'url': 'https://github.com/acme/foo', 'name': 'Foo', 'kind': 'tool'}
@@ -43,6 +43,26 @@ class DownloadSignalTests(unittest.TestCase):
     def test_direct_artifact_link_is_a_download(self):
         signals = github_signals(meta('[Download](https://example.org/foo.dmg)\n' + FILLER), RECORD)
         self.assertEqual(signals['download'], 'file-links')
+
+    def test_prefixed_package_and_flags_match_the_target(self):
+        record = {'id': 'rea', 'url': 'https://github.com/morluto/rea', 'name': 'REA', 'kind': 'project'}
+        for readme in ('npx rea-agents setup\n', 'npm install --global rea-agents\n',
+                       'npx -y rea-agents@latest analyze-javascript-application /tmp/app\n'):
+            signals = github_signals(meta(readme + FILLER), record)
+            self.assertEqual(signals['download'], 'package', readme)
+
+    def test_get_started_heading_counts_as_install_and_usage(self):
+        signals = github_signals(meta('## Get started\nInstall the release package and open the app.\n' + FILLER), RECORD)
+        self.assertTrue(signals['docs_full'])
+
+
+class ClassZeroCandidateTests(unittest.TestCase):
+    def test_clean_room_implementation_is_a_complete_description(self):
+        record = {'id': 'wordcraft', 'url': 'https://github.com/storytold/wordcraft',
+                  'kind': 'case-study', 'targets': ['app'],
+                  'description_en': 'A clean-room Rust implementation of familiar Word workflows.'}
+        signals = {'code': True, 'docs': True, 'docs_full': True, 'download': 'release-assets', 'demo': ['image']}
+        self.assertTrue(is_c0_candidate(record, signals))
 
 
 if __name__ == '__main__':
