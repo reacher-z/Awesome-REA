@@ -84,9 +84,10 @@ def repository_card(record: dict, language: str, use_pro: bool) -> str:
     if not isinstance(license_name, str) or not license_name.strip() or license_name.upper() == 'NOASSERTION':
         license_name = '许可证未识别' if zh else 'License not identified'
     # The recorded GitHub push time is a collection-time snapshot, shown to the month without a maintenance judgement.
+    # Phones hide the label visually (the month alone keeps the meta line on one row); it stays in the accessible name.
     pushed = record.get('pushed_at')
     pushed_html = (f'<span class="source-card-pushed" title="{("采集时记录的最近推送时间快照" if zh else "Last push recorded at collection time")}">'
-                   f'{("最近推送" if zh else "Last push")} <time datetime="{escape(pushed, quote=True)}">{pushed[:7]}</time></span>'
+                   f'<span class="source-card-pushed-label">{("最近推送" if zh else "Last push")} </span><time datetime="{escape(pushed, quote=True)}">{pushed[:7]}</time></span>'
                    if isinstance(pushed, str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}T[^<>"&]*', pushed) else '')
     return f'''<article class="source-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}">
   <div class="source-card-head"><h2><a class="source-title-link" href="{external_url(record['url'])}" target="_blank" rel="noopener">{title}{icon('external', use_pro)}</a></h2></div>

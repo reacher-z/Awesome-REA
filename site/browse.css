@@ -63,6 +63,12 @@ html[lang="zh-CN"] .source-card.browse-repository .source-related-label::after{c
 .browse-repository .source-card-footer{margin-top:4px;line-height:1.6}
 .browse-repository .source-card-footer .source-stars{padding:0;border:0;background:none;font-size:14px;line-height:1.6;color:var(--muted)}
 .browse-repository .source-card-pushed{white-space:nowrap;font-variant-numeric:tabular-nums}
+/* Below 521 px a fourth meta item wraps the licence onto its own row: show the month alone (its "Last push" label stays
+   for screen readers and in the tooltip) and tighten the gaps, so stars, README, month and licence share one row again. */
+@media(max-width:520px){
+  .browse-repository .source-card-footer{column-gap:12px}
+  .browse-repository .source-card-pushed-label{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+}
 /* Scope static reading rules here; homepage cards keep their own layout. */
 .browse-main .card-description,.browse-main .source-card-description{max-width:68ch;font-size:16px;line-height:1.8;color:var(--body)}
 /* Links inside static card prose (the /about/ cards) need more than colour to read as links. */

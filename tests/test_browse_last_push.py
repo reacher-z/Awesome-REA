@@ -15,7 +15,8 @@ from test_source_browser import full_export
 RECORD = {'id': 'scan-1', 'full_name': 'example/demo', 'name': 'demo', 'url': 'https://github.com/example/demo',
           'description_en': 'Demo.', 'description_zh': '演示。', 'stars': 249, 'license': 'MIT',
           'pushed_at': '2021-01-26T10:20:30Z'}
-PUSHED = re.compile(r'<span class="source-card-pushed" title="([^"]+)">([^<]+) <time datetime="([^"]+)">([^<]+)</time></span>')
+PUSHED = re.compile(r'<span class="source-card-pushed" title="([^"]+)"><span class="source-card-pushed-label">([^<]+) </span>'
+                    r'<time datetime="([^"]+)">([^<]+)</time></span>')
 
 
 class BrowseLastPushTests(unittest.TestCase):
@@ -29,6 +30,18 @@ class BrowseLastPushTests(unittest.TestCase):
             self.assertLess(footer.index('source-card-pushed'), footer.index('source-card-license'))
             for judgement in ('unmaintained', 'inactive', 'stale', 'abandoned', '停止维护', '不活跃'):
                 self.assertNotIn(judgement, html)
+
+    def test_phones_show_the_month_alone_and_keep_the_label_for_screen_readers(self):
+        css = (ROOT / 'site/browse.css').read_text(encoding='utf-8')
+        phone = re.search(r'@media\(max-width:520px\)\{(.*?)\n\}', css, re.S)
+        self.assertIsNotNone(phone, 'phone rules for the card meta line')
+        label = re.search(r'\.source-card-pushed-label\{([^}]*)\}', phone[1])
+        self.assertIsNotNone(label)
+        # Visually hidden, not display:none, so the accessible name stays "Last push 2021-01".
+        self.assertIn('clip-path:inset(50%)', label[1])
+        self.assertNotIn('display:none', label[1])
+        self.assertIn('.browse-repository .source-card-footer{column-gap:12px}', phone[1])
+        self.assertNotIn('source-card-pushed-label', css.replace(phone[0], ''), 'wider screens keep the visible label')
 
     def test_missing_or_malformed_push_dates_are_omitted(self):
         for value in (None, '', 'unknown', '2021-01', 20210126, '2021-01-26T00:00:00Z"><script>'):
