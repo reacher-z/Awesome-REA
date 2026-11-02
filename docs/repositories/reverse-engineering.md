@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**662 repositories** · 2026-10-20 UTC
+**661 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -74,7 +74,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [Cur10s1tyByt3/GenP](https://github.com/Cur10s1tyByt3/GenP) — This repository preserves source materials and related documentation about GenP. For archival and research purposes only. **[1,340 stars]**
 - [rng70/TryHackMe-Roadmap](https://github.com/rng70/TryHackMe-Roadmap) — a list of 350+ Free TryHackMe rooms to start learning cybersecurity with THM **[1,323 stars]**
 - [Bixilon/Minosoft](https://github.com/Bixilon/Minosoft) — An open source Minecraft reimplementation written from scratch. Mirror of https<span>:</span>//gitlab.bixilon.de/bixilon/minosoft **[1,309 stars]**
-- [rocky/python-decompile3](https://github.com/rocky/python-decompile3) — Python decompiler for 3.7-3.8 Stripped down from uncompyle6 so we can refactor and start to fix up some long-standing problems **[1,275 stars]**
 - [OpenStick/OpenStick](https://github.com/OpenStick/OpenStick) — reverse engineering on msm8916 based 4G modem. **[1,192 stars]**
 - [Caho1/open-claude-ui](https://github.com/Caho1/open-claude-ui) — An in-depth REA-based breakdown and high-fidelity reconstruction of the official Claude desktop UI. Reconstructs 30 independent React components and 8 advanced interaction-physics algorithms, with a 3000+ line reverse-engineering analysis manual. **[1,185 stars]** · Curated: [Open Claude UI: REA-informed interface reference components](https://awesomerea.org/resources/open-claude-ui-case/)
 - [kpwn/iOSRE](https://github.com/kpwn/iOSRE) — iOS Reverse Engineering **[1,183 stars]** · Curated: [iOSRE: iOS Reverse Engineering reference](https://awesomerea.org/resources/kpwn-iosre/)
