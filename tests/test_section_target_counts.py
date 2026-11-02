@@ -102,7 +102,8 @@ class SectionTargetCountTests(unittest.TestCase):
             chips = dict(re.findall(r'<a href="#(?:cases-)?([a-z-]+)">[^<]+<span>(\d+)</span></a>', text))
             self.assertGreaterEqual(len(chips), 2, route)
             for section, count in chips.items():
-                body = re.search(rf'id="(?:cases-|heading-){section}".*?(?=<section|</main>|$)', text, re.S)[0]
+                # A section's case-study and tool sub-groups are nested sections; stop at the next top-level one.
+                body = re.search(rf'id="(?:cases-|heading-){section}".*?(?=<section(?! class="resource-subgroup")|</main>|$)', text, re.S)[0]
                 self.assertEqual(len(re.findall(r'data-resource-id=', body)), int(count), (route, section))
         validate_case_outputs({route: Page(self.html[route]) for route in ('/cases/', '/zh/cases/')}, self.resources)
 
