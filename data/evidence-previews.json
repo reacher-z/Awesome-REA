@@ -2,14 +2,14 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-02T03:58:10+00:00",
-    "entry_count": 207,
-    "class_entry_count": 216,
+    "generated_at": "2026-11-02T16:11:54+00:00",
+    "entry_count": 223,
+    "class_entry_count": 233,
     "class_counts": {
-      "image": 198,
+      "image": 214,
       "video": 9
     },
-    "missing_count": 9,
+    "missing_count": 10,
     "missing": [
       "aotopsy",
       "lego-island-decomp-case",
@@ -18,6 +18,7 @@
       "pince",
       "react-native-decompiler",
       "ruffle-flash-player-case",
+      "scapy",
       "uncharted-collection-pc-port-case",
       "wabt"
     ],
@@ -50,6 +51,24 @@
       "source_url": "https://github.com/vaibhavpandeyvpz/apkstudio",
       "revision": "8fdd3815e915399fc193e2b16ad74b513993f24b",
       "checked_at": "2026-11-01T10:08:30+00:00"
+    },
+    {
+      "id": "apkeditor",
+      "image_url": "https://raw.githubusercontent.com/REAndroid/APKEditor/5d94bc08565e30e3e3bb7accbd83138e4d6a8e45/.github/apkmerger.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/REAndroid/APKEditor",
+      "revision": "5d94bc08565e30e3e3bb7accbd83138e4d6a8e45",
+      "checked_at": "2026-11-02T16:11:48+00:00"
+    },
+    {
+      "id": "apkid",
+      "image_url": "https://user-images.githubusercontent.com/1356658/57322793-49be9c00-70b9-11e9-84da-1e64d9459a8a.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/rednaga/APKiD",
+      "revision": "f132f1b29c1f5d5e9eca0eb09f90fcc1b83a7ccd",
+      "checked_at": "2026-11-02T16:11:48+00:00"
     },
     {
       "id": "apktool-mcp-server",
@@ -97,6 +116,15 @@
       "checked_at": "2026-11-01T10:07:57+00:00"
     },
     {
+      "id": "binny-agent-harness",
+      "image_url": "https://raw.githubusercontent.com/openbin-ai/binny/787c9ec541d2aefad38ee9b44b6d40037a8c429b/docs/binny-on-light.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/openbin-ai/binny",
+      "revision": "787c9ec541d2aefad38ee9b44b6d40037a8c429b",
+      "checked_at": "2026-11-02T16:11:48+00:00"
+    },
+    {
       "id": "binsider",
       "image_url": "https://raw.githubusercontent.com/orhun/binsider/7f0633d1a69af15cc3be9e0533cb36dbe67eb598/website/src/content/assets/quickstart.gif",
       "kind": "image",
@@ -122,6 +150,15 @@
       "source_url": "https://github.com/kerokline/BreathOfFire3PCPort",
       "revision": "922c568cb923a31c82281906179ae33656126c82",
       "checked_at": "2026-11-02T03:17:38+00:00"
+    },
+    {
+      "id": "bytecode-viewer",
+      "image_url": "https://img.youtube.com/vi/I5GT6PoTGOw/0.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Konloch/bytecode-viewer",
+      "revision": "2403c0d7fc2c5bee560402dacafd628888ce5e5d",
+      "checked_at": "2026-11-02T16:11:48+00:00"
     },
     {
       "id": "cadcraft-case",
@@ -176,6 +213,15 @@
       "source_url": "https://github.com/ChupathingyCE/chupathingyce",
       "revision": "9990568507eede8b81edd5437a4860de5465c408",
       "checked_at": "2026-11-02T03:17:38+00:00"
+    },
+    {
+      "id": "corsixth-engine-case",
+      "image_url": "https://github.com/CorsixTH/CorsixTH/assets/20030128/923883d1-cd2b-48a9-8506-6ee03e2745dc",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/CorsixTH/CorsixTH",
+      "revision": "920b7eae4289a0a72a59a75727a86afb65f94102",
+      "checked_at": "2026-11-02T16:11:52+00:00"
     },
     {
       "id": "cps2recomp-arcade-static-recomp-case",
@@ -338,6 +384,15 @@
       "source_url": "https://github.com/Zfinix/eleven",
       "revision": "9fb1042696a0e0a3387e3c3317b6e697013ae835",
       "checked_at": "2026-11-01T10:06:22+00:00"
+    },
+    {
+      "id": "elgato-hdr-uvc-capture-case",
+      "image_url": "https://raw.githubusercontent.com/talkaboutdesign/elgato-hdr/7799d3c53520bcc3dd049211244bfaf49b905cb0/docs/screenshot.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/talkaboutdesign/elgato-hdr",
+      "revision": "7799d3c53520bcc3dd049211244bfaf49b905cb0",
+      "checked_at": "2026-11-02T16:11:48+00:00"
     },
     {
       "id": "fastview-rea-relay-analysis-rebuild-case",
@@ -799,6 +854,15 @@
       "checked_at": "2026-11-01T10:08:25+00:00"
     },
     {
+      "id": "melee-unlocked-case",
+      "image_url": "https://raw.githubusercontent.com/Hero88go/melee-unlocked/271402ea817471d09ea522d32925b7058c7c32ab/docs/screenshots/gameplay-jungle-japes.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Hero88go/melee-unlocked",
+      "revision": "271402ea817471d09ea522d32925b7058c7c32ab",
+      "checked_at": "2026-11-02T16:11:48+00:00"
+    },
+    {
       "id": "melonloader",
       "image_url": "https://raw.githubusercontent.com/LavaGang/MelonLoader.Installer/master/Resources/ML_Text.png",
       "kind": "image",
@@ -842,6 +906,15 @@
       "source_url": "https://github.com/Tixul/Ngpcraft_emulator",
       "revision": "d0acb0874cc07735d7fa978539bb2471b2c1e71a",
       "checked_at": "2026-11-02T03:58:06+00:00"
+    },
+    {
+      "id": "ngrev",
+      "image_url": "https://raw.githubusercontent.com/mgechev/ngrev/master/assets/1.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/mgechev/ngrev",
+      "revision": "edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb",
+      "checked_at": "2026-11-02T16:11:48+00:00"
     },
     {
       "id": "noop-whoop-ble-client-case",
@@ -988,6 +1061,15 @@
       "checked_at": "2026-11-01T10:06:18+00:00"
     },
     {
+      "id": "pinyon-shift-forza-horizon-recomp-case",
+      "image_url": "https://raw.githubusercontent.com/arcanite24/pinyon-shift/9494adadef6a73b340d204f29cfa75d711b78c6a/.github/launcher-ready.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/arcanite24/pinyon-shift",
+      "revision": "9494adadef6a73b340d204f29cfa75d711b78c6a",
+      "checked_at": "2026-11-02T16:11:48+00:00"
+    },
+    {
       "id": "plx-native-case",
       "image_url": "https://raw.githubusercontent.com/GLinnik21/plx-native/b24e0a31703bf37a2351779dcd1c5f6611630954/docs/screenshots/home.jpg",
       "kind": "image",
@@ -1067,6 +1149,24 @@
       "source_url": "https://github.com/pwndbg/pwndbg",
       "revision": "50f7305236e827a707083c1af177773fd55defcd",
       "checked_at": "2026-11-02T03:58:05+00:00"
+    },
+    {
+      "id": "pyghidra-mcp",
+      "image_url": "https://github.com/user-attachments/assets/31c1831a-5be1-4698-8171-5ebfc9d6797c",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/clearbluejar/pyghidra-mcp",
+      "revision": "aeaf4d16b0ce09b6dc5e16bb56d204025d2f6f8e",
+      "checked_at": "2026-11-02T16:11:53+00:00"
+    },
+    {
+      "id": "pylingual",
+      "image_url": "https://raw.githubusercontent.com/syssec-utd/pylingual/11a1516d84a6c2aa71ec23fbd11e4b99dc8c4a86/demo.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/syssec-utd/pylingual",
+      "revision": "11a1516d84a6c2aa71ec23fbd11e4b99dc8c4a86",
+      "checked_at": "2026-11-02T16:11:48+00:00"
     },
     {
       "id": "r2dec",
@@ -1366,6 +1466,15 @@
       "checked_at": "2026-11-01T10:06:17+00:00"
     },
     {
+      "id": "redscript",
+      "image_url": "https://user-images.githubusercontent.com/11986158/145484796-9bf1f77f-e706-4e15-b46b-c9b949f0086c.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/jac3km4/redscript",
+      "revision": "0c625df7784fea5e8078ee107a2b7ef2a580100e",
+      "checked_at": "2026-11-02T16:11:48+00:00"
+    },
+    {
       "id": "reflecticon-224-lexicon-emulation-case",
       "image_url": "https://github.com/user-attachments/assets/c0db1bfa-9a64-4a50-8ab3-c72e130a686f",
       "kind": "image",
@@ -1436,6 +1545,15 @@
       "source_url": "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security",
       "revision": "d07212e7edec20b14e3108860bebb4f0e8fffe40",
       "checked_at": "2026-11-01T10:08:35+00:00"
+    },
+    {
+      "id": "rsdkv4-sonic-1-2-decomp-case",
+      "image_url": "https://raw.githubusercontent.com/RSDKModding/RSDKv4-Decompilation/af95198f93951cc217b43923196e5750667ec1c7/header.png?raw=true",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/RSDKModding/RSDKv4-Decompilation",
+      "revision": "af95198f93951cc217b43923196e5750667ec1c7",
+      "checked_at": "2026-11-02T16:11:48+00:00"
     },
     {
       "id": "rsdkv5-engine-decomp-case",
@@ -1663,6 +1781,15 @@
       "checked_at": "2026-11-01T10:07:37+00:00"
     },
     {
+      "id": "th095-reconstruction-case",
+      "image_url": "https://raw.githubusercontent.com/N0zoM1z0/th095/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/resources/title-screen.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/N0zoM1z0/th095",
+      "revision": "6084b36cfa90ac1720f0cba36caec3ee56fc5e1f",
+      "checked_at": "2026-11-02T16:11:54+00:00"
+    },
+    {
       "id": "theseus-case",
       "image_url": "https://raw.githubusercontent.com/MrMilenko/Theseus/5fc7ddddd03b4b5a7e6233769ad6a8fe46009965/docs/images/desktop-launcher.png",
       "kind": "image",
@@ -1771,6 +1898,15 @@
       "checked_at": "2026-11-01T10:07:05+00:00"
     },
     {
+      "id": "valetudo-robot-cloud-replacement-case",
+      "image_url": "https://github.com/Hypfer/valetudo/raw/master/docs/pages/general/img/operation_principle.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Hypfer/Valetudo",
+      "revision": "209049bb90f63f4cf324e7e6d24590c442b50183",
+      "checked_at": "2026-11-02T16:11:48+00:00"
+    },
+    {
       "id": "vandal-hearts-pc-port-case",
       "image_url": "https://raw.githubusercontent.com/HalmyLyseas/VandalHearts-PcPort/14552fffa0e0b47e02b57592e274fc6e7a649923/docs/images/cover-pc-port.webp",
       "kind": "image",
@@ -1787,6 +1923,15 @@
       "source_url": "https://github.com/storytold/vectorcraft",
       "revision": "639c9d6ce989dd638ba3488cc26e36d907022bcb",
       "checked_at": "2026-11-02T03:17:38+00:00"
+    },
+    {
+      "id": "vmlinux-to-elf",
+      "image_url": "https://raw.githubusercontent.com/marin-m/vmlinux-to-elf/master/pics/Screenshot_2_Kernel_loaded.png?raw=true",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/marin-m/vmlinux-to-elf",
+      "revision": "36da74ded9cd486f294c8852e0dcab9ef6a48c6b",
+      "checked_at": "2026-11-02T16:11:48+00:00"
     },
     {
       "id": "vscode-frida",

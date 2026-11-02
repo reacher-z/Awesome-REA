@@ -90,7 +90,9 @@ SECTION_MEDIA = re.compile(r"^#{1,4}[^\n#]*\b(screenshots?|demo|preview|video|im
 MARKDOWN_IMAGE = re.compile(r"!\[[^\]]*\]\(([^)\s]+)")
 MARKDOWN_LINK = re.compile(r"\[([^\]]+)\]\(([^)\s]+)")
 HTML_IMAGE = re.compile(r"<img[^>]*\bsrc=[\"']([^\"']+)", re.IGNORECASE)
-HTML_LINK = re.compile(r"<a[^>]*\bhref=[\"']([^\"']+)[\"'][^>]*>([\s\S]{0,120}?)</a>", re.IGNORECASE)
+# Anchor text runs long on modern pages (icon + label inside one button), so the
+# captured text cap is generous; </a> still anchors the match.
+HTML_LINK = re.compile(r"<a[^>]*\bhref=[\"']([^\"']+)[\"'][^>]*>([\s\S]{0,600}?)</a>", re.IGNORECASE)
 HTML_TAG = re.compile(r"<[^>]+>")
 CODE_BLOCK = re.compile(r"```.*?```", re.DOTALL)
 DESCRIPTION_COMPLETE = re.compile(
@@ -129,6 +131,17 @@ class _AuthStrippingRedirect(urllib.request.HTTPRedirectHandler):
         return redirected
 
 
+def retry_seconds(headers: dict) -> float | None:
+    """Seconds to wait for a rate-limited request; None when it is not one."""
+    retry_after = headers.get("Retry-After") or headers.get("retry-after")
+    if retry_after and retry_after.isdigit():
+        return float(retry_after)
+    reset = headers.get("X-RateLimit-Reset") or headers.get("x-ratelimit-reset")
+    if reset and reset.isdigit():
+        return max(float(reset) - time.time(), 1.0)
+    return None
+
+
 class HttpClient:
     """Small shared client so the run stays inside the API rate budget."""
 
@@ -158,7 +171,31 @@ class HttpClient:
             with self.opener.open(request, timeout=timeout) as response:
                 return response.status, response.read(), dict(response.headers)
         except urllib.error.HTTPError as error:
-            return error.code, error.read() if error.fp is None else error.read(), dict(error.headers or {})
+            body = error.read() if error.fp is not None else b""
+            headers = dict(error.headers or {})
+            for _ in range(2):
+                # Rate limits wait out their window; transient 5xx get a short
+                # pause (frida/frida's releases payload, for one, 504s often).
+                if error.code in (403, 429):
+                    wait = retry_seconds(headers)
+                elif error.code in (502, 503, 504):
+                    wait = 2.0
+                else:
+                    wait = None
+                if wait is None:
+                    break
+                time.sleep(min(wait, 120.0) + 1.0)
+                request = urllib.request.Request(url, headers=self.headers_for(url, page))
+                try:
+                    with self.opener.open(request, timeout=timeout) as response:
+                        return response.status, response.read(), dict(response.headers)
+                except urllib.error.HTTPError as retry_error:
+                    error = retry_error
+                    body = retry_error.read() if retry_error.fp is not None else b""
+                    headers = dict(retry_error.headers or {})
+                except (urllib.error.URLError, TimeoutError, OSError):
+                    return 0, b"", {}
+            return error.code, body, headers
         except (urllib.error.URLError, TimeoutError, OSError):
             return 0, b"", {}
 
@@ -195,7 +232,7 @@ def github_repo_slug(url: str) -> str | None:
 
 def github_api_fetch(client: HttpClient, slug: str) -> dict:
     """One repo's meta, releases and README from the GitHub REST API."""
-    cached_payload = cached("gh:v2:" + slug)
+    cached_payload = cached("gh:v3:" + slug)
     if cached_payload:
         return cached_payload
     status, body, headers = client.get(f"https://api.github.com/repos/{slug}")
@@ -208,8 +245,16 @@ def github_api_fetch(client: HttpClient, slug: str) -> dict:
         return {"unavailable": True, "fetched_at": now_utc()}
     meta = json.loads(body.decode("utf-8", "replace"))
     release_status, release_body, _ = client.get(f"https://api.github.com/repos/{slug}/releases?per_page=100")
-    releases = json.loads(release_body.decode("utf-8", "replace")) if release_status == 200 else []
+    if release_status not in (200, 404):
+        # Huge release histories (frida, for one) can 504 on the full page; a
+        # smaller page still proves downloadable assets exist.
+        release_status, release_body, _ = client.get(f"https://api.github.com/repos/{slug}/releases?per_page=10")
     readme_status, readme_body, _ = client.get(f"https://api.github.com/repos/{slug}/readme")
+    if release_status != 200 or readme_status not in (200, 404):
+        # A throttled subrequest must not record half a repository as real data:
+        # miss the cache so a rerun observes the repository whole.
+        return {"unavailable": True, "fetched_at": now_utc()}
+    releases = json.loads(release_body.decode("utf-8", "replace")) if release_status == 200 else []
     readme_text = ""
     if readme_status == 200:
         readme = json.loads(readme_body.decode("utf-8", "replace"))
@@ -222,41 +267,98 @@ def github_api_fetch(client: HttpClient, slug: str) -> dict:
         "readme_bytes": len(readme_text.encode("utf-8")),
         "readme_text": readme_text[:400_000],
         "linked_docs_bytes": 0,
+        "download_links": [],
         "fetched_at": now_utc(),
     }
-    # A stub README that delegates to INSTALL.md or similar is still documentation;
-    # pull the linked Markdown files so such repos are not mistaken for undocumented.
-    if 0 < payload["readme_bytes"] < README_MIN_BYTES:
-        fetched_bytes = 0
-        markdown_links = []
-        external_link = None
-        for text, link in MARKDOWN_LINK.findall(readme_text):
+    target = normalized_package(slug.split("/")[-1])
+    markdown_links, external_links = [], []
+
+    def readme_link(raw: str) -> str:
+        # README decorations leak invisible characters into URLs; a request with
+        # one would crash the client, so only clean ASCII links are followed.
+        link = raw.strip().strip("<>")
+        if link.isascii() and not re.search(r"\s", link):
+            return link
+        return ""
+
+    def followable(link: str) -> bool:
+        # Distribution pages live outside the code host: the repo's own raw
+        # files and release pages are covered by the REST payload already, and
+        # "raw.githubusercontent.com" does not contain "github.com" as a
+        # substring, so the code-host check needs the wider exclusion.
+        lowered = link.lower()
+        return (link.startswith(("http://", "https://"))
+                and not any(marker in lowered for marker in IMAGE_URL_EXCLUDES)
+                and not any(host_part in lowered for host_part in ("github.com", "githubusercontent.com", "gitlab.com", "gitee.com")))
+
+    for _, raw in MARKDOWN_LINK.findall(readme_text):
+        link = readme_link(raw)
+        if not link:
+            continue
+        if re.search(r"\.(md)\b", link, re.IGNORECASE):
+            markdown_links.append(link)
+        elif followable(link):
+            external_links.append(link)
+    for raw, _ in HTML_LINK.findall(readme_text):
+        link = readme_link(raw)
+        if not link:
+            continue
+        if not link.startswith(("http://", "https://")):
             if re.search(r"\.(md)\b", link, re.IGNORECASE):
                 markdown_links.append(link)
-            elif external_link is None and link.startswith(("http://", "https://")):
-                lowered = link.lower()
-                if not any(marker in lowered for marker in IMAGE_URL_EXCLUDES) and "github.com" not in lowered:
-                    external_link = link
-        for link in markdown_links[:2]:
-            if link.startswith(("http://", "https://")):
-                if "raw.githubusercontent.com" not in link:
-                    continue
-                link = link.split("/", 4)[-1]
-            path = link.lstrip("./")
-            if not re.fullmatch(r"[\w./-]+\.md", path, re.IGNORECASE):
+        elif followable(link):
+            external_links.append(link)
+    # The download link often lives outside the README: in linked documents such
+    # as INSTALL.md, or on the distribution page the README points at. Read the
+    # linked Markdown for a stub README (the docs signal) and always scan linked
+    # pages and documents for the target's own download links. Pages whose URL
+    # names the target (getartcraft.com/apps/cadcraft) or that speak of
+    # downloads are read first; a README that links sibling apps must not crowd
+    # the target's own page out.
+    def external_priority(link: str) -> tuple[int, int]:
+        path_tail = urllib.parse.urlsplit(link).path.rstrip("/").rsplit("/", 1)[-1]
+        names_target = 0 if artifact_basename_matches_target(path_tail, target) else 1
+        speaks_download = 0 if re.search(r"download|install|releases", link.lower()) else 1
+        return names_target, speaks_download
+
+    external_links.sort(key=external_priority)
+    fetched_bytes = 0
+    for link in dict.fromkeys(markdown_links[:2]):
+        if link.startswith(("http://", "https://")):
+            if "raw.githubusercontent.com" not in link:
                 continue
-            doc_status, doc_body, _ = client.get(f"https://raw.githubusercontent.com/{slug}/HEAD/{path}")
-            if doc_status == 200:
-                fetched_bytes += len(doc_body)
-        if not fetched_bytes and external_link:
+            link = link.split("/", 4)[-1]
+        path = link.lstrip("./")
+        if not re.fullmatch(r"[\w./-]+\.md", path, re.IGNORECASE):
+            continue
+        doc_status, doc_body, _ = client.get(f"https://raw.githubusercontent.com/{slug}/HEAD/{path}")
+        if doc_status != 200:
+            continue
+        doc_text = doc_body.decode("utf-8", "replace")
+        if 0 < payload["readme_bytes"] < README_MIN_BYTES:
+            fetched_bytes += len(doc_body)
+        download_links = payload["download_links"]
+        download_links.extend(collect_target_download_links(
+            doc_text, [(href.strip(), "") for href, _ in MARKDOWN_LINK.findall(doc_text)], target))
+        payload["download_links"] = dedupe_strings(download_links)
+    for page_url in dict.fromkeys(external_links[:2]):
+        page_status, page_body, _ = client.get(page_url, timeout=20, page=True)
+        if page_status != 200:
+            continue
+        html_text = page_body.decode("utf-8", "replace")
+        base_url = urllib.parse.urlsplit(page_url).geturl()
+        page_links = [(urllib.parse.urljoin(base_url, href.strip()), "") for href, _ in HTML_LINK.findall(html_text)]
+        page_text = HTML_TAG.sub(" ", html_module.unescape(re.sub(
+            r"<(script|style)[^>]*>[\s\S]*?</\1>", " ", html_text, flags=re.IGNORECASE)))
+        if not fetched_bytes and 0 < payload["readme_bytes"] < README_MIN_BYTES:
             # A README that only points at a documentation site: read that page's text.
-            page_status, page_body, _ = client.get(external_link, timeout=20, page=True)
-            if page_status == 200:
-                text = HTML_TAG.sub(" ", html_module.unescape(re.sub(
-                    r"<(script|style)[^>]*>[\s\S]*?</\1>", " ", page_body.decode("utf-8", "replace"), flags=re.IGNORECASE)))
-                fetched_bytes = len(re.sub(r"\s+", " ", text).strip().encode("utf-8"))
-        payload["linked_docs_bytes"] = fetched_bytes
-    store_cache("gh:v2:" + slug, payload)
+            fetched_bytes = len(re.sub(r"\s+", " ", page_text).strip().encode("utf-8"))
+        download_links = payload["download_links"]
+        download_links.extend(collect_target_download_links(page_text, page_links, target))
+        payload["download_links"] = dedupe_strings(download_links)
+    payload["linked_docs_bytes"] = fetched_bytes
+    payload["download_links"] = payload["download_links"][:8]
+    store_cache("gh:v3:" + slug, payload)
     return payload
 
 
@@ -369,11 +471,52 @@ def has_target_install(text: str, record: dict) -> bool:
     return any(package_matches_target(match.group(1), target) for match in PACKAGE_INSTALL.finditer(text))
 
 
+def artifact_basename_matches_target(basename: str, target: str | None) -> bool:
+    """A name that is or starts with the target itself (cadcraft, cadcraft-0.15.1-linux.deb)."""
+    if not target:
+        return False
+    normalized = re.sub(r"[^a-z0-9]", "", basename.lower())
+    return normalized.startswith(target) and len(normalized) >= len(target)
+
+
+def dedupe_strings(items: list[str]) -> list[str]:
+    """First-occurrence order, empties dropped."""
+    return list(dict.fromkeys(item for item in items if item))
+
+
+def collect_target_download_links(text: str, links: list[tuple[str, str]], target: str | None) -> list[str]:
+    """Concrete download links and install commands for the target software.
+
+    Everything an evaluator could click or run: release-asset direct links,
+    artifact files named after the target, and package commands installing it.
+    Links to the project's own download pages stay out; only the links a user
+    would actually download through are evidence.
+    """
+    if not target:
+        return []
+    found: list[str] = []
+    for link, _ in links:
+        path = urllib.parse.urlsplit(link).path
+        basename = path.rsplit("/", 1)[-1]
+        lowered = link.lower().split("?")[0]
+        if not basename or lowered.endswith(MEDIA_EXTENSIONS):
+            continue
+        if lowered.endswith(DOWNLOAD_EXTENSIONS) and artifact_basename_matches_target(basename, target):
+            found.append(link)
+        elif "/releases/download/" in lowered and artifact_basename_matches_target(basename, target):
+            found.append(link)
+    for match in PACKAGE_INSTALL.finditer(text):
+        if package_matches_target(match.group(1), target):
+            found.append(match.group(0).strip())
+    return dedupe_strings(found)[:8]
+
+
 def page_signals(url: str, page: dict, record: dict) -> dict:
     """Signals for a non-GitHub URL: does the page carry code links, docs, media?"""
     signals = {"code": False, "code_basis": None, "docs": False, "docs_bytes": 0, "docs_full": False,
                "download": None, "release_count": 0, "release_asset_count": 0,
-               "demo": [], "media_count": 0, "archived": False, "unavailable": bool(page.get("unavailable"))}
+               "demo": [], "media_count": 0, "download_links": [], "archived": False,
+               "unavailable": bool(page.get("unavailable"))}
     # A URL on a code host is code, even when the page itself is unreachable.
     host = (urllib.parse.urlsplit(url).hostname or "").lower()
     if host in CODE_HOSTS:
@@ -412,6 +555,9 @@ def page_signals(url: str, page: dict, record: dict) -> dict:
         signals["download"] = "file-links"
     elif has_target_install(text, record):
         signals["download"] = "package"
+    signals["download_links"] = collect_target_download_links(text, links, target_package_name(record))
+    if signals["download"] is None and signals["download_links"]:
+        signals["download"] = "artifact-links"
     return signals
 
 
@@ -420,7 +566,8 @@ def github_signals(meta: dict, record: dict) -> dict:
     signals = {"code": True, "code_basis": "repo", "docs": False, "docs_bytes": meta.get("readme_bytes", 0),
                "docs_full": False, "download": None, "release_count": meta.get("release_count", 0),
                "release_asset_count": meta.get("release_asset_count", 0), "demo": [], "media_count": 0,
-               "archived": bool(meta.get("archived")), "unavailable": bool(meta.get("unavailable"))}
+               "download_links": [], "archived": bool(meta.get("archived")),
+               "unavailable": bool(meta.get("unavailable"))}
     # A release tag without an attached artifact is not a usable download.
     if meta.get("release_asset_count"):
         signals["download"] = "release-assets"
@@ -429,14 +576,22 @@ def github_signals(meta: dict, record: dict) -> dict:
     signals["docs"] = (signals["docs_bytes"] + meta.get("linked_docs_bytes", 0)) >= README_MIN_BYTES
     plain = CODE_BLOCK.sub(" ", readme_text)
     links = [(href.strip(), text) for text, href in MARKDOWN_LINK.findall(plain)]
+    # HTML READMEs (the *craft series, for example) carry their links as tags.
+    links += [(href.strip(), HTML_TAG.sub(" ", link_text)) for href, link_text in HTML_LINK.findall(readme_text)]
     demo, media_count = collect_media_signals(plain, links)
     signals["demo"] = demo
     signals["media_count"] = media_count
+    # Download links are collected from the README, its linked documents and the
+    # distribution pages it points at; the concrete links stay in the signals.
+    download_links = collect_target_download_links(readme_text, links, target_package_name(record))
+    signals["download_links"] = dedupe_strings(download_links + list(meta.get("download_links") or []))
     # Install commands count inside fenced code blocks, but only when they name the target itself.
     if signals["download"] is None and has_target_install(readme_text, record):
         signals["download"] = "package"
     if signals["download"] is None and collect_download_signals(plain, links):
         signals["download"] = "file-links"
+    if signals["download"] is None and signals["download_links"]:
+        signals["download"] = "artifact-links"
     categories = sum(bool(pattern.search(plain)) for pattern in (SECTION_INSTALL, SECTION_USAGE, SECTION_FEATURES, SECTION_MEDIA))
     has_install_usage = bool(SECTION_INSTALL.search(plain)) and bool(SECTION_USAGE.search(plain))
     signals["docs_full"] = signals["docs"] and (has_install_usage or categories >= 3 or (signals["docs_bytes"] >= 4000 and categories >= 2))
@@ -621,7 +776,7 @@ def main() -> None:
             "evidence_class": None if unavailable else rubric_class,
             "basis": basis,
             "signals": {key: value for key, value in signals.items() if key in (
-                "code", "code_basis", "docs", "docs_bytes", "docs_full", "download",
+                "code", "code_basis", "docs", "docs_bytes", "docs_full", "download", "download_links",
                 "release_count", "release_asset_count", "demo", "media_count", "archived", "unavailable")},
             "reason": reason,
             "checked_at": meta.get("fetched_at", now_utc()),

@@ -6,7 +6,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 
-from classify_evidence_classes import github_signals, is_c0_candidate  # noqa: E402
+from classify_evidence_classes import (  # noqa: E402
+    artifact_basename_matches_target, collect_target_download_links, github_signals, is_c0_candidate)
 
 FILLER = 'Documentation for the project. ' * 20
 RECORD = {'id': 'foo', 'url': 'https://github.com/acme/foo', 'name': 'Foo', 'kind': 'tool'}
@@ -54,6 +55,59 @@ class DownloadSignalTests(unittest.TestCase):
     def test_get_started_heading_counts_as_install_and_usage(self):
         signals = github_signals(meta('## Get started\nInstall the release package and open the app.\n' + FILLER), RECORD)
         self.assertTrue(signals['docs_full'])
+
+    def test_release_asset_links_on_a_linked_page_are_collected(self):
+        payload = meta(FILLER)
+        payload['download_links'] = ['https://example.org/releases/download/v1/foo-1.0-macos.dmg']
+        signals = github_signals(payload, RECORD)
+        self.assertEqual(signals['download'], 'artifact-links')
+        self.assertEqual(signals['download_links'], ['https://example.org/releases/download/v1/foo-1.0-macos.dmg'])
+
+    def test_release_assets_stay_the_basis_when_links_are_also_collected(self):
+        payload = meta(FILLER, release_count=1, release_asset_count=2)
+        payload['download_links'] = ['https://example.org/apps/foo']
+        signals = github_signals(payload, RECORD)
+        self.assertEqual(signals['download'], 'release-assets')
+        self.assertEqual(signals['download_links'], ['https://example.org/apps/foo'])
+
+
+class CollectedDownloadLinkTests(unittest.TestCase):
+    TARGET = 'cadcraft'
+
+    def test_release_asset_direct_link_named_after_the_target_counts(self):
+        links = collect_target_download_links(
+            '', [('https://github.com/storytold/cadcraft/releases/download/v0.15.1/'
+                  'cadcraft-0.15.1-macos-universal.dmg', '')], self.TARGET)
+        self.assertEqual(len(links), 1)
+
+    def test_artifact_with_a_different_name_does_not_count(self):
+        links = collect_target_download_links(
+            '', [('https://example.org/downloads/launcher-1.0.dmg', ''),
+                 ('https://github.com/storytold/other/releases/download/v1/other-1.0.msi', '')], self.TARGET)
+        self.assertEqual(links, [])
+
+    def test_bare_page_link_is_not_a_download(self):
+        links = collect_target_download_links('', [('https://getartcraft.com/apps/cadcraft', '')], self.TARGET)
+        self.assertEqual(links, [])
+
+    def test_install_command_for_the_target_is_collected(self):
+        links = collect_target_download_links('cargo install cadcraft-cli\n', [], self.TARGET)
+        self.assertEqual(links, ['cargo install cadcraft-cli'])
+
+    def test_url_tail_equal_to_the_target_is_a_match(self):
+        self.assertTrue(artifact_basename_matches_target('cadcraft', self.TARGET))
+        self.assertTrue(artifact_basename_matches_target('cadcraft-0.15.1-macos.dmg', self.TARGET))
+        self.assertFalse(artifact_basename_matches_target('photocraft', self.TARGET))
+
+    def test_html_readme_links_feed_the_collector(self):
+        readme = ('<h2>Downloads</h2>\n<a href="https://github.com/storytold/cadcraft/releases/download/v0.15.1/'
+                  'cadcraft-0.15.1-macos-universal.dmg"><svg>icon</svg> Download</a>\n' + FILLER)
+        signals = github_signals(meta(readme), {'id': 'cadcraft', 'url': 'https://github.com/storytold/cadcraft',
+                                                'name': 'CADCraft', 'kind': 'tool'})
+        # A direct file link inside the README already counts as file-links; the
+        # collector additionally records the concrete link for audit.
+        self.assertEqual(signals['download'], 'file-links')
+        self.assertEqual(len(signals['download_links']), 1)
 
 
 class ClassZeroCandidateTests(unittest.TestCase):

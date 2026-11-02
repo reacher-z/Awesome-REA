@@ -125,7 +125,7 @@ def fetch(client, url: str, record: dict, fresh: bool) -> dict:
     slug = classifier.github_repo_slug(url)
     if slug:
         if fresh:
-            clear_cache("gh:v2:" + slug)
+            clear_cache("gh:v3:" + slug)
         meta = classifier.github_api_fetch(client, slug)
         signals = classifier.github_signals(meta, record)
         status, body, _ = client.get(f"https://api.github.com/repos/{slug}")
@@ -271,6 +271,9 @@ def download_report(fetched: dict, record: dict) -> dict:
         "artifact_links": artifact_links,
         "install_commands": commands[:12],
         "target_package": target,
+        # Target download links collected from the README, its linked documents
+        # and the distribution pages it points at.
+        "download_links": fetched["signals"].get("download_links") or [],
     }
 
 
@@ -396,6 +399,13 @@ def report_text(result: dict) -> str:
                          f"{'counted' if command['counted'] else 'NOT counted (build dependency or different package)'}")
     else:
         lines.append("  install commands: none")
+    if download["download_links"]:
+        lines.append(f"  collected download links ({len(download['download_links'])}), "
+                     "from README, linked docs and distribution pages:")
+        for link in download["download_links"]:
+            lines.append(f"    {link[:160]}")
+    else:
+        lines.append("  collected download links: none")
     lines += ["", f"DEMO: {'PASS' if demo['images']['accepted_count'] or demo['videos'] else 'FAIL'} | "
                   f"accepted images={demo['images']['accepted_count']} | videos={len(demo['videos'])}"]
     for image in demo["images"]["candidates"][:12]:

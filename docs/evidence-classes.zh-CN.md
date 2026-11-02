@@ -34,6 +34,7 @@
 | `code` | URL 是代码仓库，或页面链接到代码仓库 |
 | `docs` / `docs_full` | README 或页面正文 ≥ 400 字节；章节结构覆盖安装/构建与使用 |
 | `download` | Release **附产物**、可执行产物直链，或**安装目标软件本身**的包命令（包名与仓库名匹配，fenced code block 也算） |
+| `download_links` | 挖到的**具体下载链接**逐条记录：从 README、README 链接的文档（如 `docs/INSTALL.md`）和 README 指向的分发页面（如项目官网的应用页）解析；只记目标软件自己的产物直链和安装命令，不记纯项目主页 |
 | `demo` | 非品牌的位图截图、视频平台链接或 demo/playable 链接 |
 
 不算下载：只有 Release tag、没有产物；构建依赖（如仓库是 `foo` 时 `pip install ninja`）。
