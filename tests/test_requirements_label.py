@@ -1,4 +1,4 @@
-"""Every requirements disclosure carries the one bilingual label from build_readme.REQUIREMENTS_LABEL."""
+"""Every requirements disclosure and entry-page requirements heading carries the one bilingual label from build_readme.REQUIREMENTS_LABEL."""
 from html import escape
 from pathlib import Path
 import re
@@ -24,7 +24,7 @@ class RequirementsLabelTests(unittest.TestCase):
     def setUp(self):
         self.records = [resource('label-case'), resource('label-tool', kind='tool')]
 
-    def test_listing_disclosures_and_entry_headings_use_the_label(self):
+    def test_listings_link_to_entry_headings_that_use_the_label(self):
         with TemporaryDirectory() as directory:
             output = Path(directory)
             (output / 'index.html').write_text('<link rel="stylesheet" href="https://awesome-rea.pages.dev/fontawesome.css">')
@@ -32,10 +32,13 @@ class RequirementsLabelTests(unittest.TestCase):
             build_discovery_pages(output, {'resources': self.records, 'meta': {'site_url': 'https://awesomerea.org'}}, None)
             build_entry_pages(output, self.records, [])
             for prefix, label in (('', REQUIREMENTS_LABEL[0]), ('zh/', REQUIREMENTS_LABEL[1])):
-                for page, count in (('resources', 2), ('cases', 1)):
+                for page, records in (('resources', self.records), ('cases', self.records[:1])):
                     with self.subTest(page=prefix + page):
+                        # Listings no longer disclose requirements; each entry links to the labelled entry-page section.
                         html = (output / prefix / page / 'index.html').read_text(encoding='utf-8')
-                        self.assertEqual(re.findall(r'<summary>([^<]*)</summary>', html)[-count:], [escape(label)] * count)
+                        self.assertNotIn(escape(label), re.findall(r'<summary>([^<]*)</summary>', html))
+                        for record in records:
+                            self.assertEqual(html.count(f'href="{"/zh" if prefix else ""}/resources/{record["id"]}/#entry-requirements"'), 1)
                 for record in self.records:
                     with self.subTest(entry=prefix + record['id']):
                         html = (output / prefix / 'resources' / record['id'] / 'index.html').read_text(encoding='utf-8')

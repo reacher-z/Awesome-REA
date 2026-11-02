@@ -12,11 +12,9 @@ import shutil
 from urllib.parse import unquote, urlsplit
 
 from asset_paths import FINGERPRINTED_SUFFIXES, fingerprinted_href
-from build_readme import KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section
+from build_readme import KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
 from contribution_pages import TITLES as CONTRIBUTION_TITLES, contribution_content
-from evidence_links import evidence_link
 from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
-from requirement_facets import item_html, ordered_items
 from site_footer import SECTION_LINKS, download_label, download_link, site_footer
 from source_scope import exclusion_counts, unavailable_clause
 
@@ -159,6 +157,23 @@ def _requirements(record: dict, language: str) -> list[str]:
     return value
 
 
+def _requirements_link(record: dict, language: str, name: str, css: str) -> str:
+    """Listings link to the entry page's requirements instead of repeating them; the label counts what is there.
+
+    Sources are counted as the entry page lists them: the primary source and every distinct additional source."""
+    zh = language == 'zh'
+    requirements = len(_requirements(record, language))
+    sources = len(dict.fromkeys([record['evidence_url'], *record.get('additional_evidence_urls', [])]))
+    href = f"{'/zh' if zh else ''}/resources/{escape(record['id'], quote=True)}/#entry-requirements"
+    if zh:
+        text = f'{requirements} 项使用条件 · {sources} 个来源'
+        label = f'{name}：完整条目中的 {requirements} 项使用条件与 {sources} 个来源'
+    else:
+        text = f'{requirements} requirement{"" if requirements == 1 else "s"} · {sources} source{"" if sources == 1 else "s"}'
+        label = f'{name}: {text.replace(" · ", " and ")} on the full entry'
+    return f'<a class="{css}" href="{href}" aria-label="{escape(label, quote=True)}">{text}<span aria-hidden="true">&nbsp;→</span></a>'
+
+
 def _resource_card(record: dict, language: str, heading: str = 'h3') -> str:
     zh = language == 'zh'
     detail_path = f"{'/zh' if zh else ''}/resources/{record['id']}/"
@@ -167,16 +182,12 @@ def _resource_card(record: dict, language: str, heading: str = 'h3') -> str:
     description = record[f'description_{language}']
     kind = KIND_LABELS[record['kind']][1 if zh else 0]
     targets = ' · '.join(TARGETS[target][1 if zh else 0] for target in record['targets'])
-    requirements = ''.join(item_html(facet, item, language) for facet, item in ordered_items(record, _requirements(record, language)))
-    # Further evidence is named as on the entry page: a pinned GitHub path with its repository, or the URL.
-    additional = ''.join(f'<li>{evidence_link(url, _url(url), language, arrow=True)}</li>'
-                         for url in record.get('additional_evidence_urls', []))
     reviewed = str(record['verified_at'])
     return f'''<article class="resource-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}" data-resource-id="{escape(record['id'], quote=True)}">
   <div class="card-heading"><{heading}><a class="card-title-link" href="{_url(record['url'])}" target="_blank" rel="noopener">{escape(name)}{EXTERNAL_TITLE_ARROW}</a></{heading}><span class="resource-kind">{escape(kind)}</span></div>
   <p class="card-description">{escape(description)}</p>
   <div class="card-meta"><span>{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{escape(record['id'], quote=True)}" href="{escape(detail_path, quote=True)}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a></div>
-  <details class="requirements"><summary>{escape(REQUIREMENTS_LABEL[zh])}</summary><ul>{requirements}</ul>{('<ul>' + additional + '</ul>' if additional else '')}<div class="resource-detail-meta"><span>{('来源已复核' if zh else 'Source-reviewed')}</span><time datetime="{escape(reviewed, quote=True)}">{('复核于' if zh else 'Reviewed')} {escape(reviewed[:10])}</time><a class="resource-evidence-link" href="{_url(record['evidence_url'])}" target="_blank" rel="noopener">{PRIMARY_SOURCE_LABEL[zh]} ↗</a></div></details>
+  <div class="resource-detail-meta"><a class="resource-evidence-link" href="{_url(record['evidence_url'])}" target="_blank" rel="noopener">{PRIMARY_SOURCE_LABEL[zh]} ↗</a>{_requirements_link(record, language, name, 'resource-requirements-link')}<time datetime="{escape(reviewed, quote=True)}">{('来源复核于' if zh else 'Source-reviewed')} {escape(reviewed[:10])}</time></div>
 </article>'''
 
 
@@ -229,7 +240,7 @@ def _subgroup_count(slug: str, count: int, zh: bool) -> str:
 
 
 def _case_row(record: dict, language: str, section: str) -> str:
-    """Keep reported scope visible; link the original, the full entry and its primary source as /resources/ does."""
+    """Keep reported scope visible; link the original, the full entry, its primary source and its requirements as /resources/ does."""
     zh = language == 'zh'
     name = (record.get('name_zh') or record['name']) if zh else record['name']
     identifier = escape(record['id'], quote=True)
@@ -237,16 +248,12 @@ def _case_row(record: dict, language: str, section: str) -> str:
     detail_label = ('完整条目：' if zh else 'Full entry: ') + name
     relationship = RELATIONSHIPS[record['relationship']][int(zh)]
     targets = ' · '.join(TARGETS[target][int(zh)] for target in record['targets'])
-    requirements = ''.join(item_html(facet, item, language) for facet, item in ordered_items(record, _requirements(record, language)))
-    # The primary source sits in the card footer; further evidence is named as on the entry page.
-    evidence_links = ''.join(f'<li>{evidence_link(url, _url(url), language, arrow=True)}</li>'
-                             for url in record.get('additional_evidence_urls', []))
     reviewed = str(record['verified_at'])
     return f'''<article class="case-row" id="{identifier}" data-case-id="{identifier}" data-resource-id="{identifier}" data-case-section="{escape(section, quote=True)}">
   <div class="case-heading"><h3><a href="{_url(record['url'])}" target="_blank" rel="noopener">{escape(name)}{EXTERNAL_TITLE_ARROW}</a></h3><span class="case-relationship">{escape(relationship)}</span></div>
   <p class="case-description">{escape(record[f'description_{language}'])}</p>
   <div class="case-footer"><div class="case-meta"><span class="case-targets">{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{identifier}" href="{detail_path}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a><a class="case-source" href="{_url(record['evidence_url'])}" target="_blank" rel="noopener">{PRIMARY_SOURCE_LABEL[zh]} <span aria-hidden="true">↗</span></a></div>
-  <details class="case-evidence"><summary>{escape(REQUIREMENTS_LABEL[zh])}</summary><div class="case-evidence-body"><ul class="case-requirements">{requirements}</ul>{('<ul class="case-evidence-links">' + evidence_links + '</ul>' if evidence_links else '')}<p class="case-review-date"><time datetime="{escape(reviewed, quote=True)}">{('来源复核日期：' if zh else 'Source review: ')}{escape(reviewed[:10])}</time></p></div></details>
+  <p class="case-evidence">{_requirements_link(record, language, name, 'case-requirements-link')}<time class="case-review-date" datetime="{escape(reviewed, quote=True)}">{('来源复核日期：' if zh else 'Source review: ')}{escape(reviewed[:10])}</time></p>
   </div>
 </article>'''
 
@@ -427,8 +434,8 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         title = '精选逆向工程资源' if zh else 'Curated reverse engineering resources'
         description = (f'{len(resources):,} 项工具、项目、集成、案例与参考资源，覆盖网站、游戏、应用、原生二进制、固件及通信协议。'
                        if zh else f'{len(resources):,} tools, projects, integrations, case studies, and references for websites, games, apps, native binaries, firmware, and communication protocols.')
-        note = ('“来源已复核”表示说明已依据一手文档核对，不代表已安装、执行、安全审计或验证兼容性。使用条件和复核日期随条目保留。'
-                if zh else 'Source-reviewed means descriptions were checked against primary documentation. It does not mean installation, execution, security auditing, or compatibility testing. Each entry retains requirements and its review date.')
+        note = ('“来源已复核”表示说明已依据一手文档核对，不代表已安装、执行、安全审计或验证兼容性。完整的使用条件与来源列在各条目页面，本页显示其数量和复核日期。'
+                if zh else 'Source-reviewed means descriptions were checked against primary documentation. It does not mean installation, execution, security auditing, or compatibility testing. Each entry page lists the full requirements and sources; this page shows their counts and the review date.')
         sections, items, navigation = [], [], []
         for key, labels in SECTIONS.items():
             if not groups[key]:

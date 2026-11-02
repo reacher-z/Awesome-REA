@@ -78,7 +78,7 @@ class RequirementFacetTests(unittest.TestCase):
         self.assertEqual(item_html('license', 'MIT', 'zh'), '<li><strong class="requirement-facet">许可：</strong>MIT</li>')
         self.assertEqual(item_html(None, 'x', 'en'), '<li>x</li>')
 
-    def test_entry_and_case_pages_show_facets_first(self):
+    def test_entry_pages_show_facets_first_and_listings_link_to_them(self):
         record = faceted()
         with TemporaryDirectory() as directory:
             output = Path(directory)
@@ -90,10 +90,15 @@ class RequirementFacetTests(unittest.TestCase):
                                           ('zh/', ('前提条件：', '测试证据：'), record['requirements_zh'])):
                 expected = [f'<li><strong class="requirement-facet">{labels[0]}</strong>{texts[1].replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")}</li>',
                             f'<li><strong class="requirement-facet">{labels[1]}</strong>{texts[0]}</li>']
-                for page in ('resources', 'cases', f'resources/{record["id"]}'):
+                with self.subTest(page=prefix + 'resources/' + record['id']):
+                    html = (output / prefix / 'resources' / record['id'] / 'index.html').read_text(encoding='utf-8')
+                    self.assertIn(''.join(expected), html)
+                # The listings link to the entry page's requirements instead of repeating them.
+                for page in ('resources', 'cases'):
                     with self.subTest(page=prefix + page):
                         html = (output / prefix / page / 'index.html').read_text(encoding='utf-8')
-                        self.assertIn(''.join(expected), html)
+                        self.assertNotIn('requirement-facet', html)
+                        self.assertIn(f'href="{"/zh" if prefix else ""}/resources/{record["id"]}/#entry-requirements"', html)
 
     def test_homepage_labels_match_the_vocabulary(self):
         strings = _ui_strings(APP)
