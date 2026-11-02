@@ -6539,11 +6539,12 @@
   "skate-3-rust-engine-case": {
     "name": "Skate 3 Rust Engine：基于《Skate 3》逆向研究的 Bevy 重写",
     "requirements": [
-      "README 称这是一项进行中的重写：使用原版素材或能做出技巧，并不代表每个系统都与原版行为一致。它建立在 dumbad 汇集于 DumbadsSkate3ModdingTools 的研究之上，也借鉴了 Chasm 早先的重编译和渲染器工作。物理说明引用了 TU3 版 default.patched.xex 的 IDA 数据库中的地址和常量；tools/recomp-trace 读取 Hailey-Ross/skate3recomp 的 research-hooks 分支产生的跟踪记录，该分支须由使用者用自己的游戏副本自行构建。",
-      "游玩需要使用者自己的《Skate 3》Xbox 360 ISO，或已解包的 default.xex 及其 data 文件夹；设置程序会将角色、动画、光盘地图和 HUD 素材转换到本地 data 文件夹，提取 ISO 需要联网。README 说明不包含《Skate 3》素材，也不附带自定义动画片段。在所审版本中，碰撞测试样例由合成三角形生成，随附的 format-demo 地图被说明为原创的程序生成内容。",
-      "游戏在 Windows 上运行：发行版 ZIP 启动 skate3rust.exe，需要兼容 SDL3 的手柄，支持 Xbox/XInput、PlayStation、Switch 及通用 HID 控制器。从源码构建需要带 MSVC 工具链的 Rust 和 LLVM，使用 BUILD.bat 与 PLAY.bat；便携包脚本需要 Python 3.13。打过补丁的 Bevy crate 内置在 vendor/ 下，main 分支构建成功后会替换滚动更新的 experimental 预发布版。",
-      "所审的 Windows 发行工作流会运行更新器、设置程序和素材管线的 Python 测试，然后构建发行包；各 Rust crate 自带测试，但该工作流不运行它们。tools/regression-checks 将地图、出生点和角色定制输出与使用者自行记录的基线比较，tools/setup-equivalence 检查更快的设置路径能否解码出完全相同的字节。recomp-trace 的 README 提醒，重编译版本的时序和线程与主机版游戏不同；一致性结果均为项目报告，本合集未运行任何内容。",
-      "原创代码采用 GPL-3.0-only，版权属于 dumbad 和项目贡献者；内置的 Bevy crate 和 tools/vendor/ 下的工具保留各自的许可证，该许可证不授予对 Electronic Arts 的代码、数据、素材或商标的任何权利，也不涉及第三方地图和模组。README 说明使用了 AI 编程工具，tools/claude-skills 收录了用于开发该引擎的 Claude Code 技能；所审来源未确立 REA 的使用。该项目为非官方项目，与 EA 无关，也独立于本目录中的 Skate 3 Recomp 条目。"
+      "游玩需要使用者自己的《Skate 3》Xbox 360 ISO，或已解包的 default.xex 及其 data 文件夹；设置程序会将角色、动画、光盘地图和 HUD 素材转换到本地 data 文件夹，提取 ISO 需要联网。仓库不包含《Skate 3》素材；随附的 format-demo 地图被说明为原创的程序生成内容。",
+      "在 Windows 上运行：发行版 ZIP 启动 skate3rust.exe，需要兼容 SDL3 的手柄。从源码构建需要带 MSVC 工具链的 Rust 和 LLVM，使用 BUILD.bat 与 PLAY.bat；便携包脚本需要 Python 3.13。",
+      "tools/recomp-trace 读取 Hailey-Ross/skate3recomp 的 research-hooks 分支产生的跟踪记录，该分支须由使用者用自己的游戏副本自行构建；其 README 提醒，重编译版本的时序和线程与主机版游戏不同。",
+      "Windows 发行工作流运行更新器、设置程序和素材管线的 Python 测试，但不运行各 Rust crate 自带的测试。tools/regression-checks 将地图、出生点和角色定制输出与使用者自行记录的基线比较。一致性结果均为项目报告。",
+      "原创代码采用 GPL-3.0-only，版权属于 dumbad 及贡献者；内置并打过补丁的 Bevy crate 和 tools/vendor/ 下的工具保留各自的许可证，该许可证不授予对 Electronic Arts 的代码、数据、素材或商标的任何权利，也不涉及第三方地图和模组。项目为非官方项目，与 EA 无关。",
+      "tools/claude-skills 收录了用于开发该引擎的 Claude Code 技能。该项目独立于本目录中的 Skate 3 Recomp 条目。"
     ]
   }
 }

@@ -19971,11 +19971,20 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
-      "README describes a work-in-progress rewrite: using original assets or showing working tricks does not mean every system behaves like the original. It builds on dumbad’s research, collected in DumbadsSkate3ModdingTools, and on Chasm’s earlier recompilation and renderer work. Physics notes cite addresses and constants from an IDA database of the TU3 default.patched.xex, and tools/recomp-trace reads traces from the research-hooks branch of Hailey-Ross/skate3recomp, which users must build from their own copy of the game.",
-      "Play needs the user’s Skate 3 Xbox 360 ISO, or an extracted default.xex with its data folder; setup converts the skater, animations, disc maps and HUD assets into a local data folder, and ISO extraction needs internet access. README says Skate 3 assets are not included and ships no custom animation clips. In the reviewed tree, the collision test fixture is generated from synthetic triangles, and the bundled format-demo map is described as original procedural content.",
-      "The game runs on Windows: the release ZIP starts skate3rust.exe and needs an SDL3-compatible gamepad, with Xbox/XInput, PlayStation, Switch and generic HID controllers supported. Source builds need Rust with the MSVC toolchain and LLVM, using BUILD.bat and PLAY.bat, and the portable package script needs Python 3.13. Patched Bevy crates are vendored under vendor/, and successful main builds replace a rolling experimental prerelease.",
-      "The reviewed Windows release workflow runs Python tests for the updater, setup and asset pipeline, then builds the package; the Rust crates carry their own tests, which that workflow does not run. tools/regression-checks compares maps, spawns and customiser output with a user-recorded baseline, and tools/setup-equivalence checks that faster setup paths decode identical bytes. The recomp-trace README warns that the recompilation’s timing and threading differ from the console game; parity results are project-reported, and this collection ran nothing.",
-      "Original code is GPL-3.0-only, copyright dumbad and the project’s contributors; vendored Bevy crates and tools under tools/vendor/ keep their own licenses, and the license grants no rights to Electronic Arts’ code, data, assets or trademarks or to third-party maps and mods. README states that AI coding tools were used, and tools/claude-skills holds Claude Code skills for developing the engine; the reviewed sources establish no REA use. The project is unofficial and unaffiliated with EA, and it is separate from the catalog’s Skate 3 Recomp record."
+      "Play needs the user’s Skate 3 Xbox 360 ISO, or an extracted default.xex with its data folder; setup converts the skater, animations, disc maps and HUD assets into a local data folder, and ISO extraction needs internet access. Skate 3 assets are not included; the bundled format-demo map is described as original procedural content.",
+      "Runs on Windows: the release ZIP starts skate3rust.exe and needs an SDL3-compatible gamepad. Source builds need Rust with the MSVC toolchain and LLVM, using BUILD.bat and PLAY.bat; the portable package script needs Python 3.13.",
+      "tools/recomp-trace reads traces from the research-hooks branch of Hailey-Ross/skate3recomp, which users must build from their own copy of the game; its README warns that the recompilation’s timing and threading differ from the console game.",
+      "The Windows release workflow runs Python tests for the updater, setup and asset pipeline, but not the Rust crates’ own tests. tools/regression-checks compares maps, spawns and customiser output with a user-recorded baseline. Parity results are project-reported.",
+      "Original code is GPL-3.0-only, copyright dumbad and contributors; the vendored, patched Bevy crates and tools under tools/vendor/ keep their own licenses, and no rights are granted to Electronic Arts’ code, data, assets or trademarks or to third-party maps and mods. Unofficial and unaffiliated with EA.",
+      "tools/claude-skills holds Claude Code skills for developing the engine. It is separate from the catalog’s Skate 3 Recomp record."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "testing",
+      "license",
+      "attribution"
     ],
     "additional_evidence_urls": [
       "https://github.com/SK8-ENGINE/skate-3-rust-engine/blob/2e16697797c8358d16f747a8259354ff2921041a/docs/physics/grind-trick-state-202.md",
