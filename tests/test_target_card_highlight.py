@@ -28,18 +28,23 @@ class TargetCardHighlightTests(unittest.TestCase):
                 self.assertIn('background:var(--tint)', matching[0])
                 self.assertRegex(matching[0], r'outline:3px solid var\(--link\)')
 
-    def test_outline_contrasts_with_the_page_and_the_tint(self):
-        def luminance(name):
-            value = re.search(rf'--{name}:#([0-9a-f]{{3}}|[0-9a-f]{{6}});', STYLES).group(1)
+    def test_outline_contrasts_with_the_page_and_the_tint_in_both_themes(self):
+        light_theme = STYLES.split('@media (prefers-color-scheme: dark)', 1)[0]
+        dark_theme = re.search(r'@media \(prefers-color-scheme: dark\)\s*\{\s*:root\s*\{([^{}]*)\}', STYLES)
+        self.assertIsNotNone(dark_theme, 'styles.css has no dark token set')
+
+        def luminance(tokens, name):
+            value = re.search(rf'--{name}:#([0-9a-f]{{3}}|[0-9a-f]{{6}});', tokens).group(1)
             value = ''.join(c * 2 for c in value) if len(value) == 3 else value
             channels = [int(value[i:i + 2], 16) / 255 for i in (0, 2, 4)]
             linear = [c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4 for c in channels]
             return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2]
 
-        for background in ('paper', 'tint'):
-            light, dark = sorted((luminance('link'), luminance(background)), reverse=True)
-            with self.subTest(background=background):
-                self.assertGreaterEqual((light + 0.05) / (dark + 0.05), 3)
+        for theme, tokens in (('light', light_theme), ('dark', dark_theme.group(1))):
+            for background in ('paper', 'surface', 'tint'):
+                light, dark = sorted((luminance(tokens, 'link'), luminance(tokens, background)), reverse=True)
+                with self.subTest(theme=theme, background=background):
+                    self.assertGreaterEqual((light + 0.05) / (dark + 0.05), 3)
 
     def test_borderless_rows_extend_the_tint_without_changing_padding(self):
         for selector, body in rules(STYLES):
