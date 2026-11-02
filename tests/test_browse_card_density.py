@@ -15,6 +15,12 @@ RECORD = {'id': 'scan-1', 'full_name': 'ReFirmLabs/binwalk', 'name': 'binwalk', 
                                'href_en': '/resources/binwalk/', 'href_zh': '/zh/resources/binwalk/'}]}
 
 
+def meta_line(html):
+    """The card's meta line, with the README link's aria-hidden arrow folded back into its visible text."""
+    meta = re.search(r'<div class="source-card-footer">(.*?)</div>', html, re.S)[1]
+    return re.sub(r'<span aria-hidden="true">([^<]*)</span>', r'\1', meta)
+
+
 class BrowseCardDensityTests(unittest.TestCase):
     def test_head_holds_only_the_title_and_the_meta_line_holds_stars_readme_and_license(self):
         for language, stars, license_name in (('en', '14,491 stars', 'MIT'), ('zh', '14,491 星标', 'MIT')):
@@ -22,7 +28,7 @@ class BrowseCardDensityTests(unittest.TestCase):
             head = re.search(r'<div class="source-card-head">(.*?)</div>', html, re.S)[1]
             self.assertTrue(head.startswith('<h2>') and head.endswith('</h2>'))
             self.assertNotIn('source-stars', head)
-            meta = re.search(r'<div class="source-card-footer">(.*?)</div>', html, re.S)[1]
+            meta = meta_line(html)
             parts = re.findall(r'<(span|a)\b[^>]*>([^<]+)', meta)
             self.assertEqual([text for _, text in parts], [stars, 'README ↗', license_name])
             self.assertIn('title="' + ('采集时的星标快照' if language == 'zh' else 'Stars at collection time') + '"', meta)
@@ -32,7 +38,7 @@ class BrowseCardDensityTests(unittest.TestCase):
 
     def test_cards_without_stars_still_render_readme_and_license(self):
         record = {**RECORD, 'stars': None, 'license': 'NOASSERTION'}
-        meta = re.search(r'<div class="source-card-footer">(.*?)</div>', repository_card(record, 'en', False), re.S)[1]
+        meta = meta_line(repository_card(record, 'en', False))
         self.assertNotIn('source-stars', meta)
         self.assertEqual(re.findall(r'>([^<]+)<', meta), ['README ↗', 'License not identified'])
 
