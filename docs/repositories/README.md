@@ -12,10 +12,10 @@ Publication date: **2026-10-20 UTC**.
 | --- | ---: | ---: |
 | [Websites](web-analysis.md) | 215 | 26 |
 | [Games](game-analysis.md) | 485 | 63 |
-| [Apps · Android](android.md) | 477 | 34 |
+| [Apps · Android](android.md) | 478 | 35 |
 | [Apps · Managed code](managed-code.md) | 135 | 5 |
 | [Native binaries](native-analysis.md) | 849 | 87 |
-| [Runtime and debugging](dynamic-analysis.md) | 147 | 20 |
+| [Runtime and debugging](dynamic-analysis.md) | 146 | 20 |
 | [Firmware](firmware.md) | 223 | 20 |
 | [Protocols](protocol-analysis.md) | 110 | 8 |
 | [General tools and collections](reverse-engineering.md) | 668 | 68 |
