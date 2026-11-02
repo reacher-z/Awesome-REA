@@ -187,7 +187,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [Adubbz/Ghidra-Switch-Loader](https://github.com/Adubbz/Ghidra-Switch-Loader) — Nintendo Switch loader for Ghidra **[374 stars]**
 - [mohitmishra786/underTheHoodOfExecutables](https://github.com/mohitmishra786/underTheHoodOfExecutables) — A guide that explains how programs transform from source code to executables. Deep dive into ELF format, linking processes, and binary optimization techniques. Perfect for systems programmers, C developers, and anyone interested in low-level programming concepts. **[374 stars]**
 - [rocky/python-xdis](https://github.com/rocky/python-xdis) — Python cross-version bytecode library and disassembler **[372 stars]**
-- [Ayrx/JNIAnalyzer](https://github.com/Ayrx/JNIAnalyzer) — Analysis scripts for Ghidra to work with Android NDK libraries. **[365 stars]**
 - [justfoxing/ghidra\_bridge](https://github.com/justfoxing/ghidra_bridge) — Python 3 bridge to Ghidra's Python scripting **[364 stars]**
 - [yukiarrr/Il2cppSpy](https://github.com/yukiarrr/Il2cppSpy) — Unity IL2CPP Disassembler (for apk) **[360 stars]**
 - [trailofbits/CoBRA](https://github.com/trailofbits/CoBRA) — Coefficient-Based Reconstruction of Arithmetic — a Mixed Boolean-Arithmetic (MBA) expression simplifier for deobfuscation **[355 stars]** · Curated: [CoBRA (Coefficient-Based Reconstruction of Arithmetic)](https://awesomerea.org/resources/cobra-mba-simplifier/)
