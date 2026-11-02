@@ -1,24 +1,26 @@
 #!/usr/bin/env python3
-"""Assign evidence classes 0-3 to every curated catalog entry.
+"""Assign evidence classes to every curated catalog entry.
 
 Reads data/rea-resources.json and data/tool-resources.json, observes public
 evidence for each entry's URL (GitHub REST API, or the page itself for other
-hosts), and writes data/evidence-classes.json. Class 0 is reserved for full
-software reconstruction cases; the other classes measure evidence strength:
+hosts), and writes data/evidence-classes.json. The automatic rubric caps at
+Class 1; Class 0 needs a manual scope review:
 
-- Class 0: a full software reconstruction case (`kind: case-study`) whose
-  documentation covers the feature set, plus a download method and an image
-  or video demo.
-- Class 1: download method and image/video demo exist, but the documented scope
-  is partial, or the entry is not a software reconstruction (tools,
-  integrations, guides and binary-analysis entries stay here).
-- Class 2: demo or download missing, but code and documentation exist;
-  whether it builds is unknown.
-- Class 3: no code or no documentation — progress notes or shared notebook
-  entries only.
+- Class 0: a manually confirmed full software reconstruction (`kind:
+  case-study`). Its scope, version and primary evidence are recorded in
+  data/evidence-class-zero-reviews.json.
+- Class 1: download method and non-branding image/video demo exist, but the
+  documented scope is partial, or the entry is not a software reconstruction.
+  This is the automatic maximum.
+- Class 2: demo or download missing, but code and documentation exist.
+- Class 3: no code or no documentation — notes or progress only.
+- Unknown: the source was unavailable or unreadable; evidence_class is null
+  rather than treating the entry as notes.
 
-Observed signals stay in the output so a reader can audit every assignment.
-data/evidence-class-overrides.json holds manual corrections; overrides win.
+Scope, evidence strength and runtime status are separate fields. Nothing here
+is a runtime verification. Observed signals stay in the output for audit;
+data/evidence-class-overrides.json holds boundary corrections and
+data/evidence-class-zero-reviews.json holds the manual Class 0 review.
 """
 from __future__ import annotations
 
@@ -41,7 +43,8 @@ ROOT = Path(__file__).resolve().parents[1]
 CACHE_DIR = ROOT / ".cache" / "evidence-scan"
 OUTPUT_PATH = ROOT / "data" / "evidence-classes.json"
 OVERRIDES_PATH = ROOT / "data" / "evidence-class-overrides.json"
-SPEC_VERSION = "evidence-class-v2"
+C0_REVIEWS_PATH = ROOT / "data" / "evidence-class-zero-reviews.json"
+SPEC_VERSION = "evidence-class-v3"
 README_MIN_BYTES = 400
 MAX_WORKERS = 8
 
@@ -69,14 +72,13 @@ HTML_IMAGE_TAG = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
 # Files that only appear when an author ships something to run.
 DOWNLOAD_EXTENSIONS = (".apk", ".exe", ".dmg", ".msi", ".appimage", ".deb", ".rpm", ".whl",
                        ".vsix", ".crx", ".xpi", ".ipa", ".tar.gz", ".7z")
-PACKAGE_COMMANDS = re.compile(
-    r"(?:^|`|\s)(?:npm\s+(?:i|install|ci|exec)\s+\S+|npx\s+\S+|yarn\s+(?:add|dlx|global\s+add)\s+\S+"
-    r"|pnpm\s+(?:add|dlx)\s+\S+|pip\s+install\s+\S+|pipx\s+install\s+\S+|uv\s+(?:tool\s+install|run)\s+\S+"
-    r"|cargo\s+(?:install|add)\s+\S+|go\s+install\s+\S+|brew\s+install\s+\S+|docker\s+(?:pull|run)\s+\S+"
-    r"|gem\s+install\s+\S+|conda\s+install\s+\S+|dotnet\s+tool\s+(?:install|update)\s+\S+"
-    r"|winget\s+install\s+\S+|scoop\s+install\s+\S+|choco\s+install\s+\S+|luarocks\s+install\s+\S+"
-    r"|pacman\s+-S\s+\S+|apt(?:-get)?\s+install\s+\S+)", re.IGNORECASE)
-DOWNLOAD_HEADING = re.compile(r"^#{1,4}[^\n#]*\b(download|releases?|obtain)\b", re.MULTILINE | re.IGNORECASE)
+PACKAGE_INSTALL = re.compile(
+    r"(?:npm\s+(?:i|install)(?:\s+-g)?|npx|yarn\s+(?:add|dlx|global\s+add)|pnpm\s+(?:add|dlx)"
+    r"|pip\s+install|pipx\s+install|uv\s+(?:tool\s+install|run)|cargo\s+install"
+    r"|go\s+install|brew\s+install|gem\s+install|conda\s+install"
+    r"|dotnet\s+tool\s+(?:install|update)|winget\s+install|scoop\s+install|choco\s+install"
+    r"|luarocks\s+install|pacman\s+-S|apt(?:-get)?\s+install)"
+    r"\s+([^\s`'\"<>|&;]+)", re.IGNORECASE)
 DEMO_LINK_TEXT = re.compile(r"\b(demo|playable|live\s+preview|try\s+it\s+(?:out|online)|online\s+demo)\b", re.IGNORECASE)
 
 SECTION_INSTALL = re.compile(r"^#{1,4}[^\n#]*\b(install|installation|build|setup|getting\s+started|quick\s?start|compil|prerequisit|requirement)", re.MULTILINE | re.IGNORECASE)
@@ -105,23 +107,50 @@ def now_utc() -> str:
     return dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
 
+API_ORIGINS = ("api.github.com",)
+
+
+class _AuthStrippingRedirect(urllib.request.HTTPRedirectHandler):
+    """Never forward credentials to a different origin after a redirect."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        redirected = super().redirect_request(req, fp, code, msg, headers, newurl)
+        if redirected is not None:
+            old = urllib.parse.urlsplit(req.full_url)
+            target = urllib.parse.urlsplit(newurl)
+            if (old.scheme, old.hostname, old.port) != (target.scheme, target.hostname, target.port):
+                for container in (redirected.headers, redirected.unredirected_hdrs):
+                    container.pop("Authorization", None)
+        return redirected
+
+
 class HttpClient:
     """Small shared client so the run stays inside the API rate budget."""
 
-    def __init__(self, token: str | None, user_agent: str):
+    def __init__(self, token: str | None, user_agent: str, api_origins: tuple[str, ...] = API_ORIGINS):
+        self.token = token
+        self.api_origins = {origin.lower() for origin in api_origins}
         self.headers = {"User-Agent": user_agent, "Accept": "application/vnd.github+json"}
-        if token:
-            self.headers["Authorization"] = f"Bearer {token}"
         # Plain API calls stay identified; rendered pages need a browser-like
         # User-Agent because several hosts answer scripts with 403/406.
         self.page_headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
                              "(KHTML, like Gecko) Chrome/126.0 Safari/537.36", "Accept": "text/html,*/*;q=0.8"}
+        self.opener = urllib.request.build_opener(_AuthStrippingRedirect())
+
+    def headers_for(self, url: str, page: bool = False) -> dict[str, str]:
+        """Auth is sent only to the configured API origins, never to pages or other hosts."""
+        if page:
+            return dict(self.page_headers)
+        headers = dict(self.headers)
+        parts = urllib.parse.urlsplit(url)
+        if self.token and parts.scheme == "https" and (parts.hostname or "").lower() in self.api_origins:
+            headers["Authorization"] = f"Bearer {self.token}"
+        return headers
 
     def get(self, url: str, timeout: int = 30, page: bool = False) -> tuple[int, bytes, dict]:
-        headers = self.page_headers if page else self.headers
-        request = urllib.request.Request(url, headers=dict(headers))
+        request = urllib.request.Request(url, headers=self.headers_for(url, page))
         try:
-            with urllib.request.urlopen(request, timeout=timeout) as response:
+            with self.opener.open(request, timeout=timeout) as response:
                 return response.status, response.read(), dict(response.headers)
         except urllib.error.HTTPError as error:
             return error.code, error.read() if error.fp is None else error.read(), dict(error.headers or {})
@@ -286,7 +315,41 @@ def fetch_page(client: HttpClient, url: str) -> dict:
     return payload
 
 
-def page_signals(url: str, page: dict) -> dict:
+def normalized_package(value: str) -> str:
+    """The package part of an install command, without version or registry prefix."""
+    value = value.strip().strip("`'\"")
+    if value.startswith("@"):
+        _, _, value = value.partition("/")
+    else:
+        value = re.split(r"[@=<>~^]", value)[0]
+    value = value.rsplit("/", 1)[-1]
+    return re.sub(r"[^a-z0-9]", "", value.lower())
+
+
+def target_package_name(record: dict) -> str | None:
+    """The repository name, used to tell a target install from a build dependency."""
+    url = record.get("url", "")
+    slug = github_repo_slug(url)
+    if slug:
+        candidate = slug.split("/")[-1]
+    else:
+        parts = [part for part in urllib.parse.urlsplit(url).path.split("/") if part]
+        if not parts:
+            return None
+        candidate = parts[1] if (urllib.parse.urlsplit(url).hostname or "").lower() == "gitlab.com" and len(parts) > 1 else parts[-1]
+    name = normalized_package(candidate)
+    return name or None
+
+
+def has_target_install(text: str, record: dict) -> bool:
+    """A package command that installs the target software, not a build dependency."""
+    target = target_package_name(record)
+    if not target:
+        return False
+    return any(normalized_package(match.group(1)) == target for match in PACKAGE_INSTALL.finditer(text))
+
+
+def page_signals(url: str, page: dict, record: dict) -> dict:
     """Signals for a non-GitHub URL: does the page carry code links, docs, media?"""
     signals = {"code": False, "code_basis": None, "docs": False, "docs_bytes": 0, "docs_full": False,
                "download": None, "release_count": 0, "release_asset_count": 0,
@@ -319,19 +382,20 @@ def page_signals(url: str, page: dict) -> dict:
     signals["media_count"] = media_count
     if collect_download_signals(text, links):
         signals["download"] = "file-links"
-    elif PACKAGE_COMMANDS.search(text):
+    elif has_target_install(text, record):
         signals["download"] = "package"
     return signals
 
 
-def github_signals(meta: dict) -> dict:
+def github_signals(meta: dict, record: dict) -> dict:
     readme_text = meta.get("readme_text") or ""
     signals = {"code": True, "code_basis": "repo", "docs": False, "docs_bytes": meta.get("readme_bytes", 0),
                "docs_full": False, "download": None, "release_count": meta.get("release_count", 0),
                "release_asset_count": meta.get("release_asset_count", 0), "demo": [], "media_count": 0,
                "archived": bool(meta.get("archived")), "unavailable": bool(meta.get("unavailable"))}
-    if meta.get("release_count"):
-        signals["download"] = "release-assets" if meta.get("release_asset_count") else "release"
+    # A release tag without an attached artifact is not a usable download.
+    if meta.get("release_asset_count"):
+        signals["download"] = "release-assets"
     if meta.get("unavailable") or not readme_text:
         return signals
     signals["docs"] = (signals["docs_bytes"] + meta.get("linked_docs_bytes", 0)) >= README_MIN_BYTES
@@ -340,10 +404,11 @@ def github_signals(meta: dict) -> dict:
     demo, media_count = collect_media_signals(plain, links)
     signals["demo"] = demo
     signals["media_count"] = media_count
-    if signals["download"] is None and PACKAGE_COMMANDS.search(plain):
+    # Install commands count inside fenced code blocks, but only when they name the target itself.
+    if signals["download"] is None and has_target_install(readme_text, record):
         signals["download"] = "package"
-    if signals["download"] is None and (DOWNLOAD_HEADING.search(plain) or collect_download_signals(plain, links)):
-        signals["download"] = "download-section"
+    if signals["download"] is None and collect_download_signals(plain, links):
+        signals["download"] = "file-links"
     categories = sum(bool(pattern.search(plain)) for pattern in (SECTION_INSTALL, SECTION_USAGE, SECTION_FEATURES, SECTION_MEDIA))
     has_install_usage = bool(SECTION_INSTALL.search(plain)) and bool(SECTION_USAGE.search(plain))
     signals["docs_full"] = signals["docs"] and (has_install_usage or categories >= 3 or (signals["docs_bytes"] >= 4000 and categories >= 2))
@@ -394,18 +459,22 @@ def collect_download_signals(text: str, links: list[tuple[str, str]]) -> bool:
     return False
 
 
-def is_full_reconstruction(record: dict) -> bool:
-    """Class 0 is reserved for complete software reconstruction cases.
+def has_complete_evidence(record: dict, signals: dict) -> bool:
+    """Minimum evidence for a manually reviewed Class 0 entry."""
+    return (signals["code"] and signals["docs"] and signals["download"] and signals["demo"]
+            and record.get("kind") == "case-study" and "binary" not in (record.get("targets") or []))
 
-    Analysis tools, integrations, guides and other resources may carry complete
-    evidence, but they are not software reconstructions; binary-targeted entries
-    are treated the same way.
-    """
-    return record.get("kind") == "case-study" and "binary" not in (record.get("targets") or [])
+
+def is_c0_candidate(record: dict, signals: dict) -> bool:
+    """The evidence heuristic suggests a complete reconstruction; still needs manual review."""
+    if not has_complete_evidence(record, signals):
+        return False
+    description = record.get("description_en", "") + " " + record.get("description_zh", "")
+    return bool(DESCRIPTION_COMPLETE.search(description)) and bool(signals["docs_full"])
 
 
 def classify(record: dict, signals: dict) -> tuple[int, str]:
-    """Apply the class rubric to one entry; returns (class, reason)."""
+    """Apply the evidence rubric; the automatic result never exceeds Class 1."""
     kind = record.get("kind", "")
     description = record.get("description_en", "") + " " + record.get("description_zh", "")
     complete_description = bool(DESCRIPTION_COMPLETE.search(description))
@@ -424,12 +493,12 @@ def classify(record: dict, signals: dict) -> tuple[int, str]:
         return 2, "code and docs only: no download method"
     if kind == "case-study":
         if complete_description and signals["docs_full"]:
-            return 0, "case study documenting a complete reimplementation"
+            return 1, "full reconstruction candidate: Class 0 requires manual scope review"
         return 1, "case study: download and demo exist, scope stays partial" if not complete_description else "case study demo is documented but docs do not cover the full feature set"
     if partial_description:
         return 1, "download and demo exist, but the described scope is a partial feature or patch"
     if signals["docs_full"]:
-        return 0, "full-coverage docs, download method and demo all present"
+        return 1, "complete evidence, but this is not a software reconstruction"
     return 1, "download and demo exist, but docs do not cover the full feature set"
 
 
@@ -450,6 +519,14 @@ def load_overrides() -> dict[str, dict]:
     return {entry["id"]: entry for entry in document.get("entries", [])}
 
 
+def load_c0_reviews() -> dict[str, dict]:
+    """Manual Class 0 reviews: scope, version and primary evidence per entry."""
+    if not C0_REVIEWS_PATH.is_file():
+        return {}
+    document = json.loads(C0_REVIEWS_PATH.read_text(encoding="utf-8"))
+    return {entry["id"]: entry for entry in document.get("entries", [])}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--token", help="GitHub token; defaults to the gh CLI token or GITHUB_TOKEN.")
@@ -465,6 +542,7 @@ def main() -> None:
 
     records = load_catalog()
     overrides = load_overrides()
+    c0_reviews = load_c0_reviews()
 
     fetches: dict[str, dict] = {}
     pending: dict[str, str] = {}
@@ -491,37 +569,74 @@ def main() -> None:
 
     entries = []
     counts = {0: 0, 1: 0, 2: 0, 3: 0}
+    unknown_count = 0
+    c0_review_count = 0
+
+    def scope_for(record: dict, evidence_class: int) -> str:
+        if evidence_class == 0:
+            return "full"
+        if evidence_class == 1:
+            return "partial" if record.get("kind") == "case-study" else "analysis"
+        if evidence_class == 2:
+            return "unknown"
+        return "notes"
+
     for record in records:
         slug = github_repo_slug(record["url"])
         meta = fetches[slug if slug else record["url"]]
         gitlab_path = None if slug else (
             urllib.parse.urlsplit(record["url"]).path.strip("/")
             if (urllib.parse.urlsplit(record["url"]).hostname or "").lower() == "gitlab.com" else None)
-        signals = github_signals(meta) if slug or gitlab_path else page_signals(record["url"], meta)
-        evidence_class, reason = classify(record, signals)
+        signals = github_signals(meta, record) if slug or gitlab_path else page_signals(record["url"], meta, record)
+        basis = "github-rest" if slug else ("gitlab-rest" if gitlab_path else "page-fetch")
+        candidate = is_c0_candidate(record, signals)
+        unavailable = bool(signals.get("unavailable"))
+        rubric_class, reason = classify(record, signals)
         entry = {
             "id": record["id"],
             "url": record["url"],
-            "evidence_class": evidence_class,
-            "basis": "github-rest" if slug else ("gitlab-rest" if gitlab_path else "page-fetch"),
+            "evidence_class": None if unavailable else rubric_class,
+            "basis": basis,
             "signals": {key: value for key, value in signals.items() if key in (
                 "code", "code_basis", "docs", "docs_bytes", "docs_full", "download",
                 "release_count", "release_asset_count", "demo", "media_count", "archived", "unavailable")},
             "reason": reason,
             "checked_at": meta.get("fetched_at", now_utc()),
+            "evidence_status": "unknown" if unavailable else "observed",
+            "scope": "unknown" if unavailable else scope_for(record, rubric_class),
+            "runtime_status": "not-run",
+            "c0_candidate": candidate,
         }
-        if record["id"] in overrides:
-            correction = overrides[record["id"]]
-            entry["evidence_class"] = int(correction["evidence_class"])
-            entry["basis"] = "override"
-            entry["reason"] = correction.get("note", "manual override")
-        if entry["evidence_class"] == 0 and not signals["demo"]:
-            entry["evidence_class"] = 2
-            entry["reason"] = "no usable demo evidence: no screenshot, video or playable demo"
-        elif entry["evidence_class"] == 0 and not is_full_reconstruction(record):
-            entry["evidence_class"] = 1
-            entry["reason"] = "not a full software reconstruction: analysis entry"
-        counts[entry["evidence_class"]] += 1
+        if unavailable:
+            entry["reason"] = "source unavailable or unreadable; not classified"
+            unknown_count += 1
+        else:
+            evidence_class = rubric_class
+            if record["id"] in overrides:
+                correction = overrides[record["id"]]
+                evidence_class = int(correction["evidence_class"])
+                entry["basis"] = "override"
+                entry["reason"] = correction.get("note", "manual override")
+            if evidence_class == 0:
+                # The automatic rubric never assigns Class 0; only the manual review below may.
+                evidence_class = 1
+                entry["reason"] = ("full reconstruction candidate: Class 0 requires manual review"
+                                   if candidate else "not a full software reconstruction: analysis entry")
+            review = c0_reviews.get(record["id"])
+            if review and review.get("scope") == "full" and has_complete_evidence(record, signals):
+                evidence_class = 0
+                entry["basis"] = "manual-review"
+                entry["reason"] = review.get("note") or "manually confirmed full reconstruction"
+                entry["review"] = {
+                    "version": review.get("version"),
+                    "primary_evidence": review.get("primary_evidence"),
+                    "reviewed_at": review.get("reviewed_at"),
+                    "note": review.get("note"),
+                }
+                c0_review_count += 1
+            entry["evidence_class"] = evidence_class
+            entry["scope"] = scope_for(record, evidence_class)
+            counts[evidence_class] += 1
         entries.append(entry)
 
     document = {
@@ -531,13 +646,17 @@ def main() -> None:
             "generated_at": now_utc(),
             "entry_count": len(entries),
             "class_counts": {str(key): value for key, value in counts.items()},
+            "unknown_count": unknown_count,
             "override_count": sum(entry["basis"] == "override" for entry in entries),
-            "method": "GitHub REST API observations (repo meta, releases, README) for GitHub URLs; page observations for other hosts. Manual corrections in data/evidence-class-overrides.json win. Classes measure public evidence strength only; Class 0 is reserved for full software reconstruction cases.",
+            "c0_review_count": c0_review_count,
+            "c0_review_file": "data/evidence-class-zero-reviews.json",
+            "method": "GitHub REST API observations (repo meta, releases, README) for GitHub URLs; page observations for other hosts. The automatic rubric caps at Class 1. Class 0 requires a manual review of scope, version and primary evidence in data/evidence-class-zero-reviews.json. Unavailable or unreadable sources are marked unknown, not as notes.",
             "rubric": {
-                "0": "A full software reconstruction case (kind: case-study) whose documentation covers the feature set, plus a download method and an image or video demo. Analysis tools, integrations, guides and other non-reconstruction entries stay at Class 1 even with complete evidence.",
-                "1": "Download method and image/video demo exist, but the documented scope is partial, or the entry is not a full software reconstruction (tools, integrations, guides, binary-analysis entries).",
+                "0": "A manually confirmed full software reconstruction (kind: case-study) whose scope, version and primary evidence were reviewed. The automatic rubric never assigns Class 0.",
+                "1": "Automatic maximum: download and non-branding demo exist; scope may be partial, or the entry is a tool, integration, guide or binary-analysis entry.",
                 "2": "Demo or download missing; code and documentation exist, so buildability stays unknown.",
                 "3": "No code or no documentation: progress notes or notebook entries only.",
+                "unknown": "Source unavailable or unreadable at review time; not classified.",
             },
         },
         "entries": entries,

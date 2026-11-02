@@ -578,6 +578,12 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     const demo = await loaded('?class=1', {catalog: catalogOf([curatedRecord(1, {preview_kind: 'demo'})])});
     const demoFigure = byClass(demo.element('resource-grid').children[0], 'card-preview')[0];
     assert.deepEqual([hasClass(demoFigure, 'card-preview-demo'), demoFigure.children[1].textContent, byClass(demoFigure, 'img').length], [true, 'Demo available · no screenshot', 0]);
+    // An unreadable source is unknown, not notes: null class, ? badge and an "unknown" filter value.
+    const unknownApp = await loaded('?class=unknown', {catalog: catalogOf([curatedRecord(1, {evidence_class: null, evidence_status: 'unknown'})])});
+    assert.equal(unknownApp.api.filtered().length, 1);
+    assert.deepEqual(classOptions(unknownApp).find(([value]) => value === 'unknown'), ['unknown', 'Unknown · source unavailable (1)', false]);
+    const unknownBadge = byClass(unknownApp.element('resource-grid').children[0], 'evidence-class')[0];
+    assert.deepEqual([unknownBadge.textContent, hasClass(unknownBadge, 'evidence-class-unknown'), unknownBadge.attrs['aria-label']], ['?', true, 'Source unavailable or unreadable at review time; not classified.']);
     // A rejected shared URL normalizes to "all" and every option then carries a count.
     const rejected = await loaded('?class=nine', {catalog: catalogOf(rows)});
     assert.equal(rejected.api.state.class, 'all');

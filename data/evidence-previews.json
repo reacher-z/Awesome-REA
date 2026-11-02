@@ -2,23 +2,21 @@
   "schema_version": 1,
   "meta": {
     "spec_version": "evidence-preview-v1",
-    "generated_at": "2026-11-01T10:43:08+00:00",
-    "entry_count": 219,
-    "class_entry_count": 229,
+    "generated_at": "2026-11-02T03:17:45+00:00",
+    "entry_count": 173,
+    "class_entry_count": 181,
     "class_counts": {
-      "image": 208,
-      "video": 11
+      "image": 164,
+      "video": 9
     },
-    "missing_count": 10,
+    "missing_count": 8,
     "missing": [
       "aotopsy",
-      "cheatengine-mcp-bridge",
       "lego-island-decomp-case",
       "lego-island-portable-case",
       "open-scrantic-screensaver-case",
       "react-native-decompiler",
       "ruffle-flash-player-case",
-      "scapy",
       "uncharted-collection-pc-port-case",
       "wabt"
     ],
@@ -35,13 +33,13 @@
       "checked_at": "2026-11-01T10:08:19+00:00"
     },
     {
-      "id": "animal-crossing-gamecube-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/ACreTeam/ac-decomp/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/assets/objdiff.png",
+      "id": "android-unpinner",
+      "image_url": "https://uploads.hi.ls/2022-03/2022-03-08_09-09-36.png",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/ACreTeam/ac-decomp",
-      "revision": "09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c",
-      "checked_at": "2026-11-01T10:07:28+00:00"
+      "source_url": "https://github.com/mitmproxy/android-unpinner",
+      "revision": "60cbfee4d43cedaff622d72c27d87e418a111413",
+      "checked_at": "2026-11-02T03:17:44+00:00"
     },
     {
       "id": "apk-studio",
@@ -53,78 +51,6 @@
       "checked_at": "2026-11-01T10:08:30+00:00"
     },
     {
-      "id": "apkeditor",
-      "image_url": "https://raw.githubusercontent.com/REAndroid/APKEditor/5d94bc08565e30e3e3bb7accbd83138e4d6a8e45/.github/apkmerger.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/REAndroid/APKEditor",
-      "revision": "5d94bc08565e30e3e3bb7accbd83138e4d6a8e45",
-      "checked_at": "2026-11-01T10:07:42+00:00"
-    },
-    {
-      "id": "apkid",
-      "image_url": "https://user-images.githubusercontent.com/1356658/57322793-49be9c00-70b9-11e9-84da-1e64d9459a8a.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/rednaga/APKiD",
-      "revision": "f132f1b29c1f5d5e9eca0eb09f90fcc1b83a7ccd",
-      "checked_at": "2026-11-01T10:08:30+00:00"
-    },
-    {
-      "id": "apktool-mcp-server",
-      "image_url": "https://github.com/user-attachments/assets/0e8e0ecd-0520-422e-a007-03dc62c4118e",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/zinja-coder/apktool-mcp-server",
-      "revision": "12bb33134af905923a0a58643dcc35fd694ad6f6",
-      "checked_at": "2026-11-01T10:06:37+00:00"
-    },
-    {
-      "id": "asm-differ",
-      "image_url": "https://raw.githubusercontent.com/simonlindholm/asm-differ/0dd09af8f8008f1f880327cf0aca3b26d2562ea2/screenshot.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/simonlindholm/asm-differ",
-      "revision": "0dd09af8f8008f1f880327cf0aca3b26d2562ea2",
-      "checked_at": "2026-11-01T10:06:53+00:00"
-    },
-    {
-      "id": "awesome-unofficial-pc-ports",
-      "image_url": "https://i.ytimg.com/vi/vwmkMjYFO-k/hqdefault.jpg",
-      "kind": "video",
-      "basis": "youtube-thumbnail",
-      "source_url": "https://github.com/Sebastrion/awesome-unofficial-pc-ports",
-      "revision": "ea3ab7e52f299f0a11c4a22143d12aae9fea5e84",
-      "checked_at": "2026-11-01T10:08:20+00:00"
-    },
-    {
-      "id": "baocut-design-canvas-case",
-      "image_url": "https://github.com/user-attachments/assets/304eecf4-56f7-40bf-a1f0-83dd9a7d4ee8",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/JimLiu/baocut",
-      "revision": "74f8448e075b691b3b061ed917629d5a7efe7511",
-      "checked_at": "2026-11-01T10:07:11+00:00"
-    },
-    {
-      "id": "baocut-slides-editor-case",
-      "image_url": "https://github.com/user-attachments/assets/304eecf4-56f7-40bf-a1f0-83dd9a7d4ee8",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/JimLiu/baocut",
-      "revision": "74f8448e075b691b3b061ed917629d5a7efe7511",
-      "checked_at": "2026-11-01T10:06:23+00:00"
-    },
-    {
-      "id": "binary-ninja-community-mcp",
-      "image_url": "https://raw.githubusercontent.com/fosdickio/binary_ninja_mcp/8c5134ee46e2bf44f9a4d846bd971c3e39b3e306/images/plugin-manager-listing.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/fosdickio/binary_ninja_mcp",
-      "revision": "8c5134ee46e2bf44f9a4d846bd971c3e39b3e306",
-      "checked_at": "2026-11-01T10:06:28+00:00"
-    },
-    {
       "id": "binexport",
       "image_url": "https://raw.githubusercontent.com/google/binexport/9648cacb21a71aa6c21b3fca504f146c39164a53/doc/binexport10-ida-addons-dialog.png",
       "kind": "image",
@@ -132,15 +58,6 @@
       "source_url": "https://github.com/google/binexport",
       "revision": "9648cacb21a71aa6c21b3fca504f146c39164a53",
       "checked_at": "2026-11-01T10:07:57+00:00"
-    },
-    {
-      "id": "binny-agent-harness",
-      "image_url": "https://raw.githubusercontent.com/openbin-ai/binny/787c9ec541d2aefad38ee9b44b6d40037a8c429b/docs/binny-on-light.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/openbin-ai/binny",
-      "revision": "787c9ec541d2aefad38ee9b44b6d40037a8c429b",
-      "checked_at": "2026-11-01T10:07:35+00:00"
     },
     {
       "id": "binsider",
@@ -161,31 +78,31 @@
       "checked_at": "2026-11-01T10:08:29+00:00"
     },
     {
-      "id": "binwalk",
-      "image_url": "https://raw.githubusercontent.com/ReFirmLabs/binwalk/26713972e3f9f52dc37d4a421c4554b0bd9e82ef/images/output.png",
+      "id": "breathoffire3-pc-port-case",
+      "image_url": "https://raw.githubusercontent.com/kerokline/BreathOfFire3PCPort/922c568cb923a31c82281906179ae33656126c82/docs/images/widescreenIntro.png",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/ReFirmLabs/binwalk",
-      "revision": "26713972e3f9f52dc37d4a421c4554b0bd9e82ef",
-      "checked_at": "2026-11-01T10:06:46+00:00"
+      "source_url": "https://github.com/kerokline/BreathOfFire3PCPort",
+      "revision": "922c568cb923a31c82281906179ae33656126c82",
+      "checked_at": "2026-11-02T03:17:38+00:00"
     },
     {
-      "id": "bluefluff-furby-connect-ble-case",
-      "image_url": "https://raw.githubusercontent.com/Jeija/bluefluff/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/img/fluffdclient.png",
+      "id": "cadcraft-case",
+      "image_url": "https://raw.githubusercontent.com/storytold/cadcraft/2034d6899eba72363028723ec75d4c36eacfceac/docs/images/ui-layout.png",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/Jeija/bluefluff",
-      "revision": "9e865c47326167c2d4e6f47d96321e8e5cfc0e32",
-      "checked_at": "2026-11-01T10:08:36+00:00"
+      "source_url": "https://github.com/storytold/cadcraft",
+      "revision": "2034d6899eba72363028723ec75d4c36eacfceac",
+      "checked_at": "2026-11-02T03:17:34+00:00"
     },
     {
-      "id": "bytecode-viewer",
-      "image_url": "https://img.youtube.com/vi/I5GT6PoTGOw/0.jpg",
+      "id": "cameo-case",
+      "image_url": "https://raw.githubusercontent.com/wquguru/cameo/14362578326b5ed5d1fc3c34bd2abed896f5e6de/docs/hero.jpg",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/Konloch/bytecode-viewer",
-      "revision": "2403c0d7fc2c5bee560402dacafd628888ce5e5d",
-      "checked_at": "2026-11-01T10:08:13+00:00"
+      "source_url": "https://github.com/wquguru/cameo",
+      "revision": "14362578326b5ed5d1fc3c34bd2abed896f5e6de",
+      "checked_at": "2026-11-02T03:17:41+00:00"
     },
     {
       "id": "capa",
@@ -197,13 +114,22 @@
       "checked_at": "2026-11-01T10:08:13+00:00"
     },
     {
-      "id": "claude-reverse-engineering-skill",
-      "image_url": "https://raw.githubusercontent.com/EncidXVII/claude-reverse-engineering-skill/9a857bd2ee62bd13aa66b3942bd17c89eabf6b8a/.github/assets/social-preview.png",
+      "id": "carnage3d-case",
+      "image_url": "https://raw.githubusercontent.com/codenamecpp/carnage3d/master/screenshots/WorksOnLinux.png",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/EncidXVII/claude-reverse-engineering-skill",
-      "revision": "9a857bd2ee62bd13aa66b3942bd17c89eabf6b8a",
-      "checked_at": "2026-11-01T10:06:38+00:00"
+      "source_url": "https://github.com/codenamecpp/carnage3d",
+      "revision": "3dc03b2bed32d16315abae3c17d7d9276f450e0b",
+      "checked_at": "2026-11-02T03:17:41+00:00"
+    },
+    {
+      "id": "chupathingy-case",
+      "image_url": "https://raw.githubusercontent.com/ChupathingyCE/chupathingyce/9990568507eede8b81edd5437a4860de5465c408/docs/screenshots/hero.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/ChupathingyCE/chupathingyce",
+      "revision": "9990568507eede8b81edd5437a4860de5465c408",
+      "checked_at": "2026-11-02T03:17:38+00:00"
     },
     {
       "id": "cps2recomp-arcade-static-recomp-case",
@@ -233,15 +159,6 @@
       "checked_at": "2026-11-01T10:06:40+00:00"
     },
     {
-      "id": "cwe-checker",
-      "image_url": "https://raw.githubusercontent.com/fkie-cad/cwe_checker/7288311bbf9d2d1111434f8c07617ce580b9c8c0/doc/images/example_ghidra_integration.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/fkie-cad/cwe_checker",
-      "revision": "7288311bbf9d2d1111434f8c07617ce580b9c8c0",
-      "checked_at": "2026-11-01T10:07:42+00:00"
-    },
-    {
       "id": "d2r-mobile-switch-rehost-case",
       "image_url": "https://github.com/jhaizhou-ops/d2r-mobile/releases/download/assets/touch_game.jpg",
       "kind": "image",
@@ -249,15 +166,6 @@
       "source_url": "https://github.com/jhaizhou-ops/d2r-mobile",
       "revision": "17f5c4e26a06af484fa724eae51cf5b5fe4f9283",
       "checked_at": "2026-11-01T10:07:20+00:00"
-    },
-    {
-      "id": "daila",
-      "image_url": "https://img.youtube.com/vi/nUazQm8sFL8/0.jpg",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/mahaloz/DAILA",
-      "revision": "46f5cb6b724d94428fe0c98a16b750c439c3ce79",
-      "checked_at": "2026-11-01T10:06:29+00:00"
     },
     {
       "id": "deckcraft-case",
@@ -269,15 +177,6 @@
       "checked_at": "2026-11-01T10:06:19+00:00"
     },
     {
-      "id": "decomp-wtf-agent-decompilation",
-      "image_url": "https://raw.githubusercontent.com/i12bp8/decomp.wtf/575b4a30ed481ff5497dfb9ce4f599368a95a04a/.github/assets/demo.webp",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/i12bp8/decomp.wtf",
-      "revision": "575b4a30ed481ff5497dfb9ce4f599368a95a04a",
-      "checked_at": "2026-11-01T10:07:39+00:00"
-    },
-    {
       "id": "decomp2dbg",
       "image_url": "https://raw.githubusercontent.com/mahaloz/decomp2dbg/344ed9f06c6314d5701a1097b7b1e032a9eae8e1/assets/decomp2dbg.png",
       "kind": "image",
@@ -285,6 +184,24 @@
       "source_url": "https://github.com/mahaloz/decomp2dbg",
       "revision": "344ed9f06c6314d5701a1097b7b1e032a9eae8e1",
       "checked_at": "2026-11-01T10:07:53+00:00"
+    },
+    {
+      "id": "designcraft-case",
+      "image_url": "https://raw.githubusercontent.com/storytold/designcraft/cc3c70d4be5092262b61c43b607e26b4a0b82fc6/docs/images/ui-spread.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/storytold/designcraft",
+      "revision": "cc3c70d4be5092262b61c43b607e26b4a0b82fc6",
+      "checked_at": "2026-11-02T03:17:34+00:00"
+    },
+    {
+      "id": "desktop-games-nostalgia-rea-port-case",
+      "image_url": "https://raw.githubusercontent.com/ucodia/desktop-games-nostalgia/27946dfe49d4a9b522dfe017c14eefbc0ca40b2a/docs/demo.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/ucodia/desktop-games-nostalgia",
+      "revision": "27946dfe49d4a9b522dfe017c14eefbc0ca40b2a",
+      "checked_at": "2026-11-02T03:17:30+00:00"
     },
     {
       "id": "detect-it-easy",
@@ -296,15 +213,6 @@
       "checked_at": "2026-11-01T10:06:48+00:00"
     },
     {
-      "id": "dewolf",
-      "image_url": "https://user-images.githubusercontent.com/12004321/145460476-f869e5cc-d585-4f53-8920-6ecfa4b346d5.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/fkie-cad/dewolf",
-      "revision": "3c389e18f03cd922f4b424a62d3717dac6fe3eee",
-      "checked_at": "2026-11-01T10:07:47+00:00"
-    },
-    {
       "id": "diaphora",
       "image_url": "https://files.mastodon.social/media_attachments/files/110/157/157/910/926/533/original/6c5975e15c378cb5.png",
       "kind": "image",
@@ -312,6 +220,15 @@
       "source_url": "https://github.com/joxeankoret/diaphora",
       "revision": "35c7657081836d18e9983571be153e954d86cbb4",
       "checked_at": "2026-11-01T10:06:45+00:00"
+    },
+    {
+      "id": "dirplayer-case",
+      "image_url": "https://raw.githubusercontent.com/igorlira/dirplayer-rs/68376fbb4494a6bbad4c70081ecdcb99814a74c9/app-screenshot.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/igorlira/dirplayer-rs",
+      "revision": "68376fbb4494a6bbad4c70081ecdcb99814a74c9",
+      "checked_at": "2026-11-02T03:17:40+00:00"
     },
     {
       "id": "dk64-recompiled-case",
@@ -350,15 +267,6 @@
       "checked_at": "2026-11-01T10:07:35+00:00"
     },
     {
-      "id": "droid-asc",
-      "image_url": "https://raw.githubusercontent.com/MG1937/ASC/7f25520ee8b3ff9b089d881b1e2d01480910e97b/docs/benchmark_all_en.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/MG1937/ASC",
-      "revision": "7f25520ee8b3ff9b089d881b1e2d01480910e97b",
-      "checked_at": "2026-11-01T10:07:41+00:00"
-    },
-    {
       "id": "e9patch",
       "image_url": "https://raw.githubusercontent.com/GJDuck/e9patch/682ab1f7f0480aa45edf1fd94457e5ee2dd01043/.github/e9patch.png",
       "kind": "image",
@@ -366,6 +274,15 @@
       "source_url": "https://github.com/GJDuck/e9patch",
       "revision": "682ab1f7f0480aa45edf1fd94457e5ee2dd01043",
       "checked_at": "2026-11-01T10:07:54+00:00"
+    },
+    {
+      "id": "effectcraft-case",
+      "image_url": "https://raw.githubusercontent.com/storytold/effectcraft/ad7abfa5076a00b4b214811bae66ee0600828ac5/docs/images/effectcraft-3d.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/storytold/effectcraft",
+      "revision": "ad7abfa5076a00b4b214811bae66ee0600828ac5",
+      "checked_at": "2026-11-02T03:17:34+00:00"
     },
     {
       "id": "efixplorer",
@@ -386,31 +303,31 @@
       "checked_at": "2026-11-01T10:06:22+00:00"
     },
     {
-      "id": "elgato-hdr-uvc-capture-case",
-      "image_url": "https://raw.githubusercontent.com/talkaboutdesign/elgato-hdr/7799d3c53520bcc3dd049211244bfaf49b905cb0/docs/screenshot.png",
+      "id": "fastview-rea-relay-analysis-rebuild-case",
+      "image_url": "https://raw.githubusercontent.com/dmytrobsp/fastview-rea/deb89ea4134414a894ba887508ad5d320449be41/docs/screenshot.png",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/talkaboutdesign/elgato-hdr",
-      "revision": "7799d3c53520bcc3dd049211244bfaf49b905cb0",
-      "checked_at": "2026-11-01T10:07:37+00:00"
+      "source_url": "https://github.com/dmytrobsp/fastview-rea",
+      "revision": "deb89ea4134414a894ba887508ad5d320449be41",
+      "checked_at": "2026-11-02T03:17:31+00:00"
     },
     {
-      "id": "emba",
-      "image_url": "https://raw.githubusercontent.com/wiki/e-m-b-a/emba/images/youtube-emba.png",
+      "id": "figcraft-case",
+      "image_url": "https://raw.githubusercontent.com/storytold/figcraft/bd920fc7dec63ee8d433884a175f2f581cc9eb87/docs/images/shot-6-dashboard-light.png",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/e-m-b-a/emba",
-      "revision": "6df4f524c2e31dae0525c7d42a9483a563345ec7",
-      "checked_at": "2026-11-01T10:06:54+00:00"
+      "source_url": "https://github.com/storytold/figcraft",
+      "revision": "bd920fc7dec63ee8d433884a175f2f581cc9eb87",
+      "checked_at": "2026-11-02T03:17:34+00:00"
     },
     {
-      "id": "fissure",
-      "image_url": "https://i.ytimg.com/vi/ODQt0qyI9Z0/hqdefault.jpg",
-      "kind": "video",
-      "basis": "youtube-thumbnail",
-      "source_url": "https://github.com/ainfosec/FISSURE",
-      "revision": "c35cd0d0b83ec7e585b8ca3cf4c140e4171ac6bc",
-      "checked_at": "2026-11-01T10:08:05+00:00"
+      "id": "filmcraft-case",
+      "image_url": "https://raw.githubusercontent.com/storytold/filmcraft/8c171a0ab80f2843b3e0914f172ef6f486089d94/docs/images/filmcraft-export.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/storytold/filmcraft",
+      "revision": "8c171a0ab80f2843b3e0914f172ef6f486089d94",
+      "checked_at": "2026-11-02T03:17:34+00:00"
     },
     {
       "id": "flare-vm",
@@ -440,6 +357,15 @@
       "checked_at": "2026-11-01T10:08:10+00:00"
     },
     {
+      "id": "galaxyquest-case",
+      "image_url": "https://raw.githubusercontent.com/bigmak94/GalaxyQuest/179739d6d1538ba64f7544e601ccc95748de846a/docs/images/diorama.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/bigmak94/GalaxyQuest",
+      "revision": "179739d6d1538ba64f7544e601ccc95748de846a",
+      "checked_at": "2026-11-02T03:17:38+00:00"
+    },
+    {
       "id": "gb-recompiled",
       "image_url": "https://raw.githubusercontent.com/arcanite24/gb-recompiled/9150f87d82fa98abcb6ea22329170463f9702eb8/ports/pokemon-crystal/screenshots/challenge-mode.png",
       "kind": "image",
@@ -465,15 +391,6 @@
       "source_url": "https://github.com/hugsy/gef",
       "revision": "49c07dc60624f264d40b5c6ea39b2bf3a4e9958f",
       "checked_at": "2026-11-01T10:08:09+00:00"
-    },
-    {
-      "id": "gepetto",
-      "image_url": "https://github.com/JusticeRage/Gepetto/blob/main/readme/comparison.png?raw=true",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/JusticeRage/Gepetto",
-      "revision": "f98e4c12decf86eae76ece9d6955bb6dfe472190",
-      "checked_at": "2026-11-01T10:07:45+00:00"
     },
     {
       "id": "ghidra",
@@ -537,6 +454,15 @@
       "source_url": "https://github.com/storytold/gridcraft",
       "revision": "5e415cdd34d287b90a4a9df67eb4f532f6f72d96",
       "checked_at": "2026-11-01T10:06:18+00:00"
+    },
+    {
+      "id": "gunzrs-rea-rust-reimplementation-case",
+      "image_url": "https://raw.githubusercontent.com/OpenRsG/GunZRs/485575b7451912ed1d62661c388663b08dce4faf/docs/media/demo.gif",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/OpenRsG/GunZRs",
+      "revision": "485575b7451912ed1d62661c388663b08dce4faf",
+      "checked_at": "2026-11-02T03:17:31+00:00"
     },
     {
       "id": "hbctool",
@@ -611,15 +537,6 @@
       "checked_at": "2026-11-01T10:07:53+00:00"
     },
     {
-      "id": "imhex",
-      "image_url": "https://github.com/user-attachments/assets/902a7c4c-410d-490f-999e-14c856fec027",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/WerWolv/ImHex",
-      "revision": "34483cb90527cd71c92049ef3b1b2cc27936a1d4",
-      "checked_at": "2026-11-01T10:06:46+00:00"
-    },
-    {
       "id": "infamous-second-son-pc-port-case",
       "image_url": "https://raw.githubusercontent.com/HayatoG/iss_pc/37c05ba21bb328f5962edfbc42bb5360f7db42ed/docs/screenshots/01-grafite-sensor.jpg",
       "kind": "image",
@@ -656,13 +573,13 @@
       "checked_at": "2026-11-01T10:06:38+00:00"
     },
     {
-      "id": "jazz2-resurrection-engine-case",
-      "image_url": "https://raw.githubusercontent.com/deathkiller/jazz2/master/Docs/Screen2.gif",
+      "id": "jazz2-case",
+      "image_url": "https://raw.githubusercontent.com/deathkiller/jazz2/main/Docs/Preview.gif",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/deathkiller/jazz2-native",
-      "revision": "46f8696c8af3add2f69e27cda1448dadafb0cba1",
-      "checked_at": "2026-11-01T10:08:31+00:00"
+      "source_url": "https://github.com/deathkiller/jazz2",
+      "revision": "80246b3617db61daa3ee9cb12224521f076ba724",
+      "checked_at": "2026-11-02T03:17:44+00:00"
     },
     {
       "id": "jnitrace",
@@ -719,6 +636,15 @@
       "checked_at": "2026-11-01T10:06:19+00:00"
     },
     {
+      "id": "legend-of-legaia-rust-port-case",
+      "image_url": "https://raw.githubusercontent.com/AndrewAltimit/legend-of-legaia-re/f801d3c319386f7686d7fde45e114e1e2ba6aff5/site/assets/legaia-explorer.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/AndrewAltimit/legend-of-legaia-re",
+      "revision": "f801d3c319386f7686d7fde45e114e1e2ba6aff5",
+      "checked_at": "2026-11-02T03:17:45+00:00"
+    },
+    {
       "id": "lief",
       "image_url": "https://github.com/lief-project/LIEF/blob/main/.github/images/architecture.png",
       "kind": "image",
@@ -726,6 +652,15 @@
       "source_url": "https://github.com/lief-project/LIEF",
       "revision": "73c9d5d84359074c1ca1bf3e94b95a8b61710056",
       "checked_at": "2026-11-01T10:06:45+00:00"
+    },
+    {
+      "id": "lightcraft-case",
+      "image_url": "https://raw.githubusercontent.com/storytold/lightcraft/5a09d075306291a1522d5e8bb0710774f3733594/docs/images/grid-demo.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/storytold/lightcraft",
+      "revision": "5a09d075306291a1522d5e8bb0710774f3733594",
+      "checked_at": "2026-11-02T03:17:35+00:00"
     },
     {
       "id": "lighthouse",
@@ -746,6 +681,15 @@
       "checked_at": "2026-11-01T10:08:18+00:00"
     },
     {
+      "id": "linewarsii-dos-case",
+      "image_url": "https://raw.githubusercontent.com/fredangstadt-lang/LineWarsII-DOS/89d52a5c03f0b71301374097b587b3c6587375dc/docs/captures/flight.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/fredangstadt-lang/LineWarsII-DOS",
+      "revision": "89d52a5c03f0b71301374097b587b3c6587375dc",
+      "checked_at": "2026-11-02T03:17:38+00:00"
+    },
+    {
       "id": "little-planet-sonic-cd-recomp-case",
       "image_url": "https://raw.githubusercontent.com/carlosrmz009/littleplanet/093f58a0428bd5f15d9faa5e20af0894f1bf8686/res/screens/crt.png",
       "kind": "image",
@@ -762,60 +706,6 @@
       "source_url": "https://github.com/freefrank/LostOdysseyRecomp",
       "revision": "f9da0ae9bdd481a5ea4fe6431f3a4724d8261147",
       "checked_at": "2026-11-01T10:07:21+00:00"
-    },
-    {
-      "id": "lucid-microcode-explorer",
-      "image_url": "https://raw.githubusercontent.com/gaasedelen/lucid/9f2480dc8e6bbb9421b5711533b0a98d2e9fb5af/screenshots/lucid_layers.gif",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/gaasedelen/lucid",
-      "revision": "9f2480dc8e6bbb9421b5711533b0a98d2e9fb5af",
-      "checked_at": "2026-11-01T10:08:33+00:00"
-    },
-    {
-      "id": "mario-kart-double-dash-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/doldecomp/mkdd/b56cc7677fa23058eff8f38784479c3b4b854060/assets/objdiff.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/doldecomp/mkdd",
-      "revision": "b56cc7677fa23058eff8f38784479c3b4b854060",
-      "checked_at": "2026-11-01T10:08:22+00:00"
-    },
-    {
-      "id": "mario-kart-wii-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/snailspeed3/mkw/78572c95c41dbf6cbb7dd251a567e538560ce1d8/assets/objdiff.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/snailspeed3/mkw",
-      "revision": "78572c95c41dbf6cbb7dd251a567e538560ce1d8",
-      "checked_at": "2026-11-01T10:08:25+00:00"
-    },
-    {
-      "id": "me-analyzer",
-      "image_url": "https://i.imgur.com/0HRnDAh.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/platomav/MEAnalyzer",
-      "revision": "d27ccdba0aadbad490f47b5b631c369b682a7ef5",
-      "checked_at": "2026-11-01T10:08:05+00:00"
-    },
-    {
-      "id": "medievil-recomp-case",
-      "image_url": "https://github.com/user-attachments/assets/98aa3f50-65d1-4dae-8005-590330a011ed",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/BlackLabelHQ/MediEvilRecomp",
-      "revision": "47f849ff99bf6aa87a3e07419502369e7b6f1f72",
-      "checked_at": "2026-11-01T10:07:16+00:00"
-    },
-    {
-      "id": "medusa-framework",
-      "image_url": "https://user-images.githubusercontent.com/4659186/151658663-6c77f2e3-6f42-4424-b593-d8cfe3d3bed3.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/Ch0pin/medusa",
-      "revision": "a7bd929f297f0725a5e4d2e3952874a757d4e2fc",
-      "checked_at": "2026-11-01T10:08:02+00:00"
     },
     {
       "id": "megaman-x-snes-recomp-case",
@@ -863,15 +753,6 @@
       "checked_at": "2026-11-01T10:07:59+00:00"
     },
     {
-      "id": "mobsf",
-      "image_url": "https://user-images.githubusercontent.com/4301109/70686099-3855f780-1c79-11ea-8141-899e39459da2.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/MobSF/Mobile-Security-Framework-MobSF",
-      "revision": "819c5e87dfebb1d43de14a9b1fa9a5ad69d44fe3",
-      "checked_at": "2026-11-01T10:06:53+00:00"
-    },
-    {
       "id": "nanolathe-case",
       "image_url": "https://nanolathe.gg/brand/readme-header.png",
       "kind": "image",
@@ -881,22 +762,13 @@
       "checked_at": "2026-11-01T10:06:10+00:00"
     },
     {
-      "id": "ngrev",
-      "image_url": "https://raw.githubusercontent.com/mgechev/ngrev/master/assets/1.png",
+      "id": "neko-case",
+      "image_url": "https://raw.githubusercontent.com/crgimenes/neko/193f6ee2448f0e47bea6ab9d4243401ad74f7905/imgs/neko.webp",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/mgechev/ngrev",
-      "revision": "edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb",
-      "checked_at": "2026-11-01T10:08:30+00:00"
-    },
-    {
-      "id": "njfe-ear-camera-bridge-case",
-      "image_url": "https://raw.githubusercontent.com/WildweaselMS/NJFE/992866c6609f8c813f459ff79840cf04d5883f8e/docs/gui.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/WildweaselMS/NJFE",
-      "revision": "992866c6609f8c813f459ff79840cf04d5883f8e",
-      "checked_at": "2026-11-01T10:06:21+00:00"
+      "source_url": "https://github.com/crgimenes/neko",
+      "revision": "193f6ee2448f0e47bea6ab9d4243401ad74f7905",
+      "checked_at": "2026-11-02T03:17:42+00:00"
     },
     {
       "id": "noop-whoop-ble-client-case",
@@ -908,6 +780,15 @@
       "checked_at": "2026-11-01T10:08:36+00:00"
     },
     {
+      "id": "notepadnext-case",
+      "image_url": "https://raw.githubusercontent.com/dail8859/NotepadNext/75cb19f75f7a7844e3f6a3949b8b58c85652daa0/doc/screenshot.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/dail8859/NotepadNext",
+      "revision": "75cb19f75f7a7844e3f6a3949b8b58c85652daa0",
+      "checked_at": "2026-11-02T03:17:41+00:00"
+    },
+    {
       "id": "objdiff",
       "image_url": "https://raw.githubusercontent.com/encounter/objdiff/9aeec9cbab1a056ade7dc1f1625aacc41b0f8511/assets/screen-symbols.png",
       "kind": "image",
@@ -915,15 +796,6 @@
       "source_url": "https://github.com/encounter/objdiff",
       "revision": "9aeec9cbab1a056ade7dc1f1625aacc41b0f8511",
       "checked_at": "2026-11-01T10:06:49+00:00"
-    },
-    {
-      "id": "objection",
-      "image_url": "https://raw.githubusercontent.com/sensepost/objection/3ef6f9bdcd64c6181a1b01eb11104b7204ec6308/images/objection.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/sensepost/objection",
-      "revision": "3ef6f9bdcd64c6181a1b01eb11104b7204ec6308",
-      "checked_at": "2026-11-01T10:06:54+00:00"
     },
     {
       "id": "ofrak",
@@ -944,6 +816,15 @@
       "checked_at": "2026-11-01T10:08:02+00:00"
     },
     {
+      "id": "openenroth-case",
+      "image_url": "https://user-images.githubusercontent.com/24377109/79051879-f04cde80-7c32-11ea-939d-1dcc97b46f5d.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/OpenEnroth/OpenEnroth",
+      "revision": "944a5dc89a159a816b0f7792286666d16fd727eb",
+      "checked_at": "2026-11-02T03:17:41+00:00"
+    },
+    {
       "id": "opengoal-jak-case",
       "image_url": "https://raw.githubusercontent.com/open-goal/jak-project/c7db3c9adb1664b9150c7508eac666a5395735b3/docs/img/promosmall1.png",
       "kind": "image",
@@ -951,6 +832,33 @@
       "source_url": "https://github.com/open-goal/jak-project",
       "revision": "c7db3c9adb1664b9150c7508eac666a5395735b3",
       "checked_at": "2026-11-01T10:06:16+00:00"
+    },
+    {
+      "id": "opengothic-case",
+      "image_url": "https://img.youtube.com/vi/TpayMkyZ58Y/0.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/Try/OpenGothic",
+      "revision": "51a54d9c9b453a7d6ba052a6248cd8c73ffbe338",
+      "checked_at": "2026-11-02T03:17:41+00:00"
+    },
+    {
+      "id": "openjkdf2-case",
+      "image_url": "https://raw.githubusercontent.com/shinyquagsire23/OpenJKDF2/ae6ed8a81b316421f08a46719b12a4fa9e2fbed9/docs/images/screenshot.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/shinyquagsire23/OpenJKDF2",
+      "revision": "ae6ed8a81b316421f08a46719b12a4fa9e2fbed9",
+      "checked_at": "2026-11-02T03:17:41+00:00"
+    },
+    {
+      "id": "openrac-case",
+      "image_url": "https://raw.githubusercontent.com/OpenRAC/OpenRAC/19f91969a4538a1b5ea55e3c9dab95f08201c417/docs/assets/launcher.jpg",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/OpenRAC/OpenRAC",
+      "revision": "19f91969a4538a1b5ea55e3c9dab95f08201c417",
+      "checked_at": "2026-11-02T03:17:38+00:00"
     },
     {
       "id": "openrct2-engine-case",
@@ -971,15 +879,6 @@
       "checked_at": "2026-11-01T10:08:31+00:00"
     },
     {
-      "id": "paper-mario-ttyd-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/doldecomp/ttyd/62131fc31866f85a12e4817a8dc37f0c25eb5f8c/assets/objdiff.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/doldecomp/ttyd",
-      "revision": "62131fc31866f85a12e4817a8dc37f0c25eb5f8c",
-      "checked_at": "2026-11-01T10:08:22+00:00"
-    },
-    {
       "id": "pbtk",
       "image_url": "https://i.imgur.com/oVsypWN.png",
       "kind": "image",
@@ -989,13 +888,13 @@
       "checked_at": "2026-11-01T10:08:06+00:00"
     },
     {
-      "id": "petari-smg-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/SMGCommunity/Petari/a9395f17f67e53857ca0e82ebf1291697c93c39e/assets/dolphin-extract.png",
+      "id": "pdfcraft-case",
+      "image_url": "https://raw.githubusercontent.com/storytold/pdfcraft/0cba87ae6f7134b33afa359af4936060efdcc6fb/docs/images/pdfcraft-viewer.png",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/SMGCommunity/Petari",
-      "revision": "a9395f17f67e53857ca0e82ebf1291697c93c39e",
-      "checked_at": "2026-11-01T10:07:17+00:00"
+      "source_url": "https://github.com/storytold/pdfcraft",
+      "revision": "0cba87ae6f7134b33afa359af4936060efdcc6fb",
+      "checked_at": "2026-11-02T03:17:35+00:00"
     },
     {
       "id": "photocraft-case",
@@ -1005,24 +904,6 @@
       "source_url": "https://github.com/storytold/photocraft",
       "revision": "560beed83ead6c3373a628c64f2031f7b3ee92c7",
       "checked_at": "2026-11-01T10:06:18+00:00"
-    },
-    {
-      "id": "pikmin-2-matching-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/projectPiki/pikmin2/999140f3521e22619547d5d61862a6577ea73882/assets/dolphin-extract.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/projectPiki/pikmin2",
-      "revision": "999140f3521e22619547d5d61862a6577ea73882",
-      "checked_at": "2026-11-01T10:08:23+00:00"
-    },
-    {
-      "id": "pinyon-shift-forza-horizon-recomp-case",
-      "image_url": "https://raw.githubusercontent.com/arcanite24/pinyon-shift/9494adadef6a73b340d204f29cfa75d711b78c6a/.github/launcher-ready.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/arcanite24/pinyon-shift",
-      "revision": "9494adadef6a73b340d204f29cfa75d711b78c6a",
-      "checked_at": "2026-11-01T10:08:25+00:00"
     },
     {
       "id": "plx-native-case",
@@ -1070,13 +951,13 @@
       "checked_at": "2026-11-01T10:08:26+00:00"
     },
     {
-      "id": "ps2-web-recomp",
-      "image_url": "https://raw.githubusercontent.com/snuri00/ps2-web-recomp/e026b971324068773eed88bf502437de9e581b6b/docs/media/demo.webp",
+      "id": "protodump",
+      "image_url": "https://raw.githubusercontent.com/arkadiyt/protodump/main/demo/demo.gif",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/snuri00/ps2-web-recomp",
-      "revision": "e026b971324068773eed88bf502437de9e581b6b",
-      "checked_at": "2026-11-01T10:07:53+00:00"
+      "source_url": "https://github.com/arkadiyt/protodump",
+      "revision": "d398fada3452b87e6f0879d9cdf3dad31bb74d6e",
+      "checked_at": "2026-11-02T03:17:44+00:00"
     },
     {
       "id": "ps3recomp",
@@ -1095,24 +976,6 @@
       "source_url": "https://github.com/LoreanXavier/pt-pc",
       "revision": "8966e89b7cb917df33764d8b70a98b120ab53364",
       "checked_at": "2026-11-01T10:07:28+00:00"
-    },
-    {
-      "id": "pylingual",
-      "image_url": "https://raw.githubusercontent.com/syssec-utd/pylingual/11a1516d84a6c2aa71ec23fbd11e4b99dc8c4a86/demo.gif",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/syssec-utd/pylingual",
-      "revision": "11a1516d84a6c2aa71ec23fbd11e4b99dc8c4a86",
-      "checked_at": "2026-11-01T10:08:08+00:00"
-    },
-    {
-      "id": "qiling",
-      "image_url": "https://github.com/qilingframework/theme.qiling.io/blob/master/source/img/mbr.png?raw=true",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/qilingframework/qiling",
-      "revision": "86c927cb329993b14e2586e04d1dd7a90deee5fb",
-      "checked_at": "2026-11-01T10:06:46+00:00"
     },
     {
       "id": "r2dec",
@@ -1142,15 +1005,6 @@
       "checked_at": "2026-11-01T10:06:39+00:00"
     },
     {
-      "id": "radare2-mcp",
-      "image_url": "https://github.com/user-attachments/assets/5322c3fc-fc07-4770-96a3-5a6d82d439c2",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/radareorg/radare2-mcp",
-      "revision": "562c0cf23c42b65b3052f0b294d8778c20facbde",
-      "checked_at": "2026-11-01T10:06:35+00:00"
-    },
-    {
       "id": "rauchg-rsc-reconstruction-case",
       "image_url": "https://raw.githubusercontent.com/boyang-hu/website-rebuild-skill/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/docs/showcase/airpodspro.jpg",
       "kind": "image",
@@ -1160,51 +1014,6 @@
       "checked_at": "2026-11-01T10:06:20+00:00"
     },
     {
-      "id": "re2ds-nds-engine-case",
-      "image_url": "https://raw.githubusercontent.com/eray1605/re2ds/16a1a3b79b1ecb613762b3603dcc6a6ea90980ff/docs/images/dsi-xl.jpg",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/eray1605/re2ds",
-      "revision": "16a1a3b79b1ecb613762b3603dcc6a6ea90980ff",
-      "checked_at": "2026-11-01T10:06:28+00:00"
-    },
-    {
-      "id": "rea-android-guide",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:02+00:00"
-    },
-    {
-      "id": "rea-calculator-percent-case",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:14+00:00"
-    },
-    {
-      "id": "rea-cli-evidence",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:01+00:00"
-    },
-    {
-      "id": "rea-dinosaur-speed-case",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:15+00:00"
-    },
-    {
       "id": "rea-engine-tictactoe-case",
       "image_url": "https://raw.githubusercontent.com/heaven-hm/re-agent/a84c61e8baa65d445485722420a57ff4132b90d3/docs/images/re-agent-mark.png",
       "kind": "image",
@@ -1212,168 +1021,6 @@
       "source_url": "https://github.com/heaven-hm/re-agent",
       "revision": "a84c61e8baa65d445485722420a57ff4132b90d3",
       "checked_at": "2026-11-01T10:06:26+00:00"
-    },
-    {
-      "id": "rea-firmware-guide",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:05+00:00"
-    },
-    {
-      "id": "rea-flutter-guide",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:23+00:00"
-    },
-    {
-      "id": "rea-ghidra-mips-guide",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:24+00:00"
-    },
-    {
-      "id": "rea-ghidra-nativeaot-guide",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:25+00:00"
-    },
-    {
-      "id": "rea-ghidra-psp-guide",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:25+00:00"
-    },
-    {
-      "id": "rea-harmony-guide",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:24+00:00"
-    },
-    {
-      "id": "rea-installation",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:01+00:00"
-    },
-    {
-      "id": "rea-js-workflows",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:01+00:00"
-    },
-    {
-      "id": "rea-managed-guide",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:06+00:00"
-    },
-    {
-      "id": "rea-mcp-contracts",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:01+00:00"
-    },
-    {
-      "id": "rea-native-workflow",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:02+00:00"
-    },
-    {
-      "id": "rea-official-skill",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:01+00:00"
-    },
-    {
-      "id": "rea-packet-captures",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:05+00:00"
-    },
-    {
-      "id": "rea-pcap-summaries",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:06+00:00"
-    },
-    {
-      "id": "rea-playbook",
-      "image_url": "https://raw.githubusercontent.com/jinshi666888/rea-playbook/0ad65a85139025f32402be13ed64c8003e39b00a/docs/assets/demo.gif",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/jinshi666888/rea-playbook",
-      "revision": "0ad65a85139025f32402be13ed64c8003e39b00a",
-      "checked_at": "2026-11-01T10:06:07+00:00"
-    },
-    {
-      "id": "rea-signal-recordings",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:06+00:00"
-    },
-    {
-      "id": "rea-upstream",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:03+00:00"
-    },
-    {
-      "id": "rea-web-captures",
-      "image_url": "https://raw.githubusercontent.com/morluto/rea/60c0cf977a34c99afa7942466625aeba74969bdf/docs/assets/rea-hopper-analysis.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/morluto/rea",
-      "revision": "60c0cf977a34c99afa7942466625aeba74969bdf",
-      "checked_at": "2026-11-01T10:06:07+00:00"
     },
     {
       "id": "reacut-reconstruction",
@@ -1394,6 +1041,15 @@
       "checked_at": "2026-11-01T10:08:14+00:00"
     },
     {
+      "id": "rec-rs-obs-rea-recorder-case",
+      "image_url": "https://raw.githubusercontent.com/michaelshimeles/rec-rs/93dd4948cdc8919e8b444a5af0141cf7c3628e7c/docs/screenshots/main.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/michaelshimeles/rec-rs",
+      "revision": "93dd4948cdc8919e8b444a5af0141cf7c3628e7c",
+      "checked_at": "2026-11-02T03:17:31+00:00"
+    },
+    {
       "id": "recaf",
       "image_url": "https://raw.githubusercontent.com/Col-E/Recaf/d5888cdc10ba301659146e67a823d7d124851650/docs/images/edit-source-save.gif",
       "kind": "image",
@@ -1410,15 +1066,6 @@
       "source_url": "https://github.com/OpenDriver2/REDRIVER2",
       "revision": "b2d8857426f815007486def9bd23f9a6007a2c64",
       "checked_at": "2026-11-01T10:06:17+00:00"
-    },
-    {
-      "id": "redscript",
-      "image_url": "https://user-images.githubusercontent.com/11986158/145484796-9bf1f77f-e706-4e15-b46b-c9b949f0086c.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/jac3km4/redscript",
-      "revision": "0c625df7784fea5e8078ee107a2b7ef2a580100e",
-      "checked_at": "2026-11-01T10:07:50+00:00"
     },
     {
       "id": "reflutter",
@@ -1446,15 +1093,6 @@
       "source_url": "https://github.com/baldurk/renderdoc",
       "revision": "1d83c25876b315c0a13bc6906c7dd82667b09892",
       "checked_at": "2026-11-01T10:06:50+00:00"
-    },
-    {
-      "id": "ret-sync",
-      "image_url": "https://raw.githubusercontent.com/bootleg/ret-sync/60e7b0fd1bea7bad44da7688801b2bd12fb02040/img/pipeline.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/bootleg/ret-sync",
-      "revision": "60e7b0fd1bea7bad44da7688801b2bd12fb02040",
-      "checked_at": "2026-11-01T10:08:00+00:00"
     },
     {
       "id": "retdec",
@@ -1574,40 +1212,13 @@
       "checked_at": "2026-11-01T10:07:38+00:00"
     },
     {
-      "id": "skyward-sword-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/zeldaret/ss/96f2dd5497c4ceb595de76fd897fbb1542b27323/assets/dolphin-game-properties.png",
+      "id": "sketch-paper-rea-canvas-case",
+      "image_url": "https://raw.githubusercontent.com/michaelshimeles/sketch/af814b7ab2bd77328a906a1986a048c233e25f9c/docs/screenshots/app_demo.png",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/zeldaret/ss",
-      "revision": "96f2dd5497c4ceb595de76fd897fbb1542b27323",
-      "checked_at": "2026-11-01T10:07:07+00:00"
-    },
-    {
-      "id": "smash-bros-brawl-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/doldecomp/brawl/2d0db5f58f0d8a16ddffb7e24b9c94f783a76634/assets/objdiff.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/doldecomp/brawl",
-      "revision": "2d0db5f58f0d8a16ddffb7e24b9c94f783a76634",
-      "checked_at": "2026-11-01T10:08:22+00:00"
-    },
-    {
-      "id": "sms-english-gmse01-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/chasem-dev/sms-english/d5f4eb3eb54ac49638b5513efb1fc368068805da/assets/objdiff.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/chasem-dev/sms-english",
-      "revision": "d5f4eb3eb54ac49638b5513efb1fc368068805da",
-      "checked_at": "2026-11-01T10:07:13+00:00"
-    },
-    {
-      "id": "sms-matching-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/doldecomp/sms/3e70d1ba1f1aa82f3176786816f1c2abceee3069/assets/objdiff.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/doldecomp/sms",
-      "revision": "3e70d1ba1f1aa82f3176786816f1c2abceee3069",
-      "checked_at": "2026-11-01T10:07:12+00:00"
+      "source_url": "https://github.com/michaelshimeles/sketch",
+      "revision": "af814b7ab2bd77328a906a1986a048c233e25f9c",
+      "checked_at": "2026-11-02T03:17:31+00:00"
     },
     {
       "id": "snap64-recomp-case",
@@ -1619,31 +1230,31 @@
       "checked_at": "2026-11-01T10:07:31+00:00"
     },
     {
-      "id": "snowball-war-rea-case",
-      "image_url": "https://raw.githubusercontent.com/tuunanet/rea-ski-or-die-reconstruction/0eac0671c90e21a16e663da7772b60710101ef7f/docs/snowball-war.gif",
+      "id": "sofa-tv-browser-browsehere-case",
+      "image_url": "https://raw.githubusercontent.com/sonalder-darlene/sofa-tv-browser/6b3afc9544d8e7d2893ed85f184904c8382c02fb/fastlane/metadata/android/en-US/images/tvScreenshots/1.png",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/tuunanet/rea-ski-or-die-reconstruction",
-      "revision": "0eac0671c90e21a16e663da7772b60710101ef7f",
-      "checked_at": "2026-11-01T10:06:16+00:00"
+      "source_url": "https://github.com/sonalder-darlene/sofa-tv-browser",
+      "revision": "6b3afc9544d8e7d2893ed85f184904c8382c02fb",
+      "checked_at": "2026-11-02T03:17:31+00:00"
     },
     {
-      "id": "snowboardkids-matching-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/cdlewis/snowboardkids-decomp/4422af6802b8120b9df5969943689fc694cecc57/Snowboard_Kids_Box.jpg",
+      "id": "soundconnect-desktop-rea-engine-case",
+      "image_url": "https://raw.githubusercontent.com/B-Howell/soundconnect-desktop/481f4af2da2c96026bd14d19f366c76aa737ccd0/docs/readme/soundconnect-status-dark.png",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/cdlewis/snowboardkids-decomp",
-      "revision": "4422af6802b8120b9df5969943689fc694cecc57",
-      "checked_at": "2026-11-01T10:08:18+00:00"
+      "source_url": "https://github.com/B-Howell/soundconnect-desktop",
+      "revision": "481f4af2da2c96026bd14d19f366c76aa737ccd0",
+      "checked_at": "2026-11-02T03:17:31+00:00"
     },
     {
-      "id": "spectral-mcp",
-      "image_url": "https://raw.githubusercontent.com/spectral-mcp/spectral/main/assets/demo.gif",
+      "id": "soundcraft-case",
+      "image_url": "https://raw.githubusercontent.com/storytold/soundcraft/db51dd17398852ba70919c5a560d1c8ed9e3e6c6/docs/images/mix.png",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/spectral-mcp/spectral",
-      "revision": "4c0367a1e88849acfe80f3d49ba0cfc649d405c5",
-      "checked_at": "2026-11-01T10:06:49+00:00"
+      "source_url": "https://github.com/storytold/soundcraft",
+      "revision": "db51dd17398852ba70919c5a560d1c8ed9e3e6c6",
+      "checked_at": "2026-11-02T03:17:35+00:00"
     },
     {
       "id": "speedbreaker-nfs-most-wanted-case",
@@ -1700,15 +1311,6 @@
       "checked_at": "2026-11-01T10:07:40+00:00"
     },
     {
-      "id": "synchrony",
-      "image_url": "https://raw.githubusercontent.com/relative/synchrony/710e9f6c21ceea0cddf178eb863ef678f5d9d6ee/.github/hm.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/relative/synchrony",
-      "revision": "710e9f6c21ceea0cddf178eb863ef678f5d9d6ee",
-      "checked_at": "2026-11-01T10:08:25+00:00"
-    },
-    {
       "id": "tclimate-cloud-controls-case",
       "image_url": "https://raw.githubusercontent.com/umarz317/TCLimate/2a33c2013dbf3f297238131ca9eb6e287b2beb67/Docs/Assets/demo.gif",
       "kind": "image",
@@ -1716,6 +1318,15 @@
       "source_url": "https://github.com/umarz317/TCLimate",
       "revision": "2a33c2013dbf3f297238131ca9eb6e287b2beb67",
       "checked_at": "2026-11-01T10:07:04+00:00"
+    },
+    {
+      "id": "terminal-tradingview-rea-chart-case",
+      "image_url": "https://raw.githubusercontent.com/michaelshimeles/terminal/94bb329d683471518dcd210f9ca9fca073c15d0b/docs/img/web-live-crypto.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/michaelshimeles/terminal",
+      "revision": "94bb329d683471518dcd210f9ca9fca073c15d0b",
+      "checked_at": "2026-11-02T03:17:31+00:00"
     },
     {
       "id": "th04-reconstruction-case",
@@ -1745,6 +1356,15 @@
       "checked_at": "2026-11-01T10:07:37+00:00"
     },
     {
+      "id": "theseus-case",
+      "image_url": "https://raw.githubusercontent.com/MrMilenko/Theseus/5fc7ddddd03b4b5a7e6233769ad6a8fe46009965/docs/images/desktop-launcher.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/MrMilenko/Theseus",
+      "revision": "5fc7ddddd03b4b5a7e6233769ad6a8fe46009965",
+      "checked_at": "2026-11-02T03:17:45+00:00"
+    },
+    {
       "id": "triton",
       "image_url": "https://triton-library.github.io/files/triton2.png",
       "kind": "image",
@@ -1752,15 +1372,6 @@
       "source_url": "https://github.com/JonathanSalwan/Triton",
       "revision": "0ff0315021c416995e169334b25eb84f818caaeb",
       "checked_at": "2026-11-01T10:08:10+00:00"
-    },
-    {
-      "id": "twilight-princess-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/zeldaret/tp/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/assets/objdiff.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/zeldaret/tp",
-      "revision": "c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0",
-      "checked_at": "2026-11-01T10:07:14+00:00"
     },
     {
       "id": "ue-explorer",
@@ -1844,15 +1455,6 @@
       "checked_at": "2026-11-01T10:07:05+00:00"
     },
     {
-      "id": "valetudo-robot-cloud-replacement-case",
-      "image_url": "https://github.com/Hypfer/valetudo/raw/master/docs/pages/general/img/operation_principle.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/Hypfer/Valetudo",
-      "revision": "209049bb90f63f4cf324e7e6d24590c442b50183",
-      "checked_at": "2026-11-01T10:08:30+00:00"
-    },
-    {
       "id": "vandal-hearts-pc-port-case",
       "image_url": "https://raw.githubusercontent.com/HalmyLyseas/VandalHearts-PcPort/14552fffa0e0b47e02b57592e274fc6e7a649923/docs/images/cover-pc-port.webp",
       "kind": "image",
@@ -1862,13 +1464,13 @@
       "checked_at": "2026-11-01T10:07:23+00:00"
     },
     {
-      "id": "vmlinux-to-elf",
-      "image_url": "https://raw.githubusercontent.com/marin-m/vmlinux-to-elf/master/pics/Screenshot_2_Kernel_loaded.png?raw=true",
+      "id": "vectorcraft-case",
+      "image_url": "https://raw.githubusercontent.com/storytold/vectorcraft/639c9d6ce989dd638ba3488cc26e36d907022bcb/docs/images/shot-3-sheet.png",
       "kind": "image",
       "basis": "readme-image",
-      "source_url": "https://github.com/marin-m/vmlinux-to-elf",
-      "revision": "36da74ded9cd486f294c8852e0dcab9ef6a48c6b",
-      "checked_at": "2026-11-01T10:07:57+00:00"
+      "source_url": "https://github.com/storytold/vectorcraft",
+      "revision": "639c9d6ce989dd638ba3488cc26e36d907022bcb",
+      "checked_at": "2026-11-02T03:17:38+00:00"
     },
     {
       "id": "vscode-frida",
@@ -1898,41 +1500,6 @@
       "checked_at": "2026-11-01T10:07:53+00:00"
     },
     {
-      "id": "wii-menu-ipl-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/koopthekoopa/wii-ipl/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/misc/objdiff.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/koopthekoopa/wii-ipl",
-      "revision": "f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c",
-      "checked_at": "2026-11-01T10:08:20+00:00"
-    },
-    {
-      "id": "wind-waker-decomp-case",
-      "image_url": "https://raw.githubusercontent.com/zeldaret/tww/9cbb155cb805ec0546a167926ef71542c485cf0a/assets/objdiff.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/zeldaret/tww",
-      "revision": "9cbb155cb805ec0546a167926ef71542c485cf0a",
-      "checked_at": "2026-11-01T10:07:17+00:00"
-    },
-    {
-      "id": "windows-loader-static-analysis-case",
-      "image_url": "https://codegeeksai.github.io/_astro/static-malware-analysis-rea-codex.CUWeBGEe.webp",
-      "kind": "image",
-      "basis": "page-image",
-      "source_url": "https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/",
-      "checked_at": "2026-11-01T10:06:26+00:00"
-    },
-    {
-      "id": "wino-mail-case",
-      "image_url": "https://user-images.githubusercontent.com/12009960/232114528-2d2c8e3c-dbe7-429a-94e0-6aecc73bdf70.png",
-      "kind": "image",
-      "basis": "readme-image",
-      "source_url": "https://github.com/bkaankose/Wino-Mail",
-      "revision": "517b9b9e42540ed76c732e926f6e05b91d8c322c",
-      "checked_at": "2026-11-01T10:08:10+00:00"
-    },
-    {
       "id": "wordcraft-case",
       "image_url": "https://raw.githubusercontent.com/storytold/wordcraft/a88e005256087285bc7d34310cc0f5f932bc8562/docs/images/design.png",
       "kind": "image",
@@ -1940,6 +1507,15 @@
       "source_url": "https://github.com/storytold/wordcraft",
       "revision": "a88e005256087285bc7d34310cc0f5f932bc8562",
       "checked_at": "2026-11-01T10:06:18+00:00"
+    },
+    {
+      "id": "woxi-case",
+      "image_url": "https://raw.githubusercontent.com/ad-si/Woxi/511ea508ac8773c62c17f3d0a77db910ffbe3355/images/2026-02-12t1501_jupyter.png",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/ad-si/Woxi",
+      "revision": "511ea508ac8773c62c17f3d0a77db910ffbe3355",
+      "checked_at": "2026-11-02T03:17:37+00:00"
     },
     {
       "id": "wristbeam-garmin-watch-protocol-case",
@@ -1976,6 +1552,15 @@
       "source_url": "https://github.com/LilZeeCN/zee-rp",
       "revision": "e370dfd0c8bc42cfaebd98a01ec1be737c9430eb",
       "checked_at": "2026-11-01T10:06:10+00:00"
+    },
+    {
+      "id": "zelda-tmc-3ds-case",
+      "image_url": "https://raw.githubusercontent.com/EstebanPdN/zelda-tmc-3ds/2f248e06ff1e320da8e2d97ef2fe0202a2071fff/docs/images/showcase-rounded.webp",
+      "kind": "image",
+      "basis": "readme-image",
+      "source_url": "https://github.com/EstebanPdN/zelda-tmc-3ds",
+      "revision": "2f248e06ff1e320da8e2d97ef2fe0202a2071fff",
+      "checked_at": "2026-11-02T03:17:38+00:00"
     },
     {
       "id": "zelda64recomp-case",

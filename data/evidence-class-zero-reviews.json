@@ -1,0 +1,170 @@
+{
+ "schema_version": 1,
+ "meta": {
+  "spec_version": "evidence-class-zero-v1",
+  "reviewed_at": "2026-11-02",
+  "method": "Manual review of reproduction scope, target version and primary evidence. Only scope=full entries become Class 0; the automatic rubric caps at Class 1. Every Class 0 entry must appear here as scope=full. Binary-targeted entries never become Class 0."
+ },
+ "entries": [
+  {
+   "id": "cadcraft-case",
+   "scope": "full",
+   "version": "README snapshot 2026-10-21",
+   "primary_evidence": "https://github.com/storytold/cadcraft/blob/896a390b4272e89bd5de416f3afaf44292670fd4/README.md",
+   "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "designcraft-case",
+   "scope": "full",
+   "version": "README snapshot 2026-10-21",
+   "primary_evidence": "https://github.com/storytold/designcraft/blob/4d62a501c18fb3cf453c6e9f19f15cbc9c558e26/README.md",
+   "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "effectcraft-case",
+   "scope": "full",
+   "version": "README snapshot 2026-10-21",
+   "primary_evidence": "https://github.com/storytold/effectcraft/blob/ec2d51a17a4cacc6b2907c875879f85ba895eed3/README.md",
+   "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "figcraft-case",
+   "scope": "full",
+   "version": "README snapshot 2026-10-21",
+   "primary_evidence": "https://github.com/storytold/figcraft/blob/28de91d9ae72fc7fbc2199ac5ee2c8be237980d5/README.md",
+   "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "filmcraft-case",
+   "scope": "full",
+   "version": "README snapshot 2026-10-21",
+   "primary_evidence": "https://github.com/storytold/filmcraft/blob/d643a886650bfbf16f24762274054575aa1e8f20/README.md",
+   "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "lightcraft-case",
+   "scope": "full",
+   "version": "README snapshot 2026-10-21",
+   "primary_evidence": "https://github.com/storytold/lightcraft/blob/ec0cda9a6f320e3b32f659f16718f7bce6c3f12f/README.md",
+   "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "pdfcraft-case",
+   "scope": "full",
+   "version": "README snapshot 2026-10-21",
+   "primary_evidence": "https://github.com/storytold/pdfcraft/blob/416495145354828a9efefc39df381ba3ee8f864f/README.md",
+   "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "soundcraft-case",
+   "scope": "full",
+   "version": "README snapshot 2026-10-21",
+   "primary_evidence": "https://github.com/storytold/soundcraft/blob/b74fca0fb0f8b4a8474c447c1b6043a5028a5de2/README.md",
+   "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "vectorcraft-case",
+   "scope": "full",
+   "version": "README snapshot 2026-10-21",
+   "primary_evidence": "https://github.com/storytold/vectorcraft/blob/875f98d211a303e90c15141385bbbb1ff7e2b233/README.md",
+   "note": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "lego-island-portable-case",
+   "scope": "full",
+   "version": "portable build of LEGO Island 1.1 (isle-portable, README commit d0bf04f)",
+   "primary_evidence": "https://github.com/isledecomp/isle-portable/blob/d0bf04fe605d7ec2a291e65df08bf26712452379/README.md",
+   "note": "Full multi-platform port of the decompiled LEGO Island 1.1 with release assets and a video demo; runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "openrct2-engine-case",
+   "scope": "full",
+   "version": "v0.5.6 (2026-10-10)",
+   "primary_evidence": "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/readme.md",
+   "note": "Full re-implementation of the RollerCoaster Tycoon 2 engine; release assets and demo screenshots; runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "woxi-case",
+   "scope": "partial",
+   "version": "as of 2026-10-22",
+   "primary_evidence": "https://github.com/ad-si/Woxi/blob/1cc9fcb7458c5ad7f0e8dc453d236828534c6cc7/readme.md",
+   "note": "Binary-targeted Wolfram Language reimplementation; Class 1 by catalog policy. Scope also covers a subset.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "openenroth-case",
+   "scope": "partial",
+   "version": "as of 2026-10-22",
+   "primary_evidence": "https://github.com/OpenEnroth/OpenEnroth/blob/f9be066de4f40dca3cc819e0028350959701284d/README.md",
+   "note": "Tracked as rea-tracker Class 1; full scope was not manually confirmed.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "opengothic-case",
+   "scope": "partial",
+   "version": "as of 2026-10-22",
+   "primary_evidence": "https://github.com/Try/OpenGothic/blob/01540fe20fe75181e11e004b4adc4da214bfaec0/README.md",
+   "note": "Tracked as rea-tracker Class 1; full scope was not manually confirmed.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "openjkdf2-case",
+   "scope": "partial",
+   "version": "as of 2026-10-22",
+   "primary_evidence": "https://github.com/shinyquagsire23/OpenJKDF2/blob/75a13ba2de99a1824978385bfd6e93aaff99306e/README.md",
+   "note": "Tracked as rea-tracker Class 1; full scope was not manually confirmed.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "carnage3d-case",
+   "scope": "partial",
+   "version": "as of 2026-10-22",
+   "primary_evidence": "https://github.com/codenamecpp/carnage3d/blob/3dc03b2bed32d16315abae3c17d7d9276f450e0b/README.md",
+   "note": "Tracked as rea-tracker Class 1; full scope was not manually confirmed.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "neko-case",
+   "scope": "partial",
+   "version": "as of 2026-10-22",
+   "primary_evidence": "https://github.com/crgimenes/neko/blob/193f6ee2448f0e47bea6ab9d4243401ad74f7905/README.md",
+   "note": "Tracked as rea-tracker Class 1; full scope was not manually confirmed.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "jazz2-case",
+   "scope": "partial",
+   "version": "as of 2026-10-22",
+   "primary_evidence": "https://github.com/deathkiller/jazz2/blob/80246b3617db61daa3ee9cb12224521f076ba724/README.md",
+   "note": "Release-distribution entry for Jazz² Resurrection; the reimplementation itself is curated separately.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "infamous-second-son-pc-port-case",
+   "scope": "partial",
+   "version": "as of 2026-10-19",
+   "primary_evidence": "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/README.md",
+   "note": "Documented progress covers only the early chapters; keep at Class 1.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "san-andreas-unity-engine-case",
+   "scope": "partial",
+   "version": "as of 2026-10-19",
+   "primary_evidence": "https://github.com/in0finite/SanAndreasUnity/blob/f685c437f48721afc0787f27d22c85d96e8684c7/README.md",
+   "note": "The README states the project will not fully remake the game; keep at Class 1.",
+   "reviewed_at": "2026-11-02"
+  }
+ ]
+}

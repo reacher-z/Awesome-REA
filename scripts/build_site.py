@@ -42,6 +42,7 @@ LISTED_BADGE = "featured-by-awesome-rea-inline.svg"
 # Record fields the homepage needs for its first render; catalog.json keeps every field.
 CATALOG_INDEX_FIELDS = ("id", "name", "name_zh", "url", "evidence_url", "description_en", "description_zh", "kind",
                         "category", "group", "relationship", "targets", "verified_at", "evidence_class",
+                        "evidence_status", "scope", "runtime_status", "evidence_review",
                         "preview", "preview_kind")
 EVIDENCE_CLASSES = (0, 1, 2, 3)
 PREVIEWS_PATH = ROOT / "data" / "evidence-previews.json"
@@ -218,9 +219,19 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
             if record["id"] not in evidence_entries:
                 raise ValueError(f"Evidence class missing: {record['id']}. Rerun scripts/classify_evidence_classes.py.")
             evidence_entry = evidence_entries[record["id"]]
-            if evidence_entry["evidence_class"] not in EVIDENCE_CLASSES:
-                raise ValueError(f"Invalid evidence class for {record['id']}: {evidence_entry['evidence_class']}")
-            record["evidence_class"] = evidence_entry["evidence_class"]
+            evidence_class = evidence_entry.get("evidence_class")
+            evidence_status = evidence_entry.get("evidence_status", "observed")
+            if evidence_class is None:
+                if evidence_status != "unknown":
+                    raise ValueError(f"Evidence class is null but the status is not unknown: {record['id']}")
+            elif evidence_class not in EVIDENCE_CLASSES:
+                raise ValueError(f"Invalid evidence class for {record['id']}: {evidence_class}")
+            record["evidence_class"] = evidence_class
+            record["evidence_status"] = evidence_status
+            record["scope"] = evidence_entry.get("scope")
+            record["runtime_status"] = evidence_entry.get("runtime_status", "not-run")
+            if evidence_entry.get("review"):
+                record["evidence_review"] = evidence_entry["review"]
             if record["evidence_class"] in (0, 1):
                 preview = previews.get(record["id"])
                 cached = cached_preview(preview["image_url"]) if preview else None

@@ -59,6 +59,17 @@ const UI = {
     "previewImageAlt": "Demo screenshot from the project's public documentation",
     "previewVideoAlt": "Demo video thumbnail from the project's public documentation",
     "demoPlaceholder": "Demo available · no screenshot",
+    "evidenceClassUnknown": "Unknown · source unavailable",
+    "evidenceUnknownTitle": "Source unavailable or unreadable at review time; not classified.",
+    "evidenceBetaNote": "Reproduction ratings & previews · Beta. Based on public evidence; this catalog does not run or verify the software.",
+    "scopeLabel": "Scope",
+    "scopeFull": "full",
+    "scopePartial": "partial",
+    "scopeAnalysis": "analysis",
+    "scopeUnknown": "unknown",
+    "scopeNotes": "notes",
+    "notRun": "Not run for this catalog",
+    "evidenceReviewLabel": "C0 review",
     "subjectNav": "Explore reverse engineering by target",
     "subjectBrowse": "Browse subject directories",
     "contributorsEyebrow": "BUILT WITH THE COMMUNITY",
@@ -238,6 +249,17 @@ const UI = {
     "previewImageAlt": "项目公开文档中的演示截图",
     "previewVideoAlt": "项目公开文档中演示视频的封面",
     "demoPlaceholder": "有 demo · 暂无截图",
+    "evidenceClassUnknown": "未知 · 来源不可读",
+    "evidenceUnknownTitle": "复核时来源不可达或不可读，未分类。",
+    "evidenceBetaNote": "软件复现项目评级与预览 · Beta。基于公开证据；本目录未运行或验收。",
+    "scopeLabel": "范围",
+    "scopeFull": "完整",
+    "scopePartial": "部分",
+    "scopeAnalysis": "分析工具",
+    "scopeUnknown": "未知",
+    "scopeNotes": "笔记",
+    "notRun": "本目录未运行",
+    "evidenceReviewLabel": "C0 复核",
     "subjectNav": "按目标领域探索逆向工程",
     "subjectBrowse": "浏览各领域资源目录",
     "contributorsEyebrow": "与社区共同整理",
@@ -371,7 +393,7 @@ const params = new URLSearchParams(location.search);
 document.documentElement.dataset.indexMode = ["source-index", "repositories"].includes(params.get("view")) ? "source-index" : "curated";
 // The path selects the default language; valid legacy query overrides still work.
 const pathLanguage = location.pathname.startsWith("/zh/") ? "zh" : "en";
-const state = { layout: params.get("layout") === "compact" ? "compact" : "cards", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", class: ["all", "0", "1", "2", "3"].includes(params.get("class")) ? params.get("class") : "all", visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
+const state = { layout: params.get("layout") === "compact" ? "compact" : "cards", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", class: ["all", "0", "1", "2", "3", "unknown"].includes(params.get("class")) ? params.get("class") : "all", visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const t = (key) => UI[state.lang][key] || UI.en[key] || key;
@@ -446,7 +468,7 @@ function renderCategories() {
   [...new Set(state.records.map(r => r.category))].sort((a,b) => compareLabels(label(state.categoryLabels,a), label(state.categoryLabels,b))).forEach(category => { const option = node("option", "", label(state.categoryLabels, category)); option.value = category; select.append(option); });
   if (state.loaded && ![...select.options].some(o => o.value === state.category)) state.category = "all"; select.value = [...select.options].some(o => o.value === state.category) ? state.category : "all"; renderClasses(); renderKinds();
 }
-function renderClasses() { const select=$("#class-select"); select.replaceChildren(); const all=node("option","",t("allEvidenceClasses")); all.value="all"; select.append(all); ["0","1","2","3"].forEach(value => { const option=node("option","",t("evidenceClass"+value)); option.value=value; select.append(option); }); select.value = [...select.options].some(o => o.value === state.class) ? state.class : "all"; }
+function renderClasses() { const select=$("#class-select"); select.replaceChildren(); const all=node("option","",t("allEvidenceClasses")); all.value="all"; select.append(all); ["0","1","2","3"].forEach(value => { const option=node("option","",t("evidenceClass"+value)); option.value=value; select.append(option); }); const unknown=node("option","",t("evidenceClassUnknown")); unknown.value="unknown"; select.append(unknown); select.value = [...select.options].some(o => o.value === state.class) ? state.class : "all"; }
 const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资源"],"research":["Research","研究"]};
 const FEATURED = ["rea-upstream","chrome-devtools-mcp","renderdoc","jadx-ai-mcp","ghidra","webcrack","assetripper","ilspy","awesome-rea-cases","rea-dxball-case","mitmproxy","rea-notion-case","hex-rays-ida-mcp","picoprint-rea-investigation","morluto-awesome-re"];
 function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>compareLabels(label(KIND,a),label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
@@ -460,7 +482,8 @@ function requirementItems(record) {
 }
 function card(record) {
   const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));
-  if(record.evidence_class!==undefined){const classBadge=node("span","evidence-class evidence-class-"+record.evidence_class,"C"+record.evidence_class);const detail=t("evidenceClassDetail"+record.evidence_class);classBadge.title=t("evidenceClass"+record.evidence_class)+" · "+detail+". "+t("evidenceClassTitle");classBadge.setAttribute("aria-label",t("classLabel")+" "+t("evidenceClass"+record.evidence_class)+": "+detail);head.append(classBadge);}article.append(head);
+  if(record.evidence_status==="unknown"){const classBadge=node("span","evidence-class evidence-class-unknown","?");classBadge.title=t("evidenceUnknownTitle");classBadge.setAttribute("aria-label",t("evidenceUnknownTitle"));head.append(classBadge);}
+  else if(record.evidence_class!==undefined){const classBadge=node("span","evidence-class evidence-class-"+record.evidence_class,"C"+record.evidence_class);const detail=t("evidenceClassDetail"+record.evidence_class);classBadge.title=t("evidenceClass"+record.evidence_class)+" · "+detail+". "+t("evidenceClassTitle");classBadge.setAttribute("aria-label",t("classLabel")+" "+t("evidenceClass"+record.evidence_class)+": "+detail);head.append(classBadge);}article.append(head);
   // Class 0/1 entries with a documented demo carry a local preview image; a demo
   // without an extractable screenshot shows a small placeholder instead.
   if(record.preview){const figure=node("figure","card-preview");const image=node("img");image.src=record.preview;image.alt=t(record.preview_kind==="video"?"previewVideoAlt":"previewImageAlt");image.setAttribute("loading","lazy");image.setAttribute("decoding","async");figure.append(image);if(record.preview_kind==="video"){const play=node("span","card-preview-play","▶");play.setAttribute("aria-hidden","true");figure.append(play);}article.append(figure);}
@@ -469,6 +492,9 @@ function card(record) {
   const meta=node("div","card-meta");meta.append(node("span","card-category",label(state.categoryLabels,record.category)));article.append(meta);
   const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");if(!fillRequirements(list,record)){state.pendingRequirements.push([list,record]);details.addEventListener("toggle",()=>{if(details.open)loadDetails();});}details.append(list);
   const context=node("div","resource-detail-meta");const time=node("time","",t("reviewed")+" "+record.verified_at.slice(0,10));time.dateTime=record.verified_at;time.title=record.verified_at;context.append(node("span","",label(RELATION,record.relationship)),node("span","",t("sourceReviewed")),time);
+  if(record.scope)context.append(node("span","",t("scopeLabel")+": "+t("scope"+record.scope[0].toUpperCase()+record.scope.slice(1))));
+  context.append(node("span","",t("notRun")));
+  if(record.evidence_review){const review=node("span","",t("evidenceReviewLabel")+": "+[record.evidence_review.version,record.evidence_review.reviewed_at].filter(Boolean).join(" · "));review.title=record.evidence_review.primary_evidence||"";context.append(review);}
   const href=entryHref("curated",record.id);
   if(record.targets.length)meta.prepend(node("span","card-targets",targetLabels(record)));
   if(href){const entry=node("a","resource-entry-link",t("openEntry"));entry.href=href;entry.setAttribute("aria-label",t("openEntry")+": "+(state.lang==="zh"?(record.name_zh||record.name):record.name));entry.append(icon("arrow",true));meta.append(entry);}
@@ -498,7 +524,7 @@ function loadDetails() {
 }
 function queryTerms() { return normalizeSearchText(state.q).trim().split(/\s+/).filter(Boolean); }
 // skip leaves one facet out, so that facet's choices can be counted against every other active filter.
-function matches(r, terms, skip = "") { return (state.group==="all"||r.group===state.group)&&(skip==="target"||state.target==="all"||r.targets.includes(state.target))&&(skip==="category"||state.category==="all"||r.category===state.category)&&(skip==="kind"||state.kind==="all"||r.kind===state.kind)&&(skip==="evidence_class"||state.class==="all"||String(r.evidence_class)===state.class)&&terms.every(term=>r.search.includes(term)); }
+function matches(r, terms, skip = "") { return (state.group==="all"||r.group===state.group)&&(skip==="target"||state.target==="all"||r.targets.includes(state.target))&&(skip==="category"||state.category==="all"||r.category===state.category)&&(skip==="kind"||state.kind==="all"||r.kind===state.kind)&&(skip==="evidence_class"||state.class==="all"||(state.class==="unknown"?r.evidence_status==="unknown":String(r.evidence_class)===state.class))&&terms.every(term=>r.search.includes(term)); }
 function filtered() { const terms=queryTerms();const found=state.records.filter(r=>matches(r,terms));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
 // Each target button and each Type/Category/evidence-class option shows how many results it would give with the other filters and the query.
 // Empty choices are disabled unless selected, so a shared URL still shows its own choice; counts are not announced.
@@ -513,8 +539,8 @@ function renderFacets() {
     const counts = tally(facet, r => [r[facet]]);
     for (const option of $(selector).options) { const count = counts.get(option.value) || 0; option.textContent = counted(option.value === "all" ? t(allKey) : label(map, option.value), count); option.disabled = count === 0 && option.value !== state[facet]; }
   }
-  const classCounts = tally("evidence_class", r => [String(r.evidence_class)]);
-  for (const option of $("#class-select").options) { const count = classCounts.get(option.value) || 0; option.textContent = counted(option.value === "all" ? t("allEvidenceClasses") : t("evidenceClass" + option.value), count); option.disabled = count === 0 && option.value !== state.class; }
+  const classCounts = tally("evidence_class", r => [r.evidence_status === "unknown" ? "unknown" : String(r.evidence_class)]);
+  for (const option of $("#class-select").options) { const count = classCounts.get(option.value) || 0; const label = option.value === "all" ? t("allEvidenceClasses") : option.value === "unknown" ? t("evidenceClassUnknown") : t("evidenceClass" + option.value); option.textContent = counted(label, count); option.disabled = count === 0 && option.value !== state.class; }
 }
 function renderEmptySearchActions(foundCount = state.loaded ? filtered().length : null) {
   const show = state.loaded && !state.error && sourceState.mode === "curated"

@@ -234,6 +234,7 @@ html[data-layout="cards"] .collection-home .card-preview img{max-height:150px}
 .evidence-class-1::before{background:var(--class-1)}
 .evidence-class-2::before{background:var(--class-2)}
 .evidence-class-3::before{background:var(--class-3)}
+.evidence-class-unknown::before{background:var(--muted)}
 .evidence-legend{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin:0 0 16px;color:var(--muted);font:500 13px/1.6 var(--sans)}
 .evidence-legend-label{color:var(--body);font-weight:600}
 .evidence-legend-item{display:inline-flex;align-items:center;gap:6px;white-space:normal}
@@ -242,7 +243,9 @@ html[data-layout="cards"] .collection-home .card-preview img{max-height:150px}
 .evidence-legend-dot-1{background:var(--class-1)}
 .evidence-legend-dot-2{background:var(--class-2)}
 .evidence-legend-dot-3{background:var(--class-3)}
+.evidence-legend-dot-unknown{background:var(--muted)}
 .evidence-legend-note{font-style:italic}
+.evidence-beta{margin:0 0 16px;color:var(--muted);font:500 13px/1.6 var(--sans);font-style:italic}
 /* Demo previews exist only for Class 0/1 entries that document an image or video demo. */
 .card-preview{position:relative;display:flex;justify-content:center;margin:14px 0 0}
 .card-preview img{display:block;max-width:100%;max-height:220px;width:auto;height:auto;border-radius:8px}
