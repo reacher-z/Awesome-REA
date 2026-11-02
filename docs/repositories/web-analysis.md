@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/web-analysis/) · [简体中文](web-analysis.zh-CN.md)
 
-**215 repositories** · 2026-10-20 UTC
+**214 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -32,7 +32,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [ben-sb/obfuscator-io-deobfuscator](https://github.com/ben-sb/obfuscator-io-deobfuscator) — A deobfuscator for scripts obfuscated by Obfuscator.io **[807 stars]** · Curated: [Obfuscator.io Deobfuscator](https://awesomerea.org/resources/obfuscator-io-deobfuscator/)
 - [decompme/decomp.me](https://github.com/decompme/decomp.me) — Collaborative decompilation and reverse engineering website **[632 stars]**
 - [aoyunyang/spider-king-skill](https://github.com/aoyunyang/spider-king-skill) — Protocol-first reverse engineering skill for turning hostile web clients into pure-protocol Python collectors. **[515 stars]**
-- [HynekPetrak/malware-jail](https://github.com/HynekPetrak/malware-jail) — Sandbox for semi-automatic Javascript malware analysis, deobfuscation and payload extraction. Written for Node.js **[480 stars]**
 - [wwwg/wasmdec](https://github.com/wwwg/wasmdec) — WebAssembly to C decompiler **[428 stars]**
 - [igorlira/dirplayer-rs](https://github.com/igorlira/dirplayer-rs) — A web-compatible Shockwave Player emulator written in Rust **[417 stars]**
 - [numandev1/react-native-decompiler](https://github.com/numandev1/react-native-decompiler) — Decompile React Native Android/IOS Bundle. **[371 stars]** · Curated: [React Native Decompiler](https://awesomerea.org/resources/react-native-decompiler/)
