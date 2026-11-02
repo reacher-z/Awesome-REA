@@ -6196,5 +6196,15 @@
       "采用 BSD-3-Clause 许可，版权归 LinuxBoot。测试样本包括由 EDK2 开源标签 vUDK2018 构建的 OVMF.rom、coreboot ROM、压缩样本和清单样本，以及两个按 Intel 自身再分发条款保留并附许可文件的 Intel 二进制：适用 FSP License 的 Apollo Lake FSP 文件 Fsp.fd，以及面向 Cascade Lake 服务器的 Purley ME Ignition 固件 MeRegion.bin，后者的仅限二进制许可禁止对该镜像进行逆向工程。",
       "修改类命令会改写固件镜像；README 未涉及刷写或恢复，本条目只记录解析和镜像编辑功能。本次审阅未安装或运行任何工具，也未修改任何镜像。"
     ]
+  },
+  "deluder": {
+    "name": "Deluder 应用流量拦截工具",
+    "requirements": [
+      "审阅时最新版本为 v1.2.1，发布于 2025-11-14；所审阅的 main 分支提交与该标签完全一致。更新日志显示 1.1 增加了远程 frida-server 支持，1.2 增加了 GnuTLS 和 Linux 套接字支持。README 列出了每个库被挂钩的函数及其在 Windows、Linux 和 macOS 上的模块名；其他库需要自定义 Frida 脚本。",
+      "需要 Python 3.9+，并固定使用 frida 16.4.10、psutil 6.0.0 和 argparse 1.4.0。可从发布包或克隆的仓库用 setup.py 安装，也可在安装 requirements.txt 后以模块方式运行。分析者按路径、PID 或进程名指定要启动或附加的进程；远程目标需要运行对应平台的 frida-server；除非关闭该选项，子进程也会被自动挂钩。",
+      "捕获的消息交给 log、debug、proxifier 或 PETEP 拦截模块处理。PETEP 集成使用自有协议，默认端口为 8008；proxifier 可按长度前缀、后缀或缓冲区大小划分数据。README 提醒不支持丢弃拦截到的消息，否则会破坏拦截。",
+      "脚本在已加载模块中按可配置的名称列表查找导出函数，因此静态链接这些库或使用其他 TLS 实现的应用需要自定义脚本。tests 目录含针对 PETEP 和 proxifier 拦截模块及字节格式化的 pytest 用例。所审阅的源码树没有 CI 工作流，Frida 挂钩脚本也没有自动化测试。本次未安装、挂钩或捕获任何内容。",
+      "LICENSE.md 为 GPL-3.0。所审阅的来源未表明与 REA 有关。"
+    ]
   }
 }

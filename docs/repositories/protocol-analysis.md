@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/protocol-analysis/) · [简体中文](protocol-analysis.zh-CN.md)
 
-**111 repositories** · 2026-10-20 UTC
+**112 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -19,6 +19,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [brent-stone/CAN\_Reverse\_Engineering](https://github.com/brent-stone/CAN_Reverse_Engineering) — Automated Payload Reverse Engineering Pipeline for the Controller Area Network (CAN) protocol **[456 stars]** · Curated: [Automated CAN Payload Reverse Engineering](https://awesomerea.org/resources/can-reverse-engineering/)
 - [0xMH/fichero-printer](https://github.com/0xMH/fichero-printer) — Fichero D11s thermal label printer - BLE protocol reverse engineering and Python CLI tool **[302 stars]**
 - [niloofarkheirkhah/nili](https://github.com/niloofarkheirkhah/nili) — Nili is a Tool for Network Scan, Man in the Middle, Protocol Reverse Engineering and Fuzzing. **[219 stars]**
+- [Warxim/deluder](https://github.com/Warxim/deluder) — Deluder is a tool for intercepting traffic of proxy unaware applications. Currently, Deluder supports OpenSSL, GnuTLS, SChannel, WinSock and Linux Sockets out of the box. ⚡ **[215 stars]** · Curated: [Deluder](https://awesomerea.org/resources/deluder/)
 - [asiamina/A-Course-on-Digital-Forensics](https://github.com/asiamina/A-Course-on-Digital-Forensics) — A course on "Digital Forensics" designed and offered in the Computer Science Department at Texas Tech University **[203 stars]**
 - [symbolicsoft/verifpal](https://github.com/symbolicsoft/verifpal) — Cryptographic protocol analysis for real-world protocols. **[133 stars]**
 - [Annyfee/spider-js-reverse](https://github.com/Annyfee/spider-js-reverse) — Selected JavaScript reverse-engineering examples from various websites, with detailed explanations, concept summaries, cryptographic algorithms, difficulty comparisons, and links. Covers challenges including environment reconstruction, extracting JavaScript, webpack, and Ruishu. **[111 stars]**
