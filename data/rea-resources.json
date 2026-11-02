@@ -3816,5 +3816,42 @@
       "Entries give only the make or model, a link and a short note such as a model year, ECU or bus name. They state no license, verification status or coverage, so each decoding must be checked at its own source before it is relied on. Applying the decodings means reading traffic on a vehicle bus with suitable interface hardware; this record restates no procedure.",
       "Repository CI runs only awesome-lint. The list text is dedicated under CC0-1.0; linked databases, documents and code keep their own licenses and terms. Its footnotes point to the same maintainer’s CAN bus and LIN bus tool lists. An independent discovery list; the reviewed source establishes no REA connection."
     ]
+  },
+  {
+    "id": "rea-bigger-model-essay-case",
+    "name": "Does reverse engineering need a bigger model? General and specialist models in Touhou reconstruction",
+    "url": "https://rea.tools/blog/reverse-engineering-models/",
+    "category": "official-case-studies",
+    "relationship": "official-case-study",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "An essay on REA’s site by N0zoM1z0 (13 October 2026) uses dated Touhou reconstruction commits to ask whether exact function matching needs a larger general model, a compiler-specialist model or better retrieval. It walks through TH09, TH095, TH04 and TH08 cases where later GPT-6-series sessions closed stubborn matches, and the TH08 audit that found accepted functions with wrong floating constants. Specialist and reinforcement-learning comparisons are proposed as future experiments; no trained specialist was evaluated.",
+    "description_zh": "REA 网站上 N0zoM1z0 的一篇文章（2026 年 10 月 13 日）依据注明日期的东方 Project 重建提交，探讨精确的函数匹配究竟需要更大的通用模型、针对编译器的专用模型，还是更好的检索。文章逐一介绍 TH09、TH095、TH04 与 TH08 中较晚的 GPT-6 系列会话攻克难以匹配函数的案例，以及 TH08 一次审计发现部分已接受函数含有错误浮点常量的经过。专用模型与强化学习的对比被作为未来实验提出，并未评估任何经过训练的专用模型。",
+    "evidence_url": "https://github.com/morluto/rea/blob/e8da7e1edd075feec0e6beedec93d5645fed8125/website/evidence/reverse-engineering-models.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The essay and its notes supply no game files, compilers or builds; each linked Touhou repository documents its own requirements.",
+      "The essay is dated 13 October 2026, and its evidence notes record a review of repository history, maintained source and comparison notes that day without running game targets, compiling candidates or repeating historical runtime checks. Its examples are function-level comparisons recorded in linked TH09, TH095, TH04 and TH08 commits, not whole-game runtime checks.",
+      "Later sessions inherited earlier source, diagnostics and failed experiments, so the before-and-after closures are not controlled estimates of model-size effects. The notes treat gpt-web as a changing label that does not identify a run’s model, per-run reasoning effort and budgets are not uniformly recorded, and the GPT-6-Luna-max closure is presented as a discovery across model tiers, not a measured smaller-model advantage.",
+      "The TH08 example comes from commit a393f400 (2 September), which target-checks every VC7 floating-literal relocation; the follow-up audits 1,548 relocations and corrects 12 stale rows in five accepted units. The essay’s concern that a reward built on the old check could reinforce wrong source is stated as an inference: the notes record no actual RL exploit or trained model doing so.",
+      "Game rights stay with their owners.",
+      "The essay does not describe REA’s part in the cited sessions."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "testing",
+      "license",
+      "attribution"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/morluto/rea/blob/e8da7e1edd075feec0e6beedec93d5645fed8125/website/public/blog/reverse-engineering-models/index.html",
+      "https://github.com/N0zoM1z0/th08/commit/a393f400786e4cc6cbb1000af0dad3276da12c78"
+    ]
   }
 ]
