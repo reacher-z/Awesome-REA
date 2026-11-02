@@ -39,7 +39,7 @@ def validate_route_inventory(urls, resources, papers, *, include_browse=True, in
     routes = expected_entry_routes(resources, papers)
     expected = set(routes)
     for prefix in ("", "/zh"):
-        expected.update(prefix + path for path in ("/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/", "/api/"))
+        expected.update(prefix + path for path in ("/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/", "/api/", "/benchmark-map/"))
         if include_browse:
             expected.add(prefix + "/browse/")
             expected.update(f"{prefix}/browse/{category}/" for category in CATEGORIES)

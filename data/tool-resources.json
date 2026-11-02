@@ -36529,4 +36529,417 @@
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
   }
+,
+  {
+    "id": "echopod-echo-mini-firmware-case",
+    "name": "EchoPod: replacement firmware for the Snowsky Echo Mini 8 GB",
+    "url": "https://github.com/BasilSkyWalk/echopod",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Replacement firmware for the Snowsky (FiiO) Echo Mini 8 GB player. The stock update image is HIFIECnn.IMG, and cmake --preset release followed by cmake --build --preset release writes build/release/HIFIEC90.IMG.",
+    "description_zh": "Snowsky（FiiO）Echo Mini 8 GB 播放器的替代固件。输入是原厂更新镜像 HIFIECnn.IMG；依次执行 cmake --preset release 和 cmake --build --preset release 会写出 build/release/HIFIEC90.IMG。",
+    "evidence_url": "https://github.com/BasilSkyWalk/echopod/blob/4013ba0151642f8cad67e4f9837e5fb5ce6d763e/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The user guide names the 8 GB player’s FiiO update file as HIFIECnn.IMG and lists FiiO 3.7.0, 3.9.0, and 4.0.0 as tested starting points, with HIFIEC39.IMG and HIFIEC40.IMG as examples downloaded from FiiO and not stored in the repository. The 512 MB model’s MINIVnnn.IMG is out of scope: EchoPod refuses that file.",
+      "Commit 4013ba0151642f8cad67e4f9837e5fb5ce6d763e is tag v0.9.1. The release preset inherits the device preset and sets ECHO_RELEASE=ON. platform/device/CMakeLists.txt runs tools/make_image.py, which packs a buffer of IMAGE_SIZE 0x500004 (5242884 bytes) and writes HIFIEC90.IMG in the preset’s build directory.",
+      "The README says EchoPod is early, has been tested on one player, and is not made or supported by FiiO. Not run or reproduced for this catalog.",
+      "The README states GPL-3.0-or-later and points at LICENSE, which is the GNU GPL version 3 text. Bundled Inter and Noto CJK fonts are SIL OFL 1.1; the player’s MP3 decoder is libmad, GPL-2.0-or-later."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BasilSkyWalk/echopod/blob/4013ba0151642f8cad67e4f9837e5fb5ce6d763e/docs/user-guide.md",
+      "https://github.com/BasilSkyWalk/echopod/blob/4013ba0151642f8cad67e4f9837e5fb5ce6d763e/CMakePresets.json",
+      "https://github.com/BasilSkyWalk/echopod/blob/4013ba0151642f8cad67e4f9837e5fb5ce6d763e/platform/device/CMakeLists.txt",
+      "https://github.com/BasilSkyWalk/echopod/blob/4013ba0151642f8cad67e4f9837e5fb5ce6d763e/tools/make_image.py"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "parasite-eve-usa-decomp-case",
+    "name": "Parasite Eve: matching decompilation of the USA PlayStation executable",
+    "url": "https://github.com/khasinski/parasite-eve-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Matching decompilation of Parasite Eve, USA Disc 1. The input is the user’s SLUS_006.62 copied to assets/USA/main.exe, and make check verifies build/USA/main.exe against retail SHA-1 452fb033f2eaa4b18aa20a5bca60b8125af3a37b.",
+    "description_zh": "《寄生前夜》美版光盘 1 的匹配反编译。输入是用户自备的 SLUS_006.62，复制为 assets/USA/main.exe；make check 用零售版 SHA-1 452fb033f2eaa4b18aa20a5bca60b8125af3a37b 核对 build/USA/main.exe。",
+    "evidence_url": "https://github.com/khasinski/parasite-eve-decomp/blob/aa2e97d421a12e5f32986df5c8f87f64cc6d11c4/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source-only tree at aa2e97d421a12e5f32986df5c8f87f64cc6d11c4. The README says the repository does not contain disc images, extracted assets, FMV, memory cards, Sony PSYQ SDK files, compiler binaries, or generated split output. Copy a legally obtained SLUS_006.62 to assets/USA/main.exe. configs/USA/checksum.sha records SHA-1 452fb033f2eaa4b18aa20a5bca60b8125af3a37b for that path.",
+      "The README quick start is make split, make build, then make check. make check verifies the SHA-1 of build/USA/main.exe against retail. make verify is the acceptance target and includes that checksum. Matching C uses a native PSX GCC 2.7.2 cc1, a PSYQ-compatible preprocessor, and maspsx. Not run or reproduced for this catalog.",
+      "The README still calls the project work in progress and says progress badges are regenerated rather than hardcoded in the README. LICENSE.md says no open-source license has been selected. Game code and data remain with their owners."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/khasinski/parasite-eve-decomp/blob/aa2e97d421a12e5f32986df5c8f87f64cc6d11c4/configs/USA/checksum.sha",
+      "https://github.com/khasinski/parasite-eve-decomp/blob/aa2e97d421a12e5f32986df5c8f87f64cc6d11c4/LICENSE.md"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "pcbasic-interpreter-case",
+    "name": "PC-BASIC: a GW-BASIC-family interpreter",
+    "url": "https://github.com/robhagemans/pcbasic",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A cross-platform interpreter for GW-BASIC, BASICA, PCjr Cartridge BASIC, and Tandy 1000 GWBASIC. Release v2.0.8 is commit 6a3a035b0a1c1029d48bc9284e642b6b4bd64fb5; the shipped program tests/basic/gwbasic/PRINT_USING_scientific/TEST.BAS is compared byte for byte with model/OUTPUT.TXT.",
+    "description_zh": "面向 GW-BASIC、BASICA、PCjr Cartridge BASIC 和 Tandy 1000 GWBASIC 的跨平台解释器。发布版 v2.0.8 是提交 6a3a035b0a1c1029d48bc9284e642b6b4bd64fb5；随仓库提供的 tests/basic/gwbasic/PRINT_USING_scientific/TEST.BAS 与 model/OUTPUT.TXT 做整文件字节比较。",
+    "evidence_url": "https://github.com/robhagemans/pcbasic/blob/6a3a035b0a1c1029d48bc9284e642b6b4bd64fb5/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README calls PC-BASIC a free interpreter for those four BASIC dialects, aiming for bug-for-bug compatibility, running .BAS programs, and using Microsoft Binary Format floating point. Tag v2.0.8 points at commit 6a3a035b0a1c1029d48bc9284e642b6b4bd64fb5. Desktop installers are published on that GitHub release.",
+      "At that commit, tests/basic/gwbasic/PRINT_USING_scientific/TEST.BAS is 362 bytes. PCBASIC.INI in the same directory sets run=TEST.BAS and quit=True. The oracle model/OUTPUT.TXT is 82 bytes. tests/basic/testbasic.py compares each model file with filecmp.cmp and shallow=False, a full byte compare. Not run or reproduced for this catalog.",
+      "The README says the program is released under GPL version 3. LICENSE.md grants the GNU GPL version 3 or, at the recipient’s option, any later version."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/robhagemans/pcbasic/blob/6a3a035b0a1c1029d48bc9284e642b6b4bd64fb5/tests/basic/gwbasic/PRINT_USING_scientific/TEST.BAS",
+      "https://github.com/robhagemans/pcbasic/blob/6a3a035b0a1c1029d48bc9284e642b6b4bd64fb5/tests/basic/gwbasic/PRINT_USING_scientific/PCBASIC.INI",
+      "https://github.com/robhagemans/pcbasic/blob/6a3a035b0a1c1029d48bc9284e642b6b4bd64fb5/tests/basic/gwbasic/PRINT_USING_scientific/model/OUTPUT.TXT",
+      "https://github.com/robhagemans/pcbasic/blob/6a3a035b0a1c1029d48bc9284e642b6b4bd64fb5/tests/basic/testbasic.py",
+      "https://github.com/robhagemans/pcbasic/blob/6a3a035b0a1c1029d48bc9284e642b6b4bd64fb5/LICENSE.md"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "openbst-bestspeech-case",
+    "name": "openbst: a C reimplementation of BeSTspeech",
+    "url": "https://github.com/Mudb0y/openbst",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A from-scratch C reimplementation of the Berkeley Speech Technologies formant synthesizer sold as BeSTspeech and shipped in HumanWare Keynote GOLD. The original binaries are the comparison input and are not in the repository; make selftest checks tests/golden.txt, and make test compares the engine with those binaries.",
+    "description_zh": "把 Berkeley Speech Technologies 的共振峰合成器 BeSTspeech（HumanWare Keynote GOLD 所带的引擎）从零重实现为 C。对照输入是原二进制，仓库不附带这些文件；make selftest 核对 tests/golden.txt，make test 在仿真器中与这些二进制比较。",
+    "evidence_url": "https://github.com/Mudb0y/openbst/blob/a151e78f66009bc74367974d14476061f3552346/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit a151e78f66009bc74367974d14476061f3552346. The README names twenty builds: the 1995 32-bit English engine, six 1998 16-bit modules (English, Dutch, French, German, Italian, and Spanish), and thirteen 2006 32-bit builds. Put the original binaries under dll/1995, dll/1998, and dll/2006. They are not in the repository. make still writes build/libbst.a, build/libbst.so, and build/bstspeak, because src/data holds the lifted tables.",
+      "The README says the 1995 build is bit-exact on 24 utterances, the six 1998 modules match 226 words and 20793 frames with 144 utterances sample for sample, the thirteen 2006 builds match 2358 utterances, and tests/lifttest.sh checks 411894 utterances. Those runs need the original binaries. make test is that gate. Without the binaries, make selftest checks tests/golden.txt, which the README says holds sample counts and hashes for 4906 utterances written from the binaries by make golden. Not run or reproduced for this catalog.",
+      "LICENSE puts the code, tests, and tools under the MIT license, copyright 2026 Stanislaw Przedzinkowski, and says the tables read from Berkeley Speech Technologies’ binaries, later HumanWare’s, are not covered by that license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Mudb0y/openbst/blob/a151e78f66009bc74367974d14476061f3552346/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "loremaps-atlas-case",
+    "name": "LoreMaps: a static rewrite of a fantasy-map atlas",
+    "url": "https://github.com/loremaps/loremaps",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "website"
+    ],
+    "description_en": "A static Astro atlas rewritten from the project’s earlier ASP.NET MVC site. Shipped map definitions in src/maps name each tile pyramid, image size, and meters-per-pixel scale, and npm run build writes the static site to dist/.",
+    "description_zh": "从该项目早先的 ASP.NET MVC 站点重写而来的 Astro 静态地图集。随仓库提供的 src/maps 地图定义写明瓦片地址、图像尺寸和每像素米数；npm run build 把静态站点写到 dist/。",
+    "evidence_url": "https://github.com/loremaps/loremaps/blob/659dc5b70a24e8bf00475978a594393d372c6578/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 659dc5b70a24e8bf00475978a594393d372c6578. The README calls this a from-scratch rewrite of the aspnet-mvc-live branch as a static site, with Leaflet 1.9 as the only runtime dependency. package.json requires Node.js >= 22.12.0, and its build script is astro build. The README says npm run build writes static output to dist/.",
+      "src/maps/faerun.ts ships a 4763 by 3185 image, tilesUrl https://loremaps.github.io/LoreMaps-Faerun-Tiles/Tiles, and metersPerPixel 1287.473. src/maps/got.ts ships a 4642 by 4642 image, tilesUrl https://loremaps.github.io/LoreMaps-GoT-Tiles/Tiles, and metersPerPixel 2266.681. Not run or reproduced for this catalog.",
+      "The pinned tree has no LICENSE file. The README credits the Faerûn image to Pocket Plane Group and the Known World map to serMountainGoat under CC-BY-NC-SA. got.ts links the CC BY-NC-SA 3.0 deed. Tile images are hosted outside this repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/loremaps/loremaps/blob/659dc5b70a24e8bf00475978a594393d372c6578/package.json",
+      "https://github.com/loremaps/loremaps/blob/659dc5b70a24e8bf00475978a594393d372c6578/src/maps/faerun.ts",
+      "https://github.com/loremaps/loremaps/blob/659dc5b70a24e8bf00475978a594393d372c6578/src/maps/got.ts"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "glabios-rom-bios-case",
+    "name": "GLaBIOS: a scratch-built 8K ROM BIOS",
+    "url": "https://github.com/640-KB/GLaBIOS",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A scratch-built open ROM BIOS for vintage PC, XT, and 8088-class machines. The shipped assembly source src/GLABIOS.ASM is the build input; src/MAKE.BAT runs MASM and LINK, then GLA2ROM writes GLABIOS.ROM, which the GLA2ROM readme calls an 8KiB ROM image.",
+    "description_zh": "面向老式 PC、XT 和 8088 机器、从零编写的开源 ROM BIOS。构建输入是随仓库提供的汇编源文件 src/GLABIOS.ASM；src/MAKE.BAT 运行 MASM 和 LINK，再由 GLA2ROM 写出 GLABIOS.ROM，GLA2ROM 的说明称其为 8KiB ROM 镜像。",
+    "evidence_url": "https://github.com/640-KB/GLaBIOS/blob/b98b0fe396466fa41466a9521f40987c989ae077/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit b98b0fe396466fa41466a9521f40987c989ae077 is the v0.4.2 tag. The README at that commit leads with a Version 0.8b preview, also has a Version 0.4 section, and says the BIOS fits in an 8K ROM. It describes the project as free of outside proprietary or copyrighted code, not a copy of a vendor BIOS.",
+      "src/GLABIOS.ASM is in the tree. src/MAKE.BAT runs MASM GLABIOS, LINK GLABIOS, and then GLA2ROM on GLABIOS.EXE to write GLABIOS.ROM. src/gla2rom/README.md says that command produces an 8KiB ROM image and must run under DOS or a DOS emulator. Not run or reproduced for this catalog.",
+      "LICENSE is the GNU GPL version 3 text, and the README identifies the project as GPLv3."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/640-KB/GLaBIOS/blob/b98b0fe396466fa41466a9521f40987c989ae077/src/GLABIOS.ASM",
+      "https://github.com/640-KB/GLaBIOS/blob/b98b0fe396466fa41466a9521f40987c989ae077/src/MAKE.BAT",
+      "https://github.com/640-KB/GLaBIOS/blob/b98b0fe396466fa41466a9521f40987c989ae077/src/gla2rom/README.md",
+      "https://github.com/640-KB/GLaBIOS/blob/b98b0fe396466fa41466a9521f40987c989ae077/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "idescriptor-companion-case",
+    "name": "iDescriptor: a desktop tool for a USB-connected iPhone or iPad",
+    "url": "https://github.com/iDescriptor/iDescriptor",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A privacy-first desktop tool, written in Rust and Qt, for a USB-connected iPhone or iPad. The README’s Windows portable package runs iDescriptor.exe, and its feature table marks USB connection and battery information as implemented.",
+    "description_zh": "用 Rust 和 Qt 编写的桌面工具，面向 USB 连接的 iPhone 或 iPad。README 中的 Windows 便携包运行 iDescriptor.exe；功能表把 USB 连接和电池信息标为已实现。",
+    "evidence_url": "https://github.com/iDescriptor/iDescriptor/blob/5125181180976ca53e08953ae0929dc3009dea0e/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 5125181180976ca53e08953ae0929dc3009dea0e. The README documents Windows, macOS, and Linux builds. The Windows portable zip extracts and runs iDescriptor.exe. macOS builds are .dmg files, and Linux lists an AppImage.",
+      "The feature table marks USB connection as implemented and fully supported on Windows, macOS, and Linux. Battery information is marked implemented, as reading detailed battery info from the device. Device backups are marked implemented and experimental for iOS 13-26, covering gallery and settings. Not run or reproduced for this catalog.",
+      "LICENSE is the GNU Affero General Public License version 3."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/iDescriptor/iDescriptor/blob/5125181180976ca53e08953ae0929dc3009dea0e/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "viaduct-netnewswire-case",
+    "name": "Viaduct: a Linux port of NetNewsWire",
+    "url": "https://github.com/VirInvictus/Viaduct",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A Linux RSS reader in Rust and GTK4 that the README calls a port of NetNewsWire. A local OPML file is the account input; cargo build --release writes target/release/viaduct, and the CI workflow runs cargo test --workspace.",
+    "description_zh": "README 称为 NetNewsWire 移植的 Linux RSS 阅读器，用 Rust 和 GTK4 编写。本地账户的输入是磁盘上的 OPML；cargo build --release 写出 target/release/viaduct，CI 工作流运行 cargo test --workspace。",
+    "evidence_url": "https://github.com/VirInvictus/Viaduct/blob/a0622903b93da2c2752244cf6d415377a41fbe7a/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit a0622903b93da2c2752244cf6d415377a41fbe7a. The README says Viaduct translates NetNewsWire’s local-account architecture. Local accounts keep OPML on disk as the source of truth; Inoreader is the other supported account. The .netnewswire reference tree is gitignored, so that tree is not in the public Git history.",
+      "cargo build --release writes target/release/viaduct. The README names gtk4 and WebKitGTK 6.0 as build dependencies. .github/workflows/ci.yml runs cargo clippy --workspace --all-targets and xvfb-run -a cargo test --workspace. Not run or reproduced for this catalog.",
+      "LICENSE is the MIT license, with copyright lines for Brent Simmons and Ranchero Software (2002-2026) and Brandon LaRocque (2026)."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/VirInvictus/Viaduct/blob/a0622903b93da2c2752244cf6d415377a41fbe7a/.github/workflows/ci.yml",
+      "https://github.com/VirInvictus/Viaduct/blob/a0622903b93da2c2752244cf6d415377a41fbe7a/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "tc66-meter-firmware-case",
+    "name": "TC66 custom firmware: a replacement image for the RuiDeng USB-C meter",
+    "url": "https://github.com/FletcherD/tc66-custom-fw",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Replacement firmware for the RuiDeng TC66 and TC66C USB-C meters. Stock firmware is not in the repository; make release in rust/ writes tc66fw-release.enc.bin, an AES-encrypted image for the stock bootloader.",
+    "description_zh": "RuiDeng TC66 和 TC66C USB-C 功率计的替代固件。原厂固件不在仓库中；在 rust/ 中执行 make release 会写出 tc66fw-release.enc.bin，这是给原厂 bootloader 使用的 AES 加密镜像。",
+    "evidence_url": "https://github.com/FletcherD/tc66-custom-fw/blob/65accb42ce94526649f7553c927d4edae9389a71/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 65accb42ce94526649f7553c927d4edae9389a71. The README says the TC66C, with a GD32F150G8 MCU, has been tested, and that the TC66 uses the same board design and has not been tested. Other RuiDeng meters are not supported. The stock image is not redistributed. uv run tc66flash.py stock downloads official V1.18 and checks SHA-256 ef796b29557c91e0a469740ba1934ca0a838916c76ab55eb6d1253da32830940. tools/tc66flash.py maps USB IDs 0x28E9:0x018A.",
+      "From rust/, make release writes tc66fw-release.enc.bin. The Makefile calls that file an AES-encrypted image for the stock bootloader. The README says the bootloader itself is never written. Not run or reproduced for this catalog.",
+      "LICENSE is the MIT license, copyright 2026 Fletcher."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/FletcherD/tc66-custom-fw/blob/65accb42ce94526649f7553c927d4edae9389a71/rust/Makefile",
+      "https://github.com/FletcherD/tc66-custom-fw/blob/65accb42ce94526649f7553c927d4edae9389a71/tools/tc66flash.py",
+      "https://github.com/FletcherD/tc66-custom-fw/blob/65accb42ce94526649f7553c927d4edae9389a71/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "freshtomato-ac3200-firmware-case",
+    "name": "FreshTomato ARM: alternative firmware for the ASUS RT-AC3200",
+    "url": "https://github.com/FreshTomato-Project/freshtomato-arm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Alternative open-source firmware for Broadcom ARM routers, including the ASUS RT-AC3200. The README’s SDK 7 example runs make ac3200-128z, which help.mak describes as an AIO image with 128K NVRAM.",
+    "description_zh": "面向博通 ARM 路由器的开源替代固件，包括华硕 RT-AC3200。README 的 SDK 7 示例运行 make ac3200-128z；help.mak 把该目标写成带 128K NVRAM 的 AIO 镜像。",
+    "evidence_url": "https://github.com/FreshTomato-Project/freshtomato-arm/blob/0d73d9d9080367ae59bd7657c9af043548bbae99/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 0d73d9d9080367ae59bd7657c9af043548bbae99. The supported-router table lists ASUS AC3200. The SDK 7 example checks out arm-master and, in release/src-rt-7.x.main/src, runs make ac3200-128z.",
+      "release/src-rt-7.x.main/src/help.mak describes ac3200-128z as RT-AC3200 build AIO - 128K NVRAM. Not run or reproduced for this catalog.",
+      "The README warns that flashing alternative firmware can permanently damage a router. LICENSE.md is the GNU GPL version 3 text."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/FreshTomato-Project/freshtomato-arm/blob/0d73d9d9080367ae59bd7657c9af043548bbae99/release/src-rt-7.x.main/src/help.mak",
+      "https://github.com/FreshTomato-Project/freshtomato-arm/blob/0d73d9d9080367ae59bd7657c9af043548bbae99/LICENSE.md"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "uv-k5-firmware-case",
+    "name": "UV-K5: an open reimplementation of Quan Sheng firmware v2.1.27",
+    "url": "https://github.com/DualTachyon/uv-k5-firmware",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "An archived reimplementation of the Quan Sheng UV-K5 handheld-radio firmware v2.1.27. After the submodules are fetched, make writes firmware.bin and firmware.packed.bin for the radio’s DP32G030.",
+    "description_zh": "已归档的泉盛 UV-K5 手台固件 v2.1.27 重实现。取回子模块后，make 为收音机上的 DP32G030 写出 firmware.bin 和 firmware.packed.bin。",
+    "evidence_url": "https://github.com/DualTachyon/uv-k5-firmware/blob/6f8afac8864e0349ecf8b10f91ce8f69273013db/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 6f8afac8864e0349ecf8b10f91ce8f69273013db. The GitHub repository is archived. The README titles the project as an open reimplementation of the Quan Sheng UV K5 v2.1.27 firmware and says this branch does not add customisations over that firmware. It recommends arm-none-eabi GCC 10.3.1.",
+      "The documented build fetches submodules, then runs make. The Makefile sets TARGET to firmware, compiles for cortex-m0, and uses objcopy plus fw-pack.py to produce firmware.bin and firmware.packed.bin. The README says the official updater takes firmware.packed.bin and k5prog takes firmware.bin. version.c sets Version to OEFW- plus the git hash. The README does not claim a byte-identical vendor image. Not run or reproduced for this catalog.",
+      "LICENSE is the Apache License, Version 2.0."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/DualTachyon/uv-k5-firmware/blob/6f8afac8864e0349ecf8b10f91ce8f69273013db/Makefile",
+      "https://github.com/DualTachyon/uv-k5-firmware/blob/6f8afac8864e0349ecf8b10f91ce8f69273013db/version.c",
+      "https://github.com/DualTachyon/uv-k5-firmware/blob/6f8afac8864e0349ecf8b10f91ce8f69273013db/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "daytona-usa-arcade-recomp-case",
+    "name": "Daytona USA: a native recompilation of the Model 2 arcade game",
+    "url": "https://github.com/alphanu1/daytona-arcade-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rebuilds Daytona USA, the Sega Model 2 arcade game, as a native program from a MAME ROM set the user supplies. roms/daytona93.zip or roms/daytona.zip is the input; setup writes build/daytona, and the launcher checks every ROM file against the set that build was recompiled from.",
+    "description_zh": "把世嘉 Model 2 街机游戏《Daytona USA》从用户自备的 MAME ROM 集重建为原生程序。输入是 roms/daytona93.zip 或 roms/daytona.zip；setup 写出 build/daytona，启动器把每个 ROM 文件与这次重编译所用的 ROM 集核对。",
+    "evidence_url": "https://github.com/alphanu1/daytona-arcade-recomp/blob/32967f60c01c1753b329dc4a3e943c4e1275006b/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 32967f60c01c1753b329dc4a3e943c4e1275006b. No game data is in the repository. The README accepts daytona93 (Daytona USA Deluxe ’93) at roms/daytona93.zip or .7z, and Revision A (daytona, 1994) at roms/daytona.zip or .7z. Other Daytona sets are rejected. Revision A is built as build-daytona/daytona. With the Visual Studio generator the program is build/Release/daytona.exe.",
+      "Linux and macOS run ./setup.sh; Windows runs setup.ps1. The launcher Game tab checks every file in the chosen ROM set against the set that build was recompiled from. The README says GitHub Actions builds and tests without a ROM set, and that MAME is a test oracle. Not run or reproduced for this catalog.",
+      "LICENSE is the BSD 3-Clause license for the project’s own code, copyright 2026 Ben Templeman and contributors. The README says that licence does not cover Daytona USA: the ROMs and the code generated from them are never distributed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/alphanu1/daytona-arcade-recomp/blob/32967f60c01c1753b329dc4a3e943c4e1275006b/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "trx-tomb-raider-case",
+    "name": "TRX: an open engine for Tomb Raider I, II, and III",
+    "url": "https://github.com/LostArtefacts/TRX",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An open-source engine for the PC versions of Tomb Raider 1, 2, and 3, built through decompilation. The player supplies their own TR1, TR2, and TR3 retail files; the documented install tree includes the original .phd files, and TRX.exe launches a game with --mod tr1, --mod tr2, or --mod tr3.",
+    "description_zh": "通过反编译做成的开源引擎，运行 PC 版《古墓丽影》1、2 和 3。输入是玩家自备的 TR1、TR2 和 TR3 零售文件；文档中的安装树包含原版 .phd 文件，TRX.exe 用 --mod tr1、--mod tr2 或 --mod tr3 启动对应游戏。",
+    "evidence_url": "https://github.com/LostArtefacts/TRX/blob/dce1113262e1df4e55242fa58ced58de778b528c/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit dce1113262e1df4e55242fa58ced58de778b528c. The README says TRX is one engine for TR1, TR2, and TR3 through decompilation. Its Q&A answers yes to whether all three games are fully playable from beginning to end, lists Windows, Linux, and macOS, and says Tomb Raider 4 support is still early. Not run or reproduced for this catalog.",
+      "docs/trx/INSTALLING.md says the Windows installer copies TR1, TR2, and TR3 from the player’s own Steam, GOG, or disc install. The documented data tree includes the original .phd level files. Launch commands include TRX.exe --mod tr1, TRX.exe --mod tr2, and TRX.exe --mod tr3. The retail files are not in the repository.",
+      "COPYING.md is the GNU GPL version 3 text."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LostArtefacts/TRX/blob/dce1113262e1df4e55242fa58ced58de778b528c/docs/trx/INSTALLING.md",
+      "https://github.com/LostArtefacts/TRX/blob/dce1113262e1df4e55242fa58ced58de778b528c/COPYING.md"
+    ],
+    "added_at": "2026-11-03"
+  }
 ]

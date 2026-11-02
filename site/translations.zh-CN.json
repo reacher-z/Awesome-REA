@@ -11024,4 +11024,110 @@
       "许可证：MIT。"
     ]
   }
+,
+  "echopod-echo-mini-firmware-case": {
+    "name": "EchoPod：Snowsky Echo Mini 8 GB 替代固件",
+    "requirements": [
+      "用户指南把 8 GB 播放器的 FiiO 更新文件称为 HIFIECnn.IMG，并把 FiiO 3.7.0、3.9.0 和 4.0.0 列为已测试的起点，例子是从 FiiO 下载、不放进仓库的 HIFIEC39.IMG 和 HIFIEC40.IMG。512 MB 型号的 MINIVnnn.IMG 不在范围内：EchoPod 会拒绝该文件。",
+      "提交 4013ba0151642f8cad67e4f9837e5fb5ce6d763e 是标签 v0.9.1。release 预设继承 device 预设并设置 ECHO_RELEASE=ON。platform/device/CMakeLists.txt 运行 tools/make_image.py，后者按 IMAGE_SIZE 0x500004（5242884 字节）打包缓冲区，并在该预设的构建目录写出 HIFIEC90.IMG。",
+      "README 写明 EchoPod 仍处于早期，只在一台播放器上测试过，而且不是 FiiO 制作或支持的。本目录未运行或复现。",
+      "README 写明 GPL-3.0-or-later，并指向 LICENSE；该文件是 GNU GPL 第 3 版文本。捆绑的 Inter 与 Noto CJK 字体为 SIL OFL 1.1；播放器的 MP3 解码器是 libmad，GPL-2.0-or-later。"
+    ]
+  },
+  "parasite-eve-usa-decomp-case": {
+    "name": "寄生前夜：美版 PlayStation 可执行文件的匹配反编译",
+    "requirements": [
+      "提交 aa2e97d421a12e5f32986df5c8f87f64cc6d11c4 的树只有源码。README 写明仓库不含光盘镜像、提取出的资源、FMV、记忆卡、Sony PSYQ SDK 文件、编译器二进制或生成的拆分输出。把合法取得的 SLUS_006.62 复制为 assets/USA/main.exe。configs/USA/checksum.sha 为该路径记录 SHA-1 452fb033f2eaa4b18aa20a5bca60b8125af3a37b。",
+      "README 的快速开始是 make split、make build，然后 make check。make check 用零售版 SHA-1 核对 build/USA/main.exe。make verify 是验收目标，并包含该校验和。匹配的 C 使用原生 PSX GCC 2.7.2 cc1、兼容 PSYQ 的预处理器和 maspsx。本目录未运行或复现。",
+      "README 仍称项目为进行中，并写明进度徽章会重新生成，而不是把数字写死在 README 里。LICENSE.md 写明尚未选定开源许可证。游戏代码和数据仍归其权利人所有。"
+    ]
+  },
+  "pcbasic-interpreter-case": {
+    "name": "PC-BASIC：GW-BASIC 家族解释器",
+    "requirements": [
+      "README 把 PC-BASIC 称为这四种 BASIC 方言的自由解释器，目标是逐错误兼容，能运行 .BAS 程序，并使用 Microsoft Binary Format 浮点。标签 v2.0.8 指向提交 6a3a035b0a1c1029d48bc9284e642b6b4bd64fb5。该 GitHub 发布页提供桌面安装包。",
+      "在该提交，tests/basic/gwbasic/PRINT_USING_scientific/TEST.BAS 为 362 字节。同目录的 PCBASIC.INI 设置 run=TEST.BAS 和 quit=True。对照文件 model/OUTPUT.TXT 为 82 字节。tests/basic/testbasic.py 用 filecmp.cmp 且 shallow=False 比较每个 model 文件，也就是整文件字节比较。本目录未运行或复现。",
+      "README 写明程序以 GPL 第 3 版发布。LICENSE.md 授予 GNU GPL 第 3 版，或由接受方选择的任何更高版本。"
+    ]
+  },
+  "openbst-bestspeech-case": {
+    "name": "openbst：BeSTspeech 的 C 语言重实现",
+    "requirements": [
+      "提交 a151e78f66009bc74367974d14476061f3552346。README 点名二十个构建：1995 年的 32 位英语引擎、六个 1998 年的 16 位模块（英语、荷兰语、法语、德语、意大利语和西班牙语），以及十三个 2006 年的 32 位构建。把原二进制放在 dll/1995、dll/1998 和 dll/2006。这些文件不在仓库中。由于 src/data 放着提取出的表，make 仍然写出 build/libbst.a、build/libbst.so 和 build/bstspeak。",
+      "README 写明 1995 年构建在 24 句上逐位一致；六个 1998 年模块在 226 个词、20793 帧上一致，并有 144 句逐样本一致；十三个 2006 年构建在 2358 句上一致；tests/lifttest.sh 检查 411894 句。这些运行需要原二进制。make test 是这道门。没有二进制时，make selftest 核对 tests/golden.txt。README 写明该文件有 4906 句的样本数和哈希，由 make golden 从二进制写出。本目录未运行或复现。",
+      "LICENSE 把代码、测试和工具放在 MIT 许可下，版权 2026 Stanislaw Przedzinkowski，并写明从 Berkeley Speech Technologies 二进制读出、后来归 HumanWare 的表不在该许可范围内。"
+    ]
+  },
+  "loremaps-atlas-case": {
+    "name": "LoreMaps：幻想地图图集的静态重写",
+    "requirements": [
+      "提交 659dc5b70a24e8bf00475978a594393d372c6578。README 称之为 aspnet-mvc-live 分支的从零重写，做成静态站点，运行时依赖只有 Leaflet 1.9。package.json 要求 Node.js >= 22.12.0，build 脚本是 astro build。README 写明 npm run build 把静态输出写到 dist/。",
+      "src/maps/faerun.ts 提供 4763×3185 的图像，tilesUrl 为 https://loremaps.github.io/LoreMaps-Faerun-Tiles/Tiles，metersPerPixel 为 1287.473。src/maps/got.ts 提供 4642×4642 的图像，tilesUrl 为 https://loremaps.github.io/LoreMaps-GoT-Tiles/Tiles，metersPerPixel 为 2266.681。本目录未运行或复现。",
+      "该固定提交的树里没有 LICENSE 文件。README 把 Faerûn 图像归于 Pocket Plane Group，把已知世界地图归于 serMountainGoat，许可为 CC-BY-NC-SA。got.ts 链接 CC BY-NC-SA 3.0 许可文本。瓦片图像放在本仓库之外。"
+    ]
+  },
+  "glabios-rom-bios-case": {
+    "name": "GLaBIOS：从零编写的 8K ROM BIOS",
+    "requirements": [
+      "提交 b98b0fe396466fa41466a9521f40987c989ae077 是标签 v0.4.2。该提交上的 README 开头是 Version 0.8b 预览，也有 Version 0.4 一节，并写明 BIOS 放进 8K ROM。它把项目描述为不含外部专有或受版权保护的代码，而不是厂商 BIOS 的副本。",
+      "树里有 src/GLABIOS.ASM。src/MAKE.BAT 运行 MASM GLABIOS、LINK GLABIOS，再让 GLA2ROM 处理 GLABIOS.EXE 并写出 GLABIOS.ROM。src/gla2rom/README.md 写明该命令产生 8KiB ROM 镜像，并且必须在 DOS 或 DOS 仿真器中运行。本目录未运行或复现。",
+      "LICENSE 是 GNU GPL 第 3 版文本，README 也把项目标为 GPLv3。"
+    ]
+  },
+  "idescriptor-companion-case": {
+    "name": "iDescriptor：USB 连接的 iPhone 或 iPad 桌面工具",
+    "requirements": [
+      "提交 5125181180976ca53e08953ae0929dc3009dea0e。README 记录了 Windows、macOS 和 Linux 构建。Windows 便携 zip 解压后运行 iDescriptor.exe。macOS 构建是 .dmg，Linux 列出 AppImage。",
+      "功能表把 USB 连接标为已实现，并在 Windows、macOS 和 Linux 上完全支持。电池信息标为已实现，即从设备读取详细电池信息。设备备份标为已实现且为实验性，覆盖 iOS 13-26 的相册和设置。本目录未运行或复现。",
+      "LICENSE 是 GNU Affero 通用公共许可证第 3 版。"
+    ]
+  },
+  "viaduct-netnewswire-case": {
+    "name": "Viaduct：NetNewsWire 的 Linux 移植",
+    "requirements": [
+      "提交 a0622903b93da2c2752244cf6d415377a41fbe7a。README 写明 Viaduct 移植了 NetNewsWire 的本地账户结构。本地账户以磁盘上的 OPML 为层级的依据；另一个受支持的账户是 Inoreader。.netnewswire 参考树被 gitignore，因此不在公开 Git 历史中。",
+      "cargo build --release 写出 target/release/viaduct。README 把 gtk4 和 WebKitGTK 6.0 列为构建依赖。.github/workflows/ci.yml 运行 cargo clippy --workspace --all-targets，以及 xvfb-run -a cargo test --workspace。本目录未运行或复现。",
+      "LICENSE 是 MIT 许可，版权行包括 Brent Simmons 与 Ranchero Software（2002-2026）以及 Brandon LaRocque（2026）。"
+    ]
+  },
+  "tc66-meter-firmware-case": {
+    "name": "TC66 定制固件：RuiDeng USB-C 功率计的替代镜像",
+    "requirements": [
+      "提交 65accb42ce94526649f7553c927d4edae9389a71。README 写明带 GD32F150G8 MCU 的 TC66C 已经测试，TC66 使用同一块板但尚未测试。其他 RuiDeng 表计不受支持。原厂镜像不在仓库中再分发。uv run tc66flash.py stock 会下载官方 V1.18，并核对 SHA-256 ef796b29557c91e0a469740ba1934ca0a838916c76ab55eb6d1253da32830940。tools/tc66flash.py 把 USB ID 记为 0x28E9:0x018A。",
+      "在 rust/ 中，make release 写出 tc66fw-release.enc.bin。Makefile 称该文件是给原厂 bootloader 的 AES 加密镜像。README 写明 bootloader 本身不会被写入。本目录未运行或复现。",
+      "LICENSE 是 MIT 许可，版权 2026 Fletcher。"
+    ]
+  },
+  "freshtomato-ac3200-firmware-case": {
+    "name": "FreshTomato ARM：华硕 RT-AC3200 的替代固件",
+    "requirements": [
+      "提交 0d73d9d9080367ae59bd7657c9af043548bbae99。支持的路由器表列出华硕 AC3200。SDK 7 示例检出 arm-master，并在 release/src-rt-7.x.main/src 中运行 make ac3200-128z。",
+      "release/src-rt-7.x.main/src/help.mak 把 ac3200-128z 描述为 RT-AC3200 build AIO - 128K NVRAM。本目录未运行或复现。",
+      "README 警告刷入替代固件可能永久损坏路由器。LICENSE.md 是 GNU GPL 第 3 版文本。"
+    ]
+  },
+  "uv-k5-firmware-case": {
+    "name": "UV-K5：泉盛固件 v2.1.27 的开源重实现",
+    "requirements": [
+      "提交 6f8afac8864e0349ecf8b10f91ce8f69273013db。该 GitHub 仓库已归档。README 把项目称为泉盛 UV K5 v2.1.27 固件的开源重实现，并写明这个分支不在该固件之上添加定制。它建议使用 arm-none-eabi GCC 10.3.1。",
+      "文档中的构建是先取回子模块，再运行 make。Makefile 把 TARGET 设为 firmware，按 cortex-m0 编译，并用 objcopy 和 fw-pack.py 产生 firmware.bin 与 firmware.packed.bin。README 写明官方更新器使用 firmware.packed.bin，k5prog 使用 firmware.bin。version.c 把 Version 设为 OEFW- 加上 git 哈希。README 没有声称与厂商镜像逐字节一致。本目录未运行或复现。",
+      "LICENSE 是 Apache 许可证 2.0 版。"
+    ]
+  },
+  "daytona-usa-arcade-recomp-case": {
+    "name": "Daytona USA：Model 2 街机游戏的原生重编译",
+    "requirements": [
+      "提交 32967f60c01c1753b329dc4a3e943c4e1275006b。仓库不含游戏数据。README 接受放在 roms/daytona93.zip 或 .7z 的 daytona93（Daytona USA Deluxe ’93），以及放在 roms/daytona.zip 或 .7z 的 Revision A（daytona，1994）。其他 Daytona ROM 集会被拒绝。Revision A 构建为 build-daytona/daytona。使用 Visual Studio 生成器时，程序是 build/Release/daytona.exe。",
+      "Linux 和 macOS 运行 ./setup.sh；Windows 运行 setup.ps1。启动器的 Game 页把所选 ROM 集中的每个文件与这次重编译所用的 ROM 集核对。README 写明 GitHub Actions 在没有 ROM 集时构建并测试，并且 MAME 只作为测试对照。本目录未运行或复现。",
+      "LICENSE 是项目自身代码的 BSD 3-Clause 许可，版权 2026 Ben Templeman 及贡献者。README 写明该许可不覆盖 Daytona USA：ROM 以及由它们生成的代码从不分发。"
+    ]
+  },
+  "trx-tomb-raider-case": {
+    "name": "TRX：古墓丽影 1、2、3 的开源引擎",
+    "requirements": [
+      "提交 dce1113262e1df4e55242fa58ced58de778b528c。README 写明 TRX 是通过反编译做成的、能运行 TR1、TR2 和 TR3 的一个引擎。问答里对三部游戏是否都能从头玩到尾的回答是肯定的，列出的平台是 Windows、Linux 和 macOS，并写明《古墓丽影 4》的支持仍处于早期。本目录未运行或复现。",
+      "docs/trx/INSTALLING.md 写明 Windows 安装器从玩家自己的 Steam、GOG 或光盘安装复制 TR1、TR2 和 TR3。文档中的数据树包含原版 .phd 关卡文件。启动命令包括 TRX.exe --mod tr1、TRX.exe --mod tr2 和 TRX.exe --mod tr3。零售文件不在仓库中。",
+      "COPYING.md 是 GNU GPL 第 3 版文本。"
+    ]
+  }
 }
