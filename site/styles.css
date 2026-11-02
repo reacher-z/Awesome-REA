@@ -477,6 +477,8 @@ html[lang="zh-CN"] .card-description,html[lang="zh-CN"] .source-card-description
 @media(max-width:520px){.source-record-details dl{grid-template-columns:minmax(0,1fr);gap:3px}.source-record-details dd{margin-bottom:12px}.home-intro .collection-directory a{font-size:12px}.home-intro .collection-directory .directory-about{font-size:13px}.hero-text-link{font-size:13px}.collection-note details[open]{padding:13px}}
 @media(max-width:420px){.target-filter{font-size:14px;padding-inline:7px;gap:5px}.search-box{padding-inline:13px}}
 @media(max-width:360px){.source-target-filters,.group-filters,.subject-directory{grid-template-columns:repeat(2,minmax(0,1fr))}.source-field{flex-basis:100%}}
+/* Repository Topic, Category and Sort: on phones Topic takes its own row, so both selects keep their labels legible. */
+@media(max-width:520px){#source-view .source-selectors>.source-field:first-child{flex-basis:100%}}
 /* Phones: the Layout control is hidden (both layouts are one column there), and Type and Category fold behind
    “More filters”, which joins the target buttons, counts active selects and opens when the page starts filtered. */
 .more-filters{display:none}

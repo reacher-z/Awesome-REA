@@ -120,7 +120,8 @@ class LanguageLinkTests(unittest.TestCase):
                         validate_language_links('/' + prefix + route, Page(html))
                         search = searches.get(route.split('/')[0])
                         if search:
-                            self.assertIn(f'href="{search[language == "en"]}"', html)
+                            # Category pages add their own &source-category= (tests/test_source_category.py).
+                            self.assertIn(f'href="{search[language == "en"]}', html)
 
     def test_language_switch_is_named_by_its_visible_text_in_its_own_language(self):
         # WCAG 2.5.3: the accessible name is the visible label, spoken in the link's own language.

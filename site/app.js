@@ -653,6 +653,8 @@ async function load() {
     state.topicLabels = data.topic_labels || {};
     // build_site.py writes build_readme.CATEGORIES here, the same labels the entry pages use.
     state.categoryLabels = data.category_labels || {};
+    // Repository categories come from build_repository_index.CATEGORIES, the labels the /browse/ pages use.
+    state.sourceCategoryLabels = data.source_category_labels || {}; validateSourceCategory();
     state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: searchText(r)}));
     $('[data-target="protocol"]').hidden = !state.records.some(record => record.targets.includes("protocol"));
     validateCuratedFilters();
@@ -680,7 +682,9 @@ document.addEventListener("keydown", event => { if (event.key === "/" && !$("#da
 
 function sourceURLState(query) {
   const target = query.get("source-target") || "all"; const sort = query.get("sort") === "updated" ? "pushed" : query.get("sort") || "relevance";
-  return { q: query.get("sourceq") || "", target: ["all","website","game","app","binary","firmware","protocol"].includes(target) ? target : "all", topic: query.get("topic") || "", sort: ["relevance","stars","stars-asc","pushed","name"].includes(sort) ? sort : "relevance" };
+  return { q: query.get("sourceq") || "", target: ["all","website","game","app","binary","firmware","protocol"].includes(target) ? target : "all", topic: query.get("topic") || "", sort: ["relevance","stars","stars-asc","pushed","name"].includes(sort) ? sort : "relevance",
+    // Static category pages link here with ?source-category=; validateSourceCategory() checks it against the catalog's labels.
+    category: query.get("source-category") || "all" };
 }
 const sourceState = { available: false, loaded: false, loading: false, error: false, mode: "curated", records: [], meta: {}, ...sourceURLState(params), visible: 24, topicIDs: new Set(), topicCounts: [] };
 function sourceURL(push = false) {
@@ -688,7 +692,7 @@ function sourceURL(push = false) {
   const next = curatedURL();
   if (sourceState.mode === "source-index") next.searchParams.set("view", "source-index");
   else next.searchParams.delete("view");
-  for (const [key, value, defaultValue] of [["sourceq", sourceState.q, ""], ["source-target", sourceState.target, "all"], ["topic", sourceState.topic, ""], ["sort", sourceState.sort, "relevance"]]) {
+  for (const [key, value, defaultValue] of [["sourceq", sourceState.q, ""], ["source-target", sourceState.target, "all"], ["topic", sourceState.topic, ""], ["source-category", sourceState.category, "all"], ["sort", sourceState.sort, "relevance"]]) {
     if (value !== defaultValue) next.searchParams.set(key, value);
     else next.searchParams.delete(key);
   }
@@ -747,7 +751,7 @@ function sourceExport() {
   const found = sourceFiltered(); const meta = sourceState.meta;
   return {count: found.length, filename: "awesomerea-repository-matches.json", value: {export: {...exportMetadata("repository-index", "automatically-indexed-repository",
     "Automatically indexed repositories matching the homepage filters, copied from the browsing projection source-browser.json. READMEs were fetched automatically; these records are not curated, individually reviewed or executed, and their target labels are inferred. Repositories excluded from browsing are omitted; the full source-index.json download keeps them.",
-    {sourceq: sourceState.q, "source-target": sourceState.target, topic: sourceState.topic, sort: sourceState.sort}, sourceState.sort, found.length, sourceState.records.length),
+    {sourceq: sourceState.q, "source-target": sourceState.target, topic: sourceState.topic, "source-category": sourceState.category, sort: sourceState.sort}, sourceState.sort, found.length, sourceState.records.length),
     snapshot: {status: meta.status || null, completed_at: meta.completed_at || null, scope: meta.scope || null, full_export_sha256: meta.full_export_sha256 || null},
     full_download: dataURL("source-index.json").href}, repositories: exportRecords(found)}};
 }
@@ -839,7 +843,7 @@ function sourceRelatedLinks(record) {
 }
 function sourceFiltered() {
   const terms = normalizeSearchText(sourceState.q).trim().split(/\s+/).filter(Boolean); const topic = normalizeSearchText(sourceState.topic).trim();
-  const result = sourceState.records.filter(r => (sourceState.target === "all" || r.targets.includes(sourceState.target)) && (!topic || r.topics.some(item => sourceState.topicIDs.has(topic) ? item === topic : topicSearch(item).includes(topic))) && terms.every(term => r.search.includes(term)));
+  const result = sourceState.records.filter(r => (sourceState.target === "all" || r.targets.includes(sourceState.target)) && (sourceState.category === "all" || r.category === sourceState.category) && (!topic || r.topics.some(item => sourceState.topicIDs.has(topic) ? item === topic : topicSearch(item).includes(topic))) && terms.every(term => r.search.includes(term)));
   const score = r => terms.reduce((sum,term) => sum + (normalizeSearchText(r.full_name).includes(term) ? 4 : 0) + (r.topics.some(topic => topicSearch(topic).includes(term)) ? 2 : 0),0);
   if (sourceState.sort === "stars") result.sort((a,b) => (b.stars ?? -1)-(a.stars ?? -1) || compareIDs(a.full_name,b.full_name));
   else if (sourceState.sort === "stars-asc") result.sort((a,b) => (a.stars ?? Infinity)-(b.stars ?? Infinity) || compareIDs(a.full_name,b.full_name));
@@ -905,13 +909,15 @@ function renderSources(shown = 0) {
   $("#source-snapshot").textContent = (state.lang === "zh" ? "自动目标标签仅用于发现项目。星标为采集时快照。" : "Automatic target labels aid discovery. Stars are collection-time snapshots.") + (completed ? (state.lang === "zh" ? (published ? " 选集发布于 " : " 扫描完成于 ") : (published ? " Selection published " : " Scan completed ")) + sourceTime(completed) + (state.lang === "zh" ? "。" : ".") : "") + (sourceState.meta.status === "in-progress" ? (state.lang === "zh" ? " 扫描进行中；此处显示已读取的快照。" : " Scan in progress; this is the successfully fetched snapshot.") : "") + scopeNote;
   $("#source-empty").hidden = found.length > 0; $("#source-error").hidden = true; $("#source-more-row").hidden = found.length <= sourceState.visible; $("#source-more-count").textContent = "+"+Math.min(24,Math.max(0,found.length-sourceState.visible)); $("#source-shown").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length,sourceState.visible)} / ${found.length} 个仓库` : `${Math.min(found.length,sourceState.visible)} of ${found.length} ${found.length === 1 ? "repository" : "repositories"} shown`;
   announceRevealed("source-", shown, sourceState.visible, found.length);
-  $("#source-clear").hidden = !sourceState.q && !sourceState.topic && sourceState.target === "all" && sourceState.sort === "relevance";
+  $("#source-clear").hidden = !sourceState.q && !sourceState.topic && sourceState.target === "all" && sourceState.category === "all" && sourceState.sort === "relevance";
+  renderSourceCategories();
   showExport("source-");
   const removeSource = change => () => { change(); sourceState.visible = 24; sourceURL(true); renderSources(); };
   renderActiveFilters($("#source-active-filters"), [
     sourceState.q.trim() && [t("filterSearch"), `“${sourceState.q.trim()}”`, removeSource(() => { sourceState.q = ""; $("#source-search").value = ""; })],
     sourceState.target !== "all" && [t("targetFilterLabel"), targetLabel(sourceState.target), removeSource(() => { sourceState.target = "all"; })],
     topic && [t("sourceTopicLabel"), topicDisplay(sourceState.topic.trim()), removeSource(() => { sourceState.topic = ""; $("#source-topic").value = ""; renderTopicOptions(""); })],
+    sourceState.category !== "all" && [t("categoryLabel"), label(state.sourceCategoryLabels || {}, sourceState.category), removeSource(() => { sourceState.category = "all"; })],
   ].filter(Boolean), $("#source-search"));
   $$('[data-source-target]').forEach(button => { const active = button.dataset.sourceTarget === sourceState.target; button.classList.toggle("active",active); button.setAttribute("aria-pressed",String(active)); });
 }
@@ -954,21 +960,32 @@ async function loadSources() {
   } catch (_) { sourceState.error = true; $("#source-status").textContent = t("sourceErrorTitle"); $("#source-results").setAttribute("aria-busy","false"); $("#source-error").hidden = false; $("#source-empty").hidden = true; $("#source-more-row").hidden = true; }
   finally { sourceState.loading = false; }
 }
-function resetSources() { sourceState.q=""; sourceState.topic=""; sourceState.target="all"; sourceState.sort="relevance"; sourceState.visible=24; $("#source-search").value=""; $("#source-topic").value=""; $("#source-sort").value="relevance"; renderTopicOptions(); sourceURL(true); renderSources(); }
+function resetSources() { sourceState.q=""; sourceState.topic=""; sourceState.target="all"; sourceState.category="all"; sourceState.sort="relevance"; sourceState.visible=24; $("#source-search").value=""; $("#source-topic").value=""; $("#source-sort").value="relevance"; renderTopicOptions(); sourceURL(true); renderSources(); }
 $("#mode-curated").addEventListener("click",() => setIndexMode("curated", true)); $("#mode-sources").addEventListener("click",() => setIndexMode("source-index", true));
 $("#source-search").value=sourceState.q; $("#source-topic").value=sourceState.topic; $("#source-sort").value=sourceState.sort;
 for (const [selector,key,event] of [["#source-search","q","input"],["#source-topic","topic","input"],["#source-sort","sort","change"]]) $(selector).addEventListener(event,e => { sourceState[key]=key === "topic" ? canonicalTopic(e.target.value) : e.target.value; if (key === "topic") renderTopicOptions(e.target.value); sourceState.visible=24; sourceURL(key === "sort"); renderSources(); });
 $$('[data-source-target]').forEach(button => button.addEventListener("click",() => { sourceState.target=button.dataset.sourceTarget; sourceState.visible=24; sourceURL(true); renderSources(); }));
+$("#source-category").addEventListener("change", event => { sourceState.category = event.target.value; sourceState.visible = 24; sourceURL(true); renderSources(); });
+// An unknown, malformed or prototype-named ?source-category= falls back to all once the catalog's labels are known.
+function validateSourceCategory() { if (sourceState.category !== "all" && !Object.hasOwn(state.sourceCategoryLabels || {}, sourceState.category)) sourceState.category = "all"; }
+// Options list the categories the loaded repositories use, in the directory's order and the active language.
+function renderSourceCategories() {
+  const select = $("#source-category"); const labels = state.sourceCategoryLabels || {}; const present = new Set(sourceState.records.map(record => record.category));
+  const all = node("option", "", t("allCategories")); all.value = "all";
+  const options = Object.keys(labels).filter(category => present.has(category) || category === sourceState.category).map(category => {
+    const option = node("option", "", labels[category][state.lang === "zh" ? 1 : 0]); option.value = category; return option; });
+  select.replaceChildren(all, ...options); select.value = sourceState.category;
+}
 // Back/Forward restore every URL-held choice without writing history; an entry that differs only by fragment
 // keeps the current results, Show More count and expanded details.
 window.addEventListener("popstate", () => {
   const query = new URLSearchParams(location.search); const curated = curatedURLState(query); const source = sourceURLState(query);
   const differs = (current, next, keys) => keys.some(key => current[key] !== next[key]);
-  const curatedChanged = differs(state, curated, ["q","group","category","kind","target","order"]); const sourceChanged = differs(sourceState, source, ["q","target","topic","sort"]); const languageChanged = state.lang !== curated.lang;
+  const curatedChanged = differs(state, curated, ["q","group","category","kind","target","order"]); const sourceChanged = differs(sourceState, source, ["q","target","topic","category","sort"]); const languageChanged = state.lang !== curated.lang;
   Object.assign(state, curated); Object.assign(sourceState, source);
   if (curatedChanged) { state.visible = 15; $("#search-input").value = state.q; $("#curated-sort").value = state.order; }
   if (sourceChanged) { sourceState.visible = 24; $("#source-search").value = sourceState.q; $("#source-topic").value = sourceState.topic; $("#source-sort").value = sourceState.sort; }
-  if (state.loaded) validateCuratedFilters();
+  if (state.loaded) { validateCuratedFilters(); validateSourceCategory(); }
   if (languageChanged) applyLanguage();
   else {
     applyLayout();
