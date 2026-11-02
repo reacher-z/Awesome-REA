@@ -5880,5 +5880,14 @@
       "CI 在递归检出后于 Ubuntu 22.04 和 Python 3.10 上运行 ruff、核心、Web 界面与 Linux 分析组件的 pytest 测试套件以及 mypy，并在 Windows 上运行 Windows 分析组件的 pytest 测试。这些测试检查框架代码，并不衡量检测或脱壳效果；README 也提醒，配置解析器可能因恶意软件家族变化而失效。递归克隆还会拉取 CAPE-TestFiles 单元测试子模块，其中包含一个恶意软件目录。",
       "LICENSE 在 Cuckoo Foundation 声明下采用 GPL-3.0，GitHub 将其识别为 NOASSERTION；随附的 Microsoft 与 AutoIt 可执行文件不受该许可证覆盖。分析过程会执行恶意文件，README 说明应在隔离环境中进行。所审来源未提及 REA 的使用，本条目未运行任何样本。"
     ]
+  },
+  "luadec": {
+    "name": "LuaDec：Lua 字节码反编译器",
+    "requirements": [
+      "所审阅的 master 提交是默认分支上的最新提交，日期为 2017-01-06，仓库没有发布版本或标签。构建时先初始化作者 lua5 分支仓库中对应的 Lua 子模块（5.1、5.2 或 5.3 分支）并构建该 Lua，再在 luadec/ 中运行 make LUAVER=5.x，同时生成 luareplace 和 luaopswap 辅助工具；仓库附带 Visual C++ 2008 项目文件，README 称已在 VC 2008 和 2013 上测试。Travis CI 配置用 gcc 和 clang 分别构建各 Lua 版本，但不运行测试。",
+      "输入为对应标准 Lua 版本编译的代码块，也可以是为测试而即时编译的 Lua 源文件。对于使用重排操作码表的虚拟机所生成的字节码，luaopswap 会把该虚拟机编译随附的全操作码脚本所得结果与标准编译结果比较，推导操作码映射，并把文件改写为标准操作码；luareplace 可在两个文件之间替换嵌套函数。-fc 检查逐个函数报告反编译代码重新编译后是否得到相同指令，README 自己的示例中就有失败项，因此需要逐个函数核对输出。",
+      "test/ 中是针对各种控制流结构的小型 Lua 源码用例，test-compiled/lua-5.1 则附带编译后的 Lua 5.1 代码块作为反编译输入，其中包括以迅雷下载器、JX3 插件和 Defense Witches 游戏命名的文件；仓库未说明这些文件的来源或权利。仓库还包含各 Lua 版本的 ChunkSpy 列表工具和 Ruby 比较脚本。本合集仅审阅源码与文档，未构建或运行这些工具。",
+      "README 称 LuaDec 是自由软件，采用与原版 LuaDec 相同的许可，但未写明具体许可；仓库中没有许可证文件，GitHub 也未识别出许可证，因此再使用条款并不明确。Lua、LuaAssemblyTools、ilua 和 memwatch 子模块以及随附的 ChunkSpy 脚本各有其条款。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
