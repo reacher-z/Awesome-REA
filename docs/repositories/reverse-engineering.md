@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**663 repositories** · 2026-10-20 UTC
+**662 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -83,7 +83,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [neuroradiology/InsideReCaptcha](https://github.com/neuroradiology/InsideReCaptcha) — Reverse-engineering the new “captchaless” ReCaptcha system... **[1,051 stars]**
 - [danielweidman/pixmob-ir-reverse-engineering](https://github.com/danielweidman/pixmob-ir-reverse-engineering) — Hacking the PixMob infrared (and now also RF!) protocol to enable control of PixMob wristbands at home. **[1,040 stars]** · Curated: [PixMob IR reverse engineering: controlling event wristbands at home](https://awesomerea.org/resources/pixmob-ir-protocol-case/)
 - [ent0n29/polybot](https://github.com/ent0n29/polybot) — Reverse-engineering of every polymarket strategy and high-frequency trading infrastructure for Polymarket **[1,024 stars]**
-- [Fadi002/de4py](https://github.com/Fadi002/de4py) — The ultimate AI-powered toolkit for python reverse engineering **[1,009 stars]**
 - [indetectables-net/toolkit](https://github.com/indetectables-net/toolkit) — The essential toolkit for reversing, malware analysis, and cracking **[1,009 stars]**
 - [UCYBERS/Awesome-Blackhat-Tools](https://github.com/UCYBERS/Awesome-Blackhat-Tools) — A curated list of tools officially presented at Black Hat events **[1,003 stars]**
 - [pret/pokeruby](https://github.com/pret/pokeruby) — Decompilation of Pokémon Ruby/Sapphire **[1,002 stars]** · Curated: [pokeruby: a matching Pokémon Ruby and Sapphire decompilation](https://awesomerea.org/resources/pokeruby-decomp-case/)
