@@ -26,7 +26,7 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | Pending (`pending`) | 33 | 33 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 343 | 343 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-234 occurrences have catalog links. They reference 226 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+234 occurrences have catalog links. They reference 227 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
 This ledger records a new primary-source review for 498 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
