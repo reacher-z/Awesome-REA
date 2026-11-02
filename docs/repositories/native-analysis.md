@@ -112,7 +112,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [fay59/fcd](https://github.com/fay59/fcd) — An optimizing decompiler **[773 stars]**
 - [symgraph/GhidrAssist](https://github.com/symgraph/GhidrAssist) — An LLM extension for Ghidra to enable AI assistance in RE. **[760 stars]**
 - [binsync/binsync](https://github.com/binsync/binsync) — A reversing plugin for cross-decompiler collaboration, built on git. **[752 stars]** · Curated: [BinSync](https://awesomerea.org/resources/binsync/)
-- [HexHive/retrowrite](https://github.com/HexHive/retrowrite) — RetroWrite -- Retrofitting compiler passes through binary rewriting **[751 stars]** · Paper: [RetroWrite: Statically Instrumenting COTS Binaries for Fuzzing and Sanitization](https://awesomerea.org/papers/paper-retrowrite/)
+- [HexHive/retrowrite](https://github.com/HexHive/retrowrite) — RetroWrite -- Retrofitting compiler passes through binary rewriting **[751 stars]** · Paper: [RetroWrite: Statically Instrumenting COTS Binaries for Fuzzing and Sanitization](https://awesomerea.org/papers/paper-retrowrite/) · Curated: [RetroWrite](https://awesomerea.org/resources/retrowrite/)
 - [radareorg/awesome-radare2](https://github.com/radareorg/awesome-radare2) — A curated list of awesome projects, articles and the other materials powered by Radare2 **[739 stars]**
 - [larkmjc/rv8](https://github.com/larkmjc/rv8) — RISC-V simulator for x86-64 **[727 stars]**
 - [0xb0bb/pwndra](https://github.com/0xb0bb/pwndra) — A collection of pwn/CTF related utilities for Ghidra **[710 stars]**
