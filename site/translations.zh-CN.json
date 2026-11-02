@@ -6475,5 +6475,15 @@
       "仓库没有测试或 CI。报文含义是在代码注释中推断的，其中多处标为未知或待办，命令在相机上的表现仍属贡献者自述；本次审阅未构建或运行任何内容。",
       "采用 Unlicense（公有领域贡献声明）；AUTHORS.txt 列出五位贡献者。Fujifilm 相机、固件、应用和商标仍归各自权利人所有。所审来源未确立 AI 或 REA 使用。"
     ]
+  },
+  "pyinstxtractor-ng": {
+    "name": "pyinstxtractor-ng 新一代 PyInstaller 程序提取工具",
+    "requirements": [
+      "审阅时最新版本为 2026.07.03，发布于 2026-07-03，附带由 PyInstaller 构建的 Linux 二进制和 Windows .exe，因此使用这些构建无需安装 Python；PyPI 上也有同版本的 pyinstxtractor-ng 2026.7.3。所审阅的 main 提交比该标签多两个提交，仅把 pycryptodome 的版本要求从固定的 3.17 放宽为 3.19.1 及以上、低于 4。",
+      "直接运行脚本需要 Python 3.8+、固定为 6.3.0 版的 xdis 以及 pycryptodome；pyproject.toml 中残留的 Poetry 配置段仍把 Python 限制在 3.13 以下。发布的二进制由手动触发的工作流使用 Python 3.8 和 PyInstaller 5.10.1 构建；仓库中没有测试，也没有测试用可执行文件。",
+      "脚本头部列出所支持的 PyInstaller 版本为 2.0 至 5.10.1，README 未说明版本范围。既无法解压也无法解密的条目会原样保存并加上 .encrypted 后缀。",
+      "PyInstaller 可执行文件由使用者自行提供；要把恢复出的字节码还原为源码，还需另用反编译器。恢复出的代码仍受原程序权利人的权利约束。",
+      "采用 GPL-3.0-only 许可。本次未运行任何内容。"
+    ]
   }
 }
