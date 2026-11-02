@@ -10,7 +10,7 @@ Publication date: **2026-10-20 UTC**.
 
 | Category | Repositories | Linked to curated entries or papers |
 | --- | ---: | ---: |
-| [Websites](web-analysis.md) | 215 | 27 |
+| [Websites](web-analysis.md) | 215 | 28 |
 | [Games](game-analysis.md) | 485 | 63 |
 | [Apps · Android](android.md) | 479 | 47 |
 | [Apps · Managed code](managed-code.md) | 135 | 5 |
