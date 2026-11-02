@@ -40,7 +40,7 @@
 - [open-goal/jak-project](https://github.com/open-goal/jak-project) — 复兴曾造就《Jak &amp; Daxter》系列的编程语言。 **[3,574 星标]** · 精选：[OpenGOAL：恢复 GOAL 代码并重建 Jak 系列游戏](https://awesomerea.org/zh/resources/opengoal-jak-case/)
 - [kevoreilly/CAPEv2](https://github.com/kevoreilly/CAPEv2) — 恶意软件配置与载荷提取。 **[3,570 星标]**
 - [vaib25vicky/awesome-mobile-security](https://github.com/vaib25vicky/awesome-mobile-security) — 致力于集中收集所有实用的 Android 与 iOS 安全相关资源。所有引用和工具均归各自所有者所有，我仅负责维护。 **[3,561 星标]**
-- [V33RU/awesome-connected-things-sec](https://github.com/V33RU/awesome-connected-things-sec) — 面向各种联网设备的精选安全资源列表。 **[3,559 星标]**
+- [V33RU/awesome-connected-things-sec](https://github.com/V33RU/awesome-connected-things-sec) — 面向各种联网设备的精选安全资源列表。 **[3,559 星标]** · 精选：[Awesome Connected Things Security 互联设备安全合集](https://awesomerea.org/zh/resources/awesome-connected-things-sec/)
 - [dweinstein/awesome-frida](https://github.com/dweinstein/awesome-frida) — Awesome Frida：Frida 精选资源列表，http<span>:</span>//www<span>.</span>frida.re/（https<span>:</span>//github.com/frida/frida）。 **[3,548 星标]** · 精选：[Awesome Frida Frida 资源清单](https://awesomerea.org/zh/resources/awesome-frida/)
 - [nabla-c0d3/ssl-kill-switch2](https://github.com/nabla-c0d3/ssl-kill-switch2) — 用于在 iOS 和 macOS 应用中禁用 SSL 证书校验（包括证书锁定）的黑盒工具。 **[3,322 星标]**
 - [Jakeschincariol/replica-skill](https://github.com/Jakeschincariol/replica-skill) — 11 个免费的 Claude 技能，可克隆任意应用：逆向分析、重建、测试缺陷，再修复用户不满意的地方。免费，MIT。 **[3,296 星标]**
