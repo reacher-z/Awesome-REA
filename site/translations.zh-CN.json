@@ -11129,5 +11129,125 @@
       "docs/trx/INSTALLING.md 写明 Windows 安装器从玩家自己的 Steam、GOG 或光盘安装复制 TR1、TR2 和 TR3。文档中的数据树包含原版 .phd 关卡文件。启动命令包括 TRX.exe --mod tr1、TRX.exe --mod tr2 和 TRX.exe --mod tr3。零售文件不在仓库中。",
       "COPYING.md 是 GNU GPL 第 3 版文本。"
     ]
+  },
+  "openrsync-protocol-case": {
+    "name": "openrsync：ISC 许可的 rsync 协议 27 实现",
+    "requirements": [
+      "提交 8235c68f11b4fad5e24849a01d04ea153c29ee28。README 称 openrsync 是采用 BSD（ISC）许可的 rsync 实现，与 rsync 3.1.3 兼容，也与任何支持协议 27 的对端兼容。rsync.5 写明它与参考实现的第 27 版兼容。官方支持的系统是 OpenBSD。",
+      "regress/functional/conf.sh 在变量尚未设置时把 rsync 设为 ./openrsync。test00_simple.test 用 mkdirfile 建立 dir1/one.txt，并在 dir2/dir1 下放同一份文件，然后运行 $rsync -a dir1 dir3，再调用 compare_trees dir2 dir3。compare_trees 比较文件清单、目录清单，再用 diff -ru 比较文件内容。make regress_functional 运行这些测试。本目录未运行或复现。",
+      "LICENSE.md 允许为任何目的使用、复制、修改和/或分发本软件，只要保留版权声明。版权行是 2019 年 Kristaps Dzonsons。"
+    ]
+  },
+  "wmbusmeters-protocol-case": {
+    "name": "wmbusmeters：核对有线 M-Bus 与无线 wM-Bus 读数",
+    "requirements": [
+      "提交 21851e710f9bddfd6559b7ea7e1dc571afeb47e0。README 写明程序从有线 m-bus 或无线 wm-bus 仪表取得读数。示例报文是 1844AE4C4455223368077A55000000_041389E20100023B0000，对应的用水量是 123.529 立方米。",
+      "simulations/simulation_t1.txt 把该报文标为未加密的 iPerl T1 报文，并记下 WaterWater 的 JSON 行：id 33225544，driver iperl，total_m3 123.529，以及字段行 WaterWater;33225544;123.529;0;1111-11-11 11:11.11。tests/test_t1_meters.sh 用该文件运行程序。diff 之前，它把 JSON 时间戳改写成 1111-11-11T11:11:11Z，把字段时间戳改写成 1111-11-11 11:11.11。该文件还有其他报文，脚本会比较每一行 JSON 和每一行字段。本目录未运行或复现。",
+      "LICENSE 是 GNU GPL 第 3 版文本。"
+    ]
+  },
+  "open-oscar-server-case": {
+    "name": "Open OSCAR Server：可自建的 AIM 与 ICQ 服务器",
+    "requirements": [
+      "提交 d63dfb8d84a0ec715a870009d89022fff65a250a。README 把它描述为用 Go 编写、面向经典 AIM 和 ICQ 客户端的开源即时通讯服务器，并写明与 AOL 或 Yahoo 没有关联。支持的功能里列出了 TOC1 和 TOC2 客户端。",
+      "docs/TOC.md 第 10.1 节记录一次 TOC 1 会话：TCP 连到端口 9898，发送 FLAPON，以 toctest1 登录，然后是 SIGN_ON:TOC1.0、点名好友 toctest2 的 CONFIG 行，以及 NICK:toctest1。toc_init_done 之后，文档中的回复是 UPDATE_BUDDY:toctest2:T:0:1711036800:0: O。单元测试的 send IM 用例期望 IM_IN:them:F:hello world!。本目录未运行或复现。",
+      "LICENSE 是 MIT 许可，版权人 2024 mk6i。"
+    ]
+  },
+  "thermal-master-p3-protocol-case": {
+    "name": "Thermal Master P3：浏览器里的厂商 USB 协议客户端",
+    "requirements": [
+      "提交 39024dd148e9e1c9b5f03ace8cbb81f84563b59b。README 写明命令是厂商控制传输上的 18 字节。Linux 说明点名 USB ID 3474:45a2。P3 画面是 256 乘 192。它写明查看器对照 P3 开发，P1 尚未测试，并且项目与 Thermal Master 没有关联。",
+      "tests/test_webusb.mjs 保存了抓到的命令，其中 read_name 等于 0101810001000000000000001e0000004f90。生成的命令与这些字节不一致、十六进制形式不是 18 字节、123456789 的 crc16 不是 0x31c3、VID 不是 0x3474，或 192 字节状态缓冲解析结果不是 [346871] I/ffc_svc: ffc b update done 时，测试失败。本目录未运行或复现。",
+      "LICENSE 是 Apache License 2.0。"
+    ]
+  },
+  "ethercalc-spreadsheet-case": {
+    "name": "EtherCalc：浏览器里的协作电子表格",
+    "requirements": [
+      "提交 c1a3733a1adae0657bd6536886bc101e5698a636。README 把 EtherCalc 描述为用于实时协作编辑的网页电子表格，并写明这个分支是 TypeScript 重写，用 docker compose up 即可自托管，不需要 Cloudflare 账号。这条 Docker 路径提供 http://localhost:8000。",
+      "packages/oracle-harness/src/scenarios/room-crud.ts 把 MINIMAL_SCSAVE 用 PUT 写入房间 oracle-phase3-export。tests/oracle/recorded/exports/get-csv.json 期望 HTTP 200，以及 bodyBase64 b3JhY2xlCg==，也就是 oracle 加换行的七个字节，bodyMatcher 为 exact。get-cell-a1.json 期望 A1 的 JSON 中 datavalue 和 displaystring 都是 oracle。本目录未运行或复现。",
+      "LICENSE.txt 写明它覆盖原来的 SocialCalc 时期代码及其内置依赖，文内包含 Common Public Attribution License 和 Artistic License 2.0，并写明没有单独许可声明的文件适用 Artistic License 2.0。它还写明 TypeScript 重写的依赖各自在自己的许可中声明。"
+    ]
+  },
+  "openpencil-design-editor-case": {
+    "name": "OpenPencil：能打开 Figma 文件的浏览器设计编辑器",
+    "requirements": [
+      "提交 97bb94b2e78b57222bbdf665fb3f8b5b7741fd39。README 给出浏览器编辑器 https://app.openpencil.dev/demo，并写明项目可以打开和写出原生 Figma 文件。它还描述了一个大约 15 MB 的 Tauri 桌面应用。playwright.config.ts 把应用端口默认设为 1420。",
+      "该测试选中节点后，期望 toMatchSnapshot 对照 text-path-rendering-and-selection.png。playwright.config.ts 为 toMatchSnapshot 设置 maxDiffPixelRatio 0.01 和 threshold 0.3。该提交上 tests/fixtures/circle-text.fig 的 git 对象是一个 Git LFS 指针，对应 155324 字节的文件。本目录未运行或复现。",
+      "LICENSE 是 MIT 许可，版权人为 2026 年 Danila Poyarkov 和 OpenPencil 贡献者。README 写明 packages/cloud 下的云服务器、中继和管理页面是 Apache License 2.0，编辑器用来与之通信的协议客户端仍是 MIT。"
+    ]
+  },
+  "openevv-viavoice-case": {
+    "name": "OpenEVV：把 IBM Embedded ViaVoice 重写为可移植 C",
+    "requirements": [
+      "提交 d2bc0c68a7769967bb3dfdc86701f69bc53767b4。README 写明音频曾经与 IBM 的二进制逐字节相同，覆盖每种语言的每个测试用例，32 位和 64 位构建都是如此，范围是 SDK 带的全部九种语言。它写明引擎现在被有意改动，因此此后守住的是 979 个用例各自录下的回答，而不是 IBM 的二进制。构建时不借用外部材料。",
+      "docs/testing.md 写明 test/matrix.sh 是门禁，用十二种语言的 1,291 个用例对照先前录下的回答，并写明 test/suite.sh 是对照 IBM 引擎的预言，需要 Wine 和 SDK。基线在 test/samples。test/samples/enus.sha256 是其中一份。本目录未运行或复现。",
+      "README 写明项目自己的引擎、两个前端、工具、测试和文档采用 LICENSE 中的 MIT 许可。它写明 lang/ 下的语言数据是从 IBM 的目标文件转录的，不在该许可之内，src/klatt_tables.c 和 src/eci_xmltok_tables.c 同样是 IBM 的数据。"
+    ]
+  },
+  "hypercard-122-recomp-case": {
+    "name": "HyperCard 1.2.2：经典 Mac 应用的静态重编译",
+    "requirements": [
+      "提交 708adac787c07f96a87002a0479d3e67a12464c2。README 的覆盖表把 HyperCard 1.2.2 列为 326 KB、22 个 CODE 段、418 个不同陷阱、3166 个调用点，调用点覆盖率 83%。后文又写全部 21 个 CODE 段以 97% 到 100% 的指令覆盖率提升。两个数字都是该 README 写明的。",
+      "tools/corpus.json 把文件命名为 HyperCard，并记下 sites_covered 2642、sites_total 3166。tools/conformance.py 在已覆盖调用点低于该基线时返回 1。README 写明语料镜像是受版权保护的 Mac 介质，放在仓库之外，因此缺少的标题报告 SKIP。本目录未运行或复现。",
+      "LICENSE 是 MIT 许可。README 写明工具包不附带 Apple ROM、系统软件或受版权保护的光盘数据。"
+    ]
+  },
+  "blind-walleye-static-case": {
+    "name": "The Blind Walleye：营销网站的静态重建",
+    "requirements": [
+      "提交 4852d2c9a818359996fd8ee2119d39480508938f。README 称该项目是 https://www.theblindwalleye.com 的 1:1 复制，用 Next.js 静态渲染。source/ 保存抓取结果。应用预渲染 /、/menu 和 /events，并渲染抓到的 404。source/pages 含有 index.html、menu.html、events.html 和 __404.html。",
+      "README 写明 node scripts/compare-visual.mjs 在 1440、991 和 390 像素宽下截取抓取页和复刻页。脚本的默认 MAX_DIFF_PCT 是 0.5，任一页的差异百分比高于该阈值时以状态 1 退出。本目录未运行或复现。",
+      "该提交的根目录列表没有 LICENSE 文件，README 也没有写明许可。"
+    ]
+  },
+  "omnispeak-keen-case": {
+    "name": "Omnispeak：Commander Keen 第 4 至 6 代的重实现",
+    "requirements": [
+      "提交 b88e13b9b393ad60b0c9496c0435a22adf2ccc3b。README 写明 Omnispeak 力求成为第 4、5、6 代的像素级、逐错误克隆，并与 DOS 版存档兼容。支持的版本是 Keen 4 v1.4 EGA、Keen 5 v1.4 EGA、Keen 6 v1.4 EGA 和 Keen 6 v1.5 EGA。玩家把 GAMEMAPS.CK?、EGAGRAPH.CK? 和 AUDIO.CK? 放到 omnispeak 二进制旁边。这些游戏文件不在仓库中。README 指向 Keen 4 v1.4 EGA 共享版压缩包 https://davidgow.net/keen/4keen14.zip。",
+      "tests/testdump.sh 运行 ./omnispeak /EPISODE <episode> /PLAYDEMO <demo> /DUMPFILE <temp>，并把该转储与 tests/demo<demo>.dump<episode> 做 diff。一致时打印 Dump matched for Episode <episode>, Demo <demo>。tests/demo0.dump4 是这些对照文件之一。本目录未运行或复现。",
+      "LICENSE 是 GNU GPL 第 2 版文本。"
+    ]
+  },
+  "legend-of-mana-decomp-case": {
+    "name": "Legend of Mana：PlayStation 游戏的匹配反编译",
+    "requirements": [
+      "提交 c34db9803ae8cb58d45060a8246e161de690ece3。README 写明北美版和日版都已 100% 匹配。北美光盘编号 SLUS-01013，主程序 SLUS_010.13，SHA-1 为 d11dfdd50d412ac3fa3e2eb80fbde138da118f27。日版是 SLPS-02170，主程序 SLPS_021.70，SHA-1 为 b067188a92e4de9a4db7bb7e5343c757e9884bfa。仓库不包含游戏可执行文件。disc/ 被 gitignore。",
+      "make verify-bins 核对北美模块，make verify-bins VERSION=jp 核对日版模块。README 写明主程序和全部 17 个覆盖模块都已完整链接，Psy-Q SDK 库仍从原始汇编链接。本目录未运行或复现。",
+      "LICENSE 是 MIT 许可，版权人为 2026 年 Christopher Harris（celophi）。零售游戏不在其中。"
+    ]
+  },
+  "kingdom-hearts-ps2-decomp-case": {
+    "name": "Kingdom Hearts De:Compiled：PS2 日版与 Final Mix 可执行文件的反编译",
+    "requirements": [
+      "提交 0df3b6586d2d0b4dab39d1eb7e9859c464934e19。README 点明日版 ELF SLPS_251.05 的 SHA-1 为 9dabbf867a7ec2a030df99ba1ed969f2deef0488，Final Mix 的 SLPS_251.98 为 e70bda789916142aafb53d85cef2e806b35ad8d8。用户从自己的光盘提取 ELF。仓库不发布可执行文件或 ISO。",
+      "configure.py 添加一条运行 sha1sum -c 的 ninja 规则，默认构建产物是该规则写出的 ROM .ok 文件。config/jp/checksum.sha1 期望 build/jp/SLPS_251.05.rom 匹配 cb85dbab6c05667ed11d94e94abfa079baaf12c2。config/fm/checksum.sha1 期望 build/fm/SLPS_251.98.rom 匹配 b62bf252fdaf0b1a726668e28c244e1d83bcb146。本目录未运行或复现。",
+      "该提交的根目录列表没有 LICENSE 文件，README 也没有写明许可。游戏本身不在仓库中。"
+    ]
+  },
+  "destruction-derby-64-decomp-case": {
+    "name": "Destruction Derby 64：美版 ROM 的匹配反编译",
+    "requirements": [
+      "提交 4820d11b3aeb1788e3de1b281a584a7b236bb734。README 写明构建者提供 Destruction Derby 64（USA）作为 baserom.z64，SHA-1 即上述值，并且 ROM 不在仓库中。它写明匹配构建会打印 build/dd64.z64: OK，并且 1548 个函数中有 1510 个是 C。它还把仓库描述为作者未审阅代码的放手式智能体实验。",
+      "Makefile 的默认目标是 check，它会对 dd64.sha1 运行 sha1sum -c。该文件期望 build/dd64.z64 具有同一个 SHA-1。本目录未运行或复现。",
+      "该提交的根目录列表没有 LICENSE 文件，README 也没有写明许可。"
+    ]
+  },
+  "pik1wii-decomp-case": {
+    "name": "New Play Control! Pikmin：Wii 美版 DOL 的反编译",
+    "requirements": [
+      "提交 051c29750ee179f7b6d97bfda094febdb0191a0f。README 称该项目是 New Play Control! Pikmin（Wii，2009）的进行中反编译，并把 R9IE01 标为默认的美版。它写明仓库不含游戏资源。用户把光盘镜像复制到 orig/R9IE01。点名的格式包括 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC。",
+      "config/R9IE01/config.yml 为 sys/main.dol 记录哈希 551306334183a633d0fde434a930b98809433b70。config/R9IE01/build.sha1 期望 build/R9IE01/main.dol 具有同一个 SHA-1。configure.py 把 check_sha_path 设为 config/<version>/build.sha1。本目录未运行或复现。",
+      "LICENSE 以 CC0 1.0 Universal 开头。这份放弃声明针对反编译项目，不针对游戏。"
+    ]
+  },
+  "gow-psp-recomp-case": {
+    "name": "God of War PSP: native PC ports：Chains of Olympus 与 Ghost of Sparta",
+    "requirements": [
+      "提交 ef886b037bf936921835f563e03008dea87dfa3e。README 写明游戏在 Windows 上原生运行，光盘由用户自备，格式为 .chd 或 .iso，产品编号是美版 UCUS98653 和 UCUS98737。它把这描述为静态重编译：光盘上的 Allegrex 代码被译成 C，运行时不经过模拟器。仓库不含游戏内容。状态一节称这是预览版 v1.2.0，并写明两作都还没有完整通关。",
+      "docs/phase11-level-tour.md 写明 Chains of Olympus 的区域是在不游玩的情况下检查的：游戏能到达的区域有 75 个，其中 70 个在故事里，5 个是挑战。它写明脚本到达 foa_path_a 的祭坛，游戏存下 The Falls of Oceanum，Load Game 把 Kratos 读回该处。本目录未运行或复现。",
+      "README 把项目标为 GPL-3.0-or-later。LICENSE 是 GNU GPL 第 3 版文本。README 写明项目与 Sony Interactive Entertainment 或 Santa Monica Studio 没有关联。"
+    ]
   }
 }

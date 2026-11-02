@@ -36941,5 +36941,485 @@
       "https://github.com/LostArtefacts/TRX/blob/dce1113262e1df4e55242fa58ced58de778b528c/COPYING.md"
     ],
     "added_at": "2026-11-03"
+  },
+  {
+    "id": "openrsync-protocol-case",
+    "name": "openrsync: an ISC implementation of rsync protocol 27",
+    "url": "https://github.com/kristapsdz/openrsync",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "An ISC-licensed rsync that copies a directory and checks the result. regress/functional/test00_simple.test builds dir1/one.txt, an expected tree under dir2, runs openrsync -a from dir1 to dir3, and compare_trees diffs the listings and file contents.",
+    "description_zh": "一个 ISC 许可的 rsync 实现，复制目录并核对结果。regress/functional/test00_simple.test 生成 dir1/one.txt 和 dir2 下的预期目录树，用 openrsync -a 把 dir1 复制到 dir3，再由 compare_trees 比较目录清单和文件内容。",
+    "evidence_url": "https://github.com/kristapsdz/openrsync/blob/8235c68f11b4fad5e24849a01d04ea153c29ee28/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 8235c68f11b4fad5e24849a01d04ea153c29ee28. The README calls openrsync an implementation of rsync with a BSD (ISC) license, compatible with rsync 3.1.3 and with any peer that supports protocol 27. rsync.5 says it is compatible with version 27 of the reference. The officially supported system is OpenBSD.",
+      "regress/functional/conf.sh sets rsync to ./openrsync unless that variable is already set. test00_simple.test creates dir1/one.txt with mkdirfile, builds the same file under dir2/dir1, runs $rsync -a dir1 dir3, and calls compare_trees dir2 dir3. compare_trees diffs file listings, directory listings, and then file contents with diff -ru. make regress_functional runs these tests. Not run or reproduced for this catalog.",
+      "LICENSE.md grants permission to use, copy, modify, and/or distribute the software for any purpose, provided the copyright notice is kept. The copyright line is 2019, Kristaps Dzonsons."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/kristapsdz/openrsync/blob/8235c68f11b4fad5e24849a01d04ea153c29ee28/rsync.5",
+      "https://github.com/kristapsdz/openrsync/blob/8235c68f11b4fad5e24849a01d04ea153c29ee28/regress/functional/test00_simple.test",
+      "https://github.com/kristapsdz/openrsync/blob/8235c68f11b4fad5e24849a01d04ea153c29ee28/regress/functional/lib.sh",
+      "https://github.com/kristapsdz/openrsync/blob/8235c68f11b4fad5e24849a01d04ea153c29ee28/regress/functional/conf.sh",
+      "https://github.com/kristapsdz/openrsync/blob/8235c68f11b4fad5e24849a01d04ea153c29ee28/LICENSE.md"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "wmbusmeters-protocol-case",
+    "name": "wmbusmeters: readings from wired M-Bus and wireless wM-Bus",
+    "url": "https://github.com/wmbusmeters/wmbusmeters",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Reads wired M-Bus and wireless wM-Bus meters. The shipped file simulations/simulation_t1.txt is the input, and tests/test_t1_meters.sh diffs the program's JSON and fields output against the expected lines in that file.",
+    "description_zh": "读取有线 M-Bus 和无线 wM-Bus 仪表。随仓库提供的 simulations/simulation_t1.txt 是输入，tests/test_t1_meters.sh 把程序的 JSON 和字段输出与该文件里的预期行做 diff。",
+    "evidence_url": "https://github.com/wmbusmeters/wmbusmeters/blob/21851e710f9bddfd6559b7ea7e1dc571afeb47e0/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 21851e710f9bddfd6559b7ea7e1dc571afeb47e0. The README says the program acquires readings from wired m-bus or wireless wm-bus meters. Its example telegram is 1844AE4C4455223368077A55000000_041389E20100023B0000, shown as a water total of 123.529 cubic meters.",
+      "simulations/simulation_t1.txt labels that telegram as an unencrypted iPerl T1 telegram and records the JSON line for WaterWater, id 33225544, driver iperl, total_m3 123.529, plus the fields line WaterWater;33225544;123.529;0;1111-11-11 11:11.11. tests/test_t1_meters.sh runs the program on that file. Before diffing, it rewrites JSON timestamps to 1111-11-11T11:11:11Z and fields timestamps to 1111-11-11 11:11.11. The file holds other telegrams, and the script diffs every JSON line and every fields line. Not run or reproduced for this catalog.",
+      "LICENSE is the GNU GPL version 3 text."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/wmbusmeters/wmbusmeters/blob/21851e710f9bddfd6559b7ea7e1dc571afeb47e0/simulations/simulation_t1.txt",
+      "https://github.com/wmbusmeters/wmbusmeters/blob/21851e710f9bddfd6559b7ea7e1dc571afeb47e0/tests/test_t1_meters.sh",
+      "https://github.com/wmbusmeters/wmbusmeters/blob/21851e710f9bddfd6559b7ea7e1dc571afeb47e0/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "open-oscar-server-case",
+    "name": "Open OSCAR Server: a self-hosted AIM and ICQ server",
+    "url": "https://github.com/mk6i/open-oscar-server",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A Go server for classic AIM and ICQ clients. The shipped check is the send IM case in server/toc/cmd_server_test.go: a message whose text bytes are hello world! must become the TOC line IM_IN:them:F:hello world!.",
+    "description_zh": "面向经典 AIM 和 ICQ 客户端的 Go 服务器。随仓库提供的检查是 server/toc/cmd_server_test.go 里的 send IM 用例：文本字节为 hello world! 的消息必须变成 TOC 行 IM_IN:them:F:hello world!。",
+    "evidence_url": "https://github.com/mk6i/open-oscar-server/blob/d63dfb8d84a0ec715a870009d89022fff65a250a/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit d63dfb8d84a0ec715a870009d89022fff65a250a. The README describes an open-source instant-messaging server for classic AIM and ICQ clients, written in Go, and says it is not affiliated with AOL or Yahoo. It lists TOC1 and TOC2 clients among the supported features.",
+      "docs/TOC.md section 10.1 documents a TOC 1 session: a TCP connection to port 9898, FLAPON, sign-on as toctest1, then SIGN_ON:TOC1.0, a CONFIG line that names buddy toctest2, and NICK:toctest1. After toc_init_done the documented reply is UPDATE_BUDDY:toctest2:T:0:1711036800:0: O. The unit test's send IM case expects IM_IN:them:F:hello world!. Not run or reproduced for this catalog.",
+      "LICENSE is the MIT license, copyright 2024 mk6i."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mk6i/open-oscar-server/blob/d63dfb8d84a0ec715a870009d89022fff65a250a/docs/TOC.md",
+      "https://github.com/mk6i/open-oscar-server/blob/d63dfb8d84a0ec715a870009d89022fff65a250a/server/toc/cmd_server_test.go",
+      "https://github.com/mk6i/open-oscar-server/blob/d63dfb8d84a0ec715a870009d89022fff65a250a/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "thermal-master-p3-protocol-case",
+    "name": "Thermal Master P3: a browser client for the vendor USB protocol",
+    "url": "https://github.com/ferrolho/thermal-master-viewer",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A browser viewer for the Thermal Master P3, which speaks a vendor USB protocol rather than UVC. tests/test_webusb.mjs compares built commands with captured 18-byte transfers, including read_name, and parses a captured status buffer.",
+    "description_zh": "面向 Thermal Master P3 的浏览器查看器。这台相机使用厂商 USB 协议，而不是 UVC。tests/test_webusb.mjs 把生成的命令与抓到的 18 字节传输比较，其中包括 read_name，并解析一段抓到的状态缓冲。",
+    "evidence_url": "https://github.com/ferrolho/thermal-master-viewer/blob/39024dd148e9e1c9b5f03ace8cbb81f84563b59b/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 39024dd148e9e1c9b5f03ace8cbb81f84563b59b. The README says commands are 18 bytes over a vendor control transfer. The Linux note names USB ID 3474:45a2. The P3 frame is 256 by 192. It says the viewer was developed against a P3 and that the P1 has not been tested, and that the project is not affiliated with Thermal Master.",
+      "tests/test_webusb.mjs stores captured commands, including read_name equal to 0101810001000000000000001e0000004f90. It fails if a built command is not those bytes, if the hex form is not 18 bytes, if crc16 of the bytes of 123456789 is not 0x31c3, if VID is not 0x3474, or if the 192-byte status buffer does not parse as [346871] I/ffc_svc: ffc b update done. Not run or reproduced for this catalog.",
+      "LICENSE is the Apache License 2.0."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ferrolho/thermal-master-viewer/blob/39024dd148e9e1c9b5f03ace8cbb81f84563b59b/tests/test_webusb.mjs",
+      "https://github.com/ferrolho/thermal-master-viewer/blob/39024dd148e9e1c9b5f03ace8cbb81f84563b59b/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "ethercalc-spreadsheet-case",
+    "name": "EtherCalc: a collaborative spreadsheet in the browser",
+    "url": "https://github.com/audreyt/ethercalc",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "website"
+    ],
+    "description_en": "A web spreadsheet for real-time collaborative editing. The shipped SocialCalc save MINIMAL_SCSAVE, whose only cell is cell:A1:t:oracle, is the input; the recorded CSV body is the bytes of oracle followed by a newline, and the recorded A1 JSON has datavalue and displaystring oracle.",
+    "description_zh": "用于实时协作编辑的网页电子表格。随仓库提供的 SocialCalc 存档 MINIMAL_SCSAVE 是输入，其中唯一单元格是 cell:A1:t:oracle；记录下来的 CSV 正文是 oracle 再加一个换行，记录下来的 A1 JSON 里 datavalue 和 displaystring 都是 oracle。",
+    "evidence_url": "https://github.com/audreyt/ethercalc/blob/c1a3733a1adae0657bd6536886bc101e5698a636/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit c1a3733a1adae0657bd6536886bc101e5698a636. The README describes EtherCalc as a web spreadsheet for real-time collaborative editing and says this branch is the TypeScript rewrite, self-hosted with docker compose up and no Cloudflare account required. That Docker path serves http://localhost:8000.",
+      "packages/oracle-harness/src/scenarios/room-crud.ts PUTs MINIMAL_SCSAVE into the room oracle-phase3-export. tests/oracle/recorded/exports/get-csv.json expects HTTP 200 and bodyBase64 b3JhY2xlCg==, the seven bytes of oracle and a newline, with bodyMatcher exact. get-cell-a1.json expects the A1 JSON whose datavalue and displaystring are oracle. Not run or reproduced for this catalog.",
+      "LICENSE.txt says it covers the original SocialCalc-era codebase and its vendored dependencies, includes the Common Public Attribution License and the Artistic License 2.0, and says files without their own license statement are under the Artistic License 2.0. It says the TypeScript rewrite's dependencies declare their own licenses."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/audreyt/ethercalc/blob/c1a3733a1adae0657bd6536886bc101e5698a636/packages/oracle-harness/src/scenarios/fixtures.ts",
+      "https://github.com/audreyt/ethercalc/blob/c1a3733a1adae0657bd6536886bc101e5698a636/packages/oracle-harness/src/scenarios/room-crud.ts",
+      "https://github.com/audreyt/ethercalc/blob/c1a3733a1adae0657bd6536886bc101e5698a636/tests/oracle/recorded/exports/get-csv.json",
+      "https://github.com/audreyt/ethercalc/blob/c1a3733a1adae0657bd6536886bc101e5698a636/tests/oracle/recorded/exports/get-cell-a1.json",
+      "https://github.com/audreyt/ethercalc/blob/c1a3733a1adae0657bd6536886bc101e5698a636/LICENSE.txt"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "openpencil-design-editor-case",
+    "name": "OpenPencil: a browser design editor that opens Figma files",
+    "url": "https://github.com/open-pencil/open-pencil",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "website",
+      "app"
+    ],
+    "description_en": "An open design editor that runs in the browser and as a desktop app, and that opens .fig files. tests/e2e/canvas/text/path-visual.spec.ts opens tests/fixtures/circle-text.fig, selects the node named ArnoCoenen.art, and expects a canvas screenshot to match text-path-rendering-and-selection.png.",
+    "description_zh": "能在浏览器和桌面运行、并可打开 .fig 文件的开源设计编辑器。tests/e2e/canvas/text/path-visual.spec.ts 打开 tests/fixtures/circle-text.fig，选中名为 ArnoCoenen.art 的节点，并要求画布截图与 text-path-rendering-and-selection.png 一致。",
+    "evidence_url": "https://github.com/open-pencil/open-pencil/blob/97bb94b2e78b57222bbdf665fb3f8b5b7741fd39/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 97bb94b2e78b57222bbdf665fb3f8b5b7741fd39. The README links the browser editor at https://app.openpencil.dev/demo and says the project opens and writes native Figma files. It also describes a Tauri desktop app of about 15 MB. playwright.config.ts defaults the app port to 1420.",
+      "That spec selects the node and expects toMatchSnapshot of text-path-rendering-and-selection.png. playwright.config.ts sets maxDiffPixelRatio to 0.01 and threshold to 0.3 for toMatchSnapshot. The git blob of tests/fixtures/circle-text.fig at this commit is a Git LFS pointer for a 155324-byte file. Not run or reproduced for this catalog.",
+      "LICENSE is the MIT license, copyright 2026 Danila Poyarkov and OpenPencil contributors. The README says the cloud server, relay, and administration under packages/cloud are Apache License 2.0, while the protocol client those editors use stays MIT."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/open-pencil/open-pencil/blob/97bb94b2e78b57222bbdf665fb3f8b5b7741fd39/tests/e2e/canvas/text/path-visual.spec.ts",
+      "https://github.com/open-pencil/open-pencil/blob/97bb94b2e78b57222bbdf665fb3f8b5b7741fd39/playwright.config.ts",
+      "https://github.com/open-pencil/open-pencil/blob/97bb94b2e78b57222bbdf665fb3f8b5b7741fd39/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "openevv-viavoice-case",
+    "name": "OpenEVV: IBM Embedded ViaVoice rebuilt as portable C",
+    "url": "https://github.com/Mudb0y/openevv",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Rebuilds IBM Embedded ViaVoice, the engine screen-reader users know as Eloquence, as portable C. The shipped baselines under test/samples, including test/samples/enus.sha256, are the recorded answers; test/matrix.sh holds the engine against those files.",
+    "description_zh": "把屏幕阅读器用户称为 Eloquence 的 IBM Embedded ViaVoice 重写为可移植 C。随仓库提供的对照在 test/samples，其中包括 test/samples/enus.sha256；test/matrix.sh 把引擎与这些文件核对。",
+    "evidence_url": "https://github.com/Mudb0y/openevv/blob/d2bc0c68a7769967bb3dfdc86701f69bc53767b4/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit d2bc0c68a7769967bb3dfdc86701f69bc53767b4. The README says the audio once matched IBM's binary byte for byte across every test case of every language, from both a 32-bit and a 64-bit build, for all nine languages the SDK shipped. It says the engine is now being changed on purpose, so the maintained check is a recorded answer for each of 979 cases rather than IBM's binary. Nothing is borrowed at build time.",
+      "docs/testing.md says test/matrix.sh is the gate and holds 1,291 cases over twelve languages against previously recorded answers, and that test/suite.sh is the oracle against IBM's engine and wants Wine and the SDK. The baselines are in test/samples. test/samples/enus.sha256 is one of those files. Not run or reproduced for this catalog.",
+      "The README says the project's own engine, front ends, tools, tests, and documents are under the MIT licence in LICENSE. It says the language data under lang/ is transcribed from IBM's objects and is not covered by that licence, and that src/klatt_tables.c and src/eci_xmltok_tables.c are IBM's data as well."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Mudb0y/openevv/blob/d2bc0c68a7769967bb3dfdc86701f69bc53767b4/docs/testing.md",
+      "https://github.com/Mudb0y/openevv/blob/d2bc0c68a7769967bb3dfdc86701f69bc53767b4/test/samples/enus.sha256",
+      "https://github.com/Mudb0y/openevv/blob/d2bc0c68a7769967bb3dfdc86701f69bc53767b4/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "hypercard-122-recomp-case",
+    "name": "HyperCard 1.2.2: a static recompilation of the classic Mac app",
+    "url": "https://github.com/sp00nznet/macrecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Statically recompiles HyperCard 1.2.2, a classic Mac application. The user supplies the file named HyperCard; tools/corpus.json records 2642 covered call sites out of 3166, and tools/conformance.py fails if that count drops.",
+    "description_zh": "静态重编译经典 Mac 应用 HyperCard 1.2.2。用户提供名为 HyperCard 的文件；tools/corpus.json 记下 3166 个调用点中已覆盖 2642 个，tools/conformance.py 在这个数字下降时失败。",
+    "evidence_url": "https://github.com/sp00nznet/macrecomp/blob/708adac787c07f96a87002a0479d3e67a12464c2/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 708adac787c07f96a87002a0479d3e67a12464c2. The README's coverage table lists HyperCard 1.2.2 as 326 KB, 22 CODE segments, 418 distinct traps, 3166 call sites, and 83 percent of sites covered. A later paragraph says all 21 CODE segments lift at 97 to 100 percent instruction coverage. Both figures are what that README states.",
+      "tools/corpus.json names the file HyperCard and records sites_covered 2642 of sites_total 3166. tools/conformance.py returns 1 if covered sites drop below that baseline. The README says corpus images are copyrighted Mac media and live outside the repository, so a missing title reports SKIP. Not run or reproduced for this catalog.",
+      "LICENSE is the MIT license. The README says the toolkit ships no Apple ROM, System software, or copyrighted disc data."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sp00nznet/macrecomp/blob/708adac787c07f96a87002a0479d3e67a12464c2/tools/corpus.json",
+      "https://github.com/sp00nznet/macrecomp/blob/708adac787c07f96a87002a0479d3e67a12464c2/tools/conformance.py",
+      "https://github.com/sp00nznet/macrecomp/blob/708adac787c07f96a87002a0479d3e67a12464c2/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "blind-walleye-static-case",
+    "name": "The Blind Walleye: a static rebuild of the marketing site",
+    "url": "https://github.com/jpiercedev/blind-walleye",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Rebuilds the public Blind Walleye site as a Next.js app. The shipped capture source/pages/index.html is one input page, and node scripts/compare-visual.mjs pixel-diffs the replica against the capture and exits 1 if any page exceeds the diff threshold.",
+    "description_zh": "把公开的 Blind Walleye 网站重建为 Next.js 应用。随仓库提供的抓取页 source/pages/index.html 是其中一页输入，node scripts/compare-visual.mjs 把复刻页与抓取页做像素比较，任一页超过阈值就以状态 1 退出。",
+    "evidence_url": "https://github.com/jpiercedev/blind-walleye/blob/4852d2c9a818359996fd8ee2119d39480508938f/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 4852d2c9a818359996fd8ee2119d39480508938f. The README calls the project a 1:1 copy of https://www.theblindwalleye.com, statically rendered in Next.js. source/ holds the capture. The app prerenders /, /menu, and /events, and the captured 404 is rendered as well. source/pages contains index.html, menu.html, events.html, and __404.html.",
+      "The README says node scripts/compare-visual.mjs screenshots the captured source and the replica at 1440, 991, and 390 pixels wide. The script's default MAX_DIFF_PCT is 0.5, and it exits 1 when any page's diff percent is above that threshold. Not run or reproduced for this catalog.",
+      "The pinned root listing has no LICENSE file, and the README states no license."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jpiercedev/blind-walleye/blob/4852d2c9a818359996fd8ee2119d39480508938f/source/pages/index.html",
+      "https://github.com/jpiercedev/blind-walleye/blob/4852d2c9a818359996fd8ee2119d39480508938f/scripts/compare-visual.mjs"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "omnispeak-keen-case",
+    "name": "Omnispeak: a reimplementation of Commander Keen episodes 4-6",
+    "url": "https://github.com/sulix/omnispeak",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements Commander Keen episodes 4, 5, and 6 and aims to stay compatible with DOS savegames. The user supplies the original data files; tests/testdump.sh plays a demo and diffs the dump against a shipped file such as tests/demo0.dump4.",
+    "description_zh": "重实现 Commander Keen 第 4、5、6 代，并力求与 DOS 版存档兼容。用户提供原版数据文件；tests/testdump.sh 播放一段演示，并把转储与随仓库提供的文件（例如 tests/demo0.dump4）做 diff。",
+    "evidence_url": "https://github.com/sulix/omnispeak/blob/b88e13b9b393ad60b0c9496c0435a22adf2ccc3b/README",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit b88e13b9b393ad60b0c9496c0435a22adf2ccc3b. The README says Omnispeak aims to be a pixel-perfect, bug-for-bug clone of episodes 4, 5, and 6 and to stay compatible with DOS savegames. Supported versions are Keen 4 v1.4 EGA, Keen 5 v1.4 EGA, Keen 6 v1.4 EGA, and Keen 6 v1.5 EGA. The player copies GAMEMAPS.CK?, EGAGRAPH.CK?, and AUDIO.CK? next to the omnispeak binary. Those game files are not in the repository. The README points at the Keen 4 v1.4 EGA shareware zip https://davidgow.net/keen/4keen14.zip.",
+      "tests/testdump.sh runs ./omnispeak /EPISODE <episode> /PLAYDEMO <demo> /DUMPFILE <temp> and diffs that dump with tests/demo<demo>.dump<episode>. On a match it prints Dump matched for Episode <episode>, Demo <demo>. tests/demo0.dump4 is one of those reference files. Not run or reproduced for this catalog.",
+      "LICENSE is the GNU GPL version 2 text."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sulix/omnispeak/blob/b88e13b9b393ad60b0c9496c0435a22adf2ccc3b/tests/testdump.sh",
+      "https://github.com/sulix/omnispeak/blob/b88e13b9b393ad60b0c9496c0435a22adf2ccc3b/tests/demo0.dump4",
+      "https://github.com/sulix/omnispeak/blob/b88e13b9b393ad60b0c9496c0435a22adf2ccc3b/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "legend-of-mana-decomp-case",
+    "name": "Legend of Mana: a matching decompilation of the PlayStation game",
+    "url": "https://github.com/celophi/lom-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A matching decompilation of Legend of Mana on the PlayStation. The user supplies the North American executable SLUS_010.13, SHA-1 d11dfdd50d412ac3fa3e2eb80fbde138da118f27; make verify-bins checks the rebuilt main executable and overlays against the disc files.",
+    "description_zh": "PlayStation 游戏 Legend of Mana 的匹配反编译。用户提供北美可执行文件 SLUS_010.13，SHA-1 为 d11dfdd50d412ac3fa3e2eb80fbde138da118f27；make verify-bins 把重建的主程序和覆盖模块与光盘文件核对。",
+    "evidence_url": "https://github.com/celophi/lom-decomp/blob/c34db9803ae8cb58d45060a8246e161de690ece3/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit c34db9803ae8cb58d45060a8246e161de690ece3. The README says both the North American and Japanese releases are 100 percent matched. North America is disc SLUS-01013, main executable SLUS_010.13, SHA-1 d11dfdd50d412ac3fa3e2eb80fbde138da118f27. Japan is SLPS-02170, main executable SLPS_021.70, SHA-1 b067188a92e4de9a4db7bb7e5343c757e9884bfa. The repository does not include the game executable. disc/ is gitignored.",
+      "make verify-bins checks the North American modules, and make verify-bins VERSION=jp checks the Japanese modules. The README says the main executable and all 17 overlays are fully linked, and that the Psy-Q SDK libraries are still linked from the original assembly. Not run or reproduced for this catalog.",
+      "LICENSE is the MIT license, copyright 2026 Christopher Harris (celophi). The retail game is not included."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/celophi/lom-decomp/blob/c34db9803ae8cb58d45060a8246e161de690ece3/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "kingdom-hearts-ps2-decomp-case",
+    "name": "Kingdom Hearts De:Compiled — a decompilation of the PS2 Japanese and Final Mix executables",
+    "url": "https://github.com/ethteck/kh1",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A decompilation of the PlayStation 2 Kingdom Hearts executables. The user supplies the original Japanese ELF SLPS_251.05; ninja rebuilds a ROM and sha1sum checks it against config/jp/checksum.sha1.",
+    "description_zh": "PlayStation 2 上 Kingdom Hearts 可执行文件的反编译。用户提供日版 ELF SLPS_251.05；ninja 重建 ROM，并用 sha1sum 对照 config/jp/checksum.sha1。",
+    "evidence_url": "https://github.com/ethteck/kh1/blob/0df3b6586d2d0b4dab39d1eb7e9859c464934e19/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 0df3b6586d2d0b4dab39d1eb7e9859c464934e19. The README names the original Japanese ELF SLPS_251.05, SHA-1 9dabbf867a7ec2a030df99ba1ed969f2deef0488, and Final Mix SLPS_251.98, SHA-1 e70bda789916142aafb53d85cef2e806b35ad8d8. The user extracts the ELF from their own disc. The repository does not publish the executable or an ISO.",
+      "configure.py adds a ninja rule that runs sha1sum -c, and the default build is the ROM's .ok file from that rule. config/jp/checksum.sha1 expects build/jp/SLPS_251.05.rom to match cb85dbab6c05667ed11d94e94abfa079baaf12c2. config/fm/checksum.sha1 expects build/fm/SLPS_251.98.rom to match b62bf252fdaf0b1a726668e28c244e1d83bcb146. Not run or reproduced for this catalog.",
+      "The pinned root listing has no LICENSE file, and the README states no license. The game itself is not included."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ethteck/kh1/blob/0df3b6586d2d0b4dab39d1eb7e9859c464934e19/configure.py",
+      "https://github.com/ethteck/kh1/blob/0df3b6586d2d0b4dab39d1eb7e9859c464934e19/config/jp/checksum.sha1",
+      "https://github.com/ethteck/kh1/blob/0df3b6586d2d0b4dab39d1eb7e9859c464934e19/config/fm/checksum.sha1"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "destruction-derby-64-decomp-case",
+    "name": "Destruction Derby 64: a matching decompilation of the US ROM",
+    "url": "https://github.com/murkantor/Destruction-Decomp-64",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A matching decompilation of the US Nintendo 64 ROM of Destruction Derby 64. The user supplies baserom.z64, SHA-1 a2c0799e13566d1b723299592cfcac9387f25fa7; the default make target rebuilds the ROM and sha1sum checks it against dd64.sha1.",
+    "description_zh": "任天堂 64 美版 Destruction Derby 64 的匹配反编译。用户提供 baserom.z64，SHA-1 为 a2c0799e13566d1b723299592cfcac9387f25fa7；默认的 make 目标重建 ROM，并用 sha1sum 对照 dd64.sha1。",
+    "evidence_url": "https://github.com/murkantor/Destruction-Decomp-64/blob/4820d11b3aeb1788e3de1b281a584a7b236bb734/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 4820d11b3aeb1788e3de1b281a584a7b236bb734. The README says the builder supplies Destruction Derby 64 (USA) as baserom.z64 with that SHA-1, and that the ROM is not in the repository. It says a matching build prints build/dd64.z64: OK, and that 1510 of 1548 functions are C. It also describes the repository as a hands-off agent experiment whose author did not review the code.",
+      "The Makefile's default goal is check, which runs sha1sum -c on dd64.sha1. That file expects build/dd64.z64 to have the same SHA-1. Not run or reproduced for this catalog.",
+      "The pinned root listing has no LICENSE file, and the README states no license."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/murkantor/Destruction-Decomp-64/blob/4820d11b3aeb1788e3de1b281a584a7b236bb734/Makefile",
+      "https://github.com/murkantor/Destruction-Decomp-64/blob/4820d11b3aeb1788e3de1b281a584a7b236bb734/dd64.sha1"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "pik1wii-decomp-case",
+    "name": "New Play Control! Pikmin: a decompilation of the Wii USA DOL",
+    "url": "https://github.com/projectPiki/pik1wii",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A work-in-progress decompilation of the Wii USA release of New Play Control! Pikmin. The user copies a disc image to orig/R9IE01; config/R9IE01/build.sha1 expects the rebuilt main.dol to match SHA-1 551306334183a633d0fde434a930b98809433b70.",
+    "description_zh": "Wii 美版 New Play Control! Pikmin 的进行中反编译。用户把光盘镜像复制到 orig/R9IE01；config/R9IE01/build.sha1 要求重建的 main.dol 符合 SHA-1 551306334183a633d0fde434a930b98809433b70。",
+    "evidence_url": "https://github.com/projectPiki/pik1wii/blob/051c29750ee179f7b6d97bfda094febdb0191a0f/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit 051c29750ee179f7b6d97bfda094febdb0191a0f. The README calls the project a work-in-progress decompilation of New Play Control! Pikmin (Wii, 2009) and names R9IE01 as the default USA version. It says the repository contains no game assets. The user copies a disc image to orig/R9IE01. Named formats include ISO (GCM), RVZ, WIA, WBFS, CISO, NFS, GCZ, and TGC.",
+      "config/R9IE01/config.yml records hash 551306334183a633d0fde434a930b98809433b70 for sys/main.dol. config/R9IE01/build.sha1 expects that same SHA-1 for build/R9IE01/main.dol. configure.py sets check_sha_path to config/<version>/build.sha1. Not run or reproduced for this catalog.",
+      "LICENSE begins with CC0 1.0 Universal. That dedication is for the decompilation project, not for the game."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/projectPiki/pik1wii/blob/051c29750ee179f7b6d97bfda094febdb0191a0f/config/R9IE01/config.yml",
+      "https://github.com/projectPiki/pik1wii/blob/051c29750ee179f7b6d97bfda094febdb0191a0f/config/R9IE01/build.sha1",
+      "https://github.com/projectPiki/pik1wii/blob/051c29750ee179f7b6d97bfda094febdb0191a0f/configure.py",
+      "https://github.com/projectPiki/pik1wii/blob/051c29750ee179f7b6d97bfda094febdb0191a0f/LICENSE"
+    ],
+    "added_at": "2026-11-03"
+  },
+  {
+    "id": "gow-psp-recomp-case",
+    "name": "God of War PSP: native PC ports — Chains of Olympus and Ghost of Sparta",
+    "url": "https://github.com/DrummingBird1/gow-psp-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Recompiles the US PSP releases of God of War: Chains of Olympus and Ghost of Sparta into a native Windows program from a disc image the user supplies. docs/phase11-level-tour.md reports an automated tour of 75 Chains of Olympus areas and a save titled The Falls of Oceanum that loaded back.",
+    "description_zh": "把用户自备的美版 PSP 光盘重编译为 Windows 原生程序，游戏是 God of War: Chains of Olympus 和 Ghost of Sparta。docs/phase11-level-tour.md 报告自动走查了 Chains of Olympus 的 75 个区域，并且标题为 The Falls of Oceanum 的存档能够读回。",
+    "evidence_url": "https://github.com/DrummingBird1/gow-psp-recomp/blob/ef886b037bf936921835f563e03008dea87dfa3e/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Commit ef886b037bf936921835f563e03008dea87dfa3e. The README says the games run natively on Windows from the user's own US disc image, .chd or .iso, product codes UCUS98653 and UCUS98737. It describes a static recompilation: Allegrex code from the disc is translated into C and is not run in an emulator. No game content is in the repository. The status section calls this preview v1.2.0 and says neither game has had a full playthrough.",
+      "docs/phase11-level-tour.md says the Chains of Olympus areas were checked without playing them: 75 areas the game reaches, 70 in the story and 5 challenges. It says a script reached the altar in foa_path_a, the game saved The Falls of Oceanum, and Load Game returned Kratos there. Not run or reproduced for this catalog.",
+      "The README identifies the project as GPL-3.0-or-later. LICENSE is the GNU GPL version 3 text. The README says the project is not affiliated with Sony Interactive Entertainment or Santa Monica Studio."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/DrummingBird1/gow-psp-recomp/blob/ef886b037bf936921835f563e03008dea87dfa3e/docs/phase11-level-tour.md",
+      "https://github.com/DrummingBird1/gow-psp-recomp/blob/ef886b037bf936921835f563e03008dea87dfa3e/LICENSE"
+    ],
+    "added_at": "2026-11-03"
   }
 ]

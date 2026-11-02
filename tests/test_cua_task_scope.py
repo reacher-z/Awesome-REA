@@ -27,26 +27,26 @@ class LongTaskScopeTests(unittest.TestCase):
         by_target = Counter((record.get('targets') or ['?'])[0] for record in long_cases)
         self.assertEqual(
             (len(catalog), len(SHORT), len(NOT_A_TASK), len(long_cases), dict(sorted(by_target.items()))),
-            (302, 18, 4, 280, {
-                'app': 35, 'binary': 4, 'firmware': 15, 'game': 195, 'protocol': 25, 'website': 6,
+            (317, 18, 4, 295, {
+                'app': 35, 'binary': 6, 'firmware': 15, 'game': 201, 'protocol': 29, 'website': 9,
             }),
         )
         self.assertLess(len(long_cases), TARGET)
         english = (ROOT / 'README.md').read_text(encoding='utf-8')
         chinese = (ROOT / 'README.zh-CN.md').read_text(encoding='utf-8')
         self.assertIn(
-            '**280** of 302 curated cases are whole-program work large enough for a computer-use session past three hours, against a target of **1,000** (game 195, app 35, protocol 25, firmware 15, website 6, native binary 4).',
+            '**295** of 317 curated cases are whole-program work large enough for a computer-use session past three hours, against a target of **1,000** (game 201, app 35, protocol 29, firmware 15, website 9, native binary 6).',
             english,
         )
         self.assertIn(
-            '302 条精选案例中有 **280** 条属于完整程序规模，足够一次超过三小时的计算机使用会话，目标是 **1,000**（游戏 195、应用 35、协议 25、固件 15、网站 6、原生二进制 4）。',
+            '317 条精选案例中有 **295** 条属于完整程序规模，足够一次超过三小时的计算机使用会话，目标是 **1,000**（游戏 201、应用 35、协议 29、固件 15、网站 9、原生二进制 6）。',
             chinese,
         )
         self.assertIn('assets/benchmark-map.svg', english)
         self.assertIn('https://awesomerea.org/zh/benchmark-map/', chinese)
         grouped = long_by_family(catalog)
         self.assertEqual({key: len(records) for key, records in grouped.items()}, {
-            'game': 195, 'app': 35, 'protocol': 25, 'firmware': 15, 'website': 6, 'binary': 4,
+            'game': 201, 'app': 35, 'protocol': 29, 'firmware': 15, 'website': 9, 'binary': 6,
         })
         self.assertEqual(family_slots(), {
             'game': 167, 'app': 167, 'protocol': 167, 'firmware': 167, 'website': 166, 'binary': 166,
@@ -54,7 +54,7 @@ class LongTaskScopeTests(unittest.TestCase):
         svg = render_svg(grouped)
         self.assertEqual((ROOT / 'assets/benchmark-map.svg').read_text(encoding='utf-8'), svg)
         self.assertEqual((ROOT / 'site/benchmark-map.svg').read_text(encoding='utf-8'), svg)
-        self.assertIn('280 of 1,000 slots have a long task', svg)
+        self.assertIn('295 of 1,000 slots have a long task', svg)
         self.assertIn('<h1>Benchmark map</h1>', (ROOT / 'site/benchmark-map/index.html').read_text(encoding='utf-8'))
         self.assertIn('<h1>基准图</h1>', (ROOT / 'site/zh/benchmark-map/index.html').read_text(encoding='utf-8'))
 
