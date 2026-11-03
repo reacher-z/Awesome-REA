@@ -4,7 +4,7 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**201 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**202 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -16,7 +16,7 @@
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
 - [固件分析与重托管](#papers-firmware-analysis) (17)
-- [协议推断与分析](#papers-protocol-analysis) (18)
+- [协议推断与分析](#papers-protocol-analysis) (19)
 
 每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。部分论文也出现在精选资源目录中，两者数量不可相加。
 
@@ -255,6 +255,7 @@
 - [**BinaryInferno：面向二进制报文格式字段推断的语义驱动方法**](https://www.ndss-symposium.org/ndss-paper/binaryinferno-a-semantic-driven-approach-to-field-inference-for-binary-message-formats/) - 无需对可执行程序插桩，即可从静态报文样本推断部分二进制报文格式。 <sub>原题：*BinaryInferno: A Semantic-Driven Approach to Field Inference for Binary Message Formats* · NDSS 2023 · 会议论文 · Jared Chandler 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_s131_paper.pdf) · [代码](https://github.com/binaryinferno/binaryinferno) · [完整条目](https://awesomerea.org/zh/papers/paper-binaryinferno/)</sub>
 - [**越仔细观察，学到的越多：用于协议状态机学习的灰盒方法**](https://doi.org/10.1145/3548606.3559365) - StateInspector 将主动消息查询与运行时内存快照结合起来，学习协议的 Mealy 状态机，无需目标实现的源代码。 <sub>原题：*The Closer You Look, The More You Learn: A Grey-box Approach to Protocol State Machine Learning* · ACM CCS 2022 · 会议论文 · Chris McMahon Stone 等 · [PDF](https://tomchothia.gitlab.io/Papers/greyboxstatelearning_ccs2022.pdf) · [代码](https://github.com/ChrisMcMStone/state-inspector) · [完整条目](https://awesomerea.org/zh/papers/paper-stateinspector/)</sub>
 - [**基于自动机学习的蓝牙设备指纹识别与分析**](https://doi.org/10.1007/s10703-023-00425-y) - 通过主动自动机学习，为实体外设上的低功耗蓝牙（BLE）协议实现推断 Mealy 状态机模型。 <sub>原题：*Fingerprinting and analysis of Bluetooth devices with automata learning* · Formal Methods in System Design 2022 · 期刊论文 · Andrea Pferscher 等 · [PDF](https://arxiv.org/pdf/2211.16074v2) · [代码](https://github.com/apferscher/ble-learning) · [完整条目](https://awesomerea.org/zh/papers/paper-ble-automata-learning/)</sub>
+- [**将不合规视为偏离行为：面向 4G LTE 蜂窝设备的自动化黑盒不合规检查器**](https://dl.acm.org/doi/10.1145/3460120.3485388) - DIKEUE 通过差分测试而非预先定义的安全属性，检查商用手机和调制解调器中 4G LTE 控制面（NAS 与 RRC）实现的不合规之处。 <sub>原题：*Noncompliance as Deviant Behavior: An Automated Black-box Noncompliance Checker for 4G LTE Cellular Devices* · ACM CCS 2021 · 会议论文 · Syed Rafiul Hussain 等 · [PDF](https://syed-rafiul-hussain.github.io/wp-content/uploads/2021/09/dikeue.pdf) · [代码](https://github.com/SyNSec-den/DIKEUE/tree/5975807883265e275ef533f18a0c21b56e3b4e8a) · [完整条目](https://awesomerea.org/zh/papers/paper-dikeue/)</sub>
 - [**NetPlier：基于报文记录的概率网络协议逆向工程**](https://www.ndss-symposium.org/ndss-paper/netplier-probabilistic-network-protocol-reverse-engineering-from-message-traces/) - 通过多序列比对与概率式关键字段推断，按类型对网络报文聚类，并在十种协议上评测及开展后续格式与状态机分析。 <sub>原题：*NetPlier: Probabilistic Network Protocol Reverse Engineering from Message Traces* · NDSS 2021 · 会议论文 · Yapeng Ye 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/ndss2021_4A-5_24531_paper.pdf) · [代码](https://github.com/yapengye/NetPlier) · [完整条目](https://awesomerea.org/zh/papers/paper-netplier/)</sub>
 - [**无线协议自动逆向工程**](https://www.usenix.org/conference/woot19/presentation/pohl) - 从解调后的物理层捕获数据推断专有无线协议的报文格式：先依据前导码和同步字对齐报文，再结合 RSSI 与专用引擎标注长度、地址、序列号和校验和字段，并可利用已知地址或字段位置等先验信息。 <sub>原题：*Automatic Wireless Protocol Reverse Engineering* · 13th USENIX Workshop on Offensive Technologies (WOOT 19) 2019 · 会议论文 · Johannes Pohl 等 · [PDF](https://www.usenix.org/system/files/woot19-paper_pohl.pdf) · [代码](https://github.com/jopohl/urh) · [完整条目](https://awesomerea.org/zh/papers/paper-wireless-protocol-re/)</sub>
 - [**NEMESYS：通过分析单条报文的内在结构逆向推断网络报文语法**](https://www.usenix.org/conference/woot18/presentation/kleber) - 根据单条二进制协议报文内比特一致性的变化，推断近似字段边界，并提出格式匹配分数，将推断的分段结果与已知协议解析器进行比较。 <sub>原题：*NEMESYS: Network Message Syntax Reverse Engineering by Analysis of the Intrinsic Structure of Individual Messages* · 12th USENIX Workshop on Offensive Technologies (WOOT 18) 2018 · 会议论文 · Stephan Kleber 等 · [PDF](https://www.usenix.org/system/files/conference/woot18/woot18-paper-kleber.pdf) · [代码](https://github.com/vs-uulm/nemesys) · [完整条目](https://awesomerea.org/zh/papers/paper-nemesys/)</sub>
