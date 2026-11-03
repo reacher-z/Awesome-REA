@@ -7479,5 +7479,14 @@
       "该应用还具备仅限台架使用的发送功能，受默认关闭的全局 ARM TX 开关和屏蔽 ID 列表约束；README 限定只能在隔离的台架环境中使用，此处不作进一步介绍。MCP 工具无法发送报文。",
       "README 的测试部分报告 753 个 pytest 测试通过（徽章仍写 578），另有与 can-isotp、udsoncan 和 can-j1939 的互操作测试，以及针对公开真实记录的 99 项检查；诊断请求只在脚本模拟的应答端上测试过。采用 MIT 许可证；NMEA 2000 表源自 CANboat（Apache-2.0），cereal 模式定义来自 comma.ai（MIT）。本次审阅未运行测试，也未打开任何抓包。"
     ]
+  },
+  "facedancer": {
+    "name": "Facedancer USB 设备仿真与代理库",
+    "requirements": [
+      "需要用 BACKEND 变量选择受支持的板卡：Cynthion（cynthion）、GreatFET One 及其他 LPC4330 板卡（greatfet）、Facedancer21 等基于 GoodFET 的 Facedancer（goodfet）、树莓派 Raspdancer 板卡（raspdancer），或 HydraDancer 与 HydraUSB3（hydradancer）。README 称基于 MAX3420/MAX3421 的板卡无法仿真较复杂的设备，也不能充当 USBProxy 中间人设备，HydraDancer 板卡不支持主机模式。",
+      "审阅时最新版本为 3.1.3，于 2026-05-22 发布在 GitHub 和 PyPI，与所审阅的 main 提交相同；pyproject.toml 要求 Python 3.10+，并依赖 pyusb、libusb1、pyserial、prompt-toolkit 和 hid-parser。README 称 Facedancer 3.0 无法在 Windows 上运行、仅支持 GNU/Linux，而入门指南把这一警告限定为在 Windows 控制主机上使用 GreatFET，代理指南则称在 macOS 上须以 root 身份运行 USBProxy 才能从系统接管被代理的设备。",
+      "USBProxy 需要被代理的真实设备，并按其厂商 ID 和产品 ID 识别；由分析者编写的过滤器决定转发、记录或修改哪些内容。README 称代理功能已完成，但还需更多文档。仓库只包含 Python 源码、示例、测试和文档，不含板卡固件。只应对自己拥有或已获授权测试的主机和设备进行仿真和代理。",
+      "采用 BSD-3-Clause 许可。本次未连接任何硬件，也未采集 USB 流量。"
+    ]
   }
 }
