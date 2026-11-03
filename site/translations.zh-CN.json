@@ -7803,5 +7803,13 @@
       "输入是分析者自备的 APK。列表和源码类工具默认设有上限，以控制响应大小；README 指出敏感调用扫描无法发现反射调用和改名封装的操作。仓库提交的测试样本 misc/DivaApplication.apk 是刻意含漏洞的 DIVA 练习应用；需要更大生产 APK 的测试在缺少该文件时会跳过，README 报告 92 项运行、4 项跳过。",
       "没有许可证文件：README 只说明 JADX 库采用 Apache-2.0，因此服务本身的代码未声明复用条款。README 将其定位为防御性安全分析工具，并以 Claude 演示其用法；未提及使用 REA，本次审阅未运行任何内容。"
     ]
+  },
+  "payload-dumper-go": {
+    "name": "payload-dumper-go Android OTA 载荷提取工具",
+    "requirements": [
+      "审阅时最新版本为 2.1.0，发布于 2026-09-23，与所审阅的 main 提交相同，提供 Linux（amd64、amd64 AVX2、arm64、armv7）、macOS（amd64、amd64 AVX2、arm64）和 Windows（amd64、amd64 AVX2、arm64）预构建二进制及校验和文件；README 还列出了 Homebrew 软件包。更新日志称自 2.0.2 改用 Go 1.27 起，macOS 版本需要 macOS 13 或更高版本。README 要求系统安装 xz，因为解压通过 cgo 调用 C 版 xz 库；Dockerfile 启用 CGO 并安装 liblzma-dev 进行构建。",
+      "输入为分析者自行提供的 OTA zip 包或 payload.bin；增量 OTA 还需要从对应的前一版完整 OTA 中提取出的基础镜像，通过 -old 传入。README 称目前尚不支持 PUFFDIFF、ZUCCHINI 和 LZ4DIFF 差分操作，受影响的分区（通常是 system、product 或 system_ext）会报错失败，其余分区可用 -p 提取；使用 -no-fec 生成的镜像跳过了 FEC 和最终校验，不得刷入设备。",
+      "仓库不含任何 OTA 镜像：测试使用合成的载荷，另有两个需手动启用的测试通过环境变量（E2E_PAYLOAD、DBG_PAYLOAD）读取真实载荷路径。载荷格式依据 AOSP 的 update_metadata.proto。采用 Apache-2.0 许可。本次未提取任何载荷。"
+    ]
   }
 }
