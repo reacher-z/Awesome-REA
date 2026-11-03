@@ -4,7 +4,7 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**192 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**193 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -13,7 +13,7 @@
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (13)
 - [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (88)
 - [Website reconstruction](#website-reconstruction) (29)
-- [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (13)
+- [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (14)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
 - [Firmware analysis and rehosting](#firmware-analysis-and-rehosting) (16)
 - [Protocol inference and analysis](#protocol-inference-and-analysis) (17)
@@ -185,6 +185,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search**](https://proceedings.neurips.cc/paper_files/paper/2024/hash/6f479ea488e0908ac8b1b37b27fd134c-Abstract-Conference.html) - GIF-MCTS generates executable Python transition and reward models from natural-language environment descriptions and offline state-transition trajectories, using prediction feedback to generate, improve and repair code. <sub>NeurIPS 2024 · Conference paper · Nicola Dainese et al. · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/6f479ea488e0908ac8b1b37b27fd134c-Paper-Conference.pdf) · [Code](https://github.com/nicoladainese96/code-world-models) · [Full entry](https://awesomerea.org/papers/paper-code-world-models/)</sub>
 - [**Combining Functional and Automata Synthesis to Discover Causal Reactive Programs**](https://dl.acm.org/doi/10.1145/3571249) - AutumnSynth synthesizes a program in Autumn, a functional reactive language for Atari-style grid worlds, from a trace of observed frames and user actions such as clicks and arrow keys. <sub>Proceedings of the ACM on Programming Languages (POPL 2023) · Journal article · Ria Das et al. · [PDF](https://dl.acm.org/doi/pdf/10.1145/3571249) · [Full entry](https://awesomerea.org/papers/paper-autumnsynth/)</sub>
 - [**Learning to Simulate Dynamic Environments with GameGAN**](https://ieeexplore.ieee.org/document/9156900) - GameGAN learns an action-conditioned neural simulator of a game from recorded frames and the actions taken, without access to the game’s logic or engine. <sub>CVPR 2020 · Conference paper · Seung Wook Kim et al. · [PDF](https://openaccess.thecvf.com/content_CVPR_2020/papers/Kim_Learning_to_Simulate_Dynamic_Environments_With_GameGAN_CVPR_2020_paper.pdf) · [Code](https://github.com/nv-tlabs/GameGAN_code) · [Full entry](https://awesomerea.org/papers/paper-gamegan/)</sub>
+- [**Mechanics Automatically Recognized via Interactive Observation: Jumping**](https://doi.org/10.1145/3102071.3102104) - Infers platform-game jump mechanics by running controlled experiments in a modified FCEUX NES emulator. <sub>FDG 2017 · Conference paper · Adam Summerville et al. · [PDF](https://arxiv.org/pdf/1707.03865v1) · [Full entry](https://awesomerea.org/papers/paper-nes-jump-mechanics/)</sub>
 - [**Game Engine Learning from Video**](https://www.ijcai.org/proceedings/2017/518) - Learns a rule-based forward simulator of a 2D game from gameplay video. <sub>IJCAI 2017 · Conference paper · Matthew Guzdial et al. · [PDF](https://www.ijcai.org/proceedings/2017/0518.pdf) · [Full entry](https://awesomerea.org/papers/paper-game-engine-learning/)</sub>
 
 <a id="papers-app-reconstruction"></a>
