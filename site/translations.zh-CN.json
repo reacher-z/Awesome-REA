@@ -7414,5 +7414,14 @@
       "输出列出每个候选基址及其抽样匹配百分比，需要分析人员选择并确认。README 唯一的示例把 -dl 提高到 40，约 26 秒后以 81.64% 报告出一个镜像的正确基址。项目没有测试或 CI，README 也未在相同镜像上与 rbasefind 或 basefind.py 比较；本次审阅未扫描任何文件。",
       "采用 MIT 许可证（2022 年，soyer）。被分析的固件适用其自身条款。"
     ]
+  },
+  "paranoid-deobfuscator": {
+    "name": "paranoid-deobfuscator 字符串反混淆工具",
+    "requirements": [
+      "审阅时最新版本为 v3.0.2，发布于 2025-02-18，并于同日上传到 PyPI；可用 pip 或 pipx 安装。pyproject.toml 要求 Python 3.10+，依赖 click 8（8.1.7 或更高）和 NumPy 2（2.1.3 或更高）；CI 在每次推送时于 Python 3.10 至 3.13 上运行 pytest。所审阅的 main 分支 2025-03-26 提交在该版本之后只增加了测试和捐助链接。",
+      "它处理从使用者自备的 APK 或 DEX 文件解码出的 smali 目录（README 搭配 Apktool 或 smali/baksmali 进行解码和重新构建），并会就地覆盖 smali 文件。README 说明只支持用 Paranoid v0.3.0（2020 年 1 月 25 日发布）或更新版本混淆的应用；README 中已被注释掉的 Windows 警告指向 issue #14，该 issue 已关闭。",
+      "若找到多个候选的字符串查询方法或混淆字符串数组，命令会停止，源码称这种情况暂不支持；对无法跟踪的查询调用会记录警告。它只还原字符串常量，不会恢复名称或撤销其他混淆。测试覆盖字符串编码、smali 解析、Paranoid 解码以及 issue #18 的回归问题。",
+      "采用 Apache-2.0 许可证（版权 2024 Giacomo Ferretti）；解码模块注明其由 Paranoid 和 LSParanoid 的 Java 辅助类转换而来。被分析的应用适用其自身条款。本次审阅未运行任何内容；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
