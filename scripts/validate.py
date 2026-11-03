@@ -25,7 +25,7 @@ from source_scope import read_scope, validate_scope
 from validate_papers import validate_papers
 from review_dates import inclusion_date_error, review_date_is_future
 from source_descriptions import validate_description_capture
-from scan_sources import CURATED_SEED_FILES, PAPER_SEED_FILE, RUN_PROVENANCE_POLICY
+from scan_sources import CURATED_SEED_FILES, PAPER_SEED_FILE, TRACKER_SEED_FILE, RUN_PROVENANCE_POLICY
 from case_coverage import catalog_revision_warning, read_case_coverage, validate_case_coverage
 from data_classes import class_errors
 import strict_json
@@ -487,7 +487,8 @@ def scan_run_entries(meta):
 
 def validate_run_provenance(meta, errors):
     """Recorded run provenance names only repository files: scanner code and the seed inputs the run enabled."""
-    seed_flags = {**dict.fromkeys(CURATED_SEED_FILES, 'seed_curated'), PAPER_SEED_FILE: 'seed_papers'}
+    seed_flags = {**dict.fromkeys(CURATED_SEED_FILES, 'seed_curated'), PAPER_SEED_FILE: 'seed_papers',
+                  TRACKER_SEED_FILE: 'seed_tracker'}
     for location, run in scan_run_entries(meta):
         if not isinstance(run, dict) or 'scanner_provenance' not in run:
             continue  # Earlier runs did not record it; absence is never backfilled.
@@ -515,7 +516,7 @@ def validate_scan_discovery(meta, records, errors, failures=()):
     def nonnegative_integer(value):
         return type(value) is int and value >= 0
 
-    methods = {'github-search', 'curated-reference', 'paper-artifact-reference', 'retained-repository-id'}
+    methods = {'github-search', 'curated-reference', 'paper-artifact-reference', 'tracker-audit-reference', 'retained-repository-id'}
     statuses = {'candidate', 'retained-attempt', 'name-collision', 'ineligible', 'failed', 'held', 'frontier-deferred'}
     ledger = meta.get('discovered_repository_ids', [])
     known = {value for value in ledger if isinstance(value, str)} if isinstance(ledger, list) else set()
@@ -630,10 +631,12 @@ def validate_scan_discovery(meta, records, errors, failures=()):
                 if not isinstance(name, str) or not re.fullmatch(r'[a-z0-9-]+/[a-z0-9_.-]+', name):
                     errors.append(f'{where}: expected a lowercase GitHub seed repository name')
                 method = entry.get('method')
-                if method not in ('curated-repository-reference', 'paper-artifact-reference'):
+                if method not in ('curated-repository-reference', 'paper-artifact-reference', 'tracker-audit-reference'):
                     errors.append(f'{where}: invalid seed discovery method')
                 references = entry.get('reference_ids')
-                if not identifier_list(references, r'[a-z0-9]+(?:-[a-z0-9]+)*'):
+                reference_pattern = (r'tracker-[a-z0-9]+(?:-[a-z0-9]+)*'
+                                     if method == 'tracker-audit-reference' else r'[a-z0-9]+(?:-[a-z0-9]+)*')
+                if not identifier_list(references, reference_pattern):
                     errors.append(f'{where}: expected unique reference IDs')
                 artifacts = set()
                 if method == 'paper-artifact-reference':
@@ -644,9 +647,11 @@ def validate_scan_discovery(meta, records, errors, failures=()):
                 if status in {'failed', 'ineligible'} and identifier is not None:
                     errors.append(f'{where}: unsuccessful seed lookups must not expose repository metadata')
                 if status == 'candidate' and isinstance(identifier, str):
-                    evidence = seeds.setdefault(identifier, {'curated': set(), 'papers': set()})
+                    evidence = seeds.setdefault(identifier, {'curated': set(), 'papers': set(), 'tracker': set()})
                     if method == 'curated-repository-reference' and isinstance(references, list):
                         evidence['curated'].update(value for value in references if isinstance(value, str))
+                    elif method == 'tracker-audit-reference' and isinstance(references, list):
+                        evidence['tracker'].update(value for value in references if isinstance(value, str))
                     elif method == 'paper-artifact-reference':
                         evidence['papers'].update(artifacts)
             if status == 'failed' and not nonempty_string(entry.get('reason')):
@@ -685,13 +690,19 @@ def validate_scan_discovery(meta, records, errors, failures=()):
             errors.append(f'{where}: matched queries require search discovery')
         if 'retained-repository-id' in discovery and (not isinstance(identifier, str) or identifier not in resumed):
             errors.append(f'{where}: retained discovery needs a candidate metadata observation')
-        if 'curated-reference' in discovery:
+        reference_methods = [method for method in ('curated-reference', 'tracker-audit-reference') if method in discovery]
+        if reference_methods:
             references = record.get('seed_reference_ids')
-            if (not identifier_list(references, r'[a-z0-9]+(?:-[a-z0-9]+)*')
-                    or not set(references) <= evidence.get('curated', set())):
-                errors.append(f'{where}: curated discovery needs matching seed observations')
+            if not identifier_list(references, r'[a-z0-9]+(?:-[a-z0-9]+)*'):
+                errors.append(f'{where}: seed discovery needs unique reference IDs')
+            else:
+                allowed = set()
+                for method in reference_methods:
+                    allowed |= evidence.get('curated' if method == 'curated-reference' else 'tracker', set())
+                if not set(references) <= allowed:
+                    errors.append(f'{where}: seed discovery needs matching seed observations')
         elif 'seed_reference_ids' in record:
-            errors.append(f'{where}: curated reference IDs require curated discovery')
+            errors.append(f'{where}: reference IDs require a seed discovery method')
         if 'paper-artifact-reference' in discovery:
             artifacts = artifact_references(record.get('seed_paper_references'), record.get('seed_paper_ids'), where)
             if not artifacts or not artifacts <= evidence.get('papers', set()):
@@ -854,7 +865,7 @@ def validate_source_index(document, errors, *, allow_incomplete=False):
                 if (all(nonnegative_integer(value) for value in (queued, retained_successes, retained_failures, meta.get('unique_repos')))
                         and queued > meta['unique_repos'] - retained_successes - retained_failures):
                     errors.append('Source index current_run README queue exceeds known unretained repository IDs.')
-            for field in ('seed_curated', 'seed_papers'):
+            for field in ('seed_curated', 'seed_papers', 'seed_tracker', 'skip_retained_metadata'):
                 if field in run and not isinstance(run[field], bool):
                     errors.append(f'Source index current_run {field} must be a boolean.')
             if 'retained_unattempted_repository_ids' in run:
