@@ -7174,5 +7174,15 @@
       "需自行提供待分析的混淆脚本。Examples 中的文本文件取自简短代码片段、javascript-obfuscator 的示例脚本（BSD-2-Clause）和 javascript-algorithms（MIT），并附有这两份许可证。",
       "MIT 许可证（LICENSE）。它与本目录收录的 ben-sb javascript-deobfuscator 是不同项目，后者的 npm 包同样名为 js-deobfuscator；本项目需从仓库或发布版程序使用。本条目未对任何脚本进行反混淆。"
     ]
+  },
+  "a0rfid-uhf-reader-protocol-case": {
+    "name": "a0rfid：A0 协议 UHF RFID 读写头的开源驱动",
+    "requirements": [
+      "所审阅的 main 分支提交日期为 2026-09-17，是仓库两个提交中的第二个，没有标签或发布版本。docs/REVERSE.md 说明了分析过程：反编译厂商 APK，发现应用绕过其 Java 编解码器，经 JNI 调用 libnative-lib.so；再从该库 rfid_encode() 的跳转表读出各指令的字段布局，最后在硬件上确认这些帧。成果是一份协议说明和新的主机端软件；项目没有恢复读写头固件或厂商应用，除 R2000 系列外也未写明读写头型号。",
+      "使用这些工具需要一台兼容 A0 协议、经 CH340 USB 转串口以 115200 8N1 连接的读写头，以及用于测试的标签。重做分析需要厂商自己的软件包和手册，仓库未附带：REVERSE.md 声明仓库不含任何厂商代码，只有在线路上观察到的帧以及据此编写的代码。android/RFID助手.apk 是项目自己的预构建应用，由 android/build.sh 从 android/app 构建。",
+      "Python 工具需要 Python 3 及 pyusb、pyserial。--port USB 使用随附的 ch340_usb.py 用户态驱动，在 macOS 上需要 Homebrew 的 libusb；Linux 也可改用系统自带的 ch341 内核驱动，通过 /dev/ttyUSB0 连接。安卓应用需要 Android 7.0+ 且支持 USB Host；android/build.sh 假定 macOS／Homebrew 路径、JDK 17、Android SDK platform 34 和 build-tools 34.0.0。",
+      "test_offline.py 在无硬件条件下运行 17 项检查，覆盖校验和、帧构造和响应解析，其中几项使用作者从一台报告固件 V2.4.1 的读写头录得的帧；docs/ANDROID.md 报告另有 261 项基于模拟标签的安卓离线检查。作者报告已在一台读写头上确认读写路径，并在一台 DJI Smart Controller Enterprise（Android 7.1.2）上完成应用安装和读取；应用的多存储区写入功能仅经过模拟测试。文档还提到作者的设备偶尔会固件卡死，最大输出功率为 20 dBm。本合集未运行任何工具。",
+      "采用 MIT 许可证（2026 年，a0rfid contributors）；厂商软件、SDK 和读写头固件适用其各自条款。写入、锁定和灭活指令会改变真实标签；本条目只涵盖协议分析和读取路径，不介绍应用的写入流程。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }
