@@ -4,7 +4,7 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**192 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**193 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -13,7 +13,7 @@
 - [逆向工程智能体评测](#papers-agent-evaluation) (13)
 - [反编译与符号恢复](#papers-decompilation) (88)
 - [网站重建](#papers-website-reconstruction) (29)
-- [游戏重建与逆向工程](#papers-game-reconstruction) (13)
+- [游戏重建与逆向工程](#papers-game-reconstruction) (14)
 - [应用重建与分析](#papers-app-reconstruction) (16)
 - [固件分析与重托管](#papers-firmware-analysis) (16)
 - [协议推断与分析](#papers-protocol-analysis) (17)
@@ -185,6 +185,7 @@
 - [**通过蒙特卡洛树搜索引导大语言模型生成代码世界模型**](https://proceedings.neurips.cc/paper_files/paper/2024/hash/6f479ea488e0908ac8b1b37b27fd134c-Abstract-Conference.html) - GIF-MCTS 根据环境的自然语言描述与离线状态转移轨迹生成可执行的 Python 状态转移和奖励模型，并利用预测反馈生成、改进和修复代码。 <sub>原题：*Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search* · NeurIPS 2024 · 会议论文 · Nicola Dainese 等 · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/6f479ea488e0908ac8b1b37b27fd134c-Paper-Conference.pdf) · [代码](https://github.com/nicoladainese96/code-world-models) · [完整条目](https://awesomerea.org/zh/papers/paper-code-world-models/)</sub>
 - [**结合函数合成与自动机合成以发现因果反应式程序**](https://dl.acm.org/doi/10.1145/3571249) - AutumnSynth 根据观察到的画面帧及用户动作（如点击和方向键）构成的轨迹，合成 Autumn 程序；Autumn 是面向 Atari 风格网格世界的函数式反应式语言。 <sub>原题：*Combining Functional and Automata Synthesis to Discover Causal Reactive Programs* · Proceedings of the ACM on Programming Languages (POPL 2023) · 期刊论文 · Ria Das 等 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3571249) · [完整条目](https://awesomerea.org/zh/papers/paper-autumnsynth/)</sub>
 - [**使用 GameGAN 学习模拟动态环境**](https://ieeexplore.ieee.org/document/9156900) - GameGAN 从录制的画面帧及对应动作中学习游戏的动作条件神经模拟器，无需访问游戏逻辑或引擎。 <sub>原题：*Learning to Simulate Dynamic Environments with GameGAN* · CVPR 2020 · 会议论文 · Seung Wook Kim 等 · [PDF](https://openaccess.thecvf.com/content_CVPR_2020/papers/Kim_Learning_to_Simulate_Dynamic_Environments_With_GameGAN_CVPR_2020_paper.pdf) · [代码](https://github.com/nv-tlabs/GameGAN_code) · [完整条目](https://awesomerea.org/zh/papers/paper-gamegan/)</sub>
+- [**通过交互式观察自动识别游戏机制：跳跃**](https://doi.org/10.1145/3102071.3102104) - 该研究在修改后的 FCEUX NES 模拟器中开展受控实验，推断平台游戏的跳跃机制。 <sub>原题：*Mechanics Automatically Recognized via Interactive Observation: Jumping* · FDG 2017 · 会议论文 · Adam Summerville 等 · [PDF](https://arxiv.org/pdf/1707.03865v1) · [完整条目](https://awesomerea.org/zh/papers/paper-nes-jump-mechanics/)</sub>
 - [**从视频中学习游戏引擎**](https://www.ijcai.org/proceedings/2017/518) - 从游戏录像中学习二维游戏的基于规则的前向模拟器。 <sub>原题：*Game Engine Learning from Video* · IJCAI 2017 · 会议论文 · Matthew Guzdial 等 · [PDF](https://www.ijcai.org/proceedings/2017/0518.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-game-engine-learning/)</sub>
 
 <a id="papers-app-reconstruction"></a>
