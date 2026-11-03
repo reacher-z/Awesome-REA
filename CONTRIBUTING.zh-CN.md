@@ -57,6 +57,15 @@ Agent 请先阅读 [AGENTS.md（英文）](AGENTS.md)和 [Agent 投稿与 PR 指
 
 [案例覆盖记录](data/case-coverage.json)与目录记录分开，记录固定版本上游案例合集中的条目，格式见[目录格式指南（英文）](data/README.md)。修改其中的条目后，运行 `python3 scripts/build_case_coverage.py` 重新生成[覆盖摘要](docs/case-coverage.zh-CN.md)，再运行 `python3 scripts/validate.py`。
 
+## 质量评测数据
+
+规则化质量评测使用两个文件，字段见[目录格式](data/README.md#quality-evaluation-data)：
+
+- `data/evaluation-candidates.json`：人工选定的非精选候选。候选不是目录记录，不能用它绕过收录规则；`id` 不能与精选记录重复。
+- `data/quality-evaluations.json`：由 `python3 scripts/quality_scoring.py` 生成。不要手改分数、路由或结果；改评分逻辑后重跑 scorer。
+
+新增或修改 schema/validator 时，先单独提交代码 PR，再提交依赖它的数据。两个文件都存在时，`scripts/validate.py` 会运行质量校验；`python3 scripts/validate_quality_scoring.py` 可以单独检查这一对文件。
+
 ## 来源已复核不等于运行验证
 
 每条记录都要有一手来源和复核日期。`source-reviewed`（来源已复核）只表示已对照项目文档核对说明，不表示已安装、审计或复现该项目。规模更大的 `data/source-index.json` 是自动建立的仓库索引，保留单独的来源记录，不属于精选资源。要把其中的仓库收录为精选，请填写[复核工作表](docs/promotion-worksheet.zh-CN.md)；扫描记录本身不会因此升级。目录记录目前不收录运行或复现结果：所有精选记录都使用 `verification: source-reviewed`，所有论文的 `runtime_tested` 都为 false，也没有单独提交测试运行的格式。可以在 issue 中说明自己运行了什么，帮助审核者核实某个说法，但这些内容不会作为验证结果发布。

@@ -36,6 +36,8 @@ For a resource PR, follow an existing record and the [complete field definitions
 
 For papers, use `data/papers.json` and its separate schema: preserve the original title and full author names, verify publication status and date precision, use only a verified paper DOI/arXiv or supported publisher identity, and state artifact availability and evaluation limits. Do not use a software or dataset DOI as the paper DOI. Read the [paper update guide](paper-updates.md) before adding a second record for a listed preprint.
 
+For rule-based quality data, candidates go in `data/evaluation-candidates.json` and generated results in `data/quality-evaluations.json`. A candidate is not a catalog record. Never hand-edit a result; change the scorer or its schema and re-run it. See [quality evaluation data](../data/README.md#quality-evaluation-data).
+
 ## How do I prepare and validate a PR?
 
 1. Create a branch from the current upstream default branch. Independent resources belong in `data/tool-resources.json`; use `data/rea-resources.json` only for the evidence-backed REA relationships listed in the schema.

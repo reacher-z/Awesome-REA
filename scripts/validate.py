@@ -1310,6 +1310,11 @@ def main():
     # Advisory: a README near GitHub's rendering limit is reported, never failed, so open pull requests keep passing.
     for warning in readme_size_warnings(ROOT):
         print(f'Warning: {warning}', file=sys.stderr)
+    try:
+        from validate_quality_scoring import validate_quality_data
+        errors.extend(validate_quality_data(ROOT))
+    except (OSError, ValueError, KeyError, TypeError) as error:
+        errors.append(f'Quality evaluation data validation failed: {error}')
     if errors:
         print(f'Validation failed with {len(errors)} issue(s):', file=sys.stderr)
         for error in errors:
