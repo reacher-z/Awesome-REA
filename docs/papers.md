@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**197 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**198 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (13)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (89)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (90)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (14)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -119,6 +119,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Augmenting Decompiler Output with Learned Variable Names and Types**](https://www.usenix.org/conference/usenixsecurity22/presentation/chen-qibin) - Introduces DIRTY, a Transformer model that recommends variable names and types from decompiled code and layout information, together with the DIRT corpus for training and evaluation. <sub>USENIX Security 2022 · Conference paper · Qibin Chen et al. · [PDF](https://arxiv.org/pdf/2108.06363) · [Code](https://github.com/CMUSTRUDEL/DIRTY) · [Full entry](https://awesomerea.org/papers/paper-dirty/)</sub>
 - [**jTrans: Jump-Aware Transformer for Binary Code Similarity Detection**](https://dl.acm.org/doi/10.1145/3533767.3534367) - jTrans embeds binary functions for similarity search with a BERT-style Transformer. <sub>ACM ISSTA 2022 · Conference paper · Hao Wang et al. · [PDF](https://arxiv.org/pdf/2205.12713v1) · [Code](https://github.com/vul337/jTrans) · [Full entry](https://awesomerea.org/papers/paper-jtrans/)</sub>
 - [**ExeBench: an ML-scale dataset of executable C functions**](https://dl.acm.org/doi/10.1145/3520312.3534867) - ExeBench is a dataset, not a decompiler. <sub>ACM SIGPLAN MAPS 2022 · Conference paper · Jordi Armengol-Estapé et al. · [PDF](https://dl.acm.org/doi/pdf/10.1145/3520312.3534867) · [Code](https://github.com/jordiae/exebench/tree/8b47d483c2e39ea40a304fbaac46e41a1a14272f) · [Full entry](https://awesomerea.org/papers/paper-exebench/)</sub>
+- [**Elipmoc: Advanced Decompilation of Ethereum Smart Contracts**](https://dl.acm.org/doi/10.1145/3527321) - Elipmoc decompiles Ethereum Virtual Machine bytecode into a structured three-address intermediate representation for security analyses and reverse engineering. <sub>Proceedings of the ACM on Programming Languages (OOPSLA 2022) · Journal article · Neville Grech et al. · [PDF](https://yanniss.github.io/elipmoc-oopsla22.pdf) · [Code](https://github.com/nevillegrech/gigahorse-toolchain) · [Full entry](https://awesomerea.org/papers/paper-elipmoc/)</sub>
 - [**Pop Quiz! Can a Large Language Model Help With Reverse Engineering?**](https://arxiv.org/abs/2202.01142) - Tests whether OpenAI’s Codex model code-davinci-001 can answer reverse-engineering questions about C code in a zero-shot question-and-answer prompt. <sub>arXiv 2022 · Preprint · Hammond Pearce et al. · [PDF](https://arxiv.org/pdf/2202.01142v1) · [Full entry](https://awesomerea.org/papers/paper-pop-quiz-llm-re/)</sub>
 - [**Beyond the C: Retargetable Decompilation using Neural Machine Translation**](https://www.ndss-symposium.org/ndss-paper/auto-draft-298/) - BTC (Beyond The C) treats decompilation as plain-text translation from compiler-emitted x86-64 assembly to source code. <sub>Workshop on Binary Analysis Research (BAR) 2022 · Conference paper · Iman Hosseini et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2022_23009_paper.pdf) · [Code](https://figshare.com/s/2c68b9c181e80f4e3b06) · [Full entry](https://awesomerea.org/papers/paper-beyond-the-c/)</sub>
 - [**Neural reverse engineering of stripped binaries using augmented control flow graphs**](https://dl.acm.org/doi/10.1145/3428293) - Nero predicts names for procedures in stripped x86-64 Linux executables; it does not produce decompiled code. <sub>Proceedings of the ACM on Programming Languages (OOPSLA 2020) · Journal article · Yaniv David et al. · [PDF](https://arxiv.org/pdf/1902.09122v4) · [Code](https://github.com/tech-srl/Nero/tree/7dac9f5748974ea8f39b5f29bb3c7d33f971077e) · [Full entry](https://awesomerea.org/papers/paper-nero/)</sub>
