@@ -7820,5 +7820,15 @@
       "可用 Gradle 的 jar 任务构建；若用 Maven，需先在本地安装仓库附带的修改版 RSyntaxTextArea jar（libs/rsyntaxtextarea-2.6.1.edited.jar）。扩展使用的是旧版 Burp Extender API。Demo/ 目录收录作者自己为会议演示制作的应用和后端（HIP2021_demo.apk、DemoHIP.ipa、DemoHITB.ipa 和 BridaTestAppBackend-0.0.1-SNAPSHOT.jar）、演示用 TLS 证书和密钥，以及导出的演示插件。iOS 演示的 README 提醒，其后端以 root 身份、空密码登录 MySQL，只应在有防火墙隔离的系统或虚拟机中运行。",
       "采用 MIT 许可。本条目所述用途限于分析者自有或已获授权测试的应用和后端。条目不介绍 res/ 下默认的 Android 和 iOS 挂钩集合，README 注明这些代码来自多位 Frida CodeShare 和 GitHub 作者。本次未对任何应用插桩，也未处理任何流量。"
     ]
+  },
+  "debundle": {
+    "name": "debundle JavaScript 打包文件拆包工具",
+    "requirements": [
+      "README 称这是一个已不再维护的研究项目，在实验环境中大多能正常工作，但处理真实环境中的打包文件时经常失败。所审阅的 master 提交日期为 2018-06-16；npm 上 debundle 的最新版本是 2017-09-12 发布的 0.5.4，比仓库的 v0.5.3 标签和 package.json 中的版本更新；未完成的 v2 分支最后更新于 2020 年。",
+      "通过 npm i -g debundle 安装，运行方式为 debundle -i <打包文件> -o <输出目录> -c <配置文件>。package.json 要求 Node 6 及以上，.nvmrc 和 Travis CI 配置使用 Node 6，依赖也是同一时期的版本，如 acorn 4 和 recast 0.5；本次未检查它在当前 Node 版本上的表现。",
+      "只能解析 Browserify 打包文件，以及以数组形式传入模块的 Webpack 打包文件：模块列表不是数组时 Webpack 解码器会中止；其他打包工具未获官方支持，但可用 moduleAst 选项指向布局相同的模块列表。除非在 knownPaths 中指定名称，Webpack 拆出的文件以模块 ID 命名。",
+      "test_bundles/ 目录包含四个小型示例打包文件及其配置和原始源码，CI 通过 test_bundles/run_test.sh 对它们执行拆包；与原始源码比对的部分已被注释掉，因此 CI 只检查拆包能否完成。待拆包的文件需由用户自备，README 的法律提示还提醒，部分服务条款禁止逆向工程。",
+      "package.json 和 npm 软件包声明采用 ISC 许可，但仓库没有许可证文件，GitHub 也未识别出许可证；src/extern/replace-method 是随附的 MIT 许可模块，作者为 Hugh Kennedy。本条目未对任何打包文件拆包，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
