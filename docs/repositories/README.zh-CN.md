@@ -15,7 +15,7 @@
 | [应用 · Android](android.zh-CN.md) | 483 | 57 |
 | [应用 · 托管代码](managed-code.zh-CN.md) | 135 | 5 |
 | [原生二进制](native-analysis.zh-CN.md) | 837 | 137 |
-| [运行时与调试](dynamic-analysis.zh-CN.md) | 150 | 33 |
+| [运行时与调试](dynamic-analysis.zh-CN.md) | 150 | 34 |
 | [固件](firmware.zh-CN.md) | 228 | 36 |
 | [协议](protocol-analysis.zh-CN.md) | 113 | 12 |
 | [通用工具与资源合集](reverse-engineering.zh-CN.md) | 657 | 80 |
