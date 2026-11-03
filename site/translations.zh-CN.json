@@ -7099,5 +7099,15 @@
       "构建解析插件需要 Wireshark 开发头文件、pkg-config 以及 C 编译器；其 Makefile 会将共享库插件安装到 Wireshark 4.2 的插件目录。笔记仅记录协议观察；本次核查既未运行插件，也未连接任何设备。",
       "仓库采用 CC0-1.0（公有领域贡献）许可。DJI、MIMO 与 Osmo 仍为其权利人的商标；所审阅来源未确立任何 AI 或 REA 使用。"
     ]
+  },
+  "reversecore-mcp": {
+    "name": "Reversecore MCP 逆向与安全分析 MCP 服务器",
+    "requirements": [
+      "审阅时最新版本为 v3.0.5，于 2026-09-28 在 GitHub 发布，附带 wheel、源码包、SBOM 和 Sigstore 签名包，同时以 reversecore-mcp 之名发布到 PyPI，并提供 GHCR 镜像。所审阅的 main 提交（2026-10-17）比该标签多 147 个提交，但 pyproject.toml 仍声明 3.0.5。README 中的测试与覆盖率数字（3,069 个测试、88%）是写死的徽章，与 AGENTS.md 中较早的数字不一致。",
+      "需要 Python 3.10–3.12，angr 只在 Python 3.12 上安装。本地安装需在 PATH 中提供 radare2，取证功能还需要 Volatility3、Scapy 和 Sleuth Kit；README 推荐使用已打包各引擎的 Docker 镜像，并提供 x86 与 Apple 芯片的 compose 配置。它列出的宿主为 Linux、macOS 或任意 Docker 环境，至少需要 4 核 CPU、8 GB 内存和 20 GB 存储；Redis 用于任务队列与结果缓存，SQLite 记忆数据库可跨会话保存笔记。",
+      "二进制、内存镜像、PCAP 和磁盘镜像由分析者提供并挂载到工作目录，路径校验将工具访问限定在该目录内。动态分析工具的容器沙箱为可选项，默认关闭；除非设置 MCP_API_KEY，HTTP 模式只接受本机回环地址的客户端。部分工具和提示词面向漏洞利用与 PoC 开发；本条目仅涵盖分析用途。",
+      "CI 运行代码检查、类型检查、Bandit、pip-audit 和 CodeQL，在 Python 3.10–3.12 上运行设有 85% 覆盖率门槛的单元测试，以及安全边界、集成和 MCP 客户端端到端测试，并检查 wheel 的构建与安装；ClusterFuzzLite 和每夜模糊测试另行运行。测试夹具包括带种子、概念验证输入和 ASan 日志的小型合成漏洞 C 程序，scratch/binaries 中只有一个 hello.c 源文件。这些检查覆盖服务器代码本身，不代表模型得出的分析结论准确；本次均未运行。",
+      "采用 MIT 许可；所封装的引擎以及 Docker 镜像中的软件包保留各自的许可证。ORIGINAL_REQUEST.md 记录了 2026-08-22 交给编排智能体的任务说明，要求其分派子智能体完成传输层加固、提示词扩展和输出优化，可见部分代码是借助 AI 智能体开发的。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
