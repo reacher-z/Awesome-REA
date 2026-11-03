@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**189 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**190 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (13)
-- [反编译与符号恢复](#papers-decompilation) (85)
+- [反编译与符号恢复](#papers-decompilation) (86)
 - [网站重建](#papers-website-reconstruction) (29)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (13)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -116,6 +116,7 @@
 - [**利用学习得到的变量名称与类型增强反编译输出**](https://www.usenix.org/conference/usenixsecurity22/presentation/chen-qibin) - 提出 Transformer 模型 DIRTY，根据反编译代码和布局信息推荐变量名与类型，并提供用于训练和评估的 DIRT 语料。 <sub>原题：*Augmenting Decompiler Output with Learned Variable Names and Types* · USENIX Security 2022 · 会议论文 · Qibin Chen 等 · [PDF](https://arxiv.org/pdf/2108.06363) · [代码](https://github.com/CMUSTRUDEL/DIRTY) · [完整条目](https://awesomerea.org/zh/papers/paper-dirty/)</sub>
 - [**jTrans：面向二进制代码相似性检测的跳转感知 Transformer**](https://dl.acm.org/doi/10.1145/3533767.3534367) - jTrans 使用 BERT 风格的 Transformer 为二进制函数生成嵌入，以支持相似性检索。 <sub>原题：*jTrans: Jump-Aware Transformer for Binary Code Similarity Detection* · ACM ISSTA 2022 · 会议论文 · Hao Wang 等 · [PDF](https://arxiv.org/pdf/2205.12713v1) · [代码](https://github.com/vul337/jTrans) · [完整条目](https://awesomerea.org/zh/papers/paper-jtrans/)</sub>
 - [**ExeBench：机器学习规模的可执行 C 函数数据集**](https://dl.acm.org/doi/10.1145/3520312.3534867) - ExeBench 是数据集，而非反编译器。 <sub>原题：*ExeBench: an ML-scale dataset of executable C functions* · ACM SIGPLAN MAPS 2022 · 会议论文 · Jordi Armengol-Estapé 等 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3520312.3534867) · [代码](https://github.com/jordiae/exebench/tree/8b47d483c2e39ea40a304fbaac46e41a1a14272f) · [完整条目](https://awesomerea.org/zh/papers/paper-exebench/)</sub>
+- [**随堂测验！大语言模型能帮助逆向工程吗？**](https://arxiv.org/abs/2202.01142) - 检验 OpenAI 的 Codex 模型 code-davinci-001 能否在零样本问答式提示中回答有关 C 代码的逆向工程问题。 <sub>原题：*Pop Quiz! Can a Large Language Model Help With Reverse Engineering?* · arXiv 2022 · 预印本 · Hammond Pearce 等 · [PDF](https://arxiv.org/pdf/2202.01142v1) · [完整条目](https://awesomerea.org/zh/papers/paper-pop-quiz-llm-re/)</sub>
 - [**超越 C：基于神经机器翻译的可重定向反编译**](https://www.ndss-symposium.org/ndss-paper/auto-draft-298/) - BTC（Beyond The C）将反编译视为从编译器输出的 x86-64 汇编到源码的纯文本翻译，分别在汇编与源码上训练字节对编码分词器，并使用标准 fairseq Transformer。 <sub>原题：*Beyond the C: Retargetable Decompilation using Neural Machine Translation* · Workshop on Binary Analysis Research (BAR) 2022 · 会议论文 · Iman Hosseini 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2022_23009_paper.pdf) · [代码](https://figshare.com/s/2c68b9c181e80f4e3b06) · [完整条目](https://awesomerea.org/zh/papers/paper-beyond-the-c/)</sub>
 - [**基于增强控制流图的剥离符号二进制神经逆向工程**](https://dl.acm.org/doi/10.1145/3428293) - Nero 为剥离符号的 x86-64 Linux 可执行文件中的过程预测名称，并不生成反编译代码。 <sub>原题：*Neural reverse engineering of stripped binaries using augmented control flow graphs* · Proceedings of the ACM on Programming Languages (OOPSLA 2020) · 期刊论文 · Yaniv David 等 · [PDF](https://arxiv.org/pdf/1902.09122v4) · [代码](https://github.com/tech-srl/Nero/tree/7dac9f5748974ea8f39b5f29bb3c7d33f971077e) · [完整条目](https://awesomerea.org/zh/papers/paper-nero/)</sub>
 - [**我们走了多远：C 反编译器反编译正确性测试**](https://dl.acm.org/doi/10.1145/3395363.3397370) - 测试 C 反编译器能否保持程序行为。 <sub>原题：*How far we have come: testing decompilation correctness of C decompilers* · ACM ISSTA 2020 · 会议论文 · Zhibo Liu 等 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3395363.3397370) · [代码](https://github.com/monkbai/DecFuzzer) · [完整条目](https://awesomerea.org/zh/papers/paper-decfuzzer/)</sub>
