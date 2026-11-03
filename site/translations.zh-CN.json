@@ -7154,5 +7154,15 @@
       "输入是分析者已从微控制器中读出的固件镜像；仓库不含任何固件，只有插件本身、MCU 描述 JSON 文件、data_template.json 和两张 README 配图。813 个描述文件中有 812 个为 32 位；16 位的 ATmega328 描述文件未列出外设，另有四个 SPC5 和 AURIX TC27x 芯片的描述文件没有中断向量表；README 说明，若同一系列有多种内存容量，所有型号都按最大 RAM 生成。其他 MCU 需要手工编写描述文件。",
       "采用 Apache-2.0 许可。README 指出 SPC560B64x 是完全手工编写的描述文件，其余文件则只称作 SVD 数据的补充，未说明其生成方式；本次未对照厂商文档核对其中的寄存器与向量，也未加载任何固件。"
     ]
+  },
+  "catprinterble-mxw01-printer-case": {
+    "name": "Cat Printer BLE：重建 MXW01 热敏打印机协议",
+    "requirements": [
+      "在 2025-05-22 的 1.2.0 版本提交处审阅。该工具可使用 Bayer 或 Floyd–Steinberg 抖动打印图像、进纸或退纸，并读取电量、纸张、温度和状态信息；README 称它不是编辑器，且作者手头没有其他型号可测，因此不打算支持其他打印机。",
+      "需要使用者自己的 MXW01 打印机。仓库只包含原创 C# 源码和一张照片；作者分析过的厂商应用、任何反编译代码和通信抓包均未收录，运行时也不需要账号或厂商软件。",
+      "仅支持 Windows：项目面向 Windows 10 build 19041 及以上的 .NET 8，并采用原生 AOT 发布，依赖 InTheHand.BluetoothLE 和 SixLabors.ImageSharp 软件包；README 要求安装 .NET 8 Runtime。",
+      "CatPrinter.cs 给出了 GATT 服务及其命令、通知和数据特征值，并列出各命令 ID，注释将其中若干标为未知或推测。仓库没有测试套件或 CI，打印行为为作者报告；本次核查既未运行该工具，也未连接打印机。",
+      "采用 MIT 许可。所审阅来源未确立任何 AI 或 REA 使用。"
+    ]
   }
 }
