@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**191 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**192 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (13)
-- [反编译与符号恢复](#papers-decompilation) (87)
+- [反编译与符号恢复](#papers-decompilation) (88)
 - [网站重建](#papers-website-reconstruction) (29)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (13)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -108,6 +108,7 @@
 - [**SLaDe：面向优化汇编的可移植小语言模型反编译器**](https://ieeexplore.ieee.org/document/10444788) - SLaDe 使用 200M 参数的编码器—解码器模型、面向代码的分词及 PsycheC 类型补全，将函数级汇编转换为 C。 <sub>原题：*SLaDe: A Portable Small Language Model Decompiler for Optimized Assembly* · IEEE/ACM CGO 2024 · 会议论文 · Jordi Armengol-Estapé 等 · [PDF](https://arxiv.org/pdf/2305.12520v3) · [代码](https://zenodo.org/records/10205121) · [完整条目](https://awesomerea.org/zh/papers/paper-slade/)</sub>
 - [**“len、index 或 count，就是别叫 v1”：基于迁移学习预测反编译输出中的变量名**](https://ieeexplore.ieee.org/document/10646727) - VarBERT 使用 BERT 式模型为 IDA Hex-Rays 与 Ghidra 的反编译输出建议变量名：模型先以来自 Debian 的 520 万个人工编写的 C 函数预训练，再以反编译代码微调；它还预测每个变量出自开发者，还是由反编译器引入。 <sub>原题：*“Len or index or count, anything but v1”: Predicting Variable Names in Decompilation Output with Transfer Learning* · IEEE S&amp;P 2024 · 会议论文 · Kuntal Kumar Pal 等 · [PDF](https://www.atipriya.com/files/papers/varbert_oakland24.pdf) · [代码](https://github.com/sefcom/VarBERT/tree/76f221a5e0af43a36169818cbbfd6e8dd3c98cdc) · [完整条目](https://awesomerea.org/zh/papers/paper-varbert/)</sub>
 - [**DeGPT：使用大语言模型优化反编译器输出**](https://www.ndss-symposium.org/ndss-paper/degpt-optimizing-decompiler-output-with-llm/) - 通过三个协同角色选择、提出并检查修改，改进已有的类 C 反编译输出。 <sub>原题：*DeGPT: Optimizing Decompiler Output with LLM* · NDSS 2024 · 会议论文 · Peiwei Hu 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-401-paper.pdf) · [代码](https://github.com/PeiweiHu/DeGPT) · [完整条目](https://awesomerea.org/zh/papers/paper-degpt/)</sub>
+- [**Assemblage：面向机器学习的二进制数据集自动构建**](https://proceedings.neurips.cc/paper_files/paper/2024/hash/6bbefc73a187dd42e0dc065b4e7a0615-Abstract-Datasets_and_Benchmarks_Track.html) - Assemblage 是一个分布式系统，从 GitHub 与 vcpkg 爬取 C/C++ 项目，在多种编译器配置下构建，并记录源码到二进制的映射，包括函数地址、源代码、注释以及 PDB 或 DWARF 调试信息。 <sub>原题：*Assemblage: Automatic Binary Dataset Construction for Machine Learning* · NeurIPS 2024 Datasets and Benchmarks · 会议论文 · Chang Liu 等 · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/6bbefc73a187dd42e0dc065b4e7a0615-Paper-Datasets_and_Benchmarks_Track.pdf) · [代码](https://github.com/Assemblage-Dataset/Assemblage) · [完整条目](https://awesomerea.org/zh/papers/paper-assemblage/)</sub>
 - [**二进制代码摘要：ChatGPT／GPT-4 及其他大语言模型的基准评测**](https://arxiv.org/abs/2312.09601) - BinSum 评测大语言模型以自然语言概括二进制函数的能力。 <sub>原题：*Binary Code Summarization: Benchmarking ChatGPT/GPT-4 and Other Large Language Models* · arXiv 2023 · 预印本 · Xin Jin 等 · [PDF](https://arxiv.org/pdf/2312.09601v1) · [完整条目](https://awesomerea.org/zh/papers/paper-binsum/)</sub>
 - [**反编译 x86 深度神经网络可执行文件**](https://www.usenix.org/conference/usenixsecurity23/presentation/liu-zhibo) - BTD（Bin to DNN）将深度学习编译器生成、已剥离符号的 64 位 x86 可执行文件反编译为模型规格：算子类型、网络拓扑、维度与参数。 <sub>原题：*Decompiling x86 Deep Neural Network Executables* · USENIX Security 2023 · 会议论文 · Zhibo Liu 等 · [PDF](https://www.usenix.org/system/files/usenixsecurity23-liu-zhibo.pdf) · [代码](https://github.com/monkbai/DNN-decompiler/tree/33227a0b34f87c490efc734d667ac56530f5074a) · [完整条目](https://awesomerea.org/zh/papers/paper-btd/)</sub>
 - [**XFL：基于极端多标签学习的二进制函数命名**](https://ieeexplore.ieee.org/document/10179439) - XFL 将去符号二进制中的函数命名视为极端多标签分类：函数名被拆分为词元，再由 PfastreXML 从常见标签词表中为每个函数排序合适的词元。 <sub>原题：*XFL: Naming Functions in Binaries with Extreme Multi-label Learning* · IEEE S&amp;P 2023 · 会议论文 · James Patrick-Evans 等 · [PDF](https://arxiv.org/pdf/2107.13404v4) · [代码](https://github.com/lmu-plai/xfl) · [完整条目](https://awesomerea.org/zh/papers/paper-xfl/)</sub>
