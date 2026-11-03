@@ -14,11 +14,11 @@ Publication date: **2026-10-20 UTC**.
 | [Games](game-analysis.md) | 490 | 69 |
 | [Apps · Android](android.md) | 483 | 57 |
 | [Apps · Managed code](managed-code.md) | 135 | 5 |
-| [Native binaries](native-analysis.md) | 837 | 137 |
+| [Native binaries](native-analysis.md) | 838 | 138 |
 | [Runtime and debugging](dynamic-analysis.md) | 150 | 34 |
 | [Firmware](firmware.md) | 228 | 36 |
 | [Protocols](protocol-analysis.md) | 113 | 12 |
-| [General tools and collections](reverse-engineering.md) | 657 | 80 |
+| [General tools and collections](reverse-engineering.md) | 656 | 79 |
 
 [Scan methodology](../source-scan.md) · [Scope exclusions](../../data/source-scope.json)
 
