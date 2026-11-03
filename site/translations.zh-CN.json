@@ -7017,5 +7017,14 @@
       "仓库没有许可证文件，复用条款未作说明；审阅者应向作者确认授权情况，收录的依赖 JAR 仍适用各自的许可。作者另有一个 Binary Ninja 移植版，位于其独立的 binja-JNIAnalyzer 仓库。",
       "本合集在所审阅提交中阅读了 README、脚本源码、构建文件和所收录库的清单，没有构建或运行该扩展，也未分析任何 APK 或原生库。项目中未提及 AI 或 REA，因此不构成与 REA 的关联。"
     ]
+  },
+  "imsprog": {
+    "name": "IMSProg EEPROM／闪存芯片编程器",
+    "requirements": [
+      "审阅时最新版本为 v1.9.1，发布于 2026-09-04，提供 Flatpak 和 macOS arm64 构建；ChangeLog 称该版本新增 FT232H v1.2 支持。所审阅的 main 提交比该版本多 41 个提交，主要是 macOS 打包和路径修复。README 列出 Debian、Fedora、openSUSE、AUR、ALT、ROSA 和 RED OS 软件包以及 Ubuntu PPA；Windows 版本由第三方另行维护。",
+      "在 Linux 上构建需要 CMake、g++ 或 clang、Qt5 或 Qt6 及其 Linguist 工具、libusb 1.0、libftdi、pkg-config 和 udev，README 称不支持 Debian 11 和 Ubuntu 20.04 之前的版本；在 macOS 上需要 Homebrew 软件包和 Xcode 命令行工具。build_all.sh 会编译并安装编程器、数据库编辑器和更新程序，以及 udev 规则和芯片数据库。CI 构建 Ubuntu 22.04、24.04、26.04 的 DEB 包、经 rpmlint 检查的 Fedora 44 RPM 包和 macOS 15 构建；未公开自动化测试。",
+      "需要一台受支持的 USB 编程器；按 README 所述，93xxx MicroWire、45xxx DataFlash、WSON-8 SPI NAND 和 1.8 V 芯片还需相应转接座。CH347 设备不支持 MicroWire；对 NAND 芯片执行 Verify 和 Check erase 时不会跳过坏块。镜像来自使用者自己的芯片；仓库不含任何固件转储，只有 IMSProg.Dat 芯片数据库，更新程序从作者的 antenna-dvb-t2.ru 网站下载该文件。",
+      "README 称采用 GPL-3.0-or-later，其中源自 SNANDer 的部分为 GPL-2.0+，QHexEdit2 为 LGPL-2.1，CH347 代码为 BSD-1-Clause。IMSProg 只负责读写芯片内容，分析转储需要其他工具。本次审阅未使用编程器或芯片。"
+    ]
   }
 }
