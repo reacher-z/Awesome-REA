@@ -1,4 +1,4 @@
-"""The Chinese README keeps each paper's published title on its translated line."""
+"""Chinese paper lines, in the README and the paper file, keep each paper's published title."""
 from copy import deepcopy
 import json
 from pathlib import Path
@@ -7,7 +7,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_readme import plain_text, render_papers
+from build_readme import PAPER_FILES, plain_text, render_papers
 
 
 def paper(**changes):
@@ -32,10 +32,10 @@ class ReadmeOriginalTitleTest(unittest.TestCase):
         self.assertIn(f'- [**{original}**]({record["url"]}) - ', en)
         self.assertEqual(record, before)
 
-    def test_generated_chinese_readme_names_every_original_title_once(self):
-        zh = (ROOT / 'README.zh-CN.md').read_text(encoding='utf-8')
-        en = (ROOT / 'README.md').read_text(encoding='utf-8')
-        self.assertNotIn('原题', en)
+    def test_generated_chinese_paper_file_names_every_original_title_once(self):
+        zh = (ROOT / PAPER_FILES['zh']).read_text(encoding='utf-8')
+        for name in ('README.md', PAPER_FILES['en']):
+            self.assertNotIn('原题', (ROOT / name).read_text(encoding='utf-8'))
         for record in json.loads((ROOT / 'data/papers.json').read_text(encoding='utf-8')):
             with self.subTest(paper=record['id']):
                 original = plain_text(record['title'])

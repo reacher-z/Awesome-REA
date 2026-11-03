@@ -49,7 +49,7 @@ python3 scripts/validate.py
 python3 scripts/build_production.py
 ```
 
-Paper changes additionally use `python3 scripts/validate_papers.py`; case-ledger changes use `python3 scripts/build_case_coverage.py`. Code or site changes need the unit suite and browser checks listed in CONTRIBUTING.md. Record what actually passed, failed or was skipped; never fabricate a test result.
+Paper changes additionally use `python3 scripts/validate_papers.py`; `build_readme.py` also rewrites the full paper lists, `docs/papers.md` and `docs/papers.zh-CN.md`. Case-ledger changes use `python3 scripts/build_case_coverage.py`. Code or site changes need the unit suite and browser checks listed in CONTRIBUTING.md. Record what actually passed, failed or was skipped; never fabricate a test result.
 
 4. Review the diff for unrelated changes and private data, commit it, and push the branch to a repository you can write. Without upstream write access, push to your fork.
 5. Open a PR targeting `main` and fill in the [PR template](../.github/PULL_REQUEST_TEMPLATE.md). With an authenticated GitHub CLI, the submission step is:

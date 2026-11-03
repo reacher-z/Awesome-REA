@@ -29,6 +29,7 @@ Guides describe the current process. Research notes are dated snapshots, kept fo
 | [Community outreach](community-outreach.md) | English | Current, rules reviewed 2026-10-20 | Checklist for posting to public communities such as Hacker News and Reddit |
 | [Discovery observations](discovery/README.md) | English | Current | Versioned queries and a manual observation template |
 | [Source scan method](source-scan.md) | English | Current | How the automated repository index is collected |
+| Paper list: [English](papers.md), [Chinese](papers.zh-CN.md) | English, Chinese | Generated | Every paper by topic, newest first, in the README line format |
 | Case coverage: [English](case-coverage.md), [Chinese](case-coverage.zh-CN.md) | English, Chinese | Generated | Inventory of pinned upstream case collections |
 | Scanned repository index: [English](repositories/README.md), [Chinese](repositories/README.zh-CN.md) | English, Chinese | Generated | Repository index by category |
 | [Collection roadmap](roadmap.md) | English | Current | Collection priorities |

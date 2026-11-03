@@ -618,7 +618,7 @@ def validate_link_fragments(output, pages, links):
 
 
 def validate_paper_groups(page, papers, language):
-    """Check visible section membership, newest-first order and the README's topic headings."""
+    """Check visible section membership, newest-first order and the paper lists' topic headings."""
     expected = defaultdict(list)
     for paper in papers:
         expected[paper_section(paper)].append(paper)

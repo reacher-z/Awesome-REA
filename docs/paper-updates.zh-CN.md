@@ -67,4 +67,4 @@ python3 -m unittest discover -s tests
 python3 scripts/build_production.py
 ```
 
-README 生成命令会更新两个 README 中的论文列表，请与 `data/papers.json` 一并提交。生产构建会在 Git 忽略的 `dist/` 中重新生成论文目录、详情页和 BibTeX 下载。与所有论文记录一样，`runtime_tested` 保持 `false`：更新只复核来源，不复现实验结果。
+README 生成命令会更新 `docs/papers.md` 和 `docs/papers.zh-CN.md` 中的完整论文列表，以及两个 README 中的最新论文，请与 `data/papers.json` 一并提交。生产构建会在 Git 忽略的 `dist/` 中重新生成论文目录、详情页和 BibTeX 下载。与所有论文记录一样，`runtime_tested` 保持 `false`：更新只复核来源，不复现实验结果。

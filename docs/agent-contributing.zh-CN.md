@@ -49,7 +49,7 @@ python3 scripts/validate.py
 python3 scripts/build_production.py
 ```
 
-论文还需运行 `python3 scripts/validate_papers.py`；案例覆盖记录变更需运行 `python3 scripts/build_case_coverage.py`。代码或网站变更还需运行 CONTRIBUTING.md 中的单元测试和浏览器检查。记录真实的通过、失败和跳过结果，不编造测试结论。
+论文还需运行 `python3 scripts/validate_papers.py`；`build_readme.py` 还会重写完整论文列表 `docs/papers.md` 和 `docs/papers.zh-CN.md`。案例覆盖记录变更需运行 `python3 scripts/build_case_coverage.py`。代码或网站变更还需运行 CONTRIBUTING.md 中的单元测试和浏览器检查。记录真实的通过、失败和跳过结果，不编造测试结论。
 
 4. 检查差异，移除无关修改和私密数据，提交后推送到你有写权限的仓库；无上游写权限时推送到自己的 fork。
 5. 向 `main` 创建 PR，填写[PR 模板](../.github/PULL_REQUEST_TEMPLATE.md)。已登录 GitHub CLI 时，可用：
