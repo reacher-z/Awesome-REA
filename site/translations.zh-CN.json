@@ -7127,5 +7127,14 @@
       "README 称修改后的文件用 UEFITool 0.28.0 放回，且控制设置项可见性的方法因固件而异，可能需要逐一尝试；刷写修改后的镜像不在本次审阅范围内。README 另有一节介绍修改隐藏设置的其他方法，与本编辑器无关，此处不作介绍。",
       "仓库没有许可证文件，package.json 将包标为 private，因此未声明再利用条款。项目未公开自动化测试；本次审阅未打开或修改任何固件。"
     ]
+  },
+  "diztinguish": {
+    "name": "DiztinGUIsh Super NES ROM 反汇编工具",
+    "requirements": [
+      "审阅时最新版本为 v2.5.1.0，于 2025-12-07 以自包含的 Windows x64 构建发布；所审阅的 master 提交（2026-08-09）比它晚 106 个提交，其中包括把多个对话框改写为 Avalonia 版本，并新增第二个可执行文件 Diz.AvaloniaUI-Beta。WinForms 应用的目标框架为 net10.0-windows，CI 在 Windows 上用 .NET 10 SDK 构建、测试并发布；而 contributing.md 仍写着需要 Windows 10+ 和 .NET SDK 8 或更高版本。",
+      "输入为使用者自行提供的 SNES ROM 文件；仓库不含任何 ROM。HELP.md 称项目文件（.diz 为 gzip 压缩的 XML，.dizraw 为未压缩版本）只保存 ROM 的链接及其内部名称和校验和，不包含 ROM 本身，因此可以在不附带 ROM 的情况下分享。实时跟踪采集需要 binary1230/bsnes-plus 提供的定制 bsnes-plus 版本（监听 27015 端口），普通 BSNES+ 无法使用；README 还建议使用修复了相对寻址问题的 asar 分支。",
+      "测试项目附带少量 .asm 样例、一个 4 MB 的二进制跟踪日志测试数据（ct-binary-tracelog7.758s-60fps-locked.bin，来自一段 7.8 秒的模拟器采集，只有已注释掉的性能测试代码引用它），以及作为辅助工具的 SuperFamicheck 1.0 的 superfamicheck.exe；tools/dizpack 存放 Python 打包脚本，tools/dizpack-game/ct 则是 Chrono Trigger（美版）的 LZSS 编解码器。反汇编依赖使用者的标记与逐步跟踪：README 称，一旦无法准确反汇编，程序就会暂停等待输入，并将 SPC700 和 SuperFX 支持列为计划功能。CI 会运行仓库的 xUnit 测试，但没有逐个游戏的结果证明导出的汇编能重建原版。",
+      "依据 LICENSE.md 采用 GPL-3.0 许可，第三方库的许可证列在 Diz.App.Winforms/dist/docs 中。导出的汇编包含 ROM 的代码和数据，仍受游戏权利人的权利约束。本次未构建或运行任何内容，也未反汇编任何 ROM；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
