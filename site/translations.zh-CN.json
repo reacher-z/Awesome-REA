@@ -7432,5 +7432,14 @@
       "CI 仅在 Ubuntu、Windows 和 macOS 上，以 Python 3.8 和 3.12 针对 Ghidra 10.3.2 与 11.0 构建测试，并以无界面后处理脚本方式运行仓库中的 Python 测试；所审来源未涵盖更新的 Ghidra 版本。Jep 通过 JNI 把 Python 嵌入 JVM，README 指出 Ghidra 开发者不建议在 Ghidra 中使用 JNI；与 Ghidra 的 Java 和 Jython API 不同，脚本需通过 currentProgram() 这类函数调用读取 GhidraScript 状态。",
       "Apache-2.0（LICENSE.txt）。仓库提交的是 Java 与 Python 源码、一个示例脚本、Python 测试和三张 README 截图，不含二进制文件；CI 测试分析的是从下载的 Ghidra 发行包中取得的 demangler 可执行文件。所审来源未说明任何 AI 或 REA 用途，本条目也未安装或运行该扩展。"
     ]
+  },
+  "ford-fiesta-mk5-ms-can-case": {
+    "name": "Ford Fiesta MK5 MS-CAN：解码仪表盘与收音机总线",
+    "requirements": [
+      "纯文档项目，共 25 个提交，时间从 2020-08-22 到所审阅的 2020-09-30 master 提交，没有发行版或标签。适用于 2006 年后生产（改款）、配备 2-DIN 6000CD 收音机的 Fiesta MK5；README 指出转向柱旁的音量键不会出现在 MS-CAN 上，部分报文 ID 只解码了一部分。",
+      "不需要任何 Ford 软件或文件；读取总线需要在收音机 QuadLock 连接器的 CANH 和 CANL 线上接入 CAN 接口，README 称无需 120 欧姆终端电阻。作者使用的是插在 Arduino Uno R3 上的 Seeed CAN-BUS Shield V2.0，但仓库只有 README、Kayak .kcd 文件、一张连接器针脚图和若干仪表指示灯图标，没有抓包记录、嗅探代码或 Arduino 程序。",
+      "报文布局以及音量、曲目时间、车速、冷却液温度和蓄电池电压等换算公式均为作者依据自己的车辆报告；LCD 文字报文采用 ISO-TP 的判断归功于一位 Reddit 评论者。由于没有公开抓包数据，无法仅凭仓库复核这些结论，本次审阅也未使用任何车辆或总线硬件。README 只记录对所观察流量的解码，没有给出向车辆发送帧的步骤。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证。所审来源未确立 AI 或 REA 的使用。"
+    ]
   }
 }
