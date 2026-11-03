@@ -7330,5 +7330,14 @@
       "输入为使用者自备的 APK 或 DEX 文件。固定版本的依赖库包括 smali/baksmali 3.0.9、JADX 1.5.2、CFR 0.152、Vineflower 1.11.1、dex2jar 2.4.32、apktool 2.12.0、apksig 和 ddmlib；代码树中提交了 Gradle wrapper JAR、由 ANTLR 生成的 Java 词法与语法分析器源码以及 Monaspace Neon Frozen 字体文件，界面提供英语、德语、中文和印地语。",
       "采用 GPL-3.0 许可；README 称该工具仅用于合乎道德的用途。未发现测试套件，CI 只负责打包发布。本次未构建或运行该应用，也未反编译、修改或部署任何 APK。"
     ]
+  },
+  "firmware-analysis-papers-list": {
+    "name": "Firmware-Analysis-Papers 固件分析论文清单",
+    "requirements": [
+      "所审阅的 README 最后修改于 2021-08-30，共列出 28 篇论文：2021 年 10 篇、2020 年 7 篇、2019 年 4 篇、2018 年 1 篇，另有 6 篇归在“2017 and Before”下，最早的发表于 2013 年。此后清单未再更新，因此未收录 Fuzzware（USENIX Security 2022）等后续工作。",
+      "条目只有标题、链接和发表场合标注，没有摘要、代码、实验制品或引用信息。多数链接指向会议、作者或 arXiv 网站上的 PDF；其余指向 IEEE Xplore 页面、ResearchGate 或带会话令牌的 ACM Digital Library 地址，可能失效。年份标注可能与实际发表年份不符：Firmadyne 标为 NDSS 2017（与其链接中 2017 年的上传目录一致），而本合集论文目录记录为 NDSS 2016。",
+      "所列论文中，Firmadyne、FirmAE 和 HALucinator 三篇已收入本合集的论文目录，FirmAE 工具以及所列 Avatar 框架的后继项目 avatar² 也已作为工具条目收录；其余条目本次未作审阅。",
+      "仓库只有 README.md，没有许可证文件，因此清单本身未声明复用条款；各论文的权利归其作者和出版方。这是独立的阅读清单；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
