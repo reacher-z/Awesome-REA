@@ -7571,5 +7571,13 @@
       "eval 目录定义了一项盲源码还原基准：九个小型 C 程序分别带调试信息和去符号构建，一个只能使用 ToCode MCP 服务器和文件工具的无界面 Claude Code 智能体处理去符号版本，再由评判程序对名称、类型、逐函数的 LLM 评分、测试输入上的行为以及信息泄漏打分。仓库未提交基准结果；测试使用生成的样本和模拟的 Binary Ninja 模块，仓库未提交任何二进制。",
       "MIT 许可证（LICENSE、pyproject.toml）。tocode skill install 会为 Claude Code 和 Codex 安装工作流技能。所审阅来源未确立与 REA 的关联，本条目未导出或运行任何内容。"
     ]
+  },
+  "esp32-image-parser": {
+    "name": "esp32_image_parser ESP32 固件镜像解析工具",
+    "requirements": [
+      "自 2020-02-29 起没有新提交，也没有发布版本或标签。安装方式为 pip install -r requirements.txt，其中列出 makeelf、esptool 和 hexdump，均未指定版本；脚本直接导入 esptool 的模块命名空间，并针对初代 esp32 芯片类型调用其 LoadFirmwareImage，因此未核实它与当前 esptool 版本及更新的 ESP32 系列芯片是否兼容。",
+      "输入为分析者自有设备的完整闪存转储。解析器从默认偏移 0x8000 读取分区表；create_elf 只接受应用类型分区，并需指定输出文件名；RTC IRAM 等无法映射的段只会给出提示，不会被转换。",
+      "仓库不含任何固件镜像：除 Python 脚本外，只有 symbols_dump.txt，这是一份约 890 个符号的 readelf 格式符号表，大多位于 ESP32 ROM 地址，create_elf 会从当前工作目录读取它并写入每个 ELF。采用 MIT 许可（LICENSE.md）。本次未解析任何闪存转储。"
+    ]
   }
 }
