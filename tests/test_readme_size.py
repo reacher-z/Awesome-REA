@@ -1,4 +1,5 @@
-"""README entries stay one line each, and an advisory budget warns before GitHub truncates a README."""
+"""README entries stay one line each, the full paper list stays out of the READMEs, and an advisory budget warns
+before GitHub truncates a README."""
 from contextlib import redirect_stderr, redirect_stdout
 import io
 import json
@@ -12,8 +13,10 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import build_readme
-from build_readme import (FULL_ENTRY, GITHUB_README_LIMIT, README_SIZE_WARNING, lead_sentence,
-                          readme_size_warnings, size_warning)
+from build_paper_pages import papers_newest_first
+from build_readme import (FULL_ENTRY, GITHUB_README_LIMIT, PAPER_FILES, PAPERS_BEGIN, PAPERS_END, README_SIZE_WARNING,
+                          READMES, RECENT_PAPERS, lead_sentence, paper_line, readme_size_warnings, rendered_files,
+                          size_warning)
 from catalog import load_resources
 from validate_papers import read_papers
 
@@ -91,19 +94,58 @@ class LeadSentenceTest(unittest.TestCase):
         self.assertEqual(lead_sentence('支持 v1.2. 版本。很短。', 'zh'), '支持 v1.2. 版本。很短。')
 
 
+class ReadmePaperSplitTest(unittest.TestCase):
+    """The README spends a fixed number of lines on papers; the paper files carry the list that grows."""
+
+    def test_readme_output_leaves_the_paper_list_to_the_paper_files(self):
+        papers = read_papers(ROOT)
+        # The index count only changes Contents, which this test does not read.
+        files = rendered_files(load_resources(), papers, 0)
+        for language, name in READMES.items():
+            with self.subTest(readme=name):
+                readme = files[name]
+                block = readme.split(PAPERS_BEGIN, 1)[1].split(PAPERS_END, 1)[0]
+                listed = files[PAPER_FILES[language]]
+                # About 6-7 KB of the README against 100-116 KB per paper file in November 2026, when moving the
+                # list freed 95 KB in README.md and 109 KB in README.zh-CN.md.
+                self.assertLess(5 * len(block.encode('utf-8')), len(listed.encode('utf-8')))
+                for paper in papers_newest_first(papers)[RECENT_PAPERS:]:
+                    self.assertNotIn(paper_line(paper, language), readme)
+                    self.assertIn(paper_line(paper, language), listed)
+
+    def test_readme_paper_section_does_not_grow_with_the_bibliography(self):
+        papers = read_papers(ROOT)
+        # Older copies under new IDs double every topic without changing which papers are newest.
+        older = [dict(paper, id=paper['id'] + '-copy', url=paper['url'] + '#copy', year=paper['year'] - 200,
+                      publication_date=None) for paper in papers]
+        for language in READMES:
+            with self.subTest(language=language):
+                before = len(build_readme.render_readme_papers(papers, language).encode('utf-8'))
+                after = len(build_readme.render_readme_papers(papers + older, language).encode('utf-8'))
+                # Only the counts change, by a digit here and there.
+                self.assertLess(abs(after - before), 50)
+                grown = len(build_readme.render_papers(papers + older, language).encode('utf-8'))
+                self.assertGreater(grown - len(build_readme.render_papers(papers, language).encode('utf-8')),
+                                   sum(len(paper_line(paper, language).encode('utf-8')) for paper in older))
+
+
 class OneLineEntryTest(unittest.TestCase):
     def test_generated_readmes_list_each_entry_on_one_line_with_its_full_entry_link(self):
         papers = read_papers(ROOT)
         paper_urls = {paper['url'] for paper in papers}
         resources = [record for record in load_resources() if record['url'] not in paper_urls]
-        for name, index in (('README.md', 0), ('README.zh-CN.md', 1)):
+        newest = papers_newest_first(papers)[:RECENT_PAPERS]
+        for name, index in (('README.md', 0), ('README.zh-CN.md', 1),
+                            (PAPER_FILES['en'], 0), (PAPER_FILES['zh'], 1)):
             prefix = 'zh/' if index else ''
             text = (ROOT / name).read_text(encoding='utf-8')
             lines = [line for line in text.splitlines() if line.startswith('- [**')]
-            with self.subTest(readme=name):
-                self.assertEqual(len(lines), len(resources) + len(papers))
+            groups = ((('resources', resources), ('papers', newest)) if name.startswith('README')
+                      else (('papers', papers),))
+            with self.subTest(file=name):
+                self.assertEqual(len(lines), sum(len(records) for _, records in groups))
                 self.assertNotIn('<details>', text)
-                for route, records in (('resources', resources), ('papers', papers)):
+                for route, records in groups:
                     for record in records:
                         link = f'[{FULL_ENTRY[index]}](https://awesomerea.org/{prefix}{route}/{record["id"]}/)</sub>'
                         self.assertEqual(sum(line.endswith(link) for line in lines), 1, record['id'])

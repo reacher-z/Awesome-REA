@@ -15,7 +15,7 @@ Awesome Reverse Engineering Anything is an independent resource catalog, not the
 - Review public primary evidence, pin GitHub file links to the reviewed commit, and record the actual review date. Do not infer capabilities, REA use or Game/Protocol targets from a name, a secondary list or an MCP interface alone.
 - `source-reviewed` means documentation review. It does not establish runtime testing, safety, complete reconstruction or compatibility. Paper records keep `runtime_tested: false`.
 - Automated scans and their hashes remain separate evidence. Use the [promotion worksheet](docs/promotion-worksheet.md) when curating a scanned repository; do not upgrade or rewrite its scan object.
-- Never edit generated README blocks, `docs/repositories/` or case-coverage summaries by hand. Follow the relevant generator commands in CONTRIBUTING.md. Do not add proprietary binaries, private captures, credentials or local personal paths.
+- Never edit generated README blocks, the paper lists `docs/papers.md` and `docs/papers.zh-CN.md`, `docs/repositories/` or case-coverage summaries by hand. Follow the relevant generator commands in CONTRIBUTING.md. Do not add proprietary binaries, private captures, credentials or local personal paths.
 - Use the repository's current schema. Submit changes to validators/vocabulary before data that depends on those new rules, because PR review runs the base branch's validators.
 
 ## Validate and submit

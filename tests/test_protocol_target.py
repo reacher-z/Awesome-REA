@@ -96,11 +96,11 @@ class ProtocolTargetTests(unittest.TestCase):
                 self.assertEqual(groups['research-app-reconstruction'], [secondary['id']])
                 self.assertEqual(page.paper_ids.count(primary['id']), 1)
                 heading = TARGET_LABELS['protocol'][language == 'zh']
-                self.assertIn('### ' + heading, render_papers([primary], language))
+                self.assertIn('\n## ' + heading + '\n', render_papers([primary], language))
         agent = paper(); agent['id'] = 'paper-programbench'
         rendered = render_papers([agent], 'en')
-        self.assertIn('### Reverse-engineering agent evaluation', rendered)
-        self.assertNotIn('### Protocol inference and analysis', rendered)
+        self.assertIn('\n## Reverse-engineering agent evaluation\n', rendered)
+        self.assertNotIn('Protocol inference and analysis', rendered)
 
     def test_static_curated_section_badges_and_existing_icon_modes(self):
         record = resource()

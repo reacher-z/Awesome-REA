@@ -29,6 +29,7 @@
 | [社区推广](community-outreach.md) | 英文 | 当前，平台规则复核于 2026-10-20 | 向 Hacker News、Reddit 等公开社区发帖前的检查清单 |
 | [人工发现观察](discovery/README.md) | 英文 | 当前 | 版本化检索问题与人工观察模板 |
 | [扫描方法](source-scan.md) | 英文 | 当前 | 自动仓库索引的采集方法 |
+| 论文列表：[中文](papers.zh-CN.md)、[英文](papers.md) | 中英 | 自动生成 | 按主题列出全部论文，从新到旧，行格式与 README 相同 |
 | 案例合集覆盖记录：[中文](case-coverage.zh-CN.md)、[英文](case-coverage.md) | 中英 | 自动生成 | 固定版本上游案例合集的清点记录 |
 | 仓库扫描索引：[中文](repositories/README.zh-CN.md)、[英文](repositories/README.md) | 中英 | 自动生成 | 按分类浏览仓库索引 |
 | [合集路线图](roadmap.md) | 英文 | 当前 | 收录优先级 |

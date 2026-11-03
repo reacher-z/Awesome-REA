@@ -8,7 +8,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_readme import (BADGES_BEGIN, BADGES_END, BEGIN, CONTENTS_BEGIN, CONTENTS_END, PAPERS_BEGIN, lead_sentence,
+from build_readme import (BADGES_BEGIN, BADGES_END, BEGIN, CONTENTS_BEGIN, CONTENTS_END, PAPER_FILES, PAPERS_BEGIN, lead_sentence,
                          plain_text, render_badges, replace_badges, render_catalog, render_contents, render_papers)
 from build_repository_index import SUMMARY_BEGIN
 
@@ -167,7 +167,7 @@ class ReadmeContentsTest(unittest.TestCase):
                         self.assertEqual(anchor, re.sub(r'[^\w\- ]', '', label.lower()).replace(' ', '-'))
 
     def test_contents_counts_equal_the_entries_under_each_heading(self):
-        for name in ('README.md', 'README.zh-CN.md'):
+        for name, paper_file in (('README.md', PAPER_FILES['en']), ('README.zh-CN.md', PAPER_FILES['zh'])):
             with self.subTest(readme=name):
                 text = (ROOT / name).read_text(encoding='utf-8')
                 contents = text.split(CONTENTS_BEGIN + '\n', 1)[1].split(CONTENTS_END, 1)[0]
@@ -178,6 +178,11 @@ class ReadmeContentsTest(unittest.TestCase):
                 for position, heading in enumerate(headings):
                     label = heading[2].split(' · ')[-1] if name.endswith('zh-CN.md') else heading[2]
                     count = re.search(rf'\[{re.escape(label)}\]\(#[^)]+\) \(([\d,]+)\)', contents)
+                    if count and heading[2] in ('Papers', '论文'):
+                        # Papers counts every paper; the README lists only the newest, and the paper file all of them.
+                        listed = (ROOT / paper_file).read_text(encoding='utf-8')
+                        self.assertEqual(int(count[1].replace(',', '')), len(re.findall(r'^- \[\*\*', listed, re.MULTILINE)))
+                        continue
                     if not count or heading[2] in ('Full Repository Index', '完整仓库索引'):
                         continue
                     end = next((later.start() for later in headings[position + 1:] if len(later[1]) <= len(heading[1])),
@@ -191,11 +196,13 @@ class ReadmeContentsTest(unittest.TestCase):
         for name, label in (('README.md', '**By topic:** '), ('README.zh-CN.md', '**按主题：** ')):
             with self.subTest(readme=name):
                 text = (ROOT / name).read_text(encoding='utf-8')
-                # Outside links to the old fragments keep working.
+                # Outside links to the old fragments keep working; old paper topic fragments land on the topic's link.
                 for anchor in ('firmware', 'game', 'papers', 'papers-decompilation', 'papers-agent-evaluation'):
                     self.assertIn(f'<a id="{anchor}"></a>', text)
                 topics = next(line for line in text.splitlines() if line.startswith(label))
                 self.assertIn('[', topics)
+                for anchor in ('papers-decompilation', 'papers-agent-evaluation'):
+                    self.assertRegex(topics, rf'<a id="{anchor}"></a>\[[^\]]+\]\(docs/papers(\.zh-CN)?\.md#{anchor}\)')
                 self.assertNotRegex(text, r'(?m)^- \[[^\]]+\]\(#papers-')
 
     def test_contents_labels_match_the_headings_they_link(self):
