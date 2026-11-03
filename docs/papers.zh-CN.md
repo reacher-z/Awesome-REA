@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**200 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**201 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (13)
-- [反编译与符号恢复](#papers-decompilation) (90)
+- [反编译与符号恢复](#papers-decompilation) (91)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -115,6 +115,7 @@
 - [**基于可解释特征工程重新审视二进制代码相似性分析及经验教训**](https://doi.org/10.1109/TSE.2022.3187689) - 构建可复现的交叉编译基准 BinKit，包含由 51 个 GNU 软件包生成的 243,128 个二进制和 36,256,322 个函数，覆盖八种架构、九个 GCC 与 Clang 版本、五个优化级别，以及 PIE、LTO、禁止内联和 Obfuscator-LLVM 等选项构成的 1,352 种组合。 <sub>原题：*Revisiting Binary Code Similarity Analysis Using Interpretable Feature Engineering and Lessons Learned* · IEEE Transactions on Software Engineering 2023 · 期刊论文 · Dongkwan Kim 等 · [PDF](https://arxiv.org/pdf/2011.10749v4) · [代码](https://github.com/SoftSec-KAIST/BinKit) · [完整条目](https://awesomerea.org/zh/papers/paper-binkit/)</sub>
 - [**SymLM：基于上下文敏感、执行感知代码嵌入的去符号二进制函数名预测**](https://dl.acm.org/doi/10.1145/3548606.3560612) - SymLM 将去符号二进制的函数名预测为一组名称单词。 <sub>原题：*SymLM: Predicting Function Names in Stripped Binaries via Context-Sensitive Execution-Aware Code Embeddings* · ACM CCS 2022 · 会议论文 · Xin Jin 等 · [PDF](https://xinjin95.github.io/assets/pdf/SymLM_ccs2022_paper.pdf) · [代码](https://github.com/OSUSecLab/SymLM) · [完整条目](https://awesomerea.org/zh/papers/paper-symlm/)</sub>
 - [**机器学习如何解决二进制函数相似性问题**](https://www.usenix.org/conference/usenixsecurity22/presentation/marcelli) - 在统一的、基于 IDA Pro 的框架中重新实现来自安全、程序语言与机器学习三个研究社区的十种代表性方法，对二进制函数相似性研究开展测量，方法涵盖模糊哈希（Catalog1、FunctionSimSearch）以及图神经网络、NLP 编码器与 Transformer 模型。 <sub>原题：*How Machine Learning Is Solving the Binary Function Similarity Problem* · USENIX Security 2022 · 会议论文 · Andrea Marcelli 等 · [PDF](https://www.usenix.org/system/files/sec22-marcelli.pdf) · [代码](https://github.com/Cisco-Talos/binary_function_similarity) · [完整条目](https://awesomerea.org/zh/papers/paper-binary-function-similarity/)</sub>
+- [**DeepDi：在指令上学习关系图卷积网络模型以实现快速准确的反汇编**](https://www.usenix.org/conference/usenixsecurity22/presentation/yu-sheng) - DeepDi 对 x86 与 x64 二进制进行反汇编：先解码候选指令的超集，再以前向、后向与重叠关系将其连接成指令流图，并用关系图卷积网络识别真实指令；随后借助启发式规则和一个小型分类器恢复函数入口。 <sub>原题：*DeepDi: Learning a Relational Graph Convolutional Network Model on Instructions for Fast and Accurate Disassembly* · USENIX Security 2022 · 会议论文 · Sheng Yu 等 · [PDF](https://www.usenix.org/system/files/sec22-yu-sheng.pdf) · [代码](https://github.com/DeepBitsTechnology/DeepDi) · [完整条目](https://awesomerea.org/zh/papers/paper-deepdi/)</sub>
 - [**Decomperson：人类如何反编译以及我们能从中学到什么**](https://www.usenix.org/conference/usenixsecurity22/presentation/burk) - 将人工逆向工程重新表述为“完美反编译”：编写源码，使其在原始工具链与编译选项下编译后，能完全复现目标函数的二进制代码。 <sub>原题：*Decomperson: How Humans Decompile and What We Can Learn From It* · USENIX Security 2022 · 会议论文 · Kevin Burk 等 · [PDF](https://www.usenix.org/system/files/sec22-burk.pdf) · [代码](https://github.com/decompetition/server) · [完整条目](https://awesomerea.org/zh/papers/paper-decomperson/)</sub>
 - [**利用学习得到的变量名称与类型增强反编译输出**](https://www.usenix.org/conference/usenixsecurity22/presentation/chen-qibin) - 提出 Transformer 模型 DIRTY，根据反编译代码和布局信息推荐变量名与类型，并提供用于训练和评估的 DIRT 语料。 <sub>原题：*Augmenting Decompiler Output with Learned Variable Names and Types* · USENIX Security 2022 · 会议论文 · Qibin Chen 等 · [PDF](https://arxiv.org/pdf/2108.06363) · [代码](https://github.com/CMUSTRUDEL/DIRTY) · [完整条目](https://awesomerea.org/zh/papers/paper-dirty/)</sub>
 - [**jTrans：面向二进制代码相似性检测的跳转感知 Transformer**](https://dl.acm.org/doi/10.1145/3533767.3534367) - jTrans 使用 BERT 风格的 Transformer 为二进制函数生成嵌入，以支持相似性检索。 <sub>原题：*jTrans: Jump-Aware Transformer for Binary Code Similarity Detection* · ACM ISSTA 2022 · 会议论文 · Hao Wang 等 · [PDF](https://arxiv.org/pdf/2205.12713v1) · [代码](https://github.com/vul337/jTrans) · [完整条目](https://awesomerea.org/zh/papers/paper-jtrans/)</sub>
