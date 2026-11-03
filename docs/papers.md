@@ -4,7 +4,7 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**196 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**197 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -12,7 +12,7 @@
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (13)
 - [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (89)
-- [Website reconstruction](#website-reconstruction) (30)
+- [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (14)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
 - [Firmware analysis and rehosting](#firmware-analysis-and-rehosting) (16)
@@ -166,6 +166,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Sketch2Code: Evaluating Vision-Language Models for Interactive Web Design Prototyping**](https://aclanthology.org/2025.naacl-long.198/) - Sketch2Code benchmarks vision-language models on turning rough hand-drawn wireframe sketches into HTML webpage prototypes. <sub>NAACL 2025 · Conference paper · Ryan Li et al. · [PDF](https://aclanthology.org/2025.naacl-long.198.pdf) · [Code](https://github.com/SALT-NLP/Sketch2Code) · [Full entry](https://awesomerea.org/papers/paper-sketch2code/)</sub>
 - [**Design2Code: Benchmarking Multimodal Code Generation for Automated Front-End Engineering**](https://aclanthology.org/2025.naacl-long.199/) - Evaluates reconstruction of frontend code from webpage screenshots using real-world reference pages, visual-element and layout metrics, and human assessment. <sub>NAACL 2025 · Conference paper · Chenglei Si et al. · [PDF](https://aclanthology.org/2025.naacl-long.199.pdf) · [Code](https://github.com/NoviScl/Design2Code) · [Full entry](https://awesomerea.org/papers/paper-design2code/)</sub>
 - [**Large Language Models for Code Analysis: Do LLMs Really Do Their Job?**](https://www.usenix.org/conference/usenixsecurity24/presentation/fang) - Evaluates GPT-3.5-turbo, GPT-4, LLaMA-2-13B, Code-LLaMA-2-13B-Instruct and StarChat-Beta on explaining what de-commented JavaScript, Python and C code does, then repeats the task on JavaScript obfuscated with JavaScript Obfuscator (identifier renaming, dead-code injection, control-flow flattening and string splitting) and with Wobfuscator’s WebAssembly transformation. <sub>USENIX Security 2024 · Conference paper · Chongzhou Fang et al. · [PDF](https://www.usenix.org/system/files/usenixsecurity24-fang.pdf) · [Full entry](https://awesomerea.org/papers/paper-llm-code-analysis/)</sub>
+- [**Unlocking the conversion of Web Screenshots into HTML Code with the WebSight Dataset**](https://arxiv.org/abs/2403.09029) - WebSight is a synthetic dataset of 2 million HTML documents paired with full-page screenshots for training screenshot-to-HTML models. <sub>arXiv 2024 · Preprint · Hugo Laurençon et al. · [PDF](https://arxiv.org/pdf/2403.09029v1) · [Full entry](https://awesomerea.org/papers/paper-websight/)</sub>
 - [**Web2Code: A Large-scale Webpage-to-Code Dataset and Evaluation Framework for Multimodal LLMs**](https://proceedings.nips.cc/paper_files/paper/2024/hash/cb66be286795d71f89367d596bf78ea7-Abstract-Datasets_and_Benchmarks_Track.html) - Studies screenshot-to-HTML reconstruction through instruction tuning and two evaluation benchmarks. <sub>NeurIPS 2024 Datasets and Benchmarks · Conference paper · Sukmin Yun et al. · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/cb66be286795d71f89367d596bf78ea7-Paper-Datasets_and_Benchmarks_Track.pdf) · [Code](https://github.com/MBZUAI-LLM/web2code) · [Full entry](https://awesomerea.org/papers/paper-web2code/)</sub>
 - [**Understanding JavaScript Event-Based Interactions**](https://doi.org/10.1145/2568225.2568268) - Clematis helps developers understand a JavaScript web application's runtime behavior from a recorded user session. <sub>ICSE 2014 · Conference paper · Saba Alimadadi et al. · [PDF](https://people.ece.ubc.ca/amesbah/resources/papers/clematis-icse14.pdf) · [Code](https://github.com/saltlab/clematis/tree/7b2479a09721699eaaa24f6e258df5e2beb35d0a) · [Full entry](https://awesomerea.org/papers/paper-clematis/)</sub>
 - [**Crawling Ajax-Based Web Applications through Dynamic Analysis of User Interface State Changes**](https://dl.acm.org/doi/10.1145/2109205.2109208) - Crawljax infers a state-flow graph of an Ajax web application by driving it in a real browser. <sub>ACM Transactions on the Web 2012 · Journal article · Ali Mesbah et al. · [PDF](https://dl.acm.org/doi/pdf/10.1145/2109205.2109208) · [Code](https://github.com/crawljax/crawljax) · [Full entry](https://awesomerea.org/papers/paper-crawljax/)</sub>
