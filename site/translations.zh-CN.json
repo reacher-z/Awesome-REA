@@ -7238,5 +7238,14 @@
       "它与本合集高度重叠：其链接的项目、清单和官方页面中约有 30 项已在本合集中收录；它在“其他清单”中链接了本合集，也列出了 awesome-REA-cases 等其他 REA 案例追踪清单。每日运行的工作流会搜索 GitHub 并把候选项发布到一个议题中，但条目均由人工添加；另有校验脚本按清单自己的 CONTRIBUTING.md 所述规则检查条目。",
       "README 说明该清单为非官方、与 morluto/rea 无关，因此属于社区合集，而非 REA 官方资源。它不收录镜像、纯分支以及主要用于绕过许可、复制付费功能或分发受版权保护素材的项目，并受理下架请求；每个链接的案例仍需单独核查其权利与原始文件要求。清单以 CC0-1.0 发布。"
     ]
+  },
+  "andromeda": {
+    "name": "Andromeda Android 应用交互式逆向工具",
+    "requirements": [
+      "处于早期阶段且已不再活跃：README 称该工具仍处于早期开发阶段；仓库共 29 个提交，时间从 2019-09-22 到所审阅的 2020-03-14 master 提交，后者只删除了一个编辑器配置目录。仓库没有标签或发行版，GitHub 也未将其标为已归档。为工具编写文档仍列在 TODO 中；README 只以截图展示命令列表，作者也说明自己的 Android 经验非常有限。",
+      "需用 make 从源码构建：以 clang++ 的 C++17 模式（-std=c++1z）和调试参数（-g -O0）编译全部源码，并链接 zlib 与 OpenSSL 的 libcrypto；README 给出的 apt 命令安装 clang、libz-dev 和 libssl-dev。Makefile 在 Linux 上额外链接 libstdc++fs，在 macOS 上使用 Homebrew 的 openssl@1.1 路径；未涉及 Windows。",
+      "输入为使用者自备的 APK，用法为 ./bin/andromeda app.apk。路径必须以 .apk 结尾；若解包后的压缩包根目录缺少 AndroidManifest.xml 或 DEX 文件，工具即停止，因此不接受单独的 DEX 文件。仓库中没有示例 APK。",
+      "采用 Apache-2.0 许可。third_party.md 列出随附的第三方库及其各自许可证：Google 的 dexter slicer（Apache-2.0）、Claud Xiao 的 AxmlParser、linenoise-cpp、miniz 和 pugixml；代码树中还附带 digestpp 哈希头文件库。本次未构建或运行该工具，也未分析任何 APK。"
+    ]
   }
 }
