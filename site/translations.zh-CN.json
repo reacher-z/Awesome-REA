@@ -7312,5 +7312,14 @@
       "make 运行回归测试，将附带测试二进制的输出与预期的 .rev 清单比对；tests/ 中有 96 个小型已编译测试二进制，大多附有 C 源码。分析对象是使用者自己的二进制；本次审阅未分析任何二进制，也未运行测试。",
       "采用 GPL-3.0；取自 angr cle 项目的重定位定义保留其 BSD 风格许可证。"
     ]
+  },
+  "mobdevim": {
+    "name": "mobdevim iOS 设备命令行工具",
+    "requirements": [
+      "没有发布版或标签；所审阅的 main 分支 2024-02-01 提交是最近一次推送，其提交说明称修复了日志获取。README 中的用法文本显示其构建于 2023-11-07，并仍把 iOS 16.5 上的日志获取标为失效、把设备备份列为待办。仓库还提交了预编译的 compiled/mobdevim 二进制，最后修改于 2023-11-07。",
+      "需在 macOS 上构建 Xcode 项目；它链接 /System/Library/PrivateFrameworks/MobileDevice.framework，macOS 部署目标设为 10.12 和 10.13，构建阶段会把 mobdevim 复制到 /usr/local/bin，该目录不可写时构建会失败。README 未说明支持的 iOS 或 Xcode 版本。",
+      "需要一台经 USB 连接或已配对 Wi-Fi 的 iOS 设备。列出和结束进程、启动应用及模拟定位都需要先挂载开发者磁盘映像；-I 选项使用使用者自备的签名文件与 .dmg 映像（例如来自 Xcode）进行挂载。拷贝应用数据经由 house_arrest 服务，因此只适用于沙盒允许访问的应用。",
+      "GitHub 未检测到许可证，仓库根目录也没有许可证文件，因此工具的使用条款并未说明；process 目录附有 Hex-Rays 2018 年的 MIT 许可证，适用于其中的 Instruments 客户端代码，misc/InstrumentsPlugin.h 注明出自 codecolorist 的 FreeTheSandbox。本次审阅未对任何设备运行该工具；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
