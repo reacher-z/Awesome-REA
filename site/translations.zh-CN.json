@@ -7896,5 +7896,14 @@
       "wiki 中的主机配置涵盖 macOS 以及 Ubuntu 或 Kali Linux，Linux 上还需 Android 命令行工具。已越狱的 iOS 和已 root 的 Android 设备上运行 frida-server。对于其他设备，IPA Installer 会注入仓库中提交的 ipa_installer/release/FridaGadget.dylib（约 14 MB），并用使用者的 iOS 开发者描述文件重新签名应用；APK Builder 则加入由 getlibs.sh 下载的 Frida Gadget 库，并用 apk_builder/appmon.keystore 重新签名 APK——这是随仓库提交、密码固定的共用密钥。这些功能只应用于获准测试的应用和设备。",
       "README 还列出一个 Intruder 组件，用于修改 API 调用数据以改变应用行为；本条目只涉及监控与追踪功能。Apache-2.0（LICENSE）。所审来源未提及任何 AI 或 REA 用途，本条目也未安装或运行该工具。"
     ]
+  },
+  "img4tool": {
+    "name": "img4tool Apple IMG4 容器工具",
+    "requirements": [
+      "审阅时最新版本为 build 218，发布于 2026-01-29，提供的是 CI 生成的 macOS 和 Ubuntu buildroot 压缩包，而非打包好的安装程序。所审阅的 master 提交（2026-08-20 合并）比它多两个提交，合并了一项 generator 参数修复。版本号即仓库的提交总数。",
+      "从源码构建需要 autoconf、automake、libtool、pkg-config 和支持 C++11 的编译器，并依赖 tihmstar 的 libgeneral。libplist-2.0（用于读取 SHSH、校验和格式转换）以及用于解密和载荷哈希校验的加密后端（OpenSSL，macOS 上也可用 CommonCrypto）均为可选依赖；缺少加密后端时无法解密，校验也会提示无法检查载荷哈希。BVX2 支持需要 Apple 的 libcompression 或 liblzfse；可选的 libfwkeyfetch 构建会增加一个密钥查询选项，本条目不涉及该功能。",
+      "输入文件为使用者自有的 IMG4、IM4P、IM4M 或 SHSH 文件以及 BuildManifest。仓库只有源码，没有提交任何 Apple 固件、票据或密钥；解密载荷所需的 IV 和密钥须由使用者自行提供。按文件头说明，附带的 LZSS 解码器（lzssdec.c）改编自 Jonathan Levin 的 joker 代码。",
+      "采用 LGPL-3.0 许可。容器创建、重命名和 IM4R generator 选项服务于恢复流程，此处不再展开。本次未解析任何固件文件，也未进行构建。"
+    ]
   }
 }
