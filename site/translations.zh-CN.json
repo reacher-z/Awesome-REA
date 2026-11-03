@@ -7542,5 +7542,14 @@
       "移动设备上需要运行与主机 Frida 版本匹配的 frida-server，README 指出在 Android 上它必须以 root 身份运行；-U 用于选择通过 USB 连接的设备，frida-ps 可列出进程名。输出为每个内存区域一个原始文件，以其基地址命名，不做结构或符号恢复；无法读取的区域会给出警告并跳过。",
       "转储中可能包含目标进程里的凭据和个人数据，因此只应用于自己拥有或获得授权测试的应用和设备。仓库没有许可证文件，GitHub 也未识别出许可证，因此没有明确的再使用授权；仓库仅包含三个 Python 文件和 README。所审来源未提及任何 AI 或 REA 用途，本条目也未运行该工具。"
     ]
+  },
+  "frida-ui": {
+    "name": "Frida UI 浏览器端 Frida 操作界面",
+    "requirements": [
+      "最新发布版本为 v1.1.0，发布于 2026-01-18，也已上架 PyPI；所审阅的 main 分支提交 4b25e28（2026-03-08）比它多 16 个提交，包括布局调整、远程设备设置保存、CodeShare 缓存和键盘快捷键。可在 Python 3.7+ 上通过 uv tool、pipx 或 pip 安装；依赖 fastapi、uvicorn、pydantic 和 frida Python 包。",
+      "设备上须运行与所装 frida 包版本一致的 frida-server，可通过 ADB 经 USB 连接，或经网络连接；README 只介绍了 Android 的配置方法。目标应用由分析者自备，且须已安装在该设备上。",
+      "服务默认绑定 127.0.0.1:8000，其 REST API 没有身份验证；README 提醒它会在目标进程中执行任意 JavaScript，只应向可信网络和用户开放。Monaco 编辑器从 cdnjs 加载，失败时退回普通文本框；CodeShare 脚本从 codeshare.frida.re 获取并原样运行，使用前应先审阅。",
+      "采用 MIT 许可。README 称这是独立项目，不属于 Frida 官方，也未获其赞助，并致谢 GitHub Copilot 提供代码建议。仓库没有自动化测试或持续集成；本次审阅未安装或运行，也未提及使用 REA。"
+    ]
   }
 }
