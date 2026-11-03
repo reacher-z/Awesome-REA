@@ -6921,5 +6921,14 @@
       "仓库没有测试或 CI，也未报告任何评估样本或准确率。REAI 给出的函数名和说明属于模型输出，需要分析人员复核；本次审阅未运行任何内容。",
       "LICENSE 文件为 AGPL-3.0 文本，而中英文 README 都称项目采用 GPL-3.0，并附加“仅限学习研究、禁止商用”的条件，这两种许可证均无此限制，因此再利用条款并不明确。IDA Pro 与模型 API 适用各自条款。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "cobra-irad-bluetooth-protocol-walkthrough": {
+    "name": "逆向分析蓝牙雷达测速预警器协议",
+    "requirements": [
+      "写于 2017 年，正文最后一次扩充是在 2017-07-06；2025 年 1 月的最新提交只更新了联系邮箱。内容只涉及一种预警器型号。由于作者没有雷达测速枪，警报类型的取值只识别了一部分；初始同步采用重放而非解析，README 也预计更改应用设置后需要重新录制重放数据。",
+      "照此方法操作，需要一台配合厂商应用使用的 Cobra iRAD 900，以及记录手机蓝牙通信的手段；作者使用越狱 iPhone 5 上的 BTServer 日志和 Wireshark。仓库提交了作者录制的三份 .pklg 抓包、Wireshark 导出的 XML（data.xml）以及处理后的 packetData.dat；不含任何应用或设备固件。",
+      "radar.py 是作者自称“极其粗糙”的概念验证脚本，通过 PyBluez 走 RFCOMM 通信，并硬编码了作者设备的地址和服务 UUID；其安装说明使用 Python 2 的 python-bluez 软件包。parseData.py 把 data.xml 转换为 packetData.dat，而 radar.py 用 pickle 加载该文件，因此应把它视为可执行输入。本次审阅未运行任何内容。",
+      "采用 MIT 许可证。Cobra 的预警器、应用和商标仍归其权利人所有。所审来源未确立 AI 或 REA 使用。"
+    ]
   }
 }
