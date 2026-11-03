@@ -3853,5 +3853,381 @@
       "https://github.com/morluto/rea/blob/e8da7e1edd075feec0e6beedec93d5645fed8125/website/public/blog/reverse-engineering-models/index.html",
       "https://github.com/N0zoM1z0/th08/commit/a393f400786e4cc6cbb1000af0dad3276da12c78"
     ]
+  },
+  {
+    "id": "cadcraft-case",
+    "name": "CADCraft: a clean-room CAD and drafting application in Rust",
+    "url": "https://github.com/storytold/cadcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe CADCraft as an open-source, clean-room computer-aided design and drafting application built in pure Rust. The README documents a 2D/3D CAD workflow with a command line, object snaps, layers, dimensions, hatches, blocks and DXF, and calls the project early development.",
+    "description_zh": "作者将 CADCraft 描述为用纯 Rust 构建的开源净室计算机辅助设计与制图应用。README 记录包含命令行、对象捕捉、图层、标注、填充、块与 DXF 的 2D/3D CAD 工作流，并自述项目处于早期开发阶段。",
+    "evidence_url": "https://github.com/storytold/cadcraft/blob/b639b18f69bfefd58f866fd0dc04940d0c6aa6e6/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build. The catalog did not build, install or run it.",
+      "The README calls CADCraft early development and links a parity checklist and gap list; it does not claim complete CAD compatibility.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/cadcraft/b639b18f69bfefd58f866fd0dc04940d0c6aa6e6/docs/images/ui-apartment.png",
+      "https://github.com/storytold/cadcraft/releases/tag/v0.17.0",
+      "https://github.com/storytold/cadcraft/blob/b639b18f69bfefd58f866fd0dc04940d0c6aa6e6/docs/target-app-parity.md",
+      "https://github.com/storytold/cadcraft/blob/b639b18f69bfefd58f866fd0dc04940d0c6aa6e6/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "designcraft-case",
+    "name": "DesignCraft: a clean-room page layout and publishing studio in Rust",
+    "url": "https://github.com/storytold/designcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe DesignCraft as an open-source, clean-room page layout and desktop publishing studio built in pure Rust. The README documents native and WebAssembly builds and calls the project pre-alpha.",
+    "description_zh": "作者将 DesignCraft 描述为用纯 Rust 构建的开源净室页面版式与桌面出版工作室。README 记录原生与 WebAssembly 构建，并自述项目处于 pre-alpha 阶段。",
+    "evidence_url": "https://github.com/storytold/designcraft/blob/f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build. The catalog did not build, install or run it.",
+      "The README calls the project pre-alpha and links a parity checklist and gap list; it does not claim complete publishing-workflow compatibility.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/designcraft/f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e/docs/images/ui-spread.png",
+      "https://github.com/storytold/designcraft/releases/tag/v0.17.0",
+      "https://github.com/storytold/designcraft/blob/f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e/docs/target-app-parity.md",
+      "https://github.com/storytold/designcraft/blob/f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "effectcraft-case",
+    "name": "EffectCraft: a clean-room motion graphics and compositing studio in Rust",
+    "url": "https://github.com/storytold/effectcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe EffectCraft as an open-source, clean-room motion graphics and visual effects studio built in pure Rust. The README documents native and WebAssembly builds and estimates about 91% of its tracked features.",
+    "description_zh": "作者将 EffectCraft 描述为用纯 Rust 构建的开源净室动效图形与视觉特效工作室。README 记录原生与 WebAssembly 构建，并估计已覆盖约 91% 的跟踪功能。",
+    "evidence_url": "https://github.com/storytold/effectcraft/blob/b7dee07cf44fcb42e0afa662043c0dc3bf3f8553/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build. The catalog did not build, install or run it.",
+      "The README calls the project alpha and estimates about 91% of its tracked features; the linked parity document lists remaining gaps, and complete compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/effectcraft/b7dee07cf44fcb42e0afa662043c0dc3bf3f8553/docs/images/effectcraft-hero.png",
+      "https://github.com/storytold/effectcraft/releases/tag/v0.21.0",
+      "https://github.com/storytold/effectcraft/blob/b7dee07cf44fcb42e0afa662043c0dc3bf3f8553/docs/target-app-parity.md",
+      "https://github.com/storytold/effectcraft/blob/b7dee07cf44fcb42e0afa662043c0dc3bf3f8553/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "figcraft-case",
+    "name": "FigCraft: a clean-room interface design and prototyping tool in Rust",
+    "url": "https://github.com/storytold/figcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe FigCraft as an open-source, clean-room interface design and prototyping tool built in pure Rust. The README documents native and WebAssembly builds and estimates about 49% of the parity needed to replace proprietary design tools for real work.",
+    "description_zh": "作者将 FigCraft 描述为用纯 Rust 构建的开源净室界面设计与原型工具。README 记录原生与 WebAssembly 构建，并估计在真实工作中替代专有设计工具的完成度约为 49%。",
+    "evidence_url": "https://github.com/storytold/figcraft/blob/35684eaa028e636d264073a666ef11881620fa0e/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build. The catalog did not build, install or run it.",
+      "The README calls the project alpha and estimates about 49% of the parity needed to replace proprietary design tools for real work; complete compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/figcraft/35684eaa028e636d264073a666ef11881620fa0e/docs/images/shot-1-hero.png",
+      "https://github.com/storytold/figcraft/releases/tag/v0.15.0",
+      "https://github.com/storytold/figcraft/blob/35684eaa028e636d264073a666ef11881620fa0e/docs/target-app-parity.md",
+      "https://github.com/storytold/figcraft/blob/35684eaa028e636d264073a666ef11881620fa0e/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "filmcraft-case",
+    "name": "FilmCraft: a clean-room nonlinear video editor in Rust",
+    "url": "https://github.com/storytold/filmcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe FilmCraft as an open-source, clean-room nonlinear video editor built in pure Rust. The README documents native and WebAssembly builds and reports about 86% feature breadth and about 56% readiness for real production work.",
+    "description_zh": "作者将 FilmCraft 描述为用纯 Rust 构建的开源净室非线性视频编辑器。README 记录原生与 WebAssembly 构建，并报告约 86% 的功能覆盖与约 56% 的真实制作可用度。",
+    "evidence_url": "https://github.com/storytold/filmcraft/blob/57dc82ea2046c2ec479ab4d4d8167d90e5500b49/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build. The catalog did not build, install or run it.",
+      "The README calls the project alpha and reports about 86% feature breadth and about 56% readiness for real production work; complete compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/filmcraft/57dc82ea2046c2ec479ab4d4d8167d90e5500b49/docs/images/filmcraft-hero.png",
+      "https://github.com/storytold/filmcraft/releases/tag/v0.17.0",
+      "https://github.com/storytold/filmcraft/blob/57dc82ea2046c2ec479ab4d4d8167d90e5500b49/docs/target-app-parity.md",
+      "https://github.com/storytold/filmcraft/blob/57dc82ea2046c2ec479ab4d4d8167d90e5500b49/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "lightcraft-case",
+    "name": "LightCraft: a clean-room photo library and raw developer in Rust",
+    "url": "https://github.com/storytold/lightcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe LightCraft as an open-source, clean-room non-destructive photo library and raw developer built in pure Rust. The README documents native and WebAssembly builds and calls the project alpha.",
+    "description_zh": "作者将 LightCraft 描述为用纯 Rust 构建的开源净室非破坏性照片库与 RAW 显影器。README 记录原生与 WebAssembly 构建，并自述项目处于 alpha 阶段。",
+    "evidence_url": "https://github.com/storytold/lightcraft/blob/389ab177db87694ce71d54a1adb9546772e483b6/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build. The catalog did not build, install or run it.",
+      "The README calls the project alpha and documents remaining gaps in professional photo workflows; complete compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/lightcraft/389ab177db87694ce71d54a1adb9546772e483b6/docs/images/hero-tetons.jpg",
+      "https://github.com/storytold/lightcraft/releases/tag/v0.18.0",
+      "https://github.com/storytold/lightcraft/blob/389ab177db87694ce71d54a1adb9546772e483b6/docs/target-app-parity.md",
+      "https://github.com/storytold/lightcraft/blob/389ab177db87694ce71d54a1adb9546772e483b6/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "pdfcraft-case",
+    "name": "PdfCraft: a clean-room PDF reader and editor in Rust",
+    "url": "https://github.com/storytold/pdfcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe PdfCraft as an open-source, clean-room PDF reader and editor built in pure Rust. The README documents native and WebAssembly builds and reports 57% of tracked features and 94% of commands.",
+    "description_zh": "作者将 PdfCraft 描述为用纯 Rust 构建的开源净室 PDF 阅读与编辑器。README 记录原生与 WebAssembly 构建，并报告 57% 的跟踪功能与 94% 的命令。",
+    "evidence_url": "https://github.com/storytold/pdfcraft/blob/3709926f39039b57e71644227aa8b41b46bde940/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build. The catalog did not build, install or run it.",
+      "The README calls the project alpha and reports 57% of tracked features and 94% of commands; complete PDF compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/pdfcraft/3709926f39039b57e71644227aa8b41b46bde940/docs/images/pdfcraft-viewer.png",
+      "https://github.com/storytold/pdfcraft/releases/tag/v0.18.0",
+      "https://github.com/storytold/pdfcraft/blob/3709926f39039b57e71644227aa8b41b46bde940/docs/target-app-parity.md",
+      "https://github.com/storytold/pdfcraft/blob/3709926f39039b57e71644227aa8b41b46bde940/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "soundcraft-case",
+    "name": "SoundCraft: a clean-room digital audio workstation in Rust",
+    "url": "https://github.com/storytold/soundcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe SoundCraft as an open-source, clean-room digital audio workstation built in pure Rust. The README documents native and WebAssembly builds and reports 94% menu coverage, about 70% feature presence and roughly 40% readiness for real work.",
+    "description_zh": "作者将 SoundCraft 描述为用纯 Rust 构建的开源净室数字音频工作站。README 记录原生与 WebAssembly 构建，并报告 94% 的菜单覆盖、约 70% 的功能存在度与约 40% 的真实工作可用度。",
+    "evidence_url": "https://github.com/storytold/soundcraft/blob/b11ffe73ae2e9804377c6cb37be45edf3058ac0d/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build. The catalog did not build, install or run it.",
+      "The README calls the project pre-alpha and reports 94% menu coverage, about 70% feature presence and roughly 40% readiness for real work; complete compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/soundcraft/b11ffe73ae2e9804377c6cb37be45edf3058ac0d/docs/images/edit.png",
+      "https://github.com/storytold/soundcraft/releases/tag/v0.17.0",
+      "https://github.com/storytold/soundcraft/blob/b11ffe73ae2e9804377c6cb37be45edf3058ac0d/docs/target-app-parity.md",
+      "https://github.com/storytold/soundcraft/blob/b11ffe73ae2e9804377c6cb37be45edf3058ac0d/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "vectorcraft-case",
+    "name": "VectorCraft: a clean-room vector illustration application in Rust",
+    "url": "https://github.com/storytold/vectorcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe VectorCraft as an open-source, clean-room vector illustration application built in pure Rust. The README documents native and WebAssembly builds and reports about 88% of core menu items.",
+    "description_zh": "作者将 VectorCraft 描述为用纯 Rust 构建的开源净室矢量插画应用。README 记录原生与 WebAssembly 构建，并报告约 88% 的核心菜单项。",
+    "evidence_url": "https://github.com/storytold/vectorcraft/blob/999f4e6478e19b7139db70a3f2a0a5b0669ffcaf/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build. The catalog did not build, install or run it.",
+      "The README calls the project alpha and reports about 88% of core menu items; complete compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/vectorcraft/999f4e6478e19b7139db70a3f2a0a5b0669ffcaf/docs/images/shot-2-ribbons.png",
+      "https://github.com/storytold/vectorcraft/releases/tag/v0.21.0",
+      "https://github.com/storytold/vectorcraft/blob/999f4e6478e19b7139db70a3f2a0a5b0669ffcaf/docs/target-app-parity.md",
+      "https://github.com/storytold/vectorcraft/blob/999f4e6478e19b7139db70a3f2a0a5b0669ffcaf/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "woxi-case",
+    "name": "Woxi: a Wolfram Language interpreter in Rust",
+    "url": "https://github.com/ad-si/Woxi",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe Woxi as a Rust interpreter for a subset of the Wolfram Language, focused on CLI scripting and Jupyter notebooks. The README does not claim full Mathematica compatibility.",
+    "description_zh": "作者将 Woxi 描述为用 Rust 实现的 Wolfram Language 子集解释器，面向 CLI 脚本与 Jupyter Notebook。README 未声明完整 Mathematica 兼容。",
+    "evidence_url": "https://github.com/ad-si/Woxi/blob/09b106c5509b373b95b72fc6709a5a60c1b595f6/readme.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Install with cargo, pip, the npm WebAssembly package, or GitHub release archives; releases include Linux, macOS (not notarized) and Windows builds for x86-64 and arm64. The catalog did not install or run it.",
+      "Implements a subset of the Wolfram Language; the README links CLI tests and a functions.csv implementation-status list. Full Mathematica compatibility is not claimed.",
+      "The macOS Woxi Studio bundle is not notarized and is quarantined after download; the README documents this limit.",
+      "AGPL-3.0; REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/ad-si/Woxi/09b106c5509b373b95b72fc6709a5a60c1b595f6/images/2026-02-12t1501_jupyter.png",
+      "https://github.com/ad-si/Woxi/releases/tag/v0.3.0",
+      "https://github.com/ad-si/Woxi/blob/09b106c5509b373b95b72fc6709a5a60c1b595f6/functions.csv",
+      "https://github.com/ad-si/Woxi/blob/09b106c5509b373b95b72fc6709a5a60c1b595f6/license.txt"
+    ]
+  },
+  {
+    "id": "pictureman-case",
+    "name": "Picture Man: a Rust rebuild of the Windows 3.x image editor",
+    "url": "https://github.com/yovico-ai/pictureman",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A cross-platform Rust rebuild of Picture Man 1.55 (1991-1993), the true-color image editor for Windows 3.x, per the project README. The README says no original source survived and the algorithms were recovered by disassembling PMAN.EXE and its converter DLLs.",
+    "description_zh": "据项目 README，这是对 Windows 3.x 真彩色图像编辑器 Picture Man 1.55（1991-1993）的跨平台 Rust 重建。README 说明原始源码已失传，算法通过反汇编 PMAN.EXE 及其转换器 DLL 恢复。",
+    "evidence_url": "https://github.com/yovico-ai/pictureman/blob/95c0ce0b8a9ec3156dfae3c01cd3bc4d1fe53739/README.md",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No prebuilt binaries; the README documents source builds with Rust 1.94+ and a hosted WebAssembly demo. The desktop app opens user-supplied image files; the catalog did not build or run it.",
+      "The README says the original source was lost and the algorithms were recovered by disassembling PMAN.EXE and its converter DLLs, with recovered specifications under re/.",
+      "The rebuild is an independent implementation and does not include the original proprietary application or its assets; complete behavioral equivalence is not claimed.",
+      "Code is MIT; NOTICE and the original Picture Man rights remain with their owners. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/yovico-ai/pictureman/95c0ce0b8a9ec3156dfae3c01cd3bc4d1fe53739/docs/screenshot.png",
+      "https://github.com/yovico-ai/pictureman/blob/95c0ce0b8a9ec3156dfae3c01cd3bc4d1fe53739/re/README.md",
+      "https://yovico-ai.github.io/pictureman/",
+      "https://github.com/yovico-ai/pictureman/blob/95c0ce0b8a9ec3156dfae3c01cd3bc4d1fe53739/LICENSE",
+      "https://github.com/yovico-ai/pictureman/blob/95c0ce0b8a9ec3156dfae3c01cd3bc4d1fe53739/NOTICE"
+    ]
   }
 ]
