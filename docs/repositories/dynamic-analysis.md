@@ -22,6 +22,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [bootleg/ret-sync](https://github.com/bootleg/ret-sync) — ret-sync is a set of plugins that helps to synchronize a debugging session (WinDbg/GDB/LLDB/OllyDbg2/x64dbg) with IDA/Ghidra/Binary Ninja disassemblers. **[2,401 stars]** · Curated: [ret-sync](https://awesomerea.org/resources/ret-sync/)
 - [QBDI/QBDI](https://github.com/QBDI/QBDI) — A Dynamic Binary Instrumentation framework based on LLVM. **[1,828 stars]** · Curated: [QBDI](https://awesomerea.org/resources/qbdi/)
 - [hasherezade/tiny\_tracer](https://github.com/hasherezade/tiny_tracer) — A Pin Tool for tracing API calls etc **[1,711 stars]** · Curated: [Tiny Tracer](https://awesomerea.org/resources/tiny-tracer/)
+- [0xdea/frida-scripts](https://github.com/0xdea/frida-scripts) — A collection of my Frida instrumentation scripts to reverse engineer mobile apps and more. **[1,672 stars]** · Curated: [frida-scripts (0xdea)](https://awesomerea.org/resources/raptor-frida-scripts/)
 - [illera88/Ponce](https://github.com/illera88/Ponce) — IDA 2016 plugin contest winner! Symbolic Execution just one-click away! **[1,635 stars]** · Curated: [Ponce](https://awesomerea.org/resources/ponce/)
 - [nowsecure/r2frida](https://github.com/nowsecure/r2frida) — Radare2 and Frida better together. **[1,450 stars]** · Curated: [r2frida](https://awesomerea.org/resources/r2frida/)
 - [darbra/sperm](https://github.com/darbra/sperm) — A collection of excellent reverse engineering articles I have read, well worth a look. **[1,422 stars]**

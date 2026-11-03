@@ -22,6 +22,7 @@
 - [bootleg/ret-sync](https://github.com/bootleg/ret-sync) — ret-sync 是一组插件，可将调试会话（WinDbg/GDB/LLDB/OllyDbg2/x64dbg）与 IDA/Ghidra/Binary Ninja 反汇编器同步。 **[2,401 星标]** · 精选：[ret-sync 调试器与反汇编器同步插件](https://awesomerea.org/zh/resources/ret-sync/)
 - [QBDI/QBDI](https://github.com/QBDI/QBDI) — 基于 LLVM 的动态二进制插桩框架。 **[1,828 星标]** · 精选：[QBDI 动态二进制插桩框架](https://awesomerea.org/zh/resources/qbdi/)
 - [hasherezade/tiny\_tracer](https://github.com/hasherezade/tiny_tracer) — 用于跟踪 API 调用等行为的 Pin 工具。 **[1,711 星标]** · 精选：[Tiny Tracer API 调用跟踪工具](https://awesomerea.org/zh/resources/tiny-tracer/)
+- [0xdea/frida-scripts](https://github.com/0xdea/frida-scripts) — 我编写的 Frida 插桩脚本合集，用于移动应用逆向工程等任务。 **[1,672 星标]** · 精选：[frida-scripts（0xdea）Frida 移动应用与 Linux 追踪脚本集](https://awesomerea.org/zh/resources/raptor-frida-scripts/)
 - [illera88/Ponce](https://github.com/illera88/Ponce) — IDA 2016 插件竞赛获奖作品！一键即可使用符号执行！ **[1,635 星标]** · 精选：[Ponce IDA 符号执行与污点分析插件](https://awesomerea.org/zh/resources/ponce/)
 - [nowsecure/r2frida](https://github.com/nowsecure/r2frida) — 让 Radare2 与 Frida 更好地协同工作。 **[1,450 星标]** · 精选：[r2frida](https://awesomerea.org/zh/resources/r2frida/)
 - [darbra/sperm](https://github.com/darbra/sperm) — 浏览过的精彩逆向文章汇总，值得一看。 **[1,422 星标]**
