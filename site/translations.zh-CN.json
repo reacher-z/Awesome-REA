@@ -6939,5 +6939,15 @@
       "二进制由分析者自行提供。仓库在 examples/misc/samples 和 tests 下附带由所含 C 源码构建的小型示例二进制，另有两个用于示例演练的挑战程序：Flare-On 2015 第 2 题（examples/flareon-2015/2/bin/very_success）和 kao 的 toy project（examples/kaos-toy-project/bin/toyproject.exe）。Sphinx 手册为西班牙语，其中提到的 install.sh 脚本在所审阅的提交中并不存在。",
       "采用 BSD 2-Clause 许可，版权归 Fundación Dr. Manuel Sadosky（2014）。README 介绍了检验指令翻译的方法：用 PyAsmJIT 原生运行代码，同时在 REIL 模拟器中运行，再比较两者的最终上下文；本次未运行该 nose 测试套件，也未分析任何二进制。"
     ]
+  },
+  "cbyge-c-by-ge-protocol-case": {
+    "name": "cbyge：重建 C by GE 智能灯泡云端协议",
+    "requirements": [
+      "审阅对象为 2021-11-09 的 main 提交，没有发布版。README 声明代码并非依据协议规范编写，可能失效，也可能在某些网络或设备上无法工作。作者只研究了自己拥有的灯泡，同一应用可控制的插座、传感器和开关均未逆向；本次也未核实当前 Cync 服务是否仍接受该客户端。",
+      "需要用户自己的 C by GE 或 Cync 账号，且设备已在官方应用中完成设置；较新的账号需通过邮箱双重验证登录，可由网页应用或 login_2fa 命令完成。控制经由厂商云端，而非本地蓝牙或局域网。Android 应用、通信抓包和账号数据都不在仓库中；README 只引用了少量 Smali 片段和一条来自作者设备的状态数据包。",
+      "使用 Go 构建；go.mod 声明 Go 1.14 和两个小型依赖。server 目录提供浏览器前端和 JSON API，可选设置网页密码保护；仓库还保留了调查期间使用的小型 TCP 与 HTTP 记录代理。",
+      "仓库没有测试或 CI。README 称已有其他人在部分情况下成功使用该 API，作者也认为它比官方应用更快、更可靠；本次审阅既未运行该库，也未运行服务器。",
+      "采用 BSD-2-Clause 许可，版权归 Alexander Nichol（2021）。这是独立客户端，并非恢复出的厂商源码；厂商的应用、服务和商标保留各自权利，所审来源未确立任何 AI 或 REA 的使用。"
+    ]
   }
 }
