@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/android/) · [简体中文](android.zh-CN.md)
 
-**479 repositories** · 2026-10-20 UTC
+**480 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -122,6 +122,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [ADWMC/helm-d](https://github.com/ADWMC/helm-d) — DeepSeek Harness integrated security analysis plugin, covering Android, Web, Native, Protocol, Malware, and AI-Security (9 bundles and 1 preset). **[217 stars]**
 - [Ablation-Tool/ablation](https://github.com/Ablation-Tool/ablation) — Ablation is an autonomous reverse engineering system. **[213 stars]**
 - [MlgmXyysd/Il2CppMemoryDumper](https://github.com/MlgmXyysd/Il2CppMemoryDumper) — Dump Il2Cpp unprotected executable ELF and metadata from process memory **[207 stars]**
+- [jd-opensource/arkdecompiler](https://github.com/jd-opensource/arkdecompiler) — HarmonyOS NEXT decompiler **[203 stars]** · Curated: [arkdecompiler](https://awesomerea.org/resources/arkdecompiler/)
 - [RevEngiSquad/revengi-app](https://github.com/RevEngiSquad/revengi-app) — Your all-in-one toolkit for reverse engineering: Smali Grammar, DexRepair, Flutter Analysis and much more... **[202 stars]**
 - [user1342/Obfu-DE-Scate](https://github.com/user1342/Obfu-DE-Scate) — Obfu\[DE\]scate is a de-obfuscation tool for Android APKs that uses fuzzy comparison logic to identify similarities between functions, even if they have been renamed as part of obfuscation. It compares two versions of an APK and generates a mapping text file and an interactive HTML file as outputs! **[200 stars]**
 - [hackcatml/frida-ue4dump](https://github.com/hackcatml/frida-ue4dump) — UE4 dump frida script **[195 stars]**
