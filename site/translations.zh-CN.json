@@ -7063,5 +7063,14 @@
       "仓库没有测试或 CI（npm test 脚本只是占位）；各样例旁附有预期输出，本次审阅未运行任何内容。",
       "采用 MIT 许可（见 LICENSE），但 package.json 仍保留 npm 默认的 ISC 字段。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "openpilot-cabana": {
+    "name": "Cabana CAN 总线分析工具（独立版 openpilot-cabana）",
+    "requirements": [
+      "该仓库创建于 2025-12-30；README 称 Cabana 最初是作为 openpilot 的 CAN 分析工具开发的，现已独立维护，而 openpilot 仍在 openpilot/tools/cabana 下保留自己的 cabana。审阅时最新版本为 v1.1.2，于 2026-03-16 以 Linux x86_64 压缩包发布；所审阅的 main 分支提交日期为 2026-06-09，比该版本多 66 个提交。",
+      "从源码构建需要 SCons、C++20 编译器和带 Charts、SVG、SerialBus、OpenGL 模块的 Qt 6，以及 README 为 Ubuntu/Debian 列出的 capnproto、ZeroMQ、FFmpeg、libusb 等软件包，并需先初始化同一作者的 openpilot-replay 子模块。README 还提到 Arch Linux 的 AUR 软件包；SConstruct 含 macOS arm64 分支，但发布工作流只在 Ubuntu 22.04 上构建。",
+      "分析需要使用者自己的 CAN 数据：来自自有车辆和接口的日志或实时总线、Panda 设备，或来自自己 comma 设备或 comma connect 账户的 openpilot 行车记录；--demo 则改为打开演示路线。该工具会标出候选位和信号，但不能确定其含义；本次审阅未分析任何抓包数据。",
+      "采用 MIT 许可（LICENSE，版权归 Dean Lee，2025）；openpilot-replay 子模块同样为 MIT，data/opendbc 收录 93 个来自 comma.ai MIT 许可 opendbc 的 DBC 文件。所审来源未提及 REA 或 AI 使用，本次也未进行构建。"
+    ]
   }
 }
