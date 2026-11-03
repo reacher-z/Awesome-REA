@@ -7303,5 +7303,14 @@
       "其中几个部分涉及攻击性内容，包括 bootkit 与 SMM 后门仓库、漏洞利用代码以及一个绕过安全启动的项目。本条目将该清单视为用于分析与防御的研究索引，不记录任何攻击方法。",
       "清单本身采用 CC0-1.0；所链接的作品保留各自的许可证。CI 在拉取请求上运行 awesome-lint。这是独立的发现清单；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "plasma-disassembler": {
+    "name": "PLASMA 交互式反汇编器",
+    "requirements": [
+      "已停止维护：master 分支最后一次提交 ec7df9b 的日期为 2019-03-04，没有发布版本或标签；GitHub 未将该仓库标为归档。README 仍称项目处于大规模开发中，并提醒在实现结构体和类型定义之前，数据库格式可能不兼容。",
+      "需要 Python 3.4+、Capstone（install.sh 从源码构建 4.0-alpha5）、pyelftools、pefile 及 python3-future、msgpack-python 0.4.6+、binutils 中的 c++filt，以及支持 UTF-8 和 256 色的终端；内存映射所需的 python-qt4 和 asm.py 所需的 Keystone 为可选项。Dockerfile 基于 Ubuntu 16.04，这些旧版本依赖未在当前的 Python 或 Capstone 版本上测试。",
+      "make 运行回归测试，将附带测试二进制的输出与预期的 .rev 清单比对；tests/ 中有 96 个小型已编译测试二进制，大多附有 C 源码。分析对象是使用者自己的二进制；本次审阅未分析任何二进制，也未运行测试。",
+      "采用 GPL-3.0；取自 angr cle 项目的重定位定义保留其 BSD 风格许可证。"
+    ]
   }
 }
