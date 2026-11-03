@@ -7460,5 +7460,14 @@
       "仓库附带一个测试辅助程序 test-deps/yasm-1.3.0-win64.exe，CI 工作流在 Windows 上将其复制到位，供 Python 测试用 yasm 汇编其指令样例；除此之外未提交其他示例二进制。",
       "BSD 三条款许可证（COPYING；GitHub 将其识别为未分类）。本条目未反汇编任何代码。"
     ]
+  },
+  "jtagulator": {
+    "name": "JTAGulator 片上调试接口识别工具",
+    "requirements": [
+      "最新固件版本为 1.12，于 2023-06-05 打标签；仓库只发布标签，没有 GitHub 发行版，README 称 master 是开发分支，其间的提交可能不稳定。此后直到所审阅的 2026-09-02 提交，改动包括更新链接和许可说明，以及加入 Rev. C 硬件设计文件；README 称自 2025 年 7 月起由 EXPLIoT 负责维护和支持。",
+      "需要 JTAGulator 硬件（仓库提交了 Rev. C 的设计文件，包括 Altium 工程、Gerber 文件、原理图、物料清单、装配图和测试流程）、主机上的串口终端，以及与目标候选引脚的实际接线。扫描前必须设置目标 I/O 电压（1.4–3.3 V），固件提示使用时可能影响目标系统的行为；固件还提示其前端电路与许多基于 SWD 的目标不兼容，并指向 wiki 中介绍的硬件改装方法。",
+      "固件是面向 Propeller P8X32A 的 Spin 代码：README 推荐使用 Windows 版 Propeller Tool 1.3.2，称其他开发环境未经测试且不受支持，同时也给出了用 OpenSpin 编译、用 PropLoader 加载到 RAM 或写入 EEPROM 的命令。仓库提交了已编译的固件映像 JTAGulator.eeprom（32 KB），最后一次更新对应 1.12 版。OpenOCD 模式和逻辑分析仪模式分别需要 OpenOCD 的 Bus Pirate 驱动或 Openbench Logic Sniffer 客户端软件，这两种模式在复位和固件更新后仍会保持，只能由用户手动退出。",
+      "README 称该设计以 CC BY-SA 4.0 许可发布，JTAGulator 名称和标志是 Grand Idea Studio 的注册商标，未经许可不得用于衍生作品；而 Spin 源码文件头仍写着 CC BY 3.0 United States，GitHub 也未识别出许可证。本条目未测试任何硬件，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
