@@ -34,7 +34,7 @@
 - [nmatt0/moria](https://github.com/nmatt0/moria) — 物联网固件识别与提取。 **[418 星标]**
 - [DSecurity/efiSeek](https://github.com/DSecurity/efiSeek) — 用于 UEFI 固件的 Ghidra 分析器。 **[408 星标]** · 精选：[efiSeek UEFI 模块 Ghidra 分析器](https://awesomerea.org/zh/resources/efiseek/)
 - [e-m-b-a/embark](https://github.com/e-m-b-a/embark) — EMBArk：固件安全扫描环境。 **[395 星标]** · 精选：[EMBArk EMBA 固件扫描 Web 平台](https://awesomerea.org/zh/resources/embark/)
-- [sgayou/rbasefind](https://github.com/sgayou/rbasefind) — 固件基址搜索工具。 **[375 星标]**
+- [sgayou/rbasefind](https://github.com/sgayou/rbasefind) — 固件基址搜索工具。 **[375 星标]** · 精选：[rbasefind 固件基址搜索工具](https://awesomerea.org/zh/resources/rbasefind/)
 - [nmatt0/mithril](https://github.com/nmatt0/mithril) — 物联网静态扫描器，可扫描秘密信息、SBOM、CVE 等。 **[363 星标]**
 - [binarly-io/fwhunt-scan](https://github.com/binarly-io/fwhunt-scan) — 用于分析 UEFI 固件，以及通过 FwHunt 规则检查 UEFI 模块的工具 **[246 星标]** · 精选：[FwHunt 社区版 UEFI 固件规则扫描器](https://awesomerea.org/zh/resources/fwhunt-scan/)
 - [chrivers/samsung-firmware-magic](https://github.com/chrivers/samsung-firmware-magic) — 用于解密 Samsung SSD 固件文件的工具 **[238 星标]**
