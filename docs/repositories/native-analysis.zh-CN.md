@@ -61,7 +61,7 @@
 - [mandiant/flare-learning-hub](https://github.com/mandiant/flare-learning-hub) — FLARE 团队提供的免费逆向工程与恶意软件分析教学内容。 **[1,496 星标]** · 精选：[FLARE 学习中心](https://awesomerea.org/zh/resources/flare-learning-hub/)
 - [angusdevgo/Seep-Reverse-Lab](https://github.com/angusdevgo/Seep-Reverse-Lab) — 面向智能体原生设计的多平台逆向工程与 CWE-602 客户端授权审计工作台。 **[1,462 星标]**
 - [hteso/iaito](https://github.com/hteso/iaito) — 本项目已迁移至： **[1,461 星标]**
-- [programa-stic/barf-project](https://github.com/programa-stic/barf-project) — BARF：跨平台开源二进制分析与逆向工程框架。 **[1,455 星标]**
+- [programa-stic/barf-project](https://github.com/programa-stic/barf-project) — BARF：跨平台开源二进制分析与逆向工程框架。 **[1,455 星标]** · 精选：[BARF 二进制分析与逆向工程框架](https://awesomerea.org/zh/resources/barf/)
 - [L4ys/LazyIDA](https://github.com/L4ys/LazyIDA) — 让你的 IDA 更省事！ **[1,447 星标]** · 精选：[LazyIDA：IDA 便捷操作插件](https://awesomerea.org/zh/resources/lazyida/)
 - [WPeace-HcH/WPeGPT](https://github.com/WPeace-HcH/WPeGPT) — 由 OpenAI、DeepSeek 等 AI 模型驱动的 IDA 二进制文件分析插件。 **[1,425 星标]** · 精选：[WPeGPT IDA AI 分析插件](https://awesomerea.org/zh/resources/wpegpt/)
 - [syssec-utd/pylingual](https://github.com/syssec-utd/pylingual) — 支持现代 Python 版本的 Python 反编译器。 **[1,420 星标]** · 精选：[PyLingual Python 字节码反编译器](https://awesomerea.org/zh/resources/pylingual/)
