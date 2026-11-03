@@ -7386,5 +7386,14 @@
       "需要自备描述目标网络的数据库以及从该网络采集的帧：decode 从标准输入读取 candump 输出，plot 读取 candump 日志文件，monitor 则通过 python-can 的总线参数连接实时接口；README 中的脚本示例在 SocketCAN 通道上收发帧。仓库的 tests/files 目录收录示例和测试所用的 DBC、KCD、SYM、ARXML 和 CDD 示例数据库以及生成的 C 源码。",
       "解码范围仅限所提供数据库中定义的内容；cantools 应用现有的报文和信号定义，并不推断未知布局；README 还指出生成的 C 代码仅支持不超过 64 位的信号。采用 MIT 许可。本次未连接总线，也未解码任何采集数据。"
     ]
+  },
+  "inspectrum": {
+    "name": "inspectrum 无线电信号分析工具",
+    "requirements": [
+      "审阅时最新版本为 v0.4.0，于 2025-12-06 在 GitHub 以仅含源码的形式发布；所审阅的 main 提交即该标签。发布说明称新增了 Qt 6 和 SigMF 数据集支持，将 CMake 最低版本提高到 3.5，并修复了打开小文件时的崩溃。README 建议 Linux 用户使用发行版软件包，macOS 用户使用 Homebrew 或 MacPorts，Windows 用户使用 radioconda 或 conda-forge。",
+      "从源码构建需要 CMake 3.5+（README 仍写 3.1）、支持 C++14 的编译器、Qt 6（或作为后备的 Qt 5）的 Core、Widgets 和 Concurrent 组件、FFTW 3、liquid-dsp 1.3.0+ 以及 pkg-config；各发行版的构建步骤见项目 wiki。CI 在 macOS 以及 Ubuntu 22.04 和 24.04 上分别用 Qt 5 和 Qt 6 构建，但仓库没有定义自动化测试。",
+      "它只读取录制文件，源码中没有软件无线电设备、采集或发射相关代码。使用者需自备 SigMF 录制文件或原始采样文件，格式从复数 cf32、cf64、cs32、cs16、cs8、cu8 到实数 f32、f64、s16、s8、u8，按扩展名或 --format 选择（未知扩展名按 cf32 读取），并通过 --rate 或界面控件设置采样率。64 位采样在内部会被截断为 32 位。",
+      "符号定时依靠分析者放置的游标确定，工具不会推断调制方式、帧结构或协议字段。采用 GPL-3.0，源码文件头允许使用第 3 版或更高版本；仓库只包含源码、CMake 模块和一张截图。本次未打开或分析任何录制文件。"
+    ]
   }
 }
