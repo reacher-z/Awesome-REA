@@ -7765,5 +7765,15 @@
       "仓库提交了 25 个 APK 作为测试输入：soot-infoflow-android/testAPKs 和 soot-infoflow-integration/testAPKs 下以所测场景命名的测试应用（如 SourceToSink1.apk、ThreadRunnable.apk），故意留有漏洞的 InsecureBank.apk，以及一个以哈希值命名、清单显示属于其他开发者应用（com.RZStudio.cube）的 APK。soot-infoflow-android/lib 中包含 JUnit、Hamcrest 和 protobuf-java 的 JAR 文件。",
       "采用 LGPL-2.1 许可；README 说明修改后的版本必须同样以 LGPL 公开。分析结果取决于配置以及所选的源点和汇点。本条目未分析任何应用，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "boomerang-decompiler": {
+    "name": "Boomerang 机器码反编译器",
+    "requirements": [
+      "已停止活跃维护的旧项目：所审阅的 develop 分支提交（2020-12-28）是仓库最后一次推送，Changelog 仍将 v0.6.0 标为开发中。最后一个版本 v0.5.2（2020-01-11）提供 Linux x86_64 和 Windows x64 构建，而 README 建议从源码构建 develop 分支。",
+      "构建需要 64 位操作系统、C++17 编译器（GCC 7+、Clang 6+ 或 MSVC 2017+）、CMake 3.13+、Qt5（已知 5.12+ 可用）、Capstone 4.0.1+、GNU bison 3.3+ 和 flex 2.6+；回归测试需 Python 3 运行，且不支持在 Windows 上运行。README 介绍了在 Linux、使用 Xcode 10 和 Homebrew 的 macOS 10.13+，以及使用 Visual Studio 2017 的 Windows 上的构建方法。",
+      "需自行提供要反编译的可执行文件。x86 支持仅限 32 位代码，v0.6.0 开发线已移除 SPARC 支持，生成的 C 代码仍需分析人员复核。",
+      "data/samples 提交了约 240 个面向 macOS、DOS、ELF、PowerPC、Windows 和 x86 的小型测试二进制，多数以 tests/recompilation-tests 和 tests/sources 中的测试程序命名，另有三个 Linux 发行版构建的 true 工具；tests/regression-tests 保存了它们的预期反编译输出。data/signatures 存放手写的库函数原型文件，并非厂商头文件。",
+      "LICENSE.TERMS 中沿用昆士兰大学、Sun Microsystems 及原作者的 BSD 风格条款；GitHub 未识别出对应的 SPDX 许可证。本条目未反编译任何二进制。"
+    ]
   }
 }
