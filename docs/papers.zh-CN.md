@@ -4,7 +4,7 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**196 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**197 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -12,7 +12,7 @@
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (13)
 - [反编译与符号恢复](#papers-decompilation) (89)
-- [网站重建](#papers-website-reconstruction) (30)
+- [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (14)
 - [应用重建与分析](#papers-app-reconstruction) (16)
 - [固件分析与重托管](#papers-firmware-analysis) (16)
@@ -166,6 +166,7 @@
 - [**Sketch2Code：评估视觉语言模型的交互式网页设计原型生成能力**](https://aclanthology.org/2025.naacl-long.198/) - Sketch2Code 评测视觉语言模型把粗略手绘线框草图转换为 HTML 网页原型的能力。 <sub>原题：*Sketch2Code: Evaluating Vision-Language Models for Interactive Web Design Prototyping* · NAACL 2025 · 会议论文 · Ryan Li 等 · [PDF](https://aclanthology.org/2025.naacl-long.198.pdf) · [代码](https://github.com/SALT-NLP/Sketch2Code) · [完整条目](https://awesomerea.org/zh/papers/paper-sketch2code/)</sub>
 - [**Design2Code：面向自动化前端工程的多模态代码生成评测**](https://aclanthology.org/2025.naacl-long.199/) - 使用真实网页参考、视觉元素和布局指标及人工评估，测试从网页截图重建前端代码的能力。 <sub>原题：*Design2Code: Benchmarking Multimodal Code Generation for Automated Front-End Engineering* · NAACL 2025 · 会议论文 · Chenglei Si 等 · [PDF](https://aclanthology.org/2025.naacl-long.199.pdf) · [代码](https://github.com/NoviScl/Design2Code) · [完整条目](https://awesomerea.org/zh/papers/paper-design2code/)</sub>
 - [**面向代码分析的大语言模型：LLM 真的胜任吗？**](https://www.usenix.org/conference/usenixsecurity24/presentation/fang) - 评估 GPT-3.5-turbo、GPT-4、LLaMA-2-13B、Code-LLaMA-2-13B-Instruct 与 StarChat-Beta 解释已去除注释的 JavaScript、Python 和 C 代码功能的能力，再在经 JavaScript Obfuscator（标识符重命名、死代码注入、控制流平坦化与字符串拆分）及 Wobfuscator WebAssembly 变换混淆的 JavaScript 上重复该任务。 <sub>原题：*Large Language Models for Code Analysis: Do LLMs Really Do Their Job?* · USENIX Security 2024 · 会议论文 · Chongzhou Fang 等 · [PDF](https://www.usenix.org/system/files/usenixsecurity24-fang.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-llm-code-analysis/)</sub>
+- [**借助 WebSight 数据集实现网页截图到 HTML 代码的转换**](https://arxiv.org/abs/2403.09029) - WebSight 是一个合成数据集，含 200 万份与整页截图配对的 HTML 文档，用于训练截图到 HTML 的模型。 <sub>原题：*Unlocking the conversion of Web Screenshots into HTML Code with the WebSight Dataset* · arXiv 2024 · 预印本 · Hugo Laurençon 等 · [PDF](https://arxiv.org/pdf/2403.09029v1) · [完整条目](https://awesomerea.org/zh/papers/paper-websight/)</sub>
 - [**Web2Code：面向多模态大语言模型的大规模网页转代码数据集与评估框架**](https://proceedings.nips.cc/paper_files/paper/2024/hash/cb66be286795d71f89367d596bf78ea7-Abstract-Datasets_and_Benchmarks_Track.html) - 通过指令微调和两个评测基准研究从截图重建 HTML。 <sub>原题：*Web2Code: A Large-scale Webpage-to-Code Dataset and Evaluation Framework for Multimodal LLMs* · NeurIPS 2024 Datasets and Benchmarks · 会议论文 · Sukmin Yun 等 · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/cb66be286795d71f89367d596bf78ea7-Paper-Datasets_and_Benchmarks_Track.pdf) · [代码](https://github.com/MBZUAI-LLM/web2code) · [完整条目](https://awesomerea.org/zh/papers/paper-web2code/)</sub>
 - [**理解 JavaScript 基于事件的交互**](https://doi.org/10.1145/2568225.2568268) - Clematis 根据录制的用户会话，帮助开发者理解 JavaScript 网页应用的运行时行为。 <sub>原题：*Understanding JavaScript Event-Based Interactions* · ICSE 2014 · 会议论文 · Saba Alimadadi 等 · [PDF](https://people.ece.ubc.ca/amesbah/resources/papers/clematis-icse14.pdf) · [代码](https://github.com/saltlab/clematis/tree/7b2479a09721699eaaa24f6e258df5e2beb35d0a) · [完整条目](https://awesomerea.org/zh/papers/paper-clematis/)</sub>
 - [**通过动态分析用户界面状态变化爬取基于 Ajax 的 Web 应用**](https://dl.acm.org/doi/10.1145/2109205.2109208) - Crawljax 在真实浏览器中驱动 Ajax Web 应用，以推断其状态流图。 <sub>原题：*Crawling Ajax-Based Web Applications through Dynamic Analysis of User Interface State Changes* · ACM Transactions on the Web 2012 · 期刊论文 · Ali Mesbah 等 · [PDF](https://dl.acm.org/doi/pdf/10.1145/2109205.2109208) · [代码](https://github.com/crawljax/crawljax) · [完整条目](https://awesomerea.org/zh/papers/paper-crawljax/)</sub>
