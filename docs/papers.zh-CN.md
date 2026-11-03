@@ -4,7 +4,7 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**205 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**206 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -15,7 +15,7 @@
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
-- [固件分析与重托管](#papers-firmware-analysis) (19)
+- [固件分析与重托管](#papers-firmware-analysis) (20)
 - [协议推断与分析](#papers-protocol-analysis) (20)
 
 每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -235,6 +235,7 @@
 - [**Jetset：面向嵌入式系统的定向固件重托管**](https://www.usenix.org/conference/usenixsecurity21/presentation/johnson) - Jetset 只将固件重托管到分析人员指定的目标地址，例如模糊测试器可以注入输入的位置。 <sub>原题：*Jetset: Targeted Firmware Rehosting for Embedded Systems* · USENIX Security 2021 · 会议论文 · Evan Johnson 等 · [PDF](https://www.usenix.org/system/files/sec21-johnson.pdf) · [代码](https://github.com/aerosec/jetset) · [完整条目](https://awesomerea.org/zh/papers/paper-jetset/)</sub>
 - [**基于无效性引导知识推断的自动化固件仿真**](https://www.usenix.org/conference/usenixsecurity21/presentation/zhou) - µEmu 将未知外设寄存器表示为符号，对固件映像进行符号执行，从而在没有真实硬件或人工编写外设模型的情况下仿真 ARM Cortex-M 微控制器固件。 <sub>原题：*Automatic Firmware Emulation through Invalidity-guided Knowledge Inference* · USENIX Security 2021 · 会议论文 · Wei Zhou 等 · [PDF](https://www.usenix.org/system/files/sec21-zhou.pdf) · [代码](https://github.com/MCUSec/uEmu/tree/c82fc0a36a28ab5f96001b0682adcf9783e20346) · [完整条目](https://awesomerea.org/zh/papers/paper-uemu/)</sub>
 - [**SoK：通过重托管实现嵌入式系统的安全分析**](https://dl.acm.org/doi/10.1145/3433210.3453093) - 系统化梳理“重托管”：把嵌入式固件从实体硬件迁移到虚拟环境中，该环境对硬件行为的建模足以支持模糊测试、符号执行等动态分析。 <sub>原题：*SoK: Enabling Security Analyses of Embedded Systems via Rehosting* · ACM ASIA CCS 2021 · 会议论文 · Andrew Fasano 等 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3433210.3453093) · [代码](https://github.com/rehosting/rehosting_sok) · [完整条目](https://awesomerea.org/zh/papers/paper-rehosting-sok/)</sub>
+- [**Conware：硬件外设的自动化建模**](https://dl.acm.org/doi/10.1145/3433210.3437532) - Conware 根据真实固件与外设交互的记录，构建可复用的硬件外设软件模型。 <sub>原题：*Conware: Automated Modeling of Hardware Peripherals* · ACM ASIA CCS 2021 · 会议论文 · Chad Spensky 等 · [PDF](https://sites.cs.ucsb.edu/~chris/research/doc/asiaccs21_conware.pdf) · [代码](https://github.com/ucsb-seclab/conware/tree/05dfdf5552d5c05dfca32137487fc8b3aadcd256) · [完整条目](https://awesomerea.org/zh/papers/paper-conware/)</sub>
 - [**DICE：面向动态固件分析的 DMA 输入通道自动仿真**](https://ieeexplore.ieee.org/document/9519398) - DICE 为既不模拟外设也不模拟 DMA 控制器的微控制器固件仿真器增加 DMA 输入仿真。 <sub>原题：*DICE: Automatic Emulation of DMA Input Channels for Dynamic Firmware Analysis* · IEEE S&amp;P 2021 · 会议论文 · Alejandro Mera 等 · [PDF](https://arxiv.org/pdf/2007.01502v3) · [代码](https://github.com/RiS3-Lab/DICE-DMA-Emulation/tree/2b3b8c8b722abdbd7ff9e35fc7b02914fddf75df) · [完整条目](https://awesomerea.org/zh/papers/paper-dice/)</sub>
 - [**FirmAE：面向动态分析的物联网固件大规模仿真**](https://doi.org/10.1145/3427228.3427294) - 在 Firmadyne 基础上，针对启动、网络、NVRAM、内核行为及其他运行失败加入经验性干预，使 Linux 路由器与 IP 摄像机固件的 Web 服务能够运行并接受动态分析。 <sub>原题：*FirmAE: Towards Large-Scale Emulation of IoT Firmware for Dynamic Analysis* · ACSAC 2020 · 会议论文 · Mingeun Kim 等 · [PDF](https://syssec.kaist.ac.kr/pub/2020/kim_acsac2020.pdf) · [代码](https://github.com/pr0v3rbs/FirmAE) · [完整条目](https://awesomerea.org/zh/papers/paper-firmae/)</sub>
 - [**HALucinator：通过抽象层仿真实现固件重托管**](https://www.usenix.org/conference/usenixsecurity20/presentation/clements) - HALucinator 识别单体 ARM Cortex-M 固件中的硬件抽象库函数，并用人工编写的 Python 处理函数和外设模型替换它们，从而重托管固件。 <sub>原题：*HALucinator: Firmware Re-hosting Through Abstraction Layer Emulation* · USENIX Security 2020 · 会议论文 · Abraham A Clements 等 · [PDF](https://www.usenix.org/system/files/sec20-clements.pdf) · [代码](https://github.com/embedded-sec/halucinator) · [完整条目](https://awesomerea.org/zh/papers/paper-halucinator/)</sub>
