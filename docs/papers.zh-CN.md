@@ -4,7 +4,7 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**193 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**194 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -12,7 +12,7 @@
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (13)
 - [反编译与符号恢复](#papers-decompilation) (88)
-- [网站重建](#papers-website-reconstruction) (29)
+- [网站重建](#papers-website-reconstruction) (30)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (14)
 - [应用重建与分析](#papers-app-reconstruction) (16)
 - [固件分析与重托管](#papers-firmware-analysis) (16)
@@ -162,6 +162,7 @@
 - [**分而治之：从截图生成界面代码**](https://doi.org/10.1145/3729364) - 沿视觉分隔线递归切分网页截图，由多模态模型为每个叶子片段生成 HTML/CSS，再将子片段代码逐级向上组装为完整页面；评估涵盖 GPT-4o、Gemini 与 Claude 系列模型以及一项小规模开发者研究。 <sub>原题：*Divide-and-Conquer: Generating UI Code from Screenshots* · Proceedings of the ACM on Software Engineering (FSE 2025) · 期刊论文 · Yuxuan Wan 等 · [PDF](https://arxiv.org/pdf/2406.16386v3) · [代码](https://github.com/WebPAI/DCGen) · [完整条目](https://awesomerea.org/zh/papers/paper-dcgen/)</sub>
 - [**StructEval：评测大语言模型生成结构化输出的能力**](https://arxiv.org/abs/2505.20139) - 评测结构化输出的生成与转换，包括 HTML、React 和 SVG，并分别检查格式遵循和结构正确性。 <sub>原题：*StructEval: Benchmarking LLMs' Capabilities to Generate Structural Outputs* · arXiv 2025 · 预印本 · Jialin Yang 等 · [PDF](https://arxiv.org/pdf/2505.20139v3) · [代码](https://github.com/TIGER-AI-Lab/StructEval) · [完整条目](https://awesomerea.org/zh/papers/paper-structeval/)</sub>
 - [**WebCode2M：面向网页设计稿代码生成的真实世界数据集**](https://dl.acm.org/doi/10.1145/3696410.3714889) - WebCode2M 将约 256 万张真实网页截图与净化后的 HTML/CSS 代码及元素边界框布局树配对。 <sub>原题：*WebCode2M: A Real-World Dataset for Code Generation from Webpage Designs* · WWW 2025 · 会议论文 · Yi Gui 等 · [PDF](https://arxiv.org/pdf/2404.06369v2) · [代码](https://github.com/CGCL-codes/naturalcc/tree/main/examples/webcode2m) · [完整条目](https://awesomerea.org/zh/papers/paper-webcode2m/)</sub>
+- [**Sketch2Code：评估视觉语言模型的交互式网页设计原型生成能力**](https://aclanthology.org/2025.naacl-long.198/) - Sketch2Code 评测视觉语言模型把粗略手绘线框草图转换为 HTML 网页原型的能力。 <sub>原题：*Sketch2Code: Evaluating Vision-Language Models for Interactive Web Design Prototyping* · NAACL 2025 · 会议论文 · Ryan Li 等 · [PDF](https://aclanthology.org/2025.naacl-long.198.pdf) · [代码](https://github.com/SALT-NLP/Sketch2Code) · [完整条目](https://awesomerea.org/zh/papers/paper-sketch2code/)</sub>
 - [**Design2Code：面向自动化前端工程的多模态代码生成评测**](https://aclanthology.org/2025.naacl-long.199/) - 使用真实网页参考、视觉元素和布局指标及人工评估，测试从网页截图重建前端代码的能力。 <sub>原题：*Design2Code: Benchmarking Multimodal Code Generation for Automated Front-End Engineering* · NAACL 2025 · 会议论文 · Chenglei Si 等 · [PDF](https://aclanthology.org/2025.naacl-long.199.pdf) · [代码](https://github.com/NoviScl/Design2Code) · [完整条目](https://awesomerea.org/zh/papers/paper-design2code/)</sub>
 - [**面向代码分析的大语言模型：LLM 真的胜任吗？**](https://www.usenix.org/conference/usenixsecurity24/presentation/fang) - 评估 GPT-3.5-turbo、GPT-4、LLaMA-2-13B、Code-LLaMA-2-13B-Instruct 与 StarChat-Beta 解释已去除注释的 JavaScript、Python 和 C 代码功能的能力，再在经 JavaScript Obfuscator（标识符重命名、死代码注入、控制流平坦化与字符串拆分）及 Wobfuscator WebAssembly 变换混淆的 JavaScript 上重复该任务。 <sub>原题：*Large Language Models for Code Analysis: Do LLMs Really Do Their Job?* · USENIX Security 2024 · 会议论文 · Chongzhou Fang 等 · [PDF](https://www.usenix.org/system/files/usenixsecurity24-fang.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-llm-code-analysis/)</sub>
 - [**Web2Code：面向多模态大语言模型的大规模网页转代码数据集与评估框架**](https://proceedings.nips.cc/paper_files/paper/2024/hash/cb66be286795d71f89367d596bf78ea7-Abstract-Datasets_and_Benchmarks_Track.html) - 通过指令微调和两个评测基准研究从截图重建 HTML。 <sub>原题：*Web2Code: A Large-scale Webpage-to-Code Dataset and Evaluation Framework for Multimodal LLMs* · NeurIPS 2024 Datasets and Benchmarks · 会议论文 · Sukmin Yun 等 · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/cb66be286795d71f89367d596bf78ea7-Paper-Datasets_and_Benchmarks_Track.pdf) · [代码](https://github.com/MBZUAI-LLM/web2code) · [完整条目](https://awesomerea.org/zh/papers/paper-web2code/)</sub>
