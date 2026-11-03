@@ -42,7 +42,8 @@ class ReadmeSizeBudgetTest(unittest.TestCase):
         self.assertTrue(notes[0].startswith('README.zh-CN.md is 420,003 bytes'), notes[0])
 
     def test_builder_check_reports_sizes_and_never_fails_on_size(self):
-        for warning in (README_SIZE_WARNING, 1_000):
+        # Budgets far above and far below the real READMEs, so the test does not depend on how big they are now.
+        for warning in (10 * GITHUB_README_LIMIT, 1_000):
             with self.subTest(warning=warning):
                 stdout, stderr = io.StringIO(), io.StringIO()
                 with patch.object(build_readme, 'README_SIZE_WARNING', warning), \
@@ -52,7 +53,7 @@ class ReadmeSizeBudgetTest(unittest.TestCase):
                 self.assertEqual(status, 0, stderr.getvalue())
                 self.assertRegex(stdout.getvalue(), r'README\.md [\d,]+ bytes, README\.zh-CN\.md [\d,]+ bytes')
                 warnings = re.findall(r'^Warning: (README(?:\.zh-CN)?\.md) is ', stderr.getvalue(), re.M)
-                self.assertEqual(warnings, [] if warning == README_SIZE_WARNING else ['README.md', 'README.zh-CN.md'])
+                self.assertEqual(warnings, [] if warning > GITHUB_README_LIMIT else ['README.md', 'README.zh-CN.md'])
 
 
 class LeadSentenceTest(unittest.TestCase):
