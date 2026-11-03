@@ -7089,5 +7089,15 @@
       "条目只有名称、链接和简短说明：56 个指向 GitHub，15 个指向项目、高校或厂商页面，例如 Intel 的 Pin 页面和 Tetrane 的 REVEN Free Edition 页面，而不是源码仓库。条目未注明维护状态、支持平台、许可证或收录日期，因此使用前需在每个工具自身的来源中核实。",
       "仓库只有 README.md，没有许可证文件或贡献指南，因此清单本身未声明复用条款；所链接的工具各自保留其许可证。这是独立的发现清单；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "dji-mimo-ble-reveng-case": {
+    "name": "DJI MIMO BLE 逆向素材：重建 DJI Osmo 控制协议",
+    "requirements": [
+      "在 2025-06-08 的 main 分支最新提交处审阅。该仓库是一组逆向工程笔记，而非可运行的应用：配套工具 djictl 位于另一个独立仓库，本次核查未对其评估。README 描述的是 DJI Osmo Pocket 3，未声称覆盖其他 DJI Osmo 型号。",
+      "方法使用使用者自己的 Android 手机：README 通过 adb 错误报告导出蓝牙 HCI 抓包日志，再用 Wireshark 打开。本仓库既不收录也不要求任何 DJI 固件、应用二进制或账号，除一张 Wireshark 截图外也未包含抓包日志。",
+      "mimo/ble/message_types.md 为约二十余种消息类型列出带注释的样本帧，mimo/ble/wireshark-dissector/ 中的 Wireshark 解析插件将消息类型编码映射为名称；许多条目带有问号或标为未知，因此该目录是部分、经作者解读的内容，而非完整规范。",
+      "构建解析插件需要 Wireshark 开发头文件、pkg-config 以及 C 编译器；其 Makefile 会将共享库插件安装到 Wireshark 4.2 的插件目录。笔记仅记录协议观察；本次核查既未运行插件，也未连接任何设备。",
+      "仓库采用 CC0-1.0（公有领域贡献）许可。DJI、MIMO 与 Osmo 仍为其权利人的商标；所审阅来源未确立任何 AI 或 REA 使用。"
+    ]
   }
 }
