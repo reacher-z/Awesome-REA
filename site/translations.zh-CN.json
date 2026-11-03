@@ -7378,5 +7378,13 @@
       "cipher.go 只包含加密与字节混排辅助函数，并非完整客户端。仓库没有测试、抓包或验证记录，因此协议说明为作者报告；README 致谢了 jadx-gui 和 IDA Pro，本次核查既未运行代码，也未连接水壶。",
       "采用 WTFPL 第 2 版许可（LICENSE.txt）。Xiaomi 与 Mi Home 仍为其权利人的商标；所审阅来源未确立任何 AI 或 REA 使用。"
     ]
+  },
+  "cantools": {
+    "name": "cantools CAN 总线数据库工具",
+    "requirements": [
+      "审阅时最新版本为 45.1.0，于 2026-10-20 发布在 GitHub 和 PyPI；所审阅的 master 提交比该标签多 15 个提交。可用 pip 安装；pyproject.toml 要求 Python 3.10+，依赖 python-can、bitstruct、textparser、crccheck 和 argparse_addons，并提供绘图（matplotlib）、缓存（diskcache）以及监视器所需 Windows curses 支持等可选扩展。",
+      "需要自备描述目标网络的数据库以及从该网络采集的帧：decode 从标准输入读取 candump 输出，plot 读取 candump 日志文件，monitor 则通过 python-can 的总线参数连接实时接口；README 中的脚本示例在 SocketCAN 通道上收发帧。仓库的 tests/files 目录收录示例和测试所用的 DBC、KCD、SYM、ARXML 和 CDD 示例数据库以及生成的 C 源码。",
+      "解码范围仅限所提供数据库中定义的内容；cantools 应用现有的报文和信号定义，并不推断未知布局；README 还指出生成的 C 代码仅支持不超过 64 位的信号。采用 MIT 许可。本次未连接总线，也未解码任何采集数据。"
+    ]
   }
 }
