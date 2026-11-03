@@ -4,7 +4,7 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**195 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**196 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -16,7 +16,7 @@
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (14)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
 - [Firmware analysis and rehosting](#firmware-analysis-and-rehosting) (16)
-- [Protocol inference and analysis](#protocol-inference-and-analysis) (17)
+- [Protocol inference and analysis](#protocol-inference-and-analysis) (18)
 
 Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation. Some papers also appear among curated resources; counts are not additive.
 
@@ -243,6 +243,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**RFCLLM: Evaluating LLMs' Reasoning Ability of Network Protocol State Machines**](https://arxiv.org/abs/2609.13389) - Tests reasoning over protocol state machines using 1,482 questions across 16 protocols. <sub>Findings of EMNLP 2026 · Conference accepted · Anqi Chen et al. · [PDF](https://arxiv.org/pdf/2609.13389v1) · [Code](https://anonymous.4open.science/r/rfcllm) · [Full entry](https://awesomerea.org/papers/paper-rfcllm/)</sub>
 - [**Recovering Process Variables from Industrial Network Traffic via Search-Based Optimization**](https://arxiv.org/abs/2608.16403) - PVParser recovers process-variable layouts from industrial traffic and historian records. <sub>CCS 2026 · Conference accepted · Chuan Sheng et al. · [PDF](https://arxiv.org/pdf/2608.16403v2) · [Full entry](https://awesomerea.org/papers/paper-pvparser/)</sub>
 - [**ICEPRE: ICS Protocol Reverse Engineering via Data-Driven Concolic Execution**](https://dl.acm.org/doi/10.1145/3728982) - Infers message-field boundaries by following concrete message-guided paths through binary protocol parsers, then symbolically replaying them to extract byte-level data flow. <sub>Proceedings of the ACM on Software Engineering (ISSTA 2025) · Journal article · Yibo Qu et al. · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728982) · [Code](https://github.com/QYbPtqyb/ICEPRE) · [Full entry](https://awesomerea.org/papers/paper-icepre/)</sub>
+- [**Unleashing the Power of LLM to Infer State Machine From the Protocol Implementation**](https://doi.org/10.1109/IWQoS65803.2025.11143461) - ProtocolGPT infers protocol state machines from implementation source code with a retrieval-augmented LLM. <sub>IWQoS 2025 · Conference paper · Haiyang Wei et al. · [PDF](https://arxiv.org/pdf/2405.00393v4) · [Full entry](https://awesomerea.org/papers/paper-protocolgpt/)</sub>
 - [**BinPRE: Enhancing Field Inference in Binary Analysis Based Protocol Reverse Engineering**](https://dl.acm.org/doi/10.1145/3658644.3690299) - Infers protocol-message field boundaries and semantics from instrumented server binaries and input messages. <sub>ACM CCS 2024 · Conference paper · Jiayi Jiang et al. · [PDF](https://tingsu.github.io/files/ccs24-BinPRE.pdf) · [Code](https://github.com/ecnusse/BinPRE) · [Full entry](https://awesomerea.org/papers/paper-binpre/)</sub>
 - [**DynPRE: Protocol Reverse Engineering via Dynamic Inference**](https://www.ndss-symposium.org/ndss-paper/dynpre-protocol-reverse-engineering-via-dynamic-inference/) - DynPRE starts from captured client–server traces and then interacts with a live protocol server to infer message formats and types. <sub>NDSS 2024 · Conference paper · Zhengxiong Luo et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-83-paper.pdf) · [Full entry](https://awesomerea.org/papers/paper-dynpre/)</sub>
 - [**Lifting Network Protocol Implementation to Precise Format Specification with Security Applications**](https://dl.acm.org/doi/10.1145/3576915.3616614) - NetLifter statically lifts source-available C protocol parsers into BNF-style message grammars and first-order constraints between packet fields. <sub>ACM CCS 2023 · Conference paper · Qingkai Shi et al. · [PDF](https://qingkaishi.github.io/public_pdfs/CCS23.pdf) · [Code](https://github.com/qingkaishi/netlifter) · [Full entry](https://awesomerea.org/papers/paper-netlifter/)</sub>
