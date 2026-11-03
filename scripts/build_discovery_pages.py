@@ -42,7 +42,7 @@ SECTIONS = {
 # Target sections and the target tag each one corresponds to; the other sections are not target-based.
 SECTION_TARGETS = {'website': 'website', 'game': 'game', 'app': 'app', 'native-binary': 'binary',
                    'firmware': 'firmware', 'protocol': 'protocol'}
-# Up to this many entries filed under other sections are named individually after a section's tag count.
+# Up to this many entries filed under other sections, or listed in a section without its tag, are named individually.
 NAMED_ELSEWHERE_LIMIT = 9
 # As in the README, a section holding both case studies and other kinds lists them in two sub-groups, cases first.
 # Sub-group IDs use a double hyphen, which record IDs and section keys cannot contain.
@@ -195,42 +195,55 @@ def _target_coverage(section: str, records: list[dict], language: str, *, cases:
     """State how many listed entries carry a target section's tag and link the homepage filter for all of them.
 
     Each card renders once, under its primary section, so a target section can hold fewer entries than carry
-    its tag. The filter link uses the homepage's own target (and case-study) filter, which counts the same records.
+    its tag. Sections are assigned by category, so it can also hold entries without its tag; the line counts
+    those too, so the section's count is always tagged, minus filed elsewhere, plus listed here without the tag.
+    The filter link uses the homepage's own target (and case-study) filter, which counts the same records.
     """
     target = SECTION_TARGETS.get(section)
     if target is None:
         return ''
     zh = language == 'zh'
+    prefix = '/zh' if zh else ''
     tagged = [record for record in records if target in record['targets']]
     elsewhere = [record for record in tagged if collection_section(record) != section]
+    untagged = [record for record in records if target not in record['targets'] and collection_section(record) == section]
     label, count = TARGETS[target][int(zh)], len(tagged)
+
+    def named(part: str, group: list[dict]) -> str:
+        """A part of the line, followed by links to its entries when there are only a few."""
+        if not group or len(group) > NAMED_ELSEWHERE_LIMIT:
+            return escape(part)
+        return escape(part) + ('：' if zh else ': ') + ('、' if zh else ', ').join(
+            f'<a href="{prefix}/resources/{escape(record["id"], quote=True)}/">'
+            f'{escape((record.get("name_zh") or record["name"]) if zh else record["name"])}</a>' for record in group)
+
     if zh:
         unit, noun = ('个', '案例') if cases else ('项', '条目')
-        parts = [f'{count} {unit}{"案例" if cases else ""}带“{label}”标签']
+        parts = [escape(f'{count} {unit}{"案例" if cases else ""}带“{label}”标签')]
         if tagged:
-            parts.append(f'其中 {len(elsewhere)} {unit}归入其他{"主题" if cases else "分区"}' if elsewhere else '均在本节')
+            parts.append(named(f'其中 {len(elsewhere)} {unit}归入其他{"主题" if cases else "分区"}', elsewhere)
+                         if elsewhere else escape('均在本节'))
+        if untagged:
+            parts.append(named(f'另有 {len(untagged)} {unit}按分类列于本节但不带“{label}”标签', untagged))
         show = f'查看全部 {count} {unit}'
         accessible = f'在搜索中查看带“{label}”标签的全部 {count} {unit}{noun}'
     else:
         noun = ('case' if count == 1 else 'cases') if cases else ('entry' if count == 1 else 'entries')
-        parts = [f'{count} {noun} tagged {label}']
+        parts = [escape(f'{count} {noun} tagged {label}')]
         if tagged:
-            parts.append(('1 filed in another section' if len(elsewhere) == 1 else f'{len(elsewhere)} filed in other sections')
-                         if elsewhere else ('filed here' if count == 1 else 'all filed here'))
+            parts.append(named('1 filed in another section' if len(elsewhere) == 1 else f'{len(elsewhere)} filed in other sections', elsewhere)
+                         if elsewhere else escape('filed here' if count == 1 else 'all filed here'))
+        if untagged:
+            parts.append(named(f'{len(untagged)} listed here by category without the {label} tag', untagged))
         show = 'Show in search' if count == 1 else f'Show all {count}'
         accessible = f'Show all {count} {noun} tagged {label} in search'
-    text = ' · '.join(escape(part) for part in parts)
-    if elsewhere and len(elsewhere) <= NAMED_ELSEWHERE_LIMIT:
-        prefix = '/zh' if zh else ''
-        text += ('：' if zh else ': ') + ('、' if zh else ', ').join(
-            f'<a href="{prefix}/resources/{escape(record["id"], quote=True)}/">'
-            f'{escape((record.get("name_zh") or record["name"]) if zh else record["name"])}</a>' for record in elsewhere)
+    text = ' · '.join(parts)
     if tagged:
         query = f'view=curated{"&amp;kind=case-study" if cases else ""}&amp;target={target}'
         href = f'/zh/?{query}#catalog' if zh else f'/?{query}&amp;lang=en#catalog'
         text += f' · <a href="{href}" aria-label="{escape(accessible, quote=True)}">{escape(show)} →</a>'
     return (f'<p class="section-target-count" data-section-target="{target}" data-target-tagged="{count}"'
-            f' data-target-elsewhere="{len(elsewhere)}">{text}</p>')
+            f' data-target-elsewhere="{len(elsewhere)}" data-target-untagged-here="{len(untagged)}">{text}</p>')
 
 
 def _subgroup_count(slug: str, count: int, zh: bool) -> str:

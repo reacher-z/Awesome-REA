@@ -387,11 +387,29 @@ async function midWidthPaperRows(page, label, viewport) {
   await page.setViewport({width: viewport.width, height: viewport.height});
 }
 
+// Each target section's count line adds up to the cards it heads: tagged, minus filed elsewhere, plus listed here
+// without the tag. The line wraps inside the viewport.
+async function sectionTargetCounts(page, label) {
+  const lines = await page.$$eval('.section-target-count', nodes => nodes.map(line => ({
+    target: line.dataset.sectionTarget,
+    cards: line.closest('section').querySelectorAll('[data-resource-id]').length,
+    stated: ['targetTagged', 'targetElsewhere', 'targetUntaggedHere'].map(key => Number(line.dataset[key])),
+    right: line.getBoundingClientRect().right,
+  })));
+  assert(lines.length > 0, `${label}: target sections state their tag counts`);
+  const width = await page.evaluate(() => document.documentElement.clientWidth);
+  for (const {target, cards, stated: [tagged, elsewhere, untagged], right} of lines) {
+    assert.equal(cards, tagged - elsewhere + untagged, `${label}: ${target} section holds ${cards} cards, but its line states ${tagged} - ${elsewhere} + ${untagged}`);
+    assert(right <= width + 1, `${label}: the ${target} count line extends past the viewport (${right}px of ${width}px)`);
+  }
+}
+
 async function staticPage(page, route, viewport) {
   const label = `${route} ${viewport.name}`;
   assert((await page.$eval('h1', heading => heading.textContent.trim())).length > 0, `${label}: visible heading`);
   await noOverflow(page, label);
   if (route === '/papers/' || route === '/zh/papers/') await paperDirectory(page, route, viewport);
+  if (/^(\/zh)?\/(resources|cases)\/$/.test(route)) await sectionTargetCounts(page, label);
   if (route === '/cases/' || route === '/zh/cases/') {
     const review = await page.$eval('#review-method', section => ({
       title: section.querySelector('h2').textContent,

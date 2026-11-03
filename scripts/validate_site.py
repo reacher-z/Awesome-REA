@@ -23,6 +23,7 @@ from public_source_supplements import (PUBLISHED_FILENAME, compose_published, js
                                       load_supplements, owned_file, bounded_bytes, project_additions)
 from validate_discovery import expected_entry_routes, validate_route_inventory
 from build_readme import CATEGORIES, PAPER_SECTIONS, REQUIREMENTS_LABEL, collection_section, paper_section
+from build_discovery_pages import SECTION_TARGETS
 from build_feed import FEED_PAGES, FEED_PATHS, FEED_SIZE, feed_entries
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SITE_ALTERNATE_NAMES, SITE_NAME, SOCIAL_IMAGE_ALT, png_size
@@ -1033,6 +1034,59 @@ def validate_case_outputs(pages, resources):
         assert items.get('itemListElement') == expected_items, f'Case structured list differs from rendered entries: {route}'
 
 
+class SectionTargetCounts(HTMLParser):
+    """Each top-level /resources/ or /cases/ section: its key, its card count and its target count line, if any."""
+    def __init__(self, text):
+        super().__init__()
+        self.sections, self._stack = [], []
+        self.feed(text)
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if tag == 'section':
+            labels = (values.get('aria-labelledby') or '').split()
+            # Sub-group regions are labelled by two IDs; their cards count toward the enclosing section.
+            key = values.get('data-case-section') or (labels[0].removeprefix('heading-') if len(labels) == 1 and labels[0].startswith('heading-') else None)
+            section = {'key': key, 'cards': 0, 'line': None} if key else None
+            if section:
+                self.sections.append(section)
+            self._stack.append(section)
+        current = next((section for section in reversed(self._stack) if section), None)
+        if current and tag == 'article' and 'data-resource-id' in values:
+            current['cards'] += 1
+        if current and tag == 'p' and 'section-target-count' in values.get('class', '').split():
+            assert current['line'] is None, f'Section has two target count lines: {current["key"]}'
+            current['line'] = values
+
+    def handle_endtag(self, tag):
+        if tag == 'section' and self._stack:
+            self._stack.pop()
+
+
+def validate_section_target_counts(output, resources):
+    """Every target section's count line reconciles with its cards: tagged, minus filed elsewhere, plus listed here untagged."""
+    output = Path(output)
+    subsets = {'resources': resources, 'cases': [record for record in resources if record['kind'] == 'case-study']}
+    for route, records in subsets.items():
+        for prefix in ('', 'zh/'):
+            sections = SectionTargetCounts((output / f'{prefix}{route}' / 'index.html').read_text(encoding='utf-8')).sections
+            assert sections, f'No sections found on /{prefix}{route}/'
+            for section in sections:
+                key, line, target = section['key'], section['line'], SECTION_TARGETS.get(section['key'])
+                label = f'/{prefix}{route}/ {key}'
+                if target is None:
+                    assert line is None, f'Only target sections have a target count line: {label}'
+                    continue
+                assert line is not None and line.get('data-section-target') == target, f'Target section lacks its count line: {label}'
+                tagged = [record for record in records if target in record['targets']]
+                expected = (len(tagged), sum(collection_section(record) != key for record in tagged),
+                            sum(target not in record['targets'] and collection_section(record) == key for record in records))
+                found = tuple(int(line.get(name, '-1')) for name in ('data-target-tagged', 'data-target-elsewhere', 'data-target-untagged-here'))
+                assert found == expected, f'Target count line differs from the catalog on {label}: {found} != {expected}'
+                assert section['cards'] == found[0] - found[1] + found[2], (
+                    f'{label}: {section["cards"]} cards, but the count line implies {found[0]} - {found[1]} + {found[2]}')
+
+
 def validate_feeds(output, pages, resources, papers):
     """Bind both Atom feeds to dated catalog records and their localized detail pages."""
     output = Path(output)
@@ -1251,6 +1305,7 @@ def main():
     validate_entry_outputs(pages, resources, papers)
     validate_feeds(OUTPUT, pages, resources, papers)
     validate_case_outputs(pages, resources)
+    validate_section_target_counts(OUTPUT, resources)
     catalog_meta = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['meta']
     validate_shared_footer(OUTPUT, catalog_meta['repository_url'],
                            catalog_meta['source_index'].get('full_export') or 'source-index.json')
