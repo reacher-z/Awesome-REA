@@ -49,7 +49,7 @@
 - [djr-747/nokia-dct3-emulator](https://github.com/djr-747/nokia-dct3-emulator) — 面向 Nokia DCT3 手机（3310/3410/5210/8210/8250/8850 等）的开源仿真器与分析工具集，可在浏览器（WASM）和原生 SDL 图形界面中启动真实固件。需自行提供固件，项目不附带固件。采用 GPL-2 许可证。 **[92 星标]**
 - [nmatt0/firmwaretools](https://github.com/nmatt0/firmwaretools) — 用于各种固件分析任务的一组脚本和工具 **[90 星标]**
 - [alexander-pick/shannon\_modem\_loader](https://github.com/alexander-pick/shannon_modem_loader) — 适用于 IDA Pro 8.x/9.x 的 Exynos Modem / Shannon 基带固件加载器 **[87 星标]** · 精选：[Shannon 基带镜像 IDA Pro 加载器](https://awesomerea.org/zh/resources/shannon-modem-loader/)
-- [matiaspl/LinkPi-ENCx](https://github.com/matiaspl/LinkPi-ENCx) — 基于 F3520D 平台的 LinkPi ENC 系列（ENC1/ENC5/ENC9）和 TBS 2603SE 视频编码器的逆向工程与非官方文档，涵盖硬件分析、固件内部机制、流媒体修复和隐藏功能。 **[86 星标]**
+- [matiaspl/LinkPi-ENCx](https://github.com/matiaspl/LinkPi-ENCx) — 基于 F3520D 平台的 LinkPi ENC 系列（ENC1/ENC5/ENC9）和 TBS 2603SE 视频编码器的逆向工程与非官方文档，涵盖硬件分析、固件内部机制、流媒体修复和隐藏功能。 **[86 星标]** · 精选：[Link Pi ENCx 编码器非官方逆向文档](https://awesomerea.org/zh/resources/linkpi-encx-unofficial-docs/)
 - [onehouwong/Firmware-Analysis-Papers](https://github.com/onehouwong/Firmware-Analysis-Papers) — 近期固件分析安全研究论文 **[85 星标]**
 - [Cr4sh/smram\_parse](https://github.com/Cr4sh/smram_parse) — 系统管理内存（SMRAM）分析工具 **[83 星标]**
 - [fkie-cad/LuckyCAT](https://github.com/fkie-cad/LuckyCAT) — 分布式模糊测试管理框架 **[70 星标]**
