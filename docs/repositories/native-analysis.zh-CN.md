@@ -840,7 +840,7 @@
 - [vs-sr-dev/pc-monstrum-doc](https://github.com/vs-sr-dev/pc-monstrum-doc) — 以字节方式读取 GOG Galaxy 安装的 MONSTRUM（Team Junkfish，Unity 5.5，2018）：19 个序列化文件、825 张完成解析并渲染的纹理、2,215 个 FSB5 音频库、9 段逃脱影片、程序集及其成员、“co-op at zero”记录、拥有者的游玩日志，以及一份 2018 年的小型转储。 **[0 星标]**
 - [vs-sr-dev/pc-twinsensquest-doc](https://github.com/vs-sr-dev/pc-twinsensquest-doc) — 将 GOG 离线安装器作为对象测量：2 个文件，2,891,523,108 B，100.0000 % 已定位，残余为 0。包含 Inno Setup 5.6.2 Unicode 及本项目推导出的商店命名层；安装器将写入 788 个文件，但从未运行。包含五个内容描述符。在 2024 年的程序集中找到 1994 年原版全部 101 个脚本操作码中的 101 个。 **[0 星标]**
 - [Waseemshahazad/trinket-core-analyzer](https://github.com/Waseemshahazad/trinket-core-analyzer) — 用于深入分析 Qualcomm（SD665）固件转储的高性能 C++ 取证工具，专门通过高级启发式模式匹配识别 Gatekeeper 哈希模式和安全元件特征。 **[0 星标]**
-- [yovico-ai/pictureman](https://github.com/yovico-ai/pictureman) — 根据二进制文件使用 Rust 重建 Windows 3.x 真彩色图像编辑器 Picture Man 1.55（1991–1993），可在桌面和浏览器中运行。 **[0 星标]**
+- [yovico-ai/pictureman](https://github.com/yovico-ai/pictureman) — 根据二进制文件使用 Rust 重建 Windows 3.x 真彩色图像编辑器 Picture Man 1.55（1991–1993），可在桌面和浏览器中运行。 **[0 星标]** · 精选：[Picture Man：Windows 3.x 图像编辑器的 Rust 重建](https://awesomerea.org/zh/resources/pictureman-case/)
 - [zboralski/unflutter](https://github.com/zboralski/unflutter) — Flutter/Dart AOT 快照静态分析器。 **[0 星标]**
 - [ZooHero500/reatool](https://github.com/ZooHero500/reatool) — 非官方 REA 教程和比较资料，介绍如何安装 Reverse Engineer Anything 并与编码智能体配合使用。 **[0 星标]**
 
