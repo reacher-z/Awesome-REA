@@ -1,0 +1,74 @@
+{
+ "schema_version": 1,
+ "entry_id": "woxi-case",
+ "sut": {
+  "kind": "release-artifact",
+  "artifact": {
+   "name_pattern": "woxi-v*-aarch64-unknown-linux-gnu.tar.gz",
+   "platform": "linux",
+   "arch": "arm64"
+  },
+  "sandbox": {
+   "image": "rea-rollout/woxi:0.3.0-arm64",
+   "network": false,
+   "timeout_seconds": 60,
+   "interfaces": [
+    "cli"
+   ]
+  }
+ },
+ "rules": [
+  {
+   "id": "version",
+   "dimension": "correctness",
+   "command": [
+    "/sut/woxi",
+    "--version"
+   ],
+   "expect": {
+    "exit_code": 0,
+    "stdout_contains": "woxi 0.3.0"
+   }
+  },
+  {
+   "id": "arithmetic",
+   "dimension": "correctness",
+   "command": [
+    "/sut/woxi",
+    "eval",
+    "1 + 2"
+   ],
+   "expect": {
+    "exit_code": 0,
+    "stdout_equals": "3"
+   }
+  },
+  {
+   "id": "string-join",
+   "dimension": "correctness",
+   "command": [
+    "/sut/woxi",
+    "eval",
+    "StringJoin[\"Hello\", \" \", \"World!\"]"
+   ],
+   "expect": {
+    "exit_code": 0,
+    "stdout_equals": "Hello World!"
+   }
+  }
+ ],
+ "static": [
+  {
+   "id": "license-file",
+   "dimension": "reproducibility",
+   "check": "file-in-artifact",
+   "path": "license.txt"
+  },
+  {
+   "id": "readme-file",
+   "dimension": "reproducibility",
+   "check": "file-in-artifact",
+   "path": "readme.md"
+  }
+ ]
+}

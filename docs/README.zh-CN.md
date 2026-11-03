@@ -50,3 +50,4 @@
 | 文档 | 语言 | 状态 | 内容 |
 | --- | --- | --- | --- |
 | [精选条目证据档位](evidence-classes.zh-CN.md) | 中文 | v4 Beta，自动生成 + 人工复核 | 全部精选条目的 Class 0-3 证据档位与 Unknown 状态，Class 0 仅限人工确认的完整软件复现；展示并支持筛选于主页，由 [classify_evidence_classes.py](../scripts/classify_evidence_classes.py) 生成到 [data/evidence-classes.json](../data/evidence-classes.json) |
+| [复刻质量评分 v2](quality-scoring-v2.zh-CN.md) | 中文 | 草案，试点 | 初步信号路由到产物与运行时工具、版本化规则包、sandbox 限制和覆盖率加权评分 |
