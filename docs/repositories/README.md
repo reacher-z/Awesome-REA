@@ -16,7 +16,7 @@ Publication date: **2026-10-20 UTC**.
 | [Apps · Managed code](managed-code.md) | 135 | 5 |
 | [Native binaries](native-analysis.md) | 837 | 133 |
 | [Runtime and debugging](dynamic-analysis.md) | 150 | 33 |
-| [Firmware](firmware.md) | 228 | 34 |
+| [Firmware](firmware.md) | 228 | 35 |
 | [Protocols](protocol-analysis.md) | 113 | 12 |
 | [General tools and collections](reverse-engineering.md) | 658 | 80 |
 
