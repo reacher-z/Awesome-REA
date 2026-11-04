@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/game-analysis/) · [简体中文](game-analysis.zh-CN.md)
 
-**490 repositories** · 2026-10-20 UTC
+**491 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -17,6 +17,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [LavaGang/MelonLoader](https://github.com/LavaGang/MelonLoader) — The World's First Universal Mod Loader for Unity Games compatible with both Il2Cpp and Mono **[4,258 stars]** · Curated: [MelonLoader](https://awesomerea.org/resources/melonloader/)
 - [danielkrupinski/Osiris](https://github.com/danielkrupinski/Osiris) — Cross-platform game hack for Counter-Strike 2 with Panorama-based GUI. **[3,891 stars]**
 - [ran-j/PS2Recomp](https://github.com/ran-j/PS2Recomp) — Playstation 2 Static Recompiler &amp; Runtime Tool to make native PC ports **[3,516 stars]** · Curated: [PS2Recomp](https://awesomerea.org/resources/ps2recomp/)
+- [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — Using Zygisk to dump il2cpp data at runtime **[3,343 stars]** · Curated: [Zygisk-Il2CppDumper](https://awesomerea.org/resources/zygisk-il2cppdumper/)
 - [morkt/GARbro](https://github.com/morkt/GARbro) — Visual Novels resource browser **[3,328 stars]** · Curated: [GARbro](https://awesomerea.org/resources/garbro/)
 - [4sval/FModel](https://github.com/4sval/FModel) — Unreal Engine Archives Explorer **[3,258 stars]** · Curated: [FModel](https://awesomerea.org/resources/fmodel/)
 - [djkaty/Il2CppInspector](https://github.com/djkaty/Il2CppInspector) — Powerful automated tool for reverse engineering Unity IL2CPP binaries **[3,056 stars]** · Curated: [Il2CppInspector](https://awesomerea.org/resources/il2cppinspector/)

@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/android/) · [简体中文](android.zh-CN.md)
 
-**483 repositories** · 2026-10-20 UTC
+**482 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -28,7 +28,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [APKLab/APKLab](https://github.com/APKLab/APKLab) — Android Reverse-Engineering Workbench for VS Code **[4,011 stars]** · Curated: [APKLab](https://awesomerea.org/resources/apklab/)
 - [ax/apk.sh](https://github.com/ax/apk.sh) — Makes reverse engineering Android apps easier, automating repetitive tasks like pulling, decoding, rebuilding and patching an APK. **[3,842 stars]** · Curated: [apk.sh](https://awesomerea.org/resources/apk-sh/)
 - [ReVanced/revanced-patcher](https://github.com/ReVanced/revanced-patcher) — 💉 ReVanced Patcher used to patch Android applications **[3,525 stars]**
-- [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — Using Zygisk to dump il2cpp data at runtime **[3,343 stars]**
 - [zinja-coder/jadx-ai-mcp](https://github.com/zinja-coder/jadx-ai-mcp) — Plugin for JADX to integrate MCP server **[2,906 stars]** · Curated: [JADX-AI-MCP](https://awesomerea.org/resources/jadx-ai-mcp/)
 - [Impact-I/reFlutter](https://github.com/Impact-I/reFlutter) — Flutter Reverse Engineering Framework **[2,775 stars]** · Curated: [reFlutter](https://awesomerea.org/resources/reflutter/)
 - [worawit/blutter](https://github.com/worawit/blutter) — Flutter Mobile Application Reverse Engineering Tool **[2,750 stars]** · Curated: [Blutter](https://awesomerea.org/resources/blutter/)

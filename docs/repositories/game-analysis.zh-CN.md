@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/game-analysis/) · [English](game-analysis.md)
 
-**490 个仓库** · 2026-10-20 UTC
+**491 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -17,6 +17,7 @@
 - [LavaGang/MelonLoader](https://github.com/LavaGang/MelonLoader) — 全球首个兼容 Il2Cpp 与 Mono 的 Unity 游戏通用模组加载器。 **[4,258 星标]** · 精选：[MelonLoader Unity 游戏模组加载器](https://awesomerea.org/zh/resources/melonloader/)
 - [danielkrupinski/Osiris](https://github.com/danielkrupinski/Osiris) — 面向 Counter-Strike 2 的跨平台游戏作弊工具，采用基于 Panorama 的 GUI。 **[3,891 星标]**
 - [ran-j/PS2Recomp](https://github.com/ran-j/PS2Recomp) — 用于制作原生 PC 移植版的 PlayStation 2 静态重编译器与运行时工具。 **[3,516 星标]** · 精选：[PS2Recomp PlayStation 2 静态重编译器](https://awesomerea.org/zh/resources/ps2recomp/)
+- [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — 使用 Zygisk 在运行时转储 il2cpp 数据。 **[3,343 星标]** · 精选：[Zygisk-Il2CppDumper 运行时导出 IL2CPP 元数据的 Zygisk 模块](https://awesomerea.org/zh/resources/zygisk-il2cppdumper/)
 - [morkt/GARbro](https://github.com/morkt/GARbro) — 视觉小说资源浏览器。 **[3,328 星标]** · 精选：[GARbro](https://awesomerea.org/zh/resources/garbro/)
 - [4sval/FModel](https://github.com/4sval/FModel) — Unreal Engine 归档文件浏览器 **[3,258 星标]** · 精选：[FModel 游戏资源浏览器](https://awesomerea.org/zh/resources/fmodel/)
 - [djkaty/Il2CppInspector](https://github.com/djkaty/Il2CppInspector) — 用于逆向工程 Unity IL2CPP 二进制文件的强大自动化工具。 **[3,056 星标]** · 精选：[Il2CppInspector Unity IL2CPP 静态分析工具](https://awesomerea.org/zh/resources/il2cppinspector/)

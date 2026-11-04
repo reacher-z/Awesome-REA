@@ -25021,5 +25021,45 @@
       "https://github.com/0xdea/frida-scripts/blob/987ba480812033bbe3a9d2262a9764e1a4ed8547/LICENSE",
       "https://github.com/0xdea/frida-scripts/releases/tag/v0.2"
     ]
+  },
+  {
+    "id": "zygisk-il2cppdumper",
+    "name": "Zygisk-Il2CppDumper",
+    "url": "https://github.com/Perfare/Zygisk-Il2CppDumper",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "app"
+    ],
+    "description_en": "Zygisk module by Perfare, the Il2CppDumper author, that dumps type metadata from inside a Unity IL2CPP Android app while it runs. Built for one package name, it waits for the app to load libil2cpp.so, resolves the runtime's il2cpp API exports, walks the classes of every loaded assembly and writes dump.cs to the app's files directory, listing namespaces, classes, interfaces and enums with field offsets, properties and method signatures annotated with RVA and virtual addresses. On x86 devices running an ARM build of the app, it loads its ARM library through the Houdini native bridge.",
+    "description_zh": "由 Il2CppDumper 作者 Perfare 编写的 Zygisk 模块，在 Unity IL2CPP Android 应用运行时从进程内部导出类型元数据。模块针对单个包名构建，等待应用加载 libil2cpp.so 后解析运行时导出的 il2cpp API，遍历每个已加载程序集中的类，并把 dump.cs 写入应用的 files 目录，其中列出命名空间、类、接口和枚举，以及带偏移量的字段、属性和标注 RVA 与虚拟地址的方法签名。对于在 x86 设备上运行的 ARM 版应用，它会通过 Houdini 原生桥加载自己的 ARM 库。",
+    "evidence_url": "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/README.md",
+    "verified_at": "2026-11-02",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs a rooted Android device with Magisk v24 or later and Zygisk enabled, and an app the user supplies that uses Unity's IL2CPP backend. There are no published releases: the module is built for one package name, either by running the repository's manual Build workflow in a fork with that name or by editing GamePackageName in game.h and running the Gradle task :module:assembleRelease (NDK 25.2.9519653; CI uses Java 11), then installed through Magisk. dump.cs appears under /data/data/<package>/files/ once the app starts.",
+      "It writes only dump.cs; unlike the desktop Il2CppDumper, it produces no dummy assemblies or disassembler scripts. The latest master commit is from 2023-05-22, with the module at v1.2.0.",
+      "The repository has no tests, and its only CI workflow builds the module on manual dispatch.",
+      "MIT per LICENSE, whose copyright line names Rikka; the bundled xDL symbol-lookup library carries its own MIT notice from the HexHacking Team."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/module/src/main/cpp/il2cpp_dump.cpp",
+      "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/module/src/main/cpp/hack.cpp",
+      "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/module/src/main/cpp/main.cpp",
+      "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/module/src/main/cpp/game.h",
+      "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/.github/workflows/build.yml",
+      "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/module/build.gradle",
+      "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/module.gradle",
+      "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/LICENSE",
+      "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/module/src/main/cpp/xdl/xdl.c"
+    ]
   }
 ]
