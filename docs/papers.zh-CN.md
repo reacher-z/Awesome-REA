@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -87,6 +87,7 @@
 - [**DecLLM：借助大语言模型实现可重新编译的反编译，支持以程序化方式使用反编译代码**](https://dl.acm.org/doi/10.1145/3728958) - DecLLM 将无法重新编译的反编译伪代码修复为可编译、可运行的 C 代码，使 CodeQL 等源码级工具能够用于二进制分析。 <sub>原题：*DecLLM: LLM-Augmented Recompilable Decompilation for Enabling Programmatic Use of Decompiled Code* · Proceedings of the ACM on Software Engineering (ISSTA 2025) · 期刊论文 · Wai Kin Wong 等 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728958) · [完整条目](https://awesomerea.org/zh/papers/paper-decllm/)</sub>
 - [**DiSCo：利用大语言模型将 EVM 字节码反编译为源代码**](https://dl.acm.org/doi/10.1145/3729373) - DiSCo 通过提示冻结参数的大语言模型，把以太坊合约的创建字节码提升为 Solidity 源码，而不是输出反编译伪代码。 <sub>原题：*DiSCo: Towards Decompiling EVM Bytecode to Source Code using Large Language Models* · Proceedings of the ACM on Software Engineering (FSE 2025) · 期刊论文 · Xing Su 等 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3729373) · [完整条目](https://awesomerea.org/zh/papers/paper-disco/)</sub>
 - [**D-LiFT：通过代码质量驱动的微调改进基于大语言模型的反编译器后端**](https://arxiv.org/abs/2506.10125) - D-LIFT 使用 D-Score 指导大语言模型微调和输出选择，在优先保证准确性的同时改善反编译代码，并评估了 Ghidra 对 coreutils 和 util-linux 程序的输出。 <sub>原题：*D-LiFT: Improving LLM-based Decompiler Backend via Code Quality-driven Fine-tuning* · arXiv 2025 · 预印本 · Muqi Zou 等 · [PDF](https://arxiv.org/pdf/2506.10125) · [完整条目](https://awesomerea.org/zh/papers/paper-d-lift/)</sub>
+- [**面向恶意软件分析的生成对抗网络综述**](https://doi.org/10.15625/1813-9663/22522) - 这篇评述综述生成对抗网络在恶意软件分析中的用法。 <sub>原题：*A survey on generative adversarial networks for malware analysis* · Journal of Computer Science and Cybernetics 2025 · 期刊论文 · Lam Bui Thu 等 · [PDF](https://vjs.ac.vn/jcc/article/download/22522/2543256080) · [完整条目](https://awesomerea.org/zh/papers/paper-gan-malware-survey/)</sub>
 - [**ReF Decompile：通过重标记和函数调用增强反编译**](https://arxiv.org/abs/2502.12221) - ReF Decompile 通过重标记跳转目标、利用函数调用恢复变量信息，将二进制代码转换为源代码。 <sub>原题：*ReF Decompile: Relabeling and Function Call Enhanced Decompile* · arXiv 2025 · 预印本 · Yunlong Feng 等 · [PDF](https://arxiv.org/pdf/2502.12221) · [完整条目](https://awesomerea.org/zh/papers/paper-ref-decompile/)</sub>
 - [**释放生成式模型在剥离符号二进制变量名恢复中的能力**](https://www.ndss-symposium.org/ndss-paper/unleashing-the-power-of-generative-model-in-recovering-variable-names-from-stripped-binary/) - GenNm 通过微调生成式代码模型（默认 CodeGemma-2B，另测试 CodeLlama-7B 及经 LoRA 微调的 CodeLlama-34B），为剥离符号二进制反编译代码中的占位变量建议名称。 <sub>原题：*Unleashing the Power of Generative Model in Recovering Variable Names from Stripped Binary* · NDSS 2025 · 会议论文 · Xiangzhe Xu 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2025-276-paper.pdf) · [代码](https://github.com/XZ-X/gennm-ndss-ae/tree/9955139b4c8d43144852a674bf317cbfaf32ed17) · [完整条目](https://awesomerea.org/zh/papers/paper-gennm/)</sub>
 - [**TypeForge：为去符号二进制合成并选择最适配的复合数据类型**](https://ieeexplore.ieee.org/document/11023499) - TypeForge 从去符号二进制中恢复复合数据类型，包括结构体布局、联合体以及指针引用和嵌套关系。 <sub>原题：*TypeForge: Synthesizing and Selecting Best-Fit Composite Data Types for Stripped Binaries* · IEEE S&amp;P 2025 · 会议论文 · Yanzhong Wang 等 · [PDF](https://noobone123.github.io/papers/typeforge-sp25.pdf) · [代码](https://github.com/noobone123/TypeForge) · [完整条目](https://awesomerea.org/zh/papers/paper-typeforge/)</sub>
