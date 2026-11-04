@@ -768,7 +768,11 @@ $$('[data-target]').forEach(el => el.addEventListener("click", () => { state.tar
 $("#layout-select").addEventListener("change", event => changeLayout(event.target.value));
 $("#more-filters").addEventListener("click", () => setMoreFilters($("#more-filters").getAttribute("aria-expanded") !== "true"));
 window.addEventListener("hashchange", syncLanguageLinks);
-$("#clear-filters").addEventListener("click",reset); $("#empty-reset").addEventListener("click", () => { reset(); $("#search-input").focus(); }); $("#retry-load").addEventListener("click",load);
+// Keyboard activation (a click with detail 0) of a control that the re-render removes or hides moves focus to a
+// visible, named control: the Topic field after a topic chip, the collection's search after Clear or Reset. Pointer
+// clicks keep the browser's default, so a touch screen does not open its keyboard.
+const fromKeyboard = event => event?.detail === 0;
+$("#clear-filters").addEventListener("click", event => { reset(); if (fromKeyboard(event)) $("#search-input").focus(); }); $("#empty-reset").addEventListener("click", () => { reset(); $("#search-input").focus(); }); $("#retry-load").addEventListener("click",load);
 $("#load-more").addEventListener("click", () => { const previous = state.visible; state.visible += 15; render(previous); const next = $$(".card-title-link")[previous]; if (next) next.focus({preventScroll:true}); });
 // The / shortcut scrolls instantly when reduced motion is requested, read at each press so a changed preference applies.
 function shortcutScrollBehavior() { return window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ? "auto" : "smooth"; }
@@ -965,7 +969,7 @@ function sourceTopicButtons(record, limit = 4) {
   record.topics.slice(0, limit).forEach(topic => {
     const button = node("button", "source-topic-chip", topicLabel(topic));
     button.type = "button"; button.title = t("sourceTopicHint") + ": " + topic;
-    button.addEventListener("click", () => { sourceState.topic = topic; sourceState.visible = 24; syncTopicInput(); sourceURL(true); renderSources(); });
+    button.addEventListener("click", event => { sourceState.topic = topic; sourceState.visible = 24; syncTopicInput(); sourceURL(true); renderSources(); if (fromKeyboard(event)) { const field = $("#source-topic"); field.focus({preventScroll: true}); field.scrollIntoView({block: "nearest"}); } });
     topics.append(button);
   });
   return topics;
@@ -1104,7 +1108,7 @@ window.addEventListener("popstate", () => {
   const mode = requestedMode(query); if (state.loaded && mode !== sourceState.mode) setIndexMode(mode); else if (state.loaded) sourceURL();
   syncLanguageLinks();
 });
-$("#source-clear").addEventListener("click",resetSources); $("#source-reset").addEventListener("click",resetSources); $("#source-retry").addEventListener("click",loadSources); $("#source-more").addEventListener("click",() => { const previous=sourceState.visible; sourceState.visible+=24; renderSources(previous); $$(".source-title-link")[previous]?.focus({preventScroll:true}); });
+for (const id of ["#source-clear", "#source-reset"]) $(id).addEventListener("click", event => { resetSources(); if (fromKeyboard(event)) $("#source-search").focus(); }); $("#source-retry").addEventListener("click",loadSources); $("#source-more").addEventListener("click",() => { const previous=sourceState.visible; sourceState.visible+=24; renderSources(previous); $$(".source-title-link")[previous]?.focus({preventScroll:true}); });
 
 $("#download-source-index").href = dataURL("source-index.json");
 $("#download-curated-catalog").href = dataURL("catalog.json");
