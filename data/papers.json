@@ -12817,5 +12817,51 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-wasm-analysis-sok",
+    "title": "SoK: Analysis Techniques for WebAssembly",
+    "authors": [
+      "Håkon Harnes",
+      "Donn Morrison"
+    ],
+    "year": 2024,
+    "publication_date": "2024-02-29",
+    "date_precision": "day",
+    "date_basis": "Crossref issued date",
+    "venue": "Future Internet",
+    "publication_status": "journal-article",
+    "arxiv_id": "2401.05943",
+    "arxiv_version_reviewed": "v2",
+    "first_arxiv_date": "2024-01-11",
+    "doi": "10.3390/fi16030084",
+    "url": "https://arxiv.org/abs/2401.05943v2",
+    "pdf_url": "https://arxiv.org/pdf/2401.05943v2",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This systematization reviews analysis techniques for WebAssembly binaries, including vulnerabilities that remain when memory-unsafe languages are compiled to Wasm. The abstract also treats Wasm smart contracts as part of the analysis setting.",
+    "description_zh": "这篇系统化论文综述 WebAssembly 二进制的分析技术，包括把内存不安全的语言编译到 Wasm 之后仍然存在的漏洞。摘要也把 Wasm 智能合约算进分析场景。",
+    "scope_limitations_en": "Crossref dates the Future Internet article to 2024-02-29. The fetched full text is arXiv:2401.05943v2 because the MDPI PDF URL returned HTTP 403. Findings were not reproduced.",
+    "scope_limitations_zh": "Crossref 把 Future Internet 文章的日期标为 2024-02-29。由于 MDPI 的 PDF 网址返回 HTTP 403，获取的全文是 arXiv:2401.05943v2。结果没有复现。",
+    "why_fits_en": "WebAssembly binaries are an analysis target for reverse engineering, and this paper systematizes techniques for that target.",
+    "why_fits_zh": "WebAssembly 二进制是逆向工程的分析对象，本文系统整理针对该对象的技术。",
+    "evidence_urls": [
+      "https://arxiv.org/pdf/2401.05943v2",
+      "https://api.crossref.org/works/10.3390/fi16030084",
+      "https://arxiv.org/abs/2401.05943v2",
+      "https://export.arxiv.org/api/query?id_list=2401.05943"
+    ],
+    "metadata_notes": "The arXiv title capitalization differs slightly from the Crossref title. The recorded title is the Crossref title.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "SoK：WebAssembly 分析技术",
+    "date_basis_zh": "日期取自 Crossref 登记的出版日期",
+    "metadata_notes_zh": "arXiv 题名的大小写与 Crossref 略有不同。记录的题名采用 Crossref 题名。"
   }
 ]

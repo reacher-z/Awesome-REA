@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (111)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -114,6 +114,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**BinaryAI: Binary Software Composition Analysis via Intelligent Binary Source Code Matching**](https://dl.acm.org/doi/10.1145/3597503.3639100) - BinaryAI identifies which open-source C/C++ libraries a stripped binary reuses by matching its functions to source code. <sub>ICSE 2024 · Conference paper · Ling Jiang et al. · [PDF](https://arxiv.org/pdf/2401.11161v3) · [Full entry](https://awesomerea.org/papers/paper-binaryai/)</sub>
 - [**FoC: Figure out the Cryptographic Functions in Stripped Binaries with LLMs**](https://arxiv.org/abs/2403.18403) - FoC uses FoC-BinLLM to summarize cryptographic functions in stripped binaries and FoC-Sim to retrieve similar implementations. <sub>arXiv 2024 · Preprint · Xiuwei Shang et al. · [PDF](https://arxiv.org/pdf/2403.18403) · [Full entry](https://awesomerea.org/papers/paper-foc/)</sub>
 - [**SLaDe: A Portable Small Language Model Decompiler for Optimized Assembly**](https://ieeexplore.ieee.org/document/10444788) - SLaDe translates function-level assembly into C with a 200M-parameter encoder–decoder model, code-specific tokenization and PsycheC type completion. <sub>IEEE/ACM CGO 2024 · Conference paper · Jordi Armengol-Estapé et al. · [PDF](https://arxiv.org/pdf/2305.12520v3) · [Code](https://zenodo.org/records/10205121) · [Full entry](https://awesomerea.org/papers/paper-slade/)</sub>
+- [**SoK: Analysis Techniques for WebAssembly**](https://arxiv.org/abs/2401.05943v2) - This systematization reviews analysis techniques for WebAssembly binaries, including vulnerabilities that remain when memory-unsafe languages are compiled to Wasm. <sub>Future Internet 2024 · Journal article · Håkon Harnes et al. · [PDF](https://arxiv.org/pdf/2401.05943v2) · [Full entry](https://awesomerea.org/papers/paper-wasm-analysis-sok/)</sub>
 - [**CEBin: A Cost-Effective Framework for Large-Scale Binary Code Similarity Detection**](https://arxiv.org/abs/2402.18818) - CEBin combines code embeddings to shortlist candidate functions with pairwise comparison to detect similar binary code, including vulnerable functions. <sub>arXiv 2024 · Preprint · Hao Wang et al. · [PDF](https://arxiv.org/pdf/2402.18818) · [Code](https://github.com/Hustcw/CEBin) · [Full entry](https://awesomerea.org/papers/paper-cebin/)</sub>
 - [**“Len or index or count, anything but v1”: Predicting Variable Names in Decompilation Output with Transfer Learning**](https://ieeexplore.ieee.org/document/10646727) - VarBERT suggests variable names for IDA Hex-Rays and Ghidra decompiler output with a BERT-style model pre-trained on 5.2M human-written C functions from Debian and fine-tuned on decompiled code; it also predicts whether each variable came from the developer or was introduced by the decompiler. <sub>IEEE S&amp;P 2024 · Conference paper · Kuntal Kumar Pal et al. · [PDF](https://www.atipriya.com/files/papers/varbert_oakland24.pdf) · [Code](https://github.com/sefcom/VarBERT/tree/76f221a5e0af43a36169818cbbfd6e8dd3c98cdc) · [Full entry](https://awesomerea.org/papers/paper-varbert/)</sub>
 - [**DeGPT: Optimizing Decompiler Output with LLM**](https://www.ndss-symposium.org/ndss-paper/degpt-optimizing-decompiler-output-with-llm/) - Refines existing C-like decompiler output through three coordinated roles that select, propose and check changes. <sub>NDSS 2024 · Conference paper · Peiwei Hu et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-401-paper.pdf) · [Code](https://github.com/PeiweiHu/DeGPT) · [Full entry](https://awesomerea.org/papers/paper-degpt/)</sub>
