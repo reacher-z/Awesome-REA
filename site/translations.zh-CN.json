@@ -8016,5 +8016,12 @@
       "仓库没有测试，唯一的 CI 工作流只在手动触发时构建模块。",
       "依 LICENSE 采用 MIT 许可，版权行署名为 Rikka；附带的 xDL 符号查找库保留 HexHacking Team 的 MIT 声明。"
     ]
+  },
+  "superghidra": {
+    "name": "SuperGhidra",
+    "requirements": [
+      "Python 3.10+；可通过 'pip install superghidra' 安装。独立二进制扫描功能（如 RTTI、Mach-O、Rust/Go 审计）无需安装 Ghidra 或 JVM 即可运行。",
+      "Ghidra 守护进程、MCP 桥接及无界面 Oracle 操作需要本地安装 Ghidra 11+ 和 JDK 17+。P-code 等价性验证需要可选的 Z3 求解器（'pip install superghidra[smt]'）。"
+    ]
   }
 }

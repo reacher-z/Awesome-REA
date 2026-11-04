@@ -25061,5 +25061,30 @@
       "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/LICENSE",
       "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/module/src/main/cpp/xdl/xdl.c"
     ]
+  },
+  {
+    "id": "superghidra",
+    "name": "SuperGhidra",
+    "url": "https://github.com/yuatemycat/SuperGhidra",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "Agent MCP server and native binary analysis toolkit providing a background Ghidra daemon with SQLite caching, MSVC RTTI/MFC recovery, Mach-O dyld fixup decoding, Z3 P-code equivalence checking, and compilable C restructuring.",
+    "description_zh": "面向智能体的 MCP 服务端与原生二进制分析工具包，提供带 SQLite 缓存的后台 Ghidra 守护进程、MSVC RTTI/MFC 恢复、Mach-O dyld 重定位解析、Z3 P-code 等价性验证及可编译 C 代码重构。",
+    "evidence_url": "https://github.com/yuatemycat/SuperGhidra/blob/7936f266498e90e7eeeadcc5f08785e744dbadbb/README.md",
+    "verified_at": "2026-11-04",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.10+; installable via 'pip install superghidra'. Standalone binary sweeps (RTTI, Mach-O, Rust/Go audit) run without Ghidra or a JVM.",
+      "Ghidra daemon, MCP bridge, and headless oracle operations require a local Ghidra 11+ installation and JDK 17+. P-code equivalence checking requires the optional Z3 solver ('pip install superghidra[smt]')."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/yuatemycat/SuperGhidra/blob/7936f266498e90e7eeeadcc5f08785e744dbadbb/docs/DETAILS.md",
+      "https://github.com/yuatemycat/SuperGhidra/blob/7936f266498e90e7eeeadcc5f08785e744dbadbb/LICENSE"
+    ]
   }
 ]
