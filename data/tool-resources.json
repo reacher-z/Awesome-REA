@@ -36528,5 +36528,37 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "eloquence-61-eci-case",
+    "name": "Eloquence 6.1: a C rebuild of ECI.DLL",
+    "url": "https://github.com/KamiKitsune420/eloquence-decomp",
+    "description_en": "Rebuilds ETI Eloquence 6.1.0.2, the US English ECI.DLL plus ENU.SYN, as C with a drop-in ECI.DLL for x86 and x64. This is KamiKitsune420/eloquence-decomp, a different tree from Mudb0y/openevv.",
+    "description_zh": "把 ETI Eloquence 6.1.0.2（美式英语 ECI.DLL 与 ENU.SYN）重建为 C，并提供可替换的 x86 与 x64 ECI.DLL。这是 KamiKitsune420/eloquence-decomp，与 Mudb0y/openevv 不是同一棵树。",
+    "evidence_url": "https://github.com/KamiKitsune420/eloquence-decomp/blob/b025f9d3d06f2887291fb27e0132496631835511/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/KamiKitsune420/eloquence-decomp/blob/b025f9d3d06f2887291fb27e0132496631835511/tools/eci_compare.py"
+    ],
+    "requirements": [
+      "The README's build is on Windows with Visual Studio, from PowerShell. Put your own ECI.DLL, ECI.INI, and ENU.SYN in pkg/. It prints MD5 6c39acb7c1f0f62b3cae019f45b224fc for ENU.SYN. It says those files are not in the repository and must not be added.",
+      "The README describes a hand-written formant synthesizer, Delta rules lifted by tools/delta_lift.py, and the remaining functions recompiled instruction by instruction with tools/x2c.py. The drop-in DLL is US English only.",
+      "The README says klatt_check is bit-exact on 19,902 recorded frames, and that python tools/eci_compare.py runs every API script in tests/eci/ through the real DLL and the port, comparing calls, return values, callbacks, and samples. Not run or reproduced for this catalog.",
+      "The reviewed root has no LICENSE file. This record does not state a license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "targets": [
+      "binary"
+    ]
   }
 ]

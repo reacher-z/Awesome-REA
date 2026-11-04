@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "eloquence-61-eci-case": {
+    "name": "Eloquence 6.1：ECI.DLL 的 C 重建",
+    "requirements": [
+      "README 的构建在 Windows 上用 Visual Studio，从 PowerShell 进行。把你自己的 ECI.DLL、ECI.INI 和 ENU.SYN 放进 pkg/。它给出 ENU.SYN 的 MD5 6c39acb7c1f0f62b3cae019f45b224fc。它写明这些文件不在仓库中且不得加入。",
+      "README 描述了手写的共振峰合成器、由 tools/delta_lift.py 提取的 Delta 规则，以及用 tools/x2c.py 按指令重编译的其余函数。可替换 DLL 只有美式英语。",
+      "README 写明 klatt_check 在 19902 个已记录帧上逐位一致，并且 python tools/eci_compare.py 把 tests/eci/ 中的每个 API 脚本同时送入真实 DLL 和移植，比较调用、返回值、回调和样本。本目录未运行或复现。",
+      "审阅的根目录没有 LICENSE 文件。本记录不陈述许可证。"
+    ]
   }
 }
