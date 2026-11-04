@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -79,6 +79,7 @@
 - [**FidelityGPT：利用检索增强生成纠正反编译失真**](https://www.ndss-symposium.org/ndss-paper/fidelitygpt-correcting-decompilation-distortions-with-retrieval-augmented-generation/) - FidelityGPT 对现有反编译器输出进行后处理：由大语言模型为代码行标注六类失真（如非常规解引用、冗余变量和令人困惑的控制流），再改写被标注的行。 <sub>原题：*FidelityGPT: Correcting Decompilation Distortions with Retrieval Augmented Generation* · NDSS 2026 · 会议论文 · Zhiping Zhou 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s989-paper.pdf) · [代码](https://github.com/ZhouZhiping045/FidelityGPT) · [完整条目](https://awesomerea.org/zh/papers/paper-fidelitygpt/)</sub>
 - [**CHISEL：借助 AI 迭代恢复源码**](https://arxiv.org/abs/2608.27981) - CHISEL 利用编译诊断及针对原函数的类型感知差分模糊测试改进 Ghidra 伪代码，并保留反例与候选历史。 <sub>原题：*CHISEL-ing Back Source Code with AI-enabled Iterative Recovery* · SURE <span>@</span> ACM CCS 2026 · 会议已接收 · Varun Kohli 等 · [PDF](https://arxiv.org/pdf/2608.27981v1) · [代码](https://github.com/VarunKohli18/chisel) · [完整条目](https://awesomerea.org/zh/papers/paper-chisel-iterative-recovery/)</sub>
 - [**REx86：辅助 x86 汇编逆向工程的本地大语言模型**](https://doi.org/10.1109/ACSAC67867.2025.00024) - 论文使用 5,981 个 x86 汇编样例微调了 CodeLlama、Qwen2.5-Coder 和 CodeGemma 系列的八个本地模型，并评估它们辅助二进制逆向工程的效果。 <sub>原题：*REx86: A Local Large Language Model for Assisting in x86 Assembly Reverse Engineering* · 2025 IEEE Annual Computer Security Applications Conference (ACSAC) · 会议论文 · Darrin Lea 等 · [PDF](https://arxiv.org/pdf/2510.20975) · [代码](https://github.com/dlea8/REx86) · [完整条目](https://awesomerea.org/zh/papers/paper-rex86/)</sub>
+- [**GView：通过可视化、语义与人工智能增强分析开展的二进制取证综述**](https://doi.org/10.4204/eptcs.427.9) - 本文介绍开源框架 GView，把可视化检查与语义及人工智能辅助推理结合起来做二进制取证。 <sub>原题：*GView: A Survey of Binary Forensics via Visual, Semantic, and AI-Enhanced Analysis* · Electronic Proceedings in Theoretical Computer Science 2025 · 期刊论文 · Raul Zaharia 等 · [PDF](https://cgi.cse.unsw.edu.au/~eptcs/paper.cgi?FROM2025.9.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-gview-binary-forensics/)</sub>
 - [**这还是同一份代码吗？WebAssembly 二进制反编译技术的全面研究**](https://link.springer.com/chapter/10.1007/978-3-031-94448-2_6) - 以原生二进制反编译器为基线，衡量现有 WebAssembly 反编译器恢复 C 代码的能力。 <sub>原题：*Is This the Same Code? A Comprehensive Study of Decompilation Techniques for WebAssembly Binaries* · SecureComm 2024 2025 · 会议论文 · Wei-Cheng Wu 等 · [PDF](https://arxiv.org/pdf/2411.02278v1) · [完整条目](https://awesomerea.org/zh/papers/paper-wasm-decompiler-study/)</sub>
 - [**BinMetric：面向大语言模型的综合二进制代码分析基准**](https://www.ijcai.org/proceedings/2025/858) - BinMetric 提供六类二进制分析任务共 1,000 道题目：调用点重建、反编译、函数签名恢复、二进制代码摘要、算法分类与汇编指令生成。 <sub>原题：*BinMetric: A Comprehensive Binary Code Analysis Benchmark for Large Language Models* · IJCAI 2025 · 会议论文 · Xiuwei Shang 等 · [PDF](https://www.ijcai.org/proceedings/2025/0858.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-binmetric/)</sub>
 - [**探索大语言模型在代码去混淆中的潜力**](https://doi.org/10.1007/978-3-031-97620-9_15) - 研究将大语言模型用作源码到源码的去混淆器，处理经 Tigress 混淆器保护的 C 函数。 <sub>原题：*Exploring the Potential of LLMs for Code Deobfuscation* · DIMVA 2025 · 会议论文 · David Beste 等 · [PDF](https://ndownloader.figshare.com/files/65792754) · [代码](https://github.com/DavidBeste/llm-code-deobfuscation) · [完整条目](https://awesomerea.org/zh/papers/paper-llm-code-deobfuscation/)</sub>
