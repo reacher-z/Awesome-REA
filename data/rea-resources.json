@@ -3885,5 +3885,44 @@
       "https://github.com/AIshihzong/awesome-reverse-engineer-anything/blob/55f9ff058c44a55b63cef83aaf6ea42dcbd6e5b2/.github/workflows/discover-candidates.yml",
       "https://github.com/AIshihzong/awesome-reverse-engineer-anything/blob/55f9ff058c44a55b63cef83aaf6ea42dcbd6e5b2/LICENSE"
     ]
+  },
+  {
+    "id": "ai-rebuilds-directory",
+    "name": "AI Rebuilds",
+    "url": "https://ai-rebuilds.com/",
+    "category": "related-lists",
+    "relationship": "community-learning-resource",
+    "kind": "collection",
+    "targets": [
+      "game",
+      "app",
+      "binary"
+    ],
+    "description_en": "A website and GitHub list of 81 projects that rebuild existing software or games without the original source: AI-built clean-room apps such as the ArtCraft suite, software rewritten with coding agents, AI-assisted game decompilations, game engine reimplementations, human-led decompilations and ports, clean-room classics such as Wine and ReactOS, and tools for rebuilders. Each entry says what it rebuilds and carries a method label and an AI-involvement label, and the site can be searched, filtered and sorted by stars or recent activity. A separate guide describes a clean-room rebuild workflow with REA.",
+    "description_zh": "网站及 GitHub 列表，收录 81 个在没有原始源码的情况下重建现有软件或游戏的项目：由 AI 构建的净室应用（如 ArtCraft 套件）、借助编码智能体重写的软件、AI 辅助的游戏反编译、游戏引擎重新实现、由人主导的反编译与移植、Wine 和 ReactOS 等经典净室实现，以及重建工具。每个条目说明重建对象，并带有方法标签和 AI 参与程度标签；网站支持搜索、筛选，并可按星标数或近期活跃度排序。另有一篇指南介绍借助 REA 进行净室重建的流程。",
+    "evidence_url": "https://github.com/a-barzanti/ai-rebuilds/blob/8092b23421fca9c8c4c52d51e34d4dc602f95923/README.md",
+    "verified_at": "2026-11-02",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit 8092b23, where data/projects.json (list updated 2026-10-29, GitHub figures refreshed 2026-11-02) holds 81 projects in seven categories and generates both the README and ai-rebuilds.com, which served the same list at review. Entries, counts and labels can change after this review.",
+      "Method labels are clean-room, reimplementation, decompilation, recompilation, port, rewrite or tool. AI labels (built, assisted, none or unknown) follow each project's own description, and 49 entries are labelled with no AI involvement. A weekly workflow refreshes stars, last-push dates, archive status and licences from the GitHub API and checks links. Entries may not distribute the original's code, binaries, ROMs or assets; the site hosts no software and takes fix and removal requests.",
+      "REA is listed first among 13 tools, and only the DX-Ball entry is described as using it. The site's third-party guide “Rebuild something with REA” covers installing rea-agents, choosing REA tools by input type, a two-agent clean-room split and checks against the original; its Node.js minimums (22.19+, 24.11+ or 26+) are older than the 22.23.4+, 24.22.1+ or 26.12.1+ that REA's README now requires.",
+      "MIT for the code and the list; the LICENSE excludes original games, their code and assets. Descriptions are the site's own, and the lists it drew entries from are credited, among them CC BY-SA 4.0 and CC0 lists."
+    ],
+    "requirement_facets": [
+      "scope",
+      "scope",
+      "attribution",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/a-barzanti/ai-rebuilds/blob/8092b23421fca9c8c4c52d51e34d4dc602f95923/data/projects.json",
+      "https://github.com/a-barzanti/ai-rebuilds/blob/8092b23421fca9c8c4c52d51e34d4dc602f95923/CONTRIBUTING.md",
+      "https://github.com/a-barzanti/ai-rebuilds/blob/8092b23421fca9c8c4c52d51e34d4dc602f95923/LICENSE",
+      "https://github.com/a-barzanti/ai-rebuilds/blob/8092b23421fca9c8c4c52d51e34d4dc602f95923/.github/workflows/refresh.yml",
+      "https://github.com/a-barzanti/ai-rebuilds/blob/8092b23421fca9c8c4c52d51e34d4dc602f95923/guide/index.html",
+      "https://ai-rebuilds.com/guide/",
+      "https://github.com/morluto/rea/blob/2cb29693c3d574c4898832047fe309ac1ad00e9d/README.md"
+    ]
   }
 ]
