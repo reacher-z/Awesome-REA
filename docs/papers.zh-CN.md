@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -45,6 +45,7 @@
 
 [↑ 返回目录](#目录)
 
+- [**ICALL-BENCH：衡量大语言模型在二进制程序中的过程间推理**](https://arxiv.org/abs/2610.37871v1) - ICALL-BENCH 衡量语言模型和智能体能否把握编译后二进制中的过程间含义，并以间接调用目标恢复作为探针。 <sub>原题：*ICALL-BENCH: Benchmarking LLM Interprocedural Reasoning in Binary Programs* · arXiv 2026 · 预印本 · Shenglong Yao 等 · [PDF](https://arxiv.org/pdf/2610.37871v1) · [完整条目](https://awesomerea.org/zh/papers/paper-icall-bench/)</sub>
 - [**先定位再推理：剥离符号二进制中的端到端补丁存在性测试**](https://arxiv.org/abs/2610.25071) - 结合指令对齐检索及调用者／被调用者上下文，在剥离符号的二进制中定位补丁相关代码，再由 LLM 筛选候选匹配并对照漏洞版与修复版参考程序判断补丁特定行为。 <sub>原题：*Locate, Then Reason: End-to-End Patch Presence Testing in Stripped Binaries* · arXiv 2026 · 预印本 · Huaijin Wang 等 · [PDF](https://arxiv.org/pdf/2610.25071v1) · [完整条目](https://awesomerea.org/zh/papers/paper-patchalign/)</sub>
 - [**面向召回率的精确二进制到源码函数匹配**](https://arxiv.org/abs/2610.23546) - BScout 通过分块嵌入及考虑内联的训练，将反编译函数匹配到源码语料；已有匹配提供位置线索以扩充候选，再由大语言模型选择及结构过滤改进对应关系。 <sub>原题：*Recall-Oriented Precise Binary-to-Source Function Matching* · arXiv 2026 · 预印本 · Junlin Li 等 · [PDF](https://arxiv.org/pdf/2610.23546v1) · [完整条目](https://awesomerea.org/zh/papers/paper-bscout/)</sub>
 - [**解码 iOS 定位服务发送给 Apple 的数据：大语言模型并非可靠分析员，却能辅助构建工具**](https://arxiv.org/abs/2610.21597) - 比较直接用大语言模型恢复 Apple PBCodable 模式与构建 Extractor 工具两种路径；工具以编译后的合成样本、既有描述文件和捕获流量交叉检查，说明看似合理的模式也可能静默解码出错误值。 <sub>原题：*Decoding What iOS Location Services Send to Apple: An LLM Is an Unreliable Analyst but a Useful Toolmaker* · arXiv 2026 · 预印本 · Douglas Leith · [PDF](https://arxiv.org/pdf/2610.21597v1) · [代码](https://github.com/doug-leith/ios-protobuf-decoding) · [完整条目](https://awesomerea.org/zh/papers/paper-ios-protobuf-extractor/)</sub>
