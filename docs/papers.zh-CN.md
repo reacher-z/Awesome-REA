@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -96,6 +96,7 @@
 - [**Decompile-Bench：面向真实二进制反编译的百万级二进制与源码函数对**](https://papers.nips.cc/paper_files/paper/2025/hash/079cf13ae174c31f148207d94d213bdc-Abstract-Datasets_and_Benchmarks_Track.html) - 通过 Compile-Trace-Filter 流程构建 200 万组 C/C++ 二进制与源码函数对，并提供涵盖转写为 C/C++ 的 HumanEval、MBPP 任务及近期 GitHub 函数的评测集。 <sub>原题：*Decompile-Bench: Million-Scale Binary-Source Function Pairs for Real-World Binary Decompilation* · NeurIPS 2025 Datasets and Benchmarks · 会议论文 · Hanzhuo Tan 等 · [PDF](https://papers.nips.cc/paper_files/paper/2025/file/079cf13ae174c31f148207d94d213bdc-Paper-Datasets_and_Benchmarks_Track.pdf) · [代码](https://github.com/albertan017/LLM4Decompile) · [完整条目](https://awesomerea.org/zh/papers/paper-decompile-bench/)</sub>
 - [**超越分类：借助领域适配的大语言模型推断去符号二进制中的函数名**](https://www.ndss-symposium.org/ndss-paper/beyond-classification-inferring-function-names-in-stripped-binaries-via-domain-adapted-llms/) - SymGen 使用经 LoRA 微调的 Code Llama 模型生成去符号二进制的函数名，而不是在固定的名称词表上分类。 <sub>原题：*Beyond Classification: Inferring Function Names in Stripped Binaries via Domain Adapted LLMs* · NDSS 2025 · 会议论文 · Linxi Jiang 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2025-797-paper.pdf) · [代码](https://github.com/OSUSecLab/SymGen) · [完整条目](https://awesomerea.org/zh/papers/paper-symgen/)</sub>
 - [**ReSym：利用大语言模型恢复去符号二进制中的变量与数据结构符号**](https://doi.org/10.1145/3658644.3670340) - 结合两个微调语言模型与基于 Prolog 的跨函数推理，从去符号二进制的反编译结果中推断局部变量符号及用户自定义数据结构。 <sub>原题：*ReSym: Harnessing LLMs to Recover Variable and Data Structure Symbols from Stripped Binaries* · ACM CCS 2024 · 会议论文 · Danning Xie 等 · [PDF](https://www.cs.purdue.edu/homes/lintan/publications/resym-ccs24.pdf) · [代码](https://github.com/lt-asset/resym) · [完整条目](https://awesomerea.org/zh/papers/paper-resym/)</sub>
+- [**在反编译二进制上用大语言模型做漏洞分析的调查与基准**](https://arxiv.org/abs/2411.04981v1) - 本文调查并基准测试大语言模型在输入为反编译二进制代码时的漏洞分析能力。 <sub>原题：*Enhancing Reverse Engineering: Investigating and Benchmarking Large Language Models for Vulnerability Analysis in Decompiled Binaries* · arXiv 2024 · 预印本 · Dylan Manuel 等 · [PDF](https://arxiv.org/pdf/2411.04981v1) · [完整条目](https://awesomerea.org/zh/papers/paper-decompiled-vuln-bench/)</sub>
 - [**自构造上下文反编译与细粒度对齐增强**](https://aclanthology.org/2024.findings-emnlp.385/) - 为大语言模型将函数级 x86-64 GCC 汇编反编译为 C 的流程增加两项技术。 <sub>原题：*Self-Constructed Context Decompilation with Fined-grained Alignment Enhancement* · Findings of EMNLP 2024 · 会议论文 · Yunlong Feng 等 · [PDF](https://aclanthology.org/2024.findings-emnlp.385.pdf) · [代码](https://github.com/AlongWY/sccdec) · [完整条目](https://awesomerea.org/zh/papers/paper-sc2dec/)</sub>
 - [**LLM4Decompile：使用大语言模型反编译二进制代码**](https://aclanthology.org/2024.emnlp-main.203/) - 训练语言模型将汇编反编译为 C，并改进 Ghidra 伪代码，以恢复函数能否重新编译并正确执行为评估目标。 <sub>原题：*LLM4Decompile: Decompiling Binary Code with Large Language Models* · EMNLP 2024 · 会议论文 · Hanzhuo Tan 等 · [PDF](https://aclanthology.org/2024.emnlp-main.203.pdf) · [代码](https://github.com/albertan017/LLM4Decompile) · [完整条目](https://awesomerea.org/zh/papers/paper-llm4decompile/)</sub>
 - [**WaDec：基于大语言模型的 WebAssembly 反编译**](https://dl.acm.org/doi/10.1145/3691620.3695020) - WaDec 使用循环级 wat–C 代码片段对，以 LoRA 微调 CodeLlama-7b，将 WebAssembly 文本格式（wat）反编译为 C。 <sub>原题：*WaDec: Decompiling WebAssembly Using Large Language Model* · ASE 2024 · 会议论文 · Xinyu She 等 · [PDF](https://arxiv.org/pdf/2406.11346v3) · [代码](https://github.com/XinyuShe/WaDec/tree/e244f7172539478a5b64bbb86e1fd03e527cb6be) · [完整条目](https://awesomerea.org/zh/papers/paper-wadec/)</sub>
