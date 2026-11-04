@@ -4,7 +4,7 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -14,7 +14,7 @@
 - [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
-- [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
+- [App reconstruction and analysis](#app-reconstruction-and-analysis) (17)
 - [Firmware analysis and rehosting](#firmware-analysis-and-rehosting) (27)
 - [Protocol inference and analysis](#protocol-inference-and-analysis) (22)
 
@@ -222,6 +222,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**From Dead Code and Static Requirements to Working Engines: Software Revival with Coding Agents**](https://arxiv.org/abs/2609.36161) - ReviveBench evaluates repair of nonrunning software and source-unavailable implementation of bounded computational and transactional engines from open specifications, using hidden reference-based checks. <sub>arXiv 2026 · Preprint · Tianyu Liu et al. · [PDF](https://arxiv.org/pdf/2609.36161v1) · [Full entry](https://awesomerea.org/papers/paper-revivebench/)</sub>
 - [**From Code to Requirements: Agentic Reverse Engineering of Business Rules at Enterprise Scale**](https://arxiv.org/abs/2609.22719) - Uses seven agents and human review to recover business requirements from source, tests, configuration and documentation. <sub>arXiv 2026 · Preprint · Garima Agrawal et al. · [PDF](https://arxiv.org/pdf/2609.22719v1) · [Full entry](https://awesomerea.org/papers/paper-agentic-business-rule-recovery/)</sub>
 - [**On the Viability of Requirements Generation from Code: An Experience Report**](https://doi.org/10.1109/REW72749.2026.00023) - Studies a RAG-based, human-supervised pipeline for recovering requirements and code traces from two projects. <sub>IEEE REW 2026 / AIRE · Conference paper · Alexander Korn et al. · [PDF](https://arxiv.org/pdf/2606.25550v1) · [Full entry](https://awesomerea.org/papers/paper-requirements-generation-viability/)</sub>
+- [**DroidSentry: A Survey of Android Malware Dynamic Analysis Techniques**](https://doi.org/10.51244/ijrsi.2026.1305000168) - This survey reviews dynamic analysis techniques for Android malware, set against static inspection that the opening pages say is strained by obfuscation, native code, and runtime payloads. <sub>International Journal of Research and Scientific Innovation 2026 · Journal article · Amritha R. et al. · [PDF](https://rsisinternational.org/journals/ijrsi/uploads/vol13-iss5-pg1876-1885-202606_pdf.pdf) · [Full entry](https://awesomerea.org/papers/paper-droidsentry-survey/)</sub>
 - [**From Visual Widgets to UI Code: Efficient Tool-Grounded Generation**](https://arxiv.org/abs/2608.12611) - WidgetGen reconstructs widget screenshots as React JSX. <sub>MUCG <span>@</span> ECCV 2026 · Conference accepted · Houston H. Zhang et al. · [PDF](https://arxiv.org/pdf/2608.12611v1) · [Full entry](https://awesomerea.org/papers/paper-widgetgen/)</sub>
 - [**Agentic Reverse Engineering: From I/O to Code with Discovery Agent**](https://arxiv.org/abs/2605.15334) - Synthesizes executable programs from input/output observations using LLM-guided evolutionary search, progressively revealed examples, simple-to-complex mutations and execution-error feedback. <sub>NeurIPS 2026 · Conference accepted · Yihong Dong et al. · [PDF](https://arxiv.org/pdf/2605.15334v2) · [Code](https://github.com/JiaruQian/IO2Code) · [Full entry](https://awesomerea.org/papers/paper-dio-agent/)</sub>
 - [**UIOrchestra: Generating High-Fidelity Code from UI Designs with a Multi-agent System**](https://aclanthology.org/2025.findings-emnlp.150/) - UIOrchestra converts static mobile UI designs into React/CSS through layout-description, code-generation and rendered-image comparison agents. <sub>Findings of EMNLP 2025 · Conference paper · Chuhuai Yue et al. · [PDF](https://aclanthology.org/2025.findings-emnlp.150.pdf) · [Full entry](https://awesomerea.org/papers/paper-uiorchestra/)</sub>
