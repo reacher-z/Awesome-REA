@@ -36528,5 +36528,37 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "onecore-david-zira-mark-case",
+    "name": "OneCore TTS: a C rebuild of David, Zira and Mark",
+    "url": "https://github.com/KamiKitsune420/ms-david-zira-decomp",
+    "description_en": "Rebuilds the Windows OneCore text-to-speech engine MSTTSEngine_OneCore.dll 10.3, the David, Zira, and Mark voices, as C99 that reads the original voice files. The README reports sample-for-sample PCM on its corpus, with two Zira lines excepted.",
+    "description_zh": "把 Windows OneCore 文本转语音引擎 MSTTSEngine_OneCore.dll 10.3（David、Zira 和 Mark）重建为读取原始语音文件的 C99。README 报告语料上逐样本一致的 PCM，并写明 Zira 有两句例外。",
+    "evidence_url": "https://github.com/KamiKitsune420/ms-david-zira-decomp/blob/3009a84894fdb37e1f808469cc97ab25006096e1/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/KamiKitsune420/ms-david-zira-decomp/blob/3009a84894fdb37e1f808469cc97ab25006096e1/LICENSE"
+    ],
+    "requirements": [
+      "Needs a C99 compiler and your own M1033David, M1033Zira, or M1033Mark files plus MSTTSLocEnUS.dat from a Windows install. The README says those files are not in the repository. It says never to use -ffast-math and to keep -ffp-contract=off.",
+      "David runs in floating point. Zira and Mark run in fixed point. The README says no Microsoft code or data is included.",
+      "The README's end-to-end row says David 375/375, Mark 375/375, and Zira 373/375 are bit-exact, and that the two Zira misses are lang lines. It says MSVC x64, MSVC x86, and gcc give identical results. Not run or reproduced for this catalog.",
+      "The README says MIT for the code in the repository and points at LICENSE. That file is the MIT License, copyright 2026 KamiKitsune420. The voices and the original engine are not included."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "targets": [
+      "binary"
+    ]
   }
 ]
