@@ -3924,5 +3924,47 @@
       "https://ai-rebuilds.com/guide/",
       "https://github.com/morluto/rea/blob/2cb29693c3d574c4898832047fe309ac1ad00e9d/README.md"
     ]
+  },
+  {
+    "id": "reaguide-unofficial-rea-guide",
+    "name": "REA & AI RE Tools Guide (unofficial)",
+    "url": "https://reaguide.com/",
+    "category": "community-labs",
+    "relationship": "community-learning-resource",
+    "kind": "learning-resource",
+    "targets": [
+      "app",
+      "binary",
+      "website"
+    ],
+    "description_en": "An unofficial, independently run guide to installing REA and connecting it to coding agents, in 32 pages: install paths for npx, npm and Bun including Windows, MCP setup for Claude Code and Desktop, Codex, Cursor, Windsurf and Gemini CLI, a config generator for 24 clients, Ghidra, IDA and JADX provider setup, and troubleshooting pages that match exact error text to upstream REA issues. Several pages record the author's own runs, such as Android APK analysis through headless JADX on rea-agents 6.5.0 and a Claude Code setup re-test on 6.8.0. The site also compares REA with Ghidra, IDA and other reverse-engineering MCP servers and documents look-alike REA copies.",
+    "description_zh": "由个人独立运营的非官方 REA 指南，共 32 个页面，介绍如何安装 REA 并接入编码智能体：涵盖 npx、npm 与 Bun 安装路径（含 Windows），Claude Code 与 Claude Desktop、Codex、Cursor、Windsurf 和 Gemini CLI 的 MCP 配置，支持 24 种客户端的配置生成器，Ghidra、IDA 与 JADX 分析引擎设置，以及把确切报错文本对应到 REA 上游 issue 的故障排查页面。部分页面记录了作者自己的运行结果，例如在 rea-agents 6.5.0 上通过无界面 JADX 分析 Android APK，以及在 6.8.0 上重新测试 Claude Code 配置。网站还将 REA 与 Ghidra、IDA 及其他逆向 MCP 服务器作比较，并记录冒充 REA 的仿冒副本。",
+    "evidence_url": "https://reaguide.com/",
+    "verified_at": "2026-11-02",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed as a live website on 2026-11-02, when its sitemap listed 32 pages. There is no public source repository or pinned revision, so pages can change after this review; each page dates the check of the commands it restates (2026-10-13 to 2026-10-27 on the reviewed pages). The home page named rea-agents 6.8.0 and Node.js 22.23.4+, 24.22.1+ or 26.12.1+, matching npm and REA's README at review.",
+      "Tested pages state their platform and versions: Android APK analysis on Debian 13 with rea-agents 6.5.0, JDK 21 and jadx-headless-mcp 0.7.1 on an F-Droid APK, and Claude Code setup re-run on rea-agents 6.8.0. The Gemini CLI page scanned REA's tool schemas on 6.5.0 and 6.7.0 but sent no request to Gemini, and the Windows page draws on REA's documentation and issue reports.",
+      "Every page calls the site an independent community guide not affiliated with the REA project and names rea.tools and morluto/rea as authoritative; its fake-copies page lists only morluto/rea, rea.tools and the rea-agents npm package as official. The pages carry no ads or affiliate links and load Cloudflare Web Analytics.",
+      "The pages state no license for the guide's own text. REA is MIT; commercial engines it can drive, such as IDA Pro and Hopper, need their own licenses."
+    ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "attribution",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://reaguide.com/install/",
+      "https://reaguide.com/troubleshooting/",
+      "https://reaguide.com/claude-setup/",
+      "https://reaguide.com/android-apk/",
+      "https://reaguide.com/gemini-cli-400-invalid-argument/",
+      "https://reaguide.com/install-windows/",
+      "https://reaguide.com/fake-rea-copies/",
+      "https://reaguide.com/config-generator/",
+      "https://github.com/morluto/rea/blob/2cb29693c3d574c4898832047fe309ac1ad00e9d/README.md",
+      "https://github.com/morluto/rea/blob/2cb29693c3d574c4898832047fe309ac1ad00e9d/docs/android-analysis.md"
+    ]
   }
 ]
