@@ -84,6 +84,18 @@ class CaseDiscoveryTests(unittest.TestCase):
         for changed in ({'reconstruction_method': 'other'}, {'name': 'zzz'}):
             with self.subTest(changed=changed), self.assertRaises(AssertionError):
                 validate_case_outputs(pages(), [resources[0], resources[1], resources[2] | changed, resources[3]])
+        # A Game case without a method belongs in the final fallback group, and only there.
+        pending = record('pending', ['game'])
+        with TemporaryDirectory() as directory:
+            output = Path(directory)
+            build_discovery_pages(output, {'meta': {}, 'resources': resources + [pending]}, None)
+            html = {prefix + '/cases/': (output / prefix.lstrip('/') / 'cases/index.html').read_text() for prefix in ('', '/zh')}
+        validate_case_outputs(pages(), resources + [pending])
+        rows = Page(html['/cases/']).case_rows
+        self.assertEqual([(row['id'], row['method'], row['method_anchor']) for row in rows][-1],
+                         ('pending', 'unassigned', 'cases-game-unassigned'))
+        with self.assertRaises(AssertionError):
+            validate_case_outputs(pages(), resources + [pending | {'reconstruction_method': 'port'}])
 
     def test_script_text_or_other_language_cannot_replace_visible_case_content(self):
         route = '/zh/cases/'

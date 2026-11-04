@@ -218,7 +218,8 @@ def collection_section(record):
 
 
 # How a case study reconstructs its game (`reconstruction_method`), in README and /cases/ order, with each group's
-# English and Chinese heading. Case studies in METHOD_SECTIONS must name one (validate.py); data/README.md defines them.
+# English and Chinese heading. The field is recommended for case studies in METHOD_SECTIONS and optional for
+# validation; a value must be one of these (validate.py), and data/README.md defines them.
 RECONSTRUCTION_METHODS = {
     'matching-decompilation': ('Matching decompilations and disassemblies', '匹配反编译与反汇编'),
     'decompilation': ('Non-matching decompilations', '非匹配反编译'),
@@ -227,6 +228,9 @@ RECONSTRUCTION_METHODS = {
     'engine-reimplementation': ('Engine reimplementations', '引擎重实现'),
     'other': ('Other methods and analyses', '其他方法与分析'),
 }
+# Cases that name no method form a final group (anchor slug only; never a valid field value).
+UNASSIGNED_METHOD = 'unassigned'
+METHOD_HEADINGS = {**RECONSTRUCTION_METHODS, UNASSIGNED_METHOD: ('Other reconstruction methods', '其他重建方式')}
 METHOD_SECTIONS = ('game',)
 
 
@@ -235,14 +239,22 @@ def case_order(record):
     return record['name'].casefold(), record['id']
 
 
+def case_method(record):
+    """The method group of a case study: its reconstruction_method, or the final group when the field is absent."""
+    if 'reconstruction_method' not in record:
+        return UNASSIGNED_METHOD
+    method = record['reconstruction_method']
+    if method not in RECONSTRUCTION_METHODS:
+        raise ValueError(f"{record['id']}: reconstruction_method must be one of {', '.join(RECONSTRUCTION_METHODS)}")
+    return method
+
+
 def method_groups(cases):
-    """(method, cases) pairs in RECONSTRUCTION_METHODS order, without empty groups, each ordered by case_order."""
-    groups = {method: [] for method in RECONSTRUCTION_METHODS}
+    """(method, cases) pairs in METHOD_HEADINGS order (cases without a method last), without empty groups, each
+    ordered by case_order."""
+    groups = {method: [] for method in METHOD_HEADINGS}
     for record in cases:
-        method = record.get('reconstruction_method')
-        if method not in groups:
-            raise ValueError(f"{record['id']}: reconstruction_method must be one of {', '.join(RECONSTRUCTION_METHODS)}")
-        groups[method].append(record)
+        groups[case_method(record)].append(record)
     return [(method, sorted(entries, key=case_order)) for method, entries in groups.items() if entries]
 
 
@@ -373,7 +385,7 @@ def render_catalog(records, language, paper_urls=frozenset()):
                 if method:
                     heading = '#' * (5 if label else 4)
                     lines.extend([f'<a id="{section}-{method}"></a>',
-                                  f'{heading} {RECONSTRUCTION_METHODS[method][index]} ({len(block):,})', ''])
+                                  f'{heading} {METHOD_HEADINGS[method][index]} ({len(block):,})', ''])
                 for record in block:
                     name = plain_text((record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if language == 'zh' else record['name'])
                     description = plain_text(lead_sentence(record[f'description_{language}'], language))

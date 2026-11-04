@@ -12,7 +12,7 @@ import shutil
 from urllib.parse import unquote, urlsplit
 
 from asset_paths import FINGERPRINTED_SUFFIXES, fingerprinted_href
-from build_readme import (KIND_LABELS, METHOD_SECTIONS, RECONSTRUCTION_METHODS, RELATIONSHIPS, TARGETS,
+from build_readme import (KIND_LABELS, METHOD_HEADINGS, METHOD_SECTIONS, RELATIONSHIPS, TARGETS, UNASSIGNED_METHOD,
                           collection_section, method_groups)
 from contribution_pages import TITLES as CONTRIBUTION_TITLES, contribution_content
 from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
@@ -322,6 +322,8 @@ METHOD_NOTES = {
     'other': ('Rehosting runtimes, analyses, experiments and cases whose evidence does not establish one of the '
               'methods above.',
               '重托管运行时、分析、实验，以及证据不足以归入以上方法的案例。'),
+    UNASSIGNED_METHOD: ('Cases whose record does not name a reconstruction method yet.',
+                        '记录中尚未注明重建方法的案例。'),
 }
 
 
@@ -377,11 +379,11 @@ def _case_collection(resources: list[dict], language: str, site_url: str,
             # Same groups and order as this section's README case studies; each group is one level below the section.
             methods = method_groups(groups[key])
             groups[key] = [record for _, records in methods for record in records]
-            method_nav = ''.join(f'<a href="#cases-{key}-{method}">{escape(RECONSTRUCTION_METHODS[method][int(zh)])}<span>{len(records)}</span></a>'
+            method_nav = ''.join(f'<a href="#cases-{key}-{method}">{escape(METHOD_HEADINGS[method][int(zh)])}<span>{len(records)}</span></a>'
                                  for method, records in methods)
             body = (f'<nav class="browse-category-nav case-method-nav" aria-label="{("重建方法" if zh else "Reconstruction methods")}">{method_nav}</nav>'
                     + ''.join(f'<section class="case-method" id="cases-{key}-{method}" data-case-method="{method}" aria-labelledby="case-method-heading-{key}-{method}">'
-                              f'<div class="case-method-topline"><h3 id="case-method-heading-{key}-{method}">{escape(RECONSTRUCTION_METHODS[method][int(zh)])}</h3><p>{count(len(records))}</p></div>'
+                              f'<div class="case-method-topline"><h3 id="case-method-heading-{key}-{method}">{escape(METHOD_HEADINGS[method][int(zh)])}</h3><p>{count(len(records))}</p></div>'
                               f'<p class="case-method-note">{escape(METHOD_NOTES[method][int(zh)])}</p><div class="case-list">'
                               + '\n'.join(_case_row(record, language, key, 'h4') for record in records) + '</div></section>'
                               for method, records in methods))

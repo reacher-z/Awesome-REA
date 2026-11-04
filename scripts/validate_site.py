@@ -24,8 +24,8 @@ from source_browser import BROWSER_FILENAME, FULL_EXPORT_FILENAME, validate_sour
 from public_source_supplements import (PUBLISHED_FILENAME, compose_published, json_bytes,
                                       load_supplements, owned_file, bounded_bytes, project_additions)
 from validate_discovery import expected_entry_routes, validate_route_inventory
-from build_readme import (CATEGORIES, METHOD_SECTIONS, PAPER_SECTIONS, REQUIREMENTS_LABEL, collection_section,
-                          method_groups, paper_section)
+from build_readme import (CATEGORIES, METHOD_SECTIONS, PAPER_SECTIONS, REQUIREMENTS_LABEL, case_method,
+                          collection_section, method_groups, paper_section)
 from build_discovery_pages import ABOUT_EXCLUDED_SECTIONS, SECTION_TARGETS, file_size_label
 from build_feed import FEED_PAGES, FEED_PATHS, FEED_SIZE, feed_entries
 from homepage_locales import _ui_strings
@@ -1138,7 +1138,7 @@ def validate_case_outputs(pages, resources):
                                    'url': ORIGIN + detail, 'description': record[f'description_{language}']})
             assert row['anchor'] == row['id'] and row['section'] == collection_section(record), f'Case placement mismatch: {row["id"]}'
             assert row['parent_section'] == row['section'] and row['parent_anchor'] == 'cases-' + row['section'], f'Case belongs to the wrong subject section: {row["id"]}'
-            method = record.get('reconstruction_method') if row['section'] in METHOD_SECTIONS else None
+            method = case_method(record) if row['section'] in METHOD_SECTIONS else None
             assert row['method'] == method and row['method_anchor'] == (method and f'cases-{row["section"]}-{method}'), f'Case belongs to the wrong method group: {row["id"]}'
             assert len(row['headings']) == 1 and normalize(name) in normalize(''.join(row['headings'][0])), f'Case heading lost localized name: {row["id"]}'
             # Requirements and additional sources are on the entry page (validate_entry_outputs); the row links to them.
@@ -1150,7 +1150,7 @@ def validate_case_outputs(pages, resources):
             assert record['verified_at'][:10] in normalize(''.join(row['times'][0]['text'])), f'Case review date is missing: {row["id"]}'
         assert items.get('itemListElement') == expected_items, f'Case structured list differs from rendered entries: {route}'
         for section in METHOD_SECTIONS:
-            # Method groups follow RECONSTRUCTION_METHODS, and each group is in case_order, as in the READMEs.
+            # Method groups follow METHOD_HEADINGS (cases without a method last), each in case_order, as in the READMEs.
             listed = [cases[identifier] for identifier in ids if collection_section(cases[identifier]) == section]
             expected = [record['id'] for _, records in method_groups(listed) for record in records]
             assert [record['id'] for record in listed] == expected, f'Case method groups are out of order: {route}#cases-{section}'

@@ -170,6 +170,29 @@ class CasePageTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'reconstruction_method'):
             self.build([resource('unsorted', reconstruction_method='guess')])
 
+    def test_game_cases_without_a_method_form_a_final_group_only_when_present(self):
+        pending = resource('pending')
+        del pending['reconstruction_method']
+        records = [pending, resource('engine', reconstruction_method='engine-reimplementation')]
+        output = self.build(records)
+        for language, prefix in [('en', ''), ('zh', 'zh/')]:
+            with self.subTest(language=language):
+                content = (output / prefix / 'cases/index.html').read_text()
+                self.assertEqual([row['id'] for row in CaseDocument(content).cases], ['engine', 'pending'])
+                games = content.split('id="cases-game"', 1)[1]
+                self.assertEqual(re.findall(r'data-case-method="([a-z-]+)"', games), ['engine-reimplementation', 'unassigned'])
+                heading, note = ('其他重建方式', '记录中尚未注明重建方法') if language == 'zh' else ('Other reconstruction methods', 'Cases whose record does not name')
+                fallback = games.split('id="cases-game-unassigned"', 1)[1]
+                self.assertIn(f'>{heading}</h3><p>{"1 个案例" if language == "zh" else "1 case"}</p>', fallback)
+                self.assertIn(f'<p class="case-method-note">{note}', fallback)
+                self.assertIn(f'<a href="#cases-game-unassigned">{heading}<span>1</span></a>', games)
+        # Once every Game case names a method, the fallback group and its index link are left out.
+        complete = self.build([resource('engine', reconstruction_method='engine-reimplementation'), resource('misc')])
+        for prefix in ('', 'zh/'):
+            content = (complete / prefix / 'cases/index.html').read_text()
+            self.assertNotIn('unassigned', content)
+            self.assertEqual(re.findall(r'data-case-method="([a-z-]+)"', content), ['engine-reimplementation', 'other'])
+
     def test_literal_prose_evidence_and_native_disclosure_are_preserved(self):
         record = resource('quoted-case', name='Case <A> & "B"', name_zh='案例 <甲> 与 "乙"',
                           description_en='Literal <script>text()</script>, *scope* & limits.',

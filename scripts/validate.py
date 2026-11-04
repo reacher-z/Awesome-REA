@@ -14,8 +14,8 @@ import sys
 from urllib.parse import unquote, urlsplit
 
 from artifact_links import github_repository
-from build_readme import (CATEGORIES, METHOD_SECTIONS, RECONSTRUCTION_METHODS, RELATIONSHIPS, TARGETS,
-                          collection_section, readme_size_warnings)
+from build_readme import (CATEGORIES, METHOD_HEADINGS, METHOD_SECTIONS, RECONSTRUCTION_METHODS, RELATIONSHIPS, TARGETS,
+                          UNASSIGNED_METHOD, collection_section, readme_size_warnings)
 from catalog import ROOT, RESOURCE_FILES
 from localization import read_fingerprints, read_localizations, validate_fingerprints, validate_localizations
 from requirement_facets import facet_errors
@@ -76,6 +76,24 @@ def requirement_budget_warning(records):
     listed = ', '.join(f'{identifier} ({-length:,})' for length, identifier in sorted(over))
     return (f'{len(over)} curated records exceed the {REQUIREMENTS_BUDGET:,}-character requirements budget '
             f'in data/README.md: {listed}')
+
+
+def missing_method_warnings(records):
+    """Advisory only: Game case studies without `reconstruction_method`, which the READMEs and /cases/ list last.
+
+    The field is recommended, not required, so pull requests that add a Game case without it keep passing.
+    """
+    missing = []
+    for record in records:
+        if (isinstance(record, dict) and record.get('kind') == 'case-study' and 'reconstruction_method' not in record
+                and isinstance(record.get('category'), str) and isinstance(record.get('relationship'), str)
+                and collection_section(record) in METHOD_SECTIONS):
+            missing.append(str(record.get('id')))
+    if not missing:
+        return []
+    return [f'{len(missing)} Game case {"study has" if len(missing) == 1 else "studies have"} no reconstruction_method '
+            f'and {"is" if len(missing) == 1 else "are"} listed under "{METHOD_HEADINGS[UNASSIGNED_METHOD][0]}": '
+            f'{", ".join(missing)}; add one of the methods in data/README.md']
 
 
 def public_https_error(value):
@@ -255,13 +273,14 @@ def validate_resources(records, errors, *, now=None):
             errors.append(f"{where}: relationship 'independent-reconstruction' requires category 'reconstruction-cases'")
         elif record['category'] == 'reconstruction-cases' and record['relationship'] != 'independent-reconstruction':
             errors.append(f"{where}: category 'reconstruction-cases' requires relationship 'independent-reconstruction'")
-        # The README and /cases/ group these case studies by method; other records do not render the field.
-        if record['kind'] == 'case-study' and collection_section(record) in METHOD_SECTIONS:
-            if record.get('reconstruction_method') not in RECONSTRUCTION_METHODS:
-                errors.append(f'{where}.reconstruction_method: Game case studies need one of '
-                              + ', '.join(RECONSTRUCTION_METHODS) + "; use 'other' when the evidence does not establish one")
-        elif 'reconstruction_method' in record:
-            errors.append(f'{where}.reconstruction_method: only case studies listed under Game take this field')
+        # The README and /cases/ group Game case studies by method; other records do not render the field. It is
+        # optional (missing_method_warnings reports Game cases without it), but a value must be in the vocabulary.
+        if 'reconstruction_method' in record:
+            if record['kind'] != 'case-study' or collection_section(record) not in METHOD_SECTIONS:
+                errors.append(f'{where}.reconstruction_method: only case studies listed under Game take this field')
+            elif record['reconstruction_method'] not in RECONSTRUCTION_METHODS:
+                errors.append(f'{where}.reconstruction_method: use one of ' + ', '.join(RECONSTRUCTION_METHODS)
+                              + "; use 'other' when the evidence does not establish one, or leave the field out")
         if record['verification'] != 'source-reviewed':
             errors.append(f'{where}.verification: use source-reviewed; runtime and reproduction results are out of scope (see CONTRIBUTING.md)')
         if not string_list(record['requirements']):
@@ -1317,6 +1336,9 @@ def main():
             errors.append((result.stderr or result.stdout).strip() or f'{script}: generated content check failed.')
     # Advisory: a README near GitHub's rendering limit is reported, never failed, so open pull requests keep passing.
     for warning in readme_size_warnings(ROOT):
+        print(f'Warning: {warning}', file=sys.stderr)
+    # Advisory, for the same reason: Game case studies without a reconstruction method are listed last.
+    for warning in missing_method_warnings(records):
         print(f'Warning: {warning}', file=sys.stderr)
     if errors:
         print(f'Validation failed with {len(errors)} issue(s):', file=sys.stderr)

@@ -53,7 +53,7 @@ Agent 请先阅读 [AGENTS.md（英文）](AGENTS.md)和 [Agent 投稿与 PR 指
 
 使用[重建案例推荐表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=case-study.yml)，可用英文或简体中文填写。分别说明原始输入、重建输出与证据；部分重建或未测试的案例也可推荐。案例名称写作 `<主名称>: <重建或发现的内容>`：以项目公开使用的名称开头，并在后半部分写明游戏、应用或设备，例如 `SpeedBreaker: statically recompiling Need for Speed: Most Wanted for Xbox 360`；中文名称保留主名称，用全角冒号（：）接译文。主名称本身含冒号或没有独立项目名时的写法，见[目录格式（英文）](data/README.md)中的 `name` 一行。
 
-案例可以使用 REA、其他智能体或独立的逆向工具。有记录的重建项目如果与 REA 没有已确认的关联，使用 `relationship: independent-reconstruction` 和 `category: reconstruction-cases`，targets 按实际涉及的领域填写。列在“游戏”下的案例还要按[目录格式说明](data/README.md)中的方法填写 `reconstruction_method`，证据不足以确定方法时用 `other`。说明中要区分作者报告的结果、尚未完成的行为、平台限制，以及需要用户自备的原始资源，并可按[目录格式说明（英文）](data/README.md)为每条 `requirements` 填写可选的 `requirement_facets`；填写后页面会把前提条件排在最前。尽量提供固定版本的公开来源；不要包含专有目标二进制文件或私人抓包数据。
+案例可以使用 REA、其他智能体或独立的逆向工具。有记录的重建项目如果与 REA 没有已确认的关联，使用 `relationship: independent-reconstruction` 和 `category: reconstruction-cases`，targets 按实际涉及的领域填写。列在“游戏”下的案例还应按[目录格式说明](data/README.md)中的方法填写 `reconstruction_method`，证据不足以确定方法时用 `other`；未填写时，该案例列在“其他重建方式”下，校验只给出警告。说明中要区分作者报告的结果、尚未完成的行为、平台限制，以及需要用户自备的原始资源，并可按[目录格式说明（英文）](data/README.md)为每条 `requirements` 填写可选的 `requirement_facets`；填写后页面会把前提条件排在最前。尽量提供固定版本的公开来源；不要包含专有目标二进制文件或私人抓包数据。
 
 [案例覆盖记录](data/case-coverage.json)与目录记录分开，记录固定版本上游案例合集中的条目，格式见[目录格式指南（英文）](data/README.md)。修改其中的条目后，运行 `python3 scripts/build_case_coverage.py` 重新生成[覆盖摘要](docs/case-coverage.zh-CN.md)，再运行 `python3 scripts/validate.py`。
 
