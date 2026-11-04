@@ -12817,5 +12817,53 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-ml-malware-analysis-survey",
+    "title": "Survey of machine learning techniques for malware analysis",
+    "authors": [
+      "Daniele Ucci",
+      "Leonardo Aniello",
+      "Roberto Baldoni"
+    ],
+    "year": 2019,
+    "publication_date": "2019-03",
+    "date_precision": "month",
+    "date_basis": "Crossref issued month; no day is asserted",
+    "venue": "Computers & Security",
+    "publication_status": "journal-article",
+    "arxiv_id": "1710.08189",
+    "arxiv_version_reviewed": "v3",
+    "first_arxiv_date": "2017-10-23",
+    "doi": "10.1016/j.cose.2018.11.001",
+    "url": "https://doi.org/10.1016/j.cose.2018.11.001",
+    "pdf_url": "https://arxiv.org/pdf/1710.08189v3",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This survey reviews machine-learning techniques used to analyze malware as samples grow in volume and complexity. It summarizes that analysis literature rather than introducing a new detector.",
+    "description_zh": "这篇综述整理用于分析恶意软件的机器学习技术，背景是样本的数量和复杂度都在上升。它总结的是这一分析文献，而不是提出一个新的检测器。",
+    "scope_limitations_en": "Crossref dates the journal issue to 2019-03 and does not give a day. The fetched full text is arXiv:1710.08189v3. Reported detector numbers were not recomputed.",
+    "scope_limitations_zh": "Crossref 把期刊期次标为 2019-03，没有给出日。获取的全文是 arXiv:1710.08189v3。文中的检测器数字没有重新计算。",
+    "why_fits_en": "Malware analysis of binaries is a reverse-engineering workload, and this paper surveys learning methods applied to it.",
+    "why_fits_zh": "对二进制做恶意软件分析是一种逆向工程工作，本文综述其中使用的学习方法。",
+    "evidence_urls": [
+      "https://arxiv.org/pdf/1710.08189v3",
+      "https://api.crossref.org/works/10.1016/j.cose.2018.11.001",
+      "https://arxiv.org/abs/1710.08189v3",
+      "https://export.arxiv.org/api/query?id_list=1710.08189",
+      "https://doi.org/10.1016/j.cose.2018.11.001"
+    ],
+    "metadata_notes": "The recorded title keeps the Crossref capitalization. The DOI string contains 2018 even though the issued date is 2019.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "面向恶意软件分析的机器学习技术综述",
+    "date_basis_zh": "月份取自 Crossref 登记的出版日期，未断言具体日",
+    "metadata_notes_zh": "记录的题名保留 Crossref 的大小写。DOI 字符串中含有 2018，但登记日期是 2019 年。"
   }
 ]

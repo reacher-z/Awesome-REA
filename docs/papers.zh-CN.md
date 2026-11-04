@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -148,6 +148,7 @@
 - [**Manticore：面向二进制程序和智能合约的易用符号执行框架**](https://arxiv.org/abs/1907.03890) - Manticore 使用动态符号执行分析二进制程序和以太坊智能合约。 <sub>原题：*Manticore: A User-Friendly Symbolic Execution Framework for Binaries and Smart Contracts* · arXiv 2019 · 预印本 · Mark Mossberg 等 · [PDF](https://arxiv.org/pdf/1907.03890) · [完整条目](https://awesomerea.org/zh/papers/paper-manticore/)</sub>
 - [**InternalBlue：蓝牙二进制补丁与实验框架**](https://doi.org/10.1145/3307334.3326089) - 论文逆向分析博通蓝牙控制器，并提出用于修改其固件的 InternalBlue 框架。 <sub>原题：*InternalBlue - Bluetooth Binary Patching and Experimentation Framework* · Proceedings of the 17th Annual International Conference on Mobile Systems, Applications, and Services 2019 · 会议论文 · Dennis Mantz 等 · [PDF](https://arxiv.org/pdf/1905.00631) · [完整条目](https://awesomerea.org/zh/papers/paper-internalblue/)</sub>
 - [**迈向神经网络反编译**](https://arxiv.org/abs/1905.08325) - 论文利用编译器训练基于神经机器翻译的反编译器，并评估将 LLVM IR 和 x86 汇编转换为 C 代码的效果；两组基准的成功率分别超过 97% 和 88%。 <sub>原题：*Towards Neural Decompilation* · arXiv 2019 · 预印本 · Omer Katz 等 · [PDF](https://arxiv.org/pdf/1905.08325) · [完整条目](https://awesomerea.org/zh/papers/paper-neural-decompilation/)</sub>
+- [**面向恶意软件分析的机器学习技术综述**](https://doi.org/10.1016/j.cose.2018.11.001) - 这篇综述整理用于分析恶意软件的机器学习技术，背景是样本的数量和复杂度都在上升。 <sub>原题：*Survey of machine learning techniques for malware analysis* · Computers &amp; Security 2019 · 期刊论文 · Daniele Ucci 等 · [PDF](https://arxiv.org/pdf/1710.08189v3) · [完整条目](https://awesomerea.org/zh/papers/paper-ml-malware-analysis-survey/)</sub>
 - [**ICSREF：工业控制系统二进制文件自动化逆向工程框架**](https://doi.org/10.14722/ndss.2019.23271) - ICSREF 自动逆向分析由 CODESYS 编译的可编程逻辑控制器二进制文件。 <sub>原题：*ICSREF: A Framework for Automated Reverse Engineering of Industrial Control Systems Binaries* · Proceedings 2019 Network and Distributed System Security Symposium · 会议论文 · Anastasis Keliris 等 · [PDF](https://arxiv.org/pdf/1812.03478) · [完整条目](https://awesomerea.org/zh/papers/paper-icsref/)</sub>
 - [**Coda：端到端神经程序反编译器**](https://proceedings.neurips.cc/paper_files/paper/2019/hash/093b60fd0557804c8ba0cbf1453da22f-Abstract.html) - Coda 分两个阶段将短函数的汇编反编译为 C。 <sub>原题：*Coda: An End-to-End Neural Program Decompiler* · NeurIPS 2019 · 会议论文 · Cheng Fu 等 · [PDF](https://proceedings.neurips.cc/paper_files/paper/2019/file/093b60fd0557804c8ba0cbf1453da22f-Paper.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-coda/)</sub>
 - [**用于受自然语言处理启发的二进制代码分析的跨架构指令嵌入模型**](https://arxiv.org/abs/1812.09652) - 论文学习指令嵌入，以捕捉架构内部及跨架构的指令语义关系，并将其用于基于语义的基本块比较；结果优于基于代码统计的方法。 <sub>原题：*A Cross-Architecture Instruction Embedding Model for Natural Language Processing-Inspired Binary Code Analysis* · arXiv 2018 · 预印本 · Kimberly Redmond 等 · [PDF](https://arxiv.org/pdf/1812.09652) · [完整条目](https://awesomerea.org/zh/papers/paper-cross-arch-instruction-embedding/)</sub>
