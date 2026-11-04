@@ -45,8 +45,10 @@ class PaperJsonLdIdentityTests(unittest.TestCase):
             for language, prefix in (('en', ''), ('zh', '/zh')):
                 listing = Page((root / prefix.lstrip('/') / 'papers/index.html').read_text(encoding='utf-8'))
                 items = next(schema_entities(listing.schemas, 'ItemList'))['itemListElement']
-                directory_ids = [article['@id'] for article in schema_entities(listing.schemas, 'ScholarlyArticle')]
-                self.assertEqual([item['item']['@id'] for item in items], directory_ids)
+                # The listing names each entity; only the detail page describes it.
+                self.assertEqual(list(schema_entities(listing.schemas, 'ScholarlyArticle')), [])
+                self.assertEqual([item['position'] for item in items], list(range(1, len(records) + 1)))
+                self.assertEqual(len({item['item']['@id'] for item in items}), len(records))
                 for item in items:
                     identifier = item['url'].removeprefix(ORIGIN + prefix + '/papers/').removesuffix('/')
                     self.assertEqual(item['url'], ORIGIN + entry_path('paper', identifier, language))
@@ -54,6 +56,7 @@ class PaperJsonLdIdentityTests(unittest.TestCase):
                     article = next(schema_entities(detail.schemas, 'ScholarlyArticle'))
                     self.assertEqual(article['@id'], item['item']['@id'])
                     self.assertEqual(article['@id'], ORIGIN + entry_path('paper', identifier, language) + '#paper')
+                    self.assertEqual(item['name'], article['alternateName'] if language == 'zh' else article['name'])
                     self.assertIn(identifier, listing.paper_ids)
 
 

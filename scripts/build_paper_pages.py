@@ -9,8 +9,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit
 
-from asset_paths import fingerprinted_href
-from evidence_links import evidence_link
+from asset_paths import fingerprinted_href, write_fingerprinted
 from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
 from site_footer import download_link, site_footer
 
@@ -28,6 +27,12 @@ TARGET_LABELS = {
     'firmware': ('Firmware analysis', '固件分析'),
     'protocol': ('Protocol inference and analysis', '协议推断与分析'),
 }
+# Fields paper-search.js matches and filters on: both languages' titles and summaries, authors, venue and identifiers.
+SEARCH_FIELDS = ('id', 'title', 'title_zh', 'description_en', 'description_zh', 'authors', 'venue', 'doi', 'arxiv_id',
+                 'year', 'publication_status', 'targets')
+# Advisory weight for each paper listing. validate_site.py prints a warning above it and never fails, so data pull
+# requests keep passing; tests check a fixed bibliography against it.
+LISTING_SIZE_BUDGET = 900_000
 MONTHS = ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December')
 BIBTEX_MONTHS = tuple(name[:3].lower() for name in MONTHS)
 
@@ -164,7 +169,31 @@ def scholarly_article(paper: dict, language: str, site_url: str = 'https://aweso
     return article
 
 
+def paper_sources_link(paper: dict, language: str) -> str:
+    """Link the entry page's source list, stating how many sources it holds and when they were checked.
+
+    Sources are counted as the entry page lists them, each distinct URL once. The list, the publication
+    details and the review notes are on the entry page only, which keeps /papers/ light. The link is an inline
+    flex box, which drops spaces next to the <time> child, so the date follows a no-break space."""
+    zh = language == 'zh'
+    title = paper['title_zh'] if zh else paper['title']
+    sources = len(dict.fromkeys(paper['evidence_urls']))
+    checked = str(paper['verified_at'])
+    date = f'<time datetime="{escape(checked, quote=True)}">{escape(checked[:10])}</time>'
+    if zh:
+        text = f'{sources} 个来源 · 复核于&nbsp;{date}'
+        label = f'{title}：完整条目中的 {sources} 个来源（复核于 {checked[:10]}）'
+    else:
+        plural = '' if sources == 1 else 's'
+        text = f'{sources} source{plural} · checked&nbsp;{date}'
+        label = f'{title}: {sources} source{plural}, checked {checked[:10]}, on the full entry'
+    href = f"{'/zh' if zh else ''}/papers/{paper['id']}/#entry-sources"
+    return (f'<p class="paper-sources"><a href="{href}" aria-label="{escape(label, quote=True)}">'
+            f'{text}<span aria-hidden="true">&nbsp;→</span></a></p>')
+
+
 def paper_card(paper: dict, language: str, use_pro: bool) -> str:
+    """One listing card: summary, links, a disclosure with scope and authors, and a counted link to the entry's sources."""
     zh = language == 'zh'
     label = lambda en, cn: cn if zh else en
     status = STATUS_LABELS[paper['publication_status']][1 if zh else 0]
@@ -180,26 +209,34 @@ def paper_card(paper: dict, language: str, use_pro: bool) -> str:
         if paper.get(field):
             links.append(f'<a class="paper-link" href="{web_url(paper[field])}" target="_blank" rel="noopener" aria-label="{named(label(en, cn))}">{label(en, cn)}{icon("external", use_pro)}</a>')
     citation_link = f'<a class="paper-link" href="/papers/citations/{paper["id"]}.bib" download="{paper["id"]}.bib" type="application/x-bibtex" aria-label="{named('BibTeX')}">BibTeX <span aria-hidden="true">↓</span></a>'
-    metadata = [(label('Publication / posting date', '出版／提交日期'), formatted_date(paper.get('publication_date'), language, paper['year'])),
-                (label('Date source', '日期依据'), paper['date_basis_zh' if zh else 'date_basis'])]
-    if paper.get('first_arxiv_date'):
-        metadata.append((label('First arXiv submission', 'arXiv 首次提交'), formatted_date(paper['first_arxiv_date'], language)))
-    if paper.get('arxiv_id'):
-        metadata.append(('arXiv', paper['arxiv_id']))
-    if paper.get('arxiv_version_reviewed'):
-        metadata.append((label('Reviewed arXiv version', '已复核的 arXiv 版本'), paper['arxiv_version_reviewed']))
-    if paper.get('doi'):
-        metadata.append(('DOI', paper['doi']))
-    metadata.append((label('Sources checked', '来源复核日期'), formatted_date(paper['verified_at'], language)))
-    details = ''.join(f'<dt>{escape(key)}</dt><dd>{escape(value)}</dd>' for key, value in metadata)
-    # Same labels as the detail page: pinned GitHub links show their path, repository and revision.
-    source_links = ''.join(f'<li>{evidence_link(url, web_url(url), language)}</li>' for url in paper['evidence_urls'])
     return f'''<article class="paper-card" id="{paper['id']}" data-paper-id="{paper['id']}">
   <header><h3><a href="{web_url(paper['url'])}" target="_blank" rel="noopener">{escape(title)}{icon('external', use_pro)}</a></h3><div class="paper-meta"><span class="paper-year">{paper['year']}</span><span class="paper-venue" lang="en">{escape(paper['venue'])}</span><span class="paper-status paper-status-{paper['publication_status']}">{status}</span></div></header>
   <p class="paper-description">{escape(paper[f'description_{language}'])}</p>
   <ul class="paper-links">{''.join(f'<li>{link}</li>' for link in links)}</ul>
-  <details class="paper-details"><summary>{label('Scope & sources', '适用范围与来源')}</summary><div class="paper-scope"><h4>{label('Scope & limitations', '研究范围与局限')}</h4><p>{escape(paper[f'scope_limitations_{language}'])}</p></div><h4>{label('Authors & citation', '作者与引文')}</h4>{original_title}<p class="paper-authors" lang="en">{escape('; '.join(paper['authors']))}</p><p class="paper-citation-download">{citation_link}</p><h4>{label('Why it fits this collection', '与本合集的关联')}</h4><p>{escape(paper[f'why_fits_{language}'])}</p><dl>{details}</dl><p>{escape(paper['metadata_notes_zh' if zh else 'metadata_notes'])}</p><h4>{label('Primary sources', '一手来源')}</h4><ul>{source_links}</ul><p class="paper-review-note">{label('Source review only; experiments were not rerun for this collection.', '本合集仅做来源复核，未重新运行论文实验。')}</p></details>
+  <details class="paper-details"><summary>{label('Scope & authors', '研究范围与作者')}</summary><div class="paper-scope"><h4>{label('Scope & limitations', '研究范围与局限')}</h4><p>{escape(paper[f'scope_limitations_{language}'])}</p></div><h4>{label('Authors & citation', '作者与引文')}</h4>{original_title}<p class="paper-authors" lang="en">{escape('; '.join(paper['authors']))}</p><p class="paper-citation-download">{citation_link}</p></details>
+  {paper_sources_link(paper, language)}
 </article>'''
+
+
+def search_index(ordered: list[dict]) -> bytes:
+    """The paper-search.js index: SEARCH_FIELDS of every paper, in the listing's order."""
+    return json.dumps({'schema_version': 1, 'papers': [{key: paper.get(key) for key in SEARCH_FIELDS} for paper in ordered]},
+                      ensure_ascii=False, separators=(',', ':')).encode('utf-8')
+
+
+def listing_size_warning(route: str, size: int) -> str | None:
+    """Advisory note for a paper listing of `size` bytes, or None while it is within LISTING_SIZE_BUDGET."""
+    if size <= LISTING_SIZE_BUDGET:
+        return None
+    return (f'{route} is {size:,} bytes of HTML, above the {LISTING_SIZE_BUDGET:,}-byte budget for the paper listings; '
+            'move more card detail to the entry pages /papers/<id>/.')
+
+
+def listing_size_warnings(site_dir: Path) -> list[str]:
+    """Size notes for both built paper listings; validate_site.py prints them without failing."""
+    notes = (listing_size_warning(route, (Path(site_dir) / route.lstrip('/') / 'index.html').stat().st_size)
+             for route in ('/papers/', '/zh/papers/'))
+    return [note for note in notes if note]
 
 
 def build_paper_pages(
@@ -262,11 +299,8 @@ def build_paper_pages(
     search_script = (Path(__file__).resolve().parents[1] / 'site/paper-search.js').read_bytes()
     (site_dir / 'paper-search.js').write_bytes(search_script)
     search_href = fingerprinted_href(site_dir, 'paper-search.js')
-    search_fields = ('id', 'title', 'title_zh', 'description_en', 'description_zh', 'authors', 'venue', 'doi', 'arxiv_id',
-                     'year', 'publication_status', 'targets')
-    search_data = json.dumps({'schema_version': 1, 'papers': [
-        {key: paper.get(key) for key in search_fields} for paper in ordered
-    ]}, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
+    # One content-addressed index serves both languages: fetched once, then cached like the scripts.
+    search_index_href = write_fingerprinted(site_dir, 'paper-search-index', '.json', search_index(ordered))
 
     # The visible breadcrumb gets the same BreadcrumbList as the discovery and browse pages.
     from build_discovery_pages import breadcrumb_schema, jsonld_script
@@ -307,8 +341,12 @@ def build_paper_pages(
             '@context': 'https://schema.org',
             '@graph': [
                 {'@type': 'CollectionPage', '@id': canonical, 'url': canonical, 'name': title, 'description': description, 'inLanguage': locale, 'mainEntity': {'@id': canonical + '#paper-list'}},
-                {'@type': 'ItemList', '@id': canonical + '#paper-list', 'numberOfItems': len(ordered), 'itemListElement': [{'@type': 'ListItem', 'position': index + 1, 'url': canonical + paper['id'] + '/', 'item': {'@id': paper_entity_id(paper, language, site_url)}} for index, paper in enumerate(ordered)]},
-                *(scholarly_article(paper, language, site_url) for paper in ordered),
+                # Each item names a paper's entry page and the ScholarlyArticle that page defines; the full article
+                # data is published there only, so the listing does not repeat it.
+                {'@type': 'ItemList', '@id': canonical + '#paper-list', 'numberOfItems': len(ordered), 'itemListElement': [
+                    {'@type': 'ListItem', 'position': index + 1, 'url': canonical + paper['id'] + '/',
+                     'name': paper['title_zh'] if zh else paper['title'], 'item': {'@id': paper_entity_id(paper, language, site_url)}}
+                    for index, paper in enumerate(ordered)]},
             ],
         }
         # The directory belongs to the site that only the homepages define.
@@ -334,6 +372,7 @@ def build_paper_pages(
   {icon_css}
   <script type="application/ld+json">{structured}</script>
   {jsonld_script(breadcrumb_schema(canonical, [(label('Home', '首页'), site_url + home), (label('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准'), canonical)]))}
+  <link rel="preload" href="{search_index_href}" as="fetch" crossorigin>
   <script src="{search_href}" defer></script>
 </head>
 <body>
@@ -344,7 +383,7 @@ def build_paper_pages(
   <section class="collection-intro papers-intro" aria-labelledby="papers-title"><p class="eyebrow">{label('RESEARCH & EVIDENCE', '研究与证据')}</p><h1 id="papers-title">{label('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准')}<span class="title-dot" aria-hidden="true">.</span></h1><p>{escape(intro)}</p></section>
   <div class="papers-actions"><a class="button button-outline" href="{web_url(repository_url + "/issues/new?template=paper.yml")}" target="_blank" rel="noopener">{icon("document", use_pro)}{label("Suggest a paper", "推荐论文")}</a><a class="button button-outline" href="{browse}">{icon('layers', use_pro)}{label('Browse repositories', '浏览仓库')}</a>{download_link('/papers/references.bib', language, css_class='papers-bibliography')}</div>
   <p class="papers-review-policy">{label('We check primary sources; we do not rerun experiments or independently reproduce results.', '仅复核一手来源，未重新运行实验或独立复现结果。')}</p>
-  <form id="paper-search" class="paper-search script-only" role="search" aria-label="{label('Search research papers', '搜索研究论文')}">
+  <form id="paper-search" class="paper-search script-only" role="search" aria-label="{label('Search research papers', '搜索研究论文')}" data-search-index="{search_index_href}">
     <div class="paper-search-field paper-search-query"><label for="paper-query">{label('Search papers', '搜索论文')}</label><input id="paper-query" name="q" type="search" maxlength="240" autocomplete="off" placeholder="{label('Title, author, venue, DOI or arXiv ID', '标题、作者、出处、DOI 或 arXiv 编号')}" aria-describedby="paper-search-help"></div>
     <div class="paper-search-field"><label for="paper-target">{label('Target', '目标')}</label><select id="paper-target" name="target"><option value="all">{label('All targets', '全部目标')}</option>{target_options}</select></div>
     <details class="paper-search-more" id="paper-more-filters"><summary>{label('More filters', '更多筛选')}</summary><div class="paper-search-options">
@@ -360,7 +399,6 @@ def build_paper_pages(
   <div id="paper-empty" class="paper-search-empty" hidden><p>{label('No papers match these filters.', '没有符合这些条件的论文。')}</p><button id="paper-empty-reset" class="button button-outline" type="button">{label('Clear filters and show all papers', '清除筛选并显示全部论文')}</button></div>
   <nav class="papers-topic-nav" aria-label="{label('Research areas', '研究方向')}">{''.join(nav)}</nav>
   {''.join(sections)}
-  <script id="paper-search-data" type="application/json">{search_data}</script>
 </main>
 {site_footer(language, note=escape(label('Paper and code links retain their own licenses. Bibliographic metadata is supplied for citation; follow the original sources for version and access details.', '论文和代码保留各自的许可。引文元数据用于引用；版本和访问详情请以原始来源为准。')), repository_url=repository_url, repository_export=repository_export)}
 </body>

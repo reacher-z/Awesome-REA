@@ -76,7 +76,8 @@ class PaperOrderTests(unittest.TestCase):
                     self.assertEqual(page.paper_ids, DOM_ORDER)
                     self.assertEqual({group['anchor']: group['paper_ids'] for group in page.paper_groups}, GROUP_ORDER)
                     self.assertEqual(page.paper_ids.count('paper-multi'), 1)
-                    projection = json.loads(re.search(r'<script id="paper-search-data" type="application/json">(.*?)</script>', html, re.S)[1])
+                    index = re.search(r'data-search-index="/([^"]+)"', html)[1]
+                    projection = json.loads((output / index).read_text())
                     self.assertEqual([row['id'] for row in projection['papers']], DOM_ORDER)
                     graph = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)[1])['@graph']
                     listing = next(row for row in graph if row['@type'] == 'ItemList')
@@ -84,8 +85,10 @@ class PaperOrderTests(unittest.TestCase):
                     prefix = '/zh' if language == 'zh' else ''
                     self.assertEqual([item['url'] for item in listing['itemListElement']],
                                      ['https://awesomerea.org' + prefix + '/papers/' + identifier + '/' for identifier in DOM_ORDER])
-                    self.assertEqual([row['@id'] for row in graph if row['@type'] == 'ScholarlyArticle'],
+                    self.assertEqual([item['item']['@id'] for item in listing['itemListElement']],
                                      ['https://awesomerea.org' + prefix + '/papers/' + identifier + '/#paper' for identifier in DOM_ORDER])
+                    # The entry pages carry the ScholarlyArticle data; the listing only names it.
+                    self.assertEqual([row['@type'] for row in graph], ['CollectionPage', 'ItemList'])
                     self.assertIn('各分区按年份从新到旧排列' if language == 'zh' else 'newest year first within each section', html)
                 for row in input_rows:
                     self.assertEqual((output / 'papers/citations' / (row['id'] + '.bib')).read_text(), bibtex_text(row))

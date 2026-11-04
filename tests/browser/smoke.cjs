@@ -75,8 +75,11 @@ async function open(browser, origin, route, viewport, {javascript = true} = {}) 
   });
   page.on('console', message => {
     if (message.type() === 'error') problems.push(`console error: ${message.text()}`);
-    // Chrome warns when a preload is unused or its request does not match the later fetch.
-    else if (/preload/i.test(message.text())) problems.push(`console ${message.type()}: ${message.text()}`);
+    // Chrome warns when a preload is unused or its request does not match the later fetch. Without JavaScript
+    // nothing can use a fetch preload, so only that warning is expected there.
+    else if (/preload/i.test(message.text()) && (javascript || !/preloaded using link preload but not used/.test(message.text()))) {
+      problems.push(`console ${message.type()}: ${message.text()}`);
+    }
   });
   page.on('pageerror', error => problems.push(`uncaught exception: ${error.message}`));
   page.on('requestfailed', request => {
@@ -131,6 +134,15 @@ async function preloadedCatalog(page, label) {
   assert(entries.catalog[0].start < entries.dcl, `${label}: the catalog request starts before DOMContentLoaded`);
 }
 const requests = (requested, file) => requested.filter(pathname => pathname === '/' + file).length;
+// paper-search.js fetches the content-addressed index its page preloads, once, starting before DOMContentLoaded.
+async function preloadedPaperIndex(page, label) {
+  const entries = await page.evaluate(() => ({dcl: performance.getEntriesByType('navigation')[0].domContentLoadedEventStart,
+    index: performance.getEntriesByType('resource').filter(entry => /^\/assets\/paper-search-index\.[0-9a-f]{16}\.json$/.test(new URL(entry.name).pathname))
+      .map(entry => ({initiator: entry.initiatorType, start: entry.startTime}))}));
+  assert.equal(entries.index.length, 1, `${label}: one paper search index request`);
+  assert.equal(entries.index[0].initiator, 'link', `${label}: the index response comes from the preload`);
+  assert(entries.index[0].start < entries.dcl, `${label}: the index request starts before DOMContentLoaded`);
+}
 // The complete catalog, with requirement text, is requested once right after the first render.
 const completeCatalog = page => page.waitForFunction(() => performance.getEntriesByType('resource').some(entry => new URL(entry.name).pathname === '/catalog.json'));
 
@@ -331,6 +343,16 @@ async function paperDirectory(page, route, viewport, javascript = true) {
   const metaBeside = await page.$$eval('.paper-card', cards => cards.filter(card =>
     card.querySelector('.paper-meta').getBoundingClientRect().top < card.querySelector('h3').getBoundingClientRect().bottom - 1).length);
   assert.equal(metaBeside, 0, `${label}: every row puts year, venue and status on their own line under the title (${metaBeside} beside it)`);
+  // Sources, publication details and review notes are on the entry page; each row links there with the source count.
+  const footer = await page.$eval(first, card => {
+    const link = card.querySelector('.paper-sources > a'), box = link.getBoundingClientRect();
+    return {id: card.id, href: link.getAttribute('href'), text: link.textContent, shown: box.width > 0 && box.height > 0,
+      inDetails: !!link.closest('details'), lists: card.querySelectorAll('dl, .paper-details ul, .paper-details ol').length};
+  });
+  assert.equal(footer.href, `${route}${footer.id}/#entry-sources`, `${label}: the sources link opens the entry page's source list`);
+  assert(footer.shown && !footer.inDetails, `${label}: the sources link is visible without opening the row`);
+  assert.match(footer.text, route.startsWith('/zh/') ? /^\d+ 个来源 · 复核于\s\d{4}-\d{2}-\d{2}\s→$/ : /^\d+ sources? · checked\s\d{4}-\d{2}-\d{2}\s→$/, `${label}: sources link text`);
+  assert.equal(footer.lists, 0, `${label}: no source or publication-detail lists in the row`);
   assert.equal(await page.$eval(first + ' .paper-details', node => node.open), false);
   await press(page, first + ' .paper-details > summary');
   const expanded = await page.$eval(first + ' .paper-details', details => ({open: details.open,
@@ -342,6 +364,16 @@ async function paperDirectory(page, route, viewport, javascript = true) {
   await noOverflow(page, label + ' expanded evidence');
   await press(page, first + ' .paper-details > summary');
   if (javascript) {
+    await preloadedPaperIndex(page, label);
+    // Typing a paper's ID finds that paper alone, through the fetched index.
+    await press(page, '#paper-query');
+    await page.type('#paper-query', footer.id);
+    await page.waitForFunction(() => document.querySelectorAll('.paper-card:not([hidden])').length === 1);
+    assert.deepEqual(await page.$$eval('.paper-card:not([hidden])', cards => cards.map(card => card.id)), [footer.id], `${label}: typed search`);
+    assert.equal(numbers(await text(page, '#paper-results'))[0], 1);
+    assert.equal(new URL(page.url()).searchParams.get('q'), footer.id);
+    await press(page, '#paper-clear');
+    assert.equal(await page.$$eval('.paper-card[hidden]', cards => cards.length), 0, `${label}: clearing shows every paper`);
     assert.equal(await page.$eval('#paper-more-filters', node => node.open), false);
     await press(page, '#paper-more-filters > summary');
     await page.select('#paper-layout', 'cards');
@@ -365,7 +397,7 @@ async function paperDirectory(page, route, viewport, javascript = true) {
   if (viewport.name === 'desktop') await midWidthPaperRows(page, label, viewport);
 }
 
-// Between 701 and 1100 px each row keeps its links and the Scope & sources toggle on one line, and an opened panel spans the row.
+// Between 701 and 1100 px each row keeps its links and the Scope & authors toggle on one line, and an opened panel spans the row.
 async function midWidthPaperRows(page, label, viewport) {
   await page.setViewport({width: 1024, height: viewport.height});
   const rows = await page.$$eval('.paper-card:not([hidden])', cards => cards.map(card => {
@@ -374,7 +406,7 @@ async function midWidthPaperRows(page, label, viewport) {
     const centre = (toggle.top + toggle.bottom) / 2;
     return centre > links.top && centre < links.bottom;
   }));
-  assert(rows.length > 0 && rows.every(Boolean), `${label} at 1024px: ${rows.filter(row => !row).length} rows put the links and the Scope & sources toggle on separate lines`);
+  assert(rows.length > 0 && rows.every(Boolean), `${label} at 1024px: ${rows.filter(row => !row).length} rows put the links and the Scope & authors toggle on separate lines`);
   const panel = await page.$eval('.paper-card', card => {
     const details = card.querySelector('.paper-details');
     details.open = true;

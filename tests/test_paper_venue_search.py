@@ -21,11 +21,13 @@ class PaperVenueSearchTests(unittest.TestCase):
             build_paper_pages(output, cls.papers)
             cls.html = {language: (output / path).read_text(encoding='utf-8')
                         for language, path in (('en', 'papers/index.html'), ('zh', 'zh/papers/index.html'))}
+            # Both listings fetch the index file their search form names.
+            cls.index = {language: json.loads((output / re.search(r'data-search-index="/([^"]+)"', html)[1]).read_text(encoding='utf-8'))
+                         for language, html in cls.html.items()}
 
     def test_search_data_includes_every_venue(self):
         venues = {paper['id']: paper['venue'] for paper in self.papers}
-        for language, html in self.html.items():
-            projection = json.loads(re.search(r'<script id="paper-search-data" type="application/json">(.*?)</script>', html, re.S)[1])
+        for language, projection in self.index.items():
             with self.subTest(language=language):
                 self.assertEqual({row['id']: row['venue'] for row in projection['papers']}, venues)
 

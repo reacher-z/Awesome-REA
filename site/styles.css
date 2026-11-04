@@ -118,9 +118,9 @@ input::placeholder{color:var(--muted);opacity:1}
   main :is(.card-title-link,.source-title-link,.case-heading a,.paper-card h3 a,.paper-link,.resource-evidence-link,.case-source,.source-card-footer a,.entry-link,.entry-sources a)[href^="http"]::after{content:" <" attr(href) ">";font-size:8.5pt;font-weight:400;color:#444}
   :is(.browse-main:has(.resource-requirements-link),.cases-main) .browse-intro::after,.papers-intro::after{display:block;margin-top:6pt;padding:5pt 8pt;border:1pt solid #999;font-size:9pt;line-height:1.5;color:#333}
   :is(.browse-main:has(.resource-requirements-link),.cases-main) .browse-intro::after{content:"Printed listing: every entry’s title, description, targets, primary source, requirement and source counts, and review date. Each entry’s full page prints all of its requirements, limitations and sources."}
-  .papers-intro::after{content:"Printed listing: every paper with its scope and limitations, plus the authors, citation details and sources you opened before printing. Each paper’s full page prints all of them."}
+  .papers-intro::after{content:"Printed listing: every paper with its scope and limitations, source count and review date, plus the authors and citation you opened before printing. Each paper’s full page prints its sources, publication details and review notes."}
   html[lang="zh-CN"] :is(.browse-main:has(.resource-requirements-link),.cases-main) .browse-intro::after{content:"打印说明：列出每个条目的标题、简介、目标领域、一手来源、条件与来源数量及复核日期。每个条目的完整页面会打印其全部条件、局限与来源。"}
-  html[lang="zh-CN"] .papers-intro::after{content:"打印说明：列出每篇论文及其研究范围与局限，以及打印前展开的作者、引文与来源信息。每篇论文的完整页面会打印全部内容。"}
+  html[lang="zh-CN"] .papers-intro::after{content:"打印说明：列出每篇论文及其研究范围与局限、来源数量与复核日期，以及打印前展开的作者与引文信息。每篇论文的完整页面会打印其来源、发表详情与复核说明。"}
 }
 
 /* Masthead and collection introduction. */
