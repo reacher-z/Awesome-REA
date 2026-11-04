@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (111)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -98,6 +98,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**ReSym: Harnessing LLMs to Recover Variable and Data Structure Symbols from Stripped Binaries**](https://doi.org/10.1145/3658644.3670340) - Combines two fine-tuned language models with Prolog-based cross-function reasoning to infer local-variable symbols and user-defined data structures from stripped-binary decompilation. <sub>ACM CCS 2024 · Conference paper · Danning Xie et al. · [PDF](https://www.cs.purdue.edu/homes/lintan/publications/resym-ccs24.pdf) · [Code](https://github.com/lt-asset/resym) · [Full entry](https://awesomerea.org/papers/paper-resym/)</sub>
 - [**Self-Constructed Context Decompilation with Fined-grained Alignment Enhancement**](https://aclanthology.org/2024.findings-emnlp.385/) - Adds two techniques to LLM decompilation of function-level x86-64 GCC assembly into C. <sub>Findings of EMNLP 2024 · Conference paper · Yunlong Feng et al. · [PDF](https://aclanthology.org/2024.findings-emnlp.385.pdf) · [Code](https://github.com/AlongWY/sccdec) · [Full entry](https://awesomerea.org/papers/paper-sc2dec/)</sub>
 - [**LLM4Decompile: Decompiling Binary Code with Large Language Models**](https://aclanthology.org/2024.emnlp-main.203/) - Trains language models for assembly-to-C decompilation and for refining Ghidra pseudocode, evaluating whether recovered functions can be recompiled and executed correctly. <sub>EMNLP 2024 · Conference paper · Hanzhuo Tan et al. · [PDF](https://aclanthology.org/2024.emnlp-main.203.pdf) · [Code](https://github.com/albertan017/LLM4Decompile) · [Full entry](https://awesomerea.org/papers/paper-llm4decompile/)</sub>
+- [**Is Function Similarity Over-Engineered? Building a Benchmark**](https://arxiv.org/abs/2410.22677v1) - This paper builds a benchmark for binary function similarity and questions pipelines that spend heavily on disassembly, decompilation, and graph preprocessing before the comparison. <sub>arXiv 2024 · Preprint · Rebecca Saul et al. · [PDF](https://arxiv.org/pdf/2410.22677v1) · [Full entry](https://awesomerea.org/papers/paper-function-similarity-bench/)</sub>
 - [**WaDec: Decompiling WebAssembly Using Large Language Model**](https://dl.acm.org/doi/10.1145/3691620.3695020) - WaDec decompiles WebAssembly text (wat) into C by fine-tuning CodeLlama-7b with LoRA on loop-level wat–C snippet pairs. <sub>ASE 2024 · Conference paper · Xinyu She et al. · [PDF](https://arxiv.org/pdf/2406.11346v3) · [Code](https://github.com/XinyuShe/WaDec/tree/e244f7172539478a5b64bbb86e1fd03e527cb6be) · [Full entry](https://awesomerea.org/papers/paper-wadec/)</sub>
 - [**How Far Have We Gone in Binary Code Understanding Using Large Language Models**](https://ieeexplore.ieee.org/document/10795058) - Benchmarks 16 code and general LLMs on function name recovery and summarization of stripped binaries. <sub>ICSME 2024 · Conference paper · Xiuwei Shang et al. · [PDF](https://arxiv.org/pdf/2404.09836v3) · [Full entry](https://awesomerea.org/papers/paper-llm-binary-understanding/)</sub>
 - [**CLAP: Learning Transferable Binary Code Representations with Natural Language Supervision**](https://dl.acm.org/doi/10.1145/3650212.3652145) - CLAP (Contrastive Language-Assembly Pre-training) learns assembly-function embeddings aligned with natural-language explanations. <sub>ACM ISSTA 2024 · Conference paper · Hao Wang et al. · [PDF](https://arxiv.org/pdf/2402.16928v1) · [Code](https://github.com/Hustcw/CLAP) · [Full entry](https://awesomerea.org/papers/paper-clap/)</sub>
