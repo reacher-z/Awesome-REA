@@ -898,6 +898,25 @@ def build_document(entries: list[dict], client: HttpClient, *, workers: int) -> 
     }
 
 
+def sanitize_private_text(value: str) -> str:
+    """Replace local-profile paths and credential-looking text in a public snippet."""
+    try:
+        from review_pr import LOCAL_PATH, SENSITIVE
+    except ImportError:
+        return value
+    return SENSITIVE.sub("<secret>", LOCAL_PATH.sub("<local-path>", value))
+
+
+def sanitize_document(value):
+    if isinstance(value, str):
+        return sanitize_private_text(value)
+    if isinstance(value, list):
+        return [sanitize_document(item) for item in value]
+    if isinstance(value, dict):
+        return {sanitize_private_text(key): sanitize_document(item) for key, item in value.items()}
+    return value
+
+
 def trim_document(document: dict) -> dict:
     """Keep the committed snapshot reviewable without losing any field the scorer reads."""
     def trim_signals(signals: dict) -> None:
@@ -942,7 +961,7 @@ def trim_document(document: dict) -> dict:
     for page in (document.get("pages") or {}).values():
         page.pop("headings", None)
         trim_signals(page.get("signals") or {})
-    return document
+    return sanitize_document(document)
 
 
 def main() -> int:

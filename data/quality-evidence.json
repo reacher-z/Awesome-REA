@@ -10184,7 +10184,7 @@
        "bullets": 0,
        "heading": "Usage with MCP Clients",
        "level": 1,
-       "snippet": "WireMCP works with any MCP-compliant client. Below are examples for popular clients: ## Example 1: Cursor Edit `mcp.json` in Cursor -> Settings -> MCP : **Location (macOS)**: `/Users/YOUR_USER/Library/Application Support/Claude/claude_deskt"
+       "snippet": "WireMCP works with any MCP-compliant client. Below are examples for popular clients: ## Example 1: Cursor Edit `mcp.json` in Cursor -> Settings -> MCP : **Location (macOS)**: `<local-path>/Library/Application Support/Claude/claude_deskt"
       }
      }
     }
@@ -12461,7 +12461,7 @@
        "bullets": 0,
        "heading": "安装",
        "level": 2,
-       "snippet": "需要完整 Xcode、原生 arm64 shell，以及当前用户的 `~/theos`。发行包已包含原生 monkeyparser 和 class-dump，正常安装无需自行编译这些工具。 先以普通用户安装 Theos，不要将其安装到 `/opt/theos`： 首次安装： 后续更新： 开发时，也可在 MonkeyDev 源码目录安装或更新本地版本： macOS 原有 `/bin/sh -c` 入口也已验证兼容。安装位置为 `/opt/MonkeyDev`，模板注册在当前用户"
+       "snippet": "需要完整 Xcode、原生 arm64 shell，以及当前用户的 `<local-path>/theos`。发行包已包含原生 monkeyparser 和 class-dump，正常安装无需自行编译这些工具。 先以普通用户安装 Theos，不要将其安装到 `/opt/theos`： 首次安装： 后续更新： 开发时，也可在 MonkeyDev 源码目录安装或更新本地版本： macOS 原有 `/bin/sh -c` 入口也已验证兼容。安装位置为 `/opt/MonkeyDev`，模板注册在当前用户"
       },
       "persistence": {
        "bullets": 7,
@@ -14366,7 +14366,7 @@
        "bullets": 3,
        "heading": "Where is the savefile stored?",
        "level": 4,
-       "snippet": "- Windows: `%LOCALAPPDATA%\\BanjoRecompiled\\saves` - Linux: `~/.config/BanjoRecompiled/saves` - macOS: `~/Library/Application Support/BanjoRecompiled/saves`"
+       "snippet": "- Windows: `%LOCALAPPDATA%\\BanjoRecompiled\\saves` - Linux: `<local-path>/.config/BanjoRecompiled/saves` - macOS: `<local-path>/Library/Application Support/BanjoRecompiled/saves`"
       },
       "roadmap": {
        "bullets": 1,
@@ -46344,7 +46344,7 @@
        "bullets": 2,
        "heading": "Where is the savefile stored?",
        "level": 4,
-       "snippet": "- Windows: `%LOCALAPPDATA%\\DK64Recompiled\\saves` - Linux: `~/.config/DK64Recompiled/saves`"
+       "snippet": "- Windows: `%LOCALAPPDATA%\\DK64Recompiled\\saves` - Linux: `<local-path>/.config/DK64Recompiled/saves`"
       },
       "roadmap": {
        "bullets": 0,
@@ -56150,7 +56150,7 @@
        "bullets": 3,
        "heading": "Where is the savefile stored?",
        "level": 4,
-       "snippet": "- Windows: `%LOCALAPPDATA%\\Zelda64Recompiled\\saves` - Linux: `~/.config/Zelda64Recompiled/saves` - macOS: `~/Library/Application Support/Zelda64Recompiled/saves`"
+       "snippet": "- Windows: `%LOCALAPPDATA%\\Zelda64Recompiled\\saves` - Linux: `<local-path>/.config/Zelda64Recompiled/saves` - macOS: `<local-path>/Library/Application Support/Zelda64Recompiled/saves`"
       },
       "roadmap": {
        "bullets": 1,
@@ -59972,7 +59972,7 @@
        "bullets": 0,
        "heading": "For use as a binwalk module",
        "level": 2,
-       "snippet": "Same as above, but the installation directory must be the binwalk module directory: `$HOME/.config/binwalk/modules`. You'll need a recent version of binwalk, that includes the patch provided by https://github.com/devttys0/binwalk/pull/241 ."
+       "snippet": "Same as above, but the installation directory must be the binwalk module directory: `<local-path>/.config/binwalk/modules`. You'll need a recent version of binwalk, that includes the patch provided by https://github.com/devttys0/binwalk/pull/241 ."
       }
      }
     }
@@ -62687,7 +62687,7 @@
        "bullets": 10,
        "heading": "Usage",
        "level": 2,
-       "snippet": "### Method 1: Using with Claude for Desktop 1. Make sure Claude for Desktop is installed and updated to the latest version. 2. Configure Claude for Desktop to use the LLDB MCP server by editing: - path: `~/Library/Application Support/Claude"
+       "snippet": "### Method 1: Using with Claude for Desktop 1. Make sure Claude for Desktop is installed and updated to the latest version. 2. Configure Claude for Desktop to use the LLDB MCP server by editing: - path: `<local-path>/Library/Application Support/Claude"
       }
      }
     }
@@ -65054,7 +65054,7 @@
        "bullets": 0,
        "heading": "Install",
        "level": 2,
-       "snippet": "The last two commands link the packaged plugin into Binary Ninja and the skill into `$CODEX_HOME/skills` (default `~/.codex/skills`). Use `--mode copy` for standalone copies. Restart Binary Ninja after installing or upgrading the plugin; re"
+       "snippet": "The last two commands link the packaged plugin into Binary Ninja and the skill into `$CODEX_HOME/skills` (default `<local-path>/.codex/skills`). Use `--mode copy` for standalone copies. Restart Binary Ninja after installing or upgrading the plugin; re"
       }
      }
     }
@@ -66237,7 +66237,7 @@
        "bullets": 11,
        "heading": "Basic Usage",
        "level": 3,
-       "snippet": "#### Option 1: Stdio Transport (Recommended for AI tools) MCP client config (`.mcp.json`, `~/.cursor/mcp.json`, Claude Desktop config, …). **Use the absolute path to `uv`** — see the note below for why: On Windows the same config points at "
+       "snippet": "#### Option 1: Stdio Transport (Recommended for AI tools) MCP client config (`.mcp.json`, `<local-path>/.cursor/mcp.json`, Claude Desktop config, …). **Use the absolute path to `uv`** — see the note below for why: On Windows the same config points at "
       }
      }
     }
@@ -68189,7 +68189,7 @@
        "bullets": 0,
        "heading": "Install",
        "level": 2,
-       "snippet": "Or grab a prebuilt archive from the [Releases](https://github.com/bl4ckr0ss3/knife/releases) page and drop `knife` on your `PATH`. If your shell cannot find `knife` after installing, `~/.cargo/bin` is not on your `PATH` yet: restart the she"
+       "snippet": "Or grab a prebuilt archive from the [Releases](https://github.com/bl4ckr0ss3/knife/releases) page and drop `knife` on your `PATH`. If your shell cannot find `knife` after installing, `<local-path>/.cargo/bin` is not on your `PATH` yet: restart the she"
       },
       "license": {
        "bullets": 0,
@@ -69212,7 +69212,7 @@
      "code_blocks": 3,
      "heading_count": 25,
      "install_commands": [
-      "npx website-rebuild-skill                    # → ~/.claude/skills/website-rebuild",
+      "npx website-rebuild-skill                    # → <local-path>/.claude/skills/website-rebuild",
       "npx website-rebuild-skill --dir <skills 目录>  # 其他 runtime，目录名 website-rebuild 会自动追加",
       "npx website-rebuild-skill --project          # → ./.claude/skills/website-rebuild"
      ],
@@ -69495,7 +69495,7 @@
        "bullets": 3,
        "heading": "Running",
        "level": 1,
-       "snippet": "======= Bravo includes a twistd plugin, so it's quite easy to run. Just copy bravo.ini.example to bravo.ini, and put it in one of these locations: * /etc/bravo/ * ~/.bravo/ * Your working directory And then run the Twisted plugin: :: $ twis"
+       "snippet": "======= Bravo includes a twistd plugin, so it's quite easy to run. Just copy bravo.ini.example to bravo.ini, and put it in one of these locations: * /etc/bravo/ * <local-path>/.bravo/ * Your working directory And then run the Twisted plugin: :: $ twis"
       }
      }
     }
@@ -78271,7 +78271,7 @@
       "concurrency": null,
       "formats": null,
       "performance": null,
-      "persistence": "Move \"findcrypt_ghidra\" (database directory) into \"C:\\Users\\your user\\\"",
+      "persistence": "Move \"findcrypt_ghidra\" (database directory) into \"<local-path> user\\\"",
       "reproducibility": "I'm trying to move to Ghidra and the very first thing I noticed is how important is the plugin to me, so I took the responsibility to migrate it, in Java, without sacrificing any signature and try to ",
       "security": null,
       "tests": "**This software is being developed and tested, if you encounter any problem please proceed into the Issues section**",
@@ -78323,7 +78323,7 @@
        "bullets": 8,
        "heading": "Installation",
        "level": 2,
-       "snippet": "#### Windows 1. Find your Ghidra installation directory (e.g. \"E:\\Reversing Softwares\\ghidra_9.0\") 2. Move \"FindCrypt.java\" into \"Ghidra\\Features\\BytePatterns\\ghidra_scripts\" 3. Move \"findcrypt_ghidra\" (database directory) into \"C:\\Users\\yo"
+       "snippet": "#### Windows 1. Find your Ghidra installation directory (e.g. \"E:\\Reversing Softwares\\ghidra_9.0\") 2. Move \"FindCrypt.java\" into \"Ghidra\\Features\\BytePatterns\\ghidra_scripts\" 3. Move \"findcrypt_ghidra\" (database directory) into \"<local-path>"
       },
       "license": {
        "bullets": 0,
@@ -89466,7 +89466,7 @@
        "bullets": 0,
        "heading": "Privacy and local storage",
        "level": 2,
-       "snippet": "The app has no analytics, accounts, or cloud services. TV control stays on your local network. Icons are bundled with the app. Preferences and favorites are stored in macOS preferences. Usage and activity history are stored under `~/Library"
+       "snippet": "The app has no analytics, accounts, or cloud services. TV control stays on your local network. Icons are bundled with the app. Preferences and favorites are stored in macOS preferences. Usage and activity history are stored under `<local-path>/Library"
       },
       "tests": {
        "bullets": 0,
@@ -93456,7 +93456,7 @@
        "bullets": 2,
        "heading": "Where is the save data and configuration file stored?",
        "level": 3,
-       "snippet": "The save data and configuration files are stored at the following locations: - Windows: `%APPDATA%\\UnleashedRecomp\\` - Linux: `~/.config/UnleashedRecomp/` You will find the save data under the `save` folder (or `mlsave`, if using Hedge Mod "
+       "snippet": "The save data and configuration files are stored at the following locations: - Windows: `%APPDATA%\\UnleashedRecomp\\` - Linux: `<local-path>/.config/UnleashedRecomp/` You will find the save data under the `save` folder (or `mlsave`, if using Hedge Mod "
       },
       "roadmap": {
        "bullets": 0,
@@ -94927,7 +94927,7 @@
      "code_blocks": 9,
      "heading_count": 14,
      "install_commands": [
-      "uv run decomp              # opens the app; projects live in ~/Decomp (or $DECOMP_HOME)",
+      "uv run decomp              # opens the app; projects live in <local-path>/Decomp (or $DECOMP_HOME)",
       "uv run pytest"
      ],
      "keyword_snippets": {
@@ -102600,7 +102600,7 @@
        "bullets": 0,
        "heading": "Install",
        "level": 2,
-       "snippet": "The udev rule gives the logged-in user access to the screen and keeps USB autosuspend off for it. If TRCC is installed, keep it from grabbing the screen on login: remove any `trcc` line from `~/.config/hypr/autostart.lua`, and add `Hidden=t"
+       "snippet": "The udev rule gives the logged-in user access to the screen and keeps USB autosuspend off for it. If TRCC is installed, keep it from grabbing the screen on login: remove any `trcc` line from `<local-path>/.config/hypr/autostart.lua`, and add `Hidden=t"
       },
       "license": {
        "bullets": 0,
@@ -109049,7 +109049,7 @@
        "bullets": 0,
        "heading": "Local data storage",
        "level": 2,
-       "snippet": "PBTK stores extracted .proto information into `~/.pbtk/protos/` (or `%APPDATA%\\pbtk\\protos` on Windows). You can move in, move out, rename, edit or erase data from this directory directly through your regular file browser and text editor, i"
+       "snippet": "PBTK stores extracted .proto information into `<local-path>/.pbtk/protos/` (or `%APPDATA%\\pbtk\\protos` on Windows). You can move in, move out, rename, edit or erase data from this directory directly through your regular file browser and text editor, i"
       },
       "usage": {
        "bullets": 0,
@@ -111037,7 +111037,7 @@
       "concurrency": "rs` | Sessions, pacing thread, signals, `stop`/`pause`/`resume` |",
       "formats": "There is no FFmpeg, OBS or Electron at runtime",
       "performance": "Metal Performance Shaders, which is much sharper than ScreenCaptureKit's own scaling (see",
-      "persistence": "Settings persist in `~/Library/Application Support/rec-rs/settings",
+      "persistence": "Settings persist in `<local-path>/Library/Application Support/rec-rs/settings",
       "reproducibility": "(these two are from an earlier build; the overlay controls are unchanged)",
       "security": "Security framework); WHIP uses [str0m](https://github",
       "tests": "and tested on macOS 27 on an M4 Pro MacBook Pro",
@@ -111104,7 +111104,7 @@
        "bullets": 0,
        "heading": "Build",
        "level": 2,
-       "snippet": "Build output goes to `~/.cache/rec-rs-target` (`CARGO_TARGET_DIR`), never into the repo, because the repo is synced between machines. The script signs `dist/Rec.app` with your Apple Development identity, so the macOS privacy grants survive "
+       "snippet": "Build output goes to `<local-path>/.cache/rec-rs-target` (`CARGO_TARGET_DIR`), never into the repo, because the repo is synced between machines. The script signs `dist/Rec.app` with your Apple Development identity, so the macOS privacy grants survive "
       },
       "security": {
        "bullets": 3,
@@ -111122,7 +111122,7 @@
        "bullets": 14,
        "heading": "Command line",
        "level": 2,
-       "snippet": "The default output is `~/Movies/rec-YYYY-MM-DD-HHMMSS.mov`. A live status line shows the recorded time, frame counts and peak levels. `--duration` is exact: it is counted in output frames, and pauses don't count. | Option | Default | Notes "
+       "snippet": "The default output is `<local-path>/Movies/rec-YYYY-MM-DD-HHMMSS.mov`. A live status line shows the recorded time, frame counts and peak levels. `--duration` is exact: it is counted in output frames, and pauses don't count. | Option | Default | Notes "
       }
      }
     }
@@ -111623,7 +111623,7 @@
        "bullets": 0,
        "heading": "Running",
        "level": 2,
-       "snippet": "Data lives in `~/Library/Application Support/terminal` (macOS) or `$XDG_DATA_HOME/terminal` (Linux), or `TR_DATA_DIR`. Versions from before the project was renamed used a `terminal-rs` folder in the same place; the first launch moves it to "
+       "snippet": "Data lives in `<local-path>/Library/Application Support/terminal` (macOS) or `$XDG_DATA_HOME/terminal` (Linux), or `TR_DATA_DIR`. Versions from before the project was renamed used a `terminal-rs` folder in the same place; the first launch moves it to "
       }
      }
     }
@@ -112479,7 +112479,7 @@
        "bullets": 3,
        "heading": "2. Configure MCP Client",
        "level": 3,
-       "snippet": "Add to your MCP configuration (e.g., `mcp_config.json`): Restart the IDE to load the MCP server config. For Codex, add a TOML server block to `~/.codex/config.toml`: Use single quotes for the Windows path so TOML treats backslashes literall"
+       "snippet": "Add to your MCP configuration (e.g., `mcp_config.json`): Restart the IDE to load the MCP server config. For Codex, add a TOML server block to `<local-path>/.codex/config.toml`: Use single quotes for the Windows path so TOML treats backslashes literall"
       }
      }
     }
@@ -119728,7 +119728,7 @@
        "bullets": 0,
        "heading": "The command",
        "level": 2,
-       "snippet": "| Command | What it does | |---|---| | `/casebook` | Opens the pane | | `/casebook export` | Writes the casebook as Markdown beside the journal, to `~/.rea-casebook/<date>/<session>.md` | | `/casebook artifact` | Writes the casebook as a pa"
+       "snippet": "| Command | What it does | |---|---| | `/casebook` | Opens the pane | | `/casebook export` | Writes the casebook as Markdown beside the journal, to `<local-path>/.rea-casebook/<date>/<session>.md` | | `/casebook artifact` | Writes the casebook as a pa"
       }
      }
     }
@@ -127756,7 +127756,7 @@
        "bullets": 0,
        "heading": "2. Authentication Settings",
        "level": 2,
-       "snippet": "### 2.A OpenID Connect Copy following code into `$HOME/.dexcalibur`"
+       "snippet": "### 2.A OpenID Connect Copy following code into `<local-path>/.dexcalibur`"
       },
       "tests": {
        "bullets": 0,
@@ -128877,7 +128877,7 @@
      "code_blocks": 5,
      "heading_count": 5,
      "install_commands": [
-      "cmake -DCMAKE_INSTALL_PREFIX=~/.local ..",
+      "cmake -DCMAKE_INSTALL_PREFIX=<local-path>/.local ..",
       "make",
       "make install"
      ],
@@ -132588,8 +132588,8 @@
      "code_blocks": 3,
      "heading_count": 56,
      "install_commands": [
-      "make: Entering directory '/home/rainy/dev/whatsapp/node_modules/fsevents/build'",
-      "make: Leaving directory '/home/rainy/dev/whatsapp/node_modules/fsevents/build'"
+      "make: Entering directory '<local-path>/dev/whatsapp/node_modules/fsevents/build'",
+      "make: Leaving directory '<local-path>/dev/whatsapp/node_modules/fsevents/build'"
      ],
      "keyword_snippets": {
       "concurrency": "js (at least version 8, as the `async` `await` syntax is used)",
@@ -134605,7 +134605,7 @@
        "bullets": 3,
        "heading": "Where is the savefile stored?",
        "level": 4,
-       "snippet": "- Windows: `%LOCALAPPDATA%\\MarioKart64Recompiled\\saves` - Linux: `~/.config/MarioKart64Recompiled/saves` - macOS: `~/Library/Application Support/MarioKart64Recompiled/saves`"
+       "snippet": "- Windows: `%LOCALAPPDATA%\\MarioKart64Recompiled\\saves` - Linux: `<local-path>/.config/MarioKart64Recompiled/saves` - macOS: `<local-path>/Library/Application Support/MarioKart64Recompiled/saves`"
       },
       "roadmap": {
        "bullets": 3,
@@ -134827,7 +134827,7 @@
        "bullets": 3,
        "heading": "Where is the savefile stored?",
        "level": 4,
-       "snippet": "- Windows: `%LOCALAPPDATA%\\Starfox64Recompiled\\saves` - Linux: `~/.config/StarfoxRecompiled/saves` - macOS: `~/Library/Application Support/StarfoxRecompiled/saves`"
+       "snippet": "- Windows: `%LOCALAPPDATA%\\Starfox64Recompiled\\saves` - Linux: `<local-path>/.config/StarfoxRecompiled/saves` - macOS: `<local-path>/Library/Application Support/StarfoxRecompiled/saves`"
       },
       "roadmap": {
        "bullets": 1,
@@ -151453,7 +151453,7 @@
        "bullets": 3,
        "heading": "Installation",
        "level": 2,
-       "snippet": "1. Install this package using your IDA's python pip: `pip install ida-ios-helper` 2. copy `ida-plugin.json` and `ida_plugin_stub.py` to your IDA's plugins folder: `~/.idapro/plugins/ida-ios-helper`. 3. Restart IDA."
+       "snippet": "1. Install this package using your IDA's python pip: `pip install ida-ios-helper` 2. copy `ida-plugin.json` and `ida_plugin_stub.py` to your IDA's plugins folder: `<local-path>/.idapro/plugins/ida-ios-helper`. 3. Restart IDA."
       },
       "usage": {
        "bullets": 0,
