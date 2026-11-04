@@ -25,11 +25,11 @@ from public_source_supplements import (PUBLISHED_FILENAME, compose_published, js
                                       load_supplements, owned_file, bounded_bytes, project_additions)
 from validate_discovery import expected_entry_routes, validate_route_inventory
 from build_readme import CATEGORIES, PAPER_SECTIONS, REQUIREMENTS_LABEL, collection_section, paper_section
-from build_discovery_pages import SECTION_TARGETS
+from build_discovery_pages import ABOUT_EXCLUDED_SECTIONS, SECTION_TARGETS, file_size_label
 from build_feed import FEED_PAGES, FEED_PATHS, FEED_SIZE, feed_entries
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SITE_ALTERNATE_NAMES, SITE_NAME, SOCIAL_IMAGE_ALT, png_size
-from site_footer import DOWNLOADS, site_footer
+from site_footer import DOWNLOADS, SECTION_LINKS, site_footer
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'dist'
@@ -1036,6 +1036,52 @@ def validate_shared_footer(output, repository_url, repository_export):
     assert not duplicates, f'A download has more than one name: {duplicates}'
 
 
+class AboutLinkGroups(HTMLParser):
+    """Collect the /about/ link groups as {group key: [[link attributes, link text, text after the link]]}."""
+
+    def __init__(self, text):
+        super().__init__(convert_charrefs=True)
+        self.groups, self._group, self._item, self._in_link = {}, None, None, False
+        self.feed(text)
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if tag == 'section' and 'about-link-group' in values.get('class', '').split():
+            self._group = self.groups.setdefault(values.get('aria-labelledby', '').removeprefix('about-links-'), [])
+        elif tag == 'a' and self._group is not None:
+            self._item, self._in_link = [values, '', ''], True
+            self._group.append(self._item)
+
+    def handle_data(self, data):
+        if self._item is not None:
+            self._item[1 if self._in_link else 2] += data
+
+    def handle_endtag(self, tag):
+        if tag == 'a':
+            self._in_link = False
+        elif tag == 'li':
+            self._item = None
+        elif tag == 'section':
+            self._group, self._item = None, None
+
+
+def validate_about_links(output):
+    """/about/ groups the footer's site pages, downloads with their built size, and GitHub documents."""
+    for language, prefix in (('en', ''), ('zh', '/zh')):
+        route = prefix + '/about/'
+        groups = AboutLinkGroups((output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')).groups
+        assert list(groups) == ['browse', 'download', 'methods'] and all(groups.values()), f'About link groups mismatch: {route}'
+        expected_pages = [(prefix + path, chinese if language == 'zh' else english)
+                          for path, english, chinese in SECTION_LINKS if path not in ABOUT_EXCLUDED_SECTIONS]
+        assert [(values['href'], text) for values, text, _ in groups['browse']] == expected_pages, f'About browse links mismatch: {route}'
+        for values, text, after in groups['download']:
+            size = file_size_label((output / unquote(urlsplit(values['href']).path).lstrip('/')).stat().st_size)
+            assert 'download' in values and re.search(r'\S ?(JSON|ZIP) ↓$', text) and after == size, f'About download needs a format, a download attribute and its built size: {route} {values["href"]}'
+            assert not re.search(r'(?<!run )(?<!运行 )(?<!\d)\d{6,}', text), f'About download is named by a bare run number: {route} {text}'
+        for values, text, _ in groups['methods']:
+            assert values['href'].startswith('https://github.com/') and values.get('target') == '_blank' and text.endswith('↗'), f'About GitHub link needs an external marker: {route} {values["href"]}'
+
+
 def validate_case_outputs(pages, resources):
     """Bind the script-free case subset, its links to each entry page's requirements and sources, and its navigation."""
     cases = {record['id']: record for record in resources if record['kind'] == 'case-study'}
@@ -1354,6 +1400,7 @@ def main():
     catalog_meta = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['meta']
     validate_shared_footer(OUTPUT, catalog_meta['repository_url'],
                            catalog_meta['source_index'].get('full_export') or 'source-index.json')
+    validate_about_links(OUTPUT)
     validate_unique_titles(OUTPUT, pages)
     validate_artifact_links(OUTPUT, pages)
     validate_suggestion_links(pages)
