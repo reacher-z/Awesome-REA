@@ -12817,5 +12817,51 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-binary-similarity-survey",
+    "title": "A Survey of Binary Code Similarity",
+    "authors": [
+      "Irfan Ul Haq",
+      "Juan Caballero"
+    ],
+    "year": 2021,
+    "publication_date": "2021-04-17",
+    "date_precision": "day",
+    "date_basis": "Crossref issued date",
+    "venue": "ACM Computing Surveys",
+    "publication_status": "journal-article",
+    "arxiv_id": "1909.11424",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2019-09-25",
+    "doi": "10.1145/3446371",
+    "url": "https://arxiv.org/abs/1909.11424v1",
+    "pdf_url": "https://arxiv.org/pdf/1909.11424v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This survey organizes binary code similarity research for settings where source code is unavailable, including patch analysis, bug search, and malware analysis. It groups earlier approaches by application, technical characteristics, implementation, and the benchmarks used to evaluate them.",
+    "description_zh": "这篇综述整理了在无法获得源代码时比较二进制代码相似性的研究，涵盖补丁分析、缺陷搜索和恶意软件分析。它从应用、技术特征、实现方式以及评测基准几个方面归纳已有方法。",
+    "scope_limitations_en": "Bibliographic metadata is the Crossref record for the 2021 ACM Computing Surveys article. The fetched full text is arXiv:1909.11424v1, so later publisher edits are not assumed to match that file. The comparisons were not rerun.",
+    "scope_limitations_zh": "书目信息来自 2021 年 ACM Computing Surveys 文章的 Crossref 记录。获取的全文是 arXiv:1909.11424v1，不假定后来的出版编辑与该文件一致。文中比较没有重跑。",
+    "why_fits_en": "It is a survey of binary code similarity, a core reverse-engineering comparison task.",
+    "why_fits_zh": "这是二进制代码相似性的综述，而二进制代码比较是逆向工程中的一项核心任务。",
+    "evidence_urls": [
+      "https://arxiv.org/pdf/1909.11424v1",
+      "https://api.crossref.org/works/10.1145/3446371",
+      "https://arxiv.org/abs/1909.11424v1",
+      "https://export.arxiv.org/api/query?id_list=1909.11424"
+    ],
+    "metadata_notes": "Authors and the 2021-04-17 Crossref date are kept from the publisher record. No code repository was pinned.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "二进制代码相似性研究综述",
+    "date_basis_zh": "日期取自 Crossref 登记的出版日期",
+    "metadata_notes_zh": "作者和 2021-04-17 的 Crossref 日期沿用出版记录。没有固定代码仓库的提交。"
   }
 ]
