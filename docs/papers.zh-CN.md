@@ -4,7 +4,7 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -14,7 +14,7 @@
 - [反编译与符号恢复](#papers-decompilation) (110)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
-- [应用重建与分析](#papers-app-reconstruction) (16)
+- [应用重建与分析](#papers-app-reconstruction) (17)
 - [固件分析与重托管](#papers-firmware-analysis) (27)
 - [协议推断与分析](#papers-protocol-analysis) (22)
 
@@ -225,6 +225,7 @@
 - [**从视觉组件到界面代码：借助工具证据的高效生成**](https://arxiv.org/abs/2608.12611) - WidgetGen 将组件截图重建为 React JSX，利用 OCR 文本框与调色板支持整体布局推理及可选图表生成，最后渲染一次；生成的渲染图与代码配对还用于模型微调。 <sub>原题：*From Visual Widgets to UI Code: Efficient Tool-Grounded Generation* · MUCG <span>@</span> ECCV 2026 · 会议已接收 · Houston H. Zhang 等 · [PDF](https://arxiv.org/pdf/2608.12611v1) · [完整条目](https://awesomerea.org/zh/papers/paper-widgetgen/)</sub>
 - [**智能体逆向工程：利用发现智能体从输入输出行为恢复代码**](https://arxiv.org/abs/2605.15334) - 通过 LLM 引导的演化搜索、逐步展示的样例、由简到繁的修改及执行错误反馈，从输入输出观察合成可执行程序；主动变体自行选择输入并查询隐藏的参考程序。 <sub>原题：*Agentic Reverse Engineering: From I/O to Code with Discovery Agent* · NeurIPS 2026 · 会议已接收 · Yihong Dong 等 · [PDF](https://arxiv.org/pdf/2605.15334v2) · [代码](https://github.com/JiaruQian/IO2Code) · [完整条目](https://awesomerea.org/zh/papers/paper-dio-agent/)</sub>
 - [**UIOrchestra：通过多智能体系统将 UI 设计转换为高保真代码**](https://aclanthology.org/2025.findings-emnlp.150/) - UIOrchestra 通过布局描述、代码生成及渲染图像比较三个智能体，将静态移动 UI 设计转换为 React/CSS。 <sub>原题：*UIOrchestra: Generating High-Fidelity Code from UI Designs with a Multi-agent System* · Findings of EMNLP 2025 · 会议论文 · Chuhuai Yue 等 · [PDF](https://aclanthology.org/2025.findings-emnlp.150.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-uiorchestra/)</sub>
+- [**以特征为中心的安卓恶意软件分析方法综述**](https://arxiv.org/abs/2509.10709v1) - 这篇系统综述比较以特征为中心的安卓恶意软件分析，涵盖静态、动态、混合和基于图的方法。 <sub>原题：*Feature-Centric Approaches to Android Malware Analysis: A Survey* · arXiv 2025 · 预印本 · Shama Maganur 等 · [PDF](https://arxiv.org/pdf/2509.10709v1) · [完整条目](https://awesomerea.org/zh/papers/paper-android-feature-survey/)</sub>
 - [**DeclarUI：以自动生成声明式界面代码连接设计与开发**](https://doi.org/10.1145/3715726) - 结合视觉组件提取、多模态模型、页面跳转图与迭代检查，从设计稿或截图重建多页面移动界面代码，并在 React Native、Flutter 和 ArkUI 上评测。 <sub>原题：*DeclarUI: Bridging Design and Development with Automated Declarative UI Code Generation* · Proceedings of the ACM on Software Engineering (FSE 2025) · 期刊论文 · Ting Zhou 等 · [PDF](https://xinyi-hou.github.io/files/zhou2024bridging.pdf) · [代码](https://github.com/security-pride/DeclarUI) · [完整条目](https://awesomerea.org/zh/papers/paper-declarui/)</sub>
 - [**面向 Android 恶意软件分析的代码大语言模型基准评测**](https://dl.acm.org/doi/10.1145/3713081.3731745) - CAMA 是一个评测代码大语言模型理解反编译 Android 恶意软件能力的基准框架。 <sub>原题：*On Benchmarking Code LLMs for Android Malware Analysis* · ISSTA Companion 2025 (LLMSC Workshop) · 会议论文 · Yiling He 等 · [PDF](https://arxiv.org/pdf/2504.00694v2) · [完整条目](https://awesomerea.org/zh/papers/paper-cama/)</sub>
 - [**基于机器学习的移动应用图形用户界面原型生成**](https://doi.org/10.1109/TSE.2018.2844788) - ReDraw 通过组件检测、CNN 控件类型分类及数据驱动的近邻层级组装，将截图或设计稿转换为原生 Android 图形界面原型。 <sub>原题：*Machine Learning-Based Prototyping of Graphical User Interfaces for Mobile Apps* · IEEE Transactions on Software Engineering 2020 · 期刊论文 · Kevin Moran 等 · [PDF](https://arxiv.org/pdf/1802.02312v2) · [完整条目](https://awesomerea.org/zh/papers/paper-redraw/)</sub>
