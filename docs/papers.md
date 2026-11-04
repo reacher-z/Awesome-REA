@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (111)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -57,6 +57,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Between the Commits: Process, Error, and Claim Reliability in a Wholly AI-Authored Codebase**](https://arxiv.org/abs/2609.29744) - Studies development of the Extractor reverse-engineering tool through commits, available session logs and code-provenance tracing. <sub>arXiv 2026 · Preprint · Douglas Leith · [PDF](https://arxiv.org/pdf/2609.29744v1) · [Full entry](https://awesomerea.org/papers/paper-extractor-development-reliability/)</sub>
 - [**Echo: Learning-based Matching Decompilation using Trusted Back Translation**](https://arxiv.org/abs/2609.18706) - Echo iteratively generates source and compiler configurations, recompiles candidates, and uses assembly differences to guide configuration search and code refinement. <sub>arXiv 2026 · Preprint · Jun Bi et al. · [PDF](https://arxiv.org/pdf/2609.18706v1) · [Full entry](https://awesomerea.org/papers/paper-echo-matching-decompilation/)</sub>
 - [**A Memorization Floor for LLM Refinement of Decompiled Code**](https://arxiv.org/abs/2609.17236) - Studies whether LLM refinement of decompiled C recovers identifiers from input evidence or prior knowledge. <sub>arXiv 2026 · Preprint · Muhammad Asjad · [PDF](https://arxiv.org/pdf/2609.17236v1) · [Full entry](https://awesomerea.org/papers/paper-memorization-floor/)</sub>
+- [**Type recovery in stripped binaries: a comprehensive survey of inference tools and methods**](https://doi.org/10.1007/s10515-026-00677-y) - This survey reviews type recovery for stripped binaries, where compilation has discarded high-level types, variables, and data layouts. <sub>Automated Software Engineering 2026 · Journal article · Raisul Arefin et al. · [PDF](https://link.springer.com/content/pdf/10.1007/s10515-026-00677-y.pdf) · [Full entry](https://awesomerea.org/papers/paper-type-recovery-survey/)</sub>
 - [**When LLM Decompilers Recompile More and Preserve Less**](https://arxiv.org/abs/2609.05370) - Decompile-Diverge builds function-level behavioral comparisons from source-derived drivers and fuzzed reference inputs. <sub>arXiv 2026 · Preprint · Chang Liu et al. · [PDF](https://arxiv.org/pdf/2609.05370v1) · [Full entry](https://awesomerea.org/papers/paper-decompile-diverge/)</sub>
 - [**Decoupling is a Necessity: Transformation-Agnostic Decompiled Code Recovery under Optimization and Obfuscation**](https://arxiv.org/abs/2608.27889) - ReSource refines decompiled functions affected by compiler optimization and obfuscation. <sub>arXiv 2026 · Preprint · Zhiping Zhou et al. · [PDF](https://arxiv.org/pdf/2608.27889v1) · [Full entry](https://awesomerea.org/papers/paper-resource/)</sub>
 - [**STILL: Recovering Lowered STL Semantics for LLM-assisted C++ Decompilation**](https://arxiv.org/abs/2608.26408) - STILL predicts function-level STL container presence from stripped control-flow graphs and turns those predictions into compact hints for LLM refinement of Ghidra output. <sub>arXiv 2026 · Preprint · Xiaohan Wang et al. · [PDF](https://arxiv.org/pdf/2608.26408v1) · [Full entry](https://awesomerea.org/papers/paper-still-stl/)</sub>

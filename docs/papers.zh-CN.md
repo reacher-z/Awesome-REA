@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -57,6 +57,7 @@
 - [**提交之间：一个完全由 AI 编写的代码库中的过程、错误与陈述可靠性**](https://arxiv.org/abs/2609.29744) - 通过提交、可用会话日志及代码溯源研究 Extractor 逆向工具的开发，用分类体系区分指令意图、变更触发因素及智能体陈述，揭示普通仓库历史无法反映的提交前纠错。 <sub>原题：*Between the Commits: Process, Error, and Claim Reliability in a Wholly AI-Authored Codebase* · arXiv 2026 · 预印本 · Douglas Leith · [PDF](https://arxiv.org/pdf/2609.29744v1) · [完整条目](https://awesomerea.org/zh/papers/paper-extractor-development-reliability/)</sub>
 - [**Echo：基于可信回译的学习式匹配反编译**](https://arxiv.org/abs/2609.18706) - Echo 迭代生成源码及编译配置，重新编译候选，并使用汇编差异指导配置搜索与代码修正。 <sub>原题：*Echo: Learning-based Matching Decompilation using Trusted Back Translation* · arXiv 2026 · 预印本 · Jun Bi 等 · [PDF](https://arxiv.org/pdf/2609.18706v1) · [完整条目](https://awesomerea.org/zh/papers/paper-echo-matching-decompilation/)</sub>
 - [**大语言模型改进反编译代码中的记忆基线**](https://arxiv.org/abs/2609.17236) - 研究大语言模型改进反编译 C 代码时，标识符恢复来自输入证据还是先验知识。 <sub>原题：*A Memorization Floor for LLM Refinement of Decompiled Code* · arXiv 2026 · 预印本 · Muhammad Asjad · [PDF](https://arxiv.org/pdf/2609.17236v1) · [完整条目](https://awesomerea.org/zh/papers/paper-memorization-floor/)</sub>
+- [**剥离二进制中的类型恢复：推断工具与方法综述**](https://doi.org/10.1007/s10515-026-00677-y) - 这篇综述讨论剥离符号后的二进制类型恢复。 <sub>原题：*Type recovery in stripped binaries: a comprehensive survey of inference tools and methods* · Automated Software Engineering 2026 · 期刊论文 · Raisul Arefin 等 · [PDF](https://link.springer.com/content/pdf/10.1007/s10515-026-00677-y.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-type-recovery-survey/)</sub>
 - [**当 LLM 反编译器更易重编译，却更少保留原始行为**](https://arxiv.org/abs/2609.05370) - Decompile-Diverge 基于源码生成驱动，并对参考实现进行模糊测试，以构建函数级行为比较。 <sub>原题：*When LLM Decompilers Recompile More and Preserve Less* · arXiv 2026 · 预印本 · Chang Liu 等 · [PDF](https://arxiv.org/pdf/2609.05370v1) · [完整条目](https://awesomerea.org/zh/papers/paper-decompile-diverge/)</sub>
 - [**解耦的必要性：面向优化与混淆、无需识别具体变换的反编译代码恢复**](https://arxiv.org/abs/2608.27889) - ReSource 针对受编译优化与混淆影响的反编译函数进行修复：先从语义失真数据库检索指导信息，再预测控制流骨架，最后调整名称与格式。 <sub>原题：*Decoupling is a Necessity: Transformation-Agnostic Decompiled Code Recovery under Optimization and Obfuscation* · arXiv 2026 · 预印本 · Zhiping Zhou 等 · [PDF](https://arxiv.org/pdf/2608.27889v1) · [完整条目](https://awesomerea.org/zh/papers/paper-resource/)</sub>
 - [**STILL：为 LLM 辅助 C++ 反编译恢复编译后隐藏的 STL 语义**](https://arxiv.org/abs/2608.26408) - STILL 从去符号控制流图预测函数级 STL 容器的存在情况，并将预测转成紧凑提示，供 LLM 改进 Ghidra 输出。 <sub>原题：*STILL: Recovering Lowered STL Semantics for LLM-assisted C++ Decompilation* · arXiv 2026 · 预印本 · Xiaohan Wang 等 · [PDF](https://arxiv.org/pdf/2608.26408v1) · [完整条目](https://awesomerea.org/zh/papers/paper-still-stl/)</sub>

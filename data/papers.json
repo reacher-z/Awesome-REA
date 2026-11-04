@@ -12817,5 +12817,51 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-type-recovery-survey",
+    "title": "Type recovery in stripped binaries: a comprehensive survey of inference tools and methods",
+    "authors": [
+      "Raisul Arefin",
+      "Ryan Vrecenar",
+      "Samuel Mulder"
+    ],
+    "year": 2026,
+    "publication_date": "2026-09-05",
+    "date_precision": "day",
+    "date_basis": "Crossref issued date",
+    "venue": "Automated Software Engineering",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1007/s10515-026-00677-y",
+    "url": "https://doi.org/10.1007/s10515-026-00677-y",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10515-026-00677-y.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This survey reviews type recovery for stripped binaries, where compilation has discarded high-level types, variables, and data layouts. It covers inference tools and methods that try to restore that information during reverse engineering.",
+    "description_zh": "这篇综述讨论剥离符号后的二进制类型恢复。编译会丢掉高层类型、变量和数据布局，文中归纳试图在逆向工程中还原这些信息的工具与方法。",
+    "scope_limitations_en": "The fetched publisher PDF is the 2026 Automated Software Engineering article. Received and accepted dates printed in the PDF are not used as the publication date. Experiments were not rerun.",
+    "scope_limitations_zh": "获取的出版方 PDF 是 2026 年 Automated Software Engineering 上的文章。PDF 中的收稿日期和录用日期不用作出版日期。实验没有重跑。",
+    "why_fits_en": "Type recovery on stripped binaries is a standard reverse-engineering step before decompilation and vulnerability analysis.",
+    "why_fits_zh": "在剥离二进制上恢复类型，是反编译和漏洞分析之前常见的逆向工程步骤。",
+    "evidence_urls": [
+      "https://link.springer.com/content/pdf/10.1007/s10515-026-00677-y.pdf",
+      "https://api.crossref.org/works/10.1007/s10515-026-00677-y",
+      "https://doi.org/10.1007/s10515-026-00677-y"
+    ],
+    "metadata_notes": "Authors and the 2026-09-05 Crossref date are taken from the publisher record.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "剥离二进制中的类型恢复：推断工具与方法综述",
+    "date_basis_zh": "日期取自 Crossref 登记的出版日期",
+    "metadata_notes_zh": "作者和 2026-09-05 的 Crossref 日期取自出版记录。"
   }
 ]
