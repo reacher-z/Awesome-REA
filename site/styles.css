@@ -284,7 +284,7 @@ html[data-layout="cards"] .collection-home .card-preview img{max-height:150px}
 .requirement-facet{color:var(--ink);font-weight:650}
 .requirements .requirements-pending{list-style:none;margin-left:-22px;color:var(--muted)}
 .resource-detail-meta{display:flex;flex-wrap:wrap;gap:8px 13px;color:var(--muted);font:14px/1.75 var(--sans)}
-.resource-entry-link{display:inline-flex;align-items:center;gap:6px;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.resource-entry-link{display:inline-flex;align-items:center;gap:6px;min-height:24px;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .resource-entry-link .icon{width:14px;height:14px;font-size:14px}
 /* Browser-local shortlist: Save toggles on cards, a count button beside the collection tabs once something is saved,
    and a dialog that reuses the data dialog's frame. In wide compact rows the toggle joins the links' line. */
