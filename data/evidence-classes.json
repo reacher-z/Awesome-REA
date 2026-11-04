@@ -2,7 +2,7 @@
  "schema_version": 1,
  "meta": {
   "spec_version": "evidence-class-v4",
-  "generated_at": "2026-11-04T06:49:47+00:00",
+  "generated_at": "2026-11-04T08:19:35+00:00",
   "entry_count": 795,
   "class_counts": {
    "0": 15,
@@ -13,7 +13,7 @@
   "unknown_count": 6,
   "c0_review_count": 15,
   "c0_review_file": "data/evidence-class-zero-reviews.json",
-  "method": "GitHub REST API observations (repo meta, releases, README) for GitHub URLs; page observations for other hosts. The automatic rubric caps at Class 1. Class 0 requires a manual review of scope, version and primary evidence in data/evidence-class-zero-reviews.json. Unavailable or unreadable sources are marked unknown, not as notes. Entries observed on 2026-11-02 keep their original checked_at; Class 0 reviews refreshed from 2026-11-03 pinned README commits, and entries added to the catalog later were observed on 2026-11-04.",
+  "method": "GitHub REST API observations (repo meta, releases, README) for GitHub URLs; page observations for other hosts. The automatic rubric caps at Class 1. Class 0 requires a manual review of scope, version and primary evidence in data/evidence-class-zero-reviews.json. Unavailable or unreadable sources are marked unknown, not as notes. Each entry keeps its own checked_at; Class 0 reviews may pin a later README commit than the signal observation.",
   "rubric": {
    "0": "A manually confirmed full software reconstruction (kind: case-study) whose scope, version and primary evidence were reviewed. The automatic rubric never assigns Class 0.",
    "1": "Automatic maximum: download and non-branding demo exist; scope may be partial, or the entry is a tool, integration, guide or binary-analysis entry.",
@@ -1906,32 +1906,32 @@
     "docs_bytes": 36719,
     "docs_full": true,
     "download": "release-assets",
-    "release_count": 21,
-    "release_asset_count": 516,
+    "release_count": 22,
+    "release_asset_count": 548,
     "demo": [
      "image"
     ],
     "media_count": 8,
     "download_links": [
-     "https://github.com/storytold/photocraft/releases/download/v0.18.0/photocraft-0.18.0-macos-universal.dmg",
-     "https://github.com/storytold/photocraft/releases/download/v0.18.0/photocraft-0.18.0-windows-x64.msi",
-     "https://github.com/storytold/photocraft/releases/download/v0.18.0/photocraft-0.18.0-linux-x86_64.flatpak",
-     "https://github.com/storytold/photocraft/releases/download/v0.18.0/photocraft-0.18.0-freebsd-x86_64.tar.gz"
+     "https://github.com/storytold/photocraft/releases/download/v0.19.0/photocraft-0.19.0-macos-universal.dmg",
+     "https://github.com/storytold/photocraft/releases/download/v0.19.0/photocraft-0.19.0-windows-x64.msi",
+     "https://github.com/storytold/photocraft/releases/download/v0.19.0/photocraft-0.19.0-linux-x86_64.flatpak",
+     "https://github.com/storytold/photocraft/releases/download/v0.19.0/photocraft-0.19.0-freebsd-x86_64.tar.gz"
     ],
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room application with release packages and install/usage instructions (\"Get started\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
-   "checked_at": "2026-11-02T15:23:54+00:00",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "checked_at": "2026-11-04T08:19:15+00:00",
    "evidence_status": "observed",
    "scope": "full",
    "runtime_status": "not-run",
    "c0_candidate": true,
    "review": {
-    "version": "README snapshot 2026-11-02",
-    "primary_evidence": "https://github.com/storytold/photocraft/blob/b1b453a3180bb377a200a437ae54fa58a7af27ba/README.md",
-    "reviewed_at": "2026-11-02",
-    "note": "Complete clean-room application with release packages and install/usage instructions (\"Get started\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog."
+    "version": "README commit 37a01ca8746c121170644a07968d11263ef64407",
+    "primary_evidence": "https://github.com/storytold/photocraft/blob/37a01ca8746c121170644a07968d11263ef64407/README.md",
+    "reviewed_at": "2026-11-04",
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
    }
   },
   {
@@ -1943,36 +1943,36 @@
     "code": true,
     "code_basis": "repo",
     "docs": true,
-    "docs_bytes": 29871,
+    "docs_bytes": 30779,
     "docs_full": true,
     "download": "release-assets",
-    "release_count": 13,
-    "release_asset_count": 337,
+    "release_count": 15,
+    "release_asset_count": 397,
     "demo": [
      "image"
     ],
     "media_count": 7,
     "download_links": [
      "https://aur.archlinux.org/cgit/aur.git/snapshot/wordcraft-bin.tar.gz",
-     "https://github.com/storytold/wordcraft/releases/download/v0.14.0/wordcraft-0.14.0-linux-aarch64.tar.gz",
-     "https://github.com/storytold/wordcraft/releases/download/v0.14.0/wordcraft-0.14.0-linux-x86_64.tar.gz",
+     "https://github.com/storytold/wordcraft/releases/download/v0.15.0/wordcraft-0.15.0-linux-aarch64.tar.gz",
+     "https://github.com/storytold/wordcraft/releases/download/v0.15.0/wordcraft-0.15.0-linux-x86_64.tar.gz",
      "https://aur.archlinux.org/cgit/aur.git/snapshot/wordcraft.tar.gz",
      "https://github.com/storytold/wordcraft/archive/refs/tags/v0.14.0/wordcraft-0.14.0.tar.gz"
     ],
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room application with release packages and install/usage instructions (\"Quick start\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
-   "checked_at": "2026-11-02T15:23:52+00:00",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "checked_at": "2026-11-04T08:19:16+00:00",
    "evidence_status": "observed",
    "scope": "full",
    "runtime_status": "not-run",
    "c0_candidate": true,
    "review": {
-    "version": "README snapshot 2026-11-02",
-    "primary_evidence": "https://github.com/storytold/wordcraft/blob/01d3665100ab0ae9000a7b8bf12ab00b830795fb/README.md",
-    "reviewed_at": "2026-11-02",
-    "note": "Complete clean-room application with release packages and install/usage instructions (\"Quick start\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog."
+    "version": "README commit 08afab50b6a1ed19f9af55bb9f74d18f5e17bfa0",
+    "primary_evidence": "https://github.com/storytold/wordcraft/blob/08afab50b6a1ed19f9af55bb9f74d18f5e17bfa0/README.md",
+    "reviewed_at": "2026-11-04",
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
    }
   },
   {
@@ -1987,32 +1987,32 @@
     "docs_bytes": 25914,
     "docs_full": true,
     "download": "release-assets",
-    "release_count": 14,
-    "release_asset_count": 366,
+    "release_count": 15,
+    "release_asset_count": 395,
     "demo": [
      "image"
     ],
     "media_count": 6,
     "download_links": [
-     "https://github.com/storytold/gridcraft/releases/download/v0.14.2/gridcraft-0.14.2-macos-universal.dmg",
-     "https://github.com/storytold/gridcraft/releases/download/v0.14.2/gridcraft-0.14.2-windows-x64.msi",
-     "https://github.com/storytold/gridcraft/releases/download/v0.14.2/gridcraft-0.14.2-linux-x86_64.flatpak",
-     "https://github.com/storytold/gridcraft/releases/download/v0.14.2/gridcraft-0.14.2-freebsd-x86_64.tar.gz"
+     "https://github.com/storytold/gridcraft/releases/download/v0.15.0/gridcraft-0.15.0-macos-universal.dmg",
+     "https://github.com/storytold/gridcraft/releases/download/v0.15.0/gridcraft-0.15.0-windows-x64.msi",
+     "https://github.com/storytold/gridcraft/releases/download/v0.15.0/gridcraft-0.15.0-linux-x86_64.flatpak",
+     "https://github.com/storytold/gridcraft/releases/download/v0.15.0/gridcraft-0.15.0-freebsd-x86_64.tar.gz"
     ],
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room application with release packages and install/usage instructions (\"Quick start\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
-   "checked_at": "2026-11-02T15:23:56+00:00",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "checked_at": "2026-11-04T08:19:15+00:00",
    "evidence_status": "observed",
    "scope": "full",
    "runtime_status": "not-run",
    "c0_candidate": true,
    "review": {
-    "version": "README snapshot 2026-11-02",
-    "primary_evidence": "https://github.com/storytold/gridcraft/blob/f2d9a930e4c64fbac71939ef8780c72ad260fc67/README.md",
-    "reviewed_at": "2026-11-02",
-    "note": "Complete clean-room application with release packages and install/usage instructions (\"Quick start\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog."
+    "version": "README commit 632e4a1bc51ee86b3f0a55e95ee78def391aab30",
+    "primary_evidence": "https://github.com/storytold/gridcraft/blob/632e4a1bc51ee86b3f0a55e95ee78def391aab30/README.md",
+    "reviewed_at": "2026-11-04",
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
    }
   },
   {
@@ -2027,32 +2027,32 @@
     "docs_bytes": 22808,
     "docs_full": true,
     "download": "release-assets",
-    "release_count": 13,
-    "release_asset_count": 336,
+    "release_count": 14,
+    "release_asset_count": 365,
     "demo": [
      "image"
     ],
     "media_count": 6,
     "download_links": [
-     "https://github.com/storytold/deckcraft/releases/download/v0.13.1/deckcraft-0.13.1-macos-universal.dmg",
-     "https://github.com/storytold/deckcraft/releases/download/v0.13.1/deckcraft-0.13.1-windows-x64.msi",
-     "https://github.com/storytold/deckcraft/releases/download/v0.13.1/deckcraft-0.13.1-linux-x86_64.flatpak",
-     "https://github.com/storytold/deckcraft/releases/download/v0.13.1/deckcraft-0.13.1-freebsd-x86_64.tar.gz"
+     "https://github.com/storytold/deckcraft/releases/download/v0.14.1/deckcraft-0.14.1-macos-universal.dmg",
+     "https://github.com/storytold/deckcraft/releases/download/v0.14.1/deckcraft-0.14.1-windows-x64.msi",
+     "https://github.com/storytold/deckcraft/releases/download/v0.14.1/deckcraft-0.14.1-linux-x86_64.flatpak",
+     "https://github.com/storytold/deckcraft/releases/download/v0.14.1/deckcraft-0.14.1-freebsd-x86_64.tar.gz"
     ],
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room application with release packages and install/usage instructions (\"Getting started\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
-   "checked_at": "2026-11-02T15:23:57+00:00",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "checked_at": "2026-11-04T08:19:16+00:00",
    "evidence_status": "observed",
    "scope": "full",
    "runtime_status": "not-run",
    "c0_candidate": true,
    "review": {
-    "version": "README snapshot 2026-11-02",
-    "primary_evidence": "https://github.com/storytold/deckcraft/blob/730165a8ecb6192af83e6fda259fe7917f24562d/README.md",
-    "reviewed_at": "2026-11-02",
-    "note": "Complete clean-room application with release packages and install/usage instructions (\"Getting started\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog."
+    "version": "README commit 23ac4f7efdbd1e538bd9a7869584d4adeb9039b0",
+    "primary_evidence": "https://github.com/storytold/deckcraft/blob/23ac4f7efdbd1e538bd9a7869584d4adeb9039b0/README.md",
+    "reviewed_at": "2026-11-04",
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
    }
   },
   {
@@ -3655,35 +3655,35 @@
     "code": true,
     "code_basis": "repo",
     "docs": true,
-    "docs_bytes": 32538,
+    "docs_bytes": 32836,
     "docs_full": true,
     "download": "release-assets",
-    "release_count": 14,
-    "release_asset_count": 365,
+    "release_count": 15,
+    "release_asset_count": 394,
     "demo": [
      "image"
     ],
     "media_count": 3,
     "download_links": [
-     "https://github.com/storytold/cadcraft/releases/download/v0.15.1/cadcraft-0.15.1-macos-universal.dmg",
-     "https://github.com/storytold/cadcraft/releases/download/v0.15.1/cadcraft-0.15.1-windows-x64.msi",
-     "https://github.com/storytold/cadcraft/releases/download/v0.15.1/cadcraft-0.15.1-linux-x86_64.flatpak",
-     "https://github.com/storytold/cadcraft/releases/download/v0.15.1/cadcraft-0.15.1-freebsd-x86_64.tar.gz"
+     "https://github.com/storytold/cadcraft/releases/download/v0.16.0/cadcraft-0.16.0-macos-universal.dmg",
+     "https://github.com/storytold/cadcraft/releases/download/v0.16.0/cadcraft-0.16.0-windows-x64.msi",
+     "https://github.com/storytold/cadcraft/releases/download/v0.16.0/cadcraft-0.16.0-linux-x86_64.flatpak",
+     "https://github.com/storytold/cadcraft/releases/download/v0.16.0/cadcraft-0.16.0-freebsd-x86_64.tar.gz"
     ],
     "archived": false,
     "unavailable": false
    },
-   "reason": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
-   "checked_at": "2026-11-03T00:00:00+00:00",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "checked_at": "2026-11-04T08:19:16+00:00",
    "evidence_status": "observed",
    "scope": "full",
    "runtime_status": "not-run",
    "c0_candidate": false,
    "review": {
-    "version": "README commit b639b18f69bfefd58f866fd0dc04940d0c6aa6e6",
-    "primary_evidence": "https://github.com/storytold/cadcraft/blob/b639b18f69bfefd58f866fd0dc04940d0c6aa6e6/README.md",
-    "reviewed_at": "2026-11-03",
-    "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog."
+    "version": "README commit 2099288f5449b1602d2e2eedca92fe99fb19b973",
+    "primary_evidence": "https://github.com/storytold/cadcraft/blob/2099288f5449b1602d2e2eedca92fe99fb19b973/README.md",
+    "reviewed_at": "2026-11-04",
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
    }
   },
   {
@@ -3695,35 +3695,35 @@
     "code": true,
     "code_basis": "repo",
     "docs": true,
-    "docs_bytes": 29093,
+    "docs_bytes": 29189,
     "docs_full": true,
     "download": "release-assets",
-    "release_count": 17,
-    "release_asset_count": 413,
+    "release_count": 18,
+    "release_asset_count": 442,
     "demo": [
      "image"
     ],
     "media_count": 5,
     "download_links": [
-     "https://github.com/storytold/designcraft/releases/download/v0.15.2/designcraft-0.15.2-macos-universal.dmg",
-     "https://github.com/storytold/designcraft/releases/download/v0.15.2/designcraft-0.15.2-windows-x64.msi",
-     "https://github.com/storytold/designcraft/releases/download/v0.15.2/designcraft-0.15.2-linux-x86_64.flatpak",
-     "https://github.com/storytold/designcraft/releases/download/v0.15.2/designcraft-0.15.2-freebsd-x86_64.tar.gz"
+     "https://github.com/storytold/designcraft/releases/download/v0.16.0/designcraft-0.16.0-macos-universal.dmg",
+     "https://github.com/storytold/designcraft/releases/download/v0.16.0/designcraft-0.16.0-windows-x64.msi",
+     "https://github.com/storytold/designcraft/releases/download/v0.16.0/designcraft-0.16.0-linux-x86_64.flatpak",
+     "https://github.com/storytold/designcraft/releases/download/v0.16.0/designcraft-0.16.0-freebsd-x86_64.tar.gz"
     ],
     "archived": false,
     "unavailable": false
    },
-   "reason": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
-   "checked_at": "2026-11-03T00:00:00+00:00",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "checked_at": "2026-11-04T08:19:16+00:00",
    "evidence_status": "observed",
    "scope": "full",
    "runtime_status": "not-run",
    "c0_candidate": false,
    "review": {
-    "version": "README commit f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e",
-    "primary_evidence": "https://github.com/storytold/designcraft/blob/f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e/README.md",
-    "reviewed_at": "2026-11-03",
-    "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog."
+    "version": "README commit a4017a3cda704850fcb6ed9f8513fdb2e7fb04c1",
+    "primary_evidence": "https://github.com/storytold/designcraft/blob/a4017a3cda704850fcb6ed9f8513fdb2e7fb04c1/README.md",
+    "reviewed_at": "2026-11-04",
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
    }
   },
   {
@@ -3738,32 +3738,32 @@
     "docs_bytes": 27321,
     "docs_full": true,
     "download": "release-assets",
-    "release_count": 20,
-    "release_asset_count": 472,
+    "release_count": 21,
+    "release_asset_count": 501,
     "demo": [
      "image"
     ],
     "media_count": 5,
     "download_links": [
-     "https://github.com/storytold/effectcraft/releases/download/v0.19.0/effectcraft-0.19.0-macos-universal.dmg",
-     "https://github.com/storytold/effectcraft/releases/download/v0.19.0/effectcraft-0.19.0-windows-x64.msi",
-     "https://github.com/storytold/effectcraft/releases/download/v0.19.0/effectcraft-0.19.0-linux-x86_64.flatpak",
-     "https://github.com/storytold/effectcraft/releases/download/v0.19.0/effectcraft-0.19.0-freebsd-x86_64.tar.gz"
+     "https://github.com/storytold/effectcraft/releases/download/v0.20.0/effectcraft-0.20.0-macos-universal.dmg",
+     "https://github.com/storytold/effectcraft/releases/download/v0.20.0/effectcraft-0.20.0-windows-x64.msi",
+     "https://github.com/storytold/effectcraft/releases/download/v0.20.0/effectcraft-0.20.0-linux-x86_64.flatpak",
+     "https://github.com/storytold/effectcraft/releases/download/v0.20.0/effectcraft-0.20.0-freebsd-x86_64.tar.gz"
     ],
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room application with release packages and complete install/usage instructions (\"Get started\"); confirmed in use by the maintainer. Runtime not verified by this catalog.",
-   "checked_at": "2026-11-03T00:00:00+00:00",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "checked_at": "2026-11-04T08:19:16+00:00",
    "evidence_status": "observed",
    "scope": "full",
    "runtime_status": "not-run",
    "c0_candidate": false,
    "review": {
-    "version": "README commit b7dee07cf44fcb42e0afa662043c0dc3bf3f8553",
-    "primary_evidence": "https://github.com/storytold/effectcraft/blob/b7dee07cf44fcb42e0afa662043c0dc3bf3f8553/README.md",
-    "reviewed_at": "2026-11-03",
-    "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog."
+    "version": "README commit 58ca9c1c1b163fdada41291847f3d0f7559339b2",
+    "primary_evidence": "https://github.com/storytold/effectcraft/blob/58ca9c1c1b163fdada41291847f3d0f7559339b2/README.md",
+    "reviewed_at": "2026-11-04",
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
    }
   },
   {
@@ -3778,32 +3778,32 @@
     "docs_bytes": 34347,
     "docs_full": true,
     "download": "release-assets",
-    "release_count": 14,
-    "release_asset_count": 392,
+    "release_count": 15,
+    "release_asset_count": 423,
     "demo": [
      "image"
     ],
     "media_count": 14,
     "download_links": [
-     "https://github.com/storytold/figcraft/releases/download/v0.13.1/figcraft-0.13.1-macos-universal.dmg",
-     "https://github.com/storytold/figcraft/releases/download/v0.13.1/figcraft-0.13.1-windows-x64.msi",
-     "https://github.com/storytold/figcraft/releases/download/v0.13.1/figcraft-0.13.1-linux-x86_64.flatpak",
-     "https://github.com/storytold/figcraft/releases/download/v0.13.1/figcraft-0.13.1-freebsd-x86_64.tar.gz"
+     "https://github.com/storytold/figcraft/releases/download/v0.14.0/figcraft-0.14.0-macos-universal.dmg",
+     "https://github.com/storytold/figcraft/releases/download/v0.14.0/figcraft-0.14.0-windows-x64.msi",
+     "https://github.com/storytold/figcraft/releases/download/v0.14.0/figcraft-0.14.0-linux-x86_64.flatpak",
+     "https://github.com/storytold/figcraft/releases/download/v0.14.0/figcraft-0.14.0-freebsd-x86_64.tar.gz"
     ],
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room application with release packages and complete install/usage instructions (\"Get started\"); confirmed in use by the maintainer. Runtime not verified by this catalog.",
-   "checked_at": "2026-11-03T00:00:00+00:00",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "checked_at": "2026-11-04T08:19:19+00:00",
    "evidence_status": "observed",
    "scope": "full",
    "runtime_status": "not-run",
    "c0_candidate": false,
    "review": {
-    "version": "README commit 35684eaa028e636d264073a666ef11881620fa0e",
-    "primary_evidence": "https://github.com/storytold/figcraft/blob/35684eaa028e636d264073a666ef11881620fa0e/README.md",
-    "reviewed_at": "2026-11-03",
-    "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog."
+    "version": "README commit 6f780211dda0706aa474bcc9be4cec99149acef3",
+    "primary_evidence": "https://github.com/storytold/figcraft/blob/6f780211dda0706aa474bcc9be4cec99149acef3/README.md",
+    "reviewed_at": "2026-11-04",
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
    }
   },
   {
@@ -3818,32 +3818,32 @@
     "docs_bytes": 39738,
     "docs_full": true,
     "download": "release-assets",
-    "release_count": 17,
-    "release_asset_count": 410,
+    "release_count": 18,
+    "release_asset_count": 439,
     "demo": [
      "image"
     ],
     "media_count": 9,
     "download_links": [
-     "https://github.com/storytold/filmcraft/releases/download/v0.15.0/filmcraft-0.15.0-macos-universal.dmg",
-     "https://github.com/storytold/filmcraft/releases/download/v0.15.0/filmcraft-0.15.0-windows-x64.msi",
-     "https://github.com/storytold/filmcraft/releases/download/v0.15.0/filmcraft-0.15.0-linux-x86_64.flatpak",
-     "https://github.com/storytold/filmcraft/releases/download/v0.15.0/filmcraft-0.15.0-freebsd-x86_64.tar.gz"
+     "https://github.com/storytold/filmcraft/releases/download/v0.16.0/filmcraft-0.16.0-macos-universal.dmg",
+     "https://github.com/storytold/filmcraft/releases/download/v0.16.0/filmcraft-0.16.0-windows-x64.msi",
+     "https://github.com/storytold/filmcraft/releases/download/v0.16.0/filmcraft-0.16.0-linux-x86_64.flatpak",
+     "https://github.com/storytold/filmcraft/releases/download/v0.16.0/filmcraft-0.16.0-freebsd-x86_64.tar.gz"
     ],
     "archived": false,
     "unavailable": false
    },
-   "reason": "Complete clean-room application with release packages and complete install/usage instructions (\"Get started\"); confirmed in use by the maintainer. Runtime not verified by this catalog.",
-   "checked_at": "2026-11-03T00:00:00+00:00",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "checked_at": "2026-11-04T08:19:25+00:00",
    "evidence_status": "observed",
    "scope": "full",
    "runtime_status": "not-run",
    "c0_candidate": false,
    "review": {
-    "version": "README commit 57dc82ea2046c2ec479ab4d4d8167d90e5500b49",
-    "primary_evidence": "https://github.com/storytold/filmcraft/blob/57dc82ea2046c2ec479ab4d4d8167d90e5500b49/README.md",
-    "reviewed_at": "2026-11-03",
-    "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog."
+    "version": "README commit c9be14245a6c9da585ff906a6e0ca9c8200652ea",
+    "primary_evidence": "https://github.com/storytold/filmcraft/blob/c9be14245a6c9da585ff906a6e0ca9c8200652ea/README.md",
+    "reviewed_at": "2026-11-04",
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
    }
   },
   {
@@ -3855,35 +3855,35 @@
     "code": true,
     "code_basis": "repo",
     "docs": true,
-    "docs_bytes": 53696,
+    "docs_bytes": 53780,
     "docs_full": true,
     "download": "release-assets",
-    "release_count": 18,
-    "release_asset_count": 434,
+    "release_count": 19,
+    "release_asset_count": 463,
     "demo": [
      "image"
     ],
     "media_count": 14,
     "download_links": [
-     "https://github.com/storytold/lightcraft/releases/download/v0.16.0/lightcraft-0.16.0-macos-universal.dmg",
-     "https://github.com/storytold/lightcraft/releases/download/v0.16.0/lightcraft-0.16.0-windows-x64.msi",
-     "https://github.com/storytold/lightcraft/releases/download/v0.16.0/lightcraft-0.16.0-linux-x86_64.flatpak",
-     "https://github.com/storytold/lightcraft/releases/download/v0.16.0/lightcraft-0.16.0-freebsd-x86_64.tar.gz"
+     "https://github.com/storytold/lightcraft/releases/download/v0.17.0/lightcraft-0.17.0-macos-universal.dmg",
+     "https://github.com/storytold/lightcraft/releases/download/v0.17.0/lightcraft-0.17.0-windows-x64.msi",
+     "https://github.com/storytold/lightcraft/releases/download/v0.17.0/lightcraft-0.17.0-linux-x86_64.flatpak",
+     "https://github.com/storytold/lightcraft/releases/download/v0.17.0/lightcraft-0.17.0-freebsd-x86_64.tar.gz"
     ],
     "archived": false,
     "unavailable": false
    },
-   "reason": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
-   "checked_at": "2026-11-03T00:00:00+00:00",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "checked_at": "2026-11-04T08:19:27+00:00",
    "evidence_status": "observed",
    "scope": "full",
    "runtime_status": "not-run",
    "c0_candidate": false,
    "review": {
-    "version": "README commit 389ab177db87694ce71d54a1adb9546772e483b6",
-    "primary_evidence": "https://github.com/storytold/lightcraft/blob/389ab177db87694ce71d54a1adb9546772e483b6/README.md",
-    "reviewed_at": "2026-11-03",
-    "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog."
+    "version": "README commit 4d42507bbcc180df831435c8ef2c29740b5216aa",
+    "primary_evidence": "https://github.com/storytold/lightcraft/blob/4d42507bbcc180df831435c8ef2c29740b5216aa/README.md",
+    "reviewed_at": "2026-11-04",
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
    }
   },
   {
@@ -3898,32 +3898,32 @@
     "docs_bytes": 41535,
     "docs_full": true,
     "download": "release-assets",
-    "release_count": 18,
-    "release_asset_count": 466,
+    "release_count": 20,
+    "release_asset_count": 530,
     "demo": [
      "image"
     ],
     "media_count": 13,
     "download_links": [
-     "https://github.com/storytold/pdfcraft/releases/download/v0.16.1/pdfcraft-0.16.1-macos-universal.dmg",
-     "https://github.com/storytold/pdfcraft/releases/download/v0.16.1/pdfcraft-0.16.1-windows-x64.msi",
-     "https://github.com/storytold/pdfcraft/releases/download/v0.16.1/pdfcraft-0.16.1-linux-x86_64.flatpak",
-     "https://github.com/storytold/pdfcraft/releases/download/v0.16.1/pdfcraft-0.16.1-freebsd-x86_64.tar.gz"
+     "https://github.com/storytold/pdfcraft/releases/download/v0.17.0/pdfcraft-0.17.0-macos-universal.dmg",
+     "https://github.com/storytold/pdfcraft/releases/download/v0.17.0/pdfcraft-0.17.0-windows-x64.msi",
+     "https://github.com/storytold/pdfcraft/releases/download/v0.17.0/pdfcraft-0.17.0-linux-x86_64.flatpak",
+     "https://github.com/storytold/pdfcraft/releases/download/v0.17.0/pdfcraft-0.17.0-freebsd-x86_64.tar.gz"
     ],
     "archived": false,
     "unavailable": false
    },
-   "reason": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
-   "checked_at": "2026-11-03T00:00:00+00:00",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "checked_at": "2026-11-04T08:19:29+00:00",
    "evidence_status": "observed",
    "scope": "full",
    "runtime_status": "not-run",
    "c0_candidate": false,
    "review": {
-    "version": "README commit 3709926f39039b57e71644227aa8b41b46bde940",
-    "primary_evidence": "https://github.com/storytold/pdfcraft/blob/3709926f39039b57e71644227aa8b41b46bde940/README.md",
-    "reviewed_at": "2026-11-03",
-    "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog."
+    "version": "README commit 9bbcde4699c9cb472d9b579fb04e19c6b493d435",
+    "primary_evidence": "https://github.com/storytold/pdfcraft/blob/9bbcde4699c9cb472d9b579fb04e19c6b493d435/README.md",
+    "reviewed_at": "2026-11-04",
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
    }
   },
   {
@@ -3935,35 +3935,35 @@
     "code": true,
     "code_basis": "repo",
     "docs": true,
-    "docs_bytes": 27511,
+    "docs_bytes": 28278,
     "docs_full": true,
     "download": "release-assets",
-    "release_count": 13,
-    "release_asset_count": 347,
+    "release_count": 14,
+    "release_asset_count": 376,
     "demo": [
      "image"
     ],
     "media_count": 7,
     "download_links": [
-     "https://github.com/storytold/soundcraft/releases/download/v0.15.0/soundcraft-0.15.0-macos-universal.dmg",
-     "https://github.com/storytold/soundcraft/releases/download/v0.15.0/soundcraft-0.15.0-windows-x64.msi",
-     "https://github.com/storytold/soundcraft/releases/download/v0.15.0/soundcraft-0.15.0-linux-x86_64.flatpak",
-     "https://github.com/storytold/soundcraft/releases/download/v0.15.0/soundcraft-0.15.0-freebsd-x86_64.tar.gz"
+     "https://github.com/storytold/soundcraft/releases/download/v0.16.0/soundcraft-0.16.0-macos-universal.dmg",
+     "https://github.com/storytold/soundcraft/releases/download/v0.16.0/soundcraft-0.16.0-windows-x64.msi",
+     "https://github.com/storytold/soundcraft/releases/download/v0.16.0/soundcraft-0.16.0-linux-x86_64.flatpak",
+     "https://github.com/storytold/soundcraft/releases/download/v0.16.0/soundcraft-0.16.0-freebsd-x86_64.tar.gz"
     ],
     "archived": false,
     "unavailable": false
    },
-   "reason": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
-   "checked_at": "2026-11-03T00:00:00+00:00",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "checked_at": "2026-11-04T08:19:26+00:00",
    "evidence_status": "observed",
    "scope": "full",
    "runtime_status": "not-run",
-   "c0_candidate": true,
+   "c0_candidate": false,
    "review": {
-    "version": "README commit b11ffe73ae2e9804377c6cb37be45edf3058ac0d",
-    "primary_evidence": "https://github.com/storytold/soundcraft/blob/b11ffe73ae2e9804377c6cb37be45edf3058ac0d/README.md",
-    "reviewed_at": "2026-11-03",
-    "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog."
+    "version": "README commit 5fabf28c315ee72ad5c0234beeb35ec832c11476",
+    "primary_evidence": "https://github.com/storytold/soundcraft/blob/5fabf28c315ee72ad5c0234beeb35ec832c11476/README.md",
+    "reviewed_at": "2026-11-04",
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
    }
   },
   {
@@ -3978,32 +3978,32 @@
     "docs_bytes": 28043,
     "docs_full": true,
     "download": "release-assets",
-    "release_count": 22,
-    "release_asset_count": 509,
+    "release_count": 23,
+    "release_asset_count": 538,
     "demo": [
      "image"
     ],
     "media_count": 15,
     "download_links": [
-     "https://github.com/storytold/vectorcraft/releases/download/v0.19.0/vectorcraft-0.19.0-macos-universal.dmg",
-     "https://github.com/storytold/vectorcraft/releases/download/v0.19.0/vectorcraft-0.19.0-windows-x64.msi",
-     "https://github.com/storytold/vectorcraft/releases/download/v0.19.0/vectorcraft-0.19.0-linux-x86_64.flatpak",
-     "https://github.com/storytold/vectorcraft/releases/download/v0.19.0/vectorcraft-0.19.0-freebsd-x86_64.tar.gz"
+     "https://github.com/storytold/vectorcraft/releases/download/v0.20.0/vectorcraft-0.20.0-macos-universal.dmg",
+     "https://github.com/storytold/vectorcraft/releases/download/v0.20.0/vectorcraft-0.20.0-windows-x64.msi",
+     "https://github.com/storytold/vectorcraft/releases/download/v0.20.0/vectorcraft-0.20.0-linux-x86_64.flatpak",
+     "https://github.com/storytold/vectorcraft/releases/download/v0.20.0/vectorcraft-0.20.0-freebsd-x86_64.tar.gz"
     ],
     "archived": false,
     "unavailable": false
    },
-   "reason": "Full software reconstruction selected by the rea-tracker audit; release assets and demo present. Runtime not verified here.",
-   "checked_at": "2026-11-03T00:00:00+00:00",
+   "reason": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "checked_at": "2026-11-04T08:19:28+00:00",
    "evidence_status": "observed",
    "scope": "full",
    "runtime_status": "not-run",
    "c0_candidate": false,
    "review": {
-    "version": "README commit 999f4e6478e19b7139db70a3f2a0a5b0669ffcaf",
-    "primary_evidence": "https://github.com/storytold/vectorcraft/blob/999f4e6478e19b7139db70a3f2a0a5b0669ffcaf/README.md",
-    "reviewed_at": "2026-11-03",
-    "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog."
+    "version": "README commit 6bde3c59a544873a32537b557e97a582dbb6e912",
+    "primary_evidence": "https://github.com/storytold/vectorcraft/blob/6bde3c59a544873a32537b557e97a582dbb6e912/README.md",
+    "reviewed_at": "2026-11-04",
+    "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog."
    }
   },
   {
