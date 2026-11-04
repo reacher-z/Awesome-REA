@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "prose2000-reborn-case": {
+    "name": "Prose 2000 Reborn：语音板固件的 C 反编译",
+    "requirements": [
+      "README 的默认构建产出语音库、prose_say、示例和 v3.4.1 测试。-DPROSE_VERSION=1 改为构建 v1.1 测试。它写明 v1.1 的 DSP 程序从未被转储，因此 v1.1 的帧通过 v3.12 DSP 模型播放，该音频是近似。",
+      "树中有两个固件版本：v3.4.1（1988）和 v1.1（1983）。README 写明 src/data 存放从 ROM 提取的数据，src/tests 存放播放器和回放测试。",
+      "README 写明每个阶段都对照原板的模拟器检查过：捕获的调用逐字节一致，端到端则逐帧或逐样本一致。它写明回放测试见 REFERENCE.md 第 14 节。build/pipeline_play 朗读一行。本目录未运行或复现。",
+      "审阅的根目录没有 LICENSE 文件。README 写明原始固件属于 Telesensory Systems 和 Speech Plus。本记录不为该仓库陈述许可证。"
+    ]
   }
 }
