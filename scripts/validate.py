@@ -21,6 +21,7 @@ from requirement_facets import facet_errors
 from curated_translations import CURATED_TRANSLATIONS, read_curated_translations, validate_curated_translations
 from source_scope import read_scope, validate_scope
 from validate_papers import validate_papers
+from validate_quality_scoring import validate as validate_quality_scoring
 from review_dates import inclusion_date_error, review_date_is_future
 from source_descriptions import validate_description_capture
 from scan_sources import CURATED_SEED_FILES, PAPER_SEED_FILE, RUN_PROVENANCE_POLICY
@@ -1297,6 +1298,7 @@ def main():
                 except (OSError, ValueError):
                     errors.append('Public source supplements failed evidence, identity, locale or scope validation.')
     validate_citation((ROOT / 'CITATION.cff').read_text(encoding='utf-8'), errors)
+    errors.extend(validate_quality_scoring())
     count = validate_markdown(ROOT, errors)
     budget_warning = requirement_budget_warning(records)
     if budget_warning:

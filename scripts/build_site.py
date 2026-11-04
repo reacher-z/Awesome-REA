@@ -21,6 +21,7 @@ from build_repository_index import CATEGORIES as REPOSITORY_CATEGORIES
 from build_survey import build_survey, discussion_sections
 from build_entry_pages import build_entry_pages
 from build_feed import build_feeds
+from build_quality_pages import build_quality_pages
 from build_manifest import write_build_manifest
 from language_fragment import add_language_fragment_script
 from data_downloads import build_data_downloads
@@ -373,6 +374,20 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         icon_stylesheet_href=icon_stylesheet, survey_discussions=discussion_sections(survey_document),
         repository_export=repository_export,
     )
+    quality_urls: list[str] = []
+    quality_path = ROOT / "data" / "quality-evaluations.json"
+    if quality_path.is_file():
+        quality_evaluations = json.loads(quality_path.read_text(encoding="utf-8"))
+        quality_urls = build_quality_pages(
+            output, quality_evaluations, resources, translations,
+            styles_href=asset_hrefs["styles.css"], favicon_href=asset_hrefs["favicon.svg"],
+            social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
+            icon_stylesheet_href=icon_stylesheet, repository_export=repository_export,
+        )
+    else:
+        # The source copy is not a page asset when no score data is present.
+        (output / "quality.css").unlink(missing_ok=True)
+        (output / "quality.js").unlink(missing_ok=True)
     # Feeds list inclusion dates; they link from pages written above and are not sitemap pages.
     build_feeds(output, resources, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL)
     # Static pages with a language link keep the reader's card or section on the translated page.
@@ -384,7 +399,7 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     (output / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
     # Review timestamps describe sources, not every page's modification date.
     # Omit lastmod rather than advertising a fabricated build-time freshness signal.
-    sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", *browse_urls, *(SITE_URL + path for path in discovery_paths), *paper_urls, *survey_urls, *entry_urls]
+    sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", *browse_urls, *(SITE_URL + path for path in discovery_paths), *paper_urls, *survey_urls, *entry_urls, *quality_urls]
     sitemap_entries = [f'<url><loc>{xml_escape(url)}</loc></url>' for url in sitemap_urls]
     (output / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(sitemap_entries) + '\n</urlset>\n', encoding="utf-8")
     build_data_downloads(output, catalog, papers,

@@ -30,7 +30,17 @@ Curated records live in `data/rea-resources.json` and `data/tool-resources.json`
 
 Record a primary source and review date. `source-reviewed` means documentation was checked; it does not claim that the project was installed, audited, or reproduced. The larger `data/source-index.json` is an automated repository index and retains its separate provenance. To curate a repository found there, fill in the [review worksheet](docs/promotion-worksheet.md); the scan record itself is never upgraded.
 
-Runtime and reproduction results are currently out of scope for catalog records: every curated record uses `verification: source-reviewed`, every paper keeps `runtime_tested: false`, and there is no separate format for submitting test runs. You may describe what you ran in an issue to help reviewers check a claim, but it is not published as verification. After editing records, regenerate and validate:
+Runtime and reproduction results are currently out of scope for catalog records: every curated record uses `verification: source-reviewed`, every paper keeps `runtime_tested: false`, and there is no separate format for submitting test runs. You may describe what you ran in an issue to help reviewers check a claim, but it is not published as verification.
+
+The evidence-score data is generated separately and is not a runtime claim. After changing a software record, refresh the snapshot and scores if you intend to update the `/quality/` directory:
+
+```sh
+python3 scripts/collect_quality_evidence.py --all
+python3 scripts/quality_scoring.py --all
+python3 scripts/validate_quality_scoring.py
+```
+
+The collector reads only public sources and never downloads or runs an executable. [docs/quality-scoring.md](docs/quality-scoring.md) explains what the score does and does not establish. After editing records, regenerate and validate:
 
 ```sh
 python3 scripts/build_readme.py

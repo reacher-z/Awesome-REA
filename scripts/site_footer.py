@@ -12,6 +12,7 @@ SECTION_LINKS = (
     ('/cases/', 'Case studies', '案例合集'),
     ('/papers/', 'Research papers', '研究论文'),
     ('/browse/', 'Repository directory', '仓库目录'),
+    ('/quality/', 'Evidence scores', '证据评分'),
     ('/survey/', 'Editorial survey', '专题综述'),
     ('/about/', 'About and sources', '关于与来源'),
     ('/contribute/', 'Contribute', '投稿与贡献'),
