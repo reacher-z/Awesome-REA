@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (111)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -67,6 +67,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**SoK: AI-Augmented Binary Reversing**](https://arxiv.org/abs/2606.17398) - A systematization-of-knowledge survey of machine-learning, LLM and agentic approaches to binary reversing. <sub>arXiv 2026 · Preprint · Yujeong Kwon et al. · [PDF](https://arxiv.org/pdf/2606.17398v2) · [Full entry](https://awesomerea.org/papers/paper-sok-ai-binary-reversing/)</sub>
 - [**Binary Decompilation LLM with Feedback-Driven Multi-Turn Refinement**](https://arxiv.org/abs/2606.16162) - AutoDecompiler trains function-level decompilation models to revise assembly- or pseudocode-derived outputs using compilation, execution and I/O feedback. <sub>arXiv 2026 · Preprint · Peipei Liu et al. · [PDF](https://arxiv.org/pdf/2606.16162v2) · [Code](https://zenodo.org/records/23120286) · [Full entry](https://awesomerea.org/papers/paper-autodecompiler/)</sub>
 - [**LLM Agent-Assisted Reverse Engineering with Quantitative Readability Metrics**](https://arxiv.org/abs/2606.06838) - Uses a composite Quantitative Readability Score (QRS) to guide agents refining decompiled C. <sub>arXiv 2026 · Preprint · Neil Archibald et al. · [PDF](https://arxiv.org/pdf/2606.06838v1) · [Full entry](https://awesomerea.org/papers/paper-qrs-readability/)</sub>
+- [**Data Flows in You: Benchmarking and Improving Static Data-flow Analysis on Binary Executables**](https://arxiv.org/abs/2506.00313v1) - This paper introduces a labeled benchmark for static data-flow analysis on binary executables and uses it to compare existing analysis engines. <sub>Proceedings of the ACM Asia Conference on Computer and Communications Security 2026 · Conference paper · Nicolaas Weideman et al. · [PDF](https://arxiv.org/pdf/2506.00313v1) · [Full entry](https://awesomerea.org/papers/paper-binary-dataflow-bench/)</sub>
 - [**SCDBench: A Benchmark for LLM-Based Smart Contract Decompilers**](https://arxiv.org/abs/2605.29059) - Benchmarks LLM-based EVM decompilation on 600 source-verified Ethereum Solidity contracts, sampled in easy, medium and hard thirds from 772,736 unique bytecode–source pairs after near-duplicate filtering. <sub>arXiv 2026 · Preprint · Kaihua Qin et al. · [PDF](https://arxiv.org/pdf/2605.29059v1) · [Full entry](https://awesomerea.org/papers/paper-scdbench/)</sub>
 - [**Semantic Validation of Packer Identification Tools: Characterization, Repair, and Downstream Impact**](https://arxiv.org/abs/2605.25923) - Uses unpacking outcomes as reference evidence to assess packer labels, normalizes heterogeneous tool results, and evaluates complementary signature/heuristic pools with static predicates derived from unpacker implementations. <sub>arXiv 2026 · Preprint · Fangtian Zhong et al. · [PDF](https://arxiv.org/pdf/2605.25923v3) · [Full entry](https://awesomerea.org/papers/paper-packer-identification-semantic-validation/)</sub>
 - [**Decaf: Improving Neural Decompilation with Automatic Feedback and Search**](https://arxiv.org/abs/2605.11501) - Decaf samples multiple candidate decompilations, recompiles them and ranks them using compiler-derived byte distance or a learned reranker. <sub>arXiv 2026 · Preprint · Alexander Shypula et al. · [PDF](https://arxiv.org/pdf/2605.11501v1) · [Code](https://github.com/AlexShypula/decaf) · [Full entry](https://awesomerea.org/papers/paper-decaf/)</sub>
