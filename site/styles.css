@@ -594,9 +594,11 @@ html[data-layout="compact"] .collection-home .detail-label-compact{display:inlin
 }
 html[lang="zh-CN"][data-layout="compact"] .collection-home .card-description,html[lang="zh-CN"][data-layout="compact"] .collection-home .source-card-description{max-width:38em;line-height:1.85}
 /* Wide compact rows: targets, links and the details toggle sit in a right column beside the title and description.
-   DOM and focus order are unchanged, and an opened details panel still spans the row. */
+   DOM and focus order are unchanged, and an opened details panel still spans the row. A long description's extra
+   height goes to the third, flexible row, so the closed toggle stays directly under the links (as on /papers/);
+   a "Matched in" line takes a fourth, auto row. */
 @media(min-width:1101px){
-  html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{grid-template-columns:minmax(0,1fr) minmax(18rem,34%);grid-template-areas:"heading meta" "description meta" "description details";gap:0 40px}
+  html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{grid-template-columns:minmax(0,1fr) minmax(18rem,34%);grid-template-rows:auto auto 1fr;grid-template-areas:"heading meta" "description meta" "description details";gap:0 40px}
   html[data-layout="compact"] .collection-home .card-description,html[data-layout="compact"] .collection-home .source-card-description{margin-top:6px}
   html[data-layout="compact"] .collection-home .card-meta,html[data-layout="compact"] .collection-home .source-card-footer{flex-wrap:wrap;align-content:flex-start;gap:0 16px;padding-block:2px 0}
   /* Labels on the first line, links on the next: a zero-height break item, and links keep their DOM order. */

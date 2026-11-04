@@ -97,6 +97,13 @@ async function open(browser, origin, route, viewport, {javascript = true} = {}) 
   assert.equal(response.status(), 200, `${route} returned HTTP ${response.status()}`);
   return {page, problems, requested};
 }
+// Wide compact rows keep a closed details toggle directly under the row's links, however long the description is.
+async function toggleDrift(page, card, links, toggle) {
+  return page.$$eval(card, (cards, links, toggle) => cards.map(row => {
+    const above = row.querySelector(links), below = row.querySelector(toggle);
+    return above && below ? below.getBoundingClientRect().top - above.getBoundingClientRect().bottom : null;
+  }).filter(gap => gap !== null), links, toggle);
+}
 async function noOverflow(page, label) {
   const {scroll, inner} = await page.evaluate(() => ({scroll: document.scrollingElement.scrollWidth, inner: innerWidth}));
   assert(scroll <= inner, `${label}: the page scrolls horizontally (${scroll}px wide in a ${inner}px viewport)`);
@@ -239,6 +246,11 @@ async function homepage(page, language, viewport, data, requested) {
   assert.equal(await count(page, '#resource-grid .resource-card'), Math.min(30, total), `${label}: curated Show More`);
   assert.equal(await count(page, '#resource-grid .resource-card > .card-meta .resource-evidence-link'), 0);
   assert.equal(await count(page, '#resource-grid .resource-card details .resource-evidence-link'), Math.min(30, total));
+  // All 30 rows, so entries with descriptions longer than the right column are checked too.
+  if (viewport.width >= 1101) {
+    const gaps = await toggleDrift(page, '#resource-grid .resource-card', '.card-meta', 'details.requirements:not([open]) > summary');
+    assert(gaps.length && gaps.every(gap => gap >= -1 && gap <= 8), `${label}: details toggles sit under the entry links (${gaps.join(', ')} px)`);
+  }
   // From 1101 px the compact layout stacks full-entry links above the details toggle; they keep 24 px targets (WCAG 2.5.8).
   if (viewport.width >= 1101) {
     const entryHeights = await page.$$eval('#resource-grid .resource-entry-link', links => links.map(link => link.getBoundingClientRect().height));
@@ -258,6 +270,10 @@ async function homepage(page, language, viewport, data, requested) {
   assert.equal(requests(requested, 'source-browser.json'), 1, `${label}: the Repositories view requests its data once`);
   assert.equal(await hidden(page, '#source-error'), true, `${label}: the repository index loads`);
   assert.equal(await count(page, '#source-results .source-card'), Math.min(24, repositories), `${label}: initial repository cards`);
+  if (viewport.width >= 1101) {
+    const gaps = await toggleDrift(page, '#source-results .source-card', '.source-card-footer', 'details.source-record-details:not([open]) > summary');
+    assert(gaps.length && gaps.every(gap => gap >= -1 && gap <= 8), `${label}: repository details toggles sit under the README links (${gaps.join(', ')} px)`);
+  }
   assert(numbers(await text(page, '#source-status')).includes(repositories), `${label}: status names all ${repositories} repositories`);
   assert.equal(await text(page, '#source-more-count'), '+' + Math.min(24, Math.max(0, repositories - 24)));
   await press(page, '#source-more');
