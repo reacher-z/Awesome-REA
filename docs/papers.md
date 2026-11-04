@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (111)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -71,6 +71,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Semantic Validation of Packer Identification Tools: Characterization, Repair, and Downstream Impact**](https://arxiv.org/abs/2605.25923) - Uses unpacking outcomes as reference evidence to assess packer labels, normalizes heterogeneous tool results, and evaluates complementary signature/heuristic pools with static predicates derived from unpacker implementations. <sub>arXiv 2026 · Preprint · Fangtian Zhong et al. · [PDF](https://arxiv.org/pdf/2605.25923v3) · [Full entry](https://awesomerea.org/papers/paper-packer-identification-semantic-validation/)</sub>
 - [**Decaf: Improving Neural Decompilation with Automatic Feedback and Search**](https://arxiv.org/abs/2605.11501) - Decaf samples multiple candidate decompilations, recompiles them and ranks them using compiler-derived byte distance or a learned reranker. <sub>arXiv 2026 · Preprint · Alexander Shypula et al. · [PDF](https://arxiv.org/pdf/2605.11501v1) · [Code](https://github.com/AlexShypula/decaf) · [Full entry](https://awesomerea.org/papers/paper-decaf/)</sub>
 - [**NotDec: WebAssembly Decompilation With Inter-Procedural Type Recovery**](https://dl.acm.org/doi/10.1145/3744916.3787762) - NotDec lifts WebAssembly into SSA-based IR, uses Retypd-derived type constraints and pointer/value distinctions to recover structures, and emits C. <sub>ICSE 2026 · Conference paper · Jikai Wang et al. · [PDF](https://arxiv.org/pdf/2608.03286v1) · [Code](https://github.com/NotDec/NotDec) · [Full entry](https://awesomerea.org/papers/paper-notdec/)</sub>
+- [**EXHIB: A Benchmark for Realistic and Diverse Evaluation of Function Similarity in the Wild**](https://arxiv.org/abs/2604.01554v2) - EXHIB is a benchmark for binary function similarity detection, built as five datasets collected in the wild rather than as one narrow transformation. <sub>arXiv 2026 · Preprint · Yiming Fan et al. · [PDF](https://arxiv.org/pdf/2604.01554v2) · [Full entry](https://awesomerea.org/papers/paper-exhib-bench/)</sub>
 - [**HELIOS: Hierarchical Graph Abstraction for Structure-Aware LLM Decompilation**](https://arxiv.org/abs/2601.14598) - HELIOS gives an LLM a hierarchical summary of binary control flow and function calls alongside decompiler output, with optional compiler feedback. <sub>arXiv 2026 · Preprint · Yonatan Gizachew Achamyeleh et al. · [PDF](https://arxiv.org/pdf/2601.14598) · [Full entry](https://awesomerea.org/papers/paper-helios/)</sub>
 - [**The Deception Delta: Adversarial Evaluation of LLM-Based Smart Contract Bytecode Forensics**](https://arxiv.org/abs/2609.14098) - Evaluates how language models interpret raw EVM bytecode from purpose-built deceptive and control contracts. <sub>ACM CCS 2026 · Conference accepted · Timo Schefold · [PDF](https://arxiv.org/pdf/2609.14098v2) · [Full entry](https://awesomerea.org/papers/paper-deception-delta/)</sub>
 - [**SK2Decompile: LLM-based Two-Phase Binary Decompilation from Skeleton to Skin**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/9132583dd869acb0cafeb0ed25eb031a-Abstract-Conference.html) - Splits LLM decompilation into two phases: a Structure Recovery model turns decompiler pseudocode into an identifier-free IR that keeps control flow and data structures, trained with compiler-based RL rewards, and an Identifier Naming model then restores names under a semantic-similarity reward. <sub>ICLR 2026 · Conference paper · Hanzhuo Tan et al. · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/9132583dd869acb0cafeb0ed25eb031a-Paper-Conference.pdf) · [Code](https://github.com/albertan017/LLM4Decompile/tree/85b364bf093eb2ee4f3687cfe38a203fca89f23e/sk2decompile) · [Full entry](https://awesomerea.org/papers/paper-sk2decompile/)</sub>
