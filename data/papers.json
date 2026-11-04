@@ -12817,5 +12817,52 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-rebench",
+    "title": "REBENCH: A Procedural, Fair-by-Construction Benchmark for LLMs on Stripped-Binary Types and Names (Extended Version)",
+    "authors": [
+      "Jun Yeon Won",
+      "Xin Jin",
+      "Shiqing Ma",
+      "Zhiqiang Lin"
+    ],
+    "year": 2026,
+    "publication_date": "2026-04-30",
+    "date_precision": "day",
+    "date_basis": "arXiv first-submission date; the reviewed file is v1",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2604.27319",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2026-04-30",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2604.27319v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.27319v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "REBENCH is a benchmark for language models on type inference and name recovery in stripped binaries. The abstract presents it as a shared, procedurally constructed collection so that earlier studies can be compared without each one using a private dataset.",
+    "description_zh": "REBENCH 是评测语言模型在剥离二进制上做类型推断和名称恢复的基准。摘要把它描述为按过程构建的共享集合，使先前研究不必各自使用私有数据集才能比较。",
+    "scope_limitations_en": "The reviewed file is the extended-version preprint arXiv:2604.27319v1. The benchmark was not regenerated.",
+    "scope_limitations_zh": "审阅的文件是扩展版本预印本 arXiv:2604.27319v1。基准没有重新生成。",
+    "why_fits_en": "Type and name recovery on stripped binaries are reverse-engineering tasks, and the paper's contribution is a benchmark.",
+    "why_fits_zh": "在剥离二进制上恢复类型和名称是逆向工程任务，本文的贡献是一个基准。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2604.27319v1",
+      "https://arxiv.org/pdf/2604.27319v1",
+      "https://export.arxiv.org/api/query?id_list=2604.27319"
+    ],
+    "metadata_notes": "The title keeps the parenthetical extended-version wording from arXiv.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "REBENCH：针对剥离二进制类型与名称的过程化公平基准",
+    "date_basis_zh": "日期取自 arXiv 首次提交日，审阅的文件是 v1",
+    "metadata_notes_zh": "题名保留 arXiv 上“扩展版本”这一括号说明。"
   }
 ]
