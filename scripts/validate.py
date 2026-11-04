@@ -32,7 +32,7 @@ RESOURCE_FIELDS = {
     'id', 'name', 'url', 'category', 'relationship', 'description_en',
     'description_zh', 'evidence_url', 'verified_at', 'verification', 'requirements', 'targets', 'kind',
 }
-OPTIONAL_RESOURCE_FIELDS = {'additional_evidence_urls'}
+OPTIONAL_RESOURCE_FIELDS = {'additional_evidence_urls', 'added_at', 'requirement_facets'}
 BENCHMARK_FIELDS = {
     'id', 'full_name', 'url', 'category', 'stars', 'stars_display',
     'stars_precision', 'observed_at', 'description_zh', 'mechanisms',
