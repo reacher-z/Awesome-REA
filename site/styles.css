@@ -154,7 +154,7 @@ input::placeholder{color:var(--muted);opacity:1}
 .benchmark-map-preview figcaption{display:flex;flex-direction:column;gap:4px;max-width:78ch;margin:0 0 12px}
 .benchmark-map-preview figcaption a{color:var(--ink);font-size:18px;font-weight:650;letter-spacing:-.2px}
 .benchmark-map-preview figcaption span{color:var(--muted);font-size:14px;line-height:1.6}
-.benchmark-map-preview img{display:block;width:100%;height:auto;background:#fff;border-radius:8px}
+.benchmark-map-preview img{display:block;width:100%;height:auto;background:var(--paper);border-radius:8px}
 section.collection-intro>p.collection-provenance{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
 html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .catalog-section{padding-bottom:56px}
