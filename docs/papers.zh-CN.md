@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -152,6 +152,7 @@
 - [**Coda：端到端神经程序反编译器**](https://proceedings.neurips.cc/paper_files/paper/2019/hash/093b60fd0557804c8ba0cbf1453da22f-Abstract.html) - Coda 分两个阶段将短函数的汇编反编译为 C。 <sub>原题：*Coda: An End-to-End Neural Program Decompiler* · NeurIPS 2019 · 会议论文 · Cheng Fu 等 · [PDF](https://proceedings.neurips.cc/paper_files/paper/2019/file/093b60fd0557804c8ba0cbf1453da22f-Paper.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-coda/)</sub>
 - [**用于受自然语言处理启发的二进制代码分析的跨架构指令嵌入模型**](https://arxiv.org/abs/1812.09652) - 论文学习指令嵌入，以捕捉架构内部及跨架构的指令语义关系，并将其用于基于语义的基本块比较；结果优于基于代码统计的方法。 <sub>原题：*A Cross-Architecture Instruction Embedding Model for Natural Language Processing-Inspired Binary Code Analysis* · arXiv 2018 · 预印本 · Kimberly Redmond 等 · [PDF](https://arxiv.org/pdf/1812.09652) · [完整条目](https://awesomerea.org/zh/papers/paper-cross-arch-instruction-embedding/)</sub>
 - [**Debin：预测去符号二进制中的调试信息**](https://dl.acm.org/doi/10.1145/3243734.3243866) - Debin 为 x86、x64 与 ARM 上去符号的 ELF 二进制预测调试信息。 <sub>原题：*Debin: Predicting Debug Information in Stripped Binaries* · ACM CCS 2018 · 会议论文 · Jingxuan He 等 · [PDF](https://files.sri.inf.ethz.ch/website/papers/ccs18-debin.pdf) · [代码](https://github.com/eth-sri/debin) · [完整条目](https://awesomerea.org/zh/papers/paper-debin/)</sub>
+- [**符号执行技术综述**](https://arxiv.org/abs/1610.00502v3) - 这篇综述整理符号执行技术，用来检查某个程序性质在可能的执行中是否成立。 <sub>原题：*A Survey of Symbolic Execution Techniques* · ACM Computing Surveys 2018 · 期刊论文 · Roberto Baldoni 等 · [PDF](https://arxiv.org/pdf/1610.00502v3) · [完整条目](https://awesomerea.org/zh/papers/paper-symbolic-execution-survey/)</sub>
 - [**rev.ng：用于恢复控制流图与函数边界的统一二进制分析框架**](https://dl.acm.org/doi/10.1145/3033019.3033028) - rev.ng 借助 QEMU 的微型代码生成器（TCG）将二进制提升为 LLVM 中间表示，因此同一前端可覆盖 QEMU 支持的全部架构，输出的是可编译的中间表示。 <sub>原题：*rev.ng: A Unified Binary Analysis Framework to Recover CFGs and Function Boundaries* · CC 2017 · 会议论文 · Alessandro Di Federico 等 · [PDF](https://nebelwelt.net/publications/files/17CC.pdf) · [代码](https://github.com/revng/revng) · [完整条目](https://awesomerea.org/zh/papers/paper-revng/)</sub>
 - [**Ramblr：让二进制重汇编重新可行**](https://www.ndss-symposium.org/ndss2017/ndss-2017-programme/ramblr-making-reassembly-great-again/) - Ramblr 生成可重汇编的反汇编结果，即从去除符号的二进制中恢复出、可以修改并用现成汇编器重新汇编的汇编代码。 <sub>原题：*Ramblr: Making Reassembly Great Again* · NDSS 2017 · 会议论文 · Ruoyu Wang 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/ndss2017_10-5_Wang_paper_0.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-ramblr/)</sub>
 - [**告别 goto：基于模式无关控制流结构化与语义保持变换的反编译**](https://www.ndss-symposium.org/ndss2015/ndss-2015-programme/no-more-gotos-decompilation-using-pattern-independent-control-flow-structuring-and-semantics/) - DREAM 是一种反编译器，其控制流结构化方法无需匹配预定义的区域模式，即可从恢复出的控制流图中还原循环、条件语句与 switch 语句。 <sub>原题：*No More Gotos: Decompilation Using Pattern-Independent Control-Flow Structuring and Semantics-Preserving Transformations* · NDSS 2015 · 会议论文 · Khaled Yakdan 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/11_4_2.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-dream/)</sub>
