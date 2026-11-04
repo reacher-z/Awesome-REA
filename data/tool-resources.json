@@ -36528,5 +36528,38 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "geowrite-21-case",
+    "name": "geoWrite 2.1: source that rebuilds the original binaries",
+    "url": "https://github.com/mist64/geowrite",
+    "description_en": "Reverse-engineered cc65 source for geoWrite 2.1, the GEOS word processor, in English and German. The README says a standard compile generates binaries identical to the English and German geoWrite 2.1 distribution binaries. The orig tree holds the collected original versions.",
+    "description_zh": "GEOS 文字处理器 geoWrite 2.1 英语版与德语版的逆向 cc65 源码。README 写明标准编译生成与英语及德语 geoWrite 2.1 发行二进制相同的文件。orig 树存放收集到的原始版本。",
+    "evidence_url": "https://github.com/mist64/geowrite/blob/640f1aba3a68c096c56fafc81b55772db391de35/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/mist64/geowrite/blob/640f1aba3a68c096c56fafc81b55772db391de35/Makefile",
+      "https://github.com/mist64/geowrite/tree/640f1aba3a68c096c56fafc81b55772db391de35/orig"
+    ],
+    "requirements": [
+      "Needs make, cc65, and Python for encrypting some protected code. make builds the English version. LOCALE=de make builds the German version. orig/ is the collected binary set.",
+      "The README says the source produces the GEOS-bundled geoWrite 2.1 versions, and that a default build must keep recreating geoWrite_en_2.1_1988-07-06 and geoWrite_de_2.1_1989-01-03. Its status table says commenting is incomplete and lists a percentage for each record.",
+      "The check named in the README is that standard compile, compared with those original files. Not run or reproduced for this catalog.",
+      "The reviewed root has no LICENSE file. The README says the intellectual property added by the reverse-engineering and the subsequent improvements is in the public domain, asks to be credited, and says to respect the license of the underlying GEOS work."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "targets": [
+      "binary"
+    ]
   }
 ]
