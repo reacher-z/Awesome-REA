@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
+const clone = value => typeof structuredClone === 'function' ? structuredClone(value) : JSON.parse(JSON.stringify(value));
 const html = fs.readFileSync(path.join(root, 'site/index.html'), 'utf8');
 const script = fs.readFileSync(path.join(root, 'site/app.js'), 'utf8');
 const camel = name => name.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
@@ -80,7 +81,7 @@ function setup(query = '', {catalog, browser, extraMarkup = '', turkishLocale = 
     history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }, pushState(_, __, next) { location.href = String(next); }},
     fetch: async url => {
       const body = responses[/^\/catalog(-index)?\.json$/.test(new URL(url).pathname) ? 'catalog' : 'browser'];
-      return body === undefined ? {ok: false, status: 503} : {ok: true, json: async () => structuredClone(body)};
+      return body === undefined ? {ok: false, status: 503} : {ok: true, json: async () => clone(body)};
     }};
   vm.createContext(context);
   // Make locale-dependent lowercasing observably Turkish without depending on the host's installed locales.
@@ -143,6 +144,22 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.deepEqual(Array.from(app.api.filtered(), record => record.id), ['curated-2']);
     assert.deepEqual(names(app.api.sourceFiltered()), ['example/Istanbul']);
   }
+  // Evidence-class filtering uses the curated C0–C3 value and the Unknown state separately.
+  {
+    const classified = catalogOf([
+      curatedRecord(1, {evidence_class: 0, evidence_status: 'observed'}),
+      curatedRecord(2, {evidence_class: 2, evidence_status: 'observed'}),
+      curatedRecord(3, {evidence_class: null, evidence_status: 'unknown'}),
+    ]);
+    const app = await loaded('?class=0', {catalog: classified, browser: valid});
+    assert.deepEqual(Array.from(app.api.filtered(), record => record.id), ['curated-1']);
+    app.api.state.class = '2';
+    assert.deepEqual(Array.from(app.api.filtered(), record => record.id), ['curated-2']);
+    app.api.state.class = 'unknown';
+    assert.deepEqual(Array.from(app.api.filtered(), record => record.id), ['curated-3']);
+    app.api.state.class = 'all';
+    assert.deepEqual(Array.from(app.api.filtered(), record => record.id), ['curated-1', 'curated-2', 'curated-3']);
+  }
   // The compact repository introduction does not wait for a network response, and follows the real view.
   for (const query of ['?view=source-index', '?view=repositories']) {
     const app = setup(query, {catalog: curated, browser: valid});
@@ -162,10 +179,10 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
   const failedCatalog = setup('?view=source-index');
   await failedCatalog.api.load();
   assert.equal(failedCatalog.document.documentElement.dataset.indexMode, 'curated');
-  const mutate = change => { const payload = structuredClone(valid); change(payload); return payload; };
+  const mutate = change => { const payload = clone(valid); change(payload); return payload; };
   {
     const app = setup('', {catalog: curated, browser: valid});
-    const accepted = structuredClone(valid);
+    const accepted = clone(valid);
     assert.strictEqual(app.api.sourceBrowserPayload(accepted), accepted);
     const unsupported = /Unsupported repository browser data/, counts = /Repository browser counts disagree/, invalid = /Invalid repository browser record/;
     const malformed = [

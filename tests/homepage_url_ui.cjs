@@ -43,7 +43,7 @@ const tests = {
       assert.equal(app.replacements.length, 0, 'a bare canonical URL needs no history replacement');
       assert.equal(app.api.state.lang, pathname === '/zh/' ? 'zh' : 'en');
       assert.equal(app.api.sourceState.mode, 'curated');
-      assert.equal(app.api.state.layout, 'compact');
+      assert.equal(app.api.state.layout, 'cards');
       assert.deepEqual(paths(app), CATALOG_REQUESTS, 'normalization must not fetch repository data');
       for (const query of ['应用 & UI', 'all', 'relevance', '  literal  ']) {
         input(app, '#search-input', query);
@@ -52,9 +52,9 @@ const tests = {
         assert.equal(value(app, 'view'), null);
         assert.equal(value(app, 'layout'), null);
       }
-      input(app, '#layout-select', 'cards', 'change');
-      assert.equal(value(app, 'layout'), 'cards');
       input(app, '#layout-select', 'compact', 'change');
+      assert.equal(value(app, 'layout'), 'compact');
+      input(app, '#layout-select', 'cards', 'change');
       assert.equal(value(app, 'layout'), null);
       element(app, '#empty-reset').emit('click');
       assert.equal(app.context.location.search, '');
@@ -81,7 +81,7 @@ const tests = {
       app.api.applyLanguage(); await app.api.load();
       assert.equal(app.replacements.length, 1, 'render/reload after normalization is idempotent');
     }
-    const defaults = application('?view=curated&layout=compact&lang=zh&group=all&category=all&kind=all&target=all'
+    const defaults = application('?view=curated&layout=cards&lang=zh&group=all&category=all&kind=all&target=all'
       + '&q=&sourceq=&source-target=all&topic=&sort=relevance', {pathname: '/zh/'});
     await defaults.api.load();
     assert.equal(defaults.context.location.href, 'https://awesomerea.org/zh/');
@@ -106,7 +106,7 @@ const tests = {
         assert.equal(app.api.sourceState.mode, 'source-index');
         assert.equal(value(app, 'view'), 'source-index');
         assert.equal(app.api.state.layout, 'cards');
-        assert.equal(value(app, 'layout'), 'cards');
+        assert.equal(value(app, 'layout'), null);
         assert.equal(app.api.sourceState.sort, 'pushed');
         assert.equal(value(app, 'sort'), 'pushed');
         assert.equal(app.api.sourceState.loaded, true);
@@ -116,14 +116,14 @@ const tests = {
       }
     }
     const earlyLayout = application('?view=repositories&category=dynamic-analysis&kind=tool');
-    input(earlyLayout, '#layout-select', 'cards', 'change');
+    input(earlyLayout, '#layout-select', 'compact', 'change');
     assert.equal(value(earlyLayout, 'view'), 'repositories', 'an interaction before load must retain the requested view');
     await earlyLayout.api.load(); await settle();
     assert.equal(earlyLayout.api.sourceState.mode, 'source-index');
     assert.equal(value(earlyLayout, 'category'), 'dynamic-analysis');
     assert.equal(value(earlyLayout, 'kind'), 'tool');
-    assert.equal(value(earlyLayout, 'layout'), 'cards');
-    const canonical = application('?view=source-index&layout=cards&lang=zh');
+    assert.equal(value(earlyLayout, 'layout'), 'compact');
+    const canonical = application('?view=source-index&layout=compact&lang=zh');
     await canonical.api.load(); await settle();
     assert.equal(canonical.replacements.length, 0, 'working nondefault legacy language override is already canonical');
     const unavailable = application('?view=repositories&sourceq=Fixture&source-target=protocol&topic=fixtures&sort=stars', {unavailable: true});
@@ -185,10 +185,10 @@ const tests = {
       await app.api.load();
       expect('?q=ghidra&target=binary#catalog');
       input(app, '#search-input', 'mitm proxy');
-      input(app, '#layout-select', 'cards', 'change');
-      expect('?q=mitm+proxy&target=binary&layout=cards#catalog');
+      input(app, '#layout-select', 'compact', 'change');
+      expect('?q=mitm+proxy&target=binary&layout=compact#catalog');
       element(app, '#mode-sources').emit('click'); await settle();
-      expect('?q=mitm+proxy&target=binary&layout=cards&view=source-index#catalog');
+      expect('?q=mitm+proxy&target=binary&layout=compact&view=source-index#catalog');
       // Fragment navigation does not pass through replaceState.
       app.context.location.hash = '#shelf-title'; app.windowListeners.hashchange();
       expect('?q=mitm+proxy&target=binary&layout=cards&view=source-index#shelf-title');

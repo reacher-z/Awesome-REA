@@ -109,7 +109,7 @@ function homepage(storage, {pathname = '/', papersFail = false} = {}) {
     assert.deepEqual(links.map(link => link.href), [`${language === 'zh' ? '/zh' : ''}/resources/fixture-0/`, `${language === 'zh' ? '/zh' : ''}/resources/fixture-1/`,
       'https://github.com/Fixture/project0', `${language === 'zh' ? '/zh' : ''}/papers/paper-fixture/`]);
     assert.equal(links[2].target, '_blank');
-    assert(app.requests.every(url => ['/catalog-index.json', '/catalog.json', '/source-browser.json', '/papers.json'].includes(new URL(url).pathname) && !/fixture-|gone-entry|scan-404/.test(new URL(url).search)),
+    assert(app.requests.every(url => ['/catalog-index.json', '/catalog.json', '/source-browser.json', '/scan-classes.json', '/papers.json'].includes(new URL(url).pathname) && !/fixture-|gone-entry|scan-404/.test(new URL(url).search)),
       'saved IDs never leave the browser');
 
     // Remove from the dialog, then a failed write keeps the list and says so, then clear all.

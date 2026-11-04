@@ -1,6 +1,7 @@
 /* The homepage renders from the lean catalog index, then fills requirement text from the complete catalog. */
 const assert = require('node:assert/strict');
 const {setup} = require('./protocol_target_ui.cjs');
+const clone = value => typeof structuredClone === 'function' ? structuredClone(value) : JSON.parse(JSON.stringify(value));
 const settle = async () => { for (let i = 0; i < 5; i++) await new Promise(resolve => setImmediate(resolve)); };
 
 const rows = Array.from({length: 20}, (_, index) => ({id: 'fixture-' + index, name: 'Fixture ' + index, name_zh: '测试 ' + index,
@@ -21,11 +22,11 @@ function application({fail = 0} = {}) {
   app.context.fetch = async url => {
     app.requests.push(String(url));
     const pathname = new URL(url).pathname;
-    if (pathname === '/catalog-index.json') return {ok: true, json: async () => structuredClone({resources: lean, meta, topic_labels: {}})};
+    if (pathname === '/catalog-index.json') return {ok: true, json: async () => clone({resources: lean, meta, topic_labels: {}})};
     assert.equal(pathname, '/catalog.json', 'the homepage requests only its two catalog files here');
     await gate;
     if (fail-- > 0) return {ok: false, status: 503};
-    return {ok: true, json: async () => structuredClone({resources: rows, meta, topic_labels: {}})};
+    return {ok: true, json: async () => clone({resources: rows, meta, topic_labels: {}})};
   };
   app.api.applyLanguage();
   app.grid = () => app.elements.get('#resource-grid').children;
