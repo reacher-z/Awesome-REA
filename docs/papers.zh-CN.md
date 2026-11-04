@@ -4,7 +4,7 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -15,7 +15,7 @@
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
-- [固件分析与重托管](#papers-firmware-analysis) (27)
+- [固件分析与重托管](#papers-firmware-analysis) (28)
 - [协议推断与分析](#papers-protocol-analysis) (22)
 
 每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。
@@ -250,6 +250,7 @@
 - [**SatBleed：卫星商用通信模块的安全性**](https://doi.org/10.1109/SP63933.2026.00213) - 通过硬件检查、固件逆向、协议分析、部分重托管及针对性测试研究卫星通信模块，以组件级威胁模型将恢复的数据流与安全边界联系起来。 <sub>原题：*SatBleed: Security of Commoditized Communication Modules in Satellites* · IEEE S&amp;P 2026 · 会议论文 · Ulysse Planta 等 · [PDF](https://arxiv.org/pdf/2610.06258v1) · [代码](https://github.com/EmsecCispa/SatBleed) · [完整条目](https://awesomerea.org/zh/papers/paper-satbleed/)</sub>
 - [**面向 Linux 固件二进制的用户空间依赖感知重托管**](https://www.ndss-symposium.org/ndss-paper/user-space-dependency-aware-rehosting-for-linux-based-firmware-binaries/) - FIRMWELL 通过运行初始化进程、定位阻塞依赖并修补缺失的系统层行为，重建 Linux 固件服务的执行环境。 <sub>原题：*User-Space Dependency-Aware Rehosting for Linux-Based Firmware Binaries* · NDSS 2026 · 会议论文 · Chuan Qin 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s249-paper.pdf) · [代码](https://github.com/qc9c/Firmwell) · [完整条目](https://awesomerea.org/zh/papers/paper-firmwell/)</sub>
 - [**使用 Penguin 进行以目标为中心的固件重托管**](https://www.ndss-symposium.org/ndss-paper/auto-draft-634/) - Penguin 以提取出的固件文件系统为输入，通过静态分析生成可编辑的仿真变换配置（如文件修改、伪文件、NVRAM 值和网络接口），用于重托管嵌入式 Linux 固件。 <sub>原题：*Target-Centric Firmware Rehosting with Penguin* · Workshop on Binary Analysis Research (BAR) 2025 · 会议论文 · Andrew Fasano 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2025-final10.pdf) · [代码](https://github.com/rehosting/penguin) · [完整条目](https://awesomerea.org/zh/papers/paper-penguin/)</sub>
+- [**物联网与嵌入式设备固件安全综述：架构、提取技术与漏洞分析框架**](https://doi.org/10.1007/s43926-023-00045-2) - 这篇综述讨论物联网与嵌入式固件的安全分析，包括固件提取以及用于寻找漏洞的框架。 <sub>原题：*A survey on IoT &amp; embedded device firmware security: architecture, extraction techniques, and vulnerability analysis frameworks* · Discover Internet of Things 2023 · 期刊论文 · Shahid Ul Haq 等 · [PDF](https://link.springer.com/content/pdf/10.1007/s43926-023-00045-2.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-iot-firmware-security-survey/)</sub>
 - [**固件所示并非应有的仿真方式：一种规范引导的固件仿真方法**](https://dl.acm.org/doi/10.1145/3548606.3559386) - SEmu 依据厂商参考手册而非固件本身构建微控制器外设模型。 <sub>原题：*What Your Firmware Tells You Is Not How You Should Emulate It: A Specification-Guided Approach for Firmware Emulation* · ACM CCS 2022 · 会议论文 · Wei Zhou 等 · [PDF](https://arxiv.org/pdf/2208.07833v3) · [代码](https://github.com/MCUSec/SEmu/tree/6dc8be91f6809f34af972a93c9dd972f85145a00) · [完整条目](https://awesomerea.org/zh/papers/paper-semu/)</sub>
 - [**Fuzzware：利用精确的 MMIO 建模提升固件模糊测试效果**](https://www.usenix.org/conference/usenixsecurity22/presentation/scharnowski) - 重托管单体 ARM Cortex-M 固件以开展模糊测试，利用局部符号执行为内存映射 I/O 访问建模，使输入变异集中于影响固件逻辑的值。 <sub>原题：*Fuzzware: Using Precise MMIO Modeling for Effective Firmware Fuzzing* · USENIX Security 2022 · 会议论文 · Tobias Scharnowski 等 · [PDF](https://www.usenix.org/system/files/sec22-scharnowski.pdf) · [代码](https://github.com/fuzzware-fuzzer/fuzzware) · [完整条目](https://awesomerea.org/zh/papers/paper-fuzzware/)</sub>
 - [**ECMO：通过外设移植重托管嵌入式 Linux 内核**](https://doi.org/10.1145/3460120.3484753) - ECMO 将外设驱动移植到嵌入式 Linux 内核中，使固件能够在 QEMU 中启动。 <sub>原题：*ECMO: Peripheral Transplantation to Rehost Embedded Linux Kernels* · Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security · 会议论文 · Muhui Jiang 等 · [PDF](https://arxiv.org/pdf/2105.14295) · [完整条目](https://awesomerea.org/zh/papers/paper-ecmo/)</sub>
