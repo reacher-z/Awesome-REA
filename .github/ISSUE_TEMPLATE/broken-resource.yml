@@ -5,17 +5,52 @@ body:
   - type: markdown
     attributes:
       value: |
+        Reviewers act on the affected IDs, the observed status, the check date and public primary evidence; see [triaging source-link results](https://github.com/reacher-z/Awesome-REA/blob/main/docs/automation.md#triage-source-link-results). HTTP 403 or 429 responses, login pages, timeouts and redirects alone do not establish that a resource was removed or moved.
+
         Issues are public. Remove tokens, cookies, account identifiers, local filesystem paths and private captures from anything you paste, including logs and screenshots. See the [contribution guide](https://github.com/reacher-z/Awesome-REA/blob/main/CONTRIBUTING.md#review-and-publication), and report security problems privately under the [security policy](https://github.com/reacher-z/Awesome-REA/security/policy).
   - type: input
     id: resource
     attributes:
-      label: Resource URL or catalog ID
+      label: Catalog ID(s) or resource URL
+      description: The affected catalog IDs, such as `ghidra` or `paper-firmae`, separated by commas. If you do not know an ID, give the URL the collection lists.
     validations:
       required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: Problem type
+      options:
+        - Dead link (404 or 410)
+        - Moved or renamed
+        - Content or requirements changed
+        - License changed
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: observed_status
+    attributes:
+      label: Observed status or message
+      description: For example, HTTP 404 on two attempts, an archive notice, or the `status` and `reason` reported by `python3 scripts/check_links.py`.
+    validations:
+      required: true
+  - type: input
+    id: checked_on
+    attributes:
+      label: Check date
+      description: The UTC date you made the observation.
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: input
+    id: new_url
+    attributes:
+      label: New canonical URL
+      description: Only for a move or rename, and only when primary evidence links the old and new locations. Leave empty otherwise.
   - type: textarea
     id: correction
     attributes:
-      label: What changed?
-      description: Link to the primary source and suggest a correction.
+      label: Primary evidence and suggested correction
+      description: Link the public primary source, such as a maintainer announcement, repository transfer or rename, release notes or license file, and say which fields should change. A redirect to a generic homepage, login page or mirror is not enough.
     validations:
       required: true
