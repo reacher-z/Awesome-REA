@@ -7952,5 +7952,14 @@
       "工作流在自托管的 Windows 运行器上，基于本地安装的 IDA 7.6 SDK 构建。其 googletest 单元测试通过模拟的 IDA 加载器、符号和类型接口，反编译直接写在测试源码中的机器码字节数组，覆盖 x86（16、32、64 位）、ARM、MIPS、PowerPC、SPARC、6502 和 Z80。README 的待办事项包括枚举类型、AArch64 函数结尾规则以及修改常量类型。",
       "Apache-2.0 许可；Ghidra 反编译器沿用其自身的 Apache-2.0 条款，IDA 及其 SDK 是 Hex-Rays 的产品，各有许可条款。本次审阅未构建或运行；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "box-js": {
+    "name": "box.js 恶意 JavaScript 分析工具",
+    "requirements": [
+      "审阅时 npm 最新版本为 1.9.29，于 2026-07-02 与所审 master 提交同时发布；该提交使沙箱适配最新的 vm2 包。RELEASE_NOTES.txt 将同一批版本编号为 1.19.x。近期开发由 Kirk Sayre 通过拉取请求进行。可用 npm install box-js --global 安装；package.json 声明需要 Node.js 6 或更高版本，依赖 vm2 >=3.9.19、jsdom 16、acorn 和 escodegen；README 列出 REMnux 与 BlackArch 软件包，以及 Cuckoo、CAPE 和 IntelOwl 集成。",
+      "输入是分析者自己的样本文件或样本文件夹；仓库不含恶意软件样本，只有模拟器代码、生成的 Windows 进程列表（emulator/processes.json）、源码改写补丁和一个 mocha 测试文件。编码过的 .jse 文件需先用随附的 decoder.c（MrBrownstone 于 2000–2005 年编写的 Script Encoder 解码器，用 C 编译器编译）解码；不支持以 VBScript 作为输入。",
+      "样本在 vm2 中运行，默认超时 10 秒；--dangerous-vm 会改用 Node 的 vm 模块，README 称该沙箱可被突破。--download 会向样本访问的 URL 发出真实请求，除非网络已隔离，否则不要启用。README 建议在临时 Docker 容器中运行以进一步隔离；integrations/docker/Dockerfile 基于 node:8-alpine，REST API 服务器要求运行用户能够启动 Docker 容器。",
+      "模拟本身并不完整：遇到尚未支持的 ActiveX 对象或方法时，分析会停止，直到有人实现它们；带有环境或日期检查的样本可能不表现出任何行为。MIT 许可；decoder.c 保留其作者的声明。本次审阅未安装或运行任何内容，也未分析任何样本；所审来源未确立与 REA 的关联。"
+    ]
   }
 }

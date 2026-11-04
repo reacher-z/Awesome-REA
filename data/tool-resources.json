@@ -24871,5 +24871,37 @@
       "https://github.com/airbus-cert/Yagi/releases/tag/v1.5.0",
       "https://github.com/airbus-cert/Yagi/releases/tag/v1.4.0"
     ]
+  },
+  {
+    "id": "box-js",
+    "name": "box.js",
+    "url": "https://github.com/CapacitorSet/box-js",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Node.js utility for studying malicious JavaScript that runs a sample inside an emulated Windows JScript environment, with WScript, ActiveX, filesystem, registry, WMI and HTTP objects emulated and source rewriting that exposes eval calls and conditional-compilation code. Each analysis writes a results folder with the URLs requested and those that led to an executable payload, every code snippet executed (JavaScript, cmd.exe and PowerShell), files written with their types and hashes, and a list of IOCs; by default downloads are answered with simulated 404 errors so that fallback sites are revealed. Batch runs, an optional prepended file of browser-object stubs, a Docker image, a REST API and export to VirusTotal or Cuckoo support triage at scale.",
+    "description_zh": "用于研究恶意 JavaScript 的 Node.js 工具：在模拟的 Windows JScript 环境中运行样本，模拟 WScript、ActiveX、文件系统、注册表、WMI 和 HTTP 对象，并通过改写源码暴露 eval 调用和条件编译代码。每次分析都会生成结果文件夹，记录请求过的 URL 及其中导致可执行载荷的 URL、执行过的每段代码（JavaScript、cmd.exe 和 PowerShell 命令）、写入的文件及其类型和哈希，以及 IOC 列表；默认情况下，下载请求会收到模拟的 404 错误，以暴露样本的备用站点。支持批量分析、可选预置的浏览器对象桩代码文件、Docker 镜像、REST API，以及导出到 VirusTotal 或 Cuckoo，便于大规模初筛。",
+    "evidence_url": "https://github.com/CapacitorSet/box-js/blob/f4bb9942f73e1b6eede149103fa074e0d408a6a7/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest npm release at review: 1.9.29, published 2026-07-02 alongside the reviewed master commit, which adapts the sandbox to the latest vm2 package; RELEASE_NOTES.txt numbers the same releases 1.19.x. Recent development is by Kirk Sayre through pull requests. Installs with npm install box-js --global; package.json declares Node.js 6 or later and depends on vm2 >=3.9.19, jsdom 16, acorn and escodegen, and the READMEs list REMnux and BlackArch packages and Cuckoo, CAPE and IntelOwl integrations.",
+      "Input is the analyst's own sample file or folder of samples; the repository ships no malware samples, only emulator code, a generated Windows process list (emulator/processes.json), source-rewriting patches and a mocha test file. Encoded .jse files must first be decoded with the bundled decoder.c, MrBrownstone's 2000–2005 Script Encoder decoder, compiled with a C compiler; VBScript is not parsed as input.",
+      "Samples run inside vm2, with a 10-second default timeout; --dangerous-vm switches to Node's vm module, which the README says can be broken. --download makes real requests to the URLs a sample contacts, so leave it off unless the network is isolated. The README recommends a temporary Docker container for further isolation; integrations/docker/Dockerfile is based on node:8-alpine, and the REST API server needs a user who can start Docker containers.",
+      "Emulation is incomplete by design: unsupported ActiveX objects or methods stop the analysis until someone implements them, and samples with environment or date checks may show no behaviour. MIT; decoder.c keeps its author's notice. Nothing was installed or run and no samples were analysed in this review; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/CapacitorSet/box-js/blob/f4bb9942f73e1b6eede149103fa074e0d408a6a7/package.json",
+      "https://github.com/CapacitorSet/box-js/blob/f4bb9942f73e1b6eede149103fa074e0d408a6a7/RELEASE_NOTES.txt",
+      "https://github.com/CapacitorSet/box-js/blob/f4bb9942f73e1b6eede149103fa074e0d408a6a7/integrations/README.md",
+      "https://github.com/CapacitorSet/box-js/blob/f4bb9942f73e1b6eede149103fa074e0d408a6a7/integrations/docker/Dockerfile",
+      "https://github.com/CapacitorSet/box-js/blob/f4bb9942f73e1b6eede149103fa074e0d408a6a7/decoder.c",
+      "https://github.com/CapacitorSet/box-js/tree/f4bb9942f73e1b6eede149103fa074e0d408a6a7/emulator",
+      "https://github.com/CapacitorSet/box-js/blob/f4bb9942f73e1b6eede149103fa074e0d408a6a7/LICENSE",
+      "https://www.npmjs.com/package/box-js/v/1.9.29"
+    ]
   }
 ]
