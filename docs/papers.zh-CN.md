@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -61,6 +61,7 @@
 - [**解耦的必要性：面向优化与混淆、无需识别具体变换的反编译代码恢复**](https://arxiv.org/abs/2608.27889) - ReSource 针对受编译优化与混淆影响的反编译函数进行修复：先从语义失真数据库检索指导信息，再预测控制流骨架，最后调整名称与格式。 <sub>原题：*Decoupling is a Necessity: Transformation-Agnostic Decompiled Code Recovery under Optimization and Obfuscation* · arXiv 2026 · 预印本 · Zhiping Zhou 等 · [PDF](https://arxiv.org/pdf/2608.27889v1) · [完整条目](https://awesomerea.org/zh/papers/paper-resource/)</sub>
 - [**STILL：为 LLM 辅助 C++ 反编译恢复编译后隐藏的 STL 语义**](https://arxiv.org/abs/2608.26408) - STILL 从去符号控制流图预测函数级 STL 容器的存在情况，并将预测转成紧凑提示，供 LLM 改进 Ghidra 输出。 <sub>原题：*STILL: Recovering Lowered STL Semantics for LLM-assisted C++ Decompilation* · arXiv 2026 · 预印本 · Xiaohan Wang 等 · [PDF](https://arxiv.org/pdf/2608.26408v1) · [完整条目](https://awesomerea.org/zh/papers/paper-still-stl/)</sub>
 - [**现代二进制反编译的演进：分类体系、文献回顾与未来展望**](https://arxiv.org/abs/2608.24955) - 该综述梳理传统、动态、匹配及神经反编译方法，并组织类型恢复、控制流重构、命名和改进等任务及其评估指标、基准选择。 <sub>原题：*The Evolution of Binary Decompilation in the Modern Era: A Taxonomy, Literature Review, and Future Perspectives* · arXiv 2026 · 预印本 · Omar Abusabha 等 · [PDF](https://arxiv.org/pdf/2608.24955v1) · [完整条目](https://awesomerea.org/zh/papers/paper-evolution-binary-decompilation/)</sub>
+- [**REFORGE：衡量语言模型在反编译二进制函数命名上的逆向能力**](https://arxiv.org/abs/2607.07738v2) - REFORGE 用来构建基准，衡量语言模型能否为反编译出的二进制函数命名。 <sub>原题：*REFORGE: A Method for Benchmarking LLMs' Reverse Engineering Capabilities in Decompiled Binary Function Naming* · arXiv 2026 · 预印本 · Nicolas Koller 等 · [PDF](https://arxiv.org/pdf/2607.07738v2) · [完整条目](https://awesomerea.org/zh/papers/paper-reforge-bench/)</sub>
 - [**基于结构感知检索与迭代验证将优化二进制提升为规范编译器 IR**](https://aclanthology.org/2026.acl-long.527/) - BRIDGE 将以 llvm-objdump 反汇编形式给出的、已剥离符号并经过优化的 x86-64 与 ARM64 函数提升为 LLVM IR，目标是固定 clang -O0 配置为原始源码生成的未优化 IR。 <sub>原题：*Lifting Optimized Binaries to Canonical Compiler IR via Structure-Aware Retrieval and Iterative Verification* · ACL 2026 · 会议论文 · Xiaoao Zhu 等 · [PDF](https://aclanthology.org/2026.acl-long.527.pdf) · [代码](https://github.com/Azhu-c/BRIDGE-rag) · [完整条目](https://awesomerea.org/zh/papers/paper-bridge-lifting/)</sub>
 - [**有本事就骗过我：二进制代码相似性检测模型对语义保持变换的鲁棒性研究**](https://dl.acm.org/doi/10.1145/3797116) - 论文构建 asmFooler，用于检验基于学习的二进制代码相似性检测（BCSD）模型在语义保持的改动后能否继续匹配函数。 <sub>原题：*Fool Me If You Can: On the Robustness of Binary Code Similarity Detection Models against Semantics-Preserving Transformations* · Proceedings of the ACM on Software Engineering (FSE 2026) · 期刊论文 · Jiyong Uhm 等 · [PDF](https://arxiv.org/pdf/2602.12681v1) · [完整条目](https://awesomerea.org/zh/papers/paper-asmfooler/)</sub>
 - [**MirrorCode：仅凭行为重建完整程序的评测**](https://arxiv.org/abs/2606.30182) - 利用仅可执行的参考程序、文档及可见样例，评测 25 个命令行程序的重新实现；在独立评分环境中对可见及留出端到端测试进行精确输出比较。 <sub>原题：*MirrorCode: AI can rebuild entire programs from behavior alone* · arXiv 2026 · 预印本 · Tom Adamczewski 等 · [PDF](https://arxiv.org/pdf/2606.30182v2) · [代码](https://github.com/epoch-research/MirrorCode) · [完整条目](https://awesomerea.org/zh/papers/paper-mirrorcode/)</sub>

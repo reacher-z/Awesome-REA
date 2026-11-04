@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (111)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -61,6 +61,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Decoupling is a Necessity: Transformation-Agnostic Decompiled Code Recovery under Optimization and Obfuscation**](https://arxiv.org/abs/2608.27889) - ReSource refines decompiled functions affected by compiler optimization and obfuscation. <sub>arXiv 2026 · Preprint · Zhiping Zhou et al. · [PDF](https://arxiv.org/pdf/2608.27889v1) · [Full entry](https://awesomerea.org/papers/paper-resource/)</sub>
 - [**STILL: Recovering Lowered STL Semantics for LLM-assisted C++ Decompilation**](https://arxiv.org/abs/2608.26408) - STILL predicts function-level STL container presence from stripped control-flow graphs and turns those predictions into compact hints for LLM refinement of Ghidra output. <sub>arXiv 2026 · Preprint · Xiaohan Wang et al. · [PDF](https://arxiv.org/pdf/2608.26408v1) · [Full entry](https://awesomerea.org/papers/paper-still-stl/)</sub>
 - [**The Evolution of Binary Decompilation in the Modern Era: A Taxonomy, Literature Review, and Future Perspectives**](https://arxiv.org/abs/2608.24955) - This survey maps traditional, dynamic, matching and neural decompilation approaches, then organizes type recovery, control-flow restructuring, naming and refinement tasks alongside evaluation metrics and benchmark choices. <sub>arXiv 2026 · Preprint · Omar Abusabha et al. · [PDF](https://arxiv.org/pdf/2608.24955v1) · [Full entry](https://awesomerea.org/papers/paper-evolution-binary-decompilation/)</sub>
+- [**REFORGE: A Method for Benchmarking LLMs' Reverse Engineering Capabilities in Decompiled Binary Function Naming**](https://arxiv.org/abs/2607.07738v2) - REFORGE is a method for building a benchmark of whether language models can name functions in decompiled binary code. <sub>arXiv 2026 · Preprint · Nicolas Koller et al. · [PDF](https://arxiv.org/pdf/2607.07738v2) · [Full entry](https://awesomerea.org/papers/paper-reforge-bench/)</sub>
 - [**Lifting Optimized Binaries to Canonical Compiler IR via Structure-Aware Retrieval and Iterative Verification**](https://aclanthology.org/2026.acl-long.527/) - BRIDGE lifts stripped, optimized x86-64 and ARM64 functions, given as llvm-objdump disassembly, to LLVM IR. <sub>ACL 2026 · Conference paper · Xiaoao Zhu et al. · [PDF](https://aclanthology.org/2026.acl-long.527.pdf) · [Code](https://github.com/Azhu-c/BRIDGE-rag) · [Full entry](https://awesomerea.org/papers/paper-bridge-lifting/)</sub>
 - [**Fool Me If You Can: On the Robustness of Binary Code Similarity Detection Models against Semantics-Preserving Transformations**](https://dl.acm.org/doi/10.1145/3797116) - The paper builds asmFooler to test whether learned binary code similarity detection (BCSD) models keep matching functions after semantics-preserving changes. <sub>Proceedings of the ACM on Software Engineering (FSE 2026) · Journal article · Jiyong Uhm et al. · [PDF](https://arxiv.org/pdf/2602.12681v1) · [Full entry](https://awesomerea.org/papers/paper-asmfooler/)</sub>
 - [**MirrorCode: AI can rebuild entire programs from behavior alone**](https://arxiv.org/abs/2606.30182) - Tests reimplementation of 25 command-line programs using execute-only reference access, documentation and visible examples. <sub>arXiv 2026 · Preprint · Tom Adamczewski et al. · [PDF](https://arxiv.org/pdf/2606.30182v2) · [Code](https://github.com/epoch-research/MirrorCode) · [Full entry](https://awesomerea.org/papers/paper-mirrorcode/)</sub>
