@@ -24945,5 +24945,43 @@
       "https://github.com/emirmrkaljevic/usb-rea/releases/tag/v0.7.7",
       "https://pypi.org/project/usb-rea/0.7.7/"
     ]
+  },
+  {
+    "id": "magisk-frida",
+    "name": "MagiskFrida",
+    "url": "https://github.com/ViRb3/magisk-frida",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Magisk, KernelSU and APatch module that installs frida-server on a rooted Android device and starts it at boot, so Frida clients can attach for dynamic instrumentation without starting the server by hand. A daily GitHub Actions job checks for a new Frida release, downloads Frida's official frida-server builds for arm64, arm, x86 and x86_64, and publishes a matching module ZIP with an updater.json for updates from the root manager. The server listens on 127.0.0.1:27042 unless another port is written to a file in the module directory, and the module's action button starts or stops it.",
+    "description_zh": "Magisk、KernelSU 与 APatch 模块，在已 root 的 Android 设备上安装 frida-server 并在开机时启动，Frida 客户端无需手动启动服务即可连接进行动态插桩。GitHub Actions 每天检查 Frida 是否有新版本，下载 Frida 官方为 arm64、arm、x86 和 x86_64 构建的 frida-server，并发布对应的模块 ZIP 及供 root 管理器更新使用的 updater.json。服务默认监听 127.0.0.1:27042，可在模块目录的文件中写入其他端口；模块的操作按钮可启动或停止服务。",
+    "evidence_url": "https://github.com/ViRb3/magisk-frida/blob/1f4003ac218cbd43b082673cd4243bba04ada019/README.md",
+    "verified_at": "2026-11-02",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs a rooted Android device with Magisk, KernelSU or APatch on arm64, arm, x86 or x86_64; the README says to install MagiskFrida.zip from the GitHub releases rather than the obsolete Magisk modules repository. The troubleshooting guide asks for a working adb shell, a stable, up-to-date Magisk with MagiskHide disabled and an AOSP-based ROM. Building the ZIP yourself needs uv and Python (CI uses 3.13) and downloads frida-server from Frida's GitHub releases.",
+      "Release versions follow the bundled Frida version; at review the latest was 17.25.1-1 (2026-11-01), built the day Frida published 17.25.1. The module only installs and supervises frida-server: instrumentation runs through Frida's own clients and scripts.",
+      "The CI workflow builds and publishes the ZIP; the repository has no test suite.",
+      "The repository has no license file and GitHub detects no license, so it states no reuse terms for its scripts. The bundled frida-server binaries are Frida's official builds under the wxWindows Library Licence."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ViRb3/magisk-frida/blob/1f4003ac218cbd43b082673cd4243bba04ada019/TROUBLESHOOTING.md",
+      "https://github.com/ViRb3/magisk-frida/blob/1f4003ac218cbd43b082673cd4243bba04ada019/.github/workflows/main.yml",
+      "https://github.com/ViRb3/magisk-frida/blob/1f4003ac218cbd43b082673cd4243bba04ada019/build.py",
+      "https://github.com/ViRb3/magisk-frida/blob/1f4003ac218cbd43b082673cd4243bba04ada019/base/customize.sh",
+      "https://github.com/ViRb3/magisk-frida/blob/1f4003ac218cbd43b082673cd4243bba04ada019/base/utils.sh",
+      "https://github.com/ViRb3/magisk-frida/blob/1f4003ac218cbd43b082673cd4243bba04ada019/base/action.sh",
+      "https://github.com/ViRb3/magisk-frida/releases/tag/17.25.1-1",
+      "https://github.com/frida/frida/blob/783c61434b1936b0b708bcdfb110cf8df1ba730c/COPYING"
+    ]
   }
 ]
