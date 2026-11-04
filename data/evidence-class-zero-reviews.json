@@ -9,106 +9,106 @@
   {
    "id": "cadcraft-case",
    "scope": "full",
-   "version": "README commit b639b18f69bfefd58f866fd0dc04940d0c6aa6e6",
-   "primary_evidence": "https://github.com/storytold/cadcraft/blob/b639b18f69bfefd58f866fd0dc04940d0c6aa6e6/README.md",
-   "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog.",
-   "reviewed_at": "2026-11-03"
+   "version": "README commit 2099288f5449b1602d2e2eedca92fe99fb19b973",
+   "primary_evidence": "https://github.com/storytold/cadcraft/blob/2099288f5449b1602d2e2eedca92fe99fb19b973/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
   },
   {
    "id": "deckcraft-case",
    "scope": "full",
-   "version": "README snapshot 2026-11-02",
-   "primary_evidence": "https://github.com/storytold/deckcraft/blob/730165a8ecb6192af83e6fda259fe7917f24562d/README.md",
-   "note": "Complete clean-room application with release packages and install/usage instructions (\"Getting started\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
-   "reviewed_at": "2026-11-02"
+   "version": "README commit 23ac4f7efdbd1e538bd9a7869584d4adeb9039b0",
+   "primary_evidence": "https://github.com/storytold/deckcraft/blob/23ac4f7efdbd1e538bd9a7869584d4adeb9039b0/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
   },
   {
    "id": "designcraft-case",
    "scope": "full",
-   "version": "README commit f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e",
-   "primary_evidence": "https://github.com/storytold/designcraft/blob/f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e/README.md",
-   "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog.",
-   "reviewed_at": "2026-11-03"
+   "version": "README commit a4017a3cda704850fcb6ed9f8513fdb2e7fb04c1",
+   "primary_evidence": "https://github.com/storytold/designcraft/blob/a4017a3cda704850fcb6ed9f8513fdb2e7fb04c1/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
   },
   {
    "id": "effectcraft-case",
    "scope": "full",
-   "version": "README commit b7dee07cf44fcb42e0afa662043c0dc3bf3f8553",
-   "primary_evidence": "https://github.com/storytold/effectcraft/blob/b7dee07cf44fcb42e0afa662043c0dc3bf3f8553/README.md",
-   "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog.",
-   "reviewed_at": "2026-11-03"
+   "version": "README commit 58ca9c1c1b163fdada41291847f3d0f7559339b2",
+   "primary_evidence": "https://github.com/storytold/effectcraft/blob/58ca9c1c1b163fdada41291847f3d0f7559339b2/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
   },
   {
    "id": "figcraft-case",
    "scope": "full",
-   "version": "README commit 35684eaa028e636d264073a666ef11881620fa0e",
-   "primary_evidence": "https://github.com/storytold/figcraft/blob/35684eaa028e636d264073a666ef11881620fa0e/README.md",
-   "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog.",
-   "reviewed_at": "2026-11-03"
+   "version": "README commit 6f780211dda0706aa474bcc9be4cec99149acef3",
+   "primary_evidence": "https://github.com/storytold/figcraft/blob/6f780211dda0706aa474bcc9be4cec99149acef3/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
   },
   {
    "id": "filmcraft-case",
    "scope": "full",
-   "version": "README commit 57dc82ea2046c2ec479ab4d4d8167d90e5500b49",
-   "primary_evidence": "https://github.com/storytold/filmcraft/blob/57dc82ea2046c2ec479ab4d4d8167d90e5500b49/README.md",
-   "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog.",
-   "reviewed_at": "2026-11-03"
+   "version": "README commit c9be14245a6c9da585ff906a6e0ca9c8200652ea",
+   "primary_evidence": "https://github.com/storytold/filmcraft/blob/c9be14245a6c9da585ff906a6e0ca9c8200652ea/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
   },
   {
    "id": "gridcraft-case",
    "scope": "full",
-   "version": "README snapshot 2026-11-02",
-   "primary_evidence": "https://github.com/storytold/gridcraft/blob/f2d9a930e4c64fbac71939ef8780c72ad260fc67/README.md",
-   "note": "Complete clean-room application with release packages and install/usage instructions (\"Quick start\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
-   "reviewed_at": "2026-11-02"
+   "version": "README commit 632e4a1bc51ee86b3f0a55e95ee78def391aab30",
+   "primary_evidence": "https://github.com/storytold/gridcraft/blob/632e4a1bc51ee86b3f0a55e95ee78def391aab30/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
   },
   {
    "id": "lightcraft-case",
    "scope": "full",
-   "version": "README commit 389ab177db87694ce71d54a1adb9546772e483b6",
-   "primary_evidence": "https://github.com/storytold/lightcraft/blob/389ab177db87694ce71d54a1adb9546772e483b6/README.md",
-   "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog.",
-   "reviewed_at": "2026-11-03"
+   "version": "README commit 4d42507bbcc180df831435c8ef2c29740b5216aa",
+   "primary_evidence": "https://github.com/storytold/lightcraft/blob/4d42507bbcc180df831435c8ef2c29740b5216aa/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
   },
   {
    "id": "pdfcraft-case",
    "scope": "full",
-   "version": "README commit 3709926f39039b57e71644227aa8b41b46bde940",
-   "primary_evidence": "https://github.com/storytold/pdfcraft/blob/3709926f39039b57e71644227aa8b41b46bde940/README.md",
-   "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog.",
-   "reviewed_at": "2026-11-03"
+   "version": "README commit 9bbcde4699c9cb472d9b579fb04e19c6b493d435",
+   "primary_evidence": "https://github.com/storytold/pdfcraft/blob/9bbcde4699c9cb472d9b579fb04e19c6b493d435/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
   },
   {
    "id": "photocraft-case",
    "scope": "full",
-   "version": "README snapshot 2026-11-02",
-   "primary_evidence": "https://github.com/storytold/photocraft/blob/b1b453a3180bb377a200a437ae54fa58a7af27ba/README.md",
-   "note": "Complete clean-room application with release packages and install/usage instructions (\"Get started\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
-   "reviewed_at": "2026-11-02"
+   "version": "README commit 37a01ca8746c121170644a07968d11263ef64407",
+   "primary_evidence": "https://github.com/storytold/photocraft/blob/37a01ca8746c121170644a07968d11263ef64407/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
   },
   {
    "id": "soundcraft-case",
    "scope": "full",
-   "version": "README commit b11ffe73ae2e9804377c6cb37be45edf3058ac0d",
-   "primary_evidence": "https://github.com/storytold/soundcraft/blob/b11ffe73ae2e9804377c6cb37be45edf3058ac0d/README.md",
-   "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog.",
-   "reviewed_at": "2026-11-03"
+   "version": "README commit 5fabf28c315ee72ad5c0234beeb35ec832c11476",
+   "primary_evidence": "https://github.com/storytold/soundcraft/blob/5fabf28c315ee72ad5c0234beeb35ec832c11476/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
   },
   {
    "id": "vectorcraft-case",
    "scope": "full",
-   "version": "README commit 999f4e6478e19b7139db70a3f2a0a5b0669ffcaf",
-   "primary_evidence": "https://github.com/storytold/vectorcraft/blob/999f4e6478e19b7139db70a3f2a0a5b0669ffcaf/README.md",
-   "note": "Full clean-room software reconstruction selected as a rea-tracker Class 0 candidate; release assets and demo are documented. Runtime not verified by this catalog.",
-   "reviewed_at": "2026-11-03"
+   "version": "README commit 6bde3c59a544873a32537b557e97a582dbb6e912",
+   "primary_evidence": "https://github.com/storytold/vectorcraft/blob/6bde3c59a544873a32537b557e97a582dbb6e912/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
   },
   {
    "id": "wordcraft-case",
    "scope": "full",
-   "version": "README snapshot 2026-11-02",
-   "primary_evidence": "https://github.com/storytold/wordcraft/blob/01d3665100ab0ae9000a7b8bf12ab00b830795fb/README.md",
-   "note": "Complete clean-room application with release packages and install/usage instructions (\"Quick start\"); ArtCraft Launcher can also install it. Runtime not verified by this catalog.",
-   "reviewed_at": "2026-11-02"
+   "version": "README commit 08afab50b6a1ed19f9af55bb9f74d18f5e17bfa0",
+   "primary_evidence": "https://github.com/storytold/wordcraft/blob/08afab50b6a1ed19f9af55bb9f74d18f5e17bfa0/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
   },
   {
    "id": "lego-island-portable-case",
