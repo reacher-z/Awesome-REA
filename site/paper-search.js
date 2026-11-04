@@ -64,7 +64,7 @@
   const readLayout = params => params.get("layout") === "cards" ? "cards" : "compact";
 
   // The static index is already compact. Cards bring only the scope panel out;
-  // full authors, original titles, citations and sources remain in native details.
+  // authors, original titles and citations remain in native details.
   function initializeLayout(document, browser, cards, afterChange) {
     const control = document.getElementById("paper-layout");
     if (!control) return null;
@@ -143,14 +143,42 @@
   }
   if (typeof document !== "undefined") initializeCopyLinks(document, window);
 
-  function initialize(document, browser) {
+  const searchControls = document => Object.fromEntries(KEYS.map(key => [key, document.getElementById("paper-" + (key === "q" ? "query" : key))]));
+
+  // The search index is a content-addressed file under /assets/ that the page preloads; this is the request it matches.
+  async function requestIndex(url, browser) {
+    const response = await browser.fetch(url);
+    if (!response.ok) throw new Error("Paper search index HTTP " + response.status);
+    return response.json();
+  }
+
+  // Layout applies at once; search starts when the index arrives. Resolves to whether search is available.
+  async function initialize(document, browser, request = requestIndex) {
     const form = document.getElementById("paper-search");
     if (!form) return false;
+    const cards = [...document.querySelectorAll("[data-paper-id]")];
+    let afterLayout = () => {};
+    const applyLayout = initializeLayout(document, browser, cards, () => afterLayout());
+    const source = form.dataset.searchIndex;
+    // A visitor may type or pick a filter before the index arrives; those controls then win over the address.
+    const edited = new Set();
+    for (const [key, control] of Object.entries(searchControls(document))) if (control) control.addEventListener(key === "q" ? "input" : "change", () => edited.add(key));
+    // Enter must not reload the page while the index is on its way; the query applies once it arrives.
+    form.addEventListener("submit", event => event.preventDefault());
+    let data;
+    try { if (!source) throw new Error("No paper search index"); data = await request(source, browser); } catch (_) { data = null; }
+    const search = start(document, browser, data, {cards, applyLayout, edited});
+    if (search) afterLayout = search.updateLanguageLink;
+    return Boolean(search);
+  }
+
+  // Binds the controls to the cards once `data` (the parsed index) is in hand; returns null and hides the form if it is unusable.
+  function start(document, browser, data, {cards, applyLayout = null, edited = new Set()}) {
+    const form = document.getElementById("paper-search");
+    if (!form) return null;
     // The form is laid out from the start so revealing it cannot shift the page; a failed check hides its inert controls.
-    const fail = () => { form.hidden = true; return false; };
-    const data = document.getElementById("paper-search-data");
-    if (!data) return fail();
-    const controls = Object.fromEntries(KEYS.map(key => [key, document.getElementById("paper-" + (key === "q" ? "query" : key))]));
+    const fail = () => { form.hidden = true; return null; };
+    const controls = searchControls(document);
     const count = document.getElementById("paper-results");
     const empty = document.getElementById("paper-empty");
     const clear = document.getElementById("paper-clear");
@@ -158,8 +186,7 @@
     const emptyReset = document.getElementById("paper-empty-reset");
     if (!count || !empty || !clear || !emptyReset || Object.values(controls).some(control => !control)) return fail();
     let records;
-    try { records = readRecords(JSON.parse(data.textContent)); } catch (_) { return fail(); }
-    const cards = [...document.querySelectorAll("[data-paper-id]")];
+    try { records = readRecords(data); } catch (_) { return fail(); }
     const cardMap = new Map(cards.map(card => [card.dataset.paperId, card]));
     if (cards.length !== records.length || cardMap.size !== records.length || records.some(paper => !cardMap.has(paper.id))) return fail();
     const sections = [...document.querySelectorAll("[data-paper-section]")];
@@ -241,18 +268,23 @@
     clear.addEventListener("click", reset);
     emptyReset.addEventListener("click", reset);
     if (languageLink) languageLink.addEventListener("click", updateLanguageLink);
-    const applyLayout = initializeLayout(document, browser, cards, updateLanguageLink);
     browser.addEventListener("popstate", () => {
       composing = false;
       state = readState(new URL(browser.location.href).searchParams, allowed);
       showState(); render();
       if (applyLayout) applyLayout(readLayout(new URL(browser.location.href).searchParams));
     });
+    const early = [...edited].map(key => [key, controls[key].value]);
     showState();
+    if (early.length) {
+      for (const [key, value] of early) controls[key].value = value;
+      update();
+      return {updateLanguageLink};
+    }
     const canonicalState = stateURL(browser.location.href, state);
     if (canonicalState.href !== browser.location.href) browser.history.replaceState(null, "", canonicalState);
     render();
-    return true;
+    return {updateLanguageLink};
   }
 
   // Browser-local shortlist shared with the homepage (app.js): only "type:id" keys, kept in this browser and never sent.
@@ -310,7 +342,7 @@
     return true;
   }
 
-  if (typeof module === "object" && module.exports) module.exports = {readRecords, allowedValues, readState, matches, stateURL, initialize, initializeLayout, readLayout, initializeShortlist, readShortlist};
+  if (typeof module === "object" && module.exports) module.exports = {readRecords, allowedValues, readState, matches, stateURL, initialize, start, initializeLayout, readLayout, initializeShortlist, readShortlist};
   if (typeof document !== "undefined") initialize(document, window);
   if (typeof document !== "undefined") initializeShortlist(document, window);
 }());

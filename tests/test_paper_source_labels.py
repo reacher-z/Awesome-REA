@@ -1,4 +1,4 @@
-"""/papers/ rows label primary sources exactly as the paper detail pages do, keeping every href in order."""
+"""Paper detail pages label primary sources and keep every href in order; /papers/ rows link and count them."""
 from copy import deepcopy
 from html import unescape
 import json
@@ -44,22 +44,20 @@ class PaperSourceLabelTests(unittest.TestCase):
                     'https://gitlab.com/example/world-models/-/blob/' + REVISION + '/README.md'):
             self.assertEqual(source_label(url, 'en'), (url, ''))
 
-    def test_directory_rows_match_detail_pages_and_keep_every_href_in_order(self):
+    def test_detail_pages_label_sources_and_keep_every_href_in_order(self):
         record = paper()
         with TemporaryDirectory() as tmp:
             root = Path(tmp)
             build_entry_pages(root, [], [record])
             for language in ('en', 'zh'):
-                card = paper_card(record, language, False)
-                items = source_items(card)
+                detail = (root / entry_path('paper', record['id'], language).lstrip('/') / 'index.html').read_text()
+                items = source_items(detail)
                 hrefs = [unescape(re.search(r'href="([^"]+)"', item)[1]) for item in items]
                 self.assertEqual(hrefs, record['evidence_urls'])
                 for item in items:
                     href = re.search(r'href="([^"]+)"', item)[1]
                     self.assertIn(f'title="{href}"', item)
                     self.assertIn('target="_blank" rel="noopener"', item)
-                detail = (root / entry_path('paper', record['id'], language).lstrip('/') / 'index.html').read_text()
-                self.assertEqual(items, source_items(detail))
                 self.assertIn('>src/agent.py#L10-L20</a>', items[0])
                 self.assertIn('GitHub · example/world-models · ' + ('修订' if language == 'zh' else 'Revision'), items[0])
                 self.assertIn('>' + OTHER + '</a>', items[1])
@@ -69,25 +67,41 @@ class PaperSourceLabelTests(unittest.TestCase):
                 separator = '，' if language == 'zh' else ', '
                 self.assertIn(f'aria-label="src/agent.py#L10-L20{separator}GitHub example/world-models{separator}{revision} e17e787"', items[0])
                 self.assertNotIn('aria-label', items[1])
+                # The /papers/ row links that list instead of repeating it, and counts what it holds.
+                card = paper_card(record, language, False)
+                self.assertIsNone(re.search(r'(?:Primary sources|一手来源)</h[24]>', card))
+                for url in record['evidence_urls']:
+                    self.assertNotIn(url, card)
+                self.assertIn(f'href="{entry_path("paper", record["id"], language)}#entry-sources"', card)
+                self.assertIn('id="entry-sources"', detail)
+                self.assertIn('3 个来源' if language == 'zh' else '3 sources', card)
 
-    def test_evidence_link_names_are_distinct_across_the_paper_directory(self):
+    def test_evidence_link_names_are_distinct_on_each_detail_page(self):
         papers = json.loads((ROOT / 'data/papers.json').read_text())
-        for language in ('en', 'zh'):
-            destinations = {}
-            for record in papers:
-                for item in source_items(paper_card(record, language, False)):
-                    href = unescape(re.search(r'href="([^"]+)"', item)[1])
-                    named = re.search(r'aria-label="([^"]+)"', item)
-                    name = unescape(named[1]) if named else unescape(re.search(r'>([^<]+)</a>', item)[1])
-                    self.assertTrue(name.startswith(unescape(re.search(r'>([^<]+)</a>', item)[1])))
-                    destinations.setdefault(name, set()).add(href)
-            self.assertEqual([name for name, hrefs in destinations.items() if len(hrefs) > 1], [])
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            build_entry_pages(root, [], papers)
+            for language in ('en', 'zh'):
+                for record in papers:
+                    destinations = {}
+                    for item in source_items((root / entry_path('paper', record['id'], language).lstrip('/') / 'index.html').read_text()):
+                        href = unescape(re.search(r'href="([^"]+)"', item)[1])
+                        named = re.search(r'aria-label="([^"]+)"', item)
+                        name = unescape(named[1]) if named else unescape(re.search(r'>([^<]+)</a>', item)[1])
+                        self.assertTrue(name.startswith(unescape(re.search(r'>([^<]+)</a>', item)[1])))
+                        destinations.setdefault(name, set()).add(href)
+                    self.assertEqual([name for name, hrefs in destinations.items() if len(hrefs) > 1], [], record['id'])
 
-    def test_repeated_urls_stay_in_the_directory_list(self):
-        # The detail page lists each source once; the directory keeps the record's list untouched.
+    def test_repeated_urls_are_listed_and_counted_once(self):
+        # The detail page lists each source once, and the directory row counts the sources it lists.
         record = paper(evidence_urls=[PINNED, OTHER, PINNED])
-        items = source_items(paper_card(record, 'en', False))
-        self.assertEqual([unescape(re.search(r'href="([^"]+)"', item)[1]) for item in items], record['evidence_urls'])
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            build_entry_pages(root, [], [record])
+            detail = (root / entry_path('paper', record['id'], 'en').lstrip('/') / 'index.html').read_text()
+        self.assertEqual([unescape(re.search(r'href="([^"]+)"', item)[1]) for item in source_items(detail)], [PINNED, OTHER])
+        self.assertIn('>2 sources · checked', paper_card(record, 'en', False))
+        self.assertIn('>1 source · checked', paper_card(paper(evidence_urls=[OTHER, OTHER]), 'en', False))
 
 
 if __name__ == '__main__':

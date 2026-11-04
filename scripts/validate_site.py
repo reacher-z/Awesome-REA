@@ -5,6 +5,7 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import sys
 from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
@@ -12,7 +13,8 @@ from asset_paths import ASSET_PATH, FINGERPRINTED_SUFFIXES, UNHASHED_STYLESHEETS
 from build_entry_pages import entry_path, feedback_urls, matching_entries, section_siblings
 from build_site import catalog_index
 from build_manifest import read_build_manifest
-from build_paper_pages import bibtex_text, paper_entity_id, papers_newest_first
+from build_paper_pages import (LISTING_SIZE_BUDGET, SEARCH_FIELDS, bibtex_text, formatted_date, listing_size_warnings,
+                               paper_entity_id, papers_newest_first)
 from validate_papers import read_papers
 from artifact_links import with_artifact_links, with_curated_labels
 from source_descriptions import description_fallback
@@ -501,12 +503,15 @@ def validate_fingerprinted_assets(output):
     for path in sorted(output.rglob('*.html')):
         page = PageResources(path.read_text(encoding='utf-8'))
         where = '/' + path.relative_to(output).as_posix()
-        for href in page.stylesheets + page.scripts:
+        # Preloaded /assets/ files, such as the paper search index, are content-addressed as well.
+        preloaded = [preload['href'] for preload in page.preloads if urlsplit(preload['href']).path.startswith('/assets/')]
+        for href in page.stylesheets + page.scripts + preloaded:
             target = urlsplit(urljoin(ORIGIN + where, href))
             if target.netloc != urlsplit(ORIGIN).netloc or target.path.lstrip('/') in UNHASHED_STYLESHEETS:
                 continue
             match = ASSET_PATH.fullmatch(target.path)
             assert match and not target.query, f'Unhashed stylesheet or script on {where}: {href}'
+            assert href in preloaded or match['suffix'] in FINGERPRINTED_SUFFIXES, f'Stylesheets and scripts need a .css or .js asset: {href} on {where}'
             if target.path not in checked:
                 file = output / target.path.lstrip('/')
                 assert file.is_file() and digest(file.read_bytes()) == match['digest'], f'Asset name does not match its content: {target.path}'
@@ -694,31 +699,32 @@ def validate_paper_outputs(output, pages, source_papers=None):
         assert len(listings) == 1, f'Expected one paper ItemList: {route}'
         items = listings[0]['itemListElement']
         assert listings[0]['numberOfItems'] == len(expected), f'Paper ItemList source count mismatch: {route}'
-        # Each item names the paper's detail page and the entity that page also defines.
+        # Each item names the paper's detail page, its localized title and the entity that page defines.
         assert items == [
             {'@type': 'ListItem', 'position': position, 'url': ORIGIN + route + identifier + '/',
+             'name': expected[identifier]['title_zh' if language == 'zh' else 'title'],
              'item': {'@id': paper_entity_id(expected[identifier], language, ORIGIN)}}
             for position, identifier in enumerate(page.paper_ids, 1)
         ], f'Paper ItemList differs from visible paper order or identities: {route}'
-        articles = list(schema_entities(page.schemas, 'ScholarlyArticle'))
-        by_id = {article.get('@id'): article for article in articles}
-        assert len(articles) == len(by_id) == len(expected) and set(by_id) == {paper_entity_id(p, language, ORIGIN) for p in built}, f'ScholarlyArticle coverage mismatch: {route}'
+        # The full ScholarlyArticle data is published on the entry pages only (validate_entry_outputs).
+        assert not list(schema_entities(page.schemas, 'ScholarlyArticle')), f'ScholarlyArticle data belongs on the entry pages: {route}'
         for identifier in page.paper_ids:
             paper = expected[identifier]
-            article = expected_paper_schema(paper, language)
-            assert by_id[article['@id']] == article, f'ScholarlyArticle fields differ from source: {identifier} ({language})'
             text = normalize(' '.join(page.paper_texts[identifier]))
+            # Sources, publication details and review notes are on the entry page; the card counts the sources.
+            sources, checked = len(dict.fromkeys(paper['evidence_urls'])), paper['verified_at'][:10]
+            summary = (f'{sources} 个来源 · 复核于 {checked}' if language == 'zh'
+                       else f'{sources} source{"" if sources == 1 else "s"} · checked {checked}')
             phrases = [paper['title_zh'] if language == 'zh' else paper['title'],
                        '; '.join(paper['authors']), paper['venue'], statuses[paper['publication_status']][language == 'zh'],
-                       paper[f'description_{language}'], paper[f'scope_limitations_{language}'], paper[f'why_fits_{language}'],
-                       paper['date_basis_zh' if language == 'zh' else 'date_basis'],
-                       paper['metadata_notes_zh' if language == 'zh' else 'metadata_notes']]
+                       paper[f'description_{language}'], paper[f'scope_limitations_{language}'], summary]
             if language == 'zh':
                 phrases.append(paper['title'])
             assert all(normalize(phrase) in text for phrase in phrases), f'Visible paper text differs from source: {identifier} ({language})'
-            links = {paper['url'], paper['pdf_url'], *paper['evidence_urls'], f'/papers/citations/{identifier}.bib'}
+            links = {paper['url'], paper['pdf_url'], f'/papers/citations/{identifier}.bib',
+                     f'{route}{identifier}/', f'{route}{identifier}/#entry-sources'}
             links.update(paper[field] for field in ('code_url', 'project_url') if paper.get(field))
-            assert links <= set(page.paper_links[identifier]), f'Visible paper source or citation link missing: {identifier} ({language})'
+            assert set(page.paper_links[identifier]) == links, f'Paper card links differ from its paper, citation and entry-page links: {identifier} ({language})'
     citations = output / 'papers' / 'citations'
     assert {path.name for path in citations.glob('*.bib')} == {identifier + '.bib' for identifier in expected}, 'BibTeX file coverage differs from the bibliography'
     entries = []
@@ -728,9 +734,41 @@ def validate_paper_outputs(output, pages, source_papers=None):
         entries.append(entry)
     bibliography = '% Generated from source-reviewed metadata. Author names retain their listed order without inferred surname parsing.\n\n' + ''.join(entry + '\n' for entry in entries)
     assert (output / 'papers' / 'references.bib').read_text(encoding='utf-8') == bibliography, 'Combined BibTeX differs from the source bibliography'
+    validate_paper_search_index(output, [expected[identifier] for identifier in pages['/papers/'].paper_ids])
     headers = (output / '_headers').read_text(encoding='utf-8')
     for route in ('/papers/references.bib', '/papers/citations/*.bib'):
         assert re.search(rf'(?m)^{re.escape(route)}\n[ \t]+Content-Type: application/x-bibtex; charset=utf-8[ \t]*$', headers), f'BibTeX downloads require an explicit UTF-8 content type: {route}'
+
+
+def validate_paper_search_index(output, ordered):
+    """Both paper listings preload and name one content-addressed search index that holds SEARCH_FIELDS in card order."""
+    output = Path(output)
+    expected = {'schema_version': 1, 'papers': [{key: paper.get(key) for key in SEARCH_FIELDS} for paper in ordered]}
+    hrefs = set()
+    for route in ('papers/index.html', 'zh/papers/index.html'):
+        html = (output / route).read_text(encoding='utf-8')
+        page = PageResources(html)
+        assert 'id="paper-search-data"' not in html, f'The paper search index is a fetched file, not inline JSON: /{route}'
+        forms = re.findall(r'<form id="paper-search"[^>]*\bdata-search-index="([^"]+)"', html)
+        assert len(forms) == 1, f'The paper search form must name its index: /{route}'
+        href = forms[0]
+        match = ASSET_PATH.fullmatch(href)
+        assert match and match['stem'] == 'paper-search-index' and match['suffix'] == '.json', f'Unhashed paper search index on /{route}: {href}'
+        # paper-search.js fetches exactly this URL, so the preload is reused instead of downloading it twice.
+        assert page.preloads == [{'as': 'fetch', 'href': href, 'cors': True}], f'Paper listings preload one CORS fetch of their search index: /{route} has {page.preloads}'
+        data = (output / href.lstrip('/')).read_bytes()
+        assert digest(data) == match['digest'], f'Asset name does not match its content: {href}'
+        assert json.loads(data) == expected, f'The paper search index differs from the listed papers or their search fields: {href}'
+        hrefs.add(href)
+    assert len(hrefs) == 1, 'Both paper listings share one search index'
+
+
+def report_listing_sizes(output):
+    """Print both paper listings' sizes and, above LISTING_SIZE_BUDGET, a warning; size never fails validation."""
+    sizes = ', '.join(f'{route} {(Path(output) / route.lstrip("/") / "index.html").stat().st_size:,} bytes' for route in ('/papers/', '/zh/papers/'))
+    print(f'Paper listings: {sizes} (advisory budget {LISTING_SIZE_BUDGET:,}).')
+    for warning in listing_size_warnings(output):
+        print(f'Warning: {warning}', file=sys.stderr)
 
 
 def validate_listed_badge(output):
@@ -1168,7 +1206,7 @@ def validate_entry_outputs(pages, resources, papers):
                 accessible = f'{label}：{title}' if language == 'zh' else f'{label}: {title}'
                 assert normalize(' '.join(link['text'])) == label and link['aria_label'] == accessible, f'Detail link label must identify its localized entry: {expected}'
                 upstream = ({record['url'], record['evidence_url'], expected + '#entry-requirements'} if kind == 'resource'
-                            else {record['url'], record['pdf_url']})
+                            else {record['url'], record['pdf_url'], expected + '#entry-sources'})
                 recorded_links = listing.record_links if kind == 'resource' else listing.paper_links
                 assert upstream <= set(recorded_links.get(link['id'], [])), f'External listing title/source links missing: {expected}'
 
@@ -1228,11 +1266,17 @@ def validate_entry_outputs(pages, resources, papers):
             assert not {'author', 'creator', 'datePublished', 'license', 'aggregateRating', 'review'}.intersection(entity), f'Unsupported resource schema claim: {route}'
         else:
             name = record['title_zh'] if language == 'zh' else record['title']
+            # /papers/ cards link here for these: why the paper fits, publication dates and their source,
+            # identifiers, the reviewed arXiv version and the review notes, besides the sources themselves.
             phrases = [record['title_zh'] if language == 'zh' else record['title'],
                        '; '.join(record['authors']), record['venue'], record[f'description_{language}'],
                        record[f'scope_limitations_{language}'], record[f'why_fits_{language}'],
                        record['date_basis_zh' if language == 'zh' else 'date_basis'],
-                       record['metadata_notes_zh' if language == 'zh' else 'metadata_notes']]
+                       record['metadata_notes_zh' if language == 'zh' else 'metadata_notes'],
+                       formatted_date(record.get('publication_date'), language, record['year']),
+                       *(record[field] for field in ('doi', 'arxiv_id', 'arxiv_version_reviewed') if record.get(field))]
+            if record.get('first_arxiv_date'):
+                phrases.append(formatted_date(record['first_arxiv_date'], language))
             if language == 'zh':
                 phrases.append(record['title'])
             links = {record['url'], record['pdf_url'], *record['evidence_urls'], f'/papers/citations/{identifier}.bib'}
@@ -1302,6 +1346,7 @@ def main():
     validate_resource_listing(pages, resources)
     validate_requirements_label()
     validate_paper_outputs(OUTPUT, pages)
+    report_listing_sizes(OUTPUT)
     validate_entry_outputs(pages, resources, papers)
     validate_feeds(OUTPUT, pages, resources, papers)
     validate_case_outputs(pages, resources)
