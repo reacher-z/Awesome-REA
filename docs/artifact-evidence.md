@@ -24,7 +24,7 @@ The example wording is taken from existing records.
 | The authors link public code | The author-provided link in `code_url`; the commit you reviewed | “The paper links the public code repository directly.” | `paper-dashboard2code` |
 | Source is public but has no license file | That reuse terms are unstated; no license inferred from visibility | “The repository has no license file, so no reuse license is implied.” | `paper-ble-automata-learning` |
 | Code is announced or promised | `code_url: null`; the announcement and where it appears | “the official page still labels code as coming soon.” | `paper-sprite-game-ui` |
-| The named location does not provide the code | `code_url: null`; what the location actually contains | “code_url is therefore null, and no public implementation is claimed.” | `paper-dynpre` |
+| The named location does not provide the code | `code_url: null`; what the location actually contains | “No code link is therefore listed, and no public implementation is claimed.” | `paper-dynpre` |
 | Only a hosted demo or showcase is available | The page, described as a demo rather than a benchmark release | “The project link is a showcase with demos, not a verified release of the full evaluation framework.” | `paper-gamereplica` |
 | Access is gated or on request | The public access notice and its conditions; gated files left unopened | “The linked dataset requires accepting access conditions and sharing contact information.” | `paper-dashboard2code` |
 | A repository exists but the authors do not link it | `code_url: null`; why the repository is not recorded | “is not linked from the paper, so it is not recorded as author-provided code.” | `paper-binmetric` |
