@@ -144,7 +144,7 @@
 - [ITAYC0HEN/A-journey-into-Radare2](https://github.com/ITAYC0HEN/A-journey-into-Radare2) — 来自 https<span>:</span>//www<span>.</span>megabeets.net 的一系列 radare2 框架教程。 **[528 星标]**
 - [TouchFriend/BiliBiliMApp](https://github.com/TouchFriend/BiliBiliMApp) — 一个通过 iOS 逆向分析实现的无广告版哔哩哔哩客户端，感谢使用，欢迎 Star。 **[518 星标]**
 - [0sec-labs/0](https://github.com/0sec-labs/0) — 支持多人协作的 AI 进攻性安全操作系统：开放、可自我改进、可扩展。发现、验证并修复漏洞。 **[513 星标]**
-- [airbus-cert/Yagi](https://github.com/airbus-cert/Yagi) — 又一个面向 IDA 的 Ghidra 集成。 **[511 星标]**
+- [airbus-cert/Yagi](https://github.com/airbus-cert/Yagi) — 又一个面向 IDA 的 Ghidra 集成。 **[511 星标]** · 精选：[Yagi：IDA 中的 Ghidra 反编译器](https://awesomerea.org/zh/resources/yagi-ghidra-decompiler-for-ida/)
 - [gfx-rs/rspirv](https://github.com/gfx-rs/rspirv) — SPIR-V 模块处理功能的 Rust 实现。 **[504 星标]**
 - [hasherezade/ida\_ifl](https://github.com/hasherezade/ida_ifl) — IFL：交互式函数列表（IDA Pro 插件）。 **[502 星标]**
 - [grayhatacademy/ghidra\_scripts](https://github.com/grayhatacademy/ghidra_scripts) — 将 devttyS0 的 IDA 插件移植到 Ghidra 插件框架，并提供新插件。 **[498 星标]**

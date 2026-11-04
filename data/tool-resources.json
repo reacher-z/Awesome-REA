@@ -24839,5 +24839,37 @@
       "https://github.com/google/enjarify/releases/tag/1.0.3",
       "https://github.com/Storyyeller/enjarify/tree/6364dfb30f7862873b84ec5fad1d1286c526ba0b"
     ]
+  },
+  {
+    "id": "yagi-ghidra-decompiler-for-ida",
+    "name": "Yagi",
+    "url": "https://github.com/airbus-cert/Yagi",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Airbus CERT plugin that embeds Ghidra's native decompiler in IDA Pro and IDA Free: pressing F3 on a function shows Ghidra's C output inside IDA, and edits made there, covering global symbols such as function prototypes and the names and types of stack and register variables, are saved to the IDA database. The README lists x86, x86-64, ARM, AArch64, PowerPC, MIPS, SPARC, AVR8, 6502, Z80 and eBPF as supported, while other Ghidra processors such as Dalvik, JVM, RISC-V and 68000 are not yet enabled.",
+    "description_zh": "Airbus CERT 开发的插件，把 Ghidra 的原生反编译器嵌入 IDA Pro 和 IDA Free：在函数上按 F3 即可在 IDA 中查看 Ghidra 生成的 C 代码，在其中所做的修改（包括函数原型等全局符号，以及栈变量和寄存器变量的名称与类型）会保存到 IDA 数据库。README 列出已支持 x86、x86-64、ARM、AArch64、PowerPC、MIPS、SPARC、AVR8、6502、Z80 和 eBPF，而 Dalvik、JVM、RISC-V、68000 等其他 Ghidra 处理器尚未启用。",
+    "evidence_url": "https://github.com/airbus-cert/Yagi/blob/6fc4787bf3dcb8480be5bf990662b30bf9130d53/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Inactive since its latest release, v1.5.0 (2022-08-04), which adds eBPF and IDA 7.7 support and ships Windows MSI installers for IDA 7.6, IDA 7.7 and IDA Freeware; the last Linux installers (.sh and .tar.gz for IDA 7.5, 7.6 and Freeware) are in v1.4.0 (2021-12-20). No builds for IDA 8 or later are published, and compatibility with current IDA releases was not tested. The default branch is main; an older master branch stops in 2021.",
+      "Source builds need a recursive clone, whose submodules are Airbus CERT's Ghidra fork on its fix-memory-access-violation branch (pinned at the Ghidra 10.1 release commit), eBPF-for-Ghidra and cylance/eBPF_processor. They also need CMake 3.11+, a C++ compiler (Visual Studio on Windows), flex and bison for the SLEIGH grammar, WiX for the Windows installer, and the Hex-Rays IDA SDK matching the user's IDA version, which the repository does not include.",
+      "The workflows build on a self-hosted Windows runner against a locally installed IDA 7.6 SDK. Their googletest unit tests decompile machine-code byte arrays written into the test sources for x86 (16-, 32- and 64-bit), ARM, MIPS, PowerPC, SPARC, 6502 and Z80, using mocked IDA loader, symbol and type interfaces. README TODOs include enum types, AArch64 function-end rules and changing constant types.",
+      "Apache-2.0; Ghidra's decompiler keeps its own Apache-2.0 terms, and IDA and its SDK are Hex-Rays products under their own licenses. Nothing was built or run in this review; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/airbus-cert/Yagi/blob/6fc4787bf3dcb8480be5bf990662b30bf9130d53/CHANGELOG.md",
+      "https://github.com/airbus-cert/Yagi/blob/6fc4787bf3dcb8480be5bf990662b30bf9130d53/.gitmodules",
+      "https://github.com/airbus-cert/Yagi/blob/6fc4787bf3dcb8480be5bf990662b30bf9130d53/CMakeLists.txt",
+      "https://github.com/airbus-cert/Yagi/tree/6fc4787bf3dcb8480be5bf990662b30bf9130d53/tests",
+      "https://github.com/airbus-cert/Yagi/blob/6fc4787bf3dcb8480be5bf990662b30bf9130d53/.github/workflows/unittests.yml",
+      "https://github.com/airbus-cert/Yagi/blob/6fc4787bf3dcb8480be5bf990662b30bf9130d53/LICENSE",
+      "https://github.com/airbus-cert/Yagi/releases/tag/v1.5.0",
+      "https://github.com/airbus-cert/Yagi/releases/tag/v1.4.0"
+    ]
   }
 ]

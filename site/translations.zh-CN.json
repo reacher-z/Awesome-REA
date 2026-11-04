@@ -7943,5 +7943,14 @@
       "不会转换源文件属性、行号和注解等可选元数据；README 还提到少数刻意构造的情况受 Android 或 Java 自身限制而无法转换。输出的是字节码，要阅读源码需另用 Java 反编译器。runtests.py 会转换随附的测试夹具（tests/test1 至 tests/test7 中的小型 classes.dex 及其 smali 源码和预期输出），加入 tests/stubs 中的小型 Android API 桩类，再用 java 运行结果。",
       "Apache-2.0 许可；README 声明它不是 Google 的官方产品。本次审阅未安装或运行；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "yagi-ghidra-decompiler-for-ida": {
+    "name": "Yagi：IDA 中的 Ghidra 反编译器",
+    "requirements": [
+      "自最新版本 v1.5.0（2022-08-04）后即无更新；该版本新增 eBPF 和 IDA 7.7 支持，提供适用于 IDA 7.6、IDA 7.7 和 IDA Freeware 的 Windows MSI 安装包；最后的 Linux 安装包（适用于 IDA 7.5、7.6 和 Freeware 的 .sh 与 .tar.gz）见 v1.4.0（2021-12-20）。没有发布适用于 IDA 8 及以后版本的构建，也未测试与当前 IDA 版本的兼容性。默认分支为 main；较旧的 master 分支停在 2021 年。",
+      "从源码构建需要递归克隆，子模块包括 Airbus CERT 维护的 Ghidra 分支（fix-memory-access-violation 分支，固定在 Ghidra 10.1 发布提交）、eBPF-for-Ghidra 和 cylance/eBPF_processor。另外需要 CMake 3.11+、C++ 编译器（Windows 上为 Visual Studio）、用于解析 SLEIGH 语法的 flex 和 bison、用于生成 Windows 安装包的 WiX，以及与使用者 IDA 版本对应的 Hex-Rays IDA SDK；仓库不包含该 SDK。",
+      "工作流在自托管的 Windows 运行器上，基于本地安装的 IDA 7.6 SDK 构建。其 googletest 单元测试通过模拟的 IDA 加载器、符号和类型接口，反编译直接写在测试源码中的机器码字节数组，覆盖 x86（16、32、64 位）、ARM、MIPS、PowerPC、SPARC、6502 和 Z80。README 的待办事项包括枚举类型、AArch64 函数结尾规则以及修改常量类型。",
+      "Apache-2.0 许可；Ghidra 反编译器沿用其自身的 Apache-2.0 条款，IDA 及其 SDK 是 Hex-Rays 的产品，各有许可条款。本次审阅未构建或运行；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
