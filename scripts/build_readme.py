@@ -509,6 +509,7 @@ AGENT_EVALUATION_PAPERS = {
     'paper-cybench',
     'paper-ctf-dojo',
     'paper-cyber-zero',
+    'paper-reveree',
 }
 
 
