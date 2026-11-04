@@ -12817,5 +12817,50 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-malware-obfuscation-taxonomy",
+    "title": "DEVELOPMENT OF A MULTIDIMENSIONAL FACETED TAXONOMY OF MALWARE OBFUSCATION TECHNIQUES",
+    "authors": [
+      "Nazarii Chetvertukha",
+      "Viktor Otenko"
+    ],
+    "year": 2026,
+    "publication_date": "2026-06-25",
+    "date_precision": "day",
+    "date_basis": "Crossref issued date",
+    "venue": "Cybersecurity Education Science Technique",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.28925/2663-4023.2026.33.1254",
+    "url": "https://doi.org/10.28925/2663-4023.2026.33.1254",
+    "pdf_url": "https://csecurity.kubg.edu.ua/index.php/journal/article/download/1254/1079",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This article develops a multidimensional faceted taxonomy of malware obfuscation techniques. Its abstract says existing classifications do not jointly describe classical obfuscation and newer variants.",
+    "description_zh": "本文建立恶意软件混淆技术的多维分面分类。摘要认为现有分类没有同时描述经典混淆和较新的变体。",
+    "scope_limitations_en": "The fetched PDF is primarily in Ukrainian. The English title, author names, and date come from Crossref, and the English abstract statement above is the Crossref abstract. The taxonomy was not reapplied to a malware corpus.",
+    "scope_limitations_zh": "获取的 PDF 主要是乌克兰文。英文题名、作者姓名和日期来自 Crossref，上面的英文摘要陈述来自 Crossref 摘要。分类法没有在恶意软件语料上重新套用。",
+    "why_fits_en": "A taxonomy of malware obfuscation describes transformations that binary deobfuscation and reverse engineering have to undo.",
+    "why_fits_zh": "恶意软件混淆的分类描述的是二进制反混淆和逆向工程需要还原的变换。",
+    "evidence_urls": [
+      "https://csecurity.kubg.edu.ua/index.php/journal/article/download/1254/1079",
+      "https://api.crossref.org/works/10.28925/2663-4023.2026.33.1254",
+      "https://doi.org/10.28925/2663-4023.2026.33.1254"
+    ],
+    "metadata_notes": "The Crossref title is stored in its original uppercase form.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "恶意软件混淆技术的多维分面分类",
+    "date_basis_zh": "日期取自 Crossref 登记的出版日期",
+    "metadata_notes_zh": "Crossref 题名按原始的全大写形式保存。"
   }
 ]

@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (111)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -64,6 +64,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Lifting Optimized Binaries to Canonical Compiler IR via Structure-Aware Retrieval and Iterative Verification**](https://aclanthology.org/2026.acl-long.527/) - BRIDGE lifts stripped, optimized x86-64 and ARM64 functions, given as llvm-objdump disassembly, to LLVM IR. <sub>ACL 2026 · Conference paper · Xiaoao Zhu et al. · [PDF](https://aclanthology.org/2026.acl-long.527.pdf) · [Code](https://github.com/Azhu-c/BRIDGE-rag) · [Full entry](https://awesomerea.org/papers/paper-bridge-lifting/)</sub>
 - [**Fool Me If You Can: On the Robustness of Binary Code Similarity Detection Models against Semantics-Preserving Transformations**](https://dl.acm.org/doi/10.1145/3797116) - The paper builds asmFooler to test whether learned binary code similarity detection (BCSD) models keep matching functions after semantics-preserving changes. <sub>Proceedings of the ACM on Software Engineering (FSE 2026) · Journal article · Jiyong Uhm et al. · [PDF](https://arxiv.org/pdf/2602.12681v1) · [Full entry](https://awesomerea.org/papers/paper-asmfooler/)</sub>
 - [**MirrorCode: AI can rebuild entire programs from behavior alone**](https://arxiv.org/abs/2606.30182) - Tests reimplementation of 25 command-line programs using execute-only reference access, documentation and visible examples. <sub>arXiv 2026 · Preprint · Tom Adamczewski et al. · [PDF](https://arxiv.org/pdf/2606.30182v2) · [Code](https://github.com/epoch-research/MirrorCode) · [Full entry](https://awesomerea.org/papers/paper-mirrorcode/)</sub>
+- [**DEVELOPMENT OF A MULTIDIMENSIONAL FACETED TAXONOMY OF MALWARE OBFUSCATION TECHNIQUES**](https://doi.org/10.28925/2663-4023.2026.33.1254) - This article develops a multidimensional faceted taxonomy of malware obfuscation techniques. <sub>Cybersecurity Education Science Technique 2026 · Journal article · Nazarii Chetvertukha et al. · [PDF](https://csecurity.kubg.edu.ua/index.php/journal/article/download/1254/1079) · [Full entry](https://awesomerea.org/papers/paper-malware-obfuscation-taxonomy/)</sub>
 - [**SoK: AI-Augmented Binary Reversing**](https://arxiv.org/abs/2606.17398) - A systematization-of-knowledge survey of machine-learning, LLM and agentic approaches to binary reversing. <sub>arXiv 2026 · Preprint · Yujeong Kwon et al. · [PDF](https://arxiv.org/pdf/2606.17398v2) · [Full entry](https://awesomerea.org/papers/paper-sok-ai-binary-reversing/)</sub>
 - [**Binary Decompilation LLM with Feedback-Driven Multi-Turn Refinement**](https://arxiv.org/abs/2606.16162) - AutoDecompiler trains function-level decompilation models to revise assembly- or pseudocode-derived outputs using compilation, execution and I/O feedback. <sub>arXiv 2026 · Preprint · Peipei Liu et al. · [PDF](https://arxiv.org/pdf/2606.16162v2) · [Code](https://zenodo.org/records/23120286) · [Full entry](https://awesomerea.org/papers/paper-autodecompiler/)</sub>
 - [**LLM Agent-Assisted Reverse Engineering with Quantitative Readability Metrics**](https://arxiv.org/abs/2606.06838) - Uses a composite Quantitative Readability Score (QRS) to guide agents refining decompiled C. <sub>arXiv 2026 · Preprint · Neil Archibald et al. · [PDF](https://arxiv.org/pdf/2606.06838v1) · [Full entry](https://awesomerea.org/papers/paper-qrs-readability/)</sub>
