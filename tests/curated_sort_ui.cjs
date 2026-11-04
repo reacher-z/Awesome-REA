@@ -82,14 +82,14 @@ const tests = {
     }
   },
   async controlRoundTripsThroughTheURL() {
-    const app = application('?q=fixture&target=app&kind=tool&layout=cards#catalog');
+    const app = application('?q=fixture&target=app&kind=tool&layout=compact#catalog');
     await app.api.load();
     app.api.state.visible = 30;
     choose(app, 'reviewed');
     assert.equal(app.api.state.order, 'reviewed');
     assert.equal(app.api.state.visible, 15, 'a new order starts again from the first results');
     assert.equal(param(app, 'order'), 'reviewed');
-    for (const [key, expected] of [['q', 'fixture'], ['target', 'app'], ['kind', 'tool'], ['layout', 'cards']]) assert.equal(param(app, key), expected);
+    for (const [key, expected] of [['q', 'fixture'], ['target', 'app'], ['kind', 'tool'], ['layout', 'compact']]) assert.equal(param(app, key), expected);
     assert.equal(app.context.location.hash, '#catalog');
     const shared = application(app.context.location.search + app.context.location.hash);
     await shared.api.load();
@@ -138,7 +138,7 @@ const tests = {
       const data = exports.at(-1);
       assert.deepEqual(data.resources.map(record => record.id), ids(app.api.filtered()), `export follows ${order} order`);
       assert.equal(data.resources.length, 10, 'every match');
-      assert.deepEqual(data.export.filters, {q: '', target: 'app', kind: 'all', category: 'all', group: 'all', order});
+      assert.deepEqual(data.export.filters, {q: '', target: 'app', kind: 'all', category: 'all', class: 'all', group: 'all', order});
       assert.equal(data.export.order, 'displayed');
     }
     assert.notDeepEqual(exports[0].resources.map(record => record.id), exports[2].resources.map(record => record.id));

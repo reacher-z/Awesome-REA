@@ -81,7 +81,26 @@ def title_end(text: str, use_pro: bool) -> str:
     return f'{escape(text[:-1])}<span class="title-icon-tail">{escape(text[-1])}{icon("external", use_pro)}</span>'
 
 
-def repository_card(record: dict, language: str, use_pro: bool) -> str:
+SCAN_CLASS_DETAIL = {
+    1: ("README 记录安装与用法", "installation and usage documented"),
+    2: ("README 文档缺安装或用法", "installation or usage not documented"),
+    3: ("无可用的 README 文档", "no usable README documentation"),
+}
+
+
+def scan_class_badge(record: dict, scan_classes: dict[str, object], language: str) -> str:
+    """A small C1–C3 badge from the separate scan-class mapping; Class 0 is curated-only."""
+    value = scan_classes.get(record['id'])
+    if value not in SCAN_CLASS_DETAIL:
+        return ''
+    detail = SCAN_CLASS_DETAIL[value][1 if language == 'zh' else 0]
+    title = (f'扫描证据档位 C{value}：{detail}；未核验构建、运行或复现范围。'
+             if language == 'zh' else
+             f'Scan evidence class C{value}: {detail}; build, runtime and reconstruction scope were not verified.')
+    return f'<span class="evidence-class evidence-class-{value}" title="{escape(title, quote=True)}">C{value}</span>'
+
+
+def repository_card(record: dict, language: str, use_pro: bool, scan_classes: dict[str, object] | None = None) -> str:
     zh = language == 'zh'
     name = record.get('full_name') or record['name']
     owner, separator, project = name.partition('/')
@@ -102,8 +121,9 @@ def repository_card(record: dict, language: str, use_pro: bool) -> str:
     pushed_html = (f'<span class="source-card-pushed" title="{("采集时记录的最近推送时间快照" if zh else "Last push recorded at collection time")}">'
                    f'<span class="source-card-pushed-label">{("最近推送" if zh else "Last push")} </span><time datetime="{escape(pushed, quote=True)}">{pushed[:7]}</time></span>'
                    if isinstance(pushed, str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}T[^<>"&]*', pushed) else '')
+    badge = scan_class_badge(record, scan_classes or {}, language)
     return f'''<article class="source-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}">
-  <div class="source-card-head"><h2><a class="source-title-link" href="{external_url(record['url'])}" target="_blank" rel="noopener">{title}{'' if use_pro else icon('external', use_pro)}</a></h2></div>
+  <div class="source-card-head"><h2><a class="source-title-link" href="{external_url(record['url'])}" target="_blank" rel="noopener">{title}{'' if use_pro else icon('external', use_pro)}</a></h2>{badge}</div>
   <p class="source-card-description">{escape(description)}</p>
 {related_links(record, language)}
   <div class="source-card-footer">{star_html}<a href="{external_url(record.get('readme_url') or record['url'])}" target="_blank" rel="noopener" aria-label="{escape(readme_label, quote=True)}">README <span aria-hidden="true">↗</span></a>{pushed_html}<span class="source-card-license">{escape(license_name)}</span></div>
@@ -142,6 +162,7 @@ def build_browse_pages(
     social_image_href: str,
     data_revision: str,
     icon_stylesheet_href: str | None = None,
+    scan_classes: dict[str, object] | None = None,
 ) -> list[str]:
     """Write two indexes plus nine category pairs and return their canonical URLs."""
     owned_directories = (output / 'browse', output / 'zh' / 'browse')
@@ -215,7 +236,7 @@ def build_browse_pages(
                 active = ' aria-current="page"' if category == slug else ''
                 category_links.append(f'<a href="{browse_path(language, slug)}"{active}>{escape(category_labels[language_index])}<span>{len(groups[slug]):,}</span></a>')
             if category:
-                content = '<div class="source-results browse-results">\n' + '\n'.join(repository_card(record, language, use_pro) for record in groups[category]) + '\n</div>'
+                content = '<div class="source-results browse-results">\n' + '\n'.join(repository_card(record, language, use_pro, scan_classes) for record in groups[category]) + '\n</div>'
                 schema_items = [
                     {'name': record.get('full_name') or record['name'], 'url': record['url'],
                      'description': record[f'description_{language}'] or description_fallback(record, language)}
@@ -274,6 +295,7 @@ def build_browse_pages(
     <p class="eyebrow">{('逆向工程仓库目录' if zh else 'THE REPOSITORY DIRECTORY')}</p>
     <h1 id="browse-title">{escape(label)}<span class="title-dot" aria-hidden="true">.</span></h1>
     <p>{escape(description)}</p>
+    <p class="evidence-beta">{('扫描证据档位 C1–C3：仅依据 README 的安装与用法章节；未核验构建、运行或复现范围。C0 只来自人工复核的精选条目。' if zh else 'Scan evidence classes C1–C3 use README installation and usage sections only; build, runtime and reconstruction scope were not verified. C0 is reserved for manually reviewed curated entries.')}</p>
   </section>
   <div class="browse-actions"><a class="button button-primary" href="{search_link}{('&amp;source-category=' + category) if category else ''}">{icon('search', use_pro)}{('搜索仓库' if zh else 'Search repositories')}</a><a class="button button-outline" href="{curated_link}">{('精选资源' if zh else 'Curated resources')} <span class="browse-count">{curated_count:,}</span></a>{download_link('/' + repository_export, language, css_class='browse-download', query=f'?v={data_revision}')}</div>
   <details class="browse-provenance"><summary>{('关于这个索引' if zh else 'About this index')}</summary><p>{escape(scope_note)}</p><p>{escape(provenance)}</p><p><a href="{escape(repository_url, quote=True)}/blob/main/docs/source-scan.md">{('扫描方法（英文）↗' if zh else 'Scan methodology ↗')}</a> · <a href="{escape(repository_url, quote=True)}/blob/main/data/source-scope.json">{('范围排除记录 ↗' if zh else 'Scope exclusions ↗')}</a></p></details>

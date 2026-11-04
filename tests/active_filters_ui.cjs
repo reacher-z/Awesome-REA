@@ -18,7 +18,7 @@ const focused = app => app.context.document.activeElement;
 
 const tests = {
   async curatedChipsRemoveOneConstraint() {
-    const query = '?q=%20fixture%20&target=app&kind=tool&category=dynamic-analysis&group=tools&order=name&layout=cards#catalog';
+    const query = '?q=%20fixture%20&target=app&kind=tool&category=dynamic-analysis&group=tools&order=name&layout=compact#catalog';
     const app = application(query);
     await app.api.load();
     // Removing a chip is a deliberate choice, so like Clear filters it adds a history entry Back can undo.
@@ -36,7 +36,7 @@ const tests = {
     assert.equal(app.api.state.visible, 15);
     assert.equal(param(app, 'kind'), null);
     assert.equal(pushes.length, 1, 'one entry per removed chip');
-    for (const [key, expected] of [['q', ' fixture '], ['target', 'app'], ['category', 'dynamic-analysis'], ['group', 'tools'], ['order', 'name'], ['layout', 'cards']]) {
+    for (const [key, expected] of [['q', ' fixture '], ['target', 'app'], ['category', 'dynamic-analysis'], ['group', 'tools'], ['order', 'name'], ['layout', 'compact']]) {
       assert.equal(param(app, key), expected, `removing Type keeps ${key}`);
     }
     assert.equal(app.context.location.hash, '#catalog');
@@ -49,7 +49,7 @@ const tests = {
     assert.equal(app.elements.get('#active-filters').hidden, true);
     assert.equal(focused(app), app.elements.get('#search-input'), 'with no chips left, focus returns to the search field');
     assert.equal(app.elements.get('#search-input').value, '');
-    assert.equal(app.context.location.search, '?order=name&layout=cards', 'the sort order and layout are not filters');
+    assert.equal(app.context.location.search, '?order=name&layout=compact', 'the sort order and layout are not filters');
     assert.equal(pushes.length, 5);
   },
   async chineseLabelsAndLanguageSwitch() {
