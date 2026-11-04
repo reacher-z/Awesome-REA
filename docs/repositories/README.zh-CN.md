@@ -15,10 +15,10 @@
 | [应用 · Android](android.zh-CN.md) | 483 | 59 |
 | [应用 · 托管代码](managed-code.zh-CN.md) | 135 | 5 |
 | [原生二进制](native-analysis.zh-CN.md) | 838 | 140 |
-| [运行时与调试](dynamic-analysis.zh-CN.md) | 150 | 34 |
+| [运行时与调试](dynamic-analysis.zh-CN.md) | 151 | 35 |
 | [固件](firmware.zh-CN.md) | 228 | 37 |
 | [协议](protocol-analysis.zh-CN.md) | 113 | 12 |
-| [通用工具与资源合集](reverse-engineering.zh-CN.md) | 655 | 79 |
+| [通用工具与资源合集](reverse-engineering.zh-CN.md) | 654 | 79 |
 
 [扫描方法（英文）](../source-scan.md) · [范围排除记录](../../data/source-scope.json)
 

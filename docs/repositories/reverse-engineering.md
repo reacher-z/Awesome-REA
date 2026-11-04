@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**655 repositories** · 2026-10-20 UTC
+**654 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -62,7 +62,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [xishandong/crawlProject](https://github.com/xishandong/crawlProject) — A collection of Python web-scraping projects, from the basics to JavaScript reverse engineering, with sections on fundamentals, automation, advanced techniques, and CAPTCHAs. Examples cover major websites including Xiaohongshu, Douyin, Weibo, Instagram, boss job, JD, and more, teaching web scraping, anti-scraping, automation, and CAPTCHAs. **[1,797 stars]**
 - [zeldaret/mm](https://github.com/zeldaret/mm) — Decompilation of The Legend of Zelda: Majora's Mask **[1,743 stars]** · Curated: [Majora’s Mask: matching US N64 decompilation](https://awesomerea.org/resources/zelda-mm-decomp-case/)
 - [michalmalik/osx-re-101](https://github.com/michalmalik/osx-re-101) — A collection of resources for OSX/iOS reverse engineering. **[1,732 stars]** · Curated: [osx &amp; ios re 101](https://awesomerea.org/resources/osx-re-101/)
-- [0xdea/frida-scripts](https://github.com/0xdea/frida-scripts) — A collection of my Frida instrumentation scripts to reverse engineer mobile apps and more. **[1,672 stars]**
 - [pret/pokefirered](https://github.com/pret/pokefirered) — Decompilation of Pokémon FireRed/LeafGreen **[1,664 stars]** · Curated: [Pokémon FireRed and LeafGreen: a matching Game Boy Advance decompilation](https://awesomerea.org/resources/pokemon-firered-leafgreen-decomp-case/)
 - [scadastrangelove/awesome-ai-security-tools](https://github.com/scadastrangelove/awesome-ai-security-tools) — A curated list of public-source, research, and commercial tools for AI security and AI-assisted cybersecurity — autotriage, agent security, AI/ML supply chain, pentest agents, AI SAST, LLM-driven fuzzing, threat intelligence, SOC/SIEM triage, reverse engineering, LLM red-teaming, and more. **[1,658 stars]**
 - [pmret/papermario](https://github.com/pmret/papermario) — Decompilation of Paper Mario (Nintendo 64) **[1,632 stars]** · Curated: [Paper Mario: matching Nintendo 64 decompilation for four releases](https://awesomerea.org/resources/paper-mario-matching-decomp-case/)
