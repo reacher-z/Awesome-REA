@@ -4,7 +4,7 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -15,7 +15,7 @@
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
-- [Firmware analysis and rehosting](#firmware-analysis-and-rehosting) (27)
+- [Firmware analysis and rehosting](#firmware-analysis-and-rehosting) (28)
 - [Protocol inference and analysis](#protocol-inference-and-analysis) (22)
 
 Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation.
@@ -248,6 +248,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**FirmPilot: Evidence-Guided Multi-Agent Environment Recovery for IoT Firmware Rehosting**](https://arxiv.org/abs/2607.14903) - FirmPilot reconstructs QEMU execution environments through coordinated retrieval, planning, filesystem, persistent-state and network recovery. <sub>arXiv 2026 · Preprint · Yanbing Shen et al. · [PDF](https://arxiv.org/pdf/2607.14903v1) · [Full entry](https://awesomerea.org/papers/paper-firmpilot/)</sub>
 - [**FirmCure:Towards Autonomous and Adaptive Rehosting of Linux-Based Firmware**](https://arxiv.org/abs/2606.24549) - FirmCure combines static dependency analysis, iterative boot-configuration repair and runtime fault diagnosis to rehost Linux firmware in QEMU. <sub>arXiv 2026 · Preprint · Chuan Hong et al. · [PDF](https://arxiv.org/pdf/2606.24549v1) · [Full entry](https://awesomerea.org/papers/paper-firmcure/)</sub>
 - [**SatBleed: Security of Commoditized Communication Modules in Satellites**](https://doi.org/10.1109/SP63933.2026.00213) - Studies satellite communication modules through hardware inspection, firmware reverse engineering, protocol analysis, partial rehosting and targeted testing. <sub>IEEE S&amp;P 2026 · Conference paper · Ulysse Planta et al. · [PDF](https://arxiv.org/pdf/2610.06258v1) · [Code](https://github.com/EmsecCispa/SatBleed) · [Full entry](https://awesomerea.org/papers/paper-satbleed/)</sub>
+- [**FirmReBugger: A Benchmark Framework for Monolithic Firmware Fuzzers**](https://arxiv.org/abs/2601.15774v1) - FirmReBugger is a benchmark framework for comparing monolithic firmware fuzzers with bug oracles rather than with coverage counts alone. <sub>arXiv 2026 · Preprint · Mathew Duong et al. · [PDF](https://arxiv.org/pdf/2601.15774v1) · [Full entry](https://awesomerea.org/papers/paper-firmrebugger/)</sub>
 - [**User-Space Dependency-Aware Rehosting for Linux-Based Firmware Binaries**](https://www.ndss-symposium.org/ndss-paper/user-space-dependency-aware-rehosting-for-linux-based-firmware-binaries/) - FIRMWELL reconstructs the execution environment of Linux firmware services by running their initialization processes, locating blocking dependencies and repairing missing system-level behavior. <sub>NDSS 2026 · Conference paper · Chuan Qin et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s249-paper.pdf) · [Code](https://github.com/qc9c/Firmwell) · [Full entry](https://awesomerea.org/papers/paper-firmwell/)</sub>
 - [**Target-Centric Firmware Rehosting with Penguin**](https://www.ndss-symposium.org/ndss-paper/auto-draft-634/) - Penguin rehosts embedded Linux firmware from an extracted filesystem by deriving an editable configuration of emulation transformations, such as file changes, pseudofiles, NVRAM values and network interfaces, from static analysis. <sub>Workshop on Binary Analysis Research (BAR) 2025 · Conference paper · Andrew Fasano et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2025-final10.pdf) · [Code](https://github.com/rehosting/penguin) · [Full entry](https://awesomerea.org/papers/paper-penguin/)</sub>
 - [**What Your Firmware Tells You Is Not How You Should Emulate It: A Specification-Guided Approach for Firmware Emulation**](https://dl.acm.org/doi/10.1145/3548606.3559386) - SEmu builds microcontroller peripheral models from vendor reference manuals rather than from the firmware itself. <sub>ACM CCS 2022 · Conference paper · Wei Zhou et al. · [PDF](https://arxiv.org/pdf/2208.07833v3) · [Code](https://github.com/MCUSec/SEmu/tree/6dc8be91f6809f34af972a93c9dd972f85145a00) · [Full entry](https://awesomerea.org/papers/paper-semu/)</sub>
