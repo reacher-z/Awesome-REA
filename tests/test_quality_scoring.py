@@ -143,6 +143,32 @@ class ScoreTests(unittest.TestCase):
         self.assertEqual(checks["lockfile"]["points"], 0.0)
         self.assertEqual(checks["ci"]["points"], 0.0)
 
+    def test_source_install_and_release_tag_are_not_a_distributable_artifact(self):
+        source_install = evidence()
+        source_install["releases"] = None
+        source_install["readme"]["signals"]["install_commands"] = [
+            "cargo install --git https://github.com/acme/demo"]
+        result = scoring.score_entry(record(), source_install)
+        checks = {item["id"]: item for item in result["dimensions"]["reproducibility"]["checks"]}
+        self.assertEqual(checks["artifact"]["points"], 0.0)
+
+        package = evidence()
+        package["releases"] = None
+        package["readme"]["signals"]["install_commands"] = ["cargo install demo"]
+        result = scoring.score_entry(record(), package)
+        checks = {item["id"]: item for item in result["dimensions"]["reproducibility"]["checks"]}
+        self.assertEqual(checks["artifact"]["points"], 1.0)
+
+        tagged = evidence()
+        tagged["releases"] = {"count": 1, "latest_tag": "v1.0.0", "latest_published_at": None,
+                              "assets": [], "asset_count": 0, "checksums": [],
+                              "semver_tags": ["v1.0.0"],
+                              "body_claims": {"checksum": False, "signature": False, "notes": True}}
+        tagged["readme"]["signals"]["install_commands"] = []
+        result = scoring.score_entry(record(), tagged)
+        checks = {item["id"]: item for item in result["dimensions"]["reproducibility"]["checks"]}
+        self.assertEqual(checks["artifact"]["points"], 0.5)
+
     def test_band_boundaries(self):
         self.assertEqual(scoring.band_for(75.0)[0], "strong-evidence")
         self.assertEqual(scoring.band_for(74.9)[0], "moderate-evidence")
