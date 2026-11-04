@@ -15,10 +15,10 @@ Publication date: **2026-10-20 UTC**.
 | [Apps · Android](android.md) | 483 | 59 |
 | [Apps · Managed code](managed-code.md) | 135 | 5 |
 | [Native binaries](native-analysis.md) | 838 | 140 |
-| [Runtime and debugging](dynamic-analysis.md) | 150 | 34 |
+| [Runtime and debugging](dynamic-analysis.md) | 151 | 35 |
 | [Firmware](firmware.md) | 228 | 37 |
 | [Protocols](protocol-analysis.md) | 113 | 12 |
-| [General tools and collections](reverse-engineering.md) | 655 | 79 |
+| [General tools and collections](reverse-engineering.md) | 654 | 79 |
 
 [Scan methodology](../source-scan.md) · [Scope exclusions](../../data/source-scope.json)
 
