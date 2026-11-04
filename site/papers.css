@@ -44,6 +44,8 @@
 /* A plain list under the card heading, not a navigation landmark per paper. */
 .paper-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0 10px;padding:0;list-style:none}
 .paper-links>li{display:flex}
+/* Without clipboard access, the Copy link item takes its own row so the selected link field below the button has room. */
+.paper-links>li:has(>.copy-link-fallback){flex:1 1 100%;flex-wrap:wrap;gap:6px 8px}
 .paper-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:5px 10px;border:1px solid var(--line);border-radius:6px;color:var(--link);background:var(--surface);font-size:14px;font-weight:550}
 .paper-link:hover{border-color:var(--strong);background:var(--tint)}
 .paper-link-primary{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}

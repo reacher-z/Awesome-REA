@@ -95,6 +95,54 @@
     return apply;
   }
 
+  // A card's visible title without the decorative ↗ (aria-hidden), for accessible names and status messages.
+  function paperTitle(card, fallback) {
+    const heading = card.querySelector("h3"); if (!heading) return fallback;
+    const text = node => node.nodeType === 3 ? node.textContent : node.getAttribute?.("aria-hidden") === "true" ? "" : node.childNodes ? [...node.childNodes].map(text).join("") : node.textContent || "";
+    return text(heading).trim() || fallback;
+  }
+
+  // Copy link: each paper card gets a button that copies its entry page on this site, built from the validated ID.
+  // Without clipboard access the link appears selected beside the button for a manual copy.
+  function initializeCopyLinks(document, browser) {
+    const cards = [...document.querySelectorAll("[data-paper-id]")];
+    const main = document.querySelector("main");
+    if (!cards.length || !main) return false;
+    const zh = document.documentElement.lang === "zh-CN";
+    let origin = browser.location.origin;
+    try { origin = new URL(document.querySelector('link[rel="canonical"]').href).origin; } catch (_) { /* keep this page's origin */ }
+    const status = document.createElement("p"); status.className = "sr-only"; status.setAttribute("role", "status"); status.setAttribute("aria-live", "polite");
+    main.append(status);
+    const label = zh ? "复制此论文条目的链接" : "Copy link to this paper's entry";
+    for (const card of cards) {
+      const id = card.dataset.paperId; const links = card.querySelector(".paper-links");
+      if (!/^paper-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id) || !links) continue;
+      const href = new URL(`${zh ? "/zh" : ""}/papers/${id}/`, origin).href;
+      const name = paperTitle(card, id);
+      const button = document.createElement("button"); button.type = "button"; button.className = "paper-link copy-link";
+      button.title = label; button.setAttribute("aria-label", `${label}${zh ? "：" : ": "}${name}`); button.dataset.copyLink = href;
+      button.textContent = zh ? "复制链接" : "Copy link";
+      button.addEventListener("click", async () => {
+        try {
+          await browser.navigator.clipboard.writeText(href);
+          status.textContent = zh ? `已复制 ${name} 的链接。` : `Link to ${name} copied.`;
+        } catch (_) {
+          let field = button.nextElementSibling;
+          if (!field || field.className !== "copy-link-fallback") { field = document.createElement("input"); field.className = "copy-link-fallback"; button.after(field); }
+          field.type = "text"; field.readOnly = true; field.value = href; field.setAttribute("aria-label", zh ? `${name} 的链接` : `Link to ${name}`);
+          field.focus(); field.select();
+          status.textContent = zh ? `无法直接复制。${name} 的链接已选中，请按 Ctrl+C 或 ⌘C 复制。` : `Copying isn’t available here. The link to ${name} is selected; press Ctrl+C or ⌘C to copy it.`;
+        }
+      });
+      // .paper-links is a list: the button gets its own item, right after the Full entry item when there is one.
+      const item = document.createElement("li"); item.append(button);
+      const entry = links.querySelector(".entry-detail-link")?.closest("li");
+      if (entry) entry.after(item); else links.append(item);
+    }
+    return true;
+  }
+  if (typeof document !== "undefined") initializeCopyLinks(document, window);
+
   function initialize(document, browser) {
     const form = document.getElementById("paper-search");
     if (!form) return false;
@@ -243,7 +291,7 @@
     for (const card of cards) {
       const key = "paper:" + card.dataset.paperId; const links = card.querySelector(".paper-links");
       if (!SHORTLIST_ITEM.test(key) || !links) continue;
-      const title = (card.querySelector("h3")?.textContent || card.dataset.paperId).trim();
+      const title = paperTitle(card, card.dataset.paperId);
       const button = element("button", "paper-link save-toggle"); button.type = "button"; button.dataset.shortlistKey = key;
       button.append(element("span"), element("span", "sr-only", " " + title));
       button.addEventListener("click", () => {
