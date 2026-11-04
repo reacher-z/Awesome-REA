@@ -1270,6 +1270,89 @@ def read_array(path, errors):
     return value
 
 
+def validate_evidence_classes(records, errors):
+    """Curated C0–C3 and scan C1–C3 mappings must cover exactly the current data."""
+    catalog = {record.get('id'): record for record in records}
+    try:
+        document = strict_json.load_path(ROOT / 'data/evidence-classes.json')
+        reviews_document = strict_json.load_path(ROOT / 'data/evidence-class-zero-reviews.json')
+    except (OSError, ValueError) as error:
+        errors.append(f'Evidence classes could not be read: {error}')
+        return
+    entries = document.get('entries')
+    if not isinstance(entries, list):
+        errors.append('data/evidence-classes.json must contain an entries list')
+        return
+    identifiers = [entry.get('id') for entry in entries]
+    if len(identifiers) != len(set(identifiers)) or set(identifiers) != set(catalog):
+        errors.append('data/evidence-classes.json must cover exactly the curated catalog IDs')
+    counts = {}
+    unknown = 0
+    for entry in entries:
+        value = entry.get('evidence_class')
+        if value is None:
+            unknown += 1
+        elif value not in (0, 1, 2, 3):
+            errors.append(f"Invalid evidence class for {entry.get('id')}: {value}")
+        else:
+            counts[str(value)] = counts.get(str(value), 0) + 1
+    meta = document.get('meta', {})
+    if meta.get('spec_version') != 'evidence-class-v4':
+        errors.append('Evidence class spec_version must be evidence-class-v4')
+    if meta.get('entry_count') != len(entries):
+        errors.append('Evidence class entry_count does not match its entries')
+    if {str(value): counts.get(str(value), 0) for value in range(4)} != meta.get('class_counts'):
+        errors.append('Evidence class class_counts do not match its entries')
+    if meta.get('unknown_count') != unknown:
+        errors.append('Evidence class unknown_count does not match its entries')
+    reviews = {entry.get('id'): entry for entry in reviews_document.get('entries', [])}
+    full_reviews = {identifier for identifier, review in reviews.items() if review.get('scope') == 'full'}
+    class_zero = {entry.get('id') for entry in entries if entry.get('evidence_class') == 0}
+    if class_zero != full_reviews:
+        errors.append('Every Class 0 entry needs a scope=full review, and every full review must be Class 0')
+    for identifier in full_reviews:
+        record = catalog.get(identifier)
+        if not record:
+            errors.append(f'Class 0 review names an unknown resource: {identifier}')
+        elif record.get('kind') != 'case-study' or 'binary' in (record.get('targets') or []):
+            errors.append(f'Class 0 must be a non-binary case study: {identifier}')
+
+    scan_path = ROOT / 'data' / 'scan-evidence-classes.json'
+    source_path = ROOT / 'data' / 'source-index.json'
+    if not scan_path.is_file() or not source_path.is_file():
+        return
+    try:
+        scan_document = strict_json.load_path(scan_path)
+        source = strict_json.load_path(source_path)
+    except (OSError, ValueError) as error:
+        errors.append(f'Scan evidence classes could not be read: {error}')
+        return
+    scan_entries = scan_document.get('entries')
+    if not isinstance(scan_entries, list):
+        errors.append('data/scan-evidence-classes.json must contain an entries list')
+        return
+    expected = {record.get('id') for record in source.get('resources', []) if record.get('scan_status') == 'readme-scanned'}
+    supplement_index = ROOT / 'data' / 'source-supplements' / 'index.json'
+    if supplement_index.is_file():
+        for batch in json.loads(supplement_index.read_text(encoding='utf-8')).get('batches') or []:
+            supplement = json.loads((supplement_index.parent / f'{batch}.json').read_text(encoding='utf-8'))
+            expected.update(record.get('id') for record in supplement.get('resources', [])
+                            if record.get('scan_status') == 'readme-scanned')
+    scan_ids = [entry.get('id') for entry in scan_entries]
+    if len(scan_ids) != len(set(scan_ids)) or set(scan_ids) != expected:
+        errors.append('data/scan-evidence-classes.json must cover exactly the scanned repositories')
+    if any(entry.get('evidence_class') is not None and entry.get('evidence_class') not in (1, 2, 3)
+           for entry in scan_entries):
+        errors.append('Scan evidence classes may only assign C1, C2, C3 or unknown')
+    scan_meta = scan_document.get('meta', {})
+    if scan_meta.get('spec_version') != 'scan-evidence-class-v1':
+        errors.append('Scan evidence class spec_version must be scan-evidence-class-v1')
+    if scan_meta.get('class_zero_count') != 0:
+        errors.append('Scan evidence classes must never assign Class 0')
+    if scan_meta.get('entry_count') != len(scan_entries):
+        errors.append('Scan evidence class entry_count does not match its entries')
+
+
 def main():
     errors = []
     records = [record for path in RESOURCE_FILES for record in read_array(path, errors)]
@@ -1277,6 +1360,7 @@ def main():
     papers = read_array(ROOT / 'data/papers.json', errors)
     validate_papers(papers, errors, url_check=public_https_error)
     validate_resources(records, errors)
+    validate_evidence_classes(records, errors)
     for warning in unknown_field_warnings(records) + evidence_pin_warnings(records):
         print(f'Warning: {warning}', file=sys.stderr)
     validate_requirement_facets(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), errors)
