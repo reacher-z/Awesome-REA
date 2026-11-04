@@ -19,10 +19,17 @@
 .case-section .browse-topline{padding:22px 0 12px}
 .case-list{border-bottom:1px solid var(--line)}
 .case-row{padding:18px 0 12px;border-top:1px solid var(--line);min-width:0}
+/* A section grouped by reconstruction method (Games): a method index, then one headed group per method. */
+.case-method-nav{padding:4px 0 6px}
+.case-method{scroll-margin-top:24px}
+.case-method-topline{display:flex;justify-content:space-between;align-items:baseline;gap:4px 12px;flex-wrap:wrap;margin-top:22px;padding:14px 0 2px;border-top:2px solid var(--ink);color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+.case-method-topline h3{margin:0;max-width:100%;font-size:19px;line-height:1.45;font-weight:700;color:var(--ink);overflow-wrap:break-word}
+.case-method-topline p{margin:0}
+.case-method-note{max-width:76ch;margin:2px 0 12px;font-size:15px;line-height:1.7;color:var(--body)}
 .case-heading{display:flex;align-items:baseline;flex-wrap:wrap;gap:5px 16px}
-.case-heading h3{flex:1 1 32rem;min-width:0;margin:0;font-size:18px;line-height:1.5;font-weight:650;letter-spacing:0;overflow-wrap:anywhere}
-.case-heading h3 a{color:var(--ink);text-decoration:none}
-.case-heading h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+.case-heading :is(h3,h4){flex:1 1 32rem;min-width:0;margin:0;font-size:18px;line-height:1.5;font-weight:650;letter-spacing:0;overflow-wrap:anywhere}
+.case-heading :is(h3,h4) a{color:var(--ink);text-decoration:none}
+.case-heading :is(h3,h4) a:hover{text-decoration:underline;text-underline-offset:4px}
 .case-relationship{font-size:14px;line-height:1.6;color:var(--muted)}
 .case-description{max-width:76ch;margin:9px 0 6px;font-size:16px;line-height:1.75;color:var(--body);overflow-wrap:anywhere}
 .case-footer{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 24px}
@@ -35,9 +42,9 @@
 .case-review-date{color:var(--muted)}
 .cases-empty{padding:24px 0;font-size:16px;color:var(--body)}
 .cases-main a:focus-visible,.cases-main summary:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
-html[lang="zh-CN"] .cases-note>p,html[lang="zh-CN"] .case-description{max-width:38em;line-height:1.85}
+html[lang="zh-CN"] .cases-note>p,html[lang="zh-CN"] .case-method-note,html[lang="zh-CN"] .case-description{max-width:38em;line-height:1.85}
 @media(max-width:700px){
-  .case-heading h3{flex-basis:100%}
+  .case-heading :is(h3,h4){flex-basis:100%}
   .case-row{padding-top:16px}
   .case-meta{gap:2px 15px}
   .case-targets{flex-basis:100%}

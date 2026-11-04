@@ -18,7 +18,9 @@ def curated_records():
 
 class ReconstructionPairingTests(unittest.TestCase):
     def test_either_value_without_the_other_is_rejected_with_the_resource_id(self):
-        case = next(record for record in curated_records() if record['relationship'] == 'independent-reconstruction')
+        # A Game case, so the category change below keeps it a Game case study with its reconstruction method.
+        case = next(record for record in curated_records()
+                    if record['relationship'] == 'independent-reconstruction' and 'reconstruction_method' in record)
         for changes, message in (
             ({'id': 'reconstruction-game-fixture', 'category': 'game-analysis'},
              "relationship 'independent-reconstruction' requires category 'reconstruction-cases'"),
@@ -27,6 +29,8 @@ class ReconstructionPairingTests(unittest.TestCase):
         ):
             with self.subTest(changes=changes):
                 record = deepcopy(case) | changes
+                if record['kind'] != 'case-study':
+                    record.pop('reconstruction_method', None)  # Only Game case studies take a method.
                 before = deepcopy(record)
                 errors = []
                 validate_resources([record], errors)

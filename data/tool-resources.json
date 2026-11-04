@@ -1684,6 +1684,7 @@
     "url": "https://github.com/peiikai/LASRecomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -2224,6 +2225,7 @@
   {
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
     "kind": "case-study",
     "verified_at": "2026-10-16",
     "verification": "source-reviewed",
@@ -2682,6 +2684,7 @@
     "url": "https://github.com/n64decomp/perfect_dark",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -2898,6 +2901,7 @@
     "url": "https://github.com/chasem-dev/sms-pc-port",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -2940,6 +2944,7 @@
     "url": "https://github.com/zeldaret/mm",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3023,6 +3028,7 @@
     "url": "https://github.com/mochizuki0323/DLSSNR-AMD",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
     "kind": "case-study",
     "targets": [
       "binary",
@@ -3062,6 +3068,7 @@
     "url": "https://github.com/zeldaret/botw",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3105,6 +3112,7 @@
     "url": "https://github.com/zeldaret/ss",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3145,6 +3153,7 @@
     "url": "https://github.com/2ship2harkinian/2ship2harkinian",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3185,6 +3194,7 @@
     "url": "https://github.com/HarbourMasters/Shipwright",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3225,6 +3235,7 @@
     "url": "https://github.com/zeldaret/tmc",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3264,6 +3275,7 @@
     "url": "https://github.com/zeldaret/oot",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3351,6 +3363,7 @@
     "url": "https://github.com/carlosrmz009/arwing",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3387,6 +3400,7 @@
     "url": "https://github.com/carlosrmz009/arwing2",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3421,6 +3435,7 @@
     "url": "https://github.com/carlosrmz009/littleplanet",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3457,6 +3472,7 @@
     "url": "https://github.com/celsowm/vf2-decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3496,6 +3512,7 @@
     "url": "https://github.com/troyedwardsjr/z2rs",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3537,6 +3554,7 @@
     "url": "https://github.com/sm64pc/sm64ex",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3578,6 +3596,7 @@
     "url": "https://github.com/HarbourMasters/Ghostship",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3617,6 +3636,7 @@
     "url": "https://github.com/doldecomp/sms",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3658,6 +3678,7 @@
     "url": "https://github.com/TwilitRealm/dusklight",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3697,6 +3718,7 @@
     "url": "https://github.com/AxioDL/metaforce",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3738,6 +3760,7 @@
     "url": "https://github.com/chasem-dev/sms-english",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3777,6 +3800,7 @@
     "url": "https://github.com/Rainchus/Donkey-Kong-64-Recompiled",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3816,6 +3840,7 @@
     "url": "https://github.com/zeldaret/tp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3860,6 +3885,7 @@
     "url": "https://github.com/Xeeynamo/sotn-decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3907,6 +3933,7 @@
     "url": "https://github.com/isledecomp/isle-portable",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3947,6 +3974,7 @@
     "url": "https://github.com/wurlyfox/c1",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -3983,6 +4011,7 @@
     "url": "https://github.com/Odrannnn/MetroidPrimePort",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4020,6 +4049,7 @@
     "url": "https://github.com/zeldaret/tww",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4064,6 +4094,7 @@
     "url": "https://github.com/RSDKModding/Sonic-Mania-Decompilation",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4100,6 +4131,7 @@
     "url": "https://github.com/BlackLabelHQ/MediEvilRecomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4141,6 +4173,7 @@
     "url": "https://github.com/Zumbo06/Crash2Recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4180,6 +4213,7 @@
     "url": "https://github.com/SMGCommunity/Petari",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4223,6 +4257,7 @@
     "url": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4260,6 +4295,7 @@
     "url": "https://github.com/RevoSucks/CV64Recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4303,6 +4339,7 @@
     "url": "https://github.com/RSDKModding/RSDKv5-Decompilation",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4341,6 +4378,7 @@
     "url": "https://github.com/ughman/c2c",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4376,6 +4414,7 @@
     "url": "https://github.com/MediEvilDecompilation/medievil-decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4416,6 +4455,7 @@
     "url": "https://github.com/sciaschi/CBFD-Recompiled",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4454,6 +4494,7 @@
     "url": "https://github.com/theclub654/ProjectCane",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4492,6 +4533,7 @@
     "url": "https://gitlab.com/esr/firefighter",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4572,6 +4614,7 @@
     "url": "https://github.com/Yokimitsuro/khdays-port",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4612,6 +4655,7 @@
     "url": "https://github.com/nathanialf/ico-pc",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4653,6 +4697,7 @@
     "url": "https://github.com/TheOnlyZac/sly1",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4695,6 +4740,7 @@
     "url": "https://github.com/pret/pokeemerald",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4733,6 +4779,7 @@
     "url": "https://github.com/pmret/papermario",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4781,6 +4828,7 @@
     "url": "https://github.com/z3xox/Tenkaichi3Decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4822,6 +4870,7 @@
     "url": "https://github.com/jhaizhou-ops/d2r-mobile",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4860,6 +4909,7 @@
     "url": "https://github.com/OpenRAC/rac1-decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4904,6 +4954,7 @@
     "url": "https://github.com/BanjoRecomp/BanjoRecomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4943,6 +4994,7 @@
     "url": "https://github.com/pret/pokefirered",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -4989,6 +5041,7 @@
     "url": "https://github.com/HarbourMasters/PaperBoat",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5029,6 +5082,7 @@
     "url": "https://github.com/kirklandsig/halo2-decompiled",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5069,6 +5123,7 @@
     "url": "https://github.com/d07RiV/diabloweb",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5109,6 +5164,7 @@
     "url": "https://github.com/pret/pokered",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5148,6 +5204,7 @@
     "url": "https://github.com/HarbourMasters/Lighthouse",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5188,6 +5245,7 @@
     "url": "https://github.com/freefrank/LostOdysseyRecomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5230,6 +5288,7 @@
     "url": "https://github.com/doldecomp/melee",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5270,6 +5329,7 @@
     "url": "https://github.com/pret/pokecrystal",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5310,6 +5370,7 @@
     "url": "https://github.com/pret/pokeheartgold",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5353,6 +5414,7 @@
     "url": "https://github.com/Jorge262007/FFTARecomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5392,6 +5454,7 @@
     "url": "https://github.com/BlackLabelHQ/SymphonyRecomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5429,6 +5492,7 @@
     "url": "https://github.com/Gumpolas/TooTawersRecomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5469,6 +5533,7 @@
     "url": "https://github.com/Hero88go/melee-unlocked",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5510,6 +5575,7 @@
     "url": "https://github.com/pret/pokeruby",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5550,6 +5616,7 @@
     "url": "https://github.com/HalmyLyseas/VandalHearts-PcPort",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5589,6 +5656,7 @@
     "url": "https://github.com/pret/pokeplatinum",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5632,6 +5700,7 @@
     "url": "https://github.com/whompay/SaintsReborn",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5673,6 +5742,7 @@
     "url": "https://github.com/cybervisi0n/pokeplatinum",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5716,6 +5786,7 @@
     "url": "https://github.com/Mikompilation/MikuPan",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5755,6 +5826,7 @@
     "url": "https://github.com/sonicdcer/Starfox64Recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5795,6 +5867,7 @@
     "url": "https://github.com/zm2283145/syphon-filter-omega-strain-decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5836,6 +5909,7 @@
     "url": "https://github.com/flyngmt/ACGC-PC-Port",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5874,6 +5948,7 @@
     "url": "https://github.com/n64decomp/007",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5917,6 +5992,7 @@
     "url": "https://github.com/HarbourMasters/Starship",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5957,6 +6033,7 @@
     "url": "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -5997,6 +6074,7 @@
     "url": "https://github.com/portingpete/The-Darkness-Recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6038,6 +6116,7 @@
     "url": "https://github.com/sonicdcer/MarioKart64Recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6078,6 +6157,7 @@
     "url": "https://github.com/ACreTeam/ac-decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6119,6 +6199,7 @@
     "url": "https://github.com/Yokimitsuro/khdays-decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6222,6 +6303,7 @@
     "url": "https://github.com/LANCommander/TonyWasAProSkater",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6261,6 +6343,7 @@
     "url": "https://github.com/LoreanXavier/pt-pc",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6298,6 +6381,7 @@
     "url": "https://github.com/HarbourMasters/SpaghettiKart",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6339,6 +6423,7 @@
     "url": "https://github.com/banatic/acww-decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6379,6 +6464,7 @@
     "url": "https://github.com/TekRantGaming/king-kong-recompiled",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6482,6 +6568,7 @@
     "url": "https://github.com/mariopartyrd/marioparty4",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6525,6 +6612,7 @@
     "url": "https://github.com/SpeedBreakerProject/speedbreaker",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6596,6 +6684,7 @@
     "url": "https://github.com/DaBrown95/tsbodp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6664,6 +6753,7 @@
     "url": "https://github.com/isinternets/d2-research",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
     "kind": "case-study",
     "targets": [
       "game",
@@ -6709,6 +6799,7 @@
     "url": "https://github.com/shaneomac1337/SVR2011-Recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6809,6 +6900,7 @@
     "url": "https://github.com/JackandBeans/Snap64Recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6851,6 +6943,7 @@
     "url": "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6892,6 +6985,7 @@
     "url": "https://github.com/OpenRA/OpenRA",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -6991,6 +7085,7 @@
     "url": "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7090,6 +7185,7 @@
     "url": "https://github.com/TekRantGaming/simpsons-wrestling-recompiled",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7129,6 +7225,7 @@
     "url": "https://github.com/OpenRCT2/OpenRCT2",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7169,6 +7266,7 @@
     "url": "https://github.com/GensokyoClub/th06",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7314,6 +7412,7 @@
     "url": "https://github.com/alexbeavs-ps1-ports/driver-recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7354,6 +7453,7 @@
     "url": "https://github.com/Mikompilation/Himuro",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7399,6 +7499,7 @@
     "url": "https://github.com/NoRain211/doaxvb-re",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7515,6 +7616,7 @@
     "url": "https://github.com/N0zoM1z0/th08-web",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7589,6 +7691,7 @@
     "url": "https://github.com/OpenXcom/OpenXcom",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7629,6 +7732,7 @@
     "url": "https://github.com/mchughalex/skate3recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7698,6 +7802,7 @@
     "url": "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7739,6 +7844,7 @@
     "url": "https://github.com/N0zoM1z0/th095",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7878,6 +7984,7 @@
     "url": "https://github.com/CorsixTH/CorsixTH",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7918,6 +8025,7 @@
     "url": "https://github.com/ben-wright-1/OpenRiseOfNations",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -7957,6 +8065,7 @@
     "url": "https://github.com/N0zoM1z0/th04",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -8183,6 +8292,7 @@
     "url": "https://github.com/HayatoG/iss_pc",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
     "kind": "case-study",
     "targets": [
       "game"
@@ -8222,6 +8332,7 @@
     "url": "https://github.com/xoreos/xoreos",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -8299,6 +8410,7 @@
     "url": "https://github.com/aap/librw",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -8428,6 +8540,7 @@
     "url": "https://github.com/MonsterDruide1/OdysseyDecomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -11358,6 +11471,7 @@
     "url": "https://github.com/sonicdcer/sf64",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -11505,6 +11619,7 @@
     "url": "https://github.com/PrimeDecomp/prime",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -11572,6 +11687,7 @@
     "url": "https://github.com/Serega25511s/Batla-3D-server-emu",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
     "kind": "case-study",
     "evidence_url": "https://github.com/Serega25511s/Batla-3D-server-emu/blob/c70f254ee86b3fa7363b5afb98541bcaa9e6c751/README.md",
     "additional_evidence_urls": [
@@ -11621,6 +11737,7 @@
     "url": "https://github.com/RSDKModding/RSDKv4-Decompilation",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -11921,6 +12038,7 @@
     "url": "https://github.com/rwengine/openrw",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -12303,6 +12421,7 @@
     "url": "https://github.com/Nilbong/COD4-Rewrite",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "evidence_url": "https://github.com/Nilbong/COD4-Rewrite/blob/bd03eb07f2b2ec84dd33946bfc2b8163fc49c480/README.md",
     "additional_evidence_urls": [
@@ -12335,6 +12454,7 @@
     "url": "https://github.com/jaenster/libd2",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "evidence_url": "https://github.com/jaenster/libd2/blob/bc21bb924b9238def4907bd2b3f79e8041a5fc0a/README.md",
     "additional_evidence_urls": [
@@ -12354,6 +12474,7 @@
     "url": "https://github.com/abedegno/underworld-exhumed",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "description_en": "Pairs reconstructed DOS sources with native ports of Ultima Underworld I and II. The upstream documents Exhume-based byte-matching builds, routine-level comparisons and recorded-session replay against DOS.",
     "description_zh": "将 Ultima Underworld I 与 II 的 DOS 源码重建与原生移植结合。上游记录了基于 Exhume 的字节匹配构建、例程级比较及对照 DOS 的录制会话回放。",
     "evidence_url": "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/README.md",
@@ -12383,6 +12504,7 @@
     "url": "https://github.com/fredangstadt-lang/LineWarsII-SDL",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "description_en": "Provides an SDL3 backend for a portable-C reconstruction of the 1994 DOS game. Its build configuration links the reconstructed engine to video, input and audio adapters; the upstream documents differential gates against original machine code.",
     "description_zh": "为 1994 年 DOS 游戏的可移植 C 重建提供 SDL3 后端。构建配置将重建引擎接到视频、输入与音频适配层，上游记录了对照原始机器码的差分测试关卡。",
     "evidence_url": "https://github.com/fredangstadt-lang/LineWarsII-SDL/blob/343bb50942a61e9d7fa1c1314cd1f03f8e7b12ac/README.md",
@@ -12412,6 +12534,7 @@
     "url": "https://github.com/Druthulu/BFM-decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "description_en": "Documents an agent-assisted reconstruction of the USA PlayStation game with a pinned compiler and whole-binary SHA-1 gates. The verification recipe covers the main executable, resident engine and disc-loaded code modules, with explicit library and assembly exceptions.",
     "description_zh": "记录美版 PlayStation 游戏的智能体辅助重建，使用固定编译器及完整二进制 SHA-1 检查。验证规约覆盖主程序、常驻引擎及光盘加载代码模块，并明确列出库与汇编例外。",
     "evidence_url": "https://github.com/Druthulu/BFM-decomp/blob/b6a28f96bac70af70573826f767a96cf212fd5e3/README.md",
@@ -12694,6 +12817,7 @@
     "url": "https://github.com/cdlewis/snowboardkids-decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -12763,6 +12887,7 @@
     "url": "https://gambiconf.substack.com/p/development-journey-on-game-decompilation",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -13028,6 +13153,7 @@
     "url": "https://github.com/lumirth/pw",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "firmware",
@@ -13201,6 +13327,7 @@
     "url": "https://github.com/koopthekoopa/wii-ipl",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "firmware",
@@ -13427,6 +13554,7 @@
     "url": "https://github.com/open-ead/sead",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -13522,6 +13650,7 @@
     "url": "https://github.com/zeldaret/af",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -13681,6 +13810,7 @@
     "url": "https://github.com/zeldaret/ph",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -13716,6 +13846,7 @@
     "url": "https://github.com/vabold/Kinoko",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -13807,6 +13938,7 @@
     "url": "https://github.com/doldecomp/mkdd",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -13839,6 +13971,7 @@
     "url": "https://github.com/crowded-street/3s-decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -13878,6 +14011,7 @@
     "url": "https://github.com/halo-re/halo",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -13913,6 +14047,7 @@
     "url": "https://github.com/doldecomp/ttyd",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -13974,6 +14109,7 @@
     "url": "https://github.com/crowded-street/3sx",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "port",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14019,6 +14155,7 @@
     "url": "https://github.com/adonis-singh/re4",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14052,6 +14189,7 @@
     "url": "https://github.com/doldecomp/brawl",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14086,6 +14224,7 @@
     "url": "https://github.com/Patoke/re-plants-vs-zombies",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14144,6 +14283,7 @@
     "url": "https://github.com/SAT-R/sa2",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14181,6 +14321,7 @@
     "url": "https://github.com/Yharnam-Hunters/Paleblood",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14216,6 +14357,7 @@
     "url": "https://github.com/projectPiki/pikmin2",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14249,6 +14391,7 @@
     "url": "https://github.com/gustavocanepa/gt4-decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14285,6 +14428,7 @@
     "url": "https://github.com/snailspeed3/mkw",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14319,6 +14463,7 @@
     "url": "https://github.com/arcanite24/pinyon-shift",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14356,6 +14501,7 @@
     "url": "https://github.com/some100/th07",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14389,6 +14535,7 @@
     "url": "https://github.com/elliotttate/DKC1Recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14428,6 +14575,7 @@
     "url": "https://github.com/in0finite/SanAndreasUnity",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14464,6 +14612,7 @@
     "url": "https://github.com/GRAnimated/MinecraftLCE",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14497,6 +14646,7 @@
     "url": "https://github.com/Xeeynamo/ff7-decomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14533,6 +14683,7 @@
     "url": "https://github.com/mstan/MegaManXSNESRecomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14569,6 +14720,7 @@
     "url": "https://github.com/OpenSC4-org/OpenSC4",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14634,6 +14786,7 @@
     "url": "https://github.com/AliveTeam/alive_reversing",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14707,6 +14860,7 @@
     "url": "https://github.com/FolkertVanVerseveld/aoe",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14744,6 +14898,7 @@
     "url": "https://github.com/KIexster/god-of-war-recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -14877,6 +15032,7 @@
     "url": "https://github.com/DomazinUS/RaceWave46",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -15085,6 +15241,7 @@
     "url": "https://github.com/deathkiller/jazz2-native",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -15284,6 +15441,7 @@
     "url": "https://github.com/LBALab/lba2remake",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -15485,6 +15643,7 @@
     "url": "https://github.com/OpenAWE-Project/OpenAWE",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -15519,6 +15678,7 @@
     "url": "https://github.com/tmcleroy/cps2recomp",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -15808,6 +15968,7 @@
     "url": "https://github.com/CommitteeOfZero/impacto",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -16320,6 +16481,7 @@
     "url": "https://github.com/ZeldaWWHDDecomp/wwhd",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -16352,6 +16514,7 @@
     "url": "https://github.com/codingncaffeine/SiegeFX",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "description_en": "A C#/.NET 10 engine loads Dungeon Siege's original archives, scripts and models, with published alpha builds and an audit/parity ledger. The project also provides SiegeSmith modding tools, while describing remaining fidelity and playthrough risks.",
     "description_zh": "C#/.NET 10 引擎加载 Dungeon Siege 原始归档、脚本与模型，提供 alpha 构建和审计/一致性清单，并附带 SiegeSmith 模组工具；项目仍记录保真度和通关行为风险。",
     "evidence_url": "https://github.com/codingncaffeine/SiegeFX/blob/6a1a4ade725a860651a06a0d7ddb50d5a3a688d1/README.md",
@@ -16382,6 +16545,7 @@
     "url": "https://github.com/AndrewAltimit/legend-of-legaia-re",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "description_en": "A from-scratch Rust port of the North American PlayStation Legend of Legaia includes native/browser play, asset extraction and disc patching. The author documents Ghidra/emulator research and a full-game ladder; this is a fresh implementation, not a matching decompilation or static recompilation.",
     "description_zh": "从零编写的 Rust 移植面向北美 PlayStation 版 Legend of Legaia，附带原生/浏览器游玩、素材提取及光盘补丁工具；作者记录 Ghidra/模拟器研究与全流程测试阶梯，项目不是匹配反编译或静态重编译。",
     "evidence_url": "https://github.com/AndrewAltimit/legend-of-legaia-re/blob/f801d3c319386f7686d7fde45e114e1e2ba6aff5/README.md",
@@ -16479,6 +16643,7 @@
     "url": "https://github.com/RSDKModding/RSDKv3-Decompilation",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -16511,6 +16676,7 @@
     "url": "https://github.com/nathanialf/ico",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -19529,6 +19695,7 @@
     "url": "https://github.com/BrianPugh/game-and-watch-patch",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
     "kind": "case-study",
     "targets": [
       "firmware",
@@ -19917,6 +20084,7 @@
     "url": "https://github.com/vladtrc/iw4L",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -19961,6 +20129,7 @@
     "url": "https://github.com/SK8-ENGINE/skate-3-rust-engine",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game"
@@ -20359,6 +20528,7 @@
     "url": "https://github.com/bravoserver/bravo",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
     "targets": [
       "game",

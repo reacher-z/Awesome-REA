@@ -12,7 +12,8 @@ import shutil
 from urllib.parse import unquote, urlsplit
 
 from asset_paths import FINGERPRINTED_SUFFIXES, fingerprinted_href
-from build_readme import KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
+from build_readme import (KIND_LABELS, METHOD_HEADINGS, METHOD_SECTIONS, RELATIONSHIPS, TARGETS, UNASSIGNED_METHOD,
+                          collection_section, method_groups)
 from contribution_pages import TITLES as CONTRIBUTION_TITLES, contribution_content
 from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
 from site_footer import SECTION_LINKS, download_link, site_footer
@@ -303,7 +304,30 @@ def _subgroup_count(slug: str, count: int, zh: bool) -> str:
     return f'{count} 项资源' if zh else f'{count} {"resource" if count == 1 else "resources"}'
 
 
-def _case_row(record: dict, language: str, section: str) -> str:
+# One sentence under each method heading in a /cases/ section grouped by reconstruction method (data/README.md).
+METHOD_NOTES = {
+    'matching-decompilation': ('Source or a full disassembly that the original toolchain rebuilds byte for byte, '
+                               'checked per function or against hashes of the original binaries.',
+                               '原始工具链能逐字节重建原始二进制的源码或完整反汇编，按函数或用原始文件的哈希核对。'),
+    'decompilation': ('Recovered source checked by behavior or not at all, rather than rebuilt byte for byte.',
+                      '恢复出的源码以行为对照或未经核对，不追求逐字节重建。'),
+    'static-recompilation': ('Original machine code or bytecode translated ahead of time into compilable code '
+                             'that runs natively on a replacement runtime.',
+                             '将原始机器码或字节码预先翻译成可编译代码，在替代运行时上原生运行。'),
+    'port': ('A native or web build that compiles an existing decompilation or reconstruction on a new platform layer.',
+             '在新的平台层上编译既有反编译或重建源码，得到原生或网页版本。'),
+    'engine-reimplementation': ('New code that recreates an engine or its rules from file formats and observed '
+                                'behavior, usually running the original game data.',
+                                '依据文件格式与观察到的行为重新编写引擎或规则，通常读取原始游戏数据运行。'),
+    'other': ('Rehosting runtimes, analyses, experiments and cases whose evidence does not establish one of the '
+              'methods above.',
+              '重托管运行时、分析、实验，以及证据不足以归入以上方法的案例。'),
+    UNASSIGNED_METHOD: ('Cases whose record does not name a reconstruction method yet.',
+                        '记录中尚未注明重建方法的案例。'),
+}
+
+
+def _case_row(record: dict, language: str, section: str, heading: str = 'h3') -> str:
     """Keep reported scope visible; link the original, the full entry, its primary source and its requirements as /resources/ does."""
     zh = language == 'zh'
     name = (record.get('name_zh') or record['name']) if zh else record['name']
@@ -314,7 +338,7 @@ def _case_row(record: dict, language: str, section: str) -> str:
     targets = ' · '.join(TARGETS[target][int(zh)] for target in record['targets'])
     reviewed = str(record['verified_at'])
     return f'''<article class="case-row" id="{identifier}" data-case-id="{identifier}" data-resource-id="{identifier}" data-case-section="{escape(section, quote=True)}">
-  <div class="case-heading"><h3><a href="{_url(record['url'])}" target="_blank" rel="noopener">{escape(name)}{EXTERNAL_TITLE_ARROW}</a></h3><span class="case-relationship">{escape(relationship)}</span></div>
+  <div class="case-heading"><{heading}><a href="{_url(record['url'])}" target="_blank" rel="noopener">{escape(name)}{EXTERNAL_TITLE_ARROW}</a></{heading}><span class="case-relationship">{escape(relationship)}</span></div>
   <p class="case-description">{escape(record[f'description_{language}'])}</p>
   <div class="case-footer"><div class="case-meta"><span class="case-targets">{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{identifier}" href="{detail_path}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a><a class="case-source" href="{_url(record['evidence_url'])}" target="_blank" rel="noopener">{PRIMARY_SOURCE_LABEL[zh]} <span aria-hidden="true">↗</span></a></div>
   <p class="case-evidence">{_requirements_link(record, language, name, 'case-requirements-link')}<time class="case-review-date" datetime="{escape(reviewed, quote=True)}">{('来源复核日期：' if zh else 'Source review: ')}{escape(reviewed[:10])}</time></p>
@@ -342,13 +366,28 @@ def _case_collection(resources: list[dict], language: str, site_url: str,
     cases = [record for record in resources if record['kind'] == 'case-study']
     for record in cases:
         groups[collection_section(record)].append(record)
+    count = lambda number: f'{number} ' + ('个案例' if zh else ('case' if number == 1 else 'cases'))
     sections, navigation, items = [], [], []
     for key, labels in SECTIONS.items():
         if not groups[key]:
             continue
         label = labels[int(zh)]
         navigation.append(f'<a href="#cases-{key}">{escape(label)}<span>{len(groups[key])}</span></a>')
-        sections.append(f'<section class="case-section" id="cases-{key}" data-case-section="{key}" aria-labelledby="case-heading-{key}"><div class="browse-topline"><h2 id="case-heading-{key}">{escape(label)}</h2><p>{len(groups[key])} {("个案例" if zh else ("case" if len(groups[key]) == 1 else "cases"))}</p>{_section_index_link('case-subjects', zh)}</div>{_target_coverage(key, cases, language, cases=True)}<div class="case-list">' + '\n'.join(_case_row(record, language, key) for record in groups[key]) + '</div></section>')
+        if key not in METHOD_SECTIONS:
+            body = '<div class="case-list">' + '\n'.join(_case_row(record, language, key) for record in groups[key]) + '</div>'
+        else:
+            # Same groups and order as this section's README case studies; each group is one level below the section.
+            methods = method_groups(groups[key])
+            groups[key] = [record for _, records in methods for record in records]
+            method_nav = ''.join(f'<a href="#cases-{key}-{method}">{escape(METHOD_HEADINGS[method][int(zh)])}<span>{len(records)}</span></a>'
+                                 for method, records in methods)
+            body = (f'<nav class="browse-category-nav case-method-nav" aria-label="{("重建方法" if zh else "Reconstruction methods")}">{method_nav}</nav>'
+                    + ''.join(f'<section class="case-method" id="cases-{key}-{method}" data-case-method="{method}" aria-labelledby="case-method-heading-{key}-{method}">'
+                              f'<div class="case-method-topline"><h3 id="case-method-heading-{key}-{method}">{escape(METHOD_HEADINGS[method][int(zh)])}</h3><p>{count(len(records))}</p></div>'
+                              f'<p class="case-method-note">{escape(METHOD_NOTES[method][int(zh)])}</p><div class="case-list">'
+                              + '\n'.join(_case_row(record, language, key, 'h4') for record in records) + '</div></section>'
+                              for method, records in methods))
+        sections.append(f'<section class="case-section" id="cases-{key}" data-case-section="{key}" aria-labelledby="case-heading-{key}"><div class="browse-topline"><h2 id="case-heading-{key}">{escape(label)}</h2><p>{count(len(groups[key]))}</p>{_section_index_link('case-subjects', zh)}</div>{_target_coverage(key, cases, language, cases=True)}{body}</section>')
         for record in groups[key]:
             name = (record.get('name_zh') or record['name']) if zh else record['name']
             items.append({'name': name, 'url': f"{site_url}{prefix}/resources/{record['id']}/", 'description': record[f'description_{language}']})
