@@ -548,6 +548,11 @@ def report_check(repository, sha, token, number, errors, not_inspected):
     summary = (f'Rule-based review of pull request #{number} at `{sha[:12]}` by trusted default-branch code '
                f"(`{os.environ.get('GITHUB_SHA', '')[:12]}`). The bot review comment on the pull request lists "
                'every check and finding. This is not an approval or a runtime test.')
+    # Branch protection does not count check runs reported by a dispatched workflow toward the required
+    # checks, but it does count a commit status from GitHub Actions, so the status carries the result.
+    api(repository, f'statuses/{sha}', token, method='POST', payload={
+        'state': 'failure' if errors else 'success', 'context': CHECK_NAME, 'target_url': run_url,
+        'description': title[:140]})
     api(repository, 'check-runs', token, method='POST', payload={
         'name': CHECK_NAME, 'head_sha': sha, 'status': 'completed',
         'conclusion': 'failure' if errors else 'success', 'details_url': run_url,

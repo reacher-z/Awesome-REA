@@ -47,6 +47,8 @@ jobs:
         run: python3 scripts/review_pr.py
   # Same review for a dispatched run. Only a dispatch on the default branch runs: this definition and
   # the checked-out code are then that branch's, and the PR head is still never checked out or executed.
+  # The result is reported on the PR head as a `review` commit status, which branch protection counts,
+  # and as a check run for the pull request's checks list.
   dispatched-review:
     if: ${{ github.event_name == 'workflow_dispatch' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
     runs-on: ubuntu-latest
@@ -55,6 +57,7 @@ jobs:
       contents: read
       pull-requests: write
       checks: write
+      statuses: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:

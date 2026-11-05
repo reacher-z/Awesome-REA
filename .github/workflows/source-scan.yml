@@ -66,8 +66,9 @@ jobs:
       pull-requests: write
       # Read this run's checkpoint artifact and dispatch the two required checks.
       actions: write
-      # Read the validate and review check runs on the pull request head.
+      # Read the validate and review commit statuses and check runs on the pull request head.
       checks: read
+      statuses: read
     outputs:
       status: ${{ steps.ingest.outputs.status }}
     steps:
