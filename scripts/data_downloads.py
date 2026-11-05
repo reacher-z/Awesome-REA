@@ -22,7 +22,7 @@ RESOURCE_FIELDS = frozenset({
     'verified_at', 'verification',
 })
 PAPER_FIELDS = frozenset({
-    'id', 'title', 'title_zh', 'authors', 'year', 'publication_date',
+    'id', 'title', 'title_zh', 'authors', 'authors_omitted', 'year', 'publication_date',
     'date_precision', 'date_basis', 'date_basis_zh', 'venue', 'publication_status',
     'arxiv_id', 'arxiv_version_reviewed', 'first_arxiv_date', 'doi', 'url',
     'pdf_url', 'code_url', 'project_url', 'targets', 'description_en',
@@ -83,7 +83,8 @@ object per line. No authentication or JavaScript is required.
 - resources.json: curated resources as a JSON array, including English/Chinese
   descriptions, requirements, source evidence and review labels.
 - papers.json: the separate bibliography, including authors, publication
-  identity, English/Chinese summaries, research limits and source URLs.
+  identity, English/Chinese summaries, research limits and source URLs. A paper
+  with authors_omitted set to true has an empty authors list; its url lists them.
 - records.jsonl: both arrays, with record_type set to resource or paper.
 - references.bib: citations for the papers.
 - manifest.json: versioned format, per-file checksums and separate counts.

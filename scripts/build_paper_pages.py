@@ -28,13 +28,22 @@ TARGET_LABELS = {
     'protocol': ('Protocol inference and analysis', '协议推断与分析'),
 }
 # Fields paper-search.js matches and filters on: both languages' titles and summaries, authors, venue and identifiers.
-SEARCH_FIELDS = ('id', 'title', 'title_zh', 'description_en', 'description_zh', 'authors', 'venue', 'doi', 'arxiv_id',
-                 'year', 'publication_status', 'targets')
+# authors_omitted is null except on records that leave the author list out (see authors_omitted below).
+SEARCH_FIELDS = ('id', 'title', 'title_zh', 'description_en', 'description_zh', 'authors', 'authors_omitted', 'venue',
+                 'doi', 'arxiv_id', 'year', 'publication_status', 'targets')
+# What every page, list and export shows in place of names for a record with `authors_omitted: true`; pages link
+# the words to the paper itself, which lists its authors.
+AUTHORS_OMITTED = ('Authors: see the paper', '作者：见原文')
 # Advisory weight for each paper listing. validate_site.py prints a warning above it and never fails, so data pull
 # requests keep passing; tests check a fixed bibliography against it.
 LISTING_SIZE_BUDGET = 900_000
 MONTHS = ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December')
 BIBTEX_MONTHS = tuple(name[:3].lower() for name in MONTHS)
+
+
+def authors_omitted(paper: dict) -> bool:
+    """True for a record that leaves its author list out: `authors` is empty and readers are sent to the paper."""
+    return paper.get('authors_omitted') is True
 
 
 def papers_newest_first(papers: list[dict]) -> list[dict]:
@@ -94,13 +103,12 @@ def bibtex_text(paper: dict) -> str:
         return ''.join(replacements.get(character, character) for character in str(value))
 
     kind = {'conference-paper': 'inproceedings', 'journal-article': 'article'}.get(paper['publication_status'], 'misc')
-    fields = [
-        ('title', '{' + literal(paper['title']) + '}'),
+    fields = [('title', '{' + literal(paper['title']) + '}')]
+    if not authors_omitted(paper):
         # Literal author names avoid guessing surname order or multipart surnames.
-        ('author', ' and '.join('{' + literal(name) + '}' for name in paper['authors'])),
-        ('year', str(paper['year'])),
-        ('url', paper['url']),
-    ]
+        fields.append(('author', ' and '.join('{' + literal(name) + '}' for name in paper['authors'])))
+    fields.extend((('year', str(paper['year'])), ('url', paper['url'])))
+    notes = []
     # Container fields come only from the publisher metadata cited in `citation`;
     # without it, published entries keep the short venue label, minus a journal's conference issue.
     container = paper.get('citation') or {}
@@ -116,7 +124,12 @@ def bibtex_text(paper: dict) -> str:
         if paper.get('arxiv_id'):
             fields.append(('howpublished', 'arXiv:' + paper['arxiv_id']))
         # Review caveats stay on the paper page; the reference states only the status.
-        fields.append(('note', literal('Accepted to ' + paper['venue']) if paper['publication_status'] == 'conference-accepted' else 'Preprint'))
+        notes.append('Accepted to ' + paper['venue'] if paper['publication_status'] == 'conference-accepted' else 'Preprint')
+    if authors_omitted(paper):
+        # No author field is invented; the note sends readers to the paper at `url` for its authors.
+        notes.append(AUTHORS_OMITTED[0])
+    if notes:
+        fields.append(('note', literal('. '.join(notes))))
     if paper.get('doi'):
         fields.append(('doi', paper['doi']))
     if paper.get('arxiv_id'):
@@ -154,6 +167,9 @@ def scholarly_article(paper: dict, language: str, site_url: str = 'https://aweso
         'isPartOf': {'@type': 'CreativeWork', 'name': paper['venue']},
         'encoding': {'@type': 'MediaObject', 'encodingFormat': 'application/pdf', 'contentUrl': paper['pdf_url']},
     }
+    if authors_omitted(paper):
+        # Structured data names no authors rather than an empty or invented list.
+        del article['author']
     # Never manufacture a month or day for year-only acceptance records.
     if paper.get('publication_date'):
         article['datePublished'] = paper['publication_date']
@@ -209,11 +225,18 @@ def paper_card(paper: dict, language: str, use_pro: bool) -> str:
         if paper.get(field):
             links.append(f'<a class="paper-link" href="{web_url(paper[field])}" target="_blank" rel="noopener" aria-label="{named(label(en, cn))}">{label(en, cn)}{icon("external", use_pro)}</a>')
     citation_link = f'<a class="paper-link" href="/papers/citations/{paper["id"]}.bib" download="{paper["id"]}.bib" type="application/x-bibtex" aria-label="{named('BibTeX')}">BibTeX <span aria-hidden="true">↓</span></a>'
+    if authors_omitted(paper):
+        omitted = label(*AUTHORS_OMITTED)
+        authors = (f'<p class="paper-authors"><a href="{web_url(paper["url"])}" target="_blank" rel="noopener" '
+                   f'aria-label="{escape(f"{omitted}（{title}）" if zh else f"{omitted} ({title})", quote=True)}">'
+                   f'{escape(omitted)}{icon("external", use_pro)}</a></p>')
+    else:
+        authors = f'<p class="paper-authors" lang="en">{escape("; ".join(paper["authors"]))}</p>'
     return f'''<article class="paper-card" id="{paper['id']}" data-paper-id="{paper['id']}">
   <header><h3><a href="{web_url(paper['url'])}" target="_blank" rel="noopener">{escape(title)}{icon('external', use_pro)}</a></h3><div class="paper-meta"><span class="paper-year">{paper['year']}</span><span class="paper-venue" lang="en">{escape(paper['venue'])}</span><span class="paper-status paper-status-{paper['publication_status']}">{status}</span></div></header>
   <p class="paper-description">{escape(paper[f'description_{language}'])}</p>
   <ul class="paper-links">{''.join(f'<li>{link}</li>' for link in links)}</ul>
-  <details class="paper-details"><summary>{label('Scope & authors', '研究范围与作者')}</summary><div class="paper-scope"><h4>{label('Scope & limitations', '研究范围与局限')}</h4><p>{escape(paper[f'scope_limitations_{language}'])}</p></div><h4>{label('Authors & citation', '作者与引文')}</h4>{original_title}<p class="paper-authors" lang="en">{escape('; '.join(paper['authors']))}</p><p class="paper-citation-download">{citation_link}</p></details>
+  <details class="paper-details"><summary>{label('Scope & authors', '研究范围与作者')}</summary><div class="paper-scope"><h4>{label('Scope & limitations', '研究范围与局限')}</h4><p>{escape(paper[f'scope_limitations_{language}'])}</p></div><h4>{label('Authors & citation', '作者与引文')}</h4>{original_title}{authors}<p class="paper-citation-download">{citation_link}</p></details>
   {paper_sources_link(paper, language)}
 </article>'''
 
@@ -270,6 +293,8 @@ def build_paper_pages(
             raise ValueError('Unknown paper target')
         if paper.get('runtime_tested') is not False:
             raise ValueError('This directory currently describes source-reviewed, unrerun research only')
+        if authors_omitted(paper) != (paper['authors'] == []):
+            raise ValueError(f'{identifier}: an empty author list must be marked authors_omitted, and only then')
         for key in ('title', 'title_zh', 'venue', 'date_basis', 'date_basis_zh', 'metadata_notes', 'metadata_notes_zh', 'description_en', 'description_zh', 'scope_limitations_en', 'scope_limitations_zh', 'why_fits_en', 'why_fits_zh'):
             if not isinstance(paper.get(key), str) or not paper[key].strip():
                 raise ValueError(f'{identifier}: missing bibliography or localized text')

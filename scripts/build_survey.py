@@ -10,7 +10,7 @@ import re
 
 from asset_paths import fingerprinted_href
 from build_discovery_pages import jsonld_script
-from build_paper_pages import STATUS_LABELS, bibtex_text, icon
+from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, bibtex_text, icon
 from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
 from site_footer import site_footer
 
@@ -210,7 +210,7 @@ def repository_bibtex():
     editorial survey's date, version or title as repository publication metadata.
     """
     return ('@misc{awesome-rea,\n'
-            '  author = {Zhang, Yuxuan and Wang, Haozhe and {Awesome REA contributors}},\n'
+            '  author = {{Awesome REA}},\n'
             '  title = {{Awesome Reverse Engineering Anything}},\n'
             '  howpublished = {GitHub repository},\n'
             '  url = {https://github.com/reacher-z/Awesome-REA}\n'
@@ -277,7 +277,8 @@ def build_survey(site_dir, papers, resources, *, document=None, site_url='https:
             destination = f'{prefix}/{"papers" if is_paper else "resources"}/{identifier}/'
             links = [(record['url'], choose('Original', '原始来源')), (destination, choose('Reviewed entry', '已核查条目'))]
             if is_paper:
-                metadata = '; '.join(record['authors']) + f'. {record["year"]}. {record["venue"]}. ' + STATUS_LABELS[record['publication_status']][int(zh)] + '.'
+                authors = choose(*AUTHORS_OMITTED) if authors_omitted(record) else '; '.join(record['authors'])
+                metadata = authors + f'. {record["year"]}. {record["venue"]}. ' + STATUS_LABELS[record['publication_status']][int(zh)] + '.'
                 links.extend([(record['pdf_url'], 'PDF'), (f'/papers/citations/{identifier}.bib', 'BibTeX')])
                 if record.get('code_url'):
                     links.append((record['code_url'], choose('Artifact', '研究产物')))

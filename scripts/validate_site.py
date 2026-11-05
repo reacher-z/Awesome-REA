@@ -13,8 +13,8 @@ from asset_paths import ASSET_PATH, FINGERPRINTED_SUFFIXES, UNHASHED_STYLESHEETS
 from build_entry_pages import entry_path, feedback_urls, matching_entries, section_siblings
 from build_site import catalog_index
 from build_manifest import read_build_manifest
-from build_paper_pages import (LISTING_SIZE_BUDGET, SEARCH_FIELDS, bibtex_text, formatted_date, listing_size_warnings,
-                               paper_entity_id, papers_newest_first)
+from build_paper_pages import (AUTHORS_OMITTED, LISTING_SIZE_BUDGET, SEARCH_FIELDS, authors_omitted, bibtex_text,
+                               formatted_date, listing_size_warnings, paper_entity_id, papers_newest_first)
 from validate_papers import read_papers
 from artifact_links import with_artifact_links, with_curated_labels
 from source_descriptions import description_fallback
@@ -651,6 +651,11 @@ def validate_paper_groups(page, papers, language):
         assert len(group['summaries']) == 1 and normalize(group['summaries'][0]['text']) == label + ' ' + count_label, f'Paper section count mismatch: {target} ({language})'
 
 
+def visible_authors(paper, language):
+    """The author text a paper card and entry page show: the names, or the pointer to the paper when omitted."""
+    return AUTHORS_OMITTED[language == 'zh'] if authors_omitted(paper) else '; '.join(paper['authors'])
+
+
 def expected_paper_schema(paper, language):
     statuses = {
         "conference-paper": ("Conference paper", "会议论文"),
@@ -667,6 +672,8 @@ def expected_paper_schema(paper, language):
         'isPartOf': {'@type': 'CreativeWork', 'name': paper['venue']},
         'encoding': {'@type': 'MediaObject', 'encodingFormat': 'application/pdf', 'contentUrl': paper['pdf_url']},
     }
+    if authors_omitted(paper):
+        del article['author']
     if paper.get('publication_date'):
         article['datePublished'] = paper['publication_date']
     identifiers = [
@@ -723,7 +730,7 @@ def validate_paper_outputs(output, pages, source_papers=None):
             summary = (f'{sources} 个来源 · 复核于 {checked}' if language == 'zh'
                        else f'{sources} source{"" if sources == 1 else "s"} · checked {checked}')
             phrases = [paper['title_zh'] if language == 'zh' else paper['title'],
-                       '; '.join(paper['authors']), paper['venue'], statuses[paper['publication_status']][language == 'zh'],
+                       visible_authors(paper, language), paper['venue'], statuses[paper['publication_status']][language == 'zh'],
                        paper[f'description_{language}'], paper[f'scope_limitations_{language}'], summary]
             if language == 'zh':
                 phrases.append(paper['title'])
@@ -1353,7 +1360,7 @@ def validate_entry_outputs(pages, resources, papers):
             # /papers/ cards link here for these: why the paper fits, publication dates and their source,
             # identifiers, the reviewed arXiv version and the review notes, besides the sources themselves.
             phrases = [record['title_zh'] if language == 'zh' else record['title'],
-                       '; '.join(record['authors']), record['venue'], record[f'description_{language}'],
+                       visible_authors(record, language), record['venue'], record[f'description_{language}'],
                        record[f'scope_limitations_{language}'], record[f'why_fits_{language}'],
                        record['date_basis_zh' if language == 'zh' else 'date_basis'],
                        record['metadata_notes_zh' if language == 'zh' else 'metadata_notes'],

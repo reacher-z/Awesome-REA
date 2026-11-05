@@ -168,7 +168,9 @@ class ContributorReferenceTests(unittest.TestCase):
         self.assertEqual(errors, [])
         self.assertIn('license: MIT\n', text)
         self.assertIn('repository-code: https://github.com/reacher-z/Awesome-REA\n', text)
-        self.assertIn('name: Awesome REA contributors\n', text)
+        # The collection is cited as an entity: one author with a name, no personal names or websites.
+        self.assertRegex(text, r'(?m)^authors:\n  - name: Awesome REA\n(?!  - )')
+        self.assertNotRegex(text, r'(?m)^\s*(?:- )?(?:given-names|family-names|website|email|orcid):')
         self.assertIn('primary sources', text)
 
     def test_citation_release_fields_are_paired_semantic_and_not_future(self):

@@ -28,8 +28,6 @@
   --shelf-line:#eeedf5;
   --badge:#f6f4fc;
   --badge-line:#e8e5f4;
-  --monogram:#f3f1fb;
-  --monogram-line:#e8e4f4;
   --faint:#fcfcfe;
   --mono:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;
@@ -64,8 +62,6 @@
     --shelf-line:#272836;
     --badge:#25243a;
     --badge-line:#36345a;
-    --monogram:#25243a;
-    --monogram-line:#36345a;
     --faint:#1e1f29;
   }
 }
@@ -438,16 +434,6 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .collection-home .index-mode.active{border-bottom-color:var(--link)}
 .collection-home .resource-card,.collection-home .source-card{box-shadow:none;border-radius:10px}
 .collection-home .resource-card:hover,.collection-home .source-card:hover{box-shadow:0 7px 28px #2b234b07}
-.contributors-section{display:grid;grid-template-columns:1fr 2fr;gap:30px;border-top:1px solid var(--line);padding-top:30px;padding-bottom:35px;align-items:center}
-.contributors-section .eyebrow{letter-spacing:1.3px;margin-bottom:8px}
-.contributors-section h2{font-size:22px;font-weight:600;letter-spacing:-.5px;margin:0}
-.contributor-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
-.contributor-entry{display:flex;gap:16px;align-items:flex-start}
-.contributor-monogram{display:grid;place-items:center;background:var(--monogram);border:1px solid var(--monogram-line);border-radius:50%;width:44px;height:44px;flex-shrink:0;font:16px Georgia,serif;color:var(--link)}
-.contributor-name{font-size:14px;font-weight:650}
-.contributor-name span{font-size:11px;color:var(--link)}
-.contributor-entry p{font-size:12px;color:var(--muted);margin:4px 0}
-.contributor-work{font-size:11px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 html[lang="zh-CN"] .home-intro h1{font-size:clamp(36px,3.6vw,52px);letter-spacing:0;line-height:1.25}
 html[lang="zh-CN"] .home-intro h1 em{font-family:var(--sans);font-style:normal;letter-spacing:-1px}
 html[lang="zh-CN"] .shelf-note{font-family:var(--sans);font-style:normal}
@@ -455,11 +441,9 @@ html[lang="zh-CN"] .shelf-note{font-family:var(--sans);font-style:normal}
 html[lang="zh-CN"] .eyebrow{letter-spacing:0}
 @media(max-width:1100px){.hero-layout{gap:32px;grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr)}.home-intro h1{font-size:48px;letter-spacing:-2.3px}.subject-directory{gap:8px}.subject-directory a{padding:11px 10px}}
 @media(max-width:850px){.hero-layout{grid-template-columns:1fr}.collection-shelf{display:none}.home-intro h1{font-size:48px;max-width:720px}.home-intro .collection-description{max-width:650px}.home-intro{padding-top:24px}.subject-directory{grid-template-columns:repeat(3,minmax(0,1fr))}.home-intro .collection-directory{gap:12px 24px}.home-intro .collection-directory .directory-about{margin-left:0}}
-@media(max-width:520px){.home-intro{padding:20px 0 18px}.home-intro h1{font-size:36px;line-height:1.15;letter-spacing:-1.5px}.home-intro h1 em{letter-spacing:-1.7px}.home-intro .eyebrow{margin-bottom:10px;letter-spacing:1px}.home-intro .collection-description{font-size:16px;line-height:1.7;margin-top:14px}.hero-actions{gap:9px 18px;margin-top:20px}.hero-actions .button{padding:11px 14px;font-size:12px}.hero-text-link{font-size:12px}.home-intro .collection-directory{margin-top:16px;padding:12px 0;gap:12px 19px}.home-intro .collection-directory a{font-size:10px;gap:5px}.home-intro .collection-directory strong{font-size:20px}.home-intro .collection-directory .directory-about{width:100%;font-size:11px}.subject-directory{margin-top:15px;gap:7px}.subject-directory a{font-size:11px;padding:10px 9px;gap:7px}.subject-arrow{display:none}.contributors-section{grid-template-columns:1fr;gap:22px;padding-top:26px;padding-bottom:30px}html[lang="zh-CN"] .home-intro h1{font-size:35px}}
+@media(max-width:520px){.home-intro{padding:20px 0 18px}.home-intro h1{font-size:36px;line-height:1.15;letter-spacing:-1.5px}.home-intro h1 em{letter-spacing:-1.7px}.home-intro .eyebrow{margin-bottom:10px;letter-spacing:1px}.home-intro .collection-description{font-size:16px;line-height:1.7;margin-top:14px}.hero-actions{gap:9px 18px;margin-top:20px}.hero-actions .button{padding:11px 14px;font-size:12px}.hero-text-link{font-size:12px}.home-intro .collection-directory{margin-top:16px;padding:12px 0;gap:12px 19px}.home-intro .collection-directory a{font-size:10px;gap:5px}.home-intro .collection-directory strong{font-size:20px}.home-intro .collection-directory .directory-about{width:100%;font-size:11px}.subject-directory{margin-top:15px;gap:7px}.subject-directory a{font-size:11px;padding:10px 9px;gap:7px}.subject-arrow{display:none}html[lang="zh-CN"] .home-intro h1{font-size:35px}}
 @media(prefers-reduced-motion:reduce){.shelf-arrow,.subject-directory a{transition:none}.shelf-link:hover .shelf-arrow,.shelf-link[href^="/"]:hover .shelf-arrow{transform:none}}
 @media(max-width:520px){.hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px}.hero-actions .button,.hero-actions .hero-text-link{min-width:0;min-height:44px;justify-content:center;font-size:13px;line-height:1.5}.hero-actions .button{padding:10px}.hero-text-link{font-size:11px}.home-intro .collection-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.home-intro .collection-directory a:not(.directory-about){display:flex;flex-direction:column;align-items:flex-start;gap:0}.home-intro .collection-directory .directory-about{grid-column:1/-1;width:auto}.home-intro .collection-directory a{font-size:10px}}
-
-@media(max-width:700px){.contributor-list{grid-template-columns:1fr;gap:24px}}
 
 /* Reading sizes: descriptions and source evidence should not look like fine print. */
 .collection-note,.collection-note>a,.collection-note summary{font-size:14px}
@@ -477,8 +461,6 @@ html[lang="zh-CN"] .eyebrow{letter-spacing:0}
 .shelf-link small{font-size:13px;line-height:1.55}
 .shelf-note{font-family:var(--sans);font-style:normal;font-size:12px;line-height:1.7}
 .subject-directory a{font-size:14px}
-.contributor-name{font-size:16px}
-.contributor-entry p,.contributor-work{font-size:14px;line-height:1.7}
 .footer-top p,.footer-links{font-size:14px}
 .footer-bottom{font-size:13px}
 html[lang="zh-CN"] .card-description,html[lang="zh-CN"] .source-card-description,html[lang="zh-CN"] .requirements ul{max-width:36em;line-height:1.85}

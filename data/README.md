@@ -58,13 +58,14 @@ Keep a record's English `requirements` within about 1,500 characters in total, p
 
 `papers.json` is a separate bibliography, rendered into the [English paper directory](https://awesomerea.org/papers/), [Chinese paper directory](https://awesomerea.org/zh/papers/), the generated paper lists [docs/papers.md](../docs/papers.md) and [docs/papers.zh-CN.md](../docs/papers.zh-CN.md), and the 10 most recent papers in each README. The bibliography is counted separately from the repository scans. Some papers also appear in the curated collection, so paper and curated totals must not be added as unique entries. Records preserve original titles and author names, publication venue and status, date precision, DOI/arXiv identifiers, public primary sources, bilingual summaries and scope limitations. Chinese titles are translations. A preprint is labeled as such; an open paper does not imply an open dataset or evaluation service. Code links require an author-provided source. Review dates describe bibliography checks, not publication dates or reproduced results.
 
-Each paper record has exactly these fields; the validator rejects missing or extra keys. Only `citation` and `added_at` may be omitted. Nullable fields stay present with `null`. Text fields are nonempty, each `_zh` field needs Chinese text, and its English counterpart must be distinct English text. Titles, venue, date basis, summaries, scope, fit and notes are shown to readers, so they describe links and dates in plain terms (“no code link is listed”, “未列出代码链接”) and never name a field such as `code_url`; the validator rejects these field names there.
+Each paper record has exactly these fields; the validator rejects missing or extra keys. Only `citation`, `added_at` and `authors_omitted` may be omitted. Nullable fields stay present with `null`. Text fields are nonempty, each `_zh` field needs Chinese text, and its English counterpart must be distinct English text. Titles, venue, date basis, summaries, scope, fit and notes are shown to readers, so they describe links and dates in plain terms (“no code link is listed”, “未列出代码链接”) and never name a field such as `code_url`; the validator rejects these field names there.
 
 | Field | Value | Meaning |
 | --- | --- | --- |
 | `id` | `paper-` followed by a lowercase hyphenated slug | Stable identifier, unique in the bibliography |
 | `title` / `title_zh` | Text | Original title exactly as published / Chinese translation |
-| `authors` | Nonempty list of names | Full author names as published, without duplicates |
+| `authors` | Nonempty list of names, or `[]` with `authors_omitted` | Full author names as published, without duplicates |
+| `authors_omitted` | Optional `true` | The record leaves its author list out, at the maintainer's request: `authors` is then the empty list, and pages, README lines, citations and structured data show no names, only “Authors: see the paper” (“作者：见原文”) linking to the paper. The whole list is left out, never some of its names; leave the field out otherwise |
 | `year` | Integer | Publication year; not in the future |
 | `date_precision` | `year`, `month` or `day` | Finest verified precision of the publication date |
 | `publication_date` | `null`, `YYYY-MM` or `YYYY-MM-DD` | `null` for `year` precision, otherwise a month or day matching `date_precision`; within `year` and not in the future |

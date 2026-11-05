@@ -45,7 +45,6 @@ An independent collection of tools, case studies and research for websites, game
 - [Papers](#papers) (207)
   - [Most recent papers](#most-recent-papers) (10)
 - [Full Repository Index](#full-repository-index) (3,309)
-- [Contributors](#contributors)
 - [About](#about)
 
 Also on this page: [Contributing](#contributing)
@@ -1111,12 +1110,6 @@ The resource list above is curated from primary sources. Detailed requirements, 
 ## Contributing
 
 Help improve an entry or share a useful source. Start with the [contribution guide](CONTRIBUTING.md), then [suggest a resource](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml), [recommend a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml), [correct a translation](https://github.com/reacher-z/Awesome-REA/issues/new?template=translation.yml) or [report an outdated entry](https://github.com/reacher-z/Awesome-REA/issues/new?template=broken-resource.yml).
-
-## Contributors
-
-[Yuxuan Zhang](https://yuxuan.world/) — **Lead**.
-
-[Haozhe Wang](https://haozheh3.github.io/) — Game reconstruction resource collection: [awesome-rea-games](https://github.com/HaozheH3/awesome-rea-games).
 
 ## About
 
