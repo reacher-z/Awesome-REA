@@ -9,6 +9,7 @@
     "description_zh": "REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/README.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "rea-agents 6.5.0 was the published npm version at review time.",
@@ -34,6 +35,7 @@
     "description_zh": "官方面向使用者的调查技能，包含目标路由、连接恢复与证据工作流。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/.agents/skills/reverse-engineer-anything/SKILL.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Installing the skill provides instructions; it does not by itself register MCP or install analysis engines.",
@@ -59,6 +61,7 @@
     "description_zh": "安装、客户端配置、分析引擎依赖及按任务检查就绪状态的官方入口。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/installation.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Supported Node.js and npm.",
@@ -83,6 +86,7 @@
     "description_zh": "保存完整 Evidence，再提取摘要或模块视图，适合脚本与可复现记录。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/cli.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Installed REA CLI or an explicitly pinned package runner.",
@@ -107,6 +111,7 @@
     "description_zh": "官方工具协议、能力发现和 Evidence 语义；适合集成与核对实际工具边界。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/mcp-contracts.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "A compatible MCP client for live use.",
@@ -131,6 +136,7 @@
     "description_zh": "从函数清单到指令、伪代码和引用链的原生二进制调查流程。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/native-investigation.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "A target binary and a configured supported provider such as Ghidra, Hopper or IDA.",
@@ -152,6 +158,7 @@
     "description_zh": "从 JavaScript 应用图追踪功能、比较版本，同时保留静态分析的不确定性。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/javascript-application-workflows.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Evidence from analyze_javascript_application or supported runtime reconciliation.",
@@ -173,6 +180,7 @@
     "description_zh": "经 REA 的 JADX 集成检查 APK、类、方法与引用；结果不等于运行时验证。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/android-analysis.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Full JDK 17 or newer and caller-supplied jadx-headless-mcp 0.7.1 with the documented digest check.",
@@ -193,6 +201,7 @@
     "description_zh": "静态读取 .NET 元数据与 CIL，比较成员并检查声明的原生代码边界。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/managed-code-analysis.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "A supported PE/CLI assembly; no native engine is required for metadata/CIL inspection.",
@@ -213,6 +222,7 @@
     "description_zh": "离线检查已有 HAR、SAZ 等网页流量记录；不会自动抓包或访问记录中的 URL。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/web-network-captures.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "A supported existing capture and an explicit format selection.",
@@ -235,6 +245,7 @@
     "description_zh": "用 Binwalk 检查固件区域、用 Unblob 显式提取，并记录工具与制品身份。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/firmware-analysis.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Caller-supplied Binwalk 3.1.x for inspection; Unblob 26.6.x for extraction.",
@@ -258,6 +269,7 @@
       "https://github.com/morluto/rea/blob/3b79af28e80785afce9f5998d8f03289402a1847/CHANGELOG.md"
     ],
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Caller-supplied TShark 4.x on Linux with util-linux prlimit; macOS and Windows hosts are refused before inspection. Listed in the rea-agents 6.5.0 release notes.",
@@ -281,6 +293,7 @@
       "https://github.com/morluto/rea/blob/3b79af28e80785afce9f5998d8f03289402a1847/CHANGELOG.md"
     ],
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Caller-supplied Wireshark 4.x tshark and capinfos. Capture inspection needs Linux with util-linux prlimit or Windows Job Objects; macOS reports a capability gap. Listed in the rea-agents 6.5.0 release notes.",
@@ -304,6 +317,7 @@
       "https://github.com/morluto/rea/blob/3b79af28e80785afce9f5998d8f03289402a1847/CHANGELOG.md"
     ],
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Caller-supplied sigrok-cli 0.7.2 with libsigrokdecode on Linux, plus util-linux prlimit; macOS and Windows are refused. Listed in the rea-agents 6.5.0 release notes.",
@@ -325,6 +339,7 @@
     "description_zh": "通过官方 Notes 示例关联用户点击、导出请求与下载结果；REA 负责观察。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/guide-examples.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "A user-owned Chrome-family browser, loopback CDP connection and explicitly allowed origins.",
@@ -345,6 +360,7 @@
     "description_zh": "追踪 Aegis APK 的 TOTP 计算，官方公开目标指纹与选取的调查证据。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/aegis-login-code.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Upstream case: Aegis 3.4.3, REA 6.1.0, jadx-headless-mcp 0.7.1 and OpenJDK 21 on Linux x64.",
@@ -369,6 +385,7 @@
     "description_zh": "官方教育 CTF 案例：从检查函数得到方程，并记录原程序验证过程。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/ctf-masked-squares.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Upstream case: public DownUnderCTF 2023 challenge, REA 4.1.0 and Ghidra 12.1.4 on Linux x64.",
@@ -394,6 +411,7 @@
     "description_zh": "根据指令与常量重建单个声像函数；上游报告 3,205 例与 63 字节匹配。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/dx-ball-sound-pan.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "The matching DX-Ball 1.07 executable and the documented native-analysis environment.",
@@ -419,6 +437,7 @@
     "description_zh": "结合 REA 发现与独立源码阅读追踪剪贴板桥；动态包装器仍有明确限制。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/notion-clipboard.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Upstream case uses Notion Desktop 7.6.1 packaged JavaScript and REA 4.1.0.",
@@ -444,6 +463,7 @@
     "description_zh": "检查 PC-98 DOS 的 16 位弹幕角度辅助函数，并关联固定版本重建与历史编译器检查。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/th04-bullet-ring.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "The matching original TH04 MAIN.EXE and the documented Ghidra DOS load profile.",
@@ -469,6 +489,7 @@
     "description_zh": "官方自建 Notes 样例，从 renderer、preload、IPC 到 CSV 导出建立证据链。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/guide-examples.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Supported Node.js and REA; no native engine is required for this static fixture.",
@@ -489,6 +510,7 @@
     "description_zh": "提供 Electron 练习目标、Evidence 提取与 MCP 探测，区分离线展示和真正调用 REA。",
     "evidence_url": "https://github.com/jinshi666888/rea-playbook/blob/0ad65a85139025f32402be13ed64c8003e39b00a/README.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "README pins the real-analysis path to rea-agents 6.3.0 and lists supported Node.js versions.",
@@ -509,6 +531,7 @@
     "description_zh": "社区 MCP 适配桥，以精选工具和 CLI 转发缩小宿主需要处理的工具面。",
     "evidence_url": "https://github.com/Ersith/dsh-mcp-rea/blob/74e82f09e3f78fc945e07321d729e2e6b56406a8/README.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Requires REA and the relevant analysis providers; distributed as a local bundle rather than a public npm package.",
@@ -534,6 +557,7 @@
     "description_zh": "Claude Code 社区插件，在固定版本 REA MCP 外增加 Jev 路由和证据检查。",
     "evidence_url": "https://github.com/juan-viox/rea-jev/blob/236f149638971d1c98399fc9de864378b2011bfd/README.md",
     "verified_at": "2026-10-17T12:48:42Z",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Claude Code, supported Node.js and the plugin's documented macOS/Linux environment.",
@@ -556,6 +580,7 @@
     "description_zh": "Windows REA/Ghidra 实验室，提供已知答案挑战、公开研究、上游贡献与限制说明。",
     "evidence_url": "https://github.com/pablodiazjorge/rea-lab/blob/c96b76b75046fc884b8d7526205f1adb9497a5d7/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "The documented environment uses Windows 11, REA 6.4.0 and Ghidra 12.1.4.",
@@ -577,6 +602,7 @@
     "description_zh": "Claude Code mod 汇集收到的 REA Evidence、追踪 unknown，并校验发现所引用的证据 ID。",
     "evidence_url": "https://github.com/pablodiazjorge/rea-casebook/blob/311c29688c82048971b2ef86df59e0ed78310fd8/README.md",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "README requires Claude Code 2.1.296 or newer and an MCP server registered under the name rea.",
@@ -598,6 +624,7 @@
     "description_zh": "作者报告以 REA 开始 Android 调查，再借助独立 Hermes 工具实现 Windows BLE 打印。",
     "evidence_url": "https://github.com/morluto/rea/discussions/4152",
     "verified_at": "2026-10-15",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Project README lists Windows 10/11, Bluetooth LE, an LX-D02 printer and Go 1.25+ to build.",
@@ -625,6 +652,7 @@
     "description_zh": "REA 维护者整理的通用逆向资源目录，适合查找基础知识与相邻工具。",
     "evidence_url": "https://github.com/morluto/awesome-reverse-engineering/blob/901e752191ebdff4f1b8e1a2f15c82fef2de77e7/README.md",
     "verified_at": "2026-10-17T12:48:42Z",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "Individual tools retain their own requirements and licenses.",
@@ -653,6 +681,7 @@
       "https://github.com/songshikang0111/awesome-REA-cases/blob/afea8a6c6ea29559533cf5ba4063e15b6649e0af/README.zh-CN.md"
     ],
     "verified_at": "2026-10-17T12:48:42Z",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "A discovery index; review each case's original source, redistribution rights, and evidence status before reproducing it."
@@ -685,6 +714,7 @@
       "https://github.com/Xiangyu-CAS/rea-capcut/blob/da6f2f81473d90ad18d2c0d90220f21429f0c96f/docs/CAPCUT_INTEROP.md"
     ],
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
       "The v0.5.0 preview reports macOS Apple Silicon testing; Windows/Linux builds still need device validation. The macOS package is ad-hoc signed and not notarized.",
@@ -707,6 +737,7 @@
     "description_zh": "重建第一代 Siri Remote 在 Linux 上的蓝牙报告，解析按键、触摸与 tvOS 风格手势。Python 实现和协议文档区分实测行为、历史报告与推测含义。",
     "evidence_url": "https://github.com/a-funk/open-appleremote/blob/1e6e190c3c29a3d2d8cad2c38c09f8953e9633e3/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Package 0.1.0; live use requires Linux, BlueZ, Python 3.8+ and access to the device’s hidraw interface. The core uses the Python standard library.",
@@ -742,6 +773,7 @@
     "description_zh": "实现 GAMEKB-K17/HCY-K017 宏键盘的厂商 HID 配置协议，写入按键映射、固件宏和 RGB 设置后再读回核对。协议文档区分已测试命令、未确认观察和其他设备的研究结果。",
     "evidence_url": "https://github.com/dvdarkin/gamekb-k17/blob/e61f444793857c0e10a31692674335ee4ee9c89e/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Package 3.0.0 requires Python 3.11+ and hidapi; the optional editor uses tkinter. Hardware identity is USB 0816:0220.",
@@ -777,6 +809,7 @@
     "description_zh": "根据对厂商 Unique Health 安卓应用的研究，重实现 CF632BLE 体脂秤的 BLE 协议和体成分计算。静态 Web Bluetooth 客户端接收测量数据、管理设备档案，并将历史记录保存在浏览器中。",
     "evidence_url": "https://github.com/guyru/cf632ble/blob/c029ef5cfefbd323ffe2a194a75db5cc47aa6d5c/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Requires the CF632BLE hardware and a Chromium browser supporting Web Bluetooth in a secure context. Firefox and Safari/iOS cannot connect to the scale through this app.",
@@ -811,6 +844,7 @@
     "description_zh": "通过二进制记录编解码、考虑引用关系的克隆和受约束的交互写入器，读取并修改受支持的 Axure RP 11 原生文档。CLI 与 MCP 接口提供可检查的编辑操作，并区分离线结构检查和原生应用验收。",
     "evidence_url": "https://github.com/LilZeeCN/zee-rp/blob/473761e6a08f051e1666944db690332ef27a6038/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Package 0.1.1 requires Node.js 18+; MCP additionally uses the optional SDK dependency. Native creation needs the user’s Axure blank template and compatible libraries.",
@@ -848,6 +882,7 @@
     "description_zh": "将 Super Mario 64 DS 函数重建为 C/C++ 和规则允许的汇编原语，并将编译结果与用户提供的卡带转储对比。独立的重定位目标核对强化匹配检查；PC 移植中的集成进度另行统计。",
     "evidence_url": "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Requires the user’s cartridge dump, the pinned mwccarm matching compiler, its separate linker/setup and Python tooling such as ndspy, Capstone and pyelftools.",
@@ -885,6 +920,7 @@
     "description_zh": "在已有 GoldenEye 007 反编译成果之上构建原生 PC 移植，提供宿主平台适配层，并从用户自己的 ROM 提取资产。项目记录智能体协作、渲染对比、试玩范围和尚未解决的平台支持。",
     "evidence_url": "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed v0.5.0 documentation supports Windows 10/11 x64 and x86-64 Linux/Steam Deck with glibc 2.31+; both need OpenGL 3.0 drivers. macOS and ARM builds remain planned, despite the broader repository About description.",
@@ -921,6 +957,7 @@
     "description_zh": "将 Super Smash Bros. Ultimate 13.0.4 的 AArch64 代码提前转换，并提供带 Vulkan/OpenGL 渲染的 Windows 运行时。项目还将部分角色脚本重建为可编辑 C++，通过差分与确定性测试对比转换代码和源码行为。",
     "evidence_url": "https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Running requires Windows 10/11 x64, a Vulkan 1.3-capable GPU and the user’s own 13.0.4 game dump. Linux and Steam Deck support have not started.",
@@ -956,6 +993,7 @@
     "description_zh": "围绕 WiiCompiled 对 Mario Kart Wii 的提前转换实现 Apple 与 Android 平台集成，提供原生图形、输入及可选 Retro Rewind 支持。状态和权利文档区分平台验收、未解决的设备缺陷及游戏内容要求。",
     "evidence_url": "https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Requires user-supplied supported PAL RMCP01 revision 0 game data. Retro Rewind 6.13.3 needs matching separately obtained content and a compatible compiled profile in the reviewed 0.8.3 build.",
@@ -993,6 +1031,7 @@
     "description_zh": "使用 libultraship 和 Torch 移植已有的 Super Smash Bros. N64 反编译成果。作者早期的 README 介绍了智能体构建的图形、音频对比工具和对照模拟器行为的差分调试，并未将其说成脱离社区既有成果、仅靠卡带自动恢复游戏。",
     "evidence_url": "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Requires the user’s own Super Smash Bros. N64 dump matching a documented hash: US NTSC-U v1.0 (NALE) or Japanese v1.0 (NALJ). Each region is a separate build; Torch extracts assets locally during a source build or on a packaged build’s first run.",
@@ -1029,6 +1068,7 @@
     "description_zh": "Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。复盘报告 99% 的函数已进入重建源码，全部函数中 83% 达到字节一致；重建代码仍不公开。",
     "evidence_url": "https://momo5502.com/posts/2026-10-09-game-decompilation/",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Author retrospective dated 2026-10-09; the reviewed article leaves the game unnamed.",
@@ -1058,6 +1098,7 @@
     "description_zh": "N64 游戏 Snowboard Kids 2 的公开匹配反编译项目，2024 年借助社区反编译工具启动。作者在按日期发布的文章中记录了 Claude、Codex 和 GLM 的使用流程，包括无界面的一次性匹配循环、按函数相似度安排任务，以及由钩子约束、经哈希校验的构建，直至报告全部函数完成匹配。",
     "evidence_url": "https://github.com/cdlewis/snowboardkids2-decomp/blob/352a26fae08b3394e11f5e2b589e41a572d53288/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Building needs the user’s own big-endian Snowboard Kids 2 ROM, make, Python 3, MIPS binutils and the toolchain installed by make setup; the README reports testing only on x86 Debian/Ubuntu and macOS. It states the repository has no game assets or assembly, although the reviewed tree tracks menu-sprite PNG and palette files under assets/.",
@@ -1095,6 +1136,7 @@
     "description_zh": "围绕明确的验收检查整理 AI 辅助游戏反编译、原生移植、静态重编译和工具，并另设实践文章与讨论分类。适合寻找一手报告，比较不同项目如何定义正确性。",
     "evidence_url": "https://github.com/yibie/awesome-rea/blob/6df1bc922ac6b92dcd1b2f905c94d8cc4f3b5a3e/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Project entries describe acceptance mechanisms; the separate discussion track does not require public code or an acceptance test. Listing is not independent runtime verification.",
@@ -1125,6 +1167,7 @@
     "description_zh": "为 Thermalright Vision 散热器显示屏实现 USB 图像传输驱动，并用 Rust 仪表盘替代厂商显示应用。文档所述协议发送报头和 JPEG 帧，通过定期重发避免设备退回品牌标志画面。",
     "evidence_url": "https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Package 0.1.0 uses Rust edition 2024 and targets the 480×480 USB 87ad:70db display family; other cooler/display models are not established by this review.",
@@ -1161,6 +1204,7 @@
     "description_zh": "将 The Binding of Isaac 的 Flash AVM1 字节码转换为 C++ 函数，并提供原生渲染与输入运行时。项目从用户自己的原游戏读取图像和音频，并记录了确定性输入、无界面运行和截图回归检查。",
     "evidence_url": "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Requires the user’s original Steam Isaac.exe; Wrath of the Lamb and Eternal Edition depend on the corresponding game version. This is ahead-of-time translation, not recovery of the original authored ActionScript project.",
@@ -1196,6 +1240,7 @@
     "description_zh": "作者报告通过 Claude Code 与 REA，将 macOS 串流端的捕获、编码、音频和输入层替换为 Linux 实现，同时复用厂商协议库。文档中的目标是桌面串流和视频播放，而非仅 Windows 串流端提供的 VR 游戏串流。",
     "evidence_url": "https://github.com/cudanexus/vd-streamer-linux/blob/e65c302f13639f044742bdc4951ab1a424c1c929/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Requires the official macOS Virtual Desktop installer for proprietary libraries and the user’s Virtual Desktop headset application. It is not a complete protocol reimplementation or an official vendor port.",
@@ -1229,6 +1274,7 @@
     "description_zh": "发布 React 组件、动效辅助模块和设计系统笔记，作者将其归因于使用 REA 调查 Claude Desktop。它可作为界面重建案例；观察结果受版本约束，不能证明已完整复刻助手应用或后端。",
     "evidence_url": "https://github.com/Caho1/open-claude-ui/blob/ddf3aea1711db62fd6d24343bbab500a5ae69f64/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Package 1.0.0 declares React/React DOM 18+, Framer Motion 10+ and lucide-react 0.280+ peer dependencies; its development setup uses TypeScript 5.5 and Framer Motion 11.",
@@ -1266,6 +1312,7 @@
     "description_zh": "用 Go 重实现兼容 Total Annihilation 的策略游戏引擎，公开文件格式研究并提供不同玩法配置。项目区分拟复现的零售版3.1行为、社区补丁研究和有意加入的现代改动，也区分合成检查与依赖原始游戏数据的测试。",
     "evidence_url": "https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Native use requires the user’s installed Total Annihilation HPI archives. The reference installation includes Core Contingency, Battle Tactics and patch 3.1; other combinations remain under testing.",
@@ -1303,6 +1350,7 @@
     "description_zh": "按原游戏整理反编译、源码重建、重编译、原生移植和演示，通过对照表链接相关项目，并区分启动器、引擎工作、作者分享的展示与源码重建成果。",
     "evidence_url": "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed README has 103 game headings and 140 project rows across 8 categories. Some headings cover related editions and one repository can appear under multiple games; these are inventory counts, not independently verified completed projects.",
@@ -1329,6 +1377,7 @@
     "description_zh": "作者用 Ghidra 和编程智能体调查 LG webOS 原生媒体接口后构建的非官方 Plex 客户端。它自行绘制 Rust/OpenGL 界面并使用电视解码器，文档区分宿主测试、模拟器测试和实体设备测试。",
     "evidence_url": "https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Requires a Plex account/server and a compatible LG TV. The baseline is webOS 4.0+, with explicitly documented 3.4.3/3.9.3 exceptions; the latter needs a newer source build than prebuilt v0.8.0.",
@@ -1367,6 +1416,7 @@
     "description_zh": "依据原二进制和原编译器重建日版 Touhou 8 的 1.00d 版本，再将恢复的代码适配到其他平台。项目分别记录源码存在、严格函数匹配、完整可执行文件一致性和移植可玩性里程碑。",
     "evidence_url": "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Exact checks require the user’s original Japanese TH08 1.00d executable and Visual C++ .NET 2002 toolchain. Ledgers and analysis helpers need Python 3.11+; Linux/macOS toolchain setup also needs Wine and msiextract. Playable products still need original game data.",
@@ -1404,6 +1454,7 @@
     "description_zh": "REA 的教学案例检查 HTTP 版 t-rex-runner，并重建其速度更新规则。单独进行的受控原游戏检查与新演示对比更新次数，包含浮点递增越过名义速度阈值的一步。",
     "evidence_url": "https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The recorded target is wayou’s HTTP browser edition at the cited revision, not chrome://dino/. Source and observation hashes identify that edition.",
@@ -1436,6 +1487,7 @@
     "description_zh": "REA 案例追踪已安装 Windows Calculator 的模型 DLL，解释乘除运算与其他运算中不同的百分比行为。分析人员选定函数后，对照微软公开源码解释，并通过固定输入的浏览器示例演示。",
     "evidence_url": "https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The documented target is Calculator 11.2508.4.0 x64. The public source commit is an interpretation cross-check, not an identified build commit for that installed DLL.",
@@ -1468,6 +1520,7 @@
     "description_zh": "作者报告借助 Codex 与 REA 分析，修改独立的 macOS 飞书副本，为其设置不同的应用身份、数据目录和单实例锁。文章描述本地签名与隔离检查，并称原应用保持不变。",
     "evidence_url": "https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The report targets Feishu 8.1.17 with REA 6.5.0 on the author’s Mac; reported elapsed times and isolation results were not independently reproduced.",
@@ -1497,6 +1550,7 @@
     "description_zh": "通过 N64Recomp 将《姆吉拉的假面》转为原生应用，并使用 RT64 渲染。项目区分静态重编译与源码反编译，同时借用反编译项目的头文件和部分函数实现补丁与增强功能。",
     "evidence_url": "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed build accepts the US Nintendo 64 Majora’s Mask ROM supplied by the user; game assets are not included. Ocarina of Time remains planned, and this is not an emulator for arbitrary ROMs.",
@@ -1534,6 +1588,7 @@
     "description_zh": "从 Jak 原二进制重建可读的 GOAL 代码，再用新编写的 GOAL 编译器为现代 PC 编译。流程结合专用反编译器、人工补充的类型信息、素材提取和交互式开发运行时。",
     "evidence_url": "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Requires the user’s original PS2 game copy and extracted assets. The README covers retail PAL, NTSC and NTSC-J editions, including Greatest Hits, and excludes later PS3/PS4/PS5 releases.",
@@ -1571,6 +1626,7 @@
     "description_zh": "针对英文版 LEGO Island 1.1 的原始 32 位 Windows 目标重建源码。项目区分函数对比报告、ReproBit 报告的零售版逐字节一致重构建，以及普通开发构建；现代跨平台适配位于另一仓库。",
     "evidence_url": "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Exact verification requires the user’s matching English 1.1 CONFIG.EXE, ISLE.EXE and LEGO1.DLL, the original Visual C++ 4.2 toolchain, Python 3.11+, Git and ReproBit; Linux/macOS also need Wine.",
@@ -1606,6 +1662,7 @@
     "description_zh": "作者通过 REA 的 Ghidra 工作流调查 DOS 版 Ski or Die 二进制，记录 Snowball War 的规则，再用 Rust 与 SDL2 重建这一小游戏。公开笔记区分恢复的数据表和机制、近似实现以及有意调整的表现效果。",
     "evidence_url": "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Requires the user’s matching DOS/EGA game files and Python 3 for asset extraction. The Linux build uses Rust stable (author-tested with 1.93), Cargo and SDL2 development libraries; Cargo.toml specifies the SDL2 binding 0.37.",
@@ -1643,6 +1700,7 @@
     "description_zh": "将逆向分析后的 Space Cadet 弹球游戏转为可编译的 C++，面向桌面平台。README 标明 Windows XP 可执行文件及公开 PDB、Full Tilt 可执行文件，并描述恢复结构、命名变量和适配反编译例程的工作。",
     "evidence_url": "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Requires original game resources supplied separately. The project supports resource data from Windows and Full Tilt editions; its releases do not supply those assets.",
@@ -1681,6 +1739,7 @@
     "description_zh": "为日版、北美版、欧洲版、Shindou 版和 iQue 版 Super Mario 64 重建源码。构建文件区分原 ROM 哈希比较与非匹配或修改配置；源码命名和文档工作仍在推进。",
     "evidence_url": "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Requires the user’s matching original ROM for asset extraction. The five target releases are separate; this repository’s reconstruction should not be confused with the separately maintained sm64ex, Ghostship or multiplayer ports.",
@@ -1720,6 +1779,7 @@
     "description_zh": "使用 XenonRecomp 静态重编译 Xbox 360 PowerPC 代码，并用 XenosRecomp 转换 Xenos 着色器，构建非官方 Sonic Unleashed PC 移植。项目增加现代显示与模组选项，同时记录原引擎限制和仍存在的兼容性问题。",
     "evidence_url": "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Requires the user’s US or EU Xbox 360 game files and the title update; the Japanese release and PS3 files are unsupported by the reviewed installation guide. DLC is optional, and the project does not provide game assets.",
@@ -1756,6 +1816,7 @@
     "description_zh": "提供用于运行 Morrowind 的独立引擎和替代编辑器 OpenMW-CS，通过自己的运行时加载原游戏内容，并记录脚本及模组兼容性差异。这是引擎替代实现，而非恢复出的 Bethesda 源码树。",
     "evidence_url": "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Playing Morrowind requires the user’s original game data, including Morrowind.esm and the installation settings. Tribunal and Bloodmoon are optional expansions; the installation guide recommends both for best results. OpenMW-CS can also support separately authored projects.",
@@ -1794,6 +1855,7 @@
     "description_zh": "将逆向分析的 Driver 2 MIPS 例程转为 C/C++，并用 Psy-X/Psy-Cross 将 PlayStation 接口适配到桌面系统。项目记录借助符号的 Ghidra/IDA 分析，同时明确包含有意修复的错误和玩法改动。",
     "evidence_url": "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Requires the user’s copies of both Driver 2 discs. The pinned installation wiki lists English PAL EU and NTSC US revisions 1.0/1.1; other languages remain planned. Italian/Spanish SYM files cited as decompilation inputs do not imply support for those game-data editions.",
@@ -1832,6 +1894,7 @@
     "description_zh": "作者将这款 Rust 图像编辑器描述为 Photoshop 风格流程的净室重实现。文档引擎、界面与自动化接口共用编辑命令；源码区分编辑器中的 PSD 往返处理与独立文件编解码器的字节保留。",
     "evidence_url": "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The pinned workspace identifies version 0.9.0 and declares Rust 1.95+ for source builds with Cargo. Native and WebAssembly paths have platform-specific dependencies; optional font inputs and reference documents are separate. No build or installer was run here.",
@@ -1872,6 +1935,7 @@
     "description_zh": "作者将 WordCraft 描述为以 Rust 净室重实现熟悉的 Microsoft Word 流程。项目提供自己的文档模型、排版引擎和 DOCX 读写器，以及桌面与浏览器界面；源码测试覆盖选定的编辑与文件保留行为。",
     "evidence_url": "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The pinned workspace identifies version 0.7.0 and declares Rust 1.95+ with Cargo. The documented browser build uses Trunk; native builds and faithful layout require the relevant platform dependencies and fonts. The catalog did not build the app or download reference documents.",
@@ -1912,6 +1976,7 @@
     "description_zh": "作者将 GridCraft 描述为以 Rust 净室重实现 Excel 风格的电子表格流程。工作簿模型、公式解析器与依赖驱动的重新计算连接到 XLSX 读写，以及供桌面、浏览器和自动化接口共用的编辑命令层。",
     "evidence_url": "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The pinned workspace identifies version 0.7.0 and declares Rust 1.90+ with Cargo. Browser builds use Trunk and wasm32-unknown-unknown; native Linux CI lists X11/Wayland, GTK, fontconfig/FreeType and graphics dependencies. Fonts and input workbooks are separate; no build was run here.",
@@ -1954,6 +2019,7 @@
     "description_zh": "作者将 DeckCraft 描述为以 Rust 净室重实现 PowerPoint 风格的演示文稿流程。其幻灯片模型、渲染与命令层支撑桌面／浏览器编辑及 PPTX 交换；所审阅源码测试检查构造的文稿和选定的保留包部件。",
     "evidence_url": "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The pinned workspace identifies version 0.7.0 and declares Rust 1.95+ with Cargo. Linux source builds need ALSA headers and display/window dependencies; the browser path uses Trunk and wasm32-unknown-unknown. Optional craft-fonts inputs affect rendering, with system-font fallback documented; no application or asset package was downloaded or run here.",
@@ -1998,6 +2064,7 @@
     "description_zh": "基于 Devilution 重建成果提供现代平台上的 Diablo 与 Hellfire 移植，加入平台支持、错误修复及可选便利功能。项目记录了早期借助符号信息的重建过程，并包含特定地牢生成与存档回归检查。",
     "evidence_url": "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Full Diablo play requires the user’s original DIABDAT.MPQ. Hellfire additionally needs hellfire.mpq, hfmonk.mpq, hfmusic.mpq and hfvoice.mpq. The separately offered spawn.mpq supports only the shareware portion; source availability does not supply rights to original game content.",
@@ -2041,6 +2108,7 @@
     "description_zh": "从 Intel Windows 驱动包中恢复选定的相机调校结构，用于修复一个 ThinkPad 型号在 Linux 下的图像采集。公开的 CPFF／AIQB 解析器、内核补丁及 libcamera 修改，配有作者报告的 Claude 辅助调查和有限范围的前后测量。",
     "evidence_url": "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed target is a Lenovo ThinkPad X1 Carbon Gen 14 (Aura Edition), with a Sony IMX471 sensor behind Intel IPU7. The author tested Fedora 44 kernel 7.2.8 and a libcamera 0.7.1 backport. The published kernel package omits BTF/debug information and is described as a test kernel, not a daily-driver recommendation.",
@@ -2087,6 +2155,7 @@
     "description_zh": "维护者报告使用 REA 与 Ghidra 研究 QuickBooks Desktop for Mac 的选定行为，随后独立实现本地记账应用。Python／SQLite 引擎持久保存复式分录、发票、库存和付款；公开合成样例检查有限范围的记账与回滚行为。",
     "evidence_url": "https://github.com/lxistired/ledger-reborn/blob/d7f6b8a1f4ad6c4ae8b10100d1c93cf15940c21d/docs/CASE_STUDY.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed release is 2026.10.12-preview.1. The local browser edition needs Python 3.11+; the accounting core uses the standard library and SQLite. Native desktop builds use pywebview 6.2.1, PyInstaller 6.22.3 and Pillow 12.3.0, built on the target OS; Windows additionally needs the separately installed WebView2 runtime.",
@@ -2133,6 +2202,7 @@
     "description_zh": "记录 website-rebuild-skill 的一个案例：解码浏览器收到的 React 服务端组件 Flight 流，重建可构建的 Next 项目，再与捕获站点的输出比较。作者报告的 rauchg.com 重建过程采用路由树比较与模块引用映射；新服务端源码由可观察输出推断。",
     "evidence_url": "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/rsc-reconstruction.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The documented rauchg.com snapshot used Next 16.1.1, Turbopack and React 19 canary. The tooling requires Node.js 22+ and a local Chrome/Chromium for comparison; some stages invoke version-pinned external tools. Repeating the method needs an authorized target snapshot and a separately built reconstruction, not just the skill repository.",
@@ -2174,6 +2244,7 @@
     "description_zh": "在 ESP32-C3 桥接器与 Python 电脑查看器中复用 otoscope 经逆向得到的 i4season／Soulear 协议。作者将实现归功于 Claude Code 辅助，报告把一台 Hopefox Find T 的视频传到 Windows 电脑，并提供录像、方向调整及 LED 控制。",
     "evidence_url": "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Input is the camera’s Wi-Fi i4season/Soulear UDP traffic. An ESP32-C3 SuperMini with a 0.42-inch, 72×40 SSD1306 OLED reassembles JPEG frames and sends them with accelerometer data over custom USB CDC serial to the viewer. It is not a UVC webcam, the camera’s USB port is charge-only, and no vendor firmware or full app source is recovered.",
@@ -2220,6 +2291,7 @@
     "description_zh": "记录 BaoCut 交互式幻灯片编辑器，作者称其实现借鉴自 Claude Slides。它为浏览器与桌面宿主加入本地文稿存储、HTML/CSS 编译器及标注到智能体的桥接；设计说明报告了 Web 流程检查，但未确立原有后端恢复或完整行为一致性。",
     "evidence_url": "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/docs/design/slides/slides-design.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Covers only the pinned Slides component, not all of BaoCut: an editor runtime, a restricted HTML/CSS slide compiler and a new BaoCut host; decks are a v4 deck.json index with per-slide HTML and local assets. The notes name no Claude Slides release or extraction record and establish no clean-room process.",
@@ -2271,6 +2343,7 @@
     "description_zh": "此教学案例明确披露作者先前接触过源码，将一次 REA 辅助的小型命令行应用调查推进为另行编写的 Node 实现。它保留所观察到的任务编辑、持久保存及选择行为，再将限定范围的输出与固定期望值及捕获的参考会话比较。",
     "evidence_url": "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/reconstruction/README.md",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Pocket Tasks 1.0.0 is an authored local command-line app, not a commercial app or native-binary benchmark. The Node.js 20+ candidate implements nine commands and schema-1 JSON storage with only the standard library and disposable local stores; there is no GUI or network backend.",
@@ -2319,6 +2392,7 @@
     "description_zh": "以 Rust 重建 Johnny Castaway 屏幕保护程序引擎，作者明确披露使用 REA 与 Claude Code。它读取原始文件，在现代桌面上运行恢复的动画脚本及按日历推进的故事状态；文档保留实现差异与有限测试范围，未确立完整行为等价。",
     "evidence_url": "https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at v0.3.0: this is a Windows 3.1 screensaver-engine reconstruction, not a game port. The author reports recovering formats and TTM/ADS script semantics from disassembly, with human-directed REA/Claude Code work and comparisons against the original. Those reports do not establish exhaustive parity or an independent agent-performance result.",
@@ -2367,6 +2441,7 @@
     "description_zh": "以智能体为核心的桌面逆向工程应用，可打开 Mach-O、ELF、PE 二进制、Android 安装包和 GPU 内核，让任何支持 Agent Client Protocol 的智能体在同一窗口中阅读代码、重命名函数、添加笔记并提出补丁。原生代码通过内置的 REA 构建交由 Ghidra 反编译，也可改用 Rizin 和 jadx。它是围绕现有引擎的工作台，并非新的反编译器或重建案例。",
     "evidence_url": "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed version 0.1.9 (release dated 2026-10-16) targets macOS 14+ on Apple Silicon, Windows x64 and Linux x64. The documented macOS and Windows installers pipe a remote script into the shell; macOS builds are not notarized, so the installer clears the download quarantine. Users supply the apps, binaries or APKs they analyze.",
@@ -2402,6 +2477,7 @@
     "description_zh": "通过 REA 的纯解析命令行与 MCP 工具，识别 Flutter APK 的 Dart 快照哈希、各 ABI 库摘要与引擎构建来源，再检查单个 ABI 的 AOT 快照段。字符串池输出是对 package 与 SDK URI 的有界字节模式投影，并非反序列化的 Dart 类或恢复的源码。",
     "evidence_url": "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/docs/flutter-analysis.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed on main as rea-agents 6.7.0, which declares Node ^22.19.0, ^24.11.0 or 26+. identify-flutter-build and inspect-dart-aot (MCP identify_flutter_build and inspect_dart_aot) parse a caller-supplied APK’s libapp.so and libflutter.so without an engine, external tool, execution or network lookup. Inputs are copied into an owned read-only snapshot, with documented bounds such as 2 GiB per APK and 256 MiB per library.",
@@ -2432,6 +2508,7 @@
     "description_zh": "通过 REA 加固的 ZIP 读取器清点 HarmonyOS 的 HAP、HSP 与 App Pack 文件，并投影出无需执行的应用图：组件路径、ID 与哈希、Stage／FA 打包模型提示、运行时类别提示，以及基于路径的原生桥接假设。所有结论仅基于路径存在；清单、Ark 字节码、资源和签名均未被解码或验证。",
     "evidence_url": "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/docs/harmony-analysis.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed on main as rea-agents 6.7.0, which declares Node ^22.19.0, ^24.11.0 or 26+. No HarmonyOS SDK, toolchain or engine is needed: inspect-artifact produces the inventory and project-harmony-application-graph (MCP project_harmony_application_graph) projects it, with CLI and MCP sharing one workflow. .hap, .hsp and ZIP-verified root .app inputs are recognized; .har shared libraries are deferred because the suffix also names HTTP Archive JSON.",
@@ -2460,6 +2537,7 @@
     "description_zh": "说明 REA 通过 Ghidra 分析 MIPS ELF 可执行文件、可重定位目标文件与 MIPS16 共享镜像的流程，包括为缺少 ABI 记录的旧式固件可执行文件固定 32 位语言，以免 Ghidra 将其按 64 位导入。准入以文件头声明和 ABI 记录为界；验证将项目自有的测试样本与独立的 readelf 输出对照，而不执行或重新托管固件。",
     "evidence_url": "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/docs/ghidra-mips.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "Needs a caller-installed Ghidra and compatible JDK on a supported Linux or macOS host; Windows Ghidra P0 does not admit MIPS, and Hopper/IDA gain no MIPS support. The lane does not execute MIPS code or rehost firmware. The standard profile admits ELF32 executables and relocatable objects declaring o32 and MIPS32r2; MIPS16 shared images have a separate bounded profile. ELF64, n32/n64, microMIPS, machine variants, FP64, NAN2008 and PSP PRX are refused.",
@@ -2492,6 +2570,7 @@
     "description_zh": "说明 REA 针对静态 PSP ELF 可执行文件的受限 Ghidra 配置：Allegrex 指令、PSP 加载与调用约定交由使用者安装的 ghidra-allegrex 扩展处理，同时沿用 REA 的命令行、MCP、证据与快照流程。它仅在 Linux x64 上接受一种 PSPSDK 文件头与 ABI 声明，并在自行构建的测试样本上验证选定的静态事实，不涉及商业游戏或 PRX 模块。",
     "evidence_url": "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/docs/ghidra-psp.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "The initial profile runs on a Linux x64 host and admits little-endian ELF32 executables with the PSPSDK declaration e_flags 0x10a23001 and an inspected version-0 ABI-flags record matching the documented single-float Allegrex declarations. PRX, relocatable or shared images, PBP/ISO/CSO containers, emulation and live overlays are out of scope; missing or different declarations are refused, and file names do not identify a target.",
@@ -2525,6 +2604,7 @@
     "description_zh": "REA 网站发表的一篇文章及其固定版本的证据说明，介绍一位作者以智能体驱动重建 TH08、TH095 与 TH04 的过程。文章依据公开提交与进度记录标注里程碑，区分精确比对与可游玩构建两类判定依据，并记录 TH08 一项检查漏查错误浮点字面量数据的问题。项目结果仍为作者报告；REA 的作用是为智能体提供分析证据，而非完成重建本身。",
     "evidence_url": "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/website/evidence/touhou-reconstruction-method.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "The evidence notes, checked on 10 October 2026, treat three separate projects: a continuation of GensokyoClub’s TH08 1.00d reconstruction, a TH095 1.02a reconstruction started from zero confirmed functions, and a PC-98 TH04 reconstruction crediting ReC98. Milestone intervals use public commit timestamps and measure recorded spacing, not compute time, effort or a controlled speedup.",
@@ -2563,6 +2643,7 @@
     "description_zh": "作者的 REA 分叉（发帖时名为 rea-engine，后更名为 RE-Agent）反编译 GPL 许可的 TicTacToe-AI 游戏所发布的 .NET 可执行文件，重新编译恢复出的 C# 与资源，并依据原始 IL 修复一处反编译错误。差分探针在一个状态判定方法的全部 19,683 种棋盘赋值上运行原版与重建代码，并比较六张窗体渲染图。报告只判定该方法通过，整个游戏仍属部分重建。",
     "evidence_url": "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/benchmarks/native-windows-ports/reports/targets/tictactoe.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed develop commit (2026-10-15) reports Feature PASS for CheckGameStatus over its declared 3^9 board domain and PARTIAL for the whole game. AI move selection and RNG, menus, timing and sound are unverified, the executables are not byte-identical, and raw terminal captures differ by one carriage return. The posts’ “byte for byte” wording therefore applies to structured board records and six render PNGs, not to the program.",
@@ -2607,6 +2688,7 @@
     "description_zh": "一篇日文实践报告在单独的项目目录中把 REA 6.4.0 接入 Claude Code，屏蔽其 170 个工具中的 43 个以及常见的命令行启动方式，并在两个真实任务上比较启用与禁用 REA 的运行：一个 Electron 终端的分发文件，以及一份保存的 HAR 通信记录。两组都给出正确答案，而启用 REA 的一组耗时最多为 2.00 倍、按 API 计价的费用最多为 1.67 倍。这是分析评估与安全配置案例，而非重建案例。",
     "evidence_url": "https://zenn.dev/keigoly/articles/8738d8d241b5a1",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "The article by keigoly was published on Zenn on 2026-10-14 (JST). It pins REA 6.4.0 from the rea-agents package and runs it with a checksum-verified official Node.js 24.21.0 placed inside the project, because the host’s Homebrew Node 25.8.1 is outside REA’s supported range. All trials used non-interactive claude -p with Claude Opus 5.5 and permission prompts bypassed; the Claude Code version is not stated.",
@@ -2637,6 +2719,7 @@
     "description_zh": "在 REA 的 Ghidra 分析中，从 x64 PE 可执行文件恢复 .NET 8 NativeAOT 元数据：通过内置只读解析器或可选的无界面适配器（会为 Ghidra 数据库添加注释），从 RTR 9.1 数据中取得 MethodTable 关系、虚表槽位与冻结字符串。生成的名称、推断的原型和恢复的原生伪代码，与未知的原始 C# 名称、字段和源码明确区分。",
     "evidence_url": "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/docs/ghidra-nativeaot.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed on main as rea-agents 6.7.0, which declares Node ^22.19.0, ^24.11.0 or 26+. Bring your own Ghidra and JDK; the guide’s Windows check used Ghidra 12.1.4 and JDK 21. The built-in parser handles x64 PE32+ with .NET 8 RTR 9.1 metadata and needs a unique RTR header and exactly one DEHYDRATED_DATA row; other RTR versions and PE architectures are reported as unsupported or partial. Ordinary PE/CLI or ReadyToRun assemblies belong to REA’s managed-code tools instead.",
@@ -2665,6 +2748,7 @@
     "description_zh": "作者使用固定版本的 REA 与 Ghidra，分析使用者自备的《宝可梦 究极之日》基础版可执行文件，由拆分出的对象逐字节重建该文件，并替换进两个编译后的小型 C 运行时例程。两处替换均经行为测试但与原字节不一致，其余字节均保持原样；同一段录制输入在 Azahar 模拟器中让原版与混合构建到达相同的卧室移动场景。零售编译器识别、精确匹配、模块加载及更广泛的游戏行为仍待解决。",
     "evidence_url": "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "README reports that the original and combined rebuilt games reproduce controllable bedroom gameplay, that both C replacements are behavior-tested but nonmatching, and that no completion percentage is claimed. STATUS.md (updated 2026-10-12) lists an unchanged main executable and one CRO module rebuilt byte for byte, the integrated __aeabi_vec_ctor_nocookie_nodtor helper and a 36-byte startup BSS clearer. The hybrid builds still contain mostly original code and assets and need a 3DS runtime; a native PC port is a later phase.",
@@ -2709,6 +2793,7 @@
     "description_zh": "经人工审核的网站目录，收录游戏、固件、文件格式、API 与协议、应用及旧软件领域的 AI 辅助逆向项目。每个条目链接一手来源，记录作者报告的模型、工具、耗时、费用与结果，并标注源码公开、复现步骤、真实硬件测试和第三方确认四项检查。",
     "evidence_url": "https://reversedwithai.com/about",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed as a live website on 2026-10-18, when the homepage reported 180 projects, 100 marked Works, 12 guides and 166 tools, and the sitemap listed 180 project pages. The site has no pinned revision or public source repository, so entries, counts and labels can change after this review.",
@@ -2746,6 +2831,7 @@
     "description_zh": "Nous Research 在 Hermes Agent 官方插件库中发布的 REA 插件包。一次目录安装即可注册 REA 的 MCP 服务（固定为 rea-agents 6.4.0，经 npx 以 stdio 启动），并附带为 Hermes 改编的 REA 工作流技能和独立的崩溃分诊技能。约 170 个 REA 工具通过 Hermes 的按需工具检索提供；改编技能要求在运行程序、驱动应用或改动已连接 Android 设备的工具前先征得同意。",
     "evidence_url": "https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "plugin.json declares 0.1.0 under MIT. Hermes’ catalog lists it as an official Nous Research plugin for Hermes 0.22.0+, installed with hermes plugins install rea and hermes plugins enable rea; it is not published by REA. Requires Node.js 22.19+, 24.11+ or 26+ with npx, not 23 or 25. A later rea-agents setup for Hermes replaces the pinned server entry.",
@@ -2779,6 +2865,7 @@
     "description_zh": "崩溃分诊工具，将 Linux 核心转储、运行时 panic、异常堆栈和 sanitizer 报告整理为 Markdown 缺陷报告，指出崩溃类型、首个用户代码帧和稳定签名。核心转储分析通过 REA 命令行读取崩溃记录与二进制布局，并可调用 REA 的 Ghidra 引擎为无符号函数生成伪代码；附带的 Claude Code 插件包含技能与只读 MCP 工具。它是围绕 REA 的调试集成，不是重建案例，诊断准确性仍为作者报告。",
     "evidence_url": "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "Package 0.1.0 and plugin 0.2.0 are an early prototype. Panic, trace and ASan/LSan/UBSan text inputs need only Node.js 22.19+ or 24.11+. Core dumps need Linux x86-64, Python 3, rea-agents and a pwntools environment named by REA_PWNTOOLS_PYTHON; gdb, objdump and Ghidra 12.1.x with JDK 21 are optional. Windows minidumps and macOS crash reports remain roadmap items.",
@@ -2811,6 +2898,7 @@
     "description_zh": "作者使用 REA 的 MCP 浏览器工具被动捕获 wayou 开源 T-Rex Runner 页面已加载的 JavaScript，再由 Codex 在一个自包含的 HTML5 Canvas 游戏中重建其加速规则。报告以 SHA-256 标识所捕获的脚本，并区分已核实的源码事实与重建选择；只主张速度规则一致，不主张完整玩法等价。",
     "evidence_url": "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "The target is wayou’s open-source, Chromium-derived T-Rex Runner page, not chrome://dino/ or hidden proprietary code; the investigation read JavaScript the browser had already loaded. Only the acceleration rule is reconstructed: start at 6 and add 0.001 per eligible update while below 13, with no elapsed-time factor. Artwork, physics, obstacles and scoring are new or simplified, and the intro, ducking, audio and narrow-screen speed reduction are omitted.",
@@ -2850,6 +2938,7 @@
     "description_zh": "作者报告借助 REA 梳理 Screen Studio 的 Electron 安装包，在 Claude Code 协助下从混淆代码中读出六条自动缩放与光标规则，再让 Claude Code 依据这些规则编写独立的录屏和渲染程序。文章介绍了所用命令、证据、光标对齐检查以及复刻版的不足；复刻版和解出的代码均未公开。",
     "evidence_url": "https://x.com/i/article/2109834677343432704",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "The 2026-10-13 article targets the macOS Screen Studio app’s app.asar with REA’s JavaScript application analyzer, run from the command line on the author’s Mac with a supported Node.js version and Xcode Command Line Tools; it names neither the REA nor the Screen Studio version. The author reports a 101-second run producing a 124 MB evidence file over 3,695 files, using an integrity policy that records, rather than stops on, 25 bundled native programs whose fingerprints no longer matched.",
@@ -2883,6 +2972,7 @@
     "description_zh": "将 Claude 桌面应用中 Claude Code“新会话”界面的字符风场背景，重新实现为可离线运行的 WebGL2 页面，并附带 38 个滑块的控制面板。作者报告先用 REA 对桌面外壳及其远程网页包进行静态调查，再以新编写的渲染器复用恢复出的时序与布局参数。它与原效果的视觉语言和交互方式相近，但不是逐像素一致的提取。",
     "evidence_url": "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/docs/PROVENANCE.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed pin is the repository’s single public commit, dated 16 October 2026. PROVENANCE.md reports that the study targeted Claude desktop 2.37337.1, began with REA’s analyze_javascript_application, traced the shell’s remote page to the background module and stayed static: Claude was not launched or inspected at runtime. It records SHA-256 hashes of the retained ASAR and the decoded module and lists local REA evidence IDs whose archives are not published.",
@@ -2924,6 +3014,7 @@
     "description_zh": "作者让 Codex 通过 REA 的 Ghidra 工具检查英文版 DX-Ball 1.07 可执行文件并恢复为带类型的 C/C++，再用同时代的 Visual C++ 4.0 编译每个函数，在映射重定位后与原文件逐字节比较。同一套源码还可构建 MinGW Windows 游戏和可移植核心库。精确重建仍在进行中；REA 另行发布的声像展示只覆盖其中一个函数。",
     "evidence_url": "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "README marks exact reconstruction as in progress, to be followed by a playable Visual C++ 4.0 build and later platform ports. Generated PROGRESS.md counts 553 provisional function candidates, 475 with source, 395 byte-exact (85,106 exact code bytes) and 249 with scoped semantic acceptance, and says both Windows builds completed recorded original-board campaigns under Wine. A separate 50-board restored-CRT attempt on October 17 ended at its time limit without a full pass.",
@@ -2969,6 +3060,7 @@
     "description_zh": "在原生 Nintendo DS 引擎中重新实现 Resident Evil 2 PS1 版的游戏规则，并用转换工具把使用者自有光盘中的数据转为 DS 格式。辅助脚本把 PS1 可执行文件包装成 ELF，供 REA 的 Ghidra 通道分析；分析笔记注明各部分所依据的 PS1 函数与数据表，链接该项目的 Reddit 帖称其借助 REA 和 Claude Code 完成。据报告 Leon 第一张光盘已可游玩，Claire 光盘、多数敌人类型和部分菜单仍未完成。",
     "evidence_url": "https://github.com/eray1605/re2ds/blob/f1e120ec50f6b072d7283a2d3dd35611d656c9b7/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed commit targets the PAL PS1 release (SLES-00972), disc 1 with Leon. README reports all 125 disc 1 rooms, a script interpreter covering every opcode used on that disc, zombies, the lower-screen status menu, sound, voices, the opening movies and typewriter saves; it lists the map and files, other enemy types, the remaining movies and Claire’s disc as missing. It is a native engine, not an emulator, a matching decompilation or a complete port.",
@@ -3014,6 +3106,7 @@
     "description_zh": "一个可直接克隆的中文工作区模板，用于在 Claude Code 或 Codex 中借助 REA，按“一个目标一个工作区”开展分析。它提供项目级 REA MCP 配置、要求结论标注 CONFIRMED／GUESS 并附证据位置的智能体规则、七套任务提示词，以及仅依赖标准库的脚本：为导入的原件生成哈希基线、创建可写分析副本，并去除 HAR 抓包中的取值。它负责组织分析而非完成分析，其验收只使用了合成样本。",
     "evidence_url": "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed pin is the repository’s only commit, dated 2026-10-17. It needs Git, Python 3.11+, Node.js with npm, and Claude Code or Codex; README installs rea-agents 6.4.0, the version it was validated with, and the bundled .mcp.json and .codex/config.toml both start a locally installed rea --mcp. The template supplies no REA program, decompiler or model configuration, and it adapts workflow ideas from a third-party post without adopting that post’s model, cost or timing claims.",
@@ -3050,6 +3143,7 @@
     "description_zh": "第三方 Agent Skill，与 REA 自身的技能配合使用，把逆向分析证据整理成限定范围的需求、设计、分阶段实现与验证，范围可从单个功能或格式扩展到整个应用。可选安装程序能在用户的 REA SKILL.md 中加入带标记的路由段落，使相关重建请求同时加载两个技能。附带的评估套件由维护者编写、已接触源码的示例及字面预期值组成，并非模型基准。",
     "evidence_url": "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed pin is package version 1.3.27; the repository was created on 2026-10-15, and a v1.3.27 release followed on 2026-10-18. The core is plain-Markdown Agent Skills instructions with reference guides. It supplies no analysis engine and expects REA tools or supplied REA evidence for actual investigation. README documents Codex and Claude Code installation; other agents can use an explicit skills directory.",
@@ -3084,6 +3178,7 @@
     "description_zh": "一篇非官方的实测研究：先阅读 REA 源码，再在 27 类分析对象上对运行中的服务器发出 1,012 次有记录的调用，测量其按内容寻址的 Evidence 记录、按修订串联的未知项台账、带类型的拒绝、冷启动及响应上限。作者把这些机制对应到漏洞研究智能体上，论证为何不应过度声称结论。它评估的是 REA 的工具接口，而非重建案例或漏洞发现。",
     "evidence_url": "https://no-flag.com/2026/10/18/REA-paper/",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "requirements": [
       "Published 2026-10-18 on the author's HackThe4O4 blog under the byline Noflag, who calls it unofficial, not peer-reviewed and unaffiliated with REA's maintainers, and says the official source wins where they disagree. The main study used the published rea-agents 6.5.0 package for 993 of the 1,012 calls; 19 calls comparing two deep providers ran a build of commit fe2a398dd, 286 commits later.",
@@ -3111,6 +3206,7 @@
     "description_zh": "一篇中文文章把复刻 REA 自带 Notes 教学应用的 Python CSV 导出器故意改坏三个版本，展示简单的“导出再读回”测试能让三者全部通过，而以官方 JavaScript 格式化函数为参照、在 215 组固定输入上逐字节比较则能逐一识破。作者还通过 MCP 连接 REA 6.5.0，重新运行其 JavaScript 分析，并验证被改动的证据记录在导入时会被拒绝；这是对验收检查的研究，而非新的重建。",
     "evidence_url": "https://x.com/i/article/2110962506604929025",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "The 2026-10-16 article by @superfang119 follows the author’s earlier walkthrough, in which a Python reimplementation of the Notes app’s CSV export reportedly matched the original byte for byte on 215 inputs. It used Windows, Node 22.19.0 and rea-agents 6.5.0 through a temporary stdio client that listed 207 tools; the JavaScript analysis returned 6 files, 32 nodes and 45 edges. The author notes that this static graph locates the export path but does not show the full Electron app running.",
@@ -3136,6 +3232,7 @@
     "description_zh": "Fedele Mantuano 报告在离线 Docker 实验环境中让 Codex 借助 REA，对一个公开的 Windows 恶意软件样本做静态分析，全程不执行样本。文章区分了提取出的 JavaScript 代码包能够支持的行为与依赖从未获取的远程组件的推断，并将原本疑为信息窃取程序的样本重新归类为加载器。这是以作者审阅过的智能体报告为基础的防御性分析案例，不是重建，也不是动态引爆分析。",
     "evidence_url": "https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "The Code Geeks article by Fedele Mantuano is dated 2026-10-18, with an Italian version, and reports an analysis performed on 2026-10-17. Codex was asked to use REA on one Windows x64 executable obtained from MalwareBazaar and to write a Markdown report on files, processes, persistence, network destinations, updates, defensive indicators and limits. The agent’s technical report, artifacts and code references are not published; the author offers further details privately.",
@@ -3161,6 +3258,7 @@
     "description_zh": "以原生 Rust 客户端、专用服务器和启动器重写 Minecraft: Java Edition 26.3，资源均由使用者自有的游戏副本生成。项目要求贡献者先阅读原版代码，tools/rea_vanilla.py 会调用固定版本的 REA，配合无界面 JADX 引擎分析官方发布的客户端与服务器 jar，查询类、方法及调用方。差分测试工具分别对真实游戏运行 Java 对照程序、对 Horizon 运行 Rust 探针；README 称全部 281 个测试通过，但这只涵盖它们所比较的内容。",
     "evidence_url": "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-30",
     "verification": "source-reviewed",
     "requirements": [
       "The repository was created on 2026-10-03, and the reviewed main snapshot (2026-10-19) follows the date-tagged release v2026.10.19.12. README reports a playable client on Linux, macOS (Apple Silicon) and Windows with vanilla world generation, mobs and their AI, villagers, raids, redstone, every command, Anvil saves and joining vanilla servers, and its own audit of 2026-10-13 scores every subsystem complete. Listed known issues include unsupported online-mode servers, skin and pack-icon gaps, unwired creative hotbar keys and missing attribute lines in tooltips.",
@@ -3765,6 +3863,7 @@
       "https://github.com/rshipp/awesome-malware-analysis/blob/179887b9bfb04bb736348b2dc9d331bc860c6ef7/LICENSE"
     ],
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed README, last committed 2026-05-30, links roughly 428 entries across 17 top-level sections; it is a list of pointers, not reviewed or runtime-tested projects, and one tool can appear under several sections.",
@@ -3791,6 +3890,7 @@
       "https://github.com/V33RU/awesome-connected-things-sec/blob/0015dcee55cc0cd6eff3b4afbada2f22c245a9cc/LICENSE"
     ],
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed README, last committed 2026-10-16, links roughly 979 entries and states 900+ resources; it is a list of pointers, not reviewed or runtime-tested projects, and one entry can fit several sections.",
@@ -3817,6 +3917,7 @@
       "https://github.com/iDoka/awesome-canbus/blob/77c59133db2fcdd4e4f891a55e440629e0178b8e/license"
     ],
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed README, last committed 2026-08-07, links roughly 260 entries across its sections; it is a list of pointers, not reviewed or runtime-tested projects, and one project can appear under several sections.",
@@ -3844,6 +3945,7 @@
       "https://github.com/iDoka/awesome-automotive-can-id/blob/8eff640cd49984df4b37d996da46deaf81e53b52/.github/workflows/main.yml"
     ],
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed README, last changed by a merge on 2026-08-12, holds 148 links under 57 headings, the Common section and make, model and brand-group headings; the Acura, Lotus, Peugeot, DS, SAAB, Porsche and Seat headings are still empty. About 107 links go to GitHub and the rest to Google spreadsheets, wikis, forums and blog posts, several of them in Russian; two already point to Web Archive copies.",
@@ -3867,6 +3969,7 @@
     "description_zh": "REA 网站上 N0zoM1z0 的一篇文章（2026 年 10 月 13 日）依据注明日期的东方 Project 重建提交，探讨精确的函数匹配究竟需要更大的通用模型、针对编译器的专用模型，还是更好的检索。文章逐一介绍 TH09、TH095、TH04 与 TH08 中较晚的 GPT-6 系列会话攻克难以匹配函数的案例，以及 TH08 一次审计发现部分已接受函数含有错误浮点常量的经过。专用模型与强化学习的对比被作为未来实验提出，并未评估任何经过训练的专用模型。",
     "evidence_url": "https://github.com/morluto/rea/blob/e8da7e1edd075feec0e6beedec93d5645fed8125/website/evidence/reverse-engineering-models.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "requirements": [
       "The essay and its notes supply no game files, compilers or builds; each linked Touhou repository documents its own requirements.",
@@ -3906,6 +4009,7 @@
     "description_zh": "一份非官方的中英双语 awesome 清单，收录 AI 智能体逆向分析并重建过的项目，并按各案例自身来源能否证明使用了 REA 加注标签。内容包括 REA 的官方资源与展示案例；游戏、应用、硬件与协议以及安全评估方面的社区案例；未确认使用 REA 的更广泛 AI 逆向与净室重写项目；插件、指南与研究、相关 MCP 工具、其他清单和媒体报道；另有一节讨论法律问题与争议。",
     "evidence_url": "https://github.com/AIshihzong/awesome-reverse-engineer-anything/blob/55f9ff058c44a55b63cef83aaf6ea42dcbd6e5b2/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "requirements": [
       "Started 2026-10-13, with 50 commits on six days through 2026-10-26. At the reviewed commit of that day the English README, mirrored in Simplified Chinese, has about 110 one-line entries, with separate pages that index projects by the app they replace, check each \"built with REA\" claim, list new additions and collect X posts and press. The README says figures were checked on 2026-10-21 and partly refreshed on 2026-10-26, and warns that numbers move weekly.",
@@ -3937,6 +4041,7 @@
     "description_zh": "网站及 GitHub 列表，收录 81 个在没有原始源码的情况下重建现有软件或游戏的项目：由 AI 构建的净室应用（如 ArtCraft 套件）、借助编码智能体重写的软件、AI 辅助的游戏反编译、游戏引擎重新实现、由人主导的反编译与移植、Wine 和 ReactOS 等经典净室实现，以及重建工具。每个条目说明重建对象，并带有方法标签和 AI 参与程度标签；网站支持搜索、筛选，并可按星标数或近期活跃度排序。另有一篇指南介绍借助 REA 进行净室重建的流程。",
     "evidence_url": "https://github.com/a-barzanti/ai-rebuilds/blob/8092b23421fca9c8c4c52d51e34d4dc602f95923/README.md",
     "verified_at": "2026-11-02",
+    "added_at": "2026-11-04",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 8092b23, where data/projects.json (list updated 2026-10-29, GitHub figures refreshed 2026-11-02) holds 81 projects in seven categories and generates both the README and ai-rebuilds.com, which served the same list at review. Entries, counts and labels can change after this review.",
@@ -3976,6 +4081,7 @@
     "description_zh": "由个人独立运营的非官方 REA 指南，共 32 个页面，介绍如何安装 REA 并接入编码智能体：涵盖 npx、npm 与 Bun 安装路径（含 Windows），Claude Code 与 Claude Desktop、Codex、Cursor、Windsurf 和 Gemini CLI 的 MCP 配置，支持 24 种客户端的配置生成器，Ghidra、IDA 与 JADX 分析引擎设置，以及把确切报错文本对应到 REA 上游 issue 的故障排查页面。部分页面记录了作者自己的运行结果，例如在 rea-agents 6.5.0 上通过无界面 JADX 分析 Android APK，以及在 6.8.0 上重新测试 Claude Code 配置。网站还将 REA 与 Ghidra、IDA 及其他逆向 MCP 服务器作比较，并记录冒充 REA 的仿冒副本。",
     "evidence_url": "https://reaguide.com/",
     "verified_at": "2026-11-02",
+    "added_at": "2026-11-04",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed as a live website on 2026-11-02, when its sitemap listed 32 pages. There is no public source repository or pinned revision, so pages can change after this review; each page dates the check of the commands it restates (2026-10-13 to 2026-10-27 on the reviewed pages). The home page named rea-agents 6.8.0 and Node.js 22.23.4+, 24.22.1+ or 26.12.1+, matching npm and REA's README at review.",
