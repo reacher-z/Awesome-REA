@@ -31,6 +31,7 @@ from build_discovery_pages import ABOUT_EXCLUDED_SECTIONS, SECTION_TARGETS, file
 from build_feed import (DISCOVERY_LABELS, DISCOVERY_PATHS, DISCOVERY_TERM, FEED_PAGES, FEED_PATHS, FEED_SIZE,
                         discovery_summary, entry_time, feed_entries, merged_entries)
 import build_discoveries
+import build_discovery_leads
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SITE_ALTERNATE_NAMES, SITE_NAME, SOCIAL_IMAGE_ALT, png_size
 from site_footer import DOWNLOADS, SECTION_LINKS, site_footer
@@ -1297,6 +1298,32 @@ def published_repository_document(output):
     return None
 
 
+def validate_lead_exports(output, queue):
+    """Followed-source leads: one JSON export plus one file per batch, every lead unreviewed, nothing else."""
+    output = Path(output)
+    names = (build_discovery_leads.EXPORT_PATH.lstrip('/'), build_discovery_leads.BATCH_EXPORT_DIRECTORY.strip('/'))
+    if queue is None:
+        assert not any((output / name).exists() for name in names), 'Lead exports need lead batches'
+        return
+    headers = header_rules((output / '_headers').read_text(encoding='utf-8'))
+    for path in (build_discovery_leads.EXPORT_PATH, build_discovery_leads.BATCH_EXPORT_DIRECTORY + '*'):
+        assert headers.get(path, {}).get('cache-control') == 'no-cache, must-revalidate', f'Lead data must revalidate: {path}'
+    export = json.loads((output / names[0]).read_text(encoding='utf-8'))
+    listed = queue['listed']
+    assert export['review_status'] == 'unreviewed' and export['verification'] == 'automated-source-lead', 'Lead export stays unreviewed'
+    assert [row['id'] for row in export['resources']] == [row['id'] for row in listed[:build_discovery_leads.EXPORT_RECORDS]], 'Lead export differs from the queue'
+    assert all(row['review_status'] == 'unreviewed' and row['verification'] == 'automated-source-lead' for row in export['resources']), 'Every exported lead stays unreviewed'
+    files = sorted((output / names[1]).glob('*.json'))
+    assert {path.stem for path in files} == {batch['batch_id'] for batch in queue['batches']}, 'One export file per lead batch'
+    paged = []
+    for entry in export['batches']:
+        assert entry['records_url'] == ORIGIN + build_discovery_leads.batch_export_path(entry['batch_id'])
+        page = json.loads((output / build_discovery_leads.batch_export_path(entry['batch_id']).lstrip('/')).read_text(encoding='utf-8'))
+        assert page['review_status'] == 'unreviewed' and len(page['resources']) == entry['listed_count']
+        paged.extend(row['id'] for row in page['resources'])
+    assert paged == [row['id'] for row in listed], 'Batch exports must list every listed lead once, newest batch first'
+
+
 def validate_discovery_outputs(output, pages, queue):
     """The unreviewed queue: two list pages, two feeds, the JSON export and status, all labelled unreviewed."""
     output = Path(output)
@@ -1548,6 +1575,8 @@ def main():
     queue = queue if queue['batches'] else None
     validate_feeds(OUTPUT, pages, resources, papers, build_discoveries.main_feed_batches(queue))
     validate_discovery_outputs(OUTPUT, pages, queue)
+    lead_queue = build_discovery_leads.lead_queue(ROOT)
+    validate_lead_exports(OUTPUT, lead_queue if lead_queue['batches'] else None)
     validate_case_outputs(pages, resources)
     validate_section_target_counts(OUTPUT, resources)
     catalog_meta = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['meta']

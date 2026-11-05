@@ -51,6 +51,11 @@
 /discoveries/badge.json
   Cache-Control: no-cache, must-revalidate
   Access-Control-Allow-Origin: *
+# Followed-source leads change with every lead ingest.
+/discoveries/leads.json
+  Cache-Control: no-cache, must-revalidate
+/discoveries/leads/*
+  Cache-Control: no-cache, must-revalidate
 # Stylesheets and scripts live at content-addressed /assets/<name>.<sha256 prefix>.<ext> paths: a changed file
 # gets a new URL, so browsers may keep each one for a year without revalidating.
 /assets/*

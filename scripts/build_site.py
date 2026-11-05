@@ -22,6 +22,7 @@ from build_survey import build_survey, discussion_sections
 from build_entry_pages import build_entry_pages
 from build_feed import build_feeds
 from build_discoveries import llms_section, main_feed_batches, write_discoveries
+from build_discovery_leads import llms_section as lead_llms_section, write_lead_exports
 from build_manifest import write_build_manifest
 from language_fragment import add_language_fragment_script
 from data_downloads import build_data_downloads
@@ -359,7 +360,9 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     # The unreviewed discovery queue: its own list pages, feeds and JSON, never curated pages or counts.
     queue_paths, discovery_queue = write_discoveries(output, catalog, papers, browse_document)
     discovery_paths = [*discovery_paths, *queue_paths]
-    section = llms_section(discovery_queue, SITE_URL)
+    # Followed-source leads: JSON exports only, labelled unreviewed, never pages or curated counts.
+    lead_queue = write_lead_exports(output, catalog)
+    section = llms_section(discovery_queue, SITE_URL) + lead_llms_section(lead_queue, SITE_URL)
     if section:
         llms_path = output / "llms.txt"
         llms = llms_path.read_text(encoding="utf-8")

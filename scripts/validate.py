@@ -1328,6 +1328,13 @@ def main():
     discovery_batches, discovery_problems = load_batches(ROOT)
     errors.extend(discovery_problems)
     discovered = sum(len(batch['resources']) for batch in discovery_batches)
+    # Followed-source leads: what registered lists, registries and feeds link, kept unreviewed.
+    import discovery_leads
+    _, registry_problems = discovery_leads.load_registry(ROOT)
+    errors.extend(registry_problems)
+    lead_batches, lead_problems = discovery_leads.load_batches(ROOT)
+    errors.extend(lead_problems)
+    followed = sum(len(batch['leads']) for batch in lead_batches)
     validate_citation((ROOT / 'CITATION.cff').read_text(encoding='utf-8'), errors)
     count = validate_markdown(ROOT, errors)
     budget_warning = requirement_budget_warning(records)
@@ -1350,7 +1357,7 @@ def main():
         for error in errors:
             print(f'- {error}', file=sys.stderr)
         return 1
-    print(f'Validated {len(records)} curated resources, {len(papers)} research papers, {scanned} scanned sources, {discovered} unreviewed discoveries, {len(benchmarks)} benchmark snapshots, {count} Markdown files, both generated catalogs, and the bilingual repository index.')
+    print(f'Validated {len(records)} curated resources, {len(papers)} research papers, {scanned} scanned sources, {discovered} unreviewed discoveries, {followed} unreviewed followed-source leads, {len(benchmarks)} benchmark snapshots, {count} Markdown files, both generated catalogs, and the bilingual repository index.')
     return 0
 
 

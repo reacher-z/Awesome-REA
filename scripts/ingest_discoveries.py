@@ -426,6 +426,7 @@ def run() -> int:
 TRACKERS = {
     'readme-discovery': 'Scheduled README discovery and discovery ingest are failing',
     'artifact-leads': 'Public artifact lead discovery is failing',
+    'discovery-leads': 'Followed-source lead discovery and lead ingest are failing',
 }
 FAILED_RESULTS = {'failure', 'cancelled'}
 
@@ -479,7 +480,11 @@ def report(key: str, results: dict) -> int:
     tracked = [issue for issue in issues if 'pull_request' not in issue and marker in (issue.get('body') or '')]
     issue = next((item for item in tracked if item['state'] == 'open'), None) or (tracked[0] if tracked else None)
     try:
-        last_ingest = discoveries.summary(ROOT)['last_successful_ingest_at']
+        if key == 'discovery-leads':
+            import discovery_leads
+            last_ingest = discovery_leads.summary(ROOT)['last_successful_collection_at']
+        else:
+            last_ingest = discoveries.summary(ROOT)['last_successful_ingest_at']
     except (OSError, ValueError):
         last_ingest = None
     stamp = discoveries.utc_now()
