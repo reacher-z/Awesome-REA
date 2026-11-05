@@ -272,12 +272,48 @@ def _url_key(url):
     return 'url:' + host + trimmed.lower() + keep, 'web', flags
 
 
+def entry_name(label) -> str:
+    """An entry name for telling apart the tools that one page lists: case-folded letters, marks and digits of any script."""
+    import unicodedata
+    text = unicodedata.normalize('NFKC', str(label or '')).casefold()
+    return ''.join(character for character in text if unicodedata.category(character)[0] in 'LMN')
+
+
+def shared_page_key(page_key: str, name: str) -> str:
+    """The identity of one named entry of a shared page: the page key, shortened with a digest when long, '#', the name.
+
+    The result stays within the 600-character identity limit.
+    """
+    page = page_key if len(page_key) <= 550 else page_key[:530] + '~' + hashlib.sha256(page_key.encode()).hexdigest()[:16]
+    entry = name if len(name) <= 40 else name[:32] + '~' + hashlib.sha256(name.encode()).hexdigest()[:7]
+    return f'{page}#{entry}'
+
+
+def entry_key(identity: str, name: str) -> str | None:
+    """The page entry a url: record stands for, whether it is keyed by the page alone or as page#name.
+
+    A url: key never carries a fragment (url_key drops it), so '#' only marks an entry of a shared page.
+    """
+    if not identity or not identity.startswith('url:'):
+        return None
+    if '#' in identity:
+        return 'entry:' + identity[4:]
+    name = entry_name(name)
+    return 'entry:' + shared_page_key(identity, name)[4:] if name else None
+
+
 def lead_id(identity: str) -> str:
     return 'lead-' + hashlib.sha256(identity.encode('utf-8')).hexdigest()[:24]
 
 
 def lead_keys(lead: dict) -> set[str]:
     return {lead['identity'], *lead['aliases']}
+
+
+def match_keys(lead: dict) -> set[str]:
+    """Every key that ties a lead to a record of any layer: its identity, aliases and the entry key of each page key."""
+    keys = lead_keys(lead)
+    return keys | ({entry_key(key, lead['name']) for key in keys if key.startswith('url:')} - {None})
 
 
 # --- JSON format and time ---------------------------------------------------------------------------
@@ -597,12 +633,12 @@ def load_batches(root: Path = ROOT, *, now: dt.datetime | None = None) -> tuple[
     for batch in batches:
         for lead in batch['leads']:
             # A batch checks its own leads; an identity held by an earlier batch is a duplicate whatever its ID.
-            earlier = next((seen[key] for key in sorted(lead_keys(lead)) if key in seen), None)
+            earlier = next((seen[key] for key in sorted(match_keys(lead)) if key in seen), None)
             if earlier:
                 problems.append(f"{DIRECTORY}/{batch['collected_at'][:7]}/{batch['batch_id']}.json: {lead['id']}: "
                                 f'identity already belongs to {earlier[0]} in {earlier[1]}')
         for lead in batch['leads']:
-            for key in lead_keys(lead):
+            for key in match_keys(lead):
                 seen.setdefault(key, (lead['id'], batch['batch_id']))
     total = sum(len(batch['leads']) for batch in batches)
     if total > MAX_TOTAL_RECORDS or total_bytes > MAX_TOTAL_BYTES:
@@ -800,6 +836,8 @@ def existing_keys(root: Path = ROOT, batches: list[dict] | None = None) -> dict:
     for name in ('data/tool-resources.json', 'data/rea-resources.json'):
         for record in strict_json.load_path(root / name):
             add_url(str(record.get('url', '')), 'already-curated')
+            # A curated page that lists several tools is also known as the entry with the record's own name.
+            add(entry_key(url_key(str(record.get('url', '')))[0], record.get('name')), 'already-curated')
     for paper in strict_json.load_path(root / 'data/papers.json'):
         if paper.get('arxiv_id'):
             add('arxiv:' + str(paper['arxiv_id']).lower(), 'already-curated')
@@ -843,15 +881,20 @@ def existing_keys(root: Path = ROOT, batches: list[dict] | None = None) -> dict:
     coverage = root / 'data/case-coverage.json'
     if coverage.is_file():
         for entry in strict_json.load_path(coverage).get('entries', []):
+            title = str(entry.get('title') or '')
             for url in [*entry.get('reported_source_urls', []), *entry.get('primary_evidence_urls', [])]:
                 add_url(str(url), 'case-lead')
+                # On a page that a list splits into named entries, the case is the entry named by its title's lead.
+                page = url_key(str(url))[0]
+                add(entry_key(page, title.split(':', 1)[0]), 'case-lead')
+                add(entry_key(page, title), 'case-lead')
     if batches is None:
         batches, problems = load_batches(root)
         if problems:
             raise ValueError('Existing lead batches are invalid: ' + '; '.join(problems[:3]))
     for batch in batches:
         for lead in batch['leads']:
-            for key in lead_keys(lead):
+            for key in match_keys(lead):
                 add(key, 'already-lead')
     return {'known': known, 'records': sum(len(batch['leads']) for batch in batches),
             'bytes': sum(len(batch_bytes(batch)) for batch in batches)}
@@ -879,7 +922,7 @@ def select_leads(candidates: list[dict], existing: dict, limit: int, source_orde
     known = existing['known']
     selected, taken, eligible = [], set(), 0
     for lead in round_robin(candidates, source_order):
-        keys = lead_keys(lead)
+        keys = match_keys(lead)
         reasons = [known[key] for key in sorted(keys) if key in known]
         if reasons:
             skipped[min(reasons, key=SKIP_REASONS.index)] += 1

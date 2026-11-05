@@ -822,6 +822,27 @@ def source_result(source: dict, status: str, counts: Counter | None = None, extr
             'error': error, 'links': (counts or {}).get('links', 0), 'in_scope': (counts or {}).get('in_scope', 0)}
 
 
+def split_shared_pages(listings: list[dict]) -> None:
+    """One lead per entry when a source links one web page for several differently named entries.
+
+    A contest results page or a download index can carry several tools. When a source lists the same url:
+    key under more than one name, every named listing of that key, in any source, gets ``#<name>`` appended,
+    whatever the listing order; ``discovery_leads.entry_key`` matches such an entry to an earlier lead that
+    was keyed by the page alone.
+    """
+    names: dict[tuple[str, str], set[str]] = {}
+    for listing in listings:
+        if listing['key'].startswith('url:'):
+            names.setdefault((listing['source_id'], listing['key']), set()).add(leads.entry_name(listing['label']))
+    shared = {key for (_, key), found in names.items() if len(found - {''}) > 1}
+    for listing in listings:
+        name = leads.entry_name(listing['label'])
+        if listing['key'] in shared and name:
+            listing['key'] = leads.shared_page_key(listing['key'], name)
+            # A page that lists several tools is not one repository's project page.
+            listing['flags'] = {key: value for key, value in (listing.get('flags') or {}).items() if key != 'ghpages_alias'}
+
+
 def resolve_repositories(client: Client, names: list[str]) -> dict[str, dict | None]:
     """GitHub metadata by lower-case owner/name; None for a missing or private repository."""
     result = {}
@@ -1028,6 +1049,7 @@ def collect(client: Client, root: Path = ROOT, *, everything: bool = False, now:
         results.append(source_result(source, 'captured', counts, extra))
         log(f"SOURCE {source['id']} links={counts.get('links', 0)} in_scope={counts.get('in_scope', 0)} "
             f"requests={client.requests} seconds={round(client.clock() - client.deadline + client.max_seconds)}")
+    split_shared_pages(listings)
     names = {listing['key'][3:] for listing in listings if listing['key'].startswith('gh:') and listing['key'] not in topic_metadata}
     names |= {listing['flags']['ghpages_alias'][3:] for listing in listings if (listing.get('flags') or {}).get('ghpages_alias')}
     known = leads.existing_keys(root)['known']
