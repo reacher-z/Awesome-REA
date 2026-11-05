@@ -132,7 +132,8 @@ class ReceiptTests(unittest.TestCase):
                 automation.read_receipt(archive)
 
     def test_the_newest_receipt_of_a_successful_default_branch_run_is_the_baseline(self):
-        manifest = b'{"files": {}}\n'
+        manifest = json.dumps({'schema_version': 1, 'algorithm': 'sha256', 'html_normalization': automation.HTML_NORMALIZATION,
+                               'files': {}}).encode()
         runs = [
             {'id': 30, 'head_branch': 'feature', 'event': 'workflow_dispatch', 'path': '.github/workflows/indexnow.yml'},
             {'id': 20, 'head_branch': 'main', 'event': 'pull_request', 'path': '.github/workflows/indexnow.yml'},
@@ -157,6 +158,17 @@ class ReceiptTests(unittest.TestCase):
         self.assertNotIn('actions/artifacts/200/zip', github.calls)
         with TemporaryDirectory() as directory, redirect_stdout(StringIO()):
             self.assertEqual(automation.previous_receipt(Path(directory), github=FakeGitHub(runs=[])), '')
+
+    def test_a_baseline_in_another_manifest_format_falls_back_to_a_full_notification(self):
+        older = json.dumps({'schema_version': 1, 'algorithm': 'sha256', 'html_normalization': 'cloudflare-public-html-v3',
+                            'files': {}}).encode()
+        runs = [{'id': 10, 'head_branch': 'main', 'event': 'schedule', 'path': '.github/workflows/indexnow.yml'}]
+        github = FakeGitHub(runs=runs, artifacts={10: [{'id': 100, 'name': 'indexnow-receipt', 'expired': False, 'size_in_bytes': 10}]},
+                            archives={'actions/artifacts/100/zip': receipt_archive(older)})
+        output = StringIO()
+        with TemporaryDirectory() as directory, redirect_stdout(output):
+            self.assertEqual(automation.previous_receipt(Path(directory), github=github), '')
+        self.assertIn('another manifest format', output.getvalue())
 
 
 class WorkflowTests(unittest.TestCase):

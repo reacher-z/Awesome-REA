@@ -8,8 +8,9 @@ tells a deployment still in progress from one that failed or that a newer commit
 live in time, or went live with bytes this build does not reproduce.
 
 ``previous OUT`` downloads the receipt of the newest earlier successful run of the workflow on the default
-branch into OUT and writes that build's manifest digest as ``previous_sha256``; it writes an empty value when
-there is none, and the run then notifies every sitemap URL.
+branch into OUT and writes that build's manifest digest as ``previous_sha256``. It writes an empty value when
+there is none or when that manifest uses another format (such as an older HTML normalization), and the run
+then notifies every sitemap URL, so its receipt becomes the next baseline.
 
 The token comes from GH_TOKEN and is sent only to api.github.com. Nothing here notifies IndexNow:
 submit_indexnow.py does that after verifying every canonical page of the deployment.
@@ -28,7 +29,7 @@ import time
 import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_manifest import MANIFEST_NAME  # noqa: E402
+from build_manifest import HTML_NORMALIZATION, MANIFEST_NAME  # noqa: E402
 from scheduled_source_scan import ActionsAPI  # noqa: E402
 from submit_indexnow import ORIGIN, fetch_bytes  # noqa: E402
 
@@ -149,6 +150,16 @@ def previous_receipt(directory: Path, *, github=None, current_run: str | None = 
             github.download(f"actions/artifacts/{artifact['id']}/zip", archive)
             receipt, manifest = read_receipt(archive.read_bytes())
             archive.unlink()
+            try:
+                document = json.loads(manifest.decode('utf-8'))
+            except (UnicodeError, json.JSONDecodeError):
+                document = {}
+            if (not isinstance(document, dict) or document.get('schema_version') != 1
+                    or document.get('html_normalization') != HTML_NORMALIZATION):
+                # A baseline written under another manifest format cannot be diffed; one full notification
+                # makes this run's receipt the new baseline instead of failing every later run.
+                print(f"The newest receipt (run {run['id']}) uses another manifest format: every sitemap URL will be notified.")
+                return ''
             (directory / MANIFEST_NAME).write_bytes(manifest)
             (directory / 'receipt.json').write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8')
             print(f"Baseline: receipt of run {run['id']} ({receipt.get('recorded_at')}, manifest {receipt['manifest_sha256'][:16]})")

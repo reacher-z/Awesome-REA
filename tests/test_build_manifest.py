@@ -19,6 +19,15 @@ class CDNNormalizationTests(unittest.TestCase):
         for key in (0, 108, 255):
             self.assertEqual(normalized_html_bytes(('<p>Contact: ' + protected('contact@example.org', key) + '</p>' + self.decoder + '\n').encode()), b'<p>Contact: contact@example.org</p>\n')
 
+    def test_dotted_names_that_cloudflare_obfuscates_are_restored(self):
+        # A Homebrew formula name in a requirement: Cloudflare rewrites it, though it is no address.
+        self.assertEqual(normalized_html_bytes(('<li>Homebrew ' + protected('openssl@1.1') + ' paths</li>' + self.decoder).encode()),
+                         b'<li>Homebrew openssl@1.1 paths</li>')
+        for undotted in ('Pass@1', 'permuter@home', 'a@b.'):
+            with self.subTest(text=undotted):
+                anchor = protected(undotted)
+                self.assertEqual(normalized_html_bytes(anchor.encode()), anchor.encode())
+
     def test_email_content_stays_hash_sensitive(self):
         self.assertNotEqual(html_digest(b'<p>contact@example.org</p>'), html_digest(('<p>' + protected('different@example.org') + '</p>').encode()))
 
