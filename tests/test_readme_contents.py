@@ -102,7 +102,10 @@ class ReadmeContentsTest(unittest.TestCase):
         self.assertTrue(rendered.startswith('- [按任务查找](#按任务查找)\n- [资源](#资源) (1)\n  - [网站](#website) (1)\n'),
                         rendered)
         self.assertIn('\n- [完整仓库索引](#完整仓库索引) (10)\n', rendered)
-        self.assertTrue(rendered.endswith('\n- [贡献者](#贡献者)\n- [关于](#关于)\n\n本页还有：[参与贡献](#参与贡献)\n'), rendered)
+        self.assertTrue(rendered.endswith('\n- [完整仓库索引](#完整仓库索引) (10)\n- [关于](#关于)\n\n本页还有：[参与贡献](#参与贡献)\n'), rendered)
+        # Neither README has a contributors section, so Contents lists none.
+        self.assertNotIn('贡献者', rendered)
+        self.assertNotIn('Contributors', render_contents([resource()], [paper()], 10, 'en'))
         self.assertNotIn('awesomerea.org', rendered)
 
     def test_resource_line_keeps_title_opening_sentence_tags_and_full_entry(self):

@@ -27,8 +27,9 @@ FIELDS = TEXT_FIELDS | {
     'evidence_urls', 'runtime_tested',
 }
 # Optional publisher container metadata for published papers, omitted when unverified,
-# and the UTC date the record first reached main (feeds only; not a review date).
-OPTIONAL_FIELDS = {'citation', 'added_at'}
+# the UTC date the record first reached main (feeds only; not a review date), and
+# authors_omitted: true for a record that leaves its author list empty and points readers to the paper.
+OPTIONAL_FIELDS = {'citation', 'added_at', 'authors_omitted'}
 CITATION_PATTERNS = {
     'container_title': None, 'publisher': None, 'series': None,
     'volume': re.compile(r'[1-9]\d*'), 'issue': re.compile(r'[A-Za-z0-9]+'),
@@ -176,7 +177,13 @@ def validate_papers(records, errors, *, url_check, now=None):
         else:
             seen['id'].add(identifier)
         authors = record.get('authors')
-        if (not isinstance(authors, list) or not authors
+        if 'authors_omitted' in record and record['authors_omitted'] is not True:
+            errors.append(f'{where}.authors_omitted: use true, or leave the field out when authors are listed')
+        elif record.get('authors_omitted') is True:
+            # The whole list is left out, never a partial one; pages send readers to the paper for its authors.
+            if authors != []:
+                errors.append(f'{where}.authors: use an empty array when authors_omitted is true')
+        elif (not isinstance(authors, list) or not authors
                 or any(not isinstance(author, str) or not author.strip() for author in authors)):
             errors.append(f'{where}.authors: use a nonempty author-name array')
         elif len({author.strip().casefold() for author in authors}) != len(authors):

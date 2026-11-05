@@ -9,7 +9,7 @@ from urllib.parse import quote, urlencode, urlsplit
 
 from artifact_links import github_repository
 from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, jsonld_script, publication_keys
-from build_paper_pages import STATUS_LABELS, formatted_date, scholarly_article
+from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, formatted_date, scholarly_article
 from build_readme import (CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section,
                           section_order)
 from evidence_links import evidence_link
@@ -263,8 +263,14 @@ def _paper_content(paper: dict, language: str, discussion: str = '', feedback: s
                            ('arxiv_id', 'arXiv', 'arXiv'), ('arxiv_version_reviewed', 'Reviewed arXiv version', '已复核的 arXiv 版本'), ('doi', 'DOI', 'DOI')):
         if paper.get(field):
             facts.append((label(en, cn), formatted_date(paper[field], language) if field == 'first_arxiv_date' else paper[field]))
+    if authors_omitted(paper):
+        # The record lists no names; the paper itself does.
+        authors = (f'<p class="entry-authors"><a href="{_public_url(paper["url"])}" target="_blank" rel="noopener">'
+                   f'{escape(label(*AUTHORS_OMITTED))} <span aria-hidden="true">↗</span></a></p>')
+    else:
+        authors = f'<p class="entry-authors" lang="en">{escape("; ".join(paper["authors"]))}</p>'
     content = f'''<header class="entry-heading"><p class="entry-eyebrow">{paper['year']} · {escape(status)}</p><h1>{escape(title)}</h1>{original}
-<p class="entry-authors" lang="en">{escape('; '.join(paper['authors']))}</p><p class="entry-description">{escape(description)}</p></header>
+{authors}<p class="entry-description">{escape(description)}</p></header>
 <nav class="entry-actions" aria-label="{label('Paper and citation links', '论文与引文链接')}">{''.join(links)}</nav>
 <section class="entry-section entry-scope" aria-labelledby="entry-scope"><h2 id="entry-scope">{label('Scope and limitations', '研究范围与局限')}</h2><p>{escape(paper[f'scope_limitations_{language}'])}</p></section>
 <section class="entry-section" aria-labelledby="entry-relevance"><h2 id="entry-relevance">{label('Why it fits this collection', '与本合集的关联')}</h2><p>{escape(paper[f'why_fits_{language}'])}</p></section>

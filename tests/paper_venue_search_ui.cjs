@@ -28,11 +28,18 @@ assert.deepEqual(found("q=emnlp&target=website&status=conference-accepted&year=2
 assert.deepEqual(found("q=Legacy"), ["paper-no-venue"]);
 assert.deepEqual(found("q=Ada&year=2026"), ["paper-venue-only", "paper-no-venue"]);
 assert.throws(() => search.readRecords({schema_version: 1, papers: [{...papers[0], venue: ["ICLR"]}]}));
+// A record that leaves its authors out has an empty list and authors_omitted: true, and only such a record does.
+const omitted = search.readRecords({schema_version: 1, papers: [{...papers[0], authors: [], authors_omitted: true}]});
+assert.deepEqual(omitted.map(paper => paper.id), ["paper-venue-only"]);
+assert.equal(search.readRecords({schema_version: 1, papers: [{...papers[0], authors_omitted: null}]}).length, 1);
+for (const changes of [{authors: []}, {authors_omitted: true}, {authors: [], authors_omitted: false}, {authors: [], authors_omitted: "true"}]) {
+  assert.throws(() => search.readRecords({schema_version: 1, papers: [{...papers[0], ...changes}]}), JSON.stringify(changes));
+}
 
 // Every catalog paper whose venue names ICLR or EMNLP is found by that name, in either letter case.
 const root = path.resolve(__dirname, "..");
 const catalog = JSON.parse(fs.readFileSync(path.join(root, "data/papers.json"), "utf8"));
-const fields = ["id", "title", "title_zh", "description_en", "description_zh", "authors", "venue", "doi", "arxiv_id", "year", "publication_status", "targets"];
+const fields = ["id", "title", "title_zh", "description_en", "description_zh", "authors", "authors_omitted", "venue", "doi", "arxiv_id", "year", "publication_status", "targets"];
 const projected = search.readRecords({schema_version: 1, papers: catalog.map(paper => Object.fromEntries(fields.map(key => [key, paper[key] ?? null])))});
 const catalogAllowed = search.allowedValues(projected);
 for (const name of ["ICLR", "EMNLP"]) {

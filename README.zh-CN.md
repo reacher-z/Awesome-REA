@@ -45,7 +45,6 @@
 - [论文](#papers) (207)
   - [最新论文](#papers-recent) (10)
 - [完整仓库索引](#完整仓库索引) (3,309)
-- [贡献者](#贡献者)
 - [关于](#关于)
 
 本页还有：[参与贡献](#参与贡献)
@@ -1112,12 +1111,6 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 ## 参与贡献
 
 欢迎完善条目或分享有用来源。请先阅读[中文贡献指南](CONTRIBUTING.zh-CN.md)（以[英文版](CONTRIBUTING.md)为准），再[推荐资源](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)、[推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)、[修正翻译](https://github.com/reacher-z/Awesome-REA/issues/new?template=translation.yml)或[报告过时条目](https://github.com/reacher-z/Awesome-REA/issues/new?template=broken-resource.yml)。
-
-## 贡献者
-
-[Yuxuan Zhang](https://yuxuan.world/) — **负责人（Lead）**。
-
-[Haozhe Wang](https://haozheh3.github.io/) — 游戏重建资源集合整理与推荐：[awesome-rea-games](https://github.com/HaozheH3/awesome-rea-games)。
 
 ## 关于
 

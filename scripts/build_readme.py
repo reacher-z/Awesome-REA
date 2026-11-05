@@ -9,7 +9,7 @@ from collections import Counter, defaultdict
 from urllib.parse import quote
 
 from catalog import ROOT, load_resources
-from build_paper_pages import STATUS_LABELS as PAPER_STATUSES, papers_newest_first
+from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS as PAPER_STATUSES, authors_omitted, papers_newest_first
 from source_scope import apply_scope, read_scope
 from validate_papers import read_papers
 
@@ -169,7 +169,6 @@ README_HEADINGS = {
     'resources': ('Resources', '资源'),
     'papers': ('Papers', '论文'),
     'index': INDEX_HEADINGS,
-    'contributors': ('Contributors', '贡献者'),
     'about': ('About', '关于'),
 }
 # The one ### heading under Papers: the newest papers, before the paper files' full lists.
@@ -452,7 +451,6 @@ def render_contents(records, papers, index_count, language):
     lines += ['- ' + item(README_HEADINGS['papers'], 'papers', len(papers))]
     lines += ['  - ' + line for line in paper_sections]
     lines += ['- ' + item(README_HEADINGS['index'], count=index_count),
-              '- ' + item(README_HEADINGS['contributors']),
               '- ' + item(README_HEADINGS['about'])]
     # Contributing stays out of the list (awesome-lint's ToC check excludes it) but keeps its Contents link.
     lines += ['', ('本页还有：[参与贡献](#参与贡献)' if zh else 'Also on this page: [Contributing](#contributing)')]
@@ -601,8 +599,12 @@ def paper_line(paper, language):
     index = int(zh)
     title = plain_text(paper['title_zh'] if zh else paper['title'])
     status = PAPER_STATUSES[paper['publication_status']][index]
-    author = paper['authors'][0] + ((' 等' if zh else ' et al.') if len(paper['authors']) > 1 else '')
-    metadata = plain_text(f'{paper_venue(paper)} · {status} · {author}')
+    if authors_omitted(paper):
+        # The record lists no names: the line links the paper, which lists its authors.
+        metadata = plain_text(f'{paper_venue(paper)} · {status}') + f" · [{AUTHORS_OMITTED[index]}]({paper['url']})"
+    else:
+        author = paper['authors'][0] + ((' 等' if zh else ' et al.') if len(paper['authors']) > 1 else '')
+        metadata = plain_text(f'{paper_venue(paper)} · {status} · {author}')
     detail_url = f"https://awesomerea.org/{'zh/' if zh else ''}papers/{paper['id']}/"
     links = [f"[PDF]({paper['pdf_url']})"]
     if paper['code_url']:

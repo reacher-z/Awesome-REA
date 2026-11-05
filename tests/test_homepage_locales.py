@@ -287,9 +287,9 @@ class HomepageLocaleTests(unittest.TestCase):
                 for href, inner in internal:
                     self.assertNotIn('↗', inner, href)
                     self.assertNotRegex(inner, r'i-external|fa-external', href)
-                # Off-site links keep the arrow, for example both external collections on the shelf.
+                # Off-site links keep the arrow, for example the external collection on the shelf.
                 arrowed = {href for href, inner in external if '↗' in inner}
-                self.assertTrue({'https://github.com/songshikang0111/awesome-REA-cases', 'https://github.com/HaozheH3/awesome-rea-games'} <= arrowed)
+                self.assertIn('https://github.com/songshikang0111/awesome-REA-cases', arrowed)
                 # The text of the changed links keeps its words; only the trailing glyph differs.
                 for key in changed:
                     self.assertRegex(_ui_strings(APP)[lang][key], r'^[^↗→]+ →$', key)

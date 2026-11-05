@@ -21,7 +21,7 @@ function application(query = '', pathname = '/') {
     context.location.href = entries[index];
     app.windowListeners.popstate({state: null}); await settle();
   };
-  // A fragment link (for example #contributors) adds an entry without passing through app.js.
+  // Following a fragment-only link (for example #shelf-title) adds an entry without passing through app.js.
   app.fragment = hash => { const next = new URL(context.location.href); next.hash = hash; entries.splice(index + 1, Infinity, next.href); index += 1; context.location.href = next.href; };
   return app;
 }
@@ -113,7 +113,7 @@ const tests = {
     const app = application('?target=app');
     await app.api.load(); await settle();
     app.api.state.visible = 30;
-    app.fragment('#contributors');
+    app.fragment('#shelf-title');
     await app.traverse(-1);
     assert.equal(app.api.state.visible, 30, 'a fragment-only entry keeps Show More progress');
     assert.deepEqual(app.writes, []);
