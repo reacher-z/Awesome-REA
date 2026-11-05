@@ -6,6 +6,12 @@ An independent collection of tools, case studies and research for websites, game
 
 **English** · [简体中文](README.zh-CN.md)
 
+**Featured benchmarks**
+
+| Website reconstruction | Browser agents |
+| --- | --- |
+| [**WebsiteBench**](https://github.com/TIGER-AI-Lab/WebsiteBench)<br>Can AI agents rebuild websites through browser exploration? | [**ClawBench**](https://github.com/TIGER-AI-Lab/ClawBench)<br>Open-source benchmark for browser AI agents on daily tasks. |
+
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->

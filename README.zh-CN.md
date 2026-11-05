@@ -6,6 +6,12 @@
 
 [English](README.md) · **简体中文**
 
+**推荐评测项目**
+
+| 网站重建 | 浏览器智能体 |
+| --- | --- |
+| [**WebsiteBench**](https://github.com/TIGER-AI-Lab/WebsiteBench)<br>AI 智能体能否通过浏览器探索重建网站？ | [**ClawBench**](https://github.com/TIGER-AI-Lab/ClawBench)<br>面向日常任务的开源浏览器 AI 智能体基准。 |
+
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
