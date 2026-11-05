@@ -10,7 +10,7 @@ import re
 from urllib.parse import urlsplit
 
 MANIFEST_NAME = 'build-manifest.json'
-HTML_NORMALIZATION = 'cloudflare-public-html-v3'
+HTML_NORMALIZATION = 'cloudflare-public-html-v4'
 CONTROL_FILES = {'CNAME', '.nojekyll', '_headers', '_redirects'}
 FONT_SUFFIXES = {'.woff', '.woff2', '.ttf', '.otf', '.eot'}
 PRIVATE_NAMES = re.compile(r'(?i)^(?:\.env(?:\..*)?|credentials?(?:[.-].*)?|secrets?(?:[.-].*)?)$')
@@ -99,7 +99,9 @@ def normalized_html_bytes(content: bytes) -> bytes:
             address = bytes(byte ^ data[0] for byte in data[1:]).decode('ascii')
         except UnicodeDecodeError:
             return match[0]
-        if not re.fullmatch(r"[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}", address):
+        # Cloudflare obfuscates any word@dotted.name, such as "openssl@1.1" in a requirement, not only addresses
+        # with an alphabetic top-level domain; the restored text is escaped and still hash-sensitive.
+        if not re.fullmatch(r"[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+", address):
             return match[0]
         return escape(address, quote=True)
 
