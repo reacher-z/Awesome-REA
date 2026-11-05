@@ -3,6 +3,9 @@ on:
   push:
     branches: [main]
   pull_request:
+  # A pull request opened with GITHUB_TOKEN, such as one opened by repository automation, starts no
+  # pull_request run; dispatching this workflow on its branch runs every check on the branch's commit.
+  workflow_dispatch:
 permissions:
   contents: read
 # PR runs share one group per pull request, so a newer push cancels the superseded run.
