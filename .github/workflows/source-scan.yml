@@ -64,7 +64,7 @@ jobs:
       contents: write
       # Open or update that pull request.
       pull-requests: write
-      # Read this run's checkpoint artifact and dispatch the two required checks.
+      # Read this run's checkpoint artifact, dispatch the two required checks and start IndexNow.
       actions: write
       # Read the validate and review commit statuses and check runs on the pull request head.
       checks: read
@@ -84,6 +84,17 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: python3 scripts/ingest_discoveries.py run
+      # The merged batch changes the discovery pages; IndexNow hears about them once they are deployed.
+      # A failed start never fails the ingest: the IndexNow schedule also notifies unsent deployments.
+      - name: Start the IndexNow notification for the merged batch
+        if: ${{ steps.ingest.outputs.status == 'merged' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MERGE_SHA: ${{ steps.ingest.outputs.merge_sha }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          gh workflow run indexnow.yml -R "$GITHUB_REPOSITORY" --ref "$DEFAULT_BRANCH" -f sha="$MERGE_SHA" \
+            || echo "::warning::The IndexNow workflow did not start; its schedule will notify these pages."
   # One tracking issue: updated on a failed run, closed by the next successful one.
   report:
     needs: [scan, ingest]

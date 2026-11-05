@@ -14,6 +14,7 @@ from asset_paths import ASSET_PATH, FINGERPRINTED_SUFFIXES, UNHASHED_STYLESHEETS
 from build_entry_pages import entry_path, feedback_urls, matching_entries, section_siblings
 from build_site import catalog_index
 from build_manifest import read_build_manifest
+from sitemaps import sitemap_urls
 from build_paper_pages import (AUTHORS_OMITTED, LISTING_SIZE_BUDGET, SEARCH_FIELDS, authors_omitted, bibtex_text,
                                formatted_date, listing_size_warnings, paper_entity_id, papers_newest_first)
 from validate_papers import read_papers
@@ -1525,7 +1526,7 @@ def validate_entry_outputs(pages, resources, papers):
 
 
 def main():
-    urls = [element.text for element in ET.parse(OUTPUT / 'sitemap.xml').findall('{*}url/{*}loc')]
+    urls = sitemap_urls(OUTPUT, ORIGIN)
     resources = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['resources']
     papers = json.loads((OUTPUT / 'papers.json').read_text(encoding='utf-8'))
     validate_route_inventory(urls, resources, papers, include_browse=(OUTPUT / 'source-index.json').is_file(),
