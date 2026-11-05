@@ -123,7 +123,10 @@ def run_review(github):
     with tempfile.TemporaryDirectory() as directory:
         event = Path(directory) / 'event.json'
         event.write_text(json.dumps({'pull_request': {'number': NUMBER}}))
-        environment = {'GITHUB_TOKEN': 'test-token', 'GITHUB_REPOSITORY': REPOSITORY, 'GITHUB_EVENT_PATH': str(event)}
+        # The event name is explicit: these tests also run inside dispatched CI jobs, where the inherited
+        # GITHUB_EVENT_NAME is workflow_dispatch and would select the reviewer's dispatch path.
+        environment = {'GITHUB_TOKEN': 'test-token', 'GITHUB_REPOSITORY': REPOSITORY, 'GITHUB_EVENT_PATH': str(event),
+                       'GITHUB_EVENT_NAME': 'pull_request_target'}
         output = io.StringIO()
         with patch.dict(os.environ, environment), patch.object(review_pr, 'api', github), \
                 patch.object(review_pr.urllib.request, 'urlopen', side_effect=AssertionError('network access')), \
