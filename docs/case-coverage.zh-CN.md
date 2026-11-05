@@ -2,7 +2,7 @@
 
 [English](case-coverage.md) · [机器可读记录](../data/case-coverage.json)
 
-核查日期：2026-10-20（UTC）。**591 个合集出现项**经 2 次有记录的重复合并后，对应 **589 个清单单元**。其中包括报告、工具、论文、讨论和想法，不能当作独立且已核验的项目数量。
+核查日期：2026-10-20（UTC）。**451 个合集出现项**经 2 次有记录的重复合并后，对应 **449 个清单单元**。其中包括报告、工具、论文、讨论和想法，不能当作独立且已核验的项目数量。
 
 项目身份归并尚未完成，因此独立项目数为 `null`，并非零。同一上游条目的中英文版本只计一次。同一项目的不同报告仍分别计为清单单元，除非已有明确的别名合并决定。
 
@@ -12,7 +12,6 @@
 | --- | ---: | ---: | --- |
 | [songshikang0111/awesome-REA-cases · 3a1c5cdfaa3f](https://github.com/songshikang0111/awesome-REA-cases/tree/3a1c5cdfaa3f2db0dd4f587208f8870eb633de23) | 423 | 50 | [awesome-rea-cases](https://awesomerea.org/zh/resources/awesome-rea-cases/) |
 | [yibie/awesome-rea · 6df1bc922ac6](https://github.com/yibie/awesome-rea/tree/6df1bc922ac6b92dcd1b2f905c94d8cc4f3b5a3e) | 28 | 11 | [yibie-awesome-rea](https://awesomerea.org/zh/resources/yibie-awesome-rea/) |
-| [HaozheH3/awesome-rea-games · 4316a4ce86fd](https://github.com/HaozheH3/awesome-rea-games/tree/4316a4ce86fdd851f0180ffee87dc336851bf5b6) | 140 | 137 | [haozhe-awesome-rea-games](https://awesomerea.org/zh/resources/haozhe-awesome-rea-games/) |
 
 记录保留固定版本文件 URL、Git blob 标识、SHA-256 和字节数，仅描述这些已清点快照，不代表上游后续版本或整个领域。这里不再发布完整的上游简介或 README 正文。
 
@@ -22,13 +21,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 215 | 213 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 33 | 33 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 343 | 343 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 已收录 (`already-curated`) | 97 | 95 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 21 | 21 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 333 | 333 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-234 个出现项含目录链接；共关联 227 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+115 个出现项含目录链接；共关联 118 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 498 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 378 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -368,126 +367,6 @@
 | Vandal Hearts：基于一致性反编译的原生 PC 移植 | 已收录 | [来源](https://github.com/HalmyLyseas/VandalHearts-decomp-SLPM-86007/blob/75017596cc439a7141e405943afdb469b717787c/README.md) |
 | KartPad：Mario Kart Wii 重编译的平台集成 | 已收录 | [来源](https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/README.md) |
 | Xenosaga I 反编译兼容性工具包 | 已收录 | [来源](https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/README.md) |
-| sm64ex：基于反编译成果的 Super Mario 64 增强版 PC 移植 | 已收录 | [来源](https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/README.md) |
-| Super Mario 64：带明确比较开关的 ROM 重建 | 已收录 | [来源](https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md) |
-| Ghostship：基于 libultraship 的 Super Mario 64 原生移植 | 已收录 | [来源](https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/README.md) |
-| 🍄 Super Mario 64 — coop-deluxe/sm64coopdx | 证据不足 | [来源](https://github.com/coop-deluxe/sm64coopdx/blob/8cd6e5977d9f920d51ca71f2c61801d019ed79c6/README.md) |
-| Super Mario Sunshine：仍在推进的 GameCube 一致性反编译重建 | 已收录 | [来源](https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/README.md) |
-| Super Mario Sunshine（美版）：AI 辅助的一致性反编译分支 | 已收录 | [来源](https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/README.md) |
-| 🍄 Super Mario Sunshine — chasem-dev/sms-launcher | 证据不足 | [来源](https://github.com/chasem-dev/sms-launcher/blob/c04b5a40788050ce15deb7955d215cbeea4fa125/README.md) |
-| Petari：Super Mario Galaxy 一致性反编译重建 | 已收录 | [来源](https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/README.md) |
-| 《旷野之息》：Switch 主程序的逐函数一致性反编译 | 已收录 | [来源](https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/README.md) |
-| 《天空之剑》：以哈希校验重新链接的 Wii 版反编译 | 已收录 | [来源](https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/README.md) |
-| Ship of Harkinian：基于反编译源码的《时之笛》原生移植 | 已收录 | [来源](https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/README.md) |
-| 《时之笛》：16 个版本均以 MD5 校验 ROM 构建的反编译 | 已收录 | [来源](https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/README.md) |
-| Dusklight：基于反编译的《黄昏公主》原生移植 | 已收录 | [来源](https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/README.md) |
-| 《黄昏公主》：GameCube 版代码完全一致的反编译 | 已收录 | [来源](https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/README.md) |
-| 《风之杖》：以哈希校验重新链接的 GameCube 版反编译 | 已收录 | [来源](https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/README.md) |
-| Wind Waker HD Recomp：通过静态重编译实现的 Wii U 游戏原生移植 | 已收录 | [来源](https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/README.md) |
-| Zelda 64: Recompiled：无需完整源码反编译的《姆吉拉的假面》原生移植 | 已收录 | [来源](https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/README.md) |
-| 《姆吉拉的假面》：生成一致美版 N64 ROM 的反编译重建 | 已收录 | [来源](https://github.com/zeldaret/mm/blob/bf6bd9d0d3a90fe2f8960e034fbfd328e8bdef22/README.md) |
-| 2 Ship 2 Harkinian：基于反编译的《姆吉拉的假面》原生移植 | 已收录 | [来源](https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/README.md) |
-| 《缩小帽》：面向五个 ROM 的 GBA 反编译重建 | 已收录 | [来源](https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/README.md) |
-| z2rs：以模拟器对照逐步重建《塞尔达传说 II》的 Rust 项目 | 已收录 | [来源](https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/README.md) |
-| Metaforce：在反编译之上重建的《密特罗德 Prime》引擎重实现 | 已收录 | [来源](https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/README.md) |
-| Metroid Prime Port：AI 辅助完成的 PrimeDecomp 反编译原生移植 | 已收录 | [来源](https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/README.md) |
-| Sonic Mania：面向 RSDKv5 引擎的游戏代码反编译重建 | 已收录 | [来源](https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/README.md) |
-| RSDKv5 Decompilation：重建 Retro Engine v5 与 v5U | 已收录 | [来源](https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/README.md) |
-| Unleashed Recompiled：转换 Xbox 360 游戏代码与着色器 | 已收录 | [来源](https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/README.md) |
-| Donkey Kong 64: Recompiled：基于 N64Recomp 的原生移植 | 已收录 | [来源](https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/README.md) |
-| c1：PlayStation 版《古惑狼》的 C 语言移植 | 已收录 | [来源](https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/README.md) |
-| Crash Bandicoot 2 Recompiled：基于 PSXRecomp 的原生构建 | 已收录 | [来源](https://github.com/Zumbo06/Crash2Recomp/blob/48036cf3b49dfe4343e5c093d1df8a7b12617f81/README.md) |
-| C2C：《古惑狼 2》的混合重编译与手工反编译 | 已收录 | [来源](https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/README.md) |
-| Conker's Bad Fur Day: Recompiled：基于 N64Recomp 的原生移植 | 已收录 | [来源](https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/README.md) |
-| Banjo: Recompiled：基于 N64Recomp 的《Banjo-Kazooie》原生移植 | 已收录 | [来源](https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/README.md) |
-| Lighthouse：基于反编译项目的《Banjo-Kazooie》PC 移植 | 已收录 | [来源](https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/README.md) |
-| SymphonyRecomp：用 RecompOne 静态重编译《恶魔城：月下夜想曲》 | 已收录 | [来源](https://github.com/BlackLabelHQ/SymphonyRecomp/blob/c94a9096bab25bf513cceea50d6838a4c8d7bf5b/README.md) |
-| Castlevania: Symphony of the Night：覆盖 PlayStation、PSP 与 Saturn 版本的一致性反编译 | 已收录 | [来源](https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/README.md) |
-| Castlevania 64: Recompiled：测试版静态重编译移植 | 已收录 | [来源](https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/flatpak/io.github.cv64recomp.cv64recomp.metainfo.xml) |
-| 🏰 Castlevania 64 — spacefarergames/CV64-Recomp | 证据不足 | [来源](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
-| ProjectCane：《Sly Cooper and the Thievius Raccoonus》原生 PC 移植 | 已收录 | [来源](https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/README.md) |
-| Sly Cooper and the Thievius Raccoonus：PlayStation 2 一致性反编译 | 已收录 | [来源](https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/README.md) |
-| Ratchet & Clank：记录了代理流程的 PS2 一致性反编译 | 已收录 | [来源](https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/README.md) |
-| OpenGOAL：恢复 GOAL 代码并重建 Jak 系列游戏 | 已收录 | [来源](https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/README.md) |
-| The Two Towers Recompiled：初代 Xbox 静态重编译移植 | 已收录 | [来源](https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/README.md) |
-| LEGO Island：源码重建与单独记录的精确重构建 | 已收录 | [来源](https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/README.md) |
-| LEGO Island 可移植版：反编译源码的多平台移植 | 已收录 | [来源](https://github.com/isledecomp/isle-portable/blob/d0bf04fe605d7ec2a291e65df08bf26712452379/README.md) |
-| MediEvil Recomp：PlayStation 游戏静态重编译为 C# | 已收录 | [来源](https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/README.md) |
-| MediEvil 反编译：早期阶段、以校验值把关的 PlayStation 项目 | 已收录 | [来源](https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/README.md) |
-| ico-pc：由 PS2 反编译源码编译而成的《ICO》原生移植 | 已收录 | [来源](https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/README.md) |
-| King Kong Recompiled：由 AI 开发的 Xbox 360 静态重编译 | 已收录 | [来源](https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/README.md) |
-| pokered：一致构建的《精灵宝可梦 红／蓝》反汇编 | 已收录 | [来源](https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/README.md) |
-| pokecrystal：一致构建的《精灵宝可梦 水晶》反汇编 | 已收录 | [来源](https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/README.md) |
-| pokeruby：一致构建的《精灵宝可梦 红宝石／蓝宝石》反编译 | 已收录 | [来源](https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/README.md) |
-| 《宝可梦 绿宝石》：生成一致 ROM 的 Game Boy Advance 反编译重建 | 已收录 | [来源](https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/README.md) |
-| 《宝可梦 火红／叶绿》：生成一致 ROM 的 Game Boy Advance 反编译重建 | 已收录 | [来源](https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/README.md) |
-| 《宝可梦 心金／魂银》：校验一致的进行中 DS 反汇编项目 | 已收录 | [来源](https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/README.md) |
-| 《宝可梦 白金》：校验一致的 Nintendo DS 反编译重建 | 已收录 | [来源](https://github.com/pret/pokeplatinum/blob/1dc13dcea40c04ab53f1f607de46023dc409ef20/README.md) |
-| Pokémon Platinum PC Port：基于 pret 反编译的原生移植 | 已收录 | [来源](https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/README.md) |
-| UltraSunnyMoon：以 REA 主导的部分《宝可梦 究极之日》重建 | 已收录 | [来源](https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/README.md) |
-| 《王国之心 358/2 Days》：逐字节一致的 Nintendo DS 反编译重建 | 已收录 | [来源](https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/README.md) |
-| Kingdom Hearts 358/2 Days：基于一致性反编译的原生 PC 移植 | 已收录 | [来源](https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/README.md) |
-| D2R Mobile：在 Apple 设备上重新托管 Diablo II: Resurrected 的 Switch 程序 | 已收录 | [来源](https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/README.md) |
-| DevilutionX：移植重建后的 Diablo 引擎 | 已收录 | [来源](https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/README.md) |
-| DiabloWeb：基于 Devilution 的 WebAssembly 浏览器移植 | 已收录 | [来源](https://github.com/d07RiV/diabloweb/blob/c61ef19c54ea646aed328bd8cc82c8a5f1ebd81d/README.md) |
-| OpenMW：复用原内容并替代 Morrowind 引擎 | 已收录 | [来源](https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/README.md) |
-| FFTARecomp：Final Fantasy Tactics Advance 的静态重编译 | 已收录 | [来源](https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/README.md) |
-| Underworld Exhumed：重建 Ultima Underworld I 与 II | 已收录 | [来源](https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/README.md) |
-| Vandal Hearts：基于一致性反编译的原生 PC 移植 | 已收录 | [来源](https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/README.md) |
-| 🧙 Paper Mario — lucyawrey/Paper_Mario_64_Recomp | 证据不足 | [来源](https://github.com/lucyawrey/Paper_Mario_64_Recomp/blob/09dcb129ab4c3ab5ae4d1838841f05decb6e7b26/README.md) |
-| Paper Mario：覆盖四个版本的一致性 Nintendo 64 反编译 | 已收录 | [来源](https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/README.md) |
-| PaperBoat：基于反编译成果的 Paper Mario 原生移植 | 已收录 | [来源](https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/README.md) |
-| Lost Odyssey Recomp：将 Xbox 360 角色扮演游戏静态重编译为原生移植 | 已收录 | [来源](https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/README.md) |
-| GoldenEye 007：覆盖三个版本的一致性 Nintendo 64 反编译 | 已收录 | [来源](https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/readme.md) |
-| Budokai Tenkaichi 3：基于一致性反编译的原生 PC 移植 | 已收录 | [来源](https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/README.md) |
-| Halo 2：智能体辅助的 LTCG Xbox 版一致性反编译 | 已收录 | [来源](https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/README.md) |
-| Super Smash Bros. Melee：可移位构建的 GameCube 一致性反编译 | 已收录 | [来源](https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/README.md) |
-| Melee Unlocked：Melee 的 Windows 源码移植与静态重编译 | 已收录 | [来源](https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/README.md) |
-| Saints Reborn：基于 ReXGlue 的 Saints Row 静态重编译 | 已收录 | [来源](https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/README.md) |
-| Starfox 64: Recompiled：基于 N64Recomp 的静态重编译移植 | 已收录 | [来源](https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/README.md) |
-| Starship：基于反编译的 Star Fox 64 PC 移植 | 已收录 | [来源](https://github.com/HarbourMasters/Starship/blob/3322643f0bbf80d2f8f7e1c0d2c4c578515f6c90/README.md) |
-| ⚔️ Perfect Dark — perfect-dark-pc-port/perfect_dark | 待核查 | [来源](https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/README.md) |
-| Perfect Dark：生成一致 ROM 的 Nintendo 64 反编译重建 | 已收录 | [来源](https://github.com/n64decomp/perfect_dark/blob/169ed48bdcbfb3b568b028bd5bebb27680073514/README.md) |
-| 🕵️ Syphon Filter — Madxbio97/SF-pc-port | 证据不足 | [来源](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
-| Syphon Filter: The Omega Strain：可逐字节重建 PS2 可执行文件的一致性反编译 | 已收录 | [来源](https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/README.md) |
-| The Darkness Recomp：配有原生 D3D11 渲染器的 Xbox 360 静态重编译 | 已收录 | [来源](https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/README.md) |
-| P.T. PC 版：基于行为重新实现、读取 PS4 数据的引擎 | 已收录 | [来源](https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/README.md) |
-| Dead Rising 2: Case Zero：Xbox 360 XBLA 游戏的静态重编译移植 | 已收录 | [来源](https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/blob/a1feb9dd7a61e23b4bcbb1afab8edf3439ee86ac/README.md) |
-| Dead Rising 2: Case West：同系列的 Xbox 360 XBLA 静态重编译移植 | 已收录 | [来源](https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/README.md) |
-| Himuro：Fatal Frame（《零》）PS2 一致性反编译 | 已收录 | [来源](https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/README.md) |
-| MikuPan：基于 Himuro 反编译的 Fatal Frame 原生 PC 移植 | 已收录 | [来源](https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/README.md) |
-| 🏎️ Mario Kart 64 — n64decomp/mk64 | 证据不足 | [来源](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
-| MarioKart 64: Recompiled：通过 N64Recomp 静态重编译实现的原生移植 | 已收录 | [来源](https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/README.md) |
-| SpaghettiKart：基于反编译源码的《马力欧卡丁车 64》原生移植 | 已收录 | [来源](https://github.com/HarbourMasters/SpaghettiKart/blob/5073d2e3636cdb2794f4c845ee3bdec5ac4718c4/README.md) |
-| SpeedBreaker：对 Xbox 360 版《极品飞车：最高通缉》的静态重编译 | 已收录 | [来源](https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/README.md) |
-| Skate 3 Recomp：通过 ReXGlue 实现的 Xbox 360 原生重编译 | 已收录 | [来源](https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/README.md) |
-| DOAXVB Native PC Port：对《Dead or Alive Xtreme Beach Volleyball》的静态重编译 | 已收录 | [来源](https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/README.md) |
-| CTR Turbocharged：基于 Crash Team Racing 反编译成果的 PC 移植 | 已收录 | [来源](https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/README.md) |
-| TonyWasAProSkater：派生自一致性反编译的 THPS1 原生移植 | 已收录 | [来源](https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/README.md) |
-| SVR2011-Recomp：借助 ReXGlue 重编译 WWE SmackDown vs. Raw 2011 | 已收录 | [来源](https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/README.md) |
-| 🏁 WWE SmackDown vs. Raw 2011 — KaikoClanworth1/wwe-svr2011-pc | 证据不足 | [来源](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
-| The Simpsons Wrestling Recompiled：基于 psxrecomp 的 PlayStation 静态重编译 | 已收录 | [来源](https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/README.md) |
-| Driver Recompiled：在本地构建游戏的 psxrecomp 安装宿主 | 已收录 | [来源](https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/README.md) |
-| REDRIVER2：借助 PlayStation 兼容层重建 Driver 2 | 已收录 | [来源](https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/README.md) |
-| Snowball War：范围明确的 REA 辅助小游戏重建 | 已收录 | [来源](https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/README.md) |
-| 🏡 Animal Crossing — ACreTeam/forest | 证据不足 | [来源](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
-| Animal Crossing：基于 GameCube 反编译成果的原生 PC 移植 | 已收录 | [来源](https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/README.md) |
-| Animal Crossing：生成一致产物的 GameCube 反编译重建 | 已收录 | [来源](https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/README.md) |
-| Animal Crossing: Wild World：附差分运行检查的韩版 DS 一致性反编译重建 | 已收录 | [来源](https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/README.md) |
-| The Sims: Bustin' Out：AI 驱动的部分 GBA 一致性反编译重建 | 已收录 | [来源](https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/README.md) |
-| OpenRA：重新诠释早期 Westwood 即时战略游戏的引擎重新实现 | 已收录 | [来源](https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/README.md) |
-| OpenRCT2：RollerCoaster Tycoon 2 的开源重新实现 | 已收录 | [来源](https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/readme.md) |
-| OpenXcom：X-COM: UFO Defense 与 Terror from the Deep 的开源克隆 | 已收录 | [来源](https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/README.md) |
-| CorsixTH：Theme Hospital 的开源重新实现 | 已收录 | [来源](https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/README.md) |
-| Mario Party 4：美版 GameCube 一致性反编译重建 | 已收录 | [来源](https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/README.md) |
-| Snap64 Recomp：Pokémon Snap 的静态重编译移植 | 已收录 | [来源](https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/README.md) |
-| 恐龙跑酷：经 REA 检查、由 Codex 重建的速度规则 | 已收录 | [来源](https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/README.md) |
-| SpaceCadetPinball：将反编译游戏逻辑适配到 SDL2 | 已收录 | [来源](https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/README.md) |
-| Touhou 6：重建东方红魔乡 1.02h 版源码 | 已收录 | [来源](https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/README.md) |
-| TH08 Web：基于重建源码的 WebAssembly 移植 | 已收录 | [来源](https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/README.md) |
-| TH095：东方文花帖 1.02a 的函数级重建 | 已收录 | [来源](https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/README.md) |
-| TH04：从源码重建东方幻想乡的四个 PC-98 程序 | 已收录 | [来源](https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/README.md) |
-| DX-Ball：借助 REA 并由 Codex 完成的函数级重建 | 已收录 | [来源](https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/README.md) |
 | Pre-CU Star Wars Galaxies: an idea to accelerate emulator reverse engineering with AI | 证据不足 | [来源](https://x.com/i/status/2111615624678088837) |
 | Animal Jam / Burrow: an unconfirmed account of Claude-assisted decompilation | 证据不足 | [来源](https://x.com/i/status/2111623879487795255) |
 | Kernel anticheat privacy: using REA to investigate machine information sent to a vendor | 证据不足 | [来源](https://x.com/i/status/2111627155449004086) |
@@ -562,27 +441,6 @@
 - `yibie:all-games-are-open-source-now` — 作者的 X 长文（@rehan_shei，2026-10-04）是一篇探讨 AI 反编译与模组对游戏产业影响的随笔。文中称让 Opus 5.5 运行一夜后得到了一个可运行的逆向版 Terraria，作者又在其中加入了武器和怪物；文章还罗列了他人报告的模组与反编译案例，并称作者已把 Claude 在此过程中积累的经验开源为 universal-modder。Terraria 重建本身没有公开产物；相关映射指向文章提及、另行收录的 Universal Modder 工具包。保留此线索而不建立完整映射；该文属于评论，其中的数字与第三方案例未在此核实。
 - `yibie:how-are-y-all-using-ai-to-make-recompilations` — 该来源是一场讨论：r/recomps 上 2026-10-05 的提问，询问大家如何用 AI 制作重编译移植、是否有教程。回复多为一般性建议和观点，例如订阅方案的选择、让智能体参照现有重编译工具工作以及维护重编译引擎，但都没有代码、结果或对照；其中一条回复指向 freefrank/LostOdysseyRecomp 的文档，该项目已作为独立案例收录，此处仅记为相关匹配。保留此线索，不为其单独建立重建映射。
 - `yibie:finding-jingle-town-debugging-an-n64-game-without-symbols` — 这篇注明日期的文章记录了在 Snowboard Kids 2 反编译中用 GDB 与 Ares 手动检验一个运行时假设的流程，包括所用工具、步骤、观察到的三个值及作者说明的局限。完整映射将这篇调试记录作为学习资源收录；其研究的反编译项目另有案例条目，此处以相关映射链接。文中观察未经重做，文章也未声称使用 AI 或 REA。
-- `hao-games:row-001` — 固定版本的 README、Makefile、素材提取脚本、Jenkinsfile 和构建 wiki 记录了基于 Super Mario 64 反编译源码的增强版原生移植：素材从原 ROM 提取，输出比较处于关闭状态。完整映射覆盖此移植；相关映射记录其源自另行收录的 n64decomp 重建项目，并不表示一致性结果。所链帖子仅指向一个反编译游戏综合存档，未作为证据使用。
-- `hao-games:row-003` — 固定版本的 README、构建指南、CMake 文件、子模块、工作流和许可证记录了一个基于 libultraship 的原生移植：它转换使用者自备的美版或日版 ROM，不主张生成一致的输出。完整映射覆盖此移植。与 n64decomp 的相关映射依据共同的源码结构和抽查的两个文件，因为 README 没有指明上游项目。
-- `hao-games:row-004` — 固定版本的 README、wiki 与构建文件表明，这是面向 Super Mario 64 PC 移植的在线多人与 Lua 模组项目，延续 sm64ex-coop，后者又是 sm64ex 的分支。源码会校验使用者自备的美版 ROM，PC 构建强制采用非一致性代码。项目没有记录自身的重建工作：没有反编译过程说明、对照或一致性证据。相关映射仅记录其来源：credits.txt 称它构建于 sm64ex-coop 之上，后者基于另行收录的 sm64ex 移植，并由此基于 sm64 反编译项目，并非对多人项目本身的评价。
-- `hao-games:row-006` — 固定版本的 README、进度文件、GMSE01 构建说明、智能体规则和 CI 工作流记录了该分支自身的北美版一致性工作，作者明确说明使用了 AI 辅助。完整映射覆盖此分支，不包括上游 doldecomp/sms 或独立的原生 PC 移植。其逐字节一致的 DOL 仍链接取自原光盘的未完成目标文件，GMSE01 数字为作者报告，美版映射文件的来源说明也前后不一。相关映射记录 README 称其为另行收录的 doldecomp/sms 反编译的业余分支，分出时上游日版反编译约有 38% 的代码已匹配。
-- `hao-games:row-013` — 固定版本的 README、构建指南、受支持 ROM 哈希列表、CMake 文件和 CI 工作流，支持这是一个基于反编译源码与 libultraship 的《时之笛》原生移植。完整映射覆盖该移植，不包括 zeldaret/oot 反编译项目本身或一致性构建。所附帖文指向第三方的预构建游戏存档而非本项目，未作为证据；对 ROM 的依赖及缺失的许可证文件均明确保留。相关映射记录 README 所称该移植依赖 OoT 反编译项目提供的源码（即另行收录的 zeldaret/oot），并不表示移植版本身达成一致性构建。
-- `hao-games:row-015` — 固定版本的 README、构建指南、许可证、子模块列表、平台目录和 CI 工作流，以及 Aurora 的固定版本 README，支持这是一个基于 zeldaret/tp 反编译的《黄昏公主》原生移植。完整映射覆盖该移植，不包括作为另一条线索的反编译项目本身。对光盘镜像的依赖、仅 GameCube 版一致的反编译基础、GPU 限制及项目报告的准确性均明确保留。相关映射记录 README 所称 Dusklight 基于另行收录的 zeldaret/tp 反编译，并不表示移植版本身达成一致性构建。
-- `hao-games:row-018` — 固定版本的 README、技术概述、反编译构建与验证说明、许可证及子模块列表，支持这是将 Wii U 版《风之杖 HD》静态重编译为桌面与 Android 原生版本的项目。完整映射覆盖该移植。独立的 ZeldaWWHDDecomp/wwhd 反编译（该移植的实验性 macOS 构建可运行其中的函数）依据其自身固定版本的 README 按相关条目映射；社区 Switch 移植不在范围内。所需的使用者转储与密钥、已知的渲染缺口及项目报告的可玩性均明确保留。
-- `hao-games:row-019` — 已发布案例覆盖此美版 N64《姆吉拉的假面》静态重编译及原 ROM、平台要求。《时之笛》仍在计划中，项目明确声明不使用生成式 AI 开发。来源核查不表示独立运行复现。相关映射记录 README 注明借用另行收录的 zeldaret/mm 反编译中的头文件和部分函数定义来制作补丁或增强功能，同时说明该移植并非基于反编译源码。
-- `hao-games:row-020` — 固定版本的 README、构建规则、校验文件和 CI 配置支持这份美版 N64《姆吉拉的假面》反编译报告。完整映射只覆盖此仓库，不涵盖帖子所链接的存档；相关映射记录 Zelda 64: Recompiled 注明借用其头文件和函数，但它是独立的静态重编译。进行中状态、原 ROM 依赖、许可证缺失和项目报告的一致性均明确保留。
-- `hao-games:row-021` — 固定版本的 README、构建指南、受支持哈希清单、许可证和反编译差异脚本，支持这一基于 zeldaret/mm 反编译的《姆吉拉的假面》原生移植。完整映射只覆盖该移植，不涵盖独立的反编译项目或 Zelda 64: Recompiled。使用者自备游戏数据、每夜构建仅供试玩以及未公开保真度检查等限制均明确保留。相关映射记录该移植源自另行收录的 zeldaret/mm 反编译，decomp_diff.py 将其列为比对游戏源码时所用的官方仓库；这并不表示移植版本身达成一致性构建。
-- `hao-games:row-025` — 在此前有限的 README 核查基础上，固定版本的构建文件、反编译配置、启动源码和 CI 工作流支持将 Metaforce 记为现已基于 PrimeDecomp 重写、读取使用者所选光盘镜像运行的引擎重实现。完整映射仅覆盖此仓库，与合集中的 MetroidPrimePort 项目分开。暂不提供构建、没有对应当前版本的发布、原生目标为非一致构建，以及 MIT／CC0 许可范围未划分等限制均明确保留。相关映射记录此次重写以另行收录的 PrimeDecomp 反编译为基础，并不表示 Metaforce 本身达成一致性构建。
-- `hao-games:row-026` — 固定版本的 README、NOTICE、许可证、原生移植指南、Linux CI 工作流和 v0.29.0 发布，支持这一由 PrimeDecomp 反编译编译而成、借助 AI 辅助完成的《密特罗德 Prime》原生移植。完整映射仅覆盖此仓库，与合集中的 Metaforce 项目分开。受支持的光盘版本、仅覆盖非游戏代码的 MIT 授权范围以及作者报告的冒烟测试均明确保留；所链接帖子未作为证据核查。相关映射记录该移植源自另行收录的 PrimeDecomp 反编译，并不表示移植版本身达成一致性构建。
-- `hao-games:row-027` — 在此前有限的 README 核查基础上，固定版本的 README、自定义许可证、子模块清单、CI 工作流和 v1.1.1 发布，支持这一与 RSDKv5 或 RSDKv5U 引擎一起构建的 Sonic Mania 游戏代码反编译。完整映射只覆盖游戏仓库，引擎项目另行处理。依赖官方素材、不支持 Netflix 版本、默认引擎与游戏版本组合、非逐字节一致的范围以及非商业许可条款均明确保留。相关映射记录该游戏与另行收录的 RSDKv5 引擎反编译一起构建，.gitmodules 将其列为 dependencies/RSDKv5 子模块；这并不表示逐字节一致的结果。
-- `hao-games:row-051` — 固定版本的 README、法律说明、构建与架构指南，以及游戏代码、测试和差异文档，支持该报告所述基于《ICO》反编译源码的原生移植、PAL 版光盘要求及平台列表。完整映射覆盖此移植项目，不涵盖与 PS2 的等价性测试；该移植自己的文档说明没有任何测试进行此类比较。该移植所分叉的、逐字节匹配的独立反编译项目依据其自身固定版本的 README 按相关条目映射。合集帖子中的存档链接不在这些映射范围内，也未主张运行复现。
-- `hao-games:row-090` — 固定版本的 README、构建指南、重编译配置、子模块列表、CI 工作流、项目历史与 GPLv3 许可，支持该具名的 Star Fox 64 N64Recomp 静态重编译。完整映射覆盖此移植，不涵盖独立的 sf64 反编译、Starship 移植或经独立测试的游戏行为。仅接受美版 1.1 ROM、CI 使用私有输入及补丁借用反编译头文件均明确保留。相关映射记录该移植从另行收录的 sf64 反编译中取用头文件和部分函数，并不表示移植版本身达成一致性构建。
-- `hao-games:row-091` — 固定版本的 README、构建指南、CMake 源码配置、素材提取配置、CI 工作流和 CC0 许可，连同姊妹项目中的历史说明，支持该基于反编译、运行在 libultraship 上的 Star Fox 64 PC 移植。完整映射覆盖此移植，不涵盖 sf64 反编译、姊妹静态重编译项目或经独立测试的游戏行为。使用者自备美版 ROM 及项目报告的行为均明确保留。相关映射记录该移植编译的是另行收录的 sf64 反编译的 C 代码，并不表示移植版本身达成一致性构建。
-- `hao-games:row-130` — 固定版本的 README、逆向报告、测试说明、游戏文件及第三方声明，记录了作者使用 REA MCP 检查开源 T-Rex Runner 页面，并由 Codex 重建其速度规则。完整映射覆盖此仓库范围有限的加速规则案例，不代表玩法等价；REA 另行发布的恐龙教学案例仅作为相关条目关联。作者报告的测试与手动检查未经重跑。
-- `hao-games:row-134` — 固定版本的 README、网页移植与架构文档、构建、来源检查和部署脚本、许可证及 v0.1.0 发布，支持此仓库作为基于 TH08 重建源码的独立 WebAssembly 移植。完整映射覆盖该浏览器移植及作者自行完成的检查，不涵盖二进制一致性、硬件性能或独立复现的游戏过程；已收录的 TH08 重建仍作为相关条目关联。本地零售数据要求与浏览器限制均明确保留。
-- `hao-games:row-135` — 固定版本的 README、自动生成的进度、判定依据与运行问题说明、工具锁定文件、初始化脚本、CI 及许可证，支持该 TH095 1.02a 重建报告。完整映射覆盖此仓库的函数级重建及可游玩的 Windows i386 构建，不涵盖整个可执行文件一致性、计划中的移植或独立复现的游戏过程；REA 的东方重建方法文章作为相关条目关联。原可执行文件要求和项目报告的数字均明确保留。
-- `hao-games:row-136` — 固定版本的 README、自动生成的进度、DOS 构建、工具链、判定依据、运行与参考说明、CI 及许可证，支持该 TH04 重建报告。完整映射覆盖此仓库的四程序 DOS 重建及作者报告的差分回放，不涵盖字节一致性、完整流程、原生 x64 分支或独立复现。REA 的单函数展示仍为部分匹配，其东方重建文章为相关条目。
-- `hao-games:row-137` — 固定版本的 README、REA 实例说明、匹配、构建与进度说明、目标与工具锁定文件、一项差分测试、CI 及许可证，支持该 DX-Ball 重建报告及作者记录的 REA 与 Codex 使用。完整映射覆盖这一进行中的函数级重建，不代表字节一致、已完成的可游玩 VC4 构建或独立复现；REA 的单函数声像展示仍为部分匹配。原版压缩包要求及其未经核实的下载来源均明确保留。
 - `song:synacktiv-frontkick-rikugan-crebench` — Synacktiv 的文章记录了一次注明日期的对比：在 CREBench 的两个任务上比较 Binary Ninja 智能体 Frontkick 与 Rikugan，给出实验设置和逐次运行结果表，作者也指出差距主要源于提示词差异而非智能体设计。完整映射将其作为学习资源收录；相关映射指向其所用的 CREBench 论文，以及由 Rikugan 固定版本的 README 与许可证支持的 rikugan 条目，该条目涵盖的是受测插件而非这次比较。Frontkick 没有公开发布，运行记录未公开，本次也未重新运行。
 
 别名决定：

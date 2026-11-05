@@ -1341,33 +1341,6 @@
     ]
   },
   {
-    "id": "haozhe-awesome-rea-games",
-    "name": "Awesome REA/Decompiled Games",
-    "url": "https://github.com/HaozheH3/awesome-rea-games",
-    "category": "related-lists",
-    "relationship": "community-learning-resource",
-    "description_en": "Groups game decompilations, source reconstructions, recompilations, native ports and demos by original game, with comparison rows linking related projects. It distinguishes launchers, engine work and creator-shared showcases from source-reconstruction efforts.",
-    "description_zh": "按原游戏整理反编译、源码重建、重编译、原生移植和演示，通过对照表链接相关项目，并区分启动器、引擎工作、作者分享的展示与源码重建成果。",
-    "evidence_url": "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md",
-    "verified_at": "2026-10-17",
-    "added_at": "2026-10-17",
-    "verification": "source-reviewed",
-    "requirements": [
-      "The reviewed README has 103 game headings and 140 project rows across 8 categories. Some headings cover related editions and one repository can appear under multiple games; these are inventory counts, not independently verified completed projects.",
-      "The scope extends beyond REA-assisted work. Contribution rules require project-owned evidence before describing REA use; a screenshot, demo or collection listing alone is not proof of a recovered source tree.",
-      "Project type, runtime status, original-game requirements and licenses must be checked at the linked primary source. Creator-shared original browser games are a separate showcase category.",
-      "The two reviewed files do not establish a collection-wide reuse license. Images have source links, and new-image contributions require reuse terms or permission; this catalog does not copy those images.",
-      "An independent discovery collection; inclusion does not imply official REA affiliation."
-    ],
-    "targets": [
-      "game"
-    ],
-    "kind": "collection",
-    "additional_evidence_urls": [
-      "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/CONTRIBUTING.md"
-    ]
-  },
-  {
     "id": "plx-native-case",
     "name": "PlxNative: reconstructing a native webOS media-client interface",
     "url": "https://github.com/GLinnik21/plx-native",

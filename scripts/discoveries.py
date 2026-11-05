@@ -79,6 +79,23 @@ def utc_now() -> str:
     return dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
+_PRIVACY_DETECTOR = None
+
+
+def privacy_detector():
+    """The repository's privacy guard (scripts/privacy_guard.py), built once."""
+    global _PRIVACY_DETECTOR
+    if _PRIVACY_DETECTOR is None:
+        from privacy_guard import PARTS, PROTECTED, SALT, Detector
+        _PRIVACY_DETECTOR = Detector(SALT, PROTECTED, PARTS)
+    return _PRIVACY_DETECTOR
+
+
+def protected_identifier(record) -> bool:
+    """Whether a capture names or links a person the maintainer asked to keep out of the collection."""
+    return bool(privacy_detector().scan_text(json.dumps(record, ensure_ascii=False), 'capture'))
+
+
 def record_problems(record, *, privacy: bool = True) -> list[str]:
     """The publication checks for one successful capture plus this layer's qualification and screen.
 
@@ -123,6 +140,8 @@ def record_problems(record, *, privacy: bool = True) -> list[str]:
         problems.append('capture needs a UTC README observation time')
     if privacy and private_json_locations(record):
         problems.append('capture contains a credential-like value or personal path')
+    if privacy and protected_identifier(record):
+        problems.append('capture names or links a person the collection keeps out')
     return problems
 
 
@@ -338,7 +357,7 @@ def select_records(resources: list, existing: dict, curated: set[str], limit: in
             skipped['name-conflict'] += 1
         elif record['readme_sha256'] in readmes:
             skipped['duplicate-readme'] += 1
-        elif private_json_locations(record):
+        elif private_json_locations(record) or protected_identifier(record):
             skipped['privacy'] += 1
         elif len(selected) >= limit:
             skipped['over-limit'] += 1
