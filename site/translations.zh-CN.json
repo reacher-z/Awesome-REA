@@ -8236,5 +8236,78 @@
       "出版社页面上的“Download the labs”链接指向一个 GitHub 仓库，实验二进制文件以自解压包或带密码的 7-Zip 压缩包形式提供。其 README 警告这些二进制文件含有恶意代码，未先搭建安全环境就不应安装或运行；与真实恶意软件一样，其中一些可能崩溃、内存泄漏或出现其他意外行为。",
       "实验以 Windows XP 为目标平台：许多实验在更新的 Windows 上也能运行，但有些不行；另有单独的压缩包收录为 Windows 7 重写的实验，其结果与书中答案不同。"
     ]
+  },
+  "uabea": {
+    "name": "UABEA Unity 资源包读写工具",
+    "requirements": [
+      "Windows 和 Linux 版本可从发布页或每夜 CI 构建获取，项目面向 .NET 8。审阅时的版本为 v8，于 2024-11-03 发布；所审阅的 master 分支提交日期为 2026-05-11。README 还介绍了后继项目 UABEANext，它支持停靠式界面和同时打开多个资源包，仍在开发中。",
+      "按 README 的说明，属于 Addressables 的资源包在修改后使用前，须用独立的 AddressablesTools 中的 patchcrc 命令清除 CRC 校验。",
+      "依 license 文件采用 MIT 许可；随附库各有其许可条款，例如 PVRTexLib 采用 PVRTexTool 许可、Unity crnlib 采用 zlib 许可、Font Awesome 采用 CC BY 4.0 许可。"
+    ]
+  },
+  "tenet": {
+    "name": "Tenet IDA Pro 执行跟踪浏览插件",
+    "requirements": [
+      "需要 Windows、macOS 或 Linux 上的 IDA Pro 7.5 或更高版本；Tenet 是纯 Python 3 插件，不依赖任何第三方库，把仓库中 plugins 文件夹的内容复制到 IDA 的用户插件目录即可安装。审阅时的版本为 v0.2.0，于 2021-09-14 发布，其标签即所审阅的 master 分支提交。",
+      "Tenet 只读取自身文本格式的跟踪文件，其中记录通用寄存器的变化以及内存读写；跟踪需由单独的跟踪器录制，仓库附带的 Intel Pin 跟踪器（面向 Windows 和 Linux 用户态程序）和 QEMU 跟踪器都标为实验性质。",
+      "它只能载入 x86 和 AMD64 跟踪，纯 Python 实现的读取器不保证能流畅浏览超过 1000 万条指令的跟踪。",
+      "依 LICENSE 采用 MIT 许可。"
+    ]
+  },
+  "findcrypt-yara": {
+    "name": "findcrypt-yara IDA Pro 密码学常量识别插件",
+    "requirements": [
+      "需要带 IDAPython 的 IDA Pro 和 yara-python 包；README 提醒不要安装与该插件不兼容的 yara pip 包。自定义规则文件在 Linux 和 macOS 上放在主目录下的 .idapro/plugins/findcrypt-yara/，在 Windows 上放在 %APPDATA% 下 Hex-Rays IDA Pro 的插件目录中。",
+      "仓库没有发布版本；插件自身标注的版本为 0.2，默认快捷键为 Ctrl-Alt-F，所审阅的 master 分支提交日期为 2024-11-19。",
+      "依 LICENSE 采用 BSD-3-Clause 许可。"
+    ]
+  },
+  "dereferencing": {
+    "name": "deREferencing IDA Pro 寄存器与栈视图插件",
+    "requirements": [
+      "需要 IDA Pro 7.1 或更高版本。可用 hcli plugin install dereferencing 安装，也可手动把 dereferencing.py 和 dereferencing 文件夹复制到 IDA 的插件目录（Linux 和 macOS 为主目录下的 .idapro/plugins，Windows 为 %AppData%\\Hex-Rays\\IDA Pro\\plugins）。审阅时的版本为 v2026.09.03，于 2026-09-03 发布，其标签即所审阅的 master 分支提交。",
+      "配置选项在插件的 config.py 文件中修改。",
+      "依 LICENSE 采用 GPL-3.0 许可。"
+    ]
+  },
+  "hexrays-toolbox": {
+    "name": "HexRays Toolbox 反编译代码模式查询脚本",
+    "requirements": [
+      "需要有效的 IDA 许可证，以及每种目标架构对应的有效 Hex-Rays 反编译器许可证。仓库没有发布版本，所审阅的 master 分支提交日期为 2023-06-20。",
+      "hxtb-shell 的示例查询位于 hxtbshell_queries 文件夹；该界面也接受从另一款插件 HRDevHelper 的上下文查看器中复制的 Python 表达式。",
+      "依 LICENSE 采用 CC0-1.0 许可。"
+    ]
+  },
+  "virtuailor": {
+    "name": "Virtuailor IDA Pro C++ 虚表重建工具",
+    "requirements": [
+      "支持 IDA Pro 7.0 至 7.5：master 分支面向 7.5，7.4 以前的 IDA 版本需改用 beforeIDA-7.4 分支。通过 File > Run script 运行 Main.py（README 建议先为 IDB 创建快照），再在 IDA 调试器中运行并操作目标程序；AArch64 目标可通过远程 GDB 服务器调试。仓库没有发布版本，所审阅的 master 分支提交日期为 2020-06-06。",
+      "只会重建运行时实际命中的虚调用所用的虚表；README 也提到部分断点可能遗漏。",
+      "依 LICENSE 采用 GPL-3.0 许可。"
+    ]
+  },
+  "xanalyzer": {
+    "name": "xAnalyzer x64dbg 代码分析插件",
+    "requirements": [
+      "需要 x64dbg；把 xAnalyzer.dp32 或 xAnalyzer.dp64 以及解压后的 apis_def 文件夹复制到 x64dbg 对应的插件目录。审阅时的版本为 2.5.12，于 2025-08-13 发布，与所审阅的 master 分支提交同一天。",
+      "README 列出的已知局限：函数中第一个带通用参数的未定义调用不会被处理，除非其前面有跳转；嵌套调用只在部分情况下能正确处理；循环只在函数边界内识别，遇到无条件跳转时可能误判；扩展分析可能耗时大增并占用大量内存。",
+      "依 LICENSE 采用 MIT 许可。"
+    ]
+  },
+  "assetstudio": {
+    "name": "AssetStudio Unity 资源浏览与导出工具",
+    "requirements": [
+      "构建版本分别面向 .NET Framework 4.7.2、.NET Desktop Runtime 5.0 和 .NET Desktop Runtime 6.0。从源码构建需要 Visual Studio 2022 或更新版本，原生 FBX 导出组件还需要 Autodesk FBX SDK 2020.2.1。最新发布版本为 v0.16.47（2022-06-16），仓库已在 GitHub 上归档。",
+      "加载资源包时会在内存中解压并读取，可能占用大量内存；README 建议先把资源包提取到文件夹，再从那里读取。",
+      "README 声明该仓库、工具及其所有者均与 Unity Technologies 无关联，也未获其赞助或授权。依 LICENSE 采用 MIT 许可；随附的纹理解码器来自各自另有许可的开源项目。"
+    ]
+  },
+  "voltron": {
+    "name": "Voltron 调试器界面扩展工具包",
+    "requirements": [
+      "可在 macOS、Linux 和 Windows 上运行；WinDbg/CDB 支持通过 PyKD 实现，README 称这部分支持仍较新。安装脚本只完整支持 macOS 和 Debian 系发行版，调试器的初始化文件（.lldbinit 或 .gdbinit）需加载 Voltron 的 entry.py。各调试器支持的架构不同：x86 和 x86_64 四种调试器都支持，ARM 除 WinDbg 外都支持，ARM64 仅 LLDB 支持，PowerPC 仅 GDB 支持。",
+      "最新发布是 2025-01-30 的 v0.1.8 预发布版，上一个版本是 2016 年的 v0.1.7；所审阅的 master 分支提交与 v0.1.8 同一天。",
+      "依 LICENSE 采用 MIT 许可。"
+    ]
   }
 }
