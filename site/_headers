@@ -36,6 +36,21 @@
   Content-Type: application/atom+xml; charset=utf-8
 /zh/feed.xml
   Content-Type: application/atom+xml; charset=utf-8
+# The unreviewed discovery queue changes with every automated ingest.
+/discoveries/feed.xml
+  Content-Type: application/atom+xml; charset=utf-8
+/zh/discoveries/feed.xml
+  Content-Type: application/atom+xml; charset=utf-8
+/discoveries.json
+  Cache-Control: no-cache, must-revalidate
+/discoveries/batches/*
+  Cache-Control: no-cache, must-revalidate
+/discoveries/status.json
+  Cache-Control: no-cache, must-revalidate
+  Access-Control-Allow-Origin: *
+/discoveries/badge.json
+  Cache-Control: no-cache, must-revalidate
+  Access-Control-Allow-Origin: *
 # Stylesheets and scripts live at content-addressed /assets/<name>.<sha256 prefix>.<ext> paths: a changed file
 # gets a new URL, so browsers may keep each one for a year without revalidating.
 /assets/*

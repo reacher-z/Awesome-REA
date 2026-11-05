@@ -21,6 +21,7 @@ from build_repository_index import CATEGORIES as REPOSITORY_CATEGORIES
 from build_survey import build_survey, discussion_sections
 from build_entry_pages import build_entry_pages
 from build_feed import build_feeds
+from build_discoveries import llms_section, main_feed_batches, write_discoveries
 from build_manifest import write_build_manifest
 from language_fragment import add_language_fragment_script
 from data_downloads import build_data_downloads
@@ -350,6 +351,17 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         data_revision=data_revision, icon_stylesheet_href=icon_stylesheet,
     )
     discovery_paths = build_discovery_pages(output, catalog, browse_document)
+    # The unreviewed discovery queue: its own list pages, feeds and JSON, never curated pages or counts.
+    queue_paths, discovery_queue = write_discoveries(output, catalog, papers, browse_document)
+    discovery_paths = [*discovery_paths, *queue_paths]
+    section = llms_section(discovery_queue, SITE_URL)
+    if section:
+        llms_path = output / "llms.txt"
+        llms = llms_path.read_text(encoding="utf-8")
+        marker = "\nThis file is a navigation aid."
+        if llms.count(marker) != 1:
+            raise ValueError("llms.txt needs exactly one closing navigation note")
+        llms_path.write_text(llms.replace(marker, "\n" + section + marker), encoding="utf-8")
     # Every footer offers the same repository download as the homepage and the browse pages.
     repository_export = PUBLISHED_FILENAME if metadata["source_index"].get("full_export") == PUBLISHED_FILENAME else "source-index.json"
     paper_urls = build_paper_pages(
@@ -374,7 +386,8 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         repository_export=repository_export,
     )
     # Feeds list inclusion dates; they link from pages written above and are not sitemap pages.
-    build_feeds(output, resources, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL)
+    build_feeds(output, resources, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
+                discovery_batches=main_feed_batches(discovery_queue))
     # Static pages with a language link keep the reader's card or section on the translated page.
     add_language_fragment_script(output)
     # Every stylesheet and script now has a content-addressed copy under /assets/; drop the root copies.

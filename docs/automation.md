@@ -1,6 +1,6 @@
 # Repository automation
 
-The repository validates changes in CI and posts a rule-based review on pull requests. It does not automatically approve or merge contributions.
+The repository validates changes in CI and posts a rule-based review on pull requests. It does not automatically approve or merge contributions. The one automated merge is the [discovery ingest](#automated-discovery-ingest), which adds unreviewed scan records to their own queue and nothing else.
 
 ## Pull request review
 
@@ -114,7 +114,7 @@ A bounded invocation succeeds when it reaches its planned increment, or when an 
 
 [GitHub's repository token receives 1,000 REST requests/hour](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api) and [1,000 GraphQL points/hour](https://docs.github.com/en/graphql/overview/rate-limits-and-query-limits-for-the-graphql-api), shared with other uses of that repository token. Batch size and planned increment are not throughput guarantees; rate limits, failures, search boundaries or the time budget can yield a partial run.
 
-The workflow has only `contents: read` and `actions: read`. Its ephemeral `GITHUB_TOKEN` is supplied only to the scanner step. It does not execute upstream code, write source files, create PRs, post comments, or promote discoveries into the public catalog. README text is read, verified, summarized into document features and hashes, and discarded; it is not included in artifacts.
+The scan job has only `contents: read` and `actions: read`. Its ephemeral `GITHUB_TOKEN` is supplied only to the scanner step. It does not execute upstream code, write source files, create PRs or post comments. README text is read, verified, summarized into document features and hashes, and discarded; it is not included in artifacts. The separate `ingest` job, described [below](#automated-discovery-ingest), is the only part of the workflow that can write, and it never promotes discoveries into the curated catalog.
 
 ### Paired checkpoints
 
@@ -135,3 +135,21 @@ Version-2 artifacts have **7-day retention** to avoid retaining 90 days of growi
 The run summary reports qualified captures, raw retained captures, legacy integrity-unknown captures, known mismatches and failed attempts separately. New version-2 receipts add `goal_basis: explicit-git-blob-sha-match`, `retained_integrity_counts`, `integrity_counts` and `new_qualified_successful_scans`. Each integrity-count object partitions the raw capture count into `qualified`, `legacy_unknown` and `mismatched`; all four receipt fields must appear together. `global_target_reached` follows qualified captures, while `run_target_reached` follows the planned verified increment. Older receipts remain readable, and their global-goal flags are recomputed from retained records before scheduling. Bootstrap-only imports preserve exact raw evidence with zero new verified reads. Artifacts remain a discovery queue, separate from the reviewed public source index and search-engine indexing.
 
 For a separate private worker that starts from reviewed local evidence, see [private scan worker bootstrap](private-scan-worker.md). This first-import path uses a pinned public scanner, a bounded gzip seed and private artifacts; it does not activate a second schedule or change the public catalog.
+
+## Automated discovery ingest
+
+After a scan saves its checkpoint, the workflow's `ingest` job adds a bounded batch of the new verified captures to the [unreviewed discovery queue](../data/discoveries/README.md) and publishes it without a person, as the repository owner asked. The automation may merge only this kind of change: one new `data/discoveries/run-<run id>-<attempt>.json` file of exact scan records, all still `automated-readme-scan` and `unreviewed`. Curated records, the source index, public supplements, translations, scope decisions and generated files are never touched, and nothing is promoted to `source-reviewed`.
+
+1. **Restore.** The job downloads this run's checkpoint artifact and validates it with the scanner's own restore checks: archive digest, members, receipt binding to the run, attempt, workflow and commit, counts and integrity counts.
+2. **Prepare.** On the default branch's current commit, and with that commit's code, it selects up to 300 captures under the [queue's selection rules](../data/discoveries/README.md#selection-rules), newest first, and writes them unchanged with their provenance. A run with nothing new adds nothing and opens no pull request; there are no empty commits.
+3. **Validate.** It runs `python3 scripts/validate.py`, `python3 scripts/discoveries.py` and any `tests/test_privacy*.py` regression test on that tree before committing.
+4. **Pull request.** It commits only the batch file onto the default branch's current commit, through the Git data API, as `Ingest <N> unreviewed discovery records from scan run <run id>`, force-updates the `automation/discovery-ingest` branch and opens or updates one pull request from it. The repository setting *Allow GitHub Actions to create and approve pull requests* must be on for the workflow token to open it; no personal token is stored.
+5. **Required checks.** A pull request opened with `GITHUB_TOKEN` starts no `pull_request` or `pull_request_target` run, so the job [dispatches both required checks](#pull-request-review): `Catalog checks` on the PR branch, which reports `validate` on the head commit, and `Automated PR review` on the default branch, whose trusted code reviews the batch as data, including that it only adds a batch and that every record is new to the base branch's layers, and reports `review` on the head commit. Branch protection is unchanged: a pull request, both checks from GitHub Actions and an up-to-date branch are still required, administrators included.
+6. **Merge.** When both checks pass on the head commit, the job squash-merges that exact commit. If the default branch moved first, it rebuilds the batch on the new commit, force-pushes, dispatches the checks again and retries, up to three attempts within the job's 30 minutes; a failed check stops it. After the merge it deletes the branch. Pushes made with `GITHUB_TOKEN` start no `push` workflows, so `Catalog checks` does not rerun on `main` for an ingest merge whose head it already checked; Cloudflare Pages builds production from the new `main` commit through its own Git integration, independent of Actions.
+
+A merged batch normally reaches awesomerea.org within an hour of its scan: about 25 minutes of scanning, 5–15 minutes of ingest and checks, then the Cloudflare Pages build. The website shows the newest records at [/discoveries/](https://awesomerea.org/discoveries/) and exports them, labelled unreviewed, in `/discoveries.json`, `/discoveries/feed.xml` and `llms.txt`; `/discoveries/status.json` gives the last successful ingest time.
+
+**Failure tracking.** The workflow's `report` job, and the same job in `Public artifact lead discovery`, keep one tracking issue per workflow. A failed or cancelled run opens the issue, or reopens the most recent one, with the run link; further failures only edit its body (failure count, first and latest failure, job results, last successful ingest), so they do not notify watchers again. The next fully successful run comments and closes it. An ingest failure leaves its pull request open for inspection; the next run's pull request replaces it on the same branch.
+
+**Budget.** A batch holds at most 300 records, and the queue at most 25,000 records and 64 MiB; at either limit the ingest fails and its tracking issue explains why. See [growth budget](../data/discoveries/README.md#growth-budget).
+

@@ -1323,6 +1323,11 @@ def main():
                           f'{sum(row["selected_count"] for row in supplements["held"])} explicitly held candidates.')
                 except (OSError, ValueError):
                     errors.append('Public source supplements failed evidence, identity, locale or scope validation.')
+    # The unreviewed discovery queue: exact verified captures, never curated records.
+    from discoveries import load_batches
+    discovery_batches, discovery_problems = load_batches(ROOT)
+    errors.extend(discovery_problems)
+    discovered = sum(len(batch['resources']) for batch in discovery_batches)
     validate_citation((ROOT / 'CITATION.cff').read_text(encoding='utf-8'), errors)
     count = validate_markdown(ROOT, errors)
     budget_warning = requirement_budget_warning(records)
@@ -1345,7 +1350,7 @@ def main():
         for error in errors:
             print(f'- {error}', file=sys.stderr)
         return 1
-    print(f'Validated {len(records)} curated resources, {len(papers)} research papers, {scanned} scanned sources, {len(benchmarks)} benchmark snapshots, {count} Markdown files, both generated catalogs, and the bilingual repository index.')
+    print(f'Validated {len(records)} curated resources, {len(papers)} research papers, {scanned} scanned sources, {discovered} unreviewed discoveries, {len(benchmarks)} benchmark snapshots, {count} Markdown files, both generated catalogs, and the bilingual repository index.')
     return 0
 
 

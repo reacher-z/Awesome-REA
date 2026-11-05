@@ -2,7 +2,7 @@
 
 [简体中文](promotion-worksheet.zh-CN.md) · [Source scan method](source-scan.md) · [Contribution guide](../CONTRIBUTING.md)
 
-Records in the automated [repository index](../data/source-index.json) are README scans with `verification: automated-readme-scan`. Their descriptions, targets and categories come from repository metadata, not review. Curating one of these repositories means writing a separate record from your own review of its primary sources. The scan record itself is never edited, relabeled or upgraded: it keeps its original evidence and status, and the repository directory links it to the curated entry at build time.
+Records in the automated [repository index](../data/source-index.json) and the [unreviewed discovery batches](../data/discoveries/README.md) are README scans with `verification: automated-readme-scan`. Their descriptions, targets and categories come from repository metadata, not review. Curating one of these repositories means writing a separate record from your own review of its primary sources. The scan record itself is never edited, relabeled or upgraded: it keeps its original evidence and status, and the repository directory links it to the curated entry at build time.
 
 Use the worksheet below in the issue or pull request that proposes the entry. Fill in every row. "Unknown" is an acceptable answer, and an unknown in a material row leads to a hold.
 

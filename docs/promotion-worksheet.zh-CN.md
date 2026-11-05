@@ -2,7 +2,7 @@
 
 [English](promotion-worksheet.md) · [扫描方法（英文）](source-scan.md) · [中文贡献指南](../CONTRIBUTING.zh-CN.md)
 
-自动[仓库索引](../data/source-index.json)中的记录是 README 扫描结果，`verification` 为 `automated-readme-scan`。其简介、目标领域和分类来自仓库元数据，未经复核。把其中的仓库收录为精选，是根据你自己对一手来源的复核另写一条记录。扫描记录本身永远不会被修改、重新标注或升级：它保留原有证据和状态，仓库目录在构建时把它链接到精选条目。
+自动[仓库索引](../data/source-index.json)和[未审核发现批次](../data/discoveries/README.md#简体中文)中的记录是 README 扫描结果，`verification` 为 `automated-readme-scan`。其简介、目标领域和分类来自仓库元数据，未经复核。把其中的仓库收录为精选，是根据你自己对一手来源的复核另写一条记录。扫描记录本身永远不会被修改、重新标注或升级：它保留原有证据和状态，仓库目录在构建时把它链接到精选条目。
 
 在提议收录的 issue 或 pull request 中使用下面的工作表，并填写每一行。可以填写“未知”；关键行为未知时，结论应为暂缓。
 
