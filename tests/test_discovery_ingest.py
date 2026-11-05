@@ -95,12 +95,11 @@ class WaitAndMergeTest(unittest.TestCase):
         with self.assertRaises(ingest.Retry):
             ingest.wait_for_checks(api, 'f' * 40, 'main', 'a' * 40)
 
-    def test_merge_squashes_the_checked_head_and_retries_when_it_is_outdated(self):
+    def test_merge_rebases_the_checked_head_and_retries_when_it_is_outdated(self):
         api = FakeAPI({('PUT', 'pulls/7/merge'): (200, {'sha': 'm' * 40})})
         self.assertEqual(ingest.merge(api, 7, 'f' * 40, 'Ingest 2 unreviewed discovery records from scan run 5'), 'm' * 40)
-        payload = api.calls[0][2]
-        self.assertEqual((payload['merge_method'], payload['sha']), ('squash', 'f' * 40))
-        self.assertEqual(payload['commit_title'], 'Ingest 2 unreviewed discovery records from scan run 5 (#7)')
+        # A rebase keeps the one commit with its fixed message and its bot author; never squash or merge commits.
+        self.assertEqual(api.calls[0][2], {'merge_method': 'rebase', 'sha': 'f' * 40})
         for status in (405, 409):
             stale = FakeAPI({('PUT', 'pulls/7/merge'): ingest.ApiError(status, 'Base branch was modified')})
             with self.subTest(status), self.assertRaises(ingest.Retry):
