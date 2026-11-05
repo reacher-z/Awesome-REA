@@ -34,7 +34,7 @@ def lead_queue(root: Path) -> dict:
     listed, since_held = [], 0
     for batch in reversed(batches):
         for lead in batch['leads']:
-            if leads.lead_keys(lead) & held.keys():
+            if leads.match_keys(lead) & held.keys():
                 since_held += 1
                 continue
             listed.append({**lead, 'batch_id': batch['batch_id'], 'collected_at': batch['collected_at']})

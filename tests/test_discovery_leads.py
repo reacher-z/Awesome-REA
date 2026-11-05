@@ -452,6 +452,112 @@ class WorkflowTest(unittest.TestCase):
                 self.assertRegex(line, r'@[0-9a-f]{40} # v')
 
 
+class SharedPageTest(unittest.TestCase):
+    def test_a_page_listed_for_several_tools_becomes_one_lead_per_tool(self):
+        page = 'https://hex-rays.example/contests/2018/index.shtml'
+        key = leads.url_key(page)[0]
+        rows = [listing('ida-list', page, key, label='HexRaysDeob'), listing('ida-list', page, key, label='Hyara'),
+                listing('ida-list', page, key, label='nios2'), listing('other-list', page, key, label='Hyara'),
+                listing('ida-list', 'https://example.org/single', 'url:example.org/single', label='Single')]
+        collect.split_shared_pages(rows)
+        self.assertEqual([row['key'] for row in rows], [key + '#hexraysdeob', key + '#hyara', key + '#nios2', key + '#hyara',
+                                                         'url:example.org/single'])
+        candidates, _ = collect.candidates_from(rows, {}, NOW)
+        by_identity = {lead['identity']: lead for lead in candidates}
+        self.assertEqual([row['source_id'] for row in by_identity[key + '#hyara']['listings']], ['ida-list', 'other-list'])
+        for lead in candidates:
+            self.assertEqual(leads.lead_problems(lead), [], lead['identity'])
+        # The keys do not depend on listing order.
+        reordered = [listing('ida-list', page, key, label=name) for name in ('nios2', 'Hyara', 'HexRaysDeob')]
+        collect.split_shared_pages(reordered)
+        self.assertEqual(sorted(row['key'] for row in reordered), sorted({key + '#hexraysdeob', key + '#hyara', key + '#nios2'}))
+
+    def test_entries_of_a_project_page_do_not_merge_through_its_repository(self):
+        page = 'https://owner.github.io/project/tools'
+        key, _, flags = leads.url_key(page)
+        self.assertEqual(flags['ghpages_alias'], 'gh:owner/project')
+        rows = [{**listing('a-list', page, key, label=name), 'flags': dict(flags)} for name in ('First Tool', 'Second Tool')]
+        collect.split_shared_pages(rows)
+        candidates, _ = collect.candidates_from(rows, {'owner/project': repository_node('owner/project', 77)}, NOW)
+        self.assertEqual(sorted(lead['identity'] for lead in candidates), sorted({key + '#firsttool', key + '#secondtool'}))
+
+    def test_non_ascii_names_stay_distinct(self):
+        page = 'https://tools.example/download'
+        key = leads.url_key(page)[0]
+        self.assertNotEqual(leads.entry_name('क'), leads.entry_name('कि'))
+        self.assertEqual(leads.entry_name('Olly UST_2bg'), 'ollyust2bg')
+        rows = [listing('cn-list', page, key, label='脱壳工具'), listing('cn-list', page, key, label='反调试插件')]
+        collect.split_shared_pages(rows)
+        self.assertEqual(len({row['key'] for row in rows}), 2)
+        self.assertTrue(all(row['key'].startswith(key + '#') for row in rows))
+
+    def test_an_entry_already_held_under_the_page_key_is_not_added_again(self):
+        page = 'https://hex-rays.example/contests/2018/index.shtml'
+        key = leads.url_key(page)[0]
+        held, _ = collect.candidates_from([listing('ida-list', page, key, label='HexRaysDeob')], {}, NOW)
+        existing = {'known': {}, 'records': 0, 'bytes': 0}
+        for item in lead_keys_with_entry(held[0]):
+            existing['known'][item] = 'already-lead'
+        rows = [listing('ida-list', page, key, label='HexRaysDeob'), listing('ida-list', page, key, label='Hyara')]
+        collect.split_shared_pages(rows)
+        candidates, _ = collect.candidates_from(rows, {}, NOW)
+        selected, _, skipped = leads.select_leads(candidates, existing, 10, ['ida-list'])
+        self.assertEqual([lead['identity'] for lead in selected], [key + '#hyara'])
+        self.assertEqual(skipped['already-lead'], 1)
+
+
+class SharedPageLimitsTest(unittest.TestCase):
+    def test_long_entry_names_keep_a_digest(self):
+        first, second = 'a' * 45 + 'one', 'a' * 45 + 'two'
+        self.assertNotEqual(leads.shared_page_key('url:example.org/p', first), leads.shared_page_key('url:example.org/p', second))
+        self.assertLessEqual(len(leads.shared_page_key('url:example.org/p', first).split('#', 1)[1]), 40)
+
+    def test_a_queued_entry_taken_up_by_a_curated_page_is_counted_not_listed(self):
+        curated = json.loads((ROOT / 'data/tool-resources.json').read_text(encoding='utf-8'))
+        record = next(row for row in curated if leads.url_key(row['url'])[0].startswith('url:'))
+        page_key = leads.url_key(record['url'])[0]
+        candidates, _ = collect.candidates_from([listing('example-list', record['url'], page_key, label=record['name'])], {}, NOW)
+        lead = candidates[0]
+        self.assertEqual(lead['identity'], page_key)
+        with tempfile.TemporaryDirectory() as directory:
+            root = lead_root(directory)
+            held = leads.existing_keys(root, [])['known']
+        self.assertTrue(leads.match_keys(lead) & held.keys())
+
+    def test_a_case_ledger_page_is_known_as_the_entry_its_title_names(self):
+        ledger = json.loads((ROOT / 'data/case-coverage.json').read_text(encoding='utf-8'))
+        entry, url = next((row, url) for row in ledger['entries'] for url in row['reported_source_urls'] + row['primary_evidence_urls']
+                          if (leads.url_key(url)[0] or '').startswith('url:') and ':' in row['title'])
+        page_key = leads.url_key(url)[0]
+        with tempfile.TemporaryDirectory() as directory:
+            known = leads.existing_keys(lead_root(directory))['known']
+        lead_name = entry['title'].split(':', 1)[0]
+        self.assertEqual(known.get(leads.entry_key(leads.shared_page_key(page_key, leads.entry_name(lead_name)), '')), 'case-lead')
+        self.assertNotIn(leads.entry_key(leads.shared_page_key(page_key, 'someothertool'), ''), known)
+
+    def test_long_pages_stay_within_the_identity_limit_and_still_match(self):
+        page_key = 'url:example.org/' + 'a' * 590
+        split = leads.shared_page_key(page_key, 'toolname')
+        self.assertLessEqual(len(split), 600)
+        self.assertTrue(leads.IDENTITY.fullmatch(split))
+        self.assertEqual(leads.entry_key(split, 'ignored'), leads.entry_key(page_key, 'Tool Name'))
+
+    def test_a_curated_page_is_known_as_the_entry_with_its_own_name(self):
+        curated = json.loads((ROOT / 'data/tool-resources.json').read_text(encoding='utf-8'))
+        record = next(row for row in curated if leads.url_key(row['url'])[0].startswith('url:'))
+        page_key = leads.url_key(record['url'])[0]
+        with tempfile.TemporaryDirectory() as directory:
+            known = leads.existing_keys(lead_root(directory))['known']
+        same = leads.entry_key(leads.shared_page_key(page_key, leads.entry_name(record['name'])), '')
+        self.assertEqual(known.get(same), 'already-curated')
+        other = leads.entry_key(leads.shared_page_key(page_key, 'someothertool'), '')
+        self.assertNotIn(other, known)
+
+
+def lead_keys_with_entry(lead):
+    return leads.match_keys(lead)
+
+
 class CandidateTest(unittest.TestCase):
     def test_one_candidate_per_resource_with_aliases_and_metadata(self):
         repositories = {'old/name': repository_node('new/name', 7), 'new/name': repository_node('new/name', 7),

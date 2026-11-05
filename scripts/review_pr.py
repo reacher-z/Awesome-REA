@@ -594,10 +594,10 @@ def review_lead_batches(repository, sha, token, files, errors, pull=None):
     for batch in added:
         where = f"{discovery_leads.DIRECTORY}/{batch['collected_at'][:7]}/{batch['batch_id']}.json"
         for lead in batch['leads']:
-            held = sorted(key for key in discovery_leads.lead_keys(lead) if key in known)
+            held = sorted(key for key in discovery_leads.match_keys(lead) if key in known)
             if held:
                 errors.append(f"{where}: {lead['id']} is already held by the repository ({known[held[0]]}).")
-            for key in discovery_leads.lead_keys(lead):
+            for key in discovery_leads.match_keys(lead):
                 known.setdefault(key, 'already-lead')
         total += len(batch['leads'])
         size += len(discovery_leads.batch_bytes(batch))
