@@ -13,6 +13,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(0, str(ROOT / 'tests'))
+import public_source_supplements as supplements
 import review_pr
 from test_review_pr import FakeGitHub, added, entry, run_review
 
@@ -31,9 +32,12 @@ class PublicSupplementReviewerTests(unittest.TestCase):
             destination = root / filename
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / filename, destination)
-        archive = root / 'data/source-evidence' / self.archive_name
-        archive.parent.mkdir(parents=True)
-        shutil.copyfile(ROOT / 'data/source-evidence' / self.archive_name, archive)
+        # The trusted base holds what this checkout holds: the archive, or its withdrawal record once withdrawn.
+        evidence = root / 'data/source-evidence'
+        evidence.mkdir(parents=True)
+        withdrawn = not (ROOT / 'data/source-evidence' / self.archive_name).exists()
+        if not withdrawn:
+            shutil.copyfile(ROOT / 'data/source-evidence' / self.archive_name, evidence / self.archive_name)
         batch = copy.deepcopy(self.batch)
         row = self.empty
         row_hash = hashlib.sha256(json.dumps(row, ensure_ascii=False, sort_keys=True,
@@ -42,6 +46,13 @@ class PublicSupplementReviewerTests(unittest.TestCase):
                      resources=[row])
         batch['selection'].update(selected_ids=[row['id']], selected_count=1,
                                   record_sha256={row['id']: row_hash})
+        if withdrawn:
+            # The fixture narrows the batch, so its withdrawal fixes the narrowed selection.
+            registry = json.loads((ROOT / 'data/source-evidence/withdrawn.json').read_text(encoding='utf-8'))
+            for item in registry['withdrawn']:
+                if item['archive_filename'] == self.archive_name:
+                    item['batch_selection_sha256'] = {batch['batch_id']: supplements.digest(batch['selection'])}
+            (evidence / 'withdrawn.json').write_text(json.dumps(registry, ensure_ascii=False), encoding='utf-8')
         for filename, data in (
             (review_pr.SUPPLEMENT_INDEX, {'schema_version': 1, 'batches': [batch['batch_id']]}),
             (review_pr.SUPPLEMENT_BATCH, batch),

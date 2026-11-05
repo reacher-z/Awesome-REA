@@ -18,8 +18,8 @@ File paths and archive member names are checked the same way, and a path compone
 as <redacted>. UTF-16 and UTF-32 text is decoded. Zip and tar archives and gzip, bzip2 and xz streams are read
 in full within size and nesting bounds; an archive that cannot be read within them, or one in a format the
 standard library cannot read (7z, rar, zstd, brotli), fails the check. Every other file, binary or not, is
-read as text, so readable strings in images or documents are checked; text drawn as pixels is not. The scan-evidence archive that a public source supplement pins by digest as an
-exact copy of a workflow artifact is reported as not read.
+read as text, so readable strings in images or documents are checked; text drawn as pixels is not. No
+archive is exempt: compressed members are read like any other file.
 
     python3 scripts/privacy_guard.py            # git-tracked files, then dist/ when it exists
     python3 scripts/privacy_guard.py PATH ...   # only these files or directories
@@ -74,10 +74,6 @@ PARTS = frozenset({
     '896cf3a45fa7ff30be97fb7d8b690270ddc4732061474250bce599859d7fa21c',
     'cba5e15625297266273d86b6e728bb4a4b56efb064f5519b686f227c3666b1a5',
     'e877f26db44c2cd4880de1c10e3a8fa6f9eacd835681fd0f5d99ed4e7c78d743',
-})
-# sha256 of the archive bytes of scan evidence that data/source-supplements/ pins to a workflow artifact digest.
-PINNED_EVIDENCE = frozenset({
-    'd6d7cee82ca61ceba26f7bbf5d70ff9d7077932ee60fdc1a29022994065e7a03',
 })
 
 # Inline HTML phrasing tags do not separate words on screen ("Orla <em>Venn</em>" reads as one name), so they are
@@ -449,10 +445,10 @@ def default_paths(root: Path = ROOT) -> list[Path]:
     return paths
 
 
-def scan(paths, root: Path = ROOT, detector: Detector | None = None) -> tuple[list[Finding], list[str]]:
-    """Findings, and the pinned evidence archives left unread, for these files."""
+def scan(paths, root: Path = ROOT, detector: Detector | None = None) -> list[Finding]:
+    """Findings for these files: every file, archives included, is read."""
     detector = detector or Detector(SALT, PROTECTED, PARTS)
-    findings, unread = [], []
+    findings = []
     for path in paths:
         if not path.is_file():
             continue
@@ -460,11 +456,8 @@ def scan(paths, root: Path = ROOT, detector: Detector | None = None) -> tuple[li
         name, named = detector.redact(path.relative_to(root).as_posix() if path.is_relative_to(root) else str(path))
         if named:
             findings.append(Finding(name, 0, 'file path'))
-        if is_archive(data, name) and hashlib.sha256(data).hexdigest() in PINNED_EVIDENCE:
-            unread.append(name)
-            continue
         findings.extend(detector.scan_bytes(data, name))
-    return findings, unread
+    return findings
 
 
 def main(argv=None):
@@ -472,9 +465,7 @@ def main(argv=None):
     parser.add_argument('paths', nargs='*', type=Path, help='files or directories; default: tracked files and dist/')
     args = parser.parse_args(argv)
     paths = [item for path in args.paths for item in files_under(path.resolve())] if args.paths else default_paths()
-    findings, unread = scan(paths)
-    for name in unread:
-        print(f'Not read: {name} is pinned scan evidence, an exact copy of a workflow artifact.')
+    findings = scan(paths)
     for finding in findings:
         print(finding, file=sys.stderr)
     if findings:
