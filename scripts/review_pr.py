@@ -416,14 +416,83 @@ def find_existing_review(repository, number, sha, token):
     return None
 
 
+CHECK_NAME = 'review'
+
+
+def dispatched():
+    return os.environ.get('GITHUB_EVENT_NAME') == 'workflow_dispatch'
+
+
+def dispatch_inputs(event):
+    """The PR number and the exact head commit a dispatched review must cover."""
+    inputs = event.get('inputs') or {}
+    number, head = str(inputs.get('pr_number', '')).strip(), str(inputs.get('head_sha', '')).strip()
+    if not re.fullmatch(r'[1-9][0-9]{0,9}', number):
+        raise ValueError('A dispatched review needs a positive pull request number')
+    if not re.fullmatch(r'[0-9a-f]{40}', head):
+        raise ValueError('A dispatched review needs the full SHA of the head commit to review')
+    return int(number), head
+
+
+def dispatch_binding_error(pull, repository, event, expected_head):
+    """Bind a dispatched review to one open same-repository PR head, as pull_request_target binds its event.
+
+    Pull requests opened with GITHUB_TOKEN start no pull_request_target run. The workflow is then
+    dispatched on the default branch, so its definition and this code are that trusted branch's; the
+    PR head is never checked out or executed. The result becomes the required `review` check run on
+    the named head commit. Strict up-to-date protection still requires that head to contain the
+    current default branch before it can merge.
+    """
+    head, base = pull.get('head') or {}, pull.get('base') or {}
+    default_branch = (event.get('repository') or {}).get('default_branch')
+    if not default_branch or os.environ.get('GITHUB_REF') != f'refs/heads/{default_branch}':
+        return 'a dispatched review runs only from the default branch'
+    if pull.get('state') != 'open':
+        return 'the pull request is not open'
+    if head.get('sha') != expected_head:
+        return 'the pull request head is not the commit named for review'
+    if (head.get('repo') or {}).get('full_name') != repository or (base.get('repo') or {}).get('full_name') != repository:
+        return 'only pull requests from a branch of this repository can be reviewed by dispatch'
+    if base.get('ref') != default_branch:
+        return 'only pull requests into the default branch can be reviewed by dispatch'
+    return None
+
+
+def report_check(repository, sha, token, number, errors, not_inspected):
+    """Record a dispatched review as the completed `review` check run on the reviewed head commit."""
+    run_url = (f"{os.environ.get('GITHUB_SERVER_URL', 'https://github.com')}/{repository}"
+               f"/actions/runs/{int(os.environ.get('GITHUB_RUN_ID', '0'))}")
+    if errors:
+        title = f'{len(errors)} finding(s) need attention'
+    elif not_inspected:
+        title = f'No findings; {len(not_inspected)} changed file(s) not inspected'
+    else:
+        title = 'No issues found by the automatic checks'
+    summary = (f'Rule-based review of pull request #{number} at `{sha[:12]}` by trusted default-branch code '
+               f"(`{os.environ.get('GITHUB_SHA', '')[:12]}`). The bot review comment on the pull request lists "
+               'every check and finding. This is not an approval or a runtime test.')
+    api(repository, 'check-runs', token, method='POST', payload={
+        'name': CHECK_NAME, 'head_sha': sha, 'status': 'completed',
+        'conclusion': 'failure' if errors else 'success', 'details_url': run_url,
+        'external_id': f'pull-request-{number}', 'output': {'title': title, 'summary': summary}})
+
+
 def main():
     token = os.environ['GITHUB_TOKEN']
     repository = os.environ['GITHUB_REPOSITORY']
     if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository):
         raise ValueError('Invalid repository name')
     event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text(encoding='utf-8'))
-    number = int(event['pull_request']['number'])
+    if dispatched():
+        number, expected_head = dispatch_inputs(event)
+    else:
+        number = int(event['pull_request']['number'])
     pull = api(repository, f'pulls/{number}', token)
+    if dispatched():
+        problem = dispatch_binding_error(pull, repository, event, expected_head)
+        if problem:
+            print(f'Dispatched review refused: {problem}.', file=sys.stderr)
+            sys.exit(1)
     sha = pull['head']['sha']
     if not re.fullmatch(r'[0-9a-f]{40}', sha):
         raise ValueError('Unexpected head SHA')
@@ -490,7 +559,10 @@ def main():
         status = f'**No issues found by these automatic checks, but {len(not_inspected)} changed file(s) were not inspected.**'
     else:
         status = '**No issues found by these automatic checks.**'
-    body = [MARKER, '### Automated catalog review', '', f'Commit: `{sha[:12]}`.', '', status, '']
+    commit_line = f'Commit: `{sha[:12]}`.'
+    if dispatched():
+        commit_line += f" Dispatched run of trusted default-branch code at `{os.environ.get('GITHUB_SHA', '')[:12]}`."
+    body = [MARKER, '### Automated catalog review', '', commit_line, '', status, '']
     body.extend('- ' + safe_text(item) for item in reviewed)
     if errors:
         body.extend(['', 'Findings:'])
@@ -513,6 +585,9 @@ def main():
     # Ensure an obsolete run does not comment against a newly pushed commit.
     if api(repository, f'pulls/{number}', token)['head']['sha'] != sha:
         print('PR head changed; the next run will review the new commit.')
+        if dispatched():
+            # No check is reported for a superseded commit; the dispatcher reviews the new head.
+            sys.exit(1)
         return
     if existing_review:
         api(repository, f"pulls/{number}/reviews/{int(existing_review['id'])}", token,
@@ -521,6 +596,8 @@ def main():
         api(repository, f'pulls/{number}/reviews', token, method='POST',
             payload={'commit_id': sha, 'event': 'COMMENT', 'body': '\n'.join(body)})
     print(f'Posted a rule-based review: {len(errors)} finding(s), {len(not_inspected)} file(s) not inspected; no PR code executed.')
+    if dispatched():
+        report_check(repository, sha, token, number, errors, not_inspected)
     if errors:
         sys.exit(1)
 
