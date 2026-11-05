@@ -8006,5 +8006,73 @@
       "仓库没有测试，唯一的 CI 工作流只在手动触发时构建模块。",
       "依 LICENSE 采用 MIT 许可，版权行署名为 Rikka；附带的 xDL 符号查找库保留 HexHacking Team 的 MIT 声明。"
     ]
+  },
+  "system-informer": {
+    "name": "System Informer 进程与系统检查工具",
+    "requirements": [
+      "据 README，需要 Windows 10 或更高版本（32 位或 64 位）。审阅时的版本为 v4.0.26241.138，于 2026-08-29 发布，是 4.0 系列的首个版本；所审阅的 master 分支提交比它多 874 个提交。从源码构建需要 Visual Studio 2022 或更高版本，并使用 build 目录中的 build_init.cmd 和 build_release.cmd 脚本。",
+      "KSystemInformer 内核驱动只向经过验证的调用方开放更深入的检查能力：加载到 System Informer 中的二进制文件须带有由构建密钥对生成的 .sig 文件，或具备 Microsoft 或反恶意软件厂商的签名；加载未签名的第三方插件会限制对驱动的访问。使用开发者自有密钥签名的构建需要开启调试和测试签名模式，必要时还须关闭安全启动。",
+      "Agent Tools 插件只存在于 master 分支，不在 4.0 版本中；其源码说明它通过 Model Context Protocol 向 AI 智能体提供 System Informer 的进程数据和操作。该插件默认关闭，默认需要确认连接，并为 Claude Code、Codex CLI 等客户端提供 stdio 配置命令。OnlineChecks 插件的 Hybrid Analysis 查询须手动开启并按服务配置 API 密钥，还可选择提交未知文件。",
+      "依 LICENSE.txt 与 README 采用 MIT 许可。"
+    ]
+  },
+  "cyberchef": {
+    "name": "CyberChef 数据解码与分析工具",
+    "requirements": [
+      "可直接使用托管在 gchq.github.io/CyberChef 的网页版、从应用中下载的完整副本、ghcr.io/gchq/cyberchef Docker 镜像，或用 Node.js v24 自行构建（先 npm install，再 npm start 或 npm run build）；README 列出支持的浏览器为 Chrome 50+ 和 Firefox 38+。审阅时的版本为 v11.5.0，于 2026-09-18 发布；所审阅的 master 分支提交比它更新。",
+      "输入数据和配方都留在浏览器中，不会发送到网站服务器。可加载约 2 GB 以内的文件（视浏览器而定），但部分操作处理这么大的数据可能非常耗时；输入较大时可关闭 Auto Bake 自动执行。",
+      "采用 Apache-2.0 许可，受英国皇家版权（Crown Copyright）保护；提交贡献须签署 GCHQ 贡献者许可协议。"
+    ]
+  },
+  "yara": {
+    "name": "YARA 文件模式匹配与分类工具",
+    "requirements": [
+      "支持 Windows、Linux 和 macOS；审阅时的版本为 v4.6.0，于 2026-10-27 发布。从源码构建需要 automake、libtool、make、gcc 和 pkg-config。依赖 OpenSSL 的功能只在系统已安装 OpenSSL 时启用；cuckoo（依赖 Jansson）和 magic（依赖 libmagic）模块须分别以 --enable-cuckoo 或 --enable-magic 编译才会包含。也可通过 vcpkg 安装 YARA。",
+      "README 标明 YARA 已进入维护模式；YARA-X 的 README 称 YARA 仍会获得缺陷修复和小功能更新，但新模块和大型功能只会加入 YARA-X。命令行文档警告，来自不可信来源的已编译规则可能导致恶意代码被执行；自 YARA 3.9 起，加载已编译规则必须显式加上 -C 参数。",
+      "依 COPYING 采用 BSD-3-Clause 许可。"
+    ]
+  },
+  "cheat-engine": {
+    "name": "Cheat Engine 游戏与应用内存分析调试工具",
+    "requirements": [
+      "据网站 2026-05-29 的公告，Cheat Engine 7.7 先面向 Patreon 赞助者发布了 Windows、Mac 和 Linux 版本，随后推出公开的 Windows 安装包。GitHub 上最新的发布版本是 7.5（2023-02-23），未附带二进制文件；所审阅的 master 分支提交日期为 2025-04-19。",
+      "构建主项目需要 64 位 Windows 版 Lazarus 2.2.2 及其 i386 交叉编译器；Mono、.NET 和 Java 数据采集器等 .sln 辅助项目需要 Visual Studio（通常为 2017 版）。内核模式功能需要编译不带签名的 DBK 驱动，然后以允许未签名驱动的方式启动系统，或自行为驱动签名。",
+      "网站说明它用于修改无需联网的单机游戏，对联网游戏大多无效；要求使用者年满 18 岁，声明其仅供个人和学习用途，并提醒使用者不要违反游戏或应用的最终用户许可协议（EULA）或服务条款。",
+      "仓库根目录没有许可证文件，GitHub 也未识别出许可证；网站称源码公开可见，任何人都可以自行编译。tcclib 等随附组件带有各自的许可证文件。"
+    ]
+  },
+  "noriben": {
+    "name": "Noriben 基于 Procmon 的恶意软件行为分析脚本",
+    "requirements": [
+      "Windows 分析机上需要 Python 3 以及 Sysinternals 的 procmon.exe 或 procmon64.exe；使用 --yara 扫描需另装 yara-python，查询 VirusTotal 需要 requests。审阅时的版本为 2.1.0，于 2026-11-03 发布，其标签即所审阅的 main 分支提交。",
+      "README 描述的沙箱流程是在虚拟机中运行样本、取回结果，并在分析下一个样本前恢复快照。NoribenSandbox.py 会启动预设的虚拟机快照，复制样本进去，运行 Noriben，再取回 ZIP 格式的报告和截图；README 称这个前端目前在 macOS 主机上运行。",
+      "配置 VirusTotal API 密钥后，它会查询文件哈希；只有在 Noriben.config 中把 virustotal_upload 设为 True（默认为 False）时，才会把所有新建文件上传到 VirusTotal。",
+      "2.1.0 版的发布说明提到新增了大规模单元测试，并说明是在 AI 辅助下开发的；README 给出的测试方法是在启用了 Procmon 模块加载记录的 Windows 虚拟机中，通过 Noriben 运行 tests/unit_tester.ps1。",
+      "依 README 与 LICENSE 采用 Apache-2.0 许可。"
+    ]
+  },
+  "qemu": {
+    "name": "QEMU 机器与用户态模拟器",
+    "requirements": [
+      "可在主流 Linux、macOS、通过 Mingw64 工具链的 Windows 以及其他多种 Unix 系统上构建（mkdir build、../configure、make）。上游仓库为 gitlab.com/qemu-project/qemu；GitHub 上的是只读镜像，并建议用户从 QEMU 官网获取发布源码包。审阅时最新的标签为 v11.1.3，所在提交的日期为 2026-10-28。",
+      "用户态模拟只支持 Linux 和 BSD 的系统调用接口，不模拟任何硬件；各客户机架构分别支持系统模拟、用户态模拟或两者兼有。TCG 插件只观察客户机状态而不修改它，自带的系统调用插件仅适用于用户态模式。配合 KVM 或 Xen 使用时，由虚拟机监控器执行 CPU 指令，QEMU 负责提供模拟硬件。",
+      "QEMU 整体采用 GPL-2.0 许可，各组件的许可细节见 LICENSE 文件。"
+    ]
+  },
+  "hex-fiend": {
+    "name": "Hex Fiend macOS 十六进制编辑器",
+    "requirements": [
+      "自 v2.17 起需要 macOS 10.14.6 或更高版本。审阅时的版本为 v2.18.1，于 2025-03-16 发布；所审阅的 master 分支提交日期为 2025-06-29。自定义模板是放在应用 Application Support 目录下 Templates 文件夹中的 .tcl 文件。",
+      "二进制模板功能从 v2.9 开始提供，用 macOS 自带的 Tcl 语言编写。自 v2.17 起，模板可声明适用的文件类型以便自动选择，但发布说明指出大多数内置模板尚未填写这些信息。",
+      "依 License.txt 采用 BSD-2-Clause 许可。"
+    ]
+  },
+  "scyllahide": {
+    "name": "ScyllaHide 用户态反反调试库",
+    "requirements": [
+      "需要 Windows；审阅时的版本为 v1.4，于 2023-03-24 发布，所审阅的 master 分支提交日期为 2023-07-29。插件覆盖 x64dbg、OllyDbg v1 和 v2、TitanEngine v2 以及 IDA；README 注明 IDA v6 插件已不再支持，并表示借助 x64dbg 和 IDA 插件可完整支持 PE x64 程序调试。",
+      "它只在用户态工作，README 建议需要内核态（ring 0）反反调试时改用 TitanHide。每个选项针对特定的反调试检测：文档建议计时、硬件断点保护、阻止线程创建和 NtYieldExecution 等选项只在确有需要时启用，并且只在虚拟机中使用会终止并转储新建进程的 RunPE 脱壳选项。",
+      "采用 GPL-3.0 许可。项目派生自 Bitbucket 上原始的 ScyllaHide 仓库；完整手册是附在 docs-2019-05-17 发布中的 PDF，其 LaTeX 源文件位于 Documentation/ 目录。"
+    ]
   }
 }

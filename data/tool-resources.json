@@ -25990,5 +25990,294 @@
       "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/LICENSE",
       "https://github.com/Perfare/Zygisk-Il2CppDumper/blob/ede65d18a795882e37a2d988943d77a72d132c5d/module/src/main/cpp/xdl/xdl.c"
     ]
+  },
+  {
+    "id": "system-informer",
+    "name": "System Informer",
+    "url": "https://github.com/winsiderss/systeminformer",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Windows process viewer and system inspector, formerly Process Hacker, for examining running programs and the system around them. It gives a highlighted overview of system activity, searches the handles and loaded DLLs of processes to find which one is using a file, shows active network connections and real-time disk access, displays stack traces with kernel-mode, WOW64 and .NET support, and creates, edits and controls services. Version 4.0 adds a Process Monitor that logs process, thread, image, registry, file, handle and silo events from its kernel driver, and plugins add .NET assembly and performance tabs, a window explorer and Hybrid Analysis lookups.",
+    "description_zh": "Windows 进程查看与系统检查工具，前身为 Process Hacker，用于检查运行中的程序及其所在的系统环境。它以高亮方式概览系统活动，可在各进程的句柄和已加载 DLL 中搜索，找出正在占用某个文件的进程，显示活动网络连接和实时磁盘访问，查看支持内核模式、WOW64 和 .NET 的详细调用栈，并能创建、编辑和控制服务。4.0 版新增 Process Monitor，借助内核驱动实时记录进程、线程、映像、注册表、文件、句柄和 silo 事件；插件还提供 .NET 程序集与性能页、窗口浏览器和 Hybrid Analysis 在线查询。",
+    "evidence_url": "https://github.com/winsiderss/systeminformer/blob/999fe5ef6a554f55d8e7df43903eb31ca530377e/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows 10 or later, 32-bit or 64-bit, per the README. Release at review: v4.0.26241.138, published 2026-08-29 as the first 4.0 release; the reviewed master commit is 874 commits ahead of it. Building from source needs Visual Studio 2022 or later and the build_init.cmd and build_release.cmd scripts in build/.",
+      "The KSystemInformer kernel driver gives its broader inspection only to verified callers: binaries loaded into System Informer need a .sig from the build's key pair or a Microsoft or anti-malware vendor signature, and loading an unsigned third-party plugin restricts driver access. Builds signed with a developer's own key need debug and test-signing mode, with Secure Boot disabled where applicable.",
+      "The Agent Tools plugin is on the master branch only, not in the 4.0 release; its source describes it as exposing System Informer's process data and actions to AI agents over the Model Context Protocol. It is off by default, asks to confirm connections by default and offers stdio setup commands for clients such as Claude Code and Codex CLI. The OnlineChecks plugin's Hybrid Analysis lookups are opt-in with per-service API keys and can optionally submit unknown files.",
+      "MIT per LICENSE.txt and the README."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/winsiderss/systeminformer/blob/999fe5ef6a554f55d8e7df43903eb31ca530377e/KSystemInformer/README.md",
+      "https://github.com/winsiderss/systeminformer/blob/999fe5ef6a554f55d8e7df43903eb31ca530377e/CHANGELOG.txt",
+      "https://github.com/winsiderss/systeminformer/blob/999fe5ef6a554f55d8e7df43903eb31ca530377e/plugins/AgentTools/main.c#L58-L75",
+      "https://github.com/winsiderss/systeminformer/blob/999fe5ef6a554f55d8e7df43903eb31ca530377e/plugins/AgentTools/options.c#L1044-L1060",
+      "https://github.com/winsiderss/systeminformer/blob/999fe5ef6a554f55d8e7df43903eb31ca530377e/LICENSE.txt",
+      "https://github.com/winsiderss/systeminformer/releases/tag/v4.0.26241.138",
+      "https://systeminformer.com/"
+    ]
+  },
+  {
+    "id": "cyberchef",
+    "name": "CyberChef",
+    "url": "https://github.com/gchq/CyberChef",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "protocol"
+    ],
+    "description_en": "GCHQ's browser-based workbench for decoding, decrypting, decompressing, parsing and carving data by chaining operations into a recipe, with all processing done client-side. The pinned operation catalogue lists 506 operations, among them XOR brute force, AES, DES and Blowfish decryption, x86 and ARM disassembly, ELF info, file-type detection, file extraction, entropy and strings, YARA rules, Protobuf decoding and Ethernet, IPv4, TCP and UDP header parsing. The Magic operation tries to detect nested encodings automatically, and breakpoints step through a recipe one operation at a time to show the data at each stage.",
+    "description_zh": "GCHQ 开发的浏览器端数据处理工具，把多个操作串成“配方”（recipe），对数据进行解码、解密、解压、解析和提取，所有处理都在本地浏览器中完成。所固定版本的操作目录列出 506 个操作，包括 XOR 暴力破解、AES/DES/Blowfish 解密、x86 与 ARM 反汇编、ELF 信息解析、文件类型识别、文件提取、熵与字符串分析、YARA 规则匹配、Protobuf 解码，以及以太网帧和 IPv4、TCP、UDP 报头解析。Magic 操作会尝试自动识别多层嵌套编码；在配方中设置断点后，可逐个操作执行，查看数据在每一步的变化。",
+    "evidence_url": "https://github.com/gchq/CyberChef/blob/d4d96c6c3d2597fef836d81bfc04617d97c681a5/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Use the hosted app at gchq.github.io/CyberChef, a full copy downloaded from the app, the ghcr.io/gchq/cyberchef Docker image or a Node.js v24 build (npm install, then npm start or npm run build); the README lists Chrome 50+ and Firefox 38+ as supported browsers. Release at review: v11.5.0, published 2026-09-18; the reviewed master commit is newer.",
+      "Inputs and recipes stay in the browser and are not sent to the web server. Files of up to about 2 GB load, depending on the browser, and some operations can take a very long time on that much data; Auto Bake can be turned off for large inputs.",
+      "Apache-2.0, under Crown Copyright; contributions require signing the GCHQ Contributor Licence Agreement."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/gchq/CyberChef/blob/d4d96c6c3d2597fef836d81bfc04617d97c681a5/src/core/config/Categories.json",
+      "https://github.com/gchq/CyberChef/blob/d4d96c6c3d2597fef836d81bfc04617d97c681a5/LICENSE",
+      "https://github.com/gchq/CyberChef/releases/tag/v11.5.0",
+      "https://gchq.github.io/CyberChef/"
+    ]
+  },
+  {
+    "id": "yara",
+    "name": "YARA",
+    "url": "https://github.com/VirusTotal/yara",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "VirusTotal's pattern-matching tool for identifying and classifying files such as malware samples with rules that combine text, hex and regular-expression strings with a Boolean condition. It scans a file, a folder or a running process from the command line, through the libyara C API or from Python with yara-python. Modules expose parsed structure to rules: pe and elf expose most fields of PE and ELF headers, dotnet adds .NET metadata, math adds calculations such as entropy, and the optional magic and cuckoo modules add libmagic file types and Cuckoo sandbox behavior reports.",
+    "description_zh": "VirusTotal 推出的模式匹配工具，用规则识别和归类恶意软件样本等文件；每条规则由文本、十六进制和正则表达式字符串加一个布尔条件组成。可通过命令行、libyara C API 或 Python 扩展 yara-python 扫描单个文件、文件夹或运行中的进程。各模块向规则提供解析后的结构信息：pe 和 elf 模块提供 PE 与 ELF 头部的大部分字段，dotnet 模块提供 .NET 元数据，math 模块提供熵等计算，可选的 magic 和 cuckoo 模块则提供 libmagic 文件类型和 Cuckoo 沙箱行为报告数据。",
+    "evidence_url": "https://github.com/VirusTotal/yara/blob/6d47342e825e59f5d8f20874d0778332bcec83a6/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs on Windows, Linux and macOS; release at review: v4.6.0, published 2026-10-27. Source builds need automake, libtool, make, gcc and pkg-config. Features that depend on OpenSSL are enabled only when OpenSSL is installed, and the cuckoo (Jansson) and magic (libmagic) modules are compiled only with --enable-cuckoo or --enable-magic; vcpkg also packages YARA.",
+      "The README marks YARA as in maintenance mode; the YARA-X README says YARA still receives bug fixes and minor features, while new modules and large features go only into YARA-X. The command-line documentation warns that compiled rules from untrusted sources can lead to the execution of malicious code; since YARA 3.9 they load only with -C.",
+      "BSD-3-Clause per COPYING."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/VirusTotal/yara/blob/6d47342e825e59f5d8f20874d0778332bcec83a6/docs/gettingstarted.rst",
+      "https://github.com/VirusTotal/yara/blob/6d47342e825e59f5d8f20874d0778332bcec83a6/docs/commandline.rst",
+      "https://github.com/VirusTotal/yara/blob/6d47342e825e59f5d8f20874d0778332bcec83a6/docs/modules/pe.rst",
+      "https://github.com/VirusTotal/yara/blob/6d47342e825e59f5d8f20874d0778332bcec83a6/docs/modules/elf.rst",
+      "https://github.com/VirusTotal/yara/blob/6d47342e825e59f5d8f20874d0778332bcec83a6/docs/modules/math.rst",
+      "https://github.com/VirusTotal/yara/blob/6d47342e825e59f5d8f20874d0778332bcec83a6/docs/modules/cuckoo.rst",
+      "https://github.com/VirusTotal/yara/blob/6d47342e825e59f5d8f20874d0778332bcec83a6/COPYING",
+      "https://github.com/VirusTotal/yara/releases/tag/v4.6.0",
+      "https://github.com/VirusTotal/yara-x/blob/1bda5fc3cbd05c937bcedc63a662f513b7490c4d/README.md",
+      "https://virustotal.github.io/yara-x/blog/yara-x-is-stable/"
+    ]
+  },
+  {
+    "id": "cheat-engine",
+    "name": "Cheat Engine",
+    "url": "https://github.com/cheat-engine/cheat-engine",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Memory scanner, debugger, disassembler and assembler for inspecting and changing running games and other applications; its README calls it a development environment focused on modding games and applications for personal use. The project site lists a memory scanner for finding the variables a game uses, a debugger, disassembler, assembler, speedhack, trainer maker, Direct3D manipulation and system inspection tools, and the README's build notes add Mono, .NET and Java runtime inspection, a VEH debugger interface, Lua and C code in scripts and an optional kernel-mode driver.",
+    "description_zh": "集内存扫描、调试、反汇编和汇编于一体的工具，用于检查和修改运行中的游戏及其他应用；README 称其为专注于游戏和应用改造（仅供个人使用）的开发环境。项目网站列出的功能包括：快速扫描游戏所用变量的内存扫描器，以及调试器、反汇编器、汇编器、变速（speedhack）、修改器（trainer）制作、Direct3D 操控和系统检查工具；README 中的构建说明还提到 Mono、.NET 和 Java 运行时检查、VEH 调试器接口、在脚本中嵌入 Lua 与 C 代码，以及可选的内核模式驱动。",
+    "evidence_url": "https://github.com/cheat-engine/cheat-engine/blob/ec45d5f47f92a239ba0bf51ec5d04a7509c3fd37/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The site's news of 2026-05-29 says Cheat Engine 7.7 was released for Windows, Mac and Linux to Patreon supporters first, followed by a public Windows installer. The newest GitHub release is 7.5 (2023-02-23), which attaches no binaries, and the reviewed master commit dates from 2025-04-19.",
+      "Building needs Lazarus 2.2.2 for 64-bit Windows with its i386 cross-compiler for the main project and Visual Studio (usually 2017) for the .sln helper projects, such as the Mono, .NET and Java data collectors. Kernel-mode functions need the DBK driver built without a signature, then booting with unsigned-driver support or signing the driver yourself.",
+      "The site describes it as made for modifying single-player games without an internet connection, says it will most likely not work on online games, requires users to be 18 or older, calls it for private and educational purposes and asks users not to violate a game's or application's EULA or terms of service.",
+      "The repository has no top-level license file and GitHub detects no license; the site says the source code is visible so that anyone can compile their own version. Bundled components such as tcclib carry their own license files."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cheat-engine/cheat-engine/blob/ec45d5f47f92a239ba0bf51ec5d04a7509c3fd37/Cheat%20Engine/release/readme.txt",
+      "https://github.com/cheat-engine/cheat-engine/releases/tag/7.5",
+      "https://www.cheatengine.org/aboutce.php",
+      "https://www.cheatengine.org/"
+    ]
+  },
+  {
+    "id": "noriben",
+    "name": "Noriben",
+    "url": "https://github.com/Rurik/Noriben",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Python script that drives Sysinternals Process Monitor to record what a program does while it runs, filters out routine system activity and writes a text report of the processes it created and its file, registry and network activity. It works as a lightweight malware sandbox and can also log events while the analyst runs a sample by hand, with command-line options, user interaction or under a debugger; created files can be scanned with YARA rules and their hashes looked up on VirusTotal. Version 2.1.0 adds DLL-load monitoring, an ASCII process tree and JSON output, and NoribenSandbox.py automates runs inside a guest VM.",
+    "description_zh": "调用 Sysinternals Process Monitor 记录程序运行时行为的 Python 脚本，会滤除常规系统活动，并生成文本报告，列出程序创建的进程及其文件、注册表和网络活动。它可以当作轻量级恶意软件沙箱使用，也能在分析人员手动运行样本时记录事件，例如样本需要特定命令行参数、需要用户交互，或在调试器中单步执行时。新建的文件可用 YARA 规则扫描，其哈希值可在 VirusTotal 上查询。2.1.0 版新增 DLL 加载监控、ASCII 进程树和 JSON 输出；NoribenSandbox.py 可在客户机虚拟机中自动完成分析流程。",
+    "evidence_url": "https://github.com/Rurik/Noriben/blob/4c84a98601fd7a9559c8b225b5968159efb7dcc0/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3 and Sysinternals procmon.exe or procmon64.exe on the Windows analysis machine; yara-python is optional for --yara scans and requests for VirusTotal lookups. Release at review: 2.1.0, published 2026-11-03, whose tag is the reviewed main commit.",
+      "The README's sandbox workflow runs a sample in a VM, copies the results off and reverts before the next sample. NoribenSandbox.py starts a predefined VM snapshot, copies in the sample, runs Noriben and retrieves a ZIP report and a screenshot; the README says this front end currently runs on macOS hosts.",
+      "With a VirusTotal API key it looks up file hashes; uploading every created file to VirusTotal happens only when virustotal_upload is set to True in Noriben.config, which defaults to False.",
+      "The 2.1.0 notes add large-scale unit testing, developed with AI assistance; the README runs tests/unit_tester.ps1 through Noriben in a Windows VM with Procmon module loads enabled.",
+      "Apache-2.0 per the README and LICENSE."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Rurik/Noriben/blob/4c84a98601fd7a9559c8b225b5968159efb7dcc0/Noriben.py#L1410-L1465",
+      "https://github.com/Rurik/Noriben/blob/4c84a98601fd7a9559c8b225b5968159efb7dcc0/Noriben.config",
+      "https://github.com/Rurik/Noriben/blob/4c84a98601fd7a9559c8b225b5968159efb7dcc0/LICENSE",
+      "https://github.com/Rurik/Noriben/releases/tag/2.1.0"
+    ]
+  },
+  {
+    "id": "qemu",
+    "name": "QEMU",
+    "url": "https://www.qemu.org/",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "firmware"
+    ],
+    "description_en": "Machine and user-space emulator that runs code built for one CPU architecture on another through its TCG dynamic translator. System emulation boots a complete emulated machine, such as an ARMv7 board on an x86_64 PC, and user-mode emulation runs Linux or BSD binaries built for another ABI by translating their system calls. For analysis, its gdbstub lets GDB stop the guest, examine registers and memory and set breakpoints and watchpoints, TCG plugins passively instrument execution down to single instructions and memory accesses (bundled examples count instructions, trace system calls and log execution), and system emulation supports deterministic record/replay debugging.",
+    "description_zh": "机器级与用户态模拟器，借助 TCG 动态翻译，在一种 CPU 架构上运行为另一种架构编译的代码。系统模拟可完整模拟一台机器，例如在 x86_64 PC 上运行 ARMv7 开发板；用户态模拟则通过转换系统调用，直接运行为其他 ABI 编译的 Linux 或 BSD 程序。在分析方面，gdbstub 允许用 GDB 暂停客户机、查看寄存器和内存、设置断点与观察点；TCG 插件能以被动方式插桩，粒度可细到单条指令和每次内存访问（自带示例可统计指令数、跟踪系统调用和记录执行过程）；系统模拟还支持确定性执行，便于录制/回放调试。",
+    "evidence_url": "https://gitlab.com/qemu-project/qemu/-/blob/f71afb409a87c4ecd0f9d63a5963eb645dfab780/README.rst",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Builds on modern Linux, macOS, Windows through the Mingw64 toolchain and other Unix hosts (mkdir build, ../configure, make). The upstream repository is gitlab.com/qemu-project/qemu; GitHub carries a read-only mirror that asks users to take release tarballs from the QEMU website. The newest tag at review was v11.1.3, on a commit dated 2026-10-28.",
+      "User-mode emulation covers only the Linux and BSD system-call interfaces and emulates no hardware, and each guest architecture supports system emulation, user mode or both. TCG plugins observe guest state without changing it, and the bundled syscall plugin works only in user mode. With KVM or Xen, the hypervisor runs the CPU while QEMU provides emulated hardware.",
+      "QEMU as a whole is released under GPL-2.0; the LICENSE file gives component details."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/qemu/qemu/blob/f71afb409a87c4ecd0f9d63a5963eb645dfab780/README.rst",
+      "https://gitlab.com/qemu-project/qemu/-/blob/f71afb409a87c4ecd0f9d63a5963eb645dfab780/docs/system/gdb.rst",
+      "https://gitlab.com/qemu-project/qemu/-/blob/f71afb409a87c4ecd0f9d63a5963eb645dfab780/docs/about/emulation.rst",
+      "https://gitlab.com/qemu-project/qemu/-/blob/f71afb409a87c4ecd0f9d63a5963eb645dfab780/docs/user/main.rst",
+      "https://gitlab.com/qemu-project/qemu/-/blob/f71afb409a87c4ecd0f9d63a5963eb645dfab780/LICENSE",
+      "https://www.qemu.org/docs/master/"
+    ]
+  },
+  {
+    "id": "hex-fiend",
+    "name": "Hex Fiend",
+    "url": "https://github.com/HexFiend/HexFiend",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Open-source macOS hex editor that inspects and edits binary files of any size without loading them into memory. It supports insertions and deletions, fast search and a data inspector that reads integers and floating-point values as signed or unsigned and big- or little-endian. File > Compare shows the differences between two files while accounting for inserted or deleted bytes, and Tcl binary templates display a file's structure next to its bytes; bundled templates cover COFF, ELF, Mach-O and MS-DOS EXE headers, 6502 disassembly and Commodore 64 PRG files, plus archives, file systems, partition tables and media formats. Its hex and data views are also available as an embeddable framework.",
+    "description_zh": "开源的 macOS 十六进制编辑器，无需把文件载入内存即可查看和编辑任意大小的二进制文件。它支持插入与删除字节和快速搜索，数据检查器可按有符号或无符号、大端或小端解读整数和浮点数。通过 File > Compare 可比较两个文件，并考虑插入或删除字节带来的偏移；用 Tcl 编写的二进制模板会在字节旁显示文件结构，自带模板涵盖 COFF、ELF、Mach-O 和 MS-DOS EXE 文件头、6502 反汇编、Commodore 64 PRG 文件，以及压缩包、文件系统、分区表和媒体格式。其十六进制视图和数据视图还以可嵌入框架的形式提供。",
+    "evidence_url": "https://github.com/HexFiend/HexFiend/blob/32cb2ef78d2ff3bc6ecf326a6b19eeebb2945c13/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "macOS 10.14.6 or later, required since v2.17. Release at review: v2.18.1, published 2025-03-16; the reviewed master commit is dated 2025-06-29. Custom templates are .tcl files in the app's Templates folder under Application Support.",
+      "Binary templates arrived in v2.9 and are written in Tcl, which ships with macOS. Since v2.17 templates can declare file types for automatic selection, but the release notes say most built-in templates do not yet set this information.",
+      "BSD-2-Clause per License.txt."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HexFiend/HexFiend/blob/32cb2ef78d2ff3bc6ecf326a6b19eeebb2945c13/templates/Tutorial.md",
+      "https://github.com/HexFiend/HexFiend/blob/32cb2ef78d2ff3bc6ecf326a6b19eeebb2945c13/templates/Reference.md",
+      "https://github.com/HexFiend/HexFiend/tree/32cb2ef78d2ff3bc6ecf326a6b19eeebb2945c13/templates",
+      "https://github.com/HexFiend/HexFiend/blob/32cb2ef78d2ff3bc6ecf326a6b19eeebb2945c13/templates/Disassembly/6502.tcl",
+      "https://github.com/HexFiend/HexFiend/blob/32cb2ef78d2ff3bc6ecf326a6b19eeebb2945c13/License.txt",
+      "https://github.com/HexFiend/HexFiend/releases/tag/v2.18.1",
+      "https://hexfiend.github.io/HexFiend/ReleaseNotes.html"
+    ]
+  },
+  {
+    "id": "scyllahide",
+    "name": "ScyllaHide",
+    "url": "https://github.com/x64dbg/ScyllaHide",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "User-mode (ring 3) anti-anti-debug library for 32- and 64-bit Windows programs that hooks system functions so the program being debugged cannot detect the debugger. Its documentation covers options for PEB debug flags such as BeingDebugged, NtGlobalFlag and heap flags, threads hidden with ThreadHideFromDebugger, debugger windows and processes found through window and process-list queries, invalid-handle NtClose checks, input blocking, timing checks, hardware-breakpoint detection and exception-based checks; extra options inject DLLs, prevent thread creation and dump processes started RunPE-style. Plugins integrate it with x64dbg, OllyDbg v1 and v2, IDA and TitanEngine, and the standalone InjectorCLI injects its hook library into a process under any debugger.",
+    "description_zh": "面向 32 位和 64 位 Windows 程序的用户态（ring 3）反反调试库，通过挂钩系统函数，让被调试程序察觉不到调试器。其文档逐项说明各个选项：处理 BeingDebugged、NtGlobalFlag 和堆标志等 PEB 调试标志，应对借助 ThreadHideFromDebugger 隐藏的线程，在窗口查询和进程列表中隐藏调试器的窗口与进程，应对以无效句柄调用 NtClose 的检测，以及输入屏蔽、计时检测、硬件断点检测和基于异常的检测；附加选项可注入 DLL、阻止创建线程，并转储以 RunPE 方式启动的进程。它以插件形式集成到 x64dbg、OllyDbg v1/v2、IDA 和 TitanEngine，也可用独立的 InjectorCLI 把钩子库注入到任意调试器下的进程。",
+    "evidence_url": "https://github.com/x64dbg/ScyllaHide/blob/baa5c8e853ace2bee752631f27fdfe5b271d92f6/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows; release at review: v1.4, published 2023-03-24, with the reviewed master commit dated 2023-07-29. Plugins cover x64dbg, OllyDbg v1 and v2, TitanEngine v2 and IDA; the README lists the IDA v6 plugin as not supported and says PE x64 debugging is fully supported with the x64dbg and IDA plugins.",
+      "It works only in user mode, and the README points to TitanHide for kernel-mode (ring 0) anti-anti-debug. Each option targets specific anti-debug checks: the documentation advises enabling the timing, hardware-breakpoint, thread-prevention and NtYieldExecution options only when needed, and using the RunPE unpacker, which terminates and dumps newly created processes, only inside a virtual machine.",
+      "GPL-3.0. The project is a fork of the original ScyllaHide repository on Bitbucket; the full manual is a PDF attached to the docs-2019-05-17 release, and its LaTeX source is in Documentation/."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/x64dbg/ScyllaHide/blob/baa5c8e853ace2bee752631f27fdfe5b271d92f6/Documentation/ScyllaHideDocumentation.tex",
+      "https://github.com/x64dbg/ScyllaHide/blob/baa5c8e853ace2bee752631f27fdfe5b271d92f6/LICENSE",
+      "https://github.com/x64dbg/ScyllaHide/releases/tag/v1.4",
+      "https://github.com/x64dbg/ScyllaHide/releases/download/docs-2019-05-17/ScyllaHide.pdf"
+    ]
   }
 ]
