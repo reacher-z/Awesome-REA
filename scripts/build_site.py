@@ -10,7 +10,6 @@ import shutil
 import tempfile
 from pathlib import Path
 from urllib.parse import urlsplit
-from xml.sax.saxutils import escape as xml_escape
 
 from asset_paths import fingerprinted_href, remove_unhashed_copies
 from build_browse_pages import build_browse_pages
@@ -24,6 +23,7 @@ from build_feed import build_feeds
 from build_discoveries import llms_section, main_feed_batches, write_discoveries
 from build_discovery_leads import llms_section as lead_llms_section, write_lead_exports
 from build_manifest import write_build_manifest
+from crawl_policy import robots_txt
 from language_fragment import add_language_fragment_script
 from data_downloads import build_data_downloads
 from open_graph import website_node
@@ -32,6 +32,7 @@ from artifact_links import with_artifact_links, with_curated_labels
 from source_browser import write_source_browser
 from localization import read_localizations, localized_records
 from source_scope import apply_scope, read_scope
+from sitemaps import SITEMAP_INDEX, page_dates, write_sitemaps
 from public_source_supplements import (PUBLISHED_FILENAME, compose_published, copy_public_evidence, json_bytes,
                                       load_supplements, project_additions, read_withdrawals,
                                       write_withdrawn_redirects)
@@ -402,12 +403,12 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     remove_unhashed_copies(output, [path.name for path in SOURCE.iterdir()])
     (output / ".nojekyll").write_text("", encoding="utf-8")
     (output / "CNAME").write_text("awesomerea.org\n", encoding="utf-8")
-    (output / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
-    # Review timestamps describe sources, not every page's modification date.
-    # Omit lastmod rather than advertising a fabricated build-time freshness signal.
+    (output / "robots.txt").write_text(robots_txt(SITE_URL, f"{SITE_URL}/{SITEMAP_INDEX}"), encoding="utf-8")
     sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", *browse_urls, *(SITE_URL + path for path in discovery_paths), *paper_urls, *survey_urls, *entry_urls]
-    sitemap_entries = [f'<url><loc>{xml_escape(url)}</loc></url>' for url in sitemap_urls]
-    (output / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(sitemap_entries) + '\n</urlset>\n', encoding="utf-8")
+    # lastmod comes from the records each page shows, never the build time (sitemaps.page_dates).
+    dates = page_dates(resources=resources, papers=papers, repository_document=browse_document,
+                       discovery_batches=(discovery_queue or {}).get("batches"), survey_date=survey_document.get("date"))
+    write_sitemaps(output, SITE_URL, [url.removeprefix(SITE_URL) for url in sitemap_urls], dates)
     build_data_downloads(output, catalog, papers,
                          (output / 'papers/references.bib').read_text(encoding='utf-8'))
     write_build_manifest(output)

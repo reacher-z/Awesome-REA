@@ -141,7 +141,9 @@ class WorkflowTest(unittest.TestCase):
         self.assertEqual(re.findall(r'^  ([a-z-]+):$', job, re.MULTILINE), ['merge'])
         permissions = re.search(r'\n    permissions:\n((?:      .*\n)+)', job)[1]
         granted = re.findall(r'^      ([a-z-]+): ([a-z]+)$', permissions, re.MULTILINE)
-        self.assertEqual(granted, [('contents', 'write'), ('pull-requests', 'write'), ('checks', 'read'), ('statuses', 'read')])
+        # actions: write only starts the IndexNow workflow for the merged commit.
+        self.assertEqual(granted, [('contents', 'write'), ('pull-requests', 'write'), ('checks', 'read'), ('statuses', 'read'),
+                                   ('actions', 'write')])
 
     def test_the_guard_runs_before_a_rebase_merge_of_the_checked_head(self):
         guard = self.text.index('python3 scripts/merge_pr.py')

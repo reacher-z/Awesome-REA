@@ -30,6 +30,8 @@ jobs:
       # Read the required checks on the pull request head.
       checks: read
       statuses: read
+      # Start the IndexNow notification for the merged commit.
+      actions: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -81,3 +83,16 @@ jobs:
               origin ":refs/heads/$ref" || echo "The branch $ref was kept: it moved after the merge or is already gone."
           fi
           echo "Merged #$PR as $(jq -r .merge_commit_sha <<<"$pull")" >> "$GITHUB_STEP_SUMMARY"
+      # Once Cloudflare Pages deploys the merged commit, IndexNow hears about the pages it changed. A failed
+      # start never fails the merge: the IndexNow schedule also notifies every deployment it has not sent.
+      - name: Start the IndexNow notification for the merged commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ inputs.pr }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          sha=$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR" --jq 'select(.merged) | .merge_commit_sha')
+          if [ -n "$sha" ]; then
+            gh workflow run indexnow.yml -R "$GITHUB_REPOSITORY" --ref "$DEFAULT_BRANCH" -f sha="$sha" \
+              || echo "::warning::The IndexNow workflow did not start; its schedule will notify these pages."
+          fi
