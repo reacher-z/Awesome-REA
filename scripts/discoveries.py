@@ -24,6 +24,8 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTORY = 'data/discoveries'
 DOCUMENTATION = frozenset({'README.md'})
+# Followed-source lead batches have their own directory and validator (scripts/discovery_leads.py).
+LEAD_DIRECTORY = 'leads'
 REPOSITORY = 'reacher-z/Awesome-REA'
 WORKFLOW_PATH = '.github/workflows/source-scan.yml'
 KIND = 'automated-discovery-batch'
@@ -156,6 +158,8 @@ def batch_files(root: Path = ROOT) -> list[Path]:
     files, unexpected = [], []
     for path in directory.iterdir():
         if path.name in DOCUMENTATION and path.is_file() and not path.is_symlink():
+            continue
+        if path.name == LEAD_DIRECTORY and path.is_dir() and not path.is_symlink():
             continue
         match = BATCH_NAME.fullmatch(path.stem) if path.suffix == '.json' else None
         if not match or not path.is_file() or path.is_symlink():

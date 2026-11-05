@@ -43,6 +43,9 @@ REVIEW_FILES = frozenset((*CURATED_INPUTS, 'data/benchmarks.json', 'data/papers.
                           *SOURCE_INPUTS, CASE_COVERAGE, *SUPPLEMENT_INPUTS, EVIDENCE_WITHDRAWALS))
 # Automated discovery batches are added one file per scan run and reviewed as data by trusted base code.
 DISCOVERY_BATCH = re.compile(r'data/discoveries/run-[1-9][0-9]{0,19}-[1-9][0-9]{0,2}\.json')
+# Followed-source lead batches: one file per lead-discovery run, in a directory per collection month.
+LEAD_BATCH = re.compile(r'data/discoveries/leads/20[0-9]{2}-(?:0[1-9]|1[0-2])/leads-[1-9][0-9]{0,19}-[1-9][0-9]{0,2}\.json')
+LEAD_REGISTRY = 'data/discovery-sources.json'
 LOCALE_FIELDS = {'description_en', 'description_zh', 'english_retains_name', 'technical_only'}
 SENSITIVE = re.compile(r'gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[A-Z0-9]{16}|-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY(?: BLOCK)?-----')
 # Personal paths: macOS/Linux homes, Windows or WSL profiles with either separator, /root, ~ and $HOME.
@@ -515,6 +518,98 @@ def review_discovery_batches(repository, sha, token, files, errors, pull=None):
     return reviewed
 
 
+def review_lead_batches(repository, sha, token, files, errors, pull=None):
+    """Check added followed-source lead batches and registry changes with base code against the base's layers.
+
+    Like README-scan batches, a lead batch is new data only and is accepted only from the lead-discovery
+    workflow, which fetched every listed source itself, in a pull request on its branch that changes nothing
+    else. Registry changes are validated with the base's registry rules.
+    """
+    import discovery_leads
+    reviewed = []
+    registry = [entry for entry in files if entry['filename'] == LEAD_REGISTRY
+                or (entry['status'] == 'renamed' and entry.get('previous_filename') == LEAD_REGISTRY)]
+    for entry in registry:
+        if entry['status'] in ('removed', 'renamed'):
+            errors.append(f'{LEAD_REGISTRY}: removing or renaming the source registry requires maintainer review.')
+            continue
+        try:
+            text = raw_text_at(repository, LEAD_REGISTRY, sha, token)
+            document = parse_json(text, LEAD_REGISTRY)
+            papers = parse_json((ROOT / 'data/papers.json').read_text(encoding='utf-8'), 'data/papers.json')
+        except InvalidJSON as error:
+            errors.append(str(error))
+            continue
+        except (OSError, UnicodeError, ValueError):
+            errors.append(f'{LEAD_REGISTRY}: could not safely retrieve the source registry for this review.')
+            continue
+        errors.extend(json_privacy_findings(LEAD_REGISTRY, text))
+        problems = discovery_leads.validate_registry(document, papers)
+        errors.extend(problems[:20])
+        if not problems:
+            reviewed.append(f"Followed-source registry checked with trusted-base code: {len(document['sources'])} sources, "
+                            'known source types, valid scope patterns and reason codes, bounded limits.')
+    entries = [entry for entry in files if LEAD_BATCH.fullmatch(entry['filename'])
+               or (entry['status'] == 'renamed' and LEAD_BATCH.fullmatch(entry.get('previous_filename', '')))]
+    if not entries:
+        return reviewed
+    user, head = (pull or {}).get('user') or {}, (pull or {}).get('head') or {}
+    if (user.get('login') != discovery_leads.INGEST_AUTHOR or user.get('type') != 'Bot'
+            or head.get('ref') != discovery_leads.INGEST_BRANCH or len(files) != len(entries)):
+        errors.append('Lead batches are added only by the followed-source discovery workflow, which fetched every listed '
+                      'source itself, in a pull request that changes nothing else; this batch needs maintainer review.')
+    added = []
+    for entry in entries:
+        if entry['status'] != 'added':
+            errors.append(f"{entry['filename']}: existing lead batches are immutable; changing, renaming or removing one requires maintainer review.")
+            continue
+        try:
+            text = raw_text_at(repository, entry['filename'], sha, token)
+        except (OSError, UnicodeError, ValueError):
+            errors.append(f"{entry['filename']}: could not safely retrieve the lead batch for this review.")
+            continue
+        errors.extend(json_privacy_findings(entry['filename'], text))
+        month, name = entry['filename'].split('/')[-2], Path(entry['filename']).stem
+        try:
+            batch = parse_json(text, entry['filename'])
+        except InvalidJSON as error:
+            errors.append(str(error))
+            continue
+        problems = discovery_leads.validate_batch(batch, name, month)
+        if not problems and text.encode('utf-8') != discovery_leads.batch_bytes(batch):
+            problems.append(f"{entry['filename']}: use the repository JSON format (two-space indent, trailing newline).")
+        errors.extend(problems[:20])
+        if not problems:
+            added.append(batch)
+    if not added:
+        return reviewed
+    try:
+        base_batches, base_problems = discovery_leads.load_batches(ROOT)
+        existing = discovery_leads.existing_keys(ROOT, base_batches)
+    except (OSError, ValueError, KeyError, TypeError):
+        errors.append('Lead batches could not be compared with the trusted base layers.')
+        return reviewed
+    errors.extend(base_problems[:5])
+    known, total, size = dict(existing['known']), existing['records'], existing['bytes']
+    for batch in added:
+        where = f"{discovery_leads.DIRECTORY}/{batch['collected_at'][:7]}/{batch['batch_id']}.json"
+        for lead in batch['leads']:
+            held = sorted(key for key in discovery_leads.lead_keys(lead) if key in known)
+            if held:
+                errors.append(f"{where}: {lead['id']} is already held by the repository ({known[held[0]]}).")
+            for key in discovery_leads.lead_keys(lead):
+                known.setdefault(key, 'already-lead')
+        total += len(batch['leads'])
+        size += len(discovery_leads.batch_bytes(batch))
+        reviewed.append(f"Lead batch {batch['batch_id']}: {len(batch['leads'])} followed-source leads from the scheduled "
+                        'discovery checked with trusted-base code for schema, pinned listing evidence, record fingerprints, '
+                        'run provenance and identities new to every base layer; they stay unreviewed.')
+    if total > discovery_leads.MAX_TOTAL_RECORDS or size > discovery_leads.MAX_TOTAL_BYTES:
+        errors.append(f'Lead batches would exceed the documented budget ({discovery_leads.MAX_TOTAL_RECORDS:,} leads, '
+                      f'{discovery_leads.MAX_TOTAL_BYTES:,} bytes).')
+    return reviewed
+
+
 def review_advisories(contents, changed):
     """Evidence-pin warnings for curated records this PR adds or changes; they never become findings."""
     if not set(CATALOGS) & changed:
@@ -680,6 +775,7 @@ def main():
             if private_text(added):
                 errors.append(f'{path}: added text contains a credential-like value or personal path; inspect locally. The value is omitted here.')
         elif (entry['status'] not in ('removed', 'unchanged') and not rule and not DISCOVERY_BATCH.fullmatch(path)
+              and not LEAD_BATCH.fullmatch(path) and path != LEAD_REGISTRY
               and not archive_change and not unknown_locale and path not in REVIEW_FILES):
             # GitHub omits the patch of binary files and very large diffs.
             omitted.append(path)
@@ -696,6 +792,7 @@ def main():
             errors.append(f'{path}: GitHub omitted this diff, and the file text at this commit contains a credential-like value or personal path; inspect locally. The value is omitted here.')
     contents = load_review_contents(repository, sha, token, files, changed, errors)
     reviewed.extend(review_discovery_batches(repository, sha, token, files, errors, pull))
+    reviewed.extend(review_lead_batches(repository, sha, token, files, errors, pull))
     try:
         findings, checked = review_data(contents, changed & REVIEW_FILES)
         errors.extend(findings)
