@@ -27433,5 +27433,159 @@
       "https://github.com/hasherezade/malware_training_vol1/tree/acf72d45009140fed514c1dfa429122f01a2f6c0/exercises",
       "https://github.com/hasherezade/malware_training_vol1/tree/acf72d45009140fed514c1dfa429122f01a2f6c0/slides"
     ]
+  },
+  {
+    "id": "ida-no-mcp",
+    "name": "IDA NO MCP",
+    "url": "https://github.com/P4nda0s/IDA-NO-MCP",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDA Pro exporter that turns an analyzed binary into plain files for AI coding tools such as Cursor or Claude Code instead of serving it over MCP. It writes each decompiled function as a .c file, or as .asm when decompilation fails, under a header listing its name, address, callers and callees, along with the string, import and export tables, 1 MB hexdump chunks of every segment and logs of fallbacks, failures and skipped library functions. It ships as an IDA plugin (Export for AI, Ctrl-Shift-E) for small and medium files and as a Rust command-line binary for large or batch exports, which can skip IDA's auto-analysis.",
+    "description_zh": "IDA Pro 导出工具，不走 MCP，而是把分析好的二进制导出为普通文件，交给 Cursor、Claude Code 等 AI 编程工具使用。它把每个反编译成功的函数写成一个 .c 文件（反编译失败时改为 .asm），文件头列出函数名、地址、调用者和被调用者；同时导出字符串表、导入表和导出表，按 1 MB 分块输出各段内存的十六进制转储，并记录回退、失败和被跳过的库函数。它提供两种形态：适合中小文件的 IDA 插件（Export for AI，快捷键 Ctrl-Shift-E），以及适合大文件或批量导出、可跳过 IDA 自动分析的 Rust 命令行程序。",
+    "evidence_url": "https://github.com/P4nda0s/IDA-NO-MCP/blob/2a48a91da706eb778761bfd47e5bb9dde8b651fb/README_EN.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The plugin, oldpython/INP.py, goes into IDA's plugins directory (%APPDATA%\\Hex-Rays\\IDA Pro\\plugins on Windows, .idapro/plugins under the home directory on Linux and macOS). The Rust binary needs a local IDA Pro 9.x, whose non-redistributable libida and libidalib libraries it links at run time, plus LLVM/Clang for bindgen; it must be built natively on each platform, with an idalib crate version that matches the IDA release, such as idalib 0.9.0 for IDA 9.3sp1.",
+      "The Chinese README says the in-IDA plugin can hang on files of 100 MB or more, which the standalone binary's --skip-analysis option avoids. The repository has no releases, and the reviewed main commit dates from 2026-07-26.",
+      "The repository has no license file and GitHub detects no license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/P4nda0s/IDA-NO-MCP/blob/2a48a91da706eb778761bfd47e5bb9dde8b651fb/README.md",
+      "https://github.com/P4nda0s/IDA-NO-MCP/tree/2a48a91da706eb778761bfd47e5bb9dde8b651fb"
+    ]
+  },
+  {
+    "id": "ida-mcp-rs",
+    "name": "ida-mcp-rs",
+    "url": "https://github.com/blacktop/ida-mcp-rs",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Headless MCP server written in Rust that drives IDA Pro through idalib, so agents such as Claude Code, Codex CLI, Gemini CLI or Cursor can open and analyze binaries without the IDA GUI. Apple targets are single tool calls, including universal Mach-O slice selection, dSYM/DWARF loading and dyld_shared_cache module loading; a 28-tool lean profile sits beside the full tool set, run_script executes IDAPython and returns JSON, and editing tools such as rename, comments, patches and type application each take exactly one address or exact symbol name. save_idb writes checkpoints, and crashed or wedged IDA workers are replaced automatically.",
+    "description_zh": "用 Rust 编写的无界面 MCP 服务器，通过 idalib 驱动 IDA Pro，让 Claude Code、Codex CLI、Gemini CLI、Cursor 等智能体无需 IDA 图形界面即可打开和分析二进制文件。针对 Apple 目标的操作只需一次工具调用，包括选择通用 Mach-O 中的架构切片、加载 dSYM/DWARF 以及从 dyld_shared_cache 加载模块；除完整工具集外还提供 28 个工具的精简配置，run_script 可执行 IDAPython 并以 JSON 返回结果；重命名、注释、补丁和类型应用等修改类工具每次只接受一个地址或精确的符号名。save_idb 可写入检查点，崩溃或卡死的 IDA 工作进程会被自动替换。",
+    "evidence_url": "https://github.com/blacktop/ida-mcp-rs/blob/7a81b9a41d3c7d7b7c62547929b8c46f38a5c54a/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs a released IDA Pro 9.5 with a valid license on the same host architecture, a Hex-Rays decompiler for the target processor for pseudocode tools and working IDAPython for run_script; IDA's first-launch setup, including license acceptance, must be completed by the user. Server versions follow IDA versions (v9.5.x for IDA 9.5, with Homebrew casks for 9.2 to 9.4), and the IDA 9.5 beta runtime is not compatible with the stable server.",
+      "Installs through Homebrew, Scoop, Nix or release archives for macOS, Linux and Windows on ARM64 and x86_64; the binary loads IDA's libida and libidalib at run time from standard install paths or IDADIR and library-path variables. Release at review: v9.5.0, published 2026-11-01 and validated with IDA 9.5.261026 on macOS, Linux and Windows ARM64.",
+      "MIT per LICENSE."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/blacktop/ida-mcp-rs/blob/7a81b9a41d3c7d7b7c62547929b8c46f38a5c54a/LICENSE",
+      "https://github.com/blacktop/ida-mcp-rs/releases/tag/v9.5.0"
+    ]
+  },
+  {
+    "id": "ida-multi-mcp",
+    "name": "ida-multi-mcp",
+    "url": "https://github.com/MeroZemory/ida-multi-mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "MCP server that lets an agent analyze several IDA Pro databases at once through one endpoint. Each database with its plugin registers itself when opened and headless idalib sessions can be added, and a router exposes up to 76 tools for triage, decompilation and disassembly, cross-references and call graphs, search, types, renaming, comments and patching, plus analysis-wait gating so agents can wait for IDA's auto-analysis to settle; its IDA tool implementations come from the ida-pro-mcp project. Function-similarity search compares functions within or across binaries using name-independent instruction MinHash, API, string and constant anchors and control-flow shape, with optional local neural recall, and nothing is uploaded.",
+    "description_zh": "让智能体通过同一个端点同时分析多个 IDA Pro 数据库的 MCP 服务器。装有其插件的数据库在打开时会自动注册，也可加入无界面的 idalib 会话；路由器最多提供 76 个工具，涵盖初步分析、反编译与反汇编、交叉引用与调用图、搜索、类型、重命名、注释和补丁，并提供等待自动分析完成的机制，让智能体在 IDA 分析稳定后再下结论；其 IDA 工具实现来自 ida-pro-mcp 项目。函数相似度搜索可在单个二进制内或跨二进制比较函数，依据不依赖函数名的指令 MinHash、API/字符串/常量锚点和控制流结构，并可选用本地神经网络召回，不会上传任何数据。",
+    "evidence_url": "https://github.com/MeroZemory/ida-multi-mcp/blob/8ff883109fc3ce614d1e59718a53b02a0634c542/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs Python 3.11 or later and IDA Pro 8.5 or later (9.1 or later recommended); IDA 9.0 SP0 (build 240925) is not supported. The package must be installed for both the terminal's Python and IDA's Python, and headless idalib sessions need IDA Pro, because IDA Home and IDA Free do not ship idalib. The repository has no releases; pyproject.toml declares version 0.1.0, and the reviewed main commit dates from 2026-09-19.",
+      "The README lists limits: the router binds to localhost only and speaks only stdio, calls to the same IDA instance still run one at a time, cancellation is not forwarded to IDA, and resources need manual routing. Renames, retypes and comments stay in memory until idb_save is called. The optional neural recall downloads its model on demand.",
+      "MIT per the README and pyproject.toml; the repository has no LICENSE file."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/MeroZemory/ida-multi-mcp/blob/8ff883109fc3ce614d1e59718a53b02a0634c542/pyproject.toml",
+      "https://github.com/MeroZemory/ida-multi-mcp/blob/8ff883109fc3ce614d1e59718a53b02a0634c542/docs/installation.md"
+    ]
+  },
+  {
+    "id": "x64dbgmcp",
+    "name": "x64dbg MCP (x64dbgMCP)",
+    "url": "https://github.com/Wasdubya/x64dbgMCP",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "MCP server that connects LLM clients to the x64dbg and x32dbg debuggers through a native plugin and a Python MCP script. It exposes more than 40 tools built on the x64dbg SDK and was tested with Claude and Cursor; agents can query registers, search byte patterns in a module and drive debugging sessions. The README advises giving the model the executable's full path so it can restart a crashed or hung target through the command-execution tool, and starting from GetModuleBase so that queries use valid addresses.",
+    "description_zh": "通过原生插件和 Python MCP 脚本把 LLM 客户端连接到 x64dbg 与 x32dbg 调试器的 MCP 服务器。它提供 40 多个基于 x64dbg SDK 的工具，已用 Claude 和 Cursor 测试；智能体可以查询寄存器、在模块中搜索字节模式并控制调试会话。README 建议把可执行文件的完整路径告诉模型，以便它在目标崩溃或卡住时通过命令执行工具重新启动，并建议从 GetModuleBase 开始，以确保查询使用有效地址。",
+    "evidence_url": "https://github.com/Wasdubya/x64dbgMCP/blob/e7474e57d34aacf533d29e5778361637afef936a/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs x64dbg: copy the .dp64 or .dp32 plugin into x64dbg's plugins folder, then register src/x64dbgmcp.py, which needs pip install mcp requests, as the MCP server in the client configuration. Building the plugins needs CMake and MSVC. Release at review: build1.1 (2026-03-15); the README recommends building from source for the latest features, and the reviewed main commit dates from 2026-06-05.",
+      "GPL-3.0 per LICENSE.txt."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Wasdubya/x64dbgMCP/tree/e7474e57d34aacf533d29e5778361637afef936a/src",
+      "https://github.com/Wasdubya/x64dbgMCP/blob/e7474e57d34aacf533d29e5778361637afef936a/LICENSE.txt",
+      "https://github.com/Wasdubya/x64dbgMCP/releases/tag/build1.1"
+    ]
+  },
+  {
+    "id": "idasql",
+    "name": "IDASQL",
+    "url": "https://github.com/allthingsida/idasql",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "SQL interface to IDA Pro databases that exposes a binary's analysis as more than 30 live virtual tables for agents and scripts. The tables cover functions, segments, names, imports, cross-references, basic blocks, instructions, strings, types, decompilation and annotations, and part of the database can be edited through them. It runs as a standalone CLI that can open raw binaries through idalib, as a plugin in IDA's command-line dropdown, as an HTTP REST or MCP server, or through a skills plugin for Claude Code, GitHub Copilot CLI and Codex, and it can work across several databases at once.",
+    "description_zh": "IDA Pro 数据库的 SQL 接口，把二进制的分析结果以 30 多张实时虚拟表的形式提供给智能体和脚本。这些表涵盖函数、段、名称、导入、交叉引用、基本块、指令、字符串、类型、反编译结果和注释，部分数据库内容也可通过它们修改。它可作为独立命令行程序运行（可借助 idalib 打开原始二进制文件），也可作为 IDA 命令行下拉菜单中的插件、HTTP REST 服务器或 MCP 服务器使用，还能通过面向 Claude Code、GitHub Copilot CLI 和 Codex 的技能插件使用，并支持同时处理多个数据库。",
+    "evidence_url": "https://github.com/allthingsida/idasql/blob/6212ece62569bcb88d9c28544e4ef71a64ed2d53/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs IDA Pro with its directory on PATH and the idasql release artifact built for the installed IDA version (ida92, ida93 or ida94); plugin binaries are SDK-version-specific. The HCLI-compatible plugin archive covers Windows x86-64, Linux x86-64 and macOS ARM64, with separate ARM64 archives for IDA 9.3 and 9.4. Building from source needs IDA SDK 9.0 or later. Release at review: v0.0.19, published 2026-10-10.",
+      "The MCP server serves SSE on a local port and is compiled in by default (-DIDASQL_WITH_MCP=ON); the agent skills live in the separate idasql-skills repository. Deep-link features need IDA 9.4.",
+      "Licensed under the Human-Origin Source License v1.0, a source-available license derived in structure from MPL 2.0 that is not OSI-approved: it allows using, building and redistributing unmodified copies, including commercially, but forbids shipping modified versions outside upstream contributions and using the code as an implementation source without the author's written permission."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/allthingsida/idasql/blob/6212ece62569bcb88d9c28544e4ef71a64ed2d53/LICENSE",
+      "https://github.com/allthingsida/idasql/releases/tag/v0.0.19"
+    ]
   }
 ]
