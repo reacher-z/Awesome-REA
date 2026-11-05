@@ -90,6 +90,16 @@ Age is the number of days from a record's `verified_at` date, converted to UTC, 
 
 The report is a planning queue, not a finding. An older review date does not show that a description is wrong or that a project is unmaintained, and the report never edits or removes a record or changes a paper's publication status. The automated index's README `observed_at` times are summarized on a separate line and are never listed as source reviews. Updating a record after a recheck is a separate reviewed change; follow the [correction steps](#submit-a-correction-or-retirement-proposal).
 
+## Merge a pull request by workflow
+
+`Merge a pull request` merges one pull request with the workflow token `GITHUB_TOKEN` and the rebase method. A rebase keeps every commit's own author and records GitHub as the committer, whereas a squash or merge commit made by a person, and a rebase merge made by a person, put that account's name on `main`; merging through the workflow keeps personal account names out of the history. Start it from the default branch with the pull request number:
+
+```sh
+gh workflow run merge-pr.yml -R reacher-z/Awesome-REA -f pr=<number>
+```
+
+Before merging, [merge_pr.py](../scripts/merge_pr.py) refuses unless the pull request targets the default branch, is open and not a draft, is mergeable (it waits up to two minutes for GitHub to compute that), has a head that contains the default branch's current commit, and has a successful `validate` and `review` check on that head: the newest commit status of that name, which dispatched automation checks report, or otherwise the newest GitHub Actions check run of that name. It also waits, up to two minutes, until GitHub reports the pull request mergeable under branch protection. The merge step then rebase-merges with `--match-head-commit`, so only the commit that was checked can land, asking twice more if GitHub refuses while still recomputing; branch protection still applies to the merge. A same-repository branch is then deleted by a push with a lease on the merged head, so a branch that received new commits after the merge is kept. Runs for one pull request are serialized; the job has `contents: write` and `pull-requests: write` to merge, read access to checks and statuses, and a 10-minute limit. Pushes made with the workflow token start no `push` workflows, so `Catalog checks` does not rerun on `main` for a merge whose head it already checked; Cloudflare Pages still deploys the new commit.
+
 ## Website delivery
 
 See [website building and publishing](website.md) for the static build and hosting setup. Production uses the public source repository while optional Font Awesome Pro assets are supplied through the licensed deployment path. Pro fonts, credentials, private configuration, raw analysis output, and deployment bundles are excluded from the public repository.
