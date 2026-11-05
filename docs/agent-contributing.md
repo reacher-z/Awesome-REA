@@ -64,6 +64,8 @@ Replace the placeholders and write `pr-body.txt` with the actual problem, resour
 
 The `validate` and `review` checks assess structure, generated output and review rules. Maintainers decide relevance and factual claims. If another catalog PR merges first, update your branch and regenerate affected files as described in [Update a pull request](../CONTRIBUTING.md#update-a-pull-request). A passing check or an AI-generated review does not mean the PR has been accepted, merged or deployed.
 
+Maintainers merge an accepted PR with the [`Merge a pull request` workflow](automation.md#merge-a-pull-request-by-workflow) (`gh workflow run merge-pr.yml -f pr=<number>`) rather than `gh pr merge`. The workflow rebase-merges with the workflow token once the PR is current and both required checks pass, so each commit keeps its own author and no personal account name is added to the history; a branch should therefore hold 1–3 clean commits.
+
 ## How should an agent cite the collection?
 
 Link to the specific resource or paper detail page, retain its upstream primary source and state the review boundary. Keep curated resources, research papers and automated scans distinct; do not sum them as unique projects or describe a scan as a recommendation. `/llms.txt` is a navigation aid; `/catalog.json`, `/papers.json` and `/data-manifest.json` provide current machine-readable data. Neither these files nor agent instructions guarantee search indexing or AI citation.

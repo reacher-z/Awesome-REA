@@ -64,6 +64,8 @@ gh pr create --repo reacher-z/Awesome-REA --base main --head YOUR_LOGIN:YOUR_BRA
 
 `validate` 与 `review` 检查结构、生成结果和审核规则；维护者判断相关性与事实声明。其他目录 PR 先合并时，按英文贡献指南的[更新 PR](../CONTRIBUTING.md#update-a-pull-request)步骤更新分支并重新生成受影响文件。检查通过或 AI 审查意见都不代表 PR 已被接收、合并或部署。
 
+维护者用 [`Merge a pull request` 工作流（英文）](automation.md#merge-a-pull-request-by-workflow)（`gh workflow run merge-pr.yml -f pr=<编号>`）而不是 `gh pr merge` 合并已接受的 PR：分支与 `main` 同步且两项必需检查都通过后，工作流用工作流令牌以 rebase 方式合并，每个提交保留原作者，历史中不会新增个人账号名；因此分支应整理为 1–3 个清晰的提交。
+
 ## Agent 应如何引用本合集？
 
 链接到具体资源或论文的详情页，保留上游一手来源并说明复核边界。区分精选资源、研究论文和自动扫描，不要将数量相加当作独立项目数，也不要把扫描说成推荐。`/llms.txt` 是导航辅助；`/catalog.json`、`/papers.json` 和 `/data-manifest.json` 提供当前机器可读数据。这些文件和 agent 指令都不保证被搜索引擎索引或 AI 引用。
