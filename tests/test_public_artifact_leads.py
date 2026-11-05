@@ -170,13 +170,15 @@ class PublicLeadTests(unittest.TestCase):
     def test_page_budget_is_shared_between_sites_and_rotates_past_first_pages(self):
         pages = [f'https://madewithrea.com/builds/p{i}' for i in range(12)] + [
                  f'https://reamcp.dev/zh-cn/cases/p{i}' for i in range(12)]
-        first = discovery.select_case_pages(pages, '2026-11-01T00:17:00Z')
-        second = discovery.select_case_pages(pages, '2026-11-01T08:17:00Z')
+        first = discovery.select_case_pages(pages, '2026-11-01T00:07:00Z')
+        second = discovery.select_case_pages(pages, '2026-11-01T02:07:00Z')
+        # Runs in the same two-hour slot, such as a manual rerun, read the same pages.
+        self.assertEqual(first, discovery.select_case_pages(pages, '2026-11-01T01:59:00Z'))
         self.assertEqual(len(first), discovery.MAX_WEB_CASES)
         self.assertEqual(sum('madewithrea.com' in url for url in first), 4)
         self.assertEqual(sum('reamcp.dev' in url for url in first), 4)
         self.assertNotEqual(set(first), set(second))
-        small = discovery.select_case_pages(pages[:1] + pages[12:], '2026-11-01T00:17:00Z')
+        small = discovery.select_case_pages(pages[:1] + pages[12:], '2026-11-01T00:07:00Z')
         self.assertEqual(len(small), discovery.MAX_WEB_CASES)
         self.assertEqual(len(set(small)), len(small))
 
@@ -258,10 +260,10 @@ class PublicLeadTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 discovery.write_report(report, Path(temporary) / 'data')
 
-    def test_workflow_is_three_daily_read_only_default_branch_and_artifact_only(self):
+    def test_workflow_is_two_hourly_read_only_default_branch_and_artifact_only(self):
         text = (ROOT / '.github/workflows/public-artifact-discovery.yml').read_text()
-        self.assertIn("cron: '17 0,8,16 * * *'", text)
-        self.assertIn('timezone: America/Los_Angeles', text)
+        self.assertIn("cron: '7 */2 * * *'", text)
+        self.assertNotIn('timezone:', text)
         self.assertIn('github.event.repository.default_branch', text)
         self.assertIn('contents: read', text); self.assertIn('discussions: read', text)
         self.assertNotIn(': write', text); self.assertNotIn('pull_request', text)

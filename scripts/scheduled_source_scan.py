@@ -41,7 +41,7 @@ MAX_TOTAL_BYTES = MAX_SCAN_BYTES + MAX_FRONTIER_BYTES + MAX_RECEIPT_BYTES
 CHUNK_BYTES = 1024 * 1024
 NEW_SUCCESSES = 2000
 GLOBAL_TARGET = 160000
-SCAN_SECONDS = 38 * 60
+SCAN_SECONDS = 24 * 60
 APPROVED_QUERIES = [*QUERY_BASES,
                     'topic:screenshot-to-code', 'topic:website-clone',
                     '"website" "reconstruction" in:description', '"pixel-perfect" "clone" in:description',
