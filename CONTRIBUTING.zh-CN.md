@@ -101,7 +101,7 @@ python3 -m unittest discover -s tests -v
 
 ## 审核与发布
 
-Pull request 会收到由基础分支可信代码执行的[规则审核（英文）](docs/automation.md)，检查目录结构、重复项、来源字段和常见隐私问题，不运行贡献者的代码。资源是否相关、说法是否属实由维护者审核；自动检查通过不代表自动批准或合并。唯一的例外是定时的[发现入库](docs/automation.md#automated-discovery-ingest)：它只向 [data/discoveries/](data/discoveries/README.md) 添加未审核的扫描记录，并自行合并这类 pull request。
+Pull request 会收到由基础分支可信代码执行的[规则审核（英文）](docs/automation.md)，检查目录结构、重复项、来源字段和常见隐私问题，不运行贡献者的代码。单元测试和生产构建还会运行隐私检查 [privacy_guard.py](scripts/privacy_guard.py)：若跟踪文件或构建出的网站出现维护者要求不再收录的人名或个人链接，检查即失败。脚本只保存这些名字的加盐摘要，失败时只报告文件和行号、不显示原文；请直接删除匹配内容，不要在 issue 或 pull request 中引用。资源是否相关、说法是否属实由维护者审核；自动检查通过不代表自动批准或合并。唯一的例外是定时的[发现入库](docs/automation.md#automated-discovery-ingest)：它只向 [data/discoveries/](data/discoveries/README.md) 添加未审核的扫描记录，并自行合并这类 pull request。
 
 `review` 使用 `main` 上的验证器，而不是你分支中的验证器。如果一个 PR 既新增字段、取值（如分类或关系）、出版方身份规则或其他验证规则，又加入依赖它的数据，那么在验证器修改进入 `main` 之前，`review` 会一直失败，即使运行分支代码的 `validate` 已经通过。请先提交代码修改，合并后再另开 PR 提交依赖它的数据。例如 [#212](https://github.com/reacher-z/Awesome-REA/pull/212) 先加入 WOOT 19 出版方身份规则，[#215](https://github.com/reacher-z/Awesome-REA/pull/215) 随后加入使用该规则的论文；[#228](https://github.com/reacher-z/Awesome-REA/pull/228) 引入可选的论文 `citation` 字段之后，[#234](https://github.com/reacher-z/Awesome-REA/pull/234) 才为论文填写该字段。
 

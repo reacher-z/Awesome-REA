@@ -22,6 +22,8 @@ def main():
     commands.append(build)
     commands.append([sys.executable, 'scripts/validate_discovery.py'])
     commands.append([sys.executable, 'scripts/validate_site.py'])
+    # Tracked files and the finished dist/ must not name or link the people the maintainer asked to keep out.
+    commands.append([sys.executable, 'scripts/privacy_guard.py'])
     for command in commands:
         result = subprocess.run(command, cwd=ROOT, check=False)
         if result.returncode:

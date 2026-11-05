@@ -7,7 +7,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_paper_pages import bibtex_text
+from build_paper_pages import AUTHORS_OMITTED, bibtex_text
 from validate import public_https_error
 from validate_papers import validate_papers
 
@@ -229,8 +229,10 @@ class ArxivLocatorTests(unittest.TestCase):
             with self.subTest(paper=identifier):
                 entry = fields(bibtex_text(record))
                 self.assertEqual(entry['howpublished'], '{arXiv:' + record['arxiv_id'] + '}')
+                # A record without its author list adds the pointer to the paper to the same note.
+                note = 'Preprint' + ('. ' + AUTHORS_OMITTED[0] if record.get('authors_omitted') else '')
                 self.assertEqual((entry['note'], entry['eprint'], entry['archivePrefix']),
-                                 ('{Preprint}', '{' + record['arxiv_id'] + '}', '{arXiv}'))
+                                 ('{' + note + '}', '{' + record['arxiv_id'] + '}', '{arXiv}'))
 
     def test_accepted_papers_read_as_accepted_without_review_wording(self):
         entry = bibtex_text(paper('conference-accepted', venue='NeurIPS 2026', publication_date=None, date_precision='year'))

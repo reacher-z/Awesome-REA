@@ -9271,28 +9271,7 @@
     "code_url": "https://github.com/TIGER-AI-Lab/StructEval",
     "project_url": "https://tiger-ai-lab.github.io/StructEval/",
     "title": "StructEval: Benchmarking LLMs' Capabilities to Generate Structural Outputs",
-    "authors": [
-      "Jialin Yang",
-      "Dongfu Jiang",
-      "Lipeng He",
-      "Sherman Siu",
-      "Yuxuan Zhang",
-      "Disen Liao",
-      "Zhuofeng Li",
-      "Huaye Zeng",
-      "Yiming Jia",
-      "Haozhe Wang",
-      "Benjamin Schneider",
-      "Chi Ruan",
-      "Wentao Ma",
-      "Zhiheng Lyu",
-      "Yifei Wang",
-      "Yi Lu",
-      "Quy Duc Do",
-      "Ziyan Jiang",
-      "Ping Nie",
-      "Wenhu Chen"
-    ],
+    "authors": [],
     "year": 2025,
     "publication_date": "2025-05-26",
     "date_precision": "day",
@@ -9320,7 +9299,8 @@
     "verified_at": "2026-10-20",
     "added_at": "2026-11-01",
     "verification": "source-reviewed",
-    "runtime_tested": false
+    "runtime_tested": false,
+    "authors_omitted": true
   },
   {
     "id": "paper-webworld-browser-feedback",
@@ -9334,18 +9314,7 @@
     "code_url": null,
     "project_url": null,
     "title": "WebWorld: The Browser as a World Model for Self-Improving Web Code",
-    "authors": [
-      "Jiajun Wu",
-      "Jian Yang",
-      "Yaxin Du",
-      "Wei Zhang",
-      "Haowen Wang",
-      "Junhang Cheng",
-      "Yuxuan Zhang",
-      "Tuney Zheng",
-      "Xianglong Liu",
-      "Ming Zhou"
-    ],
+    "authors": [],
     "year": 2026,
     "publication_date": "2026-08-31",
     "date_precision": "day",
@@ -9371,7 +9340,8 @@
     "verified_at": "2026-10-20",
     "added_at": "2026-11-01",
     "verification": "source-reviewed",
-    "runtime_tested": false
+    "runtime_tested": false,
+    "authors_omitted": true
   },
   {
     "id": "paper-ctf-dojo",

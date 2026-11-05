@@ -33,11 +33,11 @@ class LedgerReferenceTests(unittest.TestCase):
     def test_both_ledger_fields_get_entry_and_field_references(self):
         references, _ = check_links.ledger_sources(ledger(
             entry('song:a', 'Reviewed.', reported=[GONE_POST], primary=[GONE_POST, FORK]),
-            entry('hao-games:row-001', 'Reviewed.', primary=[FORK])))
+            entry('games:row-001', 'Reviewed.', primary=[FORK])))
         self.assertEqual(references[GONE_POST], ['ledger:song:a:reported_source_urls',
                                                  'ledger:song:a:primary_evidence_urls'])
         self.assertEqual(references[FORK], ['ledger:song:a:primary_evidence_urls',
-                                            'ledger:hao-games:row-001:primary_evidence_urls'])
+                                            'ledger:games:row-001:primary_evidence_urls'])
 
     def test_source_urls_add_ledger_references_to_the_catalog_set(self):
         coverage = read_case_coverage(ROOT)
