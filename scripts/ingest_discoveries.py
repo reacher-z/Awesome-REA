@@ -6,7 +6,7 @@ the working tree. ``run`` is the scheduled-workflow path. It restores and valida
 checkpoint artifact with the scanner's own checks, prepares the batch on the current default branch,
 runs the repository validators, commits only ``data/discoveries/<batch>.json`` to the
 ``automation/discovery-ingest`` branch through the Git data API, opens or updates the pull request,
-dispatches the required ``validate`` and ``review`` checks, and squash-merges once both pass on the
+dispatches the required ``validate`` and ``review`` checks, and rebase-merges once both pass on the
 head commit. If the default branch moves first, it rebuilds the batch on the new commit and repeats,
 up to a bounded number of attempts. It never changes any other file, curated record or scan record.
 """
@@ -239,7 +239,7 @@ def pull_request_body(count: int, source: dict, batch_path: Path, attempt: int) 
         '- [x] `python3 scripts/validate.py` and `python3 scripts/discoveries.py` on the default branch plus this batch, before committing.',
         '- [x] The required `validate` and `review` checks are dispatched on this head commit; the ingest merges only after both pass.',
         '',
-        f'Ingest attempt {attempt} of {MAX_ATTEMPTS}. This pull request is opened, checked and squash-merged by the '
+        f'Ingest attempt {attempt} of {MAX_ATTEMPTS}. This pull request is opened, checked and rebase-merged by the '
         '`Scheduled README discovery` workflow under the repository\'s automated discovery path (docs/automation.md).',
     ])
 
@@ -322,12 +322,13 @@ def wait_until_mergeable(github: GitHub, number: int, sha: str, default_branch: 
 
 def merge(github: GitHub, number: int, sha: str, title: str, default_branch: str | None = None,
           base_sha: str | None = None) -> str:
-    """Squash-merge exactly ``sha``. A refusal while the branch is still current is retried a few times."""
+    """Rebase-merge exactly ``sha``, keeping its one commit and its fixed message; a refusal while the branch
+    is still current is retried a few times. Rebase, never squash or a merge commit: those are authored by the
+    merging account, while a rebase keeps the commit's own author, here the workflow's bot."""
     for request in range(1, MERGE_REQUESTS + 1):
         try:
             _, value = github.call('PUT', f'pulls/{number}/merge', {
-                'merge_method': 'squash', 'sha': sha, 'commit_title': f'{title} (#{number})',
-                'commit_message': 'Automated discovery ingest; the records stay unreviewed automated README scans.'})
+                'merge_method': 'rebase', 'sha': sha})
             return value['sha']
         except ApiError as error:
             if error.status not in (405, 409):
