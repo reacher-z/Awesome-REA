@@ -263,6 +263,11 @@ def build_browse_pages(
             if published:
                 evidence_links = ' · '.join(
                     f'<a href="{escape(entry["archive_url"], quote=True)}">{("原始公开采集证据" if zh else "Original public capture evidence")} {entry["run"]["id"]}</a>'
+                    if not entry.get('archive_withdrawal') else
+                    # A withdrawn archive links to its entry on /about/, which gives the date and reason.
+                    f'<a href="{"/zh" if zh else ""}/about/#scan-evidence-{entry["run"]["id"]}-{entry["run"]["run_attempt"]}">'
+                    + (f'原始公开采集证据 {entry["run"]["id"]}（已撤回）' if zh
+                       else f'Original public capture evidence {entry["run"]["id"]} (withdrawn)') + '</a>'
                     for entry in source_document['meta']['capture_sources'])
                 document = document.replace('</details>', '<p>' + evidence_links + '</p></details>', 1)
             rendered[path.lstrip('/') + 'index.html'] = document

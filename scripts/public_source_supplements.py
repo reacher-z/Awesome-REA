@@ -2,6 +2,9 @@
 
 Evidence is an explicitly registered public Actions archive, never an arbitrary
 scan directory. Held selections are validated but do not enter published output.
+An archive withdrawn at the maintainer's request is listed in data/source-evidence/withdrawn.json
+with its run, digest and size: the batches citing it keep their exact records and fingerprints,
+but their membership in the archive can no longer be re-checked, and nothing is published for it.
 """
 from __future__ import annotations
 
@@ -14,7 +17,7 @@ from pathlib import Path
 import re
 import sys
 import tempfile
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 import zipfile
 
 from localization import localized_records, validate_localizations
@@ -48,6 +51,11 @@ SOURCE_FIELDS = {'repository', 'workflow_path', 'run', 'artifact', 'archive_file
 RUN_FIELDS = {'id', 'run_attempt', 'workflow_id', 'head_sha', 'event', 'head_branch',
               'path', 'status', 'conclusion', 'head_repository'}
 ARTIFACT_FIELDS = {'id', 'name', 'size_in_bytes', 'digest', 'workflow_run_id'}
+EVIDENCE_DIRECTORY = 'data/source-evidence'
+WITHDRAWALS = 'withdrawn.json'
+WITHDRAWAL_FIELDS = {'archive_filename', 'artifact_digest', 'run_id', 'run_attempt', 'size_in_bytes',
+                     'batch_selection_sha256', 'withdrawn_at', 'reason', 'reason_zh'}
+ARCHIVE_NAME = re.compile(r'run-([1-9][0-9]*)-attempt-([1-9][0-9]*)-([0-9a-f]{12})\.zip')
 BATCH_FIELDS = {'schema_version', 'batch_id', 'publication_status', 'reviewed_at',
                 'baseline_sha256', 'source', 'selection', 'resources'}
 SELECTION_FIELDS = {'policy', 'selected_ids', 'record_sha256', 'selected_count'}
@@ -225,10 +233,92 @@ def check_source(source):
         raise ValueError('Unapproved public evidence descriptor')
 
 
+def parse_withdrawals(raw, root=None, *, today=None):
+    """Withdrawn evidence archives by filename. Each entry names its run archive by run, attempt and digest,
+    keeps its size, the selection digest of every batch that cites it (`batch_selection_sha256`, which fixes those
+    batches' records once the archive can no longer vouch for them), a UTC withdrawal date and a one-line reason in
+    English and Chinese. With `root`, a withdrawn archive must no longer be in that repository."""
+    document = strict_json(raw)
+    exact_keys(document, {'schema_version', 'withdrawn'}, 'Withdrawn evidence registry')
+    if (type(document['schema_version']) is not int or document['schema_version'] != 1
+            or not isinstance(document['withdrawn'], list) or not document['withdrawn']):
+        raise ValueError('Invalid withdrawn evidence registry')
+    latest = (today or datetime.now(timezone.utc).date()) + timedelta(days=1)
+    result = {}
+    for entry in document['withdrawn']:
+        exact_keys(entry, WITHDRAWAL_FIELDS, 'Withdrawn evidence')
+        name = entry['archive_filename']
+        match = ARCHIVE_NAME.fullmatch(name) if isinstance(name, str) else None
+        if (not match or name in result or not isinstance(entry['artifact_digest'], str)
+                or not re.fullmatch(r'sha256:[0-9a-f]{64}', entry['artifact_digest'])
+                or entry['artifact_digest'][7:19] != match[3]
+                or not positive(entry['run_id']) or str(entry['run_id']) != match[1]
+                or not positive(entry['run_attempt']) or str(entry['run_attempt']) != match[2]
+                or not positive(entry['size_in_bytes'])):
+            raise ValueError('Withdrawn evidence must name a run archive by its run, attempt and digest')
+        selections = entry['batch_selection_sha256']
+        if (not isinstance(selections, dict)
+                or any(not isinstance(key, str) or not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', key)
+                       or not fingerprint(value) for key, value in selections.items())):
+            raise ValueError('Withdrawn evidence must fix the selection digest of each batch that cites it')
+        withdrawn_at = entry['withdrawn_at']
+        try:
+            day = date.fromisoformat(withdrawn_at) if isinstance(withdrawn_at, str) else None
+        except ValueError:
+            day = None
+        if not day or not re.fullmatch(r'\d{4}-\d{2}-\d{2}', withdrawn_at) or day > latest:
+            raise ValueError('Withdrawn evidence needs a YYYY-MM-DD date no later than the next UTC day')
+        for field in ('reason', 'reason_zh'):
+            text = entry[field]
+            if (not isinstance(text, str) or not text.strip() or text != text.strip()
+                    or len(text) > 200 or '\n' in text):
+                raise ValueError('Withdrawn evidence needs a one-line reason in both languages')
+        if not re.search(r'[\u4e00-\u9fff]', entry['reason_zh']):
+            raise ValueError('The Chinese withdrawal reason needs Chinese text')
+        if root is not None and owned_file(root, EVIDENCE_DIRECTORY, name).exists():
+            raise ValueError('A withdrawn evidence archive must not remain in the repository')
+        result[name] = entry
+    if private_json_locations(document):
+        raise ValueError('Withdrawn evidence registry failed privacy checks')
+    return result
+
+
+def cited_selections(root=ROOT):
+    """{archive filename: {batch ID: selection digest}} for every registered batch of this checkout."""
+    if not owned_file(root, 'data/source-supplements', 'index.json').exists():
+        return {}
+    index = strict_json(bounded_bytes(owned_file(root, 'data/source-supplements', 'index.json')))
+    result = {}
+    for name in index['batches']:
+        batch = strict_json(bounded_bytes(owned_file(root, 'data/source-supplements', name + '.json')))
+        result.setdefault(batch['source']['archive_filename'], {})[name] = digest(batch['selection'])
+    return result
+
+
+def read_withdrawals(root=ROOT):
+    """The withdrawn evidence registry of this checkout, or {} when it has none."""
+    path = owned_file(root, EVIDENCE_DIRECTORY, WITHDRAWALS)
+    return parse_withdrawals(bounded_bytes(path, 1024 * 1024), root) if path.exists() else {}
+
+
+def withdrawal_for(source, withdrawals):
+    """The withdrawal entry for this source's archive, or None; an entry must match its source exactly."""
+    entry = withdrawals.get(source['archive_filename'])
+    if entry is not None and (entry['artifact_digest'] != source['artifact']['digest']
+                              or entry['run_id'] != source['run']['id']
+                              or entry['run_attempt'] != source['run']['run_attempt']
+                              or entry['size_in_bytes'] != source['artifact']['size_in_bytes']):
+        raise ValueError('Withdrawn evidence differs from the source descriptor that cites it')
+    return entry
+
+
 def load_evidence(root, source):
-    """Recheck every member, including unselected rows and the complete frontier."""
+    """Recheck every member, including unselected rows and the complete frontier. A withdrawn archive has no
+    evidence left to check: the result is None."""
     from scheduled_source_scan import unpack_checkpoint, integrity_counts, known_ids
     check_source(source)
+    if withdrawal_for(source, read_withdrawals(root)):
+        return None
     archive = owned_file(root, 'data/source-evidence', source['archive_filename'])
     raw = bounded_bytes(archive, MAX_ARCHIVE_BYTES)
     if (len(raw) != source['artifact']['size_in_bytes'] or len(raw) > MAX_ARCHIVE_BYTES
@@ -280,20 +370,24 @@ def validate_batch(batch, baseline, baseline_sha, evidence):
             or not isinstance(selection['selected_ids'], list)
             or not isinstance(selection['record_sha256'], dict)):
         raise ValueError('Invalid public selection policy or counts')
-    originals = {row['id']: row for row in evidence['resources']}
     existing = {row['id']: row for row in baseline['resources']}
-    if any(originals.get(identifier) != row for identifier, row in existing.items()):
-        raise ValueError('Public evidence does not preserve the canonical baseline objects')
-    original_failures = {row['id']: row for row in evidence['failures']}
-    if any(original_failures.get(row['id']) != row for row in baseline['failures']):
-        raise ValueError('Public evidence does not preserve the canonical baseline failures')
+    # Without evidence (a withdrawn archive) the records are still checked against their own fingerprints,
+    # IDs, qualification and names; only their membership in the archive cannot be re-checked.
+    originals = None
+    if evidence is not None:
+        originals = {row['id']: row for row in evidence['resources']}
+        if any(originals.get(identifier) != row for identifier, row in existing.items()):
+            raise ValueError('Public evidence does not preserve the canonical baseline objects')
+        original_failures = {row['id']: row for row in evidence['failures']}
+        if any(original_failures.get(row['id']) != row for row in baseline['failures']):
+            raise ValueError('Public evidence does not preserve the canonical baseline failures')
     attempted = set(existing) | {row['id'] for row in baseline['failures']}
     identifiers, names = [], {row['full_name'].casefold(): row['id'] for row in baseline['resources'] + baseline['failures']}
     for record in records:
         identifier = record.get('id') if isinstance(record, dict) else None
         if (not isinstance(identifier, str) or not re.fullmatch(r'scan-[1-9][0-9]*', identifier)
                 or identifier in identifiers or identifier in attempted
-                or originals.get(identifier) != record):
+                or (originals is not None and originals.get(identifier) != record)):
             raise ValueError('Selection must contain distinct new exact source capture objects')
         if (record.get('readme_git_sha_matches_content') is not True
                 or record.get('readme_git_sha') != record.get('readme_content_git_sha')
@@ -347,7 +441,7 @@ def project_additions(supplements):
 def load_supplements(root=ROOT):
     root = Path(root)
     registry = root / 'data/source-supplements/index.json'
-    empty = {'ready': [], 'held': [], 'records': [], 'locales': {}, 'scope': {}, 'evidence': [],
+    empty = {'ready': [], 'held': [], 'records': [], 'locales': {}, 'scope': {}, 'evidence': [], 'withdrawals': {},
              'baseline_sha256': None, 'baseline_capture': None, 'baseline_context': []}
     if not registry.exists():
         return empty
@@ -374,6 +468,7 @@ def load_supplements(root=ROOT):
     seen = {row['id'] for row in baseline['resources'] + baseline['failures']}
     names = {row['full_name'].casefold(): row['id'] for row in baseline['resources'] + baseline['failures']}
     evidence_cache = {}
+    withdrawals = read_withdrawals(root)
     for name in index['batches']:
         batch = strict_json(bounded_bytes(owned_file(root, 'data/source-supplements', name + '.json')))
         if batch.get('batch_id') != name:
@@ -382,6 +477,10 @@ def load_supplements(root=ROOT):
         key = digest(batch['source'])
         if key not in evidence_cache:
             evidence_cache[key] = load_evidence(root, batch['source'])
+        withdrawal = withdrawal_for(batch['source'], withdrawals)
+        if withdrawal and withdrawal['batch_selection_sha256'].get(name) != digest(batch['selection']):
+            # Without the archive, the registry's selection digest is what keeps these records fixed.
+            raise ValueError('A batch citing withdrawn evidence must keep the selection it had when withdrawn')
         validate_batch(batch, baseline, baseline_sha, evidence_cache[key])
         for row in batch['resources']:
             if row['id'] in seen or (row['full_name'].casefold() in names
@@ -415,6 +514,8 @@ def load_supplements(root=ROOT):
         result['locales'].update(locales)
         result['scope'].update(scope)
     result['evidence'] = list({digest(b['source']): b['source'] for b in result['ready']}.values())
+    result['withdrawals'] = {source['archive_filename']: withdrawal_for(source, withdrawals)
+                             for source in result['evidence'] if withdrawal_for(source, withdrawals)}
     return result
 
 
@@ -430,6 +531,8 @@ def prepare_batch(root, batch_id, source, identifiers):
     if baseline['meta']['status'] != 'complete':
         raise ValueError('The canonical publication baseline must remain complete')
     evidence = load_evidence(root, source)
+    if evidence is None:
+        raise ValueError('Withdrawn evidence cannot back a new selection')
     rows = {row['id']: row for row in evidence['resources']}
     if any(identifier not in rows for identifier in identifiers):
         raise ValueError('Selected ID is not a successful record in the public evidence')
@@ -447,10 +550,15 @@ def prepare_batch(root, batch_id, source, identifiers):
     return batch
 
 
-def source_descriptor(source):
-    """Only the public allowlisted proof is published, never local verifier paths."""
-    return {**source, 'run_url': f'https://github.com/{REPOSITORY}/actions/runs/{source["run"]["id"]}',
-            'archive_url': '/evidence/source-scans/' + source['archive_filename']}
+def source_descriptor(source, withdrawal=None):
+    """Only the public allowlisted proof is published, never local verifier paths. A withdrawn archive keeps its
+    digests and run here, with its withdrawal date and reason instead of a download URL."""
+    descriptor = {**source, 'run_url': f'https://github.com/{REPOSITORY}/actions/runs/{source["run"]["id"]}',
+                  'archive_url': '/evidence/source-scans/' + source['archive_filename']}
+    if withdrawal is not None:
+        descriptor.update(archive_url=None, archive_withdrawal={
+            field: withdrawal[field] for field in ('withdrawn_at', 'reason', 'reason_zh')})
+    return descriptor
 
 
 def compose_published(canonical_export, canonical_input_sha, supplements, rendered_additions):
@@ -503,7 +611,8 @@ def compose_published(canonical_export, canonical_input_sha, supplements, render
             'canonical_export_sha256': hashlib.sha256(canonical_export).hexdigest(),
             'canonical_input_sha256': canonical_input_sha,
             'canonical_capture': capture,
-            'capture_sources': [source_descriptor(source) for source in supplements['evidence']],
+            'capture_sources': [source_descriptor(source, supplements['withdrawals'].get(source['archive_filename']))
+                                for source in supplements['evidence']],
             'selections': [{'batch_id': b['batch_id'], 'selected_count': len(b['resources']),
                             'checkpoint_sha256': b['source']['files']['checkpoint.json']['sha256'],
                             'selection_sha256': digest(b['selection'])} for b in supplements['ready']],
@@ -540,10 +649,14 @@ def validate_published_document(document):
         raise ValueError('Published selection needs source proofs, selections and records')
     sources = set()
     for entry in meta['capture_sources']:
-        exact_keys(entry, SOURCE_FIELDS | {'run_url', 'archive_url'}, 'Published source')
+        withdrawal = entry.get('archive_withdrawal') if isinstance(entry, dict) else None
+        exact_keys(entry, SOURCE_FIELDS | {'run_url', 'archive_url'} | ({'archive_withdrawal'} if withdrawal is not None else set()),
+                   'Published source')
+        if withdrawal is not None:
+            exact_keys(withdrawal, {'withdrawn_at', 'reason', 'reason_zh'}, 'Published withdrawal')
         original = {key: entry[key] for key in SOURCE_FIELDS}
         check_source(original)
-        if source_descriptor(original) != entry:
+        if source_descriptor(original, withdrawal) != entry:
             raise ValueError('Published source URLs differ from the closed public routes')
         key = entry['files']['checkpoint.json']['sha256']
         if key in sources:
@@ -592,8 +705,11 @@ def validate_published_document(document):
 
 
 def copy_public_evidence(root, output, supplements):
-    """Copy only each explicitly admitted archive; never walk an artifact folder."""
+    """Copy only each explicitly admitted archive; never walk an artifact folder. A withdrawn archive is not
+    copied (see write_withdrawn_redirects)."""
     for source in supplements['evidence']:
+        if source['archive_filename'] in supplements['withdrawals']:
+            continue
         original = owned_file(root, 'data/source-evidence', source['archive_filename'])
         raw = bounded_bytes(original, MAX_ARCHIVE_BYTES)
         if 'sha256:' + hashlib.sha256(raw).hexdigest() != source['artifact']['digest']:
@@ -601,6 +717,34 @@ def copy_public_evidence(root, output, supplements):
         destination = Path(output) / 'evidence/source-scans' / source['archive_filename']
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_bytes(raw)
+
+
+def withdrawn_listing(run_id, run_attempt):
+    """Where /about/ lists the withdrawn archive of this run attempt."""
+    return f'/about/#scan-evidence-{run_id}-{run_attempt}'
+
+
+def withdrawn_redirect_rules(withdrawals, *, published):
+    """Cloudflare Pages redirect rules for every withdrawn archive, whatever the state of the batches citing it:
+    its old address goes to its /about/ listing, and with no archive left to serve, so does the directory."""
+    lines = ["# Scan evidence withdrawn at the maintainer's request: listed on /about/, not served."]
+    lines += [f'/evidence/source-scans/{name} {withdrawn_listing(entry["run_id"], entry["run_attempt"])} 301'
+              for name, entry in sorted(withdrawals.items())]
+    if not published:
+        lines += ['/evidence/source-scans/ /about/#about-links-download 301',
+                  '/evidence/source-scans /about/#about-links-download 301']
+    return '\n'.join(lines) + '\n'
+
+
+def write_withdrawn_redirects(output, withdrawals):
+    """Append the withdrawn-evidence redirect rules to the built _redirects."""
+    if not withdrawals:
+        return
+    path = Path(output) / '_redirects'
+    existing = path.read_text(encoding='utf-8') if path.exists() else ''
+    separator = '\n' if existing and not existing.endswith('\n') else ''
+    published = (Path(output) / 'evidence/source-scans').is_dir()
+    path.write_text(existing + separator + withdrawn_redirect_rules(withdrawals, published=published), encoding='utf-8')
 
 
 def main():

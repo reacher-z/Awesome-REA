@@ -215,7 +215,9 @@ those missing translations, do not enter the published selection.
 
 The [registered evidence archive](../data/source-evidence/README.md) is retained
 exactly, with every JSON member checked before an explicit provenance download
-is copied into the site. This is not an import of the private capture campaign
+is copied into the site. An archive withdrawn at the maintainer's request is
+deleted and recorded by run, digest and size in `withdrawn.json`; its batches
+stay published from their exact records, and `/about/` lists it as withdrawn. This is not an import of the private capture campaign
 or an automatic promotion of every row in the cloud checkpoint. Curated
 resources and their machine-data bundle remain separate.
 

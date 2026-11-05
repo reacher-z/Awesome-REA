@@ -22,8 +22,8 @@ from source_descriptions import description_fallback
 from localization import localized_records, read_localizations
 from source_scope import apply_scope, read_scope
 from source_browser import BROWSER_FILENAME, FULL_EXPORT_FILENAME, validate_source_browser
-from public_source_supplements import (PUBLISHED_FILENAME, compose_published, json_bytes,
-                                      load_supplements, owned_file, bounded_bytes, project_additions)
+from public_source_supplements import (PUBLISHED_FILENAME, compose_published, json_bytes, load_supplements,
+                                      owned_file, bounded_bytes, project_additions, read_withdrawals)
 from validate_discovery import expected_entry_routes, validate_route_inventory
 from build_readme import (CATEGORIES, METHOD_SECTIONS, PAPER_SECTIONS, REQUIREMENTS_LABEL, case_method,
                           collection_section, method_groups, paper_section)
@@ -831,11 +831,24 @@ def validate_artifact_links(output, pages):
         assert publication_path.read_bytes() == json_bytes(publication), 'Published selection lost source membership or provenance'
         for source in supplements['evidence']:
             archive = Path(output) / 'evidence/source-scans' / source['archive_filename']
+            if source['archive_filename'] in supplements['withdrawals']:
+                continue  # Checked with every other withdrawn archive below.
+
             original_archive = owned_file(ROOT, 'data/source-evidence', source['archive_filename'])
             assert archive.read_bytes() == bounded_bytes(original_archive), 'Published evidence archive bytes changed'
         expected = publication['resources']
     else:
         assert not publication_path.exists(), 'Held selections must not appear in a published export'
+    # Every withdrawn archive, whatever its batches' state: not published, redirected, and listed on /about/.
+    redirects = (Path(output) / '_redirects').read_text(encoding='utf-8').splitlines()
+    for name, entry in read_withdrawals(ROOT).items():
+        assert not (Path(output) / 'evidence/source-scans' / name).exists(), 'A withdrawn evidence archive was published'
+        anchor = f'scan-evidence-{entry["run_id"]}-{entry["run_attempt"]}'
+        assert f'/evidence/source-scans/{name} /about/#{anchor} 301' in redirects, \
+            'The old address of withdrawn evidence must redirect to its /about/ listing'
+        for about in ('about/index.html', 'zh/about/index.html'):
+            page = (Path(output) / about).read_text(encoding='utf-8')
+            assert f'id="{anchor}"' in page, f'/{about} does not list withdrawn evidence'
     visible = [record for record in expected if record.get('scope_status') != 'excluded']
     normalize = lambda text: ' '.join(text.split())
     for language in ('en', 'zh'):

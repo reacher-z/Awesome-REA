@@ -31,8 +31,9 @@ from artifact_links import with_artifact_links, with_curated_labels
 from source_browser import write_source_browser
 from localization import read_localizations, localized_records
 from source_scope import apply_scope, read_scope
-from public_source_supplements import (PUBLISHED_FILENAME, compose_published,
-                                      copy_public_evidence, json_bytes, load_supplements, project_additions)
+from public_source_supplements import (PUBLISHED_FILENAME, compose_published, copy_public_evidence, json_bytes,
+                                      load_supplements, project_additions, read_withdrawals,
+                                      write_withdrawn_redirects)
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "site"
@@ -350,7 +351,11 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
         data_revision=data_revision, icon_stylesheet_href=icon_stylesheet,
     )
-    discovery_paths = build_discovery_pages(output, catalog, browse_document)
+    # Withdrawn evidence archives come from their registry, whatever the state of the batches citing them:
+    # /about/ lists each one, and its old address redirects there.
+    withdrawals = read_withdrawals(ROOT)
+    write_withdrawn_redirects(output, withdrawals)
+    discovery_paths = build_discovery_pages(output, catalog, browse_document, withdrawals=withdrawals)
     # The unreviewed discovery queue: its own list pages, feeds and JSON, never curated pages or counts.
     queue_paths, discovery_queue = write_discoveries(output, catalog, papers, browse_document)
     discovery_paths = [*discovery_paths, *queue_paths]
