@@ -26605,5 +26605,361 @@
       "https://github.com/mandiant/flare-emu/blob/6688c3270d9847c1b96ffcae00f58c0c85ab1a7e/LICENSE-APACHE.TXT",
       "https://github.com/mandiant/flare-emu/releases/tag/2025-08-14"
     ]
+  },
+  {
+    "id": "ida-pro",
+    "name": "IDA Pro",
+    "url": "https://hex-rays.com/ida-pro",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app",
+      "firmware",
+      "game"
+    ],
+    "description_en": "Hex-Rays' commercial interactive disassembler, decompiler and debugger, which turns compiled code for more than 70 processor families into annotated, cross-referenced assembly and decompiled pseudocode. Its 15 decompilers cover 32- and 64-bit x86, ARM, MIPS, PowerPC and RISC-V as well as ARC, V850, TriCore, Hexagon and Android DEX; the Dalvik decompiler, new in IDA 9.5 alongside TriCore and Hexagon, renders DEX bytecode as Java pseudocode. Documented loaders include PE, ELF and Mach-O with Apple dyld shared caches and kernelcaches, DEX, UEFI firmware images, WebAssembly modules and console formats such as Xbox XBE, N64, SNES ROM and PlayStation PSX executables, and the processor list names console CPUs from the NES and Game Boy to the PlayStation 3 Cell, Xbox 360 Xenon and PSP Allegrex. The debugger runs locally or through remote debug servers for Windows, Linux, macOS and Android, and analysis can be scripted with IDAPython, IDC and the C++ SDK, run without a GUI through the idalib library, or driven from MCP clients through IDA MCP.",
+    "description_zh": "Hex-Rays 推出的商业交互式反汇编器、反编译器与调试器，可将 70 多个处理器家族的已编译代码转为带注释和交叉引用的汇编代码及反编译伪代码。其 15 款反编译器覆盖 32 位与 64 位的 x86、ARM、MIPS、PowerPC 和 RISC-V，以及 ARC、V850、TriCore、Hexagon 和 Android DEX；其中 Dalvik、TriCore 和 Hexagon 反编译器为 IDA 9.5 新增，Dalvik 反编译器可把 DEX 字节码还原为 Java 伪代码。文档列出的加载器支持 PE、ELF、Mach-O（含 Apple dyld 共享缓存和 kernelcache）、DEX、UEFI 固件镜像、WebAssembly 模块，以及 Xbox XBE、N64、SNES ROM 和 PlayStation PSX 可执行文件等游戏机格式；处理器列表也涵盖从 NES、Game Boy 到 PlayStation 3 的 Cell、Xbox 360 的 Xenon 和 PSP 的 Allegrex 等游戏机 CPU。调试器既可本地调试，也可通过远程调试服务器调试 Windows、Linux、macOS 和 Android 目标；分析可用 IDAPython、IDC 和 C++ SDK 编写脚本，借助 idalib 库在无图形界面的环境中运行，或通过 IDA MCP 交由 MCP 客户端驱动。",
+    "evidence_url": "https://hex-rays.com/ida-pro",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: IDA 9.5 (build 9.5.261026), announced 2026-10-26. Hosts: macOS 12+ (x64 or ARM64); x64 Windows 10 1607+ for the GUI, Windows 7+ for text-mode or headless use; 64-bit Linux, where the installation guide names CentOS 7 or Ubuntu 16.04 and the IDA Free page glibc 2.28 (Debian 10, Ubuntu 18.10, RHEL 8) on x86-64 or ARM64. IDAPython needs Python 3.11+.",
+      "Commercial, sold only as yearly subscriptions; perpetual licenses ended on 2024-09-30, and those bought earlier keep working for the version purchased. IDA Pro Essential has two cloud decompilers from one family, Expert two, four or six local ones and Ultimate all local ones, on Named, Computer or Floating licenses; IDA Pro Headless is an OEM license for servers, CI and embedding in products.",
+      "IDA Free and IDA Home are Named licenses for non-commercial use only. Free disassembles only x86 and x86-64, decompiles them in the cloud and debugs locally on x86/x64; Home has 70+ disassemblers, 11 cloud decompilers (32- and 64-bit x86, ARM, MIPS, PowerPC and RISC-V, plus Android DEX) and local or GDB-server debugging. Cloud decompilers need an Internet connection.",
+      "The IDA 9.5 release notes say the Dalvik decompiler does not rebuild try-with-resources, can emit output that is not valid Java and gives obfuscated files no special treatment, and that the new UEFI plugin focuses on the DXE environment and is still being refined."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license",
+      "license",
+      "limits"
+    ],
+    "additional_evidence_urls": [
+      "https://docs.hex-rays.com/release-notes/9_5",
+      "https://docs.hex-rays.com/release-notes/9_5#game-consoles-playstation-3-xbox-360-wii-u-and-playstation-portable",
+      "https://hex-rays.com/blog/ida-9.5-release",
+      "https://docs.hex-rays.com/getting-started/install-ida",
+      "https://docs.hex-rays.com/getting-started/decompiler-availability-by-edition",
+      "https://hex-rays.com/ida-free",
+      "https://hex-rays.com/ida-home",
+      "https://docs.hex-rays.com/core/disassembler/specification/supported-processors",
+      "https://docs.hex-rays.com/core/disassembler/specification/supported-file-formats",
+      "https://docs.hex-rays.com/core/debugger/concepts/remote-debugging"
+    ]
+  },
+  {
+    "id": "binary-ninja",
+    "name": "Binary Ninja",
+    "url": "https://binary.ninja/",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "firmware"
+    ],
+    "description_en": "Vector 35's commercial interactive disassembler, decompiler and debugger, whose decompiler is built on the BNIL family of intermediate languages and shows either C or BNIL for every officially supported architecture. Depending on the edition it decompiles x86/x86-64, ARMv7/Thumb2, AArch64, PowerPC, MIPS, RISC-V, MSP430, 6502, nanoMIPS, TriCore, C-SKY, M·CORE, Hexagon, NDS32 and TMS320C6x, and it loads raw binaries and PE/COFF, ELF, Mach-O, TE, Intel HEX, Motorola S-Record, TI-TXT, MD1ROM and VxWorks files. C++, Python and Rust APIs automate analysis inside or outside the UI; the open-source debugger runs locally or remotely on Windows, Linux and macOS and also connects to GDB, LLDB and iOS debugserver targets; patches can be made by editing assembly, in the hex editor or with the bundled SCC compiler; and 6.0 added an MCP server. Ultimate adds Firmware Ninja for embedded firmware, which finds code and data regions by entropy and detects memory-mapped I/O accesses, while the EFI Resolver workflow types protocol usage in UEFI PEI, DXE and SMM modules.",
+    "description_zh": "Vector 35 推出的商业交互式反汇编器、反编译器与调试器，其反编译器建立在 BNIL 中间语言家族之上，可为所有官方支持的架构输出 C 或 BNIL。视版本不同，它可反编译 x86/x86-64、ARMv7/Thumb2、AArch64、PowerPC、MIPS、RISC-V、MSP430、6502、nanoMIPS、TriCore、C-SKY、M·CORE、Hexagon、NDS32 和 TMS320C6x，并能加载原始二进制以及 PE/COFF、ELF、Mach-O、TE、Intel HEX、Motorola S-Record、TI-TXT、MD1ROM 和 VxWorks 文件。C++、Python 和 Rust API 可在界面内外自动化分析；开源调试器可在 Windows、Linux 和 macOS 上本地或远程调试，也能连接 GDB、LLDB 和 iOS debugserver 目标；补丁可通过直接修改汇编、十六进制编辑器或内置的 SCC 编译器完成；6.0 版还加入了 MCP 服务器。Ultimate 版另含面向嵌入式固件的 Firmware Ninja，可按熵值识别代码与数据区域并检测对内存映射 I/O 的访问；EFI Resolver 工作流则为 UEFI 的 PEI、DXE 和 SMM 模块中的协议调用补全类型信息。",
+    "evidence_url": "https://binary.ninja/",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Stable release at review: 6.0.10905 (6.0 Release 2, 2026-10-20), a bug-fix update to 6.0 (2026-09-03). One license covers Linux, macOS and Windows; tested hosts are Ubuntu 24.04/26.04 and macOS 15/26 (x64 or arm64) and Windows 10/11 (x64); minimums: 2 GHz multi-core CPU, 8 GB RAM, 4 GB disk. Needs Python 3.10+.",
+      "Four editions: Free, Non-Commercial (Personal, non-commercial use only), Commercial and Ultimate. Paid licenses include a year of updates; versions released during support keep working after it. Online purchases are named licenses (one person, several machines). Only Commercial and Ultimate run plugins headlessly (import binaryninja without the GUI); Non-Commercial uses the API only from GUI-loaded plugins or the Python console.",
+      "By edition, Free decompiles x86, x86-64, ARMv7, Thumb2 and AArch64; Non-Commercial and Commercial add PowerPC, MIPS, RISC-V, MSP430, 6502 and the MD1ROM loader; only Ultimate decompiles nanoMIPS, TriCore, C-SKY, M·CORE, Hexagon, NDS32 and TMS320C6x and has the VxWorks loader, Firmware Ninja, Binary Similarity and Ghidra Export.",
+      "Free (non-commercial use or commercial evaluation) has no API or plugins and only disassembly, HLIL and Pseudo C views. The free browser-based Binary Ninja Cloud supports all architectures but requires uploading binaries to Vector 35, reads only PE, Mach-O and ELF, lacks API and plugins and has strict performance limits."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license",
+      "license",
+      "limits"
+    ],
+    "additional_evidence_urls": [
+      "https://binary.ninja/features/",
+      "https://binary.ninja/purchase/",
+      "https://binary.ninja/free/",
+      "https://binary.ninja/faq/",
+      "https://docs.binary.ninja/about/requirements.html",
+      "https://docs.binary.ninja/guide/firmwareninja.html",
+      "https://docs.binary.ninja/guide/efiresolver.html",
+      "https://docs.binary.ninja/guide/debugger/index.html",
+      "https://binary.ninja/2026/09/03/binary-ninja-6.0-krypton.html",
+      "https://binary.ninja/2026/10/20/6.0-release-2.html",
+      "https://github.com/Vector35/binaryninja-api/releases/tag/stable/6.0.10905"
+    ]
+  },
+  {
+    "id": "hopper-disassembler",
+    "name": "Hopper Disassembler",
+    "url": "https://www.hopperapp.com/",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "Cryptic Apps' commercial disassembler, decompiler and debugger for macOS and Linux, which reads Mach-O (macOS and iOS), PE and ELF executables built for 32- and 64-bit Intel, ARMv6, ARMv7, ARM64 and PowerPC processors. Each procedure can be viewed as assembly, as an interactive control-flow graph that exports to PDF or as C-like pseudocode, with Swift name demangling and extraction of Objective-C selectors and messages, and binaries can be patched through the hex editor, the built-in assembler or Python. Debugging of Mac applications uses LLDB or GDB, Python scripts reach most features, an SDK adds file-format parsers and CPU backends, and Hopper 6 brought a new decompiler and an MCP server for LLM clients.",
+    "description_zh": "Cryptic Apps 推出的商业反汇编器、反编译器与调试器，运行于 macOS 和 Linux，可读取面向 32/64 位 Intel、ARMv6、ARMv7、ARM64 和 PowerPC 处理器构建的 Mach-O（macOS 与 iOS）、PE 和 ELF 可执行文件。每个函数都能以汇编、可导出为 PDF 的交互式控制流图或类 C 伪代码呈现，并能还原 Swift 修饰名、提取 Objective-C 选择器与消息；还可通过十六进制编辑器、内置汇编器或 Python 修改二进制。调试 Mac 应用时可使用 LLDB 或 GDB；Python 脚本可调用大部分功能，SDK 可扩展文件格式解析器和 CPU 后端；Hopper 6 推出了新的反编译器以及供大语言模型客户端使用的 MCP 服务器。",
+    "evidence_url": "https://www.hopperapp.com/",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Version at review: 6.6.1, released 2026-10-29. The Mac build is a Universal Binary for Intel and Apple Silicon and requires macOS 12.4 or later; 5.19.6 is the last version for macOS 10.13 to 11. The Linux build needs a 64-bit Intel processor and is tested only on Ubuntu 24.04, Fedora 41 and Arch Linux (DEB, RPM and tar.xz packages). There is no Windows version.",
+      "Commercial, with a per-user Personal License or a hardware-bound Computer License and no restriction on commercial use. Licenses are permanent and include one year of updates; after the update plan lapses, Hopper is limited to the last version released during it, and another year can be bought from within the application.",
+      "The free demo has all analysis features but cannot save or export disassembly or modified binaries, disables the debugger backend and limits sessions to 30 minutes.",
+      "Hopper cannot read iOS apps taken from an iTunes library, which are encrypted with FairPlay DRM, until the user removes the DRM. Its pseudocode is usually not directly compilable, and the tutorial warns that code wrongly judged unreachable can drop out of it."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license",
+      "limits",
+      "limits"
+    ],
+    "additional_evidence_urls": [
+      "https://www.hopperapp.com/download.html",
+      "https://www.hopperapp.com/faq.html",
+      "https://www.hopperapp.com/rss/html_changelog.php",
+      "https://www.hopperapp.com/license_agreement.html",
+      "https://www.hopperapp.com/tutorial.html"
+    ]
+  },
+  {
+    "id": "jeb-decompiler",
+    "name": "JEB Decompiler",
+    "url": "https://www.pnfsoftware.com/jeb/",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary",
+      "firmware"
+    ],
+    "description_en": "PNF Software's commercial reverse-engineering platform for Android apps and native code, combining a Dalvik decompiler and Android debuggers with disassemblers and decompilers for x86, ARM, MIPS and RISC-V machine code. For APKs it decompiles multi-dex Dalvik bytecode to Java, reconstructs resources and obfuscated XML, cleans up obfuscated code with optimizers that decrypt content and undo reflection, and debugs Dalvik and native ARM or Intel code in one session, stepping from Dalvik into JNI methods. Modules in JEB Pro also decompile WebAssembly, Ethereum EVM contracts (to Solidity-like code), Siemens S7-300/400 PLC blocks and Nvidia SASS GPU code and analyze PDF documents, and its loaders read PE, ELF, Mach-O, Intel HEX and raw (headless) firmware images. The JEB API lets Java and Python scripts, back-end plugins and custom headless clients automate analysis, and JEB also exposes an MCP server for AI agents.",
+    "description_zh": "PNF Software 推出的商业逆向工程平台，面向 Android 应用和原生代码，集 Dalvik 反编译器、Android 调试器以及 x86、ARM、MIPS、RISC-V 机器码的反汇编器与反编译器于一体。处理 APK 时，它能将多 dex 的 Dalvik 字节码反编译为 Java，重建资源和经过混淆的 XML，用可自动解密内容、消除反射调用的优化器清理混淆代码，并在同一会话中调试 Dalvik 与原生 ARM 或 Intel 代码，可从 Dalvik 单步进入 JNI 方法。JEB Pro 的模块还能反编译 WebAssembly、以太坊 EVM 合约（输出类 Solidity 代码）、西门子 S7-300/400 PLC 程序块和 Nvidia SASS GPU 代码，并分析 PDF 文档；其加载器可读取 PE、ELF、Mach-O、Intel HEX 以及无容器格式（headless）的固件镜像。借助 JEB API，可用 Java 和 Python 编写脚本、后端插件和自定义无界面客户端来自动化分析；JEB 还提供面向 AI 智能体的 MCP 服务器。",
+    "evidence_url": "https://www.pnfsoftware.com/jeb/",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Version at review: JEB 5.48, released 2026-10-07. Needs a 64-bit JDK 21+ (JDK 23 at most and Oracle or OpenJDK builds recommended); the GUI client runs on Windows, Linux (GTK) and macOS on x64 or arm64. Packages are per-user zip archives sent by email; license keys derive from machine identifiers.",
+      "Time-based commercial licenses only, none perpetual: JEB Android (per user, non-professional users, Android apps only), JEB Pro (per user, all modules), JEB Pro Floating (per seat) and JEB Pro OEM (per server, back-end or SaaS use). After a non-OEM subscription expires, existing JDB2 projects still open but new ones cannot be created; per the buy page, only Pro licenses work offline.",
+      "JEB Community Edition is free, with most disassemblers and file analyzers and the x86/x86-64 decompilers, but per the features matrix no Dalvik decompiler or debugger, headless launcher or offline use; the EULA sets separate terms for it. JEB Demo has all modules for evaluation but decompiles only part of the code, cannot save or load projects or use the clipboard, and has time-limited sessions that need an Internet connection.",
+      "Stated limits: RISC-V support lacks RV128, RVE, vector/SIMD extensions and floating-point decompilation; the S7 decompiler cannot process all MC7 code or S7-1200/1500 blocks; debugging apps that disallow it works on ARMv7 only; command-line Python scripts need a Pro or CE license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license",
+      "license",
+      "limits"
+    ],
+    "additional_evidence_urls": [
+      "https://www.pnfsoftware.com/jeb/android",
+      "https://www.pnfsoftware.com/jeb/community-edition",
+      "https://www.pnfsoftware.com/jeb/buy",
+      "https://www.pnfsoftware.com/jeb/demo",
+      "https://www.pnfsoftware.com/jeb/plc",
+      "https://www.pnfsoftware.com/jeb/changelog",
+      "https://www.pnfsoftware.com/jeb/manual/",
+      "https://www.pnfsoftware.com/jeb/manual/faq/",
+      "https://www.pnfsoftware.com/jeb/LICENSE.TXT"
+    ]
+  },
+  {
+    "id": "windbg",
+    "name": "WinDbg",
+    "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Microsoft's WinDbg debugger and the Debugging Tools for Windows, documented on Microsoft Learn, for debugging live user-mode and kernel-mode code, analyzing crash dumps and examining CPU registers and memory. The current app keeps the engine, commands and extensions of WinDbg (Classic) and adds Time Travel Debugging, which records a user-mode process and replays it in both directions, JavaScript and NatVis scripting and Linux ELF dump analysis; since 1.2610.1001.0 it also offers WinDbg MCP for supported AI clients.",
+    "description_zh": "微软的 WinDbg 调试器及 Debugging Tools for Windows 工具包，文档发布于 Microsoft Learn，用于调试运行中的用户态和内核态代码、分析崩溃转储，以及检查 CPU 寄存器和内存。当前的 WinDbg 应用沿用 WinDbg (Classic) 的调试引擎、命令和扩展，并新增时间旅行调试（Time Travel Debugging，可录制用户态进程并向前、向后回放）、JavaScript 与 NatVis 脚本和 Linux ELF 转储分析；自 1.2610.1001.0 版起还提供面向受支持 AI 客户端的 WinDbg MCP。",
+    "evidence_url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "WinDbg installs from Microsoft's installer, the Microsoft Store or winget on x64 or ARM64 Windows 11 or Windows 10 1607 and later, not Windows 10/11 S, and direct and Store installs self-update; the release notes, updated 2026-11-05, list 1.2611.4001.0 as newest.",
+      "Debugging Tools for Windows (WinDbg Classic and the KD, NTKD, CDB and NTSD console debuggers) ships with the WDK or Windows SDK or as an SDK-only install, with archived SDKs for older Windows. Kernel debugging typically needs a second machine or VM, local kernel debugging and TTD need elevation, and full analysis needs symbols, which for commercial code depend on the vendor.",
+      "Free in the Microsoft Store under Microsoft's proprietary WinDbg license terms (updated 2026-10-08): the software is licensed, not sold, may not be redistributed and may send usage data to Microsoft.",
+      "TTD records user-mode processes only, and not protected ones such as PPL; recording is typically 10–20x slower, traces can reach several gigabytes in minutes, with index files about twice as large, and may hold personal or security data; anti-virus software can interfere.",
+      "WinDbg MCP officially supports GitHub Copilot in Visual Studio Code and GitHub Copilot CLI, one client per session; clients may send debugger context to their model service, AI findings are not authoritative, and default secure mode blocks high-risk commands such as .shell."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license",
+      "limits",
+      "limits"
+    ],
+    "additional_evidence_urls": [
+      "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools",
+      "https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/windbg-overview",
+      "https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/windbg-release-notes",
+      "https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/time-travel-debugging-overview",
+      "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debuggers-in-the-debugging-tools-for-windows-package",
+      "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/getting-started-with-windows-debugging",
+      "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/analyzing-a-user-mode-dump-file",
+      "https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/windbg-kernel-mode-preview",
+      "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/linux-dwarf-symbols",
+      "https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/windbg-mcp-overview",
+      "https://learn.microsoft.com/en-us/legal/windows-sdk/windbg-software-license-terms",
+      "https://apps.microsoft.com/detail/9pgjgd53tn86"
+    ]
+  },
+  {
+    "id": "010-editor",
+    "name": "010 Editor",
+    "url": "https://www.sweetscape.com/010editor/",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "SweetScape Software's commercial hex and text editor whose Binary Templates, C/C++-like struct definitions with control flow and functions, parse binary files into hierarchical, editable structures. Templates can run when a file opens and are shared through an online repository, scripts with C/C++-like syntax automate edits and batch runs, and the tools include a Capstone-based disassembler for x86, ARM, MIPS, PowerPC and other code, byte-by-byte comparison, checksums and hashes, and editing of drives and, on Windows, process memory.",
+    "description_zh": "SweetScape Software 推出的商业十六进制与文本编辑器，其 Binary Templates 采用类似 C/C++ 结构体、可含控制流语句和函数的写法，将二进制文件解析为可编辑的层级结构。模板可在打开文件时自动运行，并能通过在线仓库分享；语法类似 C/C++ 的脚本可自动完成编辑和批处理；工具还包括基于 Capstone、支持 x86、ARM、MIPS、PowerPC 等架构的反汇编器、逐字节比较、校验和与哈希计算，以及磁盘和 Windows 进程内存编辑。",
+    "evidence_url": "https://www.sweetscape.com/010editor/",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Version 17.0.1, released 2026-11-04, has 64-bit builds for Windows 11/10, macOS 10.14 to 27 on ARM and Intel, and Ubuntu 18.04 to 26.04, plus 32-bit Windows and Linux builds and a portable Windows build. Version 10 dropped Windows XP, macOS 10.7–10.11 and Ubuntu 10.04–14.04, where older releases still run.",
+      "Commercial: the evaluation version works for 30 days, after which a license must be bought. Licenses are per user and perpetual, with a year of free upgrades and support, and come as commercial or lower-priced home/academic licenses; the EULA bars home/academic licenses from commercial use, except for members of registered non-profits, and from government or military organizations.",
+      "The disassembler only converts bytes to assembly: the manual says 010 Editor cannot execute the result and points to a separate emulator or debugger. Process editing is Windows-only, and the manual warns that incorrect process edits can make programs misbehave or crash the system.",
+      "Only ZIP, BMP and WAV templates ship with the editor; templates in the online repository are written and submitted by other users."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license",
+      "limits",
+      "limits"
+    ],
+    "additional_evidence_urls": [
+      "https://www.sweetscape.com/010editor/release_notes.html",
+      "https://www.sweetscape.com/download/010editor/",
+      "https://www.sweetscape.com/support/kb/kb1042.html",
+      "https://www.sweetscape.com/store/",
+      "https://www.sweetscape.com/010editor/manual/License.htm",
+      "https://www.sweetscape.com/010editor/manual/Introduction.htm",
+      "https://www.sweetscape.com/010editor/templates.html",
+      "https://www.sweetscape.com/010editor/features.html",
+      "https://www.sweetscape.com/010editor/manual/Disassembler.htm",
+      "https://www.sweetscape.com/010editor/manual/EditingProcesses.htm",
+      "https://www.sweetscape.com/010editor/repository/templates/"
+    ]
+  },
+  {
+    "id": "pestudio",
+    "name": "pestudio",
+    "url": "https://www.winitor.com/",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Winitor's Windows tool for initial malware assessment, which statically inspects Windows executable files and reports key indicators such as hard-coded URLs and IP addresses, flagged imports, resources and overlay data. The free basic edition also detects file signatures, debug information and TLS callbacks, computes entropy and imphash, shows the rich header and .NET metadata and looks up VirusTotal scores by hash; pestudio-pro adds MITRE ATT&CK mapping, XML reports and the pestudiox.exe command-line version.",
+    "description_zh": "Winitor 推出的 Windows 恶意软件初步评估工具，以静态方式检查 Windows 可执行文件，报告硬编码的 URL 和 IP 地址、被标记的导入函数、资源及附加数据（overlay）等关键指标。免费的基础版还能识别文件签名、调试信息和 TLS 回调，计算熵值与 imphash，显示 rich header 和 .NET 元数据，并凭哈希查询 VirusTotal 评分；pestudio-pro 另提供 MITRE ATT&CK 映射、XML 报告和命令行版本 pestudiox.exe。",
+    "evidence_url": "https://www.winitor.com/",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Version 9.61, whose feature and licensing sheets are dated March 2025, ships as a ZIP that needs no installation; the download page says it is fully portable, does not alter the system it runs on and runs on any Windows system.",
+      "The free basic edition may be used only in a private context for occasional malware static analysis, not in a professional or corporate environment. pestudio-pro is sold as a one-year license per user that includes free updates, is not renewed automatically and is delivered as a password-protected ZIP.",
+      "VirusTotal lookups send only the file's MD5 hash, never the sample, and an XML switch disables them; searching VirusTotal by imphash needs a VirusTotal Intelligence account. The software is provided as-is without warranty, and its bundled XML files may not be used outside pestudio without the author's permission."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license",
+      "limits"
+    ],
+    "additional_evidence_urls": [
+      "https://www.winitor.com/download",
+      "https://www.winitor.com/download2",
+      "https://www.winitor.com/pro",
+      "https://www.winitor.com/tools/pestudio/current/pestudio-features.pdf",
+      "https://www.winitor.com/tools/pestudio/current/pestudio-licensing.pdf",
+      "https://www.winitor.com/tools/pestudio/changes.log"
+    ]
+  },
+  {
+    "id": "ollydbg",
+    "name": "OllyDbg",
+    "url": "https://www.ollydbg.de/",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "32-bit assembler-level analyzing debugger for Windows that emphasizes binary code analysis for programs without source; its site says development is frozen, and the newest version it lists is 2.01 of 27 September 2013. Its analysis recognizes procedures, loops, API calls, switches, tables, constants and strings and decodes calls to more than 1,900 standard API and 400 C functions; it attaches to running programs, debugs DLLs directly, sets conditional, logging, memory and hardware breakpoints and writes patches back to the executable.",
+    "description_zh": "面向 Windows 的 32 位汇编级分析型调试器，侧重二进制代码分析，适用于没有源码的程序；其网站称开发已冻结，列出的最新版本是 2013 年 9 月 27 日发布的 2.01。它能识别过程、循环、API 调用、switch 结构、表、常量和字符串，解码对 1900 多个标准 API 和 400 个 C 函数的调用；还可附加到运行中的程序、直接调试 DLL，设置条件、日志、内存和硬件断点，并把补丁写回可执行文件。",
+    "evidence_url": "https://www.ollydbg.de/viewer.htm",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Version 2.01 (27 September 2013) is the newest the site lists, and 1.10 is offered as the final 1.x version. The requirements page lists Windows 95, 98, NT 4.0 SP2 or later, or Windows 2000 and later, and says debugging on NT or 2000 may need administrative rights; the 2.x notes say version 2 does not run on Windows 95 or 98.",
+      "OllyDbg is a 32-bit debugger. The 64-bit version is offered only as incomplete, and its latest progress note, of 5 February 2014, put the debugging engine at 70% and analysis at 15%.",
+      "Shareware that may be downloaded and used for free; the FAQ says it is rated shareware for copyright reasons only. The download page's agreement covers only version 1.10 and its Plugin Development Kit: permanent or commercial use needs a free registration, the software comes as is, and copies may be shared only complete, unchanged and without a fee. Disassembler 2.01 is released under GPL v3.",
+      "The download page warns that many vendors forbid disassembling, decompiling or reverse engineering their programs, including third-party and system libraries, and suggests asking a lawyer whether fair use applies."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license",
+      "limits"
+    ],
+    "additional_evidence_urls": [
+      "https://www.ollydbg.de/version2.html",
+      "https://www.ollydbg.de/download.htm",
+      "https://www.ollydbg.de/requires.htm",
+      "https://www.ollydbg.de/odbg64.html",
+      "https://www.ollydbg.de/faq.htm"
+    ]
+  },
+  {
+    "id": "practical-malware-analysis",
+    "name": "Practical Malware Analysis",
+    "url": "https://nostarch.com/malware",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "No Starch Press book, published in February 2012, that teaches hands-on malware analysis from basic static and dynamic techniques in virtual machines through x86 disassembly with IDA Pro, debugging with OllyDbg and kernel debugging with WinDbg. Later chapters cover malicious Windows programs, covert launching, data encoding, network signatures, anti-disassembly, anti-debugging and anti-VM techniques, unpacking, shellcode, C++ and 64-bit malware, and hands-on labs with solutions have readers dissect malware samples.",
+    "description_zh": "No Starch Press 于 2012 年 2 月出版的书籍，以动手实践的方式讲解恶意软件分析：从在虚拟机中运用基础静态与动态分析技术入手，进而讲解用 IDA Pro 进行 x86 反汇编、用 OllyDbg 调试以及用 WinDbg 进行内核调试。后续章节涵盖恶意 Windows 程序、隐蔽启动、数据编码、网络特征、反反汇编、反调试与反虚拟机技术、脱壳、shellcode、C++ 和 64 位恶意软件；书中配有附解答的动手实验，让读者剖析恶意软件样本。",
+    "evidence_url": "https://nostarch.com/malware",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "An 800-page book, sold in print with a free ebook or as a PDF, Mobi and ePub ebook. Chapter 12, the detailed table of contents and the index are free PDFs, and an errata PDF is posted.",
+      "Following the book needs a safe virtual analysis environment, which it teaches readers to set up, and the analysis tools it covers, such as IDA Pro, OllyDbg and WinDbg.",
+      "The publisher's “Download the labs” link leads to a GitHub repository offering the lab binaries as a self-extracting archive or a password-protected 7-Zip file. Its README warns that the binaries contain malicious code that should not be installed or run without first setting up a safe environment, and that, like real malware, some may crash, leak memory or behave unexpectedly.",
+      "The labs target Windows XP: many work on newer Windows but some do not, and a separate archive holds labs rebuilt for Windows 7 whose results differ from the book's answers."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "limits"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mikesiko/PracticalMalwareAnalysis-Labs/blob/5f55de02a10748247f7511dafaaf18a37d332ff5/README.md"
+    ]
   }
 ]
