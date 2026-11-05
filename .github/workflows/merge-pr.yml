@@ -1,0 +1,83 @@
+name: Merge a pull request
+# Merges one pull request with the workflow token and the rebase method, so commits keep their own
+# authors and GitHub is the committer: no personal account name is stamped on main, as it is when a
+# person squash-merges or rebase-merges. Start it from the default branch:
+#   gh workflow run merge-pr.yml -f pr=<number>
+# scripts/merge_pr.py refuses unless the pull request targets main, is open, not a draft, mergeable,
+# up to date with main and has successful `validate` and `review` checks on its head; branch protection
+# still applies to the merge itself.
+on:
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: Number of the pull request to merge
+        required: true
+        type: number
+permissions:
+  contents: read
+concurrency:
+  group: merge-pr-${{ inputs.pr }}
+  cancel-in-progress: false
+jobs:
+  merge:
+    if: ${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      # Rebase-merge the pull request and delete its branch.
+      contents: write
+      pull-requests: write
+      # Read the required checks on the pull request head.
+      checks: read
+      statuses: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Refuse unless the pull request is ready, current and checked
+        id: guard
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          PR: ${{ inputs.pr }}
+        run: |
+          head=$(python3 scripts/merge_pr.py)
+          echo "head=$head" >> "$GITHUB_OUTPUT"
+      # --match-head-commit merges only the commit the guard checked; a refusal is asked again twice,
+      # because GitHub can still be recomputing mergeability right after the last check.
+      - name: Rebase-merge it with the workflow token
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ inputs.pr }}
+          HEAD_SHA: ${{ steps.guard.outputs.head }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          for attempt in 1 2 3; do
+            if [ "$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR" --jq .base.ref)" != "$DEFAULT_BRANCH" ]; then
+              echo "::error::Pull request #$PR no longer targets $DEFAULT_BRANCH." && exit 1
+            fi
+            if gh pr merge "$PR" --rebase --match-head-commit "$HEAD_SHA" -R "$GITHUB_REPOSITORY"; then
+              exit 0
+            fi
+            sleep $((attempt * 15))
+          done
+          exit 1
+      # The deletion is a push with a lease on the merged head, so the server refuses it, and the branch
+      # keeps its commits, if anything was pushed to it after the merge.
+      - name: Delete the merged branch of this repository
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ inputs.pr }}
+        run: |
+          pull=$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR")
+          ref=$(jq -r .head.ref <<<"$pull")
+          merged_head=$(jq -r .head.sha <<<"$pull")
+          if [ "$(jq -r .merged <<<"$pull")" = true ] && [ "$(jq -r .head.repo.full_name <<<"$pull")" = "$GITHUB_REPOSITORY" ]; then
+            auth=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+            git -c http.extraheader="AUTHORIZATION: basic $auth" push --force-with-lease="refs/heads/$ref:$merged_head" \
+              origin ":refs/heads/$ref" || echo "The branch $ref was kept: it moved after the merge or is already gone."
+          fi
+          echo "Merged #$PR as $(jq -r .merge_commit_sha <<<"$pull")" >> "$GITHUB_STEP_SUMMARY"
