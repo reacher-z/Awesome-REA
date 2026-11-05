@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**838 repositories** · 2026-10-20 UTC
+**837 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -106,7 +106,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [HackOvert/AntiDBG](https://github.com/HackOvert/AntiDBG) — A bunch of Windows anti-debugging tricks for x86 and x64. **[818 stars]**
 - [clearbluejar/ghidriff](https://github.com/clearbluejar/ghidriff) — Python Command-Line Ghidra Binary Diffing Engine **[813 stars]** · Curated: [ghidriff](https://awesomerea.org/resources/ghidriff/)
 - [mentebinaria/readpe](https://github.com/mentebinaria/readpe) — The PE file analysis toolkit **[789 stars]** · Curated: [readpe (formerly pev)](https://awesomerea.org/resources/readpe/)
-- [danigargu/deREferencing](https://github.com/danigargu/deREferencing) — IDA Pro plugin that implements more user-friendly register and stack views **[775 stars]**
 - [symgraph/GhidrAssistMCP](https://github.com/symgraph/GhidrAssistMCP) — An native MCP server extension for Ghidra **[774 stars]** · Curated: [GhidrAssistMCP](https://awesomerea.org/resources/ghidrassistmcp/)
 - [danigargu/heap-viewer](https://github.com/danigargu/heap-viewer) — IDA Pro plugin to examine the glibc heap, focused on exploit development **[773 stars]**
 - [fay59/fcd](https://github.com/fay59/fcd) — An optimizing decompiler **[773 stars]**
@@ -153,7 +152,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Bw3ll/sharem](https://github.com/Bw3ll/sharem) — SHAREM is a shellcode analysis framework, capable of emulating more than 45,000 WinAPIs and virutally all Windows syscalls. It also contains its own custom disassembler, with many innovative features, such as being able to show the deobfuscated disassembly of an encoded shellcode, or integrating emulation data to enhance the disassembly. **[492 stars]**
 - [radareorg/r2ai](https://github.com/radareorg/r2ai) — LLM-based reversing for radare2 **[490 stars]** · Curated: [r2ai](https://awesomerea.org/resources/r2ai/)
 - [kweatherman/sigmakerex](https://github.com/kweatherman/sigmakerex) — Enhanced IDA Pro signature generator plugin. **[485 stars]**
-- [patois/HexraysToolbox](https://github.com/patois/HexraysToolbox) — Hexrays Toolbox - Find code patterns within the Hexrays ctree **[483 stars]**
+- [patois/HexraysToolbox](https://github.com/patois/HexraysToolbox) — Hexrays Toolbox - Find code patterns within the Hexrays ctree **[483 stars]** · Curated: [HexRays Toolbox](https://awesomerea.org/resources/hexrays-toolbox/)
 - [A200K/IDA-Pro-SigMaker](https://github.com/A200K/IDA-Pro-SigMaker) — Signature maker plugin for IDA 9.x and 8.x **[481 stars]**
 - [Zfinix/eleven](https://github.com/Zfinix/eleven) — Agent-first reverse engineering for macOS, Windows and Linux: any ACP agent reads, renames and patches binaries, Android apps and GPU kernels next to you. **[478 stars]** · Curated: [Eleven](https://awesomerea.org/resources/eleven-agent-re-workbench/)
 - [VoidSec/DriverBuddyReloaded](https://github.com/VoidSec/DriverBuddyReloaded) — Driver Buddy Reloaded is an IDA Pro Python plugin that helps automate some tedious Windows Kernel Drivers reverse engineering tasks **[472 stars]** · Curated: [Driver Buddy Reloaded](https://awesomerea.org/resources/driver-buddy-reloaded/)
