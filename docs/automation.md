@@ -96,8 +96,6 @@ See [website building and publishing](website.md) for the static build and hosti
 
 The production build command runs `scripts/build_production.py`. It stops deployment if catalog validation or JavaScript syntax validation fails. Cloudflare's existing Git connection builds each change to `main` and creates PR previews; no deployment API token is stored in this repository.
 
-`GitHub Pages mirror` runs on every push to `main` and on manual request from `main`. It runs the same production build, removes the Cloudflare-only `_headers` and `_redirects` files and deploys `dist/` to this repository's GitHub Pages site, which serves the [secondary domain](website.md#secondary-domain) `awesome-rea.com`. Only its deploy job has `pages: write` and `id-token: write`; GitHub authorizes the deployment with that job's short-lived token, and no deployment secret is stored. A running deployment is never cancelled, and a newer queued run replaces an older queued one, so the latest `main` commit is published last. Forks skip both jobs.
-
 ## Scheduled README discovery
 
 For complementary GitHub Discussion, public-directory and X-excerpt link snapshots, see [public artifact lead discovery](public-artifact-discovery.md). It runs separately every two hours and retains an unreviewed URL queue; it does not change the README scanner, its goal, or the curated catalog.
