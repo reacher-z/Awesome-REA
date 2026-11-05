@@ -213,11 +213,12 @@ and its original counts. A ready supplement produces a separate
 the legacy `source-index.json` remains available. Held candidates, including
 those missing translations, do not enter the published selection.
 
-The [registered evidence archive](../data/source-evidence/README.md) is retained
+A [registered evidence archive](../data/source-evidence/README.md) is retained
 exactly, with every JSON member checked before an explicit provenance download
 is copied into the site. An archive withdrawn at the maintainer's request is
 deleted and recorded by run, digest and size in `withdrawn.json`; its batches
-stay published from their exact records, and `/about/` lists it as withdrawn. This is not an import of the private capture campaign
+stay published from their exact records, and `/about/` lists it as withdrawn.
+The archive of run 39323601991 was withdrawn this way on 2026-11-05. This is not an import of the private capture campaign
 or an automatic promotion of every row in the cloud checkpoint. Curated
 resources and their machine-data bundle remain separate.
 

@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(0, str(ROOT / 'tests'))
 import privacy_guard
-from privacy_guard import PARTS, PINNED_EVIDENCE, PROTECTED, SALT, Detector, default_paths, scan
+from privacy_guard import PARTS, PROTECTED, SALT, Detector, default_paths, scan
 
 # Invented forms: a two-word name in either order, a handle, a personal domain and a profile ID.
 SAMPLE = Detector.from_grams(b'test-only-salt', ['orla venn', 'venn orla', 'ovenn42', 'orla space', 'xq 7rtaaaaj'])
@@ -34,19 +34,17 @@ class PrivacyGuardTests(unittest.TestCase):
     def test_tracked_files_and_the_build_output_hold_no_protected_identifier(self):
         paths = default_paths()
         self.assertGreater(len(paths), 300)
-        findings, unread = scan(paths)
         # Only file and line are reported, never the matched words.
-        self.assertEqual([str(finding) for finding in findings], [])
-        self.assertTrue(all(name.endswith('.zip') for name in unread), unread)
+        self.assertEqual([str(finding) for finding in scan(paths)], [])
 
     def test_only_digests_are_stored(self):
         self.assertGreaterEqual(len(SALT), 16)
-        for digest in PROTECTED | PARTS | PINNED_EVIDENCE:
+        for digest in PROTECTED | PARTS:
             self.assertRegex(digest, r'^[0-9a-f]{64}$')
         self.assertTrue(PARTS and len(PROTECTED) > len(PARTS))
         source = (ROOT / 'scripts/privacy_guard.py').read_text(encoding='utf-8')
         constants = re.findall(r"^\s+'([^']*)',$", source, re.M)
-        self.assertEqual(len(constants), len(PROTECTED | PARTS | PINNED_EVIDENCE))
+        self.assertEqual(len(constants), len(PROTECTED | PARTS))
         self.assertTrue(all(re.fullmatch(r'[0-9a-f]{64}', value) for value in constants))
 
     def test_names_match_in_either_order_case_spacing_or_joined(self):
@@ -253,7 +251,7 @@ class PrivacyGuardTests(unittest.TestCase):
                 archive.writestr('data/orlavenn.txt', 'clean')
                 archive.writestr(zipfile.ZipInfo('orla-venn/'), '')
             (root / 'bundle.zip').write_bytes(buffer.getvalue())
-            findings, _ = scan(sorted(path for path in root.rglob('*') if path.is_file()), root=root, detector=SAMPLE)
+            findings = scan(sorted(path for path in root.rglob('*') if path.is_file()), root=root, detector=SAMPLE)
         printed = [str(finding) for finding in findings]
         self.assertEqual(sorted(printed), sorted([
             'docs/<redacted>: protected identifier in the file path',
@@ -280,15 +278,29 @@ class PrivacyGuardTests(unittest.TestCase):
             self.assertNotIn('capture names or links a person the collection keeps out',
                              discoveries.record_problems(records[0]))
 
+    def test_no_archive_is_exempt_whatever_it_holds_or_whoever_produced_it(self):
+        import privacy_guard
+        self.assertFalse([name for name in vars(privacy_guard) if 'PINNED' in name or 'EXEMPT' in name])
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            buffer = io.BytesIO()
+            with zipfile.ZipFile(buffer, 'w', zipfile.ZIP_DEFLATED) as archive:
+                archive.writestr('checkpoint.json', '{"resources": [{"full_name": "OVenn42/tools"}]}')
+                archive.writestr('receipt.json', '{"schema_version": 2}')
+            (root / 'data/source-evidence').mkdir(parents=True)
+            (root / 'data/source-evidence/run-1-attempt-1-000000000000.zip').write_bytes(buffer.getvalue())
+            findings = scan(sorted(root.rglob('*.zip')), root=root, detector=SAMPLE)
+        self.assertEqual([str(finding) for finding in findings], [
+            'data/source-evidence/run-1-attempt-1-000000000000.zip!checkpoint.json:1: protected identifier (single word)'])
+
     def test_scan_reports_paths_relative_to_the_root(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / 'docs').mkdir()
             (root / 'docs/note.md').write_text('Clean line\nMaintained by Orla Venn.\n', encoding='utf-8')
             (root / 'docs/other.md').write_text('Mia Venn; Orla Kim\n', encoding='utf-8')
-            findings, unread = scan(sorted(root.rglob('*.md')), root=root, detector=SAMPLE)
+            findings = scan(sorted(root.rglob('*.md')), root=root, detector=SAMPLE)
             self.assertEqual([str(finding) for finding in findings], ['docs/note.md:2: protected identifier (word pair)'])
-            self.assertEqual(unread, [])
 
 
 if __name__ == '__main__':

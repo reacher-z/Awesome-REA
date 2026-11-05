@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "withdrawn": [
+    {
+      "archive_filename": "run-39323601991-attempt-1-d6d7cee82ca6.zip",
+      "artifact_digest": "sha256:d6d7cee82ca61ceba26f7bbf5d70ff9d7077932ee60fdc1a29022994065e7a03",
+      "run_id": 39323601991,
+      "run_attempt": 1,
+      "size_in_bytes": 4532463,
+      "batch_selection_sha256": {
+        "public-cloud-39323601991-batch-01": "3e5e30a5e64d48266541f82379543231e8dca8b530b986241299d59c9cd9a16c"
+      },
+      "withdrawn_at": "2026-11-05",
+      "reason": "Withdrawn at maintainer request.",
+      "reason_zh": "应维护者要求撤回。"
+    }
+  ]
+}
