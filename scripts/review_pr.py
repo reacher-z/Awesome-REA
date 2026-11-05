@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Review catalog PRs with trusted base-branch code; never execute PR code."""
 import fnmatch
+import hashlib
 import json
 import html
 import os
@@ -36,8 +37,10 @@ SUPPLEMENT_LOCALE = 'data/locales/source-supplements/public-cloud-39323601991-ba
 # New batches require an explicit trusted-base review extension, not a path glob.
 SUPPLEMENT_INPUTS = (SUPPLEMENT_INDEX, SUPPLEMENT_BATCH, SUPPLEMENT_SCOPE, SUPPLEMENT_LOCALE)
 OPTIONAL_SUPPLEMENT_INPUTS = frozenset((SUPPLEMENT_SCOPE, SUPPLEMENT_LOCALE))
+# Evidence archives withdrawn at the maintainer's request, by run, digest and size (see data/source-evidence/README.md).
+EVIDENCE_WITHDRAWALS = 'data/source-evidence/withdrawn.json'
 REVIEW_FILES = frozenset((*CURATED_INPUTS, 'data/benchmarks.json', 'data/papers.json',
-                          *SOURCE_INPUTS, CASE_COVERAGE, *SUPPLEMENT_INPUTS))
+                          *SOURCE_INPUTS, CASE_COVERAGE, *SUPPLEMENT_INPUTS, EVIDENCE_WITHDRAWALS))
 # Automated discovery batches are added one file per scan run and reviewed as data by trusted base code.
 DISCOVERY_BATCH = re.compile(r'data/discoveries/run-[1-9][0-9]{0,19}-[1-9][0-9]{0,2}\.json')
 LOCALE_FIELDS = {'description_en', 'description_zh', 'english_retains_name', 'technical_only'}
@@ -219,8 +222,65 @@ def changes_public_archive(entry):
                for name in paths)
 
 
+def review_withdrawals(repository, sha, token, files, errors):
+    """The archive paths this PR may remove: each is withdrawn by a new entry of the head registry that names the
+    trusted base archive's exact digest and size. The registry is parsed by trusted base code; an existing
+    withdrawal may not change or disappear, and a new one must remove its archive in the same PR."""
+    from public_source_supplements import (EVIDENCE_DIRECTORY, MAX_ARCHIVE_BYTES, bounded_bytes, cited_selections,
+                                           owned_file, parse_withdrawals, read_withdrawals)
+    changes = {entry['filename']: entry for entry in files}
+    changes.update({entry['previous_filename']: entry for entry in files
+                    if entry['status'] == 'renamed' and 'previous_filename' in entry})
+    try:
+        base = read_withdrawals(ROOT)
+    except (OSError, ValueError):
+        errors.append(f'{EVIDENCE_WITHDRAWALS}: the trusted base registry could not be read.')
+        return set()
+    change = changes.get(EVIDENCE_WITHDRAWALS)
+    if change is None:
+        head = base
+    elif change['status'] in ('removed', 'renamed') or change['filename'] != EVIDENCE_WITHDRAWALS:
+        errors.append(f'{EVIDENCE_WITHDRAWALS}: the withdrawn evidence registry cannot be removed or renamed.')
+        return set()
+    else:
+        try:
+            text = content_at(repository, EVIDENCE_WITHDRAWALS, sha, token)
+            errors.extend(json_privacy_findings(EVIDENCE_WITHDRAWALS, text))
+            head = parse_withdrawals(text.encode('utf-8'))
+        except (OSError, UnicodeError, ValueError):
+            errors.append(f'{EVIDENCE_WITHDRAWALS}: the withdrawn evidence registry is invalid; check it locally.')
+            return set()
+    if any(head.get(name) != entry for name, entry in base.items()):
+        errors.append(f'{EVIDENCE_WITHDRAWALS}: an existing withdrawal cannot be changed or removed.')
+    try:
+        selections = cited_selections(ROOT)
+    except (OSError, ValueError, KeyError, TypeError):
+        errors.append(f'{EVIDENCE_WITHDRAWALS}: the trusted base batches could not be read.')
+        return set()
+    permitted = set()
+    for name, entry in head.items():
+        if name in base:
+            continue
+        path = f'{EVIDENCE_DIRECTORY}/{name}'
+        removal = changes.get(path)
+        try:
+            raw = bounded_bytes(owned_file(ROOT, EVIDENCE_DIRECTORY, name), MAX_ARCHIVE_BYTES)
+        except (OSError, ValueError):
+            raw = None
+        if (removal is None or removal['status'] != 'removed' or raw is None or len(raw) != entry['size_in_bytes']
+                or 'sha256:' + hashlib.sha256(raw).hexdigest() != entry['artifact_digest']):
+            errors.append(f'{path}: a withdrawal must remove this exact trusted-base archive in the same pull request.')
+        elif entry['batch_selection_sha256'] != selections.get(name, {}):
+            # The selections fixed at withdrawal are those of the default branch, never ones this PR introduces.
+            errors.append(f'{EVIDENCE_WITHDRAWALS}: a withdrawal must fix the selections of the trusted-base batches citing {name}.')
+        else:
+            permitted.add(path)
+    return permitted
+
+
 def load_review_contents(repository, sha, token, files, changed, errors):
-    needed = set(changed & REVIEW_FILES)
+    # The withdrawn evidence registry is fetched and checked once, by review_withdrawals.
+    needed = set(changed & REVIEW_FILES) - {EVIDENCE_WITHDRAWALS}
     if set(CURATED_INPUTS) & changed:
         needed.update(CURATED_INPUTS)
     if set(SOURCE_INPUTS) & changed:
@@ -264,25 +324,32 @@ def review_public_supplements(contents):
     # These imports resolve in the trusted base checkout. This validator only
     # materializes the fixed JSON inputs; it never loads PR code or archives.
     from public_source_supplements import (
-        MAX_ARCHIVE_BYTES, bounded_bytes, check_source, load_supplements,
-        owned_file, project_additions, strict_json,
+        EVIDENCE_DIRECTORY, MAX_ARCHIVE_BYTES, WITHDRAWALS, bounded_bytes, check_source, load_supplements,
+        owned_file, project_additions, read_withdrawals, strict_json, withdrawal_for,
     )
     base_batch = strict_json(bounded_bytes(owned_file(
         ROOT, 'data/source-supplements', Path(SUPPLEMENT_BATCH).name)))
     source = base_batch['source']
     check_source(source)
     archive_name = source['archive_filename']
-    archive = bounded_bytes(owned_file(ROOT, 'data/source-evidence', archive_name),
-                            MAX_ARCHIVE_BYTES)
+    # A withdrawn archive is gone from the base: the base registry travels with the inputs instead.
+    withdrawn = withdrawal_for(source, read_withdrawals(ROOT)) is not None
+    archive = None if withdrawn else bounded_bytes(owned_file(ROOT, 'data/source-evidence', archive_name),
+                                                   MAX_ARCHIVE_BYTES)
     with tempfile.TemporaryDirectory(prefix='trusted-supplement-review-') as directory:
         temporary = Path(directory)
         for filename in (*SUPPLEMENT_INPUTS, SOURCE_INDEX, SOURCE_SCOPE):
             path = temporary / filename
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(contents[filename], encoding='utf-8')
-        archive_path = temporary / 'data/source-evidence' / archive_name
-        archive_path.parent.mkdir(parents=True, exist_ok=True)
-        archive_path.write_bytes(archive)
+        if withdrawn:
+            registry = temporary / EVIDENCE_DIRECTORY / WITHDRAWALS
+            registry.parent.mkdir(parents=True, exist_ok=True)
+            registry.write_bytes(owned_file(ROOT, EVIDENCE_DIRECTORY, WITHDRAWALS).read_bytes())
+        else:
+            archive_path = temporary / 'data/source-evidence' / archive_name
+            archive_path.parent.mkdir(parents=True, exist_ok=True)
+            archive_path.write_bytes(archive)
         admitted = load_supplements(temporary)
         visible = sum(row.get('scope_status') != 'excluded'
                       for row in project_additions(admitted))
@@ -589,6 +656,9 @@ def main():
     changed.update(entry['previous_filename'] for entry in files
                    if entry['status'] == 'renamed' and 'previous_filename' in entry)
     errors, reviewed, omitted, not_inspected = [], [], [], []
+    withdrawn = review_withdrawals(repository, sha, token, files, errors)
+    if withdrawn:
+        reviewed.append(f'{len(withdrawn)} evidence archive(s) withdrawn by their exact trusted-base digest')
     if pull.get('changed_files', len(files)) > 300:
         errors.append('This PR exceeds the 300-file automatic review limit; split it for a complete review.')
     for entry in files:
@@ -599,7 +669,7 @@ def main():
             # Named by path only; such files are never fetched.
             errors.append(f'{path}: {rule}')
         archive_change = changes_public_archive(entry)
-        if archive_change:
+        if archive_change and not (entry['status'] == 'removed' and path in withdrawn):
             errors.append(f'{path}: immutable public source archives cannot be changed by a data-admission PR; a separate source-pin review is required.')
         unknown_locale = (path.startswith('data/locales/')
                           and path not in (*LOCALE_FILES, SUPPLEMENT_LOCALE)

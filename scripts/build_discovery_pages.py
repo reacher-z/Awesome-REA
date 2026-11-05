@@ -115,7 +115,7 @@ def file_size_label(size: int) -> str:
 
 
 def _about_link_groups(site_dir: Path, language: str, repository_url: str, source_index: dict | None,
-                       source_export: str, published: bool) -> str:
+                       source_export: str, published: bool, withdrawals: dict | None = None) -> str:
     """Group the /about/ links by purpose: site pages, sized downloads, and GitHub documents.
 
     Site pages and site-wide downloads keep the footer's names from site_footer.py; each download adds its built size."""
@@ -130,16 +130,28 @@ def _about_link_groups(site_dir: Path, language: str, repository_url: str, sourc
         downloads.append(('/source-index.json', '<a href="/source-index.json" download="awesomerea-repository-scan-baseline.json" '
                                                 f'type="application/json">{baseline}</a>'))
         for entry in source_index['meta']['capture_sources']:
-            # The archive keeps its run-specific filename; the name says what it holds.
+            # The archive keeps its run-specific filename; the name says what it holds. A withdrawn one is listed
+            # below from its registry entry instead.
+            if entry.get('archive_withdrawal'):
+                continue
             run = entry['run']['id']
             name = f'原始扫描证据（运行 {run}）ZIP ↓' if zh else f'Original scan evidence (run {run}) ZIP ↓'
             downloads.append((entry['archive_url'], f'<a href="{escape(entry["archive_url"], quote=True)}" download '
                                                     f'type="application/zip">{escape(name)}</a>'))
+    for _, entry in sorted((withdrawals or {}).items()):
+        # A withdrawn archive is listed, not linked: its run, date and reason stay visible here, and the old archive
+        # address redirects to this item.
+        run = entry['run_id']
+        text = (f'原始扫描证据（运行 {run}）已于 {entry["withdrawn_at"]} 撤回：{entry["reason_zh"]}' if zh
+                else f'Original scan evidence (run {run}) was withdrawn on {entry["withdrawn_at"]}: {entry["reason"]}')
+        # One anchor per run attempt, the target of that archive's redirect.
+        anchor = f'scan-evidence-{run}-{entry["run_attempt"]}'
+        downloads.append((None, f'<span id="{anchor}" class="about-withdrawn">{escape(text)}</span>'))
     download_items = []
     for url, link in downloads:
         # Sizes describe the files already written to site_dir; a fixture without them shows the name only.
-        local = site_dir / unquote(urlsplit(url).path).lstrip('/')
-        size = f'<span class="about-file-meta">{file_size_label(local.stat().st_size)}</span>' if local.is_file() else ''
+        local = site_dir / unquote(urlsplit(url).path).lstrip('/') if url else None
+        size = f'<span class="about-file-meta">{file_size_label(local.stat().st_size)}</span>' if local and local.is_file() else ''
         download_items.append(f'<li>{link}{size}</li>')
     documents = [('README.zh-CN.md' if zh else 'README.md', 'GitHub README', 'GitHub README'),
                  ('docs/source-scan.md', '扫描方法（英文）', 'Scan methodology'),
@@ -483,7 +495,8 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
 '''
 
 
-def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | None) -> list[str]:
+def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | None, *,
+                          withdrawals: dict | None = None) -> list[str]:
     """Write discovery assets and return eight root-relative HTML sitemap paths.
 
     ``catalog`` is the built catalog object with localized names and requirements.
@@ -609,7 +622,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         companion_description = ('收录 AI 参与开发的游戏、网站与应用，以及智能体训练和评测使用的环境、基准和数据集。每个项目保留原始来源、开发方式说明和使用限制。'
                                  if zh else 'A directory of games, websites, and apps made with AI, plus environments, benchmarks, and datasets for training and evaluating agents. Each project retains original sources, development evidence, and practical limits.')
         fact_cards += f'<section class="source-card browse-repository"><h2>{("相关目录" if zh else "Companion directory")}</h2><p class="card-description"><a href="{companion_url}">AI Can What?</a> — {companion_description}</p></section>'
-        links = _about_link_groups(site_dir, language, repository_url, source_index, source_export, published)
+        links = _about_link_groups(site_dir, language, repository_url, source_index, source_export, published, withdrawals)
         content = f'<div class="source-results">{fact_cards}</div><section class="about-links" aria-labelledby="about-links-heading"><div class="browse-topline"><h2 id="about-links-heading">{("浏览、下载与来源" if zh else "Browse, download, and inspect sources")}</h2></div>{links}</section>'
         schema = {'@context': 'https://schema.org', '@type': 'AboutPage', 'url': site_url + path, 'name': title, 'description': description, 'inLanguage': locale, 'about': website_reference(site_url)}
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=schema, assets=assets, icon_stylesheet=icons.href, source_export=source_export)
