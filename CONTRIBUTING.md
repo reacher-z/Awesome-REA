@@ -114,7 +114,7 @@ The badge is a static 184 × 20 SVG served from the collection website, a copy o
 
 ## Review and publication
 
-Pull requests receive a [rule-based review](docs/automation.md) from trusted base-branch code. It checks catalog structure, duplicates, source fields, and common privacy mistakes without executing contributor code. Maintainers review resource relevance and factual claims. Passing automation does not automatically approve or merge a contribution.
+Pull requests receive a [rule-based review](docs/automation.md) from trusted base-branch code. It checks catalog structure, duplicates, source fields, and common privacy mistakes without executing contributor code. Maintainers review resource relevance and factual claims. Passing automation does not automatically approve or merge a contribution. The only exception is the scheduled [discovery ingest](docs/automation.md#automated-discovery-ingest), which merges its own pull requests that add unreviewed scan records to [data/discoveries/](data/discoveries/README.md) and nothing else.
 
 The protected `main` branch requires the `validate` and `review` checks before merging, including for administrators. After changes reach `main`, the connected Cloudflare Pages project runs the collection checks and publishes the website. See the [website maintenance guide](docs/website.md).
 

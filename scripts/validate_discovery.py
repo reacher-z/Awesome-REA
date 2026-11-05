@@ -29,8 +29,11 @@ def expected_entry_routes(resources, papers):
     return routes
 
 
-def validate_route_inventory(urls, resources, papers, *, include_browse=True):
-    """Require exact sitemap coverage; unknown automatic-repository pages are refused."""
+def validate_route_inventory(urls, resources, papers, *, include_browse=True, include_discoveries=False):
+    """Require exact sitemap coverage; unknown automatic-repository pages are refused.
+
+    The unreviewed discovery queue adds one list page per language, never a page per scan record.
+    """
     routes = expected_entry_routes(resources, papers)
     expected = set(routes)
     for prefix in ("", "/zh"):
@@ -38,6 +41,8 @@ def validate_route_inventory(urls, resources, papers, *, include_browse=True):
         if include_browse:
             expected.add(prefix + "/browse/")
             expected.update(f"{prefix}/browse/{category}/" for category in CATEGORIES)
+        if include_discoveries:
+            expected.add(prefix + "/discoveries/")
     assert len(urls) == len(set(urls)), "Duplicate sitemap URLs"
     assert set(urls) == {ORIGIN + route for route in expected}, "Sitemap route inventory differs from reviewed entries and collection pages"
     return routes
@@ -86,7 +91,8 @@ def main():
     urls = [node.text for node in sitemap.findall("{*}url/{*}loc")]
     records = json.loads((OUTPUT / "catalog.json").read_text(encoding="utf-8"))["resources"]
     papers = json.loads((OUTPUT / "papers.json").read_text(encoding="utf-8"))
-    entries = validate_route_inventory(urls, records, papers, include_browse=(OUTPUT / "source-index.json").is_file())
+    entries = validate_route_inventory(urls, records, papers, include_browse=(OUTPUT / "source-index.json").is_file(),
+                                       include_discoveries=(OUTPUT / "discoveries.json").is_file())
     documents = {}
     for url in urls:
         parsed = urlsplit(url)

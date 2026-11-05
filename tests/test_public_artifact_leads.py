@@ -4,6 +4,7 @@ import base64
 import hashlib
 import io
 import json
+import re
 from pathlib import Path
 import sys
 from tempfile import TemporaryDirectory
@@ -261,9 +262,12 @@ class PublicLeadTests(unittest.TestCase):
                 discovery.write_report(report, Path(temporary) / 'data')
 
     def test_workflow_is_two_hourly_read_only_default_branch_and_artifact_only(self):
-        text = (ROOT / '.github/workflows/public-artifact-discovery.yml').read_text()
-        self.assertIn("cron: '7 */2 * * *'", text)
-        self.assertNotIn('timezone:', text)
+        workflow = (ROOT / '.github/workflows/public-artifact-discovery.yml').read_text()
+        self.assertIn("cron: '7 */2 * * *'", workflow)
+        self.assertNotIn('timezone:', workflow)
+        # Only the failure-tracking job may write, and only issues.
+        text, report = workflow.split('\n  report:\n', 1)
+        self.assertEqual(re.findall(r'^      ([a-z-]+): write$', report, re.MULTILINE), ['issues'])
         self.assertIn('github.event.repository.default_branch', text)
         self.assertIn('contents: read', text); self.assertIn('discussions: read', text)
         self.assertNotIn(': write', text); self.assertNotIn('pull_request', text)

@@ -1,4 +1,8 @@
-"""Write Atom feeds of newly added curated entries and papers, never scan records."""
+"""Write Atom feeds of newly added curated entries and papers.
+
+Scan records never appear as entries of their own. Each recent automated discovery batch adds one
+summary entry, labelled unreviewed, that links the discovery list instead of a detail page.
+"""
 from __future__ import annotations
 
 from html import escape
@@ -23,6 +27,10 @@ FEED_RIGHTS = {
     'zh': '原创说明采用 MIT 许可；外部项目与论文保留各自的权利和许可。',
 }
 PAPER_LABELS = ('Research paper', '研究论文')
+DISCOVERY_PATHS = {'en': '/discoveries/', 'zh': '/zh/discoveries/'}
+DISCOVERY_TERM = 'unreviewed-discovery'
+DISCOVERY_LABELS = ('Unreviewed automated discovery', '未审核的自动发现')
+DISCOVERY_NAMES = 8
 
 
 def feed_entries(resources: list[dict], papers: list[dict], limit: int = FEED_SIZE) -> list[tuple[str, dict]]:
@@ -48,8 +56,39 @@ def _timestamp(date: str) -> str:
     return date + 'T00:00:00Z'
 
 
+def entry_time(kind: str, record: dict) -> str:
+    """Curated records are dated by day; a discovery batch by its UTC ingest time."""
+    return record['ingested_at'] if kind == 'discovery' else _timestamp(record['added_at'])
+
+
+def merged_entries(entries: list[tuple[str, dict]], batches: list[dict] | None = None) -> list[tuple[str, dict]]:
+    """Curated entries plus discovery batch summaries, newest first.
+
+    Both timestamps use the same UTC ``YYYY-MM-DDTHH:MM:SSZ`` form, so they sort as text; the sort is
+    stable, so equal times keep the curated order first.
+    """
+    combined = [*entries, *(('discovery', batch) for batch in batches or [])]
+    return sorted(combined, key=lambda item: entry_time(*item), reverse=True)
+
+
+def discovery_summary(batch: dict, language: str) -> tuple[str, str]:
+    zh = language == 'zh'
+    count, names = len(batch['records']), [record['full_name'] for record in batch['records'][:DISCOVERY_NAMES]]
+    more = count - len(names)
+    if zh:
+        title = f'未审核的自动发现：扫描运行 {batch["run_id"]} 新增 {count:,} 个仓库'
+        summary = '、'.join(names) + (f' 等 {count:,} 个' if more else '') + '。自动 README 扫描结果，尚未审核、精选或运行。'
+    else:
+        title = f'Unreviewed discoveries: {count:,} repositories from scan run {batch["run_id"]}'
+        summary = ', '.join(names) + (f' and {more:,} more' if more else '') + '. Automated README scans; not reviewed, curated or run.'
+    return title, summary
+
+
 def atom_feed(entries: list[tuple[str, dict]], language: str, *, site_url: str, repository_url: str) -> str:
-    """Render one localized feed; entry IDs are the stable localized detail-page URLs."""
+    """Render one localized feed; entry IDs are the stable localized detail-page URLs.
+
+    A discovery batch entry has a tag URI as its ID and links the localized discovery list.
+    """
     zh = language == 'zh'
     if not entries:
         raise ValueError('An Atom feed needs at least one dated entry')
@@ -57,6 +96,19 @@ def atom_feed(entries: list[tuple[str, dict]], language: str, *, site_url: str, 
     home = site_url + ('/zh/' if zh else '/')
     rows = []
     for kind, record in entries:
+        if kind == 'discovery':
+            title, summary = discovery_summary(record, language)
+            stamp = record['ingested_at']
+            rows.append(f'''  <entry>
+    <id>tag:awesomerea.org,2026:discovery-batch:{record['batch_id']}:{language}</id>
+    <title>{xml_escape(title)}</title>
+    <link rel="alternate" type="text/html" href={quoteattr(site_url + DISCOVERY_PATHS[language])}/>
+    <published>{stamp}</published>
+    <updated>{stamp}</updated>
+    <category term="{DISCOVERY_TERM}" label={quoteattr(DISCOVERY_LABELS[int(zh)])}/>
+    <summary>{xml_escape(summary)}</summary>
+  </entry>''')
+            continue
         url = site_url + entry_path(kind, record['id'], language)
         if kind == 'resource':
             title = (record.get('name_zh') or record['name']) if zh else record['name']
@@ -82,7 +134,7 @@ def atom_feed(entries: list[tuple[str, dict]], language: str, *, site_url: str, 
   <subtitle>{xml_escape(FEED_SUBTITLES[language])}</subtitle>
   <link rel="self" type="application/atom+xml" href={quoteattr(feed_url)}/>
   <link rel="alternate" type="text/html" href={quoteattr(home)}/>
-  <updated>{_timestamp(entries[0][1]['added_at'])}</updated>
+  <updated>{entry_time(*entries[0])}</updated>
   <author><name>Awesome REA contributors</name><uri>{xml_escape(repository_url)}</uri></author>
   <rights>{xml_escape(FEED_RIGHTS[language])}</rights>
 {rows}
@@ -97,14 +149,15 @@ def feed_link(language: str) -> str:
 
 def build_feeds(site_dir: Path, resources: list[dict], papers: list[dict], *,
                 site_url: str = 'https://awesomerea.org',
-                repository_url: str = 'https://github.com/reacher-z/Awesome-REA') -> list[str]:
+                repository_url: str = 'https://github.com/reacher-z/Awesome-REA',
+                discovery_batches: list[dict] | None = None) -> list[str]:
     """Write both feeds and link them from the listing pages; return the feed paths.
 
-    The feed date is the newest ``added_at``, not the build time, so rebuilding a
-    commit is byte-identical. Without dated records no feed or link is written.
+    The feed date is the newest ``added_at`` or discovery ingest time, not the build time, so
+    rebuilding a commit is byte-identical. Without dated entries no feed or link is written.
     """
     site_dir = Path(site_dir)
-    entries = feed_entries(resources, papers)
+    entries = merged_entries(feed_entries(resources, papers), discovery_batches)
     if not entries:
         return []
     for language, path in FEED_PATHS.items():

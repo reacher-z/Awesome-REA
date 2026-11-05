@@ -38,6 +38,8 @@ SUPPLEMENT_INPUTS = (SUPPLEMENT_INDEX, SUPPLEMENT_BATCH, SUPPLEMENT_SCOPE, SUPPL
 OPTIONAL_SUPPLEMENT_INPUTS = frozenset((SUPPLEMENT_SCOPE, SUPPLEMENT_LOCALE))
 REVIEW_FILES = frozenset((*CURATED_INPUTS, 'data/benchmarks.json', 'data/papers.json',
                           *SOURCE_INPUTS, CASE_COVERAGE, *SUPPLEMENT_INPUTS))
+# Automated discovery batches are added one file per scan run and reviewed as data by trusted base code.
+DISCOVERY_BATCH = re.compile(r'data/discoveries/run-[1-9][0-9]{0,19}-[1-9][0-9]{0,2}\.json')
 LOCALE_FIELDS = {'description_en', 'description_zh', 'english_retains_name', 'technical_only'}
 SENSITIVE = re.compile(r'gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[A-Z0-9]{16}|-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY(?: BLOCK)?-----')
 # Personal paths: macOS/Linux homes, Windows or WSL profiles with either separator, /root, ~ and $HOME.
@@ -371,6 +373,81 @@ def review_data(contents, changed):
     return errors, reviewed
 
 
+def review_discovery_batches(repository, sha, token, files, errors, pull=None):
+    """Check added discovery batches with base code against the base's published layers and budget.
+
+    A batch is new data only: an existing batch is immutable, so changing, renaming or removing one is a
+    finding. Each added batch is fetched as size-bounded text, never executed. The ingest job verifies the
+    captures against its own run's checkpoint artifact before opening its pull request, so batches are
+    accepted only in that pull request: from the workflow token, on the ingest branch, changing nothing else.
+    A hand-made batch cites provenance that this review cannot verify and needs a maintainer.
+    """
+    import discoveries
+    entries = [entry for entry in files if DISCOVERY_BATCH.fullmatch(entry['filename'])
+               or (entry['status'] == 'renamed' and DISCOVERY_BATCH.fullmatch(entry.get('previous_filename', '')))]
+    if not entries:
+        return []
+    user, head = (pull or {}).get('user') or {}, (pull or {}).get('head') or {}
+    if (user.get('login') != discoveries.INGEST_AUTHOR or user.get('type') != 'Bot'
+            or head.get('ref') != discoveries.INGEST_BRANCH or len(files) != len(entries)):
+        errors.append('Discovery batches are added only by the scheduled ingest, whose job verifies them against its '
+                      'own checkpoint artifact, in a pull request that changes nothing else; this batch needs maintainer review.')
+    reviewed, added = [], []
+    for entry in entries:
+        if entry['status'] != 'added':
+            errors.append(f"{entry['filename']}: existing discovery batches are immutable; changing, renaming or removing one requires maintainer review.")
+            continue
+        try:
+            text = raw_text_at(repository, entry['filename'], sha, token)
+        except (OSError, UnicodeError, ValueError):
+            errors.append(f"{entry['filename']}: could not safely retrieve the discovery batch for this review.")
+            continue
+        errors.extend(json_privacy_findings(entry['filename'], text))
+        name = Path(entry['filename']).stem
+        try:
+            batch = parse_json(text, entry['filename'])
+        except InvalidJSON as error:
+            errors.append(str(error))
+            continue
+        problems = discoveries.validate_batch(batch, name)
+        if not problems and text.encode('utf-8') != discoveries.batch_bytes(batch):
+            problems.append(f"{entry['filename']}: use the repository JSON format (two-space indent, trailing newline).")
+        errors.extend(problems[:20])
+        if not problems:
+            added.append(batch)
+    if not added:
+        return reviewed
+    try:
+        base_batches, base_problems = discoveries.load_batches(ROOT)
+        existing = discoveries.existing_identities(ROOT, base_batches)
+        curated = discoveries.curated_urls(ROOT)
+    except (OSError, ValueError, KeyError, TypeError):
+        errors.append('Discovery batches could not be compared with the trusted base layers.')
+        return reviewed
+    errors.extend(base_problems[:5])
+    ids, names, readmes = set(existing['ids']), dict(existing['names']), set(existing['readmes'])
+    total, size = existing['records'], existing['bytes']
+    for batch in added:
+        where = f"data/discoveries/{batch['batch_id']}.json"
+        for record in batch['resources']:
+            name = record['full_name'].casefold()
+            if record['id'] in ids:
+                errors.append(f"{where}: {record['id']} is already in the source index, a public supplement or an earlier discovery batch.")
+            elif names.get(name, record['id']) != record['id']:
+                errors.append(f"{where}: {record['id']} reuses a repository name already recorded under another numeric ID.")
+            elif record['readme_sha256'] in readmes:
+                errors.append(f"{where}: {record['id']} repeats a README already published by another record.")
+            elif record['url'].rstrip('/').casefold() in curated:
+                errors.append(f"{where}: {record['id']} is already a curated resource.")
+            ids.add(record['id']); names.setdefault(name, record['id']); readmes.add(record['readme_sha256'])
+        total += len(batch['resources'])
+        size += len(discoveries.batch_bytes(batch))
+        reviewed.append(f"Discovery batch {batch['batch_id']}: {len(batch['resources'])} automated README captures from the scheduled ingest checked with trusted-base code for schema, explicit Git blob hash matches, the {discoveries.POLICY} screen, record fingerprints, recorded scan provenance and identities new to every base layer; the ingest job matched them to its checkpoint artifact, and they stay unreviewed.")
+    if total > discoveries.MAX_TOTAL_RECORDS or size > discoveries.MAX_TOTAL_BYTES:
+        errors.append(f'Discovery batches would exceed the documented budget ({discoveries.MAX_TOTAL_RECORDS:,} records, {discoveries.MAX_TOTAL_BYTES:,} bytes).')
+    return reviewed
+
+
 def review_advisories(contents, changed):
     """Evidence-pin warnings for curated records this PR adds or changes; they never become findings."""
     if not set(CATALOGS) & changed:
@@ -527,7 +604,7 @@ def main():
             added = '\n'.join(line[1:] for line in patch.splitlines() if line.startswith('+') and not line.startswith('+++'))
             if private_text(added):
                 errors.append(f'{path}: added text contains a credential-like value or personal path; inspect locally. The value is omitted here.')
-        elif (entry['status'] not in ('removed', 'unchanged') and not rule
+        elif (entry['status'] not in ('removed', 'unchanged') and not rule and not DISCOVERY_BATCH.fullmatch(path)
               and not archive_change and not unknown_locale and path not in REVIEW_FILES):
             # GitHub omits the patch of binary files and very large diffs.
             omitted.append(path)
@@ -543,6 +620,7 @@ def main():
         elif private_text(text):
             errors.append(f'{path}: GitHub omitted this diff, and the file text at this commit contains a credential-like value or personal path; inspect locally. The value is omitted here.')
     contents = load_review_contents(repository, sha, token, files, changed, errors)
+    reviewed.extend(review_discovery_batches(repository, sha, token, files, errors, pull))
     try:
         findings, checked = review_data(contents, changed & REVIEW_FILES)
         errors.extend(findings)

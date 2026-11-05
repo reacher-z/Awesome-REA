@@ -331,11 +331,14 @@ class NestedSchemaTests(unittest.TestCase):
 
 class WorkflowTests(unittest.TestCase):
     def test_schedule_permissions_upload_scope_and_bounds(self):
-        text = (scheduled.ROOT / '.github/workflows/source-scan.yml').read_text()
-        self.assertIn("cron: '7 */2 * * *'", text)
-        self.assertNotIn('timezone:', text)
-        self.assertIn('contents: read', text); self.assertIn('actions: read', text)
-        self.assertNotIn(': write', text); self.assertNotIn('pull_request', text)
+        workflow = (scheduled.ROOT / '.github/workflows/source-scan.yml').read_text()
+        self.assertIn("cron: '7 */2 * * *'", workflow)
+        self.assertNotIn('timezone:', workflow)
+        self.assertNotIn('pull_request', workflow)
+        self.assertIn('permissions:\n  contents: read\n  actions: read\nconcurrency:', workflow)
+        # The scan job keeps the read-only workflow token; only the separate ingest and report jobs write.
+        text = workflow.split('\n  ingest:\n', 1)[0]
+        self.assertNotIn(': write', text)
         self.assertIn('timeout-minutes: 30', text)
         self.assertNotIn('timeout-minutes: 45', text)
         self.assertIn("steps.scan.outputs.checkpoint_ready == 'true'", text)

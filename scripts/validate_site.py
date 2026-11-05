@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check generated canonical pages, structured data, local links and ownership files."""
 from collections import Counter, defaultdict
+from html import unescape as html_unescape
 from html.parser import HTMLParser
 import json
 from pathlib import Path
@@ -27,7 +28,9 @@ from validate_discovery import expected_entry_routes, validate_route_inventory
 from build_readme import (CATEGORIES, METHOD_SECTIONS, PAPER_SECTIONS, REQUIREMENTS_LABEL, case_method,
                           collection_section, method_groups, paper_section)
 from build_discovery_pages import ABOUT_EXCLUDED_SECTIONS, SECTION_TARGETS, file_size_label
-from build_feed import FEED_PAGES, FEED_PATHS, FEED_SIZE, feed_entries
+from build_feed import (DISCOVERY_LABELS, DISCOVERY_PATHS, DISCOVERY_TERM, FEED_PAGES, FEED_PATHS, FEED_SIZE,
+                        discovery_summary, entry_time, feed_entries, merged_entries)
+import build_discoveries
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SITE_ALTERNATE_NAMES, SITE_NAME, SOCIAL_IMAGE_ALT, png_size
 from site_footer import DOWNLOADS, SECTION_LINKS, site_footer
@@ -1216,15 +1219,24 @@ def validate_section_target_counts(output, resources):
                     f'{label}: {section["cards"]} cards, but the count line implies {found[0]} - {found[1]} + {found[2]}')
 
 
-def validate_feeds(output, pages, resources, papers):
-    """Bind both Atom feeds to dated catalog records and their localized detail pages."""
+def validate_feeds(output, pages, resources, papers, discovery_batches=None):
+    """Bind both Atom feeds to dated catalog records and their localized detail pages.
+
+    Discovery batch summaries, when present, link the localized discovery list and carry the
+    unreviewed category; the discovery list pages advertise only their own discovery feed.
+    """
     output = Path(output)
-    expected = feed_entries(resources, papers)
+    curated = feed_entries(resources, papers)
+    expected = merged_entries(curated, discovery_batches)
     linked = {route: page.feeds for route, page in pages.items() if page.feeds}
+    for language, path in build_discoveries.FEED_PATHS.items():
+        route = build_discoveries.PAGE_PATHS[language]
+        if route in linked:
+            assert linked.pop(route) == [path], f'The discovery list links only its own feed: {route}'
     if not expected:
         assert not linked and not any((output / path.lstrip('/')).exists() for path in FEED_PATHS.values()), 'Feeds and feed links need dated records'
         return
-    assert 0 < len(expected) <= FEED_SIZE
+    assert 0 < len(curated) <= FEED_SIZE and len(expected) - len(curated) <= build_discoveries.MAIN_FEED_BATCHES
     atom = '{http://www.w3.org/2005/Atom}'
     headers = header_rules((output / '_headers').read_text(encoding='utf-8'))
     for language, path in FEED_PATHS.items():
@@ -1238,16 +1250,95 @@ def validate_feeds(output, pages, resources, papers):
         entries = root.findall(atom + 'entry')
         assert len(entries) == len(expected), f'Feed entry count mismatch: {path}'
         for entry, (kind, record) in zip(entries, expected):
+            stamp = entry_time(kind, record)
+            if kind == 'discovery':
+                route = DISCOVERY_PATHS[language]
+                title, summary = discovery_summary(record, language)
+                category = entry.find(atom + 'category')
+                assert route in pages, f'Discovery feed entries need the discovery list: {route}'
+                assert (entry.findtext(atom + 'id') == f"tag:awesomerea.org,2026:discovery-batch:{record['batch_id']}:{language}"
+                        and entry.findtext(atom + 'title') == title
+                        and [link.get('href') for link in entry.findall(atom + 'link')] == [ORIGIN + route]
+                        and entry.findtext(atom + 'published') == stamp == entry.findtext(atom + 'updated')
+                        and category is not None and category.get('term') == DISCOVERY_TERM
+                        and category.get('label') == DISCOVERY_LABELS[language == 'zh']
+                        and entry.findtext(atom + 'summary') == summary), f"Discovery feed entry differs from its batch: {record['batch_id']}"
+                continue
             route = f"{prefix}/{kind}s/{record['id']}/"
             assert route in pages, f'Feed entry must link a detail page: {route}'
             title = ((record.get('name_zh') or record['name']) if language == 'zh' else record['name']) if kind == 'resource' else record['title_zh' if language == 'zh' else 'title']
-            stamp = record['added_at'] + 'T00:00:00Z'
             assert (entry.findtext(atom + 'id') == ORIGIN + route and entry.findtext(atom + 'title') == title
                     and [link.get('href') for link in entry.findall(atom + 'link')] == [ORIGIN + route]
                     and entry.findtext(atom + 'published') == stamp == entry.findtext(atom + 'updated')
                     and entry.findtext(atom + 'summary') == record[f'description_{language}']), f'Feed entry differs from its record: {route}'
-        assert root.findtext(atom + 'updated') == expected[0][1]['added_at'] + 'T00:00:00Z', f'Feed date must be the newest inclusion date: {path}'
+        assert root.findtext(atom + 'updated') == entry_time(*expected[0]), f'Feed date must be the newest inclusion date: {path}'
     assert not linked, 'Only the homepages and curated, case and paper listings advertise feeds: ' + ', '.join(sorted(linked))
+
+
+def published_repository_document(output):
+    """The repository selection the build published, which hides discoveries it already lists."""
+    output = Path(output)
+    for name in (PUBLISHED_FILENAME, 'source-index.json'):
+        if (output / name).is_file():
+            return json.loads((output / name).read_text(encoding='utf-8'))
+    return None
+
+
+def validate_discovery_outputs(output, pages, queue):
+    """The unreviewed queue: two list pages, two feeds, the JSON export and status, all labelled unreviewed."""
+    output = Path(output)
+    names = ('discoveries/index.html', 'zh/discoveries/index.html', 'discoveries.json', 'discoveries/status.json',
+             'discoveries/badge.json', 'discoveries/feed.xml', 'zh/discoveries/feed.xml', 'discoveries/batches')
+    if queue is None:
+        assert not any((output / name).exists() for name in names), 'Discovery outputs need discovery batches'
+        return
+    listed = queue['listed']
+    atom = '{http://www.w3.org/2005/Atom}'
+    headers = header_rules((output / '_headers').read_text(encoding='utf-8'))
+    for path in (build_discoveries.EXPORT_PATH, build_discoveries.STATUS_PATH, build_discoveries.BADGE_PATH):
+        assert headers.get(path, {}).get('cache-control') == 'no-cache, must-revalidate', f'Discovery data must revalidate: {path}'
+    for language, route in build_discoveries.PAGE_PATHS.items():
+        zh = language == 'zh'
+        assert route in pages, f'Discovery list missing from the sitemap: {route}'
+        text = (output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')
+        shown = re.findall(r'<article class="source-card browse-repository" id="(scan-[0-9]+)"', text)
+        assert shown == [record['id'] for record in listed[:build_discoveries.PAGE_RECORDS]], f'Discovery list order differs from the queue: {route}'
+        assert html_unescape(build_discoveries.NOTE[int(zh)]) in html_unescape(text), f'Discovery list must say the records are unreviewed: {route}'
+        assert '<h1' in text and text.count('<h2') >= 1, route
+        feed_path = build_discoveries.FEED_PATHS[language]
+        assert headers.get(feed_path, {}).get('content-type') == 'application/atom+xml; charset=utf-8', f'Feed needs an Atom content type: {feed_path}'
+        root = ET.parse(output / feed_path.lstrip('/')).getroot()
+        assert root.findtext(atom + 'id') == ORIGIN + feed_path, feed_path
+        assert [(link.get('rel'), link.get('href')) for link in root.findall(atom + 'link')] == [('self', ORIGIN + feed_path), ('alternate', ORIGIN + route)], feed_path
+        entries = root.findall(atom + 'entry')
+        expected = listed[:build_discoveries.FEED_RECORDS]
+        assert len(entries) == len(expected), f'Discovery feed entry count mismatch: {feed_path}'
+        for entry, record in zip(entries, expected):
+            category = entry.find(atom + 'category')
+            assert (entry.findtext(atom + 'id') == f"tag:awesomerea.org,2026:discovery:{record['id']}"
+                    and [link.get('href') for link in entry.findall(atom + 'link')] == [record['url']]
+                    and entry.findtext(atom + 'published') == record['ingested_at'] == entry.findtext(atom + 'updated')
+                    and category is not None and category.get('term') == build_discoveries.FEED_TERM), f"Discovery feed entry differs from its record: {record['id']}"
+    export = json.loads((output / 'discoveries.json').read_text(encoding='utf-8'))
+    assert export['version'] == 1 and export['review_status'] == 'unreviewed' and export['verification'] == 'automated-readme-scan'
+    assert [row['id'] for row in export['resources']] == [record['id'] for record in listed[:build_discoveries.EXPORT_RECORDS]], 'Discovery export differs from the queue'
+    # The index export plus one file per batch cover every listed record exactly once.
+    paged = []
+    batch_files = sorted((output / 'discoveries' / 'batches').glob('*.json'))
+    assert {path.stem for path in batch_files} == {batch['batch_id'] for batch in queue['batches']}, 'One export file per discovery batch'
+    for entry in export['batches']:
+        page = json.loads((output / build_discoveries.batch_export_path(entry['batch_id']).lstrip('/')).read_text(encoding='utf-8'))
+        assert entry['records_url'] == ORIGIN + build_discoveries.batch_export_path(entry['batch_id'])
+        assert page['review_status'] == 'unreviewed' and len(page['resources']) == entry['listed_count'], entry['batch_id']
+        paged.extend(row['id'] for row in page['resources'])
+    assert paged == [record['id'] for record in listed], 'Batch exports must list every listed discovery once, newest batch first'
+    assert headers.get('/discoveries/batches/*', {}).get('cache-control') == 'no-cache, must-revalidate', 'Discovery batch exports must revalidate'
+    assert all(row['review_status'] == 'unreviewed' and row['verification'] == 'automated-readme-scan' for row in export['resources']), 'Every exported discovery stays unreviewed'
+    assert export['counts']['records'] == queue['record_count'] and export['counts']['listed'] == len(listed)
+    status = json.loads((output / 'discoveries/status.json').read_text(encoding='utf-8'))
+    assert status == export['status'] and status['last_successful_ingest_at'] == build_discoveries.timestamp(queue['latest']['ingested_at'])
+    badge = json.loads((output / 'discoveries/badge.json').read_text(encoding='utf-8'))
+    assert badge == build_discoveries.badge_document(queue), 'Discovery badge differs from the latest ingest'
 
 
 def validate_resource_listing(pages, resources):
@@ -1397,7 +1488,8 @@ def main():
     urls = [element.text for element in ET.parse(OUTPUT / 'sitemap.xml').findall('{*}url/{*}loc')]
     resources = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['resources']
     papers = json.loads((OUTPUT / 'papers.json').read_text(encoding='utf-8'))
-    validate_route_inventory(urls, resources, papers, include_browse=(OUTPUT / 'source-index.json').is_file())
+    validate_route_inventory(urls, resources, papers, include_browse=(OUTPUT / 'source-index.json').is_file(),
+                             include_discoveries=(OUTPUT / 'discoveries.json').is_file())
     pages, fragment_links = {}, []
     for url in urls:
         parsed = urlsplit(url)
@@ -1439,7 +1531,10 @@ def main():
     validate_paper_outputs(OUTPUT, pages)
     report_listing_sizes(OUTPUT)
     validate_entry_outputs(pages, resources, papers)
-    validate_feeds(OUTPUT, pages, resources, papers)
+    queue = build_discoveries.discovery_queue(ROOT, published_repository_document(OUTPUT), papers, resources)
+    queue = queue if queue['batches'] else None
+    validate_feeds(OUTPUT, pages, resources, papers, build_discoveries.main_feed_batches(queue))
+    validate_discovery_outputs(OUTPUT, pages, queue)
     validate_case_outputs(pages, resources)
     validate_section_target_counts(OUTPUT, resources)
     catalog_meta = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['meta']
