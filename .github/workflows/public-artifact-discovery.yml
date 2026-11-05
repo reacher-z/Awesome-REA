@@ -1,9 +1,9 @@
 name: Public artifact lead discovery
 on:
   workflow_dispatch:
+  # Every two hours at minute 7 UTC, the same requested start as the README scan.
   schedule:
-    - cron: '17 0,8,16 * * *'
-      timezone: America/Los_Angeles
+    - cron: '7 */2 * * *'
 permissions:
   contents: read
   discussions: read

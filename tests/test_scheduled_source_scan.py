@@ -332,11 +332,12 @@ class NestedSchemaTests(unittest.TestCase):
 class WorkflowTests(unittest.TestCase):
     def test_schedule_permissions_upload_scope_and_bounds(self):
         text = (scheduled.ROOT / '.github/workflows/source-scan.yml').read_text()
-        self.assertIn("cron: '17 0,8,16 * * *'", text)
-        self.assertIn('timezone: America/Los_Angeles', text)
+        self.assertIn("cron: '7 */2 * * *'", text)
+        self.assertNotIn('timezone:', text)
         self.assertIn('contents: read', text); self.assertIn('actions: read', text)
         self.assertNotIn(': write', text); self.assertNotIn('pull_request', text)
-        self.assertIn('timeout-minutes: 45', text)
+        self.assertIn('timeout-minutes: 30', text)
+        self.assertNotIn('timeout-minutes: 45', text)
         self.assertIn("steps.scan.outputs.checkpoint_ready == 'true'", text)
         self.assertIn('checkpoint/checkpoint.json', text)
         self.assertNotIn('path: .cache/', text.split('name: Preserve validated incremental checkpoint')[1].split('name: Preserve validated inputs')[0])
@@ -345,7 +346,8 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn('checkpoint/frontier.json', text)
         self.assertNotIn('retention-days: 90', text)
         self.assertIn('retention-days: 7', text)
-        self.assertLess(scheduled.SCAN_SECONDS, 45 * 60)
+        # Restoration and scanning leave time for final validation and the upload inside the 30-minute job.
+        self.assertLessEqual(scheduled.SCAN_SECONDS, 25 * 60)
 
 
 class RuntimeBoundaryTests(unittest.TestCase):
@@ -660,7 +662,7 @@ class ScheduledBudgetTests(unittest.TestCase):
             self.assertEqual((args.search_request_budget, args.pending_metadata_budget), (360, 200))
             self.assertEqual((args.workers, args.requests_per_second, args.max_pages), (4, 2, 3))
             self.assertEqual(scan.call_args.kwargs['readme_transport'].batch_size, 16)
-        self.assertEqual(scheduled.SCAN_SECONDS, 38 * 60)
+        self.assertEqual(scheduled.SCAN_SECONDS, 24 * 60)
         self.assertEqual(scheduled.NEW_SUCCESSES, 2000)
 
     def test_observed_graphql_quota_and_fallback_budget_defer_without_extra_requests(self):
