@@ -40,8 +40,11 @@ class DispatchGitHub(FakeGitHub):
     def checks(self):
         return [payload for method, path, payload in self.posted if path == 'check-runs']
 
+    def statuses(self):
+        return [payload for method, path, payload in self.posted if path == f'statuses/{SHA}']
+
     def body(self):
-        return [payload for method, path, payload in self.posted if path != 'check-runs'][-1]['body']
+        return [payload for method, path, payload in self.posted if path.startswith('pulls/')][-1]['body']
 
 
 def dispatched_review(github, *, inputs=None, ref='refs/heads/main'):
@@ -77,7 +80,11 @@ class DispatchedReviewTest(unittest.TestCase):
         self.assertEqual(status, 0, output)
         self.assertIn('**No issues found by these automatic checks.**', github.body())
         self.assertIn(f'trusted default-branch code at `{MAIN_SHA[:12]}`', github.body())
-        self.assertEqual([method for method, path, _ in github.posted], ['POST', 'POST'])
+        self.assertEqual([path for _, path, _ in github.posted], [f'pulls/{NUMBER}/reviews', f'statuses/{SHA}', 'check-runs'])
+        # The commit status is what branch protection counts for a dispatched run.
+        [state] = github.statuses()
+        self.assertEqual((state['context'], state['state'], state['target_url']),
+                         ('review', 'success', f'https://github.com/{REPOSITORY}/actions/runs/123'))
         [check] = github.checks()
         self.assertEqual((check['name'], check['head_sha'], check['status'], check['conclusion']),
                          ('review', SHA, 'completed', 'success'))
@@ -90,6 +97,7 @@ class DispatchedReviewTest(unittest.TestCase):
         self.assertEqual(status, 1)
         [check] = github.checks()
         self.assertEqual((check['head_sha'], check['conclusion']), (SHA, 'failure'))
+        self.assertEqual([state['state'] for state in github.statuses()], ['failure'])
         self.assertIn('need attention', check['output']['title'])
 
     def test_refusals_report_no_check_and_fetch_no_data(self):
@@ -147,7 +155,7 @@ class DispatchWorkflowTest(unittest.TestCase):
         self.assertIn("if: ${{ github.event_name == 'workflow_dispatch' && github.ref == format('refs/heads/{0}', "
                       "github.event.repository.default_branch) }}", dispatched)
         self.assertNotIn('ref:', dispatched)
-        self.assertIn('    permissions:\n      contents: read\n      pull-requests: write\n      checks: write\n', dispatched)
+        self.assertIn('    permissions:\n      contents: read\n      pull-requests: write\n      checks: write\n      statuses: write\n', dispatched)
         for job in (review, dispatched):
             self.assertIn('persist-credentials: false', job)
             self.assertIn('run: python3 scripts/review_pr.py', job)
@@ -162,9 +170,20 @@ class DispatchWorkflowTest(unittest.TestCase):
         self.assertIn('  push:\n    branches: [main]\n', trigger)
         self.assertIn('  pull_request:\n', trigger)
         self.assertIn('  workflow_dispatch:\n', trigger)
-        self.assertIn('permissions:\n  contents: read\n', text)
-        self.assertNotIn(': write', text)
-
+        self.assertIn('\npermissions:\n  contents: read\n#', text)
+        # Only a separate job that runs for dispatched runs can write, and only a commit status.
+        jobs = text.split('\njobs:\n', 1)[1]
+        self.assertEqual(re.findall(r'^      ([a-z-]+): write$', jobs, re.MULTILINE), ['statuses'])
+        aggregate, reporter = jobs.split('\n  validate:\n', 1)[1].split('\n  validate-status:\n', 1)
+        self.assertNotIn('permissions:', aggregate)
+        self.assertIn('    needs: validate\n', reporter)
+        self.assertIn("    if: ${{ always() && github.event_name == 'workflow_dispatch' }}\n", reporter)
+        self.assertIn('    permissions:\n      statuses: write\n    steps:', reporter)
+        self.assertIn("STATE: ${{ needs.validate.result == 'success' && 'success' || 'failure' }}", reporter)
+        self.assertIn('-f state="$STATE" -f context=validate', reporter)
+        for line in text.splitlines():
+            if line.strip().startswith('run:'):
+                self.assertNotIn('${{', line)
 
 if __name__ == '__main__':
     unittest.main()

@@ -198,7 +198,8 @@ class ContributorReferenceTests(unittest.TestCase):
         jobs = re.findall(r'^  ([a-z][a-z0-9_-]*):$', workflow.split('\njobs:\n', 1)[1], re.MULTILINE)
         needs = re.search(r'^    needs: \[([^\]]+)\]$', workflow, re.MULTILINE)[1].split(', ')
         shards = re.search(r'^        shard: \[([^\]]+)\]$', workflow, re.MULTILINE)[1].split(', ')
-        self.assertEqual(sorted(needs + ['validate']), sorted(jobs))
+        # validate-status only reports a dispatched run's aggregate result as a commit status.
+        self.assertEqual(sorted(needs + ['validate', 'validate-status']), sorted(jobs))
         for name in ('CONTRIBUTING.md', 'docs/automation.md'):
             text = (ROOT / name).read_text(encoding='utf-8')
             with self.subTest(document=name):

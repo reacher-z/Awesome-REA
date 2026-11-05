@@ -64,18 +64,30 @@ class CommitTest(unittest.TestCase):
 
 
 class WaitAndMergeTest(unittest.TestCase):
-    def test_check_results_use_the_latest_github_actions_run_of_each_name(self):
-        def runs(endpoint, payload):
-            name = re.search(r'check_name=([a-z]+)', endpoint)[1]
-            return 200, {'check_runs': [
-                {'id': 1, 'status': 'completed', 'conclusion': 'failure', 'app': {'slug': 'github-actions'}},
-                {'id': 3, 'status': 'completed', 'conclusion': 'success', 'app': {'slug': 'github-actions'}},
-                {'id': 9, 'status': 'completed', 'conclusion': 'success' if name == 'review' else 'neutral',
-                 'app': {'slug': 'some-other-app'}}]}
-        api = FakeAPI({('GET', 'commits/'): runs})
+    def test_check_results_follow_the_commit_statuses_that_protection_counts(self):
+        def answers(statuses, runs):
+            def respond(endpoint, payload):
+                if endpoint.endswith('/status'):
+                    return 200, {'statuses': [{'context': name, 'state': state} for name, state in statuses.items()]}
+                name = re.search(r'check_name=([a-z]+)', endpoint)[1]
+                return 200, {'check_runs': runs.get(name, [])}
+            return FakeAPI({('GET', 'commits/'): respond})
+        run = lambda identifier, status, conclusion, app='github-actions': {'id': identifier, 'status': status, 'conclusion': conclusion, 'app': {'slug': app}}
+        api = answers({'validate': 'success', 'review': 'success'}, {})
         self.assertEqual(ingest.check_results(api, 'f' * 40), {'validate': ('completed', 'success'), 'review': ('completed', 'success')})
-        empty = FakeAPI({('GET', 'commits/'): (200, {'check_runs': []})})
-        self.assertEqual(ingest.check_results(empty, 'f' * 40), {'validate': ('missing', None), 'review': ('missing', None)})
+        # A green check run alone is not enough: protection waits for the status.
+        api = answers({'validate': 'pending'}, {'validate': [run(1, 'completed', 'success')], 'review': [run(2, 'in_progress', None)]})
+        self.assertEqual(ingest.check_results(api, 'f' * 40), {'validate': ('pending', None), 'review': ('pending', None)})
+        # A failed run that reported no status, or a failed status, ends the wait as a failure.
+        api = answers({'review': 'error'}, {'validate': [run(1, 'completed', 'success'), run(3, 'completed', 'failure'),
+                                                         run(9, 'completed', 'success', 'other-app')]})
+        self.assertEqual(ingest.check_results(api, 'f' * 40), {'validate': ('completed', 'failure'), 'review': ('completed', 'failure')})
+        self.assertEqual(ingest.check_results(answers({}, {}), 'f' * 40), {'validate': ('missing', None), 'review': ('missing', None)})
+        # A rerun on the same commit: the newest status comes first and decides.
+        rerun = FakeAPI({('GET', 'commits/'): lambda endpoint, payload: (200, {'statuses': [
+            {'context': 'validate', 'state': 'success'}, {'context': 'review', 'state': 'success'},
+            {'context': 'validate', 'state': 'failure'}]})})
+        self.assertEqual(ingest.check_results(rerun, 'f' * 40)['validate'], ('completed', 'success'))
 
     def test_a_moving_default_branch_means_rebuild_not_merge(self):
         api = FakeAPI({('GET', 'commits/'): (200, {'check_runs': []}),
@@ -93,9 +105,44 @@ class WaitAndMergeTest(unittest.TestCase):
             stale = FakeAPI({('PUT', 'pulls/7/merge'): ingest.ApiError(status, 'Base branch was modified')})
             with self.subTest(status), self.assertRaises(ingest.Retry):
                 ingest.merge(stale, 7, 'f' * 40, 'x')
+        moved = FakeAPI({('PUT', 'pulls/7/merge'): ingest.ApiError(405, 'Head branch is out of date'),
+                         ('GET', 'branches/main'): (200, {'commit': {'sha': 'e' * 40}})})
+        with self.assertRaises(ingest.Retry):
+            ingest.merge(moved, 7, 'f' * 40, 'x', 'main', 'a' * 40)
+        self.assertEqual(sum(endpoint == 'pulls/7/merge' for _, endpoint, _ in moved.calls), 1)
         broken = FakeAPI({('PUT', 'pulls/7/merge'): ingest.ApiError(403, 'Resource not accessible')})
         with self.assertRaises(ingest.ApiError):
             ingest.merge(broken, 7, 'f' * 40, 'x')
+
+    def test_a_refused_merge_on_a_current_branch_is_asked_again(self):
+        answers = iter([ingest.ApiError(405, 'Pull Request is not mergeable'), (200, {'sha': 'm' * 40})])
+        api = FakeAPI({('PUT', 'pulls/7/merge'): lambda endpoint, payload: next(answers),
+                       ('GET', 'branches/main'): (200, {'commit': {'sha': 'a' * 40}})})
+        with patch.object(ingest.time, 'sleep') as sleep:
+            self.assertEqual(ingest.merge(api, 7, 'f' * 40, 'x', 'main', 'a' * 40), 'm' * 40)
+        self.assertEqual(sleep.call_count, 1)
+        always = FakeAPI({('PUT', 'pulls/7/merge'): ingest.ApiError(405, 'Pull Request is not mergeable'),
+                          ('GET', 'branches/main'): (200, {'commit': {'sha': 'a' * 40}})})
+        with patch.object(ingest.time, 'sleep'), self.assertRaises(ingest.Retry):
+            ingest.merge(always, 7, 'f' * 40, 'x', 'main', 'a' * 40)
+        self.assertEqual(sum(endpoint == 'pulls/7/merge' for _, endpoint, _ in always.calls), ingest.MERGE_REQUESTS)
+
+    def test_mergeability_is_awaited_after_the_checks(self):
+        states = iter(['blocked', 'unknown', 'clean'])
+        api = FakeAPI({('GET', 'pulls/7'): lambda endpoint, payload: (200, {'mergeable_state': next(states), 'head': {'sha': 'f' * 40}}),
+                       ('GET', 'branches/main'): (200, {'commit': {'sha': 'a' * 40}})})
+        with patch.object(ingest.time, 'sleep') as sleep:
+            self.assertEqual(ingest.wait_until_mergeable(api, 7, 'f' * 40, 'main', 'a' * 40), 'clean')
+        self.assertEqual(sleep.call_count, 2)
+        behind = FakeAPI({('GET', 'pulls/7'): (200, {'mergeable_state': 'behind', 'head': {'sha': 'f' * 40}})})
+        with self.assertRaises(ingest.Retry):
+            ingest.wait_until_mergeable(behind, 7, 'f' * 40, 'main', 'a' * 40)
+        stuck = FakeAPI({('GET', 'pulls/7'): (200, {'mergeable_state': 'blocked', 'head': {'sha': 'f' * 40}}),
+                         ('GET', 'branches/main'): (200, {'commit': {'sha': 'a' * 40}})})
+        clock = iter(range(0, 10_000, 30))
+        with patch.object(ingest.time, 'sleep'), patch.object(ingest.time, 'monotonic', lambda: next(clock)), \
+                self.assertRaisesRegex(RuntimeError, 'branch protection did not accept them'):
+            ingest.wait_until_mergeable(stuck, 7, 'f' * 40, 'main', 'a' * 40)
 
     def test_pull_request_title_and_body_state_the_records_stay_unreviewed(self):
         source = {'repository': 'reacher-z/Awesome-REA', 'run_id': 5, 'run_attempt': 1, 'artifact_name': 'readme-scan-checkpoint-1',
@@ -110,7 +157,12 @@ class WaitAndMergeTest(unittest.TestCase):
 class RunTest(unittest.TestCase):
     """The whole workflow path with the network, Git and subprocesses replaced."""
 
+    def commit(self, github, base, path, title):
+        self.heads.append('h' + base[1:])
+        return self.heads[-1]
+
     def run_ingest(self, routes, prepared, *, bases=('a' * 40,)):
+        self.heads = getattr(self, 'heads', [])
         api = FakeAPI(routes)
         bases = iter(bases)
         source = {'repository': 'reacher-z/Awesome-REA', 'run_id': 5, 'run_attempt': 1, 'artifact_name': 'readme-scan-checkpoint-1',
@@ -123,15 +175,17 @@ class RunTest(unittest.TestCase):
                 patch.object(ingest, 'refresh_tree', side_effect=lambda branch: next(bases)), \
                 patch.object(ingest.subprocess, 'run', return_value=completed), \
                 patch.object(ingest, 'run_validators'), patch.object(ingest.time, 'sleep'), \
-                patch.object(ingest, 'commit_batch', side_effect=lambda github, base, path, title: 'h' + base[1:]):
+                patch.object(ingest, 'commit_batch', side_effect=self.commit):
             status = ingest.run()
         return status, api
 
     def routes(self, *, main_sha='a' * 40, conclusion='success', merge=(200, {'sha': 'm' * 40})):
-        checks = lambda endpoint, payload: (200, {'check_runs': [
-            {'id': 1, 'status': 'completed', 'conclusion': conclusion, 'app': {'slug': 'github-actions'}}]})
+        checks = lambda endpoint, payload: ((200, {'statuses': [{'context': name, 'state': conclusion} for name in ingest.CHECK_NAMES]})
+                                            if endpoint.endswith('/status') else (200, {'check_runs': []}))
+        # The fake commit for base B is 'h' + B[1:]; the latest one is the pull request head.
+        pull = lambda endpoint, payload: (200, {'mergeable_state': 'clean', 'head': {'sha': self.heads[-1]}})
         return {('GET', 'pulls?'): (200, []), ('POST', 'pulls'): (201, {'number': 7}),
-                ('GET', 'pulls/7'): (200, {'mergeable_state': 'clean'}),
+                ('GET', 'pulls/7'): pull,
                 ('POST', 'actions/workflows/'): (204, None), ('GET', 'commits/'): checks,
                 ('GET', 'branches/main'): (200, {'commit': {'sha': main_sha}}),
                 ('PUT', 'pulls/7/merge'): merge, ('DELETE', 'git/refs/heads/'): (204, None)}
@@ -150,8 +204,14 @@ class RunTest(unittest.TestCase):
 
     def test_an_outdated_branch_is_rebuilt_on_the_new_main_and_merged(self):
         prepared = {'path': 'data/discoveries/run-5-1.json', 'status': 'selected', 'records': 3}
-        attempts = iter([ingest.ApiError(405, 'Head branch is out of date'), (200, {'sha': 'm' * 40})])
-        routes = self.routes(merge=lambda endpoint, payload: next(attempts))
+        main = ['a' * 40]
+        def merge(endpoint, payload):
+            if payload['sha'] == 'h' + 'a' * 39:
+                main[0] = 'b' * 40  # another pull request merged while this one was checked
+                return ingest.ApiError(405, 'Head branch is out of date')
+            return (200, {'sha': 'm' * 40})
+        routes = self.routes(merge=merge)
+        routes[('GET', 'branches/main')] = lambda endpoint, payload: (200, {'commit': {'sha': main[0]}})
         status, api = self.run_ingest(routes, prepared, bases=('a' * 40, 'b' * 40))
         self.assertEqual(status, 0)
         merges = [payload['sha'] for method, endpoint, payload in api.calls if endpoint == 'pulls/7/merge']
@@ -225,7 +285,7 @@ class WorkflowTest(unittest.TestCase):
         self.assertIn('permissions:\n  contents: read\n  actions: read\nconcurrency:\n  group: scheduled-readme-discovery\n  cancel-in-progress: false', self.text)
         writes = {name: re.findall(r'^      ([a-z-]+): write$', job, re.MULTILINE) for name, job in self.jobs.items()}
         self.assertEqual(writes, {'scan': [], 'ingest': ['contents', 'pull-requests', 'actions'], 'report': ['issues']})
-        self.assertIn('      checks: read\n', self.jobs['ingest'])
+        self.assertIn('      checks: read\n      statuses: read\n', self.jobs['ingest'])
         for name, job in self.jobs.items():
             minutes = int(re.search(r'timeout-minutes: ([0-9]+)', job)[1])
             self.assertLessEqual(minutes, 30, name)

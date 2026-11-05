@@ -105,3 +105,25 @@ jobs:
               exit 1
             fi
           done
+  # Branch protection does not count the check runs of a dispatched run toward the required checks (an
+  # automation PR showed "2 of 2 required status checks are expected" with both check runs green), but it
+  # does count a commit status from GitHub Actions. Only a dispatched run, which only automation PRs need,
+  # reports the aggregate result as the `validate` status on the commit it checked. This separate job is
+  # the only one that can write, so pull-request and push runs keep a read-only token.
+  validate-status:
+    needs: validate
+    if: ${{ always() && github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      statuses: write
+    steps:
+      - name: Report the dispatched result as the validate commit status
+        env:
+          GH_TOKEN: ${{ github.token }}
+          STATE: ${{ needs.validate.result == 'success' && 'success' || 'failure' }}
+          TARGET_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: >-
+          gh api -X POST "repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA"
+          -f state="$STATE" -f context=validate -f target_url="$TARGET_URL"
+          -f description="Catalog checks, dispatched run"

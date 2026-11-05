@@ -36,6 +36,12 @@ CACHE = '.cache/discovery-ingest'
 MAX_ATTEMPTS = 3
 CHECK_NAMES = ('validate', 'review')
 CHECK_WAIT_SECONDS = 14 * 60
+# GitHub recomputes a pull request's mergeability asynchronously after its last check completes; a merge
+# requested before that answers 405 although nothing changed. Wait for a mergeable state, bounded.
+MERGEABLE_STATES = frozenset({'clean', 'unstable', 'has_hooks'})
+MERGEABILITY_WAIT_SECONDS = 4 * 60
+MERGE_POLL_SECONDS = 10
+MERGE_REQUESTS = 3
 # The job has 30 minutes; a new attempt (prepare, validate, checks, merge) needs about 12 of them.
 JOB_SECONDS = 28 * 60
 ATTEMPT_SECONDS = 12 * 60
@@ -255,13 +261,31 @@ def dispatch_checks(github: GitHub, default_branch: str, number: int, head_sha: 
 
 
 def check_results(github: GitHub, sha: str) -> dict:
+    """Each required check's state on ``sha``, from the commit status its dispatched run reports.
+
+    Branch protection counts those statuses, not the check runs of dispatched workflows. A completed check
+    run that failed without reporting a status still ends the wait.
+    """
+    statuses = {}
+    # The combined status lists the newest status per context first; keep the first one for each context.
+    for status in github.get(f'commits/{sha}/status').get('statuses', []):
+        statuses.setdefault(status['context'], status['state'])
     results = {}
     for name in CHECK_NAMES:
-        runs = github.get(f'commits/{sha}/check-runs?check_name={name}&per_page=30')['check_runs']
-        # GitHub Actions is the app branch protection requires for both checks.
-        runs = [run for run in runs if (run.get('app') or {}).get('slug') == 'github-actions']
-        latest = max(runs, key=lambda run: run['id']) if runs else None
-        results[name] = (latest['status'], latest['conclusion']) if latest else ('missing', None)
+        state = statuses.get(name)
+        if state == 'success':
+            results[name] = ('completed', 'success')
+        elif state in ('failure', 'error'):
+            results[name] = ('completed', 'failure')
+        else:
+            runs = github.get(f'commits/{sha}/check-runs?check_name={name}&per_page=30')['check_runs']
+            # GitHub Actions is the app branch protection requires for both checks.
+            runs = [run for run in runs if (run.get('app') or {}).get('slug') == 'github-actions']
+            latest = max(runs, key=lambda run: run['id']) if runs else None
+            if latest and latest['status'] == 'completed' and latest['conclusion'] != 'success':
+                results[name] = ('completed', latest['conclusion'])
+            else:
+                results[name] = ('pending' if latest else 'missing', None)
     return results
 
 
@@ -278,16 +302,42 @@ def wait_for_checks(github: GitHub, sha: str, default_branch: str, base_sha: str
         time.sleep(POLL_SECONDS)
 
 
-def merge(github: GitHub, number: int, sha: str, title: str) -> str:
-    try:
-        _, value = github.call('PUT', f'pulls/{number}/merge', {
-            'merge_method': 'squash', 'sha': sha, 'commit_title': f'{title} (#{number})',
-            'commit_message': 'Automated discovery ingest; the records stay unreviewed automated README scans.'})
-    except ApiError as error:
-        if error.status in (405, 409):
-            raise Retry(str(error)) from None
-        raise
-    return value['sha']
+def wait_until_mergeable(github: GitHub, number: int, sha: str, default_branch: str, base_sha: str) -> str:
+    """Wait for GitHub to finish computing mergeability after the checks; rebuild only if the branch is stale."""
+    deadline = time.monotonic() + MERGEABILITY_WAIT_SECONDS
+    while True:
+        pull = github.get(f'pulls/{number}')
+        state = pull.get('mergeable_state')
+        if pull['head']['sha'] != sha:
+            raise Retry('the pull request head changed')
+        if state in MERGEABLE_STATES:
+            return state
+        if state in ('behind', 'dirty') or github.get(f'branches/{default_branch}')['commit']['sha'] != base_sha:
+            raise Retry(f'the pull request is {state} or the default branch moved')
+        if time.monotonic() >= deadline:
+            raise RuntimeError(f'Pull request #{number} stayed {state!r} for {MERGEABILITY_WAIT_SECONDS} s after both required '
+                               'checks passed on its up-to-date head; branch protection did not accept them.')
+        time.sleep(MERGE_POLL_SECONDS)
+
+
+def merge(github: GitHub, number: int, sha: str, title: str, default_branch: str | None = None,
+          base_sha: str | None = None) -> str:
+    """Squash-merge exactly ``sha``. A refusal while the branch is still current is retried a few times."""
+    for request in range(1, MERGE_REQUESTS + 1):
+        try:
+            _, value = github.call('PUT', f'pulls/{number}/merge', {
+                'merge_method': 'squash', 'sha': sha, 'commit_title': f'{title} (#{number})',
+                'commit_message': 'Automated discovery ingest; the records stay unreviewed automated README scans.'})
+            return value['sha']
+        except ApiError as error:
+            if error.status not in (405, 409):
+                raise
+            moved = default_branch is None or github.get(f'branches/{default_branch}')['commit']['sha'] != base_sha
+            if moved or error.status == 409 or request == MERGE_REQUESTS:
+                raise Retry(str(error)) from None
+            log(f'MERGE_REFUSED request={request}: {error}; the branch is current, asking again')
+            time.sleep(MERGE_POLL_SECONDS * request)
+    raise AssertionError('unreachable')
 
 
 def close_pull(github: GitHub, number: int, reason: str) -> None:
@@ -352,8 +402,9 @@ def run() -> int:
             log(f'CHECKS {results}')
             if any(conclusion != 'success' for _, conclusion in results.values()):
                 raise RuntimeError(f'Required checks failed on {head_sha[:12]}: {results}')
-            log(f"MERGE_STATE before merge: {github.get(f'pulls/{number}').get('mergeable_state')}")
-            merged = merge(github, number, head_sha, title)
+            state = wait_until_mergeable(github, number, head_sha, default_branch, base_sha)
+            log(f'MERGE_STATE before merge: {state}')
+            merged = merge(github, number, head_sha, title, default_branch, base_sha)
         except Retry as reason:
             log(f'RETRY attempt={attempt}: {reason}')
             continue
@@ -366,7 +417,7 @@ def run() -> int:
         step_summary([f"Discovery ingest merged #{number} ({merged[:12]}): {prepared['records']} unreviewed records "
                       f"from scan run {source['run_id']} in {elapsed} s."])
         return 0
-    raise RuntimeError(f'The default branch kept moving; gave up after {MAX_ATTEMPTS} attempts (PR #{number}).')
+    raise RuntimeError(f'The pull request could not be merged after {MAX_ATTEMPTS} attempts (PR #{number}); see the RETRY lines above.')
 
 
 # --- failure tracking ------------------------------------------------------------------------------
