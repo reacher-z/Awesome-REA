@@ -41,6 +41,7 @@
     "metadata_notes": "Publication date is the conference month; the first arXiv submission date is listed separately.",
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "LLM4Decompile：使用大语言模型反编译二进制代码",
@@ -92,6 +93,7 @@
     "metadata_notes": "The published ACL record and PDF use 'Zhang Bolun'; the arXiv record uses 'Bolun Zhang'. The paper's Jennieett/DecompileBench link now redirects to vul337/DecompileBench. This is distinct from Tan et al.'s Decompile-Bench (arXiv:2505.12668).",
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "DecompileBench：面向真实场景的反编译器综合评测基准",
@@ -153,6 +155,7 @@
     "metadata_notes": "IEEE/ACM ASE 2019 proceedings, pages 628–639; the DOI resolves to IEEE Xplore document 8952404. The publisher-deposited and arXiv titles use 'Naming'; the ASE program and original code repository use the variant 'Renaming'. Both refer to this paper. Crossref lists 'Edward Schwartz'; the paper's own 'Edward J. Schwartz' is retained. Code URL is the verified original author artifact, explicitly deprecated, rather than a claim of current package support.",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "DIRE：基于神经网络的反编译标识符命名方法",
@@ -203,6 +206,7 @@
     "metadata_notes": "Year and publication month come from the final USENIX conference record; the arXiv date is not substituted for publication.",
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "利用学习得到的变量名称与类型增强反编译输出",
@@ -263,6 +267,7 @@
     "metadata_notes": "ACM metadata records print publication on 2024-12-02 and online publication on 2024-12-09, pages 4554–4568. The author-hosted published PDF identifies the event as CCS ’24, held October 14–18, 2024 in Salt Lake City. The DOI, title, six authors and venue agree with the publisher record and the official author artifact.",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "ReSym：利用大语言模型恢复去符号二进制中的变量与数据结构符号",
@@ -306,6 +311,7 @@
     "metadata_notes": "No conference venue is stated in the reviewed arXiv record. Tool repositories cited in its bibliography are not treated as the paper's own code.",
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "CrackMeBench：面向智能体的二进制逆向工程基准",
@@ -361,6 +367,7 @@
     "metadata_notes": "The COLM 2026 OpenReview record has the same title, seven authors and abstract as arXiv v2 (2026-08-06), whose header reads 'Published as a conference paper at COLM 2026' and which the official project calls its camera-ready version. OpenReview’s 2026-07-08 publication timestamp coincides with the project’s acceptance announcement and is not used as a publication date; the October 6–9, 2026 conference and its Poster Session 5 listing are event details. The repository BibTeX still cites arXiv. This is unrelated to the creativity-evaluation paper also named CreBench.",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "CREBench：评估大语言模型的密码二进制逆向工程能力",
@@ -414,6 +421,7 @@
     "metadata_notes": "Use the 12-author v2 list, revised 2026-10-01, rather than the older eight-author v1 search snippets. No conference venue or own public code repository was verified. AgentRE-Bench GitHub links in the bibliography refer to another benchmark.",
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "智能体网络安全的下一项挑战：真实场景且无训练数据污染的逆向工程基准",
@@ -462,6 +470,7 @@
     "metadata_notes": "The original source review did not verify a conference venue or paper-specific public code link. On 2026-10-20, the official arXiv history still listed only v1. Although its abstract page labels the DOI as pending, DataCite reports the matching title and six authors as findable, registered on 2026-10-14. This is an identifier correction, not a new paper version or expanded experimental verification.",
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "人类与机器：AI 智能体在软件逆向工程中的对比研究",
@@ -514,6 +523,7 @@
     "metadata_notes": "Use the final NAACL 2025 title and six-author list. arXiv v1 (2024-03-05) and the project page’s BibTeX use the earlier title “Design2Code: How Far Are We From Automating Front-End Engineering?” and list five authors without Ryan Li; v2 and the reviewed v3 match the final title and authors. SALT-NLP/Design2Code hosts the project website, whereas NoviScl/Design2Code is the verified research-code repository.",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "Design2Code：面向自动化前端工程的多模态代码生成评测",
@@ -523,6 +533,7 @@
   {
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "targets": [
@@ -578,6 +589,7 @@
   {
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "targets": [
@@ -644,6 +656,7 @@
   {
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "targets": [
@@ -698,6 +711,7 @@
   {
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "targets": [
@@ -785,6 +799,7 @@
     "metadata_notes_zh": "官方项目页将该工作标注为审稿中。arXiv 记载 v1 于 2026-09-15 提交，并将其 arXiv DOI 标注为待注册。项目链接为含演示的展示页，不代表已核实发布完整评测框架。",
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "evidence_urls": [
@@ -829,6 +844,7 @@
     "metadata_notes_zh": "IEEE 和 Crossref 在标题中保留技术论文标记“(T)”，作者 PDF 未包含该标记。IEEE 于 2016 年 1 月收录的日期与 2015 年 11 月的出版日期不同。Pixel to App 明确将所链接仓库标为 REMAUI v2。",
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "evidence_urls": [
@@ -880,6 +896,7 @@
     "metadata_notes_zh": "发表于 CHI 2026 海报／扩展摘要集。出版方标题使用“SPRITE:From”和“GameUI”，arXiv 与项目页采用常规空格。虽然编号以 2604 开头，arXiv／Hugging Face 记载首次提交为 3 月 18 日；4 月 13 日出版日期已在 Crossref 独立核实。未核实实现代码链接。",
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "evidence_urls": [
@@ -928,6 +945,7 @@
     "metadata_notes_zh": "已被 ICML 2026 的第二届 Agents in the Wild（AIWILD）非存档研讨会接收：其 OpenReview 记录于 2026-05-23 发布，并由 2026 年 7 月 11 日研讨会的 ICML 页面链接。研讨会征稿说明采用非存档政策，因此本条目保留 arXiv 预印本及首次提交日期。仓库与一位作者的发表列表也记载了该接收信息。产物属于官方项目，但文档明确未包含的实验不视为已发布。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "evidence_urls": [
@@ -977,6 +995,7 @@
     "metadata_notes_zh": "2017 年 arXiv 版本之后，论文发表于 EICS 2018 论文集；本条目审阅的是 2017 年 9 月 19 日的 arXiv v2。所链接作者仓库由该版本明确指定，本次核查固定到当前提交，并不声称其仍与历史发布完全相同。仓库包含编译器代码和分卷数据集压缩包；实际 LICENSE 文件声明 Apache 2.0，README 许可证徽章则使用了过时的文件名。",
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "evidence_urls": [
@@ -1038,6 +1057,7 @@
     "metadata_notes_zh": "发表于 IEEE TSE 第 46 卷第 2 期，196–221 页，刊期为 2020 年 2 月。作者托管的接收稿及 arXiv v2 为 2018 年版本；ESEC/FSE 2018 是期刊优先展示，不是该期刊论文的出版时间。Crossref 的 2018-06-07 创建日期为元数据登记日期，并非已独立核实的在线出版日期。作者项目页仍说明重写实现计划于 2020 年冬季发布；未核实原始代码仓库。单独归档的 ReDraw 数据集日期为 2019-01-02（Zenodo 2530277）。",
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "evidence_urls": [
@@ -1104,6 +1124,7 @@
     "metadata_notes_zh": "这是 PACMSE 第 2 卷 FSE 专期的期刊论文，页码为 219–241（文章编号 FSE011），并非尚未发表的预印本。正式标题在 2024 年 arXiv 标题前增加了 DeclarUI。主要审阅文本为作者托管的 23 页期刊论文，同时核对了 arXiv v1。所链接仓库由论文明确指定，本次固定提交核查，未执行代码。",
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "evidence_urls": [
@@ -1116,6 +1137,7 @@
   {
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "id": "paper-programbench",
@@ -1180,6 +1202,7 @@
   {
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "id": "paper-decompile-bench",
@@ -1239,6 +1262,7 @@
   {
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "publication_status": "conference-paper",
@@ -1303,6 +1327,7 @@
   {
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "publication_status": "conference-paper",
@@ -1368,6 +1393,7 @@
     "first_arxiv_date": null,
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "id": "paper-nemesys",
@@ -1415,6 +1441,7 @@
     "first_arxiv_date": null,
     "kind": "research",
     "verified_at": "2026-10-16",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "id": "paper-netplier",
@@ -1459,6 +1486,7 @@
   {
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "targets": [
@@ -1517,6 +1545,7 @@
   {
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "targets": [
@@ -1637,6 +1666,7 @@
     "metadata_notes_zh": "作者托管 PDF 印有 10.1145/3180155.3180222，但该 DOI 对应另一篇论文；此处采用出版方为本标题提交的 DOI，页码为 665–676。代码仓库 README 列出 29,887 张截图，论文则报告 185,277 对图像与骨架，不应视为同一套已发布语料。固定版本的旧版 Torch/Lua 仓库没有许可证文件；未测试外部数据和模型下载。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -1689,6 +1719,7 @@
     "metadata_notes_zh": "arXiv 发布日期为 7 月 30 日；文稿页首和软件发布采用 7 月 29 日。DataCite 确认 arXiv DOI 已注册且处于可检索状态。固定版本的作者产物采用 Apache-2.0，包含源码、提示词、论文配置和精简评估证据；ARC 环境适用独立条款。文档要求 Python >=3.12、模型与 ARC 访问权限，以及 Docker 或 Finch 沙箱；未进行安装或实验复现。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -1750,6 +1781,7 @@
     "metadata_notes_zh": "核查的是正式 NeurIPS 论文，页码 70148–70212。作者仓库采用 MIT，但仅提供部分实验产物：固定版本的环境注册表只暴露 MiniGrid，尽管 README 给出 Sokoban 示例、论文也评估了更多环境。README 提醒 NumPy 2 不兼容及较旧的 Gymnasium/MiniGrid 依赖问题。本次未安装或调用模型。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -1808,6 +1840,7 @@
     "metadata_notes_zh": "采用 v2 的 95 个应用与 600 张截图，不混用 v1 的 45/327 数量。arXiv DOI 已注册。公开代码采用 MIT，数据集和参考标注采用 CC BY 4.0；上游代码及第三方资产权利另行处理。文档所述流水线需要 Python 3.10+、Node/npm、pnpm、Chromium、Tesseract 和模型访问权限；Auto IIS 还需要已登录的 Codex CLI。本次未运行流水线或基准。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -1864,6 +1897,7 @@
     "metadata_notes_zh": "ACM 在 Crossref 登记的元数据记载印刷出版于 2025-11-19，在线出版于 2025-11-22，页码为 36–50。核查期间无法读取 ACM 数字图书馆页面；审阅文本为带有 CCS 2025 页眉的 arXiv v1。论文给出了代码仓库和 jsdeobf.github.io 排行榜链接。固定提交中的仓库包含基于 CodeNet 生成的混淆数据集、评估器和脚本，但不含恶意代码样本，也没有许可证文件。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -1922,6 +1956,7 @@
     "metadata_notes_zh": "ACM 在 Crossref 登记的元数据记载印刷出版于 2026-04-12，在线出版于 2026-07-11，页码为 292–302。出版方标题写作“LLM-powered”，arXiv 记录则大写为“Powered”。审阅文本为带有 ICSE-SEIP '26 页眉的 arXiv v2。论文称其提示词模板和 JSIR 已在 google/jsir 开源。固定提交中该 Apache-2.0 仓库包含 JSIR 及前置函数提取、动态常量传播等代码，但未发现提示词模板、Gemini 流程或评测集文件；论文在图 5 中给出了前置函数识别提示词，并将开源 CASCADE 本身列为后续工作。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -1985,6 +2020,7 @@
     "metadata_notes_zh": "这是 PACMSE 第 2 卷 FSE 专期的期刊论文，页码为 2099–2122（文章编号 FSE094）。正式标题取代了 arXiv 标题“Automatically Generating UI Code from Screenshot: A Divide-and-Conquer-Based Approach”。作者姓名以论文正文为准，正文与 Crossref 均写作“Michael Lyu”，arXiv 记录则为“Michael R. Lyu”。核查期间无法读取 ACM 数字图书馆版本；审阅文本为 24 页、ACM 排版的 arXiv v3。论文所链接的仓库在固定提交中没有许可证文件；完整数据集另存于 Hugging Face，未附数据集说明卡。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2039,6 +2075,7 @@
     "metadata_notes_zh": "EMNLP 2026 官方详细日程将论文 7281-MAIN 列为 2026-10-26 的海报报告；本条记录接收状态，不视为论文集已出版。arXiv v2 备注“ScreenCoder-v2”是版本标签而非会议名称；此前提交 ICLR 2026 的版本已撤回。摘要所链接的仓库在固定提交中采用 Apache-2.0 许可，并内含带有各自许可证文件的 UIED、LLaMA-Factory 与 VLM-R1 代码。ScreenBench 以 Apache-2.0 许可发布于 Hugging Face。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2095,6 +2132,7 @@
     "metadata_notes_zh": "作者以论文集 PDF 为准；论文集网页将第一作者的名字写作小写的“hanzhuo”。OpenReview 将其列为 ICLR 2026 Poster。2025 年 9 月的 arXiv v1 与 ICLR 2026 发表分开记录，32 页的论文集版本增加了附录实验。代码位于 LLM4Decompile 仓库的 sk2decompile 目录。各来源的许可信息不同：仓库 LICENSE 为 MIT，两个 6.7B 模型卡均标注 MIT，仓库另附 DeepSeek LICENSE-MODEL；两个模型均从 LLM4Decompile-6.7B 初始化。本条不认定统一许可。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2143,6 +2181,7 @@
     "metadata_notes_zh": "USENIX 官方页面、其中的 BibTeX 条目和正式 PDF 确认了这篇研讨会论文；尚未核实 DOI 或 arXiv 标识。正式 PDF 采用 WOOT 19 的下划线路径，conference/woot19 形式的地址返回 404。PDF 带有 Artifact Evaluated “Passed”（工件评估通过）标志。论文指明其实现位于 Universal Radio Hacker 中，URH README 也将自动字段推断功能链接到本文。固定提交中该 GPL-3.0 仓库已归档，推断代码位于 src/urh/awre，最新发行版为 v2.10.0。URH 自身的 WOOT 18 工具论文是另一篇独立发表的论文。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2208,6 +2247,7 @@
     "metadata_notes_zh": "核查的是正式论文集版本，页码 60429–60474。其中的 WorldCoder 基线依据首个 arXiv 版本，而非后续修订版。Apache-2.0 仓库提供提示词、回放缓冲区文件和评估脚本；随附 RTFM 采用 CC BY-NC 4.0。固定版本评估器对奖励类别作平衡加权，按下一状态分量给予部分分数，跳过终止转移的下一状态核对，并允许 RTFM 返回有效动作集合的非空子集；连续状态采用 1e-5 的相对和绝对容差。因此该分数不是严格的完整转移匹配率。规划脚本默认运行两个回合，而论文报告十个回合。复现需要面向 Linux 的 Conda/Python 3.10 环境、Gymnasium/MuJoCo 及模型访问权限。本次未执行上游代码、加载序列化缓冲区或调用模型。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2268,6 +2308,7 @@
     "metadata_notes_zh": "核查的是作者托管的 19 页版本；ACM 提交的元数据将论文集页码列为 2265–2278，因此不声称两者是完全相同的 PDF 版本。公开代码记录了较早的 Linux 环境，包括 Python 2、OpenJDK 14、Maven、针对各协议的输入与重置测试驱动程序，以及目标相关的 ptrace 钩子。污点分析路径需要 Triton 和 IDA Pro/Wine；省略该路径可能因计数器而无法终止。所检查仓库中未发现项目整体许可证；各组件许可与专有工具使用权需分别处理。本次仅获取公开文本及论文文档，未执行上游代码，也未下载或解密加密归档。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2336,6 +2377,7 @@
     "metadata_notes_zh": "核查的是 USENIX 正式论文，页码 1201–1218；不推定 DOI 或 arXiv 标识。论文链接的 embedded-sec/halucinator 仓库采用 GPLv3，独立的 ucsb-seclab/hal-fuzz 实现采用 Apache-2.0，两者许可不可混同。原始 README 记载了仅经有限测试的 Ubuntu 16.04/18.04 与 Python 3 环境，依赖 Avatar2、QEMU 和 GDB，并另行指向较新项目。复现需要固件镜像、兼容的 HAL/SDK 输入及配置；厂商固件、依赖项和 SDK 的使用权需分别处理。HAL-fuzz 使用简化处理函数和确定性计时器，不保证与真实时钟等价。本次未获取固件二进制，也未运行上游程序或实验。",
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2392,6 +2434,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2452,6 +2495,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2502,6 +2546,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2571,6 +2616,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "citation": {
@@ -2639,6 +2685,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2706,6 +2753,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2766,6 +2814,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2836,6 +2885,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2902,6 +2952,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-17",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -2966,6 +3017,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3027,6 +3079,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3078,6 +3131,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3138,6 +3192,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3187,6 +3242,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3250,6 +3306,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3300,6 +3357,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3358,6 +3416,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3414,6 +3473,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3483,6 +3543,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3535,6 +3596,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3593,6 +3655,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3644,6 +3707,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3696,6 +3760,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3748,6 +3813,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3796,6 +3862,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3854,6 +3921,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3921,6 +3989,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -3976,6 +4045,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4032,6 +4102,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4089,6 +4160,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4148,6 +4220,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4206,6 +4279,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4277,6 +4351,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4326,6 +4401,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4373,6 +4449,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4425,6 +4502,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4486,6 +4564,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4545,6 +4624,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4606,6 +4686,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4663,6 +4744,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4724,6 +4806,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4776,6 +4859,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4819,6 +4903,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4869,6 +4954,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4916,6 +5002,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -4985,6 +5072,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5030,6 +5118,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5080,6 +5169,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5129,6 +5219,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5175,6 +5266,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5227,6 +5319,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5278,6 +5371,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5325,6 +5419,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5378,6 +5473,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5427,6 +5523,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "citation": {
@@ -5489,6 +5586,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "citation": {
@@ -5544,6 +5642,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5588,6 +5687,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5636,6 +5736,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5679,6 +5780,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5727,6 +5829,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5775,6 +5878,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5828,6 +5932,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5875,6 +5980,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5924,6 +6030,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -5980,6 +6087,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "description_en": "Trains visual-code models using separate code and rendered-output rubrics for data filtering and reinforcement learning. Relevant evaluations include rebuilding webpages, charts and vector graphics from images.",
@@ -6026,6 +6134,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "description_en": "Evaluates reverse-engineering agent traces through flag recovery, eight analysis milestones and action profiles. Deterministic checks and an outcome-blinded LLM judge help locate failures beyond a single solve-rate score.",
@@ -6076,6 +6185,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "description_en": "Uses seven agents and human review to recover business requirements from source, tests, configuration and documentation. A reported enterprise migration checks extracted rules against production-defect records.",
@@ -6129,6 +6239,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "description_en": "Evaluates construction, completion, repair and Godot-to-Unity porting against executable reference games. Evaluator-owned probes and input replays check gameplay behavior, while visual rubrics assess presentation separately.",
@@ -6181,6 +6292,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "description_en": "Tests reimplementation of 25 command-line programs using execute-only reference access, documentation and visible examples. Separate scoring environments compare exact outputs on visible and held-out end-to-end tests.",
@@ -6231,6 +6343,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "description_en": "Studies a RAG-based, human-supervised pipeline for recovering requirements and code traces from two projects. It also tests deliberate generation of unimplemented requirements and requirements smells (potential quality issues), exposing verification and labeling difficulties.",
@@ -6298,6 +6411,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "citation": {
@@ -6312,6 +6426,7 @@
   {
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "id": "paper-rfcllm",
@@ -6357,6 +6472,7 @@
   {
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "id": "paper-cortexm-emulation-sok",
@@ -6405,6 +6521,7 @@
   {
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "id": "paper-transre",
@@ -6503,6 +6620,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "description_en": "Quelle recovers library calls, loops, functions and symbolic parameters from compiled OpenQASM. It removes routing artifacts, proposes structured reconstructions and checks them against circuit semantics, retaining gate-level fallbacks when recovery fails.",
@@ -6548,6 +6666,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "description_en": "Uses intermediate Webcrack rewrites to supervise Coconut-style latent reasoning for JavaScript deobfuscation. Training exposes staged code transformations; inference receives obfuscated code and generates a cleaned program in one shot.",
@@ -6566,6 +6685,7 @@
     "project_url": null,
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "id": "paper-faultless",
@@ -6615,6 +6735,7 @@
     "project_url": "https://zenodo.org/records/22121473",
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "id": "paper-memorization-floor",
@@ -6661,6 +6782,7 @@
     "project_url": "https://zenodo.org/records/23164989",
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "id": "paper-deception-delta",
@@ -6736,6 +6858,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "description_en": "Compares direct LLM recovery of Apple PBCodable schemas with an AI-written Extractor checked against compiled synthetic fixtures, published descriptors and captured traffic. It shows how plausible recovered schemas can silently decode values incorrectly.",
@@ -6781,6 +6904,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "description_en": "BScout matches decompiled functions to a source corpus using chunked embeddings and inlining-aware training. Existing matches provide positional clues to expand candidates; LLM selection and structural filters refine the resulting correspondences.",
@@ -6833,6 +6957,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "description_en": "Studies satellite communication modules through hardware inspection, firmware reverse engineering, protocol analysis, partial rehosting and targeted testing. A component-level threat model connects recovered data flows to security boundaries.",
@@ -6891,6 +7016,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "description_en": "Builds a noise-tolerant pseudo execution-flow graph from one power trace per test input, using newly observed behavior as LibAFL feedback. It explores embedded firmware without access to its binary, source or instrumentation.",
@@ -6936,6 +7062,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "description_en": "Studies development of the Extractor reverse-engineering tool through commits, available session logs and code-provenance tracing. Taxonomies separate instruction intent, change triggers and agent claims, exposing errors corrected before commits that ordinary repository history misses.",
@@ -7002,6 +7129,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7057,6 +7185,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7108,6 +7237,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7158,6 +7288,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7210,6 +7341,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7256,6 +7388,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7304,6 +7437,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7365,6 +7499,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7417,6 +7552,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7474,6 +7610,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7529,6 +7666,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7582,6 +7720,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7630,6 +7769,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7683,6 +7823,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7759,6 +7900,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7815,6 +7957,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7874,6 +8017,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7923,6 +8067,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -7971,6 +8116,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-28",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8029,6 +8175,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-28",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8085,6 +8232,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-28",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8131,6 +8279,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-28",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8187,6 +8336,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-28",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8234,6 +8384,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-28",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8283,6 +8434,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-28",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8334,6 +8486,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-28",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8381,6 +8534,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-28",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8438,6 +8592,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-28",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8487,6 +8642,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-29",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8534,6 +8690,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-29",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8581,6 +8738,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-29",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8636,6 +8794,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-30",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8693,6 +8852,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-30",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8745,6 +8905,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-30",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8791,6 +8952,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-30",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8842,6 +9004,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-30",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8891,6 +9054,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-30",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8941,6 +9105,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-30",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -8986,6 +9151,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-31",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9038,6 +9204,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-31",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9088,6 +9255,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-31",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9150,6 +9318,7 @@
     "metadata_notes_zh": "本条描述原始 arXiv 版本，不用主页或 Scholar 的会议标签替代出版方证据。属于配套方法，不代表已经完成重建验证。",
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9200,6 +9369,7 @@
     "metadata_notes_zh": "本条描述原始 arXiv 版本，不用主页或 Scholar 的会议标签替代出版方证据。属于配套方法，不代表已经完成重建验证。",
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-01",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9255,6 +9425,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9308,6 +9479,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9356,6 +9528,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-19",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9430,6 +9603,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9489,6 +9663,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9548,6 +9723,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9610,6 +9786,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9670,6 +9847,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9717,6 +9895,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9761,6 +9940,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9822,6 +10002,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9869,6 +10050,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-02",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9929,6 +10111,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -9989,6 +10172,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10050,6 +10234,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10115,6 +10300,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10172,6 +10358,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10236,6 +10423,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-20",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10283,6 +10471,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10333,6 +10522,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10392,6 +10582,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10457,6 +10648,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10512,6 +10704,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10573,6 +10766,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10630,6 +10824,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10692,6 +10887,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10737,6 +10933,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10797,6 +10994,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10861,6 +11059,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10919,6 +11118,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -10976,6 +11176,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -11034,6 +11235,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -11091,6 +11293,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -11147,6 +11350,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -11206,6 +11410,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -11269,6 +11474,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-03",
     "verification": "source-reviewed",
     "runtime_tested": false
   },
@@ -11326,6 +11532,7 @@
     ],
     "kind": "research",
     "verified_at": "2026-10-27",
+    "added_at": "2026-11-04",
     "verification": "source-reviewed",
     "runtime_tested": false
   }
