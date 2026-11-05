@@ -8353,5 +8353,44 @@
       "README 标明这套材料仍在编写中：有几个主题尚无幻灯片或练习。所审阅的 main 分支提交日期为 2024-07-01。",
       "据 README 采用知识共享署名 4.0（CC BY 4.0）许可；仓库中没有许可证文件。"
     ]
+  },
+  "ida-no-mcp": {
+    "name": "IDA NO MCP：面向 AI 编程工具的 IDA 反编译导出工具",
+    "requirements": [
+      "插件 oldpython/INP.py 需放入 IDA 的插件目录（Windows 为 %APPDATA%\\Hex-Rays\\IDA Pro\\plugins，Linux 和 macOS 为主目录下的 .idapro/plugins）。Rust 版程序需要本机安装 IDA Pro 9.x，运行时链接其不可再分发的 libida 和 libidalib 库，并需要 LLVM/Clang 供 bindgen 使用；必须在各平台上原生构建，且 idalib crate 版本须与 IDA 版本匹配，例如 IDA 9.3sp1 对应 idalib 0.9.0。",
+      "中文 README 指出，IDA 内的插件处理 100 MB 以上的文件时可能卡死，独立程序的 --skip-analysis 选项可以避开这一问题。仓库没有发布版本，所审阅的 main 分支提交日期为 2026-07-26。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证。"
+    ]
+  },
+  "ida-mcp-rs": {
+    "name": "ida-mcp-rs 无界面 IDA Pro MCP 服务器",
+    "requirements": [
+      "需要已正式发布、带有效许可证且与宿主架构相同的 IDA Pro 9.5；使用伪代码工具需有对应目标处理器的 Hex-Rays 反编译器，使用 run_script 需 IDAPython 可正常工作；还须由用户自行完成 IDA 的首次启动设置（包括阅读并接受许可协议）。服务器版本与 IDA 版本对应（IDA 9.5 用 v9.5.x，9.2 至 9.4 另有 Homebrew 版本），IDA 9.5 测试版运行时与正式版服务器不兼容。",
+      "可通过 Homebrew、Scoop、Nix 或发布页压缩包安装，提供 macOS、Linux 和 Windows 的 ARM64 与 x86_64 版本；程序在运行时从 IDA 标准安装路径，或通过 IDADIR 及库路径环境变量加载 libida 和 libidalib。审阅时的版本为 v9.5.0，于 2026-11-01 发布，已在 macOS、Linux 和 Windows 的 ARM64 平台上用 IDA 9.5.261026 验证。",
+      "依 LICENSE 采用 MIT 许可。"
+    ]
+  },
+  "ida-multi-mcp": {
+    "name": "ida-multi-mcp 多实例 IDA Pro MCP 服务器",
+    "requirements": [
+      "需要 Python 3.11 或更高版本，以及 IDA Pro 8.5 或更高版本（推荐 9.1 及以上）；不支持 IDA 9.0 SP0（构建号 240925）。软件包须同时安装到终端所用的 Python 和 IDA 自带的 Python 中；无界面的 idalib 会话需要 IDA Pro，因为 IDA Home 和 IDA Free 不含 idalib。仓库没有发布版本，pyproject.toml 标注的版本为 0.1.0，所审阅的 main 分支提交日期为 2026-09-19。",
+      "README 列出的局限：路由器只绑定本机回环地址、只支持 stdio 传输，对同一个 IDA 实例的调用仍须排队执行，取消请求不会转发给 IDA，资源（resources）需手动路由。重命名、修改类型和注释在调用 idb_save 之前只保存在内存中。可选的神经网络召回功能会按需下载模型。",
+      "依 README 和 pyproject.toml 采用 MIT 许可；仓库中没有 LICENSE 文件。"
+    ]
+  },
+  "x64dbgmcp": {
+    "name": "x64dbg MCP（x64dbgMCP）调试器 MCP 服务器",
+    "requirements": [
+      "需要 x64dbg：把 .dp64 或 .dp32 插件复制到 x64dbg 的插件目录，再在客户端配置中把 src/x64dbgmcp.py 注册为 MCP 服务器（需先 pip install mcp requests）。编译插件需要 CMake 和 MSVC。审阅时的版本为 build1.1（2026-03-15）；README 建议从源码构建以获得最新功能，所审阅的 main 分支提交日期为 2026-06-05。",
+      "依 LICENSE.txt 采用 GPL-3.0 许可。"
+    ]
+  },
+  "idasql": {
+    "name": "IDASQL IDA Pro 数据库 SQL 接口",
+    "requirements": [
+      "需要安装 IDA Pro 并把其目录加入 PATH，还需下载与所装 IDA 版本对应的 idasql 发布包（ida92、ida93 或 ida94）；插件二进制与 SDK 版本绑定。兼容 HCLI 的插件压缩包涵盖 Windows x86-64、Linux x86-64 和 macOS ARM64，IDA 9.3 和 9.4 另有单独的 ARM64 压缩包。从源码构建需要 IDA SDK 9.0 或更高版本。审阅时的版本为 v0.0.19，于 2026-10-10 发布。",
+      "MCP 服务器在本机端口上提供 SSE 服务，默认编译进程序（-DIDASQL_WITH_MCP=ON）；智能体技能位于单独的 idasql-skills 仓库。深度链接功能需要 IDA 9.4。",
+      "采用 Human-Origin Source License v1.0：这是一种结构上参照 MPL 2.0、但未经 OSI 认可的源码可见许可，允许使用、构建和再分发未修改的副本（包括商业用途），但未经作者书面许可，不得在向上游贡献之外发布修改版，也不得把代码用作实现参考来源。"
+    ]
   }
 }
