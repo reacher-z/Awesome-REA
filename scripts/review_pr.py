@@ -71,6 +71,11 @@ PRIVATE_NAMES = ('.env', '.env.*', 'secrets.json', 'credentials*.json', '*.local
 PRIVATE_DIRS = {'.cloudflare', '.wrangler'}
 GENERATED_NAMES = ('*.py[cod]', '.ds_store', '*.woff', '*.woff2')
 GENERATED_DIRS = {'__pycache__', '.cache', '.venv', 'dist', 'node_modules', 'output'}
+# The SIL OFL subsets the site hosts itself, by exact path (site/fonts/LICENSE.md names their sources).
+# Every other font stays out of this public repository.
+SELF_HOSTED_FONTS = frozenset('site/fonts/' + name + '.woff2' for name in (
+    'eb-garamond-500-core', 'eb-garamond-500-ext', 'eb-garamond-italic-display',
+    'ibm-plex-mono', 'ibm-plex-mono-medium', 'ibm-plex-sans-core', 'ibm-plex-sans-ext'))
 PUBLIC_NAMES = {'.env.example'}
 MAX_FILE_BYTES = 8 * 1024 * 1024
 MAX_OMITTED_FILES = 20
@@ -125,6 +130,8 @@ def private_text(text):
 
 
 def path_rule(path):
+    if path in SELF_HOSTED_FONTS:
+        return None
     *directories, name = path.lower().split('/')
     if ((name not in PUBLIC_NAMES and any(fnmatch.fnmatchcase(name, rule) for rule in PRIVATE_NAMES))
             or PRIVATE_DIRS.intersection(directories)):
