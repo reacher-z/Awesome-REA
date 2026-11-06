@@ -31,6 +31,7 @@ class ReconstructionPairingTests(unittest.TestCase):
                 record = deepcopy(case) | changes
                 if record['kind'] != 'case-study':
                     record.pop('reconstruction_method', None)  # Only Game case studies take a method.
+                    record.pop('class', None)  # Only case studies and projects take a class.
                 before = deepcopy(record)
                 errors = []
                 validate_resources([record], errors)

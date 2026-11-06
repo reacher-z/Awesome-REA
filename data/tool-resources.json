@@ -36861,5 +36861,35 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "websitebench",
+    "name": "WebsiteBench",
+    "url": "https://github.com/TIGER-AI-Lab/WebsiteBench",
+    "category": "web-analysis",
+    "relationship": "learning",
+    "kind": "project",
+    "class": "website",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Benchmark that asks whether AI agents can rebuild websites through browser exploration: given a production-level website they can explore through a browser, agents must reverse-engineer a full-stack version that matches its appearance and behavior as closely as possible. Its 70 tasks hold 46,916 hidden test cases in total, and a case passes when its functional checks pass and every visual checkpoint reaches an RGB SSIM of 0.99.",
+    "description_zh": "评测 AI 智能体能否通过浏览器探索重建网站的基准：给定一个可通过浏览器探索的生产级网站，智能体需要逆向出一个全栈版本，在外观和行为上尽可能与原站一致。70 个任务共含 46,916 个隐藏测试用例；用例须通过功能检查，且每个视觉检查点的 RGB SSIM 均达到 0.99 才算通过。",
+    "evidence_url": "https://github.com/TIGER-AI-Lab/WebsiteBench/blob/78f5558e8197bb91b3bab63428c12b92060ddc6f/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs through Harbor with Docker: each trial uses separate agent and verifier environments, and every task requests 8 CPUs, 8 GiB of memory and 20 GiB of disk for each, with up to 16 hours for the agent and 8 hours for the verifier. An agent and its credentials are required. The PyPI package needs Python 3.12–3.14.",
+      "The 70 task downloads total 9.7 GB. Tasks are published on Harbor Hub and Hugging Face.",
+      "The verifier needs Landlock ABI 4 or newer (Linux 6.7+) and seccomp user notification, and the host kernel needs nftables fib support. Older kernels, including Debian 12's 6.1 and Ubuntu 22.04's 5.15, produce INVALID_RUN and no reward for every trial.",
+      "Benchmark code, task definitions and verifier are Apache-2.0. The reference websites reproduce third-party sites; their content belongs to its owners and is provided for non-commercial research only."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ]
   }
 ]
