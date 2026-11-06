@@ -255,6 +255,9 @@ html[data-layout="cards"] .collection-home .card-description{font-size:15px;marg
 html[data-layout="cards"] .collection-home .card-preview{margin:10px 0 0}
 html[data-layout="cards"] .collection-home .card-preview img{max-height:150px}
 .card-description,.source-card-description{max-width:68ch;margin:14px 0 16px;color:var(--body);font-size:16px;line-height:1.8;overflow-wrap:anywhere}
+.card-platforms{margin:-6px 0 12px;color:var(--muted);font:500 13px/1.6 var(--sans);overflow-wrap:anywhere}
+.card-platforms-label{color:var(--body);font-weight:600}
+.card-platforms-list{color:var(--body)}
 .source-card-empty{font-style:italic;color:var(--muted)}
 .source-related{display:grid;gap:10px;min-width:0;margin:0 0 17px}
 .source-related-group{min-width:0}
@@ -354,9 +357,9 @@ html[data-layout="cards"] .collection-home .card-preview img{max-height:150px}
   .source-field{flex:1}
   .source-field>input,.source-field>select{width:100%}
 }
-/* Three selects need about 550 px, so below ~1460 px the block wraps under the target buttons instead of
+/* Four selects need about 700 px, so below ~1560 px the block wraps under the target buttons instead of
    overflowing the viewport; its own flex-end keeps the fields right-aligned. */
-@media(min-width:1181px){.curated-selectors{flex:1 1 550px;min-width:0;flex-wrap:nowrap;justify-content:flex-end}.curated-selectors>.source-field:first-child{flex:none}.curated-selectors>.source-field:last-child{flex:0 1 auto}#category-select,#class-select{width:auto;max-width:100%}}
+@media(min-width:1181px){.curated-selectors{flex:1 1 700px;min-width:0;flex-wrap:nowrap;justify-content:flex-end}.curated-selectors>.source-field:first-child{flex:none}.curated-selectors>.source-field:last-child{flex:0 1 auto}#category-select,#class-select,#platform-select{width:auto;max-width:100%}}
 /* The live counts widen the target buttons; tighter gaps keep the filter row compact at 1280 px. */
 @media(min-width:1181px){#curated-view .filter-row{gap:12px}#curated-view .group-filters{gap:6px}}
 @media(max-width:900px){
@@ -394,9 +397,8 @@ html[data-layout="cards"] .collection-home .card-preview img{max-height:150px}
   .source-controls,.filter-row{padding:12px 0;gap:10px}
   .source-selectors,.curated-selectors{gap:12px}
   .source-field{flex:1 1 0}
-  /* Three selects do not fit on one phone row; pair Type with Category and give Evidence class its own row. */
+  /* Four selects pair into two phone rows; below 520 px each takes its own row. */
   #curated-view .source-field{flex:1 1 calc(50% - 6px)}
-  #curated-view .source-field:last-child{flex-basis:100%}
   .source-field>input,.source-field>select{height:40px;font-size:14px}
   .collection-note{gap:6px 14px;padding-bottom:12px}
   .results-topline{min-height:48px;padding:12px 0}

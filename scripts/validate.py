@@ -1389,6 +1389,74 @@ def validate_evidence_media(errors):
             errors.append(f"Preview source for {entry.get('id')} is not an absolute URL")
 
 
+PLATFORM_ORDER = ('windows', 'macos', 'linux', 'android', 'ios', 'web', 'freebsd', 'source', 'other')
+SOFTWARE_KINDS = {'case-study', 'project', 'tool', 'integration'}
+
+
+def validate_platform_packages(records, errors):
+    """The OS package snapshot must cover exactly the curated software entries."""
+    path = ROOT / 'data' / 'platform-packages.json'
+    if not path.is_file():
+        errors.append('data/platform-packages.json is missing')
+        return
+    try:
+        document = strict_json.load_path(path)
+    except (OSError, ValueError) as error:
+        errors.append(f'Platform package data could not be read: {error}')
+        return
+    entries = document.get('entries')
+    if not isinstance(entries, list):
+        errors.append('data/platform-packages.json must contain an entries list')
+        return
+    expected = {record.get('id') for record in records if record.get('kind') in SOFTWARE_KINDS}
+    identifiers = [entry.get('id') for entry in entries]
+    if len(identifiers) != len(set(identifiers)) or set(identifiers) != expected:
+        errors.append('data/platform-packages.json must cover exactly the curated software IDs')
+    entry_counts = {key: 0 for key in PLATFORM_ORDER}
+    package_counts = {key: 0 for key in PLATFORM_ORDER}
+    for entry in entries:
+        platforms = entry.get('platforms')
+        keys = entry.get('platform_keys')
+        if not isinstance(platforms, dict) or not isinstance(keys, list):
+            errors.append(f"Platform entry has an invalid shape: {entry.get('id')}")
+            continue
+        if keys != [key for key in PLATFORM_ORDER if platforms.get(key)]:
+            errors.append(f"Platform keys are not ordered or do not match: {entry.get('id')}")
+        for key, items in platforms.items():
+            if key not in PLATFORM_ORDER or not isinstance(items, list) or not items:
+                errors.append(f"Invalid platform bucket for {entry.get('id')}: {key}")
+                continue
+            entry_counts[key] += 1
+            package_counts[key] += len(items)
+            for item in items:
+                if not isinstance(item, dict) or not item.get('name'):
+                    errors.append(f"Invalid package descriptor for {entry.get('id')}")
+                elif item.get('url') and not str(item['url']).startswith('https://'):
+                    errors.append(f"Non-HTTPS package URL for {entry.get('id')}")
+    meta = document.get('meta', {})
+    if meta.get('entry_count') != len(entries) or meta.get('software_entry_count') != len(expected):
+        errors.append('Platform package entry counts do not match its entries')
+    if meta.get('platform_entry_counts') != entry_counts:
+        errors.append('Platform package entry counts do not match its platform buckets')
+    if meta.get('platform_package_counts') != package_counts:
+        errors.append('Platform package package counts do not match its platform buckets')
+    if meta.get('spec_version') != 'platform-packages-v1':
+        errors.append('Platform package spec_version must be platform-packages-v1')
+    # Class 0 requires a download method, so its package/install signal must be present.
+    classes_path = ROOT / 'data' / 'evidence-classes.json'
+    if classes_path.is_file():
+        try:
+            classes = strict_json.load_path(classes_path)
+        except (OSError, ValueError):
+            classes = {'entries': []}
+        c0 = {entry.get('id') for entry in classes.get('entries', []) if entry.get('evidence_class') == 0}
+        packages_by_id = {entry.get('id'): entry for entry in entries}
+        no_packages = sorted(identifier for identifier in c0
+                             if not packages_by_id.get(identifier, {}).get('platform_keys'))
+        if no_packages:
+            errors.append('Class 0 entries must have a platform package signal: ' + ', '.join(no_packages[:5]))
+
+
 def main():
     errors = []
     records = [record for path in RESOURCE_FILES for record in read_array(path, errors)]
@@ -1398,6 +1466,7 @@ def main():
     validate_resources(records, errors)
     validate_evidence_classes(records, errors)
     validate_evidence_media(errors)
+    validate_platform_packages(records, errors)
     for warning in unknown_field_warnings(records) + evidence_pin_warnings(records):
         print(f'Warning: {warning}', file=sys.stderr)
     validate_requirement_facets(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), errors)

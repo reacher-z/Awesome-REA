@@ -45,6 +45,49 @@ def _text(record: dict, key: str) -> str:
     return value
 
 
+PLATFORM_ORDER = ('windows', 'macos', 'linux', 'android', 'ios', 'web', 'freebsd', 'source', 'other')
+PLATFORM_LABELS = {
+    'windows': ('Windows', 'Windows'),
+    'macos': ('macOS', 'macOS'),
+    'linux': ('Linux', 'Linux'),
+    'android': ('Android', 'Android'),
+    'ios': ('iOS', 'iOS'),
+    'web': ('Web', 'Web'),
+    'freebsd': ('FreeBSD', 'FreeBSD'),
+    'source': ('Source / package manager', '源码 / 包管理器'),
+    'other': ('Other / unclassified', '其他 / 未分类'),
+}
+
+
+def _platform_packages(record: dict, language: str) -> str:
+    """Latest-release and README package links, kept separate from requirements."""
+    packages = record.get('platform_packages') or {}
+    if not packages:
+        return ''
+    zh = language == 'zh'
+    groups = []
+    for key in PLATFORM_ORDER:
+        items = packages.get(key) or []
+        if not items:
+            continue
+        entries = []
+        for item in items[:12]:
+            name = str(item.get('name') or '')
+            url = item.get('url')
+            if url:
+                entries.append(f'<li><a href="{escape(url, quote=True)}" target="_blank" rel="noopener">{escape(name)}</a></li>')
+            else:
+                entries.append(f'<li><code>{escape(name)}</code></li>')
+        if len(items) > 12:
+            entries.append(f'<li class="entry-platform-more">+{len(items) - 12}</li>')
+        groups.append(f'<div class="entry-platform"><h3>{escape(PLATFORM_LABELS[key][int(zh)])}</h3><ul>{"".join(entries)}</ul></div>')
+    note = ('Latest release assets and README install commands; the catalog did not install or run them.'
+            if not zh else '来自最新 Release 产物与 README 安装命令；本目录未安装或运行。')
+    return (f'<section class="entry-section" aria-labelledby="entry-platforms"><h2 id="entry-platforms">'
+            f'{"发行包" if zh else "Release packages"}</h2><p class="entry-platform-note">{note}</p>'
+            f'<div class="entry-platforms">{"".join(groups)}</div></section>')
+
+
 def _requirements(record: dict, language: str) -> list[str]:
     value = record.get('requirements_zh' if language == 'zh' else 'requirements')
     if not isinstance(value, list) or not value or not all(isinstance(v, str) and v.strip() for v in value):
@@ -241,6 +284,7 @@ def _resource_content(record: dict, language: str, discussion: str = '', feedbac
   <p class="entry-description">{escape(description)}</p>{_summary(facts)}</header>
 <nav class="entry-actions" aria-label="{label('Resource links', '资源链接')}">{''.join(links)}</nav>
 <section class="entry-section" aria-labelledby="entry-requirements"><h2 id="entry-requirements">{escape(REQUIREMENTS_LABEL[zh])}</h2><ul class="entry-requirements">{requirements}</ul></section>
+{_platform_packages(record, language)}
 <section class="entry-section" aria-labelledby="entry-review"><h2 id="entry-review">{label('About this entry', '关于此条目')}</h2>
 <p class="entry-review-note">{label('The description was reviewed against primary sources.', '说明已依据一手来源复核。')}</p>{feedback}</section>
 {discussion}{_sources([record['evidence_url'], *record.get('additional_evidence_urls', [])], language)}'''
