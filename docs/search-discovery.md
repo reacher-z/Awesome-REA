@@ -67,7 +67,7 @@ At launch, use Games / Websites / Apps as content types, platform and Showcase /
 
 ## Repeatable IndexNow submission
 
-A top-level `404.html` makes unknown paths on awesomerea.org return HTTP 404 instead of the homepage. Every `pages.dev` copy also sends `X-Robots-Tag: noindex`; the icon-asset host must hold only [its icon files](website.md#icon-origin-contents). Sitemap `lastmod` dates come from recorded data, as listed above, and are omitted when no dated record describes a page.
+A top-level `404.html` makes unknown paths on awesomerea.org return HTTP 404 instead of the homepage. Every `pages.dev` copy also sends `X-Robots-Tag: noindex`; Sitemap `lastmod` dates come from recorded data, as listed above, and are omitted when no dated record describes a page.
 
 After every production deployment the [IndexNow notification workflow](automation.md#indexnow-notification) runs the command below unattended, in `--automatic` mode with the previous run's receipt as baseline. The manual steps that follow remain available.
 

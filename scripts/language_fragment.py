@@ -8,8 +8,8 @@ from asset_paths import fingerprinted_href
 
 SCRIPT = 'language-fragment.js'
 HEADER = re.compile(r'<header class="site-header">.*?</header>', re.S)
-# The homepages keep their fragment, query and layout through app.js instead.
-HOMEPAGES = {'index.html', 'zh/index.html'}
+# The homepages have no fragments to keep; the explorer keeps its query and layout through app.js instead.
+HOMEPAGES = {'index.html', 'zh/index.html', 'explore/index.html', 'zh/explore/index.html'}
 
 
 def language_fragment_script(site_dir: Path) -> str:

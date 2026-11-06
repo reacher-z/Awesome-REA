@@ -17,6 +17,7 @@ from build_survey import build_survey
 from homepage_locales import HOMEPAGE_DESTINATIONS, _ui_strings
 from open_graph import SOCIAL_CARD, SOCIAL_IMAGE_ALT, open_graph_meta, png_size
 from test_source_browser import full_export
+from site_shell import theme_script_hash
 from validate_site import (Page, csp_directives, header_rules, validate_catalog_preload, validate_homepage_destinations,
                            validate_not_found_pages, validate_open_graph, validate_security_headers)
 
@@ -132,16 +133,16 @@ class SecurityHeaderTests(unittest.TestCase):
         self.assertEqual(site['strict-transport-security'], 'max-age=2592000')
         self.assertEqual(site['referrer-policy'], 'strict-origin-when-cross-origin')
         directives = csp_directives(site['content-security-policy'])
-        self.assertEqual(directives['script-src'], ["'self'", 'https://static.cloudflareinsights.com'])
+        self.assertEqual(directives['script-src'], ["'self'", theme_script_hash(), 'https://static.cloudflareinsights.com'])
         self.assertEqual(directives['connect-src'], ["'self'", 'https://cloudflareinsights.com'])
-        self.assertEqual(directives['font-src'], ["'self'", 'https://awesome-rea.pages.dev'])
+        self.assertEqual(directives['font-src'], ["'self'"])
         # The 404 search is a same-origin GET form.
         self.assertEqual(directives['form-action'], ["'self'"])
         no_cache = {'cache-control': 'no-cache, must-revalidate'}
         bibtex = {'content-type': 'application/x-bibtex; charset=utf-8'}
         self.assertEqual(rules, {
-            '/fonts/*': {'access-control-allow-origin': '*'}, '/fontawesome.css': {'access-control-allow-origin': '*'},
-            **{route: no_cache for route in ('/', '/index.html', '/catalog.json', '/catalog-index.json', '/source-index.json',
+            '/fonts/*': {'access-control-allow-origin': '*', 'cache-control': 'public, max-age=2592000'},
+            **{route: no_cache for route in ('/', '/index.html', '/catalog.json', '/catalog-index.json', '/search-index.json', '/search-index.zh.json', '/source-index.json',
                                              '/source-browser.json', '/source-published.json', '/papers.json', '/build-manifest.json',
                                              '/data-manifest.json', '/downloads/*')},
             **{route: {'content-type': 'application/atom+xml; charset=utf-8'} for route in ('/feed.xml', '/zh/feed.xml',
@@ -175,7 +176,6 @@ class SecurityHeaderTests(unittest.TestCase):
 
     def test_policy_covers_what_pages_load_and_rejects_new_inline_code(self):
         valid = ('<head><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css?v=1">'
-                 '<link rel="stylesheet" href="https://awesome-rea.pages.dev/fontawesome.css">'
                  '<link rel="preload" href="/catalog-index.json?v=1" as="fetch" crossorigin>'
                  '<script type="application/ld+json">{}</script><script src="/app.js?v=1" defer></script></head>'
                  '<body><script id="data" type="application/json">{}</script></body>')
@@ -187,7 +187,7 @@ class SecurityHeaderTests(unittest.TestCase):
             'event handler': valid + '<button onclick="go()">Go</button>',
             'style attribute': valid + '<p style="color:red">x</p>',
             'third-party script': valid + '<script src="https://cdn.example.org/widget.js"></script>',
-            'unlisted icon origin': valid.replace('awesome-rea.pages.dev', 'icons.example.org'),
+            'third-party stylesheet': valid.replace('href="/styles.css?v=1"', 'href="https://icons.example.org/icons.css"'),
             'frame': valid + '<iframe src="/"></iframe>',
             'third-party preload': valid.replace('href="/catalog-index.json?v=1"', 'href="https://cdn.example.org/catalog-index.json"'),
             'untyped preload': valid.replace(' as="fetch"', ''),
@@ -220,8 +220,9 @@ class CatalogPreloadTests(unittest.TestCase):
     def check(self, english, chinese=None):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)
-            (output / 'zh').mkdir()
-            for path, head in (('index.html', english), ('zh/index.html', english if chinese is None else chinese)):
+            (output / 'zh/explore').mkdir(parents=True)
+            (output / 'explore').mkdir()
+            for path, head in (('explore/index.html', english), ('zh/explore/index.html', english if chinese is None else chinese)):
                 (output / path).write_text(f'<html data-catalog-revision="{self.REVISION}" lang="en"><head>{head}'
                                            '<script src="/app.js?v=1" defer></script></head><body></body></html>', encoding='utf-8')
             validate_catalog_preload(output)

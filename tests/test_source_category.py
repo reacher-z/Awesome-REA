@@ -40,7 +40,7 @@ class SourceCategoryTests(unittest.TestCase):
             self.assertEqual(index['source_category_labels'], catalog['source_category_labels'])
             browser = json.loads((output / 'source-browser.json').read_text(encoding='utf-8'))
             self.assertTrue({record['category'] for record in browser['resources']} <= set(CATEGORIES))
-            for language, prefix, search in (('en', '', '/?view=source-index&amp;lang=en'), ('zh', 'zh/', '/zh/?view=source-index')):
+            for language, prefix, search in (('en', '', '/explore/?view=source-index&amp;lang=en'), ('zh', 'zh/', '/zh/explore/?view=source-index')):
                 overview = (output / prefix / 'browse/index.html').read_text(encoding='utf-8')
                 self.assertIn(f'<a class="button button-primary" href="{search}">', overview)
                 for category in CATEGORIES:

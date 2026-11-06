@@ -209,7 +209,9 @@ def main():
         assert len(page.resources) == len(expected_cases) and set(page.resources) == expected_cases, path
     validate_robots(OUTPUT, urls)
     assert (OUTPUT / "llms.txt").is_file(), "Missing optional catalog index"
-    assert len(urls) == len(list(OUTPUT.rglob("index.html"))), "A generated page is absent from the sitemap"
+    # The transitional explorer pages are noindex, so they stay out of the sitemap.
+    explorer = {OUTPUT / "explore/index.html", OUTPUT / "zh/explore/index.html"}
+    assert len(urls) == len([page for page in OUTPUT.rglob("index.html") if page not in explorer]), "A generated page is absent from the sitemap"
     print(f"Discovery checks passed: {len(urls)} canonical pages in the sitemap index with data-dated lastmod and hreflang alternates, {len(entries)} localized detail pages, reciprocal languages, {len(records)} static curated entries per language, JSON-LD, and permissions for {len(CRAWLERS)} named crawlers.")
 
 

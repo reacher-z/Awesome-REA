@@ -56,7 +56,7 @@ jobs:
       # The Cloudflare Pages build command: validate.py, node --check, build_site.py,
       # validate_discovery.py and validate_site.py. The asset URL is only written into HTML.
       - name: Run the production build
-        run: python3 scripts/build_production.py --fontawesome-assets-url https://awesome-rea.pages.dev
+        run: python3 scripts/build_production.py
   browser:
     runs-on: ubuntu-latest
     timeout-minutes: 10
