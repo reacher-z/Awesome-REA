@@ -506,6 +506,26 @@ class SharedPageTest(unittest.TestCase):
         self.assertEqual(skipped['already-lead'], 1)
 
 
+class ProjectPageTest(unittest.TestCase):
+    def test_a_project_page_of_a_held_repository_is_not_a_new_lead(self):
+        page = 'https://owner.github.io/tool/'
+        key, _, flags = leads.url_key(page)
+        candidates, _ = collect.candidates_from([{**listing('a-list', page, key, label='Tool'), 'flags': dict(flags)}], {}, NOW)
+        self.assertEqual(candidates[0]['identity'], key)
+        self.assertIn('gh:owner/tool', leads.match_keys(candidates[0]))
+        selected, _, skipped = leads.select_leads(candidates, {'known': {'gh:owner/tool': 'already-curated'}, 'records': 0, 'bytes': 0},
+                                                  5, ['a-list'])
+        self.assertEqual((selected, skipped['already-curated']), ([], 1))
+
+    def test_an_entry_of_a_shared_project_page_is_not_its_repository(self):
+        page = 'https://owner.github.io/project/tools'
+        key, _, flags = leads.url_key(page)
+        rows = [{**listing('a-list', page, key, label=name), 'flags': dict(flags)} for name in ('First Tool', 'Second Tool')]
+        collect.split_shared_pages(rows)
+        candidates, _ = collect.candidates_from(rows, {}, NOW)
+        self.assertTrue(all('gh:owner/project' not in leads.match_keys(lead) for lead in candidates))
+
+
 class SharedPageLimitsTest(unittest.TestCase):
     def test_long_entry_names_keep_a_digest(self):
         first, second = 'a' * 45 + 'one', 'a' * 45 + 'two'

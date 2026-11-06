@@ -311,9 +311,16 @@ def lead_keys(lead: dict) -> set[str]:
 
 
 def match_keys(lead: dict) -> set[str]:
-    """Every key that ties a lead to a record of any layer: its identity, aliases and the entry key of each page key."""
+    """Every key that ties a lead to a record of any layer: its identity, aliases and the entry key of each page key.
+
+    A GitHub project page (owner.github.io/<repo>) is also known by its repository's owner/name, so a page whose
+    repository another layer already holds is not a new resource. An entry of a shared page is not.
+    """
     keys = lead_keys(lead)
-    return keys | ({entry_key(key, lead['name']) for key in keys if key.startswith('url:')} - {None})
+    found = keys | {entry_key(key, lead['name']) for key in keys if key.startswith('url:')}
+    if lead['identity'].startswith('url:') and '#' not in lead['identity']:
+        found.add(url_key(lead['url'])[2].get('ghpages_alias'))
+    return found - {None}
 
 
 # --- JSON format and time ---------------------------------------------------------------------------
