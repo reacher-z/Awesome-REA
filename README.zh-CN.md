@@ -922,7 +922,7 @@ REA 标签指向单独维护的上游 CLI 与 MCP 项目，收录不代表已接
 
 **其他分区中的智能体集成：** 网站：[Chrome DevTools MCP](https://awesomerea.org/zh/resources/chrome-devtools-mcp/)、[Playwright MCP](https://awesomerea.org/zh/resources/playwright-mcp/)、[Burp Suite MCP Server 扩展](https://awesomerea.org/zh/resources/burp-suite-mcp-server/)、[Spectral](https://awesomerea.org/zh/resources/spectral-mcp/) · 游戏：[RenderDoc MCP](https://awesomerea.org/zh/resources/renderdoc-mcp/)、[Cheat Engine MCP Bridge 进程内存分析桥接](https://awesomerea.org/zh/resources/cheatengine-mcp-bridge/) · 应用：[JADX-AI-MCP](https://awesomerea.org/zh/resources/jadx-ai-mcp/)、[apktool-mcp-server Apktool MCP 服务](https://awesomerea.org/zh/resources/apktool-mcp-server/)、[frida-mcp (yfe404)](https://awesomerea.org/zh/resources/frida-mcp-yfe404/)、[Super Trouper](https://awesomerea.org/zh/resources/super-trouper/)
 
-- [**REA — Reverse Engineer Anything**](https://github.com/morluto/rea) - REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。 <sub>项目 · REA 官方 · 目标：网站、游戏、应用、二进制、固件、协议 · [完整条目](https://awesomerea.org/zh/resources/rea-upstream/)</sub>
+- [**REA — Reverse Engineer Anything**](https://github.com/morluto/rea?tab=readme-ov-file) - REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。 <sub>项目 · REA 官方 · 目标：网站、游戏、应用、二进制、固件、协议 · [完整条目](https://awesomerea.org/zh/resources/rea-upstream/)</sub>
 - [**官方 reverse-engineer-anything 技能**](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything) - 官方面向使用者的调查技能，包含目标路由、连接恢复与证据工作流。 <sub>集成 · REA 官方 · 目标：网站、游戏、应用、二进制、固件、协议 · [完整条目](https://awesomerea.org/zh/resources/rea-official-skill/)</sub>
 - [**dsh-mcp-rea**](https://github.com/Ersith/dsh-mcp-rea) - 社区 MCP 适配桥，以精选工具和 CLI 转发缩小宿主需要处理的工具面。 <sub>集成 · REA 社区 · 目标：网站、游戏、应用、二进制、固件 · [完整条目](https://awesomerea.org/zh/resources/dsh-mcp-rea/)</sub>
 - [**rea-jev**](https://github.com/juan-viox/rea-jev) - Claude Code 社区插件，在固定版本 REA MCP 外增加 Jev 路由和证据检查。 <sub>集成 · REA 社区 · 目标：网站、应用 · [完整条目](https://awesomerea.org/zh/resources/rea-jev/)</sub>
@@ -1137,7 +1137,7 @@ REA 标签指向单独维护的上游 CLI 与 MCP 项目，收录不代表已接
 
 ## 关于
 
-[REA（Reverse Engineer Anything）](https://github.com/morluto/rea?tab=readme-ov-file) 是单独维护的上游 CLI 与 MCP 项目。本合集名称与之呼应，但并非 REA 官方仓库；条目标签及“REA 官方文档”等关系标注中的 REA 均指该项目。
+[REA（Reverse Engineer Anything）](https://github.com/morluto/rea) 是单独维护的上游 CLI 与 MCP 项目。本合集名称与之呼应，但并非 REA 官方仓库；条目标签及“REA 官方文档”等关系标注中的 REA 均指该项目。
 
 本项目是独立社区资源合集。原创说明和代码使用 [MIT 许可证](LICENSE)，外部项目保留各自的许可证。
 

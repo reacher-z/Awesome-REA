@@ -75,8 +75,10 @@ class AgentCrossReferenceTest(unittest.TestCase):
                 line = next(line for line in section.splitlines() if line.startswith('**'))
                 linked = re.findall(rf'\(https://awesomerea\.org/{prefix}resources/([a-z0-9-]+)/\)', line)
                 self.assertEqual(Counter(linked), Counter(expected))
-                entries = Counter(re.findall(r'^- \[\*\*.*?\*\*\]\((\S+?)\) - ', text, re.M))
-                self.assertTrue(all(entries[record['url']] == 1 for record in listed))
+                # Every record has one list line, found by its entry page; a repository shared by several records is
+                # linked on the first line only (awesome-lint flags a repeated address).
+                entries = Counter(re.findall(rf'^- .*/{prefix}resources/([a-z0-9-]+)/\)</sub>$', text, re.M))
+                self.assertTrue(all(entries[record['id']] == 1 for record in listed))
 
 
 if __name__ == '__main__':

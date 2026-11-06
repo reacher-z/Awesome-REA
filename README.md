@@ -921,7 +921,7 @@ REA labels refer to the separate upstream CLI and MCP project. Listing does not 
 
 **Also in target sections:** Website: [Chrome DevTools MCP](https://awesomerea.org/resources/chrome-devtools-mcp/), [Playwright MCP](https://awesomerea.org/resources/playwright-mcp/), [Burp Suite MCP Server](https://awesomerea.org/resources/burp-suite-mcp-server/), [Spectral](https://awesomerea.org/resources/spectral-mcp/) · Game: [RenderDoc MCP](https://awesomerea.org/resources/renderdoc-mcp/), [Cheat Engine MCP Bridge](https://awesomerea.org/resources/cheatengine-mcp-bridge/) · App: [JADX-AI-MCP](https://awesomerea.org/resources/jadx-ai-mcp/), [apktool-mcp-server](https://awesomerea.org/resources/apktool-mcp-server/), [frida-mcp (yfe404)](https://awesomerea.org/resources/frida-mcp-yfe404/), [Super Trouper](https://awesomerea.org/resources/super-trouper/)
 
-- [**REA — Reverse Engineer Anything**](https://github.com/morluto/rea) - The upstream CLI and MCP server for evidence-based investigations of shipped software and runtime behavior. <sub>Project · Official REA · Targets: Website, Game, App, Binary, Firmware, Protocol · [Full entry](https://awesomerea.org/resources/rea-upstream/)</sub>
+- [**REA — Reverse Engineer Anything**](https://github.com/morluto/rea?tab=readme-ov-file) - The upstream CLI and MCP server for evidence-based investigations of shipped software and runtime behavior. <sub>Project · Official REA · Targets: Website, Game, App, Binary, Firmware, Protocol · [Full entry](https://awesomerea.org/resources/rea-upstream/)</sub>
 - [**Official reverse-engineer-anything skill**](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything) - Target routing, connection recovery and evidence practices for agents using REA. <sub>Integration · Official REA · Targets: Website, Game, App, Binary, Firmware, Protocol · [Full entry](https://awesomerea.org/resources/rea-official-skill/)</sub>
 - [**dsh-mcp-rea**](https://github.com/Ersith/dsh-mcp-rea) - A community MCP bridge presents a smaller selected tool surface and forwards explicit commands to the REA CLI. <sub>Integration · Community REA · Targets: Website, Game, App, Binary, Firmware · [Full entry](https://awesomerea.org/resources/dsh-mcp-rea/)</sub>
 - [**rea-jev**](https://github.com/juan-viox/rea-jev) - A Claude Code plugin adds Jev-based routing and evidence checks around a pinned REA MCP integration. <sub>Integration · Community REA · Targets: Website, App · [Full entry](https://awesomerea.org/resources/rea-jev/)</sub>
@@ -1136,7 +1136,7 @@ Help improve an entry or share a useful source. Start with the [contribution gui
 
 ## About
 
-[REA (Reverse Engineer Anything)](https://github.com/morluto/rea?tab=readme-ov-file) is a separate upstream CLI and MCP project. This collection's name echoes it, but it is not the REA repository; “REA” in entry tags and labels such as “Official REA documentation” refers to that project.
+[REA (Reverse Engineer Anything)](https://github.com/morluto/rea) is a separate upstream CLI and MCP project. This collection's name echoes it, but it is not the REA repository; “REA” in entry tags and labels such as “Official REA documentation” refers to that project.
 
 This is an independent community collection. Original descriptions and code are [MIT licensed](LICENSE); linked projects retain their own licenses.
 

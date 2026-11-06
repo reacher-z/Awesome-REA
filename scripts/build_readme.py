@@ -353,6 +353,15 @@ def tag_legend(records, language):
     return ('**标签：** ' if zh else '**Tags:** ') + plain_text(' · '.join(parts)) + ('。' if zh else '.')
 
 
+# About links the upstream REA project by its exact address (tests/test_about_rea.py); the catalog entry for the same
+# project opens its README tab instead, so the page does not link one address twice.
+README_TAB_URLS = {'https://github.com/morluto/rea'}
+
+
+def entry_link(url):
+    return url + '?tab=readme-ov-file' if url in README_TAB_URLS else url
+
+
 def render_catalog(records, language, paper_urls=frozenset()):
     """One list line per resource: source link, opening sentence, tags and the entry page that holds
     the full description, requirements and evidence. Bibliography overlaps appear only under Papers."""
@@ -400,7 +409,7 @@ def render_catalog(records, language, paper_urls=frozenset()):
                     description = plain_text(lead_sentence(record[f'description_{language}'], language))
                     metadata = plain_text(entry_type(record, language) + other_targets(record, section, language))
                     detail_url = f"https://awesomerea.org/{'zh/' if language == 'zh' else ''}resources/{record['id']}/"
-                    title = f'**{name}**' if record['url'] in linked else f"[**{name}**]({record['url']})"
+                    title = f'**{name}**' if record['url'] in linked else f"[**{name}**]({entry_link(record['url'])})"
                     linked.add(record['url'])
                     lines.append(f"- {title} - {description} "
                                  f"<sub>{metadata} · [{FULL_ENTRY[index]}]({detail_url})</sub>")
