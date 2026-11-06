@@ -8074,5 +8074,86 @@
       "它只在用户态工作，README 建议需要内核态（ring 0）反反调试时改用 TitanHide。每个选项针对特定的反调试检测：文档建议计时、硬件断点保护、阻止线程创建和 NtYieldExecution 等选项只在确有需要时启用，并且只在虚拟机中使用会终止并转储新建进程的 RunPE 脱壳选项。",
       "采用 GPL-3.0 许可。项目派生自 Bitbucket 上原始的 ScyllaHide 仓库；完整手册是附在 docs-2019-05-17 发布中的 PDF，其 LaTeX 源文件位于 Documentation/ 目录。"
     ]
+  },
+  "yara-x": {
+    "name": "YARA-X Rust 版 YARA 模式匹配工具",
+    "requirements": [
+      "每个发布版本都附有 Linux、macOS 和 Windows 预编译程序；macOS 用户可用 Homebrew 安装，Python 用户可用 pip install yara-x 安装。从源码构建需要较新的 Rust 工具链（cargo install --path cli），Go 库基于 C API 构建。审阅时的版本为 v1.23.0，于 2026-11-05 发布。",
+      "对比文档指出，其 C/C++、Python 和 Go API 与 YARA 的不兼容，进程扫描功能也尚未实现；另有专页列出规则层面的差异。README 称 YARA-X 已经成熟稳定，VirusTotal 已在生产环境中使用。",
+      "依 LICENSE 采用 BSD-3-Clause 许可；提交贡献须签署 Google 贡献者许可协议（CLA）。"
+    ]
+  },
+  "de4dot": {
+    "name": "de4dot .NET 反混淆与脱壳工具",
+    "requirements": [
+      "该仓库在 2020-08-29 最后一次提交后已在 GitHub 上归档，没有 GitHub 发布版本；README 指引用户从 CI 构建获取二进制文件。从源码构建可使用 .NET Framework 或 .NET Core 解决方案，并需要 de4dot 用于读写程序集的 dnlib 库。",
+      "原始符号名通常无法恢复，XAML 也不会被重命名，因此 WPF 或 Silverlight 程序集可能需要加 --dont-rename 参数。README 声明不提供支持，并表示遇到新版混淆器时可能需要自行更新 de4dot。",
+      "处理部分混淆器以及进行动态字符串解密时，它会把程序集及其依赖加载到内存中执行，因此 README 建议在安全的沙箱环境中处理疑似恶意软件。",
+      "采用 GPL-3.0 许可（COPYING）；dnlib、SharpZipLib、QuickLZ 和 LZMA 等随附库各有其许可证文件。"
+    ]
+  },
+  "reclass-net": {
+    "name": "ReClass.NET 进程内存结构重建工具",
+    "requirements": [
+      "发布包含 x86 和 x64 两个版本，并附有自动选择版本的启动器；README 还列出 Linux 支持（在 Ubuntu 18.04 上测试）。审阅时的版本为 v1.2，于 2019-04-15 发布；所审阅的 master 分支提交日期为 2023-07-03。编译需要 Visual Studio 2019，Linux 原生核心库需要 WSL，跨平台（x86/x64）构建还需 g++-multilib。",
+      "可导入 ReClass 2007–2016、ReClass QT、Cheat Engine 和 CrySearch 的文件。插件只需复制到 Plugins 文件夹即可安装；README 注明 Unreal 插件已无法获取。",
+      "依 LICENSE 采用 MIT 许可。"
+    ]
+  },
+  "classyshark": {
+    "name": "ClassyShark Android 二进制浏览工具",
+    "requirements": [
+      "以 JAR 形式运行（java -jar ClassyShark.jar），需要 Java 运行环境；Arch Linux 用户可从 AUR 安装预编译的 JAR。最新版本为 8.2，于 2018-07-25 发布；仓库在 2023-05-19 最后一次提交后已在 GitHub 上归档。",
+      "README 注明 API 查找功能仍在开发中；仓库中的 CommandLine.pdf 是命令行参考文档。",
+      "依 LICENSE.txt 与 README 采用 Apache-2.0 许可。"
+    ]
+  },
+  "rpisec-malware-analysis-course": {
+    "name": "RPISEC 恶意软件分析课程（CSCI 4976）",
+    "requirements": [
+      "课程要求学员具备 C/C++ 实用知识和一定的汇编经验，并在每次课前阅读书中相应章节。课程使用 Windows 7 32 位分析虚拟机，但该虚拟机不对外分发；v1.0_release（2016-01-14）打包了课程所用免费工具的安装程序，如 IDA Free、OllyDbg、WinDbg、Sysinternals Suite、PEiD、Regshot 和 Wireshark。",
+      "实验和项目中的样本大多是真实的恶意软件，存放在以 infected 为密码加密的 ZIP 压缩包中；README 要求只在合适的分析环境中处理。课程未录制视频，涉及书中内容的幻灯片仅为提纲。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证；所审阅的 master 分支提交日期为 2017-05-11。"
+    ]
+  },
+  "corkami-pics": {
+    "name": "Corkami 文件格式图解海报集",
+    "requirements": [
+      "内容为可在浏览器或图片查看器中打开的图片和 PDF，无需安装任何软件。仓库没有发布版本，所审阅的 master 分支提交日期为 2024-02-18。",
+      "除文件格式海报外，仓库中还有与文件格式无关的普通海报、描摹图和轮廓图。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证，因此未说明再利用条款。"
+    ]
+  },
+  "keypatch": {
+    "name": "Keypatch IDA Pro 汇编修补插件",
+    "requirements": [
+      "需要在 Windows、macOS 或 Linux 上安装 IDA Pro，以及 Keystone 引擎及其 Python 绑定和 six 模块；把 keypatch.py 复制到 IDA 的插件目录即可。README 确认支持 IDA Pro 6.4 至 7.5，所审阅的 master 分支提交（2024-09-06）加入了适配 IDA 9.0 API 的修改。最新的标签版本为 2.1（2017-01-17），代码中标注的版本则为 2.2。",
+      "修补默认只写入 IDA 数据库，需通过 Edit | Patch program | Apply patches to input file 才会写回原始二进制文件。",
+      "依 COPYING 采用 GPL-2.0 许可。"
+    ]
+  },
+  "edb-debugger": {
+    "name": "edb-debugger 图形化调试器",
+    "requirements": [
+      "目前只正式支持 Linux；FreeBSD、OpenBSD、macOS 和 Windows 版本正在移植，功能完整度不一。构建需要支持 C++17 的 GCC 或 Clang、Qt 5.15+ 或 6.8+、Capstone 3.0+，Graphviz 2.38+ 为可选；使用 CMake 构建，并须递归克隆仓库以获取子模块。",
+      "审阅时的版本为 1.5.0，于 2024-03-22 发布，也是最后一个支持 3.0 以前 Linux 内核的版本；后续开发面向 3.0 及更新的内核，将以 2.0.0 发布。所审阅的 master 分支提交日期为 2026-10-27。",
+      "依 COPYING 采用 GPL-2.0 许可。"
+    ]
+  },
+  "binnavi": {
+    "name": "BinNavi 二进制分析 IDE",
+    "requirements": [
+      "需要 Java 11 或更高版本、可访问的 PostgreSQL 数据库，以及用于导入反汇编的 IDA Pro。可用 Maven 和 Ant 从源码构建（先 mvn dependency:copy-dependencies，再 ant build-binnavi-fat-jar），Gradle 构建仍属实验性质。GitHub 发布包括 BinNavi 6.1（2016-03-17）和 2017 年发布的历史版本 1.2。",
+      "README 声明项目已不再积极开发，仓库在 2020-10-23 最后一次提交后已在 GitHub 上归档。图形显示依赖商业库 yFiles：仓库附带预先构建并混淆过的 yfileswrap JAR，修改 yfileswrap 相关包则需要 yFiles 许可证。",
+      "除 yFiles 依赖外，采用 Apache-2.0 许可。"
+    ]
+  },
+  "flare-emu": {
+    "name": "flare-emu 二进制分析框架模拟执行库",
+    "requirements": [
+      "需要 Unicorn 及其 Python 绑定，并配合 IDA Pro 7.x 或更高版本（不兼容更早的 IDA API）、带 rzpipe 的 Rizin，或带 r2pipe 的 Radare2；README 还介绍了通过 IDA 的 idalib 使用的方法。安装方式是把 flare_emu.py、对应框架的模块和 flare_emu_hooks.py 复制到 IDA 的 python 目录，或放到 Python 的模块搜索路径中。",
+      "仓库在最后一个发布（标签 2025-08-14，无发布说明）之后已在 GitHub 上归档。配合 Rizin 使用时，它以命令行脚本或在 Python shell 中运行。",
+      "依 LICENSE-APACHE.TXT 采用 Apache-2.0 许可。"
+    ]
   }
 }
