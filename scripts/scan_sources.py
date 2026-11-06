@@ -1203,8 +1203,13 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
                     if query not in exhausted:
                         yield query, page, None
 
+    discovery_deadline = getattr(args, 'discovery_deadline', None)
     for query, page, request in discovery_requests():
         if len(candidates) >= candidate_goal:
+            break
+        if discovery_deadline is not None and time.monotonic() >= discovery_deadline:
+            # The frontier keeps its cursors, so the next run resumes these searches.
+            print(f'DISCOVERY_TIME_LIMIT new_readme_candidates={len(candidates)}', flush=True)
             break
         entry = {'query': query, 'page': page, 'per_page': 100, 'observed_at': now(), 'run_id': started}
         params = urlencode({'q': query, 'per_page': 100, 'page': page, 'sort': 'stars', 'order': 'desc'})
