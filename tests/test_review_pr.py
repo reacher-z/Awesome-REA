@@ -375,9 +375,11 @@ class PrivateFileRulesTest(unittest.TestCase):
                'keys/id_ed25519', 'docs/captures/session.har', 'assets/trace.pcapng', 'captures/dump.pcap', '.env',
                '.env.production', 'web/.env.local', 'secrets.json', 'credentials-prod.json', '.wrangler/state.json',
                'dist/index.html', 'labs/a/output/run.log', 'node_modules/x/index.js', '.venv/bin/python',
-               'site/fonts/pro.woff2', 'scripts/__pycache__/x.pyc', '.DS_Store', 'DEPLOY/SITE.PEM']
+               'site/fonts/pro.woff2', 'site/fonts/inter.woff2', 'fonts/ibm-plex-mono.woff2',
+               'SITE/FONTS/IBM-PLEX-MONO.WOFF2', 'scripts/__pycache__/x.pyc', '.DS_Store', 'DEPLOY/SITE.PEM']
     PUBLIC = ['.env.example', 'web/.env.example', 'keys/id_rsa.pub', 'site/app.js', 'docs/website.md',
-              'data/papers.json', 'site/translations.zh-CN.json', 'docs/key-findings.md', 'assets/logo.png']
+              'data/papers.json', 'site/translations.zh-CN.json', 'docs/key-findings.md', 'assets/logo.png',
+              'site/fonts/eb-garamond-500-core.woff2', 'site/fonts/ibm-plex-mono.woff2']
 
     def test_private_and_generated_paths_are_flagged_by_name(self):
         for path in self.FLAGGED:
