@@ -26,13 +26,13 @@ COLLECTION_JSON = 'index.json'
 MARKDOWN_TYPE = 'text/markdown'
 JSON_TYPE = 'application/json'
 # The same fields the public download bundle publishes, plus the inclusion date and requirement labels.
-RESOURCE_FIELDS = ('id', 'name', 'name_zh', 'url', 'kind', 'category', 'group', 'relationship', 'targets',
+RESOURCE_FIELDS = ('id', 'name', 'name_zh', 'url', 'kind', 'class', 'category', 'group', 'relationship', 'targets',
                    'description_en', 'description_zh', 'requirements', 'requirements_zh', 'requirement_facets',
                    'reconstruction_method', 'evidence_url', 'additional_evidence_urls', 'added_at', 'verified_at',
                    'verification')
 PAPER_FIELDS = ('id', 'title', 'title_zh', 'authors', 'authors_omitted', 'year', 'publication_date', 'date_precision',
                 'date_basis', 'date_basis_zh', 'venue', 'publication_status', 'arxiv_id', 'arxiv_version_reviewed',
-                'first_arxiv_date', 'doi', 'url', 'pdf_url', 'code_url', 'project_url', 'targets', 'kind',
+                'first_arxiv_date', 'doi', 'url', 'pdf_url', 'code_url', 'project_url', 'targets', 'kind', 'class',
                 'description_en', 'description_zh', 'scope_limitations_en', 'scope_limitations_zh', 'why_fits_en',
                 'why_fits_zh', 'metadata_notes', 'metadata_notes_zh', 'citation', 'evidence_urls', 'added_at',
                 'verified_at', 'verification', 'runtime_tested')

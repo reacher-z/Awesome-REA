@@ -21,6 +21,7 @@ Use the worksheet below in the issue or pull request that proposes the entry. Fi
 | Requirements | Platforms, versions, inputs and license terms for `requirements` and its Chinese translation. | Pinned evidence |
 | Classification | `kind`, `relationship` and `category`, each chosen independently. | [Contribution guide](../CONTRIBUTING.md#choose-kind-relationship-category-and-targets) |
 | Target rationale | Why each target applies, citing the evidence. Automatic scan labels are not a reason. | Pinned evidence |
+| Data class | If the project's main output reproduces one named real thing, its one `class`, named for the original thing. Leave it out otherwise. | [Data records](../data/README.md#data-records), pinned evidence |
 | Decision | Curate, or hold and name the missing evidence. | The rows above |
 
 ## Curate or hold
