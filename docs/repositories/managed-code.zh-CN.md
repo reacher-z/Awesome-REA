@@ -132,7 +132,7 @@
 - [jumpifequal/mcp-dotnet](https://github.com/jumpifequal/mcp-dotnet) — 面向 .NET 逆向工程的 MCP 服务器，提供元数据、交叉引用、IL、ILSpy 反编译、安全 API 扫描和 IL 修补。基于 dnlib、ILSpy、MCP SDK 2.x 和 .NET 10，支持 stdio 以及带 Bearer 身份验证的 Streamable HTTP。派生自 neoz/mcp-dotnet。 **[0 星标]**
 - [Metacarpalarteryostracism978/FH5-Car-Unlock-Utility](https://github.com/Metacarpalarteryostracism978/FH5-Car-Unlock-Utility) — 用于管理 Forza Horizon 5 点数、解锁车辆和增加抽奖次数的工具。 **[0 星标]**
 - [mushroomTW/rimworld-mod-mcp](https://github.com/mushroomTW/rimworld-mod-mcp) — 用于 RimWorld 模组开发的仅限本地 MCP 服务器：搜索游戏 Defs 和 C# API、反编译已安装模组、构建模组，并在隔离游戏会话中测试。兼容 Claude Code、Codex 和任意 MCP 客户端。 **[0 星标]**
-- [nooikko/serpents-eyes](https://github.com/nooikko/serpents-eyes) — Serpent’s Gaze 的非官方收藏浏览器：查看已解锁及尚未解锁的所有内容。 **[0 星标]**
+- [nooikko/serpents-eyes](https://github.com/nooikko/serpents-eyes) — Serpent's Gaze 的非官方收藏浏览器：查看已解锁及尚未解锁的所有内容。 **[0 星标]**
 - [okiedocus/orress](https://github.com/okiedocus/orress) — 面向 CTF 与恶意软件分析的纯 Rust 逆向工程 IDE，包含反汇编器、输出 Rust 的反编译器、调试器、模拟器、符号求解器、恶意软件初筛、托管格式工具（WASM／.NET／Java／DEX／pyc／JS）、CyberChef 风格工作台、内置学习模块，以及使用自选模型的 AI 助手（Claude 订阅／API、OpenAI 或本地模型）。 **[0 星标]**
 - [pedrosakuma/dotnet-assembly-mcp](https://github.com/pedrosakuma/dotnet-assembly-mcp) — 用于静态浏览 .NET 程序集的 MCP 服务，涵盖类型、方法、属性与反编译，是 dotnet-diagnostics-mcp 的配套工具。 **[0 星标]**
 - [qingxinzhu/MiniMCP](https://github.com/qingxinzhu/MiniMCP) — Unity 游戏的类 MCP 运行时服务：通过 HTTP 检查和修改实时游戏状态（对象、字段和方法），并为 AI 客户端提供 MCP 桥接。Mono 游戏使用 BepInEx 5 插件（src/）；IL2CPP 游戏使用 BepInEx 6 插件（il2cpp/）。 **[0 星标]**

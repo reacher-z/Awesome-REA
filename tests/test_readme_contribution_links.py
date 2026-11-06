@@ -6,7 +6,6 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_readme import CONTENTS_BEGIN, CONTENTS_END, render_contents
 
 RESOURCE_FORM = 'https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml'
 
@@ -18,18 +17,15 @@ class ReadmeContributionLinkTest(unittest.TestCase):
             with self.subTest(readme=name):
                 text = (ROOT / name).read_text(encoding='utf-8')
                 first_screen = text.split('\n' + contents_heading + '\n', 1)[0]
-                self.assertIn(f']({RESOURCE_FORM})', first_screen)
                 self.assertIn(f']({anchor})', first_screen)
                 heading = anchor[1:] if name.endswith('zh-CN.md') else 'Contributing'
                 self.assertIn(f'\n## {heading}\n', text)
 
-    def test_generated_contents_link_the_contributing_section(self):
-        # The link follows the Contents list rather than joining it: awesome-lint's ToC check excludes Contributing.
-        self.assertTrue(render_contents([], [], 0, 'en').rstrip().endswith('\n\nAlso on this page: [Contributing](#contributing)'))
-        self.assertTrue(render_contents([], [], 0, 'zh').rstrip().endswith('\n\n本页还有：[参与贡献](#参与贡献)'))
-        for name, link in (('README.md', '[Contributing](#contributing)'), ('README.zh-CN.md', '[参与贡献](#参与贡献)')):
+    def test_contributing_section_links_the_resource_form(self):
+        # The form is linked once, from the Contributing section: awesome-lint flags a URL repeated in one README.
+        for name in ('README.md', 'README.zh-CN.md'):
             text = (ROOT / name).read_text(encoding='utf-8')
-            self.assertIn(link, text.split(CONTENTS_BEGIN, 1)[1].split(CONTENTS_END, 1)[0])
+            self.assertEqual(text.count(f']({RESOURCE_FORM})'), 1)
 
     def test_chinese_readme_prefers_the_chinese_guide_and_labels_the_english_one(self):
         zh = (ROOT / 'README.zh-CN.md').read_text(encoding='utf-8')
