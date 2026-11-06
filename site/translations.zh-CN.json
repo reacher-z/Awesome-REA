@@ -8155,5 +8155,86 @@
       "仓库在最后一个发布（标签 2025-08-14，无发布说明）之后已在 GitHub 上归档。配合 Rizin 使用时，它以命令行脚本或在 Python shell 中运行。",
       "依 LICENSE-APACHE.TXT 采用 Apache-2.0 许可。"
     ]
+  },
+  "ida-pro": {
+    "name": "IDA Pro 交互式反汇编、反编译与调试工具",
+    "requirements": [
+      "审阅时的版本为 IDA 9.5（构建号 9.5.261026），于 2026-10-26 发布。宿主系统：macOS 12 及以上（x64 或 ARM64）；图形界面需 x64 Windows 10 1607 及以上，文本界面或无界面使用需 Windows 7 及以上；64 位 Linux 方面，安装指南列出 CentOS 7 或 Ubuntu 16.04，IDA Free 页面则要求 x86-64 或 ARM64 上的 glibc 2.28（Debian 10、Ubuntu 18.10、RHEL 8）。IDAPython 需要 Python 3.11 及以上。",
+      "商业软件，仅按年订阅销售；永久许可已于 2024-09-30 停售，此前购买的永久许可仍可继续使用所购版本。IDA Pro Essential 含同一家族的两款云端反编译器，Expert 含两款、四款或六款本地反编译器，Ultimate 含全部本地反编译器，许可类型可选 Named、Computer 或 Floating；IDA Pro Headless 是面向服务器、CI 和产品内嵌的 OEM 许可。",
+      "IDA Free 和 IDA Home 均为 Named 许可，仅限非商业用途。Free 只能反汇编 x86 和 x86-64，通过云端反编译，并只能在本地调试 x86/x64 程序；Home 提供 70 多种反汇编器、11 款云端反编译器（32 位与 64 位的 x86、ARM、MIPS、PowerPC 和 RISC-V，以及 Android DEX），支持本地调试和 GDB server 远程调试。云端反编译器需要联网。",
+      "IDA 9.5 发布说明指出，Dalvik 反编译器不会重建 try-with-resources，输出不一定是合法的 Java，也不会对混淆文件做特殊处理；新的 UEFI 插件目前侧重 DXE 环境，仍在持续完善。"
+    ]
+  },
+  "binary-ninja": {
+    "name": "Binary Ninja 交互式反汇编、反编译与二进制分析平台",
+    "requirements": [
+      "审阅时的稳定版为 6.0.10905（6.0 Release 2，2026-10-20），是对 6.0（2026-09-03）的错误修复更新。一份许可同时涵盖 Linux、macOS 和 Windows；经测试的宿主系统为 Ubuntu 24.04/26.04 和 macOS 15/26（x64 或 arm64）以及 Windows 10/11（x64）；最低配置为 2 GHz 多核 CPU、8 GB 内存和 4 GB 磁盘空间。另需 Python 3.10 及以上。",
+      "共四个版本：Free、Non-Commercial（即 Personal，仅限非商业用途）、Commercial 和 Ultimate。付费许可含一年更新，到期后仍可继续使用支持期内发布的版本；在线购买的均为 named 许可，供一人在多台机器上使用。只有 Commercial 和 Ultimate 能以无界面方式运行插件（脱离图形界面 import binaryninja）；Non-Commercial 只能通过图形界面加载的插件或 Python 控制台使用 API。",
+      "按版本划分：Free 可反编译 x86、x86-64、ARMv7、Thumb2 和 AArch64；Non-Commercial 与 Commercial 增加 PowerPC、MIPS、RISC-V、MSP430、6502 以及 MD1ROM 加载器；对 nanoMIPS、TriCore、C-SKY、M·CORE、Hexagon、NDS32 和 TMS320C6x 的反编译，以及 VxWorks 加载器、Firmware Ninja、Binary Similarity 和 Ghidra Export，仅 Ultimate 提供。",
+      "Free（用于非商业用途或商业评估）不支持 API 或插件，只提供反汇编、HLIL 和 Pseudo C 视图。基于浏览器的免费 Binary Ninja Cloud 支持所有架构，但须把二进制上传给 Vector 35，只能读取 PE、Mach-O 和 ELF，不支持 API 和插件，且有严格的性能限制。"
+    ]
+  },
+  "hopper-disassembler": {
+    "name": "Hopper Disassembler macOS/Linux 反汇编与反编译工具",
+    "requirements": [
+      "审阅时的版本为 6.6.1，发布于 2026-10-29。Mac 版是兼容 Intel 与 Apple Silicon 的通用二进制，需要 macOS 12.4 或更高版本；5.19.6 是支持 macOS 10.13 至 11 的最后一个版本。Linux 版需要 64 位 Intel 处理器，仅在 Ubuntu 24.04、Fedora 41 和 Arch Linux 上测试过（提供 DEB、RPM 和 tar.xz 包）。没有 Windows 版。",
+      "商业软件，可选按用户授权的 Personal License 或绑定硬件的 Computer License，商业用途不受限制。许可永久有效并含一年更新；更新计划到期后只能使用其有效期内发布的最后一个版本，可在应用内再购买一年更新。",
+      "免费演示版包含全部分析功能，但不能保存或导出反汇编结果及修改后的二进制，调试器后端被禁用，每次会话限 30 分钟。",
+      "取自 iTunes 资料库的 iOS 应用经过 FairPlay DRM 加密，在使用者去除 DRM 之前 Hopper 无法读取。其伪代码通常不能直接编译，教程也提醒，被误判为不可达的代码可能从伪代码中消失。"
+    ]
+  },
+  "jeb-decompiler": {
+    "name": "JEB Decompiler Android 与原生代码逆向平台",
+    "requirements": [
+      "审阅时的版本为 JEB 5.48，发布于 2026-10-07。需要 64 位 JDK 21 及以上（不建议高于 JDK 23，推荐 Oracle 或 OpenJDK 构建）；GUI 客户端可在 x64 或 arm64 的 Windows、Linux（GTK）和 macOS 上运行。软件包是按用户生成、通过电子邮件交付的 zip 压缩包；许可证密钥由机器标识派生。",
+      "仅提供按期限计费的商业许可，没有永久许可：JEB Android（按用户授权，面向非专业用户，仅限 Android 应用）、JEB Pro（按用户授权，含全部模块）、JEB Pro Floating（按席位授权）和 JEB Pro OEM（按服务器授权，用于后端或 SaaS）。非 OEM 订阅到期后仍可打开已有的 JDB2 项目，但不能新建项目；购买页显示只有 Pro 系列许可可以离线使用。",
+      "JEB Community Edition 免费，含大部分反汇编器和文件分析器以及 x86/x86-64 反编译器，但按功能对照表，它不含 Dalvik 反编译器和调试器、无界面启动器，也不能离线使用；EULA 为其另行规定了条款。JEB Demo 含全部模块供评估，但只能反编译部分代码，不能保存或加载项目，不能使用剪贴板，会话有时间限制且需要联网。",
+      "文档列出的局限：RISC-V 支持不含 RV128、RVE、向量/SIMD 扩展和浮点指令反编译；S7 反编译器无法处理所有 MC7 代码，也不支持 S7-1200/1500 的程序块；调试不允许调试的应用仅限 ARMv7 平台；从命令行运行 Python 脚本需要 Pro 或 CE 许可。"
+    ]
+  },
+  "windbg": {
+    "name": "WinDbg Windows 调试器",
+    "requirements": [
+      "WinDbg 可通过微软安装程序、Microsoft Store 或 winget 安装，支持 x64 或 ARM64 架构的 Windows 11 及 Windows 10 1607 以上版本，不支持 Windows 10/11 S；直接安装或经 Store 安装的版本会自动更新。发行说明（2026-11-05 更新）列出的最新版本为 1.2611.4001.0。",
+      "Debugging Tools for Windows（含 WinDbg (Classic) 及 KD、NTKD、CDB、NTSD 控制台调试器）随 WDK 或 Windows SDK 提供，也可在 SDK 安装程序中只选此组件单独安装，旧版 Windows 则使用归档中的对应 SDK。内核调试通常需要另一台计算机或虚拟机，本地内核调试和 TTD 需以提升的权限运行，完整分析还需要符号文件，商业软件的符号能否获得取决于厂商。",
+      "在 Microsoft Store 中免费提供，采用微软专有的 WinDbg 软件许可条款（2026-10-08 更新）：软件仅授予使用许可而非出售，禁止再分发，并可能把使用数据发送给微软。",
+      "TTD 只能录制用户态进程，且不能录制 PPL 等受保护进程；录制时通常会慢 10 至 20 倍，几分钟内跟踪文件就可能达到数 GB，索引文件通常还要大一倍，且可能包含个人身份或安全相关信息；杀毒软件可能干扰录制。",
+      "WinDbg MCP 官方支持 Visual Studio Code 中的 GitHub Copilot 和 GitHub Copilot CLI，每个会话同时只能连接一个客户端；客户端可能把调试器上下文发送给其模型服务，AI 给出的结论并不权威，默认开启的安全模式会阻止 .shell 等高风险命令。"
+    ]
+  },
+  "010-editor": {
+    "name": "010 Editor 十六进制与文本编辑器",
+    "requirements": [
+      "17.0.1 版发布于 2026-11-04，提供 Windows 11/10、macOS 10.14 至 27（ARM 与 Intel）和 Ubuntu 18.04 至 26.04 的 64 位版本，以及 Windows 和 Linux 的 32 位版本和 Windows 便携版。第 10 版起不再支持 Windows XP、macOS 10.7–10.11 和 Ubuntu 10.04–14.04，这些系统上仍可运行旧版本。",
+      "商业软件：评估版可使用 30 天，期满后须购买许可证。许可证按用户计、永久有效，并含一年免费升级与技术支持，分为商业许可和价格较低的家庭/学术许可；EULA 规定家庭/学术许可证不得用于商业目的（注册非营利组织成员除外），也不得在政府或军事机构中使用。",
+      "反汇编器只负责把字节转换为汇编代码：手册说明 010 Editor 无法执行反汇编结果，需另用模拟器或调试器。进程编辑仅支持 Windows，手册还警告错误编辑进程可能导致程序运行异常或系统崩溃。",
+      "编辑器只自带 ZIP、BMP 和 WAV 模板；在线仓库中的模板由其他用户编写并提交。"
+    ]
+  },
+  "pestudio": {
+    "name": "pestudio 恶意软件初步评估工具",
+    "requirements": [
+      "9.61 版的功能表和许可说明均注明 2025 年 3 月，以 ZIP 包形式提供，无需安装；下载页称它完全便携、不会改动所运行的系统，可在任何 Windows 系统上运行。",
+      "免费的基础版只能在私人场合用于偶尔的恶意软件静态分析，不得用于专业或企业环境。pestudio-pro 按用户出售一年期许可，许可期内免费更新，到期不会自动续订，以带密码的 ZIP 包交付。",
+      "查询 VirusTotal 时只提交文件的 MD5 哈希，绝不上传样本本身，并可通过 XML 开关完全关闭；按 imphash 搜索 VirusTotal 需要 VirusTotal Intelligence 账户。软件按“原样”提供、不作任何担保，随附的 XML 文件未经作者许可不得在 pestudio 之外使用。"
+    ]
+  },
+  "ollydbg": {
+    "name": "OllyDbg Windows 32 位调试器",
+    "requirements": [
+      "网站列出的最新版本为 2.01（2013 年 9 月 27 日），1.10 则作为 1.x 系列的最终版提供。系统要求页列出 Windows 95、98、NT 4.0 SP2 及以上或 Windows 2000 及更高版本，并指出在 NT 或 2000 上调试程序可能需要管理员权限；2.x 版说明称第 2 版无法在 Windows 95 和 98 上运行。",
+      "OllyDbg 是 32 位调试器。64 位版本仅以未完成状态提供，其最新进度说明（2014 年 2 月 5 日）称调试引擎完成 70%、分析功能完成 15%。",
+      "属于共享软件，但可免费下载使用；FAQ 说明标为共享软件只是出于版权原因。下载页的许可协议只适用于 1.10 版及其插件开发包（Plugin Development Kit）：长期或商业使用须免费注册，软件按“原样”提供，复制分发时必须完整、不作改动且不得收费。Disassembler 2.01 以 GPL v3 发布。",
+      "下载页提醒，许多软件厂商明确禁止对其程序进行反汇编、反编译或逆向工程，这一限制也涵盖第三方库和系统库，并建议就是否适用“合理使用”咨询律师。"
+    ]
+  },
+  "practical-malware-analysis": {
+    "name": "《Practical Malware Analysis》恶意软件分析实战指南",
+    "requirements": [
+      "全书 800 页，有纸质版（附赠电子书）和 PDF、Mobi、ePub 电子版。第 12 章、详细目录和索引可免费下载 PDF，出版社还发布了勘误表 PDF。",
+      "跟随书中内容操作需要一个安全的虚拟分析环境（书中会教读者搭建），以及书中讲到的 IDA Pro、OllyDbg 和 WinDbg 等分析工具。",
+      "出版社页面上的“Download the labs”链接指向一个 GitHub 仓库，实验二进制文件以自解压包或带密码的 7-Zip 压缩包形式提供。其 README 警告这些二进制文件含有恶意代码，未先搭建安全环境就不应安装或运行；与真实恶意软件一样，其中一些可能崩溃、内存泄漏或出现其他意外行为。",
+      "实验以 Windows XP 为目标平台：许多实验在更新的 Windows 上也能运行，但有些不行；另有单独的压缩包收录为 Windows 7 重写的实验，其结果与书中答案不同。"
+    ]
   }
 }
