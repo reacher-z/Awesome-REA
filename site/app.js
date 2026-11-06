@@ -78,6 +78,21 @@ const UI = {
     "scanClassTitle1": "Scan evidence C1: README documents installation and usage.",
     "scanClassTitle2": "Scan evidence C2: README documentation exists, but installation or usage was not found.",
     "scanClassTitle3": "Scan evidence C3: no usable README documentation was found by the scan.",
+    "platformLabel": "Release packages",
+    "allPlatforms": "All platforms",
+    "platformWindows": "Windows",
+    "platformMacos": "macOS",
+    "platformLinux": "Linux",
+    "platformAndroid": "Android",
+    "platformIos": "iOS",
+    "platformWeb": "Web",
+    "platformFreebsd": "FreeBSD",
+    "platformSource": "Source / package manager",
+    "platformOther": "Other",
+    "platformPackages": "Release packages",
+    "platformNoPackages": "No package evidence collected",
+    "platformBetaNote": "Package list comes from the latest release assets and README install commands. It is not an install or runtime test.",
+    "platformCountLabel": "packages",
     "subjectNav": "Explore reverse engineering by target",
     "subjectBrowse": "Browse subject directories",
     "pageTitle": "Awesome Reverse Engineering Anything · Tools, Cases & Papers",
@@ -319,6 +334,21 @@ const UI = {
     "scanClassTitle1": "扫描证据 C1：README 记录安装与用法。",
     "scanClassTitle2": "扫描证据 C2：有 README 文档，但未找到安装或用法说明。",
     "scanClassTitle3": "扫描证据 C3：扫描未找到可用的 README 文档。",
+    "platformLabel": "发行包",
+    "allPlatforms": "全部平台",
+    "platformWindows": "Windows",
+    "platformMacos": "macOS",
+    "platformLinux": "Linux",
+    "platformAndroid": "Android",
+    "platformIos": "iOS",
+    "platformWeb": "Web",
+    "platformFreebsd": "FreeBSD",
+    "platformSource": "源码 / 包管理器",
+    "platformOther": "其他",
+    "platformPackages": "发行包",
+    "platformNoPackages": "未收集到发行包证据",
+    "platformBetaNote": "发行包列表来自最新 Release 产物和 README 安装命令；不代表已安装或运行验证。",
+    "platformCountLabel": "个包",
     "subjectNav": "按目标领域探索逆向工程",
     "subjectBrowse": "浏览各领域资源目录",
     "pageTitle": "逆向工程资源合集 · Awesome Reverse Engineering Anything",
@@ -496,7 +526,7 @@ document.documentElement.dataset.indexMode = ["source-index", "repositories"].in
 // The path selects the default language; valid legacy query overrides still work.
 const pathLanguage = location.pathname.startsWith("/zh/") ? "zh" : "en";
 // Startup and Back/Forward read URL-held choices the same way; catalog-dependent values are validated after load.
-function curatedURLState(query) { return { layout: query.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(query.get("lang")) ? query.get("lang") : pathLanguage, q: query.get("q") || "", group: query.get("group") || "all", category: query.get("category") || "all", kind: query.get("kind") || "all", target: query.get("target") || "all", class: query.get("class") || "all", order: ["name", "reviewed"].includes(query.get("order")) ? query.get("order") : "featured" }; }
+function curatedURLState(query) { return { layout: query.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(query.get("lang")) ? query.get("lang") : pathLanguage, q: query.get("q") || "", group: query.get("group") || "all", category: query.get("category") || "all", kind: query.get("kind") || "all", target: query.get("target") || "all", class: query.get("class") || "all", platform: query.get("platform") || "all", order: ["name", "reviewed"].includes(query.get("order")) ? query.get("order") : "featured" }; }
 const state = { ...curatedURLState(params), visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
@@ -526,7 +556,7 @@ function entryHref(kind, identifier, language = state.lang) {
 }
 function curatedURL() {
   const next = new URL(location.href);
-  for (const [key, defaultValue] of [["q", ""], ["group", "all"], ["category", "all"], ["kind", "all"], ["target", "all"], ["class", "all"], ["order", "featured"], ["lang", pathLanguage], ["layout", "compact"]]) {
+  for (const [key, defaultValue] of [["q", ""], ["group", "all"], ["category", "all"], ["kind", "all"], ["target", "all"], ["class", "all"], ["platform", "all"], ["order", "featured"], ["lang", pathLanguage], ["layout", "compact"]]) {
     if (state[key] !== defaultValue) next.searchParams.set(key, state[key]);
     else next.searchParams.delete(key);
   }
@@ -572,9 +602,10 @@ function applyLanguage() {
 function renderCategories() {
   const select = $("#category-select"); select.replaceChildren(); const first = node("option", "", t("allCategories")); first.value = "all"; select.append(first);
   [...new Set(state.records.map(r => r.category))].sort((a,b) => compareLabels(label(state.categoryLabels,a), label(state.categoryLabels,b))).forEach(category => { const option = node("option", "", label(state.categoryLabels, category)); option.value = category; select.append(option); });
-  if (state.loaded && ![...select.options].some(o => o.value === state.category)) state.category = "all"; select.value = [...select.options].some(o => o.value === state.category) ? state.category : "all"; renderClasses(); renderKinds();
+  if (state.loaded && ![...select.options].some(o => o.value === state.category)) state.category = "all"; select.value = [...select.options].some(o => o.value === state.category) ? state.category : "all"; renderClasses(); renderPlatforms(); renderKinds();
 }
 function renderClasses() { const select=$("#class-select"); select.replaceChildren(); const all=node("option","",t("allEvidenceClasses")); all.value="all"; select.append(all); ["0","1","2","3"].forEach(value => { const option=node("option","",t("evidenceClass"+value)); option.value=value; select.append(option); }); const unknown=node("option","",t("evidenceClassUnknown")); unknown.value="unknown"; select.append(unknown); select.value = [...select.options].some(o => o.value === state.class) ? state.class : "all"; }
+function renderPlatforms() { const select=$("#platform-select"); select.replaceChildren(); const all=node("option","",t("allPlatforms")); all.value="all"; select.append(all); PLATFORM_ORDER.forEach(key => { const option=node("option","",platformLabel(key)); option.value=key; select.append(option); }); select.value = [...select.options].some(o => o.value === state.platform) ? state.platform : "all"; }
 // The group filter has no control of its own; a shared ?group= link still shows and removes it as a chip.
 const GROUP = {"rea":["REA ecosystem","REA 生态"],"agents":["Independent agents","独立智能体"],"tools":["Foundation tools","基础工具"],"learn":["Learning and related lists","学习资源与相关目录"]};
 // Active constraints render as removable chips in both views, including valid filters without a visible control
@@ -594,6 +625,9 @@ function renderActiveFilters(container, items, search) {
 function targetLabel(target) { return t("target" + target[0].toUpperCase() + target.slice(1)); }
 const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资源"],"research":["Research","研究"]};
 const FEATURED = ["rea-upstream","chrome-devtools-mcp","renderdoc","jadx-ai-mcp","ghidra","webcrack","assetripper","ilspy","awesome-rea-cases","rea-dxball-case","mitmproxy","rea-notion-case","hex-rays-ida-mcp","picoprint-rea-investigation","morluto-awesome-re"];
+const PLATFORM_ORDER = ["windows","macos","linux","android","ios","web","freebsd","source","other"];
+const PLATFORM_KEYS = new Set(["all", ...PLATFORM_ORDER]);
+function platformLabel(key) { return t("platform" + key[0].toUpperCase() + key.slice(1)); }
 function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>compareLabels(label(KIND,a),label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
 // Copy link: a curated card copies its entry page and a repository card copies its card on the static category page.
 // Routes are fixed and IDs validated, so neither an upstream URL nor typed text can become the copied link.
@@ -681,6 +715,7 @@ function card(record, terms = []) {
   if(record.preview){const figure=node("figure","card-preview");const image=node("img");image.src=record.preview;image.alt=t(record.preview_kind==="video"?"previewVideoAlt":"previewImageAlt");image.setAttribute("loading","lazy");image.setAttribute("decoding","async");figure.append(image);if(record.preview_kind==="video"){const play=node("span","card-preview-play","▶");play.setAttribute("aria-hidden","true");figure.append(play);}article.append(figure);}
   else if(record.preview_kind==="demo"){const figure=node("figure","card-preview card-preview-demo");const play=node("span","card-preview-demo-icon","▶");play.setAttribute("aria-hidden","true");figure.append(play,node("span","card-preview-demo-label",t("demoPlaceholder")));article.append(figure);}
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
+  if(record.platforms?.length){const platforms=node("p","card-platforms");platforms.append(node("span","card-platforms-label",t("platformPackages")+": "));platforms.append(node("span","card-platforms-list",record.platforms.map(key=>platformLabel(key)+(record.platform_counts?.[key]?` (${record.platform_counts[key]})`:"")).join(" · ")));article.append(platforms);}
   const hint=curatedMatchHint(record,terms);if(hint)article.append(hint);
   const meta=node("div","card-meta");meta.append(node("span","card-category",label(state.categoryLabels,record.category)));article.append(meta);
   const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");if(!fillRequirements(list,record)){state.pendingRequirements.push([list,record]);details.addEventListener("toggle",()=>{if(details.open)loadDetails();});}details.append(list);
@@ -723,7 +758,7 @@ function loadDetails() {
 }
 function queryTerms() { return normalizeSearchText(state.q).trim().split(/\s+/).filter(Boolean); }
 // skip leaves one facet out, so that facet's choices can be counted against every other active filter.
-function matches(r, terms, skip = "") { return (state.group==="all"||r.group===state.group)&&(skip==="target"||state.target==="all"||r.targets.includes(state.target))&&(skip==="category"||state.category==="all"||r.category===state.category)&&(skip==="kind"||state.kind==="all"||r.kind===state.kind)&&(skip==="evidence_class"||state.class==="all"||(state.class==="unknown"?r.evidence_status==="unknown":String(r.evidence_class)===state.class))&&terms.every(term=>r.search.includes(term)); }
+function matches(r, terms, skip = "") { return (state.group==="all"||r.group===state.group)&&(skip==="target"||state.target==="all"||r.targets.includes(state.target))&&(skip==="category"||state.category==="all"||r.category===state.category)&&(skip==="kind"||state.kind==="all"||r.kind===state.kind)&&(skip==="evidence_class"||state.class==="all"||(state.class==="unknown"?r.evidence_status==="unknown":String(r.evidence_class)===state.class))&&(skip==="platform"||state.platform==="all"||(r.platforms||[]).includes(state.platform))&&terms.every(term=>r.search.includes(term)); }
 function filtered() { const terms=queryTerms();const found=state.records.filter(r=>matches(r,terms));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};const byFeatured=(a,b)=>rank(a)-rank(b)||a.order-b.order;return found.sort(curatedOrder(byFeatured,terms,found)); }
 // Optional orders: localized display name (the active language's collator, ties by ID) or the displayed
 // source-review date, newest first. Both fall back deterministically. The default order puts a query's best
@@ -782,6 +817,8 @@ function renderFacets() {
   }
   const classCounts = tally("evidence_class", r => [r.evidence_status === "unknown" ? "unknown" : String(r.evidence_class)]);
   for (const option of $("#class-select").options) { const count = classCounts.get(option.value) || 0; const text = option.value === "all" ? t("allEvidenceClasses") : option.value === "unknown" ? t("evidenceClassUnknown") : t("evidenceClass" + option.value); option.textContent = counted(text, count); option.disabled = count === 0 && option.value !== state.class; }
+  const platformCounts = tally("platform", r => r.platforms || []);
+  for (const option of $("#platform-select").options) { const count = platformCounts.get(option.value) || 0; const text = option.value === "all" ? t("allPlatforms") : platformLabel(option.value); option.textContent = counted(text, count); option.disabled = count === 0 && option.value !== state.platform; }
 }
 function renderEmptySearchActions(foundCount = state.loaded ? filtered().length : null) {
   const show = state.loaded && !state.error && sourceState.mode === "curated"
@@ -824,7 +861,7 @@ function render(shown = 0) {
   showExport("");
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
   announceRevealed("", shown, state.visible, found.length);
-  $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all" && state.class === "all";
+  $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all" && state.class === "all" && state.platform === "all";
   const removeCurated = change => () => { change(); state.visible = 15; updateURL(true); render(); };
   renderActiveFilters($("#active-filters"), [
     state.q.trim() && [t("filterSearch"), `“${state.q.trim()}”`, removeCurated(() => { state.q = ""; $("#search-input").value = ""; })],
@@ -832,6 +869,7 @@ function render(shown = 0) {
     state.kind !== "all" && [t("kindLabel"), label(KIND, state.kind), removeCurated(() => { state.kind = "all"; $("#kind-select").value = "all"; })],
     state.category !== "all" && [t("categoryLabel"), label(state.categoryLabels, state.category), removeCurated(() => { state.category = "all"; $("#category-select").value = "all"; })],
     state.class !== "all" && [t("classLabel"), state.class === "unknown" ? t("evidenceClassUnknown") : t("evidenceClass" + state.class), removeCurated(() => { state.class = "all"; $("#class-select").value = "all"; })],
+    state.platform !== "all" && [t("platformLabel"), platformLabel(state.platform), removeCurated(() => { state.platform = "all"; $("#platform-select").value = "all"; })],
     state.group !== "all" && [t("groupLabel"), label(GROUP, state.group), removeCurated(() => { state.group = "all"; })],
   ].filter(Boolean), $("#search-input"));
   renderMoreFilters();
@@ -844,15 +882,16 @@ function render(shown = 0) {
 let moreFiltersSynced = false;
 function setMoreFilters(open) { $("#more-filters").setAttribute("aria-expanded", String(open)); $("#curated-selectors").classList.toggle("is-open", open); }
 function renderMoreFilters() {
-  const active = (state.kind !== "all") + (state.category !== "all") + (state.class !== "all"); const count = $("#more-filters-count"); count.textContent = String(active); count.hidden = !active;
+  const active = (state.kind !== "all") + (state.category !== "all") + (state.class !== "all") + (state.platform !== "all"); const count = $("#more-filters-count"); count.textContent = String(active); count.hidden = !active;
   if (state.loaded && !moreFiltersSynced) { moreFiltersSynced = true; if (active) setMoreFilters(true); }
 }
 function validateCuratedFilters() {
   if (!["all","rea","agents","tools","learn"].includes(state.group)) state.group = "all";
   if (!["all","website","game","app","binary","firmware","protocol"].includes(state.target)) state.target = "all";
   if (!["all","0","1","2","3","unknown"].includes(state.class)) state.class = "all";
+  if (!PLATFORM_KEYS.has(state.platform)) state.platform = "all";
 }
-function reset() { state.q = ""; state.group = "all"; state.category = "all"; state.kind = "all"; $("#kind-select").value="all"; state.target = "all"; state.class = "all"; $("#class-select").value = "all"; state.visible = 15; $("#search-input").value = ""; $("#category-select").value = "all"; updateURL(true); render(); }
+function reset() { state.q = ""; state.group = "all"; state.category = "all"; state.kind = "all"; $("#kind-select").value="all"; state.target = "all"; state.class = "all"; $("#class-select").value = "all"; state.platform = "all"; $("#platform-select").value = "all"; state.visible = 15; $("#search-input").value = ""; $("#category-select").value = "all"; updateURL(true); render(); }
 async function load() {
   state.error = false; $("#error-state").hidden = true; $("#resource-grid").setAttribute("aria-busy", "true"); $("#results-status").textContent = t("loading");
   try {
@@ -875,6 +914,7 @@ $("#search-input").addEventListener("input", event => { state.q = event.target.v
 $("#kind-select").addEventListener("change", event => { state.kind=event.target.value; state.visible=15; updateURL(true); if(state.loaded)render(); });
 $("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 15; updateURL(true); if (state.loaded) render(); });
 $("#class-select").addEventListener("change", event => { state.class = event.target.value; state.visible = 15; updateURL(true); if (state.loaded) render(); });
+$("#platform-select").addEventListener("change", event => { state.platform = event.target.value; state.visible = 15; updateURL(true); if (state.loaded) render(); });
 $("#curated-sort").value = state.order;
 $("#curated-sort").addEventListener("change", event => { state.order = ["name","reviewed"].includes(event.target.value) ? event.target.value : "featured"; state.visible = 15; updateURL(true); if (state.loaded) render(); });
 $$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(true); if (state.loaded) render(); }));
@@ -958,7 +998,7 @@ function curatedExport() {
   const found = filtered();
   return {count: found.length, filename: "awesomerea-curated-matches.json", value: {export: {...exportMetadata("curated-catalog", "curated-resource",
     "Curated resources matching the homepage filters, copied unchanged from catalog.json. Each record keeps its own source review (verification, verified_at, evidence_url); this export adds none.",
-    {q: state.q, target: state.target, kind: state.kind, category: state.category, class: state.class, group: state.group, order: state.order}, "displayed", found.length, state.records.length),
+    {q: state.q, target: state.target, kind: state.kind, category: state.category, class: state.class, platform: state.platform, group: state.group, order: state.order}, "displayed", found.length, state.records.length),
     full_download: dataURL("catalog.json").href}, resources: exportRecords(found.map(record => state.fullRecords?.get(record.id) || record))}};
 }
 function sourceExport() {
@@ -1219,9 +1259,9 @@ function renderSourceCategories() {
 window.addEventListener("popstate", () => {
   const query = new URLSearchParams(location.search); const curated = curatedURLState(query); const source = sourceURLState(query);
   const differs = (current, next, keys) => keys.some(key => current[key] !== next[key]);
-  const curatedChanged = differs(state, curated, ["q","group","category","kind","target","class","order"]); const sourceChanged = differs(sourceState, source, ["q","target","topic","category","class","sort"]); const languageChanged = state.lang !== curated.lang;
+  const curatedChanged = differs(state, curated, ["q","group","category","kind","target","class","platform","order"]); const sourceChanged = differs(sourceState, source, ["q","target","topic","category","class","sort"]); const languageChanged = state.lang !== curated.lang;
   Object.assign(state, curated); Object.assign(sourceState, source);
-  if (curatedChanged) { state.visible = 15; $("#search-input").value = state.q; $("#curated-sort").value = state.order; $("#class-select").value = state.class; }
+  if (curatedChanged) { state.visible = 15; $("#search-input").value = state.q; $("#curated-sort").value = state.order; $("#class-select").value = state.class; $("#platform-select").value = state.platform; }
   if (sourceChanged) { sourceState.visible = 24; $("#source-search").value = sourceState.q; $("#source-topic").value = sourceState.topic; $("#source-sort").value = sourceState.sort; $("#source-class").value = sourceState.class; }
   if (state.loaded) { validateCuratedFilters(); validateSourceCategory(); }
   if (languageChanged) applyLanguage();

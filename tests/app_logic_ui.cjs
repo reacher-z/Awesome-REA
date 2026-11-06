@@ -160,6 +160,20 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     app.api.state.class = 'all';
     assert.deepEqual(Array.from(app.api.filtered(), record => record.id), ['curated-1', 'curated-2', 'curated-3']);
   }
+  // Platform package filtering uses the generated platform keys, not the full package payload.
+  {
+    const platformCatalog = catalogOf([
+      curatedRecord(1, {platforms: ['windows'], platform_counts: {windows: 2}}),
+      curatedRecord(2, {platforms: ['macos', 'linux'], platform_counts: {macos: 1, linux: 3}}),
+      curatedRecord(3, {platforms: [], platform_counts: {}}),
+    ]);
+    const app = await loaded('?platform=macos', {catalog: platformCatalog, browser: valid});
+    assert.deepEqual(Array.from(app.api.filtered(), record => record.id), ['curated-2']);
+    app.api.state.platform = 'windows';
+    assert.deepEqual(Array.from(app.api.filtered(), record => record.id), ['curated-1']);
+    app.api.state.platform = 'all';
+    assert.deepEqual(Array.from(app.api.filtered(), record => record.id), ['curated-1', 'curated-2', 'curated-3']);
+  }
   // The compact repository introduction does not wait for a network response, and follows the real view.
   for (const query of ['?view=source-index', '?view=repositories']) {
     const app = setup(query, {catalog: curated, browser: valid});

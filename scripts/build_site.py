@@ -53,9 +53,12 @@ LISTED_BADGE = "featured-by-awesome-rea-inline.svg"
 # Record fields the homepage needs for its first render; catalog.json keeps every field.
 CATALOG_INDEX_FIELDS = ("id", "name", "name_zh", "url", "evidence_url", "description_en", "description_zh", "kind",
                         "category", "group", "relationship", "targets", "verified_at", "evidence_class",
-                        "evidence_status", "scope", "runtime_status", "evidence_review", "preview", "preview_kind")
+                        "evidence_status", "scope", "runtime_status", "evidence_review", "preview", "preview_kind",
+                        "platforms", "platform_counts")
 EVIDENCE_CLASSES = (0, 1, 2, 3)
 EVIDENCE_CLASSES_PATH = ROOT / "data" / "evidence-classes.json"
+PLATFORM_PACKAGES_PATH = ROOT / "data" / "platform-packages.json"
+SOFTWARE_KINDS = {"case-study", "project", "tool", "integration"}
 SCAN_CLASSES_PATH = ROOT / "data" / "scan-evidence-classes.json"
 PREVIEWS_PATH = ROOT / "data" / "evidence-previews.json"
 PREVIEW_CACHE = ROOT / ".cache" / "previews"
@@ -120,6 +123,28 @@ def cached_preview(url: str) -> Path | None:
     return matches[0] if matches else None
 
 
+def platform_mapping(records: list[dict]) -> dict[str, dict]:
+    """Read the dated OS package snapshot and check it covers curated software."""
+    if not PLATFORM_PACKAGES_PATH.is_file():
+        raise ValueError("Missing data/platform-packages.json. Run scripts/collect_platform_packages.py.")
+    document = json.loads(PLATFORM_PACKAGES_PATH.read_text(encoding="utf-8"))
+    entries = document.get("entries")
+    if not isinstance(entries, list):
+        raise ValueError("Platform package data must contain an entries list")
+    mapping = {}
+    for entry in entries:
+        identifier = entry.get("id")
+        if not isinstance(identifier, str) or identifier in mapping:
+            raise ValueError("Platform package data needs unique string IDs")
+        mapping[identifier] = entry
+    expected = {record["id"] for record in records if record.get("kind") in SOFTWARE_KINDS}
+    if set(mapping) != expected:
+        missing = sorted(expected - set(mapping))[:5]
+        extra = sorted(set(mapping) - expected)[:5]
+        raise ValueError(f"Platform package data does not cover curated software (missing {missing}, extra {extra})")
+    return mapping
+
+
 def scan_class_mapping(source_resources: list[dict]) -> tuple[dict[str, object], dict]:
     """Read the separate scan-class mapping and check it covers this scan snapshot."""
     if not SCAN_CLASSES_PATH.is_file():
@@ -170,6 +195,10 @@ def build_site(output: Path) -> tuple[int, int, int]:
         previews = {entry["id"]: entry for entry
                     in json.loads(PREVIEWS_PATH.read_text(encoding="utf-8"))["entries"]}
     preview_files = []
+    platform_records = []
+    for filename in ("rea-resources.json", "tool-resources.json"):
+        platform_records.extend(json.loads((ROOT / "data" / filename).read_text(encoding="utf-8")))
+    platform_entries = platform_mapping(platform_records)
     resources = []
     for filename in ("rea-resources.json", "tool-resources.json"):
         for original in json.loads((ROOT / "data" / filename).read_text(encoding="utf-8")):
@@ -200,6 +229,11 @@ def build_site(output: Path) -> tuple[int, int, int]:
                     preview_files.append((cached, relative))
                 elif evidence_entry.get("signals", {}).get("demo"):
                     record["preview_kind"] = "demo"
+            platform_entry = platform_entries.get(record["id"]) if record.get("kind") in SOFTWARE_KINDS else None
+            record["platforms"] = platform_entry["platform_keys"] if platform_entry else []
+            record["platform_counts"] = ({key: len(items) for key, items in platform_entry["platforms"].items()}
+                                         if platform_entry else {})
+            record["platform_packages"] = platform_entry["platforms"] if platform_entry else {}
             translation = translations.get(record["id"], {})
             record["requirements_zh"] = record.get("requirements_zh") or translation.get("requirements", record["requirements"])
             record["name_zh"] = record.get("name_zh") or translation.get("name", record["name"])

@@ -16,6 +16,7 @@ Guides describe the current process. Research notes are dated snapshots, kept fo
 | Paper update guide: [English](paper-updates.md), [Chinese](paper-updates.zh-CN.md) | English, Chinese | Current | Updating a preprint record in place after acceptance or publication, with a worked example |
 | [Catalog format](../data/README.md) | English | Current | Curated, paper, benchmark, scan and case-coverage data |
 | Evidence classes: [English](evidence-classes.md), [Chinese](evidence-classes.zh-CN.md) | English, Chinese | Current | C0–C3 for curated entries and C1–C3 for scanned repositories, with signals, Class 0 reviews and limits |
+| Platform packages: [English](platform-packages.md), [Chinese](platform-packages.zh-CN.md) | English, Chinese | Current | Windows/macOS/Linux/Android/iOS/Web/FreeBSD/source packages from the latest releases and READMEs |
 | Artifact and license evidence: [English](artifact-evidence.md), [Chinese](artifact-evidence.zh-CN.md) | English, Chinese | Current | Wording for unavailable, gated or demo-only artifacts, version differences and conflicting licenses |
 | [Repository locales](../data/locales/README.md) | English | Current | English and Chinese descriptions of scanned repositories |
 | Index-to-curated review worksheet: [English](promotion-worksheet.md), [Chinese](promotion-worksheet.zh-CN.md) | English, Chinese | Current | Tracing a scanned repository to a curated record or a hold, with a completed example |
