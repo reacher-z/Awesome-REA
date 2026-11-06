@@ -5,11 +5,11 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLE = '# Awesome Reverse Engineering Anything'
-BANNERS = ('assets/brand/readme-banner-light.svg', 'assets/brand/readme-banner-dark.svg')
+BANNERS = ('assets/brand/wordmark-light.svg', 'assets/brand/wordmark-dark.svg')
 
 
 class ReadmeHeaderTest(unittest.TestCase):
-    def test_banner_is_the_title_and_has_distinct_light_and_dark_files(self):
+    def test_wordmark_is_the_title_and_has_distinct_light_and_dark_files(self):
         for name, home in (('README.md', 'https://awesomerea.org/'), ('README.zh-CN.md', 'https://awesomerea.org/zh/')):
             with self.subTest(readme=name):
                 text = (ROOT / name).read_text(encoding='utf-8')
@@ -23,6 +23,7 @@ class ReadmeHeaderTest(unittest.TestCase):
                 for path in BANNERS:
                     self.assertTrue((ROOT / path).is_file(), path)
                     self.assertLessEqual((ROOT / path).stat().st_size, 60_000, path)
+                self.assertIn('assets/brand/tagline-dark.svg', text.split('</div>', 1)[0])
         self.assertNotEqual((ROOT / BANNERS[0]).read_bytes(), (ROOT / BANNERS[1]).read_bytes())
 
     def test_find_by_task_table_pipes_line_up(self):

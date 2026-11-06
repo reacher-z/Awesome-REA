@@ -173,7 +173,6 @@ INDEX_HEADINGS = ('Full Repository Index', '完整仓库索引')
 # The authored second-level headings Contents lists around the generated Resources and Papers sections.
 README_HEADINGS = {
     'find-by-task': ('Find by task', '按任务查找'),
-    'data': ('Use the data', '使用数据'),
     'resources': ('Resources', '资源'),
     'papers': ('Papers', '论文'),
     'index': INDEX_HEADINGS,
@@ -469,7 +468,6 @@ def render_contents(records, papers, index_count, language):
     # Papers counts every paper; its one subsection lists the newest, and the topics live in the paper files.
     paper_sections = [item(RECENT_HEADING, 'papers-recent', len(recent_papers(papers)))] if papers else []
     lines = ['- ' + item(README_HEADINGS['find-by-task']),
-             '- ' + item(README_HEADINGS['data']),
              '- ' + item(README_HEADINGS['resources'], count=sum(counts.values()))]
     lines += ['  - ' + line for line in sections]
     lines += ['- ' + item(README_HEADINGS['papers'], 'papers', len(papers), 'papers')]
@@ -526,31 +524,19 @@ def render_totals(records, papers, index_count, language):
     return line + '\n\n'
 
 
+BADGE_KINDS = ('website', 'resources', 'cases', 'papers', 'data', 'star')
+BADGE_LABELS = {'en': ('Website', 'Resources', 'Cases', 'Papers', 'Data', 'Star on GitHub'),
+                'zh': ('网站', '资源', '案例', '论文', '数据', '在 GitHub 上点星')}
+REPOSITORY_URL = 'https://github.com/reacher-z/Awesome-REA'
+
+
 def render_badges(records, papers, language):
-    """Report catalog populations, not execution verification or additive totals. Five badges, at most six. Count and
-    license badges are plain images: the same pages are linked from the navigation row and the Use the data list, and
-    awesome-lint flags a URL repeated in one README. The last badge reads the date of the newest commit under
-    data/discoveries/ live, so the README is not regenerated on every scan. There is no CI badge: awesome lists must
-    not carry one, and the footer already links the validate workflow's runs."""
-    zh = language == 'zh'
-    style = '?style=flat-square&labelColor=2A2C3F'
-
-    def badge(label, value, color='9C4128'):
-        component = lambda text: quote(str(text).replace('-', '--').replace('_', '__'), safe='')
-        return f'![{label}: {value}](https://img.shields.io/badge/{component(label)}-{component(value)}-{color}{style})'
-
-    cases = sum(record['kind'] == 'case-study' for record in records)
-    labels = (('精选资源', '案例', '论文', '最近入库', '许可') if zh
-              else ('resources', 'cases', 'papers', 'last discovery ingest', 'license'))
-    commit = ('https://img.shields.io/github/last-commit/reacher-z/Awesome-REA/main?path=data%2Fdiscoveries'
-              f'&label={quote(labels[3])}&color=9C4128&labelColor=2A2C3F&style=flat-square')
-    return ' '.join([
-        badge(labels[0], f'{len(records):,}'),
-        badge(labels[1], f'{cases:,}'),
-        badge(labels[2], f'{len(papers):,}'),
-        f'[![{labels[3]}]({commit})](data/discoveries/README.md)',
-        badge(labels[4], 'MIT', '5E6472'),
-    ]) + '\n'
+    """The first-screen badge row: static pill images from assets/brand/badges/ (outlined EB Garamond, site palette),
+    each linking the matching page of the website. The counts live in the Contents list; Star is the one call to action."""
+    site = 'https://awesomerea.org/' + ('zh/' if language == 'zh' else '')
+    targets = (site, site + 'resources/', site + 'cases/', site + 'papers/', site + 'api/', REPOSITORY_URL)
+    return ' '.join(f'[![{label}](assets/brand/badges/{kind}.svg)]({target})'
+                    for kind, label, target in zip(BADGE_KINDS, BADGE_LABELS[language], targets)) + '\n'
 
 
 def source_note(*sources, script='scripts/build_readme.py', part='block'):

@@ -11,15 +11,9 @@ RESOURCE_FORM = 'https://github.com/reacher-z/Awesome-REA/issues/new?template=re
 
 
 class ReadmeContributionLinkTest(unittest.TestCase):
-    def test_first_screen_links_the_resource_form_and_contributing_section(self):
-        for name, contents_heading, anchor in (('README.md', '## Contents', '#contributing'),
-                                               ('README.zh-CN.md', '## 目录', '#参与贡献')):
-            with self.subTest(readme=name):
-                text = (ROOT / name).read_text(encoding='utf-8')
-                first_screen = text.split('\n' + contents_heading + '\n', 1)[0]
-                self.assertIn(f']({anchor})', first_screen)
-                heading = anchor[1:] if name.endswith('zh-CN.md') else 'Contributing'
-                self.assertIn(f'\n## {heading}\n', text)
+    def test_contributing_section_exists_in_both_readmes(self):
+        for name, heading in (('README.md', 'Contributing'), ('README.zh-CN.md', '参与贡献')):
+            self.assertIn(f'\n## {heading}\n', (ROOT / name).read_text(encoding='utf-8'))
 
     def test_contributing_section_links_the_resource_form(self):
         # The form is linked once, from the Contributing section: awesome-lint flags a URL repeated in one README.

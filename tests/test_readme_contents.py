@@ -33,41 +33,18 @@ def bare(text):
 
 
 class ReadmeContentsTest(unittest.TestCase):
-    def test_badges_keep_overlapping_resource_case_and_paper_counts_separate(self):
-        listed = paper(url='https://example.com/paper')
-        records = [resource(), resource(id='case', kind='case-study'),
-                   resource(id='paper-copy', kind='research', url=listed['url'])]
-        before = deepcopy((records, [listed]))
-        en = render_badges(records, [listed], 'en')
-        self.assertIn('/badge/resources-3-', en)
-        self.assertIn('/badge/cases-1-', en)
-        self.assertIn('/badge/papers-1-', en)
-        self.assertIn('/badge/license-MIT-', en)
-        self.assertNotRegex(en.lower(), r'runtime|reproduced|verified|total-4')
-        zh = render_badges(records, [listed], 'zh')
-        self.assertIn('精选资源: 3', zh)
-        self.assertIn('案例: 1', zh)
-        self.assertIn('论文: 1', zh)
-        self.assertEqual((records, [listed]), before)
-
-    def test_badges_are_at_most_six_and_link_the_hugging_face_dataset(self):
-        for language in ('en', 'zh'):
-            rendered = render_badges([resource()], [paper()], language)
-            self.assertLessEqual(rendered.count('![') , 6)
-            self.assertNotIn('huggingface', rendered)
-            self.assertIn('last-commit/reacher-z/Awesome-REA/main?path=data%2Fdiscoveries', rendered)
-
-    def test_badges_have_no_ci_badge_and_the_footer_keeps_the_build_link(self):
-        workflow = 'https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml'
-        for language, name, footer in (('en', 'README.md', 'Build status'), ('zh', 'README.zh-CN.md', '构建状态')):
+    def test_badges_are_the_six_first_screen_pills_linking_the_website(self):
+        for language, prefix in (('en', 'https://awesomerea.org/'), ('zh', 'https://awesomerea.org/zh/')):
             with self.subTest(language=language):
                 rendered = render_badges([resource()], [paper()], language)
-                self.assertNotIn('/actions/', rendered)
-                self.assertNotIn('badge.svg', rendered)
-                self.assertEqual(rendered.count('!['), 5)
-                text = (ROOT / name).read_text(encoding='utf-8')
-                self.assertNotRegex(text, r'actions/workflows/[^)\s]*badge\.svg')
-                self.assertIn(f'[{footer}]({workflow})', text.split(BADGES_END, 1)[1])
+                self.assertEqual(rendered.count('![') , 6)
+                for kind in ('website', 'resources', 'cases', 'papers', 'data', 'star'):
+                    self.assertIn(f'(assets/brand/badges/{kind}.svg)', rendered)
+                    self.assertTrue((ROOT / f'assets/brand/badges/{kind}.svg').is_file(), kind)
+                for route in ('resources/', 'cases/', 'papers/', 'api/'):
+                    self.assertIn(f']({prefix}{route})', rendered)
+                self.assertIn('](https://github.com/reacher-z/Awesome-REA)', rendered)
+                self.assertNotIn('img.shields.io', rendered)
 
     def test_badge_generation_preserves_authored_header_and_rejects_ambiguous_markers(self):
         prefix = '<img src="featured.svg">\n# Collection\n<img src="banner.svg">\n'
@@ -109,7 +86,7 @@ class ReadmeContentsTest(unittest.TestCase):
 
     def test_chinese_contents_use_chinese_labels_and_anchors(self):
         rendered = bare(render_contents([resource()], [paper()], 10, 'zh'))
-        self.assertTrue(rendered.startswith('- [按任务查找](#按任务查找)\n- [使用数据](#使用数据)\n- [资源](#资源) (1)\n  - [网站](#website) (1)\n'),
+        self.assertTrue(rendered.startswith('- [按任务查找](#按任务查找)\n- [资源](#资源) (1)\n  - [网站](#website) (1)\n'),
                         rendered)
         self.assertIn('\n- [完整仓库索引](#完整仓库索引) (10)\n', rendered)
         self.assertTrue(rendered.endswith('\n- [完整仓库索引](#完整仓库索引) (10)\n- [关于](#关于)\n'), rendered)
