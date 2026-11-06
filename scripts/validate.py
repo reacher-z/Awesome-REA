@@ -17,6 +17,7 @@ from artifact_links import github_repository
 from build_readme import (CATEGORIES, METHOD_HEADINGS, METHOD_SECTIONS, RECONSTRUCTION_METHODS, RELATIONSHIPS, TARGETS,
                           UNASSIGNED_METHOD, collection_section, readme_size_warnings)
 from catalog import ROOT, RESOURCE_FILES
+from review_disclaimers import banned_sentences
 from localization import read_fingerprints, read_localizations, validate_fingerprints, validate_localizations
 from requirement_facets import facet_errors
 from curated_translations import CURATED_TRANSLATIONS, read_curated_translations, validate_curated_translations
@@ -26,6 +27,7 @@ from review_dates import inclusion_date_error, review_date_is_future
 from source_descriptions import validate_description_capture
 from scan_sources import CURATED_SEED_FILES, PAPER_SEED_FILE, RUN_PROVENANCE_POLICY
 from case_coverage import catalog_revision_warning, read_case_coverage, validate_case_coverage
+from data_classes import class_errors
 import strict_json
 
 
@@ -33,7 +35,7 @@ RESOURCE_FIELDS = {
     'id', 'name', 'url', 'category', 'relationship', 'description_en',
     'description_zh', 'evidence_url', 'verified_at', 'verification', 'requirements', 'targets', 'kind',
 }
-OPTIONAL_RESOURCE_FIELDS = {'additional_evidence_urls', 'added_at', 'reconstruction_method', 'requirement_facets'}
+OPTIONAL_RESOURCE_FIELDS = {'additional_evidence_urls', 'added_at', 'class', 'reconstruction_method', 'requirement_facets'}
 BENCHMARK_FIELDS = {
     'id', 'full_name', 'url', 'category', 'stars', 'stars_display',
     'stars_precision', 'observed_at', 'description_zh', 'mechanisms',
@@ -281,6 +283,7 @@ def validate_resources(records, errors, *, now=None):
             elif record['reconstruction_method'] not in RECONSTRUCTION_METHODS:
                 errors.append(f'{where}.reconstruction_method: use one of ' + ', '.join(RECONSTRUCTION_METHODS)
                               + "; use 'other' when the evidence does not establish one, or leave the field out")
+        errors.extend(f'{where}.{problem}' for problem in class_errors(record))
         if record['verification'] != 'source-reviewed':
             errors.append(f'{where}.verification: use source-reviewed; runtime and reproduction results are out of scope (see CONTRIBUTING.md)')
         if not string_list(record['requirements']):
@@ -1277,6 +1280,8 @@ def main():
     for warning in unknown_field_warnings(records) + evidence_pin_warnings(records):
         print(f'Warning: {warning}', file=sys.stderr)
     validate_requirement_facets(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), errors)
+    for identifier, field, _ in banned_sentences(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), papers):
+        errors.append(f'{identifier}: {field} describes this catalog\'s review; state project facts only (see data/README.md).')
     validate_benchmarks(benchmarks, errors)
     try:
         validate_curated_translations(records, read_curated_translations(ROOT), errors)

@@ -33,7 +33,7 @@ class WorksheetTests(unittest.TestCase):
                    'zh': ('| 行 | 问题 | 答案来源 |', '| 行 | 答案 |')}
         counts = {language: [len(table_rows(self.texts[language], header)) for header in headers[language]]
                   for language in headers}
-        self.assertEqual(counts['en'], [12, 12])
+        self.assertEqual(counts['en'], [13, 13])
         self.assertEqual(counts['zh'], counts['en'])
 
     def test_the_example_quotes_the_unchanged_scan_record(self):

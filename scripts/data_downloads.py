@@ -18,7 +18,7 @@ ORIGIN = 'https://awesomerea.org'
 RESOURCE_FIELDS = frozenset({
     'id', 'name', 'name_zh', 'url', 'description_en', 'description_zh',
     'requirements', 'requirements_zh', 'targets', 'category', 'group',
-    'relationship', 'kind', 'evidence_url', 'additional_evidence_urls',
+    'relationship', 'kind', 'class', 'evidence_url', 'additional_evidence_urls',
     'verified_at', 'verification',
 })
 PAPER_FIELDS = frozenset({
@@ -28,7 +28,7 @@ PAPER_FIELDS = frozenset({
     'pdf_url', 'code_url', 'project_url', 'targets', 'description_en',
     'description_zh', 'scope_limitations_en', 'scope_limitations_zh',
     'why_fits_en', 'why_fits_zh', 'metadata_notes', 'metadata_notes_zh',
-    'kind', 'verified_at', 'verification', 'runtime_tested', 'evidence_urls', 'citation',
+    'kind', 'class', 'verified_at', 'verification', 'runtime_tested', 'evidence_urls', 'citation',
 })
 CITATION_FIELDS = frozenset({'container_title', 'publisher', 'series', 'volume',
                             'issue', 'pages', 'article_number', 'sources'})

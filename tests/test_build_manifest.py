@@ -5,7 +5,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from build_manifest import collect_manifest, html_digest, normalized_html_bytes
+from build_manifest import collect_manifest, html_digest, normalized_html_bytes, without_star_counts
 
 
 def protected(address, key=108):
@@ -37,6 +37,16 @@ class CDNNormalizationTests(unittest.TestCase):
         for other in ('<span class="star-count">44</span>', '<span class="x" data-stars="a/b">forty</span>', '<p data-stars="a/b">44</p>'):
             with self.subTest(other=other):
                 self.assertEqual(normalized_html_bytes(other.encode()), other.encode())
+
+    def test_star_counts_are_blanked_only_in_page_markup(self):
+        span = '<span class="star-count" data-stars="a/b">{}</span>'
+        for wrapper in ('<!-- {} -->', '<!-- {}', '<script>const a = \'{}\';</script>', '<SCRIPT type="module">{}</SCRIPT>', '<style>/* {} */</style>',
+                        '<textarea>{}</textarea>', '<title>{}</title>', '<noscript>{}</noscript>'):
+            page = wrapper.format(span.format(44)).encode()
+            self.assertEqual(without_star_counts(page), page, wrapper)
+        for before in ('<!-- x -->', '<script>const a = 1;</script>', '<style>a{}</style>', '<title>x</title>'):
+            page = f'{before}<a>{span.format(44)}</a>'.encode()
+            self.assertEqual(without_star_counts(page), f'{before}<a>{span.format("")}</a>'.encode(), before)
 
     def test_builds_differing_only_in_star_counts_have_one_manifest(self):
         manifests = []

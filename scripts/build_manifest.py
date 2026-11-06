@@ -17,9 +17,14 @@ PRIVATE_NAMES = re.compile(r'(?i)^(?:\.env(?:\..*)?|credentials?(?:[.-].*)?|secr
 EMPTY_SCRIPT = re.compile(r'<script\b[^>]*>\s*</script>\s*', re.I)
 EMAIL_ANCHOR = re.compile(r'<a\b[^>]*>\[email&#160;protected\]</a>')
 EMAIL_SCRIPT = re.compile(r'<script\b[^>]*>\s*</script>', re.I)
-# A star count as site_shell.star_count() writes it. The production build reads the counts when it runs, so two
-# builds of one commit can differ here and nowhere else, and a new star is no reason to notify search engines.
-STAR_COUNT = re.compile(rb'(<span class="[a-z-]+" data-stars="[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+">)[0-9]+(?:\.[0-9]k)?(</span>)')
+# A star count as repository_stats.star_count() writes it. The production build reads the counts when it runs, so
+# two builds of one commit can differ here and nowhere else, and a new star is no reason to notify search engines.
+# Comments and raw-text elements match first and stay byte-sensitive, whatever they contain.
+STAR_COUNT = re.compile(
+    rb'<!--.*?(?:-->|\Z)'
+    rb'|<(script|style|textarea|title|xmp|iframe|noembed|noframes|noscript)\b.*?(?:</\1\s*>|\Z)'
+    rb'|(<span class="[a-z-]+" data-stars="[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+">)[0-9]+(?:\.[0-9]k)?(</span>)',
+    re.I | re.S)
 
 
 class _TagAttributes(HTMLParser):
@@ -78,7 +83,7 @@ class _ElementSpans(HTMLParser):
 
 
 def without_star_counts(content: bytes) -> bytes:
-    return STAR_COUNT.sub(rb'\1\2', content)
+    return STAR_COUNT.sub(lambda match: match[2] + match[3] if match[2] else match[0], content)
 
 
 def normalized_html_bytes(content: bytes) -> bytes:
