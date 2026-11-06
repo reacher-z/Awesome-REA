@@ -54,10 +54,19 @@
   });
 
   /* ---------- header state: border, header search on home, mobile sticky bar ---------- */
-  const watch = $('[data-home-search]') || $('.site-header');
+  // The hero field counts as gone once it is under the sticky bar, not only once it leaves the window.
+  // Wide screens stick the header; phones scroll it away and fix the shorter .mbar instead.
+  const homeSearch = $('[data-home-search]');
+  const stickyHeader = $('.site-header');
+  const mobileBar = $('.mbar');
+  const coveredTop = () => {
+    const bar = mobileBar && getComputedStyle(mobileBar).position === 'fixed' ? mobileBar : stickyHeader;
+    return bar ? bar.offsetHeight : 0;
+  };
+  const watch = homeSearch || stickyHeader;
   if (watch && 'IntersectionObserver' in window) {
     new IntersectionObserver(([en]) => d.classList.toggle('is-scrolled', !en.isIntersecting && en.boundingClientRect.top < 0),
-      { rootMargin: '-8px 0px 0px 0px' }).observe(watch);
+      { rootMargin: `-${homeSearch ? coveredTop() : 8}px 0px 0px 0px` }).observe(watch);
   }
 
   /* ---------- relative "updated" times ---------- */
@@ -389,9 +398,11 @@
     document.addEventListener('click', (e) => { if (e.target.closest('[data-palette-open]')) palOpen(); });
     $('[data-pal-close]', dlg).addEventListener('click', () => dlg.close());
     dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
-    dlg.addEventListener('close', () => { if (pal.opener && pal.opener.focus) pal.opener.focus(); });
+    dlg.addEventListener('close', () => { if (pal.opener && pal.opener.focus) pal.opener.focus({ preventScroll: true }); });
     pal.input.addEventListener('input', palRender);
     pal.input.addEventListener('keydown', (e) => {
+      // A search input eats the first Escape to clear itself; in the palette one press closes.
+      if (e.key === 'Escape') { e.preventDefault(); dlg.close(); return; }
       if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
         e.preventDefault();
         if (pal.items.length) palSet((pal.active + (e.key === 'ArrowDown' ? 1 : -1) + pal.items.length) % pal.items.length);
@@ -413,7 +424,8 @@
     } else if (e.key === '/' && !typing(e.target) && !(dlg && dlg.open) && !$('#search-input')) {
       const f = $('[data-search-input]') || $('[data-list-input]') || $('[data-shelf-input]') || $('[data-nf-search]');
       e.preventDefault();
-      if (f && f.getBoundingClientRect().bottom > 0 && f.offsetParent) f.focus(); else palOpen();
+      const box = f && f.getBoundingClientRect();
+      if (box && f.offsetParent && box.top >= coveredTop() && box.bottom <= innerHeight) f.focus(); else palOpen();
     }
   });
 

@@ -248,6 +248,54 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   assert.match(new URL(page.url()).pathname, /\/resources\/[a-z0-9-]+\/$/, `${label}: Enter opens the selected result`);
 }
 
+// Past the hero field the sticky bar offers search; it opens over the page and closes back to the same place.
+async function homepageScrolledSearch(page, language, viewport) {
+  const label = `${language} scrolled search ${viewport.name}`;
+  const phone = viewport.width < 768;
+  const shown = selector => page.$eval(selector, node => getComputedStyle(node).visibility === 'visible' && +getComputedStyle(node).opacity > 0 && node.getBoundingClientRect().width > 0);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForFunction(() => !document.documentElement.classList.contains('is-scrolled'));
+  const before = await page.$eval('.search-trigger', node => node.getBoundingClientRect().left);
+  if (!phone) assert.equal(await page.$eval('.search-trigger', node => getComputedStyle(node).visibility), 'hidden', `${label}: hidden while the hero field shows`);
+  await page.evaluate(() => window.scrollTo(0, 1100));
+  await page.waitForFunction(() => document.documentElement.classList.contains('is-scrolled'));
+  const opener = phone ? '.mbar-search' : '.search-trigger';
+  // The phone bar slides in, so wait until it has arrived before aiming at it.
+  await page.waitForFunction(selector => {
+    const node = document.querySelector(selector);
+    return getComputedStyle(node).visibility === 'visible' && node.getBoundingClientRect().top >= 0;
+  }, {}, opener);
+  assert(await shown(opener), `${label}: search shows once the hero field is gone`);
+  if (!phone) assert.equal(await page.$eval('.search-trigger', node => node.getBoundingClientRect().left), before, `${label}: the header does not shift`);
+  const place = await page.evaluate(() => window.scrollY);
+  const box = await page.$eval(opener, node => { const rect = node.getBoundingClientRect(); return {x: rect.left + rect.width / 2, y: rect.top + rect.height / 2}; });
+  await page.mouse.click(box.x, box.y);
+  await page.waitForFunction(() => document.querySelector('#palette').open && document.activeElement === document.querySelector('#palette input'));
+  await page.type('#palette input', 'ghidra');
+  await page.waitForSelector('#palette [role="option"]');
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => !document.querySelector('#palette').open);
+  assert.equal(await page.evaluate(selector => document.activeElement === document.querySelector(selector), opener), true, `${label}: Escape returns focus to the button`);
+  assert.equal(await page.evaluate(() => window.scrollY), place, `${label}: closing keeps the scroll position`);
+  await page.keyboard.down('Control');
+  await page.keyboard.press('k');
+  await page.keyboard.up('Control');
+  await page.waitForFunction(() => document.querySelector('#palette').open);
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => !document.querySelector('#palette').open);
+  await page.evaluate(() => document.activeElement.blur());
+  await page.keyboard.press('/');
+  await page.waitForFunction(() => document.querySelector('#palette').open);
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => !document.querySelector('#palette').open);
+  assert.equal(await page.evaluate(() => window.scrollY), place, `${label}: the shortcuts keep the scroll position`);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForFunction(() => !document.documentElement.classList.contains('is-scrolled'));
+  await page.keyboard.press('/');
+  await page.waitForFunction(() => document.activeElement && document.activeElement.matches('[data-search-input]'));
+  assert.equal(await page.$eval('#palette', dialog => dialog.open), false, `${label}: "/" uses the hero field while it shows`);
+}
+
 // An old link into the collection's filters still opens them, now on the explorer.
 async function oldHomepageLink(page, language) {
   await page.waitForFunction(() => location.pathname.endsWith('/explore/') && document.querySelector('#resource-grid .resource-card'), {timeout: 15000});
@@ -543,6 +591,8 @@ async function staticPage(page, route, viewport) {
       for (const language of ['en', 'zh']) {
         await check(`${language} new homepage at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
           `${language} new homepage ${viewport.name}`, (page, requested) => newHomepage(page, language, viewport, data, requested)));
+        await check(`${language} scrolled homepage search at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+          `${language} scrolled homepage search ${viewport.name}`, page => homepageScrolledSearch(page, language, viewport)));
         await check(`${language} new homepage without JavaScript at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
           `${language} new homepage ${viewport.name} without JavaScript`, (page, requested) => newHomepage(page, language, viewport, data, requested, false), {javascript: false}));
         await check(`${language} old homepage link at ${viewport.width}px`, () => visit(context, origin, (language === 'zh' ? '/zh/' : '/') + '?category=game-analysis', viewport,

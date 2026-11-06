@@ -221,8 +221,9 @@ kbd { display: inline-flex; align-items: center; justify-content: center; min-wi
 .gh-count { font: 500 .8125rem/1 var(--font-mono); color: var(--ink-2); }
 
 /* Home: the header search appears once the hero field scrolls away. */
-.page-home .search-trigger { opacity: 0; pointer-events: none; }
-.page-home.is-scrolled .search-trigger { opacity: 1; pointer-events: auto; }
+/* visibility keeps its space, so the header never shifts, and takes it out of the tab order while the hero field is on screen. */
+.page-home .search-trigger { visibility: hidden; opacity: 0; transition: opacity var(--t-fast) var(--ease), visibility var(--t-fast); }
+.is-scrolled .page-home .search-trigger { visibility: visible; opacity: 1; }
 .no-js .search-trigger, .no-js .theme-toggle { display: none; }
 
 @media (max-width: 1199px) {
@@ -257,7 +258,7 @@ kbd { display: inline-flex; align-items: center; justify-content: center; min-wi
   .nl-long { display: none; } .nl-short { display: inline; }
   .primary-nav a[aria-current="page"]::after { bottom: 4px; }
   .nav-lang { display: none; }
-  .page-home .search-trigger { opacity: 1; pointer-events: auto; }
+  .page-home .search-trigger { visibility: visible; opacity: 1; } /* The phone header scrolls away and is never sticky; it keeps its icon, and the sticky bar has search. */
 }
 
 @media (max-width: 359px) {
