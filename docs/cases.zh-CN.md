@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**424 个案例**，按分区列出。
+**431 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (232)
+- [Game · 游戏](#game) (239)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -136,7 +136,7 @@
 - [**《风之杖 HD》反编译：与重编译的 Wii U 版逐函数比对验证**](https://github.com/ZeldaWWHDDecomp/wwhd) - 将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### 静态重编译 (47)
+### 静态重编译 (48)
 
 - [**Banjo: Recompiled：基于 N64Recomp 的《Banjo-Kazooie》原生移植**](https://github.com/BanjoRecomp/BanjoRecomp) - 使用 N64Recomp 将美版 1.0 Nintendo 64《Banjo-Kazooie》静态重编译为基于 N64ModernRuntime 的原生移植版，由 RT64 渲染并加入模组支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/banjo-recompiled-case/)</sub>
 - [**C2C：《古惑狼 2》的混合重编译与手工反编译**](https://github.com/ughman/c2c) - 一个早期的 PlayStation《古惑狼 2》逆向工程项目：把引擎的 MIPS 机器码直接转换为一个体量巨大的 C 文件，并调用改造后的 PCSX-R 模拟器库处理硬件 I/O。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -168,6 +168,7 @@
 - [**Project Arwing：由一致性反汇编重编译的 Star Fox**](https://github.com/carlosrmz009/arwing) - 依据运行覆盖率和递归下降反汇编 Star Fox 的 65816 与 SuperFX 代码，重新汇编出与原 ROM 一致的文件，再静态翻译为 C，运行于从零编写的 SNES 运行时，支持 Windows、macOS 和 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-arwing-star-fox-recomp-case/)</sub>
 - [**RaceWave46：AI 辅助的《Wave Race 64》Windows 重编译**](https://github.com/DomazinUS/RaceWave46) - 使用 N64Recomp 与 RSPRecomp，在经修改的 N64ModernRuntime、RecompFrontend 和 RT64 之上，将 Nintendo 64 版《Wave Race 64》美版 Rev 1 重编译为 Windows 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/racewave46-wave-race-64-recomp-case/)</sub>
 - [**Saints Reborn：基于 ReXGlue 的 Saints Row 静态重编译**](https://github.com/whompay/SaintsReborn) - Saints Row（Xbox 360，2006）的非官方原生 Windows 移植：借助 ReXGlue SDK 将游戏的 PowerPC 可执行文件静态重编译为面向 x86-64 的 C++ 代码，该 SDK 还重新实现了主机的内核、GPU（基于 Direct3D 12）、音频与输入。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/saints-reborn-recomp-case/)</sub>
+- [**Savage Wind Recomp：《塞尔达传说：旷野之息》静态重编译**](https://github.com/Revivedx/SavageWindRecomp) - Savage Wind Recomp 是一个仍在开发中的静态重编译项目，旨在让 Nintendo Switch 版《塞尔达传说：旷野之息》在 Windows 和 Linux 上以原生程序运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/savagewindrecomp/)</sub>
 - [**SF2Recomp：将《Shadow Fight 2》静态重编译到原生平台**](https://github.com/bipinkrish/sf2recomp) - SF2Recomp 将用户提供的 Nintendo Switch 版《Shadow Fight 2》游戏文件转换为 Linux、Windows、macOS 和 Android 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sf2recomp-case/)</sub>
 - [**Sin &amp; Punishment：开发中的 N64 静态重编译移植**](https://github.com/maximilianoide/sin-punishment-recompiled) - Sin &amp; Punishment: Recompiled 使用 N64Recomp 和 RSPRecomp，基于用户提供的日版 N64 ROM 及仓库中的符号映射构建原生 C++ 移植程序，并通过 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sin-punishment-recompiled-case/)</sub>
 - [**Skate 3 Recomp：通过 ReXGlue 实现的 Xbox 360 原生重编译**](https://github.com/mchughalex/skate3recomp) - 借助 ReXGlue SDK 的 Skate 专用分支，将 Xbox 360 版《Skate 3》重编译为 Windows、Linux 与 macOS 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skate3-recomp-case/)</sub>
@@ -224,10 +225,11 @@
 - [**Vandal Hearts：基于一致性反编译的原生 PC 移植**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - 以 shao113 的 PlayStation 版 Vandal Hearts 一致性反编译为基础，新增日版一致性代码树，并将两者延伸为原生 Windows 与 Linux 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### 引擎重实现 (42)
+### 引擎重实现 (47)
 
 - [**Age of Empires Free Software Remake：基于原版数据的重新实现**](https://github.com/FolkertVanVerseveld/aoe) - 以基于 SDL2 和 OpenGL 的跨平台 C++17 引擎重新实现 Microsoft 的《帝国时代》及其资料片《罗马复兴》，载入原版游戏的 DRS 归档和 language.dll 资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo：逆向实现的 Minecraft 服务端**](https://github.com/bravoserver/bravo) - 以 Python 基于 Twisted 重新实现 Minecraft Alpha 与 Beta 时期多人游戏的服务端；其文档称这是从零编写的逆向实现，致谢了网络流量转储的提供者，并说明通用的 Minecraft 资料已贡献给社区 wiki。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/bravo-minecraft-server-case/)</sub>
+- [**Chariot《帝国时代》引擎重实现**](https://github.com/ChariotEngine/Chariot) - Chariot 是一个开源项目，旨在重新实现初代《帝国时代》（1997）的游戏引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/chariot/)</sub>
 - [**CoD4 Rewrite：Rust/Bevy 游戏重建**](https://github.com/Nilbong/COD4-Rewrite) - 以 Rust/Bevy 重建《使命召唤4》的多人游戏系统，使用本地游戏安装中的素材。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/cod4-rewrite-reconstruction-case/)</sub>
 - [**CorsixTH：Theme Hospital 的开源重新实现**](https://github.com/CorsixTH/CorsixTH) - 重新实现 Bullfrog 1997 年游戏 Theme Hospital 的引擎：游戏逻辑以 Lua 编写，图形、声音、影片和寻路由 C++ 处理，并建立在原游戏数据文件之上。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/corsixth-engine-case/)</sub>
 - [**Cursed Lands：用 Godot 重建《Evil Islands》与《Lost in Astral》引擎**](https://github.com/TheWWWorm/CursedLands) - Cursed Lands 使用 Godot 重建《Evil Islands》及扩展《Lost in Astral》的引擎，从玩家自备的游戏文件读取地图、模型、音频、脚本和数据表。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cursed-lands-case/)</sub>
@@ -249,6 +251,8 @@
 - [**NuVelocity Engine：重实现 Reflexive 的 Velocity Engine**](https://github.com/NuVelocity/NuVelocity) - NuVelocity Engine 用 C++ 和 SDL3 重实现 Reflexive Entertainment 的 Velocity Engine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nuvelocity-engine-case/)</sub>
 - [**OpenAWE：Remedy 的 Alan Wake 引擎的开源重新实现**](https://github.com/OpenAWE-Project/OpenAWE) - 以 C++ 和 OpenGL 重新实现 Remedy Entertainment 的 Alan Wake 引擎（后来称为 Northlight），目标是借助使用者自己的游戏数据，以可移植方式运行《心灵杀手》和《心灵杀手：美国梦魇》，并把《量子破碎》乃至《控制》列为后续目标。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openawe-alan-wake-engine-case/)</sub>
 - [**OpenBattlefield2：尚未完成的 Refractor 2 引擎重实现**](https://github.com/Moxnatiy/OpenBattlefield2) - C++20 重实现 Battlefield 2 的 Refractor 2 引擎，读取原始游戏数据，记录菜单渲染、关卡载入及服务器互通；公开的准星研究引用 REA/Ghidra 证据 ID 和二进制地址，主要玩法系统仍未完成。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/openbattlefield2-refractor-engine-case/)</sub>
+- [**OpenDiablo2 暗黑破坏神 2 引擎**](https://github.com/OpenDiablo2/OpenDiablo2) - OpenDiablo2 是一个用 Go 编写的跨平台动作角色扮演游戏引擎，支持运行 Diablo 2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendiablo2/)</sub>
+- [**OpenLara《古墓丽影》开源引擎**](https://github.com/XProger/OpenLara) - 经典《古墓丽影》的开源引擎，提供 WebGL 版本和独立版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openlara/)</sub>
 - [**OpenLF2：Little Fighter 2 引擎重实现**](https://github.com/OpenLF2/OpenLF2) - OpenLF2 用 C++ 和 Lua 重实现了可玩的《Little Fighter 2》v2.0a 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openlf2-case/)</sub>
 - [**OpenMW：复用原内容并替代 Morrowind 引擎**](https://github.com/OpenMW/openmw) - 提供用于运行 Morrowind 的独立引擎和替代编辑器 OpenMW-CS，通过自己的运行时加载原游戏内容，并记录脚本及模组兼容性差异。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmw-engine-case/)</sub>
 - [**OpenRA：重新诠释早期 Westwood 即时战略游戏的引擎重新实现**](https://github.com/OpenRA/OpenRA) - 为早期 Westwood 即时战略游戏提供以 C# 编写的引擎，并以模组形式重新诠释 Command &amp; Conquer: Red Alert、Tiberian Dawn 和 Dune 2000。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openra-engine-case/)</sub>
@@ -256,6 +260,7 @@
 - [**OpenRiseOfNations：原生 macOS 引擎重新实现**](https://github.com/ben-wright-1/OpenRiseOfNations) - 以原生 macOS 应用重新实现 Rise of Nations: Extended Edition 引擎，包含 Metal 渲染器、确定性模拟、电脑对手，以及兼容的 BigHugeScript 编译器与虚拟机；美术、地图、规则和脚本均从使用者自有的 Windows 版安装目录读取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openriseofnations-engine-case/)</sub>
 - [**OpenRW：《侠盗猎车手 III》引擎的开源重新实现**](https://github.com/rwengine/openrw) - 以跨平台 C++ 引擎重新实现 Rockstar Games 的《侠盗猎车手 III》（2001），在正版 PC 游戏的数据上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openrw-gta3-engine-case/)</sub>
 - [**OpenSC4：SimCity 4 的早期开源重新实现**](https://github.com/OpenSC4-org/OpenSC4) - 以 Godot 项目和 GDScript 重新实现 SimCity 4，从使用者自有的 SimCity 4 安装目录读取 DBPF 归档、区域文件夹和城市存档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opensc4-simcity-4-reimplementation-case/)</sub>
+- [**OpenTomb：《古墓丽影》引擎重实现**](https://github.com/opentomb/OpenTomb) - OpenTomb 是经典《古墓丽影》引擎的开源重新实现项目，可运行《古墓丽影》1–5 及自制 TRLE 关卡。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentomb/)</sub>
 - [**OpenXcom：X-COM: UFO Defense 与 Terror from the Deep 的开源克隆**](https://github.com/OpenXcom/OpenXcom) - 以 C++/SDL 引擎重新实现 MicroProse 的 UFO: Enemy Unknown（X-COM: UFO Defense）与 X-COM: Terror from the Deep，并在使用者自己的原游戏资源上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openxcom-engine-case/)</sub>
 - [**P.T. PC 版：基于行为重新实现、读取 PS4 数据的引擎**](https://github.com/LoreanXavier/pt-pc) - 在新的 Vulkan 引擎上用 C++ 重新实现 P.T. 的游戏逻辑，运行时从使用者自有的 PS4 版本读取关卡、模型、贴图、声音、脚本和过场动画。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pt-pc-port-case/)</sub>
 - [**re2ds：Resident Evil 2 的原生 Nintendo DS 引擎**](https://github.com/eray1605/re2ds) - 在原生 Nintendo DS 引擎中重新实现 Resident Evil 2 PS1 版的游戏规则，并用转换工具把使用者自有光盘中的数据转为 DS 格式。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/re2ds-nds-engine-case/)</sub>
@@ -264,13 +269,14 @@
 - [**SiegeFX：处于 alpha 阶段的 Dungeon Siege 引擎重实现**](https://github.com/codingncaffeine/SiegeFX) - C#/.NET 10 引擎加载 Dungeon Siege 原始归档、脚本与模型，提供 alpha 构建和审计/一致性清单，并附带 SiegeSmith 模组工具；项目仍记录保真度和通关行为风险。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/siegefx-dungeon-siege-engine-case/)</sub>
 - [**Skate 3 Rust Engine：基于《Skate 3》逆向研究的 Bevy 重写**](https://github.com/SK8-ENGINE/skate-3-rust-engine) - 在新的 Rust 与 Bevy 引擎中重新实现《Skate 3》的滑行、技巧、擦边滑行和下板移动，运行时使用从使用者自有 Xbox 360 版游戏转换得到的素材，并加入难度设置和 .skate 自定义地图格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skate-3-rust-engine-case/)</sub>
 - [**Snowball War：范围明确的 REA 辅助小游戏重建**](https://github.com/tuunanet/rea-ski-or-die-reconstruction) - 作者通过 REA 的 Ghidra 工作流调查 DOS 版 Ski or Die 二进制，记录 Snowball War 的规则，再用 Rust 与 SDL2 重建这一小游戏。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/snowball-war-rea-case/)</sub>
+- [**Thyme《将军》引擎重实现**](https://github.com/TheAssemblyArmada/Thyme) - Thyme 是《命令与征服：将军之绝命时刻》的开源重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thyme/)</sub>
 - [**touhou-engine：用 Python 重实现东方游戏玩法**](https://github.com/SaigyoujYuyuko/touhou-engine) - touhou-engine 用 Python 重实现东方弹幕游戏玩法，以 TH07《东方妖妖梦》为参考作品。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/touhou-engine-case/)</sub>
 - [**Untangle：基于 REA 与 Ghidra 证据的浏览器重建**](https://github.com/az9713/untangle-rebuild) - 作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/untangle-rea-evidence-rebuild-case/)</sub>
 - [**xoreos：BioWare Aurora 引擎家族的开源重新实现**](https://github.com/xoreos/xoreos) - 以可移植的 C++ 引擎重新实现 BioWare 的 Aurora 引擎及其后续衍生版本，在使用者已安装的游戏数据上运行，目标涵盖从《无冬之夜》到《龙腾世纪 II》的九款游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xoreos-aurora-engine-case/)</sub>
 - [**z2rs：以模拟器对照逐步重建《塞尔达传说 II》的 Rust 项目**](https://github.com/troyedwardsjr/z2rs) - 以 Rust 重建 NES 游戏《塞尔达传说 II：林克的冒险》，逐个替换游戏的 6502 例程，可运行于桌面、浏览器和 Android。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/z2rs-zelda2-reconstruction-case/)</sub>
 
 <a id="game-other"></a>
-### 其他方法与分析 (22)
+### 其他方法与分析 (23)
 
 - [**ArkWeb：双游戏动作与碰撞桥接实验**](https://github.com/luki-1/ArkWeb) - 同时运行《漫威蜘蛛侠：重制版》与《蝙蝠侠：阿卡姆骑士》，将哥谭碰撞数据传入蜘蛛侠的物理世界，再将其渲染画面合成到阿卡姆中。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/arkweb-two-game-case/)</sub>
 - [**Batla 3D 服务端模拟器（2015 年客户端）**](https://github.com/Serega25511s/Batla-3D-server-emu) - 面向 Batla 3D 2015 年 Steam 客户端的 C# 服务端模拟器，涵盖账户、商店、房间 HTTP 服务与 Lidgren UDP 对战。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/batla-3d-server-emulator-case/)</sub>
@@ -287,6 +293,7 @@
 - [**MTG Arena Collection Export：重建 Frontdoor 卡牌收藏请求**](https://github.com/Ikreb1/mtg-arena-collection-export) - MTG Arena Collection Export 重建 Magic: The Gathering Arena 的 Frontdoor 卡牌收藏请求。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/mtg-arena-collection-export-case/)</sub>
 - [**OpenPigeon：重建 GamePigeon iMessage 游戏消息**](https://github.com/time-attack/OpenPigeon) - OpenPigeon 是 TypeScript 编解码器，可读取十一款 GamePigeon 回合制 iMessage 游戏的状态，并将调用方提供的操作编码为消息。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/openpigeon-case/)</sub>
 - [**ProjectCane：《Sly Cooper and the Thievius Raccoonus》原生 PC 移植**](https://github.com/theclub654/ProjectCane) - 将 PlayStation 2 版《Sly Cooper and the Thievius Raccoonus》美版重建为 Windows 和 Linux 上的原生 C++ 游戏，运行时使用从玩家自有光盘镜像中提取的数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/projectcane-sly1-pc-port-case/)</sub>
+- [**retruxx：《Hard Truck Apocalypse》逆向工程**](https://github.com/mindflower/retruxx) - retruxx 是《Hard Truck Apocalypse》的逆向工程项目，可构建游戏可执行文件以及独立的渲染、输入和声音 DLL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/retruxx/)</sub>
 - [**samp-client-re：局部重建的 SA-MP 客户端**](https://github.com/NathanKanaeru/samp-client-re) - REA/Ghidra 调查将 SA-MP 0.3.DL-R1 客户端子系统映射到新的 C++ DLL、加载器和冒烟测试程序，产物属于架构重建，网络与图形行为仍有明确未知项，未建立零售版兼容性。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/samp-client-rea-partial-reconstruction-case/)</sub>
 - [**scvk：以 Vulkan 替换 SimCity 4 渲染器**](https://github.com/aspctt/scvk) - scvk 通过 SimCity 4 的 GZCOM 插件系统加载原生 Vulkan DLL，以替换游戏渲染器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scvk-case/)</sub>
 - [**TH04：恢复 DOS 子弹环辅助函数**](https://rea.tools/showcase/th04/) - 检查 PC-98 DOS 的 16 位弹幕角度辅助函数，并关联固定版本重建与历史编译器检查。 <sub>案例 · REA 官方 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/rea-th04-case/)</sub>

@@ -35226,5 +35226,1307 @@
       "https://github.com/000nico/kdemulator/blob/44c05218b4b83d8a864df540aead218dbdf48e6a/emu-cli.md",
       "https://github.com/000nico/kdemulator/blob/44c05218b4b83d8a864df540aead218dbdf48e6a/LICENSE"
     ]
+  },
+  {
+    "id": "angr-management",
+    "name": "angr-management",
+    "url": "https://github.com/angr/angr-management",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Cross-platform graphical binary analysis tool powered by the angr platform, with disassembly and decompilation views.",
+    "description_zh": "基于 angr 平台的跨平台图形化二进制分析工具，提供反汇编和反编译视图。",
+    "evidence_url": "https://github.com/angr/angr-management/blob/1af4c02877c0ada70b457b4e321da07a912e4b6f/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Powered by the angr platform; v10.0.5 is dated 2026-10-22.",
+      "BSD-2-Clause per LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "qira",
+    "name": "QIRA",
+    "url": "https://github.com/geohot/qira",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "QIRA is a tool for examining program execution traces. Its interface lets users navigate instruction changes, register values, memory reads and writes, and forks.",
+    "description_zh": "QIRA 是用于查看程序执行轨迹的工具。用户可以通过界面浏览指令变化、寄存器值、内存读写和执行分支。",
+    "evidence_url": "https://github.com/geohot/qira/blob/5f34406410aa492bc491fe0e579dbe103390a432/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Ubuntu 14.04 and 16.04 are supported out of the box.",
+      "The QEMU tracer requires a Linux host; native Mac OS X and Windows support is very limited.",
+      "QIRA code is licensed under MIT; other code in the repository retains its respective licenses."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "dependencies-pe",
+    "name": "Dependencies",
+    "url": "https://github.com/lucasg/Dependencies",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Dependencies is a Windows PE dependency analysis tool with command-line and graphical interfaces. It shows imports, exports, and DLL load dependencies to help diagnose loading problems.",
+    "description_zh": "Dependencies 是一款提供命令行和图形界面的 Windows PE 依赖分析工具。它可显示导入、导出及 DLL 加载依赖，帮助排查加载问题。",
+    "evidence_url": "https://github.com/lucasg/Dependencies/blob/1997a40000b77bd3326cbc33672a7b9f78bb23f3/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires the Visual C++ Redistributable to run properly.",
+      "Does not detect dependencies loaded dynamically through LoadLibrary.",
+      "Recursive analysis must be enabled in the options and can use substantial memory.",
+      "The repository declares the MIT license."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "dnlib",
+    "name": "dnlib",
+    "url": "https://github.com/0xd4d/dnlib",
+    "category": "dotnet",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "dnlib is a .NET library for reading and writing modules and assemblies. It provides access to metadata, method bodies, resources, and PDB files.",
+    "description_zh": "dnlib 是用于读取和写入 .NET 模块及程序集的库。它提供对元数据、方法体、资源和 PDB 文件的访问能力。",
+    "evidence_url": "https://github.com/0xd4d/dnlib/blob/9871d3b290589a9316dc68439d1c5307411d5dc5/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "For .NET Core assemblies, disable GAC loading and add .NET Core reference assembly search paths.",
+      "Writing Windows PDB files requires Windows.",
+      "Licensed under MIT."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "hachoir",
+    "name": "Hachoir",
+    "url": "https://github.com/vstinner/hachoir",
+    "category": "binary-libraries",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Hachoir is a Python library for viewing and editing binary streams as trees of fields, down to individual bits. Its command-line tools can search binary files for text, extract or remove metadata, and display file contents in text mode.",
+    "description_zh": "Hachoir 是一个 Python 库，可将二进制流按字段组织成树状结构，查看和编辑细至单个位的内容。其命令行工具可在二进制文件中搜索文本、提取或删除元数据，并以文本模式显示文件内容。",
+    "evidence_url": "https://github.com/vstinner/hachoir/blob/685b2986dee5ea53b450636cddfd0217cfde080c/README.rst",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires Python 3.7 or newer.",
+      "Licensed under GNU GPL v2."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "pigaios",
+    "name": "Pigaios",
+    "url": "https://github.com/joxeankoret/pigaios",
+    "category": "binary-diffing",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Pigaios is a tool that matches C source code against binaries in IDA. It extracts function features from source code, finds corresponding functions in an IDA database, and imports symbols, structures, and enumerations. It can work with partial source code that does not compile.",
+    "description_zh": "Pigaios 是一款在 IDA 中将 C 源代码与二进制文件进行匹配的工具。它从源码提取函数特征，在 IDA 数据库中查找对应函数，并导入符号、结构体和枚举。它也能处理无法完整编译的部分源码。",
+    "evidence_url": "https://github.com/joxeankoret/pigaios/blob/8807972f08d5613f5dd291329306abdfb68d60ec/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires Python Clang bindings; the README indicates Clang 3.9 or later should work.",
+      "Requires IDA with IDAPython to match binaries and import the results.",
+      "On Windows, LLVM must be installed and added to PATH. Colorama is optional for colors, and scikit-learn is optional for machine learning features.",
+      "License: GPL-3.0."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "machoexplorer",
+    "name": "MachOExplorer",
+    "url": "https://github.com/everettjf/machoexplorer",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "MachOExplorer is a desktop and command-line tool for inspecting Mach-O binaries, Universal binaries, static archives, and dyld shared caches. It displays file structures, symbols, disassembly, and Apple-specific metadata, and can export analysis as text or JSON.",
+    "description_zh": "MachOExplorer 是用于检查 Mach-O 二进制文件、Universal 二进制文件、静态归档和 dyld 共享缓存的桌面及命令行工具。它可展示文件结构、符号、反汇编结果和 Apple 平台特有的元数据，并以文本或 JSON 导出分析结果。",
+    "evidence_url": "https://github.com/everettjf/machoexplorer/blob/cd612d774369475efeb437377d91502c2b9602a5/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Building from source requires CMake 3.16 or later, Qt 6, and a C++14 compiler.",
+      "Capstone is optional and enables disassembly.",
+      "Prebuilt releases are available for macOS; Linux and Windows require source builds.",
+      "The repository declares the MIT license."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "me-cleaner",
+    "name": "me_cleaner",
+    "url": "https://github.com/corna/me_cleaner",
+    "category": "firmware",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "me_cleaner is a Python script that modifies Intel ME firmware images to reduce the firmware's ability to interact with the system. Depending on the ME generation, it removes the firmware or retains only modules needed for boot.",
+    "description_zh": "me_cleaner 是一个修改 Intel ME 固件映像的 Python 脚本，旨在减少该固件与系统交互的能力。根据 ME 的代际，它会移除固件，或仅保留启动所需的模块。",
+    "evidence_url": "https://github.com/corna/me_cleaner/blob/41eba87c85a1f0d013790f12b649c2da5b35dcfa/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires Python and an original Intel ME firmware image.",
+      "Flashing the modified image often requires an external SPI programmer.",
+      "Board support varies; some OEM firmware will not boot after modification, and Intel ME features will no longer work.",
+      "License: GPL-3.0."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "flex-ios",
+    "name": "FLEX",
+    "url": "https://github.com/FLEXTool/FLEX",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "FLEX is an in-app tool for exploring and debugging running iOS applications. It can inspect and change views and object state, browse app files and databases, and show network request history.",
+    "description_zh": "FLEX 是用于探索和调试运行中 iOS 应用的应用内工具。它可以检查和修改视图及对象状态、浏览应用文件和数据库，并查看网络请求记录。",
+    "evidence_url": "https://github.com/FLEXTool/FLEX/blob/dac6130e0c7aca0bbf7ff8c0b57ba284776bfdff/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Needs an app that targets iOS 9 or higher, and FLEX should be excluded from release builds.",
+      "BSD-style terms per LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "classdump-dyld",
+    "name": "classdump-dyld",
+    "url": "https://github.com/limneos/classdump-dyld",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "classdump-dyld is a command-line tool that generates Objective-C headers from Mach-O app binaries, libraries, frameworks, bundles, and images in the dyld shared cache. It can dump a single class or process compatible files recursively.",
+    "description_zh": "classdump-dyld 是一款命令行工具，可从 Mach-O 应用程序二进制文件、库、框架、捆绑包及 dyld 共享缓存中的映像生成 Objective-C 头文件。它支持提取单个类，也能递归处理兼容文件。",
+    "evidence_url": "https://github.com/limneos/classdump-dyld/blob/31b6f9d897ed12065d9d30cc3aba548c892407f5/readme.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires a command-line shell on an iOS 5+ device or Mac OS X.",
+      "Works with Mach-O files only.",
+      "Some files cannot be dumped when protection prevents dynamic loading from another process.",
+      "GPL-3.0 per the README."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "view8",
+    "name": "View8",
+    "url": "https://github.com/suleram/View8",
+    "category": "javascript-electron",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "View8 is a static analysis tool that decompiles serialized V8 bytecode (JSC) files into readable JavaScript-like text. It can also export opcodes, parsed objects, and function trees organized by declarations, calls, or references.",
+    "description_zh": "View8 是一款静态分析工具，可将序列化的 V8 字节码（JSC）文件反编译为便于阅读的类 JavaScript 文本。它还可导出操作码、解析后的对象，以及按声明、调用或引用关系组织的函数树。",
+    "evidence_url": "https://github.com/suleram/View8/blob/531ec8e52b6386a07f64b7aa1f3d897dd0d7f239/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Python 3.x is required.",
+      "Raw JSC input requires a compatible patched V8 disassembler binary; the listed versions are 9.4.146.24, 10.2.154.26, and 11.3.244.8.",
+      "Serialized input uses Python pickle and must come from a trusted source.",
+      "The repository has no license file."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "unwebpack-sourcemap",
+    "name": "unwebpack-sourcemap",
+    "url": "https://github.com/rarecoil/unwebpack-sourcemap",
+    "category": "web-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "website"
+    ],
+    "description_en": "unwebpack-sourcemap is a Python script that recovers TypeScript, JSX, and other source files from Webpack source maps. It accepts local or remote source maps and can search a web page's scripts for them.",
+    "description_zh": "unwebpack-sourcemap 是一个 Python 脚本，可从 Webpack 源映射中恢复 TypeScript、JSX 等源文件。它可处理本地或远程源映射，也可检查网页脚本以查找源映射。",
+    "evidence_url": "https://github.com/rarecoil/unwebpack-sourcemap/blob/83c33a4c2f50612564138724e2f493a669886ad9/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires Python 3, BeautifulSoup4, and requests.",
+      "Intended for TypeScript with React or Vue templates.",
+      "The repository is archived and is not being maintained.",
+      "Licensed under MIT."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "wirebrowser",
+    "name": "Wirebrowser",
+    "url": "https://github.com/fcavallarin/wirebrowser",
+    "category": "web-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Wirebrowser is a desktop tool for instrumenting browser JavaScript through the Chrome DevTools Protocol. It can hook functions, trace where values originate, search and modify runtime objects, and intercept or replay HTTP traffic.",
+    "description_zh": "Wirebrowser 是一款通过 Chrome DevTools Protocol 对浏览器 JavaScript 进行运行时插桩的桌面工具。它可以挂钩函数、追踪值的来源、查找和修改运行时对象，以及拦截或重放 HTTP 流量。",
+    "evidence_url": "https://github.com/fcavallarin/wirebrowser/blob/77e1e48ceb4acaef0356877ee2d09391763613cc/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Use a macOS, Windows, or Linux desktop build, or build from source with npm.",
+      "On Linux with the AppImage, keep the installed Chrome extension in its visible directory under the home directory.",
+      "The repository declares the MIT License."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "process-dump",
+    "name": "Process Dump",
+    "url": "https://github.com/glmcdona/Process-Dump",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Process Dump is a Windows command-line tool that saves code from running processes to disk for malware analysis. It can find hidden modules and loose executable code, reconstruct PE headers and imports, and use a clean-hash database to skip known modules.",
+    "description_zh": "Process Dump 是一款 Windows 命令行工具，可将运行中进程的代码保存到磁盘，供恶意软件分析使用。它能查找隐藏模块和独立的可执行代码，重建 PE 文件头与导入表，并通过已知文件的哈希数据库跳过常见模块。",
+    "evidence_url": "https://github.com/glmcdona/Process-Dump/blob/e4373c687937747bf2293dd55ca09082fe4913c1/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Runs on 32-bit and 64-bit Windows through the matching standalone executable; run as Administrator for best access. Release v3.0.0 is dated 2026-10-03.",
+      "MIT per LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "mal-unpack",
+    "name": "mal_unpack",
+    "url": "https://github.com/hasherezade/mal_unpack",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "mal_unpack is a Windows dynamic unpacker based on PE-sieve. It runs a packed malware executable, waits for its payload to unpack, dumps the payload, and terminates the original process.",
+    "description_zh": "mal_unpack 是基于 PE-sieve 的 Windows 动态脱壳工具。它运行经过加壳的恶意软件，等待载荷解包后将其转储，并终止原始进程。",
+    "evidence_url": "https://github.com/hasherezade/mal_unpack/blob/cecb9eed03c63d651c5b47834b15bac8086cb2fb/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Run on Windows and provide a packed malware executable.",
+      "Use only in a virtual machine because the tool launches the original malware.",
+      "License: BSD-2-Clause."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "unrpyc",
+    "name": "Unrpyc",
+    "url": "https://github.com/CensoredUsername/unrpyc",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Unrpyc is a tool that decompiles compiled Ren'Py game scripts into readable script files. It runs from the command line or through files placed in a game's directory; it does not extract RPA archives.",
+    "description_zh": "Unrpyc 是将已编译的 Ren'Py 游戏脚本反编译为可读脚本文件的工具。它可通过命令行运行，也可将相关文件放入游戏目录中运行；它不能提取 RPA 归档。",
+    "evidence_url": "https://github.com/CensoredUsername/unrpyc/blob/3ae8334ed71a05535927dcc559663d3aca51215b/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Use Python 3.9 or later for Unrpyc v2, or Python 2.7 for v1.",
+      "Choose the version for the game's Ren'Py release; v2 game injection supports Ren'Py 8, while v1 supports Ren'Py 6 and 7.",
+      "MIT per the README and LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "bspsrc",
+    "name": "BSPSource",
+    "url": "https://github.com/ata4/bspsrc",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Java map decompiler that turns Source engine .bsp map files back into .vmf files that can be loaded in Hammer. It also has an integrated pakfile extractor.",
+    "description_zh": "Java 地图反编译器，可把 Source 引擎的 .bsp 地图文件还原为能在 Hammer 中加载的 .vmf 文件。它还集成了 pakfile 提取功能。",
+    "evidence_url": "https://github.com/ata4/bspsrc/blob/eaac417f16d3a4d8ef55bb637ecd7bff28740209/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "The cross-platform JAR package requires Java 24 or later, installed and configured.",
+      "GoldSrc and Source 2 maps are unsupported.",
+      "Some internal entities cannot be restored perfectly.",
+      "Released into the public domain per LICENSE.md."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "oghidra",
+    "name": "OGhidra",
+    "url": "https://github.com/llnl/OGhidra",
+    "category": "agent-mcp",
+    "kind": "integration",
+    "relationship": "independent-agent-integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "OGhidra is an AI integration for analyzing binaries with Ghidra through natural language. It supports function analysis, automated renaming, malware pattern detection, and either an MCP or PyGhidra backend.",
+    "description_zh": "OGhidra 是一款将 AI 接入 Ghidra、通过自然语言分析二进制文件的集成工具。它支持函数分析、自动重命名、恶意软件模式检测，并可使用 MCP 或 PyGhidra 后端。",
+    "evidence_url": "https://github.com/llnl/OGhidra/blob/4b91e3f17bc825bc0d41a437cd01fa25e1221d79/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Python 3.12 or later and Ghidra; version 12.0.3 is recommended.",
+      "Java 21 is required to build the Ghidra 12.0.3 extension.",
+      "Configure a local or external AI provider; the MCP backend requires a running Ghidra client, while PyGhidra requires a valid Ghidra project or a binary to import.",
+      "BSD 3-Clause with a commercial license alternative, per LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "aidapal",
+    "name": "aiDAPal",
+    "url": "https://github.com/atredispartners/aidapal",
+    "category": "agent-workflows",
+    "kind": "integration",
+    "relationship": "independent-agent-integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "aiDAPal is an IDA Pro plugin that uses a locally hosted language model trained for Hex-Rays pseudocode to assist with code analysis. It presents generated changes for acceptance before updating the pseudocode.",
+    "description_zh": "aiDAPal 是一款 IDA Pro 插件，使用针对 Hex-Rays 伪代码训练、在本地运行的语言模型辅助代码分析。用户可以先决定是否接受生成的修改，再更新伪代码。",
+    "evidence_url": "https://github.com/atredispartners/aidapal/blob/7cc7c34fb79f5e4cc94837689989f75cc8900b1b/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "IDA Pro with Hex-Rays is required.",
+      "Ollama must be configured with the downloaded model weights and modelfile.",
+      "The plugin requires the Python requests package; its default configuration connects to a local Ollama service.",
+      "The repository has no license file."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "openlara",
+    "name": "OpenLara: Tomb Raider engine reimplementation",
+    "url": "https://github.com/XProger/OpenLara",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Open-source engine for classic Tomb Raider, with a WebGL build and a standalone release. Its format code defines object types for Tomb Raider 1 through 4.",
+    "description_zh": "经典《古墓丽影》的开源引擎，提供 WebGL 版本和独立版本。其格式代码定义了《古墓丽影》1 至 4 代的对象类型。",
+    "evidence_url": "https://github.com/XProger/OpenLara/blob/3b268ca4bf986c380f44a26ffd9218bf6d376249/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "The repository declares the BSD-2-Clause license."
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "additional_evidence_urls": [
+      "https://github.com/XProger/OpenLara/blob/3b268ca4bf986c380f44a26ffd9218bf6d376249/src/format.h"
+    ],
+    "class": "game",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "thyme",
+    "name": "Thyme: Command & Conquer Generals: Zero Hour reimplementation",
+    "url": "https://github.com/TheAssemblyArmada/Thyme",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Thyme is an open source reimplementation of Command & Conquer Generals: Zero Hour. It rewrites the game from the ground up and uses the original binary for functions it has not yet replaced.",
+    "description_zh": "Thyme 是《命令与征服：将军之绝命时刻》的开源重实现。项目从底层重写游戏，并借助原版二进制文件提供尚未重写的功能。",
+    "evidence_url": "https://github.com/TheAssemblyArmada/Thyme/blob/ccef1e11c1355c6db577a057c06e7d790f1a0333/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Running Thyme requires an installed copy of Command & Conquer Generals: Zero Hour.",
+      "Building a working binary requires Microsoft Visual Studio 2017 or later.",
+      "Thyme currently runs only on Windows; its custom launcher supports the English disc version patched to 1.04.",
+      "The repository is archived.",
+      "License: GPL-2.0."
+    ],
+    "class": "game",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "chariot",
+    "name": "Chariot: Age of Empires engine reimplementation",
+    "url": "https://github.com/ChariotEngine/Chariot",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Chariot is an open-source effort to reimplement the engine of the original Age of Empires (1997). It aims to support ports and enhancements; the README describes it as a work in progress with asset-loading demonstrations, not a playable game.",
+    "description_zh": "Chariot 是一个开源项目，旨在重新实现初代《帝国时代》（1997）的游戏引擎。项目希望支持移植和功能改进；README 称其仍在开发中，当时只能展示游戏资源加载，尚不能游玩。",
+    "evidence_url": "https://github.com/ChariotEngine/Chariot/blob/26b98d09d9a4d139bd4636fec0a9f30dc85db1d0/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Building requires Rust, a supported C/C++ compiler, and SDL2.",
+      "Running requires an original Age of Empires CD for game data.",
+      "The README reports that the project was not yet playable as of 2016-07-08.",
+      "The README declares an MIT license."
+    ],
+    "class": "game",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "opendiablo2",
+    "name": "OpenDiablo2: Diablo 2 engine reimplementation",
+    "url": "https://github.com/OpenDiablo2/OpenDiablo2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "OpenDiablo2 is a cross-platform ARPG engine written in Go that supports playing Diablo 2. The project is being split into a separate engine and toolset, called Abyss Engine, and a game project retaining the OpenDiablo2 name.",
+    "description_zh": "OpenDiablo2 是一个用 Go 编写的跨平台动作角色扮演游戏引擎，支持运行 Diablo 2。项目正在拆分为名为 Abyss Engine 的引擎与工具集，以及继续使用 OpenDiablo2 名称的游戏项目。",
+    "evidence_url": "https://github.com/OpenDiablo2/OpenDiablo2/blob/7f92c571bf04057a7fbdfb5d25a486f7d775e3c3/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Playing Diablo 2 requires a legally purchased copy of Diablo 2 and its Lord of Destruction expansion installed on the computer.",
+      "The project does not include the assets or content needed to play Diablo 2.",
+      "The repository is archived.",
+      "License: GPL-3.0."
+    ],
+    "class": "game",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "black-magic-debug",
+    "name": "Black Magic Debug",
+    "url": "https://codeberg.org/blackmagic-debug/blackmagic",
+    "category": "firmware",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Black Magic Debug is a self-contained debugger for microcontrollers. It detects and configures connected targets without configuration files.",
+    "description_zh": "Black Magic Debug 是一套用于微控制器的独立调试工具。它无需配置文件，即可检测并配置已连接的目标设备。",
+    "evidence_url": "https://github.com/blackmagic-debug/blackmagic/blob/ac8d0ba3f22047e5e961856e4e4ff7c9d78b9c67/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Needs a connected microcontroller target.",
+      "The project moved to Codeberg, and this GitHub repository is archived.",
+      "GPL-3.0 per COPYING, with BSD and MIT license files for parts of the code."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "openocd",
+    "name": "OpenOCD",
+    "url": "https://github.com/openocd-org/openocd",
+    "category": "firmware",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "OpenOCD is a tool for programming and debugging embedded targets through hardware debug adapters. It supports flash programming, breakpoints, single stepping, and remote debugging through GDB.",
+    "description_zh": "OpenOCD 是通过硬件调试适配器对嵌入式目标进行编程和调试的工具。它支持闪存编程、断点、单步执行，以及通过 GDB 进行远程调试。",
+    "evidence_url": "https://github.com/openocd-org/openocd/blob/9f2d8762b3a75b4d7b2155affcf3d8bb8eb8849a/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Hardware access requires a supported adapter and a target configuration.",
+      "Source builds require GCC or Clang, make, libtool, pkg-config 0.23 or newer or pkgconf, and libjim 0.79 or newer.",
+      "GPL-2.0-or-later per COPYING."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "logicanalyzer",
+    "name": "LogicAnalyzer",
+    "url": "https://github.com/gusmanb/logicanalyzer",
+    "category": "protocol-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "LogicAnalyzer is a hardware and software tool for capturing digital signals and decoding communication protocols. It supports triggered capture, multiple channels, and Sigrok protocol decoders.",
+    "description_zh": "LogicAnalyzer 是一套用于采集数字信号和解析通信协议的软硬件工具。它支持触发采集、多通道采集和 Sigrok 协议解码器。",
+    "evidence_url": "https://github.com/gusmanb/logicanalyzer/blob/4e88df784e4879c1f180456a72d71910dd15faf1/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires supported Pico hardware, matching firmware, and capture software.",
+      "Licensed under GPL-3.0."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "btlejuice",
+    "name": "BtleJuice",
+    "url": "https://github.com/DigitalSecurity/btlejuice",
+    "category": "protocol-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "BtleJuice is a framework for intercepting Bluetooth Low Energy GATT operations between devices. Its web interface displays intercepted operations and supports replay, data modification, and export.",
+    "description_zh": "BtleJuice 是用于拦截设备间蓝牙低功耗 GATT 操作的框架。其网页界面可显示截获的操作，并支持重放、修改数据和导出记录。",
+    "evidence_url": "https://github.com/DigitalSecurity/btlejuice/blob/981b2e3fcaeca3d0c8faf6d61b4efd8130984bf4/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires Node.js 4.3.2 or newer, npm, and the listed Bluetooth system dependencies.",
+      "The core and proxy require separate machines with two Bluetooth 4.0 or newer adapters.",
+      "The proxy does not work in a Docker container.",
+      "The repository is archived and has no license file."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "neardrop",
+    "name": "NearDrop",
+    "url": "https://github.com/grishka/NearDrop",
+    "category": "protocol-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "macOS menu bar app that partially implements Nearby Share and Quick Share to exchange files and links with Android devices. Its protocol document describes the protocol as understood from Chromium sources and a decompiled Google Services Framework APK.",
+    "description_zh": "macOS 菜单栏应用，部分实现 Nearby Share 和 Quick Share，可与 Android 设备交换文件和链接。其协议文档根据 Chromium 源码和反编译的 Google Services Framework APK 描述该协议。",
+    "evidence_url": "https://github.com/grishka/NearDrop/blob/add655c6c5a40b9ba03c0329b598f2817185f5a9/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires a Mac and an Android device on the same Wi-Fi network.",
+      "Android devices must be publicly visible when connecting through NearDrop’s QR code.",
+      "Works over Wi-Fi LAN only and remains visible to everyone on the network while running.",
+      "License: Unlicense."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/grishka/NearDrop/blob/add655c6c5a40b9ba03c0329b598f2817185f5a9/PROTOCOL.md"
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "x64dbg-mcp-setsuna",
+    "name": "x64dbg MCP Server Plugin",
+    "url": "https://github.com/SetsunaYukiOvO/x64dbg-mcp",
+    "category": "agent-mcp",
+    "kind": "integration",
+    "relationship": "independent-agent-integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "An MCP server plugin for x64dbg and x32dbg that lets external applications and AI agents control debugging through HTTP. It provides tools for execution, memory, registers, breakpoints, and disassembly, along with debugger context resources and workflow prompts.",
+    "description_zh": "x64dbg MCP Server Plugin 是适用于 x64dbg 和 x32dbg 的 MCP 服务器插件，使外部应用和 AI 智能体能够通过 HTTP 控制调试过程。它提供执行控制、内存、寄存器、断点和反汇编工具，以及调试器上下文资源和工作流程提示。",
+    "evidence_url": "https://github.com/SetsunaYukiOvO/x64dbg-mcp/blob/56fe2355c90126d3b1793eba60b5a4a4d3443d9a/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires a 64-bit Windows 10 or 11 host and x64dbg or x32dbg build 2023 or later.",
+      "Building requires CMake 3.15 or later, Visual Studio 2022 with the C++ Desktop Development workload, vcpkg, and Git.",
+      "Debugging operations require the debugger to be paused; memory and register writes are disabled by default.",
+      "License: MIT."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "jebmcp",
+    "name": "JEB-MCP",
+    "url": "https://github.com/flankerhqd/jebmcp",
+    "category": "agent-mcp",
+    "kind": "integration",
+    "relationship": "independent-agent-integration",
+    "targets": [
+      "app"
+    ],
+    "description_en": "JEB-MCP is an MCP server and JEB Pro script that lets MCP clients inspect and rename elements of Android apps in JEB. Its documented commands include reading decompiled code, examining classes and methods, and renaming them.",
+    "description_zh": "JEB-MCP 是由 MCP 服务器和 JEB Pro 脚本组成的集成工具，让 MCP 客户端在 JEB 中查看和重命名 Android 应用的内容。README 列出的命令包括读取反编译代码、检查类与方法，以及重命名。",
+    "evidence_url": "https://github.com/flankerhqd/jebmcp/blob/e2fdb96390cfe4b92b754a0895ee9a22f6ce959f/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "JEB Pro with the project script started in its GUI.",
+      "Python 3.11 or later and uv.",
+      "An MCP client configured to connect to the server.",
+      "The repository has no license file."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "re-shell",
+    "name": "re-shell",
+    "url": "https://github.com/schlarpc/re-shell",
+    "category": "agent-workflows",
+    "kind": "integration",
+    "relationship": "independent-agent-integration",
+    "targets": [
+      "website",
+      "app",
+      "binary",
+      "protocol"
+    ],
+    "description_en": "re-shell is a Nix flake development environment that provides Claude Code with reverse engineering tools and workflows. Its skills select guidance for Windows binaries, Android packages, and web captures based on the files being analyzed.",
+    "description_zh": "re-shell 是一个基于 Nix flake 的开发环境，为 Claude Code 提供逆向工程工具和工作流程。它会根据待分析的文件，为 Windows 二进制文件、Android 安装包和网页流量记录启用相应指导。",
+    "evidence_url": "https://github.com/schlarpc/re-shell/blob/fd9d8583d120d00874c38b6dc6d70565b41f8bb4/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Nix with the nix-command and flakes experimental features enabled.",
+      "Claude Code for the file-specific skills and workflows.",
+      "The repository has no license file."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "ghidra-rpc",
+    "name": "ghidra-rpc",
+    "url": "https://github.com/cellebrite-labs/ghidra-rpc",
+    "category": "agent-workflows",
+    "kind": "integration",
+    "relationship": "independent-agent-integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "ghidra-rpc is a CLI integration that lets AI coding assistants use a persistent Ghidra session for binary analysis. It returns structured JSON for tasks such as decompilation, symbol annotation, type recovery, patching, and binary version comparison.",
+    "description_zh": "ghidra-rpc 是一个命令行集成工具，让 AI 编程助手通过持续运行的 Ghidra 会话分析二进制文件。它以结构化 JSON 返回反编译、符号标注、类型恢复、修补和二进制版本比较等操作的结果。",
+    "evidence_url": "https://github.com/cellebrite-labs/ghidra-rpc/blob/fa3866243dcfcbc876baa7b13ae0deac2c443cd8/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires Ghidra 11+, Python 3.11+, Java 17+, and uv.",
+      "An AI coding assistant must be able to run shell commands to drive a session.",
+      "The repository has no license file."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "bloaty",
+    "name": "Bloaty",
+    "url": "https://github.com/google/bloaty",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Bloaty is a binary size profiler that attributes file and memory usage to sources such as symbols, compilation units, and sections. It can compare sizes between binaries and supports ELF and Mach-O, with experimental PE/COFF and WebAssembly support.",
+    "description_zh": "Bloaty 是一款二进制文件体积分析工具，可按符号、编译单元和节等来源统计文件大小与内存占用。它还能比较二进制文件的体积变化，支持 ELF 和 Mach-O，并以实验性方式支持 PE/COFF 和 WebAssembly。",
+    "evidence_url": "https://github.com/google/bloaty/blob/ccb49b0be3d5bc0dd156bcf16f1515726c395ec5/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "CMake is required to build the project.",
+      "Check out the Git submodules when building from a clone that did not include them.",
+      "PE/COFF and WebAssembly support is experimental.",
+      "The repository declares the Apache-2.0 license."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "soot",
+    "name": "Soot",
+    "url": "https://github.com/soot-oss/soot",
+    "category": "jvm",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Soot is a Java optimization framework for analyzing and transforming Java bytecode. It provides four intermediate representations, including forms suited to optimization, decompilation, and code inspection.",
+    "description_zh": "Soot 是用于分析和转换 Java 字节码的优化框架。它提供四种中间表示，可用于优化、反编译和代码检查。",
+    "evidence_url": "https://github.com/soot-oss/soot/blob/0199d84f6c5a7a9e967581e67877c475518f2bb8/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires a Java runtime and Java classes or bytecode to analyze.",
+      "Available as a dependency through Maven, Gradle, or SBT, or as a JAR.",
+      "The repository declares the LGPL-2.1 license."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "bingrep",
+    "name": "bingrep",
+    "url": "https://github.com/m4b/bingrep",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "bingrep is a command-line tool for inspecting and colorizing binary files. It displays details from ELF, Mach, Unix and BSD archives, and PE files, with experimental views of hexadecimal data and file offset ranges.",
+    "description_zh": "bingrep 是用于查看二进制文件并以颜色区分其内容的命令行工具。它可显示 ELF、Mach、Unix 和 BSD 归档文件及 PE 文件的信息，并提供实验性的十六进制数据和文件偏移范围视图。",
+    "evidence_url": "https://github.com/m4b/bingrep/blob/99d10541c7d442c50f732e62c507f1d62001413e/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Building requires rustc 1.74 or later.",
+      "PE support is debug only.",
+      "The repository declares the MIT license."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "libpeconv",
+    "name": "libPeConv",
+    "url": "https://github.com/hasherezade/libpeconv",
+    "category": "binary-libraries",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "libPeConv is a Windows library for loading and manipulating PE files. It supports tasks such as section remapping, relocation, import loading, resource parsing, and rebuilding import address tables from memory dumps.",
+    "description_zh": "libPeConv 是用于加载和处理 PE 文件的 Windows 库。它支持节区重映射、重定位、导入项加载、资源解析，以及从内存转储中重建导入地址表。",
+    "evidence_url": "https://github.com/hasherezade/libpeconv/blob/0fc25f680e03699d33ef3b2034a6724365f3d1a4/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires Windows.",
+      "Applications that use MUI are unsupported.",
+      "License: BSD-2-Clause."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "viper-framework",
+    "name": "Viper",
+    "url": "https://github.com/viper-framework/viper",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Viper is a framework for binary analysis and for organizing malware samples, exploit samples, and research scripts. The Viper 1.x repository is archived and development has ended.",
+    "description_zh": "Viper 是一个二进制分析框架，也用于整理恶意软件样本、漏洞利用样本和研究脚本。Viper 1.x 仓库已归档，开发已停止。",
+    "evidence_url": "https://github.com/viper-framework/viper/blob/fdd7855249340cdf114447822026ded66f17d6a3/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Install with pip3.",
+      "Viper 1.x is archived and no longer developed; the refactor continues as Viper 2.",
+      "BSD-3-Clause per LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "droidlysis",
+    "name": "DroidLysis",
+    "url": "https://github.com/cryptax/droidlysis",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "DroidLysis is a pre-analysis tool for Android apps that disassembles samples, organizes their contents, and flags code patterns for further inspection. It accepts APK, DEX, ODEX, ARM executable, ZIP, RAR, and directory inputs.",
+    "description_zh": "DroidLysis 是一款安卓应用预分析工具，可反汇编样本、整理文件内容，并标出值得进一步查看的代码模式。它支持 APK、DEX、ODEX、ARM 可执行文件、ZIP、RAR 和目录输入。",
+    "evidence_url": "https://github.com/cryptax/droidlysis/blob/346c2b6350f70e2854f58d33dab477fe6a7edfd6/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires Python 3 and the listed system packages, including a Java runtime.",
+      "Requires Apktool and Baksmali, with their locations set in the configuration file; Dex2jar is optional.",
+      "Known third-party SDKs are excluded from analysis by default unless the relevant option is enabled.",
+      "The repository declares the MIT license."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "pkhex",
+    "name": "PKHeX",
+    "url": "https://github.com/kwsch/PKHeX",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "PKHeX is a C# Windows Forms editor for Pokémon core-series save data. It can edit and save supported files, import Pokémon and teams, and convert data between game generations.",
+    "description_zh": "PKHeX 是一款用 C# 编写的 Windows Forms 宝可梦系列游戏存档编辑器。它可以编辑并保存受支持的文件、导入宝可梦与队伍数据，并在不同游戏世代之间转换数据。",
+    "evidence_url": "https://github.com/kwsch/PKHeX/blob/0660d1e1f4924b8478daec73281bb8071a82ad19/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires .NET 10.",
+      "Save files must be free of console-specific encryption; a save-data manager is needed to move saves to and from a console.",
+      "License: GPLv3."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "thug",
+    "name": "Thug",
+    "url": "https://github.com/buffer/thug",
+    "category": "web-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Thug is a Python low-interaction honeyclient that mimics a web browser to detect and emulate malicious content. It supports the study of client-side attacks.",
+    "description_zh": "Thug 是一款用 Python 编写的低交互蜜罐客户端，通过模拟网页浏览器来检测和仿真恶意内容。它可用于研究针对客户端的攻击。",
+    "evidence_url": "https://github.com/buffer/thug/blob/5122baa855a0f0803502e24c6ffe0b1ff9af8e29/README.rst",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "GPL-2.0 per the README."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "cuckoo3",
+    "name": "Cuckoo3",
+    "url": "https://github.com/cert-ee/cuckoo3",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary",
+      "website"
+    ],
+    "description_en": "Cuckoo3 is a malware analysis tool that tests suspicious files and links in sandboxed platform emulators. It reports what the files or websites did during the test.",
+    "description_zh": "Cuckoo3 是一款恶意软件分析工具，可在沙箱化的平台模拟器中检查可疑文件和链接。它会生成报告，记录文件或网站在检查过程中的行为。",
+    "evidence_url": "https://github.com/cert-ee/cuckoo3/blob/86be764b78d08979b15aa0b61f76ee7d67c4c17b/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires a Linux (Ubuntu) host with Python 3.10 and Windows sandboxes.",
+      "The README says it is not ready for production use.",
+      "License: EUPL-1.2."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "cuckoo-sandbox",
+    "name": "Cuckoo Sandbox",
+    "url": "https://github.com/cuckoosandbox/cuckoo",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Cuckoo Sandbox is an automated malware analysis system that executes suspicious files in an isolated environment and reports their behavior.",
+    "description_zh": "Cuckoo Sandbox 是自动化恶意软件分析系统，可在隔离环境中执行可疑文件并报告其行为。",
+    "evidence_url": "https://github.com/cuckoosandbox/cuckoo/blob/50452a39ff7c3e0c4c94d114bc6317101633b958/README.rst",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "The README marks Cuckoo Sandbox 2.x as unmaintained and the repository is archived.",
+      "GPL-3.0 per docs/LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "fq",
+    "name": "fq",
+    "url": "https://github.com/wader/fq",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary",
+      "protocol"
+    ],
+    "description_en": "fq is a command-line tool and query language for inspecting and decoding binary formats. It provides a structural hex viewer, bit-level decoding, nested format parsing, and an interactive query interface.",
+    "description_zh": "fq 是用于查看和解码二进制格式的命令行工具及查询语言。它提供结构化十六进制视图、位级解码、嵌套格式解析和交互式查询界面。",
+    "evidence_url": "https://github.com/wader/fq/blob/3f518c8d01f608b3402aa8317314f100c41d6dd0/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Go 1.22 or later is required to build from source.",
+      "The repository declares the MIT License."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "innoextract",
+    "name": "innoextract",
+    "url": "https://github.com/dscharrer/innoextract",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Unpacks Inno Setup installers on non-Windows systems without running them. It also handles modified variants, including GOG.com's Inno Setup-based game installers.",
+    "description_zh": "在非 Windows 系统上解包 Inno Setup 安装程序，无需运行它们。它也支持修改版安装包，包括 GOG.com 基于 Inno Setup 的游戏安装包。",
+    "evidence_url": "https://github.com/dscharrer/innoextract/blob/6e9e34ed0876014fdb46e684103ef8c3605e382e/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Building requires Boost 1.37 or newer, CMake 2.8 or newer, and a working C++ compiler.",
+      "liblzma is optional, but most installers made with newer Inno Setup versions cannot be extracted without it.",
+      "Individual components cannot be selected for extraction, and filtering by name is limited.",
+      "License: ZLIB."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "metasm",
+    "name": "Metasm",
+    "url": "https://github.com/jjyg/metasm",
+    "category": "binary-libraries",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Metasm is a Ruby suite for assembling, disassembling, debugging, and modifying executable binaries. It supports formats including PE, ELF, Mach-O, and shellcode.",
+    "description_zh": "Metasm 是一套用于汇编、反汇编、调试和修改可执行二进制文件的 Ruby 工具。它支持 PE、ELF、Mach-O 和 shellcode 等格式。",
+    "evidence_url": "https://github.com/jjyg/metasm/blob/a70271c239ba15a496975ce23018eb263167ad2c/README",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Ruby is required to use the suite and its sample scripts.",
+      "LGPL per the README; the LICENCE file carries LGPL-2.1."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "opentomb",
+    "name": "OpenTomb: Tomb Raider engine reimplementation",
+    "url": "https://github.com/opentomb/OpenTomb",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "description_en": "OpenTomb is an open-source reimplementation of the classic Tomb Raider engine for playing levels from Tomb Raider 1–5 and custom TRLE levels. It is no longer maintained.",
+    "description_zh": "OpenTomb 是经典《古墓丽影》引擎的开源重新实现项目，可运行《古墓丽影》1–5 及自制 TRLE 关卡。该项目已停止维护。",
+    "evidence_url": "https://github.com/opentomb/OpenTomb/blob/ae7e07af766a48c7e5b5f2d6e14a5fa64e37e20c/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Playing original game levels requires assets from the corresponding games.",
+      "Building from source requires C++11 and the development dependencies listed in the README.",
+      "CD audio is supported only in OGG format.",
+      "License: LGPL-3.0."
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "savagewindrecomp",
+    "name": "Savage Wind Recomp: statically recompiling The Legend of Zelda: Breath of the Wild",
+    "url": "https://github.com/Revivedx/SavageWindRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Savage Wind Recomp is an in-progress static recompilation of the Nintendo Switch version of The Legend of Zelda: Breath of the Wild for Windows and Linux. It builds native game code locally from the player's extracted files; the README reports playable early areas but says the full story remains unconfirmed.",
+    "description_zh": "Savage Wind Recomp 是一个仍在开发中的静态重编译项目，旨在让 Nintendo Switch 版《塞尔达传说：旷野之息》在 Windows 和 Linux 上以原生程序运行。它在本地根据玩家自行提取的游戏文件构建代码；README 称前期区域可以游玩，但尚未确认主线全程可通关。",
+    "evidence_url": "https://github.com/Revivedx/SavageWindRecomp/blob/bf6146c14c37fee8781a601e5a544b93dff6d75e/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires a personally obtained and extracted Nintendo Switch copy of the game with update 1.9.0; game files are not included.",
+      "Requires Windows 10 or later or Linux, a 64-bit CPU with SSE4.2, a Vulkan 1.3 GPU, 16 GB of RAM, and about 20 GB of free disk space.",
+      "The project is in alpha; later parts of the main story may have bugs or crashes.",
+      "MIT per LICENSE."
+    ],
+    "class": "game",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "retruxx",
+    "name": "retruxx: reverse-engineered Hard Truck Apocalypse",
+    "url": "https://github.com/mindflower/retruxx",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "description_en": "retruxx is a reverse-engineered Hard Truck Apocalypse project that builds the game executable and separate renderer, input, and sound DLLs. Its 32-bit build matches the original game's memory layouts.",
+    "description_zh": "retruxx 是《Hard Truck Apocalypse》的逆向工程项目，可构建游戏可执行文件以及独立的渲染、输入和声音 DLL。其 32 位构建与原游戏的内存布局一致。",
+    "evidence_url": "https://github.com/mindflower/retruxx/blob/e94ac261e4a4a4783b092ff4aba02ec2c2121f04/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Building requires Windows, Visual Studio C++ build tools, CMake, Git, the DirectX SDK (June 2010), and the FMOD Core SDK.",
+      "Running the game requires an installed copy of Ex Machina / Hard Truck Apocalypse for its game data.",
+      "The executable and driver DLLs must have compatible bitness.",
+      "The repository has no license file."
+    ],
+    "class": "game",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "nxnative",
+    "name": "nxnative",
+    "url": "https://github.com/seedds/nxnative",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "nxnative is a tool that packages Nintendo Switch games as apps that run their code natively on Apple hardware, with graphics translated to Metal. It builds iPhone, iPad, or Mac apps from supported Switch games; Switch 2 builds are documented for Mac only.",
+    "description_zh": "nxnative 是一款将 Nintendo Switch 游戏打包为 Apple 设备应用的工具，让游戏代码在设备上原生运行，并将图形处理转换为 Metal。它可为受支持的 Switch 游戏生成 iPhone、iPad 或 Mac 应用；Switch 2 游戏目前仅说明了 Mac 构建方式。",
+    "evidence_url": "https://github.com/seedds/nxnative/blob/88c7e03f51e3934dc227089ea81ec64fcd525b03/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Building requires a Mac with macOS 26.6 or later, Xcode 27.2, Homebrew, and arm64 Python 3.12 or later.",
+      "Switch game builds require the user's game files and prod.keys; Switch 2 builds use a NUP file or extracted game files and do not require prod.keys.",
+      "iPhone and iPad play requires iOS or iPadOS 26 or later and the specified newer hardware; Switch 2 games are documented for Mac only.",
+      "License: MIT."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "impacket",
+    "name": "Impacket",
+    "url": "https://github.com/fortra/impacket",
+    "category": "protocol-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Impacket is a Python library for constructing and parsing network packets and working with protocol implementations. It covers protocols including SMB and MSRPC and includes example tools.",
+    "description_zh": "Impacket 是用于构造、解析网络数据包及使用协议实现的 Python 库。它涵盖 SMB、MSRPC 等协议，并附带示例工具。",
+    "evidence_url": "https://github.com/fortra/impacket/blob/0b3ef2b979ba0f52dfc852dd41e0f90ce7b3bc42/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires Python 3; the README recommends pipx for system-wide installation.",
+      "The README describes the software as intended for research and education, not production or commercial use.",
+      "Apache Software License with slight modifications, per LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "r0idamcp",
+    "name": "r0idamcp",
+    "url": "https://github.com/r0ysue/r0idamcp",
+    "category": "agent-mcp",
+    "kind": "integration",
+    "relationship": "independent-agent-integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "r0idamcp is a single-file MCP server that connects IDA Pro to an MCP-capable assistant for automated reverse engineering. Its tools expose functions, strings, decompilation, cross-references, comments, and renaming through an SSE connection.",
+    "description_zh": "r0idamcp 是一个单文件 MCP 服务器，可将 IDA Pro 连接到支持 MCP 的助手，用于自动化逆向分析。它通过 SSE 连接提供函数和字符串查询、反编译、交叉引用、注释及重命名等功能。",
+    "evidence_url": "https://github.com/r0ysue/r0idamcp/blob/4b69484d58bbcd162e641af5b5189489ad5bcaf1/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "IDA Pro is required; version 8.3 or later is recommended.",
+      "Install FastMCP with pip into the Python environment used by IDA Pro.",
+      "Use an MCP client that can connect to an SSE server, and allow access to the configured server port.",
+      "License: MIT."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "somcp",
+    "name": "SOMCP",
+    "url": "https://github.com/bilieebiliee1-design/SOMCP",
+    "category": "agent-mcp",
+    "kind": "integration",
+    "relationship": "independent-agent-integration",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "SOMCP is an Android MCP server for analyzing and modifying native SO libraries. It exposes ELF analysis, disassembly, patching, and optional dynamic analysis tools to MCP clients.",
+    "description_zh": "SOMCP 是在 Android 设备上分析和修改原生 SO 库的 MCP 服务器。它向 MCP 客户端提供 ELF 分析、反汇编、补丁以及可选的动态分析工具。",
+    "evidence_url": "https://github.com/bilieebiliee1-design/SOMCP/blob/62a758357dbc484660f56dbe4c785f230311673f/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires Android 8.0 or later.",
+      "Emulation in official release APKs requires a 64-bit device; Frida features require a separately installed Frida server or gadget on a rooted device.",
+      "The repository declares the AGPL-3.0 license."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "virtualxposed",
+    "name": "VirtualXposed",
+    "url": "https://github.com/android-hacker/VirtualXposed",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "VirtualXposed is an Android app that runs Xposed modules alongside apps in a virtual environment without root access, an unlocked bootloader, or a custom system image. It is based on VirtualApp and epic.",
+    "description_zh": "VirtualXposed 是一款 Android 应用，可在虚拟环境中让 Xposed 模块作用于应用，无需 Root、解锁引导程序或刷入自定义系统镜像。它基于 VirtualApp 和 epic。",
+    "evidence_url": "https://github.com/android-hacker/VirtualXposed/blob/122beb371519cb2d221ce06756361aaa30e2674f/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires an Android 5.0–10.0 device and installation of the VirtualXposed APK.",
+      "Apps and Xposed modules must both be installed inside VirtualXposed for modules to take effect.",
+      "Modules that modify the system and resource hooks are unsupported; the README prohibits commercial use.",
+      "The repository declares the GPL-3.0 license."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "edxposed",
+    "name": "EdXposed Framework",
+    "url": "https://github.com/ElderDrivers/EdXposed",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "EdXposed is a Riru module that provides an Xposed-compatible ART hooking framework for Android 8.0 through 11. It lets Xposed modules change system and app behavior without modifying APKs.",
+    "description_zh": "EdXposed 是一个 Riru 模块，为 Android 8.0 至 11 提供兼容 Xposed 的 ART Hook 框架。它让 Xposed 模块无需修改 APK 即可改变系统和应用的行为。",
+    "evidence_url": "https://github.com/ElderDrivers/EdXposed/blob/8f2308cdde0a8151a2b4b0151c58b203154a8c6f/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Android 8.0 through 11.",
+      "Magisk v21+ and Riru v23+.",
+      "EdXposed Manager for the documented installation process.",
+      "License: GPL-3.0."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "vector-lsposed",
+    "name": "Vector Framework",
+    "url": "https://github.com/JingMatrix/Vector",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Vector Framework is a Zygisk module that provides ART hooking for Android apps. It supports Xposed APIs and lets modules change app and system behavior in memory without modifying APK files.",
+    "description_zh": "Vector Framework 是为 Android 应用提供 ART Hook 功能的 Zygisk 模块。它支持 Xposed API，让模块在内存中改变应用和系统的行为，无需修改 APK 文件。",
+    "evidence_url": "https://github.com/JingMatrix/Vector/blob/093ea599bfa2b50c156da0af53e2e53576e88434/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires Android 8.1 through Android 17 Beta.",
+      "Requires a recent Magisk or KernelSU installation with Zygisk enabled.",
+      "Licensed under GPL-3.0."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "justtrustme",
+    "name": "JustTrustMe",
+    "url": "https://github.com/Fuzion24/JustTrustMe",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "JustTrustMe is an Xposed module that disables SSL certificate checks in Android apps. It can help expose network traffic from apps that use certificate pinning.",
+    "description_zh": "JustTrustMe 是一个用于关闭 Android 应用 SSL 证书检查的 Xposed 模块。它可帮助查看采用证书固定机制的应用的网络流量。",
+    "evidence_url": "https://github.com/Fuzion24/JustTrustMe/blob/35efd07e93ad1e5633454fbc72dbf4b00c622932/Readme.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Requires a rooted Android device.",
+      "Requires the Xposed framework to be installed.",
+      "Apache-2.0 per License.md."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
+  },
+  {
+    "id": "spy-debugger",
+    "name": "spy-debugger",
+    "url": "https://github.com/wuchangming/spy-debugger",
+    "category": "web-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "website",
+      "app"
+    ],
+    "description_en": "spy-debugger is a tool for remotely debugging pages in mobile browsers and app WebViews while capturing HTTP and HTTPS traffic. It injects weinre debugging code into HTML responses and can use its built-in proxy or an external one.",
+    "description_zh": "spy-debugger 是一款远程调试手机浏览器和应用 WebView 页面、抓取 HTTP 与 HTTPS 流量的工具。它会在 HTML 响应中注入 weinre 调试代码，并可使用内置代理或外部代理。",
+    "evidence_url": "https://github.com/wuchangming/spy-debugger/blob/03d787151159c96229aff0266e0d3038af1e69a3/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Install spy-debugger with npm on a computer.",
+      "Connect the phone and computer to the same network and configure the phone's HTTP proxy.",
+      "Install a certificate on the phone for HTTPS debugging; on iOS 15, the tool cannot identify whether a request came from a browser.",
+      "License: MIT."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06"
   }
 ]
