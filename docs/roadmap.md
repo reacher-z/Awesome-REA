@@ -14,7 +14,7 @@ Awesome Reverse Engineering Anything is a resource collection for reverse-engine
 
 Pull requests and source scans support collection upkeep. Automatic checks cover schema, duplicates, link shape, generated documentation, and site builds. Editorial decisions about relevance and claims remain with maintainers.
 
-Track category coverage, useful additions, accepted corrections, contributors, and unresolved broken links. Stars are a visibility measure; the community aspiration is more than 2,000 Stars, not a promised timeline.
+Track category coverage, useful additions, accepted corrections, contributors, and unresolved broken links. Stars are a visibility measure, and the target is 10,000 Stars.
 
 ## Scope
 
