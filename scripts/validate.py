@@ -1207,7 +1207,8 @@ def validate_markdown(root, errors):
             if target.suffix.lower() in {'.md', '.markdown'}:
                 if target not in anchors:
                     anchors[target] = markdown_anchors(target.read_text(encoding='utf-8'))
-                if fragment.removeprefix('user-content-') not in anchors[target]:
+                # GitHub gives every rendered README the `readme` anchor, used by "back to top" links.
+                if fragment.removeprefix('user-content-') not in anchors[target] | {'readme'}:
                     errors.append(f'{where}: missing Markdown anchor: {destination}')
             elif target.suffix.lower() in {'.html', '.htm'}:
                 ids = set(re.findall(r'\b(?:id|name)=["\']([^"\']+)["\']', target.read_text(encoding='utf-8')))
