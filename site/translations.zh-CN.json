@@ -8392,5 +8392,75 @@
       "MCP 服务器在本机端口上提供 SSE 服务，默认编译进程序（-DIDASQL_WITH_MCP=ON）；智能体技能位于单独的 idasql-skills 仓库。深度链接功能需要 IDA 9.4。",
       "采用 Human-Origin Source License v1.0：这是一种结构上参照 MPL 2.0、但未经 OSI 认可的源码可见许可，允许使用、构建和再分发未修改的副本（包括商业用途），但未经作者书面许可，不得在向上游贡献之外发布修改版，也不得把代码用作实现参考来源。"
     ]
+  },
+  "luyten": {
+    "name": "Luyten Java 反编译器图形界面",
+    "requirements": [
+      "可从 Releases 页面下载预编译版本；从源码构建使用 Maven 3。最新发布日期为 2019-06-06。",
+      "依 license.txt 采用 Apache-2.0 许可。"
+    ]
+  },
+  "gdb-dashboard": {
+    "name": "GDB dashboard 调试状态界面",
+    "requirements": [
+      "需要支持 Python API 的 GDB；把这个 .gdbinit 文件放到主目录即可，语法高亮可选装 Pygments。",
+      "依 LICENSE 采用 MIT 许可。"
+    ]
+  },
+  "rehex": {
+    "name": "REHex 逆向工程十六进制编辑器",
+    "requirements": [
+      "可在 Windows、Linux、macOS 和 BSD 上运行。Releases 提供 Windows 和 macOS 独立安装包及 Linux 软件包；0.64.0 版发布于 2026-04-04。",
+      "依 LICENSE.txt 采用 GPL-2.0 许可。"
+    ]
+  },
+  "dobby": {
+    "name": "Dobby 跨平台钩子框架",
+    "requirements": [
+      "按 docs/compile.md 从源码编译，或从标记为 latest、日期为 2024-03-14 的发布下载预编译库。",
+      "依 LICENSE 采用 Apache-2.0 许可。"
+    ]
+  },
+  "xlmmacrodeobfuscator": {
+    "name": "XLMMacroDeobfuscator Excel 4.0 宏解码工具",
+    "requirements": [
+      "通过 pip 安装。借助 Microsoft Excel 加载 xls 文件需要 Windows、pywin32 和 --with-ms-excel 开关，否则由 xlrd2 库读取。最新发布是 2022-09-21 的 v0.2.7。",
+      "依 LICENSE 采用 Apache-2.0 许可。"
+    ]
+  },
+  "pe-tree": {
+    "name": "PE Tree 可执行文件树状查看器",
+    "requirements": [
+      "独立应用需要 Python 3.5+，可在 Windows、Linux 和 macOS 上运行；各插件需要相应的宿主工具。仓库已归档，最后发布是 2020-10-05 的 1.0.29。",
+      "依 LICENSE 采用 Apache-2.0 许可。"
+    ]
+  },
+  "rpcview": {
+    "name": "RpcView Windows RPC 查看与反编译工具",
+    "requirements": [
+      "需要 Microsoft Visual C++ 2019 Redistributable；构建需要 Visual Studio、CMake 和 Qt5。README 列出的运行时支持范围是 Windows XP、7、8、8.1 和 10。",
+      "依 LICENSE 采用 GPL-3.0 许可。"
+    ]
+  },
+  "jd-cli": {
+    "name": "jd-cli 命令行 Java 反编译器",
+    "requirements": [
+      "1.3.0 及以后版本需要 Java 17+，更早的版本需要 Java 8+。最新发布是 2025-10-30 的 1.3.0-beta-1。",
+      "依 LICENSE.txt 采用 GPL-3.0 许可。"
+    ]
+  },
+  "amoco": {
+    "name": "amoco 二进制符号分析软件包",
+    "requirements": [
+      "README 将 2.9 版标为开发中：x86 FPU 语义及 ARM SIMD、VFP、NEON、TrustZone、Jazelle 指令集尚未实现，部分基于求解器的反汇编策略尚未合入，也没有 IDB 导入导出功能。",
+      "依 LICENSE 采用 GPL-2.0 许可。"
+    ]
+  },
+  "chisel-lldb": {
+    "name": "Chisel iOS LLDB 调试命令集",
+    "requirements": [
+      "通过 Homebrew 或下载安装，再从主目录下的 .lldbinit 文件导入。各命令对 iOS 和 macOS 的支持不同，README 的命令表有标注。最新标记版本是 2020-08-17 的 2.0.1。",
+      "依 LICENSE 采用 MIT 许可。"
+    ]
   }
 }

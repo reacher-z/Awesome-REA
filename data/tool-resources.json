@@ -27587,5 +27587,218 @@
       "https://github.com/allthingsida/idasql/blob/6212ece62569bcb88d9c28544e4ef71a64ed2d53/LICENSE",
       "https://github.com/allthingsida/idasql/releases/tag/v0.0.19"
     ]
+  },
+  {
+    "id": "luyten",
+    "name": "Luyten",
+    "url": "https://github.com/deathmarine/Luyten",
+    "category": "jvm",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Graphical Java decompiler front end for the Procyon decompiler, with its editor view powered by RSyntaxTextArea.",
+    "description_zh": "Procyon 反编译器的图形界面前端，编辑视图由 RSyntaxTextArea 驱动。",
+    "evidence_url": "https://github.com/deathmarine/Luyten/blob/64af8d1df1d2cab029779142726fbcd8bc482956/ReadMe.md",
+    "additional_evidence_urls": [
+      "https://github.com/deathmarine/Luyten/blob/64af8d1df1d2cab029779142726fbcd8bc482956/license.txt"
+    ],
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Prebuilt downloads are on the Releases page; building from source uses Maven 3. The newest release was published on 2019-06-06.",
+      "Apache-2.0 per license.txt."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "gdb-dashboard",
+    "name": "GDB dashboard",
+    "url": "https://github.com/cyrus-and/gdb-dashboard",
+    "category": "dynamic-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Standalone .gdbinit file written with GDB's Python API that shows a modular status interface each time the debugged program stops, reducing the commands needed to inspect its state. No GDB command is redefined; its features sit under a single dashboard command.",
+    "description_zh": "用 GDB Python API 编写的独立 .gdbinit 文件，被调试程序每次停下时显示模块化的状态界面，减少查看程序状态所需的命令。它不重定义任何 GDB 命令，所有功能都集中在 dashboard 命令之下。",
+    "evidence_url": "https://github.com/cyrus-and/gdb-dashboard/blob/7b9b1260a8b3e9dd57b6cbf302bdfba71cec4014/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Needs GDB with Python API support; the single .gdbinit file goes in the home directory, and Pygments is optional for syntax highlighting.",
+      "MIT per LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "rehex",
+    "name": "REHex",
+    "url": "https://github.com/solemnwarning/rehex",
+    "category": "native-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Cross-platform hex editor for reverse engineering that handles files over 1 TB. It adds inline disassembly, integer and floating-point decoding, byte-range annotations, side-by-side comparison, virtual address mapping and bitmap visualisation, with Binary Templates that annotate data automatically and Lua scripting.",
+    "description_zh": "面向逆向工程的跨平台十六进制编辑器，可处理超过 1 TB 的文件。它提供内联反汇编、整数与浮点数解码、字节范围标注、并排比较、虚拟地址映射和位图可视化，还支持自动标注数据的 Binary Templates 和 Lua 脚本。",
+    "evidence_url": "https://github.com/solemnwarning/rehex/blob/1e4fcd437700083cf36e5cbfe20da13577ab5fef/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Runs on Windows, Linux, macOS and BSD. Releases provide standalone Windows and macOS packages and Linux packages; 0.64.0 was published on 2026-04-04.",
+      "GPL-2.0 per LICENSE.txt."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "dobby",
+    "name": "Dobby",
+    "url": "https://github.com/jmpews/Dobby",
+    "category": "dynamic-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Lightweight, modular hook framework for Windows, macOS, iOS, Android and Linux on x86, x86-64, ARM and ARM64.",
+    "description_zh": "轻量的模块化钩子框架，支持 Windows、macOS、iOS、Android 和 Linux，覆盖 x86、x86-64、ARM 和 ARM64 架构。",
+    "evidence_url": "https://github.com/jmpews/Dobby/blob/5dfc8546954ce3b3198132ab13fddb89ee92cdd7/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Compiled from source as described in docs/compile.md, or downloaded as a prebuilt library from the release tagged latest, dated 2024-03-14.",
+      "Apache-2.0 per LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "xlmmacrodeobfuscator",
+    "name": "XLMMacroDeobfuscator",
+    "url": "https://github.com/DissectMalware/XLMMacroDeobfuscator",
+    "category": "native-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Command-line tool and Python library that extracts and decodes obfuscated Excel 4.0 (XLM) macros from xls, xlsm and xlsb files. An internal XLM emulator interprets the macros without fully performing the code, and results can be exported as JSON.",
+    "description_zh": "用于从 xls、xlsm 和 xlsb 文件中提取并解码混淆 Excel 4.0（XLM）宏的命令行工具和 Python 库。内置的 XLM 模拟器解释宏，但不完整执行其代码，结果可导出为 JSON。",
+    "evidence_url": "https://github.com/DissectMalware/XLMMacroDeobfuscator/blob/43114164d89b8b3b426144f1fdfeb2ca75d28b92/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Installed with pip. Loading xls files through Microsoft Excel requires Windows, pywin32 and the --with-ms-excel switch; otherwise the xlrd2 library reads them. The newest release is v0.2.7 from 2022-09-21.",
+      "Apache-2.0 per LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "pe-tree",
+    "name": "PE Tree",
+    "url": "https://github.com/blackberry/pe_tree",
+    "category": "native-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Python module that shows Portable Executable files in a tree view using pefile and PyQt5, as a standalone application and as a plugin for IDA Pro, Ghidra, Volatility, Rekall and minidump. It reads PE images from files, ZIP archives, Windows memory dumps and analysis databases.",
+    "description_zh": "基于 pefile 和 PyQt5、以树状视图展示 PE 文件的 Python 模块，既可作为独立应用，也可作为 IDA Pro、Ghidra、Volatility、Rekall 和 minidump 的插件使用。它能从文件、ZIP 压缩包、Windows 内存转储和分析数据库中读取 PE 映像。",
+    "evidence_url": "https://github.com/blackberry/pe_tree/blob/2be607fc55702293cd02cbc6cda5283452464aff/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "The standalone application needs Python 3.5+ and runs on Windows, Linux and macOS; each plugin needs its host tool. The repository is archived, with the last release 1.0.29 from 2020-10-05.",
+      "Apache-2.0 per LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "rpcview",
+    "name": "RpcView",
+    "url": "https://github.com/silverf0x/RpcView",
+    "category": "native-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Open-source Windows tool that explores and decompiles the RPC functionality present on a Microsoft system. New rpcrt4.dll runtime versions are added by extending its version table or by reversing the runtime's internal structures.",
+    "description_zh": "开源 Windows 工具，用于查看并反编译 Microsoft 系统上存在的 RPC 功能。若要支持新的 rpcrt4.dll 运行时版本，可扩充其版本表，或逆向该运行时的内部结构。",
+    "evidence_url": "https://github.com/silverf0x/RpcView/blob/14d5e1a3b6cc02196dabdcf668ea341129b36be0/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Needs the Microsoft Visual C++ 2019 Redistributable; building takes Visual Studio, CMake and Qt5. The README lists runtime support for Windows XP, 7, 8, 8.1 and 10.",
+      "GPL-3.0 per LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "jd-cli",
+    "name": "jd-cli",
+    "url": "https://github.com/intoolswetrust/jd-cli",
+    "category": "jvm",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Command-line wrapper around a jd-core fork that decompiles Java class and JAR files to the console, a directory or a ZIP file, with options for line numbers, file-matching patterns and parallel processing. It also ships as a Docker image and as a Java library.",
+    "description_zh": "基于 jd-core 分支的命令行封装，可把 Java 类和 JAR 文件反编译到控制台、目录或 ZIP 文件，并提供行号、文件匹配模式和并行处理等选项。它还提供 Docker 镜像和 Java 库。",
+    "evidence_url": "https://github.com/intoolswetrust/jd-cli/blob/923d00231206a36927d413621b77f984e7293b0a/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Versions 1.3.0 and later need Java 17+, older ones Java 8+. The newest release is 1.3.0-beta-1 from 2025-10-30.",
+      "GPL-3.0 per LICENSE.txt."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "amoco",
+    "name": "amoco",
+    "url": "https://github.com/bdcht/amoco",
+    "category": "binary-libraries",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Python package for symbolic analysis of binaries. It combines an instruction-decoding framework for adding architectures, a symbolic algebra module that describes instruction semantics, an abstract memory and execution model, and disassembly techniques from linear sweep and recursive traversal to solver-based path-predicate exploration.",
+    "description_zh": "用于二进制符号分析的 Python 软件包。它包含便于添加新架构的指令解码框架、描述指令语义的符号代数模块、抽象内存与执行模型，以及从线性扫描、递归遍历到基于求解器的路径谓词探索等反汇编技术。",
+    "evidence_url": "https://github.com/bdcht/amoco/blob/3e36c5247283a7abba57ce3c06910a7271ab1b9a/README.rst",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "The README marks version 2.9 as under development: x86 FPU semantics and ARM SIMD, VFP, NEON, TrustZone and Jazelle instruction sets are not implemented, some solver-based disassembly strategies are unmerged, and IDB import and export are missing.",
+      "GPL-2.0 per LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "chisel-lldb",
+    "name": "Chisel",
+    "url": "https://github.com/meta/chisel",
+    "category": "dynamic-analysis",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Collection of LLDB commands for debugging iOS apps. Commands print view and view-controller hierarchies, find views by class-name regex, show or hide views without resuming the process, mask or border views, set symbolic breakpoints on a class's method and watchpoints on instance variables, and can be extended with custom commands.",
+    "description_zh": "用于调试 iOS 应用的 LLDB 命令集。这些命令可打印视图和视图控制器层级，按类名正则查找视图，无需继续运行进程即可显示或隐藏视图，可遮罩视图或为其加边框，还能为类方法设置符号断点、为实例变量设置观察点，并支持自定义命令。",
+    "evidence_url": "https://github.com/meta/chisel/blob/b28507a68daa10ebad609de278efe43589372649/README.md",
+    "verified_at": "2026-11-06",
+    "requirements": [
+      "Installed with Homebrew or by download, then imported from the .lldbinit file in the home directory. Command support differs between iOS and macOS, as the README's command table marks. The newest tagged release is 2.0.1 from 2020-08-17.",
+      "MIT per LICENSE."
+    ],
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
   }
 ]
