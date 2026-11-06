@@ -4,7 +4,7 @@
 
 **654 个仓库** · 2026-10-20 UTC
 
-这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
+这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
 - [morluto/rea](https://github.com/morluto/rea) — 借助智能体逆向工程任何对象，涵盖从应用行为到原生二进制文件的各个层面。 **[271,152 星标]** · 精选：[REA — Reverse Engineer Anything](https://awesomerea.org/zh/resources/rea-upstream/)
 - [Hack-with-Github/Awesome-Hacking](https://github.com/Hack-with-Github/Awesome-Hacking) — 面向黑客、渗透测试人员和安全研究人员的各类精选资源列表合集。 **[122,703 星标]**

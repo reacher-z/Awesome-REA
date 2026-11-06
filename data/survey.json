@@ -3395,20 +3395,20 @@
     "zh": "依据 53 篇论文与八个项目案例，讨论网站、游戏、应用、二进制、固件和协议逆向工程的方法、评测证据与边界的双语专题综述，并附参考文献与引用格式。"
   },
   "abstract": {
-    "en": "Reverse engineering reconstructs different objects from different evidence: a visual layout from an image, a rule model from interaction, source hypotheses from binary code, or an execution environment around retained firmware. This editorial survey brings together a frozen corpus of 53 papers and eight documented project cases to examine what those reconstructions establish. We organize the literature across websites, games, apps, binaries, firmware and protocols, comparing observation access, reconstructed outputs and acceptance checks. The central argument is that an outcome becomes interpretable only when all three are specified. Visual similarity, a matching build, finite test agreement and successful service startup constrain different properties and cannot be combined into a single recovery score. The selected cases show how original assets, prior source exposure, inherited implementations and cloud dependencies further shape a result. Across domains, the strongest opportunities for clearer evaluation are explicit accounting of supplied information, checks beyond construction-time examples, and separate reporting of structural, visual and behavioral evidence. This synthesis provides a framework for comparing claims and identifying untested boundaries, rather than a ranking of systems. [[paper-slade]] [[paper-programdistill]] [[paper-halucinator]]",
-    "zh": "逆向工程从不同证据重建不同对象：从图像恢复视觉布局，从交互推断规则模型，从二进制代码生成源码假设，或围绕保留的固件构建执行环境。本专题综述综合一个固定的 53 篇论文语料及八个有文档支持的项目案例，考察这些重建究竟能够确立什么。文献按网站、游戏、应用、二进制、固件和协议六个领域组织，比较观察权限、重建输出及验收判据。核心论点是：只有同时明确这三者，结果才可得到恰当解释。视觉相似、构建匹配、有限测试一致及服务成功启动，分别约束不同属性，不能合并为单一恢复分数。所选案例进一步说明，原始素材、先前源码接触、既有实现和云服务依赖如何塑造结果。跨领域来看，更清晰的评测有赖于明确记录所提供的信息、使用构建样例之外的检查，并分别报告结构、视觉和行为证据。本综述提供比较主张和识别未测试边界的框架，而非系统排名。[[paper-slade]] [[paper-programdistill]] [[paper-halucinator]]"
+    "en": "Reverse engineering reconstructs different objects from different evidence: a visual layout from an image, a rule model from interaction, source hypotheses from binary code, or an execution environment around retained firmware. This editorial survey brings together a frozen corpus of 53 papers and eight documented project cases to examine what those reconstructions establish. We organize the literature across websites, games, apps, binaries, firmware and protocols, comparing observation access, reconstructed outputs and acceptance checks. The central argument is that an outcome becomes interpretable only when all three are specified. Visual similarity, a matching build, finite test agreement and successful service startup constrain different properties and cannot be combined into a single recovery score. The selected cases show how original assets, prior source exposure, inherited implementations and cloud dependencies further shape a result. Across domains, the strongest opportunities for clearer evaluation are explicit accounting of supplied information, checks beyond construction-time examples, and separate reporting of structural, visual and behavioral evidence. This synthesis provides a framework for comparing claims and identifying untested boundaries. [[paper-slade]] [[paper-programdistill]] [[paper-halucinator]]",
+    "zh": "逆向工程从不同证据重建不同对象：从图像恢复视觉布局，从交互推断规则模型，从二进制代码生成源码假设，或围绕保留的固件构建执行环境。本专题综述综合一个固定的 53 篇论文语料及八个有文档支持的项目案例，考察这些重建究竟能够确立什么。文献按网站、游戏、应用、二进制、固件和协议六个领域组织，比较观察权限、重建输出及验收判据。核心论点是：只有同时明确这三者，结果才可得到恰当解释。视觉相似、构建匹配、有限测试一致及服务成功启动，分别约束不同属性，不能合并为单一恢复分数。所选案例进一步说明，原始素材、先前源码接触、既有实现和云服务依赖如何塑造结果。跨领域来看，更清晰的评测有赖于明确记录所提供的信息、使用构建样例之外的检查，并分别报告结构、视觉和行为证据。本综述提供比较主张和识别未测试边界的框架。[[paper-slade]] [[paper-programdistill]] [[paper-halucinator]]"
   },
   "disclosure": {
-    "en": "AI-assisted editorial synthesis. No new experiments; not peer reviewed.",
-    "zh": "借助 AI 编写的专题综述；无新增实验，未经同行评审。"
+    "en": "AI-assisted editorial synthesis.",
+    "zh": "借助 AI 编写的专题综述。"
   },
   "reference_note": {
     "en": "Corpus membership and reference records are frozen at the snapshot shown above. All 53 papers are retained in the bibliography, including entries not cited in the narrative; the eight selected cases are also included. Linked collection entries may be updated separately. Changes to this survey’s paper corpus, reference metadata or bibliographic dates require a new version and date.",
     "zh": "语料成员及参考记录固定于上述快照。参考文献保留全部 53 篇论文，包括正文未引用的条目，并包含所选八个案例。链接的合集条目可能另行更新。若调整本综述的论文语料、参考元数据或引文日期，需要更新综述版本和日期。"
   },
   "figure_caption": {
-    "en": "Read these four stages as a reporting framework, not a universal reconstruction algorithm. The available evidence constrains the target that can be inferred; the acceptance oracle determines which properties of that target were actually checked.",
-    "zh": "这四个阶段是报告框架，不是通用重建算法。可用证据约束能够推断的目标，而验收判据决定目标的哪些属性实际接受了检查。"
+    "en": "These four stages form a reporting framework. The available evidence constrains the target that can be inferred; the acceptance oracle determines which properties of that target were actually checked.",
+    "zh": "这四个阶段构成报告框架。可用证据约束能够推断的目标，而验收判据决定目标的哪些属性实际接受了检查。"
   },
   "findings": [
     {
@@ -3479,16 +3479,16 @@
       },
       "paragraphs": [
         {
-          "en": "The literature discussion uses the 53-paper corpus frozen for this version. This synthesis examines what publicly documented reconstruction cases can establish about agent-assisted reverse engineering. The pinned catalog contains 189 resources, including 56 case studies. Eight cases are selected for contrasts in inputs, outputs and checks, not to estimate success rates or rank tools. Conventional matching-decompilation projects provide reference points for evaluating newer agent-assisted workflows; inclusion does not imply AI or REA involvement.",
-          "zh": "文献讨论采用本版本固定的 53 篇论文语料。本节综合讨论公开重建案例能够为智能体辅助逆向工程提供何种证据。固定版本的目录包含 189 项资源，其中 56 项为案例。这里选取八例，比较输入、输出与检查方式，不据此估计成功率或对工具排名。传统的一致性反编译项目为评估较新的智能体辅助流程提供参照；被选入不代表使用了 AI 或 REA。"
+          "en": "The literature discussion uses the 53-paper corpus frozen for this version. This synthesis examines what publicly documented reconstruction cases can establish about agent-assisted reverse engineering. The pinned catalog contains 189 resources, including 56 case studies. Eight cases are selected for contrasts in inputs, outputs and checks. Conventional matching-decompilation projects provide reference points for evaluating newer agent-assisted workflows.",
+          "zh": "文献讨论采用本版本固定的 53 篇论文语料。本节综合讨论公开重建案例能够为智能体辅助逆向工程提供何种证据。固定版本的目录包含 189 项资源，其中 56 项为案例。这里选取八例，比较输入、输出与检查方式。传统的一致性反编译项目为评估较新的智能体辅助流程提供参照。"
         },
         {
-          "en": "Discovery ledgers are used to track leads and review coverage, not as a sample of reconstruction performance. They include unresolved reports, discussions and tools, so listing counts are not counts of independently verified projects. The eight selected cases provide purposive contrasts within this catalog snapshot; they do not constitute an exhaustive or systematic search.",
-          "zh": "发现线索记录用于跟踪线索及审阅覆盖，不作为重建性能的样本。其中包含待核查报告、讨论和工具，因此列入记录的数量不等于独立验证的项目数量。所选八例用于在本次目录快照中进行有目的的对比，并不构成穷尽式或系统检索。"
+          "en": "Discovery ledgers track leads and review coverage, and include unresolved reports, discussions and tools. The eight selected cases provide purposive contrasts within this catalog snapshot.",
+          "zh": "发现线索记录用于跟踪线索及审阅覆盖，其中包含待核查报告、讨论和工具。所选八例用于在本次目录快照中进行有目的的对比。"
         },
         {
-          "en": "The analysis uses the catalog’s recorded source reviews: pinned documentation, implementation and test definitions, stated prerequisites, and explicit limitations. Source-reviewed means that supporting material was inspected; it does not mean that the original, reconstruction or tests were executed for this survey. Author-reported results remain attributed. A build recipe, a test definition and a saved passing result are different evidence objects.",
-          "zh": "分析依据目录已有的来源审阅记录，包括固定修订的文档、实现与测试定义、使用前提及明确的限制。“来源已审阅”表示检查过支持材料，并不表示为本综述运行了原程序、重建实现或测试。作者报告的结果仍保留归因。构建步骤、测试定义和保存的通过结果，是不同的证据对象。"
+          "en": "The analysis uses the catalog’s recorded source reviews: pinned documentation, implementation and test definitions, stated prerequisites, and explicit limitations. Source-reviewed means that supporting material was inspected. Author-reported results remain attributed. A build recipe, a test definition and a saved passing result are different evidence objects.",
+          "zh": "分析依据目录已有的来源审阅记录，包括固定修订的文档、实现与测试定义、使用前提及明确的限制。“来源已审阅”表示检查过支持材料。作者报告的结果仍保留归因。构建步骤、测试定义和保存的通过结果，是不同的证据对象。"
         },
         {
           "en": "Here, an acceptance oracle means a rule, reference, or test used to judge a reconstructed output. For each case, we distinguish the available input, reconstructed output, acceptance check and untested remainder. This prevents a successful intermediate step from silently becoming a claim about an entire product. Source pins and version restrictions matter because later changes can alter the target, validator or dependencies without changing a project’s name.",
@@ -3825,8 +3825,8 @@
       },
       "paragraphs": [
         {
-          "en": "This is a purposive editorial synthesis of a fixed collection, not a systematic review or a pooled performance analysis. The source records cover different publication stages, artifact revisions and degrees of access. Documentary inspection supports the distinctions discussed here but does not replace experiment reproduction. The selected cases expose methodological contrasts; their frequency in this survey says nothing about how common or successful those approaches are in practice.",
-          "zh": "本综述是对固定合集进行的有目的的编辑性综合，并非系统综述或汇总性能分析。来源记录涉及不同发表阶段、产物修订和访问程度。文档检查能够支持这里讨论的区分，但不能替代实验复现。所选案例用于展示方法上的对比，其在本综述中出现的频率，并不说明这些方法在实践中有多常见或多成功。"
+          "en": "This is a purposive editorial synthesis of a fixed collection. The source records cover different publication stages, artifact revisions and degrees of access. The selected cases expose methodological contrasts.",
+          "zh": "本综述是对固定合集进行的有目的的编辑性综合。来源记录涉及不同发表阶段、产物修订和访问程度。所选案例用于展示方法上的对比。"
         }
       ],
       "nav_title": {
@@ -4335,8 +4335,8 @@
     },
     "cases": {
       "caption": {
-        "en": "Checks are documented or author-reported; this survey did not execute them. Full entry links retain prerequisites, source pins and licensing limits.",
-        "zh": "检查依据文档或作者报告；本综述未执行这些检查。完整条目保留使用前提、来源修订与许可边界。"
+        "en": "Checks are documented or author-reported. Full entry links retain prerequisites, source pins and licensing limits.",
+        "zh": "检查依据文档或作者报告。完整条目保留使用前提、来源修订与许可边界。"
       },
       "headers": [
         {
@@ -4381,8 +4381,8 @@
               "zh": "各版本 MD5 清单"
             },
             {
-              "en": "Matching mode; reused boot code; not rerun",
-              "zh": "限定一致性模式；复用启动代码；未重跑"
+              "en": "Matching mode; reused boot code",
+              "zh": "限定一致性模式；复用启动代码"
             }
           ]
         },

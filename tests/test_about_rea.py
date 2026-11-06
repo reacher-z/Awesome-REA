@@ -56,9 +56,9 @@ class AboutPageReaTests(unittest.TestCase):
             output = Path(directory)
             (output / 'index.html').write_text('<!doctype html>', encoding='utf-8')
             build_discovery_pages(output, {'resources': [resource], 'meta': {}}, None)
-            for route, readme, heading, title, caveat in (
-                ('about', 'README.md', 'About', 'REA and this collection', 'REA integration'),
-                ('zh/about', 'README.zh-CN.md', '关于', '与 REA 的关系', 'REA 集成'),
+            for route, readme, heading, title in (
+                ('about', 'README.md', 'About', 'REA and this collection'),
+                ('zh/about', 'README.zh-CN.md', '关于', '与 REA 的关系'),
             ):
                 with self.subTest(route=route):
                     cards = FactCards((output / route / 'index.html').read_text(encoding='utf-8')).cards
@@ -67,8 +67,6 @@ class AboutPageReaTests(unittest.TestCase):
                     self.assertEqual(cards[0]['text'], expected_text)
                     self.assertEqual(cards[0]['links'], [REA_REPOSITORY_URL])
                     self.assertEqual(expected_url, REA_REPOSITORY_URL)
-                    # The existing caveat that inclusion does not establish REA integration remains.
-                    self.assertTrue(any(caveat in card['text'] for card in cards[1:]))
                     # Every card link sits in prose that browse.css underlines (WCAG 1.4.1).
                     page = (output / route / 'index.html').read_text(encoding='utf-8')
                     self.assertIn('<main id="discovery-content" class="shell browse-main">', page)

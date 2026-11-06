@@ -242,7 +242,7 @@ def _resource_content(record: dict, language: str, discussion: str = '', feedbac
 <nav class="entry-actions" aria-label="{label('Resource links', '资源链接')}">{''.join(links)}</nav>
 <section class="entry-section" aria-labelledby="entry-requirements"><h2 id="entry-requirements">{escape(REQUIREMENTS_LABEL[zh])}</h2><ul class="entry-requirements">{requirements}</ul></section>
 <section class="entry-section" aria-labelledby="entry-review"><h2 id="entry-review">{label('About this entry', '关于此条目')}</h2>
-<p class="entry-review-note">{label('The description was reviewed against primary sources. This does not establish runtime testing, security auditing or verified compatibility.', '说明已依据一手来源复核；这不代表已运行验证、经过安全审计或确认兼容。')}</p>{feedback}</section>
+<p class="entry-review-note">{label('The description was reviewed against primary sources.', '说明已依据一手来源复核。')}</p>{feedback}</section>
 {discussion}{_sources([record['evidence_url'], *record.get('additional_evidence_urls', [])], language)}'''
     return title, description, content
 
@@ -281,7 +281,7 @@ def _paper_content(paper: dict, language: str, discussion: str = '', feedback: s
 <section class="entry-section" aria-labelledby="entry-citation"><h2 id="entry-citation">{label('Publication and review details', '发表与复核详情')}</h2>{_definitions(facts)}
 <p>{escape(paper['metadata_notes_zh' if zh else 'metadata_notes'])}</p>
 <p class="entry-reviewed">{label('Sources reviewed', '来源复核于')} <time datetime="{escape(paper['verified_at'], quote=True)}">{escape(paper['verified_at'][:10])}</time></p>
-<p class="entry-review-note">{label('Source review only; experiments were not rerun for this collection. Cite the original authors using the linked paper or BibTeX.', '本合集仅做来源复核，未重新运行论文实验。请通过原始论文或 BibTeX 引用原作者。')}</p>{feedback}</section>
+<p class="entry-review-note">{label('Reviewed against the paper and its primary sources. Cite the original authors using the linked paper or BibTeX.', '已依据论文及一手来源复核。请通过原始论文或 BibTeX 引用原作者。')}</p>{feedback}</section>
 {discussion}{_sources(paper['evidence_urls'], language)}'''
     return title, description, content
 

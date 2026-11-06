@@ -67,8 +67,8 @@ class BrowseLastPushTests(unittest.TestCase):
                                repository_url='https://github.com/reacher-z/Awesome-REA', styles_href='/styles.css',
                                browse_styles_href='/browse.css', favicon_href='/favicon.svg',
                                social_image_href='https://awesomerea.org/social-card.png', data_revision='0' * 16)
-            for prefix, note in (('', 'Stars and last-push months are collection-time snapshots and do not indicate whether a project is maintained.'),
-                                 ('zh/', '星标和最近推送月份均为采集时快照，不代表项目是否仍在维护。')):
+            for prefix, note in (('', 'Stars and last-push months are collection-time snapshots.'),
+                                 ('zh/', '星标和最近推送月份均为采集时快照。')):
                 self.assertIn(note, (output / prefix / 'browse/index.html').read_text())
                 cards = 0
                 for page in (output / prefix / 'browse').glob('*/index.html'):

@@ -557,12 +557,10 @@ async function staticPage(page, route, viewport) {
     const review = await page.$eval('#review-method', section => ({
       title: section.querySelector('h2').textContent,
       dimensions: [...section.querySelectorAll('dt')].map(node => node.textContent),
-      runtime: section.querySelector('dl > div:last-child dd').textContent,
       visible: section.getClientRects().length > 0 && !section.closest('details'),
     }));
     assert(review.visible && review.title.includes('Beta'), `${label}: review method is visible before opening disclosures`);
-    assert.equal(review.dimensions.length, 4, `${label}: separate scope, artifacts, evidence and runtime`);
-    assert(review.runtime.includes(route.startsWith('/zh/') ? '尚未独立实测' : 'without independent runtime tests'), `${label}: runtime boundary remains visible`);
+    assert.equal(review.dimensions.length, 3, `${label}: separate scope, artifacts and evidence`);
   }
 }
 

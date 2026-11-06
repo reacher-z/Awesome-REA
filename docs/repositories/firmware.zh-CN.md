@@ -4,7 +4,7 @@
 
 **228 个仓库** · 2026-10-20 UTC
 
-这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
+这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
 - [ReFirmLabs/binwalk](https://github.com/ReFirmLabs/binwalk) — 固件分析工具。 **[14,491 星标]** · 精选：[Binwalk](https://awesomerea.org/zh/resources/binwalk/)
 - [LongSoft/UEFITool](https://github.com/LongSoft/UEFITool) — UEFI 固件镜像查看与编辑工具 **[5,752 星标]** · 精选：[UEFITool 固件镜像分析工具](https://awesomerea.org/zh/resources/uefitool/)

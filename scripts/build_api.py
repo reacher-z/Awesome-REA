@@ -40,13 +40,11 @@ CANDIDATE_LIMIT = 1_000
 ENDPOINTS = ('resources', 'papers', 'categories', 'candidates', 'changes')
 TITLES = ('Static JSON and CSV API', '静态 JSON 与 CSV API')
 REVIEW_NOTE = ('Curated resources and papers are source-reviewed: descriptions were checked against primary '
-               'documentation, which does not establish runtime testing, security or compatibility.',
-               '精选资源与论文均经来源复核：说明已依据一手文档核对，不代表已运行验证、经过安全审计或确认兼容。')
-CANDIDATE_NOTE = ('Unreviewed candidates: automated README scans and links that followed public lists name. Nobody has '
-                  'read their sources, translated, run or judged them; promoting one means writing a new '
-                  'source-reviewed record.',
-                  '未审核的候选：自动 README 扫描结果，以及所关注的公开列表中列出的链接。尚无人阅读其来源、翻译、运行或评估；'
-                  '收录某项需另写一条经来源审核的记录。')
+               'documentation.',
+               '精选资源与论文均经来源复核：说明已依据一手文档核对。')
+CANDIDATE_NOTE = ('Unreviewed candidates: automated README scans and links that followed public lists name. Promoting '
+                  'one means writing a new source-reviewed record.',
+                  '未审核的候选：自动 README 扫描结果，以及所关注的公开列表中列出的链接。收录某项需另写一条经来源审核的记录。')
 CSV_COLUMNS = {
     'resources': ('id', 'name', 'name_zh', 'kind', 'category', 'relationship', 'targets', 'url', 'evidence_url',
                   'description_en', 'description_zh', 'requirements', 'requirements_zh', 'added_at', 'verified_at',
@@ -384,7 +382,7 @@ def api_page(language: str, index: dict, site_url: str) -> tuple[str, str, str, 
         ('resources', choose('Curated resources: stable IDs, bilingual names and descriptions, requirements, evidence and review dates.', '精选资源：稳定 ID、中英文名称与说明、使用条件、证据与复核日期。')),
         ('papers', choose('The research bibliography: identifiers, dates and their basis, limits and sources; no names where authors are omitted.', '研究文献：标识、日期及其依据、研究边界与来源；作者省略的论文不列姓名。')),
         ('categories', choose('Curated categories, sections, kinds, targets and relationships with counts, plus the repository categories.', '精选分类、分区、类型、目标与关联及其数量，以及仓库分类。')),
-        ('candidates', choose('Unreviewed automated discoveries and followed-source leads, newest first; never curated entries.', '未审核的自动发现与关注来源线索，按时间从新到旧；不是精选条目。')),
+        ('candidates', choose('Unreviewed automated discoveries and followed-source leads, newest first.', '未审核的自动发现与关注来源线索，按时间从新到旧。')),
         ('changes', choose('Additions, later source reviews and discovery batches in the 30 days before generated_at.', 'generated_at 之前 30 天内的新增、后续来源复核与发现批次。')),
     ]
     # A list, not a table: it wraps at every width with the shared page styles.

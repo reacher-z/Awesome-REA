@@ -4,7 +4,7 @@
 
 **152 repositories** · 2026-10-20 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
+These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [x64dbg/x64dbg](https://github.com/x64dbg/x64dbg) — An open-source user mode debugger for Windows. Optimized for reverse engineering and malware analysis. **[49,888 stars]** · Curated: [x64dbg](https://awesomerea.org/resources/x64dbg/)
 - [frida/frida](https://github.com/frida/frida) — Main repo for hosting release binaries **[22,317 stars]** · Curated: [Frida](https://awesomerea.org/resources/frida/)

@@ -18,6 +18,10 @@ Awesome Reverse Engineering Anything is an independent resource catalog, not the
 - Never edit generated README blocks, the paper lists `docs/papers.md` and `docs/papers.zh-CN.md`, the case lists `docs/cases.md` and `docs/cases.zh-CN.md`, `docs/repositories/` or case-coverage summaries by hand. Follow the relevant generator commands in CONTRIBUTING.md. Do not add proprietary binaries, private captures, credentials or local personal paths.
 - Use the repository's current schema. Submit changes to validators/vocabulary before data that depends on those new rules, because PR review runs the base branch's validators.
 
+## Copy
+
+No defensive writing in anything a visitor reads, in English or Chinese: no disclaimers, self-justifying asides, "this is not X" or "does not imply Y" sentences, and no labels that explain who made something. State what a thing is and stop. Accuracy belongs in structured facts such as status labels, review dates and license fields. Where a promoted item needs a label, use "Featured" / 精选.
+
 ## Validate and submit
 
 For resource changes, regenerate both READMEs and repository directories, then validate:

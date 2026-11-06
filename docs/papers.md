@@ -18,7 +18,7 @@
 - [Firmware analysis and rehosting](#firmware-analysis-and-rehosting) (20)
 - [Protocol inference and analysis](#protocol-inference-and-analysis) (20)
 
-Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation. Some papers also appear among curated resources; counts are not additive.
+Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation.
 
 <a id="papers-agent-evaluation"></a>
 ## Reverse-engineering agent evaluation

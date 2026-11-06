@@ -50,7 +50,7 @@ class TwinTests(unittest.TestCase):
         # Sources are numbered once each.
         self.assertEqual(text.count('<https://ghidra-sre.org/>'), 1)
         self.assertIn('1. <https://github.com/NationalSecurityAgency/ghidra/blob/864999d/README.md>\n2. <https://ghidra-sre.org/>', text)
-        self.assertIn('does not establish runtime testing', text)
+        self.assertIn('The description was reviewed against primary sources.', text)
         self.assertNotIn('never published', text)
 
     def test_chinese_twin_and_section_links(self):
@@ -108,7 +108,7 @@ class TwinTests(unittest.TestCase):
         self.assertIn('### A [Bracketed] Study\n', full)
         self.assertIn(f'<{ORIGIN}/resources/ghidra/>', full)
         # The review note is stated once, not under every entry, and the twin links are left out.
-        self.assertEqual(full.count('does not establish runtime testing'), 1)
+        self.assertEqual(full.count('The description was reviewed against primary sources.'), 1)
         self.assertNotIn('record.json', full)
 
 

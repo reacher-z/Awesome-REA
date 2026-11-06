@@ -12,8 +12,8 @@ from urllib.parse import parse_qs, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_discovery_pages import NAMED_ELSEWHERE_LIMIT, SECTION_TARGETS, build_discovery_pages
-from build_readme import TARGETS, collection_section
+from build_discovery_pages import SECTION_TARGETS, build_discovery_pages
+from build_readme import collection_section
 from build_site import default_targets
 from catalog import load_resources
 from curated_translations import read_curated_translations
@@ -35,13 +35,10 @@ LINE = re.compile(r'<p class="section-target-count" data-section-target="([a-z]+
 ROUTES = ('/resources/', '/zh/resources/', '/cases/', '/zh/cases/')
 # A top-level section starts at its own heading; sub-group sections are labelled by two IDs and stay inside it.
 SECTION = re.compile(r'<section (?:class="case-section" id="cases-([a-z-]+)"|aria-labelledby="heading-([a-z-]+)")')
-# The visible numbers of a count line, per language: tagged, filed elsewhere, listed here without the tag.
-VISIBLE = {
-    'en': (r'^(\d+) (?:entry|entries|case|cases) tagged ', r' · (\d+) filed in (?:another section|other sections)',
-           r' · (\d+) listed here by category without the (.+?) tag'),
-    'zh': (r'^(\d+) (?:项|个案例)带“', r' · 其中 (\d+) (?:项|个)归入其他(?:分区|主题)',
-           r' · 另有 (\d+) (?:项|个)按分类列于本节但不带“(.+?)”标签'),
-}
+# The visible number of a count line, per language: entries carrying the tag.
+VISIBLE = {'en': r'^(\d+) (?:entry|entries|case|cases) tagged ', 'zh': r'^(\d+) (?:项|个案例)带“'}
+# More entries than one screen of links would hold, so the fixture also covers a long tail.
+MANY = 9
 
 
 def build(resources):
@@ -90,12 +87,12 @@ def fixture():
         record('web-case', ['website']),
         record('wasm-case', ['app'], 'case-study', 'web-analysis'),
         record('wasm-tool', ['binary'], 'tool', 'webassembly', 'foundation'),
-        *[record(f'app-tracer-{index}', ['app'], 'tool', 'dynamic-analysis', 'foundation') for index in range(NAMED_ELSEWHERE_LIMIT + 1)],
+        *[record(f'app-tracer-{index}', ['app'], 'tool', 'dynamic-analysis', 'foundation') for index in range(MANY + 1)],
         record('protocol-case', ['protocol']),
         record('app-case', ['app', 'protocol']),
         record('protocol-tool', ['protocol', 'binary'], 'tool', 'protocol-analysis', 'foundation'),
         record('native-tool', ['binary'], 'tool', 'native-analysis', 'foundation'),
-        *[record(f'game-tool-{index}', ['game', 'binary'], 'tool', 'game-analysis', 'foundation') for index in range(NAMED_ELSEWHERE_LIMIT + 1)],
+        *[record(f'game-tool-{index}', ['game', 'binary'], 'tool', 'game-analysis', 'foundation') for index in range(MANY + 1)],
         record('reference', ['website'], 'documentation', 'learning', 'learning'),
     ]
 
@@ -125,45 +122,29 @@ class SectionTargetCountTests(unittest.TestCase):
             # Non-target sections (here References and learning) get no tag line.
             self.assertEqual(self.html[route].count('class="section-target-count"'), len(expected))
         self.assertEqual(self.lines('/resources/')['protocol'][:3], (3, 1, 0))
-        self.assertEqual(self.lines('/resources/')['binary'][:3], (NAMED_ELSEWHERE_LIMIT + 4, NAMED_ELSEWHERE_LIMIT + 3, NAMED_ELSEWHERE_LIMIT + 1))
+        self.assertEqual(self.lines('/resources/')['binary'][:3], (MANY + 4, MANY + 3, MANY + 1))
         self.assertEqual(self.lines('/resources/')['website'][:3], (2, 1, 2))
         self.assertEqual(self.lines('/cases/')['protocol'][:3], (2, 1, 0))
         self.assertEqual(self.lines('/cases/')['website'][:3], (1, 0, 1))
 
-    def test_links_open_the_matching_homepage_filter_and_name_few_entries(self):
+    def test_each_line_states_the_count_and_links_the_matching_homepage_filter(self):
         for route in self.html:
             zh, cases = route.startswith('/zh/'), '/cases/' in route
             for target, (tagged, elsewhere, untagged, body) in self.lines(route).items():
                 hrefs = [unescape(href) for href in re.findall(r'href="([^"]+)"', body)]
-                filter_url = urlsplit(hrefs[-1])
+                self.assertEqual(len(hrefs), 1, (route, target))
+                filter_url = urlsplit(hrefs[0])
                 self.assertEqual(filter_url.path, '/zh/' if zh else '/')
                 self.assertEqual(filter_url.fragment, 'catalog')
                 query = {key: values[0] for key, values in parse_qs(filter_url.query).items()}
                 self.assertEqual(query, {'view': 'curated', 'target': target, **({'kind': 'case-study'} if cases else {}),
                                          **({} if zh else {'lang': 'en'})})
-                section = next(key for key, value in SECTION_TARGETS.items() if value == target)
-                listed = [row for row in self.resources if not cases or row['kind'] == 'case-study']
-                # Few entries filed elsewhere, then few listed here without the tag, are named in that order.
-                pools = ([row for row in listed if target in row['targets'] and collection_section(row) != section],
-                         [row for row in listed if target not in row['targets'] and collection_section(row) == section])
-                self.assertEqual((elsewhere, untagged), tuple(map(len, pools)))
-                named = [('/zh' if zh else '') + f"/resources/{row['id']}/"
-                         for pool in pools if len(pool) <= NAMED_ELSEWHERE_LIMIT for row in pool]
-                self.assertEqual(hrefs[:-1], named, (route, target))
         english = self.lines('/resources/')['protocol'][3]
-        self.assertIn('3 entries tagged Protocol · 1 filed in another section: <a href="/resources/app-case/">Example app-case</a> · <a ', english)
+        self.assertTrue(english.startswith('3 entries tagged Protocol · <a '), english)
         self.assertIn('aria-label="Show all 3 entries tagged Protocol in search">Show all 3 →</a>', english)
         chinese = self.lines('/zh/cases/')['protocol'][3]
-        self.assertIn('2 个案例带“协议”标签 · 其中 1 个归入其他主题：<a href="/zh/resources/app-case/">示例 app-case</a>', chinese)
+        self.assertTrue(chinese.startswith('2 个案例带“协议”标签 · <a '), chinese)
         self.assertIn('查看全部 2 个 →', chinese)
-        self.assertIn('2 entries tagged Website · 1 filed in another section: <a href="/resources/reference/">Example reference</a>'
-                      ' · 2 listed here by category without the Website tag: <a href="/resources/wasm-case/">Example wasm-case</a>, '
-                      '<a href="/resources/wasm-tool/">Example wasm-tool</a> · <a ', self.lines('/resources/')['website'][3])
-        self.assertIn('1 个案例带“网站”标签 · 均在本节 · 另有 1 个按分类列于本节但不带“网站”标签：'
-                      '<a href="/zh/resources/wasm-case/">示例 wasm-case</a> · <a ', self.lines('/zh/cases/')['website'][3])
-        # More than NAMED_ELSEWHERE_LIMIT entries listed here without the tag are counted, not named.
-        self.assertIn(f' · {NAMED_ELSEWHERE_LIMIT + 1} listed here by category without the Binary tag · <a ', self.lines('/resources/')['binary'][3])
-        self.assertIn(f' · 另有 {NAMED_ELSEWHERE_LIMIT + 1} 项按分类列于本节但不带“二进制”标签 · <a ', self.lines('/zh/resources/')['binary'][3])
 
     def test_each_card_still_renders_once_and_chip_counts_match_sections(self):
         for route, text in self.html.items():
@@ -181,7 +162,7 @@ class SectionTargetCountTests(unittest.TestCase):
 
 class SectionCountReconciliationTests(unittest.TestCase):
     """On both pages and in both languages, every section's count equals its cards and, for a target section,
-    tagged, minus filed elsewhere, plus listed here without the tag, as both the attributes and the visible text state."""
+    tagged, minus filed elsewhere, plus listed here without the tag, as the attributes state; the line shows the tagged count."""
 
     def assert_reconciled(self, pages, resources):
         for route, html in pages.items():
@@ -199,12 +180,7 @@ class SectionCountReconciliationTests(unittest.TestCase):
                     line_target, tagged, elsewhere, untagged, text = row['line']
                     self.assertEqual(line_target, target)
                     self.assertEqual(row['cards'], tagged - elsewhere + untagged, text)
-                    first, filed, unlabelled = VISIBLE[language]
-                    shown = re.search(unlabelled, text)
-                    self.assertEqual((int(re.match(first, text)[1]), int((re.search(filed, text) or [0, 0])[1]),
-                                      int(shown[1]) if shown else 0), (tagged, elsewhere, untagged), text)
-                    if shown:
-                        self.assertEqual(shown[2], TARGETS[target][language == 'zh'])
+                    self.assertEqual(int(re.match(VISIBLE[language], text)[1]), tagged, text)
 
     def test_fixture_sections_reconcile(self):
         self.assert_reconciled(build(fixture()), fixture())
