@@ -10,13 +10,16 @@ import re
 from urllib.parse import urlsplit
 
 MANIFEST_NAME = 'build-manifest.json'
-HTML_NORMALIZATION = 'cloudflare-public-html-v4'
+HTML_NORMALIZATION = 'cloudflare-public-html-v5'
 CONTROL_FILES = {'CNAME', '.nojekyll', '_headers', '_redirects'}
 FONT_SUFFIXES = {'.woff', '.woff2', '.ttf', '.otf', '.eot'}
 PRIVATE_NAMES = re.compile(r'(?i)^(?:\.env(?:\..*)?|credentials?(?:[.-].*)?|secrets?(?:[.-].*)?)$')
 EMPTY_SCRIPT = re.compile(r'<script\b[^>]*>\s*</script>\s*', re.I)
 EMAIL_ANCHOR = re.compile(r'<a\b[^>]*>\[email&#160;protected\]</a>')
 EMAIL_SCRIPT = re.compile(r'<script\b[^>]*>\s*</script>', re.I)
+# A star count as site_shell.star_count() writes it. The production build reads the counts when it runs, so two
+# builds of one commit can differ here and nowhere else, and a new star is no reason to notify search engines.
+STAR_COUNT = re.compile(rb'(<span class="[a-z-]+" data-stars="[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+">)[0-9]+(?:\.[0-9]k)?(</span>)')
 
 
 class _TagAttributes(HTMLParser):
@@ -74,8 +77,12 @@ class _ElementSpans(HTMLParser):
             self.anchor = None
 
 
+def without_star_counts(content: bytes) -> bytes:
+    return STAR_COUNT.sub(rb'\1\2', content)
+
+
 def normalized_html_bytes(content: bytes) -> bytes:
-    """Reverse recognized Cloudflare analytics and public-email transformations.
+    """Reverse recognized Cloudflare analytics and public-email transformations and blank star counts.
 
     Page markup, text, structured data, asset revisions, and other scripts remain
     byte-sensitive. Unexpected attributes or inline code are never discarded.
@@ -154,7 +161,7 @@ def normalized_html_bytes(content: bytes) -> bytes:
             replacements.append((start, end, replacement))
     for start, end, replacement in reversed(replacements):
         text = text[:start] + replacement + text[end:]
-    return text.encode('utf-8')
+    return without_star_counts(text.encode('utf-8'))
 
 
 def html_digest(content: bytes) -> str:
@@ -180,8 +187,10 @@ def collect_manifest(site_dir: Path) -> dict:
         if not path.is_file() or path.suffix.lower() in FONT_SUFFIXES:
             continue
         content = path.read_bytes()
-        item = {'sha256': hashlib.sha256(content).hexdigest(), 'bytes': len(content)}
-        if path.suffix.lower() == '.html':
+        html = path.suffix.lower() == '.html'
+        hashed = without_star_counts(content) if html else content
+        item = {'sha256': hashlib.sha256(hashed).hexdigest(), 'bytes': len(hashed)}
+        if html:
             item['html_sha256'] = html_digest(content)
         files[relative] = item
     if 'index.html' not in files or 'sitemap.xml' not in files:

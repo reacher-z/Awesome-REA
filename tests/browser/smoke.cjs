@@ -266,6 +266,8 @@ async function homepageScrolledSearch(page, language, viewport) {
     return getComputedStyle(node).visibility === 'visible' && node.getBoundingClientRect().top >= 0;
   }, {}, opener);
   assert(await shown(opener), `${label}: search shows once the hero field is gone`);
+  const star = phone ? '.mbar-star' : '.site-header .star-btn';
+  assert(await shown(star) && await page.$eval(star, node => node.getBoundingClientRect().top >= 0), `${label}: the star stays on screen after scrolling`);
   if (!phone) assert.equal(await page.$eval('.search-trigger', node => node.getBoundingClientRect().left), before, `${label}: the header does not shift`);
   const place = await page.evaluate(() => window.scrollY);
   const box = await page.$eval(opener, node => { const rect = node.getBoundingClientRect(); return {x: rect.left + rect.width / 2, y: rect.top + rect.height / 2}; });

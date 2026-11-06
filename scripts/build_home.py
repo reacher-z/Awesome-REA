@@ -17,7 +17,7 @@ from asset_paths import fingerprinted_href
 from build_readme import CATEGORIES, KIND_LABELS, TARGETS, lead_sentence, paper_section, papers_newest_first
 from home_art import exploded_view
 from site_footer import site_footer
-from site_shell import announcement_bar, compact_count, header, head_early, icon, mobile_bar, palette, plain_language_link, repository_stars, shell_assets, sprite
+from site_shell import announcement_bar, header, head_early, icon, mobile_bar, palette, plain_language_link, shell_assets, sprite, star_button, star_count
 
 ROOT = Path(__file__).resolve().parents[1]
 # Three-letter domain and four-letter kind codes form the call number on every card, such as BIN·TOOL.
@@ -154,7 +154,7 @@ def _folder_tabs(resources: list[dict], language: str, prefix: str) -> str:
     return f'<nav class="folders" aria-label="{text["domains"]}">{"".join(tabs)}</nav>'
 
 
-def _masthead(resources, papers, discovery_count, last_scan, language, prefix) -> str:
+def _masthead(resources, papers, discovery_count, last_scan, language, prefix, repository_url) -> str:
     text = COPY[language]
     stats = text['stats'].format(res=_count(len(resources)), pap=_count(len(papers)), idx=_count(discovery_count))
     updated = (f'<p class="updated">{text["updated"]} <time datetime="{_e(last_scan)}" data-rel>{_e(last_scan[:10])}</time></p>' if last_scan else '')
@@ -167,7 +167,7 @@ def _masthead(resources, papers, discovery_count, last_scan, language, prefix) -
             f'<span class="hs-side"><span class="hs-count" id="hs-count" aria-live="polite" data-search-count></span>'
             f'<button class="hs-clear" type="button" aria-label="{text["clear"]}" data-search-clear>{icon("close")}</button>'
             f'<kbd class="hs-kbd" title="{text["focus"]}">/</kbd></span></form>'
-            f'<div class="hero-stats"><p>{stats}</p>{updated}</div>{_folder_tabs(resources, language, prefix)}'
+            f'<div class="hero-meta">{star_button(language, repository_url, "hero-star")}<div class="hero-stats"><p>{stats}</p>{updated}</div></div>{_folder_tabs(resources, language, prefix)}'
             f'</div></section>')
 
 
@@ -194,8 +194,8 @@ def _drawer(resources, order, language, prefix) -> str:
             f'<p class="note">{text["drawer_note"]}</p></div></div></section>')
 
 
-# The featured benchmarks. They carry no review stamp until they have catalog records.
-BENCHMARKS = (
+# The featured projects, WebsiteBench first. They carry no review stamp until they have catalog records.
+FEATURED_PROJECTS = (
     {'name': 'WebsiteBench', 'repository': 'TIGER-AI-Lab/WebsiteBench', 'project': 'https://website-bench.com/',
      'leaderboard': 'https://website-bench.com/#results',
      'en': ('Can AI agents rebuild websites through browser exploration?',
@@ -206,25 +206,27 @@ BENCHMARKS = (
      'leaderboard': 'https://huggingface.co/spaces/TIGER-Lab/ClawBench',
      'en': ('Can AI agents complete everyday online tasks?', 'An open-source benchmark for browser AI agents on daily tasks.'),
      'zh': ('AI 智能体能否完成日常在线任务？', '面向浏览器 AI 智能体日常任务的开源基准。')},
+    {'name': 'Awesome CUA', 'repository': 'reacher-z/Awesome-CUA', 'project': 'https://awesomecua.com/',
+     'en': ('The sister catalogue for computer-use agents.', 'Computer-use research, data and tools, reviewed.'),
+     'zh': ('计算机使用智能体的姊妹目录。', '经审核的计算机使用研究、数据与工具。')},
 )
-BENCHMARK_TEXT = {
+FEATURED_TEXT = {
     'en': {'label': 'Featured', 'star': 'Star {name}', 'leaderboard': 'Leaderboard', 'project': 'Project page'},
     'zh': {'label': '精选', 'star': '为 {name} 加星', 'leaderboard': '排行榜', 'project': '项目主页'},
 }
 
 
-def _maintainer_benchmarks(language: str) -> str:
-    text = BENCHMARK_TEXT[language]
+def _featured_projects(language: str) -> str:
+    text = FEATURED_TEXT[language]
     cards = []
-    for position, benchmark in enumerate(BENCHMARKS):
-        question, detail = benchmark[language]
-        stars = repository_stars(benchmark['repository'])
-        count = f'<span class="btn-count">{compact_count(stars)}</span>' if stars is not None else ''
+    for position, project in enumerate(FEATURED_PROJECTS):
+        question, detail = project[language]
+        leaderboard = f'<a class="btn" href="{project["leaderboard"]}" rel="noopener">{text["leaderboard"]}</a>' if project.get('leaderboard') else ''
+        count = star_count(project['repository'], 'btn-count')
         cards.append(f'<article class="promo-card{" promo-lead" if position == 0 else ""}">'
-                     f'<h3 class="promo-name">{benchmark["name"]}</h3><p class="promo-question">{_e(question)}</p><p class="promo-detail">{_e(detail)}</p>'
-                     f'<p class="promo-actions"><a class="btn btn-primary" href="https://github.com/{benchmark["repository"]}" rel="noopener">{icon("star")}{text["star"].format(name=benchmark["name"])}{count}</a>'
-                     f'<a class="btn" href="{benchmark["leaderboard"]}" rel="noopener">{text["leaderboard"]}</a>'
-                     f'<a class="btn" href="{benchmark["project"]}" rel="noopener">{text["project"]}</a></p></article>')
+                     f'<h3 class="promo-name">{project["name"]}</h3><p class="promo-question">{_e(question)}</p><p class="promo-detail">{_e(detail)}</p>'
+                     f'<p class="promo-actions"><a class="btn btn-primary" href="https://github.com/{project["repository"]}" rel="noopener">{icon("star")}{text["star"].format(name=project["name"])}{count}</a>'
+                     f'{leaderboard}<a class="btn" href="{project["project"]}" rel="noopener">{text["project"]}</a></p></article>')
     return (f'<section class="wrap promo" aria-labelledby="promo-title"><div class="promo-head"><h2 class="promo-label" id="promo-title">{text["label"]}</h2>'
             f'</div><div class="promo-grid">{"".join(cards)}</div></section>')
 
@@ -251,8 +253,8 @@ def render_homepage(*, site_dir: Path, explorer_html: str, resources: list[dict]
     body = (f'<a class="skip" href="#main">{"跳到正文" if zh else "Skip to content"}</a>'
             + announcement_bar(language)
             + header(language, '', plain_language_link(language, '/' if zh else '/zh/'), repository_url)
-            + mobile_bar(language)
-            + f'<main id="main">{_masthead(resources, papers, discovery_count, last_scan, language, prefix)}{_drawer(resources, order, language, prefix)}{_maintainer_benchmarks(language)}</main>'
+            + mobile_bar(language, repository_url)
+            + f'<main id="main">{_masthead(resources, papers, discovery_count, last_scan, language, prefix, repository_url)}{_drawer(resources, order, language, prefix)}{_featured_projects(language)}</main>'
             + site_footer(language, note=_e(text['licence']), repository_url=repository_url, repository_export=repository_export)
             + palette(language))
     return (f'<!doctype html>\n<html lang="{locale}" data-site="rea" class="no-js">\n<head>{head}\n'

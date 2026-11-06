@@ -10,7 +10,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 
-from build_home import COPY, FEATURED, KIND_CODES, evidence_label, search_index  # noqa: E402
+from build_home import COPY, FEATURED, KIND_CODES, _featured_projects, evidence_label, search_index  # noqa: E402
 from site_footer import site_footer  # noqa: E402
 import site_shell  # noqa: E402
 
@@ -84,6 +84,26 @@ class ShellTests(unittest.TestCase):
         self.assertEqual(site_shell.compact_count(1032), '1.0k')
         self.assertEqual(site_shell.compact_count(1049), '1.0k')
         self.assertEqual(site_shell.compact_count(950), '950')
+
+    def test_star_action_is_on_every_header_and_the_phone_bar_in_both_languages(self):
+        for language, label in (('en', 'Star on GitHub'), ('zh', '在 GitHub 上加星')):
+            for chrome in (site_shell.header(language, '', '', REPOSITORY), site_shell.mobile_bar(language, REPOSITORY)):
+                self.assertIn('class="star-btn', chrome)
+                self.assertIn(f'href="{REPOSITORY}"', chrome)
+                self.assertIn(f'<span class="star-long">{label}</span><span class="star-short">Star</span>', chrome)
+                self.assertIn('data-stars="reacher-z/Awesome-REA"', chrome)
+
+    def test_footer_stars_the_sister_catalogue_in_both_languages(self):
+        for language in ('en', 'zh'):
+            footer = site_footer(language, note='', repository_url=REPOSITORY)
+            self.assertIn('href="https://github.com/reacher-z/Awesome-CUA"', footer)
+            self.assertIn('data-stars="reacher-z/Awesome-CUA"', footer)
+
+    def test_homepage_features_each_repository_with_websitebench_first(self):
+        for language in ('en', 'zh'):
+            html = _featured_projects(language)
+            order = [html.index(f'https://github.com/{repository}"') for repository in ('TIGER-AI-Lab/WebsiteBench', 'TIGER-AI-Lab/ClawBench', 'reacher-z/Awesome-CUA')]
+            self.assertEqual(order, sorted(order))
 
     def test_footer_fills_the_last_scan_at_runtime_and_stays_byte_stable(self):
         footer = site_footer('en', note='', repository_url=REPOSITORY)
