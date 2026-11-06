@@ -30,7 +30,6 @@ READMES = {'en': 'README.md', 'zh': 'README.zh-CN.md'}
 # README's GitHub rendering limit.
 PAPER_FILES = {'en': 'docs/papers.md', 'zh': 'docs/papers.zh-CN.md'}
 RECENT_PAPERS = 10
-HUGGING_FACE_DATASET = 'https://huggingface.co/datasets/AgPerry/awesome-rea'
 RESOURCE_SOURCES = ('data/rea-resources.json', 'data/tool-resources.json')
 INDEX_SOURCES = ('data/source-index.json', 'data/source-scope.json', 'data/source-supplements/')
 CATEGORIES = {
@@ -546,30 +545,29 @@ def render_totals(records, papers, index_count, language):
 
 
 def render_badges(records, papers, language):
-    """Report catalog populations, not execution verification or additive totals. Six badges at most. The last badge
-    reads the date of the newest commit under data/discoveries/ live, so the README is not regenerated on every scan.
-    There is no CI badge: awesome lists must not carry one, and the footer already links the validate workflow's runs."""
+    """Report catalog populations, not execution verification or additive totals. Five badges, at most six. Count and
+    license badges are plain images: the same pages are linked from the navigation row and the Use the data list, and
+    awesome-lint flags a URL repeated in one README. The last badge reads the date of the newest commit under
+    data/discoveries/ live, so the README is not regenerated on every scan. There is no CI badge: awesome lists must
+    not carry one, and the footer already links the validate workflow's runs."""
     zh = language == 'zh'
-    prefix = 'https://awesomerea.org/' + ('zh/' if zh else '')
     style = '?style=flat-square&labelColor=2B2F3A'
 
-    def badge(label, value, target, color='6B5159'):
+    def badge(label, value, color='6B5159'):
         component = lambda text: quote(str(text).replace('-', '--').replace('_', '__'), safe='')
-        image = f'https://img.shields.io/badge/{component(label)}-{component(value)}-{color}{style}'
-        return f'[![{label}: {value}]({image})]({target})'
+        return f'![{label}: {value}](https://img.shields.io/badge/{component(label)}-{component(value)}-{color}{style})'
 
     cases = sum(record['kind'] == 'case-study' for record in records)
-    labels = (('精选资源', '案例', '论文', '最近入库', '数据集', '许可') if zh
-              else ('resources', 'cases', 'papers', 'last discovery ingest', 'dataset', 'license'))
+    labels = (('精选资源', '案例', '论文', '最近入库', '许可') if zh
+              else ('resources', 'cases', 'papers', 'last discovery ingest', 'license'))
     commit = ('https://img.shields.io/github/last-commit/reacher-z/Awesome-REA/main?path=data%2Fdiscoveries'
               f'&label={quote(labels[3])}&color=6B5159&labelColor=2B2F3A&style=flat-square')
     return ' '.join([
-        badge(labels[0], f'{len(records):,}', prefix + 'resources/'),
-        badge(labels[1], f'{cases:,}', prefix + 'cases/'),
-        badge(labels[2], f'{len(papers):,}', prefix + 'papers/'),
+        badge(labels[0], f'{len(records):,}'),
+        badge(labels[1], f'{cases:,}'),
+        badge(labels[2], f'{len(papers):,}'),
         f'[![{labels[3]}]({commit})](data/discoveries/README.md)',
-        badge(labels[4], 'Hugging Face', HUGGING_FACE_DATASET),
-        badge(labels[5], 'MIT', 'LICENSE', '5E6472'),
+        badge(labels[4], 'MIT', '5E6472'),
     ]) + '\n'
 
 

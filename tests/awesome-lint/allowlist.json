@@ -25,6 +25,26 @@
       "rule": "awesome-spell-check",
       "reason": "Text \"windows\" should be written as \"Windows\"",
       "why": "Ordinary plural noun, such as context windows or tool windows, not the operating system."
+    },
+    {
+      "rule": "awesome-spell-check",
+      "reason": "Text \"Javascript\" should be written as \"JavaScript\"",
+      "why": "The word is part of a project or resource name written that way by its authors."
+    },
+    {
+      "rule": "awesome-spell-check",
+      "reason": "Text \"osx\" should be written as \"macOS\"",
+      "why": "Part of a project name, not a reference to the operating system."
+    },
+    {
+      "rule": "awesome-spell-check",
+      "reason": "Text \"ios\" should be written as \"iOS\"",
+      "why": "Part of a project name, not a reference to the operating system."
+    },
+    {
+      "rule": "awesome-spell-check",
+      "reason": "Text \"OS X\" should be written as \"macOS\"",
+      "why": "Quoted name of the historical operating system release in a project description."
     }
   ]
 }
