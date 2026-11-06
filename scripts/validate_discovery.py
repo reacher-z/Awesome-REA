@@ -6,9 +6,11 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit, unquote
 from urllib.robotparser import RobotFileParser
-import xml.etree.ElementTree as ET
 
 from build_browse_pages import CATEGORIES
+from crawl_policy import CONTENT_SIGNAL, CRAWLERS, REQUIRED_AI_CRAWLERS, TRAINING_PREFERENCE_TOKEN
+from sitemaps import (SECTION_FILES, SITEMAP_INDEX, english_path, instant, language_alternates, latest,
+                      normalized_date, page_dates, read_sitemaps, record_date, section_for)
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "dist"
@@ -29,15 +31,20 @@ def expected_entry_routes(resources, papers):
     return routes
 
 
-def validate_route_inventory(urls, resources, papers, *, include_browse=True):
-    """Require exact sitemap coverage; unknown automatic-repository pages are refused."""
+def validate_route_inventory(urls, resources, papers, *, include_browse=True, include_discoveries=False):
+    """Require exact sitemap coverage; unknown automatic-repository pages are refused.
+
+    The unreviewed discovery queue adds one list page per language, never a page per scan record.
+    """
     routes = expected_entry_routes(resources, papers)
     expected = set(routes)
     for prefix in ("", "/zh"):
-        expected.update(prefix + path for path in ("/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/"))
+        expected.update(prefix + path for path in ("/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/", "/api/"))
         if include_browse:
             expected.add(prefix + "/browse/")
             expected.update(f"{prefix}/browse/{category}/" for category in CATEGORIES)
+        if include_discoveries:
+            expected.add(prefix + "/discoveries/")
     assert len(urls) == len(set(urls)), "Duplicate sitemap URLs"
     assert set(urls) == {ORIGIN + route for route in expected}, "Sitemap route inventory differs from reviewed entries and collection pages"
     return routes
@@ -81,12 +88,77 @@ class Document(HTMLParser):
             self.in_json = False
 
 
+def built_page_dates(output, records, papers):
+    """Recompute every page's lastmod from the data files the build published."""
+    output = Path(output)
+    repository = None
+    for name in ("source-published.json", "source-index.json"):
+        if (output / name).is_file():
+            repository = json.loads((output / name).read_text(encoding="utf-8"))
+            break
+    queue, leads = output / "discoveries.json", output / "discoveries/leads.json"
+    batches = json.loads(queue.read_text(encoding="utf-8")).get("batches", []) if queue.is_file() else []
+    lead_batches = json.loads(leads.read_text(encoding="utf-8")).get("batches", []) if leads.is_file() else []
+    survey = json.loads((ROOT / "data/survey.json").read_text(encoding="utf-8"))
+    return page_dates(resources=records, papers=papers, repository_document=repository,
+                      discovery_batches=batches, lead_batches=lead_batches, survey_date=survey.get("date"))
+
+
+def validate_sitemaps(output, records, papers):
+    """Check the sitemap index, its section sitemaps, data-derived lastmod dates and hreflang alternates.
+
+    Returns the listed page URLs in index order.
+    """
+    output = Path(output)
+    sitemaps, pages = read_sitemaps(output, ORIGIN)
+    expected_files = {ORIGIN + "/" + name: section for section, name in SECTION_FILES.items()}
+    assert sitemaps and set(sitemaps) <= set(expected_files), "The sitemap index must list only the section sitemaps"
+    dates = built_page_dates(output, records, papers)
+    newest = latest(dates.values())
+    for url, sitemap in sitemaps.items():
+        section = expected_files[url]
+        assert sitemap["urls"], f"Empty sitemaps stay out of the index: {url}"
+        assert len(sitemap["urls"]) <= 50000, f"Sitemap exceeds 50,000 URLs: {url}"
+        paths = [urlsplit(page).path for page in sitemap["urls"]]
+        assert all(section_for(path) == section for path in paths), f"A page is listed in the wrong section sitemap: {url}"
+        expected_lastmod = latest(dates.get(english_path(path)) for path in paths)
+        assert sitemap["lastmod"] == expected_lastmod, f"Sitemap index lastmod must be the newest page date: {url}"
+    for url, entry in pages.items():
+        path = urlsplit(url).path
+        assert entry["alternates"] == language_alternates(ORIGIN, path), f"Sitemap language alternates mismatch: {url}"
+        lastmod, expected = entry["lastmod"], dates.get(english_path(path))
+        assert lastmod == expected, f"lastmod must come from the page's recorded data dates, not the build: {url} has {lastmod}, expected {expected}"
+        if lastmod is not None:
+            assert normalized_date(lastmod) == lastmod and instant(lastmod) <= instant(newest), f"Invalid or future lastmod: {url}"
+    # Detail pages: the later of the record's inclusion and its latest source review, checked from the record itself.
+    for directory, rows in (("resources", records), ("papers", papers)):
+        for row in rows:
+            for prefix in ("", "/zh"):
+                assert pages[f"{ORIGIN}{prefix}/{directory}/{row['id']}/"]["lastmod"] == record_date(row), f"Detail lastmod differs from its record: {row['id']}"
+    return [url for sitemap in sitemaps.values() for url in sitemap["urls"]]
+
+
+def validate_robots(output, urls):
+    """Allow every crawler: the * group plus a named allow-all group for each listed crawler."""
+    text = (Path(output) / "robots.txt").read_text(encoding="utf-8")
+    assert not re.search(r"(?im)^\s*disallow\s*:", text), "robots.txt must not disallow anything"
+    named = set(re.findall(r"(?im)^user-agent:\s*(\S+)\s*$", text))
+    missing = [token for token in (*CRAWLERS, *REQUIRED_AI_CRAWLERS, TRAINING_PREFERENCE_TOKEN, "*") if token not in named]
+    assert not missing, "robots.txt must name these crawlers: " + ", ".join(missing)
+    assert text.count(f"Content-Signal: {CONTENT_SIGNAL}") == 2, "Both robots groups state the same content signals"
+    robots = RobotFileParser()
+    robots.parse(text.splitlines())
+    for bot in (*CRAWLERS, TRAINING_PREFERENCE_TOKEN, "ExampleUnlistedBot/1.0"):
+        assert all(robots.can_fetch(bot, url) for url in urls), f"Robots blocks {bot}"
+    assert robots.site_maps() == [ORIGIN + "/" + SITEMAP_INDEX], "robots.txt must declare exactly the sitemap index"
+
+
 def main():
-    sitemap = ET.parse(OUTPUT / "sitemap.xml")
-    urls = [node.text for node in sitemap.findall("{*}url/{*}loc")]
     records = json.loads((OUTPUT / "catalog.json").read_text(encoding="utf-8"))["resources"]
     papers = json.loads((OUTPUT / "papers.json").read_text(encoding="utf-8"))
-    entries = validate_route_inventory(urls, records, papers, include_browse=(OUTPUT / "source-index.json").is_file())
+    urls = validate_sitemaps(OUTPUT, records, papers)
+    entries = validate_route_inventory(urls, records, papers, include_browse=(OUTPUT / "source-index.json").is_file(),
+                                       include_discoveries=(OUTPUT / "discoveries.json").is_file())
     documents = {}
     for url in urls:
         parsed = urlsplit(url)
@@ -135,14 +207,12 @@ def main():
     for path in ("/cases/", "/zh/cases/"):
         page = documents[ORIGIN + path]
         assert len(page.resources) == len(expected_cases) and set(page.resources) == expected_cases, path
-    robots = RobotFileParser()
-    robots.parse((OUTPUT / "robots.txt").read_text(encoding="utf-8").splitlines())
-    for bot in ("Googlebot", "bingbot", "OAI-SearchBot", "PerplexityBot"):
-        assert all(robots.can_fetch(bot, url) for url in urls), f"Robots blocks {bot}"
-    assert ORIGIN + "/sitemap.xml" in (robots.site_maps() or []), "Missing sitemap declaration"
+    validate_robots(OUTPUT, urls)
     assert (OUTPUT / "llms.txt").is_file(), "Missing optional catalog index"
-    assert len(urls) == len(list(OUTPUT.rglob("index.html"))), "A generated page is absent from the sitemap"
-    print(f"Discovery checks passed: {len(urls)} canonical pages, {len(entries)} localized detail pages, reciprocal languages, {len(records)} static curated entries per language, JSON-LD, and crawler permissions.")
+    # The transitional explorer pages are noindex, so they stay out of the sitemap.
+    explorer = {OUTPUT / "explore/index.html", OUTPUT / "zh/explore/index.html"}
+    assert len(urls) == len([page for page in OUTPUT.rglob("index.html") if page not in explorer]), "A generated page is absent from the sitemap"
+    print(f"Discovery checks passed: {len(urls)} canonical pages in the sitemap index with data-dated lastmod and hreflang alternates, {len(entries)} localized detail pages, reciprocal languages, {len(records)} static curated entries per language, JSON-LD, and permissions for {len(CRAWLERS)} named crawlers.")
 
 
 if __name__ == "__main__":

@@ -2,9 +2,9 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**669 repositories** · 2026-10-20 UTC
+**654 repositories** · 2026-10-20 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
+These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [morluto/rea](https://github.com/morluto/rea) — Reverse engineer anything with agents, from app behavior down to native binaries. **[271,152 stars]** · Curated: [REA — Reverse Engineer Anything](https://awesomerea.org/resources/rea-upstream/)
 - [Hack-with-Github/Awesome-Hacking](https://github.com/Hack-with-Github/Awesome-Hacking) — A collection of various awesome lists for hackers, pentesters and security researchers **[122,703 stars]**
@@ -18,16 +18,16 @@ These are automatically discovered projects, not individually curated or tested 
 - [majd/ipatool](https://github.com/majd/ipatool) — Command-line tool that allows you to search for iOS, iPadOS, tvOS, watchOS, visionOS, and macOS apps on the App Store, and download .ipa or macOS .pkg app packages. **[11,709 stars]**
 - [wtsxDev/reverse-engineering](https://github.com/wtsxDev/reverse-engineering) — List of awesome reverse engineering resources **[10,580 stars]** · Curated: [Reverse Engineering resources (wtsxDev)](https://awesomerea.org/resources/wtsxdev-reverse-engineering-list/)
 - [Col-E/Recaf](https://github.com/Col-E/Recaf) — The modern Java bytecode editor **[7,437 stars]** · Curated: [Recaf](https://awesomerea.org/resources/recaf/)
-- [AloneMonkey/MonkeyDev](https://github.com/AloneMonkey/MonkeyDev) — Patch iOS apps without jailbreaking using CaptainHook Tweak, Logos Tweak, and command-line tools. **[6,800 stars]**
 - [rmusser01/Infosec\_Reference](https://github.com/rmusser01/Infosec_Reference) — An Information Security Reference That Doesn't Suck; https<span>:</span>//rmusser.net/git/admin-2/Infosec\_Reference for non-MS Git hosted version. **[6,007 stars]**
 - [ReagentX/imessage-exporter](https://github.com/ReagentX/imessage-exporter) — Export iMessage data + run iMessage Diagnostics **[5,675 stars]**
 - [mentebinaria/retoolkit](https://github.com/mentebinaria/retoolkit) — Reverse Engineer's Toolkit **[5,315 stars]**
 - [Naituw/IPAPatch](https://github.com/Naituw/IPAPatch) — Patch iOS Apps, The Easy Way, Without Jailbreak. **[5,294 stars]**
+- [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) — Reverse Engineering Resources About All Platforms(Windows/Linux/macOS/Android/iOS/IoT) And Every Aspect! (More than 3500 open source tools and 2300 posts&amp;videos) **[5,127 stars]** · Curated: [awesome-reverse-engineering (alphaSeclab)](https://awesomerea.org/resources/alphaseclab-awesome-reverse-engineering/)
 - [aloshdenny/reverse-SynthID](https://github.com/aloshdenny/reverse-SynthID) — reverse engineering Gemini's SynthID detection **[4,991 stars]**
 - [johnno1962/InjectionIII](https://github.com/johnno1962/InjectionIII) — Re-write of Injection for Xcode in (mostly) Swift **[4,654 stars]**
 - [firmianay/CTF-All-In-One](https://github.com/firmianay/CTF-All-In-One) — The definitive guide to CTF competitions **[4,511 stars]**
 - [SteamClientHomebrew/Millennium](https://github.com/SteamClientHomebrew/Millennium) — An open-source framework for Steam Client themes and plugins **[4,456 stars]**
-- [iosre/iOSAppReverseEngineering](https://github.com/iosre/iOSAppReverseEngineering) — The world’s 1st book of very detailed iOS App reverse engineering skills :) **[4,440 stars]**
+- [iosre/iOSAppReverseEngineering](https://github.com/iosre/iOSAppReverseEngineering) — The world’s 1st book of very detailed iOS App reverse engineering skills :) **[4,440 stars]** · Curated: [iOS App Reverse Engineering](https://awesomerea.org/resources/ios-app-reverse-engineering-book/)
 - [JetBrains/fernflower](https://github.com/JetBrains/fernflower) — Decompiler from Java bytecode to Java, used in IntelliJ IDEA. **[4,422 stars]** · Curated: [Fernflower](https://awesomerea.org/resources/fernflower/)
 - [0xor0ne/awesome-list](https://github.com/0xor0ne/awesome-list) — Cybersecurity oriented awesome list **[4,220 stars]**
 - [ericc-ch/copilot-api](https://github.com/ericc-ch/copilot-api) — Turn GitHub Copilot into OpenAI/Anthropic API compatible server. Usable with Claude Code! **[4,147 stars]**
@@ -38,9 +38,8 @@ These are automatically discovered projects, not individually curated or tested 
 - [momo5502/sogen](https://github.com/momo5502/sogen) — 🪅 Windows &amp; Linux userspace emulator **[3,730 stars]**
 - [pret/pokeemerald](https://github.com/pret/pokeemerald) — Decompilation of Pokémon Emerald **[3,595 stars]** · Curated: [Pokémon Emerald: a matching Game Boy Advance decompilation](https://awesomerea.org/resources/pokemon-emerald-decomp-case/)
 - [open-goal/jak-project](https://github.com/open-goal/jak-project) — Reviving the language that brought us the Jak &amp; Daxter Series **[3,574 stars]** · Curated: [OpenGOAL: recovering GOAL code and rebuilding the Jak games](https://awesomerea.org/resources/opengoal-jak-case/)
-- [kevoreilly/CAPEv2](https://github.com/kevoreilly/CAPEv2) — Malware Configuration And Payload Extraction **[3,570 stars]**
-- [vaib25vicky/awesome-mobile-security](https://github.com/vaib25vicky/awesome-mobile-security) — An effort to build a single place for all useful android and iOS security related stuff. All references and tools belong to their respective owners. I'm just maintaining it. **[3,561 stars]**
-- [V33RU/awesome-connected-things-sec](https://github.com/V33RU/awesome-connected-things-sec) — A Curated list of Security Resources for all connected things **[3,559 stars]**
+- [vaib25vicky/awesome-mobile-security](https://github.com/vaib25vicky/awesome-mobile-security) — An effort to build a single place for all useful android and iOS security related stuff. All references and tools belong to their respective owners. I'm just maintaining it. **[3,561 stars]** · Curated: [awesome-mobile-security](https://awesomerea.org/resources/awesome-mobile-security/)
+- [V33RU/awesome-connected-things-sec](https://github.com/V33RU/awesome-connected-things-sec) — A Curated list of Security Resources for all connected things **[3,559 stars]** · Curated: [Awesome Connected Things Security](https://awesomerea.org/resources/awesome-connected-things-sec/)
 - [dweinstein/awesome-frida](https://github.com/dweinstein/awesome-frida) — Awesome Frida - A curated list of Frida resources http<span>:</span>//www<span>.</span>frida.re/ (https<span>:</span>//github.com/frida/frida) **[3,548 stars]** · Curated: [Awesome Frida](https://awesomerea.org/resources/awesome-frida/)
 - [nabla-c0d3/ssl-kill-switch2](https://github.com/nabla-c0d3/ssl-kill-switch2) — Blackbox tool to disable SSL certificate validation - including certificate pinning - within iOS and macOS applications. **[3,322 stars]**
 - [Jakeschincariol/replica-skill](https://github.com/Jakeschincariol/replica-skill) — Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT. **[3,296 stars]**
@@ -55,47 +54,40 @@ These are automatically discovered projects, not individually curated or tested 
 - [P4nda0s/reverse-skills](https://github.com/P4nda0s/reverse-skills) — Reverse engineering skills plugin for Claude Code **[2,285 stars]**
 - [dgiese/dustcloud](https://github.com/dgiese/dustcloud) — Xiaomi Smart Home Device Reverse Engineering and Hacking **[2,282 stars]**
 - [zeldaret/botw](https://github.com/zeldaret/botw) — Decompilation of The Legend of Zelda: Breath of the Wild (Switch 1.5.0) **[2,236 stars]** · Curated: [Breath of the Wild: per-function matching decompilation of the Switch executable](https://awesomerea.org/resources/botw-decomp-case/)
-- [michalmalik/linux-re-101](https://github.com/michalmalik/linux-re-101) — A collection of resources for linux reverse engineering **[2,083 stars]**
+- [michalmalik/linux-re-101](https://github.com/michalmalik/linux-re-101) — A collection of resources for linux reverse engineering **[2,083 stars]** · Curated: [linux-re-101](https://awesomerea.org/resources/linux-re-101/)
 - [nmikhailov/Validity90](https://github.com/nmikhailov/Validity90) — Reverse engineering of Validity/Synaptics 138a:0090, 138a:0094, 138a:0097, 06cb:0081, 06cb:009a fingerprint readers protocol **[1,879 stars]**
 - [rootkit-io/awesome-malware-development](https://github.com/rootkit-io/awesome-malware-development) — Curated resources for malware dev, reverse engineering, and defensive security research. **[1,855 stars]**
 - [KEV0143/Direct-memory-access-CS2-DMA](https://github.com/KEV0143/Direct-memory-access-CS2-DMA) — Low-level Direct Memory Access (DMA) framework for CS2, designed for memory acquisition, entity-state parsing, synchronization, and PCIe/reverse-engineering research. **[1,851 stars]**
 - [core-lib/xjar](https://github.com/core-lib/xjar) — A tool for securely encrypting and running Spring Boot JARs, with support for native JARs. **[1,811 stars]**
 - [xishandong/crawlProject](https://github.com/xishandong/crawlProject) — A collection of Python web-scraping projects, from the basics to JavaScript reverse engineering, with sections on fundamentals, automation, advanced techniques, and CAPTCHAs. Examples cover major websites including Xiaohongshu, Douyin, Weibo, Instagram, boss job, JD, and more, teaching web scraping, anti-scraping, automation, and CAPTCHAs. **[1,797 stars]**
 - [zeldaret/mm](https://github.com/zeldaret/mm) — Decompilation of The Legend of Zelda: Majora's Mask **[1,743 stars]** · Curated: [Majora’s Mask: matching US N64 decompilation](https://awesomerea.org/resources/zelda-mm-decomp-case/)
-- [michalmalik/osx-re-101](https://github.com/michalmalik/osx-re-101) — A collection of resources for OSX/iOS reverse engineering. **[1,732 stars]**
-- [hasherezade/tiny\_tracer](https://github.com/hasherezade/tiny_tracer) — A Pin Tool for tracing API calls etc **[1,711 stars]**
-- [0xdea/frida-scripts](https://github.com/0xdea/frida-scripts) — A collection of my Frida instrumentation scripts to reverse engineer mobile apps and more. **[1,672 stars]**
+- [michalmalik/osx-re-101](https://github.com/michalmalik/osx-re-101) — A collection of resources for OSX/iOS reverse engineering. **[1,732 stars]** · Curated: [osx &amp; ios re 101](https://awesomerea.org/resources/osx-re-101/)
 - [pret/pokefirered](https://github.com/pret/pokefirered) — Decompilation of Pokémon FireRed/LeafGreen **[1,664 stars]** · Curated: [Pokémon FireRed and LeafGreen: a matching Game Boy Advance decompilation](https://awesomerea.org/resources/pokemon-firered-leafgreen-decomp-case/)
 - [scadastrangelove/awesome-ai-security-tools](https://github.com/scadastrangelove/awesome-ai-security-tools) — A curated list of public-source, research, and commercial tools for AI security and AI-assisted cybersecurity — autotriage, agent security, AI/ML supply chain, pentest agents, AI SAST, LLM-driven fuzzing, threat intelligence, SOC/SIEM triage, reverse engineering, LLM red-teaming, and more. **[1,658 stars]**
 - [pmret/papermario](https://github.com/pmret/papermario) — Decompilation of Paper Mario (Nintendo 64) **[1,632 stars]** · Curated: [Paper Mario: matching Nintendo 64 decompilation for four releases](https://awesomerea.org/resources/paper-mario-matching-decomp-case/)
-- [packing-box/awesome-executable-packing](https://github.com/packing-box/awesome-executable-packing) — A curated list of awesome resources related to executable packing **[1,631 stars]**
+- [packing-box/awesome-executable-packing](https://github.com/packing-box/awesome-executable-packing) — A curated list of awesome resources related to executable packing **[1,631 stars]** · Curated: [Awesome Executable Packing](https://awesomerea.org/resources/awesome-executable-packing/)
 - [JonathanSalwan/VMProtect-devirtualization](https://github.com/JonathanSalwan/VMProtect-devirtualization) — Playing with the VMProtect software protection. Automatic deobfuscation of pure functions using symbolic execution and LLVM. **[1,536 stars]**
 - [HACKE-RC/awesome-reversing](https://github.com/HACKE-RC/awesome-reversing) — A collection of resources to learn Reverse Engineering from start! **[1,530 stars]**
 - [AllsafeCyberSecurity/awesome-ghidra](https://github.com/AllsafeCyberSecurity/awesome-ghidra) — A curated list of awesome Ghidra materials **[1,442 stars]** · Curated: [Awesome Ghidra](https://awesomerea.org/resources/awesome-ghidra/)
 - [hack-different/apple-knowledge](https://github.com/hack-different/apple-knowledge) — A collection of reverse engineered Apple things, as well as a machine-readable database of Apple hardware **[1,415 stars]**
-- [CERT-Polska/drakvuf-sandbox](https://github.com/CERT-Polska/drakvuf-sandbox) — DRAKVUF Sandbox - automated hypervisor-level malware analysis system **[1,355 stars]**
 - [Cur10s1tyByt3/GenP](https://github.com/Cur10s1tyByt3/GenP) — This repository preserves source materials and related documentation about GenP. For archival and research purposes only. **[1,340 stars]**
-- [tobefuturer/restore-symbol](https://github.com/tobefuturer/restore-symbol) — A reverse engineering tool to restore stripped symbol table for iOS app. **[1,338 stars]**
-- [viruscamp/luadec](https://github.com/viruscamp/luadec) — Lua Decompiler for lua 5.1 , 5.2 and 5.3 **[1,334 stars]**
 - [rng70/TryHackMe-Roadmap](https://github.com/rng70/TryHackMe-Roadmap) — a list of 350+ Free TryHackMe rooms to start learning cybersecurity with THM **[1,323 stars]**
 - [Bixilon/Minosoft](https://github.com/Bixilon/Minosoft) — An open source Minecraft reimplementation written from scratch. Mirror of https<span>:</span>//gitlab.bixilon.de/bixilon/minosoft **[1,309 stars]**
-- [rocky/python-decompile3](https://github.com/rocky/python-decompile3) — Python decompiler for 3.7-3.8 Stripped down from uncompyle6 so we can refactor and start to fix up some long-standing problems **[1,275 stars]**
 - [OpenStick/OpenStick](https://github.com/OpenStick/OpenStick) — reverse engineering on msm8916 based 4G modem. **[1,192 stars]**
 - [Caho1/open-claude-ui](https://github.com/Caho1/open-claude-ui) — An in-depth REA-based breakdown and high-fidelity reconstruction of the official Claude desktop UI. Reconstructs 30 independent React components and 8 advanced interaction-physics algorithms, with a 3000+ line reverse-engineering analysis manual. **[1,185 stars]** · Curated: [Open Claude UI: REA-informed interface reference components](https://awesomerea.org/resources/open-claude-ui-case/)
-- [kpwn/iOSRE](https://github.com/kpwn/iOSRE) — iOS Reverse Engineering **[1,183 stars]**
-- [mrphrazer/reverser\_ai](https://github.com/mrphrazer/reverser_ai) — Provides automated reverse engineering assistance through the use of local large language models (LLMs) on consumer hardware. **[1,158 stars]**
-- [MatthewKuKanich/CAN\_Commander](https://github.com/MatthewKuKanich/CAN_Commander) — CAN Commander is a comprehensive tool designed for the reverse engineering of CAN (Controller Area Network) bus systems. This project aims to provide a robust platform for automotive enthusiasts, engineers, and security researchers to interact with and analyze CAN networks, facilitating a deeper understanding and manipulation of communication. **[1,078 stars]**
+- [kpwn/iOSRE](https://github.com/kpwn/iOSRE) — iOS Reverse Engineering **[1,183 stars]** · Curated: [iOSRE: iOS Reverse Engineering reference](https://awesomerea.org/resources/kpwn-iosre/)
+- [mrphrazer/reverser\_ai](https://github.com/mrphrazer/reverser_ai) — Provides automated reverse engineering assistance through the use of local large language models (LLMs) on consumer hardware. **[1,158 stars]** · Curated: [ReverserAI](https://awesomerea.org/resources/reverser-ai/)
 - [toniebox-reverse-engineering/teddycloud](https://github.com/toniebox-reverse-engineering/teddycloud) — teddyCloud is an open source server replacement for the Boxine Cloud **[1,072 stars]** · Curated: [TeddyCloud: a self-hosted replacement for the Toniebox cloud](https://awesomerea.org/resources/teddycloud-toniebox-server-case/)
 - [neuroradiology/InsideReCaptcha](https://github.com/neuroradiology/InsideReCaptcha) — Reverse-engineering the new “captchaless” ReCaptcha system... **[1,051 stars]**
 - [danielweidman/pixmob-ir-reverse-engineering](https://github.com/danielweidman/pixmob-ir-reverse-engineering) — Hacking the PixMob infrared (and now also RF!) protocol to enable control of PixMob wristbands at home. **[1,040 stars]** · Curated: [PixMob IR reverse engineering: controlling event wristbands at home](https://awesomerea.org/resources/pixmob-ir-protocol-case/)
 - [ent0n29/polybot](https://github.com/ent0n29/polybot) — Reverse-engineering of every polymarket strategy and high-frequency trading infrastructure for Polymarket **[1,024 stars]**
-- [Fadi002/de4py](https://github.com/Fadi002/de4py) — The ultimate AI-powered toolkit for python reverse engineering **[1,009 stars]**
 - [indetectables-net/toolkit](https://github.com/indetectables-net/toolkit) — The essential toolkit for reversing, malware analysis, and cracking **[1,009 stars]**
 - [UCYBERS/Awesome-Blackhat-Tools](https://github.com/UCYBERS/Awesome-Blackhat-Tools) — A curated list of tools officially presented at Black Hat events **[1,003 stars]**
 - [pret/pokeruby](https://github.com/pret/pokeruby) — Decompilation of Pokémon Ruby/Sapphire **[1,002 stars]** · Curated: [pokeruby: a matching Pokémon Ruby and Sapphire decompilation](https://awesomerea.org/resources/pokeruby-decomp-case/)
 - [BlackSnufkin/BYOVD](https://github.com/BlackSnufkin/BYOVD) — BYOVD research use cases featuring vulnerable driver discovery and reverse engineering methodology. (CVE-2025-52915, CVE-2025-1055, CVE-2026-3609, CVE-2026-8501). **[977 stars]**
 - [LING71671/Open-ClaudeCode](https://github.com/LING71671/Open-ClaudeCode) — Research archive of Claude Code source and runtime artifacts reconstructed from published npm source maps. **[968 stars]**
 - [Dump-GUY/Malware-analysis-and-Reverse-engineering](https://github.com/Dump-GUY/Malware-analysis-and-Reverse-engineering) — Some of my publicly available Malware analysis and Reverse engineering. **[966 stars]**
+- [darbra/awesome-ai-reverse](https://github.com/darbra/awesome-ai-reverse) — Go all-in on AI-powered reverse engineering. **[965 stars]** · Curated: [Awesome AI Reverse Engineering](https://awesomerea.org/resources/awesome-ai-reverse/)
 - [ludwig-v/wireless-carplay-dongle-reverse-engineering](https://github.com/ludwig-v/wireless-carplay-dongle-reverse-engineering) — CPlay2Air / Carlinkit Wireless Apple CarPlay Dongle reverse engineering **[938 stars]**
 - [JonathanSalwan/Tigress\_protection](https://github.com/JonathanSalwan/Tigress_protection) — Playing with the Tigress software protection. Break some of its protections and solve their reverse engineering challenges. Automatic deobfuscation using symbolic execution, taint analysis and LLVM. **[928 stars]**
 - [Sebastrion/awesome-unofficial-pc-ports](https://github.com/Sebastrion/awesome-unofficial-pc-ports) — A curated list of awesome unoffical PC Ports. **[902 stars]** · Curated: [awesome-unofficial-pc-ports](https://awesomerea.org/resources/awesome-unofficial-pc-ports/)
@@ -107,7 +99,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [Svenskithesource/PyArmor-Unpacker](https://github.com/Svenskithesource/PyArmor-Unpacker) — A deobfuscator for PyArmor. **[762 stars]**
 - [jbro129/android-modding](https://github.com/jbro129/android-modding) — A large collection of github repositories related to android modding. **[757 stars]**
 - [secrary/makin](https://github.com/secrary/makin) — makin - reveal anti-debugging and anti-VM tricks \[This project is not maintained anymore\] **[742 stars]**
-- [pyinstxtractor/pyinstxtractor-ng](https://github.com/pyinstxtractor/pyinstxtractor-ng) — PyInstaller Extractor Next Generation **[741 stars]**
 - [OpenStrap/edge](https://github.com/OpenStrap/edge) — App which allows you to use your health devices beyond subscriptions. Supports Workout Tracking, Nutrition Tracking, Wellness Excercise, Sleep, Recovery, Strain, and Many more. **[722 stars]**
 - [SpecterOps/skills](https://github.com/SpecterOps/skills) — A marketplace for LLM skills **[716 stars]**
 - [CharlotteCross1998/awesome-game-decompilations](https://github.com/CharlotteCross1998/awesome-game-decompilations) — A curated list of awesome game decompilations, recompilations and disassemblies. **[711 stars]** · Curated: [awesome-game-decompilations](https://awesomerea.org/resources/awesome-game-decompilations/)
@@ -126,7 +117,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Fausto-404/js-reverse-automation--skill](https://github.com/Fausto-404/js-reverse-automation--skill) — Combines chrome-devtools-mcp capabilities with Skill specifications to automate frontend JavaScript reverse-engineering analysis using JSRPC, Flask, and autoDecoder, improving reverse-engineering efficiency. **[598 stars]**
 - [uttambodara/TryHackMeRoadmap](https://github.com/uttambodara/TryHackMeRoadmap) — A list of 350+ free TryHackMe rooms💻 to kick off your cybersecurity learning, organized by topics for easy exploration and practical skill-building !💀💥 **[597 stars]**
 - [nbcraft-org/nbcraft](https://github.com/nbcraft-org/nbcraft) — The ultimate cross-platform mining experience. **[596 stars]**
-- [Jeija/bluefluff](https://github.com/Jeija/bluefluff) — Reverse Engineering Furby Connect's Bluetooth Protocol and Update Format **[576 stars]**
+- [Jeija/bluefluff](https://github.com/Jeija/bluefluff) — Reverse Engineering Furby Connect's Bluetooth Protocol and Update Format **[576 stars]** · Curated: [bluefluff: reverse engineering Furby Connect's Bluetooth LE protocol](https://awesomerea.org/resources/bluefluff-furby-connect-ble-case/)
 - [pret/pokeplatinum](https://github.com/pret/pokeplatinum) — Decompilation of Pokémon Platinum **[567 stars]** · Curated: [Pokémon Platinum: a checksum-matched Nintendo DS decompilation](https://awesomerea.org/resources/pokemon-platinum-decomp-case/)
 - [morluto/awesome-reverse-engineering](https://github.com/morluto/awesome-reverse-engineering) — Curated reverse-engineering tools and learning resources for binaries, apps, firmware, formats, and protocols. **[565 stars]** · Curated: [Awesome Reverse Engineering](https://awesomerea.org/resources/morluto-awesome-re/)
 - [SamidyFR/Game-Decompilations](https://github.com/SamidyFR/Game-Decompilations) — List of Game Decompilations i could gather from around the internet. **[559 stars]**
@@ -134,6 +125,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [pret/pokediamond](https://github.com/pret/pokediamond) — Decompilation of Pokémon Diamond/Pearl **[540 stars]**
 - [ruvnet/open-claude-code](https://github.com/ruvnet/open-claude-code) — Nightly Claude Code CLI Decompile — Reverse Engineered &amp; Rebuilt **[533 stars]**
 - [MaxPixelStudios/MinecraftDecompiler](https://github.com/MaxPixelStudios/MinecraftDecompiler) — Minecraft Decompiler. A useful tool/library to deobfuscate and decompile Minecraft(or any jar file) through popular mappings and various decompilers. Or use it as a lib to process obfuscation mappings such as converting a mapping to another format **[493 stars]**
+- [vmallet/ida-plugins](https://github.com/vmallet/ida-plugins) — An interactive list of plugins for hex-rays' IDA Pro **[491 stars]** · Curated: [Interactive IDA Plugin List](https://awesomerea.org/resources/interactive-ida-plugin-list/)
 - [aozhimin/iOS-APM-Secrets](https://github.com/aozhimin/iOS-APM-Secrets) — <span>:</span>secret: WIP: An in-depth look at the core technologies and implementation details behind major APM vendors' iOS SDKs. Updates ongoing... **[474 stars]**
 - [holly-hacker/EazFixer](https://github.com/holly-hacker/EazFixer) — A deobfuscation tool for Eazfuscator. **[456 stars]**
 - [CTR-tools/CTR-ModSDK](https://github.com/CTR-tools/CTR-ModSDK) — ModSDK - a modding toolkit to create mods for Crash Team Racing in C. This repository also houses an effort to fully decompile and reverse-engineer CTR in C. **[453 stars]**
@@ -148,8 +140,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [GenericException/SkidSuite](https://github.com/GenericException/SkidSuite) — A collection of java reverse engineering tools and informational links **[355 stars]**
 - [sztupy/luadec51](https://github.com/sztupy/luadec51) — Lua Decompiler for Lua version 5.1 **[353 stars]**
 - [we11cheng/WCShadowrocket](https://github.com/we11cheng/WCShadowrocket) — iOS Shadowrocket (decrypted and re-signed; for reference only; adding nodes has issues). For the source of another censorship-circumvention project, Potatso, see: https<span>:</span>//github.com/we11cheng/WCPotatso **[353 stars]**
-- [mildsunrise/darter](https://github.com/mildsunrise/darter) — <span>:</span>detective: Dart / Flutter VM snapshot analyzer **[345 stars]**
-- [AngeloD2022/jsxer](https://github.com/AngeloD2022/jsxer) — A fast and accurate JSXBIN decompiler. **[327 stars]**
 - [rrika/cdcEngineDXHR](https://github.com/rrika/cdcEngineDXHR) — Decompilation of Deus Ex: Human Revolution **[323 stars]**
 - [everettjf/Yolo](https://github.com/everettjf/Yolo) — 😈Scripts or demo projects on iOS development or reverse engineering **[321 stars]**
 - [projectPiki/pikmin](https://github.com/projectPiki/pikmin) — A decompilation of Pikmin brought to you by fans of the series. **[319 stars]**
@@ -163,6 +153,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [pret/pmd-red](https://github.com/pret/pmd-red) — Decompilation of Pokémon Mystery Dungeon: Red Rescue Team **[286 stars]**
 - [sotasan/decompiler](https://github.com/sotasan/decompiler) — Java Decompiler GUI **[266 stars]**
 - [evilpenguin/SSLBypass](https://github.com/evilpenguin/SSLBypass) — iOS SSL Pinning Bypass (iOS 8 - 14) **[264 stars]**
+- [extremecoders-re/re-list](https://github.com/extremecoders-re/re-list) — A list of open source reverse engineering tools with a focus on binary analysis **[261 stars]** · Curated: [RE list (extremecoders-re)](https://awesomerea.org/resources/extremecoders-re-list/)
 - [theclub654/ProjectCane](https://github.com/theclub654/ProjectCane) — A playable PC port of Sly Cooper and the Thievius Raccoonus, rebuilt through reverse engineering. **[261 stars]** · Curated: [ProjectCane: a native PC port of Sly Cooper and the Thievius Raccoonus](https://awesomerea.org/resources/projectcane-sly1-pc-port-case/)
 - [decoderloop/rust-malware-gallery](https://github.com/decoderloop/rust-malware-gallery) — A collection of malware families and malware samples which use the Rust programming language. **[255 stars]**
 - [mahaloz/decompilation-wiki](https://github.com/mahaloz/decompilation-wiki) — The Decompilation Wiki: info on all things decompilation **[254 stars]**
@@ -173,7 +164,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [SimplyProgrammer/Minecraft-Deobfuscator3000](https://github.com/SimplyProgrammer/Minecraft-Deobfuscator3000) — Powerful and universal deobfuscator for Minecraft mods and java decompiler! **[246 stars]**
 - [CFSworks/wavebird-reversing](https://github.com/CFSworks/wavebird-reversing) — Reverse-engineering the WaveBird protocol for the betterment of mankind **[244 stars]**
 - [Patoke/re-plants-vs-zombies](https://github.com/Patoke/re-plants-vs-zombies) — A project to rebuild all functionality via reverse engineering from the GOTY version of Plants VS Zombies (and expand upon it) **[234 stars]** · Curated: [re-plants-vs-zombies: decompiling and modernizing Plants vs. Zombies GOTY](https://awesomerea.org/resources/re-plants-vs-zombies-decomp-case/)
-- [macmade/dyld\_cache\_extract](https://github.com/macmade/dyld_cache_extract) — A macOS utility to extract dynamic libraries from the dyld\_shared\_cache of macOS and iOS. **[225 stars]**
 - [VelocityRa/awesome-game-file-format-reversing](https://github.com/VelocityRa/awesome-game-file-format-reversing) — Collection of docs/tools/resources for reverse engineering and working with video game file formats. **[225 stars]**
 - [psxrestore/Condemned2Recomp](https://github.com/psxrestore/Condemned2Recomp) — A static recompilation of Condemned 2: Bloodshot done with RexGlue. **[223 stars]**
 - [emu-russia/breaks](https://github.com/emu-russia/breaks) — Nintendo Entertainment System (NES) / Famicom / Famiclones chip reversing **[221 stars]**
@@ -182,19 +172,14 @@ These are automatically discovered projects, not individually curated or tested 
 - [resilar/crchack](https://github.com/resilar/crchack) — Reversing CRC for fun and profit **[212 stars]**
 - [xuemian168/qqpet\_automation](https://github.com/xuemian168/qqpet_automation) — A macOS port of QQ Pet (Retro): reverse engineering, telemetry removal, Ruffle Flash, and an automated pet-care CLI. **[211 stars]**
 - [landaire/unfuck](https://github.com/landaire/unfuck) — Python 2.7 bytecode d̶e̶o̶b̶f̶u̶s̶c̶a̶t̶o̶r unfucker **[204 stars]**
-- [jd-opensource/arkdecompiler](https://github.com/jd-opensource/arkdecompiler) — HarmonyOS NEXT decompiler **[203 stars]**
 - [tangosdev/sm64ds-decomp](https://github.com/tangosdev/sm64ds-decomp) — From-scratch, byte-matching decompilation of Super Mario 64 DS into C/C++, with a live progress atlas and matching tools. **[202 stars]** · Curated: [Super Mario 64 DS: matching decompilation with relocation checks](https://awesomerea.org/resources/sm64ds-decomp-case/)
 - [mrphrazer/r2con2021\_deobfuscation](https://github.com/mrphrazer/r2con2021_deobfuscation) — Workshop Material on VM-based Deobfuscation **[201 stars]**
-- [OpenGMK/GM8Decompiler](https://github.com/OpenGMK/GM8Decompiler) — A decompiler for GameMaker 8.x executables **[201 stars]**
-- [monkbai/DNN-decompiler](https://github.com/monkbai/DNN-decompiler) — BTD - Bin To DNN: A DNN Executables Decompiler **[199 stars]**
-- [DenuvoSoftwareSolutions/SiMBA](https://github.com/DenuvoSoftwareSolutions/SiMBA) — Efficient Deobfuscation of Linear Mixed Boolean-Arithmetic Expressions **[197 stars]**
 - [YuAo/MetalLibraryArchive](https://github.com/YuAo/MetalLibraryArchive) — Extract Metal functions from .metallib files. **[193 stars]**
 - [CMUSTRUDEL/DIRTY](https://github.com/CMUSTRUDEL/DIRTY) — DIRTY: Augmenting Decompiler Output with Learned Variable Names and Types **[191 stars]** · Paper: [Augmenting Decompiler Output with Learned Variable Names and Types](https://awesomerea.org/papers/paper-dirty/)
-- [i-soxi/even-g2-protocol](https://github.com/i-soxi/even-g2-protocol) — Let's reverse engineer the EvenRealities G2s! By reverse engineering the BLE protocol, developers can understand how to call G2 services, unleashing the true potential of the G2 smart glasses in a true open-source environment. **[190 stars]**
+- [i-soxi/even-g2-protocol](https://github.com/i-soxi/even-g2-protocol) — Let's reverse engineer the EvenRealities G2s! By reverse engineering the BLE protocol, developers can understand how to call G2 services, unleashing the true potential of the G2 smart glasses in a true open-source environment. **[190 stars]** · Curated: [Even G2 protocol: reverse-engineering Even Realities G2 smart-glasses BLE traffic](https://awesomerea.org/resources/even-g2-ble-protocol-case/)
 - [LLVM-but-worse/maple-ir](https://github.com/LLVM-but-worse/maple-ir) — Industrial IR-based static analysis framework for Java bytecode **[189 stars]**
-- [techge/PRE-list](https://github.com/techge/PRE-list) — List of (automatic) protocol reverse engineering tools for network protocols **[188 stars]**
+- [techge/PRE-list](https://github.com/techge/PRE-list) — List of (automatic) protocol reverse engineering tools for network protocols **[188 stars]** · Curated: [PRE-list](https://awesomerea.org/resources/pre-list/)
 - [danielkrupinski/vac-hooks](https://github.com/danielkrupinski/vac-hooks) — Hook WinAPI functions used by Valve Anti-Cheat. Log calls and intercept arguments &amp; return values. DLL written in C. **[186 stars]**
-- [T14Raptor/go-fAST](https://github.com/T14Raptor/go-fAST) — A JavaScript AST parser, traverser, and generator written in Go **[186 stars]**
 - [kh4sh3i/Malware-Analysis](https://github.com/kh4sh3i/Malware-Analysis) — A curated list of awesome malware analysis tools and resources **[173 stars]**
 - [mikeroyal/Firmware-Guide](https://github.com/mikeroyal/Firmware-Guide) — Firmware Guide **[171 stars]**
 - [caomod2077/Deobfuscator-Luraph-V15](https://github.com/caomod2077/Deobfuscator-Luraph-V15) — A standalone, high-performance deobfuscator and devirtualizer for Roblox Luau scripts protected by Luraph v15. **[169 stars]**
@@ -230,7 +215,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [colealanroberts/OpenAlpha](https://github.com/colealanroberts/OpenAlpha) — A Swift package for retrieving images from Sony digital cameras **[134 stars]**
 - [crackmes/crackmes](https://github.com/crackmes/crackmes) — Open and censorship resistant crackmes repository **[131 stars]**
 - [localh0t/backfuzz](https://github.com/localh0t/backfuzz) — protocol fuzzing toolkit **[131 stars]**
-- [DerekSelander/mobdevim](https://github.com/DerekSelander/mobdevim) — Command line utility that interacts with plugged in iOS devices. Uses Apple's MobileDevice framework **[129 stars]**
 - [minaminao/erever](https://github.com/minaminao/erever) — My swiss army knife for reversing EVM bytecodes (super experimental) **[128 stars]**
 - [extremecoders-re/bytecode\_simplifier](https://github.com/extremecoders-re/bytecode_simplifier) — A generic deobfuscator for PjOrion obfuscated python scripts **[126 stars]**
 - [hgarrereyn/STRIDE](https://github.com/hgarrereyn/STRIDE) — simple type recognition in decompiled executables **[123 stars]** · Paper: [STRIDE: Simple Type Recognition In Decompiled Executables](https://awesomerea.org/papers/paper-stride/)
@@ -268,6 +252,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [anvilsecure/lookinsidethebox](https://github.com/anvilsecure/lookinsidethebox) — Breaks the encryption and obfuscation layers that Dropbox applies to their modified Python interpreter. **[89 stars]**
 - [Biswa96/WslReverse](https://github.com/Biswa96/WslReverse) — Experiments with hidden COM interface and LxBus IPC mechanism in WSL **[88 stars]**
 - [ByteV0rtex/CVE-2026-65343](https://github.com/ByteV0rtex/CVE-2026-65343) — CVE-2026-65343 PoC — AppleKeyStore OOB read → KASLR defeat (iOS 26.6 / 23G71) **[86 stars]**
+- [onehouwong/Firmware-Analysis-Papers](https://github.com/onehouwong/Firmware-Analysis-Papers) — Recent security papers on firmware analysis **[85 stars]** · Curated: [Firmware-Analysis-Papers](https://awesomerea.org/resources/firmware-analysis-papers-list/)
 - [therealFoxster/DontEatMyContent](https://github.com/therealFoxster/DontEatMyContent) — Prevent the notch/Dynamic Island from munching on 2:1 video content in YouTube **[85 stars]**
 - [avatarone/avatar-python](https://github.com/avatarone/avatar-python) — Dynamic security analysis of embedded systems’ firmwares **[84 stars]** · Paper: [Avatar: A Framework to Support Dynamic Security Analysis of Embedded Systems’ Firmwares](https://awesomerea.org/papers/paper-avatar/)
 - [Biswa96/PDBDownloader](https://github.com/Biswa96/PDBDownloader) — Standalone program to download PDB Symbol files for debugging without WDK **[84 stars]**

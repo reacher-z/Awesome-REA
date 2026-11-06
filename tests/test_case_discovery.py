@@ -65,9 +65,41 @@ class CaseDiscoveryTests(unittest.TestCase):
         missing = dict(self.html); missing.pop('/zh/cases/')
         with self.assertRaises(AssertionError): self.validate(missing)
 
+    def test_game_cases_must_sit_in_their_method_group_in_name_order(self):
+        resources = [record('web-case', ['website']),
+                     record('second-port', ['game']) | {'name': 'Beta', 'reconstruction_method': 'port'},
+                     record('first-port', ['game']) | {'name': 'alpha', 'reconstruction_method': 'port'},
+                     record('engine', ['game']) | {'reconstruction_method': 'engine-reimplementation'}]
+        with TemporaryDirectory() as directory:
+            output = Path(directory)
+            build_discovery_pages(output, {'meta': {}, 'resources': resources}, None)
+            html = {prefix + '/cases/': (output / prefix.lstrip('/') / 'cases/index.html').read_text() for prefix in ('', '/zh')}
+        pages = lambda: {route: Page(text) for route, text in html.items()}
+        validate_case_outputs(pages(), resources)
+        self.assertEqual([row['id'] for row in Page(html['/cases/']).case_rows],
+                         ['web-case', 'first-port', 'second-port', 'engine'])
+        self.assertEqual([row['method'] for row in Page(html['/cases/']).case_rows],
+                         [None, 'port', 'port', 'engine-reimplementation'])
+        # A changed method or a renamed case makes the rendered groups stale.
+        for changed in ({'reconstruction_method': 'other'}, {'name': 'zzz'}):
+            with self.subTest(changed=changed), self.assertRaises(AssertionError):
+                validate_case_outputs(pages(), [resources[0], resources[1], resources[2] | changed, resources[3]])
+        # A Game case without a method belongs in the final fallback group, and only there.
+        pending = record('pending', ['game'])
+        with TemporaryDirectory() as directory:
+            output = Path(directory)
+            build_discovery_pages(output, {'meta': {}, 'resources': resources + [pending]}, None)
+            html = {prefix + '/cases/': (output / prefix.lstrip('/') / 'cases/index.html').read_text() for prefix in ('', '/zh')}
+        validate_case_outputs(pages(), resources + [pending])
+        rows = Page(html['/cases/']).case_rows
+        self.assertEqual([(row['id'], row['method'], row['method_anchor']) for row in rows][-1],
+                         ('pending', 'unassigned', 'cases-game-unassigned'))
+        with self.assertRaises(AssertionError):
+            validate_case_outputs(pages(), resources + [pending | {'reconstruction_method': 'port'}])
+
     def test_script_text_or_other_language_cannot_replace_visible_case_content(self):
         route = '/zh/cases/'
-        for field in ('description_zh', 'requirements_zh'):
+        for field in ('description_zh',):
             value = self.resources[0][field]
             value = value[0] if isinstance(value, list) else value
             broken = dict(self.html)
@@ -80,7 +112,7 @@ class CaseDiscoveryTests(unittest.TestCase):
 
     def test_primary_additional_detail_links_and_date_are_required(self):
         route = '/zh/cases/'
-        for old in (self.resources[0]['evidence_url'], self.resources[0]['additional_evidence_urls'][0],
+        for old in (self.resources[0]['evidence_url'], '/zh/resources/web-case/#entry-requirements',
                     '/zh/resources/web-case/'):
             with self.subTest(url=old):
                 broken = dict(self.html)

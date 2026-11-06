@@ -2,9 +2,9 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/android/) · [English](android.md)
 
-**479 个仓库** · 2026-10-20 UTC
+**482 个仓库** · 2026-10-20 UTC
 
-这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
+这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
 - [skylot/jadx](https://github.com/skylot/jadx) — 将 Dex 反编译为 Java 的工具。 **[50,988 星标]** · 精选：[JADX](https://awesomerea.org/zh/resources/jadx/)
 - [librepods-org/librepods](https://github.com/librepods-org/librepods) — 让 AirPods 摆脱 Apple 生态系统的限制。 **[30,324 星标]**
@@ -14,28 +14,25 @@
 - [OWASP/mastg](https://github.com/OWASP/mastg) — OWASP 移动应用安全测试指南（MASTG）是一部涵盖移动应用安全测试和逆向工程的全面手册，介绍验证 OWASP 移动安全弱点枚举（MASWE）中各项弱点的技术流程，并与 OWASP MASVS 保持一致。 **[13,258 星标]**
 - [sensepost/objection](https://github.com/sensepost/objection) — 📱 objection：移动端运行时探索工具。 **[9,446 星标]** · 精选：[objection](https://awesomerea.org/zh/resources/objection/)
 - [We5ter/Scanners-Box](https://github.com/We5ter/Scanners-Box) — 面向黑客、企业与 AI 智能体的全域开源安全工具库。 **[9,108 星标]**
-- [firerpa/lamda](https://github.com/firerpa/lamda) — Android 全栈设备控制平台：提供 WebRTC/H.264 远程桌面、UI/OCR/图像匹配自动化、一键 MITM、内置 Frida、代理/VPN/frp/P2P 网络、MCP/Agent 和 160 多个 API，面向多设备集群与工程化部署。 **[8,610 星标]**
+- [firerpa/lamda](https://github.com/firerpa/lamda) — Android 全栈设备控制平台：提供 WebRTC/H.264 远程桌面、UI/OCR/图像匹配自动化、一键 MITM、内置 Frida、代理/VPN/frp/P2P 网络、MCP/Agent 和 160 多个 API，面向多设备集群与工程化部署。 **[8,610 星标]** · 精选：[FIRERPA（lamda）Android 自动化与动态分析平台](https://awesomerea.org/zh/resources/firerpa-lamda/)
 - [SimoneAvogadro/android-reverse-engineering-skill](https://github.com/SimoneAvogadro/android-reverse-engineering-skill) — 支持 Android 应用逆向工程的 Claude Code 技能。 **[8,152 星标]** · 精选：[Android Reverse Engineering Skill 安卓反编译智能体技能](https://awesomerea.org/zh/resources/android-reverse-engineering-skill/)
 - [androguard/androguard](https://github.com/androguard/androguard) — Android 应用逆向工程与渗透测试。 **[6,355 星标]** · 精选：[Androguard](https://awesomerea.org/zh/resources/androguard/)
 - [dwisiswant0/apkleaks](https://github.com/dwisiswant0/apkleaks) — 扫描 APK 文件中的 URI、端点与秘密信息。 **[6,353 星标]**
 - [CreditTone/hooker](https://github.com/CreditTone/hooker) — 🔥🔥 hooker 是基于 Frida 的 Android 逆向工程工具包，提供易用的命令行界面、通用脚本、自动生成 hook、通过内存漫游检测 Activity/Service、一键 SOCKS5 代理、Frida JustTrustMe，以及面向所有应用的 BoringSSL 证书锁定绕过功能。 **[5,328 星标]**
 - [timschneeb/GalaxyBudsClient](https://github.com/timschneeb/GalaxyBudsClient) — 适用于 Windows、macOS、Linux 和 Android 的非官方 Galaxy Buds 管理工具。 **[5,294 星标]** · 精选：[Galaxy Buds Client：基于三星耳机协议的非官方管理器](https://awesomerea.org/zh/resources/galaxy-buds-client-protocol-case/)
 - [niklashigi/apk-mitm](https://github.com/niklashigi/apk-mitm) — 🤖 自动处理 Android APK 文件，使其便于进行 HTTPS 检查的命令行应用。 **[5,128 星标]** · 精选：[apk-mitm](https://awesomerea.org/zh/resources/apk-mitm/)
-- [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) — 覆盖所有平台（Windows/Linux/macOS/Android/iOS/IoT）及各个方面的逆向工程资源！包含 3500 多个开源工具与 2300 多篇文章和视频。 **[5,127 星标]**
 - [charles2gan/GDA-android-reversing-Tool](https://github.com/charles2gan/GDA-android-reversing-Tool) — 面向 APK、DEX、ODEX、OAT、JAR、AAR 和 CLASS 文件的高速强大 Android 反编译器，无需 Java 虚拟机即可运行的原生工具。支持恶意行为检测、隐私泄露检测、漏洞检测、路径求解、加壳识别、变量追踪、去混淆、Python/Java 脚本、设备内存提取、数据解密与加密等。 **[4,859 星标]** · 精选：[GDA Android 反编译器](https://awesomerea.org/zh/resources/gda-android-decompiler/)
 - [vaibhavpandeyvpz/apkstudio](https://github.com/vaibhavpandeyvpz/apkstudio) — 基于 Qt6 的开源跨平台 Android 应用包逆向工程 IDE，提供友好的 IDE 风格布局，包含支持 \*.smali 代码语法高亮的编辑器。 **[4,683 星标]** · 精选：[APK Studio Android 逆向 IDE](https://awesomerea.org/zh/resources/apk-studio/)
 - [CalebFenton/simplify](https://github.com/CalebFenton/simplify) — Android 虚拟机与去混淆工具。 **[4,671 星标]** · 精选：[Simplify Android 反混淆工具](https://awesomerea.org/zh/resources/simplify-android-deobfuscator/)
 - [ReVanced/revanced-patches-template](https://github.com/ReVanced/revanced-patches-template) — 👋🧩 ReVanced Patches 模板仓库。 **[4,613 星标]**
 - [APKLab/APKLab](https://github.com/APKLab/APKLab) — 适用于 VS Code 的 Android 逆向工程工作台。 **[4,011 星标]** · 精选：[APKLab Android 逆向工作台](https://awesomerea.org/zh/resources/apklab/)
-- [ax/apk.sh](https://github.com/ax/apk.sh) — 自动完成 APK 提取、解码、重建和打补丁等重复任务，让 Android 应用逆向工程更轻松。 **[3,842 星标]**
+- [ax/apk.sh](https://github.com/ax/apk.sh) — 自动完成 APK 提取、解码、重建和打补丁等重复任务，让 Android 应用逆向工程更轻松。 **[3,842 星标]** · 精选：[apk.sh Android 应用分析脚本](https://awesomerea.org/zh/resources/apk-sh/)
 - [ReVanced/revanced-patcher](https://github.com/ReVanced/revanced-patcher) — 💉 用于为 Android 应用打补丁的 ReVanced Patcher。 **[3,525 星标]**
-- [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — 使用 Zygisk 在运行时转储 il2cpp 数据。 **[3,343 星标]**
-- [m0bilesecurity/RMS-Runtime-Mobile-Security](https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security) — Runtime Mobile Security（RMS）📱🔥：功能强大的 Web 界面，帮助你在运行时操控 Android 和 iOS 应用。 **[3,111 星标]**
 - [zinja-coder/jadx-ai-mcp](https://github.com/zinja-coder/jadx-ai-mcp) — 为 JADX 集成 MCP 服务器的插件。 **[2,906 星标]** · 精选：[JADX-AI-MCP](https://awesomerea.org/zh/resources/jadx-ai-mcp/)
 - [Impact-I/reFlutter](https://github.com/Impact-I/reFlutter) — Flutter 逆向工程框架。 **[2,775 星标]** · 精选：[reFlutter](https://awesomerea.org/zh/resources/reflutter/)
 - [worawit/blutter](https://github.com/worawit/blutter) — Flutter 移动应用逆向工程工具。 **[2,750 星标]** · 精选：[Blutter](https://awesomerea.org/zh/resources/blutter/)
 - [AFLplusplus/LibAFL](https://github.com/AFLplusplus/LibAFL) — 高级模糊测试库：使用 Rust 组合构建你的模糊测试器！可扩展到多核心和多机器，支持 Windows、Android、macOS、Linux、no\_std 等。 **[2,660 星标]**
-- [iddoeldor/frida-snippets](https://github.com/iddoeldor/frida-snippets) — 精心编写的 Frida 示例。 **[2,539 星标]**
+- [iddoeldor/frida-snippets](https://github.com/iddoeldor/frida-snippets) — 精心编写的 Frida 示例。 **[2,539 星标]** · 精选：[Frida Snippets Frida 插桩示例集](https://awesomerea.org/zh/resources/frida-snippets/)
 - [MG1937/ASC](https://github.com/MG1937/ASC) — ASC 是为智能体和移动端研究人员设计的超快、轻量 Android 反编译器。 **[2,410 星标]** · 精选：[Droid ASC Android 反编译器](https://awesomerea.org/zh/resources/droid-asc/)
 - [REAndroid/APKEditor](https://github.com/REAndroid/APKEditor) — 功能强大的 Android APK 编辑器，不依赖 aapt/aapt2。 **[2,363 星标]** · 精选：[APKEditor](https://awesomerea.org/zh/resources/apkeditor/)
 - [Ch0pin/medusa](https://github.com/Ch0pin/medusa) — 移动边缘动态统一安全分析。 **[2,357 星标]** · 精选：[MEDUSA](https://awesomerea.org/zh/resources/medusa-framework/)
@@ -44,28 +41,30 @@
 - [chame1eon/jnitrace](https://github.com/chame1eon/jnitrace) — 基于 Frida 的工具，用于跟踪 Android 应用对 JNI API 的使用。 **[1,864 星标]** · 精选：[jnitrace](https://awesomerea.org/zh/resources/jnitrace/)
 - [maddiestone/AndroidAppRE](https://github.com/maddiestone/AndroidAppRE) — Android 应用逆向工程实训。 **[1,568 星标]**
 - [deathmemory/FridaContainer](https://github.com/deathmemory/FridaContainer) — FridaContainer 整合网上流行的及自行编写的常用 Frida 脚本，提升逆向工作效率，支持 Frida 脚本模块化以及 Java 与 JNI 跟踪。 **[1,520 星标]**
-- [ViRb3/magisk-frida](https://github.com/ViRb3/magisk-frida) — 🔐 通过 Magisk 在开机时运行 frida-server，并始终保持最新。 **[1,473 星标]**
-- [nccgroup/house](https://github.com/nccgroup/house) — 基于 Frida、使用 Python 编写的移动应用运行时分析工具包，带有 Web GUI。 **[1,468 星标]**
-- [DERE-ad2001/Frida-Labs](https://github.com/DERE-ad2001/Frida-Labs) — 本仓库包含一系列挑战，用于学习使用 Frida 进行 Android 漏洞利用。 **[1,331 星标]**
-- [iGio90/Dwarf](https://github.com/iGio90/Dwarf) — 基于 PyQt5 和 Frida 构建、功能全面的多架构/多操作系统调试器。 **[1,321 星标]**
+- [ViRb3/magisk-frida](https://github.com/ViRb3/magisk-frida) — 🔐 通过 Magisk 在开机时运行 frida-server，并始终保持最新。 **[1,473 星标]** · 精选：[MagiskFrida 开机自启 frida-server 的 root 模块](https://awesomerea.org/zh/resources/magisk-frida/)
+- [nccgroup/house](https://github.com/nccgroup/house) — 基于 Frida、使用 Python 编写的移动应用运行时分析工具包，带有 Web GUI。 **[1,468 星标]** · 精选：[House Android 运行时分析工具](https://awesomerea.org/zh/resources/house/)
+- [DERE-ad2001/Frida-Labs](https://github.com/DERE-ad2001/Frida-Labs) — 本仓库包含一系列挑战，用于学习使用 Frida 进行 Android 漏洞利用。 **[1,331 星标]** · 精选：[Frida Labs Android 插桩练习](https://awesomerea.org/zh/resources/frida-labs/)
 - [P1sec/hermes-dec](https://github.com/P1sec/hermes-dec) — 用于反编译和反汇编 React Native Hermes 字节码的逆向工程工具。 **[1,213 星标]** · 精选：[hermes-dec](https://awesomerea.org/zh/resources/hermes-dec/)
+- [reversenseorg/dexcalibur](https://github.com/reversenseorg/dexcalibur) — Reversense（Dexcalibur2）是对 Dexcalibur 的全面重写与重新设计。它是一个二进制情报平台，可自动化移动和嵌入式应用的逆向工程。 **[1,180 星标]** · 精选：[Dexcalibur（Reversense）Android 逆向分析平台](https://awesomerea.org/zh/resources/dexcalibur/)
 - [sh4hin/Androl4b](https://github.com/sh4hin/Androl4b) — 用于评估 Android 应用、逆向工程及恶意软件分析的虚拟机。 **[1,175 星标]**
-- [anestisb/vdexExtractor](https://github.com/anestisb/vdexExtractor) — 从 Vdex 文件中反编译并提取 Android Dex 字节码的工具。 **[1,142 星标]**
+- [anestisb/vdexExtractor](https://github.com/anestisb/vdexExtractor) — 从 Vdex 文件中反编译并提取 Android Dex 字节码的工具。 **[1,142 星标]** · 精选：[vdexExtractor Vdex 字节码提取工具](https://awesomerea.org/zh/resources/vdexextractor/)
 - [Misaka-Mikoto-Tech/MonoHook](https://github.com/Misaka-Mikoto-Tech/MonoHook) — 无需修改 DLL 文件（如 UnityEditor.dll），即可在运行时 hook C# 方法，支持 Windows、Mac 和 Android il2cpp（armv7a 与 armv8a）。 **[1,065 星标]**
-- [LuckyPray/DexKit](https://github.com/LuckyPray/DexKit) — 易用、高性能的 Dex 去混淆库。 **[1,061 星标]**
+- [LuckyPray/DexKit](https://github.com/LuckyPray/DexKit) — 易用、高性能的 Dex 去混淆库。 **[1,061 星标]** · 精选：[DexKit 混淆 DEX 代码检索库](https://awesomerea.org/zh/resources/dexkit/)
 - [mitmproxy/android-unpinner](https://github.com/mitmproxy/android-unpinner) — 移除 APK 中的证书锁定。 **[1,053 星标]** · 精选：[Android Unpinner](https://awesomerea.org/zh/resources/android-unpinner/)
 - [suifei/fridare](https://github.com/suifei/fridare) — 适用于 iOS 和 Android 的强大 Frida 重打包工具，便于修改 Frida 特征、增强隐蔽性并绕过检测，简化逆向工程与安全测试。 **[949 星标]**
 - [tp7309/TTDeDroid](https://github.com/tp7309/TTDeDroid) — 一键快速反编译 APK/AAR/DEX/JAR 的工具，由 jadx、dex2jar 和 enjarify 提供支持。 **[949 星标]**
 - [Margular/frida-skeleton](https://github.com/Margular/frida-skeleton) — 基于 Frida 的 Android hook 框架，提供多种 Frida 自身不支持的功能，让 Android hook 简单便捷、人人可用。 **[882 星标]**
-- [neocanable/garlic](https://github.com/neocanable/garlic) — 全球最快的开源 APK（Android）/Java 反编译器。 **[861 星标]**
+- [neocanable/garlic](https://github.com/neocanable/garlic) — 全球最快的开源 APK（Android）/Java 反编译器。 **[861 星标]** · 精选：[Garlic APK/Java 反编译器](https://awesomerea.org/zh/resources/garlic-decompiler/)
 - [venshine/decompile-apk](https://github.com/venshine/decompile-apk) — 🔥 APK 反编译。 **[823 星标]**
 - [zinja-coder/jadx-mcp-server](https://github.com/zinja-coder/jadx-mcp-server) — 适用于 JADX-AI 插件的 MCP 服务器。 **[803 星标]**
 - [lixi5338619/lxBook](https://github.com/lixi5338619/lxBook) — 《爬虫逆向进阶实战》书籍代码库。 **[768 星标]**
-- [secrary/Andromeda](https://github.com/secrary/Andromeda) — Andromeda：面向 Android 应用的交互式逆向工程工具。 **[714 星标]**
-- [horsicq/XAPKDetector](https://github.com/horsicq/XAPKDetector) — 适用于 Windows、Linux 和 MacOS 的 APK/DEX 检测器。 **[696 星标]**
+- [yhs0602/Android-Disassembler](https://github.com/yhs0602/Android-Disassembler) — 在 Android 上反汇编任意文件，包括 .so（NDK、JNI）、Windows PE（EXE、DLL、SYS 等）、Linux 二进制文件和库，甚至图片、音频等其他文件（仅供娱乐）。这是基于 Capstone 的 Android 反汇编应用，可用于 Android NDK 共享库、Windows 二进制文件等的逆向分析。 **[717 星标]** · 精选：[Android-Disassembler 安卓端反汇编应用](https://awesomerea.org/zh/resources/android-disassembler/)
+- [secrary/Andromeda](https://github.com/secrary/Andromeda) — Andromeda：面向 Android 应用的交互式逆向工程工具。 **[714 星标]** · 精选：[Andromeda Android 应用交互式逆向工具](https://awesomerea.org/zh/resources/andromeda/)
+- [horsicq/XAPKDetector](https://github.com/horsicq/XAPKDetector) — 适用于 Windows、Linux 和 MacOS 的 APK/DEX 检测器。 **[696 星标]** · 精选：[XAPKDetector APK/DEX 检测工具](https://awesomerea.org/zh/resources/xapkdetector/)
 - [SlickAmogus/silent-hill-decomp](https://github.com/SlickAmogus/silent-hill-decomp) — 基于《寂静岭 1》PSX 反编译成果，借助 Claude 和 Psycross 制作的多平台、功能丰富的移植版。目前仍处于 beta 阶段，正在积极开发。 **[682 星标]**
 - [darbra/sign](https://github.com/darbra/sign) — 逆向分析应用参数的思路与经验，聚焦 Android 逆向。 **[675 星标]**
-- [evilpan/jni\_helper](https://github.com/evilpan/jni_helper) — 在 APK 中查找 JNI 函数签名，并将其应用于逆向工程工具。 **[675 星标]**
+- [evilpan/jni\_helper](https://github.com/evilpan/jni_helper) — 在 APK 中查找 JNI 函数签名，并将其应用于逆向工程工具。 **[675 星标]** · 精选：[jni\_helper JNI 函数签名提取工具](https://awesomerea.org/zh/resources/jni-helper/)
+- [lkimuk/ReArk](https://github.com/lkimuk/ReArk) — 面向 HarmonyOS NEXT（HAP/APP/ABC）、Android（APK/AAB）、iOS（IPA）以及原生 PE/ELF/Mach-O 二进制文件的智能逆向工程与 AI 辅助分析工具。 **[675 星标]** · 精选：[ReArk 鸿蒙与移动应用逆向分析工作台](https://awesomerea.org/zh/resources/reark/)
 - [zinja-coder/apktool-mcp-server](https://github.com/zinja-coder/apktool-mcp-server) — APK Tool 的 MCP 服务器（Android Reverse Engineering MCP Suites 的一部分）。 **[674 星标]** · 精选：[apktool-mcp-server Apktool MCP 服务](https://awesomerea.org/zh/resources/apktool-mcp-server/)
 - [yazgx97/frida-android-hook](https://github.com/yazgx97/frida-android-hook) — 帮助你在 Android 平台上轻松使用 Frida 的工具。 **[654 星标]**
 - [bongtrop/hbctool](https://github.com/bongtrop/hbctool) — Hermes 字节码逆向工程工具，可汇编与反汇编 Hermes 字节码。 **[642 星标]** · 精选：[hbctool Hermes 字节码汇编与反汇编工具](https://awesomerea.org/zh/resources/hbctool/)
@@ -74,9 +73,9 @@
 - [MJx0/KittyMemory](https://github.com/MJx0/KittyMemory) — 面向 Android 和 iOS 的 C++ 库，用于运行时内存修补、扫描、转储，以及模块（ELF / Mach-O）内省。 **[562 星标]**
 - [ImKKingshuk/LockKnife](https://github.com/ImKKingshuk/LockKnife) — LockKnife：全面的 Android 安全研究工具。为研究人员与黑客打造的统一 TUI 工作区及无界面命令行工具，支持深入的 Android 安全研究。采用 Python 编排与 Rust 加速核心，支持 AI 智能体驱动的破解研究、凭据恢复/破解、APK 分析、情报收集和运行时检查。 **[549 星标]**
 - [CreditTone/android-reverse-engineering-skill](https://github.com/CreditTone/android-reverse-engineering-skill) — 专为 Codex 适配的 Android 逆向分析技能，支持在 Codex 会话中反编译 APK、XAPK、JAR、AAR，并结合 jadx、Fernflower/Vineflower 梳理 Manifest、包结构、网络层和调用链。可辅助提取接口、URL、鉴权头、token 与签名逻辑，并提供 Frida、抓包及 JNI/SO 分析前的静态侦察方法，适用于接口分析、安全研究和授权测试。 **[547 星标]**
+- [Yricky/abcde](https://github.com/Yricky/abcde) — OpenHarmony 逆向工具包，初步支持反编译。 **[547 星标]** · 精选：[ABCDE OpenHarmony 逆向工具包](https://awesomerea.org/zh/resources/abcde/)
 - [damaiqiangpiao/damai](https://github.com/damaiqiangpiao/damai) — 大麦、猫眼、票星球抢票技术社区 | Android 逆向、Frida hook、票务监控 | QQ 955767910 **[538 星标]**
-- [cruise-automation/fwanalyzer](https://github.com/cruise-automation/fwanalyzer) — 用于安全分析文件系统镜像的工具。 **[516 星标]**
-- [CalebFenton/dex-oracle](https://github.com/CalebFenton/dex-oracle) — 基于模式匹配的 Dalvik 去混淆工具，通过有限执行改善语义分析。 **[503 星标]**
+- [CalebFenton/dex-oracle](https://github.com/CalebFenton/dex-oracle) — 基于模式匹配的 Dalvik 去混淆工具，通过有限执行改善语义分析。 **[503 星标]** · 精选：[dex-oracle Dalvik 反混淆工具](https://awesomerea.org/zh/resources/dex-oracle/)
 - [lumirelle/android-killer](https://github.com/lumirelle/android-killer) — 经典、传统乃至老旧的 Android 反编译工具。让 Android-killer 再次强大！ **[496 星标]**
 - [ivan-sincek/android-penetration-testing-cheat-sheet](https://github.com/ivan-sincek/android-penetration-testing-cheat-sheet) — 开发中…… **[493 星标]**
 - [Hrishikesh7665/Android-Pentesting-Checklist](https://github.com/Hrishikesh7665/Android-Pentesting-Checklist) — 全面的 Android 应用渗透测试清单，帮助轻松识别网络、数据、存储和权限方面的漏洞。通过实用工具与易懂指南提升安全技能，让 Android 安全测试更加顺畅！ **[484 星标]**
@@ -87,7 +86,7 @@
 - [BryanGIG/PADumper](https://github.com/BryanGIG/PADumper) — Android 进程内存转储工具。 **[463 星标]**
 - [t0thkr1s/allsafe-android](https://github.com/t0thkr1s/allsafe-android) — 刻意包含漏洞的 Android 应用。 **[441 星标]**
 - [Odrannnn/MetroidPrimePort](https://github.com/Odrannnn/MetroidPrimePort) — 基于 PrimeDecomp 反编译成果，为 Linux、Windows 和 Android 构建的《密特罗德 Prime》（GameCube）原生移植版。无需模拟器，不包含游戏资源，需自行提供光盘镜像。 **[434 星标]** · 精选：[Metroid Prime Port：AI 辅助完成的 PrimeDecomp 反编译原生移植](https://awesomerea.org/zh/resources/metroid-prime-port-case/)
-- [Evil0ctal/AndroidReverse101](https://github.com/Evil0ctal/AndroidReverse101) — 📖 从 0 到 1 系统学习 Android 逆向，让学习变得有趣、好玩、易上手！ **[427 星标]**
+- [Evil0ctal/AndroidReverse101](https://github.com/Evil0ctal/AndroidReverse101) — 📖 从 0 到 1 系统学习 Android 逆向，让学习变得有趣、好玩、易上手！ **[427 星标]** · 精选：[AndroidReverse101（Android 逆向 100 天教程）](https://awesomerea.org/zh/resources/androidreverse101/)
 - [cxapython/mybackup-IT](https://github.com/cxapython/mybackup-IT) — 技术文章备份，涵盖 Android、JavaScript、汇编及相关逆向分析。 **[420 星标]**
 - [ucsb-seclab/BootStomp](https://github.com/ucsb-seclab/BootStomp) — BootStomp：引导加载程序漏洞查找工具。 **[417 星标]**
 - [TheQmaks/phantom-frida](https://github.com/TheQmaks/phantom-frida) — 从源码构建抗检测 Frida 服务器，约 90 个补丁覆盖 16 类检测途径，每周以随机名称自动构建。 **[395 星标]**
@@ -96,25 +95,27 @@
 - [z3n70/Frida-Script-Runner](https://github.com/z3n70/Frida-Script-Runner) — 基于 Web 的 Frida 框架与工具包，面向 Android/iOS 渗透测试、移动安全及动态分析，支持 AI 辅助生成 Frida 脚本。 **[381 星标]**
 - [ByNameModding/BNM-Android](https://github.com/ByNameModding/BNM-Android) — 在 Android 上通过类名、方法名和字段名修改 il2cpp 游戏。 **[373 星标]**
 - [MartinStyk/apk-analyzer](https://github.com/MartinStyk/apk-analyzer) — Google Play 下载量最高的 APK 分析应用，为设备上的每个应用生成详细报告。无需 root、无广告，数据不会离开手机。 **[371 星标]**
+- [Ayrx/JNIAnalyzer](https://github.com/Ayrx/JNIAnalyzer) — 用于在 Ghidra 中处理 Android NDK 库的分析脚本。 **[365 星标]** · 精选：[JNIAnalyzer Ghidra 扩展](https://awesomerea.org/zh/resources/jnianalyzer/)
 - [Mrack/TInjector](https://github.com/Mrack/TInjector) — 劫持 Zygote，在应用启动前注入 SO。 **[363 星标]**
 - [hackcatml/frida-flutterproxy](https://github.com/hackcatml/frida-flutterproxy) — 通过 Burp 代理 Flutter 应用流量。 **[362 星标]**
 - [hack0z/luject](https://github.com/hack0z/luject) — 🍹 为应用静态注入动态库的工具，支持 Android、iPhoneOS、macOS、Windows 和 Linux。 **[359 星标]**
 - [alphaSeclab/android-security](https://github.com/alphaSeclab/android-security) — Android 安全资源。 **[356 星标]**
 - [morpheuslord/QuadraInspect](https://github.com/morpheuslord/QuadraInspect) — QuadraInspect 是集成 AndroPass、APKUtil 和 MobFS 的 Android 框架，为 Android 应用安全分析提供强大工具。 **[354 星标]**
+- [mildsunrise/darter](https://github.com/mildsunrise/darter) — <span>:</span>detective: Dart / Flutter VM 快照分析器 **[345 星标]** · 精选：[darter Dart 快照解析器](https://awesomerea.org/zh/resources/darter/)
 - [chame1eon/jnitrace-engine](https://github.com/chame1eon/jnitrace-engine) — jnitrace 用于拦截 JNI API 调用的引擎。 **[335 星标]**
 - [yazgx97/frida-intercept-encrypted-api](https://github.com/yazgx97/frida-intercept-encrypted-api) — 帮助拦截 iOS 或 Android 应用中加密 API 的工具。 **[333 星标]**
 - [nathanialf/ico-pc](https://github.com/nathanialf/ico-pc) — 基于 ICO（PS2）反编译项目（nathanialf/ico）的 PC、Android、iOS 和 macOS 移植版，支持 Windows、Linux、Steam Deck、Android、通过 LiveContainer 运行的 iPhone，以及由社区贡献的 Apple 芯片 Mac 版本。不包含游戏数据。 **[331 星标]** · 精选：[ico-pc：由 PS2 反编译源码编译而成的《ICO》原生移植](https://awesomerea.org/zh/resources/ico-pc-port-case/)
 - [f3rb123/kill\_flutter](https://github.com/f3rb123/kill_flutter) — 适用于 Android 和 iOS 的 Flutter SSL 证书固定绕过工具；无需特征数据库，支持任意 Flutter 版本。 **[315 星标]**
 - [LucasFaudman/apkscan](https://github.com/LucasFaudman/apkscan) — 对 Android 文件进行反编译和去混淆后，扫描密钥、端点和其他敏感数据。支持 .apk、.xapk、.dex、.jar、.class、.smali、.zip、.aar、.arsc、.aab、.jadx.kts。 **[312 星标]**
 - [zahidaz/jezail](https://github.com/zahidaz/jezail) — Android 渗透测试工具包，可在已 root 的设备上使用 REST API、网页终端、屏幕镜像、Frida 及完整设备控制功能 **[278 星标]**
-- [loerting/dalvikus](https://github.com/loerting/dalvikus) — Android 逆向工程工具及 smali 编辑器 **[273 星标]**
+- [loerting/dalvikus](https://github.com/loerting/dalvikus) — Android 逆向工程工具及 smali 编辑器 **[273 星标]** · 精选：[dalvikus Android 逆向与 smali 编辑工具](https://awesomerea.org/zh/resources/dalvikus/)
 - [talsec/Free-RASP-Android](https://github.com/talsec/Free-RASP-Android) — 为 Android 设备提供威胁检测和安全监控的 SDK。使用免费的 Android RASP 保护应用，检测逆向工程、root（Magisk）、越狱、Frida、模拟器、机器人、篡改与完整性问题、混淆、VPN 使用及恶意软件，并监控设备标识与指纹。 **[271 星标]**
 - [Hamz-a/frida-android-helper](https://github.com/Hamz-a/frida-android-helper) — Frida Android 实用工具 **[266 星标]**
 - [nbauma109/jd-gui-duo](https://github.com/nbauma109/jd-gui-duo) — 独立桌面图形界面，集成多种反编译器，支持 JD-Core V0 与 V1、CFR、Procyon、Fernflower、Vineflower 和 Jadx **[266 星标]**
 - [Dr-hydra/Better-Endfield](https://github.com/Dr-hydra/Better-Endfield) — 面向《明日方舟：终末地》的模块化 Windows/Android 工具包：提供 BEM 模型模组及创作工具、原生插件、MMD 播放、相机与界面控制、角色语音、标题画面定制，以及 PC 战斗和抽卡工具。 **[259 星标]**
 - [ViRb3/apk-utilities](https://github.com/ViRb3/apk-utilities) — 🛠 操作 Android APK 的工具与脚本 **[252 星标]**
 - [Octowolve/Hooking-Template-With-Mod-Menu](https://github.com/Octowolve/Hooking-Template-With-Mod-Menu) — 使用 Substrate（或 Dobby，参见分支）进行 Android Hook 的小型模板，内含 Java 编写的模组菜单。 **[249 星标]**
-- [adityatelange/frida-ui](https://github.com/adityatelange/frida-ui) — 直接在浏览器中与 Frida 设备、进程和脚本交互。 **[245 星标]**
+- [adityatelange/frida-ui](https://github.com/adityatelange/frida-ui) — 直接在浏览器中与 Frida 设备、进程和脚本交互。 **[245 星标]** · 精选：[Frida UI 浏览器端 Frida 操作界面](https://awesomerea.org/zh/resources/frida-ui/)
 - [Eltion/Facebook-SSL-Pinning-Bypass](https://github.com/Eltion/Facebook-SSL-Pinning-Bypass) — 在 Android 设备上绕过 Facebook 的 SSL 证书固定。 **[233 星标]**
 - [mpast/mobileAudit](https://github.com/mpast/mobileAudit) — 对 Android APK 执行静态应用安全测试（SAST）和恶意软件分析的 Django 应用 **[229 星标]**
 - [Mrack/TInjector\_Symbi](https://github.com/Mrack/TInjector_Symbi) — 通过更稳定地劫持 Zygote，在应用启动前注入 SO。 **[224 星标]**
@@ -122,6 +123,7 @@
 - [ADWMC/helm-d](https://github.com/ADWMC/helm-d) — DeepSeek Harness 破甲一体化安全分析插件，聚合 Android、Web、Native、Protocol、Malware 和 AI-Security 全领域功能（9 个 bundle 与 1 个 preset）。 **[217 星标]**
 - [Ablation-Tool/ablation](https://github.com/Ablation-Tool/ablation) — Ablation 是一个自主逆向工程系统。 **[213 星标]**
 - [MlgmXyysd/Il2CppMemoryDumper](https://github.com/MlgmXyysd/Il2CppMemoryDumper) — 从进程内存中转储未受保护的 Il2Cpp ELF 可执行文件及元数据 **[207 星标]**
+- [jd-opensource/arkdecompiler](https://github.com/jd-opensource/arkdecompiler) — HarmonyOS NEXT（纯血鸿蒙）反编译器 **[203 星标]** · 精选：[arkdecompiler 鸿蒙 NEXT 反编译器](https://awesomerea.org/zh/resources/arkdecompiler/)
 - [RevEngiSquad/revengi-app](https://github.com/RevEngiSquad/revengi-app) — 一体化逆向工程工具集：Smali 语法、DexRepair、Flutter 分析等多种功能…… **[202 星标]**
 - [user1342/Obfu-DE-Scate](https://github.com/user1342/Obfu-DE-Scate) — Obfu\[DE\]scate 是 Android APK 去混淆工具，通过模糊比对逻辑识别函数间的相似性，即使函数在混淆时已被重命名也可识别。它比较两个版本的 APK，并输出映射文本文件和交互式 HTML 文件！ **[200 星标]**
 - [hackcatml/frida-ue4dump](https://github.com/hackcatml/frida-ue4dump) — 用于 UE4 转储的 Frida 脚本 **[195 星标]**
@@ -138,7 +140,7 @@
 - [aimardcr/akane-injector](https://github.com/aimardcr/akane-injector) — 适用于 Android、由内核辅助的共享库注入器。将任意 .so 加载到目标进程，无需 ptrace、进程内 dlopen，也不在 /proc/&lt;pid&gt;/maps 中留下可见痕迹。支持 GKI 2.0（Android 12–16）。 **[174 星标]**
 - [okankurtuluss/FridaBypassKit](https://github.com/okankurtuluss/FridaBypassKit) — Android 通用反检测绕过框架：绕过 Root、SSL 证书固定、模拟器及调试检测。 **[170 星标]**
 - [user1342/AutoDroid](https://github.com/user1342/AutoDroid) — 自动化 Android 设备交互的工具，包含 ADB、AndroGuard 及 Frida 交互。 **[164 星标]**
-- [huuck/Katalina](https://github.com/huuck/Katalina) — Katalina 类似于面向 Dalvik 字节码的 Unicorn，提供可逐条执行 Android 字节码指令的环境。 **[162 星标]**
+- [huuck/Katalina](https://github.com/huuck/Katalina) — Katalina 类似于面向 Dalvik 字节码的 Unicorn，提供可逐条执行 Android 字节码指令的环境。 **[162 星标]** · 精选：[Katalina Dalvik 字节码模拟器](https://awesomerea.org/zh/resources/katalina/)
 - [ZSA233/frida-analykit](https://github.com/ZSA233/frida-analykit) — Frida 工具包 - 主要面向安卓端逆向，解决frida环境版本管理和对Agent端常用底层工具方法封装，支持MCP。（目前主要由AI开发维护代码） **[156 星标]**
 - [in1nit1t/uniref](https://github.com/in1nit1t/uniref) — 用于分析 Unity 应用的 Python 编程框架。 **[154 星标]**
 - [ivan-sincek/malware-apk](https://github.com/ivan-sincek/malware-apk) — 作为漏洞猎人，你的漏洞赏金报告是否因未使用“恶意”概念验证（PoC）应用来利用漏洞而遭到拒绝？本项目可以帮上忙！ **[154 星标]**
@@ -154,6 +156,7 @@
 - [baksmali/smali](https://github.com/baksmali/smali) — smali 和 baksmali 所有版本的发布产物，v3 由 <span>@</span>google 提供，v2 和 v1 由 <span>@</span>JesusFreke 提供 **[131 星标]**
 - [0x742/noia](https://github.com/0x742/noia) — \[开发中\] 简单的移动应用沙盒文件浏览工具，由 \[frida.re\]\(https<span>:</span>//www<span>.</span>frida.re) 提供支持。 **[129 星标]**
 - [BitTheByte/Jarida](https://github.com/BitTheByte/Jarida) — Jarida（Jadx + Frida）是 Jadx 图形界面插件，可直接从 Jadx 反编译视图使用 Frida 在运行时跟踪 Java 方法，并按需修改返回值。 **[127 星标]**
+- [UltraSina/androidReverse](https://github.com/UltraSina/androidReverse) — 完全在设备上进行 Android 逆向工程，提供 Radare2 二进制分析、8 种 Java 反编译器，以及 Flutter 和 Unity IL2CPP 支持。 **[127 星标]** · 精选：[Android Reverse 设备端逆向套件](https://awesomerea.org/zh/resources/ultrasina-android-reverse/)
 - [script-or-script/FlutterTap](https://github.com/script-or-script/FlutterTap) — 拦截 Flutter 应用流量的 Zygisk 模块，可将流量重定向至代理并绕过 BoringSSL TLS 证书固定。持续生效，无需 Frida 会话，可通过 MMRL 安装。 **[126 星标]**
 - [t0thkr1s/frida](https://github.com/t0thkr1s/frida) — 用于移动应用动态分析的 Frida 脚本。 **[126 星标]**
 - [0xSHAK1B/TIKTOK-SSL-Pinning-Bypass](https://github.com/0xSHAK1B/TIKTOK-SSL-Pinning-Bypass) — 在 Android 上绕过 TikTok 的 SSL／TLS 证书固定，以拦截和分析 HTTPS 流量；支持 Root 与无 Root，适配 Burp Suite、mitmproxy 和 Reqable（2026）。 **[122 星标]**
@@ -173,7 +176,7 @@
 - [darvincisec/DetectTamper](https://github.com/darvincisec/DetectTamper) — Android 篡改检测。 **[95 星标]**
 - [cybersecsi/robodroid](https://github.com/cybersecsi/robodroid) — 使用预定义行为管理网络靶场环境中的 Android 机器。 **[91 星标]**
 - [ChupathingyCE/chupathingyce](https://github.com/ChupathingyCE/chupathingyce) — Chupathingy：让 Halo: Combat Evolved 原生运行于 Windows、Mac、Linux 和 Android。基于 Halo CE 反编译项目移植，侧重稳定性及社区多人游戏，提供自己的专用服务器和 Delta 网络。 **[90 星标]**
-- [giacomoferretti/paranoid-deobfuscator](https://github.com/giacomoferretti/paranoid-deobfuscator) — 对“paranoid”保护的应用去混淆 **[90 星标]**
+- [giacomoferretti/paranoid-deobfuscator](https://github.com/giacomoferretti/paranoid-deobfuscator) — 对“paranoid”保护的应用去混淆 **[90 星标]** · 精选：[paranoid-deobfuscator 字符串反混淆工具](https://awesomerea.org/zh/resources/paranoid-deobfuscator/)
 - [0xdad0/PAPIMonitor](https://github.com/0xdad0/PAPIMonitor) — 面向 Android 应用的 Python API 监视器。 **[89 星标]**
 - [andpalmier/apkingo](https://github.com/andpalmier/apkingo) — 从 APK 文件提取信息 **[89 星标]**
 - [flpflan/u-freecam](https://github.com/flpflan/u-freecam) — Unity 自由相机，进程内部实现 **[88 星标]**
@@ -233,7 +236,7 @@
 - [argus-sight/BinSight](https://github.com/argus-sight/BinSight) — 通过 LLM + Capstone 分析 APK 中的 so 文件，判断其主要用途和开发者（公司）。 **[33 星标]**
 - [nyancrimew/apkrev](https://github.com/nyancrimew/apkrev) — Android 应用逆向工程流程。 **[33 星标]**
 - [BitTheByte/Orkestra](https://github.com/BitTheByte/Orkestra) — 基于 Web 的 Android 调试器，以 Frida 和 Jadx 为核心并提供检查功能。 **[32 星标]**
-- [Qtty/jadx-mcp-server](https://github.com/Qtty/jadx-mcp-server) — 面向 JaDX Android 逆向工程工具的纯 Java MCP 服务器。 **[32 星标]**
+- [Qtty/jadx-mcp-server](https://github.com/Qtty/jadx-mcp-server) — 面向 JaDX Android 逆向工程工具的纯 Java MCP 服务器。 **[32 星标]** · 精选：[JADX MCP Server（Qtty）](https://awesomerea.org/zh/resources/qtty-jadx-mcp-server/)
 - [andrebrumdev/gow2-recomp](https://github.com/andrebrumdev/gow2-recomp) — 《God of War II HD》静态重编译：整理的工作产物，包括代码提升边界、SPU 代码提升源码、脚本和研究发现。不包含游戏数据与构建产物。 **[29 星标]**
 - [lm060719/reconbridge](https://github.com/lm060719/reconbridge) — 通用逆向分析 KernelSU 模块：手机侧仅提供原子能力，智能处理全部位于 PC 侧（Claude Code + MCP）。仅限授权安全研究与教育用途。 **[29 星标]**
 - [capt-meelo/loupe](https://github.com/capt-meelo/loupe) — 基于浏览器的 Android 控制台、APK 反编译器和安全分析工具。提供屏幕镜像、logcat、Shell、Frida、jadx，以及静态和动态分析，无需驱动程序或 adb 服务器。 **[28 星标]**

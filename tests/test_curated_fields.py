@@ -18,6 +18,7 @@ RECORD = {
     'evidence_url': 'https://github.com/example/field-fixture/blob/0123456789abcdef0123456789abcdef01234567/README.md',
     'additional_evidence_urls': ['https://example.org/docs'],
     'verified_at': '2026-09-30', 'verification': 'source-reviewed', 'requirements': ['Python 3'],
+    'requirement_facets': ['prerequisites'], 'added_at': '2026-09-30',
 }
 
 
@@ -28,9 +29,10 @@ def errors_for(record):
 
 
 class CuratedFieldTests(unittest.TestCase):
-    def test_supported_fields_including_additional_evidence_pass(self):
+    def test_supported_fields_including_optional_ones_pass(self):
         self.assertEqual(errors_for(deepcopy(RECORD)), [])
-        without_optional = {key: value for key, value in RECORD.items() if key != 'additional_evidence_urls'}
+        optional = {'additional_evidence_urls', 'added_at', 'requirement_facets'}
+        without_optional = {key: value for key, value in RECORD.items() if key not in optional}
         self.assertEqual(errors_for(without_optional), [])
         self.assertEqual(unknown_field_warnings([RECORD, without_optional]), [])
 
@@ -54,7 +56,7 @@ class CuratedFieldTests(unittest.TestCase):
 
     def test_other_new_fields_are_advisory_and_grouped(self):
         records = [deepcopy(RECORD) | {'id': f'field-fixture-{index}', 'url': f'https://example.org/{index}',
-                                       'requirement_facets': [], 'added_at': '2026-09-30'}
+                                       'mirror_urls': [], 'archived_at': '2026-09-30'}
                    for index in range(3)]
         errors = []
         validate_resources(records, errors, now=NOW)
@@ -62,7 +64,7 @@ class CuratedFieldTests(unittest.TestCase):
         self.assertEqual(unknown_field_warnings(records), [
             f"resource 'field-fixture-0'.{field}: unsupported field (in 3 record(s)); add it to the "
             'catalog format guide and validator, or remove it'
-            for field in ('added_at', 'requirement_facets')
+            for field in ('archived_at', 'mirror_urls')
         ])
 
     def test_pull_request_review_applies_the_same_rule(self):

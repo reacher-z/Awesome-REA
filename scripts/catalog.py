@@ -3,6 +3,8 @@
 import argparse
 import json
 from pathlib import Path
+import re
+import unicodedata
 
 from artifact_links import with_curated_labels
 from localization import localized_records, read_localizations
@@ -14,6 +16,12 @@ import strict_json
 
 ROOT = Path(__file__).resolve().parents[1]
 RESOURCE_FILES = (ROOT / 'data/rea-resources.json', ROOT / 'data/tool-resources.json')
+SEARCH_CONTROLS = re.compile(r'[\x00-\x1f\x7f]')
+
+
+def normalize_search_text(value):
+    """Replace C0/DEL controls with spaces, apply NFKC, then use locale-neutral casefolding."""
+    return unicodedata.normalize('NFKC', SEARCH_CONTROLS.sub(' ', str(value))).casefold()
 
 
 def load_resources():
@@ -46,9 +54,9 @@ def main():
     if args.list_categories:
         print('\n'.join(sorted({record['category'] for record in records})))
         return
-    terms = args.query.casefold().split()
+    terms = normalize_search_text(args.query).split()
     records = [record for record in records
-               if all(term in json.dumps(record, ensure_ascii=False).casefold() for term in terms)
+               if all(term in normalize_search_text(json.dumps(record, ensure_ascii=False)) for term in terms)
                and (args.category is None or record['category'] == args.category)
                and (args.target is None or args.target in record.get('targets', []))
                and (args.relationship is None or record.get('relationship') == args.relationship)]

@@ -2,9 +2,9 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/web-analysis/) · [English](web-analysis.md)
 
-**215 个仓库** · 2026-10-20 UTC
+**217 个仓库** · 2026-10-20 UTC
 
-这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
+这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
 - [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) — 面向编程智能体的 Chrome DevTools。 **[53,630 星标]** · 精选：[Chrome DevTools MCP](https://awesomerea.org/zh/resources/chrome-devtools-mcp/)
 - [mitmproxy/mitmproxy](https://github.com/mitmproxy/mitmproxy) — 支持 TLS 的交互式 HTTP 拦截代理，面向渗透测试人员和软件开发者。 **[45,662 星标]** · 精选：[mitmproxy](https://awesomerea.org/zh/resources/mitmproxy/)
@@ -32,27 +32,29 @@
 - [ben-sb/obfuscator-io-deobfuscator](https://github.com/ben-sb/obfuscator-io-deobfuscator) — 用于还原经 Obfuscator.io 混淆的脚本的去混淆工具。 **[807 星标]** · 精选：[Obfuscator.io 专用反混淆工具](https://awesomerea.org/zh/resources/obfuscator-io-deobfuscator/)
 - [decompme/decomp.me](https://github.com/decompme/decomp.me) — 协作式反编译与逆向工程网站。 **[632 星标]**
 - [aoyunyang/spider-king-skill](https://github.com/aoyunyang/spider-king-skill) — 以协议为先的逆向工程技能，将具有对抗性的网页客户端转化为纯协议 Python 采集器。 **[515 星标]**
-- [HynekPetrak/malware-jail](https://github.com/HynekPetrak/malware-jail) — 用于半自动 JavaScript 恶意软件分析、去混淆和载荷提取的沙箱，为 Node.js 编写。 **[480 星标]**
 - [wwwg/wasmdec](https://github.com/wwwg/wasmdec) — 将 WebAssembly 反编译为 C 的工具。 **[428 星标]**
 - [igorlira/dirplayer-rs](https://github.com/igorlira/dirplayer-rs) — 用 Rust 编写、兼容 Web 的 Shockwave Player 模拟器。 **[417 星标]**
 - [numandev1/react-native-decompiler](https://github.com/numandev1/react-native-decompiler) — 反编译 React Native Android/iOS Bundle。 **[371 星标]** · 精选：[React Native 反编译器](https://awesomerea.org/zh/resources/react-native-decompiler/)
+- [AngeloD2022/jsxer](https://github.com/AngeloD2022/jsxer) — 快速且准确的 JSXBIN 反编译器。 **[327 星标]** · 精选：[Jsxer JSXBIN 反编译器](https://awesomerea.org/zh/resources/jsxer/)
 - [helins/wasm.cljc](https://github.com/helins/wasm.cljc) — 符合规范的 WebAssembly 编译器、反编译器及生成器 **[264 星标]**
+- [vicnaum/bun-demincer](https://github.com/vicnaum/bun-demincer) — 针对 Bun 编译的独立 JavaScript 二进制文件的反编译、反压缩和去混淆工具 **[223 星标]** · 精选：[bun-demincer Bun 可执行文件 JavaScript 还原工具](https://awesomerea.org/zh/resources/bun-demincer/)
 - [L018/Trace](https://github.com/L018/Trace) — 用于网页分析的 Chrome 扩展 **[199 星标]**
-- [LostMyCode/javascript-deobfuscator](https://github.com/LostMyCode/javascript-deobfuscator) — 针对 Obfuscator.io 生成的 JavaScript 代码的去混淆工具 **[191 星标]**
-- [irelance/jsc-decompile-mozjs-34](https://github.com/irelance/jsc-decompile-mozjs-34) — Mozilla SpiderMonkey 34 版的 JavaScript 字节码解码器，可用于反编译 Cocos2d-x 编译的 JSC 文件 **[189 星标]**
+- [LostMyCode/javascript-deobfuscator](https://github.com/LostMyCode/javascript-deobfuscator) — 针对 Obfuscator.io 生成的 JavaScript 代码的去混淆工具 **[191 星标]** · 精选：[javascript-deobfuscator Obfuscator.io 字符串还原网页工具（LostMyCode）](https://awesomerea.org/zh/resources/lostmycode-javascript-deobfuscator/)
+- [irelance/jsc-decompile-mozjs-34](https://github.com/irelance/jsc-decompile-mozjs-34) — Mozilla SpiderMonkey 34 版的 JavaScript 字节码解码器，可用于反编译 Cocos2d-x 编译的 JSC 文件 **[189 星标]** · 精选：[jsc-decompile-mozjs-34 SpiderMonkey 字节码反编译器](https://awesomerea.org/zh/resources/jsc-decompile-mozjs-34/)
+- [T14Raptor/go-fAST](https://github.com/T14Raptor/go-fAST) — 使用 Go 编写的 JavaScript AST 解析器、遍历器和生成器 **[186 星标]** · 精选：[go-fAST JavaScript 语法树库](https://awesomerea.org/zh/resources/go-fast-js-ast/)
 - [katana-project/slicer](https://github.com/katana-project/slicer) — 基于网页的现代 Java 逆向工程工具。 **[176 星标]** · 精选：[slicer 浏览器端 Java 逆向工具](https://awesomerea.org/zh/resources/slicer/)
 - [zhongguagua/ai-code-decompile](https://github.com/zhongguagua/ai-code-decompile) — 🚀 AI 驱动的 JavaScript 反编译与去混淆工具，结合 AI 和 AST 进行代码分析与混淆还原，将难以阅读的构建产物转换为易懂的代码。 **[140 星标]**
-- [SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials](https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials) — 我的 JavaScript 逆向工程博客 ReverseJS 配套的去混淆工具源码。 **[125 星标]**
+- [SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials](https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials) — 我的 JavaScript 逆向工程博客 ReverseJS 配套的去混淆工具源码。 **[125 星标]** · 精选：[ReverseJS AST 反混淆配套资料](https://awesomerea.org/zh/resources/reversejs-ast-deobfuscation-materials/)
 - [spectral-mcp/spectral](https://github.com/spectral-mcp/spectral) — 照常浏览任意应用，Spectral 会捕获流量、理解每次 API 调用的作用，并生成 AI 智能体可直接调用的 MCP 工具。 **[121 星标]** · 精选：[Spectral](https://awesomerea.org/zh/resources/spectral-mcp/)
 - [lfi-project/lfi](https://github.com/lfi-project/lfi) — LFI 顶层仓库：实用、高效且安全的软件沙箱方案 **[120 星标]**
 - [Owl4444/jsdeob-workbench](https://github.com/Owl4444/jsdeob-workbench) — 以可视化方式逆向分析混淆的 JavaScript，串联转换、检查 AST 变化，并编写可复用的去混淆插件。 **[120 星标]** · 精选：[jsdeob-workbench](https://awesomerea.org/zh/resources/jsdeob-workbench/)
 - [Leslie-SSS/seeWxapkg](https://github.com/Leslie-SSS/seeWxapkg) — 极简实用的微信小程序反编译 Web 工具 **[118 星标]**
 - [X-3306/Project-Onyx](https://github.com/X-3306/Project-Onyx) — 通过 AI 遥测伪装与 WASM 沙箱实现高级 EDR 规避。Project Onyx 是红队概念验证流程，用于演示针对现代 EDR 系统的高级规避技术，从传统的基于特征的混淆转向行为伪装。 **[118 星标]**
-- [airbus-cert/minusone](https://github.com/airbus-cert/minusone) — 基于 tree-sitter 的 PowerShell/JavaScript 去混淆工具 **[103 星标]**
+- [airbus-cert/minusone](https://github.com/airbus-cert/minusone) — 基于 tree-sitter 的 PowerShell/JavaScript 去混淆工具 **[103 星标]** · 精选：[minusone 脚本去混淆引擎](https://awesomerea.org/zh/resources/minusone-script-deobfuscator/)
 - [NotDec/NotDec](https://github.com/NotDec/NotDec) — 基于 LLVM IR 的 WebAssembly（Wasm）反编译器与静态分析框架，仍在开发中 **[94 星标]** · 论文：[NotDec：通过跨过程类型恢复进行 WebAssembly 反编译](https://awesomerea.org/zh/papers/paper-notdec/)
 - [proofofbots/web-re-toolkit](https://github.com/proofofbots/web-re-toolkit) — 无需浏览器的无界面 Akamai 和 Kasada 解题工具，以及用于构建它的逆向工程工具包 **[93 星标]**
 - [wxyz-abcd/node-haxball](https://github.com/wxyz-abcd/node-haxball) — 功能最强大且轻量的 API，可在 Node.js 和浏览器环境中开发自己的 Haxball（www<span>.</span>haxball.com）主机、客户端和独立应用，涵盖各种可想象的修改方式与功能。 **[63 星标]**
-- [0x1Avram/js-deobfuscator](https://github.com/0x1Avram/js-deobfuscator) — 针对 obfuscator.io 混淆的 JavaScript 样本的去混淆工具。 **[62 星标]**
+- [0x1Avram/js-deobfuscator](https://github.com/0x1Avram/js-deobfuscator) — 针对 obfuscator.io 混淆的 JavaScript 样本的去混淆工具。 **[62 星标]** · 精选：[JS-Deobfuscator（0x1Avram）Obfuscator.io 反混淆工具](https://awesomerea.org/zh/resources/0x1avram-js-deobfuscator/)
 - [culturally/Instagram-iOS-SSL-pinning-bypass](https://github.com/culturally/Instagram-iOS-SSL-pinning-bypass) — 绕过了 SSL 固定／证书固定的 iOS Instagram。最新版本 395.0.0。 **[60 星标]**
 - [vibheksoni/unbuned](https://github.com/vibheksoni/unbuned) — 用于 Bun 编译可执行文件的反编译风格 JavaScript 提取器。零依赖 Python 工具，面向逆向工程、恶意软件分析和代码恢复。 **[58 星标]**
 - [dreamingmoths/silent-hill-museum](https://github.com/dreamingmoths/silent-hill-museum) — Silent Hill 模型博物馆。 **[54 星标]**

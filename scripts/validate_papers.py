@@ -8,6 +8,7 @@ import re
 import sys
 from urllib.parse import parse_qsl, unquote, urlsplit
 
+from data_classes import class_value_errors
 from review_dates import inclusion_date_error, review_date_is_future
 
 
@@ -27,8 +28,9 @@ FIELDS = TEXT_FIELDS | {
     'evidence_urls', 'runtime_tested',
 }
 # Optional publisher container metadata for published papers, omitted when unverified,
-# and the UTC date the record first reached main (feeds only; not a review date).
-OPTIONAL_FIELDS = {'citation', 'added_at'}
+# the UTC date the record first reached main (feeds only; not a review date), and
+# authors_omitted: true for a record that leaves its author list empty and points readers to the paper.
+OPTIONAL_FIELDS = {'citation', 'added_at', 'authors_omitted', 'class'}
 CITATION_PATTERNS = {
     'container_title': None, 'publisher': None, 'series': None,
     'volume': re.compile(r'[1-9]\d*'), 'issue': re.compile(r'[A-Za-z0-9]+'),
@@ -37,6 +39,15 @@ CITATION_PATTERNS = {
 ARXIV_ID = re.compile(r'\d{4}\.\d{4,5}')
 ARXIV_URL_PATH = re.compile(r'/(?:abs|pdf|html)/(\d{4}\.\d{4,5})(v[1-9]\d*)?(?:\.pdf)?')
 DOI_RESOLVERS = {'doi.org', 'dx.doi.org', 'www.doi.org'}
+# Prose shown on /papers/ and the paper pages describes links and dates in reader terms
+# ("no code link is listed"), never by schema field names such as code_url.
+DISPLAYED_TEXT_FIELDS = (
+    'title', 'title_zh', 'venue', 'date_basis', 'date_basis_zh', 'description_en', 'description_zh',
+    'scope_limitations_en', 'scope_limitations_zh', 'why_fits_en', 'why_fits_zh',
+    'metadata_notes', 'metadata_notes_zh',
+)
+SCHEMA_FIELD_NAME = re.compile(r'\b(?:' + '|'.join(sorted(
+    field for field in FIELDS | OPTIONAL_FIELDS | set(CITATION_PATTERNS) if '_' in field)) + r')\b')
 
 
 def read_papers(root=ROOT):
@@ -167,7 +178,13 @@ def validate_papers(records, errors, *, url_check, now=None):
         else:
             seen['id'].add(identifier)
         authors = record.get('authors')
-        if (not isinstance(authors, list) or not authors
+        if 'authors_omitted' in record and record['authors_omitted'] is not True:
+            errors.append(f'{where}.authors_omitted: use true, or leave the field out when authors are listed')
+        elif record.get('authors_omitted') is True:
+            # The whole list is left out, never a partial one; pages send readers to the paper for its authors.
+            if authors != []:
+                errors.append(f'{where}.authors: use an empty array when authors_omitted is true')
+        elif (not isinstance(authors, list) or not authors
                 or any(not isinstance(author, str) or not author.strip() for author in authors)):
             errors.append(f'{where}.authors: use a nonempty author-name array')
         elif len({author.strip().casefold() for author in authors}) != len(authors):
@@ -180,6 +197,7 @@ def validate_papers(records, errors, *, url_check, now=None):
         status = record.get('publication_status')
         if not isinstance(status, str) or status not in STATUSES:
             errors.append(f'{where}.publication_status: unknown publication status')
+        errors.extend(f'{where}.{problem}' for problem in class_value_errors(record))
         if record.get('kind') != 'research' or record.get('verification') != 'source-reviewed':
             errors.append(f'{where}: preserve research/source-reviewed labels')
         if record.get('runtime_tested') is not False:
@@ -193,6 +211,11 @@ def validate_papers(records, errors, *, url_check, now=None):
                 errors.append(f'{where}.{chinese}: needs Chinese text')
             if isinstance(en, str) and (not re.search(r'[A-Za-z]', en) or en == zh):
                 errors.append(f'{where}.{english}: needs distinct English text')
+        for field in DISPLAYED_TEXT_FIELDS:
+            value = record.get(field)
+            match = SCHEMA_FIELD_NAME.search(value) if isinstance(value, str) else None
+            if match:
+                errors.append(f'{where}.{field}: describe {match[0]} in reader terms instead of naming the field')
 
         year, precision, published = record.get('year'), record.get('date_precision'), record.get('publication_date')
         if type(year) is not int or not 1900 <= year <= today.year:

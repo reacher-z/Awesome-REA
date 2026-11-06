@@ -2,9 +2,9 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/firmware/) · [English](firmware.md)
 
-**222 个仓库** · 2026-10-20 UTC
+**228 个仓库** · 2026-10-20 UTC
 
-这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
+这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
 - [ReFirmLabs/binwalk](https://github.com/ReFirmLabs/binwalk) — 固件分析工具。 **[14,491 星标]** · 精选：[Binwalk](https://awesomerea.org/zh/resources/binwalk/)
 - [LongSoft/UEFITool](https://github.com/LongSoft/UEFITool) — UEFI 固件镜像查看与编辑工具 **[5,752 星标]** · 精选：[UEFITool 固件镜像分析工具](https://awesomerea.org/zh/resources/uefitool/)
@@ -14,6 +14,7 @@
 - [firmadyne/firmadyne](https://github.com/firmadyne/firmadyne) — 用于仿真和动态分析基于 Linux 的固件的平台 **[2,114 星标]** · 论文：[面向基于 Linux 的嵌入式固件的自动化动态分析](https://awesomerea.org/zh/papers/paper-firmadyne/)
 - [redballoonsecurity/ofrak](https://github.com/redballoonsecurity/ofrak) — OFRAK：解包、修改并重新打包二进制文件。 **[2,080 星标]** · 精选：[OFRAK](https://awesomerea.org/zh/resources/ofrak/)
 - [marin-m/vmlinux-to-elf](https://github.com/marin-m/vmlinux-to-elf) — 通过提取内核符号表（kallsyms），从原始内核恢复可完整分析的 .ELF 文件的工具。 **[1,832 星标]** · 精选：[vmlinux-to-elf 内核符号恢复工具](https://awesomerea.org/zh/resources/vmlinux-to-elf/)
+- [attify/firmware-analysis-toolkit](https://github.com/attify/firmware-analysis-toolkit) — 结合二进制分析、污点追踪和模拟执行的固件安全研究平台，覆盖物联网、边缘 AI、移动设备和机器人。 **[1,615 星标]** · 精选：[FAT 固件分析工具包](https://awesomerea.org/zh/resources/attify-firmware-analysis-toolkit/)
 - [fkie-cad/FACT\_core](https://github.com/fkie-cad/FACT_core) — 固件分析与比较工具。 **[1,468 星标]** · 精选：[固件分析与比较工具（FACT）](https://awesomerea.org/zh/resources/fact-core/)
 - [platomav/MEAnalyzer](https://github.com/platomav/MEAnalyzer) — Intel Engine 与图形固件分析工具 **[1,335 星标]** · 精选：[ME Analyzer Intel 引擎与图形固件分析工具](https://awesomerea.org/zh/resources/me-analyzer/)
 - [REhints/efiXplorer](https://github.com/REhints/efiXplorer) — 用于自动化 UEFI 固件分析与逆向工程的 IDA 插件和加载器。 **[1,138 星标]** · 精选：[efiXplorer UEFI 固件分析 IDA 插件](https://awesomerea.org/zh/resources/efixplorer/)
@@ -23,36 +24,41 @@
 - [FirmWire/FirmWire](https://github.com/FirmWire/FirmWire) — FirmWire 是一个全系统基带固件仿真平台，用于对智能手机基带固件进行模糊测试、调试和根因分析 **[891 星标]**
 - [sigrokproject/pulseview](https://github.com/sigrokproject/pulseview) — 官方仓库 git<span>:</span>//sigrok.org/pulseview 的只读镜像。欢迎提交拉取请求。请在 sigrok.org/bugzilla 提交缺陷报告。 **[805 星标]** · 精选：[PulseView 信号与协议分析工具](https://awesomerea.org/zh/resources/pulseview/)
 - [airbus-seclab/cpu\_rec](https://github.com/airbus-seclab/cpu_rec) — 识别任意二进制文件中的 CPU 指令。 **[757 星标]** · 精选：[cpu\_rec CPU 指令集统计识别工具](https://awesomerea.org/zh/resources/cpu-rec/)
+- [maddiestone/IDAPythonEmbeddedToolkit](https://github.com/maddiestone/IDAPythonEmbeddedToolkit) — IDA Python Embedded Toolkit：用于自动分析嵌入式设备固件的 IDAPython 脚本 **[690 星标]** · 精选：[IDAPython Embedded Toolkit 嵌入式固件分析脚本集](https://awesomerea.org/zh/resources/idapython-embedded-toolkit/)
 - [quarkslab/binbloom](https://github.com/quarkslab/binbloom) — 原始二进制固件分析软件。 **[586 星标]** · 精选：[binbloom 原始固件端序与基址分析工具](https://awesomerea.org/zh/resources/binbloom/)
 - [avatartwo/avatar2](https://github.com/avatartwo/avatar2) — avatar² 的 Python 核心。 **[579 星标]** · 精选：[avatar² 多目标固件动态分析编排框架](https://awesomerea.org/zh/resources/avatar2/)
+- [cruise-automation/fwanalyzer](https://github.com/cruise-automation/fwanalyzer) — 用于安全分析文件系统镜像的工具。 **[516 星标]** · 精选：[FwAnalyzer 固件文件系统规则检查工具](https://awesomerea.org/zh/resources/fwanalyzer/)
 - [al3xtjames/ghidra-firmware-utils](https://github.com/al3xtjames/ghidra-firmware-utils) — 用于分析 PC 固件的 Ghidra 实用工具。 **[506 星标]** · 精选：[Ghidra 固件工具集](https://awesomerea.org/zh/resources/ghidra-firmware-utils/)
 - [scriptingxss/owasp-fstm](https://github.com/scriptingxss/owasp-fstm) — 固件安全测试方法（FSTM）包含九个阶段，专为帮助安全研究人员、软件开发人员、顾问及信息安全专业人员开展固件安全评估而设计。 **[502 星标]**
 - [ChrisTheCoolHut/Firmware\_Slap](https://github.com/ChrisTheCoolHut/Firmware_Slap) — 通过结合具体执行与符号执行的分析，以及函数聚类，发现固件中的漏洞。 **[476 星标]**
 - [nmatt0/moria](https://github.com/nmatt0/moria) — 物联网固件识别与提取。 **[418 星标]**
-- [e-m-b-a/embark](https://github.com/e-m-b-a/embark) — EMBArk：固件安全扫描环境。 **[395 星标]**
-- [sgayou/rbasefind](https://github.com/sgayou/rbasefind) — 固件基址搜索工具。 **[375 星标]**
-- [nmatt0/mithril](https://github.com/nmatt0/mithril) — 物联网静态扫描器，可扫描秘密信息、SBOM、CVE 等。 **[363 星标]**
-- [binarly-io/fwhunt-scan](https://github.com/binarly-io/fwhunt-scan) — 用于分析 UEFI 固件，以及通过 FwHunt 规则检查 UEFI 模块的工具 **[246 星标]**
+- [DSecurity/efiSeek](https://github.com/DSecurity/efiSeek) — 用于 UEFI 固件的 Ghidra 分析器。 **[408 星标]** · 精选：[efiSeek UEFI 模块 Ghidra 分析器](https://awesomerea.org/zh/resources/efiseek/)
+- [e-m-b-a/embark](https://github.com/e-m-b-a/embark) — EMBArk：固件安全扫描环境。 **[395 星标]** · 精选：[EMBArk EMBA 固件扫描 Web 平台](https://awesomerea.org/zh/resources/embark/)
+- [sgayou/rbasefind](https://github.com/sgayou/rbasefind) — 固件基址搜索工具。 **[375 星标]** · 精选：[rbasefind 固件基址搜索工具](https://awesomerea.org/zh/resources/rbasefind/)
+- [nmatt0/mithril](https://github.com/nmatt0/mithril) — 物联网静态扫描器，可扫描秘密信息、SBOM、CVE 等。 **[363 星标]** · 精选：[mithril 物联网固件静态扫描器](https://awesomerea.org/zh/resources/mithril-iot-scanner/)
+- [binarly-io/fwhunt-scan](https://github.com/binarly-io/fwhunt-scan) — 用于分析 UEFI 固件，以及通过 FwHunt 规则检查 UEFI 模块的工具 **[246 星标]** · 精选：[FwHunt 社区版 UEFI 固件规则扫描器](https://awesomerea.org/zh/resources/fwhunt-scan/)
 - [chrivers/samsung-firmware-magic](https://github.com/chrivers/samsung-firmware-magic) — 用于解密 Samsung SSD 固件文件的工具 **[238 星标]**
 - [D3CRYPT-1/Infiltra-Firmware](https://github.com/D3CRYPT-1/Infiltra-Firmware) — Infiltra Firmware 是用于无线安全测试、网络分析和硬件探索的开源固件。可使用下方的网页刷写器进行刷写！ **[205 星标]**
 - [0xricksanchez/dlink-decrypt](https://github.com/0xricksanchez/dlink-decrypt) — D-Link 固件解密概念验证 **[201 星标]**
-- [quarkslab/pyrrha](https://github.com/quarkslab/pyrrha) — 固件结构测绘工具 **[172 星标]**
+- [quarkslab/pyrrha](https://github.com/quarkslab/pyrrha) — 固件结构测绘工具 **[172 星标]** · 精选：[Pyrrha 固件测绘工具](https://awesomerea.org/zh/resources/pyrrha/)
 - [dslsdzc/rev-skills](https://github.com/dslsdzc/rev-skills) — 122 个逆向工程 AI 技能，涵盖恶意软件分析、软件逆向、固件与嵌入式、协议逆向、移动应用、脱壳与去混淆、软件破解、漏洞挖掘、托管代码、取证情报及 CTF。 **[162 星标]**
-- [MCUSec/uEmu](https://github.com/MCUSec/uEmu) — 不依赖任何硬件、用于动态分析的通用 MCU 固件仿真器。 **[152 星标]**
+- [MCUSec/uEmu](https://github.com/MCUSec/uEmu) — 不依赖任何硬件、用于动态分析的通用 MCU 固件仿真器。 **[152 星标]** · 论文：[基于无效性引导知识推断的自动化固件仿真](https://awesomerea.org/zh/papers/paper-uemu/)
 - [SamuelTulach/PatchBoot](https://github.com/SamuelTulach/PatchBoot) — 修补 AMI Aptio V UEFI 固件以绕过安全启动检查的指南 **[144 星标]**
-- [patois/RETracker](https://github.com/patois/RETracker) — Polyend Tracker 逆向工程框架 **[136 星标]**
+- [patois/RETracker](https://github.com/patois/RETracker) — Polyend Tracker 逆向工程框架 **[136 星标]** · 精选：[RETracker Polyend Tracker 逆向工程框架](https://awesomerea.org/zh/resources/retracker/)
 - [DavidClawson/OpenScope-2C53T](https://github.com/DavidClawson/OpenScope-2C53T) — FNIRSI 2C53T 示波器/万用表/信号发生器的开源逆向工程与固件开发 **[119 星标]**
+- [Accenture/FirmLoader](https://github.com/Accenture/FirmLoader) — 上游仓库未提供项目简介。 **[109 星标]** · 精选：[FirmLoader 微控制器固件内存布局 IDA 插件](https://awesomerea.org/zh/resources/firmloader/)
 - [djr-747/nokia-dct3-emulator](https://github.com/djr-747/nokia-dct3-emulator) — 面向 Nokia DCT3 手机（3310/3410/5210/8210/8250/8850 等）的开源仿真器与分析工具集，可在浏览器（WASM）和原生 SDL 图形界面中启动真实固件。需自行提供固件，项目不附带固件。采用 GPL-2 许可证。 **[92 星标]**
 - [nmatt0/firmwaretools](https://github.com/nmatt0/firmwaretools) — 用于各种固件分析任务的一组脚本和工具 **[90 星标]**
-- [matiaspl/LinkPi-ENCx](https://github.com/matiaspl/LinkPi-ENCx) — 基于 F3520D 平台的 LinkPi ENC 系列（ENC1/ENC5/ENC9）和 TBS 2603SE 视频编码器的逆向工程与非官方文档，涵盖硬件分析、固件内部机制、流媒体修复和隐藏功能。 **[86 星标]**
-- [onehouwong/Firmware-Analysis-Papers](https://github.com/onehouwong/Firmware-Analysis-Papers) — 近期固件分析安全研究论文 **[85 星标]**
+- [alexander-pick/shannon\_modem\_loader](https://github.com/alexander-pick/shannon_modem_loader) — 适用于 IDA Pro 8.x/9.x 的 Exynos Modem / Shannon 基带固件加载器 **[87 星标]** · 精选：[Shannon 基带镜像 IDA Pro 加载器](https://awesomerea.org/zh/resources/shannon-modem-loader/)
+- [matiaspl/LinkPi-ENCx](https://github.com/matiaspl/LinkPi-ENCx) — 基于 F3520D 平台的 LinkPi ENC 系列（ENC1/ENC5/ENC9）和 TBS 2603SE 视频编码器的逆向工程与非官方文档，涵盖硬件分析、固件内部机制、流媒体修复和隐藏功能。 **[86 星标]** · 精选：[Link Pi ENCx 编码器非官方逆向文档](https://awesomerea.org/zh/resources/linkpi-encx-unofficial-docs/)
 - [Cr4sh/smram\_parse](https://github.com/Cr4sh/smram_parse) — 系统管理内存（SMRAM）分析工具 **[83 星标]**
+- [cn0xroot/IFDA](https://github.com/cn0xroot/IFDA) — IoT Firmware Deep Analysis：面向物联网固件二进制文件的自动化逆向工程与漏洞发现。 **[70 星标]** · 精选：[IFDA IoT 固件深度分析工具](https://awesomerea.org/zh/resources/ifda-iot-firmware-deep-analysis/)
 - [fkie-cad/LuckyCAT](https://github.com/fkie-cad/LuckyCAT) — 分布式模糊测试管理框架 **[70 星标]**
-- [RiS3-Lab/DICE-DMA-Emulation](https://github.com/RiS3-Lab/DICE-DMA-Emulation) — DICE：自动仿真 DMA 输入通道，用于固件动态分析 **[67 星标]**
+- [RiS3-Lab/DICE-DMA-Emulation](https://github.com/RiS3-Lab/DICE-DMA-Emulation) — DICE：自动仿真 DMA 输入通道，用于固件动态分析 **[67 星标]** · 论文：[DICE：面向动态固件分析的 DMA 输入通道自动仿真](https://awesomerea.org/zh/papers/paper-dice/)
 - [C00kie-/IoT-workshop-materials](https://github.com/C00kie-/IoT-workshop-materials) — 自 2019 年起开展的硬件逆向工程工作坊资料 **[65 星标]**
 - [jowinjohnchemban/winbinwalk](https://github.com/jowinjohnchemban/winbinwalk) — Windows 版 binwalk **[60 星标]**
-- [soyersoyer/basefind2](https://github.com/soyersoyer/basefind2) — 速度更快的固件基址扫描器。 **[60 星标]**
-- [8051Enthusiast/allyourbase](https://github.com/8051Enthusiast/allyourbase) — 通过比较字符串地址与目标指针地址，查找固件基址 **[57 星标]**
+- [soyersoyer/basefind2](https://github.com/soyersoyer/basefind2) — 速度更快的固件基址扫描器。 **[60 星标]** · 精选：[basefind2 快速固件基址扫描器](https://awesomerea.org/zh/resources/basefind2/)
+- [8051Enthusiast/allyourbase](https://github.com/8051Enthusiast/allyourbase) — 通过比较字符串地址与目标指针地址，查找固件基址 **[57 星标]** · 精选：[allyourbase 固件基址估算脚本](https://awesomerea.org/zh/resources/allyourbase/)
 - [xdarklight/mktplinkfw3](https://github.com/xdarklight/mktplinkfw3) — 针对采用版本 3 文件头（0x03000000）的 TP-Link 固件进行格式分析 **[56 星标]**
 - [mosajjal/fortitool](https://github.com/mosajjal/fortitool) — Fortinet 固件解密与分析工具 **[50 星标]**
 - [giek2000/ipod-classic-firmware-research](https://github.com/giek2000/ipod-classic-firmware-research) — iPod RetailOS 固件研究，涵盖解密、分析，以及为 wInd3x 添加 Classic 支持的补丁 **[45 星标]**

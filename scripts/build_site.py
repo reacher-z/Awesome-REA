@@ -9,27 +9,38 @@ import re
 import shutil
 import tempfile
 from pathlib import Path
-from urllib.parse import urlsplit
-from xml.sax.saxutils import escape as xml_escape
 
+from asset_paths import fingerprinted_href, remove_unhashed_copies
 from build_browse_pages import build_browse_pages
 from build_discovery_pages import build_discovery_pages
 from build_paper_pages import build_paper_pages
-from build_readme import CATEGORIES
+from build_readme import CATEGORIES, collection_section
+from build_repository_index import CATEGORIES as REPOSITORY_CATEGORIES
 from build_survey import build_survey, discussion_sections
 from build_entry_pages import build_entry_pages
+from build_home import build_home
 from build_feed import build_feeds
+from build_api import build_api, write_api_pages
+from agent_formats import full_catalog_markdown
+from build_discovery_pages import SECTIONS as COLLECTION_SECTIONS
+from build_discoveries import llms_section, main_feed_batches, write_discoveries
+from build_discovery_leads import llms_section as lead_llms_section, write_lead_exports
 from build_manifest import write_build_manifest
+from crawl_policy import robots_txt
 from language_fragment import add_language_fragment_script
+from site_shell import apply_site_shell
 from data_downloads import build_data_downloads
 from open_graph import website_node
+from structured_data import catalog_node, organization_node
 from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage
 from artifact_links import with_artifact_links, with_curated_labels
 from source_browser import write_source_browser
 from localization import read_localizations, localized_records
 from source_scope import apply_scope, read_scope
-from public_source_supplements import (PUBLISHED_FILENAME, compose_published,
-                                      copy_public_evidence, json_bytes, load_supplements, project_additions)
+from sitemaps import SITEMAP_INDEX, page_dates, write_sitemaps
+from public_source_supplements import (PUBLISHED_FILENAME, compose_published, copy_public_evidence, json_bytes,
+                                      load_supplements, project_additions, read_withdrawals,
+                                      write_withdrawn_redirects)
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "site"
@@ -37,117 +48,17 @@ OUTPUT = ROOT / "dist"
 SITE_URL = "https://awesomerea.org"
 REPOSITORY_URL = "https://github.com/reacher-z/Awesome-REA"
 TARGETS = {"website", "game", "app", "binary", "firmware", "protocol"}
+# Listed projects may link back to their entries with this badge, so its public URL must stay stable.
+LISTED_BADGE = "featured-by-awesome-rea-inline.svg"
 # Record fields the homepage needs for its first render; catalog.json keeps every field.
 CATALOG_INDEX_FIELDS = ("id", "name", "name_zh", "url", "evidence_url", "description_en", "description_zh", "kind",
                         "category", "group", "relationship", "targets", "verified_at")
-FONT_AWESOME_ICONS = {
-    "arrow": "arrow-right", "external": "arrow-up-right-from-square",
-    "search": "magnifying-glass", "copy": "copy", "check": "check",
-    "chevron": "chevron-down", "code": "code", "chip": "microchip",
-    "phone": "mobile-screen", "box": "cube", "network": "diagram-project",
-    "layers": "layer-group", "document": "file-lines", "book": "book-open",
-    "terminal": "terminal", "github": "github", "globe": "globe", "gamepad": "gamepad",
-}
-# Brand icons are drawn from the Brands face; every other key comes from Classic Light.
-FONT_AWESOME_BRANDS = {"github"}
-
-
 def catalog_index(catalog: dict) -> dict:
     """Project the complete catalog onto the lean index the homepage renders first."""
+    # source_category_labels name the repository view's Category filter options, which app.js builds from this file.
     return {"meta": catalog["meta"], "topic_labels": catalog["topic_labels"], "category_labels": catalog["category_labels"],
+            "source_category_labels": catalog["source_category_labels"],
             "resources": [{key: record[key] for key in CATALOG_INDEX_FIELDS if key in record} for record in catalog["resources"]]}
-
-
-def fontawesome_markup(html: str, stylesheet_url: str) -> str:
-    html = html.replace('<html lang="en">', '<html lang="en" data-icon-set="fontawesome">')
-    html = html.replace('<link rel="stylesheet" href="styles.css">', '<link rel="stylesheet" href="styles.css">\n  <link rel="stylesheet" href="' + stylesheet_url + '">')
-    html = re.sub(r'<svg class="symbol-bank".*?</svg>', '', html, count=1, flags=re.DOTALL)
-
-    def replace_icon(match: re.Match) -> str:
-        attrs, key = match.group(1), match.group(2)
-        class_match = re.search(r'class="([^"]*)"', attrs)
-        classes = class_match.group(1) if class_match else "icon"
-        return f'<span class="{classes} fa-symbol fa-{key}" aria-hidden="true"></span>'
-
-    html = re.sub(r'<svg\b([^>]*)>\s*<use href="#i-([a-z-]+)"\s*/>\s*</svg>', replace_icon, html)
-    return html
-
-
-def subset_icon_font(source: Path, destination: Path, codepoints: set[int]) -> None:
-    """Write a WOFF2 copy of a licensed face that keeps only the site's icon code points."""
-    try:
-        from fontTools import subset
-        from fontTools.ttLib import TTLibError, woff2
-    except ImportError:
-        woff2 = None
-    if woff2 is None or not woff2.haveBrotli:
-        raise ValueError("Subsetting the licensed icon fonts requires fontTools with Brotli: pip install fonttools brotli")
-    options = subset.Options()
-    options.flavor = "woff2"
-    # Keep every name record, including the copyright and license notices.
-    options.name_IDs = ["*"]
-    options.name_languages = ["*"]
-    try:
-        font = subset.load_font(str(source), options)
-    except (TTLibError, OSError, AssertionError) as error:
-        raise ValueError(f"Font Awesome input is not a readable font: {source.name}") from error
-    with font:
-        subsetter = subset.Subsetter(options)
-        subsetter.populate(unicodes=codepoints)
-        subsetter.subset(font)
-        missing = codepoints - set(font.getBestCmap() or {})
-        if missing:
-            raise ValueError(f"Font Awesome subset of {source.name} is missing icons: " + ", ".join(f"U+{point:04X}" for point in sorted(missing)))
-        subset.save_font(font, str(destination), options)
-
-
-def configure_fontawesome(html: str, licensed_package: Path | None, assets_url: str | None = None, *, output: Path) -> str:
-    """Embed licensed fonts only in ignored deployment output; keep source portable."""
-    generated_css = output / "fontawesome.css"
-    font_output = output / "fonts"
-    font_names = ("fa-light-300.woff2", "fa-brands-400.woff2")
-    if licensed_package is None:
-        generated_css.unlink(missing_ok=True)
-        for name in font_names:
-            (font_output / name).unlink(missing_ok=True)
-        if font_output.exists() and not any(font_output.iterdir()):
-            font_output.rmdir()
-        if assets_url:
-            parsed = urlsplit(assets_url)
-            if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or parsed.query or parsed.fragment or any(character.isspace() or character in '"<>' for character in assets_url):
-                raise ValueError("Font Awesome assets URL must be an HTTPS base URL without credentials, query or fragment.")
-            return fontawesome_markup(html, assets_url.rstrip("/") + "/fontawesome.css")
-        return html
-
-    css_files = [licensed_package / "css" / name for name in ("fontawesome.css", "brands.css", "light.css")]
-    for path in css_files + [licensed_package / "webfonts" / name for name in font_names]:
-        if not path.is_file():
-            raise ValueError("Font Awesome input must include Classic Light, Brands, and their WOFF2 files.")
-    font_css = "\n".join(path.read_text(encoding="utf-8") for path in css_files)
-    codepoints = {}
-    for key, icon_name in FONT_AWESOME_ICONS.items():
-        match = re.search(r"\.fa-" + re.escape(icon_name) + r'\s*\{[^}]*--fa:\s*"\\([0-9a-fA-F]+)"', font_css)
-        if not match:
-            raise ValueError(f"Required Font Awesome icon is missing: {icon_name}")
-        codepoints[key] = match.group(1)
-    font_output.mkdir(exist_ok=True)
-    # Ship only the glyphs the site draws instead of the complete faces.
-    light = {int(point, 16) for key, point in codepoints.items() if key not in FONT_AWESOME_BRANDS}
-    brands = {int(codepoints[key], 16) for key in FONT_AWESOME_BRANDS}
-    for name, points in zip(font_names, (light, brands)):
-        subset_icon_font(licensed_package / "webfonts" / name, font_output / name, points)
-    copyright_header = "/*! Font Awesome Pro by Fonticons, Inc. https://fontawesome.com — Commercial License: https://fontawesome.com/license. Licensed website assets; do not redistribute in a public source repository. */\n"
-    css = copyright_header + """
-@font-face{font-family:'AwesomeREA Icons';font-style:normal;font-weight:300;font-display:block;src:url('fonts/fa-light-300.woff2') format('woff2')}
-@font-face{font-family:'AwesomeREA Brands';font-style:normal;font-weight:400;font-display:block;src:url('fonts/fa-brands-400.woff2') format('woff2')}
-.fa-symbol{display:inline-flex;align-items:center;justify-content:center;font-family:'AwesomeREA Icons';font-weight:300;font-style:normal;font-size:20px;line-height:1;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-.fa-symbol.icon-small{font-size:14px}.fa-symbol::before{display:block;line-height:1}.fa-symbol.fa-github{font-family:'AwesomeREA Brands';font-weight:400}
-.target-link>.fa-symbol{font-size:19px}.card-icon>.fa-symbol{font-size:18px}.trace-target>.fa-symbol{font-size:24px}.card-title-link .fa-symbol{font-size:11px;display:inline-block}.card-footer .fa-symbol{font-size:10px}.button>.fa-symbol{font-size:17px}.search-box>.fa-symbol{font-size:21px}
-"""
-    css += "\n".join('.fa-' + key + '::before{content:"\\' + codepoint + '"}' for key, codepoint in codepoints.items())
-    generated_css.write_text(css + "\n", encoding="utf-8")
-    return fontawesome_markup(html, "fontawesome.css")
-
 
 
 def group_for(record: dict) -> str:
@@ -186,8 +97,15 @@ def default_targets(record: dict) -> list[str]:
     return sorted(found or {"binary"})
 
 
-def build_site(output: Path, *, fontawesome_dir: Path | None = None,
-               fontawesome_assets_url: str | None = None) -> tuple[int, int, int]:
+def explorer_page(html: str) -> str:
+    """The old homepage as the full explorer at /explore/: its filters and repository view, out of the search index."""
+    for pattern in (r'\s*<link rel="canonical"[^>]*>', r'\s*<link rel="alternate"[^>]*>', r'\s*<meta property="[^"]*"[^>]*>',
+                    r'\s*<meta name="twitter:[^"]*"[^>]*>', r'\s*<script type="application/ld\+json">.*?</script>'):
+        html = re.sub(pattern, '', html, flags=re.S)
+    return html.replace('</title>', '</title><meta name="robots" content="noindex">', 1)
+
+
+def build_site(output: Path) -> tuple[int, int, int]:
     """Render a complete site into a fresh, caller-owned staging directory."""
     translations = json.loads((SOURCE / "translations.zh-CN.json").read_text(encoding="utf-8"))
     papers = json.loads((ROOT / "data" / "papers.json").read_text(encoding="utf-8"))
@@ -217,6 +135,8 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
             shutil.copytree(path, output / path.name)
         else:
             shutil.copy2(path, output / path.name)
+    (output / "badges").mkdir()
+    shutil.copy2(ROOT / "assets" / LISTED_BADGE, output / "badges" / LISTED_BADGE)
     html = (output / "index.html").read_text(encoding="utf-8")
     for key, value in {"RESOURCE_COUNT": len(resources), "INTEGRATION_COUNT": metadata["independent_integration_count"], "REVIEWED_AT": latest_review}.items():
         html = html.replace("{{" + key + "}}", str(value))
@@ -229,7 +149,6 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         raise ValueError("Homepage needs exactly one curated Protocol target button")
     if any("protocol" in record["targets"] for record in resources):
         html = html.replace(protocol_button, protocol_button.replace(" hidden>", ">"))
-    html = configure_fontawesome(html, fontawesome_dir, fontawesome_assets_url, output=output)
     source_index_path = ROOT / "data" / "source-index.json"
     source_index_output = output / "source-index.json"
     browse_document = None
@@ -283,6 +202,7 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
                     write_source_browser(output, canonical_export)
     if not metadata["source_index"]["available"]:
         source_index_output.unlink(missing_ok=True)
+        html = html.replace('id="download-source-index"', 'id="download-source-index" hidden')
         write_source_browser(output, None)
     topic_labels_path = SOURCE / "topics.i18n.json"
     topic_labels = json.loads(topic_labels_path.read_text(encoding="utf-8")) if topic_labels_path.exists() else {}
@@ -290,6 +210,8 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     # The homepage reads category labels from here, so filters, cards and entry pages share one wording.
     category_labels = {category: list(labels) for category, labels in CATEGORIES.items()}
     catalog = {"meta": metadata, "resources": resources, "topic_labels": topic_labels, "category_labels": category_labels}
+    # The repository view's Category filter labels the same categories as the /browse/ pages.
+    catalog["source_category_labels"] = {category: list(labels) for category, labels in REPOSITORY_CATEGORIES.items()}
     (output / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     # Requirement lists and additional evidence stay out of the first-render index; app.js fetches catalog.json afterwards.
     (output / "catalog-index.json").write_text(json.dumps(catalog_index(catalog), ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
@@ -298,15 +220,18 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         html = html.replace("{{" + key + "}}", f"{value:,}")
     navigation = [(path, names[0]) for path, names in HOMEPAGE_DESTINATIONS.items()]
     structured = {"@context": "https://schema.org", "@graph": [
+        organization_node(SITE_URL, REPOSITORY_URL),
         website_node(SITE_URL, REPOSITORY_URL),
-        {"@type": "CollectionPage", "@id": SITE_URL + "/#collection", "url": SITE_URL + "/", "name": "Awesome Reverse Engineering Anything", "inLanguage": "en", "isPartOf": {"@id": SITE_URL + "/#website"}, "description": "An independent collection of reverse-engineering tools, projects, case studies and research papers for websites, games, apps, binaries, firmware and communication protocols.", "mainEntity": {"@type": "ItemList", "numberOfItems": len(navigation), "itemListElement": [{"@type": "ListItem", "position": i, "name": name, "url": f"{SITE_URL}/{path}/"} for i, (path, name) in enumerate(navigation, 1)]}}
+        catalog_node(SITE_URL),
+        {"@type": "CollectionPage", "@id": SITE_URL + "/#collection", "url": SITE_URL + "/", "name": "Awesome Reverse Engineering Anything", "inLanguage": "en", "isPartOf": {"@id": SITE_URL + "/#website"}, "description": "A collection of reverse-engineering tools, projects, case studies and research papers for websites, games, apps, binaries, firmware and communication protocols.", "mainEntity": {"@type": "ItemList", "numberOfItems": len(navigation), "itemListElement": [{"@type": "ListItem", "position": i, "name": name, "url": f"{SITE_URL}/{path}/"} for i, (path, name) in enumerate(navigation, 1)]}}
     ]}
     html = html.replace("</head>", '<script type="application/ld+json">' + json.dumps(structured, ensure_ascii=False).replace("<", "\\u003c") + '</script>\n</head>')
-    asset_hrefs = {}
+    # Stylesheets and scripts move to content-addressed /assets/ paths; the favicon keeps a ?v= revision.
+    favicon_revision = hashlib.sha256((output / "favicon.svg").read_bytes()).hexdigest()[:16]
+    asset_hrefs = {"app.js": fingerprinted_href(output, "app.js"), "styles.css": fingerprinted_href(output, "styles.css"),
+                   "favicon.svg": f"/favicon.svg?v={favicon_revision}"}
     for filename, attribute in (("app.js", "src"), ("styles.css", "href"), ("favicon.svg", "href")):
-        revision = hashlib.sha256((output / filename).read_bytes()).hexdigest()[:16]
-        asset_hrefs[filename] = f'/{filename}?v={revision}'
-        html = html.replace(f'{attribute}="{filename}"', f'{attribute}="{filename}?v={revision}"')
+        html = html.replace(f'{attribute}="{filename}"', f'{attribute}="{asset_hrefs[filename]}"')
     html = html.replace('src="favicon.svg"', f'src="{asset_hrefs["favicon.svg"]}"')
     social_revision = hashlib.sha256((output / "social-card.png").read_bytes()).hexdigest()[:16]
     html = html.replace(f'{SITE_URL}/social-card.png"', f'{SITE_URL}/social-card.png?v={social_revision}"')
@@ -319,32 +244,65 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     html = html.replace('<html ', f'<html data-catalog-revision="{data_revision}" ', 1)
     # Start the catalog index request while the page parses. The URL and CORS mode match app.js's
     # fetch(dataURL("catalog-index.json")), so that fetch reuses this response; source-browser.json stays on demand.
-    script_tag = f'<script src="{asset_hrefs["app.js"].lstrip("/")}" defer></script>'
+    script_tag = f'<script src="{asset_hrefs["app.js"]}" defer></script>'
     if html.count(script_tag) != 1:
         raise ValueError("Homepage needs exactly one deferred app.js script")
     html = html.replace(script_tag, f'<link rel="preload" href="/catalog-index.json?v={data_revision}" as="fetch" crossorigin>\n  ' + script_tag)
-    # Both entry pages contain their own language before JavaScript runs.
+    # Both explorer pages contain their own language before JavaScript runs; the homepages reuse their metadata.
     app_source = (SOURCE / "app.js").read_text(encoding="utf-8")
-    (output / "index.html").write_text(localized_homepage(html, app_source, "en"), encoding="utf-8")
-    (output / "zh").mkdir(exist_ok=True)
-    (output / "zh/index.html").write_text(localized_homepage(html, app_source, "zh"), encoding="utf-8")
-    browse_revision = hashlib.sha256((output / "browse.css").read_bytes()).hexdigest()[:16]
-    icon_stylesheet = "/fontawesome.css" if fontawesome_dir else (fontawesome_assets_url.rstrip("/") + "/fontawesome.css" if fontawesome_assets_url else None)
+    explorer_sources = {language: localized_homepage(html, app_source, language) for language in ("en", "zh")}
+    for language, route in (("en", "explore/index.html"), ("zh", "zh/explore/index.html")):
+        (output / route).parent.mkdir(parents=True, exist_ok=True)
+        (output / route).write_text(explorer_page(explorer_sources[language]), encoding="utf-8")
+    # Later builders read the page assets from the homepage; build_home() writes the real one last.
+    (output / "index.html").write_text(explorer_sources["en"], encoding="utf-8")
+    (output / "zh/index.html").write_text(explorer_sources["zh"], encoding="utf-8")
+    icon_stylesheet = None
     browse_urls = build_browse_pages(
         output, browse_document, curated_count=len(resources), site_url=SITE_URL,
         repository_url=REPOSITORY_URL, styles_href=asset_hrefs["styles.css"],
-        browse_styles_href=f"/browse.css?v={browse_revision}",
+        browse_styles_href=fingerprinted_href(output, "browse.css"),
         favicon_href=asset_hrefs["favicon.svg"],
         social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
         data_revision=data_revision, icon_stylesheet_href=icon_stylesheet,
     )
-    discovery_paths = build_discovery_pages(output, catalog, browse_document)
-    papers_revision = hashlib.sha256((output / "papers.css").read_bytes()).hexdigest()[:16]
+    # Withdrawn evidence archives come from their registry, whatever the state of the batches citing them:
+    # /about/ lists each one, and its old address redirects there.
+    withdrawals = read_withdrawals(ROOT)
+    write_withdrawn_redirects(output, withdrawals)
+    discovery_paths = build_discovery_pages(output, catalog, browse_document, withdrawals=withdrawals)
+    # The unreviewed discovery queue: its own list pages, feeds and JSON, never curated pages or counts.
+    queue_paths, discovery_queue = write_discoveries(output, catalog, papers, browse_document)
+    discovery_paths = [*discovery_paths, *queue_paths]
+    # Followed-source leads: JSON exports only, labelled unreviewed, never pages or curated counts.
+    lead_queue = write_lead_exports(output, catalog)
+    # The static API reads the same records and queues; its documentation page joins the sitemap.
+    api_index = build_api(output, resources=resources, papers=papers, repository_document=browse_document,
+                          discovery_queue=discovery_queue, lead_queue=lead_queue, site_url=SITE_URL)
+    section = llms_section(discovery_queue, SITE_URL) + lead_llms_section(lead_queue, SITE_URL)
+    if section:
+        llms_path = output / "llms.txt"
+        llms = llms_path.read_text(encoding="utf-8")
+        # The unreviewed queues come after the curated collections and data, before the optional links.
+        marker = "\n## Optional\n"
+        if llms.count(marker) != 1:
+            raise ValueError("llms.txt needs exactly one Optional section")
+        llms_path.write_text(llms.replace(marker, "\n" + section + marker), encoding="utf-8")
+    # Every footer offers the same repository download as the homepage and the browse pages.
+    repository_export = PUBLISHED_FILENAME if metadata["source_index"].get("full_export") == PUBLISHED_FILENAME else "source-index.json"
+    discovery_paths = [*discovery_paths, *write_api_pages(output, api_index, site_url=SITE_URL, repository_url=REPOSITORY_URL,
+                                                          source_export=repository_export)]
+    # llms-full.txt: the whole curated catalog in Markdown, one file per language.
+    for language, header in (("en", "# Awesome Reverse Engineering Anything: the full curated catalog\n\n> Every source-reviewed resource and research paper of AwesomeREA.org, with requirements, limits and sources. The navigation index is https://awesomerea.org/llms.txt; each entry also has its own Markdown page and record.json.\n"),
+                             ("zh", "# Awesome Reverse Engineering Anything：完整精选目录\n\n> AwesomeREA.org 全部经来源复核的资源与研究论文，含使用条件、局限与来源。导航索引见 https://awesomerea.org/llms.txt；每个条目另有独立的 Markdown 页面与 record.json。\n")):
+        target = output / ("zh/llms-full.txt" if language == "zh" else "llms-full.txt")
+        target.write_text(full_catalog_markdown(resources, papers, language, site_url=SITE_URL, sections=COLLECTION_SECTIONS,
+                                                section_of=collection_section, header=header), encoding="utf-8")
     paper_urls = build_paper_pages(
         output, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
-        styles_href=asset_hrefs["styles.css"], papers_styles_href=f"/papers.css?v={papers_revision}",
+        styles_href=asset_hrefs["styles.css"], papers_styles_href=fingerprinted_href(output, "papers.css"),
         favicon_href=asset_hrefs["favicon.svg"], social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
-        icon_stylesheet_href=icon_stylesheet,
+        icon_stylesheet_href=icon_stylesheet, repository_export=repository_export,
     )
     survey_document = json.loads((ROOT / "data/survey.json").read_text(encoding="utf-8"))
     survey_urls = build_survey(
@@ -352,27 +310,36 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         site_url=SITE_URL, repository_url=REPOSITORY_URL,
         styles_href=asset_hrefs["styles.css"], favicon_href=asset_hrefs["favicon.svg"],
         social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
-        icon_stylesheet_href=icon_stylesheet,
+        icon_stylesheet_href=icon_stylesheet, repository_export=repository_export,
     )
-    entry_revision = hashlib.sha256((output / "entry.css").read_bytes()).hexdigest()[:16]
     entry_urls = build_entry_pages(
         output, resources, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
-        styles_href=asset_hrefs["styles.css"], entry_styles_href=f"/entry.css?v={entry_revision}",
+        styles_href=asset_hrefs["styles.css"], entry_styles_href=fingerprinted_href(output, "entry.css"),
         favicon_href=asset_hrefs["favicon.svg"], social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
         icon_stylesheet_href=icon_stylesheet, survey_discussions=discussion_sections(survey_document),
+        repository_export=repository_export,
     )
     # Feeds list inclusion dates; they link from pages written above and are not sitemap pages.
-    build_feeds(output, resources, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL)
+    build_feeds(output, resources, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
+                discovery_batches=main_feed_batches(discovery_queue))
     # Static pages with a language link keep the reader's card or section on the translated page.
     add_language_fragment_script(output)
+    # The homepages: masthead, search and the index-card drawer. Every other page gets the same shared chrome.
+    # Their head is the one the builders above finished, feed links included.
+    build_home(output, explorer_pages={"en": (output / "index.html").read_text(encoding="utf-8"), "zh": (output / "zh/index.html").read_text(encoding="utf-8")}, resources=resources, papers=papers, discovery_queue=discovery_queue,
+               repository_url=REPOSITORY_URL, repository_export=repository_export)
+    apply_site_shell(output, repository_url=REPOSITORY_URL, skip=frozenset({"index.html", "zh/index.html"}))
+    # Every stylesheet and script now has a content-addressed copy under /assets/; drop the root copies.
+    remove_unhashed_copies(output, [path.name for path in SOURCE.iterdir()])
     (output / ".nojekyll").write_text("", encoding="utf-8")
     (output / "CNAME").write_text("awesomerea.org\n", encoding="utf-8")
-    (output / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
-    # Review timestamps describe sources, not every page's modification date.
-    # Omit lastmod rather than advertising a fabricated build-time freshness signal.
+    (output / "robots.txt").write_text(robots_txt(SITE_URL, f"{SITE_URL}/{SITEMAP_INDEX}"), encoding="utf-8")
     sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", *browse_urls, *(SITE_URL + path for path in discovery_paths), *paper_urls, *survey_urls, *entry_urls]
-    sitemap_entries = [f'<url><loc>{xml_escape(url)}</loc></url>' for url in sitemap_urls]
-    (output / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(sitemap_entries) + '\n</urlset>\n', encoding="utf-8")
+    # lastmod comes from the records each page shows, never the build time (sitemaps.page_dates).
+    dates = page_dates(resources=resources, papers=papers, repository_document=browse_document,
+                       discovery_batches=(discovery_queue or {}).get("batches"), lead_batches=(lead_queue or {}).get("batches"),
+                       survey_date=survey_document.get("date"))
+    write_sitemaps(output, SITE_URL, [url.removeprefix(SITE_URL) for url in sitemap_urls], dates)
     build_data_downloads(output, catalog, papers,
                          (output / 'papers/references.bib').read_text(encoding='utf-8'))
     write_build_manifest(output)
@@ -385,8 +352,7 @@ def check_output_directory(output: Path) -> None:
         raise ValueError("Deployment output must be a directory, not a symlink or file.")
 
 
-def build_staged_site(*, fontawesome_dir: Path | None = None,
-                      fontawesome_assets_url: str | None = None) -> tuple[int, int, int]:
+def build_staged_site() -> tuple[int, int, int]:
     """Keep the previous deployment intact until generation and its manifest succeed."""
     check_output_directory(OUTPUT)
     # This directory stays ignored even if an interrupted rollback needs manual recovery.
@@ -397,8 +363,7 @@ def build_staged_site(*, fontawesome_dir: Path | None = None,
     staged, previous = workspace / "next", workspace / "previous"
     preserve_previous = False
     try:
-        counts = build_site(staged, fontawesome_dir=fontawesome_dir,
-                            fontawesome_assets_url=fontawesome_assets_url)
+        counts = build_site(staged)
         check_output_directory(OUTPUT)
         try:
             if OUTPUT.exists():
@@ -428,14 +393,10 @@ def build_staged_site(*, fontawesome_dir: Path | None = None,
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    icons = parser.add_mutually_exclusive_group()
-    icons.add_argument("--fontawesome-dir", type=Path, help="Optional local licensed Font Awesome Pro package; copied only into ignored deployment output.")
-    icons.add_argument("--fontawesome-assets-url", help="Trusted HTTPS origin/path serving the authorized Font Awesome deployment; no font files are downloaded or copied.")
-    args = parser.parse_args()
-    resources, papers, pages = build_staged_site(
-        fontawesome_dir=args.fontawesome_dir,
-        fontawesome_assets_url=args.fontawesome_assets_url,
-    )
+    # Accepted and ignored: the Cloudflare Pages build command may still pass it, and the site loads no icon font now.
+    parser.add_argument("--fontawesome-assets-url", help=argparse.SUPPRESS)
+    parser.parse_args()
+    resources, papers, pages = build_staged_site()
     print(f"Built {resources} curated resources, {papers} papers and {pages} indexable pages in dist/ ({SITE_URL})")
 
 

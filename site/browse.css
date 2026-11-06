@@ -25,7 +25,18 @@
 .browse-topline{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;padding:18px 0;color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
 .browse-topline p{margin:0}
 .browse-topline h2{margin:0;max-width:100%;font-size:22px;line-height:1.4;color:var(--ink);overflow-wrap:break-word;text-wrap:balance}
-.browse-topline p:last-child{font-size:14px}
+.browse-topline p:last-of-type{font-size:14px}
+/* Long /resources/ and /cases/ sections end their heading row with a link back to the chip index. */
+.browse-topline>h2+p:not(:last-child){margin-left:auto}
+.section-index-link{display:inline-flex;align-items:center;min-height:24px;font-size:14px;color:var(--link);text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+/* Target sections also count entries carrying that tag but filed under another section. */
+.section-target-count{max-width:80ch;margin:-6px 0 16px;font-size:14px;line-height:1.75;color:var(--muted);overflow-wrap:anywhere}
+.section-target-count a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.section-target-count a:last-child{white-space:nowrap}
+/* /resources/ sections with both case studies and other kinds show them as two labelled sub-groups. */
+.resource-subgroup+.resource-subgroup{margin-top:30px}
+.resource-subgroup-topline{padding:6px 0 14px}
+.resource-subgroup-topline h3{margin:0;font-size:18px;line-height:1.4;font-weight:650;color:var(--ink);overflow-wrap:break-word}
 .browse-category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .browse-category-card{display:flex;align-items:center;gap:15px;min-height:126px;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 2px 5px var(--shadow)}
 .browse-category-card:hover{border-color:var(--strong);background:var(--soft)}
@@ -36,9 +47,9 @@
 .browse-category-arrow{margin-left:auto;font-size:20px;color:var(--steel)}
 .browse-repository h2{flex:1;min-width:0;margin:0;font:700 18px/1.5 var(--sans);letter-spacing:0;overflow-wrap:anywhere}
 .browse-github-fallback{font:700 12px/22px var(--sans);text-align:center}
-.browse-text-arrow{display:inline-block;margin-left:6px;font-size:13px;color:var(--steel)}
+.browse-text-arrow{padding-left:6px;font-size:13px;color:var(--steel)}
 /* Repository cards stay compact: tighter padding and type, related entries on one labelled line, and
-   stars, README and license on one plain meta line instead of a ruled footer. */
+   stars, README, last-push month and license on one plain meta line instead of a ruled footer. */
 .source-card.browse-repository{padding:14px 20px}
 .source-card.browse-repository h2{line-height:1.4}
 .source-card.browse-repository .source-card-description{max-width:none;margin:4px 0 0;font-size:15px;line-height:1.65}
@@ -51,19 +62,43 @@ html[lang="zh-CN"] .source-card.browse-repository .source-related-label::after{c
 .source-card.browse-repository .source-related-link{line-height:1.6}
 .browse-repository .source-card-footer{margin-top:4px;line-height:1.6}
 .browse-repository .source-card-footer .source-stars{padding:0;border:0;background:none;font-size:14px;line-height:1.6;color:var(--muted)}
+.browse-repository .source-card-pushed{white-space:nowrap;font-variant-numeric:tabular-nums}
+/* Below 521 px a fourth meta item wraps the licence onto its own row: show the month alone (its "Last push" label stays
+   for screen readers and in the tooltip) and tighten the gaps, so stars, README, month and licence share one row again. */
+@media(max-width:520px){
+  .browse-repository .source-card-footer{column-gap:12px}
+  .browse-repository .source-card-pushed-label{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+}
 /* Scope static reading rules here; homepage cards keep their own layout. */
 .browse-main .card-description,.browse-main .source-card-description{max-width:68ch;font-size:16px;line-height:1.8;color:var(--body)}
 /* Links inside static card prose (the /about/ cards) need more than colour to read as links. */
 .browse-main .card-description a,.browse-main .source-card-description a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .browse-main .card-description a:hover,.browse-main .source-card-description a:hover{text-decoration-thickness:2px}
-.browse-main .requirements ul{max-width:68ch;font-size:15px;line-height:1.8;color:var(--body)}
-.browse-main .requirements li+li{margin-top:12px}
-/* Evidence links carry the entry pages' labels; a pinned GitHub path is followed by its repository and revision. */
-.browse-main .entry-source-context{display:block;margin-top:2px;color:var(--muted);font-size:14px;line-height:1.6;overflow-wrap:anywhere}
-.browse-main .requirements ul a{color:var(--link);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
-.browse-main .requirements summary{min-height:44px;padding:10px 0;font-size:15px;line-height:1.6;color:var(--link)}
-html[lang="zh-CN"] .browse-main .card-description,html[lang="zh-CN"] .browse-main .source-card-description,html[lang="zh-CN"] .browse-main .requirements ul{max-width:36em;line-height:1.85}
+/* /resources/ cards end with the primary source, a counted link to the entry page's requirements, and the review date. */
+.browse-main .resource-card>.resource-detail-meta{align-items:center;gap:0 18px;margin-top:14px;padding-top:6px;border-top:1px solid var(--line)}
+.browse-main .resource-detail-meta a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:4px}
+html[lang="zh-CN"] .browse-main .card-description,html[lang="zh-CN"] .browse-main .source-card-description{max-width:36em;line-height:1.85}
 html[lang="zh-CN"] .source-card.browse-repository .source-card-description{max-width:none;line-height:1.7}
+/* /about/ link groups: site pages, downloads with their built size, and GitHub documents. */
+.about-link-groups{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.25fr) minmax(0,1fr);gap:18px 36px;padding:18px 0 4px}
+.about-link-group h3{margin:0 0 4px;color:var(--muted);font:650 12px/1.6 var(--sans);letter-spacing:.08em;text-transform:uppercase}
+.about-link-group ul{margin:0;padding:0;list-style:none}
+.about-link-group li{padding:6px 0;font-size:15px;line-height:1.6}
+.about-link-group a{color:var(--link);text-decoration:underline;text-decoration-color:var(--strong);text-underline-offset:3px;overflow-wrap:anywhere}
+.about-link-group a:hover{text-decoration-color:currentColor}
+/* An inline block keeps the external-link arrow out of the link underline; the size sits after the link. */
+.about-file-meta,.about-link-group a>[aria-hidden]{display:inline-block;margin-left:6px}
+.about-file-meta{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+/* 404 pages: a script-free search of the curated collection, then the main sections. */
+.not-found{display:grid;gap:30px;max-width:720px;padding:4px 0 32px}
+.not-found-search label{display:block;margin-bottom:8px;color:var(--ink);font-size:15px;font-weight:650;line-height:1.6}
+.not-found-field{display:flex;gap:10px}
+.not-found-field input{flex:1;min-width:0;height:48px;padding:0 14px;border:1px solid var(--control);border-radius:8px;background:var(--surface);color:var(--ink);font:16px/1.4 var(--sans)}
+.not-found-field .button{min-height:48px;padding-inline:20px;font-size:14px}
+.not-found-sections h2{margin:0 0 10px;color:var(--muted);font-size:15px;font-weight:650;line-height:1.6}
+.not-found-sections ul{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.not-found-sections a{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:7px;color:var(--link);font-size:14px;font-weight:550}
+.not-found-sections a:hover{background:var(--soft);border-color:var(--strong)}
 @media(max-width:1050px){.browse-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){
   .browse-breadcrumbs{margin-top:20px}
@@ -76,7 +111,15 @@ html[lang="zh-CN"] .source-card.browse-repository .source-card-description{max-w
   .browse-category-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding-top:16px;padding-bottom:8px}
   .browse-category-nav a{min-width:0;white-space:normal;justify-content:space-between;font-size:14px;line-height:1.5;padding:8px 10px}.browse-category-nav a span{flex-shrink:0}
   .source-card.browse-repository{padding:14px 16px}
+  .about-link-groups{grid-template-columns:1fr;gap:12px}
+  .about-link-group ul{display:flex;flex-wrap:wrap;gap:0 18px}
+  .about-link-group li{padding:2px 0}
 }
 
 .browse-category-nav a{min-height:44px}
 @media(forced-colors:active){.browse-category-nav a[aria-current="page"]{forced-color-adjust:none;background:Highlight;border-color:Highlight;color:HighlightText}.browse-category-nav a[aria-current="page"]:focus-visible{outline-color:CanvasText}}
+/* On phones (card titles are h3, or h4 inside a /resources/ sub-group) the kind badge moves under a resource title only when one of the title's words, with the arrow after the last,
+   cannot fit beside it (a wide "Learning resource" badge next to a long single-word name); break-word keeps min-content at that word. */
+@media(max-width:700px){.browse-main .card-heading{flex-wrap:wrap;gap:9px 11px}.browse-main .card-heading :is(h3,h4){flex:1 1 min-content;overflow-wrap:break-word}}
+/* Below 380 px the kind badge leaves a resource title too narrow for its last word and arrow; give the title the full width. */
+@media(max-width:380px){.browse-main .card-heading{flex-wrap:wrap;gap:9px}.browse-main .card-heading :is(h3,h4){flex-basis:100%}}

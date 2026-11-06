@@ -1,9 +1,9 @@
 name: Scheduled README discovery
 on:
   workflow_dispatch:
+  # Every hour at minute 7 UTC; GitHub can delay scheduled starts.
   schedule:
-    - cron: '17 0,8,16 * * *'
-      timezone: America/Los_Angeles
+    - cron: '7 * * * *'
 permissions:
   contents: read
   actions: read
@@ -14,12 +14,14 @@ jobs:
   scan:
     if: ${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 30
+    outputs:
+      checkpoint_ready: ${{ steps.scan.outputs.checkpoint_ready }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
       - name: Resume bounded public README discovery
@@ -49,3 +51,69 @@ jobs:
           include-hidden-files: true
           if-no-files-found: error
           retention-days: 7
+  # Adds this run's new verified discoveries to data/discoveries/ through a pull request that the job
+  # checks and merges itself (docs/automation.md#automated-discovery-ingest). Only this job can write,
+  # and it changes nothing but one new discovery batch file; the scan job above stays read-only.
+  ingest:
+    needs: scan
+    if: ${{ needs.scan.outputs.checkpoint_ready == 'true' && !github.event.repository.fork && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      # Commit the batch to the automation branch and squash-merge its pull request.
+      contents: write
+      # Open or update that pull request.
+      pull-requests: write
+      # Read this run's checkpoint artifact, dispatch the two required checks and start IndexNow.
+      actions: write
+      # Read the validate and review commit statuses and check runs on the pull request head.
+      checks: read
+      statuses: read
+    outputs:
+      status: ${{ steps.ingest.outputs.status }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Ingest verified discoveries through a checked pull request
+        id: ingest
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: python3 scripts/ingest_discoveries.py run
+      # The merged batch changes the discovery pages; IndexNow hears about them once they are deployed.
+      # A failed start never fails the ingest: the IndexNow schedule also notifies unsent deployments.
+      - name: Start the IndexNow notification for the merged batch
+        if: ${{ steps.ingest.outputs.status == 'merged' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MERGE_SHA: ${{ steps.ingest.outputs.merge_sha }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          gh workflow run indexnow.yml -R "$GITHUB_REPOSITORY" --ref "$DEFAULT_BRANCH" -f sha="$MERGE_SHA" \
+            || echo "::warning::The IndexNow workflow did not start; its schedule will notify these pages."
+  # One tracking issue: updated on a failed run, closed by the next successful one.
+  report:
+    needs: [scan, ingest]
+    if: ${{ always() && !github.event.repository.fork && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Update the failure tracking issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SCAN_RESULT: ${{ needs.scan.result }}
+          INGEST_RESULT: ${{ needs.ingest.result }}
+        run: python3 scripts/ingest_discoveries.py report --tracker readme-discovery --result "scan=$SCAN_RESULT" --result "ingest=$INGEST_RESULT"

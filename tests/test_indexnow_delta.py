@@ -289,5 +289,59 @@ class IndexNowDeltaTests(unittest.TestCase):
                 self.assertIn('unconfirmed', output); self.assertIn('No automatic retry', output)
 
 
+    # --automatic and --receipt: a receipt binds the verified deployment; asset-only changes notify nothing.
+
+    def test_asset_only_delta_verifies_the_deployment_and_records_a_receipt(self):
+        previous = deepcopy(self.current)
+        previous['files']['catalog.json'] = {'sha256': '2' * 64, 'bytes': 9}
+        receipt = self.root / 'receipt/receipt.json'
+        events, fetch, post = self.live_network()
+        args = [*self.delta_args(previous), '--submit', '--automatic', '--receipt', str(receipt)]
+        with patch.object(indexnow, 'fetch_bytes', side_effect=fetch), patch.object(indexnow, 'urlopen', side_effect=post):
+            code, output = self.run_main(args)
+        self.assertEqual(code, 0, output)
+        self.assertFalse(any(kind == 'POST' for kind, _ in events))
+        self.assertTrue(any(url == indexnow.ORIGIN + '/build-manifest.json' for _, url in events))
+        recorded = json.loads(receipt.read_text())
+        self.assertEqual(recorded['manifest_sha256'], hashlib.sha256((self.dist / 'build-manifest.json').read_bytes()).hexdigest())
+        self.assertEqual((recorded['mode'], recorded['submitted_urls'], recorded['indexnow_status']), ('delta', 0, None))
+        # Without --automatic the same delta still asks for a review and writes nothing.
+        receipt.unlink()
+        with patch.object(indexnow, 'fetch_bytes', side_effect=fetch), patch.object(indexnow, 'urlopen', side_effect=post):
+            code, _ = self.run_main([*self.delta_args(previous), '--submit', '--receipt', str(receipt)])
+        self.assertEqual(code, 1)
+        self.assertFalse(receipt.exists())
+
+    def test_a_full_submission_records_its_receipt_and_another_build_directory_works(self):
+        moved = self.root / 'deployed'
+        self.dist.rename(moved)
+        self.dist = moved
+        receipt = self.root / 'receipt.json'
+        events, fetch, post = self.live_network(status=202)
+        with patch.object(indexnow, 'fetch_bytes', side_effect=fetch), patch.object(indexnow, 'urlopen', side_effect=post):
+            code, output = self.run_main(['--submit', '--automatic', '--dist', str(moved), '--receipt', str(receipt)])
+        self.assertEqual(code, 0, output)
+        posts = [payload for kind, payload in events if kind == 'POST']
+        self.assertEqual(len(posts), 1)
+        self.assertEqual(sorted(posts[0]['urlList']), sorted(self.urls))
+        recorded = json.loads(receipt.read_text())
+        self.assertEqual((recorded['mode'], recorded['submitted_urls'], recorded['indexnow_status']), ('full', 3, 202))
+
+    def test_sitemap_index_files_are_all_verified_against_the_deployment(self):
+        (self.dist / 'sitemap-pages.xml').write_text(
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+            + ''.join(f'<url><loc>{url}</loc></url>' for url in self.urls) + '</urlset>')
+        (self.dist / 'sitemap.xml').write_text('<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+                                               f'<sitemap><loc>{indexnow.ORIGIN}/sitemap-pages.xml</loc></sitemap></sitemapindex>')
+        write_build_manifest(self.dist)
+        events, fetch, post = self.live_network()
+        with patch.object(indexnow, 'fetch_bytes', side_effect=fetch), patch.object(indexnow, 'urlopen', side_effect=post):
+            code, output = self.run_main(['--submit'])
+        self.assertEqual(code, 0, output)
+        fetched = [url for kind, url in events if kind == 'GET']
+        self.assertIn(indexnow.ORIGIN + '/sitemap.xml', fetched)
+        self.assertIn(indexnow.ORIGIN + '/sitemap-pages.xml', fetched)
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -29,10 +29,10 @@ Code or site (`scripts/`, `site/`, `tests/`, `.github/`):
 
 - [ ] `python3 -m compileall -q scripts tests`
 - [ ] `python3 -m unittest discover -s tests -v`
-- [ ] `python3 scripts/build_production.py --fontawesome-assets-url https://awesome-rea.pages.dev`
+- [ ] `python3 scripts/build_production.py`
 - [ ] `npm ci --prefix tests/browser --ignore-scripts` and `node tests/browser/smoke.cjs`
 
-README.md, README.zh-CN.md, docs/repositories/ and docs/case-coverage*.md are generated. Change the data or the builder and regenerate them with the commands above; do not edit them by hand.
+README.md, README.zh-CN.md, docs/papers*.md, docs/cases*.md, docs/repositories/ and docs/case-coverage*.md are generated. Change the data or the builder and regenerate them with the commands above; do not edit them by hand.
 
 Pull requests are public. Remove tokens, cookies, account identifiers, local filesystem paths and private captures from anything you paste, including logs and screenshots. See the [contribution guide](https://github.com/reacher-z/Awesome-REA/blob/main/CONTRIBUTING.md#review-and-publication), and report security problems privately under the [security policy](https://github.com/reacher-z/Awesome-REA/security/policy).
 

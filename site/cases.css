@@ -2,6 +2,14 @@
 .cases-main{background:var(--paper)}
 .cases-main .browse-intro{padding-bottom:18px}
 .cases-main .browse-actions{margin-bottom:14px}
+.case-review-method{margin:0 0 24px;padding:20px;border:1px solid var(--line);border-radius:12px}
+.case-review-method h2{margin:0;font-size:20px;line-height:1.4}
+.case-review-method>p{max-width:80ch;margin:10px 0 18px;line-height:1.7;color:var(--body)}
+.case-review-method dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px;margin:0}
+.case-review-method dt{font-weight:650}
+.case-review-method dd{margin:5px 0 0;color:var(--body);font-size:15px;line-height:1.65}
+@media(max-width:600px){.case-review-method{padding:16px}.case-review-method>p{font-size:15px}.case-review-method dl{gap:14px}.case-review-method dt,.case-review-method dd{font-size:14px}}
+@media(max-width:340px){.case-review-method dl{grid-template-columns:1fr}}
 .cases-note{margin:0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.75;color:var(--body)}
 .cases-note summary{width:fit-content;min-height:44px;padding:8px 0;cursor:pointer;color:var(--link)}
 .cases-note>p{max-width:76ch;margin:0 0 16px}
@@ -11,33 +19,32 @@
 .case-section .browse-topline{padding:22px 0 12px}
 .case-list{border-bottom:1px solid var(--line)}
 .case-row{padding:18px 0 12px;border-top:1px solid var(--line);min-width:0}
+/* A section grouped by reconstruction method (Games): a method index, then one headed group per method. */
+.case-method-nav{padding:4px 0 6px}
+.case-method{scroll-margin-top:24px}
+.case-method-topline{display:flex;justify-content:space-between;align-items:baseline;gap:4px 12px;flex-wrap:wrap;margin-top:22px;padding:14px 0 2px;border-top:2px solid var(--ink);color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+.case-method-topline h3{margin:0;max-width:100%;font-size:19px;line-height:1.45;font-weight:700;color:var(--ink);overflow-wrap:break-word}
+.case-method-topline p{margin:0}
+.case-method-note{max-width:76ch;margin:2px 0 12px;font-size:15px;line-height:1.7;color:var(--body)}
 .case-heading{display:flex;align-items:baseline;flex-wrap:wrap;gap:5px 16px}
-.case-heading h3{flex:1 1 32rem;min-width:0;margin:0;font-size:18px;line-height:1.5;font-weight:650;letter-spacing:0;overflow-wrap:anywhere}
-.case-heading h3 a{color:var(--ink);text-decoration:none}
-.case-heading h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+.case-heading :is(h3,h4){flex:1 1 32rem;min-width:0;margin:0;font-size:18px;line-height:1.5;font-weight:650;letter-spacing:0;overflow-wrap:anywhere}
+.case-heading :is(h3,h4) a{color:var(--ink);text-decoration:none}
+.case-heading :is(h3,h4) a:hover{text-decoration:underline;text-underline-offset:4px}
 .case-relationship{font-size:14px;line-height:1.6;color:var(--muted)}
 .case-description{max-width:76ch;margin:9px 0 6px;font-size:16px;line-height:1.75;color:var(--body);overflow-wrap:anywhere}
 .case-footer{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 24px}
 .case-meta{display:flex;align-items:center;flex-wrap:wrap;gap:2px 18px;min-width:0;font-size:14px;line-height:1.6}
 .case-meta a{display:inline-flex;align-items:center;gap:5px;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:4px}
 .case-targets{color:var(--muted);overflow-wrap:anywhere}
-.case-evidence{min-width:0;max-width:100%;margin-left:auto;font-size:15px;line-height:1.7}
-.case-evidence summary{min-height:44px;padding:10px 0;cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
-.case-evidence[open]{width:100%;margin-left:0}
-.case-evidence-body{max-width:76ch;padding:2px 0 8px;color:var(--body);overflow-wrap:anywhere}
-.case-requirements{margin:2px 0 12px;padding-left:24px}
-.case-requirements li+li{margin-top:10px}
-/* One evidence link per line: a pinned GitHub path, then its repository and revision. */
-.case-evidence-links{display:grid;gap:2px;margin:0;padding:0;list-style:none}
-.case-evidence-links li{min-width:0}
-.case-evidence-links a{display:inline-block;padding:9px 0;color:var(--link);text-decoration:underline;text-underline-offset:4px}
-.case-evidence-links .entry-source-context{margin:-7px 0 7px}
-.case-review-date{margin:5px 0 0;font-size:14px;color:var(--muted)}
+/* Requirements and further sources live on the entry page; the row links there with their counts. */
+.case-evidence{display:flex;align-items:center;flex-wrap:wrap;gap:0 18px;min-width:0;max-width:100%;margin:0 0 0 auto;font-size:14px;line-height:1.6}
+.case-evidence a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+.case-review-date{color:var(--muted)}
 .cases-empty{padding:24px 0;font-size:16px;color:var(--body)}
 .cases-main a:focus-visible,.cases-main summary:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
-html[lang="zh-CN"] .cases-note>p,html[lang="zh-CN"] .case-description,html[lang="zh-CN"] .case-evidence-body{max-width:38em;line-height:1.85}
+html[lang="zh-CN"] .cases-note>p,html[lang="zh-CN"] .case-method-note,html[lang="zh-CN"] .case-description{max-width:38em;line-height:1.85}
 @media(max-width:700px){
-  .case-heading h3{flex-basis:100%}
+  .case-heading :is(h3,h4){flex-basis:100%}
   .case-row{padding-top:16px}
   .case-meta{gap:2px 15px}
   .case-targets{flex-basis:100%}

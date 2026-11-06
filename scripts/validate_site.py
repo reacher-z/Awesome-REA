@@ -1,30 +1,45 @@
 #!/usr/bin/env python3
 """Check generated canonical pages, structured data, local links and ownership files."""
 from collections import Counter, defaultdict
+from html import unescape as html_unescape
 from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import sys
 from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
+from asset_paths import ASSET_PATH, FINGERPRINTED_SUFFIXES, UNHASHED_STYLESHEETS, digest
 from build_entry_pages import entry_path, feedback_urls, matching_entries, section_siblings
-from build_site import catalog_index
+from build_site import REPOSITORY_URL, catalog_index
 from build_manifest import read_build_manifest
-from build_paper_pages import bibtex_text, paper_entity_id, papers_newest_first
+from page_metadata import description_problem, paper_description, resource_description, title_problem
+from sitemaps import sitemap_urls
+from structured_data import evidence_urls, organization_node, publisher_reference, resource_entity
+from validate_agent_formats import validate_agent_formats
+from build_paper_pages import (AUTHORS_OMITTED, LISTING_SIZE_BUDGET, SEARCH_FIELDS, authors_omitted, bibtex_text,
+                               formatted_date, listing_size_warnings, paper_entity_id, papers_newest_first)
 from validate_papers import read_papers
 from artifact_links import with_artifact_links, with_curated_labels
 from source_descriptions import description_fallback
 from localization import localized_records, read_localizations
 from source_scope import apply_scope, read_scope
 from source_browser import BROWSER_FILENAME, FULL_EXPORT_FILENAME, validate_source_browser
-from public_source_supplements import (PUBLISHED_FILENAME, compose_published, json_bytes,
-                                      load_supplements, owned_file, bounded_bytes, project_additions)
+from public_source_supplements import (PUBLISHED_FILENAME, compose_published, json_bytes, load_supplements,
+                                      owned_file, bounded_bytes, project_additions, read_withdrawals)
 from validate_discovery import expected_entry_routes, validate_route_inventory
-from build_readme import CATEGORIES, PAPER_SECTIONS, REQUIREMENTS_LABEL, collection_section, paper_section
-from build_feed import FEED_PAGES, FEED_PATHS, FEED_SIZE, feed_entries
+from build_readme import (CATEGORIES, METHOD_SECTIONS, PAPER_SECTIONS, REQUIREMENTS_LABEL, case_method,
+                          collection_section, method_groups, paper_section)
+from build_discovery_pages import ABOUT_EXCLUDED_SECTIONS, SECTION_TARGETS, file_size_label
+from build_feed import (DISCOVERY_LABELS, DISCOVERY_PATHS, DISCOVERY_TERM, FEED_PAGES, FEED_PATHS, FEED_SIZE,
+                        discovery_summary, entry_time, feed_entries, merged_entries)
+import build_discoveries
+import build_discovery_leads
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SITE_ALTERNATE_NAMES, SITE_NAME, SOCIAL_IMAGE_ALT, png_size
+from site_footer import DOWNLOADS, SECTION_LINKS, site_footer
+from site_shell import THEME_SCRIPT, theme_script_hash
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'dist'
@@ -53,7 +68,7 @@ class Page(HTMLParser):
         self.entry_article_depth = 0
         self.case_rows, self.current_case = [], None
         self.case_heading, self.case_time = None, None
-        self._case_sections = []
+        self._case_sections, self._case_methods = [], []
         self.raw_text_tag = None
         self.paper_groups, self._section_stack = [], []
         self._div_depth = 0
@@ -69,6 +84,8 @@ class Page(HTMLParser):
         if tag == 'section':
             self._case_sections.append({'section': values.get('data-case-section'), 'anchor': values.get('id')}
                                        if 'case-section' in classes else None)
+            self._case_methods.append({'method': values.get('data-case-method'), 'anchor': values.get('id')}
+                                      if 'case-method' in classes else None)
             group = None
             if 'paper-section' in classes:
                 group = {'anchor': values.get('aria-labelledby'), 'paper_ids': [],
@@ -108,13 +125,15 @@ class Page(HTMLParser):
         if tag == 'article' and 'data-case-id' in values:
             assert self.current_case is None, 'Nested case articles are invalid'
             case_section = next((section for section in reversed(self._case_sections) if section is not None), {})
+            case_method = next((method for method in reversed(self._case_methods) if method is not None), {})
             self.current_case = {'id': values['data-case-id'], 'anchor': values.get('id'),
                                  'section': values.get('data-case-section'), 'text': [],
                                  'headings': [], 'times': [], 'links': [],
                                  'parent_section': case_section.get('section'),
-                                 'parent_anchor': case_section.get('anchor')}
+                                 'parent_anchor': case_section.get('anchor'),
+                                 'method': case_method.get('method'), 'method_anchor': case_method.get('anchor')}
             self.case_rows.append(self.current_case)
-        if self.current_case is not None and tag == 'h3':
+        if self.current_case is not None and tag in ('h3', 'h4'):
             self.case_heading = []
             self.current_case['headings'].append(self.case_heading)
         if self.current_case is not None and tag == 'time':
@@ -231,7 +250,7 @@ class Page(HTMLParser):
         if tag == 'time':
             self.entry_time = None
             self.case_time = None
-        if tag == 'h3':
+        if tag in ('h3', 'h4'):
             self.case_heading = None
         if tag == 'a':
             self.current_related_link = None
@@ -248,6 +267,7 @@ class Page(HTMLParser):
             self._section_stack.pop()
         if tag == 'section' and self._case_sections:
             self._case_sections.pop()
+            self._case_methods.pop()
 
 
 def structured_checks(value):
@@ -296,21 +316,25 @@ def validate_requirements_label(app_source=None):
             assert strings[language][key] == expected, f'app.js {language}.{key} must read {expected!r}'
 
 
-def validate_open_graph(route, page, card_size):
-    """Every page publishes the shared social block; ``route=None`` is the uncanonical 404 template."""
+def validate_open_graph(route, page, card_size, *, language=None):
+    """Every page publishes the shared social block; ``route=None`` is an uncanonical 404 template."""
     assert len(page.meta_keys) == len(set(page.meta_keys)), f'Duplicate meta tags: {route}'
-    meta, language = page.meta, 'zh' if route and route.startswith('/zh/') else 'en'
-    expected = {'og:type': 'website', 'og:site_name': SITE_NAME, 'og:locale': OG_LOCALES[language],
+    meta, language = page.meta, language or ('zh' if route and route.startswith('/zh/') else 'en')
+    image = urlsplit(meta.get('og:image') or '')
+    # A page may carry its own card under /og/, with its own description of that card.
+    own_card = re.fullmatch(r'/og/[a-z0-9/-]+\.png', image.path) is not None
+    image_alt = meta.get('og:image:alt', '') if own_card else SOCIAL_IMAGE_ALT[language]
+    expected = {'og:type': 'article' if page.entry_contents else 'website', 'og:site_name': SITE_NAME, 'og:locale': OG_LOCALES[language],
                 'og:image:type': 'image/png', 'og:image:width': str(card_size[0]), 'og:image:height': str(card_size[1]),
-                'og:image:alt': SOCIAL_IMAGE_ALT[language], 'twitter:card': 'summary_large_image',
-                'twitter:image:alt': SOCIAL_IMAGE_ALT[language]}
+                'og:image:alt': image_alt, 'twitter:card': 'summary_large_image',
+                'twitter:image:alt': image_alt}
     if route is not None:
         expected.update({'og:locale:alternate': OG_LOCALES['en' if language == 'zh' else 'zh'], 'og:url': ORIGIN + route})
     assert {key: meta.get(key) for key in expected} == expected, f'Open Graph block differs from the shared generator: {route}'
     if route is None:
         assert 'og:url' not in meta and 'og:locale:alternate' not in meta, 'The 404 template must not publish an og:url or counterpart'
-    image = urlsplit(meta.get('og:image') or '')
-    assert (image.scheme, image.netloc, image.path) == ('https', 'awesomerea.org', '/social-card.png') and meta.get('twitter:image') == meta['og:image'], f'Social image URL mismatch: {route}'
+    assert image_alt, f'Social image needs a description: {route}'
+    assert (image.scheme, image.netloc) == ('https', 'awesomerea.org') and (own_card or image.path == '/social-card.png') and meta.get('twitter:image') == meta['og:image'], f'Social image URL mismatch: {route}'
     assert meta['og:image:alt'] not in {meta.get('og:title'), meta.get('twitter:title')}, f'og:image:alt repeats the page title: {route}'
 
 
@@ -321,8 +345,9 @@ def validate_theme_color(route, page):
 
 
 def validate_website_identity(pages):
-    """Only the homepages define the WebSite node, identically; every other page references it."""
+    """Only the homepages define the WebSite and Organization nodes, identically; every other page references them."""
     website_id = ORIGIN + '/#website'
+    organization = organization_node(ORIGIN, REPOSITORY_URL)
 
     def nodes(value):
         if isinstance(value, list):
@@ -337,6 +362,8 @@ def validate_website_identity(pages):
     for route, page in pages.items():
         found = list(nodes(page.schemas))
         websites = [node for node in found if node.get('@type') == 'WebSite' or node.get('@id') == website_id and len(node) > 1]
+        organizations = [node for node in found if node.get('@id') == organization['@id'] and len(node) > 1]
+        assert organizations == ([organization] if route in ('/', '/zh/') else []), f'Only the homepages define the Organization node, with the shared values: {route}'
         if route in ('/', '/zh/'):
             assert len(websites) == 1, f'Homepage needs one WebSite node: {route}'
             website = websites[0]
@@ -404,7 +431,8 @@ class PageResources(HTMLParser):
         self.inline_styles, self.handlers, self.embeds, self.preloads = 0, [], [], []
         self.catalog_revision = None
         self.new_tab_relations, self.referrer_suppressed = [], 0
-        self.feed(text)
+        # The one reviewed inline script, which CSP allows by its hash (validate_security_headers).
+        self.feed(text.replace(f'<script>{THEME_SCRIPT}</script>', ''))
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
@@ -454,9 +482,11 @@ def validate_security_headers(output):
     directives = csp_directives(policies[0])
     for directive in ('default-src', 'base-uri', 'frame-ancestors'):
         assert directives.get(directive) == ["'none'"], f'CSP {directive} must be none'
-    assert 'form-action' in directives, 'CSP must restrict form submissions'
+    # Only the 404 search submits a form, to this origin's homepage; validate_not_found_pages keeps it the only one.
+    assert directives.get('form-action') == ["'self'"], "CSP form-action must be 'self' alone"
     for directive in ('script-src', 'style-src'):
         assert not {"'unsafe-inline'", "'unsafe-eval'", '*', 'data:', 'http:', 'https:'} & set(directives.get(directive, [])), f'CSP {directive} is too broad'
+    assert theme_script_hash() in directives.get('script-src', []), 'CSP script-src must allow the theme script by its current hash (site_shell.theme_script_hash)'
     assert csp_allows(directives, 'connect-src', '/catalog.json'), 'CSP must allow same-origin JSON fetches'
     # Cloudflare Web Analytics is injected at the edge on the production domain, so built pages never show it.
     assert csp_allows(directives, 'script-src', 'https://static.cloudflareinsights.com/beacon.min.js'), 'CSP must allow the Cloudflare Web Analytics beacon'
@@ -474,20 +504,50 @@ def validate_security_headers(output):
         for preload in page.preloads:
             directive = PRELOAD_DIRECTIVES.get(preload['as'])
             assert directive and csp_allows(directives, directive, preload['href']), f'CSP blocks the {preload["as"]} preload {preload["href"]} on {where}'
-        for url in page.stylesheets:
-            # The icon stylesheet loads its fonts relative to its own origin.
-            if urlsplit(url).path.endswith('/fontawesome.css'):
-                assert csp_allows(directives, 'font-src', url), f'CSP font-src blocks the fonts of {url}'
+
+
+IMMUTABLE_ASSETS = 'public, max-age=31536000, immutable'
+
+
+def validate_fingerprinted_assets(output):
+    """Pages load same-origin stylesheets and scripts only from content-addressed /assets/ paths cached for a year."""
+    output = Path(output)
+    rules = header_rules((output / '_headers').read_text(encoding='utf-8'))
+    assert rules.get('/assets/*', {}).get('cache-control') == IMMUTABLE_ASSETS, f'/assets/* needs Cache-Control: {IMMUTABLE_ASSETS}'
+    for pattern, headers in rules.items():
+        assert pattern == '/assets/*' or 'immutable' not in headers.get('cache-control', ''), f'Only content-addressed assets may be immutable: {pattern}'
+    stray = sorted(path.relative_to(output).as_posix() for path in output.rglob('*')
+                   if path.suffix in FINGERPRINTED_SUFFIXES and path.parent.name != 'assets'
+                   and path.relative_to(output).as_posix() not in UNHASHED_STYLESHEETS)
+    assert not stray, 'Stylesheets or scripts outside /assets/: ' + ', '.join(stray)
+    checked = set()
+    for path in sorted(output.rglob('*.html')):
+        page = PageResources(path.read_text(encoding='utf-8'))
+        where = '/' + path.relative_to(output).as_posix()
+        # Preloaded /assets/ files, such as the paper search index, are content-addressed as well.
+        preloaded = [preload['href'] for preload in page.preloads if urlsplit(preload['href']).path.startswith('/assets/')]
+        for href in page.stylesheets + page.scripts + preloaded:
+            target = urlsplit(urljoin(ORIGIN + where, href))
+            if target.netloc != urlsplit(ORIGIN).netloc or target.path.lstrip('/') in UNHASHED_STYLESHEETS:
+                continue
+            match = ASSET_PATH.fullmatch(target.path)
+            assert match and not target.query, f'Unhashed stylesheet or script on {where}: {href}'
+            assert href in preloaded or match['suffix'] in FINGERPRINTED_SUFFIXES, f'Stylesheets and scripts need a .css or .js asset: {href} on {where}'
+            if target.path not in checked:
+                file = output / target.path.lstrip('/')
+                assert file.is_file() and digest(file.read_bytes()) == match['digest'], f'Asset name does not match its content: {target.path}'
+                checked.add(target.path)
 
 
 def validate_catalog_preload(output):
-    """Each homepage preloads exactly the catalog index URL app.js fetches for its data revision, and nothing else."""
-    for route in ('index.html', 'zh/index.html'):
+    """Each explorer page preloads exactly the catalog index URL app.js fetches for its data revision, besides the fonts."""
+    for route in ('explore/index.html', 'zh/explore/index.html'):
         page = PageResources((Path(output) / route).read_text(encoding='utf-8'))
         revision = page.catalog_revision
         assert revision and re.fullmatch(r'[0-9a-f]{16}', revision), f'Homepage needs a data-catalog-revision: /{route}'
         expected = [{'as': 'fetch', 'href': '/catalog-index.json?v=' + revision, 'cors': True}]
-        assert page.preloads == expected, f'Homepage preloads must be one CORS fetch of /catalog-index.json?v={revision}: /{route} has {page.preloads}'
+        fetches = [preload for preload in page.preloads if preload['as'] != 'font']
+        assert fetches == expected, f'Explorer preloads must be one CORS fetch of /catalog-index.json?v={revision}: /{route} has {page.preloads}'
 
 
 def validate_catalog_index(output):
@@ -585,7 +645,7 @@ def validate_link_fragments(output, pages, links):
 
 
 def validate_paper_groups(page, papers, language):
-    """Check visible section membership, newest-first order and the README's topic headings."""
+    """Check visible section membership, newest-first order and the paper lists' topic headings."""
     expected = defaultdict(list)
     for paper in papers:
         expected[paper_section(paper)].append(paper)
@@ -606,6 +666,11 @@ def validate_paper_groups(page, papers, language):
         assert len(group['summaries']) == 1 and normalize(group['summaries'][0]['text']) == label + ' ' + count_label, f'Paper section count mismatch: {target} ({language})'
 
 
+def visible_authors(paper, language):
+    """The author text a paper card and entry page show: the names, or the pointer to the paper when omitted."""
+    return AUTHORS_OMITTED[language == 'zh'] if authors_omitted(paper) else '; '.join(paper['authors'])
+
+
 def expected_paper_schema(paper, language):
     statuses = {
         "conference-paper": ("Conference paper", "会议论文"),
@@ -622,6 +687,8 @@ def expected_paper_schema(paper, language):
         'isPartOf': {'@type': 'CreativeWork', 'name': paper['venue']},
         'encoding': {'@type': 'MediaObject', 'encodingFormat': 'application/pdf', 'contentUrl': paper['pdf_url']},
     }
+    if authors_omitted(paper):
+        del article['author']
     if paper.get('publication_date'):
         article['datePublished'] = paper['publication_date']
     identifiers = [
@@ -661,31 +728,32 @@ def validate_paper_outputs(output, pages, source_papers=None):
         assert len(listings) == 1, f'Expected one paper ItemList: {route}'
         items = listings[0]['itemListElement']
         assert listings[0]['numberOfItems'] == len(expected), f'Paper ItemList source count mismatch: {route}'
-        # Each item names the paper's detail page and the entity that page also defines.
+        # Each item names the paper's detail page, its localized title and the entity that page defines.
         assert items == [
             {'@type': 'ListItem', 'position': position, 'url': ORIGIN + route + identifier + '/',
+             'name': expected[identifier]['title_zh' if language == 'zh' else 'title'],
              'item': {'@id': paper_entity_id(expected[identifier], language, ORIGIN)}}
             for position, identifier in enumerate(page.paper_ids, 1)
         ], f'Paper ItemList differs from visible paper order or identities: {route}'
-        articles = list(schema_entities(page.schemas, 'ScholarlyArticle'))
-        by_id = {article.get('@id'): article for article in articles}
-        assert len(articles) == len(by_id) == len(expected) and set(by_id) == {paper_entity_id(p, language, ORIGIN) for p in built}, f'ScholarlyArticle coverage mismatch: {route}'
+        # The full ScholarlyArticle data is published on the entry pages only (validate_entry_outputs).
+        assert not list(schema_entities(page.schemas, 'ScholarlyArticle')), f'ScholarlyArticle data belongs on the entry pages: {route}'
         for identifier in page.paper_ids:
             paper = expected[identifier]
-            article = expected_paper_schema(paper, language)
-            assert by_id[article['@id']] == article, f'ScholarlyArticle fields differ from source: {identifier} ({language})'
             text = normalize(' '.join(page.paper_texts[identifier]))
+            # Sources, publication details and review notes are on the entry page; the card counts the sources.
+            sources, checked = len(dict.fromkeys(paper['evidence_urls'])), paper['verified_at'][:10]
+            summary = (f'{sources} 个来源 · 复核于 {checked}' if language == 'zh'
+                       else f'{sources} source{"" if sources == 1 else "s"} · checked {checked}')
             phrases = [paper['title_zh'] if language == 'zh' else paper['title'],
-                       '; '.join(paper['authors']), paper['venue'], statuses[paper['publication_status']][language == 'zh'],
-                       paper[f'description_{language}'], paper[f'scope_limitations_{language}'], paper[f'why_fits_{language}'],
-                       paper['date_basis_zh' if language == 'zh' else 'date_basis'],
-                       paper['metadata_notes_zh' if language == 'zh' else 'metadata_notes']]
+                       visible_authors(paper, language), paper['venue'], statuses[paper['publication_status']][language == 'zh'],
+                       paper[f'description_{language}'], paper[f'scope_limitations_{language}'], summary]
             if language == 'zh':
                 phrases.append(paper['title'])
             assert all(normalize(phrase) in text for phrase in phrases), f'Visible paper text differs from source: {identifier} ({language})'
-            links = {paper['url'], paper['pdf_url'], *paper['evidence_urls'], f'/papers/citations/{identifier}.bib'}
+            links = {paper['url'], paper['pdf_url'], f'/papers/citations/{identifier}.bib',
+                     f'{route}{identifier}/', f'{route}{identifier}/#entry-sources'}
             links.update(paper[field] for field in ('code_url', 'project_url') if paper.get(field))
-            assert links <= set(page.paper_links[identifier]), f'Visible paper source or citation link missing: {identifier} ({language})'
+            assert set(page.paper_links[identifier]) == links, f'Paper card links differ from its paper, citation and entry-page links: {identifier} ({language})'
     citations = output / 'papers' / 'citations'
     assert {path.name for path in citations.glob('*.bib')} == {identifier + '.bib' for identifier in expected}, 'BibTeX file coverage differs from the bibliography'
     entries = []
@@ -695,9 +763,54 @@ def validate_paper_outputs(output, pages, source_papers=None):
         entries.append(entry)
     bibliography = '% Generated from source-reviewed metadata. Author names retain their listed order without inferred surname parsing.\n\n' + ''.join(entry + '\n' for entry in entries)
     assert (output / 'papers' / 'references.bib').read_text(encoding='utf-8') == bibliography, 'Combined BibTeX differs from the source bibliography'
+    validate_paper_search_index(output, [expected[identifier] for identifier in pages['/papers/'].paper_ids])
     headers = (output / '_headers').read_text(encoding='utf-8')
     for route in ('/papers/references.bib', '/papers/citations/*.bib'):
         assert re.search(rf'(?m)^{re.escape(route)}\n[ \t]+Content-Type: application/x-bibtex; charset=utf-8[ \t]*$', headers), f'BibTeX downloads require an explicit UTF-8 content type: {route}'
+
+
+def validate_paper_search_index(output, ordered):
+    """Both paper listings preload and name one content-addressed search index that holds SEARCH_FIELDS in card order."""
+    output = Path(output)
+    expected = {'schema_version': 1, 'papers': [{key: paper.get(key) for key in SEARCH_FIELDS} for paper in ordered]}
+    hrefs = set()
+    for route in ('papers/index.html', 'zh/papers/index.html'):
+        html = (output / route).read_text(encoding='utf-8')
+        page = PageResources(html)
+        assert 'id="paper-search-data"' not in html, f'The paper search index is a fetched file, not inline JSON: /{route}'
+        forms = re.findall(r'<form id="paper-search"[^>]*\bdata-search-index="([^"]+)"', html)
+        assert len(forms) == 1, f'The paper search form must name its index: /{route}'
+        href = forms[0]
+        match = ASSET_PATH.fullmatch(href)
+        assert match and match['stem'] == 'paper-search-index' and match['suffix'] == '.json', f'Unhashed paper search index on /{route}: {href}'
+        # paper-search.js fetches exactly this URL, so the preload is reused instead of downloading it twice.
+        fetches = [preload for preload in page.preloads if preload['as'] != 'font']
+        assert fetches == [{'as': 'fetch', 'href': href, 'cors': True}], f'Paper listings preload one CORS fetch of their search index: /{route} has {page.preloads}'
+        data = (output / href.lstrip('/')).read_bytes()
+        assert digest(data) == match['digest'], f'Asset name does not match its content: {href}'
+        assert json.loads(data) == expected, f'The paper search index differs from the listed papers or their search fields: {href}'
+        hrefs.add(href)
+    assert len(hrefs) == 1, 'Both paper listings share one search index'
+
+
+def report_listing_sizes(output):
+    """Print both paper listings' sizes and, above LISTING_SIZE_BUDGET, a warning; size never fails validation."""
+    sizes = ', '.join(f'{route} {(Path(output) / route.lstrip("/") / "index.html").stat().st_size:,} bytes' for route in ('/papers/', '/zh/papers/'))
+    print(f'Paper listings: {sizes} (advisory budget {LISTING_SIZE_BUDGET:,}).')
+    for warning in listing_size_warnings(output):
+        print(f'Warning: {warning}', file=sys.stderr)
+
+
+def validate_listed_badge(output):
+    """Serve the link-back badge byte for byte from its stable URL, as a static image."""
+    output = Path(output)
+    served = output / 'badges' / 'featured-by-awesome-rea-inline.svg'
+    assert served.is_file(), 'The listed-project badge must be served at /badges/featured-by-awesome-rea-inline.svg'
+    content = served.read_bytes()
+    assert content == (ROOT / 'assets' / served.name).read_bytes(), 'The served badge differs from assets/' + served.name
+    assert content.startswith(b'<svg ') and not re.search(rb'<script|\bon[a-z]+=|href=', content), 'The badge must be a static SVG without scripts or links'
+    headers = (output / '_headers').read_text(encoding='utf-8')
+    assert re.search(r'(?m)^/badges/\*\n[ \t]+Content-Type: image/svg\+xml[ \t]*$', headers), 'Badges require an explicit image/svg+xml content type'
 
 
 def validate_artifact_links(output, pages):
@@ -731,11 +844,24 @@ def validate_artifact_links(output, pages):
         assert publication_path.read_bytes() == json_bytes(publication), 'Published selection lost source membership or provenance'
         for source in supplements['evidence']:
             archive = Path(output) / 'evidence/source-scans' / source['archive_filename']
+            if source['archive_filename'] in supplements['withdrawals']:
+                continue  # Checked with every other withdrawn archive below.
+
             original_archive = owned_file(ROOT, 'data/source-evidence', source['archive_filename'])
             assert archive.read_bytes() == bounded_bytes(original_archive), 'Published evidence archive bytes changed'
         expected = publication['resources']
     else:
         assert not publication_path.exists(), 'Held selections must not appear in a published export'
+    # Every withdrawn archive, whatever its batches' state: not published, redirected, and listed on /about/.
+    redirects = (Path(output) / '_redirects').read_text(encoding='utf-8').splitlines()
+    for name, entry in read_withdrawals(ROOT).items():
+        assert not (Path(output) / 'evidence/source-scans' / name).exists(), 'A withdrawn evidence archive was published'
+        anchor = f'scan-evidence-{entry["run_id"]}-{entry["run_attempt"]}'
+        assert f'/evidence/source-scans/{name} /about/#{anchor} 301' in redirects, \
+            'The old address of withdrawn evidence must redirect to its /about/ listing'
+        for about in ('about/index.html', 'zh/about/index.html'):
+            page = (Path(output) / about).read_text(encoding='utf-8')
+            assert f'id="{anchor}"' in page, f'/{about} does not list withdrawn evidence'
     visible = [record for record in expected if record.get('scope_status') != 'excluded']
     normalize = lambda text: ' '.join(text.split())
     for language in ('en', 'zh'):
@@ -788,6 +914,61 @@ def validate_stylesheet_references(output):
     assert not unlinked, 'Stylesheets not linked by any generated page: ' + ', '.join(unlinked)
 
 
+class LinkNames(HTMLParser):
+    """Each link's href and accessible name: its aria-label, else its text outside aria-hidden elements."""
+    def __init__(self, text):
+        super().__init__()
+        self.links, self._link, self._hidden = [], None, []
+        self.feed(text)
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if self._link is not None and tag not in VOID_TAGS:
+            self._hidden.append(values.get('aria-hidden') == 'true' or bool(self._hidden and self._hidden[-1]))
+        if tag == 'a' and values.get('href'):
+            self._link, self._hidden = {'href': values['href'], 'label': values.get('aria-label'), 'text': []}, []
+
+    def handle_endtag(self, tag):
+        if self._link is None:
+            return
+        if tag == 'a':
+            text = ' '.join(''.join(self._link['text']).split())
+            self.links.append({'href': self._link['href'], 'text': text,
+                               'name': ' '.join((self._link['label'] or text).split())})
+            self._link = None
+        elif self._hidden:
+            self._hidden.pop()
+
+    def handle_data(self, data):
+        if self._link is not None and not (self._hidden and self._hidden[-1]):
+            self._link['text'].append(data)
+
+
+def link_destination(href):
+    """A same-site link's destination without its ?v= cache-busting revision, which names no other file."""
+    parts = urlsplit(href)
+    if parts.scheme or parts.netloc or not parts.query:
+        return href
+    query = '&'.join(pair for pair in parts.query.split('&') if pair.split('=', 1)[0] != 'v')
+    return parts._replace(query=query).geturl()
+
+
+def validate_unique_link_names(output):
+    """On the repository category and paper listings, links sharing an accessible name share a destination."""
+    output = Path(output)
+    pages = [output / 'papers' / 'index.html', output / 'zh' / 'papers' / 'index.html',
+             *sorted((output / 'browse').glob('*/index.html')), *sorted((output / 'zh' / 'browse').glob('*/index.html'))]
+    for page in pages:
+        if not page.is_file():
+            continue
+        destinations = defaultdict(set)
+        for link in LinkNames(page.read_text(encoding='utf-8')).links:
+            destinations[link['name']].add(link_destination(link['href']))
+        shared = sorted(name for name, hrefs in destinations.items() if len(hrefs) > 1)
+        assert not shared, (f'Links to different destinations share an accessible name on '
+                            f'/{page.parent.relative_to(output).as_posix()}/: ' + '; '.join(shared[:5]))
+
+
 class DocumentTitle(HTMLParser):
     def __init__(self, text):
         super().__init__()
@@ -815,6 +996,8 @@ def validate_unique_titles(output, routes):
         titles = DocumentTitle((Path(output) / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')).titles
         assert len(titles) == 1 and titles[0], f'Page needs exactly one non-empty <title>: {route}'
         assert titles[0] not in seen, f'Duplicate <title> on {seen.get(titles[0])} and {route}: {titles[0]}'
+        problem = title_problem(titles[0])
+        assert problem is None, f'{problem}: {route}: {titles[0]}'
         seen[titles[0]] = route
         if re.fullmatch(r'/zh/resources/[a-z0-9-]+/', route):
             assert re.search(r'[\u3400-\u9fff]', titles[0]), f'Chinese resource title has no Chinese text: {route}'
@@ -845,8 +1028,132 @@ def validate_suggestion_links(pages, repository_url='https://github.com/reacher-
             assert pages[route].links.count(f'{repository_url}/issues/new?template={template}') == 1, f'Listing needs one link to its suggestion form: {route}'
 
 
+class FooterLinks(HTMLParser):
+    """Collect the site footer's links, and every link to a site-wide download, as [href, visible text]."""
+
+    def __init__(self, text):
+        super().__init__(convert_charrefs=True)
+        self.lang, self.footer, self.downloads = None, [], []
+        self._in_footer, self._link = False, None
+        self.feed(text)
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if tag == 'html':
+            self.lang = values.get('lang')
+        elif tag == 'footer' and 'site-footer' in values.get('class', '').split():
+            self._in_footer = True
+        elif tag == 'a' and values.get('href'):
+            self._link = [values['href'], '']
+            if self._in_footer:
+                self.footer.append(self._link)
+            target = urlsplit(values['href'])
+            if not target.netloc and target.path in DOWNLOADS:
+                self.downloads.append(self._link)
+
+    def handle_data(self, data):
+        if self._link is not None:
+            self._link[1] += data
+
+    def handle_endtag(self, tag):
+        if tag == 'a':
+            self._link = None
+        elif tag == 'footer':
+            self._in_footer = False
+
+
+def validate_shared_footer(output, repository_url, repository_export):
+    """Every page ends with the same footer links, and each site-wide download keeps one name per language."""
+    labels = defaultdict(set)
+    output = Path(output)
+    not_found = [path for path in (output / '404.html', output / 'zh/404.html') if path.is_file()]
+    for path in [*sorted(output.rglob('index.html')), *not_found]:
+        where = '/' + path.relative_to(output).as_posix()
+        page = FooterLinks(path.read_text(encoding='utf-8'))
+        language = 'zh' if page.lang == 'zh-CN' else 'en'
+        expected = FooterLinks(site_footer(language, note='', repository_url=repository_url, repository_export=repository_export)).footer
+        links = [[href, ' '.join(text.split())] for href, text in page.footer]
+        # The homepage adds its own group (contributors and contribution links) after the shared links.
+        assert links[:len(expected)] == expected and (len(links) == len(expected) or where in ('/index.html', '/zh/index.html')), f'Footer links differ from the shared footer: {where}'
+        for href, text in page.downloads:
+            labels[(urlsplit(href).path, language)].add(' '.join(text.split()))
+    duplicates = {f'{target} ({language})': sorted(names) for (target, language), names in labels.items() if len(names) > 1}
+    assert not duplicates, f'A download has more than one name: {duplicates}'
+
+
+class AboutLinkGroups(HTMLParser):
+    """Collect the /about/ link groups as {group key: [[link attributes, link text, text after the link]]}."""
+
+    def __init__(self, text):
+        super().__init__(convert_charrefs=True)
+        self.groups, self._group, self._item, self._in_link = {}, None, None, False
+        self.feed(text)
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if tag == 'section' and 'about-link-group' in values.get('class', '').split():
+            self._group = self.groups.setdefault(values.get('aria-labelledby', '').removeprefix('about-links-'), [])
+        elif tag == 'a' and self._group is not None:
+            self._item, self._in_link = [values, '', ''], True
+            self._group.append(self._item)
+
+    def handle_data(self, data):
+        if self._item is not None:
+            self._item[1 if self._in_link else 2] += data
+
+    def handle_endtag(self, tag):
+        if tag == 'a':
+            self._in_link = False
+        elif tag == 'li':
+            self._item = None
+        elif tag == 'section':
+            self._group, self._item = None, None
+
+
+def validate_about_links(output):
+    """/about/ groups the footer's site pages, downloads with their built size, and GitHub documents."""
+    for language, prefix in (('en', ''), ('zh', '/zh')):
+        route = prefix + '/about/'
+        groups = AboutLinkGroups((output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')).groups
+        assert list(groups) == ['browse', 'download', 'methods'] and all(groups.values()), f'About link groups mismatch: {route}'
+        expected_pages = [(prefix + path, chinese if language == 'zh' else english)
+                          for path, english, chinese in SECTION_LINKS if path not in ABOUT_EXCLUDED_SECTIONS]
+        assert [(values['href'], text) for values, text, _ in groups['browse']] == expected_pages, f'About browse links mismatch: {route}'
+        for values, text, after in groups['download']:
+            size = file_size_label((output / unquote(urlsplit(values['href']).path).lstrip('/')).stat().st_size)
+            assert 'download' in values and re.search(r'\S ?(JSON|ZIP) ↓$', text) and after == size, f'About download needs a format, a download attribute and its built size: {route} {values["href"]}'
+            assert not re.search(r'(?<!run )(?<!运行 )(?<!\d)\d{6,}', text), f'About download is named by a bare run number: {route} {text}'
+        for values, text, _ in groups['methods']:
+            assert values['href'].startswith('https://github.com/') and values.get('target') == '_blank' and text.endswith('↗'), f'About GitHub link needs an external marker: {route} {values["href"]}'
+
+
+def validate_not_found_pages(output, card_size):
+    """English and Chinese 404 templates: noindex, one language each, a homepage search and section links.
+
+    The CSP's form-action 'self' exists only for these two search forms. Pages serves a 404 at the missing
+    path, so the `/*` policy is the one it gets; every other form must stay script-handled, without action or method."""
+    output = Path(output)
+    for language, prefix in (('en', ''), ('zh', '/zh')):
+        where = prefix + '/404.html'
+        text = (output / where.lstrip('/')).read_text(encoding='utf-8')
+        page = Page(text)
+        assert page.noindex and not page.canonicals and page.lang == ('zh-CN' if language == 'zh' else 'en'), f'404 page language or indexing mismatch: {where}'
+        validate_open_graph(None, page, card_size, language=language)
+        validate_theme_color(where, page)
+        forms = re.findall(r'<form [^>]*>', text)
+        assert forms == [f'<form class="not-found-search" action="{prefix}/#catalog" method="get" role="search">'] and text.count(' name="q"') == 1, f'404 search must submit q to its homepage: {where}'
+        expected = [prefix + path for path in ('/resources/', '/cases/', '/papers/', '/browse/', '/survey/')]
+        assert set(expected) <= set(page.links) and ('/' if language == 'zh' else '/zh/') in page.links, f'404 section or language links missing: {where}'
+    for path in sorted(output.rglob('*.html')):
+        # The homepage search also submits: without scripts it opens the listing.
+        if path.relative_to(output).as_posix() in ('404.html', 'zh/404.html', 'index.html', 'zh/index.html'):
+            continue
+        for form in re.findall(r'<form\b[^>]*>', path.read_text(encoding='utf-8')):
+            assert not re.search(r'\s(?:action|method)=', form), f'Only the 404 search forms may submit; script-handled forms have no action or method: {path.relative_to(output).as_posix()}'
+
+
 def validate_case_outputs(pages, resources):
-    """Bind the script-free case subset, its full evidence, and its navigation."""
+    """Bind the script-free case subset, its links to each entry page's requirements and sources, and its navigation."""
     cases = {record['id']: record for record in resources if record['kind'] == 'case-study'}
     normalize = lambda value: ' '.join(value.split())
     for language, prefix in (('en', ''), ('zh', '/zh')):
@@ -870,27 +1177,95 @@ def validate_case_outputs(pages, resources):
                                    'url': ORIGIN + detail, 'description': record[f'description_{language}']})
             assert row['anchor'] == row['id'] and row['section'] == collection_section(record), f'Case placement mismatch: {row["id"]}'
             assert row['parent_section'] == row['section'] and row['parent_anchor'] == 'cases-' + row['section'], f'Case belongs to the wrong subject section: {row["id"]}'
+            method = case_method(record) if row['section'] in METHOD_SECTIONS else None
+            assert row['method'] == method and row['method_anchor'] == (method and f'cases-{row["section"]}-{method}'), f'Case belongs to the wrong method group: {row["id"]}'
             assert len(row['headings']) == 1 and normalize(name) in normalize(''.join(row['headings'][0])), f'Case heading lost localized name: {row["id"]}'
-            requirements = record['requirements_zh' if language == 'zh' else 'requirements']
-            requirements = requirements if isinstance(requirements, list) else [requirements]
+            # Requirements and additional sources are on the entry page (validate_entry_outputs); the row links to them.
             text = normalize(' '.join(row['text']))
-            assert all(normalize(phrase) in text for phrase in [name, record[f'description_{language}'], *requirements]), f'Case directory lost full localized content: {row["id"]}'
-            links = {detail, record['url'], record['evidence_url'], *record.get('additional_evidence_urls', [])}
+            assert all(normalize(phrase) in text for phrase in [name, record[f'description_{language}']]), f'Case directory lost full localized content: {row["id"]}'
+            links = {detail, detail + '#entry-requirements', record['url'], record['evidence_url']}
             assert links <= set(row['links']), f'Case directory lost entry/source links: {row["id"]}'
             assert len(row['times']) == 1 and row['times'][0]['datetime'] == record['verified_at'], f'Case review timestamp mismatch: {row["id"]}'
             assert record['verified_at'][:10] in normalize(''.join(row['times'][0]['text'])), f'Case review date is missing: {row["id"]}'
         assert items.get('itemListElement') == expected_items, f'Case structured list differs from rendered entries: {route}'
+        for section in METHOD_SECTIONS:
+            # Method groups follow METHOD_HEADINGS (cases without a method last), each in case_order, as in the READMEs.
+            listed = [cases[identifier] for identifier in ids if collection_section(cases[identifier]) == section]
+            expected = [record['id'] for _, records in method_groups(listed) for record in records]
+            assert [record['id'] for record in listed] == expected, f'Case method groups are out of order: {route}#cases-{section}'
 
 
-def validate_feeds(output, pages, resources, papers):
-    """Bind both Atom feeds to dated catalog records and their localized detail pages."""
+class SectionTargetCounts(HTMLParser):
+    """Each top-level /resources/ or /cases/ section: its key, its card count and its target count line, if any."""
+    def __init__(self, text):
+        super().__init__()
+        self.sections, self._stack = [], []
+        self.feed(text)
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if tag == 'section':
+            labels = (values.get('aria-labelledby') or '').split()
+            # Sub-group regions are labelled by two IDs; their cards count toward the enclosing section.
+            key = values.get('data-case-section') or (labels[0].removeprefix('heading-') if len(labels) == 1 and labels[0].startswith('heading-') else None)
+            section = {'key': key, 'cards': 0, 'line': None} if key else None
+            if section:
+                self.sections.append(section)
+            self._stack.append(section)
+        current = next((section for section in reversed(self._stack) if section), None)
+        if current and tag == 'article' and 'data-resource-id' in values:
+            current['cards'] += 1
+        if current and tag == 'p' and 'section-target-count' in values.get('class', '').split():
+            assert current['line'] is None, f'Section has two target count lines: {current["key"]}'
+            current['line'] = values
+
+    def handle_endtag(self, tag):
+        if tag == 'section' and self._stack:
+            self._stack.pop()
+
+
+def validate_section_target_counts(output, resources):
+    """Every target section's count line reconciles with its cards: tagged, minus filed elsewhere, plus listed here untagged."""
     output = Path(output)
-    expected = feed_entries(resources, papers)
+    subsets = {'resources': resources, 'cases': [record for record in resources if record['kind'] == 'case-study']}
+    for route, records in subsets.items():
+        for prefix in ('', 'zh/'):
+            sections = SectionTargetCounts((output / f'{prefix}{route}' / 'index.html').read_text(encoding='utf-8')).sections
+            assert sections, f'No sections found on /{prefix}{route}/'
+            for section in sections:
+                key, line, target = section['key'], section['line'], SECTION_TARGETS.get(section['key'])
+                label = f'/{prefix}{route}/ {key}'
+                if target is None:
+                    assert line is None, f'Only target sections have a target count line: {label}'
+                    continue
+                assert line is not None and line.get('data-section-target') == target, f'Target section lacks its count line: {label}'
+                tagged = [record for record in records if target in record['targets']]
+                expected = (len(tagged), sum(collection_section(record) != key for record in tagged),
+                            sum(target not in record['targets'] and collection_section(record) == key for record in records))
+                found = tuple(int(line.get(name, '-1')) for name in ('data-target-tagged', 'data-target-elsewhere', 'data-target-untagged-here'))
+                assert found == expected, f'Target count line differs from the catalog on {label}: {found} != {expected}'
+                assert section['cards'] == found[0] - found[1] + found[2], (
+                    f'{label}: {section["cards"]} cards, but the count line implies {found[0]} - {found[1]} + {found[2]}')
+
+
+def validate_feeds(output, pages, resources, papers, discovery_batches=None):
+    """Bind both Atom feeds to dated catalog records and their localized detail pages.
+
+    Discovery batch summaries, when present, link the localized discovery list and carry the
+    unreviewed category; the discovery list pages advertise only their own discovery feed.
+    """
+    output = Path(output)
+    curated = feed_entries(resources, papers)
+    expected = merged_entries(curated, discovery_batches)
     linked = {route: page.feeds for route, page in pages.items() if page.feeds}
+    for language, path in build_discoveries.FEED_PATHS.items():
+        route = build_discoveries.PAGE_PATHS[language]
+        if route in linked:
+            assert linked.pop(route) == [path], f'The discovery list links only its own feed: {route}'
     if not expected:
         assert not linked and not any((output / path.lstrip('/')).exists() for path in FEED_PATHS.values()), 'Feeds and feed links need dated records'
         return
-    assert 0 < len(expected) <= FEED_SIZE
+    assert 0 < len(curated) <= FEED_SIZE and len(expected) - len(curated) <= build_discoveries.MAIN_FEED_BATCHES
     atom = '{http://www.w3.org/2005/Atom}'
     headers = header_rules((output / '_headers').read_text(encoding='utf-8'))
     for language, path in FEED_PATHS.items():
@@ -904,16 +1279,121 @@ def validate_feeds(output, pages, resources, papers):
         entries = root.findall(atom + 'entry')
         assert len(entries) == len(expected), f'Feed entry count mismatch: {path}'
         for entry, (kind, record) in zip(entries, expected):
+            stamp = entry_time(kind, record)
+            if kind == 'discovery':
+                route = DISCOVERY_PATHS[language]
+                title, summary = discovery_summary(record, language)
+                category = entry.find(atom + 'category')
+                assert route in pages, f'Discovery feed entries need the discovery list: {route}'
+                assert (entry.findtext(atom + 'id') == f"tag:awesomerea.org,2026:discovery-batch:{record['batch_id']}:{language}"
+                        and entry.findtext(atom + 'title') == title
+                        and [link.get('href') for link in entry.findall(atom + 'link')] == [ORIGIN + route]
+                        and entry.findtext(atom + 'published') == stamp == entry.findtext(atom + 'updated')
+                        and category is not None and category.get('term') == DISCOVERY_TERM
+                        and category.get('label') == DISCOVERY_LABELS[language == 'zh']
+                        and entry.findtext(atom + 'summary') == summary), f"Discovery feed entry differs from its batch: {record['batch_id']}"
+                continue
             route = f"{prefix}/{kind}s/{record['id']}/"
             assert route in pages, f'Feed entry must link a detail page: {route}'
             title = ((record.get('name_zh') or record['name']) if language == 'zh' else record['name']) if kind == 'resource' else record['title_zh' if language == 'zh' else 'title']
-            stamp = record['added_at'] + 'T00:00:00Z'
             assert (entry.findtext(atom + 'id') == ORIGIN + route and entry.findtext(atom + 'title') == title
                     and [link.get('href') for link in entry.findall(atom + 'link')] == [ORIGIN + route]
                     and entry.findtext(atom + 'published') == stamp == entry.findtext(atom + 'updated')
                     and entry.findtext(atom + 'summary') == record[f'description_{language}']), f'Feed entry differs from its record: {route}'
-        assert root.findtext(atom + 'updated') == expected[0][1]['added_at'] + 'T00:00:00Z', f'Feed date must be the newest inclusion date: {path}'
+        assert root.findtext(atom + 'updated') == entry_time(*expected[0]), f'Feed date must be the newest inclusion date: {path}'
     assert not linked, 'Only the homepages and curated, case and paper listings advertise feeds: ' + ', '.join(sorted(linked))
+
+
+def published_repository_document(output):
+    """The repository selection the build published, which hides discoveries it already lists."""
+    output = Path(output)
+    for name in (PUBLISHED_FILENAME, 'source-index.json'):
+        if (output / name).is_file():
+            return json.loads((output / name).read_text(encoding='utf-8'))
+    return None
+
+
+def validate_lead_exports(output, queue):
+    """Followed-source leads: one JSON export plus one file per batch, every lead unreviewed, nothing else."""
+    output = Path(output)
+    names = (build_discovery_leads.EXPORT_PATH.lstrip('/'), build_discovery_leads.BATCH_EXPORT_DIRECTORY.strip('/'))
+    if queue is None:
+        assert not any((output / name).exists() for name in names), 'Lead exports need lead batches'
+        return
+    headers = header_rules((output / '_headers').read_text(encoding='utf-8'))
+    for path in (build_discovery_leads.EXPORT_PATH, build_discovery_leads.BATCH_EXPORT_DIRECTORY + '*'):
+        assert headers.get(path, {}).get('cache-control') == 'no-cache, must-revalidate', f'Lead data must revalidate: {path}'
+    export = json.loads((output / names[0]).read_text(encoding='utf-8'))
+    listed = queue['listed']
+    assert export['review_status'] == 'unreviewed' and export['verification'] == 'automated-source-lead', 'Lead export stays unreviewed'
+    assert [row['id'] for row in export['resources']] == [row['id'] for row in listed[:build_discovery_leads.EXPORT_RECORDS]], 'Lead export differs from the queue'
+    assert all(row['review_status'] == 'unreviewed' and row['verification'] == 'automated-source-lead' for row in export['resources']), 'Every exported lead stays unreviewed'
+    files = sorted((output / names[1]).glob('*.json'))
+    assert {path.stem for path in files} == {batch['batch_id'] for batch in queue['batches']}, 'One export file per lead batch'
+    paged = []
+    for entry in export['batches']:
+        assert entry['records_url'] == ORIGIN + build_discovery_leads.batch_export_path(entry['batch_id'])
+        page = json.loads((output / build_discovery_leads.batch_export_path(entry['batch_id']).lstrip('/')).read_text(encoding='utf-8'))
+        assert page['review_status'] == 'unreviewed' and len(page['resources']) == entry['listed_count']
+        paged.extend(row['id'] for row in page['resources'])
+    assert paged == [row['id'] for row in listed], 'Batch exports must list every listed lead once, newest batch first'
+
+
+def validate_discovery_outputs(output, pages, queue):
+    """The unreviewed queue: two list pages, two feeds, the JSON export and status, all labelled unreviewed."""
+    output = Path(output)
+    names = ('discoveries/index.html', 'zh/discoveries/index.html', 'discoveries.json', 'discoveries/status.json',
+             'discoveries/badge.json', 'discoveries/feed.xml', 'zh/discoveries/feed.xml', 'discoveries/batches')
+    if queue is None:
+        assert not any((output / name).exists() for name in names), 'Discovery outputs need discovery batches'
+        return
+    listed = queue['listed']
+    atom = '{http://www.w3.org/2005/Atom}'
+    headers = header_rules((output / '_headers').read_text(encoding='utf-8'))
+    for path in (build_discoveries.EXPORT_PATH, build_discoveries.STATUS_PATH, build_discoveries.BADGE_PATH):
+        assert headers.get(path, {}).get('cache-control') == 'no-cache, must-revalidate', f'Discovery data must revalidate: {path}'
+    for language, route in build_discoveries.PAGE_PATHS.items():
+        zh = language == 'zh'
+        assert route in pages, f'Discovery list missing from the sitemap: {route}'
+        text = (output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')
+        shown = re.findall(r'<article class="source-card browse-repository" id="(scan-[0-9]+)"', text)
+        assert shown == [record['id'] for record in listed[:build_discoveries.PAGE_RECORDS]], f'Discovery list order differs from the queue: {route}'
+        assert html_unescape(build_discoveries.NOTE[int(zh)]) in html_unescape(text), f'Discovery list must say the records are unreviewed: {route}'
+        assert '<h1' in text and text.count('<h2') >= 1, route
+        feed_path = build_discoveries.FEED_PATHS[language]
+        assert headers.get(feed_path, {}).get('content-type') == 'application/atom+xml; charset=utf-8', f'Feed needs an Atom content type: {feed_path}'
+        root = ET.parse(output / feed_path.lstrip('/')).getroot()
+        assert root.findtext(atom + 'id') == ORIGIN + feed_path, feed_path
+        assert [(link.get('rel'), link.get('href')) for link in root.findall(atom + 'link')] == [('self', ORIGIN + feed_path), ('alternate', ORIGIN + route)], feed_path
+        entries = root.findall(atom + 'entry')
+        expected = listed[:build_discoveries.FEED_RECORDS]
+        assert len(entries) == len(expected), f'Discovery feed entry count mismatch: {feed_path}'
+        for entry, record in zip(entries, expected):
+            category = entry.find(atom + 'category')
+            assert (entry.findtext(atom + 'id') == f"tag:awesomerea.org,2026:discovery:{record['id']}"
+                    and [link.get('href') for link in entry.findall(atom + 'link')] == [record['url']]
+                    and entry.findtext(atom + 'published') == record['ingested_at'] == entry.findtext(atom + 'updated')
+                    and category is not None and category.get('term') == build_discoveries.FEED_TERM), f"Discovery feed entry differs from its record: {record['id']}"
+    export = json.loads((output / 'discoveries.json').read_text(encoding='utf-8'))
+    assert export['version'] == 1 and export['review_status'] == 'unreviewed' and export['verification'] == 'automated-readme-scan'
+    assert [row['id'] for row in export['resources']] == [record['id'] for record in listed[:build_discoveries.EXPORT_RECORDS]], 'Discovery export differs from the queue'
+    # The index export plus one file per batch cover every listed record exactly once.
+    paged = []
+    batch_files = sorted((output / 'discoveries' / 'batches').glob('*.json'))
+    assert {path.stem for path in batch_files} == {batch['batch_id'] for batch in queue['batches']}, 'One export file per discovery batch'
+    for entry in export['batches']:
+        page = json.loads((output / build_discoveries.batch_export_path(entry['batch_id']).lstrip('/')).read_text(encoding='utf-8'))
+        assert entry['records_url'] == ORIGIN + build_discoveries.batch_export_path(entry['batch_id'])
+        assert page['review_status'] == 'unreviewed' and len(page['resources']) == entry['listed_count'], entry['batch_id']
+        paged.extend(row['id'] for row in page['resources'])
+    assert paged == [record['id'] for record in listed], 'Batch exports must list every listed discovery once, newest batch first'
+    assert headers.get('/discoveries/batches/*', {}).get('cache-control') == 'no-cache, must-revalidate', 'Discovery batch exports must revalidate'
+    assert all(row['review_status'] == 'unreviewed' and row['verification'] == 'automated-readme-scan' for row in export['resources']), 'Every exported discovery stays unreviewed'
+    assert export['counts']['records'] == queue['record_count'] and export['counts']['listed'] == len(listed)
+    status = json.loads((output / 'discoveries/status.json').read_text(encoding='utf-8'))
+    assert status == export['status'] and status['last_successful_ingest_at'] == build_discoveries.timestamp(queue['latest']['ingested_at'])
+    badge = json.loads((output / 'discoveries/badge.json').read_text(encoding='utf-8'))
+    assert badge == build_discoveries.badge_document(queue), 'Discovery badge differs from the latest ingest'
 
 
 def validate_resource_listing(pages, resources):
@@ -962,7 +1442,8 @@ def validate_entry_outputs(pages, resources, papers):
                 label = '完整条目' if language == 'zh' else 'Full entry'
                 accessible = f'{label}：{title}' if language == 'zh' else f'{label}: {title}'
                 assert normalize(' '.join(link['text'])) == label and link['aria_label'] == accessible, f'Detail link label must identify its localized entry: {expected}'
-                upstream = {record['url'], record['evidence_url']} if kind == 'resource' else {record['url'], record['pdf_url']}
+                upstream = ({record['url'], record['evidence_url'], expected + '#entry-requirements'} if kind == 'resource'
+                            else {record['url'], record['pdf_url'], expected + '#entry-sources'})
                 recorded_links = listing.record_links if kind == 'resource' else listing.paper_links
                 assert upstream <= set(recorded_links.get(link['id'], [])), f'External listing title/source links missing: {expected}'
 
@@ -1001,8 +1482,10 @@ def validate_entry_outputs(pages, resources, papers):
         assert [item.get('position') for item in items] == [1, 2, 3], f'Detail breadcrumb positions mismatch: {route}'
         destinations = [item.get('item', {}).get('@id') if isinstance(item.get('item'), dict) else item.get('item') for item in items]
         prefix = '/zh' if language == 'zh' else ''
-        directory = 'resources' if kind == 'resource' else 'papers'
+        directory = 'papers' if kind == 'paper' else 'cases' if record['kind'] == 'case-study' else 'resources'
         assert destinations == [ORIGIN + prefix + '/', ORIGIN + prefix + '/' + directory + '/', canonical], f'Detail breadcrumb destinations mismatch: {route}'
+        # The visible breadcrumb and "View in the directory" use the same listing as the BreadcrumbList.
+        assert {f'{prefix}/{directory}/', f'{prefix}/{directory}/#{identifier}'} <= set(page.links), f'Detail return links mismatch: {route}'
         assert len(page.entry_contents) == 1, f'Detail page needs one marked article: {route}'
         article = page.entry_contents[0]
         text = normalize(' '.join(article['text']))
@@ -1012,19 +1495,26 @@ def validate_entry_outputs(pages, resources, papers):
             requirements = requirements if isinstance(requirements, list) else [requirements]
             phrases = [name, record[f'description_{language}'], *requirements]
             links = {record['url'], record['evidence_url'], *record.get('additional_evidence_urls', [])}
-            entities = list(schema_entities(page.schemas, 'CreativeWork'))
-            assert len(entities) == 1 and entities[0].get('@id') == entity_id, f'Detail resource schema identity mismatch: {route}'
+            entities = [node for block in page.schemas for node in block.get('@graph', [block]) if node.get('@id') == entity_id]
+            assert len(entities) == 1, f'Detail resource schema identity mismatch: {route}'
             entity = entities[0]
+            assert entity == resource_entity(record, entity_id, name, record[f'description_{language}']), f'Detail resource schema type or content differs from its record: {route}'
             assert (entity.get('url') == record['url'] and entity.get('name') == name
                     and entity.get('description') == record[f'description_{language}']), f'Detail resource schema content mismatch: {route}'
             assert not {'author', 'creator', 'datePublished', 'license', 'aggregateRating', 'review'}.intersection(entity), f'Unsupported resource schema claim: {route}'
         else:
             name = record['title_zh'] if language == 'zh' else record['title']
+            # /papers/ cards link here for these: why the paper fits, publication dates and their source,
+            # identifiers, the reviewed arXiv version and the review notes, besides the sources themselves.
             phrases = [record['title_zh'] if language == 'zh' else record['title'],
-                       '; '.join(record['authors']), record['venue'], record[f'description_{language}'],
+                       visible_authors(record, language), record['venue'], record[f'description_{language}'],
                        record[f'scope_limitations_{language}'], record[f'why_fits_{language}'],
                        record['date_basis_zh' if language == 'zh' else 'date_basis'],
-                       record['metadata_notes_zh' if language == 'zh' else 'metadata_notes']]
+                       record['metadata_notes_zh' if language == 'zh' else 'metadata_notes'],
+                       formatted_date(record.get('publication_date'), language, record['year']),
+                       *(record[field] for field in ('doi', 'arxiv_id', 'arxiv_version_reviewed') if record.get(field))]
+            if record.get('first_arxiv_date'):
+                phrases.append(formatted_date(record['first_arxiv_date'], language))
             if language == 'zh':
                 phrases.append(record['title'])
             links = {record['url'], record['pdf_url'], *record['evidence_urls'], f'/papers/citations/{identifier}.bib'}
@@ -1033,7 +1523,12 @@ def validate_entry_outputs(pages, resources, papers):
             expected = {**expected_paper_schema(record, language), '@id': entity_id}
             assert entities == [expected], f'Detail paper schema differs from recorded publication: {route}'
         assert (web_page.get('name') == name and web_page.get('description') == record[f'description_{language}']), f'Detail WebPage text mismatch: {route}'
-        assert (page.meta.get('description') == record[f'description_{language}']
+        head_description = (resource_description(record, language, CATEGORIES[record['category']][int(language == 'zh')])
+                            if kind == 'resource' else paper_description(record, language))
+        assert (web_page.get('lastReviewed') == record['verified_at'][:10]
+                and not {'datePublished', 'dateModified'}.intersection(web_page)
+                and web_page.get('publisher') == publisher_reference(ORIGIN) and web_page.get('isBasedOn') == evidence_urls(record)), f'Detail WebPage review date or evidence differs from the record: {route}'
+        assert (page.meta.get('description') == head_description
                 and page.meta.get('og:url') == canonical
                 and page.meta.get('og:locale') == ('zh_CN' if language == 'zh' else 'en_US')), f'Detail social metadata mismatch: {route}'
         assert len(article['headings']) == 1 and normalize(' '.join(article['headings'][0])) == normalize(name), f'Detail article needs one correctly localized H1: {route}'
@@ -1051,10 +1546,11 @@ def validate_entry_outputs(pages, resources, papers):
 
 
 def main():
-    urls = [element.text for element in ET.parse(OUTPUT / 'sitemap.xml').findall('{*}url/{*}loc')]
+    urls = sitemap_urls(OUTPUT, ORIGIN)
     resources = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['resources']
     papers = json.loads((OUTPUT / 'papers.json').read_text(encoding='utf-8'))
-    validate_route_inventory(urls, resources, papers, include_browse=(OUTPUT / 'source-index.json').is_file())
+    validate_route_inventory(urls, resources, papers, include_browse=(OUTPUT / 'source-index.json').is_file(),
+                             include_discoveries=(OUTPUT / 'discoveries.json').is_file())
     pages, fragment_links = {}, []
     for url in urls:
         parsed = urlsplit(url)
@@ -1089,25 +1585,42 @@ def main():
                 fragment_links.append((parsed.path, link, local))
         validate_open_graph(parsed.path, page, png_size(OUTPUT / 'social-card.png'))
         validate_theme_color(parsed.path, page)
+        problem = description_problem(page.meta.get('description') or '')
+        assert problem is None, f'{problem}: {parsed.path}: {page.meta.get("description")}'
     validate_link_fragments(OUTPUT, pages, fragment_links)
     validate_homepage_destinations(pages)
     validate_resource_listing(pages, resources)
     validate_requirements_label()
     validate_paper_outputs(OUTPUT, pages)
+    report_listing_sizes(OUTPUT)
     validate_entry_outputs(pages, resources, papers)
-    validate_feeds(OUTPUT, pages, resources, papers)
+    queue = build_discoveries.discovery_queue(ROOT, published_repository_document(OUTPUT), papers, resources)
+    queue = queue if queue['batches'] else None
+    validate_feeds(OUTPUT, pages, resources, papers, build_discoveries.main_feed_batches(queue))
+    validate_discovery_outputs(OUTPUT, pages, queue)
+    lead_queue = build_discovery_leads.lead_queue(ROOT)
+    validate_lead_exports(OUTPUT, lead_queue if lead_queue['batches'] else None)
+    # Markdown and JSON twins, the static API, JSON feeds and the llms files (validate_agent_formats.py).
+    validate_agent_formats(OUTPUT, set(pages), resources, papers, header_rules((OUTPUT / '_headers').read_text(encoding='utf-8')),
+                           repository_document=published_repository_document(OUTPUT), discovery_queue=queue,
+                           lead_queue=lead_queue if lead_queue['batches'] else None)
     validate_case_outputs(pages, resources)
+    validate_section_target_counts(OUTPUT, resources)
+    catalog_meta = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['meta']
+    validate_shared_footer(OUTPUT, catalog_meta['repository_url'],
+                           catalog_meta['source_index'].get('full_export') or 'source-index.json')
+    validate_about_links(OUTPUT)
     validate_unique_titles(OUTPUT, pages)
     validate_artifact_links(OUTPUT, pages)
     validate_suggestion_links(pages)
     validate_source_browser_output(OUTPUT)
     validate_breadcrumbs(OUTPUT, pages)
     validate_stylesheet_references(OUTPUT)
-    not_found = Page((OUTPUT / '404.html').read_text(encoding='utf-8'))
-    assert not_found.noindex, '404 must be noindex'
-    validate_open_graph(None, not_found, png_size(OUTPUT / 'social-card.png'))
-    validate_theme_color('/404.html', not_found)
+    validate_unique_link_names(OUTPUT)
+    validate_not_found_pages(OUTPUT, png_size(OUTPUT / 'social-card.png'))
     validate_security_headers(OUTPUT)
+    validate_listed_badge(OUTPUT)
+    validate_fingerprinted_assets(OUTPUT)
     validate_catalog_preload(OUTPUT)
     validate_catalog_index(OUTPUT)
     validate_website_identity(pages)
@@ -1115,7 +1628,7 @@ def main():
     assert (OUTPUT / 'llms.txt').read_text(encoding='utf-8').startswith('# '), 'llms.txt must contain Markdown'
     assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
     read_build_manifest(OUTPUT)
-    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, security headers, Atom feeds, the homepage catalog index and its preload, and the deployment manifest.')
+    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, content-addressed assets, security headers, Atom and JSON feeds, Markdown and JSON twins, the static API against its schema, llms.txt and llms-full.txt, the homepage catalog index and its preload, and the deployment manifest.')
 
 
 if __name__ == '__main__':

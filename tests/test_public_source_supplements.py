@@ -54,8 +54,12 @@ class PublicSourceSupplementTests(unittest.TestCase):
         cls.baseline_sha = hashlib.sha256(cls.baseline_bytes).hexdigest()
         cls.batch = json.loads((ROOT / f'data/source-supplements/{BATCH_NAME}.json').read_text())
         cls.source = cls.batch['source']
-        cls.archive = (ROOT / 'data/source-evidence' / cls.source['archive_filename']).read_bytes()
-        cls.evidence = supplements.load_evidence(ROOT, cls.source)
+        archive = ROOT / 'data/source-evidence' / cls.source['archive_filename']
+        # A withdrawn archive (data/source-evidence/withdrawn.json) is gone and loads no evidence. Its batch's exact
+        # records then stand in for the checkpoint rows that validate_batch compares with.
+        cls.archive = archive.read_bytes() if archive.exists() else None
+        cls.evidence = supplements.load_evidence(ROOT, cls.source) or {
+            'resources': cls.baseline['resources'] + cls.batch['resources'], 'failures': cls.baseline['failures']}
         cls.empty_record = next(row for row in cls.batch['resources'] if not row['description_en'])
         cls.baseline_scope_bytes = (ROOT / 'data/source-scope.json').read_bytes()
         cls.batch_scope = json.loads((ROOT / f'data/source-supplements/{BATCH_NAME}.scope.json').read_text())
@@ -75,7 +79,8 @@ class PublicSourceSupplementTests(unittest.TestCase):
         files = {
             'data/source-index.json': self.baseline_bytes,
             'data/source-scope.json': self.baseline_scope_bytes,
-            'data/source-evidence/' + self.source['archive_filename']: self.archive,
+            **({'data/source-evidence/' + self.source['archive_filename']: self.archive} if self.archive else
+               {'data/source-evidence/withdrawn.json': self.withdrawals(batch)}),
             'data/source-supplements/index.json': supplements.json_bytes({'schema_version': 1, 'batches': [BATCH_NAME]}),
             f'data/source-supplements/{BATCH_NAME}.json': supplements.json_bytes(batch),
             f'data/locales/source-supplements/{BATCH_NAME}.json': supplements.json_bytes(translations if translations is not None else {
@@ -90,6 +95,14 @@ class PublicSourceSupplementTests(unittest.TestCase):
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(raw)
         return root
+
+    def withdrawals(self, batch):
+        """The real withdrawal registry, fixing this fixture's (possibly narrowed) selection of the batch."""
+        registry = json.loads((ROOT / 'data/source-evidence/withdrawn.json').read_text(encoding='utf-8'))
+        for item in registry['withdrawn']:
+            if item['archive_filename'] == self.source['archive_filename']:
+                item['batch_selection_sha256'] = {batch['batch_id']: supplements.digest(batch['selection'])}
+        return supplements.json_bytes(registry)
 
     def canonical_export(self):
         document = copy.deepcopy(self.baseline)
@@ -120,6 +133,11 @@ class PublicSourceSupplementTests(unittest.TestCase):
 
     @reuses_class_evidence
     def test_held_candidate_is_reproducible_from_exact_public_ids(self):
+        if self.archive is None:
+            # A withdrawn archive cannot back a new selection: there are no checkpoint rows to select from.
+            with self.assertRaisesRegex(ValueError, 'Withdrawn'):
+                supplements.prepare_batch(ROOT, BATCH_NAME, self.source, self.batch['selection']['selected_ids'])
+            return
         prepared = supplements.prepare_batch(ROOT, BATCH_NAME, self.source,
                                              self.batch['selection']['selected_ids'])
         expected = {**self.batch, 'publication_status': 'held-for-localization', 'reviewed_at': None}
@@ -158,22 +176,29 @@ class PublicSourceSupplementTests(unittest.TestCase):
         source['artifact']['id'] += 1
         with self.assertRaisesRegex(ValueError, 'Unapproved'):
             supplements.load_evidence(ROOT, source)
-        source = copy.deepcopy(self.source)
-        source['snapshot_status'] = 'in-progress'
-        with patch.object(supplements, 'APPROVED_SOURCE_DESCRIPTORS', {supplements.digest(source)}):
-            with self.assertRaisesRegex(ValueError, 'capture status'):
-                supplements.load_evidence(ROOT, source)
-        source = copy.deepcopy(self.source)
-        source['raw_counts']['failed'] += 1
-        source['raw_counts']['attempted_readme_scans'] += 1
-        source['raw_counts']['unique_repos'] += 1
-        with patch.object(supplements, 'APPROVED_SOURCE_DESCRIPTORS', {supplements.digest(source)}):
-            with self.assertRaisesRegex(ValueError, 'Full source counts'):
-                supplements.load_evidence(ROOT, source)
+        # Capture status and counts are bound to the archive's own checkpoint, so they can be re-checked only
+        # while the archive is present; a withdrawn archive loads no evidence and claims no such check.
+        changes = (('capture status', lambda source: source.update(snapshot_status='in-progress')),
+                   ('Full source counts', lambda source: [source['raw_counts'].update({key: source['raw_counts'][key] + 1})
+                                                          for key in ('failed', 'attempted_readme_scans', 'unique_repos')]))
+        for message, change in changes:
+            source = copy.deepcopy(self.source)
+            change(source)
+            with self.subTest(message=message), \
+                    patch.object(supplements, 'APPROVED_SOURCE_DESCRIPTORS', {supplements.digest(source)}):
+                if self.archive is None:
+                    self.assertIsNone(supplements.load_evidence(ROOT, source))
+                else:
+                    with self.assertRaisesRegex(ValueError, message):
+                        supplements.load_evidence(ROOT, source)
 
     def test_full_three_member_privacy_including_unselected_records(self):
-        with zipfile.ZipFile(io.BytesIO(self.archive)) as archive:
-            originals = {name: archive.read(name) for name in archive.namelist()}
+        # Every member is checked before the checkpoint is unpacked, unselected rows included. The members here
+        # are synthetic, so the check is covered whether or not a registered archive is present.
+        unselected = {**self.batch['resources'][0], 'id': 'scan-999999999999'}
+        originals = {'checkpoint.json': supplements.json_bytes({'resources': [unselected], 'failures': []}),
+                     'frontier.json': supplements.json_bytes({'candidates': []}),
+                     'receipt.json': supplements.json_bytes({'schema_version': 2})}
         private_text = '/' + 'Users' + '/synthetic-person/private-input.txt'
         for changed_name in ('checkpoint.json', 'frontier.json', 'receipt.json'):
             with self.subTest(member=changed_name), tempfile.TemporaryDirectory() as directory:
@@ -185,12 +210,6 @@ class PublicSourceSupplementTests(unittest.TestCase):
                 else:
                     value['unapproved_debug_path'] = private_text
                 members[changed_name] = supplements.json_bytes(value)
-                receipt = json.loads(members['receipt.json'])
-                for name in ('checkpoint.json', 'frontier.json'):
-                    receipt['files'][name] = {'sha256': hashlib.sha256(members[name]).hexdigest(),
-                                              'bytes': len(members[name])}
-                receipt['checkpoint_sha256'] = receipt['files']['checkpoint.json']['sha256']
-                members['receipt.json'] = supplements.json_bytes(receipt)
                 buffer = io.BytesIO()
                 with zipfile.ZipFile(buffer, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
                     for name, raw in members.items():
@@ -330,7 +349,10 @@ class PublicSourceSupplementTests(unittest.TestCase):
                     project_source_browser(supplements.json_bytes(changed))
             supplements.copy_public_evidence(root, root / 'output', ready)
             copied = root / 'output/evidence/source-scans' / self.source['archive_filename']
-            self.assertEqual(copied.read_bytes(), self.archive)
+            if self.archive is None:
+                self.assertFalse(copied.exists())
+            else:
+                self.assertEqual(copied.read_bytes(), self.archive)
             self.assertEqual(original, self.canonical_export())
 
     @reuses_class_evidence
@@ -398,7 +420,11 @@ class PublicSourceSupplementTests(unittest.TestCase):
                 self.assertIn('source-published.json', homepage)
                 about = (output / language / 'about/index.html').read_text()
                 self.assertIn('source-index.json', about)
-                self.assertIn('/evidence/source-scans/' + self.source['archive_filename'], about)
+                if self.archive is None:
+                    self.assertIn(f'id="scan-evidence-{self.source["run"]["id"]}-{self.source["run"]["run_attempt"]}"', about)
+                    self.assertNotIn('/evidence/source-scans/', about)
+                else:
+                    self.assertIn('/evidence/source-scans/' + self.source['archive_filename'], about)
                 self.assertIn('4 个上游仓库已无法访问' if language else
                               '4 whose upstream repository is no longer available', about)
             with zipfile.ZipFile(output / 'downloads/awesome-rea-data.zip') as archive:

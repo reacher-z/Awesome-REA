@@ -1,6 +1,7 @@
 """Atom feeds list dated curated additions and papers deterministically, never review dates."""
 from copy import deepcopy
 import datetime as dt
+import json
 from pathlib import Path
 import sys
 from tempfile import TemporaryDirectory
@@ -65,11 +66,12 @@ class FeedTests(unittest.TestCase):
         for _ in range(2):
             with TemporaryDirectory() as directory:
                 site(directory)
-                self.assertEqual(build_feeds(Path(directory), resources, papers), ['/feed.xml', '/zh/feed.xml'])
-                outputs.append({path: (Path(directory) / path).read_bytes() for path in ('feed.xml', 'zh/feed.xml')})
+                self.assertEqual(build_feeds(Path(directory), resources, papers), ['/feed.xml', '/zh/feed.xml', '/feed.json', '/zh/feed.json'])
+                outputs.append({path: (Path(directory) / path).read_bytes() for path in ('feed.xml', 'zh/feed.xml', 'feed.json', 'zh/feed.json')})
                 english = (Path(directory) / 'resources/index.html').read_text(encoding='utf-8')
                 chinese = (Path(directory) / 'zh/index.html').read_text(encoding='utf-8')
                 self.assertIn('<link rel="alternate" type="application/atom+xml" title="AwesomeREA.org: newly added entries" href="/feed.xml">', english)
+                self.assertIn('<link rel="alternate" type="application/feed+json" title="AwesomeREA.org: newly added entries" href="/feed.json">', english)
                 self.assertIn('href="/zh/feed.xml"', chinese)
         self.assertEqual(outputs[0], outputs[1])
         root = ET.fromstring(outputs[0]['zh/feed.xml'])
@@ -83,6 +85,15 @@ class FeedTests(unittest.TestCase):
         self.assertEqual(english.findtext(ATOM + 'summary'), 'Rebuilds <markup> & keeps "quotes".')
         self.assertEqual(english.findtext(ATOM + 'published'), '2026-10-15T00:00:00Z')
         self.assertNotIn(b'2026-10-01', outputs[0]['feed.xml'])
+        # The JSON Feed repeats the Atom entries in the same order with the same IDs, links and dates.
+        feed = json.loads(outputs[0]['zh/feed.json'])
+        self.assertEqual(feed['version'], 'https://jsonfeed.org/version/1.1')
+        self.assertEqual((feed['feed_url'], feed['home_page_url'], feed['language']),
+                         ('https://awesomerea.org/zh/feed.json', 'https://awesomerea.org/zh/', 'zh-CN'))
+        self.assertEqual([(item['id'], item['url'], item['date_published']) for item in feed['items']],
+                         [(entry.findtext(ATOM + 'id'), entry.find(ATOM + 'link').get('href'), entry.findtext(ATOM + 'published')) for entry in entries])
+        self.assertEqual(feed['items'][1]['title'], '工具 ghidra-like')
+        self.assertEqual(json.loads(outputs[0]['feed.json'])['items'][1]['summary'], 'Rebuilds <markup> & keeps "quotes".')
 
     def test_no_dated_records_write_no_feed_or_link(self):
         with TemporaryDirectory() as directory:
@@ -117,6 +128,21 @@ class FeedTests(unittest.TestCase):
             cases.write_text(cases.read_text(encoding='utf-8').replace('href="/feed.xml"', 'href="/zh/feed.xml"'), encoding='utf-8')
             with self.assertRaisesRegex(AssertionError, 'link their language feed'):
                 validate_feeds(output, pages(), resources, papers)
+
+    def test_json_feed_validator_requires_the_atom_entries(self):
+        from validate_agent_formats import validate_json_feeds
+        resources, papers = [resource('dated', '2026-10-15')], [paper('paper-dated', '2026-10-16')]
+        with TemporaryDirectory() as directory:
+            output = Path(directory)
+            site(directory)
+            build_feeds(output, resources, papers)
+            validate_json_feeds(output)
+            target = output / 'feed.json'
+            document = json.loads(target.read_text(encoding='utf-8'))
+            document['items'].reverse()
+            target.write_text(json.dumps(document), encoding='utf-8')
+            with self.assertRaisesRegex(AssertionError, 'differ from the Atom feed'):
+                validate_json_feeds(output)
 
     def test_validators_reject_malformed_or_future_inclusion_dates(self):
         for value, valid in (('2026-10-18', True), ('2026-10-19', True), ('2026-10-20', False),

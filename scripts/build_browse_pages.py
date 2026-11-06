@@ -5,11 +5,15 @@ from __future__ import annotations
 from collections import defaultdict
 from html import escape
 from pathlib import Path
+import re
 import shutil
 from urllib.parse import urlsplit
 
-from build_discovery_pages import breadcrumb_schema, collection_page_schema, jsonld_script
+from agent_formats import COLLECTION_JSON, MARKDOWN, alternate_links, collection_markdown, json_text
+from build_discovery_pages import EXTERNAL_TITLE_ARROW, breadcrumb_schema, collection_page_schema, jsonld_script
 from open_graph import THEME_COLOR_META, open_graph_meta
+from page_metadata import page_title
+from site_footer import download_link, site_footer
 from build_repository_index import CATEGORIES
 from source_descriptions import description_fallback
 from source_scope import exclusion_counts, unavailable_clause
@@ -40,7 +44,7 @@ def icon(name: str, use_pro: bool) -> str:
     if name == 'github':
         return '<span class="icon browse-github-fallback" aria-hidden="true">GH</span>'
     if name == 'external':
-        return '<span class="browse-text-arrow" aria-hidden="true">↗</span>'
+        return EXTERNAL_TITLE_ARROW
     return ''
 
 
@@ -66,25 +70,63 @@ def related_links(record: dict, language: str) -> str:
     return '<div class="source-related">' + ''.join(groups) + '</div>' if groups else ''
 
 
+def title_end(text: str, use_pro: bool) -> str:
+    """The escaped end of a repository title; with the Font Awesome icon, its last character and the icon share a no-wrap span.
+
+    The icon is an inline-block. Chrome may still break before it after a word joiner, because the title's
+    overflow-wrap allows a break between any two characters. Keeping the icon with the title's last character stops it
+    sitting alone on a line. The text-arrow fallback is placed after the title and already starts with a word joiner."""
+    if not use_pro or not text:
+        return escape(text)
+    return f'{escape(text[:-1])}<span class="title-icon-tail">{escape(text[-1])}{icon("external", use_pro)}</span>'
+
+
 def repository_card(record: dict, language: str, use_pro: bool) -> str:
     zh = language == 'zh'
     name = record.get('full_name') or record['name']
     owner, separator, project = name.partition('/')
     title = (f'<span class="source-owner">{escape(owner)}/</span>'
-             f'<span class="source-project">{escape(project)}</span>' if separator else escape(name))
+             f'<span class="source-project">{title_end(project, use_pro)}</span>' if separator else title_end(name, use_pro))
     description = record[f'description_{language}'] or description_fallback(record, language)
     stars = record.get('stars')
     star_html = (f'<span class="source-stars" title="{("采集时的星标快照" if zh else "Stars at collection time")}">'
                  f'{stars:,} {("星标" if zh else "stars")}</span>' if isinstance(stars, int) else '')
+    # Hundreds of cards share the visible “README” text; the name keeps it first and adds the repository.
+    readme_label = f'README：{name}' if zh else f'README: {name}'
     license_name = record.get('license')
     if not isinstance(license_name, str) or not license_name.strip() or license_name.upper() == 'NOASSERTION':
         license_name = '许可证未识别' if zh else 'License not identified'
+    # The recorded GitHub push time is a collection-time snapshot, shown to the month without a maintenance judgement.
+    # Phones hide the label visually (the month alone keeps the meta line on one row); it stays in the accessible name.
+    pushed = record.get('pushed_at')
+    pushed_html = (f'<span class="source-card-pushed" title="{("采集时记录的最近推送时间快照" if zh else "Last push recorded at collection time")}">'
+                   f'<span class="source-card-pushed-label">{("最近推送" if zh else "Last push")} </span><time datetime="{escape(pushed, quote=True)}">{pushed[:7]}</time></span>'
+                   if isinstance(pushed, str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}T[^<>"&]*', pushed) else '')
     return f'''<article class="source-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}">
-  <div class="source-card-head"><h2><a class="source-title-link" href="{external_url(record['url'])}" target="_blank" rel="noopener">{title}{icon('external', use_pro)}</a></h2></div>
+  <div class="source-card-head"><h2><a class="source-title-link" href="{external_url(record['url'])}" target="_blank" rel="noopener">{title}{'' if use_pro else icon('external', use_pro)}</a></h2></div>
   <p class="source-card-description">{escape(description)}</p>
 {related_links(record, language)}
-  <div class="source-card-footer">{star_html}<a href="{external_url(record.get('readme_url') or record['url'])}" target="_blank" rel="noopener">README ↗</a><span class="source-card-license">{escape(license_name)}</span></div>
+  <div class="source-card-footer">{star_html}<a href="{external_url(record.get('readme_url') or record['url'])}" target="_blank" rel="noopener" aria-label="{escape(readme_label, quote=True)}">README <span aria-hidden="true">↗</span></a>{pushed_html}<span class="source-card-license">{escape(license_name)}</span></div>
 </article>'''
+
+
+# Fields of a category's JSON twin: the visible card facts and the scan provenance behind them.
+CATEGORY_RECORD_FIELDS = ('id', 'full_name', 'url', 'description_en', 'description_zh', 'description_language', 'topics',
+                          'stars', 'license', 'pushed_at', 'observed_at', 'targets', 'category', 'readme_url', 'readme_sha256',
+                          'verification')
+# Category pages describe automatic README scans; their twins say so in every language.
+INDEX_NOTE = ('Automatically discovered repository index, unreviewed. Stars, '
+              'licenses and last-push times are collection-time snapshots.',
+              '自动发现的仓库索引，未审核。星标、许可证与最近推送时间均为采集时快照。')
+
+
+def category_document(category: str, records: list[dict], site_url: str, snapshot: str) -> dict:
+    """The bilingual JSON twin of one category page: its listed repositories in page order."""
+    return {'version': 1, 'kind': 'repository-category', 'category': category, 'labels': list(CATEGORIES[category]),
+            'verification': 'automated-readme-scan', 'note': INDEX_NOTE[0], 'note_zh': INDEX_NOTE[1], 'snapshot': snapshot,
+            'page_url': site_url + browse_path('en', category), 'page_url_zh': site_url + browse_path('zh', category),
+            'count': len(records),
+            'repositories': [{key: record[key] for key in CATEGORY_RECORD_FIELDS if key in record} for record in records]}
 
 
 def build_browse_pages(
@@ -128,9 +170,13 @@ def build_browse_pages(
 
     use_pro = icon_stylesheet_href is not None
     published = source_document.get('meta', {}).get('kind') == 'published-repository-selection'
+    repository_export = 'source-published.json' if published else 'source-index.json'
     scan_date = str(source_document.get('meta', {}).get('published_at' if published else 'completed_at') or '')[:10]
     canonical_urls = []
     rendered = {}
+    for category in CATEGORIES:
+        rendered[browse_path('en', category).lstrip('/') + COLLECTION_JSON] = json_text(
+            category_document(category, groups[category], site_url, scan_date))
     for language in ('en', 'zh'):
         zh = language == 'zh'
         locale = 'zh-CN' if zh else 'en'
@@ -140,11 +186,11 @@ def build_browse_pages(
         curated_link = '/zh/resources/' if zh else '/resources/'
         scope_note = (f'共扫描 {len(scanned):,} 个仓库，提供 {len(records):,} 个浏览条目；{out_of_scope} 个超出范围的条目{unavailable_clause(unavailable, zh)}仍保留在完整 JSON 中。'
                       if zh else f'{len(records):,} repositories are available to browse from {len(scanned):,} successful README scans. The {out_of_scope} out-of-scope records{unavailable_clause(unavailable, zh)} remain in the full JSON.')
-        provenance = ('这是自动发现的仓库索引，未逐项精选或运行验证。分类依据元数据；简介提供 AI 辅助中英翻译。星标为采集时快照。'
-                      if zh else 'This automatically discovered repository index has not been individually curated or execution-tested. Categories come from metadata; descriptions have AI-assisted translations. Stars are collection-time snapshots.')
+        provenance = ('这是自动发现的未审核仓库索引。分类依据元数据；简介提供 AI 辅助中英翻译。星标和最近推送月份均为采集时快照。'
+                      if zh else 'This repository index is discovered automatically and unreviewed. Categories come from metadata; descriptions have AI-assisted translations. Stars and last-push months are collection-time snapshots.')
         if published:
-            scope_note = (f'此发布选集包含 {len(scanned):,} 条已采集仓库记录，提供 {len(records):,} 个浏览条目；{out_of_scope} 个范围排除条目{unavailable_clause(unavailable, zh)}保留在发布 JSON 中。各原始扫描的累计数量保留在 JSON 来源信息中。'
-                          if zh else f'This published selection contains {len(scanned):,} captured repository records and {len(records):,} browsable entries. The {out_of_scope} scope-excluded entries{unavailable_clause(unavailable, zh)} remain in the published JSON. Original capture totals remain separate in the JSON provenance.')
+            scope_note = (f'此发布选集包含 {len(scanned):,} 条已采集仓库记录，提供 {len(records):,} 个浏览条目；{out_of_scope} 个范围排除条目{unavailable_clause(unavailable, zh)}保留在发布 JSON 中。'
+                          if zh else f'This published selection contains {len(scanned):,} captured repository records and {len(records):,} browsable entries. The {out_of_scope} scope-excluded entries{unavailable_clause(unavailable, zh)} remain in the published JSON.')
         for category in (None, *CATEGORIES):
             path = browse_path(language, category)
             canonical = site_url + path
@@ -152,14 +198,14 @@ def build_browse_pages(
             chinese_url = site_url + browse_path('zh', category)
             counterpart = browse_path('en' if zh else 'zh', category)
             label = CATEGORIES[category][language_index] if category else ('按分类浏览仓库' if zh else 'Browse repositories by category')
-            title = (f'{label} · 逆向工程仓库 · AwesomeREA.org' if zh else f'{label} · Reverse engineering repositories · AwesomeREA.org')
+            title = page_title(label, '逆向工程仓库' if zh else 'Reverse engineering repositories')
             if category:
                 count = len(groups[category])
-                description = (f'浏览 {count:,} 个{label}相关仓库，查看项目简介、原始链接与许可证信息。'
+                description = (f'浏览 {count:,} 个{label}相关仓库，查看项目简介、原始链接与许可证信息。卡片保留采集时的星标快照与最近推送时间，并可通过分类导航切换到其他仓库分类继续浏览。'
                                if zh else f'Browse {count:,} repositories with project descriptions, upstream links, and license information.')
                 count_text = f'{count:,} 个仓库' if zh else f'{count:,} repositories'
             else:
-                description = (f'按网站、游戏、应用、二进制、固件与协议等分类浏览 {len(records):,} 个逆向工程仓库。'
+                description = (f'按网站、游戏、应用、二进制、固件与协议等分类浏览 {len(records):,} 个逆向工程仓库。每个分类页列出项目简介、原始链接、许可证信息、采集时的星标快照与最近推送时间。'
                                if zh else f'Browse {len(records):,} reverse engineering repositories across websites, games, apps, binaries, firmware, and protocols.')
                 count_text = f'{len(CATEGORIES)} 个分类 · {len(records):,} 个仓库' if zh else f'{len(CATEGORIES)} categories · {len(records):,} repositories'
             date_text = ((f'选集发布：{scan_date} UTC' if zh else f'Selection published: {scan_date} UTC')
@@ -204,6 +250,7 @@ def build_browse_pages(
   <link rel="alternate" hreflang="en" href="{english_url}">
   <link rel="alternate" hreflang="zh-CN" href="{chinese_url}">
   <link rel="alternate" hreflang="x-default" href="{english_url}">
+  {alternate_links(markdown=path + MARKDOWN, json_href=(browse_path('en', category) + COLLECTION_JSON) if category else '/api/v1/categories.json')}
   {open_graph_meta(language=language, title=title, description=description, image_url=social_image_href, url=canonical)}
   <link rel="icon" href="{escape(favicon_href, quote=True)}" type="image/svg+xml">
   <link rel="stylesheet" href="{escape(styles_href, quote=True)}">
@@ -228,23 +275,45 @@ def build_browse_pages(
     <h1 id="browse-title">{escape(label)}<span class="title-dot" aria-hidden="true">.</span></h1>
     <p>{escape(description)}</p>
   </section>
-  <div class="browse-actions"><a class="button button-primary" href="{search_link}">{icon('search', use_pro)}{('搜索仓库' if zh else 'Search repositories')}</a><a class="button button-outline" href="{curated_link}">{('精选资源' if zh else 'Curated resources')} <span class="browse-count">{curated_count:,}</span></a><a class="browse-download" href="/source-index.json?v={data_revision}" download="awesomerea-repository-index.json" type="application/json">{('下载完整 JSON ↓' if zh else 'Download full JSON ↓')}</a></div>
+  <div class="browse-actions"><a class="button button-primary" href="{search_link}{('&amp;source-category=' + category) if category else ''}">{icon('search', use_pro)}{('搜索仓库' if zh else 'Search repositories')}</a><a class="button button-outline" href="{curated_link}">{('精选资源' if zh else 'Curated resources')} <span class="browse-count">{curated_count:,}</span></a>{download_link('/' + repository_export, language, css_class='browse-download', query=f'?v={data_revision}')}</div>
   <details class="browse-provenance"><summary>{('关于这个索引' if zh else 'About this index')}</summary><p>{escape(scope_note)}</p><p>{escape(provenance)}</p><p><a href="{escape(repository_url, quote=True)}/blob/main/docs/source-scan.md">{('扫描方法（英文）↗' if zh else 'Scan methodology ↗')}</a> · <a href="{escape(repository_url, quote=True)}/blob/main/data/source-scope.json">{('范围排除记录 ↗' if zh else 'Scope exclusions ↗')}</a></p></details>
   {('<nav class="browse-category-nav" aria-label="' + ('仓库分类' if zh else 'Repository categories') + '">' + ''.join(category_links) + '</nav>' if category else '')}
   <div class="browse-topline"><p>{count_text}</p><p>{date_text}</p></div>
   {content}
 </main>
-<footer class="site-footer"><div class="shell footer-top"><p>{('独立的资源集合，在公开协作中持续更新。' if zh else 'An independent resource collection, updated in public.')}</p><div class="footer-links"><a href="{browse_path(language)}">{('全部分类' if zh else 'All categories')}</a><a href="{curated_link}">{('精选资源' if zh else 'Curated resources')}</a><a href="{('/zh' if zh else '')}/papers/">{('研究论文' if zh else 'Research papers')}</a><a href="{('/zh' if zh else '')}/about/">{('关于与来源' if zh else 'About and sources')}</a><a href="/source-index.json?v={data_revision}" download="awesomerea-repository-index.json" type="application/json">{('仓库索引 JSON ↓' if zh else 'Repository index JSON ↓')}</a><a href="/catalog.json?v={data_revision}" download="awesomerea-curated-catalog.json" type="application/json">{('精选目录 JSON ↓' if zh else 'Curated catalog JSON ↓')}</a></div></div><div class="shell footer-bottom">{('原创内容采用 MIT 许可。链接项目保留各自的许可。' if zh else 'Original content: MIT. Linked projects keep their own licenses.')}</div></footer>
+{site_footer(language, note=escape('原创内容采用 MIT 许可。链接项目保留各自的许可。' if zh else 'Original content: MIT. Linked projects keep their own licenses.'), repository_url=repository_url, repository_export=repository_export)}
 </body>
 </html>
 '''
             if published:
-                document = document.replace('/source-index.json?v=', '/source-published.json?v=')
                 evidence_links = ' · '.join(
                     f'<a href="{escape(entry["archive_url"], quote=True)}">{("原始公开采集证据" if zh else "Original public capture evidence")} {entry["run"]["id"]}</a>'
+                    if not entry.get('archive_withdrawal') else
+                    # A withdrawn archive links to its entry on /about/, which gives the date and reason.
+                    f'<a href="{"/zh" if zh else ""}/about/#scan-evidence-{entry["run"]["id"]}-{entry["run"]["run_attempt"]}">'
+                    + (f'原始公开采集证据 {entry["run"]["id"]}（已撤回）' if zh
+                       else f'Original public capture evidence {entry["run"]["id"]} (withdrawn)') + '</a>'
                     for entry in source_document['meta']['capture_sources'])
                 document = document.replace('</details>', '<p>' + evidence_links + '</p></details>', 1)
             rendered[path.lstrip('/') + 'index.html'] = document
+            # The Markdown twin lists the same cards: upstream links with the snapshot facts.
+            if category:
+                entries = [{'name': record.get('full_name') or record['name'], 'url': record['url'],
+                            'description': record[f'description_{language}'] or description_fallback(record, language),
+                            'meta': ' · '.join(part for part in (
+                                f"{record['stars']:,} {'星标' if zh else 'stars'}" if isinstance(record.get('stars'), int) else '',
+                                (record.get('license') if record.get('license') not in (None, '', 'NOASSERTION') else ''),
+                                (('最近推送 ' if zh else 'last push ') + record['pushed_at'][:7]) if isinstance(record.get('pushed_at'), str) else '') if part)}
+                           for record in groups[category]]
+            else:
+                entries = [{'name': labels[language_index], 'url': site_url + browse_path(language, slug) + MARKDOWN,
+                            'meta': f'{len(groups[slug]):,} 个仓库' if zh else f'{len(groups[slug]):,} repositories'}
+                           for slug, labels in CATEGORIES.items()]
+            rendered[path.lstrip('/') + MARKDOWN] = collection_markdown(
+                title=label, description=description, language=language, canonical=canonical, items=entries,
+                notes=[INDEX_NOTE[language_index], date_text],
+                json_url=site_url + ((browse_path('en', category) + COLLECTION_JSON) if category else '/api/v1/categories.json'),
+                counterpart=site_url + counterpart + MARKDOWN)
             canonical_urls.append(canonical)
 
     # Clear only this generator's output, preventing stale category pages across builds.

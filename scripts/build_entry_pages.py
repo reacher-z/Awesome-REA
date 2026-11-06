@@ -9,15 +9,21 @@ from urllib.parse import quote, urlencode, urlsplit
 
 from artifact_links import github_repository
 from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, jsonld_script, publication_keys
-from build_paper_pages import STATUS_LABELS, formatted_date, scholarly_article
-from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section
+from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, formatted_date, scholarly_article
+from build_readme import (CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section,
+                          section_order)
+from agent_formats import (MARKDOWN, RECORD_JSON, alternate_links, json_text, paper_markdown, paper_record,
+                           record_json_route, resource_markdown, resource_record)
 from evidence_links import evidence_link
 from open_graph import THEME_COLOR_META, open_graph_meta
+from page_metadata import page_title, paper_description, resource_description
+from structured_data import evidence_urls, publisher_reference, resource_entity
 from requirement_facets import item_html, ordered_items
+from site_footer import site_footer
 
 MARKER = '<!-- Generated curated entry page. -->'
 REPOSITORY_URL = 'https://github.com/reacher-z/Awesome-REA'
-# Issue forms whose `resource` input ("Resource URL or catalog ID") accepts a URL prefill.
+# Issue forms whose `resource` input (a catalog ID or resource URL) accepts a URL prefill.
 FEEDBACK_FORMS = (('broken-resource.yml', 'Correction', 'Report an outdated entry', '报告条目过时'),
                   ('translation.yml', 'Translation', 'Suggest a translation fix', '建议修正翻译'))
 
@@ -93,6 +99,11 @@ def _definitions(items: list[tuple[str, str]]) -> str:
     return '<dl class="entry-facts">' + ''.join(f'<dt>{escape(label)}</dt><dd>{escape(value)}</dd>' for label, value in items) + '</dl>'
 
 
+def _summary(items: list[tuple[str, str]]) -> str:
+    """Compact header facts; values are trusted markup built by the caller."""
+    return '<dl class="entry-summary">' + ''.join(f'<div><dt>{escape(label)}</dt><dd>{value}</dd></div>' for label, value in items) + '</dl>'
+
+
 def _survey_discussion(sections: list[dict], language: str) -> str:
     if not sections:
         return ''
@@ -155,16 +166,17 @@ SIBLING_LIMIT = 6
 def section_siblings(resources: list[dict], limit: int = SIBLING_LIMIT) -> dict[str, dict]:
     """Map each resource ID to its README section and up to ``limit`` following entries there.
 
-    Sections list case studies first, then the other entries, each in catalog order, as the
-    READMEs do. The selection continues from each entry and wraps to the section start, so it
-    is deterministic and every entry is linked from its neighbours.
+    Sections list case studies first, then the other entries, in README order (section_order:
+    Game case studies by reconstruction method, everything else in catalog order). The selection
+    continues from each entry and wraps to the section start, so it is deterministic and every
+    entry is linked from its neighbours.
     """
     groups = defaultdict(list)
     for record in resources:
         groups[collection_section(record)].append(record)
     related = {}
     for section, records in groups.items():
-        ordered = sorted(records, key=lambda record: record['kind'] != 'case-study')
+        ordered = section_order(section, records)
         cases = sum(record['kind'] == 'case-study' for record in ordered)
         for index, record in enumerate(ordered):
             following = ordered[index + 1:] + ordered[:index]
@@ -214,21 +226,23 @@ def _resource_content(record: dict, language: str, discussion: str = '', feedbac
     title = _text(record, 'name_zh' if zh else 'name')
     description = _text(record, f'description_{language}')
     kind = KIND_LABELS[record['kind']][int(zh)]
-    facts = [(label('Type', '类型'), kind),
-             (label('Category', '类别'), CATEGORIES[record['category']][int(zh)]),
-             (label('Relationship', '关联'), RELATIONSHIPS[record['relationship']][int(zh)]),
-             (label('Targets', '目标'), ' · '.join(TARGETS[t][int(zh)] for t in record['targets']))]
+    # The kind is the eyebrow; the other classification facts and the review date sit under the
+    # description so they stay above long requirement lists. Each fact appears only here.
+    reviewed = f'<time datetime="{escape(record["verified_at"], quote=True)}">{escape(record["verified_at"][:10])}</time>'
+    facts = [(label('Targets', '目标'), escape(' · '.join(TARGETS[t][int(zh)] for t in record['targets']))),
+             (label('Category', '类别'), escape(CATEGORIES[record['category']][int(zh)])),
+             (label('Relationship', '关联'), escape(RELATIONSHIPS[record['relationship']][int(zh)])),
+             (label('Sources reviewed', '来源复核于'), reviewed)]
     requirements = ''.join(item_html(facet, item, language) for facet, item in ordered_items(record, _requirements(record, language)))
     links = [_link(record['url'], label('Visit original resource', '访问原始资源'), primary=True)]
     if record['evidence_url'] != record['url']:
         links.append(_link(record['evidence_url'], label(*PRIMARY_SOURCE_LABEL)))
     content = f'''<header class="entry-heading"><p class="entry-eyebrow">{escape(kind)}</p><h1>{escape(title)}</h1>
-  <p class="entry-description">{escape(description)}</p></header>
+  <p class="entry-description">{escape(description)}</p>{_summary(facts)}</header>
 <nav class="entry-actions" aria-label="{label('Resource links', '资源链接')}">{''.join(links)}</nav>
 <section class="entry-section" aria-labelledby="entry-requirements"><h2 id="entry-requirements">{escape(REQUIREMENTS_LABEL[zh])}</h2><ul class="entry-requirements">{requirements}</ul></section>
-<section class="entry-section" aria-labelledby="entry-review"><h2 id="entry-review">{label('About this entry', '关于此条目')}</h2>{_definitions(facts)}
-<p class="entry-reviewed">{label('Sources reviewed', '来源复核于')} <time datetime="{escape(record['verified_at'], quote=True)}">{escape(record['verified_at'][:10])}</time></p>
-<p class="entry-review-note">{label('The description was reviewed against primary sources. This does not establish runtime testing, security auditing or verified compatibility.', '说明已依据一手来源复核；这不代表已运行验证、经过安全审计或确认兼容。')}</p>{feedback}</section>
+<section class="entry-section" aria-labelledby="entry-review"><h2 id="entry-review">{label('About this entry', '关于此条目')}</h2>
+<p class="entry-review-note">{label('The description was reviewed against primary sources.', '说明已依据一手来源复核。')}</p>{feedback}</section>
 {discussion}{_sources([record['evidence_url'], *record.get('additional_evidence_urls', [])], language)}'''
     return title, description, content
 
@@ -253,21 +267,28 @@ def _paper_content(paper: dict, language: str, discussion: str = '', feedback: s
                            ('arxiv_id', 'arXiv', 'arXiv'), ('arxiv_version_reviewed', 'Reviewed arXiv version', '已复核的 arXiv 版本'), ('doi', 'DOI', 'DOI')):
         if paper.get(field):
             facts.append((label(en, cn), formatted_date(paper[field], language) if field == 'first_arxiv_date' else paper[field]))
+    if authors_omitted(paper):
+        # The record lists no names; the paper itself does.
+        authors = (f'<p class="entry-authors"><a href="{_public_url(paper["url"])}" target="_blank" rel="noopener">'
+                   f'{escape(label(*AUTHORS_OMITTED))} <span aria-hidden="true">↗</span></a></p>')
+    else:
+        authors = f'<p class="entry-authors" lang="en">{escape("; ".join(paper["authors"]))}</p>'
     content = f'''<header class="entry-heading"><p class="entry-eyebrow">{paper['year']} · {escape(status)}</p><h1>{escape(title)}</h1>{original}
-<p class="entry-authors" lang="en">{escape('; '.join(paper['authors']))}</p><p class="entry-description">{escape(description)}</p></header>
+{authors}<p class="entry-description">{escape(description)}</p></header>
 <nav class="entry-actions" aria-label="{label('Paper and citation links', '论文与引文链接')}">{''.join(links)}</nav>
 <section class="entry-section entry-scope" aria-labelledby="entry-scope"><h2 id="entry-scope">{label('Scope and limitations', '研究范围与局限')}</h2><p>{escape(paper[f'scope_limitations_{language}'])}</p></section>
 <section class="entry-section" aria-labelledby="entry-relevance"><h2 id="entry-relevance">{label('Why it fits this collection', '与本合集的关联')}</h2><p>{escape(paper[f'why_fits_{language}'])}</p></section>
 <section class="entry-section" aria-labelledby="entry-citation"><h2 id="entry-citation">{label('Publication and review details', '发表与复核详情')}</h2>{_definitions(facts)}
 <p>{escape(paper['metadata_notes_zh' if zh else 'metadata_notes'])}</p>
 <p class="entry-reviewed">{label('Sources reviewed', '来源复核于')} <time datetime="{escape(paper['verified_at'], quote=True)}">{escape(paper['verified_at'][:10])}</time></p>
-<p class="entry-review-note">{label('Source review only; experiments were not rerun for this collection. Cite the original authors using the linked paper or BibTeX.', '本合集仅做来源复核，未重新运行论文实验。请通过原始论文或 BibTeX 引用原作者。')}</p>{feedback}</section>
+<p class="entry-review-note">{label('Reviewed against the paper and its primary sources. Cite the original authors using the linked paper or BibTeX.', '已依据论文及一手来源复核。请通过原始论文或 BibTeX 引用原作者。')}</p>{feedback}</section>
 {discussion}{_sources(paper['evidence_urls'], language)}'''
     return title, description, content
 
 
 def _document(record, kind, language, *, site_url, repository_url, styles_href, entry_styles_href,
-              favicon_href, social_image_href, icon_stylesheet_href, survey_discussions, related_entries, siblings=None):
+              favicon_href, social_image_href, icon_stylesheet_href, survey_discussions, related_entries, siblings=None,
+              repository_export):
     zh = language == 'zh'
     label = lambda en, cn: cn if zh else en
     locale, prefix = ('zh-CN', '/zh') if zh else ('en', '')
@@ -277,20 +298,29 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
     counterpart = entry_path(kind, record['id'], 'en' if zh else 'zh')
     listing = f'{prefix}/{kind}s/'
     list_name = label('Curated resources', '精选资源') if kind == 'resource' else label('Research papers', '研究论文')
+    extra_return = ''
+    if kind == 'resource' and record['kind'] == 'case-study':
+        # /cases/ groups case studies by subject with scope and evidence; /resources/ stays one link away.
+        extra_return = f'<a href="{listing}">{list_name}</a>'
+        listing, list_name = f'{prefix}/cases/', label('Case studies', '案例合集')
     discussion = (_related_entries(related_entries.get((kind, record['id']), []), language)
                   + _survey_discussion(survey_discussions.get(record['id'], []), language))
     feedback = _feedback(kind, record, language, repository_url)
     title, description, content = (_resource_content if kind == 'resource' else _paper_content)(record, language, discussion, feedback)
     # Resource names such as rr or GDB are often identical in both languages; the localized
     # category gives each <title> topic and language context. H1, og:title and JSON-LD keep the name.
-    document_title = f'{title} · {CATEGORIES[record["category"]][int(zh)]}' if kind == 'resource' else title
+    # A Chinese page whose resource keeps its English name relies on the category for Chinese text.
+    category = CATEGORIES[record['category']][int(zh)] if kind == 'resource' else None
+    document_title = page_title(title, category, keep_context=zh)
+    head_description = resource_description(record, language, category) if kind == 'resource' else paper_description(record, language)
     entity_id = canonical + ('#resource' if kind == 'resource' else '#paper')
-    entity = ({'@type': 'CreativeWork', '@id': entity_id, 'url': record['url'], 'name': title, 'description': description}
+    entity = (resource_entity(record, entity_id, title, description)
               if kind == 'resource' else {**scholarly_article(record, language), '@id': entity_id})
     schema = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'WebPage', '@id': canonical + '#webpage', 'url': canonical, 'name': title,
          'description': description, 'inLanguage': locale, 'isPartOf': {'@id': site_url + '/#website'},
-         'mainEntity': {'@id': entity_id}, 'breadcrumb': {'@id': canonical + '#breadcrumb'}},
+         'mainEntity': {'@id': entity_id}, 'breadcrumb': {'@id': canonical + '#breadcrumb'},
+         'lastReviewed': record['verified_at'][:10], 'publisher': publisher_reference(site_url), 'isBasedOn': evidence_urls(record)},
         {'@type': 'BreadcrumbList', '@id': canonical + '#breadcrumb', 'itemListElement': [
             {'@type': 'ListItem', 'position': 1, 'name': label('Home', '首页'), 'item': site_url + prefix + '/'},
             {'@type': 'ListItem', 'position': 2, 'name': list_name, 'item': site_url + listing},
@@ -304,10 +334,11 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
 <html lang="{locale}"{(' data-icon-set="fontawesome"' if icon_stylesheet_href else '')}>
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">{THEME_COLOR_META}
-  <title>{escape(document_title)} · AwesomeREA.org</title><meta name="description" content="{escape(description, quote=True)}">
+  <title>{escape(document_title)}</title><meta name="description" content="{escape(head_description, quote=True)}">
   <link rel="canonical" href="{_public_url(canonical)}">
   <link rel="alternate" hreflang="en" href="{_public_url(english)}"><link rel="alternate" hreflang="zh-CN" href="{_public_url(chinese)}"><link rel="alternate" hreflang="x-default" href="{_public_url(english)}">
-  {open_graph_meta(language=language, title=title, description=description, image_url=social_image_href, url=canonical)}
+  {alternate_links(markdown=path + MARKDOWN, json_href=record_json_route(kind, record['id']))}
+  {open_graph_meta(language=language, title=title, description=head_description, image_url=social_image_href, url=canonical, og_type='article')}
   <link rel="icon" href="{_asset_url(favicon_href)}" type="image/svg+xml"><link rel="stylesheet" href="{_asset_url(styles_href)}"><link rel="stylesheet" href="{_asset_url(entry_styles_href)}">{icon_css}
   {jsonld_script(schema)}
 </head><body>
@@ -316,8 +347,8 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
 <nav class="header-nav" aria-label="{label('Main navigation', '主导航')}"><a class="entry-language" href="{counterpart}" lang="{('en' if zh else 'zh-CN')}" hreflang="{('en' if zh else 'zh-CN')}">{label('简体中文', 'English')}</a><a class="github-link" href="{_public_url(repository_url)}" target="_blank" rel="noopener" aria-label="GitHub">{github_icon}<span>GitHub</span></a></nav></div></header>
 <main class="shell entry-main" id="entry-content"><nav class="entry-breadcrumbs" aria-label="{label('Breadcrumb', '当前位置')}"><a href="{prefix}/">{label('Home', '首页')}</a><span aria-hidden="true">/</span><a href="{listing}">{list_name}</a><span aria-hidden="true">/</span><span aria-current="page">{escape(title)}</span></nav>
 <article class="entry-article" data-entry-kind="{kind}" data-entry-id="{record['id']}">{content}</article>
-{_section_links(record, language, siblings) if kind == 'resource' else ''}<nav class="entry-return" aria-label="{label('Collection navigation', '合集导航')}"><a href="{listing}#{record['id']}">← {label('View in the directory', '在目录中查看')}</a><a href="{listing}">{list_name}</a><a href="{prefix}/">{label('Search the collection', '搜索合集')}</a></nav></main>
-<footer class="site-footer"><div class="shell footer-top"><p>{label('An independent, source-reviewed collection.', '依据一手来源整理的独立合集。')}</p><nav class="footer-links" aria-label="{label('More from the collection', '更多合集内容')}"><a href="{prefix}/resources/">{label('Curated resources', '精选资源')}</a><a href="{prefix}/papers/">{label('Research papers', '研究论文')}</a><a href="{prefix}/about/">{label('About and sources', '关于与来源')}</a></nav></div><div class="shell footer-bottom">{label('Original editorial content: MIT. Linked projects, papers and assets retain their own rights and licenses.', '原创说明采用 MIT 许可；外部项目、论文与素材保留各自的权利和许可。')}</div></footer>
+{_section_links(record, language, siblings) if kind == 'resource' else ''}<nav class="entry-return" aria-label="{label('Collection navigation', '合集导航')}"><a href="{listing}#{record['id']}">← {label('View in the directory', '在目录中查看')}</a><a href="{listing}">{list_name}</a>{extra_return}<a href="{prefix}/">{label('Search the collection', '搜索合集')}</a></nav></main>
+{site_footer(language, note=escape(label('Original editorial content: MIT. Linked projects, papers and assets retain their own rights and licenses.', '原创说明采用 MIT 许可；外部项目、论文与素材保留各自的权利和许可。')), repository_url=repository_url, repository_export=repository_export)}
 </body></html>
 '''
 
@@ -328,7 +359,8 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
                       styles_href: str = '/styles.css', entry_styles_href: str = '/entry.css',
                       favicon_href: str = '/favicon.svg', social_image_href: str = 'https://awesomerea.org/social-card.png',
                       icon_stylesheet_href: str | None = None,
-                      survey_discussions: dict | None = None) -> list[str]:
+                      survey_discussions: dict | None = None,
+                      repository_export: str = 'source-index.json') -> list[str]:
     """Write only curated /resources/<id>/ and /papers/<id>/ pairs; return sitemap URLs."""
     site_dir = Path(site_dir)
     site_url = site_url.rstrip('/')
@@ -339,8 +371,8 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
                    entry_styles_href=entry_styles_href, favicon_href=favicon_href,
                    social_image_href=social_image_href, icon_stylesheet_href=icon_stylesheet_href,
                    survey_discussions=survey_discussions or {},
-                   related_entries=matching_entries(resources, papers))
-    rendered = {}
+                   related_entries=matching_entries(resources, papers), repository_export=repository_export)
+    rendered, twins, records_json = {}, {}, {}
     siblings = section_siblings(resources)
     for kind, records in (('resource', resources), ('paper', papers)):
         identifiers = set()
@@ -358,6 +390,12 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
                 path = entry_path(kind, identifier, language)
                 rendered[path] = _document(record, kind, language, **options,
                                            siblings=siblings.get(identifier) if kind == 'resource' else None)
+                # The Markdown twin in the page language; one bilingual record.json per entry.
+                related = options['related_entries'].get((kind, identifier), [])
+                twins[path] = (resource_markdown(record, language, site_url=site_url, siblings=siblings.get(identifier), related=related)
+                               if kind == 'resource' else paper_markdown(record, language, site_url=site_url, related=related))
+            records_json[record_json_route(kind, identifier)] = json_text(
+                resource_record(record, site_url) if kind == 'resource' else paper_record(record, site_url))
     # Remove only obsolete pages carrying this builder's marker, never listing pages or citations.
     destinations = {path: _output_path(site_dir, path.lstrip('/') + 'index.html') for path in rendered}
     for prefix in ('resources', 'zh/resources', 'papers', 'zh/papers'):
@@ -368,10 +406,18 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
             path = '/' + stale.parent.relative_to(site_dir).as_posix() + '/'
             if path not in rendered and MARKER in stale.read_text(encoding='utf-8'):
                 stale.unlink()
+                # The page's own Markdown and JSON twins go with it.
+                for twin in (MARKDOWN, RECORD_JSON):
+                    if (stale.parent / twin).is_symlink():
+                        raise ValueError('Entry output paths must not be symlinks')
+                    (stale.parent / twin).unlink(missing_ok=True)
                 if not any(stale.parent.iterdir()):
                     stale.parent.rmdir()
     for path, content in rendered.items():
         destination = destinations[path]
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(content, encoding='utf-8')
+        _output_path(site_dir, path.lstrip('/') + MARKDOWN).write_text(twins[path], encoding='utf-8')
+    for route, content in records_json.items():
+        _output_path(site_dir, route.lstrip('/')).write_text(content, encoding='utf-8')
     return [site_url + path for path in rendered]

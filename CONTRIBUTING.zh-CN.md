@@ -22,7 +22,7 @@ Agent 请先阅读 [AGENTS.md（英文）](AGENTS.md)和 [Agent 投稿与 PR 指
 
 第一次提交 pull request，可参照[完整示例](docs/first-resource.zh-CN.md)：它以一条已有记录为例，说明需要编辑和重新生成的每个文件。
 
-发现中文翻译不准确时，可使用[翻译修正表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=translation.yml)；链接失效或信息过时，可使用[过时条目表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=broken-resource.yml)。资源、论文和修正表单目前为英文界面；重建案例表单提供双语提示。
+发现中文翻译不准确时，可使用[翻译修正表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=translation.yml)；链接失效或信息过时，可使用[过时条目表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=broken-resource.yml)，写明受影响的条目 ID、观察到的状态、检查日期和一手证据；HTTP 403、429、登录页、超时或单纯的重定向都不能证明资源已删除或迁移，详见[来源链接检查结果的处理（英文）](docs/automation.md#triage-source-link-results)。资源、论文和修正表单目前为英文界面；重建案例表单提供双语提示。
 
 ## 推荐论文
 
@@ -38,6 +38,9 @@ Agent 请先阅读 [AGENTS.md（英文）](AGENTS.md)和 [Agent 投稿与 PR 指
 - `relationship`：证据证明了它与 REA 是什么关系，例如 REA 官方或社区资源、独立智能体集成或基础工具。
 - `category`：适合哪一类任务或工具族。
 - `targets`：帮助分析或重建的对象领域。
+- `class`：仅用于数据点，即它复刻的原始对象属于哪一类，只能选一个。
+
+一条记录的主要成果复刻了一个具体的真实对象，它就是数据点，定义见[目录格式（英文）](data/README.md#data-records)。数据点选且只选一个 `class`：`software`、`game`、`apps`、`website`、`science` 或 `hardware`。适用于任意目标的工具没有 `class`。Protocol 是来自 `targets` 的标签，协议记录按协议所属的对象归类。
 
 当前可用值见[目录格式（英文）](data/README.md)。证据支持多个领域时可以选择多个 targets。为条目补充新的已复核领域时，保留原有 targets；不要自动重新归类历史扫描记录。
 
@@ -53,7 +56,7 @@ Agent 请先阅读 [AGENTS.md（英文）](AGENTS.md)和 [Agent 投稿与 PR 指
 
 使用[重建案例推荐表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=case-study.yml)，可用英文或简体中文填写。分别说明原始输入、重建输出与证据；部分重建或未测试的案例也可推荐。案例名称写作 `<主名称>: <重建或发现的内容>`：以项目公开使用的名称开头，并在后半部分写明游戏、应用或设备，例如 `SpeedBreaker: statically recompiling Need for Speed: Most Wanted for Xbox 360`；中文名称保留主名称，用全角冒号（：）接译文。主名称本身含冒号或没有独立项目名时的写法，见[目录格式（英文）](data/README.md)中的 `name` 一行。
 
-案例可以使用 REA、其他智能体或独立的逆向工具。有记录的重建项目如果与 REA 没有已确认的关联，使用 `relationship: independent-reconstruction` 和 `category: reconstruction-cases`，targets 按实际涉及的领域填写。说明中要区分作者报告的结果、尚未完成的行为、平台限制，以及需要用户自备的原始资源，并可按[目录格式说明（英文）](data/README.md)为每条 `requirements` 填写可选的 `requirement_facets`；填写后页面会把前提条件排在最前。尽量提供固定版本的公开来源；不要包含专有目标二进制文件或私人抓包数据。
+案例可以使用 REA、其他智能体或独立的逆向工具。有记录的重建项目如果与 REA 没有已确认的关联，使用 `relationship: independent-reconstruction` 和 `category: reconstruction-cases`，targets 按实际涉及的领域填写。列在“游戏”下的案例还应按[目录格式说明](data/README.md)中的方法填写 `reconstruction_method`，证据不足以确定方法时用 `other`；未填写时，该案例列在“其他重建方式”下，校验只给出警告。说明中要区分作者报告的结果、尚未完成的行为、平台限制，以及需要用户自备的原始资源，并可按[目录格式说明（英文）](data/README.md)为每条 `requirements` 填写可选的 `requirement_facets`；填写后页面会把前提条件排在最前。尽量提供固定版本的公开来源；不要包含专有目标二进制文件或私人抓包数据。
 
 [案例覆盖记录](data/case-coverage.json)与目录记录分开，记录固定版本上游案例合集中的条目，格式见[目录格式指南（英文）](data/README.md)。修改其中的条目后，运行 `python3 scripts/build_case_coverage.py` 重新生成[覆盖摘要](docs/case-coverage.zh-CN.md)，再运行 `python3 scripts/validate.py`。
 
@@ -63,7 +66,7 @@ Agent 请先阅读 [AGENTS.md（英文）](AGENTS.md)和 [Agent 投稿与 PR 指
 
 ## 不要提交的内容
 
-公开仓库中不得包含凭据、私人账户信息、个人文件系统路径、专有二进制文件、未处理的私人抓包数据，或受许可限制的 Font Awesome Pro 文件。原创贡献采用本仓库的 MIT 许可；链接的资源保留各自的许可。不可用或受限的研究产物、演示以及相互冲突的许可信号如何描述，见[研究产物与许可证据指南](docs/artifact-evidence.zh-CN.md)。
+公开仓库中不得包含凭据、私人账户信息、个人文件系统路径、专有二进制文件、或未处理的私人抓包数据。原创贡献采用本仓库的 MIT 许可；链接的资源保留各自的许可。不可用或受限的研究产物、演示以及相互冲突的许可信号如何描述，见[研究产物与许可证据指南](docs/artifact-evidence.zh-CN.md)。
 
 Issue 和 pull request 都是公开的。粘贴日志、截图等内容前，请删除令牌、Cookie、账户标识、本地文件路径和私人抓包数据。工作流漏洞、凭据泄露或已收录资源疑似被入侵等安全问题，请按[安全策略](SECURITY.md#中文摘要)私下报告。
 
@@ -79,7 +82,7 @@ python3 scripts/build_site.py
 node --check site/app.js
 ```
 
-两个 README 中每个条目只占一行：名称链接、说明首句、标签，以及指向网站条目页的“完整条目”链接；完整说明、使用条件和证据保留在条目页上，因此说明首句应能独立概括条目。GitHub 只渲染 README 的前 500 KiB（512,000 字节），所以 `build_readme.py` 会报告两个文件的大小；任一 README 超过 420,000 字节时，它和 `validate.py` 会给出警告，但不会使检查失败。
+两个 README 中每个条目只占一行：名称链接、说明首句、标签，以及指向网站条目页的“完整条目”链接；完整说明、使用条件和证据保留在条目页上，因此说明首句应能独立概括条目。每个 README 分区列出最新的 10 个案例，并链接到完整案例列表 [docs/cases.md](docs/cases.md) 和 [docs/cases.zh-CN.md](docs/cases.zh-CN.md)。论文行格式相同，但每个 README 只列出最新的 10 篇（按年份和已记录的发表日期从新到旧），并按主题链接到完整论文列表 [docs/papers.md](docs/papers.md) 和 [docs/papers.zh-CN.md](docs/papers.zh-CN.md)。案例和论文列表均由 `build_readme.py` 生成。GitHub 只渲染 README 的前 500 KiB（512,000 字节），所以 `build_readme.py` 会报告两个 README 及案例和论文列表的大小；任一 README 或案例列表超过 420,000 字节时，它和 `validate.py` 会给出警告，但不会使检查失败。
 
 运行全部测试（需要 Node.js，不访问网络）：
 
@@ -87,11 +90,21 @@ node --check site/app.js
 python3 -m unittest discover -s tests -v
 ```
 
-修改论文记录时，再运行 `python3 scripts/validate_papers.py`，重新生成两个 README，然后运行 `python3 scripts/build_production.py`。`python3 scripts/check_links.py` 用于在线检查来源链接，限流和临时网络故障会与确认失效的链接分开报告。CI 的完整步骤见英文指南的[目录更新部分](CONTRIBUTING.md#update-the-catalog)。
+修改论文记录时，再运行 `python3 scripts/validate_papers.py`，用 `python3 scripts/build_readme.py` 重新生成两个 README 和两个论文列表，然后运行 `python3 scripts/build_production.py`。`python3 scripts/check_links.py` 用于在线检查来源链接，限流和临时网络故障会与确认失效的链接分开报告。必需的 `validate` 检查本身不运行任何步骤，只汇总 `Catalog checks` 工作流中并行任务的结果：三个 `unit` 分片、`production` 和 `browser` 全部成功时才通过，任一任务失败、跳过或取消都会使它失败。检查失败时，请打开失败的那个任务查看日志。各任务的步骤和等效的本地命令见英文指南的[目录更新部分](CONTRIBUTING.md#update-the-catalog)。
+
+## 收录项目徽章
+
+已收录的项目可以用下面的徽章链接回 Awesome REA。徽章是可选的：添加与否不是收录条件，也不影响审核。徽章仅表示目录收录，不认证软件完整度或运行验证。也可以链接到自己的条目 `https://awesomerea.org/zh/resources/<id>/`（英文：`/resources/<id>/`），或论文条目 `/zh/papers/<id>/`。
+
+```markdown
+[![Featured by Awesome REA](https://awesomerea.org/badges/featured-by-awesome-rea-inline.svg)](https://github.com/reacher-z/Awesome-REA)
+```
+
+徽章是由合集网站提供的 184 × 20 静态 SVG，内容与 [assets/featured-by-awesome-rea-inline.svg](assets/featured-by-awesome-rea-inline.svg) 相同。
 
 ## 审核与发布
 
-Pull request 会收到由基础分支可信代码执行的[规则审核（英文）](docs/automation.md)，检查目录结构、重复项、来源字段和常见隐私问题，不运行贡献者的代码。资源是否相关、说法是否属实由维护者审核；自动检查通过不代表自动批准或合并。
+Pull request 会收到由基础分支可信代码执行的[规则审核（英文）](docs/automation.md)，检查目录结构、重复项、来源字段和常见隐私问题，不运行贡献者的代码。单元测试和生产构建还会运行隐私检查 [privacy_guard.py](scripts/privacy_guard.py)：若跟踪文件或构建出的网站出现维护者要求不再收录的人名或个人链接，检查即失败。脚本只保存这些名字的加盐摘要，失败时只报告文件和行号、不显示原文；请直接删除匹配内容，不要在 issue 或 pull request 中引用。资源是否相关、说法是否属实由维护者审核；自动检查通过不代表自动批准或合并。唯一的例外是定时的[发现入库](docs/automation.md#automated-discovery-ingest)：它只向 [data/discoveries/](data/discoveries/README.md) 添加未审核的扫描记录，并自行合并这类 pull request。
 
 `review` 使用 `main` 上的验证器，而不是你分支中的验证器。如果一个 PR 既新增字段、取值（如分类或关系）、出版方身份规则或其他验证规则，又加入依赖它的数据，那么在验证器修改进入 `main` 之前，`review` 会一直失败，即使运行分支代码的 `validate` 已经通过。请先提交代码修改，合并后再另开 PR 提交依赖它的数据。例如 [#212](https://github.com/reacher-z/Awesome-REA/pull/212) 先加入 WOOT 19 出版方身份规则，[#215](https://github.com/reacher-z/Awesome-REA/pull/215) 随后加入使用该规则的论文；[#228](https://github.com/reacher-z/Awesome-REA/pull/228) 引入可选的论文 `citation` 字段之后，[#234](https://github.com/reacher-z/Awesome-REA/pull/234) 才为论文填写该字段。
 
@@ -101,7 +114,7 @@ Pull request 会收到由基础分支可信代码执行的[规则审核（英文
 
 `main` 只合并与其同步的分支。多数目录 PR 会修改相同的生成文件，并向同一批 JSON 数组末尾追加记录，所以别的 PR 合并后，你的分支常会落后或出现冲突。请在本地运行 `git fetch origin` 和 `git rebase origin/main`，先解决数据冲突，再用合并后的数据重新生成文件：
 
-- **生成文件**：`README.md` 与 `README.zh-CN.md` 中的 `BEGIN GENERATED …` 和 `BEGIN REPOSITORY INDEX SUMMARY` 区块、`docs/repositories/` 下的全部页面，以及 `docs/case-coverage.md` 和 `docs/case-coverage.zh-CN.md`。直接采用 `main` 的版本（例如 `git checkout origin/main -- README.md README.zh-CN.md`），数据冲突解决后重新生成；不要手动合并或编辑这些文件。README 每个区块内的第一行注明了生成脚本和数据来源。若分支还修改了区块之外的手写 README 文字，请重新应用该修改。
+- **生成文件**：`README.md` 与 `README.zh-CN.md` 中的 `BEGIN GENERATED …` 和 `BEGIN REPOSITORY INDEX SUMMARY` 区块、论文列表 `docs/papers.md` 和 `docs/papers.zh-CN.md`、案例列表 `docs/cases.md` 和 `docs/cases.zh-CN.md`、`docs/repositories/` 下的全部页面，以及 `docs/case-coverage.md` 和 `docs/case-coverage.zh-CN.md`。直接采用 `main` 的版本，数据冲突解决后重新生成；不要手动合并或编辑这些文件。README 每个区块和每个生成列表内的第一行注明了生成脚本和数据来源。若分支还修改了区块之外的手写 README 文字，请重新应用该修改。
 - **数据文件**：`data/*.json` 与 `site/translations.zh-CN.json` 要保留双方的记录，即 `main` 新增或修改的记录和你的分支新增或修改的记录。新记录追加在数组末尾，先放 `main` 的，再放你的。每个 ID 只能出现一次：验证器会拒绝重复的记录 ID，而 `site/translations.zh-CN.json` 中重复的键会悄悄覆盖前一个。`data/case-coverage.json` 合并双方的条目修改后，要用[英文指南](CONTRIBUTING.md#update-a-pull-request)中的命令重新计算 `counts`，否则 `validate.py` 会报告 `derived counts differ`。
 - **JSON 格式**：保持两个空格缩进、非 ASCII 字符直接写出（不转义为 `\u`）、原有键顺序和文件末尾换行，也就是 `json.dumps(value, ensure_ascii=False, indent=2)` 再加 `'\n'` 的输出。
 - **测试中的 ID 列表**（如 `tests/test_paper_citations.py` 中带引用元数据的论文集合）取双方的并集。

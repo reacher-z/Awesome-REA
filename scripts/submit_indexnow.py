@@ -2,6 +2,7 @@
 """Notify IndexNow of the deployed owned-site sitemap; dry run unless --submit."""
 import argparse
 from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
@@ -14,6 +15,7 @@ import xml.etree.ElementTree as ET
 
 from build_manifest import (CONTROL_FILES, FONT_SUFFIXES, HTML_NORMALIZATION, MANIFEST_NAME,
                             PRIVATE_NAMES, html_digest, read_build_manifest)
+from sitemaps import sitemap_files, sitemap_urls
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = 'https://awesomerea.org'
@@ -60,8 +62,10 @@ def verify_live_build(output, urls, manifest, key):
     expected_manifest = (output / MANIFEST_NAME).read_bytes()
     if fetch_bytes(ORIGIN + '/indexnow.txt', 1024).strip() != key.encode():
         raise ValueError('The deployed public ownership proof differs from this build')
-    if fetch_bytes(ORIGIN + '/sitemap.xml', 2_000_000).strip() != (output / 'sitemap.xml').read_bytes().strip():
-        raise ValueError('The deployed sitemap differs from this build')
+    # The sitemap index and every section sitemap it names.
+    for name in sitemap_files(output, ORIGIN):
+        if fetch_bytes(ORIGIN + '/' + name, 8_000_000).strip() != (output / name).read_bytes().strip():
+            raise ValueError('The deployed sitemap differs from this build: /' + name)
     if fetch_bytes(ORIGIN + '/' + MANIFEST_NAME, 8_000_000) != expected_manifest:
         raise ValueError('The deployed manifest differs from this build; deploy before submitting')
 
@@ -194,11 +198,25 @@ def manifest_delta(manifest, previous, urls):
     }
 
 
+def write_receipt(path, *, manifest_sha256, sitemap_sha256, mode, selected, status):
+    """Record what this run notified, so the next automatic run can diff against this build."""
+    if path is None:
+        return
+    receipt = {'schema_version': 1, 'site': ORIGIN, 'manifest_sha256': manifest_sha256, 'sitemap_sha256': sitemap_sha256,
+               'mode': mode, 'submitted_urls': len(selected), 'indexnow_status': status,
+               'recorded_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'source_checkout': source_revision()}
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    Path(path).write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--submit', action='store_true', help='Verify deployed ownership, manifest and canonical HTML, then submit their URLs')
     parser.add_argument('--previous-manifest', type=Path, help='Optional reviewed previous build-manifest JSON')
     parser.add_argument('--previous-manifest-sha256', help='Expected SHA-256 from the reviewed baseline receipt')
+    parser.add_argument('--dist', type=Path, default=ROOT / 'dist', help='Built site to verify and notify (default: dist/)')
+    parser.add_argument('--automatic', action='store_true', help='Unattended run: non-HTML changes alone notify nothing and succeed')
+    parser.add_argument('--receipt', type=Path, help='Write a JSON receipt of a completed submission or of an empty delta')
     args = parser.parse_args()
     if (args.previous_manifest is None) != (args.previous_manifest_sha256 is None):
         parser.error('--previous-manifest and --previous-manifest-sha256 must be supplied together')
@@ -206,12 +224,12 @@ def main():
     key = (ROOT / 'site/indexnow.txt').read_text(encoding='utf-8').strip()
     if not re.fullmatch(r'[a-f0-9]{32}', key):
         raise ValueError('Invalid public IndexNow verification key')
-    output = ROOT / 'dist'
+    output = args.dist
     manifest = read_build_manifest(output)
     manifest_sha256 = hashlib.sha256((output / MANIFEST_NAME).read_bytes()).hexdigest()
     manifest_id = manifest_sha256[:16]
-    sitemap = (output / 'sitemap.xml').read_bytes()
-    urls = [element.text for element in ET.fromstring(sitemap).findall('{*}url/{*}loc')]
+    sitemap = b''.join((output / name).read_bytes() for name in sitemap_files(output, ORIGIN))
+    urls = sitemap_urls(output, ORIGIN)
     if not urls or len(urls) > 10000 or len(urls) != len(set(urls)):
         raise ValueError('Sitemap URL count or uniqueness is invalid')
     for url in urls:
@@ -234,9 +252,14 @@ def main():
             return 0
         if not selected:
             print('No current canonical HTML changes selected; no notification sent.')
-            if report['non_html_changes_require_review']:
+            if report['non_html_changes_require_review'] and not args.automatic:
                 print('Non-HTML changes require review of affected pages; full-sitemap mode remains available.')
                 return 1
+            if args.receipt is not None:
+                # A receipt makes this build the next baseline, so the deployment must be this build.
+                verify_live_build(output, urls, manifest, key)
+                write_receipt(args.receipt, manifest_sha256=manifest_sha256, sitemap_sha256=hashlib.sha256(sitemap).hexdigest(),
+                              mode='delta', selected=[], status=None)
             return 0
     elif not args.submit:
         print(f'Dry run: {len(urls)} canonical URLs; manifest {manifest_id}. Use --submit after deployment.')
@@ -258,6 +281,8 @@ def main():
         print(f'IndexNow returned HTTP {status}; submission was not confirmed.')
         return 1
     print(f'IndexNow HTTP {status}: {len(selected)} URLs submitted for manifest {manifest_id}. ' + ('Key validation pending. ' if status == 202 else '') + 'Receipt does not confirm indexing.')
+    write_receipt(args.receipt, manifest_sha256=manifest_sha256, sitemap_sha256=hashlib.sha256(sitemap).hexdigest(),
+                  mode='delta' if args.previous_manifest is not None else 'full', selected=selected, status=status)
     return 0
 
 

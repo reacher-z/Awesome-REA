@@ -2,65 +2,72 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/dynamic-analysis/) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**145 repositories** · 2026-10-20 UTC
+**152 repositories** · 2026-10-20 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
+These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [x64dbg/x64dbg](https://github.com/x64dbg/x64dbg) — An open-source user mode debugger for Windows. Optimized for reverse engineering and malware analysis. **[49,888 stars]** · Curated: [x64dbg](https://awesomerea.org/resources/x64dbg/)
 - [frida/frida](https://github.com/frida/frida) — Main repo for hosting release binaries **[22,317 stars]** · Curated: [Frida](https://awesomerea.org/resources/frida/)
 - [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) — Exploit Development and Reverse Engineering with GDB &amp; LLDB Made Easy **[11,064 stars]** · Curated: [pwndbg](https://awesomerea.org/resources/pwndbg/)
 - [rr-debugger/rr](https://github.com/rr-debugger/rr) — Record and Replay Framework **[10,707 stars]** · Curated: [rr](https://awesomerea.org/resources/rr/)
 - [hugsy/gef](https://github.com/hugsy/gef) — GEF (GDB Enhanced Features) - a modern experience for GDB with advanced debugging capabilities for exploit devs &amp; reverse engineers on Linux **[8,399 stars]** · Curated: [GEF (GDB Enhanced Features)](https://awesomerea.org/resources/gef/)
+- [AloneMonkey/MonkeyDev](https://github.com/AloneMonkey/MonkeyDev) — Patch iOS apps without jailbreaking using CaptainHook Tweak, Logos Tweak, and command-line tools. **[6,800 stars]** · Curated: [MonkeyDev](https://awesomerea.org/resources/monkeydev/)
 - [qilingframework/qiling](https://github.com/qilingframework/qiling) — A True Instrumentable Binary Emulation Framework **[6,139 stars]** · Curated: [Qiling](https://awesomerea.org/resources/qiling/)
 - [HyperDbg/HyperDbg](https://github.com/HyperDbg/HyperDbg) — State-of-the-art native debugging tools **[4,133 stars]** · Curated: [HyperDbg](https://awesomerea.org/resources/hyperdbg/)
+- [kevoreilly/CAPEv2](https://github.com/kevoreilly/CAPEv2) — Malware Configuration And Payload Extraction **[3,570 stars]** · Curated: [CAPE Sandbox (CAPEv2)](https://awesomerea.org/resources/capev2/)
 - [DynamoRIO/dynamorio](https://github.com/DynamoRIO/dynamorio) — Dynamic Instrumentation Tool Platform **[3,181 stars]** · Curated: [DynamoRIO](https://awesomerea.org/resources/dynamorio/)
 - [korcankaraokcu/PINCE](https://github.com/korcankaraokcu/PINCE) — Reverse engineering tool for Linux **[3,124 stars]** · Curated: [PINCE](https://awesomerea.org/resources/pince/)
+- [m0bilesecurity/RMS-Runtime-Mobile-Security](https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security) — Runtime Mobile Security (RMS) 📱🔥 - is a powerful web interface that helps you to manipulate Android and iOS Apps at Runtime **[3,111 stars]** · Curated: [Runtime Mobile Security (RMS)](https://awesomerea.org/resources/rms-runtime-mobile-security/)
 - [duty1g/x64dbg-mcp-server](https://github.com/duty1g/x64dbg-mcp-server) — x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugger's full functionality over HTTP. Connect any MCP-compatible AI assistant and control x64dbg programmatically: set breakpoints, step through code, read memory, dump registers, and more. Built with Zig — zero dependencies, single-binary output, cros **[2,514 stars]** · Curated: [x64dbg-MCP Server](https://awesomerea.org/resources/x64dbg-mcp-server/)
 - [bootleg/ret-sync](https://github.com/bootleg/ret-sync) — ret-sync is a set of plugins that helps to synchronize a debugging session (WinDbg/GDB/LLDB/OllyDbg2/x64dbg) with IDA/Ghidra/Binary Ninja disassemblers. **[2,401 stars]** · Curated: [ret-sync](https://awesomerea.org/resources/ret-sync/)
 - [QBDI/QBDI](https://github.com/QBDI/QBDI) — A Dynamic Binary Instrumentation framework based on LLVM. **[1,828 stars]** · Curated: [QBDI](https://awesomerea.org/resources/qbdi/)
+- [hasherezade/tiny\_tracer](https://github.com/hasherezade/tiny_tracer) — A Pin Tool for tracing API calls etc **[1,711 stars]** · Curated: [Tiny Tracer](https://awesomerea.org/resources/tiny-tracer/)
+- [0xdea/frida-scripts](https://github.com/0xdea/frida-scripts) — A collection of my Frida instrumentation scripts to reverse engineer mobile apps and more. **[1,672 stars]** · Curated: [frida-scripts (0xdea)](https://awesomerea.org/resources/raptor-frida-scripts/)
+- [illera88/Ponce](https://github.com/illera88/Ponce) — IDA 2016 plugin contest winner! Symbolic Execution just one-click away! **[1,635 stars]** · Curated: [Ponce](https://awesomerea.org/resources/ponce/)
 - [nowsecure/r2frida](https://github.com/nowsecure/r2frida) — Radare2 and Frida better together. **[1,450 stars]** · Curated: [r2frida](https://awesomerea.org/resources/r2frida/)
 - [darbra/sperm](https://github.com/darbra/sperm) — A collection of excellent reverse engineering articles I have read, well worth a look. **[1,422 stars]**
+- [CERT-Polska/drakvuf-sandbox](https://github.com/CERT-Polska/drakvuf-sandbox) — DRAKVUF Sandbox - automated hypervisor-level malware analysis system **[1,355 stars]** · Curated: [DRAKVUF Sandbox](https://awesomerea.org/resources/drakvuf-sandbox/)
 - [ansjdnakjdnajkd/iOS](https://github.com/ansjdnakjdnajkd/iOS) — Most usable tools for iOS penetration testing **[1,327 stars]**
+- [iGio90/Dwarf](https://github.com/iGio90/Dwarf) — Full featured multi arch/os debugger built on top of PyQt5 and frida **[1,321 stars]** · Curated: [Dwarf](https://awesomerea.org/resources/dwarf-debugger/)
 - [LING71671/open-reverselab](https://github.com/LING71671/open-reverselab) — Open-source AI reverse-engineering agent platform and MCP server for Ghidra, Frida, x64dbg and Rizin — automated PE/APK/binary analysis, CTF and malware research, with 100+ MCP tools and a 194-article runnable knowledge base. **[1,265 stars]**
 - [yazgx97/frida-ios-hook](https://github.com/yazgx97/frida-ios-hook) — A tool that helps you easy trace classes, functions, and modify the return values of methods on iOS platform **[1,191 stars]**
-- [reversenseorg/dexcalibur](https://github.com/reversenseorg/dexcalibur) — Reversense (Dexcalibur2) is a fully rewriting and rethinking of Dexcalibur. Reversense is a binary intelligence platform that automates the reverse engineering of mobile and embedded applications. **[1,180 stars]**
-- [GJDuck/e9patch](https://github.com/GJDuck/e9patch) — A powerful static binary rewriting tool **[1,156 stars]** · Curated: [E9Patch](https://awesomerea.org/resources/e9patch/)
+- [GJDuck/e9patch](https://github.com/GJDuck/e9patch) — A powerful static binary rewriting tool **[1,156 stars]** · Paper: [Binary Rewriting without Control Flow Recovery](https://awesomerea.org/papers/paper-e9patch/) · Curated: [E9Patch](https://awesomerea.org/resources/e9patch/)
 - [QQBackup/qq-win-db-key](https://github.com/QQBackup/qq-win-db-key) — Cross-platform decryption of QQ chat databases **[1,103 stars]**
 - [frida/frida-gum](https://github.com/frida/frida-gum) — Cross-platform instrumentation and introspection library written in C **[1,032 stars]**
-- [darbra/awesome-ai-reverse](https://github.com/darbra/awesome-ai-reverse) — Go all-in on AI-powered reverse engineering. **[965 stars]**
 - [JLospinoso/gargoyle](https://github.com/JLospinoso/gargoyle) — Historical Windows temporal memory-state research artifact for studying time-bound memory observations, validation limits, and defensive visibility. **[916 stars]**
 - [dyninst/dyninst](https://github.com/dyninst/dyninst) — DyninstAPI: Tools for binary instrumentation, analysis, and modification. **[838 stars]** · Curated: [Dyninst](https://awesomerea.org/resources/dyninst/)
 - [Simp1er/MobileSec](https://github.com/Simp1er/MobileSec) — Notes on interesting things I encounter while learning Android reverse engineering. **[809 stars]**
 - [frida/frida-core](https://github.com/frida/frida-core) — Frida core library **[782 stars]**
+- [danigargu/deREferencing](https://github.com/danigargu/deREferencing) — IDA Pro plugin that implements more user-friendly register and stack views **[775 stars]** · Curated: [deREferencing](https://awesomerea.org/resources/dereferencing/)
 - [robalb/x86-64-playground](https://github.com/robalb/x86-64-playground) — An online assembly editor, emulator and debugger for the x86-64 architecture **[758 stars]**
 - [ChiChou/vscode-frida](https://github.com/ChiChou/vscode-frida) — Unofficial frida extension for VSCode **[592 stars]** · Curated: [Frida Workbench for VSCode](https://awesomerea.org/resources/vscode-frida/)
 - [a1ext/labeless](https://github.com/a1ext/labeless) — Labeless is a multipurpose IDA Pro plugin system for labels/comments synchronization with a debugger backend, with complex memory dumping and interactive Python scripting capabilities. **[587 stars]**
 - [wechaty/puppet-xp](https://github.com/wechaty/puppet-xp) — Wechaty Puppet WeChat Windows Protocol **[551 stars]**
+- [HynekPetrak/malware-jail](https://github.com/HynekPetrak/malware-jail) — Sandbox for semi-automatic Javascript malware analysis, deobfuscation and payload extraction. Written for Node.js **[480 stars]** · Curated: [malware-jail](https://awesomerea.org/resources/malware-jail/)
 - [vah13/extractTVpasswords](https://github.com/vah13/extractTVpasswords) — tool to extract passwords from TeamViewer memory using Frida **[465 stars]**
-- [ab-rizk/xpcspy](https://github.com/ab-rizk/xpcspy) — Bidirectional XPC message interception and more. Powered by Frida **[452 stars]**
+- [ab-rizk/xpcspy](https://github.com/ab-rizk/xpcspy) — Bidirectional XPC message interception and more. Powered by Frida **[452 stars]** · Curated: [xpcspy](https://awesomerea.org/resources/xpcspy/)
 - [Exo1i/MagiskHluda](https://github.com/Exo1i/MagiskHluda) — Run a more undetectable frida server on boot using magisk 🔐✅ **[433 stars]**
 - [ivan-sincek/ios-penetration-testing-cheat-sheet](https://github.com/ivan-sincek/ios-penetration-testing-cheat-sheet) — Work in progress... **[425 stars]**
 - [hanbinglengyue/FridaManager](https://github.com/hanbinglengyue/FridaManager) — A persistence solution for Frida **[420 stars]**
 - [zeropointdynamics/zelos](https://github.com/zeropointdynamics/zelos) — A comprehensive binary emulation and instrumentation platform. **[420 stars]**
 - [paradiseduo/IPAPatch](https://github.com/paradiseduo/IPAPatch) — Patch iOS Apps, The Easy Way, Without Jailbreak. **[412 stars]**
-- [beehive-lab/mambo](https://github.com/beehive-lab/mambo) — A low-overhead dynamic binary instrumentation and modification tool for ARM (both AArch32 and AArch64 support) and RISC-V (RV64GC). **[400 stars]**
+- [beehive-lab/mambo](https://github.com/beehive-lab/mambo) — A low-overhead dynamic binary instrumentation and modification tool for ARM (both AArch32 and AArch64 support) and RISC-V (RV64GC). **[400 stars]** · Curated: [MAMBO](https://awesomerea.org/resources/mambo/)
 - [nowsecure/frida-cycript](https://github.com/nowsecure/frida-cycript) — Cycript fork powered by Frida. **[396 stars]**
-- [FrenchYeti/interruptor](https://github.com/FrenchYeti/interruptor) — Human-friendly cross-platform system call tracing and hooking library based on Frida's Stalker **[360 stars]**
+- [FrenchYeti/interruptor](https://github.com/FrenchYeti/interruptor) — Human-friendly cross-platform system call tracing and hooking library based on Frida's Stalker **[360 stars]** · Curated: [Interruptor](https://awesomerea.org/resources/interruptor/)
 - [deathmemory/fridaRegstNtv](https://github.com/deathmemory/fridaRegstNtv) — Use Frida to retrieve functions dynamically registered through JNI RegisterNatives. **[353 stars]**
 - [roger1337/JDBG](https://github.com/roger1337/JDBG) — Java Dynamic Reverse Engineering and Debugging Tool **[331 stars]**
 - [Comsecuris/gdbghidra](https://github.com/Comsecuris/gdbghidra) — gdbghidra - a visual bridge between a GDB session and GHIDRA **[324 stars]**
-- [leonjza/frida-boot](https://github.com/leonjza/frida-boot) — Frida Boot 👢- A binary instrumentation workshop, with Frida, for beginners! **[320 stars]**
+- [leonjza/frida-boot](https://github.com/leonjza/frida-boot) — Frida Boot 👢- A binary instrumentation workshop, with Frida, for beginners! **[320 stars]** · Curated: [Frida Boot: a beginner binary instrumentation workshop](https://awesomerea.org/resources/frida-boot-workshop/)
 - [libdebug/libdebug](https://github.com/libdebug/libdebug) — A Python library to debug binary executables, your own way. **[315 stars]**
-- [ttdennis/fpicker](https://github.com/ttdennis/fpicker) — fpicker is a Frida-based fuzzing suite supporting various modes (including AFL++ in-process fuzzing) **[298 stars]**
+- [ttdennis/fpicker](https://github.com/ttdennis/fpicker) — fpicker is a Frida-based fuzzing suite supporting various modes (including AFL++ in-process fuzzing) **[298 stars]** · Curated: [fpicker](https://awesomerea.org/resources/fpicker/)
 - [iGio90/frick](https://github.com/iGio90/frick) — frick - aka the first debugger built on top of frida **[296 stars]**
 - [patois/IDACyber](https://github.com/patois/IDACyber) — Data Visualization Plugin for IDA Pro **[296 stars]**
 - [andreafioraldi/IDAngr](https://github.com/andreafioraldi/IDAngr) — Use angr in the IDA Pro debugger generating a state from the current debug session **[286 stars]**
 - [raoshaab/Pen-Andro](https://github.com/raoshaab/Pen-Andro) — Script to Automate installtion of Apps ,frida server and moving Burpsuite certificate to root folder **[273 stars]**
 - [aadog/fd-back](https://github.com/aadog/fd-back) — frida runtime (no python required, only a single file),One-click support for ios dump **[250 stars]**
-- [nowsecure/frida-trace](https://github.com/nowsecure/frida-trace) — Trace APIs declaratively through Frida. **[237 stars]**
+- [nowsecure/frida-trace](https://github.com/nowsecure/frida-trace) — Trace APIs declaratively through Frida. **[237 stars]** · Curated: [frida-trace (NowSecure library)](https://awesomerea.org/resources/nowsecure-frida-trace/)
 - [std-microblock/fripack](https://github.com/std-microblock/fripack) — Package your Frida script into an executable. **[233 stars]**
 - [dmaivel/ntoseye](https://github.com/dmaivel/ntoseye) — WinDbg-like kernel debugger for Windows, from Linux and macOS **[218 stars]**
-- [Warxim/deluder](https://github.com/Warxim/deluder) — Deluder is a tool for intercepting traffic of proxy unaware applications. Currently, Deluder supports OpenSSL, GnuTLS, SChannel, WinSock and Linux Sockets out of the box. ⚡ **[215 stars]**
 - [enovella/r2frida-wiki](https://github.com/enovella/r2frida-wiki) — This repo aims at providing practical examples on how to use r2frida **[203 stars]**
 - [index-login/MobileRE-Skill](https://github.com/index-login/MobileRE-Skill) — An AI-agent skill system for mobile reverse engineering: Frida hooks, one-click unpacking, anti-detection bypasses, in-memory DEX dumps, and symbol/structure recovery through Ghidra MCP. **[185 stars]**
 - [as0ler/r2flutch](https://github.com/as0ler/r2flutch) — Tool to decrypt iOS apps using r2frida **[184 stars]**
@@ -68,7 +75,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [antojoseph/diff-gui](https://github.com/antojoseph/diff-gui) — GUI for Frida -Scripts **[182 stars]**
 - [kaifcodec/freefire-like-and-guest-api](https://github.com/kaifcodec/freefire-like-and-guest-api) — Automates creating and capturing Free Fire guest accounts via Frida, formats and manages them, obtains JWTs, and sends encrypted like requests to a target UID with concurrency controls and one-like-per-guest-per-target guarantees. **[175 stars]**
 - [ngwg/ceasta](https://github.com/ngwg/ceasta) — disassembler, decompiler and debugger in one, with a built-in mcp server: point an ai at a binary and it can debug it, not just read it. ida-style listing, pseudocode (f5), x64dbg-style debugger (windows and linux), binary diff, lua plugins. reads pe, elf and mach-o. runs on windows, linux and macos. **[169 stars]**
-- [ReverseApple/gxpc](https://github.com/ReverseApple/gxpc) — Sniff XPC communication using Frida and Go **[167 stars]**
+- [ReverseApple/gxpc](https://github.com/ReverseApple/gxpc) — Sniff XPC communication using Frida and Go **[167 stars]** · Curated: [gxpc](https://awesomerea.org/resources/gxpc/)
 - [ricardoquesada/regenerator2000](https://github.com/ricardoquesada/regenerator2000) — An interactive disassembler for the CPU 6502, focused on Commodore 8-bit computers. Features a TUI with modern features like x-ref, undo/redo, flow arrows, keyboard-driven, MCP server for auto analysis, VICE debugger and more! **[164 stars]**
 - [vadim-a-yegorov/iOS-Internals-and-Security-Testing](https://github.com/vadim-a-yegorov/iOS-Internals-and-Security-Testing) — iOS is Apple's proprietary operating system that runs on the iPhone, iPod Touch and iPad. A lot of components are specific to iOS. Here are key features of the iOS hardware and software security architecture and guide how to test your applications. **[154 stars]**
 - [nowsecure/airspy](https://github.com/nowsecure/airspy) — AirSpy - Frida-based tool for exploring and tracking the evolution of Apple's AirDrop protocol implementation on i/macOS, from the server's perspective. Released during BH USA 2019 Training https<span>:</span>//www<span>.</span>nowsecure.com/event/advanced-frida-and-radare-a-hackers-delight/ **[152 stars]**
@@ -81,6 +88,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Pilfer/ultimate-guitar-scraper](https://github.com/Pilfer/ultimate-guitar-scraper) — A simple scraper for Ultimate-Guitar.com's mobile API, written in Go. **[132 stars]**
 - [diommsantos/Gx64Sync](https://github.com/diommsantos/Gx64Sync) — A set of plugins for Ghidra and x64Dbg synchronization. A faster, more flexible ret-sync. **[131 stars]**
 - [vibheksoni/dma-spoofer](https://github.com/vibheksoni/dma-spoofer) — First open-source DMA-based HWID spoofer written in Rust. Spoof hardware IDs via direct memory access. **[130 stars]**
+- [DerekSelander/mobdevim](https://github.com/DerekSelander/mobdevim) — Command line utility that interacts with plugged in iOS devices. Uses Apple's MobileDevice framework **[129 stars]** · Curated: [mobdevim](https://awesomerea.org/resources/mobdevim/)
 - [lautarovculic/frida-ipa-extract](https://github.com/lautarovculic/frida-ipa-extract) — Robust Frida-based tool to dump decrypted iOS apps as .ipa from a jailbroken device supports App Store, sideloaded and system. **[129 stars]**
 - [NSEcho/furlzz](https://github.com/NSEcho/furlzz) — Fuzz iOS URL schemes **[129 stars]**
 - [iamtorsten/SherlockElf](https://github.com/iamtorsten/SherlockElf) — SherlockElf is a powerful tool designed for both static and dynamic analysis of Android ELF binaries and dynamic iOS Macho-O binaries (experimental). **[119 stars]**
@@ -91,7 +99,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [miyagaw61/exgdb](https://github.com/miyagaw61/exgdb) — Extension for GDB **[107 stars]**
 - [CYRUS-STUDIO/frida\_stalker](https://github.com/CYRUS-STUDIO/frida_stalker) — Using Frida Stalker to Bypass OLLVM and Restore (Function Call Analysis, Parameter Analysis, Stack Trace Printing, Instruction &amp; Registers Trace). **[103 stars]**
 - [axhlzy/ARTHookScripts](https://github.com/axhlzy/ARTHookScripts) — frida runtime resolves smali **[94 stars]**
-- [seemoo-lab/apple-continuity-tools](https://github.com/seemoo-lab/apple-continuity-tools) — Reverse engineering toolkit for Apple's wireless ecosystem **[90 stars]**
 - [rubaljain/frida-jb-bypass](https://github.com/rubaljain/frida-jb-bypass) — Frida script to bypass the iOS application Jailbreak Detection **[88 stars]**
 - [freehuntx/frida-inject](https://github.com/freehuntx/frida-inject) — This module allows you to easily inject javascript using frida and frida-load. **[81 stars]**
 - [icloudza/algokiller-plugin](https://github.com/icloudza/algokiller-plugin) — ARM64 trace evidence analysis &amp; cipher algorithm recovery — Claude Desktop plugin with skills + local MCP server driving the native ak\_search engine over GB-scale trace files **[79 stars]**

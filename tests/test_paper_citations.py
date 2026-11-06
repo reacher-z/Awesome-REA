@@ -7,7 +7,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_paper_pages import bibtex_text
+from build_paper_pages import AUTHORS_OMITTED, bibtex_text
 from validate import public_https_error
 from validate_papers import validate_papers
 
@@ -183,8 +183,36 @@ class ReviewedContainerRecordTests(unittest.TestCase):
                     'paper-webcode2m',
                     'paper-xfl',
                     'paper-wadec',
+                    'paper-latcoder',
                     'paper-symlm', 'paper-codeinverter-suite', 'paper-notdec', 'paper-binjudge',
-                    'paper-requirements-generation-viability', 'paper-khost', 'paper-transre', 'paper-satbleed'}
+                    'paper-requirements-generation-viability', 'paper-khost', 'paper-transre', 'paper-satbleed',
+                    'paper-clematis',
+                    'paper-wasm-decompiler-study',
+                    'paper-binkit',
+                    'paper-btd',
+                    'paper-rico',
+                    'paper-llm-binary-understanding',
+                    'paper-cross-inlining-bfsd',
+                    'paper-binary-function-similarity',
+                    'paper-poe-world',
+                    'paper-swifthand',
+                    'paper-waffle',
+                    'paper-d-helix',
+                    'paper-assemblage',
+                    'paper-nes-jump-mechanics',
+                    'paper-sketch2code',
+                    'paper-decomperson',
+                    'paper-protocolgpt',
+                    'paper-elipmoc',
+                    'paper-mappyland',
+                    'paper-dice',
+                    'paper-deepdi',
+                    'paper-dikeue',
+                    'paper-librecan',
+                    'paper-uemu',
+                    'paper-semu',
+                    'paper-conware',
+                    'paper-decompiler-fidelity-taxonomy'}
         self.assertEqual({identifier for identifier, record in PAPERS.items() if 'citation' in record}, expected)
         for identifier in sorted(PAPERS.keys() - expected):
             # Records without verified container metadata keep the short venue label.
@@ -201,8 +229,10 @@ class ArxivLocatorTests(unittest.TestCase):
             with self.subTest(paper=identifier):
                 entry = fields(bibtex_text(record))
                 self.assertEqual(entry['howpublished'], '{arXiv:' + record['arxiv_id'] + '}')
+                # A record without its author list adds the pointer to the paper to the same note.
+                note = 'Preprint' + ('. ' + AUTHORS_OMITTED[0] if record.get('authors_omitted') else '')
                 self.assertEqual((entry['note'], entry['eprint'], entry['archivePrefix']),
-                                 ('{Preprint}', '{' + record['arxiv_id'] + '}', '{arXiv}'))
+                                 ('{' + note + '}', '{' + record['arxiv_id'] + '}', '{arXiv}'))
 
     def test_accepted_papers_read_as_accepted_without_review_wording(self):
         entry = bibtex_text(paper('conference-accepted', venue='NeurIPS 2026', publication_date=None, date_precision='year'))

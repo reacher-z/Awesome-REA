@@ -2,9 +2,9 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/firmware/) · [简体中文](firmware.zh-CN.md)
 
-**222 repositories** · 2026-10-20 UTC
+**228 repositories** · 2026-10-20 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
+These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [ReFirmLabs/binwalk](https://github.com/ReFirmLabs/binwalk) — Firmware Analysis Tool **[14,491 stars]** · Curated: [Binwalk](https://awesomerea.org/resources/binwalk/)
 - [LongSoft/UEFITool](https://github.com/LongSoft/UEFITool) — UEFI firmware image viewer and editor **[5,752 stars]** · Curated: [UEFITool](https://awesomerea.org/resources/uefitool/)
@@ -14,6 +14,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [firmadyne/firmadyne](https://github.com/firmadyne/firmadyne) — Platform for emulation and dynamic analysis of Linux-based firmware **[2,114 stars]** · Paper: [Towards Automated Dynamic Analysis for Linux-based Embedded Firmware](https://awesomerea.org/papers/paper-firmadyne/)
 - [redballoonsecurity/ofrak](https://github.com/redballoonsecurity/ofrak) — OFRAK: unpack, modify, and repack binaries. **[2,080 stars]** · Curated: [OFRAK](https://awesomerea.org/resources/ofrak/)
 - [marin-m/vmlinux-to-elf](https://github.com/marin-m/vmlinux-to-elf) — A tool to recover a fully analyzable .ELF from a raw kernel, through extracting the kernel symbol table (kallsyms) **[1,832 stars]** · Curated: [vmlinux-to-elf](https://awesomerea.org/resources/vmlinux-to-elf/)
+- [attify/firmware-analysis-toolkit](https://github.com/attify/firmware-analysis-toolkit) — Firmware security research platform combining binary analysis, taint tracing, and emulation across IoT, edge AI, mobile devices, and robotics. **[1,615 stars]** · Curated: [Firmware Analysis Toolkit (FAT)](https://awesomerea.org/resources/attify-firmware-analysis-toolkit/)
 - [fkie-cad/FACT\_core](https://github.com/fkie-cad/FACT_core) — Firmware Analysis and Comparison Tool **[1,468 stars]** · Curated: [Firmware Analysis and Comparison Tool (FACT)](https://awesomerea.org/resources/fact-core/)
 - [platomav/MEAnalyzer](https://github.com/platomav/MEAnalyzer) — Intel Engine &amp; Graphics Firmware Analysis Tool **[1,335 stars]** · Curated: [ME Analyzer](https://awesomerea.org/resources/me-analyzer/)
 - [REhints/efiXplorer](https://github.com/REhints/efiXplorer) — IDA plugin and loader for UEFI firmware analysis and reverse engineering automation **[1,138 stars]** · Curated: [efiXplorer](https://awesomerea.org/resources/efixplorer/)
@@ -23,36 +24,41 @@ These are automatically discovered projects, not individually curated or tested 
 - [FirmWire/FirmWire](https://github.com/FirmWire/FirmWire) — FirmWire is a full-system baseband firmware emulation platform for fuzzing, debugging, and root-cause analysis of smartphone baseband firmwares **[891 stars]**
 - [sigrokproject/pulseview](https://github.com/sigrokproject/pulseview) — Read-only mirror of the official repo at git<span>:</span>//sigrok.org/pulseview. Pull requests welcome. Please file bugreports at sigrok.org/bugzilla. **[805 stars]** · Curated: [PulseView](https://awesomerea.org/resources/pulseview/)
 - [airbus-seclab/cpu\_rec](https://github.com/airbus-seclab/cpu_rec) — Recognize cpu instructions in an arbitrary binary file **[757 stars]** · Curated: [cpu\_rec](https://awesomerea.org/resources/cpu-rec/)
+- [maddiestone/IDAPythonEmbeddedToolkit](https://github.com/maddiestone/IDAPythonEmbeddedToolkit) — IDA Python Embedded Toolkit -- IDAPython scripts for automating analysis of firmware of embedded devices **[690 stars]** · Curated: [IDAPython Embedded Toolkit](https://awesomerea.org/resources/idapython-embedded-toolkit/)
 - [quarkslab/binbloom](https://github.com/quarkslab/binbloom) — Raw binary firmware analysis software **[586 stars]** · Curated: [binbloom](https://awesomerea.org/resources/binbloom/)
 - [avatartwo/avatar2](https://github.com/avatartwo/avatar2) — Python core of avatar² **[579 stars]** · Curated: [avatar²](https://awesomerea.org/resources/avatar2/)
+- [cruise-automation/fwanalyzer](https://github.com/cruise-automation/fwanalyzer) — a tool to analyze filesystem images for security **[516 stars]** · Curated: [FwAnalyzer](https://awesomerea.org/resources/fwanalyzer/)
 - [al3xtjames/ghidra-firmware-utils](https://github.com/al3xtjames/ghidra-firmware-utils) — Ghidra utilities for analyzing PC firmware **[506 stars]** · Curated: [Ghidra Firmware Utilities](https://awesomerea.org/resources/ghidra-firmware-utils/)
 - [scriptingxss/owasp-fstm](https://github.com/scriptingxss/owasp-fstm) — The Firmware Security Testing Methodology (FSTM) is composed of nine stages tailored to enable security researchers, software developers, consultants, and Information Security professionals with conducting firmware security assessments. **[502 stars]**
 - [ChrisTheCoolHut/Firmware\_Slap](https://github.com/ChrisTheCoolHut/Firmware_Slap) — Discovering vulnerabilities in firmware through concolic analysis and function clustering. **[476 stars]**
 - [nmatt0/moria](https://github.com/nmatt0/moria) — IoT firmware identification and extraction **[418 stars]**
-- [e-m-b-a/embark](https://github.com/e-m-b-a/embark) — EMBArk - The firmware security scanning environment **[395 stars]**
-- [sgayou/rbasefind](https://github.com/sgayou/rbasefind) — A firmware base address search tool. **[375 stars]**
-- [nmatt0/mithril](https://github.com/nmatt0/mithril) — IoT static scanner for secrets, SBOM, CVEs and more. **[363 stars]**
-- [binarly-io/fwhunt-scan](https://github.com/binarly-io/fwhunt-scan) — Tools for analyzing UEFI firmware and checking UEFI modules with FwHunt rules **[246 stars]**
+- [DSecurity/efiSeek](https://github.com/DSecurity/efiSeek) — Ghidra analyzer for UEFI firmware. **[408 stars]** · Curated: [efiSeek](https://awesomerea.org/resources/efiseek/)
+- [e-m-b-a/embark](https://github.com/e-m-b-a/embark) — EMBArk - The firmware security scanning environment **[395 stars]** · Curated: [EMBArk](https://awesomerea.org/resources/embark/)
+- [sgayou/rbasefind](https://github.com/sgayou/rbasefind) — A firmware base address search tool. **[375 stars]** · Curated: [rbasefind](https://awesomerea.org/resources/rbasefind/)
+- [nmatt0/mithril](https://github.com/nmatt0/mithril) — IoT static scanner for secrets, SBOM, CVEs and more. **[363 stars]** · Curated: [mithril](https://awesomerea.org/resources/mithril-iot-scanner/)
+- [binarly-io/fwhunt-scan](https://github.com/binarly-io/fwhunt-scan) — Tools for analyzing UEFI firmware and checking UEFI modules with FwHunt rules **[246 stars]** · Curated: [FwHunt Community Scanner (fwhunt-scan)](https://awesomerea.org/resources/fwhunt-scan/)
 - [chrivers/samsung-firmware-magic](https://github.com/chrivers/samsung-firmware-magic) — Tool for decrypting the firmware files for Samsung SSDs **[238 stars]**
 - [D3CRYPT-1/Infiltra-Firmware](https://github.com/D3CRYPT-1/Infiltra-Firmware) — Infiltra Firmware is an open-source firmware for wireless security testing, network analysis, and hardware hacking. FLASH IT BELOW USING OUR WEB FLAHSER! **[205 stars]**
 - [0xricksanchez/dlink-decrypt](https://github.com/0xricksanchez/dlink-decrypt) — D-Link firmware decryption PoC **[201 stars]**
-- [quarkslab/pyrrha](https://github.com/quarkslab/pyrrha) — A tool for firmware cartography **[172 stars]**
+- [quarkslab/pyrrha](https://github.com/quarkslab/pyrrha) — A tool for firmware cartography **[172 stars]** · Curated: [Pyrrha](https://awesomerea.org/resources/pyrrha/)
 - [dslsdzc/rev-skills](https://github.com/dslsdzc/rev-skills) — 122 AI skills for reverse engineering: malware analysis, software reversing, firmware and embedded systems, protocol reversing, mobile apps, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensics and intelligence, and CTFs. **[162 stars]**
-- [MCUSec/uEmu](https://github.com/MCUSec/uEmu) — A Universal MCU Firmware Emulator for Dynamic Analysis without Any Hardware Dependence. **[152 stars]**
+- [MCUSec/uEmu](https://github.com/MCUSec/uEmu) — A Universal MCU Firmware Emulator for Dynamic Analysis without Any Hardware Dependence. **[152 stars]** · Paper: [Automatic Firmware Emulation through Invalidity-guided Knowledge Inference](https://awesomerea.org/papers/paper-uemu/)
 - [SamuelTulach/PatchBoot](https://github.com/SamuelTulach/PatchBoot) — Guide for patching AMI Aptio V UEFI firmware to circumvent Secure Boot checks **[144 stars]**
-- [patois/RETracker](https://github.com/patois/RETracker) — Reverse Engineering Framework for the Polyend Tracker **[136 stars]**
+- [patois/RETracker](https://github.com/patois/RETracker) — Reverse Engineering Framework for the Polyend Tracker **[136 stars]** · Curated: [RETracker](https://awesomerea.org/resources/retracker/)
 - [DavidClawson/OpenScope-2C53T](https://github.com/DavidClawson/OpenScope-2C53T) — Open-source reverse engineering and firmware development for the FNIRSI 2C53T oscilloscope/multimeter/signal generator **[119 stars]**
+- [Accenture/FirmLoader](https://github.com/Accenture/FirmLoader) — No description supplied by the upstream repository. **[109 stars]** · Curated: [FirmLoader](https://awesomerea.org/resources/firmloader/)
 - [djr-747/nokia-dct3-emulator](https://github.com/djr-747/nokia-dct3-emulator) — Open-source emulator + analysis toolkit for Nokia DCT3 phones (3310/3410/5210/8210/8250/8850…). Boots real firmware in the browser (WASM) and a native SDL GUI. Bring-your-own firmware — none included. GPL-2. **[92 stars]**
 - [nmatt0/firmwaretools](https://github.com/nmatt0/firmwaretools) — a set of scripts and tools for various firmware analysis tasks **[90 stars]**
-- [matiaspl/LinkPi-ENCx](https://github.com/matiaspl/LinkPi-ENCx) — Reverse engineering and unofficial documentation of LinkPi ENC series (ENC1/ENC5/ENC9) and TBS 2603SE video encoders based on the F3520D platform — hardware analysis, firmware internals, streaming fixes, and hidden features. **[86 stars]**
-- [onehouwong/Firmware-Analysis-Papers](https://github.com/onehouwong/Firmware-Analysis-Papers) — Recent security papers on firmware analysis **[85 stars]**
+- [alexander-pick/shannon\_modem\_loader](https://github.com/alexander-pick/shannon_modem_loader) — Exynos Modem / Shannon baseband firmware loader for IDA Pro 8.x/9.x **[87 stars]** · Curated: [Shannon Modem Loader for IDA Pro](https://awesomerea.org/resources/shannon-modem-loader/)
+- [matiaspl/LinkPi-ENCx](https://github.com/matiaspl/LinkPi-ENCx) — Reverse engineering and unofficial documentation of LinkPi ENC series (ENC1/ENC5/ENC9) and TBS 2603SE video encoders based on the F3520D platform — hardware analysis, firmware internals, streaming fixes, and hidden features. **[86 stars]** · Curated: [Link Pi ENCx encoders (unofficial documentation)](https://awesomerea.org/resources/linkpi-encx-unofficial-docs/)
 - [Cr4sh/smram\_parse](https://github.com/Cr4sh/smram_parse) — System Management RAM analysis tool **[83 stars]**
+- [cn0xroot/IFDA](https://github.com/cn0xroot/IFDA) — IoT Firmware Deep Analysis: Automated reverse engineering and vulnerability discovery for IoT firmware binaries. **[70 stars]** · Curated: [IFDA (IoT Firmware Deep Analysis)](https://awesomerea.org/resources/ifda-iot-firmware-deep-analysis/)
 - [fkie-cad/LuckyCAT](https://github.com/fkie-cad/LuckyCAT) — A distributed fuzzing management framework **[70 stars]**
-- [RiS3-Lab/DICE-DMA-Emulation](https://github.com/RiS3-Lab/DICE-DMA-Emulation) — DICE: Automatic Emulation of DMA Input Channels for Dynamic Firmware Analysis **[67 stars]**
+- [RiS3-Lab/DICE-DMA-Emulation](https://github.com/RiS3-Lab/DICE-DMA-Emulation) — DICE: Automatic Emulation of DMA Input Channels for Dynamic Firmware Analysis **[67 stars]** · Paper: [DICE: Automatic Emulation of DMA Input Channels for Dynamic Firmware Analysis](https://awesomerea.org/papers/paper-dice/)
 - [C00kie-/IoT-workshop-materials](https://github.com/C00kie-/IoT-workshop-materials) — Presented hardware reverse engineering workshops since 2019 **[65 stars]**
 - [jowinjohnchemban/winbinwalk](https://github.com/jowinjohnchemban/winbinwalk) — binwalk for Windows **[60 stars]**
-- [soyersoyer/basefind2](https://github.com/soyersoyer/basefind2) — A faster firmware base address scanner. **[60 stars]**
-- [8051Enthusiast/allyourbase](https://github.com/8051Enthusiast/allyourbase) — Finds the base address of a firmware by comparing string addresses with target pointer addresses **[57 stars]**
+- [soyersoyer/basefind2](https://github.com/soyersoyer/basefind2) — A faster firmware base address scanner. **[60 stars]** · Curated: [basefind2](https://awesomerea.org/resources/basefind2/)
+- [8051Enthusiast/allyourbase](https://github.com/8051Enthusiast/allyourbase) — Finds the base address of a firmware by comparing string addresses with target pointer addresses **[57 stars]** · Curated: [allyourbase](https://awesomerea.org/resources/allyourbase/)
 - [xdarklight/mktplinkfw3](https://github.com/xdarklight/mktplinkfw3) — Firmware format analysis for TP-Link firmwares with the version 3 header (0x03000000) **[56 stars]**
 - [mosajjal/fortitool](https://github.com/mosajjal/fortitool) — Fortinet Firmware decryption and analysis tools **[50 stars]**
 - [giek2000/ipod-classic-firmware-research](https://github.com/giek2000/ipod-classic-firmware-research) — iPod RetailOS firmware research — decryption, analysis, and wInd3x Classic support patch **[45 stars]**

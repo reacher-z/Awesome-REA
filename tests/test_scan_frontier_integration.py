@@ -84,6 +84,133 @@ class FrontierRetryTests(unittest.TestCase):
         self.assertEqual({r['id'] for r in frontier.pending_candidates(restored, now=instant + 3600)}, {41, 42})
 
 
+class DiscoveryDeadlineTests(unittest.TestCase):
+    QUERIES = [BASE, 'topic:binary-analysis', 'topic:decompiler']
+
+    def scan(self, deadline, *, target=2):
+        """One pending candidate, three unsearched roots; the clock is the number of searches made."""
+        state = frontier.new_frontier(until='2026-10-18T00:00:00Z', approved_queries=self.QUERIES)
+        request = frontier.next_request(state)
+        frontier.record_response(state, request,
+            {'items': [public_repository(41)], 'total_count': 1, 'incomplete_results': False},
+            observed_at='2026-10-18T01:00:00Z', run_id='2026-10-18T01:00:00Z')
+
+        class Search:
+            calls = 0
+
+            def json(self, path, search=False):
+                Search.calls += 1
+                return {'items': [public_repository(100 + Search.calls)], 'total_count': 1, 'incomplete_results': False}
+
+        class Reads:
+            batch_size = 8
+            read = []
+
+            def fetch_batch(self, rows):
+                Reads.read = Reads.read + [row['id'] for row in rows]
+                return {row['id']: {'status': 'deferred', 'reason': 'graphql-rate-limit', 'retry_after': 3600} for row in rows}
+
+        cache = ROOT / '.cache'
+        cache.mkdir(exist_ok=True)
+        with TemporaryDirectory(dir=cache) as temporary:
+            output, state_path = Path(temporary) / 'scan.json', Path(temporary) / 'frontier.json'
+            args = arguments(output, target=target)
+            args.discovery_deadline = deadline
+            printed = io.StringIO()
+            with contextlib.redirect_stdout(printed), \
+                    patch.object(frontier, 'current_seconds', return_value=frontier.utc_seconds(OBSERVED)), \
+                    patch.object(scanner.time, 'monotonic', side_effect=lambda: Search.calls):
+                scanner.run_scan(Search(), args, readme_transport=Reads(), frontier=(state, state_path, self.QUERIES))
+                restored = frontier.load_frontier(state_path, approved_queries=self.QUERIES)
+        return Search.calls, Reads.read, printed.getvalue(), restored
+
+    def test_a_passed_deadline_skips_searching_and_still_reads_what_is_queued(self):
+        searches, read, printed, restored = self.scan(0)
+        self.assertEqual(searches, 0)
+        self.assertEqual(read, [41])
+        self.assertIn('DISCOVERY_TIME_LIMIT new_readme_candidates=1', printed)
+        self.assertIsNotNone(frontier.next_request(restored, now=frontier.utc_seconds(OBSERVED)))
+
+    def test_the_deadline_stops_searching_partway_and_the_reads_follow(self):
+        searches, read, printed, restored = self.scan(1, target=50)
+        self.assertEqual(searches, 1)
+        self.assertEqual(read[0], 41)
+        self.assertIn(101, read)
+        self.assertIn('DISCOVERY_TIME_LIMIT new_readme_candidates=2', printed)
+        self.assertIsNotNone(frontier.next_request(restored, now=frontier.utc_seconds(OBSERVED)))
+
+    def test_with_no_deadline_every_search_runs(self):
+        searches, read, printed, restored = self.scan(None, target=50)
+        self.assertEqual(searches, 2)
+        self.assertEqual(len(read), 3)
+        self.assertNotIn('DISCOVERY_TIME_LIMIT', printed)
+        self.assertIsNone(frontier.next_request(restored, now=frontier.utc_seconds(OBSERVED)))
+
+
+class FailedBatchTests(unittest.TestCase):
+    def read(self, answers, batch_size=1, **options):
+        """Six queued candidates; each answer is the status of one row, in reading order."""
+        state = frontier.new_frontier(until='2026-10-18T00:00:00Z', approved_queries=[BASE])
+        request = frontier.next_request(state)
+        frontier.record_response(state, request,
+            {'items': [public_repository(number) for number in range(41, 47)], 'total_count': 6, 'incomplete_results': False},
+            observed_at='2026-10-18T01:00:00Z', run_id='2026-10-18T01:00:00Z')
+        answers, asked = iter(answers), []
+
+        class Reads:
+            def fetch_batch(self, rows):
+                asked.extend(row['id'] for row in rows)
+                return {row['id']: {'status': next(answers, 'rejected'), 'reason': 'graphql-server-error', 'retry_after': 60} for row in rows}
+
+        Reads.batch_size = batch_size
+        cache = ROOT / '.cache'
+        cache.mkdir(exist_ok=True)
+        with TemporaryDirectory(dir=cache) as temporary:
+            output, state_path = Path(temporary) / 'scan.json', Path(temporary) / 'frontier.json'
+            args = arguments(output, target=50)
+            args.__dict__.update(options)
+            printed = io.StringIO()
+            with contextlib.redirect_stdout(printed), \
+                    patch.object(frontier, 'current_seconds', return_value=frontier.utc_seconds(OBSERVED)), \
+                    patch.object(frontier, 'next_request', return_value=None), \
+                    patch.object(scanner.time, 'sleep') as pause:
+                code = scanner.run_scan(NoRequests(), args, readme_transport=Reads(), frontier=(state, state_path, [BASE]))
+            status = json.loads(output.read_text(encoding='utf-8'))['meta']['status']
+        return asked, pause.call_count, printed.getvalue(), code, status
+
+    def test_a_failed_batch_costs_only_itself(self):
+        asked, pauses, printed, code, status = self.read(['retry', 'rejected', 'retry'], failed_batch_skips=5, failed_batch_pause=5)
+        self.assertEqual(len(asked), 6)
+        self.assertEqual(pauses, 2)
+        self.assertIn('README_BATCH_SKIPPED reason=graphql-server-error skips_left=4', printed)
+        self.assertEqual(code, 1)
+        self.assertEqual(status, 'in-progress')
+
+    def test_reading_stops_once_the_skips_are_spent(self):
+        asked, pauses, printed, _, status = self.read(['retry'] * 6, failed_batch_skips=2, failed_batch_pause=5)
+        self.assertEqual(len(asked), 3)
+        self.assertEqual(pauses, 2)
+        self.assertEqual(status, 'in-progress')
+
+    def test_a_rate_limit_ends_reading_with_skips_left(self):
+        asked, pauses, printed, _, status = self.read(['deferred'], failed_batch_skips=5, failed_batch_pause=5)
+        self.assertEqual(len(asked), 1)
+        self.assertEqual(pauses, 0)
+        self.assertNotIn('README_BATCH_SKIPPED', printed)
+        self.assertEqual(status, 'in-progress')
+
+    def test_a_batch_with_a_failure_and_a_rate_limit_ends_reading(self):
+        asked, pauses, printed, _, status = self.read(['retry', 'deferred'], batch_size=2, failed_batch_skips=5, failed_batch_pause=5)
+        self.assertEqual(len(asked), 2)
+        self.assertEqual(pauses, 0)
+        self.assertNotIn('README_BATCH_SKIPPED', printed)
+        self.assertEqual(status, 'in-progress')
+
+    def test_a_scan_without_skips_stops_on_the_first_failed_batch(self):
+        asked, pauses, _, _, status = self.read(['retry'])
+        self.assertEqual((len(asked), pauses, status), (1, 0, 'in-progress'))
+
+
 class PathBoundaryTests(unittest.TestCase):
     def test_cli_rejects_resolved_path_collisions_before_authentication_or_writes(self):
         with TemporaryDirectory() as temporary:

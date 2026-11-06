@@ -17,7 +17,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(1, str(ROOT / 'tests'))
 import catalog
 from build_readme import TARGETS, collection_section, render_catalog, render_papers
-from build_site import TARGETS as BUILD_TARGETS, default_targets, fontawesome_markup
+from build_site import TARGETS as BUILD_TARGETS, default_targets
 from build_paper_pages import TARGET_LABELS, build_paper_pages
 from build_discovery_pages import build_discovery_pages
 from source_browser import project_source_browser
@@ -96,11 +96,11 @@ class ProtocolTargetTests(unittest.TestCase):
                 self.assertEqual(groups['research-app-reconstruction'], [secondary['id']])
                 self.assertEqual(page.paper_ids.count(primary['id']), 1)
                 heading = TARGET_LABELS['protocol'][language == 'zh']
-                self.assertIn('### ' + heading, render_papers([primary], language))
+                self.assertIn('\n## ' + heading + '\n', render_papers([primary], language))
         agent = paper(); agent['id'] = 'paper-programbench'
         rendered = render_papers([agent], 'en')
-        self.assertIn('### Reverse-engineering agent evaluation', rendered)
-        self.assertNotIn('### Protocol inference and analysis', rendered)
+        self.assertIn('\n## Reverse-engineering agent evaluation\n', rendered)
+        self.assertNotIn('Protocol inference and analysis', rendered)
 
     def test_static_curated_section_badges_and_existing_icon_modes(self):
         record = resource()
@@ -122,9 +122,6 @@ class ProtocolTargetTests(unittest.TestCase):
         for attribute in ('data-target', 'data-source-target'):
             self.assertEqual(html.count(attribute + '="protocol"'), 1)
         self.assertGreaterEqual(html.count('data-i18n="targetProtocol"'), 2)
-        converted = fontawesome_markup(html, 'https://assets.example.org/fontawesome.css')
-        self.assertIn('fa-network', converted)
-        self.assertNotIn('<use href="#i-network"', converted)
 
     def test_source_target_support_does_not_reclassify_or_rewrite_evidence(self):
         source = json.loads((ROOT / 'data/source-index.json').read_text())

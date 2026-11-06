@@ -35,7 +35,7 @@ class PrintLayoutTests(unittest.TestCase):
     def test_policy_rules(self):
         block = print_block(CSS)
         for rule in ('.site-header{position:static!important',
-                     '.skip-link,.header-nav,.site-footer .footer-links,.browse-actions,.papers-actions,.paper-search,',
+                     '.skip-link,.browse-actions,.papers-actions,.paper-search,',
                      'details:not([open]):not(.browse-provenance,.cases-note,.paper-details){display:none!important}',
                      ':is(.browse-provenance,.cases-note,.paper-details:not([open]))::details-content{content-visibility:visible!important;display:block!important}',
                      '.paper-details:not([open])>:not(.paper-scope){display:none!important}',
@@ -67,7 +67,11 @@ class PrintLayoutTests(unittest.TestCase):
         self.assertIn('<div class="paper-scope"><h4>研究范围与局限</h4>', pages['zh/papers'])
         for route in ('resources', 'cases', 'browse/android'):
             self.assertRegex(pages[route], r'<details class="(browse-provenance|cases-note)"><summary>')
-        self.assertIn('<details class="requirements"><summary>', pages['resources'])
+        # /resources/ and /cases/ link each entry's requirements on its entry page instead of disclosing them.
+        self.assertIn('class="resource-requirements-link"', pages['resources'])
+        self.assertIn('class="case-requirements-link"', pages['cases'])
+        for route in ('resources', 'cases', 'zh/resources'):
+            self.assertNotIn('<details class="requirements">', pages[route])
         # Detail pages have no disclosures, so they print every requirement and source.
         for route in ('resources/ghidra', 'papers/paper-dire'):
             self.assertNotIn('<details', pages[route].split('<main', 1)[1])

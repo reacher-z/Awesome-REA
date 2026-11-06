@@ -1,0 +1,91 @@
+name: Notify IndexNow
+# Tells IndexNow (Bing, Yandex, Seznam, Naver, Yep and the other participating engines) which canonical
+# pages a production deployment changed. merge-pr.yml and the discovery ingest start it with the merged
+# commit; the schedule catches deployments made any other way. A run builds that commit as Cloudflare Pages
+# does, waits until awesomerea.org serves exactly that build, and diffs it against the build its previous
+# receipt recorded, so only added or changed pages are sent. See docs/search-discovery.md.
+on:
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: Deployed main commit to notify (default the current main head)
+        required: false
+        type: string
+  schedule:
+    - cron: '41 */3 * * *'
+permissions:
+  contents: read
+# Runs queue instead of overlapping, so each diff starts from the receipt of the run before it.
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+jobs:
+  notify:
+    if: ${{ !github.event.repository.fork && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+      # Read the Cloudflare Pages check run of the deployed commit.
+      checks: read
+      # Find and download the receipt of the previous run.
+      actions: read
+    steps:
+      - name: Choose the deployed commit
+        id: commit
+        env:
+          INPUT_SHA: ${{ inputs.sha }}
+          HEAD_SHA: ${{ github.sha }}
+        run: |
+          sha="${INPUT_SHA:-$HEAD_SHA}"
+          if ! [[ "$sha" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::Expected a full 40-character commit SHA." && exit 1
+          fi
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ steps.commit.outputs.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Require a commit of the default branch
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: git merge-base --is-ancestor HEAD "origin/$DEFAULT_BRANCH"
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      # The same command and asset URL as the Cloudflare Pages build, so the HTML matches byte for byte.
+      - name: Build the commit as Cloudflare Pages does
+        run: python3 scripts/build_site.py
+      - name: Wait until awesomerea.org serves this build
+        id: deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ steps.commit.outputs.sha }}
+        run: python3 scripts/indexnow_automation.py wait "$SHA" dist
+      - name: Fetch the previous receipt
+        id: previous
+        if: ${{ steps.deploy.outputs.state == 'live' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/indexnow_automation.py previous .cache/indexnow/previous
+      - name: Notify IndexNow of added and changed pages
+        if: ${{ steps.deploy.outputs.state == 'live' }}
+        env:
+          PREVIOUS_SHA256: ${{ steps.previous.outputs.previous_sha256 }}
+        run: |
+          args=(--submit --automatic --receipt .cache/indexnow/receipt/receipt.json)
+          if [ -n "$PREVIOUS_SHA256" ]; then
+            args+=(--previous-manifest .cache/indexnow/previous/build-manifest.json --previous-manifest-sha256 "$PREVIOUS_SHA256")
+          fi
+          python3 scripts/submit_indexnow.py "${args[@]}"
+          cp dist/build-manifest.json .cache/indexnow/receipt/build-manifest.json
+      - name: Keep the receipt as the next run's baseline
+        if: ${{ steps.deploy.outputs.state == 'live' }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: indexnow-receipt
+          path: .cache/indexnow/receipt/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 90

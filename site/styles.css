@@ -1,7 +1,7 @@
 /* White collection canvas, readable navy typography, and restrained blue accents; a dark set follows the system theme. */
 :root {
   color-scheme:light dark;
-  --paper:#fff;
+  --paper:#faf3dd;
   --surface:#fff;
   --soft:#f8f9fc;
   --tint:#f1f0ff;
@@ -28,8 +28,6 @@
   --shelf-line:#eeedf5;
   --badge:#f6f4fc;
   --badge-line:#e8e5f4;
-  --monogram:#f3f1fb;
-  --monogram-line:#e8e4f4;
   --faint:#fcfcfe;
   --mono:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;
@@ -38,7 +36,7 @@
    so selected states keep their contrast against unselected ones. */
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper:#13141b;
+    --paper:#1c1316;
     --surface:#1a1b24;
     --soft:#20212c;
     --tint:#2b2945;
@@ -64,8 +62,6 @@
     --shelf-line:#272836;
     --badge:#25243a;
     --badge-line:#36345a;
-    --monogram:#25243a;
-    --monogram-line:#36345a;
     --faint:#1e1f29;
   }
 }
@@ -98,7 +94,7 @@ input::placeholder{color:var(--muted);opacity:1}
   html{scroll-behavior:auto!important;scroll-padding-top:0!important}
   body{background:#fff!important;color:#111!important}
   .site-header{position:static!important;background:#fff!important;border-bottom:1pt solid #999!important;box-shadow:none!important}
-  .skip-link,.header-nav,.site-footer .footer-links,.browse-actions,.papers-actions,.paper-search,.paper-search-empty,.browse-category-nav,.papers-topic-nav,.entry-detail-link,.paper-citation-download{display:none!important}
+  .skip-link,.browse-actions,.papers-actions,.paper-search,.paper-search-empty,.browse-category-nav,.papers-topic-nav,.entry-detail-link,.paper-citation-download{display:none!important}
   .shell{width:auto!important;max-width:none!important;margin-inline:0!important}
   .resource-grid,.source-results,.paper-grid{display:block!important}
   .resource-card,.source-card,.paper-card,.case-row{margin:0 0 8pt!important;padding:8pt 10pt!important;box-shadow:none!important;background:transparent!important;border-color:#bbb!important}
@@ -115,12 +111,12 @@ input::placeholder{color:var(--muted);opacity:1}
   main a{color:#111!important}
   main :is(.entry-link,.paper-link,.case-source,.resource-evidence-link){display:inline!important;min-height:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
   main :is(a,dd,code){overflow-wrap:anywhere!important}
-  main :is(.card-title-link,.source-title-link,.case-heading a,.paper-card h3 a,.paper-link,.resource-evidence-link,.case-source,.requirements li a,.case-evidence-links a,.source-card-footer a,.entry-link,.entry-sources a)[href^="http"]::after{content:" <" attr(href) ">";font-size:8.5pt;font-weight:400;color:#444}
-  :is(.browse-main:has(.requirements),.cases-main) .browse-intro::after,.papers-intro::after{display:block;margin-top:6pt;padding:5pt 8pt;border:1pt solid #999;font-size:9pt;line-height:1.5;color:#333}
-  :is(.browse-main:has(.requirements),.cases-main) .browse-intro::after{content:"Printed listing: every entry’s title, description and targets, plus the requirements and sources you opened before printing. Each entry’s full page prints all of its requirements, limitations and sources."}
-  .papers-intro::after{content:"Printed listing: every paper with its scope and limitations, plus the authors, citation details and sources you opened before printing. Each paper’s full page prints all of them."}
-  html[lang="zh-CN"] :is(.browse-main:has(.requirements),.cases-main) .browse-intro::after{content:"打印说明：列出每个条目的标题、简介与目标领域，以及打印前展开的条件与来源。每个条目的完整页面会打印其全部条件、局限与来源。"}
-  html[lang="zh-CN"] .papers-intro::after{content:"打印说明：列出每篇论文及其研究范围与局限，以及打印前展开的作者、引文与来源信息。每篇论文的完整页面会打印全部内容。"}
+  main :is(.card-title-link,.source-title-link,.case-heading a,.paper-card h3 a,.paper-link,.resource-evidence-link,.case-source,.source-card-footer a,.entry-link,.entry-sources a)[href^="http"]::after{content:" <" attr(href) ">";font-size:8.5pt;font-weight:400;color:#444}
+  :is(.browse-main:has(.resource-requirements-link),.cases-main) .browse-intro::after,.papers-intro::after{display:block;margin-top:6pt;padding:5pt 8pt;border:1pt solid #999;font-size:9pt;line-height:1.5;color:#333}
+  :is(.browse-main:has(.resource-requirements-link),.cases-main) .browse-intro::after{content:"Printed listing: every entry’s title, description, targets, primary source, requirement and source counts, and review date. Each entry’s full page prints all of its requirements, limitations and sources."}
+  .papers-intro::after{content:"Printed listing: every paper with its scope and limitations, source count and review date, plus the authors and citation you opened before printing. Each paper’s full page prints its sources, publication details and review notes."}
+  html[lang="zh-CN"] :is(.browse-main:has(.resource-requirements-link),.cases-main) .browse-intro::after{content:"打印说明：列出每个条目的标题、简介、目标领域、一手来源、条件与来源数量及复核日期。每个条目的完整页面会打印其全部条件、局限与来源。"}
+  html[lang="zh-CN"] .papers-intro::after{content:"打印说明：列出每篇论文及其研究范围与局限、来源数量与复核日期，以及打印前展开的作者与引文信息。每篇论文的完整页面会打印其来源、发表详情与复核说明。"}
 }
 
 /* Masthead and collection introduction. */
@@ -187,6 +183,8 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .source-field>label{font-size:12px;line-height:1.4;font-weight:600;color:var(--muted)}
 .source-field>input,.source-field>select{height:42px;border:1px solid var(--control);border-radius:8px;padding:8px 11px;width:174px;min-width:0;background:var(--surface);font-size:13px;line-height:1.4}
 .source-field>input:focus,.source-field>select:focus{border-color:var(--steel)}
+/* A field brought into view by script (the Topic field after a topic chip) keeps its label below the sticky header. */
+.source-field>input,.source-field>select{scroll-margin-top:32px}
 .collection-note{display:flex;align-items:baseline;gap:8px 18px;flex-wrap:wrap;color:var(--muted);font-size:12px;line-height:1.75;padding:0 0 19px;border-bottom:1px solid var(--line)}
 .collection-note>p{margin:0}
 .collection-note>a,.collection-note summary{color:var(--link);font-size:12px;cursor:pointer;text-decoration:underline;text-decoration-color:var(--underline);text-underline-offset:4px}
@@ -204,10 +202,12 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .resource-card,.source-card{min-width:0;padding:24px 24px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 2px 5px var(--shadow);transition:border-color .15s ease,box-shadow .15s ease}
 .resource-card:hover,.source-card:hover{border-color:var(--strong);box-shadow:0 5px 18px #1737540c}
 .card-heading,.source-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
-.resource-card h3,.source-card h3{flex:1;min-width:0;margin:0;color:var(--ink);font:700 18px/1.5 var(--sans);letter-spacing:0;overflow-wrap:anywhere}
+.resource-card h3,.resource-card h4,.source-card h3{flex:1;min-width:0;margin:0;color:var(--ink);font:700 18px/1.5 var(--sans);letter-spacing:0;overflow-wrap:anywhere}
 .source-owner{color:var(--muted);font-weight:450}
 .source-project{color:var(--ink);font-weight:700}
 .card-title-link:hover,.source-title-link:hover{text-decoration:underline;text-decoration-color:var(--steel);text-underline-offset:4px}
+/* A repository title's last character and its external-link icon wrap together. */
+.title-icon-tail{white-space:nowrap}
 .card-title-link .icon,.source-title-link .icon{width:12px;height:12px;font-size:11px;vertical-align:baseline;margin-left:6px;color:var(--steel)}
 .resource-kind,.source-stars{flex:none;color:var(--muted);font:500 13px/1.5 var(--sans);font-variant-numeric:tabular-nums;border:1px solid var(--line);border-radius:6px;padding:3px 7px;background:var(--soft);white-space:nowrap}
 .card-description,.source-card-description{max-width:68ch;margin:14px 0 16px;color:var(--body);font-size:16px;line-height:1.8;overflow-wrap:anywhere}
@@ -227,6 +227,12 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .card-meta a:hover,.source-card-footer a:hover{text-decoration:underline;text-underline-offset:4px}
 .card-meta .card-category{font:inherit}
 .card-meta .card-targets{color:var(--body)}
+/* Copy link: an icon button after a card's entry or README link; without clipboard access a selected field follows it. */
+:is(.card-meta,.source-card-footer)>.copy-link{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin:-3px 0;padding:0;border-radius:6px;background:none;color:var(--link)}
+:is(.card-meta,.source-card-footer)>.copy-link:hover{background:var(--soft)}
+:is(.card-meta,.source-card-footer)>.copy-link>.icon{width:15px;height:15px;font-size:15px}
+.copy-link-fallback{flex:1 1 100%;width:100%;min-width:0;padding:4px 8px;border:1px solid var(--control);border-radius:6px;background:var(--soft);color:var(--body);font:12px/1.6 var(--mono)}
+@media(min-width:1101px){html[data-layout="compact"] .collection-home .card-meta>:is(.copy-link,.copy-link-fallback){order:2}}
 .source-card-license{font-size:14px}
 .requirements,.source-record-details{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
 .requirements summary,.source-record-details summary{color:var(--link);font-size:14px;font-weight:550;line-height:1.7;cursor:pointer;width:fit-content;min-height:44px;padding:9px 0}
@@ -238,6 +244,31 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .resource-detail-meta{display:flex;flex-wrap:wrap;gap:8px 13px;color:var(--muted);font:14px/1.75 var(--sans)}
 .resource-entry-link{display:inline-flex;align-items:center;gap:6px;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .resource-entry-link .icon{width:14px;height:14px;font-size:14px}
+/* Browser-local shortlist: Save toggles on cards, a count button beside the collection tabs once something is saved,
+   and a dialog that reuses the data dialog's frame. In wide compact rows the toggle joins the links' line. */
+.save-toggle{display:inline-flex;align-items:center;gap:5px;min-height:32px;padding:0;background:none;color:var(--link);font:600 14px/1.5 var(--sans)}
+.save-toggle:hover{text-decoration:underline;text-underline-offset:4px}
+.save-toggle[aria-pressed="true"]{color:var(--ink)}
+.save-toggle>.icon{width:13px;height:13px;font-size:13px;color:var(--link)}
+@media(min-width:1101px){html[data-layout="compact"] .collection-home .card-meta>.save-toggle{order:2}}
+.shortlist-open{display:inline-flex;align-items:center;gap:8px;align-self:center;min-height:40px;margin:0 0 8px auto;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:600 14px/1 var(--sans)}
+.shortlist-open:hover{border-color:var(--steel);background:var(--soft)}
+.shortlist-open>.mono{color:var(--muted);background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:1px 7px;font:500 12px/1.65 var(--sans);font-variant-numeric:tabular-nums}
+/* A visible Shortlist button takes the right alignment; while it is hidden (nothing saved) Layout keeps margin-left:auto. */
+.shortlist-open:not([hidden])+.layout-control{margin-left:0}
+.shortlist-group{margin-top:20px}
+.shortlist-group h3{margin:0 0 4px;font-size:14px;font-weight:650}
+.shortlist-group>p{margin:0 0 6px;font-size:12px;color:var(--muted)}
+.shortlist-group ul{margin:6px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.shortlist-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.6}
+.shortlist-text{min-width:0}
+.shortlist-link{color:var(--link);font-weight:600;overflow-wrap:anywhere}
+.shortlist-link:hover{text-decoration:underline;text-underline-offset:4px}
+.shortlist-missing{font:13px var(--mono);overflow-wrap:anywhere}
+.shortlist-note{display:block;font-size:12px;color:var(--muted)}
+.shortlist-remove{flex:none;min-height:36px;padding:0 2px;background:none;color:var(--link);font-size:13px;text-decoration:underline;text-underline-offset:4px}
+.shortlist-empty{margin:20px 0 0;font-size:14px;line-height:1.7;color:var(--muted)}
+.shortlist-dialog #shortlist-clear{font-size:13px}
 .source-record-details dl{display:grid;grid-template-columns:132px minmax(0,1fr);gap:8px 14px;margin:14px 0 2px;color:var(--body);font:14px/1.75 var(--sans)}
 .source-record-details dt{font-weight:600}
 .source-record-details dd{min-width:0;margin:0;overflow-wrap:anywhere}
@@ -265,6 +296,10 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .footer-top{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .footer-top p{margin:0;color:var(--muted);font-size:13px}
 .footer-links{display:flex;gap:10px 20px;align-items:center;flex-wrap:wrap;color:var(--link);font-size:12px}
+/* The shared footer: one row of sections, one of downloads and GitHub, then any page extras. */
+.footer-nav{display:grid;gap:10px;justify-items:start}
+/* Start-aligned: with seven sections the nav wraps under the tagline at common desktop widths. */
+.footer-nav>.footer-links{justify-content:flex-start}
 .footer-submit{display:none}
 .footer-links a:hover{text-decoration:underline;text-underline-offset:4px}
 .footer-bottom{margin-top:17px;color:var(--muted);font:11px/1.75 var(--sans)}
@@ -286,7 +321,7 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .resource-grid,.source-results{gap:14px}
   .resource-card,.source-card{padding:21px 20px 17px}
   .source-card-head,.card-heading{flex-wrap:wrap;gap:9px}
-  .source-card-head h3,.card-heading h3{flex-basis:100%}
+  .source-card-head h3,.card-heading h3,.card-heading h4{flex-basis:100%}
 }
 @media(max-width:700px){
   html{scroll-padding-top:86px}
@@ -320,12 +355,13 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .results-topline p{font-size:12px}
   .resource-grid,.source-results{grid-template-columns:1fr;gap:14px}
   .resource-card,.source-card{padding:22px 20px 17px}
-  .source-card-head h3,.card-heading h3{flex-basis:auto}
+  .source-card-head h3,.card-heading h3,.card-heading h4{flex-basis:auto}
   .source-card-head,.card-heading{flex-wrap:nowrap;gap:11px}
   .source-stars,.resource-kind{padding:3px 6px}
   .source-record-details dl{grid-template-columns:112px minmax(0,1fr);gap:8px 12px}
   .footer-top{align-items:flex-start;flex-direction:column;gap:15px}
   .footer-links{gap:10px 18px}
+  .footer-nav{gap:16px}
 }
 @media(max-width:520px){
   .header-nav>.github-link,.header-nav>.submit-link{display:none}
@@ -378,6 +414,8 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .shelf-arrow{font-size:13px;color:#9390a5;transition:transform .15s ease}
 .shelf-link:hover strong{color:var(--link)}
 .shelf-link:hover .shelf-arrow{transform:translate(2px,-2px)}
+/* Same-site shelf links use → (↗ marks links that leave the site), so the hover nudge follows it. */
+.shelf-link[href^="/"]:hover .shelf-arrow{transform:translateX(2px)}
 .shelf-note{font-family:Georgia,serif;font-style:italic;font-size:11px;margin:1px 0 0;color:var(--muted)}
 .home-intro .collection-directory{margin-top:35px;padding:23px 0;gap:14px 34px;border-bottom:1px solid var(--line)}
 .home-intro .collection-directory a{gap:8px;color:var(--muted);font-size:12px}
@@ -396,16 +434,6 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .collection-home .index-mode.active{border-bottom-color:var(--link)}
 .collection-home .resource-card,.collection-home .source-card{box-shadow:none;border-radius:10px}
 .collection-home .resource-card:hover,.collection-home .source-card:hover{box-shadow:0 7px 28px #2b234b07}
-.contributors-section{display:grid;grid-template-columns:1fr 2fr;gap:30px;border-top:1px solid var(--line);padding-top:30px;padding-bottom:35px;align-items:center}
-.contributors-section .eyebrow{letter-spacing:1.3px;margin-bottom:8px}
-.contributors-section h2{font-size:22px;font-weight:600;letter-spacing:-.5px;margin:0}
-.contributor-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
-.contributor-entry{display:flex;gap:16px;align-items:flex-start}
-.contributor-monogram{display:grid;place-items:center;background:var(--monogram);border:1px solid var(--monogram-line);border-radius:50%;width:44px;height:44px;flex-shrink:0;font:16px Georgia,serif;color:var(--link)}
-.contributor-name{font-size:14px;font-weight:650}
-.contributor-name span{font-size:11px;color:var(--link)}
-.contributor-entry p{font-size:12px;color:var(--muted);margin:4px 0}
-.contributor-work{font-size:11px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 html[lang="zh-CN"] .home-intro h1{font-size:clamp(36px,3.6vw,52px);letter-spacing:0;line-height:1.25}
 html[lang="zh-CN"] .home-intro h1 em{font-family:var(--sans);font-style:normal;letter-spacing:-1px}
 html[lang="zh-CN"] .shelf-note{font-family:var(--sans);font-style:normal}
@@ -413,11 +441,9 @@ html[lang="zh-CN"] .shelf-note{font-family:var(--sans);font-style:normal}
 html[lang="zh-CN"] .eyebrow{letter-spacing:0}
 @media(max-width:1100px){.hero-layout{gap:32px;grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr)}.home-intro h1{font-size:48px;letter-spacing:-2.3px}.subject-directory{gap:8px}.subject-directory a{padding:11px 10px}}
 @media(max-width:850px){.hero-layout{grid-template-columns:1fr}.collection-shelf{display:none}.home-intro h1{font-size:48px;max-width:720px}.home-intro .collection-description{max-width:650px}.home-intro{padding-top:24px}.subject-directory{grid-template-columns:repeat(3,minmax(0,1fr))}.home-intro .collection-directory{gap:12px 24px}.home-intro .collection-directory .directory-about{margin-left:0}}
-@media(max-width:520px){.home-intro{padding:20px 0 18px}.home-intro h1{font-size:36px;line-height:1.15;letter-spacing:-1.5px}.home-intro h1 em{letter-spacing:-1.7px}.home-intro .eyebrow{margin-bottom:10px;letter-spacing:1px}.home-intro .collection-description{font-size:16px;line-height:1.7;margin-top:14px}.hero-actions{gap:9px 18px;margin-top:20px}.hero-actions .button{padding:11px 14px;font-size:12px}.hero-text-link{font-size:12px}.home-intro .collection-directory{margin-top:16px;padding:12px 0;gap:12px 19px}.home-intro .collection-directory a{font-size:10px;gap:5px}.home-intro .collection-directory strong{font-size:20px}.home-intro .collection-directory .directory-about{width:100%;font-size:11px}.subject-directory{margin-top:15px;gap:7px}.subject-directory a{font-size:11px;padding:10px 9px;gap:7px}.subject-arrow{display:none}.contributors-section{grid-template-columns:1fr;gap:22px;padding-top:26px;padding-bottom:30px}html[lang="zh-CN"] .home-intro h1{font-size:35px}}
-@media(prefers-reduced-motion:reduce){.shelf-arrow,.subject-directory a{transition:none}.shelf-link:hover .shelf-arrow{transform:none}}
+@media(max-width:520px){.home-intro{padding:20px 0 18px}.home-intro h1{font-size:36px;line-height:1.15;letter-spacing:-1.5px}.home-intro h1 em{letter-spacing:-1.7px}.home-intro .eyebrow{margin-bottom:10px;letter-spacing:1px}.home-intro .collection-description{font-size:16px;line-height:1.7;margin-top:14px}.hero-actions{gap:9px 18px;margin-top:20px}.hero-actions .button{padding:11px 14px;font-size:12px}.hero-text-link{font-size:12px}.home-intro .collection-directory{margin-top:16px;padding:12px 0;gap:12px 19px}.home-intro .collection-directory a{font-size:10px;gap:5px}.home-intro .collection-directory strong{font-size:20px}.home-intro .collection-directory .directory-about{width:100%;font-size:11px}.subject-directory{margin-top:15px;gap:7px}.subject-directory a{font-size:11px;padding:10px 9px;gap:7px}.subject-arrow{display:none}html[lang="zh-CN"] .home-intro h1{font-size:35px}}
+@media(prefers-reduced-motion:reduce){.shelf-arrow,.subject-directory a{transition:none}.shelf-link:hover .shelf-arrow,.shelf-link[href^="/"]:hover .shelf-arrow{transform:none}}
 @media(max-width:520px){.hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px}.hero-actions .button,.hero-actions .hero-text-link{min-width:0;min-height:44px;justify-content:center;font-size:13px;line-height:1.5}.hero-actions .button{padding:10px}.hero-text-link{font-size:11px}.home-intro .collection-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.home-intro .collection-directory a:not(.directory-about){display:flex;flex-direction:column;align-items:flex-start;gap:0}.home-intro .collection-directory .directory-about{grid-column:1/-1;width:auto}.home-intro .collection-directory a{font-size:10px}}
-
-@media(max-width:700px){.contributor-list{grid-template-columns:1fr;gap:24px}}
 
 /* Reading sizes: descriptions and source evidence should not look like fine print. */
 .collection-note,.collection-note>a,.collection-note summary{font-size:14px}
@@ -435,8 +461,6 @@ html[lang="zh-CN"] .eyebrow{letter-spacing:0}
 .shelf-link small{font-size:13px;line-height:1.55}
 .shelf-note{font-family:var(--sans);font-style:normal;font-size:12px;line-height:1.7}
 .subject-directory a{font-size:14px}
-.contributor-name{font-size:16px}
-.contributor-entry p,.contributor-work{font-size:14px;line-height:1.7}
 .footer-top p,.footer-links{font-size:14px}
 .footer-bottom{font-size:13px}
 html[lang="zh-CN"] .card-description,html[lang="zh-CN"] .source-card-description,html[lang="zh-CN"] .requirements ul{max-width:36em;line-height:1.85}
@@ -445,6 +469,8 @@ html[lang="zh-CN"] .card-description,html[lang="zh-CN"] .source-card-description
 @media(max-width:520px){.source-record-details dl{grid-template-columns:minmax(0,1fr);gap:3px}.source-record-details dd{margin-bottom:12px}.home-intro .collection-directory a{font-size:12px}.home-intro .collection-directory .directory-about{font-size:13px}.hero-text-link{font-size:13px}.collection-note details[open]{padding:13px}}
 @media(max-width:420px){.target-filter{font-size:14px;padding-inline:7px;gap:5px}.search-box{padding-inline:13px}}
 @media(max-width:360px){.source-target-filters,.group-filters,.subject-directory{grid-template-columns:repeat(2,minmax(0,1fr))}.source-field{flex-basis:100%}}
+/* Repository Topic, Category and Sort: on phones Topic takes its own row, so both selects keep their labels legible. */
+@media(max-width:520px){#source-view .source-selectors>.source-field:first-child{flex-basis:100%}}
 /* Phones: the Layout control is hidden (both layouts are one column there), and Type and Category fold behind
    “More filters”, which joins the target buttons, counts active selects and opens when the page starts filtered. */
 .more-filters{display:none}
@@ -477,10 +503,19 @@ html[lang="zh-CN"] .card-description,html[lang="zh-CN"] .source-card-description
 /* Both language names still fit beside the wordmark inside the 16px gutters at 320px. */
 @media(max-width:340px){.language-switch{padding-inline:1px}.language-switch a{padding-inline:3px;font-size:12px}}
 .clear-button{white-space:nowrap}
+.active-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none}
+.active-filter{display:inline-flex;align-items:baseline;gap:6px;max-width:100%;min-height:36px;padding:6px 12px;border:1px solid var(--control);border-radius:999px;background:var(--surface);font-size:14px;line-height:1.5;color:var(--ink);text-align:left}
+.active-filter:hover{border-color:var(--steel);background:var(--soft)}
+.active-filter-field{color:var(--muted)}
+.active-filter-value{font-weight:600;overflow-wrap:anywhere}
+.active-filter-remove{color:var(--link);font-size:16px;line-height:1}
+@media(max-width:700px){.active-filter{min-height:44px;align-items:center}}
 
 /* Compact entries follow one reading path: title, summary, then links and evidence. */
 .layout-control{display:flex;align-items:center;gap:8px;margin-left:auto;padding-bottom:12px;font-size:14px;color:var(--muted)}
-.layout-control select{min-height:44px;padding:7px 30px 7px 10px;border:1px solid var(--control);border-radius:7px;background:var(--surface);font-size:14px}
+.layout-control select,.sort-control select{min-height:44px;padding:7px 30px 7px 10px;border:1px solid var(--control);border-radius:7px;background:var(--surface);font-size:14px}
+/* Curated result order closes the results line, after Export matches (which takes margin-left:auto) and Clear filters. */
+.sort-control{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
 .source-record-context{margin-top:14px}
 html[data-layout="compact"] .collection-home .resource-grid,html[data-layout="compact"] .collection-home .source-results{grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
 html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{display:grid;grid-template-columns:fit-content(70%) minmax(0,1fr);grid-template-areas:"heading heading" "description description" "meta details";gap:8px 24px;padding:20px 8px;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;align-items:start}
@@ -496,6 +531,14 @@ html[data-layout="compact"] .collection-home .requirements summary,html[data-lay
 html[data-layout="compact"] .collection-home .requirements[open],html[data-layout="compact"] .collection-home .source-record-details[open]{grid-area:auto;grid-column:1/-1;border:1px solid var(--line);border-radius:8px;background:var(--soft);padding:12px 18px;margin-top:8px}
 html[data-layout="compact"] .collection-home .requirements[open] ul{color:var(--body)}
 html[data-layout="compact"] .collection-home .source-record-details[open] dl{max-width:76ch;color:var(--body)}
+/* A hint names the hidden field a query matched (other language, requirements, topics); compact rows give it a row. */
+.match-hint{margin:6px 0 0;font-size:14px;line-height:1.6;color:var(--muted);overflow-wrap:anywhere}
+.match-hint-label{font-weight:600}
+.match-field{color:var(--ink)}
+.match-hint mark{padding:0 2px;border-radius:3px;background:var(--cyan);color:var(--ink)}
+html[data-layout="compact"] .collection-home .resource-card:has(>.match-hint),html[data-layout="compact"] .collection-home .source-card:has(>.match-hint){grid-template-areas:"heading heading" "description description" "hint hint" "meta details"}
+html[data-layout="compact"] .collection-home .match-hint{grid-area:hint;margin:0;max-width:70ch}
+@media(min-width:1101px){html[data-layout="compact"] .collection-home .resource-card:has(>.match-hint),html[data-layout="compact"] .collection-home .source-card:has(>.match-hint){grid-template-areas:"heading meta" "description meta" "description details" "hint details"}html[data-layout="compact"] .collection-home .match-hint{margin-top:6px}}
 .source-context-label{font-size:14px;line-height:1.7;overflow-wrap:anywhere;margin:0 0 14px}
 @media(max-width:1050px){
   html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{grid-template-columns:fit-content(65%) minmax(0,1fr);column-gap:20px}
@@ -503,7 +546,7 @@ html[data-layout="compact"] .collection-home .source-record-details[open] dl{max
 @media(max-width:700px){
   .index-mode-switch{flex-wrap:wrap;gap:0 22px}
   .layout-control{width:100%;justify-content:flex-end;margin-top:6px;padding-bottom:8px}
-  .layout-control select{min-height:44px;font-size:16px}
+  .layout-control select,.sort-control select{min-height:44px;font-size:16px}
   html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{display:block;padding:18px 2px}
   html[data-layout="compact"] .collection-home .card-heading,html[data-layout="compact"] .collection-home .source-card-head{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
   html[data-layout="compact"] .collection-home .card-heading h3,html[data-layout="compact"] .collection-home .source-card-head h3{flex-basis:100%;font-size:18px}
@@ -533,17 +576,19 @@ html[data-layout="compact"] .collection-home .detail-label-compact{display:inlin
 }
 html[lang="zh-CN"][data-layout="compact"] .collection-home .card-description,html[lang="zh-CN"][data-layout="compact"] .collection-home .source-card-description{max-width:38em;line-height:1.85}
 /* Wide compact rows: targets, links and the details toggle sit in a right column beside the title and description.
-   DOM and focus order are unchanged, and an opened details panel still spans the row. */
+   DOM and focus order are unchanged, and an opened details panel still spans the row. A long description's extra
+   height goes to the third, flexible row, so the closed toggle stays directly under the links (as on /papers/);
+   a "Matched in" line takes a fourth, auto row. */
 @media(min-width:1101px){
-  html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{grid-template-columns:minmax(0,1fr) minmax(18rem,34%);grid-template-areas:"heading meta" "description meta" "description details";gap:0 40px}
+  html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{grid-template-columns:minmax(0,1fr) minmax(18rem,34%);grid-template-rows:auto auto 1fr;grid-template-areas:"heading meta" "description meta" "description details";gap:0 40px}
   html[data-layout="compact"] .collection-home .card-description,html[data-layout="compact"] .collection-home .source-card-description{margin-top:6px}
   html[data-layout="compact"] .collection-home .card-meta,html[data-layout="compact"] .collection-home .source-card-footer{flex-wrap:wrap;align-content:flex-start;gap:0 16px;padding-block:2px 0}
   /* Labels on the first line, links on the next: a zero-height break item, and links keep their DOM order. */
   html[data-layout="compact"] .collection-home .card-meta::after{content:"";order:1;flex-basis:100%;height:0}
   html[data-layout="compact"] .collection-home .card-meta>a{order:2}
+  /* The link sits directly above the details toggle here, so it keeps a 24 px target (WCAG 2.5.8). */
+  html[data-layout="compact"] .collection-home .card-meta>.resource-entry-link{min-height:24px}
 }
-/* The stacked compact rows below that width keep their single metadata line; targets show in the card layout. */
-@media(max-width:1100px){html[data-layout="compact"] .collection-home .card-targets{display:none}}
 
 /* Contrast themes replace backgrounds and shadows, so selected states and primary buttons use system colors.
    Selected controls opt out of the text backplate, which would otherwise hide HighlightText. */
@@ -636,3 +681,10 @@ body.data-dialog-open{overflow:hidden}
 .source-scan-evidence>summary{font-weight:500;color:var(--link)}
 .source-scan-evidence code{font:12px/1.8 var(--mono);overflow-wrap:anywhere}
 .source-record-details .source-context-label{margin-bottom:8px;font-weight:600}
+
+/* Entry pages link back to their listing card by fragment; mark that card so it stands out from its neighbours.
+   Borderless rows extend the tint past their text with a shadow instead of changing their padding; the target
+   paints above the following card so that card's background cannot cover the outline. */
+.resource-card:target,.case-row:target,.paper-card:target{position:relative;z-index:1;background:var(--tint);outline:3px solid var(--link);outline-offset:3px}
+.case-row:target,html[data-paper-layout="compact"] .paper-card:target{box-shadow:0 0 0 10px var(--tint);outline-offset:10px}
+@media(forced-colors:active){.resource-card:target,.case-row:target,.paper-card:target{outline-color:Highlight}}

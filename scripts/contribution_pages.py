@@ -39,7 +39,7 @@ def contribution_content(repository_url, language):
         ('Agent 可以提交吗？' if zh else 'Can an agent contribute?',
          '可以，人工和 AI 辅助贡献适用相同的证据、去重和审核规则。公开提交应符合用户授权，并说明资源与 REA 的关系及贡献者与资源的关系。' if zh else 'Yes. Human and agent-assisted contributions follow the same evidence, deduplication and review rules. Public submissions must respect user authorization and distinguish the resource’s REA relationship from the contributor’s own connection.'),
         ('自动扫描等于精选收录吗？' if zh else 'Does an automated scan mean curated inclusion?',
-         '不等于。README 自动扫描是发现证据；精选收录需要单独核查一手来源。source-reviewed 不表示运行复现、安全保证或兼容性验证。' if zh else 'No. An automated README scan is discovery evidence. Curation requires separate primary-source review; source-reviewed does not establish runtime reproduction, safety or compatibility.'),
+         '不等于。README 自动扫描是发现证据；精选收录需要单独核查一手来源。' if zh else 'No. An automated README scan is discovery evidence. Curation requires a separate primary-source review.'),
         ('校验通过就会发布吗？' if zh else 'Do passing checks publish the submission?',
          '不会。维护者审核相关性与事实声明。不要把检查通过、AI 审查意见或创建 PR 说成已接收、合并或部署。' if zh else 'No. Maintainers review relevance and factual claims. Passing checks, an AI review or opening a PR must not be described as acceptance, merge or deployment.'),
     ]

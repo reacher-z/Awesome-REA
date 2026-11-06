@@ -3,10 +3,12 @@ import json
 from pathlib import Path
 import re
 import sys
+from tempfile import TemporaryDirectory
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
+from build_discovery_pages import build_discovery_pages
 from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage, _Document, _ui_strings, _zh_repository_paths
 from open_graph import SOCIAL_IMAGE_ALT, open_graph_meta
 
@@ -95,13 +97,36 @@ class HomepageLocaleTests(unittest.TestCase):
         chinese, english = localized_homepage(TEMPLATE, APP, 'zh'), localized_homepage(TEMPLATE, APP, 'en')
         self.assertEqual(repository_links(chinese)['blob/main/CONTRIBUTING.zh-CN.md'], repository + 'blob/main/CONTRIBUTING.zh-CN.md')
         self.assertNotIn('blob/main/CONTRIBUTING.md', repository_links(chinese))
-        # English-only documents keep their target; the Chinese label says the page is in English.
-        self.assertEqual(repository_links(chinese)['blob/main/data/README.md'], repository + 'blob/main/data/README.md')
-        self.assertIn('（英文）', _ui_strings(APP)['zh']['aboutCurated'])
+        # Other repository links keep their paths in Chinese.
+        self.assertEqual(repository_links(chinese)['issues/new?template=resource.yml'], repository + 'issues/new?template=resource.yml')
         self.assertEqual(repository_links(english)['blob/main/CONTRIBUTING.md'], repository + 'blob/main/CONTRIBUTING.md')
         self.assertEqual(repository_links(localized_homepage(chinese, APP, 'en')), repository_links(english))
         with self.assertRaises(ValueError):
             localized_homepage(TEMPLATE.replace(repository + 'blob/main/CONTRIBUTING.md"', repository + 'blob/main/OTHER.md"', 1), APP, 'zh')
+
+    def test_collection_notes_link_the_localized_about_page(self):
+        # The note under the curated filters opens About in the page language and the same tab; About keeps the
+        # English catalog-format reference.
+        for lang, href in (('en', '/about/'), ('zh', '/zh/about/')):
+            with self.subTest(language=lang):
+                html = localized_homepage(TEMPLATE, APP, lang)
+                note = next(n for n in nodes(html, 'a') if n['attrs'].get('data-i18n') == 'aboutCurated')
+                self.assertEqual(note['attrs']['href'], href)
+                self.assertNotIn('target', note['attrs'])
+                self.assertNotIn('data-repo-path', note['attrs'])
+                self.assertNotIn('英文', content(html, note))
+        resource = {'id': 'fixture', 'name': 'Fixture', 'name_zh': '测试', 'url': 'https://example.org/fixture',
+                    'description_en': 'A fixture.', 'description_zh': '测试条目。', 'category': 'core',
+                    'relationship': 'foundation', 'targets': ['app'], 'kind': 'tool', 'requirements': ['None.'],
+                    'requirements_zh': ['无。'], 'evidence_url': 'https://example.org/fixture/evidence',
+                    'verified_at': '2026-10-17', 'verification': 'source-reviewed'}
+        with TemporaryDirectory() as directory:
+            output = Path(directory)
+            (output / 'index.html').write_text('<!doctype html>', encoding='utf-8')
+            build_discovery_pages(output, {'resources': [resource], 'meta': {}}, None)
+            for route in ('about', 'zh/about'):
+                about = (output / route / 'index.html').read_text(encoding='utf-8')
+                self.assertIn('href="https://github.com/reacher-z/Awesome-REA/blob/main/data/README.md"', about, route)
 
     def test_metadata_schema_and_asset_routes(self):
         original = fixture(); html = localized_homepage(original, APP, 'zh')
@@ -244,6 +269,30 @@ class HomepageLocaleTests(unittest.TestCase):
         html = localized_homepage(fixture(), source, 'zh')
         self.assertEqual(nodes(html, 'input')[0]['attrs']['aria-label'], 'A "quoted" label')
         self.assertIn('aria-label="A &quot;quoted&quot; label"', html)
+
+    def test_only_links_that_leave_the_site_show_the_external_arrow(self):
+        # ↗ and the external-link icon mark new-tab links off awesomerea.org; same-site links use → or no glyph.
+        # browseDirectory is now a plain section name in the shared footer, like the other section links.
+        changed = ('surveyLink', 'directoryAbout', 'dataManifest', 'dataResources', 'dataPapers')
+        for lang in ('en', 'zh'):
+            with self.subTest(language=lang):
+                html = localized_homepage(TEMPLATE, APP, lang)
+                internal, external = [], []
+                for node in nodes(html, 'a'):
+                    href = node['attrs'].get('href', '')
+                    (external if re.match(r'https?://', href) else internal).append((href, content(html, node)))
+                    if re.match(r'https?://', href):
+                        self.assertNotRegex(href, r'^https://awesomerea\.org(?:/|$)')
+                self.assertGreaterEqual(len([href for href, _ in internal if href.startswith('/')]), 14)
+                for href, inner in internal:
+                    self.assertNotIn('↗', inner, href)
+                    self.assertNotRegex(inner, r'i-external|fa-external', href)
+                # Off-site links keep the arrow, for example the external collection on the shelf.
+                arrowed = {href for href, inner in external if '↗' in inner}
+                self.assertIn('https://github.com/songshikang0111/awesome-REA-cases', arrowed)
+                # The text of the changed links keeps its words; only the trailing glyph differs.
+                for key in changed:
+                    self.assertRegex(_ui_strings(APP)[lang][key], r'^[^↗→]+ →$', key)
 
     def test_noscript_internal_links_keep_their_explicit_language(self):
         en = '<em>Browse</em> <a href="/papers/#paper-example">papers</a> <a href="/zh/" lang="zh-CN">中文</a>'

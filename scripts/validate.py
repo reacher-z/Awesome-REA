@@ -14,8 +14,10 @@ import sys
 from urllib.parse import unquote, urlsplit
 
 from artifact_links import github_repository
-from build_readme import CATEGORIES, RELATIONSHIPS, TARGETS, readme_size_warnings
+from build_readme import (CATEGORIES, METHOD_HEADINGS, METHOD_SECTIONS, RECONSTRUCTION_METHODS, RELATIONSHIPS, TARGETS,
+                          UNASSIGNED_METHOD, collection_section, readme_size_warnings)
 from catalog import ROOT, RESOURCE_FILES
+from review_disclaimers import banned_sentences
 from localization import read_fingerprints, read_localizations, validate_fingerprints, validate_localizations
 from requirement_facets import facet_errors
 from curated_translations import CURATED_TRANSLATIONS, read_curated_translations, validate_curated_translations
@@ -25,6 +27,7 @@ from review_dates import inclusion_date_error, review_date_is_future
 from source_descriptions import validate_description_capture
 from scan_sources import CURATED_SEED_FILES, PAPER_SEED_FILE, RUN_PROVENANCE_POLICY
 from case_coverage import catalog_revision_warning, read_case_coverage, validate_case_coverage
+from data_classes import class_errors
 import strict_json
 
 
@@ -32,7 +35,7 @@ RESOURCE_FIELDS = {
     'id', 'name', 'url', 'category', 'relationship', 'description_en',
     'description_zh', 'evidence_url', 'verified_at', 'verification', 'requirements', 'targets', 'kind',
 }
-OPTIONAL_RESOURCE_FIELDS = {'additional_evidence_urls'}
+OPTIONAL_RESOURCE_FIELDS = {'additional_evidence_urls', 'added_at', 'class', 'reconstruction_method', 'requirement_facets'}
 BENCHMARK_FIELDS = {
     'id', 'full_name', 'url', 'category', 'stars', 'stars_display',
     'stars_precision', 'observed_at', 'description_zh', 'mechanisms',
@@ -75,6 +78,24 @@ def requirement_budget_warning(records):
     listed = ', '.join(f'{identifier} ({-length:,})' for length, identifier in sorted(over))
     return (f'{len(over)} curated records exceed the {REQUIREMENTS_BUDGET:,}-character requirements budget '
             f'in data/README.md: {listed}')
+
+
+def missing_method_warnings(records):
+    """Advisory only: Game case studies without `reconstruction_method`, which the READMEs and /cases/ list last.
+
+    The field is recommended, not required, so pull requests that add a Game case without it keep passing.
+    """
+    missing = []
+    for record in records:
+        if (isinstance(record, dict) and record.get('kind') == 'case-study' and 'reconstruction_method' not in record
+                and isinstance(record.get('category'), str) and isinstance(record.get('relationship'), str)
+                and collection_section(record) in METHOD_SECTIONS):
+            missing.append(str(record.get('id')))
+    if not missing:
+        return []
+    return [f'{len(missing)} Game case {"study has" if len(missing) == 1 else "studies have"} no reconstruction_method '
+            f'and {"is" if len(missing) == 1 else "are"} listed under "{METHOD_HEADINGS[UNASSIGNED_METHOD][0]}": '
+            f'{", ".join(missing)}; add one of the methods in data/README.md']
 
 
 def public_https_error(value):
@@ -254,6 +275,15 @@ def validate_resources(records, errors, *, now=None):
             errors.append(f"{where}: relationship 'independent-reconstruction' requires category 'reconstruction-cases'")
         elif record['category'] == 'reconstruction-cases' and record['relationship'] != 'independent-reconstruction':
             errors.append(f"{where}: category 'reconstruction-cases' requires relationship 'independent-reconstruction'")
+        # The README and /cases/ group Game case studies by method; other records do not render the field. It is
+        # optional (missing_method_warnings reports Game cases without it), but a value must be in the vocabulary.
+        if 'reconstruction_method' in record:
+            if record['kind'] != 'case-study' or collection_section(record) not in METHOD_SECTIONS:
+                errors.append(f'{where}.reconstruction_method: only case studies listed under Game take this field')
+            elif record['reconstruction_method'] not in RECONSTRUCTION_METHODS:
+                errors.append(f'{where}.reconstruction_method: use one of ' + ', '.join(RECONSTRUCTION_METHODS)
+                              + "; use 'other' when the evidence does not establish one, or leave the field out")
+        errors.extend(f'{where}.{problem}' for problem in class_errors(record))
         if record['verification'] != 'source-reviewed':
             errors.append(f'{where}.verification: use source-reviewed; runtime and reproduction results are out of scope (see CONTRIBUTING.md)')
         if not string_list(record['requirements']):
@@ -348,6 +378,97 @@ def validate_benchmarks(records, errors):
                 errors.append(f'{where}: timestamps must satisfy created_at <= pushed_at <= observed_at')
             if times['observed_at'] > dt.datetime.now(dt.timezone.utc) + dt.timedelta(days=1):
                 errors.append(f'{where}.observed_at: snapshot is in the future')
+
+
+def validate_readme_evidence(record, where, errors, *, complete=True):
+    """Identity, URL, hash and README-transport checks for one successful scan record.
+
+    Publication and scan resume share these checks. With `complete=False`, as for a resumed
+    checkpoint, `readme_url` is checked only when present; publication requires every field.
+    """
+    for field in ('url', 'readme_url'):
+        if (complete or field == 'url' or field in record) and public_https_error(record.get(field)):
+            errors.append(f'{where}: invalid public {field}')
+    if not isinstance(record.get('full_name'), str) or not re.fullmatch(r'[A-Za-z0-9-]+/[A-Za-z0-9_.-]+', record['full_name']):
+        errors.append(f'{where}: invalid GitHub repository name')
+    if record.get('url') != 'https://github.com/' + str(record.get('full_name', '')):
+        errors.append(f'{where}: repository URL and full_name disagree')
+    if 'readme_api_url' in record:
+        api_url = record['readme_api_url']
+        if public_https_error(api_url):
+            errors.append(f'{where}: invalid public readme_api_url')
+        else:
+            parsed = urlsplit(api_url)
+            if (parsed.netloc != 'api.github.com'
+                    or parsed.path != '/repos/' + str(record.get('full_name', '')) + '/readme'):
+                errors.append(f'{where}: README API URL must match the public GitHub repository')
+    graphql_fields = {'readme_transport', 'readme_graphql_endpoint', 'readme_commit_sha'}
+    if 'readme_blob_api_url' in record:
+        expected = ('https://api.github.com/repos/' + str(record.get('full_name', ''))
+                    + '/git/blobs/' + str(record.get('readme_git_sha', '')))
+        if (record['readme_blob_api_url'] != expected or 'readme_api_url' not in record
+                or graphql_fields.intersection(record)
+                or record.get('readme_git_sha_matches_content') is not True):
+            errors.append(f'{where}: REST blob recovery must identify the verified immutable GitHub blob and README lookup')
+    if graphql_fields.intersection(record):
+        commit = record.get('readme_commit_sha')
+        path = record.get('readme_path')
+        if (not graphql_fields.issubset(record) or record.get('readme_transport') != 'github-graphql-blob'
+                or record.get('readme_graphql_endpoint') != 'https://api.github.com/graphql'
+                or not isinstance(commit, str) or not re.fullmatch(r'[0-9a-f]{40}', commit)
+                or not isinstance(path, str) or not path or path.startswith('/')
+                or any(part in ('', '.', '..') for part in path.split('/'))
+                or 'readme_api_url' in record or record.get('readme_git_sha_matches_content') is not True
+                or not isinstance(record.get('readme_url'), str) or not isinstance(record.get('url'), str)
+                or unquote(record.get('readme_url', '')) != record['url'] + '/blob/' + str(commit) + '/' + str(path)):
+            errors.append(f'{where}: GraphQL README evidence needs a verified blob and immutable commit URL')
+    if (record.get('private', False) is not False or record.get('visibility', 'public') != 'public'
+            or record.get('archived', False) is not False or record.get('fork', False) is not False):
+        errors.append(f'{where}: repository metadata must describe a public, non-fork, non-archived repository')
+    if not re.fullmatch(r'[0-9a-f]{64}', str(record.get('readme_sha256', ''))):
+        errors.append(f'{where}: missing README SHA-256')
+    if 'readme_content_git_sha' in record or 'readme_git_sha_matches_content' in record:
+        content_sha = record.get('readme_content_git_sha')
+        if (not isinstance(content_sha, str) or not re.fullmatch(r'[0-9a-f]{40}', content_sha)
+                or type(record.get('readme_git_sha_matches_content')) is not bool
+                or record['readme_git_sha_matches_content'] != (content_sha == record.get('readme_git_sha'))):
+            errors.append(f'{where}: computed README Git hash and comparison flag disagree')
+    if 'readme_integrity_review' in record:
+        review = record['readme_integrity_review']
+        expected = {'reviewed_at', 'method', 'advertised_blob_sha256', 'advertised_blob_bytes'}
+        if (not isinstance(review, dict) or set(review) != expected
+                or review.get('method') != 'readme-json-and-raw-match-captured-sha256'
+                or record.get('readme_git_sha_matches_content') is not False
+                or not re.fullmatch(r'[0-9a-f]{64}', str(review.get('advertised_blob_sha256', '')))
+                or type(review.get('advertised_blob_bytes')) is not int or review['advertised_blob_bytes'] <= 0):
+            errors.append(f'{where}: invalid README integrity review')
+        else:
+            try:
+                parse_iso(review['reviewed_at'], require_time=True)
+            except (ValueError, TypeError):
+                errors.append(f'{where}: invalid README integrity-review timestamp')
+
+
+def failure_url_error(failure):
+    name = failure.get('full_name')
+    return (not isinstance(name, str) or not re.fullmatch(r'[A-Za-z0-9-]+/[A-Za-z0-9_.-]+', name)
+            or failure.get('url') != 'https://github.com/' + name or bool(public_https_error(failure.get('url'))))
+
+
+def validate_retained_evidence(document, errors):
+    """Evidence checks for a snapshot that scanning resumes from, run before any authentication.
+
+    In-progress checkpoints and legacy count-only snapshots qualify. Publication additionally
+    requires a complete snapshot, its population guard and every field of a finished record.
+    """
+    meta, records, failures = document['meta'], document['resources'], document.get('failures', [])
+    for index, record in enumerate(records):
+        if isinstance(record, dict):
+            validate_readme_evidence(record, f'source index record {index}', errors, complete=False)
+    for index, failure in enumerate(failures):
+        if isinstance(failure, dict) and failure_url_error(failure):
+            errors.append(f'source index failure {index}: invalid public GitHub repository URL')
+    validate_scan_discovery(meta, records, errors, failures)
 
 
 def scan_run_entries(meta):
@@ -631,67 +752,7 @@ def validate_source_index(document, errors, *, allow_incomplete=False):
         if record.get('scan_status') != 'readme-scanned' or record.get('verification') != 'automated-readme-scan':
             errors.append(f'{where}: preserve automated scan labels')
         validate_description_capture(record, errors, where)
-        for field in ('url', 'readme_url'):
-            if public_https_error(record.get(field)):
-                errors.append(f'{where}: invalid public {field}')
-        if not isinstance(record.get('full_name'), str) or not re.fullmatch(r'[A-Za-z0-9-]+/[A-Za-z0-9_.-]+', record['full_name']):
-            errors.append(f'{where}: invalid GitHub repository name')
-        if record.get('url') != 'https://github.com/' + str(record.get('full_name', '')):
-            errors.append(f'{where}: repository URL and full_name disagree')
-        if 'readme_api_url' in record:
-            api_url = record['readme_api_url']
-            if public_https_error(api_url):
-                errors.append(f'{where}: invalid public readme_api_url')
-            else:
-                parsed = urlsplit(api_url)
-                if (parsed.netloc != 'api.github.com'
-                        or parsed.path != '/repos/' + str(record.get('full_name', '')) + '/readme'):
-                    errors.append(f'{where}: README API URL must match the public GitHub repository')
-        graphql_fields = {'readme_transport', 'readme_graphql_endpoint', 'readme_commit_sha'}
-        if 'readme_blob_api_url' in record:
-            expected = ('https://api.github.com/repos/' + str(record.get('full_name', ''))
-                        + '/git/blobs/' + str(record.get('readme_git_sha', '')))
-            if (record['readme_blob_api_url'] != expected or 'readme_api_url' not in record
-                    or graphql_fields.intersection(record)
-                    or record.get('readme_git_sha_matches_content') is not True):
-                errors.append(f'{where}: REST blob recovery must identify the verified immutable GitHub blob and README lookup')
-        if graphql_fields.intersection(record):
-            commit = record.get('readme_commit_sha')
-            path = record.get('readme_path')
-            if (not graphql_fields.issubset(record) or record.get('readme_transport') != 'github-graphql-blob'
-                    or record.get('readme_graphql_endpoint') != 'https://api.github.com/graphql'
-                    or not isinstance(commit, str) or not re.fullmatch(r'[0-9a-f]{40}', commit)
-                    or not isinstance(path, str) or not path or path.startswith('/')
-                    or any(part in ('', '.', '..') for part in path.split('/'))
-                    or 'readme_api_url' in record or record.get('readme_git_sha_matches_content') is not True
-                    or not isinstance(record.get('readme_url'), str) or not isinstance(record.get('url'), str)
-                    or unquote(record.get('readme_url', '')) != record['url'] + '/blob/' + str(commit) + '/' + str(path)):
-                errors.append(f'{where}: GraphQL README evidence needs a verified blob and immutable commit URL')
-        if (record.get('private', False) is not False or record.get('visibility', 'public') != 'public'
-                or record.get('archived', False) is not False or record.get('fork', False) is not False):
-            errors.append(f'{where}: repository metadata must describe a public, non-fork, non-archived repository')
-        if not re.fullmatch(r'[0-9a-f]{64}', str(record.get('readme_sha256', ''))):
-            errors.append(f'{where}: missing README SHA-256')
-        if 'readme_content_git_sha' in record or 'readme_git_sha_matches_content' in record:
-            content_sha = record.get('readme_content_git_sha')
-            if (not isinstance(content_sha, str) or not re.fullmatch(r'[0-9a-f]{40}', content_sha)
-                    or type(record.get('readme_git_sha_matches_content')) is not bool
-                    or record['readme_git_sha_matches_content'] != (content_sha == record.get('readme_git_sha'))):
-                errors.append(f'{where}: computed README Git hash and comparison flag disagree')
-        if 'readme_integrity_review' in record:
-            review = record['readme_integrity_review']
-            expected = {'reviewed_at', 'method', 'advertised_blob_sha256', 'advertised_blob_bytes'}
-            if (not isinstance(review, dict) or set(review) != expected
-                    or review.get('method') != 'readme-json-and-raw-match-captured-sha256'
-                    or record.get('readme_git_sha_matches_content') is not False
-                    or not re.fullmatch(r'[0-9a-f]{64}', str(review.get('advertised_blob_sha256', '')))
-                    or type(review.get('advertised_blob_bytes')) is not int or review['advertised_blob_bytes'] <= 0):
-                errors.append(f'{where}: invalid README integrity review')
-            else:
-                try:
-                    parse_iso(review['reviewed_at'], require_time=True)
-                except (ValueError, TypeError):
-                    errors.append(f'{where}: invalid README integrity-review timestamp')
+        validate_readme_evidence(record, where, errors)
         if type(record.get('readme_bytes')) is not int or record['readme_bytes'] <= 0:
             errors.append(f'{where}: missing positive README byte count')
         targets = record.get('targets')
@@ -715,10 +776,7 @@ def validate_source_index(document, errors, *, allow_incomplete=False):
         if identifier in ids:
             errors.append(f'source index failure {index}: source ID also has a successful scan')
         failed_ids.add(identifier)
-        name = failure.get('full_name')
-        if (not isinstance(name, str) or not re.fullmatch(r'[A-Za-z0-9-]+/[A-Za-z0-9_.-]+', name)
-                or failure.get('url') != 'https://github.com/' + name
-                or public_https_error(failure.get('url'))):
+        if failure_url_error(failure):
             errors.append(f'source index failure {index}: invalid public GitHub repository URL')
         validate_failure_metadata(failure, f'source index failure {index}', errors)
 
@@ -834,7 +892,76 @@ def validate_source_index(document, errors, *, allow_incomplete=False):
                             errors.append('Source index current_run metadata lookups must exclude retained README attempts.')
     validate_run_provenance(meta, errors)
     validate_scan_discovery(meta, records, errors, failures)
+    validate_scan_chronology(meta, records, failures, errors, now=dt.datetime.now(dt.timezone.utc))
     return len(records)
+
+
+def validate_scan_chronology(meta, records, failures, errors, *, now):
+    """Reject impossible scan times without rewriting or re-dating historical evidence.
+
+    No recorded time may be more than a day after `now`, and each README success follows its
+    metadata lookup. Only the current run's new attempts and observations must fall inside its
+    window: retained rows and observations keep the provenance of earlier runs or reconciled
+    checkpoints, and later rechecks such as README integrity reviews keep their own times.
+    """
+    def time_of(value):
+        try:
+            return parse_iso(value, require_time=True)
+        except (ValueError, TypeError):
+            return None  # Shape checks report missing or malformed timestamps.
+
+    times = []  # (location, time) pairs compared with the future limit at the end.
+
+    def recorded(where, value):
+        parsed = time_of(value)
+        if parsed is not None:
+            times.append((where, parsed))
+        return parsed
+
+    for field in ('started_at', 'completed_at', 'last_checkpoint_at'):
+        recorded(f'source index meta.{field}', meta.get(field))
+    histories = meta.get('resume_history')
+    for index, history in enumerate(histories if isinstance(histories, list) else []):
+        for field in ('started_at', 'completed_at', 'last_checkpoint_at'):
+            if isinstance(history, dict):
+                recorded(f'source index resume_history[{index}].{field}', history.get(field))
+    run = meta.get('current_run') if isinstance(meta.get('current_run'), dict) else {}
+    start = recorded('source index current_run.started_at', run.get('started_at'))
+    # An in-progress checkpoint has no completion time yet; its last save closes the window.
+    end = recorded('source index current_run.completed_at', run.get('completed_at')) or time_of(meta.get('last_checkpoint_at'))
+    window = (start, end) if start is not None and end is not None else None
+    if window and end < start:
+        errors.append('source index current_run: the run ends before it starts')
+        window = None
+    for kind, rows, retained_key in (('record', records, 'retained_successful_readme_scans'),
+                                     ('failure', failures, 'retained_failed_readme_scans')):
+        retained = run.get(retained_key)
+        for position, row in enumerate(rows):
+            if not isinstance(row, dict):
+                continue
+            where = f"source index {kind} {row.get('id')}"
+            observed = recorded(f'{where}.observed_at', row.get('observed_at'))
+            metadata = recorded(f'{where}.metadata_observed_at', row.get('metadata_observed_at'))
+            review = row.get('readme_integrity_review')
+            if isinstance(review, dict):
+                recorded(f'{where}.readme_integrity_review.reviewed_at', review.get('reviewed_at'))
+            if observed is not None and metadata is not None and metadata > observed:
+                errors.append(f'{where}: metadata_observed_at follows its README observation')
+            if (window and type(retained) is int and position >= retained and observed is not None
+                    and not window[0] <= observed <= window[1]):
+                errors.append(f'{where}: new README attempt lies outside the current run window')
+    for key, offset_key in (('queries', 'query_start_index'), ('seed_observations', 'seed_observation_start_index'),
+                            ('resume_observations', 'resume_observation_start_index')):
+        observations, offset = meta.get(key), run.get(offset_key)
+        for index, entry in enumerate(observations if isinstance(observations, list) else []):
+            if not isinstance(entry, dict):
+                continue
+            observed = recorded(f'source index {key}[{index}].observed_at', entry.get('observed_at'))
+            if (window and type(offset) is int and index >= offset and observed is not None
+                    and not window[0] <= observed <= window[1]):
+                errors.append(f'source index {key}[{index}]: current-run observation lies outside the run window')
+    limit = now + dt.timedelta(days=1)
+    errors.extend(f'{where}: recorded time is in the future' for where, parsed in times if parsed > limit)
 
 
 def list_item_prefix(line):
@@ -1083,7 +1210,8 @@ def validate_markdown(root, errors):
             if target.suffix.lower() in {'.md', '.markdown'}:
                 if target not in anchors:
                     anchors[target] = markdown_anchors(target.read_text(encoding='utf-8'))
-                if fragment.removeprefix('user-content-') not in anchors[target]:
+                # GitHub gives every rendered README the `readme` anchor, used by "back to top" links.
+                if fragment.removeprefix('user-content-') not in anchors[target] | {'readme'}:
                     errors.append(f'{where}: missing Markdown anchor: {destination}')
             elif target.suffix.lower() in {'.html', '.htm'}:
                 ids = set(re.findall(r'\b(?:id|name)=["\']([^"\']+)["\']', target.read_text(encoding='utf-8')))
@@ -1152,6 +1280,8 @@ def main():
     for warning in unknown_field_warnings(records) + evidence_pin_warnings(records):
         print(f'Warning: {warning}', file=sys.stderr)
     validate_requirement_facets(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), errors)
+    for identifier, field, _ in banned_sentences(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), papers):
+        errors.append(f'{identifier}: {field} describes this catalog\'s review; state project facts only (see data/README.md).')
     validate_benchmarks(benchmarks, errors)
     try:
         validate_curated_translations(records, read_curated_translations(ROOT), errors)
@@ -1199,6 +1329,20 @@ def main():
                           f'{sum(row["selected_count"] for row in supplements["held"])} explicitly held candidates.')
                 except (OSError, ValueError):
                     errors.append('Public source supplements failed evidence, identity, locale or scope validation.')
+    # The unreviewed discovery queue: exact verified captures, never curated records.
+    from discoveries import load_batches
+    discovery_batches, discovery_problems = load_batches(ROOT)
+    errors.extend(discovery_problems)
+    discovered = sum(len(batch['resources']) for batch in discovery_batches)
+    import discovery_reviews
+    discovery_reviews.validate_reviews(discovery_batches, discovery_reviews.read_reviews(ROOT), errors)
+    # Followed-source leads: what registered lists, registries and feeds link, kept unreviewed.
+    import discovery_leads
+    _, registry_problems = discovery_leads.load_registry(ROOT)
+    errors.extend(registry_problems)
+    lead_batches, lead_problems = discovery_leads.load_batches(ROOT)
+    errors.extend(lead_problems)
+    followed = sum(len(batch['leads']) for batch in lead_batches)
     validate_citation((ROOT / 'CITATION.cff').read_text(encoding='utf-8'), errors)
     count = validate_markdown(ROOT, errors)
     budget_warning = requirement_budget_warning(records)
@@ -1213,12 +1357,15 @@ def main():
     # Advisory: a README near GitHub's rendering limit is reported, never failed, so open pull requests keep passing.
     for warning in readme_size_warnings(ROOT):
         print(f'Warning: {warning}', file=sys.stderr)
+    # Advisory, for the same reason: Game case studies without a reconstruction method are listed last.
+    for warning in missing_method_warnings(records):
+        print(f'Warning: {warning}', file=sys.stderr)
     if errors:
         print(f'Validation failed with {len(errors)} issue(s):', file=sys.stderr)
         for error in errors:
             print(f'- {error}', file=sys.stderr)
         return 1
-    print(f'Validated {len(records)} curated resources, {len(papers)} research papers, {scanned} scanned sources, {len(benchmarks)} benchmark snapshots, {count} Markdown files, both generated catalogs, and the bilingual repository index.')
+    print(f'Validated {len(records)} curated resources, {len(papers)} research papers, {scanned} scanned sources, {discovered} unreviewed discoveries, {followed} unreviewed followed-source leads, {len(benchmarks)} benchmark snapshots, {count} Markdown files, both generated catalogs, and the bilingual repository index.')
     return 0
 
 

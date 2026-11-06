@@ -96,6 +96,22 @@ class ContributorReferenceTests(unittest.TestCase):
         self.assertEqual(set(re.findall(r'`([a-z]+)`', matches['scope'])), SCOPES)
         self.assertEqual(set(re.findall(r'`([a-z]+)`', matches['catalog'])), {'resource', 'paper'})
 
+    def test_worked_examples_match_their_records_and_pinned_evidence(self):
+        text = (ROOT / 'CONTRIBUTING.md').read_text(encoding='utf-8')
+        records = {record['id']: record for name in ('rea-resources.json', 'tool-resources.json')
+                   for record in json.loads((ROOT / 'data' / name).read_text(encoding='utf-8'))}
+        examples = re.findall(r'^- \*\*[^*]+:\*\* \[`([a-z0-9-]+)`\]\(data/[a-z-]+\.json\) uses (.+)$', text, re.MULTILINE)
+        self.assertEqual(len(examples), 4)
+        for identifier, line in examples:
+            record = records[identifier]
+            with self.subTest(example=identifier):
+                for field in ('kind', 'relationship', 'category'):
+                    self.assertIn(f'`{field}: {record[field]}`', line)
+                self.assertIn(f"`targets: [{', '.join(record['targets'])}]`", line)
+                # The source link is the record's own evidence, pinned to the reviewed commit.
+                self.assertEqual(re.findall(r'\[source\]\((https://[^)]+)\)', line, re.IGNORECASE), [record['evidence_url']])
+                self.assertRegex(record['evidence_url'], r'/blob/[0-9a-f]{40}/')
+
     def test_resource_form_offers_each_kind_once(self):
         options = form_options('resource.yml', 'kind')
         labels = {labels[0]: kind for kind, labels in KIND_LABELS.items()}
@@ -112,6 +128,21 @@ class ContributorReferenceTests(unittest.TestCase):
         self.assertEqual(sorted(options), sorted(PAPER_FORM_STATUSES))
         statuses = [value for value in PAPER_FORM_STATUSES.values() if value]
         self.assertEqual(sorted(statuses), sorted(PAPER_STATUSES))
+
+    def test_outdated_resource_form_asks_for_triage_evidence(self):
+        text = (ROOT / '.github/ISSUE_TEMPLATE/broken-resource.yml').read_text(encoding='utf-8')
+        # Correction links prefill `resource`, so it stays the first field under that id.
+        self.assertEqual(re.findall(r'^    id: (\S+)$', text, re.MULTILINE),
+                         ['resource', 'problem', 'observed_status', 'checked_on', 'new_url', 'correction'])
+        self.assertEqual(form_options('broken-resource.yml', 'problem'),
+                         ['Dead link (404 or 410)', 'Moved or renamed', 'Content or requirements changed',
+                          'License changed', 'Other'])
+        guide = (ROOT / 'docs/automation.md').read_text(encoding='utf-8')
+        self.assertIn('\n## Triage source-link results\n', guide)
+        self.assertIn('Two consecutive requests returned 404 or 410.', guide)
+        self.assertIn('docs/automation.md#triage-source-link-results', text)
+        self.assertIn('Remove tokens, cookies, account identifiers, local filesystem paths and private captures', text)
+        self.assertIn('https://github.com/reacher-z/Awesome-REA/security/policy', text)
 
     def test_documented_scans_write_outside_data(self):
         text = (ROOT / 'docs/source-scan.md').read_text(encoding='utf-8')
@@ -137,7 +168,9 @@ class ContributorReferenceTests(unittest.TestCase):
         self.assertEqual(errors, [])
         self.assertIn('license: MIT\n', text)
         self.assertIn('repository-code: https://github.com/reacher-z/Awesome-REA\n', text)
-        self.assertIn('name: Awesome REA contributors\n', text)
+        # The collection is cited as an entity: one author with a name, no personal names or websites.
+        self.assertRegex(text, r'(?m)^authors:\n  - name: Awesome REA\n(?!  - )')
+        self.assertNotRegex(text, r'(?m)^\s*(?:- )?(?:given-names|family-names|website|email|orcid):')
         self.assertIn('primary sources', text)
 
     def test_citation_release_fields_are_paired_semantic_and_not_future(self):
@@ -160,6 +193,27 @@ class ContributorReferenceTests(unittest.TestCase):
                     self.assertEqual(len(errors), 1, errors)
                     self.assertIn(problem, errors[0])
 
+    def test_ci_docs_name_the_jobs_behind_the_required_validate_check(self):
+        workflow = (ROOT / '.github/workflows/validate.yml').read_text(encoding='utf-8')
+        jobs = re.findall(r'^  ([a-z][a-z0-9_-]*):$', workflow.split('\njobs:\n', 1)[1], re.MULTILINE)
+        needs = re.search(r'^    needs: \[([^\]]+)\]$', workflow, re.MULTILINE)[1].split(', ')
+        shards = re.search(r'^        shard: \[([^\]]+)\]$', workflow, re.MULTILINE)[1].split(', ')
+        # validate-status only reports a dispatched run's aggregate result as a commit status.
+        self.assertEqual(sorted(needs + ['validate', 'validate-status']), sorted(jobs))
+        for name in ('CONTRIBUTING.md', 'docs/automation.md'):
+            text = (ROOT / name).read_text(encoding='utf-8')
+            with self.subTest(document=name):
+                for job in needs:
+                    self.assertIn(f'`{job}', text)
+                for shard in shards:
+                    self.assertIn(f'`unit ({shard})`', text)
+                self.assertIn('`validate`', text)
+                self.assertNotIn('`validate` check runs exactly', text)
+        chinese = (ROOT / 'CONTRIBUTING.zh-CN.md').read_text(encoding='utf-8')
+        self.assertIn('(CONTRIBUTING.md#update-the-catalog)', chinese)
+        self.assertIn('\n## Update the catalog\n', (ROOT / 'CONTRIBUTING.md').read_text(encoding='utf-8'))
+        for job in needs:
+            self.assertIn(f'`{job}`', chinese)
 
     def test_pull_request_template_commands_match_the_contributor_guide(self):
         template = (ROOT / '.github/PULL_REQUEST_TEMPLATE.md').read_text(encoding='utf-8')
@@ -172,7 +226,7 @@ class ContributorReferenceTests(unittest.TestCase):
         self.assertEqual(groups, ['Curated record', 'Research paper', 'Case-ledger entry', 'Code or site'])
         self.assertRegex(template, r'(?m)^Closes #$')
         self.assertIn('Pull requests are public. Remove tokens, cookies, account identifiers, local filesystem paths', template)
-        for generated in ('README.md', 'README.zh-CN.md', 'docs/repositories/', 'docs/case-coverage*.md'):
+        for generated in ('README.md', 'README.zh-CN.md', 'docs/papers*.md', 'docs/cases*.md', 'docs/repositories/', 'docs/case-coverage*.md'):
             self.assertIn(generated, template.split('are generated')[0].rsplit('\n', 1)[-1])
 
 if __name__ == '__main__':

@@ -1,16 +1,16 @@
-# Site-wide security headers. The policy allows same-origin scripts, styles, images and JSON
-# fetches, plus the licensed icon stylesheet and fonts served from awesome-rea.pages.dev.
+# Site-wide security headers. The policy allows same-origin scripts, styles, fonts, images, JSON
+# fetches and form submissions, plus the one inline script that sets the saved theme before first
+# paint, by its hash (site_shell.theme_script_hash; validate_site.py keeps them equal).
 # Linked sites receive only the origin https://awesomerea.org/ as referrer, never a path or search query.
 /*
-  Content-Security-Policy: default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://awesome-rea.pages.dev; font-src 'self' https://awesome-rea.pages.dev; img-src 'self'; connect-src 'self' https://cloudflareinsights.com; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-tZjlokcG/HaK4O09Aoepkn7H+7rOy/NH29SJxS7Gkdg=' https://static.cloudflareinsights.com; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self' https://cloudflareinsights.com; base-uri 'none'; form-action 'self'; frame-ancestors 'none'
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), geolocation=(), microphone=(), payment=(), usb=()
   Strict-Transport-Security: max-age=2592000
   Referrer-Policy: strict-origin-when-cross-origin
 /fonts/*
   Access-Control-Allow-Origin: *
-/fontawesome.css
-  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=2592000
 /
   Cache-Control: no-cache, must-revalidate
 /index.html
@@ -18,6 +18,10 @@
 /catalog.json
   Cache-Control: no-cache, must-revalidate
 /catalog-index.json
+  Cache-Control: no-cache, must-revalidate
+/search-index.json
+  Cache-Control: no-cache, must-revalidate
+/search-index.zh.json
   Cache-Control: no-cache, must-revalidate
 /source-index.json
   Cache-Control: no-cache, must-revalidate
@@ -35,10 +39,55 @@
   Content-Type: application/atom+xml; charset=utf-8
 /zh/feed.xml
   Content-Type: application/atom+xml; charset=utf-8
+/feed.json
+  Content-Type: application/feed+json; charset=utf-8
+/zh/feed.json
+  Content-Type: application/feed+json; charset=utf-8
+# Agent formats: the full catalog in Markdown, and each page's Markdown twin, whose canonical is its page.
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+/zh/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+/*/index.md
+  Link: <https://awesomerea.org/:splat/>; rel="canonical"
+# The static API: readable from any origin, revalidated on every request (Pages adds the ETag).
+/api/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: no-cache, must-revalidate
+/api/v1/*.csv
+  Content-Type: text/csv; charset=utf-8
+# The unreviewed discovery queue changes with every automated ingest.
+/discoveries/feed.xml
+  Content-Type: application/atom+xml; charset=utf-8
+/zh/discoveries/feed.xml
+  Content-Type: application/atom+xml; charset=utf-8
+/discoveries.json
+  Cache-Control: no-cache, must-revalidate
+/discoveries/batches/*
+  Cache-Control: no-cache, must-revalidate
+/discoveries/reviews.json
+  Cache-Control: no-cache, must-revalidate
+/discoveries/status.json
+  Cache-Control: no-cache, must-revalidate
+  Access-Control-Allow-Origin: *
+/discoveries/badge.json
+  Cache-Control: no-cache, must-revalidate
+  Access-Control-Allow-Origin: *
+# Followed-source leads change with every lead ingest.
+/discoveries/leads.json
+  Cache-Control: no-cache, must-revalidate
+/discoveries/leads/*
+  Cache-Control: no-cache, must-revalidate
+# Stylesheets and scripts live at content-addressed /assets/<name>.<sha256 prefix>.<ext> paths: a changed file
+# gets a new URL, so browsers may keep each one for a year without revalidating.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
 /papers/references.bib
   Content-Type: application/x-bibtex; charset=utf-8
 /papers/citations/*.bib
   Content-Type: application/x-bibtex; charset=utf-8
+/badges/*
+  Content-Type: image/svg+xml
 # Keep *.pages.dev copies (production alias, previews and the icon-asset Direct Upload project)
 # out of search results; absolute-URL rules never match the canonical awesomerea.org host.
 https://:project.pages.dev/*

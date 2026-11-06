@@ -44,6 +44,8 @@
 /* A plain list under the card heading, not a navigation landmark per paper. */
 .paper-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0 10px;padding:0;list-style:none}
 .paper-links>li{display:flex}
+/* Without clipboard access, the Copy link item takes its own row so the selected link field below the button has room. */
+.paper-links>li:has(>.copy-link-fallback){flex:1 1 100%;flex-wrap:wrap;gap:6px 8px}
 .paper-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:5px 10px;border:1px solid var(--line);border-radius:6px;color:var(--link);background:var(--surface);font-size:14px;font-weight:550}
 .paper-link:hover{border-color:var(--strong);background:var(--tint)}
 .paper-link-primary{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
@@ -54,13 +56,10 @@
 .paper-details summary{width:fit-content;min-height:44px;padding-block:9px;cursor:pointer;font-weight:600;color:var(--link)}
 .paper-details[open] summary{margin-bottom:14px;color:var(--ink)}
 .paper-details p{margin:0 0 14px;font-size:15px;color:var(--body)}
-.paper-details dl{display:grid;grid-template-columns:132px minmax(0,1fr);gap:8px 14px;margin:14px 0;max-width:76ch}
-.paper-details dt{font-weight:600}
-.paper-details dd{margin:0;overflow-wrap:anywhere}
-.paper-details ul{margin:0 0 14px;padding-left:18px;font-size:15px}
-.paper-details li+li{margin-top:10px}
-.paper-details li a{color:var(--link);overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
-.paper-review-note{font-style:normal}
+/* Like the /resources/ card footer: a counted link to the entry page's sources, with their review date. */
+.paper-sources{margin:4px 0 0;font-size:14px;line-height:1.6}
+.paper-sources a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+.paper-sources a:hover{text-decoration-thickness:2px}
 @media(max-width:1000px){.paper-grid{grid-template-columns:1fr}.paper-card{padding:24px}.paper-card h3{font-size:20px}}
 @media(max-width:700px){
   .papers-breadcrumbs{margin-top:18px}
@@ -78,15 +77,10 @@
   .paper-scope{padding:12px 13px}
   .paper-links{gap:7px}
   .paper-link{min-height:44px}
-  .paper-details dl{grid-template-columns:105px minmax(0,1fr);gap:8px 10px}
-}
-@media(max-width:520px){
-  .paper-details dl{grid-template-columns:minmax(0,1fr);gap:4px}
-  .paper-details dd+dt{margin-top:8px}
 }
 /* Keep full-width tablet cards comfortable to read without hiding any text. */
-.paper-description,.paper-scope p,.paper-details p,.paper-details ul{max-width:68ch}
-html[lang="zh-CN"] .paper-description,html[lang="zh-CN"] .paper-scope p,html[lang="zh-CN"] .paper-details p,html[lang="zh-CN"] .paper-details ul{max-width:36em}
+.paper-description,.paper-scope p,.paper-details p{max-width:68ch}
+html[lang="zh-CN"] .paper-description,html[lang="zh-CN"] .paper-scope p,html[lang="zh-CN"] .paper-details p{max-width:36em}
 
 .papers-topic-nav a{min-height:44px}
 
@@ -105,10 +99,25 @@ html[lang="zh-CN"] .paper-description,html[lang="zh-CN"] .paper-scope p,html[lan
 .paper-search-empty{padding:24px 0;color:var(--muted)}
 .paper-search-empty p{margin:0 0 14px}
 @media(max-width:1000px){.paper-search{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.paper-search-query{grid-column:1/-1}.paper-search-more[open]{grid-row:auto}.paper-search .button{justify-self:start}}
-@media(max-width:600px){.paper-search{padding:14px;gap:10px}.paper-search-query,.paper-search>.paper-search-field:nth-child(2){grid-column:1/-1}.paper-search .button{justify-self:stretch}.paper-search-options{grid-template-columns:1fr}}
-@media(max-width:360px){.paper-search{grid-template-columns:1fr}.paper-search-field{grid-column:1/-1}}
+/* Phones: the search keeps the full width, Target sits beside "More filters" and the result count beside "Clear
+   filters", and research areas scroll sideways in one row, so the first paper starts higher on the page.
+   Rows are spaced with margins, so the row the open panel uses takes no space while it is closed. */
+@media(max-width:600px){
+  .paper-search{grid-template-columns:minmax(0,1fr) auto;row-gap:0;column-gap:12px;margin:14px 0;padding:14px}
+  .paper-search>:not(.paper-search-query){margin-top:10px}
+  .paper-search-query{grid-column:1/-1}
+  .paper-search>.paper-search-field:nth-child(2){grid-column:1;grid-row:2}
+  .paper-search-more{grid-column:2;grid-row:2;align-self:end}
+  .paper-search-more[open]{grid-column:1/-1;grid-row:3}
+  .paper-search-results{grid-column:1;grid-row:4;align-self:center}
+  .paper-search .button{grid-column:2;grid-row:4;justify-self:stretch}
+  .paper-search-options{grid-template-columns:1fr}
+  .papers-topic-nav{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+  .papers-topic-nav a{flex:none;white-space:nowrap}
+}
+@media(max-width:520px){.papers-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px}.papers-actions .button{min-width:0;padding-inline:10px;gap:8px}.papers-bibliography{grid-column:1/-1;justify-self:start}}
 
-/* Compact is the static default, including without JavaScript. Full evidence stays
+/* Compact is the static default, including without JavaScript. Scope and authors stay
    in native details; the optional card layout brings the scope panel into view. */
 html[data-paper-layout="compact"] .paper-grid{grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
 html[data-paper-layout="compact"] .paper-card{padding:22px 2px 12px;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none}
@@ -121,26 +130,32 @@ html[data-paper-layout="compact"] .paper-details{padding-top:0;border-top:0}
 html[data-paper-layout="compact"] .paper-details[open]{margin-bottom:12px}
 html[data-paper-layout="compact"] .paper-details .paper-authors{margin:0 0 12px}
 html[data-paper-layout="compact"] .paper-details .paper-scope{margin:0 0 14px}
+html[data-paper-layout="compact"] .paper-sources{margin:0 0 4px}
 @media(min-width:1101px){
-  html[data-paper-layout="compact"] .paper-card{display:grid;grid-template-columns:minmax(0,1fr) 16rem;grid-template-rows:auto auto 1fr;grid-template-areas:"header links" "description links" "description details";column-gap:32px;align-items:start}
+  html[data-paper-layout="compact"] .paper-card{display:grid;grid-template-columns:minmax(0,1fr) 16rem;grid-template-rows:auto auto auto 1fr;grid-template-areas:"header links" "description links" "description details" "description sources";column-gap:32px;align-items:start}
   html[data-paper-layout="compact"] .paper-card>header{grid-area:header}
   html[data-paper-layout="compact"] .paper-card>.paper-description{grid-area:description;max-width:90ch}
   html[data-paper-layout="compact"] .paper-card>.paper-links{grid-area:links;margin-top:0}
   html[data-paper-layout="compact"] .paper-card>.paper-details{grid-area:details}
   html[data-paper-layout="compact"] .paper-card>.paper-details[open]{grid-area:auto;grid-column:1/-1}
+  html[data-paper-layout="compact"] .paper-card>.paper-sources{grid-area:sources}
+  html[data-paper-layout="compact"] .paper-sources a{min-height:36px}
 }
-/* Between 701 and 1100 px the links share one line with the Scope & sources toggle, pushed right, under a summary
-   as wide as on desktop; from 901 px that line moves up beside the title. An opened panel still spans the row. */
+/* Between 701 and 1100 px the links share one line with the Scope & authors toggle, pushed right, under a summary
+   as wide as on desktop, and the sources link sits under the toggle; from 901 px that line moves up beside the title
+   and the sources link ends the row. An opened panel still spans the row. */
 @media(min-width:701px) and (max-width:1100px){
-  html[data-paper-layout="compact"] .paper-card{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"header header" "description description" "links details";column-gap:16px;align-items:center}
+  html[data-paper-layout="compact"] .paper-card{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"header header" "description description" "links details" ". sources";column-gap:16px;align-items:center}
   html[data-paper-layout="compact"] .paper-card>header{grid-area:header}
   html[data-paper-layout="compact"] .paper-card>.paper-description{grid-area:description;max-width:90ch}
   html[data-paper-layout="compact"] .paper-card>.paper-links{grid-area:links}
   html[data-paper-layout="compact"] .paper-card>.paper-details{grid-area:details}
   html[data-paper-layout="compact"] .paper-card>.paper-details[open]{grid-area:auto;grid-column:1/-1}
+  html[data-paper-layout="compact"] .paper-card>.paper-details:not([open]),html[data-paper-layout="compact"] .paper-card>.paper-sources{justify-self:end}
+  html[data-paper-layout="compact"] .paper-card>.paper-sources{grid-area:sources}
 }
 @media(min-width:901px) and (max-width:1100px){
-  html[data-paper-layout="compact"] .paper-card{grid-template-columns:minmax(0,1fr) auto auto;grid-template-areas:"header links details" "description description description";align-items:start}
+  html[data-paper-layout="compact"] .paper-card{grid-template-columns:minmax(0,1fr) auto auto;grid-template-areas:"header links details" "description description description" ". sources sources";align-items:start}
   html[data-paper-layout="compact"] .paper-card>.paper-links{margin-top:0}
 }
 

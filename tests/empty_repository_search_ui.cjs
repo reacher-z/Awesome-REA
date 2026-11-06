@@ -5,9 +5,11 @@ const path = require('node:path');
 const {setup} = require('./protocol_target_ui.cjs');
 const html = fs.readFileSync(path.resolve(__dirname, '../site/index.html'), 'utf8');
 
+// One row serves both views. Only the repository index may match “protobuf” (by full_name): curated search also
+// matches a GitHub owner/repo in the URL, so this fixture's URL stays off GitHub.
 const rows = [
   {id: 'curated-tool', name: 'Fixture tool', name_zh: '测试工具', full_name: 'Example/protobuf',
-    url: 'https://github.com/Example/protobuf', evidence_url: 'https://example.org/evidence',
+    url: 'https://example.org/fixture-tool', evidence_url: 'https://example.org/evidence',
     description_en: 'Documented fixture.', description_zh: '有文档的测试条目。',
     targets: ['protocol'], topics: ['fixtures'], category: 'dynamic-analysis', group: 'tools',
     kind: 'tool', relationship: 'foundation', requirements: ['Original input required.'],

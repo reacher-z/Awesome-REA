@@ -22,7 +22,8 @@ class LeanCatalogTests(unittest.TestCase):
             record['additional_evidence_urls'] = ['https://example.org/evidence']
         return {'meta': {'repository_url': 'https://github.com/reacher-z/Awesome-REA', 'source_index': {'available': False, 'resource_count': 0}},
                 'resources': records, 'topic_labels': {'reverse-engineering': {'en': 'Reverse engineering', 'zh': '逆向工程'}},
-                'category_labels': {'reconstruction-cases': ['Reconstruction cases', '重建案例']}}
+                'category_labels': {'reconstruction-cases': ['Reconstruction cases', '重建案例']},
+                'source_category_labels': {'android': ['Apps · Android', '应用 · Android']}}
 
     def test_index_keeps_render_fields_and_drops_requirement_text(self):
         catalog = self.catalog()
@@ -31,6 +32,8 @@ class LeanCatalogTests(unittest.TestCase):
         self.assertEqual(index['topic_labels'], catalog['topic_labels'])
         # The homepage category filter and cards read these labels on the first render.
         self.assertEqual(index['category_labels'], catalog['category_labels'])
+        # The repository view's Category filter builds its options from the index the homepage loads.
+        self.assertEqual(index['source_category_labels'], catalog['source_category_labels'])
         self.assertEqual([record['id'] for record in index['resources']], [record['id'] for record in catalog['resources']])
         for lean, full in zip(index['resources'], catalog['resources']):
             self.assertEqual(lean, {key: full[key] for key in CATALOG_INDEX_FIELDS if key in full})

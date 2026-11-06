@@ -331,12 +331,16 @@ class NestedSchemaTests(unittest.TestCase):
 
 class WorkflowTests(unittest.TestCase):
     def test_schedule_permissions_upload_scope_and_bounds(self):
-        text = (scheduled.ROOT / '.github/workflows/source-scan.yml').read_text()
-        self.assertIn("cron: '17 0,8,16 * * *'", text)
-        self.assertIn('timezone: America/Los_Angeles', text)
-        self.assertIn('contents: read', text); self.assertIn('actions: read', text)
-        self.assertNotIn(': write', text); self.assertNotIn('pull_request', text)
-        self.assertIn('timeout-minutes: 45', text)
+        workflow = (scheduled.ROOT / '.github/workflows/source-scan.yml').read_text()
+        self.assertIn("cron: '7 * * * *'", workflow)
+        self.assertNotIn('timezone:', workflow)
+        self.assertNotIn('pull_request', workflow)
+        self.assertIn('permissions:\n  contents: read\n  actions: read\nconcurrency:', workflow)
+        # The scan job keeps the read-only workflow token; only the separate ingest and report jobs write.
+        text = workflow.split('\n  ingest:\n', 1)[0]
+        self.assertNotIn(': write', text)
+        self.assertIn('timeout-minutes: 30', text)
+        self.assertNotIn('timeout-minutes: 45', text)
         self.assertIn("steps.scan.outputs.checkpoint_ready == 'true'", text)
         self.assertIn('checkpoint/checkpoint.json', text)
         self.assertNotIn('path: .cache/', text.split('name: Preserve validated incremental checkpoint')[1].split('name: Preserve validated inputs')[0])
@@ -345,7 +349,8 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn('checkpoint/frontier.json', text)
         self.assertNotIn('retention-days: 90', text)
         self.assertIn('retention-days: 7', text)
-        self.assertLess(scheduled.SCAN_SECONDS, 45 * 60)
+        # Restoration and scanning leave time for final validation and the upload inside the 30-minute job.
+        self.assertLessEqual(scheduled.SCAN_SECONDS, 25 * 60)
 
 
 class RuntimeBoundaryTests(unittest.TestCase):
@@ -390,6 +395,9 @@ class RuntimeBoundaryTests(unittest.TestCase):
             def launch(command, **kwargs):
                 self.assertNotIn(environment['GH_TOKEN'], ' '.join(command))
                 self.assertTrue(kwargs['start_new_session'])
+                # Restoration time comes out of the search window, never out of the read reserve.
+                seconds = int(command[command.index('--discovery-seconds') + 1])
+                self.assertTrue(0 < seconds <= scheduled.SCAN_SECONDS - scheduled.READ_RESERVE_SECONDS)
                 path = Path(command[command.index('--output') + 1])
                 partial = snapshot(range(1, 1503), pending=(1503,), status='in-progress')
                 scheduled.write_json(path, partial)
@@ -411,11 +419,12 @@ class RuntimeBoundaryTests(unittest.TestCase):
                     patch.object(scheduled.subprocess, 'Popen', side_effect=launch), \
                     patch.object(scheduled.os, 'killpg') as stop:
                 result = scheduled.orchestrate(root / '.cache/run')
-            self.assertEqual(result, 1)
+            self.assertEqual(result, 0)
             stop.assert_called_once_with(1234, scheduled.signal.SIGTERM)
             self.assertEqual(len(waits), 2)
             receipt = json.loads((root / '.cache/run/checkpoint/receipt.json').read_text())
             self.assertEqual(receipt['outcome'], 'time-budget')
+            self.assertEqual(receipt['scanner_exit_code'], 124)
             self.assertEqual(receipt['new_successful_scans'], 1)
             self.assertFalse(receipt['target_reached'])
             self.assertEqual(receipt['counts']['unique_repos'], 1504)
@@ -427,6 +436,48 @@ class RuntimeBoundaryTests(unittest.TestCase):
             self.assertEqual((root / 'outputs').read_text(), 'checkpoint_ready=true\n')
             self.assertNotIn(environment['GH_TOKEN'], json.dumps(receipt))
             self.assertEqual(json.loads((root / 'data/source-index.json').read_text()), canonical)
+
+    def test_expected_partial_progress_succeeds_but_stalls_errors_and_bad_evidence_fail(self):
+        for code, progress, corrupt, expected in ((1, True, False, 0),
+                                                  (1, False, False, 1),
+                                                  (2, True, False, 1),
+                                                  (130, True, False, 1),
+                                                  (1, True, True, None)):
+            with self.subTest(code=code, progress=progress, corrupt=corrupt), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary); (root / 'data').mkdir()
+                canonical = snapshot(range(1, 1502))
+                scheduled.write_json(root / 'data/source-index.json', canonical)
+                environment = {'GITHUB_REPOSITORY': 'example/catalog', 'DEFAULT_BRANCH': 'main',
+                               'GITHUB_REF': 'refs/heads/main', 'GITHUB_RUN_ID': '20', 'GITHUB_RUN_ATTEMPT': '1',
+                               'GITHUB_SHA': 'd' * 40, 'GH_TOKEN': 'ephemeral-test-value',
+                               'GITHUB_OUTPUT': str(root / 'outputs'), 'GITHUB_STEP_SUMMARY': str(root / 'summary')}
+
+                def launch(command, **kwargs):
+                    document = snapshot(range(1, 1503 if progress else 1502), status='in-progress')
+                    if corrupt:
+                        document['resources'][-1]['readme_git_sha_matches_content'] = False
+                    scheduled.write_json(Path(command[command.index('--output') + 1]), document)
+                    return SimpleNamespace(wait=lambda timeout: code)
+
+                with patch.dict(os.environ, environment), patch.object(scheduled, 'ROOT', root), \
+                        patch.object(scheduled.search_frontier, 'ROOT', root), \
+                        patch.object(scheduled, 'ActionsAPI', return_value=FakeAPI([], {})), \
+                        patch.object(scheduled.subprocess, 'Popen', side_effect=launch):
+                    if corrupt:
+                        with self.assertRaises(ValueError):
+                            scheduled.orchestrate(root / '.cache/run')
+                        self.assertFalse((root / 'outputs').exists())
+                        continue
+                    self.assertEqual(scheduled.orchestrate(root / '.cache/run'), expected)
+                receipt = json.loads((root / '.cache/run/checkpoint/receipt.json').read_text())
+                self.assertEqual(receipt['scanner_exit_code'], code)
+                self.assertEqual(receipt['outcome'], 'partial')
+                self.assertFalse(receipt['target_reached'])
+                self.assertFalse(receipt['global_target_reached'])
+                checkpoint = json.loads((root / '.cache/run/checkpoint/checkpoint.json').read_text())
+                errors = []; validate_source_index(checkpoint, errors)
+                self.assertTrue(any('incomplete checkpoint' in error for error in errors))
+                self.assertEqual(json.loads((root / 'data/source-index.json').read_text()), canonical)
 
 
 def small_frontier(identifier=None, acknowledged=False):
@@ -617,7 +668,11 @@ class ScheduledBudgetTests(unittest.TestCase):
             self.assertEqual((args.search_request_budget, args.pending_metadata_budget), (360, 200))
             self.assertEqual((args.workers, args.requests_per_second, args.max_pages), (4, 2, 3))
             self.assertEqual(scan.call_args.kwargs['readme_transport'].batch_size, 16)
-        self.assertEqual(scheduled.SCAN_SECONDS, 38 * 60)
+            self.assertTrue(0 < args.discovery_deadline - scheduled.time.monotonic()
+                            <= scheduled.SCAN_SECONDS - scheduled.READ_RESERVE_SECONDS)
+        self.assertEqual(scheduled.SCAN_SECONDS, 24 * 60)
+        self.assertEqual(scheduled.READ_RESERVE_SECONDS, 12 * 60)
+        self.assertEqual((args.failed_batch_skips, args.failed_batch_pause), (5, 5))
         self.assertEqual(scheduled.NEW_SUCCESSES, 2000)
 
     def test_observed_graphql_quota_and_fallback_budget_defer_without_extra_requests(self):

@@ -9,6 +9,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
+from asset_paths import digest
 import build_site
 from language_fragment import HEADER, add_language_fragment_script, language_fragment_script
 
@@ -25,14 +26,18 @@ class LanguageFragmentTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / 'dist'
             build_site.build_site(output)
-            tag = language_fragment_script(output)
-            self.assertEqual((output / 'language-fragment.js').read_bytes(), (ROOT / 'site/language-fragment.js').read_bytes())
+            # The build serves the script only from its content-addressed copy and removes the root copy.
+            source = (ROOT / 'site/language-fragment.js').read_bytes()
+            name = f'language-fragment.{digest(source)}.js'
+            tag = f'<script src="/assets/{name}" defer></script>'
+            self.assertEqual((output / 'assets' / name).read_bytes(), source)
+            self.assertFalse((output / 'language-fragment.js').exists())
             kinds = Counter()
             for page in sorted(output.rglob('*.html')):
                 route = page.relative_to(output).as_posix()
                 html = page.read_text(encoding='utf-8')
                 header = HEADER.search(html)
-                expected = route not in ('index.html', 'zh/index.html') and bool(header) and 'hreflang=' in header.group(0)
+                expected = route not in ('index.html', 'zh/index.html', 'explore/index.html', 'zh/explore/index.html') and bool(header) and 'hreflang=' in header.group(0)
                 with self.subTest(route=route):
                     self.assertEqual(html.count(tag), int(expected))
                     self.assertNotIn('language-fragment.js', html.replace(tag, ''))

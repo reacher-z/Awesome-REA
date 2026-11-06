@@ -2,27 +2,30 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/protocol-analysis/) · [English](protocol-analysis.md)
 
-**110 个仓库** · 2026-10-20 UTC
+**113 个仓库** · 2026-10-20 UTC
 
-这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
+这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
 - [Mouseww/anything-analyzer](https://github.com/Mouseww/anything-analyzer) — 全能协议分析工具：内置浏览器抓包、MITM 代理、JS hook、指纹伪装、AI 分析及 MCP Server，可无缝对接 AI 智能体与 IDE。 **[3,776 星标]**
 - [commaai/opendbc](https://github.com/commaai/opendbc) — 适用于你汽车的 Python API。 **[3,493 星标]** · 精选：[opendbc 汽车 CAN 报文定义库](https://awesomerea.org/zh/resources/opendbc/)
 - [SteamRE/SteamKit](https://github.com/SteamRE/SteamKit) — SteamKit2 是与 Valve 的 Steam 网络互操作的 .NET 库，旨在提供简单且可扩展的接口，以执行网络上的各种操作。 **[3,210 星标]** · 精选：[SteamKit Steam 网络协议库](https://awesomerea.org/zh/resources/steamkit/)
 - [ainfosec/FISSURE](https://github.com/ainfosec/FISSURE) — 面向所有人的射频与逆向工程框架。欢迎关注并点亮 ★ 表示支持！ **[2,069 星标]** · 精选：[FISSURE 射频信号分析与协议发现框架](https://awesomerea.org/zh/resources/fissure/)
 - [marin-m/pbtk](https://github.com/marin-m/pbtk) — 用于逆向工程和模糊测试基于 Protobuf 的应用的工具集。 **[1,691 星标]** · 精选：[pbtk Protobuf 逆向工具集](https://awesomerea.org/zh/resources/pbtk/)
+- [MatthewKuKanich/CAN\_Commander](https://github.com/MatthewKuKanich/CAN_Commander) — CAN Commander 是用于 CAN（控制器局域网）总线系统逆向工程的综合工具，旨在为汽车爱好者、工程师与安全研究人员提供可靠平台，与 CAN 网络交互并进行分析，从而深入理解和操控通信。 **[1,078 星标]** · 精选：[CAN Commander CAN 总线逆向工具](https://awesomerea.org/zh/resources/can-commander/)
 - [alphaSeclab/awesome-network-stuff](https://github.com/alphaSeclab/awesome-network-stuff) — 网络安全资源，涵盖代理/GFW/反向代理/隧道/VPN/Tor/I2P，以及中间人攻击、端口敲门、网络嗅探、网络分析等。目前收录 1700 多个开源工具，后续将补充文章。 **[926 星标]**
 - [netzob/netzob](https://github.com/netzob/netzob) — Netzob：协议逆向工程、建模与模糊测试 **[838 星标]** · 论文：[利用语义信息实现自动化协议逆向工程](https://awesomerea.org/zh/papers/paper-netzob/) · 精选：[Netzob 协议建模与推断框架](https://awesomerea.org/zh/resources/netzob/)
 - [furiousMAC/continuity](https://github.com/furiousMAC/continuity) — Apple Continuity 协议逆向工程与协议解析器 **[688 星标]** · 精选：[furiousMAC Apple Continuity 协议逆向与解析器](https://awesomerea.org/zh/resources/furiousmac-continuity/)
 - [fkie-cad/friTap](https://github.com/fkie-cad/friTap) — 让协议解密更轻松，简化研究人员的加密流量分析工作。 **[556 星标]** · 精选：[friTap TLS 密钥提取与流量解密工具](https://awesomerea.org/zh/resources/fritap/)
-- [brent-stone/CAN\_Reverse\_Engineering](https://github.com/brent-stone/CAN_Reverse_Engineering) — 面向控制器局域网（CAN）协议的自动化载荷逆向工程流程 **[456 星标]**
+- [brent-stone/CAN\_Reverse\_Engineering](https://github.com/brent-stone/CAN_Reverse_Engineering) — 面向控制器局域网（CAN）协议的自动化载荷逆向工程流程 **[456 星标]** · 精选：[CAN 负载自动逆向分析流水线](https://awesomerea.org/zh/resources/can-reverse-engineering/)
 - [0xMH/fichero-printer](https://github.com/0xMH/fichero-printer) — Fichero D11s 热敏标签打印机的 BLE 协议逆向工程与 Python 命令行工具 **[302 星标]**
 - [niloofarkheirkhah/nili](https://github.com/niloofarkheirkhah/nili) — Nili 是一个用于网络扫描、中间人操作、协议逆向工程和模糊测试的工具。 **[219 星标]**
+- [Warxim/deluder](https://github.com/Warxim/deluder) — Deluder 用于拦截不支持代理的应用流量，目前开箱即用地支持 OpenSSL、GnuTLS、SChannel、WinSock 和 Linux Sockets。⚡ **[215 星标]** · 精选：[Deluder 应用流量拦截工具](https://awesomerea.org/zh/resources/deluder/)
 - [asiamina/A-Course-on-Digital-Forensics](https://github.com/asiamina/A-Course-on-Digital-Forensics) — 在 Texas Tech University 计算机科学系设计并开设的“数字取证”课程。 **[203 星标]**
 - [symbolicsoft/verifpal](https://github.com/symbolicsoft/verifpal) — 对现实世界中的密码协议进行分析。 **[133 星标]**
 - [Annyfee/spider-js-reverse](https://github.com/Annyfee/spider-js-reverse) — 精选不同网站的 JavaScript 逆向实例，提供详细讲解、知识点概括、加密算法、难度对比及跳转链接，涵盖补环境、提取 JavaScript、webpack 和瑞数等难点。 **[111 星标]**
 - [HackingLZ/maps\_scanner](https://github.com/HackingLZ/maps_scanner) — 用于 Microsoft Defender 研究的 MAPS 云扫描器及响应解析器。 **[96 星标]**
 - [leodesigner/powmr\_comm](https://github.com/leodesigner/powmr_comm) — PowMr 逆变器串行通信协议逆向工程 **[96 星标]**
+- [seemoo-lab/apple-continuity-tools](https://github.com/seemoo-lab/apple-continuity-tools) — 面向 Apple 无线生态系统的逆向工程工具集 **[90 星标]** · 精选：[Apple Continuity 逆向工程工具包](https://awesomerea.org/zh/resources/apple-continuity-tools/)
 - [yapengye/NetPlier](https://github.com/yapengye/NetPlier) — NetPlier：基于消息轨迹的概率式网络协议逆向工程 **[75 星标]** · 论文：[NetPlier：基于报文记录的概率网络协议逆向工程](https://awesomerea.org/zh/papers/paper-netplier/)
 - [seemoo-lab/aristoteles](https://github.com/seemoo-lab/aristoteles) — Apple Remote Invocation（ARI）协议的 Wireshark 解析器；该协议在 Intel 基带芯片与 iOS CommCenter 之间用于各类管理任务、短信、电话及更多功能。 **[74 星标]**
 - [HalilDeniz/ICMPWatch](https://github.com/HalilDeniz/ICMPWatch) — ICMPWatch：ICMP 数据包嗅探器 **[60 星标]**

@@ -2,9 +2,9 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/game-analysis/) · [简体中文](game-analysis.zh-CN.md)
 
-**485 repositories** · 2026-10-20 UTC
+**491 repositories** · 2026-10-20 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
+These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [HIllya51/LunaTranslator](https://github.com/HIllya51/LunaTranslator) — Visual Novel Translator **[13,757 stars]**
 - [baldurk/renderdoc](https://github.com/baldurk/renderdoc) — RenderDoc is a stand-alone graphics debugging tool. **[11,193 stars]** · Curated: [RenderDoc](https://awesomerea.org/resources/renderdoc/)
@@ -17,6 +17,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [LavaGang/MelonLoader](https://github.com/LavaGang/MelonLoader) — The World's First Universal Mod Loader for Unity Games compatible with both Il2Cpp and Mono **[4,258 stars]** · Curated: [MelonLoader](https://awesomerea.org/resources/melonloader/)
 - [danielkrupinski/Osiris](https://github.com/danielkrupinski/Osiris) — Cross-platform game hack for Counter-Strike 2 with Panorama-based GUI. **[3,891 stars]**
 - [ran-j/PS2Recomp](https://github.com/ran-j/PS2Recomp) — Playstation 2 Static Recompiler &amp; Runtime Tool to make native PC ports **[3,516 stars]** · Curated: [PS2Recomp](https://awesomerea.org/resources/ps2recomp/)
+- [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — Using Zygisk to dump il2cpp data at runtime **[3,343 stars]** · Curated: [Zygisk-Il2CppDumper](https://awesomerea.org/resources/zygisk-il2cppdumper/)
 - [morkt/GARbro](https://github.com/morkt/GARbro) — Visual Novels resource browser **[3,328 stars]** · Curated: [GARbro](https://awesomerea.org/resources/garbro/)
 - [4sval/FModel](https://github.com/4sval/FModel) — Unreal Engine Archives Explorer **[3,258 stars]** · Curated: [FModel](https://awesomerea.org/resources/fmodel/)
 - [djkaty/Il2CppInspector](https://github.com/djkaty/Il2CppInspector) — Powerful automated tool for reverse engineering Unity IL2CPP binaries **[3,056 stars]** · Curated: [Il2CppInspector](https://awesomerea.org/resources/il2cppinspector/)
@@ -44,7 +45,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [GensokyoClub/th06](https://github.com/GensokyoClub/th06) — Decompilation of 東方紅魔郷 ～ the Embodiment of Scarlet Devil (1.02h) **[616 stars]** · Curated: [Touhou 6: reconstructing Embodiment of Scarlet Devil 1.02h source](https://awesomerea.org/resources/th06-decomp-case/)
 - [encounter/objdiff](https://github.com/encounter/objdiff) — A local diffing tool for decompilation projects **[586 stars]** · Curated: [objdiff](https://awesomerea.org/resources/objdiff/)
 - [jac3km4/redscript](https://github.com/jac3km4/redscript) — Compiler/decompiler toolkit for redscript **[520 stars]** · Curated: [REDscript](https://awesomerea.org/resources/redscript/)
-- [EliotVU/Unreal-Library](https://github.com/EliotVU/Unreal-Library) — Decompiler for Unreal package files (.upk, .u, .uasset; etc), with support for Unreal Engine 1, 2, and 3 **[490 stars]**
+- [EliotVU/Unreal-Library](https://github.com/EliotVU/Unreal-Library) — Decompiler for Unreal package files (.upk, .u, .uasset; etc), with support for Unreal Engine 1, 2, and 3 **[490 stars]** · Curated: [UELib (Unreal-Library)](https://awesomerea.org/resources/uelib-unreal-package-library/)
 - [marsinator358/luajit-decompiler-v2](https://github.com/marsinator358/luajit-decompiler-v2) — LuaJIT bytecode decompiler **[487 stars]** · Curated: [LuaJIT Decompiler v2](https://awesomerea.org/resources/luajit-decompiler-v2/)
 - [sneakyevil/IL2CPP\_Resolver](https://github.com/sneakyevil/IL2CPP_Resolver) — A run-time API resolver for IL2CPP Unity. **[475 stars]**
 - [TeamGDB/Yakumo](https://github.com/TeamGDB/Yakumo) — Static recompilation of a PSP game into a native executable. Vulkan and SDL3. Bring your own copy of the game. **[447 stars]**
@@ -57,8 +58,10 @@ These are automatically discovered projects, not individually curated or tested 
 - [PrimeDecomp/prime](https://github.com/PrimeDecomp/prime) — A matching decompilation of Metroid Prime **[367 stars]** · Curated: [Metroid Prime: the PrimeDecomp matching GameCube decompilation](https://awesomerea.org/resources/primedecomp-metroid-prime-decomp-case/)
 - [0xDC00/agent](https://github.com/0xDC00/agent) — Universal script based text hooker (powered by FRIDA). **[357 stars]**
 - [adonis-singh/re4](https://github.com/adonis-singh/re4) — Resident Evil 4 (GameCube, G4BE08 debug build) — complete byte-identical decompilation to C/C++ **[345 stars]** · Curated: [re4: a byte-identical decompilation of the Resident Evil 4 GameCube debug build](https://awesomerea.org/resources/re4-gamecube-debug-decomp-case/)
+- [DizTools/DiztinGUIsh](https://github.com/DizTools/DiztinGUIsh) — A Super NES ROM Disassembler **[343 stars]** · Curated: [DiztinGUIsh](https://awesomerea.org/resources/diztinguish/)
 - [xensik/gsc-tool](https://github.com/xensik/gsc-tool) — A utility to compile &amp; decompile IW engine game scripts. **[335 stars]**
 - [snuri00/psp-web-recomp](https://github.com/snuri00/psp-web-recomp) — PSP games in the browser, static recompilation to WebAssembly, an HLE kernel and a WebGL2 renderer **[329 stars]** · Curated: [PSP Web Recomp](https://awesomerea.org/resources/psp-web-recomp/)
+- [mattcurrie/mgbdis](https://github.com/mattcurrie/mgbdis) — Game Boy ROM disassembler with RGBDS compatible output **[327 stars]** · Curated: [mgbdis](https://awesomerea.org/resources/mgbdis/)
 - [SpeedBreakerProject/speedbreaker](https://github.com/SpeedBreakerProject/speedbreaker) — Unofficial static recompilation of the Xbox 360 version of Need for Speed: Most Wanted (2005): a native port for Steam Deck, Steam Machine, Steam Frame, Linux and Mac (iPhone/iPad: sideload the experimental IPA or build it yourself). Bring your own disc: no game files included. Not affiliated with EA or Valve. **[326 stars]** · Curated: [SpeedBreaker: statically recompiling Need for Speed: Most Wanted for Xbox 360](https://awesomerea.org/resources/speedbreaker-nfs-most-wanted-case/)
 - [g0aty/SickoMenu](https://github.com/g0aty/SickoMenu) — A powerful utility for Among Us designed to enrich your game experience with custom features! **[316 stars]**
 - [encounter/decomp-toolkit](https://github.com/encounter/decomp-toolkit) — A GameCube &amp; Wii decompilation toolkit **[311 stars]** · Curated: [decomp-toolkit](https://awesomerea.org/resources/decomp-toolkit/)
@@ -69,10 +72,12 @@ These are automatically discovered projects, not individually curated or tested 
 - [jkdansereau/goldeneye-pc-port](https://github.com/jkdansereau/goldeneye-pc-port) — GoldenEye 007 (N64, 1997) as a native PC game for Windows, Linux, Steam Deck and macOS. Built from the open decompilation, with widescreen, mouse and keyboard or controller, and split-screen. Not an emulator. **[255 stars]** · Curated: [GoldenEye 007: an agent-assisted native port from a decompilation](https://awesomerea.org/resources/goldeneye-pc-port-case/)
 - [open-ead/sead](https://github.com/open-ead/sead) — Decompilation of sead: the standard C++ library for first-party Nintendo games **[252 stars]** · Curated: [sead: a decompilation of Nintendo’s first-party C++ standard library](https://awesomerea.org/resources/sead-nintendo-library-decomp-case/)
 - [kylesmile1103/Learn-Frida](https://github.com/kylesmile1103/Learn-Frida) — Modding Unity app with Frida tutorial. **[249 stars]**
+- [pedro-javierf/NTRGhidra](https://github.com/pedro-javierf/NTRGhidra) — A Nintendo DS binary loader for Ghidra **[228 stars]** · Curated: [NTRGhidra](https://awesomerea.org/resources/ntrghidra/)
 - [AITYunivers/NebulaFD](https://github.com/AITYunivers/NebulaFD) — A work in progress, reimagined decompiler for Clickteam Fusion. **[226 stars]** · Curated: [Nebula (NebulaFD)](https://awesomerea.org/resources/nebulafd/)
 - [dbalatoni13/nfsmw](https://github.com/dbalatoni13/nfsmw) — WIP 1:1 Decompilation of multiple versions of NFS:MW **[226 stars]**
 - [MetaMystia/MetaMystia](https://github.com/MetaMystia/MetaMystia) — A mod for Touhou Mystia's Izakaya. **[204 stars]**
 - [parappadev/parappa2](https://github.com/parappadev/parappa2) — PaRappa the Rapper 2 (2001, PS2) decompilation **[202 stars]**
+- [OpenGMK/GM8Decompiler](https://github.com/OpenGMK/GM8Decompiler) — A decompiler for GameMaker 8.x executables **[201 stars]** · Curated: [GM8Decompiler](https://awesomerea.org/resources/gm8decompiler/)
 - [open-ribbon/open-ribbon](https://github.com/open-ribbon/open-ribbon) — vib-ribbon decompilation (PAL version) **[188 stars]**
 - [ImaterialC/PriconneRe-TL](https://github.com/ImaterialC/PriconneRe-TL) — An English patch for Princess Connect! ReDive JP server 64bit IL2CPP version **[185 stars]**
 - [Herringway/ebsrc](https://github.com/Herringway/ebsrc) — Source code recreation for the game Earthbound **[183 stars]**
@@ -92,6 +97,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Unchiga/YuGiOhForbiddenMemoriesRecomp](https://github.com/Unchiga/YuGiOhForbiddenMemoriesRecomp) — Static recompilation of Yu-Gi-Oh! Forbidden Memories (PS1) into a native executable - with a live duel-rank meter, a fusion assistant, adjustable card drops and a cheat menu. Bring your own disc. **[137 stars]**
 - [2003scape/rsc-c](https://github.com/2003scape/rsc-c) — 🍫 runescape classic client ported to C **[135 stars]**
 - [opentestdriveunlimited/OpenTestDriveUnlimited](https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited) — Open source port of Test Drive Unlimited (2006) **[135 stars]**
+- [kotcrab/ghidra-allegrex](https://github.com/kotcrab/ghidra-allegrex) — Ghidra processor module adding support for the Allegrex CPU (PSP) **[132 stars]** · Curated: [ghidra-allegrex](https://awesomerea.org/resources/ghidra-allegrex/)
 - [IroniaTheMaster/Descrypt-global-metadata.dat](https://github.com/IroniaTheMaster/Descrypt-global-metadata.dat) — How do you decrypt global-metadata.dat from a Unity game? **[129 stars]**
 - [Fantaskink/SOTC](https://github.com/Fantaskink/SOTC) — An in-progress decompilation of the preview version of Shadow of the Colossus on the PlayStation 2 **[125 stars]**
 - [chrissotraidis/projectreach](https://github.com/chrissotraidis/projectreach) — Halo: Combat Evolved on iPhone, iPad and Mac. The Xbox edition with online matches of up to 128 players and the original campaign, plus Halo Custom Edition with its community servers. Bring your own game and build it on your Mac. **[124 stars]**

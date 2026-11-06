@@ -5,14 +5,14 @@ const path = require("node:path");
 const search = require("../site/paper-search.js");
 
 const papers = [
-  {id: "paper-game", title: "Game State Reconstruction", title_zh: "游戏状态重建", description_en: "Models observed transitions.", description_zh: "对已观察状态转移建模。", authors: ["Ada Example"], doi: "10.1234/game", arxiv_id: "2601.01234", year: 2026, publication_status: "preprint", targets: ["game", "website"]},
+  {id: "paper-game", title: "Game State Reconstruction", title_zh: "游戏状态重建", description_en: "Models observed transitions and Istanbul workflows.", description_zh: "对已观察状态转移建模，包括剪映／CapCut 工作流。", authors: ["Ada Example"], doi: "10.1234/game", arxiv_id: "2601.01234", year: 2026, publication_status: "preprint", targets: ["game", "website"]},
   {id: "paper-ui2code", title: "All Android Interfaces", title_zh: "全部安卓界面", description_en: "UI2code generates layout skeletons.", description_zh: "UI2code 根据截图生成布局骨架。", authors: ["Bo Researcher"], doi: "10.2345/app", arxiv_id: null, year: 2025, publication_status: "conference-accepted", targets: ["app"]},
   {id: "paper-published", title: "Protocol Formats", title_zh: "协议格式", description_en: "Infers communication fields.", description_zh: "推断通信报文字段。", authors: ["Chen Reviewer"], doi: null, arxiv_id: null, year: 2025, publication_status: "conference-paper", targets: ["protocol"]}
 ];
 const records = search.readRecords({schema_version: 1, papers});
 const allowed = search.allowedValues(records);
 const state = query => search.readState(new URLSearchParams(query), allowed);
-for (const query of ["reconstruction", "游戏状态", "Ada", "10.1234/game", "2601.01234"]) {
+for (const query of ["reconstruction", "游戏状态", "Ada", "10.1234/game", "2601.01234", "剪映/CapCut", "istanbul"]) {
   assert.deepEqual(records.filter(paper => search.matches(paper, state("q=" + encodeURIComponent(query)))).map(paper => paper.id), ["paper-game"]);
 }
 for (const query of ["UI2code", "布局骨架"]) {
@@ -41,9 +41,10 @@ class Element {
   querySelector() { return this.label; }
   focus() { this.focused = true; }
 }
-function setup(lang = "en", query = "", invalidData = false) {
-  const ids = new Map(["paper-search", "paper-search-data", "paper-query", "paper-target", "paper-status", "paper-year", "paper-results", "paper-empty", "paper-clear", "paper-empty-reset", "paper-more-filters"].map(id => [id, new Element()]));
-  ids.get("paper-search-data").textContent = JSON.stringify({schema_version: invalidData ? 2 : 1, papers});
+const INDEX = "/assets/paper-search-index.0123456789abcdef.json";
+function fixture(lang = "en", query = "") {
+  const ids = new Map(["paper-search", "paper-query", "paper-target", "paper-status", "paper-year", "paper-results", "paper-empty", "paper-clear", "paper-empty-reset", "paper-more-filters"].map(id => [id, new Element()]));
+  ids.get("paper-search").dataset.searchIndex = INDEX;
   const cards = papers.map(paper => new Element({paperId: paper.id}));
   const sections = papers.map((paper, i) => { const section = new Element({paperSection: paper.targets[0]}); section.children = [cards[i]]; section.label = new Element(); return section; });
   const topics = papers.map(paper => { const topic = new Element({paperTopic: paper.targets[0]}); topic.label = new Element(); return topic; });
@@ -54,8 +55,13 @@ function setup(lang = "en", query = "", invalidData = false) {
   const browser = {location: new URL("https://awesomerea.org" + (lang === "zh" ? "/zh/papers/" : "/papers/") + query), handlers: {}, calls: [],
     addEventListener(type, callback) { this.handlers[type] = callback; }};
   browser.history = Object.fromEntries(["replaceState", "pushState"].map(method => [method, (_, __, url) => { browser.location = new URL(url); browser.calls.push(method); }]));
-  const initialized = search.initialize(document, browser);
-  return {ids, cards, sections, topics, language, browser, initialized, visible: () => cards.filter(card => !card.hidden).map(card => card.dataset.paperId)};
+  return {ids, cards, sections, topics, language, browser, document, visible: () => cards.filter(card => !card.hidden).map(card => card.dataset.paperId)};
+}
+// Binds search as initialize() does once the index has arrived.
+function setup(lang = "en", query = "", invalidData = false) {
+  const app = fixture(lang, query);
+  app.initialized = Boolean(search.start(app.document, app.browser, {schema_version: invalidData ? 2 : 1, papers}, {cards: app.cards}));
+  return app;
 }
 for (const lang of ["en", "zh"]) {
   const app = setup(lang, "?target=website&year=2026#paper-game");
@@ -94,6 +100,53 @@ const canonicalAllowed = search.allowedValues(canonical);
 for (const [query, id] of [["UI2code", "paper-ui2code"], ["ReDraw", "paper-redraw"], ["布局骨架", "paper-ui2code"]]) {
   const current = search.readState(new URLSearchParams({q: query}), canonicalAllowed);
   assert(canonical.filter(paper => search.matches(paper, current)).some(paper => paper.id === id), query);
+}
+
+// initialize() fetches the index the form names; search starts when it arrives, and a failed request hides the form.
+async function loading() {
+  const loaded = fixture("en", "?target=website&year=2026");
+  let requested;
+  assert.equal(await search.initialize(loaded.document, loaded.browser, async (url, browser) => { requested = [url, browser]; return {schema_version: 1, papers}; }), true);
+  assert.deepEqual(requested, [INDEX, loaded.browser]);
+  assert.deepEqual(loaded.visible(), ["paper-game"]);
+  assert.equal(loaded.ids.get("paper-results").textContent, "Showing 1 of 3 papers");
+  for (const request of [async () => { throw new Error("offline"); }, async () => ({schema_version: 2, papers}), async () => ({schema_version: 1, papers: papers.slice(1)})]) {
+    const failed = fixture("en", "?q=game");
+    assert.equal(await search.initialize(failed.document, failed.browser, request), false);
+    assert.equal(failed.ids.get("paper-search").hidden, true); assert.equal(failed.visible().length, 3);
+  }
+  const unnamed = fixture("en");
+  delete unnamed.ids.get("paper-search").dataset.searchIndex;
+  let called = false;
+  assert.equal(await search.initialize(unnamed.document, unnamed.browser, async () => { called = true; return {schema_version: 1, papers}; }), false);
+  assert.equal(called, false); assert.equal(unnamed.ids.get("paper-search").hidden, true);
+  // Typing before the index arrives is kept and combined with the filters in the address; Enter does not reload the page.
+  const early = fixture("zh", "?target=website");
+  let deliver;
+  const started = search.initialize(early.document, early.browser, () => new Promise(resolve => { deliver = resolve; }));
+  let prevented = false;
+  early.ids.get("paper-search").emit("submit", {preventDefault() { prevented = true; }});
+  assert.equal(prevented, true);
+  early.ids.get("paper-query").value = "游戏"; early.ids.get("paper-query").emit("input");
+  assert.equal(early.visible().length, 3);
+  deliver({schema_version: 1, papers});
+  assert.equal(await started, true);
+  assert.equal(early.ids.get("paper-query").value, "游戏"); assert.equal(early.ids.get("paper-target").value, "website");
+  assert.deepEqual(early.visible(), ["paper-game"]);
+  assert.equal(early.browser.location.search, "?q=%E6%B8%B8%E6%88%8F&target=website");
+  assert.equal(new URL(early.language.href).searchParams.get("q"), "游戏");
+  // The layout applies before the index arrives, and still applies when search cannot start.
+  const control = new Node("select"), form = new Element();
+  form.dataset.searchIndex = INDEX;
+  const layoutDocument = {documentElement: {dataset: {}}, getElementById: id => ({"paper-layout": control, "paper-search": form})[id] || null,
+    querySelectorAll: selector => selector === "[data-paper-id]" ? [layoutCard()] : []};
+  const layoutBrowser = {location: new URL("https://awesomerea.org/papers/?layout=cards"), history: {replaceState() {}}};
+  let release;
+  const pending = search.initialize(layoutDocument, layoutBrowser, () => new Promise(resolve => { release = resolve; }));
+  assert.equal(layoutDocument.documentElement.dataset.paperLayout, "cards");
+  release({schema_version: 1, papers});
+  assert.equal(await pending, false); assert.equal(form.hidden, true);
+  assert.equal(layoutDocument.documentElement.dataset.paperLayout, "cards");
 }
 
 // Direct links must expose active advanced filters in either language.
@@ -148,4 +201,5 @@ assert.equal(search.initializeLayout({getElementById: () => null}, {}, [], () =>
 assert.deepEqual(["?layout=compact", "?layout=cards", "?layout=x", ""].map(query => search.readLayout(new URLSearchParams(query))), ["compact", "cards", "compact", "compact"]);
 // Filter URLs, and so the language link, keep the chosen layout.
 assert.equal(search.stateURL("https://awesomerea.org/papers/?layout=compact&q=old#paper-game", state("year=2025")).href, "https://awesomerea.org/papers/?layout=compact&year=2025#paper-game");
-console.log("Paper search: bilingual matching, facets, URLs, IME, history, reset, layout and static fallback passed.");
+loading().then(() => console.log("Paper search: bilingual matching, facets, URLs, IME, history, reset, layout, index loading and static fallback passed."),
+  error => { console.error(error); process.exitCode = 1; });

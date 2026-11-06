@@ -1,0 +1,2731 @@
+{
+  "schema_version": 1,
+  "kind": "discovery-source-registry",
+  "description": "Public sources that the followed-source discovery workflow reads every run. Each source names what it is, why it is followed and its scope rules: sections, keywords and item exclusions with reason codes from CONTRIBUTING.md. Listed links become unreviewed leads in data/discoveries/leads/; a listing is never evidence for curation.",
+  "exclusion_sets": {
+    "github-topic-review": [
+      {
+        "pattern": "^gh:xtekky/gpt4free$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:tyrrrz/youtubedownloader$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:hillya51/lunatranslator$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:acheong08/edgegpt$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:acheong08/bard$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:lennylxx/ipv6-hosts$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:ericc-ch/copilot-api$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:hanaokayuzu/gemini-api$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:tyrrrz/youtubeexplode$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:schemaspy/schemaspy$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:schemacrawler/schemacrawler$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:automeris-io/webplotdigitizer$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:intelligenzaartificiale/free-auto-gpt$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:claabs/epicgames-freegames-node$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:cycloidio/terracognita$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:noisebynorthwest/php-spx$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:xishandong/crawlproject$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:wstxda/qp-gallery-releases$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:reagentx/imessage-exporter$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:rng70/tryhackme-roadmap$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:filiksyos/gitreverse$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:yincongcyincong/wechat_chatter$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:tmedwards/tweego$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:mirkosertic/bytecoder$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:aboutcode-org/scancode\\.io$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:nikolaydubina/go-binsize-treemap$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:jaybosamiya/security-notes$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:we5ter/scanners-box$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:cristianzsh/forensictools$",
+        "reason": "unrelated",
+        "note": "not a reverse-engineering resource (API proxy, downloader, translator, scraper, DB/infra tool, unrelated project)"
+      },
+      {
+        "pattern": "^gh:r3nzthecodegod/r3nzskin$",
+        "reason": "cheat-or-evasion",
+        "note": "game cheat, client tweak or modding injector"
+      },
+      {
+        "pattern": "^gh:danielkrupinski/osiris$",
+        "reason": "cheat-or-evasion",
+        "note": "game cheat, client tweak or modding injector"
+      },
+      {
+        "pattern": "^gh:buginux/wechatredenvelop$",
+        "reason": "cheat-or-evasion",
+        "note": "game cheat, client tweak or modding injector"
+      },
+      {
+        "pattern": "^gh:gh0u1l5/wechatmagician$",
+        "reason": "cheat-or-evasion",
+        "note": "game cheat, client tweak or modding injector"
+      },
+      {
+        "pattern": "^gh:gh0u1l5/wechatspellbook$",
+        "reason": "cheat-or-evasion",
+        "note": "game cheat, client tweak or modding injector"
+      },
+      {
+        "pattern": "^gh:steamclienthomebrew/millennium$",
+        "reason": "cheat-or-evasion",
+        "note": "game cheat, client tweak or modding injector"
+      },
+      {
+        "pattern": "^gh:specialko/specialk$",
+        "reason": "cheat-or-evasion",
+        "note": "game cheat, client tweak or modding injector"
+      },
+      {
+        "pattern": "^gh:hack-with-github/awesome-hacking$",
+        "reason": "general-security",
+        "note": "general hacking / CTF collection"
+      },
+      {
+        "pattern": "^gh:vitalysim/awesome-hacking-resources$",
+        "reason": "general-security",
+        "note": "general hacking / CTF collection"
+      },
+      {
+        "pattern": "^gh:rmusser01/infosec_reference$",
+        "reason": "general-security",
+        "note": "general hacking / CTF collection"
+      },
+      {
+        "pattern": "^gh:0xor0ne/awesome-list$",
+        "reason": "general-security",
+        "note": "general hacking / CTF collection"
+      },
+      {
+        "pattern": "^gh:firmianay/ctf-all-in-one$",
+        "reason": "general-security",
+        "note": "general hacking / CTF collection"
+      },
+      {
+        "pattern": "^gh:notprab/\\.net-obfuscator$",
+        "reason": "protection-tool"
+      },
+      {
+        "pattern": "^gh:qybaihe/bla$",
+        "reason": "protection-tool",
+        "note": "anti-RE protection shield"
+      },
+      {
+        "pattern": "^gh:multitheftauto/mtasa-blue$",
+        "reason": "game-or-engine",
+        "note": "multiplayer mod platform"
+      },
+      {
+        "pattern": "^gh:juneyaooo/rea-video$",
+        "reason": "unrelated",
+        "note": "video production analysis, not software RE"
+      },
+      {
+        "pattern": "^gh:feicong/sec_skills$",
+        "reason": "general-security",
+        "note": "security skill table"
+      }
+    ],
+    "linking-policy-decisions": [
+      {
+        "pattern": "^gh:kiyogitpy/wardogs\\-data\\-docs$",
+        "reason": "linking-policy",
+        "note": "the listing describes cooked game-data exports; check for redistributed game data before linking"
+      },
+      {
+        "pattern": "^gh:00christian00/unitydecompiled$",
+        "reason": "linking-policy",
+        "note": "commits decompiled Unity engine DLLs (decompiled output of a commercial program): draft-PR route under the linking policy"
+      },
+      {
+        "pattern": "^gh:gmh5225/unreal\\-engine\\-5\\-pdb$",
+        "reason": "linking-policy",
+        "note": "redistributes PDB files derived from Epic binaries: maintainer decision needed"
+      },
+      {
+        "pattern": "^gh:ruvnet/open\\-claude\\-code$",
+        "reason": "linking-policy",
+        "note": "describes a nightly decompile of a commercial CLI: draft-PR route under the linking policy"
+      },
+      {
+        "pattern": "^gh:openedclaude/claude\\-reviews\\-claude$",
+        "reason": "linking-policy",
+        "note": "analyses the source of a commercial CLI: rights question for the maintainer"
+      },
+      {
+        "pattern": "^gh:n64decomp/mk64$",
+        "reason": "linking-policy",
+        "note": "its tree holds a 34 MB archive of course model data; repositories with game data stay unlinked (case-ledger decision)"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "gmh5225-awesome-game-security",
+      "type": "github-readme-list",
+      "repository": "gmh5225/awesome-game-security",
+      "path": "README.md",
+      "why": "Most actively maintained game-security list (daily pushes); used only for its RE subsections (RE tools, decompilers, debuggers, DBI, VMP/Themida/OLLVM deobfuscation, IDA/Ghidra/Binary Ninja/radare2/x64dbg/WinDbg plugins, engine explorers, game-hacking guides).",
+      "scope": {
+        "include_sections": ".",
+        "include_subsections": "^(Guide|Debugging|Packet Capture&Parse|RE Tools|Mixed boolean-arithmetic|Fix VMP|Fix Themida|Fix OLLVM|Dynamic Binary Instrumentation|Frida|Decompiler|IDA Plugins|IDA Signature Database|Binary Ninja Plugins|Ghidra Plugins|Radare Plugins|Windbg Plugins|X64DBG Plugins|SDK CodeGen|Game Engine Explorer:(Unreal|Unity|Source))\\s*$",
+        "kind_rules": [
+          [
+            "^Guide$",
+            "learning-resource"
+          ]
+        ],
+        "exclude": [
+          {
+            "pattern": "^section:(?!Cheat > Guide$).*Guide$",
+            "reason": "game-or-engine",
+            "note": "game-development guide outside the Cheat > Guide subsection"
+          },
+          {
+            "pattern": "^gh:msd0pe-1/cve-maker",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:0liverflow/cve2poc",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:zierax/grafana-final-scanner",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:0xbigshaq/apatchy",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:mlgmxyysd/xiaomi-hyperos-bootloader-bypass",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:kakaxh1/rootraven",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:oldboysonnt/mobile-harness",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:jafarm189/moabile",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:glitchzzz67/mast-orchestrator",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:mrmtwoj/android-frida-bypass-suite",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:marwaboualam/mobile_penetration_testing",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:quarkslab/android-hardware-attestation-demo",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:piffd0s/defcon-dreamcast",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:un4ckn0wl3z/dioprocess-private",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:voidsec/ioctlpus",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:romanrybachek/ioctl_helper",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:changeofpace/force-page-protection",
+            "reason": "security-testing",
+            "note": "exploit, CVE, pentest dashboard or bypass tooling"
+          },
+          {
+            "pattern": "^gh:nullednah/cheat-engine-undetectable",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:digital-dev/apprentice",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:n-t33/ue4-silent-aim",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:gmh5225/ue4_cheat_engine",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:corrm/cleancheat",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:gmh5225/shootergame-hack",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:zebratic/ue4injector",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:percpopper/ue4-freecam",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:gmh5225/ue-unrealenginesdk",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:astra1dev/malummenu-android",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:ashrafmorningstar/hayday-bot",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:matheusbranhann/taskbarhero-bot",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:levifrsn63/krunker-loader",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:murka007/glotus-client",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:minibloxcheaters2/vaperewrite",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:ssageparuders/cheatunitygames",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:sanqiuu/androidcheattemplate",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:issuimo/unityresolve\\.hpp",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:oobbb/android-il2cpp-modspeed",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:xxzzddxzd/unityspeedtools",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:wrxinyue/sts2-kitlib",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:plinkuuu/danisnightmare",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:wrong-commit/skid_factory",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:heaven-hm/cheat-agent",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:ym?y1666527646/ue4_base",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:yymy?1666527646/ue4_base",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:ymy1666527646/ue4_base",
+            "reason": "cheat-or-evasion",
+            "note": "game cheat, trainer, aimbot or cheat framework"
+          },
+          {
+            "pattern": "^gh:genymobile/scrcpy$",
+            "reason": "unrelated",
+            "note": "screen mirroring, disk eraser or VR mod"
+          },
+          {
+            "pattern": "^gh:barry-ran/qtscrcpy$",
+            "reason": "unrelated",
+            "note": "screen mirroring, disk eraser or VR mod"
+          },
+          {
+            "pattern": "^gh:partialvolume/shredos\\.x86_64$",
+            "reason": "unrelated",
+            "note": "screen mirroring, disk eraser or VR mod"
+          },
+          {
+            "pattern": "^gh:praydog/uevr$",
+            "reason": "unrelated",
+            "note": "screen mirroring, disk eraser or VR mod"
+          },
+          {
+            "pattern": "^gh:michaelmsonne/signtoolgui$",
+            "reason": "development-tool",
+            "note": "signing, build or source-code analysis utility"
+          },
+          {
+            "pattern": "^gh:jixiaoyong/apksigner$",
+            "reason": "development-tool",
+            "note": "signing, build or source-code analysis utility"
+          },
+          {
+            "pattern": "^gh:rhboot/pesign$",
+            "reason": "development-tool",
+            "note": "signing, build or source-code analysis utility"
+          },
+          {
+            "pattern": "^gh:microsoft/sdcm$",
+            "reason": "development-tool",
+            "note": "signing, build or source-code analysis utility"
+          },
+          {
+            "pattern": "^gh:yaxinsn/vermagic$",
+            "reason": "development-tool",
+            "note": "signing, build or source-code analysis utility"
+          },
+          {
+            "pattern": "^gh:colinsenner/pecleaner$",
+            "reason": "development-tool",
+            "note": "signing, build or source-code analysis utility"
+          },
+          {
+            "pattern": "^gh:sv-foster/unsign$",
+            "reason": "development-tool",
+            "note": "signing, build or source-code analysis utility"
+          },
+          {
+            "pattern": "^gh:microsoft/pdblister$",
+            "reason": "development-tool",
+            "note": "signing, build or source-code analysis utility"
+          },
+          {
+            "pattern": "^gh:static-analyzer-factory/static-analyzer-factory$",
+            "reason": "development-tool",
+            "note": "signing, build or source-code analysis utility"
+          },
+          {
+            "pattern": "^gh:mono/mono$",
+            "reason": "development-tool",
+            "note": "the Mono runtime itself"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "charlottecross1998-awesome-game-decompilations",
+      "type": "github-readme-list",
+      "repository": "CharlotteCross1998/awesome-game-decompilations",
+      "path": "README.md",
+      "why": "Curated, maintained index of game decompilations and recompilations by platform; an upstream of the catalog's Game reconstruction cases and of the auto-aggregated SubmitGame list.",
+      "scope": {
+        "include_sections": ".",
+        "exclude_sections": "^AI disclosure$|^Awesome Game Decompilations[^>]*$|Contents|Contributing",
+        "default_kind": "case-study",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "vector35-community-plugins",
+      "type": "github-readme-list",
+      "repository": "Vector35/community-plugins",
+      "path": "README.md",
+      "why": "Official Binary Ninja community-plugin registry maintained by Vector 35; authoritative for Binary Ninja plugins.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "rshipp-awesome-malware-analysis",
+      "type": "github-readme-list",
+      "repository": "rshipp/awesome-malware-analysis",
+      "path": "README.md",
+      "why": "Most-starred malware-analysis list and the standard index of static/dynamic malware RE tooling; only its RE-relevant sections are used (no threat intel, sample corpora, honeypots, DFIR).",
+      "scope": {
+        "include_sections": "Detection and Classification|Online Scanners and Sandboxes|Browser Malware|Documents and Shellcode|Deobfuscation|Debugging and Reverse Engineering|> Network$|Memory Forensics|> Books$|> Other$|Related Awesome Lists|Miscellaneous",
+        "exclude_sections": "Malware Collection|Threat Intelligence|Domain Analysis|File Carving|Windows Artifacts|Storage and Workflow",
+        "kind_rules": [
+          [
+            "Books|> Other$",
+            "learning-resource"
+          ],
+          [
+            "Related Awesome Lists",
+            "collection"
+          ]
+        ],
+        "exclude": [
+          {
+            "pattern": "^url:jotti\\.org",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^url:metadefender\\.opswat\\.com",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^url:virustotal\\.com",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:airbnb/binaryalert",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^url:chkrootkit\\.org",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^url:clamav\\.net",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:jessek/hashdeep",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^url:code\\.kliu\\.org/hashcheck",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:neo23x0/loki",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:rjhansen/nsrllookup",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^url:rootkit\\.nl",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:blackvoid/totalhash",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^url:totalhash\\.cymru\\.com",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^url:sno\\.phy\\.queensu\\.ca/~phil/exiftool",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:jakubroztocil/broyara|gh:hempnall/broyara",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:ohdae/hale",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:lmco/laikaboss",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:stamparm/maltrail",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:3pp3rs0n/python-icap-yara|gh:rdoorandry/python-icap-yara|python-icap-yara",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:ricardoarranz/squidmagic|squidmagic",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:wesleyneelen/malsploitbase",
+            "reason": "unrelated",
+            "note": "threat-intel, sample, community or DFIR resource"
+          },
+          {
+            "pattern": "^url:malwaremuseum",
+            "reason": "unrelated",
+            "note": "threat-intel, sample, community or DFIR resource"
+          },
+          {
+            "pattern": "^url:archive\\.org/details/malwaremuseum",
+            "reason": "unrelated",
+            "note": "threat-intel, sample, community or DFIR resource"
+          },
+          {
+            "pattern": "^gh:uppusaikiran/malware-organiser",
+            "reason": "unrelated",
+            "note": "threat-intel, sample, community or DFIR resource"
+          },
+          {
+            "pattern": "^url:tsurugi-linux\\.org",
+            "reason": "unrelated",
+            "note": "threat-intel, sample, community or DFIR resource"
+          },
+          {
+            "pattern": "^url:aptnotes|gh:aptnotes",
+            "reason": "unrelated",
+            "note": "threat-intel, sample, community or DFIR resource"
+          },
+          {
+            "pattern": "^url:honeynet\\.org",
+            "reason": "unrelated",
+            "note": "threat-intel, sample, community or DFIR resource"
+          },
+          {
+            "pattern": "^url:kernelmode\\.info",
+            "reason": "unrelated",
+            "note": "threat-intel, sample, community or DFIR resource"
+          },
+          {
+            "pattern": "^url:cse\\.google\\.com",
+            "reason": "unrelated",
+            "note": "threat-intel, sample, community or DFIR resource"
+          },
+          {
+            "pattern": "^gh:jorgeorchilles/malware-persistence|malware-persistence",
+            "reason": "unrelated",
+            "note": "threat-intel, sample, community or DFIR resource"
+          },
+          {
+            "pattern": "^url:malware-traffic-analysis\\.net",
+            "reason": "unrelated",
+            "note": "threat-intel, sample, community or DFIR resource"
+          },
+          {
+            "pattern": "^gh:sapphirex00/threat-hunting|malware-search",
+            "reason": "unrelated",
+            "note": "threat-intel, sample, community or DFIR resource"
+          },
+          {
+            "pattern": "^url:windowsir\\.blogspot",
+            "reason": "unrelated",
+            "note": "threat-intel, sample, community or DFIR resource"
+          },
+          {
+            "pattern": "^gh:meirwah/awesome-incident-response",
+            "reason": "general-security",
+            "note": "related list not about reverse engineering"
+          },
+          {
+            "pattern": "^gh:sbilly/awesome-security",
+            "reason": "general-security",
+            "note": "related list not about reverse engineering"
+          },
+          {
+            "pattern": "^gh:hslatman/awesome-threat-intelligence",
+            "reason": "general-security",
+            "note": "related list not about reverse engineering"
+          },
+          {
+            "pattern": "^gh:paralax/awesome-honeypots",
+            "reason": "general-security",
+            "note": "related list not about reverse engineering"
+          },
+          {
+            "pattern": "^gh:hslatman/awesome-industrial-control-system-security",
+            "reason": "general-security",
+            "note": "related list not about reverse engineering"
+          },
+          {
+            "pattern": "^gh:paulsec/awesome-sec-talks",
+            "reason": "general-security",
+            "note": "related list not about reverse engineering"
+          },
+          {
+            "pattern": "^gh:cugu/awesome-forensics",
+            "reason": "general-security",
+            "note": "related list not about reverse engineering"
+          },
+          {
+            "pattern": "^gh:carpedm20/awesome-hacking",
+            "reason": "general-security",
+            "note": "related list not about reverse engineering"
+          },
+          {
+            "pattern": "^gh:enaqx/awesome-pentest",
+            "reason": "general-security",
+            "note": "related list not about reverse engineering"
+          },
+          {
+            "pattern": "^gh:onlurking/awesome-infosec",
+            "reason": "general-security",
+            "note": "related list not about reverse engineering"
+          },
+          {
+            "pattern": "^gh:paragonie/awesome-appsec",
+            "reason": "general-security",
+            "note": "related list not about reverse engineering"
+          },
+          {
+            "pattern": "^gh:qazbnm456/awesome-web-security",
+            "reason": "general-security",
+            "note": "related list not about reverse engineering"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "onethawt-idaplugins-list",
+      "type": "github-readme-list",
+      "repository": "onethawt/idaplugins-list",
+      "path": "README.md",
+      "why": "Most-starred IDA Pro plugin list.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "dsasmblr-game-hacking",
+      "type": "github-readme-list",
+      "repository": "dsasmblr/game-hacking",
+      "path": "README.md",
+      "why": "Most-starred game-hacking list: disassemblers, debuggers, memory scanners, hooking libraries, file-format parsers and game RE articles.",
+      "scope": {
+        "include_sections": "Game Hacking Tools|Libraries, Frameworks|Interesting Repositories|Blog Posts|Videos|Books|Open Source and Safe-to-Hack|General Information",
+        "exclude_sections": "Forum Discussions|Sites/Forums",
+        "kind_rules": [
+          [
+            "Blog Posts|Videos|Books|Safe-to-Hack",
+            "learning-resource"
+          ]
+        ],
+        "exclude": [
+          {
+            "pattern": "^gh:gametutorials/tutorials",
+            "reason": "game-or-engine",
+            "note": "game development, general games or anti-cheat design material"
+          },
+          {
+            "pattern": "^gh:munificent/game-programming-patterns",
+            "reason": "game-or-engine",
+            "note": "game development, general games or anti-cheat design material"
+          },
+          {
+            "pattern": "^url:minetest\\.net",
+            "reason": "game-or-engine",
+            "note": "game development, general games or anti-cheat design material"
+          },
+          {
+            "pattern": "^url:xonotic\\.org",
+            "reason": "game-or-engine",
+            "note": "game development, general games or anti-cheat design material"
+          },
+          {
+            "pattern": "^url:alientrap\\.com",
+            "reason": "game-or-engine",
+            "note": "game development, general games or anti-cheat design material"
+          },
+          {
+            "pattern": "^url:assault\\.cubers\\.net",
+            "reason": "game-or-engine",
+            "note": "game development, general games or anti-cheat design material"
+          },
+          {
+            "pattern": "^url:autoitscript\\.com",
+            "reason": "game-or-engine",
+            "note": "game development, general games or anti-cheat design material"
+          },
+          {
+            "pattern": "^gh:mattgodbolt/compiler-explorer",
+            "reason": "game-or-engine",
+            "note": "game development, general games or anti-cheat design material"
+          },
+          {
+            "pattern": "^url:engineering\\.riotgames\\.com",
+            "reason": "game-or-engine",
+            "note": "game development, general games or anti-cheat design material"
+          },
+          {
+            "pattern": "^yt:obhk8luifk8|yt:obhk8lufik8|yt:obhk8luf",
+            "reason": "game-or-engine",
+            "note": "game development, general games or anti-cheat design material"
+          },
+          {
+            "pattern": "^gh:crosire/reshade",
+            "reason": "game-or-engine",
+            "note": "game development, general games or anti-cheat design material"
+          },
+          {
+            "pattern": "^gh:fransbouma/injectablegenericcamerasystem",
+            "reason": "game-or-engine",
+            "note": "game development, general games or anti-cheat design material"
+          },
+          {
+            "pattern": "^yt:obhk8lu",
+            "reason": "game-or-engine",
+            "note": "anti-cheat ML talk"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "tylerha97-awesome-reversing",
+      "type": "github-readme-list",
+      "repository": "tylerha97/awesome-reversing",
+      "path": "README.md",
+      "why": "Second most-starred general reversing list; adds decompilers (JEB, RetDec, Snowman), import reconstruction, Mac decryption and YARA sections.",
+      "scope": {
+        "include_sections": ".",
+        "exclude_sections": "^Channels$",
+        "kind_rules": [
+          [
+            "Books|Courses|Practice",
+            "learning-resource"
+          ]
+        ],
+        "exclude": [
+          {
+            "pattern": "^url:kalitut\\.com",
+            "reason": "unrelated",
+            "note": "generic book-ranking pages"
+          },
+          {
+            "pattern": "^url:(virusshare\\.com|contagiodump\\.blogspot\\.com|malware-traffic-analysis\\.com|malshare\\.com|malwareblacklist\\.com|malwr\\.com|vxvault\\.net)",
+            "reason": "malware-samples"
+          },
+          {
+            "pattern": "^url:(blackhat\\.com/us-16/training|offensive-security\\.com|corelan\\.be)",
+            "reason": "community-or-event",
+            "note": "generic security training catalogs"
+          },
+          {
+            "pattern": "^url:(amzn\\.to/2jlliai|amzn\\.com/0071832386)$",
+            "reason": "general-security",
+            "note": "Gray Hat Hacking"
+          },
+          {
+            "pattern": "^url:(amzn\\.to/2jnkv19|amzn\\.com/1593271441)$",
+            "reason": "security-testing",
+            "note": "Hacking: The Art of Exploitation"
+          },
+          {
+            "pattern": "^url:(amzn\\.to/2jmkcwc|amzn\\.com/1596932147)$",
+            "reason": "security-testing",
+            "note": "Fuzzing for Software Security"
+          },
+          {
+            "pattern": "^url:(amzn\\.to/2jlvtyt|amzn\\.com/0321444426)$",
+            "reason": "security-testing",
+            "note": "Art of Software Security Assessment"
+          },
+          {
+            "pattern": "^url:a\\.co/(6h55943|am4cenn)$",
+            "reason": "security-testing",
+            "note": "Shellcoder's Handbook / Kernel Exploitation"
+          },
+          {
+            "pattern": "^url:(agner\\.org/optimize|nostarch\\.com/seriouscrypto)$",
+            "reason": "unrelated",
+            "note": "optimization / cryptography books"
+          },
+          {
+            "pattern": "^url:developer\\.android\\.com/sdk$",
+            "reason": "development-tool",
+            "note": "Android Studio"
+          },
+          {
+            "pattern": "^url:technet\\.microsoft\\.com/en-us/sysinternals/bb963",
+            "reason": "forensics-only",
+            "note": "Autoruns"
+          },
+          {
+            "pattern": "^url:developer\\.apple\\.com/library/mac/documentation/darwin/reference/manpages/man8/dmesg",
+            "reason": "unrelated",
+            "note": "dmesg"
+          },
+          {
+            "pattern": "^gh:shaykhsiddique/",
+            "reason": "unrelated",
+            "note": "unrelated academic repository"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "wtsxdev-reverse-engineering",
+      "type": "github-readme-list",
+      "repository": "wtsxDev/reverse-engineering",
+      "path": "README.md",
+      "why": "Most-starred general reverse-engineering list on GitHub; long-standing reference for RE books, courses, practice sites and core Windows/macOS/Android tooling.",
+      "scope": {
+        "include_sections": ".",
+        "exclude_sections": "^Reverse Engineering resources$",
+        "kind_rules": [
+          [
+            "Books|Courses|Practice",
+            "learning-resource"
+          ]
+        ],
+        "exclude": [
+          {
+            "pattern": "^url:kalitut\\.com",
+            "reason": "unrelated",
+            "note": "generic book-ranking pages"
+          },
+          {
+            "pattern": "^url:(virusshare\\.com|contagiodump\\.blogspot\\.com|malware-traffic-analysis\\.com|malshare\\.com|malwareblacklist\\.com|malwr\\.com|vxvault\\.net)",
+            "reason": "malware-samples"
+          },
+          {
+            "pattern": "^url:(blackhat\\.com/us-16/training|offensive-security\\.com|corelan\\.be)",
+            "reason": "community-or-event",
+            "note": "generic security training catalogs"
+          },
+          {
+            "pattern": "^url:(amzn\\.to/2jlliai|amzn\\.com/0071832386)$",
+            "reason": "general-security",
+            "note": "Gray Hat Hacking"
+          },
+          {
+            "pattern": "^url:(amzn\\.to/2jnkv19|amzn\\.com/1593271441)$",
+            "reason": "security-testing",
+            "note": "Hacking: The Art of Exploitation"
+          },
+          {
+            "pattern": "^url:(amzn\\.to/2jmkcwc|amzn\\.com/1596932147)$",
+            "reason": "security-testing",
+            "note": "Fuzzing for Software Security"
+          },
+          {
+            "pattern": "^url:(amzn\\.to/2jlvtyt|amzn\\.com/0321444426)$",
+            "reason": "security-testing",
+            "note": "Art of Software Security Assessment"
+          },
+          {
+            "pattern": "^url:a\\.co/(6h55943|am4cenn)$",
+            "reason": "security-testing",
+            "note": "Shellcoder's Handbook / Kernel Exploitation"
+          },
+          {
+            "pattern": "^url:(agner\\.org/optimize|nostarch\\.com/seriouscrypto)$",
+            "reason": "unrelated",
+            "note": "optimization / cryptography books"
+          },
+          {
+            "pattern": "^url:developer\\.android\\.com/sdk$",
+            "reason": "development-tool",
+            "note": "Android Studio"
+          },
+          {
+            "pattern": "^url:technet\\.microsoft\\.com/en-us/sysinternals/bb963",
+            "reason": "forensics-only",
+            "note": "Autoruns"
+          },
+          {
+            "pattern": "^url:developer\\.apple\\.com/library/mac/documentation/darwin/reference/manpages/man8/dmesg",
+            "reason": "unrelated",
+            "note": "dmesg"
+          },
+          {
+            "pattern": "^gh:shaykhsiddique/",
+            "reason": "unrelated",
+            "note": "unrelated academic repository"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "morluto-awesome-reverse-engineering",
+      "type": "github-readme-list",
+      "repository": "morluto/awesome-reverse-engineering",
+      "path": "README.md",
+      "why": "Maintained 2026 list by the upstream REA maintainer with one-line, source-style descriptions across triage, native, dynamic, mobile, firmware, game and AI-assisted RE.",
+      "scope": {
+        "include_sections": ".",
+        "exclude_sections": "^Awesome Reverse Engineering[^>]*$",
+        "kind_rules": [
+          [
+            "Learning|Books|Practice",
+            "learning-resource"
+          ],
+          [
+            "Related lists",
+            "collection"
+          ],
+          [
+            "AI-assisted",
+            "tool"
+          ]
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "ashishb-android-security-awesome",
+      "type": "github-readme-list",
+      "repository": "ashishb/android-security-awesome",
+      "path": "README.md",
+      "why": "Most-starred Android security list, maintained in 2026: online APK analyzers, static/dynamic analysis and RE tools, practice apps.",
+      "scope": {
+        "include_sections": "Online Analyzers|Static Analysis Tools|App Vulnerability Scanners|Dynamic Analysis Tools|Reverse Engineering|App Repackaging Detectors|Misc Tools|Vulnerable Applications|Research Papers|> Books$|Academic.*> Others",
+        "exclude_sections": "Fuzz Testing|Market Crawlers|Exploits/Vulnerabilities|Citation",
+        "kind_rules": [
+          [
+            "Vulnerable Applications|Books|Others",
+            "learning-resource"
+          ],
+          [
+            "Research Papers",
+            "research"
+          ]
+        ],
+        "exclude": [
+          {
+            "pattern": "^url:appknox\\.com",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^url:nowsecure\\.com/blog/2016/09/19",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^url:oversecured\\.com",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^url:appsweep\\.guardsquare\\.com",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^url:immuniweb\\.com",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^url:ostorlab\\.co",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^url:devknox\\.io",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:google/nogotofail",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:androidvts/android-vts",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:mesquidar/adbsploit",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:azeemidrisi/phonesploit-pro",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:sundaysec/android-exploits",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:r0rt1z2/kaeru",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:thomasbuilds/spectre",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:wlmosv-png/wpaforge",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:raffadndm/hackndroid",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:bytesnipers/mobile-pentest-toolkit",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:blackfoxxx/mobix",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^url:exploit-db\\.com",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:appknox/afe",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^url:appsec-labs\\.com",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:bad-antics/nullkia",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^url:virustotal\\.com",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:k4n3co/lab-rats",
+            "reason": "unrelated",
+            "note": "remote administration tool"
+          },
+          {
+            "pattern": "^gh:detekt/detekt",
+            "reason": "development-tool"
+          },
+          {
+            "pattern": "^gh:mbrubeck/android-completion",
+            "reason": "development-tool"
+          },
+          {
+            "pattern": "^gh:dweinstein/dockerfile-androguard",
+            "reason": "development-tool"
+          },
+          {
+            "pattern": "^url:codekiem\\.com",
+            "reason": "development-tool"
+          },
+          {
+            "pattern": "^gh:secthetech/amdh",
+            "reason": "detection-only",
+            "note": "device hardening / policy enforcement"
+          },
+          {
+            "pattern": "^gh:muhammedalikcb/securecheck",
+            "reason": "detection-only",
+            "note": "device hardening / policy enforcement"
+          },
+          {
+            "pattern": "^url:android-device-security\\.org",
+            "reason": "detection-only",
+            "note": "device hardening / policy enforcement"
+          },
+          {
+            "pattern": "^gh:xurubin/aurasium",
+            "reason": "detection-only",
+            "note": "device hardening / policy enforcement"
+          },
+          {
+            "pattern": "^gh:den4uk/andriller",
+            "reason": "forensics-only"
+          },
+          {
+            "pattern": "^gh:mvt-project/mvt",
+            "reason": "forensics-only"
+          },
+          {
+            "pattern": "^gh:claudiugeorgiu/obfuscapk",
+            "reason": "protection-tool"
+          },
+          {
+            "pattern": "^gh:mobile-iot-security-lab/armandroid",
+            "reason": "protection-tool"
+          },
+          {
+            "pattern": "^url:wiki\\.sei\\.cmu\\.edu",
+            "reason": "development-tool",
+            "note": "secure-coding guidance"
+          },
+          {
+            "pattern": "^gh:b-mueller/android_app_security_checklist",
+            "reason": "development-tool",
+            "note": "secure-coding guidance"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "v33ru-awesome-connected-things-sec",
+      "type": "github-readme-list",
+      "repository": "V33RU/awesome-connected-things-sec",
+      "path": "README.md",
+      "why": "Most-starred maintained connected-device security list; its Firmware Security subsections give current (2024-2026) firmware extraction, emulation and RE tooling and tutorials.",
+      "scope": {
+        "include_sections": "Firmware Security > (Fundamentals|Extraction|Static Analysis Tools|Dynamic Analysis and Emulation|Reverse Engineering Tools|Binary Analysis|Router Firmware Analysis|UEFI Security)|Tools > Software Tools > Firmware Analysis|Learning Resources > Books > Firmware and Reverse Engineering|Wi-Fi > Reverse Engineering WiFi|MCP / AI Agent",
+        "kind_rules": [
+          [
+            "Fundamentals|Books|Tutor",
+            "learning-resource"
+          ]
+        ],
+        "exclude": [
+          {
+            "pattern": "^url:firmware\\.center",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^gh:owasp/iot-security-verification-standard",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:hexacon\\.fr",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:blackhat\\.com/us-24",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:binarly\\.io/posts/binarly_finds",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:binarly\\.io/blog/inside-the-logofail",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:blog\\.quarkslab\\.com/pixiefail",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:blog\\.quarkslab\\.com/for-science",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:coderush\\.me",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:binarly\\.io/blog/pkfail",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:binarly\\.io/blog/the-far-reaching",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:eclypsium\\.com",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:flattsecurity\\.medium\\.com",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:amazon\\.com/firmware-handbook",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:nostarch\\.com/fuzzing-android",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:nostarch\\.com/zero-day",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:nostarch\\.com/spacecraft",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          },
+          {
+            "pattern": "^url:binarly\\.io/blog/the-dark-side",
+            "reason": "security-testing",
+            "note": "vulnerability disclosure, standard, event page or non-RE book"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "fkie-cad-awesome-embedded-and-iot-security",
+      "type": "github-readme-list",
+      "repository": "fkie-cad/awesome-embedded-and-iot-security",
+      "path": "readme.md",
+      "why": "Embedded/IoT list from Fraunhofer FKIE (authors of FACT and cwe_checker): firmware analysis and extraction tools, hardware RE tools, books, papers and case studies.",
+      "scope": {
+        "include_sections": "Software Tools|Hardware Tools|Books|Research Papers|Case Studies|Free Training|Tutorials and Technical Background",
+        "exclude_sections": "Blogs|YouTube|Conferences|License",
+        "kind_rules": [
+          [
+            "Books|Free Training|Tutorials",
+            "learning-resource"
+          ],
+          [
+            "Research Papers",
+            "research"
+          ],
+          [
+            "Case Studies",
+            "case-study"
+          ]
+        ],
+        "exclude": [
+          {
+            "pattern": "^gl:expliot_framework/expliot",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:elevenpaths/homepwn",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gl:invuls/iot-projects",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:rub-nds/pret",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:threat9/routersploit",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:samsung/cotopaxi",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^doi:10\\.1145/3414173",
+            "reason": "unrelated",
+            "note": "IoT risk / mitigation / hardware-design material rather than RE"
+          },
+          {
+            "pattern": "^url:mdpi\\.com/1424-8220/19/19/4107",
+            "reason": "unrelated",
+            "note": "IoT risk / mitigation / hardware-design material rather than RE"
+          },
+          {
+            "pattern": "^url:nebelwelt\\.net/publications/files/19dsn",
+            "reason": "unrelated",
+            "note": "IoT risk / mitigation / hardware-design material rather than RE"
+          },
+          {
+            "pattern": "^url:alrawi\\.github\\.io",
+            "reason": "unrelated",
+            "note": "IoT risk / mitigation / hardware-design material rather than RE"
+          },
+          {
+            "pattern": "^ieee:8806725",
+            "reason": "unrelated",
+            "note": "IoT risk / mitigation / hardware-design material rather than RE"
+          },
+          {
+            "pattern": "^url:eprint\\.iacr\\.org/2017/625",
+            "reason": "unrelated",
+            "note": "IoT risk / mitigation / hardware-design material rather than RE"
+          },
+          {
+            "pattern": "^url:cse\\.psu\\.edu/~pdm12",
+            "reason": "unrelated",
+            "note": "IoT risk / mitigation / hardware-design material rather than RE"
+          },
+          {
+            "pattern": "^doi:10\\.5281/zenodo\\.1035034",
+            "reason": "unrelated",
+            "note": "IoT risk / mitigation / hardware-design material rather than RE"
+          },
+          {
+            "pattern": "^yt:nxyglay9n9w",
+            "reason": "unrelated",
+            "note": "IoT risk / mitigation / hardware-design material rather than RE"
+          },
+          {
+            "pattern": "^url:elsevier\\.com/books/the-firmware-handbook",
+            "reason": "unrelated",
+            "note": "IoT risk / mitigation / hardware-design material rather than RE"
+          },
+          {
+            "pattern": "^url:taylorfrancis\\.com/books/9780429066900",
+            "reason": "unrelated",
+            "note": "IoT risk / mitigation / hardware-design material rather than RE"
+          },
+          {
+            "pattern": "^url:elsevier\\.com/books/hardware-security",
+            "reason": "unrelated",
+            "note": "IoT risk / mitigation / hardware-design material rather than RE"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "techge-pre-list",
+      "type": "github-readme-list",
+      "repository": "techge/PRE-list",
+      "path": "README.md",
+      "why": "Reference bibliography of network protocol reverse-engineering approaches (71 papers, 2004-2021) with their public source code, kept by a PRE researcher.",
+      "parser": "pre-list",
+      "scope": {
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "fr0gger-awesome-ida-x64-olly-plugin",
+      "type": "github-readme-list",
+      "repository": "fr0gger/awesome-ida-x64-olly-plugin",
+      "path": "README.md",
+      "why": "Plugin list for IDA, Ghidra, x64dbg, OllyDbg and GDB, maintained into 2026.",
+      "scope": {
+        "include_sections": "Plugins",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "idoka-awesome-canbus",
+      "type": "github-readme-list",
+      "repository": "iDoka/awesome-canbus",
+      "path": "README.md",
+      "why": "Most-starred CAN-bus list: automotive protocol RE tools, CAN analyzers and DBC decoders (Protocol includes hardware buses under CONTRIBUTING.md).",
+      "scope": {
+        "include_sections": "Hacking and Reverse Engineering tools|Utils > (GUI Tools|TUI Tools|Python Tools)|CAN Database > (Converters and Parsers|DBC only)",
+        "kind_rules": [
+          [
+            "DBC only",
+            "project"
+          ]
+        ],
+        "exclude": [
+          {
+            "pattern": "^gh:genivi/candevstudio",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:rusoku/canal-view",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:seeeddocument/",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:facontidavide/plotjuggler",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:danielmartensson/",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:ecubus/",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:hardbyte/python-can",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:caran/can4python",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:hmq2018/",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:prindl/",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:sikkandarsulaiman/",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:nopnop2002/",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:jobgeodev/",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:skysky97/candb",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:smartgauges/",
+            "reason": "development-tool",
+            "note": "CAN development, adapter driver or generic plotting"
+          },
+          {
+            "pattern": "^gh:bhass1/pyfuzz_can",
+            "reason": "security-testing",
+            "note": "CAN fuzzing or injection toolkit"
+          },
+          {
+            "pattern": "^gh:zombiecraig/udsim",
+            "reason": "security-testing",
+            "note": "CAN fuzzing or injection toolkit"
+          },
+          {
+            "pattern": "^gh:zombiecraig/uds-server",
+            "reason": "security-testing",
+            "note": "CAN fuzzing or injection toolkit"
+          },
+          {
+            "pattern": "^gh:souravbaghz/",
+            "reason": "security-testing",
+            "note": "CAN fuzzing or injection toolkit"
+          },
+          {
+            "pattern": "^gh:shipcod3/cantot",
+            "reason": "security-testing",
+            "note": "CAN fuzzing or injection toolkit"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "dweinstein-awesome-frida",
+      "type": "github-readme-list",
+      "repository": "dweinstein/awesome-frida",
+      "path": "README.md",
+      "why": "The Frida ecosystem list: instrumentation libraries, Frida-powered RE tools, talks and blog posts.",
+      "scope": {
+        "include_sections": ".",
+        "exclude_sections": "Contributions|Credits",
+        "kind_rules": [
+          [
+            "Talks & Papers|Videos",
+            "learning-resource"
+          ],
+          [
+            "Blog posts",
+            "documentation"
+          ]
+        ],
+        "exclude": [
+          {
+            "pattern": "^url:act\\.osdc\\.no",
+            "reason": "community-or-event",
+            "note": "conference event page"
+          },
+          {
+            "pattern": "^url:nluug\\.nl/activiteiten/events/nj15$",
+            "reason": "community-or-event",
+            "note": "conference event page"
+          },
+          {
+            "pattern": "^url:2015\\.zeronights\\.org",
+            "reason": "community-or-event",
+            "note": "conference event page"
+          },
+          {
+            "pattern": "^url:2017\\.rmll\\.info",
+            "reason": "community-or-event",
+            "note": "conference event page"
+          },
+          {
+            "pattern": "^gh:google/tcp_killer",
+            "reason": "unrelated",
+            "note": "connection killer utility"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "user1342-awesome-android-reverse-engineering",
+      "type": "github-readme-list",
+      "repository": "user1342/Awesome-Android-Reverse-Engineering",
+      "path": "README.md",
+      "why": "Most-starred Android-RE-specific list: decompilers, deobfuscators, dynamic tools, training, CTFs and case studies.",
+      "scope": {
+        "include_sections": ".",
+        "exclude_sections": "^Awesome Android Reverse Engineering$",
+        "kind_rules": [
+          [
+            "Training|CTFs|Documentation",
+            "learning-resource"
+          ],
+          [
+            "Case Studies",
+            "case-study"
+          ]
+        ],
+        "exclude": [
+          {
+            "pattern": "^url:developer\\.android\\.com/studio$",
+            "reason": "development-tool"
+          },
+          {
+            "pattern": "^url:linux\\.die\\.net/man/1/sesearch",
+            "reason": "development-tool"
+          },
+          {
+            "pattern": "^gh:tytydraco/ladb",
+            "reason": "development-tool"
+          },
+          {
+            "pattern": "^url:apkmirror\\.com",
+            "reason": "distribution-site"
+          },
+          {
+            "pattern": "^url:m\\.apkpure\\.com|url:apkpure\\.com",
+            "reason": "distribution-site"
+          },
+          {
+            "pattern": "^url:guardsquare\\.com/manual",
+            "reason": "protection-tool"
+          },
+          {
+            "pattern": "^url:developer\\.android\\.com/studio/build/shrink-code",
+            "reason": "protection-tool"
+          },
+          {
+            "pattern": "^url:guardsquare\\.com/dexguard",
+            "reason": "protection-tool"
+          },
+          {
+            "pattern": "^gh:fuzion24/androidtamperdetection",
+            "reason": "protection-tool"
+          },
+          {
+            "pattern": "^gh:sundaysec/paranoid",
+            "reason": "protection-tool"
+          },
+          {
+            "pattern": "^gh:hluwa/libhooker",
+            "reason": "protection-tool"
+          },
+          {
+            "pattern": "^gh:aflsmart/aflsmart",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:saelo/android_kernel_exploitation",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^url:overthewire\\.org",
+            "reason": "security-testing"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "allsafecybersecurity-awesome-ghidra",
+      "type": "github-readme-list",
+      "repository": "AllsafeCyberSecurity/awesome-ghidra",
+      "path": "README.md",
+      "why": "Primary list of Ghidra scripts, plugins, extensions and learning materials.",
+      "scope": {
+        "include_sections": ".",
+        "kind_rules": [
+          [
+            "Materials",
+            "learning-resource"
+          ]
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "crowdere-awesome-re-mcp",
+      "type": "github-readme-list",
+      "repository": "crowdere/Awesome-RE-MCP",
+      "path": "README.md",
+      "why": "Dedicated list of reverse-engineering MCP servers (IDA, Ghidra, Binary Ninja, radare2, x64dbg, Frida, JADX, Wireshark).",
+      "scope": {
+        "include_sections": ".",
+        "exclude_sections": "Community & Events|Getting Started with MCP|Security Testing Tools",
+        "default_kind": "integration",
+        "kind_rules": [
+          [
+            "Presentations and Tutorials",
+            "learning-resource"
+          ]
+        ],
+        "exclude": [
+          {
+            "pattern": "^gh:ajtazer/zap-mcp",
+            "reason": "security-testing"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "darbra-awesome-ai-reverse",
+      "type": "github-readme-list",
+      "repository": "darbra/awesome-ai-reverse",
+      "path": "README.md",
+      "why": "AI-assisted RE list covering JS reverse engineering, binary, Android/iOS and traffic-analysis MCP servers and agent skills, including the Chinese ecosystem.",
+      "scope": {
+        "include_sections": ".",
+        "default_kind": "tool",
+        "exclude": [
+          {
+            "pattern": "^gh:xuange520/ruishu-mcp",
+            "reason": "cheat-or-evasion",
+            "note": "anti-bot evasion or generic browser automation"
+          },
+          {
+            "pattern": "^gh:whit3rabbit/camoufox-mcp",
+            "reason": "cheat-or-evasion",
+            "note": "anti-bot evasion or generic browser automation"
+          },
+          {
+            "pattern": "^gh:wxhzhwxhzh/drissionpagemcp",
+            "reason": "cheat-or-evasion",
+            "note": "anti-bot evasion or generic browser automation"
+          },
+          {
+            "pattern": "^gh:zhizhuodemao/patchright-mcp",
+            "reason": "cheat-or-evasion",
+            "note": "anti-bot evasion or generic browser automation"
+          },
+          {
+            "pattern": "^gh:s7safe/android-h1",
+            "reason": "security-testing",
+            "note": "bug-bounty knowledge base"
+          },
+          {
+            "pattern": "^gh:zhizhuodemao/adb-mcp",
+            "reason": "development-tool",
+            "note": "generic ADB device management"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "punkpeye-awesome-mcp-servers",
+      "type": "github-readme-list",
+      "repository": "punkpeye/awesome-mcp-servers",
+      "path": "README.md",
+      "why": "Largest MCP-server directory; filtered by RE keywords to MCP servers that wrap RE tools.",
+      "scope": {
+        "include_sections": ".",
+        "keyword": "revers(e|ing)[ -]engineer|reverse engineering|\\bghidra|\\bida[ -]?pro\\b|\\bidapython|binary ?ninja|\\bbinja\\b|radare|rizin|\\bfrida\\b|\\bjadx\\b|apktool|decompil|disassembl|x64dbg|windbg|\\blldb\\b|\\bgdb\\b|malware analys|firmware|binwalk|\\byara\\b|\\bcapa\\b|wireshark|\\bpcap|tshark|\\bangr\\b|unicorn engine|qiling|binary analysis|\\bdnspy|ilspy|cheat ?engine",
+        "default_kind": "integration",
+        "exclude": [
+          {
+            "pattern": "^gh:mirastacklabs-ai/",
+            "reason": "development-tool",
+            "note": "device management, firmware development or unrelated MCP server"
+          },
+          {
+            "pattern": "^gh:setheerwagen/",
+            "reason": "development-tool",
+            "note": "device management, firmware development or unrelated MCP server"
+          },
+          {
+            "pattern": "^gh:byteask/",
+            "reason": "development-tool",
+            "note": "device management, firmware development or unrelated MCP server"
+          },
+          {
+            "pattern": "^gh:magnusmalm/smolmux",
+            "reason": "development-tool",
+            "note": "device management, firmware development or unrelated MCP server"
+          },
+          {
+            "pattern": "^gh:powerdragonfire/",
+            "reason": "development-tool",
+            "note": "device management, firmware development or unrelated MCP server"
+          },
+          {
+            "pattern": "^gh:turbyho/",
+            "reason": "development-tool",
+            "note": "device management, firmware development or unrelated MCP server"
+          },
+          {
+            "pattern": "^gh:zeraissh/",
+            "reason": "development-tool",
+            "note": "device management, firmware development or unrelated MCP server"
+          },
+          {
+            "pattern": "^gh:gearotons/",
+            "reason": "development-tool",
+            "note": "device management, firmware development or unrelated MCP server"
+          },
+          {
+            "pattern": "^gh:26048608982lp-ai/",
+            "reason": "development-tool",
+            "note": "device management, firmware development or unrelated MCP server"
+          },
+          {
+            "pattern": "^gh:lodordev/mcp-romm",
+            "reason": "development-tool",
+            "note": "device management, firmware development or unrelated MCP server"
+          },
+          {
+            "pattern": "^gh:geiserx/",
+            "reason": "development-tool",
+            "note": "device management, firmware development or unrelated MCP server"
+          },
+          {
+            "pattern": "^gh:partymola/",
+            "reason": "development-tool",
+            "note": "device management, firmware development or unrelated MCP server"
+          },
+          {
+            "pattern": "^gh:slp-dev1/qwen-dap-mcp",
+            "reason": "development-tool",
+            "note": "device management, firmware development or unrelated MCP server"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "ashishb-osx-and-ios-security-awesome",
+      "type": "github-readme-list",
+      "repository": "ashishb/osx-and-ios-security-awesome",
+      "path": "README.md",
+      "why": "Maintained macOS/iOS security list; filtered to RE-relevant entries (class-dump, Hopper, Mach-O diffing, iOS RE toolkits).",
+      "scope": {
+        "include_sections": "iOS Security|macOS Security",
+        "exclude_sections": "Jailbreaks|License",
+        "keyword": "revers|disassembl|decompil|debug|class-?dump|hopper|mach-?o|binary|dtrace|frida|instrument|dump|analy[sz]|unpack|decrypt|hook|trace|inspect|objection|malware",
+        "kind_rules": [
+          [
+            "Testing apps",
+            "learning-resource"
+          ]
+        ],
+        "exclude": [
+          {
+            "pattern": "^gh:yelp/osxcollector",
+            "reason": "forensics-only"
+          },
+          {
+            "pattern": "^gh:jipegit/osxauditor",
+            "reason": "forensics-only"
+          },
+          {
+            "pattern": "^gh:ydkhatri/mac_apt",
+            "reason": "forensics-only"
+          },
+          {
+            "pattern": "^gh:facebook/osquery",
+            "reason": "forensics-only"
+          },
+          {
+            "pattern": "^url:iphonedatamanager\\.com",
+            "reason": "forensics-only"
+          },
+          {
+            "pattern": "^gh:google/santa",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^url:malwarebytes\\.com",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:djadmin/fort",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^gh:etsy/midas",
+            "reason": "detection-only"
+          },
+          {
+            "pattern": "^url:nowsecure\\.com",
+            "reason": "security-testing"
+          },
+          {
+            "pattern": "^gh:mwrlabs/needle",
+            "reason": "security-testing"
+          }
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "vector35-plugins-json",
+      "type": "github-json-registry",
+      "repository": "Vector35/community-plugins",
+      "path": "plugins.json",
+      "url_field": "projectUrl",
+      "name_field": "name",
+      "why": "Machine-readable Binary Ninja community plugin registry that the Vector 35 README listing is generated from.",
+      "scope": {
+        "kind": "tool",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "radare2-pm",
+      "type": "github-directory",
+      "repository": "radareorg/radare2-pm",
+      "path": "db",
+      "url_pattern": "^R2PM_GIT\\s+\"([^\"\\s]+)\"",
+      "label_pattern": "^R2PM_DESC\\s+\"([^\"]{1,300})\"",
+      "why": "The radare2 package manager database: one package file per radare2 plugin or tool, each naming its Git repository.",
+      "scope": {
+        "kind": "tool",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "submitgame-games-json",
+      "type": "github-json-registry",
+      "repository": "SubmitGame/awesome-decomp-games",
+      "path": "data/games.json",
+      "items": "games",
+      "url_field": "url",
+      "name_field": "title",
+      "every_hours": 24,
+      "why": "Auto-aggregated, typed index of game decompilations, disassemblies, engine remakes and source ports; followed as leads, never as curated evidence.",
+      "scope": {
+        "kind": "case-study",
+        "type_field": "type",
+        "include_types": [
+          "decompilation",
+          "disassembly",
+          "engine-remake",
+          "source-port",
+          "tool"
+        ],
+        "exclude_fields": [
+          "play_url"
+        ],
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-reverse-engineering",
+      "type": "github-topic",
+      "topic": "reverse-engineering",
+      "limit": 200,
+      "every_hours": 12,
+      "why": "GitHub topic reverse-engineering: the most-starred public repositories that carry it.",
+      "scope": {
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-decompiler",
+      "type": "github-topic",
+      "topic": "decompiler",
+      "limit": 100,
+      "every_hours": 12,
+      "why": "GitHub topic decompiler: the most-starred public repositories that carry it.",
+      "scope": {
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-binary-analysis",
+      "type": "github-topic",
+      "topic": "binary-analysis",
+      "limit": 100,
+      "every_hours": 12,
+      "why": "GitHub topic binary-analysis: the most-starred public repositories that carry it.",
+      "scope": {
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-protocol-reverse-engineering",
+      "type": "github-topic",
+      "topic": "protocol-reverse-engineering",
+      "limit": 100,
+      "every_hours": 12,
+      "why": "GitHub topic protocol-reverse-engineering: the most-starred public repositories that carry it.",
+      "scope": {
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-ida-pro",
+      "type": "github-topic",
+      "topic": "ida-pro",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic ida-pro: the most-starred public repositories that carry it.",
+      "scope": {
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-idapython",
+      "type": "github-topic",
+      "topic": "idapython",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic idapython: the most-starred public repositories that carry it.",
+      "scope": {
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-ida",
+      "type": "github-topic",
+      "topic": "ida",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic ida: the most-starred public repositories that carry it, screened by reverse-engineering terms.",
+      "scope": {
+        "require": "\\bida\\b|ida-?pro|idapython|hex-?rays|revers|disassembl|decompil|binar|plugin",
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-binary-ninja",
+      "type": "github-topic",
+      "topic": "binary-ninja",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic binary-ninja: the most-starred public repositories that carry it.",
+      "scope": {
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-binary-ninja-plugin",
+      "type": "github-topic",
+      "topic": "binary-ninja-plugin",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic binary-ninja-plugin: the most-starred public repositories that carry it.",
+      "scope": {
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-binaryninja",
+      "type": "github-topic",
+      "topic": "binaryninja",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic binaryninja: the most-starred public repositories that carry it.",
+      "scope": {
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-x64dbg",
+      "type": "github-topic",
+      "topic": "x64dbg",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic x64dbg: the most-starred public repositories that carry it.",
+      "scope": {
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-x64dbg-plugin",
+      "type": "github-topic",
+      "topic": "x64dbg-plugin",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic x64dbg-plugin: the most-starred public repositories that carry it.",
+      "scope": {
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-debugger",
+      "type": "github-topic",
+      "topic": "debugger",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic debugger: the most-starred public repositories that carry it, screened by reverse-engineering terms.",
+      "scope": {
+        "require": "revers|disassembl|decompil|deobfusc|unpack|binar|malware analy|x64dbg|windbg|\\bida\\b|ida-?pro|idapython|ghidra|ninja|radare|rizin|frida|instrument|hook|emulat|firmware|protocol|dissect",
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-malware",
+      "type": "github-topic",
+      "topic": "malware",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic malware: the most-starred public repositories that carry it, screened by reverse-engineering terms.",
+      "scope": {
+        "require": "analy[sz]|revers|unpack|deobfusc|disassembl|decompil|sandbox|triage|emulat|dissect|config extract",
+        "exclude_text": "\\b(rat|stealer|ransomware builder|keylogger|botnet|grabber|crypter|c2 framework|backdoor|malware samples?|sample collection|live malware)\\b",
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-can-bus",
+      "type": "github-topic",
+      "topic": "can-bus",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic can-bus: the most-starred public repositories that carry it, screened by reverse-engineering terms.",
+      "scope": {
+        "require": "revers|sniff|analy[sz]|decod|dbc|hack|dissect|inject|captur|monitor|diagnos|uds|obd",
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-game-hacking",
+      "type": "github-topic",
+      "topic": "game-hacking",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic game-hacking: the most-starred public repositories that carry it, screened by reverse-engineering terms.",
+      "scope": {
+        "require": "revers|disassembl|decompil|deobfusc|unpack|binar|malware analy|x64dbg|windbg|\\bida\\b|ida-?pro|idapython|ghidra|ninja|radare|rizin|frida|instrument|hook|emulat|firmware|protocol|dissect|memory|il2cpp|unity|unreal|sdk|dump|pattern|signature|engine",
+        "exclude_text": "aimbot|wallhack|\\besp\\b|triggerbot|cheat table|mod ?menu|undetect|spoofer|anti-?cheat bypass|unlock(er|all)|keygen|crack(ed|er)?\\b",
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-recompilation",
+      "type": "github-topic",
+      "topic": "recompilation",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic recompilation: the most-starred public repositories that carry it.",
+      "scope": {
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-vmprotect",
+      "type": "github-topic",
+      "topic": "vmprotect",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic vmprotect: the most-starred public repositories that carry it, screened by reverse-engineering terms.",
+      "scope": {
+        "require": "devirt|unpack|deobfusc|analy[sz]|lift|revers|trace|disassembl|handler|symbolic|vm",
+        "exclude_text": "crack|keygen|license bypass|bypass license",
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-yara",
+      "type": "github-topic",
+      "topic": "yara",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic yara: the most-starred public repositories that carry it, screened by reverse-engineering terms.",
+      "scope": {
+        "require": "revers|disassembl|decompil|binar|unpack|\\bida\\b|ghidra|radare|capa|analy[sz]|scanner|engine",
+        "exclude_text": "\\brules?\\b collection|signature collection|\\biocs?\\b",
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "github-topic-cheat-engine",
+      "type": "github-topic",
+      "topic": "cheat-engine",
+      "limit": 300,
+      "every_hours": 12,
+      "why": "GitHub topic cheat-engine: the most-starred public repositories that carry it, screened by reverse-engineering terms.",
+      "scope": {
+        "require": "memory|scann|debug|revers|disassembl|plugin|structure|pointer|dissect",
+        "exclude_text": "aimbot|wallhack|\\besp\\b|triggerbot|cheat table|mod ?menu|undetect|spoofer|anti-?cheat bypass|unlock(er|all)|keygen|crack(ed|er)?\\b|trainer|\\bhack for\\b|cheat tables?",
+        "exclusion_sets": [
+          "github-topic-review",
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "survey-sok-ai-binary-reversing",
+      "type": "survey-references",
+      "paper_id": "paper-sok-ai-binary-reversing",
+      "every_hours": 24,
+      "why": "Bibliography of the curated survey SoK: AI-Augmented Binary Reversing, kept to reverse-engineering subjects by the title screen.",
+      "scope": {
+        "paper_screen": "re-subject-v1",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "survey-evolution-binary-decompilation",
+      "type": "survey-references",
+      "paper_id": "paper-evolution-binary-decompilation",
+      "every_hours": 24,
+      "why": "Bibliography of the curated survey The Evolution of Binary Decompilation in the Modern Era, kept to reverse-engineering subjects by the title screen.",
+      "scope": {
+        "paper_screen": "re-subject-v1",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "survey-sok-source-recovery-reliability",
+      "type": "survey-references",
+      "paper_id": "paper-sok-source-recovery-reliability",
+      "every_hours": 24,
+      "why": "Bibliography of the curated survey SoK: Are LLMs Reliable at Source Code Recovery?, kept to reverse-engineering subjects by the title screen.",
+      "scope": {
+        "paper_screen": "re-subject-v1",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "survey-cortexm-emulation-sok",
+      "type": "survey-references",
+      "paper_id": "paper-cortexm-emulation-sok",
+      "every_hours": 24,
+      "why": "Bibliography of the curated survey SoK on emulation-based dynamic analysis research for ARM Cortex-M firmware, kept to reverse-engineering subjects by the title screen.",
+      "scope": {
+        "paper_screen": "re-subject-v1",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "arxiv-reverse-engineering",
+      "type": "arxiv-query",
+      "limit": 100,
+      "query": "(cat:cs.CR OR cat:cs.SE OR cat:cs.PL OR cat:cs.AR) AND (ti:decompil* OR abs:decompil* OR ti:disassembl* OR abs:\"binary analysis\" OR abs:\"reverse engineering\" OR abs:\"binary code similarity\" OR abs:\"firmware rehosting\" OR abs:\"protocol reverse engineering\" OR ti:deobfuscat* OR abs:\"binary lifting\" OR abs:\"stripped binaries\")",
+      "why": "Newest arXiv submissions in security, software engineering, programming languages and architecture that mention decompilation, disassembly, binary analysis or reverse engineering.",
+      "scope": {
+        "paper_screen": "re-subject-v1"
+      }
+    },
+    {
+      "id": "huggingface-models-decompil",
+      "type": "huggingface-search",
+      "repo_type": "model",
+      "search": "decompil",
+      "limit": 50,
+      "every_hours": 24,
+      "why": "Most-downloaded Hugging Face models matching “decompil”, without quantized re-uploads.",
+      "scope": {
+        "exclude_text": "gguf|\\bawq\\b|gptq|exl2|\\bmlx\\b|-mlx|mlx-|imatrix|q[2-8]_k|\\bint[48]\\b|-i1\\b",
+        "kind": "project"
+      }
+    },
+    {
+      "id": "huggingface-datasets-decompil",
+      "type": "huggingface-search",
+      "repo_type": "dataset",
+      "search": "decompil",
+      "limit": 50,
+      "every_hours": 24,
+      "why": "Most-downloaded Hugging Face datasets matching “decompil”, without quantized re-uploads.",
+      "scope": {
+        "exclude_text": "gguf|\\bawq\\b|gptq|exl2|\\bmlx\\b|-mlx|mlx-|imatrix|q[2-8]_k|\\bint[48]\\b|-i1\\b",
+        "kind": "project"
+      }
+    },
+    {
+      "id": "huggingface-models-ghidra",
+      "type": "huggingface-search",
+      "repo_type": "model",
+      "search": "ghidra",
+      "limit": 50,
+      "every_hours": 24,
+      "why": "Most-downloaded Hugging Face models matching “ghidra”, without quantized re-uploads.",
+      "scope": {
+        "exclude_text": "gguf|\\bawq\\b|gptq|exl2|\\bmlx\\b|-mlx|mlx-|imatrix|q[2-8]_k|\\bint[48]\\b|-i1\\b",
+        "kind": "project"
+      }
+    },
+    {
+      "id": "huggingface-datasets-ghidra",
+      "type": "huggingface-search",
+      "repo_type": "dataset",
+      "search": "ghidra",
+      "limit": 50,
+      "every_hours": 24,
+      "why": "Most-downloaded Hugging Face datasets matching “ghidra”, without quantized re-uploads.",
+      "scope": {
+        "exclude_text": "gguf|\\bawq\\b|gptq|exl2|\\bmlx\\b|-mlx|mlx-|imatrix|q[2-8]_k|\\bint[48]\\b|-i1\\b",
+        "kind": "project"
+      }
+    },
+    {
+      "id": "huggingface-models-reverse-engineering",
+      "type": "huggingface-search",
+      "repo_type": "model",
+      "search": "reverse-engineering",
+      "limit": 50,
+      "every_hours": 24,
+      "why": "Most-downloaded Hugging Face models matching “reverse-engineering”, without quantized re-uploads.",
+      "scope": {
+        "exclude_text": "gguf|\\bawq\\b|gptq|exl2|\\bmlx\\b|-mlx|mlx-|imatrix|q[2-8]_k|\\bint[48]\\b|-i1\\b",
+        "kind": "project",
+        "require": "revers|decompil|binar|disassembl|ghidra|\\bida\\b"
+      }
+    },
+    {
+      "id": "huggingface-datasets-reverse-engineering",
+      "type": "huggingface-search",
+      "repo_type": "dataset",
+      "search": "reverse-engineering",
+      "limit": 50,
+      "every_hours": 24,
+      "why": "Most-downloaded Hugging Face datasets matching “reverse-engineering”, without quantized re-uploads.",
+      "scope": {
+        "exclude_text": "gguf|\\bawq\\b|gptq|exl2|\\bmlx\\b|-mlx|mlx-|imatrix|q[2-8]_k|\\bint[48]\\b|-i1\\b",
+        "kind": "project",
+        "require": "revers|decompil|binar|disassembl|ghidra|\\bida\\b"
+      }
+    },
+    {
+      "id": "huggingface-datasets-binary-similarity",
+      "type": "huggingface-search",
+      "repo_type": "dataset",
+      "search": "binary-similarity",
+      "limit": 50,
+      "every_hours": 24,
+      "why": "Most-downloaded Hugging Face datasets matching “binary-similarity”, without quantized re-uploads.",
+      "scope": {
+        "exclude_text": "gguf|\\bawq\\b|gptq|exl2|\\bmlx\\b|-mlx|mlx-|imatrix|q[2-8]_k|\\bint[48]\\b|-i1\\b",
+        "kind": "project"
+      }
+    },
+    {
+      "id": "alexgaoth-re-tooling",
+      "type": "github-readme-list",
+      "repository": "alexgaoth/awesome-reverse-engineered",
+      "path": "categories/re-tooling.md",
+      "why": "RE Tooling category of a large index of reverse-engineered projects; the coverage benchmark found 388 in-scope repositories from it in no layer of this catalog.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "alexgaoth-firmware-embedded",
+      "type": "github-readme-list",
+      "repository": "alexgaoth/awesome-reverse-engineered",
+      "path": "categories/firmware-embedded.md",
+      "why": "Firmware and embedded category of the same index, a sub-area where the benchmark measured low coverage.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "alexgaoth-network-wire-protocols",
+      "type": "github-readme-list",
+      "repository": "alexgaoth/awesome-reverse-engineered",
+      "path": "categories/network-wire-protocols.md",
+      "why": "Network and wire-protocol category of the same index, a sub-area where the benchmark measured low coverage.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "alexgaoth-file-formats",
+      "type": "github-readme-list",
+      "repository": "alexgaoth/awesome-reverse-engineered",
+      "path": "categories/file-formats.md",
+      "why": "File-format category of the same index, covering format parsers and reverse-engineered specifications.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "alexgaoth-game-decompilations",
+      "type": "github-readme-list",
+      "repository": "alexgaoth/awesome-reverse-engineered",
+      "path": "categories/game-decompilations-reimplementations.md",
+      "why": "Game decompilation and reimplementation category of the same index.",
+      "scope": {
+        "include_sections": ".",
+        "default_kind": "case-study",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "alphaseclab-awesome-reverse-engineering",
+      "type": "github-readme-list",
+      "repository": "alphaSeclab/awesome-reverse-engineering",
+      "path": "Readme.md",
+      "why": "Large Chinese and English reverse-engineering list that lists IDA, Ghidra, x64dbg, Android and firmware tooling absent from every other followed source.",
+      "scope": {
+        "include_sections": ".",
+        "keyword": "revers|decompil|disassembl|debug|ghidra|\\bida\\b|x64dbg|frida|hook|unpack|firmware|binary|\\bapk\\b|\\bdex\\b|\\belf\\b|\\bpe\\b",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "wangxiaoxiang5599-recompiled-games-list",
+      "type": "github-readme-list",
+      "repository": "wangxiaoxiang5599/recompiled-games-list",
+      "path": "README.md",
+      "why": "Running list of recompiled and natively ported games, a sub-area where the benchmark found many repositories in no layer of this catalog.",
+      "scope": {
+        "include_sections": ".",
+        "default_kind": "case-study",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "hexsecs-awesome-embedded-security",
+      "type": "github-readme-list",
+      "repository": "hexsecs/awesome-embedded-security",
+      "path": "README.md",
+      "why": "Embedded-security list organised by firmware analysis, hardware interfaces and emulation.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "nforest-awesome-decompilation",
+      "type": "github-readme-list",
+      "repository": "nforest/awesome-decompilation",
+      "path": "README.md",
+      "why": "Focused list of decompilation research and tools.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "systemsecuritystorm-awesome-binary-similarity",
+      "type": "github-readme-list",
+      "repository": "SystemSecurityStorm/Awesome-Binary-Similarity",
+      "path": "README.md",
+      "why": "Research list of binary code similarity papers and tools, the sub-area with the weakest research coverage in the benchmark.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "bin2own-awesome-info-inferring-binary",
+      "type": "github-readme-list",
+      "repository": "Bin2Own/Awesome-Info-Inferring-Binary",
+      "path": "README.md",
+      "why": "Research list on inferring types, names and structure from stripped binaries.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    }
+  ]
+}

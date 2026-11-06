@@ -12,12 +12,18 @@ const context = {
   state: {lang: "en"},
   sourceState: {
     loaded: true, records: [], meta: {}, topic: "", topicIDs: new Set(),
-    q: "", sort: "relevance", target: "all", visible: 24,
+    q: "", sort: "relevance", target: "all", category: "all", visible: 24,
   },
   document: {createDocumentFragment: () => ({append() {}})},
   expandedRecords: () => new Set(), restoreExpanded() {}, sourceCard: () => ({}),
   // renderSources also reveals the filtered-export button; tests/filtered_export_ui.cjs covers that.
   showExport() {},
+  // ...and the active-filter chips; tests/active_filters_ui.cjs covers those.
+  renderActiveFilters() {},
+  // ...and the repository Category options; tests/source_category_ui.cjs covers those.
+  renderSourceCategories() {},
+  // ...and the Show More announcement; tests/show_more_announcement_ui.cjs covers it and the change-only status writes.
+  announceRevealed() {}, setStatus: (element, text) => { element.textContent = text; },
   sourceFiltered: () => context.sourceState.records,
   sourceTime: value => value, dataURL: filename => "/" + filename + "?v=test",
   t: key => ({
@@ -34,7 +40,8 @@ const context = {
   $$: () => [],
 };
 vm.createContext(context);
-vm.runInContext(section("function sourceBrowserPayload(", "\nasync function loadSources")
+vm.runInContext(section("function normalizeSearchText(", "\nfunction dataURL")
+  + section("function sourceBrowserPayload(", "\nasync function loadSources")
   + section("function sourceDownload(", "\nfunction setIndexMode")
   + section("function renderSources(", "\nfunction sourceBrowserPayload")
   + "\nglobalThis.api = {sourceBrowserPayload,sourceDownload,renderSources};", context);

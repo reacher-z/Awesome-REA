@@ -5,8 +5,10 @@
   const STATUSES = new Set(["conference-paper", "conference-accepted", "journal-article", "preprint"]);
   const TARGETS = new Set(["binary", "website", "app", "game", "firmware", "protocol"]);
   const KEYS = ["q", "target", "status", "year"];
-  const cleanQuery = value => String(value || "").replace(/[\u0000-\u001f\u007f]/g, " ").slice(0, 240).trim();
-  const normalized = value => String(value).normalize("NFKC").toLowerCase();
+  const withoutSearchControls = value => String(value ?? "").replace(/[\u0000-\u001f\u007f]/g, " ");
+  const cleanQuery = value => withoutSearchControls(value).slice(0, 240).trim();
+  // Match the homepage contract: replace only C0/DEL controls, then apply NFKC and locale-neutral lowercase.
+  const normalized = value => withoutSearchControls(value).normalize("NFKC").toLowerCase();
 
   function readRecords(value) {
     if (!value || value.schema_version !== 1 || !Array.isArray(value.papers)) throw new Error("Invalid paper search data");
@@ -14,14 +16,18 @@
     return value.papers.map(paper => {
       if (!paper || typeof paper.id !== "string" || !/^[a-z0-9][a-z0-9-]*$/.test(paper.id) || ids.has(paper.id)
           || ![paper.title, paper.title_zh, paper.description_en, paper.description_zh].every(text => typeof text === "string" && text.trim())
-          || !Array.isArray(paper.authors) || !paper.authors.length || !paper.authors.every(name => typeof name === "string")
+          || !Array.isArray(paper.authors) || !paper.authors.every(name => typeof name === "string")
+          // A record that leaves its authors out has an empty list and authors_omitted: true; others list names.
+          || ![undefined, null, true].includes(paper.authors_omitted)
+          || (paper.authors_omitted === true ? paper.authors.length !== 0 : !paper.authors.length)
           || ![paper.doi, paper.arxiv_id].every(identifier => identifier === null || typeof identifier === "string")
+          || !(paper.venue === undefined || paper.venue === null || typeof paper.venue === "string")
           || !Number.isInteger(paper.year) || paper.year < 1000 || paper.year > 9999 || !STATUSES.has(paper.publication_status)
           || !Array.isArray(paper.targets) || !paper.targets.length || !paper.targets.every(target => TARGETS.has(target))) {
         throw new Error("Invalid paper search record");
       }
       ids.add(paper.id);
-      return {...paper, search: normalized([paper.id, paper.title, paper.title_zh, paper.description_en, paper.description_zh, ...paper.authors, paper.doi || "", paper.arxiv_id || ""].join(" "))};
+      return {...paper, search: normalized([paper.id, paper.title, paper.title_zh, paper.description_en, paper.description_zh, ...paper.authors, paper.venue || "", paper.doi || "", paper.arxiv_id || ""].join(" "))};
     });
   }
 
@@ -61,7 +67,7 @@
   const readLayout = params => params.get("layout") === "cards" ? "cards" : "compact";
 
   // The static index is already compact. Cards bring only the scope panel out;
-  // full authors, original titles, citations and sources remain in native details.
+  // authors, original titles and citations remain in native details.
   function initializeLayout(document, browser, cards, afterChange) {
     const control = document.getElementById("paper-layout");
     if (!control) return null;
@@ -92,14 +98,90 @@
     return apply;
   }
 
-  function initialize(document, browser) {
+  // A card's visible title without the decorative ↗ (aria-hidden), for accessible names and status messages.
+  function paperTitle(card, fallback) {
+    const heading = card.querySelector("h3"); if (!heading) return fallback;
+    const text = node => node.nodeType === 3 ? node.textContent : node.getAttribute?.("aria-hidden") === "true" ? "" : node.childNodes ? [...node.childNodes].map(text).join("") : node.textContent || "";
+    return text(heading).trim() || fallback;
+  }
+
+  // Copy link: each paper card gets a button that copies its entry page on this site, built from the validated ID.
+  // Without clipboard access the link appears selected beside the button for a manual copy.
+  function initializeCopyLinks(document, browser) {
+    const cards = [...document.querySelectorAll("[data-paper-id]")];
+    const main = document.querySelector("main");
+    if (!cards.length || !main) return false;
+    const zh = document.documentElement.lang === "zh-CN";
+    let origin = browser.location.origin;
+    try { origin = new URL(document.querySelector('link[rel="canonical"]').href).origin; } catch (_) { /* keep this page's origin */ }
+    const status = document.createElement("p"); status.className = "sr-only"; status.setAttribute("role", "status"); status.setAttribute("aria-live", "polite");
+    main.append(status);
+    const label = zh ? "复制此论文条目的链接" : "Copy link to this paper's entry";
+    for (const card of cards) {
+      const id = card.dataset.paperId; const links = card.querySelector(".paper-links");
+      if (!/^paper-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id) || !links) continue;
+      const href = new URL(`${zh ? "/zh" : ""}/papers/${id}/`, origin).href;
+      const name = paperTitle(card, id);
+      const button = document.createElement("button"); button.type = "button"; button.className = "paper-link copy-link";
+      button.title = label; button.setAttribute("aria-label", `${label}${zh ? "：" : ": "}${name}`); button.dataset.copyLink = href;
+      button.textContent = zh ? "复制链接" : "Copy link";
+      button.addEventListener("click", async () => {
+        try {
+          await browser.navigator.clipboard.writeText(href);
+          status.textContent = zh ? `已复制 ${name} 的链接。` : `Link to ${name} copied.`;
+        } catch (_) {
+          let field = button.nextElementSibling;
+          if (!field || field.className !== "copy-link-fallback") { field = document.createElement("input"); field.className = "copy-link-fallback"; button.after(field); }
+          field.type = "text"; field.readOnly = true; field.value = href; field.setAttribute("aria-label", zh ? `${name} 的链接` : `Link to ${name}`);
+          field.focus(); field.select();
+          status.textContent = zh ? `无法直接复制。${name} 的链接已选中，请按 Ctrl+C 或 ⌘C 复制。` : `Copying isn’t available here. The link to ${name} is selected; press Ctrl+C or ⌘C to copy it.`;
+        }
+      });
+      // .paper-links is a list: the button gets its own item, right after the Full entry item when there is one.
+      const item = document.createElement("li"); item.append(button);
+      const entry = links.querySelector(".entry-detail-link")?.closest("li");
+      if (entry) entry.after(item); else links.append(item);
+    }
+    return true;
+  }
+  if (typeof document !== "undefined") initializeCopyLinks(document, window);
+
+  const searchControls = document => Object.fromEntries(KEYS.map(key => [key, document.getElementById("paper-" + (key === "q" ? "query" : key))]));
+
+  // The search index is a content-addressed file under /assets/ that the page preloads; this is the request it matches.
+  async function requestIndex(url, browser) {
+    const response = await browser.fetch(url);
+    if (!response.ok) throw new Error("Paper search index HTTP " + response.status);
+    return response.json();
+  }
+
+  // Layout applies at once; search starts when the index arrives. Resolves to whether search is available.
+  async function initialize(document, browser, request = requestIndex) {
     const form = document.getElementById("paper-search");
     if (!form) return false;
+    const cards = [...document.querySelectorAll("[data-paper-id]")];
+    let afterLayout = () => {};
+    const applyLayout = initializeLayout(document, browser, cards, () => afterLayout());
+    const source = form.dataset.searchIndex;
+    // A visitor may type or pick a filter before the index arrives; those controls then win over the address.
+    const edited = new Set();
+    for (const [key, control] of Object.entries(searchControls(document))) if (control) control.addEventListener(key === "q" ? "input" : "change", () => edited.add(key));
+    // Enter must not reload the page while the index is on its way; the query applies once it arrives.
+    form.addEventListener("submit", event => event.preventDefault());
+    let data;
+    try { if (!source) throw new Error("No paper search index"); data = await request(source, browser); } catch (_) { data = null; }
+    const search = start(document, browser, data, {cards, applyLayout, edited});
+    if (search) afterLayout = search.updateLanguageLink;
+    return Boolean(search);
+  }
+
+  // Binds the controls to the cards once `data` (the parsed index) is in hand; returns null and hides the form if it is unusable.
+  function start(document, browser, data, {cards, applyLayout = null, edited = new Set()}) {
+    const form = document.getElementById("paper-search");
+    if (!form) return null;
     // The form is laid out from the start so revealing it cannot shift the page; a failed check hides its inert controls.
-    const fail = () => { form.hidden = true; return false; };
-    const data = document.getElementById("paper-search-data");
-    if (!data) return fail();
-    const controls = Object.fromEntries(KEYS.map(key => [key, document.getElementById("paper-" + (key === "q" ? "query" : key))]));
+    const fail = () => { form.hidden = true; return null; };
+    const controls = searchControls(document);
     const count = document.getElementById("paper-results");
     const empty = document.getElementById("paper-empty");
     const clear = document.getElementById("paper-clear");
@@ -107,8 +189,7 @@
     const emptyReset = document.getElementById("paper-empty-reset");
     if (!count || !empty || !clear || !emptyReset || Object.values(controls).some(control => !control)) return fail();
     let records;
-    try { records = readRecords(JSON.parse(data.textContent)); } catch (_) { return fail(); }
-    const cards = [...document.querySelectorAll("[data-paper-id]")];
+    try { records = readRecords(data); } catch (_) { return fail(); }
     const cardMap = new Map(cards.map(card => [card.dataset.paperId, card]));
     if (cards.length !== records.length || cardMap.size !== records.length || records.some(paper => !cardMap.has(paper.id))) return fail();
     const sections = [...document.querySelectorAll("[data-paper-section]")];
@@ -190,20 +271,81 @@
     clear.addEventListener("click", reset);
     emptyReset.addEventListener("click", reset);
     if (languageLink) languageLink.addEventListener("click", updateLanguageLink);
-    const applyLayout = initializeLayout(document, browser, cards, updateLanguageLink);
     browser.addEventListener("popstate", () => {
       composing = false;
       state = readState(new URL(browser.location.href).searchParams, allowed);
       showState(); render();
       if (applyLayout) applyLayout(readLayout(new URL(browser.location.href).searchParams));
     });
+    const early = [...edited].map(key => [key, controls[key].value]);
     showState();
+    if (early.length) {
+      for (const [key, value] of early) controls[key].value = value;
+      update();
+      return {updateLanguageLink};
+    }
     const canonicalState = stateURL(browser.location.href, state);
     if (canonicalState.href !== browser.location.href) browser.history.replaceState(null, "", canonicalState);
     render();
+    return {updateLanguageLink};
+  }
+
+  // Browser-local shortlist shared with the homepage (app.js): only "type:id" keys, kept in this browser and never sent.
+  const SHORTLIST_KEY = "awesomerea-shortlist";
+  const SHORTLIST_ITEM = /^(curated|repository|paper):[a-z0-9]+(?:-[a-z0-9]+)*$/;
+  function shortlistStorage(browser) {
+    try { const storage = browser.localStorage; storage.setItem("awesomerea-storage-check", "1"); storage.removeItem("awesomerea-storage-check"); return storage; } catch (_) { return null; }
+  }
+  function readShortlist(storage) {
+    try { const value = JSON.parse(storage.getItem(SHORTLIST_KEY) || "[]"); return Array.isArray(value) ? [...new Set(value.filter(key => typeof key === "string" && SHORTLIST_ITEM.test(key)))] : []; }
+    catch (_) { return []; }
+  }
+
+  // Adds a Save toggle to each paper's links and, once something is saved, a link to the homepage shortlist.
+  // Without storage nothing changes.
+  function initializeShortlist(document, browser) {
+    const storage = shortlistStorage(browser);
+    const actions = document.querySelector(".papers-actions");
+    const cards = [...document.querySelectorAll("[data-paper-id]")];
+    if (!storage || !actions || !cards.length) return false;
+    const zh = document.documentElement.lang === "zh-CN";
+    const element = (tag, className, text) => { const node = document.createElement(tag); if (className) node.className = className; if (text !== undefined) node.textContent = text; return node; };
+    const count = element("span", "mono");
+    const link = element("a", "button button-outline papers-shortlist");
+    link.href = (zh ? "/zh/" : "/") + "#shortlist"; link.append(element("span", "", zh ? "收藏清单" : "Shortlist"), count);
+    const status = element("p", "sr-only"); status.setAttribute("role", "status"); status.setAttribute("aria-live", "polite");
+    const buttons = [];
+    function sync() {
+      const keys = readShortlist(storage); count.textContent = String(keys.length); link.hidden = !keys.length;
+      for (const button of buttons) {
+        const saved = keys.includes(button.dataset.shortlistKey);
+        button.setAttribute("aria-pressed", String(saved)); button.firstChild.textContent = saved ? (zh ? "已收藏" : "Saved") : (zh ? "收藏" : "Save");
+      }
+      return keys;
+    }
+    for (const card of cards) {
+      const key = "paper:" + card.dataset.paperId; const links = card.querySelector(".paper-links");
+      if (!SHORTLIST_ITEM.test(key) || !links) continue;
+      const title = paperTitle(card, card.dataset.paperId);
+      const button = element("button", "paper-link save-toggle"); button.type = "button"; button.dataset.shortlistKey = key;
+      button.append(element("span"), element("span", "sr-only", " " + title));
+      button.addEventListener("click", () => {
+        const keys = readShortlist(storage); const saved = keys.includes(key); const next = saved ? keys.filter(item => item !== key) : [...keys, key];
+        try { if (next.length) storage.setItem(SHORTLIST_KEY, JSON.stringify(next)); else storage.removeItem(SHORTLIST_KEY); }
+        catch (_) { status.textContent = zh ? "此浏览器无法保存收藏清单。" : "This browser couldn’t save the shortlist."; return; }
+        sync();
+        status.textContent = zh ? `已${saved ? "移除" : "收藏"} ${title}。收藏清单共 ${next.length} 项。` : `${saved ? "Removed" : "Saved"} ${title}. ${next.length} ${next.length === 1 ? "entry" : "entries"} in your shortlist.`;
+      });
+      // .paper-links is a list, so the toggle gets its own item like the other links.
+      const item = element("li"); item.append(button); links.append(item); buttons.push(button);
+    }
+    actions.append(link); actions.after(status);
+    browser.addEventListener("storage", event => { if (event.key === SHORTLIST_KEY || event.key === null) sync(); });
+    sync();
     return true;
   }
 
-  if (typeof module === "object" && module.exports) module.exports = {readRecords, allowedValues, readState, matches, stateURL, initialize, initializeLayout, readLayout};
+  if (typeof module === "object" && module.exports) module.exports = {readRecords, allowedValues, readState, matches, stateURL, initialize, start, initializeLayout, readLayout, initializeShortlist, readShortlist};
   if (typeof document !== "undefined") initialize(document, window);
+  if (typeof document !== "undefined") initializeShortlist(document, window);
 }());

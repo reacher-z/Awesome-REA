@@ -1,0 +1,83 @@
+{
+  "catalog_base_revision": "3b37e89de248d70cc1d3ca0cb7327d7fb0a6306c",
+  "reviewed_at": "2026-11-01",
+  "discovery_source": "https://github.com/jammyfu/rea-atlas",
+  "method": "Discovery list used only to locate primary projects; fixed README and root inventory reviewed independently. These are documentation reviews without completeness scores.",
+  "curated": [
+    {
+      "catalog_id": "keen-clone-rea-commander-keen-case",
+      "canonical_url": "https://github.com/carlhako/keen-clone",
+      "evidence_url": "https://github.com/carlhako/keen-clone/blob/9c6ac72734c95c3260c23b57158ea5876abc14b3/README.md",
+      "reviewed_at": "2026-11-01",
+      "readme_sha256": "db0cb113fe1a242163a72e43103f13d1c3add6e57f0dd5e46750858a56650e88",
+      "readme_bytes": 7332,
+      "root_license_files": [],
+      "runtime_tested_by_catalog": false,
+      "duplicate_check": {
+        "query": "repo:reacher-z/Awesome-REA is:open \"carlhako/keen-clone\"",
+        "open_matches": [],
+        "curated_ids": [],
+        "baseline": []
+      }
+    },
+    {
+      "catalog_id": "samp-client-rea-partial-reconstruction-case",
+      "canonical_url": "https://github.com/NathanKanaeru/samp-client-re",
+      "evidence_url": "https://github.com/NathanKanaeru/samp-client-re/blob/6efde5d3042ee87f0c183a6c68b7e1b26a000cac/README.md",
+      "reviewed_at": "2026-11-01",
+      "readme_sha256": "96fa1d149d623c49d280ba2689cd4356473f893ac1047ad7c18be796109fc095",
+      "readme_bytes": 3155,
+      "root_license_files": [],
+      "runtime_tested_by_catalog": false,
+      "duplicate_check": {
+        "query": "repo:reacher-z/Awesome-REA is:open \"NathanKanaeru/samp-client-re\"",
+        "open_matches": [],
+        "curated_ids": [],
+        "baseline": []
+      }
+    },
+    {
+      "catalog_id": "desktop-games-nostalgia-rea-port-case",
+      "canonical_url": "https://github.com/ucodia/desktop-games-nostalgia",
+      "evidence_url": "https://github.com/ucodia/desktop-games-nostalgia/blob/27946dfe49d4a9b522dfe017c14eefbc0ca40b2a/README.md",
+      "reviewed_at": "2026-11-01",
+      "readme_sha256": "c6604f03a8cbfed3cbc56921d72a23afda4a262947b9ade90cca1218d81115b6",
+      "readme_bytes": 8263,
+      "root_license_files": [],
+      "runtime_tested_by_catalog": false,
+      "duplicate_check": {
+        "query": "repo:reacher-z/Awesome-REA is:open \"ucodia/desktop-games-nostalgia\"",
+        "open_matches": [],
+        "curated_ids": [],
+        "baseline": []
+      }
+    },
+    {
+      "catalog_id": "gunzrs-rea-rust-reimplementation-case",
+      "canonical_url": "https://github.com/OpenRsG/GunZRs",
+      "evidence_url": "https://github.com/OpenRsG/GunZRs/blob/485575b7451912ed1d62661c388663b08dce4faf/README.md",
+      "reviewed_at": "2026-11-01",
+      "readme_sha256": "2dcf5f1dec8456fbb11bb605554b6bb4e02e27f60536dd7b6ad9fd1b67fd7296",
+      "readme_bytes": 37951,
+      "root_license_files": [
+        "LICENSE"
+      ],
+      "runtime_tested_by_catalog": false,
+      "duplicate_check": {
+        "query": "repo:reacher-z/Awesome-REA is:open \"OpenRsG/GunZRs\"",
+        "open_matches": [],
+        "curated_ids": [],
+        "baseline": []
+      },
+      "additional_evidence": {
+        "url": "https://github.com/OpenRsG/GunZRs/releases/tag/v0.1.0",
+        "observed_assets": [
+          "gunzrs-v0.1.0-linux-x86_64.tar.gz",
+          "gunzrs-v0.1.0-windows-x86_64.zip",
+          "gunzrs_0.1.0-1_amd64.deb"
+        ],
+        "downloaded_or_executed": false
+      }
+    }
+  ]
+}

@@ -3,6 +3,7 @@ from copy import deepcopy
 from html import unescape
 from html.parser import HTMLParser
 import json
+import re
 from urllib.parse import parse_qs, urlsplit
 from pathlib import Path
 import sys
@@ -13,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_entry_pages import MARKER, build_entry_pages, entry_path, feedback_urls
 from build_survey import build_survey, discussion_sections
+from structured_data import evidence_urls
 
 
 def resource(**changes):
@@ -143,7 +145,7 @@ class EntryPageTests(unittest.TestCase):
                     self.assertIn(('article', {'class': 'entry-article', 'data-entry-kind': kind, 'data-entry-id': record['id']}), page.attributes)
                     canonical = 'https://awesomerea.org' + path
                     self.assertEqual([x['href'] for x in page.links if x.get('rel') == 'canonical'], [canonical])
-                    alternates = {x['hreflang']: x['href'] for x in page.links if x.get('rel') == 'alternate'}
+                    alternates = {x['hreflang']: x['href'] for x in page.links if x.get('rel') == 'alternate' and 'hreflang' in x}
                     self.assertEqual(alternates, {'en': 'https://awesomerea.org' + entry_path(kind, record['id']),
                                                 'zh-CN': 'https://awesomerea.org' + entry_path(kind, record['id'], 'zh'),
                                                 'x-default': 'https://awesomerea.org' + entry_path(kind, record['id'])})
@@ -151,8 +153,11 @@ class EntryPageTests(unittest.TestCase):
                     self.assertEqual(graph['WebPage']['inLanguage'], locale)
                     self.assertEqual(graph['WebPage']['url'], canonical)
                     self.assertEqual(graph['BreadcrumbList']['itemListElement'][-1]['item'], canonical)
-                    entity = graph['CreativeWork' if kind == 'resource' else 'ScholarlyArticle']
-                    self.assertEqual(entity['@id'], canonical + ('#resource' if kind == 'resource' else '#paper'))
+                    entity = next(node for node in page.schema['@graph'] if node.get('@id') == canonical + ('#resource' if kind == 'resource' else '#paper'))
+                    self.assertEqual(graph['WebPage']['lastReviewed'], record['verified_at'][:10])
+                    self.assertEqual(graph['WebPage']['publisher'], {'@id': 'https://awesomerea.org/#organization'})
+                    self.assertEqual(graph['WebPage']['isBasedOn'], evidence_urls(record))
+                    self.assertIn('property="og:type" content="article"', text)
                     self.assertEqual(entity['url'], record['url'])
                     self.assertNotIn('dateModified', graph['WebPage'])
                     if kind == 'resource':
@@ -166,6 +171,62 @@ class EntryPageTests(unittest.TestCase):
                         self.assertEqual([x['name'] for x in entity['author']], p['authors'])
                         self.assertNotIn('identifier', entity)  # Published USENIX paper has no invented DOI/arXiv.
             self.assertEqual((r, p), before)
+
+    def test_resource_facts_and_review_date_precede_requirements_once(self):
+        r = resource(targets=['protocol', 'binary'], category='protocol-analysis', relationship='foundation',
+                     verified_at='2026-10-17T01:02:03Z', requirements=['First.', 'Second.', 'Third.'],
+                     requirements_zh=['一。', '二。', '三。'])
+        p = paper()
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            build_entry_pages(root, [r], [p])
+            for language, expected in [
+                    ('en', [('Targets', 'Protocol · Binary'), ('Category', 'Protocol analysis tools'),
+                            ('Relationship', 'Foundation tool'), ('Sources reviewed', '2026-10-17')]),
+                    ('zh', [('目标', '协议 · 二进制'), ('类别', '协议分析工具'),
+                            ('关联', '基础工具'), ('来源复核于', '2026-10-17')])]:
+                text = (root / entry_path('resource', r['id'], language).lstrip('/') / 'index.html').read_text()
+                header = text[text.index('<header class="entry-heading">'):text.index('</header>', text.index('entry-heading'))]
+                summary = header[header.index('<dl class="entry-summary">'):]
+                self.assertEqual(re.findall(r'<dt>([^<]+)</dt><dd>(?:<time[^>]*>)?([^<]+)', summary), expected)
+                self.assertLess(text.index('class="entry-description"'), text.index('class="entry-summary"'))
+                self.assertLess(text.index('class="entry-summary"'), text.index('id="entry-requirements"'))
+                # The facts are not repeated below; the review disclaimer remains in its own section.
+                self.assertEqual(text.count('<time '), 1)
+                self.assertIn('<time datetime="2026-10-17T01:02:03Z">2026-10-17</time>', summary)
+                self.assertNotIn('entry-facts', text)
+                article = text[text.index('<article '):text.index('</article>')]
+                self.assertEqual(unescape(article).count(expected[1][1]), 1)
+                review = text[text.index('id="entry-review"'):text.index('</section>', text.index('id="entry-review"'))]
+                self.assertIn('class="entry-review-note"', review)
+            # Paper detail pages keep their publication and review details section unchanged.
+            paper_text = (root / entry_path('paper', p['id']).lstrip('/') / 'index.html').read_text()
+            self.assertNotIn('entry-summary', paper_text)
+            self.assertIn('<dl class="entry-facts">', paper_text)
+            self.assertLess(paper_text.index('id="entry-citation"'), paper_text.index('class="entry-reviewed"'))
+
+    def test_case_study_pages_return_to_cases_and_other_resources_to_resources(self):
+        case, tool = resource(id='example-case', kind='case-study'), resource()
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            build_entry_pages(root, [case, tool], [])
+            for language, prefix, cases, resources in [('en', '', 'Case studies', 'Curated resources'),
+                                                       ('zh', '/zh', '案例合集', '精选资源')]:
+                for record, listing, name in [(case, '/cases/', cases), (tool, '/resources/', resources)]:
+                    text = (root / entry_path('resource', record['id'], language).lstrip('/') / 'index.html').read_text()
+                    page = Page(text)
+                    graph = {x['@type']: x for x in page.schema['@graph']}
+                    crumb = graph['BreadcrumbList']['itemListElement'][1]
+                    self.assertEqual((crumb['name'], crumb['item']), (name, 'https://awesomerea.org' + prefix + listing))
+                    breadcrumbs = text[text.index('class="entry-breadcrumbs"'):text.index('</nav>', text.index('class="entry-breadcrumbs"'))]
+                    self.assertIn(f'<a href="{prefix}{listing}">{name}</a>', breadcrumbs)
+                    returns = text[text.index('class="entry-return"'):text.index('</nav>', text.index('class="entry-return"'))]
+                    self.assertIn(f'<a href="{prefix}{listing}#{record["id"]}">', returns)
+                    # Case studies keep the full curated directory as an extra return link.
+                    self.assertEqual(f'<a href="{prefix}/resources/">{resources}</a>' in returns, True)
+                    # Only case-study pages lead to /cases/ from their content; the shared site footer links it everywhere.
+                    main = text[text.index('<main '):text.index('</main>')]
+                    self.assertEqual(f'href="{prefix}/cases/' in main, record is case)
 
     def test_acceptance_date_is_not_invented_and_markup_is_escaped(self):
         hostile = '</script><script>alert("bad")</script>'

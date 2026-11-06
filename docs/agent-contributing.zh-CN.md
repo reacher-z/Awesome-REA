@@ -49,7 +49,7 @@ python3 scripts/validate.py
 python3 scripts/build_production.py
 ```
 
-论文还需运行 `python3 scripts/validate_papers.py`；案例覆盖记录变更需运行 `python3 scripts/build_case_coverage.py`。代码或网站变更还需运行 CONTRIBUTING.md 中的单元测试和浏览器检查。记录真实的通过、失败和跳过结果，不编造测试结论。
+论文还需运行 `python3 scripts/validate_papers.py`；`build_readme.py` 还会重写完整论文列表 `docs/papers.md` 和 `docs/papers.zh-CN.md`。案例覆盖记录变更需运行 `python3 scripts/build_case_coverage.py`。代码或网站变更还需运行 CONTRIBUTING.md 中的单元测试和浏览器检查。记录真实的通过、失败和跳过结果，不编造测试结论。
 
 4. 检查差异，移除无关修改和私密数据，提交后推送到你有写权限的仓库；无上游写权限时推送到自己的 fork。
 5. 向 `main` 创建 PR，填写[PR 模板](../.github/PULL_REQUEST_TEMPLATE.md)。已登录 GitHub CLI 时，可用：
@@ -63,6 +63,8 @@ gh pr create --repo reacher-z/Awesome-REA --base main --head YOUR_LOGIN:YOUR_BRA
 ## 提交后会发生什么？
 
 `validate` 与 `review` 检查结构、生成结果和审核规则；维护者判断相关性与事实声明。其他目录 PR 先合并时，按英文贡献指南的[更新 PR](../CONTRIBUTING.md#update-a-pull-request)步骤更新分支并重新生成受影响文件。检查通过或 AI 审查意见都不代表 PR 已被接收、合并或部署。
+
+维护者用 [`Merge a pull request` 工作流（英文）](automation.md#merge-a-pull-request-by-workflow)（`gh workflow run merge-pr.yml -f pr=<编号>`）而不是 `gh pr merge` 合并已接受的 PR：分支与 `main` 同步且两项必需检查都通过后，工作流用工作流令牌以 rebase 方式合并，每个提交保留原作者，历史中不会新增个人账号名；因此分支应整理为 1–3 个清晰的提交。
 
 ## Agent 应如何引用本合集？
 

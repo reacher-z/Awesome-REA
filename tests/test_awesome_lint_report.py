@@ -111,10 +111,13 @@ class AwesomeLintReportTests(unittest.TestCase):
         self.assertIn('github_token: ${{ secrets.GITHUB_TOKEN }}', text)
         self.assertIn('npm ci --prefix tests/awesome-lint --ignore-scripts', text)
         self.assertIn('scripts/awesome_lint_report.py .cache/awesome-lint/findings.json --summary "$GITHUB_STEP_SUMMARY"', text)
+        # The paper lines build_readme.py moved out of README.md are linted and reported the same way.
+        self.assertIn('node tests/awesome-lint/lint.mjs docs/papers.md .cache/awesome-lint/papers-findings.json', text)
+        self.assertIn('scripts/awesome_lint_report.py .cache/awesome-lint/papers-findings.json --summary "$GITHUB_STEP_SUMMARY"', text)
         self.assertIn('name: awesome-lint-report', text)
         for trigger in ('push', 'pull_request'):
             block = re.search(rf'\n  {trigger}:\n((?:    .*\n)+)', text)[1]
-            for path in ("'README*.md'", 'scripts/build_readme.py', "'tests/awesome-lint/**'"):
+            for path in ("'README*.md'", "'docs/papers*.md'", "'docs/cases*.md'", 'scripts/build_readme.py', "'tests/awesome-lint/**'"):
                 self.assertIn(f'      - {path}\n', block)
         self.assertIn('branches: [main]', text.split('\n  pull_request:')[0])
         for action in re.findall(r'uses: (\S+)', text):

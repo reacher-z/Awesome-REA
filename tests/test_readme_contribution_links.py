@@ -24,8 +24,9 @@ class ReadmeContributionLinkTest(unittest.TestCase):
                 self.assertIn(f'\n## {heading}\n', text)
 
     def test_generated_contents_link_the_contributing_section(self):
-        self.assertTrue(render_contents([], [], 0, 'en').rstrip().endswith('· [Contributing](#contributing)'))
-        self.assertTrue(render_contents([], [], 0, 'zh').rstrip().endswith('· [参与贡献](#参与贡献)'))
+        # The link follows the Contents list rather than joining it: awesome-lint's ToC check excludes Contributing.
+        self.assertTrue(render_contents([], [], 0, 'en').rstrip().endswith('\n\nAlso on this page: [Contributing](#contributing)'))
+        self.assertTrue(render_contents([], [], 0, 'zh').rstrip().endswith('\n\n本页还有：[参与贡献](#参与贡献)'))
         for name, link in (('README.md', '[Contributing](#contributing)'), ('README.zh-CN.md', '[参与贡献](#参与贡献)')):
             text = (ROOT / name).read_text(encoding='utf-8')
             self.assertIn(link, text.split(CONTENTS_BEGIN, 1)[1].split(CONTENTS_END, 1)[0])

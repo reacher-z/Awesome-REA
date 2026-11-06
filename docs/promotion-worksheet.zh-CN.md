@@ -2,7 +2,7 @@
 
 [English](promotion-worksheet.md) · [扫描方法（英文）](source-scan.md) · [中文贡献指南](../CONTRIBUTING.zh-CN.md)
 
-自动[仓库索引](../data/source-index.json)中的记录是 README 扫描结果，`verification` 为 `automated-readme-scan`。其简介、目标领域和分类来自仓库元数据，未经复核。把其中的仓库收录为精选，是根据你自己对一手来源的复核另写一条记录。扫描记录本身永远不会被修改、重新标注或升级：它保留原有证据和状态，仓库目录在构建时把它链接到精选条目。
+自动[仓库索引](../data/source-index.json)和[未审核发现批次](../data/discoveries/README.md#简体中文)中的记录是 README 扫描结果，`verification` 为 `automated-readme-scan`。其简介、目标领域和分类来自仓库元数据，未经复核。把其中的仓库收录为精选，是根据你自己对一手来源的复核另写一条记录。扫描记录本身永远不会被修改、重新标注或升级：它保留原有证据和状态，仓库目录在构建时把它链接到精选条目。
 
 在提议收录的 issue 或 pull request 中使用下面的工作表，并填写每一行。可以填写“未知”；关键行为未知时，结论应为暂缓。
 
@@ -21,13 +21,14 @@
 | 使用条件 | 平台、版本、输入和许可条款，作为 `requirements` 及其中文翻译。 | 固定版本的证据 |
 | 分类 | `kind`、`relationship` 和 `category`，分别独立选择。 | [中文贡献指南](../CONTRIBUTING.zh-CN.md#kindrelationshipcategory-与-targets) |
 | 目标领域理由 | 每个目标领域成立的理由，并引用证据。自动扫描标签不能作为理由。 | 固定版本的证据 |
+| 数据类别 | 项目的主要成果若复刻了一个具体的真实对象，填它唯一的 `class`，按原始对象命名；否则不填。 | [数据记录（英文）](../data/README.md#data-records)、固定版本的证据 |
 | 结论 | 收录为精选，或暂缓并写明缺少哪项证据。 | 以上各行 |
 
 ## 收录还是暂缓
 
 只有当描述、使用条件和目标领域中的每个关键说法都能追溯到固定修订的公开一手来源，并在记录的日期完成复核时，才收录为精选。然后按英文指南[目录更新部分](../CONTRIBUTING.md#update-the-catalog)的说明添加记录及其中文使用条件，不要改动 `data/source-index.json`。
 
-证据不足时应暂缓。常见情形：README 没有说明项目做什么或如何使用；某项功能只出现在仓库简介、扫描标签或第三方帖子中；找不到可固定的公开来源；或者目标领域缺乏依据。暂缓不新增精选记录，也不修改扫描记录。请在 issue 中写明缺少哪一行，便于之后继续复核。不要用运行结论填补空缺：目录记录不收录运行结果，未亲自观察到的结果绝不能写入。
+证据不足时应暂缓。常见情形：README 没有说明项目做什么或如何使用；某项功能只出现在仓库简介、扫描标签或第三方帖子中；找不到可固定的公开来源；或者目标领域缺乏依据。暂缓不新增精选记录，也不修改扫描记录。请在 issue 中写明缺少哪一行，便于之后继续复核。不要用运行结论填补空缺：目录记录不收录运行结果，未亲自观察到的结果绝不能写入。未审核发现队列中记录的暂缓和排除决定写入 `data/discovery-reviews.json`，见[审核决定](../data/discoveries/README.md#审核决定)。
 
 暂缓不等于排除出收录范围。把明显无关的扫描结果排除出浏览，是对 `data/source-scope.json` 的另一项需复核的修改，见扫描方法中的[收录范围（英文）](source-scan.md#collection-scope)。
 
@@ -48,6 +49,7 @@
 | 使用条件 | 提供 Linux、macOS 和 Windows 独立构建，Linux 构建需要 GLIBC 2.26+；PyPI 软件包不含默认规则；IDA、Ghidra 和 Binary Ninja 集成各有版本要求（安装文档、插件 README）；Apache-2.0 许可。 |
 | 分类 | `kind: tool`；`relationship: foundation`，因为其文档没有确立与 REA 的关联；`category: native-analysis`。 |
 | 目标领域理由 | `binary`：文档列出的输入是可执行模块、shellcode、针对可执行文件的沙箱报告以及由它们派生的文件。证据不支持其他目标领域。 |
+| 数据类别 | 不填 `class`：capa 适用于任意可执行文件，没有复刻某个具体对象。 |
 | 结论 | 收录为 `capa`，`verified_at: 2026-10-19`。 |
 
 修改之后，`scan-272815213` 逐字节保持不变，仍为 `automated-readme-scan`。它在[原生分析目录](repositories/native-analysis.zh-CN.md)中的那一行多出“精选：capa”链接，仅仅因为精选记录的 `url` 恰好是该仓库的根地址。本次没有安装或运行任何内容；精选记录的使用条件写明未分析任何样本。

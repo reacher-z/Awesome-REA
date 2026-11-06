@@ -1,4 +1,4 @@
-"""Evidence links carry the same compact labels on curated, case and entry pages."""
+"""Entry pages label evidence links compactly; /resources/ and /cases/ link to that list with its source count."""
 from html.parser import HTMLParser
 from pathlib import Path
 import re
@@ -58,7 +58,7 @@ class EvidenceLabelTests(unittest.TestCase):
         for url in OTHER + [f'https://github.com/example/tool/blob/main/README.md', PINNED.replace('#', '?plain=1#')]:
             self.assertEqual(source_label(url, 'en'), (url, ''))
 
-    def test_curated_and_case_pages_name_links_like_entry_pages(self):
+    def test_entry_pages_name_links_and_listings_count_them(self):
         additional = [PINNED, TREE, *OTHER]
         record = {
             'id': 'labelled-case', 'name': 'Labelled case', 'name_zh': '标注案例', 'url': 'https://example.org/case',
@@ -77,13 +77,13 @@ class EvidenceLabelTests(unittest.TestCase):
                     with self.subTest(language=language, page=page):
                         content = (output / prefix / page / 'index.html').read_text()
                         self.assertIsNone(re.search(r'(Additional source|补充来源) \d', content), 'numbered evidence names remain')
-                        rendered = [link for link in links(content) if link.get('href') in additional]
-                        # Same order and targets as the record; each name equals the entry-page label.
-                        self.assertEqual([link['href'] for link in rendered], additional)
-                        self.assertEqual([link['text'].strip() for link in rendered], entry[1:])
-                        for link in rendered:
-                            self.assertEqual((link['title'], link['target'], link['rel']), (link['href'], '_blank', 'noopener'))
-                        self.assertEqual(content.count('GitHub · example/tool · ' + ('修订' if language == 'zh' else 'Revision')), 2)
+                        # Further evidence is listed, with these labels, only on the entry page; the listing links there
+                        # and counts every source the entry page names.
+                        self.assertEqual([link for link in links(content) if link.get('href') in additional], [])
+                        target = f"{'/zh' if language == 'zh' else ''}/resources/{record['id']}/#entry-requirements"
+                        counted = [link['text'] for link in links(content) if link.get('href') == target]
+                        self.assertEqual(len(counted), 1)
+                        self.assertIn(f'{len(entry)} 个来源' if language == 'zh' else f'{len(entry)} sources', counted[0])
 
 
 if __name__ == '__main__':

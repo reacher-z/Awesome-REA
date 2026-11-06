@@ -2,23 +2,23 @@
 
 [Curated collection](../../README.md) · [Search website](https://awesomerea.org/?lang=en&view=source-index) · [Download bilingual JSON](https://awesomerea.org/source-published.json) · [简体中文](README.zh-CN.md)
 
-This published selection contains **3,500** captured repository records and **3,309** browsable entries. **187** scope-excluded entries and **4** whose upstream repository is no longer available remain in the published JSON. Original capture totals remain separate in the source evidence.
+This published selection contains **3,500** captured repository records and **3,309** browsable entries. **187** scope-excluded entries and **4** whose upstream repository is no longer available remain in the published JSON.
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
+These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 Publication date: **2026-10-20 UTC**.
 
 | Category | Repositories | Linked to curated entries or papers |
 | --- | ---: | ---: |
-| [Websites](web-analysis.md) | 215 | 26 |
-| [Games](game-analysis.md) | 485 | 63 |
-| [Apps · Android](android.md) | 479 | 32 |
+| [Websites](web-analysis.md) | 217 | 34 |
+| [Games](game-analysis.md) | 491 | 70 |
+| [Apps · Android](android.md) | 482 | 59 |
 | [Apps · Managed code](managed-code.md) | 135 | 5 |
-| [Native binaries](native-analysis.md) | 849 | 81 |
-| [Runtime and debugging](dynamic-analysis.md) | 145 | 18 |
-| [Firmware](firmware.md) | 222 | 19 |
-| [Protocols](protocol-analysis.md) | 110 | 8 |
-| [General tools and collections](reverse-engineering.md) | 669 | 63 |
+| [Native binaries](native-analysis.md) | 837 | 142 |
+| [Runtime and debugging](dynamic-analysis.md) | 152 | 36 |
+| [Firmware](firmware.md) | 228 | 37 |
+| [Protocols](protocol-analysis.md) | 113 | 12 |
+| [General tools and collections](reverse-engineering.md) | 654 | 79 |
 
 [Scan methodology](../source-scan.md) · [Scope exclusions](../../data/source-scope.json)
 

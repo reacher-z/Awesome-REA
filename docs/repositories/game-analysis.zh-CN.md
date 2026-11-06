@@ -2,9 +2,9 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/game-analysis/) · [English](game-analysis.md)
 
-**485 个仓库** · 2026-10-20 UTC
+**491 个仓库** · 2026-10-20 UTC
 
-这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
+这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
 - [HIllya51/LunaTranslator](https://github.com/HIllya51/LunaTranslator) — 视觉小说翻译器。 **[13,757 星标]**
 - [baldurk/renderdoc](https://github.com/baldurk/renderdoc) — RenderDoc 是独立的图形调试工具。 **[11,193 星标]** · 精选：[RenderDoc](https://awesomerea.org/zh/resources/renderdoc/)
@@ -17,6 +17,7 @@
 - [LavaGang/MelonLoader](https://github.com/LavaGang/MelonLoader) — 全球首个兼容 Il2Cpp 与 Mono 的 Unity 游戏通用模组加载器。 **[4,258 星标]** · 精选：[MelonLoader Unity 游戏模组加载器](https://awesomerea.org/zh/resources/melonloader/)
 - [danielkrupinski/Osiris](https://github.com/danielkrupinski/Osiris) — 面向 Counter-Strike 2 的跨平台游戏作弊工具，采用基于 Panorama 的 GUI。 **[3,891 星标]**
 - [ran-j/PS2Recomp](https://github.com/ran-j/PS2Recomp) — 用于制作原生 PC 移植版的 PlayStation 2 静态重编译器与运行时工具。 **[3,516 星标]** · 精选：[PS2Recomp PlayStation 2 静态重编译器](https://awesomerea.org/zh/resources/ps2recomp/)
+- [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — 使用 Zygisk 在运行时转储 il2cpp 数据。 **[3,343 星标]** · 精选：[Zygisk-Il2CppDumper 运行时导出 IL2CPP 元数据的 Zygisk 模块](https://awesomerea.org/zh/resources/zygisk-il2cppdumper/)
 - [morkt/GARbro](https://github.com/morkt/GARbro) — 视觉小说资源浏览器。 **[3,328 星标]** · 精选：[GARbro](https://awesomerea.org/zh/resources/garbro/)
 - [4sval/FModel](https://github.com/4sval/FModel) — Unreal Engine 归档文件浏览器 **[3,258 星标]** · 精选：[FModel 游戏资源浏览器](https://awesomerea.org/zh/resources/fmodel/)
 - [djkaty/Il2CppInspector](https://github.com/djkaty/Il2CppInspector) — 用于逆向工程 Unity IL2CPP 二进制文件的强大自动化工具。 **[3,056 星标]** · 精选：[Il2CppInspector Unity IL2CPP 静态分析工具](https://awesomerea.org/zh/resources/il2cppinspector/)
@@ -44,7 +45,7 @@
 - [GensokyoClub/th06](https://github.com/GensokyoClub/th06) — 《东方红魔乡 ～ the Embodiment of Scarlet Devil》（1.02h）的反编译代码。 **[616 星标]** · 精选：[Touhou 6：重建东方红魔乡 1.02h 版源码](https://awesomerea.org/zh/resources/th06-decomp-case/)
 - [encounter/objdiff](https://github.com/encounter/objdiff) — 面向反编译项目的本地差异比较工具。 **[586 星标]** · 精选：[objdiff](https://awesomerea.org/zh/resources/objdiff/)
 - [jac3km4/redscript](https://github.com/jac3km4/redscript) — redscript 编译器与反编译器工具包。 **[520 星标]** · 精选：[REDscript《赛博朋克 2077》脚本编译与反编译工具集](https://awesomerea.org/zh/resources/redscript/)
-- [EliotVU/Unreal-Library](https://github.com/EliotVU/Unreal-Library) — Unreal 软件包文件（.upk、.u、.uasset 等）的反编译器，支持 Unreal Engine 1、2 和 3。 **[490 星标]**
+- [EliotVU/Unreal-Library](https://github.com/EliotVU/Unreal-Library) — Unreal 软件包文件（.upk、.u、.uasset 等）的反编译器，支持 Unreal Engine 1、2 和 3。 **[490 星标]** · 精选：[UELib Unreal 包文件解析与反编译库](https://awesomerea.org/zh/resources/uelib-unreal-package-library/)
 - [marsinator358/luajit-decompiler-v2](https://github.com/marsinator358/luajit-decompiler-v2) — LuaJIT 字节码反编译器。 **[487 星标]** · 精选：[LuaJIT Decompiler v2 字节码反编译器](https://awesomerea.org/zh/resources/luajit-decompiler-v2/)
 - [sneakyevil/IL2CPP\_Resolver](https://github.com/sneakyevil/IL2CPP_Resolver) — 面向 Unity IL2CPP 的运行时 API 解析器。 **[475 星标]**
 - [TeamGDB/Yakumo](https://github.com/TeamGDB/Yakumo) — 将一款 PSP 游戏静态重编译为原生可执行文件，使用 Vulkan 和 SDL3。需自备游戏副本。 **[447 星标]**
@@ -57,8 +58,10 @@
 - [PrimeDecomp/prime](https://github.com/PrimeDecomp/prime) — 可生成匹配原始二进制结果的《密特罗德 Prime》反编译项目。 **[367 星标]** · 精选：[《密特罗德 Prime》：PrimeDecomp 的 GameCube 版一致性反编译](https://awesomerea.org/zh/resources/primedecomp-metroid-prime-decomp-case/)
 - [0xDC00/agent](https://github.com/0xDC00/agent) — 基于脚本的通用文本 hook 工具，由 Frida 驱动。 **[357 星标]**
 - [adonis-singh/re4](https://github.com/adonis-singh/re4) — 《生化危机 4》（GameCube，G4BE08 调试版本）：完整反编译为 C/C++，生成与原版逐字节一致的结果。 **[345 星标]** · 精选：[re4：Resident Evil 4 GameCube 调试版的字节一致反编译](https://awesomerea.org/zh/resources/re4-gamecube-debug-decomp-case/)
+- [DizTools/DiztinGUIsh](https://github.com/DizTools/DiztinGUIsh) — Super NES ROM 反汇编器。 **[343 星标]** · 精选：[DiztinGUIsh Super NES ROM 反汇编工具](https://awesomerea.org/zh/resources/diztinguish/)
 - [xensik/gsc-tool](https://github.com/xensik/gsc-tool) — 用于编译和反编译 IW 引擎游戏脚本的实用工具。 **[335 星标]**
 - [snuri00/psp-web-recomp](https://github.com/snuri00/psp-web-recomp) — 在浏览器中运行 PSP 游戏：静态重编译为 WebAssembly，配备高层仿真（HLE）内核与 WebGL2 渲染器。 **[329 星标]** · 精选：[PSP Web Recomp 浏览器游戏重编译项目](https://awesomerea.org/zh/resources/psp-web-recomp/)
+- [mattcurrie/mgbdis](https://github.com/mattcurrie/mgbdis) — Game Boy ROM 反汇编器，输出兼容 RGBDS。 **[327 星标]** · 精选：[mgbdis Game Boy ROM 反汇编器](https://awesomerea.org/zh/resources/mgbdis/)
 - [SpeedBreakerProject/speedbreaker](https://github.com/SpeedBreakerProject/speedbreaker) — Xbox 360 版 Need for Speed: Most Wanted（2005）的非官方静态重编译项目：面向 Steam Deck、Steam Machine、Steam Frame、Linux 和 Mac 的原生移植；iPhone/iPad 可侧载实验性 IPA 或自行构建。需自备光盘，不附带游戏文件。与 EA 或 Valve 无关联。 **[326 星标]** · 精选：[SpeedBreaker：对 Xbox 360 版《极品飞车：最高通缉》的静态重编译](https://awesomerea.org/zh/resources/speedbreaker-nfs-most-wanted-case/)
 - [g0aty/SickoMenu](https://github.com/g0aty/SickoMenu) — 功能强大的 Among Us 实用工具，通过自定义功能丰富游戏体验！ **[316 星标]**
 - [encounter/decomp-toolkit](https://github.com/encounter/decomp-toolkit) — GameCube 和 Wii 反编译工具包 **[311 星标]** · 精选：[decomp-toolkit GameCube/Wii 反编译工具包](https://awesomerea.org/zh/resources/decomp-toolkit/)
@@ -69,10 +72,12 @@
 - [jkdansereau/goldeneye-pc-port](https://github.com/jkdansereau/goldeneye-pc-port) — 将 GoldenEye 007（N64，1997）移植为 Windows、Linux、Steam Deck 和 macOS 原生 PC 游戏。基于开放的反编译项目构建，支持宽屏、键鼠或手柄操作及分屏，并非模拟器。 **[255 星标]** · 精选：[GoldenEye 007：基于反编译成果的智能体辅助原生移植](https://awesomerea.org/zh/resources/goldeneye-pc-port-case/)
 - [open-ead/sead](https://github.com/open-ead/sead) — sead 反编译项目：任天堂第一方游戏使用的标准 C++ 库 **[252 星标]** · 精选：[sead：Nintendo 第一方 C++ 标准库的反编译重建](https://awesomerea.org/zh/resources/sead-nintendo-library-decomp-case/)
 - [kylesmile1103/Learn-Frida](https://github.com/kylesmile1103/Learn-Frida) — 使用 Frida 修改 Unity 应用的教程。 **[249 星标]**
+- [pedro-javierf/NTRGhidra](https://github.com/pedro-javierf/NTRGhidra) — Ghidra 的 Nintendo DS 二进制文件加载器 **[228 星标]** · 精选：[NTRGhidra Nintendo DS 程序 Ghidra 加载器](https://awesomerea.org/zh/resources/ntrghidra/)
 - [AITYunivers/NebulaFD](https://github.com/AITYunivers/NebulaFD) — 为 Clickteam Fusion 重新设计的反编译器，目前仍在开发中。 **[226 星标]** · 精选：[Nebula（NebulaFD）Clickteam Fusion 反编译器](https://awesomerea.org/zh/resources/nebulafd/)
 - [dbalatoni13/nfsmw](https://github.com/dbalatoni13/nfsmw) — 对多个版本的《极品飞车：最高通缉》进行 1:1 反编译，仍在开发中 **[226 星标]**
 - [MetaMystia/MetaMystia](https://github.com/MetaMystia/MetaMystia) — 《东方夜雀食堂》的模组 **[204 星标]**
 - [parappadev/parappa2](https://github.com/parappadev/parappa2) — PaRappa the Rapper 2（2001，PS2）反编译项目 **[202 星标]**
+- [OpenGMK/GM8Decompiler](https://github.com/OpenGMK/GM8Decompiler) — GameMaker 8.x 可执行文件反编译器 **[201 星标]** · 精选：[GM8Decompiler GameMaker 8 游戏反编译器](https://awesomerea.org/zh/resources/gm8decompiler/)
 - [open-ribbon/open-ribbon](https://github.com/open-ribbon/open-ribbon) — vib-ribbon 的 PAL 版反编译项目 **[188 星标]**
 - [ImaterialC/PriconneRe-TL](https://github.com/ImaterialC/PriconneRe-TL) — 《公主连结！Re:Dive》日服 64 位 IL2CPP 版本的英文补丁 **[185 星标]**
 - [Herringway/ebsrc](https://github.com/Herringway/ebsrc) — 游戏 EarthBound 的源码重建项目 **[183 星标]**
@@ -92,6 +97,7 @@
 - [Unchiga/YuGiOhForbiddenMemoriesRecomp](https://github.com/Unchiga/YuGiOhForbiddenMemoriesRecomp) — 将 Yu-Gi-Oh! Forbidden Memories（PS1）静态重编译为原生可执行文件，带有实时决斗评级表、融合助手、可调卡片掉落及作弊菜单。需自备光盘。 **[137 星标]**
 - [2003scape/rsc-c](https://github.com/2003scape/rsc-c) — 🍫 将 RuneScape Classic 客户端移植到 C **[135 星标]**
 - [opentestdriveunlimited/OpenTestDriveUnlimited](https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited) — Test Drive Unlimited（2006）的开源移植版 **[135 星标]**
+- [kotcrab/ghidra-allegrex](https://github.com/kotcrab/ghidra-allegrex) — 为 Ghidra 添加 Allegrex CPU（PSP）支持的处理器模块 **[132 星标]** · 精选：[ghidra-allegrex PSP Allegrex 处理器模块](https://awesomerea.org/zh/resources/ghidra-allegrex/)
 - [IroniaTheMaster/Descrypt-global-metadata.dat](https://github.com/IroniaTheMaster/Descrypt-global-metadata.dat) — 如何解密 Unity 游戏中的 global-metadata.dat？ **[129 星标]**
 - [Fantaskink/SOTC](https://github.com/Fantaskink/SOTC) — PlayStation 2 游戏《旺达与巨像》预览版的反编译项目，仍在开发中 **[125 星标]**
 - [chrissotraidis/projectreach](https://github.com/chrissotraidis/projectreach) — 在 iPhone、iPad 和 Mac 上运行《光环：战斗进化》。包含支持最多 128 人在线对战及原版战役的 Xbox 版本，以及支持社区服务器的 Halo Custom Edition。需自备游戏并在 Mac 上构建。 **[124 星标]**

@@ -67,4 +67,4 @@ python3 -m unittest discover -s tests
 python3 scripts/build_production.py
 ```
 
-The README builder updates the paper listings in both READMEs; commit them with `data/papers.json`. The production build regenerates the paper directory, detail pages and BibTeX downloads in the ignored `dist/` directory. As for every paper record, `runtime_tested` stays `false`: the update reviews sources and does not reproduce results.
+The README builder updates the full paper lists in `docs/papers.md` and `docs/papers.zh-CN.md` and the newest papers in both READMEs; commit them with `data/papers.json`. The production build regenerates the paper directory, detail pages and BibTeX downloads in the ignored `dist/` directory. As for every paper record, `runtime_tested` stays `false`: the update reviews sources and does not reproduce results.

@@ -49,7 +49,7 @@ python3 scripts/validate.py
 python3 scripts/build_production.py
 ```
 
-Paper changes additionally use `python3 scripts/validate_papers.py`; case-ledger changes use `python3 scripts/build_case_coverage.py`. Code or site changes need the unit suite and browser checks listed in CONTRIBUTING.md. Record what actually passed, failed or was skipped; never fabricate a test result.
+Paper changes additionally use `python3 scripts/validate_papers.py`; `build_readme.py` also rewrites the full paper lists, `docs/papers.md` and `docs/papers.zh-CN.md`. Case-ledger changes use `python3 scripts/build_case_coverage.py`. Code or site changes need the unit suite and browser checks listed in CONTRIBUTING.md. Record what actually passed, failed or was skipped; never fabricate a test result.
 
 4. Review the diff for unrelated changes and private data, commit it, and push the branch to a repository you can write. Without upstream write access, push to your fork.
 5. Open a PR targeting `main` and fill in the [PR template](../.github/PULL_REQUEST_TEMPLATE.md). With an authenticated GitHub CLI, the submission step is:
@@ -63,6 +63,8 @@ Replace the placeholders and write `pr-body.txt` with the actual problem, resour
 ## What happens after submission?
 
 The `validate` and `review` checks assess structure, generated output and review rules. Maintainers decide relevance and factual claims. If another catalog PR merges first, update your branch and regenerate affected files as described in [Update a pull request](../CONTRIBUTING.md#update-a-pull-request). A passing check or an AI-generated review does not mean the PR has been accepted, merged or deployed.
+
+Maintainers merge an accepted PR with the [`Merge a pull request` workflow](automation.md#merge-a-pull-request-by-workflow) (`gh workflow run merge-pr.yml -f pr=<number>`) rather than `gh pr merge`. The workflow rebase-merges with the workflow token once the PR is current and both required checks pass, so each commit keeps its own author and no personal account name is added to the history; a branch should therefore hold 1–3 clean commits.
 
 ## How should an agent cite the collection?
 

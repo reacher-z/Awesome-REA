@@ -6,7 +6,7 @@ const UI = {
     "dataCloneCopied": "Clone command copied.",
     "dataCloneFailed": "Copy unavailable. The command is selected for manual copying.",
     "dataGuide": "Data format & source files ↗",
-    "dataManifest": "Manifest ↗",
+    "dataManifest": "Manifest →",
     "getData": "Get data",
     "dataEyebrow": "OPEN COLLECTION · OPEN DATA",
     "dataTitle": "Take the collection with you.",
@@ -19,8 +19,8 @@ const UI = {
     "dataCopied": "Instructions copied.",
     "dataCopyFailed": "Copy unavailable. The instructions are selected for manual copying.",
     "dataFiles": "Individual data files",
-    "dataResources": "Resources JSON ↗",
-    "dataPapers": "Papers JSON ↗",
+    "dataResources": "Resources JSON →",
+    "dataPapers": "Papers JSON →",
     "dataNote": "The repository contains public catalog data and website source. Linked projects, PDFs and datasets keep their own licenses.",
     "layoutLabel": "Layout",
     "moreFilters": "More filters",
@@ -28,29 +28,25 @@ const UI = {
     "layoutCards": "Cards",
     "requirementsShort": "Requirements & limits",
     "openEntry": "Open full entry",
+    "copyEntryLink": "Copy link to this entry",
+    "copyCardLink": "Copy link to this repository on its category page",
     "sourceTopicsLabel": "Topics",
     "noscriptNote": "JavaScript enables search and filters. Read the complete <a href=\"/browse/\">repository directory</a>, <a href=\"/resources/\">curated collection</a> and <a href=\"/papers/\">research papers</a> without JavaScript. <a href=\"/zh/\" lang=\"zh-CN\">简体中文</a>.",
     "exploreResources": "Browse resources",
     "explorePapers": "Browse research papers",
-    "exploreCases": "Browse case studies",
+    "exploreCases": "Artifact reviews · Beta",
     "directoryCases": "case studies",
     "shelfTitle": "Explore these collections",
     "shelfCases": "Awesome REA Cases",
     "shelfCasesDescription": "Software and hardware reconstruction reports.",
-    "shelfGames": "REA / Decompiled Games",
-    "shelfGamesDescription": "Decompilations, native ports and playable demos.",
     "shelfResearch": "Research papers",
     "shelfResearchDescription": "Papers, artifacts and the limits of their results.",
     "shelfNote": "Each collection links to its original sources.",
-    "surveyLink": "Read the editorial survey ↗",
+    "surveyLink": "Read the editorial survey →",
     "subjectNav": "Explore reverse engineering by target",
     "subjectBrowse": "Browse subject directories",
-    "contributorsEyebrow": "BUILT WITH THE COMMUNITY",
-    "contributorsTitle": "Contributors",
-    "contributorLead": "Lead",
-    "contributorHaozhe": "Game reconstruction resource curation and recommendations.",
-    "pageTitle": "Awesome Reverse Engineering Anything — Tools, Cases & Papers",
-    "collectionTitle": 'Awesome Reverse<br>Engineering <em>Anything.</em>',
+    "pageTitle": "Awesome Reverse Engineering Anything · Tools, Cases & Papers",
+    "collectionTitle": 'Awesome Reverse<br>Engineering <em>Anything</em>',
     "languageSelection": "Language",
     "homeLabel": "AwesomeREA.org home",
     "skip": "Skip to the collection",
@@ -63,7 +59,7 @@ const UI = {
     "directoryRepositories": "repositories",
     "directoryCurated": "curated resources",
     "directoryPapers": "research papers",
-    "directoryAbout": "About the collection ↗",
+    "directoryAbout": "About the collection →",
     "directoryScanned": "READMEs scanned · curated entries and papers reviewed against public sources.",
     "browseCollection": "Browse the collection",
     "indexModeLabel": "Collection",
@@ -87,13 +83,17 @@ const UI = {
     "sourceSortStarsAsc": "Fewest stars",
     "sourceSortPushed": "Recently pushed",
     "sourceSortName": "Repository name",
-    "sourceIntro": "Automatically collected repositories; not individually reviewed.",
+    "sourceIntro": "Automatically collected repositories, unreviewed.",
     "aboutCollection": "About this index",
-    "sourceDisclosure": "READMEs were fetched automatically. These entries have not been manually reviewed or executed; target labels are inferred and do not establish REA compatibility.",
+    "sourceDisclosure": "READMEs were fetched automatically. These entries are unreviewed, and target labels are inferred.",
     "sourceLanguageNote": "Repository descriptions are available in English and Chinese. Translations are AI-assisted; original descriptions remain in the downloadable data.",
     "sourceLoading": "Loading repositories…",
     "clearFilters": "Clear filters ×",
     "exportMatches": "Export matches (JSON) ↓",
+    "activeFilters": "Active filters",
+    "removeFilter": "Remove filter {filter}",
+    "filterSearch": "Search",
+    "groupLabel": "Group",
     "emptyTitle": "No matching resources.",
     "sourceEmptyDescription": "Try another search term or broaden your filters.",
     "resetFilters": "Reset filters",
@@ -107,28 +107,71 @@ const UI = {
     "allKinds": "All types",
     "categoryLabel": "Category",
     "allCategories": "All categories",
+    "curatedSortLabel": "Sort",
+    "curatedSortFeatured": "Featured first",
+    "curatedSortName": "Name",
+    "curatedSortReviewed": "Latest source review",
     "reviewNote": "Reviewed against original sources. Names open the resource; details explain requirements and limits.",
-    "aboutCurated": "Collection notes ↗",
+    "aboutCurated": "Collection notes →",
     "loading": "Loading resources…",
     "emptyDescription": "Try another search term or broaden your filters.",
     "emptySearchPapers": "Search research papers",
     "emptySearchRepositories": "Search automatically indexed repositories",
     "emptySearchRepositoriesFor": "Search automatically indexed repositories for “{query}”",
-    "emptyRepositoriesNote": "These repositories are collected automatically, not individually source-reviewed.",
+    "emptyRepositoriesNote": "These repositories are collected automatically and unreviewed.",
     "errorTitle": "The collection couldn’t load.",
     "errorDescription": "Please try again, or browse the collection on GitHub.",
     "loadMore": "Show more resources",
-    "footerDescription": "An independent resource collection, updated in public.",
+    "footerDescription": "A resource collection, updated in public.",
     "footerSubmitResource": "Submit a resource ↗",
     "contributeButton": "Contribute",
     "contributionRules": "Contributor rules ↗",
     "downloadSourceData": "Repository index JSON ↓",
-    "downloadPublishedSourceData": "Published repository index JSON ↓",
-    "browseDirectory": "Browse by category ↗",
+    "downloadPublishedSourceData": "Repository selection JSON ↓",
+    "browseDirectory": "Repository directory",
     "downloadCuratedData": "Curated catalog JSON ↓",
+    "downloadPaperData": "Paper metadata JSON ↓",
+    "downloadPaperBibliography": "Paper BibTeX ↓",
+    "footerNavigation": "More from the collection",
+    "footerResources": "Curated resources",
+    "footerCases": "Case studies",
+    "footerPapers": "Research papers",
+    "footerSurvey": "Editorial survey",
+    "footerAbout": "About and sources",
     "viewSource": "GitHub ↗",
+    "shortlistOpen": "Shortlist",
+    "shortlistSave": "Save",
+    "shortlistSaved": "Saved",
+    "shortlistEyebrow": "SAVED IN THIS BROWSER",
+    "shortlistTitle": "Your shortlist",
+    "shortlistClose": "Close shortlist",
+    "shortlistDescription": "Only entry IDs are saved, in this browser on this device. Nothing is sent to a server, and there is no account or sync.",
+    "shortlistEmpty": "Nothing saved yet. Use Save on a curated resource, repository or paper to keep it here.",
+    "shortlistClear": "Clear shortlist",
+    "shortlistCleared": "Shortlist cleared.",
+    "shortlistRemove": "Remove",
+    "shortlistCurated": "Curated resources",
+    "shortlistRepositories": "Repositories",
+    "shortlistPapers": "Research papers",
+    "shortlistLoading": "Loading details…",
+    "shortlistLoadFailed": "Details couldn’t load. The saved ID is kept.",
+    "shortlistGoneCurated": "No longer in the curated collection.",
+    "shortlistGoneRepository": "No longer in the browsable repository index.",
+    "shortlistGonePaper": "No longer in the paper directory.",
+    "shortlistWriteFailed": "This browser couldn’t save the shortlist.",
     "footerLicense": "Original content: MIT. Linked projects keep their own licenses.",
     "readSource": "Primary source",
+    "matchedIn": "Matched in",
+    "matchNameEn": "English name",
+    "matchNameZh": "Chinese name",
+    "matchDescriptionEn": "English description",
+    "matchDescriptionZh": "Chinese description",
+    "matchDescriptionOriginal": "Original description",
+    "matchRequirementsEn": "English requirements",
+    "matchRequirementsZh": "Chinese requirements",
+    "matchRelationship": "Relationship",
+    "matchRelated": "Related entry",
+    "matchRepository": "GitHub repository",
     "requirements": "Requirements & limits",
     "requirementsLoading": "Loading requirements…",
     "requirementsError": "Requirements couldn’t load. Close and reopen these details to try again.",
@@ -142,7 +185,7 @@ const UI = {
     "facetAttribution": "Attribution",
     "sourceNotRecorded": "Not recorded",
     "sourceStars": "stars",
-    "sourceStarsTitle": "GitHub stars at metadata collection time; not a live count.",
+    "sourceStarsTitle": "GitHub stars at metadata collection time.",
     "sourceNoDescription": "No description supplied by the upstream repository.",
     "sourceOmittedDescription": "Upstream description omitted because it exceeds the collection’s length limit.",
     "sourceRelatedResearch": "Related research",
@@ -156,7 +199,7 @@ const UI = {
     "indexStatusLabel": "Index status",
     "sourceScanStatus": "README scanned",
     "sourceRequirementsLabel": "Requirements",
-    "sourceRequirements": "Check the upstream README for prerequisites; these have not been manually reviewed.",
+    "sourceRequirements": "Check the upstream README for prerequisites.",
     "sourcePushedAt": "Last pushed",
     "sourceReadmeAt": "README fetched",
     "sourceMetadataAt": "Metadata observed",
@@ -169,7 +212,7 @@ const UI = {
     "dataCloneCopied": "克隆命令已复制。",
     "dataCloneFailed": "无法自动复制，命令已选中，可手动复制。",
     "dataGuide": "数据格式与源文件 ↗",
-    "dataManifest": "数据清单 ↗",
+    "dataManifest": "数据清单 →",
     "getData": "获取数据",
     "dataEyebrow": "开放合集 · 开放数据",
     "dataTitle": "把资源合集带走。",
@@ -182,8 +225,8 @@ const UI = {
     "dataCopied": "指令已复制。",
     "dataCopyFailed": "无法自动复制，指令已选中，可手动复制。",
     "dataFiles": "单独下载数据文件",
-    "dataResources": "资源 JSON ↗",
-    "dataPapers": "论文 JSON ↗",
+    "dataResources": "资源 JSON →",
+    "dataPapers": "论文 JSON →",
     "dataNote": "仓库包含公开目录数据与网站源码。链接的项目、PDF 和数据集保留各自许可。",
     "layoutLabel": "布局",
     "moreFilters": "更多筛选",
@@ -191,42 +234,38 @@ const UI = {
     "layoutCards": "卡片",
     "requirementsShort": "使用条件与局限",
     "openEntry": "查看完整条目",
+    "copyEntryLink": "复制此条目的链接",
+    "copyCardLink": "复制此仓库在分类页上的链接",
     "sourceTopicsLabel": "主题",
     "noscriptNote": "JavaScript 用于搜索和筛选。关闭 JavaScript 仍可阅读完整的<a href=\"/zh/browse/\">仓库目录</a>、<a href=\"/zh/resources/\">精选资源</a>与<a href=\"/zh/papers/\">研究论文</a>。<a href=\"/\" lang=\"en\">English</a>。",
     "exploreResources": "浏览资源",
     "explorePapers": "阅读研究论文",
-    "exploreCases": "浏览案例",
+    "exploreCases": "产物评审 · Beta",
     "directoryCases": "案例",
     "shelfTitle": "探索相关资源",
     "shelfCases": "REA 案例合集",
     "shelfCasesDescription": "软件与硬件重建的实践报告。",
-    "shelfGames": "游戏反编译与移植合集",
-    "shelfGamesDescription": "反编译、原生移植与可体验的演示。",
     "shelfResearch": "研究论文",
     "shelfResearchDescription": "论文、研究产物与结论的适用范围。",
     "shelfNote": "各合集均提供原始来源链接。",
-    "surveyLink": "阅读专题综述 ↗",
+    "surveyLink": "阅读专题综述 →",
     "subjectNav": "按目标领域探索逆向工程",
     "subjectBrowse": "浏览各领域资源目录",
-    "contributorsEyebrow": "与社区共同整理",
-    "contributorsTitle": "贡献者",
-    "contributorLead": "负责人（Lead）",
-    "contributorHaozhe": "游戏重建资源集合整理与推荐。",
     "pageTitle": "逆向工程资源合集 · Awesome Reverse Engineering Anything",
-    "collectionTitle": '逆向工程资源合集<br><em>工具、案例与论文。</em>',
+    "collectionTitle": '逆向工程资源合集<br><em>工具、案例与论文</em>',
     "languageSelection": "语言",
     "homeLabel": "AwesomeREA.org 首页",
     "skip": "跳到资源集合",
     "mainNav": "主导航",
     "submitResource": "提交资源",
     "collectionEyebrow": "开放的逆向工程资源集合",
-    "pageDescription": "收集面向网站、游戏、应用、二进制、固件及通信协议逆向工程的工具、项目、案例与资料。",
+    "pageDescription": "收集面向网站、游戏、应用、二进制、固件及通信协议逆向工程的工具、项目、案例与资料。精选条目保留一手来源与复核日期，并提供论文目录和可下载的数据。",
     "collectionDescription": "收集逆向工程工具、重建项目、案例与研究论文，按你想研究的对象分类。",
     "directoryNav": "资源目录",
     "directoryRepositories": "个项目仓库",
     "directoryCurated": "项精选资源",
     "directoryPapers": "篇研究论文",
-    "directoryAbout": "关于合集 ↗",
+    "directoryAbout": "关于合集 →",
     "directoryScanned": "份 README 已扫描 · 精选条目与论文均依据公开来源复核。",
     "browseCollection": "浏览资源集合",
     "indexModeLabel": "资源集合",
@@ -250,13 +289,17 @@ const UI = {
     "sourceSortStarsAsc": "星标最少",
     "sourceSortPushed": "最近推送",
     "sourceSortName": "仓库名称",
-    "sourceIntro": "自动收集的项目仓库，尚未逐项复核。",
+    "sourceIntro": "自动收集的项目仓库，未审核。",
     "aboutCollection": "关于此索引",
-    "sourceDisclosure": "索引通过自动读取 README 建立，未逐项人工复核或运行验证；目标标签为自动分类，不表示已验证 REA 兼容性。",
+    "sourceDisclosure": "索引通过自动读取 README 建立，尚未审核；目标标签为自动分类。",
     "sourceLanguageNote": "项目简介提供中英双语，翻译由 AI 辅助完成；下载数据中保留上游原文。",
     "sourceLoading": "正在加载仓库…",
     "clearFilters": "清除筛选 ×",
     "exportMatches": "导出匹配项（JSON）↓",
+    "activeFilters": "当前筛选",
+    "removeFilter": "移除筛选条件「{filter}」",
+    "filterSearch": "搜索",
+    "groupLabel": "分组",
     "emptyTitle": "没有匹配的资源。",
     "sourceEmptyDescription": "换一个关键词，或扩大筛选范围。",
     "resetFilters": "重置筛选",
@@ -270,28 +313,71 @@ const UI = {
     "allKinds": "所有类型",
     "categoryLabel": "类别",
     "allCategories": "所有类别",
+    "curatedSortLabel": "排序",
+    "curatedSortFeatured": "精选优先",
+    "curatedSortName": "名称",
+    "curatedSortReviewed": "最近来源复核",
     "reviewNote": "已核对原始来源。点击名称访问原始资源，展开详情查看使用条件与局限。",
-    "aboutCurated": "收录说明（英文）↗",
+    "aboutCurated": "收录说明 →",
     "loading": "正在加载资源…",
     "emptyDescription": "换一个关键词，或扩大筛选范围。",
     "emptySearchPapers": "搜索研究论文",
     "emptySearchRepositories": "搜索自动采集的仓库",
     "emptySearchRepositoriesFor": "在自动采集的仓库中搜索“{query}”",
-    "emptyRepositoriesNote": "这些仓库由自动采集获得，尚未逐项复核来源。",
+    "emptyRepositoriesNote": "这些仓库由自动采集获得，尚未审核。",
     "errorTitle": "资源集合暂时未能加载。",
     "errorDescription": "请重试，或在 GitHub 浏览资源集合。",
     "loadMore": "加载更多资源",
-    "footerDescription": "独立的资源集合，在公开协作中持续更新。",
+    "footerDescription": "资源合集，在公开协作中持续更新。",
     "footerSubmitResource": "提交资源 ↗",
-    "contributeButton": "参与贡献",
+    "contributeButton": "投稿与贡献",
     "contributionRules": "贡献规则 ↗",
     "downloadSourceData": "仓库索引 JSON ↓",
-    "downloadPublishedSourceData": "已发布仓库索引 JSON ↓",
-    "browseDirectory": "按分类浏览 ↗",
+    "downloadPublishedSourceData": "仓库选集 JSON ↓",
+    "browseDirectory": "仓库目录",
     "downloadCuratedData": "精选目录 JSON ↓",
+    "downloadPaperData": "论文元数据 JSON ↓",
+    "downloadPaperBibliography": "论文 BibTeX ↓",
+    "footerNavigation": "更多合集内容",
+    "footerResources": "精选资源",
+    "footerCases": "案例合集",
+    "footerPapers": "研究论文",
+    "footerSurvey": "专题综述",
+    "footerAbout": "关于与来源",
     "viewSource": "GitHub ↗",
+    "shortlistOpen": "收藏清单",
+    "shortlistSave": "收藏",
+    "shortlistSaved": "已收藏",
+    "shortlistEyebrow": "仅保存在本浏览器",
+    "shortlistTitle": "我的收藏清单",
+    "shortlistClose": "关闭收藏清单",
+    "shortlistDescription": "仅在本设备的浏览器中保存条目 ID，不会发送到服务器，也没有账户或同步。",
+    "shortlistEmpty": "尚未收藏任何条目。在精选资源、仓库或论文上点击“收藏”即可保存到这里。",
+    "shortlistClear": "清空收藏清单",
+    "shortlistCleared": "收藏清单已清空。",
+    "shortlistRemove": "移除",
+    "shortlistCurated": "精选资源",
+    "shortlistRepositories": "仓库",
+    "shortlistPapers": "研究论文",
+    "shortlistLoading": "正在加载详情…",
+    "shortlistLoadFailed": "详情加载失败，已保留收藏的 ID。",
+    "shortlistGoneCurated": "已不在精选资源中。",
+    "shortlistGoneRepository": "已不在可浏览的仓库索引中。",
+    "shortlistGonePaper": "已不在论文目录中。",
+    "shortlistWriteFailed": "此浏览器无法保存收藏清单。",
     "footerLicense": "原创内容采用 MIT 许可。链接项目保留各自的许可。",
     "readSource": "一手来源",
+    "matchedIn": "匹配于",
+    "matchNameEn": "英文名称",
+    "matchNameZh": "中文名称",
+    "matchDescriptionEn": "英文简介",
+    "matchDescriptionZh": "中文简介",
+    "matchDescriptionOriginal": "上游原文简介",
+    "matchRequirementsEn": "英文使用条件",
+    "matchRequirementsZh": "中文使用条件",
+    "matchRelationship": "关联类型",
+    "matchRelated": "相关条目",
+    "matchRepository": "GitHub 仓库",
     "requirements": "使用条件与局限",
     "requirementsLoading": "正在加载使用条件…",
     "requirementsError": "使用条件未能加载。请收起后重新展开以重试。",
@@ -305,7 +391,7 @@ const UI = {
     "facetAttribution": "署名",
     "sourceNotRecorded": "未记录",
     "sourceStars": "星标",
-    "sourceStarsTitle": "元数据采集时的 GitHub 星标快照，不是实时数量。",
+    "sourceStarsTitle": "元数据采集时的 GitHub 星标快照。",
     "sourceNoDescription": "上游仓库未提供项目简介。",
     "sourceOmittedDescription": "上游简介超过合集长度限制，未展示原文。",
     "sourceRelatedResearch": "相关研究",
@@ -319,7 +405,7 @@ const UI = {
     "indexStatusLabel": "索引状态",
     "sourceScanStatus": "已读取 README",
     "sourceRequirementsLabel": "使用条件",
-    "sourceRequirements": "请阅读上游 README 中的使用条件；这些条件尚未人工复核。",
+    "sourceRequirements": "请阅读上游 README 中的使用条件。",
     "sourcePushedAt": "最近推送时间",
     "sourceReadmeAt": "README 读取时间",
     "sourceMetadataAt": "元数据采集时间",
@@ -339,7 +425,9 @@ const params = new URLSearchParams(location.search);
 document.documentElement.dataset.indexMode = ["source-index", "repositories"].includes(params.get("view")) ? "source-index" : "curated";
 // The path selects the default language; valid legacy query overrides still work.
 const pathLanguage = location.pathname.startsWith("/zh/") ? "zh" : "en";
-const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
+// Startup and Back/Forward read URL-held choices the same way; catalog-dependent values are validated after load.
+function curatedURLState(query) { return { layout: query.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(query.get("lang")) ? query.get("lang") : pathLanguage, q: query.get("q") || "", group: query.get("group") || "all", category: query.get("category") || "all", kind: query.get("kind") || "all", target: query.get("target") || "all", order: ["name", "reviewed"].includes(query.get("order")) ? query.get("order") : "featured" }; }
+const state = { ...curatedURLState(params), visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const t = (key) => UI[state.lang][key] || UI.en[key] || key;
@@ -350,6 +438,9 @@ const compareIDs = COLLATORS.en.compare;
 // Card metadata names the reviewed targets in the target buttons' wording, as /resources/ cards do.
 function targetLabels(record) { return record.targets.map(target => t("target" + target[0].toUpperCase() + target.slice(1))).join(" · "); }
 function targetSearchLabels(target) { const key = "target" + target[0].toUpperCase() + target.slice(1); return [target, UI.en[key] || "", UI.zh[key] || ""]; }
+// Search text replaces only the already-invalid C0/DEL controls with spaces, then applies NFKC and
+// locale-neutral lowercase. Index fields and queries must both pass through this contract.
+function normalizeSearchText(value) { return String(value ?? "").replace(/[\u0000-\u001f\u007f]/g, " ").normalize("NFKC").toLowerCase(); }
 function dataURL(filename) { const url = new URL("/" + filename, location.origin); const revision = document.documentElement.dataset.catalogRevision; if (revision) url.searchParams.set("v", revision); return url; }
 const label = (map, key) => map[key] ? map[key][state.lang === "zh" ? 1 : 0] : key.replaceAll("-", " ");
 const node = (tag, className, text) => { const el = document.createElement(tag); if (className) el.className = className; if (text !== undefined) el.textContent = text; return el; };
@@ -365,7 +456,7 @@ function entryHref(kind, identifier, language = state.lang) {
 }
 function curatedURL() {
   const next = new URL(location.href);
-  for (const [key, defaultValue] of [["q", ""], ["group", "all"], ["category", "all"], ["kind", "all"], ["target", "all"], ["lang", pathLanguage], ["layout", "compact"]]) {
+  for (const [key, defaultValue] of [["q", ""], ["group", "all"], ["category", "all"], ["kind", "all"], ["target", "all"], ["order", "featured"], ["lang", pathLanguage], ["layout", "compact"]]) {
     if (state[key] !== defaultValue) next.searchParams.set(key, state[key]);
     else next.searchParams.delete(key);
   }
@@ -373,10 +464,12 @@ function curatedURL() {
 }
 // Language links are ordinary links to the counterpart homepage; they carry the current query and fragment,
 // and the path, not a legacy ?lang override, selects the language.
-function languageHref(language) { const next = new URL(location.href); next.pathname = language === "zh" ? "/zh/" : "/"; next.searchParams.delete("lang"); return next.pathname + next.search + next.hash; }
+function languageHref(language) { const next = new URL(location.href); next.pathname = (language === "zh" ? "/zh" : "") + next.pathname.replace(/^\/zh(?=\/)/, ""); next.searchParams.delete("lang"); return next.pathname + next.search + next.hash; }
 function syncLanguageLinks() { $$('[data-language-link]').forEach(link => { link.href = languageHref(link.dataset.languageLink); link.setAttribute("aria-current", String(link.dataset.languageLink === state.lang)); }); }
-function replaceURL(next) { if (next.href !== location.href) { history.replaceState(null, "", next); syncLanguageLinks(); } }
-function updateURL() { replaceURL(curatedURL()); }
+// Deliberate choices (collection, targets, Type, Category, either sort, topic chips, resets) add a history entry so Back
+// and Forward revisit them; typing, layout and normalization replace the current entry instead of flooding history.
+function writeURL(next, push = false) { if (next.href !== location.href) { history[push ? "pushState" : "replaceState"](null, "", next); syncLanguageLinks(); } }
+function updateURL(push = false) { writeURL(curatedURL(), push); }
 function applyLayout() {
   document.documentElement.dataset.layout = state.layout;
   $("#layout-select").value = state.layout;
@@ -411,9 +504,56 @@ function renderCategories() {
   [...new Set(state.records.map(r => r.category))].sort((a,b) => compareLabels(label(state.categoryLabels,a), label(state.categoryLabels,b))).forEach(category => { const option = node("option", "", label(state.categoryLabels, category)); option.value = category; select.append(option); });
   if (state.loaded && ![...select.options].some(o => o.value === state.category)) state.category = "all"; select.value = [...select.options].some(o => o.value === state.category) ? state.category : "all"; renderKinds();
 }
+// The group filter has no control of its own; a shared ?group= link still shows and removes it as a chip.
+const GROUP = {"rea":["REA ecosystem","REA 生态"],"agents":["Independent agents","独立智能体"],"tools":["Foundation tools","基础工具"],"learn":["Learning and related lists","学习资源与相关目录"]};
+// Active constraints render as removable chips in both views, including valid filters without a visible control
+// (a ?group= link, or a Protocol target whose button is hidden). Removing one keeps every other choice; focus moves
+// to the chip that takes its place, else the previous chip, else the collection's search field.
+function renderActiveFilters(container, items, search) {
+  container.replaceChildren(); container.hidden = !items.length;
+  items.forEach(([field, value, remove], index) => {
+    const name = field + (state.lang === "zh" ? "：" : ":"); const item = node("li"); const button = node("button", "active-filter");
+    button.type = "button"; button.setAttribute("aria-label", t("removeFilter").replace("{filter}", () => name + (state.lang === "zh" ? "" : " ") + value));
+    const close = node("span", "active-filter-remove", "×"); close.setAttribute("aria-hidden", "true");
+    button.append(node("span", "active-filter-field", name), node("span", "active-filter-value", value), close);
+    button.addEventListener("click", () => { remove(); const chips = [...container.children].map(chip => chip.children[0]); (chips[index] || chips[index - 1] || search).focus(); });
+    item.append(button); container.append(item);
+  });
+}
+function targetLabel(target) { return t("target" + target[0].toUpperCase() + target.slice(1)); }
 const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资源"],"research":["Research","研究"]};
 const FEATURED = ["rea-upstream","chrome-devtools-mcp","renderdoc","jadx-ai-mcp","ghidra","webcrack","assetripper","ilspy","awesome-rea-cases","rea-dxball-case","mitmproxy","rea-notion-case","hex-rays-ida-mcp","picoprint-rea-investigation","morluto-awesome-re"];
 function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>compareLabels(label(KIND,a),label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
+// Copy link: a curated card copies its entry page and a repository card copies its card on the static category page.
+// Routes are fixed and IDs validated, so neither an upstream URL nor typed text can become the copied link.
+const SITE_ORIGIN = (() => { try { return new URL($('link[rel="canonical"]').href).origin; } catch (_) { return location.origin; } })();
+function permalink(kind, record) {
+  const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+  const path = kind === "curated" ? entryHref("curated", record.id)
+    : slug.test(record.id) && slug.test(record.category || "") ? `${state.lang === "zh" ? "/zh" : ""}/browse/${record.category}/#${record.id}` : null;
+  return path ? new URL(path, SITE_ORIGIN).href : null;
+}
+function copyLinkButton(kind, record, name) {
+  const href = permalink(kind, record); if (!href) return null;
+  const label = t(kind === "curated" ? "copyEntryLink" : "copyCardLink"); const button = node("button", "copy-link"); button.type = "button";
+  button.title = label; button.setAttribute("aria-label", `${label}${state.lang === "zh" ? "：" : ": "}${name}`); button.dataset.copyLink = href; button.append(icon("copy", true));
+  button.addEventListener("click", () => copyLink(button, href, name)); return button;
+}
+async function copyLink(button, href, name) {
+  const zh = state.lang === "zh"; const status = $("#copy-link-status");
+  try {
+    await navigator.clipboard.writeText(href);
+    button.replaceChildren(icon("check", true)); status.textContent = zh ? `已复制 ${name} 的链接。` : `Link to ${name} copied.`;
+    setTimeout(() => button.replaceChildren(icon("copy", true)), 2000);
+  } catch (_) {
+    // Without clipboard access the link appears selected beside the button for a manual copy.
+    const field = button.nextElementSibling?.classList.contains("copy-link-fallback") ? button.nextElementSibling : node("input", "copy-link-fallback");
+    field.type = "text"; field.readOnly = true; field.value = href; field.setAttribute("aria-label", zh ? `${name} 的链接` : `Link to ${name}`);
+    if (field !== button.nextElementSibling) button.after(field);
+    field.focus(); field.select();
+    status.textContent = zh ? `无法直接复制。${name} 的链接已选中，请按 Ctrl+C 或 ⌘C 复制。` : `Copying isn’t available here. The link to ${name} is selected; press Ctrl+C or ⌘C to copy it.`;
+  }
+}
 // Faceted requirements (scripts/requirement_facets.py): prerequisites first, each item led by its facet in bold.
 function requirementItems(record) {
   const items = state.lang === "zh" ? (record.requirements_zh || record.requirements) : record.requirements;
@@ -422,15 +562,57 @@ function requirementItems(record) {
     const item = node("li"); item.append(node("strong", "requirement-facet", t("facet" + facet[0].toUpperCase() + facet.slice(1)) + (state.lang === "zh" ? "：" : ": ")), node("span", "", text)); return item;
   });
 }
-function card(record) {
+// Search also covers text a card does not show: the other language, requirements, topics and related titles.
+// When a query term is missing from the visible text, the card names the first field that holds it and quotes a
+// short excerpt. Matching uses normalizeSearchText like the search index; text is inserted as text, excerpts are cut
+// on code points, and order and focus are untouched. Requirement matches appear once catalog.json has loaded.
+function matchExcerpt(text, term) {
+  const chars = Array.from(text); const index = []; let normalized = "";
+  chars.forEach((char, position) => { const folded = normalizeSearchText(char); normalized += folded; for (let i = 0; i < folded.length; i++) index.push(position); });
+  const quote = node("q", "match-excerpt"); const at = normalized.indexOf(term);
+  if (at < 0) { quote.append(node("span", "", chars.length > 60 ? chars.slice(0, 60).join("") + "…" : text)); return quote; }
+  const start = index[at], end = index[at + term.length - 1] + 1, from = Math.max(0, start - 30), to = Math.min(chars.length, end + 30);
+  quote.append(node("span", "", (from ? "…" : "") + chars.slice(from, start).join("")), node("mark", "", chars.slice(start, end).join("")), node("span", "", chars.slice(end, to).join("") + (to < chars.length ? "…" : "")));
+  return quote;
+}
+function matchHint(terms, visible, fields) {
+  const shown = normalizeSearchText(visible.filter(Boolean).join(" ")); const matches = [];
+  for (const term of terms) {
+    if (shown.includes(term)) continue;
+    const field = fields.find(([, text]) => text && normalizeSearchText(text).includes(term));
+    if (field && !matches.some(match => match[0] === field[0])) matches.push([field[0], String(field[1]), term]);
+  }
+  if (!matches.length) return null;
+  const hint = node("p", "match-hint"); hint.append(node("span", "match-hint-label", t("matchedIn")));
+  matches.slice(0, 2).forEach(([key, text, term], position) => {
+    // Excerpts from a known language carry it, so the other language's text is announced and shaped correctly.
+    const excerpt = matchExcerpt(text, term); const language = /Zh$/.test(key) ? "zh-CN" : /En$/.test(key) ? "en" : ""; if (language) excerpt.setAttribute("lang", language);
+    hint.append(node("span", "", position ? " · " : " "), node("span", "match-field", t(key) + " "), excerpt);
+  });
+  return hint;
+}
+function curatedMatchHint(record, terms) {
+  if (!terms.length) return null;
+  const zh = state.lang === "zh"; const requirements = language => [].concat((language === "zh" ? record.requirements_zh : record.requirements) || []);
+  return matchHint(terms, [zh ? (record.name_zh || record.name) : record.name, record[zh ? "description_zh" : "description_en"], label(KIND, record.kind), label(state.categoryLabels, record.category), targetLabels(record)], [
+    zh ? ["matchNameEn", record.name] : ["matchNameZh", record.name_zh], zh ? ["matchDescriptionEn", record.description_en] : ["matchDescriptionZh", record.description_zh],
+    ...[zh ? "zh" : "en", zh ? "en" : "zh"].flatMap(language => requirements(language).map(item => [language === "zh" ? "matchRequirementsZh" : "matchRequirementsEn", item])),
+    ["categoryLabel", [record.category, ...(state.categoryLabels[record.category] || [])].join(" · ")], ["kindLabel", (KIND[record.kind] || []).join(" · ")],
+    ["matchRelationship", record.relationship], ["targetFilterLabel", record.targets.flatMap(targetSearchLabels).join(" · ")],
+    ...repositoryPaths(record).map(path => ["matchRepository", path])]);
+}
+function card(record, terms = []) {
   const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
+  const hint=curatedMatchHint(record,terms);if(hint)article.append(hint);
   const meta=node("div","card-meta");meta.append(node("span","card-category",label(state.categoryLabels,record.category)));article.append(meta);
   const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");if(!fillRequirements(list,record)){state.pendingRequirements.push([list,record]);details.addEventListener("toggle",()=>{if(details.open)loadDetails();});}details.append(list);
   const context=node("div","resource-detail-meta");const time=node("time","",t("reviewed")+" "+record.verified_at.slice(0,10));time.dateTime=record.verified_at;time.title=record.verified_at;context.append(node("span","",label(RELATION,record.relationship)),node("span","",t("sourceReviewed")),time);
   const href=entryHref("curated",record.id);
   if(record.targets.length)meta.prepend(node("span","card-targets",targetLabels(record)));
   if(href){const entry=node("a","resource-entry-link",t("openEntry"));entry.href=href;entry.setAttribute("aria-label",t("openEntry")+": "+(state.lang==="zh"?(record.name_zh||record.name):record.name));entry.append(icon("arrow",true));meta.append(entry);}
+  const copy=copyLinkButton("curated",record,state.lang==="zh"?(record.name_zh||record.name):record.name);if(copy)meta.append(copy);
+  const save=saveToggle("curated",record.id,state.lang==="zh"?(record.name_zh||record.name):record.name);if(save)meta.append(save);
   context.append(external(record.evidence_url,"resource-evidence-link",t("readSource")+" ↗"));
   details.append(context);article.append(details);return article;
 }
@@ -441,7 +623,12 @@ function fillRequirements(list, record) {
   list.replaceChildren(...(Array.isArray(record.requirement_facets) ? requirementItems(record) : (Array.isArray(requirements) ? requirements : [requirements]).map(item => node("li", "", item))));
   return true;
 }
-function searchText(r) { return [r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(state.categoryLabels[r.category] || []),...(KIND[r.kind] || []),r.relationship,...(r.requirements || []),...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels)].join(" ").toLocaleLowerCase(); }
+// The lowercase owner/repo of a github.com URL, or "" for any other address.
+function githubRepo(value) { try { const url = new URL(value); if (url.hostname.toLowerCase() !== "github.com") return ""; const parts = url.pathname.split("/").filter(Boolean); return parts.length >= 2 ? parts.slice(0,2).join("/").replace(/\.git$/i, "").toLowerCase() : ""; } catch (_) { return ""; } }
+// Curated search also finds an entry by the GitHub owner/repo of its URL and, when another, of its primary source.
+// Cards show a path only in the "Matched in" line when a query term occurs nowhere else; the catalog download is unchanged.
+function repositoryPaths(record) { return [...new Set([record.url, record.evidence_url].map(githubRepo).filter(Boolean))]; }
+function searchText(r) { return normalizeSearchText([r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(state.categoryLabels[r.category] || []),...(KIND[r.kind] || []),r.relationship,...(r.requirements || []),...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels),...repositoryPaths(r)].join(" ")); }
 // The complete catalog.json follows the first render, so searches cover requirement text and open details fill in place.
 // Typing a query or opening details retries it after a failure.
 function loadDetails() {
@@ -455,10 +642,52 @@ function loadDetails() {
   }).catch(() => { state.details = null; state.detailsError = true; state.pendingRequirements.forEach(([list, record]) => fillRequirements(list, record)); });
   return state.details;
 }
-function queryTerms() { return state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean); }
+function queryTerms() { return normalizeSearchText(state.q).trim().split(/\s+/).filter(Boolean); }
 // skip leaves one facet out, so that facet's choices can be counted against every other active filter.
 function matches(r, terms, skip = "") { return (state.group==="all"||r.group===state.group)&&(skip==="target"||state.target==="all"||r.targets.includes(state.target))&&(skip==="category"||state.category==="all"||r.category===state.category)&&(skip==="kind"||state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)); }
-function filtered() { const terms=queryTerms();const found=state.records.filter(r=>matches(r,terms));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
+function filtered() { const terms=queryTerms();const found=state.records.filter(r=>matches(r,terms));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};const byFeatured=(a,b)=>rank(a)-rank(b)||a.order-b.order;return found.sort(curatedOrder(byFeatured,terms,found)); }
+// Optional orders: localized display name (the active language's collator, ties by ID) or the displayed
+// source-review date, newest first. Both fall back deterministically. The default order puts a query's best
+// matches first (queryScores) and otherwise follows FEATURED order, kind and catalog order.
+function curatedOrder(byFeatured, terms = [], found = []) {
+  const name = record => state.lang === "zh" ? (record.name_zh || record.name) : record.name;
+  if (state.order === "name") return (a,b) => compareLabels(name(a), name(b)) || compareIDs(a.id, b.id);
+  if (state.order === "reviewed") return (a,b) => compareIDs(b.verified_at.slice(0,10), a.verified_at.slice(0,10)) || byFeatured(a,b);
+  if (!terms.length) return byFeatured;
+  // Scores are constant during this sort; compute them once per match, not inside the comparator.
+  const scores = queryScores(found, terms); return (a,b) => scores.get(b)-scores.get(a) || byFeatured(a,b);
+}
+// Query ranking reads the search text by field, most specific first: names, descriptions, labels, then requirements,
+// folded like the search index. Each name is also kept without spaces or punctuation, so a query that is the whole
+// name ("ghidra mcp") can lead. The fields are rebuilt when a record's search text changes (complete catalog.json).
+const compactText = text => normalizeSearchText(text).replace(/[^\p{L}\p{N}]+/gu, "");
+const SEARCH_RANK = new WeakMap();
+function searchRank(record) {
+  const cached = SEARCH_RANK.get(record); if (cached && cached.search === record.search) return cached;
+  const fields = [[record.name, record.name_zh], [record.description_en, record.description_zh],
+    [record.category, ...(state.categoryLabels[record.category] || []), ...(KIND[record.kind] || []), record.relationship, ...(record.targets || []).flatMap(targetSearchLabels)],
+    [].concat(record.requirements || [], record.requirements_zh || [])].map(values => normalizeSearchText(values.filter(Boolean).join(" ")));
+  const rank = {search: record.search, names: [record.name, record.name_zh].filter(Boolean).map(compactText), fields};
+  SEARCH_RANK.set(record, rank); return rank;
+}
+// A match starts a word after a non-letter or at the field start; Chinese text has no spaces, so any Han character may.
+const WORD_CHARACTER = /[\p{L}\p{N}]/u, HAN = /\p{Script=Han}/u;
+function startsWord(text, index) { return index === 0 || !WORD_CHARACTER.test(text[index - 1]) || HAN.test(text[index]); }
+// A term scores by its earliest field, and within it a word-start match above one inside a word ("unity" in "community").
+function termScore(fields, term) {
+  for (const [position, text] of fields.entries()) {
+    let index = text.indexOf(term); if (index < 0) continue;
+    const field = 2 * (fields.length - position);
+    for (; index >= 0; index = text.indexOf(term, index + 1)) if (startsWord(text, index)) return field;
+    return field - 1;
+  }
+  return 0;
+}
+// Whole-name matches lead, then summed term scores. Which records match is decided by matches() alone.
+function queryScores(found, terms) {
+  const whole = compactText(state.q);
+  return new Map(found.map(record => { const {names, fields} = searchRank(record); return [record, (whole && names.includes(whole) ? 1000 : 0) + terms.reduce((sum, term) => sum + termScore(fields, term), 0)]; }));
+}
 // Each target button and Type/Category option shows how many results it would give with the other filters and the query.
 // Empty choices are disabled unless selected, so a shared URL still shows its own choice; counts are not announced.
 function renderFacets() {
@@ -492,17 +721,37 @@ function renderEmptySearchActions(foundCount = state.loaded ? filtered().length 
   $("#empty-repositories-note").hidden = !showRepositories;
   if (showRepositories) button.textContent = t("emptySearchRepositoriesFor").replace("{query}", () => state.q.trim());
 }
+// Status lines change only when their text does, so revealing another page does not repeat an unchanged total.
+function setStatus(element, text) { if (element.textContent !== text) element.textContent = text; }
+// Show More (the only render with shown > 0) reports what it added in a separate polite region after its row;
+// any other render (filters, query, sort, language) clears that message.
+function announceRevealed(prefix, shown, visible, total) {
+  const status = $(`#${prefix}more-status`), added = shown ? Math.min(visible, total) - Math.min(shown, total) : 0;
+  if (added <= 0) { status.textContent = ""; return; }
+  const shownNow = Math.min(visible, total), zh = state.lang === "zh", number = value => value.toLocaleString(zh ? "zh-CN" : "en-US");
+  status.textContent = prefix ? (zh ? `又显示 ${number(added)} 个仓库，已显示 ${number(shownNow)} / ${number(total)} 个。` : `${number(added)} more ${added === 1 ? "repository" : "repositories"} shown: ${number(shownNow)} of ${number(total)}.`)
+    : (zh ? `又显示 ${added} 项资源，已显示 ${shownNow} / ${total} 项。` : `${added} more ${added === 1 ? "resource" : "resources"} shown: ${shownNow} of ${total}.`);
+}
 // Show More passes the number of cards already shown and appends only the next batch; every other change rebuilds the list.
 function render(shown = 0) {
   // A full rebuild replaces every card; appended batches keep the earlier cards and their pending requirement lists.
   if (!shown) state.pendingRequirements = [];
-  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(shown, state.visible).forEach(r => fragment.append(card(r)));
+  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); const terms = queryTerms(); found.slice(shown, state.visible).forEach(r => fragment.append(card(r, terms)));
   if (shown) grid.append(fragment); else { const expanded = expandedRecords(".resource-card"); grid.replaceChildren(fragment); restoreExpanded(".resource-card", expanded); } grid.setAttribute("aria-busy", "false");
-  $("#results-status").textContent = state.lang === "zh" ? (found.length === state.records.length ? `${found.length} 项资源` : `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项`) : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`);
+  setStatus($("#results-status"), state.lang === "zh" ? (found.length === state.records.length ? `${found.length} 项资源` : `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项`) : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`));
   renderEmptySearchActions(found.length);
   showExport("");
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
+  announceRevealed("", shown, state.visible, found.length);
   $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all";
+  const removeCurated = change => () => { change(); state.visible = 15; updateURL(true); render(); };
+  renderActiveFilters($("#active-filters"), [
+    state.q.trim() && [t("filterSearch"), `“${state.q.trim()}”`, removeCurated(() => { state.q = ""; $("#search-input").value = ""; })],
+    state.target !== "all" && [t("targetFilterLabel"), targetLabel(state.target), removeCurated(() => { state.target = "all"; })],
+    state.kind !== "all" && [t("kindLabel"), label(KIND, state.kind), removeCurated(() => { state.kind = "all"; $("#kind-select").value = "all"; })],
+    state.category !== "all" && [t("categoryLabel"), label(state.categoryLabels, state.category), removeCurated(() => { state.category = "all"; $("#category-select").value = "all"; })],
+    state.group !== "all" && [t("groupLabel"), label(GROUP, state.group), removeCurated(() => { state.group = "all"; })],
+  ].filter(Boolean), $("#search-input"));
   renderMoreFilters();
   $$('[data-group]').forEach(el => { const active = el.dataset.group === state.group; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
   $$('[data-target]').forEach(el => { const active = el.dataset.target === state.target; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
@@ -516,7 +765,11 @@ function renderMoreFilters() {
   const active = (state.kind !== "all") + (state.category !== "all"); const count = $("#more-filters-count"); count.textContent = String(active); count.hidden = !active;
   if (state.loaded && !moreFiltersSynced) { moreFiltersSynced = true; if (active) setMoreFilters(true); }
 }
-function reset() { state.q = ""; state.group = "all"; state.category = "all"; state.kind = "all"; $("#kind-select").value="all"; state.target = "all"; state.visible = 15; $("#search-input").value = ""; $("#category-select").value = "all"; updateURL(); render(); }
+function validateCuratedFilters() {
+  if (!["all","rea","agents","tools","learn"].includes(state.group)) state.group = "all";
+  if (!["all","website","game","app","binary","firmware","protocol"].includes(state.target)) state.target = "all";
+}
+function reset() { state.q = ""; state.group = "all"; state.category = "all"; state.kind = "all"; $("#kind-select").value="all"; state.target = "all"; state.visible = 15; $("#search-input").value = ""; $("#category-select").value = "all"; updateURL(true); render(); }
 async function load() {
   state.error = false; $("#error-state").hidden = true; $("#resource-grid").setAttribute("aria-busy", "true"); $("#results-status").textContent = t("loading");
   try {
@@ -524,39 +777,54 @@ async function load() {
     state.topicLabels = data.topic_labels || {};
     // build_site.py writes build_readme.CATEGORIES here, the same labels the entry pages use.
     state.categoryLabels = data.category_labels || {};
+    // Repository categories come from build_repository_index.CATEGORIES, the labels the /browse/ pages use.
+    state.sourceCategoryLabels = data.source_category_labels || {}; validateSourceCategory();
     state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: searchText(r)}));
-    if (!["all","rea","agents","tools","learn"].includes(state.group)) state.group = "all";
     $('[data-target="protocol"]').hidden = !state.records.some(record => record.targets.includes("protocol"));
-    if (!["all","website","game","app","binary","firmware","protocol"].includes(state.target)) state.target = "all";
+    validateCuratedFilters();
     $$('[data-count]').forEach(el => el.textContent = el.dataset.count === "all" ? state.records.length : state.records.filter(r => r.group === el.dataset.count).length);
     $$('[data-repo-path]').forEach(el => { const path = (state.lang === "zh" && ZH_REPOSITORY_PATHS[el.dataset.repoPath]) || el.dataset.repoPath; el.href = data.meta.repository_url + (path ? "/" + path : ""); });
-    state.loaded = true; renderCategories(); render(); configureSourceIndex(data.meta.source_index); loadDetails();
-  } catch (error) { document.documentElement.dataset.indexMode = "curated"; state.error = true; state.loaded = false; renderEmptySearchActions(); $("#resource-grid").replaceChildren(); $("#resource-grid").setAttribute("aria-busy", "false"); $("#results-status").textContent = t("errorTitle"); $("#error-state").hidden = false; $("#empty-state").hidden = true; $("#load-more-row").hidden = true; }
+    state.loaded = true; renderCategories(); render(); if (shortlistDialog?.open) renderShortlist(); configureSourceIndex(data.meta.source_index); loadDetails();
+  } catch (error) { document.documentElement.dataset.indexMode = "curated"; state.error = true; state.loaded = false; renderEmptySearchActions(); $("#resource-grid").replaceChildren(); $("#resource-grid").setAttribute("aria-busy", "false"); $("#results-status").textContent = t("errorTitle"); $("#error-state").hidden = false; $("#empty-state").hidden = true; $("#load-more-row").hidden = true; if (shortlistDialog?.open) renderShortlist(); }
 }
 $("#search-input").value = state.q;
 $("#search-input").addEventListener("input", event => { state.q = event.target.value; state.visible = 15; updateURL(); if (state.loaded) { loadDetails(); render(); } });
-$("#kind-select").addEventListener("change", event => { state.kind=event.target.value; state.visible=15; updateURL(); if(state.loaded)render(); });
-$("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
-$$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(); if (state.loaded) render(); }));
-$$('[data-target]').forEach(el => el.addEventListener("click", () => { state.target = el.dataset.target; state.visible = 15; updateURL(); if (state.loaded) render(); }));
+$("#kind-select").addEventListener("change", event => { state.kind=event.target.value; state.visible=15; updateURL(true); if(state.loaded)render(); });
+$("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 15; updateURL(true); if (state.loaded) render(); });
+$("#curated-sort").value = state.order;
+$("#curated-sort").addEventListener("change", event => { state.order = ["name","reviewed"].includes(event.target.value) ? event.target.value : "featured"; state.visible = 15; updateURL(true); if (state.loaded) render(); });
+$$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(true); if (state.loaded) render(); }));
+$$('[data-target]').forEach(el => el.addEventListener("click", () => { state.target = el.dataset.target; state.visible = 15; updateURL(true); if (state.loaded) render(); }));
 $("#layout-select").addEventListener("change", event => changeLayout(event.target.value));
 $("#more-filters").addEventListener("click", () => setMoreFilters($("#more-filters").getAttribute("aria-expanded") !== "true"));
 window.addEventListener("hashchange", syncLanguageLinks);
-$("#clear-filters").addEventListener("click",reset); $("#empty-reset").addEventListener("click", () => { reset(); $("#search-input").focus(); }); $("#retry-load").addEventListener("click",load);
+// Keyboard activation (a click with detail 0) of a control that the re-render removes or hides moves focus to a
+// visible, named control: the Topic field after a topic chip, the collection's search after Clear or Reset. Pointer
+// clicks keep the browser's default, so a touch screen does not open its keyboard.
+const fromKeyboard = event => event?.detail === 0;
+$("#clear-filters").addEventListener("click", event => { reset(); if (fromKeyboard(event)) $("#search-input").focus(); }); $("#empty-reset").addEventListener("click", () => { reset(); $("#search-input").focus(); }); $("#retry-load").addEventListener("click",load);
 $("#load-more").addEventListener("click", () => { const previous = state.visible; state.visible += 15; render(previous); const next = $$(".card-title-link")[previous]; if (next) next.focus({preventScroll:true}); });
-document.addEventListener("keydown", event => { if (event.key === "/" && !$("#data-dialog")?.open && !event.ctrlKey && !event.metaKey && !event.altKey && !["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName) && !document.activeElement.isContentEditable) { event.preventDefault(); const search = sourceState.mode === "source-index" ? $("#source-search") : $("#search-input"); search.focus(); search.scrollIntoView({block:"center",behavior:"smooth"}); } });
+// The / shortcut scrolls instantly when reduced motion is requested, read at each press so a changed preference applies.
+function shortcutScrollBehavior() { return window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ? "auto" : "smooth"; }
+document.addEventListener("keydown", event => { if (event.key === "/" && !$("#data-dialog")?.open && !shortlistDialog?.open && !event.ctrlKey && !event.metaKey && !event.altKey && !["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName) && !document.activeElement.isContentEditable) { event.preventDefault(); const search = sourceState.mode === "source-index" ? $("#source-search") : $("#search-input"); search.focus(); search.scrollIntoView({block:"center",behavior:shortcutScrollBehavior()}); } });
 
-const sourceState = { available: false, loaded: false, loading: false, error: false, mode: "curated", records: [], meta: {}, q: params.get("sourceq") || "", target: params.get("source-target") || "all", topic: params.get("topic") || "", sort: params.get("sort") || "relevance", visible: 24, topicIDs: new Set(), topicCounts: [] };
-function sourceURL() {
+function sourceURLState(query) {
+  const target = query.get("source-target") || "all"; const sort = query.get("sort") === "updated" ? "pushed" : query.get("sort") || "relevance";
+  return { q: query.get("sourceq") || "", target: ["all","website","game","app","binary","firmware","protocol"].includes(target) ? target : "all", topic: query.get("topic") || "", sort: ["relevance","stars","stars-asc","pushed","name"].includes(sort) ? sort : "relevance",
+    // Static category pages link here with ?source-category=; validateSourceCategory() checks it against the catalog's labels.
+    category: query.get("source-category") || "all" };
+}
+const sourceState = { available: false, loaded: false, loading: false, error: false, mode: "curated", records: [], meta: {}, ...sourceURLState(params), visible: 24, topicIDs: new Set(), topicCounts: [] };
+function sourceURL(push = false) {
   // Called after catalog filter validation as well as on repository interactions.
   const next = curatedURL();
   if (sourceState.mode === "source-index") next.searchParams.set("view", "source-index");
   else next.searchParams.delete("view");
-  for (const [key, value, defaultValue] of [["sourceq", sourceState.q, ""], ["source-target", sourceState.target, "all"], ["topic", sourceState.topic, ""], ["sort", sourceState.sort, "relevance"]]) {
+  for (const [key, value, defaultValue] of [["sourceq", sourceState.q, ""], ["source-target", sourceState.target, "all"], ["topic", sourceState.topic, ""], ["source-category", sourceState.category, "all"], ["sort", sourceState.sort, "relevance"]]) {
     if (value !== defaultValue) next.searchParams.set(key, value);
     else next.searchParams.delete(key);
   }
-  replaceURL(next);
+  writeURL(next, push);
 }
 function configureSourceIndex(meta) {
   const count=Number(meta?.resource_count||0);sourceState.available=count>0;$("#mode-sources").hidden=!sourceState.available;$("#mode-source-count").textContent=count?count.toLocaleString():"";$("#mode-curated-count").textContent=state.records.length;
@@ -565,20 +833,21 @@ function configureSourceIndex(meta) {
       && (meta.publication_schema_version !== 2 || meta.full_export !== "source-published.json"
           || meta.status !== "published-selection")) throw new Error("Invalid published repository export");
   sourceDownload(meta?.publication_schema_version === 2 ? "source-published.json" : "source-index.json");
-  const query=new URLSearchParams(location.search);const requested=query.get("view");setIndexMode(sourceState.available&&(requested==="source-index"||requested==="repositories")?"source-index":"curated");
+  setIndexMode(requestedMode(new URLSearchParams(location.search)));
 }
+function requestedMode(query) { return sourceState.available && ["source-index","repositories"].includes(query.get("view")) ? "source-index" : "curated"; }
 function sourceDownload(filename) {
   if (!["source-index.json","source-published.json"].includes(filename)) throw new Error("Unsupported repository download");
   const link = $("#download-source-index");
   const key = filename === "source-published.json" ? "downloadPublishedSourceData" : "downloadSourceData";
   link.href = dataURL(filename); link.dataset.i18n = key; link.textContent = t(key);
 }
-function setIndexMode(mode) {
+function setIndexMode(mode, push = false) {
   if (mode === "source-index" && !sourceState.available) return; sourceState.mode = mode; const isSource = mode === "source-index"; $("#curated-view").hidden = isSource; $("#source-view").hidden = !isSource;
   document.documentElement.dataset.indexMode = sourceState.mode;
   for (const [id,active] of [["#mode-curated",!isSource],["#mode-sources",isSource]]) { $(id).classList.toggle("active",active); $(id).setAttribute("aria-pressed",String(active)); }
   renderEmptySearchActions();
-  sourceURL(); if (isSource && !sourceState.loaded) loadSources(); else if (isSource) renderSources();
+  sourceURL(push); if (isSource && !sourceState.loaded) loadSources(); else if (isSource) renderSources();
 }
 function searchRepositoriesFromEmpty() {
   if (!state.loaded || state.error || !sourceState.available || sourceState.mode !== "curated"
@@ -586,7 +855,7 @@ function searchRepositoriesFromEmpty() {
   sourceState.q = state.q;
   sourceState.visible = 24;
   $("#source-search").value = sourceState.q;
-  setIndexMode("source-index");
+  setIndexMode("source-index", true);
   $("#source-search").focus();
 }
 $("#empty-search-repositories").addEventListener("click", searchRepositoriesFromEmpty);
@@ -603,14 +872,14 @@ function curatedExport() {
   const found = filtered();
   return {count: found.length, filename: "awesomerea-curated-matches.json", value: {export: {...exportMetadata("curated-catalog", "curated-resource",
     "Curated resources matching the homepage filters, copied unchanged from catalog.json. Each record keeps its own source review (verification, verified_at, evidence_url); this export adds none.",
-    {q: state.q, target: state.target, kind: state.kind, category: state.category, group: state.group}, "displayed", found.length, state.records.length),
+    {q: state.q, target: state.target, kind: state.kind, category: state.category, group: state.group, order: state.order}, "displayed", found.length, state.records.length),
     full_download: dataURL("catalog.json").href}, resources: exportRecords(found.map(record => state.fullRecords?.get(record.id) || record))}};
 }
 function sourceExport() {
   const found = sourceFiltered(); const meta = sourceState.meta;
   return {count: found.length, filename: "awesomerea-repository-matches.json", value: {export: {...exportMetadata("repository-index", "automatically-indexed-repository",
-    "Automatically indexed repositories matching the homepage filters, copied from the browsing projection source-browser.json. READMEs were fetched automatically; these records are not curated, individually reviewed or executed, and their target labels are inferred. Repositories excluded from browsing are omitted; the full source-index.json download keeps them.",
-    {sourceq: sourceState.q, "source-target": sourceState.target, topic: sourceState.topic, sort: sourceState.sort}, sourceState.sort, found.length, sourceState.records.length),
+    "Automatically indexed repositories matching the homepage filters, copied from the browsing projection source-browser.json. READMEs were fetched automatically; these records are unreviewed and their target labels are inferred. Repositories excluded from browsing are omitted; the full source-index.json download keeps them.",
+    {sourceq: sourceState.q, "source-target": sourceState.target, topic: sourceState.topic, "source-category": sourceState.category, sort: sourceState.sort}, sourceState.sort, found.length, sourceState.records.length),
     snapshot: {status: meta.status || null, completed_at: meta.completed_at || null, scope: meta.scope || null, full_export_sha256: meta.full_export_sha256 || null},
     full_download: dataURL("source-index.json").href}, repositories: exportRecords(found)}};
 }
@@ -640,16 +909,16 @@ async function exportMatches(prefix) {
 }
 for (const prefix of ["", "source-"]) $(`#${prefix}export-matches`).addEventListener("click", () => exportMatches(prefix));
 function topicLabel(topic) { return state.topicLabels[topic]?.[state.lang] || topic; }
-function topicSearch(topic) { const entry = state.topicLabels[topic]; return [topic, entry?.en || "", entry?.zh || ""].join(" ").toLocaleLowerCase(); }
+function topicSearch(topic) { const entry = state.topicLabels[topic]; return normalizeSearchText([topic, entry?.en || "", entry?.zh || ""].join(" ")); }
 function topicDisplay(topic) { const translated = topicLabel(topic); return translated === topic ? topic : `${translated} · ${topic}`; }
-function canonicalTopic(value) { const trimmed=value.trim().toLocaleLowerCase(); const match=Object.entries(state.topicLabels).find(([key, entry]) => [key, `${entry.en} · ${key}`, `${entry.zh} · ${key}`].some(label=>label.toLocaleLowerCase()===trimmed)); return match ? match[0] : value; }
+function canonicalTopic(value) { const trimmed=normalizeSearchText(value).trim(); const match=Object.entries(state.topicLabels).find(([key, entry]) => [key, `${entry.en} · ${key}`, `${entry.zh} · ${key}`].some(label=>normalizeSearchText(label)===trimmed)); return match ? match[0] : value; }
 function indexSourceTopics() {
   const topicCounts = new Map(); sourceState.records.forEach(r => r.topics.forEach(topic => topicCounts.set(topic,(topicCounts.get(topic)||0)+1)));
   sourceState.topicIDs = new Set(topicCounts.keys());
   sourceState.topicCounts = [...topicCounts].sort((a,b) => b[1]-a[1] || compareIDs(a[0],b[0]));
 }
 function topicSuggestions(value = "") {
-  const query = canonicalTopic(value).toLocaleLowerCase().trim();
+  const query = normalizeSearchText(canonicalTopic(value)).trim();
   const matches = sourceState.topicCounts.filter(([topic]) => !query || topicSearch(topic).includes(query));
   const exact = matches.findIndex(([topic]) => topic === query);
   if (exact > 0) matches.unshift(...matches.splice(exact,1));
@@ -701,9 +970,9 @@ function sourceRelatedLinks(record) {
   return container;
 }
 function sourceFiltered() {
-  const terms = sourceState.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean); const topic = sourceState.topic.toLocaleLowerCase().trim();
-  const result = sourceState.records.filter(r => (sourceState.target === "all" || r.targets.includes(sourceState.target)) && (!topic || r.topics.some(item => sourceState.topicIDs.has(topic) ? item === topic : topicSearch(item).includes(topic))) && terms.every(term => r.search.includes(term)));
-  const score = r => terms.reduce((sum,term) => sum + (r.full_name.toLocaleLowerCase().includes(term) ? 4 : 0) + (r.topics.some(topic => topicSearch(topic).includes(term)) ? 2 : 0),0);
+  const terms = normalizeSearchText(sourceState.q).trim().split(/\s+/).filter(Boolean); const topic = normalizeSearchText(sourceState.topic).trim();
+  const result = sourceState.records.filter(r => (sourceState.target === "all" || r.targets.includes(sourceState.target)) && (sourceState.category === "all" || r.category === sourceState.category) && (!topic || r.topics.some(item => sourceState.topicIDs.has(topic) ? item === topic : topicSearch(item).includes(topic))) && terms.every(term => r.search.includes(term)));
+  const score = r => terms.reduce((sum,term) => sum + (normalizeSearchText(r.full_name).includes(term) ? 4 : 0) + (r.topics.some(topic => topicSearch(topic).includes(term)) ? 2 : 0),0);
   if (sourceState.sort === "stars") result.sort((a,b) => (b.stars ?? -1)-(a.stars ?? -1) || compareIDs(a.full_name,b.full_name));
   else if (sourceState.sort === "stars-asc") result.sort((a,b) => (a.stars ?? Infinity)-(b.stars ?? Infinity) || compareIDs(a.full_name,b.full_name));
   else if (sourceState.sort === "pushed") result.sort((a,b) => compareIDs(String(b.pushed_at || ""),String(a.pushed_at || "")) || compareIDs(a.full_name,b.full_name));
@@ -715,7 +984,6 @@ function sourceFiltered() {
     result.sort((a,b) => scores.get(b)-scores.get(a) || a.order-b.order);
   }
   else {
-    const githubRepo = value => { try { const url = new URL(value); if (url.hostname.toLowerCase() !== "github.com") return ""; const parts = url.pathname.split("/").filter(Boolean); return parts.length >= 2 ? parts.slice(0,2).join("/").replace(/\.git$/i, "").toLowerCase() : ""; } catch (_) { return ""; } };
     const curatedRepos = new Set(state.records.map(record => githubRepo(record.url)).filter(Boolean));
     const reverseEngineering = /\b(?:reverse[-\s]engineering|binary[-\s]analysis|decompil\w*|disassembl\w*|ghidra|ida|frida|firmware[-\s]analysis)\b/i;
     const priority = record => curatedRepos.has(githubRepo(record.url)) ? 2 : reverseEngineering.test([...record.topics,record.description_en || ""].join(" ")) ? 1 : 0;
@@ -730,18 +998,32 @@ function sourceTopicButtons(record, limit = 4) {
   record.topics.slice(0, limit).forEach(topic => {
     const button = node("button", "source-topic-chip", topicLabel(topic));
     button.type = "button"; button.title = t("sourceTopicHint") + ": " + topic;
-    button.addEventListener("click", () => { sourceState.topic = topic; sourceState.visible = 24; syncTopicInput(); sourceURL(); renderSources(); });
+    button.addEventListener("click", event => { sourceState.topic = topic; sourceState.visible = 24; syncTopicInput(); sourceURL(true); renderSources(); if (fromKeyboard(event)) { const field = $("#source-topic"); field.focus({preventScroll: true}); field.scrollIntoView({block: "nearest"}); } });
     topics.append(button);
   });
   return topics;
 }
-function sourceCard(record) {
-  const article = node("article","source-card"); article.dataset.recordId=record.id; const head = node("div","source-card-head"); const title = node("h3"); const link = external(record.url,"source-title-link"); const separator = record.full_name.indexOf("/"); if (separator > 0) { link.append(node("span","source-owner",record.full_name.slice(0,separator+1)),node("span","source-project",record.full_name.slice(separator+1))); } else { link.append(node("span","source-project",record.full_name)); } link.append(icon("external",true)); title.append(link); head.append(title);
+function sourceMatchHint(record, terms) {
+  if (!terms.length) return null;
+  const zh = state.lang === "zh"; const related = sourceRelatedEntries(record);
+  return matchHint(terms, [record.full_name, record[zh ? "description_zh" : "description_en"]], [
+    zh ? ["matchDescriptionEn", record.description_en] : ["matchDescriptionZh", record.description_zh], ["matchDescriptionOriginal", record.description_original],
+    ...record.topics.map(topic => ["sourceTopicsLabel", [topic, state.topicLabels[topic]?.en, state.topicLabels[topic]?.zh].filter(Boolean).join(" · ")]),
+    ...related.flatMap(entry => (zh ? [entry.title_zh, entry.title_en] : [entry.title_en, entry.title_zh]).map(title => ["matchRelated", title])),
+    ["categoryLabel", record.category], ["targetFilterLabel", record.targets.flatMap(targetSearchLabels).join(" · ")]]);
+}
+function sourceCard(record, terms = []) {
+  const article = node("article","source-card"); article.dataset.recordId=record.id; const head = node("div","source-card-head"); const title = node("h3"); const link = external(record.url,"source-title-link"); const separator = record.full_name.indexOf("/"); if (separator > 0) link.append(node("span","source-owner",record.full_name.slice(0,separator+1)));
+  // The title's last character and the external-link icon share a no-wrap span, so the icon never sits alone on a line.
+  const chars = Array.from(record.full_name.slice(separator+1)); const tail = node("span","title-icon-tail",chars.pop() ?? ""); tail.append(icon("external",true)); const project = node("span","source-project",chars.join("")); project.append(tail); link.append(project); title.append(link); head.append(title);
   if (Number.isFinite(record.stars)) { const stars = node("span","source-stars",record.stars.toLocaleString(state.lang === "zh" ? "zh-CN" : "en-US") + " " + t("sourceStars")); stars.title = t("sourceStarsTitle"); head.append(stars); } article.append(head);
   const description = record[state.lang === "zh" ? "description_zh" : "description_en"];
   article.append(node("p","source-card-description" + (!description ? " source-card-empty" : ""),description || t(record.description_omission ? "sourceOmittedDescription" : "sourceNoDescription")));
+  const hint = sourceMatchHint(record, terms); if (hint) article.append(hint);
 
   const footer = node("div","source-card-footer"); footer.append(external(record.readme_url || record.url,"","README ↗")); const license = typeof record.license === "string" && record.license.trim() && record.license.toUpperCase() !== "NOASSERTION" ? record.license : t("sourceLicenseUnknown"); footer.append(node("span","source-card-license",license)); article.append(footer);
+  const copy = copyLinkButton("repository", record, record.full_name); if (copy) footer.append(copy);
+  const save = saveToggle("repository", record.id, record.full_name); if (save) footer.append(save);
   const details = node("details","source-record-details"); details.append(node("summary","",t("sourceScanDetails")));
   const context = node("div", "source-record-context");
   const related = sourceRelatedLinks(record); if (related) context.append(related);
@@ -755,10 +1037,10 @@ function sourceCard(record) {
 }
 // Like render(): Show More appends the next batch after the cards already shown.
 function renderSources(shown = 0) {
-  if (!sourceState.loaded) return; const found = sourceFiltered(); const results = $("#source-results"); const fragment = document.createDocumentFragment(); found.slice(shown,sourceState.visible).forEach(record => fragment.append(sourceCard(record)));
+  if (!sourceState.loaded) return; const found = sourceFiltered(); const results = $("#source-results"); const fragment = document.createDocumentFragment(); const terms = normalizeSearchText(sourceState.q).trim().split(/\s+/).filter(Boolean); found.slice(shown,sourceState.visible).forEach(record => fragment.append(sourceCard(record, terms)));
   if (shown) results.append(fragment); else { const expanded = expandedRecords(".source-card", ".source-record-details[open]"); const expandedEvidence = expandedRecords(".source-card", ".source-scan-evidence[open]"); results.replaceChildren(fragment); restoreExpanded(".source-card", expanded, ".source-record-details"); restoreExpanded(".source-card", expandedEvidence, ".source-scan-evidence"); } results.setAttribute("aria-busy","false");
-  $("#source-status").textContent = state.lang === "zh" ? (found.length === sourceState.records.length ? `${found.length.toLocaleString()} 个仓库` : `${found.length.toLocaleString()} 个匹配仓库 · 共 ${sourceState.records.length.toLocaleString()} 个仓库`) : (found.length === sourceState.records.length ? `${found.length.toLocaleString()} ${found.length === 1 ? "repository" : "repositories"}` : `${found.length.toLocaleString()} ${found.length === 1 ? "result" : "results"} · ${sourceState.records.length.toLocaleString()} ${sourceState.records.length === 1 ? "repository" : "repositories"}`);
-  const topic = sourceState.topic.toLocaleLowerCase().trim(); const hint = $("#source-topic-match");
+  setStatus($("#source-status"), state.lang === "zh" ? (found.length === sourceState.records.length ? `${found.length.toLocaleString()} 个仓库` : `${found.length.toLocaleString()} 个匹配仓库 · 共 ${sourceState.records.length.toLocaleString()} 个仓库`) : (found.length === sourceState.records.length ? `${found.length.toLocaleString()} ${found.length === 1 ? "repository" : "repositories"}` : `${found.length.toLocaleString()} ${found.length === 1 ? "result" : "results"} · ${sourceState.records.length.toLocaleString()} ${sourceState.records.length === 1 ? "repository" : "repositories"}`));
+  const topic = normalizeSearchText(sourceState.topic).trim(); const hint = $("#source-topic-match");
   hint.hidden = !topic; hint.textContent = topic ? t(sourceState.topicIDs.has(topic) ? "sourceTopicExact" : "sourceTopicContains") : "";
   const published = sourceState.meta.schema_version === 2;
   const completed = published ? sourceState.meta.published_at : sourceState.meta.completed_at || sourceState.meta.finished_at || "";
@@ -766,8 +1048,17 @@ function renderSources(shown = 0) {
   const scopeNote = scanned > 0 && excluded > 0 ? (state.lang === "zh" ? ` ${published ? "本发布选集收录" : "共扫描"} ${scanned.toLocaleString("zh-CN")} 个仓库；其中 ${excluded.toLocaleString("zh-CN")} 个超出本合集范围或上游仓库已无法访问，不在浏览列表中显示，完整 JSON 下载仍保留。` : ` ${published ? "Published selection:" : "Scanned"} ${scanned.toLocaleString("en-US")} repositories; ${excluded.toLocaleString("en-US")} outside this collection’s scope or no longer available upstream are omitted from browsing and retained in the full JSON download.`) : "";
   $("#source-snapshot").textContent = (state.lang === "zh" ? "自动目标标签仅用于发现项目。星标为采集时快照。" : "Automatic target labels aid discovery. Stars are collection-time snapshots.") + (completed ? (state.lang === "zh" ? (published ? " 选集发布于 " : " 扫描完成于 ") : (published ? " Selection published " : " Scan completed ")) + sourceTime(completed) + (state.lang === "zh" ? "。" : ".") : "") + (sourceState.meta.status === "in-progress" ? (state.lang === "zh" ? " 扫描进行中；此处显示已读取的快照。" : " Scan in progress; this is the successfully fetched snapshot.") : "") + scopeNote;
   $("#source-empty").hidden = found.length > 0; $("#source-error").hidden = true; $("#source-more-row").hidden = found.length <= sourceState.visible; $("#source-more-count").textContent = "+"+Math.min(24,Math.max(0,found.length-sourceState.visible)); $("#source-shown").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length,sourceState.visible)} / ${found.length} 个仓库` : `${Math.min(found.length,sourceState.visible)} of ${found.length} ${found.length === 1 ? "repository" : "repositories"} shown`;
-  $("#source-clear").hidden = !sourceState.q && !sourceState.topic && sourceState.target === "all" && sourceState.sort === "relevance";
+  announceRevealed("source-", shown, sourceState.visible, found.length);
+  $("#source-clear").hidden = !sourceState.q && !sourceState.topic && sourceState.target === "all" && sourceState.category === "all" && sourceState.sort === "relevance";
+  renderSourceCategories();
   showExport("source-");
+  const removeSource = change => () => { change(); sourceState.visible = 24; sourceURL(true); renderSources(); };
+  renderActiveFilters($("#source-active-filters"), [
+    sourceState.q.trim() && [t("filterSearch"), `“${sourceState.q.trim()}”`, removeSource(() => { sourceState.q = ""; $("#source-search").value = ""; })],
+    sourceState.target !== "all" && [t("targetFilterLabel"), targetLabel(sourceState.target), removeSource(() => { sourceState.target = "all"; })],
+    topic && [t("sourceTopicLabel"), topicDisplay(sourceState.topic.trim()), removeSource(() => { sourceState.topic = ""; $("#source-topic").value = ""; renderTopicOptions(""); })],
+    sourceState.category !== "all" && [t("categoryLabel"), label(state.sourceCategoryLabels || {}, sourceState.category), removeSource(() => { sourceState.category = "all"; })],
+  ].filter(Boolean), $("#source-search"));
   $$('[data-source-target]').forEach(button => { const active = button.dataset.sourceTarget === sourceState.target; button.classList.toggle("active",active); button.setAttribute("aria-pressed",String(active)); });
 }
 function sourceBrowserPayload(data) {
@@ -803,24 +1094,157 @@ async function loadSources() {
   if (sourceState.loading) return; sourceState.loading = true; sourceState.error = false; $("#source-results").setAttribute("aria-busy","true"); $("#source-error").hidden = true; $("#source-status").textContent = t("sourceLoading");
   try {
     const response = await fetch(dataURL("source-browser.json"), {cache: "no-cache"}); if (!response.ok) throw new Error("Source index HTTP "+response.status); const data = sourceBrowserPayload(await response.json()); sourceState.meta = data.meta; sourceDownload(data.meta.full_export);
-    sourceState.records = (data.resources || []).filter(r => r.scan_status === "readme-scanned" && r.scope_status !== "excluded").map((r,index) => { const topics = Array.isArray(r.topics) ? r.topics.map(String) : []; const targets = Array.isArray(r.targets) ? r.targets : []; const full_name = r.full_name || r.name || r.id; const related_entries = sourceRelatedEntries(r); return {...r,full_name,topics,targets,related_entries,order:index,search:[full_name,r.description_en || "",r.description_zh || "",r.description_original || "",r.category || "",...topics.map(topicSearch),...related_entries.flatMap(entry => [entry.title_en,entry.title_zh]),...targets.flatMap(targetSearchLabels)].join(" ").toLocaleLowerCase()}; });
+    sourceState.records = (data.resources || []).filter(r => r.scan_status === "readme-scanned" && r.scope_status !== "excluded").map((r,index) => { const topics = Array.isArray(r.topics) ? r.topics.map(String) : []; const targets = Array.isArray(r.targets) ? r.targets : []; const full_name = r.full_name || r.name || r.id; const related_entries = sourceRelatedEntries(r); return {...r,full_name,topics,targets,related_entries,order:index,search:normalizeSearchText([full_name,r.description_en || "",r.description_zh || "",r.description_original || "",r.category || "",...topics.map(topicSearch),...related_entries.flatMap(entry => [entry.title_en,entry.title_zh]),...targets.flatMap(targetSearchLabels)].join(" "))}; });
     $('[data-source-target="protocol"]').hidden = !sourceState.records.some(record => record.targets.includes("protocol"));
     sourceState.loaded = true; indexSourceTopics(); syncTopicInput(); $("#mode-source-count").textContent = sourceState.records.length.toLocaleString(); renderSources();
   } catch (_) { sourceState.error = true; $("#source-status").textContent = t("sourceErrorTitle"); $("#source-results").setAttribute("aria-busy","false"); $("#source-error").hidden = false; $("#source-empty").hidden = true; $("#source-more-row").hidden = true; }
   finally { sourceState.loading = false; }
 }
-function resetSources() { sourceState.q=""; sourceState.topic=""; sourceState.target="all"; sourceState.sort="relevance"; sourceState.visible=24; $("#source-search").value=""; $("#source-topic").value=""; $("#source-sort").value="relevance"; renderTopicOptions(); sourceURL(); renderSources(); }
-$("#mode-curated").addEventListener("click",() => setIndexMode("curated")); $("#mode-sources").addEventListener("click",() => setIndexMode("source-index"));
-if (!["all","website","game","app","binary","firmware","protocol"].includes(sourceState.target)) sourceState.target="all";
-if (sourceState.sort === "updated") sourceState.sort = "pushed";
-if (!["relevance","stars","stars-asc","pushed","name"].includes(sourceState.sort)) sourceState.sort="relevance";
+function resetSources() { sourceState.q=""; sourceState.topic=""; sourceState.target="all"; sourceState.category="all"; sourceState.sort="relevance"; sourceState.visible=24; $("#source-search").value=""; $("#source-topic").value=""; $("#source-sort").value="relevance"; renderTopicOptions(); sourceURL(true); renderSources(); }
+$("#mode-curated").addEventListener("click",() => setIndexMode("curated", true)); $("#mode-sources").addEventListener("click",() => setIndexMode("source-index", true));
 $("#source-search").value=sourceState.q; $("#source-topic").value=sourceState.topic; $("#source-sort").value=sourceState.sort;
-for (const [selector,key,event] of [["#source-search","q","input"],["#source-topic","topic","input"],["#source-sort","sort","change"]]) $(selector).addEventListener(event,e => { sourceState[key]=key === "topic" ? canonicalTopic(e.target.value) : e.target.value; if (key === "topic") renderTopicOptions(e.target.value); sourceState.visible=24; sourceURL(); renderSources(); });
-$$('[data-source-target]').forEach(button => button.addEventListener("click",() => { sourceState.target=button.dataset.sourceTarget; sourceState.visible=24; sourceURL(); renderSources(); }));
-$("#source-clear").addEventListener("click",resetSources); $("#source-reset").addEventListener("click",resetSources); $("#source-retry").addEventListener("click",loadSources); $("#source-more").addEventListener("click",() => { const previous=sourceState.visible; sourceState.visible+=24; renderSources(previous); $$(".source-title-link")[previous]?.focus({preventScroll:true}); });
+for (const [selector,key,event] of [["#source-search","q","input"],["#source-topic","topic","input"],["#source-sort","sort","change"]]) $(selector).addEventListener(event,e => { sourceState[key]=key === "topic" ? canonicalTopic(e.target.value) : e.target.value; if (key === "topic") renderTopicOptions(e.target.value); sourceState.visible=24; sourceURL(key === "sort"); renderSources(); });
+$$('[data-source-target]').forEach(button => button.addEventListener("click",() => { sourceState.target=button.dataset.sourceTarget; sourceState.visible=24; sourceURL(true); renderSources(); }));
+$("#source-category").addEventListener("change", event => { sourceState.category = event.target.value; sourceState.visible = 24; sourceURL(true); renderSources(); });
+// An unknown, malformed or prototype-named ?source-category= falls back to all once the catalog's labels are known.
+function validateSourceCategory() { if (sourceState.category !== "all" && !Object.hasOwn(state.sourceCategoryLabels || {}, sourceState.category)) sourceState.category = "all"; }
+// Options list the categories the loaded repositories use, in the directory's order and the active language.
+function renderSourceCategories() {
+  const select = $("#source-category"); const labels = state.sourceCategoryLabels || {}; const present = new Set(sourceState.records.map(record => record.category));
+  const all = node("option", "", t("allCategories")); all.value = "all";
+  const options = Object.keys(labels).filter(category => present.has(category) || category === sourceState.category).map(category => {
+    const option = node("option", "", labels[category][state.lang === "zh" ? 1 : 0]); option.value = category; return option; });
+  select.replaceChildren(all, ...options); select.value = sourceState.category;
+}
+// Back/Forward restore every URL-held choice without writing history; an entry that differs only by fragment
+// keeps the current results, Show More count and expanded details.
+window.addEventListener("popstate", () => {
+  const query = new URLSearchParams(location.search); const curated = curatedURLState(query); const source = sourceURLState(query);
+  const differs = (current, next, keys) => keys.some(key => current[key] !== next[key]);
+  const curatedChanged = differs(state, curated, ["q","group","category","kind","target","order"]); const sourceChanged = differs(sourceState, source, ["q","target","topic","category","sort"]); const languageChanged = state.lang !== curated.lang;
+  Object.assign(state, curated); Object.assign(sourceState, source);
+  if (curatedChanged) { state.visible = 15; $("#search-input").value = state.q; $("#curated-sort").value = state.order; }
+  if (sourceChanged) { sourceState.visible = 24; $("#source-search").value = sourceState.q; $("#source-topic").value = sourceState.topic; $("#source-sort").value = sourceState.sort; }
+  if (state.loaded) { validateCuratedFilters(); validateSourceCategory(); }
+  if (languageChanged) applyLanguage();
+  else {
+    applyLayout();
+    // As when typing, a restored query retries the complete catalog (requirement text) if it failed to load.
+    if (curatedChanged && state.loaded) { loadDetails(); renderCategories(); render(); }
+    if (sourceChanged && sourceState.loaded) { syncTopicInput(); renderSources(); }
+  }
+  // Like a shared link, an entry with rejected values is normalized by replacement once the catalog has loaded.
+  const mode = requestedMode(query); if (state.loaded && mode !== sourceState.mode) setIndexMode(mode); else if (state.loaded) sourceURL();
+  syncLanguageLinks();
+});
+for (const id of ["#source-clear", "#source-reset"]) $(id).addEventListener("click", event => { resetSources(); if (fromKeyboard(event)) $("#source-search").focus(); }); $("#source-retry").addEventListener("click",loadSources); $("#source-more").addEventListener("click",() => { const previous=sourceState.visible; sourceState.visible+=24; renderSources(previous); $$(".source-title-link")[previous]?.focus({preventScroll:true}); });
 
 $("#download-source-index").href = dataURL("source-index.json");
 $("#download-curated-catalog").href = dataURL("catalog.json");
+// Browser-local shortlist: only "type:id" keys, kept in this browser and never sent anywhere. paper-search.js adds paper
+// keys in the same format. Saved entries resolve against current data; one that is gone stays listed as unavailable.
+const SHORTLIST_KEY = "awesomerea-shortlist";
+const SHORTLIST_ITEM = /^(curated|repository|paper):[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const SHORTLIST_GROUPS = [["curated", "shortlistCurated", null], ["repository", "shortlistRepositories", "source-browser.json"], ["paper", "shortlistPapers", "papers.json"]];
+const shortlist = {available: false, keys: [], data: {}};
+const shortlistDialog = $("#shortlist");
+function shortlistStorage() { try { return window.localStorage; } catch (_) { return null; } }
+function readShortlist() {
+  try { const storage = shortlistStorage(); storage.setItem("awesomerea-storage-check", "1"); storage.removeItem("awesomerea-storage-check"); shortlist.available = true; }
+  catch (_) { shortlist.available = false; shortlist.keys = []; return; }
+  try { const value = JSON.parse(shortlistStorage().getItem(SHORTLIST_KEY) || "[]"); shortlist.keys = Array.isArray(value) ? [...new Set(value.filter(key => typeof key === "string" && SHORTLIST_ITEM.test(key)))] : []; }
+  catch (_) { shortlist.keys = []; }
+}
+function saveToggle(type, id, name) {
+  const key = type + ":" + id;
+  if (!shortlist.available || !SHORTLIST_ITEM.test(key)) return null;
+  const button = node("button", "save-toggle"); button.type = "button"; button.dataset.shortlistKey = key; button.dataset.shortlistName = name;
+  button.addEventListener("click", () => toggleShortlist(key, name)); syncSaveToggle(button); return button;
+}
+function syncSaveToggle(button) {
+  const saved = shortlist.keys.includes(button.dataset.shortlistKey); button.setAttribute("aria-pressed", String(saved));
+  button.replaceChildren(...(saved ? [icon("check", true)] : []), node("span", "", t(saved ? "shortlistSaved" : "shortlistSave")), node("span", "sr-only", " " + button.dataset.shortlistName));
+}
+function announceShortlist(message) { $(shortlistDialog?.open ? "#shortlist-dialog-status" : "#shortlist-status").textContent = message; }
+function syncShortlist() {
+  $$(".save-toggle").forEach(syncSaveToggle); $("#shortlist-open").hidden = !shortlist.keys.length; $("#shortlist-count").textContent = String(shortlist.keys.length);
+  if (shortlistDialog?.open) renderShortlist();
+}
+function writeShortlist(keys) {
+  try { const storage = shortlistStorage(); if (keys.length) storage.setItem(SHORTLIST_KEY, JSON.stringify(keys)); else storage.removeItem(SHORTLIST_KEY); }
+  catch (_) { announceShortlist(t("shortlistWriteFailed")); return false; }
+  shortlist.keys = keys; syncShortlist(); return true;
+}
+function toggleShortlist(key, name) {
+  const saved = shortlist.keys.includes(key);
+  if (!writeShortlist(saved ? shortlist.keys.filter(item => item !== key) : [...shortlist.keys, key])) return;
+  const count = shortlist.keys.length;
+  announceShortlist(state.lang === "zh" ? `已${saved ? "移除" : "收藏"} ${name}。收藏清单共 ${count} 项。` : `${saved ? "Removed" : "Saved"} ${name}. ${count} ${count === 1 ? "entry" : "entries"} in your shortlist.`);
+}
+// Current records for one entry type: the loaded collection when there is one, otherwise a fetch for this dialog only.
+// Curated entries resolve against the homepage's own catalog-index.json load, which re-renders an open shortlist when it
+// settles, so the dialog never downloads a second copy of the catalog.
+function shortlistRecords(type, filename) {
+  if (type === "curated") return state.loaded ? new Map(state.records.map(record => [record.id, record])) : state.error ? "error" : "loading";
+  if (type === "repository" && sourceState.loaded) return new Map(sourceState.records.map(record => [record.id, record]));
+  if (shortlist.data[type] === undefined) {
+    shortlist.data[type] = "loading";
+    fetch(dataURL(filename), {cache: "no-cache"}).then(response => { if (!response.ok) throw new Error(filename + " HTTP " + response.status); return response.json(); })
+      .then(data => { const records = type === "curated" ? data.resources : type === "repository" ? sourceBrowserPayload(data).resources : data; if (!Array.isArray(records)) throw new Error("Invalid " + filename); shortlist.data[type] = new Map(records.map(record => [record.id, record])); })
+      .catch(() => { shortlist.data[type] = "error"; })
+      .finally(() => { if (shortlistDialog?.open) renderShortlist(); });
+  }
+  return shortlist.data[type];
+}
+function shortlistName(type, record) {
+  if (type === "repository") return record.full_name || record.id;
+  return state.lang === "zh" ? (record[type === "paper" ? "title_zh" : "name_zh"] || record[type === "paper" ? "title" : "name"]) : record[type === "paper" ? "title" : "name"];
+}
+function shortlistItem(type, id, records) {
+  const record = records instanceof Map ? records.get(id) : null; const name = record ? shortlistName(type, record) : id;
+  const item = node("li", "shortlist-item"); const text = node("div", "shortlist-text");
+  if (record) {
+    const href = type === "repository" ? record.url : entryHref(type, id);
+    const link = type === "repository" ? external(href, "shortlist-link", name) : node("a", "shortlist-link", name); link.href = href; text.append(link);
+  } else {
+    const gone = "shortlistGone" + type[0].toUpperCase() + type.slice(1);
+    text.append(node("span", "shortlist-missing", id), node("span", "shortlist-note", t(records === "error" ? "shortlistLoadFailed" : records instanceof Map ? gone : "shortlistLoading")));
+  }
+  const remove = node("button", "shortlist-remove", t("shortlistRemove")); remove.type = "button";
+  remove.setAttribute("aria-label", t("shortlistRemove") + " " + name); remove.addEventListener("click", () => toggleShortlist(type + ":" + id, name));
+  item.append(text, remove); return item;
+}
+function renderShortlist() {
+  const groups = [];
+  for (const [type, labelKey, filename] of SHORTLIST_GROUPS) {
+    const ids = shortlist.keys.filter(key => key.startsWith(type + ":")).map(key => key.slice(type.length + 1));
+    if (!ids.length) continue;
+    const records = shortlistRecords(type, filename); const group = node("section", "shortlist-group"); const list = node("ul");
+    group.append(node("h3", "", `${t(labelKey)} · ${ids.length}`));
+    if (type === "repository") group.append(node("p", "", t("sourceIntro")));
+    ids.forEach(id => list.append(shortlistItem(type, id, records))); group.append(list); groups.push(group);
+  }
+  $("#shortlist-items").replaceChildren(...groups); $("#shortlist-empty").hidden = groups.length > 0; $("#shortlist-clear").hidden = !groups.length;
+}
+function openShortlist() {
+  if (!shortlist.available || typeof shortlistDialog?.showModal !== "function") return;
+  for (const type of Object.keys(shortlist.data)) if (shortlist.data[type] === "error") delete shortlist.data[type];
+  $("#shortlist-dialog-status").textContent = ""; renderShortlist(); shortlistDialog.showModal(); document.body.classList.add("data-dialog-open");
+}
+readShortlist(); syncShortlist();
+$("#shortlist-open").addEventListener("click", openShortlist);
+$("#shortlist-close").addEventListener("click", () => shortlistDialog.close());
+$("#shortlist-clear").addEventListener("click", () => { if (writeShortlist([])) announceShortlist(t("shortlistCleared")); });
+shortlistDialog?.addEventListener("close", () => {
+  document.body.classList.remove("data-dialog-open");
+  if (location.hash === "#shortlist") { const next = new URL(location.href); next.hash = ""; writeURL(next); }
+  // Clearing the list hides the Shortlist button, so focus then returns to the search field.
+  if (document.activeElement === document.body) $(shortlist.keys.length ? "#shortlist-open" : "#search-input").focus({preventScroll: true});
+});
+window.addEventListener("storage", event => { if (event.key === SHORTLIST_KEY || event.key === null) { readShortlist(); syncShortlist(); } });
+// The paper directory links here with #shortlist.
+if (location.hash === "#shortlist") openShortlist();
+
 // The repository link remains usable without JavaScript or native dialog support.
 const dataDialog = $("#data-dialog");
 if (dataDialog && typeof dataDialog.showModal === "function") {

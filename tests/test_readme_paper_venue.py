@@ -1,4 +1,4 @@
-"""README paper lines show the venue and year once, with the first author, in their metadata."""
+"""Paper lines in the READMEs and paper files show the venue and year once, with the first author, in their metadata."""
 from copy import deepcopy
 import json
 from pathlib import Path
@@ -8,7 +8,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_readme import PAPER_STATUSES, paper_venue, plain_text, render_papers
+from build_readme import PAPER_FILES, PAPER_STATUSES, paper_venue, plain_text, render_papers
 
 
 def paper(**changes):
@@ -54,12 +54,12 @@ class ReadmePaperVenueTest(unittest.TestCase):
                     self.assertNotIn('<details>', rendered)
             self.assertEqual(record, before)
 
-    def test_generated_readmes_show_every_venue_on_the_paper_line(self):
+    def test_generated_paper_files_show_every_venue_on_the_paper_line(self):
         papers = json.loads((ROOT / 'data/papers.json').read_text(encoding='utf-8'))
-        for name, index in (('README.md', 0), ('README.zh-CN.md', 1)):
+        for name, index in ((PAPER_FILES['en'], 0), (PAPER_FILES['zh'], 1)):
             text = (ROOT / name).read_text(encoding='utf-8')
             for record in papers:
-                with self.subTest(readme=name, paper=record['id']):
+                with self.subTest(file=name, paper=record['id']):
                     line = visible_line(text, record)
                     status = PAPER_STATUSES[record['publication_status']][index]
                     self.assertTrue(line.startswith(f'{plain_text(paper_venue(record))} · {status} · '), line)

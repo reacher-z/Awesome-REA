@@ -42,7 +42,7 @@ const byClass = (node, name) => descendants(node).filter(child => hasClass(child
 
 /* Each element with an id or data attribute in the homepage markup (plus optional extra markup) becomes a stub
    node, so querySelectorAll returns what the real page provides instead of an empty list. */
-function setup(query = '', {catalog, browser, extraMarkup = ''} = {}) {
+function setup(query = '', {catalog, browser, extraMarkup = '', turkishLocale = false} = {}) {
   const document = {baseURI: 'https://awesomerea.org/', documentElement: {dataset: {}}, title: '', listeners: {}};
   const make = tag => new Element(document, tag);
   document.activeElement = make('body'); document.activeElement.tagName = 'BODY';
@@ -77,12 +77,14 @@ function setup(query = '', {catalog, browser, extraMarkup = ''} = {}) {
   location.assign = next => { location.lastNavigation = String(next); };
   const responses = {catalog, browser};
   const context = {document, location, URL, URLSearchParams, console, window: {addEventListener() {}},
-    history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
+    history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }, pushState(_, __, next) { location.href = String(next); }},
     fetch: async url => {
       const body = responses[/^\/catalog(-index)?\.json$/.test(new URL(url).pathname) ? 'catalog' : 'browser'];
       return body === undefined ? {ok: false, status: 503} : {ok: true, json: async () => structuredClone(body)};
     }};
   vm.createContext(context);
+  // Make locale-dependent lowercasing observably Turkish without depending on the host's installed locales.
+  if (turkishLocale) vm.runInContext('String.prototype.toLocaleLowerCase = function () { return String(this).replace(/\u0130/g, "i").replace(/I/g, "\u0131").toLowerCase(); };', context);
   vm.runInContext(script.replace('applyLanguage(); load();', '') + '\nglobalThis.audit = {state,sourceState,load,loadSources,filtered,sourceFiltered,applyLanguage,setIndexMode,sourceBrowserPayload,sourceRelatedEntries};', context);
   const element = id => document.querySelector('#' + id);
   return {api: context.audit, document, location, responses, element, marked};
@@ -112,13 +114,35 @@ async function loaded(query, options) {
   return app;
 }
 const names = records => Array.from(records, record => record.full_name);
-const shownNames = app => app.element('source-results').children.map(card => byClass(card, 'source-title-link')[0].children.map(part => part.textContent).join(''));
+// A title's text, including the last character that shares a no-wrap span with the external-link icon.
+const textOf = part => (part.textContent || '') + part.children.map(textOf).join('');
+const shownNames = app => app.element('source-results').children.map(card => textOf(byClass(card, 'source-title-link')[0]));
 const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
 
 (async () => {
   // The integrity guard rejects every malformed payload, and loadSources then shows the error state.
   const valid = browserOf([repository('valid/one'), repository('valid/two')], 1);
   const curated = catalogOf([curatedRecord(1)]);
+  {
+    const compatibilityCatalog = catalogOf([
+      curatedRecord(1, {description_zh: '剪映／CapCut'}),
+      curatedRecord(2, {name: 'Istanbul analyzer'}),
+    ]);
+    const compatibilityRepositories = browserOf([
+      repository('video/editor', {description_zh: '剪映／CapCut'}),
+      repository('example/Istanbul'),
+    ]);
+    const query = '剪映/CapCut';
+    const app = await loaded('?q=' + encodeURIComponent(query) + '&sourceq=' + encodeURIComponent(query),
+      {catalog: compatibilityCatalog, browser: compatibilityRepositories, turkishLocale: true});
+    assert.deepEqual(Array.from(app.api.filtered(), record => record.id), ['curated-1']);
+    assert.deepEqual(names(app.api.sourceFiltered()), ['video/editor']);
+    assert.equal(urlParam(app, 'q'), query, 'matching normalization must not rewrite homepage URL state');
+    assert.equal(urlParam(app, 'sourceq'), query, 'matching normalization must not rewrite repository URL state');
+    app.api.state.q = 'istanbul'; app.api.sourceState.q = 'istanbul';
+    assert.deepEqual(Array.from(app.api.filtered(), record => record.id), ['curated-2']);
+    assert.deepEqual(names(app.api.sourceFiltered()), ['example/Istanbul']);
+  }
   // The compact repository introduction does not wait for a network response, and follows the real view.
   for (const query of ['?view=source-index', '?view=repositories']) {
     const app = setup(query, {catalog: curated, browser: valid});
@@ -273,7 +297,7 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.equal(byClass(details, 'source-topic-chip').length, original.topics.length);
     const allText = descendants(card).map(node => node.textContent);
     for (const value of [original.readme_sha256, original.readme_git_sha, '2026-01-01 01:02:03 UTC', '2026-01-02 01:02:03 UTC', '2026-01-03 01:02:03 UTC']) assert(allText.includes(value));
-    assert(!allText.includes('Check the upstream README for prerequisites; these have not been manually reviewed.'), 'Shared prerequisites advice is outside individual cards');
+    assert(!allText.includes('Check the upstream README for prerequisites.'), 'Shared prerequisites advice is outside individual cards');
     details.open = true; card.querySelector('.source-scan-evidence').open = true;
     app.api.state.lang = 'zh'; app.api.applyLanguage();
     card = app.element('source-results').children[0];
@@ -431,8 +455,8 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.deepEqual(counts(), {all: '2', website: '0', game: '0', app: '1', binary: '1', firmware: '0', protocol: '0'});
     assert.deepEqual(options('kind-select').find(([value]) => value === 'tool').slice(1), [n(lang === 'zh' ? '工具' : 'Tool', 2), false]);
     assert.deepEqual(options('kind-select').find(([value]) => value === 'case-study').slice(1), [n(lang === 'zh' ? '案例' : 'Case study', 0), true]);
-    // The counts add no live region: only the page's status lines (results, repositories, Get data, exports) are announced.
-    assert.deepEqual(app.marked.filter(node => node.attrs['aria-live']).map(node => node.id).sort(), ['data-clone-status', 'data-copy-status', 'export-matches-status', 'results-status', 'source-export-matches-status', 'source-status']);
+    // The counts add no live region: only the page's status lines (results, repositories, Get data, exports, shortlist, Show More, copied links) are announced.
+    assert.deepEqual(app.marked.filter(node => node.attrs['aria-live']).map(node => node.id).sort(), ['copy-link-status', 'data-clone-status', 'data-copy-status', 'export-matches-status', 'more-status', 'results-status', 'shortlist-dialog-status', 'shortlist-status', 'source-export-matches-status', 'source-more-status', 'source-status']);
     assert(app.element('kind-select').children.every(option => !option.attrs['aria-live']));
   }
 
@@ -499,7 +523,8 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.equal(app.api.state.group, 'all');
     assert.deepEqual(app.marked.filter(node => 'count' in node.dataset).map(node => node.textContent), [3, 1]);
     const localized = app.marked.filter(node => node.dataset.localePath === 'about' || node.dataset.localeFragment === 'game').map(node => node.href);
-    assert.deepEqual(localized, ['/zh/about/', '/zh/resources/#game']);
+    // The directory's About link, a subject link and the collection note under the curated filters.
+    assert.deepEqual(localized, ['/zh/about/', '/zh/resources/#game', '/zh/about/']);
     assert(app.marked.filter(node => 'i18nPlaceholder' in node.dataset).every(node => node.placeholder && node.placeholder !== node.dataset.i18nPlaceholder));
     assert(app.marked.filter(node => 'i18nAria' in node.dataset).every(node => /[一-鿿]/.test(node.attrs['aria-label'])));
     const group = app.marked.find(node => node.dataset.group === 'rea');

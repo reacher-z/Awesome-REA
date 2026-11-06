@@ -75,8 +75,11 @@ async function open(browser, origin, route, viewport, {javascript = true} = {}) 
   });
   page.on('console', message => {
     if (message.type() === 'error') problems.push(`console error: ${message.text()}`);
-    // Chrome warns when a preload is unused or its request does not match the later fetch.
-    else if (/preload/i.test(message.text())) problems.push(`console ${message.type()}: ${message.text()}`);
+    // Chrome warns when a preload is unused or its request does not match the later fetch. Without JavaScript
+    // nothing can use a fetch preload, so only that warning is expected there.
+    else if (/preload/i.test(message.text()) && (javascript || !/preloaded using link preload but not used/.test(message.text()))) {
+      problems.push(`console ${message.type()}: ${message.text()}`);
+    }
   });
   page.on('pageerror', error => problems.push(`uncaught exception: ${error.message}`));
   page.on('requestfailed', request => {
@@ -93,6 +96,13 @@ async function open(browser, origin, route, viewport, {javascript = true} = {}) 
   const response = await page.goto(origin + route, {waitUntil: 'networkidle0'});
   assert.equal(response.status(), 200, `${route} returned HTTP ${response.status()}`);
   return {page, problems, requested};
+}
+// Wide compact rows keep a closed details toggle directly under the row's links, however long the description is.
+async function toggleDrift(page, card, links, toggle) {
+  return page.$$eval(card, (cards, links, toggle) => cards.map(row => {
+    const above = row.querySelector(links), below = row.querySelector(toggle);
+    return above && below ? below.getBoundingClientRect().top - above.getBoundingClientRect().bottom : null;
+  }).filter(gap => gap !== null), links, toggle);
 }
 async function noOverflow(page, label) {
   const {scroll, inner} = await page.evaluate(() => ({scroll: document.scrollingElement.scrollWidth, inner: innerWidth}));
@@ -131,6 +141,15 @@ async function preloadedCatalog(page, label) {
   assert(entries.catalog[0].start < entries.dcl, `${label}: the catalog request starts before DOMContentLoaded`);
 }
 const requests = (requested, file) => requested.filter(pathname => pathname === '/' + file).length;
+// paper-search.js fetches the content-addressed index its page preloads, once, starting before DOMContentLoaded.
+async function preloadedPaperIndex(page, label) {
+  const entries = await page.evaluate(() => ({dcl: performance.getEntriesByType('navigation')[0].domContentLoadedEventStart,
+    index: performance.getEntriesByType('resource').filter(entry => /^\/assets\/paper-search-index\.[0-9a-f]{16}\.json$/.test(new URL(entry.name).pathname))
+      .map(entry => ({initiator: entry.initiatorType, start: entry.startTime}))}));
+  assert.equal(entries.index.length, 1, `${label}: one paper search index request`);
+  assert.equal(entries.index[0].initiator, 'link', `${label}: the index response comes from the preload`);
+  assert(entries.index[0].start < entries.dcl, `${label}: the index request starts before DOMContentLoaded`);
+}
 // The complete catalog, with requirement text, is requested once right after the first render.
 const completeCatalog = page => page.waitForFunction(() => performance.getEntriesByType('resource').some(entry => new URL(entry.name).pathname === '/catalog.json'));
 
@@ -186,8 +205,109 @@ async function dataAccess(page, language, viewport) {
   assert.equal(await page.$eval('#data-dialog', dialog => dialog.open), false, `${label}: close button`);
 }
 
+// The homepage shows real rows without scripts; search in place loads its index only on first use.
+async function newHomepage(page, language, viewport, data, requested, javascript = true) {
+  const label = `${language} new homepage ${viewport.name}`;
+  const total = data.catalog.resources.length;
+  assert.equal(await text(page, 'html').then(() => page.evaluate(() => document.documentElement.lang)), language === 'zh' ? 'zh-CN' : 'en');
+  assert.equal(await count(page, 'h1'), 1, `${label}: one heading`);
+  assert.equal(await count(page, '[data-cards] > .card'), 7, `${label}: the drawer opens with its featured rows`);
+  assert.equal(numbers(await text(page, '.hero-stats strong'))[0], total, `${label}: the stated resource count is the catalog's`);
+  assert.equal(await page.$eval('[data-show-all]', link => new URL(link.href).pathname), language === 'zh' ? '/zh/resources/' : '/resources/');
+  assert.equal(await page.$eval('.site-header a[hreflang]', link => link.getAttribute('href')), language === 'zh' ? '/' : '/zh/');
+  await noOverflow(page, label);
+  if (!javascript) return;
+  const index = language === 'zh' ? 'search-index.zh.json' : 'search-index.json';
+  assert.equal(requests(requested, index), 0, `${label}: the search index waits for the first search`);
+  assert.equal(requests(requested, 'catalog-index.json') + requests(requested, 'catalog.json'), 0, `${label}: the collection data is not loaded`);
+  await page.$eval('[data-search-input]', node => node.scrollIntoView({block: 'center', behavior: 'instant'}));
+  await page.type('[data-search-input]', 'ghidra');
+  await page.waitForFunction(() => document.querySelector('[data-cards] > .card') && new URL(location.href).searchParams.get('q') === 'ghidra', {timeout: 15000});
+  assert.equal(requests(requested, index), 1, `${label}: one search index request`);
+  await page.waitForFunction(id => document.querySelector(`[data-cards] > .card[data-id="${id}"]`), {}, 'ghidra');
+  assert.equal(await page.$eval('.site-header a[hreflang]', link => new URL(link.href).search), '?q=ghidra', `${label}: the language link keeps the search`);
+  await noOverflow(page, label + ' with a search');
+  // Arrow keys move the selection; Escape clears; zero results offer other routes rather than a count of nothing.
+  await page.waitForSelector('[data-cards] > .card.is-active');
+  await page.keyboard.press('ArrowDown');
+  await page.keyboard.press('ArrowUp');
+  assert.equal(await count(page, '[data-cards] > .card.is-active'), 1, `${label}: one result is selected`);
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => !document.querySelector('[data-search-input]').value && !new URL(location.href).searchParams.get('q'));
+  assert.equal(await count(page, '[data-cards] > .card.is-active'), 0, `${label}: Escape clears the selection`);
+  await page.type('[data-search-input]', 'zzzzqqqq');
+  // The empty state can appear after the first few letters; wait until it describes the whole query.
+  await page.waitForSelector('[data-cards] > .empty a[href*="sourceq=zzzzqqqq"]');
+  assert.equal(await page.$eval('.drawer-foot', foot => foot.hidden), true, `${label}: no results, no "Show all" footer`);
+  assert(await page.$eval('[data-cards] > .empty', box => !!box.querySelector('[data-empty-clear]') && !!box.querySelector('a[href*="sourceq=zzzzqqqq"]')), `${label}: the empty state offers other routes`);
+  await page.click('[data-empty-clear]');
+  await page.waitForFunction(() => document.querySelector('[data-cards] > .card'));
+  await page.type('[data-search-input]', 'ghidra');
+  await page.waitForSelector('[data-cards] > .card.is-active');
+  await Promise.all([page.waitForNavigation({waitUntil: 'load'}), page.keyboard.press('Enter')]);
+  assert.match(new URL(page.url()).pathname, /\/resources\/[a-z0-9-]+\/$/, `${label}: Enter opens the selected result`);
+}
+
+// Past the hero field the sticky bar offers search; it opens over the page and closes back to the same place.
+async function homepageScrolledSearch(page, language, viewport) {
+  const label = `${language} scrolled search ${viewport.name}`;
+  const phone = viewport.width < 768;
+  const shown = selector => page.$eval(selector, node => getComputedStyle(node).visibility === 'visible' && +getComputedStyle(node).opacity > 0 && node.getBoundingClientRect().width > 0);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForFunction(() => !document.documentElement.classList.contains('is-scrolled'));
+  const before = await page.$eval('.search-trigger', node => node.getBoundingClientRect().left);
+  if (!phone) assert.equal(await page.$eval('.search-trigger', node => getComputedStyle(node).visibility), 'hidden', `${label}: hidden while the hero field shows`);
+  await page.evaluate(() => window.scrollTo(0, 1100));
+  await page.waitForFunction(() => document.documentElement.classList.contains('is-scrolled'));
+  const opener = phone ? '.mbar-search' : '.search-trigger';
+  // The phone bar slides in, so wait until it has arrived before aiming at it.
+  await page.waitForFunction(selector => {
+    const node = document.querySelector(selector);
+    return getComputedStyle(node).visibility === 'visible' && node.getBoundingClientRect().top >= 0;
+  }, {}, opener);
+  assert(await shown(opener), `${label}: search shows once the hero field is gone`);
+  const star = phone ? '.mbar-star' : '.site-header .star-btn';
+  assert(await shown(star) && await page.$eval(star, node => node.getBoundingClientRect().top >= 0), `${label}: the star stays on screen after scrolling`);
+  if (!phone) assert.equal(await page.$eval('.search-trigger', node => node.getBoundingClientRect().left), before, `${label}: the header does not shift`);
+  const place = await page.evaluate(() => window.scrollY);
+  const box = await page.$eval(opener, node => { const rect = node.getBoundingClientRect(); return {x: rect.left + rect.width / 2, y: rect.top + rect.height / 2}; });
+  await page.mouse.click(box.x, box.y);
+  await page.waitForFunction(() => document.querySelector('#palette').open && document.activeElement === document.querySelector('#palette input'));
+  await page.type('#palette input', 'ghidra');
+  await page.waitForSelector('#palette [role="option"]');
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => !document.querySelector('#palette').open);
+  assert.equal(await page.evaluate(selector => document.activeElement === document.querySelector(selector), opener), true, `${label}: Escape returns focus to the button`);
+  assert.equal(await page.evaluate(() => window.scrollY), place, `${label}: closing keeps the scroll position`);
+  await page.keyboard.down('Control');
+  await page.keyboard.press('k');
+  await page.keyboard.up('Control');
+  await page.waitForFunction(() => document.querySelector('#palette').open);
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => !document.querySelector('#palette').open);
+  await page.evaluate(() => document.activeElement.blur());
+  await page.keyboard.press('/');
+  await page.waitForFunction(() => document.querySelector('#palette').open);
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => !document.querySelector('#palette').open);
+  assert.equal(await page.evaluate(() => window.scrollY), place, `${label}: the shortcuts keep the scroll position`);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForFunction(() => !document.documentElement.classList.contains('is-scrolled'));
+  await page.keyboard.press('/');
+  await page.waitForFunction(() => document.activeElement && document.activeElement.matches('[data-search-input]'));
+  assert.equal(await page.$eval('#palette', dialog => dialog.open), false, `${label}: "/" uses the hero field while it shows`);
+}
+
+// An old link into the collection's filters still opens them, now on the explorer.
+async function oldHomepageLink(page, language) {
+  await page.waitForFunction(() => location.pathname.endsWith('/explore/') && document.querySelector('#resource-grid .resource-card'), {timeout: 15000});
+  const url = new URL(page.url());
+  assert.equal(url.pathname, language === 'zh' ? '/zh/explore/' : '/explore/');
+  assert.equal(url.searchParams.get('category'), 'game-analysis', 'the old query survives the redirect');
+}
+
 async function homepage(page, language, viewport, data, requested) {
-  const label = `${language} homepage ${viewport.name}`;
+  const label = `${language} explorer ${viewport.name}`;
   const total = data.catalog.resources.length;
   await loaded(page, '#resource-grid .resource-card', '#error-state');
   await preloadedCatalog(page, label);
@@ -200,6 +320,12 @@ async function homepage(page, language, viewport, data, requested) {
   assert(numbers(await text(page, '#results-status')).includes(total), `${label}: status names all ${total} curated resources`);
   assert(await page.$$eval('#resource-grid .card-title-link', links => links.every(link => link.textContent.trim() && link.href.startsWith('http'))));
   await noOverflow(page, label);
+  // Compact rows name each entry's reviewed targets at every width, beside its category.
+  const targets = await page.$$eval('#resource-grid .resource-card', cards => cards.map(card => {
+    const labels = card.querySelector('.card-meta > .card-targets');
+    return Boolean(labels?.textContent.trim() && labels.getClientRects().length && labels.getBoundingClientRect().right <= innerWidth);
+  }));
+  assert(targets.length && targets.every(Boolean), `${label}: every compact row shows its target labels`);
   await dataAccess(page, language, viewport);
 
   // Search, then clear: a record's own displayed name finds it among a narrower result set.
@@ -221,6 +347,16 @@ async function homepage(page, language, viewport, data, requested) {
   assert.equal(await count(page, '#resource-grid .resource-card'), Math.min(30, total), `${label}: curated Show More`);
   assert.equal(await count(page, '#resource-grid .resource-card > .card-meta .resource-evidence-link'), 0);
   assert.equal(await count(page, '#resource-grid .resource-card details .resource-evidence-link'), Math.min(30, total));
+  // All 30 rows, so entries with descriptions longer than the right column are checked too.
+  if (viewport.width >= 1101) {
+    const gaps = await toggleDrift(page, '#resource-grid .resource-card', '.card-meta', 'details.requirements:not([open]) > summary');
+    assert(gaps.length && gaps.every(gap => gap >= -1 && gap <= 8), `${label}: details toggles sit under the entry links (${gaps.join(', ')} px)`);
+  }
+  // From 1101 px the compact layout stacks full-entry links above the details toggle; they keep 24 px targets (WCAG 2.5.8).
+  if (viewport.width >= 1101) {
+    const entryHeights = await page.$$eval('#resource-grid .resource-entry-link', links => links.map(link => link.getBoundingClientRect().height));
+    assert(entryHeights.length && entryHeights.every(height => height >= 24), `${label}: full-entry link targets are at least 24 px tall`);
+  }
   await press(page, '#resource-grid .resource-card details.requirements summary');
   const expanded = await page.$eval('#resource-grid .resource-card details.requirements', details => ({open: details.open,
     items: details.querySelectorAll('li:not(.requirements-pending)').length, height: details.querySelector('ul').getBoundingClientRect().height}));
@@ -235,6 +371,10 @@ async function homepage(page, language, viewport, data, requested) {
   assert.equal(requests(requested, 'source-browser.json'), 1, `${label}: the Repositories view requests its data once`);
   assert.equal(await hidden(page, '#source-error'), true, `${label}: the repository index loads`);
   assert.equal(await count(page, '#source-results .source-card'), Math.min(24, repositories), `${label}: initial repository cards`);
+  if (viewport.width >= 1101) {
+    const gaps = await toggleDrift(page, '#source-results .source-card', '.source-card-footer', 'details.source-record-details:not([open]) > summary');
+    assert(gaps.length && gaps.every(gap => gap >= -1 && gap <= 8), `${label}: repository details toggles sit under the README links (${gaps.join(', ')} px)`);
+  }
   assert(numbers(await text(page, '#source-status')).includes(repositories), `${label}: status names all ${repositories} repositories`);
   assert.equal(await text(page, '#source-more-count'), '+' + Math.min(24, Math.max(0, repositories - 24)));
   await press(page, '#source-more');
@@ -265,16 +405,12 @@ async function homepage(page, language, viewport, data, requested) {
   await press(page, '#curated-view [data-target="game"]');
   assert(numbers(await text(page, '#results-status'))[0] === games, `${label}: Game filter shows ${games} resources`);
   const other = language === 'zh' ? 'en' : 'zh';
-  const current = await page.$$eval('[data-language-link]', links => links.filter(link => link.getAttribute('aria-current') === 'true').map(link => link.dataset.languageLink));
-  assert.deepEqual(current, [language], `${label}: the current language is marked`);
   // Fragment navigation updates the links too; arrow keys on them never navigate (WCAG 3.2.2).
   await page.evaluate(() => { location.hash = 'catalog'; });
   await page.waitForFunction(link => document.querySelector(`[data-language-link="${link}"]`).getAttribute('href').endsWith('#catalog'), {}, other);
   const before = page.url();
-  for (const link of [language, other]) {
-    await page.focus(`[data-language-link="${link}"]`);
-    for (const key of ['ArrowDown', 'ArrowUp']) await page.keyboard.press(key);
-  }
+  await page.focus(`[data-language-link="${other}"]`);
+  for (const key of ['ArrowDown', 'ArrowUp']) await page.keyboard.press(key);
   assert.equal(page.url(), before, `${label}: arrow keys keep the page`);
   assert.equal(await page.evaluate(() => document.activeElement.dataset.languageLink), other);
   await Promise.all([page.waitForNavigation({waitUntil: 'networkidle0'}), page.keyboard.press('Enter')]);
@@ -284,7 +420,7 @@ async function homepage(page, language, viewport, data, requested) {
   assert.equal(requests(requested, 'catalog-index.json'), 2, `${label}: one catalog-index.json request on each homepage`);
   assert.equal(requests(requested, 'catalog.json'), 2, `${label}: one catalog.json request on each homepage`);
   const switched = new URL(page.url());
-  assert.equal(switched.pathname, other === 'zh' ? '/zh/' : '/');
+  assert.equal(switched.pathname, other === 'zh' ? '/zh/explore/' : '/explore/');
   assert.equal(switched.searchParams.get('target'), 'game', `${label}: the language switch keeps the filter`);
   assert.equal(switched.hash, '#catalog', `${label}: the language switch keeps the fragment`);
   assert.equal(await page.evaluate(() => document.documentElement.lang), other === 'zh' ? 'zh-CN' : 'en');
@@ -295,8 +431,8 @@ async function homepage(page, language, viewport, data, requested) {
 
 // Without scripting, the catalog's inert controls and loading text give way to the static directory links.
 async function withoutScript(page, language, viewport) {
-  const label = `${language} homepage without JavaScript ${viewport.name}`;
-  assert(await page.$eval('[data-open-data]', link => !link.hasAttribute('download') && link.getAttribute('href') === 'https://github.com/reacher-z/Awesome-REA' && link.getClientRects().length > 0), `${label}: repository access works without a dialog`);
+  const label = `${language} explorer without JavaScript ${viewport.name}`;
+  assert(await page.$eval('[data-open-data]', link => !link.hasAttribute('download') && link.getAttribute('href') === 'https://github.com/reacher-z/Awesome-REA'), `${label}: repository access works without a dialog`);
   const view = await page.evaluate(() => {
     const shown = selector => [...document.querySelectorAll(selector)].filter(node => node.getClientRects().length).length;
     const heading = document.querySelector('#catalog-title').getBoundingClientRect(), note = document.querySelector('.noscript-note');
@@ -307,7 +443,7 @@ async function withoutScript(page, language, viewport) {
   assert.equal(view.controls, 0, `${label}: no search field, filters, selects, tabs or status`);
   assert.equal(view.loading, false, `${label}: no loading text`);
   assert(view.gap !== null && view.gap >= 0 && view.gap < 100, `${label}: the static directory links follow the collection heading (gap ${view.gap})`);
-  assert.deepEqual(view.links, [['en', '/', language === 'en' ? 'true' : null], ['zh', '/zh/', language === 'zh' ? 'true' : null]], `${label}: language links`);
+  assert.deepEqual(view.links, language === 'zh' ? [['en', '/', null]] : [['zh', '/zh/', null]], `${label}: language link`);
   await noOverflow(page, label);
 }
 
@@ -320,6 +456,16 @@ async function paperDirectory(page, route, viewport, javascript = true) {
   const metaBeside = await page.$$eval('.paper-card', cards => cards.filter(card =>
     card.querySelector('.paper-meta').getBoundingClientRect().top < card.querySelector('h3').getBoundingClientRect().bottom - 1).length);
   assert.equal(metaBeside, 0, `${label}: every row puts year, venue and status on their own line under the title (${metaBeside} beside it)`);
+  // Sources, publication details and review notes are on the entry page; each row links there with the source count.
+  const footer = await page.$eval(first, card => {
+    const link = card.querySelector('.paper-sources > a'), box = link.getBoundingClientRect();
+    return {id: card.id, href: link.getAttribute('href'), text: link.textContent, shown: box.width > 0 && box.height > 0,
+      inDetails: !!link.closest('details'), lists: card.querySelectorAll('dl, .paper-details ul, .paper-details ol').length};
+  });
+  assert.equal(footer.href, `${route}${footer.id}/#entry-sources`, `${label}: the sources link opens the entry page's source list`);
+  assert(footer.shown && !footer.inDetails, `${label}: the sources link is visible without opening the row`);
+  assert.match(footer.text, route.startsWith('/zh/') ? /^\d+ 个来源 · 复核于\s\d{4}-\d{2}-\d{2}\s→$/ : /^\d+ sources? · checked\s\d{4}-\d{2}-\d{2}\s→$/, `${label}: sources link text`);
+  assert.equal(footer.lists, 0, `${label}: no source or publication-detail lists in the row`);
   assert.equal(await page.$eval(first + ' .paper-details', node => node.open), false);
   await press(page, first + ' .paper-details > summary');
   const expanded = await page.$eval(first + ' .paper-details', details => ({open: details.open,
@@ -331,6 +477,16 @@ async function paperDirectory(page, route, viewport, javascript = true) {
   await noOverflow(page, label + ' expanded evidence');
   await press(page, first + ' .paper-details > summary');
   if (javascript) {
+    await preloadedPaperIndex(page, label);
+    // Typing a paper's ID finds that paper alone, through the fetched index.
+    await press(page, '#paper-query');
+    await page.type('#paper-query', footer.id);
+    await page.waitForFunction(() => document.querySelectorAll('.paper-card:not([hidden])').length === 1);
+    assert.deepEqual(await page.$$eval('.paper-card:not([hidden])', cards => cards.map(card => card.id)), [footer.id], `${label}: typed search`);
+    assert.equal(numbers(await text(page, '#paper-results'))[0], 1);
+    assert.equal(new URL(page.url()).searchParams.get('q'), footer.id);
+    await press(page, '#paper-clear');
+    assert.equal(await page.$$eval('.paper-card[hidden]', cards => cards.length), 0, `${label}: clearing shows every paper`);
     assert.equal(await page.$eval('#paper-more-filters', node => node.open), false);
     await press(page, '#paper-more-filters > summary');
     await page.select('#paper-layout', 'cards');
@@ -345,7 +501,7 @@ async function paperDirectory(page, route, viewport, javascript = true) {
     const visibleYears = await page.$$eval('.paper-card:not([hidden]) .paper-year', nodes => nodes.map(node => node.textContent));
     assert(visibleYears.length > 0 && visibleYears.every(year => year === selectedYear));
     assert.equal(numbers(await text(page, '#paper-results'))[0], visibleYears.length);
-    const language = new URL(await page.$eval('.papers-language', link => link.href));
+    const language = new URL(await page.$eval('.site-header a[hreflang]', link => link.href));
     assert.equal(language.searchParams.get('year'), selectedYear);
     await press(page, '#paper-clear');
     await press(page, '#paper-more-filters > summary');
@@ -354,7 +510,7 @@ async function paperDirectory(page, route, viewport, javascript = true) {
   if (viewport.name === 'desktop') await midWidthPaperRows(page, label, viewport);
 }
 
-// Between 701 and 1100 px each row keeps its links and the Scope & sources toggle on one line, and an opened panel spans the row.
+// Between 701 and 1100 px each row keeps its links and the Scope & authors toggle on one line, and an opened panel spans the row.
 async function midWidthPaperRows(page, label, viewport) {
   await page.setViewport({width: 1024, height: viewport.height});
   const rows = await page.$$eval('.paper-card:not([hidden])', cards => cards.map(card => {
@@ -363,7 +519,7 @@ async function midWidthPaperRows(page, label, viewport) {
     const centre = (toggle.top + toggle.bottom) / 2;
     return centre > links.top && centre < links.bottom;
   }));
-  assert(rows.length > 0 && rows.every(Boolean), `${label} at 1024px: ${rows.filter(row => !row).length} rows put the links and the Scope & sources toggle on separate lines`);
+  assert(rows.length > 0 && rows.every(Boolean), `${label} at 1024px: ${rows.filter(row => !row).length} rows put the links and the Scope & authors toggle on separate lines`);
   const panel = await page.$eval('.paper-card', card => {
     const details = card.querySelector('.paper-details');
     details.open = true;
@@ -376,11 +532,38 @@ async function midWidthPaperRows(page, label, viewport) {
   await page.setViewport({width: viewport.width, height: viewport.height});
 }
 
+// Each target section's count line adds up to the cards it heads: tagged, minus filed elsewhere, plus listed here
+// without the tag. The line wraps inside the viewport.
+async function sectionTargetCounts(page, label) {
+  const lines = await page.$$eval('.section-target-count', nodes => nodes.map(line => ({
+    target: line.dataset.sectionTarget,
+    cards: line.closest('section').querySelectorAll('[data-resource-id]').length,
+    stated: ['targetTagged', 'targetElsewhere', 'targetUntaggedHere'].map(key => Number(line.dataset[key])),
+    right: line.getBoundingClientRect().right,
+  })));
+  assert(lines.length > 0, `${label}: target sections state their tag counts`);
+  const width = await page.evaluate(() => document.documentElement.clientWidth);
+  for (const {target, cards, stated: [tagged, elsewhere, untagged], right} of lines) {
+    assert.equal(cards, tagged - elsewhere + untagged, `${label}: ${target} section holds ${cards} cards, but its line states ${tagged} - ${elsewhere} + ${untagged}`);
+    assert(right <= width + 1, `${label}: the ${target} count line extends past the viewport (${right}px of ${width}px)`);
+  }
+}
+
 async function staticPage(page, route, viewport) {
   const label = `${route} ${viewport.name}`;
   assert((await page.$eval('h1', heading => heading.textContent.trim())).length > 0, `${label}: visible heading`);
   await noOverflow(page, label);
   if (route === '/papers/' || route === '/zh/papers/') await paperDirectory(page, route, viewport);
+  if (/^(\/zh)?\/(resources|cases)\/$/.test(route)) await sectionTargetCounts(page, label);
+  if (route === '/cases/' || route === '/zh/cases/') {
+    const review = await page.$eval('#review-method', section => ({
+      title: section.querySelector('h2').textContent,
+      dimensions: [...section.querySelectorAll('dt')].map(node => node.textContent),
+      visible: section.getClientRects().length > 0 && !section.closest('details'),
+    }));
+    assert(review.visible && review.title.includes('Beta'), `${label}: review method is visible before opening disclosures`);
+    assert.equal(review.dimensions.length, 3, `${label}: separate scope, artifacts and evidence`);
+  }
 }
 
 (async () => {
@@ -388,7 +571,7 @@ async function staticPage(page, route, viewport) {
   const read = file => JSON.parse(fs.readFileSync(path.join(dist, file), 'utf8'));
   const data = {catalog: read('catalog.json'), browser: read('source-browser.json')};
   const category = fs.readdirSync(path.join(dist, 'zh/browse')).filter(name => fs.statSync(path.join(dist, 'zh/browse', name)).isDirectory()).sort()[0];
-  const routes = ['/papers/', '/zh/papers/', '/resources/', '/zh/resources/', '/cases/', '/about/', '/zh/about/', '/contribute/', '/zh/contribute/',
+  const routes = ['/papers/', '/zh/papers/', '/resources/', '/zh/resources/', '/cases/', '/zh/cases/', '/about/', '/zh/about/', '/contribute/', '/zh/contribute/',
     '/browse/', `/zh/browse/${category}/`, `/resources/${data.catalog.resources[0].id}/`];
   fs.rmSync(screenshots, {recursive: true, force: true}); fs.mkdirSync(screenshots, {recursive: true});
   const site = server(headerRules(fs.readFileSync(path.join(dist, '_headers'), 'utf8')));
@@ -406,16 +589,28 @@ async function staticPage(page, route, viewport) {
       const context = await browser.createBrowserContext();
       try {
       for (const language of ['en', 'zh']) {
-        await check(`${language} homepage at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+        await check(`${language} new homepage at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+          `${language} new homepage ${viewport.name}`, (page, requested) => newHomepage(page, language, viewport, data, requested)));
+        await check(`${language} scrolled homepage search at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+          `${language} scrolled homepage search ${viewport.name}`, page => homepageScrolledSearch(page, language, viewport)));
+        await check(`${language} new homepage without JavaScript at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+          `${language} new homepage ${viewport.name} without JavaScript`, (page, requested) => newHomepage(page, language, viewport, data, requested, false), {javascript: false}));
+        await check(`${language} old homepage link at ${viewport.width}px`, () => visit(context, origin, (language === 'zh' ? '/zh/' : '/') + '?category=game-analysis', viewport,
+          `${language} old homepage link ${viewport.name}`, page => oldHomepageLink(page, language)));
+        await check(`${language} explorer at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/explore/' : '/explore/', viewport,
           `${language} homepage ${viewport.name} switched to ${language === 'zh' ? 'en' : 'zh'}`, (page, requested) => homepage(page, language, viewport, data, requested)));
       }
       for (const language of ['en', 'zh']) {
-        await check(`${language} homepage without JavaScript at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+        await check(`${language} explorer without JavaScript at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/explore/' : '/explore/', viewport,
           `${language} homepage ${viewport.name} without JavaScript`, page => withoutScript(page, language, viewport), {javascript: false}));
       }
       for (const route of ['/papers/', '/zh/papers/']) {
         await check(`${route} without JavaScript at ${viewport.width}px`, () => visit(context, origin, route, viewport,
           `${route} ${viewport.name} without JavaScript`, page => paperDirectory(page, route, viewport, false), {javascript: false}));
+      }
+      for (const route of ['/cases/', '/zh/cases/']) {
+        await check(`${route} without JavaScript at ${viewport.width}px`, () => visit(context, origin, route, viewport,
+          `${route} ${viewport.name} without JavaScript`, page => staticPage(page, route, viewport), {javascript: false}));
       }
       for (const route of routes) {
         await check(`${route} at ${viewport.width}px`, () => visit(context, origin, route, viewport, `${route} ${viewport.name}`, page => staticPage(page, route, viewport)));
