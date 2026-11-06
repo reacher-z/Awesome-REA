@@ -1783,7 +1783,8 @@
       "prerequisites",
       "prerequisites",
       "limits"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "godot-re-tools",
@@ -2319,7 +2320,8 @@
       "prerequisites",
       "prerequisites",
       "testing"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "category": "reconstruction-cases",
@@ -2789,7 +2791,8 @@
       "https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/src/viewer/wire.rs",
       "https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/src/viewer/tests.rs",
       "https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/.github/workflows/ci.yml"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "perfect-dark-matching-decomp-case",
@@ -2837,7 +2840,8 @@
       "prerequisites",
       "testing",
       "license"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "tclimate-cloud-controls-case",
@@ -2884,7 +2888,8 @@
       "https://github.com/umarz317/TCLimate/blob/2a33c2013dbf3f297238131ca9eb6e287b2beb67/LICENSE",
       "https://github.com/umarz317/TCLimate/blob/2a33c2013dbf3f297238131ca9eb6e287b2beb67/THIRD_PARTY_NOTICES.md",
       "https://github.com/nemesa/ha-tcl-home-unofficial-integration/blob/fdba4d7a0b8213f4f68a74b4ce0f932343802b6b/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "universal-modder-agent-toolkit",
@@ -2963,7 +2968,8 @@
       "https://x.com/pk_iv/status/2005694082627297735",
       "https://x.com/pk_iv/status/2005694088038015106",
       "https://x.com/pk_iv/status/2005694096791523692"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "visor-ray-ban-meta-client-case",
@@ -3011,7 +3017,8 @@
       "https://github.com/macedonga/visor/wiki/Protocol-overview/7358c5a1c39a6354d2170f89133b184f7f2b82e7",
       "https://github.com/macedonga/visor/wiki/Meta-login-and-ownership/7358c5a1c39a6354d2170f89133b184f7f2b82e7",
       "https://github.com/macedonga/visor/wiki/Open-questions/7358c5a1c39a6354d2170f89133b184f7f2b82e7"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "sms-pc-port-case",
@@ -3055,7 +3062,8 @@
       "https://github.com/chasem-dev/sms-english/blob/967436b8c623834d38a57d34923775f45eca8861/config/GMSE01/README.md",
       "https://github.com/chasem-dev/sms-english/blob/967436b8c623834d38a57d34923775f45eca8861/AGENTS.md",
       "https://github.com/chasem-dev/sms-english/blob/967436b8c623834d38a57d34923775f45eca8861/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "zelda-mm-decomp-case",
@@ -3095,7 +3103,8 @@
       "https://github.com/zeldaret/mm/blob/bf6bd9d0d3a90fe2f8960e034fbfd328e8bdef22/.github/workflows/ci.yml",
       "https://zelda.deco.mp/assets/csv/progress-mm-shield.json",
       "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "wine-uwp-store-apps-case",
@@ -3141,7 +3150,8 @@
       "https://github.com/designgears/shapr3d-linux/blob/58d91731a3cef9f9279a9f277f0f6d87e3ec7e41/installer/Cargo.toml",
       "https://x.com/DesignGears/status/2109530620321788301",
       "https://x.com/DesignGears/status/2109532140907921698"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "dlssnr-amd-neural-rendering-case",
@@ -3182,7 +3192,8 @@
       "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/THIRD_PARTY.md",
       "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/CLAUDE.md",
       "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "botw-decomp-case",
@@ -3227,7 +3238,8 @@
       "https://github.com/open-ead/botw-decomp-www/blob/bafa2192811908bdba7c558dca0e1584900d9866/docs/contribute/how-to-decompile.mdx",
       "https://github.com/open-ead/nx-decomp-tools/blob/e0eae2f7f403befec6b60cb615f6680a6937d0c9/viking/src/functions.rs",
       "https://botw.link/progress"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "skyward-sword-decomp-case",
@@ -3269,7 +3281,8 @@
       "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/.github/workflows/build.yml",
       "https://decomp.dev/zeldaret/ss",
       "https://web.archive.org/web/20261020041301/https://decomp.dev/zeldaret/ss/SOUE01/d3d8e3cbf3d353b2231f06690965cac5366e28a1.json"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "2ship2harkinian-mm-port-case",
@@ -3311,7 +3324,8 @@
       "https://github.com/2ship2harkinian/2ship2harkinian/releases/tag/5.0.1",
       "https://github.com/Kenix3/libultraship/blob/7f9b86a593c526fc42261d7fe197100cecf57178/README.md",
       "https://github.com/Kenix3/libultraship/blob/7f9b86a593c526fc42261d7fe197100cecf57178/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "ship-of-harkinian-oot-port-case",
@@ -3353,7 +3367,8 @@
       "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/docs/CREDITS.md",
       "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/.github/workflows/generate-builds.yml",
       "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/soh/soh/Enhancements/randomizer/3drando/LICENSE.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "zelda-tmc-decomp-case",
@@ -3394,7 +3409,8 @@
       "https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/Jenkinsfile",
       "https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/progress.py",
       "https://zelda.deco.mp/assets/csv/progress-tmc-matching.csv"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "ocarina-of-time-decomp-case",
@@ -3435,7 +3451,8 @@
       "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/.github/workflows/ci.yml",
       "https://github.com/zeldaret/oot/actions/runs/38614247271",
       "https://zelda.deco.mp/games/oot"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "baocut-design-canvas-case",
@@ -3482,7 +3499,8 @@
       "https://github.com/JimLiu/baocut/blob/7aa049e82e1367da013b7aba80f0b79033fa04ad/LICENSE",
       "https://github.com/JimLiu/baocut/blob/7aa049e82e1367da013b7aba80f0b79033fa04ad/THIRD_PARTY_NOTICES.md",
       "https://github.com/JimLiu/baocut/commit/7aa049e82e1367da013b7aba80f0b79033fa04ad"
-    ]
+    ],
+    "class": "website"
   },
   {
     "id": "project-arwing-star-fox-recomp-case",
@@ -3520,7 +3538,8 @@
       "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/tools/build.py",
       "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/tools/recomp.py",
       "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/.github/workflows/build.yml"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "project-arwing-2-star-fox-2-recomp-case",
@@ -3556,7 +3575,8 @@
     "additional_evidence_urls": [
       "https://github.com/carlosrmz009/arwing2/blob/15af0bfd85d00a79e8913094f7242e1b938f093f/LICENSE",
       "https://github.com/carlosrmz009/arwing2/blob/15af0bfd85d00a79e8913094f7242e1b938f093f/tools/build.py"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "little-planet-sonic-cd-recomp-case",
@@ -3594,7 +3614,8 @@
       "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/tools/decomp.sh",
       "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/tests/rc_check.sh",
       "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/.github/workflows/build.yml"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "vf2-decomp-differential-recovery-case",
@@ -3635,7 +3656,8 @@
       "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/AGENTS.md",
       "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/config/vf2_v22_roms.csv",
       "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/.github/workflows/ci.yml"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "z2rs-zelda2-reconstruction-case",
@@ -3678,7 +3700,8 @@
       "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/LICENSE",
       "https://github.com/troyedwardsjr/z2rs/releases/tag/v0.5.2",
       "https://z2rs.com/"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "sm64ex-pc-port-case",
@@ -3721,7 +3744,8 @@
       "https://github.com/sm64pc/sm64ex/wiki/Build-options/f9aff0b0db9cd4ec1c40ac7a2bc42af969edb42f",
       "https://github.com/sm64pc/sm64ex/wiki/Known-issues/94d262d19ea9e16990d955de28560df563dc5372",
       "https://github.com/sm64-port/sm64-port/blob/2b17d081c9798b31b91dc71f37994b0da28cffc9/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "ghostship-sm64-port-case",
@@ -3762,7 +3786,8 @@
       "https://github.com/HarbourMasters/Ghostship/tree/40eef13823a954a466574dc78e73187a17a2dd42/src",
       "https://github.com/HarbourMasters/Ghostship/tree/40eef13823a954a466574dc78e73187a17a2dd42/.github/workflows",
       "https://github.com/HarbourMasters/Ghostship/releases/tag/3.0.0"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "sms-matching-decomp-case",
@@ -3805,7 +3830,8 @@
       "https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/LICENSE",
       "https://decomp.dev/doldecomp/sms",
       "https://web.archive.org/web/20261020041309/https://decomp.dev/doldecomp/sms/GMSJ01/b2350a119b0e113e6cebc389fda9af00328ee85e.json"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "dusklight-twilight-princess-port-case",
@@ -3846,7 +3872,8 @@
       "https://github.com/TwilitRealm/dusklight/tree/34a144a493b7f57adeb4034d382317c826eb5c8d/platforms",
       "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/.github/workflows/build.yml",
       "https://github.com/encounter/aurora/blob/3227d76c60e1e782ca576610bce61c9e7744d8be/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "metaforce-metroid-prime-case",
@@ -3889,7 +3916,8 @@
       "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/LICENSE",
       "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/LICENSE.decomp",
       "https://github.com/encounter/aurora/blob/40cf48fce6ce85366608596bae018c6188f2b2e7/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "sms-english-gmse01-decomp-case",
@@ -3930,7 +3958,8 @@
       "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/DECOMPILATION_PLAN.md",
       "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/.github/workflows/build.yml",
       "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "dk64-recompiled-case",
@@ -3971,7 +4000,8 @@
       "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/COPYING",
       "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/CONTRIBUTING.md",
       "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/releases/tag/v1.0.3"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "twilight-princess-decomp-case",
@@ -4017,7 +4047,8 @@
       "https://web.archive.org/web/20261020041412/https://decomp.dev/zeldaret/tp/GZ2J01/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0.json",
       "https://web.archive.org/web/20261020041419/https://decomp.dev/zeldaret/tp/ShieldD/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0.json",
       "https://web.archive.org/web/20261020042930/https://decomp.dev/zeldaret/tp/RZDE01_00/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0.json"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "sotn-matching-decomp-case",
@@ -4066,7 +4097,8 @@
       "prerequisites",
       "testing",
       "license"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "lego-island-portable-case",
@@ -4108,7 +4140,8 @@
       "https://github.com/isledecomp/isle-portable/blob/d0bf04fe605d7ec2a291e65df08bf26712452379/installer/index.html",
       "https://github.com/isledecomp/isle-portable/blob/d0bf04fe605d7ec2a291e65df08bf26712452379/docs/README.md",
       "https://github.com/isledecomp/isle-portable/blob/d0bf04fe605d7ec2a291e65df08bf26712452379/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "crash-bandicoot-c1-port-case",
@@ -4146,7 +4179,8 @@
       "https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/doc/outline.md",
       "https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/src/main.c",
       "https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/Makefile"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "metroid-prime-port-case",
@@ -4185,7 +4219,8 @@
       "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/docs/NATIVE_PORT.md",
       "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/.github/workflows/native-linux.yml",
       "https://github.com/Odrannnn/MetroidPrimePort/releases/tag/v0.29.0"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "wind-waker-decomp-case",
@@ -4231,7 +4266,8 @@
       "https://web.archive.org/web/20261020041536/https://decomp.dev/zeldaret/tww/GZLJ01/8b93b372dc8e841f12ddfb7e0215626f62b05417.json",
       "https://web.archive.org/web/20261020041545/https://decomp.dev/zeldaret/tww/GZLP01/8b93b372dc8e841f12ddfb7e0215626f62b05417.json",
       "https://web.archive.org/web/20261020041613/https://decomp.dev/zeldaret/tww/D44J01/8b93b372dc8e841f12ddfb7e0215626f62b05417.json"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "sonic-mania-decomp-case",
@@ -4269,7 +4305,8 @@
       "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/.gitmodules",
       "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/.github/workflows/build.yml",
       "https://github.com/RSDKModding/Sonic-Mania-Decompilation/releases/tag/v1.1.1"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "medievil-recomp-case",
@@ -4312,7 +4349,8 @@
       "https://github.com/BlackLabelHQ/MediEvilRecomp/releases/tag/v0.2b",
       "https://github.com/BlackLabelHQ/RecompOne/blob/1272fb80b1638efdae8f281ff6c6e90f93866ae6/README.md",
       "https://github.com/BlackLabelHQ/RecompOne/blob/1272fb80b1638efdae8f281ff6c6e90f93866ae6/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "crash2recomp-case",
@@ -4353,7 +4391,8 @@
       "https://github.com/Zumbo06/Crash2Recomp/tree/48036cf3b49dfe4343e5c093d1df8a7b12617f81/tuning/patches",
       "https://github.com/Zumbo06/Crash2Recomp/tree/48036cf3b49dfe4343e5c093d1df8a7b12617f81/tuning/renderer_parity",
       "https://github.com/Zumbo06/Crash2Recomp/releases/tag/v0.9.6"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "petari-smg-decomp-case",
@@ -4398,7 +4437,8 @@
       "https://web.archive.org/web/20261020041653/https://decomp.dev/SMGCommunity/Petari/RMGJ01/86ae7a3d3241adf07d5d3f9949e0462cccc583c1.json",
       "https://web.archive.org/web/20261020041719/https://decomp.dev/SMGCommunity/Petari/RMGE01/86ae7a3d3241adf07d5d3f9949e0462cccc583c1.json",
       "https://web.archive.org/web/20261020041726/https://decomp.dev/SMGCommunity/Petari/RMGP01/86ae7a3d3241adf07d5d3f9949e0462cccc583c1.json"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "wind-waker-hd-recomp-case",
@@ -4437,7 +4477,8 @@
       "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/tools/verify/README.md",
       "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/LICENSE",
       "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/.gitmodules"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "cv64-recompiled-case",
@@ -4482,7 +4523,8 @@
       "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/.github/workflows/validate.yml",
       "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/COPYING",
       "https://github.com/RevoSucks/CV64Recomp/releases/tag/v0.5.0"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "rsdkv5-engine-decomp-case",
@@ -4522,7 +4564,8 @@
       "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/RSDKv5/RSDK/Core/RetroEngine.cpp",
       "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/.github/workflows/build.yml",
       "https://github.com/RSDKModding/RSDKv5-Decompilation/releases/tag/v1.1.1"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "c2c-crash2-hybrid-recompilation-case",
@@ -4559,7 +4602,8 @@
       "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/srcemu/gte.c",
       "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/Makefile",
       "https://github.com/ughman/c2c/tree/2e9535fb0c59e37bf42316cb768be80c5e8073d4/srczz"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "medievil-decomp-case",
@@ -4601,7 +4645,8 @@
       "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/.github/workflows/ci.yaml",
       "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/src/game/800.c",
       "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "cbfd-recompiled-case",
@@ -4641,7 +4686,8 @@
       "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/CONTRIBUTING.md",
       "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/LICENSE",
       "https://github.com/sciaschi/CBFD-Recompiled/releases/tag/V0.1.6"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "projectcane-sly1-pc-port-case",
@@ -4681,7 +4727,8 @@
       "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/File%20Extractor%20GUI/Services/Sly1IsoDetector.cs",
       "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/File%20Extractor%20GUI/File%20Extractor%20GUI.csproj",
       "https://github.com/theclub654/ProjectCane/releases/tag/v0.4.1-beta.1"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "firefighter-rust-port-case",
@@ -4722,7 +4769,8 @@
       "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/Cargo.toml",
       "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/src/main.rs",
       "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/COPYING"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "flipper-telink-tuya-remote-firmware-case",
@@ -4764,7 +4812,8 @@
       "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/tools/tc32dis.py",
       "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/custom_fw/zg226z/LICENSE.BZdevice",
       "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/custom_fw/zg226z/SDK/LICENSE.txt"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "khdays-native-pc-port-case",
@@ -4806,7 +4855,8 @@
       "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/installer/README.md",
       "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/.github/workflows/build.yml",
       "https://github.com/Yokimitsuro/khdays-decomp/blob/a2b0478b87e3102732094c34f6ca89595f98ab93/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "ico-pc-port-case",
@@ -4849,7 +4899,8 @@
       "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/LICENSE",
       "https://github.com/nathanialf/ico-pc/releases/tag/v0.7.10",
       "https://github.com/nathanialf/ico/blob/3496140f784fdf2d0b10e30b3b3024046c586ce1/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "sly1-matching-decomp-case",
@@ -4893,7 +4944,8 @@
       "https://decomp.dev/TheOnlyZac/sly1",
       "https://web.archive.org/web/20261020041838/https://decomp.dev/TheOnlyZac/sly1/SCUS_971.98/ea5e2d77ac2a083df1efeafcee178f895943b13d.json",
       "https://theonlyzac.github.io/sly1"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "pokemon-emerald-decomp-case",
@@ -4933,7 +4985,8 @@
       "https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/.github/workflows/build.yml",
       "https://github.com/pret/pokeemerald/tree/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/tools",
       "https://github.com/pret/agbcc/blob/da598c1d918402c42c0c0d7128ba14567f3175e9/gcc/COPYING"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "paper-mario-matching-decomp-case",
@@ -4983,7 +5036,8 @@
       "https://papermar.io/reports/progress_jp.csv",
       "https://papermar.io/reports/progress_pal.csv",
       "https://papermar.io/reports/progress_ique.csv"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "tenkaichi3-pc-port-case",
@@ -5026,7 +5080,8 @@
       "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/LICENSE-MIT",
       "https://github.com/z3xox/BT3-Decompiled/blob/95b950367364137130758ef82a218e607a54b703/README.md",
       "https://github.com/z3xox/BT3-Decompiled/blob/95b950367364137130758ef82a218e607a54b703/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "d2r-mobile-switch-rehost-case",
@@ -5066,7 +5121,8 @@
       "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/docs/DERIVED.md",
       "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/docs/DEPENDENCIES.md",
       "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "rac1-matching-decomp-case",
@@ -5112,7 +5168,8 @@
       "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/LICENSE",
       "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/THIRD_PARTY_NOTICES.md",
       "https://bytematch.dev/OpenRAC/rac1-decomp"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "banjo-recompiled-case",
@@ -5153,7 +5210,8 @@
       "https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/COPYING",
       "https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/CONTRIBUTING.md",
       "https://github.com/BanjoRecomp/BanjoRecomp/releases/tag/v1.0.2"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "pokemon-firered-leafgreen-decomp-case",
@@ -5201,7 +5259,8 @@
       "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/docs/bugs_and_glitches.md",
       "https://github.com/pret/pokefirered/tree/037335f4c725d7c9aecdac87066f2002b4bd7e14/tools",
       "https://github.com/pret/agbcc/blob/da598c1d918402c42c0c0d7128ba14567f3175e9/gcc/COPYING"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "paperboat-paper-mario-port-case",
@@ -5243,7 +5302,8 @@
       "https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/.github/workflows/build.yml",
       "https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/LICENSE",
       "https://github.com/HarbourMasters/PaperBoat/releases/tag/1.0.3"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "halo2-matching-decomp-case",
@@ -5285,7 +5345,8 @@
       "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/.github/workflows/python-tests.yml",
       "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/.github/workflows/decomp-dev.yml",
       "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "diabloweb-devilution-wasm-port-case",
@@ -5327,7 +5388,8 @@
       "https://github.com/d07RiV/devilution/blob/798b5122731ae4b5e0c91348e5c44cf79354a94e/build.js",
       "https://github.com/diasurgical/devilution/blob/9f01757243412bb154d02d9af65c804159e6e0ea/README.md",
       "https://github.com/diasurgical/devilution/blob/9f01757243412bb154d02d9af65c804159e6e0ea/LICENSE.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "pokered-disassembly-case",
@@ -5368,7 +5430,8 @@
       "https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/.github/workflows/main.yml",
       "https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/.github/checkdiff.sh",
       "https://github.com/pret/pokered/tree/af519899719f0754965776faac0e836a3b906e6d/vc"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "lighthouse-banjo-kazooie-port-case",
@@ -5410,7 +5473,8 @@
       "https://github.com/Kenix3/libultraship/blob/62e973aeb4a53ad4d22bb91e2d9373ecdfcd246c/README.md",
       "https://github.com/HarbourMasters/Torch/blob/72960ca16f4723f96aaf4037b76072c230af8c11/README.md",
       "https://github.com/HarbourMasters/Lighthouse/releases/tag/1.1.0"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "lost-odyssey-recomp-case",
@@ -5454,7 +5518,8 @@
       "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/CMakeLists.txt",
       "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/LICENSE",
       "https://github.com/freefrank/LostOdysseyRecomp/releases/tag/v1.0.4"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "melee-matching-decomp-case",
@@ -5496,7 +5561,8 @@
       "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/CMakeLists.txt",
       "https://decomp.dev/doldecomp/melee",
       "https://web.archive.org/web/20261020041847/https://decomp.dev/doldecomp/melee/GALE01/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4.json"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "pokecrystal-disassembly-case",
@@ -5538,7 +5604,8 @@
       "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/.github/workflows/main.yml",
       "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/docs/vc_patch.md",
       "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/docs/bugs_and_glitches.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "pokemon-heartgold-soulsilver-disassembly-case",
@@ -5583,7 +5650,8 @@
       "https://github.com/pret/pokeheartgold/tree/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/subprojects",
       "https://github.com/pret/pokeheartgold/tree/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/files",
       "https://github.com/mid-kid/metroskrew/releases/tag/0.1.3"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "fftarecomp-gba-static-recomp-case",
@@ -5624,7 +5692,8 @@
       "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/Licenses/CREDITS.md",
       "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/Licenses/LICENSE",
       "https://github.com/JRickey/gba-recomp/blob/de4edf59b872d887046d6a3b005e2df551b6d44c/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "symphonyrecomp-case",
@@ -5663,7 +5732,8 @@
       "https://github.com/BlackLabelHQ/RecompOne/blob/3c34e6ea830152711e4a1ae0d0b2df523cbe8fdb/README.md",
       "https://github.com/BlackLabelHQ/RecompOne/blob/3c34e6ea830152711e4a1ae0d0b2df523cbe8fdb/LICENSE",
       "https://github.com/BlackLabelHQ/SymphonyRecomp/releases/tag/v0.5.1b"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "two-towers-recompiled-case",
@@ -5705,7 +5775,8 @@
       "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/xboxrecomp-0.12.0/NOTICE",
       "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/xboxrecomp-0.12.0/LICENSE",
       "https://github.com/Gumpolas/TooTawersRecomp/releases/tag/1.9.2"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "melee-unlocked-case",
@@ -5748,7 +5819,8 @@
       "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/LICENSE",
       "https://github.com/Hero88go/melee-unlocked/releases/tag/v0.8.99",
       "https://github.com/doldecomp/melee/tree/039c4bf4ca33338c35d21901ad19b7ede19d19ad"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "pokeruby-decomp-case",
@@ -5790,7 +5862,8 @@
       "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/sapphire.sha1",
       "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/.github/workflows/build.yml",
       "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/src/money.c"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "vandal-hearts-pc-port-case",
@@ -5831,7 +5904,8 @@
       "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/CHANGELOG.md",
       "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/LICENSE",
       "https://github.com/shao113/vh/tree/a9e53de9484d4b42b023411617fe6d44acf592bc"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "pokemon-platinum-decomp-case",
@@ -5876,7 +5950,8 @@
       "https://github.com/pret/pokeplatinum/tree/1dc13dcea40c04ab53f1f607de46023dc409ef20/subprojects",
       "https://github.com/pret/pokeplatinum/tree/1dc13dcea40c04ab53f1f607de46023dc409ef20/res",
       "https://github.com/mid-kid/metroskrew/releases/tag/0.1.3"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "saints-reborn-recomp-case",
@@ -5919,7 +5994,8 @@
       "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/LICENSE",
       "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/NOTICE",
       "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/THIRD_PARTY_NOTICES.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "pokemon-platinum-pc-port-case",
@@ -5964,7 +6040,8 @@
       "https://github.com/cybervisi0n/pokeplatinum/releases/tag/v0.1.12",
       "https://github.com/cybervisi0n/libntr/blob/1555d911ac80c0190ac1c321f99f1323de8b3c09/README.md",
       "https://github.com/cybervisi0n/libntr/blob/1555d911ac80c0190ac1c321f99f1323de8b3c09/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "mikupan-fatal-frame-port-case",
@@ -6005,7 +6082,8 @@
       "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/LICENSE",
       "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/README.md",
       "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "starfox64-recompiled-case",
@@ -6047,7 +6125,8 @@
       "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/DOCS/fox_lore.md",
       "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/COPYING",
       "https://github.com/sonicdcer/Starfox64Recomp/releases/tag/1.0.3"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "syphon-filter-omega-strain-decomp-case",
@@ -6090,7 +6169,8 @@
       "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/requirements.txt",
       "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/docs/data_gen.md",
       "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/.github/workflows/report.yml"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "animal-crossing-pc-port-case",
@@ -6130,7 +6210,8 @@
       "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/pc/CMakeLists.txt",
       "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/LICENSE",
       "https://github.com/flyngmt/ACGC-PC-Port/releases/tag/v0.9.3-playtest"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "goldeneye-007-matching-decomp-case",
@@ -6175,7 +6256,8 @@
       "prerequisites",
       "testing",
       "license"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "starship-sf64-pc-port-case",
@@ -6217,7 +6299,8 @@
       "https://github.com/HarbourMasters/Starship/blob/3322643f0bbf80d2f8f7e1c0d2c4c578515f6c90/LICENSE.md",
       "https://github.com/HarbourMasters/Starship/releases/tag/v2.0.0",
       "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/DOCS/fox_lore.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "ctr-turbocharged-port-case",
@@ -6259,7 +6342,8 @@
       "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/docs/DATA_SECTIONS.md",
       "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/assets/fonts/README.md",
       "https://github.com/CTR-tools/ctr-native/blob/4682773232715bfd3f39b8c7066ab12e1c37c23e/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "the-darkness-recomp-case",
@@ -6302,7 +6386,8 @@
       "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/RENDERING.md",
       "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/STEAM_DECK.md",
       "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/COPYING"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "mariokart64-recompiled-case",
@@ -6344,7 +6429,8 @@
       "https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/.github/workflows/validate.yml",
       "https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/COPYING",
       "https://github.com/sonicdcer/MarioKart64Recomp/releases/tag/v0.9.2"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "animal-crossing-gamecube-decomp-case",
@@ -6387,7 +6473,8 @@
       "https://decomp.dev/ACreTeam/ac-decomp",
       "https://web.archive.org/web/20261020041854/https://decomp.dev/ACreTeam/ac-decomp/GAFE01_00/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c.json",
       "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "kingdom-hearts-days-matching-decomp-case",
@@ -6430,7 +6517,8 @@
       "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/LICENSE",
       "https://decomp.dev/Yokimitsuro/khdays-decomp",
       "https://web.archive.org/web/20261020041901/https://decomp.dev/Yokimitsuro/khdays-decomp/YKGP/261a89eaa8f65dd566ae0828b0b57c85c847a6ee.json"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "rtl-433",
@@ -6535,7 +6623,8 @@
       "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/decomp/tools/check_all.mjs",
       "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/docs/coverage-report.md",
       "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/platform/pc/dist/THIRD-PARTY-NOTICES.txt"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "pt-pc-port-case",
@@ -6574,7 +6663,8 @@
       "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/docs/installer.md",
       "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/assets/fonts/README.md",
       "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/.github/workflows/macos.yml"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "spaghettikart-mk64-port-case",
@@ -6617,7 +6707,8 @@
       "https://github.com/Kenix3/libultraship/blob/60c9bb713ed0850da66559fc17c556d03da649cd/README.md",
       "https://github.com/HarbourMasters/Torch/blob/2d474ddb8da8b213fbdbb49d0273ce31fa955f35/README.md",
       "https://github.com/HarbourMasters/SpaghettiKart/releases/tag/1.0.0"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "animal-crossing-wild-world-decomp-case",
@@ -6659,7 +6750,8 @@
       "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/.github/workflows/build.yml",
       "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/LICENSE",
       "https://github.com/banatic/acww-decomp/actions/runs/39115041988"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "king-kong-recompiled-case",
@@ -6701,7 +6793,8 @@
       "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/kk/src/io_fix.cpp",
       "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/kk/THIRD-PARTY-NOTICES.txt",
       "https://github.com/TekRantGaming/king-kong-recompiled/releases/tag/v1.9.11"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "reva-ghidra-mcp",
@@ -6811,7 +6904,8 @@
       "https://github.com/AxioDL/musyx/blob/adc8df9a959f1e37f71bdf3155e229f9f87ad166/LICENSE",
       "https://decomp.dev/mariopartyrd/marioparty4",
       "https://web.archive.org/web/20261020041928/https://decomp.dev/mariopartyrd/marioparty4/GMPE01_00/5b01c79b4910525e3fc5aa312eddd6d014e7f337.json"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "speedbreaker-nfs-most-wanted-case",
@@ -6855,7 +6949,8 @@
       "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/NOTICE",
       "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/THIRD_PARTY_NOTICES.md",
       "https://github.com/SpeedBreakerProject/speedbreaker/releases/tag/v0.1.7"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "x64dbg-mcp-server",
@@ -6926,7 +7021,8 @@
       "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/tools/build_rom.py",
       "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/AGENTS.md",
       "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/LICENSE.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "m2c",
@@ -7044,7 +7140,8 @@
       "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/scripts/bootstrap.ps1",
       "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/scripts/package-portable.ps1",
       "https://github.com/rexglue/rexglue-sdk/blob/f5337cdc947ff6d4c4196737e2c807a48f2a1fc2/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "mcp-windbg",
@@ -7151,7 +7248,8 @@
       "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/LICENSE",
       "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/CONTRIBUTING.md",
       "https://github.com/JackandBeans/Snap64Recomp/releases/tag/v1.1.5"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "dead-rising-2-case-zero-recomp-case",
@@ -7194,7 +7292,8 @@
       "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/blob/a1feb9dd7a61e23b4bcbb1afab8edf3439ee86ac/.github/workflows/build.yml",
       "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/blob/a1feb9dd7a61e23b4bcbb1afab8edf3439ee86ac/tools/gen_kbm_icons.py",
       "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/actions/runs/38534235503"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "openra-engine-case",
@@ -7236,7 +7335,8 @@
       "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/COPYING",
       "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/AUTHORS",
       "https://github.com/OpenRA/OpenRA/releases/tag/release-20250330"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "rizin",
@@ -7339,7 +7439,8 @@
       "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/runtime/CMakeLists.txt",
       "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/tools/gen_kbm_icons.py",
       "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/actions/runs/38533020839"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "decompiler-explorer",
@@ -7441,7 +7542,8 @@
       "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/mods/preloaded/README.md",
       "https://github.com/TekRantGaming/psxrecomp/blob/03d383fe855c25edc52aabdee750ffc12f3d8bdd/README.md",
       "https://github.com/TekRantGaming/psxrecomp/blob/03d383fe855c25edc52aabdee750ffc12f3d8bdd/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "openrct2-engine-case",
@@ -7483,7 +7585,8 @@
       "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/test/tests/S6ImportExportTests.cpp",
       "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/licence.txt",
       "https://github.com/OpenRCT2/OpenRCT2/releases/tag/v0.5.6"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "th06-decomp-case",
@@ -7526,7 +7629,8 @@
       "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/.github/workflows/compare.yml",
       "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/tests/test_Pbg3Archive.cpp",
       "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "binny-agent-harness",
@@ -7603,7 +7707,8 @@
       "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/go/go.mod",
       "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/.github/workflows/ci.yml",
       "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "pwndbg",
@@ -7675,7 +7780,8 @@
       "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/.gitmodules",
       "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/.github/workflows/release.yml",
       "https://github.com/Alexbeav/psxrecomp/blob/08ec704a974b1f3a16335b4afeb340b9eff19926/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "himuro-fatal-frame-decomp-case",
@@ -7722,7 +7828,8 @@
       "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/tools/python/fix_bin_matching.py",
       "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/tools/python/fix_report.py",
       "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/.github/workflows/progress.yml"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "doaxvb-native-port-case",
@@ -7767,7 +7874,8 @@
       "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/docs/wayfinder/research/host-shell-redistribution.md",
       "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/tools/game-recipe/README.md",
       "https://github.com/NoRain211/doaxvb-re/releases/tag/v0.5.3"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "elgato-hdr-uvc-capture-case",
@@ -7808,7 +7916,8 @@
       "https://github.com/talkaboutdesign/elgato-hdr/blob/7799d3c53520bcc3dd049211244bfaf49b905cb0/LICENSE",
       "https://github.com/talkaboutdesign/elgato-hdr/pull/1",
       "https://x.com/talkaboutdesign/status/2109795113807630735"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "ido-static-recomp",
@@ -7886,7 +7995,8 @@
       "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/LICENSE",
       "https://github.com/N0zoM1z0/th08-web/releases/tag/v0.1.0",
       "https://th08-web.pages.dev/"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "ipsw",
@@ -7961,7 +8071,8 @@
       "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/.github/workflows/nightly.yml",
       "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/src/main.cpp",
       "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/LICENSE.txt"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "skate3-recomp-case",
@@ -8002,7 +8113,8 @@
       "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/config/skate3.example.toml",
       "https://github.com/mchughalex/rexglue-skate3/blob/7eb0faf7787f5e01333c228b8e3f03c32f7295ea/LICENSE",
       "https://github.com/mchughalex/skate3recomp/releases/tag/v2.0.2"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "decomp-wtf-agent-decompilation",
@@ -8076,7 +8188,8 @@
       "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/tools/fetch_aa_files.sh",
       "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/.gitmodules",
       "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/releases/tag/v0.2.3"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "th095-reconstruction-case",
@@ -8118,7 +8231,8 @@
       "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/scripts/bootstrap-tools.sh",
       "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/.github/workflows/ci.yml",
       "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "dynamorio",
@@ -8188,7 +8302,8 @@
       "https://github.com/gabrielgreco1/TVmenubar-MacOS/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/LICENSE",
       "https://github.com/gabrielgreco1/TVmenubar-MacOS/blob/8641101827b8a847e3c4091df4e7a336c68ba431/README.md",
       "https://x.com/greco_dev/status/2109842197654692349"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "ps2recomp",
@@ -8262,7 +8377,8 @@
       "https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/AGENTS.md",
       "https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/LICENSE.txt",
       "https://github.com/CorsixTH/CorsixTH/releases/tag/v0.70.1"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "openriseofnations-engine-case",
@@ -8303,7 +8419,8 @@
       "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/LICENSE",
       "https://x.com/benw_____/status/2111116976168779845",
       "https://x.com/benw_____/status/2111260204884967933"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "th04-reconstruction-case",
@@ -8346,7 +8463,8 @@
       "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/config/toolchain.toml",
       "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/.github/workflows/ci.yml",
       "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "supermodel-real3d-pro1000-emulation-case",
@@ -8387,7 +8505,8 @@
       "https://github.com/trzy/Supermodel/blob/4f5d686bbdd4a58d50a9fe66971ae5396626f1a1/Docs/LICENSE.txt",
       "https://x.com/BartronPolygon/status/2110028302215999825",
       "https://x.com/BartronPolygon/status/2109806939718943205"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "blackbox-protobuf",
@@ -8578,7 +8697,8 @@
       "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/.gitmodules",
       "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/port/LICENSE",
       "https://github.com/HayatoG/iss_pc/releases/tag/v2026.10.19-d3995fe"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "xoreos-aurora-engine-case",
@@ -8623,7 +8743,8 @@
       "https://github.com/xoreos/xoreos/blob/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/.github/workflows/windows_cmake_msvc.yml",
       "https://github.com/xoreos/xoreos/tree/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/tests",
       "https://github.com/xoreos/xoreos/releases/tag/v0.0.6"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "ghidra-mcp-bethington",
@@ -8702,7 +8823,8 @@
       "https://github.com/aap/librw/tree/18532c2e13efbc1aa43f0b00b4459831f9414de0/tools",
       "https://github.com/aap/librw/tree/18532c2e13efbc1aa43f0b00b4459831f9414de0/skeleton/imgui",
       "https://github.com/aap/librw/blob/18532c2e13efbc1aa43f0b00b4459831f9414de0/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "awesome-game-decompilations",
@@ -8837,7 +8959,8 @@
       "https://decomp.dev/MonsterDruide1/OdysseyDecomp",
       "https://github.com/MonsterDruide1/OdysseyDecomp/blob/696db2ff5ed558b053c753de420504b8682f24b0/data/file_list.yml",
       "https://web.archive.org/web/20261020041937/https://decomp.dev/MonsterDruide1/OdysseyDecomp/1.0/696db2ff5ed558b053c753de420504b8682f24b0.json"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "droid-asc",
@@ -10047,7 +10170,8 @@
       "https://github.com/sigalor/whatsapp-web-reveng/blob/04caed2b23680d23a3f39cf2b017c064ff1e85ed/LICENSE",
       "https://github.com/sigalor/whatsapp-web-reveng/issues/372",
       "https://engineering.fb.com/2021/07/14/security/whatsapp-multi-device/"
-    ]
+    ],
+    "class": "website"
   },
   {
     "id": "e9patch",
@@ -11854,7 +11978,8 @@
       "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/.gitmodules",
       "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/.github/workflows/ci.yaml",
       "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/LICENSE.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "galaxy-buds-client-protocol-case",
@@ -11901,7 +12026,8 @@
       "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/.github/workflows/compile-linux.yml",
       "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/LICENSE",
       "https://github.com/timschneeb/GalaxyBudsClient/releases/tag/5.2.1"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "owasp-mastg",
@@ -11965,7 +12091,8 @@
       "scope",
       "license",
       "testing"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "primedecomp-metroid-prime-decomp-case",
@@ -12016,7 +12143,8 @@
       "https://web.archive.org/web/20261020042108/https://decomp.dev/PrimeDecomp/prime/GM8E01_48/2fd31790998c0486744a6289cac7e2fecc22d143.json",
       "https://web.archive.org/web/20261020042116/https://decomp.dev/PrimeDecomp/prime/GM8P01_00/2fd31790998c0486744a6289cac7e2fecc22d143.json",
       "https://web.archive.org/web/20261020042125/https://decomp.dev/PrimeDecomp/prime/GM8J01_00/2fd31790998c0486744a6289cac7e2fecc22d143.json"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "batla-3d-server-emulator-case",
@@ -12053,7 +12181,8 @@
     ],
     "verified_at": "2026-10-19",
     "added_at": "2026-10-19",
-    "verification": "source-reviewed"
+    "verification": "source-reviewed",
+    "class": "game"
   },
   {
     "id": "decompilation-wiki",
@@ -12127,7 +12256,8 @@
       "https://github.com/RSDKModding/RSDKv4-Decompilation/tree/a7f5195e21fdad7b75e4587e249013feeea9e6f3/RSDKv4/NativeObjects",
       "https://github.com/RSDKModding/RSDKv4-Decompilation/blob/a7f5195e21fdad7b75e4587e249013feeea9e6f3/.github/workflows/build.yml",
       "https://github.com/RSDKModding/RSDKv4-Decompilation/releases/tag/1.3.3"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "miasm",
@@ -12446,7 +12576,8 @@
       "https://github.com/rwengine/openrw/wiki/FAQ",
       "https://github.com/rwengine/openrw/wiki/Getting-Started",
       "https://github.com/rwengine/openrw/wiki/Configuration"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "rexglue-sdk",
@@ -12599,7 +12730,8 @@
       "https://github.com/ruffle-rs/ruffle/blob/ea24ef78aa6c898e8170c1a603a496dd1131bd6c/LICENSE.md",
       "https://github.com/ruffle-rs/ruffle/releases/tag/v0.7.1",
       "https://ruffle.rs/compatibility"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "ps3recomp",
@@ -12708,7 +12840,8 @@
       "https://github.com/gdorgian/ScooterLink/blob/a089f6210e863d56b590ed4625b92f886ff6a097/App/Tests/main.swift",
       "https://github.com/gdorgian/ScooterLink/blob/a089f6210e863d56b590ed4625b92f886ff6a097/App/project.yml",
       "https://github.com/gdorgian/ScooterLink/blob/a089f6210e863d56b590ed4625b92f886ff6a097/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "frontkick-rikugan-crebench-comparison",
@@ -12777,7 +12910,8 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/blob/9e6747f71cb91f2c182869b4df1091f6d5d8218d/.github/workflows/build.yml",
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "cod4-rewrite-reconstruction-case",
@@ -12810,7 +12944,8 @@
     ],
     "verified_at": "2026-10-19",
     "added_at": "2026-10-20",
-    "verification": "source-reviewed"
+    "verification": "source-reviewed",
+    "class": "game"
   },
   {
     "id": "libd2-engine-core-reconstruction-case",
@@ -12844,7 +12979,8 @@
     ],
     "verified_at": "2026-10-19",
     "added_at": "2026-10-20",
-    "verification": "source-reviewed"
+    "verification": "source-reviewed",
+    "class": "game"
   },
   {
     "id": "underworld-exhumed-case",
@@ -12875,7 +13011,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "linewars-ii-sdl-case",
@@ -12906,7 +13043,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "bfm-decomp-case",
@@ -12937,7 +13075,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "logic-lens",
@@ -13027,7 +13166,8 @@
       "https://github.com/AkashNaickar/crdb-sample-frontend/blob/673dc8c8d93b4f8a13257604749b638adf146298/package.json",
       "https://github.com/AkashNaickar/crdb-sample-frontend/blob/673dc8c8d93b4f8a13257604749b638adf146298/LICENSE",
       "https://github.com/AkashNaickar/crdb-sample-frontend/blob/673dc8c8d93b4f8a13257604749b638adf146298/CONTRIBUTING.md"
-    ]
+    ],
+    "class": "website"
   },
   {
     "id": "akiselev-ilspy-cli",
@@ -13233,7 +13373,8 @@
       "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/.gitignore",
       "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/.gitmodules",
       "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/snowboardkids.sha1"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "reflecticon-224-lexicon-emulation-case",
@@ -13270,7 +13411,8 @@
       "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/8080/LICENSE-floooh-chips",
       "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/8080/LICENSE-m8080",
       "https://news.ycombinator.com/item?id=50111576"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "sa3-marun-ai-decomp-case",
@@ -13300,7 +13442,8 @@
       "https://github.com/SAT-R/sa3/pull/4",
       "https://github.com/decompme/decomp.me/pull/1474",
       "https://github.com/SAT-R/sa3/blob/f28834dd4c92ad1ed761a978210355ad63d70b88/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "ix500-scan-scansnap-wifi-case",
@@ -13337,7 +13480,8 @@
       "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/social/texte.md",
       "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/LICENSE",
       "https://github.com/bramheerink/scansnap/blob/5706688db58f45a4d3db239de6e2e93bab36bb0f/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "roborock-local-server-cloud-case",
@@ -13370,7 +13514,8 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/pyproject.toml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "wristbeam-garmin-watch-protocol-case",
@@ -13411,7 +13556,8 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/VERSION",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "abc-decompiler",
@@ -13481,7 +13627,8 @@
       "https://github.com/JJTech0130/pypush/blob/71aa2e4442061596f75e6b02dfad613330127b5b/.github/workflows/lint.yml",
       "https://github.com/JJTech0130/pypush/releases/tag/v2.0.2",
       "https://pypi.org/project/pypush/2.0.2/"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "luajit-decompiler-v2",
@@ -13580,7 +13727,8 @@
       "https://github.com/lumirth/pw/blob/6dc7bc09950078fa3fe0dffa4dae34e9549a99da/assets/placeholders/LICENSE.md",
       "https://github.com/lumirth/pw/blob/6dc7bc09950078fa3fe0dffa4dae34e9549a99da/config/toolchains.json",
       "https://github.com/lumirth/pw/blob/6dc7bc09950078fa3fe0dffa4dae34e9549a99da/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "slicer",
@@ -13763,7 +13911,8 @@
       "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/src/scene/nakamuraTest/gamespy/README.md",
       "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/LICENSE",
       "https://decomp.dev/koopthekoopa/wii-ipl/43U"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "usque-warp-masque-client-case",
@@ -13801,7 +13950,8 @@
       "https://github.com/Diniboy1123/usque/blob/6aa03fc97d12848dce34eedbd187fb1077b5d1ea/LICENSE.md",
       "https://github.com/Diniboy1123/usque/releases/tag/v4.2.1",
       "https://datatracker.ietf.org/doc/rfc9484/"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "awesome-unofficial-pc-ports",
@@ -13901,7 +14051,8 @@
       "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/.nvmrc",
       "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/LICENSE.txt",
       "https://registry.npmjs.org/webamp/2.3.1"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "nforest-awesome-decompilation",
@@ -13991,7 +14142,8 @@
       "https://github.com/open-ead/sead/blob/f4178a21e21235830357dc27c26a2c29956972ed/modules/src/gfx/cafe/seadPrimitiveRendererCafe.cpp",
       "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/.gitmodules",
       "https://github.com/aboood40091/sead"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "teddycloud-toniebox-server-case",
@@ -14030,7 +14182,8 @@
       "https://github.com/toniebox-reverse-engineering/teddycloud/blob/78c3b38e36f665d3a5fffe907f73a02725176377/LICENSE",
       "https://github.com/toniebox-reverse-engineering/teddycloud/releases/tag/tc_v0.7.0",
       "https://tonies-wiki.revvox.de/docs/tools/teddycloud/setup/"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "onethawt-re-reading-list",
@@ -14092,7 +14245,8 @@
       "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/.github/workflows/ci.yml",
       "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/LICENSE",
       "https://decomp.dev/zeldaret/af"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "remade-reimplementation-directory",
@@ -14159,7 +14313,8 @@
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/arduino_sender/README.md",
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/tree/b372420e1e1ff818a8d25ba50f0c71e97e62f138/raw_wild_ir_captures",
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "wtsxdev-reverse-engineering-list",
@@ -14258,7 +14413,8 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/.github/workflows/build.yml",
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "kinoko-mkwii-physics-reimplementation-case",
@@ -14296,7 +14452,8 @@
       "https://github.com/vabold/Kinoko/blob/550c97a299c4de4a9f7cb90bc79cf8c7c768557c/tools/status_check.py",
       "https://github.com/vabold/Kinoko/blob/550c97a299c4de4a9f7cb90bc79cf8c7c768557c/LICENSE",
       "https://github.com/vabold/Kinoko/releases/tag/0.6"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "owasp-fstm",
@@ -14387,7 +14544,8 @@
       "https://github.com/doldecomp/mkdd/blob/1d2918ca577817ba431baddb78dda24831e0e0bb/.github/workflows/build.yml",
       "https://github.com/doldecomp/mkdd/blob/1d2918ca577817ba431baddb78dda24831e0e0bb/LICENSE",
       "https://decomp.dev/doldecomp/mkdd"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "sfiii-3rd-strike-ps2-decomp-case",
@@ -14428,7 +14586,8 @@
       "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/include/cri/cri_xpts.h",
       "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/LICENSE",
       "https://github.com/crowded-street/3s-decomp/commit/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "halo-ce-xbox-reimplementation-case",
@@ -14465,7 +14624,8 @@
       "https://github.com/halo-re/halo/blob/21bc641df6b8bdd730c23885ff643545423dcc82/requirements.txt",
       "https://github.com/halo-re/halo/blob/21bc641df6b8bdd730c23885ff643545423dcc82/src/xboxkrnl.exe.def",
       "https://blam.info/progress/"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "paper-mario-ttyd-decomp-case",
@@ -14501,7 +14661,8 @@
       "https://github.com/doldecomp/ttyd/blob/62131fc31866f85a12e4817a8dc37f0c25eb5f8c/.github/workflows/build.yml",
       "https://github.com/doldecomp/ttyd/blob/62131fc31866f85a12e4817a8dc37f0c25eb5f8c/LICENSE",
       "https://decomp.dev/doldecomp/ttyd"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "awesome-frida",
@@ -14576,7 +14737,8 @@
       "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/LICENSE",
       "https://github.com/crowded-street/3sx/releases/tag/rolling-pre-release",
       "https://github.com/crowded-street/3sx/milestone/1"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "re4-gamecube-debug-decomp-case",
@@ -14611,7 +14773,8 @@
       "https://github.com/adonis-singh/re4/blob/9b76ff003081d6ece8b838453fb8310743a972c7/tools/extract_orig.py",
       "https://github.com/adonis-singh/re4/blob/9b76ff003081d6ece8b838453fb8310743a972c7/docs/naming.md",
       "https://github.com/adonis-singh/re4/blob/9b76ff003081d6ece8b838453fb8310743a972c7/docs/research/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "smash-bros-brawl-decomp-case",
@@ -14647,7 +14810,8 @@
       "https://github.com/doldecomp/brawl/blob/b96b501ff127b29e8946ee9a352a7bdc2ef5f38a/LICENSE",
       "https://github.com/Sammi-Husky/BrawlHeaders/tree/29c4ff16ce06241ea672ffd54e6415fbd02c0743",
       "https://decomp.dev/doldecomp/brawl"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "re-plants-vs-zombies-decomp-case",
@@ -14685,7 +14849,8 @@
       "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/SexyAppFramework/sound/bass.h",
       "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/SexyAppFramework/ogg/COPYING",
       "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "awesome-ghidra",
@@ -14747,7 +14912,8 @@
       "https://github.com/SAT-R/sa2/blob/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/chao_garden/data/data.s",
       "https://github.com/SAT-R/sa2/blob/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/src/data/sa2/recordings.c",
       "https://github.com/SAT-R/sa2/tree/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/libagbsyscall"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "paleblood-bloodborne-functional-decomp-case",
@@ -14784,7 +14950,8 @@
       "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/.github/workflows/ci.yml",
       "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/LICENSE",
       "https://github.com/Yharnam-Hunters/bbport/blob/accdce33b89d45fa3c7f5066e69362a5ec215c1a/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "pikmin-2-matching-decomp-case",
@@ -14819,7 +14986,8 @@
       "https://github.com/projectPiki/pikmin2/blob/ffbd853726427f2e90cd201aaca90dc82b34f990/.github/workflows/build.yml",
       "https://github.com/projectPiki/pikmin2/blob/ffbd853726427f2e90cd201aaca90dc82b34f990/LICENSE.MD",
       "https://decomp.dev/projectPiki/pikmin2"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "gran-turismo-4-matching-decomp-case",
@@ -14857,7 +15025,8 @@
       "https://github.com/gustavocanepa/gt4-decomp/blob/e35ec1ddb6a5931252489ff7d8ed27520fdabe4e/LICENSE",
       "https://github.com/gustavocanepa/gt4-decomp/blob/9bcdea300b904cc48bd81886e169ea8925f31d41/report.json",
       "https://decomp.dev/gustavocanepa/gt4-decomp"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "mario-kart-wii-decomp-case",
@@ -14893,7 +15062,8 @@
       "https://github.com/snailspeed3/mkw/blob/78572c95c41dbf6cbb7dd251a567e538560ce1d8/.github/workflows/build.yml",
       "https://github.com/snailspeed3/mkw/blob/78572c95c41dbf6cbb7dd251a567e538560ce1d8/LICENSE",
       "https://github.com/snailspeed3/mkw/blob/78572c95c41dbf6cbb7dd251a567e538560ce1d8/lib/gamespy/license.txt"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "pinyon-shift-forza-horizon-recomp-case",
@@ -14932,7 +15102,8 @@
       "https://github.com/arcanite24/pinyon-shift/blob/9331e453e9850d0fcc1c1606dee95db834a9d317/LICENSE",
       "https://github.com/arcanite24/shiftglue-sdk/tree/79d3e6fae4b79e00def48a595c80f0eaa47fd2b6",
       "https://github.com/arcanite24/pinyon-shift/releases/tag/v0.6.0"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "th07-decomp-case",
@@ -14967,7 +15138,8 @@
       "https://github.com/some100/th07/blob/4878bf0e42a9280ef44735eb0517d4fda7cb6e04/scripts/build.py",
       "https://github.com/some100/th07/tree/4878bf0e42a9280ef44735eb0517d4fda7cb6e04/resources/csv",
       "https://github.com/some100/th07/blob/4878bf0e42a9280ef44735eb0517d4fda7cb6e04/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "dkc1-recomp-case",
@@ -15008,7 +15180,8 @@
       "https://github.com/elliotttate/snesrecomp/blob/de94587464524ebac8dcd62e14618bf0d3953644/README.md",
       "https://github.com/elliotttate/snesrecomp/blob/de94587464524ebac8dcd62e14618bf0d3953644/LICENSE",
       "https://github.com/elliotttate/DKC1Recomp/releases/tag/v0.0.17"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "san-andreas-unity-engine-case",
@@ -15046,7 +15219,8 @@
       "https://github.com/in0finite/SanAndreasUnity/releases/tag/v4.0",
       "https://github.com/in0finite/SanAndreasUnity/wiki/Running-on-Android",
       "https://github.com/in0finite/SanAndreasUnity/wiki/Generating-navigation-mesh"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "minecraft-lce-switch-decomp-case",
@@ -15081,7 +15255,8 @@
       "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/.gitmodules",
       "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/.github/workflows/test-compile.yml",
       "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/.github/workflows/update-progress.yml"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "ff7-ps1-matching-decomp-case",
@@ -15119,7 +15294,8 @@
       "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/bin/cc1-psx-26.gz.sha256",
       "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/Dockerfile",
       "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "megaman-x-snes-recomp-case",
@@ -15157,7 +15333,8 @@
       "https://github.com/RetroPortingToolKit/snesrecomp/blob/0f5708d108bf4acfb21dd7ff75a0cdb2376eb238/README.md",
       "https://github.com/RetroPortingToolKit/snesrecomp/blob/0f5708d108bf4acfb21dd7ff75a0cdb2376eb238/LICENSE",
       "https://github.com/mstan/MegaManXSNESRecomp/releases/tag/v2.2.9-alpha"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "opensc4-simcity-4-reimplementation-case",
@@ -15193,7 +15370,8 @@
       "https://github.com/OpenSC4-org/OpenSC4/blob/fdc90c33e6e012b8c825f20ee10c51f55796df39/.gitignore",
       "https://github.com/OpenSC4-org/OpenSC4/blob/fdc90c33e6e012b8c825f20ee10c51f55796df39/Core.gd",
       "https://github.com/OpenSC4-org/OpenSC4/blob/fdc90c33e6e012b8c825f20ee10c51f55796df39/utils/logger.gd"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "synchrony",
@@ -15266,7 +15444,8 @@
       "https://github.com/AliveTeam/aliveteam.github.io/blob/f1ff2177147135677f9c060b02135f7d5f67ef8e/faq.md",
       "https://github.com/AliveTeam/aliveteam.github.io/blob/f1ff2177147135677f9c060b02135f7d5f67ef8e/install.html",
       "https://github.com/AliveTeam/alive_reversing/releases/tag/github-v1.0.9"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "retdec",
@@ -15340,7 +15519,8 @@
       "https://github.com/FolkertVanVerseveld/aoe/blob/3234eac7098124e7fac11272697cacb3aed5e608/.github/workflows/test_distros.yml",
       "https://github.com/FolkertVanVerseveld/aoe/tree/3234eac7098124e7fac11272697cacb3aed5e608/game/tests",
       "https://github.com/FolkertVanVerseveld/aoe/blob/3234eac7098124e7fac11272697cacb3aed5e608/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "god-of-war-ps2-recomp-case",
@@ -15378,7 +15558,8 @@
       "https://github.com/KIexster/god-of-war-recomp/blob/92ece581c673842c282a9c23819545de5ab92d3c/LICENSE",
       "https://github.com/ran-j/PS2Recomp/tree/c5a9d02573410a2085a4b4b831b0b68ba3515440",
       "https://github.com/Waffle565/God-Of-War-Native-Port/blob/514f89186f1926edaf4807696a59557679c7d517/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "redasm",
@@ -15513,7 +15694,8 @@
       "https://github.com/DomazinUS/RaceWave46/blob/5c34f3711426978107707a8f06af9c2af4ee5401/LICENSE",
       "https://github.com/DomazinUS/RaceWave46/blob/5c34f3711426978107707a8f06af9c2af4ee5401/COPYING",
       "https://github.com/DomazinUS/RaceWave46/releases/tag/v1.0.0"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "opendrop-airdrop-reimplementation-case",
@@ -15549,7 +15731,8 @@
       "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/LICENSE",
       "https://pypi.org/project/opendrop/0.13.0/",
       "https://www.usenix.org/conference/usenixsecurity19/presentation/stute"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "chipsec",
@@ -15662,7 +15845,8 @@
       "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/frontend/src/assets/raw/credits.md",
       "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/LICENSE",
       "https://github.com/Hypfer/Valetudo/releases/tag/2026.10.0"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "sourcemapper",
@@ -15732,7 +15916,8 @@
       "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/.github/workflows/linux.yml",
       "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/.github/workflows/windows.yml",
       "https://github.com/deathkiller/jazz2/releases/tag/3.9.0"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "binabsinspector",
@@ -15938,7 +16123,8 @@
       "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/.gitignore",
       "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/LICENSE",
       "https://github.com/LBALab/lba2remake/tree/db54f5de071354939a8b02e71e47c53343ab6ee5/www/models"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "vulhunt",
@@ -16143,7 +16329,8 @@
       "https://github.com/OpenAWE-Project/OpenAWE/tree/cce15d3bc289df31522d778fb8e99180e6752b58/test",
       "https://github.com/OpenAWE-Project/OpenAWE/tree/cce15d3bc289df31522d778fb8e99180e6752b58/tools",
       "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/data/male_player_class.xml"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "cps2recomp-arcade-static-recomp-case",
@@ -16181,7 +16368,8 @@
       "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/.gitignore",
       "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/LICENSE",
       "https://github.com/tmcleroy/cps2recomp/releases/tag/v0.4.0-beta.3"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "binbloom",
@@ -16312,7 +16500,8 @@
       "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/Dockerfile",
       "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/doc/docker.md",
       "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/LICENSE.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "apk-sh",
@@ -16481,7 +16670,8 @@
       "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/LICENSE",
       "https://github.com/CommitteeOfZero/impacto/issues/1",
       "https://github.com/CommitteeOfZero/impacto/releases/tag/0.10.8.887"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "caringcaribou",
@@ -16695,7 +16885,8 @@
       "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/AGENTS.md",
       "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/LICENSE",
       "https://github.com/ryanbr/noop/releases/tag/v12.0.0"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "pe-bear",
@@ -16904,7 +17095,8 @@
       "https://github.com/postlund/pyatv/blob/b277a4c8222ecdcbaab8a24e3e713ca44765adb4/LICENSE.md",
       "https://github.com/postlund/pyatv/releases/tag/v0.18.0",
       "https://pypi.org/project/pyatv/0.18.0/"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "lisa-lldb-mcp",
@@ -17003,7 +17195,8 @@
       "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/tools/verify/assets.py",
       "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/LICENSE",
       "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/tree/df2cf51bd6d02e0b310d46a5da062693bac7314f"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "siegefx-dungeon-siege-engine-case",
@@ -17034,7 +17227,8 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/codingncaffeine/SiegeFX/releases/tag/v0.5.0"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "legend-of-legaia-rust-port-case",
@@ -17067,7 +17261,8 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://andrewaltimit.github.io/legend-of-legaia-re/"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "crxviewer",
@@ -17167,7 +17362,8 @@
       "https://github.com/RSDKModding/RSDKv3-Decompilation/blob/c01fc0c360e8e35e791630407ea5c7a426718e54/.github/workflows/build.yml",
       "https://github.com/RSDKModding/RSDKv3-Decompilation/tree/c01fc0c360e8e35e791630407ea5c7a426718e54/RSDKv3",
       "https://github.com/RSDKModding/RSDKv3-Decompilation/releases/tag/1.3.3"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "ico-matching-decomp-case",
@@ -17203,7 +17399,8 @@
       "https://github.com/nathanialf/ico/blob/73f7365df143bc1ff48771af479fd68c66550d19/.github/workflows/pages.yml",
       "https://github.com/nathanialf/ico/blob/73f7365df143bc1ff48771af479fd68c66550d19/LICENSE",
       "https://nathanialf.github.io/ico/"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "esp32-bit-pirate",
@@ -17313,7 +17510,8 @@
       "https://github.com/MultiMote/niimblue/releases/tag/v2026.9.0",
       "https://github.com/MultiMote/niimbluelib/blob/a9bc3f5c20c95e3a31ea3f5f2302ce7b27c34abe/README.md",
       "https://printers.niim.blue/interfacing/proto/"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "firerpa-lamda",
@@ -17384,7 +17582,8 @@
       "https://github.com/Th0rgal/open_oura/blob/e57c43ce5fe0cf9a646afa790bda3731be767507/Cargo.toml",
       "https://github.com/Th0rgal/open_oura/blob/e57c43ce5fe0cf9a646afa790bda3731be767507/CLAUDE.md",
       "https://github.com/Th0rgal/open_oura/blob/e57c43ce5fe0cf9a646afa790bda3731be767507/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "pe-sieve",
@@ -18156,7 +18355,8 @@
       "https://github.com/Plutoberth/SonyHeadphonesClient/blob/5620e8ed5deccb957338b54e371b215146080819/Client/Fonts/FontLicense.txt",
       "https://github.com/Plutoberth/SonyHeadphonesClient/blob/5620e8ed5deccb957338b54e371b215146080819/LICENSE",
       "https://github.com/Plutoberth/SonyHeadphonesClient/releases/tag/v1.3.2"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "garlic-decompiler",
@@ -19658,7 +19858,8 @@
       "https://github.com/timschneeb/BudsPro-Headtracking/blob/63b321aa0536fd28233eaaf3a05c4f3b3f8201fe/buds_to_unity.py",
       "https://github.com/timschneeb/BudsPro-Headtracking/blob/63b321aa0536fd28233eaaf3a05c4f3b3f8201fe/getBudsUDP.cs",
       "https://github.com/timschneeb/BudsPro-Headtracking/blob/63b321aa0536fd28233eaaf3a05c4f3b3f8201fe/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "findcrypt-ghidra",
@@ -19945,7 +20146,8 @@
       "https://github.com/i-soxi/even-g2-protocol/blob/b227335f5fbecb7d4ede3748c36e098ef88850fa/examples/teleprompter/teleprompter.py",
       "https://github.com/i-soxi/even-g2-protocol/blob/b227335f5fbecb7d4ede3748c36e098ef88850fa/examples/teleprompter/README.md",
       "https://github.com/i-soxi/even-g2-protocol/blob/b227335f5fbecb7d4ede3748c36e098ef88850fa/CONTRIBUTING.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "retrowrite",
@@ -20499,7 +20701,8 @@
       "https://github.com/hkr/fuji-cam-wifi-tool/blob/c597fc42151f0e4c726714e63dd13552b9fad3aa/.gitmodules",
       "https://github.com/hkr/fuji-cam-wifi-tool/blob/c597fc42151f0e4c726714e63dd13552b9fad3aa/AUTHORS.txt",
       "https://github.com/hkr/fuji-cam-wifi-tool/blob/c597fc42151f0e4c726714e63dd13552b9fad3aa/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "pyinstxtractor-ng",
@@ -20677,7 +20880,8 @@
       "https://github.com/ptx2/gymnasticon/blob/e142f539c518d6d4ced3abdd587a825b918a9367/LICENSE.txt",
       "https://github.com/ptx2/gymnasticon/releases/tag/v1.4.0",
       "https://ptx2.net/posts/unbricking-a-bike-with-a-raspberry-pi"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "iw4l-mw2-rust-runtime-case",
@@ -20723,7 +20927,8 @@
       "https://github.com/vladtrc/iw4L/blob/acc57a5c9dd027db8eb5ef17c792fa69f059daa1/docs/provenance/movement-iw4.md",
       "https://github.com/vladtrc/iw4L/blob/acc57a5c9dd027db8eb5ef17c792fa69f059daa1/LICENSE",
       "https://github.com/vladtrc/iw4L/releases/tag/v0.1.0-demo.23"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "skate-3-rust-engine-case",
@@ -20769,7 +20974,8 @@
       "https://github.com/SK8-ENGINE/skate-3-rust-engine/blob/2e16697797c8358d16f747a8259354ff2921041a/scripts/Build-Release.ps1",
       "https://github.com/SK8-ENGINE/skate-3-rust-engine/blob/2e16697797c8358d16f747a8259354ff2921041a/LICENSE",
       "https://github.com/SK8-ENGINE/skate-3-rust-engine/releases/tag/experimental"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "rikugan",
@@ -21068,7 +21274,8 @@
       "https://github.com/gwerneckp/garmin-ble/commit/69b6ed1cccfce79482fd13ca3fad292551b99a18",
       "https://github.com/gwerneckp/garmin-ble/releases/tag/v0.3.2",
       "https://pypi.org/project/garmin-ble/0.3.2/"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "vanbus",
@@ -21170,7 +21377,8 @@
       "https://github.com/bravoserver/bravo/blob/7be5d792871a8447499911fa1502c6a7c1437dc3/LICENSE",
       "https://github.com/bravoserver/bravo/blob/7be5d792871a8447499911fa1502c6a7c1437dc3/tools/parser-cli.py",
       "https://pypi.org/project/Bravo/2.0/"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "dex-oracle",
@@ -21493,7 +21701,8 @@
       "https://github.com/aaronsb/bosectl/blob/70570b29c1d3c9ba775b08a29eaea72385de27b5/LICENSE",
       "https://github.com/aaronsb/bosectl/releases/tag/v0.5.0",
       "https://crates.io/crates/bose-bmap/0.5.0"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "mgbdis",
@@ -21908,7 +22117,8 @@
       "https://github.com/yigitkonur/lib-osmo-ble/blob/021e96c2bec7e9a2a81296292545bc1ee432af49/LICENSE",
       "https://github.com/xaionaro/reverse-engineering-dji/blob/5c9278ff0b53bbe0d03ea6c830aab13ac775871e/LICENSE",
       "https://github.com/datagutt/node-osmo/blob/cec92aec9304a5cc3dae7f7de541eef38ebb680e/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "uefi-retool",
@@ -22221,7 +22431,8 @@
       "https://github.com/unixpickle/cbyge/tree/459be53a48ca75f543f9367094b778559403c1bf/proxy",
       "https://github.com/unixpickle/cbyge/blob/459be53a48ca75f543f9367094b778559403c1bf/go.mod",
       "https://github.com/unixpickle/cbyge/blob/459be53a48ca75f543f9367094b778559403c1bf/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "shannon-modem-loader",
@@ -22335,7 +22546,8 @@
       "https://github.com/wilbowes/EchoMuse/blob/4bbf7ff6eb9c97faea9080e0a2a6032921ef8108/LICENSE",
       "https://github.com/wilbowes/EchoMuse/releases/tag/v2.18.1",
       "https://github.com/wilbowes/EchoMuse/releases/tag/emos-v0.10"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "ghidrecomp",
@@ -22749,7 +22961,8 @@
       "https://github.com/xaionaro/reverse-engineering-dji/blob/5c9278ff0b53bbe0d03ea6c830aab13ac775871e/mimo/ble/wireshark-dissector/dji-ble-message.c",
       "https://github.com/xaionaro/reverse-engineering-dji/blob/5c9278ff0b53bbe0d03ea6c830aab13ac775871e/mimo/ble/wireshark-dissector/Makefile",
       "https://github.com/xaionaro/reverse-engineering-dji/blob/5c9278ff0b53bbe0d03ea6c830aab13ac775871e/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "reversecore-mcp",
@@ -22982,7 +23195,8 @@
       "https://github.com/MaikelChan/CatPrinterBLE/blob/007f82151fe40250bd3d5328139e588ea99364ac/CatPrinterBLE/CatPrinterBLE.csproj",
       "https://github.com/MaikelChan/CatPrinterBLE/blob/007f82151fe40250bd3d5328139e588ea99364ac/CHANGELOG.md",
       "https://github.com/MaikelChan/CatPrinterBLE/blob/007f82151fe40250bd3d5328139e588ea99364ac/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "0x1avram-js-deobfuscator",
@@ -23050,7 +23264,8 @@
       "https://github.com/uaih3k9x/a0rfid/blob/944ec1581a5c989cc7fbd50fcdba27159ecf7aa1/test_offline.py",
       "https://github.com/uaih3k9x/a0rfid/blob/944ec1581a5c989cc7fbd50fcdba27159ecf7aa1/android/build.sh",
       "https://github.com/uaih3k9x/a0rfid/blob/944ec1581a5c989cc7fbd50fcdba27159ecf7aa1/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "ultrasina-android-reverse",
@@ -23708,7 +23923,8 @@
     "additional_evidence_urls": [
       "https://github.com/anna-oake/xiaomi-kettle/blob/fbc0b513bed9fbe08edaa97d33e2e12e04d02544/cipher.go",
       "https://github.com/anna-oake/xiaomi-kettle/blob/fbc0b513bed9fbe08edaa97d33e2e12e04d02544/LICENSE.txt"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "cantools",
@@ -23939,7 +24155,8 @@
       "https://github.com/roncapat/Ford-Fiesta-MK5-MS-CAN-bus/blob/7b57901e7ea6a293aacb692c1895110b2ec7175c/README.md#L14-L136",
       "https://github.com/roncapat/Ford-Fiesta-MK5-MS-CAN-bus/blob/7b57901e7ea6a293aacb692c1895110b2ec7175c/Fiesta.kcd",
       "https://github.com/roncapat/Ford-Fiesta-MK5-MS-CAN-bus/tree/7b57901e7ea6a293aacb692c1895110b2ec7175c"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "katalina",
@@ -24497,7 +24714,8 @@
       "https://github.com/JeremyWhittaker/unidenr8_bluetooth/blob/46c7e1af2fa86c9a5c18f58528bea0f22b4d77dc/pyproject.toml",
       "https://github.com/JeremyWhittaker/unidenr8_bluetooth/blob/46c7e1af2fa86c9a5c18f58528bea0f22b4d77dc/.github/workflows/ci.yml",
       "https://github.com/JeremyWhittaker/unidenr8_bluetooth/blob/46c7e1af2fa86c9a5c18f58528bea0f22b4d77dc/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "redress",
@@ -24871,7 +25089,8 @@
       "https://github.com/PabloSoage/opendash/blob/7c8d72953d8060f2dc49e606963e1d103eec64d9/.github/workflows/ci.yml",
       "https://github.com/PabloSoage/opendash/blob/7c8d72953d8060f2dc49e606963e1d103eec64d9/LICENSE",
       "https://github.com/PabloSoage/opendash/releases/tag/v0.4.2-beta"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "reverse-api-engineer",
@@ -25651,7 +25870,8 @@
       "https://github.com/seemoo-lab/owl/blob/0ee3263f944ea721c355f826aa90d636d012a512/.github/workflows/test.yml",
       "https://github.com/seemoo-lab/owl/blob/0ee3263f944ea721c355f826aa90d636d012a512/COPYING",
       "https://doi.org/10.1145/3241539.3241566"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "grpc-tools",
@@ -28141,7 +28361,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/daniel-madrid-07/weeping-of-the-empire/blob/cfb47bc13b25fc686e0ef2616b451662b62c2b31/engine/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "exoproc",
@@ -28234,7 +28455,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/Charelene/FH2MP/blob/150a4030b7560dee5349e0f4713427523042dfb6/native/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "opendevicedb",
@@ -28325,7 +28547,8 @@
       "prerequisites",
       "prerequisites",
       "license"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "pkg-to-anyps5",
@@ -28388,7 +28611,8 @@
     "additional_evidence_urls": [
       "https://github.com/Jakey-Jakey/questpad/blob/0a96a24c090062473bf5e2ae12a30301fea792fa/README.md",
       "https://github.com/Jakey-Jakey/questpad/blob/0a96a24c090062473bf5e2ae12a30301fea792fa/LICENSE-APACHE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "pmca-re-reloaded",
@@ -28451,7 +28675,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/47PADO47/nfs-mw/blob/8d0b3c1906003c00f0416887cbd21ca3492e02d5/docs/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "osiris-onkyo-receiver-case",
@@ -28482,7 +28707,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/ubis/OSIRIS/blob/8515cd884c55f71f1bda35e0efc1586563dfaf6a/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "stadiacast-case",
@@ -28514,7 +28740,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/jkfran/stadiacast/blob/61e8aee978a8514a5c1aaa39fcaae1bb5dfcde39/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "rust-deobf",
@@ -28641,7 +28868,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/joppe2001/bf-private-server/blob/f9d0b5a324ecb517e257d8d0c39413840caa851b/docs/ARCHITECTURE.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "clickwill-case",
@@ -28673,7 +28901,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/jakubwarzecha00/clickwill/blob/194b138f0cf3aa0239e5db532814d0bce5438660/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "virtual-mpc-sample-case",
@@ -28706,7 +28935,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/orrpunk-art/virtual-mpc-sample/blob/15f732c71fdd722c924590b9cdec2429f7a1ec2b/docs/MPC_SAMPLE_VIRTUAL_LAB_ARCHITECTURE.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "openjooki-jooki2-case",
@@ -28736,7 +28966,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/Guillain-RDCDE/OpenJooki/blob/8d302eb5011cd24219f0130b5786c6545989f9fb/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "intel-ma",
@@ -28828,7 +29059,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/OpenLF2/OpenLF2/blob/6942db7cfaddf2e65eb45e4a4d4632120dc968f7/BUILDING.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "stickwalker-case",
@@ -28858,7 +29090,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/lumirth/stickwalker/blob/3e6634d19201d2f58507af2d0c479a41b79ad533/assets/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "qemu-rtd2841",
@@ -28866,7 +29099,7 @@
     "url": "https://github.com/rubenthampy890-del/qemu-rtd2841",
     "category": "firmware",
     "relationship": "foundation",
-    "kind": "tool",
+    "kind": "project",
     "targets": [
       "firmware"
     ],
@@ -28890,7 +29123,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/rubenthampy890-del/qemu-rtd2841/blob/8d0c64f5a25153c0e44621dc84dd2de0fbf7616b/tests/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "os-xgs-npu-case",
@@ -28920,7 +29154,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/AbdelmonemAwad/os-xgs-npu/blob/d4695512cb4491859a3044a34fc25b9a3ed1e8eb/docs/families/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "spark-mail-linux-case",
@@ -28950,7 +29185,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/kyryl-bogach/spark-mail-linux/blob/36e74b20b8a8b7f74ae2d386cbf563fddb018276/AGENTS.md"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "libremp-easymp-case",
@@ -28980,7 +29216,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/MuazTPM-YT/libre-mp/blob/c0fe797ee8697fd75dbf24fc4eadf041ba8e876e/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "cfg-visualizer",
@@ -29041,7 +29278,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/ripleyXLR8/atlantis-native/blob/6c4820c778597297c9c0bbfe5f2a13b0fe9989f3/Cargo.toml"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "lc75826-sony-cdx-a250-case",
@@ -29071,7 +29309,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/emsyscode/lc75826-sony-cdx-a250/blob/8f830424e2997a4879b550980533f6d516cfc67d/docs/protocol.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "apkscope",
@@ -29126,7 +29365,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/Probler-Yt/MacroPad/blob/2b75543c74727427ea4f3cc1d3c720fbd56fc438/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "monix-audient-id-case",
@@ -29159,7 +29399,8 @@
     "additional_evidence_urls": [
       "https://github.com/sKuhLight/monix/blob/121a1f5aeee197a6b1fa5bdd78db20840111db21/README.md",
       "https://github.com/sKuhLight/monix/blob/121a1f5aeee197a6b1fa5bdd78db20840111db21/re/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "sf2recomp-case",
@@ -29192,7 +29433,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/bipinkrish/sf2recomp/blob/e7ba03aaaa8394e4beda15eb8b321c8a01621e3f/Makefile"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "scooter-link-case",
@@ -29222,7 +29464,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/desperado0044/xiaomi-scooter-link/blob/46c3e4c0cbf5e802cd6965dd18f0fc1e0177f9b8/docs/RESEARCH_LOG.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "sony-bravia-linux-case",
@@ -29252,7 +29495,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/danielcamposramos/sony-bravia-linux/blob/b5e616ee01f1486d52a2b1d3317415605f538bf1/docs/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "dfsdk",
@@ -29313,7 +29557,8 @@
     "additional_evidence_urls": [
       "https://github.com/verzic/sb-ae9/blob/cbfef7e0de0b90915793715d13ba5b6c79cd5ea9/README.md",
       "https://github.com/verzic/sb-ae9/blob/cbfef7e0de0b90915793715d13ba5b6c79cd5ea9/docs/reverse-engineering/ctxhdb-analysis.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "kbot",
@@ -29373,7 +29618,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/xaionaro-go/thermalmaster/blob/4a52a1fa82fbd996a57b02a19ea6d4a4472d21b8/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "cpp2cs",
@@ -29465,7 +29711,8 @@
     "additional_evidence_urls": [
       "https://github.com/FarhamAghdasi/sheypoor-mcp/blob/5f544185ed9c84797f683e3e1ab36fe3e8ae7146/README.md",
       "https://github.com/FarhamAghdasi/sheypoor-mcp/blob/5f544185ed9c84797f683e3e1ab36fe3e8ae7146/document/authentication.md"
-    ]
+    ],
+    "class": "website"
   },
   {
     "id": "open-rknpu-case",
@@ -29497,7 +29744,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/dnhkng/open-rknpu/blob/0e0afcd1b00058255590bf19d644e12bea13af38/docs/architecture.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "dmc-recomp-case",
@@ -29530,7 +29778,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/Gui-Tora/dmc-recomp/blob/dea53cc65ae47dad870bebd2e387f8af698cc97a/CMakeLists.txt"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "hardsid4u-case",
@@ -29563,7 +29812,8 @@
     "additional_evidence_urls": [
       "https://github.com/pjthulin/hardsid4u/blob/539fdb2d0b9b1a721fa344c6d4300cf34911e654/docs/protocol.md",
       "https://github.com/pjthulin/hardsid4u/blob/539fdb2d0b9b1a721fa344c6d4300cf34911e654/captures/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "ms4x",
@@ -29621,7 +29871,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "website"
   },
   {
     "id": "pyeilik-case",
@@ -29653,7 +29904,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/aklto/PyEilik/blob/b1bf7ea6f29b939cddee66ffadd498ad32d02aa0/PROTOCOL.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "libfprint-goodixtls-case",
@@ -29685,7 +29937,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/Sigfrodr/libfprint-goodixtls/blob/bdf2f7ece115005fc625e3a16950c80140f4946a/tools/eval/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "walksnail-ascent-vrx-uart",
@@ -29745,7 +29998,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "scvk-case",
@@ -29773,7 +30027,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "razerstream-case",
@@ -29805,7 +30060,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/ShoelessTim/RazerStream/blob/3d762a19394b5e830d9dcb66675d435596f19df8/PROTOCOL.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "dabplayplus-case",
@@ -29837,7 +30093,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/jvspier/dabplayplus/blob/f9355864b9a452d00813f08e3453a1249736e89a/docs/findings.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "t2-platform-research",
@@ -29902,7 +30159,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/dimer47/PocketPrinter5890/blob/20118975f6e58d5910657d7ba3daa62c3e5edae9/docs/PROTOCOL_SPEC.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "salamander-uefi-case",
@@ -29936,7 +30194,8 @@
     "additional_evidence_urls": [
       "https://github.com/MikeWuPing/UEFI_Salamander/blob/56160dc0587b8729d0cf731c7fff0e7ad2581eb3/SalamanderPkg/Generated/readme.md",
       "https://github.com/MikeWuPing/UEFI_Salamander/blob/56160dc0587b8729d0cf731c7fff0e7ad2581eb3/docs/fidelity-checklist.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "cocos2d-dumper",
@@ -30049,7 +30308,8 @@
       "limits",
       "prerequisites",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "glaurung-models",
@@ -30111,7 +30371,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/bbayszczak/pyhaseiq/blob/e7bb8ce2f9350099d8c8a97daeffdb8c26d02f46/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "crackmes-writeups",
@@ -30335,7 +30596,8 @@
       "scope",
       "limits",
       "license"
-    ]
+    ],
+    "class": "website"
   },
   {
     "id": "m0rph-ctf-analysis-case",
@@ -30389,7 +30651,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "apps"
   },
   {
     "id": "binscan",
@@ -30472,7 +30735,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "cpq-iosched-case",
@@ -30499,7 +30763,8 @@
       "prerequisites",
       "testing",
       "license"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "zemismart-blind-protocol-case",
@@ -30527,7 +30792,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/blark/zemismart-blind-protocol/blob/547f9586e2066e573741fe0fe09ce79782ca2cf4/protocol_analysis.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "re4me-toolbox",
@@ -30790,7 +31056,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "aspyr-archive-tool",
@@ -31007,7 +31274,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/StardustVulpine/tMock-Server/blob/54cbdba0337979fe4d67e4f2e613a6f0d0811345/CMakeLists.txt"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "1cmdparser",
@@ -31090,7 +31358,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/Knight1/vanmoof-ble/blob/173b4c4fdf77b9f47d0aeea1f9ee1379e2aa0e92/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "holley-efi-parser",
@@ -31178,7 +31447,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/electrondefuser/cbfirestorm/blob/65802f360916030cffa2207ac5f72fae183fe0ca/PROTOCOL.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "nuvelocity-engine-case",
@@ -31207,7 +31477,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/NuVelocity/NuVelocity/blob/814f9c879de343bd57b5d875dc9119eb57496269/CMakeLists.txt"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "freers42-ricochet-xtreme-case",
@@ -31233,7 +31504,8 @@
     "additional_evidence_urls": [
       "https://github.com/NuVelocity/FRS42/blob/8d006fbe0d64663830590d23c0519c34d5f4a3ed/CMakeLists.txt",
       "https://github.com/NuVelocity/FRS42/blob/8d006fbe0d64663830590d23c0519c34d5f4a3ed/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "universal-gba-pokedex",
@@ -31317,7 +31589,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/LeiterConsulting/finalmouse_centerpiece/blob/ecd36e48f7a540dc9c723da32fbb03782de480a7/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "facebookcodec",
@@ -31428,7 +31701,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "vainglory-replay-decoder",
@@ -31574,7 +31848,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/jens62/FAAC-E145-Gate-Connect/blob/631e8b03b92746234cf5470f6080b3e800f9f9d1/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "stagg-net-case",
@@ -31601,7 +31876,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "malware-analysis-cti-reports",
@@ -31802,7 +32078,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "bms-rs485-service-suite-case",
@@ -31832,7 +32109,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/zonfacter/bms-rs485-service-suite/blob/14e1a759e7315c29d1dd1ec2b292dfd5c4d78d63/docs/INDEX.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "bgi-ethornell-converter-tga",
@@ -32002,7 +32280,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/alxgmpr/lutron-protocols/blob/d4e0a00547ac27b01ea7053bb6d190e9caa6aa6c/docs/index.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "steelseries-overlay-hook-case",
@@ -32210,7 +32489,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/Opcodeffm/petkit-local/blob/235aaebad76586793b44921b712e5b58a91b8ef3/LEGAL.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "appthreat-wasm-tools",
@@ -32278,7 +32558,7 @@
     "url": "https://github.com/mnaberez/premium5",
     "category": "firmware",
     "relationship": "foundation",
-    "kind": "tool",
+    "kind": "project",
     "targets": [
       "firmware"
     ],
@@ -32299,7 +32579,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "ipi-stay-fly-driver-case",
@@ -32332,7 +32613,8 @@
     "additional_evidence_urls": [
       "https://github.com/SpookyyQ/IPI-Stay-Fly-Driver/blob/a302fc210e93ef8ff145cee915561b18342e4d7f/docs/atk-fierce-x-protocol-notes.md",
       "https://github.com/SpookyyQ/IPI-Stay-Fly-Driver/blob/a302fc210e93ef8ff145cee915561b18342e4d7f/tools/webhid-sniffer-extension/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "kaiju-re-framework",
@@ -32422,7 +32704,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/tsuyoi-w/DreadComp/blob/9e27711d32434bc5c479ba957b97ababc4b84857/docs/Install.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "soundcore-d3200-ble-case",
@@ -32454,7 +32737,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/andrewseago/d3200-ble-note-downloader/blob/77356096b303bd8b68364ae21db2acd8194ac1ee/docs/BLE_DECRYPTION_GUIDE.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "k1-pro-opendeck-suite-case",
@@ -32486,7 +32770,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/leabergero/k1pro-opendeck-suite/blob/d004b894efe29835207487851a28f03c5fa73cda/opendeck-k1pro-plugin/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "open-picpak-case",
@@ -32517,7 +32802,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/GottZ/open-PicPak/blob/7b76daab2219b0a1c061fbe9fbf91747a8961954/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "idotmatrix-ha-case",
@@ -32546,7 +32832,8 @@
       "limits",
       "limits",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "substack-api-reference",
@@ -32727,7 +33014,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/mikel-btw/epson-l3110-driver/blob/e0fbf772b698bf010e3fe39bc1eb19034f0dee06/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "ms5-wifi-microscope-case",
@@ -32754,7 +33042,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "lux-lat-long-log-case",
@@ -32786,7 +33075,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/tobiasbrummer/lux-lat-long-log/blob/87e51686c8496ca20fa8b14433ba548383f8da5b/PROTOCOL.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "mtg-arena-collection-export-case",
@@ -32813,7 +33103,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/Ikreb1/mtg-arena-collection-export/blob/a63edadee8160b18ac7c8d6387cab7ec53ccd294/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "magene-l308-taillight-case",
@@ -32845,7 +33136,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/mchardysam/magene-l308-taillight/blob/346da4577e6980b48b50f7f02e387280c165a812/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "void-client-case",
@@ -32877,7 +33169,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/Senko74/Void-Client/blob/005183d271b907e0466228b185daace893f95e4c/package.json"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "xbloom-ble-case",
@@ -32911,7 +33204,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/Janczykkkko/xbloom-ble/blob/cfa29daa771fdd147de78c1844d2251ca81ea583/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "ajazz-ak820-pro-mac-case",
@@ -32944,7 +33238,8 @@
     "additional_evidence_urls": [
       "https://github.com/gusleig/ajazz-ak820-pro-mac/blob/2ad5c553140b50b62e1b93096dc089086976351e/docs/DISCOVERY-LOG.md",
       "https://github.com/gusleig/ajazz-ak820-pro-mac/blob/2ad5c553140b50b62e1b93096dc089086976351e/docs/protocol.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "grb-modding-knowledgebase",
@@ -33031,7 +33326,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/CreativeInquiry/GameTrak-Liberation/blob/bc8c2f96c86c15f016939777e9694f1366cb2836/docs/protocol.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "cooper-hunter-ac-protocol-case",
@@ -33063,7 +33359,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/kronhait/cooper-hunter-ac-esphome/blob/aceab67f8621e5e17c52ffbbb9a7964524b79783/PROTOCOL.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "yandex-station-local-streaming",
@@ -33251,7 +33548,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/claygorman/aw5d-linux/blob/e70d481429b9bf1470bd21a9b33ebfd9e5db491c/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "mirrorframe",
@@ -33403,7 +33701,8 @@
       "testing",
       "prerequisites",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "sprdflash-rs",
@@ -33467,7 +33766,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/time-attack/OpenPigeon/blob/86c649174f3521d79a7c7eda58725c99286804b7/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "zltrouter-case",
@@ -33499,7 +33799,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/exbyte-dev/zltrouter/blob/60a47a6dfbd435a52da428c575b373e431e3f330/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "claude-rc-api-case",
@@ -33531,7 +33832,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/ThatCrispyToast/claude-rc-api/blob/fac6d28eb1cf797f95abe22ee95b7f23fb246e4d/README.md"
-    ]
+    ],
+    "class": "website"
   },
   {
     "id": "spelunking",
@@ -33596,7 +33898,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/AndrewDemsDS/hisense-w41h1/blob/678cc64dc28aa19e365be354a38917cf5506f9e6/docs/guide/Protocol-Overview.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "whatsapp-docs",
@@ -33803,7 +34106,8 @@
     "additional_evidence_urls": [
       "https://github.com/digows/cosmo/blob/7844b9126c54f074e643e0d5806c69e1e382d94b/gamedata/README.md",
       "https://github.com/digows/cosmo/blob/7844b9126c54f074e643e0d5806c69e1e382d94b/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "tuya-mobile-security-layer-case",
@@ -33836,7 +34140,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/AboveColin/tuya-mobile/blob/86301173cb3c9fc543841f269805438151460dad/pyproject.toml"
-    ]
+    ],
+    "class": "apps"
   },
   {
     "id": "ed1ths-pvz-toolkit",
@@ -33895,7 +34200,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "linkcam-case",
@@ -33925,7 +34231,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/fmontes/linkcam/blob/f4c3d8726e58d72bc8fb59e20fd19ec74c95fb3a/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "shark-k86-mac-case",
@@ -33955,7 +34262,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/RaphaelCaputo2/shark-k86-mac/blob/f9c8910637e0f42ee6f51a530582077570f1abd9/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "pcm-explorer",
@@ -34041,7 +34349,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "trvision-case",
@@ -34070,7 +34379,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "sogen-dart-bindings",
@@ -34134,7 +34444,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/Enigma-Labs-Technology/pocket-client/blob/3386dae33289daa46bbdbff3b631766dd9267f39/docs/protocol/ble-protocol.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "rofllens",
@@ -34195,7 +34506,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "website"
   },
   {
     "id": "keyaxis-keyboard-hid-case",
@@ -34227,7 +34539,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/RigZeeel/KeyAxis/blob/53a7e1b267083ce8a979aea95635a4391962020a/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "kenshi-modkit",
@@ -34291,7 +34604,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/ericboehs/aosmith-water-heater/blob/4145daaf0f85bfdc19e96482e2ef4442721fb43a/ARCHITECTURE.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "j2208-band-tools-case",
@@ -34323,7 +34637,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/brendangooden/j2208-band-tools/blob/62ce48357e25d1c68e4c3e0bfd8d2cf1bbd745e9/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "eufy-local-ha-case",
@@ -34354,7 +34669,8 @@
     "additional_evidence_urls": [
       "https://github.com/SudoSaturn/eufy-local-ha/blob/4f2164281977000754611dd35e144d45858a8b96/README.md",
       "https://github.com/SudoSaturn/eufy-local-ha/blob/4f2164281977000754611dd35e144d45858a8b96/E22SUPPORT.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "openpeats-case",
@@ -34386,7 +34702,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/Wasabules/OpenPeats/blob/8e8357d6054e5bb2244241313ad6491f55692a76/PROTOCOL.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "hongtai-panel-case",
@@ -34413,7 +34730,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "emotion-control-ha-case",
@@ -34440,7 +34758,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "akp02-display-protocol-case",
@@ -34470,7 +34789,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/deonspengler/akp02/blob/ee4f4468573fad8d38f3012aac0ccbf1f9c0edcf/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "cupertino-files",
@@ -34537,7 +34857,8 @@
     "additional_evidence_urls": [
       "https://github.com/zeljkovranjes/l4d2-director-system-research/blob/e646012ed9176d8691ff106c9643995a6bfa19c1/research/DIRECTOR_REVERSE_ENGINEERING.md",
       "https://github.com/zeljkovranjes/l4d2-director-system-research/blob/e646012ed9176d8691ff106c9643995a6bfa19c1/research/tools/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "msp-csv-format-case",
@@ -34564,7 +34885,8 @@
       "prerequisites",
       "limits",
       "license"
-    ]
+    ],
+    "class": "apps"
   },
   {
     "id": "mechrewired-mechwarrior-2-case",
@@ -34590,7 +34912,8 @@
     "requirement_facets": [
       "prerequisites",
       "license"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "nrf52-eink-price-tag-case",
@@ -34621,7 +34944,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/niazlv/nrf52-eink-price-tag/blob/ac789f2f103a1d9da4054076496d0921379e5a0b/LICENSE"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "benro-polaris-firmware-patcher-case",
@@ -34687,7 +35011,8 @@
     "additional_evidence_urls": [
       "https://github.com/Lightning-13/rk-m75/blob/abf286541b096da2a62360ec7b12035babc007d0/docs/protocol.md",
       "https://github.com/Lightning-13/rk-m75/blob/abf286541b096da2a62360ec7b12035babc007d0/2.4ghz/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "d2mac-linux-case",
@@ -34722,7 +35047,8 @@
     "additional_evidence_urls": [
       "https://github.com/jaenster/d2mac-linux/blob/313fa1c5b8c05c14f5aeebc05904fced222633d0/scripts/README.md",
       "https://github.com/jaenster/d2mac-linux/blob/313fa1c5b8c05c14f5aeebc05904fced222633d0/LICENSE"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "packerscope",
@@ -34782,7 +35108,8 @@
     "additional_evidence_urls": [
       "https://github.com/codypendant/aciq-minisplit-protocol/blob/fe8a3cf59fdfc0f83d4cd65907962b2146c45188/PROTOCOL.md",
       "https://github.com/codypendant/aciq-minisplit-protocol/blob/fe8a3cf59fdfc0f83d4cd65907962b2146c45188/tools/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "rnd-companion-case",
@@ -34814,7 +35141,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/Enkerli/rnd-companion/blob/f98ebb811974e01970f00e0c4a0dd04557913ac2/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "imprint-pe-triage",
@@ -34877,7 +35205,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/saltyboosack-blip/Spider-Man-2-PS2-Recomp/blob/98aef964411fc355ff4ae59a710b1644222bfe6c/game/SLUS-20776/README.md"
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "ffxii-tza-tools",
@@ -35106,7 +35435,8 @@
       "Requires Python 3.12 or newer and the documented numpy, pillow, pygame, loguru, and msgspec dependencies.",
       "Requires the user's own TH07 data archive; BGM uses thbgm.dat from the same directory.",
       "The source attributes its decompilation reference to some100/th07."
-    ]
+    ],
+    "class": "game"
   },
   {
     "id": "viture-v2-case",
@@ -35136,7 +35466,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/elasticjava/viture-v2/blob/8b29df0667cd65f0af8293b72c1c97ec959213bd/README.md"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "bikestation-case",
@@ -35163,7 +35494,8 @@
       "prerequisites",
       "testing",
       "license"
-    ]
+    ],
+    "class": "hardware"
   },
   {
     "id": "grsimwrite-mac-case",
@@ -35194,7 +35526,8 @@
     ],
     "additional_evidence_urls": [
       "https://github.com/eliel9012/grsimwrite-mac/blob/280c56527747a4ab3b720db550edac84e9046ecd/docs/PLANO.md"
-    ]
+    ],
+    "class": "software"
   },
   {
     "id": "kdemulator",

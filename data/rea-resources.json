@@ -425,7 +425,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "rea-notion-case",
@@ -477,7 +478,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "rea-electron-guide",
@@ -638,7 +640,8 @@
       "app",
       "protocol"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "hardware"
   },
   {
     "id": "morluto-awesome-re",
@@ -700,6 +703,7 @@
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "app"
     ],
@@ -754,6 +758,7 @@
       "protocol"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/a-funk/open-appleremote/blob/1e6e190c3c29a3d2d8cad2c38c09f8953e9633e3/docs/PROTOCOL.md",
       "https://github.com/a-funk/open-appleremote/blob/1e6e190c3c29a3d2d8cad2c38c09f8953e9633e3/pyproject.toml",
@@ -790,6 +795,7 @@
       "protocol"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/dvdarkin/gamekb-k17/blob/e61f444793857c0e10a31692674335ee4ee9c89e/docs/PROTOCOL.md",
       "https://github.com/dvdarkin/gamekb-k17/blob/e61f444793857c0e10a31692674335ee4ee9c89e/pyproject.toml",
@@ -827,6 +833,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/guyru/cf632ble/blob/c029ef5cfefbd323ffe2a194a75db5cc47aa6d5c/package.json"
     ]
@@ -861,6 +868,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/LilZeeCN/zee-rp/blob/473761e6a08f051e1666944db690332ef27a6038/docs/validation.md",
       "https://github.com/LilZeeCN/zee-rp/blob/473761e6a08f051e1666944db690332ef27a6038/docs/release-evidence.json",
@@ -899,6 +907,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/port/README.md",
       "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/notes/link-verification.md",
@@ -937,6 +946,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/NOTICE",
       "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/LICENSE",
@@ -974,6 +984,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/BUILDING.md",
       "https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/LICENSE"
@@ -1010,6 +1021,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/RIGHTS_AND_LICENSES.md",
       "https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/docs/STATUS.md",
@@ -1046,6 +1058,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/BUILDING.md",
       "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/LICENSE",
@@ -1113,6 +1126,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/",
       "https://blog.chrislewis.au/the-unexpected-effectiveness-of-one-shot-decompilation-with-claude/",
@@ -1182,6 +1196,7 @@
       "protocol"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/Cargo.toml",
       "https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/src/device.rs",
@@ -1219,6 +1234,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/LICENSE",
       "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/CMakeLists.txt",
@@ -1255,6 +1271,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/cudanexus/vd-streamer-linux/blob/e65c302f13639f044742bdc4951ab1a424c1c929/LICENSE"
     ]
@@ -1289,6 +1306,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/Caho1/open-claude-ui/blob/ddf3aea1711db62fd6d24343bbab500a5ae69f64/package.json",
       "https://github.com/Caho1/open-claude-ui/blob/ddf3aea1711db62fd6d24343bbab500a5ae69f64/assets/README.md",
@@ -1327,6 +1345,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/go.mod",
       "https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/NOTICE.md",
@@ -1365,6 +1384,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "apps",
     "additional_evidence_urls": [
       "https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/docs/building.md",
       "https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/docs/install-and-verify.md",
@@ -1404,6 +1424,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/BUILD_MATCHING.md",
       "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/REPLAY_RESULTS.md",
@@ -1441,6 +1462,7 @@
       "website"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/public/assets/licenses/dinosaur.txt"
     ]
@@ -1472,6 +1494,7 @@
       "binary"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/morluto/rea/pull/1272"
     ]
@@ -1536,6 +1559,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/CMakeLists.txt",
       "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/COPYING",
@@ -1574,6 +1598,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/CMakeLists.txt",
       "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/LICENSE",
@@ -1612,6 +1637,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/CMakeLists.txt",
       "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/LICENSE"
@@ -1648,6 +1674,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/Cargo.toml",
       "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/LICENSE.md",
@@ -1688,6 +1715,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/CMakeLists.txt",
       "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/LICENSE",
@@ -1727,6 +1755,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Makefile",
       "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Jenkinsfile",
@@ -1765,6 +1794,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/docs/BUILDING.md",
       "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/CMakeLists.txt",
@@ -1802,6 +1832,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/CMakeLists.txt",
       "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/LICENSE",
@@ -1841,6 +1872,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/src_rebuild/premake5.lua",
       "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/data/install/conv.sh",
@@ -1880,6 +1912,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/Cargo.toml",
       "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/docs/target-app-parity.md",
@@ -1921,6 +1954,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/Cargo.toml",
       "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/docs/target-app-parity.md",
@@ -1962,6 +1996,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/Cargo.toml",
       "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/.github/workflows/ci.yml",
@@ -2005,6 +2040,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/Cargo.toml",
       "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/.github/workflows/ci.yml",
@@ -2052,6 +2088,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/docs/BACKGROUND.md",
       "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/VERSION",
@@ -2096,6 +2133,7 @@
       "firmware"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/findings/WINDOWS-DRIVER.md",
       "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/findings/TESTING.md",
@@ -2143,6 +2181,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/lxistired/ledger-reborn/blob/d7f6b8a1f4ad6c4ae8b10100d1c93cf15940c21d/README.md",
       "https://github.com/lxistired/ledger-reborn/blob/d7f6b8a1f4ad6c4ae8b10100d1c93cf15940c21d/ENGINE_README.md",
@@ -2190,6 +2229,7 @@
       "website"
     ],
     "kind": "case-study",
+    "class": "website",
     "additional_evidence_urls": [
       "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/README.en.md",
       "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/case-studies/rsc-reconstruction.md",
@@ -2232,6 +2272,7 @@
       "protocol"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/NOTICE",
       "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/REUSE.toml",
@@ -2302,6 +2343,7 @@
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "app"
     ],
@@ -2351,6 +2393,7 @@
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "app"
     ],
@@ -2602,6 +2645,7 @@
     "relationship": "community-reported-mixed-workflow",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -2734,6 +2778,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/docs/STATUS.md",
       "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/docs/SETUP.md",
@@ -2885,6 +2930,7 @@
       "website"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/docs/reverse-engineering.md",
       "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/docs/testing.md",
@@ -2924,6 +2970,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://x.com/HanZhang415188/status/2109843188341207283"
     ]
@@ -2958,6 +3005,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/README.md",
       "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/docs/VALIDATION.md",
@@ -3001,6 +3049,7 @@
       "binary"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/REA.md",
       "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/MATCHING.md",
@@ -3046,6 +3095,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/eray1605/re2ds/blob/f1e120ec50f6b072d7283a2d3dd35611d656c9b7/ROADMAP.md",
       "https://github.com/eray1605/re2ds/blob/f1e120ec50f6b072d7283a2d3dd35611d656c9b7/Makefile",
@@ -3237,6 +3287,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/tools/rea_vanilla.py",
       "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/CONTRIBUTING.md",
@@ -3280,6 +3331,7 @@
       "binary"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://az9713.github.io/untangle-rebuild/receipt/rebuild-receipt.html",
       "https://az9713.github.io/untangle-rebuild/rebuild/index.html"
@@ -3313,6 +3365,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "apps",
     "additional_evidence_urls": [
       "https://www.reddit.com/r/AndroidTVApps/comments/1xa9tv3/i_had_ai_reverseengineer_tcls_browsehere_and/",
       "https://github.com/sonalder-darlene/sofa-tv-browser/releases"
@@ -3375,6 +3428,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "science",
     "additional_evidence_urls": [
       "https://github.com/dmytrobsp/fastview-rea/releases"
     ]
@@ -3411,6 +3465,7 @@
       "binary"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/CLAUDE.md",
       "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/docs/functions/hud-crosshair.md"
@@ -3445,7 +3500,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "samp-client-rea-partial-reconstruction-case",
@@ -3476,7 +3532,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "desktop-games-nostalgia-rea-port-case",
@@ -3507,7 +3564,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "gunzrs-rea-rust-reimplementation-case",
@@ -3538,6 +3596,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/OpenRsG/GunZRs/releases/tag/v0.1.0"
     ]
@@ -3672,6 +3731,7 @@
       "binary"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/KarlssonChristoffer/DiskLens/blob/c7d67f4b084b408d9b3e1bb22ee8723727494488/docs/research.md"
     ]
@@ -3705,6 +3765,7 @@
       "binary"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/B-Howell/soundconnect-desktop/blob/481f4af2da2c96026bd14d19f366c76aa737ccd0/docs/research/SoundConnect%20Desktop%20-%20Upstream%20Security%20Review.md"
     ]
@@ -3774,6 +3835,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/michaelshimeles/sketch/blob/af814b7ab2bd77328a906a1986a048c233e25f9c/analysis/PAPER_ARCHITECTURE.md",
       "https://github.com/michaelshimeles/sketch/releases/tag/v0.1.0"
@@ -4080,6 +4142,7 @@
     "relationship": "community-reported-mixed-workflow",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
