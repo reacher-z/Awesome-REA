@@ -912,11 +912,10 @@ html:lang(zh-CN) .cb-n { font-family: "EB Garamond Accent", var(--font-display);
 .page-home .scans-links a { display: inline-block; min-height: 24px; line-height: 24px; }
 @media (min-width: 1000px) { .page-home .scans { padding-block: 10px; } .page-home .scans-links { gap: 0; margin-top: 4px; } }
 
-/* From the maintainers: the benchmark row, labelled, largest first. */
+/* Featured: the benchmark row, labelled, largest first. */
 .promo { margin-top: clamp(40px, 5vw, 72px); margin-bottom: clamp(48px, 6vw, 88px); }
 .promo-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 14px; }
 .promo-label { margin: 0; font: 500 .8125rem/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
-.promo-note { margin: 0; font-size: .875rem; color: var(--ink-2); }
 .promo-grid { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: 16px; }
 .promo-card { display: flex; flex-direction: column; min-width: 0; padding: 24px; border: 1px solid var(--panel-edge); border-radius: 4px; background: var(--bg-raised); }
 .promo-name { margin: 0; font: 500 1.75rem/1.1 var(--font-display); color: var(--ink-strong); }

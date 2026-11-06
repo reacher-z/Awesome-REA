@@ -46,7 +46,7 @@ CONNECTIONS = {
 CONNECTION_OF = {relationship: key for key, (_, relationships) in CONNECTIONS.items() for relationship in relationships}
 COPY = {
     'en': {
-        'h1': 'Reverse engineer <em>anything</em>.',
+        'h1': 'Reverse engineer <em>anything</em>',
         'lede': 'Tools, case studies and papers for taking apart binaries, games, apps, firmware, protocols and websites, each checked against its source.',
         'search_label': 'Search the catalogue', 'placeholder': 'Try Ghidra, IL2CPP or BLE', 'clear': 'Clear search', 'focus': 'Press / to focus',
         'stats': '<span class="s-lg"><strong>{res}</strong> curated resources and <strong>{pap}</strong> papers, each reviewed against its source. Plus <a href="/discoveries/"><strong>{idx}</strong> unreviewed discoveries</a> from the scans.</span><span class="s-sm"><strong>{res}</strong> resources, <strong>{pap}</strong> papers, <a href="/discoveries/"><strong>{idx}</strong> unreviewed</a></span>',
@@ -194,7 +194,7 @@ def _drawer(resources, order, language, prefix) -> str:
             f'<p class="note">{text["drawer_note"]}</p></div></div></section>')
 
 
-# The maintainers' own benchmarks. They are labelled as such, and carry no review stamp until they have catalog records.
+# The featured benchmarks. They carry no review stamp until they have catalog records.
 BENCHMARKS = (
     {'name': 'WebsiteBench', 'repository': 'TIGER-AI-Lab/WebsiteBench', 'project': 'https://website-bench.com/',
      'leaderboard': 'https://website-bench.com/#results',
@@ -208,8 +208,8 @@ BENCHMARKS = (
      'zh': ('AI 智能体能否完成日常在线任务？', '面向浏览器 AI 智能体日常任务的开源基准。')},
 )
 BENCHMARK_TEXT = {
-    'en': {'label': 'From the maintainers', 'note': 'Our own benchmarks, not independent picks.', 'star': 'Star {name}', 'leaderboard': 'Leaderboard', 'project': 'Project page'},
-    'zh': {'label': '来自维护者', 'note': '这是我们自己的基准，并非独立推荐。', 'star': '为 {name} 加星', 'leaderboard': '排行榜', 'project': '项目主页'},
+    'en': {'label': 'Featured', 'star': 'Star {name}', 'leaderboard': 'Leaderboard', 'project': 'Project page'},
+    'zh': {'label': '精选', 'star': '为 {name} 加星', 'leaderboard': '排行榜', 'project': '项目主页'},
 }
 
 
@@ -226,7 +226,7 @@ def _maintainer_benchmarks(language: str) -> str:
                      f'<a class="btn" href="{benchmark["leaderboard"]}" rel="noopener">{text["leaderboard"]}</a>'
                      f'<a class="btn" href="{benchmark["project"]}" rel="noopener">{text["project"]}</a></p></article>')
     return (f'<section class="wrap promo" aria-labelledby="promo-title"><div class="promo-head"><h2 class="promo-label" id="promo-title">{text["label"]}</h2>'
-            f'<p class="promo-note">{text["note"]}</p></div><div class="promo-grid">{"".join(cards)}</div></section>')
+            f'</div><div class="promo-grid">{"".join(cards)}</div></section>')
 
 
 def _homepage_head(explorer_html: str) -> str:
