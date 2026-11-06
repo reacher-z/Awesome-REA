@@ -509,18 +509,13 @@ def render_totals(records, papers, index_count, language):
     zh = language == 'zh'
     paper_urls = {paper['url'] for paper in papers}
     cases = sum(record.get('kind') == 'case-study' for record in records)
-    listed = sum(record['url'] not in paper_urls for record in records)
     reviewed = max(entry['verified_at'][:10] for entry in [*records, *papers])
     if zh:
         line = (f'{len(records):,} 项精选资源（{cases:,} 个案例）· {len(papers):,} 篇论文 · '
                 f'{index_count:,} 个已索引仓库 · 最近来源复核 {reviewed}。')
-        if listed != len(records):
-            line += f'其中 {len(records) - listed:,} 项仅列于论文部分，因此各分区计数合计 {listed:,}。'
     else:
         line = (f'{len(records):,} curated resources ({cases:,} cases) · {len(papers):,} papers · '
                 f'{index_count:,} indexed repositories · latest source review {reviewed}.')
-        if listed != len(records):
-            line += f' Section counts add up to {listed:,} because {len(records) - listed:,} of these appear only under Papers.'
     return line + '\n\n'
 
 
