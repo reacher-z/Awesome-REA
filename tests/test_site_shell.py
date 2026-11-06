@@ -6,11 +6,13 @@ import re
 import sys
 import tempfile
 import unittest
+from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 
 from build_home import COPY, FEATURED, KIND_CODES, _featured_projects, evidence_label, search_index  # noqa: E402
+from home_art import exploded_view  # noqa: E402
 from site_footer import site_footer  # noqa: E402
 import site_shell  # noqa: E402
 
@@ -93,6 +95,13 @@ class ShellTests(unittest.TestCase):
                 self.assertIn(f'<span class="star-long">{label}</span><span class="star-short">Star</span>', chrome)
                 self.assertIn('data-stars="reacher-z/Awesome-REA"', chrome)
 
+    def test_each_part_of_the_exploded_figure_is_its_own_group(self):
+        figure = ElementTree.fromstring(exploded_view('en'))
+        groups = figure.findall('{http://www.w3.org/2000/svg}g') or figure.findall('g')
+        self.assertEqual(len(groups), 10)
+        self.assertEqual(len(figure.findall('.//g')) + len(figure.findall('.//{http://www.w3.org/2000/svg}g')), 10)
+        self.assertTrue(all(len(group) for group in groups))
+
     def test_footer_stars_the_sister_catalogue_in_both_languages(self):
         for language in ('en', 'zh'):
             footer = site_footer(language, note='', repository_url=REPOSITORY)
@@ -104,6 +113,10 @@ class ShellTests(unittest.TestCase):
             html = _featured_projects(language)
             order = [html.index(f'https://github.com/{repository}"') for repository in ('TIGER-AI-Lab/WebsiteBench', 'TIGER-AI-Lab/ClawBench', 'reacher-z/Awesome-CUA')]
             self.assertEqual(order, sorted(order))
+            for image in re.findall(r'<img src="/featured/([a-z-]+\.webp)"', html):
+                self.assertTrue((ROOT / 'site/featured' / image).is_file(), image)
+            self.assertEqual(html.count('<img '), 3)
+            self.assertEqual(html.count(' alt="'), 3)
 
     def test_footer_fills_the_last_scan_at_runtime_and_stays_byte_stable(self):
         footer = site_footer('en', note='', repository_url=REPOSITORY)

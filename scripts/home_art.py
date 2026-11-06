@@ -34,18 +34,23 @@ def exploded_view(lang='en'):
     for corner in ((-half, half), (half, half), (half, -half), (0, 0)):
         out.append(_line(_pt(cx, cy, *corner, z[0]), _pt(cx, cy, *corner, z[4]), 'dash'))
     # E: solder balls
+    out.append('<g class="part part-e">')
     for i in range(5):
         for j in range(5):
             x, y = -half + 8 + i * 19, -half + 8 + j * 19
             a, b = _pt(cx, cy, x, y, z[0])
             out.append(f'<ellipse cx="{a}" cy="{b}" rx="4" ry="2.5" class="p"/>')
+    out.append('</g>')
     # D: substrate with routed traces
+    out.append('<g class="part part-d">')
     out.append(_plate(cx, cy, half, z[1], 6))
     for k in (-26, -9, 9, 26):
         for sign in (-1, 1):
             a, b, c = _pt(cx, cy, k, sign * (half - 5), z[1]), _pt(cx, cy, k, sign * 22, z[1]), _pt(cx, cy, k * .45, sign * 8, z[1])
             out.append(f'<polyline points="{a[0]},{a[1]} {b[0]},{b[1]} {c[0]},{c[1]}" class="thin"/>')
+    out.append('</g>')
     # C: lead frame ring and bond wires, three to a side
+    out.append('<g class="part part-c">')
     out.append(_plate(cx, cy, half, z[2], 2))
     out.append(_poly([_pt(cx, cy, -20, -20, z[2]), _pt(cx, cy, 20, -20, z[2]), _pt(cx, cy, 20, 20, z[2]), _pt(cx, cy, -20, 20, z[2])], 'thin'))
     for side in range(4):
@@ -54,24 +59,31 @@ def exploded_view(lang='en'):
             outer = {0: (k * 1.6, -half + 5), 1: (half - 5, k * 1.6), 2: (k * 1.6, half - 5), 3: (-half + 5, k * 1.6)}[side]
             a, b = _pt(cx, cy, *inner, z[2]), _pt(cx, cy, *outer, z[2])
             out.append(f'<path d="M{a[0]} {a[1]}Q{(a[0] + b[0]) / 2:.1f} {min(a[1], b[1]) - 11:.1f} {b[0]} {b[1]}" class="thin"/>')
+    out.append('</g>')
     # B: the die, the one rose element
+    out.append('<g class="part part-b">')
     out.append(_plate(cx, cy, 24, z[3], 4, 'a'))
     for k in (-12, 0, 12):
         out.append(_line(_pt(cx, cy, k, -24, z[3]), _pt(cx, cy, k, 24, z[3]), 'thin ink'))
         out.append(_line(_pt(cx, cy, -24, k, z[3]), _pt(cx, cy, 24, k, z[3]), 'thin ink'))
+    out.append('</g>')
     # A: lid with a pin-1 mark
+    out.append('<g class="part part-a">')
     out.append(_plate(cx, cy, half, z[4], 5))
     a, b = _pt(cx, cy, -half + 11, -half + 11, z[4])
     out.append(f'<ellipse cx="{a}" cy="{b}" rx="4.2" ry="2.5" class="a"/>')
+    out.append('</g>')
     # leaders and callouts
     names = ('封盖', '晶粒', '键合线', '基板', '焊球') if lang == 'zh' else ('LID', 'DIE', 'BOND WIRES', 'SUBSTRATE', 'SOLDER BALLS')
     labels = [('A', names[0], z[4], half), ('B', names[1], z[3], 24), ('C', names[2], z[2], half), ('D', names[3], z[1], half), ('E', names[4], z[0], half)]
     for letter, name, zz, h in labels:
         s = _pt(cx, cy, h, -h, zz)
         y = s[1] - 7
+        out.append(f'<g class="part part-{letter.lower()} part-label">')
         out.append(f'<polyline points="{s[0]},{s[1]} {s[0] + 10:.1f},{y} 262,{y}" class="thin"/>')
         out.append(f'<circle cx="{s[0]}" cy="{s[1]}" r="1.7" class="dot"/>')
         out.append(f'<text x="267" y="{y + 3.6:.1f}"><tspan class="b">{letter}</tspan> {name}</text>')
+        out.append('</g>')
     # dimension line on the left, lid to balls
     lx = _pt(cx, cy, -half, half, 0)[0]
     top, bot = _pt(cx, cy, -half, half, z[4])[1], _pt(cx, cy, -half, half, z[0])[1]

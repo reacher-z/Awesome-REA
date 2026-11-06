@@ -69,6 +69,8 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
   margin-right: -6px; color: var(--ink-2); font-size: 1rem; font-weight: 500; text-decoration: none; white-space: nowrap; }
 .folder::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--bg); border: 1px solid var(--line-strong);
   border-bottom: 0; border-radius: 7px 7px 0 0; transform: perspective(36px) rotateX(2.4deg); transform-origin: 50% 100%; }
+.folder { transition: color var(--t-fast) var(--ease); }
+.folder::before { transition: background-color var(--t-fast) var(--ease); }
 .folder:hover { color: var(--ink-strong); }
 .folder:hover::before { background: color-mix(in srgb, var(--surface) 55%, var(--surface-2)); }
 .folder .i { width: 17px; height: 17px; color: var(--ink-2-panel); }
@@ -181,11 +183,11 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 /* ---------- buttons ---------- */
 .btn { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border: 1px solid var(--border-input);
   border-radius: var(--r-control); background: var(--bg-raised); color: var(--ink-strong); font-size: .9375rem; font-weight: 600;
-  text-decoration: none; cursor: pointer; white-space: nowrap; }
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: background-color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease); }
 .btn:hover { color: var(--ink-strong); border-color: var(--ink-2); background: color-mix(in srgb, var(--bg-raised) 80%, var(--surface)); }
 .btn-primary { background: var(--btn-bg); color: var(--btn-ink); border-color: var(--btn-bg); }
-.btn-primary:hover { background: var(--brand-strong); border-color: var(--brand-strong); color: var(--btn-ink); }
-:root[data-theme="dark"] .btn-primary:hover { background: var(--accent-display); color: var(--btn-ink); }
+.btn-primary:hover { background: color-mix(in srgb, var(--btn-bg) 84%, var(--ink-strong)); border-color: color-mix(in srgb, var(--btn-bg) 84%, var(--ink-strong)); color: var(--btn-ink); }
 .btn .i { width: 17px; height: 17px; }
 .btn-quiet { border-color: transparent; background: none; color: var(--brand-ink); padding-inline: 10px; }
 .btn-quiet:hover { background: color-mix(in srgb, var(--ink) 7%, transparent); border-color: transparent; color: var(--brand-strong); }
@@ -688,7 +690,16 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
   .xv { display: block; position: absolute; top: -22px; right: 0; z-index: 0; width: var(--xv-w); pointer-events: none; }
   .xv .art text { font-size: 10.5px; }
   .xv .art text.cap { font-size: 9.5px; }
+  /* Fig. 1 comes apart once on load; pointing at a part or its callout picks that part out of the stack. */
+  .part-a { --xv-from: 64px; } .part-b { --xv-from: 32px; } .part-c { --xv-from: 0px; } .part-d { --xv-from: -32px; } .part-e { --xv-from: -64px; }
+  .xv .part { pointer-events: auto; transition: opacity var(--t-base) var(--ease); animation: xv-part 900ms var(--ease) 120ms backwards; }
+  .xv .part-label { animation-name: xv-label; animation-delay: 620ms; animation-duration: 360ms; }
+  .xv-art:has(.part-a:hover) .part:not(.part-a), .xv-art:has(.part-b:hover) .part:not(.part-b), .xv-art:has(.part-c:hover) .part:not(.part-c),
+  .xv-art:has(.part-d:hover) .part:not(.part-d), .xv-art:has(.part-e:hover) .part:not(.part-e) { opacity: .28; }
 }
+@keyframes xv-part { from { opacity: 0; transform: translateY(var(--xv-from)); } }
+@keyframes xv-label { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .xv .part { animation: none; } }
 
 /* rows: one line of description on wide rows, so every row has the same height */
 @container (min-width: 901px) { .card-desc { -webkit-line-clamp: 1; line-clamp: 1; } }
@@ -930,6 +941,19 @@ html:lang(zh-CN) .cb-n { font-family: "EB Garamond Accent", var(--font-display);
 .promo-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: auto 0 0; padding-top: 20px; }
 .promo-actions .btn { min-height: 44px; padding: 0 14px; }
 .promo-actions .i { width: 15px; height: 15px; }
+.promo-copy { display: flex; flex: 1; flex-direction: column; min-width: 0; }
+.promo-shot { margin: 0 0 18px; }
+.promo-shot a { display: block; border: 1px solid var(--panel-edge); border-radius: 4px; overflow: hidden; transition: transform var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease); }
+.promo-shot a:hover { transform: translateY(-3px); box-shadow: 4px 4px 0 var(--secondary); }
+.promo-shot img { display: block; width: 100%; height: auto; }
+.promo-shot figcaption { margin-top: 6px; font: 400 .75rem/1.4 var(--font-mono); color: var(--ink-2); overflow-wrap: anywhere; }
+.promo-lead .promo-shot { margin: 22px 0 0; }
+.promo-lead .promo-shot a { border-color: #4A3740; }
+.promo-lead .promo-shot a:hover { box-shadow: 5px 5px 0 #F4ACB7; }
+@media (min-width: 900px) {
+  .promo-lead { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: clamp(24px, 3vw, 44px); align-items: center; }
+  .promo-lead .promo-shot { margin: 0; }
+}
 .btn-count { padding-left: 8px; border-left: 1px solid currentColor; font: 500 .8125rem/1 var(--font-mono); }
 .promo-lead { --ink-strong: #FAF3DD; --ink: #F3E9DC; --ink-2: #E9DCDF; --focus: #FFCAD4; color-scheme: dark; padding: clamp(28px, 3.4vw, 44px); border-color: #4A3740;
   background: #4A3740 linear-gradient(#54404A 1px, transparent 1px) 0 0 / 100% 28px; color: var(--ink); }
