@@ -129,7 +129,8 @@ def next_request(state, *, now=None):
     available = [p for p in state['partitions'] if p['status'] == 'pending' and p['not_before'] <= instant]
     if not available or len(state['observations']) >= MAX_OBSERVATIONS:
         return None
-    item = min(available, key=lambda p: (p['last_sequence'], p['root'], p['low']))
+    # Partitions never asked share sequence 0, and among those the newest root goes first.
+    item = min(available, key=lambda p: (p['last_sequence'], -p['root'] if p['last_sequence'] == 0 else p['root'], p['low']))
     return request_for(state, item)
 
 

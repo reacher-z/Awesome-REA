@@ -38,7 +38,7 @@ class PartitionTests(unittest.TestCase):
         self.assertEqual(document, original)
         self.assertEqual(request['per_page'], 100)
         query = parse_qs(urlsplit(request['path']).query)['q'][0]
-        self.assertEqual(query, BASES[0] + ' is:public fork:false archived:false created:' + LOW + '..' + HIGH)
+        self.assertEqual(query, BASES[-1] + ' is:public fork:false archived:false created:' + LOW + '..' + HIGH)
         self.assertEqual(query, request['query'])
 
     def test_result_cap_splits_without_overlap_or_discarding_discovered_items(self):
@@ -435,6 +435,13 @@ class PersistenceTests(unittest.TestCase):
         document['candidates']['2'] = document['candidates'].pop('1')
         with self.assertRaises(ValueError):
             frontier.validate_frontier(document, approved_queries=BASES)
+
+
+class NewestRootTests(unittest.TestCase):
+    def test_a_new_root_goes_ahead_of_an_older_root_never_asked(self):
+        state = frontier.new_frontier(until='2026-10-18T00:00:00Z', approved_queries=['topic:one', 'topic:two'])
+        frontier.add_queries(state, ['topic:three'], approved_queries=['topic:one', 'topic:two', 'topic:three'])
+        self.assertTrue(frontier.next_request(state, now=0)['query'].startswith('topic:three '))
 
 
 if __name__ == '__main__':
