@@ -49,6 +49,26 @@ class ValidationTest(unittest.TestCase):
         self.assertEqual(self.problems({capture(1)['id']: decision(1, decision='hold', reason_code='insufficient-docs')}), [])
         self.assertEqual(self.problems({capture(1)['id']: decision(1, reason_code='duplicate-curated', duplicate_of='ghidra')}), [])
 
+    def test_lead_fields_and_batch_binding(self):
+        lead = {'id': 'lead-' + 'a' * 24, 'observed_at': '2026-11-05T21:00:00Z'}
+        entry = decision(1)
+        del entry['readme_sha256']
+        def problems(identifier, value):
+            errors = []
+            reviews.validate_reviews([], {identifier: value}, errors, lead_batches=[{'leads': [lead]}], now=NOW)
+            return errors
+        self.assertEqual(problems(lead['id'], entry), [])
+        self.assertIn('not a record', ' '.join(problems('lead-' + 'b' * 24, entry)))
+        self.assertIn('missing or unknown fields', ' '.join(problems(lead['id'], {**entry, 'readme_sha256': 'a' * 64})))
+        self.assertIn('missing or unknown fields', ' '.join(self.problems({capture(1)['id']: entry})))
+        self.assertIn('precedes the lead observation', ' '.join(problems(lead['id'], {**entry, 'reviewed_at': '2026-11-01'})))
+
+    def test_mixed_ids_sort_scan_numbers_then_leads(self):
+        values = {'lead-' + 'b' * 24: {}, 'scan-10': {}, 'lead-' + 'a' * 24: {}, 'scan-2': {}}
+        self.assertEqual(list(json.loads(reviews.dumps(values))),
+                         ['scan-2', 'scan-10', 'lead-' + 'a' * 24, 'lead-' + 'b' * 24])
+        self.assertEqual(reviews.dumps({'scan-10': {}, 'scan-2': {}}), '{\n  "scan-2": {},\n  "scan-10": {}\n}\n')
+
     def test_bad_decisions_are_named(self):
         identifier = capture(1)['id']
         cases = {

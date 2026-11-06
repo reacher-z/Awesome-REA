@@ -1470,13 +1470,14 @@ def main():
     errors.extend(discovery_problems)
     discovered = sum(len(batch['resources']) for batch in discovery_batches)
     import discovery_reviews
-    discovery_reviews.validate_reviews(discovery_batches, discovery_reviews.read_reviews(ROOT), errors)
     # Followed-source leads: what registered lists, registries and feeds link, kept unreviewed.
     import discovery_leads
     _, registry_problems = discovery_leads.load_registry(ROOT)
     errors.extend(registry_problems)
     lead_batches, lead_problems = discovery_leads.load_batches(ROOT)
     errors.extend(lead_problems)
+    discovery_reviews.validate_reviews(discovery_batches, discovery_reviews.read_reviews(ROOT), errors,
+                                       lead_batches=lead_batches)
     import discovery_classes
     discovery_classes.validate_classes(discovery_batches, discovery_classes.read_classes(ROOT), errors, lead_batches)
     followed = sum(len(batch['leads']) for batch in lead_batches)
