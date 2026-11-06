@@ -56,7 +56,7 @@ jobs:
           python-version: '3.12'
       # The same command and asset URL as the Cloudflare Pages build, so the HTML matches byte for byte.
       - name: Build the commit as Cloudflare Pages does
-        run: python3 scripts/build_site.py --fontawesome-assets-url https://awesome-rea.pages.dev
+        run: python3 scripts/build_site.py
       - name: Wait until awesomerea.org serves this build
         id: deploy
         env:

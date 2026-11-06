@@ -35,7 +35,7 @@ class PrintLayoutTests(unittest.TestCase):
     def test_policy_rules(self):
         block = print_block(CSS)
         for rule in ('.site-header{position:static!important',
-                     '.skip-link,.header-nav,.site-footer .footer-links,.browse-actions,.papers-actions,.paper-search,',
+                     '.skip-link,.browse-actions,.papers-actions,.paper-search,',
                      'details:not([open]):not(.browse-provenance,.cases-note,.paper-details){display:none!important}',
                      ':is(.browse-provenance,.cases-note,.paper-details:not([open]))::details-content{content-visibility:visible!important;display:block!important}',
                      '.paper-details:not([open])>:not(.paper-scope){display:none!important}',

@@ -39,6 +39,7 @@ import build_discovery_leads
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SITE_ALTERNATE_NAMES, SITE_NAME, SOCIAL_IMAGE_ALT, png_size
 from site_footer import DOWNLOADS, SECTION_LINKS, site_footer
+from site_shell import THEME_SCRIPT, theme_script_hash
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'dist'
@@ -430,7 +431,8 @@ class PageResources(HTMLParser):
         self.inline_styles, self.handlers, self.embeds, self.preloads = 0, [], [], []
         self.catalog_revision = None
         self.new_tab_relations, self.referrer_suppressed = [], 0
-        self.feed(text)
+        # The one reviewed inline script, which CSP allows by its hash (validate_security_headers).
+        self.feed(text.replace(f'<script>{THEME_SCRIPT}</script>', ''))
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
@@ -484,6 +486,7 @@ def validate_security_headers(output):
     assert directives.get('form-action') == ["'self'"], "CSP form-action must be 'self' alone"
     for directive in ('script-src', 'style-src'):
         assert not {"'unsafe-inline'", "'unsafe-eval'", '*', 'data:', 'http:', 'https:'} & set(directives.get(directive, [])), f'CSP {directive} is too broad'
+    assert theme_script_hash() in directives.get('script-src', []), 'CSP script-src must allow the theme script by its current hash (site_shell.theme_script_hash)'
     assert csp_allows(directives, 'connect-src', '/catalog.json'), 'CSP must allow same-origin JSON fetches'
     # Cloudflare Web Analytics is injected at the edge on the production domain, so built pages never show it.
     assert csp_allows(directives, 'script-src', 'https://static.cloudflareinsights.com/beacon.min.js'), 'CSP must allow the Cloudflare Web Analytics beacon'
@@ -501,10 +504,6 @@ def validate_security_headers(output):
         for preload in page.preloads:
             directive = PRELOAD_DIRECTIVES.get(preload['as'])
             assert directive and csp_allows(directives, directive, preload['href']), f'CSP blocks the {preload["as"]} preload {preload["href"]} on {where}'
-        for url in page.stylesheets:
-            # The icon stylesheet loads its fonts relative to its own origin.
-            if urlsplit(url).path.endswith('/fontawesome.css'):
-                assert csp_allows(directives, 'font-src', url), f'CSP font-src blocks the fonts of {url}'
 
 
 IMMUTABLE_ASSETS = 'public, max-age=31536000, immutable'
@@ -541,13 +540,14 @@ def validate_fingerprinted_assets(output):
 
 
 def validate_catalog_preload(output):
-    """Each homepage preloads exactly the catalog index URL app.js fetches for its data revision, and nothing else."""
-    for route in ('index.html', 'zh/index.html'):
+    """Each explorer page preloads exactly the catalog index URL app.js fetches for its data revision, besides the fonts."""
+    for route in ('explore/index.html', 'zh/explore/index.html'):
         page = PageResources((Path(output) / route).read_text(encoding='utf-8'))
         revision = page.catalog_revision
         assert revision and re.fullmatch(r'[0-9a-f]{16}', revision), f'Homepage needs a data-catalog-revision: /{route}'
         expected = [{'as': 'fetch', 'href': '/catalog-index.json?v=' + revision, 'cors': True}]
-        assert page.preloads == expected, f'Homepage preloads must be one CORS fetch of /catalog-index.json?v={revision}: /{route} has {page.preloads}'
+        fetches = [preload for preload in page.preloads if preload['as'] != 'font']
+        assert fetches == expected, f'Explorer preloads must be one CORS fetch of /catalog-index.json?v={revision}: /{route} has {page.preloads}'
 
 
 def validate_catalog_index(output):
@@ -784,7 +784,8 @@ def validate_paper_search_index(output, ordered):
         match = ASSET_PATH.fullmatch(href)
         assert match and match['stem'] == 'paper-search-index' and match['suffix'] == '.json', f'Unhashed paper search index on /{route}: {href}'
         # paper-search.js fetches exactly this URL, so the preload is reused instead of downloading it twice.
-        assert page.preloads == [{'as': 'fetch', 'href': href, 'cors': True}], f'Paper listings preload one CORS fetch of their search index: /{route} has {page.preloads}'
+        fetches = [preload for preload in page.preloads if preload['as'] != 'font']
+        assert fetches == [{'as': 'fetch', 'href': href, 'cors': True}], f'Paper listings preload one CORS fetch of their search index: /{route} has {page.preloads}'
         data = (output / href.lstrip('/')).read_bytes()
         assert digest(data) == match['digest'], f'Asset name does not match its content: {href}'
         assert json.loads(data) == expected, f'The paper search index differs from the listed papers or their search fields: {href}'
@@ -1144,7 +1145,8 @@ def validate_not_found_pages(output, card_size):
         expected = [prefix + path for path in ('/resources/', '/cases/', '/papers/', '/browse/', '/survey/')]
         assert set(expected) <= set(page.links) and ('/' if language == 'zh' else '/zh/') in page.links, f'404 section or language links missing: {where}'
     for path in sorted(output.rglob('*.html')):
-        if path.relative_to(output).as_posix() in ('404.html', 'zh/404.html'):
+        # The homepage search also submits: without scripts it opens the listing.
+        if path.relative_to(output).as_posix() in ('404.html', 'zh/404.html', 'index.html', 'zh/index.html'):
             continue
         for form in re.findall(r'<form\b[^>]*>', path.read_text(encoding='utf-8')):
             assert not re.search(r'\s(?:action|method)=', form), f'Only the 404 search forms may submit; script-handled forms have no action or method: {path.relative_to(output).as_posix()}'

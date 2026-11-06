@@ -68,23 +68,9 @@ node tests/browser/smoke.cjs
 
 The pinned `puppeteer-core` package drives the installed browser and downloads none; set `CHROME_PATH` when Chrome is not in a standard location. Without a browser or the package, the test prints the reason and skips locally, while CI fails. Screenshots are written to the ignored `.cache/browser-smoke/` directory, and CI keeps them as the `browser-smoke-screenshots` workflow artifact for 14 days. They are for people to inspect: the test does not compare images, approve the visual design, or open any linked resource.
 
-### Optional licensed production icons
+### Fonts and icons
 
-The public source provides SVG fallback icons for the collection interface. A maintainer with an appropriate Font Awesome Pro license can opt into Classic Light and Brands from a local licensed package:
-
-```sh
-python3 scripts/build_site.py --fontawesome-dir ../licensed-fontawesome-pro
-```
-
-This adds two local WOFF2 subsets and minimal icon CSS only to ignored `dist/` output. Each subset keeps only the code points of the site's icons (`FONT_AWESOME_ICONS` in [build_site.py](../scripts/build_site.py)): Classic Light for every icon except `github`, which comes from Brands. Subsetting needs fontTools with Brotli (`pip install fonttools brotli`), and the build fails if a required icon is missing from either face. [Font Awesome's subsetting guide](https://docs.fontawesome.com/web/dig-deeper/subsetting) describes per-icon and self-hosted subsets. It does not copy the Pro package or its installation path into public source. A normal build without this option restores the fallback and removes those generated font assets. Keep licensed production outputs in the private artifact backup and authorized website deployment; do not commit Pro assets to the public repository. See [Font Awesome's Pro license](https://origin.fontawesome.com/license) and [official support guidance](https://fontawesome.com/support).
-
-CI can instead reference the collection's existing authorized static icon deployment without downloading or copying Pro files:
-
-```sh
-python3 scripts/build_production.py --fontawesome-assets-url https://awesome-rea.pages.dev
-```
-
-`Catalog checks` runs this exact command on every pull request and push to `main`. The asset URL is only written into the generated HTML; the build does not fetch it. The local-package and asset-URL options are mutually exclusive. The asset origin must continue serving `fontawesome.css` and its two relative `fonts/` URLs with font CORS enabled. Keep that Direct Upload project available while production uses it; [site/_headers](../site/_headers) supplies the corresponding public asset headers.
+The site self-hosts its fonts in [site/fonts](../site/fonts): subsets of EB Garamond, IBM Plex Sans and IBM Plex Mono under the SIL Open Font License ([site/fonts/LICENSE.md](../site/fonts/LICENSE.md)). `scripts/review_pr.py` accepts exactly these files. Icons are inline SVG, so no icon font or third-party asset origin is involved. `--fontawesome-assets-url` is still accepted and ignored, for build commands configured outside this repository.
 
 ## Hosting
 
@@ -133,27 +119,12 @@ npx wrangler pages deploy dist
 
 After deployment, verify the returned deployment URL, then confirm the custom-domain and DNS configuration for `awesomerea.org`. A generated `CNAME` file or a successful local build does not establish hosting, DNS or TLS status. Keep hosting credentials outside the repository; only the approved static artifacts belong in the optional backup repository.
 
-### Icon origin contents
 
-The `awesome-rea.pages.dev` project exists only to serve the licensed icon stylesheet and fonts. Deploy nothing else there: a full site copy answers every path, including unknown ones, with HTTP 200 duplicates of older pages. The deployment may contain only `fontawesome.css`, `fonts/fa-light-300.woff2`, `fonts/fa-brands-400.woff2`, a `404.html` and this build's `_headers`, which keeps the font CORS rules and adds the `pages.dev` noindex rules above. Do not redirect that host, because production pages load their icons from it. From a build made with `--fontawesome-dir`:
+## Homepage and explorer
 
-```sh
-python3 - <<'PY'
-from pathlib import Path
-import shutil
+`/` and `/zh/` come from [build_home.py](../scripts/build_home.py): the masthead, search and the index-card drawer on curated data, with counts from the records and the scan-only discovery count labelled as unreviewed. Without JavaScript the tabs and cards are links and the search form opens the listing; [site.js](../site/site.js) adds in-place search from `/search-index.json` or `/search-index.zh.json`, loaded on first use. Every generated page shares the header, command palette and theme from [site_shell.py](../scripts/site_shell.py) and [shell.css](../site/shell.css), and the footer from [site_footer.py](../scripts/site_footer.py). The footer's last-scan cell is filled at runtime from `/discoveries/status.json`, so a scan does not change every page's bytes.
 
-origin = Path(".cache/icon-origin")
-shutil.rmtree(origin, ignore_errors=True)
-(origin / "fonts").mkdir(parents=True)
-for name in ("fontawesome.css", "_headers", "fonts/fa-light-300.woff2", "fonts/fa-brands-400.woff2"):
-    shutil.copy2(Path("dist") / name, origin / name)
-(origin / "404.html").write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="robots" content="noindex">'
-                                 '<title>Not found</title><p>This host serves icon assets for <a href="https://awesomerea.org/">AwesomeREA.org</a>.</p></html>\n',
-                                 encoding="utf-8")
-PY
-```
-
-Replacing that deployment is a Cloudflare action: an authorized maintainer uploads `.cache/icon-origin/` to the Direct Upload project as a new production deployment. Keep the folder in the private artifact backup, never in this repository. Afterwards, `fontawesome.css` and both font URLs should return `200` with `Access-Control-Allow-Origin: *`, icons should still render on `https://awesomerea.org/`, the root, an old page path such as `/resources/ghidra/` and an unknown path should return `404`, every response should carry `X-Robots-Tag: noindex`, and `/sitemap.xml` should no longer exist there.
+The earlier interactive collection, with its filters, repository view and shortlist, is kept at `/explore/` and `/zh/explore/` (noindex, out of the sitemap). Its old query links redirect there from the homepage. The next paragraphs describe that page where they mention filters, cards or the collection heading.
 
 ## Homepage languages and discovery
 

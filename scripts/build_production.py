@@ -10,16 +10,15 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--fontawesome-assets-url', help='Existing licensed icon asset origin; no fonts are added to Git')
-    args = parser.parse_args()
+    # Accepted and ignored: the Cloudflare Pages build command may still pass it, and the site loads no icon font now.
+    parser.add_argument('--fontawesome-assets-url', help=argparse.SUPPRESS)
+    parser.parse_args()
     commands = [
         [sys.executable, 'scripts/validate.py'],
         ['node', '--check', 'site/app.js'],
     ]
-    build = [sys.executable, 'scripts/build_site.py']
-    if args.fontawesome_assets_url:
-        build.extend(['--fontawesome-assets-url', args.fontawesome_assets_url])
-    commands.append(build)
+    commands.append(['node', '--check', 'site/site.js'])
+    commands.append([sys.executable, 'scripts/build_site.py'])
     commands.append([sys.executable, 'scripts/validate_discovery.py'])
     commands.append([sys.executable, 'scripts/validate_site.py'])
     commands.append([sys.executable, 'scripts/validate_schema_org.py'])

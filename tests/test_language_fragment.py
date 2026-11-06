@@ -37,7 +37,7 @@ class LanguageFragmentTests(unittest.TestCase):
                 route = page.relative_to(output).as_posix()
                 html = page.read_text(encoding='utf-8')
                 header = HEADER.search(html)
-                expected = route not in ('index.html', 'zh/index.html') and bool(header) and 'hreflang=' in header.group(0)
+                expected = route not in ('index.html', 'zh/index.html', 'explore/index.html', 'zh/explore/index.html') and bool(header) and 'hreflang=' in header.group(0)
                 with self.subTest(route=route):
                     self.assertEqual(html.count(tag), int(expected))
                     self.assertNotIn('language-fragment.js', html.replace(tag, ''))

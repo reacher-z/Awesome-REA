@@ -464,7 +464,7 @@ function curatedURL() {
 }
 // Language links are ordinary links to the counterpart homepage; they carry the current query and fragment,
 // and the path, not a legacy ?lang override, selects the language.
-function languageHref(language) { const next = new URL(location.href); next.pathname = language === "zh" ? "/zh/" : "/"; next.searchParams.delete("lang"); return next.pathname + next.search + next.hash; }
+function languageHref(language) { const next = new URL(location.href); next.pathname = (language === "zh" ? "/zh" : "") + next.pathname.replace(/^\/zh(?=\/)/, ""); next.searchParams.delete("lang"); return next.pathname + next.search + next.hash; }
 function syncLanguageLinks() { $$('[data-language-link]').forEach(link => { link.href = languageHref(link.dataset.languageLink); link.setAttribute("aria-current", String(link.dataset.languageLink === state.lang)); }); }
 // Deliberate choices (collection, targets, Type, Category, either sort, topic chips, resets) add a history entry so Back
 // and Forward revisit them; typing, layout and normalization replace the current entry instead of flooding history.

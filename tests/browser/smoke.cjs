@@ -205,8 +205,43 @@ async function dataAccess(page, language, viewport) {
   assert.equal(await page.$eval('#data-dialog', dialog => dialog.open), false, `${label}: close button`);
 }
 
+// The homepage shows real rows without scripts; search in place loads its index only on first use.
+async function newHomepage(page, language, viewport, data, requested, javascript = true) {
+  const label = `${language} new homepage ${viewport.name}`;
+  const total = data.catalog.resources.length;
+  assert.equal(await text(page, 'html').then(() => page.evaluate(() => document.documentElement.lang)), language === 'zh' ? 'zh-CN' : 'en');
+  assert.equal(await count(page, 'h1'), 1, `${label}: one heading`);
+  assert.equal(await count(page, '[data-cards] > .card'), 7, `${label}: the drawer opens with its featured rows`);
+  assert.equal(numbers(await text(page, '.hero-stats strong'))[0], total, `${label}: the stated resource count is the catalog's`);
+  assert.equal(await page.$eval('[data-show-all]', link => new URL(link.href).pathname), language === 'zh' ? '/zh/resources/' : '/resources/');
+  assert.equal(await page.$eval('.site-header a[hreflang]', link => link.getAttribute('href')), language === 'zh' ? '/' : '/zh/');
+  await noOverflow(page, label);
+  if (!javascript) return;
+  const index = language === 'zh' ? 'search-index.zh.json' : 'search-index.json';
+  assert.equal(requests(requested, index), 0, `${label}: the search index waits for the first search`);
+  assert.equal(requests(requested, 'catalog-index.json') + requests(requested, 'catalog.json'), 0, `${label}: the collection data is not loaded`);
+  await page.$eval('[data-search-input]', node => node.scrollIntoView({block: 'center', behavior: 'instant'}));
+  await page.type('[data-search-input]', 'ghidra');
+  await page.waitForFunction(() => document.querySelector('[data-cards] > .card') && new URL(location.href).searchParams.get('q') === 'ghidra', {timeout: 15000});
+  assert.equal(requests(requested, index), 1, `${label}: one search index request`);
+  await page.waitForFunction(id => document.querySelector(`[data-cards] > .card[data-id="${id}"]`), {}, 'ghidra');
+  await page.keyboard.press('Enter');
+  await new Promise(resolve => setTimeout(resolve, 200));
+  assert.equal(new URL(page.url()).pathname, language === 'zh' ? '/zh/' : '/', `${label}: Enter keeps the results in place`);
+  assert.equal(await page.$eval('.site-header a[hreflang]', link => new URL(link.href).search), '?q=ghidra', `${label}: the language link keeps the search`);
+  await noOverflow(page, label + ' with a search');
+}
+
+// An old link into the collection's filters still opens them, now on the explorer.
+async function oldHomepageLink(page, language) {
+  await page.waitForFunction(() => location.pathname.endsWith('/explore/') && document.querySelector('#resource-grid .resource-card'), {timeout: 15000});
+  const url = new URL(page.url());
+  assert.equal(url.pathname, language === 'zh' ? '/zh/explore/' : '/explore/');
+  assert.equal(url.searchParams.get('category'), 'game-analysis', 'the old query survives the redirect');
+}
+
 async function homepage(page, language, viewport, data, requested) {
-  const label = `${language} homepage ${viewport.name}`;
+  const label = `${language} explorer ${viewport.name}`;
   const total = data.catalog.resources.length;
   await loaded(page, '#resource-grid .resource-card', '#error-state');
   await preloadedCatalog(page, label);
@@ -304,16 +339,12 @@ async function homepage(page, language, viewport, data, requested) {
   await press(page, '#curated-view [data-target="game"]');
   assert(numbers(await text(page, '#results-status'))[0] === games, `${label}: Game filter shows ${games} resources`);
   const other = language === 'zh' ? 'en' : 'zh';
-  const current = await page.$$eval('[data-language-link]', links => links.filter(link => link.getAttribute('aria-current') === 'true').map(link => link.dataset.languageLink));
-  assert.deepEqual(current, [language], `${label}: the current language is marked`);
   // Fragment navigation updates the links too; arrow keys on them never navigate (WCAG 3.2.2).
   await page.evaluate(() => { location.hash = 'catalog'; });
   await page.waitForFunction(link => document.querySelector(`[data-language-link="${link}"]`).getAttribute('href').endsWith('#catalog'), {}, other);
   const before = page.url();
-  for (const link of [language, other]) {
-    await page.focus(`[data-language-link="${link}"]`);
-    for (const key of ['ArrowDown', 'ArrowUp']) await page.keyboard.press(key);
-  }
+  await page.focus(`[data-language-link="${other}"]`);
+  for (const key of ['ArrowDown', 'ArrowUp']) await page.keyboard.press(key);
   assert.equal(page.url(), before, `${label}: arrow keys keep the page`);
   assert.equal(await page.evaluate(() => document.activeElement.dataset.languageLink), other);
   await Promise.all([page.waitForNavigation({waitUntil: 'networkidle0'}), page.keyboard.press('Enter')]);
@@ -323,7 +354,7 @@ async function homepage(page, language, viewport, data, requested) {
   assert.equal(requests(requested, 'catalog-index.json'), 2, `${label}: one catalog-index.json request on each homepage`);
   assert.equal(requests(requested, 'catalog.json'), 2, `${label}: one catalog.json request on each homepage`);
   const switched = new URL(page.url());
-  assert.equal(switched.pathname, other === 'zh' ? '/zh/' : '/');
+  assert.equal(switched.pathname, other === 'zh' ? '/zh/explore/' : '/explore/');
   assert.equal(switched.searchParams.get('target'), 'game', `${label}: the language switch keeps the filter`);
   assert.equal(switched.hash, '#catalog', `${label}: the language switch keeps the fragment`);
   assert.equal(await page.evaluate(() => document.documentElement.lang), other === 'zh' ? 'zh-CN' : 'en');
@@ -334,8 +365,8 @@ async function homepage(page, language, viewport, data, requested) {
 
 // Without scripting, the catalog's inert controls and loading text give way to the static directory links.
 async function withoutScript(page, language, viewport) {
-  const label = `${language} homepage without JavaScript ${viewport.name}`;
-  assert(await page.$eval('[data-open-data]', link => !link.hasAttribute('download') && link.getAttribute('href') === 'https://github.com/reacher-z/Awesome-REA' && link.getClientRects().length > 0), `${label}: repository access works without a dialog`);
+  const label = `${language} explorer without JavaScript ${viewport.name}`;
+  assert(await page.$eval('[data-open-data]', link => !link.hasAttribute('download') && link.getAttribute('href') === 'https://github.com/reacher-z/Awesome-REA'), `${label}: repository access works without a dialog`);
   const view = await page.evaluate(() => {
     const shown = selector => [...document.querySelectorAll(selector)].filter(node => node.getClientRects().length).length;
     const heading = document.querySelector('#catalog-title').getBoundingClientRect(), note = document.querySelector('.noscript-note');
@@ -346,7 +377,7 @@ async function withoutScript(page, language, viewport) {
   assert.equal(view.controls, 0, `${label}: no search field, filters, selects, tabs or status`);
   assert.equal(view.loading, false, `${label}: no loading text`);
   assert(view.gap !== null && view.gap >= 0 && view.gap < 100, `${label}: the static directory links follow the collection heading (gap ${view.gap})`);
-  assert.deepEqual(view.links, [['en', '/', language === 'en' ? 'true' : null], ['zh', '/zh/', language === 'zh' ? 'true' : null]], `${label}: language links`);
+  assert.deepEqual(view.links, language === 'zh' ? [['en', '/', null]] : [['zh', '/zh/', null]], `${label}: language link`);
   await noOverflow(page, label);
 }
 
@@ -404,7 +435,7 @@ async function paperDirectory(page, route, viewport, javascript = true) {
     const visibleYears = await page.$$eval('.paper-card:not([hidden]) .paper-year', nodes => nodes.map(node => node.textContent));
     assert(visibleYears.length > 0 && visibleYears.every(year => year === selectedYear));
     assert.equal(numbers(await text(page, '#paper-results'))[0], visibleYears.length);
-    const language = new URL(await page.$eval('.papers-language', link => link.href));
+    const language = new URL(await page.$eval('.site-header a[hreflang]', link => link.href));
     assert.equal(language.searchParams.get('year'), selectedYear);
     await press(page, '#paper-clear');
     await press(page, '#paper-more-filters > summary');
@@ -494,11 +525,17 @@ async function staticPage(page, route, viewport) {
       const context = await browser.createBrowserContext();
       try {
       for (const language of ['en', 'zh']) {
-        await check(`${language} homepage at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+        await check(`${language} new homepage at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+          `${language} new homepage ${viewport.name}`, (page, requested) => newHomepage(page, language, viewport, data, requested)));
+        await check(`${language} new homepage without JavaScript at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+          `${language} new homepage ${viewport.name} without JavaScript`, (page, requested) => newHomepage(page, language, viewport, data, requested, false), {javascript: false}));
+        await check(`${language} old homepage link at ${viewport.width}px`, () => visit(context, origin, (language === 'zh' ? '/zh/' : '/') + '?category=game-analysis', viewport,
+          `${language} old homepage link ${viewport.name}`, page => oldHomepageLink(page, language)));
+        await check(`${language} explorer at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/explore/' : '/explore/', viewport,
           `${language} homepage ${viewport.name} switched to ${language === 'zh' ? 'en' : 'zh'}`, (page, requested) => homepage(page, language, viewport, data, requested)));
       }
       for (const language of ['en', 'zh']) {
-        await check(`${language} homepage without JavaScript at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+        await check(`${language} explorer without JavaScript at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/explore/' : '/explore/', viewport,
           `${language} homepage ${viewport.name} without JavaScript`, page => withoutScript(page, language, viewport), {javascript: false}));
       }
       for (const route of ['/papers/', '/zh/papers/']) {

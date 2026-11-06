@@ -1,6 +1,6 @@
 """The footer every generated page shares: the same sections, one name per download, then GitHub.
 
-site/index.html repeats this markup with data-i18n keys, because the homepage is localized from app.js strings.
+site/index.html repeats the links with data-i18n keys, because the full explorer is localized from app.js strings.
 """
 from __future__ import annotations
 
@@ -27,6 +27,17 @@ DOWNLOADS = {
 }
 REPOSITORY_EXPORTS = ('source-index.json', 'source-published.json')
 TAGLINE = ('An independent resource collection, updated in public.', '独立的资源集合，在公开协作中持续更新。')
+HUGGING_FACE_URL = 'https://huggingface.co/datasets/AgPerry/awesome-rea'
+FOOTER_TEXT = (
+    {'sections': 'More from the collection', 'catalogue': 'Catalogue', 'data': 'Data', 'project': 'Project',
+     'discoveries': 'Unreviewed discoveries', 'feed': 'Atom feed', 'dataset': 'Hugging Face dataset', 'cite': 'Cite',
+     'licence': 'Licence', 'last_scan': 'Last scan', 'scan_fallback': 'Scan status', 'review': 'Review', 'method': 'Method',
+     'sheet': 'Sitemap', 'sister': 'Sister catalogue', 'cua': 'Computer-Use Agents'},
+    {'sections': '更多合集内容', 'catalogue': '目录', 'data': '数据', 'project': '项目',
+     'discoveries': '未审核发现', 'feed': 'Atom 订阅', 'dataset': 'Hugging Face 数据集', 'cite': '引用',
+     'licence': '许可', 'last_scan': '最近扫描', 'scan_fallback': '扫描状态', 'review': '审核', 'method': '方法',
+     'sheet': '站点地图', 'sister': '姊妹目录', 'cua': '计算机使用智能体'},
+)
 
 
 def download_label(path: str, language: str) -> str:
@@ -49,15 +60,33 @@ def footer_downloads(repository_export: str) -> tuple[str, ...]:
 
 def site_footer(language: str, *, note: str, repository_url: str,
                 repository_export: str = 'source-index.json') -> str:
-    """Render the shared footer; ``note`` is the page's escaped licence line."""
+    """Render the shared footer, an engineering-drawing title block; ``note`` is the page's escaped licence line.
+
+    site.js fills the last-scan cell from /discoveries/status.json, so that a new scan does not change the
+    bytes of every page; without JavaScript the cell links to the discovery queue, which shows the time.
+    """
     if language not in ('en', 'zh'):
         raise ValueError('Footer language must be en or zh')
     zh = language == 'zh'
     prefix = '/zh' if zh else ''
-    sections = ''.join(f'<a href="{prefix}{path}">{chinese if zh else english}</a>' for path, english, chinese in SECTION_LINKS)
-    downloads = ''.join(download_link(path, language) for path in footer_downloads(repository_export))
-    github = f'<a href="{escape(repository_url, quote=True)}" target="_blank" rel="noopener">GitHub ↗</a>'
-    return (f'<footer class="site-footer"><div class="shell footer-top"><p>{TAGLINE[zh]}</p>'
-            f'<nav class="footer-nav" aria-label="{"更多合集内容" if zh else "More from the collection"}">'
-            f'<div class="footer-links">{sections}</div><div class="footer-links">{downloads}{github}</div></nav></div>'
-            f'<div class="shell footer-bottom">{note}</div></footer>')
+    text = FOOTER_TEXT[zh]
+    sections = ''.join(f'<li><a href="{prefix}{path}">{chinese if zh else english}</a></li>' for path, english, chinese in SECTION_LINKS)
+    downloads = ''.join(f'<li>{download_link(path, language)}</li>' for path in footer_downloads(repository_export))
+    repository = escape(repository_url, quote=True)
+    github = f'<li><a href="{repository}" target="_blank" rel="noopener">GitHub ↗</a></li>'
+    extra_data = ''.join(f'<li><a href="{href}">{label}</a></li>' for href, label in (
+        (f'{prefix}/api/', 'JSON API'), ('/llms.txt', 'llms.txt'), (f'{prefix}/feed.xml', text['feed'])))
+    hugging_face = f'<li><a href="{HUGGING_FACE_URL}" rel="noopener">{text["dataset"]}</a></li>'
+    discoveries = f'<li><a href="{prefix}/discoveries/">{text["discoveries"]}</a></li>'
+    return (f'<footer class="site-footer"><div class="wrap"><div class="titleblock">'
+            f'<div class="tb-cell tb-brand"><p class="tb-word"><svg class="i brand-mark" aria-hidden="true" focusable="false"><use href="#i-reg"/></svg><span>Awesome <span>REA</span></span></p>'
+            f'<p class="tb-tag">{TAGLINE[zh]}</p><p class="tb-note">{note}</p></div>'
+            f'<nav class="tb-cell tb-links" aria-label="{text["sections"]}"><h2 class="tb-label">{text["catalogue"]}</h2><ul>{sections}{discoveries}</ul></nav>'
+            f'<nav class="tb-cell tb-links" aria-label="{text["data"]}"><h2 class="tb-label">{text["data"]}</h2><ul>{downloads}{extra_data}{hugging_face}</ul></nav>'
+            f'<nav class="tb-cell tb-links" aria-label="{text["project"]}"><h2 class="tb-label">{text["project"]}</h2><ul>{github}<li><a href="{repository}/blob/main/CITATION.cff" rel="noopener">{text["cite"]}</a></li></ul></nav>'
+            f'<dl class="tb-strip"><div class="tb-cell"><dt>{text["licence"]}</dt><dd>MIT</dd></div>'
+            f'<div class="tb-cell"><dt>{text["last_scan"]}</dt><dd><a href="{prefix}/discoveries/"><span data-last-scan>{text["scan_fallback"]}</span></a></dd></div>'
+            f'<div class="tb-cell"><dt>{text["review"]}</dt><dd><a href="{prefix}/about/">{text["method"]}</a></dd></div>'
+            f'<div class="tb-cell"><dt>{text["sheet"]}</dt><dd><a href="/sitemap.xml">sitemap.xml</a></dd></div>'
+            f'<div class="tb-cell tb-sister"><dt>{text["sister"]}</dt><dd><a href="https://awesomecua.com/">Awesome CUA <span class="tb-sub">{text["cua"]}</span></a></dd></div></dl>'
+            f'</div></div><p class="colophon-word" aria-hidden="true"></p></footer>')

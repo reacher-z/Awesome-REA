@@ -1,17 +1,16 @@
-# Site-wide security headers. The policy allows same-origin scripts, styles, images, JSON
-# fetches and form submissions (the 404 search), plus the licensed icon stylesheet and fonts
-# served from awesome-rea.pages.dev.
+# Site-wide security headers. The policy allows same-origin scripts, styles, fonts, images, JSON
+# fetches and form submissions, plus the one inline script that sets the saved theme before first
+# paint, by its hash (site_shell.theme_script_hash; validate_site.py keeps them equal).
 # Linked sites receive only the origin https://awesomerea.org/ as referrer, never a path or search query.
 /*
-  Content-Security-Policy: default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://awesome-rea.pages.dev; font-src 'self' https://awesome-rea.pages.dev; img-src 'self'; connect-src 'self' https://cloudflareinsights.com; base-uri 'none'; form-action 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-tZjlokcG/HaK4O09Aoepkn7H+7rOy/NH29SJxS7Gkdg=' https://static.cloudflareinsights.com; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self' https://cloudflareinsights.com; base-uri 'none'; form-action 'self'; frame-ancestors 'none'
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), geolocation=(), microphone=(), payment=(), usb=()
   Strict-Transport-Security: max-age=2592000
   Referrer-Policy: strict-origin-when-cross-origin
 /fonts/*
   Access-Control-Allow-Origin: *
-/fontawesome.css
-  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=2592000
 /
   Cache-Control: no-cache, must-revalidate
 /index.html
@@ -19,6 +18,10 @@
 /catalog.json
   Cache-Control: no-cache, must-revalidate
 /catalog-index.json
+  Cache-Control: no-cache, must-revalidate
+/search-index.json
+  Cache-Control: no-cache, must-revalidate
+/search-index.zh.json
   Cache-Control: no-cache, must-revalidate
 /source-index.json
   Cache-Control: no-cache, must-revalidate

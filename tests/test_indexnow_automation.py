@@ -189,9 +189,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn("github.ref == format('refs/heads/{0}', github.event.repository.default_branch)", self.text)
 
     def test_builds_like_cloudflare_waits_then_submits_and_keeps_the_receipt(self):
-        validate = (ROOT / '.github/workflows/validate.yml').read_text(encoding='utf-8')
-        asset_url = re.search(r'build_production\.py (--fontawesome-assets-url \S+)', validate)[1]
-        build = self.text.index('python3 scripts/build_site.py ' + asset_url)
+        build = self.text.index('python3 scripts/build_site.py')
         wait = self.text.index('python3 scripts/indexnow_automation.py wait "$SHA" dist')
         previous = self.text.index('python3 scripts/indexnow_automation.py previous')
         submit = self.text.index('python3 scripts/submit_indexnow.py "${args[@]}"')
