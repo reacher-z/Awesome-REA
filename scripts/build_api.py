@@ -30,6 +30,7 @@ from data_downloads import CITATION_FIELDS
 from requirement_facets import FACETS
 from review_pr import private_json_locations
 from sitemaps import instant, latest, normalized_date
+from structured_data import dataset_id, publisher_reference
 
 API_VERSION = '1.0.0'
 API_PATH = '/api/v1/'
@@ -378,7 +379,7 @@ def api_page(language: str, index: dict, site_url: str) -> tuple[str, str, str, 
     records = {entry['path'].rsplit('/', 1)[1].split('.')[0]: entry.get('records') for entry in index['files']}
     description = choose(
         f"Read the curated catalog as JSON or CSV: {records['resources']:,} resources, {records['papers']:,} papers, categories, unreviewed candidates and 30 days of changes.",
-        f"以 JSON 或 CSV 读取精选目录：{records['resources']:,} 项资源、{records['papers']:,} 篇论文、分类、未审核候选与最近 30 天的变更。")
+        f"以 JSON 或 CSV 读取精选目录：{records['resources']:,} 项资源、{records['papers']:,} 篇论文、分类、未审核候选与最近 30 天的变更。所有文件均为静态内容，可直接下载。")
     rows = [
         ('resources', choose('Curated resources: stable IDs, bilingual names and descriptions, requirements, evidence and review dates.', '精选资源：稳定 ID、中英文名称与说明、使用条件、证据与复核日期。')),
         ('papers', choose('The research bibliography: identifiers, dates and their basis, limits and sources; no names where authors are omitted.', '研究文献：标识、日期及其依据、研究边界与来源；作者省略的论文不列姓名。')),
@@ -432,7 +433,8 @@ def write_api_pages(output: Path, index: dict, *, site_url, repository_url, sour
         title, description, content, markdown = api_page(language, index, site_url)
         schema = {'@context': 'https://schema.org', '@type': 'WebPage', 'url': site_url + path, 'name': title,
                   'description': description, 'inLanguage': 'zh-CN' if language == 'zh' else 'en',
-                  'isPartOf': website_reference(site_url)}
+                  'isPartOf': website_reference(site_url), 'publisher': publisher_reference(site_url),
+                  'about': {'@id': dataset_id(site_url, language)}}
         html = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title,
                          description=description, content=content, schema=schema, assets=assets,
                          icon_stylesheet=icon_stylesheet, source_export=source_export,

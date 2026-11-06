@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_entry_pages import MARKER, build_entry_pages, entry_path, feedback_urls
 from build_survey import build_survey, discussion_sections
+from structured_data import evidence_urls
 
 
 def resource(**changes):
@@ -152,8 +153,11 @@ class EntryPageTests(unittest.TestCase):
                     self.assertEqual(graph['WebPage']['inLanguage'], locale)
                     self.assertEqual(graph['WebPage']['url'], canonical)
                     self.assertEqual(graph['BreadcrumbList']['itemListElement'][-1]['item'], canonical)
-                    entity = graph['CreativeWork' if kind == 'resource' else 'ScholarlyArticle']
-                    self.assertEqual(entity['@id'], canonical + ('#resource' if kind == 'resource' else '#paper'))
+                    entity = next(node for node in page.schema['@graph'] if node.get('@id') == canonical + ('#resource' if kind == 'resource' else '#paper'))
+                    self.assertEqual(graph['WebPage']['lastReviewed'], record['verified_at'][:10])
+                    self.assertEqual(graph['WebPage']['publisher'], {'@id': 'https://awesomerea.org/#organization'})
+                    self.assertEqual(graph['WebPage']['isBasedOn'], evidence_urls(record))
+                    self.assertIn('property="og:type" content="article"', text)
                     self.assertEqual(entity['url'], record['url'])
                     self.assertNotIn('dateModified', graph['WebPage'])
                     if kind == 'resource':

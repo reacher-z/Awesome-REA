@@ -15,6 +15,7 @@ from build_entry_pages import build_entry_pages
 from build_paper_pages import build_paper_pages
 from build_survey import build_survey
 from open_graph import SITE_ALTERNATE_NAMES, SITE_NAME, open_graph_meta, website_node
+from structured_data import organization_node
 from test_site_metadata import CARD, ORIGIN, resource, social_page
 from test_source_browser import full_export
 from validate_site import Page, validate_open_graph, validate_website_identity
@@ -23,7 +24,7 @@ REPOSITORY = 'https://github.com/reacher-z/Awesome-REA'
 
 
 def homepage(node):
-    graph = {'@context': 'https://schema.org', '@graph': [node, {
+    graph = {'@context': 'https://schema.org', '@graph': [organization_node(ORIGIN, REPOSITORY), node, {
         '@type': 'CollectionPage', '@id': ORIGIN + '/#collection', 'isPartOf': {'@id': ORIGIN + '/#website'}}]}
     return Page(f'<script type="application/ld+json">{json.dumps(graph)}</script>')
 
@@ -61,6 +62,24 @@ class WebsiteIdentityTests(unittest.TestCase):
 
     def test_generated_pages_reference_the_homepage_node(self):
         validate_website_identity(self.pages)
+
+    def test_only_the_homepages_define_the_organization(self):
+        elsewhere = deepcopy(self.pages)
+        elsewhere['/papers/'].schemas[0]['@graph'].append(organization_node(ORIGIN, REPOSITORY))
+        with self.assertRaises(AssertionError):
+            validate_website_identity(elsewhere)
+        renamed = deepcopy(self.pages)
+        renamed['/zh/'].schemas[0]['@graph'][0]['name'] = 'Someone else'
+        with self.assertRaises(AssertionError):
+            validate_website_identity(renamed)
+
+    def test_open_graph_types_entry_pages_and_accepts_a_card_under_og(self):
+        with self.assertRaises(AssertionError):
+            validate_open_graph('/papers/', social_page('/papers/', **{'content="website"': 'content="article"'}), (1200, 630))
+        page = social_page('/papers/', **{'/social-card.png': '/og/firmware.png'})
+        validate_open_graph('/papers/', page, (1200, 630))
+        with self.assertRaises(AssertionError):
+            validate_open_graph('/papers/', social_page('/papers/', **{'/social-card.png': '/other/firmware.png'}), (1200, 630))
 
     def test_validator_rejects_inline_websites_and_divergent_homepages(self):
         inline = deepcopy(self.pages)

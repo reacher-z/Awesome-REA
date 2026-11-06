@@ -17,6 +17,9 @@ from build_readme import (KIND_LABELS, METHOD_HEADINGS, METHOD_SECTIONS, RELATIO
 from agent_formats import MARKDOWN, alternate_links, collection_markdown
 from contribution_pages import TITLES as CONTRIBUTION_TITLES, contribution_content
 from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
+from page_metadata import meta_description, page_title
+from sitemaps import latest, record_date
+from structured_data import dataset_node, publisher_reference
 from site_footer import SECTION_LINKS, download_link, site_footer
 from source_scope import exclusion_counts, unavailable_clause
 
@@ -75,6 +78,7 @@ def collection_page_schema(canonical: str, name: str, description: str,
         'description': description,
         'inLanguage': language,
         'isPartOf': website_reference(site_url),
+        'publisher': publisher_reference(site_url),
         'mainEntity': {
             '@type': 'ItemList',
             'numberOfItems': len(items),
@@ -475,7 +479,9 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
     language_link = f'<a class="browse-language" href="{counterpart}" lang="{("en" if zh else "zh-CN")}" hreflang="{("en" if zh else "zh-CN")}">{globe_icon}<span>{("English" if zh else "简体中文")}</span></a>'
     prefix = '/zh' if zh else ''
     # The 404 templates have no canonical address or language counterpart.
-    social = open_graph_meta(language=language, title=title + ' · AwesomeREA.org', description=description,
+    document_title = page_title(title)
+    head_description = meta_description(description)
+    social = open_graph_meta(language=language, title=document_title, description=head_description,
                              image_url=site_url + assets['social'],
                              url=None if noindex else canonical, paired=not noindex)
     footer = ('原创说明和代码采用 MIT 许可；上游描述与链接项目保留各自的许可。' if zh
@@ -488,8 +494,8 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {THEME_COLOR_META}
-  <title>{escape(title)} · AwesomeREA.org</title>
-  <meta name="description" content="{escape(description, quote=True)}">
+  <title>{escape(document_title)}</title>
+  <meta name="description" content="{escape(head_description, quote=True)}">
   {metadata}
   {social}
   <link rel="icon" href="{assets['favicon']}" type="image/svg+xml">
@@ -571,7 +577,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         prefix = '/zh' if zh else ''
         path = prefix + '/resources/'
         title = '精选逆向工程资源' if zh else 'Curated reverse engineering resources'
-        description = (f'{len(resources):,} 项工具、项目、集成、案例与参考资源，覆盖网站、游戏、应用、原生二进制、固件及通信协议。'
+        description = (f'{len(resources):,} 项工具、项目、集成、案例与参考资源，覆盖网站、游戏、应用、原生二进制、固件及通信协议。每个条目都保留一手来源链接、使用要求与复核日期。'
                        if zh else f'{len(resources):,} tools, projects, integrations, case studies, and references for websites, games, apps, native binaries, firmware, and communication protocols.')
         note = ('“来源已复核”表示说明已依据一手文档核对，不代表已安装、执行、安全审计或验证兼容性。完整的使用条件与来源列在各条目页面，本页显示其数量和复核日期。'
                 if zh else 'Source-reviewed means descriptions were checked against primary documentation. It does not mean installation, execution, security auditing, or compatibility testing. Each entry page lists the full requirements and sources; this page shows their counts and the review date.')
@@ -608,7 +614,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         path = prefix + '/cases/'
         title = '逆向工程案例合集' if zh else 'Reverse-engineering case studies'
         content, items = _case_collection(resources, language, site_url, repository_url)
-        description = (f'从 {len(resources):,} 项精选资源中筛选出的 {len(items):,} 个案例，保留重建方法、成果边界与原始证据。'
+        description = (f'从 {len(resources):,} 项精选资源中筛选出的 {len(items):,} 个案例，保留重建方法、成果边界与原始证据，并按网站、游戏、应用等目标分组，可逐条打开条目查看来源与复核日期。'
                        if zh else f'{len(items):,} case studies from {len(resources):,} curated resources, with documented reconstruction methods, scope, and original evidence.')
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=collection_page_schema(site_url + path, title, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href, source_export=source_export, main_class='cases-main', extra_styles=(_asset(site_dir, 'cases.css'),),
                                    alternates=alternate_links(markdown=path + MARKDOWN))
@@ -618,7 +624,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
 
         path = prefix + '/about/'
         title = '关于合集与数据来源' if zh else 'About the collection and its sources'
-        description = ('AwesomeREA.org 是独立的逆向工程资源合集，收录工具、项目、案例和参考资料。' if zh else 'AwesomeREA.org is an independent collection of reverse-engineering tools, projects, case studies, and references.')
+        description = ('AwesomeREA.org 是独立的逆向工程资源合集，收录工具、项目、案例和参考资料。本页说明它与上游 REA 项目的关系，并提供浏览入口、数据下载和来源索引。' if zh else 'AwesomeREA.org is an independent collection of reverse-engineering tools, projects, case studies, and references.')
         summary = (f'{len(resources):,} 项精选资源；{len(scanned):,} 个实际读取 README 的仓库；{browse_count:,} 个可浏览条目。{out_of_scope} 个超出范围的条目{unavailable_clause(unavailable, zh)}保留在完整扫描数据中。'
                    if zh else f'{len(resources):,} curated resources; {len(scanned):,} repositories whose READMEs were fetched; {browse_count:,} browsable entries. The {out_of_scope} out-of-scope entries{unavailable_clause(unavailable, zh)} remain in the complete scan data.')
         if published:
@@ -650,17 +656,21 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         fact_cards += f'<section class="source-card browse-repository"><h2>{("相关目录" if zh else "Companion directory")}</h2><p class="card-description"><a href="{companion_url}">AI Can What?</a> — {companion_description}</p></section>'
         links = _about_link_groups(site_dir, language, repository_url, source_index, source_export, published, withdrawals)
         content = f'<div class="source-results">{fact_cards}</div><section class="about-links" aria-labelledby="about-links-heading"><div class="browse-topline"><h2 id="about-links-heading">{("浏览、下载与来源" if zh else "Browse, download, and inspect sources")}</h2></div>{links}</section>'
-        schema = {'@context': 'https://schema.org', '@type': 'AboutPage', 'url': site_url + path, 'name': title, 'description': description, 'inLanguage': locale, 'about': website_reference(site_url)}
+        catalog_date = latest(record_date(record) for record in [*resources, *papers])
+        schema = {'@context': 'https://schema.org', '@graph': [
+            {'@type': 'AboutPage', 'url': site_url + path, 'name': title, 'description': description, 'inLanguage': locale,
+             'about': website_reference(site_url), 'publisher': publisher_reference(site_url), 'mainEntity': {'@id': site_url + path + '#dataset'}},
+            dataset_node(site_url, language, catalog_date)]}
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=schema, assets=assets, icon_stylesheet=icons.href, source_export=source_export)
         paths.append(path)
 
         path = prefix + '/contribute/'
         title = CONTRIBUTION_TITLES[int(zh)]
         description = ('向 Awesome REA 推荐逆向工程工具、重建案例和论文：GitHub 表单、Agent 贡献指南、一手证据、双语字段、校验和 PR 提交流程。'
-                       if zh else 'Submit reverse-engineering tools, reconstruction cases and papers to Awesome REA: GitHub forms, agent guidance, primary evidence, bilingual fields, validation and pull requests.')
+                       if zh else 'Submit reverse-engineering tools, reconstruction cases and papers to Awesome REA: GitHub forms, agent guidance, primary evidence and validation.')
         schema = {'@context': 'https://schema.org', '@type': 'WebPage', 'url': site_url + path,
                   'name': title, 'description': description, 'inLanguage': locale,
-                  'isPartOf': website_reference(site_url)}
+                  'isPartOf': website_reference(site_url), 'publisher': publisher_reference(site_url)}
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path,
             language=language, title=title, description=description,
             content=contribution_content(repository_url, language), schema=schema,

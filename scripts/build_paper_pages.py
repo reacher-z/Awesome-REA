@@ -11,6 +11,7 @@ from urllib.parse import urlsplit
 
 from asset_paths import fingerprinted_href, write_fingerprinted
 from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
+from structured_data import publisher_reference
 from site_footer import download_link, site_footer
 
 STATUS_LABELS = {
@@ -343,7 +344,7 @@ def build_paper_pages(
         browse = '/zh/browse/' if zh else '/browse/'
         title = label('Reverse engineering papers & benchmarks · AwesomeREA.org', '逆向工程论文与评测基准 · AwesomeREA.org')
         protocol_scope = label('protocol inference, ', '协议推断、') if any('protocol' in paper['targets'] for paper in papers) else ''
-        description = label(f'{len(papers)} source-reviewed papers on binary reverse engineering, decompilation, agent evaluation, {protocol_scope}firmware analysis, and website, game, and app reconstruction, with citations and research limitations.', f'{len(papers)} 篇来源已复核的论文，涵盖二进制逆向、反编译、智能体评估、{protocol_scope}固件分析，以及网站、游戏和应用重建，附引文和研究边界。')
+        description = label(f'{len(papers)} source-reviewed papers on binary reversing, decompilation, agent evaluation, {protocol_scope}firmware analysis and website, game and app reconstruction.', f'{len(papers)} 篇来源已复核的论文，涵盖二进制逆向、反编译、智能体评估、{protocol_scope}固件分析，以及网站、游戏和应用重建，附引文和研究边界。可按主题、年份、状态和目标筛选。')
         intro = label(f'Explore {len(papers)} papers on reverse engineering and software reconstruction, newest year first within each section.', f'浏览 {len(papers)} 篇逆向工程与软件重建论文，各分区按年份从新到旧排列。')
         nav = []
         sections = []
@@ -377,6 +378,7 @@ def build_paper_pages(
         }
         # The directory belongs to the site that only the homepages define.
         graph['@graph'][0]['isPartOf'] = website_reference(site_url)
+        graph['@graph'][0]['publisher'] = publisher_reference(site_url)
         structured = json.dumps(graph, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
         icon_css = f'<link rel="stylesheet" href="{escape(icon_stylesheet_href, quote=True)}">' if use_pro else ''
         document = f'''<!doctype html>
