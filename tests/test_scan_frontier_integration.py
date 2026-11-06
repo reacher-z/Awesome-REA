@@ -84,6 +84,69 @@ class FrontierRetryTests(unittest.TestCase):
         self.assertEqual({r['id'] for r in frontier.pending_candidates(restored, now=instant + 3600)}, {41, 42})
 
 
+class DiscoveryDeadlineTests(unittest.TestCase):
+    QUERIES = [BASE, 'topic:binary-analysis', 'topic:decompiler']
+
+    def scan(self, deadline, *, target=2):
+        """One pending candidate, three unsearched roots; the clock is the number of searches made."""
+        state = frontier.new_frontier(until='2026-10-18T00:00:00Z', approved_queries=self.QUERIES)
+        request = frontier.next_request(state)
+        frontier.record_response(state, request,
+            {'items': [public_repository(41)], 'total_count': 1, 'incomplete_results': False},
+            observed_at='2026-10-18T01:00:00Z', run_id='2026-10-18T01:00:00Z')
+
+        class Search:
+            calls = 0
+
+            def json(self, path, search=False):
+                Search.calls += 1
+                return {'items': [public_repository(100 + Search.calls)], 'total_count': 1, 'incomplete_results': False}
+
+        class Reads:
+            batch_size = 8
+            read = []
+
+            def fetch_batch(self, rows):
+                Reads.read = Reads.read + [row['id'] for row in rows]
+                return {row['id']: {'status': 'deferred', 'reason': 'graphql-rate-limit', 'retry_after': 3600} for row in rows}
+
+        cache = ROOT / '.cache'
+        cache.mkdir(exist_ok=True)
+        with TemporaryDirectory(dir=cache) as temporary:
+            output, state_path = Path(temporary) / 'scan.json', Path(temporary) / 'frontier.json'
+            args = arguments(output, target=target)
+            args.discovery_deadline = deadline
+            printed = io.StringIO()
+            with contextlib.redirect_stdout(printed), \
+                    patch.object(frontier, 'current_seconds', return_value=frontier.utc_seconds(OBSERVED)), \
+                    patch.object(scanner.time, 'monotonic', side_effect=lambda: Search.calls):
+                scanner.run_scan(Search(), args, readme_transport=Reads(), frontier=(state, state_path, self.QUERIES))
+                restored = frontier.load_frontier(state_path, approved_queries=self.QUERIES)
+        return Search.calls, Reads.read, printed.getvalue(), restored
+
+    def test_a_passed_deadline_skips_searching_and_still_reads_what_is_queued(self):
+        searches, read, printed, restored = self.scan(0)
+        self.assertEqual(searches, 0)
+        self.assertEqual(read, [41])
+        self.assertIn('DISCOVERY_TIME_LIMIT new_readme_candidates=1', printed)
+        self.assertIsNotNone(frontier.next_request(restored, now=frontier.utc_seconds(OBSERVED)))
+
+    def test_the_deadline_stops_searching_partway_and_the_reads_follow(self):
+        searches, read, printed, restored = self.scan(1, target=50)
+        self.assertEqual(searches, 1)
+        self.assertEqual(read[0], 41)
+        self.assertIn(101, read)
+        self.assertIn('DISCOVERY_TIME_LIMIT new_readme_candidates=2', printed)
+        self.assertIsNotNone(frontier.next_request(restored, now=frontier.utc_seconds(OBSERVED)))
+
+    def test_with_no_deadline_every_search_runs(self):
+        searches, read, printed, restored = self.scan(None, target=50)
+        self.assertEqual(searches, 2)
+        self.assertEqual(len(read), 3)
+        self.assertNotIn('DISCOVERY_TIME_LIMIT', printed)
+        self.assertIsNone(frontier.next_request(restored, now=frontier.utc_seconds(OBSERVED)))
+
+
 class PathBoundaryTests(unittest.TestCase):
     def test_cli_rejects_resolved_path_collisions_before_authentication_or_writes(self):
         with TemporaryDirectory() as temporary:

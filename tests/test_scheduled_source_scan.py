@@ -395,6 +395,9 @@ class RuntimeBoundaryTests(unittest.TestCase):
             def launch(command, **kwargs):
                 self.assertNotIn(environment['GH_TOKEN'], ' '.join(command))
                 self.assertTrue(kwargs['start_new_session'])
+                # Restoration time comes out of the search window, never out of the read reserve.
+                seconds = int(command[command.index('--discovery-seconds') + 1])
+                self.assertTrue(0 < seconds <= scheduled.SCAN_SECONDS - scheduled.READ_RESERVE_SECONDS)
                 path = Path(command[command.index('--output') + 1])
                 partial = snapshot(range(1, 1503), pending=(1503,), status='in-progress')
                 scheduled.write_json(path, partial)
@@ -665,7 +668,10 @@ class ScheduledBudgetTests(unittest.TestCase):
             self.assertEqual((args.search_request_budget, args.pending_metadata_budget), (360, 200))
             self.assertEqual((args.workers, args.requests_per_second, args.max_pages), (4, 2, 3))
             self.assertEqual(scan.call_args.kwargs['readme_transport'].batch_size, 16)
+            self.assertTrue(0 < args.discovery_deadline - scheduled.time.monotonic()
+                            <= scheduled.SCAN_SECONDS - scheduled.READ_RESERVE_SECONDS)
         self.assertEqual(scheduled.SCAN_SECONDS, 24 * 60)
+        self.assertEqual(scheduled.READ_RESERVE_SECONDS, 12 * 60)
         self.assertEqual(scheduled.NEW_SUCCESSES, 2000)
 
     def test_observed_graphql_quota_and_fallback_budget_defer_without_extra_requests(self):

@@ -42,6 +42,8 @@ CHUNK_BYTES = 1024 * 1024
 NEW_SUCCESSES = 2000
 GLOBAL_TARGET = 160000
 SCAN_SECONDS = 24 * 60
+# Searching stops this long before the scan budget ends. Each verified README comes from the read phase.
+READ_RESERVE_SECONDS = 12 * 60
 APPROVED_QUERIES = [*QUERY_BASES,
                     'topic:screenshot-to-code', 'topic:website-clone',
                     '"website" "reconstruction" in:description', '"pixel-perfect" "clone" in:description',
@@ -714,7 +716,7 @@ class ScheduledTransport:
         return results
 
 
-def scanner_child(seed, output, frontier_path):
+def scanner_child(seed, output, frontier_path, discovery_seconds=SCAN_SECONDS - READ_RESERVE_SECONDS):
     from scan_graphql_transport import GraphQLReadmeTransport
     document, fingerprint = read_snapshot(seed)
     planned = planned_successes(integrity_counts(document)['qualified'])
@@ -730,6 +732,7 @@ def scanner_child(seed, output, frontier_path):
     args = SimpleNamespace(target=target, workers=4, requests_per_second=2, max_pages=3,
                            candidate_buffer=min(200, max(50, (planned + 9) // 10)),
                            pending_metadata_budget=200, search_request_budget=360,
+                           discovery_deadline=time.monotonic() + discovery_seconds,
                            seed_curated=True, seed_papers=True,
                            queries=[query + ' ' + search_frontier.GATES for query in APPROVED_QUERIES], output=output)
     rest = GitHub(token, 2)
@@ -904,8 +907,10 @@ def orchestrate(directory, *, manual_seed=None, execution_source=None, bootstrap
     # The child owns its own parsed state; do not retain full parent copies while it runs.
     del seed, canonical, previous, frontier, reconciliation
     if planned:
+        discovery_seconds = max(0, int(SCAN_SECONDS - READ_RESERVE_SECONDS - (time.monotonic() - started_clock)))
         child = subprocess.Popen([sys.executable, __file__, '--child', '--seed', str(seed_path),
-                                  '--output', str(output), '--frontier', str(frontier_path)], cwd=ROOT, start_new_session=True)
+                                  '--output', str(output), '--frontier', str(frontier_path),
+                                  '--discovery-seconds', str(discovery_seconds)], cwd=ROOT, start_new_session=True)
         try:
             code = child.wait(timeout=max(1, SCAN_SECONDS - (time.monotonic() - started_clock)))
             outcome = 'target-reached' if code == 0 else 'partial'
@@ -980,9 +985,11 @@ def main():
     parser.add_argument('--seed', type=Path, help=argparse.SUPPRESS)
     parser.add_argument('--output', type=Path, help=argparse.SUPPRESS)
     parser.add_argument('--frontier', type=Path, help=argparse.SUPPRESS)
+    parser.add_argument('--discovery-seconds', type=int, default=SCAN_SECONDS - READ_RESERVE_SECONDS, help=argparse.SUPPRESS)
     args = parser.parse_args()
     try:
-        return scanner_child(args.seed, args.output, args.frontier) if args.child else orchestrate(args.directory)
+        return (scanner_child(args.seed, args.output, args.frontier, args.discovery_seconds)
+                if args.child else orchestrate(args.directory))
     except (ValueError, KeyError, TypeError, OSError, zipfile.BadZipFile, RecursionError):
         # Never print exception values from remote JSON, signed URLs, response bodies or credentials.
         print('Scheduled scan stopped: checkpoint, provenance, privacy or API validation failed. No publication was made.', flush=True)
