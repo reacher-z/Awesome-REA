@@ -81,7 +81,7 @@ The README scanner only sees GitHub repositories that its searches reach and tha
 
 **Budget.** The lead queue is capped at **30,000 leads** and **48 MiB** of batch files. The first collection of the registered sources (2026-11-05) yields about 5,600 leads in three runs, about 8 MB of batch files and about 1.5 MB compressed in Git; later runs add only what the sources newly list. At either limit the ingest stops and its tracking issue says so; raising the budget is a reviewed change to [discovery_leads.py](../../scripts/discovery_leads.py) and this page.
 
-`python3 scripts/discovery_leads.py` validates the registry and every lead batch and prints the queue size; `python3 scripts/validate.py` runs the same checks, and the trusted pull-request review accepts lead batches only from the workflow's own pull request. [/discoveries/leads.json](https://awesomerea.org/discoveries/leads.json) exports the newest 1,000 listed leads with batch provenance, and `/discoveries/leads/<batch>.json` every listed lead of a batch; a lead that another layer has since taken up is counted there, not listed. Curating a lead follows the [review worksheet](../../docs/promotion-worksheet.md) like any other discovery.
+`python3 scripts/discovery_leads.py` validates the registry and every lead batch and prints the queue size; `python3 scripts/validate.py` runs the same checks, and the trusted pull-request review accepts lead batches only from the workflow's own pull request. [/discoveries/leads.json](https://awesomerea.org/discoveries/leads.json) exports the newest 1,000 listed leads with batch provenance, and `/discoveries/leads/<batch>.json` every listed lead of a batch. Curated and decided leads leave both exports; the lead export counts them under `reviewed`. A lead held by another layer is counted there. Curating a lead follows the [review worksheet](../../docs/promotion-worksheet.md) like any other discovery.
 
 ## Curating a discovery
 
@@ -89,9 +89,9 @@ Follow the [review worksheet](../../docs/promotion-worksheet.md) exactly as for 
 
 ## Review decisions
 
-[data/discovery-reviews.json](../discovery-reviews.json) records what a reviewer decided about a discovery that was not curated, keyed by scan ID: `decision` (`exclude` or `hold`), `reason_code`, `reason_en`, `reason_zh`, the `readme_sha256` of the scan it reviews, a pinned `evidence_url`, `reviewed_at` and, for a duplicate, `duplicate_of`. [discovery_reviews.py](../../scripts/discovery_reviews.py) holds the reason codes and validates each decision against its batch. `exclude` means the primary source shows the repository does not belong; `hold` means it may belong, and the reason names the missing evidence or the maintainer decision it needs.
+[data/discovery-reviews.json](../discovery-reviews.json) records decisions keyed by scan ID or lead ID: `decision` (`exclude` or `hold`), `reason_code`, `reason_en`, `reason_zh`, a pinned `evidence_url`, `reviewed_at` and, for a duplicate, `duplicate_of`. Scan decisions also include the reviewed snapshot's `readme_sha256`. A lead decision uses its pinned evidence link to identify the reviewed commit. [discovery_reviews.py](../../scripts/discovery_reviews.py) holds the reason codes and validates each decision against its batch. `exclude` means the primary source shows the resource does not belong; `hold` means it may belong, and the reason names the missing evidence or the maintainer decision it needs.
 
-A decided record leaves the unreviewed list, feeds and exports, and appears in [/discoveries/reviews.json](https://awesomerea.org/discoveries/reviews.json) with its reason. Its batch file does not change, so the scheduled ingest and the lead collector, which treat every batch ID as already held, do not queue it again. To reverse a decision, edit its entry or remove it.
+A decided record leaves the unreviewed list, feeds and exports, and appears in [/discoveries/reviews.json](https://awesomerea.org/discoveries/reviews.json) with its reason. Scan counts remain under `counts`; lead counts appear under `lead_counts`. Its batch file stays unchanged, so the scheduled ingest and the lead collector, which treat every batch ID as already held, do not queue it again. To reverse a decision, edit its entry or remove it.
 
 ## 简体中文
 
@@ -105,7 +105,7 @@ A decided record leaves the unreviewed list, feeds and exports, and appears in [
 
 ### 审核决定
 
-[data/discovery-reviews.json](../discovery-reviews.json) 按扫描 ID 记录审核者对未收录发现的决定：`decision`（`exclude` 排除或 `hold` 暂缓）、`reason_code`、中英文理由、所审扫描的 `readme_sha256`、固定到提交的 `evidence_url`、`reviewed_at`，重复项另有 `duplicate_of`。已决定的记录离开未审核列表、订阅和导出，连同理由出现在 [/discoveries/reviews.json](https://awesomerea.org/discoveries/reviews.json)。批次文件不变，定时入库和线索收集会把批次中的 ID 视为已有，因此不会再次排入队列。已收录的仓库按 URL 精确匹配后自动离开列表。
+[data/discovery-reviews.json](../discovery-reviews.json) 按扫描 ID 或线索 ID 记录审核决定：`decision`（`exclude` 排除或 `hold` 暂缓）、`reason_code`、中英文理由、固定到提交的 `evidence_url`、`reviewed_at`，重复项另有 `duplicate_of`。扫描记录还需填写所审快照的 `readme_sha256`；线索由固定到提交的证据链接标识审核依据。已决定的记录离开未审核列表、订阅和导出，连同理由出现在 [/discoveries/reviews.json](https://awesomerea.org/discoveries/reviews.json)。其中 `counts` 统计扫描记录，`lead_counts` 统计线索；线索导出的 `reviewed` 也按收录、排除和暂缓计数。批次文件保持不变，定时入库和线索收集会把批次中的 ID 视为已有，因此不会再次排入队列。已收录的资源按 URL 精确匹配后自动离开列表。
 
 ### 外部来源线索
 
