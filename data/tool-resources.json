@@ -26279,5 +26279,331 @@
       "https://github.com/x64dbg/ScyllaHide/releases/tag/v1.4",
       "https://github.com/x64dbg/ScyllaHide/releases/download/docs-2019-05-17/ScyllaHide.pdf"
     ]
+  },
+  {
+    "id": "yara-x",
+    "name": "YARA-X",
+    "url": "https://github.com/VirusTotal/yara-x",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "VirusTotal's Rust rewrite of YARA for identifying and classifying files with pattern-matching rules. It is meant to replace YARA, with more detailed error reports, faster regular-expression and hex-pattern matching and a more capable command line. Rules keep YARA's syntax of text, hex and regular-expression patterns joined by a Boolean condition, and modules parse PE, ELF, Mach-O, .NET, Android DEX, Chrome CRX and Windows LNK files; the CLI can also print a module's parsed output as JSON or YAML without any rule, which makes it usable as a file-dissection tool. Rust, C, Go and Python APIs, a rule formatter and a language server with a Visual Studio Code extension are included.",
+    "description_zh": "VirusTotal 用 Rust 重写的 YARA，以模式匹配规则识别和归类文件。它的目标是取代 YARA，提供更详细的错误报告、更快的正则表达式与十六进制模式匹配，以及功能更强的命令行。规则沿用 YARA 的语法，即文本、十六进制和正则表达式模式加布尔条件；各模块可解析 PE、ELF、Mach-O、.NET、Android DEX、Chrome CRX 和 Windows LNK 文件。命令行无需任何规则即可把模块的解析结果输出为 JSON 或 YAML，因此也能当作文件结构剖析工具使用。项目提供 Rust、C、Go 和 Python API、规则格式化工具，以及带 Visual Studio Code 扩展的语言服务器。",
+    "evidence_url": "https://github.com/VirusTotal/yara-x/blob/1bda5fc3cbd05c937bcedc63a662f513b7490c4d/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Pre-built binaries for Linux, macOS and Windows come with each release; macOS users can install it with Homebrew and Python users with pip install yara-x. Building needs a recent Rust toolchain (cargo install --path cli), and the Go library builds on the C API. Release at review: v1.23.0, published 2026-11-05.",
+      "Its comparison page says the C/C++, Python and Go APIs are not compatible with YARA's and that process scanning is not implemented yet; a separate page lists rule-level differences. The README calls YARA-X mature and stable and says VirusTotal runs it in production.",
+      "BSD-3-Clause per LICENSE; contributions need Google's Contributor License Agreement."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/VirusTotal/yara-x/blob/1bda5fc3cbd05c937bcedc63a662f513b7490c4d/site/content/docs/intro/yara_vs_yara-x.md",
+      "https://github.com/VirusTotal/yara-x/blob/1bda5fc3cbd05c937bcedc63a662f513b7490c4d/site/content/docs/intro/installation.md",
+      "https://github.com/VirusTotal/yara-x/blob/1bda5fc3cbd05c937bcedc63a662f513b7490c4d/site/content/docs/intro/language_server.md",
+      "https://github.com/VirusTotal/yara-x/tree/1bda5fc3cbd05c937bcedc63a662f513b7490c4d/site/content/docs/modules",
+      "https://github.com/VirusTotal/yara-x/blob/1bda5fc3cbd05c937bcedc63a662f513b7490c4d/site/content/docs/api/python.md",
+      "https://github.com/VirusTotal/yara-x/blob/1bda5fc3cbd05c937bcedc63a662f513b7490c4d/site/content/docs/api/go.md",
+      "https://github.com/VirusTotal/yara-x/blob/1bda5fc3cbd05c937bcedc63a662f513b7490c4d/LICENSE",
+      "https://github.com/VirusTotal/yara-x/releases/tag/v1.23.0"
+    ]
+  },
+  {
+    "id": "de4dot",
+    "name": "de4dot",
+    "url": "https://github.com/de4dot/de4dot",
+    "category": "dotnet",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Open-source .NET deobfuscator and unpacker that tries to restore a packed and obfuscated assembly to almost its original form. Depending on the obfuscator, it decrypts strings, constants, methods, resources and embedded assemblies statically or dynamically, removes proxy methods, junk classes and tamper-detection and anti-debug code, devirtualizes virtualized code, deobfuscates control flow and renames symbols to readable names; it can also just detect which obfuscator was used. The README lists 19 supported obfuscators and packers, among them Dotfuscator, .NET Reactor, Eazfuscator.NET and SmartAssembly.",
+    "description_zh": "开源的 .NET 反混淆与脱壳工具，尝试把加壳、混淆过的程序集恢复到接近原始的状态。视混淆器而定，它能以静态或动态方式解密字符串、常量、方法、资源和内嵌程序集，移除代理方法、垃圾类以及防篡改和反调试代码，还原被虚拟化的代码和被打乱的控制流，并把符号重命名为可读名称；也可以只检测程序集使用了哪种混淆器。README 列出 19 种受支持的混淆器和加壳工具，包括 Dotfuscator、.NET Reactor、Eazfuscator.NET 和 SmartAssembly。",
+    "evidence_url": "https://github.com/de4dot/de4dot/blob/b7d5728fc0c82fb0ad758e3a4c0fbb70368a4853/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository was archived on GitHub after its last commit on 2020-08-29 and has no GitHub releases; the README points to CI builds for binaries. Source builds use the .NET Framework or .NET Core solution and need dnlib, which de4dot uses to read and write assemblies.",
+      "Original symbol names usually cannot be restored, and XAML is not renamed, so WPF or Silverlight assemblies may need --dont-rename. The README offers no support and says newer obfuscator versions may require updating de4dot yourself.",
+      "For some obfuscators, and for dynamic string decryption, it loads the assembly and its dependencies into memory and executes them, so the README advises a safe sandbox for suspected malware.",
+      "GPL-3.0 (COPYING); bundled libraries such as dnlib, SharpZipLib, QuickLZ and LZMA keep their own license files."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/de4dot/de4dot/tree/b7d5728fc0c82fb0ad758e3a4c0fbb70368a4853",
+      "https://github.com/de4dot/de4dot/blob/b7d5728fc0c82fb0ad758e3a4c0fbb70368a4853/COPYING"
+    ]
+  },
+  {
+    "id": "reclass-net",
+    "name": "ReClass.NET",
+    "url": "https://github.com/ReClassNET/ReClass.NET",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "game"
+    ],
+    "description_en": "Memory structure editor for reconstructing the classes and data structures of a running x86 or x64 process, a .NET port of ReClass with many additions. Users lay out memory as typed nodes, such as integers, floats, vectors and matrices, text, pointers, arrays, unions, virtual tables and function pointers, with automatic node dissection, highlighting of changed memory, types from PDB debug symbols and RTTI class names, then generate C++ or C# code from the result. It also offers a memory viewer and scanner, a module and section dumper, a debugger that finds what writes to or accesses an address, and plugins that can supply other memory-access methods or game-specific class information, such as for Frostbite games.",
+    "description_zh": "用于重建运行中 x86 或 x64 进程内类与数据结构的内存结构编辑器，是 ReClass 移植到 .NET 平台并大量扩展后的版本。使用者把内存布局成带类型的节点，如整数、浮点数、向量与矩阵、文本、指针、数组、联合体、虚函数表和函数指针，可自动剖析节点、高亮变化的内存、读取 PDB 调试符号中的类型和 RTTI 类名，再根据结果生成 C++ 或 C# 代码。它还提供内存查看器和扫描器、模块与节区转储、可找出哪些代码写入或访问某个地址的调试器，以及能提供其他内存访问方式或游戏专用类信息（例如 Frostbite 游戏）的插件。",
+    "evidence_url": "https://github.com/ReClassNET/ReClass.NET/blob/a02fcb9bd669c8f81facd3ee9ad57cdcbf2cc0e1/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Releases ship x86 and x64 builds with a launcher that picks between them, and the README lists Linux support tested on Ubuntu 18.04. Release at review: v1.2, published 2019-04-15; the reviewed master commit dates from 2023-07-03. Compiling needs Visual Studio 2019, and the Linux native core library needs WSL, plus g++-multilib for cross-platform builds.",
+      "It imports ReClass 2007–2016, ReClass QT, Cheat Engine and CrySearch files. Plugins are installed by copying them into the Plugins folder; the README says the Unreal plugin is no longer available.",
+      "MIT per LICENSE."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ReClassNET/ReClass.NET/blob/a02fcb9bd669c8f81facd3ee9ad57cdcbf2cc0e1/LICENSE",
+      "https://github.com/ReClassNET/ReClass.NET/releases/tag/v1.2"
+    ]
+  },
+  {
+    "id": "classyshark",
+    "name": "ClassyShark",
+    "url": "https://github.com/google/android-classyshark",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Google's standalone browser for Android executables and libraries that shows class interfaces and members, dex counts and dependencies. It opens .dex, .aar and .so libraries, .apk, .jar and .class executables and Android binary XML files such as AndroidManifest, resources and layouts, and it can export what it shows as text.",
+    "description_zh": "Google 推出的独立 Android 可执行文件与库浏览工具，可显示类接口与成员、dex 计数和依赖关系。它能打开 .dex、.aar 和 .so 库，.apk、.jar 和 .class 可执行文件，以及 AndroidManifest、资源和布局等 Android 二进制 XML 文件，并可把显示的内容导出为文本。",
+    "evidence_url": "https://github.com/google/android-classyshark/blob/78ddba71b0d869cc6283f8cdbb2061b6e57a3781/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs as a JAR (java -jar ClassyShark.jar) on a Java runtime; Arch Linux users can install a prebuilt JAR from the AUR. The latest release is 8.2, published 2018-07-25, and the repository was archived on GitHub after its last commit on 2023-05-19.",
+      "The README marks its API finder as work in progress; a command-line reference ships as CommandLine.pdf in the repository.",
+      "Apache-2.0 per LICENSE.txt and the README."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/google/android-classyshark/blob/78ddba71b0d869cc6283f8cdbb2061b6e57a3781/CommandLine.pdf",
+      "https://github.com/google/android-classyshark/blob/78ddba71b0d869cc6283f8cdbb2061b6e57a3781/LICENSE.txt",
+      "https://github.com/google/android-classyshark/releases/tag/8.2"
+    ]
+  },
+  {
+    "id": "rpisec-malware-analysis-course",
+    "name": "RPISEC Malware Analysis course (CSCI 4976)",
+    "url": "https://github.com/RPISEC/Malware",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Materials from the student-run Malware Analysis course that RPISEC taught at Rensselaer Polytechnic Institute in Fall 2015, built around the book Practical Malware Analysis. Twelve lectures run from basic static and dynamic analysis, x86 and IDA through Windows internals, malware behavior, data encoding, covert launching, anti-disassembly, anti-VM and anti-debugging, and packing and unpacking to the Windows kernel and rootkit techniques, with ten labs and four projects that include runtime process manipulation, unpacking automation and an APT sample analysis.",
+    "description_zh": "RPISEC 学生团队 2015 年秋季在伦斯勒理工学院（Rensselaer Polytechnic Institute）开设的恶意软件分析课程资料，课程以《Practical Malware Analysis》一书为主线。12 讲内容从基础静态与动态分析、x86 与 IDA 讲起，经过 Windows 内部机制、恶意软件行为、数据编码、隐蔽启动、反反汇编、反虚拟机与反调试、加壳与脱壳，一直讲到 Windows 内核和 rootkit 技术；另有 10 个实验和 4 个项目，涉及运行时进程操控、自动化脱壳和 APT 样本分析。",
+    "evidence_url": "https://github.com/RPISEC/Malware/blob/bbd48df47d709a702b9345e5d38cee16af3b37bd/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The course expected working C/C++ and some assembly experience, and students read the matching book chapters before each lecture. It used a Windows 7 32-bit analysis VM, which is not distributed; the v1.0_release (2016-01-14) packages installers for the free tools used, such as IDA Free, OllyDbg, WinDbg, the Sysinternals Suite, PEiD, Regshot and Wireshark.",
+      "Most lab and project samples are real malware, stored in ZIP archives encrypted with the password infected; the README says to keep them inside a proper analysis environment. Lectures were not recorded, and slides covering book material are outlines.",
+      "The repository has no license file and GitHub detects no license; the reviewed master commit dates from 2017-05-11."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/RPISEC/Malware/tree/bbd48df47d709a702b9345e5d38cee16af3b37bd/Labs",
+      "https://github.com/RPISEC/Malware/tree/bbd48df47d709a702b9345e5d38cee16af3b37bd/Lectures",
+      "https://github.com/RPISEC/Malware/releases/tag/v1.0_release"
+    ]
+  },
+  {
+    "id": "corkami-pics",
+    "name": "Corkami pics",
+    "url": "https://github.com/corkami/pics",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Collection of posters and diagrams that dissect file formats byte by byte, published as PNG and PDF images. The binary posters cover executables (ELF, DOS COM and EXE, NE, LE, PE, Mach-O and fat Mach-O, Java class, Dalvik DEX, Python bytecode, SWF, GameCube/Wii DOL and Switch NRO) along with image, video, archive, document, sound and serialization formats, x86 and x64 opcode charts and Dalvik, JVM and .NET opcode tables. The more detailed 101 series explains PE, ELF, Mach-O, ZIP, Java class, PDF, COM and WAV files and includes Inkscape sources and proof-of-concept files.",
+    "description_zh": "逐字节剖析各类文件格式的海报与图解合集，以 PNG 和 PDF 图片发布。二进制海报涵盖可执行文件（ELF、DOS COM 与 EXE、NE、LE、PE、Mach-O 及 fat Mach-O、Java class、Dalvik DEX、Python 字节码、SWF、GameCube/Wii DOL 和 Switch NRO），以及图像、视频、压缩包、文档、音频和序列化格式，另有 x86 与 x64 操作码图表和 Dalvik、JVM、.NET 操作码表。讲解更详细的 101 系列介绍 PE、ELF、Mach-O、ZIP、Java class、PDF、COM 和 WAV 文件，并附 Inkscape 源文件和概念验证文件。",
+    "evidence_url": "https://github.com/corkami/pics/blob/669facbb0b6a977f959ae6473b8346e98cf23f53/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Images and PDFs to view in a browser or image viewer; nothing needs installing. The repository has no releases, and the reviewed master commit dates from 2024-02-18.",
+      "Besides the file-format posters, the repository holds general posters, tracings and outlines that are not about file formats.",
+      "The repository has no license file and GitHub detects no license, so reuse terms are not stated."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/corkami/pics/blob/669facbb0b6a977f959ae6473b8346e98cf23f53/binary/README.md",
+      "https://github.com/corkami/pics/tree/669facbb0b6a977f959ae6473b8346e98cf23f53/binary/pe101"
+    ]
+  },
+  {
+    "id": "keypatch",
+    "name": "Keypatch",
+    "url": "https://github.com/keystone-engine/keypatch",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDA Pro plugin built on the Keystone assembler engine that patches a binary from typed assembly, fills an address range with instructions or raw bytes and searches the loaded binary for assembly instructions. It assembles Arm, Arm64, Hexagon, MIPS, PowerPC, SPARC, SystemZ and 16-, 32- and 64-bit x86 code, shows the encoding while you type, can pad with NOPs up to the next instruction boundary, keeps the original instruction in an IDA comment and can undo the last patch.",
+    "description_zh": "基于 Keystone 汇编引擎的 IDA Pro 插件：可直接输入汇编指令修补二进制文件，用指令或原始字节填充一段地址范围，并在已加载的二进制文件中搜索汇编指令。它支持 Arm、Arm64、Hexagon、MIPS、PowerPC、SPARC、SystemZ 以及 16/32/64 位 x86，输入时即时显示编码，可用 NOP 填充到下一条指令边界，在 IDA 注释中保留原指令，并可撤销上一次修补。",
+    "evidence_url": "https://github.com/keystone-engine/keypatch/blob/e7ecb93a4d242e83b9356b8258108773464646d4/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs IDA Pro on Windows, macOS or Linux with the Keystone engine and its Python binding plus the six module; keypatch.py is copied into IDA's plugins folder. The README confirms IDA Pro 6.4 to 7.5, and the reviewed master commit (2024-09-06) adds IDA 9.0 API changes. The latest tagged release is 2.1 (2017-01-17), while the code reports version 2.2.",
+      "Patches change only the IDA database until Edit | Patch program | Apply patches to input file writes them to the original binary.",
+      "GPL-2.0 per COPYING."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/keystone-engine/keypatch/blob/e7ecb93a4d242e83b9356b8258108773464646d4/TUTORIAL.md",
+      "https://github.com/keystone-engine/keypatch/blob/e7ecb93a4d242e83b9356b8258108773464646d4/keypatch.py#L105-L118",
+      "https://github.com/keystone-engine/keypatch/blob/e7ecb93a4d242e83b9356b8258108773464646d4/COPYING",
+      "https://github.com/keystone-engine/keypatch/releases/tag/2.1"
+    ]
+  },
+  {
+    "id": "edb-debugger",
+    "name": "edb-debugger",
+    "url": "https://github.com/eteran/edb-debugger",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Qt-based graphical debugger for AArch32, x86 and x86-64 programs, inspired by OllyDbg, with Linux as its only officially supported platform. Its interface docks disassembly, register, stack and data views, adds a memory-regions window, process attaching, symbols, an expression syntax and an analysis bar similar to IDA Pro's, and its default plugins include Analyzer, Assembler, BinarySearcher, BreakpointManager, FunctionFinder, HardwareBreakpoints, HeapAnalyzer, OpcodeSearcher, ROPTool and SymbolViewer.",
+    "description_zh": "基于 Qt 的图形化调试器，受 OllyDbg 启发，支持 AArch32、x86 和 x86-64 程序，目前只正式支持 Linux。界面可停靠反汇编、寄存器、栈和数据视图，并提供内存区域窗口、附加到进程、符号支持、表达式语法，以及类似 IDA Pro 的分析条；默认插件包括 Analyzer、Assembler、BinarySearcher、BreakpointManager、FunctionFinder、HardwareBreakpoints、HeapAnalyzer、OpcodeSearcher、ROPTool 和 SymbolViewer。",
+    "evidence_url": "https://github.com/eteran/edb-debugger/blob/b8640ebd2f7f32839f6cbb53c7faf4374c329acd/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Linux is the only officially supported platform; FreeBSD, OpenBSD, macOS and Windows ports are underway with varying functionality. Building needs a C++17 GCC or Clang, Qt 5.15+ or 6.8+, Capstone 3.0+ and optionally Graphviz 2.38+, using CMake on a recursive clone so that the submodules are fetched.",
+      "Release at review: 1.5.0, published 2024-03-22 and the last version to support Linux kernels older than 3.0; new development targets kernel 3.0 and newer and will be released as 2.0.0. The reviewed master commit is dated 2026-10-27.",
+      "GPL-2.0 per COPYING."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/eteran/edb-debugger/wiki/Home/6fd2f5ed1cebbca1b17cde6ec118d810faf3e810",
+      "https://github.com/eteran/edb-debugger/wiki/Interface/996f7b95c2f999f19806ce757853b0ff96702d32",
+      "https://github.com/eteran/edb-debugger/blob/b8640ebd2f7f32839f6cbb53c7faf4374c329acd/COPYING",
+      "https://github.com/eteran/edb-debugger/releases/tag/1.5.0"
+    ]
+  },
+  {
+    "id": "binnavi",
+    "name": "BinNavi",
+    "url": "https://github.com/google/binnavi",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Google's open-sourced binary analysis IDE for inspecting, navigating, editing and annotating the control-flow graphs and call graphs of disassembled code. It also collects and combines execution traces and keeps track of analysis results among a group of analysts. Disassemblies come from IDA Pro through a bundled export plugin that writes the PostgreSQL database BinNavi uses for disassemblies, comments and traces; the README notes that no exporter exists yet for other disassemblers.",
+    "description_zh": "Google 开源的二进制分析 IDE，可查看、浏览、编辑和注释反汇编代码的控制流图与调用图。它还能收集并合并执行跟踪，帮助分析团队共同跟踪分析结果。反汇编数据由随附的 IDA Pro 导出插件写入 PostgreSQL 数据库，BinNavi 用该数据库存储反汇编、注释和跟踪记录；README 指出目前还没有面向其他反汇编器的导出工具。",
+    "evidence_url": "https://github.com/google/binnavi/blob/4cfdd91cdda2a6150f537df91a8c4221ae50bb6d/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs Java 11 or later, a reachable PostgreSQL database and IDA Pro to import disassemblies. It builds from source with Maven and Ant (mvn dependency:copy-dependencies, then ant build-binnavi-fat-jar); the Gradle build is experimental. GitHub releases include BinNavi 6.1 (2016-03-17) and a historical 1.2 version published in 2017.",
+      "The README says the project is no longer under active development, and the repository was archived on GitHub after its last commit on 2020-10-23. Graph display uses the commercial yFiles library: the repository ships a pre-built, obfuscated yfileswrap JAR, and changing the yfileswrap packages needs a yFiles license.",
+      "Apache-2.0, apart from the yFiles dependency."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/google/binnavi/blob/4cfdd91cdda2a6150f537df91a8c4221ae50bb6d/LICENSE",
+      "https://github.com/google/binnavi/releases/tag/v6.1.0"
+    ]
+  },
+  {
+    "id": "flare-emu",
+    "name": "flare-emu",
+    "url": "https://github.com/mandiant/flare-emu",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Mandiant FLARE Python library that pairs IDA Pro, Rizin or Radare2 with the Unicorn emulator so analysts can script emulation of the binary they are analyzing, for 32- and 64-bit x86, ARM and ARM64. Its interfaces emulate an instruction range or function with chosen register and stack values, force execution down the branches needed to reach target addresses or every cross-reference to a function, walk all paths through a function, run a standalone byte blob, or emulate from an address until nothing is left, with hooks on instructions and calls. A common use in its README is decrypting malware strings by emulating the decryption routine at each call site and commenting the results.",
+    "description_zh": "Mandiant FLARE 团队的 Python 库，把 IDA Pro、Rizin 或 Radare2 与 Unicorn 模拟器结合起来，让分析人员能以脚本方式模拟执行正在分析的二进制代码，支持 32/64 位 x86、ARM 和 ARM64。它提供的接口可在指定寄存器和栈值下模拟一段指令或一个函数，强制走到目标地址或某函数全部交叉引用所需的分支，遍历函数的所有路径，单独运行一段字节，或从某个地址一直模拟到没有代码可执行为止，并支持指令级和调用级钩子。README 中的常见用法是在每个调用点模拟恶意软件的字符串解密函数，并把解密结果写成注释。",
+    "evidence_url": "https://github.com/mandiant/flare-emu/blob/6688c3270d9847c1b96ffcae00f58c0c85ab1a7e/README.md",
+    "verified_at": "2026-11-05",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs Unicorn and its Python bindings plus IDA Pro 7.x or later (older IDA APIs are not supported), Rizin with rzpipe, or Radare2 with r2pipe; the README also shows use through IDA's idalib. Installation means copying flare_emu.py, the framework module and flare_emu_hooks.py into IDA's python directory or onto Python's import path.",
+      "The repository was archived on GitHub after a final release tagged 2025-08-14, which has no notes. With Rizin it runs as a command-line script or in a Python shell.",
+      "Apache-2.0 per LICENSE-APACHE.TXT."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mandiant/flare-emu/blob/6688c3270d9847c1b96ffcae00f58c0c85ab1a7e/flare_emu.py#L13",
+      "https://github.com/mandiant/flare-emu/blob/6688c3270d9847c1b96ffcae00f58c0c85ab1a7e/LICENSE-APACHE.TXT",
+      "https://github.com/mandiant/flare-emu/releases/tag/2025-08-14"
+    ]
   }
 ]
