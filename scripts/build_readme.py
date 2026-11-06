@@ -501,8 +501,8 @@ FINDER_BLURBS = {
                                '文档、分析指南、实验练习与学习资源'),
     'papers': ('Research bibliography, kept in generated paper lists',
               '研究论文书目，列于自动生成的论文列表'),
-    'index': ('Public repositories found by README scans; unreviewed, not recommendations',
-             '通过 README 扫描发现的公开仓库；未经复核，不构成推荐'),
+    'index': ('Public repositories discovered by README scans, listed unreviewed',
+             '通过 README 扫描发现的公开仓库，未经审阅'),
 }
 
 

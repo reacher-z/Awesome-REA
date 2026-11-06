@@ -90,7 +90,7 @@ def rendered_files():
                    if zh else [f'**{len(scanned):,}** repository READMEs scanned; **{len(records):,}** entries available to browse. The {out_of_scope} clearly out-of-scope entries{unavailable_clause(unavailable, zh)} remain in the scan data. This automatically discovered index is separate from the curated resources above and has not been individually execution-tested.', '',
                                '[Browse by category on GitHub](docs/repositories/README.md) · [Search website](https://awesomerea.org/?view=source-index&lang=en) · [Full bilingual index JSON](https://awesomerea.org/source-index.json)'])
         if published:
-            summary[0] = intro + (' 自动发现条目不是逐项精选或运行验证后的推荐。' if zh else ' Automatically discovered entries are not individually curated or execution-tested recommendations.')
+            summary[0] = intro + (' 自动发现的条目均列为未审阅。' if zh else ' Automatically discovered entries are listed unreviewed.')
             summary = [line.replace('/source-index.json', '/source-published.json') for line in summary]
         root_name = f'README{suffix}.md'
         root_text = (ROOT / root_name).read_text(encoding='utf-8')
