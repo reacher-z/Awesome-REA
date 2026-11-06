@@ -39,7 +39,7 @@ def validate_route_inventory(urls, resources, papers, *, include_browse=True, in
     routes = expected_entry_routes(resources, papers)
     expected = set(routes)
     for prefix in ("", "/zh"):
-        expected.update(prefix + path for path in ("/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/"))
+        expected.update(prefix + path for path in ("/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/", "/api/"))
         if include_browse:
             expected.add(prefix + "/browse/")
             expected.update(f"{prefix}/browse/{category}/" for category in CATEGORIES)
@@ -96,11 +96,12 @@ def built_page_dates(output, records, papers):
         if (output / name).is_file():
             repository = json.loads((output / name).read_text(encoding="utf-8"))
             break
-    queue = output / "discoveries.json"
+    queue, leads = output / "discoveries.json", output / "discoveries/leads.json"
     batches = json.loads(queue.read_text(encoding="utf-8")).get("batches", []) if queue.is_file() else []
+    lead_batches = json.loads(leads.read_text(encoding="utf-8")).get("batches", []) if leads.is_file() else []
     survey = json.loads((ROOT / "data/survey.json").read_text(encoding="utf-8"))
     return page_dates(resources=records, papers=papers, repository_document=repository,
-                      discovery_batches=batches, survey_date=survey.get("date"))
+                      discovery_batches=batches, lead_batches=lead_batches, survey_date=survey.get("date"))
 
 
 def validate_sitemaps(output, records, papers):

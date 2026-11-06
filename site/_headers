@@ -36,6 +36,23 @@
   Content-Type: application/atom+xml; charset=utf-8
 /zh/feed.xml
   Content-Type: application/atom+xml; charset=utf-8
+/feed.json
+  Content-Type: application/feed+json; charset=utf-8
+/zh/feed.json
+  Content-Type: application/feed+json; charset=utf-8
+# Agent formats: the full catalog in Markdown, and each page's Markdown twin, whose canonical is its page.
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+/zh/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+/*/index.md
+  Link: <https://awesomerea.org/:splat/>; rel="canonical"
+# The static API: readable from any origin, revalidated on every request (Pages adds the ETag).
+/api/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: no-cache, must-revalidate
+/api/v1/*.csv
+  Content-Type: text/csv; charset=utf-8
 # The unreviewed discovery queue changes with every automated ingest.
 /discoveries/feed.xml
   Content-Type: application/atom+xml; charset=utf-8

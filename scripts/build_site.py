@@ -15,11 +15,14 @@ from asset_paths import fingerprinted_href, remove_unhashed_copies
 from build_browse_pages import build_browse_pages
 from build_discovery_pages import build_discovery_pages
 from build_paper_pages import build_paper_pages
-from build_readme import CATEGORIES
+from build_readme import CATEGORIES, collection_section
 from build_repository_index import CATEGORIES as REPOSITORY_CATEGORIES
 from build_survey import build_survey, discussion_sections
 from build_entry_pages import build_entry_pages
 from build_feed import build_feeds
+from build_api import build_api, write_api_pages
+from agent_formats import full_catalog_markdown
+from build_discovery_pages import SECTIONS as COLLECTION_SECTIONS
 from build_discoveries import llms_section, main_feed_batches, write_discoveries
 from build_discovery_leads import llms_section as lead_llms_section, write_lead_exports
 from build_manifest import write_build_manifest
@@ -363,16 +366,28 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     discovery_paths = [*discovery_paths, *queue_paths]
     # Followed-source leads: JSON exports only, labelled unreviewed, never pages or curated counts.
     lead_queue = write_lead_exports(output, catalog)
+    # The static API reads the same records and queues; its documentation page joins the sitemap.
+    api_index = build_api(output, resources=resources, papers=papers, repository_document=browse_document,
+                          discovery_queue=discovery_queue, lead_queue=lead_queue, site_url=SITE_URL)
     section = llms_section(discovery_queue, SITE_URL) + lead_llms_section(lead_queue, SITE_URL)
     if section:
         llms_path = output / "llms.txt"
         llms = llms_path.read_text(encoding="utf-8")
-        marker = "\nThis file is a navigation aid."
+        # The unreviewed queues come after the curated collections and data, before the optional links.
+        marker = "\n## Optional\n"
         if llms.count(marker) != 1:
-            raise ValueError("llms.txt needs exactly one closing navigation note")
+            raise ValueError("llms.txt needs exactly one Optional section")
         llms_path.write_text(llms.replace(marker, "\n" + section + marker), encoding="utf-8")
     # Every footer offers the same repository download as the homepage and the browse pages.
     repository_export = PUBLISHED_FILENAME if metadata["source_index"].get("full_export") == PUBLISHED_FILENAME else "source-index.json"
+    discovery_paths = [*discovery_paths, *write_api_pages(output, api_index, site_url=SITE_URL, repository_url=REPOSITORY_URL,
+                                                          source_export=repository_export)]
+    # llms-full.txt: the whole curated catalog in Markdown, one file per language.
+    for language, header in (("en", "# Awesome Reverse Engineering Anything: the full curated catalog\n\n> Every source-reviewed resource and research paper of AwesomeREA.org, with requirements, limits and sources. The navigation index is https://awesomerea.org/llms.txt; each entry also has its own Markdown page and record.json.\n"),
+                             ("zh", "# Awesome Reverse Engineering Anything：完整精选目录\n\n> AwesomeREA.org 全部经来源复核的资源与研究论文，含使用条件、局限与来源。导航索引见 https://awesomerea.org/llms.txt；每个条目另有独立的 Markdown 页面与 record.json。\n")):
+        target = output / ("zh/llms-full.txt" if language == "zh" else "llms-full.txt")
+        target.write_text(full_catalog_markdown(resources, papers, language, site_url=SITE_URL, sections=COLLECTION_SECTIONS,
+                                                section_of=collection_section, header=header), encoding="utf-8")
     paper_urls = build_paper_pages(
         output, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
         styles_href=asset_hrefs["styles.css"], papers_styles_href=fingerprinted_href(output, "papers.css"),
@@ -407,7 +422,8 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", *browse_urls, *(SITE_URL + path for path in discovery_paths), *paper_urls, *survey_urls, *entry_urls]
     # lastmod comes from the records each page shows, never the build time (sitemaps.page_dates).
     dates = page_dates(resources=resources, papers=papers, repository_document=browse_document,
-                       discovery_batches=(discovery_queue or {}).get("batches"), survey_date=survey_document.get("date"))
+                       discovery_batches=(discovery_queue or {}).get("batches"), lead_batches=(lead_queue or {}).get("batches"),
+                       survey_date=survey_document.get("date"))
     write_sitemaps(output, SITE_URL, [url.removeprefix(SITE_URL) for url in sitemap_urls], dates)
     build_data_downloads(output, catalog, papers,
                          (output / 'papers/references.bib').read_text(encoding='utf-8'))

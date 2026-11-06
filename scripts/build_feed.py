@@ -1,4 +1,4 @@
-"""Write Atom feeds of newly added curated entries and papers.
+"""Write Atom feeds and JSON Feeds of newly added curated entries and papers.
 
 Scan records never appear as entries of their own. Each recent automated discovery batch adds one
 summary entry, labelled unreviewed, that links the discovery list instead of a detail page.
@@ -6,6 +6,7 @@ summary entry, labelled unreviewed, that links the discovery list instead of a d
 from __future__ import annotations
 
 from html import escape
+import json
 from pathlib import Path
 import re
 from xml.sax.saxutils import escape as xml_escape, quoteattr
@@ -15,6 +16,9 @@ from build_readme import KIND_LABELS
 
 FEED_SIZE = 50
 FEED_PATHS = {'en': '/feed.xml', 'zh': '/zh/feed.xml'}
+# JSON Feed 1.1 (https://www.jsonfeed.org/version/1.1/) with the same entries as each Atom feed.
+JSON_FEED_PATHS = {'en': '/feed.json', 'zh': '/zh/feed.json'}
+JSON_FEED_VERSION = 'https://jsonfeed.org/version/1.1'
 # Listing pages that advertise the feed of their language: homepage, curated, cases and papers.
 FEED_PAGES = ('', '/resources/', '/cases/', '/papers/')
 FEED_TITLES = {'en': 'AwesomeREA.org: newly added entries', 'zh': 'AwesomeREA.org：新收录条目'}
@@ -142,9 +146,44 @@ def atom_feed(entries: list[tuple[str, dict]], language: str, *, site_url: str, 
 '''
 
 
+def json_feed(entries: list[tuple[str, dict]], language: str, *, site_url: str, repository_url: str) -> dict:
+    """The JSON Feed twin of one Atom feed: the same IDs, titles, links, dates and summaries, newest first."""
+    zh = language == 'zh'
+    if not entries:
+        raise ValueError('A JSON feed needs at least one dated entry')
+    items = []
+    for kind, record in entries:
+        if kind == 'discovery':
+            title, summary = discovery_summary(record, language)
+            items.append({'id': f"tag:awesomerea.org,2026:discovery-batch:{record['batch_id']}:{language}",
+                          'url': site_url + DISCOVERY_PATHS[language], 'title': title, 'summary': summary,
+                          'content_text': summary, 'date_published': record['ingested_at'],
+                          'date_modified': record['ingested_at'], 'tags': [DISCOVERY_TERM, DISCOVERY_LABELS[int(zh)]]})
+            continue
+        url = site_url + entry_path(kind, record['id'], language)
+        if kind == 'resource':
+            title = (record.get('name_zh') or record['name']) if zh else record['name']
+            term, label = record['kind'], KIND_LABELS[record['kind']][int(zh)]
+        else:
+            title = record['title_zh'] if zh else record['title']
+            term, label = 'paper', PAPER_LABELS[int(zh)]
+        stamp = _timestamp(record['added_at'])
+        summary = record[f'description_{language}']
+        items.append({'id': url, 'url': url, 'title': title, 'summary': summary, 'content_text': summary,
+                      'date_published': stamp, 'date_modified': stamp, 'tags': [term, label]})
+    return {'version': JSON_FEED_VERSION, 'title': FEED_TITLES[language], 'description': FEED_SUBTITLES[language],
+            'home_page_url': site_url + ('/zh/' if zh else '/'), 'feed_url': site_url + JSON_FEED_PATHS[language],
+            'language': 'zh-CN' if zh else 'en',
+            'authors': [{'name': 'Awesome REA contributors', 'url': repository_url}],
+            '_awesome_rea': {'rights': FEED_RIGHTS[language], 'atom_feed': site_url + FEED_PATHS[language]},
+            'items': items}
+
+
 def feed_link(language: str) -> str:
     return (f'<link rel="alternate" type="application/atom+xml" title="{escape(FEED_TITLES[language], quote=True)}" '
-            f'href="{FEED_PATHS[language]}">')
+            f'href="{FEED_PATHS[language]}">'
+            f'<link rel="alternate" type="application/feed+json" title="{escape(FEED_TITLES[language], quote=True)}" '
+            f'href="{JSON_FEED_PATHS[language]}">')
 
 
 def build_feeds(site_dir: Path, resources: list[dict], papers: list[dict], *,
@@ -164,6 +203,9 @@ def build_feeds(site_dir: Path, resources: list[dict], papers: list[dict], *,
         (site_dir / path.lstrip('/')).write_text(
             atom_feed(entries, language, site_url=site_url.rstrip('/'), repository_url=repository_url),
             encoding='utf-8')
+        (site_dir / JSON_FEED_PATHS[language].lstrip('/')).write_text(json.dumps(
+            json_feed(entries, language, site_url=site_url.rstrip('/'), repository_url=repository_url),
+            ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         prefix = '/zh' if language == 'zh' else ''
         for page in FEED_PAGES:
             target = site_dir / (prefix + page).lstrip('/') / 'index.html'
@@ -171,4 +213,4 @@ def build_feeds(site_dir: Path, resources: list[dict], papers: list[dict], *,
             if html.count('</head>') != 1:
                 raise ValueError(f'Feed link needs exactly one document head: {prefix + page or "/"}')
             target.write_text(html.replace('</head>', '  ' + feed_link(language) + '\n</head>'), encoding='utf-8')
-    return list(FEED_PATHS.values())
+    return [*FEED_PATHS.values(), *JSON_FEED_PATHS.values()]

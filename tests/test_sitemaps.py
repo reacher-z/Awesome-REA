@@ -46,6 +46,12 @@ class PageDateTests(unittest.TestCase):
         self.assertEqual(value['/about/'], value['/'])
         # No dated record describes the contribution guide.
         self.assertNotIn('/contribute/', value)
+        # The API guide follows both unreviewed queues as well, like the API's generated_at.
+        self.assertEqual(value['/api/'], '2026-11-05T22:36:35Z')
+        with_leads = page_dates(resources=RESOURCES, papers=PAPERS, discovery_batches=BATCHES,
+                                lead_batches=[{'collected_at': '2026-11-05T23:01:00Z'}])
+        self.assertEqual(with_leads['/api/'], '2026-11-05T23:01:00Z')
+        self.assertEqual(with_leads['/'], value['/resources/'])
 
     def test_date_normalization_and_ordering(self):
         self.assertEqual(normalized_date('2026-10-16T11:55:19.172701Z'), '2026-10-16T11:55:19Z')

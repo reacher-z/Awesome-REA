@@ -12,6 +12,8 @@ from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, jsonld_script,
 from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, formatted_date, scholarly_article
 from build_readme import (CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section,
                           section_order)
+from agent_formats import (MARKDOWN, RECORD_JSON, alternate_links, json_text, paper_markdown, paper_record,
+                           record_json_route, resource_markdown, resource_record)
 from evidence_links import evidence_link
 from open_graph import THEME_COLOR_META, open_graph_meta
 from requirement_facets import item_html, ordered_items
@@ -329,6 +331,7 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
   <title>{escape(document_title)} · AwesomeREA.org</title><meta name="description" content="{escape(description, quote=True)}">
   <link rel="canonical" href="{_public_url(canonical)}">
   <link rel="alternate" hreflang="en" href="{_public_url(english)}"><link rel="alternate" hreflang="zh-CN" href="{_public_url(chinese)}"><link rel="alternate" hreflang="x-default" href="{_public_url(english)}">
+  {alternate_links(markdown=path + MARKDOWN, json_href=record_json_route(kind, record['id']))}
   {open_graph_meta(language=language, title=title, description=description, image_url=social_image_href, url=canonical)}
   <link rel="icon" href="{_asset_url(favicon_href)}" type="image/svg+xml"><link rel="stylesheet" href="{_asset_url(styles_href)}"><link rel="stylesheet" href="{_asset_url(entry_styles_href)}">{icon_css}
   {jsonld_script(schema)}
@@ -363,7 +366,7 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
                    social_image_href=social_image_href, icon_stylesheet_href=icon_stylesheet_href,
                    survey_discussions=survey_discussions or {},
                    related_entries=matching_entries(resources, papers), repository_export=repository_export)
-    rendered = {}
+    rendered, twins, records_json = {}, {}, {}
     siblings = section_siblings(resources)
     for kind, records in (('resource', resources), ('paper', papers)):
         identifiers = set()
@@ -381,6 +384,12 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
                 path = entry_path(kind, identifier, language)
                 rendered[path] = _document(record, kind, language, **options,
                                            siblings=siblings.get(identifier) if kind == 'resource' else None)
+                # The Markdown twin in the page language; one bilingual record.json per entry.
+                related = options['related_entries'].get((kind, identifier), [])
+                twins[path] = (resource_markdown(record, language, site_url=site_url, siblings=siblings.get(identifier), related=related)
+                               if kind == 'resource' else paper_markdown(record, language, site_url=site_url, related=related))
+            records_json[record_json_route(kind, identifier)] = json_text(
+                resource_record(record, site_url) if kind == 'resource' else paper_record(record, site_url))
     # Remove only obsolete pages carrying this builder's marker, never listing pages or citations.
     destinations = {path: _output_path(site_dir, path.lstrip('/') + 'index.html') for path in rendered}
     for prefix in ('resources', 'zh/resources', 'papers', 'zh/papers'):
@@ -391,10 +400,18 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
             path = '/' + stale.parent.relative_to(site_dir).as_posix() + '/'
             if path not in rendered and MARKER in stale.read_text(encoding='utf-8'):
                 stale.unlink()
+                # The page's own Markdown and JSON twins go with it.
+                for twin in (MARKDOWN, RECORD_JSON):
+                    if (stale.parent / twin).is_symlink():
+                        raise ValueError('Entry output paths must not be symlinks')
+                    (stale.parent / twin).unlink(missing_ok=True)
                 if not any(stale.parent.iterdir()):
                     stale.parent.rmdir()
     for path, content in rendered.items():
         destination = destinations[path]
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(content, encoding='utf-8')
+        _output_path(site_dir, path.lstrip('/') + MARKDOWN).write_text(twins[path], encoding='utf-8')
+    for route, content in records_json.items():
+        _output_path(site_dir, route.lstrip('/')).write_text(content, encoding='utf-8')
     return [site_url + path for path in rendered]
