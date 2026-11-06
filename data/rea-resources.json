@@ -4105,5 +4105,438 @@
       "https://github.com/ankushKun/sh23ds/blob/08673f69aa99b4f3c00a181b31c7adc26c186408/docs/RESEARCH.md",
       "https://github.com/ankushKun/sh23ds/blob/08673f69aa99b4f3c00a181b31c7adc26c186408/port/STATUS.md"
     ]
+  },
+  {
+    "id": "8bitdo-controller-hid-case",
+    "name": "ultimate2: 8BitDo controller configuration protocol and Linux client",
+    "url": "https://github.com/MiguelSanzBr/8bitdo-ultimate2-linux",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "ultimate2 reconstructs the configuration protocol for supported 8BitDo controllers and implements command-line, graphical and browser clients. Its protocol document reports using REA with Ghidra on a native DLL and ILSpy on .NET assemblies to recover HID reports and configuration records. The clients read, edit and write controller settings.",
+    "description_zh": "ultimate2 重建部分 8BitDo 手柄的配置协议，并提供命令行、图形界面和浏览器客户端。协议文档报告使用 REA 配合 Ghidra 分析原生 DLL，并用 ILSpy 反编译 .NET 程序集，以整理 HID 报告和配置记录；客户端可读取、修改并写入手柄设置。",
+    "evidence_url": "https://github.com/MiguelSanzBr/8bitdo-ultimate2-linux/blob/03957a0c165b214a501337279149144e36764af3/docs/PROTOCOL.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.8 or newer and Tk for the Linux GUI; a supported controller and hidraw access are needed for device use.",
+      "The author reports testing a controller over USB; the cited 2.4G dongle path remains untested.",
+      "The project labels the software beta and advises backing up the controller configuration before changes.",
+      "MIT license."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/MiguelSanzBr/8bitdo-ultimate2-linux/blob/03957a0c165b214a501337279149144e36764af3/README.md",
+      "https://github.com/MiguelSanzBr/8bitdo-ultimate2-linux/blob/03957a0c165b214a501337279149144e36764af3/LICENSE"
+    ]
+  },
+  {
+    "id": "renotepad-case",
+    "name": "RE:Notepad: rebuilding Windows 10 Notepad behavior in Rust",
+    "url": "https://github.com/nikkoxgonzales/RENotepad",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "RE:Notepad reconstructs Windows 10 Notepad behavior in a Rust and Win32 editor with a Windows 11-style interface. The author reports using REA and Ghidra to inspect notepad.exe and records function-linked findings on encoding detection, line endings and editing behavior in a separate specification.",
+    "description_zh": "RE:Notepad 用 Rust 和 Win32 重建 Windows 10 记事本的行为，并采用 Windows 11 风格界面。作者报告称使用 REA 与 Ghidra 分析 notepad.exe，在独立规范中按函数记录编码识别、换行保留和编辑规则。",
+    "evidence_url": "https://github.com/nikkoxgonzales/RENotepad/blob/bcd157ef011d465567c62353e954a2f84ba8cc0d/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, to run the app.",
+      "Rust MSVC toolchain and Windows SDK to build from source.",
+      "The specification uses Windows 10 22H2 notepad.exe version 10.0.19041.5856 as its reference.",
+      "MIT license."
+    ],
+    "class": "software",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nikkoxgonzales/RENotepad/blob/bcd157ef011d465567c62353e954a2f84ba8cc0d/docs/WIN10-NOTEPAD-SPEC.md"
+    ]
+  },
+  {
+    "id": "remote-me-apple-tv-companion-case",
+    "name": "remote-me: an Apple TV remote built from iOS Companion protocol analysis",
+    "url": "https://github.com/jxgedouard/remote-me",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "binary",
+      "protocol"
+    ],
+    "description_en": "remote-me implements an Apple TV browser remote from analysis of iOS TVRemoteCore and Rapport frameworks. The author reports using REA and Ghidra to recover Companion transport, pairing, session, HID, touch, and keyboard behavior, then testing requests against an Apple TV. The project also controls LG webOS TVs through SSAP.",
+    "description_zh": "remote-me 基于对 iOS TVRemoteCore 和 Rapport 框架的分析实现 Apple TV 浏览器遥控器。作者称使用 REA 和 Ghidra 还原 Companion 传输、配对、会话、按键、触控及键盘行为，并在 Apple TV 上测试请求；项目还通过 SSAP 控制 LG webOS 电视。",
+    "evidence_url": "https://github.com/jxgedouard/remote-me/blob/702a81c88a6e8f42d37bc5816ab5a44cd62cd8b2/docs/apple-remote-protocol.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Node.js 20+ and a computer on the same network as the TVs.",
+      "The documented Apple TV analysis uses an iOS IPSW, ipsw, REA, and Ghidra.",
+      "The author reports testing on a third-generation Apple TV 4K; other tvOS 15+ models advertising _companion-link._tcp are untested.",
+      "MIT licence."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jxgedouard/remote-me/blob/702a81c88a6e8f42d37bc5816ab5a44cd62cd8b2/docs/reverse-engineering.md",
+      "https://github.com/jxgedouard/remote-me/blob/702a81c88a6e8f42d37bc5816ab5a44cd62cd8b2/README.md"
+    ]
+  },
+  {
+    "id": "rea-bully-case",
+    "name": "Bully Decompiled: an Unreal reconstruction of Bully: Scholarship Edition",
+    "url": "https://github.com/HunterStile/Rea_Bully",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Rea Bully studies Bully: Scholarship Edition's executable, Lua 5.0 scripts, and asset formats with REA, Ghidra, and local recovery tools, then builds an Unreal Engine 5.8 exploration runtime from those findings. The author reports a Windows developer preview with 85 assembled zones across 47 areas, sampled traversal checks, and selected characters and interactions.",
+    "description_zh": "Rea Bully 使用 REA、Ghidra 和本地恢复工具研究 Bully: Scholarship Edition 的可执行文件、Lua 5.0 脚本和资源格式，并据此构建 Unreal Engine 5.8 探索原型。作者报告其 Windows 开发预览版已组装覆盖 47 个区域的 85 个地图分区，并对部分行走路径、角色和交互进行了抽样检查。",
+    "evidence_url": "https://github.com/HunterStile/Rea_Bully/blob/bcebd2d86264a294cb5ebd573bc8ece857c348f2/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.12 and an owner-installed PC copy of Bully: Scholarship Edition for archive inspection.",
+      "Unreal Engine 5.8.3, a compatible Windows C++ toolchain, and locally reconstructed assets and maps to run the prototype.",
+      "A clean-clone setup and downloadable playable build are unfinished; missions, combat, vehicles, saves, and full original AI remain incomplete.",
+      "MIT License for original project code."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HunterStile/Rea_Bully/blob/bcebd2d86264a294cb5ebd573bc8ece857c348f2/docs/ROADMAP.md"
+    ]
+  },
+  {
+    "id": "rally-trophy-decomp-case",
+    "name": "Rally Trophy Decomp: function-matched reconstruction of Rally Trophy 1.01",
+    "url": "https://github.com/gunnaraas/rallytrophy",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rally Trophy Decomp reconstructs first-party functions from Rally Trophy 1.01 as C++ and compares locally compiled x86 code with the shipped Windows executable. Its function maps and subsystem notes record analysis findings, and the documented workflow associates nontrivial binary findings with REA evidence IDs.",
+    "description_zh": "Rally Trophy Decomp 将 Rally Trophy 1.01 的第一方函数重建为 C++，并把本地编译的 x86 代码与原版 Windows 可执行文件逐字节比较。函数映射和子系统笔记记录分析结果；工作流程还为重要二进制发现保存 REA 证据编号。",
+    "evidence_url": "https://github.com/gunnaraas/rallytrophy/blob/047fbbd635882708a292ceb6b8dd51e5197bcc4a/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supply your own Rally Trophy disc and official Patch 1.01 executable.",
+      "Matching requires the original Visual C++ 6.0 SP5 compiler; the documented local setup uses Wine and rt-vc6 Distrobox.",
+      "The reconstruction is ongoing and does not provide a playable port.",
+      "GNU GPL v3 covers the reconstructed source and tooling."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/gunnaraas/rallytrophy/blob/047fbbd635882708a292ceb6b8dd51e5197bcc4a/docs/architecture/overview.md"
+    ]
+  },
+  {
+    "id": "mathsgenie-recreation-case",
+    "name": "MathsGenie: a Next.js reconstruction of its course and resource site",
+    "url": "https://github.com/SyllabAI/MathsGenie",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "website"
+    ],
+    "description_en": "MathsGenie reconstructs the mathsgenie.co.uk course and resource site in Next.js from observed routes, captured pages and decoded React Server Components payloads. The project stores parsed course and paper metadata, links resources to the original site and documents an evidence-led methodology credited to morluto/rea. AI service features remain interface demos.",
+    "description_zh": "MathsGenie 根据观察到的路由、抓取的网页及解码后的 React Server Components 数据，用 Next.js 重建 mathsgenie.co.uk 的课程与资源网站。项目保存解析出的课程和试卷元数据，资源链接指向原站，并注明采用 morluto/rea 的证据记录方法；AI 服务功能目前只是界面演示。",
+    "evidence_url": "https://github.com/SyllabAI/MathsGenie/blob/60e0060791126b3a189a2c8653b23353d5d9f3c7/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Node.js and npm are needed to run the Next.js app; the catalog regeneration command uses Python 3.",
+      "AI features, including Ask Genie and marking, are UI shells without the original backends.",
+      "Code and research documentation are MIT licensed."
+    ],
+    "class": "website",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/SyllabAI/MathsGenie/blob/60e0060791126b3a189a2c8653b23353d5d9f3c7/research/06-parsing-methodology.md",
+      "https://github.com/SyllabAI/MathsGenie/blob/60e0060791126b3a189a2c8653b23353d5d9f3c7/LICENSE"
+    ]
+  },
+  {
+    "id": "brickwork-case",
+    "name": "Brickwork: a DX-Ball-inspired browser game from REA and Ghidra findings",
+    "url": "https://github.com/alxmtzr/brickwork",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Brickwork is a browser brick-breaker reconstructed from the author's REA and Ghidra study of DX-Ball's Windows executable and asset formats. Its TypeScript engine uses HTML5 Canvas and WebAudio for gameplay, procedural graphics and sound, with a board editor and mobile mode.",
+    "description_zh": "Brickwork 是浏览器打砖块游戏，作者称其依据 REA 和 Ghidra 对 DX-Ball Windows 可执行文件及资源格式的分析重建。TypeScript 引擎以 HTML5 Canvas 和 WebAudio 实现玩法、程序绘制和合成音效，并提供关卡编辑器与移动端模式。",
+    "evidence_url": "https://github.com/alxmtzr/brickwork/blob/ff64f246b42a055f897b90da6998afbdc594db9b/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Node.js 24 or newer is declared in package.json for building the project.",
+      "The author says the graphics and sounds are generated procedurally and the repository ships no copied binary assets.",
+      "MIT license."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ]
+  },
+  {
+    "id": "audionic-trance-airbud-850-case",
+    "name": "Audionic Trance Airbud 850: reconstructing BLE controls for Linux",
+    "url": "https://github.com/huzaifanur/audionic-ble",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "A Linux client reconstructs Audionic Trance Airbud 850 BLE controls from analysis of the Audionic Suite Android app and Jieli SDK references. It implements RCSP framing, mutual authentication and GTK controls for battery status, audio modes and EQ; the author reports using REA with JADX during the static investigation.",
+    "description_zh": "该 Linux 客户端依据 Audionic Suite Android 应用分析及 Jieli SDK 资料重建 Trance Airbud 850 的 BLE 控制。实现包括 RCSP 帧格式、双向认证及用于电量、音效模式和 EQ 的 GTK 界面；作者报告在静态研究中结合使用 REA 与 JADX。",
+    "evidence_url": "https://github.com/huzaifanur/audionic-ble/blob/926731b9bec60bc55eeec0ee30c8ef2fb910285a/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.10 or newer, GTK 4, libadwaita 1.5+, GObject introspection and BlueZ are required.",
+      "Physical-earbud control remains unconfirmed; protocol and session tests use simulated endpoints.",
+      "MIT licence."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/huzaifanur/audionic-ble/blob/926731b9bec60bc55eeec0ee30c8ef2fb910285a/FINDINGS.md"
+    ]
+  },
+  {
+    "id": "nikond750-case",
+    "name": "nikond750: decrypting and mapping Nikon D750 firmware",
+    "url": "https://github.com/koshiro/nikond750",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Nikond750 investigates the Nikon D750 firmware image D750_0115.bin using decryption scripts, CRC checks, module extraction and Ghidra notes. The author reports recovering a three-table XOR scheme, identifying the ARM application and WLAN modules, and tracing a Wi-Fi throughput limit to the BCM43362 hardware; project instructions also include REA tooling.",
+    "description_zh": "nikond750 通过解密脚本、CRC 检查、模块提取及 Ghidra 记录研究 Nikon D750 的 D750_0115.bin 固件。作者报告恢复了三表 XOR 方案，识别 ARM 主程序与 WLAN 模块，并将 Wi-Fi 吞吐限制归因于 BCM43362 硬件；项目说明也记录了 REA 工具配置。",
+    "evidence_url": "https://github.com/koshiro/nikond750/blob/1f4260693a747b08ae519c497b2ab658b4eb0ae7/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Users supply their own Nikon firmware images; firmware binaries and recovered keys are not included.",
+      "The documented workflow uses Python, Ghidra and a separately obtained nikon-fw-key-tool.",
+      "Further sub-image splitting and update-routine analysis remain open.",
+      "MIT license for the repository's code and notes."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/koshiro/nikond750/blob/1f4260693a747b08ae519c497b2ab658b4eb0ae7/docs/HALLAZGOS.md",
+      "https://github.com/koshiro/nikond750/blob/1f4260693a747b08ae519c497b2ab658b4eb0ae7/AGENTS.md"
+    ]
+  },
+  {
+    "id": "bose-usb-bridge-case",
+    "name": "Bose USB Bridge: selecting SoundLink Flex USB audio from firmware research",
+    "url": "https://github.com/coldwaterkimkim/bose-usb-bridge",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Bose USB Bridge uses firmware and updater research to select an existing USB audio mode on a guarded SoundLink Flex unit. The macOS LaunchAgent sends scoped USB/HID requests and lets the built-in USB audio stack carry playback; its research notes report REA analysis of the updater and separate CSR filesystem and XAP firmware analysis.",
+    "description_zh": "Bose USB Bridge 依据固件和更新器研究，为受设备信息约束的 SoundLink Flex 启用已有 USB 音频模式。macOS LaunchAgent 发送限定的 USB/HID 请求，由系统 USB 音频栈处理播放；研究笔记记录了使用 REA 分析更新器，以及另行解析 CSR 文件系统和 XAP 固件。",
+    "evidence_url": "https://github.com/coldwaterkimkim/bose-usb-bridge/blob/0f74d936b50c08529ecddc188e1d2b265a459a20/docs/research.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "macOS 14 or later and a data capable USB-C cable; a source build needs Swift 5.9 and Xcode Command Line Tools.",
+      "The enabled device guard requires minnow with firmware metadata Main 1.0.20.; the physical generation is unconfirmed.",
+      "The author reports acoustic playback on one tested unit; Intel Macs and other SoundLink Flex generations remain unvalidated.",
+      "MIT license."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/coldwaterkimkim/bose-usb-bridge/blob/0f74d936b50c08529ecddc188e1d2b265a459a20/README.md"
+    ]
+  },
+  {
+    "id": "rappelzcore-rappelzrust-case",
+    "name": "RappelzCore & RappelzRust: reconstructing a Rappelz NoLimits client and server",
+    "url": "https://github.com/BlaMacfly/RappelzCore",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "protocol"
+    ],
+    "description_en": "RappelzCore and RappelzRust reconstruct a Rappelz NoLimits server and game client in Rust from analysis of the customized SFrame.exe client. The author documents REA and Ghidra work on client functions, resource formats and packet layouts; both components are described as under development.",
+    "description_zh": "RappelzCore 与 RappelzRust 根据定制版 SFrame.exe 客户端的分析结果，用 Rust 重建 Rappelz NoLimits 服务端和游戏客户端。作者记录了使用 REA 与 Ghidra 分析客户端函数、资源格式及数据包布局的过程；两个组件均处于开发阶段。",
+    "evidence_url": "https://github.com/BlaMacfly/RappelzCore/blob/f845eb6e696a0b0e47ebf88c8e1b08cdb90bd952/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The Rappelz NoLimits customized x86 client is the analysis target.",
+      "Both Rust components are version 0.1.0 and under development; the exact official game Epic and patch remain unresolved.",
+      "GPL-2.0 license."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BlaMacfly/RappelzCore/blob/f845eb6e696a0b0e47ebf88c8e1b08cdb90bd952/docs/CLIENT_REVERSE_ENGINEERING.md"
+    ]
+  },
+  {
+    "id": "driftcity-unity-case",
+    "name": "Drift City Rebuild: a Unity client and server from game analysis",
+    "url": "https://github.com/MagicIbrar/driftcity-unity",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "port",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Drift City Rebuild rebuilds the online racing game as a Unity client that reads data from the user's installed copy, with a new Node.js server for offline or hosted play. Its reverse-engineering notes document REA/Ghidra analysis of DriftCity.exe and record format readers for NayaPack, NIF, DDS and other game data. The author reports roughly 94% code conversion.",
+    "description_zh": "Drift City Rebuild 将这款在线竞速游戏重建为 Unity 客户端，并配有支持离线或自托管游玩的新 Node.js 服务器；客户端读取用户安装目录中的原版数据。逆向笔记记录了用 REA/Ghidra 分析 DriftCity.exe 的过程，以及 NayaPack、NIF、DDS 等格式的读取器。作者报告约 94% 的代码已转换。",
+    "evidence_url": "https://github.com/MagicIbrar/driftcity-unity/blob/7cf117937a8739d0bc0b90fc8ea313dd87b18c55/DriftCity_RE/REPORT.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A user's own installed Drift City client containing DriftCity.exe and Data.",
+      "Unity 6000.4.2f1 for the client; Node.js 22.5 or later for online hosting.",
+      "The author reports about 94% code conversion; the new server uses its own JSON-over-WebSocket protocol.",
+      "MIT licence for repository source."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/MagicIbrar/driftcity-unity/blob/7cf117937a8739d0bc0b90fc8ea313dd87b18c55/README.md"
+    ]
+  },
+  {
+    "id": "nfsmw-unity-case",
+    "name": "NFS Most Wanted (2005): a Unity rebuild from speed.exe analysis",
+    "url": "https://github.com/MagicIbrar/nfsmw-unity",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "port",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "NFS Most Wanted (2005) rebuilds the PC game's systems in Unity from function-by-function study of speed.exe and reads cars, world, audio and other content from the user's installation. Its analysis notes report using REA with Ghidra, and its code includes game-data readers, runtime systems and standalone .NET probes. The author reports a playable offline career and 98% code-port coverage.",
+    "description_zh": "NFS Most Wanted (2005) 项目逐函数分析 speed.exe，在 Unity 中重建游戏系统，并从用户安装目录读取车辆、世界和音频等内容。分析笔记记录了 REA 与 Ghidra 的使用；仓库包含数据读取器、游戏运行时代码和 .NET 探针。作者报告离线生涯模式可玩，代码移植覆盖率为 98%。",
+    "evidence_url": "https://github.com/MagicIbrar/nfsmw-unity/blob/336fb872d698377b586cfab75d70c5828c77086c/NFSMW_RE/REPORT.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A user's own installed PC copy of Need for Speed: Most Wanted with v1.3 data.",
+      "Unity 6000.4.2f1; .NET 8 SDK for the accompanying tools.",
+      "The author reports 98% code-port coverage; remaining functionality is partial.",
+      "MIT licence for repository code."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/MagicIbrar/nfsmw-unity/blob/336fb872d698377b586cfab75d70c5828c77086c/README.md"
+    ]
   }
 ]
