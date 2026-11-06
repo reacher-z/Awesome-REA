@@ -4,7 +4,7 @@
 
 **217 repositories** · 2026-10-20 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
+These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) — Chrome DevTools for coding agents **[53,630 stars]** · Curated: [Chrome DevTools MCP](https://awesomerea.org/resources/chrome-devtools-mcp/)
 - [mitmproxy/mitmproxy](https://github.com/mitmproxy/mitmproxy) — An interactive TLS-capable intercepting HTTP proxy for penetration testers and software developers. **[45,662 stars]** · Curated: [mitmproxy](https://awesomerea.org/resources/mitmproxy/)

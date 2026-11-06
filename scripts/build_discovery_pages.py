@@ -48,7 +48,6 @@ SECTIONS = {
 SECTION_TARGETS = {'website': 'website', 'game': 'game', 'app': 'app', 'native-binary': 'binary',
                    'firmware': 'firmware', 'protocol': 'protocol'}
 # Up to this many entries filed under other sections, or listed in a section without its tag, are named individually.
-NAMED_ELSEWHERE_LIMIT = 9
 # As in the README, a section holding both case studies and other kinds lists them in two sub-groups, cases first.
 # Sub-group IDs use a double hyphen, which record IDs and section keys cannot contain.
 SUBGROUPS = (
@@ -221,11 +220,6 @@ def publication_keys(record: dict) -> set[tuple[str, str]]:
     return keys
 
 
-def bibliography_overlap(resources: list[dict], papers: list[dict]) -> int:
-    curated_keys = set().union(*(publication_keys(record) for record in resources))
-    return sum(bool(publication_keys(paper) & curated_keys) for paper in papers)
-
-
 class _IconStylesheet(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -283,47 +277,26 @@ def _resource_card(record: dict, language: str, heading: str = 'h3') -> str:
 def _target_coverage(section: str, records: list[dict], language: str, *, cases: bool = False) -> str:
     """State how many listed entries carry a target section's tag and link the homepage filter for all of them.
 
-    Each card renders once, under its primary section, so a target section can hold fewer entries than carry
-    its tag. Sections are assigned by category, so it can also hold entries without its tag; the line counts
-    those too, so the section's count is always tagged, minus filed elsewhere, plus listed here without the tag.
-    The filter link uses the homepage's own target (and case-study) filter, which counts the same records.
+    The filter link uses the homepage's own target (and case-study) filter, which counts the same records. The
+    data attributes keep the section arithmetic: tagged, minus filed elsewhere, plus listed here without the tag.
     """
     target = SECTION_TARGETS.get(section)
     if target is None:
         return ''
     zh = language == 'zh'
-    prefix = '/zh' if zh else ''
     tagged = [record for record in records if target in record['targets']]
     elsewhere = [record for record in tagged if collection_section(record) != section]
     untagged = [record for record in records if target not in record['targets'] and collection_section(record) == section]
     label, count = TARGETS[target][int(zh)], len(tagged)
 
-    def named(part: str, group: list[dict]) -> str:
-        """A part of the line, followed by links to its entries when there are only a few."""
-        if not group or len(group) > NAMED_ELSEWHERE_LIMIT:
-            return escape(part)
-        return escape(part) + ('：' if zh else ': ') + ('、' if zh else ', ').join(
-            f'<a href="{prefix}/resources/{escape(record["id"], quote=True)}/">'
-            f'{escape((record.get("name_zh") or record["name"]) if zh else record["name"])}</a>' for record in group)
-
     if zh:
         unit, noun = ('个', '案例') if cases else ('项', '条目')
         parts = [escape(f'{count} {unit}{"案例" if cases else ""}带“{label}”标签')]
-        if tagged:
-            parts.append(named(f'其中 {len(elsewhere)} {unit}归入其他{"主题" if cases else "分区"}', elsewhere)
-                         if elsewhere else escape('均在本节'))
-        if untagged:
-            parts.append(named(f'另有 {len(untagged)} {unit}按分类列于本节但不带“{label}”标签', untagged))
         show = f'查看全部 {count} {unit}'
         accessible = f'在搜索中查看带“{label}”标签的全部 {count} {unit}{noun}'
     else:
         noun = ('case' if count == 1 else 'cases') if cases else ('entry' if count == 1 else 'entries')
         parts = [escape(f'{count} {noun} tagged {label}')]
-        if tagged:
-            parts.append(named('1 filed in another section' if len(elsewhere) == 1 else f'{len(elsewhere)} filed in other sections', elsewhere)
-                         if elsewhere else escape('filed here' if count == 1 else 'all filed here'))
-        if untagged:
-            parts.append(named(f'{len(untagged)} listed here by category without the {label} tag', untagged))
         show = 'Show in search' if count == 1 else f'Show all {count}'
         accessible = f'Show all {count} {noun} tagged {label} in search'
     text = ' · '.join(parts)
@@ -429,21 +402,19 @@ def _case_collection(resources: list[dict], language: str, site_url: str,
             name = (record.get('name_zh') or record['name']) if zh else record['name']
             items.append({'name': name, 'url': f"{site_url}{prefix}/resources/{record['id']}/", 'description': record[f'description_{language}']})
     search = '/zh/?view=curated&amp;kind=case-study#catalog' if zh else '/?view=curated&amp;kind=case-study&amp;lang=en#catalog'
-    note = ('案例已计入精选总数，每项按主要用途出现一次，并保留所有目标标签。来源核查不代表本合集已独立运行验证或确认 REA 参与。'
-            if zh else 'These cases are part of the curated total and appear once under their primary subject, with all target labels retained. Source review does not imply independent runtime verification or REA involvement.')
+    note = ('每个案例按主要用途出现一次，并保留所有目标标签。'
+            if zh else 'Each case appears once under its primary subject, with all its target labels.')
     nav = f'<nav class="browse-category-nav cases-nav" id="case-subjects" aria-label="{("案例主题" if zh else "Case subjects")}">{"".join(navigation)}</nav>' if navigation else ''
     empty = '' if items else f'<p class="cases-empty">{("当前目录还没有案例条目。" if zh else "No case studies are currently listed.")}</p>'
     review_title = '软件重建产物评审 · Beta' if zh else 'Software reconstruction artifact reviews · Beta'
     review_intro = ('核查 REA 工作流与独立重建的实际产物，每项保留原始来源和已知局限。'
                     if zh else 'Review artifacts from REA workflows and independent reconstructions. Each entry retains its original sources and known limits.')
     review_dimensions = ([('复现范围', '已实现功能、已知缺口及必需的原始素材。'),
-                          ('产物入口', '原始代码、发布包或演示；截图另作判断。'),
-                          ('证据与归因', '固定来源、复核日期与 REA 的实际角色。'),
-                          ('运行状态', '资料核查，尚未独立实测；完整度未认证。')]
+                          ('产物入口', '原始代码、发布包或演示。'),
+                          ('证据与归因', '固定来源、复核日期与 REA 的实际角色。')]
                          if zh else [('Reconstruction scope', 'Implemented features, known gaps and required original assets.'),
-                                     ('Available artifacts', 'Original code, releases or demos; assess screenshots separately.'),
-                                     ('Evidence and attribution', 'Pinned sources, review dates and documented REA roles.'),
-                                     ('Runtime status', 'Documentation review without independent runtime tests; completeness remains unverified.')])
+                                     ('Available artifacts', 'Original code, releases or demos.'),
+                                     ('Evidence and attribution', 'Pinned sources, review dates and documented REA roles.')])
     review = f'<section class="case-review-method" id="review-method" aria-labelledby="review-method-title"><h2 id="review-method-title">{review_title}</h2><p>{review_intro}</p><dl>' + ''.join(f'<div><dt>{escape(label)}</dt><dd>{escape(value)}</dd></div>' for label, value in review_dimensions) + '</dl></section>'
     content = f'''<div class="cases-collection" data-case-count="{len(items)}" data-curated-count="{len(resources)}">
 {review}
@@ -550,7 +521,6 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
     papers = json.loads(paper_path.read_text(encoding='utf-8')) if paper_path.is_file() else []
     if not isinstance(papers, list):
         raise ValueError('papers.json must contain a separate array of paper records')
-    overlapping_papers = bibliography_overlap(resources, papers)
     scan_date = str((source_index or {}).get('meta', {}).get('published_at' if published else 'completed_at') or '')[:10]
     assets = {key: _asset(site_dir, filename) for key, filename in (
         ('styles', 'styles.css'), ('browse', 'browse.css'), ('favicon', 'favicon.svg'), ('social', 'social-card.png'))}
@@ -579,8 +549,8 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         title = '精选逆向工程资源' if zh else 'Curated reverse engineering resources'
         description = (f'{len(resources):,} 项工具、项目、集成、案例与参考资源，覆盖网站、游戏、应用、原生二进制、固件及通信协议。每个条目都保留一手来源链接、使用要求与复核日期。'
                        if zh else f'{len(resources):,} tools, projects, integrations, case studies, and references for websites, games, apps, native binaries, firmware, and communication protocols.')
-        note = ('“来源已复核”表示说明已依据一手文档核对，不代表已安装、执行、安全审计或验证兼容性。完整的使用条件与来源列在各条目页面，本页显示其数量和复核日期。'
-                if zh else 'Source-reviewed means descriptions were checked against primary documentation. It does not mean installation, execution, security auditing, or compatibility testing. Each entry page lists the full requirements and sources; this page shows their counts and the review date.')
+        note = ('“来源已复核”表示说明已依据一手文档核对。完整的使用条件与来源列在各条目页面，本页显示其数量和复核日期。'
+                if zh else 'Source-reviewed means descriptions were checked against primary documentation. Each entry page lists the full requirements and sources; this page shows their counts and the review date.')
         sections, items, navigation = [], [], []
         for key, labels in SECTIONS.items():
             if not groups[key]:
@@ -624,29 +594,29 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
 
         path = prefix + '/about/'
         title = '关于合集与数据来源' if zh else 'About the collection and its sources'
-        description = ('AwesomeREA.org 是独立的逆向工程资源合集，收录工具、项目、案例和参考资料。本页说明它与上游 REA 项目的关系，并提供浏览入口、数据下载和来源索引。' if zh else 'AwesomeREA.org is an independent collection of reverse-engineering tools, projects, case studies, and references.')
+        description = ('AwesomeREA.org 是逆向工程资源合集，收录工具、项目、案例和参考资料。本页说明它与上游 REA 项目的关系，并提供浏览入口、数据下载和来源索引。' if zh else 'AwesomeREA.org is a collection of reverse-engineering tools, projects, case studies, and references.')
         summary = (f'{len(resources):,} 项精选资源；{len(scanned):,} 个实际读取 README 的仓库；{browse_count:,} 个可浏览条目。{out_of_scope} 个超出范围的条目{unavailable_clause(unavailable, zh)}保留在完整扫描数据中。'
                    if zh else f'{len(resources):,} curated resources; {len(scanned):,} repositories whose READMEs were fetched; {browse_count:,} browsable entries. The {out_of_scope} out-of-scope entries{unavailable_clause(unavailable, zh)} remain in the complete scan data.')
         if published:
-            summary = (f'{len(resources):,} 项精选资源；仓库发布选集包含 {len(scanned):,} 条已采集记录，其中 {browse_count:,} 条可浏览。{out_of_scope} 个范围排除条目{unavailable_clause(unavailable, zh)}保留在发布 JSON 中。原始扫描的累计数量保留在各自的来源证据中。'
-                       if zh else f'{len(resources):,} curated resources; the published repository selection contains {len(scanned):,} captured records, including {browse_count:,} browsable entries. The {out_of_scope} scope-excluded entries{unavailable_clause(unavailable, zh)} remain in the published JSON. Original capture totals remain separate in their source evidence.')
+            summary = (f'{len(resources):,} 项精选资源；仓库发布选集包含 {len(scanned):,} 条已采集记录，其中 {browse_count:,} 条可浏览。{out_of_scope} 个范围排除条目{unavailable_clause(unavailable, zh)}保留在发布 JSON 中。'
+                       if zh else f'{len(resources):,} curated resources; the published repository selection contains {len(scanned):,} captured records, including {browse_count:,} browsable entries. The {out_of_scope} scope-excluded entries{unavailable_clause(unavailable, zh)} remain in the published JSON.')
         if papers:
-            summary += (f' 研究论文目录单独整理 {len(papers):,} 篇论文，其中 {overlapping_papers:,} 篇也收录于这 {len(resources):,} 项精选资源。上述数量不能相加作为独立项目总数。'
-                        if zh else f' The paper bibliography lists {len(papers):,} papers; {overlapping_papers:,} of these also appear among the {len(resources):,} curated resources. Do not sum these counts as unique projects.')
-        evidence = ('精选说明依据一手来源核对，并保留使用条件和复核日期。自动扫描记录来源、时间、README 字节数、Git blob 标识和 SHA-256；未执行上游代码，也不重新发布 README 正文。'
-                    if zh else 'Curated descriptions are checked against primary sources, with requirements and review dates retained. Automated scans record sources, timestamps, README byte counts, Git blob identifiers, and SHA-256 hashes. Upstream code is not executed and README bodies are not republished.')
+            summary += (f' 研究论文目录单独整理 {len(papers):,} 篇论文。'
+                        if zh else f' The paper bibliography lists {len(papers):,} papers.')
+        evidence = ('精选说明依据一手来源核对，并保留使用条件和复核日期。自动扫描记录来源、时间、README 字节数、Git blob 标识和 SHA-256。'
+                    if zh else 'Curated descriptions are checked against primary sources, with requirements and review dates retained. Automated scans record sources, timestamps, README byte counts, Git blob identifiers, and SHA-256 hashes.')
         if scan_date:
             evidence += ((f' 选集发布日期：{scan_date} UTC。' if zh else f' Selection published: {scan_date} UTC.')
                          if published else (f' 最新扫描快照：{scan_date} UTC。' if zh else f' Latest scan snapshot: {scan_date} UTC.'))
-        scope = ('自动发现与精选资源分开维护。范围排除决定绑定具体 README 哈希，并保留双语原因。分类来自元数据；收录、翻译和范围判断都不等于运行验证、安全保证或 REA 集成。'
-                 if zh else 'Automatic discovery remains separate from curation. Scope exclusions are tied to recorded README hashes and include bilingual reasons. Categories derive from metadata; inclusion, translation, and scope decisions do not establish runtime verification, safety, or REA integration.')
+        scope = ('自动发现与精选资源分开维护。范围排除决定绑定具体 README 哈希，并保留双语原因。分类来自元数据。'
+                 if zh else 'Automatic discovery and curation are kept apart. Scope exclusions are tied to recorded README hashes and include bilingual reasons. Categories derive from metadata.')
         licensing = ('本仓库原创说明和代码采用 MIT 许可。上游项目及其描述保留各自许可；许可证标识仅是采集时元数据。生成的双语索引保留 description_original 上游原文，翻译由 AI 辅助完成。'
                      if zh else 'Original editorial content and code in this repository use the MIT license. Upstream projects and their descriptions retain their own licenses; license identifiers are metadata snapshots. The generated bilingual index preserves upstream text as description_original, and translations are AI-assisted.')
         facts = [('收录范围' if zh else 'What is collected', summary), ('来源与更新' if zh else 'Evidence and updates', evidence), ('范围与复核' if zh else 'Scope and review', scope), ('语言与许可' if zh else 'Languages and licenses', licensing)]
         # Same wording as the README About sections; the label comes from the shared relationship vocabulary.
         documentation_label = RELATIONSHIPS['official-documentation'][1 if zh else 0]
-        rea_text = (f'是单独维护的上游 CLI 与 MCP 项目。本合集名称与之呼应，但并非 REA 官方仓库；条目标签及“{documentation_label}”等关系标注中的 REA 均指该项目。'
-                    if zh else f"is a separate upstream CLI and MCP project. This collection's name echoes it, but it is not the REA repository; “REA” in entry tags and labels such as “{documentation_label}” refers to that project.")
+        rea_text = (f'是单独维护的上游 CLI 与 MCP 项目，本合集因其得名。条目标签及“{documentation_label}”等关系标注中的 REA 均指该项目。'
+                    if zh else f"is a separate upstream CLI and MCP project, and this collection takes its name from it. “REA” in entry tags and labels such as “{documentation_label}” refers to that project.")
         rea = f'<a href="{_url(REA_REPOSITORY_URL)}">{("REA（Reverse Engineer Anything）" if zh else "REA (Reverse Engineer Anything)")}</a> {escape(rea_text)}'
         fact_cards = f'<section class="source-card browse-repository"><h2>{("与 REA 的关系" if zh else "REA and this collection")}</h2><p class="card-description">{rea}</p></section>'
         fact_cards += ''.join(f'<section class="source-card browse-repository"><h2>{escape(heading)}</h2><p class="card-description">{escape(text)}</p></section>' for heading, text in facts)
@@ -689,7 +659,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         if path in twins:
             (destination.parent / MARKDOWN).write_text(twins[path], encoding='utf-8')
 
-    paper_summary = (f' The bibliography lists {len(papers)} research papers; {overlapping_papers} also appear among the {len(resources)} curated resources.' if papers else '')
+    paper_summary = (f' The bibliography lists {len(papers)} research papers.' if papers else '')
     from build_repository_index import CATEGORIES as REPOSITORY_CATEGORIES
     browsable = [record for record in scanned if record.get('scope_status') != 'excluded']
     category_lines = '\n'.join(
@@ -702,11 +672,11 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
 ''' if browsable else ''
     llms = f'''# Awesome Reverse Engineering Anything
 
-> AwesomeREA.org is an independent bilingual collection of reverse-engineering tools, projects, integrations, case studies, and references for websites, games, apps, native binaries, firmware, and communication protocols.
+> AwesomeREA.org is a bilingual collection of reverse-engineering tools, projects, integrations, case studies, and references for websites, games, apps, native binaries, firmware, and communication protocols.
 
-The collection contains {len(resources)} source-reviewed curated resources and {browse_count} browsable repositories from {len(scanned)} successful README scans. The full scan retains {excluded} scope-excluded records and their reasons.{paper_summary} These counts describe different collections and must not be combined as unique projects.
+The collection contains {len(resources)} source-reviewed curated resources and {browse_count} browsable repositories from {len(scanned)} successful README scans. The full scan retains {excluded} scope-excluded records and their reasons.{paper_summary}
 
-Source review checks documentation, not successful execution, security, or REA compatibility. Repository descriptions have AI-assisted English and Simplified Chinese translations; description_original retains available upstream text. New oversized descriptions are omitted with length and SHA-256 evidence in description_omission. Upstream content keeps its own license.
+Source review checks descriptions against primary documentation. Repository descriptions have AI-assisted English and Simplified Chinese translations; description_original retains available upstream text. New oversized descriptions are omitted with length and SHA-256 evidence in description_omission. Upstream content keeps its own license.
 
 Every listing, category and entry page has a Markdown version named `index.md` beside it, linked from the page with `<link rel="alternate" type="text/markdown">`. Entry pages also have a bilingual `record.json`, and category pages an `index.json`. The links below point to the Markdown versions.
 
@@ -716,7 +686,7 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 - [Case studies]({site_url}/cases/{MARKDOWN}): {case_count} documented cases, a subset of the curated resources, with full descriptions and source evidence.
 - [Research papers]({site_url}/papers/{MARKDOWN}): A separate research bibliography, each paper linking its own Markdown page.
 - [Repository directory]({site_url}/browse/{MARKDOWN}): Static categories of automatically discovered public repositories (unreviewed).
-- [Editorial survey]({site_url}/survey/): A bilingual synthesis of the collection’s evidence, methods and limits; a versioned editorial companion, not an additional research paper.
+- [Editorial survey]({site_url}/survey/): A bilingual, separately versioned synthesis of the collection’s evidence, methods and limits.
 - [About and provenance]({site_url}/about/): Scope, source methods, counts, translations, and licenses.
 - [Contribute to Awesome REA]({site_url}/contribute/): Submission forms, primary-evidence requirements and the PR workflow for humans and agents.
 
@@ -726,7 +696,7 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 - [案例合集]({site_url}/zh/cases/{MARKDOWN}): {case_count} 个案例，是精选资源的子集，保留完整说明与来源证据。
 - [研究论文]({site_url}/zh/papers/{MARKDOWN}): 单独维护的研究文献目录。
 - [仓库目录]({site_url}/zh/browse/{MARKDOWN}): 自动发现的公开仓库分类（未审核）。
-- [专题综述]({site_url}/zh/survey/): 综合比较证据、方法与边界的双语编辑性综述，单独版本化，不计入研究论文数量。
+- [专题综述]({site_url}/zh/survey/): 综合比较证据、方法与边界的双语编辑性综述，单独版本化。
 - [关于与来源]({site_url}/zh/about/): 收录范围、来源方法、数量、翻译与许可。
 - [投稿与参与贡献]({site_url}/zh/contribute/): 人工与 Agent 的提交表单、一手证据要求和 PR 流程。
 - [静态 API 说明]({site_url}/zh/api/{MARKDOWN}): 端点、字段与更新频率。
@@ -737,7 +707,7 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 - [Resources JSON]({site_url}/api/v1/resources.json): Every curated resource with stable IDs, bilingual text, requirements, evidence and review dates; CSV at {site_url}/api/v1/resources.csv.
 - [Papers JSON]({site_url}/api/v1/papers.json): The bibliography with identifiers, dates and limits; CSV at {site_url}/api/v1/papers.csv.
 - [Categories JSON]({site_url}/api/v1/categories.json): Curated categories, sections, kinds and targets with counts, plus the repository categories.
-- [Candidates JSON]({site_url}/api/v1/candidates.json): Unreviewed automated discoveries and followed-source leads, never curated entries.
+- [Candidates JSON]({site_url}/api/v1/candidates.json): Unreviewed automated discoveries and followed-source leads.
 - [Changes JSON]({site_url}/api/v1/changes.json): Additions, source reviews and discovery batches of the last 30 days.
 - [JSON Schema]({site_url}/api/v1/schema.json): The schema every API file declares.
 - [Atom feed]({site_url}/feed.xml) and [JSON Feed]({site_url}/feed.json): Newly added entries; Chinese at {site_url}/zh/feed.xml and {site_url}/zh/feed.json.
@@ -748,7 +718,7 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 - [Agent contribution guide]({repository_url}/blob/main/docs/agent-contributing.md): Deduplicate, review primary sources, edit the right data, run checks and submit an authenticated GitHub PR.
 - [Agent 投稿指南]({repository_url}/blob/main/docs/agent-contributing.zh-CN.md): 中文提交、证据和校验说明。
 - [Catalog schema]({repository_url}/blob/main/data/README.md): Authoritative resource and paper fields and classification vocabulary.
-- [Choose an issue form]({repository_url}/issues/new/choose): Suggest a resource, case, paper or correction; unknown details are not verified facts.
+- [Choose an issue form]({repository_url}/issues/new/choose): Suggest a resource, case, paper or correction.
 
 ## Public data and sources
 
@@ -759,7 +729,7 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 - [Full repository index JSON]({site_url}/source-index.json): All scan records, original descriptions, translations, hashes, and exclusions; omit scope_status=excluded when reconstructing the browse list.
 - [Browsable repository JSON]({site_url}/source-browser.json): Compact visible records. Follow `meta.full_export` for the complete companion and verify `meta.full_export_sha256`; the metadata selects the preserved baseline or a ready published selection.
 - [Paper metadata JSON]({site_url}/papers.json): The separate research bibliography.
-- [Hugging Face dataset mirror](https://huggingface.co/datasets/AgPerry/awesome-rea): Read-only Parquet and JSONL mirror of these exports, one config per record type (resources, papers, cases, repositories, discoveries, leads), refreshed every 2 hours; repositories, discoveries and leads are unreviewed, not curated.
+- [Hugging Face dataset mirror](https://huggingface.co/datasets/AgPerry/awesome-rea): Read-only Parquet and JSONL mirror of these exports, one config per record type (resources, papers, cases, repositories, discoveries, leads), refreshed every 2 hours; repositories, discoveries and leads are unreviewed.
 - [Public source repository]({repository_url}): Bilingual READMEs, contribution rules, code, and data definitions.
 - [Scan methodology]({repository_url}/blob/main/docs/source-scan.md): Collection and scope-review methods.
 
@@ -773,7 +743,7 @@ This file is a navigation aid. Crawl policy is published in [robots.txt]({site_u
 '''
     if published:
         old_summary = f'The collection contains {len(resources)} source-reviewed curated resources and {browse_count} browsable repositories from {len(scanned)} successful README scans. The full scan retains {excluded} scope-excluded records and their reasons.'
-        new_summary = f'The collection contains {len(resources)} source-reviewed curated resources and a published selection of {len(scanned)} captured repository records, of which {browse_count} are browsable. The {out_of_scope} scope-excluded records{unavailable_clause(unavailable, False)} remain in the published selection; original capture totals remain separate in its provenance.'
+        new_summary = f'The collection contains {len(resources)} source-reviewed curated resources and a published selection of {len(scanned)} captured repository records, of which {browse_count} are browsable. The {out_of_scope} scope-excluded records{unavailable_clause(unavailable, False)} remain in the published selection.'
         llms = llms.replace(old_summary, new_summary)
         llms = llms.replace(f'- [Full repository index JSON]({site_url}/source-index.json): All scan records, original descriptions, translations, hashes, and exclusions; omit scope_status=excluded when reconstructing the browse list.',
             f'- [Published repository selection JSON]({site_url}/source-published.json): Published records, original descriptions, translations, hashes, exclusions and per-source capture totals; omit scope_status=excluded when reconstructing the browse list.\n- [Canonical capture baseline JSON]({site_url}/source-index.json): The preserved original complete canonical scan export.')

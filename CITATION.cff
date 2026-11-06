@@ -11,11 +11,11 @@ date-released: 2026-10-17
 authors:
   - name: Awesome REA
 abstract: >-
-  An independent, bilingual (English and Simplified Chinese) collection of
+  A bilingual (English and Simplified Chinese) collection of
   source-reviewed tools, reconstruction cases and research papers for
   reverse engineering websites, games, apps, native binaries, firmware and
   communication protocols, with a separate automated index of scanned
-  repository READMEs. Source review does not imply runtime verification.
+  repository READMEs.
 url: https://awesomerea.org/
 repository-code: https://github.com/reacher-z/Awesome-REA
 license: MIT

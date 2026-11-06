@@ -77,20 +77,20 @@ def rendered_files():
         title = '仓库扫描索引' if zh else 'Scanned Repository Index'
         intro = (f'从 **{len(scanned):,}** 个已读取 README 的仓库中提供 **{len(records):,}** 个浏览条目；**{out_of_scope}** 个明确超出范围的条目{unavailable_clause(unavailable, zh, "**")}保留在原始扫描记录中。'
                  if zh else f'Browse **{len(records):,}** repositories from **{len(scanned):,}** successful README scans. **{out_of_scope}** clearly out-of-scope entries{unavailable_clause(unavailable, zh, "**")} remain in the underlying scan record.')
-        note = ('这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。'
+        note = ('这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。'
                 '标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。'
-                if zh else 'These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. '
+                if zh else 'These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. '
                 'Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.')
         if published:
             title = '已发布仓库索引' if zh else 'Published Repository Index'
-            intro = (f'此发布选集包含 **{len(scanned):,}** 条已采集仓库记录，提供 **{len(records):,}** 个浏览条目。**{out_of_scope}** 个范围排除条目{unavailable_clause(unavailable, zh, "**")}保留在发布 JSON 中。各原始扫描的累计数量保留在独立的来源证据中。'
-                     if zh else f'This published selection contains **{len(scanned):,}** captured repository records and **{len(records):,}** browsable entries. **{out_of_scope}** scope-excluded entries{unavailable_clause(unavailable, zh, "**")} remain in the published JSON. Original capture totals remain separate in the source evidence.')
-        summary = ([f'已读取 **{len(scanned):,}** 个仓库的 README，当前提供 **{len(records):,}** 个浏览条目，明确超出范围的 {out_of_scope} 个条目{unavailable_clause(unavailable, zh)}保留在扫描数据中。自动发现的项目与上方精选资源分别维护，未逐项运行验证。', '',
+            intro = (f'此发布选集包含 **{len(scanned):,}** 条已采集仓库记录，提供 **{len(records):,}** 个浏览条目。**{out_of_scope}** 个范围排除条目{unavailable_clause(unavailable, zh, "**")}保留在发布 JSON 中。'
+                     if zh else f'This published selection contains **{len(scanned):,}** captured repository records and **{len(records):,}** browsable entries. **{out_of_scope}** scope-excluded entries{unavailable_clause(unavailable, zh, "**")} remain in the published JSON.')
+        summary = ([f'已读取 **{len(scanned):,}** 个仓库的 README，当前提供 **{len(records):,}** 个浏览条目，明确超出范围的 {out_of_scope} 个条目{unavailable_clause(unavailable, zh)}保留在扫描数据中。这些条目由自动发现，尚未审核。', '',
                     '[按分类在 GitHub 浏览](docs/repositories/README.zh-CN.md) · [网站搜索](https://awesomerea.org/zh/?view=source-index) · [完整双语索引 JSON](https://awesomerea.org/source-index.json) · [精选目录 JSON](https://awesomerea.org/catalog.json)']
-                   if zh else [f'**{len(scanned):,}** repository READMEs scanned; **{len(records):,}** entries available to browse. The {out_of_scope} clearly out-of-scope entries{unavailable_clause(unavailable, zh)} remain in the scan data. This automatically discovered index is separate from the curated resources above and has not been individually execution-tested.', '',
+                   if zh else [f'**{len(scanned):,}** repository READMEs scanned; **{len(records):,}** entries available to browse. The {out_of_scope} clearly out-of-scope entries{unavailable_clause(unavailable, zh)} remain in the scan data. These entries are discovered automatically and unreviewed.', '',
                                '[Browse by category on GitHub](docs/repositories/README.md) · [Search website](https://awesomerea.org/?view=source-index&lang=en) · [Full bilingual index JSON](https://awesomerea.org/source-index.json) · [Curated catalog JSON](https://awesomerea.org/catalog.json)'])
         if published:
-            summary[0] = intro + (' 自动发现条目不是逐项精选或运行验证后的推荐。' if zh else ' Automatically discovered entries are not individually curated or execution-tested recommendations.')
+            summary[0] = intro + (' 这些条目由自动发现，尚未审核。' if zh else ' These entries are discovered automatically and unreviewed.')
             summary = [line.replace('/source-index.json', '/source-published.json') for line in summary]
         root_name = f'README{suffix}.md'
         root_text = (ROOT / root_name).read_text(encoding='utf-8')

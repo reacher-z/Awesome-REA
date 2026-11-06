@@ -510,8 +510,8 @@ FINDER_BLURBS = {
                                '文档、分析指南、实验练习与学习资源'),
     'papers': ('Research bibliography, kept in generated paper lists',
               '研究论文书目，列于自动生成的论文列表'),
-    'index': ('Public repositories found by README scans; unreviewed, not recommendations',
-             '通过 README 扫描发现的公开仓库；未经复核，不构成推荐'),
+    'index': ('Public repositories found by README scans; unreviewed',
+             '通过 README 扫描发现的公开仓库；未审核'),
 }
 FINDER_HEADER = (('Section', 'What you will find', 'Entries'), ('分区', '内容', '条目'))
 
@@ -554,20 +554,14 @@ def render_contents_details(records, papers, index_count, language):
 def render_totals(records, papers, index_count, language):
     """One line of collection totals and the newest review date, above the Contents sections."""
     zh = language == 'zh'
-    paper_urls = {paper['url'] for paper in papers}
     cases = sum(record.get('kind') == 'case-study' for record in records)
-    listed = sum(record['url'] not in paper_urls for record in records)
     reviewed = max(entry['verified_at'][:10] for entry in [*records, *papers])
     if zh:
         line = (f'{len(records):,} 项精选资源（{cases:,} 个案例）· {len(papers):,} 篇论文 · '
                 f'{index_count:,} 个已索引仓库 · 最近来源复核 {reviewed}。')
-        if listed != len(records):
-            line += f'其中 {len(records) - listed:,} 项仅列于论文部分，因此各分区计数合计 {listed:,}。'
     else:
         line = (f'{len(records):,} curated resources ({cases:,} cases) · {len(papers):,} papers · '
                 f'{index_count:,} indexed repositories · latest source review {reviewed}.')
-        if listed != len(records):
-            line += f' Section counts add up to {listed:,} because {len(records) - listed:,} of these appear only under Papers.'
     return line + '\n\n'
 
 
@@ -726,9 +720,8 @@ def paper_line(paper, language):
 PAPER_DIRECTORY = ('https://awesomerea.org/papers/', 'https://awesomerea.org/zh/papers/')
 SUGGEST_PAPER = 'https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml'
 PAPER_FILE_TITLES = ('Awesome REA Papers', 'Awesome REA 论文')
-FULL_ENTRY_NOTE = ('Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation. '
-                   'Some papers also appear among curated resources; counts are not additive.',
-                   '每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。部分论文也出现在精选资源目录中，两者数量不可相加。')
+FULL_ENTRY_NOTE = ('Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation.',
+                   '每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。')
 
 
 def render_papers(papers, language):

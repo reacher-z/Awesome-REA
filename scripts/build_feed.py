@@ -81,10 +81,10 @@ def discovery_summary(batch: dict, language: str) -> tuple[str, str]:
     more = count - len(names)
     if zh:
         title = f'未审核的自动发现：扫描运行 {batch["run_id"]} 新增 {count:,} 个仓库'
-        summary = '、'.join(names) + (f' 等 {count:,} 个' if more else '') + '。自动 README 扫描结果，尚未审核、精选或运行。'
+        summary = '、'.join(names) + (f' 等 {count:,} 个' if more else '') + '。自动 README 扫描结果，未审核。'
     else:
         title = f'Unreviewed discoveries: {count:,} repositories from scan run {batch["run_id"]}'
-        summary = ', '.join(names) + (f' and {more:,} more' if more else '') + '. Automated README scans; not reviewed, curated or run.'
+        summary = ', '.join(names) + (f' and {more:,} more' if more else '') + '. Automated README scans, unreviewed.'
     return title, summary
 
 

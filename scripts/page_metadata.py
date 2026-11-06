@@ -86,7 +86,7 @@ def resource_description(record: dict, language: str, category: str) -> str:
 def paper_description(record: dict, language: str) -> str:
     """A paper's meta description; the venue and year are the recorded ones."""
     if language == 'zh':
-        return meta_description(record['description_zh'], f'Awesome REA 论文目录收录：{record["venue"]}（{record["year"]}），来源已复核，未做运行测试。')
+        return meta_description(record['description_zh'], f'Awesome REA 论文目录收录：{record["venue"]}（{record["year"]}），来源已复核。')
     return meta_description(record['description_en'], f'Listed in the Awesome REA bibliography: {record["venue"]}, {record["year"]}.')
 
 

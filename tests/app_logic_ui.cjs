@@ -297,7 +297,7 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.equal(byClass(details, 'source-topic-chip').length, original.topics.length);
     const allText = descendants(card).map(node => node.textContent);
     for (const value of [original.readme_sha256, original.readme_git_sha, '2026-01-01 01:02:03 UTC', '2026-01-02 01:02:03 UTC', '2026-01-03 01:02:03 UTC']) assert(allText.includes(value));
-    assert(!allText.includes('Check the upstream README for prerequisites; these have not been manually reviewed.'), 'Shared prerequisites advice is outside individual cards');
+    assert(!allText.includes('Check the upstream README for prerequisites.'), 'Shared prerequisites advice is outside individual cards');
     details.open = true; card.querySelector('.source-scan-evidence').open = true;
     app.api.state.lang = 'zh'; app.api.applyLanguage();
     card = app.element('source-results').children[0];

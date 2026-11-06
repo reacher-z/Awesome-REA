@@ -4,7 +4,7 @@
 
 **228 repositories** · 2026-10-20 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
+These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [ReFirmLabs/binwalk](https://github.com/ReFirmLabs/binwalk) — Firmware Analysis Tool **[14,491 stars]** · Curated: [Binwalk](https://awesomerea.org/resources/binwalk/)
 - [LongSoft/UEFITool](https://github.com/LongSoft/UEFITool) — UEFI firmware image viewer and editor **[5,752 stars]** · Curated: [UEFITool](https://awesomerea.org/resources/uefitool/)

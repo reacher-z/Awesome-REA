@@ -214,7 +214,7 @@ class CasePageTests(unittest.TestCase):
             self.assertIn(record['name' if language == 'en' else 'name_zh'], text)
             self.assertIn(record['description_' + language], text)
             self.assertNotIn(record['requirements' if language == 'en' else 'requirements_zh'][0], text)  # On the entry page.
-            self.assertIn('independent' if language == 'en' else '本合集', content)
+            self.assertIn('A resource collection' if language == 'en' else '资源合集', content)
             self.assertEqual(schema(content)['mainEntity']['itemListElement'][0]['description'], record['description_' + language])
 
     def test_shell_styles_empty_subset_and_navigation_are_bilingual(self):

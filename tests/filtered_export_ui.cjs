@@ -94,7 +94,7 @@ function application(query, pathname = '/') {
     assert.equal(index.resources, undefined, 'repository exports never present records as curated resources');
     assert.equal(index.export.collection, 'repository-index');
     assert.equal(index.export.record_class, 'automatically-indexed-repository');
-    assert.match(index.export.description, /not curated, individually reviewed or executed/);
+    assert.match(index.export.description, /these records are unreviewed/);
     assert.match(index.export.description, /excluded from browsing are omitted/);
     assert.deepEqual(index.export.filters, {sourceq: 'odd', 'source-target': 'all', topic: '', 'source-category': 'all', sort: 'stars'});
     assert.equal(index.export.order, 'stars');

@@ -2,9 +2,9 @@
 
 [简体中文](case-coverage.zh-CN.md) · [Machine-readable ledger](../data/case-coverage.json)
 
-Reviewed 2026-10-20 (UTC). **451 collection occurrences** become **449 inventory units** after 2 documented duplicate merges. These are reports, tools, papers, discussions and ideas—not a count of unique verified projects.
+Reviewed 2026-10-20 (UTC). **451 collection occurrences** become **449 inventory units** after 2 documented duplicate merges. These are reports, tools, papers, discussions and ideas.
 
-Project identity resolution is incomplete, so the unique-project count is `null`, not zero. English/Chinese copies of one upstream entry are counted once. Separate reports about one project remain separate units unless an explicit alias decision joins them.
+The unique-project count is `null` until project identities are resolved. English/Chinese copies of one upstream entry are counted once. Separate reports about one project remain separate units unless an explicit alias decision joins them.
 
 ## Frozen sources
 
@@ -13,23 +13,21 @@ Project identity resolution is incomplete, so the unique-project count is `null`
 | [songshikang0111/awesome-REA-cases · 3a1c5cdfaa3f](https://github.com/songshikang0111/awesome-REA-cases/tree/3a1c5cdfaa3f2db0dd4f587208f8870eb633de23) | 423 | 50 | [awesome-rea-cases](https://awesomerea.org/resources/awesome-rea-cases/) |
 | [yibie/awesome-rea · 6df1bc922ac6](https://github.com/yibie/awesome-rea/tree/6df1bc922ac6b92dcd1b2f905c94d8cc4f3b5a3e) | 28 | 11 | [yibie-awesome-rea](https://awesomerea.org/resources/yibie-awesome-rea/) |
 
-The ledger retains pinned file URLs, Git blob IDs, SHA-256 digests and byte counts. It describes only these enumerated snapshots, not later upstream changes or the whole field. Full upstream descriptions and README bodies are not republished.
+The ledger retains pinned file URLs, Git blob IDs, SHA-256 digests and byte counts for these enumerated snapshots.
 
-Repository counts use normalized GitHub repository, tree and file links within each collection. They do not merge inventory units or establish unique projects. For a game-organized table, each project row is an occurrence; a game heading or a shared repository does not make two rows the same report.
+Repository counts use normalized GitHub repository, tree and file links within each collection. In a game-organized table, each project row is an occurrence.
 
 ## Counts and states
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 97 | 95 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Already curated (`already-curated`) | 97 | 95 | Full-scope identity mapping to a catalog resource or paper. |
 | Pending (`pending`) | 21 | 21 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 333 | 333 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-115 occurrences have catalog links. They reference 118 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+115 occurrences have catalog links. They reference 118 distinct resource IDs and 2 paper ID. Match scope is recorded separately.
 
-This ledger records a new primary-source review for 378 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
-
-Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
+This ledger records a new primary-source review for 378 inventory units. Other catalog-linked entries inherit the catalog’s source-review record.
 
 ## Primary-reviewed cases
 
@@ -450,7 +448,7 @@ Alias decisions:
 
 ## Updating this ledger
 
-Review the pinned collection entry and its primary evidence before changing a state. Keep occurrence IDs stable, record explicit aliases, use typed full/partial/related catalog mappings, and leave unresolved project counts unknown. Collection titles are source labels, not verified capability claims.
+Review the pinned collection entry and its primary evidence before changing a state. Keep occurrence IDs stable, record explicit aliases, use typed full/partial/related catalog mappings, and leave unresolved project counts unknown.
 
 ```sh
 python3 scripts/build_case_coverage.py
@@ -458,4 +456,4 @@ python3 scripts/validate.py
 python3 -m unittest discover -s tests -v
 ```
 
-The validator checks schemas, public URLs, pinned receipts, identifiers, aliases, catalog mappings and derived counts. It does not fetch sources or establish that upstream results are true.
+The validator checks schemas, public URLs, pinned receipts, identifiers, aliases, catalog mappings and derived counts.

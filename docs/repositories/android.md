@@ -4,7 +4,7 @@
 
 **482 repositories** · 2026-10-20 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
+These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [skylot/jadx](https://github.com/skylot/jadx) — Dex to Java decompiler **[50,988 stars]** · Curated: [JADX](https://awesomerea.org/resources/jadx/)
 - [librepods-org/librepods](https://github.com/librepods-org/librepods) — AirPods liberated from Apple's ecosystem. **[30,324 stars]**

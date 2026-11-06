@@ -37,11 +37,10 @@ PAPER_FIELDS = ('id', 'title', 'title_zh', 'authors', 'authors_omitted', 'year',
                 'why_fits_zh', 'metadata_notes', 'metadata_notes_zh', 'citation', 'evidence_urls', 'added_at',
                 'verified_at', 'verification', 'runtime_tested')
 REVIEW_NOTES = {
-    'resource': ('The description was reviewed against primary sources. This does not establish runtime testing, '
-                 'security auditing or verified compatibility.',
-                 '说明已依据一手来源复核；这不代表已运行验证、经过安全审计或确认兼容。'),
-    'paper': ('Source review only; experiments were not rerun for this collection. Cite the original authors using '
-              'the linked paper or BibTeX.', '本合集仅做来源复核，未重新运行论文实验。请通过原始论文或 BibTeX 引用原作者。'),
+    'resource': ('The description was reviewed against primary sources.',
+                 '说明已依据一手来源复核。'),
+    'paper': ('Reviewed against the paper and its primary sources. Cite the original authors using '
+              'the linked paper or BibTeX.', '已依据论文及一手来源复核。请通过原始论文或 BibTeX 引用原作者。'),
 }
 LICENSE_NOTE = ('Original editorial content: MIT. Linked projects, papers and assets retain their own rights and licenses.',
                 '原创说明采用 MIT 许可；外部项目、论文与素材保留各自的权利和许可。')

@@ -40,11 +40,9 @@ TITLES = ('Recently discovered repositories (unreviewed)', '最新发现的仓�
 FEED_TITLES = ('AwesomeREA.org: recently discovered repositories (unreviewed)', 'AwesomeREA.org：最新发现的仓库（未审核）')
 EXPORT_FIELDS = ('id', 'full_name', 'url', 'topics', 'targets', 'category', 'stars', 'license', 'pushed_at',
                  'observed_at', 'readme_url', 'readme_sha256', 'readme_git_sha')
-NOTE = ('Automated README scans, not reviewed: each record passed this collection’s capture checks and topic screen, '
-        'but nobody has read its sources, translated it, run it or judged its quality. Curated entries are reviewed '
-        'separately; promoting a discovery means writing a new source-reviewed record.',
-        '这些是自动 README 扫描结果，尚未审核：每条记录都通过了本合集的采集校验和主题筛选，但还没有人阅读其来源、翻译、运行或评估质量。'
-        '精选条目另行审核；收录某个发现需要另写一条经来源审核的记录。')
+NOTE = ('Unreviewed automated README scans. Each record passed this collection’s capture checks and topic screen; '
+        'promoting a discovery means writing a new source-reviewed record.',
+        '未审核的自动 README 扫描结果。每条记录都通过了本合集的采集校验和主题筛选；收录某个发现需要另写一条经来源审核的记录。')
 
 
 def timestamp(value: str) -> str:
@@ -212,7 +210,7 @@ def page_content(queue: dict, language: str, use_pro: bool, site_url: str, repos
     parts = [f'<div class="browse-topline"><p>{status}</p></div>',
              f'<details class="browse-provenance" open><summary>{"关于这些发现" if zh else "About these discoveries"}</summary>'
              f'<p>{escape(NOTE[int(zh)])}</p>'
-             f'<p>{("简介为上游原文，未翻译；星标与最近推送时间为采集时快照。" if zh else "Descriptions are upstream text, not translated; stars and last-push months are capture-time snapshots.")}</p>'
+             f'<p>{("简介为上游原文；星标与最近推送时间为采集时快照。" if zh else "Descriptions are upstream text; stars and last-push months are capture-time snapshots.")}</p>'
              f'<p>{links}</p></details>']
     groups: dict[str, list[dict]] = {}
     for record in shown:
@@ -238,7 +236,7 @@ def page_content(queue: dict, language: str, use_pro: bool, site_url: str, repos
 def feed_summary(record: dict, language: str) -> str:
     zh = language == 'zh'
     text = record['description_en'] or description_fallback(record, language)
-    return text + (' — 自动 README 扫描，未审核。' if zh else ' — Automated README scan, not reviewed.')
+    return text + (' — 自动 README 扫描，未审核。' if zh else ' — Automated README scan, unreviewed.')
 
 
 def discovery_feed(queue: dict, language: str, site_url: str) -> str:
@@ -307,8 +305,8 @@ def write_discoveries(site_dir: Path, catalog: dict, papers: list[dict], publish
     for language, path in PAGE_PATHS.items():
         zh = language == 'zh'
         title = TITLES[int(zh)]
-        description = (f'{len(queue["listed"]):,} 个通过采集校验与主题筛选、但尚未审核的逆向工程仓库，按入库时间从新到旧排列。这些记录只是待审线索，不代表已收录或已验证，可通过订阅源跟踪更新。' if zh
-                       else f'{len(queue["listed"]):,} reverse-engineering repositories that passed the capture checks and topic screen but are not reviewed yet, newest first.')
+        description = (f'{len(queue["listed"]):,} 个通过采集校验与主题筛选的未审核逆向工程仓库，按入库时间从新到旧排列，每条显示上游简介、GitHub 星标与最近推送时间，可通过订阅源跟踪更新。' if zh
+                       else f'{len(queue["listed"]):,} unreviewed reverse-engineering repositories that passed the capture checks and topic screen, newest first.')
         shown = queue['listed'][:PAGE_RECORDS]
         schema = collection_page_schema(site_url + path, title, description, 'zh-CN' if zh else 'en', [
             {'name': record['full_name'], 'url': record['url'],
@@ -348,8 +346,8 @@ def llms_section(queue: dict | None, site_url: str, limit: int = 10) -> str:
         return ''
     latest = queue['latest']
     lines = ['## Recently discovered repositories (unreviewed)', '',
-             f'Automated README scans that passed capture checks and a reverse-engineering topic screen; not reviewed, '
-             f'curated, translated or run. {len(queue["listed"]):,} are listed; last ingest '
+             f'Unreviewed automated README scans that passed capture checks and a reverse-engineering topic screen. '
+             f'{len(queue["listed"]):,} are listed; last ingest '
              f'{timestamp(latest["ingested_at"])} from scan run {latest["source"]["run_id"]}.', '',
              f'- [Recently discovered (unreviewed)]({site_url}{PAGE_PATHS["en"]}): The newest {PAGE_RECORDS} discoveries with upstream links.',
              f'- [Discovery queue JSON]({site_url}{EXPORT_PATH}): The newest {EXPORT_RECORDS:,} records with review_status=unreviewed, batch provenance and capture hashes; batches[].records_url lists every record of each batch.',

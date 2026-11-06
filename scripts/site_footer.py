@@ -26,7 +26,7 @@ DOWNLOADS = {
     '/papers/references.bib': ('awesomerea-papers.bib', 'application/x-bibtex', 'Paper BibTeX ↓', '论文 BibTeX ↓'),
 }
 REPOSITORY_EXPORTS = ('source-index.json', 'source-published.json')
-TAGLINE = ('An independent resource collection, updated in public.', '独立的资源集合，在公开协作中持续更新。')
+TAGLINE = ('A resource collection, updated in public.', '资源合集，在公开协作中持续更新。')
 HUGGING_FACE_URL = 'https://huggingface.co/datasets/AgPerry/awesome-rea'
 FOOTER_TEXT = (
     {'sections': 'More from the collection', 'catalogue': 'Catalogue', 'data': 'Data', 'project': 'Project',

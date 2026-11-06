@@ -4,7 +4,7 @@
 
 **491 repositories** · 2026-10-20 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
+These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [HIllya51/LunaTranslator](https://github.com/HIllya51/LunaTranslator) — Visual Novel Translator **[13,757 stars]**
 - [baldurk/renderdoc](https://github.com/baldurk/renderdoc) — RenderDoc is a stand-alone graphics debugging tool. **[11,193 stars]** · Curated: [RenderDoc](https://awesomerea.org/resources/renderdoc/)

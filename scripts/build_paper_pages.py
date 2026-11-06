@@ -411,7 +411,7 @@ def build_paper_pages(
   <nav class="papers-breadcrumbs" aria-label="{label('Breadcrumb', '当前位置')}"><a href="{home}">{label('Home', '首页')}</a><span aria-hidden="true">/</span><span aria-current="page">{label('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准')}</span></nav>
   <section class="collection-intro papers-intro" aria-labelledby="papers-title"><p class="eyebrow">{label('RESEARCH & EVIDENCE', '研究与证据')}</p><h1 id="papers-title">{label('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准')}<span class="title-dot" aria-hidden="true">.</span></h1><p>{escape(intro)}</p></section>
   <div class="papers-actions"><a class="button button-outline" href="{web_url(repository_url + "/issues/new?template=paper.yml")}" target="_blank" rel="noopener">{icon("document", use_pro)}{label("Suggest a paper", "推荐论文")}</a><a class="button button-outline" href="{browse}">{icon('layers', use_pro)}{label('Browse repositories', '浏览仓库')}</a>{download_link('/papers/references.bib', language, css_class='papers-bibliography')}</div>
-  <p class="papers-review-policy">{label('We check primary sources; we do not rerun experiments or independently reproduce results.', '仅复核一手来源，未重新运行实验或独立复现结果。')}</p>
+  <p class="papers-review-policy">{label('We check each paper against its primary sources.', '每篇论文均依据一手来源复核。')}</p>
   <form id="paper-search" class="paper-search script-only" role="search" aria-label="{label('Search research papers', '搜索研究论文')}" data-search-index="{search_index_href}">
     <div class="paper-search-field paper-search-query"><label for="paper-query">{label('Search papers', '搜索论文')}</label><input id="paper-query" name="q" type="search" maxlength="240" autocomplete="off" placeholder="{label('Title, author, venue, DOI or arXiv ID', '标题、作者、出处、DOI 或 arXiv 编号')}" aria-describedby="paper-search-help"></div>
     <div class="paper-search-field"><label for="paper-target">{label('Target', '目标')}</label><select id="paper-target" name="target"><option value="all">{label('All targets', '全部目标')}</option>{target_options}</select></div>
@@ -445,7 +445,7 @@ def build_paper_pages(
         (destination.parent / MARKDOWN).write_text(collection_markdown(
             title=label('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准'), description=description,
             language=language, canonical=canonical, items=[], groups=sections_md,
-            notes=[label('We check primary sources; we do not rerun experiments or independently reproduce results.', '仅复核一手来源，未重新运行实验或独立复现结果。')],
+            notes=[label('We check each paper against its primary sources.', '每篇论文均依据一手来源复核。')],
             json_url=site_url + '/api/v1/papers.json', counterpart=site_url + counterpart + MARKDOWN), encoding='utf-8')
         canonical_urls.append(canonical)
     return canonical_urls

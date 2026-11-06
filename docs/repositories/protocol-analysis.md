@@ -4,7 +4,7 @@
 
 **113 repositories** · 2026-10-20 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
+These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [Mouseww/anything-analyzer](https://github.com/Mouseww/anything-analyzer) — All-in-one protocol analysis toolkit: built-in browser capture, MITM proxy, JS hooks, fingerprint spoofing, AI analysis, and an MCP server for seamless AI agent and IDE integration. **[3,776 stars]**
 - [commaai/opendbc](https://github.com/commaai/opendbc) — a Python API for your car **[3,493 stars]** · Curated: [opendbc](https://awesomerea.org/resources/opendbc/)
