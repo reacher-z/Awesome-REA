@@ -329,6 +329,7 @@ def build_paper_pages(
 
     # The visible breadcrumb gets the same BreadcrumbList as the discovery and browse pages.
     from build_discovery_pages import breadcrumb_schema, jsonld_script
+    from agent_formats import MARKDOWN, alternate_links, collection_markdown
     canonical_urls = []
     use_pro = icon_stylesheet_href is not None
     for language in ('en', 'zh'):
@@ -390,6 +391,7 @@ def build_paper_pages(
   <link rel="alternate" hreflang="en" href="{site_url}/papers/">
   <link rel="alternate" hreflang="zh-CN" href="{site_url}/zh/papers/">
   <link rel="alternate" hreflang="x-default" href="{site_url}/papers/">
+  {alternate_links(markdown=path + MARKDOWN, json_href='/api/v1/papers.json')}
   {open_graph_meta(language=language, title=title, description=description, image_url=social_image_href, url=canonical)}
   <link rel="icon" href="{escape(favicon_href, quote=True)}" type="image/svg+xml">
   <link rel="stylesheet" href="{escape(styles_href, quote=True)}">
@@ -432,5 +434,16 @@ def build_paper_pages(
         destination = site_dir / path.lstrip('/') / 'index.html'
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(document, encoding='utf-8')
+        # The Markdown twin lists every paper by research area, linking each paper's own Markdown page.
+        sections_md = [(f'{section_labels[1 if zh else 0]} ({len(groups[section]):,})',
+                        [{'name': paper['title_zh'] if zh else paper['title'], 'url': f'{canonical}{paper["id"]}/{MARKDOWN}',
+                          'meta': f"{paper['year']} · {paper['venue']} · {STATUS_LABELS[paper['publication_status']][int(zh)]}",
+                          'description': paper[f'description_{language}']} for paper in groups[section]])
+                       for section, section_labels in PAPER_SECTIONS.items() if groups[section]]
+        (destination.parent / MARKDOWN).write_text(collection_markdown(
+            title=label('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准'), description=description,
+            language=language, canonical=canonical, items=[], groups=sections_md,
+            notes=[label('We check primary sources; we do not rerun experiments or independently reproduce results.', '仅复核一手来源，未重新运行实验或独立复现结果。')],
+            json_url=site_url + '/api/v1/papers.json', counterpart=site_url + counterpart + MARKDOWN), encoding='utf-8')
         canonical_urls.append(canonical)
     return canonical_urls

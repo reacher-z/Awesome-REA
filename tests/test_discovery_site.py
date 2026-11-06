@@ -122,7 +122,7 @@ class MainFeedTest(unittest.TestCase):
                 path = Path(directory) / route.lstrip('/') / 'index.html'
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text('<!doctype html><html><head><title>x</title></head><body></body></html>', encoding='utf-8')
-            self.assertEqual(build_feeds(directory, resources, [], discovery_batches=batches), ['/feed.xml', '/zh/feed.xml'])
+            self.assertEqual(build_feeds(directory, resources, [], discovery_batches=batches), ['/feed.xml', '/zh/feed.xml', '/feed.json', '/zh/feed.json'])
             root = ET.parse(Path(directory) / 'feed.xml').getroot()
             entries = root.findall(ATOM + 'entry')
             self.assertEqual([entry.find(ATOM + 'category').get('term') for entry in entries],

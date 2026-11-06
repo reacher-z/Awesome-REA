@@ -15,6 +15,7 @@ from build_entry_pages import entry_path, feedback_urls, matching_entries, secti
 from build_site import catalog_index
 from build_manifest import read_build_manifest
 from sitemaps import sitemap_urls
+from validate_agent_formats import validate_agent_formats
 from build_paper_pages import (AUTHORS_OMITTED, LISTING_SIZE_BUDGET, SEARCH_FIELDS, authors_omitted, bibtex_text,
                                formatted_date, listing_size_warnings, paper_entity_id, papers_newest_first)
 from validate_papers import read_papers
@@ -1578,6 +1579,10 @@ def main():
     validate_discovery_outputs(OUTPUT, pages, queue)
     lead_queue = build_discovery_leads.lead_queue(ROOT)
     validate_lead_exports(OUTPUT, lead_queue if lead_queue['batches'] else None)
+    # Markdown and JSON twins, the static API, JSON feeds and the llms files (validate_agent_formats.py).
+    validate_agent_formats(OUTPUT, set(pages), resources, papers, header_rules((OUTPUT / '_headers').read_text(encoding='utf-8')),
+                           repository_document=published_repository_document(OUTPUT), discovery_queue=queue,
+                           lead_queue=lead_queue if lead_queue['batches'] else None)
     validate_case_outputs(pages, resources)
     validate_section_target_counts(OUTPUT, resources)
     catalog_meta = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['meta']
@@ -1602,7 +1607,7 @@ def main():
     assert (OUTPUT / 'llms.txt').read_text(encoding='utf-8').startswith('# '), 'llms.txt must contain Markdown'
     assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
     read_build_manifest(OUTPUT)
-    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, content-addressed assets, security headers, Atom feeds, the homepage catalog index and its preload, and the deployment manifest.')
+    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, content-addressed assets, security headers, Atom and JSON feeds, Markdown and JSON twins, the static API against its schema, llms.txt and llms-full.txt, the homepage catalog index and its preload, and the deployment manifest.')
 
 
 if __name__ == '__main__':

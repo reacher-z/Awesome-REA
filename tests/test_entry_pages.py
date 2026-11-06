@@ -144,7 +144,7 @@ class EntryPageTests(unittest.TestCase):
                     self.assertIn(('article', {'class': 'entry-article', 'data-entry-kind': kind, 'data-entry-id': record['id']}), page.attributes)
                     canonical = 'https://awesomerea.org' + path
                     self.assertEqual([x['href'] for x in page.links if x.get('rel') == 'canonical'], [canonical])
-                    alternates = {x['hreflang']: x['href'] for x in page.links if x.get('rel') == 'alternate'}
+                    alternates = {x['hreflang']: x['href'] for x in page.links if x.get('rel') == 'alternate' and 'hreflang' in x}
                     self.assertEqual(alternates, {'en': 'https://awesomerea.org' + entry_path(kind, record['id']),
                                                 'zh-CN': 'https://awesomerea.org' + entry_path(kind, record['id'], 'zh'),
                                                 'x-default': 'https://awesomerea.org' + entry_path(kind, record['id'])})

@@ -14,6 +14,7 @@ from urllib.parse import unquote, urlsplit
 from asset_paths import FINGERPRINTED_SUFFIXES, fingerprinted_href
 from build_readme import (KIND_LABELS, METHOD_HEADINGS, METHOD_SECTIONS, RELATIONSHIPS, TARGETS, UNASSIGNED_METHOD,
                           collection_section, method_groups)
+from agent_formats import MARKDOWN, alternate_links, collection_markdown
 from contribution_pages import TITLES as CONTRIBUTION_TITLES, contribution_content
 from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
 from site_footer import SECTION_LINKS, download_link, site_footer
@@ -96,6 +97,26 @@ def breadcrumb_schema(canonical: str, trail: list[tuple[str, str]]) -> dict:
             for position, (name, url) in enumerate(trail, 1)
         ],
     }
+
+
+def _collection_twin(site_url: str, path: str, language: str, title: str, description: str,
+                     groups: dict[str, list[dict]], note: str | None, json_url: str | None = None) -> str:
+    """The Markdown twin of /resources/ or /cases/: every entry, by section, linking its own Markdown twin."""
+    zh = language == 'zh'
+    prefix = '/zh' if zh else ''
+    sections = []
+    for key, labels in SECTIONS.items():
+        entries = [{'name': (record.get('name_zh') or record['name']) if zh else record['name'],
+                    'url': f"{site_url}{prefix}/resources/{record['id']}/{MARKDOWN}",
+                    'meta': KIND_LABELS[record['kind']][int(zh)], 'description': record[f'description_{language}']}
+                   for record in groups.get(key, [])]
+        if entries:
+            sections.append((f'{labels[int(zh)]} ({len(entries):,})', entries))
+    english = path.removeprefix('/zh') if zh else path
+    counterpart = site_url + (english if zh else '/zh' + english) + MARKDOWN
+    return collection_markdown(title=title, description=description, language=language, canonical=site_url + path,
+                               items=[], groups=sections, notes=[note] if note else [], json_url=json_url,
+                               counterpart=counterpart)
 
 
 def _url(value: str) -> str:
@@ -432,7 +453,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
               title: str, description: str, content: str, schema: dict | None,
               assets: dict, icon_stylesheet: str | None, noindex: bool = False,
               main_class: str = '', extra_styles: tuple[str, ...] = (),
-              source_export: str = 'source-index.json') -> str:
+              source_export: str = 'source-index.json', alternates: str = '') -> str:
     if source_export not in ('source-index.json', 'source-published.json'):
         raise ValueError('Unsupported repository export route')
     zh = language == 'zh'
@@ -445,7 +466,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
     metadata = '<meta name="robots" content="noindex">' if noindex else f'''<link rel="canonical" href="{_url(canonical)}">
   <link rel="alternate" hreflang="en" href="{_url(site_url + english_path)}">
   <link rel="alternate" hreflang="zh-CN" href="{_url(site_url + chinese_path)}">
-  <link rel="alternate" hreflang="x-default" href="{_url(site_url + english_path)}">'''
+  <link rel="alternate" hreflang="x-default" href="{_url(site_url + english_path)}">''' + (f'\n  {alternates}' if alternates else '')
     globe_icon = '<span class="icon fa-symbol fa-globe" aria-hidden="true"></span>' if icon_stylesheet else ''
     github_icon = ('<span class="icon fa-symbol fa-github" aria-hidden="true"></span>' if icon_stylesheet
                    else '<span class="icon browse-github-fallback" aria-hidden="true">GH</span>')
@@ -542,7 +563,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
             _requirements(record, language)
         groups[section].append(record)
 
-    rendered = {}
+    rendered, twins = {}, {}
     paths = []
     for language in ('en', 'zh'):
         zh = language == 'zh'
@@ -579,7 +600,9 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
                 items.append({'name': name, 'url': f"{site_url}{prefix}/resources/{record['id']}/", 'description': record[f'description_{language}']})
         content = f'''<div class="browse-actions"><a class="button button-primary" href="{('/zh/?view=curated' if zh else '/?view=curated&amp;lang=en')}">{('搜索与筛选' if zh else 'Search and filter')}</a><a class="button button-outline" href="{prefix}/browse/">{('浏览仓库' if zh else 'Browse repositories')}</a><a class="button button-outline" href="{prefix}/papers/">{('研究论文' if zh else 'Research papers')}</a>{_suggest_link(repository_url, 'resource.yml', '推荐资源' if zh else 'Suggest a resource')}{download_link('/catalog.json', language, css_class='browse-download')}</div>
 <details class="browse-provenance"><summary>{("来源复核与验证范围" if zh else "Source review and testing limits")}</summary><p>{escape(note)}</p></details><nav class="browse-category-nav" id="resource-categories" aria-label="{('资源分类' if zh else 'Resource categories')}">{''.join(navigation)}</nav>{''.join(sections)}'''
-        rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=collection_page_schema(site_url + path, title, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href, source_export=source_export)
+        rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=collection_page_schema(site_url + path, title, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href, source_export=source_export,
+                                   alternates=alternate_links(markdown=path + MARKDOWN, json_href='/api/v1/resources.json'))
+        twins[path] = _collection_twin(site_url, path, language, title, description, groups, note, json_url=site_url + '/api/v1/resources.json')
         paths.append(path)
 
         path = prefix + '/cases/'
@@ -587,7 +610,10 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         content, items = _case_collection(resources, language, site_url, repository_url)
         description = (f'从 {len(resources):,} 项精选资源中筛选出的 {len(items):,} 个案例，保留重建方法、成果边界与原始证据。'
                        if zh else f'{len(items):,} case studies from {len(resources):,} curated resources, with documented reconstruction methods, scope, and original evidence.')
-        rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=collection_page_schema(site_url + path, title, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href, source_export=source_export, main_class='cases-main', extra_styles=(_asset(site_dir, 'cases.css'),))
+        rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=collection_page_schema(site_url + path, title, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href, source_export=source_export, main_class='cases-main', extra_styles=(_asset(site_dir, 'cases.css'),),
+                                   alternates=alternate_links(markdown=path + MARKDOWN))
+        cases = {key: [record for record in records if record['kind'] == 'case-study'] for key, records in groups.items()}
+        twins[path] = _collection_twin(site_url, path, language, title, description, cases, None)
         paths.append(path)
 
         path = prefix + '/about/'
@@ -650,8 +676,20 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         destination = site_dir / path.lstrip('/') / 'index.html'
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(document, encoding='utf-8')
+        if path in twins:
+            (destination.parent / MARKDOWN).write_text(twins[path], encoding='utf-8')
 
     paper_summary = (f' The bibliography lists {len(papers)} research papers; {overlapping_papers} also appear among the {len(resources)} curated resources.' if papers else '')
+    from build_repository_index import CATEGORIES as REPOSITORY_CATEGORIES
+    browsable = [record for record in scanned if record.get('scope_status') != 'excluded']
+    category_lines = '\n'.join(
+        f'- [{labels[0]}]({site_url}/browse/{slug}/{MARKDOWN}): {sum(record.get("category") == slug for record in browsable):,} automatically discovered repositories (unreviewed); Chinese: {site_url}/zh/browse/{slug}/{MARKDOWN}'
+        for slug, labels in REPOSITORY_CATEGORIES.items())
+    categories = f'''## Repository categories
+
+{category_lines}
+
+''' if browsable else ''
     llms = f'''# Awesome Reverse Engineering Anything
 
 > AwesomeREA.org is an independent bilingual collection of reverse-engineering tools, projects, integrations, case studies, and references for websites, games, apps, native binaries, firmware, and communication protocols.
@@ -660,25 +698,39 @@ The collection contains {len(resources)} source-reviewed curated resources and {
 
 Source review checks documentation, not successful execution, security, or REA compatibility. Repository descriptions have AI-assisted English and Simplified Chinese translations; description_original retains available upstream text. New oversized descriptions are omitted with length and SHA-256 evidence in description_omission. Upstream content keeps its own license.
 
-## English navigation
+Every listing, category and entry page has a Markdown version named `index.md` beside it, linked from the page with `<link rel="alternate" type="text/markdown">`. Entry pages also have a bilingual `record.json`, and category pages an `index.json`. The links below point to the Markdown versions.
 
-- [Curated resources]({site_url}/resources/): All curated entries, requirements, evidence links, and review dates.
-- [Case studies]({site_url}/cases/): {case_count} documented cases, a subset of the curated resources, with full descriptions and source evidence.
-- [Repository directory]({site_url}/browse/): Static categories and public repository descriptions.
-- [Research papers]({site_url}/papers/): A separate research bibliography.
+## Collections
+
+- [Curated resources]({site_url}/resources/{MARKDOWN}): All curated entries by section, each linking its own Markdown page with requirements, evidence links and review dates.
+- [Case studies]({site_url}/cases/{MARKDOWN}): {case_count} documented cases, a subset of the curated resources, with full descriptions and source evidence.
+- [Research papers]({site_url}/papers/{MARKDOWN}): A separate research bibliography, each paper linking its own Markdown page.
+- [Repository directory]({site_url}/browse/{MARKDOWN}): Static categories of automatically discovered public repositories (unreviewed).
 - [Editorial survey]({site_url}/survey/): A bilingual synthesis of the collection’s evidence, methods and limits; a versioned editorial companion, not an additional research paper.
 - [About and provenance]({site_url}/about/): Scope, source methods, counts, translations, and licenses.
 - [Contribute to Awesome REA]({site_url}/contribute/): Submission forms, primary-evidence requirements and the PR workflow for humans and agents.
 
-## 简体中文
+{categories}## 简体中文
 
-- [精选资源]({site_url}/zh/resources/): 精选条目、使用条件、来源链接与复核日期。
-- [案例合集]({site_url}/zh/cases/): {case_count} 个案例，是精选资源的子集，保留完整说明与来源证据。
-- [仓库目录]({site_url}/zh/browse/): 静态分类与公开项目简介。
-- [研究论文]({site_url}/zh/papers/): 单独维护的研究文献目录。
+- [精选资源]({site_url}/zh/resources/{MARKDOWN}): 精选条目、使用条件、来源链接与复核日期。
+- [案例合集]({site_url}/zh/cases/{MARKDOWN}): {case_count} 个案例，是精选资源的子集，保留完整说明与来源证据。
+- [研究论文]({site_url}/zh/papers/{MARKDOWN}): 单独维护的研究文献目录。
+- [仓库目录]({site_url}/zh/browse/{MARKDOWN}): 自动发现的公开仓库分类（未审核）。
 - [专题综述]({site_url}/zh/survey/): 综合比较证据、方法与边界的双语编辑性综述，单独版本化，不计入研究论文数量。
 - [关于与来源]({site_url}/zh/about/): 收录范围、来源方法、数量、翻译与许可。
 - [投稿与参与贡献]({site_url}/zh/contribute/): 人工与 Agent 的提交表单、一手证据要求和 PR 流程。
+- [静态 API 说明]({site_url}/zh/api/{MARKDOWN}): 端点、字段与更新频率。
+
+## API and feeds
+
+- [API guide]({site_url}/api/{MARKDOWN}): Endpoints, fields, update frequency and versioning of the static JSON and CSV API.
+- [Resources JSON]({site_url}/api/v1/resources.json): Every curated resource with stable IDs, bilingual text, requirements, evidence and review dates; CSV at {site_url}/api/v1/resources.csv.
+- [Papers JSON]({site_url}/api/v1/papers.json): The bibliography with identifiers, dates and limits; CSV at {site_url}/api/v1/papers.csv.
+- [Categories JSON]({site_url}/api/v1/categories.json): Curated categories, sections, kinds and targets with counts, plus the repository categories.
+- [Candidates JSON]({site_url}/api/v1/candidates.json): Unreviewed automated discoveries and followed-source leads, never curated entries.
+- [Changes JSON]({site_url}/api/v1/changes.json): Additions, source reviews and discovery batches of the last 30 days.
+- [JSON Schema]({site_url}/api/v1/schema.json): The schema every API file declares.
+- [Atom feed]({site_url}/feed.xml) and [JSON Feed]({site_url}/feed.json): Newly added entries; Chinese at {site_url}/zh/feed.xml and {site_url}/zh/feed.json.
 
 ## Contribute with an agent
 
@@ -699,6 +751,12 @@ Source review checks documentation, not successful execution, security, or REA c
 - [Paper metadata JSON]({site_url}/papers.json): The separate research bibliography.
 - [Public source repository]({repository_url}): Bilingual READMEs, contribution rules, code, and data definitions.
 - [Scan methodology]({repository_url}/blob/main/docs/source-scan.md): Collection and scope-review methods.
+
+## Optional
+
+- [Full catalog in Markdown]({site_url}/llms-full.txt): Every curated resource and paper in one file, with requirements, limits and sources.
+- [完整目录（Markdown）]({site_url}/zh/llms-full.txt): 全部精选资源与论文的中文版。
+- [Sitemap index]({site_url}/sitemap.xml): Every canonical page, with its languages and data-derived modification dates.
 
 This file is a navigation aid. Crawl policy is published in [robots.txt]({site_url}/robots.txt).
 '''

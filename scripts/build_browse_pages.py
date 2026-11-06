@@ -9,6 +9,7 @@ import re
 import shutil
 from urllib.parse import urlsplit
 
+from agent_formats import COLLECTION_JSON, MARKDOWN, alternate_links, collection_markdown, json_text
 from build_discovery_pages import EXTERNAL_TITLE_ARROW, breadcrumb_schema, collection_page_schema, jsonld_script
 from open_graph import THEME_COLOR_META, open_graph_meta
 from site_footer import download_link, site_footer
@@ -108,6 +109,25 @@ def repository_card(record: dict, language: str, use_pro: bool) -> str:
 </article>'''
 
 
+# Fields of a category's JSON twin: the visible card facts and the scan provenance behind them.
+CATEGORY_RECORD_FIELDS = ('id', 'full_name', 'url', 'description_en', 'description_zh', 'description_language', 'topics',
+                          'stars', 'license', 'pushed_at', 'observed_at', 'targets', 'category', 'readme_url', 'readme_sha256',
+                          'verification')
+# Category pages describe automatic README scans; their twins say so in every language.
+INDEX_NOTE = ('Automatically discovered repository index: not individually curated, reviewed or execution-tested. Stars, '
+              'licenses and last-push times are collection-time snapshots.',
+              '自动发现的仓库索引：未逐项精选、审核或运行验证。星标、许可证与最近推送时间均为采集时快照。')
+
+
+def category_document(category: str, records: list[dict], site_url: str, snapshot: str) -> dict:
+    """The bilingual JSON twin of one category page: its listed repositories in page order."""
+    return {'version': 1, 'kind': 'repository-category', 'category': category, 'labels': list(CATEGORIES[category]),
+            'verification': 'automated-readme-scan', 'note': INDEX_NOTE[0], 'note_zh': INDEX_NOTE[1], 'snapshot': snapshot,
+            'page_url': site_url + browse_path('en', category), 'page_url_zh': site_url + browse_path('zh', category),
+            'count': len(records),
+            'repositories': [{key: record[key] for key in CATEGORY_RECORD_FIELDS if key in record} for record in records]}
+
+
 def build_browse_pages(
     output: Path,
     source_document: dict | None,
@@ -153,6 +173,9 @@ def build_browse_pages(
     scan_date = str(source_document.get('meta', {}).get('published_at' if published else 'completed_at') or '')[:10]
     canonical_urls = []
     rendered = {}
+    for category in CATEGORIES:
+        rendered[browse_path('en', category).lstrip('/') + COLLECTION_JSON] = json_text(
+            category_document(category, groups[category], site_url, scan_date))
     for language in ('en', 'zh'):
         zh = language == 'zh'
         locale = 'zh-CN' if zh else 'en'
@@ -226,6 +249,7 @@ def build_browse_pages(
   <link rel="alternate" hreflang="en" href="{english_url}">
   <link rel="alternate" hreflang="zh-CN" href="{chinese_url}">
   <link rel="alternate" hreflang="x-default" href="{english_url}">
+  {alternate_links(markdown=path + MARKDOWN, json_href=(browse_path('en', category) + COLLECTION_JSON) if category else '/api/v1/categories.json')}
   {open_graph_meta(language=language, title=title, description=description, image_url=social_image_href, url=canonical)}
   <link rel="icon" href="{escape(favicon_href, quote=True)}" type="image/svg+xml">
   <link rel="stylesheet" href="{escape(styles_href, quote=True)}">
@@ -271,6 +295,24 @@ def build_browse_pages(
                     for entry in source_document['meta']['capture_sources'])
                 document = document.replace('</details>', '<p>' + evidence_links + '</p></details>', 1)
             rendered[path.lstrip('/') + 'index.html'] = document
+            # The Markdown twin lists the same cards: upstream links with the snapshot facts.
+            if category:
+                entries = [{'name': record.get('full_name') or record['name'], 'url': record['url'],
+                            'description': record[f'description_{language}'] or description_fallback(record, language),
+                            'meta': ' · '.join(part for part in (
+                                f"{record['stars']:,} {'星标' if zh else 'stars'}" if isinstance(record.get('stars'), int) else '',
+                                (record.get('license') if record.get('license') not in (None, '', 'NOASSERTION') else ''),
+                                (('最近推送 ' if zh else 'last push ') + record['pushed_at'][:7]) if isinstance(record.get('pushed_at'), str) else '') if part)}
+                           for record in groups[category]]
+            else:
+                entries = [{'name': labels[language_index], 'url': site_url + browse_path(language, slug) + MARKDOWN,
+                            'meta': f'{len(groups[slug]):,} 个仓库' if zh else f'{len(groups[slug]):,} repositories'}
+                           for slug, labels in CATEGORIES.items()]
+            rendered[path.lstrip('/') + MARKDOWN] = collection_markdown(
+                title=label, description=description, language=language, canonical=canonical, items=entries,
+                notes=[INDEX_NOTE[language_index], date_text],
+                json_url=site_url + ((browse_path('en', category) + COLLECTION_JSON) if category else '/api/v1/categories.json'),
+                counterpart=site_url + counterpart + MARKDOWN)
             canonical_urls.append(canonical)
 
     # Clear only this generator's output, preventing stale category pages across builds.

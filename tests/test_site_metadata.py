@@ -156,6 +156,12 @@ class SecurityHeaderTests(unittest.TestCase):
             '/downloads/awesome-rea-data.zip': {'content-type': 'application/zip'},
             '/evidence/source-scans/*': {'content-type': 'application/zip'},
             '/badges/*': {'content-type': 'image/svg+xml'},
+            # Agent formats: JSON Feeds, the full-catalog Markdown, Markdown twins and the static API.
+            **{route: {'content-type': 'application/feed+json; charset=utf-8'} for route in ('/feed.json', '/zh/feed.json')},
+            **{route: {'content-type': 'text/plain; charset=utf-8'} for route in ('/llms-full.txt', '/zh/llms-full.txt')},
+            '/*/index.md': {'link': '<https://awesomerea.org/:splat/>; rel="canonical"'},
+            '/api/*': {**no_cache, 'access-control-allow-origin': '*'},
+            '/api/v1/*.csv': {'content-type': 'text/csv; charset=utf-8'},
             **{host: {'x-robots-tag': 'noindex'} for host in ('https://:project.pages.dev/*',
                                                               'https://:version.:project.pages.dev/*')},
         })

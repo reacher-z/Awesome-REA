@@ -8,8 +8,8 @@ Every URL lists its English, Chinese and x-default alternates, as the page's own
 ``lastmod`` comes from the records the page shows, never from the build time, so rebuilding a commit gives
 the same files: an entry page uses the later of its record's ``added_at`` and ``verified_at``, a listing the
 newest of its records, the repository pages the selection's publication time, the discovery list its latest
-ingest, the survey its version date, and the catalog-wide pages (home, about) the newest of all of
-those. A page whose text no dated record describes, such as the contribution guide, has no ``lastmod``.
+ingest, the survey its version date, the catalog-wide pages (home, about) the newest of all of those, and
+the API guide the newest of those and both unreviewed queues, like the API's own generated_at. A page whose text no dated record describes, such as the contribution guide, has no ``lastmod``.
 """
 from __future__ import annotations
 
@@ -79,7 +79,8 @@ def record_date(record: dict) -> str | None:
 
 
 def page_dates(*, resources: list[dict], papers: list[dict], repository_document: dict | None = None,
-               discovery_batches: list[dict] | None = None, survey_date: str | None = None) -> dict[str, str]:
+               discovery_batches: list[dict] | None = None, lead_batches: list[dict] | None = None,
+               survey_date: str | None = None) -> dict[str, str]:
     """Map every dated English page path to its lastmod; the /zh/ page of a pair shares its date."""
     dates: dict[str, str] = {}
     for record in resources:
@@ -111,6 +112,10 @@ def page_dates(*, resources: list[dict], papers: list[dict], repository_document
     if catalog:
         for path in CATALOG_PAGES:
             dates[path] = catalog
+    # The API guide shows the API's generated_at: the newest of the catalog and both unreviewed queues.
+    api = latest((catalog, discoveries, latest(batch.get('collected_at') for batch in lead_batches or [])))
+    if api:
+        dates['/api/'] = api
     return dates
 
 

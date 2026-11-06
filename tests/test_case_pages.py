@@ -76,7 +76,8 @@ class CaseDocument(HTMLParser):
         if tag == 'link':
             if values.get('rel') == 'canonical':
                 self.canonical.append(values['href'])
-            if values.get('rel') == 'alternate':
+            # Language alternates; format alternates (Markdown, JSON, feeds) carry no hreflang.
+            if values.get('rel') == 'alternate' and 'hreflang' in values:
                 self.alternates[values['hreflang']] = values['href']
             if values.get('rel') == 'stylesheet':
                 self.styles.append(values['href'])
