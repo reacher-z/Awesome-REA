@@ -18,6 +18,8 @@ BEGIN = '<!-- BEGIN GENERATED CATALOG -->'
 END = '<!-- END GENERATED CATALOG -->'
 PAPERS_BEGIN = '<!-- BEGIN GENERATED PAPERS -->'
 PAPERS_END = '<!-- END GENERATED PAPERS -->'
+FINDER_BEGIN = '<!-- BEGIN GENERATED FINDER -->'
+FINDER_END = '<!-- END GENERATED FINDER -->'
 CONTENTS_BEGIN = '<!-- BEGIN GENERATED CONTENTS -->'
 CONTENTS_END = '<!-- END GENERATED CONTENTS -->'
 BADGES_BEGIN = '<!-- BEGIN GENERATED BADGES -->'
@@ -28,6 +30,7 @@ READMES = {'en': 'README.md', 'zh': 'README.zh-CN.md'}
 # README's GitHub rendering limit.
 PAPER_FILES = {'en': 'docs/papers.md', 'zh': 'docs/papers.zh-CN.md'}
 RECENT_PAPERS = 10
+HUGGING_FACE_DATASET = 'https://huggingface.co/datasets/AgPerry/awesome-rea'
 RESOURCE_SOURCES = ('data/rea-resources.json', 'data/tool-resources.json')
 INDEX_SOURCES = ('data/source-index.json', 'data/source-scope.json', 'data/source-supplements/')
 CATEGORIES = {
@@ -166,6 +169,7 @@ INDEX_HEADINGS = ('Full Repository Index', '完整仓库索引')
 # The authored second-level headings Contents lists around the generated Resources and Papers sections.
 README_HEADINGS = {
     'find-by-task': ('Find by task', '按任务查找'),
+    'data': ('Use the data', '使用数据'),
     'resources': ('Resources', '资源'),
     'papers': ('Papers', '论文'),
     'index': INDEX_HEADINGS,
@@ -446,6 +450,7 @@ def render_contents(records, papers, index_count, language):
     # Papers counts every paper; its one subsection lists the newest, and the topics live in the paper files.
     paper_sections = [item(RECENT_HEADING, 'papers-recent', len(recent_papers(papers)))] if papers else []
     lines = ['- ' + item(README_HEADINGS['find-by-task']),
+             '- ' + item(README_HEADINGS['data']),
              '- ' + item(README_HEADINGS['resources'], count=sum(counts.values()))]
     lines += ['  - ' + line for line in sections]
     lines += ['- ' + item(README_HEADINGS['papers'], 'papers', len(papers))]
@@ -455,6 +460,69 @@ def render_contents(records, papers, index_count, language):
     # Contributing stays out of the list (awesome-lint's ToC check excludes it) but keeps its Contents link.
     lines += ['', ('本页还有：[参与贡献](#参与贡献)' if zh else 'Also on this page: [Contributing](#contributing)')]
     return '\n'.join(lines) + '\n'
+
+
+# One line per catalog section for the front-page finder table; wording is checked against the section's contents.
+FINDER_BLURBS = {
+    'website': ('Tools and cases for inspecting, deobfuscating and rebuilding websites',
+               '用于检查、反混淆和重建网站的工具与案例'),
+    'game': ('Decompilations, recompilations, ports, engine reimplementations, analysis tools and cases',
+            '反编译、重编译、移植、引擎重新实现，以及分析工具与案例'),
+    'app': ('Analysis tools and cases for Android, .NET, JVM and Electron apps',
+           '面向 Android、.NET、JVM 和 Electron 应用的分析工具与案例'),
+    'native-binary': ('Disassemblers, decompilers, debuggers, binary libraries, diffing tools and native cases',
+                     '反汇编器、反编译器、调试器、二进制分析库、差异比较工具及原生二进制案例'),
+    'firmware': ('Firmware extraction and analysis tools, plus hardware and device-image cases',
+                '固件提取与分析工具，以及硬件和设备镜像案例'),
+    'protocol': ('Tools and cases for wire formats, device protocols and packet captures',
+                '面向通信数据格式、设备协议和抓包数据的工具与案例'),
+    'agents-and-mcp': ('Official REA material, MCP servers, integrations and agent workflows, labelled by REA relationship',
+                      'REA 官方资料、MCP 服务器、集成与智能体工作流程，按其与 REA 的关系标注'),
+    'related-collections': ('Other curated lists on reverse engineering and related security topics',
+                           '逆向工程及相关安全主题的其他精选合集'),
+    'references-and-learning': ('Documentation, investigation guides, labs and learning resources',
+                               '文档、分析指南、实验练习与学习资源'),
+    'papers': ('Research bibliography, kept in generated paper lists',
+              '研究论文书目，列于自动生成的论文列表'),
+    'index': ('Public repositories found by README scans; unreviewed, not recommendations',
+             '通过 README 扫描发现的公开仓库；未经复核，不构成推荐'),
+}
+FINDER_HEADER = (('Section', 'What you will find', 'Entries'), ('分区', '内容', '条目'))
+
+
+def render_finder(records, papers, index_count, language):
+    """Compact table of every catalog section with its live count, so the first screens show what exists and where.
+    Cells are padded to equal widths because awesome-lint compares pipe offsets."""
+    zh = language == 'zh'
+    paper_urls = {paper['url'] for paper in papers}
+    counts = Counter(collection_section(record) for record in records if record['url'] not in paper_urls)
+    rows = []
+
+    def add(labels, explicit, key, count, anchor=None):
+        label = labels[int(zh)]
+        link = anchor or (f'#{explicit}' if zh and explicit else heading_anchor(label))
+        rows.append((f'[{label}]({link})', FINDER_BLURBS[key][int(zh)], f'{count:,}'))
+
+    for section in COLLECTION_SECTIONS:
+        if counts[section]:
+            add(COLLECTION_SECTIONS[section], section, section, counts[section])
+    if papers:
+        add(README_HEADINGS['papers'], 'papers', 'papers', len(papers))
+    add(README_HEADINGS['index'], None, 'index', index_count)
+    header = FINDER_HEADER[int(zh)]
+    widths = [max(len(row[column]) for row in [header, *rows]) for column in range(3)]
+    line = lambda row: '| ' + ' | '.join(cell.ljust(width) if column < 2 else cell.rjust(width)
+                                          for column, (cell, width) in enumerate(zip(row, widths))) + ' |'
+    rule = '| ' + ' | '.join('-' * (width - 1) + (':' if column == 2 else '-') for column, width in enumerate(widths)) + ' |'
+    return '\n'.join([line(header), rule, *map(line, rows)]) + '\n\n'
+
+
+def render_contents_details(records, papers, index_count, language):
+    """The nested Contents list stays in the README for awesome-lint's ToC check; the finder table above it is what
+    readers use, so the list opens only on request."""
+    summary = '全部分区与小节' if language == 'zh' else 'All sections and subsections'
+    return (f'<details>\n<summary>{summary}</summary>\n\n'
+            + render_contents(records, papers, index_count, language) + '\n</details>\n')
 
 
 def render_totals(records, papers, index_count, language):
@@ -478,25 +546,30 @@ def render_totals(records, papers, index_count, language):
 
 
 def render_badges(records, papers, language):
-    """Report catalog populations, not execution verification or additive totals. There is no CI badge:
-    awesome lists must not carry one, and the footer already links the validate workflow's runs."""
+    """Report catalog populations, not execution verification or additive totals. Six badges at most. The last badge
+    reads the date of the newest commit under data/discoveries/ live, so the README is not regenerated on every scan.
+    There is no CI badge: awesome lists must not carry one, and the footer already links the validate workflow's runs."""
     zh = language == 'zh'
     prefix = 'https://awesomerea.org/' + ('zh/' if zh else '')
+    style = '?style=flat-square&labelColor=2B2F3A'
 
-    def badge(label, value, target, color='53309C'):
+    def badge(label, value, target, color='6B5159'):
         component = lambda text: quote(str(text).replace('-', '--').replace('_', '__'), safe='')
-        image = (f'https://img.shields.io/badge/{component(label)}-{component(value)}-{color}'
-                 '?style=flat-square&labelColor=303447')
+        image = f'https://img.shields.io/badge/{component(label)}-{component(value)}-{color}{style}'
         return f'[![{label}: {value}]({image})]({target})'
 
     cases = sum(record['kind'] == 'case-study' for record in records)
-    labels = ('精选资源', '案例', '论文', '许可', '网站') if zh else ('resources', 'cases', 'papers', 'license', 'website')
+    labels = (('精选资源', '案例', '论文', '最近入库', '数据集', '许可') if zh
+              else ('resources', 'cases', 'papers', 'last discovery ingest', 'dataset', 'license'))
+    commit = ('https://img.shields.io/github/last-commit/reacher-z/Awesome-REA/main?path=data%2Fdiscoveries'
+              f'&label={quote(labels[3])}&color=6B5159&labelColor=2B2F3A&style=flat-square')
     return ' '.join([
         badge(labels[0], f'{len(records):,}', prefix + 'resources/'),
         badge(labels[1], f'{cases:,}', prefix + 'cases/'),
         badge(labels[2], f'{len(papers):,}', prefix + 'papers/'),
-        badge(labels[3], 'MIT', 'LICENSE', '606779'),
-        badge(labels[4], 'awesomerea.org', prefix, '6235B5'),
+        f'[![{labels[3]}]({commit})](data/discoveries/README.md)',
+        badge(labels[4], 'Hugging Face', HUGGING_FACE_DATASET),
+        badge(labels[5], 'MIT', 'LICENSE', '5E6472'),
     ]) + '\n'
 
 
@@ -524,6 +597,16 @@ def replace_contents(content, rendered):
         raise ValueError('Contents END marker must follow BEGIN')
     _, after = rest.split(CONTENTS_END, 1)
     return before + CONTENTS_BEGIN + '\n' + rendered + CONTENTS_END + after
+
+
+def replace_finder(content, rendered):
+    if content.count(FINDER_BEGIN) != 1 or content.count(FINDER_END) != 1:
+        raise ValueError('Each README must contain exactly one BEGIN/END finder marker pair')
+    before, rest = content.split(FINDER_BEGIN, 1)
+    if FINDER_END not in rest:
+        raise ValueError('Finder END marker must follow BEGIN')
+    _, after = rest.split(FINDER_END, 1)
+    return before + FINDER_BEGIN + '\n' + rendered + FINDER_END + after
 
 
 def replace_catalog(content, rendered):
@@ -743,8 +826,10 @@ def rendered_files(records, papers, index_count):
         expected = replace_papers(expected, source_note('data/papers.json') + render_readme_papers(papers, language),
                                   language)
         expected = replace_contents(expected, source_note(*RESOURCE_SOURCES, 'data/papers.json', *INDEX_SOURCES)
-                                    + render_totals(records, papers, index_count, language)
-                                    + render_contents(records, papers, index_count, language))
+                                    + render_contents_details(records, papers, index_count, language))
+        expected = replace_finder(expected, source_note(*RESOURCE_SOURCES, 'data/papers.json', *INDEX_SOURCES)
+                                  + render_totals(records, papers, index_count, language)
+                                  + render_finder(records, papers, index_count, language))
         files[name] = replace_badges(expected, source_note(*RESOURCE_SOURCES, 'data/papers.json')
                                      + render_badges(records, papers, language))
     for language, name in PAPER_FILES.items():

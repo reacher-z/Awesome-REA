@@ -8,7 +8,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_readme import (CONTENTS_BEGIN, CONTENTS_END, browsable_index_count, render_contents,
+from build_readme import (FINDER_BEGIN, FINDER_END, replace_finder, browsable_index_count, render_contents, render_finder,
                           render_totals, replace_contents)
 from catalog import load_resources
 from validate_papers import read_papers
@@ -68,14 +68,14 @@ class ReadmeTotalsTest(unittest.TestCase):
             with self.subTest(readme=name):
                 text = (ROOT / name).read_text(encoding='utf-8')
                 # The block's first line names its generator; the totals line follows it.
-                block = text.split(CONTENTS_BEGIN + '\n', 1)[1].split(CONTENTS_END, 1)[0].split('\n', 1)[1]
+                block = text.split(FINDER_BEGIN + '\n', 1)[1].split(FINDER_END, 1)[0].split('\n', 1)[1]
                 line = render_totals(records, papers, index_count, language)
                 self.assertTrue(block.startswith(line), block[:200])
                 newer = deepcopy(records)
                 newer[0]['verified_at'] = '2999-01-01'
                 stale = render_totals(newer, papers, index_count, language)
                 self.assertNotEqual(stale, line)
-                regenerated = replace_contents(text, stale + render_contents(records, papers, index_count, language))
+                regenerated = replace_finder(text, stale + render_finder(records, papers, index_count, language))
                 self.assertNotEqual(regenerated, text)
                 self.assertNotEqual(render_totals(records, papers, index_count + 1, language), line)
 
