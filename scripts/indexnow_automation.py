@@ -4,8 +4,10 @@
 ``wait SHA DIST`` waits, bounded, until https://awesomerea.org serves the build in DIST: its public
 build-manifest.json must equal DIST/build-manifest.json byte for byte. The Cloudflare Pages check run on SHA
 tells a deployment still in progress from one that failed or that a newer commit replaced. It writes
-``state=live`` or ``state=superseded`` to $GITHUB_OUTPUT and exits 1 when the deployment failed, did not go
-live in time, or went live with bytes this build does not reproduce.
+``state=live``, ``state=superseded`` or ``state=late`` to $GITHUB_OUTPUT. ``late`` means the deployment is still
+pending after the wait: the run ends without notifying and without a receipt, and the next run sends these pages
+in its diff from the last receipt. It exits 1 when the deployment failed or went live with bytes this build does
+not reproduce.
 
 ``previous OUT`` downloads the receipt of the newest earlier successful run of the workflow on the default
 branch into OUT and writes that build's manifest digest as ``previous_sha256``. It writes an empty value when
@@ -84,7 +86,7 @@ def default_head(github) -> str:
 
 def wait_for_deployment(sha: str, dist: Path, *, github=None, fetch=fetch_bytes, clock=time.monotonic,
                         sleep=time.sleep, wait_seconds=WAIT_SECONDS) -> str:
-    """Return 'live' or 'superseded'; raise when the deployment cannot be confirmed as this build."""
+    """Return 'live', 'superseded' or 'late'; raise when the deployment failed or is not this build."""
     if not re.fullmatch(r'[0-9a-f]{40}', sha):
         raise ValueError('Expected a full commit SHA')
     expected = (Path(dist) / MANIFEST_NAME).read_bytes()
@@ -110,7 +112,9 @@ def wait_for_deployment(sha: str, dist: Path, *, github=None, fetch=fetch_bytes,
                 raise ValueError(f'awesomerea.org serves a different build than a fresh build of {sha[:12]}; '
                                  'the site build must be reproducible for IndexNow verification')
         if clock() > deadline:
-            raise ValueError(f'The deployment of {sha[:12]} did not go live within {wait_seconds // 60} minutes')
+            print(f'::notice::The deployment of {sha[:12]} did not go live within {wait_seconds // 60} minutes; '
+                  'the next run notifies its pages.', flush=True)
+            return 'late'
         print(f'Waiting for the deployment of {sha[:12]} (Cloudflare Pages: {state})', flush=True)
         sleep(POLL_SECONDS)
 
