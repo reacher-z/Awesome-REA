@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import build_readme
 from build_paper_pages import papers_newest_first
-from build_readme import (FULL_ENTRY, GITHUB_README_LIMIT, PAPER_FILES, PAPERS_BEGIN, PAPERS_END, README_SIZE_WARNING,
+from build_readme import (CASE_FILES, FULL_ENTRY, GITHUB_README_LIMIT, PAPER_FILES, PAPERS_BEGIN, PAPERS_END, README_SIZE_WARNING,
                           READMES, RECENT_PAPERS, lead_sentence, paper_line, readme_size_warnings, rendered_files,
                           size_warning)
 from catalog import load_resources
@@ -136,11 +136,13 @@ class OneLineEntryTest(unittest.TestCase):
         resources = [record for record in load_resources() if record['url'] not in paper_urls]
         newest = papers_newest_first(papers)[:RECENT_PAPERS]
         for name, index in (('README.md', 0), ('README.zh-CN.md', 1),
+                            (CASE_FILES['en'], 0), (CASE_FILES['zh'], 1),
                             (PAPER_FILES['en'], 0), (PAPER_FILES['zh'], 1)):
             prefix = 'zh/' if index else ''
             text = (ROOT / name).read_text(encoding='utf-8')
             lines = [line for line in text.splitlines() if line.startswith('- [**')]
-            groups = ((('resources', resources), ('papers', newest)) if name.startswith('README')
+            groups = ((('resources', [record for record in resources if record['kind'] != 'case-study'] + [record for record in resources if record['kind'] == 'case-study' and f'/resources/{record["id"]}/)</sub>' in text]), ('papers', newest)) if name.startswith('README')
+                      else (('resources', [record for record in resources if record['kind'] == 'case-study']),) if name.startswith('docs/cases')
                       else (('papers', papers),))
             with self.subTest(file=name):
                 self.assertEqual(len(lines), sum(len(records) for _, records in groups))

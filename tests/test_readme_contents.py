@@ -215,6 +215,20 @@ class ReadmeContentsTest(unittest.TestCase):
                     end = next((later.start() for later in headings[position + 1:] if len(later[1]) <= len(heading[1])),
                                len(body))
                     entries = len(re.findall(r'^- \[\*\*', body[heading.end():end], re.MULTILINE))
+                    if heading[1] == '###' or heading[2] in ('Resources', '资源'):
+                        case_text = (ROOT / ('docs/cases.zh-CN.md' if name.endswith('zh-CN.md') else 'docs/cases.md')).read_text(encoding='utf-8')
+                        case_ids = set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', case_text, re.M))
+                        if heading[1] == '###':
+                            anchor = re.search(r'<a id="([^"]+)"></a>\s*$', body[:heading.start()])
+                            if anchor and f'<a id="{anchor[1]}"></a>' in case_text:
+                                section = case_text.split(f'<a id="{anchor[1]}"></a>', 1)[1]
+                                next_heading = re.search(r'\n<a id="[a-z-]+"></a>\n## ', section)
+                                section = section[:next_heading.start()] if next_heading else section
+                                case_ids = set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', section, re.M))
+                            else:
+                                case_ids = set()
+                        shown = set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', body[heading.end():end], re.M))
+                        entries += len(case_ids - shown)
                     self.assertEqual(int(count[1].replace(',', '')), entries, heading[2])
                     counted += 1
                 self.assertGreater(counted, 10)

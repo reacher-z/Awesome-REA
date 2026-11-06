@@ -117,7 +117,7 @@ class AwesomeLintReportTests(unittest.TestCase):
         self.assertIn('name: awesome-lint-report', text)
         for trigger in ('push', 'pull_request'):
             block = re.search(rf'\n  {trigger}:\n((?:    .*\n)+)', text)[1]
-            for path in ("'README*.md'", "'docs/papers*.md'", 'scripts/build_readme.py', "'tests/awesome-lint/**'"):
+            for path in ("'README*.md'", "'docs/papers*.md'", "'docs/cases*.md'", 'scripts/build_readme.py', "'tests/awesome-lint/**'"):
                 self.assertIn(f'      - {path}\n', block)
         self.assertIn('branches: [main]', text.split('\n  pull_request:')[0])
         for action in re.findall(r'uses: (\S+)', text):

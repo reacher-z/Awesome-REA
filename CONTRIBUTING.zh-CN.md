@@ -79,7 +79,7 @@ python3 scripts/build_site.py
 node --check site/app.js
 ```
 
-两个 README 中每个条目只占一行：名称链接、说明首句、标签，以及指向网站条目页的“完整条目”链接；完整说明、使用条件和证据保留在条目页上，因此说明首句应能独立概括条目。论文行格式相同，但每个 README 只列出最新的 10 篇（按年份和已记录的发表日期从新到旧），并按主题链接到完整论文列表 [docs/papers.md](docs/papers.md) 和 [docs/papers.zh-CN.md](docs/papers.zh-CN.md)。这两个列表由 `build_readme.py` 生成，新增论文不会使 README 变大。GitHub 只渲染 README 的前 500 KiB（512,000 字节），所以 `build_readme.py` 会报告两个 README 和两个论文列表的大小；任一 README 超过 420,000 字节时，它和 `validate.py` 会给出警告，但不会使检查失败。
+两个 README 中每个条目只占一行：名称链接、说明首句、标签，以及指向网站条目页的“完整条目”链接；完整说明、使用条件和证据保留在条目页上，因此说明首句应能独立概括条目。每个 README 分区列出最新的 10 个案例，并链接到完整案例列表 [docs/cases.md](docs/cases.md) 和 [docs/cases.zh-CN.md](docs/cases.zh-CN.md)。论文行格式相同，但每个 README 只列出最新的 10 篇（按年份和已记录的发表日期从新到旧），并按主题链接到完整论文列表 [docs/papers.md](docs/papers.md) 和 [docs/papers.zh-CN.md](docs/papers.zh-CN.md)。案例和论文列表均由 `build_readme.py` 生成。GitHub 只渲染 README 的前 500 KiB（512,000 字节），所以 `build_readme.py` 会报告两个 README 及案例和论文列表的大小；任一 README 或案例列表超过 420,000 字节时，它和 `validate.py` 会给出警告，但不会使检查失败。
 
 运行全部测试（需要 Node.js，不访问网络）：
 
@@ -111,7 +111,7 @@ Pull request 会收到由基础分支可信代码执行的[规则审核（英文
 
 `main` 只合并与其同步的分支。多数目录 PR 会修改相同的生成文件，并向同一批 JSON 数组末尾追加记录，所以别的 PR 合并后，你的分支常会落后或出现冲突。请在本地运行 `git fetch origin` 和 `git rebase origin/main`，先解决数据冲突，再用合并后的数据重新生成文件：
 
-- **生成文件**：`README.md` 与 `README.zh-CN.md` 中的 `BEGIN GENERATED …` 和 `BEGIN REPOSITORY INDEX SUMMARY` 区块、论文列表 `docs/papers.md` 和 `docs/papers.zh-CN.md`、`docs/repositories/` 下的全部页面，以及 `docs/case-coverage.md` 和 `docs/case-coverage.zh-CN.md`。直接采用 `main` 的版本（例如 `git checkout origin/main -- README.md README.zh-CN.md docs/papers.md docs/papers.zh-CN.md`），数据冲突解决后重新生成；不要手动合并或编辑这些文件。README 每个区块和每个论文列表内的第一行注明了生成脚本和数据来源。若分支还修改了区块之外的手写 README 文字，请重新应用该修改。
+- **生成文件**：`README.md` 与 `README.zh-CN.md` 中的 `BEGIN GENERATED …` 和 `BEGIN REPOSITORY INDEX SUMMARY` 区块、论文列表 `docs/papers.md` 和 `docs/papers.zh-CN.md`、案例列表 `docs/cases.md` 和 `docs/cases.zh-CN.md`、`docs/repositories/` 下的全部页面，以及 `docs/case-coverage.md` 和 `docs/case-coverage.zh-CN.md`。直接采用 `main` 的版本，数据冲突解决后重新生成；不要手动合并或编辑这些文件。README 每个区块和每个生成列表内的第一行注明了生成脚本和数据来源。若分支还修改了区块之外的手写 README 文字，请重新应用该修改。
 - **数据文件**：`data/*.json` 与 `site/translations.zh-CN.json` 要保留双方的记录，即 `main` 新增或修改的记录和你的分支新增或修改的记录。新记录追加在数组末尾，先放 `main` 的，再放你的。每个 ID 只能出现一次：验证器会拒绝重复的记录 ID，而 `site/translations.zh-CN.json` 中重复的键会悄悄覆盖前一个。`data/case-coverage.json` 合并双方的条目修改后，要用[英文指南](CONTRIBUTING.md#update-a-pull-request)中的命令重新计算 `counts`，否则 `validate.py` 会报告 `derived counts differ`。
 - **JSON 格式**：保持两个空格缩进、非 ASCII 字符直接写出（不转义为 `\u`）、原有键顺序和文件末尾换行，也就是 `json.dumps(value, ensure_ascii=False, indent=2)` 再加 `'\n'` 的输出。
 - **测试中的 ID 列表**（如 `tests/test_paper_citations.py` 中带引用元数据的论文集合）取双方的并集。

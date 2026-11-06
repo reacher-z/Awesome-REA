@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import build_readme
 from build_paper_pages import papers_newest_first
-from build_readme import (PAPER_FILES, PAPERS_BEGIN, PAPERS_END, READMES, RECENT_PAPERS, paper_line, paper_section,
+from build_readme import (CASE_FILES, PAPER_FILES, PAPERS_BEGIN, PAPERS_END, READMES, RECENT_PAPERS, paper_line, paper_section,
                           render_paper_file)
 from validate import markdown_anchors
 from validate_papers import read_papers
@@ -118,7 +118,7 @@ class PaperFileTest(unittest.TestCase):
                 for name in PAPER_FILES.values():
                     self.assertIn(f'`{name}`', line)
                 if path.startswith('CONTRIBUTING'):
-                    self.assertIn('git checkout origin/main -- README.md README.zh-CN.md docs/papers.md docs/papers.zh-CN.md', line)
+                    self.assertIn('docs/cases.md', line)
 
     def test_check_fails_when_a_paper_file_is_stale_or_missing(self):
         # Contents carries the repository index count; reuse the README's own so only paper files can drift.
@@ -128,7 +128,7 @@ class PaperFileTest(unittest.TestCase):
             root = Path(temporary)
             for directory in ('data', 'docs', 'site'):
                 (root / directory).mkdir()
-            for name in ('data/papers.json', 'site/translations.zh-CN.json', *READMES.values(), *PAPER_FILES.values()):
+            for name in ('data/papers.json', 'site/translations.zh-CN.json', *READMES.values(), *PAPER_FILES.values(), *CASE_FILES.values()):
                 shutil.copyfile(ROOT / name, root / name)
 
             def run(*arguments):
