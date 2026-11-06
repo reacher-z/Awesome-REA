@@ -27800,5 +27800,321 @@
     "added_at": "2026-11-06",
     "relationship": "foundation",
     "kind": "tool"
+  },
+  {
+    "id": "gdbgui",
+    "name": "gdbgui",
+    "url": "https://github.com/cs01/gdbgui",
+    "category": "dynamic-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Browser-based frontend to the GNU debugger, gdb.",
+    "description_zh": "GNU 调试器 gdb 的浏览器前端。",
+    "requirements": [
+      "Documentation lives on gdbgui.com; release 0.15.3.0 was published on 2025-06-29.",
+      "GPL-3.0 per LICENSE."
+    ],
+    "evidence_url": "https://github.com/cs01/gdbgui/blob/773b9161729e75a6de57fb47bd084576e31de59a/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "android-unpacker",
+    "name": "Android Unpacker",
+    "url": "https://github.com/strazzere/android-unpacker",
+    "category": "android",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Code and slides from the Defcon 22 talk \"Android Hacker Protection Level 0\". It holds a gdb and adb script for Bangcle and SecShell, a native unpacker for APKProtect, Bangcle, LIAPP and Qihoo Packer, tweaks that hide QEMU and debuggers from APKProtect, and a Corellium-based dynamic unpacking approach with automation.",
+    "description_zh": "Defcon 22 演讲“Android Hacker Protection Level 0”的代码与幻灯片。其中包括针对 Bangcle 和 SecShell 的 gdb 与 adb 脚本，针对 APKProtect、Bangcle、LIAPP 和 Qihoo Packer 的原生脱壳工具，向 APKProtect 隐藏 QEMU 与调试器的调整，以及基于 Corellium、带自动化的动态脱壳方法。",
+    "requirements": [
+      "The gdb-scripts unpacker requires gdb and adb; the native unpacker does not depend on gdb. The newest tagged release is v1.2 from 2014-09-11.",
+      "Apache-2.0 per LICENSE.txt."
+    ],
+    "evidence_url": "https://github.com/strazzere/android-unpacker/blob/968ed234217edd16212738473f6493515e3d585b/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "porosity",
+    "name": "Porosity",
+    "url": "https://github.com/msuiche/porosity",
+    "category": "native-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Decompiler that turns Ethereum Virtual Machine bytecode into readable Solidity-syntax contracts, supported on Linux and macOS.",
+    "description_zh": "把以太坊虚拟机字节码反编译为可读的 Solidity 语法合约的工具，支持 Linux 和 macOS。",
+    "requirements": [
+      "The README marks the project unmaintained and points to the JEB decompiler for smart contracts as an alternative; the newest release is v20180116.2 from 2018-01-16.",
+      "The repository has no license file."
+    ],
+    "evidence_url": "https://github.com/msuiche/porosity/blob/b407155d5d7d25d5e73b14fad44377f047a3b529/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "reverseapk",
+    "name": "ReverseAPK",
+    "url": "https://github.com/1N3/ReverseAPK",
+    "category": "android",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Command-line tool that decompiles an APK to Java and Smali, lists the extracted files, and statically checks AndroidManifest.xml and the source for common vulnerabilities and behaviours such as intents, command execution, content providers, crypto references and hardcoded secrets.",
+    "description_zh": "命令行工具，可把 APK 反编译为 Java 和 Smali，列出提取的文件，并静态检查 AndroidManifest.xml 与源代码中的常见漏洞和行为，例如 Intent、命令执行、Content Provider、加密引用和硬编码密钥。",
+    "requirements": [
+      "Installed with the bundled install script and run as reverse-apk with an APK name; the README describes version 1.2.",
+      "The repository has no license file."
+    ],
+    "evidence_url": "https://github.com/1N3/ReverseAPK/blob/74b33e444bd98aeb3ebc8d3d68333c3d087c3cbb/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "xori",
+    "name": "Xori",
+    "url": "https://github.com/endgameinc/xori",
+    "category": "native-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Automation-ready disassembly and static analysis library for shellcode and PE binaries that outputs disassembly, functions and imports as JSON. It offers a light emulation mode that enumerates all paths and a slower full emulation mode, simulated TEB and PEB structures, and FLIRT-style signatures.",
+    "description_zh": "面向自动化的反汇编与静态分析库，处理 shellcode 和 PE 二进制文件，并以 JSON 输出反汇编、函数和导入表。它提供枚举所有路径的轻量模拟模式和较慢的完整模拟模式，以及模拟的 TEB、PEB 结构和 FLIRT 风格签名。",
+    "requirements": [
+      "Covers i386 and x86-64 PE, PE+ and plain shellcode. Built with Rust and Cargo; the README cites rustc 1.27.0, and the browser GUI needs Node.js.",
+      "AGPL-3.0 per LICENSE.txt."
+    ],
+    "evidence_url": "https://github.com/endgameinc/xori/blob/d58a7427ee7928a92e32cd8fe6d1153b2aaf5568/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "binglide",
+    "name": "binglide",
+    "url": "https://github.com/wapiflapi/binglide",
+    "category": "native-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Visual reverse-engineering tool that gives a quick overview of the data types present in a file. It reads no particular format, so it also works when headers are missing or corrupted or the format is unknown.",
+    "description_zh": "可视化逆向工具，用于快速了解文件中存在的数据类型。它不依赖任何特定文件格式，因此在文件头缺失或损坏、格式未知时也能使用。",
+    "requirements": [
+      "Needs Python 3, PyQt4 with OpenGL, pyqtgraph and numpy, with numba for JIT speed-ups. The author points to Veles as a more mature successor.",
+      "MIT per LICENSE.txt."
+    ],
+    "evidence_url": "https://github.com/wapiflapi/binglide/blob/60168d8831279321d0f8402021d2372274252e09/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "eresi",
+    "name": "ERESI",
+    "url": "https://github.com/thorkill/eresi",
+    "category": "native-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Reverse Engineering Software Interface built around ELFsh, an interactive and scriptable shell for reading and modifying ELF objects, and e2dbg, an embedded ELF debugger. ELFsh analyses sections, edits headers and symbol and relocation tables, disassembles through libasm, draws control-flow graphs and injects code into ELF files.",
+    "description_zh": "逆向工程软件接口，核心是 ELFsh 和 e2dbg：前者是可交互、可脚本化的 ELF 对象读取与修改 shell，后者是嵌入式 ELF 调试器。ELFsh 可分析节，编辑文件头、符号表和重定位表，通过 libasm 反汇编，绘制控制流图，并向 ELF 文件注入代码。",
+    "requirements": [
+      "README.FIRST describes ELFsh 0.65 and is marked as not updated for ERESI 0.8; e2dbg is described for Linux on IA32. The newest release is 0.83-a3-phoenix from 2018-07-09.",
+      "The repository has no top-level license file."
+    ],
+    "evidence_url": "https://github.com/thorkill/eresi/blob/4769c1750918742d3e18bf879acb7bbf85978d1e/README.FIRST",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "pixd",
+    "name": "pixd",
+    "url": "https://github.com/FireyFly/pixd",
+    "category": "native-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Terminal tool that visualises binary data like a hexdump, but draws each octet as a coloured square from a palette.",
+    "description_zh": "终端工具，以类似十六进制转储的方式可视化二进制数据，但把每个字节画成调色板中的彩色方块。",
+    "requirements": [
+      "Needs a terminal emulator that supports 24-bit colour SGR escape sequences.",
+      "MIT per LICENSE."
+    ],
+    "evidence_url": "https://github.com/FireyFly/pixd/blob/f49add4626b12b85ed20da831a6741580d0b18f6/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "universal-extractor-2",
+    "name": "Universal Extractor 2",
+    "url": "https://github.com/Bioruebe/UniExtract2",
+    "category": "native-analysis",
+    "targets": [
+      "binary",
+      "game"
+    ],
+    "description_en": "Unofficial, extended continuation of Universal Extractor that unpacks files from standard archives, application installers, disk images and game archives. Version 2 adds batch mode, a scan-only mode that detects a file's type, password lists and silent mode.",
+    "description_zh": "Universal Extractor 的非官方扩展延续版本，可从标准压缩包、应用安装程序、磁盘映像和游戏归档中解包文件。第 2 版增加了批处理模式、只检测文件类型的扫描模式、密码列表和静默模式。",
+    "requirements": [
+      "Runs on Windows XP or newer; on XP online features are disabled and some extractors may not work. The README links v2.0.0-rc.3.",
+      "GPL-2.0 per LICENSE."
+    ],
+    "evidence_url": "https://github.com/Bioruebe/UniExtract2/blob/9719ac988421e48276420e2f33e09087cfbacf8d/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "ellekit",
+    "name": "ElleKit",
+    "url": "https://github.com/tealbathingsuit/ellekit",
+    "category": "dynamic-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Function hooking toolkit for arm64 XNU devices: a C function hooker that patches memory pages directly, an Objective-C function hooker, an arm64 assembler, JIT inline assembly for Swift and a reimplementation of the Substrate and libhooker APIs. The README lists the Dopamine, palera1n and meowbrek2 jailbreaks as users.",
+    "description_zh": "面向 arm64 XNU 设备的函数钩子工具包：包括直接修补内存页的 C 函数钩子、Objective-C 函数钩子、arm64 汇编器、Swift JIT 内联汇编，以及 Substrate 和 libhooker API 的重新实现。README 列出 Dopamine、palera1n 和 meowbrek2 越狱工具为其使用者。",
+    "requirements": [
+      "Needs an arm64 device running the XNU kernel. Tested on iOS 15-27 (arm64), iOS 15-17 (arm64e) and macOS Ventura; the README says it is unsupported on the latest macOS because of code-signing changes.",
+      "BSD-3-Clause per LICENSE."
+    ],
+    "evidence_url": "https://github.com/tealbathingsuit/ellekit/blob/1017a0d09606ea49ba8bc4d6cccc530d372e640e/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "xhook",
+    "name": "xHook",
+    "url": "https://github.com/iqiyi/xHook",
+    "category": "android",
+    "targets": [
+      "app"
+    ],
+    "description_en": "PLT hook library for Android native ELF executables and shared libraries. It handles ELF HASH and GNU HASH symbols and SLEB128-encoded relocations, selects targets with regular expressions, and needs no root or system permissions.",
+    "description_zh": "面向 Android 原生 ELF 可执行文件和共享库的 PLT 钩子库。它支持 ELF HASH 和 GNU HASH 符号以及 SLEB128 编码的重定位信息，可用正则表达式选择目标，无需 root 或系统权限。",
+    "requirements": [
+      "Supports Android 4.0 to 10 on armeabi, armeabi-v7a, arm64-v8a, x86 and x86_64; building takes Android NDK r16b.",
+      "MIT for the code per LICENSE, with documentation under a Creative Commons license per LICENSE-docs."
+    ],
+    "evidence_url": "https://github.com/iqiyi/xHook/blob/391d0c4103626bf39d54a1d9c7a10965c82ff8d2/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "epic-android-hook",
+    "name": "Epic",
+    "url": "https://github.com/tiann/epic",
+    "category": "android",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Continuation of Dexposed on ART: a runtime method-hooking framework that loads into an app and can hook both the app's own code and Android framework code running in its process. Stated uses include instrumentation and security audits.",
+    "description_zh": "Dexposed 在 ART 上的延续：运行时方法钩子框架，加载到应用内后既能钩住应用自身代码，也能钩住在其进程中运行的 Android 框架代码。其说明的用途包括插桩和安全审计。",
+    "requirements": [
+      "The README states support for ART thumb2 and arm64 on Android 5.0 to 11 and none for arm32, x86, x86_64 or MIPS, which rules out Android emulators on those architectures. Short methods and fully inlined methods cannot be hooked. The newest release is 0.11.2 from 2021-07-31.",
+      "Apache-2.0 per LICENSE."
+    ],
+    "evidence_url": "https://github.com/tiann/epic/blob/c67d0d3e3769c19119465784a579c659dd88c4ce/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "procdump-linux",
+    "name": "ProcDump for Linux and macOS",
+    "url": "https://github.com/microsoft/ProcDump-Linux",
+    "category": "dynamic-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Linux and macOS reimagining of the Sysinternals ProcDump tool that writes process dumps in response to performance, runtime, signal and resource-tracking triggers, including native dumps through a Rust ELF writer and managed dumps through .NET diagnostics IPC.",
+    "description_zh": "Sysinternals ProcDump 工具在 Linux 和 macOS 上的重新实现，可按性能、运行时、信号和资源跟踪触发条件写出进程转储，包括通过 Rust ELF 写入器生成的原生转储，以及通过 .NET 诊断 IPC 生成的托管转储。",
+    "requirements": [
+      "Runs on Linux kernels 3.5+ or macOS Sierra+. Building needs stable Rust with rustfmt and clippy, plus Clang, pkg-config, libelf and zlib headers, gdb and gcore on Linux, or Xcode command-line tools, gdb and gcore on macOS. The macOS version has no resource tracking. Release 3.5.3 is from 2026-09-10.",
+      "MIT per LICENSE."
+    ],
+    "evidence_url": "https://github.com/microsoft/ProcDump-Linux/blob/2f83148dbc62da574a953a5eaaeb38b499847cd0/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "fishhook",
+    "name": "fishhook",
+    "url": "https://github.com/meta/fishhook",
+    "category": "dynamic-analysis",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Small library that dynamically rebinds symbols in Mach-O binaries running on iOS, on device and in the simulator, by updating the lazy and non-lazy symbol pointers that dyld uses.",
+    "description_zh": "小型库，可动态重新绑定运行在 iOS（真机和模拟器）上的 Mach-O 二进制文件中的符号，方法是更新 dyld 使用的惰性和非惰性符号指针。",
+    "requirements": [
+      "Used by adding fishhook.h and fishhook.c to a project.",
+      "BSD-3-Clause per LICENSE."
+    ],
+    "evidence_url": "https://github.com/meta/fishhook/blob/aadc161ac3b80db07a9908851839a17ba63a9eb1/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
+  },
+  {
+    "id": "pcode2code",
+    "name": "pcode2code",
+    "url": "https://github.com/Big5-sec/pcode2code",
+    "category": "native-analysis",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "VBA p-code decompiler based on pcodedmp, written for Office documents whose macro source has been stomped to leave only bytecode. It takes a document or a previously saved pcodedmp dump and also works as a Python module.",
+    "description_zh": "基于 pcodedmp 的 VBA p-code 反编译器，用于处理宏源代码已被抹除、只留下字节码的 Office 文档。它接受文档或先前保存的 pcodedmp 转储，也可作为 Python 模块使用。",
+    "requirements": [
+      "Works with Python 2.6+ and Python 3.x and installs with pip along with pcodedmp.",
+      "GPL-3.0 per LICENSE."
+    ],
+    "evidence_url": "https://github.com/Big5-sec/pcode2code/blob/65ae9832884bb0ebba16f96df257e387d427cd72/README.md",
+    "verified_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-06",
+    "relationship": "foundation",
+    "kind": "tool"
   }
 ]

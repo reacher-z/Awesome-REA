@@ -8462,5 +8462,110 @@
       "通过 Homebrew 或下载安装，再从主目录下的 .lldbinit 文件导入。各命令对 iOS 和 macOS 的支持不同，README 的命令表有标注。最新标记版本是 2020-08-17 的 2.0.1。",
       "依 LICENSE 采用 MIT 许可。"
     ]
+  },
+  "gdbgui": {
+    "name": "gdbgui gdb 浏览器前端",
+    "requirements": [
+      "文档位于 gdbgui.com；0.15.3.0 版发布于 2025-06-29。",
+      "依 LICENSE 采用 GPL-3.0 许可。"
+    ]
+  },
+  "android-unpacker": {
+    "name": "Android Unpacker 安卓脱壳工具集",
+    "requirements": [
+      "gdb-scripts 脱壳脚本需要 gdb 和 adb；原生脱壳工具不依赖 gdb。最新标记版本是 2014-09-11 的 v1.2。",
+      "依 LICENSE.txt 采用 Apache-2.0 许可。"
+    ]
+  },
+  "porosity": {
+    "name": "Porosity 以太坊字节码反编译器",
+    "requirements": [
+      "README 标明项目已停止维护，并推荐 JEB 的智能合约反编译器作为替代；最新发布是 2018-01-16 的 v20180116.2。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "reverseapk": {
+    "name": "ReverseAPK 安卓应用静态分析工具",
+    "requirements": [
+      "通过附带的 install 脚本安装，以 reverse-apk 加 APK 名称运行；README 描述的是 1.2 版。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "xori": {
+    "name": "Xori 反汇编与静态分析库",
+    "requirements": [
+      "支持 i386 和 x86-64 的 PE、PE+ 及纯 shellcode。使用 Rust 和 Cargo 构建；README 提到 rustc 1.27.0，浏览器 GUI 需要 Node.js。",
+      "依 LICENSE.txt 采用 AGPL-3.0 许可。"
+    ]
+  },
+  "binglide": {
+    "name": "binglide 文件数据类型可视化工具",
+    "requirements": [
+      "需要 Python 3、带 OpenGL 的 PyQt4、pyqtgraph 和 numpy，并可用 numba 提供 JIT 加速。作者推荐更成熟的 Veles。",
+      "依 LICENSE.txt 采用 MIT 许可。"
+    ]
+  },
+  "eresi": {
+    "name": "ERESI 逆向工程软件接口",
+    "requirements": [
+      "README.FIRST 描述的是 ELFsh 0.65，并注明尚未针对 ERESI 0.8 更新；e2dbg 的说明面向 IA32 上的 Linux。最新发布是 2018-07-09 的 0.83-a3-phoenix。",
+      "仓库顶层没有许可证文件。"
+    ]
+  },
+  "pixd": {
+    "name": "pixd 二进制数据彩色可视化工具",
+    "requirements": [
+      "需要支持 24 位色 SGR 转义序列的终端模拟器。",
+      "依 LICENSE 采用 MIT 许可。"
+    ]
+  },
+  "universal-extractor-2": {
+    "name": "Universal Extractor 2 通用文件解包工具",
+    "requirements": [
+      "可在 Windows XP 或更高版本上运行；在 XP 上联网功能被禁用，部分解包器可能无法工作。README 链接的是 v2.0.0-rc.3。",
+      "依 LICENSE 采用 GPL-2.0 许可。"
+    ]
+  },
+  "ellekit": {
+    "name": "ElleKit arm64 函数钩子工具包",
+    "requirements": [
+      "需要运行 XNU 内核的 arm64 设备。已在 iOS 15-27（arm64）、iOS 15-17（arm64e）和 macOS Ventura 上测试；README 称因代码签名变更，最新版 macOS 已不受支持。",
+      "依 LICENSE 采用 BSD-3-Clause 许可。"
+    ]
+  },
+  "xhook": {
+    "name": "xHook Android PLT 钩子库",
+    "requirements": [
+      "支持 Android 4.0 至 10 上的 armeabi、armeabi-v7a、arm64-v8a、x86 和 x86_64；构建需要 Android NDK r16b。",
+      "依 LICENSE 代码采用 MIT 许可，依 LICENSE-docs 文档采用 Creative Commons 许可。"
+    ]
+  },
+  "epic-android-hook": {
+    "name": "Epic Android ART 方法钩子框架",
+    "requirements": [
+      "README 称支持 Android 5.0 至 11 的 ART thumb2 和 arm64，不支持 arm32、x86、x86_64 和 MIPS，因此无法在这些架构的 Android 模拟器上运行。过短的方法和完全内联的方法无法被钩住。最新发布是 2021-07-31 的 0.11.2。",
+      "依 LICENSE 采用 Apache-2.0 许可。"
+    ]
+  },
+  "procdump-linux": {
+    "name": "ProcDump Linux 与 macOS 版进程转储工具",
+    "requirements": [
+      "运行于 Linux 内核 3.5+ 或 macOS Sierra+。构建需要带 rustfmt 和 clippy 的稳定版 Rust；Linux 上还需 Clang、pkg-config、libelf 和 zlib 开发包、gdb 与 gcore，macOS 上还需 Xcode 命令行工具、gdb 与 gcore。macOS 版没有资源跟踪。3.5.3 版发布于 2026-09-10。",
+      "依 LICENSE 采用 MIT 许可。"
+    ]
+  },
+  "fishhook": {
+    "name": "fishhook Mach-O 符号重绑定库",
+    "requirements": [
+      "将 fishhook.h 和 fishhook.c 加入项目即可使用。",
+      "依 LICENSE 采用 BSD-3-Clause 许可。"
+    ]
+  },
+  "pcode2code": {
+    "name": "pcode2code VBA p-code 反编译器",
+    "requirements": [
+      "支持 Python 2.6+ 和 Python 3.x，通过 pip 安装并附带 pcodedmp。",
+      "依 LICENSE 采用 GPL-3.0 许可。"
+    ]
   }
 }
