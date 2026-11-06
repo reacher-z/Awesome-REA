@@ -147,7 +147,7 @@ class SecurityHeaderTests(unittest.TestCase):
                                              '/data-manifest.json', '/downloads/*')},
             **{route: {'content-type': 'application/atom+xml; charset=utf-8'} for route in ('/feed.xml', '/zh/feed.xml',
                                                                                              '/discoveries/feed.xml', '/zh/discoveries/feed.xml')},
-            **{route: no_cache for route in ('/discoveries.json', '/discoveries/batches/*', '/discoveries/leads.json',
+            **{route: no_cache for route in ('/discoveries/reviews.json', '/discoveries.json', '/discoveries/batches/*', '/discoveries/leads.json',
                                              '/discoveries/leads/*')},
             **{route: {**no_cache, 'access-control-allow-origin': '*'} for route in ('/discoveries/status.json', '/discoveries/badge.json')},
             '/assets/*': {'cache-control': 'public, max-age=31536000, immutable'},

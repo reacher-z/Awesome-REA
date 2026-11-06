@@ -2,7 +2,8 @@
 
 Records come from the validated batches in data/discoveries/ (scripts/discoveries.py). They are
 automated README scans: every output labels them unreviewed and never as curated or source-reviewed.
-A record that has since entered the reviewed repository index is counted, not listed again.
+A record that has since entered the reviewed repository index, or that a reviewer has curated, excluded or held,
+is counted, not listed again.
 """
 from __future__ import annotations
 
@@ -18,12 +19,14 @@ from build_browse_pages import repository_card
 from build_discovery_pages import _IconStylesheet, _asset, _document, collection_page_schema
 from source_descriptions import description_fallback
 import discoveries
+import discovery_reviews
 
 PAGE_PATHS = {'en': '/discoveries/', 'zh': '/zh/discoveries/'}
 FEED_PATHS = {'en': '/discoveries/feed.xml', 'zh': '/zh/discoveries/feed.xml'}
 EXPORT_PATH = '/discoveries.json'
 STATUS_PATH = '/discoveries/status.json'
 BADGE_PATH = '/discoveries/badge.json'
+REVIEWS_PATH = '/discoveries/reviews.json'
 PAGE_RECORDS = 100
 FEED_RECORDS = 100
 # The index export lists the newest records; every listed record is also in its batch's own file.
@@ -61,18 +64,21 @@ def discovery_queue(root: Path, published_document: dict | None, papers: list[di
     if problems:
         raise ValueError('Discovery batches failed validation: ' + '; '.join(problems[:3]))
     published_ids, published_names = published_identities(published_document)
+    rows = [{**record, 'batch_id': batch['batch_id'], 'ingested_at': timestamp(batch['ingested_at'])}
+            for batch in reversed(batches) for record in batch['resources']]
+    curated = {str(record.get('url', '')).rstrip('/').casefold(): record['id'] for record in resources}
+    pending, decided = discovery_reviews.split_queue(rows, discovery_reviews.read_reviews(root), curated)
     listed, since_published = [], 0
-    for batch in reversed(batches):
-        for record in batch['resources']:
-            name = record['full_name'].casefold()
-            if record['id'] in published_ids or published_names.get(name, record['id']) != record['id']:
-                since_published += 1
-                continue
-            listed.append({**record, 'batch_id': batch['batch_id'], 'ingested_at': timestamp(batch['ingested_at'])})
+    for record in pending:
+        name = record['full_name'].casefold()
+        if record['id'] in published_ids or published_names.get(name, record['id']) != record['id']:
+            since_published += 1
+        else:
+            listed.append(record)
     listed = with_artifact_links(listed, papers, resources)
     latest = batches[-1] if batches else None
     return {
-        'batches': batches, 'listed': listed, 'since_published': since_published,
+        'batches': batches, 'listed': listed, 'decided': decided, 'since_published': since_published,
         'record_count': sum(len(batch['resources']) for batch in batches),
         'latest': latest,
     }
@@ -110,6 +116,7 @@ def status_document(queue: dict, site_url: str) -> dict:
         'last_scan_run_url': run_url(latest) if latest else None,
         'stale_after_hours': STALE_AFTER_HOURS,
         'records': queue['record_count'], 'listed': len(queue['listed']), 'batches': len(queue['batches']),
+        'reviewed': discovery_reviews.counts(queue['decided']), 'reviews': site_url + REVIEWS_PATH,
         'page': site_url + PAGE_PATHS['en'], 'export': site_url + EXPORT_PATH,
         'note': 'Times are UTC and fixed when the site is built; compare last_successful_ingest_at with the '
                 'current time to judge freshness (stale after stale_after_hours).',
@@ -128,7 +135,8 @@ def export_document(queue: dict, site_url: str, repository_url: str) -> dict:
         'status': status_document(queue, site_url),
         'counts': {'batches': len(queue['batches']), 'records': queue['record_count'],
                    'listed': len(queue['listed']), 'exported': len(records),
-                   'since_published_in_repository_index': queue['since_published']},
+                   'since_published_in_repository_index': queue['since_published'],
+                   'reviewed': discovery_reviews.counts(queue['decided'])},
         'pagination': ('resources lists the newest listed records; batches[].records_url lists every listed '
                        'record of each batch, so together they cover the whole queue.'),
         'budget': {'records_per_batch': discoveries.MAX_BATCH_RECORDS, 'records': discoveries.MAX_TOTAL_RECORDS,
@@ -190,8 +198,13 @@ def page_content(queue: dict, language: str, use_pro: bool, site_url: str, repos
     if queue['since_published']:
         status += (f' 另有 {queue["since_published"]:,} 条已进入仓库目录，不再在此列出。' if zh
                    else f' {queue["since_published"]:,} more have since entered the repository directory and are listed there instead.')
+    if queue['decided']:
+        reviewed = discovery_reviews.counts(queue['decided'])
+        status += (f' 已审核 {len(queue["decided"]):,} 条，不再在此列出：收录 {reviewed["curated"]:,} 条，排除 {reviewed["exclude"]:,} 条，暂缓 {reviewed["hold"]:,} 条。' if zh
+                   else f' {len(queue["decided"]):,} have been reviewed and left this list: {reviewed["curated"]:,} curated, {reviewed["exclude"]:,} excluded and {reviewed["hold"]:,} held.')
     prefix = '/zh' if zh else ''
     links = (f'<a href="{EXPORT_PATH}">{"发现队列 JSON" if zh else "Discovery queue JSON"}</a> · '
+             f'<a href="{REVIEWS_PATH}">{"审核决定 JSON" if zh else "Review decisions JSON"}</a> · '
              f'<a href="{FEED_PATHS[language]}">{"Atom 订阅" if zh else "Atom feed"}</a> · '
              f'<a href="{escape(repository_url, quote=True)}/blob/main/{discoveries.DIRECTORY}/README.md">'
              f'{"入库规则（英文）↗" if zh else "Ingest rules ↗"}</a> · '
@@ -323,6 +336,9 @@ def write_discoveries(site_dir: Path, catalog: dict, papers: list[dict], publish
             json.dumps(batch_export(queue, batch), **compact) + '\n', encoding='utf-8')
     (site_dir / STATUS_PATH.lstrip('/')).write_text(json.dumps(status_document(queue, site_url), indent=2) + '\n', encoding='utf-8')
     (site_dir / BADGE_PATH.lstrip('/')).write_text(json.dumps(badge_document(queue)) + '\n', encoding='utf-8')
+    generated_at = timestamp(queue['latest']['ingested_at']) if queue['latest'] else None
+    (site_dir / REVIEWS_PATH.lstrip('/')).write_text(
+        json.dumps(discovery_reviews.export_document(queue['decided'], generated_at), **compact) + '\n', encoding='utf-8')
     return list(PAGE_PATHS.values()), queue
 
 
