@@ -31,3 +31,11 @@ python3 scripts/validate.py
 Follow CONTRIBUTING.md for paper, case-ledger, code and site checks, including `python3 scripts/build_production.py`. Run the full unit suite for code changes; do not run or install an upstream resource just to mark it source-reviewed.
 
 Use the existing PR template. State the problem and resulting behavior, canonical resource URL, pinned evidence, review date, relevant limits and checks actually run. Push to a fork if you lack upstream write access. Creating an issue or PR is a public submission: respect the user's authorization and the target repository's contribution rules. Passing checks does not authorize merging or publication.
+
+## Visual identity
+
+Style: "the archive's specimen drawer". Warm, quiet and hand-made; technical drawings, drawer tabs, index cards and stamps on eggshell paper. Titles use EB Garamond; body and data use a sans and a mono.
+
+Palette "Terra & Slate": eggshell `#F4F1DE` (main), terracotta `#E07A5F` (signature), slate `#3D405B`, sage `#81B29A`, with butter `#F2CC8F` for marks, ink `#2A2C3F` and link `#9C4128`. Terracotta display `#C4553A` is for type of 24 px or larger and drawings only. README and website share this palette. Awesome CUA is the sister site: same type and spacing logic, its own palette.
+
+Art is hand-authored inline SVG with real meaning. Avoid decorative gradients, glass effects, stock illustration and emoji. Every text pair meets WCAG AA in light and dark. Change colours through the design tokens in `site/shell.css`.

@@ -54,7 +54,7 @@ def exploded_view(lang='en'):
             outer = {0: (k * 1.6, -half + 5), 1: (half - 5, k * 1.6), 2: (k * 1.6, half - 5), 3: (-half + 5, k * 1.6)}[side]
             a, b = _pt(cx, cy, *inner, z[2]), _pt(cx, cy, *outer, z[2])
             out.append(f'<path d="M{a[0]} {a[1]}Q{(a[0] + b[0]) / 2:.1f} {min(a[1], b[1]) - 11:.1f} {b[0]} {b[1]}" class="thin"/>')
-    # B: the die, the one rose element
+    # B: the die, the one terracotta element
     out.append(_plate(cx, cy, 24, z[3], 4, 'a'))
     for k in (-12, 0, 12):
         out.append(_line(_pt(cx, cy, k, -24, z[3]), _pt(cx, cy, k, 24, z[3]), 'thin ink'))
