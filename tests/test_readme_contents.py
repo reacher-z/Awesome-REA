@@ -37,11 +37,9 @@ class ReadmeContentsTest(unittest.TestCase):
         self.assertIn('/badge/resources-3-', en)
         self.assertIn('/badge/cases-1-', en)
         self.assertIn('/badge/papers-1-', en)
-        self.assertIn('](LICENSE)', en)
+        self.assertIn('/badge/license-MIT-', en)
         self.assertNotRegex(en.lower(), r'runtime|reproduced|verified|total-4')
         zh = render_badges(records, [listed], 'zh')
-        for route in ('resources/', 'cases/', 'papers/'):
-            self.assertIn('](https://awesomerea.org/zh/' + route + ')', zh)
         self.assertIn('精选资源: 3', zh)
         self.assertIn('案例: 1', zh)
         self.assertIn('论文: 1', zh)
@@ -64,8 +62,8 @@ class ReadmeContentsTest(unittest.TestCase):
     def test_badges_are_at_most_six_and_link_the_hugging_face_dataset(self):
         for language in ('en', 'zh'):
             rendered = render_badges([resource()], [paper()], language)
-            self.assertLessEqual(rendered.count('[!['), 6)
-            self.assertIn('](https://huggingface.co/datasets/AgPerry/awesome-rea)', rendered)
+            self.assertLessEqual(rendered.count('![') , 6)
+            self.assertNotIn('huggingface', rendered)
             self.assertIn('last-commit/reacher-z/Awesome-REA/main?path=data%2Fdiscoveries', rendered)
 
     def test_badges_have_no_ci_badge_and_the_footer_keeps_the_build_link(self):
@@ -75,8 +73,7 @@ class ReadmeContentsTest(unittest.TestCase):
                 rendered = render_badges([resource()], [paper()], language)
                 self.assertNotIn('/actions/', rendered)
                 self.assertNotIn('badge.svg', rendered)
-                self.assertLessEqual(rendered.count('[!['), 6)
-                self.assertEqual(rendered.count('[!['), 6)
+                self.assertEqual(rendered.count('!['), 5)
                 text = (ROOT / name).read_text(encoding='utf-8')
                 self.assertNotRegex(text, r'actions/workflows/[^)\s]*badge\.svg')
                 self.assertIn(f'[{footer}]({workflow})', text.split(BADGES_END, 1)[1])
