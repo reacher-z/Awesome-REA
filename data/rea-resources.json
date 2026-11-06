@@ -4080,5 +4080,39 @@
       "https://github.com/morluto/rea/blob/2cb29693c3d574c4898832047fe309ac1ad00e9d/README.md",
       "https://github.com/morluto/rea/blob/2cb29693c3d574c4898832047fe309ac1ad00e9d/docs/android-analysis.md"
     ]
+  },
+  {
+    "id": "sh23ds-case",
+    "name": "sh23ds: a native 3DS reconstruction of Silent Hill 2",
+    "url": "https://github.com/ankushKun/sh23ds",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "sh23ds rebuilds Silent Hill 2: Director's Cut as a native C engine for Nintendo 3DS using the player's PC game data. Game logic, camera, lighting and events were reconstructed from the PC executable; the research notes report analysis with Ghidra and REA. The author reports a complete playthrough in Azahar, while real-console testing and some PC behaviors remain unfinished.",
+    "description_zh": "sh23ds 以 C 为 Nintendo 3DS 重建《寂静岭 2：导演剪辑版》的原生引擎，游戏数据由玩家自己的 PC 版本转换。项目从 PC 可执行文件还原逻辑、镜头、光照和事件；研究笔记记载使用 Ghidra 与 REA。作者报告在 Azahar 中可通关，但实体主机测试和部分 PC 行为仍待完善。",
+    "evidence_url": "https://github.com/ankushKun/sh23ds/blob/08673f69aa99b4f3c00a181b31c7adc26c186408/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A 3DS or 2DS running Luma3DS, a copy of Silent Hill 2: Director's Cut for PC and about 1.8 GB of SD-card space are required.",
+      "DSP firmware must be dumped once with DSP1 for sound.",
+      "The build is in development; the author reports little testing on real consoles and remaining behavior and rendering gaps.",
+      "GPL-3.0 license; bundled third-party code keeps its own licenses."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ankushKun/sh23ds/blob/08673f69aa99b4f3c00a181b31c7adc26c186408/docs/RESEARCH.md",
+      "https://github.com/ankushKun/sh23ds/blob/08673f69aa99b4f3c00a181b31c7adc26c186408/port/STATUS.md"
+    ]
   }
 ]
