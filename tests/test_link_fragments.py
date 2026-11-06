@@ -47,7 +47,7 @@ class LinkFragmentTest(unittest.TestCase):
                 html = page.read_text(encoding='utf-8')
                 self.assertIn('<a id="game"', html)
                 page.write_text(html.replace('<a id="game"', '<a id="games"'), encoding='utf-8')
-                with self.assertRaisesRegex(AssertionError, r'/resources/: #game(;|$)') as caught:
+                with self.assertRaisesRegex(AssertionError, r'/resources/: /resources/#game(;|$)') as caught:
                     validate_site.main()
             self.assertIn('/: /resources/#game', str(caught.exception))
 

@@ -8,7 +8,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_discovery_pages import _case_row, _resource_card, build_discovery_pages
+from build_discovery_pages import _case_row, build_discovery_pages
 from build_entry_pages import _resource_content
 
 
@@ -31,8 +31,6 @@ CASE = record('fixture-case', 'case-study', additional=['https://example.org/met
 class ListingEntryRequirementTests(unittest.TestCase):
     def rendered(self):
         for language in ('en', 'zh'):
-            yield language, _resource_card(TOOL, language), TOOL
-            yield language, _resource_card(CASE, language), CASE
             yield language, _case_row(CASE, language, 'game'), CASE
 
     def test_listings_drop_inline_requirements_and_additional_sources(self):
@@ -87,7 +85,8 @@ class ListingEntryRequirementTests(unittest.TestCase):
                     self.assertEqual(re.findall(r'<script(?![^>]*application/ld\+json)', html), [], 'no script is needed to reach requirements')
                     prefix = '/zh' if route.startswith('zh/') else ''
                     for item in ([TOOL, CASE] if route.endswith('resources') else [CASE]):
-                        self.assertEqual(main.count(f'href="{prefix}/resources/{item["id"]}/#entry-requirements"'), 1)
+                        anchor = '' if route.endswith('resources') else '#entry-requirements'
+                        self.assertEqual(main.count(f'href="{prefix}/resources/{item["id"]}/{anchor}"'), 1)
 
 
 if __name__ == '__main__':
