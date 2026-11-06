@@ -33,18 +33,18 @@ import discoveries  # noqa: E402
 
 BRANCH = discoveries.INGEST_BRANCH
 CACHE = '.cache/discovery-ingest'
-MAX_ATTEMPTS = 3
+MAX_ATTEMPTS = 4
 CHECK_NAMES = ('validate', 'review')
-CHECK_WAIT_SECONDS = 14 * 60
 # GitHub recomputes a pull request's mergeability asynchronously after its last check completes; a merge
 # requested before that answers 405 although nothing changed. Wait for a mergeable state, bounded.
 MERGEABLE_STATES = frozenset({'clean', 'unstable', 'has_hooks'})
 MERGEABILITY_WAIT_SECONDS = 4 * 60
 MERGE_POLL_SECONDS = 10
 MERGE_REQUESTS = 3
-# The job has 30 minutes; a new attempt (prepare, validate, checks, merge) needs about 12 of them.
-JOB_SECONDS = 28 * 60
-ATTEMPT_SECONDS = 12 * 60
+# The job has 45 minutes. Checks take about 7 of them, and 15 when runners are busy, as on 2026-11-06 with 8 minutes
+# of queueing; a new attempt (prepare, validate, checks, merge) starts only with 18 left.
+JOB_SECONDS = 43 * 60
+ATTEMPT_SECONDS = 18 * 60
 POLL_SECONDS = 20
 API_TIMEOUT = 30
 MAX_API_BYTES = 12 * 1024 * 1024
@@ -289,8 +289,12 @@ def check_results(github: GitHub, sha: str) -> dict:
     return results
 
 
-def wait_for_checks(github: GitHub, sha: str, default_branch: str, base_sha: str) -> dict:
-    deadline = time.monotonic() + CHECK_WAIT_SECONDS
+def check_deadline(started: float) -> float:
+    """How long a job that began at ``started`` can wait for checks and still merge: busy runners cost only time."""
+    return started + JOB_SECONDS - MERGEABILITY_WAIT_SECONDS
+
+
+def wait_for_checks(github: GitHub, sha: str, default_branch: str, base_sha: str, deadline: float) -> dict:
     while True:
         results = check_results(github, sha)
         if all(status == 'completed' for status, _ in results.values()):
@@ -399,7 +403,7 @@ def run() -> int:
             f"{github.get(f'pulls/{number}').get('mergeable_state')}")
         dispatch_checks(github, default_branch, number, head_sha)
         try:
-            results = wait_for_checks(github, head_sha, default_branch, base_sha)
+            results = wait_for_checks(github, head_sha, default_branch, base_sha, check_deadline(started))
             log(f'CHECKS {results}')
             if any(conclusion != 'success' for _, conclusion in results.values()):
                 raise RuntimeError(f'Required checks failed on {head_sha[:12]}: {results}')
