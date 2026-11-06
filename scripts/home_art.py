@@ -81,4 +81,4 @@ def exploded_view(lang='en'):
         out.append(f'<polyline points="{xd - 3},{yy + tip} {xd},{yy} {xd + 3},{yy + tip}" class="thin"/>')
         out.append(_line((xd - 5, yy), (lx - 4, yy), 'thin'))
     return ('<svg class="art xv-art" viewBox="0 0 380 340" aria-hidden="true" focusable="false">' + ''.join(out)
-            + f'<text x="14" y="336" class="cap">{"图 1  芯片封装爆炸图，未按比例" if lang == "zh" else "FIG. 1  CHIP PACKAGE, EXPLODED. NOT TO SCALE."}</text></svg>')
+            + f'<text x="14" y="336" class="cap">{"图 1  芯片封装爆炸图" if lang == "zh" else "FIG. 1  CHIP PACKAGE, EXPLODED"}</text></svg>')
