@@ -1,10 +1,11 @@
 """Regression checks for CDN-only transformations in deployment verification."""
 from pathlib import Path
 import sys
+import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from build_manifest import html_digest, normalized_html_bytes
+from build_manifest import collect_manifest, html_digest, normalized_html_bytes
 
 
 def protected(address, key=108):
@@ -27,6 +28,25 @@ class CDNNormalizationTests(unittest.TestCase):
             with self.subTest(text=undotted):
                 anchor = protected(undotted)
                 self.assertEqual(normalized_html_bytes(anchor.encode()), anchor.encode())
+
+    def test_star_counts_stay_out_of_the_page_hashes(self):
+        page = '<a><span class="star-count" data-stars="reacher-z/Awesome-REA">{}</span></a>'
+        for count in ('44', '75', '1.0k', '1.2k'):
+            with self.subTest(count=count):
+                self.assertEqual(normalized_html_bytes(page.format(count).encode()), page.format('').encode())
+        for other in ('<span class="star-count">44</span>', '<span class="x" data-stars="a/b">forty</span>', '<p data-stars="a/b">44</p>'):
+            with self.subTest(other=other):
+                self.assertEqual(normalized_html_bytes(other.encode()), other.encode())
+
+    def test_builds_differing_only_in_star_counts_have_one_manifest(self):
+        manifests = []
+        for count in ('44', '75'):
+            with tempfile.TemporaryDirectory() as directory:
+                site = Path(directory)
+                (site / 'sitemap.xml').write_text('<urlset/>', encoding='utf-8')
+                (site / 'index.html').write_text(f'<span class="ann-count" data-stars="a/b">{count}</span>', encoding='utf-8')
+                manifests.append(collect_manifest(site))
+        self.assertEqual(manifests[0], manifests[1])
 
     def test_email_content_stays_hash_sensitive(self):
         self.assertNotEqual(html_digest(b'<p>contact@example.org</p>'), html_digest(('<p>' + protected('different@example.org') + '</p>').encode()))

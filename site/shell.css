@@ -129,6 +129,8 @@
   --grid-major: color-mix(in srgb, var(--line) 62%, var(--bg));
   --card-ground: var(--bg);
   --header-h: 60px;
+  /* Resolved here: the older page sheets' remap below changes --accent and --focus inside <main>. */
+  --star: var(--accent); --focus-solid: var(--focus);
 }
 @media (max-width: 767px) { :root[data-site="rea"] { --header-h: 52px; } }
 
@@ -192,17 +194,15 @@ kbd { display: inline-flex; align-items: center; justify-content: center; min-wi
   font-size: .875rem; cursor: pointer; transition: opacity var(--t-base) var(--ease); }
 .search-trigger .st-kbd { margin-left: auto; }
 .search-trigger:hover { color: var(--ink-strong); }
-.tool-lang, .theme-toggle, .gh { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 38px;
+.tool-lang, .theme-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 38px;
   min-width: 38px; padding: 0 10px; border: 1px solid transparent; border-radius: var(--r-control); background: none;
   color: var(--ink); font-size: .875rem; font-weight: 500; text-decoration: none; cursor: pointer; }
-.tool-lang:hover, .theme-toggle:hover, .gh:hover { color: var(--ink-strong); background: color-mix(in srgb, var(--ink) 7%, transparent); }
+.tool-lang:hover, .theme-toggle:hover { color: var(--ink-strong); background: color-mix(in srgb, var(--ink) 7%, transparent); }
 .theme-toggle { padding: 0; }
 .theme-toggle .i { width: 19px; height: 19px; }
 .ti-light, .ti-dark { display: none; }
 :root[data-theme="light"] .ti-system, :root[data-theme="dark"] .ti-system { display: none; }
 :root[data-theme="light"] .ti-light, :root[data-theme="dark"] .ti-dark { display: block; }
-.gh .i { width: 17px; height: 17px; }
-.gh-count { font: 500 .8125rem/1 var(--font-mono); color: var(--ink-2); }
 
 /* Home: the header search appears once the hero field scrolls away. */
 /* visibility keeps its space, so the header never shifts, and takes it out of the tab order while the hero field is on screen. */
@@ -216,11 +216,10 @@ kbd { display: inline-flex; align-items: center; justify-content: center; min-wi
   .search-trigger .st-kbd { display: none; }
   .search-trigger .st-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .search-trigger { width: 40px; justify-content: center; padding: 0; }
-  .gh-count { display: none; }
 }
 @media (min-width: 768px) and (max-width: 919px) {
   .header-row { gap: 12px; }
-  .gh { display: none; }
+  .nl-long { display: none; } .nl-short { display: inline; }
   .primary-nav a { padding: 8px 8px; font-size: .875rem; }
   .primary-nav a[aria-current="page"]::after { left: 8px; right: 8px; }
 }
@@ -231,8 +230,6 @@ kbd { display: inline-flex; align-items: center; justify-content: center; min-wi
   .header-tools { gap: 2px; }
   .theme-toggle, .tool-lang, .search-trigger { width: 36px; height: 44px; padding: 0; min-width: 0; }
   .brand { font-size: 1.125rem; }
-  .gh .i { display: none; }
-  .gh, .gh-count { display: inline-flex; }
   .search-trigger { border-color: var(--line-strong); }
   .primary-nav { order: 3; flex: 0 0 calc(100% + 2 * var(--gutter)); margin: 0 calc(-1 * var(--gutter)); padding: 0 calc(var(--gutter) - 12px) 4px;
     overflow-x: auto; scrollbar-width: none; border-top: 1px solid var(--line); }
@@ -246,8 +243,6 @@ kbd { display: inline-flex; align-items: center; justify-content: center; min-wi
 }
 
 @media (max-width: 359px) {
-  .brand { font-size: 1.125rem; gap: 7px; }
-  .brand .brand-mark { width: 18px; height: 18px; }
   .header-tools { gap: 0; }
   .primary-nav a { padding: 12px 7px; font-size: .875rem; }
 }
@@ -255,14 +250,14 @@ kbd { display: inline-flex; align-items: center; justify-content: center; min-wi
 /* Mobile: a slim sticky search bar replaces the header once it scrolls away (GOAL §6.6 sticky search). */
 .mbar { display: none; }
 @media (max-width: 767px) {
-  .mbar { position: fixed; inset: 0 0 auto; z-index: 45; display: flex; align-items: center; gap: 10px; height: 56px;
+  .mbar { position: fixed; inset: 0 0 auto; z-index: 45; display: flex; align-items: center; gap: 8px; height: 56px;
     padding: 6px var(--gutter); background: color-mix(in srgb, var(--bg) 94%, transparent);
     -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
     transform: translateY(-101%); visibility: hidden; transition: transform var(--t-base) var(--ease), visibility 0s linear var(--t-base); }
   .is-scrolled .mbar { transform: none; visibility: visible; transition: transform var(--t-base) var(--ease); }
   .mbar .brand-mark { width: 26px; height: 26px; }
-  .mbar-home { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; }
-  .mbar-search { flex: 1; display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 12px; border: 1px solid var(--border-input);
+  .mbar-home { display: inline-flex; flex: none; width: 32px; height: 44px; align-items: center; justify-content: center; }
+  .mbar-search { flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 12px; border: 1px solid var(--border-input);
     border-radius: var(--r-input); background: var(--bg-raised); color: var(--ink-2); font-size: 1rem; text-align: left; cursor: pointer; }
 }
 
@@ -286,6 +281,9 @@ kbd { display: inline-flex; align-items: center; justify-content: center; min-wi
 .tb-strip dd { margin-top: 5px; font: 400 .8125rem/1.3 var(--font-mono); color: var(--ink-strong); overflow-wrap: anywhere; }
 .tb-strip dd a { color: var(--brand-ink); }
 .tb-strip code { font-size: inherit; }
+.tb-star { display: inline-flex; align-items: center; gap: 5px; margin-left: 14px; font-family: var(--font-body); font-weight: 600; white-space: nowrap; }
+.tb-star .i { width: 13px; height: 13px; }
+.tb-star-count { font-family: var(--font-mono); font-weight: 400; font-variant-numeric: tabular-nums; }
 .tb-sub { color: var(--ink-2); font-family: var(--font-body); }
 @media (max-width: 899px) {
   .titleblock { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -392,6 +390,7 @@ body > main, body > dialog:not(.palette), body > .skip-link {
   --mono: var(--font-mono); --sans: var(--font-body); --abstract: var(--bg-raised);
   --r-card: 2px;
 }
+.page-home > main { --focus: var(--focus-solid); }
 .shell { width: min(100% - 2 * var(--gutter), var(--content)); }
 body > main :is(h1, h2) { font-family: var(--font-display); font-weight: 500; letter-spacing: -.012em; color: var(--ink-strong); }
 body > main h1 { font-size: clamp(2.25rem, 1.7rem + 2.2vw, 3.5rem); line-height: 1.06; }
@@ -410,14 +409,41 @@ body > main a:not([class]) { text-decoration-thickness: 1px; text-underline-offs
 .colophon-word { font-size: clamp(5.5rem, 22vw, 24rem); bottom: calc(8px - .145em); }
 .site-footer .tb-links ul { gap: 2px; }
 
-/* Header: a labelled star button for this repository, on every page. */
-.gh { gap: 6px; border-color: var(--line-strong); font-weight: 600; white-space: nowrap; }
-.gh .i { width: 15px; height: 15px; color: var(--brand-ink); }
-.gh-count { color: var(--ink); }
-@media (min-width: 920px) and (max-width: 1199px) { .gh-count { display: inline; } }
-@media (max-width: 767px) { .gh { min-height: 36px; padding: 0 7px; gap: 4px; font-size: .75rem; } .gh-count { font-size: .75rem; } }
-@media (min-width: 768px) and (max-width: 919px) { .gh { display: inline-flex; padding: 0 8px; } .gh .i { display: none; } .gh-count { display: inline; } }
-@media (max-width: 374px) { .brand-mark { display: none; } }
+/* The GitHub star: the site's one filled control in the header, on every page. The primary fill, the star in the accent. */
+.star-btn { position: relative; display: inline-flex; flex: none; align-items: center; justify-content: center; gap: 7px; height: 38px; padding: 0 12px;
+  border: 1px solid var(--btn-bg); border-radius: var(--r-control); background: var(--btn-bg); color: var(--btn-ink);
+  font: 600 .875rem/1 var(--font-body); white-space: nowrap; text-decoration: none; cursor: pointer;
+  transition: background-color var(--t-base) var(--ease), border-color var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease), transform var(--t-fast) var(--ease); }
+.star-btn::after { content: ""; position: absolute; inset: -4px 0; } /* a 44-px target around a slimmer button */
+.star-btn:hover { --star-hover: color-mix(in srgb, var(--btn-bg) 84%, var(--ink-strong)); border-color: var(--star-hover); background: var(--star-hover); color: var(--btn-ink);
+  box-shadow: 0 3px 10px color-mix(in srgb, var(--btn-bg) 35%, transparent); }
+.star-btn:active { transform: translateY(1px); box-shadow: none; }
+.star-btn .i { width: 15px; height: 15px; color: var(--star); transition: transform var(--t-slow) var(--ease); }
+.star-btn:hover .i, .star-btn:focus-visible .i { transform: rotate(-16deg) scale(1.2); }
+@media (prefers-reduced-motion: reduce) { .star-btn:hover .i, .star-btn:focus-visible .i, .star-btn:active { transform: none; } }
+.star-short { display: none; }
+.star-count { padding-left: 8px; border-left: 1px solid color-mix(in srgb, currentColor 40%, transparent); font: 500 .8125rem/1.1 var(--font-mono); font-variant-numeric: tabular-nums; }
+@media (max-width: 999px) {
+  .gh .star-long, .mbar-star .star-long { display: none; }
+  .gh .star-short, .mbar-star .star-short { display: inline; }
+}
+@media (min-width: 768px) and (max-width: 919px) {
+  .header-tools { gap: 2px; }
+  .brand { gap: 8px; font-size: 1.25rem; }
+  .gh { padding: 0 9px; gap: 6px; }
+  .gh .star-count { padding-left: 6px; }
+}
+@media (max-width: 767px) {
+  .gh, .mbar-star { height: 36px; padding: 0 7px; gap: 4px; font-size: .8125rem; }
+  .gh .i, .mbar-star .i { width: 13px; height: 13px; }
+  .gh .star-count, .mbar-star .star-count { padding-left: 5px; font-size: .75rem; }
+}
+@media (max-width: 430px) { .site-header .brand { gap: 6px; } .site-header .brand-mark { width: 18px; height: 18px; } }
+@media (max-width: 379px) {
+  .site-header .brand-mark { display: none; }
+  .gh .star-count, .mbar-star .star-count { padding-left: 0; border-left: 0; }
+}
+@media (max-width: 359px) { .site-header .brand { font-size: 1rem; } .theme-toggle { display: none; } }
 
 /* The site-wide announcement: rose with ink in both themes (8.1:1), a fixed height so it never shifts the page. */
 .ann { --focus: #212632; background: #F4ACB7; color: #212632; font-size: .875rem; line-height: 1.2; color-scheme: light; }

@@ -6,6 +6,9 @@ from __future__ import annotations
 
 from html import escape
 
+from repository_stats import star_count
+
+SISTER_REPOSITORY = 'reacher-z/Awesome-CUA'
 # Section links, in footer order: (path below the language prefix, English, Chinese).
 SECTION_LINKS = (
     ('/resources/', 'Curated resources', '精选资源'),
@@ -88,5 +91,6 @@ def site_footer(language: str, *, note: str, repository_url: str,
             f'<div class="tb-cell"><dt>{text["last_scan"]}</dt><dd><a href="{prefix}/discoveries/"><span data-last-scan>{text["scan_fallback"]}</span></a></dd></div>'
             f'<div class="tb-cell"><dt>{text["review"]}</dt><dd><a href="{prefix}/about/">{text["method"]}</a></dd></div>'
             f'<div class="tb-cell"><dt>{text["sheet"]}</dt><dd><a href="/sitemap.xml">sitemap.xml</a></dd></div>'
-            f'<div class="tb-cell tb-sister"><dt>{text["sister"]}</dt><dd><a href="https://awesomecua.com/">Awesome CUA <span class="tb-sub">{text["cua"]}</span></a></dd></div></dl>'
+            f'<div class="tb-cell tb-sister"><dt>{text["sister"]}</dt><dd><a href="https://awesomecua.com/">Awesome CUA <span class="tb-sub">{text["cua"]}</span></a>'
+            f'<a class="tb-star" href="https://github.com/{SISTER_REPOSITORY}" rel="noopener"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-star"/></svg>Star<span class="vh"> Awesome CUA</span>{star_count(SISTER_REPOSITORY, "tb-star-count")}</a></dd></div></dl>'
             f'</div></div><p class="colophon-word" aria-hidden="true"></p></footer>')

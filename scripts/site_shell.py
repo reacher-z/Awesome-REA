@@ -2,24 +2,23 @@
 
 Page builders that have not been ported to the redesign still write their own header; apply_site_shell()
 replaces it on the finished page, so all of them draw the same chrome from this module. The footer comes from
-site_footer.py. Everything here is a pure function of tracked data: IndexNow compares a CI rebuild with the
-deployed site byte for byte, so nothing here may read the clock or the network.
+site_footer.py. Everything here is a pure function of tracked data and the star counts the build hands it
+(repository_stats.py): IndexNow compares a CI rebuild with the deployed site, so nothing here may read the clock or
+the network.
 """
 from __future__ import annotations
 
 import base64
 import hashlib
-import json
 from html import escape
 from pathlib import Path
 import re
 
 from asset_paths import fingerprinted_href
 from open_graph import THEME_COLOR_META
+from repository_stats import REPOSITORY, compact_count, repository_stars, star_count
 from site_footer import site_footer
 
-ROOT = Path(__file__).resolve().parents[1]
-STATS_PATH = ROOT / 'data/repository-stats.json'
 LEGACY_HEADER = re.compile(r'<header class="site-header"><div class="shell header-inner">.*?</div></header>', re.S)
 EXPLORER_FOOTER = re.compile(r'<footer class="site-footer"><div class="shell footer-top"><p data-i18n=.*?</footer>', re.S)
 # Links into the filters of the collection, which now live on the explorer, and work there without a redirect.
@@ -32,6 +31,7 @@ THEME_SCRIPT = ("(function(d){d.className=d.className.replace('no-js','js');try{
                 "if(t==='light'||t==='dark')d.dataset.theme=t;if(localStorage.getItem('rea-ann-websitebench'))d.className+=' ann-off'}"
                 "catch(e){}})(document.documentElement)")
 WEBSITEBENCH_URL = 'https://github.com/TIGER-AI-Lab/WebsiteBench'
+REPOSITORY_URL = f'https://github.com/{REPOSITORY}'
 
 ICONS = {
     'search': '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/>',
@@ -65,16 +65,16 @@ LABELS = {
     'en': {'skip': 'Skip to content', 'home': 'Awesome REA home', 'nav': 'Main', 'resources': 'Resources', 'cases': 'Cases',
            'papers': 'Papers', 'repos': 'Repositories', 'repos_short': 'Repos', 'api': 'API', 'search': 'Search',
            'search_long': 'Search the catalogue', 'lang_switch': '中文', 'lang_name': '简体中文', 'theme': 'Colour theme',
-           'stars': 'stars on GitHub', 'star': 'Star', 'star_on_github': 'Star Awesome REA on GitHub',
+           'stars': 'stars', 'star': 'Star', 'star_long': 'Star on GitHub',
            'ann_name': 'Announcement', 'ann_new': 'New:', 'ann_line': 'Can AI agents rebuild websites through browser exploration?',
-           'ann_star': 'Star on GitHub', 'ann_close': 'Dismiss this announcement', 'placeholder': 'Search tools, cases and papers', 'move': 'move', 'open': 'open',
+           'ann_star': 'Star WebsiteBench', 'ann_close': 'Dismiss this announcement', 'placeholder': 'Search tools, cases and papers', 'move': 'move', 'open': 'open',
            'tab': 'new tab', 'results': 'Results', 'esc': 'Close search'},
     'zh': {'skip': '跳到正文', 'home': 'Awesome REA 首页', 'nav': '主导航', 'resources': '资源', 'cases': '案例',
            'papers': '论文', 'repos': '仓库', 'repos_short': '仓库', 'api': 'API', 'search': '搜索',
            'search_long': '搜索目录', 'lang_switch': 'EN', 'lang_name': 'English', 'theme': '颜色主题',
-           'stars': 'GitHub 星标', 'star': 'Star', 'star_on_github': '在 GitHub 上为 Awesome REA 加星',
+           'stars': '个星标', 'star': 'Star', 'star_long': '在 GitHub 上加星',
            'ann_name': '公告', 'ann_new': '新发布：', 'ann_line': 'AI 智能体能否通过浏览器探索重建网站？',
-           'ann_star': '在 GitHub 上加星', 'ann_close': '关闭此公告', 'placeholder': '搜索工具、案例与论文', 'move': '移动', 'open': '打开',
+           'ann_star': '为 WebsiteBench 加星', 'ann_close': '关闭此公告', 'placeholder': '搜索工具、案例与论文', 'move': '移动', 'open': '打开',
            'tab': '新标签页', 'results': '结果', 'esc': '关闭搜索'},
 }
 
@@ -85,20 +85,6 @@ def theme_script_hash() -> str:
     return "'sha256-" + base64.b64encode(digest).decode('ascii') + "'"
 
 
-def repository_stars(repository: str = 'reacher-z/Awesome-REA') -> int | None:
-    """A repository's stars as last recorded in the tracked data file, or None when it has no recorded count."""
-    try:
-        stars = json.loads(STATS_PATH.read_text(encoding='utf-8'))['github_stars'][repository]
-    except (OSError, KeyError, ValueError, TypeError):
-        return None
-    return stars if type(stars) is int and stars >= 0 else None
-
-
-def compact_count(value: int) -> str:
-    """1,032 reads 1.0k: rounded, so one more star does not change the bytes of every page."""
-    return f'{value / 1000:.1f}k' if value >= 1000 else str(value)
-
-
 def sprite(skip: frozenset[str] = frozenset()) -> str:
     body = ''.join(f'<symbol id="i-{name}" viewBox="0 0 24 24">{paths}</symbol>' for name, paths in ICONS.items() if name not in skip)
     mark = '' if 'github' in skip else GITHUB_MARK
@@ -107,6 +93,15 @@ def sprite(skip: frozenset[str] = frozenset()) -> str:
 
 def icon(name: str, css_class: str = '') -> str:
     return f'<svg class="i{(" " + css_class) if css_class else ""}" aria-hidden="true" focusable="false"><use href="#i-{name}"/></svg>'
+
+
+def star_button(language: str, repository_url: str = REPOSITORY_URL, css_class: str = 'gh') -> str:
+    """The filled star action for this repository. Its long label gives way to "Star" where the width runs out."""
+    labels = LABELS[language]
+    count = star_count(REPOSITORY, 'star-count')
+    unit = f'<span class="vh"> {labels["stars"]}</span>' if count else ''
+    return (f'<a class="star-btn {css_class}" href="{escape(repository_url, quote=True)}" rel="noopener">{icon("star")}'
+            f'<span class="star-long">{labels["star_long"]}</span><span class="star-short">{labels["star"]}</span>{count}{unit}</a>')
 
 
 def _section(path: str) -> str:
@@ -125,9 +120,6 @@ def header(language: str, current: str, language_link: str, repository_url: str)
         text = (f'<span class="nl-long">{labels[key]}</span><span class="nl-short">{labels["repos_short"]}</span>' if key == 'repos' else labels[key])
         state = ' aria-current="page"' if key == current else ''
         links.append(f'<a href="{prefix}{target}"{state}>{text}</a>')
-    stars = repository_stars()
-    count = f'<span class="gh-count">{compact_count(stars)}</span>' if stars is not None else ''
-    star_name = f'{labels["star_on_github"]}, {compact_count(stars)} {labels["stars"]}' if stars is not None else labels['star_on_github']
     return (f'<header class="site-header"><div class="wrap header-row">'
             f'<a class="brand" href="{prefix}/" aria-label="{labels["home"]}">{icon("reg", "brand-mark")}<span class="brand-word">Awesome <span>REA</span></span></a>'
             f'<nav class="primary-nav" aria-label="{labels["nav"]}">{"".join(links)}</nav>'
@@ -135,15 +127,14 @@ def header(language: str, current: str, language_link: str, repository_url: str)
             f'<button class="search-trigger" type="button" data-palette-open aria-keyshortcuts="Meta+K Control+K" aria-haspopup="dialog">{icon("search")}<span class="st-label">{labels["search"]}</span><kbd class="st-kbd" data-kbd aria-hidden="true">⌘K</kbd></button>'
             f'{language_link}'
             f'<button class="theme-toggle" type="button" data-theme-toggle aria-label="{labels["theme"]}: system">{icon("system", "ti-system")}{icon("sun", "ti-light")}{icon("moon", "ti-dark")}</button>'
-            f'<a class="gh" href="{escape(repository_url, quote=True)}" rel="noopener" aria-label="{star_name}">{icon("star")}<span class="gh-star">{labels["star"]}</span>{count}</a>'
+            f'{star_button(language, repository_url)}'
             f'</div></div></header>')
 
 
 def announcement_bar(language: str) -> str:
     """The one site-wide announcement. Static and reserved in the layout, so it works without JavaScript and shifts nothing."""
     labels = LABELS[language]
-    stars = repository_stars('TIGER-AI-Lab/WebsiteBench')
-    count = f'<span class="ann-count">{compact_count(stars)}</span>' if stars is not None else ''
+    count = star_count('TIGER-AI-Lab/WebsiteBench', 'ann-count')
     sep = '<span class="ann-sep" aria-hidden="true">·</span>'
     return (f'<aside class="ann" aria-label="{labels["ann_name"]}"><div class="wrap ann-row">'
             f'<a class="ann-link" href="{WEBSITEBENCH_URL}" rel="noopener">'
@@ -160,12 +151,13 @@ def plain_language_link(language: str, counterpart: str) -> str:
     return f'<a class="tool-lang" href="{escape(counterpart, quote=True)}" lang="{other}" hreflang="{other}" title="{labels["lang_name"]}">{labels["lang_switch"]}</a>'
 
 
-def mobile_bar(language: str) -> str:
+def mobile_bar(language: str, repository_url: str = REPOSITORY_URL) -> str:
     labels = LABELS[language]
     home = '/zh/' if language == 'zh' else '/'
     return (f'<div class="mbar" data-mbar><a class="mbar-home" href="{home}" aria-label="{labels["home"]}">{icon("reg", "brand-mark")}</a>'
-            f'<button class="mbar-search" type="button" data-palette-open aria-haspopup="dialog">{icon("search")}<span>{labels["search_long"]}</span></button>'
-            f'<button class="theme-toggle" type="button" data-theme-toggle aria-label="{labels["theme"]}: system">{icon("system", "ti-system")}{icon("sun", "ti-light")}{icon("moon", "ti-dark")}</button></div>')
+            f'<button class="mbar-search" type="button" data-palette-open aria-haspopup="dialog" aria-label="{labels["search_long"]}">{icon("search")}<span>{labels["search"]}</span></button>'
+            f'<button class="theme-toggle" type="button" data-theme-toggle aria-label="{labels["theme"]}: system">{icon("system", "ti-system")}{icon("sun", "ti-light")}{icon("moon", "ti-dark")}</button>'
+            f'{star_button(language, repository_url, "mbar-star")}</div>')
 
 
 def palette(language: str) -> str:
@@ -223,7 +215,7 @@ def apply_site_shell(site_dir: Path, *, repository_url: str, skip: frozenset[str
         counterpart = '/' if zh else '/zh/'
         path = relative.removesuffix('index.html').removesuffix('/')
         new_header = header(language, _section(path), _shell_language_link(old.group(0), language, counterpart), repository_url)
-        html = html[:old.start()] + announcement_bar(language) + new_header + mobile_bar(language) + html[old.end():]
+        html = html[:old.start()] + announcement_bar(language) + new_header + mobile_bar(language, repository_url) + html[old.end():]
         html = _with_shared_footer(html, language, repository_url)
         html = _with_html_attributes(html)
         html = EXPLORER_LINK.sub(r'href="\1/explore/?', html)
@@ -262,4 +254,4 @@ def _before_title(html: str) -> str:
 
 
 __all__ = ['apply_site_shell', 'header', 'mobile_bar', 'palette', 'sprite', 'icon', 'head_early', 'shell_assets',
-           'plain_language_link', 'site_footer', 'theme_script_hash', 'repository_stars', 'compact_count']
+           'plain_language_link', 'site_footer', 'theme_script_hash', 'repository_stars', 'compact_count', 'star_button', 'star_count']
