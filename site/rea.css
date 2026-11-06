@@ -938,3 +938,13 @@ html:lang(zh-CN) .cb-n { font-family: "EB Garamond Accent", var(--font-display);
 .promo-lead .btn-primary { min-height: 48px; padding: 0 18px; font-weight: 700; }
 @media (max-width: 899px) { .promo-grid { grid-template-columns: minmax(0, 1fr); } }
 
+/* Home search: the selected result, its key hints, and scrolling that clears the sticky header. */
+.page-home .card.is-active { outline: 2px solid var(--focus); outline-offset: 1px; }
+.page-home .card.is-active .card-face { background: var(--secondary-soft); }
+.page-home .card { scroll-margin: 96px 0 24px; }
+.hs-keys { display: none; align-items: center; gap: 4px; font: 400 .75rem/1 var(--font-mono); color: var(--ink-2); white-space: nowrap; }
+.hs-keys kbd { padding: 2px 5px; border: 1px solid var(--border-input); border-radius: 3px; font: inherit; }
+.has-hits .hs-keys { display: inline-flex; }
+@media (max-width: 899px) { .has-hits .hs-keys { display: none; } }
+.empty .btn { margin-top: 12px; }
+

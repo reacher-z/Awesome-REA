@@ -19,14 +19,14 @@
     theme: '颜色主题', system: '跟随系统', light: '浅色', dark: '深色', reviewed: '已复核', targets: '目标', copied: '已复制',
     showing: (a, n) => `显示 <strong>${fmt(a)}</strong> / <strong>${fmt(n)}</strong>`, range: (a, b, n) => `显示第 <strong>${fmt(a)}–${fmt(b)}</strong> 项，共 <strong>${fmt(n)}</strong> 项`,
     results: (n) => `${fmt(n)} 条结果`, more: (n) => `再显示 ${fmt(n)} 项`, all: (n) => `查看全部 ${fmt(n)} 项资源`, seeAll: (n) => `在资源页查看全部 ${fmt(n)} 条结果`,
-    none: (q) => `没有与“${esc(q)}”匹配的记录。`, near: '相近名称：', suggest: '推荐收录这个资源', clear: '清除筛选', loading: '正在载入索引…', failed: '索引载入失败，请检查网络后重试。',
+    none: (q) => `没有与“${esc(q)}”匹配的记录。`, near: '相近名称：', noneFilters: '没有符合这些筛选条件的记录。', clearSearch: '清除搜索', sources: (q) => `在仓库目录中搜索“${esc(q)}”`, discoveries: '查看未审核的发现', keyMove: '移动', keyOpen: '打开', keyClear: '清除', suggest: '推荐收录这个资源', clear: '清除筛选', loading: '正在载入索引…', failed: '索引载入失败，请检查网络后重试。',
     recent: '最近搜索', popular: '常用入口', groups: { tool: '工具', 'case-study': '案例', integration: '集成', other: '学习与参考', paper: '论文' }, papers: '论文',
     remove: (l) => `移除筛选：${l}`, page: (a, b) => `第 ${a}/${b} 页`, shelf: (a, n) => `${fmt(a)} / ${fmt(n)} 个案例`,
   } : {
     theme: 'Colour theme', system: 'system', light: 'light', dark: 'dark', reviewed: 'Reviewed', targets: 'Targets', copied: 'Copied',
     showing: (a, n) => `Showing <strong>${fmt(a)}</strong> of <strong>${fmt(n)}</strong>`, range: (a, b, n) => `Showing <strong>${fmt(a)}–${fmt(b)}</strong> of <strong>${fmt(n)}</strong>`,
     results: (n) => `${fmt(n)} result${n === 1 ? '' : 's'}`, more: (n) => `Show ${fmt(n)} more`, all: (n) => `Show all ${fmt(n)} resources`, seeAll: (n) => `See all ${fmt(n)} results on the resources page`,
-    none: (q) => `Nothing in the catalogue matches “${esc(q)}”.`, near: 'Close names:', suggest: 'Suggest this resource', clear: 'Clear filters', loading: 'Loading the index…', failed: 'The search index did not load. Check your connection and try again.',
+    none: (q) => `Nothing in the catalogue matches “${esc(q)}”.`, near: 'Close names:', noneFilters: 'Nothing in the catalogue matches these filters.', clearSearch: 'Clear search', sources: (q) => `Search the repository directory for “${esc(q)}”`, discoveries: 'See the unreviewed discoveries', keyMove: 'move', keyOpen: 'open', keyClear: 'clear', suggest: 'Suggest this resource', clear: 'Clear filters', loading: 'Loading the index…', failed: 'The search index did not load. Check your connection and try again.',
     recent: 'Recent searches', popular: 'Popular', groups: { tool: 'Tools', 'case-study': 'Case studies', integration: 'Integrations', other: 'Learning and reference', paper: 'Papers' }, papers: 'Papers',
     remove: (l) => `Remove filter: ${l}`, page: (a, b) => `Page ${a} of ${b}`, shelf: (a, n) => `${fmt(a)} of ${fmt(n)} cases`,
   };
@@ -294,10 +294,12 @@
     const k = t.length >= 8 ? 3 : 2;
     return list.filter((r) => r.nw.some((w) => near(w.slice(0, t.length + 1), t, k) || near(w, t, k))).slice(0, 4);
   }
-  function emptyHTML(q, list, tag = 'div') {
+  function emptyHTML(q, list, tag = 'div', clearable = false) {
     const close = q ? nearNames(q, list) : [];
     const chips = close.map((r) => `<a class="chip" href="${href(r)}">${esc(r.name)}</a>`).join('');
-    return `<${tag} class="empty"><p>${q ? T.none(q) : T.none('')}</p>${chips ? `<p>${T.near}</p><p class="near">${chips}</p>` : ''}`
+    const clear = clearable ? `<p><button class="btn" type="button" data-empty-clear>${T.clearSearch}</button></p>` : '';
+    const elsewhere = q ? `<p><a href="${P}/explore/?view=source-index&sourceq=${encodeURIComponent(q)}">${T.sources(q)}</a></p><p><a href="${P}/discoveries/">${T.discoveries}</a></p>` : '';
+    return `<${tag} class="empty"><p>${q ? T.none(q) : T.noneFilters}</p>${chips ? `<p>${T.near}</p><p class="near">${chips}</p>` : ''}${clear}${elsewhere}`
       + `<p><a href="${ISSUE}" rel="noopener">${T.suggest}</a></p></${tag}>`;
   }
   // Exposed for the search-quality test (tests/e2e/search_queries.json) and for debugging ranking.
@@ -451,6 +453,17 @@
     input.value = st.q;
     sort.value = st.sort;
     const pristine = () => !st.q && st.target === 'all' && !st.kinds.size && st.sort === 'featured';
+    const foot = $('.drawer-foot', drawer);
+    $('.hs-side', form).insertAdjacentHTML('afterbegin', `<span class="hs-keys" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> ${T.keyMove} <kbd>↵</kbd> ${T.keyOpen} <kbd>Esc</kbd> ${T.keyClear}</span>`);
+    let selected = -1;
+    const select = (index, reveal) => {
+      const cards = $$('.card', list);
+      cards.forEach((card, i) => card.classList.toggle('is-active', i === index));
+      selected = cards[index] ? index : -1;
+      form.classList.toggle('has-hits', selected >= 0);
+      if (selected >= 0) input.setAttribute('aria-activedescendant', cards[selected].id); else input.removeAttribute('aria-activedescendant');
+      if (selected >= 0 && reveal) cards[selected].scrollIntoView({ block: 'nearest' });
+    };
     const langLink = $('.site-header a[hreflang]');
     const langBase = langLink ? langLink.getAttribute('href') : '';
     const params = () => {
@@ -479,7 +492,8 @@
         list.innerHTML = init.list; meta.innerHTML = init.meta; showAll.innerHTML = init.all; count.textContent = '';
         tabs.forEach((t, i) => { $('.count', t).textContent = init.tabs[i]; });
         chips.forEach((c, i) => { $('.count', c).textContent = init.chips[i]; c.disabled = false; });
-        more.hidden = true; papersBox.hidden = true;
+        more.hidden = true; papersBox.hidden = true; foot.hidden = false;
+        select(-1);
         return;
       }
       let X;
@@ -504,7 +518,9 @@
       });
       const hits = sortHits(inTarget.filter(kindOK), st.sort, st.q);
       const shown = hits.slice(0, st.shown);
-      list.innerHTML = hits.length ? shown.map((h) => cardHTML(h.r, toks)).join('') : emptyHTML(st.q, X.res, 'li');
+      list.innerHTML = hits.length ? shown.map((h) => cardHTML(h.r, toks)).join('') : emptyHTML(st.q, X.res, 'li', true);
+      select(st.q && hits.length ? 0 : -1);
+      foot.hidden = !hits.length;
       meta.innerHTML = hits.length ? T.showing(shown.length, hits.length) : '';
       showAll.innerHTML = `${T.all(hits.length)}${ico('arrow')}`;
       count.textContent = st.q ? T.results(hits.length) : '';
@@ -521,12 +537,41 @@
     };
     let raf = 0;
     const later = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(render); };
+    const clearSearch = () => { input.value = ''; st.q = ''; st.shown = 10; render(); };
+    // The first character brings the search box up under the header, so the results fill the screen.
+    const raiseSearch = () => {
+      const bar = $('.site-header');
+      const top = (bar && getComputedStyle(bar).position === 'sticky' ? bar.offsetHeight : 0) + 24;
+      const gap = form.getBoundingClientRect().top - top;
+      if (Math.abs(gap) < 4) return;
+      const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollBy({ top: gap, behavior: still ? 'auto' : 'smooth' });
+    };
     input.addEventListener('focus', warm, { once: true });
-    // With scripts the results are already here; Enter keeps them instead of opening the static listing.
-    form.addEventListener('submit', (e) => { e.preventDefault(); st.q = input.value.trim(); st.shown = 10; render(); });
-    input.addEventListener('input', () => { st.q = input.value.trim(); st.shown = 10; later(); });
-    $('[data-search-clear]', form).addEventListener('click', () => { input.value = ''; st.q = ''; input.focus(); render(); });
-    input.addEventListener('keydown', (e) => { if (e.key === 'Escape' && input.value) { e.preventDefault(); input.value = ''; st.q = ''; render(); } });
+    // Enter opens the selected result; with none selected the results are already on the page.
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const link = selected >= 0 && $('.card-name a', $$('.card', list)[selected]);
+      if (link) { location.href = link.href; return; }
+      st.q = input.value.trim(); st.shown = 10; render();
+    });
+    input.addEventListener('input', () => {
+      const had = !!st.q;
+      // The selection belongs to the previous query until the new results render.
+      select(-1);
+      st.q = input.value.trim(); st.shown = 10; later();
+      if (st.q && !had) raiseSearch();
+    });
+    $('[data-search-clear]', form).addEventListener('click', () => { clearSearch(); input.focus(); });
+    list.addEventListener('click', (e) => { if (e.target.closest('[data-empty-clear]')) { clearSearch(); input.focus(); } });
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (input.value) { e.preventDefault(); clearSearch(); } else input.blur();
+      } else if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && selected >= 0) {
+        e.preventDefault();
+        select(Math.max(0, Math.min($$('.card', list).length - 1, selected + (e.key === 'ArrowDown' ? 1 : -1))), true);
+      }
+    });
     tabs.forEach((t) => t.addEventListener('click', (e) => {
       if (e.metaKey || e.ctrlKey || e.shiftKey) return;
       e.preventDefault(); st.target = t.dataset.target; st.shown = 10; render();

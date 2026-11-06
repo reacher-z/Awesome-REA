@@ -225,11 +225,27 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   await page.waitForFunction(() => document.querySelector('[data-cards] > .card') && new URL(location.href).searchParams.get('q') === 'ghidra', {timeout: 15000});
   assert.equal(requests(requested, index), 1, `${label}: one search index request`);
   await page.waitForFunction(id => document.querySelector(`[data-cards] > .card[data-id="${id}"]`), {}, 'ghidra');
-  await page.keyboard.press('Enter');
-  await new Promise(resolve => setTimeout(resolve, 200));
-  assert.equal(new URL(page.url()).pathname, language === 'zh' ? '/zh/' : '/', `${label}: Enter keeps the results in place`);
   assert.equal(await page.$eval('.site-header a[hreflang]', link => new URL(link.href).search), '?q=ghidra', `${label}: the language link keeps the search`);
   await noOverflow(page, label + ' with a search');
+  // Arrow keys move the selection; Escape clears; zero results offer other routes rather than a count of nothing.
+  await page.waitForSelector('[data-cards] > .card.is-active');
+  await page.keyboard.press('ArrowDown');
+  await page.keyboard.press('ArrowUp');
+  assert.equal(await count(page, '[data-cards] > .card.is-active'), 1, `${label}: one result is selected`);
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => !document.querySelector('[data-search-input]').value && !new URL(location.href).searchParams.get('q'));
+  assert.equal(await count(page, '[data-cards] > .card.is-active'), 0, `${label}: Escape clears the selection`);
+  await page.type('[data-search-input]', 'zzzzqqqq');
+  // The empty state can appear after the first few letters; wait until it describes the whole query.
+  await page.waitForSelector('[data-cards] > .empty a[href*="sourceq=zzzzqqqq"]');
+  assert.equal(await page.$eval('.drawer-foot', foot => foot.hidden), true, `${label}: no results, no "Show all" footer`);
+  assert(await page.$eval('[data-cards] > .empty', box => !!box.querySelector('[data-empty-clear]') && !!box.querySelector('a[href*="sourceq=zzzzqqqq"]')), `${label}: the empty state offers other routes`);
+  await page.click('[data-empty-clear]');
+  await page.waitForFunction(() => document.querySelector('[data-cards] > .card'));
+  await page.type('[data-search-input]', 'ghidra');
+  await page.waitForSelector('[data-cards] > .card.is-active');
+  await Promise.all([page.waitForNavigation({waitUntil: 'load'}), page.keyboard.press('Enter')]);
+  assert.match(new URL(page.url()).pathname, /\/resources\/[a-z0-9-]+\/$/, `${label}: Enter opens the selected result`);
 }
 
 // An old link into the collection's filters still opens them, now on the explorer.
