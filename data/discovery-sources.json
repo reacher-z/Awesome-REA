@@ -2580,6 +2580,152 @@
         "exclude_text": "gguf|\\bawq\\b|gptq|exl2|\\bmlx\\b|-mlx|mlx-|imatrix|q[2-8]_k|\\bint[48]\\b|-i1\\b",
         "kind": "project"
       }
+    },
+    {
+      "id": "alexgaoth-re-tooling",
+      "type": "github-readme-list",
+      "repository": "alexgaoth/awesome-reverse-engineered",
+      "path": "categories/re-tooling.md",
+      "why": "RE Tooling category of a large index of reverse-engineered projects; the coverage benchmark found 388 in-scope repositories from it in no layer of this catalog.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "alexgaoth-firmware-embedded",
+      "type": "github-readme-list",
+      "repository": "alexgaoth/awesome-reverse-engineered",
+      "path": "categories/firmware-embedded.md",
+      "why": "Firmware and embedded category of the same index, a sub-area where the benchmark measured low coverage.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "alexgaoth-network-wire-protocols",
+      "type": "github-readme-list",
+      "repository": "alexgaoth/awesome-reverse-engineered",
+      "path": "categories/network-wire-protocols.md",
+      "why": "Network and wire-protocol category of the same index, a sub-area where the benchmark measured low coverage.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "alexgaoth-file-formats",
+      "type": "github-readme-list",
+      "repository": "alexgaoth/awesome-reverse-engineered",
+      "path": "categories/file-formats.md",
+      "why": "File-format category of the same index, covering format parsers and reverse-engineered specifications.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "alexgaoth-game-decompilations",
+      "type": "github-readme-list",
+      "repository": "alexgaoth/awesome-reverse-engineered",
+      "path": "categories/game-decompilations-reimplementations.md",
+      "why": "Game decompilation and reimplementation category of the same index.",
+      "scope": {
+        "include_sections": ".",
+        "default_kind": "case-study",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "alphaseclab-awesome-reverse-engineering",
+      "type": "github-readme-list",
+      "repository": "alphaSeclab/awesome-reverse-engineering",
+      "path": "Readme.md",
+      "why": "Large Chinese and English reverse-engineering list that lists IDA, Ghidra, x64dbg, Android and firmware tooling absent from every other followed source.",
+      "scope": {
+        "include_sections": ".",
+        "keyword": "revers|decompil|disassembl|debug|ghidra|\\bida\\b|x64dbg|frida|hook|unpack|firmware|binary|\\bapk\\b|\\bdex\\b|\\belf\\b|\\bpe\\b",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "wangxiaoxiang5599-recompiled-games-list",
+      "type": "github-readme-list",
+      "repository": "wangxiaoxiang5599/recompiled-games-list",
+      "path": "README.md",
+      "why": "Running list of recompiled and natively ported games, a sub-area where the benchmark found many repositories in no layer of this catalog.",
+      "scope": {
+        "include_sections": ".",
+        "default_kind": "case-study",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "hexsecs-awesome-embedded-security",
+      "type": "github-readme-list",
+      "repository": "hexsecs/awesome-embedded-security",
+      "path": "README.md",
+      "why": "Embedded-security list organised by firmware analysis, hardware interfaces and emulation.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "nforest-awesome-decompilation",
+      "type": "github-readme-list",
+      "repository": "nforest/awesome-decompilation",
+      "path": "README.md",
+      "why": "Focused list of decompilation research and tools.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "systemsecuritystorm-awesome-binary-similarity",
+      "type": "github-readme-list",
+      "repository": "SystemSecurityStorm/Awesome-Binary-Similarity",
+      "path": "README.md",
+      "why": "Research list of binary code similarity papers and tools, the sub-area with the weakest research coverage in the benchmark.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
+    },
+    {
+      "id": "bin2own-awesome-info-inferring-binary",
+      "type": "github-readme-list",
+      "repository": "Bin2Own/Awesome-Info-Inferring-Binary",
+      "path": "README.md",
+      "why": "Research list on inferring types, names and structure from stripped binaries.",
+      "scope": {
+        "include_sections": ".",
+        "exclusion_sets": [
+          "linking-policy-decisions"
+        ]
+      }
     }
   ]
 }
