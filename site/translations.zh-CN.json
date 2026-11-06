@@ -8567,5 +8567,1998 @@
       "支持 Python 2.6+ 和 Python 3.x，通过 pip 安装并附带 pcodedmp。",
       "依 LICENSE 采用 GPL-3.0 许可。"
     ]
+  },
+  "weeping-of-the-empire-case": {
+    "name": "Weeping of the Empire：将《塞尔达传说 王国之泪》静态重编译至 Windows",
+    "requirements": [
+      "需要 Windows 10 或 11 x64、支持 Vulkan 1.3 的显卡驱动及用户自己的游戏转储；加密转储还需要用户自己的密钥。安装时需要联网。",
+      "支持游戏 1.0.0 版，1.4.3 版仍为测试支持；首次进入场景时可能因编译着色器而卡顿。",
+      "MIT 许可证。"
+    ]
+  },
+  "exoproc": {
+    "name": "Exoproc Windows 进程插桩与智能体 MCP 接口",
+    "requirements": [
+      "实时进程插桩需要 Windows x64。",
+      "Node.js 运行方式需要 Node.js 18 或更新版本；README 另述 Bun 和独立可执行文件。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "sh23ds-case": {
+    "name": "sh23ds：《寂静岭 2》的 3DS 原生重建",
+    "requirements": [
+      "需要运行 Luma3DS 的 3DS 或 2DS、《寂静岭 2：导演剪辑版》PC 版副本，以及约 1.8 GB 的 SD 卡空间。",
+      "声音功能需先用 DSP1 导出一次 DSP 固件。",
+      "当前为开发版本；作者报告实体主机测试很少，行为和渲染仍有缺口。",
+      "采用 GPL-3.0 许可证；附带的第三方代码保留各自许可证。"
+    ]
+  },
+  "simcity-3000-gta-mode-case": {
+    "name": "GTA Mode：逆向 SimCity 3000 Unlimited 并开发原生插件",
+    "requirements": [
+      "需要用户自己的《SimCity 3000 Unlimited》；支持的游戏 DLL 为 Steam 版 2000 年 4 月构建。",
+      "构建需要 32 位 mingw-w64 编译器；HUD 使用 cnc-ddraw 的 OpenGL 渲染器。",
+      "目前尚不能偷走游戏原有的交通车辆或殴打原有行人；水域也不会阻挡移动。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "fh2mp-case": {
+    "name": "FH2MP：重建《Forza Horizon 2》在线服务",
+    "requirements": [
+      "需要合法持有的 Xbox One 版《Forza Horizon 2》1.0.0.64 和 Azimuth。",
+      "作者提示仍可能出现崩溃、状态不同步等问题。",
+      "GPL-3.0 许可证。"
+    ]
+  },
+  "opendevicedb": {
+    "name": "OpenDeviceDB 设备逆向资料目录",
+    "requirements": [
+      "在本地使用网站、导入器或 MCP 服务器需要仓库的 npm 工作流程。",
+      "部分设备条目仍依赖厂商非自由组件或云服务。",
+      "代码采用 AGPL-3.0-or-later，数据采用 CC BY-SA 4.0。"
+    ]
+  },
+  "esp-idf-injection-ng": {
+    "name": "esp-idf-injection-ng ESP-IDF 帧发送限制分析",
+    "requirements": [
+      "演示补丁和固件需要 ESP-IDF 安装及 ESP32 硬件。",
+      "作者在经典 ESP32 上测试了 ESP-IDF v6.1-dev；其他所列版本和芯片仍取决于条件。",
+      "补丁会全局修改本机 ESP-IDF 归档，并影响使用该安装的构建。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "cursed-lands-case": {
+    "name": "Cursed Lands：用 Godot 重建《Evil Islands》与《Lost in Astral》引擎",
+    "requirements": [
+      "需要自备《Evil Islands》或《Lost in Astral》；基础游戏主要以 GOG 版本测试。",
+      "浏览器版本需要 WebGL 2。",
+      "采用 Apache License 2.0。"
+    ]
+  },
+  "pkg-to-anyps5": {
+    "name": "pkg-to-anyps5 PS5 调试包提取工具",
+    "requirements": [
+      "源码构建需要 Rust 1.88 或更新版本；输入为 PS5 调试包或已提取的游戏目录。",
+      "不支持零售包、加密文件系统及加密 SELF 段；部分 Kraken 熵编码类型尚未实现。",
+      "采用 GPL-3.0-or-later 许可证。"
+    ]
+  },
+  "questpad-case": {
+    "name": "QuestPad：利用 Quest Touch 无线协议构建 USB 手柄",
+    "requirements": [
+      "需要 Nordic nRF52840 Dongle 或 nice!nano v2，以及 Quest Touch 手柄。",
+      "控制面板需要 Python 3。",
+      "Quest 3/3S 手柄及 Linux 支持列为未测试。",
+      "仓库提供 MIT 和 Apache-2.0 许可证文件。"
+    ]
+  },
+  "pmca-re-reloaded": {
+    "name": "PMCA-RE RELOADED 索尼相机分析与管理工具",
+    "requirements": [
+      "设备操作需要 Windows、macOS 或 Linux，以及通过 USB 连接的受支持 Sony 相机。",
+      "安装应用、访问设置存储区和运行功能分析需要用户自行导入密钥材料。",
+      "功能分析仍处于实验阶段；作者报告仅在一台相机上试过固件刷写，其他机型尚未确认。",
+      "MIT 许可证。"
+    ]
+  },
+  "nfs-mw-case": {
+    "name": "nfs-mw：用 Rust 重建《极品飞车：最高通缉》",
+    "requirements": [
+      "需要稳定版 Rust 和已安装的 PC 版《极品飞车：最高通缉》v1.3／Black Edition。",
+      "文档列出 Windows 和 Linux 支持；菜单与自由漫游之外的玩法仍在路线图中。",
+      "仓库提供 Apache-2.0 和 MIT 许可证文件。"
+    ]
+  },
+  "osiris-onkyo-receiver-case": {
+    "name": "OSIRIS：基于 MCU 协议研究替换 Onkyo 功放固件",
+    "requirements": [
+      "需要配有 D830 或 OMAP-L137 DSP 板的 Onkyo 功放；安装需要连接 DSP 板串口并切换 BOOT 引脚。",
+      "作者报告 TX-NR717 可运行，TX-NR515 可运行但尚未完成全部测试；DTS、Spotify、网络电台和 DLNA 尚未实现。",
+      "OSIRIS 原创代码采用 BSD-2-Clause；随附上游组件沿用 README 列出的各自许可证。"
+    ]
+  },
+  "stadiacast-case": {
+    "name": "Stadiacast：重建 Stadia 手柄的 Wi-Fi 服务",
+    "requirements": [
+      "需要运行 Wi-Fi 固件的 Stadia 手柄；作者测试的是 ota.282115。",
+      "需要与手柄位于同一网络的 Windows、macOS 或 Linux 主机；从源码运行需要 Python 3.11 及以上版本。",
+      "Linux 上绑定所需低端口需要 root 权限或 CAP_NET_BIND_SERVICE。",
+      "MIT 许可证。"
+    ]
+  },
+  "rust-deobf": {
+    "name": "rust-deobf Rust 二进制去混淆工具",
+    "requirements": [
+      "核心包要求 Python 3.10 或更新版本。",
+      "文档列出的分析范围为 ELF、PE 和 Mach-O 中的 x86-64、ARM64 及 32 位 x86。",
+      "核心采用 Apache-2.0；premium 模块可选择 AGPL-3.0-or-later 或商业许可证。"
+    ]
+  },
+  "thisfirmwaredoesnotexist": {
+    "name": "ThisFirmwareDoesNotExist MicroFreak 固件分析与补丁工具",
+    "requirements": [
+      "需要 Python 3.11 或更新版本，以及官方 MicroFreak 5.0.0.2084 .mff 更新文件。",
+      "部分 MIDI CC 分配可能干扰尚未测试的原厂功能。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "re-workstation": {
+    "name": "RE-Workstation 逆向分析知识库",
+    "requirements": [
+      "作为智能体技能使用时，需要保留 SKILL.md、CATALOG.md、knowledge/ 和 references/ 等完整目录。",
+      "分析工具由宿主环境提供。",
+      "原创及新整理内容采用 GPL-3.0-only；第三方内容沿用各自条款。"
+    ]
+  },
+  "bf-private-server-case": {
+    "name": "bf-private-server：《Brave Frontier》服务端重建",
+    "requirements": [
+      "构建服务端需要 Git 与 Docker，或原生 C++23 工具链。",
+      "游戏数据和 Android 客户端须另行取得。",
+      "部分客户端请求尚未实现，会返回暂不可用响应。",
+      "采用 AGPL-3.0 许可证。"
+    ]
+  },
+  "clickwill-case": {
+    "name": "Clickwill：重建 iPod 音乐库数据库编辑功能",
+    "requirements": [
+      "正常写入需要 macOS 14 或更新版本，以及 iPod classic 或受支持的 iPod nano。",
+      "源码构建需要 Xcode 27 和 XcodeGen。",
+      "iPod nano 第三、四代在格式确认前不能添加新封面；其他 iPod 默认以只读方式打开。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "virtual-mpc-sample-case": {
+    "name": "Virtual MPC Sample：在 QEMU 中运行 Akai MPC Sample 固件",
+    "requirements": [
+      "需要用户自己的 MPC Sample 1.3.0.12 固件分区；使用原厂音色库还需用户自己的设备。",
+      "需要 QEMU 9 或更新版本、构建用 Docker、Python 3.9 或更新版本及 OpenSSH 客户端。",
+      "USB 音频、其他固件版本和 Windows 实测尚未完成。",
+      "主体采用 MIT 许可证，Linux 内核补丁采用 GPL-2.0。"
+    ]
+  },
+  "openjooki-jooki2-case": {
+    "name": "OpenJooki：替换 Jooki 2 软件与恢复流程",
+    "requirements": [
+      "目标硬件为 Jooki 2 设备。",
+      "替代系统安装在设备基于 SD 卡的嵌入式 Linux 环境中。",
+      "MIT 许可证。"
+    ]
+  },
+  "intel-ma": {
+    "name": "intel_ma：管理固件分析与修改工具",
+    "requirements": [
+      "镜像分析需要兼容的固件区域镜像或完整 SPI 转储。",
+      "项目列出 x86_64 Linux 和 FreeBSD/amd64；实时 ME 探测仅支持 Linux。",
+      "AMD PSP 功能仅提供检查。",
+      "许可证为 GPL-3.0-or-later。"
+    ]
+  },
+  "breakinggood": {
+    "name": "breakinggood 网站采集与重建工具",
+    "requirements": [
+      "需要 Node 20 或更新版本及 Git；网站模式还需要已安装的 Chrome 或 Edge 浏览器，以及配置好的模型服务。",
+      "登录后的页面、强反爬页面或主要由 canvas/WebGL 渲染的页面可能采集不完整。",
+      "MIT 许可证。"
+    ]
+  },
+  "openlf2-case": {
+    "name": "OpenLF2：Little Fighter 2 引擎重实现",
+    "requirements": [
+      "需要《Little Fighter 2》v2.0a 安装程序提供原版游戏数据；Flatpak 在安装时下载该程序，其他平台则提示用户提供副本。",
+      "构建需要 CMake 3.25+、Ninja、C++23 编译器，以及 BUILDING.md 所列开发库。",
+      "玩法兼容性仍在改进；不支持与原版 LF2 联机。",
+      "MIT 许可证适用于 OpenLF2 的代码、脚本和文档，不涵盖原版游戏素材。"
+    ]
+  },
+  "stickwalker-case": {
+    "name": "Stickwalker：将 Pokéwalker 固件移植到 Stick S3",
+    "requirements": [
+      "文档要求 M5Stack Stick S3、BPV10NF 光电二极管和 USB-C 数据线。",
+      "原版图像需从用户自有 ROM 提取；下载版使用占位图像。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "qemu-rtd2841": {
+    "name": "qemu-rtd2841 Realtek RTD2841 芯片组模拟器",
+    "requirements": [
+      "需按文档使用指定版本的 QEMU、RTD2841 补丁及主机工具链构建。",
+      "启动 Linux 需要用户本地兼容的 RTD2841 zImage 和复合 eMMC 镜像。",
+      "作者报告公开测试覆盖裸机和模拟存储层级；完整 Android init 与框架服务尚未完成。",
+      "许可证为 GPL-2.0。"
+    ]
+  },
+  "os-xgs-npu-case": {
+    "name": "os-xgs-npu：重建 Sophos XGS 协处理器接口",
+    "requirements": [
+      "需要 Sophos XGS 硬件及匹配的 OPNsense 或 FreeBSD 环境；内核模块需在设备上构建。",
+      "作者称项目仍在完善，目前已有两个协处理器系列可响应。",
+      "BSD-2-Clause 许可证。"
+    ]
+  },
+  "spark-mail-linux-case": {
+    "name": "Spark Mail：借助 Wine 兼容层在 Linux 上运行 Windows 桌面应用",
+    "requirements": [
+      "需要官方 Windows 版 Spark.exe 安装包、Wine，以及文档覆盖的 Arch Linux 或基于 Arch 的发行版。",
+      "作者报告 Spark 3.32.2.141404 可以启动；该版本的邮件、日历、附件及通知投递仍缺少完整检查。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "libremp-easymp-case": {
+    "name": "LibreMP：基于抓包研究的 Epson EasyMP 投屏客户端",
+    "requirements": [
+      "需要兼容 Epson EasyMP 的投影仪及受支持的桌面系统；构建需要 Rust、Cargo、Node.js、npm、NASM 和 CMake。",
+      "投影仪关键词保护的登录路径尚未经过实机测试；Windows 和 macOS 投屏也仍待实机验证。",
+      "MIT 许可证。"
+    ]
+  },
+  "cfg-visualizer": {
+    "name": "CFG Visualizer 三维控制流图查看工具",
+    "requirements": [
+      "本地分析需要 Python 3.10+，且 radare2 位于 PATH 中。",
+      "公开上传服务缺少身份验证、速率限制和子进程沙箱。",
+      "MIT 许可证。"
+    ]
+  },
+  "atlantis-native-case": {
+    "name": "Atlantis Native：将 Atlantis 与 Atlantis II 引擎移植到 Rust",
+    "requirements": [
+      "用户需自备 Atlantis: The Lost Tales 或 Atlantis II；仓库不含游戏数据。",
+      "文档列出 Windows、macOS、Linux 桌面版本及浏览器版本。",
+      "采用 GPL-3.0-or-later 许可证。"
+    ]
+  },
+  "lc75826-sony-cdx-a250-case": {
+    "name": "Sony CDX-A250：还原 LCD 面板接口",
+    "requirements": [
+      "所述实验使用 Sony CDX-A250 前面板、兼容 Arduino 的开发板、台式电源、按钮及接线元件。",
+      "项目记录了所演示的面板配置，以及 Arduino 程序使用的 LC75826W 接口。",
+      "代码采用 MIT 许可证；原创文档和项目媒体采用 CC BY 4.0。"
+    ]
+  },
+  "apkscope": {
+    "name": "apkscope Android 应用反编译分析工具",
+    "requirements": [
+      "需要提供 APK 或 XAPK 等 Android 应用包。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "macropad-usb-protocol-case": {
+    "name": "MacroPad：重建 USB 宏键盘配置协议",
+    "requirements": [
+      "受支持的配置方式需要 Linux、Python 3.9 及以上和 USB ID 为 1189:8840 的宏键盘。",
+      "其他设备 ID 在布局和协议加入前会被标为不支持。",
+      "GPL-3.0 许可证。"
+    ]
+  },
+  "monix-audient-id-case": {
+    "name": "Monix：在 Linux 上重建 Audient iD USB 混音器控制",
+    "requirements": [
+      "需要 Linux 5.9 或更新内核及 Audient iD 系列声卡。",
+      "构建需要 C++17 工具链、CMake 3.16 或更新版本、内核头文件，以及 ALSA、GLFW 和 OpenGL 开发包。",
+      "作者报告仅在 iD24 上完成硬件测试；其他型号的路由支持有限或尚未确认。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "sf2recomp-case": {
+    "name": "SF2Recomp：将《Shadow Fight 2》静态重编译到原生平台",
+    "requirements": [
+      "需自行提供包含基础版与 v1.1.0/update v131072 的合并 NSP、配套文件及 prod.keys，或已提取的更新版游戏文件。",
+      "需要兼容 Vulkan 1.3 的 GPU 和驱动；各平台另有版本要求。",
+      "macOS Apple Silicon 支持仍属实验阶段，游戏过程和 GPU 验证尚未完成。",
+      "项目代码采用 MIT 许可证；依赖和项目图标另有许可条款。"
+    ]
+  },
+  "scooter-link-case": {
+    "name": "Scooter Link：基于 BLE 协议研究的小米滑板车客户端",
+    "requirements": [
+      "需要 Android 设备及受支持的小米电动滑板车；作者报告已在 5 Pro 和 5 Max 上测试。",
+      "其他列出的型号仅获实验性只读支持，或尚未测试。",
+      "PolyForm Noncommercial License 1.0.0 许可证。"
+    ]
+  },
+  "sony-bravia-linux-case": {
+    "name": "sony-bravia-linux：前 Android 时代 BRAVIA 平台与媒体行为调查",
+    "requirements": [
+      "文档适用范围为 2011 至 2012 年前 Android 时代的 Sony BRAVIA AZ1、AZ2、AZ3 机芯系列。",
+      "作者报告在两台自有电视上测试了媒体行为。",
+      "仓库主 LICENSE 文件为 GPL-2.0；README 还注明部分内容另有许可证。"
+    ]
+  },
+  "dfsdk": {
+    "name": "dfsdk Delta Force 对象结构导出器",
+    "requirements": [
+      "目标输入是具有文档所述对象和名称池布局的 Delta Force 进程。",
+      "文档中的偏移适用于所研究的特定布局。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "sb-ae9-case": {
+    "name": "Sound Blaster AE-9：通过 Windows 驱动分析重建 Linux 控制",
+    "requirements": [
+      "文档要求 Linux 内核 6.17 或更新版本，以及内核头文件、DKMS、构建工具、PipeWire 和 WirePlumber。",
+      "需要在本地从 Creative 驱动包提取一段 DSP 固件。",
+      "作者报告声卡和音频控制模块合计 16 项功能中有 7 项获支持；测试机器在打开录音设备时死机，因此录音已禁用。",
+      "采用 GPL-2.0 许可证。"
+    ]
+  },
+  "kbot": {
+    "name": "KBot《Total Annihilation》文件格式与脚本分析工具",
+    "requirements": [
+      "安装或构建命令行工具需要 Go。",
+      "检查游戏资产需要《Total Annihilation》或《TA: Kingdoms》的文件；游戏安装目录可提供这些文件。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "thermalmaster-case": {
+    "name": "thermalmaster：ThermalMaster 热像仪 USB 协议的 Go 客户端",
+    "requirements": [
+      "需要 ThermalMaster P3 或 P1 热像仪、C 工具链、pkg-config 和 libusb 开发文件。",
+      "视频推流需要 Linux 与 v4l2loopback，并须配置 USB 访问权限。",
+      "采用 CC0-1.0 许可。"
+    ]
+  },
+  "cpp2cs": {
+    "name": "Cpp2CS IL2CPP 托管代码恢复工具",
+    "requirements": [
+      "需要 .NET 10 SDK、Il2CppDumper 子模块，以及相互匹配的二进制文件和元数据。",
+      "恢复模型针对 Android ARM64 ELF、Unity 2022.3.62f2 和元数据 v31。",
+      "生成项目文件并不表示源码可编译或可运行。",
+      "MIT 许可证。"
+    ]
+  },
+  "ghidra-c6000": {
+    "name": "ghidra-c6000 TI C6000 DSP 分析扩展",
+    "requirements": [
+      "需要对应版本的 Ghidra 12.x 及其指定 JDK：Ghidra 12.0 或 12.1 使用 JDK 21，12.2 使用 JDK 25。",
+      "导入原始镜像时需要指定基址和入口点。",
+      "尚不支持 C66x 专有指令及完整 C66x 指令集。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "sheypoor-mcp-case": {
+    "name": "Sheypoor MCP：从浏览器流量还原分类信息网站接口",
+    "requirements": [
+      "MCP 服务需要 Node.js 20.11 及以上版本。",
+      "账户功能需要通过 Sheypoor 手机短信认证。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "open-rknpu-case": {
+    "name": "open-rknpu：Rockchip NPU 任务程序还原",
+    "requirements": [
+      "主机端编译需要 Python、NumPy 和 ONNX；硬件运行需要兼容板卡及交叉工具链。",
+      "参考板卡为搭载共用 RV1106 NPU IP、驱动版本 v0.8.2 的 Luckfox Pico Mini B。",
+      "动态形状、LSTM/GRU、一维卷积、MatMul/Gemm 和多阶段检测头不在文档所述范围内。",
+      "编译器、运行时、测试、示例和文档采用 MIT 许可证。"
+    ]
+  },
+  "dmc-recomp-case": {
+    "name": "Devil May Cry：实验性的 PS2 静态重编译",
+    "requirements": [
+      "需要用户自行提供 PAL 欧版 Devil May Cry 1.02 的可执行文件或光盘镜像。",
+      "需要固定版本的 PS2Recomp 和文档指定的构建工具链。",
+      "文档将移植版标为实验阶段，渲染和游戏流程尚未完成。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "hardsid4u-case": {
+    "name": "hardsid4u：还原 HardSID 4U USB 协议",
+    "requirements": [
+      "实际控制硬件需要 HardSID 4U；核心驱动需要 Python 3.9+、libusb1 和 libusb。",
+      "文档中的 MIDI 输出还需 python-rtmidi 和 CoreMIDI。",
+      "作者报告设备停滞时可能需要物理断电重启；等时传输模式未使用，也没有 SID 文件播放器。",
+      "许可证为 MIT。"
+    ]
+  },
+  "ms4x": {
+    "name": "MS4X Siemens 发动机控制单元逆向工具与文档",
+    "requirements": [
+      "需要 Python 3 和用户提供的 MS42 或 MS43 镜像。",
+      "新内容已暂停；作者表示仍处理错误报告。",
+      "代码采用 Apache-2.0，文档与数据采用 CC BY-SA 4.0。"
+    ]
+  },
+  "zcode-android-case": {
+    "name": "ZCode-Android：重建 ZCode 远程控制客户端",
+    "requirements": [
+      "需要 arm64-v8a 架构的 Android 12+ 设备和桌面端 ZCode 配对链接。",
+      "构建需要 JDK 17 和 Android SDK 35。",
+      "官方网页协议更新可能导致客户端失效。",
+      "README 声明采用 MIT 许可证。"
+    ]
+  },
+  "pyeilik-case": {
+    "name": "PyEilik：Eilik 机器人的 USB 协议客户端",
+    "requirements": [
+      "需要 macOS 和 Python 3.9 或更新版本；125000 波特率串口依赖 Apple 专用 ioctl。",
+      "播放视频需要 PATH 中的 ffmpeg；显示 PNG 需要安装 image 扩展依赖。",
+      "文档所述协议无法向机器人的扬声器发送音频。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "libfprint-goodixtls-case": {
+    "name": "libfprint-goodixtls：还原 Goodix GXFP5187 指纹驱动",
+    "requirements": [
+      "需要 Huawei MateBook X Pro MACH-WX9 上的 Goodix GXFP5187 传感器及可用的 spidev 节点。",
+      "详细的协议帧和匹配引擎研究笔记另行保存，未收入仓库。",
+      "README 中的匹配错误率是作者基于所述采集样本报告的结果。",
+      "LGPL-2.1 许可证。"
+    ]
+  },
+  "walksnail-ascent-vrx-uart": {
+    "name": "Walksnail Ascent VRX UART 协议资料",
+    "requirements": [
+      "实际连接需要 Walksnail VRX 和具备兼容 UART 接口的控制器。",
+      "库将载荷限制为 64 字节；波特率、电平和引脚仍需在目标硬件上确认。",
+      "发送报文示例按所述文档测试；接收遥测格式和设备行为仍未确定。",
+      "MIT 许可证。"
+    ]
+  },
+  "sin-punishment-recompiled-case": {
+    "name": "Sin & Punishment：开发中的 N64 静态重编译移植",
+    "requirements": [
+      "需要合法取得的日版 Sin & Punishment ROM、Python 3、固定版本的子模块，以及 README 所述的平台构建工具链。",
+      "当前重编译配置还需要补丁工作镜像，但公开仓库没有其生成流程。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "scvk-case": {
+    "name": "scvk：以 Vulkan 替换 SimCity 4 渲染器",
+    "requirements": [
+      "需要具有文中所述 GZCOM 插件接口的 SimCity 4，以及支持 Vulkan 的显卡。",
+      "SCGL 使用相同的渲染器类 ID，不能同时安装；Intel 显卡尚未测试。",
+      "采用 LGPL-2.1 或更新版本许可证。"
+    ]
+  },
+  "razerstream-case": {
+    "name": "RazerStream：重建 Stream Controller 设备控制功能",
+    "requirements": [
+      "需要 macOS 14 或更新版本，以及 USB VID 为 0x1532、PID 为 0x0D06 的 Razer Stream Controller。",
+      "源码构建需要 Xcode 16 或更新版本；按键与媒体键操作需要辅助功能权限。",
+      "应用目前仅面向 macOS。",
+      "MIT 许可证。"
+    ]
+  },
+  "dabplayplus-case": {
+    "name": "DABplay+：重建 USB DAB+ 接收器控制协议",
+    "requirements": [
+      "需要 Android 8+ 和受支持的 USB DAB+ 接收器。",
+      "构建需要 JDK 25 和 Android SDK。",
+      "仅列表中的第一类接收器经过实体硬件测试；部分广播场景功能尚未实测。",
+      "MIT 许可证。"
+    ]
+  },
+  "t2-platform-research": {
+    "name": "T2 platform research Apple T2 平台研究",
+    "requirements": [
+      "主要固件清单覆盖 bridgeOS 23P6068 的 16 种量产配置。",
+      "多数主机侧观察来自 MacBookPro16,1 / J152fAP；其他机型和固件结论另有限定范围。",
+      "参考代码不提供驱动或指纹服务。",
+      "MIT 许可证。"
+    ]
+  },
+  "pocketprinter5890-case": {
+    "name": "PocketPrinter5890：重建 Lidl 5890 打印机协议",
+    "requirements": [
+      "文档所依据的设备为 A2Y 型、固件 V1.06LY；其他版本可能存在差异。",
+      "浏览器演示需要 Chrome、Edge 或 Opera 的 Web Bluetooth 支持。",
+      "未实现固件更新；约二十条转录命令尚未在参考固件上执行。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "salamander-uefi-case": {
+    "name": "Salamander UEFI：《沙罗曼蛇》的反汇编驱动 UEFI 移植",
+    "requirements": [
+      "生成游戏资源头文件需要合法持有的《沙罗曼蛇》NES ROM。",
+      "构建需要 Windows、Visual Studio 2019、EDK2 和 Python 3.10 或更新版本；模拟运行使用 QEMU/OVMF。",
+      "应用没有音频，文档列出分数显示及部分 Boss 精灵的差异。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "cocos2d-dumper": {
+    "name": "cocos2d-dumper ELF 函数符号提取工具",
+    "requirements": [
+      "需要 Python 3.9 或更新版本，以及 GNU binutils 中的 readelf 和 c++filt。",
+      "工具所述的可用函数符号来自未剥离符号的库。",
+      "MIT 许可证。"
+    ]
+  },
+  "binary-ninja-security-analysis-plugin": {
+    "name": "Binary Ninja Security Analysis Plugin 二进制分析插件",
+    "requirements": [
+      "需要 Binary Ninja、稳定版 Rust 工具链和 Binary Ninja API 开发头文件。",
+      "作者称在 Binary Ninja Personal 6.1.10951-dev 中测试了重新构建的命令。",
+      "MIT 许可证。"
+    ]
+  },
+  "nwbinanalyzer": {
+    "name": "NWBinAnalyzer NW.js 二进制分析器",
+    "requirements": [
+      "需要 Python 3.6+；作者称程序只使用标准库。",
+      "作者说明它只显示常量池字符串，不能完整反编译 V8 字节码。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "parking-sensor-protocol-case": {
+    "name": "Parking sensor kit：倒车雷达显示协议重建",
+    "requirements": [
+      "示例程序面向 ATmega328P 微控制器和兼容的倒车雷达套件。",
+      "外观相似的套件可能使用不同电路，代码可能需要调整。",
+      "连接微控制器前须检查信号电压；文中的设备信号超过 5 V。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "glaurung-models": {
+    "name": "Glaurung Models 可执行文件分词模型研究",
+    "requirements": [
+      "文档中的分词流程使用 Python 的 tokenizers 和 transformers 包，并将二进制字节转换为 Latin-1。",
+      "文档报告该 64K 分词器平均每个 token 对应 2.849 字节。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "pyhaseiq-case": {
+    "name": "pyhaseiq：复原旧款 Hase iQ 炉具的 WebSocket 协议",
+    "requirements": [
+      "需要 Python 3.13 或更新版本，以及局域网内与 flamemonitor 配套的旧款 Hase iQ 炉具。",
+      "不支持配套新版 HASE iQ 应用的炉具；API 仍处于 alpha 阶段。",
+      "该库不实现写入命令。",
+      "MIT 许可证。"
+    ]
+  },
+  "crackmes-writeups": {
+    "name": "CrackMes 二进制逆向练习题解析",
+    "requirements": [
+      "所展示的练习使用需另行从 crackmes.one 获取的 Linux x86-64 crackme 二进制文件。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "human-readable-decompilation": {
+    "name": "Human-Readable Decompilation 反编译 C 代码整理工具",
+    "requirements": [
+      "完整流程要求 Ghidra 11.4.2 或更新版本、Java 运行时和 Python 3。",
+      "生成解析器需要 ANTLR Python 运行库及工具。",
+      "循环语句等更多转换类型仍在计划中。",
+      "BSD-3-Clause 许可证。"
+    ]
+  },
+  "binstruct-inspector": {
+    "name": "BinStruct Inspector 二进制结构分析器",
+    "requirements": [
+      "包清单要求 Python 3.11+ 和 PySide6 6.0+。",
+      "许可证为 MIT。"
+    ]
+  },
+  "simpleparserpe": {
+    "name": "SimpleParserPE PE32 文件解析器",
+    "requirements": [
+      "需要 C++17 编译器和 PE32 可执行文件。",
+      "不支持 PE32+；缺少边界检查，也未解析导出表、重定位和资源。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "bndextract-kuon": {
+    "name": "BNDExtract《九怨》BND 归档提取工具",
+    "requirements": [
+      "需要受支持的 .bnd 归档；构建工具需要 Go。",
+      "文档主要说明对《九怨》ALL.BND 及部分其他 FromSoftware PS2 游戏的支持。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "tenet-tracer": {
+    "name": "tenet_tracer Tenet 指令轨迹采集器",
+    "requirements": [
+      "需要 Intel Pin；文档中的 Windows 构建使用 Visual Studio 2022、Pin 3.31 和 LLVM clang-cl。",
+      "所述 Pin 环境要求关闭内核调试。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "binary-bpe-tokenizer-research": {
+    "name": "Binary BPE Tokenizer for Executable Analysis 可执行文件分析分词研究",
+    "requirements": [
+      "需要 Python 3.10 或更高版本及 uv；编译论文还需要 TeX Live 2023 或更高版本。",
+      "从头训练分词器可选用 Rust 1.70 或更高版本。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "power-bi-report-query-case": {
+    "name": "Power BI API Scraper：解析公开报表查询格式",
+    "requirements": [
+      "需要 Python 3.7+、requests，以及可访问的公开 Power BI 报表。",
+      "随附查询、资源密钥和模型 ID 固定对应一份报表；更换目标需修改代码。",
+      "收到非 200 响应会停止运行，重叠页面也不会去重。",
+      "MIT 许可证。"
+    ]
+  },
+  "m0rph-ctf-analysis-case": {
+    "name": "m0rph：追踪混淆 ELF 程序的字符串校验逻辑",
+    "requirements": [
+      "复现调查需要 m0rph x86-64 ELF 题目程序及 Linux 分析环境。",
+      "所述流程使用 Radare2、Cutter 和常见 Linux 检查工具。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "opentracks-uwp-case": {
+    "name": "OpenTracks：OpenTracks7 BETA1 的 UWP 移植",
+    "requirements": [
+      "目标平台为 Windows 10 Mobile；项目使用 Windows SDK 19041，最低 SDK 版本为 10240。",
+      "作者称移植版尚处于预 Beta 阶段，设置存储、播放行为和后台任务仍待完善。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "binscan": {
+    "name": "BinScan 批量二进制文件结构分析工具",
+    "requirements": [
+      "需要 C++20、CMake 和 OpenSSL；README 提供 Windows、Linux、macOS 构建步骤。",
+      "作者称当前版本尚未正式发布，输出可能存在不准确之处。",
+      "MIT 许可证。"
+    ]
+  },
+  "patch-0xc0000022": {
+    "name": "Patch-0xC0000022 SysMain 运行时研究工具",
+    "requirements": [
+      "需要 Windows 10 或 11 x64、Visual Studio C++ 工具和管理员权限。",
+      "文档要求在受控测试环境中使用，并说明重启 Windows 可恢复运行时状态。",
+      "恢复或移除补丁仍列在后续计划中。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "led-controller-banlanx-case": {
+    "name": "LED Controller：基于 BanlanX BLE 协议及音频数据发现的客户端",
+    "requirements": [
+      "需要支持 Bluetooth Low Energy 的电脑、uv 和兼容的 BanlanX 控制器。",
+      "电脑音频输入仅支持 Windows；BanlanX v3 型号依据 UniLED 文档实现，尚未经过硬件测试。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "cpq-iosched-case": {
+    "name": "CPQ IO Scheduler：还原小米的块设备调度器",
+    "requirements": [
+      "构建需要 Linux 内核块设备层与调度器 API 头文件；作者报告在 RK3588 和 eMMC 5.1 的 Linux 6.1 环境中测试。",
+      "作者报告在六种负载中有五种优于 mq-deadline，平均 IOPS 提升约 1.9%。",
+      "README 和源码标注许可证为 GPL-2.0。"
+    ]
+  },
+  "zemismart-blind-protocol-case": {
+    "name": "Zemismart Blind Controller Protocol：射频控制命令还原",
+    "requirements": [
+      "需要 Zemismart 电动窗帘遥控器的采集数据；采集脚本使用 LimeSDR 和 SoapySDR。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "re4me-toolbox": {
+    "name": "RE4METoolbox《生化危机 4》移动版文件工具箱",
+    "requirements": [
+      "需要《生化危机 4》移动版的 .bin 文件；文本工具须指定 Mission 或 Resource 格式参数。",
+      "MIT 许可证。"
+    ]
+  },
+  "ac46-firmware-tool": {
+    "name": "AC46 Firmware Tool JieLi 固件解包工具",
+    "requirements": [
+      "需要 JieLi AC46/BT15 设备的闪存镜像，或去掉前 512 字节的 BFU 文件。",
+      "重新打包需要 AC46 SDK。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "imonitor-system-activity-monitor": {
+    "name": "iMonitor Windows 系统行为分析工具",
+    "requirements": [
+      "需要 Windows。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "rto-echalan-android-analysis-case": {
+    "name": "RTO eChalan：调查 BankBot 安卓 APK",
+    "requirements": [
+      "报告分析的是名为 RTO eChalan.apk 的单个安卓安装包。",
+      "作者报告称约 96% 的类在反编译时无法加载。",
+      "采用 CC-BY-4.0 许可证。"
+    ]
+  },
+  "m68kdasm": {
+    "name": "m68kdasm Motorola 68000 反汇编库",
+    "requirements": [
+      "按 go.mod 要求使用 Go 1.27。",
+      "CPU32 的 TBLS/TBLU、68040 的 MOVE16/CINV/CPUSH 等部分指令尚未实现。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "malware-analysis-njrat-casdet-case": {
+    "name": "Malware Analysis：njRAT 与 Casdet 行为研究",
+    "requirements": [
+      "研究使用 PEStudio 9.56，并在 Windows 10 客户机中运行 ANY.RUN。",
+      "作者报告称，Infected.exe 因缺少 libelf.dll 而崩溃，沙箱中未观察到其行为。"
+    ]
+  },
+  "ir-lifting-benchmark": {
+    "name": "IR Lifting Benchmark 二进制中间表示提升基准工具",
+    "requirements": [
+      "需要 Linux、Python 3.8 或更新版本、Ghidra 10.x 或 11.x，以及所选分析工具。",
+      "BAP 和 LLVM 提升为可选功能；真正的二进制到 LLVM IR 提升需要 RetDec 或 llvm-mctoll。",
+      "恶意软件分析需要用户自行提供样本。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "claude-openocd-spi-dump": {
+    "name": "OpenOCD SPI Dump Plugin SPI 闪存提取向导",
+    "requirements": [
+      "需要 OpenOCD、ARM GNU 工具链和 netcat。",
+      "需要可用的 SWD/JTAG 探针连接，以及连接 SPI 闪存或 EEPROM 的 MCU。",
+      "最大转储分块大小尚未参数化。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "bin-hunter": {
+    "name": "Bin-Hunter 二进制静态检查工具",
+    "requirements": [
+      "使用 Python 标准库；文档称无需外部依赖。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "vanmoof-certificates-case": {
+    "name": "vanmoof-certificates：解析 VanMoof 自行车证书",
+    "requirements": [
+      "请求证书需要拥有受支持车辆的 VanMoof 账户。",
+      "项目称目前未知 Series 6 签名密钥，因此不校验其证书签名。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "aspyr-archive-tool": {
+    "name": "Aspyr Archive Tool Android 游戏 OBB 归档工具",
+    "requirements": [
+      "需要所列游戏之一的 OBB 归档。",
+      "许可证为 MIT。"
+    ]
+  },
+  "binaryinsight": {
+    "name": "BinaryInsight 二进制检查工具",
+    "requirements": [
+      "从源码构建需要 Rust 和 Cargo。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "scriptsource-dumper": {
+    "name": "ScriptSource-Dumper《黑色行动 2》脚本档案提取工具",
+    "requirements": [
+      "需要《使命召唤：黑色行动 2》的 scriptsrc.clump 档案。",
+      "构建需要 Visual Studio 2022 或更新版本及 MSVC v145 工具集。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "derkt": {
+    "name": "derkt：Hermes 字节码反汇编器",
+    "requirements": [
+      "需要 Racket；命令行输入为 HBC 文件路径。",
+      "许可证为 MIT。"
+    ]
+  },
+  "dragon-soul-aup-viewer": {
+    "name": ".AUP-File-Type-Decryptor-and-Viewer《Dragon Soul》资源查看器",
+    "requirements": [
+      "使用时需要浏览器和《Dragon Soul》的 .aup 文件。",
+      "将原始文件重新编码、压缩为 .aup 的功能尚未完成。",
+      "MIT 许可证。"
+    ]
+  },
+  "odis-file-unpacker": {
+    "name": "ODIS file unpacker ODIS 文件解包工具",
+    "requirements": [
+      "需要用户自行提供 ODIS 插件和 DIDB 数据文件。",
+      "需要 Python，并安装 pycryptodome 和 blowfish。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "rust-sig-gen": {
+    "name": "rust-sig-gen Rust crate 的 IDA 签名生成器",
+    "requirements": [
+      "需要 Python 的 requests、toml 包、Rust 编译器，以及 IDA Pro FLAIR 的 sigmake、pelf、pcf 工具。",
+      "文档所述范围为排名前 100 的 Rust crate，以及 Linux 和 x86-64 Windows 编译目标。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "tmock-server-case": {
+    "name": "tMock-Server：重建 Terraria 服务器握手流程",
+    "requirements": [
+      "目前需要 GNU/Linux，因为服务器依赖其套接字支持。",
+      "构建文件指定 CMake 4.1 和 C++26 工具链。",
+      "玩家与世界信息处理尚未完成。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "1cmdparser": {
+    "name": "1C 7.7 Configuration Parser 1C 配置文件解析器",
+    "requirements": [
+      "需要 Windows 和 1cv7.md 配置文件。",
+      "构建需要 Visual Studio 或 Build Tools，以及 NMAKE。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "x64dbg-tenet": {
+    "name": "x64dbg-tenet Tenet 格式轨迹录制插件",
+    "requirements": [
+      "需要 x64dbg。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "vanmoof-ble-protocol-case": {
+    "name": "VanMoof BLE：S5、A5 与 S6 自行车协议客户端",
+    "requirements": [
+      "需要 VanMoof S5、A5 或 S6、自带 BLE 的设备、Python 3.8+，以及自行车证书和私钥。",
+      "区域设置、流式遥测和模块状态仅列为 S5/A5 功能。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "holley-efi-parser": {
+    "name": "Holley EFI Parser 日志与 CAN 协议解析工具",
+    "requirements": [
+      "需要 Python 及项目依赖；实时 CAN 功能还需要配置好的 Linux CAN 接口。",
+      "V4 DL 支持不完整，V5 文件须先经 Holley 软件转换为 V6。",
+      "作者报告用九组文件验证了 DLZ 解压准确性。",
+      "MIT 许可证。"
+    ]
+  },
+  "vanmoof-can-bus-parser": {
+    "name": "CAN Bus Parser VanMoof 总线解析工具",
+    "requirements": [
+      "需要 Go 1.24 或更新版本。",
+      "实时抓包需要 Linux SocketCAN，以及支持 1 Mbps 和 29 位扩展 ID 的 CAN 适配器。"
+    ]
+  },
+  "cosmic-byte-firestorm-controller-case": {
+    "name": "Cosmic Byte Firestorm Controller：基于 USB 协议的鼠标设置客户端",
+    "requirements": [
+      "需要 Linux 和 VID 为 0x04d9、PID 为 0xa09f 的 Cosmic Byte Firestorm 鼠标；访问 USB 通常需要 sudo。",
+      "从源码运行需要 Python、pyusb 和 PyYAML。",
+      "设备支持仅在所述 Firestorm 型号上测试。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "nuvelocity-engine-case": {
+    "name": "NuVelocity Engine：重实现 Reflexive 的 Velocity Engine",
+    "requirements": [
+      "按文档构建需要 SDL3、SDL3_image、SDL3_mixer、SDL3_ttf、zlib、physfs、CMake 及子模块。",
+      "引擎和主要代码采用 Mozilla Public License 2.0。"
+    ]
+  },
+  "freers42-ricochet-xtreme-case": {
+    "name": "FreeRS42：重实现《Ricochet Xtreme》",
+    "requirements": [
+      "需连同子模块克隆仓库，并安装项目所述的引擎依赖。",
+      "主体代码及引擎采用 MPL-2.0 许可证。"
+    ]
+  },
+  "universal-gba-pokedex": {
+    "name": "Universal GBA Pokedex 宝可梦 ROM 数据分析工具",
+    "requirements": [
+      "需要用户提供 Game Boy Advance 宝可梦 ROM。",
+      "从源码运行需要 Python 3.x 和 Tkinter。",
+      "对 Radical Red 等扩展图鉴改版的支持仍属实验阶段。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "nullsec-bingaze": {
+    "name": "NullSec BinGaze ELF 结构与防护属性分析工具",
+    "requirements": [
+      "构建需要 C++20 编译器和 CMake。",
+      "README 将许可标为 NullSec Proprietary；仓库文件列表中没有许可证文件。"
+    ]
+  },
+  "finalmouse-centerpiece-protocol-case": {
+    "name": "Centerpiece Projects：解析 Finalmouse Centerpiece 的 USB 控制协议",
+    "requirements": [
+      "公开脚本需要已连接的 Finalmouse Centerpiece、Windows 10 或更新版本、PowerShell 和 Python。",
+      "厂商专用 WinUSB 批量接口仍在研究中，现有笔记并非完整协议规范。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "facebookcodec": {
+    "name": "Facebook BitMap Codec 参数编解码工具",
+    "requirements": [
+      "需要 Python 3.8+ 和 FCodec.py 模块。",
+      "作者称其可无损转换，并兼容列出的位图参数。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "pdbinspector": {
+    "name": "pdbinspector Microsoft PDB 信息检查工具",
+    "requirements": [
+      "需要 Microsoft PDB 文件作为输入。",
+      "从源码构建需要 Rust；项目清单要求 Rust 1.75 及以上版本。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "ac3-online-service-docs": {
+    "name": "Assassin's Creed III 在线服务协议文档",
+    "requirements": [
+      "范围为《Assassin's Creed III》PC 版在线服务。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "aol7-retro-server-case": {
+    "name": "AOL 7.0 Retro Server：复现 P3 服务端会话",
+    "requirements": [
+      "需要 Python 3.x，以及在虚拟机或旧设备上安装的英文或德文 AOL 7.0 客户端。",
+      "交互式聊天室、邮件模拟和关键词导航仍处于规划阶段。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "vainglory-replay-decoder": {
+    "name": "VG Reverse Engineering Vainglory 回放分析工具",
+    "requirements": [
+      "离线解码器需要 Python 3.12 或更高版本；完整回归测试还需要 Node.js 18 或更高版本。",
+      "解码比赛需要用户自己的 .0.vgr 记录及对应的编号文件。",
+      "项目说明记录中没有客户端构建标识，目前所有记录均不能进入其确定性分析子集。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "8086-register-command-debugger": {
+    "name": "8086 Register Command Debugger 汇编调试器",
+    "requirements": [
+      "运行程序需要 MS-DOS 或 DOSBox 等兼容环境。",
+      "程序使用 64 KB 内存段，并仅采用原始 8086 指令。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "ac4-docs": {
+    "name": "AC4 docs《刺客信条 IV：黑旗》在线服务协议文档",
+    "requirements": [
+      "范围为《刺客信条 IV：黑旗》PC 版在线服务。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "devlens-ultra": {
+    "name": "DevLens Ultra 网页组件分析扩展",
+    "requirements": [
+      "需要在 Chrome 中开启扩展开发者模式并加载未打包扩展。",
+      "使用 AI 整理功能需要配置服务商 API 密钥和基础地址。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "faac-e145-gate-connect-case": {
+    "name": "FAAC E145 Gate Connect：重建 EasyBoard 门机命令",
+    "requirements": [
+      "需要通过串口或 USB 连接的 FAAC E145 控制器、Python 3.8+ 及文档所列依赖。",
+      "许可证为 MIT。"
+    ]
+  },
+  "stagg-net-case": {
+    "name": "stagg-net：Fellow Stagg EKG 电水壶 UART 接口调查",
+    "requirements": [
+      "复现所述调查需要 Fellow Stagg EKG 电水壶硬件和 3.3 V 串口连接。",
+      "作者观察到状态报文，但报告该 UART 接口不响应已尝试的 BLE 报文。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "malware-analysis-cti-reports": {
+    "name": "Malware Analysis & CTI Reports 恶意软件分析报告集",
+    "requirements": [
+      "报告以 PDF 提供；仓库不含可运行的恶意软件样本。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "advantage": {
+    "name": "advantage Lenovo Vantage RPC 分析工具",
+    "requirements": [
+      "文档所述 RPC 路径需要 Windows 上运行的 Lenovo Vantage 进程。",
+      "文档中的构建流程需要 Go 1.25 或更新版本及 donut。",
+      "许可证为 Apache-2.0。"
+    ]
+  },
+  "chip8-emulator-disassembler": {
+    "name": "Chip-8 Emulator 与 c8-disassembler 反汇编器",
+    "requirements": [
+      "构建反汇编器需要 CMake 3.9 或更新版本；模拟器还需要 SDL2。",
+      "尚不支持 Super Chip-48 指令。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "erepublik-api-documentation": {
+    "name": "eRepublik API Documentation 网页客户端接口资料",
+    "requirements": [
+      "文档中的多数端点需要认证。",
+      "文档提示这些未公开的端点可能变化或失效。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "garmin-strength-workout-api": {
+    "name": "Garmin Strength Workout API 力量训练接口参考",
+    "requirements": [
+      "调用训练端点需要 Garmin Connect OAuth 令牌。",
+      "文档提醒该未公开 API 可能变化。",
+      "MIT 许可证。"
+    ]
+  },
+  "netdumper": {
+    "name": "netdumper .NET 程序集内存提取工具",
+    "requirements": [
+      "需要 Windows、Rust nightly，且工具架构须与目标进程一致。",
+      "分析部分进程可能需要管理员权限。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "tozo-control-case": {
+    "name": "TOZO Control：基于 TOZO BLE 协议的 Linux 耳机客户端",
+    "requirements": [
+      "需要安装 GTK4、libadwaita、BlueZ 和 Python bleak 的 Linux，以及兼容的 TOZO BLE 耳机。",
+      "作者仅报告测试了 TOZO T10；不同型号支持的命令有所差异。",
+      "MIT 许可证。"
+    ]
+  },
+  "bms-rs485-service-suite-case": {
+    "name": "BMS RS485 Service Suite：重建电池管理总线协议",
+    "requirements": [
+      "文档中的服务环境为 Raspberry Pi 和 Node-RED；BLE 网关使用 MQTT，并可安装 Python 依赖。",
+      "规格记录了已观察和目前已解码的 RS485 服务；部分写入确认仍按通用方式处理。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "bgi-ethornell-converter-tga": {
+    "name": "BGI Converter TGA Ethornell 图像格式分析与转换工具",
+    "requirements": [
+      "需要支持 std::filesystem 的 C++17 编译器。",
+      "输入范围为文档列出的 24 位 BMP、32 位 BMP、BGI 自定义 RGBA 或 BGI 自定义 RGB 布局。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "valkyrie-malware-analyzer": {
+    "name": "Valkyrie 恶意程序分析工具",
+    "requirements": [
+      "需要 Python 3.9+；动态分析还需要 Docker Desktop 或 Docker Engine。",
+      "VirusTotal 和 OpenAI 集成可选择配置 API 密钥。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "pe-disassembler-ddeeduck": {
+    "name": "PE Disassembler x86 PE 反汇编工具",
+    "requirements": [
+      "需要支持 WPF 的 Windows 与 .NET Framework 4.7.2+ 或 .NET 5/6/7/8；从源码构建需 Visual Studio 2019/2022。",
+      "仅支持 32 位 x86 PE 文件及已实现的指令；输出使用原始文件偏移，不处理重定位。",
+      "MIT 许可证。"
+    ]
+  },
+  "sicxe-disassembler": {
+    "name": "SIC/XE Disassembler and Linking Loader 反汇编与链接装载工具",
+    "requirements": [
+      "需要 C++17 编译器。",
+      "字符字面量重建有限，装载器假定目标文件格式正确。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "xenus-dt1-decompiler": {
+    "name": "Xenus DT1 Decompiler 游戏纹理缓存解码器",
+    "requirements": [
+      "发布版面向 64 位 Windows；源码构建需要 .NET SDK 8.0 或更新版本。",
+      "3.0 版以来的解码器尚未核对 The Precursors；方法 7 的附加加密尚不支持。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "lutron-protocols": {
+    "name": "Lutron Protocols 路创通信协议研究",
+    "requirements": [
+      "报文抓取硬件使用 STM32H723 Nucleo、CC1101 和 nRF52840 无线模块。",
+      "LEAP 工具需要双向 TLS 证书。",
+      "原生 Vive 配对及长期运行的 LEAP 连接监控仍属后续工作。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "steelseries-overlay-hook-case": {
+    "name": "SteelSeries Overlay Hook：解析并挂钩 GameOverlay 交换链",
+    "requirements": [
+      "构建需要 Windows、带 v143 C++ 工具集的 Visual Studio 2022，以及 Windows 10 SDK。",
+      "钩子依赖固定的内部偏移；其他 SteelSeries 版本的兼容性尚未确定。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "sandwitcher": {
+    "name": "Sandwitcher Android ART 方法钩子库",
+    "requirements": [
+      "需要 Android 环境并集成 AAR；从源码构建需 JDK 17 和 Android SDK 35。",
+      "README 列出的兼容范围为 Android 5.0 至 15。",
+      "采用 Apache License 2.0。"
+    ]
+  },
+  "bin-xray": {
+    "name": "Bin X-ray 二进制数据可视化分析工具",
+    "requirements": [
+      "需要 Windows 10 或 11；构建时需要 Visual Studio 2022、Windows SDK 10.0 或更新版本，以及供版本脚本使用的 Python 3。",
+      "书签、熵值条、比较模式和结构化解码器仍在路线图中。",
+      "MIT 许可证。"
+    ]
+  },
+  "malware-deobfuscator": {
+    "name": "Malware Deobfuscator 恶意脚本去混淆工具",
+    "requirements": [
+      "包元数据要求 Python 3.9 或更新版本。",
+      "完整分析需要 OpenAI API 密钥或已配置的 Ollama 模型；仅提取 IOC 不需要。",
+      "仓库将随附样本描述为已去危害的教学示例。",
+      "MIT 许可证。"
+    ]
+  },
+  "pic-disasm": {
+    "name": "PIC microcontrollers disassembler PIC 单片机反汇编工具",
+    "requirements": [
+      "需要 Intel HEX 转储及对应的 PIC12/PIC16 处理器型号。",
+      "支持范围为 MidRange 和 Enhanced MidRange PIC12/PIC16 设备。",
+      "许可证为 MIT。"
+    ]
+  },
+  "flashkit": {
+    "name": "flashkit Flash 字节码分析工具包",
+    "requirements": [
+      "需要 Python 3.10 或更新版本。",
+      "分析时需要 SWF 文件或 AVM2 字节码。",
+      "死代码检测采用启发式方法，无法完全排除 ActionScript 3 的动态分派。",
+      "MIT 许可证。"
+    ]
+  },
+  "petkit-local-case": {
+    "name": "Petkit Local：重建喂食器云端接口与饮水机 BLE 控制",
+    "requirements": [
+      "需要 Home Assistant 2024.1 或更新版本、D4 系列喂食器、80 端口及本地 DNS 或 IP 重定向。",
+      "CTW3 饮水机功能需要已运行该集成的 D4 喂食器。",
+      "文档所列测试固件为 D4 1.267 和 CTW3 1.11。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "appthreat-wasm-tools": {
+    "name": "AppThreat wasm-tools WebAssembly 解析与反汇编工具",
+    "requirements": [
+      "pyproject.toml 指定 Python 3.10 或更新版本。",
+      "功能范围不包括 .wat 文本格式解析和规范验证。",
+      "采用 MIT 许可证；作者对 AI 辅助生成代码涉及第三方规范文本的许可来源提出疑问。"
+    ]
+  },
+  "dos-mcp": {
+    "name": "dos-mcp DOS 程序分析 MCP 服务",
+    "requirements": [
+      "需要 Node.js 22.13 或更新版本；Puppeteer 会安装浏览器依赖。",
+      "需要 DOS 程序或程序包作为输入。",
+      "尚无模拟器状态快照与恢复功能；断点和单步执行仍处于设想阶段。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "premium5-radio-emulator": {
+    "name": "premium5 Volkswagen Premium 5 收音机固件仿真器",
+    "requirements": [
+      "需要 Premium 5 固件二进制文件。",
+      "若要达到原机 4.19 MHz 的仿真速度，需要 PyPy 和单线程性能较好的现代 CPU。",
+      "不仿真音频输出和磁带机。",
+      "许可证为 BSD-3-Clause。"
+    ]
+  },
+  "ipi-stay-fly-driver-case": {
+    "name": "IPI STAY FLY Driver：通过 HID 重建设备设置功能",
+    "requirements": [
+      "设备控制需要 Windows 10 或 11、WebView2 和 IPI STAY FLY 鼠标。",
+      "从源码构建需要 Node.js 20 或更高版本、Rust 和 Visual Studio Build Tools 2022。",
+      "键盘按键、宏等非鼠标按键动作尚未开放。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "kaiju-re-framework": {
+    "name": "Kaiju Rust 二进制分析框架",
+    "requirements": [
+      "工作区指定 Rust 1.76+。",
+      "ELF、PE、Mach-O 和 x86-64 支持仅覆盖文档列明的解析与解码子集。",
+      "Apache-2.0 许可证。"
+    ]
+  },
+  "hxt9-x64dbg-mcp": {
+    "name": "x64dbg MCP 智能体调试接口",
+    "requirements": [
+      "需要 Windows、Visual Studio 2022、CMake 3.20 或更新版本、.NET 10 SDK，以及已构建的 x64dbg 源码。",
+      "插件的 HTTP 端点绑定本机地址，可控制被调试进程。",
+      "GPL-3.0 许可证。"
+    ]
+  },
+  "dreadcomp-case": {
+    "name": "Metroid Dread：进行中的手工反编译",
+    "requirements": [
+      "需要自行拥有《Metroid Dread》，并提供原版 2.1.0 的 main NSO 可执行文件。",
+      "Windows 使用者需使用 WSL；安装说明列出 Python、Ninja、CMake、ccache、xdelta3、Clang 和 Rust 工具链。",
+      "反编译工作仍在进行中。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "soundcore-d3200-ble-case": {
+    "name": "Soundcore D3200：重建 BLE 录音传输与解密流程",
+    "requirements": [
+      "需要 Python 3.12 或更新版本、蓝牙适配器及可连接的 D3200 录音机。",
+      "连接前须让录音机断开 Soundcore 应用。",
+      "真实录音回归测试需要用户自行提供采集样本。",
+      "采用 GPL-3.0-or-later 许可证。"
+    ]
+  },
+  "k1-pro-opendeck-suite-case": {
+    "name": "K1 Pro OpenDeck Suite：Stream Dock K1 Pro 的 Linux 驱动",
+    "requirements": [
+      "驱动需要 OpenDeck、Linux，以及 USB ID 为 5548:1025、使用 v3 协议的 Stream Dock K1 Pro。",
+      "编译需要 Rust 1.87 或更新版本、x86_64-unknown-linux-gnu 目标，以及 just 和 zip。",
+      "驱动 README 称该分支交付前尚未编译，也未在实体设备上测试。",
+      "采用 GPLv3 许可证；随附的 mirajazz 依赖保留 MPL-2.0 许可证。"
+    ]
+  },
+  "open-picpak-case": {
+    "name": "open-picpak：重建 PicPak 相框的 BLE 协议与设备行为",
+    "requirements": [
+      "设备使用和硬件验证需要 PicPak 电子墨水相框。",
+      "固件及后端仍在开发中；web-usb 组件尚未公开。",
+      "采用 MPL-2.0 许可证。"
+    ]
+  },
+  "idotmatrix-ha-case": {
+    "name": "iDotMatrix：通过重建的 BLE 协议接入 Home Assistant",
+    "requirements": [
+      "需要 Home Assistant，以及蓝牙适配器或附近的 ESPHome/Shelly 蓝牙代理。",
+      "面板同一时间只接受一个 BLE 连接。",
+      "轮播/GIF 存储及节奏/频谱等协议模式尚未作为 Home Assistant 实体提供。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "substack-api-reference": {
+    "name": "Substack API Reference（非官方）接口参考",
+    "requirements": [
+      "访问需认证的端点需要 Substack 会话 Cookie。",
+      "内部 API 可能变化；条目区分作者测试、他人报告、推断、失效及受限的端点。",
+      "MIT 许可证。"
+    ]
+  },
+  "zygisk-fridagadget": {
+    "name": "Zygisk - Frida Gadget Android 应用插桩模块",
+    "requirements": [
+      "需要启用 Zygisk 的 Magisk 27001 或 Kitsune Magisk。",
+      "文档支持 arm64-v8a 和 armeabi-v7a；Frida Gadget 文件须与目标 ABI 匹配，非默认配置档还需要对应的配置文件。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "web-crawler-reverse-agent": {
+    "name": "web-crawler ReverseAgent 网站 JavaScript 逆向智能体",
+    "requirements": [
+      "需要 Python 3.10 或更新版本。",
+      "ReverseAgent 使用 CamoufoxFetcher 和兼容的大语言模型服务；该功能还需要可选浏览器依赖。",
+      "MIT 许可证。"
+    ]
+  },
+  "hyperscan-homebrew": {
+    "name": "hyperscan-homebrew Mattel HyperScan 硬件研究笔记",
+    "requirements": [
+      "文档针对 Mattel HyperScan 及其 Sunplus S+Core 7/SPG290 硬件。",
+      "研究以 MAME 为主要参考平台，部分结果使用实机抓取数据对照。",
+      "MIT 许可证。"
+    ]
+  },
+  "dell-controlvault2-fingerprint-linux-case": {
+    "name": "Dell ControlVault 2 fingerprint on Linux：改造 BCM5880 驱动",
+    "requirements": [
+      "需要 USB ID 为 0a5c:5834 的 Dell ControlVault 2／Broadcom BCM5880 设备、Linux x86_64 和启用 TOD 的 libfprint。",
+      "闭源原版驱动须由用户从 Canonical OEM 仓库在本地获取。",
+      "作者报告多台设备的录入提交失败，仓库内补丁的指纹比对功能尚未确认。",
+      "MIT 许可证适用于仓库原创脚本、udev 规则和文档。"
+    ]
+  },
+  "epson-l3110-driver-case": {
+    "name": "epson-l3110-driver：分析 Epson L3110 的 USB 与 ESC/P-R 通信",
+    "requirements": [
+      "需要 Epson L3110 打印机和 Linux；当前 Makefile 还需要 libusb-1.0 与 libcups 开发文件。",
+      "打印、图像处理以及 CUPS 过滤器和后端尚未完成。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "ms5-wifi-microscope-case": {
+    "name": "MS5 WiFi Microscope：复原显微镜的 UDP 视频协议",
+    "requirements": [
+      "需要 Python 3.7 或更新版本，以及连接到显微镜 Wi-Fi 热点的电脑。",
+      "作者报告已适配 MS5；对其他 i4season 设备的适用性尚未确认。",
+      "MIT 许可证。"
+    ]
+  },
+  "lux-lat-long-log-case": {
+    "name": "lux-lat-long-log：重建 LUMIX S5 蓝牙定位通信",
+    "requirements": [
+      "所述硬件方案需要 ESP32 和 SIM868 GNSS 模块。",
+      "使用 PlatformIO 构建；现有相机实现针对 LUMIX S5。",
+      "作者报告已在 S5 实机及照片 EXIF 中检查定位结果。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "mtg-arena-collection-export-case": {
+    "name": "MTG Arena Collection Export：重建 Frontdoor 卡牌收藏请求",
+    "requirements": [
+      "需要 Python 3.8 或更新版本，以及从使用者自己的 Arena 账户获取的刷新令牌。",
+      "需要已捕获的 doorbell 响应或 Frontdoor 地址；资料要求导出时关闭 Arena。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "magene-l308-taillight-case": {
+    "name": "Magene L308：重建智能尾灯的 BLE 控制协议",
+    "requirements": [
+      "需要 Magene L308 尾灯；Python 命令行工具使用 bleak。",
+      "网页客户端需要支持 Web Bluetooth 的 Chrome 或 Edge，并通过 HTTPS 或 localhost 打开。",
+      "上传图案会替换设备中的整个图案库，且无法从设备读回；应保存导出的 .bin 备份。",
+      "代码采用 MIT 许可证；协议文档采用 CC-BY-4.0 许可证。"
+    ]
+  },
+  "void-client-case": {
+    "name": "Void Client：重建 Starblast.io 游戏客户端",
+    "requirements": [
+      "需要 Node.js 及 package.json 中的依赖。",
+      "客户端仍在开发，现有功能主要包括菜单、网络辅助逻辑和基础数据包解析。",
+      "package.json 声明 ISC 许可证；仓库没有单独的许可证文件。"
+    ]
+  },
+  "xbloom-ble-case": {
+    "name": "xbloom-ble：xBloom Studio 蓝牙协议客户端",
+    "requirements": [
+      "需要 xBloom Studio 咖啡机及 Bluetooth LE 连接；写入前须断开手机应用，因为机器一次只接受一个蓝牙连接。",
+      "需要 Python 3.10 或更新版本，以及 bleak 和 PyYAML；Linux 还需要 BlueZ。",
+      "作者仅在一台运行 V12.0D.500 固件的机器上测试。",
+      "远程启动会放出接近沸腾的热水，须先确保机器已做好物理准备。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "ajazz-ak820-pro-mac-case": {
+    "name": "ak820：在 macOS 上重建 AJAZZ AK820 Pro 的 HID 控制协议",
+    "requirements": [
+      "需要 macOS、Python 3.11+，以及通过 USB-C 数据线连接的 AJAZZ AK820 Pro。",
+      "Python 包依赖 hidapi。",
+      "macOS 上不支持上传 LCD 图片，按键重映射尚未实现。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "grb-modding-knowledgebase": {
+    "name": "GRB Modding Knowledgebase《Ghost Recon: Breakpoint》格式研究与工具",
+    "requirements": [
+      "检查需要《Ghost Recon: Breakpoint》的游戏数据；Data Inspector 使用游戏 DLL 进行 Oodle 解压。",
+      "项目仍在持续研究，并列有未解决的问题。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "wechat-4-1-10-macos-key-case": {
+    "name": "WeChat：通过 CommonCrypto 钩子提取 SQLCipher 密钥",
+    "requirements": [
+      "需要在 Apple Silicon macOS 上使用 WeChat 4.1.10、LLDB，并能访问自己的应用数据。",
+      "作者报告仅在一台运行 macOS 26.5.1 的机器上测试。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "gametrak-liberation-case": {
+    "name": "GameTrak Liberation：基于控制器 HID 协议的客户端",
+    "requirements": [
+      "实时采集需要 GameTrak 控制器；离线回放可使用已录制的 JSONL 报告。",
+      "作者在 macOS 15.6 上使用 Python 3.10 和 3.14 测试了 GameTrak V2.0 设备。",
+      "脚踏开关未能测试，当前不受支持。",
+      "MIT 许可证。"
+    ]
+  },
+  "cooper-hunter-ac-protocol-case": {
+    "name": "Cooper Hunter AC：UART 与红外协议调查",
+    "requirements": [
+      "文档所述方案需要采用 Gree GRZQ3-R V1 板卡的 Cooper Hunter CH-IF140RK 或 CH-IF140RK2，以及运行 ESPHome 的 ESP32。",
+      "最终接线仅用 UART 接收状态；控制命令通过红外信号注入。",
+      "PROTOCOL.md 将部分协议字段标为暂定。",
+      "MIT 许可证。"
+    ]
+  },
+  "yandex-station-local-streaming": {
+    "name": "Локальный аудиостриминг на Яндекс.Станцию：Yandex Station 本地音频协议指南",
+    "requirements": [
+      "需要局域网中的 Yandex Station，以及用于获取短期 Glagol 令牌的账号 Session_id。",
+      "需要提供 MP3 CBR 且 Content-Length 准确的 HTTP 服务器。",
+      "作者测试了第一代 Yandex Station；其他 Quasar 型号尚未测试。",
+      "文档文字采用 CC BY 4.0，代码片段采用 MIT。"
+    ]
+  },
+  "psp-media-slopkit": {
+    "name": "psp-media-slopkit PSP XMB 媒体格式工具包",
+    "requirements": [
+      "需要 Python 3.8 或更新版本；视频转换还需要带有 libx264 的 ffmpeg 和 ffprobe。",
+      "生成 SND0.AT3 需要 atracdenc；输出 ATRAC3+ 需要 Sony 的 at3tool.exe。",
+      "重新打包 PBP 需要现成的自制软件 EBOOT.PBP。",
+      "作者报告已在 PSP 实机检查生成的 ICON1.PMF 和 SND0.AT3 媒体。",
+      "MIT 许可证。"
+    ]
+  },
+  "siriously-writing-tools-case": {
+    "name": "Siriously：恢复 macOS Writing Tools 的调用入口",
+    "requirements": [
+      "需要已启用 Apple Intelligence 和新 Siri 的 Mac。",
+      "作者报告适用于 arm64 上的 macOS 27.0 构建 26A5368g。",
+      "读取所选文本和回写结果需要辅助功能权限。",
+      "系统更新可能改变私有框架行为。",
+      "MIT 许可证。"
+    ]
+  },
+  "sqlce": {
+    "name": "sqlce SQL Server Compact SDF 文件解析库",
+    "requirements": [
+      "需要已有的 .sdf 文件；加密文件还需要密码。",
+      "对照测试需要 Windows 和已安装的 SQL Server Compact 4.0。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "dualrip": {
+    "name": "DualRip Nintendo DS 与 3DS 音频提取工具",
+    "requirements": [
+      "需要 Python 3.10 及以上版本、NumPy、ndspy 和 pyctr；图形界面另需 PySide6 和 sounddevice。",
+      "加密的 3DS ROM 需要用户自备 boot9.bin 转储；项目不包含游戏数据。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "aw5d-linux-case": {
+    "name": "aw5d-linux：依据 USB-HID 协议研究驱动 iBUYPOWER 散热器屏幕",
+    "requirements": [
+      "需要 Linux、Python 3.8 或更高版本，以及可通过 USB 访问的 iBUYPOWER AW5/AW5D 散热器。",
+      "目前仅确认 3402:0407 变体；自定义图片和 GIF 显示模式暂不在支持范围内。",
+      "MIT 许可证。"
+    ]
+  },
+  "mirrorframe": {
+    "name": "Mirrorframe 网页采集与 React 重建工具",
+    "requirements": [
+      "需要 Node.js 18 或更新版本及 Playwright Chromium。",
+      "0.x 版本的命令参数、genome 结构和报告格式可能变化。",
+      "不重建实时 Canvas、WebGL 或 WebGPU 绘制程序；Canvas 输出为采集时的静态画面。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "adb-mcp": {
+    "name": "adb-mcp Android 调试桥智能体接口",
+    "requirements": [
+      "需要 Python 3.10 或更新版本、Android platform-tools 中的 adb，以及 MCP 客户端。",
+      "设备操作需要 Android 设备或模拟器。",
+      "通用 run_shell 工具默认关闭，须显式启用。",
+      "MIT 许可证。"
+    ]
+  },
+  "hacking-the-xbox-ja": {
+    "name": "Hacking the Xbox：日文译本",
+    "requirements": [
+      "需要具备日语阅读能力。",
+      "第 7 至第 13 章及附录 A–F 尚未开始；已有章节仍在校订。",
+      "书籍衍生文字、图片和译文采用 CC BY-NC-SA 1.0；脚本与站点配置采用 MIT。"
+    ]
+  },
+  "inkterop": {
+    "name": "inkterop 手写笔记格式转换与分析工具",
+    "requirements": [
+      "文档中的安装方式需要 Python 3.12 或更新版本及 uv。",
+      "需要支持格式的原生笔记文件作为输入。",
+      "若干格式仅支持读取或部分内容；GoodNotes 可读取笔迹和颜色，Nebo 的 BINK 笔迹编码仍在研究。",
+      "代码采用 MIT 许可证，文档采用 CC BY 4.0。"
+    ]
+  },
+  "myjbxheadsetcontrol-case": {
+    "name": "MyJBxHeadsetControl：通过 USB HID 控制 JBL Quantum 950",
+    "requirements": [
+      "需要 JBL Quantum 950 Wireless 及其 2.4 GHz USB 接收器，并安装 Stream Deck 7.1 或更新版本。",
+      "适用于 Windows 10 或 11；作者称 macOS 尚未测试。",
+      "均衡器操作需要本机安装 QuantumENGINE 及其 DLL。",
+      "MIT 许可证。"
+    ]
+  },
+  "sprdflash-rs": {
+    "name": "SPRD Flash Tool SPRD/UNISOC 固件读取与分区分析工具",
+    "requirements": [
+      "需要 Rust 1.85 或更新版本及兼容的 SPRD/UNISOC 设备；读取设备时 PAC 文件提供下载阶段。",
+      "推测的分区布局使用通用内容类型名称，因为闪存数据不保存分区角色。",
+      "作者报告在 Air724UG RDA8910 上进行了硬件检查。",
+      "MIT 许可证。"
+    ]
+  },
+  "openpigeon-case": {
+    "name": "OpenPigeon：重建 GamePigeon iMessage 游戏消息",
+    "requirements": [
+      "需要 Node.js 22 或更新版本。",
+      "通过 Linq 或 Photon 发送消息需要账号和相应服务的主机；Linq webhook 需要公开端点。",
+      "SDK 处理回合制消息，不包含实时 Play Now 模式或自动选招。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "zltrouter-case": {
+    "name": "zlt：MTN ZLT T10D MAX 路由器 API 还原",
+    "requirements": [
+      "文档所述设备行为需要局域网中的 MTN ZLT T10D MAX 路由器。",
+      "需要 Python 3.11 或更新版本；需认证的操作还要路由器管理员密码。",
+      "作者报告在固件 CPE_NV8645_230A_E_QX_CAN-P42U17-20250703 上进行实机检查；其他固件可能不同。",
+      "MIT 许可证。"
+    ]
+  },
+  "claude-rc-api-case": {
+    "name": "claude-rc-api：还原 Claude Code Remote Control 接口",
+    "requirements": [
+      "需要通过 claude.ai 账户登录 Claude Code，并运行 Remote Control 会话。",
+      "需要 Python 3.10 或更新版本。",
+      "私有端点可能变化；作者报告已对在线接口试用列表和读取路径，写入及控制路径则依据客户端代码记录。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "spelunking": {
+    "name": "Spelunking Apple 框架与服务研究",
+    "requirements": [
+      "软件包需要 macOS 26 或更新版本以及 Swift 6.2 或更新版本。",
+      "部分探针可能需要特定系统版本、私有框架、TCC 权限或 SIP 设置。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "hisense-aeh-w41h1-local-control-case": {
+    "name": "Hisense AEH-W41H1：基于还原的 RS-485 总线实现空调本地控制",
+    "requirements": [
+      "需要配备 AEH-W41H1 模块的海信空调；ESP32 方案还需 3.3 V RS-485 收发器。",
+      "文档中的 ESP32 构建流程使用 ESPHome 2026.10.1。",
+      "原装模块若未在刷写前保存整片备份并准备 SOIC-8 夹具，就无法回退；其他 ESPHome 芯片只做过编译检查。",
+      "MIT 许可证。"
+    ]
+  },
+  "whatsapp-docs": {
+    "name": "whatsapp-docs WhatsApp Android 逆向文档",
+    "requirements": [
+      "所列专题报告使用 WhatsApp Android APK 2.26.41.6。",
+      "分析仅基于静态代码；服务端机器学习行为由客户端采集指标推断。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "hermes-flipperzero": {
+    "name": "Hermes Flipper Zero UART 波特率检测与控制台工具",
+    "requirements": [
+      "需要 Flipper Zero，并能接入目标设备的 UART 线路。",
+      "项目说明边沿计时方式大约无法跟踪超过 230400 波特的边沿；UART 扫描需要在采样窗口内有数据流。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "wmatcher": {
+    "name": "wMatcher JAR 版本类匹配工具",
+    "requirements": [
+      "需要新旧两个 JAR 文件；可按需添加依赖 JAR。",
+      "从源码构建使用 Gradle 和 Java 21 工具链。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "ygo-poc-toolset": {
+    "name": "YGO-PoC Toolset 游戏资源与存档工具集",
+    "requirements": [
+      "工具集针对该游戏的 No-CD/Fixed 可执行文件版本。",
+      "编辑器是基于 PoCTools 的 .NET MAUI 客户端。",
+      "MIT 许可证。"
+    ]
+  },
+  "website-to-cli": {
+    "name": "website-to-cli 网站流量转命令行客户端",
+    "requirements": [
+      "脚本和 CLI 模板需要 Bun。",
+      "浏览器录制需要 Playwright，也可从浏览器开发者工具导出包含响应内容的 HAR。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "fh6-model-tools": {
+    "name": "FH6 Model Tools 游戏资源格式解析工具",
+    "requirements": [
+      "需要 Python 3.8 或更新版本，并由用户提供游戏资源。",
+      "研究状态文档列出尚未解析的动画格式、carbin、物理数据及部分材质和 UV 语义。",
+      "采用 PolyForm Noncommercial License 1.0.0。"
+    ]
+  },
+  "cosmo-native-port-case": {
+    "name": "Cosmo：Cosmo's Cosmic Adventure 原生移植版",
+    "requirements": [
+      "从源码构建需要 CMake 3.21 或更新版本，以及 C11 和 C++17 编译器。SDL3 可预先安装，也可由 CMake 下载构建；文档中的 Windows 构建使用 MinGW。",
+      "从源码构建须提供原版游戏数据；第 2、3 章须使用用户自己的副本。",
+      "尚未实现摇杆支持，也尚未完成与 DOSBox 的逐帧比较。",
+      "MIT 许可证。"
+    ]
+  },
+  "tuya-mobile-security-layer-case": {
+    "name": "tuya-mobile：Tuya 应用签名与 API 调用的 Python 重建",
+    "requirements": [
+      "需要 Python 3.9 或更新版本，以及 aiohttp 和 cryptography。",
+      "经过身份验证的调用需要应用签名常量和账户身份验证；密码登录需要选定应用配置并提供账户凭据。",
+      "交互式验证码、MFA、二维码和社交登录会抛出特定类型的异常，客户端不会完成这些登录流程。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "ed1ths-pvz-toolkit": {
+    "name": "Ed1th's PvZ Toolkit 植物大战僵尸资源格式工具箱",
+    "requirements": [
+      "需提供 Plants vs. Zombies 资源文件供检查或编辑。",
+      "PAM 编辑器尚不支持曲线补间制作或绘制新图。",
+      "BNK SoundBank 浏览器仍处于实验阶段。",
+      "采用 AGPL-3.0 许可证。"
+    ]
+  },
+  "msi-mystic-light-b860-x870-linux-case": {
+    "name": "MSI Mystic Light on Linux：重建 B860/X870 主板灯光控制",
+    "requirements": [
+      "需要 Linux、Python 3，以及控制器 /dev/hidraw* 设备节点的写入权限。",
+      "协议分析基于 MSI MAG B860 TOMAHAWK WIFI；其他 USB ID 为 0db0:0076 的主板仅被列为预期兼容。",
+      "MIT 许可证。"
+    ]
+  },
+  "linkcam-case": {
+    "name": "LinkCam：研究 UVC 扩展控制并驱动 Insta360 Link 2",
+    "requirements": [
+      "需要 macOS 和 Insta360 Link 2 摄像头。",
+      "从源码构建需要 macOS Command Line Tools。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "shark-k86-mac-case": {
+    "name": "shark-k86-mac：Attack Shark K86 HID 协议客户端",
+    "requirements": [
+      "需要以 Win + USB 模式通过 USB 连接 Attack Shark K86；其他型号尚未测试。",
+      "需要 Python 3.8 及以上版本、hidapi 和 Pillow。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "pcm-explorer": {
+    "name": "PCM Explorer 车机镜像与固件分析工具",
+    "requirements": [
+      "需要提供受支持的 Porsche PCM 或 Audi MMI 车机镜像或提取出的文件。",
+      "HMI 画面导出的是带标签的框图，而非原始像素画面。",
+      "许可证为 MIT。"
+    ]
+  },
+  "tasm-rs": {
+    "name": "tasm-rs TVM 字节码反汇编与轨迹工具",
+    "requirements": [
+      "构建工作区需要 Rust 1.85 或更新版本。",
+      "作者报告 959 个一致性样例的输出逐字节匹配。",
+      "文档指出深层嵌套的 continuation 会使编译时间快速增长。",
+      "MIT 许可证。"
+    ]
+  },
+  "fitdays-protocol-case": {
+    "name": "fitdays：重建智能体脂秤云端客户端",
+    "requirements": [
+      "读取测量历史需要 Fitdays 账户。",
+      "客户端仅支持读取；私有端点可能变更或消失。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "trvision-case": {
+    "name": "trvision：实现 Thermalright Vision USB 显示屏控制",
+    "requirements": [
+      "文档指定 Windows、Python 3.12 和 87AD:70DB 系列显示屏。",
+      "使用前需关闭占用 USB 设备的 TRCC。",
+      "仅测试过 87AD:70DB 显示屏，其他硬件版本可能不同。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "sogen-dart-bindings": {
+    "name": "Sogen Dart 可执行文件仿真绑定",
+    "requirements": [
+      "需要 Dart 3.12 或更新版本以及 Git。",
+      "Windows 构建需要 Visual Studio C++ 桌面工作负载；Linux 需要 C++20 编译器和开发头文件；macOS 需要 Xcode 命令行工具。",
+      "示例需要 Sogen 仿真根目录。",
+      "采用 GPL-2.0-only 许可证。"
+    ]
+  },
+  "pocket-client-case": {
+    "name": "pocket-client：Pocket 录音笔的 BLE 客户端",
+    "requirements": [
+      "鉴权命令需要 Pocket 录音笔及会话密钥。",
+      "需要 Swift 6.0，以及 iOS 17 或 macOS 14 及更新版本。",
+      "协议研究依据一台实体设备及其固件版本。",
+      "采用 Apache-2.0 许可证。"
+    ]
+  },
+  "rofllens": {
+    "name": "RoflLens《英雄联盟》回放协议分析工具",
+    "requirements": [
+      "需要 Python 3.11–3.13 和 .rofl 回放文件。",
+      "补丁相关语义解码需要可选依赖，以及用户自行提供的完全匹配的 League of Legends.exe。",
+      "部分游戏事件语义尚未解析；客户端不匹配时仅输出传输层信息或报错。",
+      "MIT 许可证。"
+    ]
+  },
+  "ddg-tenor-bridge-case": {
+    "name": "ddg-tenor-bridge：替换 Gboard 的 Tenor 搜索端点",
+    "requirements": [
+      "需要已获取 root 权限的 Android 设备，以及使用公开受信任证书的 HTTPS 端点。",
+      "作者将其称为概念验证；DuckDuckGo 端点和 Gboard 随版本变化的标志可能改变。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "keyaxis-keyboard-hid-case": {
+    "name": "KeyAxis：解析磁轴键盘的模拟量 HID 数据流",
+    "requirements": [
+      "需要 USB ID 为 0416:7372 的键盘和 Windows 10/11 x64；手柄输出还需要 ViGEmBus。",
+      "从源码运行需要 Python 3.9 或更新版本。",
+      "屏幕布局覆盖 68 键；vJoy 输出仍在计划中。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "kenshi-modkit": {
+    "name": "kenshi-modkit《Kenshi》文件格式工具包",
+    "requirements": [
+      "需要 Python 3.12，仅使用标准库。",
+      "解析和往返校验需要《Kenshi》文件。",
+      "作者报告 52,445 个文件实现字节一致的往返转换；部分 typecode 尚未识别，工具刻意避免覆盖写入存档。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "aosmith-water-heater-case": {
+    "name": "A.O. Smith 热水器：CTA-2045 本地控制与协议研究",
+    "requirements": [
+      "文档中的配置需要 A.O. Smith HPS10-50H45DV、Raspberry Pi Zero 2 W 和隔离型 RS-485 适配器。",
+      "所述环境使用 Raspberry Pi OS Lite、Python 3.13 和 19200 8N1 串口。",
+      "该热水器的 CTA-2045 端口不支持写入设定温度、读取水温或切换运行模式。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "j2208-band-tools-case": {
+    "name": "j2208-band-tools：基于 J2208 手环协议的直连客户端",
+    "requirements": [
+      "需要 J2208 系列手环、Python 和 bleak；连接前需让配套应用断开蓝牙连接。",
+      "作者只测试了一只运行 v0.0.3.9 固件的 Hume Band V2；对其他同系列设备的支持属于推断。",
+      "作者报告所测 V2 固件无法提供原始 PPG 数据。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "eufy-local-ha-case": {
+    "name": "Eufy Local Light：重建 E10 与 E22 灯具的 BLE 控制",
+    "requirements": [
+      "需要 Home Assistant 和受支持的 Eufy 灯具；开发与测试涉及 E10 T8L10 和 E22 T8L02。",
+      "该集成程序尚未提供 E22 的分段 DIY 图案控制；E10 状态回读尚未测试。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "openpeats-case": {
+    "name": "OpenPeats：重建 SoundPEATS 耳机控制协议",
+    "requirements": [
+      "需要已配对的 SoundPEATS 设备；开发与验证使用固件 S5_20250605_V0.4.9 的 H3。",
+      "作者报告已在 Linux、Windows 11 和 Android 上验证读写。",
+      "触控映射写入和触控演示模式尚未验证；macOS 传输层未完成，iOS 无法使用 SPP。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "hongtai-panel-case": {
+    "name": "hongtai-panel：还原水冷显示屏的 USB 串口协议",
+    "requirements": [
+      "需要 Linux、Python 3.10 或更新版本及受支持的 USB 显示屏；媒体和镜像功能还需所列可选软件包。",
+      "其他型号预计可利用设备返回的尺寸信息工作，但未列为已确认型号。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "emotion-control-ha-case": {
+    "name": "ESPHome ↔ L&S Emotion Control：重建智能灯无线控制客户端",
+    "requirements": [
+      "需要 ESP32、采用 26.000 MHz 晶振的 2.4 GHz CC2500 模块、焊接连线，以及 L&S Emotion Control 灯具或遥控器。",
+      "灯具不回传状态，因此显示状态为估计值；亮度分为五档。",
+      "采用 Apache License 2.0。"
+    ]
+  },
+  "akp02-display-protocol-case": {
+    "name": "akp02：重建 Ajazz AKP02 显示屏协议",
+    "requirements": [
+      "需要 Ajazz AKP02 显示屏及 Linux HID 访问权限；文档说明需安装 udev 规则。",
+      "软件包要求 Python 3.11 及以上版本。",
+      "MPL-2.0 许可证。"
+    ]
+  },
+  "cupertino-files": {
+    "name": "cupertino-files iWork 文档格式工具包",
+    "requirements": [
+      "需要 Node.js 22 或更新版本，或现代浏览器；软件包仅支持 ESM。",
+      "读取和编辑时需要现代 Pages、Numbers 或 Keynote 文档。",
+      "不接受 iWork ’09 XML 文档或受密码保护的文档。",
+      "MIT 许可证。"
+    ]
+  },
+  "l4d2-director-research-case": {
+    "name": "Left 4 Dead 2：还原 AI Director 的运行机制",
+    "requirements": [
+      "复现分析需要已安装的 Left 4 Dead 2、Python 3，以及反汇编脚本所用的 Capstone。",
+      "要使 RVA 对应，需使用文档指定的 2026 年 6 月 30 日 x86 server.dll 构建。",
+      "零售版二进制已去除符号，部分私有名称和引擎辅助行为仍未确定。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "msp-csv-format-case": {
+    "name": "MSP CSV Export Format：My Stocks Portfolio 导出格式重建",
+    "requirements": [
+      "解析个人数据需要 MSP CSV 导出文件；文档所述运行环境为 Python 3.9 以上。",
+      "研究依据为同一投资组合的十一份导出文件；部分地区设置和交易顺序行为尚未确认。",
+      "Apache-2.0 许可证。"
+    ]
+  },
+  "mechrewired-mechwarrior-2-case": {
+    "name": "MechRewired：基于原版数据重建 MechWarrior 2",
+    "requirements": [
+      "需要用户自己的《MechWarrior 2》DOS 游戏数据；作者列出的已检查版本为 PC 英文版 MS-DOS v1.1。",
+      "项目源代码采用 MIT 许可证。"
+    ]
+  },
+  "nrf52-eink-price-tag-case": {
+    "name": "nRF52 e-paper tag：重建无文档电子纸显示接口",
+    "requirements": [
+      "文档对应的硬件采用 nRF52832、HINK-E029A10-A3 面板和 ESL.CB-LR.010-00C.203 电路板。",
+      "首次安装需要通过 SWD 烧录；构建需要 nRF Connect SDK v3.0.1。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "benro-polaris-firmware-patcher-case": {
+    "name": "Benro Polaris Firmware Patcher：重建相机控制并解析应用协议",
+    "requirements": [
+      "需要用户自备原厂 FwPkt；作者测试的组合是固件 4.0.0.32 与 Canon EOS R5 Mark II。",
+      "可选天文功能仍属实验阶段，尚未在真实星空下测试。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "rk-m75-case": {
+    "name": "RK M75：复现有线与无线 RGB 灯光控制",
+    "requirements": [
+      "所述设备为有线 VID:PID 258A:0163 或无线 258A:0148 的 RK M75；开发和硬件检查在 Windows 上进行。",
+      "软件包需要 Python 3.10+。",
+      "无线协议只完成部分还原：尚未实现任意逐键颜色，也未达到平滑的 30 FPS 数据流。",
+      "MIT 许可证。"
+    ]
+  },
+  "d2mac-linux-case": {
+    "name": "d2mac-linux：将《Diablo II》Mac 可执行文件移植到 32 位 Linux",
+    "requirements": [
+      "需要合法取得的《Diablo II》原版 Mac 客户端及游戏数据。",
+      "运行需要支持 32 位程序的 Linux 用户环境、Mesa GL 和 X 服务器。",
+      "右键处理及声音尚未实现。",
+      "MIT 许可证。"
+    ]
+  },
+  "packerscope": {
+    "name": "PackerScope PE 加壳分析框架",
+    "requirements": [
+      "支持的 Python 版本为 3.10 至 3.13。",
+      "Capstone、yara-python 和 ppdeep 是可选分析依赖。",
+      "UPX 脱壳需要外部 upx 程序。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "aciq-minisplit-protocol-case": {
+    "name": "ACiQ K18W：还原分体空调 UART 协议",
+    "requirements": [
+      "所述 ESPHome 配置需要 ACiQ ACIQ-K18W-W-32-HP2300 设备及 ESP32 硬件。",
+      "只监听与替换模块控制是两种独立接线方式；原模块仍连接时不得启用发送。",
+      "MIT 许可证。"
+    ]
+  },
+  "rnd-companion-case": {
+    "name": "RND Companion：重建 RND Synth 的 SysEx 协议",
+    "requirements": [
+      "实机使用和采集需要 Cymaforma RND Synth。",
+      "构建完整配套程序需要 JUCE 和另一个 music-suite 仓库中的界面源码；编解码器测试不需要 JUCE。",
+      "协议命令依据一段实机 MIDI 录制数据核对，固件更新可能使其失效。",
+      "采用 Unlicense 公共领域奉献声明。"
+    ]
+  },
+  "imprint-pe-triage": {
+    "name": "imprint PE 导入表静态分析工具",
+    "requirements": [
+      "构建需要 gcc、clang 或 MinGW 等 C11 编译器。",
+      "导入表只能提示可能的能力，不能证明代码已经执行；动态解析的 API 和加壳载荷可能不可见。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "spider-man-2-ps2-recomp-case": {
+    "name": "Spider-Man 2 PS2 Recomp：《Spider-Man 2》静态重编译阶段成果",
+    "requirements": [
+      "需要自备美版《Spider-Man 2》PS2 光盘镜像并在本地提取文件。",
+      "文档中的 Windows 流程需要装有 PS2 Emotion Engine 扩展的 Ghidra、CMake 和 Visual Studio 2022 C++ Build Tools。",
+      "移植版尚不能游玩，版权画面仍未完整渲染。",
+      "GPL-3.0 许可证。"
+    ]
+  },
+  "ffxii-tza-tools": {
+    "name": "ffxii-tza-tools 最终幻想 XII 文件格式工具",
+    "requirements": [
+      "需要 Python 3.9 或更新版本，以及从用户自有 FFXII_TZA.vbf 提取的游戏文件；输出 PNG 需安装 Pillow。",
+      "作者报告已用游戏中相应文件检查 .ca 和 .cm 格式文档。",
+      "当前范围不包括 Blender 往返编辑流程及嵌入的 .efx 特效图片。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "sims-package2glb": {
+    "name": "sims-package2glb：《模拟人生》package 格式提取工具",
+    "requirements": [
+      "目前支持 Windows。",
+      "输入需为《模拟人生》2、3 或 4 的 .package 文件；从源码构建需要 Rust 和 Node。",
+      "许可证为 MIT。"
+    ]
+  },
+  "reverse-workbench-skill": {
+    "name": "reverse-workbench-skill 逆向分析技能路由包",
+    "requirements": [
+      "需要受支持的智能体客户端；README 列出 pi、Codex CLI、DSH 和 Claude Code。",
+      "对应工具链的前置条件列有 JDK、Node.js 22.12+ 和 Python 3.x。",
+      "采用 MIT 许可证；LICENSE 保留对原始 reverse-skill 方法的署名。"
+    ]
+  },
+  "vc64-240p": {
+    "name": "vc64_240p Wii N64 虚拟主机视频补丁工具",
+    "requirements": [
+      "需要用户自行提供的 N64 Virtual Console WAD 和另行生成的 Wii 公共密钥。",
+      "在 Wii 上安装输出文件需要 cIOS 249，以及 Priiloader 或 BootMii。",
+      "不支持 PAL；作者报告已在五个模拟器版本上进行实体测试。",
+      "MIT 许可证。"
+    ]
+  },
+  "rtg-format": {
+    "name": "RtG-Format Road To Gramby's 存档格式文档",
+    "requirements": [
+      "项目说明逆向研究仍在进行，部分字段含义和行为尚未确定。",
+      "GPL-3.0 许可证。"
+    ]
+  },
+  "fl-studio-stealer-analysis-case": {
+    "name": "Malware Analysis：木马化 FL Studio 安装包与 Go 窃密程序分析",
+    "requirements": [
+      "作者使用隔离的 KVM/QEMU Windows 虚拟机及模拟网络进行动态观察。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "mindnode-mcp": {
+    "name": "MindNode MCP Server 思维导图智能体接口",
+    "requirements": [
+      "需要 macOS、MindNode 2024 或更新版本，以及 Node.js 24 或更新版本。",
+      "作者在 MindNode 2026.4.4 上检查了格式；多次编辑过的文字可能解码错误。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "touhou-engine-case": {
+    "name": "touhou-engine：用 Python 重实现东方游戏玩法",
+    "requirements": [
+      "需要 Python 3.12 或更新版本，以及文档列出的 numpy、pillow、pygame、loguru 和 msgspec 依赖。",
+      "需要使用者自己的 TH07 资源包；背景音乐使用同目录下的 thbgm.dat。",
+      "资料注明反编译参考来自 some100/th07。"
+    ]
+  },
+  "viture-v2-case": {
+    "name": "viture-v2：VITURE Gen2 眼镜协议与驱动重建",
+    "requirements": [
+      "实际连接设备需要 VITURE Gen2 XR 眼镜及受支持的 Linux 或 Android USB 传输方式。",
+      "仅在 VITURE Pro 2 XR 上测量过；设置类命令尚未映射。",
+      "MIT 许可证。"
+    ]
+  },
+  "bikestation-case": {
+    "name": "BikeStation：通过蓝牙 LE 本地控制 Echelon Connect 健身车",
+    "requirements": [
+      "需要带蓝牙的 Windows 电脑，以及广播名称以 ECH 开头的 Echelon 健身车。",
+      "作者报告仅在 Connect EX-5 上完成端到端测试；写入阻力还需要电动阻力机构。",
+      "许可证为 GPL-3.0-or-later。"
+    ]
+  },
+  "grsimwrite-mac-case": {
+    "name": "grsimwrite-mac：重建适用于 macOS 的 GRSIMWrite",
+    "requirements": [
+      "实际操作卡片需要 macOS、PC/SC 读卡器，以及 pyscard 和 pydes 依赖。",
+      "作者报告有 41 项使用模拟对象的离线单元测试，未使用硬件。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "kdemulator": {
+    "name": "kdemulator Windows 内核驱动模拟分析工具",
+    "requirements": [
+      "文档中的输入是 Windows x86-64 驱动 .sys 文件。",
+      "模拟范围仅包括驱动自身代码和直接导入的函数；访问硬件的驱动需要额外桩函数。",
+      "Unlicense 许可证。"
+    ]
   }
 }

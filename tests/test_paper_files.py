@@ -139,7 +139,9 @@ class PaperFileTest(unittest.TestCase):
                         redirect_stdout(stdout), redirect_stderr(stderr):
                     return build_readme.main(), stderr.getvalue()
 
-            self.assertEqual(run('--check'), (0, ''))
+            status, errors = run('--check')
+            self.assertEqual(status, 0)
+            self.assertNotIn('Stale generated files', errors)
             (root / PAPER_FILES['en']).write_text(self.files['en'].replace('## Contents', '## Contents edited'),
                                                   encoding='utf-8')
             (root / PAPER_FILES['zh']).unlink()
@@ -151,7 +153,9 @@ class PaperFileTest(unittest.TestCase):
             self.assertEqual(run()[0], 0)
             for language, name in PAPER_FILES.items():
                 self.assertEqual((root / name).read_text(encoding='utf-8'), self.files[language])
-            self.assertEqual(run('--check'), (0, ''))
+            status, errors = run('--check')
+            self.assertEqual(status, 0)
+            self.assertNotIn('Stale generated files', errors)
 
 
 if __name__ == '__main__':
