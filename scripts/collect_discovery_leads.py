@@ -805,13 +805,12 @@ def huggingface_listings(client: Client, source: dict) -> tuple[list[dict], Coun
 # --- collection -------------------------------------------------------------------------------------
 
 def due(source: dict, moment: dt.datetime, everything: bool) -> bool:
-    """A slow source runs in one two-hour slot per period, chosen from its ID so sources spread out."""
-    hours = source.get('every_hours', 2)
-    if everything or hours <= 2:
+    """A slow source runs in one UTC hour per period, chosen from its ID so sources spread out."""
+    hours = source.get('every_hours', 1)
+    if everything or hours <= 1:
         return True
-    slots = hours // 2
-    slot = (moment.toordinal() * 12 + moment.hour // 2) % slots
-    return slot == int(hashlib.sha256(source['id'].encode()).hexdigest(), 16) % slots
+    slot = (moment.toordinal() * 24 + moment.hour) % hours
+    return slot == int(hashlib.sha256(source['id'].encode()).hexdigest(), 16) % hours
 
 
 def source_result(source: dict, status: str, counts: Counter | None = None, extra: dict | None = None,

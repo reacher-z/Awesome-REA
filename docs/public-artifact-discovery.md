@@ -2,13 +2,13 @@
 
 [Workflow](../.github/workflows/public-artifact-discovery.yml) · [Collector](../scripts/collect_public_artifact_leads.py) · [Source review rules](agent-contributing.md)
 
-This workflow follows public source links every two hours, at minute 7 UTC (`7 */2 * * *`). It can also be dispatched from the default branch. This is a separate, small discovery snapshot; the existing README scanner and its checkpoint are unchanged. GitHub schedules can be delayed and are not an exact-time service.
+This workflow follows public source links every hour, at minute 7 UTC (`7 * * * *`). It can also be dispatched from the default branch. This is a separate, small discovery snapshot; the existing README scanner and its checkpoint are unchanged. GitHub schedules can be delayed and are not an exact-time service.
 
 The snapshot follows these sources:
 
 - Up to 30 recently updated plus 30 newly created public Discussions in `morluto/rea`, deduplicated by discussion number. Questions and project suggestions remain **unreviewed leads**.
 - The current, commit-pinned README of `morluto/rea`, `jammyfu/rea-atlas` and `kaixinbaba/awesome-rea`, after checking the Git blob hash against the retrieved bytes.
-- Public indexes at `reamcp.dev/zh-cn/types/x` and `madewithrea.com`, followed by at most eight linked case pages on those same sites. The budget is shared across sites and rotates in UTC two-hour slots, one per scheduled run, so one alphabetically earlier directory cannot monopolize every run. Their current robots rules are consulted; unavailable or disallowed pages remain explicit coverage errors.
+- Public indexes at `reamcp.dev/zh-cn/types/x` and `madewithrea.com`, followed by at most eight linked case pages on those same sites. The budget is shared across sites and rotates each UTC hour, one per scheduled run, so one alphabetically earlier directory cannot monopolize every run. Their current robots rules are consulted; unavailable or disallowed pages remain explicit coverage errors.
 - At most six discovered X post URLs, newest post IDs first, through the public `publish.x.com/oembed` endpoint (the observed canonical target of the legacy Twitter endpoint). A valid rich response with its author URL, paragraph and matching post ID establishes that an original excerpt is available, not that a full thread, video, software artifact or claim has been reviewed. Excerpts may be truncated. Cross-origin redirects remain refused; the canonical endpoint is called directly without GitHub authentication.
 
 This is **source following, not full-web or X keyword search**. It does not search an authenticated timeline, call paid X endpoints, expand arbitrary short links or run a model. Maintainers should continue broader web/X searches and add reviewed source strategies as coverage gaps become clear. No source directory is treated as proof that a project uses REA or completely reconstructs software.
@@ -42,4 +42,4 @@ python3 -m unittest tests.test_public_artifact_leads
 
 The tests cover credential isolation and the actual no-redirect opener, cross-origin rejection, quotas/time/size bounds, robots denial, Git blob mismatches, partial GraphQL responses, alias deduplication, source binding, response-text omission and rejection of a fabricated `source-reviewed`/runtime-tested output. Full repository checks remain required for code changes.
 
-中文：此任务每两小时（UTC 每个偶数小时的第 7 分钟）追踪公开目录、GitHub Discussions 与可访问的 X 原帖片段，属于有边界的线索巡检，并非全网或 X 全文检索。错误与覆盖缺口保留在报告中；不保存原文，不执行上游代码，不自动收录、评分或发布。线索数量与精选资源、独立软件及复现实测数量分开理解。
+中文：此任务每小时（UTC 每小时的第 7 分钟）追踪公开目录、GitHub Discussions 与可访问的 X 原帖片段，属于有边界的线索巡检，并非全网或 X 全文检索。错误与覆盖缺口保留在报告中；不保存原文，不执行上游代码，不自动收录、评分或发布。线索数量与精选资源、独立软件及复现实测数量分开理解。

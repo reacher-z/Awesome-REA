@@ -7,10 +7,12 @@ on:
         required: false
         type: boolean
         default: false
-  # Every two hours at minute 7 UTC on odd hours, between the README scan's even-hour runs, so the two
-  # ingests do not compete for the shared required-check runners.
+  # Every hour at minute 7 UTC, the same requested start as the README scan. Workflows requested for one
+  # minute start within about two minutes of each other, this one finishes its ingest in about eight, and
+  # the README scan reads for at least twelve before its own ingest, so the two ingests take turns on the
+  # shared required-check runners. If they ever overlap, the later one rebuilds its batch and retries.
   schedule:
-    - cron: '7 1-23/2 * * *'
+    - cron: '7 * * * *'
 permissions:
   contents: read
 concurrency:

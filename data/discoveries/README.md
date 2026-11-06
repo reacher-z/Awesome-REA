@@ -38,7 +38,7 @@ Each batch is about 0.85 MB of JSON for 300 records and about 130 KB compressed 
 
 ## Followed-source leads
 
-The README scanner only sees GitHub repositories that its searches reach and that carry a strong reverse-engineering topic. Other reverse-engineering lists, registries and bibliographies list many more resources, including websites, books, courses and papers. The `Followed-source lead discovery` workflow ([discovery-leads.yml](../../.github/workflows/discovery-leads.yml)) follows the public sources registered in [discovery-sources.json](../discovery-sources.json) every two hours and keeps what they list here as **leads**: `verification: automated-source-lead`, `review_status: unreviewed`. A listing by a secondary source is never evidence for curation ([AGENTS.md](../../AGENTS.md)); a lead only says where a resource was listed.
+The README scanner only sees GitHub repositories that its searches reach and that carry a strong reverse-engineering topic. Other reverse-engineering lists, registries and bibliographies list many more resources, including websites, books, courses and papers. The `Followed-source lead discovery` workflow ([discovery-leads.yml](../../.github/workflows/discovery-leads.yml)) follows the public sources registered in [discovery-sources.json](../discovery-sources.json) every hour and keeps what they list here as **leads**: `verification: automated-source-lead`, `review_status: unreviewed`. A listing by a secondary source is never evidence for curation ([AGENTS.md](../../AGENTS.md)); a lead only says where a resource was listed.
 
 **Sources.** Each registry entry names its type, why it is followed and its scope rules:
 
@@ -99,6 +99,6 @@ Follow the [review worksheet](../../docs/promotion-worksheet.md) exactly as for 
 
 ### 外部来源线索
 
-README 扫描只能看到它的搜索能触达、且带有明确逆向工程主题的 GitHub 仓库。其他逆向工程列表、注册表和综述参考文献还列出了更多资源，包括网站、书籍、课程和论文。`Followed-source lead discovery` 工作流每两小时读取 [discovery-sources.json](../discovery-sources.json) 中登记的公开来源，把它们列出的条目作为**线索**保存在 `leads/<年-月>/leads-<运行 ID>-<尝试次数>.json`：`verification: automated-source-lead`，`review_status: unreviewed`。被二手来源列出从来不是收录证据；线索只说明资源在哪里被列出。每个来源都登记了类型、跟踪理由和范围规则（纳入与排除的章节、关键词筛选、带 CONTRIBUTING.md 原因代码的条目排除；论文来源只保留逆向工程主题）。按链接政策，SubmitGame 注册表只贡献反编译、反汇编、引擎重制、源码移植和工具，不含静态重编译和可在浏览器中游玩的构建。
+README 扫描只能看到它的搜索能触达、且带有明确逆向工程主题的 GitHub 仓库。其他逆向工程列表、注册表和综述参考文献还列出了更多资源，包括网站、书籍、课程和论文。`Followed-source lead discovery` 工作流每小时读取 [discovery-sources.json](../discovery-sources.json) 中登记的公开来源，把它们列出的条目作为**线索**保存在 `leads/<年-月>/leads-<运行 ID>-<尝试次数>.json`：`verification: automated-source-lead`，`review_status: unreviewed`。被二手来源列出从来不是收录证据；线索只说明资源在哪里被列出。每个来源都登记了类型、跟踪理由和范围规则（纳入与排除的章节、关键词筛选、带 CONTRIBUTING.md 原因代码的条目排除；论文来源只保留逆向工程主题）。按链接政策，SubmitGame 注册表只贡献反编译、反汇编、引擎重制、源码移植和工具，不含静态重编译和可在浏览器中游玩的构建。
 
 候选条目的任一身份已存在于精选资源或论文、来源索引及其失败记录、公开补充批次、README 扫描批次、范围排除、案例覆盖台账或更早的线索批次中时不会入选；GitHub 仓库先解析为数字 ID，改名不算新条目，已不存在或私有的仓库会被跳过；含凭据、个人路径或受保护姓名的条目不收。各来源按登记顺序轮流入选，每次运行最多 **2,000** 条。每条线索记录身份键、别名、规范链接、名称、按章节推测的类型（不是审核结论）、最多 12 个列出它的来源及固定到具体提交的证据链接，以及 GitHub、论文或 Hugging Face 的元数据快照（不含作者列表）。线索队列上限为 **30,000 条**、**48 MiB**；首次收集（2026-11-05）约 5,600 条、分三次入库，批次文件约 8 MB，Git 中压缩后约 1.5 MB。网站在 [/discoveries/leads.json](https://awesomerea.org/discoveries/leads.json) 导出最新 1,000 条并按批次导出全部，均标明未审核。收录某条线索同样需要按审核工作表另写一条精选记录。

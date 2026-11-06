@@ -739,8 +739,8 @@ def validate_registry(document, papers: list[dict] | None = None) -> list[str]:
             problems.append(f'{label}: path must be a relative repository path')
         if 'limit' in source and (type(source['limit']) is not int or not 0 < source['limit'] <= 1000):
             problems.append(f'{label}: limit must be 1 to 1000')
-        if 'every_hours' in source and (type(source['every_hours']) is not int or source['every_hours'] not in (2, 6, 12, 24, 168)):
-            problems.append(f'{label}: every_hours must be 2, 6, 12, 24 or 168')
+        if 'every_hours' in source and (type(source['every_hours']) is not int or source['every_hours'] not in (1, 2, 6, 12, 24, 168)):
+            problems.append(f'{label}: every_hours must be 1, 2, 6, 12, 24 or 168')
         if source.get('parser') not in (None, 'markdown', 'pre-list'):
             problems.append(f'{label}: unknown parser')
         if source['type'] == 'github-topic' and (not isinstance(source['topic'], str) or not re.fullmatch(r'[a-z0-9][a-z0-9-]{0,49}', source['topic'])):

@@ -172,9 +172,9 @@ class PublicLeadTests(unittest.TestCase):
         pages = [f'https://madewithrea.com/builds/p{i}' for i in range(12)] + [
                  f'https://reamcp.dev/zh-cn/cases/p{i}' for i in range(12)]
         first = discovery.select_case_pages(pages, '2026-11-01T00:07:00Z')
-        second = discovery.select_case_pages(pages, '2026-11-01T02:07:00Z')
-        # Runs in the same two-hour slot, such as a manual rerun, read the same pages.
-        self.assertEqual(first, discovery.select_case_pages(pages, '2026-11-01T01:59:00Z'))
+        second = discovery.select_case_pages(pages, '2026-11-01T01:07:00Z')
+        # Runs in the same UTC hour, such as a manual rerun, read the same pages.
+        self.assertEqual(first, discovery.select_case_pages(pages, '2026-11-01T00:59:00Z'))
         self.assertEqual(len(first), discovery.MAX_WEB_CASES)
         self.assertEqual(sum('madewithrea.com' in url for url in first), 4)
         self.assertEqual(sum('reamcp.dev' in url for url in first), 4)
@@ -261,9 +261,9 @@ class PublicLeadTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 discovery.write_report(report, Path(temporary) / 'data')
 
-    def test_workflow_is_two_hourly_read_only_default_branch_and_artifact_only(self):
+    def test_workflow_is_hourly_read_only_default_branch_and_artifact_only(self):
         workflow = (ROOT / '.github/workflows/public-artifact-discovery.yml').read_text()
-        self.assertIn("cron: '7 */2 * * *'", workflow)
+        self.assertIn("cron: '7 * * * *'", workflow)
         self.assertNotIn('timezone:', workflow)
         # Only the failure-tracking job may write, and only issues.
         text, report = workflow.split('\n  report:\n', 1)
