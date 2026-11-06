@@ -29,7 +29,7 @@ def dated_paper(publication_date):
 
 def navigation(html):
     wordmark = re.search(r'<a class="wordmark" href="([^"]+)"', html)[1]
-    breadcrumb = re.search(r'<nav class="(?:browse|papers)-breadcrumbs"[^>]*><a href="([^"]+)"', html)[1]
+    breadcrumb = re.search(r'<nav class="(?:browse-breadcrumbs|papers-breadcrumbs|crumbs)"[^>]*><a href="([^"]+)"', html)[1]
     return wordmark, breadcrumb
 
 
@@ -109,8 +109,7 @@ class LanguageLinkTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)
             build_static_pages(output)
-            searches = {'browse': ('/zh/?view=source-index', '/?view=source-index&amp;lang=en'),
-                        'resources': ('/zh/?view=curated', '/?view=curated&amp;lang=en')}
+            searches = {'browse': ('/zh/?view=source-index', '/?view=source-index&amp;lang=en')}
             for route in ('browse/', 'browse/android/', 'resources/', 'about/', 'papers/'):
                 for language, prefix, home in (('zh', 'zh/', '/zh/'), ('en', '', '/')):
                     with self.subTest(route=route, language=language):

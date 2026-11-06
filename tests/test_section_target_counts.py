@@ -32,7 +32,7 @@ def record(identifier, targets, kind='case-study', category='reconstruction-case
 
 LINE = re.compile(r'<p class="section-target-count" data-section-target="([a-z]+)" data-target-tagged="(\d+)" '
                   r'data-target-elsewhere="(\d+)" data-target-untagged-here="(\d+)">(.*?)</p>', re.S)
-ROUTES = ('/resources/', '/zh/resources/', '/cases/', '/zh/cases/')
+ROUTES = ('/cases/', '/zh/cases/')
 # A top-level section starts at its own heading; sub-group sections are labelled by two IDs and stay inside it.
 SECTION = re.compile(r'<section (?:class="case-section" id="cases-([a-z-]+)"|aria-labelledby="heading-([a-z-]+)")')
 # The visible number of a count line, per language: entries carrying the tag.
@@ -121,9 +121,6 @@ class SectionTargetCountTests(unittest.TestCase):
             self.assertEqual({target: values[:3] for target, values in lines.items()}, expected, route)
             # Non-target sections (here References and learning) get no tag line.
             self.assertEqual(self.html[route].count('class="section-target-count"'), len(expected))
-        self.assertEqual(self.lines('/resources/')['protocol'][:3], (3, 1, 0))
-        self.assertEqual(self.lines('/resources/')['binary'][:3], (MANY + 4, MANY + 3, MANY + 1))
-        self.assertEqual(self.lines('/resources/')['website'][:3], (2, 1, 2))
         self.assertEqual(self.lines('/cases/')['protocol'][:3], (2, 1, 0))
         self.assertEqual(self.lines('/cases/')['website'][:3], (1, 0, 1))
 
@@ -139,9 +136,6 @@ class SectionTargetCountTests(unittest.TestCase):
                 query = {key: values[0] for key, values in parse_qs(filter_url.query).items()}
                 self.assertEqual(query, {'view': 'curated', 'target': target, **({'kind': 'case-study'} if cases else {}),
                                          **({} if zh else {'lang': 'en'})})
-        english = self.lines('/resources/')['protocol'][3]
-        self.assertTrue(english.startswith('3 entries tagged Protocol · <a '), english)
-        self.assertIn('aria-label="Show all 3 entries tagged Protocol in search">Show all 3 →</a>', english)
         chinese = self.lines('/zh/cases/')['protocol'][3]
         self.assertTrue(chinese.startswith('2 个案例带“协议”标签 · <a '), chinese)
         self.assertIn('查看全部 2 个 →', chinese)
@@ -189,8 +183,6 @@ class SectionCountReconciliationTests(unittest.TestCase):
         resources = current_resources()
         pages = build(resources)
         self.assert_reconciled(pages, resources)
-        # The current catalog lists entries without the section's tag in at least one /resources/ section.
-        self.assertTrue(any(row['line'] and row['line'][3] for row in section_rows(pages['/resources/']).values()))
 
 
 if __name__ == '__main__':
