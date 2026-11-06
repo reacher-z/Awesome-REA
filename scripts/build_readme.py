@@ -366,11 +366,21 @@ def resource_line(record, section, language, translations, linked=True):
     """The shared README and case-file list line."""
     index = language == 'zh'
     name = plain_text((record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if index else record['name'])
-    title = f'[**{name}**]({record["url"]})' if linked else f'**{name}**'
+    title = f'[**{name}**]({entry_link(record["url"])})' if linked else f'**{name}**'
     description = plain_text(lead_sentence(record[f'description_{language}'], language))
     metadata = plain_text(entry_type(record, language) + other_targets(record, section, language))
     detail_url = f"https://awesomerea.org/{'zh/' if index else ''}resources/{record['id']}/"
     return f'- {title} - {description} <sub>{metadata} · [{FULL_ENTRY[index]}]({detail_url})</sub>'
+
+
+
+# About links the upstream REA project by its exact address (tests/test_about_rea.py); the catalog entry for the same
+# project opens its README tab instead, so the page does not link one address twice.
+README_TAB_URLS = {'https://github.com/morluto/rea'}
+
+
+def entry_link(url):
+    return url + '?tab=readme-ov-file' if url in README_TAB_URLS else url
 
 
 def render_catalog(records, language, paper_urls=frozenset()):
@@ -430,6 +440,7 @@ def render_catalog(records, language, paper_urls=frozenset()):
                 for record in block:
                     lines.append(resource_line(record, section, language, translations,
                                                 linked=record['url'] not in linked))
+                    linked.add(record['url'])
                     linked.add(record['url'])
                 lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
