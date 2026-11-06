@@ -36,6 +36,7 @@ REPOSITORY_URL = f'https://github.com/{REPOSITORY}'
 ICONS = {
     'search': '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/>',
     'close': '<path d="M6 6l12 12M18 6 6 18"/>',
+    'info': '<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.8"/>',
     'star': '<path fill="currentColor" stroke="none" d="M12 3.2l2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 17.1 6.6 20l1.1-6.1-4.5-4.3 6.1-.8z"/>',
     'external': '<path d="M8 16 16 8M9.5 8H16v6.5"/>',
     'arrow': '<path d="M4 12h15M14 7l5 5-5 5"/>',

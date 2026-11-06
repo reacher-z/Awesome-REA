@@ -953,3 +953,61 @@ html:lang(zh-CN) .cb-n { font-family: "EB Garamond Accent", var(--font-display);
 @media (max-width: 899px) { .has-hits .hs-keys { display: none; } }
 .empty .btn { margin-top: 12px; }
 
+
+/* Papers by year: CSP forbids style attributes, so bar heights are classes in 2% steps; the columns size themselves. */
+.yb-list { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+.yb-h2 { --h: 2%; }
+.yb-h4 { --h: 4%; }
+.yb-h6 { --h: 6%; }
+.yb-h8 { --h: 8%; }
+.yb-h10 { --h: 10%; }
+.yb-h12 { --h: 12%; }
+.yb-h14 { --h: 14%; }
+.yb-h16 { --h: 16%; }
+.yb-h18 { --h: 18%; }
+.yb-h20 { --h: 20%; }
+.yb-h22 { --h: 22%; }
+.yb-h24 { --h: 24%; }
+.yb-h26 { --h: 26%; }
+.yb-h28 { --h: 28%; }
+.yb-h30 { --h: 30%; }
+.yb-h32 { --h: 32%; }
+.yb-h34 { --h: 34%; }
+.yb-h36 { --h: 36%; }
+.yb-h38 { --h: 38%; }
+.yb-h40 { --h: 40%; }
+.yb-h42 { --h: 42%; }
+.yb-h44 { --h: 44%; }
+.yb-h46 { --h: 46%; }
+.yb-h48 { --h: 48%; }
+.yb-h50 { --h: 50%; }
+.yb-h52 { --h: 52%; }
+.yb-h54 { --h: 54%; }
+.yb-h56 { --h: 56%; }
+.yb-h58 { --h: 58%; }
+.yb-h60 { --h: 60%; }
+.yb-h62 { --h: 62%; }
+.yb-h64 { --h: 64%; }
+.yb-h66 { --h: 66%; }
+.yb-h68 { --h: 68%; }
+.yb-h70 { --h: 70%; }
+.yb-h72 { --h: 72%; }
+.yb-h74 { --h: 74%; }
+.yb-h76 { --h: 76%; }
+.yb-h78 { --h: 78%; }
+.yb-h80 { --h: 80%; }
+.yb-h82 { --h: 82%; }
+.yb-h84 { --h: 84%; }
+.yb-h86 { --h: 86%; }
+.yb-h88 { --h: 88%; }
+.yb-h90 { --h: 90%; }
+.yb-h92 { --h: 92%; }
+.yb-h94 { --h: 94%; }
+.yb-h96 { --h: 96%; }
+.yb-h98 { --h: 98%; }
+.yb-h100 { --h: 100%; }
+
+/* On a phone the Copy button sits above the code, so it never covers the first line. */
+@media (max-width: 640px) {
+  .devband .code pre { padding: 46px 14px 14px; }
+}

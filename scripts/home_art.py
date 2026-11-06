@@ -1,4 +1,4 @@
-"""Fig. 1 on the homepage: hand-drafted inline SVG line art. Decorative and aria-hidden; the data stays in the HTML."""
+"""Homepage drawings: hand-drafted inline SVG line art. Decorative and aria-hidden; the data stays in the HTML."""
 from __future__ import annotations
 
 COS = 0.866
