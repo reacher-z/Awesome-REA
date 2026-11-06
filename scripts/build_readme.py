@@ -533,9 +533,9 @@ def render_badges(records, papers, language):
     data/discoveries/ live, so the README is not regenerated on every scan. There is no CI badge: awesome lists must
     not carry one, and the footer already links the validate workflow's runs."""
     zh = language == 'zh'
-    style = '?style=flat-square&labelColor=2B2F3A'
+    style = '?style=flat-square&labelColor=2A2C3F'
 
-    def badge(label, value, color='6B5159'):
+    def badge(label, value, color='9C4128'):
         component = lambda text: quote(str(text).replace('-', '--').replace('_', '__'), safe='')
         return f'![{label}: {value}](https://img.shields.io/badge/{component(label)}-{component(value)}-{color}{style})'
 
@@ -543,7 +543,7 @@ def render_badges(records, papers, language):
     labels = (('精选资源', '案例', '论文', '最近入库', '许可') if zh
               else ('resources', 'cases', 'papers', 'last discovery ingest', 'license'))
     commit = ('https://img.shields.io/github/last-commit/reacher-z/Awesome-REA/main?path=data%2Fdiscoveries'
-              f'&label={quote(labels[3])}&color=6B5159&labelColor=2B2F3A&style=flat-square')
+              f'&label={quote(labels[3])}&color=9C4128&labelColor=2A2C3F&style=flat-square')
     return ' '.join([
         badge(labels[0], f'{len(records):,}'),
         badge(labels[1], f'{cases:,}'),

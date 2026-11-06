@@ -1,5 +1,5 @@
 /* Paper directory: the same white collection canvas, with citation-focused cards. */
-:root{--preprint:#7e602b;--preprint-bg:#f8f2e7;--accepted:#536b85;--accepted-bg:#f1f5f9;--scope-rule:#bfd1e3}
+:root{--preprint:#7e602b;--preprint-bg:#f7f5e6;--accepted:#536b85;--accepted-bg:#f1f5f9;--scope-rule:#bfd1e3}
 @media (prefers-color-scheme: dark){:root{--preprint:#e3c37f;--preprint-bg:#372e1d;--accepted:#a9c0da;--accepted-bg:#232d3b;--scope-rule:#44506a}}
 .papers-main{padding-bottom:56px}
 .papers-language{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:7px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;white-space:nowrap}

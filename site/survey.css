@@ -1,6 +1,6 @@
 /* Scholarly reading layout. Uses the shared palette and system fonts only. */
-:root{--abstract:#fbfaff}
-@media (prefers-color-scheme: dark){:root{--abstract:#1f1e2c}}
+:root{--abstract:#fbf9ec}
+@media (prefers-color-scheme: dark){:root{--abstract:#25273a}}
 .survey-page {
   --survey-serif:Georgia,"Times New Roman","Songti SC","Noto Serif CJK SC",SimSun,serif;
   --survey-measure:72ch;
