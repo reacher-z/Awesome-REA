@@ -672,6 +672,7 @@ class ScheduledBudgetTests(unittest.TestCase):
                             <= scheduled.SCAN_SECONDS - scheduled.READ_RESERVE_SECONDS)
         self.assertEqual(scheduled.SCAN_SECONDS, 24 * 60)
         self.assertEqual(scheduled.READ_RESERVE_SECONDS, 12 * 60)
+        self.assertEqual((args.failed_batch_skips, args.failed_batch_pause), (5, 5))
         self.assertEqual(scheduled.NEW_SUCCESSES, 2000)
 
     def test_observed_graphql_quota_and_fallback_budget_defer_without_extra_requests(self):
