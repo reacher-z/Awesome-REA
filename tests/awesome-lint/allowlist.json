@@ -45,6 +45,11 @@
       "rule": "awesome-spell-check",
       "reason": "Text \"OS X\" should be written as \"macOS\"",
       "why": "Quoted name of the historical operating system release in a project description."
+    },
+    {
+      "rule": "awesome-spell-check",
+      "reason": "Text \"nano\" should be written as \"Nano\"",
+      "why": "nano is the text editor, whose name is written in lower case."
     }
   ]
 }

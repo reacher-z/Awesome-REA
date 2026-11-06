@@ -362,12 +362,23 @@ def tag_legend(records, language):
     return ('**标签：** ' if zh else '**Tags:** ') + plain_text(' · '.join(parts)) + ('。' if zh else '.')
 
 
+
+def without_leading_name(description, name):
+    """Drop the item's own name from the front of its description ("Foo is a tool..." becomes "A tool..."), which
+    awesome-lint's no-repeat-item-in-description rule flags. Descriptions that do not start with the name are unchanged."""
+    if not description.lower().startswith(name.lower()):
+        return description
+    rest = description[len(name):].lstrip(' :,\u2013\u2014-')
+    rest = re.sub(r'^(?:is|are) ', '', rest)
+    return rest[:1].upper() + rest[1:] if rest else description
+
+
 def resource_line(record, section, language, translations, linked=True):
     """The shared README and case-file list line."""
     index = language == 'zh'
     name = plain_text((record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if index else record['name'])
     title = f'[**{name}**]({entry_link(record["url"])})' if linked else f'**{name}**'
-    description = plain_text(lead_sentence(record[f'description_{language}'], language))
+    description = without_leading_name(plain_text(lead_sentence(record[f'description_{language}'], language)), name)
     metadata = plain_text(entry_type(record, language) + other_targets(record, section, language))
     detail_url = f"https://awesomerea.org/{'zh/' if index else ''}resources/{record['id']}/"
     return f'- {title} - {description} <sub>{metadata} · [{FULL_ENTRY[index]}]({detail_url})</sub>'
