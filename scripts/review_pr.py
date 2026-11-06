@@ -385,8 +385,11 @@ def review_data(contents, changed):
         decisions = parse_json(contents[DISCOVERY_REVIEWS], DISCOVERY_REVIEWS)
         batches, problems = discoveries.load_batches(ROOT)
         errors.extend(problems)
-        discovery_reviews.validate_reviews(batches, decisions, errors)
-        reviewed.append(f'{len(decisions):,} discovery review decisions checked against the base branch batches for reason codes, README hashes, pinned evidence and dates.')
+        import discovery_leads
+        lead_batches, problems = discovery_leads.load_batches(ROOT)
+        errors.extend(problems)
+        discovery_reviews.validate_reviews(batches, decisions, errors, lead_batches=lead_batches)
+        reviewed.append(f'{len(decisions):,} discovery review decisions checked against the base branch batches for reason codes, README hashes where applicable, pinned evidence and dates.')
     if set(CASE_INPUTS) & changed:
         case_records = []
         for filename in CATALOGS:

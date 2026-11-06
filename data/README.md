@@ -142,7 +142,7 @@ The schema-2 companion is emitted only when a supplement is ready for publicatio
 
 [discoveries/](discoveries/README.md) is the unreviewed discovery queue: batches of exact verified captures that the scheduled scan adds after each run through its own checked pull request. They keep `verification: automated-readme-scan` and `review_status: unreviewed`, are not translated, and are listed only on the website's discovery pages and exports, never in the READMEs, the repository directory or the curated counts.
 
-[discovery-reviews.json](discovery-reviews.json) records the exclude and hold decisions made on [discovery queue](discoveries/README.md#review-decisions) records, keyed by scan ID; a decided record leaves the unreviewed queue and its batch stays unchanged.
+[discovery-reviews.json](discovery-reviews.json) records exclude and hold decisions for [discovery queue](discoveries/README.md#review-decisions) scans and followed-source leads, keyed by their IDs. Scan decisions include `readme_sha256`; lead decisions use pinned commit evidence. Decided records leave the unreviewed exports while their batch files stay unchanged.
 
 [discovery-classes.json](discovery-classes.json) records Data class decisions for discovery IDs. A `data` row has one `class` from the table above and a short `reproduced` description; an `outside` row has only its decision. The discovery page and feeds show data points; the queue JSON and its per-batch files retain outside and unclassified records.
 

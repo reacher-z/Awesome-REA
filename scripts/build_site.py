@@ -372,10 +372,11 @@ def build_site(output: Path) -> tuple[int, int, int]:
     write_withdrawn_redirects(output, withdrawals)
     discovery_paths = build_discovery_pages(output, catalog, browse_document, withdrawals=withdrawals)
     # The unreviewed discovery queue: its own list pages, feeds and JSON, never curated pages or counts.
-    queue_paths, discovery_queue = write_discoveries(output, catalog, papers, browse_document)
-    discovery_paths = [*discovery_paths, *queue_paths]
     # Followed-source leads: JSON exports only, labelled unreviewed, never pages or curated counts.
     lead_queue = write_lead_exports(output, catalog)
+    queue_paths, discovery_queue = write_discoveries(output, catalog, papers, browse_document,
+                                                     lead_decided=(lead_queue or {}).get('decided'))
+    discovery_paths = [*discovery_paths, *queue_paths]
     # The static API reads the same records and queues; its documentation page joins the sitemap.
     api_index = build_api(output, resources=resources, papers=papers, repository_document=browse_document,
                           discovery_queue=discovery_queue, lead_queue=lead_queue, site_url=SITE_URL)

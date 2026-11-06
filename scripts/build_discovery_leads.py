@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 
 import discovery_leads as leads
+import discovery_reviews
 
 EXPORT_PATH = '/discoveries/leads.json'
 BATCH_EXPORT_DIRECTORY = '/discoveries/leads/'
@@ -31,14 +32,19 @@ def lead_queue(root: Path) -> dict:
         raise ValueError('The source registry failed validation: ' + '; '.join(registry_problems[:3]))
     # What the other layers hold now; earlier lead batches are not part of it.
     held = leads.existing_keys(root, [])['known'] if batches else {}
+    rows = [{**lead, 'batch_id': batch['batch_id'], 'collected_at': batch['collected_at']}
+            for batch in reversed(batches) for lead in batch['leads']]
+    curated = {str(record.get('url', '')).rstrip('/').casefold(): record['id']
+               for name in ('data/tool-resources.json', 'data/rea-resources.json', 'data/papers.json')
+               for record in json.loads((root / name).read_text(encoding='utf-8'))} if batches else {}
+    pending, decided = discovery_reviews.split_queue(rows, discovery_reviews.read_reviews(root), curated)
     listed, since_held = [], 0
-    for batch in reversed(batches):
-        for lead in batch['leads']:
-            if leads.match_keys(lead) & held.keys():
-                since_held += 1
-                continue
-            listed.append({**lead, 'batch_id': batch['batch_id'], 'collected_at': batch['collected_at']})
-    return {'batches': batches, 'listed': listed, 'since_held': since_held, 'registry': registry,
+    for lead in pending:
+        if leads.match_keys(lead) & held.keys():
+            since_held += 1
+            continue
+        listed.append(lead)
+    return {'batches': batches, 'listed': listed, 'decided': decided, 'since_held': since_held, 'registry': registry,
             'record_count': sum(len(batch['leads']) for batch in batches), 'latest': batches[-1] if batches else None}
 
 
@@ -60,7 +66,8 @@ def export_document(queue: dict, site_url: str, repository_url: str) -> dict:
         'review_status': leads.REVIEW_STATUS, 'verification': leads.VERIFICATION, 'description': NOTE,
         'selection_policy': leads.POLICY,
         'counts': {'batches': len(queue['batches']), 'leads': queue['record_count'], 'listed': len(queue['listed']),
-                   'exported': len(records), 'since_held_by_other_layers': queue['since_held']},
+                   'exported': len(records), 'since_held_by_other_layers': queue['since_held'],
+                   'reviewed': discovery_reviews.counts(queue['decided'])},
         'pagination': ('resources lists the newest listed leads; batches[].records_url lists every listed lead of '
                        'each batch, so together they cover the whole queue.'),
         'budget': {'leads_per_batch': leads.MAX_BATCH_RECORDS, 'leads': leads.MAX_TOTAL_RECORDS,
