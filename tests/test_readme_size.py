@@ -144,7 +144,8 @@ class OneLineEntryTest(unittest.TestCase):
                       else (('papers', papers),))
             with self.subTest(file=name):
                 self.assertEqual(len(lines), sum(len(records) for _, records in groups))
-                self.assertNotIn('<details>', text)
+                # Only the collapsed section list may use <details>; no entry is hidden behind one.
+                self.assertNotIn('<details>', re.sub(r'<!-- BEGIN GENERATED CONTENTS -->.*?<!-- END GENERATED CONTENTS -->', '', text, flags=re.S))
                 for route, records in groups:
                     for record in records:
                         link = f'[{FULL_ENTRY[index]}](https://awesomerea.org/{prefix}{route}/{record["id"]}/)</sub>'
