@@ -21,8 +21,10 @@ budget. On rate limits it calls record_failure with a retry time, saves, and sto
 On restart, load_frontier preserves page cursors and pending candidates. A request
 whose response was never saved may be fetched again; its IDs are deduplicated.
 
-add_queries accepts only explicitly approved scope bases. extend_until adds new
-created-time intervals without reopening older traversals. Search results mutate;
+add_queries accepts only explicitly approved scope bases and asks them first.
+extend_until adds new created-time intervals without reopening older traversals.
+compact_frontier drops what the checkpoint already holds: read candidates, and the request
+records and seen IDs of old finished partitions, so the state stays small. Search results mutate;
 'complete' means the observed page traversal finished, never an exhaustive census.
 An overflow or incomplete response splits into narrower disjoint UTC intervals.
 A saturated one-second interval is blocked visibly, not silently truncated.
@@ -46,12 +48,16 @@ from review_pr import parse_json
 ROOT = Path(__file__).resolve().parents[1]
 MAX_STATE_BYTES = 256 * 1024 * 1024
 MAX_CANDIDATES = 200_000
-MAX_PARTITIONS = 50_000
+MAX_PARTITIONS = 500_000
 MAX_OBSERVATIONS = 50_000
+KEEP_OBSERVATIONS = 4_000
+WINDOW_SECONDS = 6 * 60 * 60
 MAX_ROOTS = 128
 GATES = 'is:public fork:false archived:false'
 DATE_FORMAT = '%Y-%m-%dT%H:%M:%SZ'
 STATUSES = {'pending', 'complete', 'split', 'blocked'}
+# A finished partition takes no further requests. Only these give up their request records.
+FINISHED = {'complete', 'split'}
 DEFER_REASONS = {'ineligible', 'retry', 'deferred', 'not-found', 'rate-limited', 'network-failure', 'readme-unavailable'}
 
 
@@ -305,7 +311,8 @@ def add_queries(state, bases, *, approved_queries):
         raise ValueError('Query or partition budget exceeded')
     for base in additions:
         root = len(state['roots']); state['roots'].append(base)
-        state['partitions'].append(partition(root, state['since'], state['until'], state['request_count']))
+        # Sequence 0 asks a new root before the backlog. Its later pages and splits wait in turn.
+        state['partitions'].append(partition(root, state['since'], state['until']))
 
 
 def extend_until(state, until):
@@ -315,6 +322,47 @@ def extend_until(state, until):
     for root in range(len(state['roots'])):
         state['partitions'].append(partition(root, state['until'] + 1, high, state['request_count']))
     state['until'] = high
+
+
+def extend_if_due(state, until, *, every=WINDOW_SECONDS):
+    """Extend once the open interval spans a full window: each extension costs a request per root.
+
+    A frontier at its partition limit keeps working through what it has instead of failing the run.
+    """
+    if utc_seconds(until) - state['until'] < every or len(state['partitions']) + len(state['roots']) > MAX_PARTITIONS:
+        return False
+    extend_until(state, until)
+    return True
+
+
+def compact_frontier(state, *, keep=KEEP_OBSERVATIONS):
+    """Drop what the checkpoint already holds and return how many (candidates, request records) left.
+
+    Read candidates leave and stay counted; the caller's known IDs keep them from returning. The oldest
+    finished partitions give up their request records and seen IDs, all of a partition's at once, until
+    about ``keep`` records remain. Their cursors stay, and they take no further requests.
+    """
+    read = [key for key, value in state['candidates'].items() if value['checkpoint_sha256'] is not None]
+    for key in read:
+        del state['candidates'][key]
+    state['retired_candidates'] = state.get('retired_candidates', 0) + len(read)
+    excess = len(state['observations']) - keep
+    if excess <= 0:
+        return len(read), 0
+    counts = {}
+    for event in state['observations']:
+        counts[event['partition_id']] = counts.get(event['partition_id'], 0) + 1
+    finished = sorted((item for item in state['partitions'] if item['status'] in FINISHED and item['id'] in counts),
+                      key=lambda item: item['last_sequence'])
+    dropped, removed = set(), 0
+    for item in finished:
+        if removed >= excess:
+            break
+        dropped.add(item['id'])
+        removed += counts[item['id']]
+        item['seen_ids'] = []
+    state['observations'] = [event for event in state['observations'] if event['partition_id'] not in dropped]
+    return len(read), removed
 
 
 def query_observations(state, *, start=0, run_id=None):
@@ -346,8 +394,10 @@ def query_observations(state, *, start=0, run_id=None):
 
 
 def validate_frontier(state, *, approved_queries):
-    if not isinstance(state, dict) or set(state) != {'schema_version', 'roots', 'since', 'until', 'request_count', 'partitions', 'candidates', 'observations'} or state['schema_version'] != 1:
+    if not isinstance(state, dict) or set(state) - {'retired_candidates'} != {'schema_version', 'roots', 'since', 'until', 'request_count', 'partitions', 'candidates', 'observations'} or state['schema_version'] != 1:
         raise ValueError('Unexpected discovery frontier schema')
+    if type(state.get('retired_candidates', 0)) is not int or state.get('retired_candidates', 0) < 0:
+        raise ValueError('Invalid retired candidate count')
     roots = state['roots']
     if not isinstance(roots, list) or not 0 < len(roots) <= MAX_ROOTS or len(set(roots)) != len(roots) or any(checked_base(base) not in approved_queries for base in roots):
         raise ValueError('Frontier scope is not approved')
@@ -392,11 +442,15 @@ def validate_frontier(state, *, approved_queries):
                 or value['next_attempt_at'] < value['last_attempt_at']
                 or value['defer_reason'] is not None and value['defer_reason'] not in DEFER_REASONS):
             raise ValueError('Invalid candidate retry state')
-    if not isinstance(state['observations'], list) or len(state['observations']) > MAX_OBSERVATIONS or state['request_count'] != len(state['observations']):
+    # Every request adds one to its partition's revision, so this holds with or without compacted records.
+    if (not isinstance(state['observations'], list) or len(state['observations']) > MAX_OBSERVATIONS
+            or state['request_count'] != sum(item['revision'] for item in state['partitions'])):
         raise ValueError('Observation counts do not match requests')
-    for sequence, event in enumerate(state['observations'], 1):
-        if not isinstance(event, dict):
+    previous = 0
+    for event in state['observations']:
+        if not isinstance(event, dict) or type(event.get('sequence')) is not int or not previous < event['sequence'] <= state['request_count']:
             raise ValueError('Invalid request observation')
+        sequence = previous = event['sequence']
         common = {'sequence', 'partition_id', 'page', 'observed_at', 'run_id', 'status'}
         extra = {'reason', 'retry_after_seconds'} if event.get('status') == 'failed' else {'total_count', 'incomplete_results', 'returned', 'accepted_ids', 'rejected_items'}
         if set(event) != common | extra or event['sequence'] != sequence or event['partition_id'] not in ids or type(event['page']) is not int or not 1 <= event['page'] <= 10 or event['status'] not in ('ok', 'failed'):
@@ -419,15 +473,18 @@ def validate_frontier(state, *, approved_queries):
         by_partition[event['partition_id']].append(event)
     for item in state['partitions']:
         events = by_partition[item['id']]
+        compacted = item['revision'] > 0 and not events
+        if compacted and item['status'] not in FINISHED:
+            raise ValueError('Only a finished partition can give up its request records')
         observed_ids = set().union(*(set(event.get('accepted_ids', [])) for event in events))
-        observed_by_partition[item['id']] = observed_ids
-        if item['revision'] != len(events) or set(item['seen_ids']) != observed_ids:
+        observed_by_partition[item['id']] = None if compacted else observed_ids
+        if (not compacted and item['revision'] != len(events)) or set(item['seen_ids']) != observed_ids:
             raise ValueError('Partition cursor does not match retained observations')
         if events and item['last_sequence'] != events[-1]['sequence']:
             raise ValueError('Partition request sequence is inconsistent')
-        if item['status'] == 'complete' and (item['count'] is None or len(observed_ids) != item['count']
-                                            or item['page'] * 100 < item['count'] or not events
-                                            or events[-1]['status'] != 'ok' or events[-1]['incomplete_results']):
+        if item['status'] == 'complete' and (item['count'] is None or (not compacted and len(observed_ids) != item['count'])
+                                            or item['page'] * 100 < item['count'] or not item['revision']
+                                            or (events and (events[-1]['status'] != 'ok' or events[-1]['incomplete_results']))):
             raise ValueError('Completed partition lacks complete observed pages')
         if item['status'] == 'split':
             midpoint = (item['low'] + item['high']) // 2
@@ -446,7 +503,8 @@ def validate_frontier(state, *, approved_queries):
         if value['matched_partitions'][0] != value['first_partition'] or [items[identifier]['root'] for identifier in value['matched_partitions']] != value['roots']:
             raise ValueError('Candidate query provenance does not match its partitions')
         for identifier in value['matched_partitions']:
-            if value['id'] not in observed_by_partition[identifier]:
+            observed = observed_by_partition[identifier]
+            if observed is not None and value['id'] not in observed:
                 raise ValueError('Candidate lacks an observed public search identity')
 
 
@@ -497,7 +555,7 @@ def load_frontier(path, *, approved_queries=None, cache_root=None):
 
 def summary(state):
     counts = {status: sum(p['status'] == status for p in state['partitions']) for status in STATUSES}
-    return {'requests_recorded': state['request_count'], 'candidate_identities': len(state['candidates']),
+    return {'requests_recorded': state['request_count'], 'candidate_identities': len(state['candidates']) + state.get('retired_candidates', 0),
             'pending_candidates': sum(v['checkpoint_sha256'] is None for v in state['candidates'].values()),
             'partitions': counts, 'traversal_finished': not counts['pending'] and not counts['blocked'],
             'global_completeness_established': False, 'readme_successes_measured_here': False}

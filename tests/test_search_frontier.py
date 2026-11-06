@@ -217,6 +217,139 @@ class PersistenceTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory(); self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name); self.path = self.root / 'frontier.json'
 
+    def finished_requests(self, count, low=LOW):
+        """A root of ``count`` one-second partitions, each asked once, finished and holding one candidate except the last."""
+        start = frontier.utc_seconds(low)
+        document = state([BASES[0]], low, frontier.timestamp(start + count - 1))
+        for number in range(count - 1):
+            item = document['partitions'][-1]
+            first = item['low']
+            item.update(high=first, id=frontier.partition_id(0, first, first))
+            document['partitions'].append(frontier.partition(0, first + 1, start + count - 1, document['request_count']))
+            request = frontier.request_for(document, item)
+            created = frontier.timestamp(first)
+            frontier.record_response(document, request, response([repo(number + 1, created_at=created)]), observed_at=LOW)
+        frontier.record_response(document, frontier.next_request(document), response([]), observed_at=LOW)
+        return document
+
+    def test_compaction_keeps_cursors_and_counts_and_drops_oldest_finished_first(self):
+        document = self.finished_requests(9)
+        before = {p['id']: {**p, 'seen_ids': None} for p in copy.deepcopy(document['partitions'])}
+        sequences = [event['sequence'] for event in document['observations']]
+        self.assertEqual(frontier.compact_frontier(document, keep=4), (0, 5))
+        self.assertEqual([event['sequence'] for event in document['observations']], sequences[5:])
+        self.assertEqual(document['request_count'], 9)
+        self.assertEqual({p['id']: {**p, 'seen_ids': None} for p in document['partitions']}, before)
+        self.assertEqual(sum(bool(p['seen_ids']) for p in document['partitions']), 3)
+        self.assertEqual(len(frontier.pending_candidates(document, limit=1000)), 8)
+        frontier.validate_frontier(document, approved_queries=[BASES[0]])
+        self.assertEqual(frontier.compact_frontier(document, keep=4), (0, 0))
+
+    def test_read_candidates_leave_and_stay_counted(self):
+        document = self.finished_requests(6)
+        frontier.acknowledge_candidates(document, [1, 2], checkpoint_sha256='a' * 64)
+        counts = frontier.summary(document)
+        self.assertEqual(frontier.compact_frontier(document), (2, 0))
+        self.assertEqual(sorted(document['candidates']), ['3', '4', '5'])
+        self.assertEqual(frontier.summary(document), counts)
+        self.assertEqual((counts['candidate_identities'], counts['pending_candidates']), (5, 3))
+        frontier.validate_frontier(document, approved_queries=[BASES[0]])
+        frontier.acknowledge_candidates(document, [3], checkpoint_sha256='a' * 64)
+        frontier.compact_frontier(document)
+        self.assertEqual(frontier.summary(document)['candidate_identities'], 5)
+        for bad in (-1, True, '2'):
+            with self.subTest(bad=bad), self.assertRaises(ValueError):
+                frontier.validate_frontier({**document, 'retired_candidates': bad}, approved_queries=[BASES[0]])
+
+    def test_a_candidate_outlives_the_records_of_its_partition(self):
+        document = self.finished_requests(6)
+        frontier.compact_frontier(document, keep=0)
+        self.assertEqual(document['observations'], [])
+        self.assertEqual(len(frontier.pending_candidates(document, limit=1000)), 5)
+        frontier.validate_frontier(document, approved_queries=[BASES[0]])
+
+    def test_a_compacted_frontier_keeps_asking_and_saves(self):
+        document = self.finished_requests(6)
+        frontier.compact_frontier(document, keep=2)
+        frontier.add_queries(document, [BASES[1]], approved_queries=BASES)
+        request = frontier.next_request(document)
+        frontier.record_response(document, request, response([]), observed_at=LOW)
+        self.assertEqual(document['request_count'], 7)
+        self.assertEqual(document['observations'][-1]['sequence'], 7)
+        frontier.validate_frontier(document, approved_queries=BASES)
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'frontier.json'
+            frontier.save_frontier(path, document, approved_queries=BASES, cache_root=folder)
+            self.assertEqual(frontier.load_frontier(path, approved_queries=BASES, cache_root=folder), document)
+
+    def test_compaction_never_drops_part_of_a_partition_or_an_unfinished_one(self):
+        document = state([BASES[0]])
+        frontier.record_response(document, frontier.next_request(document), response([repo(n) for n in range(1, 101)], total=150), observed_at=LOW)
+        self.assertEqual(document['partitions'][0]['status'], 'pending')
+        self.assertEqual(frontier.compact_frontier(document, keep=0), (0, 0))
+        self.assertEqual(len(document['observations']), 1)
+        frontier.record_response(document, frontier.next_request(document),
+                                 response([repo(n) for n in range(101, 151)], total=150), observed_at=LOW)
+        self.assertEqual(document['partitions'][0]['status'], 'complete')
+        self.assertEqual(frontier.compact_frontier(document, keep=1), (0, 2))
+        self.assertEqual(document['observations'], [])
+        self.assertEqual((document['partitions'][0]['revision'], document['partitions'][0]['seen_ids']), (2, []))
+        frontier.validate_frontier(document, approved_queries=[BASES[0]])
+
+    def test_tampered_compacted_state_is_rejected(self):
+        document = self.finished_requests(6)
+        frontier.compact_frontier(document, keep=2)
+        finished = next(p for p in document['partitions'] if p['revision'] and p['status'] == 'complete'
+                        and not any(event['partition_id'] == p['id'] for event in document['observations']))
+        reopened = copy.deepcopy(document)
+        next(p for p in reopened['partitions'] if p['id'] == finished['id']).update(status='pending')
+        count = copy.deepcopy(document)
+        count['request_count'] += 1
+        seen = copy.deepcopy(document)
+        next(p for p in seen['partitions'] if p['id'] == finished['id'])['seen_ids'] = [1]
+        order = copy.deepcopy(document)
+        order['observations'] = order['observations'][::-1]
+        partial = copy.deepcopy(document)
+        next(p for p in partial['partitions'] if p['id'] == partial['observations'][0]['partition_id'])['revision'] += 1
+        partial['request_count'] += 1
+        for label, changed in [('reopened', reopened), ('count', count), ('seen', seen), ('order', order), ('partial', partial)]:
+            with self.subTest(label=label), self.assertRaises(ValueError):
+                frontier.validate_frontier(changed, approved_queries=[BASES[0]])
+
+    def test_the_full_ledger_opens_again_after_compaction(self):
+        document = self.finished_requests(6)
+        with patch.object(frontier, 'MAX_OBSERVATIONS', 6):
+            self.assertIsNone(frontier.next_request(frontier.add_queries(document, [BASES[1]], approved_queries=BASES) or document))
+            frontier.compact_frontier(document, keep=3)
+            self.assertIsNotNone(frontier.next_request(document))
+
+    def test_a_new_root_is_asked_before_the_backlog(self):
+        document = state([BASES[0]])
+        frontier.record_response(document, frontier.next_request(document), response([repo(1)], total=1001), observed_at=LOW)
+        frontier.add_queries(document, [BASES[1]], approved_queries=BASES)
+        self.assertTrue(frontier.next_request(document)['query'].startswith(BASES[1] + ' '))
+        frontier.validate_frontier(document, approved_queries=BASES)
+
+    def test_the_window_extends_only_once_it_spans_six_hours(self):
+        self.assertEqual(frontier.WINDOW_SECONDS, 6 * 3600)
+        document = state()
+        start = document['until']
+        partitions = len(document['partitions'])
+        with patch.object(frontier, 'current_seconds', return_value=start + 7 * 3600):
+            self.assertFalse(frontier.extend_if_due(document, frontier.timestamp(start + 6 * 3600 - 1)))
+            self.assertEqual((document['until'], len(document['partitions'])), (start, partitions))
+            self.assertTrue(frontier.extend_if_due(document, frontier.timestamp(start + 6 * 3600)))
+            self.assertEqual((document['until'], len(document['partitions'])), (start + 6 * 3600, partitions + 2))
+            frontier.validate_frontier(document, approved_queries=BASES)
+
+    def test_a_frontier_at_its_partition_limit_keeps_working_without_a_new_window(self):
+        document = state()
+        start = document['until']
+        with patch.object(frontier, 'current_seconds', return_value=start + 7 * 3600), patch.object(frontier, 'MAX_PARTITIONS', 3):
+            self.assertFalse(frontier.extend_if_due(document, frontier.timestamp(start + 6 * 3600)))
+            self.assertEqual(document['until'], start)
+            self.assertIsNotNone(frontier.next_request(document))
+
     def test_saved_page_and_pending_queue_resume_together(self):
         document = state([BASES[0]])
         request = frontier.next_request(document)

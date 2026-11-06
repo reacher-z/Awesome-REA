@@ -25,7 +25,7 @@ Eligible captures are taken newest first, so a run's own new reads come before o
 
 ## Growth budget
 
-Each batch is about 0.85 MB of JSON for 300 records and about 130 KB compressed in Git. The queue is capped at **25,000 records** and **64 MiB** of batch files in total, which bounds its Git history to roughly 10 MB compressed; raw checkpoints, which grow toward 160,000 captures, are never copied into the repository. When either limit is reached the ingest stops, the workflow fails and its tracking issue says so. Raising the budget, or retiring old batches, is a separate reviewed change to [discoveries.py](../../scripts/discoveries.py) and this page.
+Each batch is about 0.85 MB of JSON for 300 records and about 130 KB compressed in Git. The queue is capped at **25,000 records** and **64 MiB** of batch files in total, which bounds its Git history to roughly 10 MB compressed; raw checkpoints, which hold every capture, are never copied into the repository. When either limit is reached the ingest stops, the workflow fails and its tracking issue says so. Raising the budget, or retiring old batches, is a separate reviewed change to [discoveries.py](../../scripts/discoveries.py) and this page.
 
 `python3 scripts/discoveries.py` validates every batch and prints the queue size, the budget and the last ingest time. `python3 scripts/validate.py` runs the same checks; the trusted pull-request review also checks that a pull request only adds batches, never edits or removes one, and that every record is new to the base branch's layers.
 

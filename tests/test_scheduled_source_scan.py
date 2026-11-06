@@ -345,7 +345,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn('checkpoint/checkpoint.json', text)
         self.assertNotIn('path: .cache/', text.split('name: Preserve validated incremental checkpoint')[1].split('name: Preserve validated inputs')[0])
         self.assertEqual(scheduled.NEW_SUCCESSES, 2000)
-        self.assertEqual(scheduled.GLOBAL_TARGET, 160000)
+        self.assertEqual(scheduled.GLOBAL_TARGET, 20_000_000)
         self.assertIn('checkpoint/frontier.json', text)
         self.assertNotIn('retention-days: 90', text)
         self.assertIn('retention-days: 7', text)
@@ -582,9 +582,9 @@ class PairedCheckpointTests(unittest.TestCase):
                 scheduled.validate_transport(bad)
 
     def test_global_goal_clamps_final_increment_and_reuses_unexpired_pair(self):
-        self.assertEqual(scheduled.planned_successes(159950), 50)
-        self.assertEqual(scheduled.planned_successes(160000), 0)
-        self.assertEqual(scheduled.planned_successes(160001), 0)
+        self.assertEqual(scheduled.planned_successes(19_999_950), 50)
+        self.assertEqual(scheduled.planned_successes(20_000_000), 0)
+        self.assertEqual(scheduled.planned_successes(20_000_001), 0)
         (self.root / 'data').mkdir()
         scheduled.write_json(self.root / 'data/source-index.json', self.doc)
         raw = paired_archive(self.doc, small_frontier())
