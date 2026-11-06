@@ -30,6 +30,7 @@ from crawl_policy import robots_txt
 from language_fragment import add_language_fragment_script
 from data_downloads import build_data_downloads
 from open_graph import website_node
+from structured_data import catalog_node, organization_node
 from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage
 from artifact_links import with_artifact_links, with_curated_labels
 from source_browser import write_source_browser
@@ -316,7 +317,9 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         html = html.replace("{{" + key + "}}", f"{value:,}")
     navigation = [(path, names[0]) for path, names in HOMEPAGE_DESTINATIONS.items()]
     structured = {"@context": "https://schema.org", "@graph": [
+        organization_node(SITE_URL, REPOSITORY_URL),
         website_node(SITE_URL, REPOSITORY_URL),
+        catalog_node(SITE_URL),
         {"@type": "CollectionPage", "@id": SITE_URL + "/#collection", "url": SITE_URL + "/", "name": "Awesome Reverse Engineering Anything", "inLanguage": "en", "isPartOf": {"@id": SITE_URL + "/#website"}, "description": "An independent collection of reverse-engineering tools, projects, case studies and research papers for websites, games, apps, binaries, firmware and communication protocols.", "mainEntity": {"@type": "ItemList", "numberOfItems": len(navigation), "itemListElement": [{"@type": "ListItem", "position": i, "name": name, "url": f"{SITE_URL}/{path}/"} for i, (path, name) in enumerate(navigation, 1)]}}
     ]}
     html = html.replace("</head>", '<script type="application/ld+json">' + json.dumps(structured, ensure_ascii=False).replace("<", "\\u003c") + '</script>\n</head>')

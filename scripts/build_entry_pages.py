@@ -16,6 +16,8 @@ from agent_formats import (MARKDOWN, RECORD_JSON, alternate_links, json_text, pa
                            record_json_route, resource_markdown, resource_record)
 from evidence_links import evidence_link
 from open_graph import THEME_COLOR_META, open_graph_meta
+from page_metadata import page_title, paper_description, resource_description
+from structured_data import evidence_urls, publisher_reference, resource_entity
 from requirement_facets import item_html, ordered_items
 from site_footer import site_footer
 
@@ -307,14 +309,18 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
     title, description, content = (_resource_content if kind == 'resource' else _paper_content)(record, language, discussion, feedback)
     # Resource names such as rr or GDB are often identical in both languages; the localized
     # category gives each <title> topic and language context. H1, og:title and JSON-LD keep the name.
-    document_title = f'{title} · {CATEGORIES[record["category"]][int(zh)]}' if kind == 'resource' else title
+    # A Chinese page whose resource keeps its English name relies on the category for Chinese text.
+    category = CATEGORIES[record['category']][int(zh)] if kind == 'resource' else None
+    document_title = page_title(title, category, keep_context=zh)
+    head_description = resource_description(record, language, category) if kind == 'resource' else paper_description(record, language)
     entity_id = canonical + ('#resource' if kind == 'resource' else '#paper')
-    entity = ({'@type': 'CreativeWork', '@id': entity_id, 'url': record['url'], 'name': title, 'description': description}
+    entity = (resource_entity(record, entity_id, title, description)
               if kind == 'resource' else {**scholarly_article(record, language), '@id': entity_id})
     schema = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'WebPage', '@id': canonical + '#webpage', 'url': canonical, 'name': title,
          'description': description, 'inLanguage': locale, 'isPartOf': {'@id': site_url + '/#website'},
-         'mainEntity': {'@id': entity_id}, 'breadcrumb': {'@id': canonical + '#breadcrumb'}},
+         'mainEntity': {'@id': entity_id}, 'breadcrumb': {'@id': canonical + '#breadcrumb'},
+         'lastReviewed': record['verified_at'][:10], 'publisher': publisher_reference(site_url), 'isBasedOn': evidence_urls(record)},
         {'@type': 'BreadcrumbList', '@id': canonical + '#breadcrumb', 'itemListElement': [
             {'@type': 'ListItem', 'position': 1, 'name': label('Home', '首页'), 'item': site_url + prefix + '/'},
             {'@type': 'ListItem', 'position': 2, 'name': list_name, 'item': site_url + listing},
@@ -328,11 +334,11 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
 <html lang="{locale}"{(' data-icon-set="fontawesome"' if icon_stylesheet_href else '')}>
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">{THEME_COLOR_META}
-  <title>{escape(document_title)} · AwesomeREA.org</title><meta name="description" content="{escape(description, quote=True)}">
+  <title>{escape(document_title)}</title><meta name="description" content="{escape(head_description, quote=True)}">
   <link rel="canonical" href="{_public_url(canonical)}">
   <link rel="alternate" hreflang="en" href="{_public_url(english)}"><link rel="alternate" hreflang="zh-CN" href="{_public_url(chinese)}"><link rel="alternate" hreflang="x-default" href="{_public_url(english)}">
   {alternate_links(markdown=path + MARKDOWN, json_href=record_json_route(kind, record['id']))}
-  {open_graph_meta(language=language, title=title, description=description, image_url=social_image_href, url=canonical)}
+  {open_graph_meta(language=language, title=title, description=head_description, image_url=social_image_href, url=canonical, og_type='article')}
   <link rel="icon" href="{_asset_url(favicon_href)}" type="image/svg+xml"><link rel="stylesheet" href="{_asset_url(styles_href)}"><link rel="stylesheet" href="{_asset_url(entry_styles_href)}">{icon_css}
   {jsonld_script(schema)}
 </head><body>

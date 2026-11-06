@@ -3391,8 +3391,8 @@
     "zh": "软件重建六个领域中的方法、证据与边界。"
   },
   "description": {
-    "en": "A bilingual editorial survey of reverse engineering across websites, games, apps, binaries, firmware and protocols, grounded in 53 papers and eight project cases.",
-    "zh": "依据 53 篇论文与八个项目案例，讨论网站、游戏、应用、二进制、固件和协议逆向工程的方法、评测证据与边界的双语专题综述。"
+    "en": "A bilingual survey of reverse engineering across websites, games, apps, binaries, firmware and protocols, grounded in 53 papers and eight project cases.",
+    "zh": "依据 53 篇论文与八个项目案例，讨论网站、游戏、应用、二进制、固件和协议逆向工程的方法、评测证据与边界的双语专题综述，并附参考文献与引用格式。"
   },
   "abstract": {
     "en": "Reverse engineering reconstructs different objects from different evidence: a visual layout from an image, a rule model from interaction, source hypotheses from binary code, or an execution environment around retained firmware. This editorial survey brings together a frozen corpus of 53 papers and eight documented project cases to examine what those reconstructions establish. We organize the literature across websites, games, apps, binaries, firmware and protocols, comparing observation access, reconstructed outputs and acceptance checks. The central argument is that an outcome becomes interpretable only when all three are specified. Visual similarity, a matching build, finite test agreement and successful service startup constrain different properties and cannot be combined into a single recovery score. The selected cases show how original assets, prior source exposure, inherited implementations and cloud dependencies further shape a result. Across domains, the strongest opportunities for clearer evaluation are explicit accounting of supplied information, checks beyond construction-time examples, and separate reporting of structural, visual and behavioral evidence. This synthesis provides a framework for comparing claims and identifying untested boundaries, rather than a ranking of systems. [[paper-slade]] [[paper-programdistill]] [[paper-halucinator]]",

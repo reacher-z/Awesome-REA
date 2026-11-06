@@ -12,9 +12,11 @@ import xml.etree.ElementTree as ET
 
 from asset_paths import ASSET_PATH, FINGERPRINTED_SUFFIXES, UNHASHED_STYLESHEETS, digest
 from build_entry_pages import entry_path, feedback_urls, matching_entries, section_siblings
-from build_site import catalog_index
+from build_site import REPOSITORY_URL, catalog_index
 from build_manifest import read_build_manifest
+from page_metadata import description_problem, paper_description, resource_description, title_problem
 from sitemaps import sitemap_urls
+from structured_data import evidence_urls, organization_node, publisher_reference, resource_entity
 from validate_agent_formats import validate_agent_formats
 from build_paper_pages import (AUTHORS_OMITTED, LISTING_SIZE_BUDGET, SEARCH_FIELDS, authors_omitted, bibtex_text,
                                formatted_date, listing_size_warnings, paper_entity_id, papers_newest_first)
@@ -317,17 +319,21 @@ def validate_open_graph(route, page, card_size, *, language=None):
     """Every page publishes the shared social block; ``route=None`` is an uncanonical 404 template."""
     assert len(page.meta_keys) == len(set(page.meta_keys)), f'Duplicate meta tags: {route}'
     meta, language = page.meta, language or ('zh' if route and route.startswith('/zh/') else 'en')
-    expected = {'og:type': 'website', 'og:site_name': SITE_NAME, 'og:locale': OG_LOCALES[language],
+    image = urlsplit(meta.get('og:image') or '')
+    # A page may carry its own card under /og/, with its own description of that card.
+    own_card = re.fullmatch(r'/og/[a-z0-9/-]+\.png', image.path) is not None
+    image_alt = meta.get('og:image:alt', '') if own_card else SOCIAL_IMAGE_ALT[language]
+    expected = {'og:type': 'article' if page.entry_contents else 'website', 'og:site_name': SITE_NAME, 'og:locale': OG_LOCALES[language],
                 'og:image:type': 'image/png', 'og:image:width': str(card_size[0]), 'og:image:height': str(card_size[1]),
-                'og:image:alt': SOCIAL_IMAGE_ALT[language], 'twitter:card': 'summary_large_image',
-                'twitter:image:alt': SOCIAL_IMAGE_ALT[language]}
+                'og:image:alt': image_alt, 'twitter:card': 'summary_large_image',
+                'twitter:image:alt': image_alt}
     if route is not None:
         expected.update({'og:locale:alternate': OG_LOCALES['en' if language == 'zh' else 'zh'], 'og:url': ORIGIN + route})
     assert {key: meta.get(key) for key in expected} == expected, f'Open Graph block differs from the shared generator: {route}'
     if route is None:
         assert 'og:url' not in meta and 'og:locale:alternate' not in meta, 'The 404 template must not publish an og:url or counterpart'
-    image = urlsplit(meta.get('og:image') or '')
-    assert (image.scheme, image.netloc, image.path) == ('https', 'awesomerea.org', '/social-card.png') and meta.get('twitter:image') == meta['og:image'], f'Social image URL mismatch: {route}'
+    assert image_alt, f'Social image needs a description: {route}'
+    assert (image.scheme, image.netloc) == ('https', 'awesomerea.org') and (own_card or image.path == '/social-card.png') and meta.get('twitter:image') == meta['og:image'], f'Social image URL mismatch: {route}'
     assert meta['og:image:alt'] not in {meta.get('og:title'), meta.get('twitter:title')}, f'og:image:alt repeats the page title: {route}'
 
 
@@ -338,8 +344,9 @@ def validate_theme_color(route, page):
 
 
 def validate_website_identity(pages):
-    """Only the homepages define the WebSite node, identically; every other page references it."""
+    """Only the homepages define the WebSite and Organization nodes, identically; every other page references them."""
     website_id = ORIGIN + '/#website'
+    organization = organization_node(ORIGIN, REPOSITORY_URL)
 
     def nodes(value):
         if isinstance(value, list):
@@ -354,6 +361,8 @@ def validate_website_identity(pages):
     for route, page in pages.items():
         found = list(nodes(page.schemas))
         websites = [node for node in found if node.get('@type') == 'WebSite' or node.get('@id') == website_id and len(node) > 1]
+        organizations = [node for node in found if node.get('@id') == organization['@id'] and len(node) > 1]
+        assert organizations == ([organization] if route in ('/', '/zh/') else []), f'Only the homepages define the Organization node, with the shared values: {route}'
         if route in ('/', '/zh/'):
             assert len(websites) == 1, f'Homepage needs one WebSite node: {route}'
             website = websites[0]
@@ -986,6 +995,8 @@ def validate_unique_titles(output, routes):
         titles = DocumentTitle((Path(output) / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')).titles
         assert len(titles) == 1 and titles[0], f'Page needs exactly one non-empty <title>: {route}'
         assert titles[0] not in seen, f'Duplicate <title> on {seen.get(titles[0])} and {route}: {titles[0]}'
+        problem = title_problem(titles[0])
+        assert problem is None, f'{problem}: {route}: {titles[0]}'
         seen[titles[0]] = route
         if re.fullmatch(r'/zh/resources/[a-z0-9-]+/', route):
             assert re.search(r'[\u3400-\u9fff]', titles[0]), f'Chinese resource title has no Chinese text: {route}'
@@ -1482,9 +1493,10 @@ def validate_entry_outputs(pages, resources, papers):
             requirements = requirements if isinstance(requirements, list) else [requirements]
             phrases = [name, record[f'description_{language}'], *requirements]
             links = {record['url'], record['evidence_url'], *record.get('additional_evidence_urls', [])}
-            entities = list(schema_entities(page.schemas, 'CreativeWork'))
-            assert len(entities) == 1 and entities[0].get('@id') == entity_id, f'Detail resource schema identity mismatch: {route}'
+            entities = [node for block in page.schemas for node in block.get('@graph', [block]) if node.get('@id') == entity_id]
+            assert len(entities) == 1, f'Detail resource schema identity mismatch: {route}'
             entity = entities[0]
+            assert entity == resource_entity(record, entity_id, name, record[f'description_{language}']), f'Detail resource schema type or content differs from its record: {route}'
             assert (entity.get('url') == record['url'] and entity.get('name') == name
                     and entity.get('description') == record[f'description_{language}']), f'Detail resource schema content mismatch: {route}'
             assert not {'author', 'creator', 'datePublished', 'license', 'aggregateRating', 'review'}.intersection(entity), f'Unsupported resource schema claim: {route}'
@@ -1509,7 +1521,12 @@ def validate_entry_outputs(pages, resources, papers):
             expected = {**expected_paper_schema(record, language), '@id': entity_id}
             assert entities == [expected], f'Detail paper schema differs from recorded publication: {route}'
         assert (web_page.get('name') == name and web_page.get('description') == record[f'description_{language}']), f'Detail WebPage text mismatch: {route}'
-        assert (page.meta.get('description') == record[f'description_{language}']
+        head_description = (resource_description(record, language, CATEGORIES[record['category']][int(language == 'zh')])
+                            if kind == 'resource' else paper_description(record, language))
+        assert (web_page.get('lastReviewed') == record['verified_at'][:10]
+                and not {'datePublished', 'dateModified'}.intersection(web_page)
+                and web_page.get('publisher') == publisher_reference(ORIGIN) and web_page.get('isBasedOn') == evidence_urls(record)), f'Detail WebPage review date or evidence differs from the record: {route}'
+        assert (page.meta.get('description') == head_description
                 and page.meta.get('og:url') == canonical
                 and page.meta.get('og:locale') == ('zh_CN' if language == 'zh' else 'en_US')), f'Detail social metadata mismatch: {route}'
         assert len(article['headings']) == 1 and normalize(' '.join(article['headings'][0])) == normalize(name), f'Detail article needs one correctly localized H1: {route}'
@@ -1566,6 +1583,8 @@ def main():
                 fragment_links.append((parsed.path, link, local))
         validate_open_graph(parsed.path, page, png_size(OUTPUT / 'social-card.png'))
         validate_theme_color(parsed.path, page)
+        problem = description_problem(page.meta.get('description') or '')
+        assert problem is None, f'{problem}: {parsed.path}: {page.meta.get("description")}'
     validate_link_fragments(OUTPUT, pages, fragment_links)
     validate_homepage_destinations(pages)
     validate_resource_listing(pages, resources)

@@ -12,6 +12,7 @@ from urllib.parse import urlsplit
 from agent_formats import COLLECTION_JSON, MARKDOWN, alternate_links, collection_markdown, json_text
 from build_discovery_pages import EXTERNAL_TITLE_ARROW, breadcrumb_schema, collection_page_schema, jsonld_script
 from open_graph import THEME_COLOR_META, open_graph_meta
+from page_metadata import page_title
 from site_footer import download_link, site_footer
 from build_repository_index import CATEGORIES
 from source_descriptions import description_fallback
@@ -197,14 +198,14 @@ def build_browse_pages(
             chinese_url = site_url + browse_path('zh', category)
             counterpart = browse_path('en' if zh else 'zh', category)
             label = CATEGORIES[category][language_index] if category else ('按分类浏览仓库' if zh else 'Browse repositories by category')
-            title = (f'{label} · 逆向工程仓库 · AwesomeREA.org' if zh else f'{label} · Reverse engineering repositories · AwesomeREA.org')
+            title = page_title(label, '逆向工程仓库' if zh else 'Reverse engineering repositories')
             if category:
                 count = len(groups[category])
-                description = (f'浏览 {count:,} 个{label}相关仓库，查看项目简介、原始链接与许可证信息。'
+                description = (f'浏览 {count:,} 个{label}相关仓库，查看项目简介、原始链接与许可证信息。卡片保留采集时的星标快照与最近推送时间，并可通过分类导航切换到其他仓库分类继续浏览。'
                                if zh else f'Browse {count:,} repositories with project descriptions, upstream links, and license information.')
                 count_text = f'{count:,} 个仓库' if zh else f'{count:,} repositories'
             else:
-                description = (f'按网站、游戏、应用、二进制、固件与协议等分类浏览 {len(records):,} 个逆向工程仓库。'
+                description = (f'按网站、游戏、应用、二进制、固件与协议等分类浏览 {len(records):,} 个逆向工程仓库。每个分类页列出项目简介、原始链接、许可证信息、采集时的星标快照与最近推送时间。'
                                if zh else f'Browse {len(records):,} reverse engineering repositories across websites, games, apps, binaries, firmware, and protocols.')
                 count_text = f'{len(CATEGORIES)} 个分类 · {len(records):,} 个仓库' if zh else f'{len(CATEGORIES)} categories · {len(records):,} repositories'
             date_text = ((f'选集发布：{scan_date} UTC' if zh else f'Selection published: {scan_date} UTC')

@@ -294,7 +294,7 @@ def write_discoveries(site_dir: Path, catalog: dict, papers: list[dict], publish
     for language, path in PAGE_PATHS.items():
         zh = language == 'zh'
         title = TITLES[int(zh)]
-        description = (f'{len(queue["listed"]):,} 个通过采集校验与主题筛选、但尚未审核的逆向工程仓库，按入库时间从新到旧排列。' if zh
+        description = (f'{len(queue["listed"]):,} 个通过采集校验与主题筛选、但尚未审核的逆向工程仓库，按入库时间从新到旧排列。这些记录只是待审线索，不代表已收录或已验证，可通过订阅源跟踪更新。' if zh
                        else f'{len(queue["listed"]):,} reverse-engineering repositories that passed the capture checks and topic screen but are not reviewed yet, newest first.')
         shown = queue['listed'][:PAGE_RECORDS]
         schema = collection_page_schema(site_url + path, title, description, 'zh-CN' if zh else 'en', [
