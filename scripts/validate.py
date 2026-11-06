@@ -17,6 +17,7 @@ from artifact_links import github_repository
 from build_readme import (CATEGORIES, METHOD_HEADINGS, METHOD_SECTIONS, RECONSTRUCTION_METHODS, RELATIONSHIPS, TARGETS,
                           UNASSIGNED_METHOD, collection_section, readme_size_warnings)
 from catalog import ROOT, RESOURCE_FILES
+from review_disclaimers import banned_sentences
 from localization import read_fingerprints, read_localizations, validate_fingerprints, validate_localizations
 from requirement_facets import facet_errors
 from curated_translations import CURATED_TRANSLATIONS, read_curated_translations, validate_curated_translations
@@ -1279,6 +1280,8 @@ def main():
     for warning in unknown_field_warnings(records) + evidence_pin_warnings(records):
         print(f'Warning: {warning}', file=sys.stderr)
     validate_requirement_facets(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), errors)
+    for identifier, field, _ in banned_sentences(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), papers):
+        errors.append(f'{identifier}: {field} describes this catalog\'s review; state project facts only (see data/README.md).')
     validate_benchmarks(benchmarks, errors)
     try:
         validate_curated_translations(records, read_curated_translations(ROOT), errors)
