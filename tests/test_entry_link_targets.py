@@ -69,6 +69,12 @@ class EntryLinkTargetTests(unittest.TestCase):
                     for record in expected:
                         with self.subTest(page=prefix + page, record=record['id']):
                             links = parser.records[record['id']]
+                            if page == 'resources':
+                                # A row's title opens the entry page, and its other link is the pinned evidence.
+                                self.assertEqual([(href, text) for href, text, title in links if title],
+                                                 [(f"/{prefix}resources/{record['id']}/", record['name_zh'] if zh else record['name'])])
+                                self.assertEqual([href for href, _, title in links if not title], [record['evidence_url']])
+                                continue
                             self.assertEqual([href for href, _, title in links if title], [record['url']])
                             self.assertEqual([text for href, text, _ in links if href == record['url']],
                                              [(record['name_zh'] if zh else record['name']) + '\u2060↗'])

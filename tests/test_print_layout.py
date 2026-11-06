@@ -40,7 +40,7 @@ class PrintLayoutTests(unittest.TestCase):
                      ':is(.browse-provenance,.cases-note,.paper-details:not([open]))::details-content{content-visibility:visible!important;display:block!important}',
                      '.paper-details:not([open])>:not(.paper-scope){display:none!important}',
                      'main :is(a,dd,code){overflow-wrap:anywhere!important}', '[href^="http"]::after{content:" <" attr(href) ">"',
-                     ':is(.card-heading,.source-card-head,.paper-card>header,.case-heading,.source-card,li,dt,dd){break-inside:avoid}'):
+                     ':is(.source-card-head,.paper-card>header,.case-heading,.source-card,li,dt,dd){break-inside:avoid}'):
             with self.subTest(rule=rule):
                 self.assertIn(rule, block)
         # Both languages state the policy on the listings whose entries have disclosures.
@@ -65,10 +65,9 @@ class PrintLayoutTests(unittest.TestCase):
         self.assertIn('<details class="paper-details"><summary>', pages['papers'])
         self.assertIn('<div class="paper-scope"><h4>Scope & limitations</h4>', pages['papers'])
         self.assertIn('<div class="paper-scope"><h4>研究范围与局限</h4>', pages['zh/papers'])
-        for route in ('resources', 'cases', 'browse/android'):
+        for route in ('cases', 'browse/android'):
             self.assertRegex(pages[route], r'<details class="(browse-provenance|cases-note)"><summary>')
-        # /resources/ and /cases/ link each entry's requirements on its entry page instead of disclosing them.
-        self.assertIn('class="resource-requirements-link"', pages['resources'])
+        # /cases/ links each entry's requirements on its entry page instead of disclosing them.
         self.assertIn('class="case-requirements-link"', pages['cases'])
         for route in ('resources', 'cases', 'zh/resources'):
             self.assertNotIn('<details class="requirements">', pages[route])
