@@ -448,7 +448,7 @@ body > main a:not([class]) { text-decoration-thickness: 1px; text-underline-offs
 
 
 /* the colophon word is pure decoration, so it is generated content with an empty alternative */
-.colophon-word::before { content: "anything."; content: "anything." / ""; }
+.colophon-word::before { content: "anything"; content: "anything" / ""; }
 
 /* Print: pages print as plain documents, without the site's chrome. */
 @media print { .ann, .primary-nav, .header-tools, .mbar, .palette, .site-footer .tb-links, .colophon-word { display: none !important; } }
