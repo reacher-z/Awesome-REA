@@ -39,8 +39,9 @@ SUPPLEMENT_INPUTS = (SUPPLEMENT_INDEX, SUPPLEMENT_BATCH, SUPPLEMENT_SCOPE, SUPPL
 OPTIONAL_SUPPLEMENT_INPUTS = frozenset((SUPPLEMENT_SCOPE, SUPPLEMENT_LOCALE))
 # Evidence archives withdrawn at the maintainer's request, by run, digest and size (see data/source-evidence/README.md).
 EVIDENCE_WITHDRAWALS = 'data/source-evidence/withdrawn.json'
+DISCOVERY_REVIEWS = 'data/discovery-reviews.json'
 REVIEW_FILES = frozenset((*CURATED_INPUTS, 'data/benchmarks.json', 'data/papers.json',
-                          *SOURCE_INPUTS, CASE_COVERAGE, *SUPPLEMENT_INPUTS, EVIDENCE_WITHDRAWALS))
+                          *SOURCE_INPUTS, CASE_COVERAGE, *SUPPLEMENT_INPUTS, EVIDENCE_WITHDRAWALS, DISCOVERY_REVIEWS))
 # Automated discovery batches are added one file per scan run and reviewed as data by trusted base code.
 DISCOVERY_BATCH = re.compile(r'data/discoveries/run-[1-9][0-9]{0,19}-[1-9][0-9]{0,2}\.json')
 # Followed-source lead batches: one file per lead-discovery run, in a directory per collection month.
@@ -368,6 +369,14 @@ def review_public_supplements(contents):
 
 def review_data(contents, changed):
     errors, reviewed = [], []
+    if DISCOVERY_REVIEWS in changed:
+        import discoveries
+        import discovery_reviews
+        decisions = parse_json(contents[DISCOVERY_REVIEWS], DISCOVERY_REVIEWS)
+        batches, problems = discoveries.load_batches(ROOT)
+        errors.extend(problems)
+        discovery_reviews.validate_reviews(batches, decisions, errors)
+        reviewed.append(f'{len(decisions):,} discovery review decisions checked against the base branch batches for reason codes, README hashes, pinned evidence and dates.')
     if set(CASE_INPUTS) & changed:
         case_records = []
         for filename in CATALOGS:

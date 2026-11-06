@@ -85,7 +85,13 @@ The README scanner only sees GitHub repositories that its searches reach and tha
 
 ## Curating a discovery
 
-Follow the [review worksheet](../../docs/promotion-worksheet.md) exactly as for a source-index record: review the project's own sources, pin the evidence, and add a separate curated record. The batch file is never edited; once the curated record exists, the discovery list links it.
+Follow the [review worksheet](../../docs/promotion-worksheet.md) exactly as for a source-index record: review the project's own sources, pin the evidence, and add a separate curated record. The batch file is never edited; once the curated record exists, the repository leaves the discovery list, matched by its exact URL.
+
+## Review decisions
+
+[data/discovery-reviews.json](../discovery-reviews.json) records what a reviewer decided about a discovery that was not curated, keyed by scan ID: `decision` (`exclude` or `hold`), `reason_code`, `reason_en`, `reason_zh`, the `readme_sha256` of the scan it reviews, a pinned `evidence_url`, `reviewed_at` and, for a duplicate, `duplicate_of`. [discovery_reviews.py](../../scripts/discovery_reviews.py) holds the reason codes and validates each decision against its batch. `exclude` means the primary source shows the repository does not belong; `hold` means it may belong, and the reason names the missing evidence or the maintainer decision it needs.
+
+A decided record leaves the unreviewed list, feeds and exports, and appears in [/discoveries/reviews.json](https://awesomerea.org/discoveries/reviews.json) with its reason. Its batch file does not change, so the scheduled ingest and the lead collector, which treat every batch ID as already held, do not queue it again. To reverse a decision, edit its entry or remove it.
 
 ## 简体中文
 
@@ -96,6 +102,10 @@ Follow the [review worksheet](../../docs/promotion-worksheet.md) exactly as for 
 每批 300 条约 0.85 MB，在 Git 中压缩后约 130 KB。队列总量上限为 **25,000 条**、批次文件合计 **64 MiB**，Git 历史因此增长约 10 MB；原始 checkpoint 不会写入仓库。达到上限后入库停止，工作流失败并在追踪 issue 中说明；提高上限或归档旧批次需要单独审核。
 
 网站在 [/zh/discoveries/](https://awesomerea.org/zh/discoveries/) 列出最新记录并标注“未审核”，简介保留上游原文、不翻译；[/discoveries.json](https://awesomerea.org/discoveries.json)、状态文件、Atom 订阅和 llms.txt 同样标明未审核。收录某个发现时，请按[审核工作表](../../docs/promotion-worksheet.zh-CN.md)另写一条精选记录，批次文件保持不变。
+
+### 审核决定
+
+[data/discovery-reviews.json](../discovery-reviews.json) 按扫描 ID 记录审核者对未收录发现的决定：`decision`（`exclude` 排除或 `hold` 暂缓）、`reason_code`、中英文理由、所审扫描的 `readme_sha256`、固定到提交的 `evidence_url`、`reviewed_at`，重复项另有 `duplicate_of`。已决定的记录离开未审核列表、订阅和导出，连同理由出现在 [/discoveries/reviews.json](https://awesomerea.org/discoveries/reviews.json)。批次文件不变，定时入库和线索收集会把批次中的 ID 视为已有，因此不会再次排入队列。已收录的仓库按 URL 精确匹配后自动离开列表。
 
 ### 外部来源线索
 

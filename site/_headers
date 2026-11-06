@@ -65,6 +65,8 @@
   Cache-Control: no-cache, must-revalidate
 /discoveries/batches/*
   Cache-Control: no-cache, must-revalidate
+/discoveries/reviews.json
+  Cache-Control: no-cache, must-revalidate
 /discoveries/status.json
   Cache-Control: no-cache, must-revalidate
   Access-Control-Allow-Origin: *

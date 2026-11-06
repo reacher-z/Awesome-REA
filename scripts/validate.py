@@ -1329,6 +1329,8 @@ def main():
     discovery_batches, discovery_problems = load_batches(ROOT)
     errors.extend(discovery_problems)
     discovered = sum(len(batch['resources']) for batch in discovery_batches)
+    import discovery_reviews
+    discovery_reviews.validate_reviews(discovery_batches, discovery_reviews.read_reviews(ROOT), errors)
     # Followed-source leads: what registered lists, registries and feeds link, kept unreviewed.
     import discovery_leads
     _, registry_problems = discovery_leads.load_registry(ROOT)
