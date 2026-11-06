@@ -56,12 +56,14 @@ class ReadmeSecondaryTargetTest(unittest.TestCase):
         paper_urls = {paper['url'] for paper in read_papers(ROOT)}
         for name, language in (('README.md', 'en'), ('README.zh-CN.md', 'zh')):
             text = (ROOT / name).read_text(encoding='utf-8')
-            entries = Counter(re.findall(r'^- \[\*\*.*?\*\*\]\((\S+?)\) - ', text, re.M))
+            # One list line per record, found by its entry page; a repository shared by several records is linked once.
+            prefix = 'zh/' if language == 'zh' else ''
+            entries = Counter(re.findall(rf'^- .*/{prefix}resources/([a-z0-9-]+)/\)</sub>$', text, re.M))
             for record in records:
                 if record['url'] in paper_urls:
                     continue
                 with self.subTest(readme=name, record=record['id']):
-                    self.assertEqual(entries[record['url']], 1)
+                    self.assertEqual(entries[record['id']], 1)
                     section = collection_section(record)
                     suffix = other_targets(record, section, language)
                     detail = f"/resources/{record['id']}/)</sub>"
