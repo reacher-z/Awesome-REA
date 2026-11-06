@@ -9,7 +9,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_readme import (BADGES_BEGIN, BADGES_END, BEGIN, CONTENTS_BEGIN, CONTENTS_END, PAPER_FILES, PAPERS_BEGIN, lead_sentence,
-                         plain_text, render_badges, replace_badges, render_catalog, render_contents, render_finder, render_papers)
+                         plain_text, render_badges, replace_badges, render_catalog, render_contents, render_papers)
 from build_repository_index import SUMMARY_BEGIN
 
 
@@ -25,6 +25,11 @@ def paper(**changes):
     record = deepcopy(json.loads((ROOT / 'data/papers.json').read_text(encoding='utf-8'))[0])
     record.update(changes)
     return record
+
+
+def bare(text):
+    """Contents lines without their trailing one-line description."""
+    return re.sub(r'(?m)^((?:  )?- \[[^\]]+\]\(#[^)]+\)(?: \([\d,]+\))?) - .*$', r'\1', text)
 
 
 class ReadmeContentsTest(unittest.TestCase):
@@ -44,20 +49,6 @@ class ReadmeContentsTest(unittest.TestCase):
         self.assertIn('案例: 1', zh)
         self.assertIn('论文: 1', zh)
         self.assertEqual((records, [listed]), before)
-
-    def test_finder_table_has_one_aligned_row_per_section_with_its_count(self):
-        listed = paper(url='https://example.com/paper')
-        records = [resource(), resource(id='second', url='https://example.com/second'),
-                   resource(id='paper-copy', kind='research', url=listed['url'])]
-        for language in ('en', 'zh'):
-            with self.subTest(language=language):
-                rows = render_finder(records, [listed], 40, language).strip().splitlines()
-                pipes = [[i for i, c in enumerate(row) if c == '|'] for row in rows]
-                self.assertEqual(len({tuple(p) for p in pipes}), 1, rows)
-                self.assertRegex(rows[1], r'^\| -+ \| -+ \| -+: \|$')
-                counts = {re.match(r'\| \[([^\]]+)\]', row).group(1): row.rsplit('|', 2)[1].strip() for row in rows[2:]}
-                self.assertEqual(list(counts.values()), ['2', '1', '40'])
-                self.assertNotIn('awesomerea.org', '\n'.join(rows))
 
     def test_badges_are_at_most_six_and_link_the_hugging_face_dataset(self):
         for language in ('en', 'zh'):
@@ -102,7 +93,7 @@ class ReadmeContentsTest(unittest.TestCase):
             resource(id='paper-copy', kind='research', category='learning', relationship='learning',
                      url=listed['url']),
         ]
-        rendered = render_contents(records, [listed], 2864, 'en')
+        rendered = bare(render_contents(records, [listed], 2864, 'en'))
         self.assertIn('- [Resources](#resources) (3)\n', rendered)
         self.assertIn('  - [Website](#website) (2)\n', rendered)
         self.assertIn('  - [Game](#game) (1)\n', rendered)
@@ -117,11 +108,11 @@ class ReadmeContentsTest(unittest.TestCase):
         self.assertNotIn('#protocol', rendered)
 
     def test_chinese_contents_use_chinese_labels_and_anchors(self):
-        rendered = render_contents([resource()], [paper()], 10, 'zh')
+        rendered = bare(render_contents([resource()], [paper()], 10, 'zh'))
         self.assertTrue(rendered.startswith('- [按任务查找](#按任务查找)\n- [使用数据](#使用数据)\n- [资源](#资源) (1)\n  - [网站](#website) (1)\n'),
                         rendered)
         self.assertIn('\n- [完整仓库索引](#完整仓库索引) (10)\n', rendered)
-        self.assertTrue(rendered.endswith('\n- [完整仓库索引](#完整仓库索引) (10)\n- [关于](#关于)\n\n本页还有：[参与贡献](#参与贡献)\n'), rendered)
+        self.assertTrue(rendered.endswith('\n- [完整仓库索引](#完整仓库索引) (10)\n- [关于](#关于)\n'), rendered)
         # Neither README has a contributors section, so Contents lists none.
         self.assertNotIn('贡献者', rendered)
         self.assertNotIn('Contributors', render_contents([resource()], [paper()], 10, 'en'))
@@ -173,14 +164,10 @@ class ReadmeContentsTest(unittest.TestCase):
             with self.subTest(readme=name):
                 text = (ROOT / name).read_text(encoding='utf-8')
                 contents = text.split(CONTENTS_BEGIN + '\n', 1)[1].split(CONTENTS_END, 1)[0]
-                # A collapsed list, then the Contributing link that the ToC check keeps out of it.
-                contents = contents.split('\n', 1)[1]
-                opening, rest = contents.split('\n\n', 2)[0], contents.split('\n\n', 2)[1:]
-                self.assertTrue(opening.startswith('<details>\n<summary>'), opening)
-                items = rest[0].split('\n')
-                tail = contents.split('\n\n')[2:]
-                self.assertEqual(tail, ['本页还有：[参与贡献](#参与贡献)' if language == 'zh'
-                                        else 'Also on this page: [Contributing](#contributing)', '</details>\n'])
+                # The list is the front-page finder: each line may end with a one-line description. Contributing is linked
+                # from the navigation row, which the ToC check also keeps out of the list.
+                items = [line for line in contents.split('\n', 1)[1].strip().split('\n')]
+                items = [bare(line) for line in items]
                 self.assertTrue(all(re.fullmatch(r'(  )?- \[[^\]]+\]\(#[^)]+\)( \([\d,]+\))?', line) for line in items), items)
                 body = text.split(CONTENTS_END, 1)[1]
                 expected = []

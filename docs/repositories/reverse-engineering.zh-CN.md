@@ -359,7 +359,7 @@
 - [taxicat1/dsprot](https://github.com/taxicat1/dsprot) — DS Protect 反编译项目 **[28 星标]**
 - [heaven-hm/awesome-reverse-engineered-games](https://github.com/heaven-hm/awesome-reverse-engineered-games) — 精选列表与综合指南，收集由 AI 模型和智能体工具支持的逆向工程、反编译和重建游戏。 **[27 星标]**
 - [LucaBongiorni/Amateur-SIGINT](https://github.com/LucaBongiorni/Amateur-SIGINT) — 无线协议的盲逆向工程，或称业余信号情报分析 **[27 星标]**
-- [mstan/DragonBallZBuusFuryRecomp](https://github.com/mstan/DragonBallZBuusFuryRecomp) — Dragon Ball Z: Buu’s Fury 的静态重编译项目，支持自适应宽屏；属于 R.A.I.D. 社区。 **[27 星标]**
+- [mstan/DragonBallZBuusFuryRecomp](https://github.com/mstan/DragonBallZBuusFuryRecomp) — Dragon Ball Z: Buu's Fury 的静态重编译项目，支持自适应宽屏；属于 R.A.I.D. 社区。 **[27 星标]**
 - [vaenshine/vansonloader](https://github.com/vaenshine/vansonloader) — VansonMod 的注入式 iOS 动态库配套组件，可在目标进程中加入悬浮内存编辑面板，提供数值扫描、十六进制浏览、RVA 补丁、特征签名、脚本和监视悬浮层。 **[27 星标]**
 - [cyrozap/mct-usb-display-adapter-re](https://github.com/cyrozap/mct-usb-display-adapter-re) — 用于逆向分析 Magic Control Technology（MCT）“Trigger” USB 显示适配器协议的笔记和工具。 **[26 星标]**
 - [malus-security/ios-sandbox-profiles](https://github.com/malus-security/ios-sandbox-profiles) — 经逆向分析得到的 iOS 沙箱配置文件。 **[26 星标]**

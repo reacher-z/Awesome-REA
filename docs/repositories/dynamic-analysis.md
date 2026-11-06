@@ -115,7 +115,7 @@ These projects were discovered automatically and are unreviewed. Categories deri
 - [heeeyaaaa/vmem-decrypt](https://github.com/heeeyaaaa/vmem-decrypt) — Decrypt VMware vTPM-encrypted .vmem/.vmsn/.vmss/.nvram from the VM password, and flatten the .vmem to a Volatility-ready image. **[55 stars]**
 - [crissyfield/super-trouper](https://github.com/crissyfield/super-trouper) — MCP server for Frida. **[54 stars]** · Curated: [Super Trouper](https://awesomerea.org/resources/super-trouper/)
 - [irql/nokd](https://github.com/irql/nokd) — reverse engineering of the windows nt kernel debugger protocol &amp; reimplementation. **[44 stars]**
-- [StackOverflowExcept1on/ida75demo-linux](https://github.com/StackOverflowExcept1on/ida75demo-linux) — Unofficial patches for IDA 7.5 Demo on Linux x86\_64. Suffering from success: Hex-Rays SA DMCA’d repository. **[35 stars]**
+- [StackOverflowExcept1on/ida75demo-linux](https://github.com/StackOverflowExcept1on/ida75demo-linux) — Unofficial patches for IDA 7.5 Demo on Linux x86\_64. Suffering from success: Hex-Rays SA DMCA'd repository. **[35 stars]**
 - [andreafioraldi/r2angrdbg](https://github.com/andreafioraldi/r2angrdbg) — Use angr inside the radare2 debugger. Create an angr state from the current debugger state. **[34 stars]**
 - [NSEcho/fnoios](https://github.com/NSEcho/fnoios) — Redirect spawned iOS application stdout and stderr to pty **[31 stars]**
 - [EmadAbedini/Dumplyzer](https://github.com/EmadAbedini/Dumplyzer) — Open-source memory forensics platform for DFIR, threat hunting, malware analysis, and incident response. **[29 stars]**
