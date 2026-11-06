@@ -138,10 +138,10 @@ def platform_mapping(records: list[dict]) -> dict[str, dict]:
             raise ValueError("Platform package data needs unique string IDs")
         mapping[identifier] = entry
     expected = {record["id"] for record in records if record.get("kind") in SOFTWARE_KINDS}
-    if set(mapping) != expected:
-        missing = sorted(expected - set(mapping))[:5]
-        extra = sorted(set(mapping) - expected)[:5]
-        raise ValueError(f"Platform package data does not cover curated software (missing {missing}, extra {extra})")
+    missing = sorted(expected - set(mapping))
+    if missing:
+        # Extra records are allowed so bounded test catalogs can reuse the real snapshot.
+        raise ValueError(f"Platform package data does not cover curated software (missing {missing[:5]})")
     return mapping
 
 
