@@ -226,7 +226,7 @@ class ContributorReferenceTests(unittest.TestCase):
         self.assertEqual(groups, ['Curated record', 'Research paper', 'Case-ledger entry', 'Code or site'])
         self.assertRegex(template, r'(?m)^Closes #$')
         self.assertIn('Pull requests are public. Remove tokens, cookies, account identifiers, local filesystem paths', template)
-        for generated in ('README.md', 'README.zh-CN.md', 'docs/papers*.md', 'docs/repositories/', 'docs/case-coverage*.md'):
+        for generated in ('README.md', 'README.zh-CN.md', 'docs/papers*.md', 'docs/cases*.md', 'docs/repositories/', 'docs/case-coverage*.md'):
             self.assertIn(generated, template.split('are generated')[0].rsplit('\n', 1)[-1])
 
 if __name__ == '__main__':

@@ -9,7 +9,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_readme import collection_section, render_catalog
+from build_readme import CASE_FILES, collection_section, render_catalog
 from catalog import load_resources
 from validate_papers import read_papers
 
@@ -75,8 +75,9 @@ class AgentCrossReferenceTest(unittest.TestCase):
                 line = next(line for line in section.splitlines() if line.startswith('**'))
                 linked = re.findall(rf'\(https://awesomerea\.org/{prefix}resources/([a-z0-9-]+)/\)', line)
                 self.assertEqual(Counter(linked), Counter(expected))
-                entries = Counter(re.findall(r'^- \[\*\*.*?\*\*\]\((\S+?)\) - ', text, re.M))
-                self.assertTrue(all(entries[record['url']] == 1 for record in listed))
+                full = (ROOT / CASE_FILES['zh' if prefix else 'en']).read_text(encoding='utf-8')
+                entries = Counter(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', text + full, re.M))
+                self.assertTrue(all(entries[record['id']] >= 1 for record in listed))
 
 
 if __name__ == '__main__':

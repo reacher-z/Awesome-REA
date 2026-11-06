@@ -9,7 +9,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_readme import TARGETS, collection_section, entry_type, other_targets, render_catalog
+from build_readme import CASE_FILES, TARGETS, collection_section, entry_type, other_targets, render_catalog
 from catalog import load_resources
 from validate_papers import read_papers
 
@@ -55,13 +55,13 @@ class ReadmeSecondaryTargetTest(unittest.TestCase):
         records = load_resources()
         paper_urls = {paper['url'] for paper in read_papers(ROOT)}
         for name, language in (('README.md', 'en'), ('README.zh-CN.md', 'zh')):
-            text = (ROOT / name).read_text(encoding='utf-8')
-            entries = Counter(re.findall(r'^- \[\*\*.*?\*\*\]\((\S+?)\) - ', text, re.M))
+            text = (ROOT / name).read_text(encoding='utf-8') + (ROOT / CASE_FILES[language]).read_text(encoding='utf-8')
+            entries = Counter(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', text, re.M))
             for record in records:
                 if record['url'] in paper_urls:
                     continue
                 with self.subTest(readme=name, record=record['id']):
-                    self.assertEqual(entries[record['url']], 1)
+                    self.assertGreaterEqual(entries[record['id']], 1)
                     section = collection_section(record)
                     suffix = other_targets(record, section, language)
                     detail = f"/resources/{record['id']}/)</sub>"

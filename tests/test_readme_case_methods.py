@@ -113,16 +113,16 @@ class ReadmeCaseMethodTests(unittest.TestCase):
         self.assertEqual(len(missing_method_warnings(changed)), 1)
         self.assertIn(target['id'], missing_method_warnings(changed)[0])
 
-    def test_each_game_case_appears_once_under_its_method_in_both_readmes(self):
+    def test_each_game_case_appears_once_under_its_method_in_both_case_files(self):
         cases = [record for record in load_resources()
                  if record['kind'] == 'case-study' and collection_section(record) == 'game']
         self.assertTrue(cases)
         listed = {}
-        for name, language in (('README.md', 'en'), ('README.zh-CN.md', 'zh')):
-            with self.subTest(readme=name):
+        for name, language in (('docs/cases.md', 'en'), ('docs/cases.zh-CN.md', 'zh')):
+            with self.subTest(file=name):
                 text = (ROOT / name).read_text(encoding='utf-8')
-                game = text.split('<a id="game"></a>', 1)[1].split('\n#### ', 2)[1]
-                groups = re.split(r'\n<a id="game-([a-z-]+)"></a>\n##### ', game)[1:]
+                game = text.split('<a id="game"></a>', 1)[1].split('<a id="app"></a>', 1)[0]
+                groups = re.split(r'\n<a id="game-([a-z-]+)"></a>\n### ', game)[1:]
                 order = []
                 for method, block in zip(groups[::2], groups[1::2]):
                     heading, _, body = block.partition('\n')
@@ -142,9 +142,9 @@ class ReadmeCaseMethodTests(unittest.TestCase):
         paper_urls = {paper['url'] for paper in read_papers(ROOT)}
         current = replace_catalog(text, render_catalog(records, 'en', paper_urls))
         lines = current.split('\n')
-        start = lines.index('<a id="game-port"></a>') + 3
+        start = next(i for i, line in enumerate(lines) if line.startswith('- [**') and i > lines.index('<a id="game"></a>'))
         swapped = lines[:start] + [lines[start + 1], lines[start]] + lines[start + 2:]
-        stale_count = current.replace(f"{RECONSTRUCTION_METHODS['port'][0]} (", f"{RECONSTRUCTION_METHODS['port'][0]} (9", 1)
+        stale_count = current.replace('**By method:**', '**By method:** stale', 1)
         for stale in ('\n'.join(swapped), stale_count):
             self.assertNotEqual(stale, current)
             self.assertEqual(replace_catalog(stale, render_catalog(records, 'en', paper_urls)), current)

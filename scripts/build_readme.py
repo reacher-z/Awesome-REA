@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render resource entries and the newest papers into both READMEs, and every paper into docs/papers*.md."""
+"""Render compact READMEs and complete case and paper lists."""
 import argparse
 import html
 import json
@@ -29,7 +29,11 @@ READMES = {'en': 'README.md', 'zh': 'README.zh-CN.md'}
 # links into these files and the RECENT_PAPERS newest lines, so paper growth no longer counts against the
 # README's GitHub rendering limit.
 PAPER_FILES = {'en': 'docs/papers.md', 'zh': 'docs/papers.zh-CN.md'}
+CASE_FILES = {'en': 'docs/cases.md', 'zh': 'docs/cases.zh-CN.md'}
+CASES_BEGIN = '<!-- BEGIN GENERATED CASES -->'
+CASES_END = '<!-- END GENERATED CASES -->'
 RECENT_PAPERS = 10
+RECENT_CASES = 10
 RESOURCE_SOURCES = ('data/rea-resources.json', 'data/tool-resources.json')
 INDEX_SOURCES = ('data/source-index.json', 'data/source-scope.json', 'data/source-supplements/')
 CATEGORIES = {
@@ -260,6 +264,11 @@ def method_groups(cases):
     return [(method, sorted(entries, key=case_order)) for method, entries in groups.items() if entries]
 
 
+def recent_cases(cases):
+    """Newest cases in a section, with case_order breaking equal dates."""
+    return sorted(cases, key=lambda record: (-int(record.get('added_at', '0000')[:10].replace('-', '')), case_order(record)))[:RECENT_CASES]
+
+
 def section_order(section, records):
     """One section's entries in README order: case studies first (by method group in METHOD_SECTIONS), then the
     other entries in catalog order. Entry pages' "More in" links and the agent cross-reference follow it."""
@@ -348,6 +357,17 @@ def tag_legend(records, language):
     return ('**标签：** ' if zh else '**Tags:** ') + plain_text(' · '.join(parts)) + ('。' if zh else '.')
 
 
+def resource_line(record, section, language, translations, linked=True):
+    """The shared README and case-file list line."""
+    index = language == 'zh'
+    name = plain_text((record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if index else record['name'])
+    title = f'[**{name}**]({record["url"]})' if linked else f'**{name}**'
+    description = plain_text(lead_sentence(record[f'description_{language}'], language))
+    metadata = plain_text(entry_type(record, language) + other_targets(record, section, language))
+    detail_url = f"https://awesomerea.org/{'zh/' if index else ''}resources/{record['id']}/"
+    return f'- {title} - {description} <sub>{metadata} · [{FULL_ENTRY[index]}]({detail_url})</sub>'
+
+
 def render_catalog(records, language, paper_urls=frozenset()):
     """One list line per resource: source link, opening sentence, tags and the entry page that holds
     the full description, requirements and evidence. Bibliography overlaps appear only under Papers."""
@@ -370,17 +390,29 @@ def render_catalog(records, language, paper_urls=frozenset()):
             lines.extend(agent_cross_reference(groups, language, translations))
         cases = [record for record in groups[section] if record['kind'] == 'case-study']
         tools = [record for record in groups[section] if record['kind'] != 'case-study']
-        subgroups = [(None, groups[section])]
+        if len(cases) > RECENT_CASES:
+            case_file = CASE_FILES[language]
+            lines.extend([(f'**{len(cases):,} 个案例**，下方列出最新的 {RECENT_CASES} 个。'
+                           f'[完整案例列表]({case_file}#{section})' if index else
+                           f'**{len(cases):,} case studies**. The {RECENT_CASES} newest are below. '
+                           f'[Full case list]({case_file}#{section}).'), ''])
+            if section in METHOD_SECTIONS:
+                methods = [f'<a id="{section}-{method}"></a>[{METHOD_HEADINGS[method][index]}]'
+                           f'({case_file}#{section}-{method}) ({len(block)})'
+                           for method, block in method_groups(cases)]
+                lines.extend([f"**{'按重建方式：' if index else 'By method:'}** " + ' · '.join(methods), ''])
+        shown_cases = recent_cases(cases)
+        subgroups = [(None, shown_cases + tools)]
         if cases and tools:
             subgroups = [
-                (('Case studies', '案例')[index], cases),
+                (('Case studies', '案例')[index], shown_cases),
                 (('Tools, projects and integrations', '工具、项目与集成')[index], tools),
             ]
         for label, entries in subgroups:
             if label:
                 lines.extend([f'#### {label}', ''])
             blocks = [(None, entries)]
-            if section in METHOD_SECTIONS and all(record['kind'] == 'case-study' for record in entries):
+            if section in METHOD_SECTIONS and len(cases) <= RECENT_CASES and all(record['kind'] == 'case-study' for record in entries):
                 # Case studies here are grouped by reconstruction method, one level below their own heading.
                 blocks = method_groups(entries)
             for method, block in blocks:
@@ -389,12 +421,7 @@ def render_catalog(records, language, paper_urls=frozenset()):
                     lines.extend([f'<a id="{section}-{method}"></a>',
                                   f'{heading} {METHOD_HEADINGS[method][index]} ({len(block):,})', ''])
                 for record in block:
-                    name = plain_text((record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if language == 'zh' else record['name'])
-                    description = plain_text(lead_sentence(record[f'description_{language}'], language))
-                    metadata = plain_text(entry_type(record, language) + other_targets(record, section, language))
-                    detail_url = f"https://awesomerea.org/{'zh/' if language == 'zh' else ''}resources/{record['id']}/"
-                    lines.append(f"- [**{name}**]({record['url']}) - {description} "
-                                 f"<sub>{metadata} · [{FULL_ENTRY[index]}]({detail_url})</sub>")
+                    lines.append(resource_line(record, section, language, translations))
                 lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
 
@@ -738,6 +765,47 @@ def render_paper_file(papers, language):
     return PAPERS_BEGIN + '\n' + source_note('data/papers.json', part='file') + body + PAPERS_END + '\n'
 
 
+def render_cases(records, language, paper_urls=frozenset()):
+    """Every case under its catalog section, grouped by method where applicable."""
+    zh = language == 'zh'
+    groups = defaultdict(list)
+    for record in records:
+        if record['kind'] == 'case-study' and record['url'] not in paper_urls:
+            groups[collection_section(record)].append(record)
+    translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')) if zh else {}
+    count = sum(map(len, groups.values()))
+    switch = '[English](cases.md) · **简体中文**' if zh else '**English** · [简体中文](cases.zh-CN.md)'
+    lines = [f"[{'← 返回 README' if zh else '← Back to the README'}](../{READMES[language]}#{'资源' if zh else 'resources'}) · {switch}", '',
+             f'**{count} 个案例**，按分区列出。' if zh else f'**{count} case studies**, grouped by section.', '',
+             '## ' + ('目录' if zh else 'Contents'), '']
+    # As in the paper files, English links use the heading slugs awesome-lint's ToC check resolves.
+    lines += [f"- [{section_heading(section, language)}]({f'#{section}' if zh else heading_anchor(section_heading(section, 'en'))}) ({len(groups[section])})"
+              for section in COLLECTION_SECTIONS if groups[section]]
+    lines.append('')
+    seen_urls = set()
+    for section in COLLECTION_SECTIONS:
+        cases = groups[section]
+        if not cases:
+            continue
+        lines.extend([f'<a id="{section}"></a>', f'## {section_heading(section, language)}', '',
+                      '[↑ 返回目录](#目录)' if zh else '[↑ Contents](#contents)', ''])
+        blocks = method_groups(cases) if section in METHOD_SECTIONS else [(None, sorted(cases, key=lambda record: (-int(record.get('added_at', '0000')[:10].replace('-', '')), case_order(record))))]
+        for method, block in blocks:
+            if method:
+                lines.extend([f'<a id="{section}-{method}"></a>',
+                              f'### {METHOD_HEADINGS[method][zh]} ({len(block):,})', ''])
+            for record in block:
+                lines.append(resource_line(record, section, language, translations, record['url'] not in seen_urls))
+                seen_urls.add(record['url'])
+            lines.append('')
+    return '\n'.join(lines).rstrip() + '\n'
+
+
+def render_case_file(records, language, paper_urls=frozenset()):
+    body = f"# {('Awesome REA Case Studies', 'Awesome REA 案例')[language == 'zh']}\n\n" + render_cases(records, language, paper_urls)
+    return CASES_BEGIN + '\n' + source_note(*RESOURCE_SOURCES, part='file') + body + CASES_END + '\n'
+
+
 def render_readme_papers(papers, language):
     """The README's compact Papers section: the count, links, topic links into the paper file and the newest
     papers. Its size depends on RECENT_PAPERS, not on how many papers the bibliography holds."""
@@ -798,12 +866,12 @@ def size_warning(name, size):
     else:
         headroom = f'{GITHUB_README_LIMIT - size:,} bytes are left'
     return (f'{name} is {size:,} bytes, above the {README_SIZE_WARNING:,}-byte budget. GitHub stops rendering a README '
-            f'after {GITHUB_README_LIMIT:,} bytes and {headroom}; move more detail from README lines to entry pages.')
+            f'after {GITHUB_README_LIMIT:,} bytes and {headroom}.')
 
 
 def readme_size_warnings(root=ROOT):
-    """Size notes for both READMEs on disk; validate.py prints them without failing."""
-    notes = (size_warning(name, (root / name).stat().st_size) for name in ('README.md', 'README.zh-CN.md'))
+    """Size notes for READMEs and case files on disk; validate.py prints them without failing."""
+    notes = (size_warning(name, (root / name).stat().st_size) for name in (*READMES.values(), *CASE_FILES.values()) if (root / name).is_file())
     return [note for note in notes if note]
 
 
@@ -832,6 +900,8 @@ def rendered_files(records, papers, index_count):
                                      + render_badges(records, papers, language))
     for language, name in PAPER_FILES.items():
         files[name] = render_paper_file(papers, language)
+    for language, name in CASE_FILES.items():
+        files[name] = render_case_file(records, language, {paper['url'] for paper in papers})
     return files
 
 
@@ -852,7 +922,7 @@ def main():
                     path.parent.mkdir(parents=True, exist_ok=True)
                     path.write_text(expected, encoding='utf-8')
         size = {name: len(content.encode('utf-8')) for name, content in files.items()}
-        for name in READMES.values():
+        for name in (*READMES.values(), *CASE_FILES.values()):
             note = size_warning(name, size[name])
             if note:
                 print(f'Warning: {note}', file=sys.stderr)
@@ -862,11 +932,11 @@ def main():
             return 1
         budget = (', '.join(f'{name} {size[name]:,} bytes' for name in READMES.values())
                   + f' (budget {README_SIZE_WARNING:,}); '
-                  + ', '.join(f'{name} {size[name]:,} bytes' for name in PAPER_FILES.values()))
+                  + ', '.join(f'{name} {size[name]:,} bytes' for name in (*PAPER_FILES.values(), *CASE_FILES.values())))
         if args.check:
-            print(f'Both READMEs and paper files match {len(records)} resources and {len(papers)} separate research papers; {budget}.')
+            print(f'READMEs, paper files and case files match {len(records)} resources and {len(papers)} separate research papers; {budget}.')
         else:
-            print(f"Rendered {len(records)} resources and {len(papers)} separate research papers into both READMEs and paper files; updated {len(stale)} files; {budget}.")
+            print(f"Rendered {len(records)} resources and {len(papers)} separate research papers into READMEs, paper files and case files; updated {len(stale)} files; {budget}.")
         return 0
     except (OSError, ValueError, KeyError, TypeError) as error:
         print(f'Catalog generation failed: {error}', file=sys.stderr)
