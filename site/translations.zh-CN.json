@@ -8309,5 +8309,49 @@
       "最新发布是 2025-01-30 的 v0.1.8 预发布版，上一个版本是 2016 年的 v0.1.7；所审阅的 master 分支提交与 v0.1.8 同一天。",
       "依 LICENSE 采用 MIT 许可。"
     ]
+  },
+  "remill": {
+    "name": "Remill 机器码到 LLVM bitcode 提升库",
+    "requirements": [
+      "正式支持 Linux，并在 Ubuntu 22.04 上测试；也可在 macOS 上使用，Windows 支持仍属实验性质。构建使用 dependencies/ 中的 superbuild，需要 CMake 3.21+、Ninja、LLVM 与 Clang 15+、Intel XED、Google Flags/Log/Test 和 Python 3，Linux 版本也可在 Docker 中构建。审阅时的版本为 v6.0.1，于 2026-04-21 发布；所审阅的 master 分支提交日期为 2026-08-27。",
+      "依 LICENSE 采用 Apache-2.0 许可。"
+    ]
+  },
+  "iaito": {
+    "name": "iaito radare2 官方图形界面",
+    "requirements": [
+      "需要 radare2 以及 Qt 5 或 Qt 6。CI 构建和发布版本涵盖 Linux、macOS 和 Windows，Linux 与 WSL 用户可从 Flathub 安装（org.radare.iaito）；在 macOS 上可能需要按 README 的说明用 xattr 和 codesign 修复应用签名。审阅时的版本为 6.2.2，于 2026-09-06 发布；所审阅的 master 分支提交日期为 2026-11-05。",
+      "依 COPYING 采用 GPL-3.0 许可。"
+    ]
+  },
+  "hexrays-codexplorer": {
+    "name": "HexRaysCodeXplorer C++ 代码重建插件",
+    "requirements": [
+      "以 C/C++ 编写，适用于 Windows、Linux 和 macOS 上带 Hex-Rays 反编译器的 x86/x64 IDA；README 说明只在最新版本的 IDA 和反编译器上测试。GitHub 上最新的发布是 2018-03-14 的 2.1 版（IDA 7 版本），所审阅的 master 分支提交日期为 2025-11-25。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证。"
+    ]
+  },
+  "vgmstream": {
+    "name": "vgmstream 游戏音频格式解码库",
+    "requirements": [
+      "带编号的发布版本在 GitHub 上，每夜构建在 vgmstream.org 上；审阅时的版本为 r2168，于 2026-10-25 发布，所审阅的 master 分支提交日期为 2026-11-05。游戏音频文件由使用者自备；doc/FORMATS.md 列出了受支持的格式。",
+      "采用 COPYING 中的 ISC 式宽松许可，部分代码另附各自的版权声明。"
+    ]
+  },
+  "payload-dumper": {
+    "name": "payload dumper Android OTA 分区镜像提取工具",
+    "requirements": [
+      "需要 Python 3.6 或更高版本，以及 requirements.txt 中的 protobuf 包；OTA 更新包中的 payload.bin 由使用者自备。README 称该脚本已在 Linux 上用 Yandex Amber 的完整和增量 OTA 测试，在 Windows 上也可能可用。",
+      "仓库没有发布版本，所审阅的 master 分支提交日期为 2025-04-18。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证。"
+    ]
+  },
+  "malware-training-vol1": {
+    "name": "Windows 恶意软件分析培训第一卷（malware_training_vol1）",
+    "requirements": [
+      "面向已掌握编程和逆向工程基础、希望进入 Windows 恶意软件分析领域的读者。幻灯片位于 slides/，练习位于 exercises/。",
+      "README 标明这套材料仍在编写中：有几个主题尚无幻灯片或练习。所审阅的 main 分支提交日期为 2024-07-01。",
+      "据 README 采用知识共享署名 4.0（CC BY 4.0）许可；仓库中没有许可证文件。"
+    ]
   }
 }
