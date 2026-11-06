@@ -48,7 +48,7 @@ class ColorSchemeTests(unittest.TestCase):
     def test_theme_color_follows_the_page_canvas_in_both_schemes(self):
         _, dark = token_blocks((ROOT / 'site/styles.css').read_text(encoding='utf-8'))
         self.assertEqual(re.findall(r'content="(#[0-9a-f]{6})" media="\(prefers-color-scheme: (light|dark)\)"', THEME_COLOR_META),
-                         [('#f4f1de', 'light'), (dark['--paper'].strip(), 'dark')])
+                         [('#faf3dd', 'light'), (dark['--paper'].strip(), 'dark')])
         index = (ROOT / 'site/index.html').read_text(encoding='utf-8')
         for tag in re.findall(r'<meta[^>]+>', THEME_COLOR_META):
             self.assertIn(tag, index)

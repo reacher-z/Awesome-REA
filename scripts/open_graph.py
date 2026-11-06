@@ -14,8 +14,8 @@ SITE_NAME = 'Awesome Reverse Engineering Anything'
 SITE_ALTERNATE_NAMES = ['AwesomeREA.org', 'Awesome REA']
 OG_LOCALES = {'en': 'en_US', 'zh': 'zh_CN'}
 # Browser chrome follows the page canvas in each color scheme (--bg in site/shell.css, --paper in site/styles.css).
-THEME_COLOR_META = ('<meta name="theme-color" content="#f4f1de" media="(prefers-color-scheme: light)">'
-                    '<meta name="theme-color" content="#1e2030" media="(prefers-color-scheme: dark)">')
+THEME_COLOR_META = ('<meta name="theme-color" content="#faf3dd" media="(prefers-color-scheme: light)">'
+                    '<meta name="theme-color" content="#1c1316" media="(prefers-color-scheme: dark)">')
 # og:image:alt describes the shared card itself (https://ogp.me/), never the page title.
 SOCIAL_IMAGE_ALT = {
     'en': 'AwesomeREA.org card showing the heading “Awesome Reverse Engineering Anything”, the tagline “Tools, projects, and resources” and six target labels: Website, Game, App, Native Binary, Firmware and Protocol.',

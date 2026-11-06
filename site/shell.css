@@ -53,88 +53,72 @@
 :root[data-site="rea"] {
   --font-body: "IBM Plex Sans", "IBM Plex Sans Fallback", system-ui, -apple-system, "Segoe UI", var(--font-cjk-sans), sans-serif;
   --font-mono: "IBM Plex Mono", "IBM Plex Mono Fallback", ui-monospace, SFMono-Regular, Menlo, monospace;
-  /* Palette "Terra & Slate": theme-independent colours, for the parts that look the same in both themes. */
-  --eggshell: #F4F1DE; --eggshell-raised: #FBF9EC; --eggshell-soft: #EDE9D3; --eggshell-note: #EDE0D0;
-  --terracotta: #E07A5F;      /* signature fill: die, announcement bar, star CTA on slate, case band */
-  --terracotta-display: #C4553A; /* >= 24px type and drawings only: 3.93 eggshell */
-  --terracotta-link: #9C4128;
-  --slate: #3D405B;           /* WebsiteBench panel, footer, primary buttons: 8.87 with eggshell */
-  --slate-rule: #4A4D69; --slate-word: #4F5270; --slate-line: #5A5D78;
-  --slate-pressed: #2E3047; --slate-deep: #262838; --slate-deeper: #1E2030; --slate-panel: #2A2C3F; --slate-edge: #4F5270;
-  --sage: #81B29A; --sage-tint: #CFE0D6;
-  --butter: #F2CC8F; --butter-soft: #F8E0B8;
-  --ink-fixed: #2A2C3F;       /* 12.08 eggshell, 5.17 terracotta */
-  --ink-fixed-2: #33364E;
-  --lift: #F0A58E;            /* lightened terracotta: links and focus on slate panels */
-  --stone: #C8C2AC;
-
-  --bg: #F4F1DE;              /* eggshell paper */
-  --bg-raised: #FBF9EC;       /* index cards, inputs */
-  --bg-pop: #FBF9EC;          /* popovers, search palette */
-  --surface: #CFE0D6;         /* sage tint panel: drawer, catalogue card, code */
-  --surface-2: #E0E8D8;       /* soft sage panel, evidence slips */
-  --panel-edge: #B9B39C;      /* panel frame */
-  --art-line: #C4553A;        /* drafted line art, terracotta display */
-  --art-label: #9C4128;       /* small type inside the drawings */
-  --cab: #B9B39C;             /* category cabinet frame */
-  --brand: #C4553A;           /* fills and >= 24px only */
-  --brand-ink: #9C4128;       /* links */
-  --brand-strong: #2E3047;    /* hover/pressed */
-  --accent-display: #C4553A;  /* H1 italic accent, >= 24px only */
-  --secondary: #E07A5F;       /* terracotta fill: CASE stamp, selected chip */
-  --secondary-soft: #F7DDCF;  /* selected row */
-  --accent: #F2CC8F;          /* butter "new" marker fill */
-  --accent-ink: #2A2C3F;
-  --ink-strong: #2A2C3F;      /* titles and names */
-  --ink: #33364E;             /* body */
-  --ink-2: #4A4D69;           /* meta */
-  --ink-2-panel: #454863;     /* meta on sage tint and soft sage */
-  --line: #D8D3BC;            /* decorative hairline */
-  --line-strong: #B9B39C;     /* sheet edges, frames */
-  --grid: #E8E4CD;            /* blueprint grid */
-  --border-input: #74778F;    /* control borders */
-  --focus: #9C4128;           /* focus ring and selected bar */
-  --mark: #F8E0B8; --mark-ink: #2A2C3F;      /* search highlight */
-  --btn-bg: #3D405B; --btn-ink: #F4F1DE;     /* primary button */
-  --callno: #4F5853;          /* mono call numbers */
-  --label-case: #9C4128;      /* "case" text */
-  --ok-fg: #296057;           /* "Reviewed" text without a fill */
+  --bg: #FAF3DD;              /* cream paper */
+  --bg-raised: #FFFAEB;       /* index cards, inputs */
+  --bg-pop: #FFFAEB;          /* popovers, search palette */
+  --surface: #D8E2DC;         /* sage panel: drawer, catalogue card, code */
+  --surface-2: #E7EADC;       /* soft sage panel, evidence slips */
+  --panel-edge: #C2AFAB;      /* panel frame; a sage hairline in dark (decorative) */
+  --art-line: #755B63;        /* round 3: drafted line art, mauve */
+  --cab: #C2AFAB;             /* round 3: category cabinet frame */
+  --brand: #9D8189;           /* mauve: 3.19 on cream, fills and >= 24px only */
+  --brand-ink: #755B63;       /* links: 5.51 cream, 5.86 raised, 4.61 sage */
+  --brand-strong: #674D55;    /* hover/pressed: 6.84 cream */
+  --accent-display: #9D8189;  /* H1 italic accent, >= 24px only */
+  --secondary: #F4ACB7;       /* rose fill: CASE stamp, selected chip (ink-strong 8.24) */
+  --secondary-soft: #F9E3D5;  /* selected row: ink-strong 12.23, ink-2 6.85 */
+  --accent: #FFCAD4;          /* pink "new" marker fill */
+  --accent-ink: #212632;
+  --ink-strong: #212632;      /* titles and names: 13.64 cream */
+  --ink: #303542;             /* body: 11.05 cream, 9.24 sage */
+  --ink-2: #474D5A;           /* meta (ink-700): 7.64 cream, 8.12 raised, 6.85 selected row */
+  --ink-2-panel: #474D5A;     /* meta on sage/soft sage: 6.39 / 6.94 */
+  --line: #D9CBC0;            /* decorative hairline */
+  --line-strong: #C2AFAB;     /* sheet edges, frames */
+  --grid: #EFE5D3;            /* blueprint grid */
+  --border-input: #747A89;    /* control borders: 3.87 cream, 3.24 sage */
+  --focus: #755B63;           /* focus ring and selected bar */
+  --mark: #F7CCC8; --mark-ink: #212632;      /* search highlight 10.39 */
+  --btn-bg: #674D55; --btn-ink: #FAF3DD;     /* primary button 6.84 */
+  --callno: #4F5853;          /* mono call numbers: 6.63 cream, 5.55 sage */
+  --label-case: #8C4D59;      /* "case" text: 5.70 cream */
+  --ok-fg: #296057;           /* "Reviewed" text without a fill: 6.52 cream */
   --info-fg: #355D63;
-  --stamp-case-bg: #E07A5F; --stamp-case-ink: #2A2C3F;
-  --sheet: #E3DEC6;           /* paper sheet peeking behind a card (decorative) */
-  --shadow-pop: 0 12px 40px rgba(42, 44, 63, .18);
+  --stamp-case-bg: #F4ACB7; --stamp-case-ink: #212632;
+  --sheet: #E9DCC8;           /* paper sheet peeking behind a card (decorative) */
+  --shadow-pop: 0 12px 40px rgba(43, 47, 58, .18);
   color-scheme: light;
 }
 :root[data-site="rea"][data-theme="dark"] {
-  --bg: #1E2030; --bg-raised: #2A2C3F; --bg-pop: #2E3047; --surface: #25273A; --surface-2: #222435; --panel-edge: #4A4D69; --art-line: #E8A48F; --art-label: #F0A58E; --cab: #4A4D69;
-  --brand: #E8A48F; --brand-ink: #F0A58E; --brand-strong: #F4F1DE; --accent-display: #E07A5F;
-  --secondary: #E07A5F; --secondary-soft: #453A47;
-  --accent: #4A4130; --accent-ink: #F2CC8F;
-  --ink-strong: #F4F1DE; --ink: #E3DEC6; --ink-2: #C8C2AC; --ink-2-panel: #C8C2AC;
-  --line: #383B52; --line-strong: #4F5270; --grid: #282A3D;
-  --border-input: #7E8199; --focus: #F0A58E;
-  --mark: #5A4A3A; --mark-ink: #F4F1DE; --btn-bg: #E07A5F; --btn-ink: #1E2030;
-  --callno: #CFE0D6; --label-case: #F0A58E; --ok-fg: #B8F2E6; --info-fg: #AED9E0;
-  --stamp-case-bg: #4A3A40; --stamp-case-ink: #F0A58E;
-  --ok-bg: #2C3A42; --ok-ink: #B8F2E6; --info-bg: #2C3445; --info-ink: #AED9E0;
-  --sheet: #33364E; --shadow-pop: 0 12px 40px rgba(0, 0, 0, .5);
+  --bg: #1C1316; --bg-raised: #2F2227; --bg-pop: #322429; --surface: #241A1E; --surface-2: #201719; --panel-edge: #46524B; --art-line: #CDB6BE; --cab: #5A474D;
+  --brand: #CDB6BE; --brand-ink: #F4ACB7; --brand-strong: #FAF3DD; --accent-display: #F4ACB7;
+  --secondary: #F4ACB7; --secondary-soft: #473236;
+  --accent: #3F2B30; --accent-ink: #F4ACB7;
+  --ink-strong: #FAF3DD; --ink: #E4DECC; --ink-2: #CDB6BE; --ink-2-panel: #CDB6BE;
+  --line: #3B3232; --line-strong: #5A474D; --grid: #2C2324;
+  --border-input: #876C74; --focus: #F4ACB7;
+  --mark: #5D4146; --mark-ink: #FAF3DD; --btn-bg: #F4ACB7; --btn-ink: #1C1316;
+  --callno: #D8E2DC; --label-case: #F4ACB7; --ok-fg: #B8F2E6; --info-fg: #AED9E0;
+  --stamp-case-bg: #3F2B30; --stamp-case-ink: #F4ACB7;
+  --ok-bg: #353737; --ok-ink: #B8F2E6; --info-bg: #333336; --info-ink: #AED9E0;
+  --sheet: #3A2C30; --shadow-pop: 0 12px 40px rgba(0, 0, 0, .5);
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root[data-site="rea"]:not([data-theme="light"]) {
-    --bg: #1E2030; --bg-raised: #2A2C3F; --bg-pop: #2E3047; --surface: #25273A; --surface-2: #222435; --panel-edge: #4A4D69; --art-line: #E8A48F; --art-label: #F0A58E; --cab: #4A4D69;
-    --brand: #E8A48F; --brand-ink: #F0A58E; --brand-strong: #F4F1DE; --accent-display: #E07A5F;
-    --secondary: #E07A5F; --secondary-soft: #453A47;
-    --accent: #4A4130; --accent-ink: #F2CC8F;
-    --ink-strong: #F4F1DE; --ink: #E3DEC6; --ink-2: #C8C2AC; --ink-2-panel: #C8C2AC;
-    --line: #383B52; --line-strong: #4F5270; --grid: #282A3D;
-    --border-input: #7E8199; --focus: #F0A58E;
-    --mark: #5A4A3A; --mark-ink: #F4F1DE; --btn-bg: #E07A5F; --btn-ink: #1E2030;
-    --callno: #CFE0D6; --label-case: #F0A58E; --ok-fg: #B8F2E6; --info-fg: #AED9E0;
-    --stamp-case-bg: #4A3A40; --stamp-case-ink: #F0A58E;
-    --ok-bg: #2C3A42; --ok-ink: #B8F2E6; --info-bg: #2C3445; --info-ink: #AED9E0;
-    --sheet: #33364E; --shadow-pop: 0 12px 40px rgba(0, 0, 0, .5);
+    --bg: #1C1316; --bg-raised: #2F2227; --bg-pop: #322429; --surface: #241A1E; --surface-2: #201719; --panel-edge: #46524B; --art-line: #CDB6BE; --cab: #5A474D;
+    --brand: #CDB6BE; --brand-ink: #F4ACB7; --brand-strong: #FAF3DD; --accent-display: #F4ACB7;
+    --secondary: #F4ACB7; --secondary-soft: #473236;
+    --accent: #3F2B30; --accent-ink: #F4ACB7;
+    --ink-strong: #FAF3DD; --ink: #E4DECC; --ink-2: #CDB6BE; --ink-2-panel: #CDB6BE;
+    --line: #3B3232; --line-strong: #5A474D; --grid: #2C2324;
+    --border-input: #876C74; --focus: #F4ACB7;
+    --mark: #5D4146; --mark-ink: #FAF3DD; --btn-bg: #F4ACB7; --btn-ink: #1C1316;
+    --callno: #D8E2DC; --label-case: #F4ACB7; --ok-fg: #B8F2E6; --info-fg: #AED9E0;
+    --stamp-case-bg: #3F2B30; --stamp-case-ink: #F4ACB7;
+    --ok-bg: #353737; --ok-ink: #B8F2E6; --info-bg: #333336; --info-ink: #AED9E0;
+    --sheet: #3A2C30; --shadow-pop: 0 12px 40px rgba(0, 0, 0, .5);
     color-scheme: dark;
   }
 }
@@ -322,7 +306,7 @@ kbd { display: inline-flex; align-items: center; justify-content: center; min-wi
 .palette { width: min(720px, calc(100% - 32px)); max-height: min(640px, calc(100vh - 96px)); margin: 72px auto auto; padding: 0; overflow: hidden;
   background: var(--bg-pop); color: var(--ink); border: 1px solid var(--line-strong); border-radius: 10px; box-shadow: var(--shadow-pop); }
 .palette[open] { display: flex; flex-direction: column; }
-.palette::backdrop { background: rgb(30 32 48 / .38); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
+.palette::backdrop { background: rgb(28 19 22 / .38); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
 .pal-field { display: flex; align-items: center; gap: 12px; height: 60px; padding: 0 12px 0 18px; border-bottom: 1px solid var(--line-strong); flex: none; }
 .pal-field > .i { width: 21px; height: 21px; color: var(--ink-2); }
 .pal-field input { flex: 1; min-width: 0; height: 100%; border: 0; outline: 0; background: none; color: var(--ink-strong); font: 400 1.125rem/1 var(--font-body); }
@@ -370,21 +354,21 @@ kbd { display: inline-flex; align-items: center; justify-content: center; min-wi
 .toast.is-on { transform: translate(-50%, 0); opacity: 1; }
 
 /* footer: a mauve colophon, the word cropped at the bottom edge */
-.site-footer { --ink-strong: var(--eggshell); --ink: var(--eggshell-soft); --ink-2: var(--eggshell-note); --brand-ink: var(--butter); --brand-strong: #FFFFFF; --line-strong: var(--slate-line); --focus: var(--butter); color-scheme: dark;
-  position: relative; overflow: hidden; padding: 44px 0 clamp(64px, 11vw, 170px); background: var(--slate); color: var(--ink); }
+.site-footer { --ink-strong: #FAF3DD; --ink: #F3E9DC; --ink-2: #E9DCDF; --brand-ink: #FFCAD4; --brand-strong: #FFFFFF; --line-strong: #80656F; --focus: #FFCAD4; color-scheme: dark;
+  position: relative; overflow: hidden; padding: 44px 0 clamp(64px, 11vw, 170px); background: #4A3740; color: var(--ink); }
 .page-home .site-footer { margin-top: 0; border-top: 0; }
 .site-footer > .wrap { position: relative; z-index: 1; }
 .site-footer .titleblock { background: none; }
 .colophon-word { position: absolute; left: -.02em; right: 0; bottom: -.3em; z-index: 0; margin: 0; font: italic 500 clamp(8rem, 27vw, 26rem)/1 "EB Garamond Accent", var(--font-display); letter-spacing: -.02em;
-  color: var(--slate-word); white-space: nowrap; text-align: center; pointer-events: none; user-select: none; }
+  color: #6A525C; white-space: nowrap; text-align: center; pointer-events: none; user-select: none; }
 
 /* colophon: more of the word on show */
 .site-footer { padding-bottom: clamp(84px, 13.5vw, 200px); }
-.colophon-word { bottom: -.34em; line-height: 1; color: var(--slate-word); }
+.colophon-word { bottom: -.34em; line-height: 1; color: #7A5F6A; }
 /* colophon: baseline visible, descenders cropped, the word rises behind the title block */
 .site-footer { padding: 40px 0 clamp(56px, 11.2vw, 180px); }
-.colophon-word { bottom: calc(10px - .145em); left: 0; font-size: clamp(5.5rem, 24.5vw, 26rem); color: var(--slate-word); }
-.site-footer .titleblock { background: var(--slate); }
+.colophon-word { bottom: calc(10px - .145em); left: 0; font-size: clamp(5.5rem, 24.5vw, 26rem); color: #6A525C; }
+.site-footer .titleblock { background: #4A3740; }
 .site-footer { padding-top: 32px; }
 /* The strip's scan cell links to the discovery queue; site.js fills in the time, so this page's bytes stay stable. */
 .tb-strip time { white-space: nowrap; }
@@ -418,7 +402,7 @@ body > main a:not([class]) { text-decoration-thickness: 1px; text-underline-offs
 .collection-home .home-intro { padding-block: 24px 8px; }
 .survey-page { background: var(--bg); }
 /* A manual choice beats the system theme for the few values those sheets set under prefers-color-scheme. */
-:root[data-theme="light"] body > main { color-scheme: light; --preprint: #7e602b; --preprint-bg: #f7f5e6; --accepted: #536b85; --accepted-bg: #f1f5f9; --scope-rule: #bfd1e3; }
+:root[data-theme="light"] body > main { color-scheme: light; --preprint: #7e602b; --preprint-bg: #f8f2e7; --accepted: #536b85; --accepted-bg: #f1f5f9; --scope-rule: #bfd1e3; }
 :root[data-theme="dark"] body > main { color-scheme: dark; --preprint: #e3c37f; --preprint-bg: #372e1d; --accepted: #a9c0da; --accepted-bg: #232d3b; --scope-rule: #44506a; }
 
 /* round 3, iteration 5: the word reads in full, its ascenders pass behind the title block */
@@ -436,13 +420,13 @@ body > main a:not([class]) { text-decoration-thickness: 1px; text-underline-offs
 @media (max-width: 374px) { .brand-mark { display: none; } }
 
 /* The site-wide announcement: rose with ink in both themes (8.1:1), a fixed height so it never shifts the page. */
-.ann { --focus: var(--ink-fixed); background: var(--terracotta); color: var(--ink-fixed); font-size: .875rem; line-height: 1.2; color-scheme: light; }
+.ann { --focus: #212632; background: #F4ACB7; color: #212632; font-size: .875rem; line-height: 1.2; color-scheme: light; }
 .ann-off .ann { display: none; }
 .ann-row { display: flex; align-items: center; gap: 4px; height: 36px; }
 .ann-link { display: flex; flex: 1 1 auto; min-width: 0; align-items: center; justify-content: center; gap: 14px; height: 36px; color: inherit; text-decoration: none; white-space: nowrap; }
 .ann-link:hover { color: inherit; }
 .ann-link:hover .ann-cta { text-decoration-thickness: 2px; }
-.ann-link:focus-visible, .ann-close:focus-visible { outline: 2px solid var(--ink-fixed); outline-offset: -2px; }
+.ann-link:focus-visible, .ann-close:focus-visible { outline: 2px solid #212632; outline-offset: -2px; }
 .ann-link strong { font-weight: 700; }
 .ann-long { display: inline; overflow: hidden; text-overflow: ellipsis; }
 .ann-short { display: none; }

@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="184" height="20" viewBox="0 0 184 20" role="img" aria-labelledby="badge-title badge-desc">
   <title id="badge-title">Featured by Awesome REA</title>
-  <desc id="badge-desc">A compact slate badge linking to a project's entry in the Awesome REA collection.</desc>
+  <desc id="badge-desc">A compact purple badge linking to a project's entry in the Awesome REA collection.</desc>
   <clipPath id="badge-clip"><rect width="184" height="20" rx="3"/></clipPath>
   <g clip-path="url(#badge-clip)">
     <path fill="#fff" d="M0 0h88v20H0z"/>
-    <path fill="#3D405B" d="M88 0h96v20H88z"/>
+    <path fill="#53309C" d="M88 0h96v20H88z"/>
   </g>
-  <rect x=".5" y=".5" width="183" height="19" rx="2.5" fill="none" stroke="#3D405B"/>
-  <path d="m5.5 5 6-2 6 2v4.5c0 3.3-2.5 5.7-6 7.5-3.5-1.8-6-4.2-6-7.5Z" fill="#F4F1DE" stroke="#3D405B" stroke-width=".8" stroke-linejoin="round"/>
-  <text x="11.5" y="10.8" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="5.6" font-weight="700" fill="#2E3047">REA</text>
+  <rect x=".5" y=".5" width="183" height="19" rx="2.5" fill="none" stroke="#6235B5"/>
+  <path d="m5.5 5 6-2 6 2v4.5c0 3.3-2.5 5.7-6 7.5-3.5-1.8-6-4.2-6-7.5Z" fill="#FBFAFE" stroke="#53309C" stroke-width=".8" stroke-linejoin="round"/>
+  <text x="11.5" y="10.8" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="5.6" font-weight="700" fill="#49278D">REA</text>
   <g font-family="Verdana, Geneva, sans-serif" font-size="10.5">
-    <text x="23" y="13.8" fill="#2E3047">featured by</text>
+    <text x="23" y="13.8" fill="#49278D">featured by</text>
     <text x="136" y="13.8" text-anchor="middle" fill="#fff" font-weight="600" word-spacing="1">Awesome REA</text>
   </g>
 </svg>
