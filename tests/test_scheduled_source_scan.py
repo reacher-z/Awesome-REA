@@ -332,7 +332,7 @@ class NestedSchemaTests(unittest.TestCase):
 class WorkflowTests(unittest.TestCase):
     def test_schedule_permissions_upload_scope_and_bounds(self):
         workflow = (scheduled.ROOT / '.github/workflows/source-scan.yml').read_text()
-        self.assertIn("cron: '7 */2 * * *'", workflow)
+        self.assertIn("cron: '7 * * * *'", workflow)
         self.assertNotIn('timezone:', workflow)
         self.assertNotIn('pull_request', workflow)
         self.assertIn('permissions:\n  contents: read\n  actions: read\nconcurrency:', workflow)

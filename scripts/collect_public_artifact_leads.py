@@ -103,9 +103,9 @@ def lead_id(kind, url):
 
 
 def select_case_pages(urls, timestamp):
-    """Share the budget across sites and rotate pages each UTC two-hour slot, one per scheduled run."""
+    """Share the budget across sites and rotate pages each UTC hour, one per scheduled run."""
     point = dt.datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
-    cycle = point.toordinal() * 12 + point.hour // 2
+    cycle = point.toordinal() * 24 + point.hour
     groups = {}
     for url in sorted(set(urls)):
         groups.setdefault(urlsplit(url).hostname, []).append(url)

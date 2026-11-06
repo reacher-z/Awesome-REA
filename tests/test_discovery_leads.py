@@ -418,8 +418,12 @@ class OtherSourceTest(unittest.TestCase):
     def test_slow_sources_run_once_per_period(self):
         source = {'id': 'survey-sok', 'every_hours': 24}
         start = dt.datetime(2026, 11, 5, 1, 7, tzinfo=dt.timezone.utc)
-        runs = [collect.due(source, start + dt.timedelta(hours=2 * slot), False) for slot in range(12)]
+        runs = [collect.due(source, start + dt.timedelta(hours=slot), False) for slot in range(24)]
         self.assertEqual(sum(runs), 1)
+        twelve = {'id': 'github-topic-x', 'every_hours': 12}
+        self.assertEqual(sum(collect.due(twelve, start + dt.timedelta(hours=slot), False) for slot in range(24)), 2)
+        two = {'id': 'x', 'every_hours': 2}
+        self.assertEqual(sum(collect.due(two, start + dt.timedelta(hours=slot), False) for slot in range(24)), 12)
         self.assertTrue(collect.due(source, start, True))
         self.assertTrue(collect.due({'id': 'x'}, start, False))
 
@@ -434,7 +438,7 @@ class WorkflowTest(unittest.TestCase):
     def test_read_only_collection_and_a_separate_writing_ingest(self):
         import re
         self.assertEqual(list(self.jobs), ['collect', 'ingest', 'report'])
-        self.assertIn("cron: '7 1-23/2 * * *'", self.text)
+        self.assertIn("cron: '7 * * * *'", self.text)
         self.assertIn('permissions:\n  contents: read\nconcurrency:\n  group: followed-source-lead-discovery\n  cancel-in-progress: false', self.text)
         writes = {name: re.findall(r'^      ([a-z-]+): write$', job, re.MULTILINE) for name, job in self.jobs.items()}
         self.assertEqual(writes, {'collect': [], 'ingest': ['contents', 'pull-requests', 'actions'], 'report': ['issues']})
