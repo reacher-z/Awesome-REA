@@ -160,8 +160,8 @@ def badge_document(queue: dict) -> dict:
     """A shields.io endpoint badge; its colour cannot change between builds, so it states the time only."""
     latest = queue['latest']
     message = (discoveries.parse_time(latest['ingested_at']).strftime('%Y-%m-%d %H:%M UTC') if latest else 'none yet')
-    return {'schemaVersion': 1, 'label': 'last discovery ingest', 'message': message, 'color': '53309C',
-            'labelColor': '303447'}
+    return {'schemaVersion': 1, 'label': 'last discovery ingest', 'message': message, 'color': '9C4128',
+            'labelColor': '2A2C3F'}
 
 
 def card(record: dict, language: str, use_pro: bool) -> str:
