@@ -27251,5 +27251,187 @@
       "https://github.com/snare/voltron/blob/be9e54b109380a21e4ec7ec9b3ecc9d4a7fd6529/LICENSE",
       "https://github.com/snare/voltron/releases/tag/v0.1.8"
     ]
+  },
+  {
+    "id": "remill",
+    "name": "Remill",
+    "url": "https://github.com/lifting-bits/remill",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Static binary translation library that lifts AArch64, SPARC32, SPARC64, x86 and amd64 machine code, including AVX and AVX512, into LLVM bitcode, with AArch32 support underway. It focuses on lifting individual instructions accurately and is meant as a library for other tools such as McSema; its documentation walks through how an instruction is lifted, how instruction semantics are implemented and the overall design.",
+    "description_zh": "静态二进制翻译库，可把 AArch64、SPARC32、SPARC64、x86 和 amd64 机器码（包括 AVX 与 AVX512 指令）提升为 LLVM bitcode，AArch32 支持正在开发中。它专注于准确提升单条指令，定位是供 McSema 等其他工具调用的库；文档逐步介绍了一条指令如何被提升、如何实现指令语义以及整体设计。",
+    "evidence_url": "https://github.com/lifting-bits/remill/blob/56918a8c2554088e93389e97d292f4035286506c/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supported on Linux and tested on Ubuntu 22.04; it also works on macOS, and Windows support is experimental. Building uses the superbuild in dependencies/ with CMake 3.21+, Ninja, LLVM and Clang 15+, Intel XED, Google Flags, Log and Test and Python 3, and Linux builds can also run in Docker. Release at review: v6.0.1, published 2026-04-21; the reviewed master commit dates from 2026-08-27.",
+      "Apache-2.0 per LICENSE."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/lifting-bits/remill/blob/56918a8c2554088e93389e97d292f4035286506c/docs/LIFE_OF_AN_INSTRUCTION.md",
+      "https://github.com/lifting-bits/remill/blob/56918a8c2554088e93389e97d292f4035286506c/docs/DESIGN.md",
+      "https://github.com/lifting-bits/remill/blob/56918a8c2554088e93389e97d292f4035286506c/LICENSE",
+      "https://github.com/lifting-bits/remill/releases/tag/v6.0.1"
+    ]
+  },
+  {
+    "id": "iaito",
+    "name": "iaito",
+    "url": "https://github.com/radareorg/iaito",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Official Qt-based graphical interface for the radare2 reverse-engineering framework, aiming for parity with radare2's commands, features and keybindings so that existing r2 plugins and scripts keep working. Its README lists forensics, binary diffing and binary patching alongside disassembly; iaito was the original name before the project was forked as Cutter.",
+    "description_zh": "radare2 逆向工程框架的官方图形界面，基于 Qt 构建，力求在命令、功能和快捷键上与 radare2 保持一致，现有的 r2 插件和脚本都能继续使用。README 列出的功能除反汇编外，还包括取证分析、二进制对比和二进制修补；iaito 是该项目被分叉为 Cutter 之前的原名。",
+    "evidence_url": "https://github.com/radareorg/iaito/blob/a043f93e727a76d12496858fafa782ec2da65145/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs radare2 and Qt 5 or Qt 6. CI builds and releases cover Linux, macOS and Windows, Linux and WSL users can install it from Flathub (org.radare.iaito), and on macOS the app may need its signature fixed with xattr and codesign as the README shows. Release at review: 6.2.2, published 2026-09-06; the reviewed master commit dates from 2026-11-05.",
+      "GPL-3.0 per COPYING."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/radareorg/iaito/blob/a043f93e727a76d12496858fafa782ec2da65145/COPYING",
+      "https://github.com/radareorg/iaito/releases/tag/6.2.2"
+    ]
+  },
+  {
+    "id": "hexrays-codexplorer",
+    "name": "HexRaysCodeXplorer",
+    "url": "https://github.com/REhints/HexRaysCodeXplorer",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Hex-Rays decompiler plugin for navigating and reconstructing C++ code in IDA's pseudocode window. It reconstructs C++ object types from a selected pointer variable into IDA's local types, identifies virtual function tables and generates structures for them, lets the analyst click through virtual calls once objects are typed, visualizes a function's ctree as a graph, jumps from a pseudocode line to its disassembly and dumps ctrees and types to files. Its Object Explorer lists vtables with cross-references and RTTI parsing, and a batch mode processes many files without user interaction.",
+    "description_zh": "用于在 IDA 伪代码窗口中浏览和重建 C++ 代码的 Hex-Rays 反编译器插件。它能根据选中的指针变量重建 C++ 对象类型并存入 IDA 本地类型，识别虚函数表并为其生成结构体，在对象类型确定后可直接点击跳转到虚函数调用，以图形方式展示函数的 ctree，从伪代码行跳转到对应的反汇编，并把 ctree 和类型导出到文件。其 Object Explorer 可列出虚表及其交叉引用并解析 RTTI，批处理模式可在无人干预的情况下处理大量文件。",
+    "evidence_url": "https://github.com/REhints/HexRaysCodeXplorer/blob/dc48267360ca06c494b234f30f6764499c27c1e9/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Written in C/C++ for x86/x64 IDA with the Hex-Rays decompiler on Windows, Linux and macOS; the README says only the latest IDA and decompiler versions are tested. The newest GitHub release is 2.1, the IDA 7 edition, from 2018-03-14; the reviewed master commit dates from 2025-11-25.",
+      "The repository has no license file and GitHub detects no license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/REhints/HexRaysCodeXplorer/tree/dc48267360ca06c494b234f30f6764499c27c1e9/src",
+      "https://github.com/REhints/HexRaysCodeXplorer/releases/tag/2.1"
+    ]
+  },
+  {
+    "id": "vgmstream",
+    "name": "vgmstream",
+    "url": "https://github.com/vgmstream/vgmstream",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Library and tools that decode streamed, prerecorded video game audio in hundreds of formats and codecs, from common game engine files to single-game codecs, including looped music, subsongs, companion files, custom containers and encryption keys. TXTH text descriptors add support for further formats, including raw audio, and TXTP files set per-file options such as forced looping or merging files. It ships as the vgmstream-cli decoder, which converts supported files to WAV, the vgmstream123 player and plugins for Winamp, foobar2000, XMPlay and Audacious, and an online web player is available at vgmstream.org.",
+    "description_zh": "用于解码电子游戏中流式预录音频的库与工具，支持数百种格式和编解码器，从常见的游戏引擎文件到单款游戏专用的编解码器，并能处理循环音乐、子曲目、配套文件、自定义容器和加密密钥。借助 TXTH 文本描述文件可为更多格式（包括原始音频）添加支持，TXTP 文件则可为单个文件设置强制循环、合并多个文件等选项。它提供 vgmstream-cli 解码器（可把受支持的文件转换为 WAV）、vgmstream123 播放器，以及 Winamp、foobar2000、XMPlay 和 Audacious 插件，vgmstream.org 上还有在线网页播放器。",
+    "evidence_url": "https://github.com/vgmstream/vgmstream/blob/6802153425adde134e49394fc653455166d7d2f2/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Numbered releases are on GitHub and nightly builds on vgmstream.org; release at review: r2168, published 2026-10-25, and the reviewed master commit dates from 2026-11-05. Users supply the game audio files; doc/FORMATS.md lists the supported formats.",
+      "An ISC-style permissive license in COPYING, with portions under their own copyright notices."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/vgmstream/vgmstream/blob/6802153425adde134e49394fc653455166d7d2f2/doc/FORMATS.md",
+      "https://github.com/vgmstream/vgmstream/blob/6802153425adde134e49394fc653455166d7d2f2/doc/TXTH.md",
+      "https://github.com/vgmstream/vgmstream/blob/6802153425adde134e49394fc653455166d7d2f2/COPYING",
+      "https://github.com/vgmstream/vgmstream/releases/tag/r2168"
+    ]
+  },
+  {
+    "id": "payload-dumper",
+    "name": "payload dumper",
+    "url": "https://github.com/vm03/payload_dumper",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Python script that extracts the partition images, such as boot.img and system.img, from the payload.bin inside an Android OTA update package. It handles full OTAs directly and incremental OTAs with --diff by applying the update to original images that the user copies from a full OTA or dumps from the device, and it can also run from a Docker image.",
+    "description_zh": "从 Android OTA 更新包内的 payload.bin 中提取 boot.img、system.img 等分区镜像的 Python 脚本。完整 OTA 可直接提取；增量 OTA 则需加 --diff，并由使用者提供从完整 OTA 中取得或从设备上转储的原始镜像，脚本会在其基础上应用更新。它也可以通过 Docker 镜像运行。",
+    "evidence_url": "https://github.com/vm03/payload_dumper/blob/2f0a964b8b77c6244e3e12735f85539c938f9c97/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.6 or later with the protobuf package from requirements.txt; the user supplies the OTA package's payload.bin. The README says the script was tested on Yandex Amber OTAs, both full and incremental, under Linux and may also work on Windows.",
+      "The repository has no releases, and the reviewed master commit dates from 2025-04-18.",
+      "The repository has no license file and GitHub detects no license."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/vm03/payload_dumper/blob/2f0a964b8b77c6244e3e12735f85539c938f9c97/payload_dumper.py",
+      "https://github.com/vm03/payload_dumper/blob/2f0a964b8b77c6244e3e12735f85539c938f9c97/requirements.txt"
+    ]
+  },
+  {
+    "id": "malware-training-vol1",
+    "name": "Windows Malware Analysis training, volume 1 (malware_training_vol1)",
+    "url": "https://github.com/hasherezade/malware_training_vol1",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Slides and exercises for a Windows malware analysis training that builds an understanding of common malware techniques through programming, reverse engineering and Windows internals, and shows how analysis tools are used for particular goals. Module 1 covers compilation, the PE format, processes, WoW64, shellcode and PE loaders; module 2 introduces malware missions and tactics, hooking, persistence and banking trojans; module 3 introduces evasion and self-defence and fingerprinting, with obfuscation, anti-hooking, deobfuscation and kernel-mode components planned.",
+    "description_zh": "一套 Windows 恶意软件分析培训的幻灯片与练习，通过编程、逆向工程和 Windows 内部机制帮助学员理解常见的恶意软件技术，并演示如何用各种分析工具达成特定分析目标。第 1 单元涵盖编译、PE 格式、进程、WoW64、shellcode 和 PE 加载器；第 2 单元介绍恶意软件的目标与战术、挂钩、持久化和银行木马；第 3 单元介绍规避与自我保护以及指纹识别，混淆、反挂钩、反混淆和内核态组件等内容尚在计划中。",
+    "evidence_url": "https://github.com/hasherezade/malware_training_vol1/blob/acf72d45009140fed514c1dfa429122f01a2f6c0/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Aimed at people who already know the basics of programming and reverse engineering and want to enter Windows malware analysis. Slides are in slides/ and exercises in exercises/.",
+      "The README marks the material as a work in progress: several topics still lack slides or exercises. The reviewed main commit dates from 2024-07-01.",
+      "Published under the Creative Commons Attribution 4.0 license, per the README; the repository has no license file."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/hasherezade/malware_training_vol1/tree/acf72d45009140fed514c1dfa429122f01a2f6c0/exercises",
+      "https://github.com/hasherezade/malware_training_vol1/tree/acf72d45009140fed514c1dfa429122f01a2f6c0/slides"
+    ]
   }
 ]
