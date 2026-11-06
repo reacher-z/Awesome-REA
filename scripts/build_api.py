@@ -27,6 +27,7 @@ from agent_formats import (MARKDOWN, RECORD_JSON, alternate_links, collection_ma
                            resource_record)
 from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
 from data_downloads import CITATION_FIELDS
+from data_classes import DATA_CLASSES
 from requirement_facets import FACETS
 from review_pr import private_json_locations
 from sitemaps import instant, latest, normalized_date
@@ -240,7 +241,8 @@ def schema_document(site_url: str) -> dict:
                      'verified_at', 'verification', *entry_urls],
         'properties': {
             'id': identifier, 'record_type': {'const': 'resource'}, 'name': string, 'name_zh': string, 'url': url,
-            'kind': {'enum': list(KIND_LABELS)}, 'category': {'enum': list(CATEGORIES)}, 'group': string,
+            'kind': {'enum': list(KIND_LABELS)}, 'class': {'enum': list(DATA_CLASSES)},
+            'category': {'enum': list(CATEGORIES)}, 'group': string,
             'relationship': {'enum': list(RELATIONSHIPS)},
             'targets': {'type': 'array', 'minItems': 1, 'items': {'enum': list(TARGETS)}},
             'description_en': string, 'description_zh': string, 'requirements': strings, 'requirements_zh': strings,
@@ -265,6 +267,7 @@ def schema_document(site_url: str) -> dict:
             'arxiv_version_reviewed': nullable(string), 'first_arxiv_date': nullable(date), 'doi': nullable(string),
             'url': url, 'pdf_url': url, 'code_url': nullable(url), 'project_url': nullable(url),
             'targets': {'type': 'array', 'minItems': 1, 'items': {'enum': list(TARGETS)}}, 'kind': {'const': 'research'},
+            'class': {'enum': list(DATA_CLASSES)},
             'description_en': string, 'description_zh': string, 'scope_limitations_en': string,
             'scope_limitations_zh': string, 'why_fits_en': string, 'why_fits_zh': string, 'metadata_notes': string,
             'metadata_notes_zh': string, 'citation': {'type': 'object', 'propertyNames': {'enum': sorted(CITATION_FIELDS)}},

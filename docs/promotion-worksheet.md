@@ -21,6 +21,7 @@ Use the worksheet below in the issue or pull request that proposes the entry. Fi
 | Requirements | Platforms, versions, inputs and license terms for `requirements` and its Chinese translation. | Pinned evidence |
 | Classification | `kind`, `relationship` and `category`, each chosen independently. | [Contribution guide](../CONTRIBUTING.md#choose-kind-relationship-category-and-targets) |
 | Target rationale | Why each target applies, citing the evidence. Automatic scan labels are not a reason. | Pinned evidence |
+| Data class | If the project's main output reproduces one named real thing, its one `class`, named for the original thing. Leave it out otherwise. | [Data records](../data/README.md#data-records), pinned evidence |
 | Decision | Curate, or hold and name the missing evidence. | The rows above |
 
 ## Curate or hold
@@ -48,6 +49,7 @@ The scanned repository mandiant/capa is now the curated entry [`capa`](https://a
 | Requirements | Standalone builds for Linux, macOS and Windows, with the Linux build needing GLIBC 2.26+; the PyPI package omits the default rules; IDA, Ghidra and Binary Ninja integrations have their own version requirements (installation guide, plugin READMEs); Apache-2.0. |
 | Classification | `kind: tool`; `relationship: foundation`, because its documentation establishes no REA connection; `category: native-analysis`. |
 | Target rationale | `binary`: its documented inputs are executable modules, shellcode, sandbox reports on executables and files derived from them. The evidence supports no other target. |
+| Data class | No `class`: capa works on any executable and reproduces no one named thing. |
 | Decision | Curate as `capa`, `verified_at: 2026-10-19`. |
 
 After the change, `scan-272815213` is byte-for-byte the same record, still `automated-readme-scan`. Its line in the [native-analysis directory](repositories/native-analysis.md) gains a “Curated: capa” link only because the curated `url` is the exact repository root. Nothing was installed or run; the curated requirements state that no samples were analyzed.

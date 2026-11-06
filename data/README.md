@@ -1,6 +1,6 @@
 # Resource catalog format
 
-`rea-resources.json` and `tool-resources.json` contain the records rendered into both READMEs. They are arrays of objects with these fields. Every field is required except `additional_evidence_urls`, `added_at`, `requirement_facets` and `reconstruction_method`, which is recommended for case studies listed under Game and not allowed on any other record.
+`rea-resources.json` and `tool-resources.json` contain the records rendered into both READMEs. They are arrays of objects with these fields. Every field is required except `additional_evidence_urls`, `added_at`, `class`, `requirement_facets` and `reconstruction_method`, which is recommended for case studies listed under Game and not allowed on any other record.
 
 | Field | Meaning |
 | --- | --- |
@@ -9,7 +9,8 @@
 | `url` | Canonical public destination |
 | `category` | Task or tool family; `python3 scripts/catalog.py --list-categories` prints the values in use |
 | `kind` | Resource type: project, tool, integration, case-study, collection, documentation, learning-resource, or research |
-| `targets` | One or more browsing domains: `website`, `game`, `app`, `binary`, `firmware`, `protocol`; these describe task fit, not verified REA integration |
+| `class` | Data records only: exactly one of `software`, `game`, `apps`, `website`, `science`, `hardware`, as defined below |
+| `targets` | One or more browsing domains: `website`, `game`, `app`, `binary`, `firmware`, `protocol`; these describe task fit, not verified REA integration. `protocol` is the record's Protocol tag |
 | `relationship` | Connection to REA, or the independent role the evidence establishes; one of the values listed below |
 | `reconstruction_method` | Game case studies only, recommended: how the project reconstructs its game, one of the methods listed below |
 | `description_en` / `description_zh` | Original practical descriptions |
@@ -56,6 +57,30 @@ The validator accepts the category keys defined in `CATEGORIES` in [build_readme
 
 Keep a record's English `requirements` within about 1,500 characters in total, preferably in five items or fewer, and list prerequisites first: platform, versions, required inputs, then license terms. Keep every version minimum, license condition, required input and exclusion; leave out project history, detailed result narratives and sentences that repeat the description. The Chinese items in `site/translations.zh-CN.json` translate the same items. `python3 scripts/validate.py` prints one warning naming the records above the budget, longest first, without failing.
 
+## Data records
+
+Data is the catalog's first super-class. A record is a data point when its main output reproduces one named real thing:
+
+- rebuilt code: a decompilation, recompilation, port, engine or application reimplementation, or rebuilt website;
+- a working stand-in: a client, server, driver, firmware or emulator for that product;
+- a reconstructed protocol or format for that product;
+- a benchmark or dataset whose items are reproductions.
+
+A data point has one `class`, and only one, named for the original thing rather than the medium the reproduction runs on. A browser clone of Winamp is `software`, a browser game is `game`, and a client for a device's protocol is `hardware`. Decide from the record's own evidence, not its name.
+
+| Class | Covers |
+| --- | --- |
+| `software` | Mac, Linux and Windows software |
+| `game` | All games, including retro consoles and mobile games |
+| `apps` | Android, iOS and iPadOS apps |
+| `website` | Websites and website data, such as [WebsiteBench](https://website-bench.com/) |
+| `science` | Specialist STEM software, such as MATLAB, CAD, EDA, bioinformatics and simulation |
+| `hardware` | Firmware, chips, IoT and embedded devices |
+
+`class` is valid on `case-study` and `project` resources and on paper records; validation rejects it on every other kind, and rejects a list or a value outside this table. Tools that work on any target, integrations, collections, documentation, learning material and reports with nothing rebuilt take no class. A paper takes one only when it is a benchmark or dataset whose items are reproductions. Scan records keep their stored labels; a repository gets its class when it is curated.
+
+Protocol is a tag: `protocol` in `targets` marks a record's Protocol tag, and the record takes the class of the thing the protocol belongs to. [data_classes.py](../scripts/data_classes.py) defines the classes, their order and their labels.
+
 `benchmarks.json` is a separate repository comparison dataset. Star counts are observations at `observed_at`, not a live ranking, quality score, or predicted growth rate. It holds one GitHub REST API observation of 19 repositories (2 designated anchors and 17 comparison repositories) between 2026-10-16T00:47:46Z and 00:47:48Z. Each README evidence link names the default-branch commit that served the observed README, whose file matches `readme_blob_sha`. The repositories were chosen deliberately to cover high-profile references and direct neighbors, not sampled at random, so the data supports neither causal comparisons nor growth estimates. The [comparison notes](../docs/benchmark-research.zh-CN.md) (Chinese, dated snapshot) explain the selection and limitations.
 
 Curated case studies appear in the generated complete lists [docs/cases.md](../docs/cases.md) and [docs/cases.zh-CN.md](../docs/cases.zh-CN.md). Each README section shows its 10 newest cases.
@@ -67,6 +92,7 @@ Each paper record has exactly these fields; the validator rejects missing or ext
 | Field | Value | Meaning |
 | --- | --- | --- |
 | `id` | `paper-` followed by a lowercase hyphenated slug | Stable identifier, unique in the bibliography |
+| `class` | Optional, one [Data class](#data-records) | Benchmarks and datasets whose items are reproductions only |
 | `title` / `title_zh` | Text | Original title exactly as published / Chinese translation |
 | `authors` | Nonempty list of names, or `[]` with `authors_omitted` | Full author names as published, without duplicates |
 | `authors_omitted` | Optional `true` | The record leaves its author list out, at the maintainer's request: `authors` is then the empty list, and pages, README lines, citations and structured data show no names, only “Authors: see the paper” (“作者：见原文”) linking to the paper. The whole list is left out, never some of its names; leave the field out otherwise |

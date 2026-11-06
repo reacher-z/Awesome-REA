@@ -733,6 +733,7 @@ def scanner_child(seed, output, frontier_path, discovery_seconds=SCAN_SECONDS - 
                            candidate_buffer=min(200, max(50, (planned + 9) // 10)),
                            pending_metadata_budget=200, search_request_budget=360,
                            discovery_deadline=time.monotonic() + discovery_seconds,
+                           failed_batch_skips=5, failed_batch_pause=5,
                            seed_curated=True, seed_papers=True,
                            queries=[query + ' ' + search_frontier.GATES for query in APPROVED_QUERIES], output=output)
     rest = GitHub(token, 2)

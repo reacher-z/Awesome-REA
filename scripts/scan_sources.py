@@ -1262,7 +1262,7 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
             break
     print(f'DISCOVERY_COMPLETE known_repositories={len(known_ids)} new_readme_candidates={len(candidates)}; starting actual README reads', flush=True)
     checkpoint()
-    deferred = interrupted = False
+    deferred = interrupted = batch_skipped = False
 
     def interrupted_checkpoint():
         # A record appended before the interruption is kept; an ID whose record was not is retried later.
@@ -1286,6 +1286,7 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
             'request_count': 0, 'response_bytes': 0, 'reported_query_cost': 0,
             'queries_with_cost': 0, 'queries_without_cost': 0, 'elapsed_seconds': 0.0, 'last_rate_limit': {}}
         checkpoint_attempts = len(attempted_ids)
+        batch_skips = getattr(args, 'failed_batch_skips', 0)
         try:
             while len(records) < args.target:
                 batch = []
@@ -1309,7 +1310,8 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
                 transport_receipt['response_bytes'] += sum(row.get('response_bytes', 0) for row in receipts)
                 transport_receipt['reported_query_cost'] += sum((row.get('rate_limit') or {}).get('cost', 0) for row in receipts)
                 transport_receipt['last_rate_limit'] = dict(getattr(readme_transport, 'rate_limit', {}))
-                batch_paused = any(results.get(item['id'], {'status': 'retry'}).get('status') in ('retry', 'deferred') for item in batch)
+                statuses = {results.get(item['id'], {'status': 'retry'}).get('status') for item in batch}
+                batch_paused = bool(statuses & {'retry', 'deferred'})
                 batch_retry_after = max([60] + [int(value.get('retry_after') or 60) for value in results.values()])
                 for candidate in batch:
                     result = results.get(candidate['id'], {'status': 'retry'})
@@ -1373,6 +1375,14 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
                     attempted_ids.add(observed['id'])
                     retained_names.add(observed['full_name'].casefold())
                     (records if record else failures).append(observed)
+                if 'retry' in statuses and 'deferred' not in statuses and batch_skips > 0:
+                    # A failed request costs its batch, which later runs ask again. Rate limits still end reading.
+                    batch_skips -= 1
+                    deferred, batch_skipped = False, True
+                    reason = next((value.get('reason') for value in results.values() if value.get('status') == 'retry'), None)
+                    reason = reason if isinstance(reason, str) and re.fullmatch('[a-z-]{1,40}', reason) else 'unlisted'
+                    print(f'README_BATCH_SKIPPED reason={reason} skips_left={batch_skips}', flush=True)
+                    time.sleep(getattr(args, 'failed_batch_pause', 5))
                 if len(attempted_ids) - checkpoint_attempts >= 100 or deferred:
                     checkpoint()
                     checkpoint_attempts = len(attempted_ids)
@@ -1444,7 +1454,7 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
     # Keep the prior snapshot as an unchanged prefix; order only the new evidence.
     records[retained_successes:] = sorted(records[retained_successes:], key=lambda record: (-record['stars'], record['full_name'].casefold()))
     failures[retained_failures:] = sorted(failures[retained_failures:], key=lambda record: record['full_name'].casefold())
-    checkpoint(complete=not deferred and not (len(records) < args.target and pending_delivery_blocked))
+    checkpoint(complete=not deferred and not batch_skipped and not (len(records) < args.target and pending_delivery_blocked))
     reached = len(records) >= args.target
     print(f'COMPLETE successful_readme_scans={len(records)} failed={len(failures)} unique_repos={len(known_ids)} target_reached={reached}', flush=True)
     return 0 if reached else 1

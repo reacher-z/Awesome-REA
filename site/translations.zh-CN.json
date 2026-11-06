@@ -10550,5 +10550,478 @@
       "模拟范围仅包括驱动自身代码和直接导入的函数；访问硬件的驱动需要额外桩函数。",
       "Unlicense 许可证。"
     ]
+  },
+  "angr-management": {
+    "name": "angr-management 图形化二进制分析工具",
+    "requirements": [
+      "基于 angr 平台；v10.0.5 版的日期为 2026-10-22。",
+      "依 LICENSE 采用 BSD-2-Clause 许可。"
+    ]
+  },
+  "qira": {
+    "name": "QIRA 执行轨迹分析工具",
+    "requirements": [
+      "Ubuntu 14.04 和 16.04 可直接运行。",
+      "QEMU 追踪器需要 Linux 主机；对 Mac OS X 和 Windows 的原生支持非常有限。",
+      "QIRA 代码采用 MIT 许可证；仓库中的其他代码遵循各自的许可证。"
+    ]
+  },
+  "dependencies-pe": {
+    "name": "Dependencies Windows PE 依赖分析工具",
+    "requirements": [
+      "正常运行需要安装 Visual C++ Redistributable。",
+      "无法检测通过 LoadLibrary 动态加载的依赖。",
+      "递归分析需要在选项中启用，且可能占用大量内存。",
+      "仓库声明采用 MIT 许可证。"
+    ]
+  },
+  "dnlib": {
+    "name": "dnlib .NET 程序集读写库",
+    "requirements": [
+      "处理 .NET Core 程序集时，需禁用 GAC 加载并添加 .NET Core 引用程序集的搜索路径。",
+      "写入 Windows PDB 文件需要 Windows。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "hachoir": {
+    "name": "Hachoir 二进制流查看与编辑库",
+    "requirements": [
+      "需要 Python 3.7 或更新版本。",
+      "采用 GNU GPL v2 许可证。"
+    ]
+  },
+  "pigaios": {
+    "name": "Pigaios 源码与二进制匹配工具",
+    "requirements": [
+      "需要 Python Clang 绑定；README 指出 Clang 3.9 或更新版本应该可用。",
+      "需要带 IDAPython 的 IDA，才能匹配二进制文件并导入结果。",
+      "在 Windows 上，需要安装 LLVM 并将其加入 PATH。Colorama 是彩色显示的可选依赖，scikit-learn 是机器学习功能的可选依赖。",
+      "许可证：GPL-3.0。"
+    ]
+  },
+  "machoexplorer": {
+    "name": "MachOExplorer Mach-O 文件浏览器",
+    "requirements": [
+      "从源码构建需要 CMake 3.16 或更新版本、Qt 6 和支持 C++14 的编译器。",
+      "Capstone 是可选依赖，用于启用反汇编功能。",
+      "macOS 提供预编译版本；Linux 和 Windows 需要从源码构建。",
+      "仓库声明采用 MIT 许可证。"
+    ]
+  },
+  "me-cleaner": {
+    "name": "me_cleaner Intel ME 固件精简脚本",
+    "requirements": [
+      "需要 Python 和原始 Intel ME 固件映像。",
+      "写入修改后的映像通常需要外置 SPI 编程器。",
+      "主板兼容性各异；部分 OEM 固件在修改后无法启动，Intel ME 提供的功能也将无法使用。",
+      "许可证：GPL-3.0。"
+    ]
+  },
+  "flex-ios": {
+    "name": "FLEX iOS 应用内调试探索工具",
+    "requirements": [
+      "需要目标版本为 iOS 9 或更高的应用，发布版本中应排除 FLEX。",
+      "依 LICENSE 采用 BSD 风格条款。"
+    ]
+  },
+  "classdump-dyld": {
+    "name": "classdump-dyld 类头文件提取工具",
+    "requirements": [
+      "需要在 iOS 5 及以上版本的设备或 Mac OS X 上使用命令行终端。",
+      "仅适用于 Mach-O 文件。",
+      "若文件的保护机制阻止其他进程动态加载，则可能无法提取。",
+      "依 README 采用 GPL-3.0 许可。"
+    ]
+  },
+  "view8": {
+    "name": "View8 V8 字节码反编译器",
+    "requirements": [
+      "需要 Python 3.x。",
+      "处理原始 JSC 文件需要兼容的已修补 V8 反汇编程序；列出的版本为 9.4.146.24、10.2.154.26 和 11.3.244.8。",
+      "序列化输入使用 Python pickle，必须来自可信来源。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "unwebpack-sourcemap": {
+    "name": "unwebpack-sourcemap 源码恢复脚本",
+    "requirements": [
+      "需要 Python 3、BeautifulSoup4 和 requests。",
+      "适用于结合 React 或 Vue 模板的 TypeScript 项目。",
+      "仓库已归档，目前无人维护。",
+      "采用 MIT 许可证。"
+    ]
+  },
+  "wirebrowser": {
+    "name": "Wirebrowser 浏览器运行时插桩工具",
+    "requirements": [
+      "使用 macOS、Windows 或 Linux 桌面版，或通过 npm 从源码构建。",
+      "在 Linux 上使用 AppImage 时，须将已安装的 Chrome 扩展保留在主目录下的可见目录中。",
+      "仓库声明采用 MIT 许可证。"
+    ]
+  },
+  "process-dump": {
+    "name": "Process Dump 进程内存转储工具",
+    "requirements": [
+      "可在 32 位和 64 位 Windows 上运行，使用对应的独立可执行文件；以管理员身份运行可获得最佳访问权限。v3.0.0 版的日期为 2026-10-03。",
+      "依 LICENSE 采用 MIT 许可。"
+    ]
+  },
+  "mal-unpack": {
+    "name": "mal_unpack 动态脱壳工具",
+    "requirements": [
+      "在 Windows 上运行，并提供经过加壳的恶意软件可执行文件。",
+      "仅在虚拟机中使用，因为该工具会启动原始恶意软件。",
+      "许可证：BSD-2-Clause。"
+    ]
+  },
+  "unrpyc": {
+    "name": "Unrpyc Ren'Py 脚本反编译器",
+    "requirements": [
+      "Unrpyc v2 需要 Python 3.9 或更高版本；v1 需要 Python 2.7。",
+      "须根据游戏使用的 Ren'Py 版本选择工具版本；v2 的游戏注入方式支持 Ren'Py 8，v1 支持 Ren'Py 6 和 7。",
+      "依 README 和 LICENSE 采用 MIT 许可。"
+    ]
+  },
+  "bspsrc": {
+    "name": "BSPSource Source 引擎地图反编译器",
+    "requirements": [
+      "使用跨平台 JAR 包需要安装并配置 Java 24 或更高版本。",
+      "不支持 GoldSrc 和 Source 2 地图。",
+      "部分内部实体无法完全还原。",
+      "依 LICENSE.md 发布到公有领域。"
+    ]
+  },
+  "oghidra": {
+    "name": "OGhidra Ghidra 大模型分析集成",
+    "requirements": [
+      "需要 Python 3.12 或更高版本及 Ghidra；推荐使用 Ghidra 12.0.3。",
+      "构建适用于 Ghidra 12.0.3 的扩展需要 Java 21。",
+      "需要配置本地或外部 AI 服务；MCP 后端要求 Ghidra 客户端保持运行，PyGhidra 后端则需要有效的 Ghidra 项目或可导入的二进制文件。",
+      "依 LICENSE 采用 BSD 3-Clause，并提供商业许可选项。"
+    ]
+  },
+  "aidapal": {
+    "name": "aiDAPal IDA Pro 本地模型插件",
+    "requirements": [
+      "需要安装带有 Hex-Rays 的 IDA Pro。",
+      "需要下载模型权重和 modelfile，并在 Ollama 中完成配置。",
+      "插件需要 Python requests 包；默认配置连接本地 Ollama 服务。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "openlara": {
+    "name": "OpenLara《古墓丽影》开源引擎",
+    "requirements": [
+      "仓库声明采用 BSD-2-Clause 许可证。"
+    ]
+  },
+  "thyme": {
+    "name": "Thyme《将军》引擎重实现",
+    "requirements": [
+      "运行 Thyme 需要先安装《命令与征服：将军之绝命时刻》。",
+      "构建可用的二进制文件需要 Microsoft Visual Studio 2017 或更新版本。",
+      "Thyme 目前只能在 Windows 上运行；其自定义启动器支持已更新至 1.04 版的英文光盘版游戏。",
+      "仓库已归档。",
+      "许可证：GPL-2.0。"
+    ]
+  },
+  "chariot": {
+    "name": "Chariot《帝国时代》引擎重实现",
+    "requirements": [
+      "构建需要 Rust、受支持的 C/C++ 编译器和 SDL2。",
+      "运行需要初代《帝国时代》原版光盘提供游戏数据。",
+      "README 记载，截至 2016 年 7 月 8 日，项目尚不能游玩。",
+      "README 声明采用 MIT 许可证。"
+    ]
+  },
+  "opendiablo2": {
+    "name": "OpenDiablo2 暗黑破坏神 2 引擎",
+    "requirements": [
+      "运行 Diablo 2 需要在计算机上安装合法购买的 Diablo 2 及其 Lord of Destruction 资料片。",
+      "项目不包含运行 Diablo 2 所需的素材或游戏内容。",
+      "仓库已归档。",
+      "许可证：GPL-3.0。"
+    ]
+  },
+  "black-magic-debug": {
+    "name": "Black Magic Debug 微控制器调试工具",
+    "requirements": [
+      "需要连接微控制器目标。",
+      "项目已迁至 Codeberg，此 GitHub 仓库已归档。",
+      "依 COPYING 采用 GPL-3.0，部分代码另有 BSD 和 MIT 许可证文件。"
+    ]
+  },
+  "openocd": {
+    "name": "OpenOCD 片上调试工具",
+    "requirements": [
+      "访问硬件需要受支持的适配器和目标配置。",
+      "从源码构建需要 GCC 或 Clang、make、libtool、pkg-config 0.23 或更新版本（或 pkgconf），以及 libjim 0.79 或更新版本。",
+      "依 COPYING 采用 GPL-2.0-or-later。"
+    ]
+  },
+  "logicanalyzer": {
+    "name": "LogicAnalyzer 逻辑分析仪",
+    "requirements": [
+      "需要受支持的 Pico 硬件、匹配的固件和采集软件。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "btlejuice": {
+    "name": "BtleJuice 框架",
+    "requirements": [
+      "需要 Node.js 4.3.2 或更新版本、npm，以及 README 所列的蓝牙系统依赖。",
+      "核心组件和代理需要分别运行在两台机器上，并使用两个蓝牙 4.0 或更新版本的适配器。",
+      "代理无法在 Docker 容器中运行。",
+      "仓库已归档，且没有许可证文件。"
+    ]
+  },
+  "neardrop": {
+    "name": "NearDrop Nearby Share 协议实现",
+    "requirements": [
+      "需要 Mac 和 Android 设备连接到同一个 Wi-Fi 网络。",
+      "通过 NearDrop 的二维码连接时，Android 设备须设为公开可见。",
+      "仅支持 Wi-Fi 局域网；运行期间，网络中的所有人都能看到该设备。",
+      "许可证：Unlicense。"
+    ]
+  },
+  "x64dbg-mcp-setsuna": {
+    "name": "x64dbg MCP 服务器插件",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11 主机，以及 2023 年或更新版本的 x64dbg 或 x32dbg。",
+      "构建需要 CMake 3.15 或更新版本、安装了 C++ 桌面开发工作负载的 Visual Studio 2022、vcpkg 和 Git。",
+      "执行调试操作时，调试器必须处于暂停状态；内存和寄存器写入默认禁用。",
+      "许可证：MIT。"
+    ]
+  },
+  "jebmcp": {
+    "name": "JEB-MCP JEB Pro 集成",
+    "requirements": [
+      "需要 JEB Pro，并在其图形界面中启动项目脚本。",
+      "需要 Python 3.11 或更高版本及 uv。",
+      "需要配置连接该服务器的 MCP 客户端。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "re-shell": {
+    "name": "re-shell 逆向工程环境",
+    "requirements": [
+      "需要启用 nix-command 和 flakes 实验性功能的 Nix。",
+      "文件专用技能和工作流程需要 Claude Code。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "ghidra-rpc": {
+    "name": "ghidra-rpc Ghidra 命令行集成",
+    "requirements": [
+      "需要 Ghidra 11 或更高版本、Python 3.11 或更高版本、Java 17 或更高版本，以及 uv。",
+      "用于驱动会话的 AI 编程助手需要能够运行 shell 命令。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "bloaty": {
+    "name": "Bloaty 二进制体积分析工具",
+    "requirements": [
+      "构建项目需要 CMake。",
+      "如果克隆仓库时未包含 Git 子模块，构建前需检出这些子模块。",
+      "PE/COFF 和 WebAssembly 支持仍处于实验阶段。",
+      "仓库声明采用 Apache-2.0 许可证。"
+    ]
+  },
+  "soot": {
+    "name": "Soot Java 字节码分析框架",
+    "requirements": [
+      "需要 Java 运行环境，以及待分析的 Java 类或字节码。",
+      "可通过 Maven、Gradle 或 SBT 引入依赖，也可使用 JAR 文件。",
+      "仓库声明采用 LGPL-2.1 许可证。"
+    ]
+  },
+  "bingrep": {
+    "name": "bingrep 二进制查看工具",
+    "requirements": [
+      "构建需要 rustc 1.74 或更高版本。",
+      "PE 支持仅限调试信息。",
+      "仓库声明采用 MIT 许可证。"
+    ]
+  },
+  "libpeconv": {
+    "name": "libPeConv PE 文件处理库",
+    "requirements": [
+      "需要 Windows。",
+      "不支持使用 MUI 的应用程序。",
+      "许可证：BSD-2-Clause。"
+    ]
+  },
+  "viper-framework": {
+    "name": "Viper 二进制分析与样本管理框架",
+    "requirements": [
+      "通过 pip3 安装。",
+      "Viper 1.x 已归档并停止开发；重构版本为 Viper 2。",
+      "依 LICENSE 采用 BSD-3-Clause。"
+    ]
+  },
+  "droidlysis": {
+    "name": "DroidLysis 安卓应用预分析工具",
+    "requirements": [
+      "需要 Python 3 和 README 列出的系统软件包，包括 Java 运行环境。",
+      "需要安装 Apktool 和 Baksmali，并在配置文件中设置其位置；Dex2jar 为可选工具。",
+      "默认不分析已知第三方 SDK；可通过相应选项将其纳入分析。",
+      "仓库声明采用 MIT 许可证。"
+    ]
+  },
+  "pkhex": {
+    "name": "PKHeX 宝可梦存档编辑器",
+    "requirements": [
+      "需要 .NET 10。",
+      "存档文件不能带有主机专用密钥加密；从主机导入或导出存档需要使用存档管理工具。",
+      "许可证：GPLv3。"
+    ]
+  },
+  "thug": {
+    "name": "Thug 低交互蜜罐客户端",
+    "requirements": [
+      "依 README 采用 GPL-2.0。"
+    ]
+  },
+  "cuckoo3": {
+    "name": "Cuckoo3 恶意软件分析工具",
+    "requirements": [
+      "需要运行 Python 3.10 的 Linux（Ubuntu）主机和 Windows 沙箱。",
+      "README 指出它尚不适合生产环境。",
+      "许可证：EUPL-1.2。"
+    ]
+  },
+  "cuckoo-sandbox": {
+    "name": "Cuckoo Sandbox 恶意软件分析沙箱",
+    "requirements": [
+      "README 标明 Cuckoo Sandbox 2.x 已无人维护，仓库已归档。",
+      "依 docs/LICENSE 采用 GPL-3.0。"
+    ]
+  },
+  "fq": {
+    "name": "fq 二进制格式分析工具",
+    "requirements": [
+      "从源代码构建需要 Go 1.22 或更高版本。",
+      "仓库声明采用 MIT 许可证。"
+    ]
+  },
+  "innoextract": {
+    "name": "innoextract Inno Setup 解包工具",
+    "requirements": [
+      "构建需要 Boost 1.37 或更新版本、CMake 2.8 或更新版本，以及可用的 C++ 编译器。",
+      "liblzma 是可选依赖，但缺少它时无法解包大多数由较新版本 Inno Setup 制作的安装包。",
+      "无法单独选择组件进行解包，按名称筛选的功能也有限。",
+      "许可证：ZLIB。"
+    ]
+  },
+  "metasm": {
+    "name": "Metasm Ruby 汇编处理套件",
+    "requirements": [
+      "使用该套件及其示例脚本需要 Ruby。",
+      "依 README 采用 LGPL；LICENCE 文件为 LGPL-2.1。"
+    ]
+  },
+  "opentomb": {
+    "name": "OpenTomb：《古墓丽影》引擎重实现",
+    "requirements": [
+      "运行原版游戏关卡需要相应游戏的资源文件。",
+      "从源码编译需要 C++11 和 README 所列的开发依赖。",
+      "CD 音频仅支持 OGG 格式。",
+      "许可证：LGPL-3.0。"
+    ]
+  },
+  "savagewindrecomp": {
+    "name": "Savage Wind Recomp：《塞尔达传说：旷野之息》静态重编译",
+    "requirements": [
+      "需要自行取得并提取的 Nintendo Switch 版游戏及其 1.9.0 更新；项目不提供游戏文件。",
+      "需要 Windows 10 或更新版本或 Linux、支持 SSE4.2 的 64 位处理器、支持 Vulkan 1.3 的显卡、16 GB 内存及约 20 GB 可用磁盘空间。",
+      "项目仍处于 alpha 阶段；主线后续内容可能出现错误或崩溃。",
+      "依 LICENSE 采用 MIT 许可。"
+    ]
+  },
+  "retruxx": {
+    "name": "retruxx：《Hard Truck Apocalypse》逆向工程",
+    "requirements": [
+      "构建需要 Windows、Visual Studio C++ 构建工具、CMake、Git、DirectX SDK（2010 年 6 月版）和 FMOD Core SDK。",
+      "运行游戏需要已安装的《Ex Machina / Hard Truck Apocalypse》，以提供游戏数据。",
+      "可执行文件与驱动 DLL 的位数必须兼容。",
+      "仓库中没有许可证文件。"
+    ]
+  },
+  "nxnative": {
+    "name": "nxnative Switch 游戏原生打包工具",
+    "requirements": [
+      "构建需要运行 macOS 26.6 或更高版本的 Mac，以及 Xcode 27.2、Homebrew 和 arm64 版本的 Python 3.12 或更高版本。",
+      "构建 Switch 游戏需要用户自己的游戏文件和 prod.keys；Switch 2 游戏使用 NUP 文件或已提取的游戏文件，无需 prod.keys。",
+      "在 iPhone 和 iPad 上游玩需要 iOS 或 iPadOS 26 或更高版本及文档指定的较新设备；Switch 2 游戏目前仅说明可在 Mac 上运行。",
+      "许可证：MIT。"
+    ]
+  },
+  "impacket": {
+    "name": "Impacket 网络协议库",
+    "requirements": [
+      "需要 Python 3；README 建议使用 pipx 进行系统级安装。",
+      "README 指出该软件用于研究和教学，不适用于生产环境或商业产品。",
+      "依 LICENSE 采用略经修改的 Apache Software License。"
+    ]
+  },
+  "r0idamcp": {
+    "name": "r0idamcp（IDA Pro MCP 服务器）",
+    "requirements": [
+      "需要 IDA Pro；建议使用 8.3 或更高版本。",
+      "在 IDA Pro 使用的 Python 环境中通过 pip 安装 FastMCP。",
+      "使用可连接 SSE 服务器的 MCP 客户端，并允许访问所配置的服务器端口。",
+      "许可证：MIT。"
+    ]
+  },
+  "somcp": {
+    "name": "SOMCP Android 原生库 MCP 服务器",
+    "requirements": [
+      "需要 Android 8.0 或更高版本。",
+      "正式版 APK 的模拟执行需要 64 位设备；Frida 功能需要在已 root 的设备上另行安装 Frida server 或 gadget。",
+      "仓库声明采用 AGPL-3.0 许可证。"
+    ]
+  },
+  "virtualxposed": {
+    "name": "VirtualXposed 免 Root Xposed 环境",
+    "requirements": [
+      "需要 Android 5.0–10.0 设备，并安装 VirtualXposed APK。",
+      "应用和 Xposed 模块都必须安装在 VirtualXposed 内，模块才能生效。",
+      "不支持修改系统的模块和资源 Hook；README 禁止商业用途。",
+      "仓库声明采用 GPL-3.0 许可证。"
+    ]
+  },
+  "edxposed": {
+    "name": "EdXposed 框架",
+    "requirements": [
+      "Android 8.0 至 11。",
+      "Magisk v21 或更高版本，以及 Riru v23 或更高版本。",
+      "按 README 所述安装流程使用 EdXposed Manager。",
+      "许可证：GPL-3.0。"
+    ]
+  },
+  "vector-lsposed": {
+    "name": "Vector 框架",
+    "requirements": [
+      "需要 Android 8.1 至 Android 17 Beta。",
+      "需要安装较新版本的 Magisk 或 KernelSU，并启用 Zygisk。",
+      "采用 GPL-3.0 许可证。"
+    ]
+  },
+  "justtrustme": {
+    "name": "JustTrustMe 证书校验绕过模块",
+    "requirements": [
+      "需要已获取 root 权限的 Android 设备。",
+      "需要安装 Xposed 框架。",
+      "依 License.md 采用 Apache-2.0。"
+    ]
+  },
+  "spy-debugger": {
+    "name": "spy-debugger 移动页面调试代理",
+    "requirements": [
+      "在电脑上通过 npm 安装 spy-debugger。",
+      "将手机和电脑连接到同一网络，并设置手机的 HTTP 代理。",
+      "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
+      "许可证：MIT。"
+    ]
   }
 }

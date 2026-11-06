@@ -8,6 +8,7 @@ import re
 import sys
 from urllib.parse import parse_qsl, unquote, urlsplit
 
+from data_classes import class_value_errors
 from review_dates import inclusion_date_error, review_date_is_future
 
 
@@ -29,7 +30,7 @@ FIELDS = TEXT_FIELDS | {
 # Optional publisher container metadata for published papers, omitted when unverified,
 # the UTC date the record first reached main (feeds only; not a review date), and
 # authors_omitted: true for a record that leaves its author list empty and points readers to the paper.
-OPTIONAL_FIELDS = {'citation', 'added_at', 'authors_omitted'}
+OPTIONAL_FIELDS = {'citation', 'added_at', 'authors_omitted', 'class'}
 CITATION_PATTERNS = {
     'container_title': None, 'publisher': None, 'series': None,
     'volume': re.compile(r'[1-9]\d*'), 'issue': re.compile(r'[A-Za-z0-9]+'),
@@ -196,6 +197,7 @@ def validate_papers(records, errors, *, url_check, now=None):
         status = record.get('publication_status')
         if not isinstance(status, str) or status not in STATUSES:
             errors.append(f'{where}.publication_status: unknown publication status')
+        errors.extend(f'{where}.{problem}' for problem in class_value_errors(record))
         if record.get('kind') != 'research' or record.get('verification') != 'source-reviewed':
             errors.append(f'{where}: preserve research/source-reviewed labels')
         if record.get('runtime_tested') is not False:
