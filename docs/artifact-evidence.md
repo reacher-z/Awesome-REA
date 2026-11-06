@@ -22,16 +22,16 @@ The example wording is taken from existing records.
 | Situation | What to record | Example wording | Record |
 | --- | --- | --- | --- |
 | The authors link public code | The author-provided link in `code_url`; the commit you reviewed | “The paper links the public code repository directly.” | `paper-dashboard2code` |
-| Source is public but has no license file | That reuse terms are unstated; no license inferred from visibility | “The repository has no license file, so no reuse license is implied.” | `paper-ble-automata-learning` |
+| Source is public but has no license file | That reuse terms are unstated; no license inferred from visibility | “The repository has no license file.” | `paper-ble-automata-learning` |
 | Code is announced or promised | `code_url: null`; the announcement and where it appears | “the official page still labels code as coming soon.” | `paper-sprite-game-ui` |
-| The named location does not provide the code | `code_url: null`; what the location actually contains | “No code link is therefore listed, and no public implementation is claimed.” | `paper-dynpre` |
+| The named location does not provide the code | `code_url: null`; what the location actually contains | “the 2025-08-27 snapshot contains only a README asking readers to contact the authors by email for the code and declares no license.” | `paper-dynpre` |
 | Only a hosted demo or showcase is available | The page, described as a demo rather than a benchmark release | “The project link is a showcase with demos, not a verified release of the full evaluation framework.” | `paper-gamereplica` |
 | Access is gated or on request | The public access notice and its conditions; gated files left unopened | “The linked dataset requires accepting access conditions and sharing contact information.” | `paper-dashboard2code` |
-| A repository exists but the authors do not link it | `code_url: null`; why the repository is not recorded | “is not linked from the paper, so it is not recorded as author-provided code.” | `paper-binmetric` |
+| A repository exists but the authors do not link it | `code_url: null`; why the repository is not recorded | “declares no license and is not linked from the paper.” | `paper-binmetric` |
 | License signals conflict | Each signal with its source; no single license asserted | “Licensing signals conflict: README text says CC-BY-NC-SA-4.0, Hugging Face metadata says Apache-2.0, the project page says CC BY-SA 4.0, and setup.py lists MIT while the repository has no LICENSE file. No uniform artifact license is asserted.” | `paper-vision2web` |
 | A license is declared in only one place | Where the declaration appears and where it is missing | “The README’s License heading names MIT, but the pinned commit has no LICENSE file and package.json has no license field; the declaration appears only in the README.” | `frida-mcp-yfe404` |
 | A later artifact version differs from the evaluated one | Which version you reviewed and how it differs | “The paper’s exact v1.00 data is available only on request, while the public v1.01 release has revised splits” | `paper-exebench` |
-| The evaluated version cannot be identified | That the current pinned revision is not claimed to be the historical one | “reviewed at a current pinned commit rather than claimed to be an unchanged historical release.” | `paper-pix2code` |
+| The evaluated version cannot be identified | The revision you reviewed | “The linked author repository is the implementation identified by that version, reviewed at a current pinned commit.” | `paper-pix2code` |
 
 Write the Chinese field with the same facts; the [Chinese version of this guide](artifact-evidence.zh-CN.md) quotes the Chinese wording of the same records. Unresolved questions stay in the record as stated uncertainty, with the sources that conflict, rather than being settled by assumption.
 
