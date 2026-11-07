@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mm3-recomp",
+    "name": "Midtown Madness 3 recompilation",
+    "url": "https://github.com/MattSG/mm3-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Midtown Madness 3 for the original Xbox to a native executable with xboxrecomp. Windows x64 gameplay has been checked with Direct3D 12 or Vulkan, both through SDL3. Linux x64 has a build path. The builder does not support macOS. Check SHA in the Windows builder reports whether the disc matches a tested dump. The command-line program is mm3_recomp.exe.",
+    "description_zh": "该项目用 xboxrecomp 把原版 Xbox 的《Midtown Madness 3》静态重编译成原生可执行文件。Windows x64 的游戏过程已经用 Direct3D 12 或 Vulkan 检查过，两者都经过 SDL3。Linux x64 有一条构建路径。构建器不支持 macOS。Windows 构建器里的 Check SHA 会报告光盘是否匹配已测试的转储。命令行程序是 mm3_recomp.exe。",
+    "requirements": [
+      "Windows: Python 3.12 or newer, Git, CMake, and Visual Studio 2022 or newer with the C++ desktop and CMake workloads. python scripts/setup.py --iso takes the disc image. Linux needs a Vulkan driver, Ninja, OpenSSL, SDL3, and the FFmpeg development libraries.",
+      "License: GPL-3.0-only for the current project code. Earlier revisions remain available under MIT."
+    ],
+    "evidence_url": "https://github.com/MattSG/mm3-recomp/blob/4d3d732f051ee23ca86257216475dc93510680ac/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
