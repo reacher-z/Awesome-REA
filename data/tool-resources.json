@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mbbsdasm",
+    "name": "MBBSDASM",
+    "url": "https://github.com/mbbsemu/MBBSDASM",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "MBBSDASM is a C# disassembler for 16-bit New Executable (NE) EXE and DLL files, written with .NET Core. It was built to study The Major BBS and Worldgroup modules, and the README says it also disassembles other NE files, with Solitaire and Calculator from Windows 3.1 used as checks. A text UI starts when the program is run with no arguments.",
+    "description_zh": "MBBSDASM 是用 C# 和 .NET Core 编写的 16 位 New Executable（NE）EXE 与 DLL 反汇编器。它用来研究 The Major BBS 和 Worldgroup 模块，README 写明它也能反汇编其他 NE 文件，并用 Windows 3.1 的纸牌和计算器做过检查。不带参数运行时会启动文本界面。",
+    "evidence_url": "https://github.com/mbbsemu/MBBSDASM/blob/52dc12ada40f6e7603da3adf4aefc2a598306a78/readme.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      ".NET Core hosts the disassembler. The text UI uses Terminal.Gui. One command-line form in the README is -i input.dll -o output.txt -strings -analysis.",
+      "The README licenses MBBSDASM under the 2-clause BSD License. It also names SharpDisasm as 2-clause BSD and Terminal.Gui as MIT."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
