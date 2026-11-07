@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "dothack-recompilation-case": {
+    "name": ".hack//Recompilation",
+    "requirements": [
+      "当前构建目标是 build/app CMake 树里的 ps2EntryRunner。开发运行时把 game/infection/SLUS_202.67 传给感染篇运行器。开发主要在 Linux 上进行。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
