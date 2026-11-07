@@ -4,13 +4,13 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
 - [Game](#game) (239)
-- [App](#app) (62)
+- [App](#app) (63)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
 - [Protocol](#protocol) (91)
@@ -342,6 +342,7 @@
 - [**Elgato HDR: a userspace capture path for the Elgato 4K X’s 10-bit mode**](https://github.com/talkaboutdesign/elgato-hdr) - A native macOS app that reaches the Elgato 4K X capture card’s 10-bit P010 video mode, which the project says Apple’s built-in webcam driver does not expose to apps. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/elgato-hdr-uvc-capture-case/)</sub>
 - [**Galaxy Buds Client: an unofficial manager built on Samsung’s earbud protocol**](https://github.com/timschneeb/GalaxyBudsClient) - Reimplements control of Samsung Galaxy Buds over their proprietary RFCOMM serial protocol in a cross-platform desktop and Android manager. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/galaxy-buds-client-protocol-case/)</sub>
 - [**LGwebOS-menubar: a native macOS remote for LG webOS TVs**](https://github.com/gabrielgreco1/TVmenubar-MacOS) - A native macOS menu-bar app that pairs with an LG webOS TV over its local encrypted WebSocket interface to launch apps, switch inputs, adjust volume and picture settings, send pointer input and cast selected media. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lgwebos-menubar-remote-case/)</sub>
+- [**LibrePods: AirPods features on Android and Linux through a reverse-engineered protocol**](https://github.com/librepods-org/librepods) - Implements the proprietary protocol that AirPods use with Apple devices, which the author reports reverse-engineering, so that Android and Linux apps can switch noise-control modes, read ear detection and accurate battery levels, and use conversational awareness, head gestures and hearing-aid settings. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/librepods-airpods-protocol-case/)</sub>
 - [**RKD Telemetry Extractor: decoding Race-Keeper track-day recordings**](https://github.com/sam-dumont/rkd-telemetry-extractor) - Documents the proprietary .rkd telemetry format written by Race-Keeper “Instant Video” recorders, whose bundled player runs only on Windows, and implements matching Python and Go parsers that export GPS and IMU channels as Telemetry Overlay CSV and GPX. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rkd-telemetry-extractor-case/)</sub>
 - [**Screen Studio: an author-reported REA study of auto-zoom rules**](https://x.com/i/article/2109834677343432704) - The author reports using REA to map Screen Studio’s Electron package, reading six auto-zoom and cursor rules from its obfuscated code with Claude Code’s help, and having Claude Code write an independent recorder and renderer from those rules. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/screen-studio-auto-zoom-case/)</sub>
 - [**Wino Mail: recreating Windows Mail and Calendar**](https://github.com/bkaankose/Wino-Mail) - Native Windows client that aims to preserve the familiar Windows Mail and Calendar experience while rebuilding its functionality. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wino-mail-case/)</sub>

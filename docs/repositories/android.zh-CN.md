@@ -7,7 +7,7 @@
 这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
 - [skylot/jadx](https://github.com/skylot/jadx) — 将 Dex 反编译为 Java 的工具。 **[50,988 星标]** · 精选：[JADX](https://awesomerea.org/zh/resources/jadx/)
-- [librepods-org/librepods](https://github.com/librepods-org/librepods) — 让 AirPods 摆脱 Apple 生态系统的限制。 **[30,324 星标]**
+- [librepods-org/librepods](https://github.com/librepods-org/librepods) — 让 AirPods 摆脱 Apple 生态系统的限制。 **[30,324 星标]** · 精选：[LibrePods：借助逆向得出的协议在 Android 和 Linux 上使用 AirPods 功能](https://awesomerea.org/zh/resources/librepods-airpods-protocol-case/)
 - [iBotPeaches/Apktool](https://github.com/iBotPeaches/Apktool) — 用于逆向工程 Android APK 文件的工具。 **[25,935 星标]** · 精选：[Apktool](https://awesomerea.org/zh/resources/apktool/)
 - [MobSF/Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) — Mobile Security Framework（MobSF）是自动化的一体化移动应用（Android/iOS/Windows）渗透测试、恶意软件分析与安全评估框架，支持静态和动态分析。 **[21,966 星标]** · 精选：[Mobile Security Framework（MobSF）](https://awesomerea.org/zh/resources/mobsf/)
 - [Konloch/bytecode-viewer](https://github.com/Konloch/bytecode-viewer) — 面向 Java 8+ JAR 与 Android APK 的逆向工程套件，包含反编译器、编辑器、调试器等。 **[15,677 星标]** · 精选：[Bytecode Viewer Java/Android 逆向工程套件](https://awesomerea.org/zh/resources/bytecode-viewer/)
