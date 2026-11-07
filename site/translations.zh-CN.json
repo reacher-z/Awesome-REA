@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "crash-woc-decomp": {
+    "name": "古惑狼：The Wrath of Cortex反编译",
+    "requirements": [
+      "需要校验值如上的 PAL v1.03 文件。安装步骤在 CONTRIBUTING.md，可选 Docker 或本机构建。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "crash-woc-decomp",
+    "name": "Wrath of Cortex decompilation",
+    "url": "https://github.com/denzi-gh/crashwoc-decomp-ps2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This matching decompilation of Crash Bandicoot: The Wrath of Cortex for the PlayStation 2 targets PAL retail v1.03, SLES-50386. SLES_503.86 is 6,731,763 bytes, SHA-256 7fc6826d08c42a5a92fc018edae3e520783beb5a8330410251192bfe26b1eca1. SYSTEM.CNF is 56 bytes, SHA-256 86fe327e4576516f57004800b2663c75c8a65a62872f3fdf3aa0618daf23d9c1. The files go in orig/pal103/. objdiff.json is generated after setup.",
+    "description_zh": "这个《古惑狼：The Wrath of Cortex》PlayStation 2 版的匹配反编译针对 PAL 零售版 v1.03，SLES-50386。SLES_503.86 是 6,731,763 字节，SHA-256 7fc6826d08c42a5a92fc018edae3e520783beb5a8330410251192bfe26b1eca1。SYSTEM.CNF 是 56 字节，SHA-256 86fe327e4576516f57004800b2663c75c8a65a62872f3fdf3aa0618daf23d9c1。文件放在 orig/pal103/。安装之后会生成 objdiff.json。",
+    "requirements": [
+      "The PAL v1.03 files with those hashes. Setup is in CONTRIBUTING.md, for Docker or a native build.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/denzi-gh/crashwoc-decomp-ps2/blob/0e68faf6b0d7c9d7af8bbceb787c9a792d2fe4eb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
