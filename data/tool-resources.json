@@ -36548,7 +36548,7 @@
       "Reviewed at the v0.1.7 pre-release tag commit (2026-10-09); v0.1.6 is the latest full release. The v0.1.6 notes list optimizations and behavior changes such as a removed island loading screen and an AutoAim setting. Only the ULUS-10041 v1.05 release is targeted, and the output is a native LCSNative build, not recovered authored source or a PSP emulator.",
       "Requires the user’s own US v1.05 (ULUS-10041) copy: a decrypted EBOOT.ELF and the disc’s PSP_GAME folder. The README states that game files are not included.",
       "Windows builds need Visual Studio 2022 and LLVM clang-cl, linking Direct3D 12 and bundled FFmpeg. Linux builds need glslangValidator plus Vulkan, SDL2 and FFmpeg development packages; Debian and Arch Docker environments and a route for building the Windows binary on Linux are included. The framework needs CMake 3.20+ and C++20.",
-      "Tests cover the host settings menu, key bindings, presentation policy and frame counting, alongside synthetic framework fixtures; Linux can enable the Khronos Vulkan validation layer. No gameplay, fidelity or performance results are published, and this collection ran nothing.",
+      "Tests cover the host settings menu, key bindings, presentation policy and frame counting, alongside synthetic framework fixtures; Linux can enable the Khronos Vulkan validation layer.",
       "The repository declares MIT, credited to PSPRecomp contributors, with FFmpeg under LGPL 2.1+. The checked-in generated corpus derives from the commercial executable, so the MIT file does not resolve rights in it or in game content. The reviewed sources establish no AI or REA use."
     ],
     "additional_evidence_urls": [
