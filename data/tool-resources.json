@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "soulcalibur2hd-recomp-case",
+    "name": "Soulcalibur II HD recompiled",
+    "url": "https://github.com/n0madic/Soulcalibur2HD-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This project runs the PlayStation 3 game Soulcalibur II HD Online natively on a Mac or PC. ps3recomp translates the PowerPC and Cell SPU code ahead of time. Graphics use Metal on macOS and Vulkan on Linux and Windows.",
+    "description_zh": "该项目在 Mac 或 PC 上原生运行 PlayStation 3 游戏 Soulcalibur II HD Online。ps3recomp 提前翻译 PowerPC 和 Cell SPU 代码。macOS 上画面走 Metal，Linux 和 Windows 上走 Vulkan。",
+    "requirements": [
+      "The player supplies the USA PSN release NPUB31366, including the package and its license. Update 01.01 is optional. Python 3.10 or newer is required. The README says it works on Apple Silicon Macs and on Windows Vulkan.",
+      "Repository code is GPL-2.0-or-later. The prebuilt program is distributed under GPL-3.0-or-later because it contains Apache-2.0 parts."
+    ],
+    "evidence_url": "https://github.com/n0madic/Soulcalibur2HD-recomp/blob/3e96e66aebdf33671e9f6a44fd0c77f0d7b95f07/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
