@@ -36543,6 +36543,7 @@
     "description_zh": "OtterSec 研究人员介绍了一套智能体流程：为闭源的 GoonFi V2 Solana 程序重建 Rust 源码，直至用原工具链重新构建即可复现所部署的 ELF。逐函数指令评分、确定性合并评审，以及对汇编等刷分写法的禁用约束引导智能体工作；对齐函数顺序和 panic 位置路径后，最后的差异得以消除。文章与配套仓库记录了方法和验证脚本，内部工具及智能体对话记录仍未公开。",
     "evidence_url": "https://osec.io/blog/goonfi-decompilation/",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "The article by Renato Marziano and Robert Chen is dated 2026-10-15. Its target is the GoonFi V2 sBPF program as originally deployed at slot 448984043, which the verification script identifies as a 243,080-byte ELF; the article shows 26,432 .text instructions. The companion README says the live program was upgraded on 2026-10-06 to fix the reported bugs, so current on-chain code is a different build. The output is reconstructed Rust source, not a client for the protocol or an update of the live program.",
