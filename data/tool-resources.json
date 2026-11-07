@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gow-ascension-pc",
+    "name": "Ascension",
+    "url": "https://github.com/arnaldolima1/gow-ascension-pc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Ascension is a static recompilation of the PlayStation 3 game God of War: Ascension. The recompiler and runtime live in a ps3kit fork of ps3recomp. The source layout expects the disc under work/disc and EBOOT.ELF before the C++ is generated. scripts/windows/build.ps1 builds with Visual Studio 2022, clang-cl, CMake, and Ninja. The RSX renderer is compiled first by build-gpu.ps1 and comes from RPCS3. A from-scratch build is listed at 20 to 40 minutes and 16 GB of RAM. Saves go in gamedata/dev_hdd0.",
+    "description_zh": "Ascension 是 PlayStation 3 游戏《战神：崛起》的静态重编译。重编译器和运行时在 ps3recomp 的分支 ps3kit 里。源码布局要求光盘内容在 work/disc，并在生成 C++ 之前准备好 EBOOT.ELF。scripts/windows/build.ps1 用 Visual Studio 2022、clang-cl、CMake 和 Ninja 构建。RSX 渲染器先由 build-gpu.ps1 编译，代码来自 RPCS3。从零构建大约需要 20 到 40 分钟和 16 GB 内存。存档在 gamedata/dev_hdd0。",
+    "requirements": [
+      "An extracted God of War: Ascension disc and EBOOT.ELF. Visual Studio 2022, CMake, Ninja, and the Vulkan SDK for the GPU build.",
+      "License: MIT for this repository. A build that includes the RPCS3 RSX renderer is GPL-2.0."
+    ],
+    "evidence_url": "https://github.com/arnaldolima1/gow-ascension-pc/blob/184c31880b9ebba03a28238b0a82e001dddb1d41/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

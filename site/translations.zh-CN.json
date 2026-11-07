@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gow-ascension-pc": {
+    "name": "Ascension",
+    "requirements": [
+      "需要已提取的《战神：崛起》光盘和 EBOOT.ELF。需要 Visual Studio 2022、CMake、Ninja，以及 GPU 构建用的 Vulkan SDK。",
+      "许可证：这个仓库为 MIT。包含 RPCS3 RSX 渲染器的构建为 GPL-2.0。"
+    ]
   }
 }
