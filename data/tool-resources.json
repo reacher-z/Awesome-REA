@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "quest64-decomp",
+    "name": "Quest 64 decompilation",
+    "url": "https://github.com/Mallos31/Quest",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles Quest 64. The US ROM is named baserom.us.z64. The build is ./configure and ninja.",
+    "description_zh": "该仓库反编译 Quest 64。美版 ROM 命名为 baserom.us.z64。构建命令是 ./configure 和 ninja。",
+    "requirements": [
+      "Clone with submodules. getctx.py needs pyperclip.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Mallos31/Quest/blob/401fe0edbad858057d6bf7d05335f88c8a3faf41/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
