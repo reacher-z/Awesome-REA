@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "forza-horizon-1-recomp": {
+    "name": "极限竞速地平线重编译",
+    "requirements": [
+      "需要 Xcode、CMake、Ninja、Git 和 Python 3。把解压后的光盘放到 FH1/。文档中的命令是 python3 scripts/bootstrap_macos.py、sh scripts/build_macos.sh 和 sh scripts/run_macos.sh。",
+      "审阅的 README 没有给这个项目写出许可证。它把 ReXGlue 的许可证文本放在 patches/REXGLUE-LICENSE.txt。"
+    ]
   }
 }

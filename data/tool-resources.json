@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "forza-horizon-1-recomp",
+    "name": "Forza Horizon 1 recompilation",
+    "url": "https://github.com/NerunSmarts/ForzaRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is an experimental static recompilation of Forza Horizon 1 for Apple Silicon macOS, using ReXGlue. It treats default.xex, XMediaFacade_default.xex, and SpeechFacade_default.xex as separate guest modules. The README says a playable result has not been demonstrated. Only the disc revision named in config/disc.json is supported, and the build checks the three XEX hashes.",
+    "description_zh": "这是用 ReXGlue 把《极限竞速：地平线》静态重编译到 Apple 芯片 macOS 的实验。它把 default.xex、XMediaFacade_default.xex 和 SpeechFacade_default.xex 当作分开的客户模块。README 写明可玩的结果还没有演示出来。目前只支持 config/disc.json 里写明的光盘修订版，构建会检查这三个 XEX 的哈希。",
+    "requirements": [
+      "Xcode, CMake, Ninja, Git, and Python 3. Put the extracted disc in FH1/. The documented commands are python3 scripts/bootstrap_macos.py, sh scripts/build_macos.sh, and sh scripts/run_macos.sh.",
+      "The reviewed README does not name a license for this project. It keeps ReXGlue's license text in patches/REXGLUE-LICENSE.txt."
+    ],
+    "evidence_url": "https://github.com/NerunSmarts/ForzaRecomp/blob/db6c4618110cf79fb3fbe6f0508bcc7ee00bfb93/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
