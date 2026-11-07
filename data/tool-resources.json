@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tekken-tag-tournament-2-pc",
+    "name": "Tekken Tag Tournament 2 PC",
+    "url": "https://github.com/shihabal3amri/tekken-tag-tournament-2-pc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a native Windows port of Tekken Tag Tournament 2 for Xbox 360, built with XenonRecomp. ttt2_setup.exe takes a USA or Europe disc image and Title Update 3, checks them, and builds the PC version. It runs on Windows 10 or 11 with a DirectX 11 GPU, up to 4K at 60 fps, with all 59 fighters available. Online matches use rollback over Steam. Ranked Match, leaderboards, teams, and replay search need a community server. The server is written in Go.",
+    "description_zh": "这是 Xbox 360 游戏《铁拳 Tag Tournament 2》的 Windows 原生移植，用 XenonRecomp 构建。ttt2_setup.exe 接受美版或欧版光盘镜像和 Title Update 3，校验后构建 PC 版。它在 Windows 10 或 11 上运行，需要 DirectX 11 显卡，最高 4K、60 帧，59 名角色都可用。在线对战通过 Steam 使用回滚网络代码。排位赛、排行榜、队伍和回放搜索需要社区服务器。服务器用 Go 编写。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, a DirectX 11 GPU, and about 13 GB free. A USA or Europe Xbox 360 disc image plus Title Update 3. Steam for online play.",
+      "The reviewed README does not name a license for this repository. It names XenonRecomp as MIT, and FFmpeg and libmspack as LGPL."
+    ],
+    "evidence_url": "https://github.com/shihabal3amri/tekken-tag-tournament-2-pc/blob/8fc8036a4bd8309905b1311310cee5bddc199bc6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
