@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "brawl-recompiled",
+    "name": "Brawl Recompiled: native Windows port of Super Smash Bros. Brawl",
+    "url": "https://github.com/josiahg2502-glitch/BrawlRecompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Brawl Recompiled is a native Windows port of Super Smash Bros. Brawl made by statically recompiling the game's PowerPC code, main.dol and all 126 REL modules, to C++ with WiiCompiled. The README says boot, saves, the menus tested so far, VS battles, attract demos, the start of Classic mode, and the opening of the Subspace Emissary work, and that the project is unfinished.",
+    "description_zh": "Brawl Recompiled 是《任天堂明星大乱斗 X》的原生 Windows 移植，使用 WiiCompiled 把游戏的 PowerPC 代码、main.dol 和全部 126 个 REL 模块静态重编译为 C++。README 写明启动、存档、目前测试过的菜单、对战、吸引演示、经典模式的开始，以及亚空间的开场可以工作，项目尚未完成。",
+    "evidence_url": "https://github.com/josiahg2502-glitch/BrawlRecompiled/blob/a77be8847ec9d8cf6128f086fe9c493d105ecbce/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The user supplies their own disc.",
+      "The README lists boot, saves, tested menus, VS battles, attract demos, the start of Classic mode, and the Subspace Emissary opening as the current working portion.",
+      "GitHub reports no license file."
+    ],
+    "verification": "source-reviewed",
+    "class": "game",
+    "reconstruction_method": "static-recompilation"
   }
 ]
