@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "chronon-case",
+    "name": "Chronon",
+    "url": "https://github.com/hogsy/chronon",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Chronon is an open-source reimplementation of Anachronox on the Quake 2 engine. The README says the work follows public documentation and observation, and that nothing is playable yet.",
+    "description_zh": "Chronon 是在 Quake 2 引擎上对《Anachronox》的开源重实现。README 写明这项工作依据公开文档和观察，并且目前还不能游玩。",
+    "requirements": [
+      "The engine can initialise itself from an Anachronox game directory and load the game's DAT packages.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/hogsy/chronon/blob/a54d3deae8768af702884ddd8be921a32e229a2d/readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
