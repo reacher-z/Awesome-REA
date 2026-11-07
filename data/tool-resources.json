@@ -36528,5 +36528,37 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sq8l-64-rebuild-case",
+    "name": "SQ8L: a 64-bit rebuild of Siegfried Kullmann's 0.91b plugin",
+    "url": "https://github.com/sq8l-revival/SQ8L",
+    "description_en": "Rebuilds SQ8L 0.91b, Siegfried Kullmann's 32-bit Windows VST of the Ensoniq SQ-80, as a 64-bit plugin from the original binary. The README says the source was never released and that a regression command compares output hashes with hashes of the original plugin.",
+    "description_zh": "把 Siegfried Kullmann 的 32 位 Windows VST SQ8L 0.91b（Ensoniq SQ-80）从原始二进制重建为 64 位插件。README 写明源码从未发布，并且一条回归命令把输出哈希与原插件的哈希比较。",
+    "evidence_url": "https://github.com/sq8l-revival/SQ8L/blob/e45279823a76245cfbd330d7739850ff043822c1/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/sq8l-revival/SQ8L/blob/e45279823a76245cfbd330d7739850ff043822c1/LICENSE.md"
+    ],
+    "requirements": [
+      "The README's regression check does not need the original DLL: cmake --build build --target sq8l_render_check, then ./build/sq8l_render_check --regression tests/regression. Preparing new references needs SQ8L.dll v0.91b, which is not in the repository. The README prints SHA-256 ffbb70884a6cd2af9600d287deebb2ba8dc6ec2270150ceef04c23d0fc92ab0e for that DLL.",
+      "Builds are VST2, VST3, Audio Unit, CLAP, and LV2. The README says the original plugin's editor drawing was ported and then changed, so the window is not claimed to be pixel-identical.",
+      "The README says 1176 test renders, 120.8 million samples per channel, had zero differences against the original plugin in an x86 emulator, and that the regression command compares 243 MIDI cases with hashes of the original output.",
+      "LICENSE.md says the maintainers grant no licence for the original work, including the reproduced behavior, artwork, factory sounds, and SQ-80 data, and that the new emulator, analysis tools, plug-in and platform layers, build files, and docs are under the MIT License, copyright 2026 The SQ8L port contributors. Third-party components keep their own licences."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "targets": [
+      "binary"
+    ]
   }
 ]
