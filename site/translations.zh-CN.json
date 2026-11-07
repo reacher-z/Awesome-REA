@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "namco-2x-systems": {
+    "name": "Namco 2x Systems",
+    "requirements": [
+      "需要每个游戏写明的 MAME zip。Linux 构建脚本如 ./build.sh 接受那个 zip。",
+      "许可证：这个仓库的代码为 MIT。Nuklear 为 MIT 或公有领域。Windows 程序还包含 zlib 许可证下的 SDL2 和 zlib，以及 Mesa。"
+    ]
   }
 }
