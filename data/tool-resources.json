@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "goomba",
+    "name": "gooMBA",
+    "url": "https://github.com/HexRaysSA/goomba",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "gooMBA is a Hex-Rays Decompiler plugin that simplifies mixed Boolean-arithmetic expressions. It handles linear expressions and sign extension, checks simplifications with z3, and uses a fingerprint oracle for non-linear expressions. The action name is goomba:run. Options, including MBA_ORACLE_PATH and the z3 timeout, are in goomba.cfg. Release builds target IDA Pro and IDA Teams 8.2. From IDA 8.3 the plugin is included with those products.",
+    "description_zh": "gooMBA 是 Hex-Rays 反编译器插件，用来化简混合布尔算术表达式。它处理线性表达式和符号扩展，用 z3 检查化简结果，并用指纹预言机处理非线性表达式。动作名是 goomba:run。选项在 goomba.cfg，包括 MBA_ORACLE_PATH 和 z3 超时。发布构建针对 IDA Pro 和 IDA Teams 8.2。从 IDA 8.3 起，这个插件随这些产品一起提供。",
+    "requirements": [
+      "IDA Pro or IDA Teams 8.2 for the release builds. Later versions include the plugin.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/HexRaysSA/goomba/blob/8302f5bf6e6e5455128e0efd6838f04363245790/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
