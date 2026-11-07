@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokopia-recomp",
+    "name": "Pokopia Recomp",
+    "url": "https://github.com/drakolordx7/switch2-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Pokopia Recomp rebuilds Pokémon Pokopia for Nintendo Switch 2, version 2.0.1a, as a native Windows program. PokopiaLauncher.exe takes an extracted dump, or NSP and XCI files with the owner's key files, compiles the game, and then builds a shader cache. Windows 10 or 11 x64, Vulkan 1.3, and 16 GB of RAM are required. A source build copies exefs into game/dump/exefs and runs recomp/scripts/build_game.cmd pkp, then game-build/scripts/build.ps1. The toolchain is Visual Studio 2022 Build Tools, LLVM, CMake, Ninja, Python 3.13, the .NET 8 SDK, vcpkg, Rust, and Node.js.",
+    "description_zh": "Pokopia Recomp 把 Nintendo Switch 2 游戏《Pokémon Pokopia》2.0.1a 重建成原生 Windows 程序。PokopiaLauncher.exe 接受已提取的转储，或带所有者密钥文件的 NSP 和 XCI，先编译游戏，再构建着色器缓存。需要 Windows 10 或 11 x64、Vulkan 1.3 和 16 GB 内存。源码构建把 exefs 复制到 game/dump/exefs，运行 recomp/scripts/build_game.cmd pkp，然后运行 game-build/scripts/build.ps1。工具链是 Visual Studio 2022 生成工具、LLVM、CMake、Ninja、Python 3.13、.NET 8 SDK、vcpkg、Rust 和 Node.js。",
+    "requirements": [
+      "A personal copy of Pokémon Pokopia 2.0.1a. NSP or XCI input also needs that console's key files.",
+      "License: GPL-3.0. Third-party terms are in runtime/THIRD_PARTY_NOTICES.md and recomp/THIRD_PARTY.md."
+    ],
+    "evidence_url": "https://github.com/drakolordx7/switch2-recomp/blob/5339bf85b05e84c34a7f18d8a43db1de1f1692b2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
