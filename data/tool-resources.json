@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mikage-dev",
+    "name": "Mikage Developer Edition",
+    "url": "https://github.com/mikage-emu/mikage-dev",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Mikage Developer Edition is a Nintendo 3DS emulator. The build is CMake, Conan 2, and Ninja. On Linux the Vulkan libraries come from the system. A first launch needs aes_keys.txt in the build folder and a virtual NAND bootstrapped from a game update. After that, the program runs a .cci or opens the system menu. An embedded GDB server listens on port 12345 when launched with --debug, and a debug console is on port 12347. Profiling uses Tracy.",
+    "description_zh": "Mikage Developer Edition 是一个 Nintendo 3DS 模拟器。构建使用 CMake、Conan 2 和 Ninja。在 Linux 上，Vulkan 库来自系统。第一次启动需要 build 文件夹里的 aes_keys.txt，以及从游戏更新分区引导出的虚拟 NAND。之后程序可以运行 .cci 或打开系统菜单。带 --debug 启动时，内嵌的 GDB 服务器监听 12345 端口，调试控制台在 12347 端口。性能分析使用 Tracy。",
+    "requirements": [
+      "CMake, Conan 2, and Ninja. Linux also needs the Vulkan libraries.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/mikage-emu/mikage-dev/blob/3e1952bf0cab6c02fa82814fde390a42111c4d49/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
