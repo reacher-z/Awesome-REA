@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "drakengard-3-recompiled": {
+    "name": "龙背上的骑士 3 重编译",
+    "requirements": [
+      "需要美版光盘 BLUS31197 的转储文件夹或已解密 ISO，或 PSN 包 NPUB31251，以及 1.01 更新包。大约需要 16 GB 空闲空间。",
+      "许可证：MIT。ps3recomp 和 Dear ImGui 为 MIT。Inter 字体为 SIL Open Font License 1.1。"
+    ]
   }
 }
