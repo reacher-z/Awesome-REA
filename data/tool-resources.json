@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gapstone",
+    "name": "gapstone",
+    "url": "https://github.com/bnagy/gapstone",
+    "category": "binary-libraries",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "gapstone is a Go binding for the Capstone disassembly library. The README marks the repository retired and points to the fork at knightsc/gapstone, while the retained text names Capstone 4.0.1 as the upstream version it tracked.",
+    "description_zh": "gapstone 是 Capstone 反汇编库的 Go 绑定。README 标明仓库已停止维护，并指向 knightsc/gapstone 这个分叉；保留的正文写明它跟踪的上游版本是 Capstone 4.0.1。",
+    "requirements": [
+      "The README says the binding is no longer maintained.",
+      "The retained upstream note names Capstone 4.0.1."
+    ],
+    "evidence_url": "https://github.com/bnagy/gapstone/blob/ede92aaeaba7fc982607d0ca437cb406ca3adba4/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
