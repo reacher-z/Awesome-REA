@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "conker-live-recompiled",
+    "name": "Live & Recompiled",
+    "url": "https://github.com/giacomozama/live-and-recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Live & Recompiled is a native Windows and Linux port of the original Xbox game Conker: Live & Reloaded, built on Xbox XBE Recomp. It renders with Vulkan and supports single-player and multiplayer. The supported USA disc default.xbe has SHA-1 2232a1b3874d67b4bb4cf53a940420d2dab59535. The Microsoft Store backwards-compatible release is also accepted.",
+    "description_zh": "Live & Recompiled 是初代 Xbox 游戏《Conker: Live & Reloaded》的 Windows 和 Linux 原生移植，基于 Xbox XBE Recomp。它用 Vulkan 渲染，支持单人和多人。受支持的美版光盘 default.xbe 的 SHA-1 为 2232a1b3874d67b4bb4cf53a940420d2dab59535。Microsoft Store 的向下兼容版本也被接受。",
+    "requirements": [
+      "Download the Windows or Linux release, run setup-windows.exe or ./setup-linux, and point it at the disc, extracted folder, or DefaultPackage. It writes Game.exe on Windows and Game on Linux.",
+      "License: GPL-3.0 only. The README says the Xbox XBE Recomp parts keep that project's MIT license."
+    ],
+    "evidence_url": "https://github.com/giacomozama/live-and-recompiled/blob/0f1d9368ef39f30aca2d449509f7682e959a0199/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
