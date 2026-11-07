@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "burnout3-pc",
+    "name": "Burnout 3 Takedown: native Windows port",
+    "url": "https://github.com/danielgomesvieira2000/burnout3-pc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A native Windows port of the PlayStation 2 game Burnout 3: Takedown. The README says the game's program is translated to C++ and compiled for the PC, with 60 frames per second or the display refresh rate, up to four times the PlayStation 2 resolution, widescreen, and controller rumble.",
+    "description_zh": "PlayStation 2《火爆狂飙 3：失控》的原生 Windows 移植。README 写明游戏程序被翻译成 C++ 并在 PC 上编译，帧率可以是每秒 60 帧或显示器刷新率，分辨率最高约为 PlayStation 2 的四倍，并支持宽屏和手柄震动。",
+    "evidence_url": "https://github.com/danielgomesvieira2000/burnout3-pc/blob/69e4cfadb10e8e71fb451aad4222fcf3bc95e585/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The user supplies their own disc. The README says no game content is included.",
+      "GitHub reports the repository license as NOASSERTION."
+    ],
+    "verification": "source-reviewed",
+    "class": "game",
+    "reconstruction_method": "port"
   }
 ]

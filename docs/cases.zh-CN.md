@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -188,7 +188,7 @@
 - [**Zelda 64: Recompiled：无需完整源码反编译的《姆吉拉的假面》原生移植**](https://github.com/Zelda64Recomp/Zelda64Recomp) - 通过 N64Recomp 将《姆吉拉的假面》转为原生应用，并使用 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zelda64recomp-case/)</sub>
 
 <a id="game-port"></a>
-### 基于重建源码的移植 (33)
+### 基于重建源码的移植 (34)
 
 - [**2 Ship 2 Harkinian：基于反编译的《姆吉拉的假面》原生移植**](https://github.com/2ship2harkinian/2ship2harkinian) - 以改编自 zeldaret/mm 反编译的源码为基础，构建《塞尔达传说：姆吉拉的假面》的原生 Windows、Linux 和 macOS 版本，并由 libultraship 重新实现 N64 SDK 函数。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/2ship2harkinian-mm-port-case/)</sub>
 - [**3SX：延续 PS2 反编译的《街头霸王 III：3rd Strike》原生移植**](https://github.com/crowded-street/3sx) - 延续 3s-decomp 的 PS2 反编译成果，将《街头霸王 III：3rd Strike》构建为可在 Windows、macOS 和 Linux 上运行的原生 C 程序，以 SDL3 处理画面、输入和声音，以 GekkoNet 实现回滚联机。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/3sx-third-strike-native-port-case/)</sub>
@@ -196,6 +196,7 @@
 - [**Atlantis Native：将 Atlantis 与 Atlantis II 引擎移植到 Rust**](https://github.com/ripleyXLR8/atlantis-native) - Atlantis Native 把经逆向重建的 CryOmni3D Atlantis 引擎移植到 Rust，支持 Atlantis: The Lost Tales 与 Atlantis II。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/atlantis-native-case/)</sub>
 - [**BattleShip：AI 辅助的 Super Smash Bros. 原生移植**](https://github.com/JRickey/BattleShip) - 使用 libultraship 和 Torch 移植已有的 Super Smash Bros. N64 反编译成果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/battleship-port-case/)</sub>
 - [**Budokai Tenkaichi 3：基于一致性反编译的原生 PC 移植**](https://github.com/z3xox/Tenkaichi3Decomp) - 将 Dragon Ball Z: Budokai Tenkaichi 3（PS2 美版 SLUS-21678）的反编译代码编译到 PC，运行在新的渲染、音频、输入和平台层上，而非借助模拟器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tenkaichi3-pc-port-case/)</sub>
+- [**Burnout 3 Takedown：原生 Windows 移植**](https://github.com/danielgomesvieira2000/burnout3-pc) - PlayStation 2《火爆狂飙 3：失控》的原生 Windows 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/burnout3-pc/)</sub>
 - [**Cosmo：Cosmo's Cosmic Adventure 原生移植版**](https://github.com/digows/cosmo) - Cosmo 将 Cosmo's Cosmic Adventure: Forbidden Planet 的重建源码移植到 macOS、Linux 和 Windows。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cosmo-native-port-case/)</sub>
 - [**CTR Turbocharged：基于 Crash Team Racing 反编译成果的 PC 移植**](https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged) - 在 Crash Team Racing: High Octane 移植版基础上扩展而成；High Octane 源自基于 CTR-ModSDK PlayStation 反编译成果的 CTR Native 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ctr-turbocharged-port-case/)</sub>
 - [**d2mac-linux：将《Diablo II》Mac 可执行文件移植到 32 位 Linux**](https://github.com/jaenster/d2mac-linux) - d2mac-linux 将《Diablo II》1.14d Mac 版 i386 Mach-O 转为 ELF，并用 Zig 重写所需的 Darwin、Carbon 和 AGL 导入接口，使其移植到 32 位 Linux。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/d2mac-linux-case/)</sub>

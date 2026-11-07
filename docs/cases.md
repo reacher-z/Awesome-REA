@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -188,7 +188,7 @@
 - [**Zelda 64: Recompiled — a native Majora’s Mask port without a full source decompilation**](https://github.com/Zelda64Recomp/Zelda64Recomp) - Uses N64Recomp to translate Majora’s Mask into a native application and RT64 for rendering. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda64recomp-case/)</sub>
 
 <a id="game-port"></a>
-### Ports of reconstructed source (33)
+### Ports of reconstructed source (34)
 
 - [**2 Ship 2 Harkinian: a native Majora’s Mask port built on the decompilation**](https://github.com/2ship2harkinian/2ship2harkinian) - Builds native Windows, Linux and macOS versions of The Legend of Zelda: Majora’s Mask from an adapted copy of the zeldaret/mm decompilation, with libultraship reimplementing N64 SDK functions. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/2ship2harkinian-mm-port-case/)</sub>
 - [**3SX: a native Street Fighter III: 3rd Strike port continuing the PS2 decompilation**](https://github.com/crowded-street/3sx) - Builds Street Fighter III: 3rd Strike as native C for Windows, macOS and Linux, continuing the 3s-decomp PS2 decompilation, with SDL3 for video, input and audio and GekkoNet for rollback netplay. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/3sx-third-strike-native-port-case/)</sub>
@@ -196,6 +196,7 @@
 - [**Atlantis Native: porting the Atlantis and Atlantis II engines to Rust**](https://github.com/ripleyXLR8/atlantis-native) - Atlantis Native ports the reverse-engineered CryOmni3D Atlantis engine to Rust for Atlantis: The Lost Tales and Atlantis II. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/atlantis-native-case/)</sub>
 - [**BattleShip: an AI-assisted Super Smash Bros. native port**](https://github.com/JRickey/BattleShip) - Ports the existing Super Smash Bros. N64 decompilation using libultraship and Torch. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/battleship-port-case/)</sub>
 - [**Budokai Tenkaichi 3: a native PC port built on a matching decompilation**](https://github.com/z3xox/Tenkaichi3Decomp) - Compiles the decompiled code of Dragon Ball Z: Budokai Tenkaichi 3 (PS2, USA release SLUS-21678) for PC on a new renderer, sound, input and platform layer rather than an emulator. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/tenkaichi3-pc-port-case/)</sub>
+- [**Burnout 3 Takedown: native Windows port**](https://github.com/danielgomesvieira2000/burnout3-pc) - A native Windows port of the PlayStation 2 game Burnout 3: Takedown. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/burnout3-pc/)</sub>
 - [**Cosmo: a native port of Cosmo's Cosmic Adventure**](https://github.com/digows/cosmo) - Cosmo ports the reconstructed source of Cosmo's Cosmic Adventure: Forbidden Planet to macOS, Linux and Windows. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/cosmo-native-port-case/)</sub>
 - [**CTR Turbocharged: a PC sourceport built on the Crash Team Racing decompilation**](https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged) - Extends the Crash Team Racing: High Octane sourceport, which derives from the CTR Native port of the CTR-ModSDK PlayStation decompilation, into Windows and Linux builds with a native 3D renderer, selectable aspect ratios and frame rates up to 240 FPS. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ctr-turbocharged-port-case/)</sub>
 - [**d2mac-linux: porting the Diablo II Mac executable to 32-bit Linux**](https://github.com/jaenster/d2mac-linux) - d2mac-linux ports the Diablo II 1.14d Mac executable to 32-bit Linux by converting its i386 Mach-O container to ELF and reimplementing imported Darwin, Carbon and AGL interfaces in Zig. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/d2mac-linux-case/)</sub>
