@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "parasite-eve-recomp",
+    "name": "Parasite Eve recompilation",
+    "url": "https://github.com/alexbeavs-ps1-ports/parasite-eve-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles the two-disc USA release of Parasite Eve with PSXRecomp and recomp-ui. Both discs contain the same executable, and each passed a startup test. Release 0.3.3 is Windows x64. The v0.3.5 packages add Linux x64 and macOS on Apple Silicon and Intel, and remain candidates until their startup gates pass. OpenBIOS covers setup.",
+    "description_zh": "该项目用 PSXRecomp 和 recomp-ui 静态重编译双碟美版《寄生前夜》。两张碟的可执行文件相同，并且各自通过了启动测试。0.3.3 发布是 Windows x64。v0.3.5 的包增加 Linux x64 以及 Apple Silicon 和 Intel 上的 macOS，在启动检查通过前仍是候选包。安装阶段使用 OpenBIOS。",
+    "requirements": [
+      "Initialize submodules, then run psxrecomp_cli.py generate with game.toml and a CUE under disc/, and cmake --build build-release --target psx-runtime. A USA SCPH BIOS is used beyond setup.",
+      "License: GPL-3.0-only for this project's source. PSXRecomp remains PolyForm Noncommercial 1.0.0. Recomp-UI remains MIT."
+    ],
+    "evidence_url": "https://github.com/alexbeavs-ps1-ports/parasite-eve-recomp/blob/abfc05bc23a9a264cf9a105b2662226e17ece299/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
