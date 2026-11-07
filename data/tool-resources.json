@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bounce-tales-decomp",
+    "name": "Bounce Tales decompilation",
+    "url": "https://github.com/HelloOO7/BounceTales",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a decompilation of Rovio's Bounce Tales (2008), a J2ME game that shipped on Nokia Series 40 phones. It aims to reproduce the original behavior and is not written to match the original Java bytecode. A Jademula layer can run it as a Windows application.",
+    "description_zh": "该仓库是 Rovio 的 Bounce Tales（2008）的反编译。这是一款随诺基亚 Series 40 手机提供的 J2ME 游戏。它的目标是重现原来的行为，而不是匹配原来的 Java 字节码。Jademula 层可以把它作为 Windows 程序运行。",
+    "requirements": [
+      "The player supplies a Bounce Tales JAR. BounceComposer in the BounceTools NetBeans project decomposes it.",
+      "The phone build uses the Series 40 5th Edition SDK and NetBeans 8.2 with the Mobility plug-in. The Windows build runs bouncewin32.BounceWin32 with a 64-bit JDK.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/HelloOO7/BounceTales/blob/572ce4144071036e109ad362b384febc66d13b8f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

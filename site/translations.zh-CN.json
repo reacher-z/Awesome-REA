@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "bounce-tales-decomp": {
+    "name": "Bounce Tales 反编译",
+    "requirements": [
+      "玩家提供 Bounce Tales 的 JAR。BounceTools 里的 NetBeans 项目 BounceComposer 负责拆解它。",
+      "手机构建使用 Series 40 第 5 版 SDK，以及带 Mobility 插件的 NetBeans 8.2。Windows 构建用 64 位 JDK 运行 bouncewin32.BounceWin32。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
