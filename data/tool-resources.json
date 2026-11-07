@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dk94-disasm",
+    "name": "Donkey Kong '94 disassembly",
+    "url": "https://github.com/CelestialAmber/DKGBDisasm",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This disassembles Donkey Kong for the Game Boy, the Japan and USA Super Game Boy enhanced release. It builds Donkey Kong (Japan, USA) (SGB Enhanced).gb, SHA-1 6ed661bd1d6d8cdd48e1c10f8ca4e8dcba49128e. Setup is in INSTALL.md.",
+    "description_zh": "该项目反汇编 Game Boy 版《大金刚》的日美 Super Game Boy 增强版。它构建 Donkey Kong (Japan, USA) (SGB Enhanced).gb，SHA-1 为 6ed661bd1d6d8cdd48e1c10f8ca4e8dcba49128e。安装步骤在 INSTALL.md。",
+    "requirements": [
+      "Follow INSTALL.md. The built ROM is Donkey Kong (Japan, USA) (SGB Enhanced).gb.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/CelestialAmber/DKGBDisasm/blob/c6e29723edf53b00fb0f7587381bae972afa4b8f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
