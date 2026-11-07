@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "time-crisis-2-vr-case",
+    "name": "Time Crisis II VR",
+    "url": "https://github.com/DR-89/time-crisis-2-vr",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "Time Crisis II VR plays the arcade version of Time Crisis II in VR on Meta Quest 3 or a Windows PC with an OpenXR headset. It is built on the System 23 reconstruction in spacestate1/namco22-decompile and uses the arcade US TSS3 Ver. B game.",
+    "description_zh": "Time Crisis II VR 在 Meta Quest 3 或带 OpenXR 头显的 Windows PC 上，用 VR 运行街机版《时空危机 2》。它基于 spacestate1/namco22-decompile 中的 System 23 重建，使用街机美版 TSS3 Ver. B。",
+    "requirements": [
+      "Release v0.3.3 has a Quest 3 APK, package org.timecrisis2.arcadevr, and a Windows x64 zip. The README says those packages include the game files and the weapon models.",
+      "Sideload the APK with SideQuest or ADB. On Windows, extract the zip and run Play VR.cmd.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/DR-89/time-crisis-2-vr/blob/7100a8ade63b8d158840b2075d05647e46ed3381/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
