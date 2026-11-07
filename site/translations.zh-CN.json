@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "kisakcod-case": {
+    "name": "KisakCOD",
+    "requirements": [
+      "需要 Windows、Visual Studio 2022、CMake 3.16 或更新版本，以及 2010 年 6 月的 DirectX SDK。",
+      "需要 Steam 上的《Call of Duty 4》。运行 generate-project.bat 后，把游戏文件复制到 bin/(BUILD_TYPE)，包括 localization.txt 这类小文件，并从 deps 复制 binkw32.dll、Miles Sound System 的 DLL 和 steam_api.dll。",
+      "README 展示了 GPLv3 标志。"
+    ]
   }
 }
