@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "chasehq-spectrum",
+    "name": "Chase H.Q. Spectrum reconstruction",
+    "url": "https://github.com/dpt/ChaseHQ",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "This reconstructs the ZX Spectrum 128K conversion of Chase H.Q. Speccy/ is a SkoolKit disassembly of the 128K version, one control file per paged bank. C/ is a C reimplementation translated function by function from that disassembly. It builds with CMake, links SDL3, and plays all five stages. A browser build is published from the same SDL3 app.",
+    "description_zh": "该项目重建 ZX Spectrum 128K 版《Chase H.Q.》。Speccy/ 是 128K 版的 SkoolKit 反汇编，每个分页内存库有一份控制文件。C/ 是按该反汇编逐个函数翻译的 C 重实现。它用 CMake 构建，链接 SDL3，并能玩完五个关卡。同一套 SDL3 程序还发布了浏览器构建。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/dpt/ChaseHQ/blob/05ce4bdda77843a9ed27141c3f8257164ec61bed/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
