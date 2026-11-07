@@ -36543,6 +36543,7 @@
     "description_zh": "重新实现 BM2（Battery Monitor 2）汽车电池监测器的低功耗蓝牙协议，使其读数无需厂商的 Android 应用即可使用。基于 Bleak 的 Python 客户端会解密监测器以 AES 加密的通知，读取当前电压并请求设备存储的电压历史；ESPHome 模板可在 ESP32 上提供电压读数，示例应用则用于查看、导出读数或通过 MQTT 转发。作者的说明称密钥和数据包格式是从厂商应用中恢复的；结果均为作者及贡献者报告。",
     "evidence_url": "https://github.com/KrystianD/bm2-battery-monitor/blob/494a39c5edfbf5c76906469f0da545e42882b28c/README.md",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed master commit of 2026-10-13 merges a contributor fix that decrypts history data block by block and replaces the obsolete pycrypto dependency with PyCryptodome; there are no releases, and pyproject.toml names package bm2 0.1.0 for Python 3.8+. The client offers two calls, current voltage and voltage history. History timestamps are not read from the device but assigned backwards from the current time at two-minute intervals, and the ESPHome template decodes only the current voltage.",
