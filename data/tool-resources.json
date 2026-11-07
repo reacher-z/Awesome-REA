@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "miijs",
+    "name": "MiiJS",
+    "url": "https://github.com/Stewared/MiiJS",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "MiiJS reads, writes, converts, and renders Nintendo Mii data in JavaScript. The README lists Wii, DS, 3DS, Wii U, Switch, Switch 2, Amiibo, Tomodachi Life, Miitomo, QR codes, and Studio codes. It runs in Node.js and in a browser.",
+    "description_zh": "MiiJS 用 JavaScript 读取、写入、转换和绘制任天堂 Mii 数据。README 列出 Wii、DS、3DS、Wii U、Switch、Switch 2、Amiibo、Tomodachi Life、Miitomo、二维码和 Studio 码。它可以在 Node.js 和浏览器里运行。",
+    "requirements": [
+      "The documented Node install is npm install miijs. Local builds use npm run build.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Stewared/MiiJS/blob/de10c3c5237fbf18da88ac860f5c0ac7ad1a3b4b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
