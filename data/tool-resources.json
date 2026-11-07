@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sote-recomp-case",
+    "name": "Shadows of the Empire: Recompiled",
+    "url": "https://github.com/GTTeancum/SotE-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Shadows of the Empire: Recompiled is a playable Windows static recompilation of the Nintendo 64 version of Star Wars: Shadows of the Empire, using N64Recomp. The target is the USA retail revision 1.2 ROM, internal name Shadow of the Empire. Release 0.9.7 also has an experimental Linux x86-64 build.",
+    "description_zh": "Shadows of the Empire: Recompiled 用 N64Recomp 把任天堂 64 版《星球大战：帝国阴影》静态重编译成可玩的 Windows 程序。目标是美版零售 1.2 ROM，内部名称是 Shadow of the Empire。0.9.7 发布还有一个实验性的 Linux x86-64 构建。",
+    "requirements": [
+      "A local ROM matching one of the two SHA-256 values in the README. The cartridge dump is No-Intro Star Wars - Shadows of the Empire (USA) (Rev 2), CRC32 E8727549, SHA-256 e7085e013123537f34e0edec8801318016da4dbac424172d6dc5f3b67d98642c. Big-endian .z64 is accepted, and byteswapped .v64 or .n64 dumps are converted.",
+      "License: MIT for the original project code. Combined builds that use N64ModernRuntime must follow its GPL terms."
+    ],
+    "evidence_url": "https://github.com/GTTeancum/SotE-Recomp/blob/bfab37bd1e28ccfb8c6491d9d42a12c4bfb3e141/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
