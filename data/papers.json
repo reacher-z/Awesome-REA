@@ -12817,5 +12817,52 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-icall-bench",
+    "title": "ICALL-BENCH: Benchmarking LLM Interprocedural Reasoning in Binary Programs",
+    "authors": [
+      "Shenglong Yao",
+      "Zirui Liu",
+      "Xiangchi Yuan",
+      "Wenke Lee"
+    ],
+    "year": 2026,
+    "publication_date": "2026-10-27",
+    "date_precision": "day",
+    "date_basis": "arXiv first-submission date; the reviewed file is v1",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2610.37871",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2026-10-27",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2610.37871v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.37871v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "ICALL-BENCH measures whether language models and agents can follow interprocedural meaning in compiled binaries, using indirect-call target recovery as the probe. The abstract says the benchmark covers 50 real-world C and C++ programs built with different compilers.",
+    "description_zh": "ICALL-BENCH 衡量语言模型和智能体能否把握编译后二进制中的过程间含义，并以间接调用目标恢复作为探针。摘要说基准覆盖 50 个用不同编译器构建的真实 C 和 C++ 程序。",
+    "scope_limitations_en": "The reviewed file is arXiv:2610.37871v1. The 50-program count is taken from that abstract and was not rechecked against a dataset checkout.",
+    "scope_limitations_zh": "审阅的文件是 arXiv:2610.37871v1。50 个程序这一数字来自该摘要，没有对照数据集检出重新核对。",
+    "why_fits_en": "Recovering indirect-call targets is a binary analysis task, and the paper contributes a benchmark for it.",
+    "why_fits_zh": "恢复间接调用目标是一项二进制分析任务，本文贡献的是这项任务的基准。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.37871v1",
+      "https://arxiv.org/pdf/2610.37871v1",
+      "https://export.arxiv.org/api/query?id_list=2610.37871"
+    ],
+    "metadata_notes": "No code commit was pinned.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "ICALL-BENCH：衡量大语言模型在二进制程序中的过程间推理",
+    "date_basis_zh": "日期取自 arXiv 首次提交日，审阅的文件是 v1",
+    "metadata_notes_zh": "没有固定代码提交。"
   }
 ]

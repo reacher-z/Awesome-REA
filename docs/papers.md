@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (111)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -45,6 +45,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 
 [↑ Contents](#contents)
 
+- [**ICALL-BENCH: Benchmarking LLM Interprocedural Reasoning in Binary Programs**](https://arxiv.org/abs/2610.37871v1) - ICALL-BENCH measures whether language models and agents can follow interprocedural meaning in compiled binaries, using indirect-call target recovery as the probe. <sub>arXiv 2026 · Preprint · Shenglong Yao et al. · [PDF](https://arxiv.org/pdf/2610.37871v1) · [Full entry](https://awesomerea.org/papers/paper-icall-bench/)</sub>
 - [**Locate, Then Reason: End-to-End Patch Presence Testing in Stripped Binaries**](https://arxiv.org/abs/2610.25071) - Locates patch-relevant code in stripped binaries using instruction-aligned retrieval and caller/callee context, then uses an LLM to screen candidate matches and compare patch-specific behavior with vulnerable and patched references. <sub>arXiv 2026 · Preprint · Huaijin Wang et al. · [PDF](https://arxiv.org/pdf/2610.25071v1) · [Full entry](https://awesomerea.org/papers/paper-patchalign/)</sub>
 - [**Recall-Oriented Precise Binary-to-Source Function Matching**](https://arxiv.org/abs/2610.23546) - BScout matches decompiled functions to a source corpus using chunked embeddings and inlining-aware training. <sub>arXiv 2026 · Preprint · Junlin Li et al. · [PDF](https://arxiv.org/pdf/2610.23546v1) · [Full entry](https://awesomerea.org/papers/paper-bscout/)</sub>
 - [**Decoding What iOS Location Services Send to Apple: An LLM Is an Unreliable Analyst but a Useful Toolmaker**](https://arxiv.org/abs/2610.21597) - Compares direct LLM recovery of Apple PBCodable schemas with an AI-written Extractor checked against compiled synthetic fixtures, published descriptors and captured traffic. <sub>arXiv 2026 · Preprint · Douglas Leith · [PDF](https://arxiv.org/pdf/2610.21597v1) · [Code](https://github.com/doug-leith/ios-protobuf-decoding) · [Full entry](https://awesomerea.org/papers/paper-ios-protobuf-extractor/)</sub>
