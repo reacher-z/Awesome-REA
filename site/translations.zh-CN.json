@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "winfish": {
+    "name": "WinFish",
+    "requirements": [
+      "需要 Visual Studio 2022。打开 WinFish.sln 并构建。编译前把 bass.dll 和游戏数据文件夹复制到解决方案旁边。",
+      "审阅的 README 写明修改部分为 MIT。它没有给 source/WinFish/ 里的反编译源码写出许可证。"
+    ]
   }
 }

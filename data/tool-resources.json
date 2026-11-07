@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "winfish",
+    "name": "WinFish",
+    "url": "https://github.com/Vindirect/WinFish",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "WinFish decompiles Insaniquarium Deluxe 1.1 from the Windows executable. The README says the result is fully playable and still has bugs. The solution WinFish.sln uses the Visual Studio 2022 v142 toolset. A 32-bit build needs bass.dll from the original game, plus the data, properties, and fishsongs folders copied beside the solution.",
+    "description_zh": "WinFish 从 Windows 可执行文件反编译《Insaniquarium Deluxe》1.1。README 写明结果可以完整游玩，但仍有错误。解决方案 WinFish.sln 使用 Visual Studio 2022 的 v142 工具集。32 位构建需要原版游戏里的 bass.dll，以及复制到解决方案旁边的 data、properties 和 fishsongs 文件夹。",
+    "requirements": [
+      "Visual Studio 2022. Open WinFish.sln and build. Copy bass.dll and the game data folders beside the solution before compiling.",
+      "The reviewed README says modifications are MIT. It does not name a license for the decompiled source in source/WinFish/."
+    ],
+    "evidence_url": "https://github.com/Vindirect/WinFish/blob/f919b3c241cfd611c547f1653fb3514f500f761b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
