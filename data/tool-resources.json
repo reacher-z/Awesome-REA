@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "glsmac",
+    "name": "GLSMAC",
+    "url": "https://github.com/afwbkbc/glsmac",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "GLSMAC is an OpenGL and SDL2 reimplementation of Sid Meier's Alpha Centauri and Alien Crossfire. The current version heading is v0.3+. The first launch asks for the original installation path and loads its images and sounds. cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && make -C build is the release build. Linux packages include CMake, SDL2, SDL2_image, FreeType, GLU, GLEW, ossp-uuid, and yaml-cpp. Windows builds use Visual Studio 2022.",
+    "description_zh": "GLSMAC 是《席德·梅尔的半人马座阿尔法星》和资料片 Alien Crossfire 的 OpenGL 与 SDL2 重实现。当前版本标题是 v0.3+。第一次启动会询问原版安装路径，并加载其中的图像和声音。cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && make -C build 是发布构建。Linux 软件包包括 CMake、SDL2、SDL2_image、FreeType、GLU、GLEW、ossp-uuid 和 yaml-cpp。Windows 构建使用 Visual Studio 2022。",
+    "requirements": [
+      "An original Alpha Centauri installation, including Alien Crossfire for that expansion. CMake and the libraries listed above.",
+      "License: AGPL, for the GLSMAC code."
+    ],
+    "evidence_url": "https://github.com/afwbkbc/glsmac/blob/ee5379564b105ec617b1b75715d9f8835adfca1b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

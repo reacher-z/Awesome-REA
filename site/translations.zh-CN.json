@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "glsmac": {
+    "name": "GLSMAC",
+    "requirements": [
+      "需要原版半人马座阿尔法星的安装目录；资料片内容还需要 Alien Crossfire。需要 CMake 和上面列出的库。",
+      "许可证：GLSMAC 代码为 AGPL。"
+    ]
   }
 }
