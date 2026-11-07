@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "i26-interstate": {
+    "name": "I26",
+    "requirements": [
+      "玩家提供 GOG 版，包括 Nitro 包，或离线安装程序。在 Linux 上，Impact 和 Arial 需要微软核心字体。",
+      "许可证：GPL-3.0。构建步骤在 DEVELOPMENT.md。"
+    ]
   }
 }

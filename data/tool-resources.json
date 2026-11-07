@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "i26-interstate",
+    "name": "I26",
+    "url": "https://github.com/vahokif/I26",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "I26 reimplements Interstate '76 in Godot. It includes the single-player campaign, scenarios, auto melee, multiplayer, online co-op, a 3D map editor, and a garage. F12 switches to the original 1997 graphics.",
+    "description_zh": "I26 用 Godot 重实现 Interstate '76。它包括单人战役、情景、自动混战、多人、在线合作、三维地图编辑器和车库。F12 切换到 1997 年的原来画面。",
+    "requirements": [
+      "The player supplies the GOG version, including the Nitro pack, or the offline setup installers. On Linux, Microsoft core fonts are needed for Impact and Arial.",
+      "License: GPL-3.0. Build steps are in DEVELOPMENT.md."
+    ],
+    "evidence_url": "https://github.com/vahokif/I26/blob/8edea2a781932ac101afdb9572b13578fb90f6b3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
