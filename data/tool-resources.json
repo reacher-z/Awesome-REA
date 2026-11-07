@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "halo-64-case",
+    "name": "Halo 64: Halo CE multiplayer on the Nintendo 64",
+    "url": "https://github.com/JackTulli/halo-64",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "Halo 64 compiles decompiled Halo: Combat Evolved multiplayer code for the Nintendo 64 VR4300, with split screen for up to four players, bots, and a Firefight mode. The README says a new renderer, menu, HUD drawing, and sound sit on libdragon and tiny3d, and maps are converted from the Xbox game's files.",
+    "description_zh": "Halo 64 把反编译的《光晕：战斗进化》多人游戏代码编译到任天堂 64 的 VR4300 上，支持最多四人分屏、机器人和 Firefight 模式。README 写明新的渲染器、菜单、HUD 绘制和声音建立在 libdragon 和 tiny3d 上，地图从 Xbox 版游戏文件转换而来。",
+    "requirements": [
+      "You need your own copy of the Xbox game. The build converts its maps, and the repository does not contain retail game data.",
+      "The README says a ROM you build contains data converted from the game.",
+      "License: CC0-1.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/JackTulli/halo-64/blob/c888de759b1a399c72636397e254681f69993d56/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
