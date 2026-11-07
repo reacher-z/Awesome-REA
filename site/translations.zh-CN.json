@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "doa2u-recomp": {
+    "name": "死或生 2 Ultimate 重编译",
+    "requirements": [
+      "需要带 C11 的 Visual Studio 2022，以及 CMake 3.20 或更新版本。运行 cmake -S doa2u -B doa2u/build，然后运行 cmake --build doa2u/build --config Release --target doa2u。",
+      "许可证：MIT，跟随 xboxrecomp。"
+    ]
   }
 }

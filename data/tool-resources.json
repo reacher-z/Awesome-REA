@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "doa2u-recomp",
+    "name": "Dead or Alive 2 Ultimate recompilation",
+    "url": "https://github.com/parkerallan/doa2u-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Dead or Alive 2 Ultimate for the original Xbox to Windows x86-64 with xboxrecomp. Matches are playable in all modes, with remaining bugs and slowdowns. The frame rate is capped at 60. Internal resolution can scale to 4K, with MSAA and VSync. Online matches use Insignia. The program is doa2u/build/release/DOA2U.exe. The disc contents go in assets so that assets/DOA2.xbe exists. Escape opens the overlay.",
+    "description_zh": "该项目用 xboxrecomp 把原版 Xbox 的《死或生 2 Ultimate》静态重编译到 Windows x86-64。所有模式的对战可以玩，仍有错误和变慢。帧率上限是 60。内部分辨率可以缩放到 4K，带 MSAA 和垂直同步。在线对战使用 Insignia。程序是 doa2u/build/release/DOA2U.exe。光盘内容放在 assets，使 assets/DOA2.xbe 存在。Escape 打开覆盖菜单。",
+    "requirements": [
+      "Visual Studio 2022 with C11, and CMake 3.20 or newer. cmake -S doa2u -B doa2u/build, then cmake --build doa2u/build --config Release --target doa2u.",
+      "License: MIT, following xboxrecomp."
+    ],
+    "evidence_url": "https://github.com/parkerallan/doa2u-recomp/blob/db1a9300774f5258798e14e18d2bdd30ce5dc9fb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

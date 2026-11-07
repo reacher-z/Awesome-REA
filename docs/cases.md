@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -136,7 +136,7 @@
 - [**Wind Waker HD decompilation: functions verified against the recompiled Wii U game**](https://github.com/ZeldaWWHDDecomp/wwhd) - Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### Static recompilations (48)
+### Static recompilations (49)
 
 - [**Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port**](https://github.com/BanjoRecomp/BanjoRecomp) - Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Banjo-Kazooie into a native port on N64ModernRuntime, rendered by RT64 and extended with mod support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/banjo-recompiled-case/)</sub>
 - [**C2C: hybrid recompilation and hand decompilation of Crash Bandicoot 2**](https://github.com/ughman/c2c) - An early reverse-engineering effort on PlayStation Crash Bandicoot 2 that converts the engine’s MIPS machine code directly into a very large C file and runs it against a modified PCSX-R emulator library for hardware I/O. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -144,6 +144,7 @@
 - [**Conker's Bad Fur Day: Recompiled — an N64Recomp native port**](https://github.com/sciaschi/CBFD-Recompiled) - Statically recompiles the US Nintendo 64 release of Conker’s Bad Fur Day with N64Recomp into a native Windows, Linux and macOS port on N64ModernRuntime and RT64. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/cbfd-recompiled-case/)</sub>
 - [**CPS-2 Recomp: static recompilation of Capcom CPS-2 and CPS-1 arcade games**](https://github.com/tmcleroy/cps2recomp) - Translates the 68000 game programs and Z80 sound programs of Capcom arcade boards ahead of time into C++ and runs them on a machine model written for the project, with an interpreter for code that has not been translated. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/cps2recomp-arcade-static-recomp-case/)</sub>
 - [**Crash Bandicoot 2 Recompiled: a PSXRecomp native build**](https://github.com/Zumbo06/Crash2Recomp) - A Windows launcher that uses the PSXRecomp recompiler and runtime to translate the user’s Crash Bandicoot 2: Cortex Strikes Back disc to C and compile it locally, so the game runs as native code with an emulated PlayStation hardware layer. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/crash2recomp-case/)</sub>
+- [**Dead or Alive 2 Ultimate recompilation**](https://github.com/parkerallan/doa2u-recomp) - This statically recompiles Dead or Alive 2 Ultimate for the original Xbox to Windows x86-64 with xboxrecomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/doa2u-recomp/)</sub>
 - [**Dead Rising 2: Case West — a sibling Xbox 360 XBLA static recompilation port**](https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp) - Builds a native Windows, Linux, Steam Deck and Apple Silicon port of the XBLA epilogue Dead Rising 2: Case West by statically recompiling its Xbox 360 code with patched XenonRecomp and translating its shaders with patched XenosRecomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dead-rising-2-case-west-recomp-case/)</sub>
 - [**Dead Rising 2: Case Zero — an Xbox 360 XBLA static recompilation port**](https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp) - Builds a native Windows, Linux, Steam Deck and Apple Silicon port of the XBLA game Dead Rising 2: Case Zero by statically recompiling its Xbox 360 code with patched XenonRecomp and translating its shaders with patched XenosRecomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dead-rising-2-case-zero-recomp-case/)</sub>
 - [**Devil May Cry: an experimental PS2 static recompilation**](https://github.com/Gui-Tora/dmc-recomp) - dmc-recomp translates the PlayStation 2 PAL release of Devil May Cry into native PC code through PS2Recomp and a project runtime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dmc-recomp-case/)</sub>
