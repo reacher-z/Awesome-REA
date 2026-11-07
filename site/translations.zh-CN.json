@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pytest-idapro": {
+    "name": "pytest-idapro",
+    "requirements": [
+      "基本用法是 pytest --ida 加上 IDA 可执行文件的路径，也可以用 --ida-file 指定 IDA 数据库或其他 IDA 能打开的文件。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
