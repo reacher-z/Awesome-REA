@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nitrosharp",
+    "name": "NitroSharp",
+    "url": "https://github.com/CommitteeOfZero/nitrosharp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "NitroSharp is an open-source reimplementation of N2System, the visual-novel engine used by Nitroplus. The current target is Chaos;Head Noah on Windows x64, with Direct3D 11 and Vulkan, and on Linux x64 with Vulkan. The Linux build has no sound.",
+    "description_zh": "NitroSharp 是 Nitroplus 视觉小说引擎 N2System 的开源重实现。当前目标是在 Windows x64 上运行《混沌头脑 Noah》，使用 Direct3D 11 和 Vulkan，以及在 Linux x64 上使用 Vulkan。Linux 构建没有声音。",
+    "requirements": [
+      "The README says some endings of Chaos;Head Noah can be reached, and that saves should not be expected to survive an engine upgrade.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/CommitteeOfZero/nitrosharp/blob/e3869842bb5bdd5ed95344027297620cd54454a6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
