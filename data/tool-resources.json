@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rush2-recompiled-case",
+    "name": "Rush 2 Recompiled",
+    "url": "https://github.com/bryantmh/rush2recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "class": "game",
+    "description_en": "Rush 2 Recompiled is a native PC build of Rush 2: Extreme Racing USA. The player supplies a USA ROM. Optional USA ROMs add San Francisco Rush 2049, San Francisco Rush, and California Speed. Windows and Linux builds are on the Releases page.",
+    "description_zh": "Rush 2 Recompiled 是《Rush 2: Extreme Racing USA》的原生 PC 构建。玩家提供美版 ROM。可选的美版 ROM 可以加入《San Francisco Rush 2049》、《San Francisco Rush》和《California Speed》。Windows 和 Linux 构建在 Releases 页面。",
+    "requirements": [
+      "The required ROM is Rush 2 - Extreme Racing USA (USA), 12 MB, SHA-1 01b0a31b1accc18061e8c85f6c5edf0dbd79f097. .z64, .n64, and .v64 files of that ROM are accepted. Other regions are rejected.",
+      "On Windows, run Rush2Recompiled.exe. On Linux, run the AppImage.",
+      "The reviewed README does not name a license or the reconstruction method."
+    ],
+    "evidence_url": "https://github.com/bryantmh/rush2recompiled/blob/3a205c8a5e41db6770d249ce8bd92495dccf26f6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

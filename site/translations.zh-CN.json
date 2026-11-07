@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "rush2-recompiled-case": {
+    "name": "Rush 2 Recompiled",
+    "requirements": [
+      "必需的 ROM 是 Rush 2 - Extreme Racing USA (USA)，12 MB，SHA-1 为 01b0a31b1accc18061e8c85f6c5edf0dbd79f097。该 ROM 的 .z64、.n64 和 .v64 文件都可以。其他区域会被拒绝。",
+      "Windows 上运行 Rush2Recompiled.exe。Linux 上运行 AppImage。",
+      "审阅的 README 没有写许可证，也没有写重建方法。"
+    ]
   }
 }
