@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "halo-ce-rg35xx",
+    "name": "Halo CE on RG35XX H",
+    "url": "https://github.com/kirklandsig/halo-ce-anbernic-rg35xx",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This is a native ARM64 port of the Halo: Combat Evolved decompilation OpenCE to the Anbernic RG35XX H and other Allwinner H700 handhelds with a Mali-G31 GPU. The game build is Xbox 01.01.14.2342. The README reports 60 frames per second in menus and about 40 to 55 in campaign at the default scale, under Knulli.",
+    "description_zh": "这是《光环：战斗进化》反编译 OpenCE 到 Anbernic RG35XX H 和其他带 Mali-G31 的全志 H700 掌机的原生 ARM64 移植。游戏构建是 Xbox 01.01.14.2342。README 报告在 Knulli 下，菜单每秒 60 帧，战役在默认缩放下大约每秒 40 到 55 帧。",
+    "requirements": [
+      "The player supplies their own Xbox disc image. Releases contain no game data. Tested campaign levels named in the README are a30, b30, and c10.",
+      "License: CC0 1.0."
+    ],
+    "evidence_url": "https://github.com/kirklandsig/halo-ce-anbernic-rg35xx/blob/dc99571d4ae37ad97acaa1b7661c5b882ba10d1a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
