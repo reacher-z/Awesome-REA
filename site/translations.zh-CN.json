@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mgs2-android-case": {
+    "name": "潜龙谍影2 Android 版",
+    "requirements": [
+      "需要 Android 8 或更新版本，arm64-v8a。玩家从自己的 SHIELD TV 提供 base.apk 和两个 OBB 文件，版本 21.21.1219.GM。README 要求大约 12 GB 空闲空间。Adreno 和 Mali 各有一个 APK。",
+      "许可证：GPL-3.0。"
+    ]
   }
 }

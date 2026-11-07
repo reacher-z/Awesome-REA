@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mgs2-android-case",
+    "name": "MGS2 for Android",
+    "url": "https://github.com/luisxl15/METAL-GEAR-SOLID-2-Sons-of-Liberty-for-Android",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This project statically recompiles Metal Gear Solid 2: Sons of Liberty HD from the NVIDIA SHIELD TV, a 32-bit ARM game, into ARM64 for Android phones. It translates the ARM32 functions to C and supplies a runtime for memory, libc, OpenGL, audio, and JNI. The README says about 22,000 game functions and about 3,000 C++ library functions are recompiled.",
+    "description_zh": "该项目把 NVIDIA SHIELD TV 上的 32 位 ARM 游戏《潜龙谍影2：自由之子 HD》静态重编译成 Android 手机上的 ARM64。它把 ARM32 函数翻译成 C，并提供内存、libc、OpenGL、音频和 JNI 的运行时。README 写明大约 22,000 个游戏函数和大约 3,000 个 C++ 库函数被重编译。",
+    "requirements": [
+      "Android 8 or newer, arm64-v8a. The player supplies base.apk and the two OBB files from their own SHIELD TV, version 21.21.1219.GM. The README asks for about 12 GB free. Separate APKs target Adreno and Mali.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/luisxl15/METAL-GEAR-SOLID-2-Sons-of-Liberty-for-Android/blob/de02d726e42883860e2229910bfde822e1123798/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
