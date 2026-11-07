@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "goldeneye-007-reloaded-recomp": {
+    "name": "黄金眼 007 重装上阵重编译",
+    "requirements": [
+      "需要 CMake 3.25 或更新版本、Ninja 和 Clang/LLVM。把光盘解压到 assets/，其中要有 Default.xex、DATA/ 和 nxeart。已测试的预设是 win-amd64-release。仓库里还有 Linux、macOS 和 ARM64 预设。",
+      "许可证：本项目自身代码为 MIT。"
+    ]
   }
 }
