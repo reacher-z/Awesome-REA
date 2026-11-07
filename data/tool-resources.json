@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "opentoshi",
+    "name": "OpenToshi",
+    "url": "https://github.com/AdventureT/OpenToshi",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "OpenToshi is a decompilation of the Toshi engine and Toshi games, including de Blob. The Windows build uses DirectX 11.",
+    "description_zh": "OpenToshi 是 Toshi 引擎和 Toshi 游戏的反编译，其中包括 de Blob。Windows 构建使用 DirectX 11。",
+    "requirements": [
+      "Visual Studio 2022 or 2026. Clone with submodules, then run the matching Generate script for DirectX 11.",
+      "The tree supplies FMOD Ex 4.44.64 locally. The README says the retail game uses 4.44.47.",
+      "The reviewed README does not name a license for the decompilation."
+    ],
+    "evidence_url": "https://github.com/AdventureT/OpenToshi/blob/02ec414f141bc3525b1ce7e8d04cbcbceabfc9f5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
