@@ -36528,5 +36528,24 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "procyon",
+    "name": "Procyon",
+    "url": "https://github.com/mstrobel/procyon",
+    "category": "jvm",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Suite of Java metaprogramming tools for code generation and analysis. The README lists a core framework, a reflection framework, an expressions framework, an experimental compiler toolset, and an experimental Java decompiler. Libraries are on Maven Central under org.bitbucket.mstrobel.",
+    "description_zh": "用于代码生成和分析的 Java 元编程工具套件。README 列出核心框架、反射框架、表达式框架、实验性编译器工具集，以及实验性 Java 反编译器。库发布在 Maven Central 的 org.bitbucket.mstrobel 下。",
+    "evidence_url": "https://github.com/mstrobel/procyon/blob/88a95fa93c58322393174f84543edc7a0a2ca44d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed page states no license."
+    ]
   }
 ]
