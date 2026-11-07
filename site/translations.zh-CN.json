@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "fe7j-decomp": {
+    "name": "火焰纹章烈火之剑日版反编译",
+    "requirements": [
+      "把原版 ROM 命名为 FireEmblem7J.base.gba。在 Debian 或 Ubuntu 上安装 build-essential 和 gcc-arm-none-eabi，运行 tools/install-agbcc.sh，然后运行 make compare -j。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
