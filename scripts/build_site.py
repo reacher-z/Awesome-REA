@@ -32,6 +32,7 @@ from site_shell import apply_site_shell
 from data_downloads import build_data_downloads
 from open_graph import website_node
 from structured_data import catalog_node, organization_node
+from site_footer import site_footer
 from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage
 from artifact_links import with_artifact_links, with_curated_labels
 from source_browser import write_source_browser
@@ -230,6 +231,16 @@ def build_site(output: Path) -> tuple[int, int, int]:
     favicon_revision = hashlib.sha256((output / "favicon.svg").read_bytes()).hexdigest()[:16]
     asset_hrefs = {"app.js": fingerprinted_href(output, "app.js"), "styles.css": fingerprinted_href(output, "styles.css"),
                    "favicon.svg": f"/favicon.svg?v={favicon_revision}"}
+    if (output / "benchmark-map.css").is_file():
+        benchmark_href = fingerprinted_href(output, "benchmark-map.css")
+        for relative in ("benchmark-map/index.html", "zh/benchmark-map/index.html"):
+            page = output / relative
+            if not page.is_file():
+                continue
+            text = page.read_text(encoding="utf-8")
+            text = text.replace('href="/styles.css"', f'href="{asset_hrefs["styles.css"]}"')
+            text = text.replace('href="/benchmark-map.css"', f'href="{benchmark_href}"')
+            page.write_text(text, encoding="utf-8")
     for filename, attribute in (("app.js", "src"), ("styles.css", "href"), ("favicon.svg", "href")):
         html = html.replace(f'{attribute}="{filename}"', f'{attribute}="{asset_hrefs[filename]}"')
     html = html.replace('src="favicon.svg"', f'src="{asset_hrefs["favicon.svg"]}"')
@@ -298,6 +309,15 @@ def build_site(output: Path) -> tuple[int, int, int]:
         target = output / ("zh/llms-full.txt" if language == "zh" else "llms-full.txt")
         target.write_text(full_catalog_markdown(resources, papers, language, site_url=SITE_URL, sections=COLLECTION_SECTIONS,
                                                 section_of=collection_section, header=header), encoding="utf-8")
+    for relative, language in (("benchmark-map/index.html", "en"), ("zh/benchmark-map/index.html", "zh")):
+        page = output / relative
+        if not page.is_file():
+            continue
+        text = page.read_text(encoding="utf-8")
+        if '<footer class="site-footer">' not in text:
+            footer = site_footer(language, note="", repository_url=REPOSITORY_URL, repository_export=repository_export)
+            text = text.replace("</body>", footer + "\n</body>", 1)
+            page.write_text(text, encoding="utf-8")
     paper_urls = build_paper_pages(
         output, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
         styles_href=asset_hrefs["styles.css"], papers_styles_href=fingerprinted_href(output, "papers.css"),
@@ -334,7 +354,7 @@ def build_site(output: Path) -> tuple[int, int, int]:
     (output / ".nojekyll").write_text("", encoding="utf-8")
     (output / "CNAME").write_text("awesomerea.org\n", encoding="utf-8")
     (output / "robots.txt").write_text(robots_txt(SITE_URL, f"{SITE_URL}/{SITEMAP_INDEX}"), encoding="utf-8")
-    sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", *browse_urls, *(SITE_URL + path for path in discovery_paths), *paper_urls, *survey_urls, *entry_urls]
+    sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", SITE_URL + "/benchmark-map/", SITE_URL + "/zh/benchmark-map/", *browse_urls, *(SITE_URL + path for path in discovery_paths), *paper_urls, *survey_urls, *entry_urls]
     # lastmod comes from the records each page shows, never the build time (sitemaps.page_dates).
     dates = page_dates(resources=resources, papers=papers, repository_document=browse_document,
                        discovery_batches=(discovery_queue or {}).get("batches"), lead_batches=(lead_queue or {}).get("batches"),

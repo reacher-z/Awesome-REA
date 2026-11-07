@@ -212,7 +212,8 @@ class ReviewedContainerRecordTests(unittest.TestCase):
                     'paper-uemu',
                     'paper-semu',
                     'paper-conware',
-                    'paper-decompiler-fidelity-taxonomy'}
+                    'paper-decompiler-fidelity-taxonomy',
+                    'paper-sok-x86-x64-disassembly'}
         self.assertEqual({identifier for identifier, record in PAPERS.items() if 'citation' in record}, expected)
         for identifier in sorted(PAPERS.keys() - expected):
             # Records without verified container metadata keep the short venue label.

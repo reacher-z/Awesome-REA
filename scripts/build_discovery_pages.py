@@ -689,6 +689,7 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 - [Editorial survey]({site_url}/survey/): A bilingual, separately versioned synthesis of the collection’s evidence, methods and limits.
 - [About and provenance]({site_url}/about/): Scope, source methods, counts, translations, and licenses.
 - [Contribute to Awesome REA]({site_url}/contribute/): Submission forms, primary-evidence requirements and the PR workflow for humans and agents.
+- [Benchmark map]({site_url}/benchmark-map/): Coverage of long input-to-output tasks against a target of 1,000, split evenly across six targets.
 
 {categories}## 简体中文
 
@@ -699,6 +700,7 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 - [专题综述]({site_url}/zh/survey/): 综合比较证据、方法与边界的双语编辑性综述，单独版本化。
 - [关于与来源]({site_url}/zh/about/): 收录范围、来源方法、数量、翻译与许可。
 - [投稿与参与贡献]({site_url}/zh/contribute/): 人工与 Agent 的提交表单、一手证据要求和 PR 流程。
+- [基准图]({site_url}/zh/benchmark-map/): 六个目标平分 1,000 条具体任务，标出已覆盖的长任务和仍空着的位置。
 - [静态 API 说明]({site_url}/zh/api/{MARKDOWN}): 端点、字段与更新频率。
 
 ## API and feeds

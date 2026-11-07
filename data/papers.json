@@ -12817,5 +12817,64 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-sok-x86-x64-disassembly",
+    "title": "SoK: All You Ever Wanted to Know About x86/x64 Binary Disassembly But Were Afraid to Ask",
+    "authors": [
+      "Chengbin Pang",
+      "Ruotong Yu",
+      "Yaohui Chen",
+      "Eric Koskinen",
+      "Georgios Portokalidis",
+      "Bing Mao",
+      "Jun Xu"
+    ],
+    "year": 2021,
+    "publication_date": "2021-05",
+    "date_precision": "month",
+    "date_basis": "Crossref issued and published-print date-parts are 2021-05. The 24-27 May 2021 conference dates in the Crossref event field are not used as the publication date.",
+    "date_basis_zh": "Crossref 的 issued 与 published-print 日期字段为 2021-05。Crossref event 中的 2021 年 5 月 24 日至 27 日会议日期不用作发表日期。",
+    "venue": "2021 IEEE Symposium on Security and Privacy (SP)",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2007.14266",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2020-07-28",
+    "doi": "10.1109/SP40001.2021.00012",
+    "citation": {
+      "container_title": "2021 IEEE Symposium on Security and Privacy (SP)",
+      "pages": "833-851",
+      "publisher": "IEEE",
+      "sources": [
+        "https://api.crossref.org/works/10.1109/SP40001.2021.00012"
+      ]
+    },
+    "url": "https://doi.org/10.1109/SP40001.2021.00012",
+    "pdf_url": "https://arxiv.org/pdf/2007.14266v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Studies nine open-source x86/x64 disassemblers, separates algorithmic strategies from heuristics, and measures coverage against correctness on 3,788 binaries.",
+    "description_zh": "研究九个开源 x86/x64 反汇编器，把算法策略和启发式策略分开，并在 3,788 个二进制上衡量覆盖率与正确性。",
+    "scope_limitations_en": "The study compares existing disassemblers and does not introduce a new one. The PDF linked here is arXiv:2007.14266v1, submitted 28 July 2020. Crossref records the IEEE proceedings article at pages 833-851, with issued and published-print date-parts 2021-05, and that record includes no volume or issue.",
+    "scope_limitations_zh": "这项研究比较已有的反汇编器，并不提出新的反汇编器。这里链接的 PDF 是 2020 年 7 月 28 日提交的 arXiv:2007.14266v1。Crossref 把 IEEE 会议论文记在第 833-851 页，issued 与 published-print 为 2021-05，且该记录没有卷号或期号。",
+    "why_fits_en": "Disassembly is the recovery step underneath native-binary reverse engineering, and this systematization compares the open-source tools that perform it.",
+    "why_fits_zh": "反汇编是原生二进制逆向工程之下的恢复步骤，这篇系统化研究比较了完成该步骤的开源工具。",
+    "evidence_urls": [
+      "https://doi.org/10.1109/SP40001.2021.00012",
+      "https://api.crossref.org/works/10.1109/SP40001.2021.00012",
+      "https://arxiv.org/abs/2007.14266v1",
+      "https://arxiv.org/pdf/2007.14266v1"
+    ],
+    "metadata_notes": "Authors and title match the Crossref record and arXiv:2007.14266v1. The paper first appeared on arXiv on 2020-07-28. No code repository is linked because that Crossref record and the arXiv v1 abstract do not name one. The linked PDF is the arXiv preprint, not an IEEE Xplore file.",
+    "metadata_notes_zh": "作者和题名与 Crossref 记录以及 arXiv:2007.14266v1 一致。该论文最早于 2020-07-28 发布在 arXiv。没有链接代码仓库，是因为该 Crossref 记录和 arXiv v1 摘要均未点名代码仓库。链接的 PDF 是 arXiv 预印本，不是 IEEE Xplore 文件。",
+    "kind": "research",
+    "verified_at": "2026-11-03",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "系统化研究：关于 x86/x64 二进制反汇编，你想知道却不敢问的一切",
+    "added_at": "2026-11-03"
   }
 ]

@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -136,6 +136,7 @@
 - [**随堂测验！大语言模型能帮助逆向工程吗？**](https://arxiv.org/abs/2202.01142) - 检验 OpenAI 的 Codex 模型 code-davinci-001 能否在零样本问答式提示中回答有关 C 代码的逆向工程问题。 <sub>原题：*Pop Quiz! Can a Large Language Model Help With Reverse Engineering?* · arXiv 2022 · 预印本 · Hammond Pearce 等 · [PDF](https://arxiv.org/pdf/2202.01142v1) · [完整条目](https://awesomerea.org/zh/papers/paper-pop-quiz-llm-re/)</sub>
 - [**超越 C：基于神经机器翻译的可重定向反编译**](https://www.ndss-symposium.org/ndss-paper/auto-draft-298/) - BTC（Beyond The C）将反编译视为从编译器输出的 x86-64 汇编到源码的纯文本翻译，分别在汇编与源码上训练字节对编码分词器，并使用标准 fairseq Transformer。 <sub>原题：*Beyond the C: Retargetable Decompilation using Neural Machine Translation* · Workshop on Binary Analysis Research (BAR) 2022 · 会议论文 · Iman Hosseini 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2022_23009_paper.pdf) · [代码](https://figshare.com/s/2c68b9c181e80f4e3b06) · [完整条目](https://awesomerea.org/zh/papers/paper-beyond-the-c/)</sub>
 - [**Asteria：基于深度学习的抽象语法树编码，用于跨平台二进制代码相似性检测**](https://doi.org/10.1109/DSN48987.2021.00036) - ASTERIA 使用 Tree-LSTM 编码函数的抽象语法树，以比较不同平台上的二进制函数。 <sub>原题：*Asteria: Deep Learning-based AST-Encoding for Cross-platform Binary Code Similarity Detection* · 2021 51st Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN) · 会议论文 · Shouguo Yang 等 · [PDF](https://arxiv.org/pdf/2108.06082) · [完整条目](https://awesomerea.org/zh/papers/paper-asteria/)</sub>
+- [**系统化研究：关于 x86/x64 二进制反汇编，你想知道却不敢问的一切**](https://doi.org/10.1109/SP40001.2021.00012) - 研究九个开源 x86/x64 反汇编器，把算法策略和启发式策略分开，并在 3,788 个二进制上衡量覆盖率与正确性。 <sub>原题：*SoK: All You Ever Wanted to Know About x86/x64 Binary Disassembly But Were Afraid to Ask* · 2021 IEEE Symposium on Security and Privacy (SP) · 会议论文 · Chengbin Pang 等 · [PDF](https://arxiv.org/pdf/2007.14266v1) · [完整条目](https://awesomerea.org/zh/papers/paper-sok-x86-x64-disassembly/)</sub>
 - [**Trex：从微轨迹中学习执行语义以识别相似二进制函数**](https://arxiv.org/abs/2012.08680) - Trex 从函数微轨迹中学习执行语义，再利用所学知识匹配语义相似的二进制函数。 <sub>原题：*Trex: Learning Execution Semantics from Micro-Traces for Binary Similarity* · arXiv 2020 · 预印本 · Kexin Pei 等 · [PDF](https://arxiv.org/pdf/2012.08680) · [完整条目](https://awesomerea.org/zh/papers/paper-trex/)</sub>
 - [**基于增强控制流图的剥离符号二进制神经逆向工程**](https://dl.acm.org/doi/10.1145/3428293) - Nero 为剥离符号的 x86-64 Linux 可执行文件中的过程预测名称，并不生成反编译代码。 <sub>原题：*Neural reverse engineering of stripped binaries using augmented control flow graphs* · Proceedings of the ACM on Programming Languages (OOPSLA 2020) · 期刊论文 · Yaniv David 等 · [PDF](https://arxiv.org/pdf/1902.09122v4) · [代码](https://github.com/tech-srl/Nero/tree/7dac9f5748974ea8f39b5f29bb3c7d33f971077e) · [完整条目](https://awesomerea.org/zh/papers/paper-nero/)</sub>
 - [**我们走了多远：C 反编译器反编译正确性测试**](https://dl.acm.org/doi/10.1145/3395363.3397370) - 测试 C 反编译器能否保持程序行为。 <sub>原题：*How far we have come: testing decompilation correctness of C decompilers* · ACM ISSTA 2020 · 会议论文 · Zhibo Liu 等 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3395363.3397370) · [代码](https://github.com/monkbai/DecFuzzer) · [完整条目](https://awesomerea.org/zh/papers/paper-decfuzzer/)</sub>

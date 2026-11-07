@@ -4,16 +4,16 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**479 个案例**，按分区列出。
 
 ## 目录
 
-- [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
-- [App · 应用](#app) (62)
-- [Native Binary · 原生二进制](#native-binary) (7)
-- [Firmware and Hardware · 固件与硬件](#firmware) (19)
-- [Protocol · 协议](#protocol) (91)
+- [Website · 网站](#website) (19)
+- [Game · 游戏](#game) (262)
+- [App · 应用](#app) (68)
+- [Native Binary · 原生二进制](#native-binary) (10)
+- [Firmware and Hardware · 固件与硬件](#firmware) (25)
+- [Protocol · 协议](#protocol) (95)
 
 <a id="website"></a>
 ## Website · 网站
@@ -23,7 +23,13 @@
 - [**Power BI API Scraper：解析公开报表查询格式**](https://github.com/artemiyDev/powerbi_api_scraper) - Power BI API Scraper 还原公开报表所用的网页客户端查询与响应格式。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/power-bi-report-query-case/)</sub>
 - [**Sheypoor MCP：从浏览器流量还原分类信息网站接口**](https://github.com/FarhamAghdasi/sheypoor-mcp) - Sheypoor MCP 根据浏览器流量记录的接口行为，为 Sheypoor 分类信息网站实现客户端和 MCP 服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sheypoor-mcp-case/)</sub>
 - [**ZCode-Android：重建 ZCode 远程控制客户端**](https://github.com/Damianjiang/ZCode-Android) - ZCode-Android 根据官方远程控制网页的抓包与逆向结果，在 Android 上重建 ZCode 会话控制。 <sub>案例 · 独立重建 · 也适用：应用、协议 · [完整条目](https://awesomerea.org/zh/resources/zcode-android-case/)</sub>
+- [**EtherCalc：浏览器里的协作电子表格**](https://github.com/audreyt/ethercalc) - 用于实时协作编辑的网页电子表格。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ethercalc-spreadsheet-case/)</sub>
+- [**LoreMaps：幻想地图图集的静态重写**](https://github.com/loremaps/loremaps) - 从该项目早先的 ASP.NET MVC 站点重写而来的 Astro 静态地图集。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/loremaps-atlas-case/)</sub>
+- [**OpenPencil：能打开 Figma 文件的浏览器设计编辑器**](https://github.com/open-pencil/open-pencil) - 能在浏览器和桌面运行、并可打开 .fig 文件的开源设计编辑器。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/openpencil-design-editor-case/)</sub>
+- [**The Blind Walleye：营销网站的静态重建**](https://github.com/jpiercedev/blind-walleye) - 把公开的 Blind Walleye 网站重建为 Next.js 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/blind-walleye-static-case/)</sub>
 - [**Terminal：参考 TradingView 图表研究的 Rust 终端**](https://github.com/michaelshimeles/terminal) - 独立 Rust 市场界面参考 REA 对公开、未登录 TradingView 图表交互的场景研究；笔记保留观察、文档、推断及未知标签，产物使用自己的图表引擎和数据源，而非恢复 TradingView 或 Bloomberg 服务端软件。 <sub>案例 · 混合工具流程 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/terminal-tradingview-rea-chart-case/)</sub>
+- [**oxi：用来替代 Roundcube 的网页邮箱**](https://github.com/c0h1b4/oxi) - 自托管的网页邮箱界面，README 写明用来替代 Roundcube，并登录到已有的 IMAP 和 SMTP 服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/oxi-webmail-case/)</sub>
+- [**NewPipe：面向 YouTube 和 PeerTube 的 Android 前端**](https://github.com/TeamNewPipe/NewPipe) - 面向 YouTube、YouTube Music 和 PeerTube 的 Android 播放器，不使用这些网站的官方应用。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/newpipe-streaming-client-case/)</sub>
 - [**Littlebird.ai 静态首页重建**](https://github.com/AkashNaickar/crdb-sample-frontend) - 依据捕获的标记与资源，用原生 HTML/CSS/JavaScript 重建 Littlebird.ai 首页；源码实现移动导航、FAQ 展开、滚动显现及随操作系统变化的按钮展示。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/littlebird-static-rebuild-case/)</sub>
 - [**Ruffle：用 Rust 重新实现的 Adobe Flash Player**](https://github.com/ruffle-rs/ruffle) - 用 Rust 重新实现 Adobe Flash Player，使从 ActionScript 1/2（AVM1）到 ActionScript 3（AVM2）的 SWF 内容能在原生桌面播放器中运行，或通过 WebAssembly 以自托管脚本或浏览器扩展的形式在浏览器中运行。 <sub>案例 · 独立重建 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/ruffle-flash-player-case/)</sub>
 - [**恐龙跑酷：经 REA 检查、由 Codex 重建的速度规则**](https://github.com/zhxunzh84/rea-dino-reverse-engineering) - 作者使用 REA 的 MCP 浏览器工具被动捕获 wayou 开源 T-Rex Runner 页面已加载的 JavaScript，再由 Codex 在一个自包含的 HTML5 Canvas 游戏中重建其加速规则。 <sub>案例 · 混合工具流程 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/rea-dino-runner-community-case/)</sub>
@@ -302,6 +308,33 @@
 - [**《神秘海域：内森·德雷克合集》原生 Windows 移植**](https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port) - 在 Windows 上原生运行 PS4 版《神秘海域：内森·德雷克合集》自身的 x86-64 可执行文件：由运行时提供 PS4 系统库，并以源自 shadPS4 的 Vulkan 渲染器执行 GPU 工作。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/uncharted-collection-pc-port-case/)</sub>
 - [**Void Client：重建 Starblast.io 游戏客户端**](https://github.com/Senko74/Void-Client) - Void Client 是一个尚未完成的 Starblast.io 浏览器游戏客户端 JavaScript 重建项目，基于对其网络协议的研究。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/void-client-case/)</sub>
 
+<a id="game-unassigned"></a>
+### 其他重建方式 (23)
+
+- [**Daytona USA：Model 2 街机游戏的原生重编译**](https://github.com/alphanu1/daytona-arcade-recomp) - 把世嘉 Model 2 街机游戏《Daytona USA》从用户自备的 MAME ROM 集重建为原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/daytona-usa-arcade-recomp-case/)</sub>
+- [**Destruction Derby 64：美版 ROM 的匹配反编译**](https://github.com/murkantor/Destruction-Decomp-64) - 任天堂 64 美版 Destruction Derby 64 的匹配反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/destruction-derby-64-decomp-case/)</sub>
+- [**Exult：Ultima VII 的现代引擎**](https://github.com/exult/exult) - 用 C++ 引擎替换 DOS 版《Ultima VII》的可执行文件，在现代系统上加载游戏自带的数据和图像。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/exult-ultima7-engine-case/)</sub>
+- [**GemRB：Infinity 引擎的重新实现**](https://github.com/gemrb/gemrb) - 重新实现《博德之门》《冰风谷》和《异域镇魂曲》使用的 Infinity 引擎，并用用户自备的原版游戏数据运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gemrb-infinity-engine-case/)</sub>
+- [**God of War PSP: native PC ports：Chains of Olympus 与 Ghost of Sparta**](https://github.com/DrummingBird1/gow-psp-recomp) - 把用户自备的美版 PSP 光盘重编译为 Windows 原生程序，游戏是 God of War: Chains of Olympus 和 Ghost of Sparta。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gow-psp-recomp-case/)</sub>
+- [**HaloPad：在 iPhone、iPad 和 Mac 上运行 Halo Combat Evolved**](https://github.com/chrissotraidis/projectreach) - README 称之为 HaloPad 的预览版，用用户自备的副本在 iPhone、iPad 和 Apple 芯片 Mac 上构建《Halo: Combat Evolved》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halopad-projectreach-case/)</sub>
+- [**JA2 Stracciatella：在现代平台上运行 Jagged Alliance 2**](https://github.com/ja2-stracciatella/ja2-stracciatella) - 用用户自备的原始数据文件，在比 1999 年原版更多的平台上运行《Jagged Alliance 2》，并包含稳定性工作和模组接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ja2-stracciatella-case/)</sub>
+- [**Kingdom Hearts De:Compiled：PS2 日版与 Final Mix 可执行文件的反编译**](https://github.com/ethteck/kh1) - PlayStation 2 上 Kingdom Hearts 可执行文件的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kingdom-hearts-ps2-decomp-case/)</sub>
+- [**Larax &amp; Zaco：由 REA 支持的部分反编译**](https://github.com/Hubert-Rybak/lezac-decompilation) - 用固定版本的 REA 和 Ghidra 从《Larax &amp; Zaco》v1.0 共享版可执行文件导出过程，并把其中一小部分重建为 Pascal 和 C。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/lezac-decompilation-case/)</sub>
+- [**Legend of Mana：PlayStation 游戏的匹配反编译**](https://github.com/celophi/lom-decomp) - PlayStation 游戏 Legend of Mana 的匹配反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/legend-of-mana-decomp-case/)</sub>
+- [**Liberty City Stories：基于 PSP 静态重编译的 PC 移植**](https://github.com/elmasas/lcs-recomp) - 在 PSPRecomp 静态重编译器上构建《Grand Theft Auto: Liberty City Stories》的 PC 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lcs-recomp-case/)</sub>
+- [**Need for Speed: Underground 2 静态重编译**](https://github.com/codepdbh/nfsu2-recompiled) - 把用户自备的《Need for Speed: Underground 2》SPEED2.EXE 从 32 位 x86 译成 C，并在 Windows 和 Android 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nfsu2-recompiled-case/)</sub>
+- [**New Play Control! Pikmin：Wii 美版 DOL 的反编译**](https://github.com/projectPiki/pik1wii) - Wii 美版 New Play Control! Pikmin 的进行中反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pik1wii-decomp-case/)</sub>
+- [**Omnispeak：Commander Keen 第 4 至 6 代的重实现**](https://github.com/sulix/omnispeak) - 重实现 Commander Keen 第 4、5、6 代，并力求与 DOS 版存档兼容。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/omnispeak-keen-case/)</sub>
+- [**寄生前夜：美版 PlayStation 可执行文件的匹配反编译**](https://github.com/khasinski/parasite-eve-decomp) - 《寄生前夜》美版光盘 1 的匹配反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/parasite-eve-usa-decomp-case/)</sub>
+- [**Perfect Dark：基于一致性反编译的现代移植**](https://github.com/perfect-dark-pc-port/perfect_dark) - 把 Perfect Dark 的反编译结果移植到现代平台。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/perfect-dark-pc-port-case/)</sub>
+- [**PSPRecomp：静态重编译框架及 Vice City Stories 配置**](https://github.com/jessicanataliagta/PSPRecomp) - 读取 PSP 的 Allegrex 可执行文件，预先生成 C++，并在原生宿主上运行，而不是使用 PSP 解释器。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/psprecomp-vcs-case/)</sub>
+- [**ReStreet：重编译到 Windows 的 FIFA Street 2012**](https://github.com/samuelit0davila/fifa-street-pc-port) - 把 Xbox 360 版《FIFA Street》（2012）重编译为 Windows 程序，附带安装器、启动器和社区在线对战。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/restreet-fifa-street-case/)</sub>
+- [**ScummVM：经典冒险游戏的替代可执行文件**](https://github.com/scummvm/scummvm) - 用一个程序替换经典冒险游戏和 RPG 的可执行文件，运行用户自备的原始数据文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scummvm-engine-case/)</sub>
+- [**Silent Hill：进行中的 PlayStation 一致性反编译**](https://github.com/shdecompilations/silent-hill-decomp) - 将《Silent Hill》的 PlayStation 1 代码重建为 C，目标是编译回与原版一致的机器码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/silent-hill-ps1-decomp-case/)</sub>
+- [**The Simpsons Game：Xbox 360 静态重编译**](https://github.com/YesterMester/TheSimpsonsGameRecomp) - 把 2007 年 Xbox 360 版《The Simpsons Game》的可执行文件预先译成 C++，并在 Linux、Steam Deck 和 Windows 上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/simpsons-game-recomp-case/)</sub>
+- [**TRX：古墓丽影 1、2、3 的开源引擎**](https://github.com/LostArtefacts/TRX) - 通过反编译做成的开源引擎，运行 PC 版《古墓丽影》1、2 和 3。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/trx-tomb-raider-case/)</sub>
+- [**Vice City Stories：PSPRecomp 配置的 Android 移植**](https://github.com/codepdbh/PSPRecomp-VCS-Android) - 把 PSPRecomp 的《Vice City Stories》配置放到 Android 上，使用 Vulkan 渲染，并同时记录 Windows DirectX 12 构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/psprecomp-vcs-android-case/)</sub>
+
 <a id="app"></a>
 ## App · 应用
 
@@ -322,6 +355,9 @@
 - [**tuya-mobile：Tuya 应用签名与 API 调用的 Python 重建**](https://github.com/AboveColin/tuya-mobile) - tuya-mobile 以 Python 重建 Tuya 移动应用的请求签名、加密 API 调用和 MQTT 信令凭据派生。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/tuya-mobile-security-layer-case/)</sub>
 - [**WeChat：通过 CommonCrypto 钩子提取 SQLCipher 密钥**](https://github.com/Evanyuan-builder/wechat-4.1.10-macos-key) - 这项研究针对 macOS 版 WeChat 4.1.10，作者报告通过 LLDB 在 CommonCrypto 加密调用处设置断点，提取各数据库的 SQLCipher 密钥。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/wechat-4-1-10-macos-key-case/)</sub>
 - [**cbyge：重建 C by GE 智能灯泡云端协议**](https://github.com/unixpickle/cbyge) - 以 Go 库和一个可自行部署的小型网页应用，重新实现 C by GE（现名 Cync）智能灯泡应用的云端控制通道。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/cbyge-c-by-ge-protocol-case/)</sub>
+- [**iDescriptor：USB 连接的 iPhone 或 iPad 桌面工具**](https://github.com/iDescriptor/iDescriptor) - 用 Rust 和 Qt 编写的桌面工具，面向 USB 连接的 iPhone 或 iPad。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/idescriptor-companion-case/)</sub>
+- [**PC-BASIC：GW-BASIC 家族解释器**](https://github.com/robhagemans/pcbasic) - 面向 GW-BASIC、BASICA、PCjr Cartridge BASIC 和 Tandy 1000 GWBASIC 的跨平台解释器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pcbasic-interpreter-case/)</sub>
+- [**Viaduct：NetNewsWire 的 Linux 移植**](https://github.com/VirInvictus/Viaduct) - README 称为 NetNewsWire 移植的 Linux RSS 阅读器，用 Rust 和 GTK4 编写。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/viaduct-netnewswire-case/)</sub>
 - [**NiimBlue：NIIMBOT 标签打印机的独立网页客户端**](https://github.com/MultiMote/niimblue) - 以浏览器客户端替代 NIIMBOT 官方标签应用，可设计标签并通过 Web Bluetooth 或 Web Serial 打印，同一界面另有 Android（Capacitor）和 Windows（Tauri）版本。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/niimblue-niimbot-printer-client-case/)</sub>
 - [**open\_oura：基于逆向 BLE 协议、无需云端的 Oura Ring 客户端**](https://github.com/Th0rgal/open_oura) - 用一组 Rust crate 和 oura 命令行客户端重新实现 Oura Ring 第 3/4/5 代的低功耗蓝牙协议，可直接与戒指配对、认证并同步数据，无需 Oura 账户或云服务。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/open-oura-ring-protocol-case/)</sub>
 - [**Sony Headphones Client：Sony 耳机控制协议的桌面客户端**](https://github.com/Plutoberth/SonyHeadphonesClient) - 把 Sony 仅限手机的 Headphones 应用的部分功能重建为 Windows、Linux 和 macOS 桌面客户端，通过蓝牙 RFCOMM 连接已配对的耳机，调整降噪、环境声和虚拟音效设置。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/sony-headphones-client-case/)</sub>
@@ -336,6 +372,9 @@
 - [**usque：Cloudflare WARP MASQUE 模式的开源再实现**](https://github.com/Diniboy1123/usque) - 用 Go 重新实现 Cloudflare WARP 客户端的 MASQUE 模式：通过基于 QUIC/HTTP/3 的 Connect-IP（RFC 9484）隧道传输 IP 流量，并以原生 TUN 设备、SOCKS5 或 HTTP 代理、仅 TCP 的 L4 代理或端口转发等形式提供。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/usque-warp-masque-client-case/)</sub>
 - [**Webamp：在浏览器中重新实现 Winamp 2**](https://github.com/captbaritone/webamp) - 用 HTML5 和 JavaScript 重新实现 Winamp 2 的主窗口、均衡器和播放列表窗口，借助 Web Audio 实现播放、音量、声道平衡和均衡器，并渲染原有的经典 .wsz 皮肤，其文档称渲染效果与 Winamp 2.9 逐像素一致；Milkdrop 预设通过 Butterchurn 的 WebGL 移植版运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/webamp-winamp-reimplementation-case/)</sub>
 - [**WristBeam：为 Mac 配套应用重建佳明手表协议**](https://github.com/kongdayan/wristbeam) - 以原生 macOS 菜单栏应用实现佳明手表的配套客户端：通过蓝牙配对，接收实时健康通知和原始 FIT 文件，并可上传至 Garmin Connect。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/wristbeam-garmin-watch-protocol-case/)</sub>
+- [**zalo-linux：Zalo 桌面应用的 Linux 软件包**](https://github.com/thotam/zalo-linux) - 把 VNG 的 Zalo 桌面应用从官方 macOS 安装包重新打包到 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zalo-linux-desktop-case/)</sub>
+- [**OpenHaystack：使用 Apple“查找”网络的追踪标签**](https://github.com/seemoo-lab/openhaystack) - 制作通过 Apple“查找”网络上报位置的个人蓝牙追踪标签，并提供用来查询该网络的 Mac 应用。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/openhaystack-find-my-case/)</sub>
+- [**ReactOS：与 Windows NT 兼容的操作系统**](https://github.com/reactos/reactos) - 构建一个开源操作系统，目标是运行为 Windows NT 家族编写的应用程序和驱动程序。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/reactos-nt-compatible-case/)</sub>
 - [**iX500 Scan：基于逆向 ScanSnap Wi-Fi 协议的 macOS 客户端**](https://github.com/jonaswagnr/ix500-scan) - 在 macOS 上以 SwiftUI 应用和 Python 后台服务替代 ScanSnap Home，为富士通／PFU ScanSnap iX500 提供扫描：Wi-Fi 经由社区逆向的 VENS 协议，USB 经由 SANE，输出可搜索的 PDF。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/ix500-scan-scansnap-wifi-case/)</sub>
 - [**ScooterLink：重建 Honda RoadSync 车把按键协议**](https://github.com/gdorgian/ScooterLink) - 以一个 iOS 应用替代 Honda RoadSync 仅支持 Apple Music 的媒体控制：通过低功耗蓝牙与 Honda PCX 2025 的 TFT 仪表配对，把车把按键转换为对任意播放器生效的系统级命令。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/scooterlink-honda-roadsync-case/)</sub>
 - [**Claude Code 背景动画实验室：基于 REA 调查的桌面动画重新实现**](https://github.com/Henry-fan88/claude-code-background) - 将 Claude 桌面应用中 Claude Code“新会话”界面的字符风场背景，重新实现为可离线运行的 WebGL2 页面，并附带 38 个滑块的控制面板。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/claude-code-background-lab-case/)</sub>
@@ -378,6 +417,9 @@
 - [**CPQ IO Scheduler：还原小米的块设备调度器**](https://github.com/Rasenkai/CPQ_IOSched) - CPQ IO Scheduler 从已剥离符号的 ARM64 cpq.ko 内核模块还原小米的 Linux 块设备调度器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cpq-iosched-case/)</sub>
 - [**m0rph：追踪混淆 ELF 程序的字符串校验逻辑**](https://github.com/UmbertoDellaMonica/m0rph-CTF-CyberChallenge.IT) - m0rph 调查使用 readelf、strings、Cutter 和 Radare2 分析一款经过混淆的 x86-64 ELF CTF 字符串校验程序。 <sub>案例 · [完整条目](https://awesomerea.org/zh/resources/m0rph-ctf-analysis-case/)</sub>
 - [**Malware Analysis：njRAT 与 Casdet 行为研究**](https://github.com/phour44/Malware-Analysis) - 该恶意软件研究用 PEStudio 静态检查和 ANY.RUN 沙箱遥测分析 njRAT 与经 UPX 打包的 Casdet 可执行文件，同时检查恶意 PDF 和良性对照文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/malware-analysis-njrat-casdet-case/)</sub>
+- [**HyperCard 1.2.2：经典 Mac 应用的静态重编译**](https://github.com/sp00nznet/macrecomp) - 静态重编译经典 Mac 应用 HyperCard 1.2.2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hypercard-122-recomp-case/)</sub>
+- [**openbst：BeSTspeech 的 C 语言重实现**](https://github.com/Mudb0y/openbst) - 把 Berkeley Speech Technologies 的共振峰合成器 BeSTspeech（HumanWare Keynote GOLD 所带的引擎）从零重实现为 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openbst-bestspeech-case/)</sub>
+- [**OpenEVV：把 IBM Embedded ViaVoice 重写为可移植 C**](https://github.com/Mudb0y/openevv) - 把屏幕阅读器用户称为 Eloquence 的 IBM Embedded ViaVoice 重写为可移植 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openevv-viavoice-case/)</sub>
 - [**OpenBSD netcat：REA 与 Ghidra 静态调查**](https://github.com/NullLabTests/OpenBSD_netcat_REA) - REA/Ghidra 报告研究 Ubuntu netcat-openbsd 1.234-1 ELF 二进制，公开证据封套、反编译函数及函数清单；产物是静态调查，而非重建后的 netcat 应用。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/netcat-openbsd-rea-static-case/)</sub>
 - [**Windows 加载器：借助 REA 与 Codex 的静态恶意软件分析**](https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/) - Fedele Mantuano 报告在离线 Docker 实验环境中让 Codex 借助 REA，对一个公开的 Windows 恶意软件样本做静态分析，全程不执行样本。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/windows-loader-static-analysis-case/)</sub>
 - [**Show Your Work：对 REA 证据架构的实测剖析**](https://no-flag.com/2026/10/18/REA-paper/) - 一篇非官方的实测研究：先阅读 REA 源码，再在 27 类分析对象上对运行中的服务器发出 1,012 次有记录的调用，测量其按内容寻址的 Evidence 记录、按修订串联的未知项台账、带类型的拒绝、冷启动及响应上限。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/noflag-rea-evidence-architecture-study/)</sub>
@@ -398,10 +440,16 @@
 - [**VanMoof BLE：S5、A5 与 S6 自行车协议客户端**](https://github.com/Knight1/vanmoof-ble) - VanMoof BLE 用 Python 实现 VanMoof S5、A5 和 S6 自行车的 BLE 协议客户端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/vanmoof-ble-protocol-case/)</sub>
 - [**Virtual MPC Sample：在 QEMU 中运行 Akai MPC Sample 固件**](https://github.com/orrpunk-art/virtual-mpc-sample) - Virtual MPC Sample 使用定制实验内核和浏览器控制面板，在 QEMU 中运行 Akai MPC Sample 1.3.0.12 固件。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/virtual-mpc-sample-case/)</sub>
 - [**EchoMuse：把第二代 Echo Dot 变成 Home Assistant 语音终端的替换软件**](https://github.com/wilbowes/EchoMuse) - 替换已解锁的第二代 Amazon Echo Dot（2016 年款，代号 biscuit）上的软件，使其通过 ESPHome API 成为本地 Home Assistant 语音终端：EchoMuse 自己的 Go 固件驱动麦克风、扬声器、LED 灯环和按键，局域网中的控制器负责唤醒词、设备管理和仪表盘。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/echomuse-echo-dot-voice-satellite-case/)</sub>
+- [**EchoPod：Snowsky Echo Mini 8 GB 替代固件**](https://github.com/BasilSkyWalk/echopod) - Snowsky（FiiO）Echo Mini 8 GB 播放器的替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/echopod-echo-mini-firmware-case/)</sub>
+- [**FreshTomato ARM：华硕 RT-AC3200 的替代固件**](https://github.com/FreshTomato-Project/freshtomato-arm) - 面向博通 ARM 路由器的开源替代固件，包括华硕 RT-AC3200。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/freshtomato-ac3200-firmware-case/)</sub>
+- [**GLaBIOS：从零编写的 8K ROM BIOS**](https://github.com/640-KB/GLaBIOS) - 面向老式 PC、XT 和 8088 机器、从零编写的开源 ROM BIOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/glabios-rom-bios-case/)</sub>
+- [**TC66 定制固件：RuiDeng USB-C 功率计的替代镜像**](https://github.com/FletcherD/tc66-custom-fw) - RuiDeng TC66 和 TC66C USB-C 功率计的替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/tc66-meter-firmware-case/)</sub>
+- [**UV-K5：泉盛固件 v2.1.27 的开源重实现**](https://github.com/DualTachyon/uv-k5-firmware) - 已归档的泉盛 UV-K5 手台固件 v2.1.27 重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/uv-k5-firmware-case/)</sub>
 - [**iCSee LocalMod：保留原厂固件的摄像头控制扩展**](https://github.com/Vittuu/icsee-localmod) - XM530V200 摄像头所有者授权案例以 REA/Ghidra 调查原生 Sofia 命令处理器，再添加本地控制及 Home Assistant 集成，保留原厂驱动和录像；源码扩展明确区分静态、模拟协议及实机证据。 <sub>案例 · 混合工具流程 · 也适用：二进制、协议 · [完整条目](https://awesomerea.org/zh/resources/icsee-localmod-rea-camera-case/)</sub>
 - [**MXQ PRO RK3229：Android 固件调查与 Linux 改造**](https://github.com/bigtower17/mxqpro-rk3229) - 设备所有者记录了 RK3229 电视盒的硬件识别、原厂 Android ROM 调查、用户态手柄驱动及 Armbian 改造；REA 用于 ADB 清点和 Android 分析引擎引导，APK 分析与设备修改属于混合工作流，并非固件重建。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/mxqpro-rk3229-rea-repurposing-case/)</sub>
 - [**Valetudo：扫地机器人厂商云的本地替代**](https://github.com/Hypfer/Valetudo) - 用运行在已 root 机器人上、与厂商固件并存的本地服务取代受支持扫地机器人的厂商云，并模拟固件所期待的云端接口，包括 miio 模拟云（dummycloud）以及对应 Midea MSmart 协议的实现。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/valetudo-robot-cloud-replacement-case/)</sub>
 - [**TeddyCloud：可自托管的 Toniebox 云端替代服务器**](https://github.com/toniebox-reverse-engineering/teddycloud) - 以可自托管的 C 服务器重新实现 Toniebox 所连接的 Boxine 云服务，使盒子能在本地获取音频、设置和无线下发内容，同时由用户控制哪些数据发往厂商。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/teddycloud-toniebox-server-case/)</sub>
+- [**IronOS：TS100 一类电烙铁的替代固件**](https://github.com/Ralim/IronOS) - 替换受支持智能电烙铁上的原厂固件，从 TS100 开始，也包括 Pinecil。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ironos-soldering-firmware-case/)</sub>
 - [**OpenDMCUFirm：重新实现的 Wii U DMCU 显示固件**](https://github.com/GaryOderNichts/OpenDMCUFirm) - 用 C 语言重新实现 Wii U 的 DMCU 固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendmcufirm-wii-u-dmcu-firmware-case/)</sub>
 - [**reflecticon-224：在模拟硬件上运行 Lexicon 224 混响器固件**](https://github.com/joelanders/reflecticon-224) - 模拟 Lexicon 224、224X 与 224XL 数字混响器，使其原厂固件能在浏览器页面或 JUCE 插件中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reflecticon-224-lexicon-emulation-case/)</sub>
 - [**Supermodel：Real3D Pro-1000 图像生成器的初步模拟**](https://github.com/trzy/Supermodel) - 为 Supermodel 街机模拟器加入对 Real3D Pro-1000 的模拟。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/supermodel-real3d-pro1000-emulation-case/)</sub>
@@ -482,9 +530,13 @@
 - [**Cat Printer BLE：重建 MXW01 热敏打印机协议**](https://github.com/MaikelChan/CatPrinterBLE) - 以一个 Windows 命令行客户端替代 MXW01“猫猫打印机”（一款小型低功耗蓝牙热敏打印机）的厂商手机应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/catprinterble-mxw01-printer-case/)</sub>
 - [**DJI MIMO BLE 逆向素材：重建 DJI Osmo 控制协议**](https://github.com/xaionaro/reverse-engineering-dji) - 记录 DJI 专有 MIMO 应用用于控制 DJI Osmo 设备的低功耗蓝牙报文格式，是作者在开发独立 CLI 工具 djictl 时产出的逆向工程素材。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dji-mimo-ble-reveng-case/)</sub>
 - [**Ford Fiesta MK5 MS-CAN：解码仪表盘与收音机总线**](https://github.com/roncapat/Ford-Fiesta-MK5-MS-CAN-bus) - 记录了改款（2006 年后）Ford Fiesta MK5 上连接 6000CD 收音机与仪表盘的中速 CAN 总线。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ford-fiesta-mk5-ms-can-case/)</sub>
+- [**Open OSCAR Server：可自建的 AIM 与 ICQ 服务器**](https://github.com/mk6i/open-oscar-server) - 面向经典 AIM 和 ICQ 客户端的 Go 服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-oscar-server-case/)</sub>
 - [**opendash：重建 Scanmatik SM3 J2534 适配器协议**](https://github.com/PabloSoage/opendash) - 直接使用 Scanmatik SM3 未公开的协议——这款 J2534 车辆接口原本只与自家 Windows 软件通信——并以 ELM327 桥接的形式提供给 Android 手机，其上还有一个诊断应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendash-scanmatik-sm3-protocol-case/)</sub>
+- [**openrsync：ISC 许可的 rsync 协议 27 实现**](https://github.com/kristapsdz/openrsync) - 一个 ISC 许可的 rsync 实现，复制目录并核对结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openrsync-protocol-case/)</sub>
 - [**OWL：开源的 Apple 无线直连（AWDL）实现**](https://github.com/seemoo-lab/owl) - 以用户态 C 守护进程在 Linux 和 macOS 上重新实现 Apple 无线直连（AWDL）——Apple 设备用于 AirDrop 等点对点连接的专有 Wi-Fi 自组网协议；README 称其为达姆施塔特工业大学 SEEMOO 实验室 Open Wireless Link 项目逆向工程的成果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/owl-awdl-open-implementation-case/)</sub>
+- [**Thermal Master P3：浏览器里的厂商 USB 协议客户端**](https://github.com/ferrolho/thermal-master-viewer) - 面向 Thermal Master P3 的浏览器查看器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thermal-master-p3-protocol-case/)</sub>
 - [**uniden-r8-ble：重建 Uniden R8 雷达探测器的蓝牙遥测**](https://github.com/JeremyWhittaker/unidenr8_bluetooth) - 将 Uniden R8 雷达探测器未公开的低功耗蓝牙输出解码为可在 Raspberry Pi 上运行的只读采集程序，提供实时遥测、警报开始／更新／结束事件、SQLite 历史记录，以及可选的 MQTT 与 Home Assistant 发布。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/uniden-r8-ble-telemetry-case/)</sub>
+- [**wmbusmeters：核对有线 M-Bus 与无线 wM-Bus 读数**](https://github.com/wmbusmeters/wmbusmeters) - 读取有线 M-Bus 和无线 wM-Bus 仪表。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wmbusmeters-protocol-case/)</sub>
 - [**Xiaomi Kettle BLE protocol：重建智能电水壶的控制接口**](https://github.com/anna-oake/xiaomi-kettle) - 记录 Xiaomi 电水壶封闭的低功耗蓝牙 GATT 协议；作者通过反编译 Mi Home Android 应用并反汇编其负责加密的原生库重建了该协议。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/xiaomi-kettle-ble-protocol-case/)</sub>
 - [**bosectl：重建 Bose BMAP 耳机协议**](https://github.com/aaronsb/bosectl) - 无需 Bose 应用、账号或云服务，即可在 Linux 和 macOS 上控制 Bose 耳机：项目提供 Python、Rust 和 C++ 库及命令行工具，在蓝牙 RFCOMM 上实现 Bose 的 BMAP 协议。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/bosectl-bose-bmap-protocol-case/)</sub>
 - [**BudsPro-Headtracking：通过 Samsung 串口协议获取 Galaxy Buds Pro 头部追踪数据**](https://github.com/timschneeb/BudsPro-Headtracking) - 用一个小型 Python 脚本重新实现 Samsung Galaxy Buds Pro 专有的空间音频消息，使电脑能实时获取耳机的头部追踪数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/budspro-headtracking-case/)</sub>
