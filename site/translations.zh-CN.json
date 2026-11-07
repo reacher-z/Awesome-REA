@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "blastcorps-recomp-case": {
+    "name": "Blast Corps：重编译",
+    "requirements": [
+      "需要支持 Direct3D 12.0 着色器模型 6、Vulkan 1.2 或 Metal argument buffers tier 2 的 GPU。玩家提供美版 1.1 ROM。不是 .z64 的格式会在 ROM 正确时被转换。",
+      "预编译包在仓库的 Releases 页面。源码构建步骤在 BUILDING.md。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

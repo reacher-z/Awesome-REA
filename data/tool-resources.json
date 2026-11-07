@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "blastcorps-recomp-case",
+    "name": "Blast Corps: Recompiled",
+    "url": "https://github.com/SlaveOfIDO/blastcorps-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Blast Corps: Recompiled uses N64: Recompiled to statically recompile Blast Corps into a native port, with RT64 for rendering. It accepts only the US 1.1 Nintendo 64 ROM.",
+    "description_zh": "Blast Corps: Recompiled 用 N64: Recompiled 把《Blast Corps》静态重编译成原生移植，渲染使用 RT64。它只接受美版 1.1 的任天堂 64 ROM。",
+    "requirements": [
+      "A GPU with Direct3D 12.0 shader model 6, Vulkan 1.2, or Metal argument buffers tier 2. The player supplies the US 1.1 ROM. Formats other than .z64 are converted when the ROM is the correct one.",
+      "Prebuilt binaries are on the repository Releases page. Source build steps are in BUILDING.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/SlaveOfIDO/blastcorps-recomp/blob/b5510451aabc2373079cd01e8c0ec2a8d01eb742/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
