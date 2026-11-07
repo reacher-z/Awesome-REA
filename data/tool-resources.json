@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "omf-2097-remastered",
+    "name": "One Must Fall 2097 Remastered",
+    "url": "https://github.com/Jared-woodruff/OMF-2097-Remastered",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "One Must Fall 2097 Remastered reimplements the engine of the 1994 robot-fighting game and plays the original game files. It runs as an app on Windows, macOS, and Linux, and in a browser. The first start can use the 1994 look or the remastered graphics. F3 switches to the player's own music.",
+    "description_zh": "One Must Fall 2097 Remastered 重实现这款 1994 年机器人格斗游戏的引擎，并播放原来的游戏文件。它可以作为 Windows、macOS 和 Linux 程序运行，也可以在浏览器里运行。第一次启动可以选择 1994 年的画面或重制画面。F3 切换到玩家自己的音乐。",
+    "requirements": [
+      "Desktop downloads are single files for Windows 10 or 11, macOS 12 or later, and Linux. The README says each download includes the game, HD artwork, and music, about 240 MB. A browser build is at jared-woodruff.github.io/OMF-2097-Remastered.",
+      "The reviewed README does not name a license in the description or download sections."
+    ],
+    "evidence_url": "https://github.com/Jared-woodruff/OMF-2097-Remastered/blob/576f4c795fa0aa7696941c8ba432a6cc2117339e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
