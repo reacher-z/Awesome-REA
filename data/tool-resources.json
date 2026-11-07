@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pcdump-bn",
+    "name": "Pseudo C Dump",
+    "url": "https://github.com/AsherDLL/PCDump-bn",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Pseudo C Dump is a Binary Ninja plugin that writes the decompiler's Pseudo C for a binary into a chosen folder, so the output can be opened in an IDE or passed to a later static-analysis tool. It requires Binary Ninja build 3814 or newer and is written in Python 3. The README releases it under Apache-2.0.",
+    "description_zh": "Pseudo C Dump 是一个 Binary Ninja 插件，把反编译器为一个二进制生成的伪 C 写到指定文件夹，以便在 IDE 中打开或交给后续静态分析工具。它需要 Binary Ninja 构建 3814 或更新版本，并用 Python 3 编写。README 以 Apache-2.0 发布它。",
+    "evidence_url": "https://github.com/AsherDLL/PCDump-bn/blob/67aec1f1ba01687e773ef5fe6f26a7dd7b7351c7/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "Binary Ninja build 3814 or newer. The plugin is Python 3.",
+      "The README releases the plugin under the Apache 2.0 License in LICENSE."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
