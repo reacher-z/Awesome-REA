@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "paper-mario-split": {
+    "name": "纸片马里奥拆分",
+    "requirements": [
+      "需要 libcapstone 和 libyaml。把美版 ROM 放成 baserom.z64 并运行 make。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-mario-split",
+    "name": "Paper Mario split",
+    "url": "https://github.com/RetroReversing/PaperMarioDecompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This splits the US Paper Mario ROM for the Nintendo 64. The ROM is named baserom.z64. make builds n64split and writes the split ROM. Compiling n64split needs libcapstone and libyaml.",
+    "description_zh": "该项目拆分 Nintendo 64 美版《纸片马里奥》的 ROM。ROM 命名为 baserom.z64。make 构建 n64split 并写出拆分后的 ROM。编译 n64split 需要 libcapstone 和 libyaml。",
+    "requirements": [
+      "libcapstone and libyaml. Place the US ROM at baserom.z64 and run make.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/RetroReversing/PaperMarioDecompilation/blob/64976a4bf7578e12ae101fe7a8da7245d3935303/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
