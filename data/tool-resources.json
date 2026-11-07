@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "asphalt5-native",
+    "name": "Asphalt 5 native port",
+    "url": "https://github.com/mrbaazzman/Asphalt5-Native",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Asphalt 5 HD from an Android APK to Windows x86-64. The supported builds are 3.2.4 Sony Ericsson, 3.3.7 Galaxy Tab, and 3.4.1 Android Market. libasphalt5.so is translated to C and compiled with MinGW. Rendering uses an OpenGL ES 1.x compatibility layer at 1920x1080 by default. Physics stay on the original 25 Hz step. All 12 race scenes are playable. The setup program is Asphalt5Setup.exe.",
+    "description_zh": "该项目把 Android APK 里的《狂野飙车 5 HD》静态重编译到 Windows x86-64。支持的构建是 3.2.4 Sony Ericsson、3.3.7 Galaxy Tab 和 3.4.1 Android Market。libasphalt5.so 被翻译成 C 并用 MinGW 编译。渲染默认使用 OpenGL ES 1.x 兼容层，分辨率 1920x1080。物理保持原来的 25 Hz 步进。12 个赛道场景都可以玩。安装程序是 Asphalt5Setup.exe。",
+    "requirements": [
+      "Windows 10 or 11 x64 and one of those three APKs. A source build needs Python 3.10 or newer, CMake 3.20 or newer, Ninja, and MinGW-w64. tools\\make_builder.ps1 and tools\\build_installer.ps1 produce the setup.",
+      "License: MIT for the host code, tools, and documentation."
+    ],
+    "evidence_url": "https://github.com/mrbaazzman/Asphalt5-Native/blob/c5c74fdfd722aafd413e6c8ff8902ed1f1722757/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
