@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -225,7 +225,7 @@
 - [**Vandal Hearts：基于一致性反编译的原生 PC 移植**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - 以 shao113 的 PlayStation 版 Vandal Hearts 一致性反编译为基础，新增日版一致性代码树，并将两者延伸为原生 Windows 与 Linux 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### 引擎重实现 (47)
+### 引擎重实现 (48)
 
 - [**Age of Empires Free Software Remake：基于原版数据的重新实现**](https://github.com/FolkertVanVerseveld/aoe) - 以基于 SDL2 和 OpenGL 的跨平台 C++17 引擎重新实现 Microsoft 的《帝国时代》及其资料片《罗马复兴》，载入原版游戏的 DRS 归档和 language.dll 资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo：逆向实现的 Minecraft 服务端**](https://github.com/bravoserver/bravo) - 以 Python 基于 Twisted 重新实现 Minecraft Alpha 与 Beta 时期多人游戏的服务端；其文档称这是从零编写的逆向实现，致谢了网络流量转储的提供者，并说明通用的 Minecraft 资料已贡献给社区 wiki。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/bravo-minecraft-server-case/)</sub>
@@ -257,6 +257,7 @@
 - [**OpenMW：复用原内容并替代 Morrowind 引擎**](https://github.com/OpenMW/openmw) - 提供用于运行 Morrowind 的独立引擎和替代编辑器 OpenMW-CS，通过自己的运行时加载原游戏内容，并记录脚本及模组兼容性差异。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmw-engine-case/)</sub>
 - [**OpenRA：重新诠释早期 Westwood 即时战略游戏的引擎重新实现**](https://github.com/OpenRA/OpenRA) - 为早期 Westwood 即时战略游戏提供以 C# 编写的引擎，并以模组形式重新诠释 Command &amp; Conquer: Red Alert、Tiberian Dawn 和 Dune 2000。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openra-engine-case/)</sub>
 - [**OpenRCT2：RollerCoaster Tycoon 2 的开源重新实现**](https://github.com/OpenRCT2/OpenRCT2) - 以 C++ 引擎重新实现原本用 x86 汇编编写的 RollerCoaster Tycoon 2，并在原游戏数据上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openrct2-engine-case/)</sub>
+- [**OpenReliant**](https://github.com/OpenReliant/openreliant) - OpenReliant 重实现 2000 年 Warthog 和 Digital Anvil 的太空战斗游戏 StarLancer 的引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openreliant/)</sub>
 - [**OpenRiseOfNations：原生 macOS 引擎重新实现**](https://github.com/ben-wright-1/OpenRiseOfNations) - 以原生 macOS 应用重新实现 Rise of Nations: Extended Edition 引擎，包含 Metal 渲染器、确定性模拟、电脑对手，以及兼容的 BigHugeScript 编译器与虚拟机；美术、地图、规则和脚本均从使用者自有的 Windows 版安装目录读取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openriseofnations-engine-case/)</sub>
 - [**OpenRW：《侠盗猎车手 III》引擎的开源重新实现**](https://github.com/rwengine/openrw) - 以跨平台 C++ 引擎重新实现 Rockstar Games 的《侠盗猎车手 III》（2001），在正版 PC 游戏的数据上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openrw-gta3-engine-case/)</sub>
 - [**OpenSC4：SimCity 4 的早期开源重新实现**](https://github.com/OpenSC4-org/OpenSC4) - 以 Godot 项目和 GDScript 重新实现 SimCity 4，从使用者自有的 SimCity 4 安装目录读取 DBPF 归档、区域文件夹和城市存档。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opensc4-simcity-4-reimplementation-case/)</sub>

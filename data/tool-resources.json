@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openreliant",
+    "name": "OpenReliant",
+    "url": "https://github.com/OpenReliant/openreliant",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenReliant reimplements the engine of StarLancer, the 2000 space-combat game by Warthog and Digital Anvil. It is written in Zig on SDL3 and draws with Vulkan, or Metal on macOS. The README says the beta can play the whole campaign, and that saves from the original game carry over.",
+    "description_zh": "OpenReliant 重实现 2000 年 Warthog 和 Digital Anvil 的太空战斗游戏 StarLancer 的引擎。它用 Zig 写在 SDL3 上，用 Vulkan 绘制，在 macOS 上用 Metal。README 写明测试版可以玩完整场战役，原来的存档可以继续使用。",
+    "requirements": [
+      "The player supplies a retail copy of StarLancer. Building needs Zig 0.17.",
+      "Source code is MPL-2.0. Documentation under docs/ is CC BY-SA 4.0."
+    ],
+    "evidence_url": "https://github.com/OpenReliant/openreliant/blob/b22fc9ad5f3db4838e9224b9962411aefedbcb72/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
