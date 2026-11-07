@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (111)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -136,6 +136,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Pop Quiz! Can a Large Language Model Help With Reverse Engineering?**](https://arxiv.org/abs/2202.01142) - Tests whether OpenAI’s Codex model code-davinci-001 can answer reverse-engineering questions about C code in a zero-shot question-and-answer prompt. <sub>arXiv 2022 · Preprint · Hammond Pearce et al. · [PDF](https://arxiv.org/pdf/2202.01142v1) · [Full entry](https://awesomerea.org/papers/paper-pop-quiz-llm-re/)</sub>
 - [**Beyond the C: Retargetable Decompilation using Neural Machine Translation**](https://www.ndss-symposium.org/ndss-paper/auto-draft-298/) - BTC (Beyond The C) treats decompilation as plain-text translation from compiler-emitted x86-64 assembly to source code. <sub>Workshop on Binary Analysis Research (BAR) 2022 · Conference paper · Iman Hosseini et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2022_23009_paper.pdf) · [Code](https://figshare.com/s/2c68b9c181e80f4e3b06) · [Full entry](https://awesomerea.org/papers/paper-beyond-the-c/)</sub>
 - [**Asteria: Deep Learning-based AST-Encoding for Cross-platform Binary Code Similarity Detection**](https://doi.org/10.1109/DSN48987.2021.00036) - ASTERIA uses a Tree-LSTM to encode function ASTs and compare binary functions across platforms. <sub>2021 51st Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN) · Conference paper · Shouguo Yang et al. · [PDF](https://arxiv.org/pdf/2108.06082) · [Full entry](https://awesomerea.org/papers/paper-asteria/)</sub>
+- [**A Survey of Binary Code Similarity**](https://arxiv.org/abs/1909.11424v1) - This survey organizes binary code similarity research for settings where source code is unavailable, including patch analysis, bug search, and malware analysis. <sub>ACM Computing Surveys 2021 · Journal article · Irfan Ul Haq et al. · [PDF](https://arxiv.org/pdf/1909.11424v1) · [Full entry](https://awesomerea.org/papers/paper-binary-similarity-survey/)</sub>
 - [**Trex: Learning Execution Semantics from Micro-Traces for Binary Similarity**](https://arxiv.org/abs/2012.08680) - Trex learns execution semantics from function micro-traces, then uses that knowledge to match semantically similar binary functions. <sub>arXiv 2020 · Preprint · Kexin Pei et al. · [PDF](https://arxiv.org/pdf/2012.08680) · [Full entry](https://awesomerea.org/papers/paper-trex/)</sub>
 - [**Neural reverse engineering of stripped binaries using augmented control flow graphs**](https://dl.acm.org/doi/10.1145/3428293) - Nero predicts names for procedures in stripped x86-64 Linux executables; it does not produce decompiled code. <sub>Proceedings of the ACM on Programming Languages (OOPSLA 2020) · Journal article · Yaniv David et al. · [PDF](https://arxiv.org/pdf/1902.09122v4) · [Code](https://github.com/tech-srl/Nero/tree/7dac9f5748974ea8f39b5f29bb3c7d33f971077e) · [Full entry](https://awesomerea.org/papers/paper-nero/)</sub>
 - [**How far we have come: testing decompilation correctness of C decompilers**](https://dl.acm.org/doi/10.1145/3395363.3397370) - Tests whether C decompilers preserve program behavior. <sub>ACM ISSTA 2020 · Conference paper · Zhibo Liu et al. · [PDF](https://dl.acm.org/doi/pdf/10.1145/3395363.3397370) · [Code](https://github.com/monkbai/DecFuzzer) · [Full entry](https://awesomerea.org/papers/paper-decfuzzer/)</sub>
