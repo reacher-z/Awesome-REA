@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mcla-recomp": {
+    "name": "午夜俱乐部洛杉矶重编译",
+    "requirements": [
+      "需要标题编号 545407F8 的美版或欧版 Xbox 360 ISO。系统为带 Direct3D 12 的 Windows 10 或 11，或带 Clang 20 和 Vulkan 1.3 的 Linux。Windows 大约需要 20 GB 空闲空间。",
+      "许可证：GPL-3.0 或更高版本。ReXGlue 为 BSD-3。PS5_Vulkan 为 GPL-3。"
+    ]
   }
 }
