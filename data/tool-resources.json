@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "hexpyrion",
+    "name": "HEXPYRION",
+    "url": "https://github.com/DimaReverse/hexpyrion",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "HEXPYRION recovers Python source from Nuitka-compiled PE, ELF, and Mach-O binaries. The NDX command is python nuitka_decompiler.py --ndx --dev-only <binary> -o OUT. --devirt emits each marshalled code object as a .pyc without executing the binary. --onefile-unpack unpacks a Nuitka onefile payload, including zstd, without running the bootstrap. pefile is required for PE parsing.",
+    "description_zh": "HEXPYRION 从 Nuitka 编译的 PE、ELF 和 Mach-O 二进制恢复 Python 源码。NDX 命令是 python nuitka_decompiler.py --ndx --dev-only <binary> -o OUT。--devirt 在不执行二进制的情况下把每个序列化代码对象写成 .pyc。--onefile-unpack 在不运行引导程序的情况下拆出 Nuitka onefile 载荷，包括 zstd。解析 PE 需要 pefile。",
+    "requirements": [
+      "pip install -r requirements.txt. The README lists pefile, capstone, zstandard, xdis, uncompyle6, and decompyle3.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/DimaReverse/hexpyrion/blob/4daa534c8f21f63510a8a375279a8bfe6c3dd95f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
