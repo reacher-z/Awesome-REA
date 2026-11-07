@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pokerecomp": {
+    "name": "pokerecomp",
+    "requirements": [
+      "文档中的引擎是 Godot 4.8.dev7。发布包覆盖 Windows x86_64 和 ARM、macOS、Linux x86_64 和 ARM64、Android、iOS 和 Switch。",
+      "许可证：引擎源码为 MIT。README 写明该许可证不覆盖游戏或提供的转储。"
+    ]
   }
 }
