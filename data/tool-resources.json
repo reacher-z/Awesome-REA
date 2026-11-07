@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "goemon64-recomp",
+    "name": "Goemon 64: Recompiled",
+    "url": "https://github.com/klorfmorf/Goemon64Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Goemon 64: Recompiled statically recompiles the North American Nintendo 64 release of Mystical Ninja Starring Goemon. The menu loads assets from that ROM, including .z64 and other formats of the same image. Rendering uses RT64. A Direct3D 12 Shader Model 6, Vulkan 1.2, or Metal Argument Buffers Tier 2 GPU is required. x86-64 also needs SSE4.1. macOS 13 or newer covers Apple Silicon and Intel 7th-generation CPUs. ARM64 builds run on ARM64 CPUs. Build steps are in BUILDING.md.",
+    "description_zh": "Goemon 64: Recompiled 静态重编译北美版 Nintendo 64 游戏 Mystical Ninja Starring Goemon。菜单从那份 ROM 加载资源，包括 .z64 和同一镜像的其他格式。渲染使用 RT64。需要支持 Direct3D 12 着色器模型 6、Vulkan 1.2 或 Metal Argument Buffers Tier 2 的 GPU。x86-64 还需要 SSE4.1。macOS 13 或更高版本覆盖 Apple Silicon 和第七代 Intel CPU。ARM64 构建运行在 ARM64 CPU 上。构建步骤在 BUILDING.md。",
+    "requirements": [
+      "The North American N64 ROM. Follow BUILDING.md to build. Releases do not include the game.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/klorfmorf/Goemon64Recomp/blob/6661abc439327b9ed9e235c391720f9034f61a78/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
