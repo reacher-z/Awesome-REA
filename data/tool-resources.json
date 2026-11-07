@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "aidyn-decomp",
+    "name": "Aidyn Chronicles decompilation",
+    "url": "https://github.com/blackgamma7/Aidyn",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles Aidyn Chronicles: The First Mage for the Nintendo 64. It has splat configurations and symbol tables for a debug build and for NTSC 1.0. The sources under src_pseudo are described as untested code interpreted from the debug build.",
+    "description_zh": "该仓库反编译任天堂 64 游戏 Aidyn Chronicles: The First Mage。它有调试构建和 NTSC 1.0 的 splat 配置与符号表。src_pseudo 下的源码被写成从调试构建解释出来、尚未测试的代码。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/blackgamma7/Aidyn/blob/b005d87c0302f44da47105c1e507a1461e2af0a2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
