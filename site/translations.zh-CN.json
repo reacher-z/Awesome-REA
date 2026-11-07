@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gh2-recomp": {
+    "name": "吉他英雄 II 重编译",
+    "requirements": [
+      "设置 REXSDK，把 Guitar Hero II 的 ISO 解压到 assets，运行 cmake configure，构建 gh2test_codegen 目标，再构建 gh2test。启动时第一个参数指向素材目录。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
