@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "regoth-bs",
+    "name": "REGoth-bs",
+    "url": "https://github.com/REGoth-project/REGoth-bs",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "REGoth-bs reimplements the zEngine used by Gothic and Gothic II. The reviewed README says there is no official release yet. Nightly Windows builds are on the Azure Pipelines page for definition 1. Building and running on Linux or Windows are documented at regoth-project.github.io/REGoth-bs.",
+    "description_zh": "REGoth-bs 重实现《哥特王朝》和《哥特王朝2》使用的 zEngine。审阅的 README 写明还没有正式发行版。Windows 的夜间构建在 Azure Pipelines 的定义 1 页面。Linux 或 Windows 上的构建和运行写在 regoth-project.github.io/REGoth-bs。",
+    "requirements": [
+      "Follow the building and running pages on regoth-project.github.io/REGoth-bs.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/REGoth-project/REGoth-bs/blob/7f6fe1edbfd1b48218bd014e081e15677f643edc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
