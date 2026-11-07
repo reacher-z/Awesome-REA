@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mkwii-pc-builder",
+    "name": "Mario Kart Wii PC Builder",
+    "url": "https://github.com/MarcPique/mario-kart-wii-pc-builder",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Version 1.2.0 builds a native Windows game from a PAL Mario Kart Wii disc, RMCP01. The installer is MKWii-PC-Builder.exe and the game is Mario Kart Wii.exe. It includes 15 languages, up to four local players, and online play for one or two players per PC. Retro Rewind 6.13.4 supplies extra tracks and character variants. Dolphin texture packs can be PNG, DDS, ZIP, or 7z.",
+    "description_zh": "1.2.0 版从 PAL《马里奥卡丁车 Wii》光盘 RMCP01 构建原生 Windows 游戏。安装器是 MKWii-PC-Builder.exe，游戏是 Mario Kart Wii.exe。它包含 15 种语言、最多四名本地玩家，以及每台 PC 一到两名玩家的在线对战。Retro Rewind 6.13.4 提供额外赛道和角色变体。Dolphin 纹理包可以是 PNG、DDS、ZIP 或 7z。",
+    "requirements": [
+      "Windows x64 and a PAL RMCP01 disc image. Release 1.2.0 publishes SHA256SUMS.txt for the download.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/MarcPique/mario-kart-wii-pc-builder/blob/23cb58503344674f7afbfc1f7775b79cd26994e5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
