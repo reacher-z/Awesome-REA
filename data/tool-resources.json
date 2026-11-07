@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mmx4-decomp",
+    "name": "Mega Man X4 decompilation",
+    "url": "https://github.com/sozud/mmx4",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Mega Man X4 for PlayStation. The same C source builds byte-matching executables for the US release SLUS_005.61, the Japanese SLPS_009.02, and the European SLES_011.76, plus a native Linux port for the US and Japanese versions. The Sega Saturn build is non-matching.",
+    "description_zh": "这是 PlayStation 游戏《洛克人X4》的匹配反编译。同一份 C 源码可以构建逐字节匹配的美版 SLUS_005.61、日版 SLPS_009.02 和欧版 SLES_011.76 可执行文件，以及美版和日版的 Linux 原生移植。世嘉土星构建不匹配。",
+    "requirements": [
+      "The documented package install is binutils and gcc for mipsel, plus ninja. Then pip install -r requirements.txt, update submodules, and run compiler.sh.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/sozud/mmx4/blob/4e16dfc7c06597fd5719dd112654d8cf85d343c2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
