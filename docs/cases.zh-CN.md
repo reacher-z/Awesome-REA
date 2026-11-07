@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -225,7 +225,7 @@
 - [**Vandal Hearts：基于一致性反编译的原生 PC 移植**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - 以 shao113 的 PlayStation 版 Vandal Hearts 一致性反编译为基础，新增日版一致性代码树，并将两者延伸为原生 Windows 与 Linux 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### 引擎重实现 (47)
+### 引擎重实现 (48)
 
 - [**Age of Empires Free Software Remake：基于原版数据的重新实现**](https://github.com/FolkertVanVerseveld/aoe) - 以基于 SDL2 和 OpenGL 的跨平台 C++17 引擎重新实现 Microsoft 的《帝国时代》及其资料片《罗马复兴》，载入原版游戏的 DRS 归档和 language.dll 资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo：逆向实现的 Minecraft 服务端**](https://github.com/bravoserver/bravo) - 以 Python 基于 Twisted 重新实现 Minecraft Alpha 与 Beta 时期多人游戏的服务端；其文档称这是从零编写的逆向实现，致谢了网络流量转储的提供者，并说明通用的 Minecraft 资料已贡献给社区 wiki。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/bravo-minecraft-server-case/)</sub>
@@ -244,6 +244,7 @@
 - [**LBA2 Remake：以 TypeScript 和 Three.js 重新实现 Little Big Adventure 1 与 2**](https://github.com/LBALab/lba2remake) - 用 TypeScript、Three.js 和 React 重新实现 Little Big Adventure 2 的引擎，现在也涵盖 Little Big Adventure 1，在浏览器中运行，资源从使用者自有的游戏中导入。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lba2remake-little-big-adventure-case/)</sub>
 - [**Legend of Legaia：Rust 移植与本地读盘的浏览器工具**](https://github.com/AndrewAltimit/legend-of-legaia-re) - 从零编写的 Rust 移植面向北美 PlayStation 版 Legend of Legaia，附带原生/浏览器游玩、素材提取及光盘补丁工具；作者记录 Ghidra/模拟器研究与全流程测试阶梯，项目不是匹配反编译或静态重编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/legend-of-legaia-rust-port-case/)</sub>
 - [**libd2：《暗黑破坏神II》1.14d 引擎组件库**](https://github.com/jaenster/libd2) - 以 Zig 库重建《暗黑破坏神II》1.14d 的种子地图、物品生成、存档、模拟规则和网络格式。 <sub>案例 · 独立重建 · 也适用：二进制、协议 · [完整条目](https://awesomerea.org/zh/resources/libd2-engine-core-reconstruction-case/)</sub>
+- [**LibreKO**](https://github.com/ZeusAFK/LibreKO) - LibreKO 是一款经典大型多人在线游戏的开源服务器和客户端。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/libreko/)</sub>
 - [**librw：RenderWare Graphics 引擎的重新实现**](https://github.com/aap/librw) - 以可移植的 C++ 库重新实现 RenderWare Graphics 中间件 API 的大部分内容，可读写其 PS2、D3D8、D3D9 和 Xbox 平台的 DFF 模型与 TXD 纹理文件，并旨在于各平台格式之间转换。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/librw-renderware-reimplementation-case/)</sub>
 - [**MechRewired：基于原版数据重建 MechWarrior 2**](https://github.com/deanthecoder/MechRewired) - MechRewired 利用用户 DOS 版《MechWarrior 2: 31st Century Combat》的数据重建游戏体验。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mechrewired-mechwarrior-2-case/)</sub>
 - [**Nanolathe：附研究文档的 Total Annihilation 引擎重实现**](https://github.com/nanolathe-gg/nanolathe) - 用 Go 重实现兼容 Total Annihilation 的策略游戏引擎，公开文件格式研究并提供不同玩法配置。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nanolathe-case/)</sub>
