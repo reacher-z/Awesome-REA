@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "burnout3-pc": {
+    "name": "Burnout 3 Takedown：原生 Windows 移植",
+    "requirements": [
+      "用户需要自备光盘。README 写明不包含游戏内容。",
+      "GitHub 报告该仓库的许可证为 NOASSERTION。"
+    ]
   }
 }
