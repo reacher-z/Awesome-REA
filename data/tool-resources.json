@@ -36543,6 +36543,7 @@
     "description_zh": "Google FLARE 团队为 IDA Pro 开发的 Python 插件，提供自定义导航界面。XRefer 从入口点追踪执行路径，将二进制划分为相关函数的聚类，并呈现下游行为和产物，配以路径图提供上下文。它可以摄入外部数据，如来自 VMRay 和 CAPE 沙箱的 API 跟踪、capa 结果以及用户自定义的间接交叉引用。可选的集成会把提取的产物发送给 Google 的 Gemini 模型，生成代码关系的自然语言描述和基于聚类的函数标签。",
     "evidence_url": "https://github.com/mandiant/xrefer/blob/1aeda163ccae9be7b01dd6172513c28878f758b6/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at main 1aeda16 (2026-02-23; latest tag v1.0.3, 2025-01-22). Runs as a Python plugin inside IDA Pro: install with the hcli plugin manager (hcli install xrefer) or by copying plugins/ into IDA's plugins directory and running pip install -r requirements.txt, then restart IDA and use Edit -> XRefer. The asciinet dependency needs a JRE (java) on PATH.",
