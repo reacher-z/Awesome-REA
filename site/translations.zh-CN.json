@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "openenroth": {
+    "name": "OpenEnroth：魔法门 VI 至 VIII 引擎的重实现",
+    "requirements": [
+      "需要魔法门 VII 的游戏数据。README 写明至少要有 ANIMS、DATA、MUSIC 和 SOUNDS 目录。",
+      "审阅页面未说明许可。"
+    ]
   }
 }
