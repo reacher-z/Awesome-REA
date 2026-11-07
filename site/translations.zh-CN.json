@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sh2-nx": {
+    "name": "sh2-nx：《寂静岭 2》的 Switch 移植",
+    "requirements": [
+      "需要用户自己的 PC 版《寂静岭 2》，并安装增强版，至少包括增强可执行文件、必要文件、图像增强包和音频增强包。移植针对大小为 5,685,248 字节、SHA-1 为 3201a5e1029f3ae3b77770255dcbe10360b3cd09 的 sh2pc.exe。",
+      "Switch 构建需要 Python 3、CMake、Ninja，以及 podman 或装有 devkitA64、libnx、switch-sdl2、switch-mesa、switch-ffmpeg 和 switch-pkg-config 的 devkitPro。Linux 构建需要 SDL2 和 FFmpeg。",
+      "GitHub 上该仓库的许可证元数据为空。"
+    ]
   }
 }
