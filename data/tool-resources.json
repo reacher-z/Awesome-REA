@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "megaman-zero-recomp",
+    "name": "Mega Man Zero recomp",
+    "url": "https://github.com/mstan/MegaManZeroRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "MegaManZeroRecomp statically translates the Mega Man Zero USA revision 0 ROM, SHA-1 193b14120119162518a73c70876f0b8bffdbd96e, from ARM and Thumb into native C++. The runtime hash-gates the ROM. The ROM file is roms/megaman_zero_usa.gba. The repository is cloned beside gbarecomp, gba_recompile regenerates the translation units, and cmake --build build --target MegaManZeroRecomp builds the Windows program.",
+    "description_zh": "MegaManZeroRecomp 把美版第 0 修订的《洛克人 Zero》ROM 从 ARM 和 Thumb 静态翻译成原生 C++，SHA-1 为 193b14120119162518a73c70876f0b8bffdbd96e。运行时会先核对 ROM 校验值。ROM 文件是 roms/megaman_zero_usa.gba。仓库要克隆在 gbarecomp 旁边，gba_recompile 重新生成翻译单元，cmake --build build --target MegaManZeroRecomp 构建 Windows 程序。",
+    "requirements": [
+      "Windows with CMake, Ninja, and MSYS2 mingw64 GCC, G++, and SDL2. A retail GBA BIOS is selected at launch.",
+      "License: PolyForm Noncommercial 1.0.0."
+    ],
+    "evidence_url": "https://github.com/mstan/MegaManZeroRecomp/blob/fa410ff4be97fe08225c94f0315cbf9f47529f26/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
