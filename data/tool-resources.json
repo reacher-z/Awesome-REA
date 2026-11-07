@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gow3-recomp-case",
+    "name": "Gears of War 3 recompilation",
+    "url": "https://github.com/Flippage/gears-of-war-3-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is an in-progress native Windows recompilation of retail Xbox 360 Gears of War 3. ReXGlue translates the player's default.xex from PowerPC to C++, which is compiled for x64. The GPU side uses ReXGlue's Xenos renderer on Direct3D 12.",
+    "description_zh": "这是零售版 Xbox 360《Gears of War 3》的进行中 Windows 原生重编译。ReXGlue 把玩家的 default.xex 从 PowerPC 翻译成 C++，再编译为 x64。GPU 侧使用 ReXGlue 的 Xenos 渲染器，运行在 Direct3D 12 上。",
+    "requirements": [
+      "The player supplies their own copy. The base disc build uses title ID 4D5308AB, disc version 0.0.0.11, and media ID 58122AD6. A separate build covers Title Update 6.",
+      "The README says the campaign boots, reaches missions, and has been played through the first chapters, with checkpoint saves and keyboard, mouse, and controller input.",
+      "The README links a LICENSE file."
+    ],
+    "evidence_url": "https://github.com/Flippage/gears-of-war-3-recomp/blob/81076705bb35e1ae18641af5425bf30f8c310259/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
