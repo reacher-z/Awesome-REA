@@ -143849,5 +143849,27 @@
     "verified_at": "2026-11-07",
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
+  },
+  {
+    "id": "xbox360-native-ports",
+    "name": "Xbox 360 Native Ports",
+    "url": "https://github.com/CrownParkComputing/Xbox360-Native-Ports",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This repository ships Linux and Windows launchers that statically recompile Xbox 360 titles to x86-64 and draw them with Vulkan. rexmenu imports an ISO, an archive, an STFS package, an XEX, or an extracted folder, then checks the tree against content/content.sha256. The reviewed title table lists Burnout Revenge, Ridge Racer Unbounded, Midnight Club: Los Angeles Complete Edition, Split/Second, Banjo-Kazooie, Banjo-Tooie, Geometry Wars: Retro Evolved, Geometry Wars: Retro Evolved 2, Rez HD, Soulcalibur II HD Online, After Burner Climax, Hydro Thunder Hurricane, Space Giraffe, OutRun Online Arcade, Daytona USA, and Geometry Wars 3: Dimensions. Linux needs gamescope and Python 3. Windows 10 or 11 runs Launcher.bat. Saves stay in user-data.",
+    "description_zh": "这个仓库提供 Linux 和 Windows 启动器，把 Xbox 360 游戏静态重编译到 x86-64，并用 Vulkan 绘制。rexmenu 导入 ISO、压缩包、STFS 包、XEX 或已解压文件夹，然后用 content/content.sha256 校验整棵文件树。审阅的标题表包括 Burnout Revenge、Ridge Racer Unbounded、午夜俱乐部：洛杉矶完整版、Split/Second、Banjo-Kazooie、Banjo-Tooie、Geometry Wars: Retro Evolved、Geometry Wars: Retro Evolved 2、Rez HD、Soulcalibur II HD Online、After Burner Climax、Hydro Thunder Hurricane、Space Giraffe、OutRun Online Arcade、代托纳 USA 和 Geometry Wars 3: Dimensions。Linux 需要 gamescope 和 Python 3。Windows 10 或 11 运行 Launcher.bat。存档留在 user-data。",
+    "requirements": [
+      "The disc or XBLA package for the title being launched. Linux x86-64 with Vulkan, gamescope, and Python 3, or Windows 10 or 11 x64 with Vulkan.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/CrownParkComputing/Xbox360-Native-Ports/blob/2675c16edd4b0854badb30f9cd519ab899798388/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

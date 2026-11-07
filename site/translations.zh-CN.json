@@ -40712,5 +40712,12 @@
       "把 yuka.exe 放进游戏目录并运行 yuka help。",
       "README 未注明许可证。"
     ]
+  },
+  "xbox360-native-ports": {
+    "name": "Xbox 360 原生移植",
+    "requirements": [
+      "需要所启动游戏的光盘或 XBLA 包。系统为带 Vulkan、gamescope 和 Python 3 的 Linux x86-64，或带 Vulkan 的 64 位 Windows 10 或 11。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
