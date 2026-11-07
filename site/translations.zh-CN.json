@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "asphalt5-native": {
+    "name": "狂野飙车 5 原生移植",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11，以及上述三个 APK 之一。源码构建需要 Python 3.10 或更新版本、CMake 3.20 或更新版本、Ninja 和 MinGW-w64。tools\\make_builder.ps1 和 tools\\build_installer.ps1 生成安装程序。",
+      "许可证：宿主代码、工具和文档为 MIT。"
+    ]
   }
 }
