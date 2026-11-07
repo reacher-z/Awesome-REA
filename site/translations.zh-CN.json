@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "daytona-xbla-recomp": {
+    "name": "代托纳USA重编译",
+    "requirements": [
+      "需要上面写明的 Xbox 360 Arcade 安装包。需要 CMake 3.25 或更高版本和 Ninja。Linux 需要 Clang 20 或更高版本。Windows 需要带 C++ Clang 工具的 Visual Studio 2022。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

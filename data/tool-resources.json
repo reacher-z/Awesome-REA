@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "daytona-xbla-recomp",
+    "name": "Daytona USA XBLA recompilation",
+    "url": "https://github.com/Subarasheese/daytona-xbla-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles the 2011 Xbox 360 Arcade release of Daytona USA with ReXGlue. The package is an STFS arcade title, XA-2845, media ID 3CA562D4, 240058368 bytes, SHA-256 db2381451a15a4e537154712213a0309e9ddc33d20bdc03421d80c9939893cef. python3 scripts/extract_game.py extracts it and copies default.xex. The SDK submodule is the daytonaxbla branch. Linux uses cmake --preset linux-amd64 and Clang 20 or newer. Windows uses cmake --preset win-amd64 and Visual Studio 2022 with Clang 20 or newer. The Linux binary is daytona and takes --game_data_root pointing at the extracted folder.",
+    "description_zh": "该项目用 ReXGlue 静态重编译 2011 年 Xbox 360 Arcade 版《代托纳 USA》。安装包是 STFS 街机标题，XA-2845，媒体编号 3CA562D4，240058368 字节，SHA-256 为 db2381451a15a4e537154712213a0309e9ddc33d20bdc03421d80c9939893cef。python3 scripts/extract_game.py 提取它并复制 default.xex。SDK 子模块是 daytonaxbla 分支。Linux 使用 cmake --preset linux-amd64 和 Clang 20 或更高版本。Windows 使用 cmake --preset win-amd64 和带 Clang 20 或更高版本的 Visual Studio 2022。Linux 二进制是 daytona，--game_data_root 指向解压后的文件夹。",
+    "requirements": [
+      "The Xbox 360 Arcade package identified above. CMake 3.25 or newer and Ninja. Linux needs Clang 20 or newer. Windows needs Visual Studio 2022 with the C++ Clang tools.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Subarasheese/daytona-xbla-recomp/blob/a3a975e349aeec24222d326b7e2bbf1bb142f557/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
