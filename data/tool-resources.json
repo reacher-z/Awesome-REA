@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sr-static-recomp-case",
+    "name": "SR",
+    "url": "https://github.com/M-HT/SR",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "SR statically recompiles DOS and Windows game executables into Windows, Linux, or macOS builds. The README lists DOS support for Albion, X-COM: UFO Defense, X-COM: Terror from the Deep, and Warcraft: Orcs & Humans, and Windows support for Septerra Core and Battle Isle 3.",
+    "description_zh": "SR 把 DOS 和 Windows 游戏可执行文件静态重编译为 Windows、Linux 或 macOS 构建。README 列出的 DOS 游戏包括 Albion、《X-COM: UFO Defense》、《X-COM: Terror from the Deep》和《Warcraft: Orcs & Humans》，Windows 游戏包括 Septerra Core 和《Battle Isle 3》。",
+    "requirements": [
+      "The recompiler takes the original executable plus information about that executable. Generated assembler is not stored in the repository.",
+      "Supported hosts are 32-bit and 64-bit Windows, Linux (x86, x64, arm, arm64, riscv64), and macOS (x64, arm64). Generated builds are little-endian.",
+      "The README releases the project source under MIT, and also under GPLv2 or later and LGPLv2.1 or later. Third-party libraries keep their own licenses."
+    ],
+    "evidence_url": "https://github.com/M-HT/SR/blob/ac690ddf3010bc3d2c875cb1b5e8da4f53a8d5b3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
