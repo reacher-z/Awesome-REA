@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nwiirecomp",
+    "name": "NWiiRecomp",
+    "url": "https://github.com/BlackLineInteractive/NWiiRecomp",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "NWiiRecomp translates GameCube and Wii DOL and ELF executables into C++. nWiiAnalyzer finds function boundaries, nWiiRecomp emits the C++, and nWiiRuntime supplies the high-level runtime. The generated export directory builds on its own. The README says Mario Party 7 reaches its 3D intro and Need for Speed: Hot Pursuit 2 shows boot progress.",
+    "description_zh": "NWiiRecomp 把 GameCube 和 Wii 的 DOL 与 ELF 可执行文件翻译成 C++。nWiiAnalyzer 找出函数边界，nWiiRecomp 生成 C++，nWiiRuntime 提供高层运行时。生成的 export 目录可以单独构建。README 写明《马里奥派对 7》能进入 3D 开场，《极品飞车：热力追踪 2》有启动进展。",
+    "requirements": [
+      "CMake 3.20 or newer and a C++20 compiler. The documented commands are cmake -B build and cmake --build build, then ./build/nWiiRecomp/nwiirecomp config.toml.",
+      "The reviewed README does not name this project's license. It says totaldb.dsy is taken from Dolphin and stays under Dolphin's license."
+    ],
+    "evidence_url": "https://github.com/BlackLineInteractive/NWiiRecomp/blob/595f176f1d24cc54ff2e8389feed12d7fb553cc2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
