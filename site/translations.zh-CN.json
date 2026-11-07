@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sdlpop-dreamcast": {
+    "name": "SDLPoP Dreamcast",
+    "requirements": [
+      "需要 KallistiOS，并执行 source /opt/toolchains/dc/kos/environ.sh。为 Dreamcast 构建固定的 SDL2 和 SDL_image，然后运行 make 和 ./make_cdi.sh。",
+      "许可证：GNU GPL。README 指向 COPYING 和 src/GPLv3.h。src/opl3.c、src/opl3.h 和 src/stb_vorbis.c 保留各自的许可证。"
+    ]
   }
 }

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sdlpop-dreamcast",
+    "name": "SDLPoP for Dreamcast",
+    "url": "https://github.com/Memorix101/SDLPoP-Dreamcast",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This ports the SDLPoP reconstruction of the DOS Prince of Persia to the Sega Dreamcast. The documented KallistiOS commit is 949af4bbfdcf42bec68d87d265fa59d831f1b21b. The documented SDL2 commit is a06f1187837f1289426fdf474e0b350f9004871e. After the Dreamcast SDL2 and SDL_image builds, make and make_cdi.sh produce the disc image.",
+    "description_zh": "该项目把 DOS《波斯王子》的 SDLPoP 重建移植到世嘉 Dreamcast。文档中的 KallistiOS 提交是 949af4bbfdcf42bec68d87d265fa59d831f1b21b。文档中的 SDL2 提交是 a06f1187837f1289426fdf474e0b350f9004871e。完成 Dreamcast 的 SDL2 和 SDL_image 构建后，make 和 make_cdi.sh 生成光盘镜像。",
+    "requirements": [
+      "KallistiOS, with source /opt/toolchains/dc/kos/environ.sh. Build the pinned SDL2 and SDL_image for Dreamcast, then run make and ./make_cdi.sh.",
+      "License: GNU GPL. The README points at COPYING and src/GPLv3.h. src/opl3.c, src/opl3.h, and src/stb_vorbis.c keep their own licenses."
+    ],
+    "evidence_url": "https://github.com/Memorix101/SDLPoP-Dreamcast/blob/059ed6f1ddc2a934ed4675683028c55152c92a2d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
