@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "conker-lr-native": {
+    "name": "Conker: Live & Reloaded 重编译",
+    "requirements": [
+      "构建机器需要 16 GB 内存和大约 20 GB 空闲磁盘。extract-xiso 解包光盘，sha1sum 核对 default.xbe。Linux 和 Windows 需要 OpenGL 3.3。",
+      "许可证：MIT。"
+    ]
   }
 }
