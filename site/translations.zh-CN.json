@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gt3-revisited": {
+    "name": "GT3 Revisited",
+    "requirements": [
+      "需要自己的《跑车浪漫旅 3 A-Spec》光盘镜像，格式为 ISO 或 CHD。",
+      "许可证：GT3 Revisited 自身代码为 MIT。第三方声明在 THIRD-PARTY-NOTICES.md。"
+    ]
   }
 }
