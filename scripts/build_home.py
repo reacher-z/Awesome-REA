@@ -63,6 +63,7 @@ COPY = {
         'drawer_note': 'Each card links to its entry: description, requirements and the primary source it was reviewed against.',
         'reviewed': 'Reviewed', 'targets': 'Targets', 'licence': 'Original content: MIT. Linked projects keep their own licenses.',
         'class_label': 'Evidence class', 'class_unknown': 'Unknown · source unavailable',
+        'all_classes': 'All classes', 'class_unknown_short': 'Unknown', 'class_info_label': 'What the evidence classes mean',
         'unknown_title': 'Source unavailable or unreadable at review time',
         'preview_image_alt': "Demo screenshot from the project's public documentation",
         'preview_video_alt': "Demo video thumbnail from the project's public documentation",
@@ -79,6 +80,7 @@ COPY = {
         'drawer_note': '每张卡片都链接到完整条目：说明、使用条件，以及复核所依据的原始来源。',
         'reviewed': '已复核', 'targets': '目标', 'licence': '原创内容采用 MIT 许可。链接项目保留各自的许可。',
         'class_label': '证据档位', 'class_unknown': '未知 · 来源不可读',
+        'all_classes': '全部档位', 'class_unknown_short': '未知', 'class_info_label': '证据档位说明',
         'unknown_title': '复核时来源不可达或不可读',
         'preview_image_alt': '项目公开文档中的演示截图',
         'preview_video_alt': '项目公开文档中演示视频的封面',
@@ -224,12 +226,29 @@ def _drawer(resources, order, language, prefix) -> str:
     zh = language == 'zh'
     chips = ''.join(f'<button class="chip" type="button" data-kind="{kind}" aria-pressed="false">{icon("check")}{KIND_PLURAL[kind][zh]} <span class="count">{_count(kinds[kind])}</span></button>' for kind in present)
     options = ''.join(f'<option value="{kind}">{KIND_PLURAL[kind][zh]} ({_count(kinds[kind])})</option>' for kind in present)
+    classes = Counter()
+    for record in resources:
+        if record.get('evidence_status') == 'unknown':
+            classes['unknown'] += 1
+        elif record.get('evidence_class') is not None:
+            classes[str(int(record['evidence_class']))] += 1
+    class_names = {str(value): f'C{value}' for value in range(4)} | {'unknown': text['class_unknown_short']}
+    class_options = ''.join(f'<option value="{key}">{class_names[key]} ({_count(classes[key])})</option>'
+                            for key in ('0', '1', '2', '3', 'unknown') if classes[key])
+    class_rows = ''.join(f'<li><span class="card-class card-class-{value}">C{value}</span>{_e(EVIDENCE_DETAIL[value][zh])}</li>'
+                         for value in sorted(EVIDENCE_DETAIL))
+    class_info = (f'<span class="info-wrap"><button type="button" class="info-btn" aria-expanded="false" aria-controls="class-info" '
+                  f'aria-label="{text["class_info_label"]}">i</button><span class="info-pop" id="class-info" role="tooltip">'
+                  f'<strong>{text["class_label"]}</strong><ul>{class_rows}'
+                  f'<li><span class="card-class card-class-unknown">?</span>{_e(text["unknown_title"])}</li></ul></span></span>')
     cards = ''.join(index_card(record, language, _ordered_targets(record, order), prefix=prefix) for record in featured)
     total = len(resources)
     return (f'<section class="wrap drawer-wrap" id="catalog" aria-labelledby="catalogue-title"><div class="drawer" id="catalogue" data-drawer>'
             f'<h2 class="vh" id="catalogue-title">{text["catalogue"]}</h2><div class="drawer-bar">'
             f'<div class="chips" role="group" aria-label="{text["kind"]}" data-kind-chips>{chips}</div>'
             f'<label class="select kind-select"><span class="vh">{text["kind"]}</span><select data-kind-select aria-label="{text["kind"]}"><option value="">{text["all_kinds"]}</option>{options}</select>{icon("chevron")}</label>'
+            f'<span class="class-filter"><label class="select"><span class="select-label">{text["class_label"]}</span>'
+            f'<select data-class-select aria-label="{text["class_label"]}"><option value="">{text["all_classes"]}</option>{class_options}</select>{icon("chevron")}</label>{class_info}</span>'
             f'<label class="select"><span class="select-label">{text["sort"]}</span><select data-sort aria-label="{text["sort"]}">'
             f'<option value="featured">{text["featured"]}</option><option value="reviewed">{text["recent"]}</option><option value="name">{text["az"]}</option></select>{icon("chevron")}</label>'
             f'<p class="drawer-meta" data-drawer-meta aria-live="polite">{text["showing"].format(n=len(featured), total=_count(total))}</p></div>'

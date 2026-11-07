@@ -476,6 +476,8 @@
     const chips = $$('[data-kind-chips] .chip');
     const sort = $('[data-sort]', drawer);
     const kindSel = $('[data-kind-select]', drawer);
+    const classSel = $('[data-class-select]', drawer);
+    const info = $('.info-btn', drawer);
     const init = { list: list.innerHTML, meta: meta.innerHTML, all: showAll.innerHTML, tabs: tabs.map((t) => $('.count', t).textContent), chips: chips.map((c) => $('.count', c).textContent) };
     const more = Object.assign(document.createElement('button'), { type: 'button', className: 'btn', hidden: true });
     list.after(more);
@@ -484,10 +486,13 @@
     papersBox.hidden = true;
     more.after(papersBox);
     const u = new URL(location.href);
-    const st = { q: u.searchParams.get('q') || '', target: u.searchParams.get('target') || 'all', kinds: new Set((u.searchParams.get('kind') || '').split(',').filter(Boolean)), sort: u.searchParams.get('sort') || 'featured', shown: 10 };
+    const wantedClass = u.searchParams.get('class');
+    const st = { q: u.searchParams.get('q') || '', target: u.searchParams.get('target') || 'all', kinds: new Set((u.searchParams.get('kind') || '').split(',').filter(Boolean)),
+      cls: ['0', '1', '2', '3', 'unknown'].includes(wantedClass) ? wantedClass : '', sort: u.searchParams.get('sort') || 'featured', shown: 10 };
     input.value = st.q;
     sort.value = st.sort;
-    const pristine = () => !st.q && st.target === 'all' && !st.kinds.size && st.sort === 'featured';
+    classSel.value = st.cls;
+    const pristine = () => !st.q && st.target === 'all' && !st.kinds.size && !st.cls && st.sort === 'featured';
     const foot = $('.drawer-foot', drawer);
     $('.hs-side', form).insertAdjacentHTML('afterbegin', `<span class="hs-keys" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> ${T.keyMove} <kbd>↵</kbd> ${T.keyOpen} <kbd>Esc</kbd> ${T.keyClear}</span>`);
     let selected = -1;
@@ -505,6 +510,7 @@
       const p = new URLSearchParams();
       if (st.q) p.set('q', st.q);
       if (st.kinds.size) p.set('kind', [...st.kinds].join(','));
+      if (st.cls) p.set('class', st.cls);
       if (st.sort !== 'featured') p.set('sort', st.sort);
       return p;
     };
@@ -513,6 +519,7 @@
       tabs.forEach((t) => { if (t.dataset.target === st.target) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current'); });
       chips.forEach((c) => c.setAttribute('aria-pressed', String(st.kinds.has(c.dataset.kind))));
       kindSel.value = st.kinds.size === 1 ? [...st.kinds][0] : '';
+      classSel.value = st.cls;
       const hp = params();
       if (st.target !== 'all') hp.set('target', st.target);
       history.replaceState(null, '', location.pathname + (hp.toString() ? `?${hp}` : '') + location.hash);
@@ -520,6 +527,7 @@
       if (st.q) ex.set('q', st.q);
       if (st.target !== 'all') ex.set('target', st.target);
       if (st.kinds.size === 1) ex.set('kind', [...st.kinds][0]);
+      if (st.cls) ex.set('class', st.cls);
       if (st.sort !== 'featured') ex.set('order', st.sort);
       if (langLink) langLink.href = langBase + (hp.toString() ? `?${hp}` : '');
       showAll.href = pristine() ? `${P}/resources/` : `${P}/explore/?view=curated${ex.toString() ? `&${ex}` : ''}`;
@@ -540,18 +548,19 @@
       const ti = X.raw.targets.indexOf(st.target);
       const base = search(X.res, st.q);
       const kindOK = (h) => !st.kinds.size || st.kinds.has(h.r.kind);
+      const classOK = (h) => !st.cls || (st.cls === 'unknown' ? h.r.st === 'unknown' : String(h.r.cls) === st.cls);
       const targetOK = (h) => st.target === 'all' || h.r.targets.includes(ti);
       tabs.forEach((t) => {
         const i = X.raw.targets.indexOf(t.dataset.target);
-        $('.count', t).textContent = fmt(base.filter((h) => kindOK(h) && (i < 0 || h.r.targets.includes(i))).length);
+        $('.count', t).textContent = fmt(base.filter((h) => kindOK(h) && classOK(h) && (i < 0 || h.r.targets.includes(i))).length);
       });
       const inTarget = base.filter(targetOK);
       chips.forEach((c) => {
-        const n = inTarget.filter((h) => h.r.kind === c.dataset.kind).length;
+        const n = inTarget.filter((h) => classOK(h) && h.r.kind === c.dataset.kind).length;
         $('.count', c).textContent = fmt(n);
         c.disabled = !n && !st.kinds.has(c.dataset.kind);
       });
-      const hits = sortHits(inTarget.filter(kindOK), st.sort, st.q);
+      const hits = sortHits(inTarget.filter((h) => kindOK(h) && classOK(h)), st.sort, st.q);
       const shown = hits.slice(0, st.shown);
       list.innerHTML = hits.length ? shown.map((h) => cardHTML(h.r, toks)).join('') : emptyHTML(st.q, X.res, 'li', true);
       select(st.q && hits.length ? 0 : -1);
@@ -618,6 +627,13 @@
     }));
     sort.addEventListener('change', () => { st.sort = sort.value; render(); });
     kindSel.addEventListener('change', () => { st.kinds = new Set(kindSel.value ? [kindSel.value] : []); st.shown = 10; render(); });
+    classSel.addEventListener('change', () => { st.cls = classSel.value; st.shown = 10; render(); });
+    if (info) {
+      const setInfo = (open) => info.setAttribute('aria-expanded', String(open));
+      info.addEventListener('click', () => setInfo(info.getAttribute('aria-expanded') !== 'true'));
+      document.addEventListener('click', (e) => { if (!e.target.closest('.info-wrap')) setInfo(false); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setInfo(false); });
+    }
     more.addEventListener('click', () => { st.shown += 10; render(); });
     if (!pristine()) render();
   }
