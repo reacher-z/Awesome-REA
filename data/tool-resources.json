@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "disfire",
+    "name": "DisFire",
+    "url": "https://github.com/shinyquagsire23/DisFire",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "DisFire is a compilable disassembly of Pokémon FireRed. The player builds one binary named 24FC40toend.bin from address 0x24FC40 through the end of the FireRed ROM, then runs compile.sh. The output ROM is named firered.new.gba.",
+    "description_zh": "DisFire 是宝可梦火红的可编译反汇编。玩家把火红 ROM 从地址 0x24FC40 到末尾做成一个名为 24FC40toend.bin 的二进制，然后运行 compile.sh。输出的 ROM 命名为 firered.new.gba。",
+    "requirements": [
+      "The reviewed README does not name a license. It says Windows users can write a batch script until a Makefile exists, and that compile errors are written to error.txt and cerror.txt."
+    ],
+    "evidence_url": "https://github.com/shinyquagsire23/DisFire/blob/7cc6c15238d3d958d0638351965b06a88c39c774/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
