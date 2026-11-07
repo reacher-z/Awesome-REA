@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "raccoon-outbreak-recomp": {
+    "name": "生化危机爆发 Windows 重编译",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11、支持 Direct3D 11 的显卡，以及大约 780 MB 空闲磁盘。",
+      "审阅的 README 没有给这个项目写出许可证。它写明附带的 LLVM 编译器是带 LLVM 例外的 Apache-2.0。"
+    ]
   }
 }

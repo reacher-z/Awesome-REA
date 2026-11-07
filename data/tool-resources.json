@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "raccoon-outbreak-recomp",
+    "name": "Resident Evil Outbreak Recompiled",
+    "url": "https://github.com/RaccoonRecomp/ResidentEvilOutbreakRecompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Resident Evil Outbreak File 1 for the PlayStation 2, USA SLUS-20765 disc version 2.00, to Windows. The first start compiles the game from the player's ISO. The default renderer is Direct3D 11, with Vulkan optional. Timing stays at 30 fps, and a 60 fps mode is marked experimental. The installer is ResidentEvilOutbreakRecompiled-1.5.1-Setup.exe.",
+    "description_zh": "该项目把 PlayStation 2 美版《生化危机：爆发》文件 1（SLUS-20765，光盘版本 2.00）重编译到 Windows。第一次启动用玩家的 ISO 编译游戏。默认渲染器是 Direct3D 11，Vulkan 可选。时序保持 30 帧，60 帧模式标为实验。安装器是 ResidentEvilOutbreakRecompiled-1.5.1-Setup.exe。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, a Direct3D 11 graphics card, and about 780 MB of free disk space.",
+      "The reviewed README does not name a license for this project. It says the bundled LLVM compiler is Apache-2.0 with LLVM Exceptions."
+    ],
+    "evidence_url": "https://github.com/RaccoonRecomp/ResidentEvilOutbreakRecompiled/blob/e0fcc5fb6e7e1011a6876824fa772ec5354a4534/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
