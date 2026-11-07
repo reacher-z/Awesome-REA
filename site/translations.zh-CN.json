@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ssbu-ps4-recomp": {
+    "name": "任天堂明星大乱斗特别版 PS4 重编译",
+    "requirements": [
+      "审阅的 README 写明没有发布包。按 docs/BUILDING.md，用 13.0.2 的转储构建。",
+      "许可证：本仓库自身代码为 MIT。README 写明 patches/windowsmash-ps4.patch 是给一份 WindowSmash 检出打的补丁。"
+    ]
   }
 }
