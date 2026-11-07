@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "kid-chameleon-disasm",
+    "name": "Kid Chameleon disassembly",
+    "url": "https://github.com/sonicretro/kid-chameleon-disasm",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a split disassembly of Kid Chameleon for the Sega Genesis. kid.asm is assembled with the AS assembler shipped in build/. zeroOffsetOptimization is set to 0 so the build is a bit-perfect ROM.",
+    "description_zh": "这是世嘉 Genesis 游戏 Kid Chameleon 的拆分反汇编。kid.asm 用 build/ 里附带的 AS 汇编器汇编。zeroOffsetOptimization 设为 0，以便构建出逐字节一致的 ROM。",
+    "requirements": [
+      "Place the ROM in the main folder as kid.bin. split.py needs Python 3.2 or newer. Build with build.bat on Windows or build.sh on Linux.",
+      "The reviewed README does not name a license. It says commercial use is prohibited."
+    ],
+    "evidence_url": "https://github.com/sonicretro/kid-chameleon-disasm/blob/36da5257ccadd5d8a1a880a58ce0298e2f75eade/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
