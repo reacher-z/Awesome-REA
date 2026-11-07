@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "nebula-smg": {
+    "name": "Nebula",
+    "requirements": [
+      "需要第 0 修订的《超级马里奥银河》，格式为 ISO、RVZ 或已提取的文件夹。1.0.2 使用 RMGE01。",
+      "许可证：仅 GNU GPL v3.0。第三方条款在 THIRD-PARTY-NOTICES.md。"
+    ]
   }
 }
