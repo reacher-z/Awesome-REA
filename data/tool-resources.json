@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "si78c",
+    "name": "si78c",
+    "url": "https://github.com/loadzero/si78c",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "si78c is a C reimplementation of the 1978 arcade game Space Invaders. Running it matches the original memory state apart from the stack, and the frames match pixel for pixel. The ROM files go in inv1/. invaders.e is MD5 7d3b201f3e84af3b4fcb8ce8619ec9c6, invaders.f is 7709a2576adb6fedcdfe175759e5c17a, invaders.g is 9ec2dc89315a0d50c5e166f664f64a48, and invaders.h is e87815985f5208bfa25d567c3fb52418. make builds ./bin/si78c. It uses SDL2 and ucontext, and the reviewed builds are Ubuntu 18.04 and Mac OS X El Capitan on little-endian machines.",
+    "description_zh": "si78c 是 1978 年街机游戏《太空侵略者》的 C 重实现。运行时除堆栈外与原版内存状态一致，画面逐像素相符。ROM 文件放在 inv1/。invaders.e 的 MD5 是 7d3b201f3e84af3b4fcb8ce8619ec9c6，invaders.f 是 7709a2576adb6fedcdfe175759e5c17a，invaders.g 是 9ec2dc89315a0d50c5e166f664f64a48，invaders.h 是 e87815985f5208bfa25d567c3fb52418。make 构建 ./bin/si78c。它使用 SDL2 和 ucontext，审阅的构建环境是小端机器上的 Ubuntu 18.04 和 Mac OS X El Capitan。",
+    "requirements": [
+      "SDL2 and the four ROM files with those MD5s. On Ubuntu, libsdl2-dev, then make.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/loadzero/si78c/blob/0b2b4f1ed3c73ba0765625d589fbdcb21660f3ee/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

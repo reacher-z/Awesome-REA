@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "si78c": {
+    "name": "si78c",
+    "requirements": [
+      "需要 SDL2 和上述 MD5 的四份 ROM。在 Ubuntu 上安装 libsdl2-dev，然后运行 make。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
