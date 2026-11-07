@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "reksio-engine": {
+    "name": "ReksioEngine",
+    "requirements": [
+      "日期为 2025-03-12 的 README 写明《Reksio i Skarb Piratów》的场景看起来可以运行，仍在测试。《Reksio i Ufo》大约到达 85% 的场景，并在挖掘小游戏之前停下。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
