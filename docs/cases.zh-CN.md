@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -40,7 +40,7 @@
 [↑ 返回目录](#目录)
 
 <a id="game-matching-decompilation"></a>
-### 匹配反编译与反汇编 (69)
+### 匹配反编译与反汇编 (70)
 
 - [**3S Decomp：逐字比对的《街头霸王 III：3rd Strike》PS2 反编译重建**](https://github.com/crowded-street/3s-decomp) - 将 Street Fighter Anniversary Collection 中《街头霸王 III：3rd Strike》的 PlayStation 2 可执行文件反编译为 C 源码，用当年的 Metrowerks 与 EE GCC 编译器重新构建，再将重建出的可执行文件与使用者自备的原文件逐字比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)</sub>
@@ -87,6 +87,7 @@
 - [**sead：Nintendo 第一方 C++ 标准库的反编译重建**](https://github.com/open-ead/sead) - 反编译 sead，即 Nintendo 静态链接进其第一方游戏的 C++ 标准库，涵盖容器、堆、字符串、数学、文件设备、线程、游戏框架和图形等模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sead-nintendo-library-decomp-case/)</sub>
 - [**《天空之剑》：以哈希校验重新链接的 Wii 版反编译**](https://github.com/zeldaret/ss) - 以使用者自备的 NTSC-U 1.0（SOUE01）光盘文件为起点，为《塞尔达传说 天空之剑》Wii 版的 main.dol 和 REL 模块重建 C++ 源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skyward-sword-decomp-case/)</sub>
 - [**Sly Cooper and the Thievius Raccoonus：PlayStation 2 一致性反编译**](https://github.com/TheOnlyZac/sly1) - 将《Sly Cooper and the Thievius Raccoonus》PlayStation 2 美版可执行文件 SCUS\_971.98 重建为源码，属于进行中的一致性反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sly1-matching-decomp-case/)</sub>
+- [**smw-src**](https://github.com/galaxyhaxz/smw-src) - smw-src 是《超级马里奥世界》的超级任天堂反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/smw-src-case/)</sub>
 - [**Snowboard Kids 2：大模型辅助的 N64 匹配反编译**](https://github.com/cdlewis/snowboardkids2-decomp) - N64 游戏 Snowboard Kids 2 的公开匹配反编译项目，2024 年借助社区反编译工具启动。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/snowboardkids2-decomp-case/)</sub>
 - [**Snowboard Kids：智能体辅助的 N64 匹配反编译**](https://github.com/cdlewis/snowboardkids-decomp) - 原版 Nintendo 64 游戏 Snowboard Kids 的匹配反编译，利用使用者自备的 ROM 重新构建 SHA1 一致的北美版与日版 ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/snowboardkids-matching-decomp-case/)</sub>
 - [**《索尼克 Advance》1 与 2：一致性 GBA 反编译及宽屏移植**](https://github.com/SAT-R/sa2) - 将 Game Boy Advance 版《索尼克 Advance》和《索尼克 Advance 2》重建为 C 源码，借助 SAT-R 的 agbcc 分支重新构建六个列有哈希值的 ROM，同一套代码还可编译为面向 Linux、macOS 和 Windows 的宽屏 SDL 移植版，以及 PSP 和 PS2 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sonic-advance-1-2-decomp-port-case/)</sub>

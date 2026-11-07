@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "smw-src-case",
+    "name": "smw-src",
+    "url": "https://github.com/galaxyhaxz/smw-src",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "smw-src is a Super Nintendo disassembly of Super Mario World. It assembles the exact ROM Super Mario World (U) [!].smc. The README says the project is archived and is not being continued.",
+    "description_zh": "smw-src 是《超级马里奥世界》的超级任天堂反汇编。它汇编出与 Super Mario World (U) [!].smc 完全一致的 ROM。README 写明项目已存档，不再继续。",
+    "requirements": [
+      "Extract the archive in bin, then run wla.bat in the root. Assembly uses an older modified WLA.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/galaxyhaxz/smw-src/blob/30e66e1ae3e8e0e518885dbcd5f85f2909a4969e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
