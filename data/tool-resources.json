@@ -36528,5 +36528,30 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "windbg-decompile-ext",
+    "name": "Windbg Decompile Extension via LLM",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Windows x64 WinDbg extension that resolves a function by name or address, reconstructs a control-flow view, and asks an LLM from the extension to produce pseudocode. The README limits the current scope to x64 and to live-memory analysis through DbgEng.",
+    "description_zh": "Windows x64 WinDbg 扩展：按名称或地址解析函数，重建控制流视图，并由扩展直接请求 LLM 生成伪代码。README 将当前范围限定为 x64，以及通过 DbgEng 分析实时内存。",
+    "requirements": [
+      "Windows x64 WinDbg. The documented command is !decomp, and the current scope is x64-only live-memory analysis through DbgEng.",
+      "A vendored Zydis tree at third_party/zydis is used by default when it is present. third_party/dbgeng can hold an optional copy of dbgeng.h and dbgeng.lib."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites"
+    ],
+    "url": "https://github.com/kernullist/windbg-decompile-ext",
+    "evidence_url": "https://github.com/kernullist/windbg-decompile-ext/blob/c1d911d9f20ef383ee4cc4d4d22aecea24976460/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-07"
   }
 ]
