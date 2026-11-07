@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "space-rangers-hd-decomp-case",
+    "name": "Space Rangers HD decompilation",
+    "url": "https://github.com/pakompom/SpaceRangersHD_decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This project recovers the Delphi source of Space Rangers HD: A War Apart. The recovered source compiles to a byte-for-byte identical Rangers.exe. Both compared binaries report game version 2.1.2500.",
+    "description_zh": "该项目恢复《Space Rangers HD: A War Apart》的 Delphi 源码。恢复出的源码编译成与原版逐字节相同的 Rangers.exe。两份被比较的二进制都报告游戏版本 2.1.2500。",
+    "requirements": [
+      "Install the prerequisites in docs/development.md, then run ./decomp setup and ./decomp verify. Setup prepares the Delphi toolchain. Verification checks the executable against the original SHA-256. Game data comes from the player's installed game.",
+      "The prerelease build dated 2026-10-06 is 4,533,760 bytes, SHA-256 e43a4b15503c705eebe2d8ce5778c2a2fb090db515a3fd86d319e5c5aa692ebf. The Steam and GOG build dated 2025-10-13 is 4,995,584 bytes, SHA-256 83300344af802bc51e64389c58f047e5afdf195c133048098be3881fae29ed98.",
+      "The README points at LICENSE for the tooling and NOTICE.md for rights."
+    ],
+    "evidence_url": "https://github.com/pakompom/SpaceRangersHD_decomp/blob/e5317d0c569df57d519e8eb2ef1d8f95b67c12db/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
