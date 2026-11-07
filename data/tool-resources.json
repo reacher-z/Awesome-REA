@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "idr-pascal",
+    "name": "IDR Pascal",
+    "url": "https://github.com/tmcdos/IDR",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDR Pascal is a Pascal translation of the Interactive Delphi Reconstructor. The original C++ project is crypto2011/IDR. IDP2TXT converts an IDR project file to text.",
+    "description_zh": "IDR Pascal 是 Interactive Delphi Reconstructor 的 Pascal 翻译。原来的 C++ 项目是 crypto2011/IDR。IDP2TXT 把 IDR 工程文件转成文本。",
+    "requirements": [
+      "Build with Delphi 7.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/tmcdos/IDR/blob/805f6011d44d1b4ab404768dea9b69c5b6b2b94b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
