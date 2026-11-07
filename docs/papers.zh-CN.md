@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -110,6 +110,7 @@
 - [**STRIDE：反编译可执行文件中的简单类型识别**](https://arxiv.org/abs/2407.02733) - STRIDE 不使用神经网络模型，而是预测反编译器输出中变量的名称和类型。 <sub>原题：*STRIDE: Simple Type Recognition In Decompiled Executables* · arXiv 2024 · 预印本 · Harrison Green 等 · [PDF](https://arxiv.org/pdf/2407.02733v1) · [代码](https://github.com/hgarrereyn/STRIDE) · [完整条目](https://awesomerea.org/zh/papers/paper-stride/)</sub>
 - [**探索大型语言模型（GPT-4）在二进制逆向工程中的效能**](https://arxiv.org/abs/2406.06637) - 论文评估 GPT-4 在二进制逆向工程中的表现，考察其对人工编写代码和反编译代码的理解与解释，涵盖基础代码解读和恶意软件分析。 <sub>原题：*Exploring the Efficacy of Large Language Models (GPT-4) in Binary Reverse Engineering* · arXiv 2024 · 预印本 · Saman Pordanesh 等 · [PDF](https://arxiv.org/pdf/2406.06637) · [完整条目](https://awesomerea.org/zh/papers/paper-gpt4-binary-re/)</sub>
 - [**评估大语言模型对真实恶意软件活动中恶意代码的去混淆能力**](https://arxiv.org/abs/2404.19715) - 论文使用 Emotet 恶意软件活动中的真实恶意脚本，评估四种大语言模型的去混淆能力及其在逆向工程中的应用。 <sub>原题：*Assessing LLMs in Malicious Code Deobfuscation of Real-world Malware Campaigns* · arXiv 2024 · 预印本 · Constantinos Patsakis 等 · [PDF](https://arxiv.org/pdf/2404.19715) · [完整条目](https://awesomerea.org/zh/papers/paper-llm-malware-deobfuscation/)</sub>
+- [**二进制代码相似性检测技术综述**](https://mdpi-res.com/d_attachment/electronics/electronics-13-01715/article_deploy/electronics-13-01715.pdf) - 本文综述二进制代码相似性检测，也就是在不以源代码为起点时比较两段或多段二进制代码。 <sub>原题：*A Survey of Binary Code Similarity Detection Techniques* · Electronics 2024 · 期刊论文 · Liting Ruan 等 · [PDF](https://mdpi-res.com/d_attachment/electronics/electronics-13-01715/article_deploy/electronics-13-01715.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-bcsd-techniques-survey/)</sub>
 - [**跨内联的二进制函数相似性检测**](https://dl.acm.org/doi/10.1145/3597503.3639080) - 研究函数内联使一个二进制函数对应多个源码函数时的二进制函数相似性检测。 <sub>原题：*Cross-Inlining Binary Function Similarity Detection* · ICSE 2024 · 会议论文 · Ang Jia 等 · [PDF](https://arxiv.org/pdf/2401.05739v1) · [代码](https://github.com/island255/cross-inlining_binary_function_similarity) · [完整条目](https://awesomerea.org/zh/papers/paper-cross-inlining-bfsd/)</sub>
 - [**BinaryAI：基于智能二进制—源代码匹配的二进制软件成分分析**](https://dl.acm.org/doi/10.1145/3597503.3639100) - BinaryAI 通过将剥离符号的二进制中的函数与源代码匹配，识别其复用了哪些开源 C/C++ 库。 <sub>原题：*BinaryAI: Binary Software Composition Analysis via Intelligent Binary Source Code Matching* · ICSE 2024 · 会议论文 · Ling Jiang 等 · [PDF](https://arxiv.org/pdf/2401.11161v3) · [完整条目](https://awesomerea.org/zh/papers/paper-binaryai/)</sub>
 - [**FoC：利用大语言模型识别去符号二进制文件中的密码函数**](https://arxiv.org/abs/2403.18403) - FoC 使用 FoC-BinLLM 概括去符号二进制文件中密码函数的语义，并使用 FoC-Sim 检索相似实现。 <sub>原题：*FoC: Figure out the Cryptographic Functions in Stripped Binaries with LLMs* · arXiv 2024 · 预印本 · Xiuwei Shang 等 · [PDF](https://arxiv.org/pdf/2403.18403) · [完整条目](https://awesomerea.org/zh/papers/paper-foc/)</sub>

@@ -12817,5 +12817,52 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-bcsd-techniques-survey",
+    "title": "A Survey of Binary Code Similarity Detection Techniques",
+    "authors": [
+      "Liting Ruan",
+      "Qizhen Xu",
+      "Shunzhi Zhu",
+      "Xujing Huang",
+      "Xinyang Lin"
+    ],
+    "year": 2024,
+    "publication_date": "2024-04-29",
+    "date_precision": "day",
+    "date_basis": "Crossref issued date",
+    "venue": "Electronics",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.3390/electronics13091715",
+    "url": "https://mdpi-res.com/d_attachment/electronics/electronics-13-01715/article_deploy/electronics-13-01715.pdf",
+    "pdf_url": "https://mdpi-res.com/d_attachment/electronics/electronics-13-01715/article_deploy/electronics-13-01715.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This article surveys binary code similarity detection, meaning comparison of two or more binary segments when source code is not the starting point. It places those techniques in software security, vulnerability detection, and software composition analysis.",
+    "description_zh": "本文综述二进制代码相似性检测，也就是在不以源代码为起点时比较两段或多段二进制代码。讨论放在软件安全、漏洞检测和软件成分分析这些用途上。",
+    "scope_limitations_en": "The MDPI HTML page and doi.org returned HTTP 403 to this client. The PDF was fetched from the MDPI attachment host, and publication metadata comes from Crossref. Experiments were not rerun.",
+    "scope_limitations_zh": "对本客户端而言，MDPI 的 HTML 页和 doi.org 返回 HTTP 403。PDF 从 MDPI 附件地址取得，出版元数据来自 Crossref。实验没有重跑。",
+    "why_fits_en": "It is a 2024 survey of binary code similarity detection techniques.",
+    "why_fits_zh": "这是 2024 年关于二进制代码相似性检测技术的综述。",
+    "evidence_urls": [
+      "https://mdpi-res.com/d_attachment/electronics/electronics-13-01715/article_deploy/electronics-13-01715.pdf",
+      "https://api.crossref.org/works/10.3390/electronics13091715"
+    ],
+    "metadata_notes": "The canonical URL is the fetched PDF because the journal HTML page was blocked. The DOI remains the Crossref identifier.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "二进制代码相似性检测技术综述",
+    "date_basis_zh": "日期取自 Crossref 登记的出版日期",
+    "metadata_notes_zh": "因为期刊 HTML 页面被拒绝，规范网址采用已获取的 PDF。DOI 仍使用 Crossref 标识。"
   }
 ]
