@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "akmw": {
+    "name": "Alex Kidd in Miracle World 反汇编",
+    "requirements": [
+      "需要 WLA-DX 汇编器 wla-z80 10.1 和链接器 wla-link 10.1。Linux 运行 ./compile.sh。Windows 运行 ./compile.bat。",
+      "审阅的 README 没有写许可证。它禁止商业使用。"
+    ]
   }
 }
