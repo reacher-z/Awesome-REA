@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "yukatool",
+    "name": "yukatool",
+    "url": "https://github.com/AtomCrafty/yukatool",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "yukatool works with the Yuka System visual novel engine used by Hooksoft, Smee, PeasSoft, and feng. It unpacks and packs .ykc archives, splits and decompiles .yks scripts to .ykd, compiles them back, and converts .ykg graphics to and from PNG.",
+    "description_zh": "yukatool 处理 Hooksoft、Smee、PeasSoft 和 feng 使用的 Yuka System 视觉小说引擎。它可以解包和打包 .ykc 档案，拆分并把 .yks 脚本反编译成 .ykd，再编译回去，以及在 .ykg 图形和 PNG 之间转换。",
+    "requirements": [
+      "The command form is yuka.exe followed by flags, a task, and arguments. Documented tasks include unpack, pack, patch, split, decompile, compile, unwrap, and wrap.",
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/AtomCrafty/yukatool/blob/db06e24fa29045c897676199de6dfb217b1c65cc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
