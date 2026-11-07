@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "khcom-decomp-case": {
+    "name": "王国之心：记忆之链反编译",
+    "requirements": [
+      "把转储的 ROM 复制到 roms/，命名为 B8CE.gba、B8CJ.gba 或 B8CP.gba。SHA-1 分别为 10729bd884f8fdca7a310b6d606c52e46657aa48、59ec0a0a4ccd1e6acb3bbd7bfb21d63988958cfa 和 8db73586cdb11b3795907edebf43228dbcd3e6b2。",
+      "依赖是 git、ninja、Python 3、PyYAML、binutils-arm-none-eabi 和 pret/agbcc。用 python3 tools/extract_assets.py 提取，用 python3 configure.py 配置，然后用 ninja 构建。",
+      "许可证：CC0 1.0 Universal。"
+    ]
   }
 }
