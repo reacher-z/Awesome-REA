@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "midnight-club-3-android",
+    "name": "Midnight Club 3 Android port",
+    "url": "https://github.com/Masterllgod/midnight-club-3-dub-edition-remix-port-nativo",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Midnight Club 3: DUB Edition Remix for the original Xbox to Android ARM64. Direct3D 8 and DirectSound are reimplemented on Vulkan and SDL3. The required default.xbe is 5,099,520 bytes, SHA-1 f385c9218b7c95985f5710fb70b176b17f7dae7e, title ID 54540079. The README says the alpha build reaches the menus and can drive the city in Arcade mode.",
+    "description_zh": "该项目把初代 Xbox 版《午夜俱乐部 3：DUB Edition Remix》静态重编译到 Android ARM64。Direct3D 8 和 DirectSound 在 Vulkan 和 SDL3 上重实现。所需的 default.xbe 为 5,099,520 字节，SHA-1 为 f385c9218b7c95985f5710fb70b176b17f7dae7e，标题 ID 为 54540079。README 写明测试版能进入菜单，并可以在街机模式里在城市中驾驶。",
+    "requirements": [
+      "Android 11 or newer, ARM64, and Vulkan 1.1. Install the APK from Releases and copy the disc files into the MC3REMIX folder, with default.xbe at the top.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Masterllgod/midnight-club-3-dub-edition-remix-port-nativo/blob/1897b8101efb8540b8d01f156aa487cd17d1a22b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
