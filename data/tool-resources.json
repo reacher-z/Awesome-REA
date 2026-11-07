@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ty-decomp",
+    "name": "Ty the Tasmanian Tiger decompilation",
+    "url": "https://github.com/1superchip/ty-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Ty the Tasmanian Tiger. The supported version is GTYE69, the USA release. The player extracts sys/main.dol to orig/GTYE69, then runs python configure.py and ninja.",
+    "description_zh": "这是《Ty the Tasmanian Tiger》的进行中反编译。受支持的版本是美版 GTYE69。玩家把 sys/main.dol 解压到 orig/GTYE69，然后运行 python configure.py 和 ninja。",
+    "requirements": [
+      "Windows uses Python and ninja. macOS uses ninja and wine-crossover. Linux uses ninja.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/1superchip/ty-decomp/blob/22d5483e9b59ad40fcab924f6c7d913f3b3e09da/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
