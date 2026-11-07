@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "tokyo-bus-guide-decomp": {
+    "name": "东京巴士导游反编译",
+    "requirements": [
+      "要构建可运行的镜像，需要原版游戏的备份。审阅的 README 把安装步骤放在 docs/setup.md。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
