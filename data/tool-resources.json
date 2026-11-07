@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "smb-nes-recomp-case",
+    "name": "SuperMarioBrosRecomp",
+    "url": "https://github.com/mstan/SuperMarioBrosNESRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "SuperMarioBrosRecomp is a static recompilation of Super Mario Bros. for the NES, built with NESRecomp. The target ROM is Super Mario Bros. (World), CRC32 3337EC46. The README says the game is fully playable.",
+    "description_zh": "SuperMarioBrosRecomp 是 NES 版《超级马里奥兄弟》的静态重编译，用 NESRecomp 构建。目标 ROM 是 Super Mario Bros. (World)，CRC32 为 3337EC46。README 写明游戏可以完整游玩。",
+    "requirements": [
+      "SHA-1 ea343f4e445a9050d4b4fbac2c77d0693b1d0922. A Windows build needs Visual Studio 2022 with C++ and CMake 3.20 or newer.",
+      "License: PolyForm Noncommercial 1.0.0."
+    ],
+    "evidence_url": "https://github.com/mstan/SuperMarioBrosNESRecomp/blob/de443b01e2707c768be1729970f99d2f9da6bec3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
