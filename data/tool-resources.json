@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "noble-archimedes",
+    "name": "Noble Archimedes",
+    "url": "https://github.com/sergiomanzur/noble-archimedes",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Noble Archimedes recompiles Castlevania: Curse of Darkness. The primary path turns the original Xbox release into native x64 code with Direct3D 12 and XAudio2. An experimental PlayStation 2 path covers the USA release SLUS-21168. The Windows beta compiles the game locally from the player's USA Xbox files on first run.",
+    "description_zh": "Noble Archimedes 重编译《Castlevania: Curse of Darkness》。主路径把初代 Xbox 版本编译成原生 x64 代码，使用 Direct3D 12 和 XAudio2。实验性的 PlayStation 2 路径覆盖美版 SLUS-21168。Windows 测试版在第一次运行时用玩家自己的美版 Xbox 文件在本地编译游戏。",
+    "requirements": [
+      "Windows x64 and a Direct3D 12 GPU. Building needs Python 3, Git, CMake 3.25 or newer, Ninja, LLVM Clang/LLD, and the Visual Studio C++ Build Tools. Put an extracted USA Xbox disc, including default.xbe, under extracted/. The documented commands are .\\Build Noble Archimedes.cmd --full-game and .\\Launch Noble Archimedes.cmd.",
+      "License: GPL-2.0-only OR GPL-3.0-or-later for the project's own code. The README says the Xbox donor stays GPLv2, its SDK patch stays MIT, PS2 GPLv3-derived components stay GPLv3, and branding in assets/noble/ is CC0."
+    ],
+    "evidence_url": "https://github.com/sergiomanzur/noble-archimedes/blob/81934b840b5738468d9d043c8dd990386d5e59db/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
