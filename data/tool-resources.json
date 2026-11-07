@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "zoe-recompiled-case",
+    "name": "ZOE-Recompiled",
+    "url": "https://github.com/Yaz-Myst/ZOE-Recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "ZOE-Recompiled is a native Windows port of Zone of the Enders for the PlayStation 2, USA SLUS-201.48. PS2Recomp statically recompiles the MIPS code to C++. The runtime uses an OpenGL renderer, compiled vector-unit programs, and IOP and sound emulation.",
+    "description_zh": "ZOE-Recompiled 是《终极地带》PlayStation 2 美版 SLUS-201.48 的 Windows 原生移植。PS2Recomp 把 MIPS 代码静态重编译为 C++。运行时使用 OpenGL 渲染器、编译后的矢量单元程序，以及 IOP 和声音模拟。",
+    "requirements": [
+      "On first start the program asks for the player's USA disc image and checks that it is Zone of the Enders.",
+      "The README says the game is playable from the intro through the final area, including the hidden Versus mode. A controller is the tested input. The options menu still uses the keyboard.",
+      "The reviewed README does not name a license for this port."
+    ],
+    "evidence_url": "https://github.com/Yaz-Myst/ZOE-Recompiled/blob/fe89dd65c82a4b669b5034279263cd0636746d91/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
