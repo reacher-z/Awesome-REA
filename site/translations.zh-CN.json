@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ridge-racer-type4-recomp": {
+    "name": "山脊赛车 Type 4 重编译",
+    "requirements": [
+      "把 CUE 和它引用的每一个 BIN 音轨放在一起。用 launcher/ridgeRacer4.bat 启动并选择 CUE。",
+      "审阅的 README 没有给这个项目写出许可证。它包含 OpenBIOS，并指向 OpenBIOS.LICENSE。"
+    ]
   }
 }
