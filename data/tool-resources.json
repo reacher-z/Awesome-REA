@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sonic1-proto-disasm",
+    "name": "Sonic 1 prototype disassembly",
+    "url": "https://github.com/Mega-Drive-Developers-Collective/Sonic-1-Prototype",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a research disassembly of the Sonic the Hedgehog prototype that Hidden Palace released on December 31, 2020. Edits are made in IDA Pro 7.2 and exported as an LST file to tools/s1proto.lst. text.bat checks that the result is bit-perfect. diff.bat splits tools/s1proto.md, and build.bat writes out.md.",
+    "description_zh": "这是 Hidden Palace 在 2020 年 12 月 31 日发布的《索尼克》原型的研究反汇编。修改在 IDA Pro 7.2 里进行，并导出为 LST 到 tools/s1proto.lst。text.bat 检查结果是否逐位一致。diff.bat 拆分 tools/s1proto.md，build.bat 写出 out.md。",
+    "requirements": [
+      "IDA Pro 7.2. text.bat checks the LST export. build.bat builds out.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Mega-Drive-Developers-Collective/Sonic-1-Prototype/blob/c4462cf8e36829ac0d27aadc3926cfe9fde875b0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
