@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "starhaven-case": {
+    "name": "Star Haven",
+    "requirements": [
+      "玩家提供《Paper Mario》ROM：欧版、美版或 iQue Player 中文版。把它复制到 SD 卡的 /3ds/StarHaven/。.z64、.n64 和 .v64 转储都可以。",
+      "在带自制固件的 3DS 上，用 FBI 安装 StarHaven.cia，或使用 StarHaven.3dsx。发布包在仓库的 Releases 页面。",
+      "port/3ds/ 下的移植以及移植对反编译的修改使用 Apache License 2.0。反编译本身仍是 pmret/papermario。"
+    ]
   }
 }
