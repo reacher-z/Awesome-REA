@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "open-ig",
+    "name": "Open Imperium Galactica",
+    "url": "https://github.com/akarnokd/open-ig",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Open Imperium Galactica is a Java reimplementation of the 1996 game Imperium Galactica. Version 0.95.X is distributed as Open-IG-0.95.X.zip, 1,309,131,999 bytes, SHA-1 67b3e8f81d2b25b68fc351ecd5ad7b737335b218, SHA-256 e2154b8d5bbcceb8d2f250ef6bc4bf309d77ddd069dc6d4d2a23a5aa921746b8. The reviewed README says the project includes the files needed to run without the original game. Java 11 or newer is required. Languages listed are English, Hungarian, German, Russian, French, and Spanish for graphics and text.",
+    "description_zh": "Open Imperium Galactica 是 1996 年游戏 Imperium Galactica 的 Java 重实现。0.95.X 版以 Open-IG-0.95.X.zip 分发，大小 1,309,131,999 字节，SHA-1 为 67b3e8f81d2b25b68fc351ecd5ad7b737335b218，SHA-256 为 e2154b8d5bbcceb8d2f250ef6bc4bf309d77ddd069dc6d4d2a23a5aa921746b8。审阅的 README 写明项目包含独立运行所需的文件，不需要原版游戏。需要 Java 11 或更高版本。列出的语言是英语、匈牙利语、德语、俄语、法语，以及仅图形和文本的西班牙语。",
+    "requirements": [
+      "Java 11 or newer. The 0.95.X zip is about 1.21 GB.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/akarnokd/open-ig/blob/9891378f2f00ba83d51ad92773f8cb2dd9744b12/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
