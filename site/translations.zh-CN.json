@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "recvx-decomp": {
+    "name": "recvx-decomp",
+    "requirements": [
+      "需要美版光盘文件 SLUS_201.84 和 PlayStation 2 SDK 2.0.0 或 3.0.3。在 Linux 上，如果路径里没有 wibo，就用它来运行 mwccps2.exe。",
+      "许可证：MIT。"
+    ]
   }
 }

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "recvx-decomp",
+    "name": "recvx-decomp",
+    "url": "https://github.com/AshfordFamily/recvx-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "recvx-decomp reconstructs Resident Evil: Code Veronica X from the PlayStation 2 ELF back to C. The reviewed target is the US release SLUS-20184. SLUS_201.84 goes in the config folder. The build expects the PlayStation 2 SDK 2.0.0 or 3.0.3, with paths in compile_config.json. python compile.py --setup writes objdiff.json, and python compile.py builds. python mkiso.py can extract and repack a disc as RECVX_NEW.iso. The README says the engine, gameplay, graphics, CRI ADX T from 26 January 2001, and enemy AI are decompiled.",
+    "description_zh": "recvx-decomp 把《生化危机 代号：维罗妮卡》从 PlayStation 2 ELF 重建成 C。审阅的目标是美版 SLUS-20184。SLUS_201.84 放在 config 文件夹。构建需要 PlayStation 2 SDK 2.0.0 或 3.0.3，路径写在 compile_config.json。python compile.py --setup 写出 objdiff.json，python compile.py 进行构建。python mkiso.py 可以把光盘提取并重新打包成 RECVX_NEW.iso。README 写明引擎、玩法、图形、2001 年 1 月 26 日的 CRI ADX T，以及敌人 AI 已经反编译。",
+    "requirements": [
+      "The US disc file SLUS_201.84 and a PlayStation 2 SDK 2.0.0 or 3.0.3. On Linux, wibo runs mwccps2.exe when it is not already on the path.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/AshfordFamily/recvx-decomp/blob/23bc6cb06c1b0e1093eeba0abca566dadec69a64/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
