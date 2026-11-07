@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "opentoshi": {
+    "name": "OpenToshi",
+    "requirements": [
+      "需要 Visual Studio 2022 或 2026。克隆时包含子模块，然后运行对应的 DirectX 11 生成脚本。",
+      "仓库本地提供 FMOD Ex 4.44.64。README 写明零售版游戏使用 4.44.47。",
+      "审阅的 README 没有给反编译写许可证。"
+    ]
   }
 }
