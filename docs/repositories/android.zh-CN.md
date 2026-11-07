@@ -144,7 +144,7 @@
 - [ZSA233/frida-analykit](https://github.com/ZSA233/frida-analykit) — Frida 工具包 - 主要面向安卓端逆向，解决frida环境版本管理和对Agent端常用底层工具方法封装，支持MCP。（目前主要由AI开发维护代码） **[156 星标]**
 - [in1nit1t/uniref](https://github.com/in1nit1t/uniref) — 用于分析 Unity 应用的 Python 编程框架。 **[154 星标]**
 - [ivan-sincek/malware-apk](https://github.com/ivan-sincek/malware-apk) — 作为漏洞猎人，你的漏洞赏金报告是否因未使用“恶意”概念验证（PoC）应用来利用漏洞而遭到拒绝？本项目可以帮上忙！ **[154 星标]**
-- [LSPosed/dexsql-release](https://github.com/LSPosed/dexsql-release) — 对 Android APK 和 DEX 文件使用 SQL **[154 星标]**
+- [LSPosed/dexsql-release](https://github.com/LSPosed/dexsql-release) — 对 Android APK 和 DEX 文件使用 SQL **[154 星标]** · 精选：[DexSQL](https://awesomerea.org/zh/resources/dexsql/)
 - [omeraydindev/Dexter](https://github.com/omeraydindev/Dexter) — 功能先进的 Android DEX 编辑器。 **[153 星标]**
 - [Hamz-a/jeb2frida](https://github.com/Hamz-a/jeb2frida) — 使用 JEB 自动生成 Frida hook。 **[152 星标]**
 - [TangGolang/TangGo](https://github.com/TangGolang/TangGo) — TangGo 测试平台由无糖信息技术有限公司基于多年渗透测试实战经验设计开发，是国产综合测试平台，为软件测试和网络安全从业者提供强大易用的测试工具及多人协作环境，主要用于 Web 站点功能测试、安全测试和安全评估。 **[148 星标]**

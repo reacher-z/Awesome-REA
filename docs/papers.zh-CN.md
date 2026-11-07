@@ -4,7 +4,7 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -15,7 +15,7 @@
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
-- [固件分析与重托管](#papers-firmware-analysis) (27)
+- [固件分析与重托管](#papers-firmware-analysis) (28)
 - [协议推断与分析](#papers-protocol-analysis) (22)
 
 每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。
@@ -261,6 +261,7 @@
 - [**DICE：面向动态固件分析的 DMA 输入通道自动仿真**](https://ieeexplore.ieee.org/document/9519398) - DICE 为既不模拟外设也不模拟 DMA 控制器的微控制器固件仿真器增加 DMA 输入仿真。 <sub>原题：*DICE: Automatic Emulation of DMA Input Channels for Dynamic Firmware Analysis* · IEEE S&amp;P 2021 · 会议论文 · Alejandro Mera 等 · [PDF](https://arxiv.org/pdf/2007.01502v3) · [代码](https://github.com/RiS3-Lab/DICE-DMA-Emulation/tree/2b3b8c8b722abdbd7ff9e35fc7b02914fddf75df) · [完整条目](https://awesomerea.org/zh/papers/paper-dice/)</sub>
 - [**从库可移植性到辅助重宿主：在通用硬件上原生运行微控制器软件**](https://doi.org/10.14722/ndss.2021.24308) - 论文通过基于 POSIX 的可移植微控制器模型和可替换的外设驱动，将微控制器软件迁移到通用硬件上原生运行并进行安全测试。 <sub>原题：*From Library Portability to Para-rehosting: Natively Executing Microcontroller Software on Commodity Hardware* · Proceedings 2021 Network and Distributed System Security Symposium · 会议论文 · Wenqiang Li 等 · [PDF](https://arxiv.org/pdf/2107.12867) · [完整条目](https://awesomerea.org/zh/papers/paper-para-rehosting/)</sub>
 - [**FirmAE：面向动态分析的物联网固件大规模仿真**](https://doi.org/10.1145/3427228.3427294) - 在 Firmadyne 基础上，针对启动、网络、NVRAM、内核行为及其他运行失败加入经验性干预，使 Linux 路由器与 IP 摄像机固件的 Web 服务能够运行并接受动态分析。 <sub>原题：*FirmAE: Towards Large-Scale Emulation of IoT Firmware for Dynamic Analysis* · ACSAC 2020 · 会议论文 · Mingeun Kim 等 · [PDF](https://syssec.kaist.ac.kr/pub/2020/kim_acsac2020.pdf) · [代码](https://github.com/pr0v3rbs/FirmAE) · [完整条目](https://awesomerea.org/zh/papers/paper-firmae/)</sub>
+- [**P2IM：通过自动外设接口建模实现可扩展且不依赖硬件的固件测试**](https://www.usenix.org/conference/usenixsecurity20/presentation/feng) - P2IM 在修改版 QEMU 中仿真单体 ARM Cortex-M 固件，通过试探性执行将内存映射 I/O 寄存器归类为控制—状态、状态、数据或控制—数据寄存器，并通过数据寄存器与轮询中断向固件提供模糊测试输入。 <sub>原题：*P2IM: Scalable and Hardware-independent Firmware Testing via Automatic Peripheral Interface Modeling* · USENIX Security 2020 · 会议论文 · Bo Feng 等 · [PDF](https://www.usenix.org/system/files/sec20-feng.pdf) · [代码](https://github.com/RiS3-Lab/p2im) · [完整条目](https://awesomerea.org/zh/papers/paper-p2im/)</sub>
 - [**HALucinator：通过抽象层仿真实现固件重托管**](https://www.usenix.org/conference/usenixsecurity20/presentation/clements) - HALucinator 识别单体 ARM Cortex-M 固件中的硬件抽象库函数，并用人工编写的 Python 处理函数和外设模型替换它们，从而重托管固件。 <sub>原题：*HALucinator: Firmware Re-hosting Through Abstraction Layer Emulation* · USENIX Security 2020 · 会议论文 · Abraham A Clements 等 · [PDF](https://www.usenix.org/system/files/sec20-clements.pdf) · [代码](https://github.com/embedded-sec/halucinator) · [完整条目](https://awesomerea.org/zh/papers/paper-halucinator/)</sub>
 - [**基于 Linux 的物联网系统通信协议的人工逆向工程**](https://arxiv.org/abs/2007.11981) - 提出一种针对嵌入式 Linux 物联网系统通信协议的人工逆向工程框架，并将其应用于多个系统，详细展示了 WeMo 智能插座的案例。 <sub>原题：*On Manually Reverse Engineering Communication Protocols of Linux Based IoT Systems* · arXiv 2020 · 预印本 · Kaizheng Liu 等 · [PDF](https://arxiv.org/pdf/2007.11981) · [完整条目](https://awesomerea.org/zh/papers/paper-manually-re-iot-protocols/)</sub>
 - [**BaseSAFE：通过仿真实现基带净化模糊测试**](https://doi.org/10.1145/3395351.3399360) - BaseSAFE 将闭源蜂窝基带固件部分迁移到仿真环境中进行插桩模糊测试，并用净化分配器检测堆缓冲区溢出。 <sub>原题：*BaseSAFE: Baseband SAnitized Fuzzing through Emulation* · Proceedings of the 13th ACM Conference on Security and Privacy in Wireless and Mobile Networks 2020 · 会议论文 · Dominik Maier 等 · [PDF](https://arxiv.org/pdf/2005.07797) · [完整条目](https://awesomerea.org/zh/papers/paper-basesafe/)</sub>
