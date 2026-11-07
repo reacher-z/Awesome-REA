@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "flameox",
+    "name": "Flameox",
+    "url": "https://github.com/morluto/flameox",
+    "category": "agent-workflows",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Flameox records bounded runtime evidence for coding agents. It coordinates profilers, benchmark tools, and trace processors against an explicit artifact or command. npx flameox@latest setup registers an MCP client. uvx flameox analyze takes an artifact path, uvx flameox capture runs a command from an absolute working directory, and uvx flameox mcp serve starts the stdio server. Preservation is optional and stores an evidence bundle by SHA-256. FLAMEOX_DATA_DIR chooses that directory. Development needs Python 3.12 or newer and the committed uv.lock.",
+    "description_zh": "Flameox 为编程代理记录有界的运行时证据。它针对明确的产物或命令协调分析器、基准工具和跟踪处理器。npx flameox@latest setup 注册 MCP 客户端。uvx flameox analyze 接受产物路径，uvx flameox capture 从绝对工作目录运行命令，uvx flameox mcp serve 启动 stdio 服务器。保存是可选的，并按 SHA-256 存放证据包。FLAMEOX_DATA_DIR 选择该目录。开发需要 Python 3.12 或更高版本，以及提交的 uv.lock。",
+    "requirements": [
+      "Node for the npx setup command, or uv for the CLI. Python 3.12 or newer to develop.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/morluto/flameox/blob/c7ea167bf51bf10da9bc17a9ffc1124f4166f32f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
