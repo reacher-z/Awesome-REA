@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sdlpop",
+    "name": "SDLPoP: an open-source port of Prince of Persia",
+    "url": "https://github.com/NagyD/SDLPoP",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "port",
+    "description_en": "Open-source port of Prince of Persia based on the disassembly of the DOS version, with added features. The README names NagyD as the author.",
+    "description_zh": "基于 DOS 版反汇编的波斯王子开源移植，并加入了新功能。README 将 NagyD 记为作者。",
+    "evidence_url": "https://github.com/NagyD/SDLPoP/blob/3c5add5fb7f83d4ceb542823ab66d00146c4271b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "GNU GPL, with the README pointing to COPYING and src/GPLv3.h. It says src/opl3.c, src/opl3.h, and src/stb_vorbis.c are external libraries with their own licenses."
+    ]
   }
 ]
