@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "parascope",
+    "name": "parascope",
+    "url": "https://github.com/xorpse/parascope",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "parascope scans source code and binaries with weggli rulesets. Building it needs IDA Pro 9.2 and the current SDK. It is installed from crates.io with cargo.",
+    "description_zh": "parascope 用 weggli 规则集扫描源代码和二进制文件。构建它需要 IDA Pro 9.2 和当前 SDK。它通过 cargo 从 crates.io 安装。",
+    "requirements": [
+      "The command is parascope, with --rules and an input path.",
+      "The reviewed README does not name a license in the text."
+    ],
+    "evidence_url": "https://github.com/xorpse/parascope/blob/42e23e31e70fdf64896d6942d7e5fcc00a4e706f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

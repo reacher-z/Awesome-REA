@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "parascope": {
+    "name": "parascope",
+    "requirements": [
+      "命令是 parascope，需要 --rules 和一个输入路径。",
+      "审阅的 README 正文没有写出许可证名称。"
+    ]
   }
 }
