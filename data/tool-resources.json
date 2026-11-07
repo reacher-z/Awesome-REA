@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openrakis",
+    "name": "OpenRakis",
+    "url": "https://github.com/OpenRakis/OpenRakis",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "OpenRakis is a work-in-progress reverse-engineering project for Cryo's Dune. The README describes the PC DOS floppy and CD layouts, an asm directory for the original x86 DOS assembly, and an 8086 16-bit real-mode IDA setup for DNCDPRG.EXE with entry CS 1ED.",
+    "description_zh": "OpenRakis 是 Cryo 的《Dune》的进行中逆向工程。README 描述了 PC DOS 软盘版和光盘版的文件布局、存放原始 x86 DOS 汇编的 asm 目录，以及针对 DNCDPRG.EXE 的 8086 16 位实模式 IDA 设置，入口 CS 为 1ED。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command. It points to IDA Freeware, Ghidra, UNLZEXE, DOSBox Debugger, Spice86, and Cryogenic."
+    ],
+    "evidence_url": "https://github.com/OpenRakis/OpenRakis/blob/2567749779a975b6d25286a4f212f392a59dda5b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
