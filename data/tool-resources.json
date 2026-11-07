@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ballanced",
+    "name": "Ballanced",
+    "url": "https://github.com/doyaGu/Ballanced",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Ballanced is a source-level reimplementation of the Ballance runtime. It rebuilds the player, engine libraries, building blocks, and plugins into a Ballance-compatible directory layout. The documented runtime is the cross-platform SDL3 build on the sdl branch.",
+    "description_zh": "Ballanced 从源码重实现《平衡球》的运行时。它把播放器、引擎库、积木和插件重建成与《平衡球》兼容的目录布局。文档中的运行时是 sdl 分支上的跨平台 SDL3 构建。",
+    "requirements": [
+      "The player supplies a copy of Ballance and extracts the release into the game root. Windows runs Bin/Player.exe. Linux and macOS run Bin/Player.",
+      "Developers need CMake 3.25 or newer and SDL3. Windows uses Visual Studio 2022. Linux uses GCC or Clang with Ninja. macOS uses Apple Clang with Ninja.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/doyaGu/Ballanced/blob/d26c0c0fe86063b727ad9c9810014f1950852364/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
