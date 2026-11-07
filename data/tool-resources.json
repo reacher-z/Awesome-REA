@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "retrokit",
+    "name": "retrokit",
+    "url": "https://github.com/nautilusbits/retrokit",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "retrokit decompiles 32-bit games from about 1993 to 2010 with headless Ghidra. It loads DOS LE and LX executables, including Watcom calling conventions, and types Win32 PE imports such as DirectX COM methods and Miles, Smacker, Bink, FMOD, and BASS. The export is one large C file plus indexes of functions, calls, strings, and imports.",
+    "description_zh": "retrokit 用无界面的 Ghidra 反编译大约 1993 年到 2010 年的 32 位游戏。它加载 DOS 的 LE 和 LX 可执行文件，包括 Watcom 调用约定，并为 Win32 PE 的导入标注类型，例如 DirectX 的 COM 方法，以及 Miles、Smacker、Bink、FMOD 和 BASS。导出结果是一个大的 C 文件，加上函数、调用、字符串和导入的索引。",
+    "requirements": [
+      "Ghidra 12.x, JDK 21 or newer, and Python 3.10 or newer. retrokit install-loader registers the DOS loader once per Ghidra install.",
+      "License: Apache-2.0."
+    ],
+    "evidence_url": "https://github.com/nautilusbits/retrokit/blob/7625c6b6a1f29d4793bc528c31621cd9ef784b1d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
