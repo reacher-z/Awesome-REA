@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "incredibles-gc",
+    "name": "The Incredibles decompilation",
+    "url": "https://github.com/seilc/incredibles",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of The Incredibles for the GameCube, USA GICE78, built on Heavy Iron's EvilEngine. The retail main.dol has SHA-1 c7413be2fba5b8cc47b7506ecb7785677a4a1c12 and is copied to orig/GICE78/sys/main.dol. The project uses decomp-toolkit. Matched code is shared with the Ratatouille prototype and Rise of the Underminer decompilations.",
+    "description_zh": "这是 GameCube 美版《超人总动员》GICE78 的匹配反编译，基于 Heavy Iron 的 EvilEngine。零售版 main.dol 的 SHA-1 是 c7413be2fba5b8cc47b7506ecb7785677a4a1c12，复制到 orig/GICE78/sys/main.dol。项目使用 decomp-toolkit。已匹配的代码与《美食总动员》原型和《超人总动员：强敌崛起》的反编译共享。",
+    "requirements": [
+      "Python 3 and Ninja. Linux and macOS also use wibo, which configure.py downloads, or Wine. Run python configure.py, then ninja.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/seilc/incredibles/blob/2fc4aa3303161b8e503636bdf57cf8456ffabf79/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
