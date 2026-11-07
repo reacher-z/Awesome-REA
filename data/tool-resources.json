@@ -36543,6 +36543,7 @@
     "description_zh": "将 Chrono Cross（《超时空之轮：交叉》）日版 PlayStation 发行版（SLPS 023.64）的主可执行文件反编译为面向 PSX GCC 2.8.1 与 maspsx 工具链的 C。README 称 2022 年的 Radical Dreamers Edition 重制版在模拟器中运行该版本的未修改副本，项目即以此为输入。构建用 splat 拆分可执行文件，未匹配的函数仍由生成的汇编链接，结果对照仓库中提交的 SHA-256 校验。目前已反编译的 C 集中在音频系统；decomp.dev 报告所审提交时约 29% 的函数已匹配。",
     "evidence_url": "https://github.com/jdperos/chrono-cross-decomp/blob/7dcadfc36421c9b26466f7fdbdbaa1a1102219c6/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "README calls this an in-progress matching decompilation; the GitHub description’s “100% matching” is the goal, not the current state. The splat configuration covers only the main executable slps_023.64, and src/ holds eight sound-system files. decomp.dev reports for the reviewed commit 298 of 1,035 functions (12.51% of code) matched in the main category and no units complete; the default branch was last pushed on 2026-04-14.",
