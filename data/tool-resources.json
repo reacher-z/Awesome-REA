@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "freeablo",
+    "name": "freeablo: a cross-platform reimplementation of the Diablo 1 engine",
+    "url": "https://github.com/wheybags/freeablo",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Cross-platform reimplementation of the Diablo 1 game engine. The README says the project is archived, that original data files are required, and that the current build can walk the town, animate players and NPCs, enter the dungeon, fight with melee and limited ranged and magic attacks, drop loot, and buy and sell items.",
+    "description_zh": "暗黑破坏神 1 游戏引擎的跨平台重实现。README 写明项目已归档，需要原始数据文件，当前构建可以在城镇走动、播放玩家和 NPC 动画、进入地牢、进行近战以及有限的远程和魔法战斗、掉落物品，以及买卖物品。",
+    "evidence_url": "https://github.com/wheybags/freeablo/blob/7e0844e0887634cb7f0d61eed8a9a573e8806f2d/readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The original Diablo 1 data files are required. The README links prebuilt binaries on the project releases page.",
+      "The reviewed page states no license."
+    ]
   }
 ]
