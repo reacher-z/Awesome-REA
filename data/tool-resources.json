@@ -36543,6 +36543,7 @@
     "description_zh": "逆向分析 Validity/Synaptics 笔记本指纹读取器 138a:0090、138a:0094、138a:0097、06cb:0081 和 06cb:009a 的 USB 协议，目标是写出协议规范和自由的 libfprint 驱动。仓库包含初始化流程及这些读取器所用改版 TLS 1.2 握手的规范草稿、一个在密钥交换后解密通信的 Wireshark Lua 解析器，以及一个通过 libusb 与读取器通信的独立 C 原型。README 称原型代码非常粗糙，编写驱动时会完全重写，并注明集成到 libfprint 的驱动尚未就绪。",
     "evidence_url": "https://github.com/nmikhailov/Validity90/blob/8b80cfeae15487d5e13ff5ff3ab4f282eac765be/README.md",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed master commit is dated 2019-02-25; the repository has no releases or tags. The README status table reports scanning, image output and the internal database check working in the prototype for 138a:0090, scanning and the database check for 138a:0097, initialization and LEDs but no scanning for 06cb:009a, and 138a:0094 and 06cb:0081 not working yet. Configuration, the pre-TLS key exchange, device operations and the image format remain in progress in the specification, and the driver column is Not Started for every task.",
