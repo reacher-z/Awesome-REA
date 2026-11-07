@@ -36528,5 +36528,24 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "360tools",
+    "name": "360tools",
+    "url": "https://github.com/sp00nznet/360tools",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "360tools is a toolkit and playbook for statically recompiling Xbox 360 games to native x86-64 executables with the ReXGlue SDK. It is written for ReXGlue 0.8.0, which extracts XEX and STFS packages and generates C++. The older XenonRecomp pipeline is kept under legacy/.",
+    "description_zh": "360tools 是一套用 ReXGlue SDK 把 Xbox 360 游戏静态重编译成原生 x86-64 可执行文件的工具和步骤说明。它针对 ReXGlue 0.8.0，该版本可以提取 XEX 和 STFS 包并生成 C++。较旧的 XenonRecomp 流程留在 legacy/。",
+    "requirements": [
+      "License: MIT unless a file says otherwise. extract_stfs.py includes code derived from Rene Ladan under the 2-clause BSD license. ReXGlue keeps its own license."
+    ],
+    "evidence_url": "https://github.com/sp00nznet/360tools/blob/1b53928767fa134c1ea2ea42007bc39852eea1fc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
