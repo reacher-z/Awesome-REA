@@ -4,7 +4,7 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
@@ -13,7 +13,7 @@
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
-- [Protocol](#protocol) (91)
+- [Protocol](#protocol) (92)
 
 <a id="website"></a>
 ## Website
@@ -499,6 +499,7 @@
 - [**PixMob IR reverse engineering: controlling event wristbands at home**](https://github.com/danielweidman/pixmob-ir-reverse-engineering) - Recovers enough of the infrared protocol used by PixMob event wristbands to light them at home, starting from Flipper Zero recordings made at concerts and games and replaying them to bracelets. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pixmob-ir-protocol-case/)</sub>
 - [**pypush: a Python client for Apple’s push protocol**](https://github.com/JJTech0130/pypush) - Reimplements the client side of Apple’s private Apple Push Notification service (APNs) protocol in platform-independent Python: it activates as an Apple device, connects to the APNs courier, mints app-scoped tokens and receives push notifications. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pypush-apns-protocol-case/)</sub>
 - [**Roborock Local Server: a self-hosted stand-in for Roborock’s vacuum cloud**](https://github.com/Python-roborock/local_roborock_server) - Runs a local HTTPS and MQTT stack in place of Roborock’s cloud, so supported vacuums keep live maps and controls on an isolated network without rooting or hardware changes. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/roborock-local-server-cloud-case/)</sub>
+- [**BM2 Battery Monitor: reconstructing an encrypted BLE voltage protocol**](https://github.com/KrystianD/bm2-battery-monitor) - Reimplements the Bluetooth Low Energy protocol of the BM2 (Battery Monitor 2) car battery monitor so that its readings can be used without the vendor's Android app. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bm2-battery-monitor-ble-case/)</sub>
 - [**cooler-lcd: a Thermalright display protocol implementation**](https://github.com/kristjaningi/cooler-lcd) - Implements a USB picture-transfer driver for Thermalright Vision cooler displays, with a Rust dashboard replacing the vendor display application. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/cooler-lcd-case/)</sub>
 - [**GAMEKB-K17: reconstructing a macropad configuration protocol**](https://github.com/dvdarkin/gamekb-k17) - Implements the vendor HID configuration protocol for the GAMEKB-K17/HCY-K017 macropad. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/gamekb-k17-case/)</sub>
 - [**hw-harness: scanner USB protocol investigation**](https://github.com/cschalle/hw-harness) - Documents an author-reported scanner investigation comparing vendor-driver USB control transfers with Linux-driver traces to infer initialization, timing and resolution parameters. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/hw-harness-reference-case/)</sub>
