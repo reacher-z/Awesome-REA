@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ttyd-g8mj01-decomp-case",
+    "name": "Paper Mario: The Thousand-Year Door decompilation",
+    "url": "https://github.com/NWPlayer123/PaperMario2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a work-in-progress decompilation of Paper Mario: The Thousand-Year Door, Japanese version G8MJ01, based on symbol maps from the Paper Mario 2 demo. The README says it aims at the same functionality rather than a 1:1 match.",
+    "description_zh": "该仓库是《Paper Mario: The Thousand-Year Door》日版 G8MJ01 的进行中反编译，依据 Paper Mario 2 试玩版的符号表。README 写明目标是相同的功能，而不是逐字节匹配。",
+    "requirements": [
+      "SDK_BASE_PATH must point at a 20 April 2004 Patch 1 Nintendo GameCube SDK. MUSYX_BASE_PATH must point at MusyX 2.0 Patch 3. MW_BASE_PATH must point at CodeWarrior 2.7 for GameCube.",
+      "Python 3 with the regex and colorama packages, then build.py. A successful build writes build/G8MJ01.elf and build/G8MJ01.map.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/NWPlayer123/PaperMario2/blob/5421b46a8d0fe400a88a1f4ad88f0308e3c99058/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
