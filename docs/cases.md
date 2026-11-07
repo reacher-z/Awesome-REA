@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -113,7 +113,7 @@
 - [**wii-ipl: a decompilation of the Wii Menu (System Menu 4.3)**](https://github.com/koopthekoopa/wii-ipl) - A work-in-progress decompilation of the Wii Menu, the console’s System Menu (IPL), targeting version 4.3 in its USA, European, Japanese and Korean builds. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/wii-menu-ipl-decomp-case/)</sub>
 
 <a id="game-decompilation"></a>
-### Non-matching decompilations (19)
+### Non-matching decompilations (20)
 
 - [**c1: a C port of PlayStation Crash Bandicoot**](https://github.com/wurlyfox/c1) - Ports the original PlayStation Crash Bandicoot game code to C function by function; its coding standard labels functions with the addresses of their original implementations. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/crash-bandicoot-c1-port-case/)</sub>
 - [**Firefighter: a decompiled DOS game ported to Rust**](https://gitlab.com/esr/firefighter) - Eric S. Raymond’s terminal port of Firefighter, Eben Sprinsock’s 1985 DOS shareware game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/firefighter-rust-port-case/)</sub>
@@ -125,6 +125,7 @@
 - [**R.E.L.I.V.E.: an Oddworld Abe’s Oddysee and Abe’s Exoddus engine reimplementation**](https://github.com/AliveTeam/alive_reversing) - Reimplements the engine of Oddworld: Abe’s Oddysee and Abe’s Exoddus as an open-source replacement executable that runs from the user’s own game folder. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/relive-oddworld-abe-engine-case/)</sub>
 - [**re-plants-vs-zombies: decompiling and modernizing Plants vs. Zombies GOTY**](https://github.com/Patoke/re-plants-vs-zombies) - Reconstructs C++ source for Plants vs. Zombies on PopCap’s open-source SexyAppFramework, starting from an earlier community decompilation of version 0.9.9 and adding functionality reversed from the Game of the Year edition, with functions annotated by GOTY addresses. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/re-plants-vs-zombies-decomp-case/)</sub>
 - [**REDRIVER2: reconstructing Driver 2 through a PlayStation compatibility layer**](https://github.com/OpenDriver2/REDRIVER2) - Translates reverse-engineered Driver 2 MIPS routines into C/C++ and uses Psy-X/Psy-Cross to adapt PlayStation interfaces for desktop systems. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/redriver2-case/)</sub>
+- [**Resident Evil Code Veronica X GameCube decompilation**](https://github.com/fmil95/recvx-gc-decomp) - This is a work-in-progress decompilation of Resident Evil: Code: Veronica X for the GameCube. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/recvx-gc-decomp/)</sub>
 - [**RSDKv3 Decompilation: Sonic CD (2011) on a reconstructed Retro Engine v3**](https://github.com/RSDKModding/RSDKv3-Decompilation) - Reconstructs Retro Engine v3, the engine behind the 2011 Sonic CD remaster, as a native C++ source port for Windows, Linux, macOS and Android. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rsdkv3-sonic-cd-decomp-case/)</sub>
 - [**RSDKv4 Decompilation: Retro Engine v4 and the Sonic 1 &amp; 2 (2013) menus**](https://github.com/RSDKModding/RSDKv4-Decompilation) - Decompiles Retro Engine (RSDK) v4, the engine behind Sonic the Hedgehog and Sonic the Hedgehog 2 (2013), together with the games’ natively coded menus, and builds it for Windows, Linux and Android. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rsdkv4-sonic-1-2-decomp-case/)</sub>
 - [**RSDKv5 Decompilation: reconstructing Retro Engine v5 and v5U**](https://github.com/RSDKModding/RSDKv5-Decompilation) - Reconstructs the Retro Engine (RSDK) v5 and v5 Ultimate runtime, the engine that runs Sonic Mania’s game code, and builds it for Windows, Linux, Switch and Android. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rsdkv5-engine-decomp-case/)</sub>
