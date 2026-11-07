@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "triaevum",
+    "name": "TriAevum",
+    "url": "https://github.com/coccofresco/TriAevum",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "TriAevum, Echoes of Time, is an ahead-of-time recompilation of The Legend of Zelda: Ocarina of Time 3D for Windows and Linux x64, with an NRI/Vulkan renderer. The reviewed release is v0.8.0-beta.1.2. TriAevumForge.exe accepts a decrypted EUR or USA ROM, original or revision 1, as .3ds or .cci. Japanese, Korean, and Taiwanese releases are not supported. The Windows zip contains TriAevumForge.exe, and setup writes TriAevum.exe beside it.",
+    "description_zh": "TriAevum 的 Echoes of Time 是《塞尔达传说 时之笛 3D》面向 Windows 和 Linux x64 的提前编译重编译，使用 NRI/Vulkan 渲染器。审阅的版本是 v0.8.0-beta.1.2。TriAevumForge.exe 接受已解密的欧版或美版 ROM，原版或第 1 修订，格式为 .3ds 或 .cci。日文、韩文和繁体中文版本尚不支持。Windows 压缩包里是 TriAevumForge.exe，安装完成后会在旁边写出 TriAevum.exe。",
+    "requirements": [
+      "A decrypted EUR or USA Ocarina of Time 3D ROM in .3ds or .cci form, and a Vulkan GPU. Windows or Linux x64.",
+      "License: GPL-3.0-or-later for the original contributions. iMMERSE/MXAO is all rights reserved for this project. The optional HUD and Link model packs are CC BY-NC-ND 4.0 and are downloaded separately."
+    ],
+    "evidence_url": "https://github.com/coccofresco/TriAevum/blob/8f69a26f390bf3a500bf3149b6596c19724a5b5d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
