@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "procyon": {
+    "name": "Procyon",
+    "requirements": [
+      "运行反编译器 JAR 需要 Java 运行时。库从 Maven Central 以 org.bitbucket.mstrobel 获取。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "procyon",
+    "name": "Procyon",
+    "url": "https://github.com/mstrobel/procyon",
+    "category": "jvm",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Procyon is a Java metaprogramming suite. procyon-decompiler is a standalone front end for the Java decompiler in procyon-compilertools, with its dependencies embedded in the JAR. The compiler toolset also inspects class metadata and bytecode. The libraries are published on Maven Central under the group org.bitbucket.mstrobel.",
+    "description_zh": "Procyon 是一套 Java 元编程工具。procyon-decompiler 是 procyon-compilertools 里 Java 反编译器的独立前端，依赖都嵌在 JAR 里。编译器工具集也检查类元数据和字节码。这些库在 Maven Central 上以组 org.bitbucket.mstrobel 发布。",
+    "requirements": [
+      "A Java runtime for the decompiler JAR. Libraries are fetched from Maven Central as org.bitbucket.mstrobel.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/mstrobel/procyon/blob/88a95fa93c58322393174f84543edc7a0a2ca44d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
