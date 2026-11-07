@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "s3d-blast-disasm",
+    "name": "Sonic 3D Blast disassembly",
+    "url": "https://github.com/sonicretro/s3ddisasm",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of Sonic 3D Blast. The README says the files are under IDCFILES, and it names IngameMode, LoadLevel, InitLevel, RunLevel, and RunSonic. Commercial use is prohibited.",
+    "description_zh": "这是《Sonic 3D Blast》的反汇编。README 写明文件在 IDCFILES 下，并点名 IngameMode、LoadLevel、InitLevel、RunLevel 和 RunSonic。禁止商业使用。",
+    "requirements": [
+      "The disassembly is in IDCFILES.",
+      "The reviewed README does not name a license. It prohibits commercial use."
+    ],
+    "evidence_url": "https://github.com/sonicretro/s3ddisasm/blob/6d7815119e662b162875d64be58d991fac582f2d/README",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
