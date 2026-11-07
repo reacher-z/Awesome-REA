@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "chaotix-disasm",
+    "name": "Knuckles' Chaotix disassembly",
+    "url": "https://github.com/sonicretro/chaotix",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of Knuckles' Chaotix for the Sega 32X. The README says the 68000 and Z80 sides build bit-perfect, and music and sound effects are in smps2asm format. The only buildable SH-2 code is the PWM driver. The rest of the SH-2 code is in an IDA Pro 7.7 database.",
+    "description_zh": "这是世嘉 32X 游戏 Knuckles' Chaotix 的反汇编。README 写明 68000 和 Z80 部分可以逐字节构建，音乐和音效使用 smps2asm 格式。唯一能构建的 SH-2 代码是 PWM 驱动。其余 SH-2 代码在 IDA Pro 7.7 的数据库里。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/sonicretro/chaotix/blob/46300f42849ba83f440d4d7e06e70e5c88bb0674/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
