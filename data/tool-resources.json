@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bluewake",
+    "name": "BlueWake: static recompilation of The Wind Waker",
+    "url": "https://github.com/chrissotraidis/bluewake",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "static-recompilation",
+    "description_en": "BlueWake is a static recompilation of the GameCube game The Legend of Zelda: The Wind Waker that runs natively on iPhone, iPad, Mac, Windows, and Linux. The README describes touch controls, controller support, and mods, and it names Windows 10 or 11 ready-made builds plus repository builds for Apple platforms and x86-64 Linux.",
+    "description_zh": "BlueWake 是 GameCube 游戏《塞尔达传说：风之杖》的静态重编译，可在 iPhone、iPad、Mac、Windows 和 Linux 上原生运行。README 描述了触摸控制、手柄支持和模组，并写明 Windows 10 或 11 有现成构建，Apple 平台和 x86-64 Linux 则从仓库构建。",
+    "evidence_url": "https://github.com/chrissotraidis/bluewake/blob/0d84fa1969a1ac9a9e9333d85dd425816ea3ce23/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The README requires the user's own US GameCube copy of The Wind Waker, product code GZLE01 revision 0. It says the repository contains no disc image, game assets, or saves.",
+      "Windows 10 or 11 uses a downloaded build. iPhone and iPad apps are built on an Apple silicon Mac. Mac builds target Apple silicon. Linux builds target x86-64. An Apple TV build is described as experimental.",
+      "GitHub reports the repository license as GPL-3.0."
+    ],
+    "verification": "source-reviewed"
   }
 ]

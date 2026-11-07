@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "bluewake": {
+    "name": "BlueWake：风之杖的静态重编译",
+    "requirements": [
+      "README 要求用户自备美版 GameCube《风之杖》，产品代码 GZLE01、修订版 0。它写明仓库不包含光盘镜像、游戏资源或存档。",
+      "Windows 10 或 11 使用下载的构建。iPhone 和 iPad 应用在 Apple 芯片的 Mac 上构建。Mac 构建面向 Apple 芯片。Linux 构建面向 x86-64。Apple TV 构建被描述为实验性功能。",
+      "GitHub 报告该仓库的许可证为 GPL-3.0。"
+    ]
   }
 }
