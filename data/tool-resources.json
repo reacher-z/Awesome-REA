@@ -36528,5 +36528,31 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "computerarcheology",
+    "name": "Computer Archeology: arcade disassembly notes",
+    "url": "https://github.com/topherCantrell/computerarcheology",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "Computer Archeology stores the markdown disassemblies and notes that its toolchain renders into the pages at computerarcheology.com. Assembly files stay in GitHub-flavored markdown, and a names-in-code pass links memory operands to named definitions. The README starts the renderer with py -m computerarcheology.carender.app.",
+    "description_zh": "Computer Archeology 存放由工具链渲染到 computerarcheology.com 的 Markdown 反汇编和注释。汇编文件保持 GitHub 风味的 Markdown，names-in-code 会把内存操作数链接到已命名的定义。README 用 py -m computerarcheology.carender.app 启动渲染器。",
+    "evidence_url": "https://github.com/topherCantrell/computerarcheology/blob/1adc2a7f3ae30f9efceed3f6b22bf5541c1f584c/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "Python runs the renderer modules computerarcheology.carender.app and computerarcheology.carender.development_server.",
+      "GitHub's license metadata for this repository is empty."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
