@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -87,6 +87,7 @@
 - [**sead: a decompilation of Nintendo’s first-party C++ standard library**](https://github.com/open-ead/sead) - Decompiles sead, the C++ standard library that Nintendo statically links into its first-party games, covering containers, heaps, strings, math, file devices, threads, the game framework and graphics. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sead-nintendo-library-decomp-case/)</sub>
 - [**Skyward Sword: Wii decompilation with hash-checked relinking**](https://github.com/zeldaret/ss) - Reconstructs C++ source for The Legend of Zelda: Skyward Sword’s Wii main.dol and REL modules, starting from the user’s NTSC-U 1.0 (SOUE01) disc files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/skyward-sword-decomp-case/)</sub>
 - [**Sly Cooper and the Thievius Raccoonus: matching PlayStation 2 decompilation**](https://github.com/TheOnlyZac/sly1) - Reconstructs source code for SCUS\_971.98, the NTSC-U PlayStation 2 executable of Sly Cooper and the Thievius Raccoonus, as a work-in-progress matching decompilation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sly1-matching-decomp-case/)</sub>
+- [**SMWDisX: disassembly of Super Mario World**](https://github.com/IsoFrieze/SMWDisX) - SMWDisX is a disassembly of Super Mario World that assembles the Japanese, USA, European 1.0, and European 1.1 console releases, plus the Super System arcade version. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/smwdisx-case/)</sub>
 - [**Snowboard Kids 2: an LLM-assisted N64 matching decompilation**](https://github.com/cdlewis/snowboardkids2-decomp) - A public matching decompilation of the N64 game Snowboard Kids 2, begun in 2024 with community decompilation tools. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/snowboardkids2-decomp-case/)</sub>
 - [**Snowboard Kids: an agent-assisted N64 matching decompilation**](https://github.com/cdlewis/snowboardkids-decomp) - A matching decompilation of the original Nintendo 64 Snowboard Kids that rebuilds SHA1-identical North American and Japanese ROMs from a user-supplied ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/snowboardkids-matching-decomp-case/)</sub>
 - [**Sonic Advance 1 &amp; 2: a matching GBA decompilation with widescreen ports**](https://github.com/SAT-R/sa2) - Reconstructs Sonic Advance and Sonic Advance 2 for the Game Boy Advance as C that rebuilds six hash-listed ROMs with SAT-R’s agbcc fork, and compiles the same code into widescreen SDL ports for Linux, macOS and Windows plus PSP and PS2 builds. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sonic-advance-1-2-decomp-port-case/)</sub>
