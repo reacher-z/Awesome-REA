@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ida-pro-loadmap": {
+    "name": "ida-pro-loadmap",
+    "requirements": [
+      "把 loadmap.dll 复制到 IDA 的 plugins 文件夹，打开 PE 或 LE 文件，然后使用 Load MAP。",
+      "致谢、许可证和更新日志在 src/LoadMap.cpp。"
+    ]
   }
 }
