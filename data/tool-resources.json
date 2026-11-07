@@ -36528,5 +36528,41 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "darling-lol-league-linux-case",
+    "name": "darling-lol: running the macOS League of Legends client on Linux through Darling",
+    "url": "https://github.com/lucannez64/darling-lol",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Patches the Darling macOS compatibility layer so that Riot’s macOS League of Legends client and game run on x86-64 Linux. The changes span Darling and 30 of its components, including Metal/Indium, AppKit, QuartzCore, CoreAudio, the kernel shim and darlingserver, with build, install and launch tooling. It is an experimental rehosting layer, not a decompilation or recompiled game, and its playability and frame-rate results are author-reported.",
+    "description_zh": "修补 Darling macOS 兼容层，使 Riot 的 macOS 版《英雄联盟》客户端与游戏能在 x86-64 Linux 上运行。改动覆盖 Darling 本体及其 30 个组件，包括 Metal／Indium、AppKit、QuartzCore、CoreAudio、内核垫片与 darlingserver，并附构建、安装和启动工具。这是实验性的兼容层重新托管方案，不是反编译或重新编译的游戏；可玩性与帧率结果均为作者报告。",
+    "evidence_url": "https://github.com/lucannez64/darling-lol/blob/78a47d633fbecc1189d70f7a8473980ffe771249/README.md",
+    "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin applies patches to 31 pinned repositories, Darling at 60ba801 plus 30 components, to run the macOS League client on x86-64 Linux. README calls it a development snapshot, not a finished launcher: Riot and League clients launch and manually played ARAM matches have run, with fixes for graphics, audio, input, startup crashes and memory reclamation. Installing through Riot’s own interface can still stall, and a fresh checkout has not been validated end to end on another machine.",
+      "The repository holds source differences and the author’s tooling only; game files, Riot installers, account data, Apple SDK binaries and compiled runtimes are excluded. Users install League themselves through Riot’s installer and sign in there. NOTICE says some compatibility tools carry short instruction signatures or API names to recognize the installed client, and that the client is not redistributed.",
+      "The host needs x86-64 Linux 5.14+, X11 or Xwayland and a hardware Vulkan/OpenGL driver; only AMD RADV has been exercised, and NVIDIA is not validated. Building needs Git LFS, CMake, Clang/LLD with LLVM development files, Python 3.12+, Darling’s build dependencies and at least 50 GB of disk. An experimental Nix flake supplies the launcher and dependencies but builds the runtime per user rather than shipping one.",
+      "CI runs the source validator, offline launcher, input and cleanup checks and selected unit tests; TESTING.md adds standalone guest probes and manual play, and excludes debuggers, client API calls, hooks and input automation. STATUS reports ARAM averages rising from about 84 to 135 FPS on one Ryzen 5 5500/RX 6600 PC over 2026-10-13/14, from the game’s own counters, against 170–190 FPS on Windows. These are one machine’s author measurements;",
+      "Original tooling is GPL-3.0, while patches keep their target files’ licenses, which across Darling include GPL, LGPL, APSL, BSD and Apache code. The project is not affiliated with Riot. README warns that playing in this modified environment can bring suspensions or permanent bans, notes a three-day suspension, advises against using it for now and expects a possible takedown. The author’s Darling issue comments say most code was AI-written under his supervision; REA use is not established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/lucannez64/darling-lol/blob/78a47d633fbecc1189d70f7a8473980ffe771249/docs/STATUS.md",
+      "https://github.com/lucannez64/darling-lol/blob/78a47d633fbecc1189d70f7a8473980ffe771249/docs/SETUP.md",
+      "https://github.com/lucannez64/darling-lol/blob/78a47d633fbecc1189d70f7a8473980ffe771249/docs/TESTING.md",
+      "https://github.com/lucannez64/darling-lol/blob/78a47d633fbecc1189d70f7a8473980ffe771249/NOTICE.md",
+      "https://github.com/lucannez64/darling-lol/blob/78a47d633fbecc1189d70f7a8473980ffe771249/LICENSE",
+      "https://github.com/lucannez64/darling-lol/blob/78a47d633fbecc1189d70f7a8473980ffe771249/upstream/manifest.json",
+      "https://github.com/lucannez64/darling-lol/blob/78a47d633fbecc1189d70f7a8473980ffe771249/.github/workflows/source-check.yml",
+      "https://github.com/lucannez64/darling-lol/blob/78a47d633fbecc1189d70f7a8473980ffe771249/research/README.md",
+      "https://github.com/darlinghq/darling/tree/60ba801decee7a00782f74f6be4c8ffb013f79ff",
+      "https://github.com/darlinghq/darling/issues/1467#issuecomment-6171417617"
+    ]
   }
 ]
