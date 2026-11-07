@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "surrealengine",
+    "name": "Surreal Engine",
+    "url": "https://github.com/dpjudas/SurrealEngine",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Surreal Engine reimplements Unreal Engine 1, currently for Unreal Gold and Unreal Tournament. The SurrealEngine executable adds game folders and launches a selected game. It runs on Windows 10 or newer, macOS 15 or newer, and a current Linux distribution, using Direct3D 11, OpenGL 3.2, Vulkan, or Metal 2. Build steps are in Docs/Building.md. SurrealEngine [--url=<mapname>] [--engineversion=X] takes a game-folder path.",
+    "description_zh": "Surreal Engine 重实现虚幻引擎 1，目前针对《虚幻》金版和《虚幻竞技场》。SurrealEngine 可执行文件添加游戏文件夹并启动选中的游戏。它运行在 Windows 10 或更高版本、macOS 15 或更高版本，以及当前的 Linux 发行版上，使用 Direct3D 11、OpenGL 3.2、Vulkan 或 Metal 2。构建步骤在 Docs/Building.md。SurrealEngine [--url=<地图名>] [--engineversion=X] 接受游戏文件夹路径。",
+    "requirements": [
+      "An original copy of the Unreal Engine 1 game to run. Follow Docs/Building.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/dpjudas/SurrealEngine/blob/b8a30e3072cb2b39a20bed3fe102dfbd6726afd2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
