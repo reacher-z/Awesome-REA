@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "cmr2-decomp",
+    "name": "CMR2Decomp",
+    "url": "https://github.com/CMR2Decomp/CMR2Decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "CMR2Decomp is a decompilation of the PC game Colin McRae Rally 2.0. It uses reccmp to check functions and globals. The solution is for Visual Studio 2022, and the code is written so it can still be compiled with MSVC 6.0. CI uses a portable MSVC 6.0.",
+    "description_zh": "CMR2Decomp 是 PC 游戏 Colin McRae Rally 2.0 的反编译。它用 reccmp 核对函数和全局量。解决方案面向 Visual Studio 2022，代码仍然按 MSVC 6.0 可编译的方式书写。持续集成使用便携版 MSVC 6.0。",
+    "requirements": [
+      "The local compile line links DirectX 7 libraries from third_party/dx7sdk-7001.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/CMR2Decomp/CMR2Decomp/blob/0e18a20853a80f4177e6c7da30b94b60f65ae2ba/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
