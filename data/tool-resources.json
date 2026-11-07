@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "habbo-src",
+    "name": "Habbo client decompilation archive",
+    "url": "https://github.com/Quackster/habbo_src",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository archives decompiled Habbo Shockwave clients from 2001 to 2009. The reviewed README says the clients were decompiled with ProjectorRays from DCR packs of several Habbo releases.",
+    "description_zh": "该仓库存档 2001 年到 2009 年反编译出的 Habbo Shockwave 客户端。审阅的 README 写明这些客户端用 ProjectorRays 从多个 Habbo 版本的 DCR 包反编译而来。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/Quackster/habbo_src/blob/631d250a91b7372ce297ac9b163787a6b7100731/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
