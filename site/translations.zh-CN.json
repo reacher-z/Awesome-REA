@@ -11023,5 +11023,15 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "nv-rs-fallout-new-vegas-engine-case": {
+    "name": "nv-rs：以 Rust 编写的实验性《辐射：新维加斯》引擎移植",
+    "requirements": [
+      "所审阅的 main 快照（2026-10-18）仍属实验阶段。README 列出开场、角色创建、古德斯普林斯以及任务“Back in the Saddle”和“Ghost Town Gunfight”，战斗、NPC AI、对话、交易、Pip-Boy、电台、物理和终端均已可用；完整通关、原版存档、NVSE 插件、Linux、macOS 和 VR 尚不支持。其进度图称已覆盖原程序 72.6% 的函数。",
+      "需要已安装的《辐射：新维加斯》1.4.0.525 版：nv-rs 在运行时读取使用者 Data 文件夹中的插件、归档、模型、纹理、声音和菜单，且从不修改它们。LEGAL.md 称仓库和发行版不含任何游戏文件，仓库卫生测试会拒绝这类文件类型；research/nv-oracle 中的工具读取使用者可执行文件的私有副本，录制结果也仅保存在本地。",
+      "目前仅支持 Windows：实验性的 Windows x64 发行版通过 Play.cmd 启动，并指向 Data 文件夹。从源码构建需要稳定版 Rust（2021 edition）和 Bevy 0.16，通过 cargo 完成，另有一个可打开指定场景（如 GSDocMitchellHouse）的查看器；research/ghidra 存放用于映射和导出可执行文件的 Ghidra 脚本。",
+      "README 称有两万多项自动化测试，每次改动都会自动跑一遍开场和古德斯普林斯任务，并与原版游戏对照检查；ADR-0001 描述了在真实 CPU 上调用原函数或在运行中的游戏内挂钩这些函数的对照工具。CI 在 Windows 上对 core 和 viewer 两个工作区运行格式检查、cargo test 和 clippy；",
+      "LEGAL.md 对原创贡献采用 GPL-3.0-or-later，2026-10-16 之前贡献的代码仍按 MIT 条款收录，并声明该许可不授予对游戏、其程序或任何由其翻译而来内容的权利。ADR-0003 记录了翻译反编译代码会增加被下架的风险，维护者接受了这一风险；ADR-0002 说明原型版符号并非由权利人发布。所审来源未确立 REA 的使用。"
+    ]
   }
 }

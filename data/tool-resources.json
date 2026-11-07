@@ -36528,5 +36528,42 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nv-rs-fallout-new-vegas-engine-case",
+    "name": "nv-rs: an experimental Fallout: New Vegas engine port in Rust",
+    "url": "https://github.com/slaterain/nv-rs",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rebuilds Fallout: New Vegas as a Rust and Bevy engine that reads the user’s own game data and aims to match the original 1:1; README reports the opening, Goodsprings and two quests as playable. Since 2026-10-05 its documented method translates functions decompiled from FalloutNV.exe 1.4.0.525, including the Havok SDK units, into Rust one by one, marking each by address, and uses names from unofficially released Xbox 360 prototype debug symbols. README says AI coding agents, mainly Claude with some Codex, write nearly all of the code, which is checked by tests, scripted play-throughs and oracles run against the original program.",
+    "description_zh": "以 Rust 和 Bevy 重建《辐射：新维加斯》引擎，读取使用者自有的游戏数据，目标是与原版 1:1 一致；README 称开场、古德斯普林斯和两个任务已可游玩。自 2026-10-05 起，其记录在案的方法是将从 FalloutNV.exe 1.4.0.525 反编译出的函数（包括 Havok SDK 单元）逐个翻译成 Rust，并按地址标注每个函数，同时使用来自非官方流出的 Xbox 360 原型版调试符号的名称。README 称几乎全部代码由 AI 编码智能体（主要是 Claude，部分为 Codex）编写，并通过测试、脚本化通关流程以及针对原程序运行的对照工具进行检查。",
+    "evidence_url": "https://github.com/slaterain/nv-rs/blob/6c6f89b259e445b54768094cb7ee6a9fb2c3a70c/README.md",
+    "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main snapshot (2026-10-18) is experimental. README lists the opening, character creation, Goodsprings and the quests Back in the Saddle and Ghost Town Gunfight, with combat, NPC AI, dialogue, barter, the Pip-Boy, radio, physics and terminals in play; a full playthrough, original saves, NVSE plugins, Linux, macOS and VR are not supported yet. Its progress figure reports 72.6% of the original program’s functions covered.",
+      "Needs Fallout: New Vegas 1.4.0.525 installed: nv-rs reads the plugins, archives, meshes, textures, sounds and menus in the user’s Data folder at runtime and never modifies it. LEGAL.md says the repository and releases contain no game files, and a repository hygiene test rejects those file types; the research/nv-oracle tools read a private copy of the user’s executable and keep their recordings private.",
+      "Windows only for now: the experimental Windows x64 release starts with Play.cmd and is pointed at the Data folder. Source builds use stable Rust (2021 edition) and Bevy 0.16 through cargo, with a viewer that opens a named cell such as GSDocMitchellHouse; research/ghidra holds the Ghidra scripts used to map and export the executable.",
+      "README reports more than 20,000 automated tests, automated play-throughs of the opening and the Goodsprings quests on every change, and checks against the original game; ADR-0001 describes oracles that call original functions on the real CPU or hook them in the running game. CI runs formatting, cargo test and clippy for the core and viewer workspaces on Windows;",
+      "LEGAL.md applies GPL-3.0-or-later to original contributions, keeps code contributed before 2026-10-16 under MIT, and says the licence grants no rights to the game, its program or anything translated from it. ADR-0003 records that translating decompiled code raises takedown risk, which the maintainer accepted, and ADR-0002 says the prototype symbols were not released by the rights holder. The reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/slaterain/nv-rs/blob/6c6f89b259e445b54768094cb7ee6a9fb2c3a70c/LEGAL.md",
+      "https://github.com/slaterain/nv-rs/blob/6c6f89b259e445b54768094cb7ee6a9fb2c3a70c/docs/adr/0001-decompilation-informed-reimplementation.md",
+      "https://github.com/slaterain/nv-rs/blob/6c6f89b259e445b54768094cb7ee6a9fb2c3a70c/docs/adr/0002-xbox-prototype-symbols.md",
+      "https://github.com/slaterain/nv-rs/blob/6c6f89b259e445b54768094cb7ee6a9fb2c3a70c/docs/adr/0003-decompiled-code-in-the-project.md",
+      "https://github.com/slaterain/nv-rs/blob/6c6f89b259e445b54768094cb7ee6a9fb2c3a70c/crates/engine-havok/src/lib.rs",
+      "https://github.com/slaterain/nv-rs/blob/6c6f89b259e445b54768094cb7ee6a9fb2c3a70c/research/nv-oracle/README.md",
+      "https://github.com/slaterain/nv-rs/tree/6c6f89b259e445b54768094cb7ee6a9fb2c3a70c/research/ghidra",
+      "https://github.com/slaterain/nv-rs/blob/6c6f89b259e445b54768094cb7ee6a9fb2c3a70c/.github/workflows/ci.yml",
+      "https://github.com/slaterain/nv-rs/blob/6c6f89b259e445b54768094cb7ee6a9fb2c3a70c/Cargo.toml",
+      "https://github.com/slaterain/nv-rs/blob/6c6f89b259e445b54768094cb7ee6a9fb2c3a70c/LICENSE",
+      "https://github.com/slaterain/nv-rs/releases/tag/experimental-2026-10-03.2"
+    ]
   }
 ]
