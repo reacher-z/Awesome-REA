@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "modern-gekko",
+    "name": "ModernGekko",
+    "url": "https://github.com/ExpansionPak/ModernGekko",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "ModernGekko is a runtime for GameCube and Wii recomps. The README describes loading code mods from package directories and libraries, with dependency ordering, hooks, function patches, and disc and CPU ABI checks.",
+    "description_zh": "ModernGekko 是 GameCube 和 Wii 重编译项目的运行时。README 描述从包目录和库加载代码模组，并支持依赖排序、钩子、函数补丁以及光盘和 CPU ABI 检查。",
+    "requirements": [
+      "Code mods load from Mods beside the executable and from the user directory Mods folder, unless --mods or --no-mods is used.",
+      "Package directories are named with the .mgm suffix and contain mod.so, mod.dll, or mod.dylib. Development libraries use the .mgm.so, .mgm.dll, or .mgm.dylib suffix.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/ExpansionPak/ModernGekko/blob/a2e4e2b026a68d4848f20ebf16f0e0ddeb573957/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
