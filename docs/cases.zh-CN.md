@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
 - [Game · 游戏](#game) (239)
 - [App · 应用](#app) (62)
-- [Native Binary · 原生二进制](#native-binary) (7)
+- [Native Binary · 原生二进制](#native-binary) (8)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
 - [Protocol · 协议](#protocol) (91)
 
@@ -376,6 +376,7 @@
 [↑ 返回目录](#目录)
 
 - [**CPQ IO Scheduler：还原小米的块设备调度器**](https://github.com/Rasenkai/CPQ_IOSched) - CPQ IO Scheduler 从已剥离符号的 ARM64 cpq.ko 内核模块还原小米的 Linux 块设备调度器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cpq-iosched-case/)</sub>
+- [**libmd12：E-mu SP-1200 与 SP-12 音频通路的 C 模型**](https://github.com/Mudb0y/libmd12) - E-mu SP-1200 与 SP-12 采样器音频通路的 C99 库：音高回放、滤波器和动态滤波器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/libmd12-sp1200-case/)</sub>
 - [**m0rph：追踪混淆 ELF 程序的字符串校验逻辑**](https://github.com/UmbertoDellaMonica/m0rph-CTF-CyberChallenge.IT) - m0rph 调查使用 readelf、strings、Cutter 和 Radare2 分析一款经过混淆的 x86-64 ELF CTF 字符串校验程序。 <sub>案例 · [完整条目](https://awesomerea.org/zh/resources/m0rph-ctf-analysis-case/)</sub>
 - [**Malware Analysis：njRAT 与 Casdet 行为研究**](https://github.com/phour44/Malware-Analysis) - 该恶意软件研究用 PEStudio 静态检查和 ANY.RUN 沙箱遥测分析 njRAT 与经 UPX 打包的 Casdet 可执行文件，同时检查恶意 PDF 和良性对照文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/malware-analysis-njrat-casdet-case/)</sub>
 - [**OpenBSD netcat：REA 与 Ghidra 静态调查**](https://github.com/NullLabTests/OpenBSD_netcat_REA) - REA/Ghidra 报告研究 Ubuntu netcat-openbsd 1.234-1 ELF 二进制，公开证据封套、反编译函数及函数清单；产物是静态调查，而非重建后的 netcat 应用。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/netcat-openbsd-rea-static-case/)</sub>

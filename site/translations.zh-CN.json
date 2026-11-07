@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "libmd12-sp1200-case": {
+    "name": "libmd12：E-mu SP-1200 与 SP-12 音频通路的 C 模型",
+    "requirements": [
+      "需要 C99 编译器和 make。make 构建库和命令行工具。README 写明表生成器与检查还需要带 NumPy 和 SciPy 的 Python 3、ngspice、arm-none-eabi 工具链和 QEMU。",
+      "README 写明半音表和衰减表是 E-mu 的，读自它点名的 SP-1200 OS 1.2、Rossum 的 SP-1200 OS 1.04 和 SP-12 Turbo 2.6 映像。它指向 Lytrix/EMU-SP1200 中的转储映像，而不是声称这些 ROM 在本树中。",
+      "README 写明 make check 运行 341 项检查，make m7check 在 QEMU 中为带单精度 FPU 的 Cortex-M7 运行同样的 341 项。它还报告了与 ngspice 以及 John Nolting 的 SP-12 录音的滤波器比较，并写明这些录音需下载。",
+      "LICENSE 是 MIT 许可证，版权 2026 Stanislaw Przedzinkowski。"
+    ]
   }
 }
