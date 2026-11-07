@@ -36528,5 +36528,35 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "thunderball",
+    "name": "Thunderball: decompilation of Peggle Deluxe",
+    "url": "https://github.com/teampopwork/Thunderball",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "matching-decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "Thunderball aims to decompile the English 1.01 executable of Peggle Deluxe from the Steam release. The README says many names come from unstripped ports cross-referenced with the Windows binary, and accuracy checks use reccmp. The repository omits the game assets.",
+    "description_zh": "Thunderball 旨在反编译 Steam 版 Peggle Deluxe 的英文 1.01 可执行文件。README 写明许多名称来自未剥离符号的其他平台移植，并与这份 Windows 二进制对照，准确性检查使用 reccmp。仓库不含游戏资源。",
+    "evidence_url": "https://github.com/teampopwork/Thunderball/blob/661e0de292a58a4d22355a45ce029cdb22078635/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "CMake 3.25 or higher, Ninja, and Microsoft Visual C++ 14. The README says to place a portable MSVC toolchain in Thunderball/msvc80 and run cmake --workflow --preset release-x86.",
+      "A copy of Peggle Deluxe supplies the assets. The Steam English 1.01 executable is the named target.",
+      "reccmp is installed with pip install git+https://github.com/isledecomp/reccmp.",
+      "GitHub reports the repository license as NOASSERTION. The README links LICENSE.md."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]

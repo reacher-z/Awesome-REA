@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "thunderball": {
+    "name": "Thunderball：Peggle Deluxe 反编译",
+    "requirements": [
+      "需要 CMake 3.25 或更高版本、Ninja 和 Microsoft Visual C++ 14。README 要求把便携版 MSVC 工具链放到 Thunderball/msvc80，并运行 cmake --workflow --preset release-x86。",
+      "游戏资源来自读者自己的 Peggle Deluxe。目标是 Steam 英文 1.01 可执行文件。",
+      "用 pip install git+https://github.com/isledecomp/reccmp 安装 reccmp。",
+      "GitHub 报告该仓库许可证为 NOASSERTION。README 链接了 LICENSE.md。"
+    ]
   }
 }
