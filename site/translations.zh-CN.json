@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gameroy": {
+    "name": "GameRoy",
+    "requirements": [
+      "需要 Rust 工具链。网页构建还需要 wasm-pack。Android 构建需要 Android NDK。",
+      "许可证：Apache License 2.0 或 MIT。"
+    ]
   }
 }
