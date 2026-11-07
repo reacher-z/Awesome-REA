@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
 - [Game · 游戏](#game) (239)
 - [App · 应用](#app) (62)
-- [Native Binary · 原生二进制](#native-binary) (7)
+- [Native Binary · 原生二进制](#native-binary) (8)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
 - [Protocol · 协议](#protocol) (91)
 
@@ -378,6 +378,7 @@
 - [**CPQ IO Scheduler：还原小米的块设备调度器**](https://github.com/Rasenkai/CPQ_IOSched) - CPQ IO Scheduler 从已剥离符号的 ARM64 cpq.ko 内核模块还原小米的 Linux 块设备调度器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cpq-iosched-case/)</sub>
 - [**m0rph：追踪混淆 ELF 程序的字符串校验逻辑**](https://github.com/UmbertoDellaMonica/m0rph-CTF-CyberChallenge.IT) - m0rph 调查使用 readelf、strings、Cutter 和 Radare2 分析一款经过混淆的 x86-64 ELF CTF 字符串校验程序。 <sub>案例 · [完整条目](https://awesomerea.org/zh/resources/m0rph-ctf-analysis-case/)</sub>
 - [**Malware Analysis：njRAT 与 Casdet 行为研究**](https://github.com/phour44/Malware-Analysis) - 该恶意软件研究用 PEStudio 静态检查和 ANY.RUN 沙箱遥测分析 njRAT 与经 UPX 打包的 Casdet 可执行文件，同时检查恶意 PDF 和良性对照文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/malware-analysis-njrat-casdet-case/)</sub>
+- [**Prose 2000 Reborn：语音板固件的 C 反编译**](https://github.com/rommix0/prose2000_reborn) - 把 Speech Plus 与 Telesensory Systems 的 Prose 2000 文本转语音固件（8086 主机加 NEC µPD7720 DSP）反编译为 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/prose2000-reborn-case/)</sub>
 - [**OpenBSD netcat：REA 与 Ghidra 静态调查**](https://github.com/NullLabTests/OpenBSD_netcat_REA) - REA/Ghidra 报告研究 Ubuntu netcat-openbsd 1.234-1 ELF 二进制，公开证据封套、反编译函数及函数清单；产物是静态调查，而非重建后的 netcat 应用。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/netcat-openbsd-rea-static-case/)</sub>
 - [**Windows 加载器：借助 REA 与 Codex 的静态恶意软件分析**](https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/) - Fedele Mantuano 报告在离线 Docker 实验环境中让 Codex 借助 REA，对一个公开的 Windows 恶意软件样本做静态分析，全程不执行样本。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/windows-loader-static-analysis-case/)</sub>
 - [**Show Your Work：对 REA 证据架构的实测剖析**](https://no-flag.com/2026/10/18/REA-paper/) - 一篇非官方的实测研究：先阅读 REA 源码，再在 27 类分析对象上对运行中的服务器发出 1,012 次有记录的调用，测量其按内容寻址的 Evidence 记录、按修订串联的未知项台账、带类型的拒绝、冷启动及响应上限。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/noflag-rea-evidence-architecture-study/)</sub>

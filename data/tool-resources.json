@@ -36542,7 +36542,7 @@
     "requirements": [
       "The README's default build produces the speech library, prose_say, the samples, and the v3.4.1 tests. -DPROSE_VERSION=1 builds the v1.1 tests instead. It says the v1.1 DSP program was never dumped, so v1.1 frames are played through the v3.12 DSP model and that audio is an approximation.",
       "Two firmware versions are in the tree: v3.4.1 (1988) and v1.1 (1983). The README says src/data holds data extracted from the ROMs, and src/tests holds the players and replay tests.",
-      "The README says every stage was checked against an emulator of the original board, byte-exact on captured calls and frame- or sample-exact end to end. It says the replay tests are described in REFERENCE.md §14. build/pipeline_play speaks one line. Not run or reproduced for this catalog.",
+      "The README says every stage was checked against an emulator of the original board, byte-exact on captured calls and frame- or sample-exact end to end. It says the replay tests are described in REFERENCE.md §14. build/pipeline_play speaks one line.",
       "The reviewed root has no LICENSE file. The README says the original firmware was proprietary to Telesensory Systems and Speech Plus. This record does not state a license for the repository."
     ],
     "requirement_facets": [
