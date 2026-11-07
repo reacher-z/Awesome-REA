@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sh3-nx",
+    "name": "Silent Hill 3 for Switch",
+    "url": "https://github.com/cutarev/sh3-nx",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "sh3-nx is a native Nintendo Switch port of the PC version of Silent Hill 3, release v0.06. The x86 executable is statically recompiled to C and compiled for ARM64. Direct3D 8, DirectSound, DirectInput, and kernel32 are reimplemented on SDL2 and OpenGL.",
+    "description_zh": "sh3-nx 是 PC 版《寂静岭3》的任天堂 Switch 原生移植，发布版本是 v0.06。x86 可执行文件被静态重编译成 C，再编译到 ARM64。Direct3D 8、DirectSound、DirectInput 和 kernel32 在 SDL2 和 OpenGL 上重实现。",
+    "requirements": [
+      "The player supplies the PC game. The port is built for sh3.exe of 3,338,240 bytes, SHA-1 aa2aca6dba19bf510c9c2e92eefdc15e98266581.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/cutarev/sh3-nx/blob/ff483a6f95b94a4f7924f6fbe4cb47169f2adb98/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
