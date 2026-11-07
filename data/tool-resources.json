@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "skdisasm",
+    "name": "Sonic 3 and Sonic & Knuckles disassembly",
+    "url": "https://github.com/sonicretro/skdisasm",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembly splits Sonic 3 and Sonic & Knuckles into General, Levels, sound, and Lockon S3. buildS3 and buildSK rebuild byte-perfect copies of those ROMs. buildS3Complete sets Sonic3_Complete and builds a combined Sonic 3 & Knuckles ROM. Windows batch files run the same builds. The Lua scripts need Lua 5.3. chkbitperfect compares the rebuilt S3 and S&K ROMs with the originals. SonLVL and SonED2 project files are included.",
+    "description_zh": "该反汇编把《索尼克3》和《索尼克与纳克鲁斯》拆成 General、Levels、sound 和 Lockon S3。buildS3 和 buildSK 重建与原版逐字节一致的 ROM。buildS3Complete 设置 Sonic3_Complete，并构建合并的索尼克3与纳克鲁斯 ROM。Windows 批处理运行同样的构建。Lua 脚本需要 Lua 5.3。chkbitperfect 把重建的 S3 和 S&K ROM 与原版比较。仓库包含 SonLVL 和 SonED2 工程文件。",
+    "requirements": [
+      "Windows batch files, or Lua 5.3 for the cross-platform scripts.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/sonicretro/skdisasm/blob/73de97c6b55055bcb8089c1d55d006b02136f163/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
