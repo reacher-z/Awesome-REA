@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pokeyellow-matching-case": {
+    "name": "Pokémon Yellow：按校验和核对的重建",
+    "requirements": [
+      "项目标题是Pokémon Yellow。本次提交中已审阅的校验行：roms.sha1: cc7d03262ebfaf2f06772c1a480c7d9d5f4a38e1 *pokeyellow.gbc; roms.sha1: d44e96eddfbdad633cbe4e6e64915e9e198974b0 *pokeyellow_debug.gbc。",
+      "该检查把构建结果与上面的校验和比较。若 README 要求读者自行提供零售 ROM，公开树中不包含该 ROM。本记录不写入个人主目录路径。",
+      "已审阅的 Makefile 含有 `@$(SHA1) -c roms.sha1`。",
+      "该提交的根目录没有 LICENSE、COPYING 或 LICENSE.md，GitHub 也没有报告已识别的许可证。原游戏权利仍归权利人。已审阅文件没有确立 REA 使用。"
+    ]
   }
 }
