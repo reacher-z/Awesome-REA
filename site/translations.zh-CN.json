@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ddw3-decomp": {
+    "name": "数码宝贝世界2003反编译",
+    "requirements": [
+      "用 zbuild 0.1.9 构建。zbuild 把 bin 和 cue 写到 build/iso/。README 写明构建需要欧洲或北美的 PS-EXE 许可文件，以及 licenses/ 里的 ISO 索尼许可文件。",
+      "审阅的 README 没有给反编译写许可证。"
+    ]
   }
 }

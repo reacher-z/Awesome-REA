@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ddw3-decomp",
+    "name": "Digimon World 2003 decompilation",
+    "url": "https://github.com/markisha64/ddw3",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "ddw3 is a decompilation of the PlayStation game Digimon World 2003. The executable is disassembled, images and localization files have been extracted, and digimon stats, profiles, evolutions, and maps are recorded. The final disc image is not yet checked as binary-perfect.",
+    "description_zh": "ddw3 是 PlayStation 游戏 Digimon World 2003 的反编译。可执行文件已经反汇编，图像和本地化文件已经提取，数码宝贝的当前能力、档案、进化和地图已经记录。最终光盘镜像还没有做到逐字节核对。",
+    "requirements": [
+      "Build with zbuild 0.1.9. zbuild writes bin and cue files under build/iso/. The README says the build needs the Europe or North America PS-EXE license files and the ISO Sony license file in licenses/.",
+      "The reviewed README does not name a license for the decompilation."
+    ],
+    "evidence_url": "https://github.com/markisha64/ddw3/blob/b125b3d7471c23d305b27f0b1d7a2353643a3ee3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
