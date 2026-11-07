@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -113,8 +113,9 @@
 - [**wii-ipl: a decompilation of the Wii Menu (System Menu 4.3)**](https://github.com/koopthekoopa/wii-ipl) - A work-in-progress decompilation of the Wii Menu, the console’s System Menu (IPL), targeting version 4.3 in its USA, European, Japanese and Korean builds. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/wii-menu-ipl-decomp-case/)</sub>
 
 <a id="game-decompilation"></a>
-### Non-matching decompilations (19)
+### Non-matching decompilations (20)
 
+- [**AeroGauge decompilation**](https://github.com/LLONSIT/AeroGauge) - This is an early decompilation of AeroGauge for the Nintendo 64, USA release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/aerogauge-n64-decomp/)</sub>
 - [**c1: a C port of PlayStation Crash Bandicoot**](https://github.com/wurlyfox/c1) - Ports the original PlayStation Crash Bandicoot game code to C function by function; its coding standard labels functions with the addresses of their original implementations. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/crash-bandicoot-c1-port-case/)</sub>
 - [**Firefighter: a decompiled DOS game ported to Rust**](https://gitlab.com/esr/firefighter) - Eric S. Raymond’s terminal port of Firefighter, Eben Sprinsock’s 1985 DOS shareware game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/firefighter-rust-port-case/)</sub>
 - [**Halo: Combat Evolved: an incremental re-implementation patched into the original Xbox executable**](https://github.com/halo-re/halo) - A research project re-implementing the original Xbox Halo: Combat Evolved in C, one function at a time. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/halo-ce-xbox-reimplementation-case/)</sub>
