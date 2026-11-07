@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,9 +40,10 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
+- [**A Link to the Past JP disassembly**](https://github.com/spannerisms/jpdasm) - This is a disassembly of the Japanese 1.0 version of The Legend of Zelda: A Link to the Past. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/alttp-jp-disasm/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
 - [**Animal Crossing: matching GameCube decompilation**](https://github.com/ACreTeam/ac-decomp) - Reconstructs Animal Crossing’s GameCube code as C and C++ source that rebuilds the USA release’s main executable and its foresta.rel module. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/animal-crossing-gamecube-decomp-case/)</sub>
 - [**Animal Crossing: Wild World: matching Korean DS decompilation with differential runtime checks**](https://github.com/banatic/acww-decomp) - Reconstructs the ARM9 game code of Animal Crossing: Wild World’s Korean DS release as one C or C++ source per function, checked against the user’s ROM with the original Metrowerks compiler and linker. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/animal-crossing-wild-world-decomp-case/)</sub>

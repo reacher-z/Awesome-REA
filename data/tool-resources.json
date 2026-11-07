@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "alttp-jp-disasm",
+    "name": "A Link to the Past JP disassembly",
+    "url": "https://github.com/spannerisms/jpdasm",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of the Japanese 1.0 version of The Legend of Zelda: A Link to the Past. It assembles with the included alttp.futaba file and the Futaba assembler. An accurate build has CRC32 3322EFFC and SHA-1 E7E852F0159CE612E3911164878A9B08B3CB9060.",
+    "description_zh": "这是《塞尔达传说：众神的三角力量》日文 1.0 版的反汇编。它用附带的 alttp.futaba 和 Futaba 汇编器汇编。准确的构建 CRC32 为 3322EFFC，SHA-1 为 E7E852F0159CE612E3911164878A9B08B3CB9060。",
+    "requirements": [
+      "Extract binaries from a Japanese 1.0 ROM named alttp.sfc with the Makefile or binextract.py.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/spannerisms/jpdasm/blob/4535f694752d1469ede65083e986ce2101945264/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

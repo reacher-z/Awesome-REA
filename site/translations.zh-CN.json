@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "alttp-jp-disasm": {
+    "name": "众神的三角力量日文版反汇编",
+    "requirements": [
+      "用 Makefile 或 binextract.py 从名为 alttp.sfc 的日文 1.0 ROM 提取二进制。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
