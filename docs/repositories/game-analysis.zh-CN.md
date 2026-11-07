@@ -49,7 +49,7 @@
 - [marsinator358/luajit-decompiler-v2](https://github.com/marsinator358/luajit-decompiler-v2) — LuaJIT 字节码反编译器。 **[487 星标]** · 精选：[LuaJIT Decompiler v2 字节码反编译器](https://awesomerea.org/zh/resources/luajit-decompiler-v2/)
 - [sneakyevil/IL2CPP\_Resolver](https://github.com/sneakyevil/IL2CPP_Resolver) — 面向 Unity IL2CPP 的运行时 API 解析器。 **[475 星标]**
 - [TeamGDB/Yakumo](https://github.com/TeamGDB/Yakumo) — 将一款 PSP 游戏静态重编译为原生可执行文件，使用 Vulkan 和 SDL3。需自备游戏副本。 **[447 星标]**
-- [AliveTeam/alive\_reversing](https://github.com/AliveTeam/alive_reversing) — 《Oddworld: Abe’s Exoddus》与《Oddworld: Abe’s Oddysee》的重新实现。 **[441 星标]** · 精选：[R.E.L.I.V.E.：Oddworld: Abe’s Oddysee 与 Abe’s Exoddus 引擎的重新实现](https://awesomerea.org/zh/resources/relive-oddworld-abe-engine-case/)
+- [AliveTeam/alive\_reversing](https://github.com/AliveTeam/alive_reversing) — 《Oddworld: Abe's Exoddus》与《Oddworld: Abe's Oddysee》的重新实现。 **[441 星标]** · 精选：[R.E.L.I.V.E.：Oddworld: Abe's Oddysee 与 Abe's Exoddus 引擎的重新实现](https://awesomerea.org/zh/resources/relive-oddworld-abe-engine-case/)
 - [LazyDuchess/OpenTS2](https://github.com/LazyDuchess/OpenTS2) — 使用 Unity 开源重新实现《模拟人生 2》。 **[432 星标]**
 - [alexbatalov/fallout2-re](https://github.com/alexbatalov/fallout2-re) — 通过逆向工程重建的《辐射 2》。 **[411 星标]**
 - [CTR-tools/ctr-native](https://github.com/CTR-tools/ctr-native) — 《古惑狼赛车》反编译项目。 **[405 星标]**
@@ -359,7 +359,7 @@
 - [VirInvictus/opends](https://github.com/VirInvictus/opends) — 针对 SSI 的 Dark Sun CRPG——Shattered Lands（1993）和 Wake of the Ravager（1994）——的开放社区工具包和错误修复补丁。以工具为先，补丁其次。 **[3 星标]**
 - [vs-sr-dev/pc-highlander](https://github.com/vs-sr-dev/pc-highlander) — Highlander: The Last of the MacLeods（Atari Jaguar CD，1995）的原生 PC 重新实现。包含引擎文档、光盘格式逆向工程和提取工具。需自备资源（BYOA）。 **[3 星标]**
 - [ZexisRe/iOS-IL2CPP-Dumper](https://github.com/ZexisRe/iOS-IL2CPP-Dumper) — iOS IL2CPP 转储工具，在设备端为 Unity 游戏生成 dump.cs，适用于越狱或 TrollStore 环境 **[3 星标]**
-- [8bit-mate/Diarrhea](https://github.com/8bit-mate/Diarrhea) — 用于重新打包、修改和提取《Daria’s Inferno》音频资源的应用。 **[2 星标]**
+- [8bit-mate/Diarrhea](https://github.com/8bit-mate/Diarrhea) — 用于重新打包、修改和提取《Daria's Inferno》音频资源的应用。 **[2 星标]**
 - [adm244/Dishonored-FullRegen](https://github.com/adm244/Dishonored-FullRegen) — Dishonored 原生模组，修改生命值与法力值恢复上限，使其能够完全恢复。 **[2 星标]**
 - [arisugpt/ArisuFxBot](https://github.com/arisugpt/ArisuFxBot) — 基于 ArisuFxPy 的 Telegram 机器人，提供 Unity AssetBundle 修改、检查及十六进制填充功能，支持 Termux、VPS 和 Windows。 **[2 星标]**
 - [beater-studios/mu-file-viewer](https://github.com/beater-studios/mu-file-viewer) — 基于 Web 的 MU Online 游戏资源查看器，可在浏览器中预览纹理、3D 模型、音频和字体 **[2 星标]**
@@ -489,7 +489,7 @@
 - [TheBestPlan/killingfloor-map-viewer](https://github.com/TheBestPlan/killingfloor-map-viewer) — Killing Floor 游戏地图（.rom，Unreal Engine 2.5）的桌面与浏览器查看器。可带纹理绘制世界 BSP、静态网格、地形和天空盒，并自由飞行浏览，无需 KFEd。 **[0 星标]**
 - [vekolyram/ue5-minhook-example](https://github.com/vekolyram/ue5-minhook-example) — UE5 MinHook 内联钩子示例：针对 UObject::StaticConstructObject\_Internal 的 AOB 特征扫描和 detour，并记录了在真实 UE 5.6 目标上发现的失败情形。 **[0 星标]**
 - [vs-sr-dev/pc-celltosingularity-doc](https://github.com/vs-sr-dev/pc-celltosingularity-doc) — 《Cell to Singularity》（Computer Lunch、Unity 6、Steam）：一款移动放置游戏的 PC 版本。一个对象中含 10,249 个词条和 19 种语言，另有三个 MS-NRBF 存档、1,157 个 Crunch 头部、45 个图集，以及出现在 Windows 上的手机 SDK 软件栈。依据字节进行测量，描述结构而非操作配方。 **[0 星标]**
-- [vs-sr-dev/pc-harrypotter1-doc](https://github.com/vs-sr-dev/pc-harrypotter1-doc) — 从零售光盘测量 Harry Potter and the Philosopher’s Stone（PC，Electronic Arts，2001）：ISO 9660 布局、隐藏在卷描述符中的表、遮蔽一个含 9,280 个扇区的不可读区域边界的读取窗口、249 个 Unreal Engine 1 包，以及一行中的 31 个关卡。 **[0 星标]**
+- [vs-sr-dev/pc-harrypotter1-doc](https://github.com/vs-sr-dev/pc-harrypotter1-doc) — 从零售光盘测量 Harry Potter and the Philosopher's Stone（PC，Electronic Arts，2001）：ISO 9660 布局、隐藏在卷描述符中的表、遮蔽一个含 9,280 个扇区的不可读区域边界的读取窗口、249 个 Unreal Engine 1 包，以及一行中的 31 个关卡。 **[0 星标]**
 - [vs-sr-dev/pc-iamsetsuna-doc](https://github.com/vs-sr-dev/pc-iamsetsuna-doc) — 研究对象为 I am Setsuna 的 Steam 安装（Unity 5.2，未曾运行）。包含 970 个文件、1,471,268,535 字节，其中 97.85% 属于第三方容器。六种读取器依据厂商自身的整数字段完整解析：35 个 v15 SerializedFile 无剩余字节、145 个 UnityWeb 包、279 个 <span>@</span>UTF 表、381,077 个音频帧的 CRC-16，以及恰好读完的 392 个 Lua 代码块。 **[0 星标]**
 - [vs-sr-dev/pc-teslaeffect-doc](https://github.com/vs-sr-dev/pc-teslaeffect-doc) — 对 Tesla Effect（PC/Windows，2014）的字节级研究：共 17,519,466,565 字节，其中 82.93% 为实拍视频，工作室自己的代码占 0.0090%。统计了 1,035 个 Bink 2 文件头、20,014.286 秒播放时长、分布于五个 Excel 工作簿中的脚本，以及双向均不通过的名称闭包测试。 **[0 星标]**
 - [vs-sr-dev/pc-thewardrobe-doc](https://github.com/vs-sr-dev/pc-thewardrobe-doc) — The Wardrobe（CINIC Games，Unity 6，Steam）：以意大利语为键的六种语言、1,207 个明文 XML，17,368 个格式 22 精灵，482 个 FMOD Studio 音频库，以及 31 段无声影片；均从字节中测量，未发布任何内容。 **[0 星标]**

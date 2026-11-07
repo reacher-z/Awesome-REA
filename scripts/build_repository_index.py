@@ -85,10 +85,10 @@ def rendered_files():
             title = '已发布仓库索引' if zh else 'Published Repository Index'
             intro = (f'此发布选集包含 **{len(scanned):,}** 条已采集仓库记录，提供 **{len(records):,}** 个浏览条目。**{out_of_scope}** 个范围排除条目{unavailable_clause(unavailable, zh, "**")}保留在发布 JSON 中。'
                      if zh else f'This published selection contains **{len(scanned):,}** captured repository records and **{len(records):,}** browsable entries. **{out_of_scope}** scope-excluded entries{unavailable_clause(unavailable, zh, "**")} remain in the published JSON.')
-        summary = ([f'已读取 **{len(scanned):,}** 个仓库的 README，当前提供 **{len(records):,}** 个浏览条目，明确超出范围的 {out_of_scope} 个条目{unavailable_clause(unavailable, zh)}保留在扫描数据中。这些条目由自动发现，尚未审核。', '',
-                    '[按分类在 GitHub 浏览](docs/repositories/README.zh-CN.md) · [网站搜索](https://awesomerea.org/zh/?view=source-index) · [完整双语索引 JSON](https://awesomerea.org/source-index.json) · [精选目录 JSON](https://awesomerea.org/catalog.json)']
-                   if zh else [f'**{len(scanned):,}** repository READMEs scanned; **{len(records):,}** entries available to browse. The {out_of_scope} clearly out-of-scope entries{unavailable_clause(unavailable, zh)} remain in the scan data. These entries are discovered automatically and unreviewed.', '',
-                               '[Browse by category on GitHub](docs/repositories/README.md) · [Search website](https://awesomerea.org/?view=source-index&lang=en) · [Full bilingual index JSON](https://awesomerea.org/source-index.json) · [Curated catalog JSON](https://awesomerea.org/catalog.json)'])
+        summary = ([f'已读取 **{len(scanned):,}** 个仓库的 README，当前提供 **{len(records):,}** 个浏览条目，明确超出范围的 {out_of_scope} 个条目{unavailable_clause(unavailable, zh)}保留在扫描数据中。自动发现的项目与上方精选资源分别维护，未逐项运行验证。', '',
+                    '[按分类在 GitHub 浏览](docs/repositories/README.zh-CN.md) · [网站搜索](https://awesomerea.org/zh/?view=source-index) · [完整双语索引 JSON](https://awesomerea.org/source-index.json)']
+                   if zh else [f'**{len(scanned):,}** repository READMEs scanned; **{len(records):,}** entries available to browse. The {out_of_scope} clearly out-of-scope entries{unavailable_clause(unavailable, zh)} remain in the scan data. This automatically discovered index is separate from the curated resources above and has not been individually execution-tested.', '',
+                               '[Browse by category on GitHub](docs/repositories/README.md) · [Search website](https://awesomerea.org/?view=source-index&lang=en) · [Full bilingual index JSON](https://awesomerea.org/source-index.json)'])
         if published:
             summary[0] = intro + (' 这些条目由自动发现，尚未审核。' if zh else ' These entries are discovered automatically and unreviewed.')
             summary = [line.replace('/source-index.json', '/source-published.json') for line in summary]

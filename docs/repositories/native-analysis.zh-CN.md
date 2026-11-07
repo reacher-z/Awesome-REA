@@ -730,7 +730,7 @@
 - [TrustedMechanism/NastyBitez](https://github.com/TrustedMechanism/NastyBitez) — Nasty Bytes Detector：识别旨在混淆反汇编、干扰控制流分析的特殊字节模式的 Ghidra 插件，帮助逆向工程人员发现混淆代码。 **[3 星标]**
 - [xliee/ida\_mask\_plugin](https://github.com/xliee/ida_mask_plugin) — 用于二进制模式分析与生成的 IDA Pro 插件，支持将 ARM64 汇编转换为模式。 **[3 星标]**
 - [blessed0x/xkvm-ios-injector](https://github.com/blessed0x/xkvm-ios-injector) — 纯 Go 编写的 IPA 插件注入器，可将 dylib 注入 IPA 文件并侧载至 iOS 17+。按字节忠实重写 pyzule/cyan。 **[2 星标]**
-- [ChekeEdd/ghidra-superfx](https://github.com/ChekeEdd/ghidra-superfx) — 适用于 Nintendo SuperFX／GSU-1／GSU-2 协处理器的 Ghidra 处理器模块（SLEIGH 规范）；这些增强芯片用于 Star Fox、Yoshi’s Island、Stunt Race FX 及 SNES 版 Doom。 **[2 星标]**
+- [ChekeEdd/ghidra-superfx](https://github.com/ChekeEdd/ghidra-superfx) — 适用于 Nintendo SuperFX／GSU-1／GSU-2 协处理器的 Ghidra 处理器模块（SLEIGH 规范）；这些增强芯片用于 Star Fox、Yoshi's Island、Stunt Race FX 及 SNES 版 Doom。 **[2 星标]**
 - [ChowChowSonic/apkhound](https://github.com/ChowChowSonic/apkhound) — 一体化二进制程序，帮助定位、提取和识别不同 APK 版本间的变化。 **[2 星标]**
 - [Fabulu/Mixup](https://github.com/Fabulu/Mixup) — 手工将主机游戏反汇编代码转换为可读、可修改的 JavaScript，而非模拟运行。每个 ROM 例程都变为可自行掌控的 JS 函数，并与模拟器中运行的真实 ROM 逐帧验证。Batman（Game Boy）已完成，Gradius（NES）可从头玩到尾，DoDonPachi DaiOuJou（街机）仍在开发中，不含 ROM。 **[2 星标]**
 - [fredangstadt-lang/LineWarsII-DOS](https://github.com/fredangstadt-lang/LineWarsII-DOS) — 从发行版二进制文件将 1994 年 DOS 游戏 LineWars II 重建为 C 代码，并通过 41 项测试关卡对照原作，其中 27 项在模拟器中执行 1994 年的机器码。使用 Open Watcom 构建，在 DOSBox-X 中运行。经原作者许可作为免费软件提供。 **[2 星标]**
@@ -818,7 +818,7 @@
 - [Kaklaber/Momus](https://github.com/Kaklaber/Momus) — 单文件离线分析器，可完全在浏览器中分析源代码、二进制文件、软件包、文档、SBOM 和安全元数据。 **[0 星标]**
 - [Karthik-Swaminathan98/mcu-function-size-analyser](https://github.com/Karthik-Swaminathan98/mcu-function-size-analyser) — 用于嵌入式基准分析的 Python 工具，包含 objdump 调用图解析器、.map 代码体积提取器，以及 ARM 与 RISC-V 的对比可视化。 **[0 星标]**
 - [luotianyiismywife/blutter-windows](https://github.com/luotianyiismywife/blutter-windows) — blutter 的 Windows 构建和预编译二进制文件；blutter 是 Flutter/Dart AOT 快照逆向工程工具（上游：worawit/blutter）。 **[0 星标]**
-- [mahmoudimus/maml](https://github.com/mahmoudimus/maml) — 面向字节的匹配语言，用于从不断变化的二进制文件中发现含义。MAML 是 Mahmoud’s Address Matching Language 的缩写。 **[0 星标]**
+- [mahmoudimus/maml](https://github.com/mahmoudimus/maml) — 面向字节的匹配语言，用于从不断变化的二进制文件中发现含义。MAML 是 Mahmoud's Address Matching Language 的缩写。 **[0 星标]**
 - [meerkatone/binary\_diffing\_and\_marimo\_rust](https://github.com/meerkatone/binary_diffing_and_marimo_rust) — 用于比较和搜索二进制差异比较结果的 Marimo 笔记本。 **[0 星标]**
 - [motan1337/ghidra-py](https://github.com/motan1337/ghidra-py) — 上游仓库未提供项目简介。 **[0 星标]**
 - [n-3-0-l-d-3-v/ultron](https://github.com/n-3-0-l-d-3-v/ultron) — 以证据为先的二进制与固件分析。每项发现都是关联支撑产物的结构化主张，设计上无法表示自由文本形式的安全主张。基于 Ghidra 无界面模式和 binwalk，运行时零依赖。 **[0 星标]**
@@ -826,7 +826,7 @@
 - [nazeeh111/Reclay](https://github.com/nazeeh111/Reclay) — 完全在浏览器中通过示例学习二进制文件结构，并构建具有保护性检查的独立编辑器。 **[0 星标]**
 - [NerdTIV/WiDig](https://github.com/NerdTIV/WiDig) — 从 TI WiLink 固件中挖掘符号。包含 Ghidra 加载器与符号化功能：从 TI 未剥离的调试跟踪数据库出发，再根据二进制本身推断其余内容。提供 435 个已命名函数、358 个推断的 MMIO 寄存器和 82 个源模块。 **[0 星标]**
 - [olivercase/ghidra\_headless](https://github.com/olivercase/ghidra_headless) — 自动化 Ghidra 无界面脚本，用于批量反编译、元数据提取及以程序方式检索内存常量。 **[0 星标]**
-- [playday3008/GhidraDosInterruptResolver](https://github.com/playday3008/GhidraDosInterruptResolver) — 使用 Ralf Brown’s Interrupt List 解析 x86 DOS／BIOS 中断调用的 Ghidra 扩展。 **[0 星标]**
+- [playday3008/GhidraDosInterruptResolver](https://github.com/playday3008/GhidraDosInterruptResolver) — 使用 Ralf Brown's Interrupt List 解析 x86 DOS／BIOS 中断调用的 Ghidra 扩展。 **[0 星标]**
 - [RuriMeiko/zalo-linux-native](https://github.com/RuriMeiko/zalo-linux-native) — 非官方 Zalo Linux 移植版（x86\_64），已移植所有原生模块：file-utils、file-utilities、zwalker、zfile、v8-profiles、mp4thumb、zimage、zjxl，以及 zcall 通信桥接和实时通话逆向分析。 **[0 星标]**
 - [RyyzDev/kudu](https://github.com/RyyzDev/kudu) — KUDU（KUliah DUlu）是一个个人兴趣项目，将 UIN Jakarta 的学务、电子信函等多个校园服务整合到同一款应用中。 **[0 星标]**
 - [sagarchive/rdis](https://github.com/sagarchive/rdis) — 可脚本化的多格式反汇编与反编译器，是基于浏览器的 Hopper 替代工具。 **[0 星标]**
