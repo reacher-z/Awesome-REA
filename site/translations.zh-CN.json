@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ng2recomp-case": {
+    "name": "忍者龙剑传 II 重编译",
+    "requirements": [
+      "玩家提供自己的光盘镜像、Games on Demand 包或已提取的游戏，以及 Title Update 3。任务模式和服装包是可选的。",
+      "Linux 以 AppImage 发布，Windows 为 x64 构建。README 写明在 Steam Deck 上能稳定在每秒 60 帧，渲染倍率最高 8 倍。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

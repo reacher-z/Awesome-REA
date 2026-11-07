@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ng2recomp-case",
+    "name": "Ninja Gaiden II Recompiled",
+    "url": "https://github.com/gamboozino/ng2recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Ninja Gaiden II Recompiled is a native Linux and Windows build of Ninja Gaiden II for Xbox 360 (2008). ReXGlue statically recompiles the PowerPC code, and a Vulkan renderer takes the game's Direct3D calls. The target is the World release, title ID 544307D5, with Title Update 3.",
+    "description_zh": "Ninja Gaiden II Recompiled 是 Xbox 360 版《忍者龙剑传 II》（2008）的 Linux 和 Windows 原生构建。ReXGlue 静态重编译 PowerPC 代码，Vulkan 渲染器接管游戏的 Direct3D 调用。目标是世界版，标题 ID 544307D5，并带 Title Update 3。",
+    "requirements": [
+      "The player supplies their own disc image, Games on Demand package, or extracted game, plus Title Update 3. Mission Mode and costume packs are optional.",
+      "Linux ships as an AppImage and Windows as an x64 build. The README says it holds 60 frames per second on a Steam Deck, with render scale up to 8x.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/gamboozino/ng2recomp/blob/f034e29d17369aa624666b0a6cc4bd55549005f6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
