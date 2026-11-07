@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "evangelion64-decomp",
+    "name": "Neon Genesis Evangelion 64 decompilation",
+    "url": "https://github.com/farisawan-2000/evangelion",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Neon Genesis Evangelion 64. The ROM is named evangelion.z64. The documented steps are make setup, then make.",
+    "description_zh": "这是《新世纪福音战士》N64 版的进行中反编译。ROM 命名为 evangelion.z64。文档中的步骤是先运行 make setup，再运行 make。",
+    "requirements": [
+      "64-bit Linux or WSL, with build-essential and binutils-mips-linux-gnu.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/farisawan-2000/evangelion/blob/66fb87879fa314ca9b5caba24d9aadea27e984ba/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
