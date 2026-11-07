@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "banjo-tooie-recomp",
+    "name": "Banjo-Tooie recompilation",
+    "url": "https://github.com/Vidanox/BanjoTooieRecompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Banjo-Tooie for the Nintendo 64, USA, with N64Recomp and renders it through RT64. The supported ROM is a big-endian .z64 named internally BANJO TOOIE, 33,554,432 bytes, SHA-1 AF1A89E12B638B8D82CC4C085C8E01D4CBA03FB3. The README says boot, the intro, gameplay, scene changes, audio, and save/load work on Windows x64. A GPU needs Direct3D 12 shader model 6 or Vulkan 1.2, and the CPU needs SSE4.1.",
+    "description_zh": "该项目用 N64Recomp 静态重编译 Nintendo 64 美版 Banjo-Tooie，并通过 RT64 渲染。支持的 ROM 是大端 .z64，内部名 BANJO TOOIE，33,554,432 字节，SHA-1 AF1A89E12B638B8D82CC4C085C8E01D4CBA03FB3。README 写明在 Windows x64 上，启动、片头、游戏、场景切换、音频和存读都可以工作。显卡需要 Direct3D 12 着色器模型 6 或 Vulkan 1.2，CPU 需要 SSE4.1。",
+    "requirements": [
+      "Select the USA ROM in the launcher. Linux uses BanjoTooieRecompiled-linux-x64.tar.gz and ./run.sh from that directory.",
+      "License: GPL-3.0 for this port's code. N64Recomp and RT64 are MIT. N64ModernRuntime is GPL-3.0. Lato and Noto Emoji are SIL Open Font License."
+    ],
+    "evidence_url": "https://github.com/Vidanox/BanjoTooieRecompiled/blob/9e5852541ba1436417e2c4468960e8c6de6deda5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

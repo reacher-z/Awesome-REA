@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "banjo-tooie-recomp": {
+    "name": "Banjo-Tooie 重编译",
+    "requirements": [
+      "在启动器里选择美版 ROM。Linux 使用 BanjoTooieRecompiled-linux-x64.tar.gz，并在该目录运行 ./run.sh。",
+      "许可证：这个移植的代码为 GPL-3.0。N64Recomp 和 RT64 为 MIT。N64ModernRuntime 为 GPL-3.0。Lato 和 Noto Emoji 为 SIL Open Font License。"
+    ]
   }
 }
