@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gbarecomp",
+    "name": "GBARecomp",
+    "url": "https://github.com/mstan/gbarecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "GBARecomp is a beta static-recompilation framework for the Game Boy Advance. It translates ARM7TDMI ARM and Thumb code into C++, compiles that into a native application, and links it to a shared runtime for the PPU, audio, DMA, timers, interrupts, cartridge saves, GPIO, and input.",
+    "description_zh": "GBARecomp 是面向 Game Boy Advance 的 beta 静态重编译框架。它把 ARM7TDMI 的 ARM 和 Thumb 代码翻译成 C++，编译成原生应用，并链接到共享运行时，该运行时涵盖 PPU、音频、DMA、定时器、中断、卡带存档、GPIO 和输入。",
+    "requirements": [
+      "The README says the framework is in beta. A safe interpreter remains for code that cannot yet be resolved statically.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/mstan/gbarecomp/blob/351572f954d1dbcce129b31da9782355e274d4e5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
