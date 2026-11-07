@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ds-disassembly-tools",
+    "name": "ds_disassembly_tools",
+    "url": "https://github.com/pret/ds_disassembly_tools",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "ds_disassembly_tools is a set of scripts for the initial setup of a Nintendo DS disassembly. asmdiff.sh compares a rebuilt ARM9, ARM7, or overlay with a reference ROM. dump_fs.py extracts the Nitro file system.",
+    "description_zh": "ds_disassembly_tools 是一组用于任天堂 DS 反汇编初始设置的脚本。asmdiff.sh 把重建的 ARM9、ARM7 或覆盖段与参考 ROM 比较。dump_fs.py 提取 Nitro 文件系统。",
+    "requirements": [
+      "Python scripts need Python 3.9 or newer. asmdiff.sh uses devkitARM, or arm-none-eabi-objdump on PATH.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/pret/ds_disassembly_tools/blob/8cd986cc742ec84dfcc0de53706419ec923d39ca/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

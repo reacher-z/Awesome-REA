@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ds-disassembly-tools": {
+    "name": "ds_disassembly_tools",
+    "requirements": [
+      "Python 脚本需要 Python 3.9 或更新版本。asmdiff.sh 使用 devkitARM，或 PATH 中的 arm-none-eabi-objdump。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
