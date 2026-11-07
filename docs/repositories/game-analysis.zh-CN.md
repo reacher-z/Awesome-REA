@@ -418,7 +418,7 @@
 - [TheBestPlan/killingfloor-bot-client](https://github.com/TheBestPlan/killingfloor-bot-client) — 面向 Killing Floor（Unreal Engine 2.5）的 L2Walker 风格无界面客户端。通过 UDP 使用原生 UE2 网络协议，无需启动游戏或注入，以真实客户端身份连接、通过 Steam 认证并进入游戏。 **[1 星标]**
 - [TheGh0stShip/BattleTanx](https://github.com/TheGh0stShip/BattleTanx) — 美版 BattleTanx .z64 的反编译项目，是 BattleTanx Studio 及将 BattleTanx 资源移植到 BattleTanx: Global Assault 移植版所需的反编译基础。 **[1 星标]**
 - [Yorushika-Yorushika/yysls-offline](https://github.com/Yorushika-Yorushika/yysls-offline) — 《燕云十六声》离线化研究：协议文档 + 分析工具（无游戏资源） **[1 星标]**
-- [AbienteSadness/ue5-binka-to-wav](https://github.com/AbienteSadness/ue5-binka-to-wav) — 将 Unreal Engine 5 的 BINKA 音频资源（FModel 导出的 .uasset + .ubulk 文件）转换为可播放的 WAV 文件。提供窗口应用和命令行工具。 **[0 星标]**
+- [AbienteSadness/ue5-binka-to-wav](https://github.com/AbienteSadness/ue5-binka-to-wav) — 将 Unreal Engine 5 的 BINKA 音频资源（FModel 导出的 .uasset + .ubulk 文件）转换为可播放的 WAV 文件。提供窗口应用和命令行工具。 **[0 星标]** · 精选：[UE5 BINKA 转 WAV](https://awesomerea.org/zh/resources/ue5-binka-to-wav/)
 - [akopetsch/swe1r-assets-unity](https://github.com/akopetsch/swe1r-assets-unity) — 一个 Unity 包，可导入、修改并重新导出 Star Wars Episode I: Racer 的游戏资源。 **[0 星标]** · 精选：[swe1r-assets-unity：Racer 模型块编辑器样例](https://awesomerea.org/zh/resources/swe1r-assets-unity/)
 - [ancaria-dev/agent](https://github.com/ancaria-dev/agent) — 🪝 Sacred Gold 的游戏内 Frida 代理：包含钩子、游戏地址以及启动器下载的打包文件。 **[0 星标]**
 - [andreastroelsen/maaneby](https://github.com/andreastroelsen/maaneby) — 将 2010 年丹麦校园游戏 Matematik i Måneby+ 从其 Macromedia Director 文件重建为浏览器可运行版本。可通过下方链接游玩。 **[0 星标]**
