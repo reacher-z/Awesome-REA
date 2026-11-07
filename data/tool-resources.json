@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ff7-worldmap",
+    "name": "FF7 world map engine",
+    "url": "https://github.com/ergonomy-joe/ff7-worldmap",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This Visual Studio 2008 project builds a standalone Final Fantasy VII world map engine. The engine source was recreated by decompiling the original executable. FF7WorldMapMain.cpp loads one save??.ff7 file, and fileindex and saveindex are set before building.",
+    "description_zh": "这个 Visual Studio 2008 项目构建独立的《最终幻想 VII》世界地图引擎。引擎源码由反编译原始可执行文件重建。FF7WorldMapMain.cpp 加载一个 save??.ff7 文件，构建前要设置 fileindex 和 saveindex。",
+    "requirements": [
+      "Visual Studio 2008. Set fileindex and saveindex before building so the program can load a save??.ff7 file.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ergonomy-joe/ff7-worldmap/blob/bc7576e68b118e776ccefecfbc982a702a7f9e0f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
