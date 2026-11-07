@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "hlsl-decompiler",
+    "name": "HLSL Decompiler",
+    "url": "https://github.com/YYadorigi/HLSL-Decompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "HLSL Decompiler translates DXBC for shader model 5.x or lower, DXIL for shader model 6.x, and SPIR-V into HLSL. The README says the shaders it targets are those commonly used in Unreal Engine 5 projects.",
+    "description_zh": "HLSL Decompiler 把着色器模型 5.x 或更低的 DXBC、着色器模型 6.x 的 DXIL，以及 SPIR-V 翻译成 HLSL。README 写明它面向的是虚幻引擎 5 项目中常用的着色器。",
+    "requirements": [
+      "Build with CMake 3.10 or newer and a C++17 compiler.",
+      "The README describes a RenderDoc plugin entry for DXBC to HLSL.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/YYadorigi/HLSL-Decompiler/blob/5a803369b5848c3650eb524e3713f2f809cdabc1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "hlsl-decompiler": {
+    "name": "HLSL Decompiler",
+    "requirements": [
+      "使用 CMake 3.10 或更高版本以及支持 C++17 的编译器构建。",
+      "README 描述了一个用于 DXBC 到 HLSL 的 RenderDoc 插件条目。",
+      "README 没有写许可证。"
+    ]
   }
 }
