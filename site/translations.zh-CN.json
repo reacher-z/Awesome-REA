@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "parasite-eve-recomp": {
+    "name": "寄生前夜重编译",
+    "requirements": [
+      "初始化子模块，然后用 game.toml 和 disc/ 下的 CUE 运行 psxrecomp_cli.py generate，再运行 cmake --build build-release --target psx-runtime。安装之后的运行使用美版 SCPH BIOS。",
+      "许可证：本项目源码为 GPL-3.0-only。PSXRecomp 仍是 PolyForm Noncommercial 1.0.0。Recomp-UI 仍是 MIT。"
+    ]
   }
 }
