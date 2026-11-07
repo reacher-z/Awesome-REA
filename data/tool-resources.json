@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "asmdude",
+    "name": "AsmDude2",
+    "url": "https://github.com/HJLebbink/asm-dude",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Visual Studio 2022 extension and Language Server for assembly source. The README says it covers x86 and x64, SSE, AVX, AVX2, Xeon Phi (Knights Corner), and AVX-512, plus most common MASM directives and a selection of NASM directives, with hover descriptions for mnemonics.",
+    "description_zh": "面向汇编源码的 Visual Studio 2022 扩展和语言服务器。README 写明它覆盖 x86 和 x64，以及 SSE、AVX、AVX2、Xeon Phi（Knights Corner）和 AVX-512，还包括多数常用 MASM 指令和一部分 NASM 指令，并在悬停助记符时给出说明。",
+    "evidence_url": "https://github.com/HJLebbink/asm-dude/blob/93b566916fa1d3cf306a945459f2ec0f6e7aa541/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README points to the Visual Studio Marketplace and a VSIX installer marked v2.0.0.4. It says many features of the older AsmDude extension are not yet ported.",
+      "The reviewed page states no license."
+    ]
   }
 ]
