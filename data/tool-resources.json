@@ -36528,5 +36528,24 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pbdviewer",
+    "name": "PbdViewer",
+    "url": "https://github.com/Hucxy/PbdViewer",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "PbdViewer is a PowerBuilder decompiler. The README points to a Kanxue thread, bbs.kanxue.com/thread-247372.htm.",
+    "description_zh": "PbdViewer 是一个 PowerBuilder 反编译器。README 指向看雪论坛帖子 bbs.kanxue.com/thread-247372.htm。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/Hucxy/PbdViewer/blob/b46fd3e42b8f26ed18a547b9e4bec47f96530a86/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
