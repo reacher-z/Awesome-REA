@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sonic3k-recomp",
+    "name": "Sonic 3 & Knuckles recompilation",
+    "url": "https://github.com/mstan/Sonic3AndKnucklesRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Sonic 3 & Knuckles, and also offers separate Sonic 3 and Sonic & Knuckles builds, with segagenesisrecomp. Release v0.7.3 provides Windows x64 ZIPs and Linux x86_64 AppImages. Sonic3KRecomp is the combined game. The launcher asks for the matching ROM. High refresh rate options in v0.7.0 are 120, 144, or the display rate, while gameplay and music keep their normal speed.",
+    "description_zh": "该项目用 segagenesisrecomp 重编译《索尼克 3 与纳克尔斯》，并另外提供单独的索尼克 3 和索尼克与纳克尔斯构建。v0.7.3 发布提供 Windows x64 ZIP 和 Linux x86_64 AppImage。Sonic3KRecomp 是合并版。启动器要求匹配的 ROM。v0.7.0 的高刷新率选项是 120、144 或显示器刷新率，游戏和音乐保持原来的速度。",
+    "requirements": [
+      "A Windows ZIP or a Linux AppImage from Releases, and the matching Sonic ROM.",
+      "License: PolyForm Noncommercial for this project's code. Third-party notices accompany the downloads."
+    ],
+    "evidence_url": "https://github.com/mstan/Sonic3AndKnucklesRecomp/blob/917e2f4e084cf187d81dc29fd29483b7aaae479c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

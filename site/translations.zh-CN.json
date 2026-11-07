@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sonic3k-recomp": {
+    "name": "索尼克 3 与纳克尔斯重编译",
+    "requirements": [
+      "从 Releases 取得 Windows ZIP 或 Linux AppImage，以及匹配的索尼克 ROM。",
+      "许可证：本项目代码为 PolyForm Noncommercial。第三方声明随下载附带。"
+    ]
   }
 }
