@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "conker-live-recompiled": {
+    "name": "Live & Recompiled",
+    "requirements": [
+      "下载 Windows 或 Linux 发布包，运行 setup-windows.exe 或 ./setup-linux，并指向光盘、解压目录或 DefaultPackage。它在 Windows 上写出 Game.exe，在 Linux 上写出 Game。",
+      "许可证：仅 GPL-3.0。README 写明来自 Xbox XBE Recomp 的部分保持该项目的 MIT 许可证。"
+    ]
   }
 }
