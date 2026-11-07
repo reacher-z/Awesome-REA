@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gagarin",
+    "name": "gagarin",
+    "url": "https://github.com/r-melvin/gagarin",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "gagarin reconstructs the Command & Conquer: Red Alert 2 — Yuri's Revenge engine from retail gamemd.exe v1.001 with the MSVC 6.0 compiler. At source snapshot ce91a761 (2026-10-27), 10,307 of 19,778 functions are matched (52.1 percent) and 784 more are partial. Matched bodies cover 716,425 of 3,878,653 listed function bytes. The target image's SHA-256 is recorded in reccmp-project.yml.",
+    "description_zh": "gagarin 用 MSVC 6.0 编译器，从零售版 gamemd.exe v1.001 重建《红色警戒 2：尤里的复仇》引擎。在源码快照 ce91a761（2026-10-27），19,778 个函数中的 10,307 个已匹配（52.1%），另有 784 个部分匹配。已匹配函数体覆盖列出的 3,878,653 字节中的 716,425 字节。目标镜像的 SHA-256 记在 reccmp-project.yml。",
+    "requirements": [
+      "Wine (WoW64), Python 3, Git, 7-Zip, GNU objdump, Ghidra, and the MSVC 6.0 toolchain from scripts/vc6/fetch_toolchain.sh. Verification reads a local gamemd.exe v1.001.",
+      "The reviewed README points at LICENSE and LEGAL.md and does not name the license in the README."
+    ],
+    "evidence_url": "https://github.com/r-melvin/gagarin/blob/932450d9c92d3c1aaca7737ac1bcdb1f158449e7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

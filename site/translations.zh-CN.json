@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gagarin": {
+    "name": "gagarin",
+    "requirements": [
+      "需要 Wine（WoW64）、Python 3、Git、7-Zip、GNU objdump、Ghidra，以及 scripts/vc6/fetch_toolchain.sh 取得的 MSVC 6.0 工具链。校验读取本地的 gamemd.exe v1.001。",
+      "审阅的 README 指向 LICENSE 和 LEGAL.md，没有在 README 里写出许可证名称。"
+    ]
   }
 }
