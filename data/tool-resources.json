@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "picolove",
+    "name": "PICOLOVE",
+    "url": "https://github.com/picolove/picolove",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "binary"
+    ],
+    "class": "software",
+    "description_en": "PICOLOVE implements the PICO-8 API in LÖVE so PICO-8 carts can run as LÖVE programs. The default runtime is LÖVE 11.5, and 0.10.2 and 0.9.2 are also listed. make builds it, make dev reloads in a loop, and make test runs the checks. Cartridge versions above 8 are not implemented, and the runtime uses floating-point numbers rather than PICO-8 fixed point.",
+    "description_zh": "PICOLOVE 用 LÖVE 实现 PICO-8 的 API，让 PICO-8 卡带作为 LÖVE 程序运行。默认运行时是 LÖVE 11.5，也列出了 0.10.2 和 0.9.2。make 进行构建，make dev 循环重载，make test 运行检查。高于 8 的卡带版本尚未实现，运行时使用浮点数，而不是 PICO-8 的定点数。",
+    "requirements": [
+      "LÖVE 11.5, 0.10.2, or 0.9.2. Run make.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/picolove/picolove/blob/97075db4a8e50107ed3e2a864667b6ebe25cdbbf/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

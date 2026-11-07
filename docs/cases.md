@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
 - [Game](#game) (239)
 - [App](#app) (62)
-- [Native Binary](#native-binary) (7)
+- [Native Binary](#native-binary) (8)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
 - [Protocol](#protocol) (91)
 
@@ -382,6 +382,7 @@
 - [**Windows loader: static malware analysis with REA and Codex**](https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/) - Fedele Mantuano reports using Codex with REA in an offline Docker lab to statically analyze a public Windows malware sample without executing it. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/windows-loader-static-analysis-case/)</sub>
 - [**Show Your Work: a measured dissection of REA's evidence architecture**](https://no-flag.com/2026/10/18/REA-paper/) - An unofficial field study that reads REA's source and then drives the running server through 1,012 recorded calls across 27 artifact classes, measuring its content-addressed Evidence records, revision-chained unknown ledger, typed refusals, cold starts and response limits. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/noflag-rea-evidence-architecture-study/)</sub>
 - [**DownUnderCTF: masked-squares flag checker**](https://rea.tools/showcase/ctf/) - An official educational challenge investigation connects binary checks to equations and records an original-program validation. <sub>Case study · Official REA · [Full entry](https://awesomerea.org/resources/rea-ctf-case/)</sub>
+- [**PICOLOVE**](https://github.com/picolove/picolove) - PICOLOVE implements the PICO-8 API in LÖVE so PICO-8 carts can run as LÖVE programs. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/picolove/)</sub>
 
 <a id="firmware"></a>
 ## Firmware and Hardware
