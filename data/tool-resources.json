@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ac6-recomp",
+    "name": "AC6Recomp: static recompilation of Ace Combat 6",
+    "url": "https://github.com/sal063/AC6_recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "static-recompilation",
+    "description_en": "AC6Recomp is a native PC port of Ace Combat 6: Fires of Liberation built with the ReXGlue SDK. The README says the Xbox 360 PowerPC game code is statically recompiled to x86-64, while visible rendering stays in the vendored RexGlue/Xenia graphics backend. It describes the project as a work in progress that can boot and run in game.",
+    "description_zh": "AC6Recomp 是基于 ReXGlue SDK 的《皇牌空战 6：解放之火》原生 PC 移植。README 写明 Xbox 360 的 PowerPC 游戏代码被静态重编译为 x86-64，而可见的渲染仍由随仓库提供的 RexGlue/Xenia 图形后端负责。它把项目描述为仍在开发中、可以启动并进入游戏的版本。",
+    "evidence_url": "https://github.com/sal063/AC6_recomp/blob/09144bb092ad871584808aeead69c395edbd5200/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The README says the repository contains source code only and the user supplies a legally obtained copy of the game.",
+      "The README says the project is unfinished: it can boot and run in game, and bugs, crashes, and missing functionality are expected.",
+      "The README points the license to LICENSE. GitHub reports BSD-3-Clause."
+    ],
+    "verification": "source-reviewed"
   }
 ]
