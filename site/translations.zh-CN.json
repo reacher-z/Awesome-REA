@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gow2-native": {
+    "name": "战神 II 原生移植",
+    "requirements": [
+      "需要 Windows 和 Visual Studio 2022。scripts/extract-iso.ps1 用 NOTES.md 里的 SHA-1 核对 ELF。然后运行 scripts/recompile.ps1 和 scripts/run.ps1 -Config RelWithDebInfo。",
+      "许可证：GPLv3，README 也把 PS2Recomp 写成同一许可证。"
+    ]
   }
 }
