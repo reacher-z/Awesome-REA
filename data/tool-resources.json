@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "chameleon-twist-recomp-case",
+    "name": "Chameleon Twist: Recompiled",
+    "url": "https://github.com/Rainchus/ChameleonTwist1-JP-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Chameleon Twist: Recompiled uses N64: Recompiled to statically recompile the Japanese Nintendo 64 release of Chameleon Twist, with RT64 for rendering.",
+    "description_zh": "Chameleon Twist: Recompiled 用 N64: Recompiled 静态重编译任天堂 64 日版《变色龙扭曲》，渲染使用 RT64。",
+    "requirements": [
+      "The player supplies the Japanese ROM. Formats other than .z64 are converted when the ROM is that version. Other languages and modded ROMs are not accepted.",
+      "Prebuilt binaries are on the repository Releases page.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Rainchus/ChameleonTwist1-JP-Recomp/blob/f7d171462776e2dbf893206a96c2f55692bce559/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
