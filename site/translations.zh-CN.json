@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sma2-recomp": {
+    "name": "超级马里奥前进 2 重编译",
+    "requirements": [
+      "从 Releases 取得 Windows 压缩包。源码构建需要 CMake、Ninja、MSYS2 MinGW64 和 SDL2，然后运行 cmake --build gbarecomp/build --target gba_recompile。",
+      "许可证：本项目代码为 PolyForm Noncommercial 1.0.0。第三方组件保留各自的许可证。"
+    ]
   }
 }
