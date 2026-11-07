@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "space-cadet-ps2",
+    "name": "Space Cadet pinball for PlayStation 2",
+    "url": "https://github.com/headshot2017/3dpinball-ps2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This ports the Space Cadet pinball decompilation to the PlayStation 2. It is built with the PS2SDK. Game data from 3D Pinball Space Cadet or the Full Tilt! Pinball Cadet table goes in mass:/APPS/3DPINBALL on USB storage. The README says the Full Tilt table works on PCSX2 and not on real hardware.",
+    "description_zh": "该项目把三维弹球太空军校生的反编译移植到 PlayStation 2。它用 PS2SDK 构建。来自三维弹球太空军校生或 Full Tilt! Pinball 的 Cadet 球桌数据放到 USB 存储的 mass:/APPS/3DPINBALL。README 写明 Full Tilt 球桌能在 PCSX2 上运行，在真机上不行。",
+    "requirements": [
+      "The PS2SDK. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/headshot2017/3dpinball-ps2/blob/4ebf89b2fd32fd396071fb23d72bb2be72d8202d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
