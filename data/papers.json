@@ -12817,5 +12817,51 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-immersive-binary-re",
+    "title": "Immersive sensemaking for binary reverse engineering: a survey and synthesis",
+    "authors": [
+      "Dennis G. Brown",
+      "Emily Mulder",
+      "Samuel Mulder"
+    ],
+    "year": 2026,
+    "publication_date": "2026-02-18",
+    "date_precision": "day",
+    "date_basis": "Crossref issued date",
+    "venue": "Frontiers in Virtual Reality",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.3389/frvir.2026.1613269",
+    "url": "https://doi.org/10.3389/frvir.2026.1613269",
+    "pdf_url": "https://public-pages-files-2025.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2026.1613269/pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This article surveys and synthesizes research on immersive sensemaking for binary reverse engineering, using work from cognitive systems engineering and from reverse-engineering practice. It describes binary reverse engineering as cognitively demanding and not fully automated.",
+    "description_zh": "本文综述并综合沉浸式感知如何用于二进制逆向工程，材料来自认知系统工程和逆向工程实践。它把二进制逆向描述为认知负担重、尚未完全自动化的工作。",
+    "scope_limitations_en": "The summary follows the fetched Frontiers PDF abstract and the Crossref date 2026-02-18. No user study was repeated.",
+    "scope_limitations_zh": "摘要依据已获取的 Frontiers PDF 摘要和 Crossref 日期 2026-02-18。没有重复用户实验。",
+    "why_fits_en": "The subject is how analysts make sense of binaries during reverse engineering.",
+    "why_fits_zh": "主题是分析人员在逆向工程中如何理解二进制。",
+    "evidence_urls": [
+      "https://public-pages-files-2025.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2026.1613269/pdf",
+      "https://api.crossref.org/works/10.3389/frvir.2026.1613269",
+      "https://doi.org/10.3389/frvir.2026.1613269"
+    ],
+    "metadata_notes": "No code or dataset DOI is used as the paper identifier.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "面向二进制逆向工程的沉浸式感知：综述与综合",
+    "date_basis_zh": "日期取自 Crossref 登记的出版日期",
+    "metadata_notes_zh": "没有把代码或数据集 DOI 当作论文标识。"
   }
 ]

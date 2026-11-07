@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -71,6 +71,7 @@
 - [**加壳识别工具的语义验证：特征分析、修正与下游影响**](https://arxiv.org/abs/2605.25923) - 以脱壳结果作为参考证据评估壳标签，规范化不同工具的输出，并评估互补签名／启发式规则池及从脱壳器实现提取的静态判定条件；同时追踪识别错误对后续脱壳和恶意软件分类的影响。 <sub>原题：*Semantic Validation of Packer Identification Tools: Characterization, Repair, and Downstream Impact* · arXiv 2026 · 预印本 · Fangtian Zhong 等 · [PDF](https://arxiv.org/pdf/2605.25923v3) · [完整条目](https://awesomerea.org/zh/papers/paper-packer-identification-semantic-validation/)</sub>
 - [**Decaf：通过自动反馈与搜索改进神经反编译**](https://arxiv.org/abs/2605.11501) - Decaf 采样多个反编译候选，重新编译后利用字节距离或学习式重排序器排序。 <sub>原题：*Decaf: Improving Neural Decompilation with Automatic Feedback and Search* · arXiv 2026 · 预印本 · Alexander Shypula 等 · [PDF](https://arxiv.org/pdf/2605.11501v1) · [代码](https://github.com/AlexShypula/decaf) · [完整条目](https://awesomerea.org/zh/papers/paper-decaf/)</sub>
 - [**NotDec：通过跨过程类型恢复进行 WebAssembly 反编译**](https://dl.acm.org/doi/10.1145/3744916.3787762) - NotDec 将 WebAssembly 提升为 SSA 中间表示，通过基于 Retypd 的类型约束及指针／数值区分恢复结构，并生成 C。 <sub>原题：*NotDec: WebAssembly Decompilation With Inter-Procedural Type Recovery* · ICSE 2026 · 会议论文 · Jikai Wang 等 · [PDF](https://arxiv.org/pdf/2608.03286v1) · [代码](https://github.com/NotDec/NotDec) · [完整条目](https://awesomerea.org/zh/papers/paper-notdec/)</sub>
+- [**面向二进制逆向工程的沉浸式感知：综述与综合**](https://doi.org/10.3389/frvir.2026.1613269) - 本文综述并综合沉浸式感知如何用于二进制逆向工程，材料来自认知系统工程和逆向工程实践。 <sub>原题：*Immersive sensemaking for binary reverse engineering: a survey and synthesis* · Frontiers in Virtual Reality 2026 · 期刊论文 · Dennis G. Brown 等 · [PDF](https://public-pages-files-2025.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2026.1613269/pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-immersive-binary-re/)</sub>
 - [**HELIOS：面向结构感知大语言模型反编译的分层图抽象**](https://arxiv.org/abs/2601.14598) - HELIOS 将二进制程序的控制流和函数调用整理成分层摘要，与反编译器输出一同提供给大语言模型，并可加入编译器反馈。 <sub>原题：*HELIOS: Hierarchical Graph Abstraction for Structure-Aware LLM Decompilation* · arXiv 2026 · 预印本 · Yonatan Gizachew Achamyeleh 等 · [PDF](https://arxiv.org/pdf/2601.14598) · [完整条目](https://awesomerea.org/zh/papers/paper-helios/)</sub>
 - [**Deception Delta：基于大语言模型的智能合约字节码取证对抗评测**](https://arxiv.org/abs/2609.14098) - 评估语言模型如何解释人工构造的欺骗性合约与对照合约的原始 EVM 字节码，区分识别隐藏转账机制与正确判断其风险，并结合模型评审和不依赖评审模型的检查。 <sub>原题：*The Deception Delta: Adversarial Evaluation of LLM-Based Smart Contract Bytecode Forensics* · ACM CCS 2026 · 会议已接收 · Timo Schefold · [PDF](https://arxiv.org/pdf/2609.14098v2) · [完整条目](https://awesomerea.org/zh/papers/paper-deception-delta/)</sub>
 - [**SK2Decompile：从骨架到皮肤的大语言模型两阶段二进制反编译**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/9132583dd869acb0cafeb0ed25eb031a-Abstract-Conference.html) - 将 LLM 反编译分为两个阶段：结构恢复模型把反编译器伪代码转换为保留控制流和数据结构、但不含标识符的中间表示，并以编译器反馈作为强化学习奖励；标识符命名模型再以语义相似度为奖励恢复名称。 <sub>原题：*SK2Decompile: LLM-based Two-Phase Binary Decompilation from Skeleton to Skin* · ICLR 2026 · 会议论文 · Hanzhuo Tan 等 · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/9132583dd869acb0cafeb0ed25eb031a-Paper-Conference.pdf) · [代码](https://github.com/albertan017/LLM4Decompile/tree/85b364bf093eb2ee4f3687cfe38a203fca89f23e/sk2decompile) · [完整条目](https://awesomerea.org/zh/papers/paper-sk2decompile/)</sub>
