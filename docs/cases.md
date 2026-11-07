@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -188,7 +188,7 @@
 - [**Zelda 64: Recompiled — a native Majora’s Mask port without a full source decompilation**](https://github.com/Zelda64Recomp/Zelda64Recomp) - Uses N64Recomp to translate Majora’s Mask into a native application and RT64 for rendering. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda64recomp-case/)</sub>
 
 <a id="game-port"></a>
-### Ports of reconstructed source (33)
+### Ports of reconstructed source (34)
 
 - [**2 Ship 2 Harkinian: a native Majora’s Mask port built on the decompilation**](https://github.com/2ship2harkinian/2ship2harkinian) - Builds native Windows, Linux and macOS versions of The Legend of Zelda: Majora’s Mask from an adapted copy of the zeldaret/mm decompilation, with libultraship reimplementing N64 SDK functions. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/2ship2harkinian-mm-port-case/)</sub>
 - [**3SX: a native Street Fighter III: 3rd Strike port continuing the PS2 decompilation**](https://github.com/crowded-street/3sx) - Builds Street Fighter III: 3rd Strike as native C for Windows, macOS and Linux, continuing the 3s-decomp PS2 decompilation, with SDL3 for video, input and audio and GekkoNet for rollback netplay. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/3sx-third-strike-native-port-case/)</sub>
@@ -212,6 +212,7 @@
 - [**Metaforce: a Metroid Prime engine reimplementation rebuilt on the decompilation**](https://github.com/AxioDL/metaforce) - Started in 2015 as a reverse-engineered reimplementation of the Metroid Prime engine, Metaforce has been rewritten on top of the PrimeDecomp matching decompilation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/metaforce-metroid-prime-case/)</sub>
 - [**Metroid Prime Port: an AI-assisted native port of the PrimeDecomp decompilation**](https://github.com/Odrannnn/MetroidPrimePort) - Compiles the PrimeDecomp decompilation of Metroid Prime’s game and engine code as native C++20 for Linux, Windows and Android, with an experimental macOS build. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/metroid-prime-port-case/)</sub>
 - [**MikuPan: a native Fatal Frame PC port built on the Himuro decompilation**](https://github.com/Mikompilation/MikuPan) - Ports the PS2 game Fatal Frame to native PC builds without emulation; its repository description names the Himuro decompilation as its basis. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mikupan-fatal-frame-port-case/)</sub>
+- [**Moon Pearl**](https://github.com/DoutorRaposo/moonpearl) - Moon Pearl is an Android port of the zelda3 C reimplementation of The Legend of Zelda: A Link to the Past. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/moonpearl/)</sub>
 - [**PaperBoat: a native Paper Mario port built on the decompilation**](https://github.com/HarbourMasters/PaperBoat) - Compiles Paper Mario decompilation sources, credited to the pmret and Paper Mario DX projects, into a native US-version application on libultraship. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/paperboat-paper-mario-port-case/)</sub>
 - [**Pokémon Platinum PC Port: a native port built on the pret decompilation**](https://github.com/cybervisi0n/pokeplatinum) - Builds native 64-bit Windows and Linux executables of Pokémon Platinum from a fork of pret’s decompilation, replacing NitroSDK with the author’s libntr libraries; the same tree keeps the DS ROM build and an experimental Switch target. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokemon-platinum-pc-port-case/)</sub>
 - [**Salamander UEFI: a disassembly-based UEFI port of the NES game**](https://github.com/MikeWuPing/UEFI_Salamander) - Salamander UEFI ports the NES game Salamander to a native UEFI Shell application by translating its 6502 disassembly into a platform-independent C core. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/salamander-uefi-case/)</sub>
