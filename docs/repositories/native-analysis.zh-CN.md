@@ -243,7 +243,7 @@
 - [Cisco-Talos/Ghidraaas](https://github.com/Cisco-Talos/Ghidraaas) — 上游仓库未提供项目简介。 **[229 星标]**
 - [romainthomas/the-poor-mans-obfuscator](https://github.com/romainthomas/the-poor-mans-obfuscator) — “The Poor Man's Obfuscator”演讲相关的二进制文件与脚本 **[229 星标]**
 - [Sidenai/hyperion-disassembler](https://github.com/Sidenai/hyperion-disassembler) — 原生多架构反汇编器与反编译器，支持 PE/ELF/Mach-O、x86/x64/ARM64、Lua 脚本及 RTTI 恢复 **[228 星标]**
-- [Buku313/Skate3-Mobile](https://github.com/Buku313/Skate3-Mobile) — 在 Android 上原生游玩 Skate 3。下载一个 APK，选择自有 ISO 即可开始滑板运动。采用 ARM64 重编译和 Vulkan 渲染。 **[227 星标]**
+- [Buku313/Skate3-Mobile](https://github.com/Buku313/Skate3-Mobile) — 在 Android 上原生游玩 Skate 3。下载一个 APK，选择自有 ISO 即可开始滑板运动。采用 ARM64 重编译和 Vulkan 渲染。 **[227 星标]** · 精选：[Skate 3 Mobile：Skate3Recomp 的 Android ARM64 分支](https://awesomerea.org/zh/resources/skate3-mobile-android-recomp-case/)
 - [quarkslab/quokka](https://github.com/quarkslab/quokka) — Quokka：快速准确的二进制导出工具 **[227 星标]** · 精选：[Quokka 二进制导出工具](https://awesomerea.org/zh/resources/quokka-binary-exporter/)
 - [cesena/ghidra2dwarf](https://github.com/cesena/ghidra2dwarf) — 🐉 将 Ghidra 反编译代码导出至 ELF 二进制文件中的 DWARF 节 **[226 星标]**
 - [mahmoudimus/ida-sigmaker](https://github.com/mahmoudimus/ida-sigmaker) — sigmaker 是零依赖、跨平台的 IDA Pro 9.0+ 特征码生成插件，支持可选的 SIMD（如 AVX2、NEON、SSE2）加速，可在 macOS、Linux 和 Windows 上运行。可配置操作数通配模式与半字节，只需右键点击即可生成特征码。 **[226 星标]**
