@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "openshc": {
+    "name": "OpenSHC：《要塞：十字军东征》的重实现",
+    "requirements": [
+      "需要《要塞：十字军东征》1.41（拉丁语版本）。README 把 Steam 版本称为最容易取得的副本，并要求英语或德语这类拉丁语安装。",
+      "开发使用 CMake 3.24 或更高版本、Python 3，以及用 python -m pip install clang-format 安装的 clang-format 22 或更高版本。",
+      "GitHub 报告许可证为 GPL-3.0。"
+    ]
   }
 }
