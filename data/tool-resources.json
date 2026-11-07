@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mapfile-parser",
+    "name": "mapfile_parser",
+    "url": "https://github.com/Decompollaborate/mapfile_parser",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "mapfile_parser is a Python and Rust library that parses linker map files for decompilation projects. The README names GNU ld, clang lld, and Metrowerks ld. The Python package is mapfile_parser and the Rust crate is mapfile_parser.",
+    "description_zh": "mapfile_parser 是供反编译项目解析链接器 map 文件的 Python 和 Rust 库。README 点名 GNU ld、clang lld 和 Metrowerks ld。Python 包名是 mapfile_parser，Rust crate 名也是 mapfile_parser。",
+    "requirements": [
+      "Python: python3 -m pip install -U mapfile_parser. Rust: cargo add mapfile_parser.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Decompollaborate/mapfile_parser/blob/b12e496381db82450977b66e8c1abd62804f6784/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
