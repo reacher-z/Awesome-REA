@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "steins-gate-case",
+    "name": "steins-gate",
+    "url": "https://github.com/FGRE/steins-gate",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "steins-gate is a GPL-licensed reimplementation of the Steins;Gate visual novel. Building it requires libnpa and libnpengine.",
+    "description_zh": "steins-gate 是《Steins;Gate》视觉小说的 GPL 重实现。构建需要 libnpa 和 libnpengine。",
+    "requirements": [
+      "Build dependencies are libnpa and libnpengine, linked from the README.",
+      "License: GPL, as stated in the README."
+    ],
+    "evidence_url": "https://github.com/FGRE/steins-gate/blob/4173ed2850921f29ea0f51482ace65a475f5af7e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
