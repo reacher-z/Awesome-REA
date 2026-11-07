@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "lunarcore",
+    "name": "LunarCore",
+    "url": "https://github.com/Melledy/LunarCore",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "software",
+    "description_en": "LunarCore is a Java server for the 4.2.0 client. ./gradlew jar builds LunarCore.jar, and java -jar LunarCore.jar starts it. The resources directory needs the Config, TextMap, and ExcelBin folders from the StarRailData set. Java 21 is required. The server can use its built-in database, and the README also recommends MongoDB 4.0 or newer. Login, teams, inventory, monster battles, shops, gacha, mail, Forgotten Hall, Pure Fiction, and a partial Simulated Universe are listed as present.",
+    "description_zh": "LunarCore 是给 4.2.0 客户端使用的 Java 服务器。./gradlew jar 构建 LunarCore.jar，java -jar LunarCore.jar 启动它。resources 目录需要 StarRailData 数据集里的 Config、TextMap 和 ExcelBin 文件夹。需要 Java 21。服务器可以使用内置数据库，README 也建议使用 MongoDB 4.0 或更新版本。登录、队伍、背包、怪物战斗、商店、扭蛋、邮件、忘却之庭、虚构叙事，以及不完整的模拟宇宙都列在已实现功能里。",
+    "requirements": [
+      "Java 21. Place the Config, TextMap, and ExcelBin folders in resources, then run ./gradlew jar.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Melledy/LunarCore/blob/04b5de871c62895091c4d65243b2e03997e66f23/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
