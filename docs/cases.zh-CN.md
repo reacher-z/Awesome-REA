@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -225,7 +225,7 @@
 - [**Vandal Hearts：基于一致性反编译的原生 PC 移植**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - 以 shao113 的 PlayStation 版 Vandal Hearts 一致性反编译为基础，新增日版一致性代码树，并将两者延伸为原生 Windows 与 Linux 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### 引擎重实现 (47)
+### 引擎重实现 (48)
 
 - [**Age of Empires Free Software Remake：基于原版数据的重新实现**](https://github.com/FolkertVanVerseveld/aoe) - 以基于 SDL2 和 OpenGL 的跨平台 C++17 引擎重新实现 Microsoft 的《帝国时代》及其资料片《罗马复兴》，载入原版游戏的 DRS 归档和 language.dll 资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo：逆向实现的 Minecraft 服务端**](https://github.com/bravoserver/bravo) - 以 Python 基于 Twisted 重新实现 Minecraft Alpha 与 Beta 时期多人游戏的服务端；其文档称这是从零编写的逆向实现，致谢了网络流量转储的提供者，并说明通用的 Minecraft 资料已贡献给社区 wiki。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/bravo-minecraft-server-case/)</sub>
@@ -269,6 +269,7 @@
 - [**SiegeFX：处于 alpha 阶段的 Dungeon Siege 引擎重实现**](https://github.com/codingncaffeine/SiegeFX) - C#/.NET 10 引擎加载 Dungeon Siege 原始归档、脚本与模型，提供 alpha 构建和审计/一致性清单，并附带 SiegeSmith 模组工具；项目仍记录保真度和通关行为风险。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/siegefx-dungeon-siege-engine-case/)</sub>
 - [**Skate 3 Rust Engine：基于《Skate 3》逆向研究的 Bevy 重写**](https://github.com/SK8-ENGINE/skate-3-rust-engine) - 在新的 Rust 与 Bevy 引擎中重新实现《Skate 3》的滑行、技巧、擦边滑行和下板移动，运行时使用从使用者自有 Xbox 360 版游戏转换得到的素材，并加入难度设置和 .skate 自定义地图格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skate-3-rust-engine-case/)</sub>
 - [**Snowball War：范围明确的 REA 辅助小游戏重建**](https://github.com/tuunanet/rea-ski-or-die-reconstruction) - 作者通过 REA 的 Ghidra 工作流调查 DOS 版 Ski or Die 二进制，记录 Snowball War 的规则，再用 Rust 与 SDL2 重建这一小游戏。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/snowball-war-rea-case/)</sub>
+- [**Surreal Engine：虚幻引擎 1 的重实现**](https://github.com/dpjudas/SurrealEngine) - 虚幻引擎 1 的重实现，目前集中于让 Unreal Gold 和 Unreal Tournament（UT99）可以运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/surreal-engine/)</sub>
 - [**Thyme《将军》引擎重实现**](https://github.com/TheAssemblyArmada/Thyme) - Thyme 是《命令与征服：将军之绝命时刻》的开源重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thyme/)</sub>
 - [**touhou-engine：用 Python 重实现东方游戏玩法**](https://github.com/SaigyoujYuyuko/touhou-engine) - touhou-engine 用 Python 重实现东方弹幕游戏玩法，以 TH07《东方妖妖梦》为参考作品。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/touhou-engine-case/)</sub>
 - [**Untangle：基于 REA 与 Ghidra 证据的浏览器重建**](https://github.com/az9713/untangle-rebuild) - 作者记录了以 REA/Ghidra 调查已发布的 Untangle Windows 二进制，产出单页可玩重建与逐项判定的证据收据，并分开保留冻结发现、后取的源码答案及先验知识审计。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/untangle-rea-evidence-rebuild-case/)</sub>
