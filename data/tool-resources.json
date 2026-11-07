@@ -36528,5 +36528,31 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "papyrus-compiler",
+    "name": "Papyrus Compiler",
+    "url": "https://github.com/russo-2025/papyrus-compiler",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Papyrus Compiler is an open-source compiler for Bethesda's Papyrus scripting language, implemented in V and tested on Skyrim Special Edition and Anniversary Edition. It compiles .psc files to .pex, and it can read, disassemble, and syntax-check compiled scripts. The README builds it with V compiler 0c3183c (0.5.1).",
+    "description_zh": "Papyrus Compiler 是 Bethesda Papyrus 脚本语言的开源编译器，用 V 语言实现，并在《上古卷轴 5》特别版和周年纪念版上测试。它把 .psc 文件编译成 .pex，也能读取、反汇编和做语法检查。README 使用 V 编译器 0c3183c（0.5.1）构建。",
+    "evidence_url": "https://github.com/russo-2025/papyrus-compiler/blob/b9dc9951f4264084c8ded6721b20f0d81c021d58/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "Building needs V compiler 0c3183c (0.5.1). The README builds with v -o bin\\papyrus-compiler.exe -prod -g -gc none compiler.v.",
+      "The compile command takes input and output paths and a headers directory for scripts such as Form and Actor.",
+      "GitHub reports the license as MIT."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
