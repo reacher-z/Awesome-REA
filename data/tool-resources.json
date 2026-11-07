@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "beatfever",
+    "name": "BeatFever Mania",
+    "url": "https://github.com/Sulunia/beatfever",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "BeatFever Mania reimplements the osu! Catch the Beat mode in LÖVE 0.10.1. The README marks the project frozen. Desktop builds use OpenGL 2 or OpenGL ES 2.1. Startup looks for Songs/song.mp3. New songs are .osz files dropped on the selection screen. The same tree is described for Windows, macOS, Linux, Android, and Raspberry Pi B or newer.",
+    "description_zh": "BeatFever Mania 用 LÖVE 0.10.1 重新实现 osu! 的 Catch the Beat 模式。README 把项目标为冻结。桌面构建使用 OpenGL 2 或 OpenGL ES 2.1。启动时查找 Songs/song.mp3。新歌曲是拖到选择画面上的 .osz 文件。同一棵源码树写明可用于 Windows、macOS、Linux、Android 和 Raspberry Pi B 或更新型号。",
+    "requirements": [
+      "LÖVE 0.10.1. Create a Songs folder and put a file named song.mp3 in it before the first start.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Sulunia/beatfever/blob/880f7f4c2d439f278d8a605214b4fc8b44f4b0a0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "beatfever": {
+    "name": "BeatFever Mania",
+    "requirements": [
+      "需要 LÖVE 0.10.1。第一次启动前创建一个 Songs 文件夹，并放入名为 song.mp3 的文件。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
