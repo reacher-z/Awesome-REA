@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "libnpengine",
+    "name": "libnpengine",
+    "url": "https://github.com/FGRE/libnpengine",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "libnpengine is a free implementation of the Nitroplus visual-novel engine. The README says it can run Steins;Gate and names other games from the same authors.",
+    "description_zh": "libnpengine 是 Nitroplus 视觉小说引擎的自由实现。README 写明它可以运行《Steins;Gate》，并列出了同一作者的其他游戏。",
+    "requirements": [
+      "The reviewed README does not name build steps or a license version."
+    ],
+    "evidence_url": "https://github.com/FGRE/libnpengine/blob/da1a175e6b497c37f9714b77510cb47c0930cd42/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
