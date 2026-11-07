@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "minish-cap-recomp": {
+    "name": "塞尔达传说 缩小帽重编译",
+    "requirements": [
+      "需要名为 roms/minishcap_usa.gba、SHA-1 如上的美版 ROM。源码构建使用 PowerShell、mingw64、gba_recompile、CMake 和 Ninja。",
+      "许可证：本项目代码为 PolyForm Noncommercial 1.0.0。第三方组件保留各自的许可证。"
+    ]
   }
 }
