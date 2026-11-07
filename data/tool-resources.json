@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mksc-jpn-decomp",
+    "name": "Mario Kart Advance decompilation",
+    "url": "https://github.com/XOlifreX/mksc-decompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This decompiles the Japanese release of Mario Kart: Super Circuit, called Mario Kart Advance. The README says make builds that version so the Mobile Adapter GB time-trial and tournament code is included. The original ROM is named base.gba.",
+    "description_zh": "该项目反编译《马里奥卡丁车：超级赛道》的日版，日文名是 Mario Kart Advance。README 写明 make 构建这个版本，以便包含 Mobile Adapter GB 的计时赛和锦标赛代码。原版 ROM 命名为 base.gba。",
+    "requirements": [
+      "DevKitARM. Place agbcc in Tools/agbcc. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/XOlifreX/mksc-decompilation/blob/31b953f0b9e297c83331071ecd6d84eb3445a96b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
