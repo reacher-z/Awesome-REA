@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mh1j-decomp": {
+    "name": "怪物猎人日文版反编译",
+    "requirements": [
+      "需要 Python 3.9 或更新版本，然后运行 python3 -m pip install -r requirements.txt。把 SLPM_654.95 和 AFS_DATA 放在根目录，再运行 make setup、make split 和 make build。",
+      "汇编器、编译器和链接器是 Windows 可执行文件。Makefile 使用 WSL2 或 WIBO。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

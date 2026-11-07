@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mh1j-decomp",
+    "name": "Monster Hunter JP decompilation",
+    "url": "https://github.com/2Tie/mh1j",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles the first Japanese PlayStation 2 release of Monster Hunter. The disc files are SLPM_654.95 and AFS_DATA. A successful build compares the ELF and overlays byte for byte. The README says the main ELF still has a few mismatches and overlay matching is currently turned off.",
+    "description_zh": "该仓库反编译 PlayStation 2 上《怪物猎人》的首个日文版。光盘文件是 SLPM_654.95 和 AFS_DATA。成功构建后会把 ELF 和覆盖段逐字节比较。README 写明主 ELF 仍有少量不匹配，覆盖段的匹配目前被关掉。",
+    "requirements": [
+      "Python 3.9 or newer, then python3 -m pip install -r requirements.txt. Place SLPM_654.95 and AFS_DATA in the root and run make setup, make split, and make build.",
+      "The assembler, compiler, and linker are Windows executables. The Makefile uses WSL2 or WIBO.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/2Tie/mh1j/blob/1a385bdf3c0bee51f024f6dac9635e9f71db2f56/readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
