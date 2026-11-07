@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "def-jam-vendetta-recomp",
+    "name": "Def Jam Vendetta Recompiled",
+    "url": "https://github.com/jcsix694/def-jam-vendetta-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Def Jam Vendetta Recompiled turns the PlayStation 2 game into a native Windows program with PS2Recomp. paraLLEl-GS redraws the graphics chip on Vulkan. The target is the USA disc, SLUS-20639, as an ISO or CHD.",
+    "description_zh": "Def Jam Vendetta Recompiled 用 PS2Recomp 把这款 PlayStation 2 游戏变成 Windows 原生程序。paraLLEl-GS 在 Vulkan 上重绘图形芯片。目标是美版光盘 SLUS-20639，格式为 ISO 或 CHD。",
+    "requirements": [
+      "The player supplies the disc. The README asks for about 8 GB free. The first build runs on the PC.",
+      "License: GPL-3.0. Changes to paraLLEl-GS are LGPL-3.0-or-later."
+    ],
+    "evidence_url": "https://github.com/jcsix694/def-jam-vendetta-recomp/blob/f5a7574d2831f9033292e533f7a0243cb0ed9276/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
