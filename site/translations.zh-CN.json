@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "nocturne-recomp-case": {
+    "name": "NocturneRecomp",
+    "requirements": [
+      "玩家提供自己转储的 Xbox Live Arcade 包，即没有扩展名的 LIVE/STFS 文件。",
+      "世界版安装到 assets/xbla-world，日文《Dracula X》版安装到 assets/xbla-jp。构建会读取世界版的 default.xex。",
+      "预编译包在 Releases 页面。本地构建运行 python scripts/build.py。",
+      "src/ 中的宿主端源码、构建脚本和 CI 配置使用 MIT 许可证。"
+    ]
   }
 }
