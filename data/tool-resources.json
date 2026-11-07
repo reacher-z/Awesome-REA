@@ -36543,6 +36543,7 @@
     "description_zh": "以一个小型开源固件替换基于 ESP8266 的小米台灯原厂固件，依据台灯硬件编写；README 介绍了主板，其中 ESP8266 通过 PWM 控制两路开关稳压器，分别驱动冷光和暖光 LED，并读取旋转编码器。该固件只重新实现本地控制，即用旋钮开关灯、调光和调节色温，并有意舍弃物联网与云端功能。",
     "evidence_url": "https://github.com/fvollmer/open-desk-lamp-firmware/blob/043aeb9f95c0454b92200cded4b7e4cc3b23011e/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed master commit of 2019-03-19 is the last of ten commits and follows the only release, v0.0.1 of 2019-01-12, whose zip holds a CI build. The README covers basic functionality only; the stock firmware's behaviour, app protocol and cloud communication are not analysed or reproduced, and only the author's lamp variant is described. The README notes that esptool.py identifies the module as an ESP8285 even though the board has an external flash chip.",
