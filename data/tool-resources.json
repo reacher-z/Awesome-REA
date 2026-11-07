@@ -36543,6 +36543,7 @@
     "description_zh": "由 Dmytro Oleksiuk（Cr4sh）编写的 Python 监视工具，通过调制解调器的 DIAG 串口实时读取高通蜂窝调制解调器固件的调试消息，可用于已 root 的 Android 手机或 USB 调制解调器。它为选定的 16 位子系统 ID 开启消息上报，输出或记录附带固件源文件名和行号的文本消息；提供哈希数据库时，还能解码只含 32 位格式字符串哈希及参数的精简（terse）消息。发现模式可列出调制解调器响应的子系统 ID 范围，日志也可按子系统分别写入单独文件。",
     "evidence_url": "https://github.com/Cr4sh/qc_debug_monitor/blob/d4c2f80c8077adc1b6a9e99b0c1c4bc9ed43b40d/README.MD",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Dormant since publication: the repository's eight commits date from 2020-10-31 and 2020-11-01, with no tags or releases. qc_debug_monitor.py is a Python 2 script, importing the Queue module and using dict.has_key, that needs pySerial; the README runs it with sudo against a serial device such as /dev/ttyUSB0. Options select a baud rate, a single log file or per-subsystem files, subsystem ID ranges, raw terse output and a background daemon mode.",
