@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "takedawn",
+    "name": "Takedawn",
+    "url": "https://github.com/xenophobentx/takedawn",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Takedawn translates the original Xbox game Burnout 3: Takedown ahead of time into native x86-64 and arm64 code. One download covers the North American disc, the European disc for France, Germany, and Italy, and the Europe and Australia disc. The reviewed release is 0.3.1, with a macOS 13 arm64 dmg, a Windows x64 setup, a Linux x86-64 AppImage, and an experimental Android arm64 apk. The first start checks the disc files and copies the data. Releases include SHA256SUMS.",
+    "description_zh": "Takedawn 把原版 Xbox 游戏《火爆狂飙 3：Takedown》提前翻译成原生 x86-64 和 arm64 代码。一份下载覆盖北美光盘、面向法国、德国和意大利的欧洲光盘，以及欧洲和澳大利亚光盘。审阅的版本是 0.3.1，包含 macOS 13 arm64 dmg、Windows x64 安装程序、Linux x86-64 AppImage，以及实验性的 Android arm64 apk。第一次启动会核对光盘文件并复制数据。发行版带有 SHA256SUMS。",
+    "requirements": [
+      "One of the three retail discs. macOS 13 or newer on Apple silicon, 64-bit Windows, Linux x86-64, or the experimental Android arm64 build.",
+      "License: MIT for Takedawn's own code. The MCPX APU emulation based on xemu is LGPL-2.1-or-later. The ADPCM-XQ decoder is BSD-3-Clause."
+    ],
+    "evidence_url": "https://github.com/xenophobentx/takedawn/blob/9f7c371758bdbb9cb7d77c0a46deca3cfc24cf4f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

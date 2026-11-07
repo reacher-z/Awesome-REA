@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "takedawn": {
+    "name": "Takedawn",
+    "requirements": [
+      "需要三张零售光盘之一。系统为 Apple silicon 上的 macOS 13 或更高版本、64 位 Windows、Linux x86-64，或实验性的 Android arm64 构建。",
+      "许可证：Takedawn 自身代码为 MIT。基于 xemu 的 MCPX APU 模拟为 LGPL-2.1-or-later。ADPCM-XQ 解码器为 BSD-3-Clause。"
+    ]
   }
 }
