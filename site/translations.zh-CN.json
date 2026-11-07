@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "psp-recompilation-toolkit": {
+    "name": "PSP 静态重编译工具包",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11、支持 Vulkan 的显卡、Python 3，以及带 GCC、SDL3、Vulkan loader 和 LLD 的 MSYS2 UCRT64。输入是从 EBOOT.PBP 得到的已解密 ELF。",
+      "许可证：GPL-2.0 或更高版本，因为项目使用了 PPSSPP 的代码。"
+    ]
   }
 }

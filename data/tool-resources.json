@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "psp-recompilation-toolkit",
+    "name": "PSP Static Recompiler Toolkit",
+    "url": "https://github.com/sal063/PSP-recompilation-project",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "This toolkit translates a PSP relocatable executable into C, links it with a native runtime, and builds a Windows executable. The runtime includes a scheduler, HLE kernel, audio and video decoding, and an SDL3 plus Vulkan renderer written for this project.",
+    "description_zh": "这个工具包把 PSP 的可重定位可执行文件翻译成 C，再链接一个原生运行时，构建 Windows 可执行文件。运行时包括调度器、HLE 内核、音视频解码，以及为本项目编写的 SDL3 加 Vulkan 渲染器。",
+    "requirements": [
+      "Windows 10 or 11, x64, a Vulkan GPU, Python 3, and MSYS2 UCRT64 with GCC, SDL3, the Vulkan loader, and LLD. The input is a decrypted ELF from EBOOT.PBP.",
+      "License: GPL-2.0-or-later, because the project uses PPSSPP code."
+    ],
+    "evidence_url": "https://github.com/sal063/PSP-recompilation-project/blob/da17b0e1db209206a407d097d132201e516e3855/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
