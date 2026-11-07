@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gex64-decomp": {
+    "name": "Gex 64 反编译",
+    "requirements": [
+      "需要 Docker 镜像 matbourgon/gex64-decomp，或者 python3、pip 和 binutils-mips-linux-gnu。把美版 ROM 放成 gex64.z64。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
