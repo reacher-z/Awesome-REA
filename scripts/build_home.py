@@ -198,18 +198,22 @@ def _drawer(resources, order, language, prefix) -> str:
 FEATURED_PROJECTS = (
     {'name': 'WebsiteBench', 'repository': 'TIGER-AI-Lab/WebsiteBench', 'project': 'https://website-bench.com/',
      'leaderboard': 'https://website-bench.com/#results',
+     'shot': ('websitebench', 1040, 364, 'website-bench.com', 'The WebsiteBench leaderboard: eight models ranked by overall score.', 'WebsiteBench 排行榜：八个模型按总分排名。'),
      'en': ('Can AI agents rebuild websites through browser exploration?',
             'Given a production-level website they can explore through a browser, agents must reverse-engineer a full-stack version that matches its appearance and behavior as closely as possible.'),
      'zh': ('AI 智能体能否通过浏览器探索重建网站？',
             '给定一个可通过浏览器探索的生产级网站，智能体需要逆向出一个全栈版本，在外观和行为上尽可能与原站一致。')},
     {'name': 'ClawBench', 'repository': 'TIGER-AI-Lab/ClawBench', 'project': 'https://claw-bench.com',
      'leaderboard': 'https://huggingface.co/spaces/TIGER-Lab/ClawBench',
+     'shot': ('clawbench', 1040, 330, 'claw-bench.com', 'The ClawBench leaderboard: models ranked by reward.', 'ClawBench 排行榜：模型按奖励排名。'),
      'en': ('Can AI agents complete everyday online tasks?', 'An open-source benchmark for browser AI agents on daily tasks.'),
      'zh': ('AI 智能体能否完成日常在线任务？', '面向浏览器 AI 智能体日常任务的开源基准。')},
     {'name': 'Awesome CUA', 'repository': 'reacher-z/Awesome-CUA', 'project': 'https://awesomecua.com/',
+     'shot': ('awesome-cua', 1040, 330, 'awesomecua.com', 'The Awesome CUA homepage: computer-use agents, indexed.', 'Awesome CUA 首页：计算机使用智能体索引。'),
      'en': ('The sister catalogue for computer-use agents.', 'Computer-use research, data and tools, reviewed.'),
      'zh': ('计算机使用智能体的姊妹目录。', '经审核的计算机使用研究、数据与工具。')},
 )
+FEATURED_CAPTURED = '2026-11-06'
 FEATURED_TEXT = {
     'en': {'label': 'Featured', 'star': 'Star {name}', 'leaderboard': 'Leaderboard', 'project': 'Project page'},
     'zh': {'label': '精选', 'star': '为 {name} 加星', 'leaderboard': '排行榜', 'project': '项目主页'},
@@ -223,10 +227,13 @@ def _featured_projects(language: str) -> str:
         question, detail = project[language]
         leaderboard = f'<a class="btn" href="{project["leaderboard"]}" rel="noopener">{text["leaderboard"]}</a>' if project.get('leaderboard') else ''
         count = star_count(project['repository'], 'btn-count')
-        cards.append(f'<article class="promo-card{" promo-lead" if position == 0 else ""}">'
-                     f'<h3 class="promo-name">{project["name"]}</h3><p class="promo-question">{_e(question)}</p><p class="promo-detail">{_e(detail)}</p>'
-                     f'<p class="promo-actions"><a class="btn btn-primary" href="https://github.com/{project["repository"]}" rel="noopener">{icon("star")}{text["star"].format(name=project["name"])}{count}</a>'
-                     f'{leaderboard}<a class="btn" href="{project["project"]}" rel="noopener">{text["project"]}</a></p></article>')
+        file, width, height, host, alt_en, alt_zh = project['shot']
+        shot = (f'<figure class="promo-shot"><a href="{project["project"]}" rel="noopener"><img src="/featured/{file}.webp" width="{width}" height="{height}" '
+                f'loading="lazy" decoding="async" alt="{_e(alt_zh if language == "zh" else alt_en)}"></a><figcaption>{host}, {FEATURED_CAPTURED}</figcaption></figure>')
+        copy = (f'<div class="promo-copy"><h3 class="promo-name">{project["name"]}</h3><p class="promo-question">{_e(question)}</p><p class="promo-detail">{_e(detail)}</p>'
+                f'<p class="promo-actions"><a class="btn btn-primary" href="https://github.com/{project["repository"]}" rel="noopener">{icon("star")}{text["star"].format(name=project["name"])}{count}</a>'
+                f'{leaderboard}<a class="btn" href="{project["project"]}" rel="noopener">{text["project"]}</a></p></div>')
+        cards.append(f'<article class="promo-card promo-lead">{copy}{shot}</article>' if position == 0 else f'<article class="promo-card">{shot}{copy}</article>')
     return (f'<section class="wrap promo" aria-labelledby="promo-title"><div class="promo-head"><h2 class="promo-label" id="promo-title">{text["label"]}</h2>'
             f'</div><div class="promo-grid">{"".join(cards)}</div></section>')
 
