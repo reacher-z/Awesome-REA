@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "openspideyps1-case": {
+    "name": "OpenSpideyPS1",
+    "requirements": [
+      "1.0 版要求玩家提供美版 PlayStation 的 BIN/CUE 或 ISO。运行 SpiderMan.exe 或 SpiderMan2.exe，并把附带的 mods 文件夹放在旁边。",
+      "README 写明两款游戏都能进入游戏，这些测试不是完整通关。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
