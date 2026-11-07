@@ -79,18 +79,18 @@ const tests = {
     element(app, '#mode-sources').emit('click'); await settle();
     for (const text of ['p', 'pr', 'pro']) change(app, '#source-search', text, 'input');
     change(app, '#source-topic', 'fixtures', 'input');
-    change(app, '#layout-select', 'compact');
+    change(app, '#layout-select', 'cards');
     assert.equal(app.length(), 3, 'repository typing, topic typing and layout replace');
     await app.traverse(-1);
     assert.equal(app.api.sourceState.mode, 'curated');
     assert.equal(app.api.state.q, 'ghidra', 'the typed query belongs to the entry it was typed in');
     assert.equal(element(app, '#search-input').value, 'ghidra');
-    assert.equal(app.api.state.layout, 'cards', 'the earlier entry keeps its own layout');
+    assert.equal(app.api.state.layout, 'compact', 'the earlier entry keeps its own layout');
     await app.traverse(-1);
     assert.equal(app.api.state.q, ''); assert.equal(app.api.state.target, 'all');
     await app.traverse(2);
     assert.equal(app.api.sourceState.q, 'pro'); assert.equal(app.api.sourceState.topic, 'fixtures');
-    assert.equal(app.api.state.layout, 'compact');
+    assert.equal(app.api.state.layout, 'cards');
   },
   async resetsAreUndoable() {
     const app = application('?q=fixture&target=app&kind=tool#catalog');

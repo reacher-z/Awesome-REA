@@ -53,31 +53,29 @@ const UI = {
     "evidenceClassDetail1": "partial scope or analysis entry",
     "evidenceClassDetail2": "code & docs, no demo or download",
     "evidenceClassDetail3": "notes only",
-    "evidenceClassTitle": "Class 0 marks a full software reconstruction; C1–C3 measure public evidence strength, not completeness.",
+    "evidenceClassTitle": "Class 0 is a full software reconstruction; C1–C3 grade the public evidence behind the entry.",
     "evidenceLegendLabel": "Evidence classes:",
     "evidenceLegendNote": "Class 0 is a full software reconstruction; C1–C3 measure evidence.",
     "previewImageAlt": "Demo screenshot from the project's public documentation",
     "previewVideoAlt": "Demo video thumbnail from the project's public documentation",
     "demoPlaceholder": "Demo available · no screenshot",
     "evidenceClassUnknown": "Unknown · source unavailable",
-    "evidenceUnknownTitle": "Source unavailable or unreadable at review time; not classified.",
-    "evidenceBetaNote": "Reproduction ratings & previews · Beta. Based on public evidence.",
+    "evidenceUnknownTitle": "Source unavailable or unreadable at review time.",
     "scopeLabel": "Scope",
     "scopeFull": "full",
     "scopePartial": "partial",
     "scopeAnalysis": "analysis",
     "scopeUnknown": "unknown",
     "scopeNotes": "notes",
-    "notRun": "Not run for this catalog",
     "evidenceReviewLabel": "C0 review",
     "scanClassLabel": "Scan evidence class",
     "allScanClasses": "All scan classes",
     "scanLegendLabel": "Scan evidence classes:",
-    "scanLegendNote": "Documentation-only; build, demo and runtime were not verified. C0 is curated-only.",
+    "scanLegendNote": "Scan evidence comes from README documentation; C0 comes from curated review.",
     "scanClassDetail1": "README documents install and usage",
     "scanClassDetail2": "README missing install or usage",
     "scanClassDetail3": "no usable README documentation",
-    "scanClassTitle1": "Scan evidence C1: README documents installation and usage. Build, demo and runtime were not verified.",
+    "scanClassTitle1": "Scan evidence C1: README documents installation and usage.",
     "scanClassTitle2": "Scan evidence C2: README documentation exists, but installation or usage was not found.",
     "scanClassTitle3": "Scan evidence C3: no usable README documentation was found by the scan.",
     "subjectNav": "Explore reverse engineering by target",
@@ -296,31 +294,29 @@ const UI = {
     "evidenceClassDetail1": "部分范围或非复现条目",
     "evidenceClassDetail2": "有代码和文档，缺演示或下载",
     "evidenceClassDetail3": "仅笔记或进度记录",
-    "evidenceClassTitle": "Class 0 表示完整软件复现；C1–C3 衡量公开证据强度，不代表复现完整度。",
+    "evidenceClassTitle": "Class 0 表示完整软件复现；C1–C3 衡量条目背后的公开证据。",
     "evidenceLegendLabel": "证据档位：",
     "evidenceLegendNote": "Class 0 为完整软件复现；C1–C3 衡量证据强度。",
     "previewImageAlt": "项目公开文档中的演示截图",
     "previewVideoAlt": "项目公开文档中演示视频的封面",
     "demoPlaceholder": "有 demo · 暂无截图",
     "evidenceClassUnknown": "未知 · 来源不可读",
-    "evidenceUnknownTitle": "复核时来源不可达或不可读，未分类。",
-    "evidenceBetaNote": "软件复现项目评级与预览 · Beta。基于公开证据。",
+    "evidenceUnknownTitle": "复核时来源不可达或不可读。",
     "scopeLabel": "范围",
     "scopeFull": "完整",
     "scopePartial": "部分",
     "scopeAnalysis": "分析工具",
     "scopeUnknown": "未知",
     "scopeNotes": "笔记",
-    "notRun": "本目录未运行",
     "evidenceReviewLabel": "C0 复核",
     "scanClassLabel": "扫描证据档位",
     "allScanClasses": "全部扫描档位",
     "scanLegendLabel": "扫描证据档位：",
-    "scanLegendNote": "仅依据 README 文档；未核验构建、演示或运行。C0 只来自人工复核的精选条目。",
+    "scanLegendNote": "扫描证据来自 README 文档；C0 来自人工复核。",
     "scanClassDetail1": "README 记录安装与用法",
     "scanClassDetail2": "README 缺安装或用法",
     "scanClassDetail3": "无可用的 README 文档",
-    "scanClassTitle1": "扫描证据 C1：README 记录安装与用法；未核验构建、演示或运行。",
+    "scanClassTitle1": "扫描证据 C1：README 记录安装与用法。",
     "scanClassTitle2": "扫描证据 C2：有 README 文档，但未找到安装或用法说明。",
     "scanClassTitle3": "扫描证据 C3：扫描未找到可用的 README 文档。",
     "subjectNav": "按目标领域探索逆向工程",
@@ -500,7 +496,7 @@ document.documentElement.dataset.indexMode = ["source-index", "repositories"].in
 // The path selects the default language; valid legacy query overrides still work.
 const pathLanguage = location.pathname.startsWith("/zh/") ? "zh" : "en";
 // Startup and Back/Forward read URL-held choices the same way; catalog-dependent values are validated after load.
-function curatedURLState(query) { return { layout: query.get("layout") === "compact" ? "compact" : "cards", lang: ["en", "zh"].includes(query.get("lang")) ? query.get("lang") : pathLanguage, q: query.get("q") || "", group: query.get("group") || "all", category: query.get("category") || "all", kind: query.get("kind") || "all", target: query.get("target") || "all", class: query.get("class") || "all", order: ["name", "reviewed"].includes(query.get("order")) ? query.get("order") : "featured" }; }
+function curatedURLState(query) { return { layout: query.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(query.get("lang")) ? query.get("lang") : pathLanguage, q: query.get("q") || "", group: query.get("group") || "all", category: query.get("category") || "all", kind: query.get("kind") || "all", target: query.get("target") || "all", class: query.get("class") || "all", order: ["name", "reviewed"].includes(query.get("order")) ? query.get("order") : "featured" }; }
 const state = { ...curatedURLState(params), visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
@@ -530,7 +526,7 @@ function entryHref(kind, identifier, language = state.lang) {
 }
 function curatedURL() {
   const next = new URL(location.href);
-  for (const [key, defaultValue] of [["q", ""], ["group", "all"], ["category", "all"], ["kind", "all"], ["target", "all"], ["class", "all"], ["order", "featured"], ["lang", pathLanguage], ["layout", "cards"]]) {
+  for (const [key, defaultValue] of [["q", ""], ["group", "all"], ["category", "all"], ["kind", "all"], ["target", "all"], ["class", "all"], ["order", "featured"], ["lang", pathLanguage], ["layout", "compact"]]) {
     if (state[key] !== defaultValue) next.searchParams.set(key, state[key]);
     else next.searchParams.delete(key);
   }
@@ -690,7 +686,6 @@ function card(record, terms = []) {
   const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");if(!fillRequirements(list,record)){state.pendingRequirements.push([list,record]);details.addEventListener("toggle",()=>{if(details.open)loadDetails();});}details.append(list);
   const context=node("div","resource-detail-meta");const time=node("time","",t("reviewed")+" "+record.verified_at.slice(0,10));time.dateTime=record.verified_at;time.title=record.verified_at;context.append(node("span","",label(RELATION,record.relationship)),node("span","",t("sourceReviewed")),time);
   if(record.scope)context.append(node("span","",t("scopeLabel")+": "+t("scope"+record.scope[0].toUpperCase()+record.scope.slice(1))));
-  context.append(node("span","",t("notRun")));
   if(record.evidence_review){const review=node("span","",t("evidenceReviewLabel")+": "+[record.evidence_review.version,record.evidence_review.reviewed_at].filter(Boolean).join(" · "));review.title=record.evidence_review.primary_evidence||"";context.append(review);}
   const href=entryHref("curated",record.id);
   if(record.targets.length)meta.prepend(node("span","card-targets",targetLabels(record)));
