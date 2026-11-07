@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "zakuro",
+    "name": "Zakuro",
+    "url": "https://github.com/fearkov/zakuro",
+    "category": "reconstruction-cases",
+    "kind": "project",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "hardware",
+    "description_en": "Zakuro is a high-level Nintendo 3DS emulator written in Rust. Instead of a JIT, it runs code recompiled ahead of time by 3dsrecomp. The README says tested games run at full speed that way, and below full speed on the interpreter alone. Releases exist for Windows, Linux, and macOS.",
+    "description_zh": "Zakuro 是用 Rust 写的任天堂 3DS 高层模拟器。它不用即时编译，而是运行由 3dsrecomp 提前重编译的代码。README 写明测试过的游戏这样可以全速运行，只用解释器时则低于全速。Windows、Linux 和 macOS 都有发布包。",
+    "requirements": [
+      "A source build needs Rust 1.95 or newer. The player supplies a decrypted ROM. Linux builds also need pkg-config and the ALSA and udev development files.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/fearkov/zakuro/blob/c856685cc867bc6d4ac0f765844ca037ae735941/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
