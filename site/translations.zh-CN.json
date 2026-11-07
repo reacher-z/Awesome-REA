@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "tekken-tag-tournament-2-pc": {
+    "name": "铁拳 Tag Tournament 2 PC",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11、DirectX 11 显卡，以及大约 13 GB 空闲空间。需要美版或欧版 Xbox 360 光盘镜像和 Title Update 3。在线游玩需要 Steam。",
+      "审阅的 README 没有写这个仓库的许可证。它写明 XenonRecomp 为 MIT，FFmpeg 和 libmspack 为 LGPL。"
+    ]
   }
 }
