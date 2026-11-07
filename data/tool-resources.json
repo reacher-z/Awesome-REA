@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "emerald-recomp-case",
+    "name": "EmeraldRecomp",
+    "url": "https://github.com/mstan/EmeraldRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "EmeraldRecomp is a static recompilation of Pokémon Emerald for the Game Boy Advance, built on gbarecomp. Version 0.0.1 boots through the BIOS intro to the title screen and into gameplay. Paths the static recompiler has not covered run in an interpreter the first time, then are JIT-compiled and remembered.",
+    "description_zh": "EmeraldRecomp 是 Game Boy Advance 版《宝可梦 绿宝石》的静态重编译，基于 gbarecomp。0.0.1 可以从 BIOS 片头启动到标题画面并进入游戏。静态重编译器还没覆盖的路径第一次用解释器运行，然后被即时编译并记住。",
+    "requirements": [
+      "The USA ROM SHA-1 is f3ae088181bf583e55daf962a92bb46f4f1d07b7. The runtime refuses an unrecognized ROM. A Windows package is EmeraldRecomp-windows-x64.",
+      "License: PolyForm Noncommercial 1.0.0."
+    ],
+    "evidence_url": "https://github.com/mstan/EmeraldRecomp/blob/4c0562d911b05d84789b53eeab7208676fedb839/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

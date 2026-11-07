@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "emerald-recomp-case": {
+    "name": "绿宝石重编译",
+    "requirements": [
+      "美版 ROM 的 SHA-1 是 f3ae088181bf583e55daf962a92bb46f4f1d07b7。运行时会拒绝无法识别的 ROM。Windows 包是 EmeraldRecomp-windows-x64。",
+      "许可证：PolyForm Noncommercial 1.0.0。"
+    ]
   }
 }
