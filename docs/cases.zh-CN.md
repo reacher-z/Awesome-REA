@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -40,7 +40,7 @@
 [↑ 返回目录](#目录)
 
 <a id="game-matching-decompilation"></a>
-### 匹配反编译与反汇编 (69)
+### 匹配反编译与反汇编 (70)
 
 - [**3S Decomp：逐字比对的《街头霸王 III：3rd Strike》PS2 反编译重建**](https://github.com/crowded-street/3s-decomp) - 将 Street Fighter Anniversary Collection 中《街头霸王 III：3rd Strike》的 PlayStation 2 可执行文件反编译为 C 源码，用当年的 Metrowerks 与 EE GCC 编译器重新构建，再将重建出的可执行文件与使用者自备的原文件逐字比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)</sub>
@@ -106,6 +106,7 @@
 - [**《缩小帽》：面向五个 ROM 的 GBA 反编译重建**](https://github.com/zeldaret/tmc) - 依据游戏内信息和静态或动态分析，为《塞尔达传说：缩小帽》重建 C 源码库，可构建美版、欧版、日版及两个演示版共五个 Game Boy Advance ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zelda-tmc-decomp-case/)</sub>
 - [**The Sims: Bustin' Out：AI 驱动的部分 GBA 一致性反编译重建**](https://github.com/DaBrown95/tsbodp) - 逐字节重建 The Sims: Bustin' Out 的 Game Boy Advance 美欧版，并逐步用 agbcc 编译、结果一致的 C 代码替换 ROM 区域。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sims-bustin-out-gba-decomp-case/)</sub>
 - [**《风之杖》：以哈希校验重新链接的 GameCube 版反编译**](https://github.com/zeldaret/tww) - 为《塞尔达传说 风之杖》GameCube 版的可执行文件和 REL 模块重建源码，涵盖美版／韩版、PAL 版、日版及日本体验版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wind-waker-decomp-case/)</sub>
+- [**Thunderball：Peggle Deluxe 反编译**](https://github.com/teampopwork/Thunderball) - Thunderball 旨在反编译 Steam 版 Peggle Deluxe 的英文 1.01 可执行文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thunderball/)</sub>
 - [**Touhou 6：重建东方红魔乡 1.02h 版源码**](https://github.com/GensokyoClub/th06) - 为 Touhou 6：东方红魔乡 1.02h 版的 Windows 可执行文件重建 C++ 源码，目标是用原版 Visual Studio .NET 2002 与 DirectX 8 工具链精确重新构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/th06-decomp-case/)</sub>
 - [**Touhou 7：重建东方妖妖梦 1.00b 版源码**](https://github.com/some100/th07) - 为 Touhou 7：东方妖妖梦 1.00b 版的 Windows 可执行文件及其 custom.exe 设置工具重建 C++ 源码，使用原版 Visual Studio .NET 2002 与 DirectX 8 工具链构建，并通过 reccmp 与使用者自备的原程序逐函数比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/th07-decomp-case/)</sub>
 - [**《黄昏公主》：GameCube 版代码完全一致的反编译**](https://github.com/zeldaret/tp) - 重建《塞尔达传说 黄昏公主》的源码，使其能重新编译出与原版一致的二进制文件；GameCube、Wii 与 Nvidia Shield 各版本通过条件编译共用同一套代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twilight-princess-decomp-case/)</sub>
