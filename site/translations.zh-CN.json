@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mercenaries-recompiled-case": {
+    "name": "Mercenaries Recompiled：Windows 原生移植",
+    "requirements": [
+      "必须自备受支持的零售 Xbox 副本。PS2 光盘不能代替。源码仓库不包含光盘镜像、提取出的游戏数据目录或生成的游戏可执行文件。",
+      "构建指南在 ports/mercenaries/README.md。",
+      "README 写明项目在 Codex 5.6 Sol 和 Astra 的协助下构建。",
+      "许可证：MIT。"
+    ]
   }
 }
