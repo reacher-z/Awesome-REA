@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nfs3-android-case",
+    "name": "NFS III: Hot Pursuit for Android",
+    "url": "https://github.com/ZloiKILLER/nfs3recompiled-android",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This project runs Need for Speed III: Hot Pursuit, the 1998 PC game, natively on Android. It statically recompiles the Windows executable to C++ on motor-dev/nfs-recompiled, and reimplements Windows and DirectX calls with SDL3 and OpenGL ES.",
+    "description_zh": "该项目在 Android 上原生运行 1998 年 PC 游戏《极品飞车 III：热力追缉》。它基于 motor-dev/nfs-recompiled 把 Windows 可执行文件静态重编译为 C++，并用 SDL3 和 OpenGL ES 重实现 Windows 与 DirectX 调用。",
+    "requirements": [
+      "Android 8.0 or newer, an ARMv7 or ARMv8 CPU, and OpenGL ES 3.0.",
+      "The player supplies the 1998 retail data: an ISO or BIN/CUE image, or the FEDATA and GAMEDATA folders.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ZloiKILLER/nfs3recompiled-android/blob/9c27ce73e9310337b9d555500ebb01b47fd602e1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
