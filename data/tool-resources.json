@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "decomp-buddy",
+    "name": "Decomp Buddy",
+    "url": "https://github.com/TanookiStudios/decomp-buddy",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Decomp Buddy is a Mac, Windows, and Linux application that sets up decompilations, recompilations, and native PC ports from the player's own game files. It checks the ROM or disc by checksum, region, and version.",
+    "description_zh": "Decomp Buddy 是一个运行在 Mac、Windows 和 Linux 上的程序，用玩家自己的游戏文件安装反编译、重编译和原生 PC 移植。它按校验和、区域和版本检查 ROM 或光盘。",
+    "requirements": [
+      "Downloads are published for Windows, Mac, and Linux. The README says the catalog lists games that can be played.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/TanookiStudios/decomp-buddy/blob/a7cbd2b5d5402a3dedc82f5cbbe7dde37b3e55ab/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
