@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "powerup",
+    "name": "PowerUp",
+    "url": "https://github.com/badamczewski/PowerUp",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Collection of disassembly and decompilation utilities. The README lists a live IDE watcher for C#, F#, Go, Rust, and C++ via clang, a .NET JIT disassembler, a .NET IL compiler, and a .NET console. The watcher compiles source, IR, and IL, then decompiles and disassembles them to IL, IR, and x86 assembly.",
+    "description_zh": "反汇编和反编译工具集。README 列出面向 C#、F#、Go、Rust 和 clang 下 C++ 的实时 IDE 监视器、.NET JIT 反汇编器、.NET IL 编译器，以及 .NET 控制台。监视器会编译源码、IR 和 IL，再反编译并反汇编成 IL、IR 和 x86 汇编。",
+    "evidence_url": "https://github.com/badamczewski/PowerUp/blob/cd197e3c4acc4608e82c1a437d0df97050ab7ede/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README shows PowerUp.Watcher.exe taking compiler flags plus input and output paths.",
+      "The reviewed page states no license."
+    ]
   }
 ]
