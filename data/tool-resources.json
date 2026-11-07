@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ds-lua-decompiler",
+    "name": "DSLuaDecompiler",
+    "url": "https://github.com/katalash/DSLuaDecompiler",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "DSLuaDecompiler decompiles Lua scripts from FromSoftware games for modding. The README says it targets Lua 5.0 AI scripts and HavokScript character-control scripts, with a stated goal of matching decompilations for scripts from Dark Souls through Armored Core 6.",
+    "description_zh": "DSLuaDecompiler 反编译 FromSoftware 游戏中的 Lua 脚本，用于制作模组。README 写明它面向 Lua 5.0 的 AI 脚本和 HavokScript 的角色控制脚本，目标是为从《黑暗之魂》到《装甲核心 6》的脚本做出匹配反编译。",
+    "requirements": [
+      "The games named in the README are Dark Souls, Bloodborne, Dark Souls 3, Sekiro, Elden Ring, and Armored Core 6.",
+      "HavokScript support is described for Bloodborne, Dark Souls 3, Sekiro, and Elden Ring.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/katalash/DSLuaDecompiler/blob/c27340ab1b898a584748dc7e43a516cc1f1684f6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
