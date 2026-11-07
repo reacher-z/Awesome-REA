@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "decomp-pipeline",
+    "name": "DecompPipeline",
+    "url": "https://github.com/GeneralAtrox/DecompPipeline",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "DecompPipeline turns a game's machine code into C one function at a time and builds that C into a native port. A per-CPU translator writes the C. A judge runs the original function in an emulator and the C on the same inputs, then returns PASS or FAIL. Listed targets are Dreamcast SH-4, Saturn SH-2, GameCube PowerPC, and Xbox 360 PowerPC.",
+    "description_zh": "DecompPipeline 把游戏机器码逐个函数转成 C，再把这些 C 构建成原生移植。每种 CPU 有自己的翻译器来写 C。判定器在模拟器里运行原函数，并用相同输入运行 C，然后给出通过或失败。列出的目标是 Dreamcast SH-4、Saturn SH-2、GameCube PowerPC 和 Xbox 360 PowerPC。",
+    "requirements": [
+      "Python 3.12, JDK 21, Ghidra 12, and Visual Studio 2022 with C++. Install Python dependencies from requirements.txt. The repository does not contain game data.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/GeneralAtrox/DecompPipeline/blob/76238534e5086d623d4b504c671024afa1c835ba/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
