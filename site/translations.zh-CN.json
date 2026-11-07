@@ -40712,5 +40712,13 @@
       "把 yuka.exe 放进游戏目录并运行 yuka help。",
       "README 未注明许可证。"
     ]
+  },
+  "darksouls-ps2": {
+    "name": "Dark Souls PS2：《黑暗之魂：重制版》的自制移植",
+    "requirements": [
+      "需要用户自己的《黑暗之魂：重制版》。README 写明仓库不含游戏数据，生成文件留在被 git 忽略的 build 目录。",
+      "推荐在 Linux 上用 ./build-iso.sh 构建。开发环境使用 Linux、ps2dev、Python 和 PCSX2。README 让 Windows 用户使用 WSL 或 Linux 虚拟机。",
+      "GitHub 报告许可证为 GPL-3.0。README 还列出其他工具许可证，其中包括 soulstruct 的 GPL-3.0-or-later。"
+    ]
   }
 }

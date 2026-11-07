@@ -143849,5 +143849,33 @@
     "verified_at": "2026-11-07",
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
+  },
+  {
+    "id": "darksouls-ps2",
+    "name": "Dark Souls PS2: homebrew port of Dark Souls Remastered",
+    "url": "https://github.com/nekomancer01/DarkSoulsPS2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "Dark Souls PS2 is a homebrew PlayStation 2 port of Dark Souls Remastered. A C engine under ps2/proto, built with ps2dev and gsKit and with hand-written VU1 programs, runs in PCSX2, and Python tools convert maps, characters, animations, collision, AI scripts, and menus from the user's own PC copy. The README calls the current tree an early prototype: Firelink Shrine, Undead Burg, and the Undead Asylum load, and a real PS2 has not been tested.",
+    "description_zh": "Dark Souls PS2 是《黑暗之魂：重制版》的自制 PlayStation 2 移植。ps2/proto 下的 C 引擎用 ps2dev 和 gsKit 构建，并带有手写的 VU1 程序，在 PCSX2 中运行；Python 工具从用户自己的 PC 副本转换地图、角色、动画、碰撞、AI 脚本和菜单。README 把当前代码称为早期原型：传火祭祀场、不死镇和不死院可以加载，真机 PS2 尚未测试。",
+    "evidence_url": "https://github.com/nekomancer01/DarkSoulsPS2/blob/1b0b9e96c8d312a5dd88e32e6f56ae7a259fae00/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The user's own copy of Dark Souls Remastered. The README says the repository contains no game data and that generated files stay in a git-ignored build directory.",
+      "The recommended build is ./build-iso.sh on Linux. The developer setup uses Linux, ps2dev, Python, and PCSX2. The README points Windows users to WSL or a Linux VM.",
+      "GitHub reports the license as GPL-3.0. The README lists extra tool licenses, including GPL-3.0-or-later for soulstruct."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
