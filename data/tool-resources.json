@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "black-knight-recomp",
+    "name": "Sonic and the Black Knight recompilation",
+    "url": "https://github.com/yunophilia/BlackKnightRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Sonic and the Black Knight for the Wii to Windows x64. One executable contains the USA release RENE8P, the European RENP8P, and the Japanese RENJ8P, and the installed disc selects which one runs. It draws with Direct3D 11 at 3x resolution and 16:9. The Linux and Steam Deck steps use Proton.",
+    "description_zh": "该项目把 Wii 版《索尼克与黑暗骑士》重编译到 Windows x64。一个可执行文件包含美版 RENE8P、欧版 RENP8P 和日版 RENJ8P，安装的光盘决定运行哪一个。它用 Direct3D 11 以 3 倍分辨率和 16:9 绘制。Linux 和 Steam Deck 的步骤使用 Proton。",
+    "requirements": [
+      "Run BlackKnightRecomp.exe and select an ISO, RVZ, WIA, or WBFS of one of the three releases. The first start extracts about 3.5 GB.",
+      "License: GPL-2.0-only. The README says Dolphin-derived parts are GPL-2.0-or-later, and Dear ImGui and nod are MIT."
+    ],
+    "evidence_url": "https://github.com/yunophilia/BlackKnightRecomp/blob/2a9613696556f097c4c706ccc1fe6094461e99f5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
