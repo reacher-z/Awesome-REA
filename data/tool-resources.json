@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ultratears",
+    "name": "UltraTears",
+    "url": "https://github.com/kuraeow/ultratears",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "UltraTears builds a native version of The Legend of Zelda: Tears of the Kingdom 1.4.3 for Windows, Linux, and Steam Deck from plain exefs and romfs folders. The romfs tree is about 304,000 files and 16 GB. Windows 10 or 11, or Linux with kernel 6.7 or newer and glibc 2.34 or newer, plus Vulkan 1.3, are required. python tools/setup.py --dump takes the dump directory and writes the game folder under build/. About 40 GB free is listed for setup.",
+    "description_zh": "UltraTears 用普通的 exefs 和 romfs 文件夹，为 Windows、Linux 和 Steam Deck 构建《塞尔达传说 王国之泪》1.4.3 的本地版本。romfs 大约有 304,000 个文件、16 GB。需要 Windows 10 或 11，或者内核 6.7 或更高且 glibc 2.34 或更高的 Linux，以及 Vulkan 1.3。python tools/setup.py --dump 接受转储目录，并把游戏文件夹写到 build/。安装大约需要 40 GB 空闲空间。",
+    "requirements": [
+      "Your own 1.4.3 exefs and romfs folders. Git and Python 3. Follow BUILDING.md for the other options.",
+      "The reviewed README says the name, emblem, icon, and cover are not under the GPL. Third-party terms are in third_party/README.md."
+    ],
+    "evidence_url": "https://github.com/kuraeow/ultratears/blob/57bf619e7ef579a0675a4d41d74413ebaca02fb8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
