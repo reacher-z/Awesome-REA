@@ -36528,5 +36528,24 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "spirv-cross",
+    "name": "SPIRV-Cross",
+    "url": "https://github.com/KhronosGroup/SPIRV-Cross",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Tool for parsing SPIR-V and converting it to other shader languages. The README lists GLSL, Metal Shading Language, HLSL, a JSON reflection format, and deprecated debuggable C++, plus reflection APIs for Vulkan pipeline layouts and OpDecorations. It says vertex, fragment, tessellation, geometry, and compute shaders are in scope.",
+    "description_zh": "解析 SPIR-V 并转换到其他着色器语言的工具。README 列出 GLSL、Metal Shading Language、HLSL、JSON 反射格式，以及已弃用的可调试 C++，还有用于 Vulkan 管线布局和 OpDecorations 的反射 API。它写明覆盖顶点、片段、细分、几何和计算着色器。",
+    "evidence_url": "https://github.com/KhronosGroup/SPIRV-Cross/blob/57e4efcc84112abcd426dc5ec248b5339bee04f2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README header comment carries SPDX-License-Identifier CC-BY-4.0."
+    ]
   }
 ]
