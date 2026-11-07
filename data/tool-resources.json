@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "smb1-asm6f",
+    "name": "smb1 disassembly",
+    "url": "https://github.com/Xkeeper0/smb1",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a Super Mario Bros. disassembly arranged to assemble with asm6f. It is based on doppelganger's smbdis.asm, which needs the character ROM data and an iNES header. The original notes say that file assembled with x816.",
+    "description_zh": "该仓库是《超级马里奥兄弟》的反汇编，整理成可以用 asm6f 汇编。它基于 doppelganger 的 smbdis.asm，那份文件需要角色 ROM 数据和 iNES 头。原来的说明写明该文件用 x816 汇编。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Xkeeper0/smb1/blob/1cc3c92cbbe8cda44903657f3da332688e806a89/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
