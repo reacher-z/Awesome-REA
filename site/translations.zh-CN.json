@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sdlpal": {
+    "name": "SDLPAL",
+    "requirements": [
+      "需要原版游戏数据文件，放在可执行文件旁边。平台构建前运行 git submodule update --init --recursive。",
+      "许可证：GNU GPL 第 3 版。"
+    ]
   }
 }
