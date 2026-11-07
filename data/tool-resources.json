@@ -36543,6 +36543,7 @@
     "description_zh": "使用 ReXGlue SDK v0.10.0 在构建时将 Fable II（标题 ID 4D5307F1）的 Xbox 360 可执行文件转换为 C++，并构建一个使用玩家自有光盘文件运行的 Windows 移植版，另加入带 ISO 提取功能的启动器、键鼠输入、更高的帧率上限和 Lua 调试入口。README 称项目起初用于测试本地开源模型 Qwen3.8 27b，该模型约一小时便让游戏运行起来，之后经人工映射函数才使游戏可以通关。通关为作者报告的结果，作者也尚不认为移植已经完成。",
     "evidence_url": "https://github.com/himdo/Fable-2-Recomp/blob/7b667e2eb05e522560c962ebb2df6678af9c60ed/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at the 2026-10-18 head; the repository was created on 2026-08-30, and v1.5.0 (2026-10-11) is the latest release. fable_2_manifest.toml, migrated from an earlier XenonRecomp configuration, drives rexglue codegen, and README says a clean build compiles about 291 generated translation units covering 60,462 guest functions. The README checklist marks the game beatable, but the author has not completed it 100%, and Vulkan, Linux builds and higher-resolution support remain open.",
