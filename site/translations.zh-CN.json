@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "opensith": {
+    "name": "OpenSith",
+    "requirements": [
+      "在 Unity 里打开 Scene 场景，把名为 _Game 的对象的 Game Path 设成绝地武士的安装目录。它读取 Steam 的 GOB 包，或 Extracted 子目录里的文件。",
+      "许可证：GPL-3.0。"
+    ]
   }
 }

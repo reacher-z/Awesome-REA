@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "opensith",
+    "name": "OpenSith",
+    "url": "https://github.com/r1sc/OpenSith",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenSith reimplements the engine of Star Wars: Jedi Knight — Dark Forces II in Unity. It renders JKL levels and animates 3DO models. There is no COG parser or COG virtual machine, so the game is not playable, though a level can be walked around.",
+    "description_zh": "OpenSith 用 Unity 重实现《星球大战：绝地武士》的引擎。它可以渲染 JKL 关卡并播放 3DO 模型动画。没有 COG 解析器或 COG 虚拟机，所以游戏还不能玩，但可以在关卡里走动。",
+    "requirements": [
+      "Open the Scene scene in Unity and set the _Game object's Game Path to a Jedi Knight install. It reads Steam GOB archives, or files in an Extracted subdirectory.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/r1sc/OpenSith/blob/f600a9157f2c48aa37f3a25ae446014d746b6ab3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
