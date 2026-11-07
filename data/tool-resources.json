@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dothack-recompilation-case",
+    "name": ".hack//Recompilation",
+    "url": "https://github.com/dothacktranslate/dothack-recompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": ".hack//Recompilation is a native recompilation of the PlayStation 2 .hack//IMOQ games, using PS2Recomp. Current work is .hack//INFECTION, US product SLUS-20267. The README says that game boots through the logo and OPENING movie. MUTATION, OUTBREAK, and QUARANTINE are listed as not started.",
+    "description_zh": ".hack//Recompilation 用 PS2Recomp 对 PlayStation 2 的 .hack//IMOQ 四部曲做原生重编译。当前工作是美版 SLUS-20267 的《.hack//感染》。README 写明该作可以启动到标志和 OPENING 影片。变异、爆发和隔离被列为尚未开始。",
+    "requirements": [
+      "The current build target is ps2EntryRunner in the build/app CMake tree. A development run passes game/infection/SLUS_202.67 to the infection runner. Development is primarily on Linux.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/dothacktranslate/dothack-recompilation/blob/9d326ad1efb326429228fc8ffb10e0b514526f2b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
