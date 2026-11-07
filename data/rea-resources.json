@@ -4116,6 +4116,7 @@
     "description_zh": "作者使用 REA 6.3.0 与 Ghidra，为 DOS 共享软件 LEZAC.EXE 中发现的全部 215 个过程导出档案、伪代码和汇编，再将其中少量例程恢复为 Pascal 和可移植 C。恢复的代码以原 x86 指令为对照进行测试，固定版本的 DOSBox-X 基线记录了原游戏的运行情况。README 说明这既不是可游玩或逐位一致的重建，也不是原作者的源码。",
     "evidence_url": "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "README reports seven routines in original-style Pascal (six core operations plus the RLE decompressor), sixteen packed record layouts and six portable C routines, with resource-format decoders for sprites, palette, scores, sounds and levels. Interrupt handlers, most gameplay, rendering, audio and DOS services remain unrecovered, and the 215 discovered procedures are not presented as exhaustive code discovery.",
