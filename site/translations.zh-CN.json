@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "spyro3-decomp": {
+    "name": "Spyro: Year of the Dragon 反编译",
+    "requirements": [
+      "docker_env.sh 启动构建容器。python3 ./build.py 写出 PSX.EXE。可玩的覆盖层需要 FIX_CHECKSUMS。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
