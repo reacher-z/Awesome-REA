@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "oldrod": {
+    "name": "Old Rod",
+    "requirements": [
+      "需要带 MSBuild 的 .NET 构建环境，或一份 AppVeyor 二进制。构建前还原子模块和 NuGet 包。",
+      "许可证：GPL 第 3 版。AsmResolver、Rivers 和 Newtonsoft.Json 为 MIT。"
+    ]
   }
 }
