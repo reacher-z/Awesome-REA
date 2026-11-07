@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "byte-tactics",
+    "name": "TA: Byte Tactics",
+    "url": "https://github.com/HectorBailey/byte-tactics",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "TA: Byte Tactics is a matching decompilation of Total Annihilation (Cavedog, 1997). The C++ in src/ is written to compile with Visual C++ 5.0 into the same bytes as TotalA.exe. The README says all 3,267 game functions match.",
+    "description_zh": "TA: Byte Tactics 是 Total Annihilation（Cavedog，1997）的匹配反编译。src/ 里的 C++ 用 Visual C++ 5.0 编译后与 TotalA.exe 的字节一致。README 写明全部 3,267 个游戏函数都已匹配。",
+    "requirements": [
+      "The matching target is TotalA.exe, MD5 8e74a1dffa1f5988624c52048f5b20cd. The player supplies Total Annihilation. The setup script fetches the compiler.",
+      "Tooling in tools/ is MIT. The README says the reconstructed code in src/ is not offered under a license."
+    ],
+    "evidence_url": "https://github.com/HectorBailey/byte-tactics/blob/3ef535b5f7834a7f64f1d57ee1cbc61e872b240b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

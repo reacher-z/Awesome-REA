@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "byte-tactics": {
+    "name": "TA: Byte Tactics",
+    "requirements": [
+      "匹配目标是 TotalA.exe，MD5 为 8e74a1dffa1f5988624c52048f5b20cd。玩家提供 Total Annihilation。安装脚本会获取编译器。",
+      "tools/ 里的工具是 MIT。README 写明 src/ 里重建的代码不按任何许可证提供。"
+    ]
   }
 }
