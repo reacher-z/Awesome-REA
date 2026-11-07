@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mlss-decomp",
+    "name": "Superstar Saga decompilation",
+    "url": "https://github.com/jellees/mlss",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a decompilation of Mario & Luigi: Superstar Saga for the Game Boy Advance, US version. It builds mlss.gba, SHA-1 7c303cdde5061ee329296948060b875cb50ba410.",
+    "description_zh": "这是 Game Boy Advance 美版《马里奥与路易吉：超级明星传奇》的反编译。它构建 mlss.gba，SHA-1 为 7c303cdde5061ee329296948060b875cb50ba410。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/jellees/mlss/blob/8db5ad5683841cd536f47020aff626ceec826df8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
