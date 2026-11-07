@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "hells-gate-recomp",
+    "name": "Hell's Gate: a static recompilation of Dante's Inferno",
+    "url": "https://github.com/florinp93/hells-gate-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "static-recompilation",
+    "description_en": "PC port of Dante's Inferno from the Xbox 360, built with the ReXGlue SDK. The README says the PowerPC executable is translated ahead of time into portable C++ and compiled into a native program, with no emulator and no runtime JIT. It says the project replaces the game's Direct3D layer with its own renderer.",
+    "description_zh": "把 Xbox 360 版《但丁的地狱》移植到 PC，使用 ReXGlue SDK。README 写明 PowerPC 可执行文件被提前翻译成可移植的 C++ 并编译成原生程序，没有模拟器，运行时也没有 JIT。它写明项目用自己的渲染器替换了游戏的 Direct3D 层。",
+    "evidence_url": "https://github.com/florinp93/hells-gate-recomp/blob/dff9962fb8e7d76577238f420da2260d2885189f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed page states no license."
+    ]
   }
 ]
