@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "duck-game-rebuilt-case",
+    "name": "Duck Game Rebuilt: decompilation of Duck Game",
+    "url": "https://github.com/TheFlyingFoool/DuckGameRebuilt",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "description_en": "Duck Game Rebuilt is a decompilation of Duck Game. The README describes performance, compatibility, and quality-of-life changes, with a Windows install through a Steam Workshop mod and a separate Linux install guide.",
+    "description_zh": "Duck Game Rebuilt 是《Duck Game》的反编译。README 描述了性能、兼容性和使用体验方面的改动，Windows 通过 Steam 创意工坊模组安装，Linux 另有安装指南。",
+    "requirements": [
+      "On Windows, install the Steam Workshop mod. On Linux, follow the repository's Linux installation guide.",
+      "A Windows build needs Visual Studio 2022 with the .NET desktop development workload. A Linux build needs mono-complete and the nuget CLI.",
+      "Steam must be running at launch, and the clone needs its submodules.",
+      "The README does not name a license."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/TheFlyingFoool/DuckGameRebuilt/blob/cda9564afe4baf07ff5cf958227e7bb48a4c7db9/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

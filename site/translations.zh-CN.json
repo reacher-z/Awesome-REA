@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "duck-game-rebuilt-case": {
+    "name": "Duck Game Rebuilt：《Duck Game》反编译",
+    "requirements": [
+      "Windows 上安装 Steam 创意工坊模组。Linux 上按照仓库中的 Linux 安装指南操作。",
+      "Windows 构建需要带 .NET 桌面开发工作负载的 Visual Studio 2022。Linux 构建需要 mono-complete 和 nuget 命令行。",
+      "启动时 Steam 必须在运行，克隆时需要带子模块。",
+      "README 没有写许可证。"
+    ]
   }
 }
