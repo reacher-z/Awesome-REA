@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ocarina-mq-debug-disasm",
+    "name": "Ocarina of Time Master Quest debug disassembly",
+    "url": "https://github.com/camthesaxman/zelda_ocarina_mq_debug",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of The Legend of Zelda: Ocarina of Time Master Quest, debug version. It builds zelda_ocarina_mq_dbg.z64, MD5 717179476af84133b14ff73af87db57a.",
+    "description_zh": "这是《塞尔达传说：时之笛》大师任务调试版的反汇编。它构建 zelda_ocarina_mq_dbg.z64，MD5 为 717179476af84133b14ff73af87db57a。",
+    "requirements": [
+      "Linux, or Windows 10 with WSL. Needs GCC, GNU Make, Python, mips64-elf binutils, the IDO 5.3 compiler from the repository releases, irixemu, and the Mono C# runtime. The ROM is named baserom.z64.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/camthesaxman/zelda_ocarina_mq_debug/blob/4aaea687d83c2dc131f4b2c77e838cf4c429949c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
