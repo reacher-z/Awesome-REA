@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "starhaven-case",
+    "name": "Star Haven",
+    "url": "https://github.com/SecondaryLifer/StarHaven",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "Star Haven is a native Nintendo 3DS port of Paper Mario for the Nintendo 64, built from the pmret/papermario decompilation. The game's own C code runs on the 3DS.",
+    "description_zh": "Star Haven 是《Paper Mario》任天堂 64 版的任天堂 3DS 原生移植，基于 pmret/papermario 反编译。游戏自己的 C 代码在 3DS 上运行。",
+    "requirements": [
+      "The player supplies a Paper Mario ROM: EU, US, or the iQue Player Chinese release. Copy it to /3ds/StarHaven/ on the SD card. .z64, .n64, and .v64 dumps are accepted.",
+      "On a 3DS with custom firmware, install StarHaven.cia with FBI or use StarHaven.3dsx. Releases are on the repository Releases page.",
+      "The port under port/3ds/ and the port's changes to the decompilation are Apache License 2.0. The decompilation itself remains pmret/papermario."
+    ],
+    "evidence_url": "https://github.com/SecondaryLifer/StarHaven/blob/3fa147a8884cf1095f9073f2fa06a78d3c9626e0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
