@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sfa-debug-decomp",
+    "name": "Star Fox Adventures debug decompilation",
+    "url": "https://github.com/RenaKunisaki/sfadebug",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of a debug build of Star Fox Adventures, version GSAP01, file default.dol. The README says that file is on Interactive Multi-Game Demo Disc - July 2002 (USA) and is unused there. It was built for an internal debug environment, writes to addresses used for debug tracing, and expects an RGBA framebuffer at a fixed address. The README says the code will most likely not compile yet, and that the build does not boot on a console or an emulator.",
+    "description_zh": "这是《星际火狐大冒险》调试版的进行中反编译，版本 GSAP01，文件 default.dol。README 写明该文件在 Interactive Multi-Game Demo Disc - July 2002（美国）上，并且未被使用。它是为内部调试环境构建的，会写入用于调试跟踪的地址，并期望固定地址上有一块 RGBA 帧缓冲。README 写明这些代码很可能还不能编译，而且这个构建在主机或模拟器上不能启动。",
+    "requirements": [
+      "Python on Windows, using native tooling. The SDK code comes from the dolsdk2001 decompilation. Functions are matched one by one in objdiff.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/RenaKunisaki/sfadebug/blob/2bba767415a607ced9ad53294d8f4515770ed998/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
