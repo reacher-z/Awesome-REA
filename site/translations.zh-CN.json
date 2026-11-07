@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "wacki-case": {
+    "name": "Wacki",
+    "requirements": [
+      "游戏文本是波兰语。图解安装步骤在 mszula.github.io/wacki。",
+      "审阅的 README 链接了 LICENSE 文件，正文没有写出许可证名称。"
+    ]
   }
 }

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "wacki-case",
+    "name": "Wacki",
+    "url": "https://github.com/mszula/wacki",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Wacki is a cross-platform port of Wacki: Kosmiczna rozgrywka (1998), reconstructed from the decompiled WACKI.EXE. The English portion of the README says it runs on macOS, Linux, Windows, Android, Miyoo and other PortMaster handhelds, and PlayStation 2.",
+    "description_zh": "Wacki 是《Wacki: Kosmiczna rozgrywka》（1998）的跨平台移植，从反编译的 WACKI.EXE 重建。README 的英文部分写明它可以在 macOS、Linux、Windows、Android、Miyoo 和其他 PortMaster 掌机，以及 PlayStation 2 上运行。",
+    "requirements": [
+      "The game text is in Polish. Illustrated setup steps are at mszula.github.io/wacki.",
+      "The reviewed README links a LICENSE file and does not name the license in the text."
+    ],
+    "evidence_url": "https://github.com/mszula/wacki/blob/5e94236ed8a615d390b422e2f9231ff09904509b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
