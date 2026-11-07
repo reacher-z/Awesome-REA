@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "megaman-zero-recomp": {
+    "name": "洛克人 Zero 重编译",
+    "requirements": [
+      "Windows 上需要 CMake、Ninja，以及 MSYS2 mingw64 的 GCC、G++ 和 SDL2。启动时选择一份零售版 GBA BIOS。",
+      "许可证：PolyForm Noncommercial 1.0.0。"
+    ]
   }
 }
