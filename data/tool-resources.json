@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bios-8088",
+    "name": "8088 BIOS disassembly",
+    "url": "https://github.com/ricardoquesada/bios-8088",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "binary"
+    ],
+    "class": "hardware",
+    "description_en": "This repository disassembles BIOS images from 8088 machines: the Tandy 1000, Tandy 1000A, Tandy 1000 HX, IBM PCjr, and IBM PC 5150. The README says the original images are in roms/ and the disassembly is in the subfolders, made with IDA Pro freeware.",
+    "description_zh": "该仓库反汇编 8088 机器的 BIOS 镜像：Tandy 1000、Tandy 1000A、Tandy 1000 HX、IBM PCjr 和 IBM PC 5150。README 写明原始镜像在 roms/，反汇编在子目录里，用 IDA Pro 免费版制作。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/ricardoquesada/bios-8088/blob/6dc405d3db57b9bb7042aabdd2428400195d3547/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
