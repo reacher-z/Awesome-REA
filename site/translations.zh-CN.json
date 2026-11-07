@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "wii-party-recomp": {
+    "name": "Wii 派对重编译",
+    "requirements": [
+      "需要 Windows 10 或 11，或者实验性的 Linux AppImage。源码构建需要 Python 3.11 或更新版本、CMake 3.20 或更新版本、Ninja、MinGW-w64 GCC 13 或更新版本，以及 nodtool。",
+      "许可证：GPL-3.0-or-later。第三方代码列在 THIRD_PARTY_NOTICES.md。"
+    ]
   }
 }

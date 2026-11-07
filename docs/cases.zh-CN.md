@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -136,7 +136,7 @@
 - [**《风之杖 HD》反编译：与重编译的 Wii U 版逐函数比对验证**](https://github.com/ZeldaWWHDDecomp/wwhd) - 将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### 静态重编译 (48)
+### 静态重编译 (49)
 
 - [**Banjo: Recompiled：基于 N64Recomp 的《Banjo-Kazooie》原生移植**](https://github.com/BanjoRecomp/BanjoRecomp) - 使用 N64Recomp 将美版 1.0 Nintendo 64《Banjo-Kazooie》静态重编译为基于 N64ModernRuntime 的原生移植版，由 RT64 渲染并加入模组支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/banjo-recompiled-case/)</sub>
 - [**C2C：《古惑狼 2》的混合重编译与手工反编译**](https://github.com/ughman/c2c) - 一个早期的 PlayStation《古惑狼 2》逆向工程项目：把引擎的 MIPS 机器码直接转换为一个体量巨大的 C 文件，并调用改造后的 PCSX-R 模拟器库处理硬件 I/O。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -184,6 +184,7 @@
 - [**The Two Towers Recompiled：初代 Xbox 静态重编译移植**](https://github.com/Gumpolas/TooTawersRecomp) - 使用随附的 xboxrecomp 工具包，将《The Lord of the Rings: The Two Towers》（Xbox 美版，2002）的 x86 代码静态重编译为 C，生成原生 Windows、Linux 及实验性 macOS 构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/two-towers-recompiled-case/)</sub>
 - [**Unleashed Recompiled：转换 Xbox 360 游戏代码与着色器**](https://github.com/hedge-dev/UnleashedRecomp) - 使用 XenonRecomp 静态重编译 Xbox 360 PowerPC 代码，并用 XenosRecomp 转换 Xenos 着色器，构建非官方 Sonic Unleashed PC 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/unleashed-recompiled-case/)</sub>
 - [**Weeping of the Empire：将《塞尔达传说 王国之泪》静态重编译至 Windows**](https://github.com/daniel-madrid-07/weeping-of-the-empire) - Weeping of the Empire 从用户自己的 Switch《塞尔达传说 王国之泪》转储构建原生 Windows 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/weeping-of-the-empire-case/)</sub>
+- [**Wii 派对重编译**](https://github.com/arelkair/wiiparty-recomp) - 该项目把《Wii 派对》静态重编译到 Windows 和实验性的 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wii-party-recomp/)</sub>
 - [**Wind Waker HD Recomp：通过静态重编译实现的 Wii U 游戏原生移植**](https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp) - 将《塞尔达传说 风之杖 HD》Wii U 版的 PowerPC 代码预先静态重编译为 C，原生重新实现游戏所用的 Cafe OS 库，并在 Metal 或 Vulkan 上实现 GX2 图形，生成无需 Cemu 运行时的 macOS、Linux、Windows 和 Android 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wind-waker-hd-recomp-case/)</sub>
 - [**Zelda 64: Recompiled：无需完整源码反编译的《姆吉拉的假面》原生移植**](https://github.com/Zelda64Recomp/Zelda64Recomp) - 通过 N64Recomp 将《姆吉拉的假面》转为原生应用，并使用 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zelda64recomp-case/)</sub>
 
