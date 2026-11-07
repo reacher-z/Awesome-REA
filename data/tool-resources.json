@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "miyoo64",
+    "name": "Miyoo64",
+    "url": "https://github.com/mr-finster/miyoo64",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "Miyoo64 runs fifteen Nintendo 64 games natively on the Miyoo Mini, Mini Plus, and Mini Flip, built from their decompilation projects. Each game reads a ROM the player owns and builds what it needs on the device. The listed USA ROMs include Perfect Dark revision 1, Mario Kart 64, Ocarina of Time 1.0, and Super Mario 64.",
+    "description_zh": "Miyoo64 在 Miyoo Mini、Mini Plus 和 Mini Flip 上原生运行十五款任天堂 64 游戏，基于它们的反编译项目。每款游戏读取玩家拥有的 ROM，并在设备上构建所需内容。列出的美版 ROM 包括完美黑暗第 1 修订、马里奥赛车 64、时之笛 1.0 和超级马里奥 64。",
+    "requirements": [
+      "No ROMs are in the downloads. The SHA-1 values in the README are for big-endian .z64 dumps. .v64 and .n64 dumps of the same ROM are also accepted.",
+      "License: MIT for this project's own code. Each game folder keeps its upstream license."
+    ],
+    "evidence_url": "https://github.com/mr-finster/miyoo64/blob/e5de5733dfd45c140e47f94b2664a7c28503550b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
