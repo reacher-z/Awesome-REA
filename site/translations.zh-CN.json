@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sfex2p-recomp": {
+    "name": "街头霸王 EX2 Plus 重编译",
+    "requirements": [
+      "需要 SCPH-1001 BIOS 和 CUE/BIN 光盘镜像。初始化子模块，用 game.toml、CUE 和 --bios 运行 psxrecomp_cli.py generate，然后运行 cmake --build build-release --target psx-runtime。手柄模式是 digital。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
