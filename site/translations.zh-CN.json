@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "rad-therapy": {
+    "name": "Rad-Therapy",
+    "requirements": [
+      "游玩需要 FTE 和 package_valve.pk3。改源码需要 Nuclide SDK 和 make。",
+      "许可证：源码为 ISC。品牌和标志为 CC BY 4.0。"
+    ]
   }
 }

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rad-therapy",
+    "name": "Rad-Therapy",
+    "url": "https://github.com/eukara/freehl",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Rad-Therapy is a QuakeC game for the FTE engine that plays the 1998 Half-Life campaign and deathmatch. Menus, client, server, and the network sub-protocol run in QuakeC. The release file package_valve.pk3 goes in HL1/valve/. A source build clones the game into the Nuclide SDK and runs make game GAME=valve. Launch can pass -halflife, and mods use fteqw -halflife -game.",
+    "description_zh": "Rad-Therapy 是给 FTE 引擎使用的 QuakeC 游戏，用来玩 1998 年的《半衰期》战役和死亡竞赛。菜单、客户端、服务器和网络子协议都在 QuakeC 里运行。发行文件 package_valve.pk3 放在 HL1/valve/。源码构建把游戏克隆进 Nuclide SDK，并运行 make game GAME=valve。启动可以加上 -halflife，模组使用 fteqw -halflife -game。",
+    "requirements": [
+      "FTE and package_valve.pk3 for play. A source change needs the Nuclide SDK and make.",
+      "License: ISC for the source. Branding and the logo are CC BY 4.0."
+    ],
+    "evidence_url": "https://github.com/eukara/freehl/blob/041a3fdcafec26e0bdde595e9b8f76caacbfd1fe/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
