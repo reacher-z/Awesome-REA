@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "san-recomp",
+    "name": "San Recompiled",
+    "url": "https://github.com/OZORDI/SanRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "San Recompiled is a static recompilation of the Xbox 360 version of Grand Theft Auto V, using XenonRecomp to translate PowerPC code to C++. The build system covers Windows, Linux, and macOS, and the installer accepts an ISO, a folder, or XContent. Shader conversion, the GPU pipeline, audio, and save data are still open.",
+    "description_zh": "San Recompiled 用 XenonRecomp 把 Xbox 360 版《侠盗猎车手V》的 PowerPC 代码静态重编译成 C++。构建系统覆盖 Windows、Linux 和 macOS，安装器接受 ISO、文件夹或 XContent。着色器转换、GPU 管线、音频和存档仍然未完成。",
+    "requirements": [
+      "The player supplies their own Xbox 360 game files. The README says the project is in early development.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/OZORDI/SanRecomp/blob/1685f88a733f9d0ebf69e40412901c873d44eb95/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
