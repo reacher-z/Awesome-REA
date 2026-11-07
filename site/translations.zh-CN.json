@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "retoolkit": {
+    "name": "retoolkit 逆向工程工具集安装程序",
+    "requirements": [
+      "审阅时最新版本为 2026.04，于 2026-05-16 在仓库的 Releases 页面发布，形式为约 2 GB 的单个 7z 压缩包，内含安装程序。所审阅的 main 提交比该标签多五个提交，内容是补充版权与署名说明，并调整 Nmap 和 Wireshark 的安装脚本。CHANGELOG.md 列出了每个版本新增和变更的工具。",
+      "适用于 x86 和 x64 Windows 主机；JDK 组件在安装 Ghidra 时也会一并安装，且只在 64 位安装模式下运行。README 称部分工具并非开源、来源可疑，建议只在虚拟机中安装并自行承担风险，还提到 Windows Defender 可能在安装时报毒。分析对象是使用者自己的样本。",
+      ".iss 脚本从一个不在仓库中的本地源目录复制工具文件，因此仅凭仓库无法重新构建安装程序；CHECKSUMS.txt 列出 35,444 个打包文件的 MD5 哈希。",
+      "COPYING.txt 对安装脚本适用 Apache-2.0；每个打包程序保留各自的许可证。除 Ghidra、x64dbg、ImHex 等开源工具外，CHECKSUMS.txt 还列出 pestudio、HxD、API Monitor（含其内核驱动）、Exeinfo PE 和 Resource Hacker 的可执行文件，以及 jdk-25_windows-x64_bin.exe 和 npcap-1.87.exe 安装程序。README 声明只收录许可证或作者允许再分发的软件；本次审阅未逐一核对各工具条款，也未运行安装程序或任何工具。"
+    ]
   }
 }
