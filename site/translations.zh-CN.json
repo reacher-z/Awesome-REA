@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "white-knight-chronicles-2-recomp": {
+    "name": "白骑士物语 II 重编译",
+    "requirements": [
+      "README 写明构建需要从美版光盘 BLUS30784 私下准备的文件。它报告 Debug 和 Release 有 121 项 Windows 回归检查。",
+      "审阅的 README 没有给这个仓库写出许可证。它把 PS3Recomp 的许可证放在 LICENSE.ps3recomp。"
+    ]
   }
 }
