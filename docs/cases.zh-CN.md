@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -301,6 +301,11 @@
 - [**东方 Project 重建：贯穿三款游戏的智能体驱动方法**](https://rea.tools/blog/touhou-reconstruction/) - REA 网站发表的一篇文章及其固定版本的证据说明，介绍一位作者以智能体驱动重建 TH08、TH095 与 TH04 的过程。 <sub>案例 · REA 官方 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/rea-touhou-reconstruction-method-case/)</sub>
 - [**《神秘海域：内森·德雷克合集》原生 Windows 移植**](https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port) - 在 Windows 上原生运行 PS4 版《神秘海域：内森·德雷克合集》自身的 x86-64 可执行文件：由运行时提供 PS4 系统库，并以源自 shadPS4 的 Vulkan 渲染器执行 GPU 工作。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/uncharted-collection-pc-port-case/)</sub>
 - [**Void Client：重建 Starblast.io 游戏客户端**](https://github.com/Senko74/Void-Client) - Void Client 是一个尚未完成的 Starblast.io 浏览器游戏客户端 JavaScript 重建项目，基于对其网络协议的研究。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/void-client-case/)</sub>
+
+<a id="game-unassigned"></a>
+### 其他重建方式 (1)
+
+- [**Crimsonland 重建：一致性反编译与逐帧精确的 Python 移植**](https://github.com/banteg/crimson) - 以 1.9.93 版 GOG《Crimsonland Classic》为准，把《Crimsonland》（2003）重建了两次：一是一致性反编译，其 C/C++ 源码经 Visual C++ 6 编译后可还原出原始的 crimsonland.exe 与 grim.dll，并编译为 WebAssembly，让原版游戏在浏览器中运行；二是用 Python 与 raylib 编写的重新实现，逐帧复现原版的时序、随机数与 float32 舍入。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crimsonland-rebuilt-case/)</sub>
 
 <a id="app"></a>
 ## App · 应用
