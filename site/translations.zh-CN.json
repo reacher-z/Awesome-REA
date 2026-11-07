@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "donut": {
+    "name": "donut",
+    "requirements": [
+      "需要原版游戏资源。需要 CMake，以及 vcpkg 或系统里的 SDL2、Bullet3、OpenAL Soft 和 fmt。",
+      "许可证：GPL 第 3 版。"
+    ]
   }
 }

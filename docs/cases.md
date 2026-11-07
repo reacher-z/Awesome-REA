@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -225,7 +225,7 @@
 - [**Vandal Hearts: native PC port built on matching decompilations**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - Builds on shao113’s matching decompilation of PlayStation Vandal Hearts, adds a Japanese matching tree, and carries both through to a native Windows and Linux port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### Engine reimplementations (47)
+### Engine reimplementations (48)
 
 - [**Age of Empires Free Software Remake: a re-implementation on the original data**](https://github.com/FolkertVanVerseveld/aoe) - Re-implements Microsoft’s Age of Empires and its Rise of Rome expansion as a cross-platform C++17 engine on SDL2 and OpenGL that loads the original game’s DRS archives and language.dll resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo: a reverse-engineered Minecraft server**](https://github.com/bravoserver/bravo) - Reimplements the server side of Minecraft’s Alpha- and Beta-era multiplayer in Python on Twisted; its documentation calls it a reverse-engineered implementation written from scratch, credits network traffic dumps and says general Minecraft data went to a community wiki. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/bravo-minecraft-server-case/)</sub>
@@ -234,6 +234,7 @@
 - [**CorsixTH: an open reimplementation of Theme Hospital**](https://github.com/CorsixTH/CorsixTH) - Reimplements the engine of Bullfrog’s 1997 Theme Hospital, with game logic in Lua and C++ for graphics, sound, movies and pathfinding, on top of the original game’s data files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/corsixth-engine-case/)</sub>
 - [**Cursed Lands: a Godot engine for Evil Islands and Lost in Astral**](https://github.com/TheWWWorm/CursedLands) - Cursed Lands reimplements the engine for Evil Islands and Lost in Astral in Godot, reading maps, models, audio, scripts and tables from the player's own game copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/cursed-lands-case/)</sub>
 - [**Desktop Games Nostalgia: a macOS and browser port**](https://github.com/ucodia/desktop-games-nostalgia) - A Swift/macOS and JavaScript/browser port recreates the Desktop Games screen-smashing toy from a captured image. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/desktop-games-nostalgia-rea-port-case/)</sub>
+- [**donut**](https://github.com/plowteam/donut) - donut is a C++ and OpenGL reimplementation of The Simpsons: Hit &amp; Run. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/donut/)</sub>
 - [**FreeRS42: reimplementing Ricochet Xtreme**](https://github.com/NuVelocity/FRS42) - FreeRS42 is a C++ project to reimplement the PC game Ricochet Xtreme using the NuVelocity engine. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/freers42-ricochet-xtreme-case/)</sub>
 - [**GunZRs: a Rust reimplementation of GunZ: The Duel**](https://github.com/OpenRsG/GunZRs) - A Rust/Bevy port reads GunZ: The Duel files from the user's installation and provides native releases, browser build tooling, screenshots and a documented REA/Ghidra investigation framework. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/gunzrs-rea-rust-reimplementation-case/)</sub>
 - [**Horizon: a Rust rewrite of Minecraft: Java Edition 26.3 with REA bytecode queries**](https://github.com/ludovic111/horizon) - Rewrites Minecraft: Java Edition 26.3 as a native Rust client, dedicated server and launcher that prepare their resources from the user’s own copy of the game. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/horizon-minecraft-rust-rewrite-case/)</sub>

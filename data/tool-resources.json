@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "donut",
+    "name": "donut",
+    "url": "https://github.com/plowteam/donut",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "donut is a C++ and OpenGL reimplementation of The Simpsons: Hit & Run. It needs the original game assets. git clone --recursive fetches the tree. Dependencies are SDL2, Bullet3, OpenAL Soft, and fmt, installed through vcpkg or found by CMake. Windows uses Visual Studio 2019. The Linux command is cmake -S . -B build with the vcpkg toolchain, then cmake --build build.",
+    "description_zh": "donut 是《辛普森一家：Hit & Run》的 C++ 和 OpenGL 重实现。它需要原版游戏资源。git clone --recursive 获取代码。依赖是 SDL2、Bullet3、OpenAL Soft 和 fmt，通过 vcpkg 安装或由 CMake 查找。Windows 使用 Visual Studio 2019。Linux 命令是带 vcpkg 工具链的 cmake -S . -B build，然后 cmake --build build。",
+    "requirements": [
+      "The original game assets. CMake, and vcpkg or the system packages for SDL2, Bullet3, OpenAL Soft, and fmt.",
+      "License: GPL version 3."
+    ],
+    "evidence_url": "https://github.com/plowteam/donut/blob/80c06fc3d350e6b27d415349002560f0570d9839/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
