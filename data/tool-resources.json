@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tetris-gb-disassembly",
+    "name": "Tetris Game Boy disassembly",
+    "url": "https://github.com/alexsteb/tetris_disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of Tetris for the Game Boy. It compiles 1:1 to the official Tetris (World) ROM. Code annotation and data annotation are still listed as unfinished.",
+    "description_zh": "这是 Game Boy 版《俄罗斯方块》的反汇编。它与官方 Tetris (World) ROM 逐字节对应。代码注释和数据注释仍被列为未完成。",
+    "requirements": [
+      "Build with RGBDS: rgbasm -o main.o main.asm, then rgblink -o tetris.gb main.o.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/alexsteb/tetris_disassembly/blob/b4bbceb3cc086121ab4fe9bf4dad6752fe956ec0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
