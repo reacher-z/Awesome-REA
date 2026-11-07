@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "starfox-snes-recomp": {
+    "name": "星际火狐 SNES 重编译",
+    "requirements": [
+      "从 Releases 下载 StarFoxSNESRecomp-windows-x64-v0.3.0.zip，然后运行 StarFoxSNESRecomp.exe。运行时会在开始前检查 SHA-256。",
+      "许可证：PolyForm Noncommercial 1.0.0。"
+    ]
   }
 }

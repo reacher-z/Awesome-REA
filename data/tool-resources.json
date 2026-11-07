@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "starfox-snes-recomp",
+    "name": "Star Fox SNES recompilation",
+    "url": "https://github.com/mstan/StarFoxSNESRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Star Fox for the Super Nintendo into native C with snesrecomp. The required ROM is an unheadered 1 MiB dump of Star Fox (USA) version 1.2, SHA-256 82E39DFBB3E4FE5C28044E80878392070C618B298DD5A267E5EA53C8F72CC548. The README says the game boots and that attract mode, menus, route selection, training, and gameplay have passed basic testing. An optional widescreen renderer is included.",
+    "description_zh": "该项目用 snesrecomp 把超级任天堂版《星际火狐》静态重编译成原生 C。所需 ROM 是无头的 1 MiB 美版 1.2，SHA-256 为 82E39DFBB3E4FE5C28044E80878392070C618B298DD5A267E5EA53C8F72CC548。README 写明游戏可以启动，吸引模式、菜单、路线选择、训练和游戏过程通过了基本测试。其中包含一个可选的宽屏渲染器。",
+    "requirements": [
+      "Download StarFoxSNESRecomp-windows-x64-v0.3.0.zip from Releases and run StarFoxSNESRecomp.exe. The runtime checks the SHA-256 before play.",
+      "License: PolyForm Noncommercial 1.0.0."
+    ],
+    "evidence_url": "https://github.com/mstan/StarFoxSNESRecomp/blob/faac8d491cf144104c0e9904ed9a3493fbc27d9e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
