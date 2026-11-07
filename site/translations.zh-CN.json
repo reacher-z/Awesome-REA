@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "apk2gold": {
+    "name": "apk2gold（Android APK 反编译命令行）",
+    "requirements": [
+      "文档中的命令是 apk2gold 后接目标 APK 路径。",
+      "README 写明反编译结果几乎肯定无法编译。",
+      "GitHub 未报告许可证文件。"
+    ]
   }
 }
