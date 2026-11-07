@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokerecomp",
+    "name": "pokerecomp",
+    "url": "https://github.com/Decryptu/pokerecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "pokerecomp is a Godot 4 reimplementation, written in GDScript, of the Game Boy Pokémon games. Gold, Silver, Crystal, Red, Blue, and Yellow are playable from the bedroom through the Hall of Fame and their credits. A cartridge dump is checked by SHA-1, decoded once into a cache, and then released.",
+    "description_zh": "pokerecomp 用 GDScript 在 Godot 4 里重实现 Game Boy 的宝可梦游戏。金、银、水晶、红、蓝、黄可以从卧室玩到名人堂和各自的制作人员名单。卡带转储会用 SHA-1 检查，解码进缓存一次，然后释放。",
+    "requirements": [
+      "The documented engine is Godot 4.8.dev7. Releases cover Windows x86_64 and ARM, macOS, Linux x86_64 and ARM64, Android, iOS, and Switch.",
+      "License: MIT for the engine source. The README says that license does not cover the games or supplied dumps."
+    ],
+    "evidence_url": "https://github.com/Decryptu/pokerecomp/blob/452c2fb13f7f1b04a475540bb59e691b8b9c9f3e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
