@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "spider-man-3-recomp": {
+    "name": "蜘蛛侠3重编译",
+    "requirements": [
+      "玩家把已提取的 Xbox 360 文件放进 assets 目录，default.xex 直接放在里面。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

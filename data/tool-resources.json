@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "spider-man-3-recomp",
+    "name": "Spider-Man 3 Xbox 360 Recomp",
+    "url": "https://github.com/b4ttycre4se/Spider-Man-3-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Spider-Man 3 Xbox 360 Recomp is a Windows x64 recompilation of the Xbox 360 game, built with ReXGlue and a Vulkan renderer. Release 1.0.1 uses 1440p internal rendering, FXAA, and a 60 frame cap. The README says the referenced ReXGlue SDK is out of date and cannot by itself reproduce this release.",
+    "description_zh": "Spider-Man 3 Xbox 360 Recomp 是这款 Xbox 360 游戏的 Windows x64 重编译，用 ReXGlue 和 Vulkan 渲染器构建。1.0.1 发布使用 1440p 内部渲染、FXAA 和每秒 60 帧上限。README 写明仓库引用的 ReXGlue SDK 已经过时，单靠它不能复现这个发布。",
+    "requirements": [
+      "The player puts extracted Xbox 360 files in the assets folder, with default.xex directly inside it.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/b4ttycre4se/Spider-Man-3-Recomp/blob/85babcfc949ebad0d99494d661f7053d3ffbf1f2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
