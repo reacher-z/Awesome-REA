@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openmadoola",
+    "name": "OpenMadoola",
+    "url": "https://github.com/nfroggy/openmadoola",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenMadoola reimplements The Wing of Madoola and reads graphics and level data from a ROM. The ROM can be madoola.nes or the Steam collection file sharedassets0.assets. It also needs font.bin, 2c04.pal, nes.pal, and the demo and mml directories. GNU/Linux builds are on Flathub as com.infochunk.OpenMadoola. Windows builds are on Releases. macOS is built from source. libco is ISC. nes_ntsc is LGPL-2.1 or later.",
+    "description_zh": "OpenMadoola 重新实现《The Wing of Madoola》，并从 ROM 读取图形和关卡数据。ROM 可以是 madoola.nes，或 Steam 合集里的 sharedassets0.assets。它还需要 font.bin、2c04.pal、nes.pal，以及 demo 和 mml 目录。GNU/Linux 构建在 Flathub 上，标识是 com.infochunk.OpenMadoola。Windows 构建在 Releases。macOS 从源码构建。libco 为 ISC。nes_ntsc 为 LGPL-2.1 或更高版本。",
+    "requirements": [
+      "A Wing of Madoola ROM named madoola.nes, or sharedassets0.assets from the Steam collection, plus the data files shipped with the Windows release.",
+      "License: GPL version 2.0 or later."
+    ],
+    "evidence_url": "https://github.com/nfroggy/openmadoola/blob/1d1b8189c960675e570f89b16eac84588c992ee1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
