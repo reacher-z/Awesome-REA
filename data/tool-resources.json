@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "killzone-recomp-case",
+    "name": "Killzone for Windows: native port of the PS2 game",
+    "url": "https://github.com/drakolordx7/KillzoneRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Killzone for Windows is a native Windows port of Killzone for the PlayStation 2. The README says the game's code is recompiled to C++ with PS2Recomp and runs with mouse and keyboard aim, high frame rates, higher resolutions, and ultrawide support.",
+    "description_zh": "Killzone for Windows 是 PlayStation 2 游戏《Killzone》的 Windows 原生移植。README 写明游戏代码用 PS2Recomp 重编译为 C++，并支持鼠标键盘瞄准、高帧率、更高分辨率和超宽屏。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, a CPU with SSE4.1, and a GPU with Direct3D 11, Direct3D 12, or Vulkan.",
+      "You need your own disc image: the US version SCUS-97402 or, from v0.1.6, the European version SCES-52893.",
+      "License: GPL-3.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/drakolordx7/KillzoneRecomp/blob/b4bfb6b1c597c9e32cc15145c688294cb55e9c3d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
