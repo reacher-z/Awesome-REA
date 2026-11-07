@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "binaryninja-pcode",
+    "name": "Binary Ninja PCode",
+    "url": "https://github.com/pd0wm/binaryninja-pcode",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Binary Ninja PCode loads Ghidra SLEIGH architectures inside Binary Ninja and attempts to lift p-code into Low Level IL. The LOAD_SLA variable selects an architecture. The README says the lifted IL is verbose and that calling conventions are not set.",
+    "description_zh": "Binary Ninja PCode 在 Binary Ninja 里加载 Ghidra 的 SLEIGH 架构，并尝试把 p-code 提升成 Low Level IL。LOAD_SLA 变量用来选择架构。README 写明提升出的 IL 很冗长，而且没有设置调用约定。",
+    "requirements": [
+      "Clone with submodules. The CMake line needs Qt 6, the Binary Ninja install directory, and the Binary Ninja API path, then make install.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/pd0wm/binaryninja-pcode/blob/4755b13405568db94676b6f61b33f3f5ea06a8da/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
