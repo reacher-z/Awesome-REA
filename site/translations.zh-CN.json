@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "dolrecomp": {
+    "name": "DolRecomp",
+    "requirements": [
+      "需要 CMake 3.16 或更高版本和 C11 编译器。压缩的 RPX 区段需要 zlib。LLVM 后端需要 LLVM 19 或 20。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
