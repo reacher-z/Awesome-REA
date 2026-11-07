@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "nwiirecomp": {
+    "name": "NWiiRecomp",
+    "requirements": [
+      "需要 CMake 3.20 或更新版本，以及 C++20 编译器。文档中的命令是 cmake -B build 和 cmake --build build，然后运行 ./build/nWiiRecomp/nwiirecomp config.toml。",
+      "审阅的 README 没有写出本项目的许可证。它写明 totaldb.dsy 取自 Dolphin，并继续使用 Dolphin 的许可证。"
+    ]
   }
 }
