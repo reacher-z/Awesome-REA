@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fzero-recomp-case",
+    "name": "F-Zero Recomp",
+    "url": "https://github.com/craigshaw/FZeroRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "F-Zero Recomp is a native widescreen static recompilation of F-Zero (USA). It runs on Linux x86_64, macOS on Apple Silicon, and Windows x64. Display modes include the original 8:7, 16:9, and 32:9.",
+    "description_zh": "F-Zero Recomp 是美版 F-Zero 的原生宽屏静态重编译。它可以在 Linux x86_64、Apple Silicon 上的 macOS 和 Windows x64 上运行。显示模式包括原来的 8:7、16:9 和 32:9。",
+    "requirements": [
+      "The player supplies their own cartridge dump. No ROM is in the repository.",
+      "License: PolyForm Noncommercial 1.0.0 for original code in the repository."
+    ],
+    "evidence_url": "https://github.com/craigshaw/FZeroRecomp/blob/5f37c22c7a2acef8b341545e9f2a4c5a4463990b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
