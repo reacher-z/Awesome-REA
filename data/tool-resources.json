@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "htrecomp",
+    "name": "Hydro Thunder Hurricane Recompiled",
+    "url": "https://github.com/visibou/htrecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Hydro Thunder Hurricane for the Xbox 360 to x86-64 with the rexglue SDK and renders with Direct3D 12. The program is hydrothunder.exe. The first launch unpacks a retail package into game_data beside the executable. default.xex sits at the top of that folder. From version 2.0.0 the Tempest Pack adds Bermuda Triangle, Castle Von Boom, and Atlantis. F5 opens settings. The console frame cap was 30, and this build can run uncapped.",
+    "description_zh": "该项目用 rexglue SDK 把 Xbox 360 版《Hydro Thunder Hurricane》静态重编译到 x86-64，并用 Direct3D 12 渲染。程序是 hydrothunder.exe。第一次启动把零售包解压到可执行文件旁边的 game_data。default.xex 放在该文件夹的顶层。从 2.0.0 起，Tempest Pack 加入百慕大三角、Castle Von Boom 和亚特兰蒂斯。F5 打开设置。主机帧率上限是 30，这个构建可以不封顶运行。",
+    "requirements": [
+      "Extract a release and run hydrothunder.exe. The file picker asks for the retail package. Optional DLC goes in a dlc folder beside the executable.",
+      "The reviewed README does not name a license for this project. It credits the rexglue SDK and bundles XEXTool unmodified."
+    ],
+    "evidence_url": "https://github.com/visibou/htrecomp/blob/177a5fa713526e138b858cbccd2b7c8256485382/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -136,7 +136,7 @@
 - [**《风之杖 HD》反编译：与重编译的 Wii U 版逐函数比对验证**](https://github.com/ZeldaWWHDDecomp/wwhd) - 将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### 静态重编译 (48)
+### 静态重编译 (49)
 
 - [**Banjo: Recompiled：基于 N64Recomp 的《Banjo-Kazooie》原生移植**](https://github.com/BanjoRecomp/BanjoRecomp) - 使用 N64Recomp 将美版 1.0 Nintendo 64《Banjo-Kazooie》静态重编译为基于 N64ModernRuntime 的原生移植版，由 RT64 渲染并加入模组支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/banjo-recompiled-case/)</sub>
 - [**C2C：《古惑狼 2》的混合重编译与手工反编译**](https://github.com/ughman/c2c) - 一个早期的 PlayStation《古惑狼 2》逆向工程项目：把引擎的 MIPS 机器码直接转换为一个体量巨大的 C 文件，并调用改造后的 PCSX-R 模拟器库处理硬件 I/O。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -153,6 +153,7 @@
 - [**Driver Recompiled：在本地构建游戏的 psxrecomp 安装宿主**](https://github.com/alexbeavs-ps1-ports/driver-recomp) - 将 Driver（PlayStation 美版）的 psxrecomp 静态重编译项目打包为“安装宿主”：发布包含重编译器、运行时和 recomp-ui 启动器，再由玩家电脑依据使用者自备的光盘镜像生成并编译游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/driver-recomp-setup-host-case/)</sub>
 - [**FFTARecomp：Final Fantasy Tactics Advance 的静态重编译**](https://github.com/Jorge262007/FFTARecomp) - 基于 JRickey 的 gba-recomp 工具链，将使用者自有的 Final Fantasy Tactics Advance（美版）Game Boy Advance ROM 预先重编译为可在 Windows、Linux 和 Steam Deck 上运行的原生代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fftarecomp-gba-static-recomp-case/)</sub>
 - [**《战神》PS2 静态重编译：基于 PS2Recomp 的 Windows 原生移植**](https://github.com/KIexster/god-of-war-recomp) - 使用 PS2Recomp 将 PlayStation 2 版《战神》美版（SCUS-97399）可执行文件中的 MIPS R5900 代码静态重编译为 C++，并构建为 Windows 原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/god-of-war-ps2-recomp-case/)</sub>
+- [**Hydro Thunder Hurricane 重编译**](https://github.com/visibou/htrecomp) - 该项目用 rexglue SDK 把 Xbox 360 版《Hydro Thunder Hurricane》静态重编译到 x86-64，并用 Direct3D 12 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/htrecomp/)</sub>
 - [**IsaacRecomp：将 Flash 游戏字节码转换为原生 C++**](https://github.com/whylurking/IsaacRecomp) - 将 The Binding of Isaac 的 Flash AVM1 字节码转换为 C++ 函数，并提供原生渲染与输入运行时。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/isaacrecomp-case/)</sub>
 - [**KartPad：Mario Kart Wii 重编译的平台集成**](https://github.com/chrissotraidis/kartpad) - 围绕 WiiCompiled 对 Mario Kart Wii 的提前转换实现 Apple 与 Android 平台集成，提供原生图形、输入及可选 Retro Rewind 支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kartpad-case/)</sub>
 - [**King Kong Recompiled：由 AI 开发的 Xbox 360 静态重编译**](https://github.com/TekRantGaming/king-kong-recompiled) - 借助 ReXGlue 静态重编译 SDK，将 Xbox 360 版 Peter Jackson's King Kong 转译为原生 Windows 代码，并加入启动器以及显示、操控和图形选项。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/king-kong-recompiled-case/)</sub>
