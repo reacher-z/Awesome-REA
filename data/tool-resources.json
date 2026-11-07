@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "smw-ps4-case",
+    "name": "SMW",
+    "url": "https://github.com/iHaiDeeZ/SMW",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "SMW brings BelmanteGu's static recompilation of Super Mario Bros. Wonder to jailbroken PS4 consoles. The game's ARM code was translated to C++ ahead of time and compiled for the PS4 CPU, and its NVN graphics run on Vulkan through Mesa's RADV driver.",
+    "description_zh": "SMW 把 BelmanteGu 对《Super Mario Bros. Wonder》的静态重编译带到已越狱的 PS4。游戏的 ARM 代码被提前翻译成 C++ 并编译到 PS4 的 CPU，NVN 图形通过 Mesa 的 RADV 驱动在 Vulkan 上运行。",
+    "requirements": [
+      "A jailbroken PS4. The player supplies their own copy of the game.",
+      "The build installs as a home-screen app and supports up to four DualShock 4 controllers. L3 and R3 together open the quick menu.",
+      "License: MIT, shown on the README badge that links to LICENSE."
+    ],
+    "evidence_url": "https://github.com/iHaiDeeZ/SMW/blob/2e8c2adfac0675a960192336ca26249019eca489/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

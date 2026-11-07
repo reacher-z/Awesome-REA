@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -188,7 +188,7 @@
 - [**Zelda 64: Recompiled — a native Majora’s Mask port without a full source decompilation**](https://github.com/Zelda64Recomp/Zelda64Recomp) - Uses N64Recomp to translate Majora’s Mask into a native application and RT64 for rendering. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda64recomp-case/)</sub>
 
 <a id="game-port"></a>
-### Ports of reconstructed source (33)
+### Ports of reconstructed source (34)
 
 - [**2 Ship 2 Harkinian: a native Majora’s Mask port built on the decompilation**](https://github.com/2ship2harkinian/2ship2harkinian) - Builds native Windows, Linux and macOS versions of The Legend of Zelda: Majora’s Mask from an adapted copy of the zeldaret/mm decompilation, with libultraship reimplementing N64 SDK functions. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/2ship2harkinian-mm-port-case/)</sub>
 - [**3SX: a native Street Fighter III: 3rd Strike port continuing the PS2 decompilation**](https://github.com/crowded-street/3sx) - Builds Street Fighter III: 3rd Strike as native C for Windows, macOS and Linux, continuing the 3s-decomp PS2 decompilation, with SDL3 for video, input and audio and GekkoNet for rollback netplay. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/3sx-third-strike-native-port-case/)</sub>
@@ -217,6 +217,7 @@
 - [**Salamander UEFI: a disassembly-based UEFI port of the NES game**](https://github.com/MikeWuPing/UEFI_Salamander) - Salamander UEFI ports the NES game Salamander to a native UEFI Shell application by translating its 6502 disassembly into a platform-independent C core. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/salamander-uefi-case/)</sub>
 - [**Ship of Harkinian: a native Ocarina of Time port built on the decompilation**](https://github.com/HarbourMasters/Shipwright) - Builds Ocarina of Time as a native PC application from the OoT decompilation’s source, with libultraship standing in for the N64 libultra SDK and DirectX 11, OpenGL or Metal rendering. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ship-of-harkinian-oot-port-case/)</sub>
 - [**sm64ex: an enhanced Super Mario 64 PC port from the decompilation**](https://github.com/sm64pc/sm64ex) - Builds native Super Mario 64 executables from decompiled source, extending the sm64-port fork of the n64decomp reconstruction with renderer, input, camera, save-format and external-data options. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sm64ex-pc-port-case/)</sub>
+- [**SMW**](https://github.com/iHaiDeeZ/SMW) - SMW brings BelmanteGu's static recompilation of Super Mario Bros. Wonder to jailbroken PS4 consoles. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/smw-ps4-case/)</sub>
 - [**SpaghettiKart: a native Mario Kart 64 port built on decompiled source**](https://github.com/HarbourMasters/SpaghettiKart) - Builds a native Mario Kart 64 port for Windows, Linux, macOS and Switch from source that keeps the Mario Kart 64 decompilation’s file layout, running on libultraship’s reimplemented N64 SDK. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/spaghettikart-mk64-port-case/)</sub>
 - [**Starship: a Star Fox 64 PC port built from the decompilation**](https://github.com/HarbourMasters/Starship) - A native PC port of Star Fox 64 that compiles the game's decompiled C code against libultraship, an N64 porting library that reimplements libultra and renders through Fast3D. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/starship-sf64-pc-port-case/)</sub>
 - [**Super Mario Sunshine: a native PC port from an AI-assisted decompilation**](https://github.com/chasem-dev/sms-pc-port) - Builds a native PC port of Super Mario Sunshine’s North American release from a pinned matching-decompilation fork, adding a host platform layer for graphics, disc, audio, input and OS services. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sms-pc-port-case/)</sub>
