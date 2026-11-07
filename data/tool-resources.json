@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mh4u-progress",
+    "name": "Monster Hunter 4 Ultimate progress report",
+    "url": "https://github.com/mhvuze/mh4u-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository tracks a matching decompilation of Monster Hunter 4 Ultimate for the Nintendo 3DS, European version 1.1. It publishes report.json, an objdiff progress report of function names, addresses, sizes, and match percentages. The README says the source, tools, and game data are not in the repository.",
+    "description_zh": "该仓库跟踪任天堂 3DS 欧版 1.1《怪物猎人 4 究极》的匹配反编译。它发布 report.json，一份 objdiff 进度报告，含函数名、地址、大小和匹配百分比。README 写明源码、工具和游戏数据不在仓库里。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/mhvuze/mh4u-decomp/blob/f90ea9a4ed0275c43145c284307f6189ecd523e3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
