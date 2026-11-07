@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "reccmp",
+    "name": "reccmp",
+    "url": "https://github.com/isledecomp/reccmp",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "reccmp is a toolchain for decompilation projects that compares a recompilation with the original binary. The README says functions and data are matched from address comments in the source, and that the tools began with the LEGO Island decompilation.",
+    "description_zh": "reccmp 是一套用于反编译项目的工具链，用来把重编译结果和原始二进制做比较。README 写明函数和数据根据源码里的地址注释进行匹配，并且这些工具始于《乐高岛》的反编译。",
+    "requirements": [
+      "The README shows address comments such as FUNCTION: LEGO1 with an address above the function being matched.",
+      "License: AGPL-3.0."
+    ],
+    "evidence_url": "https://github.com/isledecomp/reccmp/blob/b0bf3d3e5484160fde547feeaa46d02641da9b26/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
