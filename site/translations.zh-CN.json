@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "nsmb-wii-multiplayer-recomp-case": {
+    "name": "NSMB Wii Multiplayer Recompilation：《新超级马力欧兄弟 Wii》原生移植",
+    "requirements": [
+      "README 徽章标明 Android 9 或更高的 arm64、Windows 10 或 11 的 x64，或 Linux 的 x86-64。",
+      "需要自备《新超级马力欧兄弟 Wii》美版 SMNE01 修订 1，并在电脑上用 Dolphin 提取。项目及其发布不包含光盘镜像、关卡、音乐、图像或音效。",
+      "README 写明该移植由 WitherBlitz 使用 WiiCompiled 的代码制作，并且全部由 Claude Opus 5.5 编写。",
+      "许可证：GPL-3.0。"
+    ]
   }
 }

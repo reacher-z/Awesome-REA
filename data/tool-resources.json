@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nsmb-wii-multiplayer-recomp-case",
+    "name": "NSMB Wii Multiplayer Recompilation: native port of New Super Mario Bros. Wii",
+    "url": "https://github.com/WitherBlitz/NSMB-Wii-Multiplayer-Recompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "NSMB Wii Multiplayer Recompilation is a native port of New Super Mario Bros. Wii made with static recompilation on WiiCompiled. The README lists Android, Windows, and Linux builds and says the game code is translated to native code ahead of time.",
+    "description_zh": "NSMB Wii Multiplayer Recompilation 是用 WiiCompiled 静态重编译做成的《新超级马力欧兄弟 Wii》原生移植。README 列出 Android、Windows 和 Linux 构建，并写明游戏代码被提前翻译成本机代码。",
+    "requirements": [
+      "Android 9 or newer on arm64, Windows 10 or 11 on x64, or Linux on x86-64, as labeled in the README badges.",
+      "You need your own copy of New Super Mario Bros. Wii, USA SMNE01 revision 1, and Dolphin on a computer to extract it. The project and its releases contain no disc image, levels, music, graphics, or sounds.",
+      "The README says the port was made by WitherBlitz with WiiCompiled's code and was entirely coded by Claude Opus 5.5.",
+      "License: GPL-3.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/WitherBlitz/NSMB-Wii-Multiplayer-Recompilation/blob/2ff64f507b31e8e230f858b5fd59813d9a3f7cf4/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
