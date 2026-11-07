@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gm81decompiler",
+    "name": "GameMaker 8.1 Decompiler",
+    "url": "https://github.com/WastedMeerkat/gm81decompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "GameMaker 8.1 Decompiler is the 2011 source of a decompiler for GameMaker 8.1 and 8.0 executables. It grew from the GameMaker 8.0 decompiler and uses the Gmk library for GMK serialization.",
+    "description_zh": "GameMaker 8.1 Decompiler 是 2011 年的 GameMaker 8.1 和 8.0 可执行文件反编译器源码。它从 GameMaker 8.0 反编译器扩展而来，并用 Gmk 库做 GMK 序列化。",
+    "requirements": [
+      "Drag a GameMaker 8.1 or 8.0 executable onto the decompiler, or run decompiler with the executable name.",
+      "The README says some bugs were left in so that some games cannot be decompiled.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/WastedMeerkat/gm81decompiler/blob/80040ac74f95af03b4b6649b0f5be11a7d13700b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gm81decompiler": {
+    "name": "GameMaker 8.1 反编译器",
+    "requirements": [
+      "把 GameMaker 8.1 或 8.0 的可执行文件拖到反编译器上，或用可执行文件名运行 decompiler。",
+      "README 写明有些错误被故意留下，使部分游戏无法被反编译。",
+      "许可证：MIT。"
+    ]
   }
 }
