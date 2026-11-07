@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "harvest-moon-snes-c",
+    "name": "Harvest Moon SNES in C",
+    "url": "https://github.com/RodoLy/HarvestMoonSnesDecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This rewrites Harvest Moon for the SNES, USA, as C and checks every routine against the original. The progress line says 45,176 of 45,176 instructions and 778 of 778 routines match. The USA ROM SHA-256 is 73a3aa87ddd5ce5df5ba51292316f42b6e128280179b0a1b11b4dcddc17d4163. Release v0.2.0-beta runs on Windows, macOS 11 or newer, Linux x86-64, and Android 8 or newer. The Windows program is HarvestMoonNative.exe.",
+    "description_zh": "该项目把美版 SNES《牧场物语》改写成 C，并逐个例程对照原版。进度行写明 45,176 条指令中的 45,176 条、778 个例程中的 778 个已经匹配。美版 ROM 的 SHA-256 是 73a3aa87ddd5ce5df5ba51292316f42b6e128280179b0a1b11b4dcddc17d4163。v0.2.0-beta 可在 Windows、macOS 11 或更新版本、Linux x86-64 和 Android 8 或更新版本上运行。Windows 程序是 HarvestMoonNative.exe。",
+    "requirements": [
+      "Windows runs build.bat. macOS runs build_mac.command. The Android package is built with build_android.bat on Windows.",
+      "License: PolyForm Noncommercial 1.0.0 for this repository's code."
+    ],
+    "evidence_url": "https://github.com/RodoLy/HarvestMoonSnesDecomp/blob/a368be0b7e8335c08f078d1262d4e887ae753752/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
