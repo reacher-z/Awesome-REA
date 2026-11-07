@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "extractmacho",
+    "name": "ExtractMachO",
+    "url": "https://github.com/gdbinit/ExtractMachO",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "ExtractMachO is an IDA plugin that extracts Mach-O binaries found in a disassembly. It supports 32-bit and 64-bit images, fat binaries, and Intel, PowerPC, and ARM. Version 1.1 was tested with IDA 6.3 on Mac OS X.",
+    "description_zh": "ExtractMachO 是一个 IDA 插件，用来提取反汇编中的 Mach-O 二进制。它支持 32 位和 64 位映像、胖二进制，以及 Intel、PowerPC 和 ARM。1.1 版在 Mac OS X 上的 IDA 6.3 中测试过。",
+    "requirements": [
+      "Place the cursor on a Mach-O start to dump that image, or let the plugin search the whole database. The magic values it recognizes are 0xFEEDFACE and 0xFEEDFACF.",
+      "The OS X build uses the Makefile or the Xcode project.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/gdbinit/ExtractMachO/blob/0ee718a023ac5167560063ea2e95536e7bcb2c9e/README",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

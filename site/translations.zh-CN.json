@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "extractmacho": {
+    "name": "ExtractMachO",
+    "requirements": [
+      "把光标放在 Mach-O 开头可以只导出该映像，也可以让插件搜索整个数据库。它识别的魔数是 0xFEEDFACE 和 0xFEEDFACF。",
+      "OS X 构建使用 Makefile 或 Xcode 工程。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
