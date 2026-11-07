@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ds-kart-recompiled-case",
+    "name": "DS Kart Recompiled",
+    "url": "https://github.com/AlonsoTlol/DS-Kart-Recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "DS Kart Recompiled is a native PC port of the European Mario Kart DS, game code AMCP, made by static recompilation of the ARM9 and ARM7 code. A runtime supplies memory, interrupts, timers, the 2D and 3D engines, sound, saving, and controls.",
+    "description_zh": "DS Kart Recompiled 是欧洲版《马里奥赛车 DS》（游戏代码 AMCP）的原生 PC 移植，把 ARM9 和 ARM7 代码静态重编译。运行时提供内存、中断、计时器、2D 和 3D 引擎、声音、存档和操作。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit. Linux and macOS builds are marked beta. The player supplies a dump of their own European cartridge.",
+      "Single player, local multiplayer, and a beta of the game's Nintendo WFC menu are listed as working. Early releases still have bugs.",
+      "The reviewed README does not name a license for the port. It names the MIT license only for Dear ImGui."
+    ],
+    "evidence_url": "https://github.com/AlonsoTlol/DS-Kart-Recompiled/blob/a4a9dc6908ab8b8cfd012a7ef56786b80c883ed6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
