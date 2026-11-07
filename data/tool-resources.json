@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "asm-dude2",
+    "name": "AsmDude2",
+    "url": "https://github.com/HJLebbink/asm-dude",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "AsmDude2 is a Visual Studio 2022 extension and language server for assembly. It highlights x86 and x64, including SSE, AVX, AVX2, Xeon Phi, and AVX-512, plus common MASM directives and a selection of NASM directives. It also highlights the Visual Studio disassembly window. The reviewed installer is AsmDude.vsix 2.0.0.4. Running from source uses the Visual Studio 2022 SDK and F5.",
+    "description_zh": "AsmDude2 是面向汇编的 Visual Studio 2022 扩展和语言服务器。它高亮 x86 和 x64，包括 SSE、AVX、AVX2、Xeon Phi 和 AVX-512，以及常用的 MASM 指令和一部分 NASM 指令。它也高亮 Visual Studio 的反汇编窗口。审阅的安装包是 AsmDude.vsix 2.0.0.4。从源码运行需要 Visual Studio 2022 SDK，并按 F5。",
+    "requirements": [
+      "Visual Studio 2022. The marketplace entry is Henk-JanLebbink.AsmDude2.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/HJLebbink/asm-dude/blob/93b566916fa1d3cf306a945459f2ec0f6e7aa541/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
