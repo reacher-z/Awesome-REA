@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "libghidra",
+    "name": "libghidra",
+    "url": "https://github.com/0xeb/libghidra",
+    "category": "binary-libraries",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "libghidra is a typed API for Ghidra program databases, callable from C++, Python, or Rust. It offers a remote backend that uses a live Ghidra host and a local backend with a compiled-in Sleigh engine for an offline subset of queries.",
+    "description_zh": "libghidra 是面向 Ghidra 程序数据库的类型化 API，可从 C++、Python 或 Rust 调用。它提供使用正在运行的 Ghidra 宿主的远程后端，以及内置 Sleigh 引擎、用于离线查询子集的本地后端。",
+    "requirements": [
+      "The remote backend needs a Ghidra distribution at version 12.0.4 or newer and JDK 21.",
+      "The local backend needs no Ghidra JVM. Its README lists an offline subset: decompiler, functions, symbols, types, memory, listing, and cross-references.",
+      "The README documents an install-prompt.md runbook and a manual Get Running path."
+    ],
+    "evidence_url": "https://github.com/0xeb/libghidra/blob/d4c399b0ab85e509cf2b17de2872b193defb5b3e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
