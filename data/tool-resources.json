@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "chronicle-two",
+    "name": "Chronicle Two",
+    "url": "https://github.com/TheMoonPeople/ChronicleTwo",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "Chronicle Two is a decompilation of Dark Chronicle, also called Dark Cloud 2, for the PlayStation 2, plus a native port built from it. The PAL build checks the executable against retail. A Mesa Vulkan build targets the Nintendo Switch.",
+    "description_zh": "Chronicle Two 是 PlayStation 2 游戏 Dark Chronicle（也称 Dark Cloud 2）的反编译，以及基于它的原生移植。PAL 构建会把可执行文件与零售版核对。还有一个面向任天堂 Switch 的 Mesa Vulkan 构建。",
+    "requirements": [
+      "Clone with submodules. Place Dark Chronicle (PAL).iso in rom/pal/. Docker or Podman is required. ./build.sh builds ps2-pal. ./run.sh builds the Release port.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/TheMoonPeople/ChronicleTwo/blob/89d6a9c0b3261c8d533a9fc18875e57f2bb1a960/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
