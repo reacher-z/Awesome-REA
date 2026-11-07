@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nyxstone",
+    "name": "Nyxstone",
+    "url": "https://github.com/emproof-com/nyxstone",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Nyxstone assembles and disassembles code with the LLVM libraries already shipped by Linux distributions, Homebrew, and apt.llvm.org. The core is C++, with Rust and Python bindings. It covers the architectures in the linked LLVM, including x86, ARM, AArch64, MIPS, and RISC-V. The assembler accepts labels and reports relocations for external symbols. The reviewed crates.io and PyPI badges are version 0.1.9. Native builds are documented for Linux and macOS. Windows builds start from a Visual Studio 2022 x64 prompt.",
+    "description_zh": "Nyxstone 用 Linux 发行版、Homebrew 和 apt.llvm.org 已经提供的 LLVM 库来汇编和反汇编。核心是 C++，并带有 Rust 和 Python 绑定。它覆盖所链接 LLVM 里的架构，包括 x86、ARM、AArch64、MIPS 和 RISC-V。汇编器接受标签，并为外部符号报告重定位。审阅时 crates.io 和 PyPI 徽章上的版本是 0.1.9。原生构建文档针对 Linux 和 macOS。Windows 构建从 Visual Studio 2022 的 x64 命令提示符开始。",
+    "requirements": [
+      "A standard LLVM build. Linux or macOS for the documented native build. Windows uses Visual Studio 2022.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/emproof-com/nyxstone/blob/14e894f60088a8251291a794db1f2f5203f545fe/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
