@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "midnight-club-la-recompiled": {
+    "name": "午夜俱乐部洛杉矶重编译",
+    "requirements": [
+      "下载 Midnight-Club-LA-Recompiled-Windows-x64.zip，运行 Midnight Club L.A. Recompiled.exe，并选择 Xbox 360 完整版 ISO。",
+      "许可证：本分支代码为 GPL-3.0-or-later。第三方组件保持各自的许可证。"
+    ]
   }
 }
