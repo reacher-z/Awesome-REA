@@ -11023,5 +11023,15 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "marathon-recomp-case": {
+    "name": "Marathon Recompiled",
+    "requirements": [
+      "需要玩家提供自己的 Xbox 360 游戏文件。",
+      "README 写明该重编译仍在积极开发，不面向公开使用；支持要等到正式发布。",
+      "安装器接受同一区域的原始、未修改文件。PlayStation 3 文件属于另一次重编译，会被拒绝。",
+      "构建步骤见 docs/BUILDING.md。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
