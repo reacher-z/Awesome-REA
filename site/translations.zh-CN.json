@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "red-dead-revolver-pc-case": {
+    "name": "红色死亡左轮 PC 版",
+    "requirements": [
+      "玩家提供自己的 Xbox 游戏。支持的 default.xbe 是 4,452,352 字节。4,403,200 字节的 NTSC 美版可执行文件会在启动时被拒绝。",
+      "发布包是 RedDeadRevolverPC.zip。游戏以 60 Hz 运行，内部分辨率最高 4 倍。",
+      "审阅的 README 没有给移植本身写许可证。它写明 xboxrecomp 是 MIT，SDL3 是 zlib 许可证，extract-xiso 是 BSD 风格许可证。"
+    ]
   }
 }
