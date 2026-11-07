@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sm2-recomp-case",
+    "name": "Spider-Man 2 Xbox Recomp",
+    "url": "https://github.com/SirSymo/SM2-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "SM2-Recomp translates a user-supplied original Xbox executable of Spider-Man 2 into native code for modern Windows and supplies the Xbox-facing runtime the game needs. The README says current builds have run through at least chapters 1 to 3.",
+    "description_zh": "SM2-Recomp 把玩家提供的初代 Xbox《蜘蛛侠 2》可执行文件翻译成现代 Windows 上的原生代码，并提供游戏需要的 Xbox 侧运行时。README 写明当前构建至少已经跑过第 1 到第 3 章。",
+    "requirements": [
+      "A compatible copy of the original Xbox release is required. The default game-data path is XISO streaming.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/SirSymo/SM2-Recomp/blob/71d13aee6bf56534c17415002417db6519b1194d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
