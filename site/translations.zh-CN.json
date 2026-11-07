@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "wotm-recomp": {
+    "name": "War of the Monsters 重编译",
+    "requirements": [
+      "Windows：需要 Git、Python 3、CMake 3.24 或更新版本，以及 MSVC 14.40 或更新版本。把 NTSC-U ISO 放进 ISO/ 并运行 tools\\setup_runtime.ps1。Linux 使用 tools/setup_runtime.sh。",
+      "许可证：本仓库代码为 GPL-3.0。"
+    ]
   }
 }
