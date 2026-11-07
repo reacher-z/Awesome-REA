@@ -348,14 +348,15 @@ async function homepage(page, language, viewport, data, requested) {
   assert.equal(await count(page, '#resource-grid .resource-card > .card-meta .resource-evidence-link'), 0);
   assert.equal(await count(page, '#resource-grid .resource-card details .resource-evidence-link'), Math.min(30, total));
   // All 30 rows, so entries with descriptions longer than the right column are checked too.
+  // The collection opens in the card layout; compact rows are the ones that stack links over the toggle.
   if (viewport.width >= 1101) {
+    await page.select('#layout-select', 'compact');
     const gaps = await toggleDrift(page, '#resource-grid .resource-card', '.card-meta', 'details.requirements:not([open]) > summary');
     assert(gaps.length && gaps.every(gap => gap >= -1 && gap <= 8), `${label}: details toggles sit under the entry links (${gaps.join(', ')} px)`);
-  }
-  // From 1101 px the compact layout stacks full-entry links above the details toggle; they keep 24 px targets (WCAG 2.5.8).
-  if (viewport.width >= 1101) {
+    // Compact rows stack full-entry links above the details toggle; they keep 24 px targets (WCAG 2.5.8).
     const entryHeights = await page.$$eval('#resource-grid .resource-entry-link', links => links.map(link => link.getBoundingClientRect().height));
     assert(entryHeights.length && entryHeights.every(height => height >= 24), `${label}: full-entry link targets are at least 24 px tall`);
+    await page.select('#layout-select', 'cards');
   }
   await press(page, '#resource-grid .resource-card details.requirements summary');
   const expanded = await page.$eval('#resource-grid .resource-card details.requirements', details => ({open: details.open,
