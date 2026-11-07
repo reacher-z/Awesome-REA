@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "aflplusplus",
+    "name": "AFL++",
+    "url": "https://github.com/AFLplusplus/AFLplusplus",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "AFL++ is a coverage-guided fuzzer forked from American Fuzzy Lop. The reviewed README names release 5.03c and GitHub version 5.04a. docker pull aflplusplus/aflplusplus provides an x86_64 and arm64 image, and docs/INSTALL.md is the recommended source build. Binary-only, network, and GUI targets have separate guides under docs/.",
+    "description_zh": "AFL++ 是从 American Fuzzy Lop 分出的覆盖率引导模糊测试器。审阅的 README 写明发行版 5.03c 和 GitHub 版本 5.04a。docker pull aflplusplus/aflplusplus 提供 x86_64 和 arm64 镜像，推荐的源码构建在 docs/INSTALL.md。仅二进制、网络和图形界面目标在 docs/ 下有各自的说明。",
+    "requirements": [
+      "Follow docs/INSTALL.md, or use the aflplusplus/aflplusplus container.",
+      "License: GNU AGPL-3.0-or-later. Files compiled into a fuzzing harness stay Apache-2.0. Some files use the license in their SPDX header."
+    ],
+    "evidence_url": "https://github.com/AFLplusplus/AFLplusplus/blob/d0070729206a80a9af297b2341edd63f68fdac35/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
