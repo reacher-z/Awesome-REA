@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ntrays",
+    "name": "NtRays",
+    "url": "https://github.com/can1357/NtRays",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "NtRays is a Hex-Rays microcode plugin that simplifies Windows kernel decompilation. It cleans scheduler hints, lifts missing instructions, TrapFrame accesses, KUSER_SHARED_DATA, dynamic page-table relocations with LA57, and SYSCALL instructions with selectable Nt signatures. It also replaces KTHREAD and KPROCESS with ETHREAD and EPROCESS. cmake takes IDA_SDK_DIR and HEXRAYS_SDK_DIR. The Windows build uses Visual Studio 2022. NtRays64.dll goes in the plugins folder. IDA 7.6 or newer is required.",
+    "description_zh": "NtRays 是一个 Hex-Rays 微码插件，用来化简 Windows 内核反编译。它清理调度器提示，提升缺失指令、TrapFrame 访问、KUSER_SHARED_DATA、带 LA57 的动态页表重定位，以及可选 Nt 签名的 SYSCALL 指令。它也把 KTHREAD 和 KPROCESS 替换成 ETHREAD 和 EPROCESS。cmake 接受 IDA_SDK_DIR 和 HEXRAYS_SDK_DIR。Windows 构建使用 Visual Studio 2022。NtRays64.dll 放到插件目录。需要 IDA 7.6 或更高版本。",
+    "requirements": [
+      "IDA 7.6 or newer, the IDA SDK, and the Hex-Rays SDK. Pass those directories as IDA_SDK_DIR and HEXRAYS_SDK_DIR.",
+      "License: BSD-3-Clause."
+    ],
+    "evidence_url": "https://github.com/can1357/NtRays/blob/254eea61a82406a2a2e5fe610ae3780465b30fe4/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
