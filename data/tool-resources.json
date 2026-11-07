@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "split2-recomp-case",
+    "name": "split2-recomp",
+    "url": "https://github.com/phobos665/split2-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "split2-recomp rebuilds TimeSplitters 2 for the original Xbox as a native program for Windows, macOS, and Linux, including SteamOS and Steam Deck. The build is made on the player's computer from their own copy.",
+    "description_zh": "split2-recomp 把初代 Xbox 的《时空分裂者 2》重建为 Windows、macOS 和 Linux（包括 SteamOS 和 Steam Deck）上的原生程序。构建在玩家自己的电脑上，使用玩家自己的副本完成。",
+    "requirements": [
+      "A PAL or USA copy, as a .iso, a .xiso, or a folder of the disc files. Other releases are refused.",
+      "64-bit Windows 10 or 11, a Mac with Apple silicon on macOS 13 or later, or x86-64 Linux with Vulkan drivers. About 450 MB of space, plus room for the game files.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/phobos665/split2-recomp/blob/7a3345f3f038bf17ff268a35ed0f77148d49b891/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

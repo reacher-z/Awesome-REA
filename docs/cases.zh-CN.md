@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -136,7 +136,7 @@
 - [**《风之杖 HD》反编译：与重编译的 Wii U 版逐函数比对验证**](https://github.com/ZeldaWWHDDecomp/wwhd) - 将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### 静态重编译 (48)
+### 静态重编译 (49)
 
 - [**Banjo: Recompiled：基于 N64Recomp 的《Banjo-Kazooie》原生移植**](https://github.com/BanjoRecomp/BanjoRecomp) - 使用 N64Recomp 将美版 1.0 Nintendo 64《Banjo-Kazooie》静态重编译为基于 N64ModernRuntime 的原生移植版，由 RT64 渲染并加入模组支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/banjo-recompiled-case/)</sub>
 - [**C2C：《古惑狼 2》的混合重编译与手工反编译**](https://github.com/ughman/c2c) - 一个早期的 PlayStation《古惑狼 2》逆向工程项目：把引擎的 MIPS 机器码直接转换为一个体量巨大的 C 文件，并调用改造后的 PCSX-R 模拟器库处理硬件 I/O。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -175,6 +175,7 @@
 - [**Snap64 Recomp：Pokémon Snap 的静态重编译移植**](https://github.com/JackandBeans/Snap64Recomp) - 使用 N64Recomp 将 Pokémon Snap 美版 Nintendo 64 发行版静态重编译为原生 Windows、Linux、Steam Deck 和 macOS 移植，由 RT64 负责渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/snap64-recomp-case/)</sub>
 - [**SpeedBreaker：对 Xbox 360 版《极品飞车：最高通缉》的静态重编译**](https://github.com/SpeedBreakerProject/speedbreaker) - 使用打过补丁的 XenonRecomp 将 Xbox 360 版《极品飞车：最高通缉》（2005）的可执行文件转换为原生 C++，并在项目自建的运行时上执行，由运行时代替主机的内核、Xenos GPU、XMA 音频和控制器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/speedbreaker-nfs-most-wanted-case/)</sub>
 - [**Spider-Man 2 PS2 Recomp：《Spider-Man 2》静态重编译阶段成果**](https://github.com/saltyboosack-blip/Spider-Man-2-PS2-Recomp) - Spider-Man 2 PS2 Recomp 对美版 PS2 游戏 SLUS-20776 进行静态重编译，目标是在 PC 上原生运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/spider-man-2-ps2-recomp-case/)</sub>
+- [**split2-recomp**](https://github.com/phobos665/split2-recomp) - split2-recomp 把初代 Xbox 的《时空分裂者 2》重建为 Windows、macOS 和 Linux（包括 SteamOS 和 Steam Deck）上的原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/split2-recomp-case/)</sub>
 - [**ssbu-recomp：明确玩法边界的静态重编译**](https://github.com/Denkishi/ssbu-recomp) - 将 Super Smash Bros. Ultimate 13.0.4 的 AArch64 代码提前转换，并提供带 Vulkan/OpenGL 渲染的 Windows 运行时。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ssbu-recomp-case/)</sub>
 - [**Starfox 64: Recompiled：基于 N64Recomp 的静态重编译移植**](https://github.com/sonicdcer/Starfox64Recomp) - 使用 N64: Recompiled 将 Nintendo 64 版 Star Fox 64 美版 1.1（Rev A）静态重编译为面向 Windows、Linux 和 macOS 的原生移植，并以 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/starfox64-recompiled-case/)</sub>
 - [**SVR2011-Recomp：借助 ReXGlue 重编译 WWE SmackDown vs. Raw 2011**](https://github.com/shaneomac1337/SVR2011-Recomp) - 借助 ReXGlue 将 WWE SmackDown vs. Raw 2011 的 Xbox 360 可执行文件提前转换为 C++，并在源自 Xenia 的 Vulkan 运行时上构建为 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/svr2011-recomp-case/)</sub>

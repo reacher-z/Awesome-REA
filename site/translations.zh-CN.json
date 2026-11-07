@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "split2-recomp-case": {
+    "name": "split2-recomp",
+    "requirements": [
+      "需要 PAL 或美版副本，可以是 .iso、.xiso，或装有光盘文件的文件夹。其他版本会被拒绝。",
+      "需要 64 位 Windows 10 或 11、macOS 13 或更高版本的 Apple 芯片 Mac，或带 Vulkan 驱动的 x86-64 Linux。大约需要 450 MB 空间，外加游戏文件所占空间。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
