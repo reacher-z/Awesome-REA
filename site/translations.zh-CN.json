@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "wipeoutxl-recomp": {
+    "name": "Wipeout XL Recompiled：Wipeout XL 的 PSXRecomp 移植",
+    "requirements": [
+      "需要合法取得的美国版光盘镜像：Redump 风格的 CUE 和全部 12 条 BIN 音轨。其他地区和修订版不受支持。需要 Python 3.11 或更新版本。向导可以取得 CMake、Ninja 和 Clang。",
+      "README 写明 0.2.0 Windows 包已有用户测试过比赛和控制器，Linux 包有原生 CI，先前的发行版由项目所有者在 Steam Deck 上测试过，macOS 的游戏过程仍未验证。",
+      "GitHub 上该仓库的许可证元数据为空。"
+    ]
   }
 }
