@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sdlpal",
+    "name": "SDLPAL: an SDL reimplementation of Legend of Sword and Fairy",
+    "url": "https://github.com/sdlpal/sdlpal",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "SDL-based cross-platform reimplementation of the Chinese RPG Legend of Sword and Fairy, also called PAL. The README links a browser demo and says play needs a ZIP of the original game resource data. It credits Wei Mingzhi as the original author and the SDLPAL development team as the current maintainers.",
+    "description_zh": "基于 SDL 的跨平台重实现，对象是中文 RPG《仙剑奇侠传》（亦称 PAL）。README 提供浏览器演示，并写明游玩需要包含原始游戏资源的 ZIP。它将 Wei Mingzhi 记为原作者，将 SDLPAL 开发团队记为当前维护者。",
+    "evidence_url": "https://github.com/sdlpal/sdlpal/blob/d4bf69b64d335cd680555af9df90e7ec4f3006a3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "GNU GPL version 3. The README says contributions must be licensed under the GPL and that a web demo still needs the original game data."
+    ]
   }
 ]
