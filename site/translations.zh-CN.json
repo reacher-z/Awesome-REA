@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "open76": {
+    "name": "Open76",
+    "requirements": [
+      "在 Unity 中打开 Level.scene，把名为 Game 的对象的游戏路径设为《Interstate '76》的安装目录。",
+      "README 写明原始未压缩的 ZFS 和后来的压缩 ZFS 都可以解析。Nitro Pack 的任务文件仍是另一种格式。",
+      "许可证：GPL 第 3 版。"
+    ]
   }
 }

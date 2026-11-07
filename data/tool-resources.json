@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "open76",
+    "name": "Open76",
+    "url": "https://github.com/r1sc/Open76",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Open76 is a Unity reimplementation of Interstate '76. It parses and renders level contents, including cars, and can run the mission stack machines. Driving and camera modes work. The README says the car simulation, including the engine and gearbox, still needs work.",
+    "description_zh": "Open76 是用 Unity 重实现的《Interstate '76》。它可以解析并渲染关卡内容，包括车辆，并能运行任务栈机器。驾驶和摄像机模式可用。README 写明车辆模拟，包括引擎和变速箱，仍需要完善。",
+    "requirements": [
+      "Open Level.scene in Unity and set the Game object's game path to an Interstate '76 install directory.",
+      "The README says both the original uncompressed ZFS and the later compressed ZFS can be parsed. Nitro Pack mission files are still a different format.",
+      "License: GPL version 3."
+    ],
+    "evidence_url": "https://github.com/r1sc/Open76/blob/e39db6efbd84919b0b73a185b94c5286b3ef009d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
