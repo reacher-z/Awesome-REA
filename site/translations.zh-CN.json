@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "nes-contra-us-case": {
+    "name": "魂斗罗（美版）反汇编",
+    "requirements": [
+      "把 NES 美版《Contra》ROM 放在 baserom.nes。其 MD5 为 7BDAD8B4A7A56A634C9649D20BD3011B。构建会从该文件提取图像和音频。",
+      "构建需要 PATH 中有 cc65 套件。",
+      "Windows 使用 build.ps1；没有 PowerShell 时使用 build.bat。Linux 和 macOS 使用 build.sh。",
+      "审阅的 README 没有写许可证，审阅的提交也没有 LICENSE 文件。"
+    ]
   }
 }
