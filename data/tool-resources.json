@@ -36543,6 +36543,7 @@
     "description_zh": "对《恶魔城：月下夜想曲》的 Xbox Live Arcade 版进行静态重编译：使用 ReXGlue SDK 的分支在构建时将其 PowerPC default.xex 转换为原生 x86-64 代码，并以宿主运行时封装，在 Windows 和 Linux 上运行。项目加入了叠加层、支持素材替换与原生插件的模组系统、游戏更新版本构建、以解释方式执行补丁函数的随机器支持，以及仍在开发中的原生渲染器。它与重编译 PlayStation 版的 SymphonyRecomp 是不同的项目。",
     "evidence_url": "https://github.com/birabittoh/NocturneRecomp/blob/5390d5ec91d4b0d0c87a6db35ea351343d04cd91/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at the 2026-08-27 head, released as v1.4.5 the same day; the repository was created on 2026-06-06. Codegen driven by nocturnerecomp_manifest.toml writes the translated game code into an ignored generated/ tree. Releases ship the SDK’s Xenos GPU plug-in, and docs/native-rendering.md reports a separate native renderer drawing the KONAMI splash, title screen and main menu, checked in interactive runs and RenderDoc captures.",
