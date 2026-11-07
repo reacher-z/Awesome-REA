@@ -111,12 +111,14 @@ class WaitTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'failed deployment'):
             self.wait(FakeGitHub(checks=['failure']), [old])
 
-    def test_a_deployment_that_does_not_reproduce_this_build_or_never_lands_fails(self):
+    def test_a_deployment_that_does_not_reproduce_this_build_fails(self):
         other = b'{"files": {"other": 1}}\n'
         with self.assertRaisesRegex(ValueError, 'reproducible'):
             self.wait(FakeGitHub(checks=['success']), [other])
-        with self.assertRaisesRegex(ValueError, 'did not go live'):
-            self.wait(FakeGitHub(checks=['pending']), [other], wait_seconds=120)
+
+    def test_a_deployment_still_pending_after_the_wait_is_late(self):
+        other = b'{"files": {"other": 1}}\n'
+        self.assertEqual(self.wait(FakeGitHub(checks=['pending']), [other], wait_seconds=120), 'late')
         with self.assertRaises(ValueError):
             automation.wait_for_deployment('main', self.dist, github=FakeGitHub())
 
