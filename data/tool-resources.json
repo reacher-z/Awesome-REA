@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bngb",
+    "name": "bnGB",
+    "url": "https://github.com/icecr4ck/bnGB",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "bnGB is a Binary Ninja plugin that loads Game Boy ROMs and disassembles Sharp LR35902 bytecode. The reviewed README maps the ROM header from 0x134 through 0x14f, including the title, cartridge type, ROM size, and checksum. It was tested on Binary Ninja release 1.2.1921. Installation is a git clone into the Binary Ninja plugins directory.",
+    "description_zh": "bnGB 是一个 Binary Ninja 插件，用来加载 Game Boy ROM 并反汇编 Sharp LR35902 字节码。审阅的 README 标出了 0x134 到 0x14f 的 ROM 头，包括标题、卡带类型、ROM 大小和校验和。它在 Binary Ninja 1.2.1921 发行版上测试过。安装方式是把仓库克隆到 Binary Ninja 的插件目录。",
+    "requirements": [
+      "Binary Ninja. The reviewed test was release 1.2.1921.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/icecr4ck/bnGB/blob/f098d7906dc72088cb555afded2c8c87cfd13b65/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
