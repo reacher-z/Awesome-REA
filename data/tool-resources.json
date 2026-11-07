@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "lba-engine-architecture",
+    "name": "Little Big Adventure engine architecture",
+    "url": "https://github.com/LBALab/lba-engine-architecture",
+    "category": "learning",
+    "kind": "learning-resource",
+    "relationship": "learning",
+    "targets": [
+      "game"
+    ],
+    "description_en": "This is documentation of how Adeline Software International built Little Big Adventure, Little Big Adventure 2, and Time Commando. It points at the community engine sources and is published as a Jekyll site.",
+    "description_zh": "这是关于 Adeline Software International 如何实现《小小大冒险》《小小大冒险 2》和《时空游侠》的文档。它指向社区的引擎源码，并以 Jekyll 站点发布。",
+    "requirements": [
+      "Jekyll and Bundler. The documented preview commands are bundle install and bundle exec jekyll serve --watch.",
+      "License: MIT for this documentation. The README says the game source released by the rights holder is GPL, and that the game assets are not covered."
+    ],
+    "evidence_url": "https://github.com/LBALab/lba-engine-architecture/blob/5fb0b3274cc787422608b00b8e4730e9549b6866/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
