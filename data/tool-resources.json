@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "retip",
+    "name": "ReTiP",
+    "url": "https://github.com/SolarCookies/TiP-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "ReTiP recompiles Viva Piñata: Trouble in Paradise and adds a mod manager and quality-of-life options. After 1.13.0 it uses a native renderer. The reviewed page says the rexglue fork and that native renderer are not uploaded, and that the project can still be built on rexglue and played through the Xenia renderer. The installer asks for an ISO of the retail disc. F5 opens the mod manager. Windows uses DirectX 12, Linux uses Vulkan, and macOS uses MkVulkan. The minimum CPU named is an Intel Core i5-4460 or an AMD Ryzen 3 1200, with 6 GB of RAM and a GeForce GTX 1050 Ti or better.",
+    "description_zh": "ReTiP 重编译《Viva Piñata: Trouble in Paradise》，并加入模组管理器和便利选项。1.13.0 之后使用原生渲染器。审阅页面写明 rexglue 分支和该原生渲染器没有上传，项目仍可在 rexglue 上构建，并通过 Xenia 渲染器游玩。安装器要求零售光盘的 ISO。F5 打开模组管理器。Windows 使用 DirectX 12，Linux 使用 Vulkan，macOS 使用 MkVulkan。写明的最低 CPU 是 Intel Core i5-4460 或 AMD Ryzen 3 1200，内存 6 GB，显卡为 GeForce GTX 1050 Ti 或更好。",
+    "requirements": [
+      "A retail disc ISO. About 15 GB free. Windows, Linux, or macOS, with the CPU, RAM, and GPU named above.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/SolarCookies/TiP-Recomp/blob/be5e91c8a83da21d976902962c61688c849cf29d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
