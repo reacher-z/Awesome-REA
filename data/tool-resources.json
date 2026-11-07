@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "cfr",
+    "name": "CFR",
+    "url": "https://github.com/leibnitz27/cfr",
+    "category": "jvm",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "CFR decompiles Java class files and jars, including Java 9, 12, and 14 features, and is written in Java 6. The main class is org.benf.cfr.reader.Main. A jar path plus --outputdir writes the decompiled files. mvn compile builds it. Since 0.145, binaries are published with GitHub release tags and on Maven Central as org.benf:cfr.",
+    "description_zh": "CFR 反编译 Java 类文件和 jar，包括 Java 9、12 和 14 的特性，自身用 Java 6 编写。主类是 org.benf.cfr.reader.Main。给出 jar 路径并加上 --outputdir 会写出反编译文件。mvn compile 进行构建。从 0.145 起，二进制随 GitHub 发行标签发布，也在 Maven Central 上以 org.benf:cfr 发布。",
+    "requirements": [
+      "Java, and Maven to build. The README points JAVA_HOME at JDK 8, 9, 10, or 11 for the Java 6 source and target settings.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/leibnitz27/cfr/blob/c4145259dfcd8ad3e99004e4d9ecb0aed55dcc5a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
