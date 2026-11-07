@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "kuizuo-js-deobfuscator": {
+    "name": "JS Deobfuscator（kuizuo）Babel AST 反混淆工具",
+    "requirements": [
+      "审阅时 GitHub 最新版本为 v0.4.2，发布于 2026-08-11，未附带文件；所审阅的 main 提交仅比它多一个提交，用于添加 Vercel 部署配置。README 的用法是从克隆的仓库运行：执行 pnpm install（工作区固定使用 pnpm 11.21.0），再用 pnpm exec deob 处理文件或标准输入，或用 pnpm tmp 处理 tmp/input.js。在线演练场位于 js-deobfuscator.vercel.app；本次仅审阅了仓库。",
+      "解密函数会被实际执行。在 Node 中，提取出的字符串数组、数组旋转函数和解密函数代码在原生模块 isolated-vm 中运行，超时为 10 秒；但该调用失败时，代码会退回到宿主环境的全局 eval 执行；在线演练场则在 Web Worker 中调用同一函数。处理不可信脚本时应使用隔离环境。高度定制的样本需要分析者预先准备 setupCode 和解密函数名，pdd 与 lamz 示例即是如此。",
+      "example/ 目录收录了 README 所称的真实混淆样本，每个样本包含混淆后的 input.js、本工具还原出的 output.js，其中两个样本另有 setupCode.js；其中若干目录以中国网站命名，例如 pdd、maoyan 和 wangyi，仓库既未说明其来源，也未说明再分发条款。根目录 LICENSE 为 MIT，而 packages/deob/package.json 未声明许可证。文档有英文和中文版本。本次未对任何脚本进行反混淆。"
+    ]
   }
 }
