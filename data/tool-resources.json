@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ghidrasql",
+    "name": "ghidrasql",
+    "url": "https://github.com/0xeb/ghidrasql",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "ghidrasql is a SQL interface for Ghidra program databases. The README says it can query functions, cross-references, types, and decompilation output, and that virtual-table rows last only for the statement that created them.",
+    "description_zh": "ghidrasql 是 Ghidra 程序数据库的 SQL 接口。README 写明它可以查询函数、交叉引用、类型和反编译输出，并且虚拟表的行只在创建它们的语句期间保留。",
+    "requirements": [
+      "A prebuilt archive contains the Linux CLI and the LibGhidraHost Ghidra extension built by CI.",
+      "The README says that archive does not require a compiler, CMake, or Gradle."
+    ],
+    "evidence_url": "https://github.com/0xeb/ghidrasql/blob/8c525e377402fdd441bcb05cb94b5ce27cc87465/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
