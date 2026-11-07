@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokestadiumgs-case",
+    "name": "Pokémon Stadium 2 decompilation",
+    "url": "https://github.com/pret/pokestadiumgs",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Pokémon Stadium 2 for the Nintendo 64, US and Japanese versions. It builds pokestadiumgs-us.z64 and pokestadiumgs-jp.z64.",
+    "description_zh": "这是任天堂 64《宝可梦竞技场 2》美版和日版的进行中反编译。它构建 pokestadiumgs-us.z64 和 pokestadiumgs-jp.z64。",
+    "requirements": [
+      "Place the ROM at baseroms/us/baserom.z64 or baseroms/jp/baserom.z64. The US MD5 is 1561c75d11cedf356a8ddb1a4a5f9d5d. The Japanese MD5 is a17aadcc962393d476edc321e59c504b.",
+      "On Debian or Ubuntu, install make, git, build-essential, binutils-mips-linux-gnu, and Python newer than 3.7, then pip install -r requirements.txt. VERSION=us make init extracts the ROM, and make rebuilds it.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/pret/pokestadiumgs/blob/c0e10f23d90cc4f335b654711f13e53c2c07323b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
