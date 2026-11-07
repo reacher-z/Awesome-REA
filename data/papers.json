@@ -12817,5 +12817,50 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-reforge-bench",
+    "title": "REFORGE: A Method for Benchmarking LLMs' Reverse Engineering Capabilities in Decompiled Binary Function Naming",
+    "authors": [
+      "Nicolas Koller",
+      "Andreas U. Schmidt"
+    ],
+    "year": 2026,
+    "publication_date": "2026-07-07",
+    "date_precision": "day",
+    "date_basis": "arXiv first-submission date; the reviewed file is v2",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2607.07738",
+    "arxiv_version_reviewed": "v2",
+    "first_arxiv_date": "2026-07-07",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2607.07738v2",
+    "pdf_url": "https://arxiv.org/pdf/2607.07738v2",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "REFORGE is a method for building a benchmark of whether language models can name functions in decompiled binary code. It tracks provenance from C source through compilation, debug information, alignment, and decompilation so that uncertain alignments stay visible.",
+    "description_zh": "REFORGE 用来构建基准，衡量语言模型能否为反编译出的二进制函数命名。它记录从 C 源码经编译、调试信息、对齐到反编译的来源，从而把不确定的对齐保留下来。",
+    "scope_limitations_en": "The reviewed file is arXiv:2607.07738v2. The benchmark pipeline was not run, and no code commit was pinned.",
+    "scope_limitations_zh": "审阅的文件是 arXiv:2607.07738v2。基准流程没有运行，也没有固定代码提交。",
+    "why_fits_en": "Function naming on decompiled binaries is a reverse-engineering readability task, and the paper's contribution is a benchmark for it.",
+    "why_fits_zh": "为反编译出的二进制函数命名是一项逆向工程可读性任务，本文的贡献是这项任务的基准。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2607.07738v2",
+      "https://arxiv.org/pdf/2607.07738v2",
+      "https://export.arxiv.org/api/query?id_list=2607.07738"
+    ],
+    "metadata_notes": "The first arXiv date is the v1 submission. The PDF that was fetched is v2.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "REFORGE：衡量语言模型在反编译二进制函数命名上的逆向能力",
+    "date_basis_zh": "日期取自 arXiv 首次提交日，审阅的文件是 v2",
+    "metadata_notes_zh": "首次 arXiv 日期是 v1 的提交日。获取的 PDF 是 v2。"
   }
 ]
