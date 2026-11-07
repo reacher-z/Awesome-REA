@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ff4-disasm",
+    "name": "Final Fantasy IV disassembly",
+    "url": "https://github.com/everything8215/ff4",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles Final Fantasy IV for the Super Famicom, released as Final Fantasy II on the SNES. It builds the Japanese 1.0 ROM, CRC32 21027C5D, the Japanese 1.1 ROM, CRC32 CAA15E97, the US 1.0 ROM, CRC32 65D0A825, and the US 1.1 ROM, CRC32 23084FCD.",
+    "description_zh": "该项目反汇编超级任天堂的《最终幻想 IV》，在欧美以《最终幻想 II》发行。它构建日版 1.0，CRC32 为 21027C5D；日版 1.1，CRC32 为 CAA15E97；美版 1.0，CRC32 为 65D0A825；美版 1.1，CRC32 为 23084FCD。",
+    "requirements": [
+      "GNU Make, cc65, and Node.js. Copy an unmodified ROM into vanilla/, run npm install and make rip, then make ff4-jp, ff4-jp1, or the matching US target.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/everything8215/ff4/blob/a360e2ea7ddc0dc5223bea1db74ebd1a9967280b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
