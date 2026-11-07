@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rhythm-heaven-fever-decomp",
+    "name": "Rhythm Heaven Fever decompilation",
+    "url": "https://github.com/conhlee/rhf",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Rhythm Heaven Fever. The supported version is SOME01, the USA release. The player extracts sys/main.dol to orig/SOME01, then runs python configure.py and ninja.",
+    "description_zh": "这是《Rhythm Heaven Fever》的进行中反编译。受支持的版本是美版 SOME01。玩家把 sys/main.dol 解压到 orig/SOME01，然后运行 python configure.py 和 ninja。",
+    "requirements": [
+      "Windows uses Python and ninja. macOS and Linux use ninja, and the build downloads wibo.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/conhlee/rhf/blob/02b140c9e7007e2a4ddd61c80ac3f2eb35251ed7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
