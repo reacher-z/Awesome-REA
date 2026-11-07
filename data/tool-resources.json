@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tecmo-super-bowl-nes-case",
+    "name": "Tecmo Super Bowl NES disassembly",
+    "url": "https://github.com/bruddog/Tecmo_Super_Bowl_NES_Disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of Tecmo Super Bowl for the NES into 6502 source that rebuilds the original game byte for byte. The README says every instruction and memory location is labeled and commented.",
+    "description_zh": "这是 NES《Tecmo Super Bowl》的反汇编，6502 源码可以逐字节重建原版游戏。README 写明每条指令和每个内存位置都已标注并加了注释。",
+    "requirements": [
+      "Copy asm6f_32.exe from the tools folder next to master_build.asm, and place the original ROM there as TSB.nes.",
+      "Build with asm6f_32.exe master_build.asm -L.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/bruddog/Tecmo_Super_Bowl_NES_Disassembly/blob/f3bae0e1913ba532a5ace158d86d905ecf787008/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
