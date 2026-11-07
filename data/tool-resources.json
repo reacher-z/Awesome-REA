@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "saints-row-360",
+    "name": "Saints Row recompilation",
+    "url": "https://github.com/sp00nznet/saintsrow",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Version 0.1.0 statically recompiles Saints Row for the Xbox 360, NTSC-U title ID 545107D1, to Windows with ReXGlue. It boots through the logos and menu, and New Game reaches Player Creation and then Stilwater on foot, with graphics, audio, and controller input. The first mission, combat, vehicles, and Load Game are untested. The installer is SaintsRow-Installer-windows-x64.exe. A checkout can use Setup.cmd and Play.cmd. The first build takes 30 to 60 minutes and needs about 20 GB free.",
+    "description_zh": "0.1.0 版用 ReXGlue 把 Xbox 360 美版《黑道圣徒》标题 ID 545107D1 静态重编译到 Windows。它能通过标志和菜单，新游戏能进入角色创建，然后步行进入斯蒂尔沃特，带图形、音频和手柄输入。第一项任务、战斗、载具和读取游戏还没测试。安装器是 SaintsRow-Installer-windows-x64.exe。检出的源码可以使用 Setup.cmd 和 Play.cmd。第一次构建需要 30 到 60 分钟，以及大约 20 GB 空闲空间。",
+    "requirements": [
+      "An NTSC-U ISO or an extracted folder that contains default.xex. Setup.cmd checks for Git, CMake, Ninja, LLVM or Clang, Python, and the Visual Studio C++ Build Tools.",
+      "License: MIT for the tools, build files, runtime glue, and documentation in this repository."
+    ],
+    "evidence_url": "https://github.com/sp00nznet/saintsrow/blob/a60804391afc50081f847160a78d4f727caaf183/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

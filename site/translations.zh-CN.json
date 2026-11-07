@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "saints-row-360": {
+    "name": "黑道圣徒重编译",
+    "requirements": [
+      "需要美版 ISO，或者包含 default.xex 的已提取文件夹。Setup.cmd 检查 Git、CMake、Ninja、LLVM 或 Clang、Python 和 Visual Studio C++ 生成工具。",
+      "许可证：本仓库里的工具、构建文件、运行时粘合代码和文档为 MIT。"
+    ]
   }
 }
