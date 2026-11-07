@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "libdecomp",
+    "name": "libdecomp",
+    "url": "https://github.com/dmaivel/libdecomp",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "libdecomp decompiles multi-architecture machine code into source. It supports x86, x86-64, and ARM64, with Zydis or Capstone as the disassembler backend, and can format output as C, Zig, or Python.",
+    "description_zh": "libdecomp 把多种架构的机器码反编译成源码。它支持 x86、x86-64 和 ARM64，反汇编后端可以用 Zydis 或 Capstone，输出可以格式化成 C、Zig 或 Python。",
+    "requirements": [
+      "CMake 3.25 or newer. Examples need Zydis 4.1.1 or newer, or Capstone 5.0.6 or newer. The library itself has no direct dependency beyond the C standard library.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/dmaivel/libdecomp/blob/c71150869f63e0441531abadf17b12fb5711f235/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
