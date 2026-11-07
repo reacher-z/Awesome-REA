@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dqix-decomp-case",
+    "name": "Dragon Quest IX decompilation",
+    "url": "https://github.com/DQIX/dqix-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This project is a 1:1 disassembly and decompilation of Dragon Quest IX: Sentinels of the Starry Skies for the Nintendo DS. The primary focus is the USA and Japanese versions. European builds are produced from the USA sources.",
+    "description_zh": "该项目是任天堂 DS《勇者斗恶龙 IX：星空的守护者》的 1:1 反汇编和反编译。主要关注美版和日版。欧版构建由美版源码生成。",
+    "requirements": [
+      "Python 3.11 or newer, GCC 9 or newer, and Ninja.",
+      "Place a clean ROM in extract as baserom_dqix_usa.nds, baserom_dqix_jpn.nds, or baserom_dqix_eur.nds. USA, Japanese, and European ROMs are supported.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/DQIX/dqix-decomp/blob/6fb9b8b0918f0a03d579dd0facad814139d1f317/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
