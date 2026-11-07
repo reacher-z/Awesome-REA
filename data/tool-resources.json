@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tomba2-recomp",
+    "name": "Tomba! 2 recompilation",
+    "url": "https://github.com/mstan/Tomba2Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Tomba! 2: The Evil Swine Return with psxrecomp. Windows and Linux previews accept the USA disc SCUS-94454 and the Italian PAL disc SCES-02686. Native code is prepared from all 22 original area files plus shared overlays before gameplay. Release builds include the MIT OpenBIOS from PCSX-Redux. Adaptive widescreen and 1080p internal rendering are on by default. SDL3 is the default host backend.",
+    "description_zh": "该项目用 psxrecomp 静态重编译《Tomba! 2: The Evil Swine Return》。Windows 和 Linux 预览接受美版光盘 SCUS-94454 和意大利 PAL 光盘 SCES-02686。游戏开始前，原生代码从全部 22 个原始区域文件和共享覆盖层准备好。发布构建包含来自 PCSX-Redux 的 MIT OpenBIOS。自适应宽屏和 1080p 内部渲染默认打开。SDL3 是默认宿主后端。",
+    "requirements": [
+      "A psxrecomp worktree. Regenerate C with psxrecomp-game.exe --config game.toml, then cmake -S . -B build-master -G Ninja and cmake --build build-master --target psx-runtime. SDL2 is an explicit fallback with -DPSX_SDL_BACKEND=SDL2.",
+      "License: PolyForm Noncommercial 1.0.0 for this project's code. OpenBIOS is MIT."
+    ],
+    "evidence_url": "https://github.com/mstan/Tomba2Recomp/blob/1b0d2fe4ffced5cf9aae90e726861f6fbc0da4bc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

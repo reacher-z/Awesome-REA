@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "tomba2-recomp": {
+    "name": "Tomba! 2 重编译",
+    "requirements": [
+      "需要一个 psxrecomp 工作树。用 psxrecomp-game.exe --config game.toml 重新生成 C，然后运行 cmake -S . -B build-master -G Ninja 和 cmake --build build-master --target psx-runtime。SDL2 是显式后备，加上 -DPSX_SDL_BACKEND=SDL2。",
+      "许可证：本项目代码为 PolyForm Noncommercial 1.0.0。OpenBIOS 为 MIT。"
+    ]
   }
 }
