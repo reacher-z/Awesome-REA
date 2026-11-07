@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sims2-xbox-recomp",
+    "name": "The Sims 2 Xbox recompilation",
+    "url": "https://github.com/abilliontokens/sims2-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles the original Xbox release of The Sims 2, USA, with Xbox XBE Recomp. The supported default.xbe is 3,399,680 bytes, SHA-1 16f9e41ce26c315a758f25d43ba1fa9d3809d1ad. The README says Windows reaches live gameplay on a lot, and the native Linux build reaches the title screen and a 3D neighbourhood. Windows uses Direct3D 12. Linux uses Vulkan.",
+    "description_zh": "该项目用 Xbox XBE Recomp 重编译初代 Xbox 美版《模拟人生 2》。受支持的 default.xbe 为 3,399,680 字节，SHA-1 为 16f9e41ce26c315a758f25d43ba1fa9d3809d1ad。README 写明 Windows 能进入地块上的实时游戏，原生 Linux 构建能进入标题画面和三维社区。Windows 使用 Direct3D 12。Linux 使用 Vulkan。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, with a Direct3D 12 GPU, or Linux x64 with Vulkan and glibc 2.43 or newer. Put the disc image or extracted default.xbe in assets/ beside the binary.",
+      "The reviewed README does not name a license for this project. It says the vendored SDK is MIT."
+    ],
+    "evidence_url": "https://github.com/abilliontokens/sims2-recomp/blob/8ce155df78ba5f5a2078acfeb2a5bbc8c2fc3689/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

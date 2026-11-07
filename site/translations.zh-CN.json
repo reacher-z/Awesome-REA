@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sims2-xbox-recomp": {
+    "name": "模拟人生 2 Xbox 重编译",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11 和支持 Direct3D 12 的显卡，或者带 Vulkan 和 glibc 2.43 及以上的 x64 Linux。把光盘镜像或解压出的 default.xbe 放到可执行文件旁边的 assets/。",
+      "审阅的 README 没有给这个项目写出许可证。它写明附带的 SDK 是 MIT。"
+    ]
   }
 }
