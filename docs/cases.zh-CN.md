@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -40,7 +40,7 @@
 [↑ 返回目录](#目录)
 
 <a id="game-matching-decompilation"></a>
-### 匹配反编译与反汇编 (69)
+### 匹配反编译与反汇编 (70)
 
 - [**3S Decomp：逐字比对的《街头霸王 III：3rd Strike》PS2 反编译重建**](https://github.com/crowded-street/3s-decomp) - 将 Street Fighter Anniversary Collection 中《街头霸王 III：3rd Strike》的 PlayStation 2 可执行文件反编译为 C 源码，用当年的 Metrowerks 与 EE GCC 编译器重新构建，再将重建出的可执行文件与使用者自备的原文件逐字比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)</sub>
@@ -100,6 +100,7 @@
 - [**《任天堂明星大乱斗X》：早期阶段的 Wii 一致性反编译**](https://github.com/doldecomp/brawl) - 《任天堂明星大乱斗X》（Super Smash Bros. Brawl）的进行中一致性反编译，目标为美版 Rev 2 Wii 版本（RSBE01\_02）：从使用者自备的光盘镜像中拆分 main.dol 和 126 个 REL 模块，并按仓库保存的 SHA-1 校验重建出的二进制。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/smash-bros-brawl-decomp-case/)</sub>
 - [**Super Smash Bros. Melee：可移位构建的 GameCube 一致性反编译**](https://github.com/doldecomp/melee) - Super Smash Bros. Melee 美版 1.02（GALE01）的一致性反编译：使用原版 Metrowerks 编译器从 C 代码重建 main.dol，并与零售版的 SHA-1 比对。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/melee-matching-decomp-case/)</sub>
 - [**Syphon Filter: The Omega Strain：可逐字节重建 PS2 可执行文件的一致性反编译**](https://github.com/zm2283145/syphon-filter-omega-strain-decomp) - 将 Syphon Filter: The Omega Strain 北美版 PlayStation 2 可执行文件的大部分代码重建为 C；其余函数保留为拆分出的汇编，整体构建可逐字节重现零售版 SCUS\_972.64。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/syphon-filter-omega-strain-decomp-case/)</sub>
+- [**TA: Byte Tactics**](https://github.com/HectorBailey/byte-tactics) - TA: Byte Tactics 是 Total Annihilation（Cavedog，1997）的匹配反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/byte-tactics/)</sub>
 - [**TH04：从源码重建东方幻想乡的四个 PC-98 程序**](https://github.com/N0zoM1z0/th04) - 为日版 PC-98 Touhou 4：东方幻想乡重建源码，并在 Wine 下用固定版本的 Borland 工具链重新构建全部四个 DOS 程序：MAIN.EXE、OP.EXE、MAINE.EXE 和 ZUN.COM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/th04-reconstruction-case/)</sub>
 - [**TH08：精确源码重建与单独验证的移植**](https://github.com/N0zoM1z0/th08) - 依据原二进制和原编译器重建日版 Touhou 8 的 1.00d 版本，再将恢复的代码适配到其他平台。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/th08-reconstruction-case/)</sub>
 - [**TH095：东方文花帖 1.02a 的函数级重建**](https://github.com/N0zoM1z0/th095) - 为日版 Touhou 9.5：东方文花帖 1.02a 原可执行文件重建源码；只有使用固定版本 Visual C++ .NET 2003 构建、并与单一经哈希核验的目标进行可复现字节比较后，才认定函数级一致。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/th095-reconstruction-case/)</sub>
