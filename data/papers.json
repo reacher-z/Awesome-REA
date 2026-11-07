@@ -12817,5 +12817,50 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-malware-tools-survey",
+    "title": "A Survey on Malware Detection and Analysis Tools",
+    "authors": [
+      "Sajedul Talukder",
+      "Zahidur Talukder"
+    ],
+    "year": 2020,
+    "publication_date": "2020-03-31",
+    "date_precision": "day",
+    "date_basis": "Crossref issued date",
+    "venue": "International Journal of Network Security & Its Applications",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.5121/ijnsa.2020.12203",
+    "url": "https://doi.org/10.5121/ijnsa.2020.12203",
+    "pdf_url": "https://aircconline.com/ijnsa/V12N2/12220ijnsa03.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This survey reviews tools for malware detection and analysis, starting from the amount of data that has to be inspected for malicious intent. It is organized as a survey of that tooling rather than as an evaluation of one product.",
+    "description_zh": "这篇综述梳理恶意软件检测与分析工具，出发点是需要检查是否含有恶意意图的数据量很大。它按工具综述来组织，而不是评测某一个产品。",
+    "scope_limitations_en": "The fetched PDF is the March 2020 IJNSA article. The Crossref issued day is recorded only at the precision Crossref provides. Tool behavior was not rechecked.",
+    "scope_limitations_zh": "获取的 PDF 是 2020 年 3 月的 IJNSA 文章。Crossref 的出版日只按 Crossref 实际给出的精度记录。没有重新检查工具行为。",
+    "why_fits_en": "Malware analysis tools are part of the workflow for inspecting hostile binaries.",
+    "why_fits_zh": "恶意软件分析工具属于检查恶意二进制的工作流程。",
+    "evidence_urls": [
+      "https://aircconline.com/ijnsa/V12N2/12220ijnsa03.pdf",
+      "https://api.crossref.org/works/10.5121/ijnsa.2020.12203",
+      "https://doi.org/10.5121/ijnsa.2020.12203"
+    ],
+    "metadata_notes": "The DOI resolver redirected to the Aircc PDF that was fetched.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "恶意软件检测与分析工具综述",
+    "date_basis_zh": "日期取自 Crossref 登记的出版日期",
+    "metadata_notes_zh": "DOI 解析跳转到已获取的 Aircc PDF。"
   }
 ]

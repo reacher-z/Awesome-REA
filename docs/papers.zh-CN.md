@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -142,6 +142,7 @@
 - [**无需控制流恢复的二进制重写**](https://dl.acm.org/doi/10.1145/3385412.3385972) - E9Patch 对 x86-64 二进制进行静态重写：插入跳转到跳板代码的指令，而不移动其他任何指令，从而保留原有跳转目标集合，无需控制流恢复、符号化或调试信息。 <sub>原题：*Binary Rewriting without Control Flow Recovery* · PLDI 2020 · 会议论文 · Gregory J. Duck 等 · [PDF](https://comp.nus.edu.sg/~gregory/papers/e9patch.pdf) · [代码](https://github.com/GJDuck/e9patch) · [完整条目](https://awesomerea.org/zh/papers/paper-e9patch/)</sub>
 - [**RetroWrite：为模糊测试与内存检测静态插桩商用现成二进制**](https://ieeexplore.ieee.org/document/9152762) - RetroWrite 通过生成可重汇编的汇编代码，对 64 位位置无关的 Linux 二进制进行静态改写，从而像在编译时一样插入插桩代码。 <sub>原题：*RetroWrite: Statically Instrumenting COTS Binaries for Fuzzing and Sanitization* · IEEE S&amp;P 2020 · 会议论文 · Sushant Dinesh 等 · [PDF](https://hexhive.epfl.ch/publications/files/20Oakland.pdf) · [代码](https://github.com/HexHive/retrowrite) · [完整条目](https://awesomerea.org/zh/papers/paper-retrowrite/)</sub>
 - [**BinRec：动态二进制提升与重编译**](https://dl.acm.org/doi/10.1145/3342195.3387550) - BinRec 依据动态执行轨迹而非静态反汇编，将可执行文件提升为 LLVM 中间表示，再将其降级为恢复出的二进制，从而可用编译器优化遍对其进行优化、加固或其他变换。 <sub>原题：*BinRec: Dynamic Binary Lifting and Recompilation* · EuroSys 2020 · 会议论文 · Anil Altinay 等 · [PDF](https://download.vusec.net/papers/binrec_eurosys20.pdf) · [代码](https://github.com/trailofbits/binrec-tob) · [完整条目](https://awesomerea.org/zh/papers/paper-binrec/)</sub>
+- [**恶意软件检测与分析工具综述**](https://doi.org/10.5121/ijnsa.2020.12203) - 这篇综述梳理恶意软件检测与分析工具，出发点是需要检查是否含有恶意意图的数据量很大。 <sub>原题：*A Survey on Malware Detection and Analysis Tools* · International Journal of Network Security &amp; Its Applications 2020 · 期刊论文 · Sajedul Talukder 等 · [PDF](https://aircconline.com/ijnsa/V12N2/12220ijnsa03.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-malware-tools-survey/)</sub>
 - [**面向任意二进制文件和目标代码序列的实用化 CPU 架构与字节序自动检测**](https://doi.org/10.1145/3374664.3375742) - 论文构建开放数据集和工具，用于识别二进制文件及目标代码的 CPU 架构和字节序，并使用可执行文件的代码段评估分类器，报告准确率超过 98%。 <sub>原题：*Towards usable automated detection of CPU architecture and endianness for arbitrary binary files and object code sequences* · Proceedings of the Tenth ACM Conference on Data and Application Security and Privacy 2020 · 会议论文 · Sami Kairajärvi 等 · [PDF](https://arxiv.org/pdf/1908.05459) · [完整条目](https://awesomerea.org/zh/papers/paper-isadetect/)</sub>
 - [**Egalito：与布局无关的二进制重编译**](https://dl.acm.org/doi/10.1145/3373376.3378470) - Egalito 对去除符号的 x86-64 与 ARM64 二进制进行静态重编译，借助位置无关的可执行文件和库所携带的元数据，恢复完整的反汇编，使每一处代码与数据交叉引用都成为显式链接。 <sub>原题：*Egalito: Layout-Agnostic Binary Recompilation* · ASPLOS 2020 · 会议论文 · David Williams-King 等 · [PDF](https://www.cs.columbia.edu/~junfeng/papers/egalito-asplos20.pdf) · [代码](https://github.com/columbia/egalito) · [完整条目](https://awesomerea.org/zh/papers/paper-egalito/)</sub>
 - [**DIRE：基于神经网络的反编译标识符命名方法**](https://doi.org/10.1109/ASE.2019.00064) - 结合反编译输出中的词法与结构信息预测有意义的变量名，并使用编译 C 项目构建训练和评估语料。 <sub>原题：*DIRE: A Neural Approach to Decompiled Identifier Naming* · ASE 2019 · 会议论文 · Jeremy Lacomis 等 · [PDF](https://arxiv.org/pdf/1909.09029) · [代码](https://github.com/pcyin/dire) · [完整条目](https://awesomerea.org/zh/papers/paper-dire/)</sub>
