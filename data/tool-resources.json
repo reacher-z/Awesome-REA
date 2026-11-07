@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rb2-recomp-case",
+    "name": "RB2",
+    "url": "https://github.com/WistfulHopes/RB2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "RB2 is a recompilation of Dragon Ball: Raging Blast 2 made with the ReXGlue SDK.",
+    "description_zh": "RB2 是用 ReXGlue SDK 做的 Dragon Ball: Raging Blast 2 重编译。",
+    "requirements": [
+      "Set REXSDK, extract the game files to assets, configure with CMake, build the re2_codegen target, then build re2. Launch with the assets folder as the first argument.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/WistfulHopes/RB2/blob/81b0922e2f6f11d43ddac36d51f99ffbd31fa5d0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
