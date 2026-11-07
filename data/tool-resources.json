@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ghidra-wasm-plugin",
+    "name": "Ghidra Wasm Plugin",
+    "url": "https://github.com/garrettgu10/ghidra-wasm-plugin",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Ghidra Wasm Plugin loads WebAssembly modules into Ghidra for disassembly and decompilation. The README says it can handle simple modules and is no longer actively maintained, and it points to nneonneo/ghidra-wasm-plugin as a later version.",
+    "description_zh": "Ghidra Wasm Plugin 把 WebAssembly 模块载入 Ghidra，用于反汇编和反编译。README 写明它可以处理简单模块，并且已经不再积极维护，并指向 nneonneo/ghidra-wasm-plugin 作为更新的版本。",
+    "requirements": [
+      "The loader borrows functionality from andr3colonel/ghidra_wasm.",
+      "The README says br_table disassembly and decompilation are still open.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/garrettgu10/ghidra-wasm-plugin/blob/4b085b35c34c70645189d6beb8adf4b70b3555a1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
