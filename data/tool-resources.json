@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "stunts-hd",
+    "name": "Stunts HD",
+    "url": "https://github.com/mr-finster/stunts-hd",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Stunts HD recompiles Stunts 1.1, the 1990 DOS game also released as 4D Sports Driving. The player's GAME.EXE is translated to JavaScript and drawn in HD at the display resolution, with widescreen and the original physics. It runs in Chrome, Edge, or Firefox, and as a desktop app on macOS, Windows, and Linux.",
+    "description_zh": "Stunts HD 重编译 1990 年 DOS 游戏 Stunts 1.1，也以 4D Sports Driving 发行。玩家的 GAME.EXE 被翻译成 JavaScript，并以显示器分辨率的高清画面和宽屏绘制，物理保持原版。它可以在 Chrome、Edge 或 Firefox 里运行，也可以作为 macOS、Windows 和 Linux 的桌面程序。",
+    "requirements": [
+      "A copy of Stunts 1.1. Desktop packages are Stunts-HD-mac-universal.zip, Stunts-HD-win-x64.zip, and Stunts-HD-linux-x86_64.AppImage. The first start fetches the translation map once.",
+      "License: MIT for this project's own code."
+    ],
+    "evidence_url": "https://github.com/mr-finster/stunts-hd/blob/e6995b5fea21b8fa6c3917f7d68357652ca9147a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
