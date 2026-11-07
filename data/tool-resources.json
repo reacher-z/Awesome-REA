@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "terraria-ogc-case",
+    "name": "TerrariaOGC",
+    "url": "https://github.com/PPrism/TerrariaOGC",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "TerrariaOGC is a decompilation and PC port of the old-generation console Terraria releases for Xbox 360 and PlayStation 3. The auxiliary code uses FNA, MonoGame, and Lidgren.Network.",
+    "description_zh": "TerrariaOGC 是 Xbox 360 和 PlayStation 3 上旧世代《Terraria》的反编译和 PC 移植。辅助代码使用 FNA、MonoGame 和 Lidgren.Network。",
+    "requirements": [
+      "The player supplies assets from an official old-generation console release. Windows build steps are in WINBUILD.md. Other platforms are not directly supported.",
+      "The README says versions 1.00 and 1.01 can be built. Versions 1.03 and 1.09 are listed as still to come.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/PPrism/TerrariaOGC/blob/d83bbf0b7cbf58dc228f8856697bb0eb5de7dc27/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

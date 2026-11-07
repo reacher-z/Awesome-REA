@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -113,7 +113,7 @@
 - [**wii-ipl：Wii Menu（System Menu 4.3）的反编译重建**](https://github.com/koopthekoopa/wii-ipl) - Wii Menu（即主机的 System Menu，IPL）的反编译重建，仍在进行中，针对 4.3 版的美、欧、日、韩四个版本。 <sub>案例 · 独立重建 · 也适用：固件 · [完整条目](https://awesomerea.org/zh/resources/wii-menu-ipl-decomp-case/)</sub>
 
 <a id="game-decompilation"></a>
-### 非匹配反编译 (19)
+### 非匹配反编译 (20)
 
 - [**c1：PlayStation 版《古惑狼》的 C 语言移植**](https://github.com/wurlyfox/c1) - 将 PlayStation 版《古惑狼》的原始游戏代码逐函数移植为 C 语言；其编码规范要求为函数标注原实现的地址。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crash-bandicoot-c1-port-case/)</sub>
 - [**Firefighter：将反编译的 DOS 游戏移植为 Rust**](https://gitlab.com/esr/firefighter) - Eric S. Raymond 将 Eben Sprinsock 于 1985 年发布的 DOS 共享软件游戏 Firefighter 移植为终端游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/firefighter-rust-port-case/)</sub>
@@ -130,6 +130,7 @@
 - [**RSDKv5 Decompilation：重建 Retro Engine v5 与 v5U**](https://github.com/RSDKModding/RSDKv5-Decompilation) - 重建 Retro Engine（RSDK）v5 及 v5 Ultimate 运行时，即运行《索尼克狂欢》游戏代码的引擎，可构建 Windows、Linux、Switch 和 Android 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rsdkv5-engine-decomp-case/)</sub>
 - [**Sonic Mania：面向 RSDKv5 引擎的游戏代码反编译重建**](https://github.com/RSDKModding/Sonic-Mania-Decompilation) - 以 C 重建《索尼克狂欢》的游戏代码，并与另行反编译的 RSDKv5 或 RSDKv5U 引擎一起构建，支持 Windows、Linux、Switch 和 Android。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sonic-mania-decomp-case/)</sub>
 - [**SpaceCadetPinball：将反编译游戏逻辑适配到 SDL2**](https://github.com/k4zmu2a/SpaceCadetPinball) - 将逆向分析后的 Space Cadet 弹球游戏转为可编译的 C++，面向桌面平台。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/space-cadet-pinball-case/)</sub>
+- [**TerrariaOGC**](https://github.com/PPrism/TerrariaOGC) - TerrariaOGC 是 Xbox 360 和 PlayStation 3 上旧世代《Terraria》的反编译和 PC 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/terraria-ogc-case/)</sub>
 - [**TicTacToe-AI：REA 分叉对单个游戏方法的有限重建**](https://github.com/heaven-hm/re-agent/tree/develop/benchmarks/tictactoe) - 作者的 REA 分叉（发帖时名为 rea-engine，后更名为 RE-Agent）反编译 GPL 许可的 TicTacToe-AI 游戏所发布的 .NET 可执行文件，重新编译恢复出的 C# 与资源，并依据原始 IL 修复一处反编译错误。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/rea-engine-tictactoe-case/)</sub>
 - [**UltraSunnyMoon：以 REA 主导的部分《宝可梦 究极之日》重建**](https://github.com/tylergraydev/UltraSunnyMoon) - 作者使用固定版本的 REA 与 Ghidra，分析使用者自备的《宝可梦 究极之日》基础版可执行文件，由拆分出的对象逐字节重建该文件，并替换进两个编译后的小型 C 运行时例程。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/ultrasunnymoon-rea-case/)</sub>
 - [**vf2-decomp：经差分验证的 Virtua Fighter 2 代码恢复**](https://github.com/celsowm/vf2-decomp) - 将 Virtua Fighter 2 Version 2.1 的 Sega Model 2A i960 程序恢复为可移植、非一致性的 C17 代码，每条恢复路径须在受控边界上与参考 i960 执行器一致才被接受。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vf2-decomp-differential-recovery-case/)</sub>
