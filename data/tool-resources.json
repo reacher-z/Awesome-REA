@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nether-earth-disasm",
+    "name": "Nether Earth disassembly",
+    "url": "https://github.com/santiontanon/netherearth-disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This disassembles Nether Earth, the 1986 ZX Spectrum game. The annotated source is netherearth-annotated.asm, and the graphic data is in netherearth-annotated-data.asm. build.sh assembles it with the included mdl.jar.",
+    "description_zh": "该项目反汇编 1986 年 ZX Spectrum 游戏《Nether Earth》。带注释的源码是 netherearth-annotated.asm，图像数据在 netherearth-annotated-data.asm。build.sh 用附带的 mdl.jar 汇编。",
+    "requirements": [
+      "Run build.sh. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/santiontanon/netherearth-disassembly/blob/762e33e4bb1a5d2f608c6436d489a8376ef11cd5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
