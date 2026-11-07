@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sma2-recomp",
+    "name": "Super Mario Advance 2 recompilation",
+    "url": "https://github.com/mstan/SuperMarioAdvance2Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Super Mario Advance 2: Super Mario World for Windows. Release v0.0.3 runs SuperMarioWorldRecomp.exe. The launcher asks for the USA/Australia ROM and a retail GBA BIOS. The game boots through the opening and attract sequence. Adaptive Widescreen is optional and can expand supported scenes up to 9:5. Shift with F1 through F9 saves a state, and F1 through F9 loads one.",
+    "description_zh": "该项目把《超级马里奥前进 2：超级马里奥世界》静态重编译到 Windows。v0.0.3 发布运行 SuperMarioWorldRecomp.exe。启动器要求美澳版 ROM 和一份零售 GBA BIOS。游戏能通过开场和吸引模式。自适应宽屏是可选的，支持的场景最多可以扩到 9:5。Shift 加 F1 到 F9 保存即时存档，F1 到 F9 读取。",
+    "requirements": [
+      "A Windows zip from Releases. A source build needs CMake, Ninja, MSYS2 MinGW64, and SDL2, then cmake --build gbarecomp/build --target gba_recompile.",
+      "License: PolyForm Noncommercial 1.0.0 for this project's code. Third-party components keep their own licenses."
+    ],
+    "evidence_url": "https://github.com/mstan/SuperMarioAdvance2Recomp/blob/ca69698cdb441d1f83787326cf66789afb3bc455/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
