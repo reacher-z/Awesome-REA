@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "jadxecute": {
+    "name": "JADXecute",
+    "requirements": [
+      "审阅的发布版是内置该插件的 JADX 1.4.7 构建。",
+      "许可证：Apache License 2.0。"
+    ]
   }
 }
