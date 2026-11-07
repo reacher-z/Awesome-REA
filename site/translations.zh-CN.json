@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "halo-combat-evolved-decomp": {
+    "name": "光环战斗进化反编译",
+    "requirements": [
+      "需要上面写明的 PAL 调试版 cachebeta.exe、2001 年 8 月的 Xbox SDK，以及 Ninja。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

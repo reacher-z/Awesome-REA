@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "halo-combat-evolved-decomp",
+    "name": "Halo: Combat Evolved decompilation",
+    "url": "https://github.com/punpckhdq/halo",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Halo: Combat Evolved build 2342. The executable is cachebeta.exe, SHA-256 4cc87b45f721270392a96f1674ed2b5cd4a7bb4355faeab4531d1cf1884d9520, from the PAL debug build. The August 2001 Xbox SDK supplies xbox/bin and xbox/include. configure.py prepares the build. ninja build compiles it and prints progress. On Windows, projects/cachebeta.sln opens in Visual Studio 2022. The reviewed page says later Halo debug symbols are used to map types, and that the CEA beta is not identical to the Xbox game.",
+    "description_zh": "这是《光环：战斗进化》版本 2342 的进行中反编译。可执行文件是 cachebeta.exe，SHA-256 为 4cc87b45f721270392a96f1674ed2b5cd4a7bb4355faeab4531d1cf1884d9520，来自 PAL 调试构建。2001 年 8 月的 Xbox SDK 提供 xbox/bin 和 xbox/include。configure.py 准备构建。ninja build 编译并打印进度。在 Windows 上，projects/cachebeta.sln 用 Visual Studio 2022 打开。审阅页面写明后来的光环调试符号被用来映射类型，而且 CEA 测试版与 Xbox 原版并不完全相同。",
+    "requirements": [
+      "cachebeta.exe from the PAL debug build named above, the August 2001 Xbox SDK, and Ninja.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/punpckhdq/halo/blob/c2d6835630276c9596d466eb9eeee6522445d775/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
