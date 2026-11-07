@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "cm0102-bosman-case",
+    "name": "CM 01/02: Bosman Edition",
+    "url": "https://github.com/maxevans60/cm0102-bosman-edition",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "CM 01/02: Bosman Edition translates Championship Manager 01/02 version 3.9.68 function by function from the original Windows program into C, and compiles it for Mac, Windows, and Linux. The match engine, transfers, and game decisions are that 2002 code.",
+    "description_zh": "CM 01/02: Bosman Edition 把《Championship Manager 01/02》3.9.68 从原始 Windows 程序逐函数翻译成 C，并编译到 Mac、Windows 和 Linux。比赛引擎、转会和各项游戏决定都是 2002 年的代码。",
+    "requirements": [
+      "Releases run on macOS, Windows, Linux, and Steam Deck. The 2001/02 data tile includes official data versions 3.9.60, 3.9.65, and 3.9.68.",
+      "Code from release 0.6.0 is GPL-3.0. Code through 0.5.0 is CC0 1.0. The function map and data map are CC BY 4.0."
+    ],
+    "evidence_url": "https://github.com/maxevans60/cm0102-bosman-edition/blob/eb2139040b637c6057e3995914fb72413071af1a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
