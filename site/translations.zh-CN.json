@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ballanced": {
+    "name": "Ballanced",
+    "requirements": [
+      "玩家提供《平衡球》的副本，并把发布包解压到游戏根目录。Windows 运行 Bin/Player.exe。Linux 和 macOS 运行 Bin/Player。",
+      "开发需要 CMake 3.25 或更新版本，以及 SDL3。Windows 使用 Visual Studio 2022。Linux 使用 GCC 或 Clang 加 Ninja。macOS 使用 Apple Clang 加 Ninja。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
