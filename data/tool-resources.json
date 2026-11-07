@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "acfa-port-case",
+    "name": "ARMORED CORE for Answer PC port",
+    "url": "https://github.com/SulphurS16/ACFA-Port",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a native Windows port of ARMORED CORE for Answer for the PlayStation 3, USA release BLUS30187. A recompiler turns the game's PowerPC code into C++, about 71,000 functions, and the PC compiler builds a 64-bit Windows program. SPU programs are translated ahead of time, and the RSX command stream becomes Direct3D 11.",
+    "description_zh": "这是《ARMORED CORE for Answer》PlayStation 3 美版 BLUS30187 的 Windows 原生移植。重编译器把游戏的 PowerPC 代码转成 C++，大约 71,000 个函数，再由 PC 编译器构建 64 位 Windows 程序。SPU 程序被提前翻译，RSX 命令流变成 Direct3D 11。",
+    "requirements": [
+      "The player's own US disc, the folder that contains PS3_GAME. Setup uses RPCS3 once and the PS3 system software 4.93 file PS3UPDAT.PUP. The optional update is 01.35.",
+      "Download the release zip, extract it, and run ACFA-Launcher.exe. Set up downloads a compiler toolchain of about 250 MB and needs about 4 GB of free disk space.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/SulphurS16/ACFA-Port/blob/8e174e0b8cc4e8f8c9916eba763dda7dc3b9d392/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
