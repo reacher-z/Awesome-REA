@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "digimon-world-2-pc": {
+    "name": "数码宝贝世界 2 PC 移植",
+    "requirements": [
+      "下载 DW2-PC-windows-x64.zip 或 DW2-PC-linux-x64.zip。移植程序用玩家的光盘镜像构建资源包，并拒绝不匹配的光盘。",
+      "许可证：CC0 1.0。"
+    ]
   }
 }

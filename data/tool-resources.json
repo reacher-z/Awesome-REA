@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "digimon-world-2-pc",
+    "name": "Digimon World 2 PC port",
+    "url": "https://github.com/Wyrelade/DW2-PC",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This runs Digimon World 2 for the PlayStation natively on Windows and Linux, built from the game's decompiled C. The disc is the USA release SLUS-01193, checked file by file. Game logic stays at 30 fps. The picture can be drawn at the monitor's refresh rate, and the 3D view can widen to 16:9.",
+    "description_zh": "该项目把 PlayStation 版《数码宝贝世界 2》做成 Windows 和 Linux 上的原生程序，用游戏反编译出的 C 代码构建。光盘是美版 SLUS-01193，并逐个文件核对。游戏逻辑保持 30 帧。画面可以按显示器刷新率绘制，三维视野可以加宽到 16:9。",
+    "requirements": [
+      "Download DW2-PC-windows-x64.zip or DW2-PC-linux-x64.zip. The port builds a pack from the player's disc image and rejects a disc that does not match.",
+      "License: CC0 1.0."
+    ],
+    "evidence_url": "https://github.com/Wyrelade/DW2-PC/blob/1dbb32a0332a78d5e9afbe4d26c62d86cc5e3f76/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
