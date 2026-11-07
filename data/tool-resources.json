@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "wwe-2k14-recomp",
+    "name": "WWE 2K14 recompilation",
+    "url": "https://github.com/Jarrodfeng/wwe2k14-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles the Xbox 360 version of WWE 2K14 into a native Windows x64 program with ReXGlue SDK v0.10.0. The reviewed page says menus, full matches, the Royal Rumble, Hell in a Cell, the Elimination Chamber, and Create-a-Wrestler run. Output can be 720p, 1440p, or 4K, at 60 or 120 fps. The build reads default.xex from game_data\\extracted\\.",
+    "description_zh": "该项目用 ReXGlue SDK v0.10.0 把 Xbox 360 版《WWE 2K14》重编译成原生 Windows x64 程序。审阅页面写明菜单、整场比赛、皇家大战、地狱牢笼、铁笼室和自创选手可以运行。输出可以是 720p、1440p 或 4K，帧率 60 或 120。构建从 game_data\\extracted\\ 读取 default.xex。",
+    "requirements": [
+      "Windows 10 or 11, standalone LLVM or Clang, CMake 3.25 or newer, Ninja, Visual Studio 2022, and Python 3.12. Build the patched ReXGlue SDK with tools\\build_sdk.ps1, then run pwsh -File tools\\build.ps1.",
+      "License: BSD-3-Clause for this project's own code."
+    ],
+    "evidence_url": "https://github.com/Jarrodfeng/wwe2k14-recomp/blob/a607aa3c682d68d331f496adfc348e33729006b0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

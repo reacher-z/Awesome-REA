@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "wwe-2k14-recomp": {
+    "name": "WWE 2K14 重编译",
+    "requirements": [
+      "需要 Windows 10 或 11、独立的 LLVM 或 Clang、CMake 3.25 或更新版本、Ninja、Visual Studio 2022 和 Python 3.12。用 tools\\build_sdk.ps1 构建打过补丁的 ReXGlue SDK，然后运行 pwsh -File tools\\build.ps1。",
+      "许可证：本项目自己的代码为 BSD-3-Clause。"
+    ]
   }
 }
