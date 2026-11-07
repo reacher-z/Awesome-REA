@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fickling",
+    "name": "Fickling",
+    "url": "https://github.com/trailofbits/fickling",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Fickling decompiles and statically analyzes Python pickle serializations, including PyTorch files. python -m pip install fickling installs the library and the fickling command. Python 3.11 or newer is required. fickling --trace prints an execution trace, and Pickled.load builds an AST of a pickle. fickling[torch] adds the PyTorch modules. activate_safe_ml_environment hooks pickle and checks imports against an allowlist.",
+    "description_zh": "Fickling 反编译并静态分析 Python pickle 序列化，包括 PyTorch 文件。python -m pip install fickling 安装库和 fickling 命令。需要 Python 3.11 或更高版本。fickling --trace 打印执行轨迹，Pickled.load 为 pickle 建立 AST。fickling[torch] 加入 PyTorch 模块。activate_safe_ml_environment 挂钩 pickle，并按允许列表检查导入。",
+    "requirements": [
+      "Python 3.11 or newer. python -m pip install fickling.",
+      "License: GNU Lesser General Public License v3.0."
+    ],
+    "evidence_url": "https://github.com/trailofbits/fickling/blob/c098aeb96703f1644ae777d7b637d57c651b0e95/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
