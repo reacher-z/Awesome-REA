@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mario-bros-nes-disasm",
+    "name": "Mario Bros. NES disassembly",
+    "url": "https://github.com/RussianManSMWC/Mario-Bros.-Dis",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a byte-for-byte disassembly of Mario Bros. for the NES. It covers the NTSC World release, the PAL European release, and a GameCube version. It assembles with cc65. Graphics are ripped from a ROM with the Python script in misc/.",
+    "description_zh": "这是 NES 版《马里奥兄弟》的逐字节反汇编。它覆盖 NTSC 世界版、PAL 欧洲版和一个 GameCube 版本。它用 cc65 汇编。图像用 misc/ 里的 Python 脚本从 ROM 提取。",
+    "requirements": [
+      "cc65. The GameCube build uses LinkerConfiguration_GAMECUBE.cfg. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/RussianManSMWC/Mario-Bros.-Dis/blob/0b7ca4de3cac44fb30b579e50691a809f1129816/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
