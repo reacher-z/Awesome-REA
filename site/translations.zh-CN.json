@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "strace": {
+    "name": "STrace",
+    "requirements": [
+      "需要 Visual Studio 2022、匹配的 Windows SDK 和 Windows 驱动程序工具包。以管理员身份运行 install/install_as_admin.ps1。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
