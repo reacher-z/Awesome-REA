@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tube64",
+    "name": "Tube64",
+    "url": "https://github.com/rep-stosw/tube64",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "Tube64 is a 64-bit version of Tube, the 1994 DOS game from Bullfrog. The README points to the earlier 32-bit reconstruction at rep-stosw/tube-game-dos for the description. Windows and Linux builds are under Tube64/bin.",
+    "description_zh": "Tube64 是 Bullfrog 1994 年 DOS 游戏 Tube 的 64 位版本。README 把更早的 32 位重建指向 rep-stosw/tube-game-dos 作为说明。Windows 和 Linux 构建在 Tube64/bin。",
+    "requirements": [
+      "The reviewed README points at the Tube64/bin builds and at the earlier repository for the project description.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/rep-stosw/tube64/blob/65b428ff5f621c6e580f9d0e127e4b46e5af4a70/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
