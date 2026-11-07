@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "recv-dc-decomp",
+    "name": "Code Veronica Dreamcast decompilation",
+    "url": "https://github.com/fmil95/recv-dc-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Resident Evil: Code: Veronica for the Dreamcast, US version. The current target is the main executable, 1ST_READ.bin. It uses the Sonic Adventure 2 Dreamcast decompilation as a template.",
+    "description_zh": "这是 Dreamcast 美版《生化危机 代号：维罗妮卡》的匹配反编译。当前目标是主可执行文件 1ST_READ.bin。它以索尼克大冒险2的 Dreamcast 反编译为模板。",
+    "requirements": [
+      "pip install sh4dis. The splitter also needs PyYAML and Python. The build uses Katana r11 include files, Hitachi tools, and libraries. Place 1ST_READ.BIN in the rom folder and run make setup.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/fmil95/recv-dc-decomp/blob/7ee766b4f3a8eacb2f09577a88a565ae73f4adb9/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
