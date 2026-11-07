@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nes-contra-us-case",
+    "name": "Contra (US) disassembly",
+    "url": "https://github.com/vermiceli/nes-contra-us",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository is an annotated disassembly of the US NES ROM of Contra. Its build scripts reassemble the sources into a byte-for-byte match of the game, and the same repository can also build the Probotector ROM.",
+    "description_zh": "该仓库是 NES 美版《Contra》ROM 的带注释反汇编。构建脚本把源码重新汇编成与游戏逐字节一致的结果，同一仓库也可以构建 Probotector ROM。",
+    "requirements": [
+      "Place the US NES Contra ROM at baserom.nes. Its MD5 is 7BDAD8B4A7A56A634C9649D20BD3011B. The build extracts graphics and audio from that file.",
+      "Building requires the cc65 suite on PATH.",
+      "Windows uses build.ps1, or build.bat where PowerShell is unavailable. Linux and macOS use build.sh.",
+      "The reviewed README does not name a license, and the reviewed commit has no LICENSE file."
+    ],
+    "evidence_url": "https://github.com/vermiceli/nes-contra-us/blob/687d651c021fd7020f10d05b970ccb62663c94bd/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
