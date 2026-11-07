@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sh2-nx",
+    "name": "sh2-nx: Switch port of Silent Hill 2",
+    "url": "https://github.com/cutarev/sh2-nx",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "sh2-nx is a native Nintendo Switch port of the PC version of Silent Hill 2, Director's Cut / Restless Dreams, with support for Silent Hill 2: Enhanced Edition packs. The game's x86 executable is statically recompiled to C and compiled for the Switch ARM64 CPU, and the Windows layer it expects is reimplemented with SDL2, OpenGL, and FFmpeg. The README also documents a Linux x86-64 build.",
+    "description_zh": "sh2-nx 是 PC 版《寂静岭 2》（Director's Cut / Restless Dreams）的原生 Nintendo Switch 移植，并支持《寂静岭 2：增强版》资源包。游戏的 x86 可执行文件被静态重编译为 C，再为 Switch 的 ARM64 CPU 编译；它所依赖的 Windows 层用 SDL2、OpenGL 和 FFmpeg 重实现。README 也记录了 Linux x86-64 构建。",
+    "evidence_url": "https://github.com/cutarev/sh2-nx/blob/95ae2f16efc09c82f405f04383a27d98c2fa804a/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The user's own PC copy of Silent Hill 2 with the Enhanced Edition installed, including the Enhanced Executable, Essential Files, Image Enhancement Pack, and Audio Enhancement Pack. The port targets sh2pc.exe of 5,685,248 bytes with SHA-1 3201a5e1029f3ae3b77770255dcbe10360b3cd09.",
+      "Switch builds need Python 3, CMake, Ninja, and either podman or a devkitPro install with devkitA64, libnx, switch-sdl2, switch-mesa, switch-ffmpeg, and switch-pkg-config. The Linux build needs SDL2 and FFmpeg.",
+      "GitHub's license metadata for this repository is empty."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
