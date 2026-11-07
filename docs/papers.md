@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (111)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -87,6 +87,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**DecLLM: LLM-Augmented Recompilable Decompilation for Enabling Programmatic Use of Decompiled Code**](https://dl.acm.org/doi/10.1145/3728958) - DecLLM repairs decompiler pseudocode that does not recompile into C that compiles and runs, so source-level tools such as CodeQL can be applied to binaries. <sub>Proceedings of the ACM on Software Engineering (ISSTA 2025) · Journal article · Wai Kin Wong et al. · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728958) · [Full entry](https://awesomerea.org/papers/paper-decllm/)</sub>
 - [**DiSCo: Towards Decompiling EVM Bytecode to Source Code using Large Language Models**](https://dl.acm.org/doi/10.1145/3729373) - DiSCo lifts Ethereum contract creation bytecode to Solidity source by prompting a frozen LLM, instead of emitting decompiler pseudocode. <sub>Proceedings of the ACM on Software Engineering (FSE 2025) · Journal article · Xing Su et al. · [PDF](https://dl.acm.org/doi/pdf/10.1145/3729373) · [Full entry](https://awesomerea.org/papers/paper-disco/)</sub>
 - [**D-LiFT: Improving LLM-based Decompiler Backend via Code Quality-driven Fine-tuning**](https://arxiv.org/abs/2506.10125) - D-LIFT uses D-Score to guide LLM fine-tuning and output selection, improving decompiled code while prioritizing accuracy. <sub>arXiv 2025 · Preprint · Muqi Zou et al. · [PDF](https://arxiv.org/pdf/2506.10125) · [Full entry](https://awesomerea.org/papers/paper-d-lift/)</sub>
+- [**A survey on generative adversarial networks for malware analysis**](https://doi.org/10.15625/1813-9663/22522) - This review surveys generative adversarial networks as they are used in malware analysis, after earlier use on images and other synthetic data. <sub>Journal of Computer Science and Cybernetics 2025 · Journal article · Lam Bui Thu et al. · [PDF](https://vjs.ac.vn/jcc/article/download/22522/2543256080) · [Full entry](https://awesomerea.org/papers/paper-gan-malware-survey/)</sub>
 - [**ReF Decompile: Relabeling and Function Call Enhanced Decompile**](https://arxiv.org/abs/2502.12221) - ReF Decompile relabels jump targets and uses function calls to recover variable information when converting binary code to source code. <sub>arXiv 2025 · Preprint · Yunlong Feng et al. · [PDF](https://arxiv.org/pdf/2502.12221) · [Full entry](https://awesomerea.org/papers/paper-ref-decompile/)</sub>
 - [**Unleashing the Power of Generative Model in Recovering Variable Names from Stripped Binary**](https://www.ndss-symposium.org/ndss-paper/unleashing-the-power-of-generative-model-in-recovering-variable-names-from-stripped-binary/) - GenNm suggests names for placeholder variables in decompiled code of stripped binaries by fine-tuning generative code models (CodeGemma-2B by default; CodeLlama-7B and a LoRA-tuned CodeLlama-34B are also tested). <sub>NDSS 2025 · Conference paper · Xiangzhe Xu et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2025-276-paper.pdf) · [Code](https://github.com/XZ-X/gennm-ndss-ae/tree/9955139b4c8d43144852a674bf317cbfaf32ed17) · [Full entry](https://awesomerea.org/papers/paper-gennm/)</sub>
 - [**TypeForge: Synthesizing and Selecting Best-Fit Composite Data Types for Stripped Binaries**](https://ieeexplore.ieee.org/document/11023499) - TypeForge recovers composite data types, including struct layouts, unions and pointer or nesting relationships, from stripped binaries. <sub>IEEE S&amp;P 2025 · Conference paper · Yanzhong Wang et al. · [PDF](https://noobone123.github.io/papers/typeforge-sp25.pdf) · [Code](https://github.com/noobone123/TypeForge) · [Full entry](https://awesomerea.org/papers/paper-typeforge/)</sub>
