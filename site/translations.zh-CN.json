@@ -11030,7 +11030,7 @@
       "README 称其为 ZeldaWWHDRecomp 的分叉，保留了原有的桌面与 Android 目标，并新增 Switch 层；重编译器以及 Cafe OS 和 GX2 运行时均来自上游。项目报告游戏可在掌机和底座模式下启动并游玩，支持声音、存档、即时存档和模组，实机游玩主要集中在开场的岛屿、龙之岛及其周边海域，已知问题记录在 docs/switch-port.md 中。所审提交之前已有 v0.4.7（2026-10-14）等源码标签。",
       "需要使用者自己从 Wii U 转储的美版或欧版游戏，版本 0、不含更新；从光盘镜像提取需要其光盘密钥和 Wii U 通用密钥，运行时启动时会校验 code/cking.rpx。README 声明仓库不含游戏代码、素材、密钥或数据，并说明由转储构建出的 NRO 和着色器缓存包含游戏内容，不得分享。decomp 子模块指向独立的 ZeldaWWHDDecomp/wwhd 反编译。",
       "构建需要装有 pycryptodome 的 Python 3，以及在 Docker 或 Podman 中运行的 devkitpro/devkita64 工具链，Windows 上也可使用原生 devkitPro，并有未签名的安装程序自动完成构建；生成的代码每个编译文件都需要大量内存。产物以自制软件形式运行于装有 Atmosphère 自定义固件和 Homebrew Menu 的 Switch 上，须以标题模式启动才有足够内存。桌面与 Android 目标的构建方式见保存在 docs/ 中的上游 README。",
-      "README 说明，每项改动都通过构建 NRO 及其涉及的桌面目标、在实机上以默认和官方频率配置游玩、将主机上截取的画面与游戏自身纹理比较，以及查看会话日志来检查。CI 以占位客体代码构建桌面与 Android 运行时并运行单元测试，若发行包含游戏代码、游戏文件或疑似密钥的字符串，检查步骤会令任务失败；没有工作流构建 Switch 版 NRO。帧率与可玩性均为项目报告，本合集未运行任何内容。",
+      "README 说明，每项改动都通过构建 NRO 及其涉及的桌面目标、在实机上以默认和官方频率配置游玩、将主机上截取的画面与游戏自身纹理比较，以及查看会话日志来检查。CI 以占位客体代码构建桌面与 Android 运行时并运行单元测试，若发行包含游戏代码、游戏文件或疑似密钥的字符串，检查步骤会令任务失败；没有工作流构建 Switch 版 NRO。",
       "代码采用 MPL-2.0，与上游一致；内置的 Cemu、uam、{fmt}、Dear ImGui、xxHash 和 metal-cpp 保留各自的许可证，游戏仍归其所有者。README 说明几乎全部 Switch 移植工作、其文档和提交说明均由 AI 编程智能体（Anthropic 的 Claude，通过 Claude Code）编写，人工作者负责决定开发内容并在 Switch 上测试每个构建；README 还提到上游将其 Vulkan 渲染器归功于 OpenAI Codex。所审来源未确立 REA 的使用。"
     ]
   }
