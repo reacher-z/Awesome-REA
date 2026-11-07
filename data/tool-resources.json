@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mkwii-ps5-case",
+    "name": "Mario Kart Wii for PS5",
+    "url": "https://github.com/Phi1ow/mkwii-ps5",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Mario Kart Wii for PS5 is a native PlayStation 5 port of Mario Kart Wii PAL, RMCP01, based on WiiCompiled. It statically recompiles the Wii game and renders through the PS5 GPU with AGC. DualSense controls are mapped to a GameCube controller.",
+    "description_zh": "Mario Kart Wii for PS5 是《马里奥赛车 Wii》PAL 版 RMCP01 的 PlayStation 5 原生移植，基于 WiiCompiled。它静态重编译 Wii 游戏，并用 AGC 通过 PS5 GPU 渲染。DualSense 操作映射为 GameCube 手柄。",
+    "requirements": [
+      "A jailbroken PS5 or PS5 Pro, and the player's own Mario Kart Wii PAL disc data. Other regions are not supported. The title ID is PPSA99611.",
+      "The README says 60 FPS was reported on PS5 Pro after kstuff is paused. Saves use local NAND in UserData/NAND.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Phi1ow/mkwii-ps5/blob/5715a133f253f42dc2a0b43c45aaa0a4aeabcacc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

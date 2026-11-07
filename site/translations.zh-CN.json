@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mkwii-ps5-case": {
+    "name": "马里奥赛车 Wii PS5 版",
+    "requirements": [
+      "需要已越狱的 PS5 或 PS5 Pro，以及玩家自己的《马里奥赛车 Wii》PAL 光盘数据。其他区域不受支持。标题 ID 为 PPSA99611。",
+      "README 写明在暂停 kstuff 之后，PS5 Pro 上报告为 60 FPS。存档使用 UserData/NAND 中的本地 NAND。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
