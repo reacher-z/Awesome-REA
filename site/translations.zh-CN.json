@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "redahm-case": {
+    "name": "ReDAHM",
+    "requirements": [
+      "玩家提取自己的 Xbox 360 ISO，并在 redahm.exe 里选择那个目录。",
+      "从源码构建时先运行 rexglue codegen，再用 CMake。审阅的 README 没有写许可证。"
+    ]
   }
 }
