@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mscharged-decomp": {
+    "name": "马里奥足球充能反编译",
+    "requirements": [
+      "美版把光盘镜像放在 orig/R4QE01。接受的格式包括 ISO、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC。然后运行 python3 configure.py 和 ninja。",
+      "许可证：项目为 CC0 1.0。第三方源码保留各自条款。"
+    ]
   }
 }
