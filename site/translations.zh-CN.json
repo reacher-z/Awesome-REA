@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gbarecomp": {
+    "name": "GBARecomp",
+    "requirements": [
+      "README 写明该框架处于 beta。对还不能静态解析的代码，仍保留一个安全解释器。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
