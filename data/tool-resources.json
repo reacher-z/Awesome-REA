@@ -36543,6 +36543,7 @@
     "description_zh": "将 Xbox 360 版《索尼克》（2006）静态重编译为 Windows、Linux 和 macOS 原生移植版：XenonRecomp 把游戏的 PowerPC 代码转换为 C++，XenosRecomp 把其 Xenos 着色器转换为 HLSL。游戏文件通过内置安装程序取自使用者自有的副本，原版游戏中的漏洞被有意保留。README 提醒该项目仍在积极开发中，并不面向公众使用。",
     "evidence_url": "https://github.com/sonicnext-dev/MarathonRecomp/blob/2992c6aace932d465322ae9956c35879f34acab8/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at the 2026-10-19 main head; no releases have been published and version.txt reads 1.0.0. README cautions that the recompilation is under active development, is NOT meant for public use and gets no support until an official release. Bugs present on original hardware are kept apart from a few listed exceptions; the FAQ says PlayStation 3 files cannot be used and that significant PS3-version differences are offered as options.",
