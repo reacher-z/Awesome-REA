@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pokestadiumgs-case": {
+    "name": "宝可梦竞技场 2 反编译",
+    "requirements": [
+      "把 ROM 放在 baseroms/us/baserom.z64 或 baseroms/jp/baserom.z64。美版 MD5 为 1561c75d11cedf356a8ddb1a4a5f9d5d。日版 MD5 为 a17aadcc962393d476edc321e59c504b。",
+      "在 Debian 或 Ubuntu 上安装 make、git、build-essential、binutils-mips-linux-gnu，以及高于 3.7 的 Python，然后执行 pip install -r requirements.txt。VERSION=us make init 提取 ROM，make 重新构建。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
