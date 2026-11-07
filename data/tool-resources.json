@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "angry-birds-decomp",
+    "name": "Angry Birds Decompilation: Lua script recovery",
+    "url": "https://github.com/jooapa/Angry_Birds_Decompilation",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "Angry Birds Decompilation documents recovery of Lua scripts from the PC ports of the Angry Birds games. The README's automatic path runs birdout.py with Python 3, 7-Zip, and a JDK, and the manual path uses OpenSSL, 7-Zip, and unluac. It points readers to their own PC-port files.",
+    "description_zh": "Angry Birds Decompilation 记录如何从《愤怒的小鸟》PC 移植版中恢复 Lua 脚本。README 的自动路径用 Python 3、7-Zip 和 JDK 运行 birdout.py，手动路径使用 OpenSSL、7-Zip 和 unluac。它要求读者使用自己的 PC 移植版文件。",
+    "evidence_url": "https://github.com/jooapa/Angry_Birds_Decompilation/blob/9a149cb26727b6816ce1e8ce3dd85b16a7e23c69/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "Python 3, 7-Zip on PATH, and a JDK. The manual path also uses OpenSSL and unluac.jar.",
+      "The scripts read Lua files from the reader's own Angry Birds PC ports.",
+      "GitHub's license metadata for this repository is empty."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
