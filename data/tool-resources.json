@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "opengothic",
+    "name": "OpenGothic: a reimplementation of Gothic 2: Night of the Raven",
+    "url": "https://github.com/Try/OpenGothic",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Open-source reimplementation of Gothic 2: Night of the Raven, aimed at a client compatible with the original game data and mods. The README says the original game has been replicated so the main quest and the addon can be completed, with known issues tracked separately. Development focuses on Gothic 2; Gothic 1 is not officially supported. It targets modern graphics APIs, and mesh shaders are described as optional.",
+    "description_zh": "哥特王朝 2：夜鸦的开源重实现，目标是兼容原始游戏数据和模组的客户端。README 写明原作已被复现到可以完成主线和资料片，已知问题另有跟踪。开发重点是哥特王朝 2，哥特王朝 1 没有官方支持。它面向现代图形 API，并写明 mesh shader 不是必需的。",
+    "evidence_url": "https://github.com/Try/OpenGothic/blob/f3330c8cbf4d268a3a9f70b37c1e4c67909224f1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Gothic 2: Night of the Raven is required. The README says OpenGothic provides no game assets or scripts. Supported systems are Windows with DirectX 12 or Vulkan, Linux with Vulkan, and macOS with Metal.",
+      "The reviewed page states no license."
+    ]
   }
 ]
