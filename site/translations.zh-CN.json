@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "evangelion64-decomp": {
+    "name": "新世纪福音战士 64 反编译",
+    "requirements": [
+      "需要 64 位 Linux 或 WSL，并安装 build-essential 和 binutils-mips-linux-gnu。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
