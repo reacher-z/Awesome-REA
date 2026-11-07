@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "streets-of-rage-recomp",
+    "name": "Streets of Rage recompilation",
+    "url": "https://github.com/RuiNelson/StreetsOfRageProject",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a recompilation of Streets of Rage for the Mega Drive, released as Streets of Rage on the Sega Genesis. The README says desktop builds cover Windows, macOS, and Linux, and that a PlayStation 5 build is documented. The player supplies the ROM.",
+    "description_zh": "该项目重编译 Mega Drive 游戏《怒之铁拳》，在世嘉 Genesis 上也叫 Streets of Rage。README 写明桌面构建覆盖 Windows、macOS 和 Linux，并写了 PlayStation 5 的构建。玩家提供 ROM。",
+    "requirements": [
+      "Desktop build steps are in docs/BuildingDesktop.md. The PlayStation 5 steps are in docs/BuildingPS5.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/RuiNelson/StreetsOfRageProject/blob/d10d4c16fc4b71ab19aa72005d29916dc48855c0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -136,7 +136,7 @@
 - [**Wind Waker HD decompilation: functions verified against the recompiled Wii U game**](https://github.com/ZeldaWWHDDecomp/wwhd) - Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### Static recompilations (48)
+### Static recompilations (49)
 
 - [**Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port**](https://github.com/BanjoRecomp/BanjoRecomp) - Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Banjo-Kazooie into a native port on N64ModernRuntime, rendered by RT64 and extended with mod support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/banjo-recompiled-case/)</sub>
 - [**C2C: hybrid recompilation and hand decompilation of Crash Bandicoot 2**](https://github.com/ughman/c2c) - An early reverse-engineering effort on PlayStation Crash Bandicoot 2 that converts the engine’s MIPS machine code directly into a very large C file and runs it against a modified PCSX-R emulator library for hardware I/O. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -177,6 +177,7 @@
 - [**Spider-Man 2 PS2 Recomp: a static recompilation checkpoint**](https://github.com/saltyboosack-blip/Spider-Man-2-PS2-Recomp) - Spider-Man 2 PS2 Recomp applies static recompilation to the USA PlayStation 2 release SLUS-20776 for native PC execution. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/spider-man-2-ps2-recomp-case/)</sub>
 - [**ssbu-recomp: static recompilation with explicit mode limits**](https://github.com/Denkishi/ssbu-recomp) - Translates Super Smash Bros. Ultimate 13.0.4 AArch64 code ahead of time and supplies a Windows runtime with Vulkan/OpenGL rendering. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ssbu-recomp-case/)</sub>
 - [**Starfox 64: Recompiled — an N64Recomp static-recompilation port**](https://github.com/sonicdcer/Starfox64Recomp) - Uses N64: Recompiled to statically recompile the US 1.1 (Rev A) Nintendo 64 release of Star Fox 64 into a native port for Windows, Linux and macOS, rendered with RT64. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/starfox64-recompiled-case/)</sub>
+- [**Streets of Rage recompilation**](https://github.com/RuiNelson/StreetsOfRageProject) - This is a recompilation of Streets of Rage for the Mega Drive, released as Streets of Rage on the Sega Genesis. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/streets-of-rage-recomp/)</sub>
 - [**SVR2011-Recomp: a ReXGlue recompilation of WWE SmackDown vs. Raw 2011**](https://github.com/shaneomac1337/SVR2011-Recomp) - Translates the Xbox 360 executable of WWE SmackDown vs. Raw 2011 to C++ ahead of time with ReXGlue and builds it as a Windows program on a Vulkan runtime derived from Xenia. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/svr2011-recomp-case/)</sub>
 - [**SymphonyRecomp: a RecompOne static recompilation of Symphony of the Night**](https://github.com/BlackLabelHQ/SymphonyRecomp) - Statically recompiles the North American PlayStation release of Castlevania: Symphony of the Night into C# with BlackLabelHQ’s RecompOne, whose runtime simulates the BIOS, memory-mapped I/O, GPU and CD-ROM so the game runs natively without a console BIOS. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/symphonyrecomp-case/)</sub>
 - [**The Darkness Recomp: an Xbox 360 static recompilation with a native D3D11 renderer**](https://github.com/portingpete/The-Darkness-Recomp) - Builds a native Windows x64 port of The Darkness by translating its Xbox 360 executable to C++ ahead of time with a patched XenonRecomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/the-darkness-recomp-case/)</sub>
