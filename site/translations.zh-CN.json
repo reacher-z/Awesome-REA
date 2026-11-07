@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "neotokyo-rebuild": {
+    "name": "NEOTOKYO Rebuild",
+    "requirements": [
+      "Windows 构建使用 Visual Studio 2022，并包含 C++ 工具、C++ MFC 库、Windows 10 或 11 SDK 和 CMake。README 写明官方不支持 Visual Studio 2026。",
+      "Linux 构建使用带 GCC 和 G++ 10 工具链的 Steam Runtime 3 Sniper，以及 CMake。两个平台都可以选用 Ninja。",
+      "许可证：SOURCE 1 SDK LICENSE，写在仓库的 LICENSE 文件中。"
+    ]
   }
 }
