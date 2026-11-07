@@ -36543,6 +36543,7 @@
     "description_zh": "以 1.9.93 版 GOG《Crimsonland Classic》为准，把《Crimsonland》（2003）重建了两次：一是一致性反编译，其 C/C++ 源码经 Visual C++ 6 编译后可还原出原始的 crimsonland.exe 与 grim.dll，并编译为 WebAssembly，让原版游戏在浏览器中运行；二是用 Python 与 raylib 编写的重新实现，逐帧复现原版的时序、随机数与 float32 舍入。CI 要求恢复出的源码重放每段录像，结果须与 Python 移植完全一致。游戏文件由项目自己的服务器提供，项目称已获开发商 10tons 许可分发。",
     "evidence_url": "https://github.com/banteg/crimson/blob/c996e70594a1b9144c5dc32bcf750d6eb0a81ebb/readme.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed master pin, committed 2026-10-19, carries Python package version 0.19.2. The canonical target is the 2011 GOG release of version 1.9.93; the same source tree also builds the 1.9.8 shareware release and is being measured against three 2002 freeware builds. The clients fix the original’s documented bugs, with --preserve-bugs restoring them in the Python port, and add online co-op, replays, custom quests and a leaderboard at crimson.land.",
