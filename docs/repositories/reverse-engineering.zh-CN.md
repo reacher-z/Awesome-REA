@@ -69,7 +69,7 @@
 - [JonathanSalwan/VMProtect-devirtualization](https://github.com/JonathanSalwan/VMProtect-devirtualization) — 探索 VMProtect 软件保护，利用符号执行与 LLVM 自动对纯函数去混淆。 **[1,536 星标]**
 - [HACKE-RC/awesome-reversing](https://github.com/HACKE-RC/awesome-reversing) — 从零开始学习逆向工程的资源合集！ **[1,530 星标]**
 - [AllsafeCyberSecurity/awesome-ghidra](https://github.com/AllsafeCyberSecurity/awesome-ghidra) — 精选 Ghidra 优质资料列表。 **[1,442 星标]** · 精选：[Awesome Ghidra Ghidra 资源清单](https://awesomerea.org/zh/resources/awesome-ghidra/)
-- [hack-different/apple-knowledge](https://github.com/hack-different/apple-knowledge) — Apple 相关逆向工程成果合集，以及机器可读的 Apple 硬件数据库 **[1,415 星标]**
+- [hack-different/apple-knowledge](https://github.com/hack-different/apple-knowledge) — Apple 相关逆向工程成果合集，以及机器可读的 Apple 硬件数据库 **[1,415 星标]** · 精选：[Apple 数据格式与知识库（Hack Different）](https://awesomerea.org/zh/resources/hack-different-apple-knowledge/)
 - [Cur10s1tyByt3/GenP](https://github.com/Cur10s1tyByt3/GenP) — 本仓库保存 GenP 的源材料与相关文档，仅供归档和研究使用。 **[1,340 星标]**
 - [rng70/TryHackMe-Roadmap](https://github.com/rng70/TryHackMe-Roadmap) — 350+ 个免费的 TryHackMe 房间列表，帮助使用 THM 开始学习网络安全。 **[1,323 星标]**
 - [Bixilon/Minosoft](https://github.com/Bixilon/Minosoft) — 从零编写的 Minecraft 开源重新实现。https<span>:</span>//gitlab.bixilon.de/bixilon/minosoft 的镜像。 **[1,309 星标]**
