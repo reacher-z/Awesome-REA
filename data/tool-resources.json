@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dbz-ssd-rust",
+    "name": "Super Saiya Densetsu Rust",
+    "url": "https://github.com/JackRushante/DBZ-Super-Saiya-Densetsu-Rust",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This Rust project plays Dragon Ball Z: Super Saiya Densetsu for the SNES in Classic, recompiled, and remastered modes. Classic runs the 65816 code in a vendored jgenesis core and checks Rust routines in lockstep against 28 reference replays. crates/ssd-recomp writes one Rust function per entry address and register width. cargo run --release -p xtask -- recompile generates that code from the local ROM. The checksum-fixed Klepto v1.02 image is 1,048,576 bytes, CRC-32 A8CF4F2A, SHA-1 6b612f6d99f2efc26f26fb22290bc732ada0ea6f. Japanese Rev 1 is CRC-32 ADE7B968, SHA-1 6b5725765ddde078350ec61221ddb9bb252066a7.",
+    "description_zh": "这个 Rust 项目以经典、重编译和重制三种模式运行超级任天堂游戏《龙珠Z：超赛亚传说》。经典模式在随附的 jgenesis 核心里运行 65816 代码，并用 28 段参考录像对 Rust 例程做锁步核对。crates/ssd-recomp 按入口地址和寄存器宽度各写一个 Rust 函数。cargo run --release -p xtask -- recompile 从本地 ROM 生成这些代码。校验和已修正的 Klepto v1.02 镜像为 1,048,576 字节，CRC-32 是 A8CF4F2A，SHA-1 是 6b612f6d99f2efc26f26fb22290bc732ada0ea6f。日版 Rev 1 的 CRC-32 是 ADE7B968，SHA-1 是 6b5725765ddde078350ec61221ddb9bb252066a7。",
+    "requirements": [
+      "Windows 10 or 11 x64 with Vulkan or DirectX 12, or Android 8 or later on 64-bit ARM. The ROM is one of the images in the table above.",
+      "License: GPL-3.0. The vendored SNES core is jgenesis, also GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/JackRushante/DBZ-Super-Saiya-Densetsu-Rust/blob/ab66c13193929e6171da1bd7d63d237b50526f64/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

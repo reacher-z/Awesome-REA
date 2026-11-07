@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "dbz-ssd-rust": {
+    "name": "龙珠Z：超赛亚传说 Rust",
+    "requirements": [
+      "需要带 Vulkan 或 DirectX 12 的 Windows 10 或 11 x64，或 64 位 ARM 上的 Android 8 及更高版本。ROM 须是上表中的镜像之一。",
+      "许可证：GPL-3.0。随附的超级任天堂核心是 jgenesis，同样为 GPL-3.0。"
+    ]
   }
 }
