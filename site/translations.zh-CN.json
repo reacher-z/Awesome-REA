@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "bfbb-decomp-case": {
+    "name": "SpongeBob SquarePants: Battle for Bikini Bottom：GameCube 反编译",
+    "requirements": [
+      "需要已有的游戏副本。README 写明支持的版本是 GQPE78（NTSC-U）。",
+      "仓库不包含游戏资源或汇编。",
+      "在 Windows 上，README 建议把原生 Python 加入 PATH。",
+      "许可证：CC0-1.0。"
+    ]
   }
 }

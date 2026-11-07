@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bfbb-decomp-case",
+    "name": "SpongeBob SquarePants: Battle for Bikini Bottom — GameCube decompilation",
+    "url": "https://github.com/bfbbdecomp/bfbb",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "This is a work-in-progress decompilation of SpongeBob SquarePants: Battle for Bikini Bottom. The README says it builds main.dol with SHA-1 306526d90b48e99894c3138f5fc8f2716d9fecf6 for the NTSC-U version GQPE78.",
+    "description_zh": "这是《海绵宝宝：比奇堡的冒险》进行中的反编译。README 写明它会为 NTSC-U 版本 GQPE78 构建 SHA-1 为 306526d90b48e99894c3138f5fc8f2716d9fecf6 的 main.dol。",
+    "requirements": [
+      "An existing copy of the game is required. The supported version named in the README is GQPE78 (NTSC-U).",
+      "The repository does not contain game assets or assembly.",
+      "On Windows, the README recommends native Python on PATH.",
+      "License: CC0-1.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/bfbbdecomp/bfbb/blob/fa9a0ee69f41b9ce884b2d93cfccbae55130bc17/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
