@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "chronicle-two": {
+    "name": "Chronicle Two",
+    "requirements": [
+      "克隆时包含子模块。把 Dark Chronicle (PAL).iso 放进 rom/pal/。需要 Docker 或 Podman。./build.sh 构建 ps2-pal。./run.sh 构建 Release 移植。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
