@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "demons-souls-recomp-case": {
+    "name": "Demon's Souls：PS3 游戏的 Windows 原生移植",
+    "requirements": [
+      "不包含游戏文件。SETUP 用你自己的光盘镜像在 PC 上构建游戏。",
+      "README 写明整个游戏似乎可以游玩，包括声音、音乐和影片，支持键盘鼠标或 Xbox 手柄。",
+      "仓库的代码和补丁采用 MIT 许可证。ps3recomp 被注明为 MIT。"
+    ]
   }
 }
