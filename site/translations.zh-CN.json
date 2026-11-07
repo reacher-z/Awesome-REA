@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "rocket-r-case": {
+    "name": "Rocket-R",
+    "requirements": [
+      "玩家提供未修改的美版 ROM，游戏代码 NSUE，12 MiB，SHA-1 为 622D71A44DA0B81EA68092CAC9198C66154A4F4A。桌面启动器接受 .z64、.n64 和 .v64。",
+      "README 指向 LICENSE 里的 GPL 许可证文本，以及 LICENSE.md 里的许可说明。"
+    ]
   }
 }

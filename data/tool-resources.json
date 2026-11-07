@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rocket-r-case",
+    "name": "Rocket-R",
+    "url": "https://github.com/ThatGuyMcd/Rocket-R",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Rocket-R brings Rocket: Robot on Wheels to Windows, Linux, and Android. Release 1.0.2 uses RocketRet's matching decompilation, N64Recomp, RSPRecomp, N64ModernRuntime, RT64, and SDL2. Packages cover Windows x64, Steam Deck, Linux x64, Linux ARM64, and Android ARM64.",
+    "description_zh": "Rocket-R 把 Rocket: Robot on Wheels 带到 Windows、Linux 和 Android。1.0.2 发布使用 RocketRet 的匹配反编译、N64Recomp、RSPRecomp、N64ModernRuntime、RT64 和 SDL2。发布包覆盖 Windows x64、Steam Deck、Linux x64、Linux ARM64 和 Android ARM64。",
+    "requirements": [
+      "The player supplies an unmodified US ROM, game code NSUE, 12 MiB, SHA-1 622D71A44DA0B81EA68092CAC9198C66154A4F4A. The desktop launcher accepts .z64, .n64, and .v64.",
+      "The README points to a GPL licence text in LICENSE and a licence notice in LICENSE.md."
+    ],
+    "evidence_url": "https://github.com/ThatGuyMcd/Rocket-R/blob/d94fa58229e37156090ac9a6263cea2361279043/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
