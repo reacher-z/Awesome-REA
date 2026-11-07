@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dds-decomp",
+    "name": "Digital Devil Saga decompilation",
+    "url": "https://github.com/Megami-Decomps/dds-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Shin Megami Tensei: Digital Devil Saga and Digital Devil Saga 2 for PlayStation 2. The USA targets are SLUS_209.74, SHA-1 6d18898e2724bf1d145392766e8ba1e678487419, and SLUS_211.52, SHA-1 9be91ee1b4a535a4cb6ec89237b5a6ba41be2add. ninja checks each built executable against its retail SHA-1.",
+    "description_zh": "这是 PlayStation 2 游戏《真·女神转生 数字恶魔传说》和《数字恶魔传说2》的匹配反编译。美版目标是 SLUS_209.74，SHA-1 为 6d18898e2724bf1d145392766e8ba1e678487419，以及 SLUS_211.52，SHA-1 为 9be91ee1b4a535a4cb6ec89237b5a6ba41be2add。ninja 会把每个构建出的可执行文件与零售版 SHA-1 核对。",
+    "requirements": [
+      "Python 3.10 or newer, ninja, cpp, and git. Run python configure.py and ninja. ninja dds1 or ninja dds2 builds one game.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Megami-Decomps/dds-decomp/blob/648e39e3cdda433ec839232f5b4d65f7d8b8022a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
