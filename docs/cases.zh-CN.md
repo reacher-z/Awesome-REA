@@ -4,7 +4,7 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
@@ -13,7 +13,7 @@
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
-- [Protocol · 协议](#protocol) (91)
+- [Protocol · 协议](#protocol) (92)
 
 <a id="website"></a>
 ## Website · 网站
@@ -499,6 +499,7 @@
 - [**PixMob 红外逆向工程：在家控制活动手环**](https://github.com/danielweidman/pixmob-ir-reverse-engineering) - 从在演唱会和球赛现场用 Flipper Zero 录下的信号出发，把录音重放给手环，恢复出足以在家中点亮 PixMob 活动手环的部分红外协议。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pixmob-ir-protocol-case/)</sub>
 - [**pypush：Apple 推送协议的 Python 客户端**](https://github.com/JJTech0130/pypush) - 以与平台无关的 Python 重新实现 Apple 私有推送通知服务（APNs）协议的客户端：它以 Apple 设备身份完成激活，连接 APNs courier 服务器，生成限定于应用的令牌并接收推送通知。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pypush-apns-protocol-case/)</sub>
 - [**Roborock Local Server：自托管替代 Roborock 扫地机云端**](https://github.com/Python-roborock/local_roborock_server) - 运行一套本地 HTTPS 与 MQTT 服务来替代 Roborock 云端，使受支持的扫地机在隔离网络中无需 root 或改装硬件即可保留实时地图与控制。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/roborock-local-server-cloud-case/)</sub>
+- [**librespot：Spotify 客户端与 Connect 接收端的开源重新实现**](https://github.com/librespot-org/librespot) - 开源的 Rust 版 Spotify 客户端库，并附带无界面的 Spotify Connect 接收端，用来替代 Spotify 已弃用的闭源 libspotify。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/librespot-spotify-client-case/)</sub>
 - [**cooler-lcd：Thermalright 显示屏协议实现**](https://github.com/kristjaningi/cooler-lcd) - 为 Thermalright Vision 散热器显示屏实现 USB 图像传输驱动，并用 Rust 仪表盘替代厂商显示应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cooler-lcd-case/)</sub>
 - [**GAMEKB-K17：重建宏键盘配置协议**](https://github.com/dvdarkin/gamekb-k17) - 实现 GAMEKB-K17/HCY-K017 宏键盘的厂商 HID 配置协议，写入按键映射、固件宏和 RGB 设置后再读回核对。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gamekb-k17-case/)</sub>
 - [**hw-harness：扫描仪 USB 协议调查**](https://github.com/cschalle/hw-harness) - 记录作者报告的扫描仪调查：比较厂商驱动的 USB 控制传输与 Linux 驱动的记录，推断初始化、时序及分辨率参数。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hw-harness-reference-case/)</sub>
