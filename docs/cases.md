@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -136,8 +136,9 @@
 - [**Wind Waker HD decompilation: functions verified against the recompiled Wii U game**](https://github.com/ZeldaWWHDDecomp/wwhd) - Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### Static recompilations (48)
+### Static recompilations (49)
 
+- [**Ace Combat 3 recompiled**](https://github.com/sal063/Ace-Combat-3-static-recompilation) - This is a native Windows port of Ace Combat 3: Electrosphere. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ace-combat-3-recomp/)</sub>
 - [**Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port**](https://github.com/BanjoRecomp/BanjoRecomp) - Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Banjo-Kazooie into a native port on N64ModernRuntime, rendered by RT64 and extended with mod support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/banjo-recompiled-case/)</sub>
 - [**C2C: hybrid recompilation and hand decompilation of Crash Bandicoot 2**](https://github.com/ughman/c2c) - An early reverse-engineering effort on PlayStation Crash Bandicoot 2 that converts the engine’s MIPS machine code directly into a very large C file and runs it against a modified PCSX-R emulator library for hardware I/O. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
 - [**Castlevania 64: Recompiled — a beta static-recompilation port**](https://github.com/RevoSucks/CV64Recomp) - Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Castlevania into a native PC port rendered with RT64. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/cv64-recompiled-case/)</sub>
