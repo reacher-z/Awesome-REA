@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gore": {
+    "name": "gore",
+    "requirements": [
+      "从源码构建需要 Rust 1.74 或更新版本，命令是 cargo install --path .。gore setup 会下载 GDRE Tools，--dir 用来选择下载目录。",
+      "许可证：MIT。README 写明 GDRE Tools 保持自己的许可证。"
+    ]
   }
 }
