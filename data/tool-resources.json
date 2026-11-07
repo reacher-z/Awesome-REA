@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "smo-recomp-case",
+    "name": "smo-recomp",
+    "url": "https://github.com/Coz-0/smo-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "smo-recomp is a native Windows x64 build of Super Mario Odyssey version 1.4.1. The game's AArch64 code is translated to C ahead of time and compiled for the PC, with a project runtime and a Vulkan renderer.",
+    "description_zh": "smo-recomp 是《Super Mario Odyssey》1.4.1 的 Windows x64 原生构建。游戏的 AArch64 代码被提前翻译成 C 并编译到 PC，配有项目自己的运行时和 Vulkan 渲染器。",
+    "requirements": [
+      "The player supplies a dump of their own copy. The build reads the dump's decrypted files.",
+      "The README says the project is early. Checked areas include boot, Cap Kingdom through the first capture, and a scripted start of 176 stage scenes.",
+      "The project's original source and documentation are GPL-3.0-or-later."
+    ],
+    "evidence_url": "https://github.com/Coz-0/smo-recomp/blob/0414341471307605b8cb5d0c1a9928db5fe84e07/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

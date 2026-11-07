@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -136,7 +136,7 @@
 - [**《风之杖 HD》反编译：与重编译的 Wii U 版逐函数比对验证**](https://github.com/ZeldaWWHDDecomp/wwhd) - 将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### 静态重编译 (48)
+### 静态重编译 (49)
 
 - [**Banjo: Recompiled：基于 N64Recomp 的《Banjo-Kazooie》原生移植**](https://github.com/BanjoRecomp/BanjoRecomp) - 使用 N64Recomp 将美版 1.0 Nintendo 64《Banjo-Kazooie》静态重编译为基于 N64ModernRuntime 的原生移植版，由 RT64 渲染并加入模组支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/banjo-recompiled-case/)</sub>
 - [**C2C：《古惑狼 2》的混合重编译与手工反编译**](https://github.com/ughman/c2c) - 一个早期的 PlayStation《古惑狼 2》逆向工程项目：把引擎的 MIPS 机器码直接转换为一个体量巨大的 C 文件，并调用改造后的 PCSX-R 模拟器库处理硬件 I/O。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -172,6 +172,7 @@
 - [**SF2Recomp：将《Shadow Fight 2》静态重编译到原生平台**](https://github.com/bipinkrish/sf2recomp) - SF2Recomp 将用户提供的 Nintendo Switch 版《Shadow Fight 2》游戏文件转换为 Linux、Windows、macOS 和 Android 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sf2recomp-case/)</sub>
 - [**Sin &amp; Punishment：开发中的 N64 静态重编译移植**](https://github.com/maximilianoide/sin-punishment-recompiled) - Sin &amp; Punishment: Recompiled 使用 N64Recomp 和 RSPRecomp，基于用户提供的日版 N64 ROM 及仓库中的符号映射构建原生 C++ 移植程序，并通过 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sin-punishment-recompiled-case/)</sub>
 - [**Skate 3 Recomp：通过 ReXGlue 实现的 Xbox 360 原生重编译**](https://github.com/mchughalex/skate3recomp) - 借助 ReXGlue SDK 的 Skate 专用分支，将 Xbox 360 版《Skate 3》重编译为 Windows、Linux 与 macOS 原生版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/skate3-recomp-case/)</sub>
+- [**smo-recomp**](https://github.com/Coz-0/smo-recomp) - smo-recomp 是《Super Mario Odyssey》1.4.1 的 Windows x64 原生构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/smo-recomp-case/)</sub>
 - [**Snap64 Recomp：Pokémon Snap 的静态重编译移植**](https://github.com/JackandBeans/Snap64Recomp) - 使用 N64Recomp 将 Pokémon Snap 美版 Nintendo 64 发行版静态重编译为原生 Windows、Linux、Steam Deck 和 macOS 移植，由 RT64 负责渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/snap64-recomp-case/)</sub>
 - [**SpeedBreaker：对 Xbox 360 版《极品飞车：最高通缉》的静态重编译**](https://github.com/SpeedBreakerProject/speedbreaker) - 使用打过补丁的 XenonRecomp 将 Xbox 360 版《极品飞车：最高通缉》（2005）的可执行文件转换为原生 C++，并在项目自建的运行时上执行，由运行时代替主机的内核、Xenos GPU、XMA 音频和控制器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/speedbreaker-nfs-most-wanted-case/)</sub>
 - [**Spider-Man 2 PS2 Recomp：《Spider-Man 2》静态重编译阶段成果**](https://github.com/saltyboosack-blip/Spider-Man-2-PS2-Recomp) - Spider-Man 2 PS2 Recomp 对美版 PS2 游戏 SLUS-20776 进行静态重编译，目标是在 PC 上原生运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/spider-man-2-ps2-recomp-case/)</sub>

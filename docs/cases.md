@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -136,7 +136,7 @@
 - [**Wind Waker HD decompilation: functions verified against the recompiled Wii U game**](https://github.com/ZeldaWWHDDecomp/wwhd) - Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### Static recompilations (48)
+### Static recompilations (49)
 
 - [**Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port**](https://github.com/BanjoRecomp/BanjoRecomp) - Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Banjo-Kazooie into a native port on N64ModernRuntime, rendered by RT64 and extended with mod support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/banjo-recompiled-case/)</sub>
 - [**C2C: hybrid recompilation and hand decompilation of Crash Bandicoot 2**](https://github.com/ughman/c2c) - An early reverse-engineering effort on PlayStation Crash Bandicoot 2 that converts the engine’s MIPS machine code directly into a very large C file and runs it against a modified PCSX-R emulator library for hardware I/O. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -172,6 +172,7 @@
 - [**SF2Recomp: statically recompiling Shadow Fight 2 for native platforms**](https://github.com/bipinkrish/sf2recomp) - SF2Recomp converts a user's Shadow Fight 2 Nintendo Switch game files into native builds for Linux, Windows, macOS, and Android. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sf2recomp-case/)</sub>
 - [**Sin &amp; Punishment: a work-in-progress N64 static recompilation**](https://github.com/maximilianoide/sin-punishment-recompiled) - Sin &amp; Punishment: Recompiled uses N64Recomp and RSPRecomp to build an experimental native C++ port from a user-supplied Japanese N64 ROM and the repository's symbol maps, with RT64 rendering. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sin-punishment-recompiled-case/)</sub>
 - [**Skate 3 Recomp: a native Xbox 360 recompilation through ReXGlue**](https://github.com/mchughalex/skate3recomp) - Recompiles the Xbox 360 version of Skate 3 into native Windows, Linux and macOS builds with a Skate-specific fork of the ReXGlue SDK. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/skate3-recomp-case/)</sub>
+- [**smo-recomp**](https://github.com/Coz-0/smo-recomp) - smo-recomp is a native Windows x64 build of Super Mario Odyssey version 1.4.1. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/smo-recomp-case/)</sub>
 - [**Snap64 Recomp: a static-recompilation port of Pokémon Snap**](https://github.com/JackandBeans/Snap64Recomp) - Uses N64Recomp to statically recompile the US Nintendo 64 release of Pokémon Snap into a native Windows, Linux, Steam Deck and macOS port rendered with RT64. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/snap64-recomp-case/)</sub>
 - [**SpeedBreaker: statically recompiling Need for Speed: Most Wanted for Xbox 360**](https://github.com/SpeedBreakerProject/speedbreaker) - Translates the Xbox 360 executable of Need for Speed: Most Wanted (2005) into native C++ with a patched XenonRecomp and runs it on a project runtime that stands in for the console’s kernel, Xenos GPU, XMA audio and controllers. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/speedbreaker-nfs-most-wanted-case/)</sub>
 - [**Spider-Man 2 PS2 Recomp: a static recompilation checkpoint**](https://github.com/saltyboosack-blip/Spider-Man-2-PS2-Recomp) - Spider-Man 2 PS2 Recomp applies static recompilation to the USA PlayStation 2 release SLUS-20776 for native PC execution. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/spider-man-2-ps2-recomp-case/)</sub>
