@@ -4120,6 +4120,7 @@
     "description_zh": "把 Poo-Brain 在 Revision 2017 夺得 PC 64k 组冠军的 Eidolon，从经过压缩的 60,928 字节 Windows 可执行文件移植到 Rust，并附有说明原二进制工作原理的章节和单独的体积优化版本。作者报告由 OpenCode 与 Claude Code 协同的多个智能体完成工作，所用工具包括经 REA MCP 服务调用的 Ghidra：先在受控时钟下为原作建立参考捕获，再使全部 27,000 帧的哈希与完整 PCM 一致。一致性依据项目自己在特定 GPU 上的捕获，移植版直接嵌入原作数据，而非重新创作这些数据。",
     "evidence_url": "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed pin (2026-10-18) holds the regular Rust port for i686-pc-windows-gnu, English and Russian chapters on the original binary, and a size build reported at 44,139 bytes against the original’s 60,928; the 32 KiB target was not reached. README dates the initial agent work to 15–17 October 2026 (about 40 hours and 270 commits), with a human setting goals and override decisions, and lists token use for GPT-6 Astra, GPT-6.1 Sol and Claude Opus 5.5; recovery and integration continued on 18 October. The post’s 48,128-byte figure is the previous size build.",
