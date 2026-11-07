@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "xenogears-recomp-case": {
+    "name": "XenogearsRecomp",
+    "requirements": [
+      "运行发布版需要玩家自己的《Xenogears》美版光盘 1 和光盘 2 镜像，首选 .cue 和 .bin。",
+      "README 写明项目处于 alpha：游戏可以启动，进入标题画面和开场 FMV，并且可以游玩，但还没有完成端到端验证。",
+      "从源码构建需要 C 或 C++ 编译器、CMake 3.20 或更新版本、Python 3.11 或更新版本，以及 SDL3 3.4 或更新版本。建议使用 Ninja。",
+      "发布包包含可再分发的 OpenBIOS 镜像及其 MIT 声明。审阅的 README 没有为重编译本身写许可证。"
+    ]
   }
 }
