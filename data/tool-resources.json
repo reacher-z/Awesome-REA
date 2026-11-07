@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "cmr2005-xbe-recomp",
+    "name": "Colin McRae Rally 2005 XBE recompilation",
+    "url": "https://github.com/projectedan/McRae05-XBE-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a native Windows port of the original Xbox version of Colin McRae Rally 2005, built with Xbox XBE Recomp. It supports only the US NTSC release. The supported default.xbe has SHA-1 fea919b18610e640aa0a40e41c566a4a453eaccb. The first start compiles the game code, and the frame cap stays at 60 fps.",
+    "description_zh": "这是初代 Xbox 版《Colin McRae Rally 2005》的 Windows 原生移植，用 Xbox XBE Recomp 构建。它只支持美国 NTSC 版。受支持的 default.xbe 的 SHA-1 为 fea919b18610e640aa0a40e41c566a4a453eaccb。第一次启动会编译游戏代码，帧率上限保持在 60。",
+    "requirements": [
+      "Windows 10 64-bit and a Direct3D 12 GPU. Building needs Visual Studio 2022 with the C++ desktop workload, C++ Clang tools, and C++ CMake tools, then build.bat. Place default.xbe and the game folders in assets.",
+      "License: GPL-3.0 for this port. The README says the included xemu DSP code is GPL-2.0-or-later and LGPL-2.1-or-later, and the SDK in sdk/ keeps its MIT license."
+    ],
+    "evidence_url": "https://github.com/projectedan/McRae05-XBE-Recomp/blob/58d178e02386153b3db449445cb2c36a4de5ebbb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

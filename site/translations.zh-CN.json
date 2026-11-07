@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "cmr2005-xbe-recomp": {
+    "name": "Colin McRae Rally 2005 XBE 重编译",
+    "requirements": [
+      "需要 64 位 Windows 10 和支持 Direct3D 12 的显卡。构建需要带 C++ 桌面工作负载、C++ Clang 工具和 C++ CMake 工具的 Visual Studio 2022，然后运行 build.bat。把 default.xbe 和游戏目录放到 assets。",
+      "许可证：本移植为 GPL-3.0。README 写明包含的 xemu DSP 代码是 GPL-2.0-or-later 和 LGPL-2.1-or-later，sdk/ 里的 SDK 保持 MIT 许可证。"
+    ]
   }
 }
