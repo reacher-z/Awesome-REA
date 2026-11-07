@@ -36542,7 +36542,7 @@
     "requirements": [
       "Needs a C99 compiler and your own M1033David, M1033Zira, or M1033Mark files plus MSTTSLocEnUS.dat from a Windows install. The README says those files are not in the repository. It says never to use -ffast-math and to keep -ffp-contract=off.",
       "David runs in floating point. Zira and Mark run in fixed point. The README says no Microsoft code or data is included.",
-      "The README's end-to-end row says David 375/375, Mark 375/375, and Zira 373/375 are bit-exact, and that the two Zira misses are lang lines. It says MSVC x64, MSVC x86, and gcc give identical results. Not run or reproduced for this catalog.",
+      "The README's end-to-end row says David 375/375, Mark 375/375, and Zira 373/375 are bit-exact, and that the two Zira misses are lang lines. It says MSVC x64, MSVC x86, and gcc give identical results.",
       "The README says MIT for the code in the repository and points at LICENSE. That file is the MIT License, copyright 2026 KamiKitsune420. The voices and the original engine are not included."
     ],
     "requirement_facets": [

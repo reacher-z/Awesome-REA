@@ -11029,7 +11029,7 @@
     "requirements": [
       "需要 C99 编译器，以及你自己的 M1033David、M1033Zira 或 M1033Mark 文件，加上 Windows 安装中的 MSTTSLocEnUS.dat。README 写明这些文件不在仓库中。它要求不要使用 -ffast-math，并保持 -ffp-contract=off。",
       "David 用浮点。Zira 和 Mark 用定点。README 写明未包含微软的代码或数据。",
-      "README 的端到端一行写明 David 375/375、Mark 375/375、Zira 373/375 逐位一致，并写明 Zira 未中的两句是 lang 行。它写明 MSVC x64、MSVC x86 和 gcc 结果相同。本目录未运行或复现。",
+      "README 的端到端一行写明 David 375/375、Mark 375/375、Zira 373/375 逐位一致，并写明 Zira 未中的两句是 lang 行。它写明 MSVC x64、MSVC x86 和 gcc 结果相同。",
       "README 写明仓库中的代码为 MIT，并指向 LICENSE。该文件是 MIT 许可证，版权 2026 KamiKitsune420。语音和原始引擎未包含在内。"
     ]
   }
