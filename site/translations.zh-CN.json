@@ -40712,5 +40712,12 @@
       "把 yuka.exe 放进游戏目录并运行 yuka help。",
       "README 未注明许可证。"
     ]
+  },
+  "supermetroid-disasm": {
+    "name": "超级密特罗德反汇编",
+    "requirements": [
+      "需要 CMake 2.8.9 或更高版本、GNU Make 或 nmake，以及 GCC、Clang 或 MSVC。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
