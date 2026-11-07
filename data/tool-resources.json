@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "poryscript",
+    "name": "Poryscript",
+    "url": "https://github.com/huderlem/poryscript",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Poryscript compiles a higher-level script into the script bytecode used by pokeemerald, pokefirered, and pokeruby. It adds if, elif, else, while, do...while, and switch, and formats inline text for the in-game box. ./poryscript reads a file or standard input and writes a script file or standard output. -s sets a compile-time switch such as VERSION=RUBY. The program is written in Go. go build produces the poryscript binary, and ./install.sh copies it into a decompilation project.",
+    "description_zh": "Poryscript 把一种更高层的脚本编译成 pokeemerald、pokefirered 和 pokeruby 使用的脚本字节码。它加入 if、elif、else、while、do...while 和 switch，并为游戏内文本框格式化内联文本。./poryscript 从文件或标准输入读取，并写出脚本文件或标准输出。-s 设置编译期开关，例如 VERSION=RUBY。程序用 Go 编写。go build 生成 poryscript 二进制，./install.sh 把它复制进一个反编译项目。",
+    "requirements": [
+      "Go. From the project directory, run go build.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/huderlem/poryscript/blob/c32481161c767b25a3425fa9f1f8729927ff3d55/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
