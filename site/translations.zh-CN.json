@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "xml1-recomp": {
+    "name": "XML1-recomp：《X 战警传说》的 Windows 重编译",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11，以及用户自己的《X 战警传说》世界版 Xbox ISO。README 给出已测试 ISO 的 SHA-256 为 0a1ef03e57458144609906bbc2d44d2c26028cf704f4698ce0f1e61c34030b44。",
+      "把 1.0.1 发行包解压到与已解出的 ISO 文件相同的文件夹。README 要求保留 runtime 目录和隐藏文件 .xml1-player-layout。",
+      "GitHub 上该仓库的许可证元数据为空。README 写明第三方组件保留各自的许可证。"
+    ]
   }
 }
