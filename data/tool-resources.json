@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "lumina-binja",
+    "name": "lumina-binja",
+    "url": "https://github.com/ubcctf/lumina-binja",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "lumina-binja is a Binary Ninja plugin for IDA Lumina metadata. It applies function names, instruction and function comments, and function types on x86 and x86_64. The README estimates about 85 percent signature agreement with IDA, and marks ARM and AArch64 as not done. The official server expects an IDA license file and the Hex-Rays certificate.",
+    "description_zh": "lumina-binja 是用于 IDA Lumina 元数据的 Binary Ninja 插件。它在 x86 和 x86_64 上应用函数名、指令级和函数级注释，以及函数类型。README 估计签名与 IDA 大约 85% 一致，并标明 ARM 和 AArch64 尚未完成。官方服务器需要 IDA 许可证文件和 Hex-Rays 证书。",
+    "requirements": [
+      "Binary Ninja. The README says the plugin is still in active development.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ubcctf/lumina-binja/blob/e46a6e754df53fd1f6d46f38c766df306994ca75/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
