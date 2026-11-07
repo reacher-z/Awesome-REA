@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "idaidle": {
+    "name": "idaidle",
+    "requirements": [
+      "需要 IDA Pro 9.3 或更新版本及匹配的 SDK、CMake 3.31 或更新版本，以及支持 C++20 的编译器。把构建好的插件复制到 IDA 的 plugins 目录。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

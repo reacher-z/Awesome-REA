@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "idaidle",
+    "name": "idaidle",
+    "url": "https://github.com/google/idaidle",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "idaidle is an IDA Pro plugin that watches idle time. By default it warns after six hours and, after twelve hours, writes a database snapshot and closes IDA without saving. The warning delay is -OIdaIdleWarningSeconds:N. Builds produce idaidle.so, idaidle.dylib, or idaidle.dll.",
+    "description_zh": "idaidle 是一个监视空闲时间的 IDA Pro 插件。默认六小时后警告，十二小时后写出数据库快照并在不保存的情况下关闭 IDA。警告延迟是 -OIdaIdleWarningSeconds:N。构建产物是 idaidle.so、idaidle.dylib 或 idaidle.dll。",
+    "requirements": [
+      "IDA Pro 9.3 or newer with a matching SDK, CMake 3.31 or newer, and a C++20 compiler. Copy the built plugin into the IDA plugins directory.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/google/idaidle/blob/d3206f1b05a66f02550dd94f8ab403ac5360425a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
