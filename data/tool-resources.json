@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ferrumc",
+    "name": "FerrumC",
+    "url": "https://github.com/ferrumc-rs/ferrumc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "software",
+    "description_en": "FerrumC is a multithreaded Rust server for Minecraft 1.21.8. cargo build --release writes the binary under target/release/. The reviewed README says the project is not actively maintained, and that a rewrite on rework/v2-skeleton is on hold.",
+    "description_zh": "FerrumC 是用 Rust 编写的多线程《我的世界》1.21.8 服务器。cargo build --release 把二进制写到 target/release/。审阅的 README 写明项目目前没有人积极维护，rework/v2-skeleton 上的重写也已暂停。",
+    "requirements": [
+      "Rust and Cargo. cargo build --release.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/ferrumc-rs/ferrumc/blob/ce74af7ce087fbb07dc0ce18d5051daa595a4b23/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
