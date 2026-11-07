@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "belthasar",
+    "name": "BelthasarProject",
+    "url": "https://github.com/TemplarServant/BelthasarProject",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "BelthasarProject reimplements Chrono Trigger for the SNES, USA 1995, as a portable C engine. The dump is a headerless 4,194,304-byte ROM, SHA-1 de5822f4f2f7a55acb8926d4c0eaa63d5d989312. The README says the title, a new game, the field, battles, menus, the overworld, and the music run on the C engine. A full playthrough is not verified yet. Optional mods add widescreen and frame rates above 60.",
+    "description_zh": "BelthasarProject 把 1995 年美版超级任天堂《时空之轮》重实现为可移植的 C 引擎。转储是 4,194,304 字节的无头 ROM，SHA-1 为 de5822f4f2f7a55acb8926d4c0eaa63d5d989312。README 写明标题、新游戏、场景、战斗、菜单、世界地图和音乐都在 C 引擎上运行。完整通关还没有验证。可选模组提供宽屏和高于 60 的帧率。",
+    "requirements": [
+      "On Windows, Visual Studio 2022 Build Tools with CMake and Ninja, and Python 3. Run python tools/setup.py --rom with the USA ROM, then tools\\build.bat.",
+      "License: MIT for the code, tools, and documentation written for this project. The README says the vendored LakeSnes core keeps its own MIT license."
+    ],
+    "evidence_url": "https://github.com/TemplarServant/BelthasarProject/blob/f1c3f285620fb3091052b954353bc966530e504d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
