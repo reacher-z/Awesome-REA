@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "perfect-dark-xbla-recomp",
+    "name": "Perfect Dark XBLA recompilation",
+    "url": "https://github.com/CaiusCodes/Perfect-Dark-XBLA-PC-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles the 2010 Xbox 360 remaster of Perfect Dark to Windows with ReXGlue. The launcher imports title ID 584109C2. Supported packages begin with 4287CC74 or 8292DB97. The README lists play up to 4K and 60 fps, with keyboard, mouse, and LAN or virtual-LAN multiplayer for up to 8 players.",
+    "description_zh": "该项目用 ReXGlue 把 2010 年 Xbox 360 重制版《完美黑暗》重编译到 Windows。启动器导入标题 ID 584109C2。受支持的包以 4287CC74 或 8292DB97 开头。README 列出最高 4K 和 60 帧，以及键盘、鼠标和最多 8 人的局域网或虚拟局域网多人。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, an AVX2 processor, and a DirectX 12 or Vulkan graphics card. Extract the release and run Perfect Dark.exe.",
+      "License: The Unlicense for this project's own code. The README says the launcher is distributed under GPL-3.0 because it includes the Velocity STFS reader, ReXGlue is BSD-3-Clause, and Plume and XenosRecomp are MIT."
+    ],
+    "evidence_url": "https://github.com/CaiusCodes/Perfect-Dark-XBLA-PC-Recomp/blob/ee7961a93bbbf03eb7c9ba4c52c2751dc85f7f03/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

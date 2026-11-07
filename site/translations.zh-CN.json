@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "perfect-dark-xbla-recomp": {
+    "name": "完美黑暗 XBLA 重编译",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11、支持 AVX2 的处理器，以及 DirectX 12 或 Vulkan 显卡。解压发布包并运行 Perfect Dark.exe。",
+      "许可证：本项目自身代码为 The Unlicense。README 写明启动器因包含 Velocity 的 STFS 读取器而以 GPL-3.0 分发，ReXGlue 是 BSD-3-Clause，Plume 和 XenosRecomp 是 MIT。"
+    ]
   }
 }
