@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "re-wor-case",
+    "name": "re-wor",
+    "url": "https://github.com/ronniecloud/re-wor",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "re-wor is a static recompilation of Guitar Hero: Warriors of Rock for Xbox 360, built for Windows with the RexGlue SDK. It is based on re-gh2. The repository does not include game assets.",
+    "description_zh": "re-wor 是 Xbox 360 版《吉他英雄：摇滚之神》的静态重编译，用 RexGlue SDK 构建到 Windows。它基于 re-gh2。仓库不包含游戏资源。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, and a DirectX 12 GPU. The player supplies their own Xbox 360 copy. Building needs Clang 20 or newer, CMake 3.25 or newer, Ninja, and a compiled RexGlue SDK.",
+      "The README says the current release is a test version. It does not name a license."
+    ],
+    "evidence_url": "https://github.com/ronniecloud/re-wor/blob/7da08766fa5f2f1209e2657deed6886380efe557/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
