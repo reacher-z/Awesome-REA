@@ -4,7 +4,7 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
@@ -13,7 +13,7 @@
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
-- [Protocol](#protocol) (91)
+- [Protocol](#protocol) (92)
 
 <a id="website"></a>
 ## Website
@@ -504,4 +504,5 @@
 - [**hw-harness: scanner USB protocol investigation**](https://github.com/cschalle/hw-harness) - Documents an author-reported scanner investigation comparing vendor-driver USB control transfers with Linux-driver traces to infer initialization, timing and resolution parameters. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/hw-harness-reference-case/)</sub>
 - [**NJFE: a Soulear camera protocol bridge for desktop inspection**](https://github.com/WildweaselMS/NJFE) - Reuses otoscope's reverse-engineered i4season/Soulear protocol in an ESP32-C3 bridge and Python desktop viewer. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/njfe-ear-camera-bridge-case/)</sub>
 - [**open-appleremote: Siri Remote protocol reconstruction**](https://github.com/a-funk/open-appleremote) - Reconstructs first-generation Siri Remote Bluetooth reports for Linux, decoding buttons, touch and tvOS-style gestures. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/open-appleremote-case/)</sub>
+- [**Smart ring protocol: documenting the Oura Ring BLE protocol and event format**](https://github.com/ringverse/protocol) - Documents reverse-engineered smart-ring communication, currently only for the Oura Ring: the request and response framing over Bluetooth Low Energy, a catalog of request tags with their payload fields, and the ring's binary event stream. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ringverse-oura-ring-protocol-case/)</sub>
 <!-- END GENERATED CASES -->
