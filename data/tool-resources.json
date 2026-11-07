@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokemon-pinball-gbc-case",
+    "name": "Pokémon Pinball: Game Boy Color disassembly",
+    "url": "https://github.com/pret/pokepinball",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "Pokémon Pinball is a disassembly of the Game Boy Color game Pokémon Pinball. The README says the repository builds the USA ROM Pokemon Pinball (U) [C][!].gb, SHA-1 9402014d14969432142abfde728c6f1a10ee4dac.",
+    "description_zh": "Pokémon Pinball 是 Game Boy Color 游戏《Pokémon Pinball》的反汇编。README 写明该仓库会构建美版 ROM Pokemon Pinball (U) [C][!].gb，SHA-1 为 9402014d14969432142abfde728c6f1a10ee4dac。",
+    "requirements": [
+      "Setup steps are in INSTALL.md.",
+      "The README names the built USA ROM as Pokemon Pinball (U) [C][!].gb with SHA-1 9402014d14969432142abfde728c6f1a10ee4dac.",
+      "The README does not name a license."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/pret/pokepinball/blob/9b67d9afaba83e02d5d238c29868db4142b3037d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

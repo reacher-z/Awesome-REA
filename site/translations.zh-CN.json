@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pokemon-pinball-gbc-case": {
+    "name": "Pokémon Pinball：Game Boy Color 反汇编",
+    "requirements": [
+      "安装步骤写在 INSTALL.md。",
+      "README 写明构建出的美版 ROM 为 Pokemon Pinball (U) [C][!].gb，SHA-1 为 9402014d14969432142abfde728c6f1a10ee4dac。",
+      "README 没有写许可证。"
+    ]
   }
 }
