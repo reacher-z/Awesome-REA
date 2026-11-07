@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "redivivus-case",
+    "name": "Redivivus",
+    "url": "https://github.com/jaenster/redivivus",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "Redivivus recovers Diablo II: Lord of Destruction 1.14d as C++ that builds and runs. The README says the machine code is compared with the original Visual C++ 2005 SP1 build, and that 7,695 of 14,626 functions match. A full single-player playthrough has been completed on that compiler. Battle.net play is outside its scope.",
+    "description_zh": "Redivivus 把《暗黑破坏神 II：毁灭之王》1.14d 恢复成可以构建和运行的 C++。README 写明机器码与原始 Visual C++ 2005 SP1 构建比对，14,626 个函数中有 7,695 个匹配。该编译器上的单人游戏已经完成过一次通关。Battle.net 联机不在范围内。",
+    "requirements": [
+      "Translation units compile with -std=c++17. The Visual C++ 2005 build is the one compared with the original.",
+      "License: MIT. Code under 3rdparty/libbacktrace/ keeps its own license."
+    ],
+    "evidence_url": "https://github.com/jaenster/redivivus/blob/92f67c4fe9ea37845ef715e0b9027088335d4887/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
