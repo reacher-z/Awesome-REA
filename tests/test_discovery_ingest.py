@@ -93,7 +93,34 @@ class WaitAndMergeTest(unittest.TestCase):
         api = FakeAPI({('GET', 'commits/'): (200, {'check_runs': []}),
                        ('GET', 'branches/main'): (200, {'commit': {'sha': 'e' * 40}})})
         with self.assertRaises(ingest.Retry):
-            ingest.wait_for_checks(api, 'f' * 40, 'main', 'a' * 40)
+            ingest.wait_for_checks(api, 'f' * 40, 'main', 'a' * 40, deadline=float('inf'))
+
+    def test_a_check_still_queued_after_the_old_14_minutes_is_waited_for(self):
+        # Run 42223736734 gave up 36 seconds before `validate` passed: its jobs had queued for 11 minutes.
+        started, clock = 1000.0, [1000.0]
+
+        def statuses(endpoint, payload):
+            done = clock[0] - started >= 15 * 60
+            return (200, {'statuses': [{'context': name, 'state': 'success'} for name in ingest.CHECK_NAMES] if done else [],
+                          'check_runs': []})
+
+        api = FakeAPI({('GET', 'commits/'): statuses, ('GET', 'branches/main'): (200, {'commit': {'sha': 'a' * 40}})})
+        with patch.object(ingest.time, 'monotonic', lambda: clock[0]), \
+                patch.object(ingest.time, 'sleep', lambda seconds: clock.__setitem__(0, clock[0] + seconds)):
+            results = ingest.wait_for_checks(api, 'f' * 40, 'main', 'a' * 40, ingest.check_deadline(started))
+        self.assertEqual(results, dict.fromkeys(ingest.CHECK_NAMES, ('completed', 'success')))
+
+    def test_the_wait_ends_in_time_to_merge_within_the_job_limit(self):
+        started, clock = 1000.0, [1000.0]
+        api = FakeAPI({('GET', 'commits/'): (200, {'statuses': [], 'check_runs': []}),
+                       ('GET', 'branches/main'): (200, {'commit': {'sha': 'a' * 40}})})
+        with patch.object(ingest.time, 'monotonic', lambda: clock[0]), \
+                patch.object(ingest.time, 'sleep', lambda seconds: clock.__setitem__(0, clock[0] + seconds)), \
+                self.assertRaisesRegex(RuntimeError, 'did not finish in time'):
+            ingest.wait_for_checks(api, 'f' * 40, 'main', 'a' * 40, ingest.check_deadline(started))
+        waited = clock[0] - started
+        self.assertGreaterEqual(waited, 38 * 60)
+        self.assertLessEqual(waited + ingest.MERGEABILITY_WAIT_SECONDS, 44 * 60)
 
     def test_merge_rebases_the_checked_head_and_retries_when_it_is_outdated(self):
         api = FakeAPI({('PUT', 'pulls/7/merge'): (200, {'sha': 'm' * 40})})
@@ -287,7 +314,7 @@ class WorkflowTest(unittest.TestCase):
         self.assertIn('      checks: read\n      statuses: read\n', self.jobs['ingest'])
         for name, job in self.jobs.items():
             minutes = int(re.search(r'timeout-minutes: ([0-9]+)', job)[1])
-            self.assertLessEqual(minutes, 30, name)
+            self.assertLessEqual(minutes, 45 if name == 'ingest' else 30, name)
             self.assertIn('persist-credentials: false', job)
         self.assertIn("checkpoint_ready: ${{ steps.scan.outputs.checkpoint_ready }}", self.jobs['scan'])
 

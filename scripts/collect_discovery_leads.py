@@ -1259,7 +1259,7 @@ def run() -> int:
         ingest.log(f'PULL_REQUEST number={number} head={head_sha[:12]}')
         dispatch_checks(github, default_branch, number, head_sha)
         try:
-            results = ingest.wait_for_checks(github, head_sha, default_branch, base_sha)
+            results = ingest.wait_for_checks(github, head_sha, default_branch, base_sha, ingest.check_deadline(started))
             ingest.log(f'CHECKS {results}')
             if any(conclusion != 'success' for _, conclusion in results.values()):
                 raise RuntimeError(f'Required checks failed on {head_sha[:12]}: {results}')
