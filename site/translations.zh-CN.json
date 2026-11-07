@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "infamous2-pc": {
+    "name": "恶名昭彰 2 PC 移植",
+    "requirements": [
+      "需要 x86-64 Linux 和 Vulkan。玩家提供自己的 PlayStation 3 副本。构建在本地翻译那份可执行文件。",
+      "许可证：本仓库为 MIT。README 写明 ps3recomp 是 MIT。"
+    ]
   }
 }

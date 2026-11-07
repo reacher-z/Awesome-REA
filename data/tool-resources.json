@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "infamous2-pc",
+    "name": "inFAMOUS 2 PC port",
+    "url": "https://github.com/ThiagoFraga761/infamous2-pc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles inFAMOUS 2 for the PlayStation 3, BCUS98125 version 01.00, to native Linux with ps3recomp. PowerPC and SPU code are translated to C, and the game's RSX shaders run on Vulkan. The README says play continues from Empire City to New Marais, with sound, controls, saves, and a Portuguese dub.",
+    "description_zh": "该项目用 ps3recomp 把 PlayStation 3 版《恶名昭彰 2》（BCUS98125，版本 01.00）重编译到原生 Linux。PowerPC 和 SPU 代码被翻译成 C，游戏的 RSX 着色器在 Vulkan 上运行。README 写明游戏可以从帝国城玩到新马赛，带声音、操控、存档和葡萄牙语配音。",
+    "requirements": [
+      "Linux x86-64 and Vulkan. The player supplies a copy from their own PlayStation 3. The build translates that executable locally.",
+      "License: MIT for this repository. The README says ps3recomp is MIT."
+    ],
+    "evidence_url": "https://github.com/ThiagoFraga761/infamous2-pc/blob/1ab02e702c37247ad4f53ac0b361d92e8b3269bc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
