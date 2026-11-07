@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "idapyhelper",
+    "name": "IDAPyHelper",
+    "url": "https://github.com/patois/IDAPyHelper",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDAPyHelper is an IDAPython script that lists names available to IDAPython so they can be sorted, searched, and filtered. Double-clicking an entry shows its docstring when one exists, and Alt-E opens the module.",
+    "description_zh": "IDAPyHelper 是一个 IDAPython 脚本，列出 IDAPython 可访问的名称，以便排序、搜索和过滤。双击条目会在有文档字符串时显示它，Alt-E 会打开整个模块。",
+    "requirements": [
+      "It is an IDAPython script compatible with Python 3. A Python 2 branch is mentioned for older IDA versions.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/patois/IDAPyHelper/blob/2a13c485663ed9b16e4b0ae7323f52f263186c18/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
