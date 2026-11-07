@@ -12817,5 +12817,52 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-layered-obfuscation",
+    "title": "Layered obfuscation: a taxonomy of software obfuscation techniques for layered security",
+    "authors": [
+      "Hui Xu",
+      "Yangfan Zhou",
+      "Jiang Ming",
+      "Michael Lyu"
+    ],
+    "year": 2020,
+    "publication_date": "2020-04-03",
+    "date_precision": "day",
+    "date_basis": "Crossref issued date",
+    "venue": "Cybersecurity",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1186/s42400-020-00049-3",
+    "url": "https://doi.org/10.1186/s42400-020-00049-3",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1186/s42400-020-00049-3.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This review sets out a taxonomy of software obfuscation techniques framed as layered security, and discusses what kind of strength those protections can claim. It compares obfuscation methods rather than presenting one deobfuscator.",
+    "description_zh": "这篇评述给出一种把软件混淆技术看成分层安全的分类，并讨论这些保护能够声称何种强度。它比较的是混淆方法，而不是给出某一个反混淆器。",
+    "scope_limitations_en": "The summary follows the fetched open-access PDF and the Crossref record. No obfuscation or deobfuscation experiment was rerun.",
+    "scope_limitations_zh": "摘要依据已获取的开放获取 PDF 和 Crossref 记录。没有重跑混淆或反混淆实验。",
+    "why_fits_en": "Obfuscation taxonomies describe protections that binary reverse engineering and deobfuscation have to confront.",
+    "why_fits_zh": "混淆分类描述的是二进制逆向和反混淆必须面对的保护手段。",
+    "evidence_urls": [
+      "https://link.springer.com/content/pdf/10.1186/s42400-020-00049-3.pdf",
+      "https://api.crossref.org/works/10.1186/s42400-020-00049-3",
+      "https://doi.org/10.1186/s42400-020-00049-3"
+    ],
+    "metadata_notes": "The journal volume and article number printed on the PDF were not copied into a citation object.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "分层混淆：面向分层安全的软件混淆技术分类",
+    "date_basis_zh": "日期取自 Crossref 登记的出版日期",
+    "metadata_notes_zh": "PDF 上的卷号和文章编号没有写入引用对象。"
   }
 ]
