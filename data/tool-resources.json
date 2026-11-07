@@ -143849,5 +143849,25 @@
     "verified_at": "2026-11-07",
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
+  },
+  {
+    "id": "py2exe-decompiler",
+    "name": "Py2ExeDecompiler",
+    "url": "https://github.com/endgameinc/Py2ExeDecompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Py2ExeDecompiler recovers source from executables built with py2exe. It extracts .pyc files from the executable resources and decompiles them with uncompyle6. The reviewed page covers Python 2.7 through 3.5. Python 3.6 only shows disassembly. The program is a .NET Framework 4.5.2 application. Drag an exe onto Py2ExeDecompiler.exe, or open it from the window.",
+    "description_zh": "Py2ExeDecompiler 从 py2exe 构建的可执行文件恢复源码。它从可执行文件资源里提取 .pyc，并用 uncompyle6 反编译。审阅页面覆盖 Python 2.7 到 3.5。Python 3.6 只显示反汇编。程序是 .NET Framework 4.5.2 应用。把 exe 拖到 Py2ExeDecompiler.exe 上，或从窗口打开。",
+    "requirements": [
+      "Python 2.7 for 2.7 binaries, or Python 3 through 3.5 for Python 3 binaries. .NET Framework 4.5.2 or newer.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/endgameinc/Py2ExeDecompiler/blob/e871e045334074314ab5fc377cfd8955d768c809/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
