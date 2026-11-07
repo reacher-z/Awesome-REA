@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "bt3-decompiled": {
+    "name": "龙珠Z电光火石3反编译",
+    "requirements": [
+      "需要 7z、ninja、带 splat 的 Python 3、索尼 ee-gcc 2.96 和 PS2 的 MIPS binutils。按 configure.py 期望的名字放置美版 ISO，然后运行 .venv/bin/python configure.py 和 ninja。",
+      "许可证：本仓库里的名称、注释、文档、脚本、构建配置和重建工作为 CC0 1.0。"
+    ]
   }
 }
