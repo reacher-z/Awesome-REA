@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "fe5-disasm": {
+    "name": "火焰纹章多拉基亚776反汇编",
+    "requirements": [
+      "需要 Python 3、GNU Make，以及放在 TOOLS/ 里的 64tass 和 SuperFamiconv。README 还要求并列的 FE5Tools 和 VoltEdge 目录。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

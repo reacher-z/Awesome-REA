@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fe5-disasm",
+    "name": "Fire Emblem: Thracia 776 disassembly",
+    "url": "https://github.com/ZaneAvernathy/FireEmblem5",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles Fire Emblem: Thracia 776. It builds a headerless release ROM, SHA-1 75B504921D08E313FF58150E40121AC701884517. The player names a headerless ROM FE5.sfc and runs make.",
+    "description_zh": "该项目反汇编《火焰纹章 多拉基亚 776》。它构建无头的发行版 ROM，SHA-1 为 75B504921D08E313FF58150E40121AC701884517。玩家把无头 ROM 命名为 FE5.sfc，然后运行 make。",
+    "requirements": [
+      "Python 3, GNU Make, 64tass, and SuperFamiconv in TOOLS/. The README also asks for the sibling directories FE5Tools and VoltEdge.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ZaneAvernathy/FireEmblem5/blob/980bb114886061532267a6aa50e4ebd5a37d6d8b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
