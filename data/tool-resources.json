@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "yaravm",
+    "name": "YaraVM",
+    "url": "https://github.com/milankovo/YaraVM",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "YaraVM is an IDA Pro loader and processor module for compiled YARA rules. It loads the rule bytecode and the regex bytecode so they can be disassembled in IDA.",
+    "description_zh": "YaraVM 是用于已编译 YARA 规则的 IDA Pro 加载器和处理器模块。它载入规则字节码和正则字节码，以便在 IDA 里反汇编。",
+    "requirements": [
+      "Copy yara_loader.py into the IDA loaders directory, yara_proc.py into the procs directory, and libyara.til into the til directory.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/milankovo/YaraVM/blob/3b4e357faf65097b0f7b444cc0199398c81e5253/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
