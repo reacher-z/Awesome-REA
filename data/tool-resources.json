@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sonic-spinball-disasm",
+    "name": "Sonic Spinball disassembly",
+    "url": "https://github.com/sonicretro/spindisasm",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is Andlabs' Sonic Spinball disassembly, converted to one assembly file and adjusted to build with asm68k. Twenty-four lines were changed to inline hex so the output is bit-perfect. The original IDA database is included unaltered.",
+    "description_zh": "这是 Andlabs 的 Sonic Spinball 反汇编，转成一个汇编文件，并调整到可以用 asm68k 构建。有 24 行被改成内联十六进制，使输出逐字节一致。原来的 IDA 数据库原样附带。",
+    "requirements": [
+      "Place asm68k in the folder and run build.bat. Edits require fixing the checksum.",
+      "The reviewed README does not name a license. It says commercial use is prohibited."
+    ],
+    "evidence_url": "https://github.com/sonicretro/spindisasm/blob/d835779e55a36fa204edfa34c1a332d9e3836f6c/readme.txt",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
