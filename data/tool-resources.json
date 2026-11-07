@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dino-recomp",
+    "name": "Dinosaur Planet: Recompiled",
+    "url": "https://github.com/DinosaurPlanetRecomp/dino-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Dinosaur Planet: Recompiled statically recompiles the December 2000 Dinosaur Planet prototype with N64: Recompiled and renders it with RT64. The reviewed page says that prototype, released by Forest of Illusion on 20 February 2021, is the only ROM it accepts. A Direct3D 12 Shader Model 6 or Vulkan 1.2 GPU is required, plus a CPU with SSE4.1. A file named portable.txt beside the executable keeps saves, config, and mods in that folder. --4x3 launches at 1280x960. Build steps are in BUILDING.md.",
+    "description_zh": "Dinosaur Planet: Recompiled 用 N64: Recompiled 静态重编译 2000 年 12 月的 Dinosaur Planet 原型，并用 RT64 渲染。审阅页面写明它只接受 Forest of Illusion 在 2021 年 2 月 20 日发布的那份原型 ROM。需要支持 Direct3D 12 着色器模型 6 或 Vulkan 1.2 的 GPU，以及带 SSE4.1 的 CPU。在可执行文件旁边放一个名为 portable.txt 的文件，存档、配置和模组就会留在那个文件夹。--4x3 以 1280x960 启动。构建步骤在 BUILDING.md。",
+    "requirements": [
+      "The December 2000 prototype ROM. Follow BUILDING.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/DinosaurPlanetRecomp/dino-recomp/blob/7dae9dc6ca087742ebda4b0ca8bb37421a9383d4/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
