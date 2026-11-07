@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "breadflowerdos",
+    "name": "BreadFlowerDos",
+    "url": "https://github.com/kiwidoggie/breadflowerdos",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "BreadFlowerDos is a modern C++ recreation of the Refractor 2 engine, focused on Battlefield 2 and Battlefield 2142. The README says it reimplements functionality rather than matching the original binaries.",
+    "description_zh": "BreadFlowerDos 用现代 C++ 重做 Refractor 2 引擎，重点是《战地2》和《战地2142》。README 写明它重实现功能，而不是匹配原来的二进制。",
+    "requirements": [
+      "CMake 4.0 or newer, and Clang 19 or newer or MSVC. Commits are expected to pass clang-tidy and clang-format.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/kiwidoggie/breadflowerdos/blob/6b4d4e1f10dee9b1c8932db95f91b92e3eceb7db/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
