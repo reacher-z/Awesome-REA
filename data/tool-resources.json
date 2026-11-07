@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "xml1-recomp",
+    "name": "XML1-recomp: Windows recompilation of X-Men Legends",
+    "url": "https://github.com/GTTeancum/XML1-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "OpenXML1xbox is a Windows recompilation of the original Xbox game X-Men Legends, built with XboxRecomp and a native Direct3D 8 renderer. The README's version 1.0.1 runs on 64-bit Windows 10 or 11 at up to 4K, with keyboard, mouse, and XInput. It asks for the user's own X-Men Legends (World) ISO.",
+    "description_zh": "OpenXML1xbox 是初代 Xbox 游戏《X 战警传说》的 Windows 重编译，使用 XboxRecomp 和原生 Direct3D 8 渲染器。README 的 1.0.1 版在 64 位 Windows 10 或 11 上运行，分辨率最高到 4K，并支持键盘、鼠标和 XInput。它要求用户自备《X 战警传说》世界版 ISO。",
+    "evidence_url": "https://github.com/GTTeancum/XML1-recomp/blob/e02fdf592b8ef02098f3b4a9c1bf2e65ff346c88/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "64-bit Windows 10 or 11 and the user's own X-Men Legends (World) Xbox ISO. The README gives the tested ISO SHA-256 as 0a1ef03e57458144609906bbc2d44d2c26028cf704f4698ce0f1e61c34030b44.",
+      "Release 1.0.1 is extracted into the same folder as the extracted ISO files. The README says to keep the runtime directory and the hidden .xml1-player-layout file.",
+      "GitHub's license metadata for this repository is empty. The README says third-party components retain their licenses."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
