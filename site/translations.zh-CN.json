@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "issd-native": {
+    "name": "ISSD Native",
+    "requirements": [
+      "用 python tools/verify_rom.py 校验 ROM。在 Windows 上运行 ISSDNative.exe，或用 --rom 运行 build/ISSDNative.exe 里的源码构建。把 aot_boot_deny.txt 放在可执行文件旁边。Android 构建目标是 arm64-v8a 和 x86_64。",
+      "许可证：本项目自身代码为 GPL-3.0。README 写明 SNESRecomp 是 PolyForm Noncommercial 1.0.0，ISSD 反汇编参考是 GPL-3.0，ISSD 网页编辑器参考是 MIT。"
+    ]
   }
 }
