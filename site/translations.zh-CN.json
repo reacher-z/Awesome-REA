@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "retro-launcher": {
+    "name": "Retro Launcher",
+    "requirements": [
+      "README 写明首次安装可能需要 5 到 10 分钟，因为用户在本地生成机器码。",
+      "该项目正在申请 SignPath Foundation 的签名。",
+      "许可证：MIT。"
+    ]
   }
 }

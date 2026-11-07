@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "retro-launcher",
+    "name": "Retro Launcher",
+    "url": "https://github.com/RetroPortingToolKit/Retro-Launcher",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Retro Launcher catalogs and installs recomps that compile on the user's machine. The README says it checks for updates, rebuilds from existing build data when it can, and shares a portable toolchain with per-title launchers.",
+    "description_zh": "Retro Launcher 编目并安装在用户机器上自行编译的重编译项目。README 写明它会检查更新，在可以时用已有构建数据重新构建，并与各个游戏的启动器共用一套便携工具链。",
+    "requirements": [
+      "The README says first installs can take 5 to 10 minutes because users generate machine code locally.",
+      "The project is applying for signing with the SignPath Foundation.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/RetroPortingToolKit/Retro-Launcher/blob/102c3ef33e5194768f5bd59fc9fbd04076662853/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
