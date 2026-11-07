@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "kl2-lv-decomp": {
+    "name": "Klonoa 2 反编译",
+    "requirements": [
+      "把 SCESDK 设为官方 PlayStation 2 SDK。然后运行 cmake -Bbuild 和 make。ELF 是 kl2_lv_decomp.elf。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

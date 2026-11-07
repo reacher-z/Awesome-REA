@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "kl2-lv-decomp",
+    "name": "Klonoa 2 decompilation",
+    "url": "https://github.com/entriphy/kl2_lv_decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Klonoa 2: Lunatea's Veil for PlayStation 2, NTSC SLUS_201.51. Debug symbols came from the executable on Demo Disc 2.3. The README says ee-gcc 2.9-991111-01 produces matching code most of the time, and that the project is early and may fail to build.",
+    "description_zh": "这是 PlayStation 2 游戏 Klonoa 2: Lunatea's Veil 的匹配反编译，NTSC 编号 SLUS_201.51。调试符号来自 Demo Disc 2.3 上的可执行文件。README 写明 ee-gcc 2.9-991111-01 大多数时候能产生匹配的代码，并且项目还很早，构建可能失败。",
+    "requirements": [
+      "Set SCESDK to the official PlayStation 2 SDK. Then run cmake -Bbuild and make. The ELF is kl2_lv_decomp.elf.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/entriphy/kl2_lv_decomp/blob/2c4735ca064be44dddb47fc5262e5ddaa3dfd117/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
