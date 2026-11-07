@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -301,6 +301,11 @@
 - [**Touhou reconstructions: an agent-driven method across three games**](https://rea.tools/blog/touhou-reconstruction/) - An essay published on REA’s site, with pinned evidence notes, describes one author’s agent-driven reconstructions of TH08, TH095 and TH04. <sub>Case study · Official REA · Also: Binary · [Full entry](https://awesomerea.org/resources/rea-touhou-reconstruction-method-case/)</sub>
 - [**Uncharted: The Nathan Drake Collection native Windows port**](https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port) - Runs the PS4 Uncharted: The Nathan Drake Collection’s own x86-64 executables natively on Windows: a runtime supplies the PS4 system libraries and a shadPS4-derived Vulkan renderer executes the GPU work. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/uncharted-collection-pc-port-case/)</sub>
 - [**Void Client: rebuilding the Starblast.io client**](https://github.com/Senko74/Void-Client) - Void Client is an unfinished JavaScript rewrite of the Starblast.io browser game client based on study of its network protocol. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/void-client-case/)</sub>
+
+<a id="game-unassigned"></a>
+### Other reconstruction methods (1)
+
+- [**OpenRealm: a Warcraft III engine reimplementation with WoW and StarCraft II targets**](https://github.com/corepunch/open-realm) - Reimplements the Warcraft III engine in C as a Quake 2-style client/server runtime that loads the user’s own MPQ archives, covering JASS scripts, SLK data, FDF UI, campaigns, maps, fog, units and networking; World of Warcraft and StarCraft II are exploratory format and renderer targets. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openrealm-warcraft-3-engine-case/)</sub>
 
 <a id="app"></a>
 ## App
