@@ -36528,5 +36528,24 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "udis86",
+    "name": "Udis86",
+    "url": "https://github.com/vmt/udis86",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Disassembler library for x86 and x86-64. The README says libudis86 decodes a stream of raw bytes and exposes the instructions in a structured form. It lists general-purpose and system instructions, plus MMX, x87, AMD 3DNow, SSE through SSE4.2, and AES among the ISA extensions.",
+    "description_zh": "x86 和 x86-64 反汇编库。README 写明 libudis86 解码原始字节流，并以结构化形式提供指令。它列出通用和系统指令，并把 MMX、x87、AMD 3DNow、SSE 到 SSE4.2 以及 AES 列在 ISA 扩展中。",
+    "evidence_url": "https://github.com/vmt/udis86/blob/56ff6c87c11de0ffa725b14339004820556e343d/README",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Distributed under the 2-clause BSD License. The README says a copy is in the LICENSE file."
+    ]
   }
 ]

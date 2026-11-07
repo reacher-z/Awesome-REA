@@ -11023,5 +11023,11 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "udis86": {
+    "name": "Udis86",
+    "requirements": [
+      "以二条款 BSD 许可分发。README 写明 LICENSE 文件中有许可文本。"
+    ]
   }
 }
