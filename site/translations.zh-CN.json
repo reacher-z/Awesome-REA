@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "zelda1-nes-disassembly-case": {
+    "name": "塞尔达传说反汇编",
+    "requirements": [
+      "把 ca65 和 ld65 放到 src 旁的 ext 目录，然后运行 build.ps1。输出在 bin 目录。",
+      "校验时期望 ext 中有 Original.nes，即 (U) (PRG0) [!] ROM。传入 --NoVerify 可跳过比对。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "zelda1-nes-disassembly-case",
+    "name": "The Legend of Zelda disassembly",
+    "url": "https://github.com/aldonunez/zelda1-disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository is a disassembly of The Legend of Zelda. A tool written for the project turns a Mesen .MLB file and the ROM into a listing, and the sources assemble with ca65. The build compares its output with the original ROM.",
+    "description_zh": "该仓库是《The Legend of Zelda》的反汇编。项目自带的工具把 Mesen 的 .MLB 文件和 ROM 转成清单，源码用 ca65 汇编。构建会把输出与原始 ROM 比对。",
+    "requirements": [
+      "Place ca65 and ld65 in an ext folder next to src, then run build.ps1. Output goes to a bin folder.",
+      "Verification expects Original.nes in ext, the (U) (PRG0) [!] ROM. Passing --NoVerify skips the comparison.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/aldonunez/zelda1-disassembly/blob/50a1c869a8d8e2eb8b5b60acea325f44b4341762/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
