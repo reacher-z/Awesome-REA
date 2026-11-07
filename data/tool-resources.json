@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "smwdisx-case",
+    "name": "SMWDisX: disassembly of Super Mario World",
+    "url": "https://github.com/IsoFrieze/SMWDisX",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "SMWDisX is a disassembly of Super Mario World that assembles the Japanese, USA, European 1.0, and European 1.1 console releases, plus the Super System arcade version. The README says that supplying comparison ROMs makes the batch file check whether the assembled ROM matches exactly.",
+    "description_zh": "SMWDisX 是《超级马力欧世界》的反汇编，可以汇编日版、美版、欧版 1.0、欧版 1.1 四份主机版本，以及 Super System 街机版。README 写明如果提供对照 ROM，批处理会检查汇编出的 ROM 是否完全一致。",
+    "requirements": [
+      "Assemble with Asar v1.91. On Windows, place asar.exe next to PATCH.bat. On Linux, use asar and PATCH.sh.",
+      "Set !_VER in smw.asm to the version to assemble. The assembled ROM is named smw.smc.",
+      "The README says all five versions assemble and play as they should.",
+      "The README does not name a license."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/IsoFrieze/SMWDisX/blob/30643c7595a7d097d731de69476f8059c7cf98c3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

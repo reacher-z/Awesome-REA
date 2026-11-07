@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "smwdisx-case": {
+    "name": "SMWDisX：《超级马力欧世界》反汇编",
+    "requirements": [
+      "使用 Asar v1.91 汇编。Windows 上把 asar.exe 放在 PATCH.bat 旁边。Linux 上使用 asar 和 PATCH.sh。",
+      "在 smw.asm 中设置 !_VER 以选择要汇编的版本。汇编出的 ROM 名为 smw.smc。",
+      "README 写明五个版本都能汇编并按应有方式运行。",
+      "README 没有写许可证。"
+    ]
   }
 }
