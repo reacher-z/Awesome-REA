@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "psxrecomp",
+    "name": "PSXRecomp",
+    "url": "https://github.com/RetroPortingToolKit/psxrecomp",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "PSXRecomp translates PlayStation 1 MIPS binaries into C and links them with a hardware runtime. Version 4 can use the bundled OpenBIOS or a retail SCPH1001.BIN as the recompiled kernel. An optional high-level BIOS layer is on by default and can be turned off with bios_hle set to false. Overlays can be compiled ahead of time, and code that is not yet native runs in a MIPS interpreter until it is compiled into a cached shard. Game projects keep psxrecomp and recomp-ui as submodules. The build needs Git, Python 3, CMake 3.20 or newer, Ninja, C++20 for the recompiler, and C99 plus C++17 for the runtime.",
+    "description_zh": "PSXRecomp 把 PlayStation 1 的 MIPS 二进制翻译成 C，并链接到一个硬件运行时。第 4 版可以用随附的 OpenBIOS，或零售版 SCPH1001.BIN，作为重编译后的内核。可选的高层 BIOS 层默认开启，把 bios_hle 设为 false 可以关闭。覆盖代码可以提前编译，尚未变成原生代码的部分先在 MIPS 解释器里运行，直到被编译进缓存分片。游戏项目把 psxrecomp 和 recomp-ui 作为子模块。构建需要 Git、Python 3、CMake 3.20 或更高版本、Ninja，重编译器需要 C++20，运行时需要 C99 和 C++17。",
+    "requirements": [
+      "Git, Python 3, CMake 3.20 or newer, Ninja, and a C/C++ compiler. SDL3 is fetched when no system package is found.",
+      "License: PolyForm Noncommercial 1.0.0. PERMISSIONS.md covers voluntary donations and advertising revenue."
+    ],
+    "evidence_url": "https://github.com/RetroPortingToolKit/psxrecomp/blob/9dd018c277d0ee5b62598ff3afe2ed09de629af5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
