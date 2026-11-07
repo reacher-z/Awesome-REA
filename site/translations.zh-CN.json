@@ -40712,5 +40712,12 @@
       "把 yuka.exe 放进游戏目录并运行 yuka help。",
       "README 未注明许可证。"
     ]
+  },
+  "skies-of-arcadia-legends-recomp": {
+    "name": "永恒的阿卡迪亚重编译",
+    "requirements": [
+      "需要上面写明的三张原版 GameCube 光盘之一。平台限制见审阅的表格。",
+      "许可证：GPL-3.0，见 COPYING。第三方许可证在 release/THIRD-PARTY.md。"
+    ]
   }
 }
