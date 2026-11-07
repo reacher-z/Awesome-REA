@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "modern-gekko": {
+    "name": "ModernGekko",
+    "requirements": [
+      "代码模组默认从可执行文件旁的 Mods 以及用户目录的 Mods 文件夹加载，除非使用 --mods 或 --no-mods。",
+      "包目录以 .mgm 为后缀，并包含 mod.so、mod.dll 或 mod.dylib。开发库使用 .mgm.so、.mgm.dll 或 .mgm.dylib 后缀。",
+      "许可证：GPL-3.0。"
+    ]
   }
 }
