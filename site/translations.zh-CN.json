@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "dk64-android": {
+    "name": "大金刚 64 Android 移植",
+    "requirements": [
+      "需要 Android 8.0 或更新版本、arm64-v8a，以及支持 Vulkan 1.1 的 GPU。第一个菜单选项加载美版 1.0 ROM。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

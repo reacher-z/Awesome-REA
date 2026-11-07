@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -188,7 +188,7 @@
 - [**Zelda 64: Recompiled：无需完整源码反编译的《姆吉拉的假面》原生移植**](https://github.com/Zelda64Recomp/Zelda64Recomp) - 通过 N64Recomp 将《姆吉拉的假面》转为原生应用，并使用 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zelda64recomp-case/)</sub>
 
 <a id="game-port"></a>
-### 基于重建源码的移植 (33)
+### 基于重建源码的移植 (34)
 
 - [**2 Ship 2 Harkinian：基于反编译的《姆吉拉的假面》原生移植**](https://github.com/2ship2harkinian/2ship2harkinian) - 以改编自 zeldaret/mm 反编译的源码为基础，构建《塞尔达传说：姆吉拉的假面》的原生 Windows、Linux 和 macOS 版本，并由 libultraship 重新实现 N64 SDK 函数。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/2ship2harkinian-mm-port-case/)</sub>
 - [**3SX：延续 PS2 反编译的《街头霸王 III：3rd Strike》原生移植**](https://github.com/crowded-street/3sx) - 延续 3s-decomp 的 PS2 反编译成果，将《街头霸王 III：3rd Strike》构建为可在 Windows、macOS 和 Linux 上运行的原生 C 程序，以 SDL3 处理画面、输入和声音，以 GekkoNet 实现回滚联机。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/3sx-third-strike-native-port-case/)</sub>
@@ -201,6 +201,7 @@
 - [**d2mac-linux：将《Diablo II》Mac 可执行文件移植到 32 位 Linux**](https://github.com/jaenster/d2mac-linux) - d2mac-linux 将《Diablo II》1.14d Mac 版 i386 Mach-O 转为 ELF，并用 Zig 重写所需的 Darwin、Carbon 和 AGL 导入接口，使其移植到 32 位 Linux。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/d2mac-linux-case/)</sub>
 - [**DevilutionX：移植重建后的 Diablo 引擎**](https://github.com/diasurgical/DevilutionX) - 基于 Devilution 重建成果提供现代平台上的 Diablo 与 Hellfire 移植，加入平台支持、错误修复及可选便利功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/devilutionx-case/)</sub>
 - [**DiabloWeb：基于 Devilution 的 WebAssembly 浏览器移植**](https://github.com/d07RiV/diabloweb) - 将社区重建 Diablo 原始源码的 Devilution 精简分支编译为 WebAssembly，并配合 React 前端，使 Diablo 可在网页浏览器中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/diabloweb-devilution-wasm-port-case/)</sub>
+- [**大金刚 64 Android 移植**](https://github.com/deivid22srk/dk64-recomp-android) - 该项目把 Donkey Kong 64: Recompiled 移植到原生 Android，使用 NDK、N64ModernRuntime、Vulkan 上的 RT64、RmlUi 和 SDL2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dk64-android/)</sub>
 - [**Dusklight：基于反编译的《黄昏公主》原生移植**](https://github.com/TwilitRealm/dusklight) - 以 zeldaret/tp 反编译项目和 Aurora GameCube／Wii 兼容层为基础，将《塞尔达传说 黄昏公主》重新实现为桌面与移动平台的原生应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dusklight-twilight-princess-port-case/)</sub>
 - [**Ghostship：基于 libultraship 的 Super Mario 64 原生移植**](https://github.com/HarbourMasters/Ghostship) - 将反编译风格的游戏源码编译到 libultraship 平台库上，把 Super Mario 64 构建为原生 PC、Switch 和 Android 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ghostship-sm64-port-case/)</sub>
 - [**GoldenEye 007：基于反编译成果的智能体辅助原生移植**](https://github.com/jkdansereau/goldeneye-pc-port) - 在已有 GoldenEye 007 反编译成果之上构建原生 PC 移植，提供宿主平台适配层，并从用户自己的 ROM 提取资产。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goldeneye-pc-port-case/)</sub>
