@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "issd-native",
+    "name": "ISSD Native",
+    "url": "https://github.com/sergiomanzur/issd-native",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "ISSD Native recompiles International Superstar Soccer Deluxe for the Super Nintendo, USA release, into C. The supported dump is a headerless SFC of 2,097,152 bytes, internal title SUPERSTAR SOCCER 2, SHA-256 d2fe66c1ce66c65ce14e478c94be2e616f9e2cad374b5783a6a64d3c1a99cfa9. Release v0.6.0-beta.1 covers Windows, Linux, Steam Deck, and Android 8.0 or newer. Gameplay advances at 60 Hz.",
+    "description_zh": "ISSD Native 把超级任天堂美版《International Superstar Soccer Deluxe》重编译成 C。受支持的转储是 2,097,152 字节的无头 SFC，内部标题为 SUPERSTAR SOCCER 2，SHA-256 为 d2fe66c1ce66c65ce14e478c94be2e616f9e2cad374b5783a6a64d3c1a99cfa9。发布版 v0.6.0-beta.1 覆盖 Windows、Linux、Steam Deck 和 Android 8.0 及以上。游戏以 60 赫兹推进。",
+    "requirements": [
+      "Verify the ROM with python tools/verify_rom.py. On Windows, run ISSDNative.exe or the source build at build/ISSDNative.exe with --rom. Keep aot_boot_deny.txt beside the executable. Android build targets are arm64-v8a and x86_64.",
+      "License: GPL-3.0 for this project's own code. The README says SNESRecomp is PolyForm Noncommercial 1.0.0, the ISSD disassembly reference is GPL-3.0, and the ISSD web editor reference is MIT."
+    ],
+    "evidence_url": "https://github.com/sergiomanzur/issd-native/blob/2c20d46dc1e0167db072dd4d8abbfde0cf01cd8e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
