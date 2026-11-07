@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ms-sam-mike-mary-case": {
+    "name": "Microsoft Sam：SAPI 5 引擎的可移植 C 重建",
+    "requirements": [
+      "需要 C99 编译器，以及你自己的 Sam.spd、Mike.spd 或 Mary.spd 及对应的 .sdf，再加上 LTTS1033.LXA 和 r1033tts.LXA。README 写明语音数据未包含。",
+      "Sam、Mike 和 Mary 共用一个引擎。README 还描述了重做为音频效果的 SAPI 4 语音效果，并写明 SAPI 4 语音本身没有移植。它写明 src/sam_abbrev_tab.h、src/sam_pos_rules.h 和 src/sam_words_tab.h 中的小表转录自引擎。",
+      "README 写明约 99.7% 的样本完全一致，其余由浮点舍入造成差异，并报告语料 21/21、数字与日期 104/104、同形异义词 100/100，以及《爱丽丝漫游奇境》180/180 段。tools/compare_corpus.py 把 C 输出与 README 所称未包含的 WAV 比较。",
+      "README 写明代码为 MIT 并指向 LICENSE。该文件是 MIT 许可证，版权 2026 KamiKitsune420。微软语音数据未包含。"
+    ]
   }
 }

@@ -36528,5 +36528,38 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ms-sam-mike-mary-case",
+    "name": "Microsoft Sam: a portable C rebuild of the SAPI 5 engine",
+    "url": "https://github.com/KamiKitsune420/ms-sam-mike-mary-decomp",
+    "description_en": "Rebuilds the Windows XP SAPI 5 engine spttseng.dll for Microsoft Sam, Mike, and Mary as C99 that reads the original voice files. The README reports audio of the same length with every sample within ±1 LSB of the 16-bit engine.",
+    "description_zh": "把 Windows XP 的 SAPI 5 引擎 spttseng.dll（Microsoft Sam、Mike 和 Mary）重建为读取原始语音文件的 C99。README 报告音频长度相同，每个样本与 16 位引擎相差不超过 ±1 LSB。",
+    "evidence_url": "https://github.com/KamiKitsune420/ms-sam-mike-mary-decomp/blob/cf1122c6a4b6ad86cb1272690305c71449a17966/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/KamiKitsune420/ms-sam-mike-mary-decomp/blob/cf1122c6a4b6ad86cb1272690305c71449a17966/tools/compare_corpus.py",
+      "https://github.com/KamiKitsune420/ms-sam-mike-mary-decomp/blob/cf1122c6a4b6ad86cb1272690305c71449a17966/LICENSE"
+    ],
+    "requirements": [
+      "Needs a C99 compiler and your own Sam.spd, Mike.spd, or Mary.spd with the matching .sdf files, plus LTTS1033.LXA and r1033tts.LXA. The README says the voice data is not included.",
+      "Sam, Mike, and Mary share one engine. The README also describes SAPI 4 voice effects rebuilt as an audio effect, and says the SAPI 4 voices themselves are not ported. It says the small tables in src/sam_abbrev_tab.h, src/sam_pos_rules.h, and src/sam_words_tab.h were transcribed from the engine.",
+      "The README says about 99.7% of samples match exactly and the rest differ by float rounding, and reports 21/21 corpus sentences, 104/104 number and date lines, 100/100 homograph sentences, and 180/180 paragraphs of Alice in Wonderland. tools/compare_corpus.py compares the C output with WAVs that the README says are not included.",
+      "The README says MIT for the code and points at LICENSE. That file is the MIT License, copyright 2026 KamiKitsune420. Microsoft voice data is not included."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "targets": [
+      "binary"
+    ]
   }
 ]

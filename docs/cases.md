@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
 - [Game](#game) (239)
 - [App](#app) (62)
-- [Native Binary](#native-binary) (7)
+- [Native Binary](#native-binary) (8)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
 - [Protocol](#protocol) (91)
 
@@ -378,6 +378,7 @@
 - [**CPQ IO Scheduler: reconstructing Xiaomi's block scheduler**](https://github.com/Rasenkai/CPQ_IOSched) - CPQ IO Scheduler reconstructs Xiaomi's proprietary cpq.ko Linux block scheduler from a stripped ARM64 kernel module. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/cpq-iosched-case/)</sub>
 - [**m0rph: tracing an obfuscated ELF flag checker**](https://github.com/UmbertoDellaMonica/m0rph-CTF-CyberChallenge.IT) - The m0rph investigation examines an obfuscated x86-64 ELF CTF flag checker with readelf, strings, Cutter and Radare2. <sub>Case study · [Full entry](https://awesomerea.org/resources/m0rph-ctf-analysis-case/)</sub>
 - [**Malware Analysis: njRAT and Casdet behavior investigation**](https://github.com/phour44/Malware-Analysis) - A malware investigation examines njRAT and a UPX-packed Casdet executable with PEStudio static triage and ANY.RUN sandbox telemetry, alongside a malicious PDF and benign comparison files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/malware-analysis-njrat-casdet-case/)</sub>
+- [**Microsoft Sam: a portable C rebuild of the SAPI 5 engine**](https://github.com/KamiKitsune420/ms-sam-mike-mary-decomp) - Rebuilds the Windows XP SAPI 5 engine spttseng.dll for Microsoft Sam, Mike, and Mary as C99 that reads the original voice files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ms-sam-mike-mary-case/)</sub>
 - [**OpenBSD netcat: static REA and Ghidra investigation**](https://github.com/NullLabTests/OpenBSD_netcat_REA) - A REA/Ghidra report studies the Ubuntu netcat-openbsd 1.234-1 ELF binary and publishes evidence envelopes, decompiled functions and a function inventory. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/netcat-openbsd-rea-static-case/)</sub>
 - [**Windows loader: static malware analysis with REA and Codex**](https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/) - Fedele Mantuano reports using Codex with REA in an offline Docker lab to statically analyze a public Windows malware sample without executing it. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/windows-loader-static-analysis-case/)</sub>
 - [**Show Your Work: a measured dissection of REA's evidence architecture**](https://no-flag.com/2026/10/18/REA-paper/) - An unofficial field study that reads REA's source and then drives the running server through 1,012 recorded calls across 27 artifact classes, measuring its content-addressed Evidence records, revision-chained unknown ledger, typed refusals, cold starts and response limits. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/noflag-rea-evidence-architecture-study/)</sub>
