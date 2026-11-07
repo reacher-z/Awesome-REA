@@ -11030,7 +11030,7 @@
       "README 称这是进行中的匹配反编译；GitHub 简介中的“100% matching”是目标而非现状。splat 配置只覆盖主可执行文件 slps_023.64，src/ 中有八个音频系统源文件。decomp.dev 报告所审提交时 main 类别 1,035 个函数中已匹配 298 个（代码 12.51%），尚无完整单元；默认分支最后推送于 2026-04-14。",
       "需从自己的 Chrono Cross: The Radical Dreamers Edition 中自备 cdrom.dat；README 给出其 SHA-1，仅说明 Steam 版，主机版不在说明范围内。仓库未提交游戏可执行文件或素材；项目 CI 从一个私有依赖仓库读取输入。",
       "文档以基于 Debian 的 Linux 或 WSL2 为准，需要 git、make、7-Zip、MIPS binutils 与 GCC、虚拟环境中的 Python 3，ARM 主机还需 qemu-user-static。仓库提交了 PSX GCC 2.6.0、2.7.2 和 2.8.1 编译器二进制、objdiff 及 mkpsxiso/dumpsxiso；maspsx、m2c 和 decomp-permuter 为子模块。make setup 还会从一个 r2.dev 存储桶下载 psyq_obj.tar.gz 归档，README 称其为 Psy-Q 库。",
-      "make check 用 sha256sum 将重建的可执行文件与 config/checksum.sha 比对，拉取请求的校验工作流会运行它；推送工作流构建并上传 objdiff 进度报告，其中的校验步骤已被注释掉。哈希一致只针对所提供的版本，且部分依靠汇编达成；本合集未构建或运行任何内容。",
+      "make check 用 sha256sum 将重建的可执行文件与 config/checksum.sha 比对，拉取请求的校验工作流会运行它；推送工作流构建并上传 objdiff 进度报告，其中的校验步骤已被注释掉。哈希一致只针对所提供的版本，且部分依靠汇编达成；",
       "仓库没有许可证文件，GitHub 也未检测到许可证，因此复用条款未说明；README 声明用于教育和保存目的，并称 Chrono Cross 归 Square Enix 所有。include/psyq/ 提交了 Psy-Q SDK 头文件，其中 21 个带有 Sony 版权声明，相关权利仍归 Sony。所审来源未确立 AI 或 REA 的使用。"
     ]
   }
