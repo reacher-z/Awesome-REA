@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "skifree-decomp-case",
+    "name": "SkiFree decompilation",
+    "url": "https://github.com/yuv422/skifree_decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This project reconstructs the 32-bit SkiFree version 1.04 in C. It was developed with Visual Studio 6 and aims to be byte-compatible with the original. The README says all code and data have been converted to C, and exact matching of every function and data segment is still open.",
+    "description_zh": "该项目把 32 位 SkiFree 1.04 重建为 C。它用 Visual Studio 6 开发，目标是与原始程序逐字节兼容。README 写明全部代码和数据已经转成 C，每个函数和数据段的精确匹配仍未完成。",
+    "requirements": [
+      "The original ski32.exe supplies the graphics and icon resources. Its MD5 is c5515451d8f90a822457a4a8e4bf1791. The README points to the official SkiFree site for that file.",
+      "Bitmap resources go in resources/ as ski32_1.bmp through ski32_89.bmp, and the icon as iconski.ico.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/yuv422/skifree_decomp/blob/7b473c51f79671c7fc54c7b14eb4e118687b2048/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
