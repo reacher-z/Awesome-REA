@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fez-decomp",
+    "name": "FEZ source",
+    "url": "https://github.com/dptug/FEZ",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository holds source for the game FEZ with the content omitted. The README says the code has errors and cannot compile normally.",
+    "description_zh": "该仓库收录游戏 FEZ 的源代码，内容资源没有包括在内。README 写明代码有错误，不能正常编译。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/dptug/FEZ/blob/bbd41e7924da0fd9020d7d80fc1b2412e4269dcd/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
