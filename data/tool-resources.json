@@ -36545,6 +36545,7 @@
     "description_zh": "Hack Different 社区维护的 Apple 硬件、固件与操作系统内部机制知识库，由 Rick Mark 搭建并主要维护，将一份篇幅很长的分类链接列表与原创页面和机器可读的 YAML 数据结合在一起。README 按领域整理参考资料，从 Mach-O、dyld 共享缓存、img4 和启动策略，到安全隔区（Secure Enclave）、基带、USB 与 Lightning、无线协议以及诊断数据格式；数据目录则有 56 个主题文件，另有按设备、证书和固件密钥分列的记录，涵盖设备、芯片、IPSW 版本、Mach-O 常量、NVRAM、启动参数、lockdownd 服务和权限（entitlements）。仓库中的 Rake 任务会从 Apple 的更新源、The iPhone Wiki 和本机 Apple 二进制文件重新生成部分数据，这些数据也以 apple-data 软件包形式发布到 Ruby、Python 和 Node.js 生态。",
     "evidence_url": "https://github.com/hack-different/apple-knowledge/blob/7e30ba57ac24c6da9e123a3b2732b5d9810d4114/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 7e30ba5 (2026-10-13). Of 660 commits, about 455 are by Rick Mark and 346 date from 2022; work resumed in 2026 on certificate, img4, cryptography and symbol data, CI and package publishing. The data-format guide calls everything v0 and subject to change, several README topics are headings with no links yet, and many references are older posts. The docs.hackdiffe.rent site named in the configuration could not be reached over HTTPS at review, so this record links the repository.",
