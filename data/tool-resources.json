@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "hydro-thunder-port",
+    "name": "Hydro Thunder Hurricane port",
+    "url": "https://github.com/monscriser/HydroThunderPORT",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a Windows and Linux port of Hydro Thunder Hurricane, release BETA 1.1 (1.1.0), in Standard and PGO builds. It uses ReXGlue for static recompilation and Vulkan for rendering. The Windows launcher is Launcher-Config.exe, and the game is HydroThunder.exe. Linux releases are an AppImage. The README says the 0.0.2.1 title-update configuration is supported. Generated game code is not in the repository.",
+    "description_zh": "这是《Hydro Thunder Hurricane》的 Windows 和 Linux 移植，发布版 BETA 1.1（1.1.0），有 Standard 和 PGO 两种构建。它用 ReXGlue 做静态重编译，用 Vulkan 渲染。Windows 启动器是 Launcher-Config.exe，游戏是 HydroThunder.exe。Linux 发布包是 AppImage。README 写明支持 0.0.2.1 标题更新配置。生成的游戏代码不在仓库里。",
+    "requirements": [
+      "A Windows package or the Linux AppImage from Releases. The launcher asks for the player's game, DLC, and update files. A source build generates app/generated-updated from that copy. PGO uses CMake -DHT_PGO=USE.",
+      "The reviewed README does not name a license for this project. It says third-party software keeps the licenses under licenses/."
+    ],
+    "evidence_url": "https://github.com/monscriser/HydroThunderPORT/blob/706f41abf20954e1f463fab6ffe500688f759715/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

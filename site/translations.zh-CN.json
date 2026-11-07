@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "hydro-thunder-port": {
+    "name": "Hydro Thunder Hurricane 移植",
+    "requirements": [
+      "从 Releases 取得 Windows 包或 Linux AppImage。启动器要求提供玩家的游戏、DLC 和更新文件。源码构建从该副本生成 app/generated-updated。PGO 使用 CMake -DHT_PGO=USE。",
+      "审阅的 README 没有给这个项目写出许可证。它写明第三方软件保留 licenses/ 下的许可证。"
+    ]
   }
 }
