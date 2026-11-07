@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "celosia": {
+    "name": "Celosia",
+    "requirements": [
+      "需要 Apple Silicon 上的 macOS、Xcode 命令行工具、CMake、Ninja、pkg-config、FFmpeg 和 Python。玩家提供美版光盘镜像。README 报告在 M4 Pro 上以 1536×1344 达到每秒 60 帧。",
+      "Vita 构建可以运行。README 报告在 Vita3K 的片头里为每秒 18 到 25 帧。",
+      "许可证：GPL-3.0。"
+    ]
   }
 }
