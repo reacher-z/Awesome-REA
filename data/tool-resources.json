@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pgr4-recomp",
+    "name": "PGR4-Recomp",
+    "url": "https://github.com/beatrixzy/PGR4-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "PGR4-Recomp ports Project Gotham Racing 4 to x86-64. It uses the ReXGlue SDK to generate C++ ahead of time, and a DirectX renderer based on Plume. The reviewed README credits xextool for extracting the XEX from a dumped ISO, and points the launch steps to Setup.md. It describes the current tree as unfinished, with a later v2 still in progress.",
+    "description_zh": "PGR4-Recomp 把《哥谭赛车 4》移植到 x86-64。它用 ReXGlue SDK 预先生成 C++，并用基于 Plume 的 DirectX 渲染器。审阅的 README 把从转储 ISO 提取 XEX 归功于 xextool，并把启动步骤指向 Setup.md。它把当前树描述为尚未完成，后续的 v2 仍在进行。",
+    "requirements": [
+      "A dumped ISO, as named in the xextool credit. Launch steps are in Setup.md at the reviewed commit.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/beatrixzy/PGR4-Recomp/blob/a42db69f9e4542d79c85c71b86ec8f37fb75d116/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
