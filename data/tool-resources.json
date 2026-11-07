@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "deltarune-decomp",
+    "name": "DELTARUNE decompilation",
+    "url": "https://github.com/TeamBlossomDevs/DeltaruneDecomp_beta",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This decompiles DELTARUNE for use in GameMaker. Chapters 1 and 2 open as DELTARUNE.yyp in GameMaker Studio 2022.0.3.85 after UndertaleModTool runs utils/asset_importer/UndertaleDecompAssetImport.csx on data.win or game.win. The README says chapters 3 and 4 are still being fixed.",
+    "description_zh": "该项目把 DELTARUNE 反编译成可在 GameMaker 里使用的工程。对 data.win 或 game.win 用 UndertaleModTool 运行 utils/asset_importer/UndertaleDecompAssetImport.csx 之后，第 1 章和第 2 章可以在 GameMaker Studio 2022.0.3.85 里打开为 DELTARUNE.yyp。README 写明第 3 章和第 4 章仍在修复。",
+    "requirements": [
+      "UndertaleModTool GUI and GameMaker Studio 2022.0.3.85. A Linux build lists libcurl-gnutls, lib32-libcurl-gnutls, lib32-libpulse, lib32-alsa-lib, lib32-openal, lib32-glu, and lib32-openssl-1.0.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/TeamBlossomDevs/DeltaruneDecomp_beta/blob/f113891c6d8bc58930edfd25a5b60382d854f3bc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
