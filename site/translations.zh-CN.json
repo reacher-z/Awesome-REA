@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "conker64-recompiled": {
+    "name": "Conker64 Recompiled",
+    "requirements": [
+      "需要 x64 的 Windows 10 或 11、带 C++ 桌面工作负载的 Visual Studio 2022 或更新版本，以及 CMake 3.20 或更新版本。美版 ROM 的 SHA-1 为 4cbadd3c4e0729dec46af64ad018050eada4f47a。在 recomp 目录运行 build_game.bat，把 ROM 放成 baserom.us.z64，然后启动 build/Conker.exe。",
+      "许可证：MIT。"
+    ]
   }
 }

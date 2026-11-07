@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "conker64-recompiled",
+    "name": "Conker64 Recompiled",
+    "url": "https://github.com/Conker64Recomp/conker64-recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "class": "game",
+    "description_en": "Conker64 Recompiled is a C++20 SDL2 engine for Conker's Bad Fur Day on the Nintendo 64. It loads a USA cartridge, decrypts Rareware RZIP archives, and recovers 507 of 508 code subsegments into emulated RDRAM. The README says that recovered MIPS code is not executed yet. An SDL2 software rasterizer draws an explorable scene, and 453 MP3 streams are indexed.",
+    "description_zh": "Conker64 Recompiled 是 Nintendo 64 游戏《Conker's Bad Fur Day》的 C++20 SDL2 引擎。它加载美版卡带，解密 Rareware 的 RZIP 档案，并把 508 个代码子段中的 507 个恢复到模拟的 RDRAM。README 写明这些恢复出来的 MIPS 代码尚未执行。SDL2 软件光栅器绘制一个可探索的场景，并索引了 453 条 MP3 音频。",
+    "requirements": [
+      "Windows 10 or 11, x64, Visual Studio 2022 or newer with the C++ desktop workload, and CMake 3.20 or newer. The USA ROM SHA-1 is 4cbadd3c4e0729dec46af64ad018050eada4f47a. From recomp, run build_game.bat, place the ROM as baserom.us.z64, and start build/Conker.exe.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/Conker64Recomp/conker64-recompiled/blob/0a9dbbf409accdcc0bebd676455de4f5a192f7e5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
