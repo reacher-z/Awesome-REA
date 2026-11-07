@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ristar-disasm",
+    "name": "Ristar disassembly",
+    "url": "https://github.com/sonicretro/ristar",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is an early IDA disassembly of Ristar. The database files need IDA 5.5. The README names two compression formats, Nemesis and a Ristar-specific format called Star, and says the disassembly is not complete.",
+    "description_zh": "这是《Ristar》的早期 IDA 反汇编。数据库文件需要 IDA 5.5。README 写出两种压缩格式：Nemesis，以及 Ristar 专用的 Star，并写明反汇编还没有完成。",
+    "requirements": [
+      "IDA 5.5 for the .idb files. The reviewed README prohibits commercial use and does not name an SPDX license."
+    ],
+    "evidence_url": "https://github.com/sonicretro/ristar/blob/85b82f10c04e3402769bdad05ea469a472c2f100/readme.txt",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
