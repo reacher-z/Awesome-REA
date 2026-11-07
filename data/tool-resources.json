@@ -36543,7 +36543,7 @@
     "requirements": [
       "Needs a C99 compiler and make. make builds the library and command-line tools. The README says the table generators and checks also need Python 3 with NumPy and SciPy, ngspice, an arm-none-eabi toolchain, and QEMU.",
       "The README says the semitone and decay tables are E-mu's, read from SP-1200 OS 1.2, Rossum's SP-1200 OS 1.04, and the SP-12 Turbo 2.6 images it names. It points at dumped images in Lytrix/EMU-SP1200 rather than claiming those ROMs are in this tree.",
-      "The README says make check runs 341 checks and make m7check runs those same 341 checks under QEMU for a Cortex-M7 with a single-precision FPU. It also reports filter comparisons with ngspice and with John Nolting's SP-12 recordings, which it says to download. Not run or reproduced for this catalog.",
+      "The README says make check runs 341 checks and make m7check runs those same 341 checks under QEMU for a Cortex-M7 with a single-precision FPU. It also reports filter comparisons with ngspice and with John Nolting's SP-12 recordings, which it says to download.",
       "LICENSE is the MIT License, copyright 2026 Stanislaw Przedzinkowski."
     ],
     "requirement_facets": [
