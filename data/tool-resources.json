@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rechan-case",
+    "name": "ReChan",
+    "url": "https://github.com/SilverwireGames/ReChan",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "ReChan is a C++ reimplementation of Jackie Chan Stuntmaster for PC. It targets the PlayStation release SLUS-00684 and rebuilds the game logic from the player's own disc image.",
+    "description_zh": "ReChan 是《成龙：特技大师》的 C++ PC 重实现。目标是 PlayStation 版 SLUS-00684，游戏逻辑根据玩家自己的光盘镜像重建。",
+    "requirements": [
+      "The player supplies a disc image of Jackie Chan Stuntmaster, SLUS-00684.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/SilverwireGames/ReChan/blob/ecd39935559d024992b2049576ea0ecc3b204b8c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
