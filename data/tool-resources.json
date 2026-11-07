@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "parappa-source",
+    "name": "PaRappa the Rapper decompilation",
+    "url": "https://github.com/cuckydev/PaRappaSource",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This decompiles PaRappa the Rapper. The player extracts an ISO into iso/. XA and STR files must use 2336-byte sectors. The included syncstrip tool cuts 2352-byte sectors from jPSXdec down to 2336. Compile steps follow PSXFunkin without its ISO make targets.",
+    "description_zh": "该项目反编译《PaRappa the Rapper》。玩家把 ISO 解压到 iso/。XA 和 STR 文件必须使用 2336 字节的扇区。附带的 syncstrip 工具把 jPSXdec 导出的 2352 字节扇区切成 2336。编译步骤沿用 PSXFunkin，但不使用它的 ISO make 目标。",
+    "requirements": [
+      "A PaRappa the Rapper ISO. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/cuckydev/PaRappaSource/blob/dd742cf869e464a8e5e34c5a2a134ffcf8e76e1d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
