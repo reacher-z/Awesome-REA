@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "betrayal-at-krondor",
+    "name": "Betrayal at Krondor reconstruction",
+    "url": "https://github.com/canassa/betrayal-at-krondor",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This reconstructs the 1993 DOS game Betrayal at Krondor from its binaries and builds them byte for byte. The README lists release 1.00, floppy, June 16, 1993, checksum c943fd895a57, and release 1.02, CD-ROM, March 21, 1994, checksum e254770143e0. A browser asset viewer reads files the player places in viewer/data/.",
+    "description_zh": "该项目从 1993 年 DOS 游戏《Betrayal at Krondor》的二进制重建源码，并逐字节构建。README 列出 1.00 软盘版，1993 年 6 月 16 日，校验值 c943fd895a57，以及 1.02 光盘版，1994 年 3 月 21 日，校验值 e254770143e0。浏览器素材查看器读取玩家放在 viewer/data/ 里的文件。",
+    "requirements": [
+      "Build steps are in docs/BUILDING.md. The viewer command is uv run bak viewer.",
+      "License: MIT for the original work in this repository."
+    ],
+    "evidence_url": "https://github.com/canassa/betrayal-at-krondor/blob/1fc2a69e306af1623cd22f3390a5569302059f4d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
