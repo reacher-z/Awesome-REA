@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "luxon-server",
+    "name": "Luxon Server",
+    "url": "https://github.com/niansa/LuxonServer",
+    "category": "reconstruction-cases",
+    "kind": "project",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "protocol"
+    ],
+    "class": "software",
+    "description_en": "Luxon Server is a clean-room implementation of the Photon Realtime server. It sits on the Luxon project, which reimplements the ENet protocol and Photon's binary serialization. The aim is a drop-in server for multiplayer games that use Photon without complex server-side plugins.",
+    "description_zh": "Luxon Server 是 Photon Realtime 服务器的净室实现。它基于 Luxon 项目，后者重实现了 ENet 协议和 Photon 的二进制序列化。目标是给使用 Photon、且不依赖复杂服务器插件的多人游戏提供可替换的服务器。",
+    "requirements": [
+      "Prebuilt releases are documented for Linux, Windows, macOS, FreeBSD, and OpenBSD. A Debian package repository is also described.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/niansa/LuxonServer/blob/e70722a62d6d4eb01b0d7717e322e8533044e858/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
