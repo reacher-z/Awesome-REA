@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "scda-xbe-recomp": {
+    "name": "细胞分裂：双重间谍重编译",
+    "requirements": [
+      "需要带 C++ 桌面工作负载、Clang 工具和 CMake 的 Visual Studio 2022。源码构建需要已提取的 Xbox 文件。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

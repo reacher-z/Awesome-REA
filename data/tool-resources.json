@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "scda-xbe-recomp",
+    "name": "Splinter Cell: Double Agent recomp",
+    "url": "https://github.com/TGP482/SCDA-XBERecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a native Windows port of the original Xbox game Splinter Cell: Double Agent, made with Xbox XBE Recomp. The x86 game code is translated to C++ ahead of time and drawn with Direct3D 12 and XAudio2. An ISO or extracted files go in assets for play. A source build needs extracted files: default.xbe, sc4_adv.xbe, and the Default, Media, and adv folders. build.bat compiles it to out/build/release/SCDA.exe. The minimum system is Windows 10 64-bit, a CPU with SSE4.2 and POPCNT, and a Direct3D 12 GPU.",
+    "description_zh": "这是原版 Xbox 游戏《细胞分裂：双重间谍》的 Windows 本地移植，使用 Xbox XBE Recomp 制作。游戏的 x86 代码被提前翻译成 C++，并用 Direct3D 12 和 XAudio2 绘制和播放。游玩时可以把 ISO 或已提取文件放在 assets。源码构建需要已提取的文件：default.xbe、sc4_adv.xbe，以及 Default、Media 和 adv 文件夹。build.bat 把它编译成 out/build/release/SCDA.exe。最低配置是 64 位 Windows 10、带 SSE4.2 和 POPCNT 的 CPU，以及 Direct3D 12 GPU。",
+    "requirements": [
+      "Visual Studio 2022 with the C++ desktop workload, Clang tools, and CMake. Extracted Xbox files for a source build.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/TGP482/SCDA-XBERecomp/blob/86686d585292ffd56d436d29734ca1da4570275a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
