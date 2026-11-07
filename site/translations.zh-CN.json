@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "cryptoknight": {
+    "name": "CryptoKnight",
+    "requirements": [
+      "安装 Python 依赖，然后运行 python knight.py --setup。预测一个二进制是 python knight.py --predict。编译示例二进制需要 OpenSSL 头文件。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
