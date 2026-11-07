@@ -36543,6 +36543,7 @@
     "description_zh": "以 C 语言按 Quake 2 式客户端/服务器运行时重新实现《魔兽争霸 III》引擎，载入使用者自有的 MPQ 归档，涵盖 JASS 脚本、SLK 数据、FDF 界面、战役、地图、战争迷雾、单位和联网；《魔兽世界》与《星际争霸 II》则是探索性的格式与渲染目标。项目笔记记录了借助 Ghidra 脚本、Frida 探针和 Ghidra MCP 服务器对零售版 game.dll 的分析，并称反编译出的零售代码不放入仓库。测试使用夹具归档，对照工具则用于与零售版游戏比较，并不证明两者等价。",
     "evidence_url": "https://github.com/corepunch/open-realm/blob/8853d069c21c94a981121066e1d78e967676fae4/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed main snapshot (2026-10-18) follows the v0.0.11-alpha release of 2026-10-04. README names openwarcraft3 the primary playable target and openwow and opensc2 exploratory targets. docs/games/warcraft-3/audio-retail-analysis.md pins a retail game.dll 1.27.1.7085 by SHA-256 and lists Ghidra, bethington’s ghidra-mcp configured for Codex, radare2 and r2ghidra, with Ghidra scripts and Frida probes under tools/; it says decompiled retail bodies and extracted SLKs stay in a local workspace.",
