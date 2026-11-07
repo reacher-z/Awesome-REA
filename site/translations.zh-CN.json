@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "tenchu-z-recomp": {
+    "name": "天诛 Z 重编译",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11、DirectX 12 或 Vulkan，以及大约 5 GB 空闲空间。把美欧版 ISO 放在 tenchuz.exe 旁边并运行 Setup Tenchu Z.cmd。",
+      "许可证：本项目自己的代码和文档为 MIT。FFmpeg 和 libmspack 为 LGPL 2.1。Dear ImGui、fmt、spdlog、toml++ 和 SIMDe 为 MIT。xxHash 为 BSD。"
+    ]
   }
 }
