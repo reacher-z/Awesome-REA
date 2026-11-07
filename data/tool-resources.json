@@ -140636,5 +140636,25 @@
     "additional_evidence_urls": [
       "https://github.com/synamaxmusic/bar-decomp/blob/bd312023654ed73596026fee93128f1939cc3a17/LICENSE"
     ]
+  },
+  {
+    "id": "dcc-decompiler",
+    "name": "dcc",
+    "url": "https://github.com/nemerle/dcc",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "dcc is Cristina Cifuentes and Mike Van Emmerik's decompiler for DOS executables, with later fixes for memory reallocation during decompilation. The distribution includes the 1994 and 1997 sources, Borland, Microsoft, and Turbo Pascal signature files, and small test executables such as fibo and strlen. Switches include a1 and a2 for assembler listings, i for the interactive disassembler, and o for an assembler output file. If it loads dccxxx.sig, it did not recognise the compiler library. The DCC environment variable points at the signature directory.",
+    "description_zh": "dcc 是 Cristina Cifuentes 和 Mike Van Emmerik 的 DOS 可执行文件反编译器，后来修过反编译过程中的内存重新分配。发行内容包括 1994 和 1997 年的源码，Borland、Microsoft 和 Turbo Pascal 的签名文件，以及 fibo、strlen 等小型测试可执行文件。开关包括用于汇编列表的 a1 和 a2、用于交互式反汇编器的 i，以及用于汇编输出文件的 o。如果它加载 dccxxx.sig，说明没有认出编译器库。环境变量 DCC 指向签名目录。",
+    "requirements": [
+      "A DOS executable. The signature files from the distribution, or the DCC variable pointing at them.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/nemerle/dcc/blob/e0585cc7107e68fad07afd63f90d5eb00f65faee/Readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
