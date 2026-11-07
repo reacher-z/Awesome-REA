@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "onekey-decompile-apk": {
+    "name": "onekey-decompile-apk",
+    "requirements": [
+      "从发布页下载 onekey-decompile-apk.zip，把 APK 放在批处理文件旁边。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

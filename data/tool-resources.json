@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "onekey-decompile-apk",
+    "name": "onekey-decompile-apk",
+    "url": "https://github.com/ufologist/onekey-decompile-apk",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "onekey-decompile-apk runs apktool, dex2jar, and JD-GUI in one step. Dropping an APK on _onekey-decompile-apk.bat writes a directory of apktool output and a jar of the same name. The reviewed release uses apktool 1.4.1. apktool.jar d -d decodes resources, and d2j-dex2jar writes the classes.",
+    "description_zh": "onekey-decompile-apk 用一步运行 apktool、dex2jar 和 JD-GUI。把 APK 拖到 _onekey-decompile-apk.bat 上，会写出 apktool 的输出目录和同名 jar。审阅的版本使用 apktool 1.4.1。apktool.jar d -d 解码资源，d2j-dex2jar 写出类文件。",
+    "requirements": [
+      "Download onekey-decompile-apk.zip from the releases page and place the APK beside the batch file.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ufologist/onekey-decompile-apk/blob/efd54a34d0d065f97cba45f714a740483cf44450/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
