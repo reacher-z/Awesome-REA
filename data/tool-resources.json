@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rsdkv2-decomp",
+    "name": "RSDKv2 Decompilation: Retro Engine v2",
+    "url": "https://github.com/RSDKModding/RSDKv2-Decompilation",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "RSDKv2 Decompilation is a decompilation of Retro Engine v2, the engine used by the 2008 Sonic Nexus demo. The README adds a built-in mod loader, a settings.ini file, and debug keys, and it builds with CMake. Running it requires Sonic Nexus 2008 demo assets, which are left out of the repository.",
+    "description_zh": "RSDKv2 Decompilation 是 Retro Engine v2 的反编译，该引擎用于 2008 年 Sonic Nexus 演示版。README 加入了内置模组加载器、settings.ini 和调试按键，并用 CMake 构建。运行需要 Sonic Nexus 2008 演示版资源，这些资源不在仓库中。",
+    "evidence_url": "https://github.com/RSDKModding/RSDKv2-Decompilation/blob/cc411106137dca8d3936c709d6a1875aa788fd9c/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "Sonic Nexus 2008 demo assets are required to run. Clone with git submodules; the README says a GitHub source ZIP omits them.",
+      "Windows builds use Visual Studio with the Desktop development with C++ workload, vcpkg, SDL2, libogg, and libvorbis. Linux package lists include cmake, SDL2, libogg, and libvorbis. macOS follows dependencies/mac/dependencies.txt and an Xcode project.",
+      "GitHub reports the repository license as NOASSERTION."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
