@@ -36543,6 +36543,7 @@
     "description_zh": "将 Silent Hill 的 PlayStation 代码（主可执行文件及其引擎、界面和地图覆盖模块）重建为 C，可依据使用者自备的北美 1.1 版光盘镜像构建出逐字节一致的二进制文件。项目专注于匹配与命名，而非移植。decomp.dev 报告所审提交的全部函数均已匹配，数据迁移、可重定位构建和文档工作仍待完成。",
     "evidence_url": "https://github.com/shdecompilations/silent-hill-decomp/blob/73a9f176fa04a0268c5dc0263ba35b1fe23498b8/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "The primary target is the NTSC-U 1.1 release (SLUS-00707); configurations also cover PAL 1.0 and three NTSC-J releases, but the setup guide says work focuses on NTSC-U 1.1. The README states that the project is not and will not be a PC or other port, and that the codebase is not port-ready. The output is the PlayStation executable SLUS_007.07 and its overlay files.",
