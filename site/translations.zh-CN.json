@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sourcehold": {
+    "name": "Sourcehold",
+    "requirements": [
+      "需要按上面的目录放好的原版《要塞》数据。需要 CMake，以及 SDL2、OpenAL 和 FFmpeg。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
