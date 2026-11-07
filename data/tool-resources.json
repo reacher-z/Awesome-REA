@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "x64dbg-ext",
+    "name": "x64dbg_ext",
+    "url": "https://github.com/expend20/x64dbg_ext",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "x64dbg_ext adds three commands to x64dbg. telescope recursively follows pointers and prints symbols, modules, and strings. unicorn replaces the linear disassembly view with the instructions the emulator will execute and the propagated register values. context prints that unicorn trace and applies telescope to the stack. Initializing a Unicorn context uses about 1 GB of RAM. The plugin file is ext.dp64.",
+    "description_zh": "x64dbg_ext 给 x64dbg 增加三条命令。telescope 递归跟随指针，并打印符号、模块和字符串。unicorn 用模拟器将要执行的指令和传播后的寄存器值替换线性反汇编视图。context 打印这条 unicorn 轨迹，并对栈使用 telescope。初始化一个 Unicorn 上下文大约使用 1 GB 内存。插件文件是 ext.dp64。",
+    "requirements": [
+      "Copy ext.dp64 into the x64dbg plugins directory. A source build needs Rust 1.64.0 or the beta toolchain named in the README, and LIBCLANG_PATH pointing at the LLVM bin directory. The documented command is rustup run beta cargo build --release.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/expend20/x64dbg_ext/blob/0e86748b58b7ed30ea21a7d7ee88183cb3496469/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

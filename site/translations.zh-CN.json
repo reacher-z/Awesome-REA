@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "x64dbg-ext": {
+    "name": "x64dbg_ext",
+    "requirements": [
+      "把 ext.dp64 复制到 x64dbg 的插件目录。源码构建需要 Rust 1.64.0 或 README 点名的 beta 工具链，以及指向 LLVM bin 目录的 LIBCLANG_PATH。文档中的命令是 rustup run beta cargo build --release。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
