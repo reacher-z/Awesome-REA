@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -40,9 +40,10 @@
 [↑ 返回目录](#目录)
 
 <a id="game-matching-decompilation"></a>
-### 匹配反编译与反汇编 (69)
+### 匹配反编译与反汇编 (70)
 
 - [**3S Decomp：逐字比对的《街头霸王 III：3rd Strike》PS2 反编译重建**](https://github.com/crowded-street/3s-decomp) - 将 Street Fighter Anniversary Collection 中《街头霸王 III：3rd Strike》的 PlayStation 2 可执行文件反编译为 C 源码，用当年的 Metrowerks 与 EE GCC 编译器重新构建，再将重建出的可执行文件与使用者自备的原文件逐字比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
+- [**众神的三角力量日文版反汇编**](https://github.com/spannerisms/jpdasm) - 这是《塞尔达传说：众神的三角力量》日文 1.0 版的反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/alttp-jp-disasm/)</sub>
 - [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)</sub>
 - [**Animal Crossing：生成一致产物的 GameCube 反编译重建**](https://github.com/ACreTeam/ac-decomp) - 将 Animal Crossing 的 GameCube 代码重建为 C 与 C++ 源码，可重新构建美版的主可执行文件及 foresta.rel 模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/animal-crossing-gamecube-decomp-case/)</sub>
 - [**Animal Crossing: Wild World：附差分运行检查的韩版 DS 一致性反编译重建**](https://github.com/banatic/acww-decomp) - 将 Animal Crossing: Wild World 韩版 DS 游戏的 ARM9 游戏代码重建为每个函数一个 C 或 C++ 源文件，并用原版 Metrowerks 编译器和链接器对照使用者自己的 ROM 校验。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/animal-crossing-wild-world-decomp-case/)</sub>
