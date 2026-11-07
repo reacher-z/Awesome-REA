@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "iwd2r",
+    "name": "Icewind Dale II Resurrected",
+    "url": "https://github.com/thierbig/iwd2r",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "iwd2r decompiles the Icewind Dale II engine and builds it on Linux, Windows, and macOS on Apple silicon. The reviewed README says 86.2 percent of the .text section is recovered, 3,412,855 of 3,959,733 bytes, and 7,473 of 11,740 functions. The player supplies the GOG release of Icewind Dale II Complete. The README says the game is not playable from start to finish yet.",
+    "description_zh": "iwd2r 反编译《冰风谷 II》的引擎，并在 Linux、Windows 和 Apple 芯片的 macOS 上构建。审阅的 README 写明 .text 段恢复了 86.2%，即 3,959,733 字节中的 3,412,855 字节，11,740 个函数中的 7,473 个。玩家提供 GOG 版《冰风谷 II》完整版。README 写明游戏还不能从头玩到尾。",
+    "requirements": [
+      "CMake 3.28. Presets include linux-gcc, linux-clang, macos-clang, windows-msvc-x64, and windows-msvc-x86. The documented Linux commands are cmake --preset linux-gcc, cmake --build --preset linux-gcc, and ctest --preset linux-gcc.",
+      "License: Sustainable Use License 1.0 for the repository, except the MIT-licensed ports listed in docs/THIRD_PARTY.md."
+    ],
+    "evidence_url": "https://github.com/thierbig/iwd2r/blob/2d9b975fa5763997a4047d6fa8bf63eab86a2e53/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

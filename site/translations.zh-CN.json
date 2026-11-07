@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "iwd2r": {
+    "name": "冰风谷 II 重制引擎",
+    "requirements": [
+      "需要 CMake 3.28。预设包括 linux-gcc、linux-clang、macos-clang、windows-msvc-x64 和 windows-msvc-x86。文档中的 Linux 命令是 cmake --preset linux-gcc、cmake --build --preset linux-gcc 和 ctest --preset linux-gcc。",
+      "许可证：仓库使用 Sustainable Use License 1.0，docs/THIRD_PARTY.md 列出的 MIT 移植除外。"
+    ]
   }
 }
