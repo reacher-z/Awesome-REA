@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gdx-3ds-case": {
+    "name": "G-Diffuser 3DS",
+    "requirements": [
+      "玩家转储自己的美版第 0 修订卡带。tools/prebake/prebake.py 写出 fzerox.o2r 和 gdiffuser.o2r。音频需要一次性转储 DSP 固件 dspfirm.cdc。",
+      "旧版 3DS 和新版 3DS 的构建是分开的。Expansion Kit 构建还需要玩家自己的 64DD 磁盘镜像。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

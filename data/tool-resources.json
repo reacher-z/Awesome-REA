@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gdx-3ds-case",
+    "name": "G-Diffuser 3DS",
+    "url": "https://github.com/cruxxxxxx/gdx-3ds",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "G-Diffuser 3DS is a native port of the F-Zero X decompilation to Old and New Nintendo 3DS, built on the G-Diffuser PC port. It has stereoscopic 3D and full audio. Optional Expansion Kit builds stream 64DD content from the SD card.",
+    "description_zh": "G-Diffuser 3DS 把《F-Zero X》反编译原生移植到旧版和新版任天堂 3DS，基于 G-Diffuser 的 PC 移植。它有立体 3D 和完整音频。可选的 Expansion Kit 构建从 SD 卡流式读取 64DD 内容。",
+    "requirements": [
+      "The player dumps their own USA revision 0 cartridge. tools/prebake/prebake.py writes fzerox.o2r and gdiffuser.o2r. Audio needs a one-time DSP firmware dump, dspfirm.cdc.",
+      "O3DS and N3DS builds are separate. Expansion Kit builds also need the player's own 64DD disk image.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/cruxxxxxx/gdx-3ds/blob/d8a37d560a96b27fd65c74390bd995ee5029fba8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
