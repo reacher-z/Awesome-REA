@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sonic-r-android",
+    "name": "Sonic R Android",
+    "url": "https://github.com/ZinexDa/sonic-r-android",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This ports the Sonic R PC decompilation to Android. It replaces desktop OpenGL immediate mode with an OpenGL ES 2.0 shader pipeline and adds on-screen controls. The launcher asks the player to select a retail Sonic R PC folder.",
+    "description_zh": "该项目把 PC 版《索尼克 R》反编译移植到 Android。它用 OpenGL ES 2.0 着色器管线替换桌面 OpenGL 立即模式，并加入屏幕控件。启动器让玩家选择一份零售版索尼克 R 的 PC 文件夹。",
+    "requirements": [
+      "Android Studio with SDK API 34, NDK 28.2 or newer, and JDK 21. From app/, run gradlew.bat assembleDebug. The APK is app/build/outputs/apk/debug/SonicR-debug.apk.",
+      "The reviewed README allows download, build, and modification, and prohibits sale of the code or a compiled executable."
+    ],
+    "evidence_url": "https://github.com/ZinexDa/sonic-r-android/blob/474bb559458655e2013064074e13d0f7af4bcb0f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
