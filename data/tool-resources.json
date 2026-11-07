@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "new-super-paper-bros-case",
+    "name": "New Super Paper Bros.: native port of Super Paper Mario",
+    "url": "https://github.com/josiahg2502-glitch/NewSuperPaperBros",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "New Super Paper Bros. is a native port of Super Paper Mario for the Wii, made by statically recompiling the game's PowerPC code to C++ with WiiCompiled. The README lists Windows, Linux, macOS, and Android programs, plus a RetroArch core on Android.",
+    "description_zh": "New Super Paper Bros. 是 Wii 游戏《超级纸片马里奥》的原生移植，用 WiiCompiled 把游戏的 PowerPC 代码静态重编译为 C++。README 列出 Windows、Linux、macOS 和 Android 程序，以及 Android 上的 RetroArch 核心。",
+    "requirements": [
+      "Playing on Windows needs Windows 10 or 11, 64-bit, a GPU with DirectX 12 or Vulkan, and your own dump of the USA disc R8PE01 revision 0 or the European disc R8PP01, as .iso, .ciso, or .wbfs.",
+      "No game data is included. A launcher installs the game from your disc image.",
+      "License: GPLv3, as stated in the README. Bundled third-party components keep their own licenses."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/josiahg2502-glitch/NewSuperPaperBros/blob/1f961e7db18586655f647f1027eb86ca706088cc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
