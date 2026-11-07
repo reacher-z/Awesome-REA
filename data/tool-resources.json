@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "skullburglar-case",
+    "name": "Skullburglar",
+    "url": "https://github.com/nlwstein/skullburglar",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Skullburglar is a native port of 50 Cent: Blood on the Sand for the Xbox 360, statically recompiled with the ReXGlue SDK. Ready-to-play builds target Windows, macOS on Apple silicon, Linux, and the Steam Deck. Version 1.0 adds a renderer written for the port that reads the game's scene from memory.",
+    "description_zh": "Skullburglar 是《50 Cent: Blood on the Sand》Xbox 360 版的原生移植，用 ReXGlue SDK 静态重编译。可直接游玩的构建面向 Windows、Apple 芯片的 macOS、Linux 和 Steam Deck。1.0 版增加了为该移植编写的渲染器，它从游戏内存读取场景。",
+    "requirements": [
+      "The player supplies their own copy of the game. The launcher at https://skullburglar.stz.sh sets the game up from that disc.",
+      "Building from source is documented in BUILDING.md.",
+      "License: BSD 3-Clause."
+    ],
+    "evidence_url": "https://github.com/nlwstein/skullburglar/blob/03eb715cd03b8ea4870ff1ad0a3257cb7a71816c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
