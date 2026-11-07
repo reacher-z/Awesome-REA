@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ida-wpp-remover",
+    "name": "WPP Remover",
+    "url": "https://github.com/L4ys/IDA-WPP-Remover",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "WPP Remover is an IDA Pro plugin that removes Windows software-trace calls from Hex-Rays pseudocode. It activates for Windows PE files and replaces calls to WPP_SF functions with NOPs in a microcode pass.",
+    "description_zh": "WPP Remover 是一个 IDA Pro 插件，用来从 Hex-Rays 伪代码中去掉 Windows 软件跟踪调用。它针对 Windows PE 文件启用，并在微码阶段把对 WPP_SF 函数的调用替换成 NOP。",
+    "requirements": [
+      "Install with hcli plugin install wpp-remover, or copy wpp_remover.py into the IDA plugins directory and restart IDA.",
+      "Toggle it from the decompiled view with Toggle WPP Remover.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/L4ys/IDA-WPP-Remover/blob/386fb4574249cdd96d8b9ad63e65405ad77b2498/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
