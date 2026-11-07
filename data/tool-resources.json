@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gtasa-reversed",
+    "name": "gtasa-reversed: a function-by-function rewrite of Grand Theft Auto: San Andreas",
+    "url": "https://github.com/gta-reversed/gta-reversed",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "decompilation",
+    "description_en": "Project to reverse Grand Theft Auto: San Andreas and rewrite and document every function. The README says a build produces a DLL that an ASI loader injects into the game, replacing in-game functions with the reversed ones, with a standalone executable as the goal. It estimates that about 50 to 60 percent of the code is done.",
+    "description_zh": "逆向《侠盗猎车手：圣安地列斯》并重写、注释每一个函数的项目。README 写明构建会生成 DLL，由 ASI 加载器注入游戏，用逆向得到的函数替换游戏内函数，目标是独立可执行文件。它估计大约完成了 50% 到 60% 的代码。",
+    "evidence_url": "https://github.com/gta-reversed/gta-reversed/blob/afbc26d70675b9138b740b857ffdcaeaa7c5ca7c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README lists Visual Studio 2026 and Python as prerequisites.",
+      "The reviewed page states no license."
+    ]
   }
 ]
