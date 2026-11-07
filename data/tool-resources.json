@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sfex2p-recomp",
+    "name": "Street Fighter EX2 Plus recompilation",
+    "url": "https://github.com/strider973/Street-Fighter-EX2-Plus-Recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Street Fighter EX2 Plus for the PlayStation, USA SLUS-01105, published by Capcom in 1999. The entry point is 0x801CA7D8. The README says boot, 60 Hz gameplay, digital gamepad input, and the return from in-game reset to Mode Select work. It requires the US SCPH-1001 BIOS, 512 KiB, CRC32 37157331. OpenBIOS is disabled. The psxrecomp pin is branch sfex2p-v032, v0.3.2-alpha plus two scheduler fixes.",
+    "description_zh": "该项目静态重编译 PlayStation 美版《街头霸王 EX2 Plus》SLUS-01105，卡普空 1999 年发行。入口点是 0x801CA7D8。README 写明启动、60 Hz 游戏、数字手柄输入，以及游戏内重置回到模式选择都可以工作。它需要美版 SCPH-1001 BIOS，512 KiB，CRC32 37157331。OpenBIOS 被关闭。psxrecomp 固定在分支 sfex2p-v032，即 v0.3.2-alpha 加上两处调度器修复。",
+    "requirements": [
+      "A SCPH-1001 BIOS and a CUE/BIN disc image. Initialize submodules, run psxrecomp_cli.py generate with game.toml, the CUE, and --bios, then cmake --build build-release --target psx-runtime. The controller mode is digital.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/strider973/Street-Fighter-EX2-Plus-Recompiled/blob/f4151f535b258f59db62932931f940c87758c345/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
