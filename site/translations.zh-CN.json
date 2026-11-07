@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "regaiden-recomp-case": {
+    "name": "生化危机 Gaiden 重编译",
+    "requirements": [
+      "玩家提供 ROM 和音乐文件。默认启动使用原生 Game Boy Color 的宽高比和颜色。增强功能可在 F10 菜单里选用。",
+      "许可证：MIT。"
+    ]
   }
 }
