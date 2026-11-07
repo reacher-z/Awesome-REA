@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "hackersm64",
+    "name": "HackerSM64",
+    "url": "https://github.com/HackerN64/HackerSM64",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "HackerSM64 is a Super Mario 64 base for ROM hacks, forked from ultrasm64. A US ROM is required to build. Japanese and European ROMs are optional for some assets. Toggles live in include/config. The reviewed feature list includes extended boundaries, a debug fly mode, 16-bit model IDs, and the puppyprint text engine. Install and build steps are on the HackerSM64 wiki.",
+    "description_zh": "HackerSM64 是用于 ROM 改造的《超级马里奥 64》基底，从 ultrasm64 分出。构建需要美版 ROM。日版和欧版 ROM 对部分资源是可选的。开关在 include/config。审阅的功能表包括扩展边界、调试飞行模式、16 位模型 ID 和 puppyprint 文本引擎。安装和构建步骤在 HackerSM64 wiki。",
+    "requirements": [
+      "A US Super Mario 64 ROM. Follow the Installing HackerSM64 wiki page.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/HackerN64/HackerSM64/blob/8953c07aa4592d65ffc974b596c97ae42778a221/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
