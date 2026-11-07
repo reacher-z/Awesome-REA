@@ -4,7 +4,7 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
@@ -12,7 +12,7 @@
 - [Game](#game) (239)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
-- [Firmware and Hardware](#firmware-and-hardware) (19)
+- [Firmware and Hardware](#firmware-and-hardware) (20)
 - [Protocol](#protocol) (91)
 
 <a id="website"></a>
@@ -401,6 +401,7 @@
 - [**iCSee LocalMod: a stock-firmware camera control extension**](https://github.com/Vittuu/icsee-localmod) - An owner-authorized XM530V200 camera case uses REA/Ghidra to investigate native Sofia command handlers, then adds local control and Home Assistant integration while preserving stock drivers and recording. <sub>Case study · Mixed workflow · Also: Binary, Protocol · [Full entry](https://awesomerea.org/resources/icsee-localmod-rea-camera-case/)</sub>
 - [**MXQ PRO RK3229: an Android firmware investigation and Linux repurposing**](https://github.com/bigtower17/mxqpro-rk3229) - An owner documents identifying an RK3229 TV box, investigating its stock Android ROM and repurposing it with a userspace gamepad driver and Armbian. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/mxqpro-rk3229-rea-repurposing-case/)</sub>
 - [**Valetudo: local replacement for robot-vacuum vendor clouds**](https://github.com/Hypfer/Valetudo) - Replaces the vendor cloud of supported robot vacuums with a local service that runs on the rooted robot beside the vendor firmware and emulates the cloud endpoints that firmware expects, including a miio dummycloud and a counterpart for Midea's MSmart protocol. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/valetudo-robot-cloud-replacement-case/)</sub>
+- [**open-desk-lamp-firmware: replacement firmware for the Xiaomi desk lamp**](https://github.com/fvollmer/open-desk-lamp-firmware) - Replaces the stock firmware of the ESP8266-based Xiaomi desk lamp with a small open firmware written from the lamp's hardware: the README documents the main board, where the ESP8266 drives two switching regulators for the cold and warm LEDs by PWM and reads a rotary encoder. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/xiaomi-desk-lamp-open-firmware-case/)</sub>
 - [**TeddyCloud: a self-hosted replacement for the Toniebox cloud**](https://github.com/toniebox-reverse-engineering/teddycloud) - Reimplements the Boxine cloud services a Toniebox talks to as a self-hosted C server, so the box can fetch audio, settings and over-the-air content locally while the owner controls what reaches the manufacturer. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/teddycloud-toniebox-server-case/)</sub>
 - [**OpenDMCUFirm: a reimplemented Wii U DMCU display firmware**](https://github.com/GaryOderNichts/OpenDMCUFirm) - Reimplements in C the firmware of the Wii U’s DMCU, the M68HC11-compatible display microcontroller in its AMD graphics controller, which in Wii mode reads the Video Interface state and configures display output, deinterlacing, scaling and overscan. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opendmcufirm-wii-u-dmcu-firmware-case/)</sub>
 - [**reflecticon-224: running Lexicon 224 reverb firmware on emulated hardware**](https://github.com/joelanders/reflecticon-224) - Emulates the Lexicon 224, 224X and 224XL digital reverbs so that their own firmware runs in a browser page or a JUCE plugin. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reflecticon-224-lexicon-emulation-case/)</sub>
