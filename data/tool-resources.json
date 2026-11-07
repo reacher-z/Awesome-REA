@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "balloonfight-disasm",
+    "name": "Balloon Fight disassembly",
+    "url": "https://github.com/LuigiBlood/balloonfight_dis",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of Balloon Fight for the NES, USA. Assembly uses ARM9's bass fork. An iNES build needs the CHR file named BalloonFight.chr.",
+    "description_zh": "这是 NES 美版 Balloon Fight 的反汇编。汇编使用 ARM9 的 bass 分支。构建 iNES 需要名为 BalloonFight.chr 的 CHR 文件。",
+    "requirements": [
+      "Assemble BalloonFight_iNES.asm or BalloonFight_PRG.asm with bass.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/LuigiBlood/balloonfight_dis/blob/3290ad3abe639071be1d019112dbfcd541981461/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
