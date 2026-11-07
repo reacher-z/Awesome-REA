@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "th06-sdl2",
+    "name": "th06-sdl2",
+    "url": "https://github.com/CNTianQi233/th06-sdl2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "th06-sdl2 is a cross-platform port of Touhou Koumakyou, the Embodiment of Scarlet Devil, version 1.02h, built on the happyhavoc/th06 reconstruction. Direct3D 8 and the Win32 window and audio stack are replaced with SDL2. Renderers are desktop OpenGL, OpenGL ES 2.0, and an optional Vulkan backend. The README says the project is archived.",
+    "description_zh": "th06-sdl2 是《东方红魔乡》1.02h 的跨平台移植，基于 happyhavoc/th06 的重建。Direct3D 8 以及 Win32 的窗口和音频栈被换成 SDL2。渲染器有桌面 OpenGL、OpenGL ES 2.0，以及可选的 Vulkan 后端。README 写明项目已归档。",
+    "requirements": [
+      "CMake 3.20 or newer, SDL2, SDL2_mixer, and SDL2_image. The player supplies the game data files from the version 1.02h executable. The Vulkan backend needs the LunarG Vulkan SDK at build time.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/CNTianQi233/th06-sdl2/blob/01642ba2690a6ab559e29268f5e1c1ed322e9e82/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

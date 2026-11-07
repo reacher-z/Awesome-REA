@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "th06-sdl2": {
+    "name": "东方红魔乡 SDL2 移植",
+    "requirements": [
+      "需要 CMake 3.20 或更新版本、SDL2、SDL2_mixer 和 SDL2_image。玩家提供 1.02h 可执行文件里的游戏数据。构建 Vulkan 后端需要 LunarG Vulkan SDK。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
