@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "thps2-tools": {
+    "name": "THPS2 工具",
+    "requirements": [
+      "提取和反汇编脚本需要 Python，psxviewer.c 需要 C 编译器。",
+      "许可证：MIT，除非某个文件另行说明。"
+    ]
   }
 }
