@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "saturnrecomp": {
+    "name": "SaturnRecomp",
+    "requirements": [
+      "需要 64 位 Windows、PowerShell 5.1 或更新版本、MSYS2 MinGW-w64 GCC 和 MSYS2 的 SDL2 包。启动器构建是 python -m pip install -r launcher/requirements.txt，然后运行 tools/build_launcher.ps1。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
