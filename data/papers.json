@@ -12817,5 +12817,53 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-firmrebugger",
+    "title": "FirmReBugger: A Benchmark Framework for Monolithic Firmware Fuzzers",
+    "authors": [
+      "Mathew Duong",
+      "Michael Chesser",
+      "Guy Farrelly",
+      "Surya Nepal",
+      "Damith C. Ranasinghe"
+    ],
+    "year": 2026,
+    "publication_date": "2026-01-22",
+    "date_precision": "day",
+    "date_basis": "arXiv first-submission date; the reviewed file is v1",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2601.15774",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2026-01-22",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2601.15774v1",
+    "pdf_url": "https://arxiv.org/pdf/2601.15774v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "FirmReBugger is a benchmark framework for comparing monolithic firmware fuzzers with bug oracles rather than with coverage counts alone. It replays seeds against firmware that the benchmark itself does not modify, so reached, triggered, and detected bugs can be separated.",
+    "description_zh": "FirmReBugger 是比较单体固件模糊测试器的基准框架，依据缺陷预言而不只依据覆盖率。它在基准本身不修改固件的情况下重放种子，从而区分缺陷被到达、被触发或被检出。",
+    "scope_limitations_en": "The reviewed file is arXiv:2601.15774v1. No fuzzer was run for this entry.",
+    "scope_limitations_zh": "审阅的文件是 arXiv:2601.15774v1。本条目没有运行模糊测试器。",
+    "why_fits_en": "Fuzzing monolithic firmware is a dynamic reverse-engineering and vulnerability-analysis setting, and the paper contributes a benchmark for it.",
+    "why_fits_zh": "对单体固件做模糊测试属于动态逆向和漏洞分析，本文贡献的是这一场景的基准。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2601.15774v1",
+      "https://arxiv.org/pdf/2601.15774v1",
+      "https://export.arxiv.org/api/query?id_list=2601.15774"
+    ],
+    "metadata_notes": "No code commit was pinned.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "FirmReBugger：面向单体固件模糊测试器的基准框架",
+    "date_basis_zh": "日期取自 arXiv 首次提交日，审阅的文件是 v1",
+    "metadata_notes_zh": "没有固定代码提交。"
   }
 ]
