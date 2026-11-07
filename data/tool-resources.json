@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "surreal-engine",
+    "name": "Surreal Engine: a reimplementation of Unreal Engine 1",
+    "url": "https://github.com/dpjudas/SurrealEngine",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Reimplementation of Unreal Engine 1, currently focused on making Unreal Gold and Unreal Tournament (UT99) playable. The README says the scope may later cover more UE1 games, and it links nightly builds.",
+    "description_zh": "虚幻引擎 1 的重实现，目前集中于让 Unreal Gold 和 Unreal Tournament（UT99）可以运行。README 写明范围以后可能扩大到更多 UE1 游戏，并提供每日构建。",
+    "evidence_url": "https://github.com/dpjudas/SurrealEngine/blob/b8a30e3072cb2b39a20bed3fe102dfbd6726afd2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Original copies of the UE1 games are required. The README lists Windows 10 or newer, macOS 15 or newer, or a modern Linux distribution, and a GPU with Direct3D 11, OpenGL 3.2, or Vulkan, with Metal 2 or newer on macOS.",
+      "The reviewed page states no license."
+    ]
   }
 ]
