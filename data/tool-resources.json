@@ -36528,5 +36528,39 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "crackdown-recompiled-case",
+    "name": "Crackdown Recompiled: native PC port of Xbox 360 Crackdown",
+    "url": "https://github.com/saulob/crackdown-xbox360-recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Native PC recompilation of the Xbox 360 game Crackdown. Static recompilation with the ReXGlue SDK produces a Windows build using Direct3D 12 and an experimental native Linux and Steam Deck build using Vulkan. The repository does not contain the game files, and the recompiled C++ is generated from the user's own disc.",
+    "description_zh": "Xbox 360 游戏 Crackdown 的原生 PC 重编译。项目使用 ReXGlue SDK 进行静态重编译，生成采用 Direct3D 12 的 Windows 构建，以及采用 Vulkan 的实验性 Linux 与 Steam Deck 原生构建。仓库不包含游戏文件，重编译得到的 C++ 由使用者自己的光盘在本地生成。",
+    "evidence_url": "https://github.com/saulob/crackdown-xbox360-recompiled/blob/33ab1b632e38cb5c1c39a3d56c479537b9e0d185/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "Windows 10 or 11 (64-bit) with a DirectX 12 graphics card and the Microsoft Visual C++ 2015-2022 x64 redistributable, or 64-bit x86 Linux with glibc 2.31 or newer, a Vulkan driver, and an X11 or Wayland desktop. The Linux and Steam Deck builds are described as experimental.",
+      "Requires the user's own Crackdown Xbox 360 retail disc (2007), the original release without a title update: Title ID 4D5307DC and Default.xex of 14,270,464 bytes. The launcher accepts a disc image or extracted files and refuses other versions. No game files are included.",
+      "Source builds need the submodules, Visual Studio with the C++ and LLVM/Clang components, disc files placed so that game/assets/Default.xex exists, and ReXGlue SDK 0.10.0, which tools/codegen.ps1 downloads. The Linux AppImage is built with tools/package-linux.sh after that C++ has been generated.",
+      "Original project code is GPL-2.0-only. ReXGlue is BSD 3-Clause, and the pinned TRG Launcher v1.1.0 is MIT. Game files are outside the project license. The README says AI tools assisted analysis, development, debugging and documentation, and that the maintainer directed, tested and reviewed those changes."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "additional_evidence_urls": [
+      "https://github.com/saulob/crackdown-xbox360-recompiled/blob/33ab1b632e38cb5c1c39a3d56c479537b9e0d185/LICENSE"
+    ],
+    "class": "game",
+    "verification": "source-reviewed",
+    "added_at": "2026-11-07"
   }
 ]
