@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "openhuey": {
+    "name": "OpenHuey",
+    "requirements": [
+      "需要 CMake、C 编译器和 SDL3。影片需要 libavcodec。文档中的构建是 cmake -S openhuey-src -B build/openhuey-src -G Ninja，然后 cmake --build build/openhuey-src。第一次启动会导入美版 ISO。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

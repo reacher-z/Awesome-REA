@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openhuey",
+    "name": "OpenHuey",
+    "url": "https://github.com/ArnautDaniel/OpenHuey",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenHuey rebuilds Haunting Ground for the PlayStation 2, 2005, SLUS_210.75, for PC. The executable SHA-1 is e0867d2ec83e6e2fccf147ad9e645a9a662d1c15. The C decompilation is functional rather than byte-matching. The openhuey program plays the story, rooms, cutscenes, items, menu, saves, endings, and the Hewie minigame.",
+    "description_zh": "OpenHuey 把 2005 年 PlayStation 2 游戏《Haunting Ground》（SLUS_210.75）重建到 PC。可执行文件的 SHA-1 为 e0867d2ec83e6e2fccf147ad9e645a9a662d1c15。C 反编译按功能核对，而不是逐字节匹配。openhuey 程序可以玩剧情、房间、过场、道具、菜单、存档、结局和 Hewie 小游戏。",
+    "requirements": [
+      "CMake, a C compiler, and SDL3. Movies need libavcodec. The documented build is cmake -S openhuey-src -B build/openhuey-src -G Ninja, then cmake --build build/openhuey-src. The first start imports a USA ISO.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ArnautDaniel/OpenHuey/blob/11ed60ccc07a74b5076b86e75226b425302fab68/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
