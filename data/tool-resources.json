@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "claude-game-decompilation-skill",
+    "name": "Game Decompilation Skill For Claude",
+    "url": "https://github.com/lemiur/Game-Decompilation-Skill-For-Claude",
+    "category": "agent-workflows",
+    "kind": "tool",
+    "relationship": "independent-agent-integration",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Game Decompilation Skill For Claude is a set of Claude Code skills for building a byte-matching decompilation of a game. The skills describe the method, and each game repository supplies its own commands through an AGENTS.md file.",
+    "description_zh": "Game Decompilation Skill For Claude 是一套 Claude Code 技能，用于建立游戏的逐字节匹配反编译。技能描述方法，每个游戏仓库通过自己的 AGENTS.md 提供命令和约定。",
+    "requirements": [
+      "The skills are project-independent and are used with Claude Code.",
+      "Each game repository is expected to supply its own commands and conventions in AGENTS.md.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/lemiur/Game-Decompilation-Skill-For-Claude/blob/490d68b868f27760483afd441c9800b38d692569/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

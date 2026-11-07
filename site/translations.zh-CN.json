@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "claude-game-decompilation-skill": {
+    "name": "Game Decompilation Skill For Claude",
+    "requirements": [
+      "这些技能与具体项目无关，配合 Claude Code 使用。",
+      "每个游戏仓库应在 AGENTS.md 中提供自己的命令和约定。",
+      "README 没有写许可证。"
+    ]
   }
 }
