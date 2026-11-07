@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "jadxecute",
+    "name": "JADXecute",
+    "url": "https://github.com/LaurieWired/JADXecute",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "JADXecute is a JADX plugin that runs Java against the open jadx-gui session, so a script can print or change parts of the decompiler output. The reviewed tree is based on JADX 1.4.7 and ships a JADX build with the plugin embedded. Usage examples are in the project wiki.",
+    "description_zh": "JADXecute 是一个 JADX 插件，可以在打开的 jadx-gui 会话里运行 Java，让脚本打印或改动反编译器输出的一部分。审阅的代码基于 JADX 1.4.7，并提供带这个插件的 JADX 构建。用法示例在项目 wiki。",
+    "requirements": [
+      "The reviewed release is the JADX 1.4.7 build with the plugin embedded.",
+      "License: Apache License 2.0."
+    ],
+    "evidence_url": "https://github.com/LaurieWired/JADXecute/blob/35b6df761d0140684f41cdb67f5fd98bfec324fc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
