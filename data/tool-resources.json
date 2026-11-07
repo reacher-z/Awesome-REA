@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "scooby-doo-refrightened",
+    "name": "Scooby-Doo Refrightened",
+    "url": "https://github.com/josiahg2502-glitch/Scooby-Doo-Refrightened",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Scooby-Doo! Night of 100 Frights for the GameCube, 2002, into a Windows program with WiiCompiled. The supported disc is USA version 1.01, product code GIHE78, revision 1, as ISO, GCM, or CISO. The README lists resolutions up to 4K, widescreen or 4:3, 30 or 60 fps, MSAA, and HDR.",
+    "description_zh": "该项目用 WiiCompiled 把 2002 年 GameCube 版《史酷比：百鬼夜惊魂》重编译成 Windows 程序。受支持的光盘是美版 1.01，产品代码 GIHE78，修订 1，格式为 ISO、GCM 或 CISO。README 列出最高 4K、宽屏或 4:3、30 或 60 帧、MSAA 和 HDR。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit. Unzip the release and choose the disc in Scooby-Doo Refrightened.exe. A source build needs Python 3 and Git, then tools/build-launcher.ps1, tools/build-no100f.ps1, and tools/package-scooby.ps1.",
+      "License: GPL-3.0. Bundled components keep their own licenses."
+    ],
+    "evidence_url": "https://github.com/josiahg2502-glitch/Scooby-Doo-Refrightened/blob/e6002615d332a47c69db38245d9b84ee9213a9ae/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
