@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "defjam-ffny": {
+    "name": "Def Jam: Fight for NY 重编译",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11，以及支持 DirectX 11 的显卡。源码构建把 xboxrecomp 的 defjam-bringup 分支克隆到这个仓库旁边。",
+      "许可证：这个移植和 DJFFNY.exe 为 MIT。xboxrecomp 工具包为 MIT，并带有来自 xemu 和 Hatari 的 LGPL-2.1 与 GPL-2.0 组件。构建出的程序链接 LGPL 的 NV2A 部分。WebView2 使用微软 SDK 许可证。"
+    ]
   }
 }
