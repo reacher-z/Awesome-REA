@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -225,10 +225,11 @@
 - [**Vandal Hearts: native PC port built on matching decompilations**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - Builds on shao113’s matching decompilation of PlayStation Vandal Hearts, adds a Japanese matching tree, and carries both through to a native Windows and Linux port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### Engine reimplementations (47)
+### Engine reimplementations (48)
 
 - [**Age of Empires Free Software Remake: a re-implementation on the original data**](https://github.com/FolkertVanVerseveld/aoe) - Re-implements Microsoft’s Age of Empires and its Rise of Rome expansion as a cross-platform C++17 engine on SDL2 and OpenGL that loads the original game’s DRS archives and language.dll resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo: a reverse-engineered Minecraft server**](https://github.com/bravoserver/bravo) - Reimplements the server side of Minecraft’s Alpha- and Beta-era multiplayer in Python on Twisted; its documentation calls it a reverse-engineered implementation written from scratch, credits network traffic dumps and says general Minecraft data went to a community wiki. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/bravo-minecraft-server-case/)</sub>
+- [**BreadFlowerDos**](https://github.com/kiwidoggie/breadflowerdos) - BreadFlowerDos is a modern C++ recreation of the Refractor 2 engine, focused on Battlefield 2 and Battlefield 2142. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/breadflowerdos/)</sub>
 - [**Chariot: Age of Empires engine reimplementation**](https://github.com/ChariotEngine/Chariot) - Chariot is an open-source effort to reimplement the engine of the original Age of Empires (1997). <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/chariot/)</sub>
 - [**CoD4 Rewrite: Rust/Bevy reconstruction**](https://github.com/Nilbong/COD4-Rewrite) - A Rust/Bevy reconstruction of Call of Duty 4 multiplayer systems, using assets from a local game installation. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/cod4-rewrite-reconstruction-case/)</sub>
 - [**CorsixTH: an open reimplementation of Theme Hospital**](https://github.com/CorsixTH/CorsixTH) - Reimplements the engine of Bullfrog’s 1997 Theme Hospital, with game logic in Lua and C++ for graphics, sound, movies and pathfinding, on top of the original game’s data files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/corsixth-engine-case/)</sub>
