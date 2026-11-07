@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/dynamic-analysis/) · [English](dynamic-analysis.md)
 
-**152 个仓库** · 2026-10-20 UTC
+**153 个仓库** · 2026-10-20 UTC
 
 这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -35,6 +35,7 @@
 - [QQBackup/qq-win-db-key](https://github.com/QQBackup/qq-win-db-key) — 全平台 QQ 聊天数据库解密。 **[1,103 星标]**
 - [frida/frida-gum](https://github.com/frida/frida-gum) — 以 C 编写的跨平台插桩与内省库。 **[1,032 星标]**
 - [JLospinoso/gargoyle](https://github.com/JLospinoso/gargoyle) — 历史性的 Windows 时序内存状态研究产物，用于研究有时间边界的内存观测、验证局限和防御可见性。 **[916 星标]**
+- [mrexodia/dumpulator](https://github.com/mrexodia/dumpulator) — 用于模拟内存转储的易用库。适用于恶意软件分析（配置提取、脱壳）和一般动态分析（沙箱）。 **[887 星标]** · 精选：[dumpulator 内存转储模拟库](https://awesomerea.org/zh/resources/dumpulator/)
 - [dyninst/dyninst](https://github.com/dyninst/dyninst) — DyninstAPI：二进制插桩、分析与修改工具。 **[838 星标]** · 精选：[Dyninst 二进制插桩与分析库](https://awesomerea.org/zh/resources/dyninst/)
 - [Simp1er/MobileSec](https://github.com/Simp1er/MobileSec) — 记录我在学习 Android 逆向过程中遇到的一些有趣内容。 **[809 星标]**
 - [frida/frida-core](https://github.com/frida/frida-core) — Frida 核心库。 **[782 星标]**

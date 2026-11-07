@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**837 个仓库** · 2026-10-20 UTC
+**836 个仓库** · 2026-10-20 UTC
 
 这些项目由自动发现，尚未审核。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -92,7 +92,6 @@
 - [NaC-L/Mergen](https://github.com/NaC-L/Mergen) — 使用 LLVM IR 并解析汇编，通过优化实现去混淆。 **[912 星标]** · 精选：[Mergen 反混淆 LLVM IR 提升器](https://awesomerea.org/zh/resources/mergen/)
 - [HackOvert/GhidraSnippets](https://github.com/HackOvert/GhidraSnippets) — 适用于 Ghidra Program 和 Decompiler API 的 Python 代码片段。 **[893 星标]** · 精选：[Ghidra Snippets Ghidra 脚本示例集](https://awesomerea.org/zh/resources/ghidra-snippets/)
 - [vulhunt-re/vulhunt](https://github.com/vulhunt-re/vulhunt) — Binarly 研究团队开发的漏洞检测框架。 **[893 星标]** · 精选：[VulHunt 社区版漏洞挖掘框架](https://awesomerea.org/zh/resources/vulhunt/)
-- [mrexodia/dumpulator](https://github.com/mrexodia/dumpulator) — 用于模拟内存转储的易用库。适用于恶意软件分析（配置提取、脱壳）和一般动态分析（沙箱）。 **[887 星标]**
 - [n0mi1k/apk2url](https://github.com/n0mi1k/apk2url) — 通过反汇编与反编译，快速从 APK 中提取 IP 和 URL 端点的 OSINT 工具。 **[880 星标]**
 - [symgraph/IDAssist](https://github.com/symgraph/IDAssist) — 面向 IDA Pro 的 AI 驱动逆向工程插件。 **[880 星标]** · 精选：[IDAssist IDA Pro 大模型辅助分析插件](https://awesomerea.org/zh/resources/idassist/)
 - [GrammaTech/ddisasm](https://github.com/GrammaTech/ddisasm) — 快速且准确的反汇编器。 **[876 星标]** · 精选：[Ddisasm Datalog 可重汇编反汇编器](https://awesomerea.org/zh/resources/ddisasm/)
