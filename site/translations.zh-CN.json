@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pokopia-recomp": {
+    "name": "Pokopia Recomp",
+    "requirements": [
+      "需要自己的《Pokémon Pokopia》2.0.1a。如果输入是 NSP 或 XCI，还需要那台主机的密钥文件。",
+      "许可证：GPL-3.0。第三方条款在 runtime/THIRD_PARTY_NOTICES.md 和 recomp/THIRD_PARTY.md。"
+    ]
   }
 }
