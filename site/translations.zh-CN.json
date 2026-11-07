@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "midnight-club-3-android": {
+    "name": "午夜俱乐部 3 Android 移植",
+    "requirements": [
+      "需要 Android 11 或更新版本、ARM64 和 Vulkan 1.1。从 Releases 安装 APK，把光盘文件复制到 MC3REMIX 文件夹，default.xbe 放在最上层。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
