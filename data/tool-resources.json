@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tenchu-sa-recomp",
+    "name": "Tenchu: Stealth Assassins recompilation",
+    "url": "https://github.com/Heromachine/Tenchu-SA-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Version 0.1.0 recompiles Tenchu: Stealth Assassins for the PlayStation, USA SLUS-00706, into C# with a fork of RecompOne. The launcher checks the disc boot executable and refuses any other disc. The disc stays required at runtime. Release 0.1.0 boots, plays, and saves. The controller stays inactive for about the first 20 seconds of the intro. Auto-save is off until Options enables it. A PlayStation BIOS is optional because the engine services BIOS calls itself.",
+    "description_zh": "0.1.0 版用 RecompOne 的一个分叉，把 PlayStation 美版《天诛：Stealth Assassins》SLUS-00706 重编译成 C#。启动器检查光盘的引导可执行文件，并拒绝其他光盘。运行时仍然需要这张光盘。0.1.0 可以启动、游玩和存档。开场大约前 20 秒手柄没有响应。自动存档在选项里打开之前是关闭的。PlayStation BIOS 是可选的，因为引擎自己处理 BIOS 调用。",
+    "requirements": [
+      ".NET 10 SDK. The RecompOne fork is expected as a sibling directory named RecompOne-fork. Build with dotnet build -c Release.",
+      "The reviewed README does not name a license for this repository. It says RecompOne is MIT."
+    ],
+    "evidence_url": "https://github.com/Heromachine/Tenchu-SA-Recomp/blob/818853516b37457bac7b9149039ab95b360fc5a2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
