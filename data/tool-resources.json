@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sf64-dc-case",
+    "name": "Star Fox 64 for Dreamcast",
+    "url": "https://github.com/jnmartin84/sf64-dc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This is a Sega Dreamcast port of Star Fox 64, based on sonicdcer/sf64. The player builds a CDI from their own Nintendo 64 ROM. The README says it is intended for real Dreamcast hardware, with VMU saving when a VMU is present.",
+    "description_zh": "这是《星际火狐64》的世嘉 Dreamcast 移植，基于 sonicdcer/sf64。玩家用自己的任天堂 64 ROM 构建 CDI。README 写明它面向真正的 Dreamcast 硬件，有 VMU 时会把存档写到 VMU。",
+    "requirements": [
+      "Docker build steps are in docker/Docker.md. make dsiso needs mkisofs. A VMU save uses 3 blocks.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/jnmartin84/sf64-dc/blob/4ed5c8d553f056d088e9c7b26148323f2f50af03/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
