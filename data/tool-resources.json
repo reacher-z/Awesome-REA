@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "jssms-case",
+    "name": "jsSMS: Master System and Game Gear emulator",
+    "url": "https://github.com/gmarty/jsSMS",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "description_en": "jsSMS is a JavaScript emulator for Sega Master System and Game Gear ROMs, written to run quickly in mobile browsers. The README says it began as a port of JavaGear and later replaced the interpreter with a dynamic recompiler in src/compiler.",
+    "description_zh": "jsSMS 是用 JavaScript 编写的世嘉 Master System 和 Game Gear ROM 仿真器，目标是在移动浏览器中快速运行。README 写明它起初是 JavaGear 的移植，后来用 src/compiler 中的动态重编译器取代了解释器。",
+    "requirements": [
+      "It runs Master System and Game Gear ROMs in JavaScript.",
+      "The README credits the original JavaGear copyright to Chris White, 2002-2008.",
+      "License: GPL-3.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/gmarty/jsSMS/blob/5a85c08296ae404ef472158d43a5be5a421b95c0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

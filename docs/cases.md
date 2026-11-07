@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -276,7 +276,7 @@
 - [**z2rs: an incremental Rust reconstruction of Zelda II checked against an emulator**](https://github.com/troyedwardsjr/z2rs) - Rebuilds Zelda II: The Adventure of Link (NES) in Rust for desktop, browser and Android by replacing the game’s 6502 routines one at a time. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/z2rs-zelda2-reconstruction-case/)</sub>
 
 <a id="game-other"></a>
-### Other methods and analyses (23)
+### Other methods and analyses (24)
 
 - [**ArkWeb: a two-game movement and collision experiment**](https://github.com/luki-1/ArkWeb) - Runs Spider-Man Remastered and Arkham Knight together, streaming Gotham collision into Spider-Man’s physics world and compositing his rendered frame into Arkham. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/arkweb-two-game-case/)</sub>
 - [**Batla 3D server emulator (2015 client)**](https://github.com/Serega25511s/Batla-3D-server-emu) - C# server emulator for the 2015 Steam client of Batla 3D, covering HTTP account, shop and room services and Lidgren UDP gameplay. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/batla-3d-server-emulator-case/)</sub>
@@ -289,6 +289,7 @@
 - [**game-and-watch-patch: Nintendo Game &amp; Watch custom firmware**](https://github.com/BrianPugh/game-and-watch-patch) - Custom firmware for the Mario and Zelda Game &amp; Watch consoles that patches new C code into the user's own stock firmware backups, so the original firmware runs alongside the retro-go emulator. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/game-and-watch-patch-cfw-case/)</sub>
 - [**GTA Mode: reverse-engineering SimCity 3000 Unlimited for a native plugin**](https://github.com/DenisSergeevitch/simcity3000-gta-mode) - GTA Mode is a native plugin that adds direct control of spawned citizens and cars to SimCity 3000 Unlimited. <sub>Case study · Also: Binary · [Full entry](https://awesomerea.org/resources/simcity-3000-gta-mode-case/)</sub>
 - [**inFAMOUS Second Son native PC port**](https://github.com/HayatoG/iss_pc) - Runs the PS4 inFAMOUS Second Son’s own x86-64 code natively on Windows and Linux: a runtime reimplements the PS4 system libraries the game uses, and a shadPS4-derived core translates its GPU commands and shaders to Vulkan. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/infamous-second-son-pc-port-case/)</sub>
+- [**jsSMS: Master System and Game Gear emulator**](https://github.com/gmarty/jsSMS) - jsSMS is a JavaScript emulator for Sega Master System and Game Gear ROMs, written to run quickly in mobile browsers. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/jssms-case/)</sub>
 - [**Left 4 Dead 2: recovering the AI Director's behavior**](https://github.com/zeljkovranjes/l4d2-director-system-research) - This Left 4 Dead 2 study reconstructs the AI Director's pacing, intensity, encounter placement and music rules from an identified x86 server.dll and sanitized runtime traces. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/l4d2-director-research-case/)</sub>
 - [**MTG Arena Collection Export: reconstructing the Frontdoor collection request**](https://github.com/Ikreb1/mtg-arena-collection-export) - MTG Arena Collection Export reconstructs the Frontdoor request needed to export owned cards from Magic: The Gathering Arena. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/mtg-arena-collection-export-case/)</sub>
 - [**OpenPigeon: reconstructing GamePigeon iMessage game messages**](https://github.com/time-attack/OpenPigeon) - OpenPigeon is a TypeScript codec for reading GamePigeon iMessage game state and encoding caller-supplied moves for eleven turn-based games. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/openpigeon-case/)</sub>
