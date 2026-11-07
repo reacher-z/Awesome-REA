@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gh2-recomp",
+    "name": "Guitar Hero II recompilation",
+    "url": "https://github.com/YoshiCrystal9/re-gh2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a proof-of-concept recompilation of Guitar Hero II for the Xbox 360, using the ReXGlue SDK. The README says performance is poor and the build is prone to crashes.",
+    "description_zh": "这是用 ReXGlue SDK 重编译的 Xbox 360 版《Guitar Hero II》概念验证。README 写明性能不佳，构建容易崩溃。",
+    "requirements": [
+      "Set REXSDK, extract a Guitar Hero II ISO into assets, run cmake configure, build the gh2test_codegen target, then build gh2test. Launch with the assets folder as the first argument.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/YoshiCrystal9/re-gh2/blob/ef521f4c7ab57cbd201de6f9acf37f218f48fa49/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
