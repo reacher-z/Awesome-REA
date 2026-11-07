@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "brightis-decomp",
+    "name": "Brightis decompilation",
+    "url": "https://github.com/Dickdebonair/Brightis-fan-translation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a partial decompilation and English localization of Brightis for the PlayStation. The main executable is SCPS_101.05. The README says text decompression, font hacking, and text reinsertion are done, and that the work uses ARMips patches.",
+    "description_zh": "这是 PlayStation 游戏《Brightis》的部分反编译和英文本地化。主可执行文件是 SCPS_101.05。README 写明文本解压、字体修改和文本回写已经完成，工作使用 ARMips 补丁。",
+    "requirements": [
+      "Details are on the project wiki. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Dickdebonair/Brightis-fan-translation/blob/33b2692f05ee6098b769c80d72c71c30b2b9ee1d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
