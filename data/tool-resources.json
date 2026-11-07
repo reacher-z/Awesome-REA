@@ -36543,7 +36543,7 @@
     "requirements": [
       "Needs a C99 compiler and your own Sam.spd, Mike.spd, or Mary.spd with the matching .sdf files, plus LTTS1033.LXA and r1033tts.LXA. The README says the voice data is not included.",
       "Sam, Mike, and Mary share one engine. The README also describes SAPI 4 voice effects rebuilt as an audio effect, and says the SAPI 4 voices themselves are not ported. It says the small tables in src/sam_abbrev_tab.h, src/sam_pos_rules.h, and src/sam_words_tab.h were transcribed from the engine.",
-      "The README says about 99.7% of samples match exactly and the rest differ by float rounding, and reports 21/21 corpus sentences, 104/104 number and date lines, 100/100 homograph sentences, and 180/180 paragraphs of Alice in Wonderland. tools/compare_corpus.py compares the C output with WAVs that the README says are not included. Not run or reproduced for this catalog.",
+      "The README says about 99.7% of samples match exactly and the rest differ by float rounding, and reports 21/21 corpus sentences, 104/104 number and date lines, 100/100 homograph sentences, and 180/180 paragraphs of Alice in Wonderland. tools/compare_corpus.py compares the C output with WAVs that the README says are not included.",
       "The README says MIT for the code and points at LICENSE. That file is the MIT License, copyright 2026 KamiKitsune420. Microsoft voice data is not included."
     ],
     "requirement_facets": [
