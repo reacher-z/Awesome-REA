@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "dragodis": {
+    "name": "Dragodis（跨反汇编器脚本框架）",
+    "requirements": [
+      "用 pip install dragodis 安装，再按 docs/install.md 安装一个反汇编器后端。",
+      "示例通过 dragodis.Ghidra 或 dragodis.IDA 打开本地二进制。",
+      "GitHub 报告该仓库许可证为 NOASSERTION。"
+    ]
   }
 }

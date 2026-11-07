@@ -36528,5 +36528,31 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dragodis",
+    "name": "Dragodis",
+    "url": "https://github.com/dod-cyber-crime-center/Dragodis",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Dragodis is a Python framework for writing disassembler scripts that run on more than one disassembler. The README lists Ghidra, IDA Pro, and Vivisect as backends, and shows installation with pip install dragodis followed by a backend install documented in docs/install.md.",
+    "description_zh": "Dragodis 是一个 Python 框架，用来编写能在多个反汇编器上运行的脚本。README 列出的后端有 Ghidra、IDA Pro 和 Vivisect，安装方式是 pip install dragodis，然后按 docs/install.md 安装后端。",
+    "evidence_url": "https://github.com/dod-cyber-crime-center/Dragodis/blob/4c3d30510e809e323259e9ce26aa06a2d59e60c6/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "Install with pip install dragodis, then install a backend disassembler using docs/install.md.",
+      "The examples open a local binary through dragodis.Ghidra or dragodis.IDA.",
+      "GitHub reports the repository license as NOASSERTION."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
