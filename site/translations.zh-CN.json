@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "dx-shader-decompiler": {
+    "name": "dx-shader-decompiler",
+    "requirements": [
+      "用 python dx-shader-decompiler.py 加上着色器文件进行反编译。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

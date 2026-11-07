@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dx-shader-decompiler",
+    "name": "dx-shader-decompiler",
+    "url": "https://github.com/aizvorski/dx-shader-decompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "dx-shader-decompiler decompiles DirectX 9 pixel and vertex shaders, shader model 3.0. It accepts the text or binary form produced by fxc.exe.",
+    "description_zh": "dx-shader-decompiler 反编译 DirectX 9 的像素着色器和顶点着色器，着色器模型 3.0。它接受 fxc.exe 产生的文本或二进制形式。",
+    "requirements": [
+      "Decompile with python dx-shader-decompiler.py and the shader file.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/aizvorski/dx-shader-decompiler/blob/e4e346a5609e14b27aa4d8c2c49e813bec11b7f9/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
