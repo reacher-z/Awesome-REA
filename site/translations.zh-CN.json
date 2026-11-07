@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mbbsdasm": {
+    "name": "MBBSDASM（16 位 NE 反汇编器）",
+    "requirements": [
+      "反汇编器运行在 .NET Core 上。文本界面使用 Terminal.Gui。README 中的一种命令行形式是 -i input.dll -o output.txt -strings -analysis。",
+      "README 以二条款 BSD 许可证许可 MBBSDASM，并写明 SharpDisasm 为二条款 BSD、Terminal.Gui 为 MIT。"
+    ]
   }
 }
