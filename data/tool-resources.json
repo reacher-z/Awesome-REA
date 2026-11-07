@@ -36528,5 +36528,24 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "psretrox",
+    "name": "PSRetrox",
+    "url": "https://github.com/cualquiercosa327/psretrox",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "PSRetrox is a C++ application for reverse engineering PlayStation 2 games from extracted ISO files. It disassembles binaries with Capstone, recompiles assembly to C, and decodes audio, 3D models, and formats such as MB, MH, BD, BH, and PSS. Retrox Engine ports the resulting C files toward a PC build.",
+    "description_zh": "PSRetrox 是一个用 C++ 编写的 PlayStation 2 游戏逆向工具，处理已提取的 ISO。它用 Capstone 反汇编二进制，把汇编重编译成 C，并解码音频、三维模型和 MB、MH、BD、BH、PSS 等格式。Retrox Engine 把得到的 C 文件推向 PC 构建。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/cualquiercosa327/psretrox/blob/a7bd9384cf528bd2ee7da6f854e4f59f8829f086/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
