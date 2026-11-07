@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nfs-mw-vehicles-decomp",
+    "name": "Most Wanted vehicle physics decompilation",
+    "url": "https://github.com/Brawltendo/Most-Wanted-Vehicles-Decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of the vehicle physics in Need for Speed: Most Wanted. The README says it does not compile into a full program. Functions are compiled with MSVC 7.1 so the assembly matches the retail executable.",
+    "description_zh": "这是《极品飞车：最高通缉》载具物理的匹配反编译。README 写明它不会编译成完整程序。函数用 MSVC 7.1 编译，使汇编与零售版可执行文件匹配。",
+    "requirements": [
+      "Visual Studio .NET 2003 and Python 3. The documented command is compile_and_gen_asm.ps1 with a C++ file under speed/indep/src.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Brawltendo/Most-Wanted-Vehicles-Decomp/blob/de70279af799aed4e93de72d34271619113f4dde/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
