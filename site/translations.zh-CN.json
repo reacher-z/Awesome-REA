@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "noble-archimedes": {
+    "name": "Noble Archimedes",
+    "requirements": [
+      "需要 Windows x64 和支持 Direct3D 12 的显卡。构建需要 Python 3、Git、CMake 3.25 或更新版本、Ninja、LLVM Clang/LLD，以及 Visual Studio C++ 生成工具。把解压后的美版 Xbox 光盘放到 extracted/，其中要有 default.xbe。文档中的命令是 .\\Build Noble Archimedes.cmd --full-game 和 .\\Launch Noble Archimedes.cmd。",
+      "许可证：项目自身代码为 GPL-2.0-only 或 GPL-3.0-or-later。README 写明 Xbox 来源保持 GPLv2，它的 SDK 补丁保持 MIT，来自 GPLv3 的 PS2 组件保持 GPLv3，assets/noble/ 里的标识使用 CC0。"
+    ]
   }
 }
