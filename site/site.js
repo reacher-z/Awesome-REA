@@ -23,7 +23,7 @@
     recent: '最近搜索', popular: '常用入口', groups: { tool: '工具', 'case-study': '案例', integration: '集成', other: '学习与参考', paper: '论文' }, papers: '论文',
     remove: (l) => `移除筛选：${l}`, page: (a, b) => `第 ${a}/${b} 页`, shelf: (a, n) => `${fmt(a)} / ${fmt(n)} 个案例`,
     classLabel: '证据档位', classDetail: ['完整软件复现', '部分范围或非复现条目', '有代码和文档，缺演示或下载', '仅笔记或进度记录'],
-    unknownTitle: '复核时来源不可达或不可读', previewAlt: '项目公开文档中的演示截图', previewVideoAlt: '项目公开文档中演示视频的封面', demoNote: '有 demo · 暂无截图',
+    platformsLabel: '发行包', unknownTitle: '复核时来源不可达或不可读', previewAlt: '项目公开文档中的演示截图', previewVideoAlt: '项目公开文档中演示视频的封面', demoNote: '有 demo · 暂无截图',
   } : {
     theme: 'Colour theme', system: 'system', light: 'light', dark: 'dark', reviewed: 'Reviewed', targets: 'Targets', copied: 'Copied',
     showing: (a, n) => `Showing <strong>${fmt(a)}</strong> of <strong>${fmt(n)}</strong>`, range: (a, b, n) => `Showing <strong>${fmt(a)}–${fmt(b)}</strong> of <strong>${fmt(n)}</strong>`,
@@ -32,7 +32,7 @@
     recent: 'Recent searches', popular: 'Popular', groups: { tool: 'Tools', 'case-study': 'Case studies', integration: 'Integrations', other: 'Learning and reference', paper: 'Papers' }, papers: 'Papers',
     remove: (l) => `Remove filter: ${l}`, page: (a, b) => `Page ${a} of ${b}`, shelf: (a, n) => `${fmt(a)} of ${fmt(n)} cases`,
     classLabel: 'Evidence class', classDetail: ['full software reconstruction', 'partial scope or analysis entry', 'code & docs, no demo or download', 'notes only'],
-    unknownTitle: 'Source unavailable or unreadable at review time', previewAlt: "Demo screenshot from the project's public documentation", previewVideoAlt: "Demo video thumbnail from the project's public documentation", demoNote: 'Demo available · no screenshot',
+    platformsLabel: 'Release packages', unknownTitle: 'Source unavailable or unreadable at review time', previewAlt: "Demo screenshot from the project's public documentation", previewVideoAlt: "Demo video thumbnail from the project's public documentation", demoNote: 'Demo available · no screenshot',
   };
   const ISSUE = 'https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml';
   const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
@@ -158,7 +158,7 @@
     return out;
   }
   async function prep(raw) {
-    const res = await chunked(raw.r, ([id, name, k, tg, c, lead, host, ev, rev, added, feat, alias, conn, cls, st, prev, prevKind]) => {
+    const res = await chunked(raw.r, ([id, name, k, tg, c, lead, host, ev, rev, added, feat, alias, conn, cls, st, prev, prevKind, plat]) => {
       const targets = [...tg].map(Number);
       // GitHub evidence is stored as owner/repo/blob/<sha>/path; anything else keeps its full URL and a label.
       const seg = /^https?:/.test(ev) ? null : ev.split('/');
@@ -166,7 +166,7 @@
       const sha = seg && /^(blob|tree)$/.test(seg[2]) ? seg[3].slice(0, 7) : '';
       const tags = [raw.kindLabels[k], raw.kindPlural[k], raw.kinds[k], raw.categoryLabels[c], ...targets.map((i) => `${raw.targetLabels[i]} ${raw.targets[i]}`)].join(' ');
       const r = { type: 'r', id, name, k, kind: raw.kinds[k], targets, c, lead, repo, sha, ev, rev, added, feat, alias, conn,
-        cls, st, prev, prevKind,
+        cls, st, prev, prevKind, plat,
         nName: norm(name), nAlias: norm(`${alias} ${repo}`), nTags: norm(tags), nDesc: norm(lead) };
       r.nw = words(r.nName); r.aw = words(r.nAlias); r.tw = words(r.nTags); r.dw = words(r.nDesc);
       return r;
@@ -315,7 +315,7 @@
     return `<li class="card${r.kind === 'case-study' ? ' is-case' : ''}" id="r-${esc(r.id)}" data-id="${esc(r.id)}"><article class="card-face">`
       + `<p class="callno" title="${esc(label)}"><span class="vh">${esc(label)}: </span><span aria-hidden="true">${callno(r)}</span></p>`
       + `<h3 class="card-name"><a class="stretch" href="${href(r)}">${hl(r.name, toks)}</a>${classChip(r)}</h3>`
-      + `<p class="card-desc">${hl(r.lead, toks)}</p>${previewHTML(r)}`
+      + `<p class="card-desc">${hl(r.lead, toks)}</p>${r.plat ? `<p class="card-platforms"><span class="card-platforms-label">${esc(T.platformsLabel)}: </span>${esc(r.plat)}</p>` : ''}${previewHTML(r)}`
       + `<ul class="card-targets" aria-label="${T.targets}">${tg}</ul>`
       + `<p class="stamp">${ico('check')}<span>${T.reviewed} <time datetime="${r.rev}">${r.rev}</time></span>`
       + `<a class="ev" href="${esc(ev)}" rel="noopener"><span class="ev-repo">${esc(r.repo)}</span>${r.sha ? `<span class="sha">@${esc(r.sha)}</span>` : ''}</a></p></article></li>`;

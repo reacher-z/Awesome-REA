@@ -81,8 +81,8 @@ def _platform_packages(record: dict, language: str) -> str:
         if len(items) > 12:
             entries.append(f'<li class="entry-platform-more">+{len(items) - 12}</li>')
         groups.append(f'<div class="entry-platform"><h3>{escape(PLATFORM_LABELS[key][int(zh)])}</h3><ul>{"".join(entries)}</ul></div>')
-    note = ('Latest release assets and README install commands; the catalog did not install or run them.'
-            if not zh else '来自最新 Release 产物与 README 安装命令；本目录未安装或运行。')
+    note = ('From the latest release assets and README install commands.'
+            if not zh else '来自最新 Release 产物与 README 安装命令。')
     return (f'<section class="entry-section" aria-labelledby="entry-platforms"><h2 id="entry-platforms">'
             f'{"发行包" if zh else "Release packages"}</h2><p class="entry-platform-note">{note}</p>'
             f'<div class="entry-platforms">{"".join(groups)}</div></section>')
