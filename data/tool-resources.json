@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "conker-lr-native",
+    "name": "Conker: Live & Reloaded recompilation",
+    "url": "https://github.com/rashevskyv/conker-lr-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Conker: Live & Reloaded for the original Xbox to Nintendo Switch, Linux, and Windows. The retail NTSC default.xbe has SHA-1 2232a1b3874d67b4bb4cf53a940420d2dab59535. Single player is playable. The Switch build is reported at a stable 30 fps, with true 16:9 and an experimental 60 fps mode. Linux and Windows use OpenGL 3.3. Multiplayer and Xbox Live do not work.",
+    "description_zh": "该项目把原版 Xbox 的《Conker: Live & Reloaded》静态重编译到 Nintendo Switch、Linux 和 Windows。零售版 NTSC 的 default.xbe SHA-1 是 2232a1b3874d67b4bb4cf53a940420d2dab59535。单人模式可以游玩。Switch 构建报告为稳定 30 帧，带真正的 16:9 和实验性的 60 帧。Linux 和 Windows 使用 OpenGL 3.3。多人和 Xbox Live 不能用。",
+    "requirements": [
+      "A build machine with 16 GB of RAM and about 20 GB free. extract-xiso unpacks the disc, and sha1sum checks default.xbe. Linux and Windows need OpenGL 3.3.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/rashevskyv/conker-lr-recomp/blob/db1617edf49ffcc2d2c3c41c9c82489b74efaa18/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
