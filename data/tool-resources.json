@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pop2-windows",
+    "name": "Prince of Persia 2 Windows port",
+    "url": "https://github.com/Supermedo/prince-of-persia-2-windows",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles the DOS executable PRINCE.EXE from Prince of Persia 2 into C and links it with a Windows runtime. Game logic, rendering, the intro, and the music driver stay the original code. VGA, the timer, the keyboard, and Sound Blaster or AdLib are replaced. The launcher is PoP2 Launcher.exe.",
+    "description_zh": "该项目把《波斯王子 2》的 DOS 可执行文件 PRINCE.EXE 静态重编译成 C，并链接一个 Windows 运行时。游戏逻辑、渲染、开场和音乐驱动保持原版代码。VGA、计时器、键盘以及 Sound Blaster 或 AdLib 被替换。启动器是 PoP2 Launcher.exe。",
+    "requirements": [
+      "Clang, llvm-rc, and Python 3. Set POP2_GAMEDIR to the folder that contains PRINCE.EXE, run python recomp/recomp.py recomp/extra_entries.txt, then ./build.sh.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Supermedo/prince-of-persia-2-windows/blob/e2c407fa8409ad891bf78c8e98c3e052dd00869b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

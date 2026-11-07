@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pop2-windows": {
+    "name": "波斯王子 2 Windows 移植",
+    "requirements": [
+      "需要 Clang、llvm-rc 和 Python 3。把 POP2_GAMEDIR 设为含有 PRINCE.EXE 的文件夹，运行 python recomp/recomp.py recomp/extra_entries.txt，然后运行 ./build.sh。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
