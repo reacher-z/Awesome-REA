@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "metroid-ii-disasm": {
+    "name": "密特罗德 II 反汇编",
+    "requirements": [
+      "对一份游戏运行 extract.py，然后运行 make all、build.bat 或 build.py。输出在 out/。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
