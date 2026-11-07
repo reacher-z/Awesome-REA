@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "diablerie",
+    "name": "Diablerie",
+    "url": "https://github.com/mofr/Diablerie",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Diablerie is an early Unity recreation of Diablo II. It opens in Unity 2019.2.8f1, with Assets/Scenes/MainMenu.scene as the play scene. The data files from Diablo II Lord of Destruction v1.14 are d2exp.mpq, d2data.mpq, and d2char.mpq. d2sfx.mpq, d2music.mpq, d2xMusic.mpq, d2xtalk.mpq, and d2speech.mpq are optional. They are copied into the Diablerie directory.",
+    "description_zh": "Diablerie 是《暗黑破坏神 2》的早期 Unity 重制。它在 Unity 2019.2.8f1 中打开，游玩场景是 Assets/Scenes/MainMenu.scene。暗黑破坏神 2 毁灭之王 v1.14 的数据文件是 d2exp.mpq、d2data.mpq 和 d2char.mpq。d2sfx.mpq、d2music.mpq、d2xMusic.mpq、d2xtalk.mpq 和 d2speech.mpq 是可选的。这些文件复制到 Diablerie 目录。",
+    "requirements": [
+      "Unity 2019.2.8f1 and the Diablo II Lord of Destruction v1.14 MPQ files listed above.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/mofr/Diablerie/blob/9e42ef257228257825ebbbeb905d4b1d894b6e98/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
