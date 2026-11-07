@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "eternal-sonata-reprise-case": {
+    "name": "Eternal Sonata：PC 静态重编译",
+    "requirements": [
+      "必须自备游戏。项目不附带游戏的代码、数据或资源。",
+      "PAL、美版或日版的 Xbox 360 与 PlayStation 3 版本都可以游玩。自行构建可执行文件需要 Xbox 360 PAL 版。",
+      "预构建版本发布在仓库的 Releases 页面。",
+      "许可证：MIT。"
+    ]
   }
 }
