@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
 - [Game](#game) (239)
 - [App](#app) (62)
-- [Native Binary](#native-binary) (7)
+- [Native Binary](#native-binary) (8)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
 - [Protocol](#protocol) (91)
 
@@ -376,6 +376,7 @@
 [↑ Contents](#contents)
 
 - [**CPQ IO Scheduler: reconstructing Xiaomi's block scheduler**](https://github.com/Rasenkai/CPQ_IOSched) - CPQ IO Scheduler reconstructs Xiaomi's proprietary cpq.ko Linux block scheduler from a stripped ARM64 kernel module. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/cpq-iosched-case/)</sub>
+- [**Eloquence 6.1: a C rebuild of ECI.DLL**](https://github.com/KamiKitsune420/eloquence-decomp) - Rebuilds ETI Eloquence 6.1.0.2, the US English ECI.DLL plus ENU.SYN, as C with a drop-in ECI.DLL for x86 and x64. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/eloquence-61-eci-case/)</sub>
 - [**m0rph: tracing an obfuscated ELF flag checker**](https://github.com/UmbertoDellaMonica/m0rph-CTF-CyberChallenge.IT) - The m0rph investigation examines an obfuscated x86-64 ELF CTF flag checker with readelf, strings, Cutter and Radare2. <sub>Case study · [Full entry](https://awesomerea.org/resources/m0rph-ctf-analysis-case/)</sub>
 - [**Malware Analysis: njRAT and Casdet behavior investigation**](https://github.com/phour44/Malware-Analysis) - A malware investigation examines njRAT and a UPX-packed Casdet executable with PEStudio static triage and ANY.RUN sandbox telemetry, alongside a malicious PDF and benign comparison files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/malware-analysis-njrat-casdet-case/)</sub>
 - [**OpenBSD netcat: static REA and Ghidra investigation**](https://github.com/NullLabTests/OpenBSD_netcat_REA) - A REA/Ghidra report studies the Ubuntu netcat-openbsd 1.234-1 ELF binary and publishes evidence envelopes, decompiled functions and a function inventory. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/netcat-openbsd-rea-static-case/)</sub>
