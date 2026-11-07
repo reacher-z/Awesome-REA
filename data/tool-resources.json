@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ssb64-decomp-case",
+    "name": "Super Smash Bros. 64 Decompilation",
+    "url": "https://github.com/VetriTheRetri/ssb-decomp-re",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "Super Smash Bros. 64 Decompilation rebuilds the US Super Smash Bros. ROM for the Nintendo 64. The README gives the baserom hashes, extracts assembly and assets with splat, and includes diff and m2c helpers for matching work.",
+    "description_zh": "Super Smash Bros. 64 Decompilation 重建任天堂 64 的美版《Super Smash Bros.》ROM。README 给出了基础 ROM 的哈希，用 splat 提取汇编和资源，并带有用于匹配工作的差异比较和 m2c 辅助脚本。",
+    "requirements": [
+      "The US ROM SHA-1 is e2929e10fccc0aa84e5776227e798abc07cedabf. Place it at baserom.us.z64.",
+      "Run bash ./installDependencies.sh, then make init, which extracts and builds. Later builds use make.",
+      "macOS builds use MIPS binutils and GNU make from MacPorts.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/VetriTheRetri/ssb-decomp-re/blob/572a747d8171137718fad472c5d7473dc7309ffd/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ssb64-decomp-case": {
+    "name": "任天堂 64《超级马力欧大乱斗》反编译",
+    "requirements": [
+      "美版 ROM 的 SHA-1 为 e2929e10fccc0aa84e5776227e798abc07cedabf。把它放在 baserom.us.z64。",
+      "运行 bash ./installDependencies.sh，然后运行 make init 进行提取和构建。之后的构建使用 make。",
+      "macOS 构建使用 MacPorts 的 MIPS binutils 和 GNU make。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
