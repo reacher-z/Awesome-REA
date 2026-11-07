@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "goldenballoon-case": {
+    "name": "Golden Balloon：《迪迪克刚赛车》的原生与浏览器移植",
+    "requirements": [
+      "需提供美版 1.1 或欧版 1.1 的 ROM，格式为 .z64、.v64 或 .n64。浏览器版需要支持 WebGPU 的浏览器，例如当前的 Chrome 或 Edge，并且在本地读取 ROM。",
+      "README 把第一方许可证标为 MIT，并指向 NOTICE.md 说明其他组件。"
+    ]
   }
 }
