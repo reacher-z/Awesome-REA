@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "url": "https://github.com/ThisIsLibra/AndroidProjectCreator",
+    "evidence_url": "https://github.com/ThisIsLibra/AndroidProjectCreator/blob/6d99c5d7690c9a44fd67fdb3895c1d21a17b7bf3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "id": "android-project-creator",
+    "name": "AndroidProjectCreator",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "AndroidProjectCreator converts an APK into an Android Studio project using multiple open-source decompilers. The README says unavailable tools are mirrored in the author's GitHub repositories and that copyright remains with the original creators. Further documentation is linked from maxkersten.nl.",
+    "description_zh": "AndroidProjectCreator 使用多个开源反编译器把 APK 转换成 Android Studio 工程。README 写明不可用的工具会镜像到作者自己的 GitHub 仓库，版权仍属于原作者。更进一步的文档链接到 maxkersten.nl。",
+    "requirements": [
+      "The input described by the README is an APK, and the output is an Android Studio project.",
+      "The README links project documentation at https://maxkersten.nl/projects/androidprojectcreator/.",
+      "GitHub reports the repository license as GPL-3.0."
+    ]
   }
 ]
