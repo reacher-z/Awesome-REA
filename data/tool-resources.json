@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sacengine",
+    "name": "sacengine",
+    "url": "https://github.com/tg-2/sacengine",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "sacengine reimplements the engine of Sacrifice, the game by Shiny Entertainment. It is written in D. LDC 1.41.0 is a known working compiler.",
+    "description_zh": "sacengine 重实现 Shiny Entertainment 的游戏 Sacrifice 的引擎。它用 D 语言编写。已知可用的编译器是 LDC 1.41.0。",
+    "requirements": [
+      "Clone with submodules and run dub build -b release-debug. Link the game's maps and data folders into the sacengine directory, or place the executable in the Sacrifice directory.",
+      "On Windows the README also names OpenAL, mpg123, SDL2, and FreeType binaries.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/tg-2/sacengine/blob/b10b885b7e2c66f9350db547735625f43ceba39f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

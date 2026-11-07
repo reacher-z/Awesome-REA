@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sacengine": {
+    "name": "sacengine",
+    "requirements": [
+      "带子模块克隆，然后运行 dub build -b release-debug。把游戏的 maps 和 data 目录链接到 sacengine 目录，或把可执行文件放进 Sacrifice 目录。",
+      "在 Windows 上，README 还列出 OpenAL、mpg123、SDL2 和 FreeType 的二进制文件。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
