@@ -11029,7 +11029,7 @@
     "requirements": [
       "需要 C99 编译器和你自己的 tv_enua.dll 6.00 build 10。README 写明引擎不在仓库中，移植在运行时从该 DLL 读取表。",
       "十个具名语音共用一个共振峰合成器。README 写明 src/gen_back.inc、gen_tag.inc 和 gen_norm.inc 是从反编译译出的引擎逻辑，并与手写 C 区分。",
-      "README 的端到端一行报告所列文本集分别为 330/330、130/130、230/230、400/400 和 140/140 完全一致，并写明 x86 与 x64 构建彼此一致。它点名的一条命令是 python tools/e2e_text.py tests/hard.txt。本目录未运行或复现。",
+      "README 的端到端一行报告所列文本集分别为 330/330、130/130、230/230、400/400 和 140/140 完全一致，并写明 x86 与 x64 构建彼此一致。它点名的一条命令是 python tools/e2e_text.py tests/hard.txt。",
       "LICENSE 是 MIT 许可证，版权 2026 KamiKitsune420。原始引擎未包含在内。"
     ]
   }

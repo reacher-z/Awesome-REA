@@ -36544,7 +36544,7 @@
     "requirements": [
       "Needs a C99 compiler and your own tv_enua.dll 6.00 build 10. The README says the engine is not in the repository and that the port reads its tables from that DLL at run time.",
       "Ten named voices share one formant synthesizer. The README says src/gen_back.inc, gen_tag.inc, and gen_norm.inc are the engine's logic translated from a decompilation, and distinguishes those files from the hand-written C.",
-      "The README's end-to-end row reports 330/330, 130/130, 230/230, 400/400, and 140/140 identical results for the listed text sets, and says x86 and x64 builds match each other. One command it names is python tools/e2e_text.py tests/hard.txt. Not run or reproduced for this catalog.",
+      "The README's end-to-end row reports 330/330, 130/130, 230/230, 400/400, and 140/140 identical results for the listed text sets, and says x86 and x64 builds match each other. One command it names is python tools/e2e_text.py tests/hard.txt.",
       "LICENSE is the MIT License, copyright 2026 KamiKitsune420. The original engine is not included."
     ],
     "requirement_facets": [
