@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "android-project-creator": {
+    "name": "AndroidProjectCreator（APK 转 Android Studio 工程）",
+    "requirements": [
+      "README 描述的输入是 APK，输出是 Android Studio 工程。",
+      "README 把项目文档链接到 https://maxkersten.nl/projects/androidprojectcreator/。",
+      "GitHub 报告该仓库的许可证为 GPL-3.0。"
+    ]
   }
 }
