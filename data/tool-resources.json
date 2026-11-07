@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ferrumc",
+    "name": "FerrumC: a Rust server implementation of Minecraft 1.21.8",
+    "url": "https://github.com/ferrumc-rs/ferrumc",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Minecraft 1.21.8 server implementation written in Rust. The README says it is multithreaded and points to ferrumc.com, with the docs described as under construction.",
+    "description_zh": "用 Rust 编写的 Minecraft 1.21.8 服务端实现。README 写明它是多线程的，并指向 ferrumc.com，同时说明文档仍在建设中。",
+    "evidence_url": "https://github.com/ferrumc-rs/ferrumc/blob/ce74af7ce087fbb07dc0ce18d5051daa595a4b23/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README says nobody is actively working on this hobby project and warns of possible security vulnerabilities if it is run on a public server. A rewrite on branch rework/v2-skeleton is described as on hold.",
+      "MIT License, with the README pointing to LICENSE.md."
+    ]
   }
 ]
