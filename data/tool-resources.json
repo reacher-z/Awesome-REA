@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "xbox-xbe-recomp",
+    "name": "Xbox XBE Recomp",
+    "url": "https://github.com/TGP482/XboxXBERecomp",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Xbox XBE Recomp creates native PC ports of original Xbox games by statically recompiling an XBE's x86 code to C++ and implementing Xbox kernel and XDK libraries on Windows, with Direct3D 12 rendering and XAudio2 playback.",
+    "description_zh": "Xbox XBE Recomp 把初代 Xbox 游戏的 XBE 中 x86 代码静态重编译为 C++，并在 Windows 上实现 Xbox 内核和 XDK 库，用 Direct3D 12 渲染、用 XAudio2 播放，从而生成原生 PC 移植。",
+    "requirements": [
+      "A port needs the game's XBE and data from your own copy. The repository does not include game assets.",
+      "Place this repository in a game repository as sdk/, or start from templates/game, and build with Clang and Ninja. CMake fetches Zydis, toml++, Dear ImGui, and SDL3.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/TGP482/XboxXBERecomp/blob/26236d55a511ed127c81c05278cc2dee6a78b2e0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

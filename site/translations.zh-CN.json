@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "xbox-xbe-recomp": {
+    "name": "Xbox XBE Recomp",
+    "requirements": [
+      "移植需要自备游戏的 XBE 和数据。仓库不包含游戏资源。",
+      "把本仓库作为 sdk/ 放进游戏仓库，或从 templates/game 开始，并用 Clang 和 Ninja 构建。CMake 会获取 Zydis、toml++、Dear ImGui 和 SDL3。",
+      "许可证：MIT。"
+    ]
   }
 }
