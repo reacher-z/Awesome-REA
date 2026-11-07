@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ruri-shader-decompiler": {
+    "name": "Ruri.ShaderDecompiler",
+    "requirements": [
+      "对 Unity，开启 ShaderDecompiler 功能。对虚幻引擎，开启 UE_ShaderDecompiler，在 FModel 中加载转储的 mappings，并导出 ShaderArchive 字节码。",
+      "README 写明中间层和符号注入已经完成；如果没有加载 mappings，材质符号会丢失。",
+      "许可证：AGPL-3.0。"
+    ]
   }
 }

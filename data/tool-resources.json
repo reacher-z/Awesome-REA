@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ruri-shader-decompiler",
+    "name": "Ruri.ShaderDecompiler",
+    "url": "https://github.com/ShiyumeMeguri/Ruri.ShaderDecompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Ruri.ShaderDecompiler is a shader decompiler library that turns compiled shader binaries into HLSL and rebuilds links between symbols and bytecode. The README describes a Unity path similar to AssetRipper and an Unreal path similar to FModel.",
+    "description_zh": "Ruri.ShaderDecompiler 是一个着色器反编译库，把编译后的着色器二进制还原为 HLSL，并重建符号与字节码之间的关联。README 描述了类似 AssetRipper 的 Unity 路径，以及类似 FModel 的虚幻引擎路径。",
+    "requirements": [
+      "For Unity, enable the ShaderDecompiler feature. For Unreal, enable UE_ShaderDecompiler, load dumped mappings in FModel, and export ShaderArchive bytecode.",
+      "The README says the intermediate layer and symbol injection are in place, and that missing mappings drop material symbols.",
+      "License: AGPL-3.0."
+    ],
+    "evidence_url": "https://github.com/ShiyumeMeguri/Ruri.ShaderDecompiler/blob/fab09257b0a665ba31bad3fafe3d813865ae5865/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
