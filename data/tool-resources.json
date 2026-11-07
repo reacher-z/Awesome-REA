@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ffcc-decomp",
+    "name": "Final Fantasy Crystal Chronicles decompilation",
+    "url": "https://github.com/zcanann/FFCC-Decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles Final Fantasy Crystal Chronicles for GameCube. The English build supplied a debug symbol file and the PAL build a release symbol file, which recovered function names, parameters, and class hierarchies. Tracked versions are PAL GCCP01, USA GCCE01, and Japan GCCJGC.",
+    "description_zh": "该仓库反编译 GameCube 游戏《最终幻想 水晶编年史》。英文版带有调试符号文件，PAL 版带有发行符号文件，因此恢复了函数名、参数和类层次。被跟踪的版本是 PAL 的 GCCP01、美版 GCCE01 和日版 GCCJGC。",
+    "requirements": [
+      "Place FFCC_PAL.iso, FFCC_USA.gcm, or FFCC_JP.iso under orig for the matching version. The default build is python configure.py --version GCCP01, then ninja.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/zcanann/FFCC-Decomp/blob/db7c1c60ca3b9d5bf92db17ed1bd1326131224cd/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

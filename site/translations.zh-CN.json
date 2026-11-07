@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ffcc-decomp": {
+    "name": "最终幻想水晶编年史反编译",
+    "requirements": [
+      "把 FFCC_PAL.iso、FFCC_USA.gcm 或 FFCC_JP.iso 放到对应版本的 orig 目录。默认构建是 python configure.py --version GCCP01，然后运行 ninja。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
