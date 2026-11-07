@@ -11030,7 +11030,7 @@
       "此仓库是 n64decomp/perfect_dark 在 GitHub 上的分叉（默认分支 port），已与本目录收录的反编译提交分离，领先 1,129 个提交、落后 91 个。它通过 port/（平台、输入、视频、音频与文件代码）把反编译 C 代码移植到现代平台，fast3d 来自 libultraship，混音器来自 sm64-port。README 报告单人与分屏多人模式完全可用，存在轻微的图形与玩法问题并可能崩溃，实验性的 tick 速率最高可达 240 FPS，但超过约 165 时会出问题。联网用的 port-net 分支及其他分叉不在本条目范围内。",
       "需自备 ROM：ntsc-final（美版 V1.1，推荐）、ntsc-1.0，或 pal-final 与 jpn-final（后两者各需单独构建的可执行文件）；README 为每个版本列出 MD5。可执行文件在运行时从该 .z64 文件读取素材文件和 ROM 段，并对大端数据做字节序转换；可选的 Perfect Dark Game Boy Color ROM 用于模拟 Transfer Pak 的作弊解锁。与上游反编译一样，仓库以 JSON 源文件形式提交素材清单、游戏文本字符串和关卡图块数据（部分图块文件超过 10 MB）；其他素材文件与 ROM 段来自使用者的 ROM。",
       "官方支持并测试的平台：i686 与 x86_64 上的 Windows 7+ 和 Linux、x86_64（10.9+）与 arm64（11.0+）上的 macOS，以及 Nintendo Switch；需要支持 OpenGL 3.0 或 ES 3.0 的 GPU。构建使用 CMake 与 GCC 10 或更新版本（Windows 上用 MSYS2 MinGW，不支持 Visual Studio）、Python 3、SDL2 2.0.12+ 和 zlib，Switch 则用 devkitA64 与 libnx；配置时以 ROMID 选择 ntsc-final、pal-final 或 jpn-final。CI 为 Windows、Linux 与 macOS 目标构建所有区域版本，滚动更新的 ci-dev-build 发布提供自动构建。",
-      "移植本身不主张一致性或游戏行为对照：从反编译继承的校验清单和 ido-static-recomp 子模块并未被说明为针对 PC 可执行文件的检查，README 只报告上述状态及已测试平台。本合集未下载构建，也未运行任何内容。",
+      "移植本身不主张一致性或游戏行为对照：从反编译继承的校验清单和 ido-static-recomp 子模块并未被说明为针对 PC 可执行文件的检查，README 只报告上述状态及已测试平台。",
       "LICENSE 为 MIT（版权 2022 Ryan Dwyer，与反编译相同）；ROM 及游戏文本与素材仍受权利人条款约束，README 中致谢的 fast3d、minimp3 等组件来自其他项目。README 致谢反编译作者及 Ryan Dwyer 的 pd-extract。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
     ]
   }
