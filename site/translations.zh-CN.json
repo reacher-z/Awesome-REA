@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "segagenesisrecomp": {
+    "name": "Genesis Recomp",
+    "requirements": [
+      "Windows x64 重编译工具 0.1.2 在 Releases 页面，包含 GenesisRecomp.exe。",
+      "Sega CD 支持在 feature/segacd-backend 分支。第一个发布的使用者是 Sonic CD 0.0.1。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
