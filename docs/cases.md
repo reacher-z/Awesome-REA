@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -103,6 +103,7 @@
 - [**TH04: rebuilding Lotus Land Story’s four PC-98 programs from source**](https://github.com/N0zoM1z0/th04) - Reconstructs source for the Japanese PC-98 Touhou 4: Lotus Land Story and rebuilds all four DOS programs, MAIN.EXE, OP.EXE, MAINE.EXE and ZUN.COM, with a pinned Borland toolchain under Wine. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/th04-reconstruction-case/)</sub>
 - [**TH08: exact-source reconstruction and separately tested ports**](https://github.com/N0zoM1z0/th08) - Reconstructs the original Japanese Touhou 8 version 1.00d against its binary and original compiler, then adapts the recovered code for other platforms. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/th08-reconstruction-case/)</sub>
 - [**TH095: function-level reconstruction of Shoot the Bullet 1.02a**](https://github.com/N0zoM1z0/th095) - Reconstructs source for the original Japanese Touhou 9.5: Shoot the Bullet 1.02a executable, accepting function exactness only through reproducible byte comparison of pinned Visual C++ .NET 2003 builds against one hash-attested target. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/th095-reconstruction-case/)</sub>
+- [**The Legend of Zelda disassembly**](https://github.com/aldonunez/zelda1-disassembly) - This repository is a disassembly of The Legend of Zelda. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda1-nes-disassembly-case/)</sub>
 - [**The Minish Cap: a GBA decompilation targeting five ROMs**](https://github.com/zeldaret/tmc) - Recreates a C source base for The Legend of Zelda: The Minish Cap from information in the game and static or dynamic analysis, building five Game Boy Advance ROMs: USA, EU, JP and two demos. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda-tmc-decomp-case/)</sub>
 - [**The Sims: Bustin' Out: an AI-driven partial GBA matching decompilation**](https://github.com/DaBrown95/tsbodp) - Rebuilds the USA/Europe Game Boy Advance release of The Sims: Bustin' Out byte for byte while gradually replacing ROM regions with matching C compiled by agbcc. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sims-bustin-out-gba-decomp-case/)</sub>
 - [**The Wind Waker: a GameCube decompilation with hash-checked relinking**](https://github.com/zeldaret/tww) - Reconstructs source for The Wind Waker’s GameCube executable and REL modules across the USA/Korea, PAL and Japanese releases and a Japanese kiosk demo. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-decomp-case/)</sub>
