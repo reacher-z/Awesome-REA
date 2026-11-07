@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "speedbreaker-carbon",
+    "name": "SpeedBreaker: Carbon",
+    "url": "https://github.com/SpeedBreakerProject/speedbreaker-carbon",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "SpeedBreaker: Carbon is a static recompilation of the Xbox 360 version of Need for Speed: Carbon (2006). The only supported disc is the USA Collector's Edition. Packages cover SteamOS, Linux, Mac, and a Windows beta. An experimental iPhone and iPad build is also described.",
+    "description_zh": "SpeedBreaker: Carbon 是 Xbox 360 版《极品飞车：卡本》（2006）的静态重编译。唯一支持的光盘是美版收藏版。发布包覆盖 SteamOS、Linux、Mac，以及 Windows 测试版。还描述了一个实验性的 iPhone 和 iPad 构建。",
+    "requirements": [
+      "The player supplies a full ISO, a trimmed XISO, or an extracted folder of that disc. No title update is required. The standard edition and other regions are rejected.",
+      "License: GPL-3.0-or-later."
+    ],
+    "evidence_url": "https://github.com/SpeedBreakerProject/speedbreaker-carbon/blob/f3b6b65f365405024f623b58b5ce50def68d4583/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "speedbreaker-carbon": {
+    "name": "SpeedBreaker: Carbon",
+    "requirements": [
+      "玩家提供那张光盘的完整 ISO、裁剪过的 XISO，或已提取的文件夹。不需要标题更新。标准版和其他区域会被拒绝。",
+      "许可证：GPL-3.0 或更高版本。"
+    ]
   }
 }
