@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "panda3ds",
+    "name": "Panda3DS",
+    "url": "https://github.com/wheremyfoodat/Panda3DS",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "High-level Nintendo 3DS emulator written in C++. The README says it can play some games and mentions Lua scripting. On PC it offers a minimal SDL frontend without a GUI and an experimental Qt 6 frontend.",
+    "description_zh": "用 C++ 编写的高层次 Nintendo 3DS 模拟器。README 写明它可以运行一些游戏，并提到 Lua 脚本。在 PC 上提供没有图形界面的精简 SDL 前端，以及实验性的 Qt 6 前端。",
+    "evidence_url": "https://github.com/wheremyfoodat/Panda3DS/blob/92e53d26b898eb89d865f8407460900a88e7c0fa/readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README points to release builds and nightly builds for Windows and macOS.",
+      "The reviewed page states no license."
+    ]
   }
 ]
