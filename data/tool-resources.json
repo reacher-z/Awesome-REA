@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sunpad-case",
+    "name": "SunPad: Super Mario Sunshine on Apple platforms",
+    "url": "https://github.com/chrissotraidis/sunpad",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "SunPad runs Super Mario Sunshine on iPhone, iPad, Apple silicon Mac, and experimental Apple TV through ahead-of-time recompilation, with Metal rendering, touch controls, controller support, and local game-image import.",
+    "description_zh": "SunPad 通过提前重编译，在 iPhone、iPad、Apple 芯片 Mac 以及实验性的 Apple TV 上运行《超级马力欧阳光》，并提供 Metal 渲染、触控、手柄支持和本地游戏镜像导入。",
+    "requirements": [
+      "Supply your own supported copy of the game.",
+      "The README says building for iPhone or iPad needs an Apple silicon Mac.",
+      "License: GPL-3.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/chrissotraidis/sunpad/blob/774de798544c1160346de82571f2877a15e857b6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
