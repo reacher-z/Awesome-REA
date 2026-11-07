@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nocturne-recomp-case",
+    "name": "NocturneRecomp",
+    "url": "https://github.com/birabittoh/NocturneRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "NocturneRecomp is a static recompilation of Castlevania: Symphony of the Night for Xbox Live Arcade. It converts the Xbox 360 PowerPC default.xex into native x86_64 and arm64 code at build time and wraps it with a host runtime. Builds target Windows, Linux, macOS, and Android, using the ReXGlue SDK.",
+    "description_zh": "NocturneRecomp 是《Castlevania: Symphony of the Night》Xbox Live Arcade 版的静态重编译。它在构建时把 Xbox 360 的 PowerPC default.xex 转成原生 x86_64 和 arm64 代码，并用一个宿主运行时包起来。构建目标为 Windows、Linux、macOS 和 Android，基于 ReXGlue SDK。",
+    "requirements": [
+      "The player provides their own dumped Xbox Live Arcade package, a LIVE/STFS file with no extension.",
+      "The World package installs to assets/xbla-world and the Japanese Dracula X package installs to assets/xbla-jp. A build reads the World default.xex.",
+      "Prebuilt archives are on the Releases page. A local build runs python scripts/build.py.",
+      "The host-side source in src/, the build scripts, and the CI config are under the MIT License."
+    ],
+    "evidence_url": "https://github.com/birabittoh/NocturneRecomp/blob/d409a67c6be29592e96524de038a03593c199e4b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
