@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bayshore",
+    "name": "Bayshore",
+    "url": "https://github.com/ProjectAsakura/Bayshore",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Bayshore is a TypeScript server reimplementation of Wangan Midnight Maximum Tune 6. The README says it is part of Project Asakura.",
+    "description_zh": "Bayshore 是用 TypeScript 编写的《Wangan Midnight Maximum Tune 6》服务器重实现。README 写明它属于 Project Asakura。",
+    "requirements": [
+      "The reviewed README does not name install steps or a license."
+    ],
+    "evidence_url": "https://github.com/ProjectAsakura/Bayshore/blob/e6cddfee345e55378e283f47481e03b33c731194/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
