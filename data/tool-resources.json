@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "celosia",
+    "name": "Celosia",
+    "url": "https://github.com/HenryKun55/celosia",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Celosia is a native port of Shadow of the Colossus for PlayStation 2, USA SCUS-97472, to macOS on Apple Silicon and to the PlayStation Vita. PS2Recomp translates the MIPS code to C++. The Mac renderer is Metal and the Vita renderer is OpenGL ES.",
+    "description_zh": "Celosia 把 PlayStation 2 美版 SCUS-97472 的《旺达与巨像》原生移植到 Apple Silicon 上的 macOS 和 PlayStation Vita。PS2Recomp 把 MIPS 代码翻译成 C++。Mac 渲染器是 Metal，Vita 渲染器是 OpenGL ES。",
+    "requirements": [
+      "macOS on Apple Silicon, Xcode Command Line Tools, CMake, Ninja, pkg-config, FFmpeg, and Python. The player supplies a USA disc image. The README reports 60 frames per second on an M4 Pro at 1536 by 1344.",
+      "The Vita build runs. The README reports 18 to 25 frames per second in the Vita3K intro.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/HenryKun55/celosia/blob/d8c5eeca181d082280ac9c8bf69c679a530f9dce/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
