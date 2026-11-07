@@ -143849,5 +143849,27 @@
     "verified_at": "2026-11-07",
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
+  },
+  {
+    "id": "spyro-1-decomp",
+    "name": "Spyro the Dragon decompilation",
+    "url": "https://github.com/TheMobyCollective/spyro-1",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This decompiles Spyro the Dragon to a matching PSX.EXE. The reviewed checksums are SHA-1 84E3728AB94720D0873E2514ADF4AADE4935E0C5 and SHA-256 A533D75CAB8AFAAE6107EC35A02A9A5FE979A92C7C955F9CF1EE50F693A1B998. All C files and level overlays are matched. docker_env.sh starts a container with a modern mipsel toolchain, and the game code is built with gcc 2.7.2-mipsel. make all writes PSX.EXE and the overlays. PSYQ 4.0 is included in disassembled form. NEW_PSYQ=1 make all uses PSYQ 4.7 and does not match.",
+    "description_zh": "该项目把《斯派罗》反编译成匹配的 PSX.EXE。审阅的校验值是 SHA-1 84E3728AB94720D0873E2514ADF4AADE4935E0C5 和 SHA-256 A533D75CAB8AFAAE6107EC35A02A9A5FE979A92C7C955F9CF1EE50F693A1B998。全部 C 文件和关卡覆盖层已经匹配。docker_env.sh 启动带现代 mipsel 工具链的容器，游戏代码用 gcc 2.7.2-mipsel 构建。make all 写出 PSX.EXE 和覆盖层。PSYQ 4.0 以反汇编形式附带。NEW_PSYQ=1 make all 使用 PSYQ 4.7，并且不再匹配。",
+    "requirements": [
+      "Docker for the provided toolchain image, or a mipsel gcc 2.7.2 toolchain.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/TheMobyCollective/spyro-1/blob/eeb164c808dd809e80626830f8e93a68b4ca212d/readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
