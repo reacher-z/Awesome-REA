@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "reo-outbreak",
+    "name": "reo",
+    "url": "https://github.com/sp00nznet/reo",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "reo recompiles Resident Evil Outbreak for the PlayStation 2, NTSC-U SLUS-20765, to native Windows x86-64 with PS2Recomp. The README says a scripted boot reaches the first scenario in J's Bar, drawn by the game's own code, at about 35 times slower than real time. Sound output is not implemented, and play past that point has not been tried.",
+    "description_zh": "reo 用 PS2Recomp 把 PlayStation 2 美版《生化危机：爆发》（SLUS-20765）重编译成 Windows x86-64 原生程序。README 写明一段脚本启动能进入第一个场景 J's Bar，画面由游戏自己的代码绘制，速度大约比实时慢 35 倍。声音输出还没有实现，这一点之后的游玩也还没有试过。",
+    "requirements": [
+      "Windows 10 or 11, x64, Visual Studio 2022 with the C++ desktop workload, CMake 3.20 or newer, Python 3, and Git. Run Setup.cmd, then run-reo.cmd. The disc folder must contain SLUS_207.65.",
+      "License: GPL-3.0. The README says reo links PS2Recomp's GPL-3.0 runtime."
+    ],
+    "evidence_url": "https://github.com/sp00nznet/reo/blob/de19db7db52331d2c364cfd989c6fa4cec393632/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
