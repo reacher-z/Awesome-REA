@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -79,6 +79,7 @@
 - [**pokeruby: a matching Pokémon Ruby and Sapphire decompilation**](https://github.com/pret/pokeruby) - Reconstructs the Game Boy Advance games Pokémon Ruby and Sapphire as C source built with pret's agbcc compiler, alongside assembly data scripts and editable graphics. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokeruby-decomp-case/)</sub>
 - [**Pokémon Emerald: a matching Game Boy Advance decompilation**](https://github.com/pret/pokeemerald) - Reconstructs Pokémon Emerald for the Game Boy Advance as buildable C source, with game scripts and data kept as assembler directives. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokemon-emerald-decomp-case/)</sub>
 - [**Pokémon FireRed and LeafGreen: a matching Game Boy Advance decompilation**](https://github.com/pret/pokefirered) - Reconstructs the English Game Boy Advance releases of Pokémon FireRed and LeafGreen as buildable C source, with game scripts and data kept as assembler directives. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokemon-firered-leafgreen-decomp-case/)</sub>
+- [**Pokémon Gold and Silver disassembly**](https://github.com/pret/pokegold) - This disassembles Pokémon Gold and Pokémon Silver. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokegold/)</sub>
 - [**Pokémon HeartGold and SoulSilver: a work-in-progress, checksum-matched DS disassembly**](https://github.com/pret/pokeheartgold) - Rebuilds the US Nintendo DS releases of Pokémon HeartGold and SoulSilver from a work-in-progress disassembly in which part of the code has been decompiled to C. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokemon-heartgold-soulsilver-disassembly-case/)</sub>
 - [**Pokémon Platinum: a checksum-matched Nintendo DS decompilation**](https://github.com/pret/pokeplatinum) - Reconstructs the US Nintendo DS release of Pokémon Platinum as C source that rebuilds revision 1 by default and revision 0 on request. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokemon-platinum-decomp-case/)</sub>
 - [**pw: a matching decompilation of the Pokéwalker firmware**](https://github.com/lumirth/pw) - Reconstructs as C the firmware of the Pokéwalker, the pedometer accessory for Pokémon HeartGold and SoulSilver, for its Renesas H8/38606 microcontroller. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/pokewalker-matching-decomp-case/)</sub>

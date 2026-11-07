@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokegold",
+    "name": "Pokémon Gold and Silver disassembly",
+    "url": "https://github.com/pret/pokegold",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles Pokémon Gold and Pokémon Silver. Gold (UE) has SHA-1 d8b8a3600a465308c9953dfa04f0081c05bdcb94. Silver (UE) has SHA-1 49b163f7e57702bc939d642a18f591de55d92dae. The debug ROMs mons2_gld_ps3_debug.bin and mons2_slv_ps3_debug.bin have SHA-1 53783c57378122805c5b4859d19e1a224f02a1ed and 4c2fafebdbc7551f4cd3f348bdd17e420b93b6e7. Setup is in INSTALL.md.",
+    "description_zh": "该项目反汇编《宝可梦 金》和《宝可梦 银》。金版（UE）的 SHA-1 是 d8b8a3600a465308c9953dfa04f0081c05bdcb94。银版（UE）的 SHA-1 是 49b163f7e57702bc939d642a18f591de55d92dae。调试 ROM mons2_gld_ps3_debug.bin 和 mons2_slv_ps3_debug.bin 的 SHA-1 分别是 53783c57378122805c5b4859d19e1a224f02a1ed 和 4c2fafebdbc7551f4cd3f348bdd17e420b93b6e7。安装步骤在 INSTALL.md。",
+    "requirements": [
+      "Follow INSTALL.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/pret/pokegold/blob/f2cde36f49b994c143bfd18582182302fdc76492/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
