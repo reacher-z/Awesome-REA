@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bad-company-recomp",
+    "name": "Battlefield Bad Company recompilation",
+    "url": "https://github.com/crabinacrabic/BadCompanyRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Battlefield: Bad Company for the Xbox 360, USA, title ID 454107F9, to Windows with ReXGlue. The README says 54,126 PowerPC functions are translated to C++23 and the build opens a window. It stops while Frostbite calibrates the disc cache, so the game is not playable yet. The default frame cap is 30 fps.",
+    "description_zh": "该项目用 ReXGlue 把 Xbox 360 美版《战地：叛逆连队》（标题 ID 454107F9）重编译到 Windows。README 写明 54,126 个 PowerPC 函数被翻译成 C++23，构建会打开窗口。它停在 Frostbite 校准光盘缓存的地方，所以游戏还不能玩。默认帧率上限是 30。",
+    "requirements": [
+      "Visual Studio 2022. Open the repository as a folder and build the local-win-relwithdebinfo preset. The executable is out/build/local-win-relwithdebinfo/badcompanyrecomp.exe.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/crabinacrabic/BadCompanyRecomp/blob/f78b557b413ca8fdcb67696c18239db4a34d43a2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
