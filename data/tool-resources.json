@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "eternal-darkness-recomp-case",
+    "name": "Eternal Darkness Recomp: native port of Sanity's Requiem",
+    "url": "https://github.com/griches/EternalDarknessRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Eternal Darkness Recomp is a native Mac, Windows, and Linux port of Eternal Darkness: Sanity's Requiem for the GameCube. The README says DolRecomp translates the game's PowerPC code to C, which is then compiled for the machine and run on GXRuntime.",
+    "description_zh": "Eternal Darkness Recomp 是 GameCube 游戏《永恒的黑暗：灵魂的安魂曲》的 Mac、Windows 和 Linux 原生移植。README 写明 DolRecomp 把游戏的 PowerPC 代码翻译成 C，再为本机编译，并在 GXRuntime 上运行。",
+    "requirements": [
+      "You need your own image of the European GameCube disc GEDP01, as .iso or .gcm. The USA disc GEDE01 is not supported.",
+      "Mac builds need Apple silicon and macOS 13 or later. Windows builds are 64-bit. Linux and Steam Deck builds are also described.",
+      "Version named in the README: 0.9.6. License: GPL-3.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/griches/EternalDarknessRecomp/blob/75b8603f18ca86513e1db2fcb0afaa2e2e6d58ca/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "eternal-darkness-recomp-case": {
+    "name": "Eternal Darkness Recomp：《灵魂的安魂曲》原生移植",
+    "requirements": [
+      "需要自备欧版 GameCube 光盘 GEDP01 的 .iso 或 .gcm 镜像。美版光盘 GEDE01 不受支持。",
+      "Mac 构建需要 Apple 芯片和 macOS 13 或更高版本。Windows 构建为 64 位。README 也描述了 Linux 和 Steam Deck 构建。",
+      "README 写明的版本是 0.9.6。许可证：GPL-3.0。"
+    ]
   }
 }
