@@ -36528,5 +36528,24 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "repkg",
+    "name": "RePKG",
+    "url": "https://github.com/notscuffed/repkg",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "RePKG is a C# unpacker for Wallpaper Engine PKG files and a converter for TEX images. repkg extract writes files to ./output by default, can limit extensions, and can copy project.json into a Wallpaper Engine project. repkg info dumps PKG and TEX entries, with sorting by name, extension, or size.",
+    "description_zh": "RePKG 是用 C# 编写的 Wallpaper Engine PKG 解包器，也能把 TEX 转成图像。repkg extract 默认把文件写到 ./output，可以限制扩展名，也可以把 project.json 复制成 Wallpaper Engine 项目。repkg info 导出 PKG 和 TEX 条目，可按名称、扩展名或大小排序。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/notscuffed/repkg/blob/8005eb271f4cb5b9e375bafa912029a0d67b5eb8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
