@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "godhand-recomp": {
+    "name": "神之手重编译",
+    "requirements": [
+      "需要 Windows 10 或 11、带 C++ 桌面工作负载的 Visual Studio 2022 生成工具，以及 Python 3.10 或更新版本。把美版 ISO 复制到 game/，然后运行 python -I build.py generate、snr2 的提取和模块步骤，以及 python -I build.py build。用 Start-God-Hand.cmd 启动。",
+      "许可证：GPL-3.0。README 写明 PS2Recomp 使用同一许可证。"
+    ]
   }
 }
