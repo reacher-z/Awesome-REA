@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "goldeneye-007-reloaded-recomp",
+    "name": "GoldenEye 007 Reloaded recompilation",
+    "url": "https://github.com/nikolaygorb/GoldenEye007ReloadedRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles GoldenEye 007: Reloaded for the Xbox 360, 2011, to native PC with ReXGlue. The PowerPC code is translated to C++. The README says it boots to the main menu and that training and the first mission play. The expected retail dump has title ID 415608AF, media ID 40583A82, module hash 065D6021C0BDD535, and XEX timestamp 4E88BBE7.",
+    "description_zh": "该项目用 ReXGlue 把 2011 年 Xbox 360 版《黄金眼 007：重装上阵》重编译到 PC。PowerPC 代码被翻译成 C++。README 写明它能进入主菜单，训练和第一关可以玩。预期的零售转储标题 ID 为 415608AF，媒体 ID 为 40583A82，模块哈希为 065D6021C0BDD535，XEX 时间戳为 4E88BBE7。",
+    "requirements": [
+      "CMake 3.25 or newer, Ninja, and Clang/LLVM. Extract the disc into assets/ with Default.xex, DATA/, and nxeart. The tested preset is win-amd64-release. Linux, macOS, and ARM64 presets are present.",
+      "License: MIT for this project's own code."
+    ],
+    "evidence_url": "https://github.com/nikolaygorb/GoldenEye007ReloadedRecomp/blob/f266e8492e40d62f2fac00a7717242f2b75f9f9b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
