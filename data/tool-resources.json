@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "reshadowtower",
+    "name": "ReShadowTower",
+    "url": "https://github.com/JFryy/reshadowtower",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "ReShadowTower recompiles Shadow Tower for the PlayStation, USA SLUS-00863, for Linux and Windows x64. The first launch compiles the game from the player's BIN/CUE. OpenBIOS is included. Unsupported paths fall back to an interpreter. The README says not every gameplay path is verified as native code.",
+    "description_zh": "ReShadowTower 把 PlayStation 美版《影之塔》（SLUS-00863）重编译到 Linux 和 Windows x64。第一次启动用玩家的 BIN/CUE 编译游戏。其中包含 OpenBIOS。不支持的路径会退回解释器。README 写明并不是每条游戏路径都已验证为原生代码。",
+    "requirements": [
+      "OpenGL 3.3. A source build needs Git, Python 3.11 or newer, CMake 3.20 or newer, Ninja, and a C++20 compiler. Place the dump in disc/ as Shadow Tower (USA).bin and Shadow Tower (USA).cue, then run ./scripts/build.sh.",
+      "The reviewed README does not name a license for this repository. It says the PSXRecomp framework and the combined runtime stay under PolyForm Noncommercial, and OpenBIOS is MIT."
+    ],
+    "evidence_url": "https://github.com/JFryy/reshadowtower/blob/9012093059229d6d1130fe200125f46513f67585/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
