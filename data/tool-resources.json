@@ -36528,5 +36528,24 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "crowbar",
+    "name": "Crowbar",
+    "url": "https://github.com/ZeqMacaw/Crowbar",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Modding tool for the GoldSrc and Source engines. The README points to the Steam community group steamcommunity.com/groups/CrowbarTool and says builds are made with Visual Basic in Visual Studio Community 2017, tested again in Community 2019, using the x86 configuration.",
+    "description_zh": "GoldSrc 和 Source 引擎的模组工具。README 指向 Steam 社区组 steamcommunity.com/groups/CrowbarTool，并写明使用 Visual Studio Community 2017 里的 Visual Basic 构建，曾在 Community 2019 中再次测试，配置为 x86。",
+    "evidence_url": "https://github.com/ZeqMacaw/Crowbar/blob/0d46f3b6a694b74453db407c72c12a9685d8eb1d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed page states no license."
+    ]
   }
 ]
