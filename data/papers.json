@@ -12817,5 +12817,53 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-iot-firmware-security-survey",
+    "title": "A survey on IoT & embedded device firmware security: architecture, extraction techniques, and vulnerability analysis frameworks",
+    "authors": [
+      "Shahid Ul Haq",
+      "Yashwant Singh",
+      "Amit Sharma",
+      "Rahul Gupta",
+      "Dipak Gupta"
+    ],
+    "year": 2023,
+    "publication_date": "2023-10-31",
+    "date_precision": "day",
+    "date_basis": "Crossref issued date",
+    "venue": "Discover Internet of Things",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1007/s43926-023-00045-2",
+    "url": "https://doi.org/10.1007/s43926-023-00045-2",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s43926-023-00045-2.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "This survey reviews security analysis of IoT and embedded firmware, including firmware extraction and the frameworks used to look for vulnerabilities. It treats obtaining and unpacking a firmware image as part of the analysis problem.",
+    "description_zh": "这篇综述讨论物联网与嵌入式固件的安全分析，包括固件提取以及用于寻找漏洞的框架。它把取得并拆解固件镜像视为分析问题的一部分。",
+    "scope_limitations_en": "The fetched PDF is the 2023 open-access Discover Internet of Things article. Extraction procedures were not repeated.",
+    "scope_limitations_zh": "获取的 PDF 是 2023 年 Discover Internet of Things 的开放获取文章。提取步骤没有重做。",
+    "why_fits_en": "Firmware extraction and vulnerability analysis are reverse-engineering steps for embedded devices.",
+    "why_fits_zh": "固件提取和漏洞分析是嵌入式设备逆向工程中的步骤。",
+    "evidence_urls": [
+      "https://link.springer.com/content/pdf/10.1007/s43926-023-00045-2.pdf",
+      "https://api.crossref.org/works/10.1007/s43926-023-00045-2",
+      "https://doi.org/10.1007/s43926-023-00045-2"
+    ],
+    "metadata_notes": "Authors follow the Crossref record, which matches the byline on the fetched PDF.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "物联网与嵌入式设备固件安全综述：架构、提取技术与漏洞分析框架",
+    "date_basis_zh": "日期取自 Crossref 登记的出版日期",
+    "metadata_notes_zh": "作者沿用 Crossref 记录，与已获取 PDF 上的署名一致。"
   }
 ]
