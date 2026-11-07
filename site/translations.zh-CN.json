@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "reo-outbreak": {
+    "name": "reo",
+    "requirements": [
+      "需要 x64 的 Windows 10 或 11、带 C++ 桌面工作负载的 Visual Studio 2022、CMake 3.20 或更新版本、Python 3 和 Git。运行 Setup.cmd，然后运行 run-reo.cmd。光盘目录里必须有 SLUS_207.65。",
+      "许可证：GPL-3.0。README 写明 reo 链接 PS2Recomp 的 GPL-3.0 运行时。"
+    ]
   }
 }
