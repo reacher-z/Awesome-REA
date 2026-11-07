@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sonic-riders-decomp": {
+    "name": "索尼克骑手反编译",
+    "requirements": [
+      "需要 devkitPro、Python 3 和 gcc。把干净的美版 DOL 命名为 baserom.dol。README 写明把一个编译器压缩包解压到 tools/mwcc_compiler，然后运行 make。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
