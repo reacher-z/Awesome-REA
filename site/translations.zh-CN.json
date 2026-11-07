@@ -40712,5 +40712,12 @@
       "把 yuka.exe 放进游戏目录并运行 yuka help。",
       "README 未注明许可证。"
     ]
+  },
+  "gow-2005-pc": {
+    "name": "战神2005 PC移植",
+    "requirements": [
+      "需要 SCUS-97399 的美版 ISO 或 CHD，大约 8 GB。安装时大约需要 20 GB 空闲空间。需要带 SSE4.1 的 64 位 CPU、8 GB 内存和 OpenGL 4.6 显卡。系统为 Windows 10 或 11，或较新的 Linux 发行版。",
+      "许可证：GPL-3.0。附带的 rabbitizer 反汇编器为 MIT。"
+    ]
   }
 }
