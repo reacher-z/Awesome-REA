@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "spirv-cross": {
+    "name": "SPIRV-Cross",
+    "requirements": [
+      "需要 CMake，或用 make 构建命令行工具。需要 GCC 4.8+ 或 Clang 3.x+。",
+      "审阅的 README 没有写软件许可证。文件头把这份文档标为 CC-BY-4.0。"
+    ]
   }
 }

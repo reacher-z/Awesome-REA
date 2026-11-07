@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "spirv-cross",
+    "name": "SPIRV-Cross",
+    "url": "https://github.com/KhronosGroup/SPIRV-Cross",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "SPIRV-Cross parses SPIR-V and converts it to GLSL, Metal Shading Language, HLSL, and a JSON reflection format. A C++ backend is marked deprecated. It covers vertex, fragment, tessellation, geometry, and compute shaders, and exposes a reflection API for Vulkan pipeline layouts and OpDecorations. CMake is the tested build on Linux, macOS, Windows, and Android. make builds the CLI on Linux, macOS, and MinGW-w64. The compilers used are GCC 4.8+ or Clang 3.x+.",
+    "description_zh": "SPIRV-Cross 解析 SPIR-V，并把它转换成 GLSL、Metal 着色语言、HLSL 和 JSON 反射格式。C++ 后端被标为已弃用。它覆盖顶点、片段、细分、几何和计算着色器，并提供用于 Vulkan 管线布局和 OpDecorations 的反射 API。CMake 是在 Linux、macOS、Windows 和 Android 上经过测试的构建方式。在 Linux、macOS 和 MinGW-w64 上可以用 make 构建命令行工具。编译器是 GCC 4.8+ 或 Clang 3.x+。",
+    "requirements": [
+      "CMake, or make for the CLI. GCC 4.8+ or Clang 3.x+.",
+      "The reviewed README does not name a software license. Its header marks the document CC-BY-4.0."
+    ],
+    "evidence_url": "https://github.com/KhronosGroup/SPIRV-Cross/blob/57e4efcc84112abcd426dc5ec248b5339bee04f2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
