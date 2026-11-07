@@ -4,7 +4,7 @@
 
 [English](README.md) · **简体中文**
 
-**[网站搜索](https://awesomerea.org/zh/)** · **[浏览资源](https://awesomerea.org/zh/resources/)** · **[案例](https://awesomerea.org/zh/cases/)** · **[论文](https://awesomerea.org/zh/papers/)** · **[推荐资源](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)** · **[参与贡献](#参与贡献)**
+**[网站搜索](https://awesomerea.org/zh/)** · **[浏览资源](https://awesomerea.org/zh/resources/)** · **[案例](https://awesomerea.org/zh/cases/)** · **[论文](https://awesomerea.org/zh/papers/)** · **[参与贡献](#参与贡献)**
 
 觉得有用？欢迎在 GitHub 上[点星支持本合集](https://github.com/reacher-z/Awesome-REA)，让更多人找到它。
 

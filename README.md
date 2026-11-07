@@ -4,7 +4,7 @@ A collection of tools, case studies and research for websites, games, apps, nati
 
 **English** · [简体中文](README.zh-CN.md)
 
-**[Search the website](https://awesomerea.org/)** · **[Browse resources](https://awesomerea.org/resources/)** · **[Cases](https://awesomerea.org/cases/)** · **[Papers](https://awesomerea.org/papers/)** · **[Suggest a resource](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)** · **[Contributing](#contributing)**
+**[Search the website](https://awesomerea.org/)** · **[Browse resources](https://awesomerea.org/resources/)** · **[Cases](https://awesomerea.org/cases/)** · **[Papers](https://awesomerea.org/papers/)** · **[Contributing](#contributing)**
 
 If this collection is useful, a [star on GitHub](https://github.com/reacher-z/Awesome-REA) helps others find it.
 
