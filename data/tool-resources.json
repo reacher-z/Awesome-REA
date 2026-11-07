@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "astral-chain-recomp",
+    "name": "Astral Chain recompilation",
+    "url": "https://github.com/swaymun/AC-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Astral Chain for the Nintendo Switch, version 1.0.0 with no update, to macOS. Apple silicon is the preview target and uses Vulkan through MoltenVK. The README says the opening, character creation, and the File 01 motorcycle chase run, with the chase measured at a stable 30 fps on an Apple M5 Pro. A build from a real dump translates 1,332 shaders. Linux and Windows reach that same chase and are marked early. Saving and reloading are untested.",
+    "description_zh": "该项目把任天堂 Switch 版《异界锁链》1.0.0、不含更新，静态重编译到 macOS。Apple silicon 是预览目标，通过 MoltenVK 使用 Vulkan。README 写明开场、角色创建和档案 01 的摩托车追逐可以运行，追逐在 Apple M5 Pro 上测得稳定 30 帧。从真实转储构建会翻译 1,332 个着色器。Linux 和 Windows 能到达同一段追逐，并标为早期。存档和读档还没测试。",
+    "requirements": [
+      "The player's Astral Chain 1.0.0 NSP and the console keys that match that dump. tools/acr_build.py runs the build.",
+      "License: MIT for the original code in this repository. The shader translator and the patched importer are MIT. Baloo 2 is SIL Open Font License 1.1."
+    ],
+    "evidence_url": "https://github.com/swaymun/AC-Recomp/blob/80c50158e51a9fe1d0ba9d4827bfd9e54c795a2d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
