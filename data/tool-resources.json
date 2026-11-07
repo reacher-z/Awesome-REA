@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "syphon-filter-2-recomp-case",
+    "name": "Syphon Filter 2 Recompiled",
+    "url": "https://github.com/alexbeavs-ps1-ports/syphon-filter-2-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Syphon Filter 2 Recompiled is an experimental Windows static recompilation of the two-disc USA release, bootstrapped from SCUS-94451 and built with PSXRecomp. Release v0.1.3-alpha runs the retail game logic as a native x64 program. The launcher can add 16:9, PGXP-assisted geometry, and mouse camera control.",
+    "description_zh": "Syphon Filter 2 Recompiled 是美版双碟 Syphon Filter 2 的实验性 Windows 静态重编译，从 SCUS-94451 起步，用 PSXRecomp 构建。v0.1.3-alpha 把零售版游戏逻辑作为原生 x64 程序运行。启动器可以加上 16:9、PGXP 辅助几何和鼠标镜头。",
+    "requirements": [
+      "The download is a setup kit, not a prebuilt game. Extract it to an ASCII path without spaces. The player supplies the game discs. The kit does not include a Sony BIOS.",
+      "The framework source is PolyForm Noncommercial 1.0.0. The README points to LICENSE for the project."
+    ],
+    "evidence_url": "https://github.com/alexbeavs-ps1-ports/syphon-filter-2-recomp/blob/5066d264b50039ee3dd01e38b0fde51d0b91c3eb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
