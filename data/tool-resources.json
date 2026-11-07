@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "apk-dependency-graph",
+    "name": "Apk Dependency Graph",
+    "url": "https://github.com/alexzaitsev/apk-dependency-graph",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Apk Dependency Graph reads an APK and writes an HTML view of class coupling. Windows is started with run.bat and Unix with run.sh; both take the APK path and a filterset JSON file, and the repository includes a default filterset. The README says the repository is no longer supported.",
+    "description_zh": "Apk Dependency Graph 读取 APK，并生成展示类耦合关系的 HTML 页面。Windows 用 run.bat 启动，Unix 用 run.sh 启动；两者都需要 APK 路径和一份 filterset JSON，仓库附有默认 filterset。README 写明该仓库已不再维护。",
+    "evidence_url": "https://github.com/alexzaitsev/apk-dependency-graph/blob/bc7d4b47ec8e7580044bb53b5c24f6b79279c10c/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The input is an APK file and a filterset JSON file. A default filterset is included.",
+      "The README says the repository is no longer supported.",
+      "GitHub reports the repository license as Apache-2.0."
+    ],
+    "verification": "source-reviewed"
   }
 ]
