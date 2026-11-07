@@ -36543,6 +36543,7 @@
     "description_zh": "对 Boris Batteux 的 D-810 IDA Pro 插件进行重构和更新的分支，在反编译时通过改写 Hex-Rays 微码来反混淆代码。经 Z3 验证的指令规则可在多个成熟度层级上简化混合布尔算术、不透明谓词和常量混淆，控制流反扁平化器则可从 O-LLVM、Tigress、Approov 和 Hodur（PlugX）等分发器模式中还原自然控制流。规则以可配置的 DSL 和项目 JSON 声明，无需修改源码即可添加新模式；可选的 Cython 扩展用于加速热点路径，并提供纯 Python 回退实现。",
     "evidence_url": "https://github.com/w00tzenheimer/d810-ng/blob/2e59ab4ce18e5e82911880137d1285d95279981a/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at main 2e59ab4 (2026-08-08; latest tag v0.6.6, 2026-02-17). The README supports only IDA 9 or later with Python 3.10+, because the plugin uses the Hex-Rays microcode Python API; install it by copying the repository into IDA's plugins directory and load it with Ctrl-Shift-D. The README warns the plugin is still early and that incorrectly modifying microcode can crash IDA, advising frequent database saves.",
