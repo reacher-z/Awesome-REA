@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "r2ghidra": {
+    "name": "r2ghidra",
+    "requirements": [
+      "需要 radare2、pkg-config、C++ 编译器，以及 ACR/make 或 Meson/Ninja。git 和 Python 3 用来准备 ghidra-native。",
+      "许可证：r2ghidra 为 LGPL-3.0-only。链接的 ghidra-native 为 Apache License 2.0。随附的 zlib 使用 zlib 许可证。"
+    ]
   }
 }
