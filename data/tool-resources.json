@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "conker-bfd-reloaded-case",
+    "name": "Conker's Bad Fur Day: Reloaded — native PC port",
+    "url": "https://github.com/DahSidiAbdallah/ConkerBFDReloaded",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Conker's Bad Fur Day: Reloaded is a native Windows and Linux port of the Nintendo 64 game, statically recompiled with N64: Recompiled and drawn with RT64. The README describes a Classic mode and a Modern mode with widescreen, high frame rates, and mouse, keyboard, and controller support.",
+    "description_zh": "Conker's Bad Fur Day: Reloaded 是这款任天堂 64 游戏的 Windows 和 Linux 原生移植，用 N64: Recompiled 静态重编译，并用 RT64 绘制。README 描述了 Classic 模式，以及带宽屏、高帧率和鼠标、键盘、手柄支持的 Modern 模式。",
+    "requirements": [
+      "You need your own US ROM. The repository and its releases do not contain game assets.",
+      "License: MIT."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/DahSidiAbdallah/ConkerBFDReloaded/blob/9cfebde3b65bb2b79b97c1b80aacb2285b072098/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
