@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "wolfenshine-case": {
+    "name": "Wolfenshine",
+    "requirements": [
+      "Releases 提供 Windows x64 安装包，以及 Apple 芯片和 Intel 的 macOS 构建。游戏接受免费共享版数据或完整六章游戏的副本。",
+      "从源码构建需要 .NET 8 SDK，并克隆包含子模块的仓库。",
+      "许可证：MIT。用于 AdLib 和 IMF 音频的 NukedOPL3Sharp 仍使用 GNU LGPL 2.1。"
+    ]
   }
 }

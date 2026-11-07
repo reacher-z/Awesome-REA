@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "wolfenshine-case",
+    "name": "Wolfenshine",
+    "url": "https://github.com/deanthecoder/Wolfenshine",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Wolfenshine is a cross-platform C# reimplementation of Wolfenstein 3D. It reads the maps, artwork, music, and sounds from the player's copy and renders them with a .NET engine, including a 320 by 200 software renderer and an enhanced lighting mode toggled with F2.",
+    "description_zh": "Wolfenshine 是《Wolfenstein 3D》的跨平台 C# 重实现。它读取玩家副本中的地图、图像、音乐和音效，并用 .NET 引擎渲染，包括 320×200 的软件渲染器，以及用 F2 切换的增强光照模式。",
+    "requirements": [
+      "Releases provide a Windows x64 installer and macOS builds for Apple silicon and Intel. The game accepts the free shareware data or a copy of the full six-episode game.",
+      "A source build needs the .NET 8 SDK and a clone with submodules.",
+      "License: MIT. NukedOPL3Sharp, used for AdLib and IMF audio, remains under the GNU LGPL 2.1."
+    ],
+    "evidence_url": "https://github.com/deanthecoder/Wolfenshine/blob/13bc3a7502fabf6a0c21aa14f727e8d92fc5590f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
