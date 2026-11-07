@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fh2-recompiled-case",
+    "name": "FH2 Recompiled: static recompilation of Forza Horizon 2",
+    "url": "https://github.com/Gabrick75/fh2-recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "FH2 Recompiled is a static recompilation of Forza Horizon 2 for the Xbox 360, targeting Android and Linux. The README says the repository and its release APKs contain no game files or game code.",
+    "description_zh": "FH2 Recompiled 是 Xbox 360 游戏《极限竞速：地平线 2》的静态重编译，目标平台是 Android 和 Linux。README 写明仓库及其发布的 APK 不包含游戏文件或游戏代码。",
+    "requirements": [
+      "Running a release requires files extracted from your own copy of the game.",
+      "License: GPL-3.0, as linked from the README."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/Gabrick75/fh2-recompiled/blob/6f88eeca7782fe8d894462e4f40156485fc9c350/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
