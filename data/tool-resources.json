@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokeblack-case",
+    "name": "Pokémon Black decompilation",
+    "url": "https://github.com/squiddonaut/pokeblack",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository is a decompilation of Pokémon Black for the Nintendo DS. It builds pokeblack.us.nds, the Version 1.0 USA/EUR NDSi Enhanced ROM.",
+    "description_zh": "该仓库是任天堂 DS《Pokémon Black》的反编译。它构建 pokeblack.us.nds，即 1.0 版的 USA/EUR NDSi Enhanced ROM。",
+    "requirements": [
+      "The built ROM SHA-1 is 26ad0b9967aa279c4a266ee69f52b9b2332399a5.",
+      "The reviewed README does not name a license or setup steps."
+    ],
+    "evidence_url": "https://github.com/squiddonaut/pokeblack/blob/67d91a78b16caccbd4fbecdddf8a74c823d208a6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
