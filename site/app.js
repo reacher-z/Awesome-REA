@@ -787,8 +787,26 @@ async function load() {
     state.loaded = true; renderCategories(); render(); if (shortlistDialog?.open) renderShortlist(); configureSourceIndex(data.meta.source_index); loadDetails();
   } catch (error) { document.documentElement.dataset.indexMode = "curated"; state.error = true; state.loaded = false; renderEmptySearchActions(); $("#resource-grid").replaceChildren(); $("#resource-grid").setAttribute("aria-busy", "false"); $("#results-status").textContent = t("errorTitle"); $("#error-state").hidden = false; $("#empty-state").hidden = true; $("#load-more-row").hidden = true; if (shortlistDialog?.open) renderShortlist(); }
 }
+function onCommittedInput(input, commit) {
+  let composing = false;
+  let finalValue = null;
+  input.addEventListener("compositionstart", () => { composing = true; finalValue = null; });
+  input.addEventListener("compositionend", () => {
+    composing = false; finalValue = input.value; commit(input.value, true);
+  });
+  input.addEventListener("input", event => {
+    if (composing || event.isComposing) return;
+    const finalInput = input.value === finalValue;
+    finalValue = null;
+    commit(input.value, finalInput);
+  });
+}
 $("#search-input").value = state.q;
-$("#search-input").addEventListener("input", event => { state.q = event.target.value; state.visible = 15; updateURL(); if (state.loaded) { loadDetails(); render(); } });
+onCommittedInput($("#search-input"), (value, finalInput) => {
+  // Browsers may send another input with the same value after compositionend.
+  if (finalInput && value === state.q) return;
+  state.q = value; state.visible = 15; updateURL(); if (state.loaded) { loadDetails(); render(); }
+});
 $("#kind-select").addEventListener("change", event => { state.kind=event.target.value; state.visible=15; updateURL(true); if(state.loaded)render(); });
 $("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 15; updateURL(true); if (state.loaded) render(); });
 $("#curated-sort").value = state.order;
@@ -1103,7 +1121,16 @@ async function loadSources() {
 function resetSources() { sourceState.q=""; sourceState.topic=""; sourceState.target="all"; sourceState.category="all"; sourceState.sort="relevance"; sourceState.visible=24; $("#source-search").value=""; $("#source-topic").value=""; $("#source-sort").value="relevance"; renderTopicOptions(); sourceURL(true); renderSources(); }
 $("#mode-curated").addEventListener("click",() => setIndexMode("curated", true)); $("#mode-sources").addEventListener("click",() => setIndexMode("source-index", true));
 $("#source-search").value=sourceState.q; $("#source-topic").value=sourceState.topic; $("#source-sort").value=sourceState.sort;
-for (const [selector,key,event] of [["#source-search","q","input"],["#source-topic","topic","input"],["#source-sort","sort","change"]]) $(selector).addEventListener(event,e => { sourceState[key]=key === "topic" ? canonicalTopic(e.target.value) : e.target.value; if (key === "topic") renderTopicOptions(e.target.value); sourceState.visible=24; sourceURL(key === "sort"); renderSources(); });
+for (const [selector,key] of [["#source-search","q"],["#source-topic","topic"]]) {
+  onCommittedInput($(selector), (value, finalInput) => {
+    const next = key === "topic" ? canonicalTopic(value) : value;
+    if (finalInput && next === sourceState[key]) return;
+    sourceState[key] = next;
+    if (key === "topic") renderTopicOptions(value);
+    sourceState.visible = 24; sourceURL(); renderSources();
+  });
+}
+$("#source-sort").addEventListener("change", event => { sourceState.sort=event.target.value; sourceState.visible=24; sourceURL(true); renderSources(); });
 $$('[data-source-target]').forEach(button => button.addEventListener("click",() => { sourceState.target=button.dataset.sourceTarget; sourceState.visible=24; sourceURL(true); renderSources(); }));
 $("#source-category").addEventListener("change", event => { sourceState.category = event.target.value; sourceState.visible = 24; sourceURL(true); renderSources(); });
 // An unknown, malformed or prototype-named ?source-category= falls back to all once the catalog's labels are known.
