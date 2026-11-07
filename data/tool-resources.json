@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokeyellow",
+    "name": "Pokémon Yellow: a disassembly that rebuilds the ROMs",
+    "url": "https://github.com/pret/pokeyellow",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "Disassembly of Pokémon Yellow. The README says it builds Pokemon Yellow (UE) with SHA-1 cc7d03262ebfaf2f06772c1a480c7d9d5f4a38e1, a debug ROM YELLMONS.GB, and a patch file, and points to INSTALL.md for setup.",
+    "description_zh": "《宝可梦 黄》的反汇编。README 写明它可以构建 SHA-1 为 cc7d03262ebfaf2f06772c1a480c7d9d5f4a38e1 的 Pokemon Yellow (UE)、调试 ROM YELLMONS.GB，以及一个补丁文件，并指向 INSTALL.md 说明如何设置。",
+    "evidence_url": "https://github.com/pret/pokeyellow/blob/b452f2ab07185075140061c5084ab866d5e4a794/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed page states no license."
+    ]
   }
 ]
