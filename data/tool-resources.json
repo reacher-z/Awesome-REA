@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mgs-recomp",
+    "name": "Metal Gear Solid recompilation",
+    "url": "https://github.com/alexbeavs-ps1-ports/metal-gear-solid-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a release candidate that recompiles Metal Gear Solid with PSXRecomp and the recomp-ui launcher. It expects the European disc SLES-01370 and a European BIOS, SCPH-5502 or SCPH-5552. The BIOS must be 524,288 bytes, SHA-256 1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09. The README says gameplay acceptance is still pending.",
+    "description_zh": "这是用 PSXRecomp 和 recomp-ui 启动器重编译《合金装备》的候选发布。它需要欧版光盘 SLES-01370 和欧版 BIOS，SCPH-5502 或 SCPH-5552。BIOS 必须是 524,288 字节，SHA-256 为 1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09。README 写明游戏可玩性还在等待验收。",
+    "requirements": [
+      "Extract the setup ZIP, start Metal_Gear_Solid_Recompiled, and select the CUE and BIOS. Linux and macOS need CMake, Ninja, Python 3, and a C/C++ compiler.",
+      "The reviewed README does not name a license for this project. It says PSXRecomp and recomp-ui keep the licenses in their source directories."
+    ],
+    "evidence_url": "https://github.com/alexbeavs-ps1-ports/metal-gear-solid-recomp/blob/94807c835e4c16df255c4c11978cbcb51020734f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
