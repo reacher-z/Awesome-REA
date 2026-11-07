@@ -43811,5 +43811,12 @@
       "KPFGen 仅支持 Windows，非 Windows 入口只是一个 #error TODO 占位。",
       "源文件头部声明 GNU 通用公共许可证第 2 版或更高版本，仓库根目录没有许可证文件。"
     ]
+  },
+  "open-ig": {
+    "name": "Open Imperium Galactica",
+    "requirements": [
+      "需要 Java 11 或更高版本。0.95.X 压缩包大约 1.21 GB。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
