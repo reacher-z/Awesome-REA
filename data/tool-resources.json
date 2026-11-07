@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "witch-time",
+    "name": "Witch Time",
+    "url": "https://github.com/Zexyen/Witch-Time",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Witch Time is a static recompilation of Bayonetta 3 for Nintendo Switch. It translates the AArch64 code to C from a personal dump and runs it on a reimplemented system layer, with NVN on Vulkan. The dump folder contains exefs and romfs. On Linux, cargo builds tools/wtbuild and wtbuild setup --dump takes that folder. A Windows release zip runs witch-time.exe and needs a Vulkan driver. Gameplay is 60 FPS in the tested Tokyo and Shibuya sections. The default resolution is 1600x900. The Old Picture Book uses update program 1, title ID 01004A4010FEA001, update 1.2.0, placed in program1.",
+    "description_zh": "Witch Time 是任天堂 Switch 游戏《猎天使魔女 3》的静态重编译。它从自己的转储把 AArch64 代码译成 C，并在重实现的系统层上运行，NVN 走 Vulkan。转储文件夹包含 exefs 和 romfs。在 Linux 上，cargo 构建 tools/wtbuild，wtbuild setup --dump 接受该文件夹。Windows 发行压缩包运行 witch-time.exe，需要 Vulkan 驱动。在测试过的东京和涩谷段落，游玩为 60 帧。默认分辨率是 1600x900。旧绘本使用更新的程序 1，标题编号 01004A4010FEA001，更新 1.2.0，放在 program1。",
+    "requirements": [
+      "A personal Bayonetta 3 dump with exefs and romfs. Linux with a Vulkan driver, or Windows 10 or 11, 64-bit, with a Vulkan driver.",
+      "License: GPL-3.0. The logo lettering is Cinzel Decorative, SIL Open Font License 1.1, converted to outlines."
+    ],
+    "evidence_url": "https://github.com/Zexyen/Witch-Time/blob/bff9d7322a1d1fff83ea05d6235e39e9ca2a88d7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

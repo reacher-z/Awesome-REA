@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "witch-time": {
+    "name": "Witch Time",
+    "requirements": [
+      "需要自己的《猎天使魔女 3》转储，含 exefs 和 romfs。系统为带 Vulkan 驱动的 Linux，或 64 位 Windows 10 或 11 并带 Vulkan 驱动。",
+      "许可证：GPL-3.0。标志字母使用 Cinzel Decorative，SIL Open Font License 1.1，并已转成轮廓。"
+    ]
   }
 }
