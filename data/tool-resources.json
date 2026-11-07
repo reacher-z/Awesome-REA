@@ -36544,6 +36544,7 @@
     "description_zh": "以运行于 .NET 8 的 C# 重新实现 Innersloth《Among Us》的服务器端，通过 Hazel 网络库处理游戏的 UDP 通信，并提供其 HTTP 匹配服务，使 PC 与移动端客户端可以在私人架设的服务器上游戏。FAQ 称其为逆向工程得到的服务器，未获开发商认可。README 表示已实现《Among Us》的全部功能，并增加了插件和服务器端反作弊；主机版无法连接。",
     "evidence_url": "https://github.com/Impostor/Impostor/blob/703915f06fcfd17bc8804d36dd67655671a66cf2/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at the v1.10.9 tag, the 2026-10-05 master head (released 2026-10-06), whose compatibility list groups Among Us PC and mobile builds from 2024.6.18 to 19.0 (2026-09-29). README calls Impostor a full replacement for the official server, recommends master builds for the newest game version and says older releases are less supported; the FAQ says console versions cannot add custom servers and that Among Us 3D/VR uses a different network stack.",
