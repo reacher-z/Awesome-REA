@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "botw-native": {
+    "name": "BotW Recompiled for Windows：Wii U 旷野之息",
+    "requirements": [
+      "README 写明平台是 Windows 10 和 Windows 11，游戏版本是 Wii U 1.5.0。开头提到的测试使用近期 NVIDIA 笔记本电脑 GPU 上的美版 v208 构建。",
+      "它写明项目还不是完整游戏发布版。",
+      "GitHub 报告该仓库的许可证为 MIT。"
+    ]
   }
 }

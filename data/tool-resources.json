@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "url": "https://github.com/ryderclanky/BotW-Native",
+    "evidence_url": "https://github.com/ryderclanky/BotW-Native/blob/c24309b0d904d369feab6909776cb230ad3949f8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "id": "botw-native",
+    "name": "BotW Recompiled for Windows: Wii U Breath of the Wild",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "static-recompilation",
+    "description_en": "BotW Recompiled for Windows runs the Wii U version of Breath of the Wild on Windows 10 and 11. The README says the PowerPC game code is statically recompiled to C++ on a Cafe OS runtime, and that Cemu's Latte GPU layer draws through Vulkan. It says the project is a work in progress and not a full-game release.",
+    "description_zh": "BotW Recompiled for Windows 在 Windows 10 和 11 上运行 Wii U 版《旷野之息》。README 写明 PowerPC 游戏代码被静态重编译为 C++，运行在 Cafe OS 运行时上，并由 Cemu 的 Latte GPU 层通过 Vulkan 绘制。它写明项目仍在开发中，还不是完整游戏发布版。",
+    "requirements": [
+      "The README names Windows 10 and Windows 11 and Wii U version 1.5.0. Testing mentioned in the opening used a USA v208 build on a recent NVIDIA laptop GPU.",
+      "It says the project is not a full-game release.",
+      "GitHub reports the repository license as MIT."
+    ]
   }
 ]
