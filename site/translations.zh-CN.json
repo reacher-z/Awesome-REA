@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "tenchu-sa-recomp": {
+    "name": "天诛：Stealth Assassins 重编译",
+    "requirements": [
+      "需要 .NET 10 SDK。RecompOne 分叉应放在名为 RecompOne-fork 的同级目录。用 dotnet build -c Release 构建。",
+      "审阅的 README 没有给这个仓库写出许可证。它写明 RecompOne 是 MIT。"
+    ]
   }
 }
