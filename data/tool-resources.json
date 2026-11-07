@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "opennefia-case",
+    "name": "OpenNefia: reimplementation of Elona",
+    "url": "https://github.com/OpenNefia/OpenNefia",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "OpenNefia is an open-source, moddable engine reimplementation of the roguelike Elona. The README says the project is still a work in progress and that building it requires the .NET 8.0 SDK.",
+    "description_zh": "OpenNefia 是 Roguelike 游戏 Elona 的开源、可制作模组的引擎重实现。README 写明项目仍在进行中，构建需要 .NET 8.0 SDK。",
+    "requirements": [
+      "Build with the .NET 8.0 SDK.",
+      "The README says the project is a work in progress.",
+      "License: MIT."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/OpenNefia/OpenNefia/blob/d8410b3e59845312d557c321d3752531519e14f6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
