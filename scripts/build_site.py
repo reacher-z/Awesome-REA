@@ -32,7 +32,8 @@ from site_shell import apply_site_shell
 from data_downloads import build_data_downloads
 from open_graph import website_node
 from structured_data import catalog_node, organization_node
-from site_footer import site_footerfrom homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage
+from site_footer import site_footer
+from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage
 from artifact_links import with_artifact_links, with_curated_labels
 from source_browser import write_source_browser
 from localization import read_localizations, localized_records
@@ -316,7 +317,8 @@ def build_site(output: Path) -> tuple[int, int, int]:
         if '<footer class="site-footer">' not in text:
             footer = site_footer(language, note="", repository_url=REPOSITORY_URL, repository_export=repository_export)
             text = text.replace("</body>", footer + "\n</body>", 1)
-            page.write_text(text, encoding="utf-8")    paper_urls = build_paper_pages(
+            page.write_text(text, encoding="utf-8")
+    paper_urls = build_paper_pages(
         output, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
         styles_href=asset_hrefs["styles.css"], papers_styles_href=fingerprinted_href(output, "papers.css"),
         favicon_href=asset_hrefs["favicon.svg"], social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
@@ -357,7 +359,8 @@ def build_site(output: Path) -> tuple[int, int, int]:
     dates = page_dates(resources=resources, papers=papers, repository_document=browse_document,
                        discovery_batches=(discovery_queue or {}).get("batches"), lead_batches=(lead_queue or {}).get("batches"),
                        survey_date=survey_document.get("date"))
-    write_sitemaps(output, SITE_URL, [url.removeprefix(SITE_URL) for url in sitemap_urls], dates)    build_data_downloads(output, catalog, papers,
+    write_sitemaps(output, SITE_URL, [url.removeprefix(SITE_URL) for url in sitemap_urls], dates)
+    build_data_downloads(output, catalog, papers,
                          (output / 'papers/references.bib').read_text(encoding='utf-8'))
     write_build_manifest(output)
     return len(resources), len(papers), len(sitemap_urls)

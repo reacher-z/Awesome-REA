@@ -12817,8 +12817,7 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
-  }
-,
+  },
   {
     "id": "paper-sok-x86-x64-disassembly",
     "title": "SoK: All You Ever Wanted to Know About x86/x64 Binary Disassembly But Were Afraid to Ask",
@@ -12869,8 +12868,8 @@
       "https://arxiv.org/abs/2007.14266v1",
       "https://arxiv.org/pdf/2007.14266v1"
     ],
-    "metadata_notes": "Authors and title match the Crossref record and arXiv:2007.14266v1. first_arxiv_date is the arXiv published date 2020-07-28. code_url is empty because that Crossref record and the arXiv v1 abstract do not name a code repository. The linked PDF is the arXiv preprint, not an IEEE Xplore file.",
-    "metadata_notes_zh": "作者和题名与 Crossref 记录以及 arXiv:2007.14266v1 一致。first_arxiv_date 是 arXiv 的发表日期 2020-07-28。code_url 为空，是因为该 Crossref 记录和 arXiv v1 摘要没有点名代码仓库。链接的 PDF 是 arXiv 预印本，不是 IEEE Xplore 文件。",
+    "metadata_notes": "Authors and title match the Crossref record and arXiv:2007.14266v1. The paper first appeared on arXiv on 2020-07-28. No code repository is linked because that Crossref record and the arXiv v1 abstract do not name one. The linked PDF is the arXiv preprint, not an IEEE Xplore file.",
+    "metadata_notes_zh": "作者和题名与 Crossref 记录以及 arXiv:2007.14266v1 一致。该论文最早于 2020-07-28 发布在 arXiv。没有链接代码仓库，是因为该 Crossref 记录和 arXiv v1 摘要均未点名代码仓库。链接的 PDF 是 arXiv 预印本，不是 IEEE Xplore 文件。",
     "kind": "research",
     "verified_at": "2026-11-03",
     "verification": "source-reviewed",

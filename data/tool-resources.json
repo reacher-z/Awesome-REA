@@ -36547,7 +36547,7 @@
     "requirements": [
       "The user guide names the 8 GB player’s FiiO update file as HIFIECnn.IMG and lists FiiO 3.7.0, 3.9.0, and 4.0.0 as tested starting points, with HIFIEC39.IMG and HIFIEC40.IMG as examples downloaded from FiiO and not stored in the repository. The 512 MB model’s MINIVnnn.IMG is out of scope: EchoPod refuses that file.",
       "Commit 4013ba0151642f8cad67e4f9837e5fb5ce6d763e is tag v0.9.1. The release preset inherits the device preset and sets ECHO_RELEASE=ON. platform/device/CMakeLists.txt runs tools/make_image.py, which packs a buffer of IMAGE_SIZE 0x500004 (5242884 bytes) and writes HIFIEC90.IMG in the preset’s build directory.",
-      "The README says EchoPod is early, has been tested on one player, and is not made or supported by FiiO. Not run or reproduced for this catalog.",
+      "The README says EchoPod is early, has been tested on one player, and is not made or supported by FiiO.",
       "The README states GPL-3.0-or-later and points at LICENSE, which is the GNU GPL version 3 text. Bundled Inter and Noto CJK fonts are SIL OFL 1.1; the player’s MP3 decoder is libmad, GPL-2.0-or-later."
     ],
     "requirement_facets": [
@@ -36581,7 +36581,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Source-only tree at aa2e97d421a12e5f32986df5c8f87f64cc6d11c4. The README says the repository does not contain disc images, extracted assets, FMV, memory cards, Sony PSYQ SDK files, compiler binaries, or generated split output. Copy a legally obtained SLUS_006.62 to assets/USA/main.exe. configs/USA/checksum.sha records SHA-1 452fb033f2eaa4b18aa20a5bca60b8125af3a37b for that path.",
-      "The README quick start is make split, make build, then make check. make check verifies the SHA-1 of build/USA/main.exe against retail. make verify is the acceptance target and includes that checksum. Matching C uses a native PSX GCC 2.7.2 cc1, a PSYQ-compatible preprocessor, and maspsx. Not run or reproduced for this catalog.",
+      "The README quick start is make split, make build, then make check. make check verifies the SHA-1 of build/USA/main.exe against retail. make verify is the acceptance target and includes that checksum. Matching C uses a native PSX GCC 2.7.2 cc1, a PSYQ-compatible preprocessor, and maspsx.",
       "The README still calls the project work in progress and says progress badges are regenerated rather than hardcoded in the README. LICENSE.md says no open-source license has been selected. Game code and data remain with their owners."
     ],
     "requirement_facets": [
@@ -36612,7 +36612,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "The README calls PC-BASIC a free interpreter for those four BASIC dialects, aiming for bug-for-bug compatibility, running .BAS programs, and using Microsoft Binary Format floating point. Tag v2.0.8 points at commit 6a3a035b0a1c1029d48bc9284e642b6b4bd64fb5. Desktop installers are published on that GitHub release.",
-      "At that commit, tests/basic/gwbasic/PRINT_USING_scientific/TEST.BAS is 362 bytes. PCBASIC.INI in the same directory sets run=TEST.BAS and quit=True. The oracle model/OUTPUT.TXT is 82 bytes. tests/basic/testbasic.py compares each model file with filecmp.cmp and shallow=False, a full byte compare. Not run or reproduced for this catalog.",
+      "At that commit, tests/basic/gwbasic/PRINT_USING_scientific/TEST.BAS is 362 bytes. PCBASIC.INI in the same directory sets run=TEST.BAS and quit=True. The oracle model/OUTPUT.TXT is 82 bytes. tests/basic/testbasic.py compares each model file with filecmp.cmp and shallow=False, a full byte compare.",
       "The README says the program is released under GPL version 3. LICENSE.md grants the GNU GPL version 3 or, at the recipient’s option, any later version."
     ],
     "requirement_facets": [
@@ -36646,7 +36646,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit a151e78f66009bc74367974d14476061f3552346. The README names twenty builds: the 1995 32-bit English engine, six 1998 16-bit modules (English, Dutch, French, German, Italian, and Spanish), and thirteen 2006 32-bit builds. Put the original binaries under dll/1995, dll/1998, and dll/2006. They are not in the repository. make still writes build/libbst.a, build/libbst.so, and build/bstspeak, because src/data holds the lifted tables.",
-      "The README says the 1995 build is bit-exact on 24 utterances, the six 1998 modules match 226 words and 20793 frames with 144 utterances sample for sample, the thirteen 2006 builds match 2358 utterances, and tests/lifttest.sh checks 411894 utterances. Those runs need the original binaries. make test is that gate. Without the binaries, make selftest checks tests/golden.txt, which the README says holds sample counts and hashes for 4906 utterances written from the binaries by make golden. Not run or reproduced for this catalog.",
+      "The README says the 1995 build is bit-exact on 24 utterances, the six 1998 modules match 226 words and 20793 frames with 144 utterances sample for sample, the thirteen 2006 builds match 2358 utterances, and tests/lifttest.sh checks 411894 utterances. Those runs need the original binaries. make test is that gate. Without the binaries, make selftest checks tests/golden.txt, which the README says holds sample counts and hashes for 4906 utterances written from the binaries by make golden.",
       "LICENSE puts the code, tests, and tools under the MIT license, copyright 2026 Stanislaw Przedzinkowski, and says the tables read from Berkeley Speech Technologies’ binaries, later HumanWare’s, are not covered by that license."
     ],
     "requirement_facets": [
@@ -36676,7 +36676,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 659dc5b70a24e8bf00475978a594393d372c6578. The README calls this a from-scratch rewrite of the aspnet-mvc-live branch as a static site, with Leaflet 1.9 as the only runtime dependency. package.json requires Node.js >= 22.12.0, and its build script is astro build. The README says npm run build writes static output to dist/.",
-      "src/maps/faerun.ts ships a 4763 by 3185 image, tilesUrl https://loremaps.github.io/LoreMaps-Faerun-Tiles/Tiles, and metersPerPixel 1287.473. src/maps/got.ts ships a 4642 by 4642 image, tilesUrl https://loremaps.github.io/LoreMaps-GoT-Tiles/Tiles, and metersPerPixel 2266.681. Not run or reproduced for this catalog.",
+      "src/maps/faerun.ts ships a 4763 by 3185 image, tilesUrl https://loremaps.github.io/LoreMaps-Faerun-Tiles/Tiles, and metersPerPixel 1287.473. src/maps/got.ts ships a 4642 by 4642 image, tilesUrl https://loremaps.github.io/LoreMaps-GoT-Tiles/Tiles, and metersPerPixel 2266.681.",
       "The pinned tree has no LICENSE file. The README credits the Faerûn image to Pocket Plane Group and the Known World map to serMountainGoat under CC-BY-NC-SA. got.ts links the CC BY-NC-SA 3.0 deed. Tile images are hosted outside this repository."
     ],
     "requirement_facets": [
@@ -36708,7 +36708,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit b98b0fe396466fa41466a9521f40987c989ae077 is the v0.4.2 tag. The README at that commit leads with a Version 0.8b preview, also has a Version 0.4 section, and says the BIOS fits in an 8K ROM. It describes the project as free of outside proprietary or copyrighted code, not a copy of a vendor BIOS.",
-      "src/GLABIOS.ASM is in the tree. src/MAKE.BAT runs MASM GLABIOS, LINK GLABIOS, and then GLA2ROM on GLABIOS.EXE to write GLABIOS.ROM. src/gla2rom/README.md says that command produces an 8KiB ROM image and must run under DOS or a DOS emulator. Not run or reproduced for this catalog.",
+      "src/GLABIOS.ASM is in the tree. src/MAKE.BAT runs MASM GLABIOS, LINK GLABIOS, and then GLA2ROM on GLABIOS.EXE to write GLABIOS.ROM. src/gla2rom/README.md says that command produces an 8KiB ROM image and must run under DOS or a DOS emulator.",
       "LICENSE is the GNU GPL version 3 text, and the README identifies the project as GPLv3."
     ],
     "requirement_facets": [
@@ -36741,7 +36741,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 5125181180976ca53e08953ae0929dc3009dea0e. The README documents Windows, macOS, and Linux builds. The Windows portable zip extracts and runs iDescriptor.exe. macOS builds are .dmg files, and Linux lists an AppImage.",
-      "The feature table marks USB connection as implemented and fully supported on Windows, macOS, and Linux. Battery information is marked implemented, as reading detailed battery info from the device. Device backups are marked implemented and experimental for iOS 13-26, covering gallery and settings. Not run or reproduced for this catalog.",
+      "The feature table marks USB connection as implemented and fully supported on Windows, macOS, and Linux. Battery information is marked implemented, as reading detailed battery info from the device. Device backups are marked implemented and experimental for iOS 13-26, covering gallery and settings.",
       "LICENSE is the GNU Affero General Public License version 3."
     ],
     "requirement_facets": [
@@ -36771,7 +36771,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit a0622903b93da2c2752244cf6d415377a41fbe7a. The README says Viaduct translates NetNewsWire’s local-account architecture. Local accounts keep OPML on disk as the source of truth; Inoreader is the other supported account. The .netnewswire reference tree is gitignored, so that tree is not in the public Git history.",
-      "cargo build --release writes target/release/viaduct. The README names gtk4 and WebKitGTK 6.0 as build dependencies. .github/workflows/ci.yml runs cargo clippy --workspace --all-targets and xvfb-run -a cargo test --workspace. Not run or reproduced for this catalog.",
+      "cargo build --release writes target/release/viaduct. The README names gtk4 and WebKitGTK 6.0 as build dependencies. .github/workflows/ci.yml runs cargo clippy --workspace --all-targets and xvfb-run -a cargo test --workspace.",
       "LICENSE is the MIT license, with copyright lines for Brent Simmons and Ranchero Software (2002-2026) and Brandon LaRocque (2026)."
     ],
     "requirement_facets": [
@@ -36802,7 +36802,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 65accb42ce94526649f7553c927d4edae9389a71. The README says the TC66C, with a GD32F150G8 MCU, has been tested, and that the TC66 uses the same board design and has not been tested. Other RuiDeng meters are not supported. The stock image is not redistributed. uv run tc66flash.py stock downloads official V1.18 and checks SHA-256 ef796b29557c91e0a469740ba1934ca0a838916c76ab55eb6d1253da32830940. tools/tc66flash.py maps USB IDs 0x28E9:0x018A.",
-      "From rust/, make release writes tc66fw-release.enc.bin. The Makefile calls that file an AES-encrypted image for the stock bootloader. The README says the bootloader itself is never written. Not run or reproduced for this catalog.",
+      "From rust/, make release writes tc66fw-release.enc.bin. The Makefile calls that file an AES-encrypted image for the stock bootloader. The README says the bootloader itself is never written.",
       "LICENSE is the MIT license, copyright 2026 Fletcher."
     ],
     "requirement_facets": [
@@ -36834,7 +36834,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 0d73d9d9080367ae59bd7657c9af043548bbae99. The supported-router table lists ASUS AC3200. The SDK 7 example checks out arm-master and, in release/src-rt-7.x.main/src, runs make ac3200-128z.",
-      "release/src-rt-7.x.main/src/help.mak describes ac3200-128z as RT-AC3200 build AIO - 128K NVRAM. Not run or reproduced for this catalog.",
+      "release/src-rt-7.x.main/src/help.mak describes ac3200-128z as RT-AC3200 build AIO - 128K NVRAM.",
       "The README warns that flashing alternative firmware can permanently damage a router. LICENSE.md is the GNU GPL version 3 text."
     ],
     "requirement_facets": [
@@ -36865,7 +36865,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 6f8afac8864e0349ecf8b10f91ce8f69273013db. The GitHub repository is archived. The README titles the project as an open reimplementation of the Quan Sheng UV K5 v2.1.27 firmware and says this branch does not add customisations over that firmware. It recommends arm-none-eabi GCC 10.3.1.",
-      "The documented build fetches submodules, then runs make. The Makefile sets TARGET to firmware, compiles for cortex-m0, and uses objcopy plus fw-pack.py to produce firmware.bin and firmware.packed.bin. The README says the official updater takes firmware.packed.bin and k5prog takes firmware.bin. version.c sets Version to OEFW- plus the git hash. The README does not claim a byte-identical vendor image. Not run or reproduced for this catalog.",
+      "The documented build fetches submodules, then runs make. The Makefile sets TARGET to firmware, compiles for cortex-m0, and uses objcopy plus fw-pack.py to produce firmware.bin and firmware.packed.bin. The README says the official updater takes firmware.packed.bin and k5prog takes firmware.bin. version.c sets Version to OEFW- plus the git hash. The README does not claim a byte-identical vendor image.",
       "LICENSE is the Apache License, Version 2.0."
     ],
     "requirement_facets": [
@@ -36897,7 +36897,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 32967f60c01c1753b329dc4a3e943c4e1275006b. No game data is in the repository. The README accepts daytona93 (Daytona USA Deluxe ’93) at roms/daytona93.zip or .7z, and Revision A (daytona, 1994) at roms/daytona.zip or .7z. Other Daytona sets are rejected. Revision A is built as build-daytona/daytona. With the Visual Studio generator the program is build/Release/daytona.exe.",
-      "Linux and macOS run ./setup.sh; Windows runs setup.ps1. The launcher Game tab checks every file in the chosen ROM set against the set that build was recompiled from. The README says GitHub Actions builds and tests without a ROM set, and that MAME is a test oracle. Not run or reproduced for this catalog.",
+      "Linux and macOS run ./setup.sh; Windows runs setup.ps1. The launcher Game tab checks every file in the chosen ROM set against the set that build was recompiled from. The README says GitHub Actions builds and tests without a ROM set, and that MAME is a test oracle.",
       "LICENSE is the BSD 3-Clause license for the project’s own code, copyright 2026 Ben Templeman and contributors. The README says that licence does not cover Daytona USA: the ROMs and the code generated from them are never distributed."
     ],
     "requirement_facets": [
@@ -36926,7 +36926,7 @@
     "verified_at": "2026-11-03",
     "verification": "source-reviewed",
     "requirements": [
-      "Commit dce1113262e1df4e55242fa58ced58de778b528c. The README says TRX is one engine for TR1, TR2, and TR3 through decompilation. Its Q&A answers yes to whether all three games are fully playable from beginning to end, lists Windows, Linux, and macOS, and says Tomb Raider 4 support is still early. Not run or reproduced for this catalog.",
+      "Commit dce1113262e1df4e55242fa58ced58de778b528c. The README says TRX is one engine for TR1, TR2, and TR3 through decompilation. Its Q&A answers yes to whether all three games are fully playable from beginning to end, lists Windows, Linux, and macOS, and says Tomb Raider 4 support is still early.",
       "docs/trx/INSTALLING.md says the Windows installer copies TR1, TR2, and TR3 from the player’s own Steam, GOG, or disc install. The documented data tree includes the original .phd level files. Launch commands include TRX.exe --mod tr1, TRX.exe --mod tr2, and TRX.exe --mod tr3. The retail files are not in the repository.",
       "COPYING.md is the GNU GPL version 3 text."
     ],
@@ -36958,7 +36958,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 8235c68f11b4fad5e24849a01d04ea153c29ee28. The README calls openrsync an implementation of rsync with a BSD (ISC) license, compatible with rsync 3.1.3 and with any peer that supports protocol 27. rsync.5 says it is compatible with version 27 of the reference. The officially supported system is OpenBSD.",
-      "regress/functional/conf.sh sets rsync to ./openrsync unless that variable is already set. test00_simple.test creates dir1/one.txt with mkdirfile, builds the same file under dir2/dir1, runs $rsync -a dir1 dir3, and calls compare_trees dir2 dir3. compare_trees diffs file listings, directory listings, and then file contents with diff -ru. make regress_functional runs these tests. Not run or reproduced for this catalog.",
+      "regress/functional/conf.sh sets rsync to ./openrsync unless that variable is already set. test00_simple.test creates dir1/one.txt with mkdirfile, builds the same file under dir2/dir1, runs $rsync -a dir1 dir3, and calls compare_trees dir2 dir3. compare_trees diffs file listings, directory listings, and then file contents with diff -ru. make regress_functional runs these tests.",
       "LICENSE.md grants permission to use, copy, modify, and/or distribute the software for any purpose, provided the copyright notice is kept. The copyright line is 2019, Kristaps Dzonsons."
     ],
     "requirement_facets": [
@@ -36992,7 +36992,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 21851e710f9bddfd6559b7ea7e1dc571afeb47e0. The README says the program acquires readings from wired m-bus or wireless wm-bus meters. Its example telegram is 1844AE4C4455223368077A55000000_041389E20100023B0000, shown as a water total of 123.529 cubic meters.",
-      "simulations/simulation_t1.txt labels that telegram as an unencrypted iPerl T1 telegram and records the JSON line for WaterWater, id 33225544, driver iperl, total_m3 123.529, plus the fields line WaterWater;33225544;123.529;0;1111-11-11 11:11.11. tests/test_t1_meters.sh runs the program on that file. Before diffing, it rewrites JSON timestamps to 1111-11-11T11:11:11Z and fields timestamps to 1111-11-11 11:11.11. The file holds other telegrams, and the script diffs every JSON line and every fields line. Not run or reproduced for this catalog.",
+      "simulations/simulation_t1.txt labels that telegram as an unencrypted iPerl T1 telegram and records the JSON line for WaterWater, id 33225544, driver iperl, total_m3 123.529, plus the fields line WaterWater;33225544;123.529;0;1111-11-11 11:11.11. tests/test_t1_meters.sh runs the program on that file. Before diffing, it rewrites JSON timestamps to 1111-11-11T11:11:11Z and fields timestamps to 1111-11-11 11:11.11. The file holds other telegrams, and the script diffs every JSON line and every fields line.",
       "LICENSE is the GNU GPL version 3 text."
     ],
     "requirement_facets": [
@@ -37024,7 +37024,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit d63dfb8d84a0ec715a870009d89022fff65a250a. The README describes an open-source instant-messaging server for classic AIM and ICQ clients, written in Go, and says it is not affiliated with AOL or Yahoo. It lists TOC1 and TOC2 clients among the supported features.",
-      "docs/TOC.md section 10.1 documents a TOC 1 session: a TCP connection to port 9898, FLAPON, sign-on as toctest1, then SIGN_ON:TOC1.0, a CONFIG line that names buddy toctest2, and NICK:toctest1. After toc_init_done the documented reply is UPDATE_BUDDY:toctest2:T:0:1711036800:0: O. The unit test's send IM case expects IM_IN:them:F:hello world!. Not run or reproduced for this catalog.",
+      "docs/TOC.md section 10.1 documents a TOC 1 session: a TCP connection to port 9898, FLAPON, sign-on as toctest1, then SIGN_ON:TOC1.0, a CONFIG line that names buddy toctest2, and NICK:toctest1. After toc_init_done the documented reply is UPDATE_BUDDY:toctest2:T:0:1711036800:0: O. The unit test's send IM case expects IM_IN:them:F:hello world!.",
       "LICENSE is the MIT license, copyright 2024 mk6i."
     ],
     "requirement_facets": [
@@ -37056,7 +37056,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 39024dd148e9e1c9b5f03ace8cbb81f84563b59b. The README says commands are 18 bytes over a vendor control transfer. The Linux note names USB ID 3474:45a2. The P3 frame is 256 by 192. It says the viewer was developed against a P3 and that the P1 has not been tested, and that the project is not affiliated with Thermal Master.",
-      "tests/test_webusb.mjs stores captured commands, including read_name equal to 0101810001000000000000001e0000004f90. It fails if a built command is not those bytes, if the hex form is not 18 bytes, if crc16 of the bytes of 123456789 is not 0x31c3, if VID is not 0x3474, or if the 192-byte status buffer does not parse as [346871] I/ffc_svc: ffc b update done. Not run or reproduced for this catalog.",
+      "tests/test_webusb.mjs stores captured commands, including read_name equal to 0101810001000000000000001e0000004f90. It fails if a built command is not those bytes, if the hex form is not 18 bytes, if crc16 of the bytes of 123456789 is not 0x31c3, if VID is not 0x3474, or if the 192-byte status buffer does not parse as [346871] I/ffc_svc: ffc b update done.",
       "LICENSE is the Apache License 2.0."
     ],
     "requirement_facets": [
@@ -37087,7 +37087,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit c1a3733a1adae0657bd6536886bc101e5698a636. The README describes EtherCalc as a web spreadsheet for real-time collaborative editing and says this branch is the TypeScript rewrite, self-hosted with docker compose up and no Cloudflare account required. That Docker path serves http://localhost:8000.",
-      "packages/oracle-harness/src/scenarios/room-crud.ts PUTs MINIMAL_SCSAVE into the room oracle-phase3-export. tests/oracle/recorded/exports/get-csv.json expects HTTP 200 and bodyBase64 b3JhY2xlCg==, the seven bytes of oracle and a newline, with bodyMatcher exact. get-cell-a1.json expects the A1 JSON whose datavalue and displaystring are oracle. Not run or reproduced for this catalog.",
+      "packages/oracle-harness/src/scenarios/room-crud.ts PUTs MINIMAL_SCSAVE into the room oracle-phase3-export. tests/oracle/recorded/exports/get-csv.json expects HTTP 200 and bodyBase64 b3JhY2xlCg==, the seven bytes of oracle and a newline, with bodyMatcher exact. get-cell-a1.json expects the A1 JSON whose datavalue and displaystring are oracle.",
       "LICENSE.txt says it covers the original SocialCalc-era codebase and its vendored dependencies, includes the Common Public Attribution License and the Artistic License 2.0, and says files without their own license statement are under the Artistic License 2.0. It says the TypeScript rewrite's dependencies declare their own licenses."
     ],
     "requirement_facets": [
@@ -37122,7 +37122,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 97bb94b2e78b57222bbdf665fb3f8b5b7741fd39. The README links the browser editor at https://app.openpencil.dev/demo and says the project opens and writes native Figma files. It also describes a Tauri desktop app of about 15 MB. playwright.config.ts defaults the app port to 1420.",
-      "That spec selects the node and expects toMatchSnapshot of text-path-rendering-and-selection.png. playwright.config.ts sets maxDiffPixelRatio to 0.01 and threshold to 0.3 for toMatchSnapshot. The git blob of tests/fixtures/circle-text.fig at this commit is a Git LFS pointer for a 155324-byte file. Not run or reproduced for this catalog.",
+      "That spec selects the node and expects toMatchSnapshot of text-path-rendering-and-selection.png. playwright.config.ts sets maxDiffPixelRatio to 0.01 and threshold to 0.3 for toMatchSnapshot. The git blob of tests/fixtures/circle-text.fig at this commit is a Git LFS pointer for a 155324-byte file.",
       "LICENSE is the MIT license, copyright 2026 Danila Poyarkov and OpenPencil contributors. The README says the cloud server, relay, and administration under packages/cloud are Apache License 2.0, while the protocol client those editors use stays MIT."
     ],
     "requirement_facets": [
@@ -37154,7 +37154,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit d2bc0c68a7769967bb3dfdc86701f69bc53767b4. The README says the audio once matched IBM's binary byte for byte across every test case of every language, from both a 32-bit and a 64-bit build, for all nine languages the SDK shipped. It says the engine is now being changed on purpose, so the maintained check is a recorded answer for each of 979 cases rather than IBM's binary. Nothing is borrowed at build time.",
-      "docs/testing.md says test/matrix.sh is the gate and holds 1,291 cases over twelve languages against previously recorded answers, and that test/suite.sh is the oracle against IBM's engine and wants Wine and the SDK. The baselines are in test/samples. test/samples/enus.sha256 is one of those files. Not run or reproduced for this catalog.",
+      "docs/testing.md says test/matrix.sh is the gate and holds 1,291 cases over twelve languages against previously recorded answers, and that test/suite.sh is the oracle against IBM's engine and wants Wine and the SDK. The baselines are in test/samples. test/samples/enus.sha256 is one of those files.",
       "The README says the project's own engine, front ends, tools, tests, and documents are under the MIT licence in LICENSE. It says the language data under lang/ is transcribed from IBM's objects and is not covered by that licence, and that src/klatt_tables.c and src/eci_xmltok_tables.c are IBM's data as well."
     ],
     "requirement_facets": [
@@ -37186,7 +37186,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 708adac787c07f96a87002a0479d3e67a12464c2. The README's coverage table lists HyperCard 1.2.2 as 326 KB, 22 CODE segments, 418 distinct traps, 3166 call sites, and 83 percent of sites covered. A later paragraph says all 21 CODE segments lift at 97 to 100 percent instruction coverage. Both figures are what that README states.",
-      "tools/corpus.json names the file HyperCard and records sites_covered 2642 of sites_total 3166. tools/conformance.py returns 1 if covered sites drop below that baseline. The README says corpus images are copyrighted Mac media and live outside the repository, so a missing title reports SKIP. Not run or reproduced for this catalog.",
+      "tools/corpus.json names the file HyperCard and records sites_covered 2642 of sites_total 3166. tools/conformance.py returns 1 if covered sites drop below that baseline. The README says corpus images are copyrighted Mac media and live outside the repository, so a missing title reports SKIP.",
       "LICENSE is the MIT license. The README says the toolkit ships no Apple ROM, System software, or copyrighted disc data."
     ],
     "requirement_facets": [
@@ -37218,7 +37218,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 4852d2c9a818359996fd8ee2119d39480508938f. The README calls the project a 1:1 copy of https://www.theblindwalleye.com, statically rendered in Next.js. source/ holds the capture. The app prerenders /, /menu, and /events, and the captured 404 is rendered as well. source/pages contains index.html, menu.html, events.html, and __404.html.",
-      "The README says node scripts/compare-visual.mjs screenshots the captured source and the replica at 1440, 991, and 390 pixels wide. The script's default MAX_DIFF_PCT is 0.5, and it exits 1 when any page's diff percent is above that threshold. Not run or reproduced for this catalog.",
+      "The README says node scripts/compare-visual.mjs screenshots the captured source and the replica at 1440, 991, and 390 pixels wide. The script's default MAX_DIFF_PCT is 0.5, and it exits 1 when any page's diff percent is above that threshold.",
       "The pinned root listing has no LICENSE file, and the README states no license."
     ],
     "requirement_facets": [
@@ -37249,7 +37249,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit b88e13b9b393ad60b0c9496c0435a22adf2ccc3b. The README says Omnispeak aims to be a pixel-perfect, bug-for-bug clone of episodes 4, 5, and 6 and to stay compatible with DOS savegames. Supported versions are Keen 4 v1.4 EGA, Keen 5 v1.4 EGA, Keen 6 v1.4 EGA, and Keen 6 v1.5 EGA. The player copies GAMEMAPS.CK?, EGAGRAPH.CK?, and AUDIO.CK? next to the omnispeak binary. Those game files are not in the repository. The README points at the Keen 4 v1.4 EGA shareware zip https://davidgow.net/keen/4keen14.zip.",
-      "tests/testdump.sh runs ./omnispeak /EPISODE <episode> /PLAYDEMO <demo> /DUMPFILE <temp> and diffs that dump with tests/demo<demo>.dump<episode>. On a match it prints Dump matched for Episode <episode>, Demo <demo>. tests/demo0.dump4 is one of those reference files. Not run or reproduced for this catalog.",
+      "tests/testdump.sh runs ./omnispeak /EPISODE <episode> /PLAYDEMO <demo> /DUMPFILE <temp> and diffs that dump with tests/demo<demo>.dump<episode>. On a match it prints Dump matched for Episode <episode>, Demo <demo>. tests/demo0.dump4 is one of those reference files.",
       "LICENSE is the GNU GPL version 2 text."
     ],
     "requirement_facets": [
@@ -37281,7 +37281,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit c34db9803ae8cb58d45060a8246e161de690ece3. The README says both the North American and Japanese releases are 100 percent matched. North America is disc SLUS-01013, main executable SLUS_010.13, SHA-1 d11dfdd50d412ac3fa3e2eb80fbde138da118f27. Japan is SLPS-02170, main executable SLPS_021.70, SHA-1 b067188a92e4de9a4db7bb7e5343c757e9884bfa. The repository does not include the game executable. disc/ is gitignored.",
-      "make verify-bins checks the North American modules, and make verify-bins VERSION=jp checks the Japanese modules. The README says the main executable and all 17 overlays are fully linked, and that the Psy-Q SDK libraries are still linked from the original assembly. Not run or reproduced for this catalog.",
+      "make verify-bins checks the North American modules, and make verify-bins VERSION=jp checks the Japanese modules. The README says the main executable and all 17 overlays are fully linked, and that the Psy-Q SDK libraries are still linked from the original assembly.",
       "LICENSE is the MIT license, copyright 2026 Christopher Harris (celophi). The retail game is not included."
     ],
     "requirement_facets": [
@@ -37311,7 +37311,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 0df3b6586d2d0b4dab39d1eb7e9859c464934e19. The README names the original Japanese ELF SLPS_251.05, SHA-1 9dabbf867a7ec2a030df99ba1ed969f2deef0488, and Final Mix SLPS_251.98, SHA-1 e70bda789916142aafb53d85cef2e806b35ad8d8. The user extracts the ELF from their own disc. The repository does not publish the executable or an ISO.",
-      "configure.py adds a ninja rule that runs sha1sum -c, and the default build is the ROM's .ok file from that rule. config/jp/checksum.sha1 expects build/jp/SLPS_251.05.rom to match cb85dbab6c05667ed11d94e94abfa079baaf12c2. config/fm/checksum.sha1 expects build/fm/SLPS_251.98.rom to match b62bf252fdaf0b1a726668e28c244e1d83bcb146. Not run or reproduced for this catalog.",
+      "configure.py adds a ninja rule that runs sha1sum -c, and the default build is the ROM's .ok file from that rule. config/jp/checksum.sha1 expects build/jp/SLPS_251.05.rom to match cb85dbab6c05667ed11d94e94abfa079baaf12c2. config/fm/checksum.sha1 expects build/fm/SLPS_251.98.rom to match b62bf252fdaf0b1a726668e28c244e1d83bcb146.",
       "The pinned root listing has no LICENSE file, and the README states no license. The game itself is not included."
     ],
     "requirement_facets": [
@@ -37343,7 +37343,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 4820d11b3aeb1788e3de1b281a584a7b236bb734. The README says the builder supplies Destruction Derby 64 (USA) as baserom.z64 with that SHA-1, and that the ROM is not in the repository. It says a matching build prints build/dd64.z64: OK, and that 1510 of 1548 functions are C. It also describes the repository as a hands-off agent experiment whose author did not review the code.",
-      "The Makefile's default goal is check, which runs sha1sum -c on dd64.sha1. That file expects build/dd64.z64 to have the same SHA-1. Not run or reproduced for this catalog.",
+      "The Makefile's default goal is check, which runs sha1sum -c on dd64.sha1. That file expects build/dd64.z64 to have the same SHA-1.",
       "The pinned root listing has no LICENSE file, and the README states no license."
     ],
     "requirement_facets": [
@@ -37374,7 +37374,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit 051c29750ee179f7b6d97bfda094febdb0191a0f. The README calls the project a work-in-progress decompilation of New Play Control! Pikmin (Wii, 2009) and names R9IE01 as the default USA version. It says the repository contains no game assets. The user copies a disc image to orig/R9IE01. Named formats include ISO (GCM), RVZ, WIA, WBFS, CISO, NFS, GCZ, and TGC.",
-      "config/R9IE01/config.yml records hash 551306334183a633d0fde434a930b98809433b70 for sys/main.dol. config/R9IE01/build.sha1 expects that same SHA-1 for build/R9IE01/main.dol. configure.py sets check_sha_path to config/<version>/build.sha1. Not run or reproduced for this catalog.",
+      "config/R9IE01/config.yml records hash 551306334183a633d0fde434a930b98809433b70 for sys/main.dol. config/R9IE01/build.sha1 expects that same SHA-1 for build/R9IE01/main.dol. configure.py sets check_sha_path to config/<version>/build.sha1.",
       "LICENSE begins with CC0 1.0 Universal. That dedication is for the decompilation project, not for the game."
     ],
     "requirement_facets": [
@@ -37407,7 +37407,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Commit ef886b037bf936921835f563e03008dea87dfa3e. The README says the games run natively on Windows from the user's own US disc image, .chd or .iso, product codes UCUS98653 and UCUS98737. It describes a static recompilation: Allegrex code from the disc is translated into C and is not run in an emulator. No game content is in the repository. The status section calls this preview v1.2.0 and says neither game has had a full playthrough.",
-      "docs/phase11-level-tour.md says the Chains of Olympus areas were checked without playing them: 75 areas the game reaches, 70 in the story and 5 challenges. It says a script reached the altar in foa_path_a, the game saved The Falls of Oceanum, and Load Game returned Kratos there. Not run or reproduced for this catalog.",
+      "docs/phase11-level-tour.md says the Chains of Olympus areas were checked without playing them: 75 areas the game reaches, 70 in the story and 5 challenges. It says a script reached the altar in foa_path_a, the game saved The Falls of Oceanum, and Load Game returned Kratos there.",
       "The README identifies the project as GPL-3.0-or-later. LICENSE is the GNU GPL version 3 text. The README says the project is not affiliated with Sony Interactive Entertainment or Santa Monica Studio."
     ],
     "requirement_facets": [
@@ -37462,7 +37462,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at bcb5cfaa. The README defines GemRB as a portable reimplementation of the Infinity Engine and says trying it needs original game data, with a small separate demo available.",
-      "It describes a cleaner design and extra extensibility. That is not a claim of complete behavioral parity with every original release. This collection did not launch a game.",
+      "It describes a cleaner design and extra extensibility. That is not a claim of complete behavioral parity with every original release.",
       "GPL-2.0, with COPYING in the tree. Original game data is not covered by that license."
     ],
     "additional_evidence_urls": [
@@ -37488,7 +37488,7 @@
       "Reviewed at commit 96296093, which the README labels version 0.3 and status preview. Supported hosts are iOS and iPadOS 17.4 or later, and macOS 14.4 or later on Apple silicon. There is no downloadable app; the user builds it.",
       "The README says the user brings their own copy of the game. It describes the original Xbox campaign, online matches of up to 128 players, and Halo Custom Edition community servers, with touch, controller, or keyboard and mouse. The reviewed opening does not establish a matching decompilation or name the translation toolchain.",
       "A published screenshot shows the Halo main menu in the iPad Simulator with a HaloPad menu button. That image is a project screenshot, not a compatibility result measured here.",
-      "The pinned root listing has no LICENSE file. Game data stays under its own rights. This collection did not build or run the app."
+      "The pinned root listing has no LICENSE file. Game data stays under its own rights."
     ],
     "additional_evidence_urls": [
       "https://github.com/chrissotraidis/projectreach/blob/962960932fe96519b3d70a31a6a3b088513e5272/docs/images/halopad-menu.jpg"
@@ -37535,7 +37535,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at d0b1d3e0. The README says to install Jagged Alliance 2 and point game_dir at that directory. On Windows the setting is in the JA2 json file under the user Documents folder; on Unix-like systems it is the ja2 json file in the home ja2 directory. The original data files are what the program uses.",
-      "Builds can be downloaded or compiled. The reviewed README does not claim a matching decompilation or byte-identical executable. This collection did not play the game.",
+      "Builds can be downloaded or compiled. The reviewed README does not claim a matching decompilation or byte-identical executable.",
       "The README says changes since commit 8287b98 are public domain unless a commit message says otherwise. Libraries under dependencies keep their own terms. There is no root COPYING file in the pinned tree."
     ]
   },
@@ -37557,7 +37557,7 @@
     "requirements": [
       "Reviewed at commit 1132a76e. The README requires the US v1.05 release ULUS-10041. A decrypted EBOOT.ELF and the disc PSP_GAME folder go in game/ for a release build, or lcs/game/ when building from source. Game files are not included.",
       "Source builds are documented with Visual Studio 2022 and LLVM's clang-cl, through lcs/BUILD_LCS.bat. Play uses lcs/PLAY_LCS.bat. Display, internal resolution, texture LOD, and keyboard bindings are settings in lcs/config/LCSNative.ini.",
-      "This is a port of one PSP edition through PSPRecomp, not a matching decompilation and not a claim about other GTA titles. This collection did not build or play it.",
+      "This is a port of one PSP edition through PSPRecomp, not a matching decompilation and not a claim about other GTA titles.",
       "The pinned tree includes an MIT LICENSE for the project code. That license does not cover the user's game executable or disc data."
     ],
     "additional_evidence_urls": [
@@ -37632,7 +37632,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at ea05dadb. The README presents OpenHaystack as a framework for tracking personal Bluetooth devices via Apple's Find My network, for tags on physical objects or other Bluetooth devices such as notebooks.",
-      "It documents system requirements, installation, and the pairing, losing, finding and searching flow. A screenshot of the app is in the repository. This review did not pair a tag or query Find My.",
+      "It documents system requirements, installation, and the pairing, losing, finding and searching flow. A screenshot of the app is in the repository.",
       "The project is AGPL-3.0. Using Apple's network does not grant rights in Apple's software, and the README's own disclaimer still applies."
     ],
     "additional_evidence_urls": [
@@ -37706,7 +37706,7 @@
     "requirements": [
       "Reviewed at commit 9fd696f8, which the README calls beta 0.3.0. It says the game runs on Android with a Vulkan GPU renderer, widescreen, cinematic voices, a free camera, and save states. A 30 FPS PSP-resolution mode and a 32-bit Android build are also described. The author names a Samsung Galaxy S25 Ultra as a test device; that is not a general device result.",
       "Android 8.0 or later, an ARM processor, and Vulkan are required. Two APKs are described: arm64 for most phones and armv7 for 32-bit devices. Windows uses DirectX 12. The game code is recompiled; game data is read from the user's own copy.",
-      "This is a platform host for one PSPRecomp profile, not the framework itself and not a matching decompilation. Known problems are left to the README. This collection did not install an APK.",
+      "This is a platform host for one PSPRecomp profile, not the framework itself and not a matching decompilation. Known problems are left to the README.",
       "The pinned tree includes an MIT LICENSE for the project code. It does not license the PSP game."
     ],
     "additional_evidence_urls": [
@@ -37732,7 +37732,7 @@
     "requirements": [
       "Reviewed at commit f6e7d415. The README splits a reusable framework from game profiles. The framework loads ELF/PRX files, decodes Allegrex/MIPS, and emits C++ translation units. An empty PSPRECOMP_PROFILE builds the core, analyzer, recompiler, and tests without a game.",
       "The first working profile is profiles/vcs, Grand Theft Auto: Vice City Stories. Selecting it needs CMake 3.20 or newer and a C++20 compiler. The documented Windows and DirectX 12 VCS build uses Visual Studio 2022. Game-specific addresses and generated code stay inside the profile.",
-      "This is a static recompiler and one game profile, not a claim that every PSP game is supported and not a matching decompilation. This collection did not configure or run either build.",
+      "This is a static recompiler and one game profile, not a claim that every PSP game is supported and not a matching decompilation.",
       "The pinned tree includes an MIT LICENSE for the project. A user's PSP executable and disc data are not covered by that license."
     ],
     "additional_evidence_urls": [
@@ -37759,7 +37759,7 @@
     "requirements": [
       "Reviewed at fae4549c. The README describes a GPLv2 operating system compatible with applications and drivers for Windows NT 4, 2000, XP, 2003, Vista and 7, with current focus on Windows Server 2003 compatibility. The linked release is 0.4.16.",
       "Installation currently requires a FAT16 or FAT32 partition as the active boot partition. That is a setup limit, not a claim that every Windows feature or driver works.",
-      "This is a compatibility reimplementation, not recovered Microsoft source and not a measured drop-in replacement. This collection did not install a build.",
+      "This is a compatibility reimplementation, not recovered Microsoft source and not a measured drop-in replacement.",
       "Project code is GPL-2.0, stated in the README badge and COPYING. Windows itself is not covered by that license."
     ],
     "additional_evidence_urls": [
@@ -37783,7 +37783,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 93ea77cd. The README says ReStreet is a Windows PC version made by recompiling the Xbox 360 game, with a one-file installer, a launcher, and free online play on community servers in Europe and South America. Windows 10 or 11 is the stated host.",
-      "The user needs their own Xbox 360 copy. The repository does not include the game. Build steps are in docs/BUILDING.md, and known limits are in docs/STATUS.md. This review did not install a release or play online.",
+      "The user needs their own Xbox 360 copy. The repository does not include the game. Build steps are in docs/BUILDING.md, and known limits are in docs/STATUS.md.",
       "The pinned tree includes an MIT LICENSE for the project. That does not license the Xbox 360 game, its assets, or the community servers' terms."
     ],
     "additional_evidence_urls": [
@@ -37810,7 +37810,7 @@
     "requirements": [
       "Reviewed at e0ddc60b. The README says ScummVM plays graphic point-and-click adventures, text adventures and RPGs when the user already has the data files, replacing the executables shipped with those games.",
       "The name comes from LucasArts SCUMM. The README points to a wiki category for the full supported-game list and names Broken Sword, Myst and Blade Runner among later additions. Support for a title is not support for every edition or feature.",
-      "GPL-3.0, with COPYING in the tree. Game data remains under its own rights. This collection did not run a game."
+      "GPL-3.0, with COPYING in the tree. Game data remains under its own rights."
     ],
     "additional_evidence_urls": [
       "https://github.com/scummvm/scummvm/blob/e0ddc60bfabb1efdf1e135006c8914ca59d0596c/COPYING"
@@ -37835,7 +37835,7 @@
       "Reviewed at commit cff38422. The README describes an in-progress matching decompilation: the progress percentage is the share of compiled code for which C has been written that compiles identically to the original assembly. Reaching 100% would mean every function matches; the reviewed README does not claim that point has been reached.",
       "The same README says this repository will not produce a port. The codebase is described as not port-ready because documentation is missing and the layout is still being reorganized. A matching decompilation is not a native Windows, Linux, or macOS game.",
       "The README says no AI-generated code has knowingly been added to the decompilation, and that throwaway helper scripts are the only AI use it acknowledges. Forks that use AI for ports are outside this entry.",
-      "The pinned tree contains a LICENSE file. GitHub did not assign an SPDX identifier, and this review did not restate license terms from that file. Original game discs and assets remain the user's responsibility. This collection did not build the project."
+      "The pinned tree contains a LICENSE file. Original game discs and assets remain the user's responsibility."
     ],
     "additional_evidence_urls": [
       "https://github.com/shdecompilations/silent-hill-decomp/blob/cff38422fce4037342ca7bba9b691d6d86c8718f/LICENSE",
@@ -37859,7 +37859,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 4ff637bc. The README says the PowerPC executable is translated to C++ and compiled for x86-64, so the game code runs on the CPU rather than in an emulator. ReXGlue, derived from Xenia, supplies the Xbox 360 kernel, audio, input and graphics. Linux uses Vulkan. Windows uses Vulkan, DirectX 12, or experimental DirectX 11.",
-      "No game content is included. Releases are published for users who have their own Xbox 360 copy. This collection did not build or play a release.",
+      "No game content is included. Releases are published for users who have their own Xbox 360 copy.",
       "GPL-3.0 for the project. The Xbox 360 game is not included in that license."
     ],
     "additional_evidence_urls": [
