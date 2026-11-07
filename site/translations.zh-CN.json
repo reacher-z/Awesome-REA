@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "femto8": {
+    "name": "femto8：PICO-8 幻想主机的重实现",
+    "requirements": [
+      "桌面构建需要 SDL2 开发文件和 pkg-config，然后执行 make。README 给出了 Debian/Ubuntu、Fedora、Homebrew 和 MSYS2 的软件包名。",
+      "GitHub 报告许可证为 MIT。"
+    ]
   }
 }
