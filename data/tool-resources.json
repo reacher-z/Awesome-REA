@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dbz-budokai-3-hd-recomp",
+    "name": "DBZ Budokai 3 HD Collection",
+    "url": "https://github.com/novapowers0/DBZ-Budokai-3-HD-Collection",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a native port of the Xbox 360 game Dragon Ball Z: Budokai 3 HD Collection, built with the ReXGlue SDK. The PowerPC code is statically recompiled. The reviewed v1.5.6 Windows release is DBZ-Budokai-3-HD-Collection-v1.5.6.zip. dbz3.exe accepts the original ISO, or default.xex with the US and EU data archives. Linux builds use Vulkan and SDL3 and start with ./dbz3. baserom.md lists sizes and checksums. Generated code is produced locally and is not uploaded.",
+    "description_zh": "这是 Xbox 360 游戏《龙珠Z：武道会 3 HD 合集》的原生移植，用 ReXGlue SDK 构建。PowerPC 代码经过静态重编译。审阅的 v1.5.6 Windows 发行包是 DBZ-Budokai-3-HD-Collection-v1.5.6.zip。dbz3.exe 接受原版 ISO，或 default.xex 加上美版和欧版数据归档。Linux 构建使用 Vulkan 和 SDL3，用 ./dbz3 启动。baserom.md 列出大小和校验值。生成的代码在本地产生，不会上传。",
+    "requirements": [
+      "The original ISO, or default.xex plus the regional data archives. Windows or Linux.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/novapowers0/DBZ-Budokai-3-HD-Collection/blob/ef22c34cd9351820e278ba94af91a6f3607f9e45/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
