@@ -36528,5 +36528,31 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "foxdec",
+    "name": "FoxDec",
+    "url": "https://github.com/ssrg-vt/FoxDec",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "FoxDec is a research decompiler for formally checked lifting of x86-64 binaries to recompilable NASM. The current version uses NASM as its intermediate representation, and an earlier version lifted C. The README limits inputs to sequential C binaries that follow the System V AMD64 ABI, and the quick start runs through Docker.",
+    "description_zh": "FoxDec 是一个研究性反编译器，把 x86-64 二进制形式化地提升为可重新汇编的 NASM。当前版本以 NASM 作为中间表示，较早版本则提升为 C。README 将输入限制为遵循 System V AMD64 ABI 的顺序 C 二进制，快速开始通过 Docker 运行。",
+    "evidence_url": "https://github.com/ssrg-vt/FoxDec/blob/d9206efe59a94138924d45c3d69d7c7afa1eb4ac/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "Inputs must be x86-64 ELF binaries compiled from C under the System V AMD64 ABI. The README excludes C++ and concurrent code.",
+      "The published quick start downloads a FoxDec zip and uses Docker. Building without Docker is documented for developers in foxdec/docs/build.md. Recompiling the NASM output uses nasm and gcc.",
+      "GitHub reports the license as Apache-2.0."
+    ],
+    "requirement_facets": [
+      "limits",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]

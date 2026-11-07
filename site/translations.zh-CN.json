@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "foxdec": {
+    "name": "FoxDec（x86-64 形式化反编译）",
+    "requirements": [
+      "输入必须是按 System V AMD64 ABI 从 C 编译出的 x86-64 ELF 二进制。README 排除 C++ 和并发代码。",
+      "发布的快速开始会下载一个 FoxDec 压缩包并用 Docker 运行。不使用 Docker 的构建写在 foxdec/docs/build.md，供开发者使用。把生成的 NASM 重新编译需要 nasm 和 gcc。",
+      "GitHub 报告许可证为 Apache-2.0。"
+    ]
   }
 }
