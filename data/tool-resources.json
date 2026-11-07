@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "oogie-recomp",
+    "name": "Oogie's Revenge Recomp: static recompilation of the Xbox game",
+    "url": "https://github.com/josiahg2502-glitch/OogiesRevengeRecompiled",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "Oogie's Revenge Recomp is a native PC port of Tim Burton's The Nightmare Before Christmas: Oogie's Revenge for the Xbox USA release, title ID 42560004. It statically recompiles the game's x86 code to C++ with xboxrecomp and replaces Direct3D 8 with a Direct3D 11 renderer. The README says the recompiled executable runs its game logic at 60 fps, with the intro, menus, NEW GAME, and the first level rendering at 4K.",
+    "description_zh": "Oogie's Revenge Recomp 是 Xbox 美版、标题 ID 42560004 的《圣诞夜惊魂：奥吉的复仇》原生 PC 移植。它用 xboxrecomp 把游戏的 x86 代码静态重编译为 C++，并用 Direct3D 11 渲染器替换 Direct3D 8。README 写明重编译后的可执行文件以 60 fps 运行游戏逻辑，片头、菜单、新游戏和第一关能以 4K 渲染。",
+    "evidence_url": "https://github.com/josiahg2502-glitch/OogiesRevengeRecompiled/blob/3e74015d75dafe7d0dbb7f0a99b8e0ea08674745/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The user's own USA disc image. The README says no game data is included.",
+      "Building on Windows 10 or 11 x64 needs Python 3. The build script is tools/build-oogie.ps1, and it downloads a pinned toolchain into toolchain\\.",
+      "GitHub reports the license as GPL-3.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
