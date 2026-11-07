@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tube-dos",
+    "name": "Tube",
+    "url": "https://github.com/rep-stosw/tube-game-dos",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This recreates the source of Tube, the 1994 DOS game from Bullfrog, using Hex-Rays and IDA Pro. The result builds as a 32-bit program with SDL2. Windows uses build_windows.bat, Linux uses build_linux.sh, and the web build uses build_web.bat. The README also lists OpenWatcom 1.9 for a DOS DPMI build. It says the original code uses 32-bit pointers, so this tree does not build as 64-bit.",
+    "description_zh": "该项目用 Hex-Rays 和 IDA Pro 重建 Bullfrog 1994 年 DOS 游戏 Tube 的源码。结果用 SDL2 做成 32 位程序。Windows 用 build_windows.bat，Linux 用 build_linux.sh，网页构建用 build_web.bat。README 还列出 OpenWatcom 1.9 用于 DOS DPMI 构建。它写明原始代码使用 32 位指针，所以这棵源码树不能编成 64 位。",
+    "requirements": [
+      "A 32-bit toolchain: MinGW32, 32-bit GCC, Emscripten, or OpenWatcom 1.9. SDL2.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/rep-stosw/tube-game-dos/blob/d2c74cdbb82fedacc528f651ef28820bd186e0d2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
