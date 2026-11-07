@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "overpy",
+    "name": "OverPy",
+    "url": "https://github.com/Zezombye/overpy",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "OverPy is a Python-like language for the Overwatch Workshop. It compiles .opy files to Workshop code and decompiles copied Workshop settings back into OverPy. The VS Code extension adds highlighting, completion, Insert Template, and a Decompile command. pnpm install fetches dependencies, pnpm run dev builds the demo, and pnpm run package writes out/overpy_standalone.js. A browser demo is at zezombye.github.io/overpy/demo. The reviewed README says every in-game language is supported.",
+    "description_zh": "OverPy 是面向《守望先锋》工坊的类 Python 语言。它把 .opy 文件编译成工坊代码，也能把复制出来的工坊设置反编译回 OverPy。VS Code 扩展提供高亮、补全、Insert Template 和 Decompile 命令。pnpm install 获取依赖，pnpm run dev 构建演示，pnpm run package 写出 out/overpy_standalone.js。浏览器演示在 zezombye.github.io/overpy/demo。审阅的 README 写明支持全部游戏内语言。",
+    "requirements": [
+      "VS Code for the extension. pnpm for a source build.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Zezombye/overpy/blob/e349a323eee21860af6e80e89f6d3c513a776818/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
