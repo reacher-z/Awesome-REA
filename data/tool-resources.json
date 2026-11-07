@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "smwdisc",
+    "name": "SMWDisC",
+    "url": "https://github.com/gnaghi/SMWDisC",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "SMWDisC continues the Super Mario World disassembly and commentary. All.log++ combines that commentary with source that the README attributes to MikeyK, adding labels and explanations. The stated goal is a commented disassembly that can be modified and reassembled.",
+    "description_zh": "SMWDisC 延续《超级马里奥世界》的反汇编和注释。All.log++ 把那些注释和 README 归于 MikeyK 的源码合在一起，并加上标签和说明。写明的目标是一份可以修改并重新汇编的带注释反汇编。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/gnaghi/SMWDisC/blob/93cd8c5da23853213ebd0f44df1ef707c2234c34/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
