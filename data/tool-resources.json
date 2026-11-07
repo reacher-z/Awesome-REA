@@ -36543,6 +36543,7 @@
     "description_zh": "将 Silent Hill 3（《寂静岭 3》，NTSC-U v1.02）的 PS2 可执行文件及 40 个覆盖模块反编译为面向 Metrowerks CodeWarrior 的 C，同时反编译 Silent Hill 2 引擎，借助 2001 年原型版的调试符号为共享代码提供原始命名。构建时尚未匹配的函数仍使用生成的汇编，链接结果以 SHA-256 对照仓库中提交的哈希。README 称项目尚处早期；decomp.dev 报告所审提交时 Silent Hill 3 约 9%、Silent Hill 2 约 58% 的函数已匹配。",
     "evidence_url": "https://github.com/dreamingmoths/memory-of-alessa/blob/28cb323c31d94518e475924302e14cd87d6963a8/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "README describes an early-stage matching decompilation of Silent Hill 3 v1.02 NTSC-U (SLUS_206.22) and of the Silent Hill 2 engine; docs/development.md says the SLUS_202.28 target is the 0.10 VW047-U1 prototype, whose symbols give original names. The output is a rebuilt PS2 ELF with overlays, not a PC port. decomp.dev reports for the reviewed commit 718 of 8,002 Silent Hill 3 functions (6.80% of code, no units complete) and 2,530 of 4,371 Silent Hill 2 functions (49.97% of code); these are mutable, project-generated figures.",
