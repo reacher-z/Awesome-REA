@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ttyd-g8mj01-decomp-case": {
+    "name": "纸片马里奥：千年之门反编译",
+    "requirements": [
+      "SDK_BASE_PATH 需指向 2004 年 4 月 20 日 Patch 1 的任天堂 GameCube SDK。MUSYX_BASE_PATH 需指向 MusyX 2.0 Patch 3。MW_BASE_PATH 需指向 GameCube 的 CodeWarrior 2.7。",
+      "安装带 regex 和 colorama 的 Python 3，然后运行 build.py。成功的构建会写出 build/G8MJ01.elf 和 build/G8MJ01.map。",
+      "许可证：MIT。"
+    ]
   }
 }
