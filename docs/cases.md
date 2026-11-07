@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -136,7 +136,7 @@
 - [**Wind Waker HD decompilation: functions verified against the recompiled Wii U game**](https://github.com/ZeldaWWHDDecomp/wwhd) - Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### Static recompilations (48)
+### Static recompilations (49)
 
 - [**Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port**](https://github.com/BanjoRecomp/BanjoRecomp) - Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Banjo-Kazooie into a native port on N64ModernRuntime, rendered by RT64 and extended with mod support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/banjo-recompiled-case/)</sub>
 - [**C2C: hybrid recompilation and hand decompilation of Crash Bandicoot 2**](https://github.com/ughman/c2c) - An early reverse-engineering effort on PlayStation Crash Bandicoot 2 that converts the engine’s MIPS machine code directly into a very large C file and runs it against a modified PCSX-R emulator library for hardware I/O. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -148,6 +148,7 @@
 - [**Dead Rising 2: Case Zero — an Xbox 360 XBLA static recompilation port**](https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp) - Builds a native Windows, Linux, Steam Deck and Apple Silicon port of the XBLA game Dead Rising 2: Case Zero by statically recompiling its Xbox 360 code with patched XenonRecomp and translating its shaders with patched XenosRecomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dead-rising-2-case-zero-recomp-case/)</sub>
 - [**Devil May Cry: an experimental PS2 static recompilation**](https://github.com/Gui-Tora/dmc-recomp) - dmc-recomp translates the PlayStation 2 PAL release of Devil May Cry into native PC code through PS2Recomp and a project runtime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dmc-recomp-case/)</sub>
 - [**DKC1Recomp: static recompilation of Donkey Kong Country**](https://github.com/elliotttate/DKC1Recomp) - Statically recompiles the North American v1.0 SNES release of Donkey Kong Country into native Windows, macOS and iOS applications with a pinned fork of snesrecomp, which translates 65816 code to C and links it against a modelled SNES hardware runtime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dkc1-recomp-case/)</sub>
+- [**DKR-R**](https://github.com/ThatGuyMcd/DKR-R) - DKR-R is a native static recompilation of Diddy Kong Racing. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dkr-r/)</sub>
 - [**DOAXVB Native PC Port: statically recompiling Dead or Alive Xtreme Beach Volleyball**](https://github.com/NoRain211/doaxvb-re) - Lifts the original Xbox executable of Dead or Alive Xtreme Beach Volleyball to C with a fork of xboxrecomp and links it with a hand-written runtime that replaces kernel imports, audio and key Direct3D 8 and DirectSound APIs. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/doaxvb-native-port-case/)</sub>
 - [**Donkey Kong 64: Recompiled — an N64Recomp native port**](https://github.com/Rainchus/Donkey-Kong-64-Recompiled) - Uses N64Recomp to statically recompile the US Nintendo 64 release of Donkey Kong 64 into a native port, with RT64 as the renderer. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dk64-recompiled-case/)</sub>
 - [**Driver Recompiled: a psxrecomp setup host that builds the game locally**](https://github.com/alexbeavs-ps1-ports/driver-recomp) - Packages a psxrecomp static-recompilation project for Driver (PlayStation, USA) as a setup host: releases carry the recompiler, runtime and a recomp-ui launcher, and the player’s machine generates and compiles the game from the user’s own disc image. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/driver-recomp-setup-host-case/)</sub>

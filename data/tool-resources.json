@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dkr-r",
+    "name": "DKR-R",
+    "url": "https://github.com/ThatGuyMcd/DKR-R",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "DKR-R is a native static recompilation of Diddy Kong Racing. The reviewed v1.0.14 release takes a US v1.0 or US Rev A/v1.1 ROM in the Play page. Current packages cover Windows x64, Linux x86_64, Linux ARM64, and Steam Deck. Windows starts DKR-R.exe from the extracted package. Linux and Steam Deck launch the AppImage. Escape, F1, or Back/View opens the overlay. Online lobbies allow four racers and eight spectators. Some legacy xdelta mods install only against a clean US v1.0 ROM.",
+    "description_zh": "DKR-R 是《迪迪刚赛车》的原生静态重编译。审阅的 v1.0.14 发行版在 Play 页面接受美版 v1.0 或美版 Rev A/v1.1 ROM。当前安装包覆盖 Windows x64、Linux x86_64、Linux ARM64 和 Steam Deck。Windows 从解压后的包启动 DKR-R.exe。Linux 和 Steam Deck 启动 AppImage。Escape、F1 或 Back/View 打开覆盖层。在线大厅允许四名车手和八名观众。部分旧的 xdelta 模组只能用干净的美版 v1.0 ROM 安装。",
+    "requirements": [
+      "A US v1.0 or US Rev A/v1.1 ROM. Windows x64, or Linux x86_64 or ARM64, including Steam Deck.",
+      "License: MIT, in LICENSE.md at the reviewed commit."
+    ],
+    "evidence_url": "https://github.com/ThatGuyMcd/DKR-R/blob/fbae505f9fe2dae63d3a351aa3a82da2b4e7dae1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

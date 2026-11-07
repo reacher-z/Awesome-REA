@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "dkr-r": {
+    "name": "DKR-R",
+    "requirements": [
+      "需要美版 v1.0 或美版 Rev A/v1.1 ROM。系统为 Windows x64，或 Linux x86_64、ARM64，包括 Steam Deck。",
+      "许可证：MIT，见审阅提交里的 LICENSE.md。"
+    ]
   }
 }
