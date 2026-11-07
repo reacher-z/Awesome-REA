@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pentagram-u8",
+    "name": "Pentagram",
+    "url": "https://github.com/pentagram-u8/pentagram",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Pentagram reimplements the Ultima 8 engine. The documentation dated 9 November 2011 says the supported games are the English versions of Ultima 8, both before and after the patch. German, French, and Spanish versions are listed as less tested.",
+    "description_zh": "Pentagram 重实现 Ultima 8 的引擎。日期为 2011 年 11 月 9 日的文档写明支持补丁前后的英文版 Ultima 8。德文、法文和西班牙文版本被列为测试较少。",
+    "requirements": [
+      "Build dependencies named in the README are SDL, SDL_ttf, zlib, and libpng. On Linux, run ./bootstrap, ./configure, and make. The Windows section says nothing is written there yet.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/pentagram-u8/pentagram/blob/c87a67c42a9febc016a96e769dea0cf73d0202b1/README",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
