@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "recompone",
+    "name": "RecompOne",
+    "url": "https://github.com/BlackLabelHQ/RecompOne",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "RecompOne statically translates PlayStation 1 MIPS instructions into C# and supplies a runtime for BIOS calls, MMIO, GPU commands, and CD-ROM access. An addiu becomes an addition on a CpuContext register, and a lw becomes Read32 on the memory interface. The recompiler is a .NET project built with the .NET SDK 10. The runtime is a library included by the recompiled game. Port steps are in the project wiki.",
+    "description_zh": "RecompOne 把 PlayStation 1 的 MIPS 指令静态翻译成 C#，并提供处理 BIOS 调用、MMIO、GPU 命令和 CD-ROM 访问的运行时。addiu 变成对 CpuContext 寄存器的加法，lw 变成内存接口上的 Read32。重编译器是一个 .NET 项目，用 .NET SDK 10 构建。运行时是被重编译游戏引用的库。移植步骤在项目 wiki。",
+    "requirements": [
+      "The .NET SDK 10. The game files for a port. The wiki describes how to start a port.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/BlackLabelHQ/RecompOne/blob/a13d8f975900a5380dfd9cad13246ab43f1349fe/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
