@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "parasite-eve-pc-case",
+    "name": "Parasite Eve PC port",
+    "url": "https://github.com/khasinski/parasite-eve-pc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This is a native PC port of Parasite Eve, built from the original game code with the project's PsyZ fork. Releases are an early alpha. The player supplies North American CUE and BIN disc images.",
+    "description_zh": "这是《寄生前夜》的 PC 原生移植，基于原始游戏代码和项目自己的 PsyZ 分支。发布版处于早期 alpha。玩家提供北美版 CUE 和 BIN 光盘镜像。",
+    "requirements": [
+      "Keep each CUE file next to its BIN file. Selecting both discs enables automatic switching.",
+      "Escape opens graphics, controls, audio, disc, and mod settings. An empty portable.txt beside the executable, or the --portable flag, stores settings under userdata.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/khasinski/parasite-eve-pc/blob/4f203ee5710d5c367d5bc251745a40b92b1635b6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

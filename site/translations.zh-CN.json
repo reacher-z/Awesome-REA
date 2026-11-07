@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "parasite-eve-pc-case": {
+    "name": "寄生前夜 PC 移植",
+    "requirements": [
+      "每个 CUE 文件要和对应的 BIN 放在一起。同时选择两张光盘可以自动切换。",
+      "Escape 打开图像、操作、音频、光盘和模组设置。在可执行文件旁放一个空的 portable.txt，或使用 --portable，设置会存到 userdata。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
