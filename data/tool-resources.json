@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gore",
+    "name": "gore",
+    "url": "https://github.com/figurophobia/gore",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "gore recovers a Godot game into a project that opens in the Godot editor. It finds the pack in a standalone PCK or in an executable, recovers an encryption key when the game uses one, and calls GDRE Tools to decompile GDScript and convert textures. Releases cover Linux and macOS on x86_64 and arm64, and Windows on x86_64.",
+    "description_zh": "gore 把 Godot 游戏恢复成可以在 Godot 编辑器里打开的工程。它在独立的 PCK 或可执行文件里找到资源包，在游戏使用加密时恢复密钥，并调用 GDRE Tools 反编译 GDScript、转换贴图。发布包覆盖 x86_64 和 arm64 的 Linux 与 macOS，以及 x86_64 的 Windows。",
+    "requirements": [
+      "Rust 1.74 or newer to build from source with cargo install --path .. gore setup downloads GDRE Tools, and --dir selects the download folder.",
+      "License: MIT. The README says GDRE Tools keeps its own license."
+    ],
+    "evidence_url": "https://github.com/figurophobia/gore/blob/cc48e7f64df7337f41ac93d6cfaf6c8246dbfb1b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
