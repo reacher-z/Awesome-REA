@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "xd-decomp": {
+    "name": "宝可梦XD反编译",
+    "requirements": [
+      "把光盘镜像复制到 orig/GXXE01。接受的格式包括 ISO、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC。然后运行 python configure.py 和 ninja。其他版本用 --version 选择。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

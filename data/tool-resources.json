@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "xd-decomp",
+    "name": "Pokémon XD decompilation",
+    "url": "https://github.com/TeamOrre/xd-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository is a decompilation of Pokémon XD: Gale of Darkness for GameCube. The goal is a matching retail binary. Supported versions are GXXE01, USA revision 0, and NXXJ01, the Japanese demo disc revision 0.",
+    "description_zh": "该仓库是 GameCube 游戏 Pokémon XD: Gale of Darkness 的反编译。目标是匹配零售版二进制。支持的版本是美版第 0 修订 GXXE01，以及日文试玩盘第 0 修订 NXXJ01。",
+    "requirements": [
+      "Copy the disc image to orig/GXXE01. Accepted formats include ISO, RVZ, WIA, WBFS, CISO, NFS, GCZ, and TGC. Then run python configure.py and ninja. Another version is selected with --version.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/TeamOrre/xd-decomp/blob/be1a9c54bdd24f3d2b37681f7c9ef0a76aa4a374/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
