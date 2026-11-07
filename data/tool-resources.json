@@ -36528,5 +36528,31 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "voldorium",
+    "name": "Voldorium: SoulCalibur Dreamcast port",
+    "url": "https://github.com/enrique363/voldorium",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "Voldorium is a native Windows and Linux port of SoulCalibur for the Dreamcast, USA release T-1401N V1.000. The README says the game's SH-4 code is statically recompiled to C and linked with a native runtime, adding 16:9 widescreen, arbitrary resolution, and an online versus mode with GGPO rollback. Only that USA release is supported.",
+    "description_zh": "Voldorium 是 Dreamcast《灵魂能力》美国版 T-1401N V1.000 的 Windows 与 Linux 原生移植。README 写明游戏的 SH-4 代码被静态重编译为 C，并与一个原生运行时链接，加入 16:9 宽屏、任意分辨率，以及带 GGPO 回滚的在线对战。仅支持该美国版。",
+    "evidence_url": "https://github.com/enrique363/voldorium/blob/f02cfc9e448757670695f011362b3ed2c3d8b191/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The README requires a disc dump (.gdi) made from a SoulCalibur disc the player owns. It says the repository contains no game code, game data, or executable, and that only USA T-1401N V1.000 is supported.",
+      "The README says the project's own code is for personal, non-commercial use with a legally owned copy. GGPO stays MIT, SDL2 stays zlib, and the Flycast-derived pieces it describes stay GPL-2.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
