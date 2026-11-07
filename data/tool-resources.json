@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rhgold",
+    "name": "Rhythm Heaven decompilation",
+    "url": "https://github.com/patataofcourse/rhgold",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a work-in-progress decompilation of Rhythm Heaven for the Nintendo DS. The supported version is YLZE01, USA revision 0. The tree contains no game assets or assembly.",
+    "description_zh": "该仓库是任天堂 DS 版《节奏天国》的进行中反编译。支持的版本是美版第 0 修订 YLZE01。仓库里没有游戏资源和汇编。",
+    "requirements": [
+      "Building the ROM needs an existing copy of the game. Install steps are in INSTALL.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/patataofcourse/rhgold/blob/bb9d0fe86926fdce3752262155b6efe51d903f72/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
