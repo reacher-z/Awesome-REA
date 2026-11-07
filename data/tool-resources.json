@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "strace",
+    "name": "STrace",
+    "url": "https://github.com/mandiant/STrace",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "STrace reimplements the Windows DTrace syscall and ETW probes. The C++ driver is the feature-complete path and loads DLL plugins whose exports run on syscall entry and return. A Rust driver hosts a WebAssembly interpreter as a separate experiment. Example plugins log syscalls and monitor file deletes. The build uses Visual Studio 2022, a matching Windows SDK, and the Windows Driver Kit. install/install_as_admin.ps1 registers the driver. The reviewed README says the driver loads only when driver signature enforcement is off for that boot.",
+    "description_zh": "STrace 重实现 Windows DTrace 的系统调用和 ETW 探针。功能完整的路径是 C++ 驱动，它加载 DLL 插件，插件的导出函数在系统调用进入和返回时运行。Rust 驱动把 WebAssembly 解释器作为另一项实验。示例插件记录系统调用并监视文件删除。构建使用 Visual Studio 2022、匹配的 Windows SDK 和 Windows 驱动程序工具包。install/install_as_admin.ps1 注册驱动。审阅的 README 写明，只有当这次启动关闭了驱动程序签名强制时，驱动才会加载。",
+    "requirements": [
+      "Visual Studio 2022, a matching Windows SDK, and the Windows Driver Kit. Run install/install_as_admin.ps1 as administrator.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/mandiant/STrace/blob/39d2cc4a53ed6c45675bda950b1c6fabc825f6c6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
