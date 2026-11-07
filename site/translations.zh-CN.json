@@ -11029,7 +11029,7 @@
     "requirements": [
       "需要 x86_64 的 mingw-w64（32 位构建用 -m32 独立模式）、dlltool 和 Python 3。把 CGRM_EN.DLL 放在 TruVoice/。该 DLL 不在仓库中。只有读取 DLL 的工具才需要 pefile。",
       "README 描述了 C 库、命令行朗读程序和 NVDA 插件，含 32 位与 64 位。它写明 SAPI 4 的 COM 粘合、配置对话框和 waveOut 播放有文档但未移植。",
-      "README 写明 tools/difftest.py 用 59 条语料、335 种配置要求 PCM 相同，覆盖挂钩构建以及独立的 32 位和 64 位移植。--ref 再与已安装引擎的录音比较。本目录未运行或复现。",
+      "README 写明 tools/difftest.py 用 59 条语料、335 种配置要求 PCM 相同，覆盖挂钩构建以及独立的 32 位和 64 位移植。--ref 再与已安装引擎的录音比较。",
       "LICENSE 是 MIT 许可证，版权 2026 RetroBunn。原始 TruVoice DLL 不在仓库中，也不属于该授权。"
     ]
   }

@@ -36543,7 +36543,7 @@
     "requirements": [
       "Needs an x86_64 mingw-w64 toolchain, used in -m32 freestanding mode for the 32-bit build, plus dlltool and Python 3. Put CGRM_EN.DLL in TruVoice/. That DLL is not in the repository. pefile is only required by the tools that read a DLL.",
       "The README describes a C library, a command-line speaker, and an NVDA add-on, at 32 and 64 bits. It says SAPI 4 COM glue, config dialogs, and waveOut playback are documented but not ported.",
-      "The README says tools/difftest.py runs 59 corpus inputs in 335 configurations and demands identical PCM, for the hooked build and the standalone 32-bit and 64-bit ports. --ref compares those builds with a recording from the installed engine. Not run or reproduced for this catalog.",
+      "The README says tools/difftest.py runs 59 corpus inputs in 335 configurations and demands identical PCM, for the hooked build and the standalone 32-bit and 64-bit ports. --ref compares those builds with a recording from the installed engine.",
       "LICENSE is the MIT License, copyright 2026 RetroBunn. The original TruVoice DLL is not in the repository and is not part of that grant."
     ],
     "requirement_facets": [
