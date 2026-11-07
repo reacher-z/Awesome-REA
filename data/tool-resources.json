@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "earthbound-companion",
+    "name": "EarthBound Companion",
+    "url": "https://github.com/rages4calm/earthbound-companion",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "EarthBound Companion is a native EarthBound build. Windows x64 release 1.0.18 is the supported package. Linux, macOS, and Android builds are community previews. It includes a pinned MaternalBound Redux adaptation, widescreen scenery, 1080p to 4K output, MSU music, and Story Shuffle. The game code is compiled C with SDL2.",
+    "description_zh": "EarthBound Companion 是 EarthBound 的原生构建。Windows x64 的 1.0.18 是受支持的发布包。Linux、macOS 和 Android 构建是社区预览。它包含固定版本的 MaternalBound Redux 改编、宽屏画面、1080p 到 4K 输出、MSU 音乐和 Story Shuffle。游戏代码是用 SDL2 编译的 C。",
+    "requirements": [
+      "The player supplies a clean 3 MiB USA ROM, with or without a 512-byte copier header. Other revisions are rejected. Linux needs glibc 2.38 or newer, macOS 12 or newer, and Android 8.0 or newer.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/rages4calm/earthbound-companion/blob/eb08e3bb999ec14376d57eea64f6d2f590f52af2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
