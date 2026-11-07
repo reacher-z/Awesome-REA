@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "crackdown-recompiled-case": {
+    "name": "Crackdown Recompiled：Xbox 360 游戏 Crackdown 的原生 PC 移植",
+    "requirements": [
+      "Windows 10 或 11（64 位），需要支持 DirectX 12 的显卡和 Microsoft Visual C++ 2015–2022 x64 可再发行组件；或者 64 位 x86 Linux，glibc 2.31 或更新版本、Vulkan 驱动，以及 X11 或 Wayland 桌面。Linux 与 Steam Deck 构建被标为实验性。",
+      "需要使用者自备的 Xbox 360 零售版 Crackdown 光盘（2007），且为没有标题更新的原始版本：Title ID 为 4D5307DC，Default.xex 为 14,270,464 字节。启动器接受光盘映像或已提取的文件，并拒绝其他版本。不附带游戏文件。",
+      "从源码构建需要子模块、带 C++ 与 LLVM/Clang 组件的 Visual Studio，并把光盘文件放到 game/assets/Default.xex。tools/codegen.ps1 会下载 ReXGlue SDK 0.10.0。生成该 C++ 之后，再用 tools/package-linux.sh 构建 Linux AppImage。",
+      "项目原创代码为 GPL-2.0-only。ReXGlue 为 BSD 3-Clause，锁定的 TRG Launcher v1.1.0 为 MIT。游戏文件不在项目许可范围内。README 写明 AI 工具协助了分析、开发、调试和文档，并由维护者指导、测试和审阅这些改动。"
+    ]
   }
 }
