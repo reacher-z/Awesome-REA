@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openpayload",
+    "name": "OpenPayload",
+    "url": "https://github.com/CLF78/OpenPayload",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "software",
+    "description_en": "OpenPayload reimplements the Wiimmfi payload for Mario Kart Wii. The hook table follows Wiimmfi payload v96. The README says connecting to the server and creating, joining, and starting a friend room have been tested. It uses the CodeWarrior compiler and the Kamek linker, and it does not publish build steps.",
+    "description_zh": "OpenPayload 重新实现了《马里奥卡丁车 Wii》的 Wiimmfi payload。钩子表对应 Wiimmfi payload v96。README 写明已测试连接服务器，以及创建、加入和开始好友房间。它使用 CodeWarrior 编译器和 Kamek 链接器，并且没有公布构建步骤。",
+    "requirements": [
+      "CodeWarrior and the Kamek linker. The README does not publish compilation steps.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/CLF78/OpenPayload/blob/b4ea1d7a08ab0a6232be1914f6d2908ce7caeb0b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
