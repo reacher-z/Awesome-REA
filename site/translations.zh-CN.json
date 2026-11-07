@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "starlit-party": {
+    "name": "Starlit Party",
+    "requirements": [
+      "需要美版《马里奥派对 6》光盘镜像。配好的 Windows 检出运行 python tools/build_windows_release.py 和 python tools/build.py --configuration release。初次安装是 setup.bat --disc 加上 ISO。",
+      "审阅的 README 没有给这个移植写出许可证。Inter 和 Alegreya SC 为 SIL Open Font License。Material Symbols 为 Apache-2.0。"
+    ]
   }
 }

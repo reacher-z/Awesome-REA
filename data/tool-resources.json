@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "starlit-party",
+    "name": "Starlit Party",
+    "url": "https://github.com/iirg4x/mp6-native-port",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Starlit Party is a native Windows, Android, and browser port of Mario Party 6, USA, built on recovered game code, Aurora, SDL3, and Dawn/WebGPU. Release 0.5.0 runs all six Party Mode boards, Solo Mode, Mini-Game Mode, Mic Mode, the Star Bank, and the opening, ending, and credits. 49 of 81 minigames are playable. The Windows program is build\\release\\mp6native.exe. Rendering can be uncapped while game logic stays at 60 Hz.",
+    "description_zh": "Starlit Party 是美版《马里奥派对 6》的 Windows、Android 和浏览器原生移植，基于恢复出的游戏代码、Aurora、SDL3 和 Dawn/WebGPU。0.5.0 能运行全部六个派对模式棋盘、单人模式、小游戏模式、麦克风模式、星星银行，以及开场、结局和制作人员。81 个小游戏中的 49 个可以玩。Windows 程序是 build\\release\\mp6native.exe。渲染可以不封顶，游戏逻辑保持 60 Hz。",
+    "requirements": [
+      "A USA Mario Party 6 disc image. A configured Windows checkout runs python tools/build_windows_release.py and python tools/build.py --configuration release. First setup is setup.bat --disc with the ISO.",
+      "The reviewed README does not name a license for this port. Inter and Alegreya SC are SIL Open Font License. Material Symbols are Apache-2.0."
+    ],
+    "evidence_url": "https://github.com/iirg4x/mp6-native-port/blob/d438e67ca9b17366ad7bf957d01bbcdab9dafb42/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
