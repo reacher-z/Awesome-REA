@@ -36544,6 +36544,7 @@
     "description_zh": "Karol Mazurek 的 Snake & Apple 系列文章的代码仓库，内容是 macOS 内部机制与安全研究。各章涵盖 Mach-O、代码签名、二进制加固检查、dylib 与 dyld、AMFI、防病毒组件、App Sandbox 与 SIP、TCC 和 XNU 内核，另有应用包相关主题，README 链接了每篇文章及其后续文章。系列的核心工具 CrimsonUroboros 基于 LIEF 用 Python 编写，随章节逐步扩充，并按上述主题分组提供选项；另有一些小脚本用于解析信任缓存、代码签名、沙盒配置文件和 TCC 数据库。",
     "evidence_url": "https://github.com/Karmaz95/Snake_Apple/blob/ef5aca06a00c4627de16ce8983b17a897a7ce138/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed main commit dates from 2026-10-04, with no releases. The articles are hosted on Medium, Patreon and the AFINE blog, plus one Phrack article; entries marked with an asterisk are reserved for paying Patreon supporters, and the README leaves its Apple Intelligence chapter unfinished.",
