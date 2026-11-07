@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -66,6 +66,7 @@
 - [**Mario Party 4: matching GameCube decompilation of the USA releases**](https://github.com/mariopartyrd/marioparty4) - Reconstructs Mario Party 4’s GameCube main executable and REL modules as C source that rebuilds both USA releases. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mario-party-4-decomp-case/)</sub>
 - [**MediEvil decompilation: an early checksum-gated PlayStation project**](https://github.com/MediEvilDecompilation/medievil-decomp) - Decompiles the US PlayStation release of MediEvil toward C source that rebuilds its main executable, game executable and 26 overlays. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/medievil-decomp-case/)</sub>
 - [**Metroid Prime: the PrimeDecomp matching GameCube decompilation**](https://github.com/PrimeDecomp/prime) - Reconstructs C++ source for Metroid Prime’s GameCube executable and its NES-emulator module so that CodeWarrior builds match the originals, across the USA, Korean, PAL and Japanese releases, with early configurations for demo discs and three Wii releases. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/primedecomp-metroid-prime-decomp-case/)</sub>
+- [**Mike Tyson's Punch-Out disassembly**](https://github.com/nmikstas/mike-tysons-punch-out-disassembly) - This repository disassembles the NES game Mike Tyson's Punch-Out. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/punch-out-disasm/)</sub>
 - [**MinecraftLCE: an early-stage Minecraft: Nintendo Switch Edition decompilation**](https://github.com/GRAnimated/MinecraftLCE) - Decompiles Minecraft: Nintendo Switch Edition v1.0.17, a Legacy Console Edition release, into C++ that is compared function by function with the original executable using a patched Clang 4.0.1 and the open-ead Switch decompilation tools. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/minecraft-lce-switch-decomp-case/)</sub>
 - [**Ocarina of Time: decompilation with MD5-checked ROM builds for 16 versions**](https://github.com/zeldaret/oot) - Recreates a C source base for Ocarina of Time that rebuilds 16 Nintendo 64, GameCube and iQue Player ROM versions, using information from the game and static and dynamic analysis. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ocarina-of-time-decomp-case/)</sub>
 - [**Paper Mario: matching Nintendo 64 decompilation for four releases**](https://github.com/pmret/papermario) - Reconstructs Paper Mario’s Nintendo 64 code as C source that rebuilds the US, Japanese, PAL and iQue ROMs. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/paper-mario-matching-decomp-case/)</sub>

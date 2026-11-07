@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "punch-out-disasm",
+    "name": "Mike Tyson's Punch-Out disassembly",
+    "url": "https://github.com/nmikstas/mike-tysons-punch-out-disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository disassembles the NES game Mike Tyson's Punch-Out. Source is assembled with the included Ophis binary. The build script checksums the assembled bank images against the original bank images, and the README says those outputs should be identical.",
+    "description_zh": "该仓库反汇编 NES 游戏 Mike Tyson's Punch-Out。源码用附带的 Ophis 二进制汇编。构建脚本把汇编出的存储体镜像与原来的存储体镜像做校验，README 写明输出应当一致。",
+    "requirements": [
+      "Run build_script from Git bash. Helper programs in helper_programs are JavaScript and run with Node.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/nmikstas/mike-tysons-punch-out-disassembly/blob/60b2fa0e61d57b10b5fadc04be96241d25755d25/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
