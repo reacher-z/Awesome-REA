@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "opennitemare3d",
+    "name": "OpenNitemare3D",
+    "url": "https://github.com/BBQGiraffe/OpenNitemare3D",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenNitemare3D is a C# reimplementation of the 1994 first-person game Nitemare 3D. It loads original bitmaps and maps, plays MIDI, and plays sound effects from the Windows version. The README says the active development branch is C-Rewrite.",
+    "description_zh": "OpenNitemare3D 是 1994 年第一人称游戏 Nitemare 3D 的 C# 重实现。它载入原来的位图和地图，播放 MIDI，并播放 Windows 版的音效。README 写明当前开发分支是 C-Rewrite。",
+    "requirements": [
+      "The documented C# build uses the .NET SDK and SFML. Place the Windows SND.DAT, plus UIF.DAT, MAP.1, IMG.1, and GAME.PAL, in bin/Debug/net5.0/data.",
+      "Most menu options crash. New game and the sound editor are the options that do something.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/BBQGiraffe/OpenNitemare3D/blob/178dcf4b1075462b01de9321870a3c2665b855f3/README.MD",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

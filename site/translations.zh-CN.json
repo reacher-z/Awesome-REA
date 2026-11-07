@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "opennitemare3d": {
+    "name": "OpenNitemare3D",
+    "requirements": [
+      "文档中的 C# 构建使用 .NET SDK 和 SFML。把 Windows 版 SND.DAT，以及 UIF.DAT、MAP.1、IMG.1 和 GAME.PAL，放进 bin/Debug/net5.0/data。",
+      "大多数菜单选项会崩溃。新游戏和声音编辑器是会起作用的选项。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
