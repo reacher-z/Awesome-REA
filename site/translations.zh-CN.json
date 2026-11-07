@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "skate1-recompiled": {
+    "name": "skate 重编译",
+    "requirements": [
+      "需要 Windows、Visual Studio 2022 生成工具、LLVM/Clang 18 或更新版本、CMake 3.25 或更新版本、Ninja 和 Python 3。把美版 ISO 解压到 game/，应用 patches/rexglue-sdk.patch，然后配置 win-amd64-relwithdebinfo 预设。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

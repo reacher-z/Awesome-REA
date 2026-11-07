@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "skate1-recompiled",
+    "name": "skate recompilation",
+    "url": "https://github.com/cookingwithsimon/Skate1Recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles skate (2007) for the Xbox 360 into a Windows program with a ReXGlue fork. The README says the game boots and that the intro videos, menus, audio, career start, and Freeskate work. A portable.txt file beside the executable keeps saves in a userdata folder.",
+    "description_zh": "该项目用一个 ReXGlue 分支把 2007 年 Xbox 360 版 skate 重编译成 Windows 程序。README 写明游戏可以启动，开场影片、菜单、音频、生涯开始和自由滑行可用。可执行文件旁边的 portable.txt 会把存档放在 userdata 文件夹。",
+    "requirements": [
+      "Windows, Visual Studio 2022 Build Tools, LLVM/Clang 18 or newer, CMake 3.25 or newer, Ninja, and Python 3. Extract a USA ISO into game/, apply patches/rexglue-sdk.patch, then configure the win-amd64-relwithdebinfo preset.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/cookingwithsimon/Skate1Recompiled/blob/152f7eb0e067ce7b7357f86fba36865445fb9f4d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
