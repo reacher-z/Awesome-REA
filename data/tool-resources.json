@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dw2003-recomp",
+    "name": "Digimon World 2003 decompilation",
+    "url": "https://github.com/gascarcella/dw2003recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This decompiles Digimon World 2003 for the PlayStation, Europe SLES-03936, the PAL release of Digimon World 3. The C rebuilds a byte-identical executable and overlays, and the same C runs as a native PC program. The supported image is a one-track MODE2/2352 BIN/CUE of 692,146,560 bytes, SHA-1 457cb233349ba841e03b33d8060f8fbcadd45cb3. Linux x86-64 releases are dw2003-<version>-x86_64.AppImage and need glibc 2.39 or newer.",
+    "description_zh": "该项目反编译 PlayStation 欧版《数码宝贝世界 2003》SLES-03936，也就是《数码宝贝世界 3》的 PAL 版。这些 C 代码重建逐字节一致的可执行文件和覆盖层，同一套 C 也能作为原生 PC 程序运行。支持的镜像是单轨 MODE2/2352 的 BIN/CUE，692,146,560 字节，SHA-1 457cb233349ba841e03b33d8060f8fbcadd45cb3。Linux x86-64 发布包是 dw2003-<version>-x86_64.AppImage，需要 glibc 2.39 或更新版本。",
+    "requirements": [
+      "A Europe BIN/CUE with that SHA-1. chmod +x the AppImage and run it. A source build is documented separately from the release.",
+      "License: MIT for this project's own source, tools, tests, and documentation. Borrowed pieces are listed in docs/THIRD_PARTY.md."
+    ],
+    "evidence_url": "https://github.com/gascarcella/dw2003recomp/blob/841521ab2071096038316b93b8f778255b85730a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
