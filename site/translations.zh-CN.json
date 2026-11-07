@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "dqiv-recompiled-case": {
+    "name": "勇者斗恶龙 IV PC",
+    "requirements": [
+      "把欧洲版《勇者斗恶龙 IV》DS ROM 放到 ROMandOBBfileHere，游戏代码为 YIVP。Android 的 .obb 文件是可选的，用来提供高清音乐和音效。",
+      "构建写出 dist/DragonQuestIV.exe。存档放在该可执行文件旁的 saves 文件夹。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
