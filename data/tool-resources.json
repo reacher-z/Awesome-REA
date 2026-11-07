@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "jd-gui",
+    "name": "JD-GUI",
+    "url": "https://github.com/java-decompiler/jd-gui",
+    "category": "jvm",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Standalone graphical utility that displays Java source from CLASS files. The README says a reader can browse the reconstructed source, methods, and fields.",
+    "description_zh": "独立的图形工具，用来显示 CLASS 文件中的 Java 源码。README 写明可以浏览重建后的源码、方法和字段。",
+    "evidence_url": "https://github.com/java-decompiler/jd-gui/blob/b3c1ced04e571fc316648d114ff0c8121e051d8f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Clone the repository and build with ./gradlew build. The README says the build writes jars and a Windows zip under build/.",
+      "Released under the GNU GPL v3."
+    ]
   }
 ]
