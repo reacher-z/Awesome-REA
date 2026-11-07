@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -136,7 +136,7 @@
 - [**《风之杖 HD》反编译：与重编译的 Wii U 版逐函数比对验证**](https://github.com/ZeldaWWHDDecomp/wwhd) - 将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### 静态重编译 (48)
+### 静态重编译 (49)
 
 - [**Banjo: Recompiled：基于 N64Recomp 的《Banjo-Kazooie》原生移植**](https://github.com/BanjoRecomp/BanjoRecomp) - 使用 N64Recomp 将美版 1.0 Nintendo 64《Banjo-Kazooie》静态重编译为基于 N64ModernRuntime 的原生移植版，由 RT64 渲染并加入模组支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/banjo-recompiled-case/)</sub>
 - [**C2C：《古惑狼 2》的混合重编译与手工反编译**](https://github.com/ughman/c2c) - 一个早期的 PlayStation《古惑狼 2》逆向工程项目：把引擎的 MIPS 机器码直接转换为一个体量巨大的 C 文件，并调用改造后的 PCSX-R 模拟器库处理硬件 I/O。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -147,6 +147,7 @@
 - [**Dead Rising 2: Case West：同系列的 Xbox 360 XBLA 静态重编译移植**](https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp) - 使用打过补丁的 XenonRecomp 静态重编译 Xbox 360 代码，并用打过补丁的 XenosRecomp 转换着色器，为 XBLA 尾声篇 Dead Rising 2: Case West 构建可在 Windows、Linux、Steam Deck 和 Apple Silicon Mac 上运行的原生移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dead-rising-2-case-west-recomp-case/)</sub>
 - [**Dead Rising 2: Case Zero：Xbox 360 XBLA 游戏的静态重编译移植**](https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp) - 使用打过补丁的 XenonRecomp 静态重编译 Xbox 360 代码，并用打过补丁的 XenosRecomp 转换着色器，为 XBLA 游戏 Dead Rising 2: Case Zero 构建可在 Windows、Linux、Steam Deck 和 Apple Silicon Mac 上运行的原生移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dead-rising-2-case-zero-recomp-case/)</sub>
 - [**Devil May Cry：实验性的 PS2 静态重编译**](https://github.com/Gui-Tora/dmc-recomp) - dmc-recomp 借助 PS2Recomp 和项目运行时，将 PAL 欧版 PlayStation 2 游戏 Devil May Cry 转换为 PC 原生代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dmc-recomp-case/)</sub>
+- [**乐高次元重编译**](https://github.com/NeverCookFirst/DimensionsRecomp) - Dimensions Recompiled 是 Xbox 360 游戏《乐高次元》的 Windows 原生构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dimensions-recomp/)</sub>
 - [**DKC1Recomp：《大金刚国度》的静态重编译**](https://github.com/elliotttate/DKC1Recomp) - 借助固定版本的 snesrecomp 分支，将 SNES 版《大金刚国度》北美 v1.0 静态重编译为 Windows、macOS 与 iOS 原生程序；该框架把 65816 代码转译为 C，并链接到模拟 SNES 硬件的运行时。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dkc1-recomp-case/)</sub>
 - [**DOAXVB Native PC Port：对《Dead or Alive Xtreme Beach Volleyball》的静态重编译**](https://github.com/NoRain211/doaxvb-re) - 借助 xboxrecomp 的分支将原版 Xbox《Dead or Alive Xtreme Beach Volleyball》可执行文件提升为 C 代码，并与手写运行时链接，由运行时替代内核导入、音频以及关键的 Direct3D 8 和 DirectSound API。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/doaxvb-native-port-case/)</sub>
 - [**Donkey Kong 64: Recompiled：基于 N64Recomp 的原生移植**](https://github.com/Rainchus/Donkey-Kong-64-Recompiled) - 使用 N64Recomp 将美版 Nintendo 64《大金刚 64》静态重编译为原生移植版，并以 RT64 作为渲染器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dk64-recompiled-case/)</sub>

@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "dimensions-recomp": {
+    "name": "乐高次元重编译",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11、带 SSE4.2 的 CPU，以及功能级别 11_0 的 Direct3D 12 显卡。需要已解压的原版 Xbox 360 光盘文件夹和 Title Update 23。",
+      "许可证：这个仓库里的代码为 MIT。"
+    ]
   }
 }
