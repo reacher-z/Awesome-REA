@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pyasmtool",
+    "name": "pyasmtools",
+    "url": "https://github.com/MoserMichael/pyasmtool",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "pyasmtools has a Python bytecode disassembler and a tracer that prints each executed source line with the variables loaded and stored. The reviewed README says some of it is specific to CPython. Install with pip3 install pyasmtools. The bytecode notes are in bytecode_disasm.md and the tracer notes are in tracer.md.",
+    "description_zh": "pyasmtools 包含一个 Python 字节码反汇编器，以及一个跟踪器，它打印每一行执行的源码，以及加载和存储的变量。审阅的 README 写明其中一部分只适用于 CPython。用 pip3 install pyasmtools 安装。字节码说明在 bytecode_disasm.md，跟踪器说明在 tracer.md。",
+    "requirements": [
+      "CPython. pip3 install pyasmtools.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/MoserMichael/pyasmtool/blob/f418cff0b56b16aa18cc7d6d376ab72f4141381f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
