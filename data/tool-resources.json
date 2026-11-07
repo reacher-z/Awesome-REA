@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "black-xbe-recomp",
+    "name": "Black - XBE Recomp: a native PC port of the original Xbox game Black",
+    "url": "https://github.com/TGP482/BLACK-XBERecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Native PC port of the original Xbox version of Black, made with the Xbox XBE Recomp tool. The README says the first launch compiles the game code for the PC, and lists display, resolution, and frame-rate options beyond the original 640x480 and 30 FPS limits.",
+    "description_zh": "初代 Xbox 版 Black 的原生 PC 移植，使用 Xbox XBE Recomp 工具制作。README 写明首次启动会把游戏代码编译到 PC，并列出超出原作 640x480 和 30 FPS 限制的显示、分辨率和帧率选项。",
+    "evidence_url": "https://github.com/TGP482/BLACK-XBERecomp/blob/10b8464fa06ebd6e54e814b250e9e3554a48ef1c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No game assets are included. The README says to place a legally acquired USA or Europe ISO, or the extracted files, in the assets folder.",
+      "The reviewed page states no license."
+    ]
   }
 ]
