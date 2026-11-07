@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "yakuza-dead-souls-recomp",
+    "name": "Yakuza: Dead Souls Recompiled",
+    "url": "https://github.com/canersaka/Yakuza-Dead-Souls-Recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Yakuza: Dead Souls Recompiled translates the PlayStation 3 game's PowerPC PPU code and Cell SPU programs into a native Windows executable. It boots without PS3 firmware, plays the intro movies, reaches the title screen, and enters gameplay. Indoor scenes such as the gun tutorial were reported at the game's 30 frame cap. The crowded outdoor opening was reported at about 20 frames per second.",
+    "description_zh": "Yakuza: Dead Souls Recompiled 把这款 PlayStation 3 游戏的 PowerPC PPU 代码和 Cell SPU 程序翻译成 Windows 原生可执行文件。它不需要 PS3 固件就能启动，可以播放片头影片、到达标题画面并进入游戏。室内场景，例如枪械教程，被报告达到游戏的每秒 30 帧上限。拥挤的室外开场被报告大约每秒 20 帧。",
+    "requirements": [
+      "Windows 10 or 11, x64, and a Direct3D 12 GPU. Build with Visual Studio 2022 or newer, CMake 3.21 or newer, Ninja, and Python 3.10 or newer. The tested disc is the North American BLUS30826 version 1.00.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/canersaka/Yakuza-Dead-Souls-Recompiled/blob/95135736b2e20ecf19e67457bbabc2926c3b355f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

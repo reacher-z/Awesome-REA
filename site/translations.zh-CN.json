@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "yakuza-dead-souls-recomp": {
+    "name": "Yakuza: Dead Souls 重编译",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11，以及支持 Direct3D 12 的显卡。用 Visual Studio 2022 或更新版本、CMake 3.21 或更新版本、Ninja 和 Python 3.10 或更新版本构建。测试过的光盘是北美版 BLUS30826 1.00。",
+      "许可证：MIT。"
+    ]
   }
 }
