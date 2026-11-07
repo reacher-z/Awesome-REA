@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "f3dex2-disasm",
+    "name": "F3DEX2",
+    "url": "https://github.com/Mr-Wiseguy/f3dex2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "firmware"
+    ],
+    "class": "hardware",
+    "description_en": "F3DEX2 is a set of matching disassemblies of the Nintendo 64 F3DEX2 and F3DZEX2 RSP microcode family. Matched examples include F3DEX2 2.04 through 2.08H and F3DZEX2 2.06H, 2.08I, and 2.08J, in fifo, xbus, and No Nearclipping variants.",
+    "description_zh": "F3DEX2 是任天堂 64 的 F3DEX2 和 F3DZEX2 RSP 微码家族的匹配反汇编。已匹配的例子包括 F3DEX2 2.04 到 2.08H，以及 F3DZEX2 2.06H、2.08I 和 2.08J，含 fifo、xbus 和无近裁剪变体。",
+    "requirements": [
+      "Further version and flag combinations are expected to match after they are added to ucodes_database.mk.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Mr-Wiseguy/f3dex2/blob/bd31393fd02b89e024b043c8c50c9a5a10143fb6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
