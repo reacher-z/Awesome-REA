@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "akmw",
+    "name": "Alex Kidd in Miracle World disassembly",
+    "url": "https://github.com/lhsazevedo/akmw",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles Alex Kidd in Miracle World for the Sega Master System and checks both built ROMs against the originals. USA/Europe revision 1 has SHA-1 6d052e0cca3f2712434efd856f733c03011be41c and CRC32 aed9aac4. USA/Europe revision 0 has SHA-1 8cecf8ed0f765163b2657be1b0a3ce2a9cb767f4 and CRC32 17a40e29. Commercial use is prohibited.",
+    "description_zh": "该项目反汇编世嘉 Master System 游戏 Alex Kidd in Miracle World，并对照原版检查两个构建出的 ROM。美欧修订 1 的 SHA-1 是 6d052e0cca3f2712434efd856f733c03011be41c，CRC32 是 aed9aac4。美欧修订 0 的 SHA-1 是 8cecf8ed0f765163b2657be1b0a3ce2a9cb767f4，CRC32 是 17a40e29。禁止商业使用。",
+    "requirements": [
+      "WLA-DX assembler wla-z80 10.1 and linker wla-link 10.1. Linux runs ./compile.sh. Windows runs ./compile.bat.",
+      "The reviewed README does not name a license. It prohibits commercial use."
+    ],
+    "evidence_url": "https://github.com/lhsazevedo/akmw/blob/7720fae8d6e9e9b465267a514d73fdb086e63f5e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
