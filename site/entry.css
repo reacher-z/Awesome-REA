@@ -28,6 +28,11 @@
 .entry-section p{margin:12px 0}
 .entry-requirements{margin:0;padding-left:24px}
 .entry-requirements li+li{margin-top:12px}
+.entry-platforms{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px 28px;margin-top:6px}
+.entry-platform h3{margin:0 0 6px;font-size:16px;line-height:1.5}
+.entry-platform ul{margin:0;padding-left:20px;color:var(--body);font-size:15px;line-height:1.75;overflow-wrap:anywhere}
+.entry-platform code{font:500 13px/1.6 var(--mono)}
+.entry-platform-note{font-size:15px;color:var(--muted)}
 .entry-facts{display:grid;grid-template-columns:175px minmax(0,1fr);gap:10px 20px;font-size:15px;line-height:1.8;margin:0;max-width:76ch}
 .entry-facts dt{font-weight:650;color:var(--ink)}
 .entry-facts dd{margin:0;color:var(--body);overflow-wrap:anywhere}

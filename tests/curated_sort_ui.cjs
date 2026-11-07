@@ -138,7 +138,7 @@ const tests = {
       const data = exports.at(-1);
       assert.deepEqual(data.resources.map(record => record.id), ids(app.api.filtered()), `export follows ${order} order`);
       assert.equal(data.resources.length, 10, 'every match');
-      assert.deepEqual(data.export.filters, {q: '', target: 'app', kind: 'all', category: 'all', class: 'all', group: 'all', order});
+      assert.deepEqual(data.export.filters, {q: '', target: 'app', kind: 'all', category: 'all', class: 'all', platform: 'all', group: 'all', order});
       assert.equal(data.export.order, 'displayed');
     }
     assert.notDeepEqual(exports[0].resources.map(record => record.id), exports[2].resources.map(record => record.id));
