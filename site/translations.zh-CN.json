@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ida-bosch-me7x": {
+    "name": "BoschMe7x",
+    "requirements": [
+      "以 c166 处理器加载二进制，RAM 从 0x0e0000 起、大小 0x0400，ROM 从 0x800000 起。设备选择 C167CR_SR。把 .plw 文件放进 IDA 插件目录。",
+      "项目用 Visual Studio 2017 编写。许可证：MIT。"
+    ]
   }
 }
