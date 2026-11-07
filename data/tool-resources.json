@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "xcx-recomp",
+    "name": "XCX Recomp",
+    "url": "https://github.com/jmars125/xcx-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "XCX Recomp statically recompiles Xenoblade Chronicles X: Definitive Edition for Nintendo Switch into a Windows x86-64 executable with a Vulkan renderer. It is a fork of TotK Recomp. The reviewed page says a new game, cutscenes, and gameplay run at 60 FPS by default, with a settings range of 30 to 360. XCX-Setup.exe builds the game from the owner's base-game files, the 2.0.0 update, and a key file. Add-on content is optional. Play starts xcx.exe. F1 opens settings and F10 opens the performance overlay.",
+    "description_zh": "XCX Recomp 把任天堂 Switch 游戏《异度神剑 X 决定版》静态重编译成带 Vulkan 渲染器的 Windows x86-64 可执行文件。它是 TotK Recomp 的分支。审阅页面写明新游戏、过场和游玩默认以 60 帧运行，设置范围是 30 到 360。XCX-Setup.exe 用自己的本体文件、2.0.0 更新和密钥文件构建游戏。附加内容可选。游玩时启动 xcx.exe。F1 打开设置，F10 打开性能覆盖层。",
+    "requirements": [
+      "Windows 10 or later, an x86-64 CPU with AVX2, and a Vulkan 1.3 GPU with VK_EXT_external_memory_host. About 36 GiB free during setup. The owner's base game, 2.0.0 update, and key file.",
+      "License: MIT for this project's own code."
+    ],
+    "evidence_url": "https://github.com/jmars125/xcx-recomp/blob/7b2337a6854b3936dc4f567dbb46add8c1eb6559/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
