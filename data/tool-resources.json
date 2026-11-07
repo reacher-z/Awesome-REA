@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "r2garlic",
+    "name": "r2garlic",
+    "url": "https://github.com/radareorg/r2garlic",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "r2garlic is a radare2 plugin for the Garlic DEX and Dalvik decompiler. pd:G decompiles the method at the current seek, pd:Gc the current class, and pd:Gs writes smali for the current class.",
+    "description_zh": "r2garlic 是 Garlic DEX 和 Dalvik 反编译器的 radare2 插件。pd:G 反编译当前地址的方法，pd:Gc 反编译当前类，pd:Gs 输出当前类的 smali。",
+    "requirements": [
+      "Install with r2pm -Uci r2garlic, or build with make after updating submodules.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/radareorg/r2garlic/blob/125c5fd51627aa47f2077594a4bcaaf004e1ac6a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
