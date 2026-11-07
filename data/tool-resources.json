@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "metalgear-msx2",
+    "name": "Metal Gear MSX2 disassembly",
+    "url": "https://github.com/GuillianSeed/MetalGear",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is an annotated disassembly of Metal Gear for the MSX2, Konami code RC750, from 1987. sjasm MetalGear.asm MetalGear.rom assembles it with Sjasm 0.39 or a compatible assembler. Setting JAPANESE to 1 or 0 in MetalGear.asm selects the Japanese build, CRC32 FAFE1303, or the English build, CRC32 E85C5731. The Japanese build checks the computer ROM.",
+    "description_zh": "这是 1987 年 MSX2 版《合金装备》的带注释反汇编，Konami 代码为 RC750。用 Sjasm 0.39 或兼容汇编器运行 sjasm MetalGear.asm MetalGear.rom。在 MetalGear.asm 里把 JAPANESE 设为 1 或 0，分别选择日文版（CRC32 FAFE1303）或英文版（CRC32 E85C5731）。日文版会检查电脑 ROM。",
+    "requirements": [
+      "Sjasm 0.39 or a compatible assembler.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/GuillianSeed/MetalGear/blob/30d1b940bede10fdabbaf9767ad4f0ad8dd33291/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
