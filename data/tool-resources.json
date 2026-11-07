@@ -36543,6 +36543,7 @@
     "description_zh": "将《The Simpsons Game》（Xbox 360，2007）的 PowerPC 代码静态重编译为 C++，生成 Linux、Steam Deck 和 Windows 上的原生 x86-64 构建。源自 Xenia 的 ReXGlue 运行时提供主机内核、音频、输入和图形层，GPU 模拟正逐步替换为原生渲染。游戏数据只来自玩家自己的 ISO。",
     "evidence_url": "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "README reports Linux and Steam Deck as playable, with the Deck as the main test platform, Windows as playable but less tested, and Android as planned; the game boots, plays its videos, saves, loads and runs its levels. Known issues include scripted sequences that can misbehave above 30 FPS, black videos on some Windows setups, and experimental Direct3D 11 and tessellation paths. The latest release at review was v0.0.6.5.",
