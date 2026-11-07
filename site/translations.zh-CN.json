@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "nfs3-android-case": {
+    "name": "极品飞车 III Android 版",
+    "requirements": [
+      "需要 Android 8.0 或更新版本、ARMv7 或 ARMv8 CPU，以及 OpenGL ES 3.0。",
+      "玩家提供 1998 年零售版数据：ISO 或 BIN/CUE 镜像，或者 FEDATA 和 GAMEDATA 文件夹。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
