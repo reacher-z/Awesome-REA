@@ -39,6 +39,8 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+from media_privacy import public_media_url
+
 ROOT = Path(__file__).resolve().parents[1]
 CACHE_DIR = ROOT / ".cache" / "evidence-scan"
 OUTPUT_PATH = ROOT / "data" / "evidence-classes.json"
@@ -68,8 +70,8 @@ DEMO_IMAGE_EXCLUDES = re.compile(
     r"微信|wechat|weixin|discord|telegram|donate|patreon|ko-?fi|star[- ]history|shields|"
     r"progress|license|\bci\b|downloads?",
     re.IGNORECASE)
-DEMO_IMAGE_HOSTS = ("user-images.githubusercontent.com", "private-user-images.githubusercontent.com",
-                    "cloud.githubusercontent.com", "cdn.discordapp.com", "media.discordapp.net")
+DEMO_IMAGE_HOSTS = ("user-images.githubusercontent.com", "cloud.githubusercontent.com",
+                    "cdn.discordapp.com", "media.discordapp.net")
 MARKDOWN_IMAGE_WITH_ALT = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)")
 HTML_IMAGE_TAG = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
 # Files that only appear when an author ships something to run.
@@ -236,7 +238,7 @@ def github_repo_slug(url: str) -> str | None:
 
 def github_api_fetch(client: HttpClient, slug: str) -> dict:
     """One repo's meta, releases and README from the GitHub REST API."""
-    cached_payload = cached("gh:v3:" + slug)
+    cached_payload = cached("gh:v4:" + slug)
     if cached_payload:
         return cached_payload
     status, body, headers = client.get(f"https://api.github.com/repos/{slug}")
@@ -248,6 +250,10 @@ def github_api_fetch(client: HttpClient, slug: str) -> dict:
         # a rerun retries, and a truly gone repository keeps failing honestly.
         return {"unavailable": True, "fetched_at": now_utc()}
     meta = json.loads(body.decode("utf-8", "replace"))
+    if meta.get("private") or str(meta.get("visibility", "")).lower() == "private":
+        # The token can read repositories the catalog may not publish; leave them
+        # unobserved and uncached so no private metadata or README text is stored.
+        return {"unavailable": True, "fetched_at": now_utc()}
     release_status, release_body, _ = client.get(f"https://api.github.com/repos/{slug}/releases?per_page=100")
     if release_status not in (200, 404):
         # Huge release histories (frida, for one) can 504 on the full page; a
@@ -362,7 +368,7 @@ def github_api_fetch(client: HttpClient, slug: str) -> dict:
         payload["download_links"] = dedupe_strings(download_links)
     payload["linked_docs_bytes"] = fetched_bytes
     payload["download_links"] = payload["download_links"][:8]
-    store_cache("gh:v3:" + slug, payload)
+    store_cache("gh:v4:" + slug, payload)
     return payload
 
 
@@ -607,6 +613,8 @@ def github_signals(meta: dict, record: dict) -> dict:
 def is_demo_image(src: str, alt: str) -> bool:
     """A usable demo image: raster, and not branding, a badge or a chat invite."""
     if not src or DEMO_IMAGE_EXCLUDES.search(src + " " + alt):
+        return False
+    if "://" in src and not public_media_url(src):
         return False
     path = src.lower().split("?", 1)[0]
     if path.endswith(DEMO_IMAGE_EXTENSIONS):

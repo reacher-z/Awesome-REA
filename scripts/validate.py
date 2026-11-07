@@ -1353,6 +1353,42 @@ def validate_evidence_classes(records, errors):
         errors.append('Scan evidence class entry_count does not match its entries')
 
 
+EVIDENCE_FILES = ('data/evidence-classes.json', 'data/evidence-previews.json',
+                  'data/scan-evidence-classes.json', 'data/evidence-class-zero-reviews.json')
+
+
+def validate_evidence_media(errors):
+    """Evidence data and published previews must not carry private repository material."""
+    from media_privacy import public_media_url
+    try:
+        from review_pr import private_json_locations, private_text
+    except ImportError:
+        private_json_locations = private_text = None
+    for relative in EVIDENCE_FILES:
+        path = ROOT / relative
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding='utf-8')
+        try:
+            document = json.loads(text)
+        except ValueError as error:
+            errors.append(f'{relative} could not be read: {error}')
+            continue
+        if private_text is None:
+            continue
+        if private_text(text) or private_json_locations(document):
+            errors.append(f'{relative} contains a credential-like value or personal path; values withheld')
+    previews_path = ROOT / 'data' / 'evidence-previews.json'
+    if not previews_path.is_file():
+        return
+    for entry in json.loads(previews_path.read_text(encoding='utf-8')).get('entries') or []:
+        if not public_media_url(entry.get('image_url') or ''):
+            errors.append(f"Preview image for {entry.get('id')} is not a public media URL")
+        source = entry.get('source_url')
+        if not isinstance(source, str) or not source.startswith(('http://', 'https://')):
+            errors.append(f"Preview source for {entry.get('id')} is not an absolute URL")
+
+
 def main():
     errors = []
     records = [record for path in RESOURCE_FILES for record in read_array(path, errors)]
@@ -1361,6 +1397,7 @@ def main():
     validate_papers(papers, errors, url_check=public_https_error)
     validate_resources(records, errors)
     validate_evidence_classes(records, errors)
+    validate_evidence_media(errors)
     for warning in unknown_field_warnings(records) + evidence_pin_warnings(records):
         print(f'Warning: {warning}', file=sys.stderr)
     validate_requirement_facets(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), errors)

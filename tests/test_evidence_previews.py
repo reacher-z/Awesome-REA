@@ -1,10 +1,16 @@
 """Demo preview URLs cover Class 0/1 entries and stay inside their source review."""
+import base64
 import json
+import sys
 import unittest
 import urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+
+from build_evidence_previews import github_preview, usable_image  # noqa: E402
+from media_privacy import public_media_url  # noqa: E402
 
 
 class EvidencePreviewTests(unittest.TestCase):
@@ -55,6 +61,44 @@ class EvidencePreviewTests(unittest.TestCase):
                     self.assertIn(parts.hostname, {
                         'user-images.githubusercontent.com', 'cloud.githubusercontent.com',
                         'cdn.discordapp.com', 'media.discordapp.net', 'github.com'}, entry['id'])
+
+    def test_preview_urls_are_public(self):
+        for entry in self.document['entries']:
+            self.assertTrue(public_media_url(entry['image_url']),
+                            f"{entry['id']}: a preview must point at public media")
+
+    def test_private_repositories_are_not_previewed(self):
+        for repository in ({'private': True, 'default_branch': 'main'},
+                           {'visibility': 'private', 'default_branch': 'main'}):
+            self.assertIsNone(github_preview(_FakeClient(repository), 'acme/private'))
+        self.assertIsNotNone(github_preview(
+            _FakeClient({'private': False, 'visibility': 'public', 'default_branch': 'main'}), 'acme/public'))
+
+    def test_private_attachment_urls_are_refused(self):
+        base = 'https://github.com/acme/foo'
+        self.assertIsNone(usable_image('https://private-user-images.githubusercontent.com/1/a.png', base))
+        self.assertIsNone(usable_image('https://user-images.githubusercontent.com/1/a.png?jwt=secret', base))
+        self.assertEqual(usable_image('https://user-images.githubusercontent.com/1/a.png', base),
+                         'https://user-images.githubusercontent.com/1/a.png')
+
+    def test_validator_accepts_current_data(self):
+        from validate import validate_evidence_media
+        errors = []
+        validate_evidence_media(errors)
+        self.assertEqual(errors, [])
+
+
+class _FakeClient:
+    """Just enough of classify_evidence_classes.HttpClient for github_preview."""
+
+    def __init__(self, repository):
+        self.repository = repository
+
+    def get(self, url, timeout=30, page=False):
+        if url.endswith('/readme'):
+            content = base64.b64encode(b'![demo](https://example.com/shot.png)').decode()
+            return 200, json.dumps({'content': content}).encode(), {}
+        return 200, json.dumps(self.repository).encode(), {}
 
 
 if __name__ == '__main__':

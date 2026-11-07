@@ -1,9 +1,13 @@
 """Evidence-class data coverage: observed sources carry 1-3, unavailable ones are unknown, and Class 0 needs a manual review."""
 import json
+import sys
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+
+from classify_evidence_classes import github_api_fetch, is_demo_image  # noqa: E402
 SCOPES = ('full', 'partial', 'analysis', 'unknown', 'notes')
 
 
@@ -74,6 +78,27 @@ class EvidenceClassDataTests(unittest.TestCase):
             self.assertTrue(entry['signals'].get('demo'), entry['id'])
             self.assertEqual(entry['basis'], 'manual-review', entry['id'])
             self.assertIn('review', entry, entry['id'])
+
+    def test_private_repository_is_unavailable(self):
+        for repository in ({'private': True}, {'visibility': 'private'}):
+            meta = github_api_fetch(_FakeClient(repository), 'acme/private-fixture')
+            self.assertTrue(meta['unavailable'])
+            self.assertNotIn('readme_text', meta)
+
+    def test_private_media_is_not_demo_evidence(self):
+        self.assertFalse(is_demo_image('https://private-user-images.githubusercontent.com/1/a.png', 'demo'))
+        self.assertFalse(is_demo_image('https://user-images.githubusercontent.com/1/a.png?jwt=secret', 'demo'))
+        self.assertTrue(is_demo_image('https://user-images.githubusercontent.com/1/a.png', 'demo'))
+
+
+class _FakeClient:
+    """Just enough of the shared HttpClient to answer one repository request."""
+
+    def __init__(self, repository):
+        self.repository = repository
+
+    def get(self, url, timeout=30, page=False):
+        return 200, json.dumps(self.repository).encode(), {}
 
 
 if __name__ == '__main__':

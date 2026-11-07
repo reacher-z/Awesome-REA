@@ -21,6 +21,10 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from media_privacy import public_media_url  # noqa: E402
+
 PREVIEWS_PATH = ROOT / "data" / "evidence-previews.json"
 CACHE_DIR = ROOT / ".cache" / "previews"
 MAX_BYTES = 8 * 1024 * 1024
@@ -60,6 +64,8 @@ def extension_for(url: str, content_type: str) -> str | None:
 
 def fetch(url: str) -> str:
     """Download one image; return a short status word."""
+    if not public_media_url(url):
+        return "private-url"
     if cached_path(url):
         return "cached"
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "image/*"})
@@ -107,7 +113,7 @@ def main() -> int:
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
         for index, (entry, status) in enumerate(pool.map(task, entries), start=1):
             counts[status] = counts.get(status, 0) + 1
-            if status in ("unreachable", "too-large", "unsupported-type", "empty"):
+            if status in ("unreachable", "too-large", "unsupported-type", "empty", "private-url"):
                 # Never echo the query string: private attachment URLs carry signed tokens.
                 parts = urllib.parse.urlsplit(entry["image_url"])
                 safe_url = urllib.parse.urlunsplit((parts.scheme, parts.netloc, parts.path, "", ""))

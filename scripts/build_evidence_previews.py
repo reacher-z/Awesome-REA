@@ -28,6 +28,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from classify_evidence_classes import (  # noqa: E402
     HTML_TAG, IMAGE_URL_EXCLUDES, HttpClient, github_repo_slug, os_environ_token,
 )
+from media_privacy import public_media_url  # noqa: E402
 
 CLASSES_PATH = ROOT / "data" / "evidence-classes.json"
 OUTPUT_PATH = ROOT / "data" / "evidence-previews.json"
@@ -80,6 +81,8 @@ def usable_image(raw: str, base: str) -> str | None:
         url = urllib.parse.urljoin(base, raw)
     parts = urllib.parse.urlsplit(url)
     if parts.scheme not in ("http", "https") or not parts.hostname:
+        return None
+    if not public_media_url(url):
         return None
     lowered = url.lower().split("?", 1)[0]
     if any(marker in lowered for marker in IMAGE_URL_EXCLUDES):
@@ -184,6 +187,9 @@ def github_preview(client: HttpClient, slug: str) -> dict | None:
     if status != 200:
         return None
     repository = json.loads(body.decode("utf-8", "replace"))
+    if repository.get("private") or str(repository.get("visibility", "")).lower() == "private":
+        # The token can read private repositories; their media must not be published.
+        return None
     branch = repository.get("default_branch") or "HEAD"
     revision = branch
     commit_status, commit_body, _ = client.get(

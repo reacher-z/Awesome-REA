@@ -33,6 +33,7 @@ from data_downloads import build_data_downloads
 from open_graph import website_node
 from structured_data import catalog_node, organization_node
 from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage
+from media_privacy import public_media_url
 from artifact_links import with_artifact_links, with_curated_labels
 from source_browser import write_source_browser
 from localization import read_localizations, localized_records
@@ -192,6 +193,8 @@ def build_site(output: Path) -> tuple[int, int, int]:
                 record["evidence_review"] = evidence_entry["review"]
             if record["evidence_class"] in (0, 1):
                 preview = previews.get(record["id"])
+                if preview and not public_media_url(preview["image_url"]):
+                    preview = None
                 cached = cached_preview(preview["image_url"]) if preview else None
                 if cached:
                     relative = f"previews/{record['id']}{cached.suffix}"
