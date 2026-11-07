@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gamedb",
+    "name": "gamedb",
+    "url": "https://github.com/smileybaal/gamedb",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "gamedb is a Rust command-line tool that indexes a directory of decompiled C, C++, Java, or C# into SQLite. The commands are index, search, read, and graph. Cargo.toml has no dependency section. On Windows it binds to winsqlite3.dll. Elsewhere it binds to libsqlite3.",
+    "description_zh": "gamedb 是一个 Rust 命令行工具，把反编译得到的 C、C++、Java 或 C# 目录索引进 SQLite。命令有 index、search、read 和 graph。Cargo.toml 没有依赖段。在 Windows 上它绑定 winsqlite3.dll。在其他系统上它绑定 libsqlite3。",
+    "requirements": [
+      "The Rust toolchain and a C linker. cargo build --release --target x86_64-pc-windows-msvc writes gamedb.exe for that target.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/smileybaal/gamedb/blob/7054201291d704d64cdf37a9d3573c5d16a81fcf/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
