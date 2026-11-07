@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "wizard-of-wor-disasm",
+    "name": "Wizard of Wor C64 disassembly",
+    "url": "https://github.com/dabadab/wizardofwor",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a reverse-engineered assembler source of Wizard of Wor for the Commodore 64. It compiles with 64tass into a raw 16 KB cartridge image, wow.bin. VICE cartconv can turn that image into a CRT.",
+    "description_zh": "这是 Commodore 64 版《Wizard of Wor》逆向得到的汇编源码。它用 64tass 编译成 16 KB 的原始卡带镜像 wow.bin。VICE 的 cartconv 可以把这个镜像转成 CRT。",
+    "requirements": [
+      "64tass. The documented command is 64tass -a wizard_of_wor.asm -b -o wow.bin.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/dabadab/wizardofwor/blob/946126a59c4d16105a1431a7075dffbe0c788b5e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

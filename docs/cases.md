@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -113,7 +113,7 @@
 - [**wii-ipl: a decompilation of the Wii Menu (System Menu 4.3)**](https://github.com/koopthekoopa/wii-ipl) - A work-in-progress decompilation of the Wii Menu, the console’s System Menu (IPL), targeting version 4.3 in its USA, European, Japanese and Korean builds. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/wii-menu-ipl-decomp-case/)</sub>
 
 <a id="game-decompilation"></a>
-### Non-matching decompilations (19)
+### Non-matching decompilations (20)
 
 - [**c1: a C port of PlayStation Crash Bandicoot**](https://github.com/wurlyfox/c1) - Ports the original PlayStation Crash Bandicoot game code to C function by function; its coding standard labels functions with the addresses of their original implementations. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/crash-bandicoot-c1-port-case/)</sub>
 - [**Firefighter: a decompiled DOS game ported to Rust**](https://gitlab.com/esr/firefighter) - Eric S. Raymond’s terminal port of Firefighter, Eben Sprinsock’s 1985 DOS shareware game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/firefighter-rust-port-case/)</sub>
@@ -134,6 +134,7 @@
 - [**UltraSunnyMoon: a partial, REA-led Pokémon Ultra Sun reconstruction**](https://github.com/tylergraydev/UltraSunnyMoon) - The author uses a pinned REA build with Ghidra to analyze a user-supplied Pokémon Ultra Sun base executable, rebuild it byte for byte from split objects, and swap in two small compiled C runtime routines. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/ultrasunnymoon-rea-case/)</sub>
 - [**vf2-decomp: differentially validated Virtua Fighter 2 recovery**](https://github.com/celsowm/vf2-decomp) - Recovers Virtua Fighter 2 Version 2.1’s Sega Model 2A i960 program into portable, non-matching C17, accepting each recovered path only when it matches a reference i960 executor at controlled boundaries. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vf2-decomp-differential-recovery-case/)</sub>
 - [**Wind Waker HD decompilation: functions verified against the recompiled Wii U game**](https://github.com/ZeldaWWHDDecomp/wwhd) - Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-hd-decomp-case/)</sub>
+- [**Wizard of Wor C64 disassembly**](https://github.com/dabadab/wizardofwor) - This is a reverse-engineered assembler source of Wizard of Wor for the Commodore 64. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wizard-of-wor-disasm/)</sub>
 
 <a id="game-static-recompilation"></a>
 ### Static recompilations (48)

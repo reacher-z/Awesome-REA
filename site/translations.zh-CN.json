@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "wizard-of-wor-disasm": {
+    "name": "Wizard of Wor C64 反汇编",
+    "requirements": [
+      "需要 64tass。文档中的命令是 64tass -a wizard_of_wor.asm -b -o wow.bin。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
