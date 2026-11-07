@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "blood-re": {
+    "name": "Blood-RE",
+    "requirements": [
+      "需要 Watcom 10.6 和 TASM 3.1。用 wmake 构建 helix32，再用 dobuild 构建 qtools 和 blood。MAPEDIT 使用 edbuild.bat。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

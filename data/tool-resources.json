@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "blood-re",
+    "name": "Blood-RE",
+    "url": "https://github.com/NBlood/Blood-RE",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "Blood-RE is a matching decompilation of Blood from 1997. The README covers shareware, registered, and Plasma Pak builds from 1.10 through 1.21, including the 3Dfx builds, plus several MAPEDIT versions.",
+    "description_zh": "Blood-RE 是 1997 年游戏《Blood》的匹配反编译。README 覆盖 1.10 到 1.21 的共享版、注册版和 Plasma Pak 构建，包括 3Dfx 构建，以及多个 MAPEDIT 版本。",
+    "requirements": [
+      "Watcom 10.6 and TASM 3.1. Build helix32 with wmake, then qtools and blood with dobuild. MAPEDIT uses edbuild.bat.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/NBlood/Blood-RE/blob/4d4869a695a8799c2c564b53f8ef429dc3816599/Readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
