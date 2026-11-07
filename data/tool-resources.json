@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "body-harvest-recomp",
+    "name": "Body Harvest recompilation",
+    "url": "https://github.com/danielgomesvieira2000/body-harvest-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Release 0.1.0 statically recompiles Body Harvest for the Nintendo 64, USA, with N64Recomp. The ROM SHA-1 is bbb6666f5014a473747ee4145f036d9fb25d7348. It accepts .z64, .n64, .v64, or a ZIP. The port boots and plays the start of Greece. Windows runs body-harvest-recomp.exe. Linux runs ./body-harvest-recomp.sh. Widescreen follows the window, and the frame rate can follow the display refresh.",
+    "description_zh": "0.1.0 版用 N64Recomp 静态重编译 Nintendo 64 美版 Body Harvest。ROM 的 SHA-1 是 bbb6666f5014a473747ee4145f036d9fb25d7348。它接受 .z64、.n64、.v64 或 ZIP。移植能启动并玩到希腊的开头。Windows 运行 body-harvest-recomp.exe。Linux 运行 ./body-harvest-recomp.sh。宽屏跟随窗口，帧率可以跟随显示器刷新率。",
+    "requirements": [
+      "The USA ROM with that SHA-1. Linux setup is bash tools/setup_linux.sh --install, then bash tools/build_linux.sh with the ROM path.",
+      "License: MIT for this project's own code. A distributed executable links N64ModernRuntime, which is GPL-3.0, so that binary is a GPL-3.0 combined work."
+    ],
+    "evidence_url": "https://github.com/danielgomesvieira2000/body-harvest-recomp/blob/711a2b6fe2a3843ecbf31941d439be858948d7f4/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
