@@ -36543,6 +36543,7 @@
     "description_zh": "用 TypeScript 在浏览器中重新实现 Stunts／4D Sports Driving 的 1990 年 12 月 Mindscape 版本。它不运行 DOS 可执行文件，而是使用从玩家自有安装文件在本地解码的资源。作者报告由其主导、借助 OpenAI Codex 完成工作，研究了原版可执行文件，并把重建状态与原版运行捕获进行比较。可选的增强渲染器与重新编曲的音乐与原版图形模式并存；还原度仍为作者报告。",
     "evidence_url": "https://github.com/ACatWithEbola/playstunts/blob/eae59defe484c0e340a1834ffca6bb14a9a94756/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at the head commit of 17 October 2026. README calls it an unofficial reconstruction that may contain visual, audio or simulation discrepancies, and the reconstruction notes disclaim perfect equivalence. The checkout also contains the hosted edition’s high-score, replay-verification and community-track services, which use a separate database; a local build does not connect to the public leaderboard.",
