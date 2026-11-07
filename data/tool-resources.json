@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "spyro3-decomp",
+    "name": "Spyro: Year of the Dragon decompilation",
+    "url": "https://github.com/TheMobyCollective/spyro-3",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This matching decompilation targets Spyro: Year of the Dragon, NTSC-U revision 0, product code SCUS-94467, primary volume date September 14, 2000. On 2026-10-18 the EXE had 180 of 337 C functions matching, and the total was 359 of 3,435 (10.45 percent). The EXE SHA-256 is CB819EE78C556D403779309859CB08A7111331F624759BC1BC380946261BB26E. python3 ./build.py writes PSX.EXE. The compiler for the source is gcc 2.7.2 for mipsel.",
+    "description_zh": "这个匹配反编译针对《Spyro: Year of the Dragon》NTSC-U 修订 0，产品代码 SCUS-94467，主卷日期 2000 年 9 月 14 日。2026-10-18 时 EXE 的 337 个 C 函数中有 180 个匹配，合计 3,435 个中的 359 个（10.45%）。EXE 的 SHA-256 是 CB819EE78C556D403779309859CB08A7111331F624759BC1BC380946261BB26E。python3 ./build.py 写出 PSX.EXE。源码使用的编译器是 mipsel 的 gcc 2.7.2。",
+    "requirements": [
+      "docker_env.sh starts the build container. python3 ./build.py writes PSX.EXE. Playable overlays need FIX_CHECKSUMS.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/TheMobyCollective/spyro-3/blob/6b6a7367ebe0374996bbe1aa92c9162f86765012/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
