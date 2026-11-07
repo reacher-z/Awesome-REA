@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "unleashed-recomp-android",
+    "name": "Unleashed Recompiled for Android",
+    "url": "https://github.com/SansNope/UnleashedRecomp-Android",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is an Android port of Unleashed Recompiled for the Xbox 360 version of Sonic Unleashed. It runs the statically recompiled game on ARM64 Android 10 or newer, with touch controls, gamepad support, a mod manager, and a bundled Turnip Vulkan driver. The launcher installs a zip or folder, or separate base-game, title-update, and DLC packages. The main tested GPUs are Adreno 710, 725, 732, and 750. Adreno 830 is selected automatically. Recent Mali GPUs with Vulkan 1.3 are experimental. A Windows host with Visual Studio 2022, CMake, Ninja, Android NDK r29, JDK 17, and vcpkg builds the port.",
+    "description_zh": "这是《索尼克 世界冒险》Xbox 360 版 Unleashed Recompiled 的 Android 移植。它在 ARM64、Android 10 或更高版本上运行静态重编译后的游戏，带触摸控制、手柄、模组管理器和捆绑的 Turnip Vulkan 驱动。启动器安装 zip 或文件夹，或分别安装本体、标题更新和 DLC 包。主要测试的 GPU 是 Adreno 710、725、732 和 750。Adreno 830 会自动选用。带 Vulkan 1.3 的较新 Mali GPU 仍是实验性的。Windows 主机配合 Visual Studio 2022、CMake、Ninja、Android NDK r29、JDK 17 和 vcpkg 可以构建这个移植。",
+    "requirements": [
+      "Android 10 or newer on ARM64, and a personal Xbox 360 dump of Sonic Unleashed. Several gigabytes free.",
+      "License: GPL-3.0, following the upstream project. Third-party components keep their own licenses."
+    ],
+    "evidence_url": "https://github.com/SansNope/UnleashedRecomp-Android/blob/f65c40ba2788ebd7318361670bcbb82cfdef6ae8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
