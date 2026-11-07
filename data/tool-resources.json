@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fishbones",
+    "name": "Fishbones",
+    "url": "https://github.com/sledgeh4w/fishbones",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Fishbones is a Python library for implementing decompiled code. It provides fixed-width integers, a vptr type for pointer reads and writes, and some built-in functions from IDA and Ghidra.",
+    "description_zh": "Fishbones 是用来实现反编译代码的 Python 库。它提供定宽整数、用于指针读写的 vptr，以及 IDA 和 Ghidra 的一些内建函数。",
+    "requirements": [
+      "Python 3.6 or newer. The documented install is pip install fishbones.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/sledgeh4w/fishbones/blob/ba22044a0c00a31af943a78b005596aa9f564249/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
