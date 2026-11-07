@@ -36544,6 +36544,7 @@
     "description_zh": "记录对 Valve 初代 Steam Controller 的逆向工程：作者在修改版 pinkySim 模拟器中运行其 LPC11U37F 主处理器固件并记录硬件访问，再据此编写替代固件。不同构建选项可让手柄成为通过 USB 串口查询外设的开发板，或伪装成 PowerA 手柄、供 Nintendo Switch 使用的有线控制器。Qt 转换工具可把 MusicXML 乐曲写入官方固件同样会读取的 EEPROM 区域，作为开机和关机提示音；另有文档记录主板引脚连接和 USB 消息。",
     "evidence_url": "https://github.com/greggersaurus/OpenSteamController/blob/325801542fcb762d19a91addd801f0630c825966/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "There are no releases or tags, and the latest commit is from 2019-09-17. The README says the reverse-engineering effort has mostly run its course, and the author calls it a first attempt at reverse engineering. init.c locks the firmware to the Luna_mainboard V000456-00 rev3 board the author could test, and only the LPC11U37F firmware is replaced, not that of the nRF51822 Bluetooth chip.",
