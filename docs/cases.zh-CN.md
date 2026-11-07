@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -40,7 +40,7 @@
 [↑ 返回目录](#目录)
 
 <a id="game-matching-decompilation"></a>
-### 匹配反编译与反汇编 (69)
+### 匹配反编译与反汇编 (70)
 
 - [**3S Decomp：逐字比对的《街头霸王 III：3rd Strike》PS2 反编译重建**](https://github.com/crowded-street/3s-decomp) - 将 Street Fighter Anniversary Collection 中《街头霸王 III：3rd Strike》的 PlayStation 2 可执行文件反编译为 C 源码，用当年的 Metrowerks 与 EE GCC 编译器重新构建，再将重建出的可执行文件与使用者自备的原文件逐字比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)</sub>
@@ -77,6 +77,7 @@
 - [**pokecrystal：一致构建的《精灵宝可梦 水晶》反汇编**](https://github.com/pret/pokecrystal) - 以 RGBDS 汇编重建 Game Boy Color 游戏《精灵宝可梦 水晶》，图像、地图和数据以可编辑的源文件保存。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokecrystal-disassembly-case/)</sub>
 - [**pokered：一致构建的《精灵宝可梦 红／蓝》反汇编**](https://github.com/pret/pokered) - 以 RGBDS 汇编重建 Game Boy 游戏《精灵宝可梦 红／蓝》，图像和数据以可编辑的源文件保存。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokered-disassembly-case/)</sub>
 - [**pokeruby：一致构建的《精灵宝可梦 红宝石／蓝宝石》反编译**](https://github.com/pret/pokeruby) - 以 C 源码重建 Game Boy Advance 游戏《精灵宝可梦 红宝石／蓝宝石》，使用 pret 的 agbcc 编译器构建，并附有汇编数据脚本和可编辑图像。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokeruby-decomp-case/)</sub>
+- [**宝可梦 黑反编译**](https://github.com/squiddonaut/pokeblack) - 该仓库是任天堂 DS《Pokémon Black》的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokeblack-case/)</sub>
 - [**《宝可梦 绿宝石》：生成一致 ROM 的 Game Boy Advance 反编译重建**](https://github.com/pret/pokeemerald) - 为 Game Boy Advance 版《宝可梦 绿宝石》重建可构建的 C 源码，游戏脚本和数据以汇编指令形式保存。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokemon-emerald-decomp-case/)</sub>
 - [**《宝可梦 火红／叶绿》：生成一致 ROM 的 Game Boy Advance 反编译重建**](https://github.com/pret/pokefirered) - 为 Game Boy Advance 英文版《宝可梦 火红／叶绿》重建可构建的 C 源码，游戏脚本和数据以汇编指令形式保存。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokemon-firered-leafgreen-decomp-case/)</sub>
 - [**《宝可梦 心金／魂银》：校验一致的进行中 DS 反汇编项目**](https://github.com/pret/pokeheartgold) - 以进行中的反汇编项目重建美版 Nintendo DS《宝可梦 心金／魂银》，其中部分代码已反编译为 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokemon-heartgold-soulsilver-disassembly-case/)</sub>
