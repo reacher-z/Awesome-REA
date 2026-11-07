@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "space-rangers-hd-decomp-case": {
+    "name": "太空游侠 HD 反编译",
+    "requirements": [
+      "按 docs/development.md 安装前提，然后运行 ./decomp setup 和 ./decomp verify。setup 准备 Delphi 工具链。verify 对照原始 SHA-256 检查可执行文件。游戏数据来自玩家已安装的游戏。",
+      "2026-10-06 的预发布构建为 4,533,760 字节，SHA-256 为 e43a4b15503c705eebe2d8ce5778c2a2fb090db515a3fd86d319e5c5aa692ebf。2025-10-13 的 Steam 和 GOG 构建为 4,995,584 字节，SHA-256 为 83300344af802bc51e64389c58f047e5afdf195c133048098be3881fae29ed98。",
+      "README 把工具的许可证指向 LICENSE，把权利说明指向 NOTICE.md。"
+    ]
   }
 }
