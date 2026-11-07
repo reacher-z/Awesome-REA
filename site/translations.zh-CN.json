@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "dc3-decomp": {
+    "name": "Dance Central 3 反编译",
+    "requirements": [
+      "把 XEX 复制到 orig/373307D9。然后运行 python configure.py 和 ninja。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

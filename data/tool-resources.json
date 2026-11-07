@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dc3-decomp",
+    "name": "Dance Central 3 decompilation",
+    "url": "https://github.com/rjkiv/dc3-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles Dance Central 3 for Xbox 360, the build dated 16 September 2012. The tree contains no game assets or assembly.",
+    "description_zh": "该仓库反编译 Xbox 360 游戏 Dance Central 3，构建日期是 2012 年 9 月 16 日。仓库里没有游戏资源和汇编。",
+    "requirements": [
+      "Copy the XEX to orig/373307D9. Then run python configure.py and ninja.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/rjkiv/dc3-decomp/blob/af230f098db9944c8cb6e26eff1761815003e2ca/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
