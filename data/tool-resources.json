@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "segagenesisrecomp",
+    "name": "Genesis Recomp",
+    "url": "https://github.com/mstan/segagenesisrecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Genesis Recomp is a beta static-recompilation framework for the Sega Genesis, Mega Drive, Sega CD, and Mega-CD. The cartridge pipeline translates 68000 code into C and supplies a shared VDP, audio, bus, scheduler, and Z80 runtime.",
+    "description_zh": "Genesis Recomp 是面向世嘉 Genesis、Mega Drive、Sega CD 和 Mega-CD 的 beta 静态重编译框架。卡带流程把 68000 代码翻译成 C，并提供共享的 VDP、音频、总线、调度器和 Z80 运行时。",
+    "requirements": [
+      "Windows x64 recompiler tool 0.1.2 is on the Releases page and includes GenesisRecomp.exe.",
+      "Sega CD support is on the feature/segacd-backend branch. Its first released consumer is Sonic CD 0.0.1.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/mstan/segagenesisrecomp/blob/9c0a0cee6c1123c4e35c4ef2f18631797f17f52f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
