@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "spartan-h3m",
+    "name": "Spartan",
+    "url": "https://github.com/GTTeancum/OpenH3M",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Spartan, formerly OpenH3M, statically recompiles the Halo 3 Mythic multiplayer disc from Halo 3: ODST to Windows x64 with ReXGlue. Beta 0.8 has the 3D menu, Custom Games, local split screen for one to four players, and Forge. Theater can be opened. Recording and saved-film playback are not fully validated. The frame cap is the original 30 fps. The release archive is OpenH3M-beta-0.8-win-x64.zip and the program is OpenH3M.exe.",
+    "description_zh": "Spartan，原名 OpenH3M，用 ReXGlue 把《光环 3：ODST》里的光环 3 神话多人光盘静态重编译到 Windows x64。Beta 0.8 有三维菜单、自定义游戏、一到四名玩家的本地分屏，以及锻造模式。剧场模式可以打开。录制和已保存影片的回放还没有完全验证。帧率上限是原来的 30 帧。发布包是 OpenH3M-beta-0.8-win-x64.zip，程序是 OpenH3M.exe。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, and a Direct3D 12 GPU. Extract the disc filesystem into a game folder beside OpenH3M.exe so that game\\default.xex and game\\maps\\ exist.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/GTTeancum/OpenH3M/blob/9c4697202625b62157eeffaf0fe6eb290d637b3c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
