@@ -36528,5 +36528,40 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "skate3-mobile-android-recomp-case",
+    "name": "Skate 3 Mobile: an Android ARM64 fork of Skate3Recomp",
+    "url": "https://github.com/Buku313/Skate3-Mobile",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Carries the Skate3Recomp static recompilation of the Xbox 360 Skate 3 to Android: rexglue translates the configured PowerPC guest functions, and Android Clang compiles them into ARM64 libraries linked against a compatibility runtime. Runtime hooks pass the game’s meshes, textures and shader state to a native Vulkan scene renderer, and this fork adds SDL3 input and audio, a multitouch overlay and handheld performance profiles. The author calls it an experimental developer build that is playable on the Anbernic RG406V.",
+    "description_zh": "将 Xbox 360 版《Skate 3》的 Skate3Recomp 静态重编译移植到 Android：rexglue 转译所配置的 PowerPC 客体函数，再由 Android Clang 编译为 ARM64 库，并与兼容运行时链接。运行时钩子把游戏的网格、纹理和着色器状态交给原生 Vulkan 场景渲染器；这一分支另行加入 SDL3 输入与音频、多点触控覆盖层以及掌机性能配置。作者称其为实验性的开发者构建，可在 Anbernic RG406V 上游玩。",
+    "evidence_url": "https://github.com/Buku313/Skate3-Mobile/blob/e1b28c185d578c22e3a630f6f3b13ed123462a43/README.md",
+    "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main (2026-09-16), four commits after the v2.1.0 release (2026-09-15), which offers a signed APK and a separate QA build. README describes a developer build that boots, plays with tricks and renders natively, but warns of visual bugs, missing effects and device-specific problems; the RG406V (Unisoc T820, Mali-G57) is the only verified device, and the 60 FPS setting is a guest cap rather than a guarantee. It is a fork of Skate3Recomp, catalogued separately, with the upstream history preserved.",
+      "Players supply an ISO dumped from their own supported USA or Europe Xbox 360 copy, which the app extracts into private storage (about 8 GiB) and checks by SHA-256; source builds instead take the extracted default.xex, the EAWebKit XEX and the Title Update 3 package. By default the phone installer downloads Title Update 3 from a third-party title-update site rather than from the rights holders, with a manual file-selection fallback. README states that the repository holds no retail executables, assets, title-update data or generated game code; the downloadable APK carries the native ARM64 libraries, so players need no build step.",
+      "Play needs Android 13 or newer, an ARM64 CPU with ARMv8.2 FP16 and dot-product support, and Vulkan. Builds need Android SDK 35, NDK r27c, JDK 17+, CMake, Ninja and Clang with the recursive submodules, including the author’s Android fork of the Skate 3 rexglue runtime; build-android.sh generates the recompiled code and assembles the APK, and Apple-silicon Mac helper scripts wrap the same steps. Optional Turnip driver packages for Adreno GPUs are imported by the user and never bundled.",
+      "A dated v2.1 release-check record reports eight passing automated suites (startup, audio, shader layouts, file I/O, guest guards, texture decoding, release failure paths and update policy), APK checks for 16 KB alignment and for common retail file types, and an RG406V smoke test of startup, the title flow, rendering and resume. It disclaims universal compatibility, stable 60 FPS and freedom from regressions;",
+      "Neither the repository nor its GitHub metadata declares a license for the fork’s own code; the rexglue runtime fork carries a Xenia-derived BSD-3-Clause notice, libadrenotools is BSD-2-Clause, and Electronic Arts keeps its rights to Skate 3. README says development and documentation in the fork were assisted by OpenAI Codex, with human review throughout;"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Buku313/Skate3-Mobile/blob/e1b28c185d578c22e3a630f6f3b13ed123462a43/android/README.md",
+      "https://github.com/Buku313/Skate3-Mobile/blob/e1b28c185d578c22e3a630f6f3b13ed123462a43/docs/V2_1_RELEASE_CHECKS.md",
+      "https://github.com/Buku313/Skate3-Mobile/blob/e1b28c185d578c22e3a630f6f3b13ed123462a43/docs/RP6_INTEGRATION.md",
+      "https://github.com/Buku313/Skate3-Mobile/blob/e1b28c185d578c22e3a630f6f3b13ed123462a43/docs/THIRD_PARTY_NOTICES.md",
+      "https://github.com/Buku313/Skate3-Mobile/blob/e1b28c185d578c22e3a630f6f3b13ed123462a43/android/app/src/main/java/chat/buku/skate3/TitleUpdateInstaller.java",
+      "https://github.com/Buku313/Skate3-Mobile/blob/e1b28c185d578c22e3a630f6f3b13ed123462a43/.gitignore",
+      "https://github.com/Buku313/Skate3-Mobile/blob/e1b28c185d578c22e3a630f6f3b13ed123462a43/.gitmodules",
+      "https://github.com/Buku313/rexglue-skate3-android/blob/edd4344723ecac3ffa18c5dcd2fcc268f468ff9e/LICENSE",
+      "https://github.com/Buku313/Skate3-Mobile/releases/tag/v2.1.0"
+    ]
   }
 ]
