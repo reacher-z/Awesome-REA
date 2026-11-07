@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "agsutils",
+    "name": "agsutils",
+    "url": "https://github.com/rofl0r/agsutils",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "agsutils unpacks, disassembles, modifies, and repacks Adventure Game Studio games. agstract extracts the files inside a game pack, and agsex writes a Makefile that repacks changed assembly.",
+    "description_zh": "agsutils 可以解包、反汇编、修改并重新打包 Adventure Game Studio 游戏。agstract 提取游戏包里的文件，agsex 会写出 Makefile，用来重新打包改过的汇编。",
+    "requirements": [
+      "agstract takes a game pack such as an .exe and an output directory. It writes agspack.info with the pack metadata.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/rofl0r/agsutils/blob/48dc22eb2676b654baca6682fc042b84932c81db/README",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
