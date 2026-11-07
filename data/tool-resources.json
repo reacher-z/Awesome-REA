@@ -36543,6 +36543,7 @@
     "description_zh": "基于 Unicorn 的 Python 库，用于模拟 Windows 64 位和 32 位进程 minidump 中的用户态代码。由于转储提供了完整的进程内存，只需模拟系统调用，分析者即可调用函数、在两个地址之间运行代码、跟踪指令，并读取解密后的字符串等结果。README 将其用于恶意软件分析（如配置提取和脱壳）及一般的动态分析；可用 Python 重新实现或挂钩系统调用，并以类型化方式声明结构体。",
     "evidence_url": "https://github.com/mrexodia/dumpulator/blob/18a64d7ab6ccded24c5ffe72ba17ac03fd853f8b/README.md",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "requirements": [
       "The README calls it a work-in-progress prototype. Latest PyPI release at review: 0.2.6, uploaded 2023-10-02. The reviewed main commit of 2024-02-02, the repository's latest push, is four commits past the v0.2.6 tag; its setup.cfg already declares v1.0.0, which has no release.",
