@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sote-recomp-case": {
+    "name": "Shadows of the Empire: Recompiled",
+    "requirements": [
+      "需要本地 ROM 匹配 README 中两个 SHA-256 之一。卡带转储是 No-Intro 的 Star Wars - Shadows of the Empire (USA) (Rev 2)，CRC32 为 E8727549，SHA-256 为 e7085e013123537f34e0edec8801318016da4dbac424172d6dc5f3b67d98642c。接受大端 .z64，字节交换的 .v64 或 .n64 会自动转换。",
+      "许可证：项目原有代码为 MIT。使用 N64ModernRuntime 的组合构建必须遵守它的 GPL 条款。"
+    ]
   }
 }
