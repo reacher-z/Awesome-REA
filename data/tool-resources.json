@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ridge-racer-type4-recomp",
+    "name": "Ridge Racer Type 4 recompilation",
+    "url": "https://github.com/omegakatana92/RidgeRacer4Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Ridge Racer Type 4 for the PlayStation with PSXRecomp. The project configuration targets the USA release SLUS-00797. The Windows launcher expects Ridge_Racer_4_Recompiled.exe beside launcher/ and bios/. It can use the bundled OpenBIOS or a BIOS the player supplies.",
+    "description_zh": "该项目用 PSXRecomp 重编译 PlayStation 游戏《山脊赛车 Type 4》。项目配置针对美版 SLUS-00797。Windows 启动器要求 Ridge_Racer_4_Recompiled.exe 与 launcher/ 和 bios/ 并列。它可以使用附带的 OpenBIOS，也可以使用玩家提供的 BIOS。",
+    "requirements": [
+      "Keep the CUE and every referenced BIN track together. Launch with launcher/ridgeRacer4.bat and select the CUE.",
+      "The reviewed README does not name a license for this project. It includes OpenBIOS and points at OpenBIOS.LICENSE."
+    ],
+    "evidence_url": "https://github.com/omegakatana92/RidgeRacer4Recomp/blob/f12d45d4d6d43b37c8295d8221ff982520658b8a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
