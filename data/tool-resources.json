@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "metroid-ii-disasm",
+    "name": "Metroid II disassembly",
+    "url": "https://github.com/metroidret/M2RoS",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles Metroid II: Return of Samus for the Game Boy. The assembled ROM has MD5 9639948ad274fa15281f549e5f9c4d87. The documented tools are rgbds 1.0.1 and Python 3.13.",
+    "description_zh": "该项目反汇编 Game Boy 游戏《密特罗德 II：萨姆斯的回归》。汇编出的 ROM 的 MD5 为 9639948ad274fa15281f549e5f9c4d87。文档中的工具是 rgbds 1.0.1 和 Python 3.13。",
+    "requirements": [
+      "Run extract.py on a copy of the game, then make all, build.bat, or build.py. Output goes to out/.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/metroidret/M2RoS/blob/031aea34cb1a6c6aae0f27b55dd2a6fe7c36b810/readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
