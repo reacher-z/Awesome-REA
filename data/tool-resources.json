@@ -36528,5 +36528,37 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "prose2000-reborn-case",
+    "name": "Prose 2000 Reborn: a C decompilation of the speech board",
+    "url": "https://github.com/rommix0/prose2000_reborn",
+    "description_en": "Decompiles the Speech Plus and Telesensory Systems Prose 2000 text-to-speech firmware, an 8086 host plus an NEC uPD7720 DSP, into C. The README says the build does not need an emulator or ROM files.",
+    "description_zh": "把 Speech Plus 与 Telesensory Systems 的 Prose 2000 文本转语音固件（8086 主机加 NEC µPD7720 DSP）反编译为 C。README 写明构建不需要模拟器或 ROM 文件。",
+    "evidence_url": "https://github.com/rommix0/prose2000_reborn/blob/26c36dbd3f82e52cd109fb84f5781a77d0b9c3e1/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/rommix0/prose2000_reborn/blob/26c36dbd3f82e52cd109fb84f5781a77d0b9c3e1/REFERENCE.md"
+    ],
+    "requirements": [
+      "The README's default build produces the speech library, prose_say, the samples, and the v3.4.1 tests. -DPROSE_VERSION=1 builds the v1.1 tests instead. It says the v1.1 DSP program was never dumped, so v1.1 frames are played through the v3.12 DSP model and that audio is an approximation.",
+      "Two firmware versions are in the tree: v3.4.1 (1988) and v1.1 (1983). The README says src/data holds data extracted from the ROMs, and src/tests holds the players and replay tests.",
+      "The README says every stage was checked against an emulator of the original board, byte-exact on captured calls and frame- or sample-exact end to end. It says the replay tests are described in REFERENCE.md §14. build/pipeline_play speaks one line.",
+      "The reviewed root has no LICENSE file. The README says the original firmware was proprietary to Telesensory Systems and Speech Plus. This record does not state a license for the repository."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "targets": [
+      "binary"
+    ]
   }
 ]
