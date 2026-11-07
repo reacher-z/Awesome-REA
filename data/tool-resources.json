@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fe7j-decomp",
+    "name": "Fire Emblem 7 Japan decompilation",
+    "url": "https://github.com/MokhaLeee/FireEmblem7J",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This decompiles Fire Emblem: Rekka no Ken for the Game Boy Advance, Japanese release. It builds FireEmblem7J.gba, SHA-1 037702b1febd5c9535262165bf030551d153de81.",
+    "description_zh": "该项目反编译 Game Boy Advance 日版《火焰纹章 烈火之剑》。它构建 FireEmblem7J.gba，SHA-1 为 037702b1febd5c9535262165bf030551d153de81。",
+    "requirements": [
+      "Name the original ROM FireEmblem7J.base.gba. On Debian or Ubuntu, install build-essential and gcc-arm-none-eabi, run tools/install-agbcc.sh, then make compare -j.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/MokhaLeee/FireEmblem7J/blob/4f86d4c42bd9c9b80bdd81ff6857b9b454db0b94/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
