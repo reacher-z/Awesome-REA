@@ -220,6 +220,7 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .card-title-link .icon,.source-title-link .icon{width:12px;height:12px;font-size:11px;vertical-align:baseline;margin-left:6px;color:var(--steel)}
 .resource-kind,.source-stars{flex:none;color:var(--muted);font:500 13px/1.5 var(--sans);font-variant-numeric:tabular-nums;border:1px solid var(--line);border-radius:6px;padding:3px 7px;background:var(--soft);white-space:nowrap}
 .evidence-class{flex:none;display:inline-flex;align-items:center;gap:6px;color:var(--muted);font:500 13px/1.5 var(--sans);border:1px solid var(--line);border-radius:6px;padding:3px 7px;background:var(--soft);white-space:nowrap;cursor:help}
+.card-heading .evidence-class{margin-left:8px;vertical-align:2px}
 .evidence-class::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--class-3)}
 .evidence-class-0::before{background:var(--class-0)}
 .evidence-class-1::before{background:var(--class-1)}
@@ -241,7 +242,8 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .card-preview{position:relative;display:flex;justify-content:center;margin:14px 0 0}
 .card-preview img{display:block;max-width:100%;max-height:220px;width:auto;height:auto;border-radius:8px}
 .card-preview-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--on-ink);font-size:30px;line-height:1;text-shadow:0 2px 10px rgba(0,0,0,.65);pointer-events:none}
-.card-preview-demo{min-height:110px;align-items:center;gap:8px;border-radius:8px;background:var(--soft);color:var(--muted);font:500 13px/1.5 var(--sans)}
+.card-preview:has(.card-preview-demo){justify-content:flex-start}
+.card-preview-demo{display:inline-flex;min-height:0;max-width:max-content;align-items:center;gap:8px;padding:7px 12px 7px 9px;border:1px dashed var(--line);border-radius:8px;background:var(--soft);color:var(--muted);font:500 13px/1.5 var(--sans)}
 .card-preview-demo-icon{color:var(--ink);font-size:15px;line-height:1}
 /* Curated entries use a three-column card grid on wide screens; the repository
    browser keeps two columns because its cards carry more metadata. */
