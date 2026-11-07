@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sdlpop",
+    "name": "SDLPoP",
+    "url": "https://github.com/NagyD/SDLPoP",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "SDLPoP is an open-source port of the DOS game Prince of Persia, based on the disassembly of PoP 1.0. The Windows build runs src/build.bat after the Visual Studio environment is prepared. SDL2 and SDL2_image development files are required. Mods supply their own .DAT files, selected with the levelset option in SDLPoP.ini or the mod command-line option.",
+    "description_zh": "SDLPoP 是 DOS 游戏《波斯王子》的开源移植，基于 PoP 1.0 的反汇编。Windows 构建在准备好 Visual Studio 环境后运行 src/build.bat。需要 SDL2 和 SDL2_image 的开发文件。模组自带 .DAT 文件，通过 SDLPoP.ini 的 levelset 选项或 mod 命令行选项选择。",
+    "requirements": [
+      "SDL2 and SDL2_image. On Windows, run src/build.bat from a Visual Studio build environment.",
+      "License: GNU GPL. See COPYING and src/GPLv3.h. src/opl3.c, src/opl3.h, and src/stb_vorbis.c keep their own licenses."
+    ],
+    "evidence_url": "https://github.com/NagyD/SDLPoP/blob/3c5add5fb7f83d4ceb542823ab66d00146c4271b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
