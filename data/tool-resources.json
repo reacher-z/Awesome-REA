@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fireemblem8u",
+    "name": "Fire Emblem: The Sacred Stones disassembly",
+    "url": "https://github.com/FireEmblemUniverse/fireemblem8u",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles the US revision of Fire Emblem: The Sacred Stones. The ROM is named baserom.gba. A successful build prints fireemblem8.gba: OK, and the reviewed hash is sha1 c25b145e37456171ada4b0d440bf88a19f4d509f. scripts/quickstart.sh can place the ROM and refresh agbcc. A manual setup installs devkitPro or the GNU Arm Embedded toolchain, builds pret/agbcc into the repository, runs build_tools.sh, and then make.",
+    "description_zh": "该项目反汇编《火焰纹章：圣魔之光石》的美版。ROM 命名为 baserom.gba。成功构建会打印 fireemblem8.gba: OK，审阅的哈希是 sha1 c25b145e37456171ada4b0d440bf88a19f4d509f。scripts/quickstart.sh 可以放好 ROM 并刷新 agbcc。手动安装使用 devkitPro 或 GNU Arm Embedded 工具链，把 pret/agbcc 构建进仓库，运行 build_tools.sh，然后 make。",
+    "requirements": [
+      "The US ROM named baserom.gba. devkitPro or a GNU Arm Embedded toolchain, plus libpng for gbagfx.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/FireEmblemUniverse/fireemblem8u/blob/04d1edb163d14bd10777a065697e1a9f17be65f2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
