@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "skate3-android-case",
+    "name": "Skate 3 on Android",
+    "url": "https://github.com/andrewnakas/skate3-android",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Skate 3 on Android is the Android shell for a native recompilation of Skate 3. The PowerPC code is translated to C++ and compiled for ARM64, and a Vulkan renderer draws the scene. The recompiled engine lives in a separate tree on its android branch.",
+    "description_zh": "Skate 3 on Android 是 Skate 3 原生重编译的 Android 外壳。PowerPC 代码被翻译成 C++ 并编译到 ARM64，Vulkan 渲染器绘制场景。重编译引擎在另一棵树的 android 分支上。",
+    "requirements": [
+      "Android 16, arm64, Vulkan. The player supplies their own Xbox 360 disc image and Title Update 3.",
+      "The reviewed README does not name a license for this repository. It says driver licences are inside the APK."
+    ],
+    "evidence_url": "https://github.com/andrewnakas/skate3-android/blob/af641a6b0abeacc482b27a00a2a0c0b2248a4858/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

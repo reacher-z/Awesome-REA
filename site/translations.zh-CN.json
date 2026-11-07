@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "skate3-android-case": {
+    "name": "Skate 3 Android 版",
+    "requirements": [
+      "需要 Android 16、arm64 和 Vulkan。玩家提供自己的 Xbox 360 光盘镜像和 Title Update 3。",
+      "审阅的 README 没有给这个仓库写许可证。它写明驱动程序的许可证在 APK 里。"
+    ]
   }
 }
