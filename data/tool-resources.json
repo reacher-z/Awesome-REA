@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "xbox-boot-re",
+    "name": "Xbox boot reconstruction",
+    "url": "https://github.com/bennyborn/xbox-boot-re",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "binary"
+    ],
+    "class": "software",
+    "description_en": "This reconstructs the original Xbox boot animation from one BIOS image and rebuilds it as a portable C renderer with a WebGPU front end. The image is bios_complex_4627_retail.bin, SHA-256 3d5fae186cb31b5a6331155e532ef63e493afd85d7af8576fb52c95d0ce0362c, the 1 MB Complex 4627 Retail (1.0) image. Time keeping, camera, chamber, blob, logo, and the GPU command stream match recorded xemu runs. The web host listens on 127.0.0.1:8360.",
+    "description_zh": "该项目从一份 BIOS 镜像重建初代 Xbox 的开机动画，并做成带 WebGPU 前端的可移植 C 渲染器。镜像是 bios_complex_4627_retail.bin，SHA-256 为 3d5fae186cb31b5a6331155e532ef63e493afd85d7af8576fb52c95d0ce0362c，即 1 MB 的 Complex 4627 Retail (1.0)。计时、摄像机、腔体、光球、标志和 GPU 命令流与 xemu 的录制一致。网页宿主监听 127.0.0.1:8360。",
+    "requirements": [
+      "clang from LLVM 23.1.3 and Node.js. Run python core/build.py, then node hosts/web/serve.mjs.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/bennyborn/xbox-boot-re/blob/12a3396aa77f72c8d2fd94c0988c7e11539b47e7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
