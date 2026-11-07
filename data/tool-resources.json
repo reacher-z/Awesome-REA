@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokered-fr",
+    "name": "Pokémon Rouge and Bleue disassembly",
+    "url": "https://github.com/einstein95/pokered-fr",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles the French Game Boy games Pokémon: Version Rouge and Version Bleue. Rouge has SHA-1 47a7622fa30e6402a3891fe65b3a930bf9bd7aec. Bleue has SHA-1 47faa910d0e073c600665bf9c83b6bd17babdf8a. The debug ROM pokeblue_debug.gbc has SHA-1 a46b07c821b0df992237071490d681cdd61e8d1a. Setup is in INSTALL.md.",
+    "description_zh": "该项目反汇编 Game Boy 法版《宝可梦》红版和蓝版。红版 SHA-1 是 47a7622fa30e6402a3891fe65b3a930bf9bd7aec。蓝版 SHA-1 是 47faa910d0e073c600665bf9c83b6bd17babdf8a。调试 ROM pokeblue_debug.gbc 的 SHA-1 是 a46b07c821b0df992237071490d681cdd61e8d1a。安装步骤在 INSTALL.md。",
+    "requirements": [
+      "Follow INSTALL.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/einstein95/pokered-fr/blob/7ddc547e22e4c84f3e492a3c04a92c26f7f2e877/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
