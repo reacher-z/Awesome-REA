@@ -140636,5 +140636,25 @@
     "additional_evidence_urls": [
       "https://github.com/synamaxmusic/bar-decomp/blob/bd312023654ed73596026fee93128f1939cc3a17/LICENSE"
     ]
+  },
+  {
+    "id": "genmc",
+    "name": "genmc",
+    "url": "https://github.com/patois/genmc",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "genmc is an IDAPython script and plugin that displays Hex-Rays microcode. Running it as a script adds install_plugin(), which copies the script into IDA's plugins directory. From there the Plugins menu or Ctrl-Shift-M opens it. With the viewer focused, g shows the microcode graph and i shows the graph for the current micro-instruction. It needs IDA and a decompiler at version 7.3 or newer, and the main branch uses Python 3.",
+    "description_zh": "genmc 是一个 IDAPython 脚本和插件，用来显示 Hex-Rays 微码。把它当脚本运行会加入 install_plugin()，该函数把脚本复制到 IDA 的插件目录。之后可从插件菜单或 Ctrl-Shift-M 打开。查看器获得焦点时，g 显示微码图，i 显示当前微指令的图。它需要 7.3 或更高版本的 IDA 和反编译器，主分支使用 Python 3。",
+    "requirements": [
+      "IDA 7.3 or newer with the Hex-Rays decompiler. Python 3 on the main branch.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/patois/genmc/blob/f6f85d2db8c4643b65fab168667cc1c0300c523f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
