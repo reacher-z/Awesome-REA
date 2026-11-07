@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "opencrossing-anbernic-case",
+    "name": "OpenCrossing Anbernic",
+    "url": "https://github.com/TechProGabe/OpenCrossing-Anbernic",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "OpenCrossing Anbernic runs Animal Crossing for the GameCube on Anbernic handhelds. The game's decompiled C code runs on the handheld CPU, and a translation layer turns GameCube graphics calls into OpenGL ES. It is built from ACreTeam/ac-decomp.",
+    "description_zh": "OpenCrossing Anbernic 在 Anbernic 掌机上运行 GameCube 的《Animal Crossing》。游戏反编译出的 C 代码在掌机 CPU 上运行，翻译层把 GameCube 图形调用转成 OpenGL ES。它基于 ACreTeam/ac-decomp。",
+    "requirements": [
+      "A PortMaster-capable device and the player's own Animal Crossing (USA) disc, game ID GAFE01. .iso, .gcm, and .ciso images work. PAL and Japanese discs are refused.",
+      "Copy the release's ports folder to the SD card, put Animal Crossing.sh in ROMS/Ports/, and put the disc image in ports/ac-gc/rom/.",
+      "The README lists H700 Anbernic devices. The RG-34XX SP is the tested device. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/TechProGabe/OpenCrossing-Anbernic/blob/62428b9aa4983d6c4743ac9c2d1d005a2e4d26ed/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
