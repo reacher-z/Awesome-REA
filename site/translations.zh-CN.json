@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "body-harvest-recomp": {
+    "name": "Body Harvest 重编译",
+    "requirements": [
+      "需要 SHA-1 如上的美版 ROM。Linux 安装是 bash tools/setup_linux.sh --install，然后用 ROM 路径运行 bash tools/build_linux.sh。",
+      "许可证：本项目自己的代码为 MIT。分发的可执行文件链接 GPL-3.0 的 N64ModernRuntime，因此该二进制是 GPL-3.0 的组合作品。"
+    ]
   }
 }
