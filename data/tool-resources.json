@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "krakatau",
+    "name": "Krakatau",
+    "url": "https://github.com/Storyyeller/Krakatau",
+    "category": "jvm",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Krakatau assembles and disassembles Java bytecode, including obfuscated class files, and can reassemble the text back into a class file. krak2 dis writes assembly, and --roundtrip keeps a bit-for-bit reassembly. krak2 asm assembles .j files. The assembler syntax covers the Java 27 bytecode specification. The v2 decompiler is unfinished, so decompilation still uses Krakatau v1 on the master branch. cargo build --release produces target/release/krak2.",
+    "description_zh": "Krakatau 汇编和反汇编 Java 字节码，包括混淆过的类文件，并能把文本重新汇编成类文件。krak2 dis 写出汇编，--roundtrip 保持逐字节一致的重新汇编。krak2 asm 汇编 .j 文件。汇编语法覆盖 Java 27 字节码规范。v2 反编译器尚未完成，反编译仍使用 master 分支上的 Krakatau v1。cargo build --release 生成 target/release/krak2。",
+    "requirements": [
+      "Rust and Cargo. cargo build --release.",
+      "License: MIT or Apache 2, at the user's choice. Krakatau v1, and v2 through commit baa5534ab29dbfb7b62018bed897f52073974f2f, were GPL-3.0-or-later."
+    ],
+    "evidence_url": "https://github.com/Storyyeller/Krakatau/blob/6929fd6e1b8e15fe822e0e016754ce9361ee155a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
