@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openspideyps1-case",
+    "name": "OpenSpideyPS1",
+    "url": "https://github.com/GTTeancum/SpideyPS1recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "OpenSpideyPS1 is a native Windows recompilation of Spider-Man and Spider-Man 2: Enter Electro for the PlayStation, built with RecompOne. The PlayStation code is translated to C# ahead of time and runs on a shared runtime.",
+    "description_zh": "OpenSpideyPS1 是 PlayStation《蜘蛛侠》和《蜘蛛侠 2：电光人》的 Windows 原生重编译，使用 RecompOne。PlayStation 代码被提前翻译成 C#，并在共享运行时上运行。",
+    "requirements": [
+      "Version 1.0 asks for the player's USA PlayStation BIN/CUE or ISO. Launch SpiderMan.exe or SpiderMan2.exe with the included mods folder beside it.",
+      "The README says both games reach gameplay, and that the tests are not full playthroughs.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/GTTeancum/SpideyPS1recomp/blob/62cc9ecef88013bfab7043c32caf1308511e637d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
