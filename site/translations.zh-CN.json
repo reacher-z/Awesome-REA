@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "belthasar": {
+    "name": "BelthasarProject",
+    "requirements": [
+      "在 Windows 上需要带 CMake 和 Ninja 的 Visual Studio 2022 生成工具，以及 Python 3。用美版 ROM 运行 python tools/setup.py --rom，然后运行 tools\\build.bat。",
+      "许可证：为本项目编写的代码、工具和文档为 MIT。README 写明附带的 LakeSnes 核心保持自己的 MIT 许可证。"
+    ]
   }
 }
