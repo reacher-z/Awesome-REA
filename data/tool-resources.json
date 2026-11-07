@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "black-xbe-recomp",
+    "name": "Black XBE recomp",
+    "url": "https://github.com/TGP482/BLACK-XBERecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a native Windows port of the original Xbox game Black, made with Xbox XBE Recomp. An ISO or extracted files from the USA or Europe release go in assets. A source build needs default.xbe from the USA release in that folder. build.bat recompiles the game, and the executable is out/build/release/BLACK.exe. The first launch compiles the game code once. The minimum system is Windows 10 64-bit, a CPU with SSE4.2 and POPCNT, and a Direct3D 12 GPU.",
+    "description_zh": "这是原版 Xbox 游戏 Black 的 Windows 本地移植，使用 Xbox XBE Recomp 制作。美版或欧版的 ISO 或已提取文件放在 assets。源码构建需要该目录里有美版的 default.xbe。build.bat 重编译游戏，可执行文件是 out/build/release/BLACK.exe。第一次启动会编译一次游戏代码。最低配置是 64 位 Windows 10、带 SSE4.2 和 POPCNT 的 CPU，以及 Direct3D 12 GPU。",
+    "requirements": [
+      "Visual Studio 2022 with the C++ desktop workload, Clang tools, and CMake. The USA default.xbe for a source build.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/TGP482/BLACK-XBERecomp/blob/10b8464fa06ebd6e54e814b250e9e3554a48ef1c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
