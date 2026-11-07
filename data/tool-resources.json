@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sonic-riders-decomp",
+    "name": "Sonic Riders decompilation",
+    "url": "https://github.com/doldecomp/sonicriders",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Sonic Riders for the GameCube, USA. It builds sonicriders.dol, SHA-1 e90a13504974b917a675d59f07014e0e817c5e5d.",
+    "description_zh": "这是 GameCube 美版索尼克骑手的进行中反编译。它构建 sonicriders.dol，SHA-1 为 e90a13504974b917a675d59f07014e0e817c5e5d。",
+    "requirements": [
+      "devkitPro, Python 3, and gcc. Name a clean USA DOL baserom.dol. The README says to extract a compiler archive into tools/mwcc_compiler, then run make.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/doldecomp/sonicriders/blob/4f42e59cb5b6089a2aba413d344f804e5362f06f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
