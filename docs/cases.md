@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -94,6 +94,7 @@
 - [**Star Fox 64: a complete matching Nintendo 64 decompilation**](https://github.com/sonicdcer/sf64) - Reconstructs C source for the US 1.1 (Rev A) Nintendo 64 release of Star Fox 64 that, compiled with the IDO compiler through a static recompilation, rebuilds a ROM with the published MD5; the README badge counts all 2,951 functions as matching. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sf64-matching-decomp-case/)</sub>
 - [**Super Mario 64 DS: matching decompilation with relocation checks**](https://github.com/tangosdev/sm64ds-decomp) - Reconstructs Super Mario 64 DS functions as C/C++ and permitted assembly primitives, comparing compiled output with a user-supplied cartridge dump. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sm64ds-decomp-case/)</sub>
 - [**Super Mario 64: ROM reconstruction with explicit comparison gates**](https://github.com/n64decomp/sm64) - Reconstructs Super Mario 64 source for Japanese, North American, European, Shindou and iQue releases. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sm64-decomp-case/)</sub>
+- [**Super Mario Bros. 3 disassembly**](https://github.com/captainsouthbird/smb3) - This disassembly of Super Mario Bros. 3 is written for NESASM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/smb3-disasm/)</sub>
 - [**Super Mario Odyssey: per-function matching decompilation of the Switch executable**](https://github.com/MonsterDruide1/OdysseyDecomp) - Reconstructs C++ source for Super Mario Odyssey’s Switch 1.0 main executable and checks each function against the original AArch64 machine code with the shared nx-decomp-tools checker. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/odyssey-decomp-case/)</sub>
 - [**Super Mario Sunshine (USA): an AI-assisted matching decompilation fork**](https://github.com/chasem-dev/sms-english) - Extends the doldecomp Super Mario Sunshine decompilation to the North American GMSE01 release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sms-english-gmse01-decomp-case/)</sub>
 - [**Super Mario Sunshine: an in-progress matching GameCube decompilation**](https://github.com/doldecomp/sms) - Reconstructs Super Mario Sunshine’s C++ source so that the original Metrowerks compiler reproduces byte-identical object files for four GameCube releases and the Switch 3D All-Stars build. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sms-matching-decomp-case/)</sub>

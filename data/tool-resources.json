@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "smb3-disasm",
+    "name": "Super Mario Bros. 3 disassembly",
+    "url": "https://github.com/captainsouthbird/smb3",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembly of Super Mario Bros. 3 is written for NESASM. nesasm smb3.asm reassembles a byte-for-byte copy of the US PRG1 ROM. The repository also includes game.xml and an icons directory for the NoDice level editor, and musconv.xml for MusConv. Those files are not required to build the ROM.",
+    "description_zh": "这份《超级马里奥兄弟 3》反汇编面向 NESASM。nesasm smb3.asm 重新汇编出与美版 PRG1 ROM 逐字节一致的副本。仓库还包含给 NoDice 关卡编辑器用的 game.xml 和 icons 目录，以及给 MusConv 用的 musconv.xml。构建 ROM 不需要这些文件。",
+    "requirements": [
+      "NESASM.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/captainsouthbird/smb3/blob/09b1bd81a788de8ceec664a34094e84ddb463117/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

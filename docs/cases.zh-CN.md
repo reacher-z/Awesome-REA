@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -40,7 +40,7 @@
 [↑ 返回目录](#目录)
 
 <a id="game-matching-decompilation"></a>
-### 匹配反编译与反汇编 (69)
+### 匹配反编译与反汇编 (70)
 
 - [**3S Decomp：逐字比对的《街头霸王 III：3rd Strike》PS2 反编译重建**](https://github.com/crowded-street/3s-decomp) - 将 Street Fighter Anniversary Collection 中《街头霸王 III：3rd Strike》的 PlayStation 2 可执行文件反编译为 C 源码，用当年的 Metrowerks 与 EE GCC 编译器重新构建，再将重建出的可执行文件与使用者自备的原文件逐字比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)</sub>
@@ -94,6 +94,7 @@
 - [**《星际火狐 64》：完整的 Nintendo 64 版一致性反编译**](https://github.com/sonicdcer/sf64) - 为 Nintendo 64 版《星际火狐 64》美版 1.1（Rev A）重建 C 源码；借助静态重编译运行的 IDO 编译器编译后，可重建出 MD5 与公布值一致的 ROM，README 徽章显示全部 2,951 个函数均已一致。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sf64-matching-decomp-case/)</sub>
 - [**Super Mario 64 DS：带重定位核对的匹配反编译**](https://github.com/tangosdev/sm64ds-decomp) - 将 Super Mario 64 DS 函数重建为 C/C++ 和规则允许的汇编原语，并将编译结果与用户提供的卡带转储对比。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sm64ds-decomp-case/)</sub>
 - [**Super Mario 64：带明确比较开关的 ROM 重建**](https://github.com/n64decomp/sm64) - 为日版、北美版、欧洲版、Shindou 版和 iQue 版 Super Mario 64 重建源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sm64-decomp-case/)</sub>
+- [**超级马里奥兄弟 3 反汇编**](https://github.com/captainsouthbird/smb3) - 这份《超级马里奥兄弟 3》反汇编面向 NESASM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/smb3-disasm/)</sub>
 - [**《超级马力欧 奥德赛》：Switch 主程序的逐函数一致性反编译**](https://github.com/MonsterDruide1/OdysseyDecomp) - 为《超级马力欧 奥德赛》Switch 1.0 版主程序重建 C++ 源码，并用共享的 nx-decomp-tools 检查器逐个函数与原始 AArch64 机器码比对。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/odyssey-decomp-case/)</sub>
 - [**Super Mario Sunshine（美版）：AI 辅助的一致性反编译分支**](https://github.com/chasem-dev/sms-english) - 将 doldecomp 的 Super Mario Sunshine 反编译工作扩展到北美 GMSE01 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sms-english-gmse01-decomp-case/)</sub>
 - [**Super Mario Sunshine：仍在推进的 GameCube 一致性反编译重建**](https://github.com/doldecomp/sms) - 重建 Super Mario Sunshine 的 C++ 源码，目标是让原版 Metrowerks 编译器为四个 GameCube 发行版本及 Switch 版 3D All-Stars 生成逐字节一致的目标文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sms-matching-decomp-case/)</sub>
