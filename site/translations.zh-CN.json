@@ -39719,5 +39719,12 @@
       "目前仅构建美版。",
       "许可证：AGPL-3.0。"
     ]
+  },
+  "nsmbw-decomp": {
+    "name": "新超级马里奥兄弟Wii反编译",
+    "requirements": [
+      "需要 PALv1 转储的 main.dol 和四个 rel.LZ 文件。需要面向嵌入式 PowerPC 的 CodeWarrior、Ninja 和 Python。Linux 和 macOS 需要 wibo 或 Wine。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
