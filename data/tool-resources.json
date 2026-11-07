@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokekuristaru",
+    "name": "Pokémon Crystal Japanese disassembly",
+    "url": "https://github.com/PikalaxALT/pokekuristaru",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles Pokémon Crystal, Japanese version. It builds Pokemon - Crystal Version (J) [C][!].gbc, SHA-1 95127b901bbce2407daf43cce9f45d4c27ef635d. Setup is in INSTALL.md.",
+    "description_zh": "该项目反汇编日版《宝可梦 水晶》。它构建 Pokemon - Crystal Version (J) [C][!].gbc，SHA-1 为 95127b901bbce2407daf43cce9f45d4c27ef635d。安装步骤在 INSTALL.md。",
+    "requirements": [
+      "Follow INSTALL.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/PikalaxALT/pokekuristaru/blob/2fb3ee8f8c06aeaa89c37defbea8b85466f61260/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
