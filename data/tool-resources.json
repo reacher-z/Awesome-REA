@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openenroth",
+    "name": "OpenEnroth: a reimplementation of the Might and Magic VI-VIII engine",
+    "url": "https://github.com/OpenEnroth/OpenEnroth",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Open-source reimplementation of the Might and Magic VI, VII, and VIII engine that uses the original game data. The README says only Might and Magic VII is playable, with VI and VIII planned, and lists Windows, Linux, macOS, and experimental Android. Nightly builds are the published binaries.",
+    "description_zh": "魔法门 VI、VII 和 VIII 引擎的开源重实现，使用原始游戏数据。README 写明目前只有魔法门 VII 可以游玩，VI 和 VIII 仍在计划中，并列出 Windows、Linux、macOS 和实验性的 Android。已发布的二进制是每日构建。",
+    "evidence_url": "https://github.com/OpenEnroth/OpenEnroth/blob/63535c68f911b40dfa69b1adff71649877d9d37f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Might and Magic VII game data is required. The README says the ANIMS, DATA, MUSIC, and SOUNDS directories are the minimum.",
+      "The reviewed page states no license."
+    ]
   }
 ]
