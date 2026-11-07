@@ -12817,5 +12817,52 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-dynamic-evasion-survey",
+    "title": "Malware Dynamic Analysis Evasion Techniques: A Survey",
+    "authors": [
+      "Amir Afianian",
+      "Salman Niksefat",
+      "Babak Sadeghiyan",
+      "David Baptiste"
+    ],
+    "year": 2018,
+    "publication_date": "2018-11-03",
+    "date_precision": "day",
+    "date_basis": "arXiv first-submission date; the reviewed file is v1",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "1811.01190",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2018-11-03",
+    "doi": null,
+    "url": "https://arxiv.org/abs/1811.01190v1",
+    "pdf_url": "https://arxiv.org/pdf/1811.01190v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This survey reviews techniques malware uses to evade dynamic analysis. Those techniques limit sandboxes and instrumentation, which are standard tools when an analyst executes a binary to observe its behavior.",
+    "description_zh": "这篇综述整理恶意软件用来逃避动态分析的技术。这些技术会限制沙箱和插桩，而分析人员执行二进制以观察行为时通常依赖这些工具。",
+    "scope_limitations_en": "The reviewed file is arXiv:1811.01190v1. Evasion techniques were not retested.",
+    "scope_limitations_zh": "审阅的文件是 arXiv:1811.01190v1。逃逸技术没有重新测试。",
+    "why_fits_en": "Dynamic analysis evasion is a limit on behavioral reverse engineering of malware.",
+    "why_fits_zh": "动态分析逃逸限制的是对恶意软件行为的逆向工程。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/1811.01190v1",
+      "https://arxiv.org/pdf/1811.01190v1",
+      "https://export.arxiv.org/api/query?id_list=1811.01190"
+    ],
+    "metadata_notes": "The record is the 2018 preprint. A later journal version was not verified for this entry.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "恶意软件动态分析逃逸技术综述",
+    "date_basis_zh": "日期取自 arXiv 首次提交日，审阅的文件是 v1",
+    "metadata_notes_zh": "本条目是 2018 年的预印本。没有为该条目核实后来的期刊版本。"
   }
 ]
