@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "source-2-decompiler",
+    "name": "Source 2 Decompiler",
+    "url": "https://github.com/Dingf/Source-2-Decompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Source 2 Decompiler, s2dc, decompiles Source 2 resource files. It currently reads .vtex_c, .vmat_c, and .vpcf_c. Dota 2 Reborn files that no longer carry structure metadata need the ntro metadata placed beside the executable.",
+    "description_zh": "Source 2 Decompiler，即 s2dc，反编译 Source 2 的资源文件。它目前读取 .vtex_c、.vmat_c 和 .vpcf_c。Dota 2 Reborn 里不再带结构元数据的文件，需要把 ntro 元数据放在可执行文件旁边。",
+    "requirements": [
+      "The command is s2dc, with -d for an input directory and -o for an output root. Wildcards are accepted.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Dingf/Source-2-Decompiler/blob/0526b7aac49cc56d085c7a6c66d7b8f357ccd1b2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
