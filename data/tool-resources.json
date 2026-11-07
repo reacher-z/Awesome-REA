@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gnt4-decomp",
+    "name": "Naruto: Gekitou Ninja Taisen 4 decompilation",
+    "url": "https://github.com/doldecomp/gnt4",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Naruto: Gekitou Ninja Taisen 4 for the GameCube. main.dol has SHA-1 0eb4cc3bd4c7363f8cb7baff79de7a964cbdeadb. The clean DOL is named baserom.dol. The compiler is MWCC build 158 for PowerPC, placed in tools/mwcc_compiler/1.1/.",
+    "description_zh": "这是 GameCube 游戏《火影忍者 激斗忍者大战 4》的进行中反编译。main.dol 的 SHA-1 是 0eb4cc3bd4c7363f8cb7baff79de7a964cbdeadb。干净的 DOL 命名为 baserom.dol。编译器是 PowerPC 的 MWCC 构建 158，放在 tools/mwcc_compiler/1.1/。",
+    "requirements": [
+      "Windows devkitPro, then pacman -S python3-pip base-devel gcc vim cmake. Build the tools with make, then make in the repository root.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/doldecomp/gnt4/blob/b6c32473fca8d39facf1cad70f49a3c305e18cf0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
