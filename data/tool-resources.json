@@ -36543,6 +36543,7 @@
     "description_zh": "将 PSPRecomp 静态重编译框架应用于 Liberty City Stories，收录由美版 v1.05 PSP 可执行文件生成的 C++ 代码，以及 HLE、渲染、音频、输入和游戏补丁。Windows 构建经 Direct3D 12 渲染，Linux 构建则使用 Vulkan 与 SDL2。使用者需自备已解密的可执行文件和光盘数据；项目发布了版本，但未附兼容性或已知问题报告。",
     "evidence_url": "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at the v0.1.7 pre-release tag commit (2026-10-09); v0.1.6 is the latest full release. The v0.1.6 notes list optimizations and behavior changes such as a removed island loading screen and an AutoAim setting. Only the ULUS-10041 v1.05 release is targeted, and the output is a native LCSNative build, not recovered authored source or a PSP emulator.",
