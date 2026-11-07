@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "great-escape-c-case",
+    "name": "The Great Escape: C port of the ZX Spectrum game",
+    "url": "https://github.com/dpt/The-Great-Escape-in-C",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "The Great Escape in C is a C port of the 1986 isometric ZX Spectrum game The Great Escape. The README dates the port note to 17 April 2022 and names Denton Designs as the original creator and Ocean Software as the publisher.",
+    "description_zh": "The Great Escape in C 是 1986 年 ZX Spectrum 等距游戏《大逃亡》的 C 语言移植。README 把移植说明标为 2022 年 4 月 17 日，并写明原作者是 Denton Designs、发行商是 Ocean Software。",
+    "requirements": [
+      "The game is the 48K Sinclair ZX Spectrum release.",
+      "The README names copyright David Thomas, 2013-2022, and does not name a license."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/dpt/The-Great-Escape-in-C/blob/ac47f065e61b8777b9ffcedd32fa317e1138ed0c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
