@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bloodborne-recomp",
+    "name": "Bloodborne recompiler",
+    "url": "https://github.com/bloodborne-native/bloodborne-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This static recompiler reads Bloodborne for the PlayStation 4, CUSA03173 update 1.09, and writes its functions as C. The reviewed page counts 181,521 of 181,570 functions recompiled and 10,284,725 of 10,691,122 instructions. The player's launcher builds that library on the player's own device. Code that is not recompiled yet still runs in the bbcpu translator.",
+    "description_zh": "这个静态重编译器读取 PlayStation 4 版《血源诅咒》CUSA03173 更新 1.09，并把函数写成 C。审阅页面统计 181,570 个函数中的 181,521 个已重编译，10,691,122 条指令中的 10,284,725 条已重编译。玩家的启动器在玩家自己的设备上构建这个库。尚未重编译的代码仍由 bbcpu 翻译器运行。",
+    "requirements": [
+      "A local copy of Bloodborne CUSA03173 update 1.09. The Mac launcher build is described as about 14 minutes on an M3 Pro.",
+      "License: GNU GPL v2 or later. The toolchain releases bundle LLVM under the Apache License 2.0 with LLVM Exceptions. Zydis, used to decode x86, is MIT."
+    ],
+    "evidence_url": "https://github.com/bloodborne-native/bloodborne-recomp/blob/c60ccf8be752b8690f2813505c4daf9eafdb136b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
