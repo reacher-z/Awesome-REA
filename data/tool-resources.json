@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "oracles-disasm",
+    "name": "Oracle of Ages and Seasons disassembly",
+    "url": "https://github.com/Stewmath/oracles-disasm",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles the US Game Boy Color games Oracle of Ages and Oracle of Seasons. make builds both ROMs. make ages and make seasons build one game. The default build uses precompressed assets. Stock WLA-DX 10.6 does not byte-match the Seasons ROM because of empty-space handling, and the reviewed page says that does not change how the game runs. Editing text and graphics uses the hack-base branch or ./swapbuild.sh. The build needs Python 3, python3-yaml, and WLA-DX 10.6. Windows uses MSYS2. LynnaLab is the companion level editor.",
+    "description_zh": "该项目反汇编美版 Game Boy Color 游戏《塞尔达传说 不可思议的果实》时空之章和大地之章。make 同时构建两份 ROM。make ages 和 make seasons 各构建一作。默认构建使用预压缩资源。原版 WLA-DX 10.6 因空白处理不能与大地之章 ROM 逐字节一致，审阅页面写明这不改变游戏运行。编辑文本和图像使用 hack-base 分支或 ./swapbuild.sh。构建需要 Python 3、python3-yaml 和 WLA-DX 10.6。Windows 使用 MSYS2。LynnaLab 是配套的关卡编辑器。",
+    "requirements": [
+      "US ROMs. Python 3, python3-yaml, and WLA-DX 10.6. Windows builds use MSYS2.",
+      "The reviewed README does not name a license for the disassembly. It says Python scripts in tools that contain no Nintendo or Capcom code may be considered public domain unless stated otherwise."
+    ],
+    "evidence_url": "https://github.com/Stewmath/oracles-disasm/blob/21c924afdc8a13225e849214479d5113da2ec226/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
