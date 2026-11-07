@@ -11030,7 +11030,7 @@
       "审阅版本紧随 0.3.10 源码／配方发布（2026-10-16）之后，该版本的附件只有 PadMint 配方和 SHA256SUMS。没有公开 IPA，README 说明个人构建包含 Halo 游戏代码，不得分享。当前为预览状态：iPad Pro 12.9 英寸（第 6 代）可在本地和线上运行两个版本，iPhone 14 可进行本地对战，Mac 可运行两个版本，部分 Xbox 纹理和效果仍与原版不同。",
       "Xbox 版：使用者自己的初代 Xbox 版 Halo: Combat Evolved 光盘镜像，仅以美版（地图构建 01.10.12.2276）测试，并在应用内导入。Custom Edition：原始 HaloCESetup.exe 1.00 安装程序及使用者自己的产品密钥；构建工具会获取 Bungie 的 1.10 更新，并按哈希检查 PC 文件。零售版 Halo PC、Anniversary、Master Chief Collection 及后续作品均不受支持。",
       "目标平台为 iOS／iPadOS 17.4+ 和 Apple 芯片上的 macOS 14.4+。构建可在装有 Xcode 26+ 的 Apple 芯片 Mac 上通过 PadMint 完成（首次 Xbox 构建约需 35 GB 可用空间），仅 Xbox 版也可在使用者分支中的 GitHub Actions 工作流里构建。Custom Edition 另需 Wine，并固定使用带记录补丁的 M-HT SR（SRW、llasm、LLVM）；Xbox 引擎经 ANGLE 在 Metal 上渲染。",
-      "STATUS.md 按构建和设备记录检查结果。早期 G2 阶段将六个转换后的 Halo 函数与 Unicorn x86 参考执行结果对照，并让不支持的指令、缺失的导入和未知跳转目标明确停止。已知问题包括首次出现时的卡顿、较模糊的 Xbox 纹理和偶发的手柄失联；Chimera 等 DLL 模组无法加载。本合集未运行任何内容。",
+      "STATUS.md 按构建和设备记录检查结果。早期 G2 阶段将六个转换后的 Halo 函数与 Unicorn x86 参考执行结果对照，并让不支持的指令、缺失的导入和未知跳转目标明确停止。已知问题包括首次出现时的卡顿、较模糊的 Xbox 纹理和偶发的手柄失联；Chimera 等 DLL 模组无法加载。",
       "GitHub 未识别出许可证；RIGHTS-STATUS.md 记录没有项目整体的公开许可授权，且仍写着未授权发布。反编译评审文档指出，上游虽附有 CC0 文本，但重建的是 Bungie／Microsoft 的代码；固定的工具保留各自条款。README 披露了大量 AI 辅助，但没有经审计的占比；未确立 REA 使用。"
     ]
   }
