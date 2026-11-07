@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ogs-engine": {
+    "name": "OGS 引擎",
+    "requirements": [
+      "代码库的大部分使用 GNU GPL v3 或更高版本。goldsrc/tier1 和 goldsrc/public/tier1 中的 ogs-interface 代码使用 MIT。",
+      "由 Half-Life SDK 编译的游戏 DLL 仍使用 Half-Life SDK 许可证。README 允许作为特别例外，把 GPL v3 的 OGS 代码与它们链接。"
+    ]
   }
 }

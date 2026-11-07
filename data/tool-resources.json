@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ogs-engine",
+    "name": "OGS Engine",
+    "url": "https://github.com/headcrab-junkyard/OGS",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "software",
+    "description_en": "OGS Engine is an open-source reimplementation of the GoldSource engine, built from original id Tech 2 sources. The README says it does not use reverse-engineered GoldSource code.",
+    "description_zh": "OGS Engine 是 GoldSource 引擎的开源重实现，基于原始 id Tech 2 源码。README 写明它不使用逆向得到的 GoldSource 代码。",
+    "requirements": [
+      "Most of the codebase is GNU GPL v3 or later. The ogs-interface code in goldsrc/tier1 and goldsrc/public/tier1 is MIT.",
+      "Game DLLs compiled from the Half-Life SDK remain under the Half-Life SDK license. The README permits linking the GPL v3 OGS code with them as a special exception."
+    ],
+    "evidence_url": "https://github.com/headcrab-junkyard/OGS/blob/b24f686d963a322735392fc7d57a459352ce0d1b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
