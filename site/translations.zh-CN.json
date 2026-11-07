@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "redivivus-case": {
+    "name": "Redivivus",
+    "requirements": [
+      "翻译单元用 -std=c++17 编译。与原版比对的是 Visual C++ 2005 构建。",
+      "许可证：MIT。3rdparty/libbacktrace/ 下的代码保留自己的许可证。"
+    ]
   }
 }
