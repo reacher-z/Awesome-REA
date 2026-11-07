@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "db-final-bout-recomp": {
+    "name": "龙珠 GT Final Bout 重编译",
+    "requirements": [
+      "需要 Windows x64。下载 dbfb-0.2.1-windows-x64.zip，然后运行 DBFinalBout_Recompiled.exe。",
+      "许可证：MIT。README 写明包含的 OpenBIOS 使用它自己的 MIT 许可证。"
+    ]
   }
 }

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "db-final-bout-recomp",
+    "name": "Dragon Ball GT: Final Bout recompilation",
+    "url": "https://github.com/novapowers0/DB-Final-Bout-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Dragon Ball GT: Final Bout for the PlayStation, USA SLUS-00493, to Windows with PSXRecomp. Release v0.2.1 is a compiled package. The player selects a disc on first launch. Widescreen is optional, and OpenBIOS is included.",
+    "description_zh": "该项目用 PSXRecomp 把 PlayStation 美版《龙珠 GT：Final Bout》（SLUS-00493）重编译到 Windows。发布版 v0.2.1 是已编译的安装包。玩家在第一次启动时选择光盘。宽屏是可选的，其中包含 OpenBIOS。",
+    "requirements": [
+      "Windows x64. Download dbfb-0.2.1-windows-x64.zip and run DBFinalBout_Recompiled.exe.",
+      "License: MIT. The README says OpenBIOS is included under its MIT license."
+    ],
+    "evidence_url": "https://github.com/novapowers0/DB-Final-Bout-Recomp/blob/5646617ee9339836f12a947cceb849ee07c1bad9/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
