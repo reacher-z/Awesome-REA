@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "castlemaster2-disasm",
+    "name": "Castle Master II disassembly",
+    "url": "https://github.com/santiontanon/castlemaster2-disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This disassembles Castle Master II: The Crypt, the 1990 ZX Spectrum game built with the Freescape engine. castlemaster2-annotated.asm is the commented disassembly, castlemaster2-original.asm is the raw disassembly, and loader-annotated.asm and loader-original.asm cover the loader.",
+    "description_zh": "该项目反汇编 1990 年 ZX Spectrum 游戏《Castle Master II: The Crypt》。它用 Freescape 引擎制作。castlemaster2-annotated.asm 是带注释的反汇编，castlemaster2-original.asm 是原始反汇编，loader-annotated.asm 和 loader-original.asm 覆盖加载器。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/santiontanon/castlemaster2-disassembly/blob/bf2961c62b9208d0afd49c337e20e6c0c582d96d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
