@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "apk-dependency-graph": {
+    "name": "Apk Dependency Graph（APK 类依赖图）",
+    "requirements": [
+      "输入是一个 APK 文件和一份 filterset JSON。仓库包含默认 filterset。",
+      "README 写明该仓库已不再维护。",
+      "GitHub 报告该仓库的许可证为 Apache-2.0。"
+    ]
   }
 }
