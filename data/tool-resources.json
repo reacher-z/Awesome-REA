@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mach-o-scope",
+    "name": "Mach-O-Scope",
+    "url": "https://github.com/smorr/Mach-O-Scope",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Mach-O-Scope 0.2 browses the disassembly of Mach-O bundles such as OS X applications and plugins. It uses otool and OTX to dump ppc, i386, and x86_64 assembly, stores the result in SQLite, and keeps notes on methods.",
+    "description_zh": "Mach-O-Scope 0.2 用于浏览 Mach-O 包（例如 OS X 应用程序和插件）的反汇编。它用 otool 和 OTX 导出 ppc、i386 和 x86_64 汇编，把结果存入 SQLite，并保留对方法的笔记。",
+    "requirements": [
+      "It uses otool and OTX.",
+      "The README says C functions and blocks are not handled properly yet.",
+      "The README says Mach-O-Scope is released under the BSD license."
+    ],
+    "evidence_url": "https://github.com/smorr/Mach-O-Scope/blob/c29a5db2242d74d32b3ec7c392947569ce4d9dbd/README",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
