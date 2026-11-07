@@ -36543,6 +36543,7 @@
     "description_zh": "基于 Inno Setup 构建的 Windows 安装程序，以可选组件的形式安装一套现成的 x86/x64 逆向工程与恶意软件分析工具集：调试器、反编译器、十六进制编辑器，PE、ELF、.NET、Java、Go、Delphi 和 AutoIt 分析工具，以及进程检查、脱壳、网络、OLE/PDF 和特征匹配工具。可从桌面启动器打开工具，也可通过资源管理器右键菜单中的 retoolkit 项把所选文件直接交给工具；README 称部分工具已预先配置，例如带插件的 x64dbg，以及可在任意目录运行的命令行工具。仓库只包含安装脚本，打包的程序都是第三方工具，各自适用其条款。",
     "evidence_url": "https://github.com/mentebinaria/retoolkit/blob/8a5d1197c07ab0635c2948d42f53bda696680125/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Latest release at review: 2026.04, published 2026-05-16 on the repository's Releases page as a single 7z archive of about 2 GB containing the setup program. The reviewed main commit is five commits ahead of that tag; they add copyright and attribution notices and adjust the Nmap and Wireshark scripts. CHANGELOG.md lists the tools added and changed in each release.",
