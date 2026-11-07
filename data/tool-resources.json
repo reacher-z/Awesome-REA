@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "aloha",
+    "name": "Jumping Flash decompilation",
+    "url": "https://github.com/NotExactlySiev/aloha",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "Aloha is a non-matching decompilation of Jumping Flash for the PlayStation. The Japan image original/jp.bin has MD5 f06c4a94709537b0a12af5df0889629e. The USA image original/us.bin has MD5 4e73eb6054568a3ef88843e3d8c7d80b. The European image is listed as original/eu.bin, MD5 bfe9de682f985076dc5409ecabb7e51d, and the README says a European build is not supported. dump_jp.sh or dump_us.sh extracts the disc, python mkninja.py jp or us writes the Ninja file, and ninja builds it.",
+    "description_zh": "Aloha 是 PlayStation 游戏 Jumping Flash 的非匹配反编译。日版镜像 original/jp.bin 的 MD5 是 f06c4a94709537b0a12af5df0889629e。美版镜像 original/us.bin 的 MD5 是 4e73eb6054568a3ef88843e3d8c7d80b。欧版镜像列为 original/eu.bin，MD5 bfe9de682f985076dc5409ecabb7e51d，README 写明欧版构建还不支持。dump_jp.sh 或 dump_us.sh 提取光盘，python mkninja.py jp 或 us 写出 Ninja 文件，ninja 进行构建。",
+    "requirements": [
+      "A BIN/CUE image, ninja, gcc-mipsel-gnu-linux, binutils-mipsel-gnu-linux, mkpsxiso, dumpsxiso, and Python.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/NotExactlySiev/aloha/blob/ba88a8cb566151508abf2f8fc61cecd6ef873db2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
