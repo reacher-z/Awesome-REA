@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ring-out-case",
+    "name": "Ring Out: native PC port of a GameCube fighting game",
+    "url": "https://github.com/jackpoison-prog/RingOut",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Ring Out is a native PC port of a GameCube fighting game with disc ID GRSEAF, produced by static recompilation. The README says the disc's PowerPC executable is translated ahead of time into C, compiled for x86-64, and run in a Dolphin-derived runtime.",
+    "description_zh": "Ring Out 是光盘 ID 为 GRSEAF 的 GameCube 格斗游戏的原生 PC 移植，采用静态重编译。README 写明光盘上的 PowerPC 可执行文件被提前翻译成 C，编译为 x86-64，并在源自 Dolphin 的运行时中运行。",
+    "requirements": [
+      "You supply a disc image you already own. Setup extracts it and recompiles it on your machine. No game data or game code is distributed in the repository.",
+      "The README says the game is playable from the menu through gameplay, and that the project is still early.",
+      "License: GPL-2.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/jackpoison-prog/RingOut/blob/9339899231d9cf90282c7b4c17eb1cf0c3c4e14c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
