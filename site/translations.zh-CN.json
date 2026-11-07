@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "smw-src-case": {
+    "name": "smw-src",
+    "requirements": [
+      "解压 bin 里的压缩包，然后在根目录运行 wla.bat。汇编使用一个较旧的修改版 WLA。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
