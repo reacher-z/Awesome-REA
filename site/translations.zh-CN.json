@@ -11023,5 +11023,11 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "360tools": {
+    "name": "360tools",
+    "requirements": [
+      "许可证：除非某个文件另有说明，否则是 MIT。extract_stfs.py 包含源自 Rene Ladan、采用二句版 BSD 许可证的代码。ReXGlue 保留自己的许可证。"
+    ]
   }
 }
