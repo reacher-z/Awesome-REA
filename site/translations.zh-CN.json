@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "carnage3d": {
+    "name": "Carnage3D：侠盗猎车手 1 的开源重制",
+    "requirements": [
+      "README 写明 Linux makefile 配置为使用 clang。它列出 libglew-dev、libglm-dev、libgl1-mesa-dev、xorg-dev、clang 和 libopenal-dev。",
+      "浏览器构建发布在 https://codenamecpp.github.io/carnage3d/web/carnage3D_wasm.html。README 写明在 64 位 Chrome 85 和 Firefox 81.0.1 中测试过，并且不能在 Edge 中运行。",
+      "README 徽章标明 MIT 许可证。GitHub 报告为 MIT。"
+    ]
   }
 }
