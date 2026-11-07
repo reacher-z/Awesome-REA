@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rogue-galaxy-recomp-case",
+    "name": "Rogue Galaxy Recompiled",
+    "url": "https://github.com/victor-takai/rogue-galaxy-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Rogue Galaxy Recompiled is a native Windows build of the USA PlayStation 2 release SCUS-97490, statically recompiled with PS2Recomp. Version 0.2.0 is an early pre-release. The README says the whole game plays, and that it has not been played from start to finish.",
+    "description_zh": "Rogue Galaxy Recompiled 是 PlayStation 2 美版 SCUS-97490《Rogue Galaxy》的 Windows 原生构建，用 PS2Recomp 静态重编译。0.2.0 是早期预发布。README 写明整个游戏可以玩，但还没有从头玩到尾。",
+    "requirements": [
+      "The player builds it from their own USA disc, SCUS-97490. Other discs are not accepted.",
+      "License: GPL-3.0, the same license as PS2Recomp, which the built executable links."
+    ],
+    "evidence_url": "https://github.com/victor-takai/rogue-galaxy-recomp/blob/fa358e613393915d04021f3e084af4f876ce5e82/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
