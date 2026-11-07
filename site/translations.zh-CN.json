@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "megaman-x2-recomp-case": {
+    "name": "洛克人X2 重编译",
+    "requirements": [
+      "玩家提供自己的 ROM。SHA-256 为 f3246755f608a1e1dc9c848b61da3b824c7853b29b3be40df6fc7f2793a887ed。512 字节的 SMC 头会被自动去掉。",
+      "许可证：PolyForm Noncommercial 1.0.0。"
+    ]
   }
 }
