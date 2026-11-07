@@ -17,7 +17,7 @@
 | [原生二进制](native-analysis.zh-CN.md) | 837 | 142 |
 | [运行时与调试](dynamic-analysis.zh-CN.md) | 152 | 36 |
 | [固件](firmware.zh-CN.md) | 228 | 37 |
-| [协议](protocol-analysis.zh-CN.md) | 113 | 12 |
+| [协议](protocol-analysis.zh-CN.md) | 113 | 13 |
 | [通用工具与资源合集](reverse-engineering.zh-CN.md) | 654 | 79 |
 
 [扫描方法（英文）](../source-scan.md) · [范围排除记录](../../data/source-scope.json)

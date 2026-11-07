@@ -11023,5 +11023,15 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ringverse-oura-ring-protocol-case": {
+    "name": "Smart ring protocol：记录 Oura Ring 蓝牙协议与事件格式",
+    "requirements": [
+      "在 2026-06-18 的 main 分支最新提交处审阅，自 2024-11 起共五次提交。该仓库是文档加一个解析脚本，而非客户端应用：oura/BLE.md 涵盖帧结构、流程与数据包，oura/events/ 涵盖事件流，oura/data.md 只是空白占位。目前仅涵盖 Oura Ring。",
+      "使用这些笔记需要使用者自己的 Oura Ring；BLE.md 称其内容仅在 Oura Ring 4 上确认。仓库未收录任何 Oura 固件、应用安装包或原生库，也未包含抓包记录。BLE.md 还记录了戒指的逐设备认证交换，storage.md 描述了如何从使用者自己的 iOS 应用备份中取回该密钥；本记录不复述这两项流程，仓库中也没有提交任何密钥值。",
+      "oura/events/parse.js 是一个独立的 Node.js 脚本，用于解码事件流的通用头部和各类型载荷。EVENTS.md 称其依据 Oura Android 应用 6.2.0 版中的 libringeventparser.so 得出，因此较新的应用或固件版本可能有所不同。",
+      "EVENTS.md 提示，它和 parse.js 均由 AI 生成、尚未完全核实，作者计划手动重写。仓库没有测试或 CI；本次核查既未运行解析器，也未连接戒指，解码字段仍为作者报告。",
+      "仓库没有许可证文件，因此笔记和解析器的复用权利未作说明。Oura 与 Oura Ring 仍为其权利人的商标；所审阅来源未确立任何 REA 使用。"
+    ]
   }
 }
