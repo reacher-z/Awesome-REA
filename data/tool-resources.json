@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "forecast-channel",
+    "name": "Forecast Channel decompilation",
+    "url": "https://github.com/doldecomp/forecast",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "binary"
+    ],
+    "class": "software",
+    "description_en": "This decompiles the Wii Forecast Channel, version HAFE v7, USA/NTSC. The WAD is copied to orig/HAFE. python configure.py accepts --version for a version other than HAFE. ninja builds the project, and objdiff.json is written after the first successful build. Linux and macOS download wibo.",
+    "description_zh": "该项目反编译 Wii 天气预报频道，版本 HAFE v7，美版 NTSC。WAD 复制到 orig/HAFE。python configure.py 可以用 --version 选择 HAFE 以外的版本。ninja 构建项目，第一次成功构建后写出 objdiff.json。Linux 和 macOS 会下载 wibo。",
+    "requirements": [
+      "Python 3 and Ninja. Copy the HAFE WAD to orig/HAFE, run python configure.py, then ninja.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/doldecomp/forecast/blob/92a5782ad2ffd30b4d84c17ac9777d696b5a2f17/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
