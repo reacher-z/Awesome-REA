@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "letsgo-recomp",
+    "name": "Let's Go Recomp",
+    "url": "https://github.com/raulzrrs/letsgo-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Let's Go Recomp is a native Windows port of Pokémon: Let's Go, Eevee! and Let's Go, Pikachu! for Nintendo Switch. It translates the game's ARM64 code to C and compiles it for the PC, with a runtime for system services, NVN graphics on Vulkan, audio, and controllers. It is built on LAS Recomp. The reviewed page supports either game at 1.0.0, and Eevee at 1.0.2, from a dump that contains exefs and romfs. LetsGoRecomp.exe selects that folder and recompiles once. Rendering can go to 4K, with SMAA, TAA, or FSR, and the overworld can run at 60 or 120 fps.",
+    "description_zh": "Let's Go Recomp 是任天堂 Switch 游戏《宝可梦 Let's Go！伊布》和《Let's Go！皮卡丘》的 Windows 原生移植。它把游戏的 ARM64 代码译成 C 并编译到 PC，由运行时提供系统服务、Vulkan 上的 NVN 图形、音频和手柄。它基于 LAS Recomp。审阅页面支持两作的 1.0.0，以及伊布版的 1.0.2，转储需要包含 exefs 和 romfs。LetsGoRecomp.exe 选择该文件夹并只重编译一次。渲染最高到 4K，可用 SMAA、TAA 或 FSR，主世界可以跑到 60 或 120 帧。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, an x86-64 CPU with SSE4.2, and a Vulkan 1.3 GPU. A personal dump with exefs and romfs.",
+      "License: MIT, the same as LAS Recomp. FFmpeg is LGPL. The Baloo 2 font is OFL."
+    ],
+    "evidence_url": "https://github.com/raulzrrs/letsgo-recomp/blob/1a70f777c7abac6834ca54bd69b1235471193e1e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
