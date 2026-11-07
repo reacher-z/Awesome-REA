@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "crackdown2-recomp": {
+    "name": "Crackdown 2 重编译",
+    "requirements": [
+      "需要 CMake、Ninja，以及 Clang 或 LLVM。把光盘和标题更新 5，包括它的 xexp，提取到 assets。default.xex 的 SHA-256 是 8959C449E382661D29B8EA479C685F506CD5BD3ECA40B3D73A51CC10F281069F。标题更新 5 的 SHA-256 是 A5E49FC1FF7F6F65E6F95A7B5C4B9392BB9E38674D1237AC0E2F0149D05929D7。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "crackdown2-recomp",
+    "name": "Crackdown 2 recompilation",
+    "url": "https://github.com/matty45/Crackdown2-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a static recompilation of Crackdown 2 using ReXGlue SDK 0.5.0. The Windows debug preset is win-amd64-debug. The README says the result is in-game but not playable yet.",
+    "description_zh": "这是用 ReXGlue SDK 0.5.0 对 Crackdown 2 做的静态重编译。Windows 调试预设是 win-amd64-debug。README 写明结果能进入游戏，但还不能玩。",
+    "requirements": [
+      "CMake, Ninja, and Clang or LLVM. Extract the disc and Title Update 5, including its xexp, into assets. default.xex SHA-256 8959C449E382661D29B8EA479C685F506CD5BD3ECA40B3D73A51CC10F281069F. Title Update 5 SHA-256 A5E49FC1FF7F6F65E6F95A7B5C4B9392BB9E38674D1237AC0E2F0149D05929D7.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/matty45/Crackdown2-Recomp/blob/589d8ce85b8a06ea87157d8ec07a7642bbeb4997/README.MD",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
