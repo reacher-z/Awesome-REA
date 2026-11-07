@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pwaa1-decomp-case": {
+    "name": "逆转裁判反编译",
+    "requirements": [
+      "pwaa1.gba 的 SHA-1 为 15C0E3389709BB275C42E99ED25212D09E49E361，pwaa1_rev1.gba 的 SHA-1 为 D23B788C80732898C6CFE344A6811900EB060F23。",
+      "从 new_layout_with_libs 分支构建 agbcc，运行 make tools，然后运行 make。README 假定使用 Linux 终端，并写明 Windows 10 使用 WSL。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

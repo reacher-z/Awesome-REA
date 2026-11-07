@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -40,7 +40,7 @@
 [↑ 返回目录](#目录)
 
 <a id="game-matching-decompilation"></a>
-### 匹配反编译与反汇编 (69)
+### 匹配反编译与反汇编 (70)
 
 - [**3S Decomp：逐字比对的《街头霸王 III：3rd Strike》PS2 反编译重建**](https://github.com/crowded-street/3s-decomp) - 将 Street Fighter Anniversary Collection 中《街头霸王 III：3rd Strike》的 PlayStation 2 可执行文件反编译为 C 源码，用当年的 Metrowerks 与 EE GCC 编译器重新构建，再将重建出的可执行文件与使用者自备的原文件逐字比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)</sub>
@@ -55,6 +55,7 @@
 - [**Final Fantasy VII：PlayStation 版一致性反编译**](https://github.com/Xeeynamo/ff7-decomp) - 为 Final Fantasy VII 美版 PlayStation 发行版重建 C 源码，目标是让代码重新编译出原版主可执行文件及各游戏覆盖段（overlay）。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ff7-ps1-matching-decomp-case/)</sub>
 - [**GoldenEye 007：覆盖三个版本的一致性 Nintendo 64 反编译**](https://github.com/n64decomp/007) - 将 GoldenEye 007 的 Nintendo 64 代码重建为 C 源码，可重新构建美版、日版和 PAL 版 ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/goldeneye-007-matching-decomp-case/)</sub>
 - [**Gran Turismo 4：借助智能体的 PS2 引擎匹配反编译**](https://github.com/gustavocanepa/gt4-decomp) - 将 Gran Turismo 4（《GT 赛车 4》）的 PS2 引擎可执行文件（CORE.GT4，NTSC-U v1.01）按每个函数一个 C 或 C++ 源文件反编译，面向 Sony 的 ee-gcc 2.96，并用 newlib、Expat 等公开库自身的源码匹配其函数。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gran-turismo-4-matching-decomp-case/)</sub>
+- [**逆转裁判反编译**](https://github.com/atasro2/pwaa1) - 这是 Game Boy Advance 日版《逆转裁判》的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pwaa1-decomp-case/)</sub>
 - [**Halo 2：智能体辅助的 LTCG Xbox 版一致性反编译**](https://github.com/kirklandsig/halo2-decompiled) - Halo 2（初代 Xbox）的进行中一致性反编译：贡献者编写 C 与 C++ 代码，由原时代编译器以链接时代码生成方式构建整个程序，须逐函数还原出零售版可执行文件的字节。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/halo2-matching-decomp-case/)</sub>
 - [**Himuro：Fatal Frame（《零》）PS2 一致性反编译**](https://github.com/Mikompilation/Himuro) - 将 Fatal Frame（《零》）PS2 可执行文件的美版、欧版和日版重建为 C，使用原始的 EE-GCC 2.9 工具链构建，并以使用者自备可执行文件的 SHA-1 校验结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/himuro-fatal-frame-decomp-case/)</sub>
 - [**《ICO》反编译：逐字节一致的 PAL 与日版 PlayStation 2 启动 ELF**](https://github.com/nathanialf/ico) - 以同一套源码和游戏原用的编译器版本，重建《ICO》PAL 版（SCES-50760）与日版（SCPS-11003）PlayStation 2 光盘的启动 ELF，并检查载入的每个字节以及整个 ELF 文件都与光盘的 SHA-1 一致。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ico-matching-decomp-case/)</sub>

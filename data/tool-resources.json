@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pwaa1-decomp-case",
+    "name": "Gyakuten Saiban decompilation",
+    "url": "https://github.com/atasro2/pwaa1",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a decompilation of Gyakuten Saiban, the Japanese Game Boy Advance release. It builds pwaa1.gba and pwaa1_rev1.gba. A debug branch recreates a debug build from the partial debug menu in the Gyakuten Saiban 3 demo and from the 2005 and 2008 PC ports.",
+    "description_zh": "这是 Game Boy Advance 日版《逆转裁判》的反编译。它构建 pwaa1.gba 和 pwaa1_rev1.gba。debug 分支用《逆转裁判 3》试玩版里的部分调试菜单，以及 2005 年和 2008 年的 PC 移植，重建了一个调试构建。",
+    "requirements": [
+      "The US-style output hashes are SHA-1 15C0E3389709BB275C42E99ED25212D09E49E361 for pwaa1.gba and D23B788C80732898C6CFE344A6811900EB060F23 for pwaa1_rev1.gba.",
+      "Build agbcc from the new_layout_with_libs branch, run make tools, then make. The README assumes a Linux terminal and names WSL for Windows 10.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/atasro2/pwaa1/blob/744219a74f9d92d1dcd3ea10f502ca270ab9fda2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
