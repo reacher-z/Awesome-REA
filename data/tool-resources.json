@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "psprecomp",
+    "name": "psprecomp",
+    "url": "https://github.com/sp00nznet/psprecomp",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "psprecomp is a C11 toolkit that statically recompiles PlayStation Portable Allegrex MIPS binaries into C. The command allegrexrecomp emit writes translation units of 64 functions, plus a shared header and import thunks. Game ports consume the toolkit as a submodule. The core build has no external dependencies.",
+    "description_zh": "psprecomp 是一个 C11 工具包，把 PlayStation Portable 的 Allegrex MIPS 二进制静态重编译成 C。命令 allegrexrecomp emit 写出每组 64 个函数的翻译单元，以及共享头文件和导入跳板。游戏移植把这个工具包当作子模块使用。核心构建没有外部依赖。",
+    "requirements": [
+      "CMake and a C compiler. Configure with cmake -S . -B build, then cmake --build build --config Release.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/sp00nznet/psprecomp/blob/5ca18fac1691a4a7b40ae683dabdf72a5703d2b8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
