@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -188,7 +188,7 @@
 - [**Zelda 64: Recompiled — a native Majora’s Mask port without a full source decompilation**](https://github.com/Zelda64Recomp/Zelda64Recomp) - Uses N64Recomp to translate Majora’s Mask into a native application and RT64 for rendering. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda64recomp-case/)</sub>
 
 <a id="game-port"></a>
-### Ports of reconstructed source (33)
+### Ports of reconstructed source (34)
 
 - [**2 Ship 2 Harkinian: a native Majora’s Mask port built on the decompilation**](https://github.com/2ship2harkinian/2ship2harkinian) - Builds native Windows, Linux and macOS versions of The Legend of Zelda: Majora’s Mask from an adapted copy of the zeldaret/mm decompilation, with libultraship reimplementing N64 SDK functions. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/2ship2harkinian-mm-port-case/)</sub>
 - [**3SX: a native Street Fighter III: 3rd Strike port continuing the PS2 decompilation**](https://github.com/crowded-street/3sx) - Builds Street Fighter III: 3rd Strike as native C for Windows, macOS and Linux, continuing the 3s-decomp PS2 decompilation, with SDL3 for video, input and audio and GekkoNet for rollback netplay. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/3sx-third-strike-native-port-case/)</sub>
@@ -221,6 +221,7 @@
 - [**Starship: a Star Fox 64 PC port built from the decompilation**](https://github.com/HarbourMasters/Starship) - A native PC port of Star Fox 64 that compiles the game's decompiled C code against libultraship, an N64 porting library that reimplements libultra and renders through Fast3D. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/starship-sf64-pc-port-case/)</sub>
 - [**Super Mario Sunshine: a native PC port from an AI-assisted decompilation**](https://github.com/chasem-dev/sms-pc-port) - Builds a native PC port of Super Mario Sunshine’s North American release from a pinned matching-decompilation fork, adding a host platform layer for graphics, disc, audio, input and OS services. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sms-pc-port-case/)</sub>
 - [**TH08 Web: a WebAssembly port built from reconstructed source**](https://github.com/N0zoM1z0/th08-web) - Compiles the reconstructed C++ source of the Japanese Touhou 8 1.00d release to WebAssembly with Emscripten, adding WebGL 2 rendering, Web Audio, browser input and IndexedDB saves behind the game’s D3D8-, DirectSound- and DirectInput-shaped interfaces. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/th08-web-wasm-port-case/)</sub>
+- [**The Great Escape: C port of the ZX Spectrum game**](https://github.com/dpt/The-Great-Escape-in-C) - The Great Escape in C is a C port of the 1986 isometric ZX Spectrum game The Great Escape. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/great-escape-c-case/)</sub>
 - [**TonyWasAProSkater: a THPS1 native port forked from a matching decompilation**](https://github.com/LANCommander/TonyWasAProSkater) - Ports Tony Hawk’s Pro Skater (PlayStation, USA) to native Windows and Linux builds from a fork of an in-progress matching decompilation of the retail executable. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/thps1-decomp-native-port-case/)</sub>
 - [**Vandal Hearts: native PC port built on matching decompilations**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - Builds on shao113’s matching decompilation of PlayStation Vandal Hearts, adds a Japanese matching tree, and carries both through to a native Windows and Linux port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vandal-hearts-pc-port-case/)</sub>
 

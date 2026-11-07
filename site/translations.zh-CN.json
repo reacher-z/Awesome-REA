@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "great-escape-c-case": {
+    "name": "The Great Escape：ZX Spectrum 游戏的 C 语言移植",
+    "requirements": [
+      "游戏是 48K Sinclair ZX Spectrum 版本。",
+      "README 写明版权属于 David Thomas，2013–2022 年，并且没有写许可证。"
+    ]
   }
 }
