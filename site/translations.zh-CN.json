@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "aerogauge-n64-decomp": {
+    "name": "AeroGauge 反编译",
+    "requirements": [
+      "需要 mips64-elf-binutils、QEMU Irix 和 pip。运行 make dependencies，把美版 ROM 复制为 baserom.z64，然后运行 make extract 和 make。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

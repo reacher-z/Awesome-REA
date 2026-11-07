@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "aerogauge-n64-decomp",
+    "name": "AeroGauge decompilation",
+    "url": "https://github.com/LLONSIT/AeroGauge",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is an early decompilation of AeroGauge for the Nintendo 64, USA release. The ROM is named baserom.z64. The source tree has race logic, audio and DMA code, and libultra files. The README says the project is too early for modifications.",
+    "description_zh": "这是 Nintendo 64 美版 AeroGauge 的早期反编译。ROM 命名为 baserom.z64。源码树里有比赛逻辑、音频和 DMA 代码，以及 libultra 文件。README 写明项目还太早，不能做修改。",
+    "requirements": [
+      "mips64-elf-binutils, QEMU Irix, and pip. Run make dependencies, copy the USA ROM to baserom.z64, then make extract and make.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/LLONSIT/AeroGauge/blob/55ccafad3bf003b4794774c89caaf84afe1eafe1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
