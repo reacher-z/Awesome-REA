@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
 - [Game](#game) (239)
 - [App](#app) (62)
-- [Native Binary](#native-binary) (7)
+- [Native Binary](#native-binary) (8)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
 - [Protocol](#protocol) (91)
 
@@ -381,6 +381,7 @@
 - [**OpenBSD netcat: static REA and Ghidra investigation**](https://github.com/NullLabTests/OpenBSD_netcat_REA) - A REA/Ghidra report studies the Ubuntu netcat-openbsd 1.234-1 ELF binary and publishes evidence envelopes, decompiled functions and a function inventory. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/netcat-openbsd-rea-static-case/)</sub>
 - [**Windows loader: static malware analysis with REA and Codex**](https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/) - Fedele Mantuano reports using Codex with REA in an offline Docker lab to statically analyze a public Windows malware sample without executing it. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/windows-loader-static-analysis-case/)</sub>
 - [**Show Your Work: a measured dissection of REA's evidence architecture**](https://no-flag.com/2026/10/18/REA-paper/) - An unofficial field study that reads REA's source and then drives the running server through 1,012 recorded calls across 27 artifact classes, measuring its content-addressed Evidence records, revision-chained unknown ledger, typed refusals, cold starts and response limits. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/noflag-rea-evidence-architecture-study/)</sub>
+- [**Eidolon: an agent-built byte-exact Rust port of a 64k intro**](https://github.com/RovshanMuradov/eidolon-64k-rs) - Ports Eidolon, Poo-Brain’s winning PC 64k intro from Revision 2017, from its packed 60,928-byte Windows executable to Rust, with chapters on how the original binary works and a separate size-optimized build. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/eidolon-64k-rust-port-case/)</sub>
 - [**DownUnderCTF: masked-squares flag checker**](https://rea.tools/showcase/ctf/) - An official educational challenge investigation connects binary checks to equations and records an original-program validation. <sub>Case study · Official REA · [Full entry](https://awesomerea.org/resources/rea-ctf-case/)</sub>
 
 <a id="firmware"></a>
