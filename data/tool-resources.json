@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "redahm-case",
+    "name": "ReDAHM",
+    "url": "https://github.com/masterspike52/reDAHM",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "ReDAHM is a recompilation of Destroy All Humans! Path of the Furon for Xbox 360, made with the RexGlue SDK. The README says the default graphics path is the Xenos emulation pipeline.",
+    "description_zh": "ReDAHM 是 Xbox 360 版 Destroy All Humans! Path of the Furon 的重编译，用 RexGlue SDK 完成。README 写明默认画面路径是 Xenos 模拟管线。",
+    "requirements": [
+      "The player extracts their own Xbox 360 ISO and selects that folder in redahm.exe.",
+      "A source build runs rexglue codegen and then CMake. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/masterspike52/reDAHM/blob/b1a326869113fb17045f1bf11f396adfcd59f727/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
