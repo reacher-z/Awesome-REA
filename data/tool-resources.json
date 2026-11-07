@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sourcehold",
+    "name": "Sourcehold",
+    "url": "https://github.com/sourcehold/Sourcehold",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Sourcehold is an early open-source engine for Stronghold, the 2001 castle game by Firefly Studios. It uses SDL2, OpenAL, FFmpeg, zlib blast, and the EnTT, filesystem, and cxxopts submodules. git submodule update fetches those. Windows builds use vcpkg for sdl2, ffmpeg, and openal-soft, then cmake --build build. macOS runs apple/build.sh macos. The iOS path builds only the simulator. --path points at the game data, or the files go in a data directory with binks, fx, gfx, maps, and stronghold.mlb.",
+    "description_zh": "Sourcehold 是 Firefly Studios 2001 年城堡游戏《要塞》的早期开源引擎。它使用 SDL2、OpenAL、FFmpeg、zlib blast，以及 EnTT、filesystem 和 cxxopts 子模块。git submodule update 获取这些子模块。Windows 构建用 vcpkg 安装 sdl2、ffmpeg 和 openal-soft，然后 cmake --build build。macOS 运行 apple/build.sh macos。iOS 路径只构建模拟器。--path 指向游戏数据，或者把文件放进带 binks、fx、gfx、maps 和 stronghold.mlb 的 data 目录。",
+    "requirements": [
+      "Original Stronghold data in the layout above. CMake, and SDL2, OpenAL, and FFmpeg.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/sourcehold/Sourcehold/blob/779cc325103148eb85f1ae16790c196d50d5059e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
