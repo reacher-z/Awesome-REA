@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "bk360": {
+    "name": "Banjo-Kazooie XBLA 反编译",
+    "requirements": [
+      "PATH 上需要 split360 和 coff-linker，以及 Visual Studio 2005 SP1、Xbox 360 SDK、Python 和 PowerPC GCC。Linux 构建使用 WINE。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
