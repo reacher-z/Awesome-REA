@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "tpp-server-emulator": {
+    "name": "tpp-server-emulator",
+    "requirements": [
+      "构建需要 premake5。Windows 上运行 generate.bat，然后构建 build/tpp-server-emulator.sln。Linux 上运行 generate.sh，再运行 build-release.sh。Linux 构建使用 clang，或配合 mold 链接器的 gcc。",
+      "用法写在 docs/usage.md。审阅的 README 没有写许可证。"
+    ]
   }
 }

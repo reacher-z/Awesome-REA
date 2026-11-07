@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tpp-server-emulator",
+    "name": "tpp-server-emulator",
+    "url": "https://github.com/alicealys/tpp-server-emulator",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "tpp-server-emulator reimplements the backend server of Metal Gear Solid V: The Phantom Pain. Prebuilt Linux x64 and Windows x64 packages are linked from the README.",
+    "description_zh": "tpp-server-emulator 重实现《潜龙谍影5：幻痛》的后端服务器。README 链接了 Linux x64 和 Windows x64 的预编译包。",
+    "requirements": [
+      "Building needs premake5. On Windows, run generate.bat and build build/tpp-server-emulator.sln. On Linux, run generate.sh and then build-release.sh. Linux builds use clang, or gcc with the mold linker.",
+      "Usage is documented in docs/usage.md. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/alicealys/tpp-server-emulator/blob/669424b112ebb337671ed0993755fe5eaaff684c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
