@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -136,7 +136,7 @@
 - [**Wind Waker HD decompilation: functions verified against the recompiled Wii U game**](https://github.com/ZeldaWWHDDecomp/wwhd) - Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### Static recompilations (48)
+### Static recompilations (49)
 
 - [**Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port**](https://github.com/BanjoRecomp/BanjoRecomp) - Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Banjo-Kazooie into a native port on N64ModernRuntime, rendered by RT64 and extended with mod support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/banjo-recompiled-case/)</sub>
 - [**C2C: hybrid recompilation and hand decompilation of Crash Bandicoot 2**](https://github.com/ughman/c2c) - An early reverse-engineering effort on PlayStation Crash Bandicoot 2 that converts the engine’s MIPS machine code directly into a very large C file and runs it against a modified PCSX-R emulator library for hardware I/O. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -157,6 +157,7 @@
 - [**KartPad: platform integration for a Mario Kart Wii recompilation**](https://github.com/chrissotraidis/kartpad) - Builds Apple and Android integration around WiiCompiled’s ahead-of-time translation of Mario Kart Wii, with native graphics, input and optional Retro Rewind support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/kartpad-case/)</sub>
 - [**King Kong Recompiled: an AI-developed Xbox 360 static recompilation**](https://github.com/TekRantGaming/king-kong-recompiled) - Translates the Xbox 360 release of Peter Jackson's King Kong into native Windows code with the ReXGlue static-recompilation SDK, adding a launcher and display, control and graphics options. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/king-kong-recompiled-case/)</sub>
 - [**LASRecomp: Link’s Awakening static recompilation**](https://github.com/peiikai/LASRecomp) - A native desktop reconstruction of the 2019 Switch version of Link’s Awakening using static recompilation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lasrecomp/)</sub>
+- [**LegendOfZeldaNESRecomp: static recompilation of The Legend of Zelda**](https://github.com/mstan/LegendOfZeldaNESRecomp) - LegendOfZeldaNESRecomp is a static recompilation of The Legend of Zelda for the NES, built with nesrecomp and described as an in-development preview. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda-nes-recomp/)</sub>
 - [**Little Planet: Sonic CD recompiled from a matching disassembly**](https://github.com/carlosrmz009/littleplanet) - Disassembles every executable file on the Sonic CD disc from runtime coverage and recursive descent, reassembles them byte-identically, and translates the code statically to C on a from-scratch Mega-CD runtime that replaces the BIOS with a high-level implementation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/little-planet-sonic-cd-recomp-case/)</sub>
 - [**Lost Odyssey Recomp: statically recompiling an Xbox 360 RPG into native ports**](https://github.com/freefrank/LostOdysseyRecomp) - Translates Lost Odyssey’s Xbox 360 PowerPC executable with patched XenonRecomp tooling and runs the generated code on a native runtime that renders through Direct3D 12, Vulkan or Metal. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lost-odyssey-recomp-case/)</sub>
 - [**MarioKart 64: Recompiled — a native port through N64Recomp static recompilation**](https://github.com/sonicdcer/MarioKart64Recomp) - Statically recompiles the US Nintendo 64 release of Mario Kart 64 into a native Windows, Linux and macOS application with N64Recomp, rendering through RT64. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mariokart64-recompiled-case/)</sub>
