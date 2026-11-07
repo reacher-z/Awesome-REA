@@ -12817,5 +12817,51 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-gview-binary-forensics",
+    "title": "GView: A Survey of Binary Forensics via Visual, Semantic, and AI-Enhanced Analysis",
+    "authors": [
+      "Raul Zaharia",
+      "Dragoş Gavriluţ",
+      "Gheorghiţă Mutu"
+    ],
+    "year": 2025,
+    "publication_date": "2025-09-16",
+    "date_precision": "day",
+    "date_basis": "Crossref issued date",
+    "venue": "Electronic Proceedings in Theoretical Computer Science",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.4204/eptcs.427.9",
+    "url": "https://doi.org/10.4204/eptcs.427.9",
+    "pdf_url": "https://cgi.cse.unsw.edu.au/~eptcs/paper.cgi?FROM2025.9.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This paper presents GView, an open-source framework for binary forensic analysis that combines visual inspection with semantic and AI-assisted reasoning. The title frames that framework as a survey of those analysis styles as malicious artifacts grow in volume and variety.",
+    "description_zh": "本文介绍开源框架 GView，把可视化检查与语义及人工智能辅助推理结合起来做二进制取证。题名把该框架写成对这些分析方式的综述，背景是恶意样本的数量和种类都在增加。",
+    "scope_limitations_en": "The description follows the first page of the fetched EPTCS PDF and the Crossref record. GView was not built or run, and later pages were not separately transcribed.",
+    "scope_limitations_zh": "描述依据已获取 EPTCS PDF 的首页和 Crossref 记录。没有构建或运行 GView，后面的页也没有另行摘录。",
+    "why_fits_en": "Binary forensics is a reverse-engineering setting, and the paper both surveys that setting and presents a tool for it.",
+    "why_fits_zh": "二进制取证是一种逆向工程场景，本文既综述这一场景，也给出相应工具。",
+    "evidence_urls": [
+      "https://cgi.cse.unsw.edu.au/~eptcs/paper.cgi?FROM2025.9.pdf",
+      "https://api.crossref.org/works/10.4204/eptcs.427.9",
+      "https://doi.org/10.4204/eptcs.427.9"
+    ],
+    "metadata_notes": "Crossref types the EPTCS paper as a journal article, and that status is recorded as published.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "GView：通过可视化、语义与人工智能增强分析开展的二进制取证综述",
+    "date_basis_zh": "日期取自 Crossref 登记的出版日期",
+    "metadata_notes_zh": "Crossref 把这篇 EPTCS 论文标为期刊文章，条目因此记为已发表。"
   }
 ]
