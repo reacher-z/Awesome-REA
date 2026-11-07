@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "twisted-metal-4-recomp",
+    "name": "Twisted Metal 4 recompilation",
+    "url": "https://github.com/TechnicallyComputers/TwistedMetal4Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Twisted Metal 4, the 1999 USA PlayStation game, with PSXRecomp and recomp-ui. The README lists four players. Generate uses OpenBIOS unless the player supplies a BIOS. The disc image stays outside git.",
+    "description_zh": "该项目用 PSXRecomp 和 recomp-ui 重编译 1999 年 PlayStation 美版《扭曲金属 4》。README 列出四名玩家。除非玩家提供 BIOS，生成步骤使用 OpenBIOS。光盘镜像不进入 git。",
+    "requirements": [
+      "Initialize submodules, then run psxrecomp_cli.py generate with game.toml and a CUE under disc/, and cmake --build build-release --target psx-runtime.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/TechnicallyComputers/TwistedMetal4Recomp/blob/c75337f26e5809f024b1019846655ea418db4e07/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
