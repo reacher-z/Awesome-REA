@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "opennefia-love-case": {
+    "name": "OpenNefia prototype：用 Lua 重实现 Elona",
+    "requirements": [
+      "README 写明这个原型不再受支持，并把当前开发指向 https://github.com/OpenNefia/OpenNefia.git。",
+      "它使用 Lua 和 LÖVE 引擎。",
+      "许可证：MIT。"
+    ]
   }
 }
