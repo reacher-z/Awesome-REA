@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -276,7 +276,7 @@
 - [**z2rs: an incremental Rust reconstruction of Zelda II checked against an emulator**](https://github.com/troyedwardsjr/z2rs) - Rebuilds Zelda II: The Adventure of Link (NES) in Rust for desktop, browser and Android by replacing the game’s 6502 routines one at a time. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/z2rs-zelda2-reconstruction-case/)</sub>
 
 <a id="game-other"></a>
-### Other methods and analyses (23)
+### Other methods and analyses (24)
 
 - [**ArkWeb: a two-game movement and collision experiment**](https://github.com/luki-1/ArkWeb) - Runs Spider-Man Remastered and Arkham Knight together, streaming Gotham collision into Spider-Man’s physics world and compositing his rendered frame into Arkham. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/arkweb-two-game-case/)</sub>
 - [**Batla 3D server emulator (2015 client)**](https://github.com/Serega25511s/Batla-3D-server-emu) - C# server emulator for the 2015 Steam client of Batla 3D, covering HTTP account, shop and room services and Lidgren UDP gameplay. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/batla-3d-server-emulator-case/)</sub>
@@ -294,6 +294,7 @@
 - [**OpenPigeon: reconstructing GamePigeon iMessage game messages**](https://github.com/time-attack/OpenPigeon) - OpenPigeon is a TypeScript codec for reading GamePigeon iMessage game state and encoding caller-supplied moves for eleven turn-based games. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/openpigeon-case/)</sub>
 - [**ProjectCane: a native PC port of Sly Cooper and the Thievius Raccoonus**](https://github.com/theclub654/ProjectCane) - Rebuilds the NTSC PlayStation 2 release of Sly Cooper and the Thievius Raccoonus as a native C++ game for Windows and Linux, running on data extracted from the player's own disc image. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/projectcane-sly1-pc-port-case/)</sub>
 - [**retruxx: reverse-engineered Hard Truck Apocalypse**](https://github.com/mindflower/retruxx) - retruxx is a reverse-engineered Hard Truck Apocalypse project that builds the game executable and separate renderer, input, and sound DLLs. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/retruxx/)</sub>
+- [**Rush 2 Recompiled**](https://github.com/bryantmh/rush2recompiled) - Rush 2 Recompiled is a native PC build of Rush 2: Extreme Racing USA. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rush2-recompiled-case/)</sub>
 - [**samp-client-re: a partial SA-MP client reconstruction**](https://github.com/NathanKanaeru/samp-client-re) - A documented REA/Ghidra investigation maps SA-MP 0.3.DL-R1 client subsystems to a new C++ DLL, loader and smoke-test executable. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/samp-client-rea-partial-reconstruction-case/)</sub>
 - [**scvk: replacing SimCity 4's renderer with Vulkan**](https://github.com/aspctt/scvk) - scvk reconstructs SimCity 4's renderer interface as a native Vulkan DLL loaded through the game's GZCOM plugin system. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/scvk-case/)</sub>
 - [**TH04: recover a DOS bullet-ring helper**](https://rea.tools/showcase/th04/) - Inspect a 16-bit PC-98 DOS helper and relate its angle calculation to a pinned reconstruction and historical compiler checks. <sub>Case study · Official REA · Also: Binary · [Full entry](https://awesomerea.org/resources/rea-th04-case/)</sub>
