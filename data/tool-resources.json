@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sk20-nebula-esphome",
+    "name": "ESPHome for Tuya SK20",
+    "url": "https://github.com/M4GNV5/esphome-SK20-Nebula-Light",
+    "category": "reconstruction-cases",
+    "kind": "project",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "firmware"
+    ],
+    "class": "hardware",
+    "description_en": "This repository is an ESPHome configuration for the Tuya SK20 Wi-Fi nebula light. It builds a BK7231T image and flashes it with tuya-cloudcutter, without opening the device.",
+    "description_zh": "该仓库是涂鸦 SK20 Wi-Fi 星云灯的 ESPHome 配置。它构建 BK7231T 镜像，并用 tuya-cloudcutter 刷写，不需要拆开设备。",
+    "requirements": [
+      "A Linux computer with the ESPHome CLI, Python, Docker, and PlatformIO. The README's device selection is Tuya Generic, SK20 Smart Star Projector, version 1.1.2, BK7231T.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/M4GNV5/esphome-SK20-Nebula-Light/blob/2a52bfa2a6e0844e8c8cac33aafdfb5e7be0118d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
