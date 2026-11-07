@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "d2moo-case": {
+    "name": "D2MOO：《暗黑破坏神 II》重实现",
+    "requirements": [
+      "使用本项目需要原版游戏资源和二进制文件。",
+      "使用 CMake 和能生成 Windows DLL 的 C++ 编译器（例如 Visual C++）构建，并初始化 D2.Detours 子模块。",
+      "许可证：MIT。"
+    ]
   }
 }

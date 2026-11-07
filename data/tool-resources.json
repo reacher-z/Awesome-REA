@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "d2moo-case",
+    "name": "D2MOO: reimplementation of Diablo II",
+    "url": "https://github.com/ThePhrozenKeep/D2MOO",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "D2MOO is a reimplementation of Diablo II with patching facilities for modders. The README says the project aims to stay close to the original game and does not yet provide bug fixes.",
+    "description_zh": "D2MOO 是《暗黑破坏神 II》的重实现，并为改版者提供补丁设施。README 写明项目力求贴近原版游戏，目前还不提供错误修复。",
+    "requirements": [
+      "Using the project requires the original game assets and binaries.",
+      "Build with CMake and a C++ compiler that can produce Windows DLLs, such as Visual C++, and initialize the D2.Detours submodule.",
+      "License: MIT."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/ThePhrozenKeep/D2MOO/blob/4a60fca8df231fc31ac91a6bf57b5d6a1fe472ab/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
