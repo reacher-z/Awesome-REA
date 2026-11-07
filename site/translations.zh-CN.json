@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "fft-decomp": {
+    "name": "最终幻想战略版反编译",
+    "requirements": [
+      "需要 Docker。要构建光盘，把 BIN 放在 ./scus-94221.bin。make bootstrap 准备环境。make check 在没有 BIN 时核对代码。make build 写出 build/disc/output-scus-94221.bin 和一个 CUE。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

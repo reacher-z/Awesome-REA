@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fft-decomp",
+    "name": "Final Fantasy Tactics decompilation",
+    "url": "https://github.com/adamrt/fft_decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of the North American PlayStation release of Final Fantasy Tactics, SCUS-94221. The README says every game function is C that compiles to the original bytes, and the rebuilt disc matches byte for byte.",
+    "description_zh": "这是 PlayStation 北美版《最终幻想战略版》（SCUS-94221）的匹配反编译。README 写明每个游戏函数都是能编译成原版字节的 C，重建的光盘逐字节匹配。",
+    "requirements": [
+      "Docker. Place the BIN at ./scus-94221.bin to build a disc. make bootstrap prepares the environment. make check verifies code without the BIN. make build writes build/disc/output-scus-94221.bin and a CUE.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/adamrt/fft_decomp/blob/11464943bbdbd2a0af022d90cb7f10455cf911df/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
