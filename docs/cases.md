@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -136,7 +136,7 @@
 - [**Wind Waker HD decompilation: functions verified against the recompiled Wii U game**](https://github.com/ZeldaWWHDDecomp/wwhd) - Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### Static recompilations (48)
+### Static recompilations (49)
 
 - [**Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port**](https://github.com/BanjoRecomp/BanjoRecomp) - Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Banjo-Kazooie into a native port on N64ModernRuntime, rendered by RT64 and extended with mod support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/banjo-recompiled-case/)</sub>
 - [**C2C: hybrid recompilation and hand decompilation of Crash Bandicoot 2**](https://github.com/ughman/c2c) - An early reverse-engineering effort on PlayStation Crash Bandicoot 2 that converts the engine’s MIPS machine code directly into a very large C file and runs it against a modified PCSX-R emulator library for hardware I/O. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -167,6 +167,7 @@
 - [**Project Arwing (2): Star Fox 2 recompiled from a matching disassembly**](https://github.com/carlosrmz009/arwing2) - Rebuilds Star Fox 2 from a coverage-seeded 65816 and SuperFX disassembly that reassembles to the original ROM, then translates it statically to C for native Windows, macOS and Linux builds. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/project-arwing-2-star-fox-2-recomp-case/)</sub>
 - [**Project Arwing: Star Fox recompiled from a matching disassembly**](https://github.com/carlosrmz009/arwing) - Disassembles Star Fox’s 65816 and SuperFX code from runtime coverage and recursive descent, reassembles it into the original ROM, then translates it statically to C on a from-scratch SNES runtime for Windows, macOS and Linux. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/project-arwing-star-fox-recomp-case/)</sub>
 - [**RaceWave46: an AI-assisted Wave Race 64 recompilation for Windows**](https://github.com/DomazinUS/RaceWave46) - Recompiles the USA Rev 1 Nintendo 64 release of Wave Race 64 into a native Windows application with N64Recomp and RSPRecomp, on modified copies of the N64ModernRuntime, RecompFrontend and RT64 stacks. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/racewave46-wave-race-64-recomp-case/)</sub>
+- [**reGH2**](https://github.com/jillsandwich1998/reGH2) - reGH2 recompiles Guitar Hero II for the Xbox 360, USA, to a Linux program with a native Vulkan renderer. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/regh2/)</sub>
 - [**Saints Reborn: a ReXGlue static recompilation of Saints Row**](https://github.com/whompay/SaintsReborn) - An unofficial native Windows port of Saints Row (Xbox 360, 2006) that statically recompiles the game's PowerPC executable to C++ for x86-64 with the ReXGlue SDK, which also reimplements the console's kernel, GPU (on Direct3D 12), audio and input. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/saints-reborn-recomp-case/)</sub>
 - [**Savage Wind Recomp: statically recompiling The Legend of Zelda: Breath of the Wild**](https://github.com/Revivedx/SavageWindRecomp) - Savage Wind Recomp is an in-progress static recompilation of the Nintendo Switch version of The Legend of Zelda: Breath of the Wild for Windows and Linux. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/savagewindrecomp/)</sub>
 - [**SF2Recomp: statically recompiling Shadow Fight 2 for native platforms**](https://github.com/bipinkrish/sf2recomp) - SF2Recomp converts a user's Shadow Fight 2 Nintendo Switch game files into native builds for Linux, Windows, macOS, and Android. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sf2recomp-case/)</sub>

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "regh2",
+    "name": "reGH2",
+    "url": "https://github.com/jillsandwich1998/reGH2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "reGH2 recompiles Guitar Hero II for the Xbox 360, USA, to a Linux program with a native Vulkan renderer. The supported default.xex has SHA-1 b90b864487e6291761b207c8d0064e9a0779bdee and title ID 415607E7. Pre-release 0.2.1 has been played in Quick Play and in Career through the fourth venue. Resolutions include 1080p, 1440p, and 4K.",
+    "description_zh": "reGH2 把 Xbox 360 美版《吉他英雄 II》重编译成带原生 Vulkan 渲染器的 Linux 程序。受支持的 default.xex 的 SHA-1 为 b90b864487e6291761b207c8d0064e9a0779bdee，标题 ID 为 415607E7。预发布 0.2.1 已在快速游戏和生涯模式里玩到第四个场地。分辨率包括 1080p、1440p 和 4K。",
+    "requirements": [
+      "Download reGH2-x86_64.AppImage, select the folder that contains default.xex, and press Install. A Vulkan driver is required.",
+      "License: MIT. The README says ReXGlue, XenosRecomp, SDL3, and Dear ImGui keep their own licenses."
+    ],
+    "evidence_url": "https://github.com/jillsandwich1998/reGH2/blob/3c5f75c52c116b49b5f212d403c0e1cccb37f510/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
