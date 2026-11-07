@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dotscope",
+    "name": "dotscope",
+    "url": "https://github.com/ATRAPSLLC/dotscope",
+    "category": "dotnet",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "dotscope is a Rust framework that parses, disassembles, and modifies .NET PE assemblies and CIL without Windows or the .NET runtime. It reads ECMA-335 metadata tables, builds control-flow and call graphs, and can inject methods. The README lists deobfuscation passes for ConfuserEx, BitMono, JIEJIE.NET, and Obfuscar.",
+    "description_zh": "dotscope 是一个 Rust 框架，在不依赖 Windows 或 .NET 运行时的情况下解析、反汇编并修改 .NET PE 程序集和 CIL。它读取 ECMA-335 元数据表，构建控制流图和调用图，并可以注入方法。README 列出了针对 ConfuserEx、BitMono、JIEJIE.NET 和 Obfuscar 的去混淆流程。",
+    "requirements": [
+      "Add the dotscope crate to a Rust project.",
+      "License: Apache-2.0."
+    ],
+    "evidence_url": "https://github.com/ATRAPSLLC/dotscope/blob/3028b1ab92ec1b0ad15f046b3b70d5ee82336a00/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
