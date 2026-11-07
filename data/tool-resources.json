@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fortnite-ot65-notes",
+    "name": "Fortnite OT 6.5 notes",
+    "url": "https://github.com/ApfelTeeSaft/OT6-Reconstruction",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "These notes document Fortnite Online Test 6.5 Alpha from 2016, the PvE build before Battle Royale. The source binary is a 32-bit Windows executable on Unreal Engine 4.12. The README says the recovered C++ was produced with IDA Pro 9 and Hex-Rays, and that the tree will not compile or run. It records class hierarchies, function signatures, network replication, and debug strings.",
+    "description_zh": "这些笔记记录 2016 年《堡垒之夜》在线测试 6.5 Alpha，也就是大逃杀出现之前的 PvE 构建。源二进制是虚幻引擎 4.12 上的 32 位 Windows 可执行文件。README 写明恢复出的 C++ 来自 IDA Pro 9 和 Hex-Rays，而且这棵源码树不能编译或运行。它记录类层次、函数签名、网络复制和调试字符串。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ApfelTeeSaft/OT6-Reconstruction/blob/3e34213c7eabde36ea799350fd38557a012ee6bc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
