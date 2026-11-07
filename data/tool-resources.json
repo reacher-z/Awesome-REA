@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "smas-disasm",
+    "name": "Super Mario All-Stars disassembly",
+    "url": "https://github.com/Maseya/SMAS-Disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This disassembles Super Mario All-Stars. The assembleable copy is in the Assembly directory and builds with asar. The README says that copy is not perfect and that adding or removing code can break the ROM. The banks cover the present and hall screens, Super Mario Bros., The Lost Levels, Super Mario Bros. 2, and Super Mario Bros. 3.",
+    "description_zh": "该项目反汇编《超级马里奥全明星》。可汇编的副本在 Assembly 目录，用 asar 构建。README 写明这份副本还不完善，增加或删除代码可能破坏 ROM。内存库覆盖开场和大厅画面、《超级马里奥兄弟》、《失落的关卡》、《超级马里奥兄弟 2》和《超级马里奥兄弟 3》。",
+    "requirements": [
+      "asar. A Visual Studio solution and VS Code build tasks are included. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Maseya/SMAS-Disassembly/blob/2b65dda606f94a7846d812fc767190b373a43f29/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
