@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tlou-remastered-pc",
+    "name": "The Last of Us Remastered PC port",
+    "url": "https://github.com/ravencaio/tlou-remastered-pc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This port runs the PlayStation 4 game The Last of Us Remastered, product CUSA00552 with update 1.11, on Windows. The game's own x86-64 code runs on the PC. A runtime supplies the PS4 system libraries, and a Vulkan renderer from the shadPS4 video core executes the GPU work. TLOU Launcher.exe selects the dumped game folder. A source run places CUSA00552 beside the repository and the update as CUSA00552-patch. The MSYS2 CLANG64 build uses gow3_pc/build.sh after the Vulkan, SDL3, and FFmpeg packages are installed.",
+    "description_zh": "该移植在 Windows 上运行 PlayStation 4 游戏《最后生还者 重制版》，产品编号 CUSA00552，更新为 1.11。游戏自身的 x86-64 代码在 PC 上运行。运行时提供 PS4 系统库，来自 shadPS4 视频核心的 Vulkan 渲染器执行 GPU 工作。TLOU Launcher.exe 选择已转储的游戏文件夹。从源码运行时，把 CUSA00552 放在仓库旁边，更新放成 CUSA00552-patch。MSYS2 CLANG64 构建在装好 Vulkan、SDL3 和 FFmpeg 包后运行 gow3_pc/build.sh。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit. An Intel Haswell or newer CPU, or any AMD Ryzen, plus a Vulkan 1.3 GPU. A personal dump of CUSA00552 and its update.",
+      "License: GNU GPL v2 or later. LibOrbisPkg is LGPL-3.0. The DLSS bridge it adapts is MIT."
+    ],
+    "evidence_url": "https://github.com/ravencaio/tlou-remastered-pc/blob/212fb04aaf81613326efcb9b9985326c612799cc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
