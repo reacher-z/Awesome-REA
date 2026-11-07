@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokegreen",
+    "name": "Pokémon Red and Green disassembly",
+    "url": "https://github.com/Narishma-gb/pokegreen",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles the Japanese Game Boy games ポケットモンスター 赤・緑. It builds Red v1.0, SHA-1 0623ad12f48c259447980d68bd85ddbf8204b2cd, Green v1.0, SHA-1 82c0eef40a5e2423699d9fd8ba15dfaa8b51d196, Red v1.1, SHA-1 ef74c79cded14204ac79e77f4964d9cb25003120, and Green v1.1, SHA-1 4b97cd44aa3f0dd290bfe7b3ac17b7bd8270897b. Setup is in INSTALL.md.",
+    "description_zh": "该项目反汇编 Game Boy 日版《ポケットモンスター 赤・緑》。它构建红版 v1.0，SHA-1 0623ad12f48c259447980d68bd85ddbf8204b2cd；绿版 v1.0，SHA-1 82c0eef40a5e2423699d9fd8ba15dfaa8b51d196；红版 v1.1，SHA-1 ef74c79cded14204ac79e77f4964d9cb25003120；绿版 v1.1，SHA-1 4b97cd44aa3f0dd290bfe7b3ac17b7bd8270897b。安装步骤在 INSTALL.md。",
+    "requirements": [
+      "Follow INSTALL.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Narishma-gb/pokegreen/blob/953f41b34108621b2bf13c3b1e53abfc9c3e5aec/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
