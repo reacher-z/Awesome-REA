@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "midnight-club-la-recompiled",
+    "name": "Midnight Club L.A. Recompiled",
+    "url": "https://github.com/robertoaraujo77/MC_LA_Recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a Windows package of the Xbox 360 recompilation of Midnight Club: Los Angeles Complete Edition, based on mcla-recomp and ReXGlue. The installer can apply a Portuguese translation, automatic widescreen, and FSR. DirectX 12 can use FSR 4.1.2 on a compatible AMD GPU. Vulkan uses FSR 3.1.",
+    "description_zh": "这是 Xbox 360 版《午夜俱乐部：洛杉矶》完整版重编译的 Windows 安装包，基于 mcla-recomp 和 ReXGlue。安装器可以应用葡萄牙语翻译、自动宽屏和 FSR。DirectX 12 可以在兼容的 AMD 显卡上使用 FSR 4.1.2。Vulkan 使用 FSR 3.1。",
+    "requirements": [
+      "Download Midnight-Club-LA-Recompiled-Windows-x64.zip, run Midnight Club L.A. Recompiled.exe, and select an Xbox 360 Complete Edition ISO.",
+      "License: GPL-3.0-or-later for this fork's code. Third-party components keep their own licenses."
+    ],
+    "evidence_url": "https://github.com/robertoaraujo77/MC_LA_Recompiled/blob/fa66dd83a416bb18b8875eff74ac69943536046c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
