@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dolsdk2001",
+    "name": "Dolphin SDK 2001 libraries",
+    "url": "https://github.com/doldecomp/dolsdk2001",
+    "category": "reconstruction-cases",
+    "kind": "project",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "binary"
+    ],
+    "class": "software",
+    "description_en": "This decompiles the built libraries from the 22 May 2001 Dolphin SDK. The README marks ai, ar, ax, base, dvd, gx, os, pad, vi, and the other listed libraries complete. Copy the .a files into baserom/ and run make extract, then make.",
+    "description_zh": "该项目反编译 2001 年 5 月 22 日 Dolphin SDK 里已构建的库。README 把 ai、ar、ax、base、dvd、gx、os、pad、vi 以及其他列出的库标为完成。把 .a 文件复制到 baserom/，运行 make extract，然后运行 make。",
+    "requirements": [
+      "build-essential and binutils-powerpc-linux-gnu.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/doldecomp/dolsdk2001/blob/eb1234c45e6df75757c652c835507ca89674f9a8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
