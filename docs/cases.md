@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -225,8 +225,9 @@
 - [**Vandal Hearts: native PC port built on matching decompilations**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - Builds on shao113’s matching decompilation of PlayStation Vandal Hearts, adds a Japanese matching tree, and carries both through to a native Windows and Linux port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### Engine reimplementations (47)
+### Engine reimplementations (48)
 
+- [**Abyss Engine: clean-room Diablo 2 engine**](https://github.com/AbyssEngine/AbyssEngine) - Abyss Engine is a clean-room reimplementation of the Diablo 2 engine in C, aimed at a portable base that can be modded. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/abyss-engine/)</sub>
 - [**Age of Empires Free Software Remake: a re-implementation on the original data**](https://github.com/FolkertVanVerseveld/aoe) - Re-implements Microsoft’s Age of Empires and its Rise of Rome expansion as a cross-platform C++17 engine on SDL2 and OpenGL that loads the original game’s DRS archives and language.dll resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo: a reverse-engineered Minecraft server**](https://github.com/bravoserver/bravo) - Reimplements the server side of Minecraft’s Alpha- and Beta-era multiplayer in Python on Twisted; its documentation calls it a reverse-engineered implementation written from scratch, credits network traffic dumps and says general Minecraft data went to a community wiki. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/bravo-minecraft-server-case/)</sub>
 - [**Chariot: Age of Empires engine reimplementation**](https://github.com/ChariotEngine/Chariot) - Chariot is an open-source effort to reimplement the engine of the original Age of Empires (1997). <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/chariot/)</sub>

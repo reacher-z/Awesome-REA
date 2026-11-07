@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "url": "https://github.com/AbyssEngine/AbyssEngine",
+    "evidence_url": "https://github.com/AbyssEngine/AbyssEngine/blob/885eea067f0d41a4fb75de2e88b3704215859a58/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "id": "abyss-engine",
+    "name": "Abyss Engine: clean-room Diablo 2 engine",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Abyss Engine is a clean-room reimplementation of the Diablo 2 engine in C, aimed at a portable base that can be modded. The README says it uses no original game code and will not be compatible with the original save files or multiplayer systems.",
+    "description_zh": "Abyss Engine 是用 C 编写的《暗黑破坏神 2》引擎净室重实现，目标是一个便于修改的可移植基础。README 写明它不使用原版游戏代码，并且不会兼容原版存档或多人系统。",
+    "requirements": [
+      "The engine must be configured before it is run. The README points at its configuration section.",
+      "It says original saves and original multiplayer are outside its compatibility.",
+      "GitHub reports the repository license as MIT."
+    ]
   }
 ]
