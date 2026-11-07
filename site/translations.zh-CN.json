@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "nfs-mw-vehicles-decomp": {
+    "name": "极品飞车最高通缉载具物理反编译",
+    "requirements": [
+      "需要 Visual Studio .NET 2003 和 Python 3。文档中的命令是 compile_and_gen_asm.ps1，参数是 speed/indep/src 下的一个 C++ 文件。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
