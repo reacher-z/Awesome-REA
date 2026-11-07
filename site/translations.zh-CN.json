@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pokestadium": {
+    "name": "宝可梦竞技场反编译",
+    "requirements": [
+      "需要命名为 baserom.z64 的美版 1.0 ROM。需要 MIPS GNU 工具链和高于 3.7 的 Python。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
