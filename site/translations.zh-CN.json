@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "banjo-tooie-decomp-case": {
+    "name": "Banjo-Tooie：NTSC-U ROM 反编译",
+    "requirements": [
+      "README 写明的 NTSC-U ROM 的 SHA-1 为 af1a89e12b638b8d82cc4c085c8e01d4cba03fb3，文件名必须是 baserom.us.z64。",
+      "make setup 解压并拆分 ROM。make 进行构建。",
+      "README 没有写许可证。"
+    ]
   }
 }
