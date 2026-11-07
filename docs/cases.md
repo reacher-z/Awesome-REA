@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -83,6 +83,7 @@
 - [**Pokémon Platinum: a checksum-matched Nintendo DS decompilation**](https://github.com/pret/pokeplatinum) - Reconstructs the US Nintendo DS release of Pokémon Platinum as C source that rebuilds revision 1 by default and revision 0 on request. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokemon-platinum-decomp-case/)</sub>
 - [**pw: a matching decompilation of the Pokéwalker firmware**](https://github.com/lumirth/pw) - Reconstructs as C the firmware of the Pokéwalker, the pedometer accessory for Pokémon HeartGold and SoulSilver, for its Renesas H8/38606 microcontroller. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/pokewalker-matching-decomp-case/)</sub>
 - [**Ratchet &amp; Clank: a matching PS2 decompilation with a documented agent workflow**](https://github.com/OpenRAC/rac1-decomp) - Reconstructs C source for SCES\_509.16, the PAL v2.00 PlayStation 2 executable of Ratchet &amp; Clank (2002), with every function linked at its retail address. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rac1-matching-decomp-case/)</sub>
+- [**Ratchet &amp; Clank: Up Your Arsenal decompilation**](https://github.com/vetusmagnus/rac3-uya-decomp) - This is a matching decompilation of Ratchet &amp; Clank: Up Your Arsenal for the PlayStation 2, NTSC-U SCUS-97353. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rac3-uya-decomp/)</sub>
 - [**re4: a byte-identical decompilation of the Resident Evil 4 GameCube debug build**](https://github.com/adonis-singh/re4) - Reconstructs C and C++ source for the two-disc Resident Evil 4 GameCube debug prototype (G4BE08) and rebuilds main.dol and all 114 REL overlays with the compilers the README names, checking every output against a SHA-1 list. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/re4-gamecube-debug-decomp-case/)</sub>
 - [**sead: a decompilation of Nintendo’s first-party C++ standard library**](https://github.com/open-ead/sead) - Decompiles sead, the C++ standard library that Nintendo statically links into its first-party games, covering containers, heaps, strings, math, file devices, threads, the game framework and graphics. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sead-nintendo-library-decomp-case/)</sub>
 - [**Skyward Sword: Wii decompilation with hash-checked relinking**](https://github.com/zeldaret/ss) - Reconstructs C++ source for The Legend of Zelda: Skyward Sword’s Wii main.dol and REL modules, starting from the user’s NTSC-U 1.0 (SOUE01) disc files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/skyward-sword-decomp-case/)</sub>

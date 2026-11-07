@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "rac3-uya-decomp": {
+    "name": "Ratchet & Clank: Up Your Arsenal 反编译",
+    "requirements": [
+      "需要 SN Systems ee-gcc 2.95.3 v1.36。把光盘 files 目录里的 frontbin.elf、boot_elf.elf 和 i5bootn.elf 放到仓库根目录，然后运行 pip install -r tools/requirements.txt 和 python tools/setup_asm.py --target all。",
+      "许可证：项目的工具、构建文件、表和文档为 GPL-3.0。README 写明 src/ 里反编译出的游戏代码没有许可证，libgcc 源码保持带 libgcc 运行时例外的 GPL-2.0-or-later。"
+    ]
   }
 }
