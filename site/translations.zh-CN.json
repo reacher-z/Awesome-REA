@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ac4-port": {
+    "name": "AC4-Port：《装甲核心 4》的原生 Windows 移植",
+    "requirements": [
+      "需要一份《装甲核心 4》美版光盘（BLUS30027）及其 PS3_GAME 文件夹，安装时用 RPCS3 做一次解密，并准备索尼 PS3 系统软件 4.93 的 PS3UPDAT.PUP。README 要求大约 4 GB 可用磁盘空间。",
+      "产物是 64 位 Windows 程序。安装程序会下载大约 250 MB 的编译工具链。",
+      "GitHub 报告许可证为 MIT。"
+    ]
   }
 }

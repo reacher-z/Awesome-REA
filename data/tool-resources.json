@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ac4-port",
+    "name": "AC4-Port: native Windows port of Armored Core 4",
+    "url": "https://github.com/SulphurS16/AC4-Port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "AC4-Port is an unofficial native Windows build of ARMORED CORE 4 for the PS3 USA release BLUS30027. The README describes static recompilation of about 3.6 million PowerPC instructions into C++, with SPU programs translated ahead of time, RSX commands drawn through Direct3D 11, and shaders converted to HLSL. The repository leaves out game data, game code, and keys.",
+    "description_zh": "AC4-Port 是 PS3 美版 BLUS30027《装甲核心 4》的非官方原生 Windows 构建。README 描述把大约 360 万条 PowerPC 指令静态重编译为 C++，SPU 程序预先翻译，RSX 命令经 Direct3D 11 绘制，着色器转换为 HLSL。仓库不含游戏数据、游戏代码和密钥。",
+    "evidence_url": "https://github.com/SulphurS16/AC4-Port/blob/219c7bf9e085495c355220b4f6b3ef8a983288a7/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "A copy of ARMORED CORE 4 (US disc, BLUS30027) with the PS3_GAME folder, RPCS3 for a one-time decrypt during setup, and Sony's PS3 system software 4.93 file PS3UPDAT.PUP. The README asks for about 4 GB of free disk space.",
+      "The result is a 64-bit Windows program. Setup downloads a compiler toolchain of about 250 MB.",
+      "GitHub reports the license as MIT."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
