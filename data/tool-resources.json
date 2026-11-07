@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ida-headless",
+    "name": "ida-headless",
+    "url": "https://github.com/hugsy/ida-headless",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "ida-headless embeds RPyC in IDA so a background thread serves IDA's API over TCP port 18812. A client connects with rpyc.connect and uses c.root.idaapi and c.root.idc. Generator objects go through c.root.iterate. The threading workaround is for IDA Pro 7.2 and newer.",
+    "description_zh": "ida-headless 在 IDA 里嵌入 RPyC，由后台线程在 TCP 端口 18812 上提供 IDA 的 API。客户端用 rpyc.connect 连接，并使用 c.root.idaapi 和 c.root.idc。生成器对象经过 c.root.iterate。线程方面的处理针对 IDA Pro 7.2 及更新版本。",
+    "requirements": [
+      "IDA Pro 7.2 or newer, and a Python client with RPyC.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/hugsy/ida-headless/blob/2f2d6ec20fc0f5a824f3aedcf57cd812e52fa15f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
