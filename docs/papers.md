@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (111)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -152,6 +152,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Coda: An End-to-End Neural Program Decompiler**](https://proceedings.neurips.cc/paper_files/paper/2019/hash/093b60fd0557804c8ba0cbf1453da22f-Abstract.html) - Coda decompiles the assembly of short functions into C in two phases. <sub>NeurIPS 2019 · Conference paper · Cheng Fu et al. · [PDF](https://proceedings.neurips.cc/paper_files/paper/2019/file/093b60fd0557804c8ba0cbf1453da22f-Paper.pdf) · [Full entry](https://awesomerea.org/papers/paper-coda/)</sub>
 - [**A Cross-Architecture Instruction Embedding Model for Natural Language Processing-Inspired Binary Code Analysis**](https://arxiv.org/abs/1812.09652) - The paper learns instruction embeddings that capture semantic relationships within and across architectures. <sub>arXiv 2018 · Preprint · Kimberly Redmond et al. · [PDF](https://arxiv.org/pdf/1812.09652) · [Full entry](https://awesomerea.org/papers/paper-cross-arch-instruction-embedding/)</sub>
 - [**Debin: Predicting Debug Information in Stripped Binaries**](https://dl.acm.org/doi/10.1145/3243734.3243866) - Debin predicts debug information for stripped ELF binaries on x86, x64 and ARM. <sub>ACM CCS 2018 · Conference paper · Jingxuan He et al. · [PDF](https://files.sri.inf.ethz.ch/website/papers/ccs18-debin.pdf) · [Code](https://github.com/eth-sri/debin) · [Full entry](https://awesomerea.org/papers/paper-debin/)</sub>
+- [**A Survey of Symbolic Execution Techniques**](https://arxiv.org/abs/1610.00502v3) - This survey reviews symbolic execution techniques for checking whether a program property holds across possible executions. <sub>ACM Computing Surveys 2018 · Journal article · Roberto Baldoni et al. · [PDF](https://arxiv.org/pdf/1610.00502v3) · [Full entry](https://awesomerea.org/papers/paper-symbolic-execution-survey/)</sub>
 - [**rev.ng: A Unified Binary Analysis Framework to Recover CFGs and Function Boundaries**](https://dl.acm.org/doi/10.1145/3033019.3033028) - rev.ng lifts binaries to LLVM IR through QEMU's tiny code generator, so one front end covers every architecture QEMU supports and the output is compilable IR. <sub>CC 2017 · Conference paper · Alessandro Di Federico et al. · [PDF](https://nebelwelt.net/publications/files/17CC.pdf) · [Code](https://github.com/revng/revng) · [Full entry](https://awesomerea.org/papers/paper-revng/)</sub>
 - [**Ramblr: Making Reassembly Great Again**](https://www.ndss-symposium.org/ndss2017/ndss-2017-programme/ramblr-making-reassembly-great-again/) - Ramblr produces reassembleable disassembly: assembly recovered from a stripped binary that can be edited and assembled again with an off-the-shelf assembler. <sub>NDSS 2017 · Conference paper · Ruoyu Wang et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/ndss2017_10-5_Wang_paper_0.pdf) · [Full entry](https://awesomerea.org/papers/paper-ramblr/)</sub>
 - [**No More Gotos: Decompilation Using Pattern-Independent Control-Flow Structuring and Semantics-Preserving Transformations**](https://www.ndss-symposium.org/ndss2015/ndss-2015-programme/no-more-gotos-decompilation-using-pattern-independent-control-flow-structuring-and-semantics/) - DREAM is a decompiler whose control-flow structuring recovers loops, conditionals and switch statements from a recovered control-flow graph without matching predefined region patterns. <sub>NDSS 2015 · Conference paper · Khaled Yakdan et al. · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/11_4_2.pdf) · [Full entry](https://awesomerea.org/papers/paper-dream/)</sub>
