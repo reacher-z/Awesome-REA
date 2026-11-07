@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sky-recomp",
+    "name": "Sky Recomp",
+    "url": "https://github.com/Apolinario-coder/SkyRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Sky Recomp statically recompiles The Legend of Zelda: Skyward Sword HD v1.0.0 from AArch64 to C for Windows, Linux, and macOS. The launcher imports an uncompressed game-files folder and does not accept console keys. Windows and Linux use Vulkan 1.3. macOS 11 or newer uses Metal 3. Windows source builds use MSYS2 UCRT64 and make build/skyrecomp.exe. Linux uses make build/skyrecomp. The status on the reviewed page is experimental.",
+    "description_zh": "Sky Recomp 把《塞尔达传说 天空之剑 HD》v1.0.0 从 AArch64 静态重编译成 C，面向 Windows、Linux 和 macOS。启动器导入未压缩的游戏文件目录，不接受主机密钥。Windows 和 Linux 使用 Vulkan 1.3。macOS 11 或更高版本使用 Metal 3。Windows 源码构建使用 MSYS2 UCRT64 和 make build/skyrecomp.exe。Linux 使用 make build/skyrecomp。审阅页面上的状态是实验性的。",
+    "requirements": [
+      "Uncompressed Skyward Sword HD v1.0.0 game files. About 15 GB free. Windows needs AVX2 and FMA, or Apple Silicon on macOS.",
+      "License: MIT for Sky Recomp's original code. LAS Recomp portions stay under LICENSE-LASRecomp. FFmpeg in releases is LGPL 2.1 or later."
+    ],
+    "evidence_url": "https://github.com/Apolinario-coder/SkyRecomp/blob/ad649b4fd319b7f7c309857b2d14353d2e5dcd79/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
