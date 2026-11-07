@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "abi-decompiler",
+    "name": "abi-decompiler",
+    "url": "https://github.com/Decurity/abi-decompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "abi-decompiler recovers names and argument counts for functions in Ethereum bytecode. The current C++ program brute-forces a 4-byte selector against a word list. clang++ -O3 -std=c++11 -pthread builds sig-bruteforcer from sha3.c and sig-bruteforcer.cpp. It takes the hex selector, a path to function names, a thread count, and a maximum argument count, and prints a matching signature such as a name plus its argument types. Word lists come from deployed contracts, a 100,000-word English list, and the ethersplay signature database. The older Python 2 script is marked deprecated.",
+    "description_zh": "abi-decompiler 恢复以太坊字节码中函数的名字和参数个数。当前的 C++ 程序用词表对 4 字节选择器做穷举。clang++ -O3 -std=c++11 -pthread 从 sha3.c 和 sig-bruteforcer.cpp 构建 sig-bruteforcer。它接受十六进制选择器、函数名词表路径、线程数和最大参数个数，并打印匹配的签名，例如名字及其参数类型。词表来自已部署合约、十万个英语单词，以及 ethersplay 的签名数据库。较旧的 Python 2 脚本被标为已弃用。",
+    "requirements": [
+      "A C++11 compiler such as clang++, and a function-name word list.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Decurity/abi-decompiler/blob/ee042e7a4362af31300b470f32e4bc48fff0d95f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
