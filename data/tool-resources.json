@@ -36528,5 +36528,38 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "opentv-truvoice-case",
+    "name": "OpenTV: a portable C rebuild of Centigram TruVoice",
+    "url": "https://github.com/RetroBunn/tv-decomp",
+    "description_en": "Rebuilds Centigram TruVoice, the 1997 text-to-speech engine, as portable C. tools/difftest.py compares PCM from the C build with the original DLL across the corpus checked in that script.",
+    "description_zh": "把 Centigram 的 TruVoice（1997 年文本转语音引擎）重建为可移植 C。tools/difftest.py 用脚本中的语料，把 C 构建的 PCM 与原始 DLL 对照。",
+    "evidence_url": "https://github.com/RetroBunn/tv-decomp/blob/8488e51f5bca5685590186693b76dc61bf23fdaf/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/RetroBunn/tv-decomp/blob/8488e51f5bca5685590186693b76dc61bf23fdaf/tools/difftest.py",
+      "https://github.com/RetroBunn/tv-decomp/blob/8488e51f5bca5685590186693b76dc61bf23fdaf/LICENSE"
+    ],
+    "requirements": [
+      "Needs an x86_64 mingw-w64 toolchain, used in -m32 freestanding mode for the 32-bit build, plus dlltool and Python 3. Put CGRM_EN.DLL in TruVoice/. That DLL is not in the repository. pefile is only required by the tools that read a DLL.",
+      "The README describes a C library, a command-line speaker, and an NVDA add-on, at 32 and 64 bits. It says SAPI 4 COM glue, config dialogs, and waveOut playback are documented but not ported.",
+      "The README says tools/difftest.py runs 59 corpus inputs in 335 configurations and demands identical PCM, for the hooked build and the standalone 32-bit and 64-bit ports. --ref compares those builds with a recording from the installed engine.",
+      "LICENSE is the MIT License, copyright 2026 RetroBunn. The original TruVoice DLL is not in the repository and is not part of that grant."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "targets": [
+      "binary"
+    ]
   }
 ]
