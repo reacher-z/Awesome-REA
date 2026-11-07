@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "doax2-recomp-case": {
+    "name": "DOAX2 Recomp",
+    "requirements": [
+      "支持的版本是零售光盘，标题 ID 544307D2，媒体 ID 21B9628E。default.xex 版本 3 的 SHA-256 为 c4a14853e1f7af951be34f380604113703638780b36d5e74e674fe7431992870。不支持标题更新。",
+      "从 Releases 下载 win64 压缩包，把光盘解压到名为 extracted game files here 的文件夹，使 default.xex 直接位于其中，然后运行 DOAX2 Recomp Launcher.exe。",
+      "移植自身的代码为 BSD 3-Clause。第三方组件保留 THIRD-PARTY-NOTICES.md 中列出的许可证。"
+    ]
   }
 }

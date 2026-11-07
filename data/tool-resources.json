@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "doax2-recomp-case",
+    "name": "DOAX2 Recomp",
+    "url": "https://github.com/hibikifukui22/Dead-or-Alive-Xtreme-2-Recompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "DOAX2 Recomp is a native Windows port of Dead or Alive Xtreme 2 for the Xbox 360, built with the ReXGlue SDK. The game's PowerPC code is translated ahead of time into C++ and can run at 30 FPS or at 60 FPS with the original game speed.",
+    "description_zh": "DOAX2 Recomp 是《Dead or Alive Xtreme 2》Xbox 360 版的 Windows 原生移植，使用 ReXGlue SDK 构建。游戏的 PowerPC 代码被提前翻译成 C++，可以按原速以 30 FPS 或 60 FPS 运行。",
+    "requirements": [
+      "The supported release is the retail disc, title ID 544307D2, media ID 21B9628E. default.xex version 3 has SHA-256 c4a14853e1f7af951be34f380604113703638780b36d5e74e674fe7431992870. Title updates are not supported.",
+      "Download the win64 zip from Releases, extract the disc so default.xex sits in the folder named extracted game files here, then run DOAX2 Recomp Launcher.exe.",
+      "The port's own code is BSD 3-Clause. Third-party components keep the licenses listed in THIRD-PARTY-NOTICES.md."
+    ],
+    "evidence_url": "https://github.com/hibikifukui22/Dead-or-Alive-Xtreme-2-Recompilation/blob/09b1ad7732ac16033db97f6e224738897cea4bf0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
