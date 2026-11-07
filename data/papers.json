@@ -12817,5 +12817,56 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-stripped-type-inference-survey",
+    "title": "From Heuristics to Transformers: A Comprehensive Survey of Type Inference from Stripped Binaries",
+    "authors": [
+      "Hua Zheng",
+      "Yuhang Guo",
+      "Kuanishbay Sadatdiynov",
+      "Cheng Wen",
+      "Muhammad Sadiq",
+      "Dugang Liu",
+      "Jawwad Ahmed Shamsi",
+      "Anam Qureshi"
+    ],
+    "year": 2026,
+    "publication_date": "2026-04-27",
+    "date_precision": "day",
+    "date_basis": "arXiv first-submission date; the reviewed file is v1",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2606.23692",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2026-04-27",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2606.23692v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.23692v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This survey follows type inference for stripped binaries from rule-based heuristics and static constraints through neural models to transformers and graph networks. It discusses type information lost to optimization and the difficulty of recovering structural types.",
+    "description_zh": "这篇综述把剥离二进制上的类型推断，从基于规则的启发式和静态约束写到神经网络，再到 Transformer 和图网络。它讨论优化造成的类型信息损失，以及恢复结构类型的困难。",
+    "scope_limitations_en": "The reviewed file is arXiv:2606.23692v1. Named systems in the abstract were not reimplemented, and this preprint is a different work from the 2026 Automated Software Engineering type-recovery survey.",
+    "scope_limitations_zh": "审阅的文件是 arXiv:2606.23692v1。摘要中点名的系统没有重新实现。这篇预印本与 2026 年 Automated Software Engineering 的类型恢复综述不是同一篇论文。",
+    "why_fits_en": "Recovering types from stripped binaries is a reverse-engineering task that decompilers and analysts depend on.",
+    "why_fits_zh": "从剥离二进制恢复类型，是反编译器和分析人员都依赖的逆向工程任务。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2606.23692v1",
+      "https://arxiv.org/pdf/2606.23692v1",
+      "https://export.arxiv.org/api/query?id_list=2606.23692"
+    ],
+    "metadata_notes": "Only v1 is recorded because that is the arXiv version whose PDF was fetched.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "从启发式方法到 Transformer：剥离二进制类型推断综述",
+    "date_basis_zh": "日期取自 arXiv 首次提交日，审阅的文件是 v1",
+    "metadata_notes_zh": "只记录 v1，因为获取的 PDF 就是这个 arXiv 版本。"
   }
 ]
