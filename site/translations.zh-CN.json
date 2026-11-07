@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "spartan-h3m": {
+    "name": "Spartan",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11，以及支持 Direct3D 12 的显卡。把光盘文件系统提取到 OpenH3M.exe 旁边的 game 文件夹，使 game\\default.xex 和 game\\maps\\ 存在。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
