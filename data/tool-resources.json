@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dk-nes-disasm",
+    "name": "Donkey Kong NES disassembly",
+    "url": "https://github.com/RussianManSMWC/Donkey-Kong-NES-Disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This disassembles Donkey Kong for the NES across Rev 0 (Japanese), Rev 1 (International), and the GameCube revision. The README says the code is fully disassembled and that graphics data is not included. It assembles with asm6.",
+    "description_zh": "该项目反汇编 NES 版《大金刚》的 Rev 0（日版）、Rev 1（国际版）和 GameCube 版本。README 写明代码已完全反汇编，图形数据不在仓库里。它用 asm6 汇编。",
+    "requirements": [
+      "asm6. Graphics data is assembled from a rip or from the Python script in misc.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/RussianManSMWC/Donkey-Kong-NES-Disassembly/blob/343f4c81880a253c0e8ede81fe7c21f205815280/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

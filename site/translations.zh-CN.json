@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "dk-nes-disasm": {
+    "name": "大金刚 NES 反汇编",
+    "requirements": [
+      "需要 asm6。图形数据来自自行提取，或 misc 里的 Python 脚本。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
