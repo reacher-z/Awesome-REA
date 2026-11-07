@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "powerbuilder-decompile",
+    "name": "PowerBuilder decompile",
+    "url": "https://github.com/sijms/PowerBuilder-decompile",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This Python module reads PowerBuilder PBD files. pbd_dump.py extracts a PBD into a folder. analyse_folder.py and analyse.py decompile win, fun, and udo files. pbd_analyse.py runs those steps on one PBD. The README says the work is incomplete and was tested against PowerBuilder 6. The recovered text is a descriptive listing, not a named programming language.",
+    "description_zh": "这个 Python 模块读取 PowerBuilder 的 PBD 文件。pbd_dump.py 把 PBD 提取到一个文件夹。analyse_folder.py 和 analyse.py 反编译 win、fun 和 udo 文件。pbd_analyse.py 对一个 PBD 一次完成这些步骤。README 写明工作尚未完成，并针对 PowerBuilder 6 测试过。恢复出的文本是描述性清单，不是一种有名字的编程语言。",
+    "requirements": [
+      "Python. Run pbd_analyse.py on a .pbd file.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/sijms/PowerBuilder-decompile/blob/5a7b9b05a400ddef8515dbf74e6fcd51a2e741a4/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
