@@ -36543,7 +36543,7 @@
     "requirements": [
       "./build.sh builds dsound.dll, the tracers, the test programs, and runs the native unit tests. The README says the repository contains no Creative or Microsoft code or binaries, so a comparison with those DLLs needs the DLLs from a Windows install.",
       "The README describes DirectSound answers checked against Windows 7, and SetFX effects it calls bit-exact ports of Microsoft's effects. It also describes an optional HRTF path. The built-in set is the MIT KEMAR measurements it credits.",
-      "The README says test programs are run against both implementations and their output is compared line by line, and that offline captures are compared event by event. It names tests/comcmp.sh and tests/fuzzcmp.py. Not run or reproduced for this catalog.",
+      "The README says test programs are run against both implementations and their output is compared line by line, and that offline captures are compared event by event. It names tests/comcmp.sh and tests/fuzzcmp.py.",
       "LICENSE is the MIT License, copyright 2026 Neth. The README says ALchemy is copyright Creative Technology."
     ],
     "requirement_facets": [
