@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "totk-recomp",
+    "name": "TotK Recomp: a static recompilation of Tears of the Kingdom",
+    "url": "https://github.com/valentderah/totk-pc-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Static recompilation of The Legend of Zelda: Tears of the Kingdom (Nintendo Switch, 2023) into a native x86-64 application for Windows and Linux. The README says the game is playable in early development, with visual bugs and crashes still expected, and that the result is native code rather than emulation. It accepts the base game plus update 1.1.0, 1.2.1, or 1.4.3 as NSP, XCI, NSZ, or XCZ.",
+    "description_zh": "将任天堂 Switch 版《塞尔达传说 王国之泪》（2023）静态重编译为 Windows 和 Linux 上的原生 x86-64 程序。README 写明游戏在早期开发中可以运行，仍会遇到画面错误和崩溃，并且结果是原生代码而不是模拟。它接受本体加上 1.1.0、1.2.1 或 1.4.3 更新，格式为 NSP、XCI、NSZ 或 XCZ。",
+    "evidence_url": "https://github.com/valentderah/totk-pc-recomp/blob/eda417fd1df15a17eae995b17a41880771a95f2f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No game files are included. The README says the reader needs a legally obtained copy dumped from their own console, and that the project does not provide instructions for obtaining those files.",
+      "The project's own code is under the MIT License. The README says third-party code keeps its own license, and that the MIT license grants nothing for the game."
+    ]
   }
 ]
