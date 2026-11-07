@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "red-dead-revolver-pc-case",
+    "name": "Red Dead Revolver PC",
+    "url": "https://github.com/dennisabalo18-bot/red-dead-revolver-pc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Red Dead Revolver PC is a native Windows port of the original Xbox game Red Dead Revolver (Rockstar San Diego, 2004). The x86 code is translated to C, and an xboxrecomp runtime supplies the kernel, a Direct3D 11 GPU path, audio, and controllers. Only the PAL Europe executable is supported.",
+    "description_zh": "Red Dead Revolver PC 是原版 Xbox 游戏 Red Dead Revolver（Rockstar San Diego，2004）的 Windows 原生移植。x86 代码被翻译成 C，xboxrecomp 运行时提供内核、Direct3D 11 画面路径、音频和手柄。只支持欧洲 PAL 版可执行文件。",
+    "requirements": [
+      "The player supplies their own Xbox game. The supported default.xbe is 4,452,352 bytes. The NTSC USA executable, 4,403,200 bytes, is rejected at startup.",
+      "The release zip is RedDeadRevolverPC.zip. The game runs at 60 Hz, with internal resolution up to 4x.",
+      "The reviewed README does not name a license for the port. It names MIT for xboxrecomp, the zlib license for SDL3, and a BSD-style license for extract-xiso."
+    ],
+    "evidence_url": "https://github.com/dennisabalo18-bot/red-dead-revolver-pc/blob/d7a94caf6f193ad18ad891bb3ef3aa503dda2210/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
