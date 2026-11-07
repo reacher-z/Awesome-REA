@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "afe-decomp": {
+    "name": "afe-decomp：《动物森林 e+》反编译",
+    "requirements": [
+      "需要一份已有的《动物森林 e+》，版本为受支持的日版修订 GAEJ01_00 或 GAEJ01_01。",
+      "Windows 使用 Python 和 Ninja。macOS 用 Homebrew 安装 Ninja。Linux 安装 Ninja。README 写明 macOS 和 Linux 会自动下载 wibo。",
+      "GitHub 报告许可证为 CC0-1.0。"
+    ]
   }
 }

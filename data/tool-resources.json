@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "afe-decomp",
+    "name": "afe-decomp: decompilation of Animal Forest e+",
+    "url": "https://github.com/ACreTeam/afe-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "afe-decomp is a work-in-progress decompilation of Animal Forest e+ for the GameCube, the Japanese release どうぶつの森 e+. The README supports revisions GAEJ01_00 and GAEJ01_01 and says the repository contains no game assets or assembly. Windows, macOS, and Linux setups use Python and Ninja, with wibo downloaded for macOS and Linux.",
+    "description_zh": "afe-decomp 是 GameCube 日版《动物森林 e+》（どうぶつの森 e+）的进行中反编译。README 支持修订版 GAEJ01_00 和 GAEJ01_01，并写明仓库不含游戏资源或汇编。Windows、macOS 和 Linux 的环境使用 Python 和 Ninja，macOS 与 Linux 会下载 wibo。",
+    "evidence_url": "https://github.com/ACreTeam/afe-decomp/blob/56136b03437aa1e28a03cc496167f8051d3a6abe/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "An existing copy of Animal Forest e+ for one of the supported Japanese revisions, GAEJ01_00 or GAEJ01_01.",
+      "Windows uses Python and Ninja. macOS installs Ninja with Homebrew. Linux installs Ninja. macOS and Linux use wibo, which the README says is downloaded automatically.",
+      "GitHub reports the license as CC0-1.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
