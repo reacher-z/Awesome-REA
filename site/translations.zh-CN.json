@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "omf-2097-remastered": {
+    "name": "One Must Fall 2097 重制",
+    "requirements": [
+      "桌面下载是单个文件，覆盖 Windows 10 或 11、macOS 12 或更新版本，以及 Linux。README 写明每个下载包含游戏、高清画面和音乐，大约 240 MB。浏览器版本在 jared-woodruff.github.io/OMF-2097-Remastered。",
+      "审阅的 README 在说明和下载部分没有写许可证。"
+    ]
   }
 }
