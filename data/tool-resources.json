@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "metal-slug-xx-recomp",
+    "name": "Metal Slug XX ReXGlue recompilation",
+    "url": "https://github.com/FluffyQuack/rexglue-MetalSlugXX",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "A modified ReXGlue SDK tree for running Metal Slug XX. The README says the repository stores no Metal Slug XX files and that a legal copy has to be supplied. It also marks the project as early development, with breaking public API changes expected.",
+    "description_zh": "这是一份经过修改的 ReXGlue SDK 树，用来运行《合金弹头 XX》。README 写明仓库不存放《合金弹头 XX》的文件，需要自行提供合法副本。README 还把它标为早期开发，并预期会有破坏性的公开 API 变更。",
+    "evidence_url": "https://github.com/FluffyQuack/rexglue-MetalSlugXX/blob/bb11ea63595c9af62cb97feb1ef330ba05d32c92/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "A legal copy of Metal Slug XX is required. The README says no files from the game are stored in the repository.",
+      "The README's build cheat sheet uses Visual Studio 2022, the CMake preset win-amd64-relwithdebinfo, the metalslugxx_codegen target, and a local recompile of default.xex.",
+      "The README marks the project as early development and expects significant changes and breaking public API updates."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits"
+    ],
+    "verification": "source-reviewed"
   }
 ]

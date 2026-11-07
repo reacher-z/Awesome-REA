@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "metal-slug-xx-recomp": {
+    "name": "合金弹头 XX 的 ReXGlue 重编译",
+    "requirements": [
+      "需要一份合法的《合金弹头 XX》。README 写明仓库不存放该游戏的文件。",
+      "README 的构建备忘使用 Visual Studio 2022、CMake 预设 win-amd64-relwithdebinfo、metalslugxx_codegen 目标，以及在本地重新编译 default.xex。",
+      "README 将项目标为早期开发，并预期会有重大变更和破坏性的公开 API 更新。"
+    ]
   }
 }
