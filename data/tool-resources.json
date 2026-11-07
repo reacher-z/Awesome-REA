@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "aevt-decompile",
+    "name": "aevt_decompile",
+    "url": "https://github.com/SentineLabs/aevt_decompile",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "aevt_decompile annotates a disassembled run-only AppleScript. Its input is a text file produced by applescript-disassembler. The output adds AEVT code descriptions, decoded hard-coded strings, decimal conversions of hard-coded hex numbers, and names of targeted applications.",
+    "description_zh": "aevt_decompile 为反汇编后的仅可运行 AppleScript 添加注释。输入是 applescript-disassembler 生成的文本文件。输出会加上 AEVT 代码说明、解码后的硬编码字符串、硬编码十六进制数的十进制转换，以及目标应用程序的名称。",
+    "requirements": [
+      "Usage is aevt_decompile followed by the disassembler text file. The program writes a separate annotated file and leaves the input unchanged.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/SentineLabs/aevt_decompile/blob/d48c1eca65b45722769386846eb32592ef3ca77c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

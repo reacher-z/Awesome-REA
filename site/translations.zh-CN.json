@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "aevt-decompile": {
+    "name": "aevt_decompile",
+    "requirements": [
+      "用法是 aevt_decompile 后接反汇编器的文本文件。程序会另写一个带注释的文件，并且不改动输入。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
