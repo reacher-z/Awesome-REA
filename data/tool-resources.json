@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nfsmw-recompiled",
+    "name": "NFSMW Recompiled",
+    "url": "https://github.com/madelrandel-blip/NFSMW-Recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "NFSMW Recompiled is a native PC and Android port of the Xbox 360 version of Need for Speed: Most Wanted from 2005. It translates the PowerPC code to C++ and draws with a Vulkan 1.1 renderer. The reviewed page supports the PAL Spanish edition and the USA edition, identified by the SHA-256 prefixes aad15fc2 and aebdf3c1 of default.xex. Other editions are not supported. nfsmw.exe takes an ISO or an extracted folder, detects the edition, and builds nfsmw_shaders.nfsp from that disc. The launcher has English, Spanish, and Portuguese, with quality profiles and frame-rate limits of 30, 60, and 120.",
+    "description_zh": "NFSMW Recompiled 是 2005 年 Xbox 360 版《极品飞车：最高通缉》的 PC 和 Android 原生移植。它把 PowerPC 代码译成 C++，并用 Vulkan 1.1 渲染器绘制。审阅页面支持 PAL 西班牙语版和美版，以 default.xex 的 SHA-256 前缀 aad15fc2 和 aebdf3c1 区分。其他版本尚不支持。nfsmw.exe 接受 ISO 或已解压文件夹，识别版本，并从该光盘构建 nfsmw_shaders.nfsp。启动器有英语、西班牙语和葡萄牙语，带画质预设以及 30、60 和 120 的帧率上限。",
+    "requirements": [
+      "A PAL Spanish or USA ISO, or the extracted folder, of the Xbox 360 game. A Vulkan 1.1 GPU on PC or Android.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/madelrandel-blip/NFSMW-Recompiled/blob/59a0f23ba19d826a2978443dfc2f8b2a96dd415f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "nfsmw-recompiled": {
+    "name": "极品飞车最高通缉重编译",
+    "requirements": [
+      "需要 Xbox 360 版的 PAL 西班牙语版或美版 ISO，或已解压的文件夹。PC 或 Android 需要 Vulkan 1.1 显卡。",
+      "许可证：GPL-3.0。"
+    ]
   }
 }
