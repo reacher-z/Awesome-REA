@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "balamod",
+    "name": "Balamod",
+    "url": "https://github.com/balamod/balamod",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Balamod is a mod loader, injector, and decompiler for the game Balatro. The README says it supports in-game code injection and documents install, CLI, and modding steps.",
+    "description_zh": "Balamod 是游戏《Balatro》的模组加载器、注入器和反编译器。README 写明它支持游戏内代码注入，并记录了安装、命令行和模组制作步骤。",
+    "requirements": [
+      "It targets Balatro mods and in-game code injection.",
+      "License: Apache-2.0."
+    ],
+    "evidence_url": "https://github.com/balamod/balamod/blob/6333213aecf940ce69febf077f3fe4ecc4a13d18/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
