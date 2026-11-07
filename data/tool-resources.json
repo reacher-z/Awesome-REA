@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "vpw2-decomp",
+    "name": "Virtual Pro-Wrestling 2 decompilation",
+    "url": "https://github.com/AKI-Club/vpw2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a decompilation of Virtual Pro-Wrestling 2 (バーチャル・プロレス2 〜王道継承〜) for the Nintendo 64. An unmodified Z64 ROM named baserom.z64 has SHA-1 82dd25a044689eab57ab362fe10c0da6388c217a. make setup extracts the ROM. make builds it. The README says the project is still in progress.",
+    "description_zh": "这是 Nintendo 64 游戏 Virtual Pro-Wrestling 2（バーチャル・プロレス2 〜王道継承〜）的反编译。未修改的 Z64 ROM 命名为 baserom.z64，SHA-1 是 82dd25a044689eab57ab362fe10c0da6388c217a。make setup 提取 ROM。make 进行构建。README 写明项目仍在进行中。",
+    "requirements": [
+      "Linux or WSL2, GNU make, binutils-mips-linux-gnu, gcc-mips-linux-gnu, gcc-multilib, and Python 3. Clone with --recurse-submodules.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/AKI-Club/vpw2/blob/f3900db987e5777ec231e5c921af47b094464a93/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
