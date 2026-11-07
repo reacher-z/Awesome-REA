@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "def-jam-vendetta-recomp": {
+    "name": "Def Jam Vendetta 重编译",
+    "requirements": [
+      "玩家提供光盘。README 要求大约 8 GB 空闲空间。第一次构建在 PC 上进行。",
+      "许可证：GPL-3.0。对 paraLLEl-GS 的改动是 LGPL-3.0 或更高版本。"
+    ]
   }
 }
