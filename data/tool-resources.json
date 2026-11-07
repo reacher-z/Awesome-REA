@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "freevgui",
+    "name": "FreeVGUI",
+    "url": "https://github.com/FWGS/freevgui",
+    "category": "reconstruction-cases",
+    "kind": "project",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "software",
+    "description_en": "FreeVGUI reimplements the Half-Life 1 VGUI library. It is written to match the original public API and, optionally, the private API. The current build path is as a subproject of Xash3D FWGS. The README says it shares no code with the original library.",
+    "description_zh": "FreeVGUI 重实现《半衰期》的 VGUI 库。它按原来的公开接口编写，也可以选择匹配私有接口。当前的构建方式是作为 Xash3D FWGS 的子项目。README 写明它与原来的库没有共用代码。",
+    "requirements": [
+      "License: 3-clause BSD."
+    ],
+    "evidence_url": "https://github.com/FWGS/freevgui/blob/410c35cd7ed4271ebc0b49ddb5351a248447c319/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
