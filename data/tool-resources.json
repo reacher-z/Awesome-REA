@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "perlica-rs",
+    "name": "Perlica RS",
+    "url": "https://github.com/Yoshk4e/perlica-rs",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "class": "game",
+    "description_en": "Perlica RS is a Rust game server. The README says it is compatible with the alpha client, and that the client patch replaces the server address so the client can talk to a local server. It documents login, characters, weapons, equipment, and missions.",
+    "description_zh": "Perlica RS 是一个用 Rust 编写的游戏服务器。README 写明它兼容 alpha 客户端，客户端补丁会替换服务器地址，使客户端能连接本地服务器。它记录了登录、角色、武器、装备和任务。",
+    "requirements": [
+      "Build the game server with cargo build --bin perlica-game-server --release. The first run creates Config.toml from servers/game-server/config.default.toml.",
+      "The config server is expected at 127.0.0.1:21041. The game server address comes from the server section of the config.",
+      "License: AGPL-3.0."
+    ],
+    "evidence_url": "https://github.com/Yoshk4e/perlica-rs/blob/9fee962cfefef40c6d623c81140ccb8ab6cac9cf/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
