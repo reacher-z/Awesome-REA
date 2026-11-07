@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "totk-pc-recomp",
+    "name": "TotK Recomp",
+    "url": "https://github.com/valentderah/totk-pc-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "TotK Recomp statically recompiles The Legend of Zelda: Tears of the Kingdom into a native x86-64 program for Windows and Linux, with a Vulkan renderer. It accepts the base game plus update 1.1.0, 1.2.1, or 1.4.3 as NSP, XCI, NSZ, or XCZ. Windows setup needs Windows 10 or later, SSE4.2, and Vulkan 1.3. Linux needs Linux 6.7 or later and glibc 2.34 or later. The toolchain steps are in docs/building.md.",
+    "description_zh": "TotK Recomp 把《塞尔达传说 王国之泪》静态重编译成 Windows 和 Linux 上的原生 x86-64 程序，并使用 Vulkan 渲染器。它接受本体加上 1.1.0、1.2.1 或 1.4.3 更新，文件格式为 NSP、XCI、NSZ 或 XCZ。Windows 安装需要 Windows 10 或更高版本、SSE4.2 和 Vulkan 1.3。Linux 需要 Linux 6.7 或更高版本以及 glibc 2.34 或更高版本。工具链步骤在 docs/building.md。",
+    "requirements": [
+      "Your own base game and one of updates 1.1.0, 1.2.1, or 1.4.3. About 36 GiB free during setup.",
+      "License: MIT for the project's own code. Third-party code keeps the licenses in THIRD_PARTY_NOTICES.md."
+    ],
+    "evidence_url": "https://github.com/valentderah/totk-pc-recomp/blob/eda417fd1df15a17eae995b17a41880771a95f2f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
