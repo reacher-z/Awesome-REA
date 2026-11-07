@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "automobili-lamborghini-recomp",
+    "name": "Automobili Lamborghini: Recompiled",
+    "url": "https://github.com/alondero/automobililamborghini-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Automobili Lamborghini: Recompiled is a native port of the North American Nintendo 64 game Automobili Lamborghini. Release packages are provided for Windows x64 and Linux x64. An Android ARM64 path exists and is described as experimental.",
+    "description_zh": "Automobili Lamborghini: Recompiled 是任天堂 64 北美版 Automobili Lamborghini 的原生移植。发布包提供 Windows x64 和 Linux x64。还有一条 Android ARM64 路径，被写成实验性的。",
+    "requirements": [
+      "The player supplies a USA cartridge dump, named Automobili Lamborghini (USA).z64 or .n64, beside the executable. Windows starts lamborghini_modern.exe. Linux starts ./lamborghini_modern. When both names exist, the .z64 file is used.",
+      "License: GPL-3.0 for code original to this repository. Dependency submodules keep their own licenses."
+    ],
+    "evidence_url": "https://github.com/alondero/automobililamborghini-recomp/blob/b5ae30c0015d9f27deca05cb8a42a764aca9972f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
