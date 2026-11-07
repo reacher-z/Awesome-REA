@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "duke-nukem-zero-hour",
+    "name": "Duke Nukem Zero Hour decompilation",
+    "url": "https://github.com/Gillou68310/DukeNukemZeroHour",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This decompiles Duke Nukem: Zero Hour for the Nintendo 64. The US ROM is named baserom.us.z64. make setup extracts it, and make builds build/us/dukenukemzerohour.z64. The French ROM is baserom.fr.z64 and uses VERSION=fr. The reviewed instructions use Ubuntu 22.04 or WSL2, a MIPS GNU toolchain, Python 3.9 or newer, and splat64. A Docker image dukenukemzerohour contains the same dependencies.",
+    "description_zh": "该项目反编译 Nintendo 64 游戏《毁灭公爵：零点时刻》。美版 ROM 命名为 baserom.us.z64。make setup 提取它，make 构建 build/us/dukenukemzerohour.z64。法版 ROM 是 baserom.fr.z64，并使用 VERSION=fr。审阅的说明使用 Ubuntu 22.04 或 WSL2、MIPS GNU 工具链、Python 3.9 或更高版本，以及 splat64。名为 dukenukemzerohour 的 Docker 镜像包含同样的依赖。",
+    "requirements": [
+      "A US or French ROM. Ubuntu 22.04 packages make, git, build-essential, and the MIPS binutils and cpp packages. Python 3.9 or newer.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Gillou68310/DukeNukemZeroHour/blob/beca47137e63a2da6999ef9a7974dba16cd6f82b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
