@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "cvaos-decomp",
+    "name": "Castlevania: Aria of Sorrow decompilation",
+    "url": "https://github.com/testyourmine/cvaos",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Castlevania: Aria of Sorrow, USA. It builds cvaos_us.gba, SHA-1 abd71fe01ebb201bcc133074db1dd8c5253776c7. Setup steps are in INSTALL.md.",
+    "description_zh": "这是美版《Castlevania: Aria of Sorrow》的匹配反编译。它构建 cvaos_us.gba，SHA-1 为 abd71fe01ebb201bcc133074db1dd8c5253776c7。安装步骤在 INSTALL.md。",
+    "requirements": [
+      "Follow INSTALL.md. The built ROM is cvaos_us.gba.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/testyourmine/cvaos/blob/bc23d849d578c35ae12a5cec4e66549c3021a5be/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
