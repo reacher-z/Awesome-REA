@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "xmd-recompiled",
+    "name": "X-Men Destiny recompilation",
+    "url": "https://github.com/florinp93/xmd-recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles X-Men Destiny for the Xbox 360 to Windows with ReXGlue. The entry executable is game/default.xex. setup.ps1 clones ReXGlue v0.10.0. The port targets Direct3D 12.",
+    "description_zh": "该项目用 ReXGlue 把 Xbox 360 版《X战警：命运》重编译到 Windows。入口可执行文件是 game/default.xex。setup.ps1 会克隆 ReXGlue v0.10.0。移植目标是 Direct3D 12。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, Clang 18 or newer, CMake 3.25 or newer, Ninja, and Visual Studio 2022. Extract the ISO into game/ and keep default.xex at game/default.xex.",
+      "The reviewed README does not name a license for this repository. It says the ReXGlue SDK is BSD-3-Clause."
+    ],
+    "evidence_url": "https://github.com/florinp93/xmd-recompiled/blob/a312ecd77bddcd138384211a52976638f601b3af/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
