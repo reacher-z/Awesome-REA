@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bldmystery",
+    "name": "Mystery of Blade",
+    "url": "https://github.com/smartblade/BldMystery",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "Mystery of Blade recovers the source of Severance: Blade of Darkness. The target is the 2001 classic release with patch 1.01, not the Steam version. The README says Bladex.dll, Netblade.dll, netgame.dll, and Raster.dll are fully recovered, while Blade.exe and rOpenGL.dll are partial.",
+    "description_zh": "Mystery of Blade 恢复《Severance: Blade of Darkness》的源码。目标是 2001 年经典版加上补丁 1.01，不是 Steam 版。README 写明 Bladex.dll、Netblade.dll、netgame.dll 和 Raster.dll 已经完全恢复，Blade.exe 和 rOpenGL.dll 仍是部分恢复。",
+    "requirements": [
+      "A function is replaced by writing a C++ implementation and removing its assembly with process_asm.py.",
+      "Bug fixes based on this tree are in smartblade/BldPatch.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/smartblade/BldMystery/blob/8644168eb4b38f863759a0aa88f97e6c6f7dbf77/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
