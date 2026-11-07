@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dncil",
+    "name": "dncil",
+    "url": "https://github.com/mandiant/dncil",
+    "category": "dotnet",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "dncil is a Python library that disassembles .NET Common Intermediate Language. It parses method headers, instructions, and exception handlers and exposes them through an object-oriented API.",
+    "description_zh": "dncil 是一个用 Python 编写的 .NET 通用中间语言反汇编库。它解析方法头、指令和异常处理程序，并通过面向对象的 API 提供这些数据。",
+    "requirements": [
+      "The README publishes the package on PyPI as dncil.",
+      "It is a pure-Python alternative for programmatic CIL analysis.",
+      "License: Apache-2.0."
+    ],
+    "evidence_url": "https://github.com/mandiant/dncil/blob/d174a3664767db00d8ee2a0652af9e7275119334/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
