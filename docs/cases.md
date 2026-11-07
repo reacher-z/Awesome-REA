@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -91,6 +91,7 @@
 - [**Snowboard Kids: an agent-assisted N64 matching decompilation**](https://github.com/cdlewis/snowboardkids-decomp) - A matching decompilation of the original Nintendo 64 Snowboard Kids that rebuilds SHA1-identical North American and Japanese ROMs from a user-supplied ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/snowboardkids-matching-decomp-case/)</sub>
 - [**Sonic Advance 1 &amp; 2: a matching GBA decompilation with widescreen ports**](https://github.com/SAT-R/sa2) - Reconstructs Sonic Advance and Sonic Advance 2 for the Game Boy Advance as C that rebuilds six hash-listed ROMs with SAT-R’s agbcc fork, and compiles the same code into widescreen SDL ports for Linux, macOS and Windows plus PSP and PS2 builds. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sonic-advance-1-2-decomp-port-case/)</sub>
 - [**Sonic Advance 3: an AI-assisted match of one enemy module**](https://gambiconf.substack.com/p/development-journey-on-game-decompilation) - Macabeus’s dated study describes prompting Claude Sonnet 3.5 and DeepSeek R1 with assembly, similar decompiled functions and structs to write matching C for Marun, one enemy module of the community Sonic Advance 3 GBA decompilation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sa3-marun-ai-decomp-case/)</sub>
+- [**SpongeBob SquarePants: Battle for Bikini Bottom — GameCube decompilation**](https://github.com/bfbbdecomp/bfbb) - This is a work-in-progress decompilation of SpongeBob SquarePants: Battle for Bikini Bottom. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bfbb-decomp-case/)</sub>
 - [**Star Fox 64: a complete matching Nintendo 64 decompilation**](https://github.com/sonicdcer/sf64) - Reconstructs C source for the US 1.1 (Rev A) Nintendo 64 release of Star Fox 64 that, compiled with the IDO compiler through a static recompilation, rebuilds a ROM with the published MD5; the README badge counts all 2,951 functions as matching. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sf64-matching-decomp-case/)</sub>
 - [**Super Mario 64 DS: matching decompilation with relocation checks**](https://github.com/tangosdev/sm64ds-decomp) - Reconstructs Super Mario 64 DS functions as C/C++ and permitted assembly primitives, comparing compiled output with a user-supplied cartridge dump. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sm64ds-decomp-case/)</sub>
 - [**Super Mario 64: ROM reconstruction with explicit comparison gates**](https://github.com/n64decomp/sm64) - Reconstructs Super Mario 64 source for Japanese, North American, European, Shindou and iQue releases. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sm64-decomp-case/)</sub>
