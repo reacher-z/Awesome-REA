@@ -36543,7 +36543,7 @@
     "requirements": [
       "Needs make, cc65, and Python for encrypting some protected code. make builds the English version. LOCALE=de make builds the German version. orig/ is the collected binary set.",
       "The README says the source produces the GEOS-bundled geoWrite 2.1 versions, and that a default build must keep recreating geoWrite_en_2.1_1988-07-06 and geoWrite_de_2.1_1989-01-03. Its status table says commenting is incomplete and lists a percentage for each record.",
-      "The check named in the README is that standard compile, compared with those original files. Not run or reproduced for this catalog.",
+      "The check named in the README is that standard compile, compared with those original files.",
       "The reviewed root has no LICENSE file. The README says the intellectual property added by the reverse-engineering and the subsequent improvements is in the public domain, asks to be credited, and says to respect the license of the underlying GEOS work."
     ],
     "requirement_facets": [
