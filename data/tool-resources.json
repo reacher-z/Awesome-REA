@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dolrecomp",
+    "name": "DolRecomp",
+    "url": "https://github.com/ExpansionPak/DolRecomp",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "DolRecomp statically recompiles GameCube and Wii PowerPC code, with an early Espresso path for Wii U RPX files. It generates C or LLVM. GameCube DOLs use --gamecube. Wii DOLs and REL modules take a six-character title ID. ./dolrecomp extract reads a GameCube ISO, and Wii ISO or WBFS extraction uses Wiimms ISO Tool when needed. cmake -S . -B build builds it. The LLVM backend needs LLVM 19 or 20. Windows builds are tested with MSVC and MinGW. Linux and macOS are supported. Graphics, audio, and input stay in the host program.",
+    "description_zh": "DolRecomp 静态重编译 GameCube 和 Wii 的 PowerPC 代码，并为 Wii U 的 RPX 文件提供早期的 Espresso 路径。它生成 C 或 LLVM。GameCube 的 DOL 使用 --gamecube。Wii 的 DOL 和 REL 模块接受六个字符的标题编号。./dolrecomp extract 读取 GameCube ISO，Wii 的 ISO 或 WBFS 在需要时使用 Wiimms ISO Tool。cmake -S . -B build 构建它。LLVM 后端需要 LLVM 19 或 20。Windows 构建在 MSVC 和 MinGW 上测试过。Linux 和 macOS 也受支持。图形、音频和输入留在宿主程序里。",
+    "requirements": [
+      "CMake 3.16 or newer and a C11 compiler. zlib for compressed RPX sections. LLVM 19 or 20 for the LLVM backend.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ExpansionPak/DolRecomp/blob/02e27aca1c408cfcb2a4079a3a5b5ab3ae39d340/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
