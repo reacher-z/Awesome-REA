@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "reshadowtower": {
+    "name": "影之塔重编译",
+    "requirements": [
+      "需要 OpenGL 3.3。从源码构建需要 Git、Python 3.11 或更新版本、CMake 3.20 或更新版本、Ninja 和 C++20 编译器。把转储放到 disc/，命名为 Shadow Tower (USA).bin 和 Shadow Tower (USA).cue，然后运行 ./scripts/build.sh。",
+      "审阅的 README 没有给这个仓库写出许可证。它写明 PSXRecomp 框架和组合后的运行时保持 PolyForm Noncommercial，OpenBIOS 是 MIT。"
+    ]
   }
 }
