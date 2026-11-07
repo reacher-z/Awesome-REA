@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "oldrod",
+    "name": "Old Rod",
+    "url": "https://github.com/Washi1337/OldRod",
+    "category": "dotnet",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Old Rod disassembles a .NET executable protected by the KoiVM virtualizer in ConfuserEx and recompiles that VM code to CIL. OldRod.exe --help lists the options. --output-directory sets the output folder, and --koi-stream-name, --entry-type, and --run-sig-1 override detection. --config takes a constants map such as doc/example-config.json. Builds use MSBuild in Visual Studio or Rider. AppVeyor publishes binaries. AsmResolver, Rivers, and Newtonsoft.Json are dependencies.",
+    "description_zh": "Old Rod 反汇编被 ConfuserEx 的 KoiVM 虚拟化保护的 .NET 可执行文件，并把那些虚拟机代码重新编译成 CIL。OldRod.exe --help 列出选项。--output-directory 设置输出文件夹，--koi-stream-name、--entry-type 和 --run-sig-1 用来覆盖自动检测。--config 接受常量映射，例如 doc/example-config.json。构建使用 Visual Studio 或 Rider 里的 MSBuild。AppVeyor 发布二进制。依赖包括 AsmResolver、Rivers 和 Newtonsoft.Json。",
+    "requirements": [
+      "A .NET build environment with MSBuild, or an AppVeyor binary. Restore the submodules and NuGet packages before building.",
+      "License: GPL version 3. AsmResolver, Rivers, and Newtonsoft.Json are MIT."
+    ],
+    "evidence_url": "https://github.com/Washi1337/OldRod/blob/56fc436807c46f94ffc1c790b9d8426dae7be047/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
