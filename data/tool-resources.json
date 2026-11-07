@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "shin-engine",
+    "name": "shin",
+    "url": "https://github.com/DCNick3/shin",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "shin is an unofficial reimplementation of a visual-novel engine used by Entergram releases on Nintendo Switch, PlayStation 4, and PlayStation Vita. The current target is the Switch version of Umineko no Naku Koro ni Saku, title ID 01006A300BA2C000. Character sprites, backgrounds, music, sound effects, and text work. The README says it is not fully playable.",
+    "description_zh": "shin 是 Entergram 在任天堂 Switch、PlayStation 4 和 PlayStation Vita 上使用的视觉小说引擎的非官方重实现。当前目标是 Switch 版《海猫鸣泣之时散》，标题 ID 01006A300BA2C000。角色立绘、背景、音乐、音效和文本已经可用。README 写明它还不能完整游玩。",
+    "requirements": [
+      "Prebuilt archives are on the Releases page. The player supplies a romfs dump of title ID 01006A300BA2C000.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/DCNick3/shin/blob/2405086f8a1d319c9df3605df38a4f0a6379a42d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
