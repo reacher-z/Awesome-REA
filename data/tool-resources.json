@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "apktoolplus",
+    "name": "ApkToolPlus",
+    "url": "https://github.com/CYRUS-STUDIO/ApkToolPlus",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "ApkToolPlus is a graphical APK analysis tool. It decompiles, rebuilds, and signs APKs, shows AndroidManifest.xml, the signature, and the version, and converts among jar, class, dex, and smali. It can view multi-dex source. The project is an IntelliJ IDEA project and uses Ant. The main class is com.linchaolong.apktoolplus.Main. Build, Artifacts, ApkToolPlus writes ApkToolPlus.jar under out/artifacts/ApkToolPlus.",
+    "description_zh": "ApkToolPlus 是一个图形化的 APK 分析工具。它可以反编译、回编译和签名 APK，查看 AndroidManifest.xml、签名和版本号，并在 jar、class、dex 和 smali 之间转换。它能查看 multi-dex 源码。这是一个 IntelliJ IDEA 工程，使用 Ant。主类是 com.linchaolong.apktoolplus.Main。Build、Artifacts、ApkToolPlus 会把 ApkToolPlus.jar 写到 out/artifacts/ApkToolPlus。",
+    "requirements": [
+      "A JDK and Ant. Run com.linchaolong.apktoolplus.Main, or open the release jar.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/CYRUS-STUDIO/ApkToolPlus/blob/4c1c9a1d3e740f1714e478f2491fee230baad565/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
