@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "jazz2-resurrection",
+    "name": "Jazz² Resurrection",
+    "url": "https://github.com/deathkiller/jazz2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Jazz² Resurrection reimplements Jazz Jackrabbit 2 from 1998. It supports the shareware demo, Holiday Hare '98, The Secret Files, and Christmas Chronicles, and part of the JJ2+ and MLLE features. The reviewed README says the game was rewritten after version 1.0.0 and that source builds belong in deathkiller/jazz2-native. This repository publishes the releases. Windows needs the Microsoft Visual C++ redistributable and the original game files.",
+    "description_zh": "Jazz² Resurrection 重实现 1998 年的《爵士杰克兔 2》。它支持共享版试玩、Holiday Hare '98、The Secret Files 和 Christmas Chronicles，以及一部分 JJ2+ 和 MLLE 功能。审阅的 README 写明游戏在 1.0.0 之后被重写，源码构建在 deathkiller/jazz2-native。这个仓库发布发行版。Windows 需要 Microsoft Visual C++ 可再发行组件和原版游戏文件。",
+    "requirements": [
+      "Original Jazz Jackrabbit 2 files. Build from deathkiller/jazz2-native. Releases are on this repository.",
+      "License: GNU General Public License v3.0."
+    ],
+    "evidence_url": "https://github.com/deathkiller/jazz2/blob/80246b3617db61daa3ee9cb12224521f076ba724/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
