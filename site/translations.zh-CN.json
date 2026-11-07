@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "metroid-prime-2-echoes-port": {
+    "name": "Echoes Unbound",
+    "requirements": [
+      "需要上面写明的一种光盘镜像。自行构建需要 CMake 3.25 或更高版本和 C++20 工具链。",
+      "许可证：这个项目的平台层、构建脚本和 Android 集成为 MIT。src 和 include 下的游戏代码仍属于任天堂。LICENSE-decomp 保留 PrimeDecomp 的 CC0 声明。"
+    ]
   }
 }

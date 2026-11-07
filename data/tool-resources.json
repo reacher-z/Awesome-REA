@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "metroid-prime-2-echoes-port",
+    "name": "Echoes Unbound",
+    "url": "https://github.com/Odrannnn/MetroidPrime2Port",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "Echoes Unbound is a native port of Metroid Prime 2: Echoes, built from the PrimeDecomp decompilation and rendered with Aurora over SDL3 and WebGPU. It reads a disc image at run time. Supported discs are GameCube USA G2ME01, PAL G2MP01, and Trilogy USA R3ME01 and PAL R3MP01, as iso, gcm, rvz, wia, gcz, ciso, or wbfs. Releases cover Linux, Windows, macOS on Apple silicon, and Android. F1, or Start and Back, opens the settings. cmake with -DMP_SDK_HEADERS_ONLY=OFF builds metroid_prime2_port. The disc is not required to compile.",
+    "description_zh": "Echoes Unbound 是《密特罗德 Prime 2：回声》的原生移植，基于 PrimeDecomp 反编译，用 Aurora 在 SDL3 和 WebGPU 上渲染。它在运行时读取光盘镜像。支持的光盘是 GameCube 美版 G2ME01、PAL 版 G2MP01，以及三部曲美版 R3ME01 和 PAL 版 R3MP01，格式可以是 iso、gcm、rvz、wia、gcz、ciso 或 wbfs。发行版覆盖 Linux、Windows、Apple 芯片上的 macOS 和 Android。F1，或 Start 加 Back，打开设置。带 -DMP_SDK_HEADERS_ONLY=OFF 的 cmake 构建 metroid_prime2_port。编译不需要光盘。",
+    "requirements": [
+      "One of the disc images named above. CMake 3.25 or newer and a C++20 toolchain to build.",
+      "License: MIT for this project's platform layer, build scripts, and Android integration. The game code under src and include remains Nintendo's. LICENSE-decomp keeps PrimeDecomp's CC0 dedication."
+    ],
+    "evidence_url": "https://github.com/Odrannnn/MetroidPrime2Port/blob/25726963f1be337bde7551815cad714f4c23614b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
