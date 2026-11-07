@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "medarot1-disasm": {
+    "name": "勋章战士反汇编",
+    "requirements": [
+      "甲虫版 v1.1 的 MD5 是 78c568cbfff6314b1416880d9efaeca6，命名为 baserom_kabuto.gb。锹形虫版 v1.1 的 MD5 是 a9c9d6b6759c28f2b3986717f4df2f98，命名为 baserom_kuwagata.gb。",
+      "需要 Make 4.0 或更新版本、作为 python3 的 Python 3.6 或更新版本，以及 RGBDS 1.x 或更新版本。README 写明英文补丁可以从头玩到尾。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
