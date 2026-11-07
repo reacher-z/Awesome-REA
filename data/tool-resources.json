@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "white-knight-chronicles-2-recomp",
+    "name": "White Knight Chronicles II recompilation",
+    "url": "https://github.com/WK2D/White-Knight-Chronicles-2-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles White Knight Chronicles II for the PlayStation 3. The disc also includes White Knight Chronicles I, and the current Windows build reaches that game's starting town and can load one local save. Vulkan is the primary renderer. DirectX 12 is experimental. The documented disc is the USA release BLUS30784. The 30 fps limit is the baseline.",
+    "description_zh": "该项目重编译 PlayStation 3 版《白骑士物语 II》。光盘里也包含《白骑士物语》第一作，当前的 Windows 构建能进入第一作的起始城镇，并读取一个本地存档。Vulkan 是主要渲染器。DirectX 12 是实验性的。文档中的光盘是美版 BLUS30784。30 帧是基准上限。",
+    "requirements": [
+      "The README says a build needs privately prepared files from the USA disc BLUS30784. 121 Windows regression checks are reported for Debug and Release.",
+      "The reviewed README does not name a license for this repository. It keeps the PS3Recomp license in LICENSE.ps3recomp."
+    ],
+    "evidence_url": "https://github.com/WK2D/White-Knight-Chronicles-2-Recomp/blob/fd7749bcb8fbc83d48031a80111b5318b7533861/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
