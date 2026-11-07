@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "edge-of-time-recomp",
+    "name": "Edge of Time recompiled",
+    "url": "https://github.com/goliathret/EdgeOfTimeRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "EdgeOfTimeRecompiled statically recompiles the US Xbox 360 version of Spider-Man: Edge of Time, including its title update. ReXGlue turns the PowerPC into C++, and a XenosRecomp fork turns the shaders into static shader code. The installer accepts Xbox 360 containers or images. Releases are REEOT-Windows.zip, REEOT-Linux.appimage, and REEOT-macOS.dmg. The minimum system is Windows 10 version 1909, Linux with glibc 2.41, or macOS 13.3, with AVX and Direct3D 12 or Vulkan 1.2. Build steps are in docs/BUILDING.md.",
+    "description_zh": "EdgeOfTimeRecompiled 静态重编译美版 Xbox 360 的《蜘蛛侠：时空边缘》，包括标题更新。ReXGlue 把 PowerPC 转成 C++，一个 XenosRecomp 分支把着色器转成静态着色器代码。安装程序接受 Xbox 360 容器或镜像。发行包是 REEOT-Windows.zip、REEOT-Linux.appimage 和 REEOT-macOS.dmg。最低系统是 Windows 10 版本 1909、带 glibc 2.41 的 Linux，或 macOS 13.3，并需要 AVX 以及 Direct3D 12 或 Vulkan 1.2。构建步骤在 docs/BUILDING.md。",
+    "requirements": [
+      "The US Xbox 360 copy and its title update, as an unmodified container or image. About 10 GB free.",
+      "The reviewed README points at LICENSE and does not name the license."
+    ],
+    "evidence_url": "https://github.com/goliathret/EdgeOfTimeRecomp/blob/ebf7bb904d88062a3bd5b1d59ea642cdc2c1b780/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
