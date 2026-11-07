@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokestadium",
+    "name": "Pokémon Stadium decompilation",
+    "url": "https://github.com/pret/pokestadium",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of the US version of Pokémon Stadium. A successful build produces pokestadium.z64, MD5 ed1378bc12115f71209a77844965ba50. The US 1.0 ROM goes in baseroms/us/baserom.z64. make init extracts it and make reassembles it. Debian and Ubuntu installs use make, git, build-essential, binutils-mips-linux-gnu, and Python newer than 3.7, plus the packages in requirements.txt.",
+    "description_zh": "这是美版《宝可梦竞技场》的进行中反编译。成功构建产出 pokestadium.z64，MD5 为 ed1378bc12115f71209a77844965ba50。美版 1.0 ROM 放在 baseroms/us/baserom.z64。make init 提取它，make 重新汇编。Debian 和 Ubuntu 安装使用 make、git、build-essential、binutils-mips-linux-gnu，以及高于 3.7 的 Python，再加上 requirements.txt 里的包。",
+    "requirements": [
+      "The US 1.0 ROM named baserom.z64. A MIPS GNU toolchain and Python newer than 3.7.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/pret/pokestadium/blob/6995f32445e344c03f9b0c774eabcd157559f867/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

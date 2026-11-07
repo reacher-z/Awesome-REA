@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -40,7 +40,7 @@
 [↑ 返回目录](#目录)
 
 <a id="game-matching-decompilation"></a>
-### 匹配反编译与反汇编 (69)
+### 匹配反编译与反汇编 (70)
 
 - [**3S Decomp：逐字比对的《街头霸王 III：3rd Strike》PS2 反编译重建**](https://github.com/crowded-street/3s-decomp) - 将 Street Fighter Anniversary Collection 中《街头霸王 III：3rd Strike》的 PlayStation 2 可执行文件反编译为 C 源码，用当年的 Metrowerks 与 EE GCC 编译器重新构建，再将重建出的可执行文件与使用者自备的原文件逐字比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)</sub>
@@ -81,6 +81,7 @@
 - [**《宝可梦 火红／叶绿》：生成一致 ROM 的 Game Boy Advance 反编译重建**](https://github.com/pret/pokefirered) - 为 Game Boy Advance 英文版《宝可梦 火红／叶绿》重建可构建的 C 源码，游戏脚本和数据以汇编指令形式保存。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokemon-firered-leafgreen-decomp-case/)</sub>
 - [**《宝可梦 心金／魂银》：校验一致的进行中 DS 反汇编项目**](https://github.com/pret/pokeheartgold) - 以进行中的反汇编项目重建美版 Nintendo DS《宝可梦 心金／魂银》，其中部分代码已反编译为 C。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokemon-heartgold-soulsilver-disassembly-case/)</sub>
 - [**《宝可梦 白金》：校验一致的 Nintendo DS 反编译重建**](https://github.com/pret/pokeplatinum) - 将美版 Nintendo DS《宝可梦 白金》重建为 C 源码，默认重建修订版 1，也可按需构建修订版 0。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokemon-platinum-decomp-case/)</sub>
+- [**宝可梦竞技场反编译**](https://github.com/pret/pokestadium) - 这是美版《宝可梦竞技场》的进行中反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokestadium/)</sub>
 - [**pw：Pokéwalker 固件的一致性反编译重建**](https://github.com/lumirth/pw) - 以 C 语言重建 Pokéwalker 的固件。 <sub>案例 · 独立重建 · 也适用：固件 · [完整条目](https://awesomerea.org/zh/resources/pokewalker-matching-decomp-case/)</sub>
 - [**Ratchet &amp; Clank：记录了代理流程的 PS2 一致性反编译**](https://github.com/OpenRAC/rac1-decomp) - 为 2002 年《Ratchet &amp; Clank》PlayStation 2 欧版 v2.00 可执行文件 SCES\_509.16 重建 C 源码，每个函数都链接在零售版的原地址。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rac1-matching-decomp-case/)</sub>
 - [**re4：Resident Evil 4 GameCube 调试版的字节一致反编译**](https://github.com/adonis-singh/re4) - 为 Resident Evil 4 的双光盘 GameCube 调试原型版（G4BE08）重建 C 与 C++ 源码，并用 README 所列编译器重新构建 main.dol 及全部 114 个 REL 覆盖模块，逐一与 SHA-1 清单比对。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/re4-gamecube-debug-decomp-case/)</sub>
