@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ps5-mario-galaxy": {
+    "name": "超级马里奥银河 PS5",
+    "requirements": [
+      "需要 macOS 13 或更新版本上的 Apple silicon Mac，或者 64 位 Windows 10 或 11，以及美版 RMGE01 修订 0 的光盘镜像。README 期望一台已经能运行自制程序的 PlayStation 5。",
+      "许可证：GPL-3.0，README 也把 Nebula 写成同一许可证。"
+    ]
   }
 }
