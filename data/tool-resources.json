@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mkw-decomp-case",
+    "name": "Mario Kart Wii decompilation",
+    "url": "https://github.com/doldecomp/mkw",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Mario Kart Wii. The supported version named in the README is the PAL release RMCP01.",
+    "description_zh": "这是《马里奥赛车 Wii》的进行中反编译。README 写出的受支持版本是 PAL 版 RMCP01。",
+    "requirements": [
+      "An existing copy of the PAL game is required.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/doldecomp/mkw/blob/8b9b5ee653da28663e498039e52f5d19f929a011/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
