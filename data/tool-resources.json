@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "eternal-sonata-reprise-case",
+    "name": "Eternal Sonata: static recompilation for PC",
+    "url": "https://github.com/birabittoh/EternalSonataReprise",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Eternal Sonata Reprise is a static recompilation of Eternal Sonata for PC. The README says both the Xbox 360 and PlayStation 3 versions can be played in any region, while building the executable requires the Xbox 360 PAL version.",
+    "description_zh": "Eternal Sonata Reprise 是《永恒奏鸣曲》的 PC 静态重编译。README 写明 Xbox 360 与 PlayStation 3 的各区域版本都可以游玩，但自行构建可执行文件需要 Xbox 360 PAL 版。",
+    "requirements": [
+      "You must own the game. The project does not ship the game's code, data, or assets.",
+      "Playing works with the Xbox 360 and PlayStation 3 versions in PAL, USA, or Japan. Building the executable requires the Xbox 360 PAL version.",
+      "Prebuilt builds are published on the repository's Releases page.",
+      "License: MIT."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/birabittoh/EternalSonataReprise/blob/d7b038046012bfdf78d160c193de1985502744c2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
