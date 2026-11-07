@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -225,7 +225,7 @@
 - [**Vandal Hearts：基于一致性反编译的原生 PC 移植**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - 以 shao113 的 PlayStation 版 Vandal Hearts 一致性反编译为基础，新增日版一致性代码树，并将两者延伸为原生 Windows 与 Linux 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### 引擎重实现 (47)
+### 引擎重实现 (48)
 
 - [**Age of Empires Free Software Remake：基于原版数据的重新实现**](https://github.com/FolkertVanVerseveld/aoe) - 以基于 SDL2 和 OpenGL 的跨平台 C++17 引擎重新实现 Microsoft 的《帝国时代》及其资料片《罗马复兴》，载入原版游戏的 DRS 归档和 language.dll 资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo：逆向实现的 Minecraft 服务端**](https://github.com/bravoserver/bravo) - 以 Python 基于 Twisted 重新实现 Minecraft Alpha 与 Beta 时期多人游戏的服务端；其文档称这是从零编写的逆向实现，致谢了网络流量转储的提供者，并说明通用的 Minecraft 资料已贡献给社区 wiki。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/bravo-minecraft-server-case/)</sub>
@@ -255,6 +255,7 @@
 - [**OpenLara《古墓丽影》开源引擎**](https://github.com/XProger/OpenLara) - 经典《古墓丽影》的开源引擎，提供 WebGL 版本和独立版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openlara/)</sub>
 - [**OpenLF2：Little Fighter 2 引擎重实现**](https://github.com/OpenLF2/OpenLF2) - OpenLF2 用 C++ 和 Lua 重实现了可玩的《Little Fighter 2》v2.0a 引擎。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openlf2-case/)</sub>
 - [**OpenMW：复用原内容并替代 Morrowind 引擎**](https://github.com/OpenMW/openmw) - 提供用于运行 Morrowind 的独立引擎和替代编辑器 OpenMW-CS，通过自己的运行时加载原游戏内容，并记录脚本及模组兼容性差异。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openmw-engine-case/)</sub>
+- [**OpenNefia：Elona 引擎重实现**](https://github.com/OpenNefia/OpenNefia) - OpenNefia 是 Roguelike 游戏 Elona 的开源、可制作模组的引擎重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opennefia-case/)</sub>
 - [**OpenRA：重新诠释早期 Westwood 即时战略游戏的引擎重新实现**](https://github.com/OpenRA/OpenRA) - 为早期 Westwood 即时战略游戏提供以 C# 编写的引擎，并以模组形式重新诠释 Command &amp; Conquer: Red Alert、Tiberian Dawn 和 Dune 2000。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openra-engine-case/)</sub>
 - [**OpenRCT2：RollerCoaster Tycoon 2 的开源重新实现**](https://github.com/OpenRCT2/OpenRCT2) - 以 C++ 引擎重新实现原本用 x86 汇编编写的 RollerCoaster Tycoon 2，并在原游戏数据上运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openrct2-engine-case/)</sub>
 - [**OpenRiseOfNations：原生 macOS 引擎重新实现**](https://github.com/ben-wright-1/OpenRiseOfNations) - 以原生 macOS 应用重新实现 Rise of Nations: Extended Edition 引擎，包含 Metal 渲染器、确定性模拟、电脑对手，以及兼容的 BigHugeScript 编译器与虚拟机；美术、地图、规则和脚本均从使用者自有的 Windows 版安装目录读取。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openriseofnations-engine-case/)</sub>
