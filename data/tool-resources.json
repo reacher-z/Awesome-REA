@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "freetfc",
+    "name": "FreeTFC",
+    "url": "https://github.com/eukara/freetfc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "FreeTFC is a clean-room reimplementation of Team Fortress Classic in QuakeC. It is cloned into the Nuclide SDK as the directory tfc. The build is Nuclide's build_game.sh, or make inside tfc/src. Nuclide needs fteqw and fteqcc set up.",
+    "description_zh": "FreeTFC 是用 QuakeC 对《军团要塞经典》做的净室重新实现。它被克隆到 Nuclide SDK 里，目录名为 tfc。构建使用 Nuclide 的 build_game.sh，或者在 tfc/src 里运行 make。Nuclide 需要配好 fteqw 和 fteqcc。",
+    "requirements": [
+      "The Nuclide SDK with fteqw and fteqcc. Clone this repository as tfc inside that SDK, then run ./build_game.sh or make in tfc/src.",
+      "License: ISC."
+    ],
+    "evidence_url": "https://github.com/eukara/freetfc/blob/1152939d934726b261b2f3ce74692ffc707c4e36/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
