@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pytest-idapro",
+    "name": "pytest-idapro",
+    "url": "https://github.com/nirizr/pytest-idapro",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "pytest-idapro is a pytest plugin for IDA and IDAPython. It can run a pytest session inside IDA, or mock IDAPython outside IDA. Since version 0.3.5 it also records and replays IDAPython calls.",
+    "description_zh": "pytest-idapro 是用于 IDA 和 IDAPython 的 pytest 插件。它可以在 IDA 里运行 pytest，或在 IDA 外模拟 IDAPython。从 0.3.5 起，它还可以录制并回放 IDAPython 调用。",
+    "requirements": [
+      "A basic run is pytest --ida with the path to the IDA executable, and optionally --ida-file with an IDA database or another file IDA can open.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/nirizr/pytest-idapro/blob/12f9aab9380e8c7eb452b303f5a03343431a498e/README.rst",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
