@@ -36543,6 +36543,7 @@
     "description_zh": "对以 Forth 编写的 DOS 游戏 Starflight 进行逆向：反汇编器解码 Starflight 1 和 2 的间接线索字节码、代码覆盖段（overlay）与加密的词名，并转译为 C 风格代码。仓库还提供一个在交互式 Forth 提示符下执行原版 Starflight 1 代码的模拟器、行星、舰船及游戏实例数据库的提取工具，README 本身也是对可执行文件结构的详细解析。转译输出用于记录代码，并不作为可游玩的重建版本。",
     "evidence_url": "https://github.com/s-macke/starflight-reverse/blob/07a3392933214419d935961675c65ffa36fe57f4/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "README analyses STARFLT.COM and the STARA.COM/STARB.COM containers: it reports 6,256 identified words, notes that about 2,000 of roughly 6,000 original word names survive there in encrypted form, and lists the overlay directory. It says most of the transpiled C-style code compiles; no rebuilt game is produced. Starflight 2 is handled by parallel STARFLT2 builds of the tools, and the last commit is dated 2026-03-09.",
