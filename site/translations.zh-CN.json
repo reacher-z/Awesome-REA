@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "supermarioland-decomp-case": {
+    "name": "超级马里奥大陆反汇编",
+    "requirements": [
+      "把原始 ROM 放在 baserom.gb。构建出的 ROM 的 SHA-1 为 418203621b887caa090215d97e3f509b79affd3e。",
+      "需要 RGBDS 0.3.5 和 pypng。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

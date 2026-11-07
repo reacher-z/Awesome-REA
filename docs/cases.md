@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -113,7 +113,7 @@
 - [**wii-ipl: a decompilation of the Wii Menu (System Menu 4.3)**](https://github.com/koopthekoopa/wii-ipl) - A work-in-progress decompilation of the Wii Menu, the console’s System Menu (IPL), targeting version 4.3 in its USA, European, Japanese and Korean builds. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/wii-menu-ipl-decomp-case/)</sub>
 
 <a id="game-decompilation"></a>
-### Non-matching decompilations (19)
+### Non-matching decompilations (20)
 
 - [**c1: a C port of PlayStation Crash Bandicoot**](https://github.com/wurlyfox/c1) - Ports the original PlayStation Crash Bandicoot game code to C function by function; its coding standard labels functions with the addresses of their original implementations. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/crash-bandicoot-c1-port-case/)</sub>
 - [**Firefighter: a decompiled DOS game ported to Rust**](https://gitlab.com/esr/firefighter) - Eric S. Raymond’s terminal port of Firefighter, Eben Sprinsock’s 1985 DOS shareware game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/firefighter-rust-port-case/)</sub>
@@ -130,6 +130,7 @@
 - [**RSDKv5 Decompilation: reconstructing Retro Engine v5 and v5U**](https://github.com/RSDKModding/RSDKv5-Decompilation) - Reconstructs the Retro Engine (RSDK) v5 and v5 Ultimate runtime, the engine that runs Sonic Mania’s game code, and builds it for Windows, Linux, Switch and Android. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rsdkv5-engine-decomp-case/)</sub>
 - [**Sonic Mania: a game-code decompilation for the RSDKv5 engine**](https://github.com/RSDKModding/Sonic-Mania-Decompilation) - Reconstructs Sonic Mania’s game code in C and builds it with the separately decompiled RSDKv5 or RSDKv5U engine for Windows, Linux, Switch and Android. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sonic-mania-decomp-case/)</sub>
 - [**SpaceCadetPinball: decompiled game logic adapted to SDL2**](https://github.com/k4zmu2a/SpaceCadetPinball) - Converts the reverse-engineered Space Cadet pinball game into compilable C++ for desktop platforms. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/space-cadet-pinball-case/)</sub>
+- [**Super Mario Land disassembly**](https://github.com/kaspermeerts/supermarioland) - This repository is a disassembly of Super Mario Land. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/supermarioland-decomp-case/)</sub>
 - [**TicTacToe-AI: a bounded REA-fork reconstruction of one game method**](https://github.com/heaven-hm/re-agent/tree/develop/benchmarks/tictactoe) - The author’s REA fork, posted as rea-engine and since renamed RE-Agent, decompiles the shipped .NET executable of the GPL-licensed TicTacToe-AI game, recompiles the recovered C# and resources, and repairs one decompiler error against the original IL. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/rea-engine-tictactoe-case/)</sub>
 - [**UltraSunnyMoon: a partial, REA-led Pokémon Ultra Sun reconstruction**](https://github.com/tylergraydev/UltraSunnyMoon) - The author uses a pinned REA build with Ghidra to analyze a user-supplied Pokémon Ultra Sun base executable, rebuild it byte for byte from split objects, and swap in two small compiled C runtime routines. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/ultrasunnymoon-rea-case/)</sub>
 - [**vf2-decomp: differentially validated Virtua Fighter 2 recovery**](https://github.com/celsowm/vf2-decomp) - Recovers Virtua Fighter 2 Version 2.1’s Sega Model 2A i960 program into portable, non-matching C17, accepting each recovered path only when it matches a reference i960 executor at controlled boundaries. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vf2-decomp-differential-recovery-case/)</sub>
