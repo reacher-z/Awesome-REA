@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mm3-recomp": {
+    "name": "Midtown Madness 3 重编译",
+    "requirements": [
+      "Windows：需要 Python 3.12 或更新版本、Git、CMake，以及带 C++ 桌面和 CMake 工作负载的 Visual Studio 2022 或更新版本。python scripts/setup.py --iso 接收光盘镜像。Linux 需要 Vulkan 驱动、Ninja、OpenSSL、SDL3 和 FFmpeg 开发库。",
+      "许可证：当前项目代码为 GPL-3.0-only。更早的修订仍以 MIT 提供。"
+    ]
   }
 }
