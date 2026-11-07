@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ruby-sapphire-recomp",
+    "name": "Ruby and Sapphire recomp",
+    "url": "https://github.com/mstan/RubySapphireRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "RubySapphireRecomp statically translates Pokémon Ruby and Sapphire USA revision 1 ROMs into native C. Ruby SHA-1 is 610b96a9c9a7d03d2bafb655e7560ccff1a6d894. Sapphire SHA-1 is 4722efb8cd45772ca32555b98fd3b9719f8e60a9. The runtime refuses an unrecognized ROM. The files are variants/ruby/roms/ruby_usa.gba and variants/sapphire/roms/sapphire_usa.gba. gba_recompile writes the generated C, and cmake --build build --target RubyRecomp builds one executable.",
+    "description_zh": "RubySapphireRecomp 把美版第 1 修订的《宝可梦 红宝石》和《宝可梦 蓝宝石》ROM 静态翻译成原生 C。红宝石的 SHA-1 是 610b96a9c9a7d03d2bafb655e7560ccff1a6d894。蓝宝石的 SHA-1 是 4722efb8cd45772ca32555b98fd3b9719f8e60a9。运行时拒绝无法识别的 ROM。文件分别是 variants/ruby/roms/ruby_usa.gba 和 variants/sapphire/roms/sapphire_usa.gba。gba_recompile 写出生成的 C，cmake --build build --target RubyRecomp 构建其中一个可执行文件。",
+    "requirements": [
+      "Windows with MSYS2 mingw64 GCC and G++, CMake 3.16 or newer, Ninja, and SDL2. Clone gbarecomp beside this repository.",
+      "License: PolyForm Noncommercial 1.0.0."
+    ],
+    "evidence_url": "https://github.com/mstan/RubySapphireRecomp/blob/cf670eda27cc9a118584d169b6b61ffc2e1ac17e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
