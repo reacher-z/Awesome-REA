@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bkgr-decomp",
+    "name": "Grunty's Revenge decompilation",
+    "url": "https://github.com/jellees/bkgr",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles the US Game Boy Advance game Banjo-Kazooie: Grunty's Revenge. It builds bkgr.gba, SHA-1 8f5b7c20e8be0f1e7919915b905c2b182a993cec.",
+    "description_zh": "该仓库反编译美版 Game Boy Advance 游戏 Banjo-Kazooie: Grunty's Revenge。它构建 bkgr.gba，SHA-1 为 8f5b7c20e8be0f1e7919915b905c2b182a993cec。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/jellees/bkgr/blob/59659d5a6747957d002854255418b7be394bc964/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
