@@ -40,7 +40,7 @@ MAX_RECEIPT_BYTES = 8 * 1024 * 1024
 MAX_TOTAL_BYTES = MAX_SCAN_BYTES + MAX_FRONTIER_BYTES + MAX_RECEIPT_BYTES
 CHUNK_BYTES = 1024 * 1024
 NEW_SUCCESSES = 2000
-GLOBAL_TARGET = 160000
+GLOBAL_TARGET = 20_000_000
 SCAN_SECONDS = 24 * 60
 # Searching stops this long before the scan budget ends. Each verified README comes from the read phase.
 READ_RESERVE_SECONDS = 12 * 60
@@ -881,10 +881,10 @@ def orchestrate(directory, *, manual_seed=None, execution_source=None, bootstrap
         emit_summary(directory, receipt, upload=False)
         return 0
     if planned or bootstrap_only:
+        search_frontier.compact_frontier(frontier)
         search_frontier.add_queries(frontier, APPROVED_QUERIES, approved_queries=APPROVED_QUERIES)
         cutoff = dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-        if search_frontier.utc_seconds(cutoff) > frontier['until']:
-            search_frontier.extend_until(frontier, cutoff)
+        search_frontier.extend_if_due(frontier, cutoff)
     seed_path, output = directory / 'seed.json', directory / 'working/checkpoint.json'
     frontier_path = directory / 'working/frontier.json'
     # Persist discovery IDs even when a previous process stopped between the two saves.

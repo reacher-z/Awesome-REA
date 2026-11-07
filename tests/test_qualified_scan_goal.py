@@ -35,8 +35,9 @@ def qualification_receipt(document, *, bootstrap=False):
 
 
 class QualificationTests(unittest.TestCase):
-    def test_raw_160k_including_unknown_and_mismatch_still_needs_50_verified_reads(self):
-        # Exercise the actual 160k boundary; no source records or flags are changed.
+    @patch.object(scheduled, 'GLOBAL_TARGET', 160000)
+    def test_raw_goal_including_unknown_and_mismatch_still_needs_50_verified_reads(self):
+        # Exercise a full-size boundary; no source records or flags are changed.
         document = {'resources': ([{'readme_git_sha_matches_content': True}] * 159950
                                   + [{}] * 49 + [{'readme_git_sha_matches_content': False}])}
         self.assertEqual(len(document['resources']), 160000)
@@ -138,7 +139,8 @@ class RuntimeQualificationTests(unittest.TestCase):
         final = json.loads((directory / 'checkpoint/checkpoint.json').read_text())
         self.assertEqual(final['resources'][:1501], self.document['resources'])
         cursor = json.loads((directory / 'checkpoint/frontier.json').read_text())
-        self.assertEqual(cursor['candidates']['1']['checkpoint_sha256'], 'a' * 64)
+        self.assertNotIn('1', cursor['candidates'])
+        self.assertEqual(cursor['retired_candidates'], 1)
         self.assertIn('legacy integrity unknown: **1**', (self.root / 'summary').read_text())
 
     def test_at_qualified_goal_reuses_pair_without_changing_unknown_or_mismatched_records(self):

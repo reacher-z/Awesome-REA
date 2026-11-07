@@ -115,7 +115,7 @@ This is not a complete census of reverse engineering software. Search vocabulary
 
 ## Opt-in batched reads and persistent discovery
 
-The collection goal is **160,000 distinct successful repository README reads**. This is a target, not a completed count or a claim that GitHub contains that many relevant projects. The authoritative progress value is `meta.successful_readme_scans`; `--target` counts retained and new successes together.
+The collection goal is **20,000,000 distinct successful repository README reads**, which an hourly scan of up to 2,000 reads does not reach within two years. This is a target, not a completed count or a claim that GitHub contains that many relevant projects. The authoritative progress value is `meta.successful_readme_scans`; `--target` counts retained and new successes together.
 
 REST remains the default. To opt into GraphQL and preserve search progress in ignored cache storage:
 
@@ -124,9 +124,9 @@ python3 scripts/scan_sources.py \
   --resume data/source-index.json \
   --transport graphql \
   --graphql-batch-size 8 \
-  --frontier .cache/scan-160000/frontier.json \
-  --output .cache/scan-160000/checkpoint-01.json \
-  --target 160000 \
+  --frontier .cache/readme-scan/frontier.json \
+  --output .cache/readme-scan/checkpoint-01.json \
+  --target 20000000 \
   --search-request-budget 120 \
   --pending-metadata-budget 200
 ```
