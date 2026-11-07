@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "xenosaga-1-decomp",
+    "name": "Xenosaga Episode I decompilation",
+    "url": "https://github.com/OpokXeno/xsg-i-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This matching decompilation of Xenosaga Episode I: Der Wille zur Macht for the PlayStation 2 covers the NTSC-U release. Published source coverage is 7,645 of 7,645 in-scope game functions. SLUS_204.69 is 3,671 of 3,671. The other matched images are OV01.OVL, OV02.OVL, OV10.OVL, OV11.OVL, OV12.OVL, SSD.IRX, and RSSD.IRX. config/originals.json names the sizes and SHA-256 values, and the build refuses any other files. ./configure.py writes the Ninja files. ninja gate checks the whole-file SHA-256.",
+    "description_zh": "这个《异度传说 I：Der Wille zur Macht》PlayStation 2 美版的匹配反编译覆盖范围内的游戏函数是 7,645 个中的 7,645 个。SLUS_204.69 是 3,671 个中的 3,671 个。其余已匹配的镜像是 OV01.OVL、OV02.OVL、OV10.OVL、OV11.OVL、OV12.OVL、SSD.IRX 和 RSSD.IRX。config/originals.json 写出大小和 SHA-256，构建会拒绝任何其他文件。./configure.py 写出 Ninja 文件。ninja gate 核对整个文件的 SHA-256。",
+    "requirements": [
+      "The historical compilers are 32-bit Linux programs. Ubuntu needs libc6-i386 and python3-venv. tools/tu/toolchain.py --check verifies the toolchain hashes in config/toolchain-identity.json.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/OpokXeno/xsg-i-decomp/blob/0d931dacb828fa6ea869d38b7777c6181548e044/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
