@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tenchu-z-recomp",
+    "name": "Tenchu Z recompilation",
+    "url": "https://github.com/Llamapixels/TenchuZRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Alpha 0.1.4 statically recompiles Tenchu Z for the Xbox 360, the USA and Europe release, to Windows with ReXGlue. The archive is TenchuZ-HoloCattRecomp-0.1.4-alpha-windows.zip. Setup Tenchu Z.cmd checks the ISO and extracts it beside tenchuz.exe. Direct3D 12 and Vulkan are both available. Render scale runs from 1x to 7x. The hub and the first missions have been played. The rest of the game is untested. F6 opens the added menu.",
+    "description_zh": "Alpha 0.1.4 用 ReXGlue 把 Xbox 360 美欧版《天诛 Z》静态重编译到 Windows。压缩包是 TenchuZ-HoloCattRecomp-0.1.4-alpha-windows.zip。Setup Tenchu Z.cmd 检查 ISO 并提取到 tenchuz.exe 旁边。Direct3D 12 和 Vulkan 都可以用。渲染倍率从 1 倍到 7 倍。枢纽和最初几关已经玩过。游戏的其余部分还没测试。F6 打开附加菜单。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, DirectX 12 or Vulkan, and about 5 GB free. Put the USA/Europe ISO next to tenchuz.exe and run Setup Tenchu Z.cmd.",
+      "License: MIT for this project's own code and documentation. FFmpeg and libmspack are LGPL 2.1. Dear ImGui, fmt, spdlog, toml++, and SIMDe are MIT. xxHash is BSD."
+    ],
+    "evidence_url": "https://github.com/Llamapixels/TenchuZRecomp/blob/17fc156e29bdb7c2a93c4b886998acba4fc123a3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
