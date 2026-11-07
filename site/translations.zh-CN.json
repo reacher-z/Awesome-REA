@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "harvest-moon-64-recomp-case": {
+    "name": "Harvest Moon 64: Recompiled：原生移植",
+    "requirements": [
+      "构建或运行需要原版游戏。仓库及其发布不包含游戏资源。",
+      "需要支持 Direct3D 12.0 功能级别和 Shader Model 6、Vulkan 1.2，或 Metal Argument Buffers 第 2 级的 GPU。在 x86-64 上，CPU 需要 SSE4.1。",
+      "许可证：GPL-3.0。"
+    ]
   }
 }

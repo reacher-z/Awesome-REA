@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "harvest-moon-64-recomp-case",
+    "name": "Harvest Moon 64: Recompiled — native port",
+    "url": "https://github.com/HarvestMoon64Recomp/HarvestMoon64Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Harvest Moon 64: Recompiled uses N64: Recompiled to statically recompile Harvest Moon 64 into a native port, with RT64 for rendering. The README lists mod support and Linux and Steam Deck support among its features.",
+    "description_zh": "Harvest Moon 64: Recompiled 使用 N64: Recompiled 把《牧场物语 64》静态重编译为原生移植，并用 RT64 渲染。README 在功能中列出了模组支持以及 Linux 和 Steam Deck 支持。",
+    "requirements": [
+      "The original game is required to build or run the project. The repository and its releases do not contain game assets.",
+      "A GPU with Direct3D 12.0 feature level and Shader Model 6, Vulkan 1.2, or Metal Argument Buffers tier 2. On x86-64, the CPU needs SSE4.1.",
+      "License: GPL-3.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/HarvestMoon64Recomp/HarvestMoon64Recomp/blob/ddd991cf5d5d0d79ff80b893600248d6ea73cf2e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
