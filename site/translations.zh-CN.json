@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gdbida": {
+    "name": "gdbida",
+    "requirements": [
+      "在 ~/.gdbinit 中 source gdb_ida_bridge_client.py。",
+      "把 IDA 插件复制到 IDA 的 plugins 目录，运行它并设置监听地址和端口。README 的例子用 idabridge 加主机和端口连接 GDB。",
+      "README 没有写许可证。"
+    ]
   }
 }

@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gdbida",
+    "name": "gdbida",
+    "url": "https://github.com/Comsecuris/gdbida",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "gdbida pairs an IDA Pro plugin with a GDB Python client so an interactive GDB session can be followed in IDA. The README gives the plugin file ida_gdb_bridge.py and the client file gdb_ida_bridge_client.py.",
+    "description_zh": "gdbida 把 IDA Pro 插件和 GDB Python 客户端配在一起，让交互式 GDB 会话可以在 IDA 中跟随。README 给出插件文件 ida_gdb_bridge.py 和客户端文件 gdb_ida_bridge_client.py。",
+    "requirements": [
+      "Source gdb_ida_bridge_client.py from ~/.gdbinit.",
+      "Copy the IDA plugin into IDA's plugins directory, run it, and set a listener address and port. The README's example connects GDB with idabridge and a host:port.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Comsecuris/gdbida/blob/c31781681871f6b1fbfe0c85121f846ddafe9124/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
