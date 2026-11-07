@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ipod-clickwheel-recomps": {
+    "name": "iPod 点击轮游戏重编译",
+    "requirements": [
+      "每款游戏都需要玩家自己副本中的已解密文件。支持 macOS、Linux 和 Windows。Mini Golf 还列出了 Switch 和 Android。",
+      "游戏和共享运行时使用 GPL-3.0-or-later。common/tools/ 中的工具使用 MIT。划分写在 LICENSING.md。"
+    ]
   }
 }

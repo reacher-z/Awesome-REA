@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ipod-clickwheel-recomps",
+    "name": "iPod Click Wheel Recomps",
+    "url": "https://github.com/DogParty/iPodClickWheelRecomps",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "iPod Click Wheel Recomps translates six iPod click-wheel games from their ARM code into C++ that builds on current hardware. Mini Golf, Cubis 2, Hold 'Em, and the other listed games share a runtime. Mini Golf also targets Nintendo Switch and Android.",
+    "description_zh": "iPod Click Wheel Recomps 把六款 iPod 点击轮游戏的 ARM 代码翻译成可以在当前硬件上构建的 C++。Mini Golf、Cubis 2、Hold 'Em 以及列出的其他游戏共用一个运行时。Mini Golf 还面向任天堂 Switch 和 Android。",
+    "requirements": [
+      "Each game needs its own decrypted files from the player's copy. macOS, Linux, and Windows are supported. Mini Golf also lists Switch and Android.",
+      "The games and the shared runtime are GPL-3.0-or-later. Tools in common/tools/ are MIT. The split is in LICENSING.md."
+    ],
+    "evidence_url": "https://github.com/DogParty/iPodClickWheelRecomps/blob/8a7afced6b30ff9dd3ef71aeebf620f34ced5317/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
