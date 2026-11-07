@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "e-decompiler",
+    "name": "E-Decompiler",
+    "url": "https://github.com/fjqisba/E-Decompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "E-Decompiler is an IDA plugin for analyzing EPL programs. The current approach edits function declarations and the Hex-Rays ctree using EPL function signatures. The recommended build is Windows, Visual Studio 2022, and IDA SDK 9.4. cmake -S . -B build -DIDASDK takes the SDK root, and cmake --build build --config Release writes E-Decompiler.dll for the plugins directory. Ctrl+3 opens the plugin. An IDAPython port in e-mcp runs on IDA 9.x without the SDK.",
+    "description_zh": "E-Decompiler 是用于分析易语言程序的 IDA 插件。当前做法是结合易语言函数特征修改函数声明和 Hex-Rays ctree。推荐的构建环境是 Windows、Visual Studio 2022 和 IDA SDK 9.4。cmake -S . -B build -DIDASDK 传入 SDK 根目录，cmake --build build --config Release 写出放到插件目录的 E-Decompiler.dll。Ctrl+3 打开插件。e-mcp 里的 IDAPython 移植可以在 IDA 9.x 上运行，不需要 SDK。",
+    "requirements": [
+      "IDA 9.4 is recommended. IDA 7.5 is the older Qt 5.6.3 build. Place E-Decompiler.dll and the esig folder in the plugins directory.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/fjqisba/E-Decompiler/blob/0d50f098f3088f54f2157dc281b6439bd443bd9d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
