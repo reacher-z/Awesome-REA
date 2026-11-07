@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "magnetar",
+    "name": "Magnetar",
+    "url": "https://github.com/joankaradimov/Magnetar",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Magnetar is a StarCraft reimplementation that loads Starcraft.exe into memory and combines that code and those assets with its own. The install steps expect StarCraft 1.16.1 and ask for that installation directory. Optional maps go in maps, and optional characters go in characters.",
+    "description_zh": "Magnetar 是《星际争霸》的重新实现。它把 Starcraft.exe 载入内存，并把其中的代码和资源与自己的内容合在一起。安装步骤要求星际争霸 1.16.1，并询问该安装目录。可选地图放在 maps，可选角色放在 characters。",
+    "requirements": [
+      "A Magnetar release archive and a StarCraft 1.16.1 installation.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/joankaradimov/Magnetar/blob/d7c019a82937e5b27937d3f501f11d101ce07a1c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
