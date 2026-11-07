@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "delink",
+    "name": "delink",
+    "url": "https://github.com/HaydnTrigg/delink",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "delink splits binaries for decompilation projects. It handles AArch64 and 32-bit ARM shared objects, Mach-O STABS and SYMTAB, and Windows PE files with PDBs. An IDA 9.x script writes delink.ida.json with no file bytes, and delink ida-split turns that JSON plus the original binary into COFF objects, or ELF objects with --elf. x86 and x86-64 functions are disassembled with iced-x86.",
+    "description_zh": "delink 为反编译项目拆分二进制。它处理 AArch64 和 32 位 ARM 共享对象、Mach-O 的 STABS 和 SYMTAB，以及带 PDB 的 Windows PE。一个 IDA 9.x 脚本写出不含文件字节的 delink.ida.json，delink ida-split 把这份 JSON 加上原始二进制变成 COFF 对象，加上 --elf 则变成 ELF 对象。x86 和 x86-64 函数用 iced-x86 反汇编。",
+    "requirements": [
+      "Rust. cargo run --release from a clone, or cargo install --locked --git https://github.com/HaydnTrigg/delink.git delink.",
+      "License: Apache-2.0 or MIT, at the user's option."
+    ],
+    "evidence_url": "https://github.com/HaydnTrigg/delink/blob/fc1094678a6591a6d1d66518a0e85cfe8b1603a2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
