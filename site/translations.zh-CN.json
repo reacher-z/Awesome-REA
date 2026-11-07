@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pymobiledevice3": {
+    "name": "pymobiledevice3 iOS 设备协议库与命令行工具",
+    "requirements": [
+      "审阅时的版本为 v11.38.0，于 2026-10-19 同时发布到 GitHub 和 PyPI；所审阅的 master 分支提交即该标签。README 称 PyPI 是唯一官方发布渠道，AUR 等第三方软件包可能已过时。需要 Python 3.9+。",
+      "需要一台使用者自己控制、已连接或位于网络中的 iOS 设备。Windows 需安装 iTunes 以获得 Apple Mobile Device Service，Linux 需要 usbmuxd，macOS 使用系统自带的 usbmuxd。iOS 13 之前的版本需要 OpenSSL，恢复／DFU 模式需要 libusb。隧道指南称，iOS 17.4+ 的开发者命令会在进程内建立无需 root 的隧道；iOS 17.0–17.3.1 在 Linux 或 Windows 上则需要以 root 运行的 tunneld。",
+      "开发者服务还需要在设备上开启开发者模式并挂载 Apple 的 Developer Disk Image。挂载器的 auto-mount 使用必需依赖 developer_disk_image，后者在运行时从另一个转存 Apple DeveloperDiskImage 及个性化镜像文件的 GitHub 仓库下载镜像；本条目既不链接也未审阅该仓库，Apple 文件的权利仍归 Apple 所有。",
+      "采用 GPL-3.0-or-later 许可。仓库还以 Claude Code 插件和 Codex 技能形式提供一个设备操作代理技能，用于通过命令行驱动设备；除其说明文档外未作审阅。本次未连接任何设备，也未进行任何抓包。"
+    ]
   }
 }
