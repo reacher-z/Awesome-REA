@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "oot-dc": {
+    "name": "时之笛 Dreamcast 移植",
+    "requirements": [
+      "需要带 sh4zam 的 KallistiOS 2.2 或更新版本、clang 或 gcc、libxml2 头文件、Python 3、GNU make 3.82 或更新版本，以及 scipy。把 ROM 复制到 baseroms/gc-eu-mq-dbg/baserom.z64，执行 source /opt/toolchains/dc/kos/environ.sh，然后运行 make -f Makefile.dc extract、assets 和主构建。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
