@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mkwii-pc-builder": {
+    "name": "马里奥卡丁车 Wii PC 构建器",
+    "requirements": [
+      "需要 64 位 Windows 和 PAL RMCP01 光盘镜像。1.2.0 发布为下载提供 SHA256SUMS.txt。",
+      "许可证：GPL-3.0。"
+    ]
   }
 }
