@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "projectorrays",
+    "name": "ProjectorRays",
+    "url": "https://github.com/ProjectorRays/ProjectorRays",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "ProjectorRays decompiles Adobe Director and Shockwave movies back to Lingo and editable project files. A DCR or DXR becomes a DIR, and a CCT or CXT becomes a CST. The reviewed Windows release is projectorrays-0.2.0.exe. Drag a file or folder onto it, or run projectorrays-0.2.0.exe decompile with an input path. On Unix, make builds it after Boost 1.72.0 or later, mpg123, and zlib are installed. ./projectorrays decompile takes a file or a directory.",
+    "description_zh": "ProjectorRays 把 Adobe Director 和 Shockwave 影片反编译回 Lingo 和可编辑的工程文件。DCR 或 DXR 变成 DIR，CCT 或 CXT 变成 CST。审阅的 Windows 发行版是 projectorrays-0.2.0.exe。把文件或文件夹拖到它上面，或用输入路径运行 projectorrays-0.2.0.exe decompile。在 Unix 上，安装 Boost 1.72.0 或更高版本、mpg123 和 zlib 后用 make 构建。./projectorrays decompile 接受一个文件或目录。",
+    "requirements": [
+      "A published Director or Shockwave movie or cast. Unix builds need Boost 1.72.0 or later, mpg123, and zlib.",
+      "License: Mozilla Public License 2.0."
+    ],
+    "evidence_url": "https://github.com/ProjectorRays/ProjectorRays/blob/6f9bcebf626b43719abe2affcbbcb041d154d666/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

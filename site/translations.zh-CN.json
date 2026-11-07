@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "projectorrays": {
+    "name": "ProjectorRays",
+    "requirements": [
+      "需要一份已发布的 Director 或 Shockwave 影片或角色库。Unix 构建需要 Boost 1.72.0 或更高版本、mpg123 和 zlib。",
+      "许可证：Mozilla Public License 2.0。"
+    ]
   }
 }
