@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "zoids-legacy-decomp",
+    "name": "Zoids Legacy decompilation",
+    "url": "https://github.com/jmacato/ZoidsLegacyDecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This rebuilds 1,130 code regions of Zoids Legacy for the Game Boy Advance, USA, and compares each region's bytes with the ROM. make verify checks the ROM SHA-1 and does not write a ROM. The translation editor is python3 tools/script_editor.py and listens on 127.0.0.1:5097. English and Spanish text files are dialogue-en.json, scene-translation.json, and the Spanish counterparts. The USA ROM is named Zoids Legacy (USA).gba.",
+    "description_zh": "该项目重建 Game Boy Advance 美版《Zoids Legacy》的 1,130 个代码区域，并把每个区域的字节与 ROM 比较。make verify 核对 ROM 的 SHA-1，并且不写出 ROM。翻译编辑器是 python3 tools/script_editor.py，监听 127.0.0.1:5097。英语和西班牙语文本文件是 dialogue-en.json、scene-translation.json 以及对应的西班牙语文件。美版 ROM 命名为 Zoids Legacy (USA).gba。",
+    "requirements": [
+      "Python 3, a C preprocessor, ARM binutils, and agbcc commit da598c1d918402c42c0c0d7128ba14567f3175e9 built with GCC 14. Run make verify with the USA ROM.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/jmacato/ZoidsLegacyDecomp/blob/16aaa5da8d5dd256cf3efbef07af490c75a00b63/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
