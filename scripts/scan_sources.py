@@ -1206,6 +1206,8 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
     meta['current_run']['scanner_provenance']['seed_inputs'] = [
         SEED_INPUT_DIGESTS[relative] for relative in seed_files if relative in SEED_INPUT_DIGESTS]
     for method, references in seed_groups:
+        # Curated observations and record discovery provenance use distinct labels.
+        discovery_method = 'curated-reference' if method == 'curated-repository-reference' else method
         for name, reference in sorted(references.items()):
             if name in retained_names:
                 continue
@@ -1217,7 +1219,7 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
             try:
                 repo = api.json('/repos/' + quote(name, safe='/'))
                 entry['status'] = add_candidate(repo, entry['observed_at'], seed_ids=reference['ids'] if paper is None else None,
-                                                seed_method=method, paper=paper)
+                                                seed_method=discovery_method, paper=paper)
                 if entry['status'] != 'ineligible':
                     entry['repository_id'] = 'scan-' + str(repo['id'])
                 else:
