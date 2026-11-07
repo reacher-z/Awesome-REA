@@ -36543,6 +36543,7 @@
     "description_zh": "将 ZeldaWWHDRecomp 对《塞尔达传说 风之杖 HD》的静态重编译以自制软件形式移植到 Nintendo Switch，新增 libnx 平台层和以 deko3d 绘制游戏 GX2 图形的渲染器，转换后的着色器在主机上由 uam 编译。游戏代码由使用者自己的 Wii U 转储在本地重编译生成，因此不发布 Switch 版二进制。README 报告游戏在默认频率下于掌机和底座模式均可游玩，其自测帧率为 26–30 fps，并说明几乎全部 Switch 移植工作由 Claude Code 在人工指导和实机测试下编写。",
     "evidence_url": "https://github.com/centollOS/SwitchWakerHD/blob/093c96cf590d23b07472e3cf2aa66f9a7a32cd4e/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "README describes a fork of ZeldaWWHDRecomp that keeps its desktop and Android targets and adds the Switch layer; the recompiler and the Cafe OS and GX2 runtime come from upstream. It reports the game booting and playing handheld and docked with sound, saves, save states and mods, played mostly on the opening island, Dragon Roost and the surrounding sea, with known issues tracked in docs/switch-port.md. Source tags such as v0.4.7 (2026-10-14) preceded the reviewed commit.",
