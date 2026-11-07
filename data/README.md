@@ -1,6 +1,6 @@
 # Resource catalog format
 
-`rea-resources.json` and `tool-resources.json` contain the records rendered into both READMEs. They are arrays of objects with these fields. Every field is required except `additional_evidence_urls`, `added_at`, `class`, `requirement_facets` and `reconstruction_method`, which is recommended for case studies listed under Game and not allowed on any other record.
+`rea-resources.json` and `tool-resources.json` contain the records rendered into both READMEs. Every `independent-reconstruction` record lives in `tool-resources.json`, and validation rejects one in `rea-resources.json`. Both READMEs and the website's case lists keep catalog order: `rea-resources.json`, then `tool-resources.json`, each in file order, so REA-linked cases precede independent reconstructions. They are arrays of objects with these fields. Every field is required except `additional_evidence_urls`, `added_at`, `class`, `requirement_facets` and `reconstruction_method`, which is recommended for case studies listed under Game and not allowed on any other record.
 
 | Field | Meaning |
 | --- | --- |

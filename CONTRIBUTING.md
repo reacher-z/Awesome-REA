@@ -26,7 +26,7 @@ Use Protocol when primary evidence describes communication-format analysis, traf
 
 ## Update the catalog
 
-Curated records live in `data/rea-resources.json` and `data/tool-resources.json`. Keep the English and Chinese descriptions concise. Use `kind` for the resource type and `targets` for its application areas; these are different dimensions. The website's translated names and requirements are in `site/translations.zh-CN.json`.
+Curated records live in `data/rea-resources.json` and `data/tool-resources.json`; every [independent reconstruction case](#reconstruction-cases) goes in `data/tool-resources.json`. Keep the English and Chinese descriptions concise. Use `kind` for the resource type and `targets` for its application areas; these are different dimensions. The website's translated names and requirements are in `site/translations.zh-CN.json`.
 
 Record a primary source and review date. `source-reviewed` means documentation was checked; it does not claim that the project was installed, audited, or reproduced. The larger `data/source-index.json` is an automated repository index and retains its separate provenance. To curate a repository found there, fill in the [review worksheet](docs/promotion-worksheet.md); the scan record itself is never upgraded.
 
@@ -114,6 +114,8 @@ A listed project may link back to Awesome REA with the badge below. It is option
 ```
 
 The badge is a static 184 × 20 SVG served from the collection website, a copy of [assets/featured-by-awesome-rea-inline.svg](assets/featured-by-awesome-rea-inline.svg).
+
+Add independent reconstruction cases at the end of `data/tool-resources.json`; validation rejects one in `data/rea-resources.json`. README sections and the website's case lists keep catalog order—`data/rea-resources.json`, then `data/tool-resources.json`, each in file order—so every Case studies list shows the REA-linked cases first and independent reconstructions after them.
 
 ## Review and publication
 
