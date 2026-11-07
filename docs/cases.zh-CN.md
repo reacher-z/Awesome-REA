@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -276,7 +276,7 @@
 - [**z2rs：以模拟器对照逐步重建《塞尔达传说 II》的 Rust 项目**](https://github.com/troyedwardsjr/z2rs) - 以 Rust 重建 NES 游戏《塞尔达传说 II：林克的冒险》，逐个替换游戏的 6502 例程，可运行于桌面、浏览器和 Android。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/z2rs-zelda2-reconstruction-case/)</sub>
 
 <a id="game-other"></a>
-### 其他方法与分析 (23)
+### 其他方法与分析 (24)
 
 - [**ArkWeb：双游戏动作与碰撞桥接实验**](https://github.com/luki-1/ArkWeb) - 同时运行《漫威蜘蛛侠：重制版》与《蝙蝠侠：阿卡姆骑士》，将哥谭碰撞数据传入蜘蛛侠的物理世界，再将其渲染画面合成到阿卡姆中。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/arkweb-two-game-case/)</sub>
 - [**Batla 3D 服务端模拟器（2015 年客户端）**](https://github.com/Serega25511s/Batla-3D-server-emu) - 面向 Batla 3D 2015 年 Steam 客户端的 C# 服务端模拟器，涵盖账户、商店、房间 HTTP 服务与 Lidgren UDP 对战。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/batla-3d-server-emulator-case/)</sub>
@@ -285,6 +285,7 @@
 - [**Destiny 2 build 86657：Sunrise／Dawn 重建研究报告**](https://github.com/isinternets/d2-research) - 一份注明版本日期的研究报告，记录已归档 Destiny 2 build 86657 客户端的 Sunrise／Dawn 重建：在本地模拟平台登录与所考察的 Bungie 服务契约，并补充重建的任务主机策略。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/destiny2-build-86657-reconstruction-report-case/)</sub>
 - [**DLSSNR-AMD：为 RDNA4 重新实现 DLSS 5 神经渲染**](https://github.com/mochizuki0323/DLSSNR-AMD) - 将 NVIDIA DLSS 5 库中的神经渲染网络重新实现为面向 AMD RX 9000（RDNA4）显卡的 Vulkan 计算着色器，并通过兼容 NGX 的核心模块以及 ReShade 或 Vulkan 层等途径提供给游戏。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/dlssnr-amd-neural-rendering-case/)</sub>
 - [**逆向工程需要更大的模型吗？东方 Project 重建中的通用模型与专用模型**](https://rea.tools/blog/reverse-engineering-models/) - REA 网站上 N0zoM1z0 的一篇文章（2026 年 10 月 13 日）依据注明日期的东方 Project 重建提交，探讨精确的函数匹配究竟需要更大的通用模型、针对编译器的专用模型，还是更好的检索。 <sub>案例 · REA 官方 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/rea-bigger-model-essay-case/)</sub>
+- [**Epoch &amp; Equinox**](https://github.com/ZakyPew/epoch-equinox) - Epoch &amp; Equinox 是《塞尔达传说：不可思议的果实》时空之章和大地之章共用的一个原生播放器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/epoch-equinox/)</sub>
 - [**FH2MP：重建《Forza Horizon 2》在线服务**](https://github.com/Charelene/FH2MP) - FH2MP 根据 Xbox One 版《Forza Horizon 2》客户端中恢复的协议行为，搭建替代服务器以恢复多人游戏。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/fh2mp-case/)</sub>
 - [**game-and-watch-patch：任天堂 Game &amp; Watch 自定义固件**](https://github.com/BrianPugh/game-and-watch-patch) - 面向马里奥和塞尔达两款 Game &amp; Watch 掌机的自定义固件：把新编写的 C 代码修补进使用者自己的原厂固件备份，使原厂固件可与 retro-go 模拟器并存。 <sub>案例 · 独立重建 · 也适用：固件 · [完整条目](https://awesomerea.org/zh/resources/game-and-watch-patch-cfw-case/)</sub>
 - [**GTA Mode：逆向 SimCity 3000 Unlimited 并开发原生插件**](https://github.com/DenisSergeevitch/simcity3000-gta-mode) - GTA Mode 是为《SimCity 3000 Unlimited》加入可操控行人和车辆的原生插件，这些行人和车辆由插件生成。 <sub>案例 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/simcity-3000-gta-mode-case/)</sub>

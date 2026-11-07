@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "epoch-equinox": {
+    "name": "Epoch & Equinox",
+    "requirements": [
+      "把 ROM 放在 epoch 二进制旁边的 roms/。源码构建在 Linux 或 macOS 上运行 ./setup.sh，在 Windows 上用 Visual Studio 和 vcpkg 运行 setup.ps1。",
+      "许可证：MIT。"
+    ]
   }
 }

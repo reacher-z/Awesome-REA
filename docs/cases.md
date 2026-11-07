@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -276,7 +276,7 @@
 - [**z2rs: an incremental Rust reconstruction of Zelda II checked against an emulator**](https://github.com/troyedwardsjr/z2rs) - Rebuilds Zelda II: The Adventure of Link (NES) in Rust for desktop, browser and Android by replacing the game’s 6502 routines one at a time. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/z2rs-zelda2-reconstruction-case/)</sub>
 
 <a id="game-other"></a>
-### Other methods and analyses (23)
+### Other methods and analyses (24)
 
 - [**ArkWeb: a two-game movement and collision experiment**](https://github.com/luki-1/ArkWeb) - Runs Spider-Man Remastered and Arkham Knight together, streaming Gotham collision into Spider-Man’s physics world and compositing his rendered frame into Arkham. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/arkweb-two-game-case/)</sub>
 - [**Batla 3D server emulator (2015 client)**](https://github.com/Serega25511s/Batla-3D-server-emu) - C# server emulator for the 2015 Steam client of Batla 3D, covering HTTP account, shop and room services and Lidgren UDP gameplay. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/batla-3d-server-emulator-case/)</sub>
@@ -285,6 +285,7 @@
 - [**Destiny 2 build 86657: Sunrise/Dawn reconstruction research report**](https://github.com/isinternets/d2-research) - A dated research report on the Sunrise/Dawn reconstruction of the archived Destiny 2 build 86657 client, which emulates platform sign-on and the examined Bungie service contracts locally and adds reconstructed mission host policy. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/destiny2-build-86657-reconstruction-report-case/)</sub>
 - [**DLSSNR-AMD: reimplementing DLSS 5 neural rendering for RDNA4**](https://github.com/mochizuki0323/DLSSNR-AMD) - Reimplements the neural-rendering network of NVIDIA’s DLSS 5 library as Vulkan compute shaders for AMD RX 9000 (RDNA4) cards and supplies it to games through an NGX-compatible core and ReShade or Vulkan-layer routes. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/dlssnr-amd-neural-rendering-case/)</sub>
 - [**Does reverse engineering need a bigger model? General and specialist models in Touhou reconstruction**](https://rea.tools/blog/reverse-engineering-models/) - An essay on REA’s site by N0zoM1z0 (13 October 2026) uses dated Touhou reconstruction commits to ask whether exact function matching needs a larger general model, a compiler-specialist model or better retrieval. <sub>Case study · Official REA · Also: Binary · [Full entry](https://awesomerea.org/resources/rea-bigger-model-essay-case/)</sub>
+- [**Epoch &amp; Equinox**](https://github.com/ZakyPew/epoch-equinox) - Epoch &amp; Equinox is one native player for The Legend of Zelda: Oracle of Ages and Oracle of Seasons. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/epoch-equinox/)</sub>
 - [**FH2MP: reconstructed Forza Horizon 2 online services**](https://github.com/Charelene/FH2MP) - FH2MP restores Forza Horizon 2 multiplayer with a replacement server based on protocol behavior recovered from the Xbox One game client. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/fh2mp-case/)</sub>
 - [**game-and-watch-patch: Nintendo Game &amp; Watch custom firmware**](https://github.com/BrianPugh/game-and-watch-patch) - Custom firmware for the Mario and Zelda Game &amp; Watch consoles that patches new C code into the user's own stock firmware backups, so the original firmware runs alongside the retro-go emulator. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/game-and-watch-patch-cfw-case/)</sub>
 - [**GTA Mode: reverse-engineering SimCity 3000 Unlimited for a native plugin**](https://github.com/DenisSergeevitch/simcity3000-gta-mode) - GTA Mode is a native plugin that adds direct control of spawned citizens and cars to SimCity 3000 Unlimited. <sub>Case study · Also: Binary · [Full entry](https://awesomerea.org/resources/simcity-3000-gta-mode-case/)</sub>
