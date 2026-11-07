@@ -36543,6 +36543,7 @@
     "description_zh": "修补 Darling macOS 兼容层，使 Riot 的 macOS 版《英雄联盟》客户端与游戏能在 x86-64 Linux 上运行。改动覆盖 Darling 本体及其 30 个组件，包括 Metal／Indium、AppKit、QuartzCore、CoreAudio、内核垫片与 darlingserver，并附构建、安装和启动工具。这是实验性的兼容层重新托管方案，不是反编译或重新编译的游戏；可玩性与帧率结果均为作者报告。",
     "evidence_url": "https://github.com/lucannez64/darling-lol/blob/78a47d633fbecc1189d70f7a8473980ffe771249/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed pin applies patches to 31 pinned repositories, Darling at 60ba801 plus 30 components, to run the macOS League client on x86-64 Linux. README calls it a development snapshot, not a finished launcher: Riot and League clients launch and manually played ARAM matches have run, with fixes for graphics, audio, input, startup crashes and memory reclamation. Installing through Riot’s own interface can still stall, and a fresh checkout has not been validated end to end on another machine.",
