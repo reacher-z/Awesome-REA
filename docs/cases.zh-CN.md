@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -113,7 +113,7 @@
 - [**wii-ipl：Wii Menu（System Menu 4.3）的反编译重建**](https://github.com/koopthekoopa/wii-ipl) - Wii Menu（即主机的 System Menu，IPL）的反编译重建，仍在进行中，针对 4.3 版的美、欧、日、韩四个版本。 <sub>案例 · 独立重建 · 也适用：固件 · [完整条目](https://awesomerea.org/zh/resources/wii-menu-ipl-decomp-case/)</sub>
 
 <a id="game-decompilation"></a>
-### 非匹配反编译 (19)
+### 非匹配反编译 (20)
 
 - [**c1：PlayStation 版《古惑狼》的 C 语言移植**](https://github.com/wurlyfox/c1) - 将 PlayStation 版《古惑狼》的原始游戏代码逐函数移植为 C 语言；其编码规范要求为函数标注原实现的地址。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crash-bandicoot-c1-port-case/)</sub>
 - [**Firefighter：将反编译的 DOS 游戏移植为 Rust**](https://gitlab.com/esr/firefighter) - Eric S. Raymond 将 Eben Sprinsock 于 1985 年发布的 DOS 共享软件游戏 Firefighter 移植为终端游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/firefighter-rust-port-case/)</sub>
@@ -134,6 +134,7 @@
 - [**UltraSunnyMoon：以 REA 主导的部分《宝可梦 究极之日》重建**](https://github.com/tylergraydev/UltraSunnyMoon) - 作者使用固定版本的 REA 与 Ghidra，分析使用者自备的《宝可梦 究极之日》基础版可执行文件，由拆分出的对象逐字节重建该文件，并替换进两个编译后的小型 C 运行时例程。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/ultrasunnymoon-rea-case/)</sub>
 - [**vf2-decomp：经差分验证的 Virtua Fighter 2 代码恢复**](https://github.com/celsowm/vf2-decomp) - 将 Virtua Fighter 2 Version 2.1 的 Sega Model 2A i960 程序恢复为可移植、非一致性的 C17 代码，每条恢复路径须在受控边界上与参考 i960 执行器一致才被接受。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vf2-decomp-differential-recovery-case/)</sub>
 - [**《风之杖 HD》反编译：与重编译的 Wii U 版逐函数比对验证**](https://github.com/ZeldaWWHDDecomp/wwhd) - 将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wind-waker-hd-decomp-case/)</sub>
+- [**WinFish**](https://github.com/Vindirect/WinFish) - WinFish 从 Windows 可执行文件反编译《Insaniquarium Deluxe》1.1。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/winfish/)</sub>
 
 <a id="game-static-recompilation"></a>
 ### 静态重编译 (48)
