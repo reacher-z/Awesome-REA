@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "blc": {
+    "name": "blc（嵌入 Ghidra 反编译器的 IDA 插件）",
+    "requirements": [
+      "README 要求把 blc 克隆到 IDA SDK 的 plugins 目录，使路径为 <sdkdir>/plugins/blc，因为构建文件使用相对路径。",
+      "它写明插件针对 IDA 7.x 编写。",
+      "GitHub 报告该仓库的许可证为 GPL-2.0。"
+    ]
   }
 }

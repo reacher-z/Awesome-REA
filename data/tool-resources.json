@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "url": "https://github.com/cseagle/blc",
+    "evidence_url": "https://github.com/cseagle/blc/blob/ac3806981790f8d40faeea505b7bc1f8358180bf/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "id": "blc",
+    "name": "blc",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "blc, the Binary Lifting Contraption, is an IDA Pro plugin that integrates Ghidra's decompiler and shows a source view for platforms supported by both IDA and Ghidra. The README says it was written with IDA 7.x in mind and warns that the code is raw and likely buggy.",
+    "description_zh": "blc（Binary Lifting Contraption）是 IDA Pro 插件，集成 Ghidra 的反编译器，并为 IDA 和 Ghidra 都支持的平台显示源码视图。README 写明它针对 IDA 7.x 编写，并警告代码很粗糙、很可能有错误。",
+    "requirements": [
+      "The README says to clone blc into the IDA SDK plugins directory so the path is <sdkdir>/plugins/blc, because the build files use relative paths.",
+      "It says the plugin was written for IDA 7.x.",
+      "GitHub reports the repository license as GPL-2.0."
+    ]
   }
 ]
