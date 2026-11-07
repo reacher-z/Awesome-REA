@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gcrecomp",
+    "name": "GCRecomp: GameCube DOL static recompiler",
+    "url": "https://github.com/KaiserGranatapfel/GameCubeRecompiled",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "GCRecomp is a static recompiler that translates GameCube PowerPC DOL binaries into Rust and then into native executables. The README says it is inspired by N64Recomp and names Windows, Linux, and macOS as targets for the generated executables. The project text is dedicated under CC0 1.0 and also points readers to an EULA.",
+    "description_zh": "GCRecomp 是一个静态重编译器，把 GameCube PowerPC DOL 二进制翻译成 Rust，再生成原生可执行文件。README 写明它受 N64Recomp 启发，并把生成的可执行文件目标写为 Windows、Linux 和 macOS。项目文本以 CC0 1.0 贡献到公共领域，同时指向一份最终用户许可协议。",
+    "evidence_url": "https://github.com/KaiserGranatapfel/GameCubeRecompiled/blob/d380537add5aa4116c94c3513b8e3a7dd89f2331/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "Users supply their own GameCube dumps. The README says the repository omits Nintendo code, SDKs, and game assets.",
+      "The README's Rust badge names Rust 1.70 or newer.",
+      "The README licenses the project under CC0 1.0 Universal and also links an end-user license agreement."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
