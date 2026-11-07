@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "smb-vanilla-case",
+    "name": "SMB Vanilla",
+    "url": "https://github.com/nukep/SMB-Vanilla",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "SMB Vanilla is a C decompilation of the NES games Super Mario Bros. and Super Mario Bros. 2 Japan, also called Lost Levels. The README says both games run and can be finished.",
+    "description_zh": "SMB Vanilla 是 NES《超级马里奥兄弟》和日本版《超级马里奥兄弟 2》（失落的关卡）的 C 反编译。README 写明两款游戏都能运行并且可以通关。",
+    "requirements": [
+      "Place a legally obtained ROM at smb.nes next to the executable, or set the path in smbvanilla.ini. Lost Levels uses a ROM path argument or the ini file.",
+      "On Windows the program is smbvanilla.exe. On other systems it is smbvanilla.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/nukep/SMB-Vanilla/blob/20f4e02614412f9dbd407dd4e4fab4ade5eb79da/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

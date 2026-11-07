@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "smb-vanilla-case": {
+    "name": "SMB Vanilla",
+    "requirements": [
+      "把合法取得的 ROM 放在可执行文件旁的 smb.nes，或在 smbvanilla.ini 里设置路径。失落的关卡通过 ROM 路径参数或 ini 文件选择。",
+      "Windows 上的程序是 smbvanilla.exe。其他系统是 smbvanilla。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
