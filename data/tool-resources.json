@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gt3-revisited",
+    "name": "GT3 Revisited",
+    "url": "https://github.com/matt-pulsipher/GT3-revisited",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "GT3 Revisited reimplements the Gran Turismo 3 A-Spec engine for Windows, macOS, Linux, Android, iOS, and Meta Quest. It reads an ISO or CHD disc image at runtime. The reviewed status says GT Mode, Arcade, licenses, split-screen, the Replay Theater, movies, music, and physics are playable. Online battle supports up to six players. Releases publish SHA256SUMS. Khronos OpenGL ES 3.0 headers are MIT and Apache 2.0. Windows packages include ANGLE under the BSD 3-Clause license.",
+    "description_zh": "GT3 Revisited 重实现《跑车浪漫旅 3 A-Spec》的引擎，面向 Windows、macOS、Linux、Android、iOS 和 Meta Quest。它在运行时读取 ISO 或 CHD 光盘镜像。审阅的状态写明 GT 模式、街机、执照、分屏、回放剧场、影片、音乐和物理都可以玩。在线对战最多六人。发行版公布 SHA256SUMS。Khronos OpenGL ES 3.0 头文件为 MIT 和 Apache 2.0。Windows 包包含 BSD 3-Clause 的 ANGLE。",
+    "requirements": [
+      "A personal Gran Turismo 3 A-Spec disc image in ISO or CHD form.",
+      "License: MIT for GT3 Revisited's own code. Third-party notices are in THIRD-PARTY-NOTICES.md."
+    ],
+    "evidence_url": "https://github.com/matt-pulsipher/GT3-revisited/blob/9214e88450fd3584af7783a8696e654699c68d95/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
