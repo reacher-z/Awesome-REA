@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "godhand-recomp",
+    "name": "God Hand recompiled",
+    "url": "https://github.com/LasVola/godhand-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles God Hand for the PlayStation 2, USA SLUS-21503, into a Windows program with PS2Recomp. The README says play has been tested from the opening through stage 3, past the Gorilla Mask and Mad Midget Five fights, at 60 fps and 3x resolution. Later stages and the ending have not been played.",
+    "description_zh": "该项目用 PS2Recomp 把 PlayStation 2 美版《神之手》（SLUS-21503）重编译成 Windows 程序。README 写明从开场玩到第 3 关、打过猩猩面具和 Mad Midget Five 的部分已经测试，帧率为 60，分辨率为 3 倍。后面的关卡和结局还没有玩过。",
+    "requirements": [
+      "Windows 10 or 11, Visual Studio 2022 Build Tools with the C++ desktop workload, and Python 3.10 or newer. Copy the USA ISO into game/, then run python -I build.py generate, the snr2 extract and module steps, and python -I build.py build. Start with Start-God-Hand.cmd.",
+      "License: GPL-3.0. The README says PS2Recomp uses the same license."
+    ],
+    "evidence_url": "https://github.com/LasVola/godhand-recomp/blob/14e956a1274332440273845fbab2c1f1e30c4a5a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
