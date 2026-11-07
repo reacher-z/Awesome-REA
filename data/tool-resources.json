@@ -36528,5 +36528,24 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "cluadecompiler",
+    "name": "cLuaDecompiler",
+    "url": "https://github.com/Coldzer0/LuaDecompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "cLuaDecompiler is a Free Pascal and Lazarus disassembler and decompiler for Lua bytecode. It covers Lua 5.1 through 5.5, can load a custom opcode table, and can compare decompiled output with the original program when source is available.",
+    "description_zh": "cLuaDecompiler 是用 Free Pascal 和 Lazarus 写的 Lua 字节码反汇编器和反编译器。它覆盖 Lua 5.1 到 5.5，可以加载自定义操作码表，并在有源码时把反编译结果与原程序比较。",
+    "requirements": [
+      "License: GNU Affero General Public License version 3."
+    ],
+    "evidence_url": "https://github.com/Coldzer0/LuaDecompiler/blob/e75c48a73008187e88cc5a50a2dd06b884247923/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
