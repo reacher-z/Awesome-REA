@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "wotm-recomp",
+    "name": "War of the Monsters recompilation",
+    "url": "https://github.com/yanm1103/War_of_the_Monsters_recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles War of the Monsters for the PlayStation 2 to Windows, and has a Linux x86-64 path. The Windows program is wotm.exe. PS2Recomp translates the executable, including VU0, into C++ that is generated locally. A decompilation build ends with build/SCUS_971.97.rom: OK. The Linux target needs AVX2, BMI2, POPCNT, and LZCNT. Mods go in mods next to wotm.exe.",
+    "description_zh": "该项目把 PlayStation 2 的《War of the Monsters》静态重编译到 Windows，并有一条 Linux x86-64 路径。Windows 程序是 wotm.exe。PS2Recomp 把可执行文件（包括 VU0）翻译成在本地生成的 C++。反编译构建以 build/SCUS_971.97.rom: OK 结束。Linux 目标需要 AVX2、BMI2、POPCNT 和 LZCNT。模组放在 wotm.exe 旁边的 mods。",
+    "requirements": [
+      "Windows: Git, Python 3, CMake 3.24 or newer, and MSVC 14.40 or newer. Put an NTSC-U ISO in ISO/ and run tools\\setup_runtime.ps1. Linux uses tools/setup_runtime.sh.",
+      "License: GPL-3.0 for the code in this repository."
+    ],
+    "evidence_url": "https://github.com/yanm1103/War_of_the_Monsters_recomp/blob/55204ad4936b090aadd230897c10bcfe5fe9247a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
