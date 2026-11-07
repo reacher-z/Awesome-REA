@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bnpy",
+    "name": "bnpy",
+    "url": "https://github.com/extremecoders-re/bnpy",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "bnpy is a Binary Ninja architecture plugin that disassembles raw Python bytecode. A .pyc file is opened, the 8-byte magic and timestamp are skipped, and marshal.load yields the code object whose co_code is written out. That stream is loaded in Binary Ninja and selected as the Python architecture with P.",
+    "description_zh": "bnpy 是反汇编原始 Python 字节码的 Binary Ninja 架构插件。打开 .pyc 后跳过 8 字节的魔数和时间戳，marshal.load 得到代码对象，再写出它的 co_code。该字节流在 Binary Ninja 里加载，并用 P 选择 Python 架构。",
+    "requirements": [
+      "Binary Ninja. Clone the repository into the Binary Ninja plugins directory.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/extremecoders-re/bnpy/blob/58ba9fe5b7c5449338a3db45e47f6d0365a3cfb0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
