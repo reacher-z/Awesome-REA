@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gcrecomp": {
+    "name": "GCRecomp：GameCube DOL 静态重编译器",
+    "requirements": [
+      "使用者自行提供 GameCube 转储。README 写明仓库不含任天堂代码、SDK 和游戏资源。",
+      "README 的 Rust 徽章写明 Rust 1.70 或更新版本。",
+      "README 以 CC0 1.0 Universal 许可该项目，并另外链接一份最终用户许可协议。"
+    ]
   }
 }
