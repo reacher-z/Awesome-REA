@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ecstatica-recompiled",
+    "name": "Ecstatica Recompiled",
+    "url": "https://github.com/spacefarergames/EcstaticaRecompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Ecstatica Recompiled is a 64-bit Windows port of Ecstatica and Ecstatica II. The graphics pipeline is written for Direct3D 12 feature level 11, the engine is fixed at 1920 by 1080, and input uses SDL3. The executables are Ecstatica1Recomp_Win64.exe and Ecstatica2Recomp_Win64.exe.",
+    "description_zh": "Ecstatica Recompiled 是 Ecstatica 和 Ecstatica II 的 64 位 Windows 移植。图形管线按 Direct3D 12 功能级别 11 编写，引擎固定为 1920×1080，输入使用 SDL3。可执行文件是 Ecstatica1Recomp_Win64.exe 和 Ecstatica2Recomp_Win64.exe。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, and a Direct3D 12 GPU. Linux and macOS are not supported.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/spacefarergames/EcstaticaRecompiled/blob/521cb14a1ab87691178e477f6cb703b76964f154/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
