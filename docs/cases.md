@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -136,7 +136,7 @@
 - [**Wind Waker HD decompilation: functions verified against the recompiled Wii U game**](https://github.com/ZeldaWWHDDecomp/wwhd) - Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### Static recompilations (48)
+### Static recompilations (49)
 
 - [**Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port**](https://github.com/BanjoRecomp/BanjoRecomp) - Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Banjo-Kazooie into a native port on N64ModernRuntime, rendered by RT64 and extended with mod support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/banjo-recompiled-case/)</sub>
 - [**C2C: hybrid recompilation and hand decompilation of Crash Bandicoot 2**](https://github.com/ughman/c2c) - An early reverse-engineering effort on PlayStation Crash Bandicoot 2 that converts the engine’s MIPS machine code directly into a very large C file and runs it against a modified PCSX-R emulator library for hardware I/O. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -152,6 +152,7 @@
 - [**Donkey Kong 64: Recompiled — an N64Recomp native port**](https://github.com/Rainchus/Donkey-Kong-64-Recompiled) - Uses N64Recomp to statically recompile the US Nintendo 64 release of Donkey Kong 64 into a native port, with RT64 as the renderer. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dk64-recompiled-case/)</sub>
 - [**Driver Recompiled: a psxrecomp setup host that builds the game locally**](https://github.com/alexbeavs-ps1-ports/driver-recomp) - Packages a psxrecomp static-recompilation project for Driver (PlayStation, USA) as a setup host: releases carry the recompiler, runtime and a recomp-ui launcher, and the player’s machine generates and compiles the game from the user’s own disc image. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/driver-recomp-setup-host-case/)</sub>
 - [**FFTARecomp: static recompilation of Final Fantasy Tactics Advance**](https://github.com/Jorge262007/FFTARecomp) - Recompiles the user’s Final Fantasy Tactics Advance (USA) Game Boy Advance ROM ahead of time into native code for Windows, Linux and Steam Deck, building on JRickey’s gba-recomp toolkit. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/fftarecomp-gba-static-recomp-case/)</sub>
+- [**Final Fantasy Tactics Advance Recomp**](https://github.com/james2doyle/ffta-recomp) - Final Fantasy Tactics Advance Recomp is a static recompilation of the USA Game Boy Advance game for Linux, Windows, Android, and Steam Deck. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ffta-recomp-case/)</sub>
 - [**God of War PS2 static recompilation: a native Windows port via PS2Recomp**](https://github.com/KIexster/god-of-war-recomp) - Statically recompiles the MIPS R5900 code of the NTSC-U PlayStation 2 God of War executable (SCUS-97399) to C++ with PS2Recomp and builds it as a native Windows program. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/god-of-war-ps2-recomp-case/)</sub>
 - [**IsaacRecomp: translating Flash game bytecode to native C++**](https://github.com/whylurking/IsaacRecomp) - Translates The Binding of Isaac’s Flash AVM1 bytecode into C++ functions and supplies a native rendering/input runtime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/isaacrecomp-case/)</sub>
 - [**KartPad: platform integration for a Mario Kart Wii recompilation**](https://github.com/chrissotraidis/kartpad) - Builds Apple and Android integration around WiiCompiled’s ahead-of-time translation of Mario Kart Wii, with native graphics, input and optional Retro Rewind support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/kartpad-case/)</sub>
