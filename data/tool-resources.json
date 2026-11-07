@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ssx3-decomp",
+    "name": "SSX 3 decompiled",
+    "url": "https://github.com/andersfischernielsen/ssx3-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a native Rust port of SSX 3 for PlayStation 2, USA SLUS_207.72. The game code was statically recompiled to Rust and is being replaced function by function. Rendering, movies, sound, files, controllers, and the memory card are native. The README says every race, freestyle event, and Conquer the Mountain are playable, on macOS, Windows, and Linux, with an experimental browser build.",
+    "description_zh": "这是 PlayStation 2 美版 SSX 3（SLUS_207.72）的 Rust 原生移植。游戏代码被静态重编译成 Rust，并正在逐个函数替换。渲染、影片、声音、文件、手柄和记忆卡都是原生的。README 写明每一场比赛、自由式项目和征服雪山都可以玩，平台是 macOS、Windows 和 Linux，另有一个实验性的浏览器构建。",
+    "requirements": [
+      "The player supplies their own disc. Generated code and the disc image stay outside git.",
+      "The reviewed README does not name a license for this project. It names MIT for ps2-web-recomp."
+    ],
+    "evidence_url": "https://github.com/andersfischernielsen/ssx3-decomp/blob/94a28385fc9c86a7a895e35fb1e7bd9a0ffd065f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
