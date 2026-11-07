@@ -36528,5 +36528,30 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "marathon-recomp-case",
+    "name": "Marathon Recompiled",
+    "url": "https://github.com/sonicnext-dev/MarathonRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Marathon Recompiled is an unofficial PC port of the Xbox 360 version of Sonic the Hedgehog (2006), made by static recompilation. It supports Windows, Linux, and macOS. XenonRecomp converts the game's PowerPC code to C++, and XenosRecomp converts Xenos shaders to HLSL.",
+    "description_zh": "Marathon Recompiled 是《Sonic the Hedgehog (2006)》Xbox 360 版的非官方 PC 移植，通过静态重编译完成，支持 Windows、Linux 和 macOS。XenonRecomp 把游戏的 PowerPC 代码转为 C++，XenosRecomp 把 Xenos 着色器转为 HLSL。",
+    "requirements": [
+      "The player supplies files from their own copy of the Xbox 360 game.",
+      "The README says the recompilation is still under active development and is not meant for public use; support waits for an official release.",
+      "The installer accepts original, unmodified files from a single region. PlayStation 3 files are a separate recompilation and are rejected.",
+      "Build steps are in docs/BUILDING.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/sonicnext-dev/MarathonRecomp/blob/bbbc25283ce37c03f14625cb43216ce49476a9c0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
