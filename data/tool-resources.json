@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "megaman4-disasm",
+    "name": "Mega Man 4 disassembly",
+    "url": "https://github.com/refreshing-lemonade/megaman4-disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a finished disassembly of Mega Man 4 for the NES, NTSC-U. It assembles to a clean ROM with xkas-plus. The command is ./xkas -o mm4.nes assemble.asm. The game uses the MMC3 mapper and 64 PRG banks of $2000 bytes. A Windows build of the assembler is in the repository.",
+    "description_zh": "这是 NES 美版《洛克人 4》的完成反汇编。它用 xkas-plus 汇编成干净的 ROM。命令是 ./xkas -o mm4.nes assemble.asm。游戏使用 MMC3 映射器，以及 64 个 $2000 字节的 PRG 库。仓库里带有汇编器的 Windows 构建。",
+    "requirements": [
+      "xkas-plus. Assemble with ./xkas -o mm4.nes assemble.asm.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/refreshing-lemonade/megaman4-disassembly/blob/e852bd58dabb80a2916aae4e1d41a03386a4cf27/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
