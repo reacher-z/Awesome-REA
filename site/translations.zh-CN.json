@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "croftengine": {
+    "name": "CroftEngine",
+    "requirements": [
+      "需要原版《古墓丽影》数据和配乐文件。Windows 上需要 vcpkg 和 CMake。先初始化子模块。",
+      "许可证：LGPLv3。"
+    ]
   }
 }

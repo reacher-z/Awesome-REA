@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "croftengine",
+    "name": "CroftEngine",
+    "url": "https://github.com/stohrendorf/CroftEngine",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "CroftEngine is an open-source engine for the first Tomb Raider. It reads data from an original installation, and the reviewed README points soundtrack files at opentomb.earvillage.net. Releases include a Windows installer, and openSUSE packages it in the Games repository. A setup assistant starts from Beta 15 when files are missing. Windows builds use vcpkg and CMake. The listed packages include boost, glfw3, libpng, openal-soft, OpenGL, freetype, ffmpeg, utfcpp, gettext tools, libarchive, and libjpeg-turbo. git submodule update --init --recursive is required first.",
+    "description_zh": "CroftEngine 是第一代《古墓丽影》的开源引擎。它从原版安装目录读取数据，审阅的 README 把配乐文件指向 opentomb.earvillage.net。发行版包含 Windows 安装程序，openSUSE 在 Games 仓库里提供它。从 Beta 15 起，缺少文件时会启动安装助手。Windows 构建使用 vcpkg 和 CMake。列出的包包括 boost、glfw3、libpng、openal-soft、OpenGL、freetype、ffmpeg、utfcpp、gettext 工具、libarchive 和 libjpeg-turbo。首先需要 git submodule update --init --recursive。",
+    "requirements": [
+      "Original Tomb Raider data and the soundtrack files. On Windows, vcpkg and CMake. Initialize submodules first.",
+      "License: LGPLv3."
+    ],
+    "evidence_url": "https://github.com/stohrendorf/CroftEngine/blob/f2f2d708ee116bc82515bd223d3df0c5ed10ade6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
