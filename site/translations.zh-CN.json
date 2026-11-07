@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "libghidra": {
+    "name": "libghidra",
+    "requirements": [
+      "远程后端需要 12.0.4 或更高版本的 Ghidra 发行版，以及 JDK 21。",
+      "本地后端不需要 Ghidra JVM。README 列出的离线子集包括反编译器、函数、符号、类型、内存、列表和交叉引用。",
+      "README 记录了 install-prompt.md 安装步骤，以及手动的 Get Running 路径。"
+    ]
   }
 }
