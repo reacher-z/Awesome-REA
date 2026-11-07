@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "moonpearl",
+    "name": "Moon Pearl",
+    "url": "https://github.com/DoutorRaposo/moonpearl",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "Moon Pearl is an Android port of the zelda3 C reimplementation of The Legend of Zelda: A Link to the Past. The player picks an .sfc or .smc ROM and the app builds the game data on the device. It adds widescreen, nine save-state slots, rewind, and controller support.",
+    "description_zh": "Moon Pearl 是《塞尔达传说：众神的三角力量》的 zelda3 C 重实现的 Android 移植。玩家选择 .sfc 或 .smc ROM，应用在设备上构建游戏数据。它加入宽屏、九个即时存档、倒带和手柄支持。",
+    "requirements": [
+      "Android 8.0 or newer on a 64-bit device. Install moonpearl-x.y.z.apk from Releases.",
+      "License: MIT for the Android code in this repository."
+    ],
+    "evidence_url": "https://github.com/DoutorRaposo/moonpearl/blob/ed2c8da76494ca10b1a9ac0d8721eec88402d7a1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
