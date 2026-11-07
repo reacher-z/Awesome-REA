@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "perlica-rs": {
+    "name": "Perlica RS",
+    "requirements": [
+      "用 cargo build --bin perlica-game-server --release 构建游戏服务器。首次运行会从 servers/game-server/config.default.toml 生成 Config.toml。",
+      "配置服务器预期在 127.0.0.1:21041。游戏服务器地址来自配置文件的 server 节。",
+      "许可证：AGPL-3.0。"
+    ]
   }
 }
