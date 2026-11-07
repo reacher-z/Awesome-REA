@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mario-kart-64-3ds-case": {
+    "name": "马力欧卡丁车 64 3DS",
+    "requirements": [
+      "需要合法取得的美版《Mario Kart 64》ROM，字节序为 .z64。把它放在 sd:/3ds/MK64/mk64.z64。",
+      "用 FBI 安装 CIA，或用 Homebrew Launcher 使用 3DSX。首次启动会校验 ROM 并生成 mk64.o2r。",
+      "许可证按组件分别适用。更新器为 GNU GPL v3.0，README 写明整个仓库没有一份总括许可证。"
+    ]
   }
 }
