@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ladx-disassembly",
+    "name": "Link's Awakening DX disassembly",
+    "url": "https://github.com/zladx/LADX-Disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembly of The Legend of Zelda: Link's Awakening DX builds Japanese, English, German, and French Game Boy Color ROMs. Japanese v1.0 azlj.gbc has MD5 f75874e3654360094fc2b09bd1fed7e8. English v1.0 azle.gbc has MD5 07c211479386825042efb4ad31bb525f. The README also lists later revisions and four Virtual Console patches with their own MD5s. make all builds the ROMs and debug symbols. Python 3 and rgbds 1.0.0 or newer are required.",
+    "description_zh": "这个《塞尔达传说 织梦岛 DX》反汇编构建日文、英文、德文和法文 Game Boy Color ROM。日文 v1.0 的 azlj.gbc MD5 是 f75874e3654360094fc2b09bd1fed7e8。英文 v1.0 的 azle.gbc MD5 是 07c211479386825042efb4ad31bb525f。README 还列出后续修订版和四份 Virtual Console 补丁，各自带 MD5。make all 构建 ROM 和调试符号。需要 Python 3 和 rgbds 1.0.0 或更新版本。",
+    "requirements": [
+      "Python 3 and rgbds 1.0.0 or newer. Run make all.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/zladx/LADX-Disassembly/blob/2a5c2c0d6df93a54df81ae9e1fe28b5c2fd60d03/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

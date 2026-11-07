@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -60,6 +60,7 @@
 - [**ICO decompilation: byte-identical PAL and Japanese PlayStation 2 boot ELFs**](https://github.com/nathanialf/ico) - Rebuilds the boot ELFs of ICO’s PAL (SCES-50760) and Japanese (SCPS-11003) PlayStation 2 discs from one source tree with the game’s original compiler versions, and checks that every loaded byte and the whole ELF file match the disc’s SHA-1. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ico-matching-decomp-case/)</sub>
 - [**Kingdom Hearts 358/2 Days: a matching Nintendo DS decompilation**](https://github.com/Yokimitsuro/khdays-decomp) - Reconstructs the ARM9 program and overlays of the EU Nintendo DS release of Kingdom Hearts 358/2 Days as C that recompiles byte for byte with CodeWarrior. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/kingdom-hearts-days-matching-decomp-case/)</sub>
 - [**LEGO Island: source reconstruction with separately reported exact rebuilds**](https://github.com/isledecomp/isle) - Reconstructs the English LEGO Island 1.1 source for its original 32-bit Windows target. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lego-island-decomp-case/)</sub>
+- [**Link's Awakening DX disassembly**](https://github.com/zladx/LADX-Disassembly) - This disassembly of The Legend of Zelda: Link's Awakening DX builds Japanese, English, German, and French Game Boy Color ROMs. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ladx-disassembly/)</sub>
 - [**Majora’s Mask: matching US N64 decompilation**](https://github.com/zeldaret/mm) - Recreates a C source base for The Legend of Zelda: Majora’s Mask from information in the game and static or dynamic analysis, then rebuilds the US Nintendo 64 ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda-mm-decomp-case/)</sub>
 - [**Mario Kart Wii: an in-progress matching decompilation of the PAL release**](https://github.com/snailspeed3/mkw) - A work-in-progress matching decompilation of Mario Kart Wii that targets the PAL release (RMCP01), rebuilding main.dol and the StaticR.rel module from C and C++ with Metrowerks compilers and checking both against stored SHA-1 values. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mario-kart-wii-decomp-case/)</sub>
 - [**Mario Kart: Double Dash!!: a matching GameCube decompilation of the debug build**](https://github.com/doldecomp/mkdd) - A work-in-progress 1:1 decompilation of Mario Kart: Double Dash!! <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mario-kart-double-dash-decomp-case/)</sub>
