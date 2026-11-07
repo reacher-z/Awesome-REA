@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "binaryninja-pcode": {
+    "name": "Binary Ninja PCode",
+    "requirements": [
+      "克隆时包含子模块。CMake 命令需要 Qt 6、Binary Ninja 的安装目录和 API 路径，然后运行 make install。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
