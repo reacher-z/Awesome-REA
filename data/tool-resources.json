@@ -36528,5 +36528,31 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ida-bpf-processor",
+    "name": "IDA BPF Processor",
+    "url": "https://github.com/bnbdr/ida-bpf-processor",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDA BPF Processor is a Python processor and loader for classic BPF bytecode in IDA. The README says it supports old BPF only, not eBPF, and that the loader accepts files whose magic is the four bytes bpf followed by NUL and whose reserved field is 0. It defines symbolic constants for seccomp return values and licenses the code under MIT.",
+    "description_zh": "IDA BPF Processor 是 IDA 中用于经典 BPF 字节码的 Python 处理器和加载器。README 写明它只支持旧版 BPF，不支持 eBPF；加载器接受魔数为四个字节 bpf 后接 NUL、保留字段为 0 的文件。它为 seccomp 返回值定义符号常量，并以 MIT 许可代码。",
+    "evidence_url": "https://github.com/bnbdr/ida-bpf-processor/blob/d1ced3777df46f05c7a5bbaf572d5e0d31b1246c/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "IDA 7.x, tested on 7.0. Place bpf.py in the procs directory and bpf_loader.py in the loaders directory. Older IDA versions use the v1.0.0 release.",
+      "Input files use the documented header: magic bpf and a trailing NUL, reserved 0, then sock_filter instructions.",
+      "The README licenses the project under MIT."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
