@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (111)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -148,6 +148,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**Manticore: A User-Friendly Symbolic Execution Framework for Binaries and Smart Contracts**](https://arxiv.org/abs/1907.03890) - Manticore uses dynamic symbolic execution to analyze binaries and Ethereum smart contracts. <sub>arXiv 2019 · Preprint · Mark Mossberg et al. · [PDF](https://arxiv.org/pdf/1907.03890) · [Full entry](https://awesomerea.org/papers/paper-manticore/)</sub>
 - [**InternalBlue - Bluetooth Binary Patching and Experimentation Framework**](https://doi.org/10.1145/3307334.3326089) - The paper reverse engineers Broadcom Bluetooth controllers and presents InternalBlue for patching their firmware. <sub>Proceedings of the 17th Annual International Conference on Mobile Systems, Applications, and Services 2019 · Conference paper · Dennis Mantz et al. · [PDF](https://arxiv.org/pdf/1905.00631) · [Full entry](https://awesomerea.org/papers/paper-internalblue/)</sub>
 - [**Towards Neural Decompilation**](https://arxiv.org/abs/1905.08325) - The paper trains a neural machine translation decompiler using a compiler. <sub>arXiv 2019 · Preprint · Omer Katz et al. · [PDF](https://arxiv.org/pdf/1905.08325) · [Full entry](https://awesomerea.org/papers/paper-neural-decompilation/)</sub>
+- [**Survey of machine learning techniques for malware analysis**](https://doi.org/10.1016/j.cose.2018.11.001) - This survey reviews machine-learning techniques used to analyze malware as samples grow in volume and complexity. <sub>Computers &amp; Security 2019 · Journal article · Daniele Ucci et al. · [PDF](https://arxiv.org/pdf/1710.08189v3) · [Full entry](https://awesomerea.org/papers/paper-ml-malware-analysis-survey/)</sub>
 - [**ICSREF: A Framework for Automated Reverse Engineering of Industrial Control Systems Binaries**](https://doi.org/10.14722/ndss.2019.23271) - ICSREF automates reverse engineering of PLC binaries compiled with CODESYS. <sub>Proceedings 2019 Network and Distributed System Security Symposium · Conference paper · Anastasis Keliris et al. · [PDF](https://arxiv.org/pdf/1812.03478) · [Full entry](https://awesomerea.org/papers/paper-icsref/)</sub>
 - [**Coda: An End-to-End Neural Program Decompiler**](https://proceedings.neurips.cc/paper_files/paper/2019/hash/093b60fd0557804c8ba0cbf1453da22f-Abstract.html) - Coda decompiles the assembly of short functions into C in two phases. <sub>NeurIPS 2019 · Conference paper · Cheng Fu et al. · [PDF](https://proceedings.neurips.cc/paper_files/paper/2019/file/093b60fd0557804c8ba0cbf1453da22f-Paper.pdf) · [Full entry](https://awesomerea.org/papers/paper-coda/)</sub>
 - [**A Cross-Architecture Instruction Embedding Model for Natural Language Processing-Inspired Binary Code Analysis**](https://arxiv.org/abs/1812.09652) - The paper learns instruction embeddings that capture semantic relationships within and across architectures. <sub>arXiv 2018 · Preprint · Kimberly Redmond et al. · [PDF](https://arxiv.org/pdf/1812.09652) · [Full entry](https://awesomerea.org/papers/paper-cross-arch-instruction-embedding/)</sub>
