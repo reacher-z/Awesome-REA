@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(0, str(ROOT / 'tests'))
 import build_discovery_leads
+import discovery_reviews
 import collect_discovery_leads as collect
 import discovery_leads as leads
 import review_pr
@@ -706,6 +707,42 @@ def lead_root(directory):
 
 
 class LayersAndExportTest(unittest.TestCase):
+    def test_decided_and_curated_leads_leave_both_exports(self):
+        decided, curated, pending = github_lead(101), web_lead('https://example.org/curated-tool'), github_lead(102)
+        with tempfile.TemporaryDirectory() as directory:
+            root = lead_root(directory)
+            shutil.copy(ROOT / 'data/discovery-sources.json', root / 'data/discovery-sources.json')
+            batch = make_batch([decided, curated, pending])
+            folder = root / leads.DIRECTORY / '2026-11'
+            folder.mkdir(parents=True)
+            batch_file = folder / f"{batch['batch_id']}.json"
+            batch_file.write_bytes(leads.batch_bytes(batch))
+            original = batch_file.read_bytes()
+            catalog_file = root / 'data/tool-resources.json'
+            catalog_rows = json.loads(catalog_file.read_text(encoding='utf-8'))
+            catalog_rows.append({**catalog_rows[0], 'id': 'curated-lead', 'url': curated['url']})
+            catalog_file.write_text(json.dumps(catalog_rows), encoding='utf-8')
+            (root / discovery_reviews.FILE).write_text(json.dumps({decided['id']: {
+                'decision': 'hold', 'reason_code': 'insufficient-docs', 'reason_en': 'Documentation is incomplete.',
+                'reason_zh': '文档尚不完整。', 'evidence_url': f'https://github.com/example/repo/blob/{COMMIT}/README.md',
+                'reviewed_at': '2026-11-06'}}), encoding='utf-8')
+            site = root / 'site'
+            metadata = {'meta': {'site_url': 'https://awesomerea.org',
+                                 'repository_url': 'https://github.com/reacher-z/Awesome-REA'}}
+            queue = build_discovery_leads.write_lead_exports(site, metadata, root=root)
+            export = json.loads((site / 'discoveries/leads.json').read_text(encoding='utf-8'))
+            batch_export = json.loads((site / build_discovery_leads.batch_export_path(batch['batch_id']).lstrip('/')).read_text(encoding='utf-8'))
+            self.assertEqual([row['id'] for row in export['resources']], [pending['id']])
+            self.assertEqual([row['id'] for row in batch_export['resources']], [pending['id']])
+            self.assertEqual(export['counts']['reviewed'], {'curated': 1, 'exclude': 0, 'hold': 1})
+            self.assertEqual(batch_file.read_bytes(), original)
+            reviews_export = discovery_reviews.export_document([], NOW, queue['decided'])
+            self.assertEqual(reviews_export['counts'], {'curated': 0, 'exclude': 0, 'hold': 0})
+            self.assertEqual(reviews_export['lead_counts'], export['counts']['reviewed'])
+            self.assertEqual([row['id'] for row in reviews_export['decisions']], sorted([decided['id'], curated['id']]))
+            self.assertEqual(next(row for row in reviews_export['decisions'] if row['id'] == decided['id'])['full_name'],
+                             decided['github']['full_name'])
+
     def test_existing_layers_and_prepare_and_site_export(self):
         curated = json.loads((ROOT / 'data/tool-resources.json').read_text(encoding='utf-8'))
         github_record = next(record for record in curated if record['url'].startswith('https://github.com/'))

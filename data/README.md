@@ -140,7 +140,7 @@ The schema-2 companion is emitted only when a supplement is ready for publicatio
 
 [discoveries/](discoveries/README.md) is the unreviewed discovery queue: batches of exact verified captures that the scheduled scan adds after each run through its own checked pull request. They keep `verification: automated-readme-scan` and `review_status: unreviewed`, are not translated, and are listed only on the website's discovery pages and exports, never in the READMEs, the repository directory or the curated counts.
 
-[discovery-reviews.json](discovery-reviews.json) records the exclude and hold decisions made on [discovery queue](discoveries/README.md#review-decisions) records, keyed by scan ID; a decided record leaves the unreviewed queue and its batch stays unchanged.
+[discovery-reviews.json](discovery-reviews.json) records exclude and hold decisions for [discovery queue](discoveries/README.md#review-decisions) scans and followed-source leads, keyed by their IDs. Scan decisions include `readme_sha256`; lead decisions use pinned commit evidence. Decided records leave the unreviewed exports while their batch files stay unchanged.
 
 [source-scope.json](source-scope.json) records evidence-bound exclusions for the baseline; published supplements retain their own scope decisions. The website and [bilingual GitHub directory](../docs/repositories/README.md) omit excluded records from browsing. Each complete export keeps the records in its selection and their exclusion reasons; the separate curated catalog contains only curated entries.
 

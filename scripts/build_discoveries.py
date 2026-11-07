@@ -287,7 +287,7 @@ def main_feed_batches(queue: dict | None) -> list[dict]:
 
 
 def write_discoveries(site_dir: Path, catalog: dict, papers: list[dict], published_document: dict | None,
-                      *, root: Path = discoveries.ROOT) -> tuple[list[str], dict | None]:
+                      *, root: Path = discoveries.ROOT, lead_decided: list[dict] | None = None) -> tuple[list[str], dict | None]:
     """Write every discovery output; return the two page paths for the sitemap and the queue."""
     site_dir = Path(site_dir)
     queue = discovery_queue(root, published_document, papers, catalog['resources'])
@@ -336,7 +336,7 @@ def write_discoveries(site_dir: Path, catalog: dict, papers: list[dict], publish
     (site_dir / BADGE_PATH.lstrip('/')).write_text(json.dumps(badge_document(queue)) + '\n', encoding='utf-8')
     generated_at = timestamp(queue['latest']['ingested_at']) if queue['latest'] else None
     (site_dir / REVIEWS_PATH.lstrip('/')).write_text(
-        json.dumps(discovery_reviews.export_document(queue['decided'], generated_at), **compact) + '\n', encoding='utf-8')
+        json.dumps(discovery_reviews.export_document(queue['decided'], generated_at, lead_decided), **compact) + '\n', encoding='utf-8')
     return list(PAGE_PATHS.values()), queue
 
 
