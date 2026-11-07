@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "hcea-corpus",
+    "name": "HCEA decompilation corpus",
+    "url": "https://github.com/surreptitiousresearch/halocea",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a source corpus reconstructed from the June 24, 2011 prototype of Halo: Combat Evolved Anniversary for the Xbox 360. The binary is HCEX_Release.xex. The README lists Saber engine 0.0.83147 and Blam engine 01.00.01.0563. It says compiling this source does not reproduce the original disassembly, and that the corpus is not a playable game.",
+    "description_zh": "这是从 2011 年 6 月 24 日 Xbox 360 版《光环：战斗进化 周年纪念》原型重建的源码语料。二进制是 HCEX_Release.xex。README 列出 Saber 引擎 0.0.83147 和 Blam 引擎 01.00.01.0563。它写明编译这份源码不会得到原来的反汇编，而且这份语料不是可玩的游戏。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/surreptitiousresearch/halocea/blob/570c83fd9c365dad6f2a3e7041705d5b84c7847c/README.MD",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
