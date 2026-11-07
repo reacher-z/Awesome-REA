@@ -36543,6 +36543,7 @@
     "description_zh": "在保留 Apple 原有界面和播放系统的前提下，为原版 iPod Classic 固件 2.0.5 增加新功能，包括三段自定义均衡器、“下一首播放”和“最后播放”、按专辑艺人浏览、歌曲信息以及深色模式。仓库包含 C 补丁、Python 补丁配方构建器和 Rust 设备工具，并附有关于启动流程、NOR 引导程序和 OSOS 运行时的逆向笔记；其对 Apple 固件的 Ghidra 注释以可重新导入的 SARIF 导出形式纳入版本管理。经修补的 Rockbox 引导程序在启动时选择进入 RepriseOS、Apple 原系统或 Rockbox。",
     "evidence_url": "https://github.com/lgreitis/osos-lab/blob/ad98aa61b4c86f3f93441b5cfcaaaf9ab2a30619/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed main commit of 2026-10-26 follows the GitHub release RepriseOS v0.3.0, published the same day. Builds target Apple firmware 2.0.5 on iPod Classic 6G, 6.5G and 7G with FAT32 storage, while the reference addresses in docs/ describe 2.0.4 on a Classic 7G Rev B and are version-specific. The project modifies Apple's binaries through patch recipes instead of recovering their source; the README marks the game SDK and Doom port unfinished, and resources still come from the installed Apple resource partition.",
