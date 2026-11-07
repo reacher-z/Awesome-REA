@@ -36543,6 +36543,7 @@
     "description_zh": "围绕 Derek Selander 的 dsdump 预编译副本编写的 Python 封装。dsdump 是改进版的 nm 及 Objective-C 与 Swift class-dump 工具，用于 Mach-O 二进制；该封装把导出的每个协议、类、分类和 Swift 类型分别写入单独的 .h 或 .swift 文件，而不是全部输出到控制台。它针对所选的 arm64 或 armv7 架构分别以 --objc 和 --swift 运行随附的可执行文件，-d 选项借助 Xcode 的 swift-demangle 还原 Swift 名称，但会降低速度。README 现已建议用户改用作者的 resymbol。",
     "evidence_url": "https://github.com/paradiseduo/dsdump/blob/16b15c6b83bb441bcf07d4e1a361161f1756c906/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Superseded by its author: the README opens by saying resymbol can now replace this tool, the reviewed main commit of 2023-11-20 only reformatted the Python script, and there are no releases or tags. The upstream DerekSelander/dsdump repository it is based on is archived.",
