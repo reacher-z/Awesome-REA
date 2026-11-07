@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "renegade-squadron-pc",
+    "name": "Renegade Squadron PC port",
+    "url": "https://github.com/GTTeancum/StarWars-RenegadeSquadron-PC",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Star Wars Battlefront: Renegade Squadron for the PSP, US ULUS10292, into a Windows executable. BOOT.BIN is checked against SHA-256 f4c7a9ef93475fc8017f649346ef79b599649dc47462ec419e9fd373146f8c68. Vulkan is the default renderer, and DirectX 12 remains selectable. The game frame rate is raised from the PSP's 20 fps to 60 fps. The program is RenegadeSquadron.exe.",
+    "description_zh": "该项目把 PSP 美版《Star Wars Battlefront: Renegade Squadron》ULUS10292 静态重编译成 Windows 可执行文件。BOOT.BIN 对照 SHA-256 f4c7a9ef93475fc8017f649346ef79b599649dc47462ec419e9fd373146f8c68。Vulkan 是默认渲染器，DirectX 12 仍可选择。游戏帧率从 PSP 的 20 帧提高到 60 帧。程序是 RenegadeSquadron.exe。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, with Vulkan 1.1 or an explicit DirectX 12 selection. Visual Studio 2022, CMake 3.20 or newer, Ninja, Python 3.10 or newer, and PowerShell 7. Run pwsh work\\restore-windows-dependencies.ps1, work\\generate-perf.cmd, and work\\configure-perf.cmd.",
+      "License: MIT for the framework and port code. SDL2 is zlib. FFmpeg is an LGPL build."
+    ],
+    "evidence_url": "https://github.com/GTTeancum/StarWars-RenegadeSquadron-PC/blob/7c0e0db52d5076f5794284f000277525d11fe563/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

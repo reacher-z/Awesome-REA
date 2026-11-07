@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "renegade-squadron-pc": {
+    "name": "叛军中队 PC 移植",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11，以及 Vulkan 1.1，或者明确选择 DirectX 12。需要 Visual Studio 2022、CMake 3.20 或更新版本、Ninja、Python 3.10 或更新版本，以及 PowerShell 7。运行 pwsh work\\restore-windows-dependencies.ps1、work\\generate-perf.cmd 和 work\\configure-perf.cmd。",
+      "许可证：框架和移植代码为 MIT。SDL2 为 zlib。FFmpeg 是 LGPL 构建。"
+    ]
   }
 }
