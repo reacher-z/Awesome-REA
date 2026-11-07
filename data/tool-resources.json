@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "flatout-2-decomp",
+    "name": "FlatOut 2 decompilation",
+    "url": "https://github.com/ZackWilde27/FlatOut-2-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is an in-progress decompilation of FlatOut 2. The current recreation is Decomp2.cpp. FlatOut2.exe.gzf is a Ghidra project saved with Ghidra 11.0.3.",
+    "description_zh": "该仓库是 FlatOut 2 的进行中反编译。当前的重写在 Decomp2.cpp。FlatOut2.exe.gzf 是用 Ghidra 11.0.3 保存的工程。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ZackWilde27/FlatOut-2-decomp/blob/e22b2417f8c17c064fa08552cc7ec622d388f7cb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
