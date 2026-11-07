@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "asteroids-disassembly": {
+    "name": "asteroids-disassembly：《小行星》街机固件反汇编",
+    "requirements": [
+      "README 将该项目标为街机游戏《小行星》的固件。",
+      "GitHub 上该仓库的许可证元数据为空。"
+    ]
   }
 }
