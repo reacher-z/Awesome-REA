@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bmhero-decomp-case",
+    "name": "Bomberman Hero decompilation",
+    "url": "https://github.com/Bomberhackers/bmhero",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Bomberman Hero for the Nintendo 64, US release. It builds bmhero.z64.",
+    "description_zh": "这是任天堂 64 美版《Bomberman Hero》的进行中反编译。它构建 bmhero.z64。",
+    "requirements": [
+      "Place the US ROM at baserom.z64. The built ROM MD5 is ef2453bff7ad0c4bfa9ab0bd6324ebf3.",
+      "On Debian or Ubuntu, install make, git, build-essential, binutils-mips-linux-gnu, and Python newer than 3.7, then pip install -r requirements.txt. make setup extracts the ROM, and make rebuilds it.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Bomberhackers/bmhero/blob/a07c57e1ee9bd20d054a7180017d30f5aa86d70f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

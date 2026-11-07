@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "bmhero-decomp-case": {
+    "name": "炸弹人英雄反编译",
+    "requirements": [
+      "把美版 ROM 放在 baserom.z64。构建出的 ROM 的 MD5 为 ef2453bff7ad0c4bfa9ab0bd6324ebf3。",
+      "在 Debian 或 Ubuntu 上安装 make、git、build-essential、binutils-mips-linux-gnu，以及高于 3.7 的 Python，然后执行 pip install -r requirements.txt。make setup 提取 ROM，make 重新构建。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

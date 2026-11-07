@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -48,6 +48,7 @@
 - [**Animal Crossing: Wild World: matching Korean DS decompilation with differential runtime checks**](https://github.com/banatic/acww-decomp) - Reconstructs the ARM9 game code of Animal Crossing: Wild World’s Korean DS release as one C or C++ source per function, checked against the user’s ROM with the original Metrowerks compiler and linker. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/animal-crossing-wild-world-decomp-case/)</sub>
 - [**Animal Forest: an in-progress matching N64 decompilation**](https://github.com/zeldaret/af) - Rebuilds the Japanese Nintendo 64 release of Animal Forest (Dōbutsu no Mori) from C code reverse-engineered from the ROM, combined with assets and assembly extracted from a user-supplied ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/animal-forest-n64-decomp-case/)</sub>
 - [**BFM-decomp: Brave Fencer Musashi matching decompilation**](https://github.com/Druthulu/BFM-decomp) - Documents an agent-assisted reconstruction of the USA PlayStation game with a pinned compiler and whole-binary SHA-1 gates. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/bfm-decomp-case/)</sub>
+- [**Bomberman Hero decompilation**](https://github.com/Bomberhackers/bmhero) - This is a work-in-progress decompilation of Bomberman Hero for the Nintendo 64, US release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/bmhero-decomp-case/)</sub>
 - [**Breath of the Wild: per-function matching decompilation of the Switch executable**](https://github.com/zeldaret/botw) - Reimplements part of Breath of the Wild’s Switch v1.5.0 main executable in C++ and checks each function against the original machine code. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/botw-decomp-case/)</sub>
 - [**Castlevania: Symphony of the Night: matching decompilation across PlayStation, PSP and Saturn builds**](https://github.com/Xeeynamo/sotn-decomp) - Recreates C source for Castlevania: Symphony of the Night from its PlayStation, PSP and Saturn binaries, aiming for code that compiles byte for byte to the original game files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sotn-matching-decomp-case/)</sub>
 - [**DX-Ball: an REA-guided function-level reconstruction with Codex**](https://github.com/N0zoM1z0/dx-ball) - The author has Codex use REA’s Ghidra tools to inspect the English DX-Ball 1.07 executable and recover it as typed C/C++, then compiles each function with the original-era Visual C++ 4.0 and compares it byte for byte with the original after mapping relocations. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/dx-ball-rea-reconstruction-case/)</sub>
