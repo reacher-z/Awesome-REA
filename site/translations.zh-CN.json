@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "multi-backend-decompiler": {
+    "name": "decompiler",
+    "requirements": [
+      "Capstone 后端需要 Capstone 的 Python 绑定。",
+      "README 写明目前没有数据类型分析，而可再编译的输出需要这种分析。",
+      "测试二进制在 tests/。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "multi-backend-decompiler",
+    "name": "decompiler",
+    "url": "https://github.com/EiNSTeiN-/decompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "decompiler is a Python decompiler with IDA and Capstone backends. It follows van Emmerik's paper on static single assignment for decompilation. The README says it can decompile small functions with simple control flow, covers a limited set of x86 and x64 instructions, and currently restores call parameters for the System V x64 ABI.",
+    "description_zh": "decompiler 是用 Python 编写的反编译器，后端包括 IDA 和 Capstone。它依据 van Emmerik 关于面向反编译的静态单赋值的论文。README 写明它可以反编译控制流较简单的小函数，支持的 x86 和 x64 指令有限，目前只为 System V x64 ABI 恢复调用参数。",
+    "requirements": [
+      "The Capstone backend needs Capstone's Python bindings.",
+      "The README says data-type analysis is still absent, and that this analysis is needed for recompilable output.",
+      "Test binaries are in tests/.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/EiNSTeiN-/decompiler/blob/f7923b54233d5aa2118686d99ba93380063993ed/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
