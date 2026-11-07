@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "epoch-equinox",
+    "name": "Epoch & Equinox",
+    "url": "https://github.com/ZakyPew/epoch-equinox",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "class": "game",
+    "description_en": "Epoch & Equinox is one native player for The Legend of Zelda: Oracle of Ages and Oracle of Seasons. The USA/Australia Ages ROM roms/tlozooa.gbc has SHA-1 880374fb978b18af4aa529e2e32f7ffb4d7dd2f4. The USA/Australia Seasons ROM roms/tlozoos.gbc has SHA-1 ba1268290fb2b1b70505d2d7b5825fc8a4816a4b. The runtime interprets the loaded ROM. Rewind covers about 12 seconds. A voxel mode rebuilds rooms from the game's collision data. Platforms are Linux, Apple silicon macOS, and Windows.",
+    "description_zh": "Epoch & Equinox 是《塞尔达传说：不可思议的果实》时空之章和大地之章共用的一个原生播放器。美澳版时空之章 ROM roms/tlozooa.gbc 的 SHA-1 是 880374fb978b18af4aa529e2e32f7ffb4d7dd2f4。美澳版大地之章 ROM roms/tlozoos.gbc 的 SHA-1 是 ba1268290fb2b1b70505d2d7b5825fc8a4816a4b。运行时解释载入的 ROM。倒带大约覆盖 12 秒。体素模式用游戏自己的碰撞数据重建房间。平台是 Linux、Apple silicon macOS 和 Windows。",
+    "requirements": [
+      "Put the ROMs in roms/ beside the epoch binary. A source build runs ./setup.sh on Linux or macOS, or setup.ps1 on Windows with Visual Studio and vcpkg.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/ZakyPew/epoch-equinox/blob/d8d3cafede0db8b71106dc11ea97dc4186acda7e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
