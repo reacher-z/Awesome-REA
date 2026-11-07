@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "supermarioland-decomp-case",
+    "name": "Super Mario Land disassembly",
+    "url": "https://github.com/kaspermeerts/supermarioland",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a disassembly of Super Mario Land. It builds Super Mario Land (World) (Rev A). Sections that are not yet disassembled are filled from the original ROM.",
+    "description_zh": "该仓库是《Super Mario Land》的反汇编。它构建 Super Mario Land (World) (Rev A)。尚未反汇编的部分由原始 ROM 填入。",
+    "requirements": [
+      "Place the original ROM at baserom.gb. The built ROM's SHA-1 is 418203621b887caa090215d97e3f509b79affd3e.",
+      "RGBDS 0.3.5 and pypng.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/kaspermeerts/supermarioland/blob/618d00ed6c330928e106719533c6e294ae5d5726/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
