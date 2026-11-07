@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "haunting-ground-recomp",
+    "name": "Haunting Ground Recomp: native port of the PS2 game",
+    "url": "https://github.com/N900x4/HauntingGround-Recomp-Project",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "Haunting Ground Recomp builds a native Windows and Linux program from the user's own North American Haunting Ground ISO, SLUS-21075. The README describes translating the PS2 program into C and compiling it with a hand-written runtime, using Vulkan when a GPU provides it and a software renderer otherwise. Version 0.1 is an early test of the opening, the castle grounds, the first rooms, and the first meeting with Debilitas.",
+    "description_zh": "Haunting Ground Recomp 用用户自己的北美版《鬼屋魔影》ISO（SLUS-21075）构建原生 Windows 和 Linux 程序。README 描述把 PS2 程序翻译成 C，并用手写运行时编译；有 Vulkan 显卡时使用 Vulkan，否则使用软件渲染器。0.1 版是早期测试，覆盖片头、城堡庭院、最初的房间，以及与 Debilitas 的第一次相遇。",
+    "evidence_url": "https://github.com/N900x4/HauntingGround-Recomp-Project/blob/1db0f0ce71850e15b86faa16b7532212aedf0a02/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "Windows 10 or 11 64-bit, or 64-bit Linux with glibc 2.34 or later, python3, and SDL2. A Vulkan GPU is recommended. The ISO must be a plain image of the North American SLUS-21075 disc. The README asks for about 6 GB of free disk space.",
+      "The download includes the compiler and, on Windows, Python. European and Japanese discs are not supported. The README says version 0.1 was tested on one PC with Windows 11 and CachyOS, an AMD Ryzen CPU, and an NVIDIA RTX GPU, and that the download includes upscaled HD textures.",
+      "GitHub reports the license as GPL-3.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
