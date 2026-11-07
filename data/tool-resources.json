@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "stuntman-ignition-recomp",
+    "name": "Stunt Double: Reignition",
+    "url": "https://github.com/giangra/stuntdouble-reignition",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Stuntman: Ignition for the Xbox 360, 2007, to Windows with ReXGlue. The README says menus, career, and races play. The installer extracts the player's ISO and compiles the game. A hand build uses ReXGlue v0.10.0 and places default.xex in game/.",
+    "description_zh": "该项目用 ReXGlue 把 2007 年 Xbox 360 版《Stuntman: Ignition》重编译到 Windows。README 写明菜单、生涯和比赛可以玩。安装器解压玩家的 ISO 并编译游戏。手工构建使用 ReXGlue v0.10.0，并把 default.xex 放在 game/。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, Visual Studio 2022 with Clang, CMake, and Ninja, Git, and a Direct3D 12 GPU. The release installer is StuntmanSetup-<version>.exe.",
+      "License: MIT for this repository's code. Patches in patches/sdk/ follow ReXGlue's BSD-3-Clause license. The fonts Oswald and Big Shoulders Stencil are SIL Open Font License."
+    ],
+    "evidence_url": "https://github.com/giangra/stuntdouble-reignition/blob/b65211e04e63a3770e639c5fabd9de2aca4a5bd3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
