@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ms-anna-tts-case": {
+    "name": "Microsoft Anna：TTS20 引擎的逐位一致 C 重建",
+    "requirements": [
+      "需要 C99 编译器，以及你自己的 Anna 数据（来自 Windows Vista 或 7，或 Windows 7 语音安装包）。README 写明仓库没有微软的代码或数据。它要求不要使用 -ffast-math，并保持 -ffp-contract=off。",
+      "这是 README 内部称为 Mulan 的 SAPI 5 TTS20 引擎。README 给出的提取命令是 tools/anna_extract.py。",
+      "README 的端到端一行写明 579/579 条测试逐位一致，包括它列出的 SAPI XML 标记，并且 MSVC x86/x64、clang 和 GCC 结果相同。WMA Voice 9 一行写明全部 66218 个块加 25000 次随机读取与 Windows 的 32 位 WMSPDMOD.DLL 一致。",
+      "LICENSE 是 MIT 许可证，版权 2026 KamiKitsune420。语音数据仍属微软，且未包含在内。"
+    ]
   }
 }

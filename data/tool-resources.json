@@ -36528,5 +36528,37 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ms-anna-tts-case",
+    "name": "Microsoft Anna: a bit-exact C rebuild of the TTS20 engine",
+    "url": "https://github.com/KamiKitsune420/ms-anna-decomp",
+    "description_en": "Rebuilds Microsoft Anna, the Windows Vista and Windows 7 TTS20 voice, as C99 that reads the original voice data files. The README reports bit-exact PCM against the real engine on its test lines.",
+    "description_zh": "把 Microsoft Anna（Windows Vista 与 Windows 7 的 TTS20 语音）重建为读取原始语音数据文件的 C99。README 报告其测试句与真实引擎的 PCM 逐位一致。",
+    "evidence_url": "https://github.com/KamiKitsune420/ms-ana-decomp/blob/a8da0464124fb1ba1a67b0056524bafa4cff4d0d/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/KamiKitsune420/ms-ana-decomp/blob/a8da0464124fb1ba1a67b0056524bafa4cff4d0d/LICENSE"
+    ],
+    "requirements": [
+      "Needs a C99 compiler and your own Anna data from a Windows Vista or 7 install, or from the Windows 7 voices installer. The README says no Microsoft code or data is in the repository. It says not to use -ffast-math and to keep -ffp-contract=off.",
+      "This is the SAPI 5 TTS20 engine the README calls Mulan internally. tools/anna_extract.py is the command the README gives for turning an install or the voices installer into the data folder.",
+      "The README's end-to-end row says 579/579 test lines are bit-exact, including the SAPI XML tags it lists, and identical with MSVC x86/x64, clang, and GCC. Its WMA Voice 9 row says all 66218 blocks plus 25000 random reads match Windows' 32-bit WMSPDMOD.DLL.",
+      "LICENSE is the MIT License, copyright 2026 KamiKitsune420. The voice data remains Microsoft's and is not included."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "targets": [
+      "binary"
+    ]
   }
 ]
