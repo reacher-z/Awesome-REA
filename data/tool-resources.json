@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dk64-android",
+    "name": "Donkey Kong 64 Android port",
+    "url": "https://github.com/deivid22srk/dk64-recomp-android",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This ports Donkey Kong 64: Recompiled to native Android with the NDK, N64ModernRuntime, RT64 on Vulkan, RmlUi, and SDL2. The USA NTSC-U 1.0 ROM has SHA-1 cf806ff2603640a748fca5026ded28802f1f4a50. The app accepts .z64, .n64, or .v64 and byteswaps as needed. It requires Android 8.0 or newer on arm64-v8a and Vulkan 1.1 or newer. GitHub Actions publishes app-debug.apk as dk64recomp-android-debug.",
+    "description_zh": "该项目把 Donkey Kong 64: Recompiled 移植到原生 Android，使用 NDK、N64ModernRuntime、Vulkan 上的 RT64、RmlUi 和 SDL2。美版 NTSC-U 1.0 ROM 的 SHA-1 是 cf806ff2603640a748fca5026ded28802f1f4a50。应用接受 .z64、.n64 或 .v64，并在需要时转换字节序。它需要 arm64-v8a 上的 Android 8.0 或更新版本，以及 Vulkan 1.1 或更新版本。GitHub Actions 以 dk64recomp-android-debug 发布 app-debug.apk。",
+    "requirements": [
+      "Android 8.0 or newer, arm64-v8a, and a Vulkan 1.1 GPU. The first menu option loads the USA 1.0 ROM.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/deivid22srk/dk64-recomp-android/blob/e3f76fea34d035f26f8e79e085d733ceb08122f6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
