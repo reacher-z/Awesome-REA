@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sonic-r-reimpl",
+    "name": "Sonic R reimplementation",
+    "url": "https://github.com/jnmartin84/sonic-r",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "This reimplements the 1998 PC release of Sonic R as portable C. One game-logic codebase runs on Windows, macOS, and Linux through SDL2, and on the Dreamcast through KallistiOS. The player supplies the track, model, texture, and music data. Desktop and Dreamcast steps are in docs/desktop.md and docs/dreamcast.md.",
+    "description_zh": "该项目把 1998 年 PC 版《索尼克 R》重实现为可移植的 C。同一套游戏逻辑通过 SDL2 在 Windows、macOS 和 Linux 上运行，并通过 KallistiOS 在 Dreamcast 上运行。玩家提供赛道、模型、贴图和音乐数据。桌面和 Dreamcast 的步骤在 docs/desktop.md 和 docs/dreamcast.md。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/jnmartin84/sonic-r/blob/3da98f2e134eac82e45cd69660216fa0e4563ac5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

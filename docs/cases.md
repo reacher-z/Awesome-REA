@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -225,7 +225,7 @@
 - [**Vandal Hearts: native PC port built on matching decompilations**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - Builds on shao113’s matching decompilation of PlayStation Vandal Hearts, adds a Japanese matching tree, and carries both through to a native Windows and Linux port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### Engine reimplementations (47)
+### Engine reimplementations (48)
 
 - [**Age of Empires Free Software Remake: a re-implementation on the original data**](https://github.com/FolkertVanVerseveld/aoe) - Re-implements Microsoft’s Age of Empires and its Rise of Rome expansion as a cross-platform C++17 engine on SDL2 and OpenGL that loads the original game’s DRS archives and language.dll resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo: a reverse-engineered Minecraft server**](https://github.com/bravoserver/bravo) - Reimplements the server side of Minecraft’s Alpha- and Beta-era multiplayer in Python on Twisted; its documentation calls it a reverse-engineered implementation written from scratch, credits network traffic dumps and says general Minecraft data went to a community wiki. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/bravo-minecraft-server-case/)</sub>
@@ -269,6 +269,7 @@
 - [**SiegeFX: a Dungeon Siege engine reimplementation in alpha**](https://github.com/codingncaffeine/SiegeFX) - A C#/.NET 10 engine loads Dungeon Siege's original archives, scripts and models, with published alpha builds and an audit/parity ledger. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/siegefx-dungeon-siege-engine-case/)</sub>
 - [**Skate 3 Rust Engine: a Bevy rewrite built on Skate 3 reverse-engineering research**](https://github.com/SK8-ENGINE/skate-3-rust-engine) - Reimplements Skate 3’s skating, tricks, grinds and offboard movement in a new Rust and Bevy engine that runs on assets converted from the user’s own Xbox 360 copy, adding difficulty settings and a .skate custom-map format. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/skate-3-rust-engine-case/)</sub>
 - [**Snowball War: a bounded REA-assisted minigame reconstruction**](https://github.com/tuunanet/rea-ski-or-die-reconstruction) - The author uses REA’s Ghidra workflow to investigate the DOS Ski or Die binary, document Snowball War rules and rebuild that one minigame in Rust with SDL2. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/snowball-war-rea-case/)</sub>
+- [**Sonic R reimplementation**](https://github.com/jnmartin84/sonic-r) - This reimplements the 1998 PC release of Sonic R as portable C. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sonic-r-reimpl/)</sub>
 - [**Thyme: Command &amp; Conquer Generals: Zero Hour reimplementation**](https://github.com/TheAssemblyArmada/Thyme) - Thyme is an open source reimplementation of Command &amp; Conquer Generals: Zero Hour. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/thyme/)</sub>
 - [**touhou-engine: a Python reimplementation of Touhou gameplay**](https://github.com/SaigyoujYuyuko/touhou-engine) - touhou-engine reimplements Touhou danmaku gameplay in Python, with TH07: Perfect Cherry Blossom as its reference game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/touhou-engine-case/)</sub>
 - [**Untangle: a browser rebuild from REA and Ghidra evidence**](https://github.com/az9713/untangle-rebuild) - An author-documented REA/Ghidra investigation of the shipped Untangle Windows binary produces a single-page playable rebuild and a claim-by-claim grading receipt. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/untangle-rea-evidence-rebuild-case/)</sub>
