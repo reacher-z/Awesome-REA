@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bnpyc",
+    "name": "BNPyc",
+    "url": "https://github.com/Njord0/BNPyc",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "BNPyc is a Binary Ninja plugin that disassembles Python bytecode from version 3.0 through 3.10. It annotates branches and comparisons and inlines co_consts, co_names, and co_varnames. The README says IL lifting is not implemented.",
+    "description_zh": "BNPyc 是 Binary Ninja 插件，反汇编 Python 3.0 到 3.10 的字节码。它标注分支和比较，并内联 co_consts、co_names 和 co_varnames。README 写明中间语言提升还没有实现。",
+    "requirements": [
+      "Clone it into the Binary Ninja plugin folder and run python3 -m pip install -r requirements.txt. Open a .pyc file in Binary Ninja.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Njord0/BNPyc/blob/2bad86ee84dd371cff84919809f94982b8fad688/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
