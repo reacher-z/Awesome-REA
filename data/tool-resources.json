@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sacred-stones-recomp",
+    "name": "The Sacred Stones recompilation",
+    "url": "https://github.com/Lordingard/SacredStonesRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Fire Emblem: The Sacred Stones for the Game Boy Advance to Windows x64 and Android ARM64. The USA ROM SHA-1 is c25b145e37456171ada4b0d440bf88a19f4d509f. The runtime refuses any other checksum. The save is 32 KiB SRAM. Debug port 19842. Release 0.1.20 is SacredStonesRecomp-0.1.20-win64.zip. Android packages target Android 9 or newer.",
+    "description_zh": "该项目把 Game Boy Advance 版《火焰纹章 圣魔之光石》静态重编译到 Windows x64 和 Android ARM64。美版 ROM 的 SHA-1 是 c25b145e37456171ada4b0d440bf88a19f4d509f。运行时拒绝任何其他校验值。存档是 32 KiB SRAM。调试端口是 19842。0.1.20 发布包是 SacredStonesRecomp-0.1.20-win64.zip。Android 包面向 Android 9 或更新版本。",
+    "requirements": [
+      "A USA ROM with that SHA-1, and a GBA BIOS selected in the launcher. Windows runs SacredStonesRecomp.exe from the 0.1.20 zip.",
+      "The reviewed README does not name a license for this repository. It says the pinned gbarecomp and recomp-ui forks keep their upstream licenses."
+    ],
+    "evidence_url": "https://github.com/Lordingard/SacredStonesRecomp/blob/214b273aeabb3e46a85d24cadc62f5b30b40a8df/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
