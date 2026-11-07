@@ -9,7 +9,8 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_readme import (BADGES_BEGIN, BADGES_END, BEGIN, CONTENTS_BEGIN, CONTENTS_END, PAPER_FILES, PAPERS_BEGIN, lead_sentence,
-                         plain_text, render_badges, replace_badges, render_catalog, render_contents, render_finder, render_papers)
+                         plain_text, render_badges, replace_badges, render_catalog, render_contents, render_finder, render_papers,
+                         rendered_files)
 from build_repository_index import SUMMARY_BEGIN
 
 
@@ -121,11 +122,30 @@ class ReadmeContentsTest(unittest.TestCase):
         self.assertTrue(rendered.startswith('- [按任务查找](#按任务查找)\n- [使用数据](#使用数据)\n- [资源](#资源) (1)\n  - [网站](#website) (1)\n'),
                         rendered)
         self.assertIn('\n- [完整仓库索引](#完整仓库索引) (10)\n', rendered)
-        self.assertTrue(rendered.endswith('\n- [完整仓库索引](#完整仓库索引) (10)\n- [关于](#关于)\n\n本页还有：[参与贡献](#参与贡献)\n'), rendered)
+        self.assertTrue(rendered.endswith('\n- [完整仓库索引](#完整仓库索引) (10)\n- [关于](#关于)\n- [Star 历史](#star-历史)\n\n本页还有：[参与贡献](#参与贡献)\n'), rendered)
         # Neither README has a contributors section, so Contents lists none.
         self.assertNotIn('贡献者', rendered)
         self.assertNotIn('Contributors', render_contents([resource()], [paper()], 10, 'en'))
         self.assertNotIn('awesomerea.org', rendered)
+
+    def test_star_history_is_localized_theme_aware_and_preserved_by_generation(self):
+        rebuilt = rendered_files([resource()], [paper()], 10)
+        chart = 'https://api.star-history.com/svg?repos=reacher-z/Awesome-REA&amp;type=Date'
+        for name, heading, alt in (
+            ('README.md', 'Star History', 'Awesome REA GitHub stars over time'),
+            ('README.zh-CN.md', 'Star 历史', 'Awesome REA 的 GitHub Star 数随时间的变化'),
+        ):
+            with self.subTest(readme=name):
+                text = (ROOT / name).read_text(encoding='utf-8')
+                marker = f'## {heading}\n'
+                self.assertEqual(text.count(marker), 1)
+                section = text.split(marker, 1)[1].split('\n---', 1)[0]
+                self.assertIn('https://www.star-history.com/#reacher-z/Awesome-REA&Date', section)
+                self.assertIn('<a href="https://www.star-history.com/#reacher-z/Awesome-REA&amp;Date">', section)
+                self.assertIn(f'<source media="(prefers-color-scheme: dark)" srcset="{chart}&amp;theme=dark">', section)
+                self.assertIn(f'<source media="(prefers-color-scheme: light)" srcset="{chart}">', section)
+                self.assertIn(f'<img alt="{alt}" src="{chart}" width="100%">', section)
+                self.assertIn(marker + section, rebuilt[name])
 
     def test_resource_line_keeps_title_opening_sentence_tags_and_full_entry(self):
         record = resource(name='Fixture [tool]', name_zh='测试 [工具]',

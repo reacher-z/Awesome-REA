@@ -68,6 +68,7 @@ Featured benchmarks:
   - [Most recent papers](#most-recent-papers) (10)
 - [Full Repository Index](#full-repository-index) (3,309)
 - [About](#about)
+- [Star History](#star-history)
 
 Also on this page: [Contributing](#contributing)
 
@@ -1139,6 +1140,18 @@ Original descriptions and code are [MIT licensed](LICENSE); linked projects reta
 To cite the collection itself, use its [citation metadata](CITATION.cff). Cite listed papers, tools and other works from their own primary sources, and give the commit or snapshot date with any scan-derived counts.
 
 For AI-built software and agent training or evaluation resources, explore [AI Can What?](https://aicanwhat.com/) across games, websites and applications.
+
+## Star History
+
+[Explore the interactive star history](https://www.star-history.com/#reacher-z/Awesome-REA&Date).
+
+<a href="https://www.star-history.com/#reacher-z/Awesome-REA&amp;Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=reacher-z/Awesome-REA&amp;type=Date&amp;theme=dark">
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=reacher-z/Awesome-REA&amp;type=Date">
+    <img alt="Awesome REA GitHub stars over time" src="https://api.star-history.com/svg?repos=reacher-z/Awesome-REA&amp;type=Date" width="100%">
+  </picture>
+</a>
 
 ---
 

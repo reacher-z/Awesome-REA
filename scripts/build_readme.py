@@ -177,6 +177,7 @@ README_HEADINGS = {
     'papers': ('Papers', '论文'),
     'index': INDEX_HEADINGS,
     'about': ('About', '关于'),
+    'star-history': ('Star History', 'Star 历史'),
 }
 # The one ### heading under Papers: the newest papers, before the paper files' full lists.
 RECENT_HEADING = ('Most recent papers', '最新论文')
@@ -482,7 +483,8 @@ def render_contents(records, papers, index_count, language):
     lines += ['- ' + item(README_HEADINGS['papers'], 'papers', len(papers))]
     lines += ['  - ' + line for line in paper_sections]
     lines += ['- ' + item(README_HEADINGS['index'], count=index_count),
-              '- ' + item(README_HEADINGS['about'])]
+              '- ' + item(README_HEADINGS['about']),
+              '- ' + item(README_HEADINGS['star-history'])]
     # Contributing stays out of the list (awesome-lint's ToC check excludes it) but keeps its Contents link.
     lines += ['', ('本页还有：[参与贡献](#参与贡献)' if zh else 'Also on this page: [Contributing](#contributing)')]
     return '\n'.join(lines) + '\n'
