@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "windbg-decompile-ext": {
+    "name": "Windbg Decompile Extension：用 LLM 生成伪代码的 WinDbg 扩展",
+    "requirements": [
+      "需要 Windows x64 版 WinDbg。文档中的命令是 !decomp，当前范围是仅限 x64、通过 DbgEng 进行的实时内存分析。",
+      "若存在 third_party/zydis 中的 Zydis 源码树，默认构建会使用它。third_party/dbgeng 可以放置可选的 dbgeng.h 和 dbgeng.lib 副本。"
+    ]
   }
 }
