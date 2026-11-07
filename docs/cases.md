@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -136,7 +136,7 @@
 - [**Wind Waker HD decompilation: functions verified against the recompiled Wii U game**](https://github.com/ZeldaWWHDDecomp/wwhd) - Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### Static recompilations (48)
+### Static recompilations (49)
 
 - [**Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port**](https://github.com/BanjoRecomp/BanjoRecomp) - Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Banjo-Kazooie into a native port on N64ModernRuntime, rendered by RT64 and extended with mod support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/banjo-recompiled-case/)</sub>
 - [**C2C: hybrid recompilation and hand decompilation of Crash Bandicoot 2**](https://github.com/ughman/c2c) - An early reverse-engineering effort on PlayStation Crash Bandicoot 2 that converts the engine’s MIPS machine code directly into a very large C file and runs it against a modified PCSX-R emulator library for hardware I/O. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -163,6 +163,7 @@
 - [**MediEvil Recomp: a PlayStation static recompilation to C#**](https://github.com/BlackLabelHQ/MediEvilRecomp) - Statically recompiles the North American PlayStation release of MediEvil into C# with the RecompOne recompiler and runtime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/medievil-recomp-case/)</sub>
 - [**Mega Man X Recompiled: a snesrecomp static recompilation**](https://github.com/mstan/MegaManXSNESRecomp) - Statically translates the 65816 CPU code of the SNES Mega Man X (USA Rev 1) to C with the snesrecomp framework; the PPU, audio, DMA and other hardware run in the framework’s runtime, and a LakeSnes-derived interpreter executes whatever the static pass cannot prove. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/megaman-x-snes-recomp-case/)</sub>
 - [**Melee Unlocked: a Windows source port and static recompilation of Melee**](https://github.com/Hero88go/melee-unlocked) - A beta Windows build of Super Smash Bros. Melee (NTSC 1.02) with two engines: a source port that compiles the doldecomp decompilation as a native library, and a static recompilation that translates the retail DOL's PowerPC code and Slippi's Gecko codes into C++. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/melee-unlocked-case/)</sub>
+- [**NSMB Wii Multiplayer Recompilation: native port of New Super Mario Bros. Wii**](https://github.com/WitherBlitz/NSMB-Wii-Multiplayer-Recompilation) - NSMB Wii Multiplayer Recompilation is a native port of New Super Mario Bros. Wii made with static recompilation on WiiCompiled. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/nsmb-wii-multiplayer-recomp-case/)</sub>
 - [**Pinyon Shift: a ShiftGlue static recompilation of Forza Horizon for PC**](https://github.com/arcanite24/pinyon-shift) - Builds a native port of the Xbox 360 release of Forza Horizon by translating its PowerPC executable ahead of time into C++ with ShiftGlue, the author’s fork of ReXGlue, and compiling it on the player’s machine from their own disc. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pinyon-shift-forza-horizon-recomp-case/)</sub>
 - [**Project Arwing (2): Star Fox 2 recompiled from a matching disassembly**](https://github.com/carlosrmz009/arwing2) - Rebuilds Star Fox 2 from a coverage-seeded 65816 and SuperFX disassembly that reassembles to the original ROM, then translates it statically to C for native Windows, macOS and Linux builds. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/project-arwing-2-star-fox-2-recomp-case/)</sub>
 - [**Project Arwing: Star Fox recompiled from a matching disassembly**](https://github.com/carlosrmz009/arwing) - Disassembles Star Fox’s 65816 and SuperFX code from runtime coverage and recursive descent, reassembles it into the original ROM, then translates it statically to C on a from-scratch SNES runtime for Windows, macOS and Linux. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/project-arwing-star-fox-recomp-case/)</sub>
