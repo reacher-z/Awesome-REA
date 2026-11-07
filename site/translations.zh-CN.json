@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "tmc-pc": {
+    "name": "塞尔达传说 缩小帽 PC 移植",
+    "requirements": [
+      "把 ROM 放在仓库根目录并运行 python3 build.py。脚本使用 xmake、SDL3、libpng、fmt 和 nlohmann-json。",
+      "审阅的 README 没有给移植本身写出许可证。复制的 agbplay 文件仍是 LGPL-3.0。"
+    ]
   }
 }

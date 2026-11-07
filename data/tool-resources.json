@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tmc-pc",
+    "name": "The Minish Cap PC port",
+    "url": "https://github.com/HayatoG/tmc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This is a native PC port of The Legend of Zelda: The Minish Cap for x86-64 Linux, Windows, and macOS. It uses SDL3, the ViruaPPU software renderer, and agbplay. The USA ROM baserom.gba has SHA-1 b4bd50e4131b027c334547b4524e2dbbd4227130. The EU ROM baserom_eu.gba has SHA-1 cff199b36ff173fb6faf152653d1bccf87c26fb7. Prebuilt archives are named tmc-usa-{linux,windows,macos}-<version>.tar.gz and are published from 999sian/tmc. A Switch build is in platforms/switch.",
+    "description_zh": "这是《塞尔达传说 缩小帽》面向 x86-64 Linux、Windows 和 macOS 的原生 PC 移植。它使用 SDL3、ViruaPPU 软件渲染器和 agbplay。美版 ROM baserom.gba 的 SHA-1 是 b4bd50e4131b027c334547b4524e2dbbd4227130。欧版 ROM baserom_eu.gba 的 SHA-1 是 cff199b36ff173fb6faf152653d1bccf87c26fb7。预编译包名为 tmc-usa-{linux,windows,macos}-<version>.tar.gz，从 999sian/tmc 发布。Switch 构建在 platforms/switch。",
+    "requirements": [
+      "Place the ROM in the repository root and run python3 build.py. The script uses xmake, SDL3, libpng, fmt, and nlohmann-json.",
+      "The reviewed README does not name a license for the port. Copied agbplay files remain LGPL-3.0."
+    ],
+    "evidence_url": "https://github.com/HayatoG/tmc/blob/70e61b45c2203a220ead3c995a61b3119bf8b9c5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
