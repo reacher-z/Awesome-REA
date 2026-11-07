@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "b2recomp",
+    "name": "B2recomp: static recompilation of Bayonetta 2",
+    "url": "https://github.com/K0NL/B2recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "static-recompilation",
+    "description_en": "B2recomp is an unofficial static recompilation of the Nintendo Switch version of Bayonetta 2 for Windows. The README says it translates that version's AArch64 program code to C on the user's PC from the user's dumped copy, then runs it with a reimplemented system layer and maps the NVN graphics API to Vulkan.",
+    "description_zh": "B2recomp 是任天堂 Switch 版《猎天使魔女 2》面向 Windows 的非官方静态重编译。README 写明它在用户的 PC 上，根据用户自己转储的副本，把该版本的 AArch64 程序代码翻译成 C，再用重新实现的系统层运行，并把 NVN 图形接口映射到 Vulkan。",
+    "evidence_url": "https://github.com/K0NL/B2recomp/blob/bec514e9fd8e45f3f1d813dc0b24fc8c2542ebec/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The README says the translation uses the user's own dumped copy of the Switch game. It says the repository contains no game code, game assets, Nintendo SDK code, firmware, system fonts, or encryption keys.",
+      "The documented target is Windows, with threads, file system, audio, input, and NVN-on-Vulkan in the reimplemented system layer.",
+      "GitHub reports the repository license as GPL-3.0."
+    ],
+    "verification": "source-reviewed"
   }
 ]
