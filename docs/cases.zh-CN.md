@@ -4,7 +4,7 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
@@ -12,7 +12,7 @@
 - [Game · 游戏](#game) (239)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
-- [Firmware and Hardware · 固件与硬件](#firmware) (19)
+- [Firmware and Hardware · 固件与硬件](#firmware) (20)
 - [Protocol · 协议](#protocol) (91)
 
 <a id="website"></a>
@@ -407,6 +407,7 @@
 - [**Supermodel：Real3D Pro-1000 图像生成器的初步模拟**](https://github.com/trzy/Supermodel) - 为 Supermodel 街机模拟器加入对 Real3D Pro-1000 的模拟。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/supermodel-real3d-pro1000-emulation-case/)</sub>
 - [**flipper-telink：Tuya Zigbee 遥控器的替换固件**](https://github.com/ngxson/flipper-telink) - 一款 Flipper Zero 应用，以位操作驱动 Telink 的 SWire 调试接口，用于转储并重刷 TLSR825x Zigbee 设备；仓库还附有对转储固件的静态分析笔记，以及为其中两款设备全新编写的固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/flipper-telink-tuya-remote-firmware-case/)</sub>
 - [**ThinkPad IMX471：为 Linux 恢复相机调校信息**](https://github.com/cschalle/mipi-fixes-x1-aura) - 从 Intel Windows 驱动包中恢复选定的相机调校结构，用于修复一个 ThinkPad 型号在 Linux 下的图像采集。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thinkpad-imx471-camera-case/)</sub>
+- [**F3DEX2**](https://github.com/Mr-Wiseguy/f3dex2) - F3DEX2 是任天堂 64 的 F3DEX2 和 F3DZEX2 RSP 微码家族的匹配反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f3dex2-disasm/)</sub>
 
 <a id="protocol"></a>
 ## Protocol · 协议

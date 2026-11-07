@@ -4,7 +4,7 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
@@ -12,7 +12,7 @@
 - [Game](#game) (239)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
-- [Firmware and Hardware](#firmware-and-hardware) (19)
+- [Firmware and Hardware](#firmware-and-hardware) (20)
 - [Protocol](#protocol) (91)
 
 <a id="website"></a>
@@ -407,6 +407,7 @@
 - [**Supermodel: initial Real3D Pro-1000 image-generator emulation**](https://github.com/trzy/Supermodel) - Adds emulation of Real3D’s Pro-1000, the SCSI-attached image generator from which Sega’s Model 3 graphics hardware derives, to the Supermodel arcade emulator. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/supermodel-real3d-pro1000-emulation-case/)</sub>
 - [**flipper-telink: replacement firmware for Tuya Zigbee remotes**](https://github.com/ngxson/flipper-telink) - A Flipper Zero app that bit-bangs Telink’s SWire debug interface to dump and reflash TLSR825x Zigbee devices, with static-analysis notes on the dumps and freshly written firmware for two of them. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/flipper-telink-tuya-remote-firmware-case/)</sub>
 - [**ThinkPad IMX471: recovering camera tuning for Linux**](https://github.com/cschalle/mipi-fixes-x1-aura) - Recovers selected camera-tuning structures from an Intel Windows driver package and uses them to repair Linux image capture on one ThinkPad model. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/thinkpad-imx471-camera-case/)</sub>
+- [**F3DEX2**](https://github.com/Mr-Wiseguy/f3dex2) - F3DEX2 is a set of matching disassemblies of the Nintendo 64 F3DEX2 and F3DZEX2 RSP microcode family. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/f3dex2-disasm/)</sub>
 
 <a id="protocol"></a>
 ## Protocol
