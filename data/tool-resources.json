@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "blastcorps-decomp",
+    "name": "Blast Corps decompilation",
+    "url": "https://github.com/retroplastic/blastcorps",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a decompilation of Blast Corps for the Nintendo 64. Named ROMs are the USA version, USA revision 1, the Japanese Blastdozer, and the European English and German version. Naming of the source and data is still in progress.",
+    "description_zh": "该仓库是任天堂 64 游戏 Blast Corps 的反编译。列出的 ROM 有美版、美版第 1 修订、日版 Blastdozer，以及欧洲英德版。源码和数据的命名仍在进行。",
+    "requirements": [
+      "Clone with the splat submodule. The documented first build uses a US revision 1.0 ROM at the repository root. USA SHA-1 185a6ef7ba1adb243278062c81a7d4e119bda58c. USA revision 1 SHA-1 483f7161aea39de8b45c9fbc70a2c3883c4dea8c.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/retroplastic/blastcorps/blob/baa807e502c0b8d608aea4e26fe58752d2797f01/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

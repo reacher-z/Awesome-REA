@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "blastcorps-decomp": {
+    "name": "Blast Corps 反编译",
+    "requirements": [
+      "克隆时包含 splat 子模块。文档中的第一次构建使用放在仓库根目录的美版 1.0 ROM。美版 SHA-1 是 185a6ef7ba1adb243278062c81a7d4e119bda58c。美版第 1 修订 SHA-1 是 483f7161aea39de8b45c9fbc70a2c3883c4dea8c。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
