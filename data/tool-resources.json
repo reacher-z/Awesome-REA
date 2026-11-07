@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openemperor",
+    "name": "OpenEmperor",
+    "url": "https://github.com/oliverjessner/OpenEmperor",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenEmperor 0.1.0-alpha.2 is a clean-room reimplementation of Emperor: Rise of the Middle Kingdom for Apple silicon macOS. It includes a playable city sandbox and an optional original-economy experiment. Original campaigns and save games are unsupported. The first launch asks for an installed or extracted Emperor data directory. The program is build/openemperor. Space pauses, and F5 and F9 save and load.",
+    "description_zh": "OpenEmperor 0.1.0-alpha.2 是《Emperor: Rise of the Middle Kingdom》面向 Apple silicon macOS 的净室重新实现。它包含一个可玩的城市沙盒和一个可选的原版经济实验。原版战役和原版存档不受支持。第一次启动要求选择已安装或已提取的 Emperor 数据目录。程序是 build/openemperor。空格暂停，F5 和 F9 存读。",
+    "requirements": [
+      "Xcode Command Line Tools, CMake, and OpenSSL 3. cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_ARCHITECTURES=arm64, then cmake --build build --parallel.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/oliverjessner/OpenEmperor/blob/cc53e7037dac4ebd4da6b68d382a6e898890716b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

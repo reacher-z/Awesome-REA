@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "openemperor": {
+    "name": "OpenEmperor",
+    "requirements": [
+      "需要 Xcode 命令行工具、CMake 和 OpenSSL 3。运行 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_ARCHITECTURES=arm64，然后运行 cmake --build build --parallel。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
