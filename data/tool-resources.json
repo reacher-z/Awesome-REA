@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fuel-decomp",
+    "name": "FUEL decompilation",
+    "url": "https://github.com/widberg/FUELDecompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This decompiles FUEL, the 2009 PC game by Asobo Studio, US retail. The executable FUEL.exe has SHA-256 ac1b2077137b7c6299c344111857b032635fe3d4794bc5135dad7c35feeda856. The build uses the patched MSVC 8.0 compiler and the August 2008 DirectX SDK.",
+    "description_zh": "该项目反编译 Asobo Studio 2009 年的 PC 游戏《FUEL》美区零售版。可执行文件 FUEL.exe 的 SHA-256 为 ac1b2077137b7c6299c344111857b032635fe3d4794bc5135dad7c35feeda856。构建使用打过补丁的 MSVC 8.0 编译器和 2008 年 8 月的 DirectX SDK。",
+    "requirements": [
+      "Git, CMake, Ninja, Python 3, msvc8.0p, and the August 2008 DirectX SDK. Configure from the Visual Studio 2005 command prompt with FUEL_INSTALL_DIR and DXSDK_DIR.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/widberg/FUELDecompilation/blob/bd6b69976602b2758ab8559a1557fde24861f193/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
