@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "alien-resurrection-recomp-case",
+    "name": "Alien Resurrection: Recompiled",
+    "url": "https://github.com/DiegoDeDios/AlienReRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Alien Resurrection: Recompiled is a native macOS, Windows, and Linux port of Alien Resurrection for the PlayStation, USA SLUS-00633. The MIPS code is statically recompiled, and a runtime stands in for the PlayStation BIOS and hardware.",
+    "description_zh": "Alien Resurrection: Recompiled 是 PlayStation 美版《异形：复活》SLUS-00633 的 macOS、Windows 和 Linux 原生移植。MIPS 代码经过静态重编译，运行时代替 PlayStation 的 BIOS 和硬件。",
+    "requirements": [
+      "The reviewed README does not name a license in the opening sections."
+    ],
+    "evidence_url": "https://github.com/DiegoDeDios/AlienReRecomp/blob/75cb03139436b78938e17f30561d47ec9b2ab3c2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
