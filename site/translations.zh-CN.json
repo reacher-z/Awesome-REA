@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "openag-case": {
+    "name": "OpenAG：Adrenaline Gamer 客户端重实现",
+    "requirements": [
+      "Windows 构建使用 Visual Studio 2019 或 Visual Studio 2022。",
+      "README 包含 Valve 的 Half-Life 1 SDK 许可证文本。"
+    ]
   }
 }

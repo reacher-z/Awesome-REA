@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openag-case",
+    "name": "OpenAG: reimplementation of the Adrenaline Gamer client",
+    "url": "https://github.com/YaLTeR/OpenAG",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "OpenAG is an open-source client for the Half-Life mod Adrenaline Gamer, rewritten on a current Half-Life SDK. The README says it keeps compatibility with existing servers while adding features and bug fixes.",
+    "description_zh": "OpenAG 是《半条命》模组 Adrenaline Gamer 的开源客户端，在较新的 Half-Life SDK 上重写。README 写明它在增加功能和修复错误的同时，仍能连接现有服务器。",
+    "requirements": [
+      "Windows builds use Visual Studio 2019 or Visual Studio 2022.",
+      "The README includes the Half-Life 1 SDK license text from Valve."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/YaLTeR/OpenAG/blob/83e8d913c75a11155cd4de9435e1697c112e3d54/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
