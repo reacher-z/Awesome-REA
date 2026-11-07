@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "yfm-recompiled",
+    "name": "Forbidden Memories recompiled",
+    "url": "https://github.com/Unchiga/Yu-Gi-Oh-Forbidden-Memories-Recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This project rebuilds the USA PlayStation game Yu-Gi-Oh! Forbidden Memories as a native Windows and Linux program, with a macOS ARM64 source build. The first launch takes the USA disc .bin. make match rebuilds SLUS_014.11. The reviewed progress table lists 1,134 of 1,134 game C functions matched, 356,080 bytes. European English, French, German, Italian, and Spanish text is included. memories-pc.exe and ./memories-pc are the release programs. From source, the .bin goes in game/ and play.bat or ./play.sh builds it.",
+    "description_zh": "这个项目把美版 PlayStation 游戏《游戏王：禁忌的记忆》重建成原生 Windows 和 Linux 程序，并有 macOS ARM64 源码构建。第一次启动使用美版光盘的 .bin。make match 重建 SLUS_014.11。审阅的进度表列出 1,134 个游戏 C 函数全部匹配，共 356,080 字节。仓库包含欧版英语、法语、德语、意大利语和西班牙语文本。发行程序是 memories-pc.exe 和 ./memories-pc。从源码构建时，把 .bin 放在 game/，用 play.bat 或 ./play.sh 构建。",
+    "requirements": [
+      "A USA disc .bin. Linux source builds need gcc and Python 3. Apple Silicon builds need Python 3 and the Xcode command-line tools.",
+      "License: MIT for the PC port under src/pc, tools/pc, tests/pc, mods, examples, and the build and play scripts."
+    ],
+    "evidence_url": "https://github.com/Unchiga/Yu-Gi-Oh-Forbidden-Memories-Recompiled/blob/aceac3782902746f35ddb0148809450933327cb3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
