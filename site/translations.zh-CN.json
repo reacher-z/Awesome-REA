@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "uqbt": {
+    "name": "UQBT",
+    "requirements": [
+      "按 README.make 操作。在 Linux 上，取消 Makefile 里 ISLINUX 的注释。重新生成解码器时需要 bison++ 和 flex++。",
+      "审阅的 README.make 没有写许可证。"
+    ]
   }
 }
