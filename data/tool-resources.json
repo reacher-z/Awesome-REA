@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dao-recomp-case",
+    "name": "Dragon Age: Origins — Recompiled",
+    "url": "https://github.com/96dot/Dragon-Age-Origins-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Dragon Age: Origins — Recompiled is a static recompilation of the Xbox 360 game into a native x86-64 Windows program, with a Direct3D 12 renderer based on Xenia's.",
+    "description_zh": "Dragon Age: Origins — Recompiled 把 Xbox 360 版《龙腾世纪：起源》静态重编译为原生 x86-64 Windows 程序，Direct3D 12 渲染器基于 Xenia。",
+    "requirements": [
+      "The player supplies an ISO of the Xbox 360 disc, title ID 454108C0. The supported edition is English, Italian, and Spanish, media ID 186A1115. French and German discs are not supported.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/96dot/Dragon-Age-Origins-Recomp/blob/3ce7e37152be95b4458daf6d9bdda21d1d0a0bdb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
