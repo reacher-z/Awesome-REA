@@ -11742,6 +11742,7 @@
     "description_zh": "将《Silent Hill》的 PlayStation 1 代码重建为 C，目标是编译回与原版一致的机器码。项目声明不会做 PC 移植，游戏代码由人工逆向完成，而不是由模型生成。",
     "evidence_url": "https://github.com/shdecompilations/silent-hill-decomp/blob/cff38422fce4037342ca7bba9b691d6d86c8718f/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit cff38422. The README describes an in-progress matching decompilation: the progress percentage is the share of compiled code for which C has been written that compiles identically to the original assembly. Reaching 100% would mean every function matches; the reviewed README does not claim that point has been reached.",
@@ -11768,6 +11769,7 @@
     "description_zh": "把用户自备的《Need for Speed: Underground 2》SPEED2.EXE 从 32 位 x86 译成 C，并在 Windows 和 Android 上运行。仓库提供的是重编译工具和宿主，不包含游戏本身。",
     "evidence_url": "https://github.com/codepdbh/nfsu2-recompiled/blob/1aac7a9dfb953b305a1ecd795ab53f21daefe598/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 1aac7a9d, which the README presents as a static recompilation of SPEED2.EXE into C with a fork of pcrecomp. Windows x86 and Android ARM64 are the documented platforms. Graphics are described as Direct3D 9 or Vulkan through DXVK; audio as AAudio or DirectSound.",
@@ -11793,6 +11795,7 @@
     "description_zh": "在 PSPRecomp 静态重编译器上构建《Grand Theft Auto: Liberty City Stories》的 PC 移植。玩家需要自行提供解密后的美版 v1.05 可执行文件和光盘中的 PSP_GAME 目录。",
     "evidence_url": "https://github.com/elmasas/lcs-recomp/blob/1132a76e59a29d7395635a5239a0d4aadd948385/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 1132a76e. The README requires the US v1.05 release ULUS-10041. A decrypted EBOOT.ELF and the disc PSP_GAME folder go in game/ for a release build, or lcs/game/ when building from source. Game files are not included.",
@@ -11818,6 +11821,7 @@
     "description_zh": "README 称之为 HaloPad 的预览版，用用户自备的副本在 iPhone、iPad 和 Apple 芯片 Mac 上构建《Halo: Combat Evolved》。文档描述了原版 Xbox 战役、Custom Edition 服务器和在线对战，且不附带游戏。",
     "evidence_url": "https://github.com/chrissotraidis/projectreach/blob/962960932fe96519b3d70a31a6a3b088513e5272/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 96296093, which the README labels version 0.3 and status preview. Supported hosts are iOS and iPadOS 17.4 or later, and macOS 14.4 or later on Apple silicon. There is no downloadable app; the user builds it.",
@@ -11843,6 +11847,7 @@
     "description_zh": "把 Xbox 360 版《FIFA Street》（2012）重编译为 Windows 程序，附带安装器、启动器和社区在线对战。游戏副本须由用户自备。",
     "evidence_url": "https://github.com/samuelit0davila/fifa-street-pc-port/blob/93ea77cd5d8ada9f563d042d93460cdd6cde5146/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 93ea77cd. The README says ReStreet is a Windows PC version made by recompiling the Xbox 360 game, with a one-file installer, a launcher, and free online play on community servers in Europe and South America. Windows 10 or 11 is the stated host.",
@@ -11870,6 +11875,7 @@
     "description_zh": "读取 PSP 的 Allegrex 可执行文件，预先生成 C++，并在原生宿主上运行，而不是使用 PSP 解释器。第一个可用配置是《Grand Theft Auto: Vice City Stories》。",
     "evidence_url": "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit f6e7d415. The README splits a reusable framework from game profiles. The framework loads ELF/PRX files, decodes Allegrex/MIPS, and emits C++ translation units. An empty PSPRECOMP_PROFILE builds the core, analyzer, recompiler, and tests without a game.",
@@ -11896,6 +11902,7 @@
     "description_zh": "把 PSPRecomp 的《Vice City Stories》配置放到 Android 上，使用 Vulkan 渲染，并同时记录 Windows DirectX 12 构建。PSP 游戏数据须由用户自备。",
     "evidence_url": "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/9fd696f8d85f11ba36292c0c0fbe5403e8067359/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 9fd696f8, which the README calls beta 0.3.0. It says the game runs on Android with a Vulkan GPU renderer, widescreen, cinematic voices, a free camera, and save states. A 30 FPS PSP-resolution mode and a 32-bit Android build are also described. The author names a Samsung Galaxy S25 Ultra as a test device; that is not a general device result.",
@@ -11922,6 +11929,7 @@
     "description_zh": "构建一个开源操作系统，目标是运行为 Windows NT 家族编写的应用程序和驱动程序。所审阅的 README 把兼容工作集中在 Windows Server 2003，并安装到 FAT16 或 FAT32 启动分区。",
     "evidence_url": "https://github.com/reactos/reactos/blob/fae4549cb0cd6d5867e65e61c2bc29985b57bc98/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at fae4549c. The README describes a GPLv2 operating system compatible with applications and drivers for Windows NT 4, 2000, XP, 2003, Vista and 7, with current focus on Windows Server 2003 compatibility. The linked release is 0.4.16.",
@@ -11948,6 +11956,7 @@
     "description_zh": "用自行实现的原生协议与 iOS 设备服务通信，不依赖 Apple 的库，也不需要越狱。命令行工具覆盖文件、备份、应用和其他设备服务。",
     "evidence_url": "https://github.com/libimobiledevice/libimobiledevice/blob/fa0f79190142bc309307967c058f89c1b36eb6b8/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at fa0f7919. The README says the library implements native iOS service protocols, does not depend on proprietary libraries, and does not require jailbreaking. It is tested on Linux, macOS, Windows and Android.",
@@ -11973,6 +11982,7 @@
     "description_zh": "替换受支持智能电烙铁上的原厂固件，从 TS100 开始，也包括 Pinecil。它实现常规温度控制，并加上电池截止电压和多种语言。",
     "evidence_url": "https://github.com/Ralim/IronOS/blob/c343478d38232b0c4a6d36e31bcfabe67867f00f/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at c343478d. The README says the project was formerly named TS100 and began as alternative firmware for that iron, then grew to more devices. It tells users to read the installation guide before flashing.",
@@ -11998,6 +12008,7 @@
     "description_zh": "制作通过 Apple“查找”网络上报位置的个人蓝牙追踪标签，并提供用来查询该网络的 Mac 应用。标签是用户自己的设备，不是 Apple 硬件。",
     "evidence_url": "https://github.com/seemoo-lab/openhaystack/blob/ea05dadb9e6e71075ef08afb5c2087302fbb7210/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at ea05dadb. The README presents OpenHaystack as a framework for tracking personal Bluetooth devices via Apple's Find My network, for tags on physical objects or other Bluetooth devices such as notebooks.",
@@ -12024,6 +12035,7 @@
     "description_zh": "面向 YouTube、YouTube Music 和 PeerTube 的 Android 播放器，不使用这些网站的官方应用。它可以搜索、排队和播放流媒体，包括字幕。",
     "evidence_url": "https://github.com/TeamNewPipe/NewPipe/blob/d7d6f25c031a43ec62dd37acffa5ce379d0f70cf/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at d7d6f25c. The README calls NewPipe a libre lightweight streaming front end for Android and lists YouTube, YouTube Music, and PeerTube plus its instances as supported sites.",
@@ -12048,6 +12060,7 @@
     "description_zh": "用一个程序替换经典冒险游戏和 RPG 的可执行文件，运行用户自备的原始数据文件。它从 LucasArts 的 SCUMM 游戏开始，README 现在还列出许多其他作品。",
     "evidence_url": "https://github.com/scummvm/scummvm/blob/e0ddc60bfabb1efdf1e135006c8914ca59d0596c/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at e0ddc60b. The README says ScummVM plays graphic point-and-click adventures, text adventures and RPGs when the user already has the data files, replacing the executables shipped with those games.",
@@ -12072,6 +12085,7 @@
     "description_zh": "重新实现《博德之门》《冰风谷》和《异域镇魂曲》使用的 Infinity 引擎，并用用户自备的原版游戏数据运行。",
     "evidence_url": "https://github.com/gemrb/gemrb/blob/bcb5cfaa9f19ffbe8a51f25a3c014fa344173351/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at bcb5cfaa. The README defines GemRB as a portable reimplementation of the Infinity Engine and says trying it needs original game data, with a small separate demo available.",
@@ -12096,6 +12110,7 @@
     "description_zh": "用 C++ 引擎替换 DOS 版《Ultima VII》的可执行文件，在现代系统上加载游戏自带的数据和图像。",
     "evidence_url": "https://github.com/exult/exult/blob/14f4b8bb9bbc6f8ba98b454c2c100ef26e5ae4de/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 14f4b8bb. The README says Ultima VII is hard to run because it is a DOS game with a nonstandard memory manager, and Exult is an engine for modern systems that uses the data and graphics files that come with the game.",
@@ -12120,6 +12135,7 @@
     "description_zh": "用用户自备的原始数据文件，在比 1999 年原版更多的平台上运行《Jagged Alliance 2》，并包含稳定性工作和模组接口。",
     "evidence_url": "https://github.com/ja2-stracciatella/ja2-stracciatella/blob/d0b1d3e0369364d4848384d0f75486fce1ad1001/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at d0b1d3e0. The README says to install Jagged Alliance 2 and point game_dir at that directory. On Windows the setting is in the JA2 json file under the user Documents folder; on Unix-like systems it is the ja2 json file in the home ja2 directory. The original data files are what the program uses.",
@@ -12141,6 +12157,7 @@
     "description_zh": "把 Perfect Dark 的反编译结果移植到现代平台。用户提供的 ROM 哈希必须是 README 列出的四个版本之一，推荐美版 v1.1。",
     "evidence_url": "https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 32a1cb9f. This is a work-in-progress port of n64decomp/perfect_dark, not that decompilation itself. Recommended input is ntsc-final / US v1.1, MD5 e03b088b6ac9e0080440efed07c1e40f. US v1.0, Japanese final and PAL final are described as technically supported, the last two needing a separate custom-built executable.",
@@ -12165,6 +12182,7 @@
     "description_zh": "把 2007 年 Xbox 360 版《The Simpsons Game》的可执行文件预先译成 C++，并在 Linux、Steam Deck 和 Windows 上运行。游戏由用户自备。",
     "evidence_url": "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 4ff637bc. The README says the PowerPC executable is translated to C++ and compiled for x86-64, so the game code runs on the CPU rather than in an emulator. ReXGlue, derived from Xenia, supplies the Xbox 360 kernel, audio, input and graphics. Linux uses Vulkan. Windows uses Vulkan, DirectX 12, or experimental DirectX 11.",
@@ -12189,6 +12207,7 @@
     "description_zh": "用仓库里保存的 Webflow 抓取，把 The Blind Walleye 的公开网站（首页、菜单和活动页）重建为 Next.js 应用。视觉对比脚本把复刻页与该抓取做像素差分。",
     "evidence_url": "https://github.com/jpiercedev/blind-walleye/blob/4852d2c9a818359996fd8ee2119d39480508938f/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 4852d2c9. The README calls the project a 1:1 copy of https://www.theblindwalleye.com, statically rendered in Next.js. source/ holds the capture. The app prerenders /, /menu, and /events, and the captured 404 is rendered as well.",
@@ -12213,6 +12232,7 @@
     "description_zh": "浏览器里的实时协作电子表格。当前分支是可以用 Docker 自托管的 TypeScript 重写。录制的 oracle 导出用来核对一张只有一个单元格的 SocialCalc 表。",
     "evidence_url": "https://github.com/audreyt/ethercalc/blob/c1a3733a1adae0657bd6536886bc101e5698a636/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at c1a3733a. The README describes EtherCalc as a web spreadsheet for real-time collaborative editing and says this branch is the TypeScript rewrite, self-hosted with docker compose up and no Cloudflare account required.",
@@ -12241,6 +12261,7 @@
     "description_zh": "开源设计编辑器，可在浏览器中运行，也有 Tauri 桌面壳，并能打开和写回 .fig 文件。Playwright 测试加载仓库自带的 Figma 样例，并把画布截图与已提交的快照对比。",
     "evidence_url": "https://github.com/open-pencil/open-pencil/blob/97bb94b2e78b57222bbdf665fb3f8b5b7741fd39/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 97bb94b2. The README links the browser editor at https://app.openpencil.dev/demo and says the project opens and writes native Figma files. It also describes a Tauri desktop app of about 15 MB. The Playwright base port in playwright.config.ts defaults to 1420.",
@@ -12267,6 +12288,7 @@
     "description_zh": "自托管的网页邮箱界面，README 写明用来替代 Roundcube，并登录到已有的 IMAP 和 SMTP 服务器。固定提交里的自动检查是垃圾邮件文件夹路由，不是一次完整的邮箱会话。",
     "evidence_url": "https://github.com/c0h1b4/oxi/blob/013534dfc9a09e8a0026c60f2a20103817f8c4b2/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 013534df. The README calls oxi a feature-complete replacement for Roundcube that connects to any existing IMAP and SMTP server, and a webmail UI rather than a mail platform. The Docker quick start serves the client on port 3001.",
@@ -12291,6 +12313,7 @@
     "description_zh": "面向幻想地图的静态图集，从该项目早先的 ASP.NET MVC 站点重写而来。地图定义写明 Leaflet 客户端使用的瓦片金字塔、图像尺寸和每像素对应的米数。",
     "evidence_url": "https://github.com/loremaps/loremaps/blob/659dc5b70a24e8bf00475978a594393d372c6578/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 659dc5b7. The README calls this a from-scratch rewrite of the original ASP.NET MVC site on the aspnet-mvc-live branch, built as a static Astro site. Leaflet 1.9 is named as the only runtime dependency. npm run build writes the static output to dist/. This entry did not run that build.",
@@ -12316,6 +12339,7 @@
     "description_zh": "把 IBM Embedded ViaVoice（屏幕阅读器用户所知的 Eloquence）从 Windows 对象重建为不依赖 SDK 即可发声的 C。在曾经与 IBM 二进制逐字节一致之后，目前维持的检查是每个用例一条已记录的答案。",
     "evidence_url": "https://github.com/Mudb0y/openevv/blob/d2bc0c68a7769967bb3dfdc86701f69bc53767b4/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at d2bc0c68. The README says the audio matched IBM's binary byte for byte across every test case of every language, from both a 32-bit and a 64-bit build, for all nine languages the SDK shipped. It says the engine is now being changed on purpose, so the maintained check is a recorded answer for each of 979 cases. make builds the engine. ./build/openevv-say speaks a string. This entry did not build it.",
@@ -12341,6 +12365,7 @@
     "description_zh": "面向老式 PC、XT 和 8088 机器、从零编写的开源 ROM BIOS，目标是放进 8K 镜像。该标签上的构建用 MASM、LINK 和 GLA2ROM 生成这份 ROM。",
     "evidence_url": "https://github.com/640-KB/GLaBIOS/blob/b98b0fe396466fa41466a9521f40987c989ae077/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at b98b0fe, which is the v0.4.2 tag. The README calls GLaBIOS a scratch-built open-source alternative BIOS and says it fits in an 8K ROM. On this commit the README also leads with a Version 0.8b preview. This is not a byte copy of a vendor BIOS.",
@@ -12367,6 +12392,7 @@
     "description_zh": "把经典 Mac 68k 应用 HyperCard 1.2.2 做静态重编译。README 称重编译后的程序能打开堆栈、运行其中的 HyperTalk 并绘制卡片。一致性脚本会在陷阱覆盖低于记录基线时失败。",
     "evidence_url": "https://github.com/sp00nznet/macrecomp/blob/708adac787c07f96a87002a0479d3e67a12464c2/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 708adac7. The README's coverage table lists HyperCard 1.2.2 as 326 KB, 22 CODE segments, 418 distinct traps, 3166 call sites, and 83 percent of sites covered. A later paragraph says all 21 CODE segments lift at 97 to 100 percent instruction coverage. Both figures are what that README states. It also says SANE, and a title's own XCMD and XFCN code, are still stubbed.",
@@ -12393,6 +12419,7 @@
     "description_zh": "rsync 的 BSD 许可重实现，兼容第 27 版协议。它复制一棵目录树，并对照期望树检查结果。功能测试也会对上游 rsync 运行。",
     "evidence_url": "https://github.com/kristapsdz/openrsync/blob/8235c68f11b4fad5e24849a01d04ea153c29ee28/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 8235c68f. The README calls openrsync an implementation of rsync with a BSD (ISC) license, compatible with rsync 3.1.3 and with any peer that supports protocol 27. rsync.5 says the utility is compatible with version 27 of the reference.",
@@ -12420,6 +12447,7 @@
     "description_zh": "读取有线 M-Bus 和无线 wM-Bus（OMS）表计，并把电报打印成文本、CSV 或 JSON。输入是仓库自带的仿真文件，测试把程序的 JSON 和 fields 输出与该文件中的期望行做 diff。",
     "evidence_url": "https://github.com/wmbusmeters/wmbusmeters/blob/21851e710f9bddfd6559b7ea7e1dc571afeb47e0/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 21851e71. The README says the program acquires readings from wired m-bus or wireless wm-bus meters. Its worked example decodes telegram 1844AE4C4455223368077A55000000_041389E20100023B0000 into a water total of 123.529 cubic meters.",
@@ -12446,6 +12474,7 @@
     "description_zh": "用 Go 编写的经典 AIM 和 ICQ 客户端服务器，包含仓库里文档化的 TOC 协议。检查是一份 TOC 1 会话记录，以及树内的一条即时消息断言。",
     "evidence_url": "https://github.com/mk6i/open-oscar-server/blob/d63dfb8d84a0ec715a870009d89022fff65a250a/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at d63dfb8d. The README describes an independent open-source instant-messaging server for classic AIM and ICQ clients, and says it is not affiliated with AOL or Yahoo. It lists TOC1 and TOC2 clients among the supported features.",
@@ -12472,6 +12501,7 @@
     "description_zh": "Thermal Master P3 热成像相机的浏览器查看器。这台相机走厂商 USB 协议，而不是 UVC。离线测试把客户端命令与抓到的 18 字节传输对比，并解析一段抓到的状态缓冲。",
     "evidence_url": "https://github.com/ferrolho/thermal-master-viewer/blob/39024dd148e9e1c9b5f03ace8cbb81f84563b59b/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 39024dd1. The README says commands are 18 bytes over a vendor control transfer. The Linux note names USB ID 3474:45a2. The P3 frame is 256 by 192. The README says the viewer was developed against a P3 and that the P1 has not been tested.",
@@ -12497,6 +12527,7 @@
     "description_zh": "面向 USB 连接的 iPhone 或 iPad 的开源桌面工具，提供 Windows、macOS 和 Linux 构建。README 的功能表把电池信息和设备备份标为已实现。",
     "evidence_url": "https://github.com/iDescriptor/iDescriptor/blob/5125181180976ca53e08953ae0929dc3009dea0e/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 51251811. The README describes a privacy-first iDevice management tool written in Rust and Qt, for Windows, macOS, and Linux.",
@@ -12521,6 +12552,7 @@
     "description_zh": "用 Rust 和 GTK4 编写的 Linux 桌面 RSS 阅读器，README 称之为 macOS 阅读器 NetNewsWire 的移植。公开树可以构建出 viaduct 二进制，CI 工作流会运行工作区测试。",
     "evidence_url": "https://github.com/VirInvictus/Viaduct/blob/a0622903b93da2c2752244cf6d415377a41fbe7a/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at a0622903. The README calls Viaduct a Linux port of NetNewsWire in Rust and GTK4, and says architectural choices are traced to that program. Remote accounts in the features table are local OPML and Inoreader. .gitignore contains .netnewswire/, so that reference tree is not in the public Git tree.",
@@ -12547,6 +12579,7 @@
     "description_zh": "把 VNG 的 Zalo 桌面应用从官方 macOS 安装包重新打包到 Linux。构建工具生成 .deb，无界面冒烟脚本期望解出的程序能打开窗口。",
     "evidence_url": "https://github.com/thotam/zalo-linux/blob/63b7293151b1dc6bf2cc1c995ea38970a8b96c09/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 63b72931. The README says npm run setup downloads the macOS DMG, extracts the bundle, and builds native modules, and that npm run build produces dist/Zalo-<version>.deb. The extracted app directory is gitignored. The project says it is not affiliated with or endorsed by VNG.",
@@ -12572,6 +12605,7 @@
     "description_zh": "RuiDeng TC66 和 TC66C USB-C 功率计的替代固件。发布构建会写出原厂引导程序接受的、厂商格式的加密镜像。",
     "evidence_url": "https://github.com/FletcherD/tc66-custom-fw/blob/65accb42ce94526649f7553c927d4edae9389a71/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 65accb42. The README says the TC66C, with a GD32F150G8 MCU, has been tested, and that the TC66 uses the same board design and is untested. It names the stock USB serial commands getva, gtrec, and rotat.",
@@ -12598,6 +12632,7 @@
     "description_zh": "面向博通 ARM 路由器的开源替代固件。SDK 7 树里有一个具名的 make 目标，用来构建带 128K NVRAM 的 RT-AC3200 AIO 镜像。",
     "evidence_url": "https://github.com/FreshTomato-Project/freshtomato-arm/blob/0d73d9d9080367ae59bd7657c9af043548bbae99/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 0d73d9d9. The README lists ASUS AC3200 among supported routers. Its SDK 7 example checks out arm-master and runs make ac3200-128z from release/src-rt-7.x.main/src to build an AIO image for the RT-AC3200.",
@@ -12623,6 +12658,7 @@
     "description_zh": "已归档的泉盛 UV-K5 手台固件 v2.1.27 重实现。make 会为电台上的 DP32G030 生成 firmware.bin 和 firmware.packed.bin。",
     "evidence_url": "https://github.com/DualTachyon/uv-k5-firmware/blob/6f8afac8864e0349ecf8b10f91ce8f69273013db/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 6f8afac8. The repository is archived. The README titles the project as an open reimplementation of the Quan Sheng UV K5 v2.1.27 firmware and says this branch does not add customisations over that firmware. It recommends arm-none-eabi GCC 10.3.1.",
@@ -12648,6 +12684,7 @@
     "description_zh": "把《战神：奥林匹斯之链》和《战神：斯巴达之魂》的美版 PSP 光盘静态重编译成 Windows 原生程序，光盘镜像由用户自备。项目把当前构建称为预览，并写明两部游戏都还没有完整通关。",
     "evidence_url": "https://github.com/DrummingBird1/gow-psp-recomp/blob/ef886b037bf936921835f563e03008dea87dfa3e/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at ef886b03. The README says the games run natively on Windows from the user's own US disc image, product codes UCUS98653 and UCUS98737. It describes a static recompilation: Allegrex code from the disc is translated and linked into a Windows program, not run in an emulator at play time. Linux is described as planned.",
@@ -12673,6 +12710,7 @@
     "description_zh": "《Destruction Derby 64》美版 N64 ROM 的匹配反编译。默认的 make 目标会重建 ROM，并对照原版 SHA-1。README 同时写明这棵树是一次无人值守的智能体实验。",
     "evidence_url": "https://github.com/murkantor/Destruction-Decomp-64/blob/4820d11b3aeb1788e3de1b281a584a7b236bb734/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 4820d11b. The README says the builder supplies Destruction Derby 64 (USA) as baserom.z64, SHA-1 a2c0799e13566d1b723299592cfcac9387f25fa7, and that the ROM is not in the repository. It says a matching build prints build/dd64.z64: OK, and that 1510 of 1548 functions (99 percent of the code by size) are C, with the other 38 left as assembly that was assembly in the original.",
@@ -12698,6 +12736,7 @@
     "description_zh": "PlayStation 游戏《圣剑传说：玛娜传说》的匹配反编译，覆盖北美和日本零售光盘。make verify-bins 把重建的主程序和覆盖模块与用户自备的光盘文件核对。",
     "evidence_url": "https://github.com/celophi/lom-decomp/blob/c34db9803ae8cb58d45060a8246e161de690ece3/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at c34db980. The README says both the North American and Japanese releases are 100 percent matched. North America is disc SLUS-01013, main executable SLUS_010.13, SHA-1 d11dfdd50d412ac3fa3e2eb80fbde138da118f27. Japan is SLPS-02170, main executable SLPS_021.70, SHA-1 b067188a92e4de9a4db7bb7e5343c757e9884bfa. The disc files are gitignored.",
@@ -12722,6 +12761,7 @@
     "description_zh": "把世嘉 Model 2 街机游戏《Daytona USA》从用户自备的 MAME ROM 集重建为原生程序。启动器会把这些 ROM 文件与本次重编译所用的 ROM 集核对。",
     "evidence_url": "https://github.com/alphanu1/daytona-arcade-recomp/blob/32967f60c01c1753b329dc4a3e943c4e1275006b/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 32967f60. The README accepts two ROM revisions that are not in the repository: daytona93 (Daytona USA Deluxe '93) at roms/daytona93.zip or .7z, and Revision A (daytona, 1994) at roms/daytona.zip or .7z. The native program is build/daytona. Revision A is build-daytona/daytona. On Windows with the Visual Studio generator the program is build/Release/daytona.exe.",
@@ -12746,6 +12786,7 @@
     "description_zh": "PlayStation 2《王国之心》原版日文和日本独占 Final Mix 两份可执行文件的反编译。ninja 会重建 ROM 并用 sha1sum 核对。",
     "evidence_url": "https://github.com/ethteck/kh1/blob/0df3b6586d2d0b4dab39d1eb7e9859c464934e19/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 0df3b658. The README names the original Japanese ELF SLPS_251.05, SHA-1 9dabbf867a7ec2a030df99ba1ed969f2deef0488, and Final Mix SLPS_251.98, SHA-1 e70bda789916142aafb53d85cef2e806b35ad8d8. The user extracts the ELF from their own disc. The repository does not publish the executable or other game assets.",
@@ -12772,6 +12813,7 @@
     "description_zh": "重实现 DOS 游戏《Commander Keen in Goodbye Galaxy》第 4、5、6 代，并希望与 DOS 版的存档兼容。演示转储脚本把回放结果与树内文件做 diff。",
     "evidence_url": "https://github.com/sulix/omnispeak/blob/b88e13b9b393ad60b0c9496c0435a22adf2ccc3b/README",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at b88e13b9. The README says Omnispeak aims to be a pixel-perfect, bug-for-bug clone of episodes 4, 5, and 6 and to stay compatible with DOS savegames. Supported versions are Keen 4 v1.4 EGA, Keen 5 v1.4 EGA, Keen 6 v1.4 EGA, and Keen 6 v1.5 EGA. It says other versions are likely to crash. The player places GAMEMAPS.CK?, EGAGRAPH.CK?, and AUDIO.CK? next to the omnispeak binary.",
@@ -12797,6 +12839,7 @@
     "description_zh": "通过反编译做成的开源引擎，运行 PC 版《古墓丽影》1、2 和 3。玩家自备零售文件。README 称这三部游戏都可以从开头玩到结束。",
     "evidence_url": "https://github.com/LostArtefacts/TRX/blob/dce1113262e1df4e55242fa58ced58de778b528c/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at dce11132. The README says TRX enhances Tomb Raider 1, 2, and 3 through decompilation and is one engine for those three games. Its Q&A answers yes to whether all three are fully playable from beginning to end, and lists Windows, Linux, and macOS as supported. It says Tomb Raider 4 support is still early.",
@@ -12822,6 +12865,7 @@
     "description_zh": "Wii 游戏《新玩法控制！皮克敏》美版 R9IE01 的进行中匹配反编译。光盘镜像由用户自备，树里为重建的 main.dol 记录了同一个 SHA-1。",
     "evidence_url": "https://github.com/projectPiki/pik1wii/blob/051c29750ee179f7b6d97bfda094febdb0191a0f/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 051c2975. The README calls the project a work-in-progress decompilation of New Play Control! Pikmin (Wii, 2009) and names R9IE01 as the default USA version. It says the repository contains no game assets. The user copies a disc image to orig/R9IE01. Named formats include ISO (GCM), RVZ, WIA, WBFS, CISO, NFS, GCZ, and TGC. The documented build is python configure.py and then ninja.",
