@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ghidra-wasm-plugin": {
+    "name": "Ghidra Wasm 插件",
+    "requirements": [
+      "加载器借用了 andr3colonel/ghidra_wasm 的功能。",
+      "README 写明 br_table 的反汇编和反编译仍未完成。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
