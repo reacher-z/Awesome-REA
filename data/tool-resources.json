@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ff8-decomp-case",
+    "name": "Final Fantasy VIII decompilation",
+    "url": "https://github.com/roengstrom/ff8-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Final Fantasy VIII for the PlayStation, USA SLUS-008.92. Progress is tracked on decomp.dev.",
+    "description_zh": "这是 PlayStation 美版《最终幻想 VIII》SLUS-008.92 的进行中反编译。进度记在 decomp.dev 上。",
+    "requirements": [
+      "Place a BIN of USA disc 1, SLUS-008.92, in the rom folder. The setup command creates a Python virtual environment, installs splat, extracts the disc, checks its SHA-1, and extracts SLUS_008.92 plus the executables and overlays.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/roengstrom/ff8-decomp/blob/92ab04a23b33de39a5f84f91e08210745859c52a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
