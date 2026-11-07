@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sdlpop": {
+    "name": "SDLPoP",
+    "requirements": [
+      "需要 SDL2 和 SDL2_image。在 Windows 上，从 Visual Studio 构建环境运行 src/build.bat。",
+      "许可证：GNU GPL。见 COPYING 和 src/GPLv3.h。src/opl3.c、src/opl3.h 和 src/stb_vorbis.c 保留各自的许可证。"
+    ]
   }
 }
