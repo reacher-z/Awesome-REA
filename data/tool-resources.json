@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ace-combat-3-recomp",
+    "name": "Ace Combat 3 recompiled",
+    "url": "https://github.com/sal063/Ace-Combat-3-static-recompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a native Windows port of Ace Combat 3: Electrosphere. The MIPS code is translated to C ahead of time and linked against rewritten Psy-Q libraries. ac3.exe draws in software. ac3_enhanced.exe adds a Vulkan renderer with higher resolution, 16:9, and a longer draw distance.",
+    "description_zh": "这是《皇牌空战3：电子领域》的 Windows 原生移植。MIPS 代码被提前翻译成 C，并链接重写过的 Psy-Q 库。ac3.exe 用软件绘制。ac3_enhanced.exe 加上 Vulkan 渲染器，有更高分辨率、16:9 和更远的绘制距离。",
+    "requirements": [
+      "Both Japanese revision 1 discs, SLPS-02020 and SLPS-02021, as 2352-byte .bin files. Windows x64, Visual Studio 2022, clang 22.1, CMake 3.20 or newer, Ninja, Python 3 as python, the Vulkan SDK, and SDL3 3.4.8.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/sal063/Ace-Combat-3-static-recompilation/blob/0dfb14971b6a5f0f001f02dcc810e6ec6c0065a5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
