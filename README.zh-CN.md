@@ -68,6 +68,7 @@
   - [最新论文](#papers-recent) (10)
 - [完整仓库索引](#完整仓库索引) (3,309)
 - [关于](#关于)
+- [Star 历史](#star-历史)
 
 本页还有：[参与贡献](#参与贡献)
 
@@ -1140,6 +1141,18 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 引用本合集时，请使用其[引用元数据](CITATION.cff)。所列论文、工具及其他作品请按各自的一手来源引用；引用扫描统计数据时，请注明对应的提交或快照日期。
 
 如需查找 AI 参与开发的软件，以及 Agent 训练和评测资料，可浏览 [AI Can What?](https://aicanwhat.com/zh/) 的游戏、网站和应用目录。
+
+## Star 历史
+
+[查看交互式 Star 历史图表](https://www.star-history.com/#reacher-z/Awesome-REA&Date)。
+
+<a href="https://www.star-history.com/#reacher-z/Awesome-REA&amp;Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=reacher-z/Awesome-REA&amp;type=Date&amp;theme=dark">
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=reacher-z/Awesome-REA&amp;type=Date">
+    <img alt="Awesome REA 的 GitHub Star 数随时间的变化" src="https://api.star-history.com/svg?repos=reacher-z/Awesome-REA&amp;type=Date" width="100%">
+  </picture>
+</a>
 
 ---
 
