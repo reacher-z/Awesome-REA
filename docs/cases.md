@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -113,11 +113,12 @@
 - [**wii-ipl: a decompilation of the Wii Menu (System Menu 4.3)**](https://github.com/koopthekoopa/wii-ipl) - A work-in-progress decompilation of the Wii Menu, the console’s System Menu (IPL), targeting version 4.3 in its USA, European, Japanese and Korean builds. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/wii-menu-ipl-decomp-case/)</sub>
 
 <a id="game-decompilation"></a>
-### Non-matching decompilations (19)
+### Non-matching decompilations (20)
 
 - [**c1: a C port of PlayStation Crash Bandicoot**](https://github.com/wurlyfox/c1) - Ports the original PlayStation Crash Bandicoot game code to C function by function; its coding standard labels functions with the addresses of their original implementations. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/crash-bandicoot-c1-port-case/)</sub>
 - [**Firefighter: a decompiled DOS game ported to Rust**](https://gitlab.com/esr/firefighter) - Eric S. Raymond’s terminal port of Firefighter, Eben Sprinsock’s 1985 DOS shareware game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/firefighter-rust-port-case/)</sub>
 - [**Halo: Combat Evolved: an incremental re-implementation patched into the original Xbox executable**](https://github.com/halo-re/halo) - A research project re-implementing the original Xbox Halo: Combat Evolved in C, one function at a time. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/halo-ce-xbox-reimplementation-case/)</sub>
+- [**Harvest Moon: A Wonderful Life disassembly**](https://github.com/ChrisNonyminus/hmawl) - This is a disassembly of Harvest Moon: A Wonderful Life for the GameCube, US version. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/hmawl/)</sub>
 - [**keen-clone: a Commander Keen 1 C/SDL2 port**](https://github.com/carlhako/keen-clone) - A native Linux and browser port of Commander Keen Episode One is documented as a function-by-function REA/Ghidra reconstruction of KEEN1.EXE. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/keen-clone-rea-commander-keen-case/)</sub>
 - [**Metroid Dread: a hand decompilation in progress**](https://github.com/tsuyoi-w/DreadComp) - DreadComp is an in-progress hand decompilation of Metroid Dread that recreates game source code in C++. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dreadcomp-case/)</sub>
 - [**OpenGOAL: recovering GOAL code and rebuilding the Jak games**](https://github.com/open-goal/jak-project) - Reconstructs readable GOAL code from the original Jak binaries and compiles it with a new GOAL compiler for modern PCs. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opengoal-jak-case/)</sub>
