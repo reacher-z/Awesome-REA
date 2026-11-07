@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nesrecomp",
+    "name": "NESRecomp",
+    "url": "https://github.com/mstan/nesrecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "NESRecomp is a beta static-recompilation framework for NES and Famicom games. It translates 6502 code into native C and supplies the PPU, APU, mapper, input, and save systems. Each port integrates and validates its own cartridge or disk revision.",
+    "description_zh": "NESRecomp 是面向 NES 和 Famicom 游戏的 beta 静态重编译框架。它把 6502 代码翻译成原生 C，并提供 PPU、APU、mapper、输入和存档系统。每个移植各自集成并校验自己的卡带或磁盘版本。",
+    "requirements": [
+      "Starting a new port is documented in docs/GETTING_STARTED.md.",
+      "The README says the framework is in beta and that features are title-specific.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/mstan/nesrecomp/blob/79b332f246c113e76692413abcc4f88279002271/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
