@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -276,7 +276,7 @@
 - [**z2rs：以模拟器对照逐步重建《塞尔达传说 II》的 Rust 项目**](https://github.com/troyedwardsjr/z2rs) - 以 Rust 重建 NES 游戏《塞尔达传说 II：林克的冒险》，逐个替换游戏的 6502 例程，可运行于桌面、浏览器和 Android。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/z2rs-zelda2-reconstruction-case/)</sub>
 
 <a id="game-other"></a>
-### 其他方法与分析 (23)
+### 其他方法与分析 (24)
 
 - [**ArkWeb：双游戏动作与碰撞桥接实验**](https://github.com/luki-1/ArkWeb) - 同时运行《漫威蜘蛛侠：重制版》与《蝙蝠侠：阿卡姆骑士》，将哥谭碰撞数据传入蜘蛛侠的物理世界，再将其渲染画面合成到阿卡姆中。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/arkweb-two-game-case/)</sub>
 - [**Batla 3D 服务端模拟器（2015 年客户端）**](https://github.com/Serega25511s/Batla-3D-server-emu) - 面向 Batla 3D 2015 年 Steam 客户端的 C# 服务端模拟器，涵盖账户、商店、房间 HTTP 服务与 Lidgren UDP 对战。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/batla-3d-server-emulator-case/)</sub>
@@ -294,6 +294,7 @@
 - [**OpenPigeon：重建 GamePigeon iMessage 游戏消息**](https://github.com/time-attack/OpenPigeon) - OpenPigeon 是 TypeScript 编解码器，可读取十一款 GamePigeon 回合制 iMessage 游戏的状态，并将调用方提供的操作编码为消息。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/openpigeon-case/)</sub>
 - [**ProjectCane：《Sly Cooper and the Thievius Raccoonus》原生 PC 移植**](https://github.com/theclub654/ProjectCane) - 将 PlayStation 2 版《Sly Cooper and the Thievius Raccoonus》美版重建为 Windows 和 Linux 上的原生 C++ 游戏，运行时使用从玩家自有光盘镜像中提取的数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/projectcane-sly1-pc-port-case/)</sub>
 - [**retruxx：《Hard Truck Apocalypse》逆向工程**](https://github.com/mindflower/retruxx) - retruxx 是《Hard Truck Apocalypse》的逆向工程项目，可构建游戏可执行文件以及独立的渲染、输入和声音 DLL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/retruxx/)</sub>
+- [**樱花大战 GB 英文补丁**](https://github.com/vinheim3/sakuraWars1-disasm) - 这是 Game Boy Color 日文版《樱花大战 GB》的英文补丁。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sakura-wars-gb-patch/)</sub>
 - [**samp-client-re：局部重建的 SA-MP 客户端**](https://github.com/NathanKanaeru/samp-client-re) - REA/Ghidra 调查将 SA-MP 0.3.DL-R1 客户端子系统映射到新的 C++ DLL、加载器和冒烟测试程序，产物属于架构重建，网络与图形行为仍有明确未知项，未建立零售版兼容性。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/samp-client-rea-partial-reconstruction-case/)</sub>
 - [**scvk：以 Vulkan 替换 SimCity 4 渲染器**](https://github.com/aspctt/scvk) - scvk 通过 SimCity 4 的 GZCOM 插件系统加载原生 Vulkan DLL，以替换游戏渲染器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/scvk-case/)</sub>
 - [**TH04：恢复 DOS 子弹环辅助函数**](https://rea.tools/showcase/th04/) - 检查 PC-98 DOS 的 16 位弹幕角度辅助函数，并关联固定版本重建与历史编译器检查。 <sub>案例 · REA 官方 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/rea-th04-case/)</sub>

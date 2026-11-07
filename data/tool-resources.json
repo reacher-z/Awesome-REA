@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sakura-wars-gb-patch",
+    "name": "Sakura Wars GB English patch",
+    "url": "https://github.com/vinheim3/sakuraWars1-disasm",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "class": "game",
+    "description_en": "This is an English patch for the Japanese Game Boy Color game Sakura Wars GB. The required ROM has SHA-1 4e30a9b06b5048449057376c8f37b3f687fabd18. The patched ROM has SHA-1 1b6b104484263c2fba093e2df1f5c9c5a1cd4e9e. The README says to apply the IPS or BPS patch.",
+    "description_zh": "这是 Game Boy Color 日文版《樱花大战 GB》的英文补丁。所需 ROM 的 SHA-1 为 4e30a9b06b5048449057376c8f37b3f687fabd18。打过补丁的 ROM 的 SHA-1 为 1b6b104484263c2fba093e2df1f5c9c5a1cd4e9e。README 写明使用 IPS 或 BPS 补丁。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/vinheim3/sakuraWars1-disasm/blob/327b1f392edfed2440938adec66035a0b54c2c94/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
