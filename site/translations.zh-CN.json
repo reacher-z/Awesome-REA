@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "quickasm": {
+    "name": "Quick Assembler",
+    "requirements": [
+      "克隆并包含 WTLHelper 子模块后，用 Visual Studio 2026 构建 QuickAsm.sln 的 x64 配置。",
+      "其余库通过 vcpkg 静态链接：unicorn、capstone[x86]、keystone、scintilla、lexilla、wil 和 detours，三元组为 x64-windows-static。",
+      "用 NASM 汇编时需把 nasm.exe 放在输出目录。另一种汇编器是 Keystone。",
+      "许可证：MIT。"
+    ]
   }
 }
