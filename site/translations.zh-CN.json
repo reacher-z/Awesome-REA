@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "oxidizer": {
+    "name": "Oxidizer",
+    "requirements": [
+      "需要 Docker，或 uv 加 Rust 工具链。演示是对一份去除符号的 Rust 二进制运行 python demo.py。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

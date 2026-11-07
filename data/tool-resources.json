@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "oxidizer",
+    "name": "Oxidizer",
+    "url": "https://github.com/sefcom/oxidizer",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Oxidizer is a Rust decompiler on angr. It identifies compiler versions from 1.39.0 through 1.93.0, recovers standard-library functions, and emits Rust pseudocode with enums, match, the ? operator, and macros such as println! and panic!. The reviewed README says the work was merged into angr master in pull request 6283. docker build -t oxidizer . then docker run oxidizer python demo.py runs the demo. uv sync --frozen --no-default-groups is the local setup. The paper is Oxidizer: Toward Concise and High-fidelity Rust Decompilation, IEEE S&P 2026. Evaluation scripts are in sefcom/oxidizer-eval.",
+    "description_zh": "Oxidizer 是基于 angr 的 Rust 反编译器。它识别 1.39.0 到 1.93.0 的编译器版本，恢复标准库函数，并输出带枚举、match、? 运算符以及 println! 和 panic! 等宏的 Rust 伪代码。审阅的 README 写明这项工作已通过拉取请求 6283 并入 angr 的 master。docker build -t oxidizer . 之后用 docker run oxidizer python demo.py 运行演示。本地安装是 uv sync --frozen --no-default-groups。论文是 Oxidizer: Toward Concise and High-fidelity Rust Decompilation，IEEE S&P 2026。评估脚本在 sefcom/oxidizer-eval。",
+    "requirements": [
+      "Docker, or uv plus a Rust toolchain. The demo is python demo.py on a stripped Rust binary.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/sefcom/oxidizer/blob/fc18d0a3b03270c00aed03cd1e23952ee2fad141/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
