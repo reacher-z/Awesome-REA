@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gameroy",
+    "name": "GameRoy",
+    "url": "https://github.com/Rodrigodd/gameroy",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "GameRoy is a Rust Game Boy emulator and debugger for the original DMG. It keeps the clock frequency, battery saves, save states, and rewind. The debugger shows disassembly, registers, and video RAM, and can break on read, write, jump, or execution. cargo run --release -p gameroy-native builds the Windows and Linux program. wasm-pack build --target web builds the browser version from the wasm directory. The Android port uses ./gradlew installDebug.",
+    "description_zh": "GameRoy 是用 Rust 编写的初代 DMG Game Boy 模拟器和调试器。它保持时钟频率，并支持电池存档、即时存档和倒带。调试器显示反汇编、寄存器和视频 RAM，并能在读取、写入、跳转或执行时断下。cargo run --release -p gameroy-native 构建 Windows 和 Linux 程序。在 wasm 目录运行 wasm-pack build --target web 构建浏览器版本。Android 移植使用 ./gradlew installDebug。",
+    "requirements": [
+      "The Rust toolchain. Web builds also need wasm-pack. Android builds need the Android NDK.",
+      "License: Apache License 2.0 or MIT."
+    ],
+    "evidence_url": "https://github.com/Rodrigodd/gameroy/blob/a5acdc921c0561ed93a077622b598df0e068583c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
