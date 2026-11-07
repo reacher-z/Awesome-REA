@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "capstone-js",
+    "name": "Capstone.js",
+    "url": "https://github.com/AlexAltea/capstone.js",
+    "category": "binary-libraries",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Capstone.js is a JavaScript and WebAssembly port of the Capstone disassembler, built with Emscripten. The README shows it decoding machine-code bytes into instructions from a browser or another JavaScript environment.",
+    "description_zh": "Capstone.js 是用 Emscripten 构建的 Capstone 反汇编器的 JavaScript 与 WebAssembly 移植。README 展示它在浏览器或其他 JavaScript 环境中把机器码字节解码为指令。",
+    "requirements": [
+      "A JavaScript environment with WebAssembly and BigInt support.",
+      "Install with npm as @alexaltea/capstone-js, or include capstone.js with a script tag.",
+      "Building from source requires a recursive clone. License: BSD-3-Clause."
+    ],
+    "evidence_url": "https://github.com/AlexAltea/capstone.js/blob/75da2ab549729c50bc49842d07984c4ff2e33deb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
