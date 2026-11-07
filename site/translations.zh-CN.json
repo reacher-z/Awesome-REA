@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mk64-dc-case": {
+    "name": "马里奥赛车 64 Dreamcast 移植",
+    "requirements": [
+      "构建使用 KallistiOS 环境，然后用 make 构建工具和游戏。macOS 构建使用 gmake。Windows 构建使用 DreamSDK，并需要 Python、CMake、Git 和 kos-ports 中的 GLdc。",
+      "README 写明这个版本的模拟已知有问题，并希望用实体硬件提交报告。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

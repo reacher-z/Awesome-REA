@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mk64-dc-case",
+    "name": "Mario Kart 64 for Dreamcast",
+    "url": "https://github.com/jnmartin84/mk64-dc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "Mario Kart 64 for Dreamcast is a Sega Dreamcast port of the n64decomp/mk64 decompilation. The README says the 2026 update adds hardware-mixed audio, a raw PowerVR Fast3D backend, and 30 fps four-player play with music, and that it was tested on physical hardware.",
+    "description_zh": "Mario Kart 64 for Dreamcast 是 n64decomp/mk64 反编译的世嘉 Dreamcast 移植。README 写明 2026 年的更新加入了硬件混音、原始 PowerVR Fast3D 后端，以及带音乐的 30 帧四人游戏，并在实体硬件上测试过。",
+    "requirements": [
+      "The build uses the KallistiOS environment and then make for the tools and the game. macOS builds use gmake. Windows builds use DreamSDK with Python, CMake, Git, and GLdc from kos-ports.",
+      "The README says emulation of this release is already known to have problems, and asks for reports from physical hardware.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/jnmartin84/mk64-dc/blob/1cbad2ef2d45c49f782ecadeddbbd49063a3507e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
