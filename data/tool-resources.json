@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "defjam-ffny",
+    "name": "Def Jam: Fight for NY recompilation",
+    "url": "https://github.com/comoria08/defjam_recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Def Jam: Fight for NY for the original Xbox, USA version, to Windows. The installer checks the ISO and refuses the European disc. DJFFNY.exe is the single-window installer. A hand install uses Installer.bat. The MSVC package is about 2 MB and can use DLSS on an NVIDIA RTX card. The built-in Clang package is about 100 MB. The install needs about 4 GB free and an XInput controller.",
+    "description_zh": "该项目把原版 Xbox 美版《Def Jam: Fight for NY》静态重编译到 Windows。安装器检查 ISO，并拒绝欧版光盘。DJFFNY.exe 是单窗口安装器。手动安装使用 Installer.bat。MSVC 包大约 2 MB，在 NVIDIA RTX 显卡上可以使用 DLSS。内置 Clang 包大约 100 MB。安装大约需要 4 GB 空闲空间和一只 XInput 手柄。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, and a DirectX 11 graphics card. A source build clones xboxrecomp branch defjam-bringup beside this repository.",
+      "License: MIT for this port and for DJFFNY.exe. The xboxrecomp toolkit is MIT, with LGPL-2.1 and GPL-2.0 components from xemu and Hatari. The built program links the LGPL NV2A part. WebView2 uses Microsoft's SDK licence."
+    ],
+    "evidence_url": "https://github.com/comoria08/defjam_recomp/blob/aca317a0a84dd6522dd68f02ef7a5e82fb749989/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
