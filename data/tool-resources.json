@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "apktoolplus",
+    "name": "ApkToolPlus",
+    "url": "https://github.com/CYRUS-STUDIO/ApkToolPlus",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Visual cross-platform APK analysis tool, described in the Chinese README. It lists APK decompilation, recompilation, and signing; DEX encryption described as incomplete protection against analysis and repackaging and not suggested for commercial use; an APK info viewer for the manifest, signature, and version; a multi-dex source viewer; and conversions among JAR, smali, class, and DEX. The README gives the project address as https://github.com/linchaolong/ApkToolPlus.",
+    "description_zh": "中文 README 描述的可视化跨平台 APK 分析工具。功能包括 APK 反编译、回编译和签名；DEX 加密被写成尚不完整、不建议商用的防分析和防二次打包；APK 信息查看（清单、签名和版本）；多 dex 源码查看；以及 JAR、smali、class 和 DEX 之间的转换。README 给出的项目地址是 https://github.com/linchaolong/ApkToolPlus。",
+    "evidence_url": "https://github.com/CYRUS-STUDIO/ApkToolPlus/blob/4c1c9a1d3e740f1714e478f2491fee230baad565/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README says the build depends on Apache Ant.",
+      "The reviewed page states no license."
+    ]
   }
 ]
