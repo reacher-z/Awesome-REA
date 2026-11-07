@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -188,7 +188,7 @@
 - [**Zelda 64: Recompiled — a native Majora’s Mask port without a full source decompilation**](https://github.com/Zelda64Recomp/Zelda64Recomp) - Uses N64Recomp to translate Majora’s Mask into a native application and RT64 for rendering. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda64recomp-case/)</sub>
 
 <a id="game-port"></a>
-### Ports of reconstructed source (33)
+### Ports of reconstructed source (34)
 
 - [**2 Ship 2 Harkinian: a native Majora’s Mask port built on the decompilation**](https://github.com/2ship2harkinian/2ship2harkinian) - Builds native Windows, Linux and macOS versions of The Legend of Zelda: Majora’s Mask from an adapted copy of the zeldaret/mm decompilation, with libultraship reimplementing N64 SDK functions. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/2ship2harkinian-mm-port-case/)</sub>
 - [**3SX: a native Street Fighter III: 3rd Strike port continuing the PS2 decompilation**](https://github.com/crowded-street/3sx) - Builds Street Fighter III: 3rd Strike as native C for Windows, macOS and Linux, continuing the 3s-decomp PS2 decompilation, with SDL3 for video, input and audio and GekkoNet for rollback netplay. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/3sx-third-strike-native-port-case/)</sub>
@@ -209,6 +209,7 @@
 - [**LEGO Island, portable: a multi-platform port of the decompiled source**](https://github.com/isledecomp/isle-portable) - Adapts the LEGO Island decompilation into a portable build for desktop, mobile, console, DOS and Web targets. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lego-island-portable-case/)</sub>
 - [**Lighthouse: a Banjo-Kazooie PC port built on the decompilation**](https://github.com/HarbourMasters/Lighthouse) - A native Windows, Linux and macOS port of Banjo-Kazooie that compiles game C sources, many tagged with their Banjo-Kazooie decompilation file paths, against libultraship, a reimplementation of the N64 SDK. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lighthouse-banjo-kazooie-port-case/)</sub>
 - [**LineWars II: a portable SDL3 reconstruction**](https://github.com/fredangstadt-lang/LineWarsII-SDL) - Provides an SDL3 backend for a portable-C reconstruction of the 1994 DOS game. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/linewars-ii-sdl-case/)</sub>
+- [**Mario Kart 64 3DS**](https://github.com/EstebanPdN/mario-kart-64-3ds) - Mario Kart 64 3DS is a native Nintendo 3DS port of Mario Kart 64, based on SpaghettiKart. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mario-kart-64-3ds-case/)</sub>
 - [**Metaforce: a Metroid Prime engine reimplementation rebuilt on the decompilation**](https://github.com/AxioDL/metaforce) - Started in 2015 as a reverse-engineered reimplementation of the Metroid Prime engine, Metaforce has been rewritten on top of the PrimeDecomp matching decompilation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/metaforce-metroid-prime-case/)</sub>
 - [**Metroid Prime Port: an AI-assisted native port of the PrimeDecomp decompilation**](https://github.com/Odrannnn/MetroidPrimePort) - Compiles the PrimeDecomp decompilation of Metroid Prime’s game and engine code as native C++20 for Linux, Windows and Android, with an experimental macOS build. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/metroid-prime-port-case/)</sub>
 - [**MikuPan: a native Fatal Frame PC port built on the Himuro decompilation**](https://github.com/Mikompilation/MikuPan) - Ports the PS2 game Fatal Frame to native PC builds without emulation; its repository description names the Himuro decompilation as its basis. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mikupan-fatal-frame-port-case/)</sub>

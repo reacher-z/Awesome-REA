@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mario-kart-64-3ds-case",
+    "name": "Mario Kart 64 3DS",
+    "url": "https://github.com/EstebanPdN/mario-kart-64-3ds",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "Mario Kart 64 3DS is a native Nintendo 3DS port of Mario Kart 64, based on SpaghettiKart. It adds a dual-screen interface, touch menus, and customizable controls and display options.",
+    "description_zh": "Mario Kart 64 3DS 是基于 SpaghettiKart 的《Mario Kart 64》任天堂 3DS 原生移植。它增加了双屏界面、触摸菜单，以及可调整的操作和显示选项。",
+    "requirements": [
+      "A legally obtained USA Mario Kart 64 ROM in .z64 byte order is required. Place it at sd:/3ds/MK64/mk64.z64.",
+      "Install the CIA with FBI, or use the 3DSX with the Homebrew Launcher. The first launch validates the ROM and creates mk64.o2r.",
+      "Licenses are component-specific. The updater is GNU GPL v3.0, and the README says no blanket license applies to the whole repository."
+    ],
+    "evidence_url": "https://github.com/EstebanPdN/mario-kart-64-3ds/blob/7c7df014f9a00cc80e59fcbba2c3d66af702cbfc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
