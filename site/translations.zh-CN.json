@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "recvx-enhanced-port": {
+    "name": "生化危机代号维罗妮卡X增强移植",
+    "requirements": [
+      "需要 SLUS-20184 的 NTSC-U ISO。系统为 Windows 10 或更高版本，或 glibc 2.34 及以上并带 32 位 OpenGL 库的 Linux。显卡需要 OpenGL 3.3。",
+      "许可证：MIT。decomp 里的反编译为 MIT。SDL 3 为 zlib。Dear ImGui 为 MIT。"
+    ]
   }
 }
