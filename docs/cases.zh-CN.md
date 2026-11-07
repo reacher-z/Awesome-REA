@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -136,7 +136,7 @@
 - [**《风之杖 HD》反编译：与重编译的 Wii U 版逐函数比对验证**](https://github.com/ZeldaWWHDDecomp/wwhd) - 将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### 静态重编译 (48)
+### 静态重编译 (49)
 
 - [**Banjo: Recompiled：基于 N64Recomp 的《Banjo-Kazooie》原生移植**](https://github.com/BanjoRecomp/BanjoRecomp) - 使用 N64Recomp 将美版 1.0 Nintendo 64《Banjo-Kazooie》静态重编译为基于 N64ModernRuntime 的原生移植版，由 RT64 渲染并加入模组支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/banjo-recompiled-case/)</sub>
 - [**C2C：《古惑狼 2》的混合重编译与手工反编译**](https://github.com/ughman/c2c) - 一个早期的 PlayStation《古惑狼 2》逆向工程项目：把引擎的 MIPS 机器码直接转换为一个体量巨大的 C 文件，并调用改造后的 PCSX-R 模拟器库处理硬件 I/O。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -179,6 +179,7 @@
 - [**Starfox 64: Recompiled：基于 N64Recomp 的静态重编译移植**](https://github.com/sonicdcer/Starfox64Recomp) - 使用 N64: Recompiled 将 Nintendo 64 版 Star Fox 64 美版 1.1（Rev A）静态重编译为面向 Windows、Linux 和 macOS 的原生移植，并以 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/starfox64-recompiled-case/)</sub>
 - [**SVR2011-Recomp：借助 ReXGlue 重编译 WWE SmackDown vs. Raw 2011**](https://github.com/shaneomac1337/SVR2011-Recomp) - 借助 ReXGlue 将 WWE SmackDown vs. Raw 2011 的 Xbox 360 可执行文件提前转换为 C++，并在源自 Xenia 的 Vulkan 运行时上构建为 Windows 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/svr2011-recomp-case/)</sub>
 - [**SymphonyRecomp：用 RecompOne 静态重编译《恶魔城：月下夜想曲》**](https://github.com/BlackLabelHQ/SymphonyRecomp) - 使用 BlackLabelHQ 的 RecompOne 将北美 PlayStation 版《恶魔城：月下夜想曲》静态重编译为 C#；其运行时模拟 BIOS、内存映射 I/O、GPU 和光驱，使游戏无需主机 BIOS 即可原生运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/symphonyrecomp-case/)</sub>
+- [**Takedawn**](https://github.com/xenophobentx/takedawn) - Takedawn 把原版 Xbox 游戏《火爆狂飙 3：Takedown》提前翻译成原生 x86-64 和 arm64 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/takedawn/)</sub>
 - [**The Darkness Recomp：配有原生 D3D11 渲染器的 Xbox 360 静态重编译**](https://github.com/portingpete/The-Darkness-Recomp) - 使用打过补丁的 XenonRecomp 将 Xbox 360 可执行文件提前转换为 C++，构建 The Darkness 的原生 Windows x64 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/the-darkness-recomp-case/)</sub>
 - [**The Simpsons Wrestling Recompiled：基于 psxrecomp 的 PlayStation 静态重编译**](https://github.com/TekRantGaming/simpsons-wrestling-recompiled) - 借助固定版本的 psxrecomp 分支，将这款 PlayStation 游戏的 MIPS 代码转换为 C，并基于其模拟硬件行为的运行时构建 Windows 与 Linux 程序，另附启动器和专用插件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/simpsons-wrestling-recompiled-case/)</sub>
 - [**The Two Towers Recompiled：初代 Xbox 静态重编译移植**](https://github.com/Gumpolas/TooTawersRecomp) - 使用随附的 xboxrecomp 工具包，将《The Lord of the Rings: The Two Towers》（Xbox 美版，2002）的 x86 代码静态重编译为 C，生成原生 Windows、Linux 及实验性 macOS 构建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/two-towers-recompiled-case/)</sub>
