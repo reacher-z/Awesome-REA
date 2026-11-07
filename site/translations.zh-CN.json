@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gamedb": {
+    "name": "gamedb",
+    "requirements": [
+      "需要 Rust 工具链和一个 C 链接器。cargo build --release --target x86_64-pc-windows-msvc 会为该目标写出 gamedb.exe。",
+      "许可证：MIT。"
+    ]
   }
 }
