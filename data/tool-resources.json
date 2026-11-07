@@ -36543,6 +36543,7 @@
     "description_zh": "为 ZUN 于 1997–1998 年在 NEC PC-9801 上发布的前五部东方 Project 游戏重建 C++ 与汇编源码，并规定 master 分支的任何提交都不得改变任一原始可执行文件经解压后的程序映像或重定位，以项目自己的 mzdiff 工具比对。TH01 已于 2022 年 8 月完成全部反编译；尚未反编译的代码以 IDA 生成的反汇编形式保留在仓库中，项目博客则逐一记录 ZUN 代码各部分的作用。另有 debloated 与 anniversary 分支重组代码并修复缺陷，供移植与模组作为基础。",
     "evidence_url": "https://github.com/nmlgc/ReC98/blob/b6ba5b0a529edbb31efdf8c0e939263804f8ee47/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed master pin is dated 2026-03-16. README defines a perfect reconstruction as compiled binaries indistinguishable from ZUN’s builds, keeps master free of mods and bug fixes, and directs ports to the debloated branch and bug fixes to the anniversary branch or single-fix branches. The crowdfunded homepage, a mutable page, reported 64.35% of all code reverse-engineered and 61.09% finalized as of 2026-01-19, with TH01 at 100% and TH02–TH05 between 42% and 59% reverse-engineered.",
