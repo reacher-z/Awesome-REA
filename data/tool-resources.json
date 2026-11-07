@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "banjo-tooie-decomp-case",
+    "name": "Banjo-Tooie: decompilation of the NTSC-U ROM",
+    "url": "https://github.com/Mr-Wiseguy/banjo-tooie",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "Banjo Tooie Decomp is a decompilation of Banjo-Tooie. The README says to place the NTSC-U ROM in the folder as baserom.us.z64, then run make setup and make to split and build it.",
+    "description_zh": "Banjo Tooie Decomp 是《班卓熊大冒险 2》的反编译。README 写明把 NTSC-U ROM 放到目录中并命名为 baserom.us.z64，然后运行 make setup 和 make 来拆分并构建。",
+    "requirements": [
+      "The NTSC-U ROM named in the README has SHA-1 af1a89e12b638b8d82cc4c085c8e01d4cba03fb3 and must be named baserom.us.z64.",
+      "make setup decompresses and splits the ROM. make builds it.",
+      "The README does not name a license."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/Mr-Wiseguy/banjo-tooie/blob/25033be6ec9e35975483f064d086391d2381ca4c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
