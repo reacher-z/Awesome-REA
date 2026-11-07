@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -225,7 +225,7 @@
 - [**Vandal Hearts: native PC port built on matching decompilations**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - Builds on shao113’s matching decompilation of PlayStation Vandal Hearts, adds a Japanese matching tree, and carries both through to a native Windows and Linux port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### Engine reimplementations (47)
+### Engine reimplementations (48)
 
 - [**Age of Empires Free Software Remake: a re-implementation on the original data**](https://github.com/FolkertVanVerseveld/aoe) - Re-implements Microsoft’s Age of Empires and its Rise of Rome expansion as a cross-platform C++17 engine on SDL2 and OpenGL that loads the original game’s DRS archives and language.dll resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo: a reverse-engineered Minecraft server**](https://github.com/bravoserver/bravo) - Reimplements the server side of Minecraft’s Alpha- and Beta-era multiplayer in Python on Twisted; its documentation calls it a reverse-engineered implementation written from scratch, credits network traffic dumps and says general Minecraft data went to a community wiki. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/bravo-minecraft-server-case/)</sub>
@@ -245,6 +245,7 @@
 - [**Legend of Legaia: a Rust port with disc-local browser tooling**](https://github.com/AndrewAltimit/legend-of-legaia-re) - A from-scratch Rust port of the North American PlayStation Legend of Legaia includes native/browser play, asset extraction and disc patching. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/legend-of-legaia-rust-port-case/)</sub>
 - [**libd2: Diablo II 1.14d engine-core libraries**](https://github.com/jaenster/libd2) - Zig libraries reconstructing Diablo II 1.14d seeded maps, item generation, saves, simulation rules and network formats. <sub>Case study · Independent reconstruction · Also: Binary, Protocol · [Full entry](https://awesomerea.org/resources/libd2-engine-core-reconstruction-case/)</sub>
 - [**librw: a re-implementation of the RenderWare Graphics engine**](https://github.com/aap/librw) - Re-implements a large part of the RenderWare Graphics middleware API as a portable C++ library that reads and writes its DFF model and TXD texture files for PS2, D3D8, D3D9 and Xbox and is meant to convert them between platforms. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/librw-renderware-reimplementation-case/)</sub>
+- [**LunarCore: a server reimplementation for a turn-based anime game**](https://github.com/Melledy/LunarCore) - Game server reimplementation for version 4.2.0 of a turn-based anime game, as the README's social image text states, for educational purposes. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lunarcore/)</sub>
 - [**MechRewired: rebuilding MechWarrior 2 from original game data**](https://github.com/deanthecoder/MechRewired) - MechRewired rebuilds the MechWarrior 2: 31st Century Combat experience around data imported from a user's DOS copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mechrewired-mechwarrior-2-case/)</sub>
 - [**Nanolathe: a documented Total Annihilation engine reimplementation**](https://github.com/nanolathe-gg/nanolathe) - Reimplements a Total Annihilation-compatible strategy-game engine in Go, with public file-format research and separate gameplay profiles. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/nanolathe-case/)</sub>
 - [**nfs-mw: a Rust reconstruction of Need for Speed: Most Wanted**](https://github.com/47PADO47/nfs-mw) - nfs-mw reconstructs Need for Speed: Most Wanted 2005 PC v1.3 in Rust using data read from the user's installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/nfs-mw-case/)</sub>

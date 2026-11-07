@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "lunarcore",
+    "name": "LunarCore: a server reimplementation for a turn-based anime game",
+    "url": "https://github.com/Melledy/LunarCore",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Game server reimplementation for version 4.2.0 of a turn-based anime game, as the README's social image text states, for educational purposes. The README lists login, teams, inventory, scene and entity management, monster battles, world spawns, character techniques, crafting, shops, gacha, mail, friends, Forgotten Hall, Pure Fiction, and Simulated Universe.",
+    "description_zh": "README 的社交图片文字把它写成版本 4.2.0 的一款回合制动画游戏的服务端重实现，用于教育目的。README 列出登录、队伍、背包、场景和实体管理、怪物战斗、世界刷新、角色技能、制作、商店、抽卡、邮件、好友、遗忘之庭、虚构叙事和模拟宇宙。",
+    "evidence_url": "https://github.com/Melledy/LunarCore/blob/04b5de871c62895091c4d65243b2e03997e66f23/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Java 21 JDK is required. The README recommends Java 25 JDK and MongoDB 4.0 or newer.",
+      "The README says friend assists are not working yet, and that Simulated Universe runs can be finished while many features are missing.",
+      "The reviewed page states no license."
+    ]
   }
 ]
