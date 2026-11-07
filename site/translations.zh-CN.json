@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "rocket-robot-on-wheels-decomp": {
+    "name": "Rocket: Robot on Wheels 反编译",
+    "requirements": [
+      "安装 MIPS gcc 和 MIPS binutils。把 ROM 放在项目根目录，先运行一次 make setup，再运行 make。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

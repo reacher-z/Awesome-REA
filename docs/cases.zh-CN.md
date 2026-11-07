@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -113,7 +113,7 @@
 - [**wii-ipl：Wii Menu（System Menu 4.3）的反编译重建**](https://github.com/koopthekoopa/wii-ipl) - Wii Menu（即主机的 System Menu，IPL）的反编译重建，仍在进行中，针对 4.3 版的美、欧、日、韩四个版本。 <sub>案例 · 独立重建 · 也适用：固件 · [完整条目](https://awesomerea.org/zh/resources/wii-menu-ipl-decomp-case/)</sub>
 
 <a id="game-decompilation"></a>
-### 非匹配反编译 (19)
+### 非匹配反编译 (20)
 
 - [**c1：PlayStation 版《古惑狼》的 C 语言移植**](https://github.com/wurlyfox/c1) - 将 PlayStation 版《古惑狼》的原始游戏代码逐函数移植为 C 语言；其编码规范要求为函数标注原实现的地址。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crash-bandicoot-c1-port-case/)</sub>
 - [**Firefighter：将反编译的 DOS 游戏移植为 Rust**](https://gitlab.com/esr/firefighter) - Eric S. Raymond 将 Eben Sprinsock 于 1985 年发布的 DOS 共享软件游戏 Firefighter 移植为终端游戏。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/firefighter-rust-port-case/)</sub>
@@ -125,6 +125,7 @@
 - [**R.E.L.I.V.E.：Oddworld: Abe’s Oddysee 与 Abe’s Exoddus 引擎的重新实现**](https://github.com/AliveTeam/alive_reversing) - 以开源的替代可执行文件重新实现 Oddworld: Abe’s Oddysee 与 Abe’s Exoddus 的引擎，在使用者自己的游戏目录中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/relive-oddworld-abe-engine-case/)</sub>
 - [**re-plants-vs-zombies：反编译并现代化改造 Plants vs. Zombies 年度版**](https://github.com/Patoke/re-plants-vs-zombies) - 以 PopCap 开源的 SexyAppFramework 为基础重建 Plants vs. Zombies 的 C++ 源码：起点是社区早先对 0.9.9 版的反编译，再补入从年度版（GOTY）逆向得到的功能，并以 GOTY 版地址标注函数。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/re-plants-vs-zombies-decomp-case/)</sub>
 - [**REDRIVER2：借助 PlayStation 兼容层重建 Driver 2**](https://github.com/OpenDriver2/REDRIVER2) - 将逆向分析的 Driver 2 MIPS 例程转为 C/C++，并用 Psy-X/Psy-Cross 将 PlayStation 接口适配到桌面系统。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/redriver2-case/)</sub>
+- [**Rocket: Robot on Wheels 反编译**](https://github.com/RocketRet/Rocket-Robot-On-Wheels) - 该仓库是任天堂 64 游戏 Rocket: Robot on Wheels 的反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rocket-robot-on-wheels-decomp/)</sub>
 - [**RSDKv3 Decompilation：在重建的 Retro Engine v3 上运行 Sonic CD（2011）**](https://github.com/RSDKModding/RSDKv3-Decompilation) - 重建 Retro Engine v3，即 2011 年 Sonic CD 重制版所用的引擎，作为可在 Windows、Linux、macOS 和 Android 上运行的原生 C++ 源码移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rsdkv3-sonic-cd-decomp-case/)</sub>
 - [**RSDKv4 Decompilation：Retro Engine v4 与《索尼克》1、2（2013）菜单的反编译**](https://github.com/RSDKModding/RSDKv4-Decompilation) - 反编译 Retro Engine（RSDK）v4——《索尼克》与《索尼克 2》（2013）所用的引擎——以及两款游戏中以原生代码实现的菜单，可构建 Windows、Linux 与 Android 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rsdkv4-sonic-1-2-decomp-case/)</sub>
 - [**RSDKv5 Decompilation：重建 Retro Engine v5 与 v5U**](https://github.com/RSDKModding/RSDKv5-Decompilation) - 重建 Retro Engine（RSDK）v5 及 v5 Ultimate 运行时，即运行《索尼克狂欢》游戏代码的引擎，可构建 Windows、Linux、Switch 和 Android 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rsdkv5-engine-decomp-case/)</sub>
