@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "alchemy-golden-sun-case",
+    "name": "Alchemy: matching decompilation of the Golden Sun games",
+    "url": "https://github.com/PascalPixel/alchemy",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "Alchemy is a matching decompilation of the Game Boy Advance games Golden Sun: The Broken Seal and Golden Sun: The Lost Age. The README says readable code, images, music, and text build the same ROMs as the originals, byte for byte.",
+    "description_zh": "Alchemy 是 Game Boy Advance 游戏《黄金太阳：开启的封印》和《黄金太阳：失落的时代》的匹配反编译。README 写明可读的代码、图像、音乐和文本会逐字节构建出与原版相同的 ROM。",
+    "requirements": [
+      "The Broken Seal is fully rebuilt in Japanese, English, German, French, Spanish, and Italian.",
+      "The Lost Age is in progress. Parts not yet rewritten come from your own cartridge dump.",
+      "The README does not name a license."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/PascalPixel/alchemy/blob/52d2fb0b9f65d1b6d84cf24b224ed79a356edf10/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
