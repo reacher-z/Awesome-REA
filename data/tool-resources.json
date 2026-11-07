@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "smb-cc65-disasm",
+    "name": "Super Mario Bros. cc65 disassembly",
+    "url": "https://github.com/threecreepio/smb-disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a cc65 port of doppelganger's Super Mario Bros. disassembly. The CHR data is extracted from a file named Super Mario Bros. (World).nes. make writes main.nes and main.nes.dbg. The debug file loads in Mesen through Import Labels.",
+    "description_zh": "这是 doppelganger 的《超级马里奥兄弟》反汇编的 cc65 版本。CHR 数据从名为 Super Mario Bros. (World).nes 的文件提取。make 写出 main.nes 和 main.nes.dbg。调试文件通过 Mesen 的 Import Labels 加载。",
+    "requirements": [
+      "Make and cc65. On Windows the README uses WSL and sudo apt install cc65 make.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/threecreepio/smb-disassembly/blob/da964553b3695fde607d796acde21b3f4b282dfe/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
