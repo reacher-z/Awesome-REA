@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mafia-re",
+    "name": "Mafia-RE",
+    "url": "https://github.com/Marvisak/mafia-re",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "Mafia-RE decompiles Mafia: The City of Lost Heaven (Illusion Softworks, 2002) for versions 1.0, 1.1, 1.2, and Steam's 2010 setup rebuild. Version 1.2 is the main target. The README says rw_data.dll, IJoy.dll, and setup.exe already build byte-for-byte with the original toolchains, while Game.exe has been started.",
+    "description_zh": "Mafia-RE 反编译《黑手党：失落天堂》（Illusion Softworks，2002）的 1.0、1.1、1.2，以及 Steam 2010 年的安装程序重建。1.2 是主要目标。README 写明 rw_data.dll、IJoy.dll 和 setup.exe 已经能用原来的工具链逐字节构建，Game.exe 则刚刚开始。",
+    "requirements": [
+      "Windows, Git, Python 3, and CMake 3.29 or newer. The game binaries are built with Visual C++ 6.0. Steam's 2010 setup uses Visual C++ 2008 SP1.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Marvisak/mafia-re/blob/113b5b60b2b09b7a84a6221abeab3c7d0f0bc7fd/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
