@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "recvx-gc-decomp",
+    "name": "Resident Evil Code Veronica X GameCube decompilation",
+    "url": "https://github.com/fmil95/recvx-gc-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Resident Evil: Code: Veronica X for the GameCube. The supported version is GCDE08, the USA release. The player copies a disc image into orig/GCDE08, then runs python configure.py and ninja.",
+    "description_zh": "这是 GameCube 版《生化危机 代号：维罗妮卡 X》的进行中反编译。受支持的版本是美版 GCDE08。玩家把光盘镜像放到 orig/GCDE08，然后运行 python configure.py 和 ninja。",
+    "requirements": [
+      "Windows uses Python and ninja. macOS uses ninja and wine-crossover. Linux uses ninja. Accepted disc formats include ISO, RVZ, WIA, WBFS, CISO, NFS, GCZ, and TGC.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/fmil95/recvx-gc-decomp/blob/556f897e05945f4ad636be41f0de3d02106ea192/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
