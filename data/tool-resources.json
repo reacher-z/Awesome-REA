@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rac3-uya-decomp",
+    "name": "Ratchet & Clank: Up Your Arsenal decompilation",
+    "url": "https://github.com/vetusmagnus/rac3-uya-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Ratchet & Clank: Up Your Arsenal for the PlayStation 2, NTSC-U SCUS-97353. It builds frontbin.elf, boot_elf.elf, and i5bootn.elf byte for byte. Their SHA-1 values are 3bc94ee895e4b4af9b5602a229af599c1103b542, 487975305f8a263c750dfede50391b575ed07835, and 71f3ecfc54c3d24d1475ef9efe8228fbfe59d65f.",
+    "description_zh": "这是 PlayStation 2 美版《Ratchet & Clank: Up Your Arsenal》（SCUS-97353）的匹配反编译。它逐字节构建 frontbin.elf、boot_elf.elf 和 i5bootn.elf。三者的 SHA-1 分别是 3bc94ee895e4b4af9b5602a229af599c1103b542、487975305f8a263c750dfede50391b575ed07835 和 71f3ecfc54c3d24d1475ef9efe8228fbfe59d65f。",
+    "requirements": [
+      "SN Systems ee-gcc 2.95.3 v1.36. Place frontbin.elf, boot_elf.elf, and i5bootn.elf from the disc files folder in the repository root, then run pip install -r tools/requirements.txt and python tools/setup_asm.py --target all.",
+      "License: GPL-3.0 for the project's tooling, build files, tables, and documentation. The README says the decompiled game code in src/ is not licensed, and the libgcc sources stay GPL-2.0-or-later with the libgcc runtime exception."
+    ],
+    "evidence_url": "https://github.com/vetusmagnus/rac3-uya-decomp/blob/fc118a0b7442665a2b181055dc352ce5d117c41b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
