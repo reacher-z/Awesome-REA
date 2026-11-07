@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "smt-nine-recomp": {
+    "name": "真女神转生NINE重编译",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11。画面可以用 Vulkan 1.3、功能级别 11_0 的 D3D11、经 D3D11On12 的 D3D12，或经 WineD3D 的 OpenGL。本地构建建议有 15 GB 空闲磁盘和 16 GB 内存。",
+      "许可证：项目编写的代码和中文翻译输入为 MIT。xboxrecomp 和 WineD3D 包含 LGPL 部分。"
+    ]
   }
 }
