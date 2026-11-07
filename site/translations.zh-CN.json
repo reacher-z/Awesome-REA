@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "bookstory-en": {
+    "name": "BookStory 英文版",
+    "requirements": [
+      "运行 BookStory_en.exe。README 写明在 Windows 95、2000 和 10 上试过。如果缺少 MSVBVM50.DLL，安装 VB6 运行库。",
+      "译文字符串在 translation.csv。翻译后的源码和可玩二进制在 en 目录。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
