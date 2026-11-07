@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "xerenge",
+    "name": "Xerenge",
+    "url": "https://github.com/shipa-2/Xerenge",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Xerenge recompiles the Xbox 360 retail releases of Burnout Revenge to C++ ahead of time. Europe hashes to SHA-256 34c1bd4d549c2c53f29d814fa5e5d1c04c533c5ca0c39e57b6c2538f44ff59b4. The USA release, supported since 0.4.7, hashes to 7abf689f52b70666ba92052bd157cfcae9ed6290dae298fbf639baa1d169f92b. Each build uses its own default.xex. ./scripts/bootstrap.sh takes the ISO, then rexglue/run.sh starts the game. A Vulkan machine is required. Apple silicon Macs are supported. Intel Macs are not. The renderer is the project's plume plugin.",
+    "description_zh": "Xerenge 把 Xbox 360 零售版《火爆狂飙：复仇》提前重编译成 C++。欧版的 SHA-256 是 34c1bd4d549c2c53f29d814fa5e5d1c04c533c5ca0c39e57b6c2538f44ff59b4。从 0.4.7 起支持的美版 SHA-256 是 7abf689f52b70666ba92052bd157cfcae9ed6290dae298fbf639baa1d169f92b。每个构建使用自己的 default.xex。./scripts/bootstrap.sh 接受 ISO，然后 rexglue/run.sh 启动游戏。需要一台带 Vulkan 的机器。支持 Apple silicon Mac。不支持 Intel Mac。渲染器是项目自己的 plume 插件。",
+    "requirements": [
+      "The European or USA retail disc image with the hash above, and Vulkan. Follow SETUP.md.",
+      "License: GNU GPL version 3 or later for Xerenge's own code. Components under rexglue/thirdparty keep their own licenses."
+    ],
+    "evidence_url": "https://github.com/shipa-2/Xerenge/blob/44733246a439407460efc55dfb3c1d9b6068e0f4/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
