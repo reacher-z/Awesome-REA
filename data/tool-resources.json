@@ -36543,6 +36543,7 @@
     "description_zh": "用 C 编写的移植库，以原生实现替换 Sony PlayStation 运行时库 PSY-Q 的 API，使反编译得到的或原有的 PlayStation 源码能够在 Linux、macOS、iOS、Windows、WebAssembly 和 PSP 上编译，同时仍可为主机本身构建。它既不是模拟器，也不是静态重编译器：目标是与 PSY-Q API 兼容而非硬件精确，另提供经由仿真 MMIO 端点访问的可选 GPU 与 SPU 仿真层，并包含对 PSY-Q 4.0 库的匹配反编译。",
     "evidence_url": "https://github.com/Xeeynamo/psyz/blob/559adc76843bcca4945e9b3252d64889d58fc9e0/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "The README lists decompilation ports of Castlevania: Symphony of the Night, Rayman 1, Final Fantasy VII, Mega Man X4 and Rage Racer among its users, and states that PsyZ does not aim for output identical to real hardware or reproduce game bugs that rely on hardware misuse. A port needs the game's reconstructed C source plus the changes in the porting guide, such as ordered-table and primitive-tag types and 64-bit pointer fixes. The PSY-Q decompilation under decomp/ is ongoing.",
