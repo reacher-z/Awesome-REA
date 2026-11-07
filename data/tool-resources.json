@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "helios-decompiler",
+    "name": "Helios",
+    "url": "https://github.com/helios-decompiler/standalone-app",
+    "category": "jvm",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Helios is a Java reverse engineering application with a file browser and editor. For class files it offers a choice of decompilers and disassemblers, and for other files it shows hex and plain text.",
+    "description_zh": "Helios 是一个带文件浏览器和编辑器的 Java 逆向工程程序。对 class 文件可以选择多种反编译器和反汇编器，对其他文件则显示十六进制和纯文本。",
+    "requirements": [
+      "The README points downloads to the project's CI server.",
+      "Opened files are stored in the operating system's temporary directory. Settings and packaged native libraries live in the .helios folder in the user directory.",
+      "License: Apache-2.0."
+    ],
+    "evidence_url": "https://github.com/helios-decompiler/standalone-app/blob/e5578fb4ad34873d2c557bcfba0f74d5c7f125d2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
