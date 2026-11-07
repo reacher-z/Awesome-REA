@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "openjkdf2": {
+    "name": "OpenJKDF2：Jedi Knight: Dark Forces II 的 C 语言重实现",
+    "requirements": [
+      "运行需要一份有效的 Jedi Knight: Dark Forces II 游戏数据。仓库不包含原版游戏资源。README 写明可从 GOG 和 Steam 取得，并推荐 GOG，因为该版本无 DRM，且附带 Ogg Vorbis 音轨。",
+      "README 列出的受支持配置包括：使用 SDL2、OpenAL 和 OpenGL 3.3 的 64 位 Windows、macOS x86_64 与 AArch64、64 位 Linux；使用 OpenGL ES 3 的 ARM64 Android；使用自定义渲染器的 Nintendo DSi 和 Dreamcast；使用 OpenGL 1.1 的 32 位 Windows；以及使用 WebGL 2 的 Emscripten。在 Linux 上，路径和文件名可能区分大小写。",
+      "GitHub 报告该仓库的许可证为 NOASSERTION。"
+    ]
   }
 }
