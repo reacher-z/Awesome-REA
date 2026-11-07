@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "eternal-darkness-decomp",
+    "name": "Eternal Darkness decompilation",
+    "url": "https://github.com/psdwizzard/Eternal-Darkness---Decompile",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This matching decompilation targets Eternal Darkness: Sanity's Requiem for the GameCube, US GEDE01 revision 0. The Redump disc SHA-1 is 2bebaa7a17d69057f8c02fe00349b558abc30ff6. main.dol is 3,156,384 bytes, SHA-1 ea24b6af954876ce072562ff39cdb4c81d32be1f, entry point 0x80005308. The progress table lists 1,265,572 of 2,300,692 code bytes (55.01 percent), 6,285 of 8,214 functions (76.52 percent), and 6,520 of 7,121 objects (91.56 percent).",
+    "description_zh": "这个匹配反编译针对 GameCube 美版《永恒的黑暗：Sanity's Requiem》GEDE01 修订 0。Redump 光盘 SHA-1 是 2bebaa7a17d69057f8c02fe00349b558abc30ff6。main.dol 是 3,156,384 字节，SHA-1 ea24b6af954876ce072562ff39cdb4c81d32be1f，入口点 0x80005308。进度表列出 2,300,692 代码字节中的 1,265,572（55.01%）、8,214 个函数中的 6,285（76.52%），以及 7,121 个对象中的 6,520（91.56%）。",
+    "requirements": [
+      "Linux. python3 tools/bootstrap.py, then tools/ingest_disc.py with a GEDE01 revision 0 image, configure.py, and .tools/bin/ninja. Metrowerks binaries go in compilers/ or are passed with --compilers. Bootstrap pins DTK 1.8.3, Ninja 1.13.2, and wibo 1.0.3.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/psdwizzard/Eternal-Darkness---Decompile/blob/cf6635d560b90fefaa617260c86b7cccb5419136/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

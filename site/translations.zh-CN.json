@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "eternal-darkness-decomp": {
+    "name": "永恒的黑暗反编译",
+    "requirements": [
+      "需要 Linux。运行 python3 tools/bootstrap.py，再用 GEDE01 修订 0 镜像运行 tools/ingest_disc.py，然后 configure.py 和 .tools/bin/ninja。Metrowerks 二进制放在 compilers/，或用 --compilers 传入。Bootstrap 固定 DTK 1.8.3、Ninja 1.13.2 和 wibo 1.0.3。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
