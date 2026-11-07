@@ -11030,7 +11030,7 @@
       "审阅版本为记录 0.4.7 更新日志的提交（2026 年 10 月 15 日）。README 将其描述为仅针对这一款游戏的静态重编译，而非 Xbox 模拟器或反编译。其状态表报告标题画面、菜单、存档、开场区域、滑行、涂鸦与音频可用，后期区域测试很少，加载时偶尔出现光盘错误画面。Linux 版远少于 macOS 版的游玩测试，Windows 版在 Wine 下测试，Android 版仅在 Android 模拟器中运行过。",
       "玩家需自备美版（NTSC-U）Jet Set Radio Future 光盘：可提供包含 default.xbe 与 Media 的解包目录，或由应用借助 extract-xiso 解包的光盘镜像。README 说明其他地区版本无法使用。仓库不含游戏数据或生成的游戏代码；所审阅的 README 与入口程序指明了所需版本，但未给出其校验值。",
       "从源码构建时，先用 tools/recomp 中的 Python 流水线处理用户自己的 default.xbe，把输出放入 port/recomp/gen，再用 CMake 构建移植程序。平台说明涵盖 macOS 的 Metal 或 OpenGL 渲染、Linux 的 SDL OpenGL 上下文、用 llvm-mingw 交叉编译 Windows 版、Xcode 的 iOS SDK，以及 Android NDK 与 SDL 2.32 源码。图形与音频硬件模型基于 xemu 的 NV2A 与 MCPX 工作。",
-      "更新日志记录了有针对性的手动测试，例如在 Android 模拟器中的运行；仓库含有工具包的测试与一致性检查目录，但固定版本中没有 CI 工作流。从 xboxrecomp 继承的贡献者说明称，该工具包的部分内容及部分贡献借助 AI 编程工具完成，随附的工具包文档也致谢 Claude Code。所审阅来源未说明 JSRF 专属移植部分是如何完成的。本合集未构建或运行该项目。",
+      "更新日志记录了有针对性的手动测试，例如在 Android 模拟器中的运行；仓库含有工具包的测试与一致性检查目录，但固定版本中没有 CI 工作流。从 xboxrecomp 继承的贡献者说明称，该工具包的部分内容及部分贡献借助 AI 编程工具完成，随附的工具包文档也致谢 Claude Code。所审阅来源未说明 JSRF 专属移植部分是如何完成的。",
       "项目自有代码采用 MIT 许可，从 xemu 提取的 MCPX 音频代码仍为 LGPL-2.1-or-later。README 说明发布下载包含运行时以及机器翻译为原生代码的游戏自身代码，但不含纹理、模型、音乐、视频或文本。Jet Set Radio Future 版权归 SEGA 所有；项目自称为非官方同人项目，与 SEGA 无关联，也未获其认可。所审来源未确立与 REA 的关联。"
     ]
   },
