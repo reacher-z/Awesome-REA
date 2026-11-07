@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ffta-recomp-case",
+    "name": "Final Fantasy Tactics Advance Recomp",
+    "url": "https://github.com/james2doyle/ffta-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Final Fantasy Tactics Advance Recomp is a static recompilation of the USA Game Boy Advance game for Linux, Windows, Android, and Steam Deck. It is built on gbarecompx. The README calls the current build an experimental preview and says widescreen has been checked up to 448 pixels.",
+    "description_zh": "Final Fantasy Tactics Advance Recomp 是美版 Game Boy Advance 游戏《最终幻想战略版 Advance》的静态重编译，面向 Linux、Windows、Android 和 Steam Deck。它基于 gbarecompx。README 把当前构建称为实验预览，并写明宽屏已检查到 448 像素。",
+    "requirements": [
+      "The player supplies a USA ROM. The repository includes an emibios build, so a Nintendo BIOS dump is not required.",
+      "License: PolyForm Noncommercial 1.0.0."
+    ],
+    "evidence_url": "https://github.com/james2doyle/ffta-recomp/blob/c2d618208098d14a4afa1a87f888cd6310bbd476/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
