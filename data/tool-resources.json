@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openjpog",
+    "name": "OpenJPOG",
+    "url": "https://github.com/AdventureT/OpenJPOG",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "OpenJPOG decompiles Toshi engine 1.0 and Jurassic Park: Operation Genesis. The Windows build uses Visual Studio 2019 or 2022. The README says the progress images do not yet mark every finished function.",
+    "description_zh": "OpenJPOG 反编译 Toshi 引擎 1.0 和 Jurassic Park: Operation Genesis。Windows 构建使用 Visual Studio 2019 或 2022。README 写明进度图还没有标出每一个已完成的函数。",
+    "requirements": [
+      "Clone with submodules, run GenerateProjects-VS2019.bat or GenerateProjects-VS2022.bat, and compile the generated solution.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/AdventureT/OpenJPOG/blob/84b503e76d7a6250f4bbd7df807a50ec591660bb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

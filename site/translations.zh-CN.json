@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "openjpog": {
+    "name": "OpenJPOG",
+    "requirements": [
+      "带子模块克隆，运行 GenerateProjects-VS2019.bat 或 GenerateProjects-VS2022.bat，然后编译生成的解决方案。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
