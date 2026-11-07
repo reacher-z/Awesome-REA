@@ -342,6 +342,7 @@
 - [**Elgato HDR：为 Elgato 4K X 的 10 位模式提供用户态采集通路**](https://github.com/talkaboutdesign/elgato-hdr) - 一款原生 macOS 应用，用于获取 Elgato 4K X 采集卡的 10 位 P010 视频模式；项目称苹果内置的摄像头驱动不会向应用开放该模式。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/elgato-hdr-uvc-capture-case/)</sub>
 - [**Galaxy Buds Client：基于三星耳机协议的非官方管理器**](https://github.com/timschneeb/GalaxyBudsClient) - 在跨平台桌面与 Android 管理器中，通过三星 Galaxy Buds 专有的 RFCOMM 串口协议重新实现耳机控制。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/galaxy-buds-client-protocol-case/)</sub>
 - [**LGwebOS-menubar：LG webOS 电视的原生 macOS 遥控器**](https://github.com/gabrielgreco1/TVmenubar-MacOS) - 一款原生 macOS 菜单栏应用，通过 LG webOS 电视在局域网内的加密 WebSocket 接口完成配对，可启动应用、切换输入源、调节音量和画面设置、发送指针输入并投放所选媒体。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lgwebos-menubar-remote-case/)</sub>
+- [**LibrePods：借助逆向得出的协议在 Android 和 Linux 上使用 AirPods 功能**](https://github.com/librepods-org/librepods) - 实现 AirPods 与苹果设备之间使用的专有协议（作者称由其本人逆向得出），使 Android 和 Linux 应用能够切换降噪模式、读取入耳检测和准确电量，并使用对话感知、头部手势和助听设置。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/librepods-airpods-protocol-case/)</sub>
 - [**RKD Telemetry Extractor：解读 Race-Keeper 赛道日录制数据**](https://github.com/sam-dumont/rkd-telemetry-extractor) - 记录 Race-Keeper “Instant Video” 记录仪所写的专有 .rkd 遥测格式（随附播放器仅支持 Windows），并以结果一致的 Python 与 Go 解析器把 GPS 和 IMU 通道导出为 Telemetry Overlay CSV 与 GPX。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rkd-telemetry-extractor-case/)</sub>
 - [**Screen Studio：作者报告的 REA 自动缩放规则研究**](https://x.com/i/article/2109834677343432704) - 作者报告借助 REA 梳理 Screen Studio 的 Electron 安装包，在 Claude Code 协助下从混淆代码中读出六条自动缩放与光标规则，再让 Claude Code 依据这些规则编写独立的录屏和渲染程序。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/screen-studio-auto-zoom-case/)</sub>
 - [**Wino Mail：重建 Windows 邮件与日历体验**](https://github.com/bkaankose/Wino-Mail) - 原生 Windows 客户端，以重建 Windows 邮件与日历的功能、保留熟悉的使用体验为目标。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wino-mail-case/)</sub>
@@ -369,7 +370,6 @@
 - [**Notion：追踪剪贴板桥接**](https://rea.tools/showcase/notion/) - 结合 REA 发现与独立源码阅读追踪剪贴板桥；动态包装器仍有明确限制。 <sub>案例 · REA 官方 · [完整条目](https://awesomerea.org/zh/resources/rea-notion-case/)</sub>
 - [**PicoPrint：LX-D02 打印机调查**](https://github.com/bigtower17/picoprint) - 作者报告以 REA 开始 Android 调查，再借助独立 Hermes 工具实现 Windows BLE 打印。 <sub>案例 · 混合工具流程 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/picoprint-rea-investigation/)</sub>
 - [**ReaCut：视频编辑器重建案例**](https://github.com/Xiangyu-CAS/rea-capcut) - 独立视频编辑器，作者公开了利用 REA 研究剪映／CapCut 行为与项目格式的过程。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/reacut-reconstruction/)</sub>
-- [**LibrePods：借助逆向得出的协议在 Android 和 Linux 上使用 AirPods 功能**](https://github.com/librepods-org/librepods) - 实现 AirPods 与苹果设备之间使用的专有协议（作者称由其本人逆向得出），使 Android 和 Linux 应用能够切换降噪模式、读取入耳检测和准确电量，并使用对话感知、头部手势和助听设置。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/librepods-airpods-protocol-case/)</sub>
 
 <a id="native-binary"></a>
 ## Native Binary · 原生二进制

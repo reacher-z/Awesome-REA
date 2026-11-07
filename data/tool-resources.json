@@ -36544,6 +36544,7 @@
     "description_zh": "实现 AirPods 与苹果设备之间使用的专有协议（作者称由其本人逆向得出），使 Android 和 Linux 应用能够切换降噪模式、读取入耳检测和准确电量，并使用对话感知、头部手势和助听设置。仓库除 Android 应用和 Linux 应用外，还记录了抓包得到的数据包格式、操作码和控制命令。部分功能在 Android 上需要 root，或仍处于实验阶段。",
     "evidence_url": "https://github.com/librepods-org/librepods/blob/89356c08cea3db0b6b54792d9329d09a87cc85fa/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at the 2026-10-16 main head, the commit of Android release v1.0.4; a v2.0.0 Android rewrite is in alpha, and main still holds the older Qt 6 Linux app while a Rust rewrite lives on the linux/rust branch. README’s feature table marks listening modes, ear detection, battery, renaming, conversational awareness and auto-connect as working on both platforms, head gestures and accessibility settings as Android-only, and Find My, head-tracked spatial audio and high-quality two-way audio as unknown, planned or experimental.",
