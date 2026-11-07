@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dqiv-recompiled-case",
+    "name": "Dragon Quest IV PC",
+    "url": "https://github.com/GoldieLeGenie/DQIV-Recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "Dragon Quest IV PC runs the Nintendo DS game on Windows from its decompilation. It joins both screens into one 16:9 picture and can use the mobile version's sound.",
+    "description_zh": "Dragon Quest IV PC 在 Windows 上运行任天堂 DS 版《勇者斗恶龙 IV》，基于它的反编译。它把两个屏幕合成一幅 16:9 画面，也可以使用手机版的声音。",
+    "requirements": [
+      "Put a European Dragon Quest IV DS ROM, game code YIVP, in ROMandOBBfileHere. An Android .obb file is optional and supplies HD music and sound effects.",
+      "The build writes dist/DragonQuestIV.exe. Saves stay in a saves folder next to that executable.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/GoldieLeGenie/DQIV-Recompiled/blob/c1cf527ce51b888aa5a684fe9cae90123fc93667/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
