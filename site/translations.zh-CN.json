@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "lv0pen": {
+    "name": "lv0pen",
+    "requirements": [
+      "按 BUILDING.md 操作。仓库不包含固件。",
+      "许可证：GPL 第 3 版。lv1ldr/zlib 是修改过的 zlib 1.2.3，使用它自己的许可证。"
+    ]
   }
 }

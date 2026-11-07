@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "lv0pen",
+    "name": "lv0pen",
+    "url": "https://github.com/sagemono/lv0pen",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "binary"
+    ],
+    "class": "software",
+    "description_en": "lv0pen rebuilds PlayStation 3 boot-chain programs and isolated SPU modules with the original compilers. The table lists lv0 4.93 at 100 percent, bootldr 1.0.0 at 458 of 458, metldr at 182 of 182, isoldr 4.93 at 273 of 273, and appldr 4.93 at 446 of 446. lv0ldr.2 3.6.5 is 472 of 474, and lv1ldr 4.93 is 293 of 300. Build steps are in BUILDING.md.",
+    "description_zh": "lv0pen 用原来的编译器重建 PlayStation 3 启动链程序和隔离的 SPU 模块。表里列出 lv0 4.93 为 100%，bootldr 1.0.0 为 458 个中的 458 个，metldr 为 182 个中的 182 个，isoldr 4.93 为 273 个中的 273 个，appldr 4.93 为 446 个中的 446 个。lv0ldr.2 3.6.5 是 474 个中的 472 个，lv1ldr 4.93 是 300 个中的 293 个。构建步骤在 BUILDING.md。",
+    "requirements": [
+      "Follow BUILDING.md. No firmware is included.",
+      "License: GPL version 3. lv1ldr/zlib is altered zlib 1.2.3 under its own license."
+    ],
+    "evidence_url": "https://github.com/sagemono/lv0pen/blob/14584b7124c541ef893de799b680aa18106548ff/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
