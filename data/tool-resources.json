@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "underworld-revisited",
+    "name": "Underworld Revisited",
+    "url": "https://github.com/PQMarine/UnderworldRevisited",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Underworld Revisited reimplements Ultima Underworld: The Stygian Abyss (1992) in Unity. It reads the GOG or Steam copy. The checked GOG executable UW.EXE is 547,248 bytes. Windows releases are UnderworldRevisited-<version>-win64.zip and start with UR.exe. Linux releases since 0.3.0 are UnderworldRevisited-<version>-linux64.tar.gz and start with UR.x86_64. Saves use the installation folders UNDEROM1\\SAVE1 through SAVE4.",
+    "description_zh": "Underworld Revisited 用 Unity 重新实现 1992 年的 Ultima Underworld: The Stygian Abyss。它读取 GOG 或 Steam 的副本。核对过的 GOG 可执行文件 UW.EXE 是 547,248 字节。Windows 发布包是 UnderworldRevisited-<version>-win64.zip，由 UR.exe 启动。自 0.3.0 起的 Linux 发布包是 UnderworldRevisited-<version>-linux64.tar.gz，由 UR.x86_64 启动。存档使用安装目录里的 UNDEROM1\\SAVE1 到 SAVE4。",
+    "requirements": [
+      "Windows 10 or newer, 64-bit, with DirectX 11, or 64-bit Linux with Vulkan or OpenGL 4. A source build uses Unity 6000.6.8f1. The launcher asks for the folder that contains game.gog or game.bin when it does not find an install.",
+      "License: MIT. Parts derived from other projects keep the licenses in THIRD_PARTY_NOTICES.md."
+    ],
+    "evidence_url": "https://github.com/PQMarine/UnderworldRevisited/blob/7407116b0f99341eb2c8647322255c53a86bdf04/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
