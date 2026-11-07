@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "agl-decomp",
+    "name": "agl",
+    "url": "https://github.com/open-ead/agl",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "software",
+    "description_en": "agl is a decompilation of agl, a C++ library used by first-party Nintendo games for graphics, lighting, and parameter utilities called AAMP. The README points to open-ead/sead for the project goal, contribution guidelines, and build information.",
+    "description_zh": "agl 是 agl 的反编译。agl 是第一方任天堂游戏使用的 C++ 库，负责图形、光照和名为 AAMP 的参数工具。README 指向 open-ead/sead 以了解项目目标、贡献约定和构建信息。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command of its own."
+    ],
+    "evidence_url": "https://github.com/open-ead/agl/blob/07eeda769154528bfbc0a266b22a84ebbeef9539/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
