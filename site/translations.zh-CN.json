@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "rerevved": {
+    "name": "ReRevved",
+    "requirements": [
+      "需要带 Direct3D 12 的 64 位 Windows 10 或 11，或者上面的 Linux 和 macOS 目标，以及一份 Civilization Revolution 和它的 1.3 更新。",
+      "许可证：GPL 第 3 版。"
+    ]
   }
 }
