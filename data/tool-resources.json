@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "space-cadet-dc",
+    "name": "Space Cadet pinball for Dreamcast",
+    "url": "https://github.com/headshot2017/3dpinball-dc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This ports the Space Cadet pinball decompilation to the Sega Dreamcast. It is built with DreamSDK and uses a modified LibADX so the port compiles on the current KallistiOS. Paddles are the D-pad, X, B, or the triggers. The README says that after a short time the score and mission text starts wrapping onto new lines.",
+    "description_zh": "该项目把三维弹球太空军校生的反编译移植到世嘉 Dreamcast。它用 DreamSDK 构建，并修改了 LibADX，以便在当前的 KallistiOS 上编译。挡板用方向键、X、B 或扳机。README 写明玩一小段时间后，分数和任务文字会开始换行。",
+    "requirements": [
+      "DreamSDK. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/headshot2017/3dpinball-dc/blob/a75b12df16e600bc7c4e5a3ab6b3f78e55648eb1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
