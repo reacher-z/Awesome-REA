@@ -36543,7 +36543,7 @@
     "requirements": [
       "The README builds with make. reference/ holds the original binaries from the cbmfiles.com version. make regress builds the bsw and wheels variants and compares them with those references.",
       "The README says this tree does not use the original encrypted loader and that the kernel is plaintext, matching the cbmfiles.com version it describes. It says the serial number 0x58B5 is pre-filled to match that version.",
-      "make regress is the comparison named in the README. Not run or reproduced for this catalog.",
+      "make regress is the comparison named in the README.",
       "The reviewed root has no LICENSE file. The README says the intellectual property added by the reverse-engineering and the subsequent improvements is in the public domain, asks to be credited, and says to respect the license of the underlying GEOS work."
     ],
     "requirement_facets": [
