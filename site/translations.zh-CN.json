@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "zgloom": {
+    "name": "ZGloom",
+    "requirements": [
+      "原开发者在 earok/GloomAmiga 发布了 Gloom。把 ZGloom 的二进制文件放进那个目录。在 Linux 上用 make 编译。",
+      "审阅的 README 没有给 ZGloom 写许可证。它写明附带的 DeCrunchmania 代码许可证不明。"
+    ]
   }
 }
