@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "smt-nine-recomp",
+    "name": "SMT NINE Recomp",
+    "url": "https://github.com/gymzatan/smt-nine-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "SMT NINE Recomp is a native Windows port of Shin Megami Tensei NINE for the original Xbox, built with xboxrecomp. The default build is Japanese, translated from the player's Japanese retail disc. A Chinese translation is optional. Config can import an ISO patched with an English translation.",
+    "description_zh": "SMT NINE Recomp 是原版 Xbox 游戏《真·女神转生 NINE》的 Windows 原生移植，用 xboxrecomp 构建。默认构建是日文，从玩家的日版零售光盘翻译而来。中文翻译是可选的。配置可以导入打过英文翻译补丁的 ISO。",
+    "requirements": [
+      "Windows 10 or 11, x64. Graphics can use Vulkan 1.3, D3D11 feature level 11_0, D3D12 through D3D11On12, or OpenGL through WineD3D. A local build is recommended to have 15 GB free disk and 16 GB RAM.",
+      "License: MIT for project-authored code and the Chinese translation inputs. xboxrecomp and WineD3D include LGPL portions."
+    ],
+    "evidence_url": "https://github.com/gymzatan/smt-nine-recomp/blob/c5f8a13a7473b5cc7e6091b757adc6cabc317543/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
