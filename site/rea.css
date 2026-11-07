@@ -83,10 +83,27 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 /* ---------- drawer (sage panel holding the cards) ---------- */
 .drawer { --card-ground: var(--surface); position: relative; z-index: 1; padding: 20px 24px 24px; background: var(--surface);
   border: 1px solid var(--line-strong); border-radius: 0 var(--r-panel) var(--r-panel) var(--r-panel); }
-.drawer-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "chips meta sort"; align-items: center; gap: 6px 14px; margin-bottom: 12px; }
+.drawer-bar { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "chips chips chips" "meta class sort"; align-items: center; gap: 6px 14px; margin-bottom: 12px; }
 .drawer-bar .chips { grid-area: chips; }
 .drawer-bar .select { grid-area: sort; }
 .drawer-bar .drawer-meta { grid-area: meta; }
+.class-filter { grid-area: class; display: inline-flex; align-items: center; gap: 6px; }
+/* The info button beside the class filter lists the class criteria on hover or focus. */
+.info-wrap { display: inline-flex; }
+.info-btn { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; flex: none;
+  border: 1px solid var(--line-strong); border-radius: 50%; background: var(--bg-raised); color: var(--ink-2-panel);
+  font: 600 .75rem/1 var(--font-body); cursor: help; }
+.info-btn:hover, .info-btn:focus-visible { color: var(--ink-strong); border-color: var(--focus); }
+.info-pop { position: absolute; top: calc(100% + 8px); right: 0; z-index: 30; width: max-content; max-width: min(320px, calc(100vw - 32px));
+  padding: 12px 14px; background: var(--bg-raised); border: 1px solid var(--line-strong); border-radius: var(--r-control);
+  box-shadow: 0 8px 24px rgb(0 0 0 / .14); opacity: 0; visibility: hidden; transform: translateY(-4px);
+  transition: opacity var(--t-base) var(--ease), transform var(--t-base) var(--ease); }
+.info-wrap:hover .info-pop, .info-wrap:focus-within .info-pop, .info-wrap:has(.info-btn[aria-expanded="true"]) .info-pop {
+  opacity: 1; visibility: visible; transform: none; }
+.info-pop strong { display: block; margin-bottom: 8px; font: 600 .8125rem/1.3 var(--font-body); color: var(--ink-strong); }
+.info-pop ul { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; font-size: .8125rem; line-height: 1.35; color: var(--ink); }
+.info-pop li { display: flex; align-items: baseline; gap: 8px; }
+.info-pop .card-class { margin-left: 0; flex: none; }
 .drawer-meta { font-size: .8125rem; color: var(--ink-2-panel); white-space: nowrap; }
 .drawer-meta strong { color: var(--ink-strong); font-weight: 600; font-variant-numeric: tabular-nums; }
 .chips { display: flex; flex-wrap: wrap; gap: 2px; }
@@ -240,10 +257,12 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 /* library-card margin rule between the call-number gutter and the entry */
 .card-face::before { content: ""; position: absolute; top: 0; bottom: 0; left: 122px; width: 1px; background: color-mix(in srgb, var(--secondary) 70%, transparent); }
 @media (max-width: 767px) {
-  .drawer-bar { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "kind sort" "meta meta"; gap: 8px; margin-bottom: 10px; }
+  .drawer-bar { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "kind sort" "class meta"; gap: 8px; margin-bottom: 10px; }
   .drawer-bar .chips { display: none; }
   .drawer-bar .drawer-meta { font-size: .8125rem; }
   .drawer-bar .kind-select { display: inline-flex; grid-area: kind; }
+  .class-filter { width: 100%; }
+  .class-filter .select { flex: 1; }
   .drawer-bar .select select { width: 100%; height: 44px; font-size: .9375rem; }
   .drawer-bar .select { width: 100%; }
   .drawer-bar .chips::-webkit-scrollbar { display: none; }
@@ -708,7 +727,7 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 /* hero: Fig. 1 at the top right, the standfirst moves under the search so the search stays high */
 .xv { display: none; }
 @media (min-width: 900px) {
-  .page-home .masthead { --xv-w: clamp(230px, 27vw, 340px); }
+  .page-home .masthead { --xv-w: clamp(200px, 23vw, 290px); }
   .page-home .hero-top { display: contents; }
   .page-home .hero-title { order: 1; }
   .page-home .masthead .hero-search { order: 2; width: calc(100% - var(--xv-w) - 24px); margin-top: 26px; }
