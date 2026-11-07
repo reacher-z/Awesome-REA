@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ida-bosch-me7x",
+    "name": "BoschMe7x",
+    "url": "https://github.com/AndyWhittaker/IDAProBoschMe7x",
+    "category": "firmware",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "BoschMe7x is an IDA Pro plugin that reads a Bosch ME7.x binary and tries to disassemble it. The documented processor is the Siemens C166 family.",
+    "description_zh": "BoschMe7x 是一个 IDA Pro 插件，读入 Bosch ME7.x 二进制并尝试反汇编。文档中的处理器是 Siemens C166 系列。",
+    "requirements": [
+      "Load the binary as processor c166, with RAM at 0x0e0000 sized 0x0400 and ROM at 0x800000. Select device C167CR_SR. Put the .plw file in the IDA plugins directory.",
+      "The project was written in Visual Studio 2017. License: MIT."
+    ],
+    "evidence_url": "https://github.com/AndyWhittaker/IDAProBoschMe7x/blob/ff5f7fa35b9fb2f8997d04ca1b1c28f87aa15ce3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
