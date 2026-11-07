@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "carnage3d",
+    "name": "Carnage3D: open-source remake of Grand Theft Auto 1",
+    "url": "https://github.com/codenamecpp/carnage3d",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Carnage3D is an open-source remake of Grand Theft Auto 1. The README describes the project as an early stage and links a WebAssembly build tested in Chrome 85 and Firefox 81, both 64-bit. The Linux build instructions use clang and name GLEW, GLM, Mesa, X11, and OpenAL development packages.",
+    "description_zh": "Carnage3D 是《侠盗猎车手 1》的开源重制。README 把项目描述为早期阶段，并链接了一个在 64 位 Chrome 85 和 Firefox 81 中测试过的 WebAssembly 构建。Linux 构建说明使用 clang，并列出 GLEW、GLM、Mesa、X11 和 OpenAL 的开发包。",
+    "evidence_url": "https://github.com/codenamecpp/carnage3d/blob/3dc03b2bed32d16315abae3c17d7d9276f450e0b/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The README says the Linux makefile is configured for clang. It lists libglew-dev, libglm-dev, libgl1-mesa-dev, xorg-dev, clang, and libopenal-dev.",
+      "A browser build is published at https://codenamecpp.github.io/carnage3d/web/carnage3D_wasm.html. The README says it was tested in Chrome 85 64-bit and Firefox 81.0.1 64-bit and does not work in Edge.",
+      "The README badge states the MIT license. GitHub reports MIT."
+    ],
+    "verification": "source-reviewed"
   }
 ]
