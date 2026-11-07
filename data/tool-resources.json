@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "azel-decomp",
+    "name": "Azel: Panzer Dragoon RPG notes",
+    "url": "https://github.com/Aeonitis/Reverse-Engineer-Azel",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "These notes decompile Azel: Panzer Dragoon RPG, also called Panzer Dragoon Saga, for the Sega Saturn. The disc 1 progress table lists 1ST_READ.PRG at 74.70 percent (1,908 of 2,554 bytes) and MENUEN.PRG at 54.39 percent (26,624 of 48,944 bytes).",
+    "description_zh": "这些笔记反编译世嘉土星游戏 Azel: Panzer Dragoon RPG，也叫 Panzer Dragoon Saga。第一张光盘的进度表列出 1ST_READ.PRG 为 74.70%（2,554 字节中的 1,908），MENUEN.PRG 为 54.39%（48,944 字节中的 26,624）。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Aeonitis/Reverse-Engineer-Azel/blob/f308c41bcbdbd5842f3e21c84bdf1c5ccfc9cece/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
