@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "goldenballoon-case",
+    "name": "Golden Balloon: native and browser port of Diddy Kong Racing",
+    "url": "https://github.com/akratch/goldenballoon",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "Golden Balloon is a native and browser port of the 1997 Nintendo 64 kart racer, built on the Diddy Kong Racing decompilation. The README says the game is compiled for the machine and runs from a ROM you already own.",
+    "description_zh": "Golden Balloon 是 1997 年那款任天堂 64 卡丁车游戏的原生和浏览器移植，建立在《迪迪克刚赛车》反编译之上。README 写明游戏会为本机编译，并从你已有的 ROM 运行。",
+    "requirements": [
+      "Provide a US 1.1 or European 1.1 ROM as .z64, .v64, or .n64. The browser build needs a WebGPU browser such as current Chrome or Edge, and reads the ROM locally.",
+      "The README identifies the first-party license as MIT and points to NOTICE.md for other components."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/akratch/goldenballoon/blob/2b69e748ec04f87a4dc6f032c598726de1b0e813/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
