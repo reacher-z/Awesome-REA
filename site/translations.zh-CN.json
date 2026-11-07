@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ida-yara-processor": {
+    "name": "IDA YARA 处理器",
+    "requirements": [
+      "需要 IDA 7.0，以及测试过的 YARA 3.7.0 和 3.8.1 规则文件。把处理器复制到 procs，把加载器复制到 loaders。",
+      "许可证：MIT。"
+    ]
   }
 }

@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ida-yara-processor",
+    "name": "IDA YARA processor",
+    "url": "https://github.com/bnbdr/ida-yara-processor",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This is an IDA loader and processor for YARA's compiled rule format. The processor goes in the IDA procs directory and the loader in the loaders directory. It requires IDA 7.0. The README says it was tested with YARA 3.7.0 and 3.8.1.",
+    "description_zh": "这是用于 YARA 已编译规则格式的 IDA 加载器和处理器。处理器放在 IDA 的 procs 目录，加载器放在 loaders 目录。它需要 IDA 7.0。README 写明用 YARA 3.7.0 和 3.8.1 测试过。",
+    "requirements": [
+      "IDA 7.0 or the tested YARA 3.7.0 and 3.8.1 rule files. Copy the processor into procs and the loader into loaders.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/bnbdr/ida-yara-processor/blob/d784e5b015b14c72c2212456168645f4ea00c546/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
