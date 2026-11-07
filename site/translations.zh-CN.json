@@ -11023,5 +11023,11 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "aflpp": {
+    "name": "AFL++",
+    "requirements": [
+      "README 将 AFL++ 许为 AGPL-3.0-or-later，并写明部分文件为 Apache-2.0。编进 fuzzing harness 的代码保持 Apache-2.0，每个文件的 SPDX 头即该文件应遵循的许可。README 还写明，无法使用 AGPL 的组织可以取得可选的商业许可。"
+    ]
   }
 }

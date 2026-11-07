@@ -36528,5 +36528,24 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "aflpp",
+    "name": "AFL++",
+    "url": "https://github.com/AFLplusplus/AFLplusplus",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Fuzzer described as a fork of Google's AFL, with the README citing release 5.03c and GitHub version 5.04a. The README says it adds speed, mutations, instrumentation, and custom module support, and names Marc Heuse, Dominik Maier, Andrea Fioraldi, and Heiko Eissfeldt as maintainers, with frida_mode maintained by @Worksbutnottested. It credits the original AFL work to Michal Zalewski.",
+    "description_zh": "README 将其描述为 Google AFL 的分支，并写明发布版本 5.03c、GitHub 版本 5.04a。README 写明它增加了速度、变异、插桩和自定义模块支持，维护者包括 Marc Heuse、Dominik Maier、Andrea Fioraldi 和 Heiko Eissfeldt，frida_mode 由 @Worksbutnottested 维护，并说明 AFL 最初由 Michal Zalewski 开发。",
+    "evidence_url": "https://github.com/AFLplusplus/AFLplusplus/blob/d0070729206a80a9af297b2341edd63f68fdac35/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README licenses AFL++ under AGPL-3.0-or-later and says some files are Apache-2.0. It says everything compiled into a fuzzing harness stays Apache-2.0, and that each file's SPDX header is the license to follow. It also says an optional commercial license is available for organizations that cannot use the AGPL."
+    ]
   }
 ]
