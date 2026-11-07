@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "openmadoola": {
+    "name": "OpenMadoola",
+    "requirements": [
+      "需要名为 madoola.nes 的 Wing of Madoola ROM，或 Steam 合集里的 sharedassets0.assets，以及 Windows 发布附带的数据文件。",
+      "许可证：GPL 第 2.0 版或更高版本。"
+    ]
   }
 }
