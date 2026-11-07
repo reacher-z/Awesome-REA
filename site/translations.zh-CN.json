@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "cogbox": {
+    "name": "COGBox",
+    "requirements": [
+      "需要每款游戏的个人光盘或 Games on Demand 副本，以及上面列出的标题更新。每款游戏大约需要 8 到 16 GB 空闲空间。",
+      "许可证：项目代码为 MIT。来自 Xenia 项目和其他组件的部分保留 THIRD_PARTY_NOTICES.md 中的许可证。"
+    ]
   }
 }

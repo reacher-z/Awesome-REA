@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "cogbox",
+    "name": "COGBox",
+    "url": "https://github.com/Shagg88/COGBox",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "COGBox launches native ports of Gears of War, Gears of War 2, Gears of War 3, and Gears of War: Judgment. Title updates are required: update 5 for the first game, update 6 for the second and third, and update 4 for Judgment. The Gears 2 port targets the US disc 0.0.0.5 plus that update. CogBox.exe accepts an ISO, a Games on Demand copy, an extracted folder, and the update package. Windows 10 or 11 x64, AVX2, and DirectX 12 are required. Linux through Proton is marked experimental.",
+    "description_zh": "COGBox 启动《战争机器》《战争机器2》《战争机器3》和《战争机器：审判》的本地移植。标题更新是必需的：第一作是第 5 号，第二作和第三作是第 6 号，审判是第 4 号。《战争机器2》针对美版光盘 0.0.0.5 加上该更新。CogBox.exe 接受 ISO、Games on Demand 副本、已提取的文件夹和更新包。需要 Windows 10 或 11 x64、AVX2 和 DirectX 12。通过 Proton 在 Linux 上运行被标为实验性。",
+    "requirements": [
+      "A personal disc or Games on Demand copy of each game, plus the title update listed above. About 8 to 16 GB free per game.",
+      "License: MIT for the project code. Pieces from the Xenia projects and other components keep the licenses in THIRD_PARTY_NOTICES.md."
+    ],
+    "evidence_url": "https://github.com/Shagg88/COGBox/blob/31de0494f85f094bec45c53df43a680529487656/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
