@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "neotokyo-rebuild",
+    "name": "NEOTOKYO Rebuild",
+    "url": "https://github.com/NeotokyoRebuild/neo",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "NEOTOKYO Rebuild is a rebuild of NEOTOKYO in the Source SDK 2013 multiplayer branch, updated for the 2025 Team Fortress 2 SDK. The README says it is forked from NeotokyoRevamp/neo.",
+    "description_zh": "NEOTOKYO Rebuild 是在 Source SDK 2013 多人分支上重建的 NEOTOKYO，并更新到 2025 年的 Team Fortress 2 SDK。README 写明它派生自 NeotokyoRevamp/neo。",
+    "requirements": [
+      "Windows builds use Visual Studio 2022 with the C++ tools, the C++ MFC library, the Windows 10 or 11 SDK, and CMake. The README says Visual Studio 2026 is not officially supported.",
+      "Linux builds use Steam Runtime 3 Sniper with the GCC and G++ 10 toolchain, plus CMake. Ninja is optional on both platforms.",
+      "License: SOURCE 1 SDK LICENSE, in the repository LICENSE file."
+    ],
+    "evidence_url": "https://github.com/NeotokyoRebuild/neo/blob/aa8f099d4b96b3f0f6f0302106dfe6414357fbcf/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
