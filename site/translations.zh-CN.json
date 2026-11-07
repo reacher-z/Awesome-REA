@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "kisakblack": {
+    "name": "KisakBlack",
+    "requirements": [
+      "需要 Windows、Visual Studio 2022、CMake 3.16 或更高版本、2010 年的 DirectX SDK，以及 Steam 上的《使命召唤：黑色行动》。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
