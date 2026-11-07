@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "hmawl",
+    "name": "Harvest Moon: A Wonderful Life disassembly",
+    "url": "https://github.com/ChrisNonyminus/hmawl",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of Harvest Moon: A Wonderful Life for the GameCube, US version. main.dol has SHA-1 1ccfd9dfb5c250c2f45c70c74cc45e5d88d22374. wlp0.rel has SHA-1 cf82697ee0d50ce11602b2b531e844f3d68c7318. wlp1.rel has SHA-1 509f77d903c89472be5590d45ddf65ddb2e93055. wlp2.rel has SHA-1 a160e6651fd50af8471a487b9a187044f683427c. The README says the built REL files do not yet match the originals, and that main.dol, wlp1, and wlp2 are shiftable.",
+    "description_zh": "这是 GameCube 美版《牧场物语 美丽人生》的反汇编。main.dol 的 SHA-1 是 1ccfd9dfb5c250c2f45c70c74cc45e5d88d22374。wlp0.rel 的 SHA-1 是 cf82697ee0d50ce11602b2b531e844f3d68c7318。wlp1.rel 的 SHA-1 是 509f77d903c89472be5590d45ddf65ddb2e93055。wlp2.rel 的 SHA-1 是 a160e6651fd50af8471a487b9a187044f683427c。README 写明构建出的 REL 文件还不能与原版一致，而 main.dol、wlp1 和 wlp2 可以移位。",
+    "requirements": [
+      "The README lists DEVKITPROPPC, Python 3, and gcc. Extract GC_WII_COMPILERS.zip to tools/mwcc_compiler/, then run make.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ChrisNonyminus/hmawl/blob/a6a08786729e8cc87794003acf2dc6756158719e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "hmawl": {
+    "name": "牧场物语 美丽人生反汇编",
+    "requirements": [
+      "README 列出 DEVKITPROPPC、Python 3 和 gcc。把 GC_WII_COMPILERS.zip 解压到 tools/mwcc_compiler/，然后运行 make。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
