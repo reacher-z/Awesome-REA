@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "java-decompile-tool-gui",
+    "name": "JavaDecompileTool-GUI",
+    "url": "https://github.com/MountCloud/JavaDecompileTool-GUI",
+    "category": "jvm",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "JavaDecompileTool-GUI is a desktop front end for the fernflower Java decompiler. The README says version 1.1 decompiles WAR and JAR files, can extract a JAR from a WAR, and bundles JRE 11.",
+    "description_zh": "JavaDecompileTool-GUI 是 fernflower Java 反编译器的桌面前端。README 写明 1.1 版可以反编译 WAR 和 JAR，可以从 WAR 中提取 JAR，并附带 JRE 11。",
+    "requirements": [
+      "Downloads are on the repository Releases page.",
+      "The README says not to delete or modify the jre folder, fernflower, or ICSharpCode.SharpZipLib.dll.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/MountCloud/JavaDecompileTool-GUI/blob/2be32aaa61e0e957a3330015c068e16bc0f6666d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
