@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "coney": {
+    "name": "Coney",
+    "requirements": [
+      "Windows 需要 MSVC 19.38 或更新版本，Linux 需要 GCC 13 或 Clang 19 及以上，macOS 需要 Xcode 16 或更新版本。还需要 CMake 3.28 或更新版本、Ninja、Git，以及用来开窗口的 OpenGL 3.3。文档中的命令是 cmake --preset dev、cmake --build --preset dev 和 ctest --preset dev。",
+      "许可证：代码为 GPL-3.0-or-later。docs/ 里的文档是 CC-BY-SA-4.0。"
+    ]
   }
 }
