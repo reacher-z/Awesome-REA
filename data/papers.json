@@ -12817,5 +12817,54 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-decompiled-vuln-bench",
+    "title": "Enhancing Reverse Engineering: Investigating and Benchmarking Large Language Models for Vulnerability Analysis in Decompiled Binaries",
+    "authors": [
+      "Dylan Manuel",
+      "Nafis Tanveer Islam",
+      "Joseph Khoury",
+      "Ana Nunez",
+      "Elias Bou-Harb",
+      "Peyman Najafirad"
+    ],
+    "year": 2024,
+    "publication_date": "2024-11-07",
+    "date_precision": "day",
+    "date_basis": "arXiv first-submission date; the reviewed file is v1",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2411.04981",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2024-11-07",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2411.04981v1",
+    "pdf_url": "https://arxiv.org/pdf/2411.04981v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This paper investigates and benchmarks large language models for vulnerability analysis when the input is decompiled binary code. The task sits on decompiler output rather than on original source.",
+    "description_zh": "本文调查并基准测试大语言模型在输入为反编译二进制代码时的漏洞分析能力。任务建立在反编译器输出上，而不是原始源代码上。",
+    "scope_limitations_en": "The reviewed file is arXiv:2411.04981v1. Benchmark scores were not recomputed, and no repository commit was pinned.",
+    "scope_limitations_zh": "审阅的文件是 arXiv:2411.04981v1。基准分数没有重新计算，也没有固定仓库提交。",
+    "why_fits_en": "Vulnerability analysis of decompiled binaries is a reverse-engineering evaluation task.",
+    "why_fits_zh": "对反编译二进制做漏洞分析是一项逆向工程评测任务。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2411.04981v1",
+      "https://arxiv.org/pdf/2411.04981v1",
+      "https://export.arxiv.org/api/query?id_list=2411.04981"
+    ],
+    "metadata_notes": "The description stays with the paper's stated task and does not add dataset statistics beyond the fetched abstract record.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "在反编译二进制上用大语言模型做漏洞分析的调查与基准",
+    "date_basis_zh": "日期取自 arXiv 首次提交日，审阅的文件是 v1",
+    "metadata_notes_zh": "描述停留在论文声明的任务上，没有在已获取的摘要记录之外追加数据集统计。"
   }
 ]
