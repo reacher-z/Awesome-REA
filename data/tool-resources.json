@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "copy-as-yara",
+    "name": "Copy as YARA",
+    "url": "https://github.com/ald3ns/copy-as-yara",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Copy as YARA is a Binary Ninja plugin that copies selected disassembly as text usable in a YARA rule. It can copy the bytes as shown, wildcard address tokens on x86 and ARM, or emit a complete rule.",
+    "description_zh": "Copy as YARA 是一个 Binary Ninja 插件，把选中的反汇编复制成可以放进 YARA 规则的文本。它可以按原样复制字节，在 x86 和 ARM 上把地址记号换成通配符，或生成一条完整规则。",
+    "requirements": [
+      "In Binary Ninja, select disassembly and use Plugins, Copy for YARA.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/ald3ns/copy-as-yara/blob/539b28a9ab1b687e70eaa62c7280c8a1c3a59c66/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

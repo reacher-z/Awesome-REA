@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "copy-as-yara": {
+    "name": "Copy as YARA",
+    "requirements": [
+      "在 Binary Ninja 里选中反汇编，然后使用 Plugins 里的 Copy for YARA。",
+      "许可证：MIT。"
+    ]
   }
 }
