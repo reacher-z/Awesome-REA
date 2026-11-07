@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "twisted-metal-2012-research",
+    "name": "Twisted Metal 2012 research",
+    "url": "https://github.com/franklincg/twisted-metal-2012-ps3-native-port",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "class": "game",
+    "description_en": "This repository collects research toward a native Windows port of Twisted Metal for the PlayStation 3, the 2012 game. The README says menu rendering and gameplay have not been verified, and that this export is not a playable release. Python 3.10 unit tests and a CMake 3.20 synthetic host probe run without building or launching the game.",
+    "description_zh": "这个仓库收集面向 PlayStation 3 2012 年游戏《扭曲金属》的 Windows 原生移植研究。README 写明菜单渲染和游戏过程还没有验证，而且这次导出不是可玩的发布版。Python 3.10 单元测试和 CMake 3.20 的合成宿主探测可以运行，并且不会构建或启动游戏。",
+    "requirements": [
+      "Python 3.10 or newer for python -m unittest discover -s tests -v. The synthetic probe needs CMake 3.20 or newer and a C compiler.",
+      "License: MIT for the original repository material. Upstream notices are in THIRD_PARTY_NOTICES.md."
+    ],
+    "evidence_url": "https://github.com/franklincg/twisted-metal-2012-ps3-native-port/blob/ab44e045f59c610a9691839bee305e97914d12f6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

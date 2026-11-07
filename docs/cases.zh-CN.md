@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -276,7 +276,7 @@
 - [**z2rs：以模拟器对照逐步重建《塞尔达传说 II》的 Rust 项目**](https://github.com/troyedwardsjr/z2rs) - 以 Rust 重建 NES 游戏《塞尔达传说 II：林克的冒险》，逐个替换游戏的 6502 例程，可运行于桌面、浏览器和 Android。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/z2rs-zelda2-reconstruction-case/)</sub>
 
 <a id="game-other"></a>
-### 其他方法与分析 (23)
+### 其他方法与分析 (24)
 
 - [**ArkWeb：双游戏动作与碰撞桥接实验**](https://github.com/luki-1/ArkWeb) - 同时运行《漫威蜘蛛侠：重制版》与《蝙蝠侠：阿卡姆骑士》，将哥谭碰撞数据传入蜘蛛侠的物理世界，再将其渲染画面合成到阿卡姆中。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/arkweb-two-game-case/)</sub>
 - [**Batla 3D 服务端模拟器（2015 年客户端）**](https://github.com/Serega25511s/Batla-3D-server-emu) - 面向 Batla 3D 2015 年 Steam 客户端的 C# 服务端模拟器，涵盖账户、商店、房间 HTTP 服务与 Lidgren UDP 对战。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/batla-3d-server-emulator-case/)</sub>
@@ -299,6 +299,7 @@
 - [**TH04：恢复 DOS 子弹环辅助函数**](https://rea.tools/showcase/th04/) - 检查 PC-98 DOS 的 16 位弹幕角度辅助函数，并关联固定版本重建与历史编译器检查。 <sub>案例 · REA 官方 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/rea-th04-case/)</sub>
 - [**tMock-Server：重建 Terraria 服务器握手流程**](https://github.com/StardustVulpine/tMock-Server) - tMock-Server 是用 C++ 重建 Terraria 服务器初始联网流程的未完成项目。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/tmock-server-case/)</sub>
 - [**东方 Project 重建：贯穿三款游戏的智能体驱动方法**](https://rea.tools/blog/touhou-reconstruction/) - REA 网站发表的一篇文章及其固定版本的证据说明，介绍一位作者以智能体驱动重建 TH08、TH095 与 TH04 的过程。 <sub>案例 · REA 官方 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/rea-touhou-reconstruction-method-case/)</sub>
+- [**扭曲金属 2012 研究**](https://github.com/franklincg/twisted-metal-2012-ps3-native-port) - 这个仓库收集面向 PlayStation 3 2012 年游戏《扭曲金属》的 Windows 原生移植研究。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/twisted-metal-2012-research/)</sub>
 - [**《神秘海域：内森·德雷克合集》原生 Windows 移植**](https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port) - 在 Windows 上原生运行 PS4 版《神秘海域：内森·德雷克合集》自身的 x86-64 可执行文件：由运行时提供 PS4 系统库，并以源自 shadPS4 的 Vulkan 渲染器执行 GPU 工作。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/uncharted-collection-pc-port-case/)</sub>
 - [**Void Client：重建 Starblast.io 游戏客户端**](https://github.com/Senko74/Void-Client) - Void Client 是一个尚未完成的 Starblast.io 浏览器游戏客户端 JavaScript 重建项目，基于对其网络协议的研究。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/void-client-case/)</sub>
 

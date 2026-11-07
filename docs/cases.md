@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -276,7 +276,7 @@
 - [**z2rs: an incremental Rust reconstruction of Zelda II checked against an emulator**](https://github.com/troyedwardsjr/z2rs) - Rebuilds Zelda II: The Adventure of Link (NES) in Rust for desktop, browser and Android by replacing the game’s 6502 routines one at a time. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/z2rs-zelda2-reconstruction-case/)</sub>
 
 <a id="game-other"></a>
-### Other methods and analyses (23)
+### Other methods and analyses (24)
 
 - [**ArkWeb: a two-game movement and collision experiment**](https://github.com/luki-1/ArkWeb) - Runs Spider-Man Remastered and Arkham Knight together, streaming Gotham collision into Spider-Man’s physics world and compositing his rendered frame into Arkham. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/arkweb-two-game-case/)</sub>
 - [**Batla 3D server emulator (2015 client)**](https://github.com/Serega25511s/Batla-3D-server-emu) - C# server emulator for the 2015 Steam client of Batla 3D, covering HTTP account, shop and room services and Lidgren UDP gameplay. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/batla-3d-server-emulator-case/)</sub>
@@ -299,6 +299,7 @@
 - [**TH04: recover a DOS bullet-ring helper**](https://rea.tools/showcase/th04/) - Inspect a 16-bit PC-98 DOS helper and relate its angle calculation to a pinned reconstruction and historical compiler checks. <sub>Case study · Official REA · Also: Binary · [Full entry](https://awesomerea.org/resources/rea-th04-case/)</sub>
 - [**tMock-Server: reconstructing Terraria server handshakes**](https://github.com/StardustVulpine/tMock-Server) - tMock-Server is an unfinished C++ reimplementation of the Terraria server's initial network flow. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/tmock-server-case/)</sub>
 - [**Touhou reconstructions: an agent-driven method across three games**](https://rea.tools/blog/touhou-reconstruction/) - An essay published on REA’s site, with pinned evidence notes, describes one author’s agent-driven reconstructions of TH08, TH095 and TH04. <sub>Case study · Official REA · Also: Binary · [Full entry](https://awesomerea.org/resources/rea-touhou-reconstruction-method-case/)</sub>
+- [**Twisted Metal 2012 research**](https://github.com/franklincg/twisted-metal-2012-ps3-native-port) - This repository collects research toward a native Windows port of Twisted Metal for the PlayStation 3, the 2012 game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/twisted-metal-2012-research/)</sub>
 - [**Uncharted: The Nathan Drake Collection native Windows port**](https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port) - Runs the PS4 Uncharted: The Nathan Drake Collection’s own x86-64 executables natively on Windows: a runtime supplies the PS4 system libraries and a shadPS4-derived Vulkan renderer executes the GPU work. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/uncharted-collection-pc-port-case/)</sub>
 - [**Void Client: rebuilding the Starblast.io client**](https://github.com/Senko74/Void-Client) - Void Client is an unfinished JavaScript rewrite of the Starblast.io browser game client based on study of its network protocol. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/void-client-case/)</sub>
 
