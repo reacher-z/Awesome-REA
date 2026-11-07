@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tomb5",
+    "name": "TOMB5",
+    "url": "https://github.com/TOMB5/TOMB5",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "TOMB5 decompiles Tomb Raider: Chronicles from the final PlayStation and PC versions. Names and data structures come from the .SYM and .MAP symbols, TRosettaStone 3.0, and GAMEWAD.OBJ. The current target is the code through the title screen, with the GAME folder called out as the critical part. The files from the root of the final NTSC PlayStation disc are copied beside MAIN.EXE. Build steps are in CONTRIBUTING.md. The reviewed CI covers Windows and Linux PSXPC_N builds and a PSX build.",
+    "description_zh": "TOMB5 反编译最终版 PlayStation 和 PC 上的《古墓丽影：历代记》。名称和数据结构来自 .SYM 和 .MAP 符号、TRosettaStone 3.0 和 GAMEWAD.OBJ。当前目标是做到标题画面为止的代码，GAME 文件夹被标为关键部分。最终 NTSC 版 PlayStation 光盘根目录的文件要复制到 MAIN.EXE 旁边。构建步骤在 CONTRIBUTING.md。审阅的持续集成覆盖 Windows 和 Linux 的 PSXPC_N 构建，以及一个 PSX 构建。",
+    "requirements": [
+      "The final NTSC PlayStation disc files, copied beside MAIN.EXE. Follow CONTRIBUTING.md to build.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/TOMB5/TOMB5/blob/6abe6b2975ca5abf50e6df0a4a80ed84ca8d2667/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
