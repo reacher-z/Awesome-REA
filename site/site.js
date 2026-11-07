@@ -497,7 +497,7 @@
       if (st.q) ex.set('q', st.q);
       if (st.target !== 'all') ex.set('target', st.target);
       if (st.kinds.size === 1) ex.set('kind', [...st.kinds][0]);
-      if (st.sort !== 'featured') ex.set('order', st.sort);
+      if (st.sort === 'reviewed' || st.sort === 'name') ex.set('order', st.sort); // The explorer has no added-date order.
       if (langLink) langLink.href = langBase + (hp.toString() ? `?${hp}` : '');
       showAll.href = pristine() ? `${P}/resources/` : `${P}/explore/?view=curated${ex.toString() ? `&${ex}` : ''}`;
       if (pristine()) {

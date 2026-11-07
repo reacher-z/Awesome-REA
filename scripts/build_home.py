@@ -16,6 +16,7 @@ from urllib.parse import urlsplit
 from asset_paths import fingerprinted_href
 from build_readme import CATEGORIES, KIND_LABELS, TARGETS, lead_sentence, paper_section, papers_newest_first
 from home_art import exploded_view
+from home_sections import case_band, categories, contribute_block, dev_block, guides, latest, papers_block
 from site_footer import site_footer
 from site_shell import announcement_bar, header, head_early, icon, mobile_bar, palette, plain_language_link, shell_assets, sprite, star_button, star_count
 
@@ -51,7 +52,7 @@ COPY = {
         'search_label': 'Search the catalogue', 'placeholder': 'Try Ghidra, IL2CPP or BLE', 'clear': 'Clear search', 'focus': 'Press / to focus',
         'stats': '<span class="s-lg"><strong>{res}</strong> curated resources and <strong>{pap}</strong> papers, each reviewed against its source. Plus <a href="/discoveries/"><strong>{idx}</strong> unreviewed discoveries</a> from the scans.</span><span class="s-sm"><strong>{res}</strong> resources, <strong>{pap}</strong> papers, <a href="/discoveries/"><strong>{idx}</strong> unreviewed</a></span>',
         'updated': 'Last scan', 'all': 'All', 'domains': 'Target domains', 'catalogue': 'Catalogue',
-        'kind': 'Kind', 'all_kinds': 'All kinds', 'sort': 'Sort', 'featured': 'Featured', 'recent': 'Recently reviewed', 'az': 'Name A–Z',
+        'kind': 'Kind', 'all_kinds': 'All kinds', 'sort': 'Sort', 'featured': 'Featured', 'recent': 'Recently reviewed', 'added': 'Recently added', 'az': 'Name A–Z',
         'showing': 'Showing <strong>{n}</strong> of <strong>{total}</strong>', 'show_all': 'Show all {n} resources',
         'drawer_note': 'Each card links to its entry: description, requirements and the primary source it was reviewed against.',
         'reviewed': 'Reviewed', 'targets': 'Targets', 'licence': 'Original content: MIT. Linked projects keep their own licenses.',
@@ -62,7 +63,7 @@ COPY = {
         'search_label': '搜索目录', 'placeholder': '试试 Ghidra、IL2CPP 或 BLE', 'clear': '清除搜索', 'focus': '按 / 键聚焦',
         'stats': '<span class="s-lg"><strong>{res}</strong> 项精选资源与 <strong>{pap}</strong> 篇论文，均已对照来源复核。另有 <a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核发现</a>来自自动扫描。</span><span class="s-sm"><strong>{res}</strong> 项资源、<strong>{pap}</strong> 篇论文、<a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核</a></span>',
         'updated': '最近扫描', 'all': '全部', 'domains': '目标领域', 'catalogue': '目录',
-        'kind': '类型', 'all_kinds': '全部类型', 'sort': '排序', 'featured': '精选', 'recent': '最近复核', 'az': '名称 A–Z',
+        'kind': '类型', 'all_kinds': '全部类型', 'sort': '排序', 'featured': '精选', 'recent': '最近复核', 'added': '最近新增', 'az': '名称 A–Z',
         'showing': '显示 <strong>{n}</strong> / <strong>{total}</strong>', 'show_all': '查看全部 {n} 项资源',
         'drawer_note': '每张卡片都链接到完整条目：说明、使用条件，以及复核所依据的原始来源。',
         'reviewed': '已复核', 'targets': '目标', 'licence': '原创内容采用 MIT 许可。链接项目保留各自的许可。',
@@ -187,7 +188,7 @@ def _drawer(resources, order, language, prefix) -> str:
             f'<div class="chips" role="group" aria-label="{text["kind"]}" data-kind-chips>{chips}</div>'
             f'<label class="select kind-select"><span class="vh">{text["kind"]}</span><select data-kind-select aria-label="{text["kind"]}"><option value="">{text["all_kinds"]}</option>{options}</select>{icon("chevron")}</label>'
             f'<label class="select"><span class="select-label">{text["sort"]}</span><select data-sort aria-label="{text["sort"]}">'
-            f'<option value="featured">{text["featured"]}</option><option value="reviewed">{text["recent"]}</option><option value="name">{text["az"]}</option></select>{icon("chevron")}</label>'
+            f'<option value="featured">{text["featured"]}</option><option value="reviewed">{text["recent"]}</option><option value="added">{text["added"]}</option><option value="name">{text["az"]}</option></select>{icon("chevron")}</label>'
             f'<p class="drawer-meta" data-drawer-meta aria-live="polite">{text["showing"].format(n=len(featured), total=_count(total))}</p></div>'
             f'<ul class="cards" data-cards>{cards}</ul><div class="drawer-foot">'
             f'<a class="btn btn-primary" href="{prefix}/resources/" data-show-all>{text["show_all"].format(n=_count(total))}{icon("arrow")}</a>'
@@ -241,9 +242,11 @@ def _homepage_head(explorer_html: str) -> str:
 
 
 def render_homepage(*, site_dir: Path, explorer_html: str, resources: list[dict], papers: list[dict], discovery_count: int,
-                    last_scan: str | None, language: str, repository_url: str, repository_export: str,
+                    discovery_queue: dict | None, last_scan: str | None, language: str, repository_url: str, repository_export: str,
                     order: dict[str, list[str]]) -> str:
     zh = language == 'zh'
+    in_stored_order = [{**record, 'targets': _ordered_targets(record, order)} for record in resources]
+    callno = lambda record: f"{DOMAIN_CODES[record['targets'][0]]}·{KIND_CODES[record['kind']]}"
     prefix = '/zh' if zh else ''
     locale = 'zh-CN' if zh else 'en'
     rea_css = fingerprinted_href(site_dir, 'rea.css')
@@ -254,7 +257,10 @@ def render_homepage(*, site_dir: Path, explorer_html: str, resources: list[dict]
             + announcement_bar(language)
             + header(language, '', plain_language_link(language, '/' if zh else '/zh/'), repository_url)
             + mobile_bar(language, repository_url)
-            + f'<main id="main">{_masthead(resources, papers, discovery_count, last_scan, language, prefix, repository_url)}{_drawer(resources, order, language, prefix)}{_featured_projects(language)}</main>'
+            + f'<main id="main">{_masthead(resources, papers, discovery_count, last_scan, language, prefix, repository_url)}{_drawer(resources, order, language, prefix)}{_featured_projects(language)}'
+            + guides(in_stored_order, papers, language) + case_band(in_stored_order, language)
+            + latest(in_stored_order, discovery_queue, language, callno) + categories(in_stored_order, language, FEATURED) + papers_block(papers, language)
+            + f'<div class="devband">{dev_block(language, repository_url)}{contribute_block(language, repository_url)}</div></main>'
             + site_footer(language, note=_e(text['licence']), repository_url=repository_url, repository_export=repository_export)
             + palette(language))
     return (f'<!doctype html>\n<html lang="{locale}" data-site="rea" class="no-js">\n<head>{head}\n'
@@ -318,7 +324,7 @@ def build_home(site_dir: Path, *, explorer_pages: dict[str, str], resources: lis
         page = site_dir / route
         page.parent.mkdir(parents=True, exist_ok=True)
         page.write_text(render_homepage(site_dir=site_dir, explorer_html=explorer_pages[language], resources=resources, papers=papers,
-                                        discovery_count=discovery_count, last_scan=last_scan, language=language, repository_url=repository_url,
+                                        discovery_count=discovery_count, discovery_queue=discovery_queue, last_scan=last_scan, language=language, repository_url=repository_url,
                                         repository_export=repository_export, order=order), encoding='utf-8')
         name = 'search-index.zh.json' if language == 'zh' else 'search-index.json'
         (site_dir / name).write_text(json.dumps(search_index(resources, papers, language, order), ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
