@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokeemerald-3d",
+    "name": "pokeemerald-3d",
+    "url": "https://github.com/tripplyons/pokeemerald-3d",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "pokeemerald-3d is Pokemon Emerald in 3D, running in WebAssembly. It is based on the pret/pokeemerald decompilation and the author's pokeemerald-wasm recompilation. A playable build is linked at 3d.pokeemerald.com.",
+    "description_zh": "pokeemerald-3d 是在 WebAssembly 里运行的三维《宝可梦 绿宝石》。它基于 pret/pokeemerald 反编译和作者的 pokeemerald-wasm 重编译。可玩构建链接在 3d.pokeemerald.com。",
+    "requirements": [
+      "The reviewed README does not name a license or a local build command."
+    ],
+    "evidence_url": "https://github.com/tripplyons/pokeemerald-3d/blob/6fa044ec5e8b948ed764ebdb80e5f2b6ce917e1c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
