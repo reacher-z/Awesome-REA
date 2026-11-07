@@ -1258,6 +1258,22 @@ def validate_requirement_facets(records, translations, errors):
             errors.extend(f"resource {record.get('id')!r}.{message}" for message in facet_errors(record, chinese))
 
 
+# English descriptions aim for about 300 characters; data/README.md documents the target.
+DESCRIPTION_LIMIT = 350
+
+
+def description_length_warning(records):
+    """Advisory only: one line naming records whose English description exceeds the limit, longest first."""
+    over = sorted((-len(record['description_en']), str(record.get('id'))) for record in records
+                  if isinstance(record, dict) and isinstance(record.get('description_en'), str)
+                  and len(record['description_en']) > DESCRIPTION_LIMIT)
+    if not over:
+        return None
+    listed = ', '.join(f'{identifier} ({-length})' for length, identifier in over)
+    return (f'{len(over)} curated records have English descriptions over {DESCRIPTION_LIMIT} characters '
+            f'(target about 300, see data/README.md): {listed}')
+
+
 def read_array(path, errors):
     try:
         value = strict_json.loads(path.read_text(encoding='utf-8'))
@@ -1276,6 +1292,9 @@ def main():
     benchmarks = read_array(ROOT / 'data/benchmarks.json', errors)
     papers = read_array(ROOT / 'data/papers.json', errors)
     validate_papers(papers, errors, url_check=public_https_error)
+    description_warning = description_length_warning(records)
+    if description_warning:
+        print(f'Warning: {description_warning}', file=sys.stderr)
     validate_resources(records, errors)
     for warning in unknown_field_warnings(records) + evidence_pin_warnings(records):
         print(f'Warning: {warning}', file=sys.stderr)
