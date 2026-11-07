@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sadx-cutscene-decomp",
+    "name": "SADX cutscene decompilation",
+    "url": "https://github.com/X-Hax/SADX-cutscene-decompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This decompiles all 206 event scripts in Sonic Adventure DX. The README says compiling is slow because the files are large, and unused event files can be removed when the scripts are built into a mod.",
+    "description_zh": "该项目反编译《Sonic Adventure DX》的全部 206 个事件脚本。README 写明因为文件很大，编译很慢；把脚本编进模组时可以去掉不用的事件文件。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/X-Hax/SADX-cutscene-decompilation/blob/9ee24f50ee572bb791e95d7c9c84a5307a298a41/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
