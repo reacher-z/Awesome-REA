@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "hm64-decomp-case",
+    "name": "Harvest Moon 64 Decomp",
+    "url": "https://github.com/harvestwhisperer/hm64-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "Harvest Moon 64 Decomp is a matching decompilation of Harvest Moon 64. The README says the US and Japanese versions are fully decompiled, including game functions, data, rodata, library functions, and the DSL for cutscenes and dialogue.",
+    "description_zh": "Harvest Moon 64 Decomp 是《Harvest Moon 64》的匹配反编译。README 写明美版和日版已经完全反编译，包括游戏函数、数据、只读数据、库函数，以及过场和对话的 DSL。",
+    "requirements": [
+      "On WSL, install python3, pip, binutils-mips-linux-gnu, gcc-mips-linux-gnu, build-essential, and wget, then run tools/setup.sh.",
+      "Provide a big-endian baserom.us.z64, or baserom.jp.z64 for the Japanese build. make fresh builds the US ROM; make fresh VERSION=jp builds the Japanese ROM.",
+      "Non-Debian Linux can use bash tools/docker.sh make fresh. The README says Docker on Windows is not the supported path.",
+      "License: CC0 1.0 Universal, stated in the repository LICENSE file at the reviewed commit."
+    ],
+    "evidence_url": "https://github.com/harvestwhisperer/hm64-decomp/blob/9824b8810fe97c3cf4d37ec887e02f968c6462fb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

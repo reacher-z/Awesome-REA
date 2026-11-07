@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "hm64-decomp-case": {
+    "name": "牧场物语 64 反编译",
+    "requirements": [
+      "在 WSL 中安装 python3、pip、binutils-mips-linux-gnu、gcc-mips-linux-gnu、build-essential 和 wget，然后运行 tools/setup.sh。",
+      "提供大端的 baserom.us.z64，日版构建则提供 baserom.jp.z64。make fresh 构建美版 ROM；make fresh VERSION=jp 构建日版 ROM。",
+      "非 Debian 的 Linux 可以使用 bash tools/docker.sh make fresh。README 写明 Windows 上的 Docker 不是支持的路径。",
+      "许可证：CC0 1.0 Universal，写在审阅提交的仓库 LICENSE 文件中。"
+    ]
   }
 }
