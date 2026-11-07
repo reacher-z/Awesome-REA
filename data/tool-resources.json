@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "diablerie",
+    "name": "Diablerie: a recreation of Diablo 2",
+    "url": "https://github.com/mofr/Diablerie",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Recreation of Diablo 2. The README says the game is at a very early stage and that the images and sounds in use come from Diablo 2 and remain the property of the original creators.",
+    "description_zh": "暗黑破坏神 2 的重制。README 写明游戏处于非常早期的阶段，所使用的图像和声音来自暗黑破坏神 2，仍归原作者所有。",
+    "evidence_url": "https://github.com/mofr/Diablerie/blob/9e42ef257228257825ebbbeb905d4b1d894b6e98/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README says to copy Diablo 2 Lord of Destruction v1.14 MPQ files, naming d2exp.mpq, d2data.mpq, and d2char.mpq, with several audio MPQs marked optional.",
+      "No commercial use is intended.",
+      "The reviewed page states no license."
+    ]
   }
 ]

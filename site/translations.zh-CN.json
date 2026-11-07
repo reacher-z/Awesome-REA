@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "diablerie": {
+    "name": "Diablerie：暗黑破坏神 2 的重制",
+    "requirements": [
+      "README 写明要从暗黑破坏神 2 毁灭之王 v1.14 复制 MPQ 文件，点名 d2exp.mpq、d2data.mpq 和 d2char.mpq，若干音频 MPQ 标为可选。",
+      "README 写明不打算用于商业用途。",
+      "审阅页面未说明许可。"
+    ]
   }
 }
