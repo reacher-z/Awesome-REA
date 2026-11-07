@@ -36543,6 +36543,7 @@
     "description_zh": "将 n64decomp 的 Perfect Dark 反编译移植到 Windows、Linux、macOS 与 Nintendo Switch 的进行中项目，以 SDL2 与 OpenGL 平台层、源自 libultraship 的 fast3d 渲染器和音频混音器取代 N64 平台。可执行文件在运行时从使用者自备的 ROM 读取游戏数据，并加入鼠标视角、宽屏、更高帧率和基础模组支持。README 称游戏大体可用，仍有轻微的图形与玩法问题，并可能崩溃。",
     "evidence_url": "https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "This GitHub fork of n64decomp/perfect_dark (default branch port) has diverged from the curated decompilation commit, 1,129 commits ahead and 91 behind. It ports the decompiled C to modern platforms through port/ (platform, input, video, audio and file code), with fast3d from libultraship and a mixer from sm64-port. README reports single-player and split-screen multiplayer fully working, minor graphics and gameplay issues, possible crashes, and experimental tick rates up to 240 FPS that misbehave above about 165. The netplay port-net branch and other forks are outside this record.",
