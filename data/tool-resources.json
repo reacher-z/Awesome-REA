@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "medarot1-disasm",
+    "name": "Medarot 1 disassembly",
+    "url": "https://github.com/Medabots/medarot1",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a Game Boy disassembly and translation of Medarot 1. Releases provide IPS patches. The Kabuto and Kuwagata v1.1 ROMs are the build inputs, and parts of the ROM stay attached through the RGBDS overlay feature.",
+    "description_zh": "该仓库是 Game Boy 版《勋章战士》的反汇编和翻译。发布包提供 IPS 补丁。甲虫版和锹形虫版 v1.1 ROM 是构建输入，部分 ROM 通过 RGBDS 的 overlay 功能接上。",
+    "requirements": [
+      "Kabuto v1.1 MD5 78c568cbfff6314b1416880d9efaeca6, named baserom_kabuto.gb. Kuwagata v1.1 MD5 a9c9d6b6759c28f2b3986717f4df2f98, named baserom_kuwagata.gb.",
+      "Make 4.0 or newer, Python 3.6 or newer as python3, and RGBDS 1.x or newer. The README says the English patch is playable from start to finish.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Medabots/medarot1/blob/604b9decbf9d5b43a1436f7e96ae4ce5899b44cb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
