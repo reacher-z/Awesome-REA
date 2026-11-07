@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sega2asm",
+    "name": "sega2asm",
+    "url": "https://github.com/hansbonini/sega2asm",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "sega2asm splits a Sega Genesis or Mega Drive ROM by segment. It disassembles Motorola 68000 and Z80 code, writes 4bpp graphics as PNG, and converts raw PCM to WAV. Code output is aimed at clownassembler.",
+    "description_zh": "sega2asm 按段拆分世嘉 Genesis 或 Mega Drive 的 ROM。它反汇编 Motorola 68000 和 Z80 代码，把 4bpp 图形写成 PNG，并把原始 PCM 转成 WAV。代码输出面向 clownassembler。",
+    "requirements": [
+      "The command is sega2asm with a config YAML. Optional flags select a symbols file, a charmap, verbose output, or a dry run.",
+      "The reviewed README does not name a license in the text."
+    ],
+    "evidence_url": "https://github.com/hansbonini/sega2asm/blob/78f37b0d71d27b43b960e24c01c5437bbef55404/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
