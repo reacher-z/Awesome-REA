@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "re-skill": {
+    "name": "/re",
+    "requirements": [
+      "它作为 Claude Code 技能从命令行运行。",
+      "README 写明它被用在 NES、Game Boy 和 DOS MZ 二进制上，并把该技能描述为与平台无关。",
+      "许可证：MIT。"
+    ]
   }
 }

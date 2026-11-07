@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "re-skill",
+    "name": "/re",
+    "url": "https://github.com/vgrichina/re-skill",
+    "category": "agent-workflows",
+    "kind": "tool",
+    "relationship": "independent-agent-integration",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "/re is a Claude Code skill that bootstraps a reverse-engineering workspace from a ROM or binary and then disassembles, annotates, extracts assets, and ports the game to a web canvas. The README documents /re with a path, /re with no arguments, and re_loop.sh.",
+    "description_zh": "/re 是一个 Claude Code 技能，它从 ROM 或二进制文件建立逆向工程工作区，然后反汇编、标注、提取资源，并把游戏移植到网页画布。README 记录了带路径的 /re、不带参数的 /re，以及 re_loop.sh。",
+    "requirements": [
+      "It runs as a Claude Code skill from the command line.",
+      "The README says it has been used on NES, Game Boy, and DOS MZ binaries, and describes the skill as platform-agnostic.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/vgrichina/re-skill/blob/64c3bffb54ae4b9d99804a03fa4f179f4dd080c5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
