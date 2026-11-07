@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sporeserver",
+    "name": "SporeServer",
+    "url": "https://github.com/Rosalie241/SporeServer",
+    "category": "reconstruction-cases",
+    "kind": "project",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "software",
+    "description_en": "SporeServer is a work-in-progress replacement for the Spore server. SporeServer.Utils extracts information from extracted game files. SporeMods contains the Spore mod required to connect to a SporeServer instance.",
+    "description_zh": "SporeServer 是 Spore 服务器的进行中替代实现。SporeServer.Utils 从已提取的游戏文件里取出信息。SporeMods 包含连接到 SporeServer 实例所需的 Spore 模组。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/Rosalie241/SporeServer/blob/3fd111963ad75aa666095f9d99026ca4bc4c2103/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
