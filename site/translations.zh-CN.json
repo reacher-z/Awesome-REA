@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "krakatau": {
+    "name": "Krakatau",
+    "requirements": [
+      "安装需要 Rust 和 Cargo。",
+      "README 写明当前版本可在 MIT 或 Apache 2 之间选择，v1 以及直到提交 baa5534ab29dbfb7b62018bed897f52073974f2f 的 v2 使用 GPL-3.0-or-later。"
+    ]
   }
 }

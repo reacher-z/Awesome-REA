@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "krakatau",
+    "name": "Krakatau",
+    "url": "https://github.com/Storyyeller/Krakatau",
+    "category": "jvm",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Assembler, disassembler, and decompiler for Java bytecode. The README says the disassembler converts class files to text and back, including obfuscated code, and that the decompiler targets obfuscated code while omitting some Java 8 and later features such as lambdas. The assembler is described as mostly a Jasmin superset with support for the Java 27 bytecode specification.",
+    "description_zh": "Java 字节码的汇编器、反汇编器和反编译器。README 写明反汇编器可以把 class 文件转成文本再转回去，包括混淆代码；反编译器针对混淆代码，同时缺少一部分 Java 8 及以后的特性，例如 lambda。汇编器被描述为大体上是 Jasmin 的超集，并支持 Java 27 字节码规范。",
+    "evidence_url": "https://github.com/Storyyeller/Krakatau/blob/6929fd6e1b8e15fe822e0e016754ce9361ee155a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Installation needs Rust and Cargo.",
+      "The README says the current version is licensed under either MIT or Apache 2, and that v1 and v2 through commit baa5534ab29dbfb7b62018bed897f52073974f2f were licensed under GPL-3.0-or-later."
+    ]
   }
 ]
