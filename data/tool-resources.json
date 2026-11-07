@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rayman3-hd-recompiled-case",
+    "name": "Rayman 3 HD Recompiled",
+    "url": "https://github.com/MysteriousAeon/rayman3-hd-recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Rayman 3 HD Recompiled is a native Windows port of Rayman 3 HD for the Xbox 360. The game's code is statically recompiled to run on a PC, and the installer sets it up from the player's own Xbox 360 package.",
+    "description_zh": "Rayman 3 HD Recompiled 是《Rayman 3 HD》Xbox 360 版的 Windows 原生移植。游戏代码经过静态重编译后在 PC 上运行，安装器使用玩家自己的 Xbox 360 游戏包完成安装。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, the Microsoft Visual C++ Redistributable 2015–2022 (x64), a Direct3D 12 graphics card, and about 2.3 GB of free disk space.",
+      "The player's own Xbox 360 Rayman 3 HD package, title ID 5841123F, without a title update, copied from the console's storage.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/MysteriousAeon/rayman3-hd-recompiled/blob/73c1ee819bbf61eee96017a0d760719930abbe0f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
