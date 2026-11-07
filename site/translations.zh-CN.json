@@ -39719,5 +39719,12 @@
       "目前仅构建美版。",
       "许可证：AGPL-3.0。"
     ]
+  },
+  "hrast": {
+    "name": "HRAST",
+    "requirements": [
+      "需要带 Hex-Rays 和 IDAPython 的 IDA。校验说明写的是 IDA 7.1 或更高版本。",
+      "许可证：MIT。"
+    ]
   }
 }
