@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "openclaw": {
+    "name": "OpenClaw",
+    "requirements": [
+      "需要把原版 CLAW.REZ 放在 Build_Release。Windows 使用随附的 SDL2 库。Ubuntu 需要 SDL2 开发包。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openclaw",
+    "name": "OpenClaw",
+    "url": "https://github.com/pjasicek/OpenClaw",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenClaw is a C++ reimplementation of the 1997 game Captain Claw. It uses SDL2, Box2D, and TinyXML, and reads the original CLAW.REZ archive from Build_Release. The assets in Build_Release/ASSETS are zipped to ASSETS.ZIP. Windows can open the Visual Studio 2017 solution or run cmake -G \"Visual Studio 15 2017\". Ubuntu installs the SDL2 development packages and then runs cmake and make. An Emscripten build produces openclaw.html, openclaw.js, openclaw.wasm, and openclaw.data.",
+    "description_zh": "OpenClaw 是 1997 年游戏《铁爪船长》的 C++ 重实现。它使用 SDL2、Box2D 和 TinyXML，并从 Build_Release 读取原版 CLAW.REZ。Build_Release/ASSETS 里的资源要打成 ASSETS.ZIP。Windows 可以打开 Visual Studio 2017 解决方案，或运行 cmake -G \"Visual Studio 15 2017\"。Ubuntu 安装 SDL2 开发包后运行 cmake 和 make。Emscripten 构建会生成 openclaw.html、openclaw.js、openclaw.wasm 和 openclaw.data。",
+    "requirements": [
+      "The original CLAW.REZ in Build_Release. Windows uses the bundled SDL2 libraries. Ubuntu needs the SDL2 development packages.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/pjasicek/OpenClaw/blob/5ee5740ca98377c76b13b50c84f610b0066a4717/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
