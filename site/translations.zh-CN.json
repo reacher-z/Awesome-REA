@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "libreko": {
+    "name": "LibreKO",
+    "requirements": [
+      "需要 .NET 10 SDK、MariaDB 10.6 或更新版本，客户端还需要 Godot 4.7.2 .NET。MySQL 也可以。",
+      "开发配置指向 appsettings.Development.json 里写的本地数据库。启动登录服务器和游戏服务器之前先创建该数据库。",
+      "许可证：GNU AGPL-3.0。服务器的第三方声明在 Server/NOTICES.md。"
+    ]
   }
 }

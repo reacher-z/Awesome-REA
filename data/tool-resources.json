@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "libreko",
+    "name": "LibreKO",
+    "url": "https://github.com/ZeusAFK/LibreKO",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "LibreKO is an open-source game server and client for a classic MMORPG. The server is C# on .NET 10 and includes login, game, a shared library, and a quest-language compiler. The client is a Godot 4 C# project.",
+    "description_zh": "LibreKO 是一款经典大型多人在线游戏的开源服务器和客户端。服务器用 C# 和 .NET 10 编写，包含登录、游戏、共享库和任务语言编译器。客户端是 Godot 4 的 C# 工程。",
+    "requirements": [
+      ".NET 10 SDK, MariaDB 10.6 or newer, and Godot 4.7.2 .NET for the client. MySQL also works.",
+      "The development settings point at a local database named in appsettings.Development.json. Create that database before starting the login and game servers.",
+      "License: GNU AGPL-3.0. Third-party server notices are in Server/NOTICES.md."
+    ],
+    "evidence_url": "https://github.com/ZeusAFK/LibreKO/blob/23f3a823868798ab10738f7a6c26405a5f085435/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
