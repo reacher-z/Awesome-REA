@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "infinite-undiscovery-recomp-case",
+    "name": "Infinite Undiscovery Recomp",
+    "url": "https://github.com/doc-haz/infinite-undiscovery-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Infinite Undiscovery Recomp is a native Windows x64 recompilation of Infinite Undiscovery for Xbox 360 (2008), built with ReXGlue and XenonRecomp. The public release candidate is v1.0.0-rc1. The README says development is frozen.",
+    "description_zh": "Infinite Undiscovery Recomp 是 Xbox 360 版 Infinite Undiscovery（2008）的 Windows x64 原生重编译，用 ReXGlue 和 XenonRecomp 构建。公开的候选发布是 v1.0.0-rc1。README 写明开发已冻结。",
+    "requirements": [
+      "The player supplies their own copy. Supported imports include USA, USA-UNDUB, Europe, Japan, and Asia. Marketplace DLC uses title ID 535107DB.",
+      "License: BSD-3-Clause. The ReXGlue runtime includes LGPL components, and the RC release publishes a separate LGPL compliance package."
+    ],
+    "evidence_url": "https://github.com/doc-haz/infinite-undiscovery-recomp/blob/a91df0707e087aaa2588e6c0f0fb39a63a2500f6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

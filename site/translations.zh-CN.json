@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "infinite-undiscovery-recomp-case": {
+    "name": "Infinite Undiscovery 重编译",
+    "requirements": [
+      "玩家提供自己的副本。支持导入 USA、USA-UNDUB、Europe、Japan 和 Asia。市场 DLC 使用标题 ID 535107DB。",
+      "许可证：BSD-3-Clause。ReXGlue 运行时包含 LGPL 组件，候选发布另附一个 LGPL 合规包。"
+    ]
   }
 }
