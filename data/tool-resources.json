@@ -36543,6 +36543,7 @@
     "description_zh": "记录 Ember 智能马克杯的低功耗蓝牙 GATT 接口，依据一只 Ember Mug 2 和反编译的 Android 版 Ember 应用推断得出。各特征页面给出 UUID、读取／写入／通知方式及字节布局，涵盖杯子名称、LED 颜色、当前温度与目标温度、温度单位、电量与充电状态、液位与液体状态、日期与时区、固件与硬件版本以及推送事件。另有一页列出反编译应用向 Ember 数据收集服务器发送的分析字段。",
     "evidence_url": "https://github.com/orlopau/ember-mug/blob/8a62bd582c97b124cce8701f04098294b1e3865f/README.md",
     "verified_at": "2026-10-20",
+    "added_at": "2026-10-20",
     "verification": "source-reviewed",
     "requirements": [
       "Documentation only, with no client code, tests or releases. Paul Orlob wrote the first pages in 2020; the reviewed master commit of 2022-12-14 merges a contributor’s additional investigation, which added the liquid, name, time, version and push-event pages and the data-collection page. The README says the findings come from an Ember Mug 2 and may not apply to other Ember mugs, and several pages present values as observations or likely meanings, such as a battery byte that is most likely voltage and a liquid level that seems to update only while charging.",
