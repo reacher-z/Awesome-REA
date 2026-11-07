@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "scared": {
+    "name": "scared",
+    "requirements": [
+      "需要 Python 3.11、3.12 或 3.13，以及 Numpy 2 或更高版本。",
+      "可从 PyPI 或 eshard 的 Conda 频道安装。",
+      "许可证：AGPL-3.0。"
+    ]
   }
 }
