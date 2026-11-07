@@ -36543,6 +36543,7 @@
     "description_zh": "记录经逆向得到的智能戒指通信方式，目前仅涵盖 Oura Ring：低功耗蓝牙上的请求与响应帧结构、请求标签及其载荷字段目录，以及戒指的二进制事件流。蓝牙笔记注明仅在 Oura Ring 4 上确认，许多数据包仍标为未知。作者称，事件格式参考文档及其 Node.js 解析器由 AI 依据 Oura 应用的事件解析库生成，尚未完全核实。",
     "evidence_url": "https://github.com/ringverse/protocol/blob/1826a352611c7220708b555a15de13e28e24b33a/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at the main-branch head of 2026-06-18, after five commits since 2024-11. The repository is documentation plus one parser script, not a client application: oura/BLE.md covers framing, flows and packets, oura/events/ covers the event stream, and oura/data.md is an empty placeholder. Only the Oura Ring is covered so far.",
