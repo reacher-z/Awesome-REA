@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "reburn3-case": {
+    "name": "Reburn 3：《Burnout 3 Takedown》重实现",
+    "requirements": [
+      "当前构建可在 Windows 和 Wine 上游玩，并使用 Cxbx-Reloaded 作为兼容层。",
+      "README 写明后续目标是不再依赖该兼容层的可移植代码库。",
+      "README 没有写许可证。"
+    ]
   }
 }
