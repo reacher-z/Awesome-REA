@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sbk-decomp",
+    "name": "Snowboard Kids decompilation",
+    "url": "https://github.com/tenry92/sbk-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is an early decompilation of Snowboard Kids for the Nintendo 64, US release. baserom.us.z64 has SHA-1 1583bacc9046a360df8ea4d536942155247e154c. make decomp writes a work-in-progress tree under decomp, using splat and m2c. The README says the project cannot rebuild a ROM yet.",
+    "description_zh": "这是 Nintendo 64 美版 Snowboard Kids 的早期反编译。baserom.us.z64 的 SHA-1 是 1583bacc9046a360df8ea4d536942155247e154c。make decomp 用 splat 和 m2c 在 decomp 下写出进行中的源码树。README 写明项目还不能重建 ROM。",
+    "requirements": [
+      "Linux command-line tools. Name the US ROM baserom.us.z64 and run make decomp.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/tenry92/sbk-decomp/blob/7a65a9ed36c21a3b7cb39728cb420f391b41b81e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
