@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tomba-decomp",
+    "name": "Tomba! decompilation",
+    "url": "https://github.com/hansbonini/psx_tomba",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This matching decompilation of Tomba! builds four PlayStation releases from the same sources. NTSC-U SCUS-94236 has main-executable SHA-1 81cbc79f0230aeb4252e058039f47ac95a777f5a. NTSC-J SLPS-01144 has SHA-1 07d577698ad31ec1a69b9d7b80a7c3f90b650888. PAL SCES-01330 has SHA-1 1d98c6595a49bd8063c906221df1eaa854964cb1. PAL SCES-01331 has SHA-1 f6c383514e5d8367d2eed06400315cf6dd57ef6b. On the European discs the game itself is EXE/MAINn.EXE.",
+    "description_zh": "这个《Tomba!》匹配反编译用同一套源码构建四个 PlayStation 版本。NTSC-U SCUS-94236 主可执行文件的 SHA-1 是 81cbc79f0230aeb4252e058039f47ac95a777f5a。NTSC-J SLPS-01144 的 SHA-1 是 07d577698ad31ec1a69b9d7b80a7c3f90b650888。PAL SCES-01330 的 SHA-1 是 1d98c6595a49bd8063c906221df1eaa854964cb1。PAL SCES-01331 的 SHA-1 是 f6c383514e5d8367d2eed06400315cf6dd57ef6b。欧版光盘上的游戏本体是 EXE/MAINn.EXE。",
+    "requirements": [
+      "make VERSION=<serial> generate and make VERSION=<serial> check. The default VERSION is scus_942.36.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/hansbonini/psx_tomba/blob/6ac8442e364706b80fbd8c6fa867138a8ccb5abd/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
