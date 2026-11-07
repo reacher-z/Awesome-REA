@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mscharged-decomp",
+    "name": "Mario Strikers Charged decompilation",
+    "url": "https://github.com/yannicksuter/mscharged-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Mario Strikers Charged for the Wii. The USA revision 1, R4QE01, is reported complete: 100 percent of the code matches and links. Its main.dol SHA-1 is e96d2298067b70652752145b4e63644e6e1b1560. Europe, Japan, and Korea are also configured.",
+    "description_zh": "这是 Wii 游戏 Mario Strikers Charged 的匹配反编译。美版第 1 修订 R4QE01 被报告为完成：代码 100% 匹配并链接。它的 main.dol SHA-1 是 e96d2298067b70652752145b4e63644e6e1b1560。欧洲、日本和韩国版本也有配置。",
+    "requirements": [
+      "Place the disc image in orig/R4QE01 for USA. Accepted formats include ISO, RVZ, WIA, WBFS, CISO, NFS, GCZ, and TGC. Then run python3 configure.py and ninja.",
+      "License: CC0 1.0 for the project. Third-party source keeps its own terms."
+    ],
+    "evidence_url": "https://github.com/yannicksuter/mscharged-decomp/blob/b843f01b0ba78077329eaa228c9201b8c8055d9b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
