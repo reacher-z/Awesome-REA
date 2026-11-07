@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ghidra-fidb-repo",
+    "name": "Ghidra Function ID dataset repository",
+    "url": "https://github.com/threatrack/ghidra-fidb-repo",
+    "category": "native-analysis",
+    "kind": "project",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This repository holds Ghidra Function ID datasets generated with ghidra-fid-generator from a manual selection of libraries. The README lists packed .fidb files for CentOS 6 and 7 static libraries, Ubuntu and GCC builds, libsodium, Qt 5, SDL, and several OpenSSL builds.",
+    "description_zh": "该仓库存放用 ghidra-fid-generator 从人工挑选的库生成的 Ghidra Function ID 数据集。README 列出了 CentOS 6 和 7 静态库、Ubuntu 和 GCC 构建、libsodium、Qt 5、SDL，以及若干 OpenSSL 构建的打包 .fidb 文件。",
+    "requirements": [
+      "Import one database with Tools, FunctionID, Attach existing FidDB.",
+      "Unpacked fidbf files from the 20200530 release zip can be copied into Ghidra's FunctionID data directory.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/threatrack/ghidra-fidb-repo/blob/aaa36e3331d4b34a99741dcc8daec80d8e3acdeb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

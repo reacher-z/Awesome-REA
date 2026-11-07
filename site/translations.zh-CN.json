@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ghidra-fidb-repo": {
+    "name": "Ghidra Function ID 数据集",
+    "requirements": [
+      "通过 Tools、FunctionID、Attach existing FidDB 导入一个数据库。",
+      "可以把 20200530 发布包里解包后的 fidbf 文件复制到 Ghidra 的 FunctionID 数据目录。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
