@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "jitboy",
+    "name": "jitboy",
+    "url": "https://github.com/sysprog21/jitboy",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "jitboy is a Game Boy emulator that dynamically translates CPU instructions to x86-64 and interprets graphics, sound, and memory. make builds build/jitboy after SDL2 is installed. -O selects an optimization level, and make clean debug rebuilds with extra messages. The APU emulation is based on MiniGBS. GBIT and DynASM are also included.",
+    "description_zh": "jitboy 是一个 Game Boy 模拟器，把 CPU 指令动态翻译成 x86-64，并解释执行图形、声音和内存。安装 SDL2 之后，make 构建 build/jitboy。-O 选择优化级别，make clean debug 会带额外信息重新构建。APU 模拟基于 MiniGBS。仓库还包含 GBIT 和 DynASM。",
+    "requirements": [
+      "SDL2. On macOS, brew install sdl2. On Ubuntu or Debian, the package is libsdl2-dev. Then run make.",
+      "License: GPLv3. MiniGBS, GBIT, and DynASM are MIT."
+    ],
+    "evidence_url": "https://github.com/sysprog21/jitboy/blob/418d1c5f10ac25d6a7a4bc693ec4fcef014a65e4/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
