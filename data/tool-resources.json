@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ghidra-hexagon-sleigh",
+    "name": "Ghidra Hexagon SLEIGH",
+    "url": "https://github.com/CUB3D/ghidra-hexagon-sleigh",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Ghidra Hexagon SLEIGH is a Ghidra processor module for Qualcomm Hexagon QDSP6. It disassembles v66, v67, v68, v73, v75, v79, v81, v83, and v85, including HVX v85, HMX v81, and an initial HLX v85. It also implements hardware loops and p-code for most operations.",
+    "description_zh": "Ghidra Hexagon SLEIGH 是高通 Hexagon QDSP6 的 Ghidra 处理器模块。它反汇编 v66、v67、v68、v73、v75、v79、v81、v83 和 v85，包括 HVX v85、HMX v81，以及初步的 HLX v85。它还实现了硬件循环和大多数操作的 p-code。",
+    "requirements": [
+      "Install the release zip that matches the Ghidra version through File, Install Extensions. Ghidra 12.0 or newer is recommended.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/CUB3D/ghidra-hexagon-sleigh/blob/7ec35fc50305578480d1957be0bc4f3753b97452/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
