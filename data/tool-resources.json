@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "powerup",
+    "name": "PowerUp",
+    "url": "https://github.com/badamczewski/PowerUp",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "PowerUp is a set of disassembly and decompilation utilities. PowerUp.Watcher.exe watches source, IR, and IL, then compiles, decompiles, and disassembles them to IL, IR, and x86 assembly. The reviewed command lines use -rs for Rust, -go for Go, and -cs for C#, each with an input file and an output file. The same process can run those compilers together. C# is the language with interactive execution, benchmarking, and class and struct layouts. The set also includes a .NET JIT disassembler and a .NET IL compiler.",
+    "description_zh": "PowerUp 是一组反汇编和反编译工具。PowerUp.Watcher.exe 监视源码、IR 和 IL，然后编译、反编译并反汇编成 IL、IR 和 x86 汇编。审阅的命令行用 -rs 表示 Rust，-go 表示 Go，-cs 表示 C#，每项都带一个输入文件和一个输出文件。同一次运行可以同时使用这些编译器。C# 是带交互执行、基准测试以及类和结构布局的语言。这组工具还包括 .NET JIT 反汇编器和 .NET IL 编译器。",
+    "requirements": [
+      "Build PowerUp.Watcher.exe, then pass a compiler flag, an input source file, and an output file.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/badamczewski/PowerUp/blob/cd197e3c4acc4608e82c1a437d0df97050ab7ede/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
