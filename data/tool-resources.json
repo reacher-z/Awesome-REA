@@ -37435,6 +37435,7 @@
     "description_zh": "用 C++ 引擎替换 DOS 版《Ultima VII》的可执行文件，在现代系统上加载游戏自带的数据和图像。",
     "evidence_url": "https://github.com/exult/exult/blob/14f4b8bb9bbc6f8ba98b454c2c100ef26e5ae4de/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 14f4b8bb. The README says Ultima VII is hard to run because it is a DOS game with a nonstandard memory manager, and Exult is an engine for modern systems that uses the data and graphics files that come with the game.",
@@ -37459,6 +37460,7 @@
     "description_zh": "重新实现《博德之门》《冰风谷》和《异域镇魂曲》使用的 Infinity 引擎，并用用户自备的原版游戏数据运行。",
     "evidence_url": "https://github.com/gemrb/gemrb/blob/bcb5cfaa9f19ffbe8a51f25a3c014fa344173351/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at bcb5cfaa. The README defines GemRB as a portable reimplementation of the Infinity Engine and says trying it needs original game data, with a small separate demo available.",
@@ -37483,6 +37485,7 @@
     "description_zh": "README 称之为 HaloPad 的预览版，用用户自备的副本在 iPhone、iPad 和 Apple 芯片 Mac 上构建《Halo: Combat Evolved》。文档描述了原版 Xbox 战役、Custom Edition 服务器和在线对战，且不附带游戏。",
     "evidence_url": "https://github.com/chrissotraidis/projectreach/blob/962960932fe96519b3d70a31a6a3b088513e5272/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 96296093, which the README labels version 0.3 and status preview. Supported hosts are iOS and iPadOS 17.4 or later, and macOS 14.4 or later on Apple silicon. There is no downloadable app; the user builds it.",
@@ -37508,6 +37511,7 @@
     "description_zh": "替换受支持智能电烙铁上的原厂固件，从 TS100 开始，也包括 Pinecil。它实现常规温度控制，并加上电池截止电压和多种语言。",
     "evidence_url": "https://github.com/Ralim/IronOS/blob/c343478d38232b0c4a6d36e31bcfabe67867f00f/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at c343478d. The README says the project was formerly named TS100 and began as alternative firmware for that iron, then grew to more devices. It tells users to read the installation guide before flashing.",
@@ -37532,6 +37536,7 @@
     "description_zh": "用用户自备的原始数据文件，在比 1999 年原版更多的平台上运行《Jagged Alliance 2》，并包含稳定性工作和模组接口。",
     "evidence_url": "https://github.com/ja2-stracciatella/ja2-stracciatella/blob/d0b1d3e0369364d4848384d0f75486fce1ad1001/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at d0b1d3e0. The README says to install Jagged Alliance 2 and point game_dir at that directory. On Windows the setting is in the JA2 json file under the user Documents folder; on Unix-like systems it is the ja2 json file in the home ja2 directory. The original data files are what the program uses.",
@@ -37553,6 +37558,7 @@
     "description_zh": "在 PSPRecomp 静态重编译器上构建《Grand Theft Auto: Liberty City Stories》的 PC 移植。玩家需要自行提供解密后的美版 v1.05 可执行文件和光盘中的 PSP_GAME 目录。",
     "evidence_url": "https://github.com/elmasas/lcs-recomp/blob/1132a76e59a29d7395635a5239a0d4aadd948385/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 1132a76e. The README requires the US v1.05 release ULUS-10041. A decrypted EBOOT.ELF and the disc PSP_GAME folder go in game/ for a release build, or lcs/game/ when building from source. Game files are not included.",
@@ -37579,6 +37585,7 @@
     "description_zh": "面向 YouTube、YouTube Music 和 PeerTube 的 Android 播放器，不使用这些网站的官方应用。它可以搜索、排队和播放流媒体，包括字幕。",
     "evidence_url": "https://github.com/TeamNewPipe/NewPipe/blob/d7d6f25c031a43ec62dd37acffa5ce379d0f70cf/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at d7d6f25c. The README calls NewPipe a libre lightweight streaming front end for Android and lists YouTube, YouTube Music, and PeerTube plus its instances as supported sites.",
@@ -37603,6 +37610,7 @@
     "description_zh": "把用户自备的《Need for Speed: Underground 2》SPEED2.EXE 从 32 位 x86 译成 C，并在 Windows 和 Android 上运行。仓库提供的是重编译工具和宿主，不包含游戏本身。",
     "evidence_url": "https://github.com/codepdbh/nfsu2-recompiled/blob/1aac7a9dfb953b305a1ecd795ab53f21daefe598/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 1aac7a9d, which the README presents as a static recompilation of SPEED2.EXE into C with a fork of pcrecomp. Windows x86 and Android ARM64 are the documented platforms. Graphics are described as Direct3D 9 or Vulkan through DXVK; audio as AAudio or DirectSound.",
@@ -37629,6 +37637,7 @@
     "description_zh": "制作通过 Apple“查找”网络上报位置的个人蓝牙追踪标签，并提供用来查询该网络的 Mac 应用。标签是用户自己的设备，不是 Apple 硬件。",
     "evidence_url": "https://github.com/seemoo-lab/openhaystack/blob/ea05dadb9e6e71075ef08afb5c2087302fbb7210/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at ea05dadb. The README presents OpenHaystack as a framework for tracking personal Bluetooth devices via Apple's Find My network, for tags on physical objects or other Bluetooth devices such as notebooks.",
@@ -37654,6 +37663,7 @@
     "description_zh": "自托管的网页邮箱界面，README 写明用来替代 Roundcube，并登录到已有的 IMAP 和 SMTP 服务器。固定提交里的自动检查是垃圾邮件文件夹路由，不是一次完整的邮箱会话。",
     "evidence_url": "https://github.com/c0h1b4/oxi/blob/013534dfc9a09e8a0026c60f2a20103817f8c4b2/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 013534df. The README calls oxi a feature-complete replacement for Roundcube that connects to any existing IMAP and SMTP server, and a webmail UI rather than a mail platform. The Docker quick start serves the client on port 3001.",
@@ -37678,6 +37688,7 @@
     "description_zh": "把 Perfect Dark 的反编译结果移植到现代平台。用户提供的 ROM 哈希必须是 README 列出的四个版本之一，推荐美版 v1.1。",
     "evidence_url": "https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 32a1cb9f. This is a work-in-progress port of n64decomp/perfect_dark, not that decompilation itself. Recommended input is ntsc-final / US v1.1, MD5 e03b088b6ac9e0080440efed07c1e40f. US v1.0, Japanese final and PAL final are described as technically supported, the last two needing a separate custom-built executable.",
@@ -37702,6 +37713,7 @@
     "description_zh": "把 PSPRecomp 的《Vice City Stories》配置放到 Android 上，使用 Vulkan 渲染，并同时记录 Windows DirectX 12 构建。PSP 游戏数据须由用户自备。",
     "evidence_url": "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/9fd696f8d85f11ba36292c0c0fbe5403e8067359/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 9fd696f8, which the README calls beta 0.3.0. It says the game runs on Android with a Vulkan GPU renderer, widescreen, cinematic voices, a free camera, and save states. A 30 FPS PSP-resolution mode and a 32-bit Android build are also described. The author names a Samsung Galaxy S25 Ultra as a test device; that is not a general device result.",
@@ -37728,6 +37740,7 @@
     "description_zh": "读取 PSP 的 Allegrex 可执行文件，预先生成 C++，并在原生宿主上运行，而不是使用 PSP 解释器。第一个可用配置是《Grand Theft Auto: Vice City Stories》。",
     "evidence_url": "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit f6e7d415. The README splits a reusable framework from game profiles. The framework loads ELF/PRX files, decodes Allegrex/MIPS, and emits C++ translation units. An empty PSPRECOMP_PROFILE builds the core, analyzer, recompiler, and tests without a game.",
@@ -37755,6 +37768,7 @@
     "description_zh": "构建一个开源操作系统，目标是运行为 Windows NT 家族编写的应用程序和驱动程序。所审阅的 README 把兼容工作集中在 Windows Server 2003，并安装到 FAT16 或 FAT32 启动分区。",
     "evidence_url": "https://github.com/reactos/reactos/blob/fae4549cb0cd6d5867e65e61c2bc29985b57bc98/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at fae4549c. The README describes a GPLv2 operating system compatible with applications and drivers for Windows NT 4, 2000, XP, 2003, Vista and 7, with current focus on Windows Server 2003 compatibility. The linked release is 0.4.16.",
@@ -37780,6 +37794,7 @@
     "description_zh": "把 Xbox 360 版《FIFA Street》（2012）重编译为 Windows 程序，附带安装器、启动器和社区在线对战。游戏副本须由用户自备。",
     "evidence_url": "https://github.com/samuelit0davila/fifa-street-pc-port/blob/93ea77cd5d8ada9f563d042d93460cdd6cde5146/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 93ea77cd. The README says ReStreet is a Windows PC version made by recompiling the Xbox 360 game, with a one-file installer, a launcher, and free online play on community servers in Europe and South America. Windows 10 or 11 is the stated host.",
@@ -37806,6 +37821,7 @@
     "description_zh": "用一个程序替换经典冒险游戏和 RPG 的可执行文件，运行用户自备的原始数据文件。它从 LucasArts 的 SCUMM 游戏开始，README 现在还列出许多其他作品。",
     "evidence_url": "https://github.com/scummvm/scummvm/blob/e0ddc60bfabb1efdf1e135006c8914ca59d0596c/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at e0ddc60b. The README says ScummVM plays graphic point-and-click adventures, text adventures and RPGs when the user already has the data files, replacing the executables shipped with those games.",
@@ -37830,6 +37846,7 @@
     "description_zh": "将《Silent Hill》的 PlayStation 1 代码重建为 C，目标是编译回与原版一致的机器码。项目声明不会做 PC 移植，游戏代码由人工逆向完成，而不是由模型生成。",
     "evidence_url": "https://github.com/shdecompilations/silent-hill-decomp/blob/cff38422fce4037342ca7bba9b691d6d86c8718f/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit cff38422. The README describes an in-progress matching decompilation: the progress percentage is the share of compiled code for which C has been written that compiles identically to the original assembly. Reaching 100% would mean every function matches; the reviewed README does not claim that point has been reached.",
@@ -37856,6 +37873,7 @@
     "description_zh": "把 2007 年 Xbox 360 版《The Simpsons Game》的可执行文件预先译成 C++，并在 Linux、Steam Deck 和 Windows 上运行。游戏由用户自备。",
     "evidence_url": "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 4ff637bc. The README says the PowerPC executable is translated to C++ and compiled for x86-64, so the game code runs on the CPU rather than in an emulator. ReXGlue, derived from Xenia, supplies the Xbox 360 kernel, audio, input and graphics. Linux uses Vulkan. Windows uses Vulkan, DirectX 12, or experimental DirectX 11.",
@@ -37880,6 +37898,7 @@
     "description_zh": "把 VNG 的 Zalo 桌面应用从官方 macOS 安装包重新打包到 Linux。构建工具生成 .deb，无界面冒烟脚本期望解出的程序能打开窗口。",
     "evidence_url": "https://github.com/thotam/zalo-linux/blob/63b7293151b1dc6bf2cc1c995ea38970a8b96c09/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at 63b72931. The README says npm run setup downloads the macOS DMG, extracts the bundle, and builds native modules, and that npm run build produces dist/Zalo-<version>.deb. The extracted app directory is gitignored. The project says it is not affiliated with or endorsed by VNG.",

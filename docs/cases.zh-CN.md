@@ -28,6 +28,8 @@
 - [**OpenPencil：能打开 Figma 文件的浏览器设计编辑器**](https://github.com/open-pencil/open-pencil) - 能在浏览器和桌面运行、并可打开 .fig 文件的开源设计编辑器。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/openpencil-design-editor-case/)</sub>
 - [**The Blind Walleye：营销网站的静态重建**](https://github.com/jpiercedev/blind-walleye) - 把公开的 Blind Walleye 网站重建为 Next.js 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/blind-walleye-static-case/)</sub>
 - [**Terminal：参考 TradingView 图表研究的 Rust 终端**](https://github.com/michaelshimeles/terminal) - 独立 Rust 市场界面参考 REA 对公开、未登录 TradingView 图表交互的场景研究；笔记保留观察、文档、推断及未知标签，产物使用自己的图表引擎和数据源，而非恢复 TradingView 或 Bloomberg 服务端软件。 <sub>案例 · 混合工具流程 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/terminal-tradingview-rea-chart-case/)</sub>
+- [**oxi：用来替代 Roundcube 的网页邮箱**](https://github.com/c0h1b4/oxi) - 自托管的网页邮箱界面，README 写明用来替代 Roundcube，并登录到已有的 IMAP 和 SMTP 服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/oxi-webmail-case/)</sub>
+- [**NewPipe：面向 YouTube 和 PeerTube 的 Android 前端**](https://github.com/TeamNewPipe/NewPipe) - 面向 YouTube、YouTube Music 和 PeerTube 的 Android 播放器，不使用这些网站的官方应用。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/newpipe-streaming-client-case/)</sub>
 - [**Littlebird.ai 静态首页重建**](https://github.com/AkashNaickar/crdb-sample-frontend) - 依据捕获的标记与资源，用原生 HTML/CSS/JavaScript 重建 Littlebird.ai 首页；源码实现移动导航、FAQ 展开、滚动显现及随操作系统变化的按钮展示。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/littlebird-static-rebuild-case/)</sub>
 - [**Ruffle：用 Rust 重新实现的 Adobe Flash Player**](https://github.com/ruffle-rs/ruffle) - 用 Rust 重新实现 Adobe Flash Player，使从 ActionScript 1/2（AVM1）到 ActionScript 3（AVM2）的 SWF 内容能在原生桌面播放器中运行，或通过 WebAssembly 以自托管脚本或浏览器扩展的形式在浏览器中运行。 <sub>案例 · 独立重建 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/ruffle-flash-player-case/)</sub>
 - [**恐龙跑酷：经 REA 检查、由 Codex 重建的速度规则**](https://github.com/zhxunzh84/rea-dino-reverse-engineering) - 作者使用 REA 的 MCP 浏览器工具被动捕获 wayou 开源 T-Rex Runner 页面已加载的 JavaScript，再由 Codex 在一个自包含的 HTML5 Canvas 游戏中重建其加速规则。 <sub>案例 · 混合工具流程 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/rea-dino-runner-community-case/)</sub>
@@ -37,8 +39,6 @@
 - [**BaoCut Slides：交互式网页编辑器改编**](https://github.com/JimLiu/baocut/tree/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides-runtime) - 记录 BaoCut 交互式幻灯片编辑器，作者称其实现借鉴自 Claude Slides。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/baocut-slides-editor-case/)</sub>
 - [**恐龙跑酷：恢复一条加速规则**](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#dinosaur-speed) - REA 的教学案例检查 HTTP 版 t-rex-runner，并重建其速度更新规则。 <sub>案例 · REA 官方 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/rea-dinosaur-speed-case/)</sub>
 - [**rauchg.com：根据捕获的 Flight 输出重建 RSC 博客**](https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/rsc-reconstruction.md) - 记录 website-rebuild-skill 的一个案例：解码浏览器收到的 React 服务端组件 Flight 流，重建可构建的 Next 项目，再与捕获站点的输出比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rauchg-rsc-reconstruction-case/)</sub>
-- [**NewPipe：面向 YouTube 和 PeerTube 的 Android 前端**](https://github.com/TeamNewPipe/NewPipe) - 面向 YouTube、YouTube Music 和 PeerTube 的 Android 播放器，不使用这些网站的官方应用。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/newpipe-streaming-client-case/)</sub>
-- [**oxi：用来替代 Roundcube 的网页邮箱**](https://github.com/c0h1b4/oxi) - 自托管的网页邮箱界面，README 写明用来替代 Roundcube，并登录到已有的 IMAP 和 SMTP 服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/oxi-webmail-case/)</sub>
 
 <a id="game"></a>
 ## Game · 游戏
@@ -372,6 +372,9 @@
 - [**usque：Cloudflare WARP MASQUE 模式的开源再实现**](https://github.com/Diniboy1123/usque) - 用 Go 重新实现 Cloudflare WARP 客户端的 MASQUE 模式：通过基于 QUIC/HTTP/3 的 Connect-IP（RFC 9484）隧道传输 IP 流量，并以原生 TUN 设备、SOCKS5 或 HTTP 代理、仅 TCP 的 L4 代理或端口转发等形式提供。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/usque-warp-masque-client-case/)</sub>
 - [**Webamp：在浏览器中重新实现 Winamp 2**](https://github.com/captbaritone/webamp) - 用 HTML5 和 JavaScript 重新实现 Winamp 2 的主窗口、均衡器和播放列表窗口，借助 Web Audio 实现播放、音量、声道平衡和均衡器，并渲染原有的经典 .wsz 皮肤，其文档称渲染效果与 Winamp 2.9 逐像素一致；Milkdrop 预设通过 Butterchurn 的 WebGL 移植版运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/webamp-winamp-reimplementation-case/)</sub>
 - [**WristBeam：为 Mac 配套应用重建佳明手表协议**](https://github.com/kongdayan/wristbeam) - 以原生 macOS 菜单栏应用实现佳明手表的配套客户端：通过蓝牙配对，接收实时健康通知和原始 FIT 文件，并可上传至 Garmin Connect。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/wristbeam-garmin-watch-protocol-case/)</sub>
+- [**zalo-linux：Zalo 桌面应用的 Linux 软件包**](https://github.com/thotam/zalo-linux) - 把 VNG 的 Zalo 桌面应用从官方 macOS 安装包重新打包到 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zalo-linux-desktop-case/)</sub>
+- [**OpenHaystack：使用 Apple“查找”网络的追踪标签**](https://github.com/seemoo-lab/openhaystack) - 制作通过 Apple“查找”网络上报位置的个人蓝牙追踪标签，并提供用来查询该网络的 Mac 应用。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/openhaystack-find-my-case/)</sub>
+- [**ReactOS：与 Windows NT 兼容的操作系统**](https://github.com/reactos/reactos) - 构建一个开源操作系统，目标是运行为 Windows NT 家族编写的应用程序和驱动程序。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/reactos-nt-compatible-case/)</sub>
 - [**iX500 Scan：基于逆向 ScanSnap Wi-Fi 协议的 macOS 客户端**](https://github.com/jonaswagnr/ix500-scan) - 在 macOS 上以 SwiftUI 应用和 Python 后台服务替代 ScanSnap Home，为富士通／PFU ScanSnap iX500 提供扫描：Wi-Fi 经由社区逆向的 VENS 协议，USB 经由 SANE，输出可搜索的 PDF。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/ix500-scan-scansnap-wifi-case/)</sub>
 - [**ScooterLink：重建 Honda RoadSync 车把按键协议**](https://github.com/gdorgian/ScooterLink) - 以一个 iOS 应用替代 Honda RoadSync 仅支持 Apple Music 的媒体控制：通过低功耗蓝牙与 Honda PCX 2025 的 TFT 仪表配对，把车把按键转换为对任意播放器生效的系统级命令。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/scooterlink-honda-roadsync-case/)</sub>
 - [**Claude Code 背景动画实验室：基于 REA 调查的桌面动画重新实现**](https://github.com/Henry-fan88/claude-code-background) - 将 Claude 桌面应用中 Claude Code“新会话”界面的字符风场背景，重新实现为可离线运行的 WebGL2 页面，并附带 38 个滑块的控制面板。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/claude-code-background-lab-case/)</sub>
@@ -405,9 +408,6 @@
 - [**Notion：追踪剪贴板桥接**](https://rea.tools/showcase/notion/) - 结合 REA 发现与独立源码阅读追踪剪贴板桥；动态包装器仍有明确限制。 <sub>案例 · REA 官方 · [完整条目](https://awesomerea.org/zh/resources/rea-notion-case/)</sub>
 - [**PicoPrint：LX-D02 打印机调查**](https://github.com/bigtower17/picoprint) - 作者报告以 REA 开始 Android 调查，再借助独立 Hermes 工具实现 Windows BLE 打印。 <sub>案例 · 混合工具流程 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/picoprint-rea-investigation/)</sub>
 - [**ReaCut：视频编辑器重建案例**](https://github.com/Xiangyu-CAS/rea-capcut) - 独立视频编辑器，作者公开了利用 REA 研究剪映／CapCut 行为与项目格式的过程。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/reacut-reconstruction/)</sub>
-- [**OpenHaystack：使用 Apple“查找”网络的追踪标签**](https://github.com/seemoo-lab/openhaystack) - 制作通过 Apple“查找”网络上报位置的个人蓝牙追踪标签，并提供用来查询该网络的 Mac 应用。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/openhaystack-find-my-case/)</sub>
-- [**ReactOS：与 Windows NT 兼容的操作系统**](https://github.com/reactos/reactos) - 构建一个开源操作系统，目标是运行为 Windows NT 家族编写的应用程序和驱动程序。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/reactos-nt-compatible-case/)</sub>
-- [**zalo-linux：Zalo 桌面应用的 Linux 软件包**](https://github.com/thotam/zalo-linux) - 把 VNG 的 Zalo 桌面应用从官方 macOS 安装包重新打包到 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zalo-linux-desktop-case/)</sub>
 
 <a id="native-binary"></a>
 ## Native Binary · 原生二进制
@@ -449,12 +449,12 @@
 - [**MXQ PRO RK3229：Android 固件调查与 Linux 改造**](https://github.com/bigtower17/mxqpro-rk3229) - 设备所有者记录了 RK3229 电视盒的硬件识别、原厂 Android ROM 调查、用户态手柄驱动及 Armbian 改造；REA 用于 ADB 清点和 Android 分析引擎引导，APK 分析与设备修改属于混合工作流，并非固件重建。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/mxqpro-rk3229-rea-repurposing-case/)</sub>
 - [**Valetudo：扫地机器人厂商云的本地替代**](https://github.com/Hypfer/Valetudo) - 用运行在已 root 机器人上、与厂商固件并存的本地服务取代受支持扫地机器人的厂商云，并模拟固件所期待的云端接口，包括 miio 模拟云（dummycloud）以及对应 Midea MSmart 协议的实现。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/valetudo-robot-cloud-replacement-case/)</sub>
 - [**TeddyCloud：可自托管的 Toniebox 云端替代服务器**](https://github.com/toniebox-reverse-engineering/teddycloud) - 以可自托管的 C 服务器重新实现 Toniebox 所连接的 Boxine 云服务，使盒子能在本地获取音频、设置和无线下发内容，同时由用户控制哪些数据发往厂商。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/teddycloud-toniebox-server-case/)</sub>
+- [**IronOS：TS100 一类电烙铁的替代固件**](https://github.com/Ralim/IronOS) - 替换受支持智能电烙铁上的原厂固件，从 TS100 开始，也包括 Pinecil。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ironos-soldering-firmware-case/)</sub>
 - [**OpenDMCUFirm：重新实现的 Wii U DMCU 显示固件**](https://github.com/GaryOderNichts/OpenDMCUFirm) - 用 C 语言重新实现 Wii U 的 DMCU 固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendmcufirm-wii-u-dmcu-firmware-case/)</sub>
 - [**reflecticon-224：在模拟硬件上运行 Lexicon 224 混响器固件**](https://github.com/joelanders/reflecticon-224) - 模拟 Lexicon 224、224X 与 224XL 数字混响器，使其原厂固件能在浏览器页面或 JUCE 插件中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reflecticon-224-lexicon-emulation-case/)</sub>
 - [**Supermodel：Real3D Pro-1000 图像生成器的初步模拟**](https://github.com/trzy/Supermodel) - 为 Supermodel 街机模拟器加入对 Real3D Pro-1000 的模拟。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/supermodel-real3d-pro1000-emulation-case/)</sub>
 - [**flipper-telink：Tuya Zigbee 遥控器的替换固件**](https://github.com/ngxson/flipper-telink) - 一款 Flipper Zero 应用，以位操作驱动 Telink 的 SWire 调试接口，用于转储并重刷 TLSR825x Zigbee 设备；仓库还附有对转储固件的静态分析笔记，以及为其中两款设备全新编写的固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/flipper-telink-tuya-remote-firmware-case/)</sub>
 - [**ThinkPad IMX471：为 Linux 恢复相机调校信息**](https://github.com/cschalle/mipi-fixes-x1-aura) - 从 Intel Windows 驱动包中恢复选定的相机调校结构，用于修复一个 ThinkPad 型号在 Linux 下的图像采集。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thinkpad-imx471-camera-case/)</sub>
-- [**IronOS：TS100 一类电烙铁的替代固件**](https://github.com/Ralim/IronOS) - 替换受支持智能电烙铁上的原厂固件，从 TS100 开始，也包括 Pinecil。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ironos-soldering-firmware-case/)</sub>
 
 <a id="protocol"></a>
 ## Protocol · 协议

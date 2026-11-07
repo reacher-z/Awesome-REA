@@ -4121,6 +4121,7 @@
     "description_zh": "用固定版本的 REA 和 Ghidra 从《Larax & Zaco》v1.0 共享版可执行文件导出过程，并把其中一小部分重建为 Pascal 和 C。作者报告了差异检查，并说明这不是可玩的完整游戏，也不是字节一致的重建。",
     "evidence_url": "https://github.com/Hubert-Rybak/lezac-decompilation/blob/03f07ee753ee3c2cedd5f9f8c03abe49fabceb61/README.md",
     "verified_at": "2026-10-22",
+    "added_at": "2026-10-22",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 03f07ee7. The README names REA 6.3.0 and Ghidra 12.1.4, and the input LEZAC.EXE SHA-256 7579255148c2cb540b26f70dc8181c50b218b6808d8fa5208c832391bafa53ec. It reports 215 exported procedures, seven routines reconstructed in Pascal, sixteen packed storage layouts, and six earlier C reconstructions.",

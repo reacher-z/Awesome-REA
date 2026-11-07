@@ -133,8 +133,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**OpenPencil：能打开 Figma 文件的浏览器设计编辑器**](https://github.com/open-pencil/open-pencil) - 能在浏览器和桌面运行、并可打开 .fig 文件的开源设计编辑器。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/openpencil-design-editor-case/)</sub>
 - [**The Blind Walleye：营销网站的静态重建**](https://github.com/jpiercedev/blind-walleye) - 把公开的 Blind Walleye 网站重建为 Next.js 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/blind-walleye-static-case/)</sub>
 - [**Terminal：参考 TradingView 图表研究的 Rust 终端**](https://github.com/michaelshimeles/terminal) - 独立 Rust 市场界面参考 REA 对公开、未登录 TradingView 图表交互的场景研究；笔记保留观察、文档、推断及未知标签，产物使用自己的图表引擎和数据源，而非恢复 TradingView 或 Bloomberg 服务端软件。 <sub>案例 · 混合工具流程 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/terminal-tradingview-rea-chart-case/)</sub>
-- [**Littlebird.ai 静态首页重建**](https://github.com/AkashNaickar/crdb-sample-frontend) - 依据捕获的标记与资源，用原生 HTML/CSS/JavaScript 重建 Littlebird.ai 首页；源码实现移动导航、FAQ 展开、滚动显现及随操作系统变化的按钮展示。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/littlebird-static-rebuild-case/)</sub>
-- [**Ruffle：用 Rust 重新实现的 Adobe Flash Player**](https://github.com/ruffle-rs/ruffle) - 用 Rust 重新实现 Adobe Flash Player，使从 ActionScript 1/2（AVM1）到 ActionScript 3（AVM2）的 SWF 内容能在原生桌面播放器中运行，或通过 WebAssembly 以自托管脚本或浏览器扩展的形式在浏览器中运行。 <sub>案例 · 独立重建 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/ruffle-flash-player-case/)</sub>
+- [**oxi：用来替代 Roundcube 的网页邮箱**](https://github.com/c0h1b4/oxi) - 自托管的网页邮箱界面，README 写明用来替代 Roundcube，并登录到已有的 IMAP 和 SMTP 服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/oxi-webmail-case/)</sub>
+- [**NewPipe：面向 YouTube 和 PeerTube 的 Android 前端**](https://github.com/TeamNewPipe/NewPipe) - 面向 YouTube、YouTube Music 和 PeerTube 的 Android 播放器，不使用这些网站的官方应用。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/newpipe-streaming-client-case/)</sub>
 
 #### 工具、项目与集成
 
