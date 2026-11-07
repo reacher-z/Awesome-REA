@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bn6f-disasm",
+    "name": "Battle Network 6 Falzar disassembly",
+    "url": "https://github.com/dism-exe/bn6f",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of Mega Man Battle Network 6: Cybeast Falzar. It builds bn6f.gba, SHA-1 0676ecd4d58a976af3346caebb44b9b6489ad099.",
+    "description_zh": "这是《洛克人EXE6：电脑兽法尔扎》的反汇编。它构建 bn6f.gba，SHA-1 为 0676ecd4d58a976af3346caebb44b9b6489ad099。",
+    "requirements": [
+      "Setup steps are in INSTALL.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/dism-exe/bn6f/blob/d57c1968d27452de1042eff78b5dfbf124922666/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
