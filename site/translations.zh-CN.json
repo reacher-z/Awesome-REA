@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "fabledroid": {
+    "name": "FableDroid",
+    "requirements": [
+      "启动器在设备上从 Xbox 360 ISO 安装，并核对 default.xex 的 SHA-256。源码构建使用 NDK 29.0.14206865、CMake 3.25 或更新版本、Ninja、JDK 21 和 Python 3。",
+      "许可证：本项目自己的代码为 MIT。Mesa Turnip 为 MIT，libadrenotools 为 BSD-2-Clause，SDL3 为 zlib。"
+    ]
   }
 }

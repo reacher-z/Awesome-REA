@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fabledroid",
+    "name": "FableDroid",
+    "url": "https://github.com/hardsilinder/FableDroid",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "FableDroid statically recompiles Fable II to arm64 Android and renders Xbox 360 GPU commands with Vulkan. Release 0.6.3 beta is FableDroid-0.6.3-beta.apk. The reference Game of the Year USA/Europe ISO has SHA-256 685a0d3bea9718812f17bcd155907a5359a548b6d3d8342dd2a6c944f45e35ff. On a Snapdragon 8 Gen 2 with Adreno 740 and Android 13, the measured median is 29.9 fps at native 720p under the game's 30 fps cap.",
+    "description_zh": "FableDroid 把《神鬼寓言 II》静态重编译到 arm64 Android，并用 Vulkan 渲染 Xbox 360 的 GPU 命令。0.6.3 beta 发布包是 FableDroid-0.6.3-beta.apk。参考用的年度版美欧 ISO 的 SHA-256 是 685a0d3bea9718812f17bcd155907a5359a548b6d3d8342dd2a6c944f45e35ff。在骁龙 8 Gen 2、Adreno 740 和 Android 13 上，原生 720p、游戏 30 帧上限时测得中位数 29.9 帧。",
+    "requirements": [
+      "The launcher installs from an Xbox 360 ISO on the device and checks the SHA-256 of default.xex. A source build uses NDK 29.0.14206865, CMake 3.25 or newer, Ninja, JDK 21, and Python 3.",
+      "License: MIT for this project's own code. Mesa Turnip is MIT, libadrenotools is BSD-2-Clause, and SDL3 is zlib."
+    ],
+    "evidence_url": "https://github.com/hardsilinder/FableDroid/blob/313fc9f759e804ecd7d8bf2a5574cd65555765b8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
