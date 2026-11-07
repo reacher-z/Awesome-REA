@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nebula-smg",
+    "name": "Nebula",
+    "url": "https://github.com/keepvaibin/nebula",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Nebula runs Super Mario Galaxy on 64-bit Windows. Release 1.0.2 plays the North American disc RMGE01 from start to finish. Setup translates that disc's PowerPC code to C++ and compiles it locally. The current branch, Nebula 2, is unreleased and builds the game from the Petari decompilation, adding the European disc RMGP01 and the Japanese disc RMGJ01. Windows 10 version 1803 or Windows 11, a Direct3D 12 GPU, and 8 GB of RAM are required. Source steps are in docs/BUILDING.md.",
+    "description_zh": "Nebula 在 64 位 Windows 上运行《超级马里奥银河》。发行版 1.0.2 可以从头到尾玩北美光盘 RMGE01。安装程序把该光盘的 PowerPC 代码翻译成 C++ 并在本地编译。当前分支 Nebula 2 尚未发布，它从 Petari 反编译构建游戏，并加入欧版光盘 RMGP01 和日版光盘 RMGJ01。需要 Windows 10 版本 1803 或 Windows 11、Direct3D 12 GPU 和 8 GB 内存。源码步骤在 docs/BUILDING.md。",
+    "requirements": [
+      "Super Mario Galaxy revision 0 as an ISO, RVZ, or extracted folder. RMGE01 for 1.0.2.",
+      "License: GNU GPL v3.0 only. Third-party terms are in THIRD-PARTY-NOTICES.md."
+    ],
+    "evidence_url": "https://github.com/keepvaibin/nebula/blob/825c707a99ee2efcbd6250b07c54c7f0935a1ac6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
