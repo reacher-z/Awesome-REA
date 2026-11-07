@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "athelas-lotr-case",
+    "name": "Athelas: launcher and native PC ports of Lord of the Rings games",
+    "url": "https://github.com/Shagg88/Athelas",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "description_en": "Athelas is a Windows launcher for playing your own copies of several Lord of the Rings games. The README lists The Return of the King on PC through ROTK Fix, plus native PC ports of the Xbox releases of The Return of the King, The Two Towers, The Fellowship of the Ring, and The Third Age.",
+    "description_zh": "Athelas 是一个 Windows 启动器，用来游玩自备的多款《指环王》游戏。README 列出通过 ROTK Fix 运行的 PC 版《王者归来》，以及 Xbox 版《王者归来》《双塔奇兵》《护戒使者》和《第三纪元》的原生 PC 移植。",
+    "requirements": [
+      "The games are your own copies. Releases provide one zip with the launcher, ROTK Fix, and the ports.",
+      "The README says the author tested the project on one Windows PC. Linux and Steam Deck are described as intended, and Mac and Android as possible later.",
+      "The README says Shagg created the project with help from Claude (Anthropic).",
+      "License: MIT."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/Shagg88/Athelas/blob/f16c73e5ec248c9e9a5b3f1f0707c527e3719c7a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

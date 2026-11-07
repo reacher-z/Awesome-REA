@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -276,9 +276,10 @@
 - [**z2rs: an incremental Rust reconstruction of Zelda II checked against an emulator**](https://github.com/troyedwardsjr/z2rs) - Rebuilds Zelda II: The Adventure of Link (NES) in Rust for desktop, browser and Android by replacing the game’s 6502 routines one at a time. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/z2rs-zelda2-reconstruction-case/)</sub>
 
 <a id="game-other"></a>
-### Other methods and analyses (23)
+### Other methods and analyses (24)
 
 - [**ArkWeb: a two-game movement and collision experiment**](https://github.com/luki-1/ArkWeb) - Runs Spider-Man Remastered and Arkham Knight together, streaming Gotham collision into Spider-Man’s physics world and compositing his rendered frame into Arkham. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/arkweb-two-game-case/)</sub>
+- [**Athelas: launcher and native PC ports of Lord of the Rings games**](https://github.com/Shagg88/Athelas) - Athelas is a Windows launcher for playing your own copies of several Lord of the Rings games. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/athelas-lotr-case/)</sub>
 - [**Batla 3D server emulator (2015 client)**](https://github.com/Serega25511s/Batla-3D-server-emu) - C# server emulator for the 2015 Steam client of Batla 3D, covering HTTP account, shop and room services and Lidgren UDP gameplay. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/batla-3d-server-emulator-case/)</sub>
 - [**bf-private-server: a Brave Frontier revival server**](https://github.com/joppe2001/bf-private-server) - bf-private-server recreates a self-hosted server for Brave Frontier client version 2.19.6. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/bf-private-server-case/)</sub>
 - [**D2R Mobile: rehosting Diablo II: Resurrected’s Switch program on Apple devices**](https://github.com/jhaizhou-ops/d2r-mobile) - Runs the Nintendo Switch release’s own aarch64 program natively on iPhone, iPad and Apple silicon Macs, rewriting only instructions that depend on the Horizon kernel and supplying its system services and the NVN graphics API on Metal. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/d2r-mobile-switch-rehost-case/)</sub>
