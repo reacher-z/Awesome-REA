@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ladx-disassembly",
+    "name": "Link's Awakening DX Disassembly: a disassembly that rebuilds Game Boy Color ROMs",
+    "url": "https://github.com/zladx/LADX-Disassembly",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "Disassembly of The Legend of Zelda: Link's Awakening DX. The README says it builds Game Boy Color ROMs and lists an MD5 for each, including Japanese, English, and German revisions.",
+    "description_zh": "《塞尔达传说 织梦岛 DX》的反汇编。README 写明它可以构建 Game Boy Color ROM，并为每个 ROM 列出 MD5，其中包括日文、英文和德文修订版。",
+    "evidence_url": "https://github.com/zladx/LADX-Disassembly/blob/2a5c2c0d6df93a54df81ae9e1fe28b5c2fd60d03/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed page states no license."
+    ]
   }
 ]
