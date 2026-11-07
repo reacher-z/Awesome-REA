@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "underworld-revisited": {
+    "name": "Underworld Revisited",
+    "requirements": [
+      "需要 64 位 Windows 10 或更新版本以及 DirectX 11，或者带 Vulkan 或 OpenGL 4 的 64 位 Linux。源码构建使用 Unity 6000.6.8f1。找不到安装时，启动器会询问包含 game.gog 或 game.bin 的文件夹。",
+      "许可证：MIT。源自其他项目的部分保留 THIRD_PARTY_NOTICES.md 里的许可证。"
+    ]
   }
 }
