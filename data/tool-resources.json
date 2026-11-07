@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pmd-sky-case",
+    "name": "Pokémon Mystery Dungeon: Explorers of Sky — disassembly",
+    "url": "https://github.com/pret/pmd-sky",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "description_en": "This is a work-in-progress disassembly of Pokémon Mystery Dungeon: Explorers of Sky. The README says the repository builds the US, European, and Japanese ROMs and gives a SHA-1 for each.",
+    "description_zh": "这是《宝可梦不可思议迷宫：探险队系列 天空》进行中的反汇编。README 写明仓库会构建美版、欧版和日版 ROM，并为每个 ROM 给出 SHA-1。",
+    "requirements": [
+      "Setup steps are in INSTALL.md.",
+      "The named ROMs are pmdsky.us.nds SHA-1 5fa96ca8d8dd6405d6cd2bad73ed68bc73a9d152, pmdsky.eu.nds SHA-1 c838a5adf1ed32d2da8454976e5b1a1aa189c139, and pmdsky.jp.nds SHA-1 7785138dd343b6f2d0f2c9cadc26b4aa927161d7.",
+      "The README does not name a license."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/pret/pmd-sky/blob/91235d8a1116494766252a2e3065a110d1258343/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
