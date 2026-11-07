@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "jssms-case": {
+    "name": "jsSMS：Master System 与 Game Gear 仿真器",
+    "requirements": [
+      "它用 JavaScript 运行 Master System 和 Game Gear ROM。",
+      "README 把 JavaGear 的原始版权归于 Chris White，2002–2008 年。",
+      "许可证：GPL-3.0。"
+    ]
   }
 }
