@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -67,6 +67,7 @@
 - [**SoK：人工智能增强的二进制逆向工程**](https://arxiv.org/abs/2606.17398) - 一篇系统化知识综述，梳理机器学习、大语言模型与智能体方法在二进制逆向中的应用。 <sub>原题：*SoK: AI-Augmented Binary Reversing* · arXiv 2026 · 预印本 · Yujeong Kwon 等 · [PDF](https://arxiv.org/pdf/2606.17398v2) · [完整条目](https://awesomerea.org/zh/papers/paper-sok-ai-binary-reversing/)</sub>
 - [**基于反馈驱动多轮修正的二进制反编译大语言模型**](https://arxiv.org/abs/2606.16162) - AutoDecompiler 训练函数级反编译模型，利用编译、执行及 I/O 反馈修正汇编或伪代码输入产生的输出。 <sub>原题：*Binary Decompilation LLM with Feedback-Driven Multi-Turn Refinement* · arXiv 2026 · 预印本 · Peipei Liu 等 · [PDF](https://arxiv.org/pdf/2606.16162v2) · [代码](https://zenodo.org/records/23120286) · [完整条目](https://awesomerea.org/zh/papers/paper-autodecompiler/)</sub>
 - [**以量化可读性指标引导 LLM 智能体辅助逆向工程**](https://arxiv.org/abs/2606.06838) - 用综合量化可读性分数（QRS）引导智能体改进反编译 C 代码，将词汇熟悉度、结构简洁度和编程惯用法与二进制结构相似性门槛结合，在 210 个简单 C 二进制程序上比较有无 shell 访问的迭代。 <sub>原题：*LLM Agent-Assisted Reverse Engineering with Quantitative Readability Metrics* · arXiv 2026 · 预印本 · Neil Archibald 等 · [PDF](https://arxiv.org/pdf/2606.06838v1) · [完整条目](https://awesomerea.org/zh/papers/paper-qrs-readability/)</sub>
+- [**二进制可执行文件静态数据流分析的基准测试与改进**](https://arxiv.org/abs/2506.00313v1) - 本文为二进制可执行文件上的静态数据流分析建立带标签的基准，并用它比较已有分析引擎。 <sub>原题：*Data Flows in You: Benchmarking and Improving Static Data-flow Analysis on Binary Executables* · Proceedings of the ACM Asia Conference on Computer and Communications Security 2026 · 会议论文 · Nicolaas Weideman 等 · [PDF](https://arxiv.org/pdf/2506.00313v1) · [完整条目](https://awesomerea.org/zh/papers/paper-binary-dataflow-bench/)</sub>
 - [**SCDBench：基于大语言模型的智能合约反编译器基准**](https://arxiv.org/abs/2605.29059) - 在 600 个源码已验证的以太坊 Solidity 合约上评测基于大语言模型的 EVM 反编译。 <sub>原题：*SCDBench: A Benchmark for LLM-Based Smart Contract Decompilers* · arXiv 2026 · 预印本 · Kaihua Qin 等 · [PDF](https://arxiv.org/pdf/2605.29059v1) · [完整条目](https://awesomerea.org/zh/papers/paper-scdbench/)</sub>
 - [**加壳识别工具的语义验证：特征分析、修正与下游影响**](https://arxiv.org/abs/2605.25923) - 以脱壳结果作为参考证据评估壳标签，规范化不同工具的输出，并评估互补签名／启发式规则池及从脱壳器实现提取的静态判定条件；同时追踪识别错误对后续脱壳和恶意软件分类的影响。 <sub>原题：*Semantic Validation of Packer Identification Tools: Characterization, Repair, and Downstream Impact* · arXiv 2026 · 预印本 · Fangtian Zhong 等 · [PDF](https://arxiv.org/pdf/2605.25923v3) · [完整条目](https://awesomerea.org/zh/papers/paper-packer-identification-semantic-validation/)</sub>
 - [**Decaf：通过自动反馈与搜索改进神经反编译**](https://arxiv.org/abs/2605.11501) - Decaf 采样多个反编译候选，重新编译后利用字节距离或学习式重排序器排序。 <sub>原题：*Decaf: Improving Neural Decompilation with Automatic Feedback and Search* · arXiv 2026 · 预印本 · Alexander Shypula 等 · [PDF](https://arxiv.org/pdf/2605.11501v1) · [代码](https://github.com/AlexShypula/decaf) · [完整条目](https://awesomerea.org/zh/papers/paper-decaf/)</sub>
