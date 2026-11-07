@@ -39719,5 +39719,12 @@
       "目前仅构建美版。",
       "许可证：AGPL-3.0。"
     ]
+  },
+  "ouroboros-decompiler": {
+    "name": "Ouroboros",
+    "requirements": [
+      "需要稳定版 Rust。打开时需要一个 PE32 或 PE32+ 二进制。",
+      "许可证：可选用 MIT 或 Apache-2.0。"
+    ]
   }
 }

@@ -140636,5 +140636,25 @@
     "additional_evidence_urls": [
       "https://github.com/synamaxmusic/bar-decomp/blob/bd312023654ed73596026fee93128f1939cc3a17/LICENSE"
     ]
+  },
+  {
+    "id": "ouroboros-decompiler",
+    "name": "Ouroboros",
+    "url": "https://github.com/Hexorg/Ouroboros",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Ouroboros is a Rust decompiler that recovers structure with symbolic execution and constraint tracking. It tracks path constraints, register and memory deltas, dominators, and SESE regions, then forms if/else, loops, and early exits. cargo build --release builds it, and cargo run --release opens the egui interface. File, Open accepts a PE32 or PE32+ binary. Press D on the first byte of an instruction to disassemble until a NOP or an invalid instruction, then press F on the function start to decompile it.",
+    "description_zh": "Ouroboros 是用 Rust 写的反编译器，用符号执行和约束跟踪恢复结构。它跟踪路径约束、寄存器和内存差值、支配节点和 SESE 区域，再组成 if/else、循环和提前退出。cargo build --release 构建它，cargo run --release 打开 egui 界面。文件、打开接受 PE32 或 PE32+ 二进制。在指令首字节上按 D，会反汇编到 NOP 或非法指令；再在函数起点按 F 进行反编译。",
+    "requirements": [
+      "Stable Rust. A PE32 or PE32+ binary to open.",
+      "License: MIT or Apache-2.0, at your option."
+    ],
+    "evidence_url": "https://github.com/Hexorg/Ouroboros/blob/729c5b64bb3d651b98a6f6ed6d1a5e644217d5ad/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
