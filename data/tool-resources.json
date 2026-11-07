@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rocket-robot-on-wheels-decomp",
+    "name": "Rocket: Robot on Wheels decompilation",
+    "url": "https://github.com/RocketRet/Rocket-Robot-On-Wheels",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a decompilation of the Nintendo 64 game Rocket: Robot on Wheels. The US ROM is named baserom.us.z64.",
+    "description_zh": "该仓库是任天堂 64 游戏 Rocket: Robot on Wheels 的反编译。美版 ROM 命名为 baserom.us.z64。",
+    "requirements": [
+      "Install a MIPS gcc and MIPS binutils. Place the ROM in the project root, run make setup once, then make.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/RocketRet/Rocket-Robot-On-Wheels/blob/cd1fc6d3f575841a240373d7b8a2baf532da2f9f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
