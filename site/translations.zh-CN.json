@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "openreliant": {
+    "name": "OpenReliant",
+    "requirements": [
+      "玩家提供 StarLancer 的零售副本。构建需要 Zig 0.17。",
+      "源代码是 MPL-2.0。docs/ 下的文档是 CC BY-SA 4.0。"
+    ]
   }
 }
