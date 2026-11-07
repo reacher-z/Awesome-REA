@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ida-bpf-processor": {
+    "name": "IDA BPF Processor（IDA 的 BPF 处理器）",
+    "requirements": [
+      "需要 IDA 7.x，已在 7.0 上测试。把 bpf.py 放到 procs 目录，把 bpf_loader.py 放到 loaders 目录。更早的 IDA 版本使用 v1.0.0 发行版。",
+      "输入文件使用文档中的头部：魔数 bpf 加一个结尾 NUL，保留字段为 0，随后是 sock_filter 指令。",
+      "README 以 MIT 许可该项目。"
+    ]
   }
 }
