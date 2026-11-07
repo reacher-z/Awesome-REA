@@ -36543,6 +36543,7 @@
     "description_zh": "使用打过补丁的 pcrecomp 将《极品飞车：地下狂飙 2》的 32 位 x86 可执行文件提升为 C 代码，再构建为 Windows 宿主程序或 Android 应用，后者通过移植的 DXVK Native 将 Direct3D 9 映射到 Vulkan。项目文档报告了基于 Unicorn 的指令级与真实函数差分测试，并以原始代码作为全程序对照。游戏文件来自使用者的 PC 安装目录；可玩性和性能均为项目自述。",
     "evidence_url": "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "The README reports 27,742 lifted functions (about 8.9 million lines of C) with no lift failures, a playable race prototype on Windows and Android, and v0.14.7 Android APKs (October 2026). STATUS marks only evidenced milestones as done; its 7 October log still lacks an end-to-end scripted race in the test set, and the 16 October issue review leaves several crash reports unresolved.",
