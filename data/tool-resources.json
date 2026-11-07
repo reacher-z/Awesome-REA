@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "croc-decomp",
+    "name": "Croc decompilation",
+    "url": "https://github.com/Xeeynamo/croc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles Croc: Legend of the Gobbos for PlayStation, aiming at the same binary as the commercial game. The current base is the European demo SLED-00038, chosen because it contains symbols. The planned retail target is SLUS-00530.",
+    "description_zh": "该仓库反编译 PlayStation 游戏 Croc: Legend of the Gobbos，目标是与商业版相同的二进制。当前基础是欧洲试玩版 SLED-00038，因为它带有符号。计划中的零售目标是 SLUS-00530。",
+    "requirements": [
+      "On Ubuntu, Debian, or Windows with WSL, install the packages in tools/requirements-debian.txt, run make update-dependencies, and copy the disc into disks for that version. make extract writes assembly. make all compiles the binaries. Non-matching functions can be compiled with CPP_FLAGS=-DNON_MATCHING.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Xeeynamo/croc/blob/f30ff1ee6721a172e270adcecab72b5b8a5e9bb1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
