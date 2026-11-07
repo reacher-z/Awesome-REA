@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "java-decompile-tool-gui": {
+    "name": "JavaDecompileTool-GUI",
+    "requirements": [
+      "下载位于仓库的 Releases 页面。",
+      "README 写明不要删除或修改 jre 文件夹、fernflower 或 ICSharpCode.SharpZipLib.dll。",
+      "README 没有写许可证。"
+    ]
   }
 }
