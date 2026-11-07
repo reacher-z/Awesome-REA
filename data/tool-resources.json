@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "killzone-liberation-recomp",
+    "name": "Killzone: Liberation Recomp",
+    "url": "https://github.com/Tzeentchnet/KillzoneLiberation-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This Windows static recompilation of Killzone: Liberation targets the US v1.20 image UCUS-98646. That image is 568,498,176 bytes, SHA-1 5bc4fc8cd8d72c9c2e7c1c03a4325a29bed6e69a. The README says this is not the Redump retail USA disc, which is 581,632,000 bytes, SHA-1 dda1a72c28ccdd8ddd2f3cbfd2fa3188962b0458. extract.py checks the image, gen.py writes the translated C, and cmake --preset clang-cl builds kzl_driver. The boot path rechecks the ISO size and SHA-1.",
+    "description_zh": "这个《杀戮地带：解放》的 Windows 静态重编译针对美版 v1.20 镜像 UCUS-98646。该镜像为 568,498,176 字节，SHA-1 是 5bc4fc8cd8d72c9c2e7c1c03a4325a29bed6e69a。README 写明这不是 Redump 的美版零售光盘，那张光盘是 581,632,000 字节，SHA-1 为 dda1a72c28ccdd8ddd2f3cbfd2fa3188962b0458。extract.py 校验镜像，gen.py 写出翻译后的 C，cmake --preset clang-cl 构建 kzl_driver。启动路径会再次核对 ISO 的大小和 SHA-1。",
+    "requirements": [
+      "Windows 10 or 11 x64, Python 3.11 or newer, CMake 3.25 or newer, Ninja, and Visual Studio 2022 Build Tools with clang-cl.",
+      "License: GPL-2.0-or-later for project-authored and PPSSPP-derived code. Linked binaries also include GPL-3.0-or-later libkirk."
+    ],
+    "evidence_url": "https://github.com/Tzeentchnet/KillzoneLiberation-Recomp/blob/ba5e49af8939c3aa1678fa990397269fe008bd02/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
