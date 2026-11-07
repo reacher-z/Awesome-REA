@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ps5-mario-galaxy",
+    "name": "Super Mario Galaxy for PlayStation 5",
+    "url": "https://github.com/griches/PS5_MarioGalaxy",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Version 1.1.0 statically recompiles Super Mario Galaxy for the Wii, USA RMGE01 revision 0, into a PlayStation 5 homebrew title, PPSA99315, at 4K and 60 fps. Nebula translates that one disc. The Mac builder is SuperMarioGalaxy-PS5-Builder-1.1.0-mac.zip. The Windows builder is SuperMarioGalaxy-PS5-Builder-1.1.0-windows.zip. The result is a folder named PPSA99315, about 4.5 GB. A build takes about 4 minutes on an Apple silicon Mac and about 10 minutes on a fast PC, and needs about 12 GB free.",
+    "description_zh": "1.1.0 版把 Wii 美版《超级马里奥银河》RMGE01 修订 0 静态重编译成 PlayStation 5 自制标题 PPSA99315，分辨率为 4K，帧率 60。Nebula 只翻译这一张光盘。Mac 构建器是 SuperMarioGalaxy-PS5-Builder-1.1.0-mac.zip。Windows 构建器是 SuperMarioGalaxy-PS5-Builder-1.1.0-windows.zip。结果是名为 PPSA99315 的文件夹，大约 4.5 GB。在 Apple silicon Mac 上构建大约 4 分钟，在较快的 PC 上大约 10 分钟，并需要大约 12 GB 空闲空间。",
+    "requirements": [
+      "A Mac with Apple silicon on macOS 13 or newer, or 64-bit Windows 10 or 11, plus a USA RMGE01 revision 0 disc image. The README expects a PlayStation 5 that already runs homebrew.",
+      "License: GPL-3.0, the same license the README names for Nebula."
+    ],
+    "evidence_url": "https://github.com/griches/PS5_MarioGalaxy/blob/0444596e7baa7f2a5604962dfd01c323aeb2ec33/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
