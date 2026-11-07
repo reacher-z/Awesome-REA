@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "burnout3-xbox-recomp-case",
+    "name": "Burnout 3: Takedown — Xbox static recompilation",
+    "url": "https://github.com/sp00nznet/burnout3",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "This repository is a static recompilation of the Xbox version of Burnout 3: Takedown into a native Windows executable. The README says xboxrecomp lifts the game's x86 code to C, and the game boots through its own entry point on that toolkit's Xbox runtime.",
+    "description_zh": "该仓库把 Xbox 版《Burnout 3: Takedown》静态重编译为 Windows 原生可执行文件。README 写明 xboxrecomp 把游戏的 x86 代码提升为 C，游戏通过自己的入口在该工具包的 Xbox 运行时上启动。",
+    "requirements": [
+      "You supply your own disc image. Generated source is not distributed; the recompiler writes C into a gitignored folder on your machine.",
+      "The repository holds build glue, per-title data, and docs.",
+      "License: MIT."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/sp00nznet/burnout3/blob/3c85ed7777886f4a8f805cb243b123b1b82cf375/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
