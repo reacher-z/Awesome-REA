@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -40,7 +40,7 @@
 [↑ 返回目录](#目录)
 
 <a id="game-matching-decompilation"></a>
-### 匹配反编译与反汇编 (69)
+### 匹配反编译与反汇编 (70)
 
 - [**3S Decomp：逐字比对的《街头霸王 III：3rd Strike》PS2 反编译重建**](https://github.com/crowded-street/3s-decomp) - 将 Street Fighter Anniversary Collection 中《街头霸王 III：3rd Strike》的 PlayStation 2 可执行文件反编译为 C 源码，用当年的 Metrowerks 与 EE GCC 编译器重新构建，再将重建出的可执行文件与使用者自备的原文件逐字比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)</sub>
@@ -65,6 +65,7 @@
 - [**《马力欧卡丁车：双重冲刺!!》：调试版 GameCube 一致性反编译**](https://github.com/doldecomp/mkdd) - 《马力欧卡丁车：双重冲刺!!》的进行中 1:1 反编译：用原版 Metrowerks 编译器从 C 与 C++ 源码重建美版调试构建（MarioClub\_us）的 GameCube main.dol，并与仓库保存的 SHA-1 比对。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mario-kart-double-dash-decomp-case/)</sub>
 - [**Mario Party 4：美版 GameCube 一致性反编译重建**](https://github.com/mariopartyrd/marioparty4) - 将 Mario Party 4 的 GameCube 主程序和 REL 模块重建为 C 源码，可重新构建两个美版发行版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mario-party-4-decomp-case/)</sub>
 - [**MediEvil 反编译：早期阶段、以校验值把关的 PlayStation 项目**](https://github.com/MediEvilDecompilation/medievil-decomp) - 将美版 PlayStation《MediEvil》逐步反编译为 C 源码，目标是重新生成其主程序、游戏程序及 26 个覆盖模块。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/medievil-decomp-case/)</sub>
+- [**密特罗德 NES 反汇编**](https://github.com/nmikstas/metroid-disassembly) - 该项目反汇编 NES 版《密特罗德》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/metroid-nes-disasm/)</sub>
 - [**《密特罗德 Prime》：PrimeDecomp 的 GameCube 版一致性反编译**](https://github.com/PrimeDecomp/prime) - 为《密特罗德 Prime》GameCube 版的可执行文件及其 NES 模拟器模块重建 C++ 源码，使 CodeWarrior 编译结果与原文件一致，涵盖美版、韩版、PAL 版与日版，另有针对体验版光盘和三个 Wii 版本的早期配置。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/primedecomp-metroid-prime-decomp-case/)</sub>
 - [**MinecraftLCE：处于早期阶段的 Minecraft: Nintendo Switch Edition 反编译**](https://github.com/GRAnimated/MinecraftLCE) - 将 Legacy Console Edition 系列中的 Minecraft: Nintendo Switch Edition v1.0.17 反编译为 C++，借助打过补丁的 Clang 4.0.1 和 open-ead 的 Switch 反编译工具，与原可执行文件逐函数比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/minecraft-lce-switch-decomp-case/)</sub>
 - [**《时之笛》：16 个版本均以 MD5 校验 ROM 构建的反编译**](https://github.com/zeldaret/oot) - 借助游戏本身的信息以及静态与动态分析，为《时之笛》重建 C 源码库，可重新构建 Nintendo 64、GameCube 和 iQue Player 共 16 个 ROM 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ocarina-of-time-decomp-case/)</sub>

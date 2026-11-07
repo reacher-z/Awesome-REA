@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "metroid-nes-disasm",
+    "name": "Metroid NES disassembly",
+    "url": "https://github.com/nmikstas/metroid-disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles Metroid for the NES. The ROM has eight 16 KB banks. Banks 00 through 06 swap into lower memory, and bank 07 stays in upper memory. The included build script assembles the banks with Ophis and compares each output MD5 with the original binaries.",
+    "description_zh": "该项目反汇编 NES 版《密特罗德》。ROM 有八个 16 KB 的内存库。00 到 06 库换入低地址内存，07 库留在高地址内存。附带的构建脚本用 Ophis 汇编这些库，并把每个输出的 MD5 与原始二进制比较。",
+    "requirements": [
+      "Run the build script from the repository root. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/nmikstas/metroid-disassembly/blob/4270d57f9468daebdeea485686e31e26218a780c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
