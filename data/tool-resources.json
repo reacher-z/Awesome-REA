@@ -36528,5 +36528,39 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "lh-truvoice-decomp-case",
+    "name": "L&H TruVoice: a portable C rebuild of tv_enua.dll",
+    "url": "https://github.com/KamiKitsune420/lh-truvoice-decomp",
+    "description_en": "Rebuilds Lernout & Hauspie TruVoice 6.00 build 10, the SAPI 4 American English engine in tv_enua.dll, as C99. The port reads that DLL's tables at run time and checks PCM against the running engine.",
+    "description_zh": "把 Lernout & Hauspie TruVoice 6.00 build 10（SAPI 4 美式英语引擎 tv_enua.dll）重建为 C99。移植在运行时读取该 DLL 的表，并与正在运行的引擎对照 PCM。",
+    "evidence_url": "https://github.com/KamiKitsune420/lh-truvoice-decomp/blob/c2cc3dbbd50666d9c77b2488d5be34d2f97f14bb/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/KamiKitsune420/lh-truvoice-decomp/blob/c2cc3dbbd50666d9c77b2488d5be34d2f97f14bb/tools/e2e_text.py",
+      "https://github.com/KamiKitsune420/lh-truvoice-decomp/blob/c2cc3dbbd50666d9c77b2488d5be34d2f97f14bb/tests/hard.txt",
+      "https://github.com/KamiKitsune420/lh-truvoice-decomp/blob/c2cc3dbbd50666d9c77b2488d5be34d2f97f14bb/LICENSE"
+    ],
+    "requirements": [
+      "Needs a C99 compiler and your own tv_enua.dll 6.00 build 10. The README says the engine is not in the repository and that the port reads its tables from that DLL at run time.",
+      "Ten named voices share one formant synthesizer. The README says src/gen_back.inc, gen_tag.inc, and gen_norm.inc are the engine's logic translated from a decompilation, and distinguishes those files from the hand-written C.",
+      "The README's end-to-end row reports 330/330, 130/130, 230/230, 400/400, and 140/140 identical results for the listed text sets, and says x86 and x64 builds match each other. One command it names is python tools/e2e_text.py tests/hard.txt.",
+      "LICENSE is the MIT License, copyright 2026 KamiKitsune420. The original engine is not included."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "targets": [
+      "binary"
+    ]
   }
 ]
