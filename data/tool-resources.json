@@ -36528,5 +36528,40 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "halopad-project-reach-case",
+    "name": "HaloPad: Halo on Apple devices through a decompilation port and x86 recompilation",
+    "url": "https://github.com/chrissotraidis/projectreach",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Brings Halo: Combat Evolved to iPhone, iPad and Apple silicon Macs through two engines. The Xbox edition builds a pinned OpenCE port of the community Xbox decompilation, while Custom Edition translates the user’s own haloce.exe 1.10 from x86 to ARM64 ahead of time, with HaloPad supplying Windows, Direct3D 9, input, audio and network services. The project discloses substantial AI assistance and records device results in a status log.",
+    "description_zh": "通过两套引擎将 Halo: Combat Evolved 带到 iPhone、iPad 和 Apple 芯片 Mac。Xbox 版构建固定版本的 OpenCE，即社区 Xbox 反编译成果的移植；Custom Edition 则将使用者自己的 haloce.exe 1.10 从 x86 提前转换为 ARM64，并由 HaloPad 提供 Windows、Direct3D 9、输入、音频和网络服务。项目披露了大量 AI 辅助，并在状态日志中记录设备测试结果。",
+    "evidence_url": "https://github.com/chrissotraidis/projectreach/blob/a291d8540f5e3e39ecdbf45e46af4c48fb37cb62/README.md",
+    "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed just after the 0.3.10 source/recipe release (2026-10-16), whose assets are only a PadMint recipe and SHA256SUMS. There is no public IPA, and the README says personal builds contain Halo game code and must not be shared. Status is preview: an iPad Pro 12.9-inch (6th generation) plays both editions locally and online, an iPhone 14 plays local matches, Macs run both, and some Xbox textures and effects still differ.",
+      "Xbox edition: the user’s original-Xbox Halo: Combat Evolved disc image, tested only with the USA version (maps build 01.10.12.2276) and imported in the app. Custom Edition: the original HaloCESetup.exe 1.00 installer plus the user’s own product key; the builder fetches Bungie’s 1.10 update and checks the PC files by hash. Retail Halo PC, Anniversary, the Master Chief Collection and later games are unsupported.",
+      "Targets iOS/iPadOS 17.4+ and macOS 14.4+ on Apple silicon. Builds run through PadMint on an Apple silicon Mac with Xcode 26+ (about 35 GB free for the first Xbox build) or, for the Xbox edition only, a GitHub Actions workflow in the user’s fork. Custom Edition also needs Wine and pins M-HT’s SR with a recorded patch (SRW, llasm, LLVM); the Xbox engine renders through ANGLE on Metal.",
+      "STATUS.md records per-build and per-device checks. Earlier G2 work compared six translated Halo functions with a Unicorn x86 oracle and makes unsupported instructions, missing imports and unknown targets stop explicitly. Known issues include first-use hitches, softer Xbox textures and occasional controller loss; DLL mods such as Chimera do not load.",
+      "GitHub detects no license, and RIGHTS-STATUS.md records no project-wide public license grant while still reading publication-not-authorized. The decompilation review notes CC0 text upstream over reconstructed Bungie/Microsoft code, and pinned tools keep their own terms. The README discloses substantial AI assistance without an audited share;"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/chrissotraidis/projectreach/blob/a291d8540f5e3e39ecdbf45e46af4c48fb37cb62/docs/STATUS.md",
+      "https://github.com/chrissotraidis/projectreach/blob/a291d8540f5e3e39ecdbf45e46af4c48fb37cb62/docs/XBOX-ENGINE.md",
+      "https://github.com/chrissotraidis/projectreach/blob/a291d8540f5e3e39ecdbf45e46af4c48fb37cb62/docs/G2-SELECTION.md",
+      "https://github.com/chrissotraidis/projectreach/blob/a291d8540f5e3e39ecdbf45e46af4c48fb37cb62/docs/EXECUTION-MODEL.md",
+      "https://github.com/chrissotraidis/projectreach/blob/a291d8540f5e3e39ecdbf45e46af4c48fb37cb62/docs/REVIEW-HALO1-DECOMP.md",
+      "https://github.com/chrissotraidis/projectreach/blob/a291d8540f5e3e39ecdbf45e46af4c48fb37cb62/docs/RIGHTS-STATUS.md",
+      "https://github.com/chrissotraidis/projectreach/blob/a291d8540f5e3e39ecdbf45e46af4c48fb37cb62/config/xbox-release.json",
+      "https://github.com/chrissotraidis/projectreach/blob/a291d8540f5e3e39ecdbf45e46af4c48fb37cb62/dependencies.lock.json",
+      "https://github.com/chrissotraidis/projectreach/releases/tag/v0.3.10"
+    ]
   }
 ]
