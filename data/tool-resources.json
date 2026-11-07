@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "oot-dc",
+    "name": "Ocarina of Time for Dreamcast",
+    "url": "https://github.com/jnmartin84/oot-dc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This is a Sega Dreamcast port of The Legend of Zelda: Ocarina of Time, built from the ZeldaRET decompilation. The supported ROM is the GameCube Master Quest debug version, directory gc-eu-mq-dbg. Game code is compiled for the SH4 with KallistiOS. Graphics go through a PowerVR display-list interpreter, and music uses the AICA hardware voices. The build writes zelda.elf. A save is one VMU file, oot.rec, of 66 blocks.",
+    "description_zh": "这是基于 ZeldaRET 反编译的《塞尔达传说 时之笛》世嘉 Dreamcast 移植。支持的 ROM 是 GameCube Master Quest 调试版，目录为 gc-eu-mq-dbg。游戏代码用 KallistiOS 为 SH4 编译。图形经过 PowerVR 显示列表解释器，音乐使用 AICA 硬件声部。构建写出 zelda.elf。一个存档是 VMU 文件 oot.rec，占 66 个块。",
+    "requirements": [
+      "KallistiOS 2.2 or newer with sh4zam, clang or gcc, libxml2 headers, Python 3, GNU make 3.82 or newer, and scipy. Copy the ROM to baseroms/gc-eu-mq-dbg/baserom.z64, source /opt/toolchains/dc/kos/environ.sh, then run make -f Makefile.dc extract, assets, and the main build.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/jnmartin84/oot-dc/blob/a775fec1ec9674f63288b50ea3a79cdea57fe4d6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
