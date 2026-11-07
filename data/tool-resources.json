@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "reof2-decomp",
+    "name": "Resident Evil Outbreak File #2 decompilation",
+    "url": "https://github.com/caprado/REOF2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This decompiles Resident Evil Outbreak File #2 for the PlayStation 2. The README says 4,073 functions have been extracted and that the Windows port boots to the main menu with video, audio, and input.",
+    "description_zh": "该项目反编译 PlayStation 2 游戏《生化危机：爆发 文件 2》。README 写明已经提取 4,073 个函数，Windows 移植可以带着视频、音频和输入进入主菜单。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/caprado/REOF2/blob/414919650b18a44e41c3b1a2574e9ed7c4a3dcd9/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
