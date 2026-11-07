@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mw2-recompiled-case",
+    "name": "Call of Duty: Modern Warfare 2 (2009) — native PC port",
+    "url": "https://github.com/PaulCombal/mw2-recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "This repository runs Call of Duty: Modern Warfare 2 (2009) for the Xbox 360 natively on Linux and Windows by recompiling the game's executables ahead of time. The README lists campaign and multiplayer, including split screen for up to four controllers.",
+    "description_zh": "该仓库把 Xbox 360 上的《使命召唤：现代战争 2》（2009）的可执行文件提前重编译，从而在 Linux 和 Windows 上原生运行。README 列出战役和多人模式，包括最多四个手柄的分屏。",
+    "requirements": [
+      "You need your own disc. No game files are included.",
+      "Ranked play is listed as not supported.",
+      "License: GPL-3.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/PaulCombal/mw2-recompiled/blob/b3aa7d8ef184de8ec1f0d2fe7fa0e19a4c92b68b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
