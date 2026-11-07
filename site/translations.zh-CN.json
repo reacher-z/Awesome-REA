@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "disasm-pro": {
+    "name": "disasm.pro",
+    "requirements": [
+      "需要带 submodule 的 Git、Keystone 分支的 C 构建环境，以及 Python 3。运行 pip3 install -r requirements.txt，然后 python3 ninja.py。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

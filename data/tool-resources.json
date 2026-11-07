@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "disasm-pro",
+    "name": "disasm.pro",
+    "url": "https://github.com/ret2jazzy/disasm.pro",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "disasm.pro, formerly disasm.ninja, is a multi-architecture assembler and disassembler with line-to-line correlation. A live copy is at disasm.pro. The reviewed architectures are x86 and x86-64, ARMv8, MIPS, SPARC, and PowerPC. It uses a Keystone fork for assembly and Capstone for disassembly. The local server is python3 ninja.py after the Keystone submodule is built with make-share.sh and the Python 3 bindings are installed.",
+    "description_zh": "disasm.pro，以前叫 disasm.ninja，是一个多架构汇编器和反汇编器，能按行对应。在线版本在 disasm.pro。审阅的架构是 x86 和 x86-64、ARMv8、MIPS、SPARC 和 PowerPC。它用一个 Keystone 分支做汇编，用 Capstone 做反汇编。Keystone 子模块用 make-share.sh 构建并安装 Python 3 绑定之后，本地服务器是 python3 ninja.py。",
+    "requirements": [
+      "Git with submodules, a C build for the Keystone fork, and Python 3. pip3 install -r requirements.txt, then python3 ninja.py.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ret2jazzy/disasm.pro/blob/f32009a71e120ace74176dd4b01a1b6e9fe866ae/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
