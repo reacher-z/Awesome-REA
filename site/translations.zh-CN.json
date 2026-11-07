@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "decompile-bench-dataset": {
+    "name": "Decompile-Bench：二进制与源码函数对数据集",
+    "requirements": [
+      "审阅的数据集说明提交为 4b708c2211cd7d4af403675db56322aa4ed7050c。说明中写明许可证为 CC0-1.0。",
+      "说明列出的列是 name（还原后的函数名）、code（源码）、asm（汇编）和 file（源码路径）。其中写明这两百万对由收集到的一亿对压缩而来，二进制约 450 GB，来自采用宽松许可证的 GitHub 项目。",
+      "同一说明还指向另外的数据集 decompile-bench-raw 和 decompile-bench-bins。本条只覆盖 decompile-bench 的说明。"
+    ]
   }
 }

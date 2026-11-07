@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "decompile-bench-dataset",
+    "name": "Decompile-Bench",
+    "url": "https://huggingface.co/datasets/LLM4Binary/decompile-bench",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "class": "software",
+    "kind": "project",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A dataset of binary-source function pairs published for the LLM4Decompile project. The dataset card says it holds two million pairs condensed from 100 million collected pairs, including C and C++ source, and that the binaries were compiled from permissively licensed GitHub projects.",
+    "description_zh": "LLM4Decompile 项目发布的二进制与源码函数对数据集。数据集说明写明其中有两百万对，由收集到的一亿对压缩而来，包含 C 和 C++ 源码，二进制来自采用宽松许可证的 GitHub 项目。",
+    "evidence_url": "https://huggingface.co/datasets/LLM4Binary/decompile-bench/blob/4b708c2211cd7d4af403675db56322aa4ed7050c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed dataset card commit 4b708c2211cd7d4af403675db56322aa4ed7050c. The card states license CC0-1.0.",
+      "The card names columns name (demangled function name), code (source), asm (assembly), and file (source path). It says the two million pairs were condensed from 100 million collected pairs, 450 GB of binaries from permissively licensed GitHub projects.",
+      "The same card points to separate datasets decompile-bench-raw and decompile-bench-bins. This record covers only the decompile-bench card."
+    ]
   }
 ]
