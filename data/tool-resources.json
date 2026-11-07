@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "zomboid-decompiler",
+    "name": "Zomboid Decompiler",
+    "url": "https://github.com/demiurgeQuantified/ZomboidDecompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Zomboid Decompiler is a decompiler for Project Zomboid, powered by Vineflower. It writes the decompiled source to output/, adds doc comments, and remaps line numbers for remote debugging.",
+    "description_zh": "Zomboid Decompiler 是基于 Vineflower 的《Project Zomboid》反编译器。它把反编译出的源码写到 output/，添加文档注释，并重映射行号以便远程调试。",
+    "requirements": [
+      "Java 17 or newer. Download the latest zip from Releases.",
+      "On Windows, run bin/ZomboidDecompiler.bat. On other systems, run bin/ZomboidDecompiler. If the game directory is not found, pass the ProjectZomboid folder as an argument.",
+      "The latest release supports game versions 42.13.0 and later. Version 0.2.3 is the last release listed for versions through 42.12.3.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/demiurgeQuantified/ZomboidDecompiler/blob/98371ebbea08711d8a74de8a68b9556c58436f85/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "zomboid-decompiler": {
+    "name": "Zomboid Decompiler",
+    "requirements": [
+      "需要 Java 17 或更新版本。从 Releases 下载最新的 zip。",
+      "Windows 上运行 bin/ZomboidDecompiler.bat。其他系统运行 bin/ZomboidDecompiler。如果找不到游戏目录，把 ProjectZomboid 文件夹作为参数传入。",
+      "最新版本支持游戏 42.13.0 及之后。README 列出的 42.12.3 及更早版本最后支持的发布是 0.2.3。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
