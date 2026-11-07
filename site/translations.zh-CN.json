@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "killzone-recomp-case": {
+    "name": "Killzone for Windows：PS2 游戏的原生移植",
+    "requirements": [
+      "需要 64 位的 Windows 10 或 11、支持 SSE4.1 的 CPU，以及支持 Direct3D 11、Direct3D 12 或 Vulkan 的 GPU。",
+      "需要自备光盘镜像：美版 SCUS-97402，或自 v0.1.6 起的欧版 SCES-52893。",
+      "许可证：GPL-3.0。"
+    ]
   }
 }
