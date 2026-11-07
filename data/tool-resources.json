@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "megaman-x5-recomp-case",
+    "name": "MegaManX5Recomp",
+    "url": "https://github.com/mstan/MegaManX5Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "MegaManX5Recomp is a native Windows build of Mega Man X5, USA SLUS-01334, statically recompiled with PSXRecomp. It includes an experimental simultaneous X and Zero co-op mode that uses OpenGL.",
+    "description_zh": "MegaManX5Recomp 是《洛克人 X5》美版 SLUS-01334 的 Windows 原生构建，用 PSXRecomp 静态重编译。它包含实验性的 X 与 Zero 同时合作模式，该模式使用 OpenGL。",
+    "requirements": [
+      "The player supplies their own game disc. Co-op is experimental, and the README says full campaign and netplay parity are still being checked.",
+      "Release v0.2.9-coop-alpha enables a fresh internal resolution of 4x, with choices from 1x to 32x.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/mstan/MegaManX5Recomp/blob/8d8205ea1bcada23ca7797394f77bdf1c761be5d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
