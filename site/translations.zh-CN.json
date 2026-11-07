@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "vscode-decompiler": {
+    "name": "vscode-decompiler",
+    "requirements": [
+      "使用 Ghidra 时遵循 Ghidra 安装指南，包括 Java 设置。ghidraRun 和 support/analyzeHeadless 都需要能运行。",
+      "IDA Pro 支持是可选的、实验性的，并且仅限 Windows，需要带反编译器的已授权 IDA Pro。Python 反编译需要 pip3 install uncompyle6。",
+      "以太坊智能合约反编译被标为实验性功能，且仅限 Linux 或 macOS。",
+      "README 没有为该扩展写出许可证。"
+    ]
   }
 }
