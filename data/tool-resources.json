@@ -36528,5 +36528,31 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gba-recomp",
+    "name": "GBA-Recomp",
+    "url": "https://github.com/JRickey/gba-recomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "GBA-Recomp is a Rust static-recompilation toolkit and runtime for Game Boy Advance cartridges. It translates a ROM ahead of time into a native executable, and the runtime models the PPU, APU, DMA, timers, IRQ, saves, input, and RTC. The README says the user supplies a BIOS and a game, and that the project is dual-licensed MIT or Apache-2.0.",
+    "description_zh": "GBA-Recomp 是面向 Game Boy Advance 卡带的 Rust 静态重编译工具包和运行时。它预先把 ROM 翻译成本机可执行文件，运行时提供 PPU、APU、DMA、定时器、IRQ、存档、输入和 RTC 的硬件模型。README 要求用户自备 BIOS 和游戏，并把项目双重许可为 MIT 或 Apache-2.0。",
+    "evidence_url": "https://github.com/JRickey/gba-recomp/blob/de4edf59b872d887046d6a3b005e2df551b6d44c/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The user builds from their own ROM image and BIOS. The README says the repository contains no recompiled game output.",
+      "Platform dependencies for macOS, Linux, Windows, and Android are listed in BUILDING.md. The engine emits C11 and compiles it locally.",
+      "The README dual-licenses the project under MIT or Apache-2.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]

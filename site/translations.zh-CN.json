@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gba-recomp": {
+    "name": "GBA-Recomp（GBA 静态重编译工具）",
+    "requirements": [
+      "用户用自己的 ROM 镜像和 BIOS 构建。README 写明仓库不含重编译后的游戏产物。",
+      "macOS、Linux、Windows 和 Android 的平台依赖列在 BUILDING.md。引擎生成 C11 并在本地编译。",
+      "README 将该项目双重许可为 MIT 或 Apache-2.0。"
+    ]
   }
 }
