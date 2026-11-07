@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pocket-disasm",
+    "name": "Pocket Disasm",
+    "url": "https://github.com/whoisqwerz/pocket_disasm",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Pocket Disasm is an MCP router that gives each binary its own headless IDALib worker. Agents can create, select, inspect, save, and close analysis sessions. It uses a pinned revision of mrexodia/ida-pro-mcp.",
+    "description_zh": "Pocket Disasm 是一个 MCP 路由，让每个二进制文件使用自己的无界面 IDALib 工作进程。代理可以创建、选择、检查、保存和关闭分析会话。它使用固定修订的 mrexodia/ida-pro-mcp。",
+    "requirements": [
+      "Windows 10 or 11, Python 3.11 or newer, and a separate IDA Pro or IDALib installation.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/whoisqwerz/pocket_disasm/blob/fdcdde8c994187b0b6eff36715d46b091de2ff8d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
