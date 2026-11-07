@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "opengt4": {
+    "name": "OpenGT4",
+    "requirements": [
+      "需要 Windows、Visual Studio 2022 Build Tools 和 CMake。SDL2 和 miniz 由 CMake 获取。游戏影片使用 FFmpeg。用 cmake -S . -B build -G \"Visual Studio 17 2022\" 配置，然后运行 cmake --build build --config Release --target opengt4。",
+      "许可证：GNU GPL 第 3 版。NOTICE 附加第 7 条：衍生作品写明 Based on OpenGT4，修改版标明与原版不同。来自 PCSX2 的 ps2float 是 LGPL-3.0-or-later。"
+    ]
   }
 }

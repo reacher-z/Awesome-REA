@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "opengt4",
+    "name": "OpenGT4",
+    "url": "https://github.com/MrGoodGuy2144/OpenGT4",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenGT4 is a native Windows port of Gran Turismo 4, reimplemented in C. The tested disc is NTSC-U SCUS-97328 version 2.00. CORE.GT4 on that disc has SHA-1 30031137ce494323816bb707b90d3ec0d07937d2. The player selects a disc image in the launcher. The release files are OpenGT4-<version>-setup.exe and OpenGT4-<version>-win64.zip.",
+    "description_zh": "OpenGT4 是用 C 重新实现的《跑车浪漫旅 4》Windows 原生移植。经过测试的光盘是 NTSC-U SCUS-97328 版本 2.00。该光盘上 CORE.GT4 的 SHA-1 是 30031137ce494323816bb707b90d3ec0d07937d2。玩家在启动器里选择光盘镜像。发布文件是 OpenGT4-<version>-setup.exe 和 OpenGT4-<version>-win64.zip。",
+    "requirements": [
+      "Windows, Visual Studio 2022 Build Tools, and CMake. SDL2 and miniz are fetched by CMake. FFmpeg is used for the game's movies. Build with cmake -S . -B build -G \"Visual Studio 17 2022\", then cmake --build build --config Release --target opengt4.",
+      "License: GNU GPL version 3. NOTICE adds section 7 terms: a derived work says Based on OpenGT4, and a modified version is marked as different from the original. ps2float from PCSX2 is LGPL-3.0-or-later."
+    ],
+    "evidence_url": "https://github.com/MrGoodGuy2144/OpenGT4/blob/736124fd00c4b6e6728280c8109018bca726dae3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
