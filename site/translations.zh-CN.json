@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "shiloh": {
+    "name": "Shiloh",
+    "requirements": [
+      "需要稳定版 Rust。原生窗口需要 SDL2。浏览器构建需要 wasm32-unknown-unknown 目标。cargo run --release --bin xf -- --data 接受游戏目录或光盘镜像。可选的 ffmpeg 由 xf-prep 用来处理音乐。",
+      "许可证：Apache-2.0 或 MIT，由使用者选择。port/src/neodb.rs 里的存档容器代码基于 MIT 代码。"
+    ]
   }
 }
