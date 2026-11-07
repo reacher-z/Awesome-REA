@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "scared",
+    "name": "scared",
+    "url": "https://github.com/eshard/scared",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "scared is a side-channel analysis framework maintained by eShard. The README publishes it on PyPI as scared and on the eshard Anaconda channel.",
+    "description_zh": "scared 是 eShard 维护的侧信道分析框架。README 把它发布在 PyPI 上，包名为 scared，同时也发布在 eshard 的 Anaconda 频道。",
+    "requirements": [
+      "Python 3.11, 3.12, or 3.13, and Numpy 2 or newer.",
+      "Install from PyPI or the eshard Conda channel.",
+      "License: AGPL-3.0."
+    ],
+    "evidence_url": "https://github.com/eshard/scared/blob/a1bb2f8e401726c8e93ebb53a7e15c3b98359577/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
