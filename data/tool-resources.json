@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fzerox-expansion-kit",
+    "name": "F-Zero X Expansion Kit decompilation",
+    "url": "https://github.com/inspectredc/fzerox-expansion-kit",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of the F-Zero X Expansion Kit. The Japanese dump is named baserom.jp.ndd and converted to baserom.jp.z64dd. The README says that file must match the checksum in fzerox-expansion.jp.md5.",
+    "description_zh": "这是 F-Zero X 扩展包的匹配反编译。日版转储命名为 baserom.jp.ndd，并转换成 baserom.jp.z64dd。README 写明该文件必须匹配 fzerox-expansion.jp.md5 里的校验值。",
+    "requirements": [
+      "make, git, build-essential, binutils-mips-linux-gnu, Python 3, and libpng. On macOS the README uses Homebrew mips64-elf-binutils.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/inspectredc/fzerox-expansion-kit/blob/b70d34e3226832e808d5d5be5f3203f31a04057d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
