@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "uqbt",
+    "name": "UQBT",
+    "url": "https://github.com/osfree-project/uqbt",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "UQBT is the University of Queensland binary translator. ./make X Y builds a translator named uqbtXY. The named architectures are sparc, pent, mc68k, win32, and hppa. ./make sparc sparc builds the gcc/jvm back end as uqbtss. ./make change switches the architecture pair before another build.",
+    "description_zh": "UQBT 是昆士兰大学的二进制翻译器。./make X Y 构建名为 uqbtXY 的翻译器。点名的架构有 sparc、pent、mc68k、win32 和 hppa。./make sparc sparc 把 gcc/jvm 后端构建为 uqbtss。再次构建前，./make change 切换架构对。",
+    "requirements": [
+      "Follow README.make. On Linux, uncomment ISLINUX in the Makefile. Generated decoders need bison++ and flex++ when they are rebuilt.",
+      "The reviewed README.make does not name a license."
+    ],
+    "evidence_url": "https://github.com/osfree-project/uqbt/blob/1b33e298756774bbb359723eacdd9469d3558683/README.make",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
