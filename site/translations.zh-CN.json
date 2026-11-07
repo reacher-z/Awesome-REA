@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "svr2009-recomp": {
+    "name": "WWE SmackDown vs. Raw 2009 重编译",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11，以及支持 Direct3D 12 或 Vulkan 的显卡。光盘是美国或欧洲版，标题 ID 为 54510826，媒体 ID 为 7AFA4596。下载 SVR2009-NATIVE.zip，把 .iso 放在 svr2009.exe 旁边。",
+      "许可证：本项目代码为 GPL-3.0。README 写明发布包包含 LGPL 的 FFmpeg 和 libmspack，渲染器基于 re:Blue 的 BSD-3-Clause 核心。"
+    ]
   }
 }
