@@ -36543,6 +36543,7 @@
     "description_zh": "以可移植的 C11 库重新实现 DirectMusic，即 Microsoft 随早期 DirectX 提供的自适应配乐 API；它载入游戏的段落（segment）、风格（style）和 DLS 音色文件，并将音乐渲染为 PCM。README 只列出 Gothic 与 Gothic II（含 Night of the Raven）的配乐经过测试，且只是“大致”正确；项目自称尚不完整、仍在大力开发中。乐器经 DLS 转 SoundFont 后由内置的 TinySoundFont 合成器发声，并非复现 Microsoft 的合成器。",
     "evidence_url": "https://github.com/GothicKit/dmusic/blob/b73b270b94714b8ec8d9d0b2a9f3a5c445da52d1/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed main commit (CMake project version 0.0.1; no releases or tags) exposes its own C API (DmLoader, DmSegment, DmPerformance) rather than DirectMusic’s COM interfaces. Segments start at instant, grid, beat or measure boundaries, and transitions pick embellishment patterns; the header marks the end-and-intro embellishment as not implemented, and the performance logs unimplemented curve and message types.",
