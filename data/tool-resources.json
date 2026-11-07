@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "thrust-bbc",
+    "name": "Thrust disassembly",
+    "url": "https://github.com/kieranhj/thrust-disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is an annotated disassembly of Thrust for the BBC Micro. The original executable was decrypted, then relocated from load address $1A00 to execution address $A60. Most calculations use Q7.8 fixed point. Y values use Q10.8. Some x physics uses Q7.16. beebasm builds thrust.ssd.",
+    "description_zh": "这是 BBC Micro 游戏 Thrust 的带注释反汇编。原始可执行文件先被解密，再从加载地址 $1A00 重定位到执行地址 $A60。大部分计算使用 Q7.8 定点数。Y 值使用 Q10.8。一部分 X 方向物理使用 Q7.16。beebasm 构建 thrust.ssd。",
+    "requirements": [
+      "beebasm.exe -i thrust.6502 -do thrust.ssd -boot Thrust -v",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/kieranhj/thrust-disassembly/blob/3ad3693d75cf48c0e012999f81c66955d35fcd0c/readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
