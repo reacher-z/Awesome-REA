@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "recvx-enhanced-port",
+    "name": "Resident Evil Code: Veronica X enhanced port",
+    "url": "https://github.com/aikatore/recvx-enhanced-port",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This is a native Linux and Windows port of the PlayStation 2 game Resident Evil Code: Veronica X, built from the recvx-decomp decompilation. It compiles the game code for the PC and reads an NTSC-U disc image, product SLUS-20184, in place. The renderer can go to 8x internal resolution while the game logic stays at 30 FPS. Two-player online co-op uses a lobby, join codes, and a small rendezvous server. recvx.exe or ./recvx starts a release. The Linux source build is a 32-bit Ninja build with cmake/linux-i686.cmake and needs OpenGL 3.3.",
+    "description_zh": "这是 PlayStation 2 游戏《生化危机 代号：维罗妮卡 X》的 Linux 和 Windows 原生移植，基于 recvx-decomp 反编译。它把游戏代码编译到 PC，并就地读取 NTSC-U 光盘镜像，产品编号 SLUS-20184。渲染器内部分辨率最高到 8 倍，游戏逻辑保持 30 帧。双人在线合作使用大厅、加入码和一个小型会合服务器。发行版用 recvx.exe 或 ./recvx 启动。Linux 源码构建是使用 cmake/linux-i686.cmake 的 32 位 Ninja 构建，需要 OpenGL 3.3。",
+    "requirements": [
+      "An NTSC-U ISO of SLUS-20184. Windows 10 or later, or Linux with glibc 2.34 or newer and 32-bit OpenGL libraries. A GPU with OpenGL 3.3.",
+      "License: MIT. The decompilation in decomp is MIT. SDL 3 is zlib. Dear ImGui is MIT."
+    ],
+    "evidence_url": "https://github.com/aikatore/recvx-enhanced-port/blob/dedbb1aabb470e99ab74a12047c6d2c184ef146e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
