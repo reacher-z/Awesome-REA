@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "princejs",
+    "name": "PrinceJS",
+    "url": "https://github.com/ultrabolido/PrinceJS",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "PrinceJS is an HTML5 and JavaScript reimplementation of the 1990 Prince of Persia, using assets from the MS-DOS version. The browser build is at ultrabolido.github.io/PrinceJS. Cursor keys move the prince, Shift uses the sword, drinks a potion, or grabs an edge, and Enter continues after death. The reviewed page says fighting, potion effects, special events, spikes, choppers, sound, and the demo autoplay are still incomplete.",
+    "description_zh": "PrinceJS 是 1990 年《波斯王子》的 HTML5 和 JavaScript 重实现，使用 MS-DOS 版的资源。浏览器版本在 ultrabolido.github.io/PrinceJS。方向键移动王子，Shift 用剑、喝药水或抓住边缘，Enter 在死亡后继续。审阅页面写明格斗、药水效果、特殊事件、地刺、铡刀、声音和演示自动播放仍不完整。",
+    "requirements": [
+      "A browser for the published page.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ultrabolido/PrinceJS/blob/822d2789b3a58523db914c635e33ada6794dff84/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
