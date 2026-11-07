@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bite",
+    "name": "BiTE",
+    "url": "https://github.com/WINSDK/bite",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "BiTE inspects executable content and debug information. The reviewed feature list includes an assembly listing, a hex viewer, and disassembly beside source. It supports x86-64, AArch64, Armv7, RISC-V 64 and 32, and MIPS, and demangles MSVC, Itanium, and Rust names. cargo install --path . builds it. A debugging front end and assembly byte patching are still unchecked.",
+    "description_zh": "BiTE 检查可执行文件内容和调试信息。审阅的功能表包括汇编列表、十六进制查看器，以及和源码并排的反汇编。它支持 x86-64、AArch64、Armv7、RISC-V 64 和 32，以及 MIPS，并能还原 MSVC、Itanium 和 Rust 的名字。cargo install --path . 进行构建。调试前端和汇编字节修补仍未勾选。",
+    "requirements": [
+      "Rust and Cargo. cargo install --path .",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/WINSDK/bite/blob/54c10e183b34daa0f1df1f556fa80d7eaaaa8b64/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
