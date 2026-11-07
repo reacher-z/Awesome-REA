@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nes-jackal-disasm",
+    "name": "Jackal NES disassembly",
+    "url": "https://github.com/RayofJay/NES-Jackal_Disassembly_Fully_Commented",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a commented disassembly of Jackal for the NES. Graphical data is omitted. With ASM6n and the original ROM supplied as input, the code assembles back to that ROM. Version 1.0 says the enemy logic and the main bank are documented, and that the sound engine in bank 0 still needs work. The ROM layout is in Main.asm.",
+    "description_zh": "这是 NES 游戏 Jackal 的带注释反汇编。图形数据被略去。使用 ASM6n 并把原版 ROM 作为输入时，代码会汇编回该 ROM。1.0 版写明敌人逻辑和主程序库已有文档，库 0 的音效引擎仍需整理。ROM 布局在 Main.asm。",
+    "requirements": [
+      "ASM6n and an original Jackal ROM.",
+      "License: MIT No Attribution, for the disassembly and the comments."
+    ],
+    "evidence_url": "https://github.com/RayofJay/NES-Jackal_Disassembly_Fully_Commented/blob/f6788304f7021cb50938238a66123bb1db03a9e6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
