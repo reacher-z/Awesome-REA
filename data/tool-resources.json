@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dungeon-master-net",
+    "name": "DungeonMaster.NET",
+    "url": "https://github.com/ggrrin/DungeonMaster.NET",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "DungeonMaster.NET reimplements Dungeon Master in C# on .NET. It was tested with MonoGame 3.6. DungeonMasterEngine is the game project to compile. DungeonMasterParser reads the original DUNGEON.DAT. The rendering layer is separate from the engine, and the engine accepts more than one level input format.",
+    "description_zh": "DungeonMaster.NET 用 C# 和 .NET 重新实现《迷宫魔兽》。它用 MonoGame 3.6 测试过。DungeonMasterEngine 是要编译的游戏项目。DungeonMasterParser 读取原版 DUNGEON.DAT。渲染层与引擎分开，引擎接受不止一种关卡输入格式。",
+    "requirements": [
+      "Compile the DungeonMasterEngine project. MonoGame 3.6 is the tested version.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ggrrin/DungeonMaster.NET/blob/40fce8916f3537ddb423aec92dde08eba328714d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
