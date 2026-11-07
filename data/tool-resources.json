@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "cryptoknight",
+    "name": "CryptoKnight",
+    "url": "https://github.com/AbertayMachineLearningGroup/CryptoKnight",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "CryptoKnight classifies compiled cryptographic primitives. It uses Intel Pin for dynamic instrumentation and PyTorch for the model. The README points to the 2018 paper in Information, DOI 10.3390/info9090231.",
+    "description_zh": "CryptoKnight 对编译后的密码学原语分类。它用 Intel Pin 做动态插桩，用 PyTorch 做模型。README 指向 2018 年发表在 Information 上的论文，DOI 为 10.3390/info9090231。",
+    "requirements": [
+      "Install Python requirements, then run python knight.py --setup. Predicting a binary is python knight.py --predict. OpenSSL headers are needed to compile the sample binaries.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/AbertayMachineLearningGroup/CryptoKnight/blob/bdcd10805adacdeee16fb0776103c1f946d5f472/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
