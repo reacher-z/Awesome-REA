@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "jvm-inspector",
+    "name": "JVM Inspector",
+    "url": "https://github.com/kitsune-de/jvm-inspector",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "JVM Inspector is an x64dbg plugin that reads a HotSpot JVM through VMStructs. It lists classes, decompiles bytecode, walks Java thread stacks, and can set a breakpoint on a Java method. It can load Mojang ProGuard mappings.",
+    "description_zh": "JVM Inspector 是 x64dbg 插件，通过 VMStructs 读取 HotSpot JVM。它可以列出类、反编译字节码、遍历 Java 线程栈，并在 Java 方法上设置断点。它可以加载 Mojang 的 ProGuard 映射。",
+    "requirements": [
+      "x64dbg. Commands include jvm.classes, jvm.methods, and jvm.bp.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/kitsune-de/jvm-inspector/blob/00340b317d84e822500e16d4a30dc190696241c4/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
