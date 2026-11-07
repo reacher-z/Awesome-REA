@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "chronostorm",
+    "name": "ChronoStorm",
+    "url": "https://github.com/cookgreen/ChronoStorm",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "ChronoStorm reimplements the engines of Command & Conquer: Red Alert 2 and Yuri's Revenge in Python and Pygame. It extracts MIX archives and renders SHP sprites and VXL voxels. Map parsing and the isometric grid are still open.",
+    "description_zh": "ChronoStorm 用 Python 和 Pygame 重实现《命令与征服：红色警戒2》和《尤里的复仇》的引擎。它可以提取 MIX 包，并渲染 SHP 精灵和 VXL 体素。地图解析和等距网格仍未完成。",
+    "requirements": [
+      "Python 3.10 or newer and Pygame 2.5 or newer. The player supplies their own MIX asset files.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/cookgreen/ChronoStorm/blob/60293d628c7632eafca97359bd220ead17effba1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
