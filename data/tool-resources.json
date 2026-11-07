@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "supaplex-speedfix-disasm",
+    "name": "Supaplex speed-fix disassembly",
+    "url": "https://github.com/cilliemalan/supaplex",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This disassembles the Supaplex speed-fix executable SPFIX63.EXE. The repository has the assembly and an IDA database. It builds in DOSBox with TASM 4.1 after the original Supaplex files are extracted into build/.",
+    "description_zh": "该项目反汇编 Supaplex 的加速补丁可执行文件 SPFIX63.EXE。仓库里有汇编和一份 IDA 数据库。把原版 Supaplex 文件解压到 build/ 后，用 DOSBox 和 TASM 4.1 构建。",
+    "requirements": [
+      "DOSBox and TASM 4.1. The documented build command inside DOSBox is TASM\\MAKE. Tests use TEST.BAT.",
+      "License: MIT for the disassembled source in this repository."
+    ],
+    "evidence_url": "https://github.com/cilliemalan/supaplex/blob/72292a798f8bc71cb5743478437bc0b520ec5b60/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
