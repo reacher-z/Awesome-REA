@@ -82,3 +82,50 @@ def exploded_view(lang='en'):
         out.append(_line((xd - 5, yy), (lx - 4, yy), 'thin'))
     return ('<svg class="art xv-art" viewBox="0 0 380 340" aria-hidden="true" focusable="false">' + ''.join(out)
             + f'<text x="14" y="336" class="cap">{"图 1  芯片封装爆炸图" if lang == "zh" else "FIG. 1  CHIP PACKAGE, EXPLODED"}</text></svg>')
+
+
+def _rows(rows, x, y0, dy):
+    return ''.join(f'<text x="{x}" y="{y0 + i * dy}">{r}</text>' for i, r in enumerate(rows))
+
+
+VIGNETTES = {
+    # The first bytes of a real ELF header, magic number marked.
+    'hex': ('<rect x="28" y="16" width="68" height="14" class="a"/>'
+            '<line x1="24" y1="10" x2="24" y2="84" class="thin"/>'
+            + _rows(['00', '04', '08', '10', '14'], 8, 26, 14).replace('<text', '<text class="m"')
+            + '<text x="30" y="26" class="i">7F 45 4C 46</text>' + _rows(['02 01 01 00', '00 00 00 00', '03 00 3E 00', '01 00 00 00'], 30, 40, 14)),
+    # A process tree with an injected agent marked.
+    'tree': ('<rect x="6" y="38" width="30" height="18"/><rect x="50" y="10" width="40" height="18"/><rect x="50" y="38" width="40" height="18" class="a"/><rect x="50" y="66" width="40" height="18"/>'
+             '<polyline points="36,47 43,47 43,19 50,19" class="thin"/><line x1="36" y1="47" x2="50" y2="47" class="thin"/><polyline points="43,47 43,75 50,75" class="thin"/>'
+             '<polyline points="90,47 100,47 100,30 112,30" class="thin dash"/><circle cx="112" cy="30" r="2" class="dot"/>'
+             '<text x="10" y="50">pid1</text><text x="55" y="22">libc</text><text x="55" y="50" class="i">hook</text><text x="55" y="78">app</text>'),
+    # A cartridge from the front: label, grip and edge connector.
+    'cart': ('<path d="M26 8h68v8h4v62h-6v10H28V78h-6V16h4z" class="p"/>'
+             '<rect x="34" y="16" width="52" height="34" class="a"/>'
+             '<line x1="40" y1="25" x2="80" y2="25" class="thin ink"/><line x1="40" y1="32" x2="80" y2="32" class="thin ink"/><line x1="40" y1="39" x2="66" y2="39" class="thin ink"/>'
+             '<line x1="34" y1="58" x2="86" y2="58" class="thin"/><line x1="34" y1="63" x2="86" y2="63" class="thin"/>'
+             + ''.join(f'<line x1="{x}" y1="74" x2="{x}" y2="88" class="thin"/>' for x in range(34, 90, 6))),
+    # A plug about to meet a socket: the agent side and the tool side of an MCP connection.
+    'plug': ('<path d="M4 47h14" class="thin"/><rect x="18" y="32" width="30" height="30" class="p"/>'
+             '<line x1="48" y1="39" x2="60" y2="39"/><line x1="48" y1="55" x2="60" y2="55"/>'
+             '<line x1="64" y1="30" x2="64" y2="64" class="thin dash"/>'
+             '<rect x="70" y="26" width="30" height="42" class="a"/>'
+             '<rect x="70" y="35" width="10" height="7" class="p"/><rect x="70" y="52" width="10" height="7" class="p"/><line x1="100" y1="47" x2="116" y2="47" class="thin"/>'
+             '<text x="22" y="50">MCP</text>'),
+    # A chip pinout with debug pins marked.
+    'pins': ('<rect x="40" y="10" width="40" height="76" class="p"/><path d="M53 10a7 7 0 0 0 14 0" class="thin"/>'
+             + ''.join(f'<line x1="32" y1="{y}" x2="40" y2="{y}"/><line x1="80" y1="{y}" x2="88" y2="{y}"/>' for y in (24, 40, 56, 72))
+             + '<rect x="4" y="33" width="26" height="30" class="a"/>'
+             + '<text x="8" y="27">VCC</text><text x="8" y="43" class="i">TX</text><text x="8" y="59" class="i">RX</text><text x="8" y="75">GND</text>' + _rows(['SWD', 'CLK', 'RST', 'NC'], 92, 27, 16)),
+    # A logic-analyser capture: clock and data, one bit window marked.
+    'trace': ('<rect x="58" y="6" width="22" height="84" class="a"/>'
+              '<polyline points="26,28 26,14 36,14 36,28 46,28 46,14 56,14 56,28 66,28 66,14 76,14 76,28 86,28 86,14 96,14 96,28 106,28 106,14 116,14"/>'
+              '<polyline points="26,50 46,50 46,36 66,36 66,50 76,50 76,36 96,36 96,50 116,50"/>'
+              '<polyline points="26,72 36,72 36,58 76,58 76,72 96,72 96,58 116,58" class="thin"/>'
+              '<text x="4" y="26">CLK</text><text x="4" y="48">TX</text><text x="4" y="70">RX</text>'
+              + ''.join(f'<line x1="{x}" y1="80" x2="{x}" y2="84" class="thin"/>' for x in range(26, 118, 10))),
+}
+
+
+def vignette(kind):
+    return f'<span class="guide-art"><svg class="art" viewBox="0 0 120 96" aria-hidden="true" focusable="false">{VIGNETTES[kind]}</svg></span>'
