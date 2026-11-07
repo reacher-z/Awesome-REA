@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ruby-sapphire-recomp": {
+    "name": "宝可梦红宝石与蓝宝石重编译",
+    "requirements": [
+      "Windows 上需要 MSYS2 mingw64 的 GCC 和 G++、CMake 3.16 或更新版本、Ninja 和 SDL2。把 gbarecomp 克隆在这个仓库旁边。",
+      "许可证：PolyForm Noncommercial 1.0.0。"
+    ]
   }
 }
