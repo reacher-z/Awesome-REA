@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "project-obsidian",
+    "name": "ProjectObsidian",
+    "url": "https://github.com/EdwardJXLi/ProjectObsidian",
+    "category": "reconstruction-cases",
+    "kind": "project",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "protocol"
+    ],
+    "class": "software",
+    "description_en": "ProjectObsidian is a Minecraft Classic server written in Python. The reviewed README says it implements Classic protocol version 7 for Minecraft 0.30_01c, including the Classic Protocol Extension, multiple worlds, and plugins.",
+    "description_zh": "ProjectObsidian 是用 Python 写的 Minecraft Classic 服务器。审阅的 README 写明它实现 Minecraft 0.30_01c 的 Classic 协议第 7 版，包括 Classic Protocol Extension、多个世界和插件。",
+    "requirements": [
+      "Python 3.10 or newer. The reviewed README says to run main.py, and its clone example names RadioactiveHydra/ProjectObsidian.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/EdwardJXLi/ProjectObsidian/blob/7823af778baa4c672167f3e080910f72c4901116/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
