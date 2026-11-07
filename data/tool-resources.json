@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "xkrnl-decomp",
+    "name": "Xbox 360 kernel decompilation",
+    "url": "https://github.com/AleBello7276/xkrnl-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "binary"
+    ],
+    "class": "software",
+    "description_en": "This is a work-in-progress decompilation of the Xbox 360 kernel, file set 21256.18_D, kernel version 17489.0. xboxkrnld.exe has SHA-1 a303e3404e8dd0b9e9defd38aa6c37e04eb19101. xboxkrnld.pdb has SHA-1 625c54f4f273c66fd7a08e8b2ff7d1167983eeba. The image goes in orig/21256.18_D. python configure.py and ninja build it. objdiff.json appears after the first successful build.",
+    "description_zh": "这是 Xbox 360 内核的进行中反编译，文件集 21256.18_D，内核版本 17489.0。xboxkrnld.exe 的 SHA-1 是 a303e3404e8dd0b9e9defd38aa6c37e04eb19101。xboxkrnld.pdb 的 SHA-1 是 625c54f4f273c66fd7a08e8b2ff7d1167983eeba。镜像放在 orig/21256.18_D。python configure.py 和 ninja 进行构建。第一次成功构建后出现 objdiff.json。",
+    "requirements": [
+      "Python 3 and Ninja. macOS uses wine-crossover. Linux x86 uses wibo, which the build downloads.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/AleBello7276/xkrnl-decomp/blob/cfe7a00b6f785eb212f20591070eda9e7987fb28/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

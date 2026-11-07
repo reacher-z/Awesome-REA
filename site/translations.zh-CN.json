@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "xkrnl-decomp": {
+    "name": "Xbox 360 内核反编译",
+    "requirements": [
+      "需要 Python 3 和 Ninja。macOS 使用 wine-crossover。Linux x86 使用构建会下载的 wibo。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
