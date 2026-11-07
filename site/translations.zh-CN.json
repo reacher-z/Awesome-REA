@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "balamod": {
+    "name": "Balamod",
+    "requirements": [
+      "它面向《Balatro》模组和游戏内代码注入。",
+      "许可证：Apache-2.0。"
+    ]
   }
 }
