@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nes-super-c",
+    "name": "Super C disassembly",
+    "url": "https://github.com/vermiceli/nes-super-c",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is an annotated disassembly of Super C for the NES, US release, that reassembles to a byte-for-byte match. baserom.nes has MD5 5FEF80625F484FCA06FDB58EBFF9D8BB or 78F97D58AF93493976E810D02B40FA30. The same tree builds the PAL game Probotector II: Return of the Evil Forces, whose baserom.nes has MD5 917166C2ED0E3316255A57C81DC38ABC or E56233E54F4C497B0D03AFB36D544414. The two hashes of each game differ by one ignored iNES header bit.",
+    "description_zh": "这是 NES 美版《超级魂斗罗》的带注释反汇编，重新汇编后与原版逐字节一致。baserom.nes 的 MD5 是 5FEF80625F484FCA06FDB58EBFF9D8BB 或 78F97D58AF93493976E810D02B40FA30。同一棵源码树也能构建 PAL 版 Probotector II: Return of the Evil Forces，其 baserom.nes 的 MD5 是 917166C2ED0E3316255A57C81DC38ABC 或 E56233E54F4C497B0D03AFB36D544414。每个游戏的两个校验值只差 iNES 头里一个被忽略的位。",
+    "requirements": [
+      "cc65. Windows runs .\\build.ps1 or .\\build.bat. Linux and macOS run ./build.sh. Probotector adds the argument Probotector.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/vermiceli/nes-super-c/blob/be6ccce97a73ce1ea0d3ebace85e22fca01e4ed9/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
