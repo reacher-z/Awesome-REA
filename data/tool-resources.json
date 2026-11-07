@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "malimite",
+    "name": "Malimite",
+    "url": "https://github.com/LaurieWired/Malimite",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Malimite decompiles iOS and macOS IPA files and application bundles on Mac, Windows, and Linux. It uses Ghidra decompilation, reconstructs Swift classes, decodes Apple resources, and skips library code. A precompiled JAR is on the releases page. Installation steps are in the project wiki.",
+    "description_zh": "Malimite 在 Mac、Windows 和 Linux 上反编译 iOS 与 macOS 的 IPA 文件和应用程序包。它使用 Ghidra 反编译，重建 Swift 类，解码 Apple 资源，并跳过库代码。发布页提供预编译的 JAR。安装步骤在项目 wiki。",
+    "requirements": [
+      "A Java runtime for the release JAR. Full prerequisites are in the wiki.",
+      "License: Apache 2.0."
+    ],
+    "evidence_url": "https://github.com/LaurieWired/Malimite/blob/f25b0a6267a2ae069cfac758362cd18b2072a276/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
