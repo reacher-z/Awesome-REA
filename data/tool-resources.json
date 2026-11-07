@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "svr2009-recomp",
+    "name": "WWE SmackDown vs. Raw 2009 recompilation",
+    "url": "https://github.com/nefariousjosiah/WWE-SVR2009-RECOMP",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles the Xbox 360 version of WWE SmackDown vs. Raw 2009. Direct3D 12 draws on Windows, and Vulkan draws on Linux and the Steam Deck. The README says it runs at 60 fps, with resolution choices from 480p to 8K. Windows runs the release directly. Linux and Steam Deck run that Windows release through Proton.",
+    "description_zh": "该项目重编译 Xbox 360 版《WWE SmackDown vs. Raw 2009》。Windows 上由 Direct3D 12 绘制，Linux 和 Steam Deck 上由 Vulkan 绘制。README 写明它以 60 帧运行，分辨率可选 480p 到 8K。Windows 直接运行发布包。Linux 和 Steam Deck 通过 Proton 运行同一份 Windows 发布包。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, and a Direct3D 12 or Vulkan graphics card. The disc is the USA or Europe release, title ID 54510826 and media ID 7AFA4596. Download SVR2009-NATIVE.zip and place the .iso next to svr2009.exe.",
+      "License: GPL-3.0 for this project's code. The README says releases include FFmpeg and libmspack under the LGPL, and the renderer builds on re:Blue's BSD-3-Clause core."
+    ],
+    "evidence_url": "https://github.com/nefariousjosiah/WWE-SVR2009-RECOMP/blob/6d0e51c6ad948559829fe9c2ce493b1e185689ad/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
