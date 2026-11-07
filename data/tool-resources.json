@@ -36543,6 +36543,7 @@
     "description_zh": "借助 xboxrecomp 工具包，把 Jet Set Radio Future 美版 Xbox 游戏的 x86 代码静态重编译为 C，并模拟 Xbox 内核、图形与音频硬件，从而移植到 macOS、Windows、Linux、iOS 与 Android。仓库包含运行时、转换流水线与手写覆盖代码；生成的 C 代码由玩家用自己的可执行文件在本地产生。README 称其可玩但仍处早期，尚未完整通关；状态仍为项目报告。",
     "evidence_url": "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at the commit recording the 0.4.7 changelog (15 October 2026). README describes a static recompilation for this one game, not an Xbox emulator or a decompilation. Its status table reports title, menus, saving, the opening areas, skating, graffiti and audio working, later areas little tested and an occasional disc-error screen during loads. Linux is far less played than macOS, Windows is tested under Wine, and Android has run only in the Android emulator.",
@@ -36576,6 +36577,7 @@
     "description_zh": "托管于 Codeberg 的早期一致性反编译项目，目标是 Jet Set Radio Future 北美单独发行版的 Xbox 可执行文件。贡献者先在 Ghidra 中把 default.xbe 拆分为对应各源文件的目标文件，再编写经 Visual C++ 7.0 编译后与之一致的 C++ 代码，并用 objdiff 比对。README 报告目前已完成整个 XBE 的 1.50%，并禁止使用大语言模型完成的贡献。",
     "evidence_url": "https://codeberg.org/KeybadeBlox/JSRF-Decompilation/src/commit/3058bf9861bd35b964cde988d217f0a77eac4412/readme.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at commit 3058bf98 (16 October 2026). README reports 61,640 of 2,574,172 bytes (2.39%) of XBE address space delinked and a 62.59% fuzzy match of the delinked bytes, equal to 1.50% of the whole XBE. The roadmap’s later steps, linking a Windows executable and repackaging it as an Xbox executable with cxbe, are not yet under way, so there is no rebuilt executable, playable build or native port.",
