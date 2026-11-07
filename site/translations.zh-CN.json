@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pokegold-spaceworld": {
+    "name": "宝可梦金/银 1997 太空世界试玩反汇编",
+    "requirements": [
+      "按 INSTALL.md 操作。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

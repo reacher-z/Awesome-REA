@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokegold-spaceworld",
+    "name": "Pokémon Gold and Silver Space World demo",
+    "url": "https://github.com/pret/pokegold-spaceworld",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles the Pokémon Gold and Silver prototypes shown at Space World 1997. Gold_nondebug.sgb, also called MONS2KN.COM, has SHA-1 6a5df1b84698168b44ca53b0df15128e4bfaad6a. Silver_nondebug.sgb, MONS2SN.COM, has SHA-1 f338dafd76619be268b4987bd2c94adb15aa9386. The debug ROMs Gold_debug.sgb and Silver_debug.sgb have SHA-1 b1d7539a87dea81b2cff6146afaad64470d08d84 and 4c576dd4671bb1fe36c5e6d76c8909f98d739667. Each also has a second SHA-1 for the image with a corrected header. Setup is in INSTALL.md.",
+    "description_zh": "该项目反汇编 1997 年太空世界展出的《宝可梦 金》和《宝可梦 银》试玩原型。Gold_nondebug.sgb，也叫 MONS2KN.COM，SHA-1 是 6a5df1b84698168b44ca53b0df15128e4bfaad6a。Silver_nondebug.sgb，即 MONS2SN.COM，SHA-1 是 f338dafd76619be268b4987bd2c94adb15aa9386。调试 ROM Gold_debug.sgb 和 Silver_debug.sgb 的 SHA-1 分别是 b1d7539a87dea81b2cff6146afaad64470d08d84 和 4c576dd4671bb1fe36c5e6d76c8909f98d739667。每个镜像还有一份修正文件头后的 SHA-1。安装步骤在 INSTALL.md。",
+    "requirements": [
+      "Follow INSTALL.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/pret/pokegold-spaceworld/blob/1625a11cb13830d5cc8d5430e3d48160fceb3c4d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
