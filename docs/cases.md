@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -77,6 +77,7 @@
 - [**pokecrystal: a matching Pokémon Crystal disassembly**](https://github.com/pret/pokecrystal) - Reconstructs the Game Boy Color game Pokémon Crystal as RGBDS assembly, with graphics, maps and data stored as editable sources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokecrystal-disassembly-case/)</sub>
 - [**pokered: a matching Pokémon Red and Blue disassembly**](https://github.com/pret/pokered) - Reconstructs the Game Boy games Pokémon Red and Blue as RGBDS assembly, with graphics and data kept as editable source files. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokered-disassembly-case/)</sub>
 - [**pokeruby: a matching Pokémon Ruby and Sapphire decompilation**](https://github.com/pret/pokeruby) - Reconstructs the Game Boy Advance games Pokémon Ruby and Sapphire as C source built with pret's agbcc compiler, alongside assembly data scripts and editable graphics. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokeruby-decomp-case/)</sub>
+- [**Pokémon Battle Revolution decompilation**](https://github.com/pbr-ret/pbr-decomp) - This is a matching decompilation of Pokémon Battle Revolution for the Wii, PAL RPBP01 revision 0. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pbr-decomp/)</sub>
 - [**Pokémon Emerald: a matching Game Boy Advance decompilation**](https://github.com/pret/pokeemerald) - Reconstructs Pokémon Emerald for the Game Boy Advance as buildable C source, with game scripts and data kept as assembler directives. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokemon-emerald-decomp-case/)</sub>
 - [**Pokémon FireRed and LeafGreen: a matching Game Boy Advance decompilation**](https://github.com/pret/pokefirered) - Reconstructs the English Game Boy Advance releases of Pokémon FireRed and LeafGreen as buildable C source, with game scripts and data kept as assembler directives. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokemon-firered-leafgreen-decomp-case/)</sub>
 - [**Pokémon HeartGold and SoulSilver: a work-in-progress, checksum-matched DS disassembly**](https://github.com/pret/pokeheartgold) - Rebuilds the US Nintendo DS releases of Pokémon HeartGold and SoulSilver from a work-in-progress disassembly in which part of the code has been decompiled to C. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokemon-heartgold-soulsilver-disassembly-case/)</sub>
