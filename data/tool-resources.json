@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "fitd-case",
+    "name": "Free in the Dark: reimplementation of Alone in the Dark",
+    "url": "https://github.com/yaz0r/FITD",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Free in the Dark is an engine reimplementation of the Alone in the Dark games released from 1992 to 1995. The README focuses on the versions sold on Steam and GOG and says some other releases, including the Windows version of Alone in the Dark 3, are incompatible for now.",
+    "description_zh": "Free in the Dark 是 1992 年至 1995 年发行的《鬼屋魔影》系列的引擎重实现。README 关注 Steam 和 GOG 上出售的版本，并写明包括 Windows 版《鬼屋魔影 3》在内的一些其他版本目前不兼容。",
+    "requirements": [
+      "The Steam apps named in the README are Alone in the Dark 1, 2, and 3.",
+      "Some non-Steam and non-GOG versions are described as incompatible for now.",
+      "License: GPL-2.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/yaz0r/FITD/blob/543e22bc78b64405537ae545ecd382dcdf2c12b2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
