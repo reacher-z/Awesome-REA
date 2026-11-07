@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ghidrasql": {
+    "name": "ghidrasql",
+    "requirements": [
+      "预构建压缩包包含 CI 构建的 Linux 命令行和 LibGhidraHost Ghidra 扩展。",
+      "README 写明该压缩包不需要编译器、CMake 或 Gradle。"
+    ]
   }
 }
