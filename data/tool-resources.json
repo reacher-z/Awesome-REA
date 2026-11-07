@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tmb-recomp",
+    "name": "Twisted Metal: Black recompilation",
+    "url": "https://github.com/TheBozos/TMB_Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Twisted Metal: Black for the PlayStation 2, USA SCUS-97101, to Linux and Windows with BozoEngine. The executable SCUS_971.01 has SHA-1 3ff17f4897552e355d0bb8c3abfa5125fe3ff2ef. Release v0.4.0 plays one-player, story, and four-player split-screen matches at the NTSC rate of 60 updates per second. The Windows launcher is TMB Launcher.exe, from TMB_Recomp-<version>-bozo.zip.",
+    "description_zh": "该项目用 BozoEngine 把 PlayStation 2 美版《扭曲金属：黑》SCUS-97101 静态重编译到 Linux 和 Windows。可执行文件 SCUS_971.01 的 SHA-1 是 3ff17f4897552e355d0bb8c3abfa5125fe3ff2ef。v0.4.0 能以 NTSC 的每秒 60 次更新进行单人、剧情和四人分屏比赛。Windows 启动器是 TMB Launcher.exe，来自 TMB_Recomp-<version>-bozo.zip。",
+    "requirements": [
+      "Windows 10 version 1903 or newer, or Windows 11, a CPU with AVX2 and FMA, and OpenGL 3.3. The launcher accepts a USA ISO or BIN/CUE and refuses the European disc.",
+      "License: MIT for this port. BozoEngine is MIT. The earlier port was built on PS2Recomp, which the README names as GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/TheBozos/TMB_Recomp/blob/c0d2fc7549da7864c8debb1f21d6cdbfd4193cf9/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

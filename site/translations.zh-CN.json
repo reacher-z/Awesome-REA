@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "tmb-recomp": {
+    "name": "扭曲金属：黑重编译",
+    "requirements": [
+      "需要 Windows 10 版本 1903 或更新版本，或者 Windows 11，支持 AVX2 和 FMA 的 CPU，以及 OpenGL 3.3。启动器接受美版 ISO 或 BIN/CUE，并拒绝欧版光盘。",
+      "许可证：这个移植为 MIT。BozoEngine 为 MIT。更早的移植基于 PS2Recomp，README 把它写成 GPL-3.0。"
+    ]
   }
 }
