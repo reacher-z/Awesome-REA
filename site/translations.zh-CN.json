@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "twisted-metal-2012-research": {
+    "name": "扭曲金属 2012 研究",
+    "requirements": [
+      "Python 3.10 或更新版本用于 python -m unittest discover -s tests -v。合成探测需要 CMake 3.20 或更新版本和一个 C 编译器。",
+      "许可证：仓库原有材料为 MIT。上游声明在 THIRD_PARTY_NOTICES.md。"
+    ]
   }
 }
