@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "thps2-tools",
+    "name": "THPS2 tools",
+    "url": "https://github.com/JayFoxRox/thps2-tools",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "These tools read Tony Hawk's Pro Skater 2 files and overlapping Neversoft Big Guns formats. extract-ddx.py extracts THPS2X texture collections. disassemble-ddm.py prints material collections. disassemble-trg.py prints scripts and level metadata. disassemble-prk.py disassembles user skateparks. psxviewer.c views PSX level files from THPS1, THPS2, and Spider-Man.",
+    "description_zh": "这些工具读取《托尼·霍克职业滑板 2》的文件，以及重叠的 Neversoft Big Guns 格式。extract-ddx.py 提取 THPS2X 纹理集合。disassemble-ddm.py 打印材质集合。disassemble-trg.py 打印脚本和关卡元数据。disassemble-prk.py 反汇编玩家滑板场。psxviewer.c 查看 THPS1、THPS2 和《蜘蛛侠》的 PSX 关卡文件。",
+    "requirements": [
+      "Python for the extract and disassemble scripts, and a C compiler for psxviewer.c.",
+      "License: MIT, unless a file says otherwise."
+    ],
+    "evidence_url": "https://github.com/JayFoxRox/thps2-tools/blob/e78065aa8ac54e21d1479cf4832d8edc88fd8392/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
