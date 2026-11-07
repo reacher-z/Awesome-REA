@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ultratears": {
+    "name": "UltraTears",
+    "requirements": [
+      "需要自己的 1.4.3 exefs 和 romfs 文件夹。需要 Git 和 Python 3。其他选项见 BUILDING.md。",
+      "审阅的 README 写明名称、标志、图标和封面不在 GPL 之下。第三方条款在 third_party/README.md。"
+    ]
   }
 }
