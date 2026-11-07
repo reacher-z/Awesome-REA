@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "hctp-recomp-case",
+    "name": "HCTP Recompiled",
+    "url": "https://github.com/BigDaddyJRich/hctp-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "HCTP Recompiled is a static recompilation of WWE SmackDown! Here Comes the Pain for PlayStation 2, NTSC-U SLUS-20787, into a native Windows program. PS2Recomp translates the MIPS code to C++. A Direct3D 11 renderer draws the graphics, and the IOP runs the game's IRX modules.",
+    "description_zh": "HCTP Recompiled 把 PlayStation 2 美版 SLUS-20787 的 WWE SmackDown! Here Comes the Pain 静态重编译成 Windows 原生程序。PS2Recomp 把 MIPS 代码翻译成 C++。Direct3D 11 渲染器绘制画面，IOP 运行游戏自己的 IRX 模块。",
+    "requirements": [
+      "The player supplies their own USA disc. The release launcher builds the game on the PC. The October 2026 status says exhibition and season run, and matches were tested at 60 frames per second on a Direct3D 11 path with an RTX 3060.",
+      "A developer build needs Visual Studio 2022 or newer, MSVC x64, CMake, Ninja, Python, and a Direct3D 11 GPU.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/BigDaddyJRich/hctp-recomp/blob/7b243fc85f0e1de7c8a18e9ac5516eb3e2188966/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
