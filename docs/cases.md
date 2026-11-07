@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -225,7 +225,7 @@
 - [**Vandal Hearts: native PC port built on matching decompilations**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - Builds on shao113’s matching decompilation of PlayStation Vandal Hearts, adds a Japanese matching tree, and carries both through to a native Windows and Linux port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### Engine reimplementations (47)
+### Engine reimplementations (48)
 
 - [**Age of Empires Free Software Remake: a re-implementation on the original data**](https://github.com/FolkertVanVerseveld/aoe) - Re-implements Microsoft’s Age of Empires and its Rise of Rome expansion as a cross-platform C++17 engine on SDL2 and OpenGL that loads the original game’s DRS archives and language.dll resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo: a reverse-engineered Minecraft server**](https://github.com/bravoserver/bravo) - Reimplements the server side of Minecraft’s Alpha- and Beta-era multiplayer in Python on Twisted; its documentation calls it a reverse-engineered implementation written from scratch, credits network traffic dumps and says general Minecraft data went to a community wiki. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/bravo-minecraft-server-case/)</sub>
@@ -252,6 +252,7 @@
 - [**OpenAWE: an open reimplementation of Remedy’s Alan Wake engine**](https://github.com/OpenAWE-Project/OpenAWE) - Reimplements Remedy Entertainment’s Alan Wake engine, later known as Northlight, in C++ and OpenGL, aiming to run Alan Wake and Alan Wake’s American Nightmare portably from the user’s game data, with Quantum Break and possibly Control as later goals. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openawe-alan-wake-engine-case/)</sub>
 - [**OpenBattlefield2: an unfinished Refractor 2 engine reimplementation**](https://github.com/Moxnatiy/OpenBattlefield2) - A C++20 reimplementation of Battlefield 2’s Refractor 2 engine reads original game data and documents menu rendering, level loading and server interoperability. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/openbattlefield2-refractor-engine-case/)</sub>
 - [**OpenDiablo2: Diablo 2 engine reimplementation**](https://github.com/OpenDiablo2/OpenDiablo2) - OpenDiablo2 is a cross-platform ARPG engine written in Go that supports playing Diablo 2. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opendiablo2/)</sub>
+- [**OpenEnroth**](https://github.com/OpenEnroth/OpenEnroth) - OpenEnroth reimplements the Might and Magic VI, VII, and VIII engine. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openenroth/)</sub>
 - [**OpenLara: Tomb Raider engine reimplementation**](https://github.com/XProger/OpenLara) - Open-source engine for classic Tomb Raider, with a WebGL build and a standalone release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openlara/)</sub>
 - [**OpenLF2: a Little Fighter 2 engine reimplementation**](https://github.com/OpenLF2/OpenLF2) - OpenLF2 reimplements Little Fighter 2 v2.0a as a playable C++ and Lua engine. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openlf2-case/)</sub>
 - [**OpenMW: replacing Morrowind’s engine while reusing original content**](https://github.com/OpenMW/openmw) - Provides an independent engine for playing Morrowind and an alternative editor, OpenMW-CS. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openmw-engine-case/)</sub>
