@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "binaivulhunter",
+    "name": "BinAIVulHunter",
+    "url": "https://github.com/ke0z/BinAIVulHunter",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "BinAIVulHunter is an IDA Pro plugin that sends Hex-Rays decompiled functions to OpenAI, Google Gemini, or a local Ollama model and reports possible vulnerabilities. Installation is a Python script copied into the IDA plugins directory. The reviewed context-menu command is Find possible vulnerability in function, and the hotkey listed for that scan is Ctrl+Alt+V. It targets IDA Pro 7.0 or newer and Python 3.6 or newer. A headless mode can scan functions from the command line.",
+    "description_zh": "BinAIVulHunter 是一个 IDA Pro 插件，把 Hex-Rays 反编译出的函数发给 OpenAI、Google Gemini 或本地 Ollama 模型，并报告可能的漏洞。安装方式是把 Python 脚本复制到 IDA 插件目录。审阅的右键命令是 Find possible vulnerability in function，列出的快捷键是 Ctrl+Alt+V。它针对 IDA Pro 7.0 或更高版本以及 Python 3.6 或更高版本。无界面模式可以从命令行扫描函数。",
+    "requirements": [
+      "IDA Pro 7.0 or newer and Python 3.6 or newer. Configure one of the listed model providers before a scan.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/ke0z/BinAIVulHunter/blob/1b0b99082c40d8d23c4bea53ee6c82e69a091657/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
