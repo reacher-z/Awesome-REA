@@ -36528,5 +36528,24 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "cfr",
+    "name": "CFR",
+    "url": "https://github.com/leibnitz27/cfr",
+    "category": "jvm",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Java decompiler. The README says it decompiles modern Java features, including much of Java 9, 12, and 14, is written in Java 6, and can turn class files from other JVM languages back toward Java. It is run as a jar with class names, or with a jar path and --outputdir to emit files. Binaries since 0.145 are on GitHub releases and on Maven Central as org.benf/cfr.",
+    "description_zh": "Java 反编译器。README 写明它能反编译现代 Java 特性，包括 Java 9、12 和 14 的大部分，自身用 Java 6 编写，也能把其他 JVM 语言的 class 文件尽量还原成 Java。用法是对类名运行 jar，或对 jar 路径加上 --outputdir 来输出文件。0.145 之后的二进制在 GitHub 发布页和 Maven Central 的 org.benf/cfr。",
+    "evidence_url": "https://github.com/leibnitz27/cfr/blob/c4145259dfcd8ad3e99004e4d9ecb0aed55dcc5a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed page states no license."
+    ]
   }
 ]
