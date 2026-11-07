@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mafia-re": {
+    "name": "Mafia-RE",
+    "requirements": [
+      "需要 Windows、Git、Python 3 和 CMake 3.29 或更新版本。游戏二进制用 Visual C++ 6.0 构建。Steam 2010 年的安装程序使用 Visual C++ 2008 SP1。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
