@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "cv64-decomp-case": {
+    "name": "恶魔城 64 反编译",
+    "requirements": [
+      "把《恶魔城 64》美版 1.0 ROM 放在 baserom.z64。",
+      "用 cmake -S . -B build -G Ninja 配置，也可以用 Unix Makefiles。如果构建失败，README 写明先把 castlevania.yaml 里的 disassemble_all 设为 True，清理后再构建，然后改回 False 再构建一次。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
