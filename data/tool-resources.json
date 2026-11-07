@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "khcom-decomp-case",
+    "name": "Kingdom Hearts: Chain of Memories decompilation",
+    "url": "https://github.com/Pheenoh/khcom",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Kingdom Hearts: Chain of Memories for the Game Boy Advance. It targets the US, Japanese, and European versions.",
+    "description_zh": "这是 Game Boy Advance《王国之心：记忆之链》的匹配反编译。目标包括美版、日版和欧版。",
+    "requirements": [
+      "Copy the dumped ROM to roms/ as B8CE.gba, B8CJ.gba, or B8CP.gba. The SHA-1 values are 10729bd884f8fdca7a310b6d606c52e46657aa48, 59ec0a0a4ccd1e6acb3bbd7bfb21d63988958cfa, and 8db73586cdb11b3795907edebf43228dbcd3e6b2.",
+      "Dependencies are git, ninja, Python 3, PyYAML, binutils-arm-none-eabi, and pret/agbcc. Extract with python3 tools/extract_assets.py, configure with python3 configure.py, then build with ninja.",
+      "License: CC0 1.0 Universal."
+    ],
+    "evidence_url": "https://github.com/Pheenoh/khcom/blob/5dc49b75068bfe24e07bdaf365570d64682680c3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
