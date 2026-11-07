@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "quickasm",
+    "name": "Quick Assembler",
+    "url": "https://github.com/zodiacon/QuickAsm",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Quick Assembler is a Windows application for editing x86 and x64 assembly, assembling it with NASM or Keystone in 16-bit, 32-bit, or 64-bit mode, and running it in the Unicorn emulator with breakpoints, registers, and memory views.",
+    "description_zh": "Quick Assembler 是一个 Windows 程序，用于编辑 x86 与 x64 汇编，用 NASM 或 Keystone 以 16 位、32 位或 64 位模式汇编，并在 Unicorn 仿真器中运行，可下断点、查看和修改寄存器与内存。",
+    "requirements": [
+      "Build the x64 configuration of QuickAsm.sln with Visual Studio 2026 after cloning the WTLHelper submodule.",
+      "Other libraries come from vcpkg, linked statically: unicorn, capstone[x86], keystone, scintilla, lexilla, wil, and detours, using the x64-windows-static triplet.",
+      "Assembling with NASM requires nasm.exe in the output directory. Keystone is the other assembler.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/zodiacon/QuickAsm/blob/27955fc2bb283cef94d2dd0e5bfbc062a69fc493/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
