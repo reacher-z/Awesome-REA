@@ -12817,5 +12817,54 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-multimodal-bcsa-review",
+    "title": "Multimodal Representation Learning for Binary Code Similarity Analysis: A Systematic Review and Conceptual Framework",
+    "authors": [
+      "Rupesh Kohli",
+      "Harish Parshuram Bhabad",
+      "Atmeshkumar Subhashbhai Patel",
+      "Vijay M. Rakhade",
+      "Nandini S. Patil",
+      "Vedant Kadlag"
+    ],
+    "year": 2026,
+    "publication_date": "2026-06-30",
+    "date_precision": "day",
+    "date_basis": "Crossref issued date",
+    "venue": "Information Dynamics and Applications",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.56578/ida050204",
+    "url": "https://doi.org/10.56578/ida050204",
+    "pdf_url": "https://library.acadlore.com/IDA/2026/5/2/IDA_05.02_04.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This article systematically reviews multimodal representation learning for binary code similarity analysis and outlines a conceptual framework for that task. The subject is how learned representations compare binary code.",
+    "description_zh": "本文系统回顾用于二进制代码相似性分析的多模态表示学习，并勾画该任务的概念框架。主题是学习到的表示如何比较二进制代码。",
+    "scope_limitations_en": "The summary is limited to the title, byline, and venue on the fetched PDF plus the Crossref date. Model results in the paper were not reproduced.",
+    "scope_limitations_zh": "摘要只依据已获取 PDF 上的题名、署名和刊物以及 Crossref 日期。论文中的模型结果没有复现。",
+    "why_fits_en": "Binary code similarity is a reverse-engineering comparison problem, and this paper reviews representation-learning approaches to it.",
+    "why_fits_zh": "二进制代码相似性是逆向工程中的比较问题，本文回顾用表示学习处理该问题的方法。",
+    "evidence_urls": [
+      "https://library.acadlore.com/IDA/2026/5/2/IDA_05.02_04.pdf",
+      "https://api.crossref.org/works/10.56578/ida050204",
+      "https://doi.org/10.56578/ida050204"
+    ],
+    "metadata_notes": "The DOI is the Crossref value 10.56578/ida050204.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "面向二进制代码相似性分析的多模态表示学习：系统综述与概念框架",
+    "date_basis_zh": "日期取自 Crossref 登记的出版日期",
+    "metadata_notes_zh": "DOI 采用 Crossref 中的 10.56578/ida050204。"
   }
 ]

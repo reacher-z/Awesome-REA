@@ -4,14 +4,14 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## Contents
 
 - [Reverse-engineering agent evaluation](#reverse-engineering-agent-evaluation) (14)
-- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
+- [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (111)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
@@ -62,6 +62,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**STILL: Recovering Lowered STL Semantics for LLM-assisted C++ Decompilation**](https://arxiv.org/abs/2608.26408) - STILL predicts function-level STL container presence from stripped control-flow graphs and turns those predictions into compact hints for LLM refinement of Ghidra output. <sub>arXiv 2026 · Preprint · Xiaohan Wang et al. · [PDF](https://arxiv.org/pdf/2608.26408v1) · [Full entry](https://awesomerea.org/papers/paper-still-stl/)</sub>
 - [**The Evolution of Binary Decompilation in the Modern Era: A Taxonomy, Literature Review, and Future Perspectives**](https://arxiv.org/abs/2608.24955) - This survey maps traditional, dynamic, matching and neural decompilation approaches, then organizes type recovery, control-flow restructuring, naming and refinement tasks alongside evaluation metrics and benchmark choices. <sub>arXiv 2026 · Preprint · Omar Abusabha et al. · [PDF](https://arxiv.org/pdf/2608.24955v1) · [Full entry](https://awesomerea.org/papers/paper-evolution-binary-decompilation/)</sub>
 - [**Lifting Optimized Binaries to Canonical Compiler IR via Structure-Aware Retrieval and Iterative Verification**](https://aclanthology.org/2026.acl-long.527/) - BRIDGE lifts stripped, optimized x86-64 and ARM64 functions, given as llvm-objdump disassembly, to LLVM IR. <sub>ACL 2026 · Conference paper · Xiaoao Zhu et al. · [PDF](https://aclanthology.org/2026.acl-long.527.pdf) · [Code](https://github.com/Azhu-c/BRIDGE-rag) · [Full entry](https://awesomerea.org/papers/paper-bridge-lifting/)</sub>
+- [**Multimodal Representation Learning for Binary Code Similarity Analysis: A Systematic Review and Conceptual Framework**](https://doi.org/10.56578/ida050204) - This article systematically reviews multimodal representation learning for binary code similarity analysis and outlines a conceptual framework for that task. <sub>Information Dynamics and Applications 2026 · Journal article · Rupesh Kohli et al. · [PDF](https://library.acadlore.com/IDA/2026/5/2/IDA_05.02_04.pdf) · [Full entry](https://awesomerea.org/papers/paper-multimodal-bcsa-review/)</sub>
 - [**Fool Me If You Can: On the Robustness of Binary Code Similarity Detection Models against Semantics-Preserving Transformations**](https://dl.acm.org/doi/10.1145/3797116) - The paper builds asmFooler to test whether learned binary code similarity detection (BCSD) models keep matching functions after semantics-preserving changes. <sub>Proceedings of the ACM on Software Engineering (FSE 2026) · Journal article · Jiyong Uhm et al. · [PDF](https://arxiv.org/pdf/2602.12681v1) · [Full entry](https://awesomerea.org/papers/paper-asmfooler/)</sub>
 - [**MirrorCode: AI can rebuild entire programs from behavior alone**](https://arxiv.org/abs/2606.30182) - Tests reimplementation of 25 command-line programs using execute-only reference access, documentation and visible examples. <sub>arXiv 2026 · Preprint · Tom Adamczewski et al. · [PDF](https://arxiv.org/pdf/2606.30182v2) · [Code](https://github.com/epoch-research/MirrorCode) · [Full entry](https://awesomerea.org/papers/paper-mirrorcode/)</sub>
 - [**SoK: AI-Augmented Binary Reversing**](https://arxiv.org/abs/2606.17398) - A systematization-of-knowledge survey of machine-learning, LLM and agentic approaches to binary reversing. <sub>arXiv 2026 · Preprint · Yujeong Kwon et al. · [PDF](https://arxiv.org/pdf/2606.17398v2) · [Full entry](https://awesomerea.org/papers/paper-sok-ai-binary-reversing/)</sub>
