@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "tlou-remastered-pc": {
+    "name": "最后生还者重制版 PC 移植",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11。CPU 为 Intel Haswell 或更新，或任意 AMD Ryzen，以及 Vulkan 1.3 显卡。需要自己的 CUSA00552 及其更新转储。",
+      "许可证：GNU GPL v2 或更高版本。LibOrbisPkg 为 LGPL-3.0。它改用的 DLSS 桥为 MIT。"
+    ]
   }
 }
