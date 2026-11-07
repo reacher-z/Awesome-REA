@@ -11136,13 +11136,6 @@
       "candump 和 cansniffer 显示帧及变化字节，不负责推断专有信号语义。ISO-TP 和 J1939 命令还依赖相应的内核支持。"
     ]
   },
-  "caring-caribou": {
-    "name": "Caring Caribou",
-    "requirements": [
-      "文档要求 Python 3.7+、python-can、较新的 Linux 内核和 CAN 接口。各模块有独立帮助及配置。",
-      "服务发现取决于 ECU 和传输方式。旧 DCM 模块已弃用，由 UDS 替代；主动诊断及发送模块与被动流量转储分别提供。"
-    ]
-  },
   "btlejack": {
     "name": "BtleJack",
     "requirements": [

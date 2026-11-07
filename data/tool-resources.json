@@ -36861,26 +36861,6 @@
     ]
   },
   {
-    "id": "caring-caribou",
-    "name": "Caring Caribou",
-    "url": "https://github.com/caringcaribou/caringcaribou",
-    "category": "protocol-analysis",
-    "relationship": "foundation",
-    "kind": "tool",
-    "targets": [
-      "protocol"
-    ],
-    "description_en": "Investigate CAN traffic and ECU diagnostic services through modules for capture, arbitration-ID discovery, UDS, DoIP and XCP.",
-    "description_zh": "通过流量采集、仲裁 ID 发现、UDS、DoIP 和 XCP 模块研究 CAN 流量及 ECU 诊断服务。",
-    "evidence_url": "https://github.com/caringcaribou/caringcaribou/blob/092eff3c2c95bb7952a2a92ac12b6c1c29035b70/README.md",
-    "verified_at": "2026-10-29",
-    "verification": "source-reviewed",
-    "requirements": [
-      "The documented requirements are Python 3.7+, python-can, a recent Linux kernel and a CAN interface. Individual modules expose separate help and configuration.",
-      "Service discovery depends on the ECU and transport. The older DCM module is deprecated in favor of UDS; active diagnostic and transmission modules are separate from passive dumping."
-    ]
-  },
-  {
     "id": "btlejack",
     "name": "BtleJack",
     "url": "https://github.com/virtualabs/btlejack",
