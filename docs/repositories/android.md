@@ -7,7 +7,7 @@
 These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [skylot/jadx](https://github.com/skylot/jadx) — Dex to Java decompiler **[50,988 stars]** · Curated: [JADX](https://awesomerea.org/resources/jadx/)
-- [librepods-org/librepods](https://github.com/librepods-org/librepods) — AirPods liberated from Apple's ecosystem. **[30,324 stars]**
+- [librepods-org/librepods](https://github.com/librepods-org/librepods) — AirPods liberated from Apple's ecosystem. **[30,324 stars]** · Curated: [LibrePods: AirPods features on Android and Linux through a reverse-engineered protocol](https://awesomerea.org/resources/librepods-airpods-protocol-case/)
 - [iBotPeaches/Apktool](https://github.com/iBotPeaches/Apktool) — A tool for reverse engineering Android apk files **[25,935 stars]** · Curated: [Apktool](https://awesomerea.org/resources/apktool/)
 - [MobSF/Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) — Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware analysis and security assessment framework capable of performing static and dynamic analysis. **[21,966 stars]** · Curated: [Mobile Security Framework (MobSF)](https://awesomerea.org/resources/mobsf/)
 - [Konloch/bytecode-viewer](https://github.com/Konloch/bytecode-viewer) — A Java 8+ Jar &amp; Android APK Reverse Engineering Suite (Decompiler, Editor, Debugger &amp; More) **[15,677 stars]** · Curated: [Bytecode Viewer](https://awesomerea.org/resources/bytecode-viewer/)

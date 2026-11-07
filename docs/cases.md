@@ -4,13 +4,13 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
 - [Game](#game) (239)
-- [App](#app) (62)
+- [App](#app) (63)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
 - [Protocol](#protocol) (91)
@@ -369,6 +369,7 @@
 - [**Notion: trace the clipboard bridge**](https://rea.tools/showcase/notion/) - Trace a packaged Electron clipboard path using REA findings and separate source inspection; the dynamic wrapper remains a stated limit. <sub>Case study · Official REA · [Full entry](https://awesomerea.org/resources/rea-notion-case/)</sub>
 - [**PicoPrint: LX-D02 printer investigation**](https://github.com/bigtower17/picoprint) - The author describes REA-assisted Android investigation followed by separate Hermes decompilation to support a Windows BLE printer. <sub>Case study · Mixed workflow · Also: Protocol · [Full entry](https://awesomerea.org/resources/picoprint-rea-investigation/)</sub>
 - [**ReaCut: video-editor reconstruction**](https://github.com/Xiangyu-CAS/rea-capcut) - An independent video editor whose authors document REA-assisted investigation of Jianying/CapCut behavior and project formats. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/reacut-reconstruction/)</sub>
+- [**LibrePods: AirPods features on Android and Linux through a reverse-engineered protocol**](https://github.com/librepods-org/librepods) - Implements the proprietary protocol that AirPods use with Apple devices, which the author reports reverse-engineering, so that Android and Linux apps can switch noise-control modes, read ear detection and accurate battery levels, and use conversational awareness, head gestures and hearing-aid settings. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/librepods-airpods-protocol-case/)</sub>
 
 <a id="native-binary"></a>
 ## Native Binary

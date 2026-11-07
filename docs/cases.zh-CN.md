@@ -4,13 +4,13 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
 - [Game · 游戏](#game) (239)
-- [App · 应用](#app) (62)
+- [App · 应用](#app) (63)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
 - [Protocol · 协议](#protocol) (91)
@@ -369,6 +369,7 @@
 - [**Notion：追踪剪贴板桥接**](https://rea.tools/showcase/notion/) - 结合 REA 发现与独立源码阅读追踪剪贴板桥；动态包装器仍有明确限制。 <sub>案例 · REA 官方 · [完整条目](https://awesomerea.org/zh/resources/rea-notion-case/)</sub>
 - [**PicoPrint：LX-D02 打印机调查**](https://github.com/bigtower17/picoprint) - 作者报告以 REA 开始 Android 调查，再借助独立 Hermes 工具实现 Windows BLE 打印。 <sub>案例 · 混合工具流程 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/picoprint-rea-investigation/)</sub>
 - [**ReaCut：视频编辑器重建案例**](https://github.com/Xiangyu-CAS/rea-capcut) - 独立视频编辑器，作者公开了利用 REA 研究剪映／CapCut 行为与项目格式的过程。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/reacut-reconstruction/)</sub>
+- [**LibrePods：借助逆向得出的协议在 Android 和 Linux 上使用 AirPods 功能**](https://github.com/librepods-org/librepods) - 实现 AirPods 与苹果设备之间使用的专有协议（作者称由其本人逆向得出），使 Android 和 Linux 应用能够切换降噪模式、读取入耳检测和准确电量，并使用对话感知、头部手势和助听设置。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/librepods-airpods-protocol-case/)</sub>
 
 <a id="native-binary"></a>
 ## Native Binary · 原生二进制
