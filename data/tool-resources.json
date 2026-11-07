@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "reburn3-case",
+    "name": "Reburn 3: reimplementation of Burnout 3 Takedown",
+    "url": "https://github.com/reburndev/reburn3",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Reburn 3 is a work-in-progress open-source reimplementation of Burnout 3: Takedown. The README calls it a rewrite and says it is currently playable on Windows and Wine through Cxbx-Reloaded.",
+    "description_zh": "Reburn 3 是《Burnout 3: Takedown》进行中的开源重实现。README 称之为重写，并写明目前可借助 Cxbx-Reloaded 在 Windows 和 Wine 上游玩。",
+    "requirements": [
+      "The current build is playable on Windows and Wine and uses Cxbx-Reloaded as a compatibility layer.",
+      "The README says a later goal is a portable codebase without that compatibility layer.",
+      "The README does not name a license."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/reburndev/reburn3/blob/4be1c36e09504d8d426f290eff7580c31796ca32/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
