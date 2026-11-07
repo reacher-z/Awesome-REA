@@ -36542,7 +36542,7 @@
     "requirements": [
       "The README's build is on Windows with Visual Studio, from PowerShell. Put your own ECI.DLL, ECI.INI, and ENU.SYN in pkg/. It prints MD5 6c39acb7c1f0f62b3cae019f45b224fc for ENU.SYN. It says those files are not in the repository and must not be added.",
       "The README describes a hand-written formant synthesizer, Delta rules lifted by tools/delta_lift.py, and the remaining functions recompiled instruction by instruction with tools/x2c.py. The drop-in DLL is US English only.",
-      "The README says klatt_check is bit-exact on 19,902 recorded frames, and that python tools/eci_compare.py runs every API script in tests/eci/ through the real DLL and the port, comparing calls, return values, callbacks, and samples. Not run or reproduced for this catalog.",
+      "The README says klatt_check is bit-exact on 19,902 recorded frames, and that python tools/eci_compare.py runs every API script in tests/eci/ through the real DLL and the port, comparing calls, return values, callbacks, and samples.",
       "The reviewed root has no LICENSE file. This record does not state a license."
     ],
     "requirement_facets": [
