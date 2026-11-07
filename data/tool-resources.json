@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "warioware-twisted-recomp",
+    "name": "WarioWare: Twisted! recomp",
+    "url": "https://github.com/mstan/WarioWareTwistedRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This static recompilation of WarioWare: Twisted! runs on Windows x64 and Android arm64, using the phone gyroscope or a controller motion sensor for the cartridge gyro. The USA ROM and a retail GBA BIOS are selected in the launcher. Their identities are recorded in variants/warioware_twisted/game.toml. Windows builds use CMake, Ninja, MSYS2 MinGW64, and SDL2. pwsh tools/regen.ps1 regenerates the translation, and cmake --build build --target WarioWareTwistedRecomp builds the program.",
+    "description_zh": "这个《瓦力欧制造：Twisted!》的静态重编译运行在 Windows x64 和 Android arm64 上，用手机陀螺仪或手柄运动传感器对应卡带陀螺仪。启动器里选择美版 ROM 和零售版 GBA BIOS。它们的身份记录在 variants/warioware_twisted/game.toml。Windows 构建使用 CMake、Ninja、MSYS2 MinGW64 和 SDL2。pwsh tools/regen.ps1 重新生成翻译，cmake --build build --target WarioWareTwistedRecomp 构建程序。",
+    "requirements": [
+      "The USA ROM and a retail GBA BIOS named in variants/warioware_twisted/game.toml. Android steps are in android/README.md.",
+      "License: PolyForm Noncommercial 1.0.0."
+    ],
+    "evidence_url": "https://github.com/mstan/WarioWareTwistedRecomp/blob/3897e4a3b0bacd3ed230efe30b2fe8742519ad50/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
