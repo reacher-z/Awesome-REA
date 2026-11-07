@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "actraiser-recomp": {
+    "name": "天地创造重编译",
+    "requirements": [
+      "需要校验值如上的美版转储。macOS 打开 ActRaiserRecompBuilder.app。Linux 运行 ./run-build.sh。Steam Deck 在桌面模式使用 Builder AppImage。",
+      "许可证：仓库原有源码为 MIT，包括运行时、工具、recomp/*.cfg 和文档。snesrecomp-go 另有一份 MIT 许可证。"
+    ]
   }
 }

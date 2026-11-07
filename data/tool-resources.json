@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "actraiser-recomp",
+    "name": "ActRaiser recompilation",
+    "url": "https://github.com/DerrickGold/ar-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles ActRaiser for the Super Nintendo, USA. The cartridge dump is named internally ACTRAISER-USA, 1,048,576 bytes, with no copier header. The internal checksum is 0x83DB. SHA-256 is b8055844825653210d252d29a2229f9a3e7e512004e83940620173c57d8723f0. SHA-1 is e8365852cc20178d42c93cd188a7ae9af45369d7. CRC32 is 0xEAC3358D. The Builder verifies the file before it continues. macOS, Windows, Linux, and Steam Deck packages are listed.",
+    "description_zh": "该项目重编译超级任天堂美版《天地创造》。卡带转储的内部名是 ACTRAISER-USA，1,048,576 字节，没有复制器头。内部校验和是 0x83DB。SHA-256 是 b8055844825653210d252d29a2229f9a3e7e512004e83940620173c57d8723f0。SHA-1 是 e8365852cc20178d42c93cd188a7ae9af45369d7。CRC32 是 0xEAC3358D。Builder 在继续之前核对这个文件。列出了 macOS、Windows、Linux 和 Steam Deck 的包。",
+    "requirements": [
+      "A USA dump with those checksums. macOS opens ActRaiserRecompBuilder.app. Linux runs ./run-build.sh. Steam Deck uses the Builder AppImage in Desktop Mode.",
+      "License: MIT for the repository's original source, including the runtime, tooling, recomp/*.cfg, and documentation. snesrecomp-go has a separate MIT license."
+    ],
+    "evidence_url": "https://github.com/DerrickGold/ar-recomp/blob/d9aec17e4dcc744af44d6a08e055208aa38f9b64/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
