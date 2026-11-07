@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ooe-decomp",
+    "name": "Order of Ecclesia decompilation",
+    "url": "https://github.com/LagoLunatic/ooe",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Castlevania: Order of Ecclesia for the Nintendo DS. The supported original cartridges are YR9E00 (USA), YR9J00 (Japan), YR9K00 (Korea), and YR9P00 (PAL), all revision 0. Install steps are in INSTALL.md.",
+    "description_zh": "这是任天堂 DS 游戏《恶魔城 被夺走的刻印》的进行中反编译。受支持的原版卡带是修订 0 的 YR9E00（美国）、YR9J00（日本）、YR9K00（韩国）和 YR9P00（PAL）。安装步骤在 INSTALL.md。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/LagoLunatic/ooe/blob/3dc4a82881b4cb8f9d584571fcf2053ddc584f6a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
