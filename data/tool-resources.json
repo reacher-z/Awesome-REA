@@ -36528,5 +36528,38 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "geos-20-kernal-case",
+    "name": "GEOS 2.0: source that rebuilds the cbmfiles KERNAL binaries",
+    "url": "https://github.com/mist64/geos",
+    "description_en": "Reorganized cc65 source for GEOS 2.0 on the Commodore 64 and 128. The README says a standard compile generates binaries identical to the GEOS 64 2.0 and GEOS 128 2.0 distribution binaries, and make regress compares the bsw and wheels builds with the reference tree.",
+    "description_zh": "Commodore 64 与 128 上 GEOS 2.0 的整理后 cc65 源码。README 写明标准编译生成与 GEOS 64 2.0 和 GEOS 128 2.0 发行二进制相同的文件，并且 make regress 把 bsw 与 wheels 构建与参考树比较。",
+    "evidence_url": "https://github.com/mist64/geos/blob/617efdc7191eda14eaf699d317e66d5bda68c039/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/mist64/geos/blob/617efdc7191eda14eaf699d317e66d5bda68c039/regress.sh",
+      "https://github.com/mist64/geos/tree/617efdc7191eda14eaf699d317e66d5bda68c039/reference"
+    ],
+    "requirements": [
+      "The README builds with make. reference/ holds the original binaries from the cbmfiles.com version. make regress builds the bsw and wheels variants and compares them with those references.",
+      "The README says this tree does not use the original encrypted loader and that the kernel is plaintext, matching the cbmfiles.com version it describes. It says the serial number 0x58B5 is pre-filled to match that version.",
+      "make regress is the comparison named in the README.",
+      "The reviewed root has no LICENSE file. The README says the intellectual property added by the reverse-engineering and the subsequent improvements is in the public domain, asks to be credited, and says to respect the license of the underlying GEOS work."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "targets": [
+      "binary"
+    ]
   }
 ]

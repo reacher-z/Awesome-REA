@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "geos-20-kernal-case": {
+    "name": "GEOS 2.0：可重建 cbmfiles KERNAL 二进制的源码",
+    "requirements": [
+      "README 用 make 构建。reference/ 存放来自 cbmfiles.com 版本的原始二进制。make regress 构建 bsw 和 wheels 变体并与这些参考比较。",
+      "README 写明此树不使用原始加密加载器，内核为明文，与它描述的 cbmfiles.com 版本一致。它写明序列号 0x58B5 已预填以匹配该版本。",
+      "README 点名的比较是 make regress。",
+      "审阅的根目录没有 LICENSE 文件。README 写明逆向工程及随后改进所增加的知识产权属于公有领域，请求署名，并写明应尊重底层 GEOS 作品的许可证。"
+    ]
   }
 }
