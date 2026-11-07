@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ida-embed-arch-disasm",
+    "name": "IDA embed arch disasm",
+    "url": "https://github.com/a1ext/ida-embed-arch-disasm",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This IDA plugin disassembles x86-64 instructions, including inlined WOW64 code, inside a 32-bit IDA database. The user selects a range, and the disassembled instructions are written as comments. It uses the capstone Python module. For IDA 7 and newer, capstone must match IDA's 64-bit Python.",
+    "description_zh": "这个 IDA 插件在 32 位 IDA 数据库里反汇编 x86-64 指令，包括内联的 WOW64 代码。用户选择一段范围，反汇编结果写成注释。它使用 capstone 的 Python 模块。IDA 7 及更新版本需要与 IDA 的 64 位 Python 匹配的 capstone。",
+    "requirements": [
+      "Install capstone, then copy ida-embed-arch-disasm.py into the IDA plugins directory.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/a1ext/ida-embed-arch-disasm/blob/aa86249caff5e488e2373b7b357f5eaa6e531052/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
