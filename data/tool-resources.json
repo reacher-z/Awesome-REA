@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "cor64",
+    "name": "cor64: C# Nintendo 64 emulator",
+    "url": "https://github.com/bdragoncore/cor64",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "other",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "hardware",
+    "description_en": "cor64 is a work-in-progress Nintendo 64 emulator written in C#. The README builds and runs it with nuke, and lists .NET Framework or Mono, .NET Core 3.x or newer, and GLFW development libraries on Linux. Global dotnet tools named in the README are Paket and nuke.globaltool.",
+    "description_zh": "cor64 是一个用 C# 编写、仍在开发中的 Nintendo 64 模拟器。README 用 nuke 构建并运行它，并列出 .NET Framework 或 Mono、.NET Core 3.x 或更新版本，以及 Linux 上的 GLFW 开发库。README 点名的全局 dotnet 工具是 Paket 和 nuke.globaltool。",
+    "evidence_url": "https://github.com/bdragoncore/cor64/blob/75d5ebebb513bde48023b0b569b17690e436f42b/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      ".NET Framework or Mono, .NET Core 3.x or higher, and the global dotnet tools Paket and nuke.globaltool. Linux builds need GLFW development libraries.",
+      "Build and run with nuke Run. Tests use nuke Test.",
+      "GitHub reports the license as MIT."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
