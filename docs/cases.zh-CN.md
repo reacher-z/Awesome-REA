@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -136,7 +136,7 @@
 - [**《风之杖 HD》反编译：与重编译的 Wii U 版逐函数比对验证**](https://github.com/ZeldaWWHDDecomp/wwhd) - 将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### 静态重编译 (48)
+### 静态重编译 (49)
 
 - [**Banjo: Recompiled：基于 N64Recomp 的《Banjo-Kazooie》原生移植**](https://github.com/BanjoRecomp/BanjoRecomp) - 使用 N64Recomp 将美版 1.0 Nintendo 64《Banjo-Kazooie》静态重编译为基于 N64ModernRuntime 的原生移植版，由 RT64 渲染并加入模组支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/banjo-recompiled-case/)</sub>
 - [**C2C：《古惑狼 2》的混合重编译与手工反编译**](https://github.com/ughman/c2c) - 一个早期的 PlayStation《古惑狼 2》逆向工程项目：把引擎的 MIPS 机器码直接转换为一个体量巨大的 C 文件，并调用改造后的 PCSX-R 模拟器库处理硬件 I/O。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -163,6 +163,7 @@
 - [**MediEvil Recomp：PlayStation 游戏静态重编译为 C#**](https://github.com/BlackLabelHQ/MediEvilRecomp) - 使用 RecompOne 重编译器及运行时，将北美版 PlayStation《MediEvil》静态重编译为 C# 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/medievil-recomp-case/)</sub>
 - [**Mega Man X Recompiled：基于 snesrecomp 的静态重编译**](https://github.com/mstan/MegaManXSNESRecomp) - 借助 snesrecomp 框架，将 SNES 版《洛克人 X》（美版 Rev 1）的 65816 CPU 代码静态转译为 C；PPU、音频、DMA 等硬件由框架运行时处理，静态分析无法证明的部分则交给源自 LakeSnes 的解释器执行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/megaman-x-snes-recomp-case/)</sub>
 - [**Melee Unlocked：Melee 的 Windows 源码移植与静态重编译**](https://github.com/Hero88go/melee-unlocked) - Super Smash Bros. Melee（NTSC 1.02）的 Windows 测试版构建，包含两套引擎：源码移植将 doldecomp 反编译编译为原生库，静态重编译则将零售版 DOL 的 PowerPC 代码及 Slippi 的 Gecko 代码转换为 C++。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/melee-unlocked-case/)</sub>
+- [**密特罗德 NES 重编译**](https://github.com/mstan/MetroidNESRecomp) - 该项目用 nesrecomp 静态重编译 NES 版《密特罗德》。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/metroid-nes-recomp/)</sub>
 - [**Pinyon Shift：以 ShiftGlue 将 Forza Horizon 静态重编译到 PC**](https://github.com/arcanite24/pinyon-shift) - 使用作者对 ReXGlue 的分支 ShiftGlue，将 Xbox 360 版 Forza Horizon 的 PowerPC 可执行文件提前转换为 C++，并依玩家自有光盘在其电脑上编译，构建原生移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pinyon-shift-forza-horizon-recomp-case/)</sub>
 - [**Project Arwing (2)：由一致性反汇编重编译的 Star Fox 2**](https://github.com/carlosrmz009/arwing2) - 从以运行覆盖率为种子的 65816 与 SuperFX 反汇编重建 Star Fox 2：反汇编可重新汇编为与原 ROM 一致的文件，再静态翻译为 C，生成原生 Windows、macOS 和 Linux 版本。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-arwing-2-star-fox-2-recomp-case/)</sub>
 - [**Project Arwing：由一致性反汇编重编译的 Star Fox**](https://github.com/carlosrmz009/arwing) - 依据运行覆盖率和递归下降反汇编 Star Fox 的 65816 与 SuperFX 代码，重新汇编出与原 ROM 一致的文件，再静态翻译为 C，运行于从零编写的 SNES 运行时，支持 Windows、macOS 和 Linux。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/project-arwing-star-fox-recomp-case/)</sub>
