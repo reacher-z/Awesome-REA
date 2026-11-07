@@ -36543,6 +36543,7 @@
     "description_zh": "将 Xbox 360 版《Skate 3》的 Skate3Recomp 静态重编译移植到 Android：rexglue 转译所配置的 PowerPC 客体函数，再由 Android Clang 编译为 ARM64 库，并与兼容运行时链接。运行时钩子把游戏的网格、纹理和着色器状态交给原生 Vulkan 场景渲染器；这一分支另行加入 SDL3 输入与音频、多点触控覆盖层以及掌机性能配置。作者称其为实验性的开发者构建，可在 Anbernic RG406V 上游玩。",
     "evidence_url": "https://github.com/Buku313/Skate3-Mobile/blob/e1b28c185d578c22e3a630f6f3b13ed123462a43/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "Reviewed at main (2026-09-16), four commits after the v2.1.0 release (2026-09-15), which offers a signed APK and a separate QA build. README describes a developer build that boots, plays with tricks and renders natively, but warns of visual bugs, missing effects and device-specific problems; the RG406V (Unisoc T820, Mali-G57) is the only verified device, and the 60 FPS setting is a guest cap rather than a guarantee. It is a fork of Skate3Recomp, catalogued separately, with the upstream history preserved.",
