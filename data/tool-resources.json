@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "kappa",
+    "name": "Kappa",
+    "url": "https://github.com/macabeus/kappa",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Kappa is a Visual Studio Code extension for decompilation work. It builds prompts from the open codebase, can start an agent decompile through GitHub Copilot, and calls decomp.me, m2c, decomp-permuter, and objdiff from the editor. The README says it runs only in a single-root workspace.",
+    "description_zh": "Kappa 是用于反编译工作的 Visual Studio Code 扩展。它根据打开的代码库生成提示，可以通过 GitHub Copilot 启动代理反编译，并在编辑器里调用 decomp.me、m2c、decomp-permuter 和 objdiff。README 写明它只在单根工作区中运行。",
+    "evidence_url": "https://github.com/macabeus/kappa/blob/679ac389998728830d47e28658df3c8866672eed/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "Visual Studio Code, with the project opened as a single-root folder or workspace. Agent mode expects GitHub Copilot with Agent mode selected.",
+      "GitHub reports the license as MIT."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
