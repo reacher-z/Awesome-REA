@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tokyo-bus-guide-decomp",
+    "name": "Tokyo Bus Guide decompilation",
+    "url": "https://github.com/lhsazevedo/tbg-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This decompiles Tokyo Bus Guide for the Dreamcast. The README says the goal is functional equivalence, checked with an SH-4 object simulator, and that the project can rebuild the binary from decompiled functions beside the original code. Setup steps are in docs/setup.md.",
+    "description_zh": "该项目反编译 Dreamcast 游戏《东京巴士导游》。README 写明目标是功能等价，并用 SH-4 对象模拟器检查，而且可以用反编译出的函数和原始代码一起重建二进制。安装步骤在 docs/setup.md。",
+    "requirements": [
+      "A backup of the original game is required to build a playable image. The reviewed README points the setup at docs/setup.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/lhsazevedo/tbg-decomp/blob/62fed895269e36e379fab38538e971c99f38214e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
