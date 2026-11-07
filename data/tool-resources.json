@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dayu",
+    "name": "dayu",
+    "url": "https://github.com/hx1997/dayu",
+    "category": "binary-libraries",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "dayu is a parser and a rudimentary decompiler for the Ark Bytecode .abc files used on OpenHarmony and HarmonyOS. The README describes it as a spare-time project with limited availability.",
+    "description_zh": "dayu 是 OpenHarmony 和 HarmonyOS 所用 Ark 字节码 .abc 文件的解析器，以及一个很初步的反编译器。README 把它描述为业余时间的项目，可用投入有限。",
+    "requirements": [
+      "It reads .abc Ark Bytecode files.",
+      "License: AGPL-3.0."
+    ],
+    "evidence_url": "https://github.com/hx1997/dayu/blob/da592965e03ff05d7dd3c7d39699471aedd89436/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
