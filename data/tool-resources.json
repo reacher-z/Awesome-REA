@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "jd-eclipse",
+    "name": "JD-Eclipse",
+    "url": "https://github.com/java-decompiler/jd-eclipse",
+    "category": "jvm",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "JD-Eclipse is an Eclipse plug-in that shows Java source for class files during debugging. ./gradlew build writes build/distributions/jd-eclipse-x.y.z.zip. Eclipse installs it from Help, Install New Software, by dropping that zip onto the dialog. The default association for a class file without source is JD Class File Viewer. Preferences live under Java, Decompiler.",
+    "description_zh": "JD-Eclipse 是一个 Eclipse 插件，在调试时显示类文件的 Java 源码。./gradlew build 写出 build/distributions/jd-eclipse-x.y.z.zip。在 Eclipse 的 Help、Install New Software 里把这个 zip 拖进对话框即可安装。没有源码的类文件默认关联是 JD Class File Viewer。首选项在 Java、Decompiler 下。",
+    "requirements": [
+      "Eclipse and a JDK. ./gradlew build produces the install zip.",
+      "License: GNU GPL v3."
+    ],
+    "evidence_url": "https://github.com/java-decompiler/jd-eclipse/blob/9f28f363764183d28dabd435c59846e3cfc41456/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
