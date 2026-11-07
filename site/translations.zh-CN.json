@@ -40712,5 +40712,12 @@
       "把 yuka.exe 放进游戏目录并运行 yuka help。",
       "README 未注明许可证。"
     ]
+  },
+  "opentpw": {
+    "name": "OpenTPW",
+    "requirements": [
+      "需要任一版本《主题公园世界》及其资源的完整正版副本。",
+      "许可证：MIT。"
+    ]
   }
 }

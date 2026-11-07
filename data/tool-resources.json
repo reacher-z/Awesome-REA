@@ -143849,5 +143849,27 @@
     "verified_at": "2026-11-07",
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
+  },
+  {
+    "id": "opentpw",
+    "name": "OpenTPW",
+    "url": "https://github.com/OpenTPW/OpenTPW",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenTPW reimplements Bullfrog's 1999 game Theme Park World, also released as Sim Theme Park. It needs a full copy of the original game and its assets. The reviewed page says the project is early and not playable yet. Texture, settings, sound, and string formats are marked implemented. Models, map data, ride scripts, and saves are partial. Fonts, lip sync, materials, and video are not implemented. Format notes are at opentpw.gu3.me/formats.",
+    "description_zh": "OpenTPW 重实现 Bullfrog 1999 年的《主题公园世界》，也以《模拟主题公园》发行。它需要原版游戏及其资源的完整副本。审阅页面写明项目仍早期，还不能玩。纹理、设置、声音和字符串格式标为已实现。模型、地图、游乐设施脚本和存档是部分实现。字体、口型、材质和视频尚未实现。格式说明在 opentpw.gu3.me/formats。",
+    "requirements": [
+      "A full legal copy of any version of Theme Park World and its assets.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/OpenTPW/OpenTPW/blob/453e779b2bc6be1af6e0886bf472916c9c034d28/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
