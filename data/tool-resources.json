@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openshc",
+    "name": "OpenSHC: reimplementation of Stronghold Crusader",
+    "url": "https://github.com/sourcehold/OpenSHC",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "engine-reimplementation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "OpenSHC is an open-source reimplementation of Stronghold Crusader. It builds as a DLL loaded at game start and hooks functions that have a functionally identical reimplementation. The README requires Stronghold Crusader 1.41 in a Latin-language version such as English or German.",
+    "description_zh": "OpenSHC 是《要塞：十字军东征》的开源重实现。它构建为一个在游戏启动时加载的 DLL，并挂钩那些已有功能等价重实现的函数。README 要求《要塞：十字军东征》1.41 的拉丁语版本，例如英语或德语。",
+    "evidence_url": "https://github.com/sourcehold/OpenSHC/blob/1c294596c5c8a69f3cc8b784d2cc1b3b7211977d/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "Stronghold Crusader 1.41 (Latin version). The README names the Steam release as the easiest copy to obtain and asks for a Latin-language install such as English or German.",
+      "Development uses CMake 3.24 or later, Python 3, and clang-format 22 or later, installed with python -m pip install clang-format.",
+      "GitHub reports the license as GPL-3.0."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
