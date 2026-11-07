@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "lunarcore": {
+    "name": "LunarCore：回合制动画游戏的服务端重实现",
+    "requirements": [
+      "需要 Java 21 JDK。README 建议使用 Java 25 JDK 和 MongoDB 4.0 或更新版本。",
+      "README 写明好友助战尚不可用，模拟宇宙可以打完一局，但许多功能仍缺失。",
+      "审阅页面未说明许可。"
+    ]
   }
 }
