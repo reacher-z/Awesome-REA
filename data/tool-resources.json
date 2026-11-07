@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ropmemu",
+    "name": "ROPMEMU",
+    "url": "https://github.com/Cisco-Talos/ROPMEMU",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "ROPMEMU analyzes code-reuse attacks from a physical memory dump and reconstructs equivalent code for ordinary reverse-engineering tools. Memory forensics uses Volatility plugins. Emulation and multi-path execution use Unicorn. It then recovers a control-flow graph and applies compiler transformations. The reviewed paper is from AsiaCCS 2016. Documentation is on the project wiki.",
+    "description_zh": "ROPMEMU 从物理内存转储分析代码重用攻击，并重建出普通逆向工具可以分析的等价代码。内存取证使用 Volatility 插件。模拟和多路径执行使用 Unicorn。然后它恢复控制流图并做编译器变换。审阅的论文来自 AsiaCCS 2016。文档在项目 wiki。",
+    "requirements": [
+      "A physical memory dump. Follow the project wiki.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Cisco-Talos/ROPMEMU/blob/d73422878525d68a937c55ab6e288bbf1c534fb0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
