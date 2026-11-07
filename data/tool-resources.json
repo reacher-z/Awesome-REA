@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "emudbg",
+    "name": "EmuDbg",
+    "url": "https://github.com/mojtabafalleh/emudbg",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "EmuDbg debugs a Windows executable by disassembling it with Zydis and emulating its instructions. It steps over Windows API calls instead of emulating those calls. cmake -B build configures a source build, and releases include emudbg.exe. The program takes the executable path, an optional -m module to wait for, and -b software, hardware, or noexec. -r sets a breakpoint at an RVA. -watch_section logs execution moving between named sections.",
+    "description_zh": "EmuDbg 用 Zydis 反汇编 Windows 可执行文件，并模拟它的指令来调试。它单步越过 Windows API 调用，而不模拟这些调用。cmake -B build 配置源码构建，发行版包含 emudbg.exe。程序接受可执行文件路径、可选的 -m 等待模块，以及 -b software、hardware 或 noexec。-r 在 RVA 处设置断点。-watch_section 记录执行在指定区段之间的移动。",
+    "requirements": [
+      "Windows. CMake for a source build, or the released emudbg.exe.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/mojtabafalleh/emudbg/blob/4e095c3bf70894f8fe7610c0bdc9911866345c99/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

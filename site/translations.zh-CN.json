@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "emudbg": {
+    "name": "EmuDbg",
+    "requirements": [
+      "需要 Windows。源码构建需要 CMake，或直接使用发行的 emudbg.exe。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
