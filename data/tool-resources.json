@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "kirby64-decomp",
+    "name": "Kirby 64 decompilation",
+    "url": "https://github.com/Kirby64Ret/kirby64",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Kirby 64: The Crystal Shards. The US ROM is named baserom.us.z64. make setup extracts assets and make builds the project. The reviewed setup uses Linux or WSL, python3, git, a MIPS GNU compiler, the qemu-irix package from n64decomp, and uv. The page reports 97 percent of the code matched.",
+    "description_zh": "这是《星之卡比64 水晶碎片》的进行中反编译。美版 ROM 命名为 baserom.us.z64。make setup 提取资源，make 构建项目。审阅的环境是 Linux 或 WSL，需要 python3、git、MIPS GNU 编译器、来自 n64decomp 的 qemu-irix 包，以及 uv。页面报告 97% 的代码已经匹配。",
+    "requirements": [
+      "A US ROM named baserom.us.z64. Linux or WSL, with the packages named above.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Kirby64Ret/kirby64/blob/2844ceae4b9e61c56176851038bdb90fd26513e7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

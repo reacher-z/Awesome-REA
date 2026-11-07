@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "kirby64-decomp": {
+    "name": "星之卡比64反编译",
+    "requirements": [
+      "需要命名为 baserom.us.z64 的美版 ROM。系统为 Linux 或 WSL，并安装上面写明的包。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
