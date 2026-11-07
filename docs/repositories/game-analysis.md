@@ -51,7 +51,7 @@ These projects were discovered automatically and are unreviewed. Categories deri
 - [TeamGDB/Yakumo](https://github.com/TeamGDB/Yakumo) — Static recompilation of a PSP game into a native executable. Vulkan and SDL3. Bring your own copy of the game. **[447 stars]**
 - [AliveTeam/alive\_reversing](https://github.com/AliveTeam/alive_reversing) — Re-implementation of Oddworld: Abe's Exoddus and Oddworld: Abe's Oddysee **[441 stars]** · Curated: [R.E.L.I.V.E.: an Oddworld Abe’s Oddysee and Abe’s Exoddus engine reimplementation](https://awesomerea.org/resources/relive-oddworld-abe-engine-case/)
 - [LazyDuchess/OpenTS2](https://github.com/LazyDuchess/OpenTS2) — Open source re-implementation of The Sims 2 in Unity **[432 stars]**
-- [alexbatalov/fallout2-re](https://github.com/alexbatalov/fallout2-re) — Reverse engineered Fallout 2 **[411 stars]**
+- [alexbatalov/fallout2-re](https://github.com/alexbatalov/fallout2-re) — Reverse engineered Fallout 2 **[411 stars]** · Curated: [Fallout 2 Reference Edition: reverse-engineered C source of the original engine](https://awesomerea.org/resources/fallout2-reference-edition-case/)
 - [CTR-tools/ctr-native](https://github.com/CTR-tools/ctr-native) — A Crash Team Racing Decompilation Project **[405 stars]**
 - [UE-Explorer/UE-Explorer](https://github.com/UE-Explorer/UE-Explorer) — Decompiler and package explorer for Unreal Engine (.upk, .u) files. **[371 stars]** · Curated: [UE Explorer](https://awesomerea.org/resources/ue-explorer/)
 - [ethteck/splat](https://github.com/ethteck/splat) — A binary splitting tool to assist with decompilation and modding projects **[368 stars]** · Curated: [splat](https://awesomerea.org/resources/splat/)
