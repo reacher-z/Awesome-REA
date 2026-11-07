@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pinyon-shift",
+    "name": "Pinyon Shift",
+    "url": "https://github.com/deivid22srk/pinyon-shift-android",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Pinyon Shift statically recompiles Forza Horizon for the Xbox 360 to Windows. The USA retail disc is serial MS-2505, title ID 4D5309C9. ShiftGlue, a fork of ReXGlue, translates the PowerPC code to C++. Vulkan 1.3 is the default renderer and Direct3D 12 is the other option. Internal resolution can reach 4K. Release notes are at 0.3.0. NVIDIA GPUs are the ones qualified so far. The README's checklist still has the Android runtime port unchecked.",
+    "description_zh": "Pinyon Shift 把 Xbox 360 版《极限竞速：地平线》静态重编译到 Windows。美版零售光盘序列号是 MS-2505，标题 ID 是 4D5309C9。ShiftGlue 是 ReXGlue 的分叉，把 PowerPC 代码翻译成 C++。Vulkan 1.3 是默认渲染器，Direct3D 12 是另一个选项。内部分辨率可以到 4K。发布说明在 0.3.0。目前合格的是 NVIDIA 显卡。README 的清单里，Android 运行时移植仍未勾选。",
+    "requirements": [
+      "Windows 10 or 11 x64, and a GPU with Vulkan 1.3 or Direct3D 12. The launcher builds from the USA retail disc.",
+      "License: BSD-3-Clause."
+    ],
+    "evidence_url": "https://github.com/deivid22srk/pinyon-shift-android/blob/dca4da9327bb695561b62011e7007830c44049cc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

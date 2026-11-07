@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pinyon-shift": {
+    "name": "Pinyon Shift",
+    "requirements": [
+      "需要 64 位 Windows 10 或 11，以及支持 Vulkan 1.3 或 Direct3D 12 的显卡。启动器从美版零售光盘构建。",
+      "许可证：BSD-3-Clause。"
+    ]
   }
 }
