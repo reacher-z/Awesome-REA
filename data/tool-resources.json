@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "conkers-bfd-decomp",
+    "name": "Conker's Bad Fur Day decompilation",
+    "url": "https://github.com/DevOldSchool/conkers-bfd-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Conker's Bad Fur Day for the Nintendo 64. The active target is the US release. Local builds use Docker for a pinned IDO toolchain on Linux, Intel macOS, and Apple Silicon. The US ROM is named roms/baserom.us.z64.",
+    "description_zh": "这是 Nintendo 64 游戏《Conker's Bad Fur Day》的匹配反编译。当前目标是美版。本地构建在 Linux、Intel 的 macOS 和 Apple 芯片上用 Docker 运行固定的 IDO 工具链。美版 ROM 命名为 roms/baserom.us.z64。",
+    "requirements": [
+      "Run ./conker doctor, ./conker setup --us roms/baserom.us.z64, and ./conker build.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/DevOldSchool/conkers-bfd-decomp/blob/6d866ba8d41c2c7b424b37b7af51402b3a169cee/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
