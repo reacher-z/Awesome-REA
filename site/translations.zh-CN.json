@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "rsdkv2-decomp": {
+    "name": "RSDKv2 Decompilation：Retro Engine v2 反编译",
+    "requirements": [
+      "运行需要 Sonic Nexus 2008 演示版资源。要用带子模块的 git clone；README 写明 GitHub 源码 ZIP 不含这些子模块。",
+      "Windows 构建使用带“使用 C++ 的桌面开发”工作负载的 Visual Studio、vcpkg、SDL2、libogg 和 libvorbis。Linux 软件包列表包括 cmake、SDL2、libogg 和 libvorbis。macOS 按 dependencies/mac/dependencies.txt 和 Xcode 工程构建。",
+      "GitHub 报告该仓库许可证为 NOASSERTION。"
+    ]
   }
 }
