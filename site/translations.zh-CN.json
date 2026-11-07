@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "time-crisis-2-vr-case": {
+    "name": "时空危机 2 VR",
+    "requirements": [
+      "0.3.3 发布有 Quest 3 APK，包名 org.timecrisis2.arcadevr，以及 Windows x64 压缩包。README 写明这些包包含游戏文件和武器模型。",
+      "用 SideQuest 或 ADB 旁加载 APK。Windows 上解压压缩包并运行 Play VR.cmd。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
