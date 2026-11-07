@@ -36528,5 +36528,31 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sead",
+    "name": "sead: decompilation of Nintendo EAD libraries",
+    "url": "https://github.com/aboood40091/sead",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "software",
+    "description_en": "sead is a decompilation of the engine and libraries developed by Nintendo EAD, now EPD, as found in New Super Mario Bros. U and other games. The README describes engine/ as the standard library, nw_ptcl as a wrapper around NintendoWareForCafe Eft, and agl as the graphics library. It says a byte-identical rebuild is out of reach without the NSMBU compiler, and the current goal is matching functionality and efficiency.",
+    "description_zh": "sead 反编译任天堂 EAD（现为 EPD）开发的引擎和库，这些代码出现在《新超级马力欧兄弟 U》和其他游戏中。README 把 engine/ 描述为标准库，把 nw_ptcl 描述为 NintendoWareForCafe Eft 的包装，把 agl 描述为图形库。它写明没有 NSMBU 的编译器版本就无法做到逐字节重建，当前目标是功能和效率与原版相当。",
+    "evidence_url": "https://github.com/aboood40091/sead/blob/4b48682902e5c3d84f83db39bcf33a635b9c0757/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The README sets the goal as functional parity with the original libraries. It says a 1:1 decompilation of the NSMBU sead classes is impossible without the compiler version used for that game.",
+      "GitHub's license metadata for this repository is empty."
+    ],
+    "requirement_facets": [
+      "limits",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
