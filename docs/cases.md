@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -136,7 +136,7 @@
 - [**Wind Waker HD decompilation: functions verified against the recompiled Wii U game**](https://github.com/ZeldaWWHDDecomp/wwhd) - Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### Static recompilations (48)
+### Static recompilations (49)
 
 - [**Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port**](https://github.com/BanjoRecomp/BanjoRecomp) - Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Banjo-Kazooie into a native port on N64ModernRuntime, rendered by RT64 and extended with mod support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/banjo-recompiled-case/)</sub>
 - [**C2C: hybrid recompilation and hand decompilation of Crash Bandicoot 2**](https://github.com/ughman/c2c) - An early reverse-engineering effort on PlayStation Crash Bandicoot 2 that converts the engine’s MIPS machine code directly into a very large C file and runs it against a modified PCSX-R emulator library for hardware I/O. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -186,6 +186,7 @@
 - [**Weeping of the Empire: statically recompiling Tears of the Kingdom for Windows**](https://github.com/daniel-madrid-07/weeping-of-the-empire) - Weeping of the Empire builds a native Windows port of The Legend of Zelda: Tears of the Kingdom from the user's Switch game dump. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/weeping-of-the-empire-case/)</sub>
 - [**Wind Waker HD Recomp: a native port by static recompilation of the Wii U game**](https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp) - Statically recompiles The Wind Waker HD’s Wii U PowerPC code to C ahead of time, reimplements the Cafe OS libraries the game uses and implements GX2 graphics on Metal or Vulkan, producing native macOS, Linux, Windows and Android builds without a Cemu runtime. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-hd-recomp-case/)</sub>
 - [**Zelda 64: Recompiled — a native Majora’s Mask port without a full source decompilation**](https://github.com/Zelda64Recomp/Zelda64Recomp) - Uses N64Recomp to translate Majora’s Mask into a native application and RT64 for rendering. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda64recomp-case/)</sub>
+- [**ZOE-Recompiled**](https://github.com/Yaz-Myst/ZOE-Recompiled) - ZOE-Recompiled is a native Windows port of Zone of the Enders for the PlayStation 2, USA SLUS-201.48. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zoe-recompiled-case/)</sub>
 
 <a id="game-port"></a>
 ### Ports of reconstructed source (33)
