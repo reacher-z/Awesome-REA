@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "forza2-regpu-case",
+    "name": "Forza Motorsport 2 ReGPU",
+    "url": "https://github.com/zer0ducksgiven/Forza-Motorsport-2-ReGPU",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Forza Motorsport 2 ReGPU is a native Windows port of Forza Motorsport 2 for the Xbox 360. XenonRecomp statically recompiles the PowerPC executable to x64 C++, 51,034 functions, and a Direct3D 12 renderer replaces Xenos GPU emulation.",
+    "description_zh": "Forza Motorsport 2 ReGPU 是《Forza Motorsport 2》Xbox 360 版的 Windows 原生移植。XenonRecomp 把 PowerPC 可执行文件静态重编译为 x64 C++，共 51,034 个函数，Direct3D 12 渲染器取代了 Xenos GPU 模拟。",
+    "requirements": [
+      "The installer asks for the player's European disc image and a title update file, and checks both against the build. DLC packages are optional.",
+      "A source build needs Visual Studio 2022 Build Tools, LLVM clang-cl, CMake, Ninja, Python 3, and an FFmpeg Windows x64 LGPL shared build for XMA audio.",
+      "The reviewed README does not name a license for the port. FFmpeg stays under its own LGPL license."
+    ],
+    "evidence_url": "https://github.com/zer0ducksgiven/Forza-Motorsport-2-ReGPU/blob/664bdad8cb3552aa589db8cb3dd38531dc637d82/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
