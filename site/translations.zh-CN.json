@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "opengothic": {
+    "name": "OpenGothic：哥特王朝 2：夜鸦的重实现",
+    "requirements": [
+      "需要哥特王朝 2：夜鸦。README 写明 OpenGothic 不提供游戏素材或脚本。支持的系统是带 DirectX 12 或 Vulkan 的 Windows、带 Vulkan 的 Linux，以及带 Metal 的 macOS。",
+      "审阅页面未说明许可。"
+    ]
   }
 }
