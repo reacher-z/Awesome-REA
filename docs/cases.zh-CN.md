@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -225,7 +225,7 @@
 - [**Vandal Hearts：基于一致性反编译的原生 PC 移植**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - 以 shao113 的 PlayStation 版 Vandal Hearts 一致性反编译为基础，新增日版一致性代码树，并将两者延伸为原生 Windows 与 Linux 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### 引擎重实现 (47)
+### 引擎重实现 (48)
 
 - [**Age of Empires Free Software Remake：基于原版数据的重新实现**](https://github.com/FolkertVanVerseveld/aoe) - 以基于 SDL2 和 OpenGL 的跨平台 C++17 引擎重新实现 Microsoft 的《帝国时代》及其资料片《罗马复兴》，载入原版游戏的 DRS 归档和 language.dll 资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo：逆向实现的 Minecraft 服务端**](https://github.com/bravoserver/bravo) - 以 Python 基于 Twisted 重新实现 Minecraft Alpha 与 Beta 时期多人游戏的服务端；其文档称这是从零编写的逆向实现，致谢了网络流量转储的提供者，并说明通用的 Minecraft 资料已贡献给社区 wiki。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/bravo-minecraft-server-case/)</sub>
@@ -249,6 +249,7 @@
 - [**Nanolathe：附研究文档的 Total Annihilation 引擎重实现**](https://github.com/nanolathe-gg/nanolathe) - 用 Go 重实现兼容 Total Annihilation 的策略游戏引擎，公开文件格式研究并提供不同玩法配置。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nanolathe-case/)</sub>
 - [**nfs-mw：用 Rust 重建《极品飞车：最高通缉》**](https://github.com/47PADO47/nfs-mw) - nfs-mw 用 Rust 重建 2005 年 PC 版《极品飞车：最高通缉》v1.3，并从用户本机安装目录读取数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nfs-mw-case/)</sub>
 - [**NuVelocity Engine：重实现 Reflexive 的 Velocity Engine**](https://github.com/NuVelocity/NuVelocity) - NuVelocity Engine 用 C++ 和 SDL3 重实现 Reflexive Entertainment 的 Velocity Engine。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/nuvelocity-engine-case/)</sub>
+- [**Open Reckless Drivin'**](https://github.com/natecraddock/open-reckless-drivin) - Open Reckless Drivin' 是 Macintosh 共享软件 Reckless Drivin' 的 Zig 重实现。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-reckless-drivin/)</sub>
 - [**OpenAWE：Remedy 的 Alan Wake 引擎的开源重新实现**](https://github.com/OpenAWE-Project/OpenAWE) - 以 C++ 和 OpenGL 重新实现 Remedy Entertainment 的 Alan Wake 引擎（后来称为 Northlight），目标是借助使用者自己的游戏数据，以可移植方式运行《心灵杀手》和《心灵杀手：美国梦魇》，并把《量子破碎》乃至《控制》列为后续目标。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/openawe-alan-wake-engine-case/)</sub>
 - [**OpenBattlefield2：尚未完成的 Refractor 2 引擎重实现**](https://github.com/Moxnatiy/OpenBattlefield2) - C++20 重实现 Battlefield 2 的 Refractor 2 引擎，读取原始游戏数据，记录菜单渲染、关卡载入及服务器互通；公开的准星研究引用 REA/Ghidra 证据 ID 和二进制地址，主要玩法系统仍未完成。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/openbattlefield2-refractor-engine-case/)</sub>
 - [**OpenDiablo2 暗黑破坏神 2 引擎**](https://github.com/OpenDiablo2/OpenDiablo2) - OpenDiablo2 是一个用 Go 编写的跨平台动作角色扮演游戏引擎，支持运行 Diablo 2。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendiablo2/)</sub>

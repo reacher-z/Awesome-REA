@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "open-reckless-drivin",
+    "name": "Open Reckless Drivin'",
+    "url": "https://github.com/natecraddock/open-reckless-drivin",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Open Reckless Drivin' is a Zig reimplementation of the Macintosh shareware game Reckless Drivin'. The original source was released by Jonas Echterhoff in 2019 and is at jechter/RecklessDrivin. The game is not playable: startup decompresses and loads the data, then frees it and exits.",
+    "description_zh": "Open Reckless Drivin' 是 Macintosh 共享软件 Reckless Drivin' 的 Zig 重实现。原作者 Jonas Echterhoff 在 2019 年公开了源代码，位于 jechter/RecklessDrivin。游戏还不能玩：启动时解压并载入数据，然后释放并退出。",
+    "requirements": [
+      "Build with the latest stable Zig using zig build. The README says it has been built on Arch Linux. The binary is zig-out/bin/reckless-drivin.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/natecraddock/open-reckless-drivin/blob/d7c1b76ccb213ff34e51fc2c9e39e1e0c69c27f2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "open-reckless-drivin": {
+    "name": "Open Reckless Drivin'",
+    "requirements": [
+      "使用最新稳定版 Zig，运行 zig build。README 写明曾在 Arch Linux 上构建。二进制文件是 zig-out/bin/reckless-drivin。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
