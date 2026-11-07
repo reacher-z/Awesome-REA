@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "zoids-legacy-decomp": {
+    "name": "Zoids Legacy 反编译",
+    "requirements": [
+      "需要 Python 3、C 预处理器、ARM binutils，以及用 GCC 14 构建的 agbcc 提交 da598c1d918402c42c0c0d7128ba14567f3175e9。用美版 ROM 运行 make verify。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
