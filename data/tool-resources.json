@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "opennefia-love-case",
+    "name": "OpenNefia prototype: Lua reimplementation of Elona",
+    "url": "https://github.com/Ruin0x11/OpenNefia",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "This repository is an older OpenNefia prototype, a ground-up Lua and LÖVE reimplementation of Elona aimed at broader modding. The README says development moved to OpenNefia/OpenNefia and that this copy is no longer supported.",
+    "description_zh": "该仓库是较早的 OpenNefia 原型，用 Lua 和 LÖVE 从零重实现 Elona，目的是扩大模组支持。README 写明开发已转到 OpenNefia/OpenNefia，这一份不再受支持。",
+    "requirements": [
+      "The README says this prototype is no longer supported and points current development to https://github.com/OpenNefia/OpenNefia.git.",
+      "It uses Lua and the LÖVE engine.",
+      "License: MIT."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/Ruin0x11/OpenNefia/blob/dbe3eaa38fb8730bc74007bf9734a54376429490/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
