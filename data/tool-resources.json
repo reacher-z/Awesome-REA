@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sonic1-j2me-decomp",
+    "name": "Sonic 1 J2ME decompilation",
+    "url": "https://github.com/Iso-Kilo/Sonic-1-J2ME-Decompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This decompiles the 2005 Java mobile port of Sonic the Hedgehog. Part 1 is the 240 by 320 version of the first three zones and uses the original game's graphics. Part 2 is the 208 by 208 version of the later three zones. The README says the decompilation is still obfuscated and cannot be built.",
+    "description_zh": "该项目反编译 2005 年 Java 手机版《索尼克》。第一部分是前三个区域的 240×320 版本，使用原作的图像。第二部分是后三个区域的 208×208 版本。README 写明反编译结果仍然混淆，并且还不能构建。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/Iso-Kilo/Sonic-1-J2ME-Decompilation/blob/faf958e0be65898422d3a714ff0b2d4a81c1acb9/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
