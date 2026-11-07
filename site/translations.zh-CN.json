@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "forza2-regpu-case": {
+    "name": "Forza Motorsport 2 ReGPU",
+    "requirements": [
+      "安装器要求玩家提供欧版光盘镜像和标题更新文件，并对照该构建进行校验。DLC 包是可选的。",
+      "从源码构建需要 Visual Studio 2022 Build Tools、LLVM clang-cl、CMake、Ninja、Python 3，以及用于 XMA 音频的 FFmpeg Windows x64 LGPL 共享构建。",
+      "审阅的 README 没有为移植本身写许可证。FFmpeg 保留自己的 LGPL 许可证。"
+    ]
   }
 }
