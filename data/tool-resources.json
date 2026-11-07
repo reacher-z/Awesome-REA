@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ssbu-ps4-recomp",
+    "name": "Super Smash Bros. Ultimate PS4 recompilation",
+    "url": "https://github.com/iHaiDeeZ/SSBU",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This brings a static recompilation of Super Smash Bros. Ultimate version 13.0.2 to the PlayStation 4. The game's AArch64 code is translated to C ahead of time, and the runtime draws with Direct3D 11 through DXVK. The README says matches are playable with up to four controllers, and that the player builds the package from their own dump. Build steps are in docs/BUILDING.md.",
+    "description_zh": "该项目把《任天堂明星大乱斗 特别版》13.0.2 的静态重编译带到 PlayStation 4。游戏的 AArch64 代码被提前翻译成 C，运行时通过 DXVK 用 Direct3D 11 绘制。README 写明对战可以玩，最多四个手柄，玩家用自己的转储构建安装包。构建步骤在 docs/BUILDING.md。",
+    "requirements": [
+      "The reviewed README says there are no release packages. Build from docs/BUILDING.md with a dump of version 13.0.2.",
+      "License: MIT for this repository's own code. The README says patches/windowsmash-ps4.patch is a patch for a WindowSmash checkout."
+    ],
+    "evidence_url": "https://github.com/iHaiDeeZ/SSBU/blob/7e83c0eb9367c657960876f1ea2b4b5491d99099/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
