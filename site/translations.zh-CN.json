@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pcdump-bn": {
+    "name": "Pseudo C Dump（Binary Ninja 伪 C 导出）",
+    "requirements": [
+      "需要 Binary Ninja 构建 3814 或更新版本。插件使用 Python 3。",
+      "README 以 LICENSE 中的 Apache 2.0 许可证发布该插件。"
+    ]
   }
 }
