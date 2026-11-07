@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "opencrossing-anbernic-case": {
+    "name": "OpenCrossing Anbernic",
+    "requirements": [
+      "需要支持 PortMaster 的设备，以及玩家自己的《Animal Crossing》美版光盘，游戏 ID 为 GAFE01。.iso、.gcm 和 .ciso 镜像都可以。PAL 和日版光盘会被拒绝。",
+      "把发布包中的 ports 文件夹复制到 SD 卡，把 Animal Crossing.sh 放到 ROMS/Ports/，把光盘镜像放到 ports/ac-gc/rom/。",
+      "README 列出了 H700 的 Anbernic 设备。RG-34XX SP 是测试过的设备。审阅的 README 没有写许可证。"
+    ]
   }
 }
