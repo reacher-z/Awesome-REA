@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "syndwarsfx": {
+    "name": "辛迪加战争粉丝扩展",
+    "requirements": [
+      "需要原版《辛迪加战争》PC 光盘或光盘镜像。GNU 和 UNIX 从源码编译。使用 SDL、Vorbis 和 OpenAL。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

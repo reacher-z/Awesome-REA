@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "syndwarsfx",
+    "name": "Syndicate Wars Fan Expansion",
+    "url": "https://github.com/swfans/syndwarsfx",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "Syndicate Wars Fan Expansion ports the 1996 DOS game Syndicate Wars to GNU, macOS, and Windows. It replaces the DOS-specific parts of the disassembled executable with SDL for input and video, Vorbis for music, and OpenAL for sound. Single-player uses the original code for parts that are not remade. Network multiplayer is not connected. Installation needs the original PC CD or a digital CD image. The multilingual European and American releases were tested. German and the Japanese SW Premium disc add further languages.",
+    "description_zh": "Syndicate Wars Fan Expansion 把 1996 年 DOS 游戏《辛迪加战争》移植到 GNU、macOS 和 Windows。它把反汇编可执行文件里的 DOS 专用部分换成 SDL 输入和视频、Vorbis 音乐和 OpenAL 声音。单人部分里尚未重做的代码仍使用原版代码。网络游戏没有接通。安装需要原版 PC 光盘或数字光盘镜像。多语言欧版和美版经过测试。德文版和日文 SW Premium 光盘提供更多语言。",
+    "requirements": [
+      "An original Syndicate Wars PC CD or CD image. GNU and UNIX builds compile from source. SDL, Vorbis, and OpenAL are used.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/swfans/syndwarsfx/blob/5c4b0d562bd3ab465ce3016a25c2932d290ea634/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
