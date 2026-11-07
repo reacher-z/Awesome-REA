@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "strikers",
+    "name": "Strikers",
+    "url": "https://github.com/new-coke/strikers",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "Strikers is a native port of Super Mario Strikers built on Yannick Suter's decompilation. It runs on Windows, Linux, macOS, Steam Deck, and Nintendo Switch. One executable covers the US, European, and Japanese discs and loads ISO, GCM, CISO, GCZ, or an extracted folder. Graphics go through Metal, Vulkan, or Direct3D 12 via Aurora. Build steps are on the project wiki.",
+    "description_zh": "Strikers 是基于 Yannick Suter 反编译的《超级马里奥激战前锋》本地移植。它运行在 Windows、Linux、macOS、Steam Deck 和 Nintendo Switch 上。一个可执行文件覆盖美版、欧版和日版光盘，并读取 ISO、GCM、CISO、GCZ 或已提取的文件夹。图形通过 Aurora 走 Metal、Vulkan 或 Direct3D 12。构建步骤在项目 wiki。",
+    "requirements": [
+      "Game data from a personal copy of Super Mario Strikers. Follow the platform page on the wiki to build.",
+      "License: CC0 1.0 for the original porting code, tools, and documentation. MusyX keeps its upstream MIT notice. Upstream ODE portions keep their BSD-style licence. The settings app uses Qt 6 under LGPL 3.0."
+    ],
+    "evidence_url": "https://github.com/new-coke/strikers/blob/590904743fa7ee0b63b66290b4ddd11e1e226b75/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
