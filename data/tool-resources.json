@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pvz-portable",
+    "name": "PvZ-Portable: a reimplementation of Plants vs. Zombies GOTY",
+    "url": "https://github.com/wszqkzqk/PvZ-Portable",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Cross-platform reimplementation of Plants vs. Zombies: Game of the Year Edition. The README says the code is a manual reimplementation from community research, and that the author did not reverse engineer the original program. It names Linux, Windows, macOS, Android, iOS, WebAssembly, and Switch, using OpenGL ES 2.0 and SDL, with a browser build that still needs the player's game data.",
+    "description_zh": "《植物大战僵尸》年度版的跨平台重实现。README 写明代码是根据社区研究手工重写的，作者没有逆向原始程序。它点名 Linux、Windows、macOS、Android、iOS、WebAssembly 和 Switch，使用 OpenGL ES 2.0 和 SDL，浏览器构建仍然需要玩家自己的游戏数据。",
+    "evidence_url": "https://github.com/wszqkzqk/PvZ-Portable/blob/25102237612a82cbe0282d5a8c5db406d029e647/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository does not contain copyrighted game assets. The README says the player must supply main.pak and the properties directory from a legally purchased GOTY copy.",
+      "LGPL-3.0-or-later. The README says LICENSE is the LGPL-3.0 text and COPYING is the GPL-3.0 text it references."
+    ]
   }
 ]

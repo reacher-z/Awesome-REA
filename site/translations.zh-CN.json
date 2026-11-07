@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pvz-portable": {
+    "name": "PvZ-Portable：植物大战僵尸年度版的重实现",
+    "requirements": [
+      "仓库不含受版权保护的游戏素材。README 写明玩家必须提供合法购买的年度版中的 main.pak 和 properties 目录。",
+      "LGPL-3.0-or-later。README 写明 LICENSE 是 LGPL-3.0 文本，COPYING 是它所引用的 GPL-3.0 文本。"
+    ]
   }
 }
