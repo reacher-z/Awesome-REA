@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "aerogauge-recomp",
+    "name": "AeroGauge: Recompiled",
+    "url": "https://github.com/alondero/aerogauge-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "AeroGauge: Recompiled is a native build of the Nintendo 64 game AeroGauge. Supported targets are Windows 10 or later with Direct3D 12, Linux x64 or ARM64 with Vulkan, and Android 9 or later on ARM64 with Vulkan. macOS is not a supported target. Accepted ROMs are USA and Japanese revision A.",
+    "description_zh": "AeroGauge: Recompiled 是任天堂 64 游戏 AeroGauge 的原生构建。支持的目标是带 Direct3D 12 的 Windows 10 或更新版本、带 Vulkan 的 Linux x64 或 ARM64，以及带 Vulkan 的 Android 9 或更新版本的 ARM64。macOS 不是支持的目标。接受的 ROM 是美版和日版修订 A。",
+    "requirements": [
+      "The player supplies their own ROM. Desktop names include AeroGauge (USA).z64. Android imports the ROM in the app.",
+      "The reviewed README points to a LICENSE file and does not name the license in the text."
+    ],
+    "evidence_url": "https://github.com/alondero/aerogauge-recomp/blob/9d9cba7c0b7ac3136cb660a4d3096677c30f089a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
