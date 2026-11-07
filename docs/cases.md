@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -188,7 +188,7 @@
 - [**Zelda 64: Recompiled — a native Majora’s Mask port without a full source decompilation**](https://github.com/Zelda64Recomp/Zelda64Recomp) - Uses N64Recomp to translate Majora’s Mask into a native application and RT64 for rendering. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda64recomp-case/)</sub>
 
 <a id="game-port"></a>
-### Ports of reconstructed source (33)
+### Ports of reconstructed source (34)
 
 - [**2 Ship 2 Harkinian: a native Majora’s Mask port built on the decompilation**](https://github.com/2ship2harkinian/2ship2harkinian) - Builds native Windows, Linux and macOS versions of The Legend of Zelda: Majora’s Mask from an adapted copy of the zeldaret/mm decompilation, with libultraship reimplementing N64 SDK functions. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/2ship2harkinian-mm-port-case/)</sub>
 - [**3SX: a native Street Fighter III: 3rd Strike port continuing the PS2 decompilation**](https://github.com/crowded-street/3sx) - Builds Street Fighter III: 3rd Strike as native C for Windows, macOS and Linux, continuing the 3s-decomp PS2 decompilation, with SDL3 for video, input and audio and GekkoNet for rollback netplay. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/3sx-third-strike-native-port-case/)</sub>
@@ -204,6 +204,7 @@
 - [**Dusklight: a native Twilight Princess port built on the decompilation**](https://github.com/TwilitRealm/dusklight) - Reimplements Twilight Princess as a native application for desktop and mobile platforms, building on the zeldaret/tp decompilation and the Aurora GameCube/Wii compatibility layer. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dusklight-twilight-princess-port-case/)</sub>
 - [**Ghostship: a libultraship native port of Super Mario 64**](https://github.com/HarbourMasters/Ghostship) - Builds Super Mario 64 as a native PC, Switch and Android program by compiling decompilation-style game source against the libultraship platform library. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ghostship-sm64-port-case/)</sub>
 - [**GoldenEye 007: an agent-assisted native port from a decompilation**](https://github.com/jkdansereau/goldeneye-pc-port) - Builds a native PC port on the existing GoldenEye 007 decompilation, with a host platform layer and assets extracted from the user’s ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/goldeneye-pc-port-case/)</sub>
+- [**Halo 64: Halo CE multiplayer on the Nintendo 64**](https://github.com/JackTulli/halo-64) - Halo 64 compiles decompiled Halo: Combat Evolved multiplayer code for the Nintendo 64 VR4300, with split screen for up to four players, bots, and a Firefight mode. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/halo-64-case/)</sub>
 - [**ico-pc: a native ICO port compiled from the PS2 decompilation**](https://github.com/nathanialf/ico-pc) - Compiles the decompiled C of the PlayStation 2 game ICO natively for Windows, Linux, Android, iPhone and Apple-silicon Macs, with host code standing in for the PS2 hardware and Sony libraries. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ico-pc-port-case/)</sub>
 - [**Kingdom Hearts 358/2 Days: native PC port built on a matching decompilation**](https://github.com/Yokimitsuro/khdays-port) - Compiles the C of the khdays-decomp matching decompilation for Windows x64 and supplies a native platform layer for the Nintendo DS hardware, SDK services and sound driver. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/khdays-native-pc-port-case/)</sub>
 - [**LEGO Island, portable: a multi-platform port of the decompiled source**](https://github.com/isledecomp/isle-portable) - Adapts the LEGO Island decompilation into a portable build for desktop, mobile, console, DOS and Web targets. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lego-island-portable-case/)</sub>
