@@ -36543,6 +36543,7 @@
     "description_zh": "Trail of Bits 开发、现已归档的可执行文件提升器，可将 32 位和 64 位 Linux ELF 与 Windows PE 二进制转换为 LLVM bitcode，用于分析或重新编译。控制流恢复由 mcsema-disass 完成，它依赖 IDA Pro 输出 protobuf 格式的控制流图，随后 mcsema-lift 借助 Remill 库翻译指令；README 列出其支持大部分 x86 与 x86-64 整数、x87、MMX、SSE 和 AVX 指令，以及 AArch64、SPARC32 和 SPARC64 的部分指令。提升得到的 bitcode 可交给 LLVM 优化遍、KLEE 或 libFuzzer 处理，也可重新编译成可运行的程序。",
     "evidence_url": "https://github.com/lifting-bits/mcsema/blob/26368053f761be05dab708bc28fb97090c64b2be/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "The GitHub repository is archived and read-only. Its last commit, on 2022-04-26, only narrowed the README's supported LLVM versions to 9–11; the newest release, v3.0.26 of 2021-04-01, has no assets, and v3.0.24 of 2021-03-05 was the last with prebuilt archives, for LLVM 9, 10 and 11 on Ubuntu 18.04 and 20.04 amd64. The README still calls McSema actively maintained, which the archived state no longer supports; Remill, the instruction library it builds on, continues in its own repository.",
