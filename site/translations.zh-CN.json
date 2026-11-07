@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "xenosaga-1-decomp": {
+    "name": "异度传说 I 反编译",
+    "requirements": [
+      "历史编译器是 32 位 Linux 程序。Ubuntu 需要 libc6-i386 和 python3-venv。tools/tu/toolchain.py --check 核对 config/toolchain-identity.json 里的工具链哈希。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
