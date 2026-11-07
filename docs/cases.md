@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -225,7 +225,7 @@
 - [**Vandal Hearts: native PC port built on matching decompilations**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - Builds on shao113’s matching decompilation of PlayStation Vandal Hearts, adds a Japanese matching tree, and carries both through to a native Windows and Linux port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### Engine reimplementations (47)
+### Engine reimplementations (48)
 
 - [**Age of Empires Free Software Remake: a re-implementation on the original data**](https://github.com/FolkertVanVerseveld/aoe) - Re-implements Microsoft’s Age of Empires and its Rise of Rome expansion as a cross-platform C++17 engine on SDL2 and OpenGL that loads the original game’s DRS archives and language.dll resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo: a reverse-engineered Minecraft server**](https://github.com/bravoserver/bravo) - Reimplements the server side of Minecraft’s Alpha- and Beta-era multiplayer in Python on Twisted; its documentation calls it a reverse-engineered implementation written from scratch, credits network traffic dumps and says general Minecraft data went to a community wiki. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/bravo-minecraft-server-case/)</sub>
@@ -239,6 +239,7 @@
 - [**Horizon: a Rust rewrite of Minecraft: Java Edition 26.3 with REA bytecode queries**](https://github.com/ludovic111/horizon) - Rewrites Minecraft: Java Edition 26.3 as a native Rust client, dedicated server and launcher that prepare their resources from the user’s own copy of the game. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/horizon-minecraft-rust-rewrite-case/)</sub>
 - [**impacto: a reimplementation of the MAGES. visual-novel engine**](https://github.com/CommitteeOfZero/impacto) - Reimplements the MAGES. visual-novel engine, used by the Science Adventure and Memories Off series, in C++ with OpenGL, running supported titles from the user’s original data files through per-game Lua profiles in one binary. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/impacto-mages-engine-case/)</sub>
 - [**IW4L: a Rust runtime that plays Modern Warfare 2 from the user’s installed game**](https://github.com/vladtrc/iw4L) - Implements a standalone runtime for Call of Duty: Modern Warfare 2 (2009) in Rust on Bevy and wgpu, loading maps, models, textures and weapons from the user’s installed game through native FastFile readers and translating its Direct3D 9 shaders to WGSL. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/iw4l-mw2-rust-runtime-case/)</sub>
+- [**Jazz² Resurrection**](https://github.com/deathkiller/jazz2) - Jazz² Resurrection reimplements Jazz Jackrabbit 2 from 1998. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/jazz2-resurrection/)</sub>
 - [**Jazz² Resurrection: a native C++ reimplementation of Jazz Jackrabbit 2**](https://github.com/deathkiller/jazz2-native) - Reimplements Jazz Jackrabbit 2 (1998) as a native C++ game on an extensively modified nCine engine, converting the user’s original game files into its own cache on first start. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/jazz2-resurrection-engine-case/)</sub>
 - [**Kinoko: reimplementing Mario Kart Wii’s physics engine for exact ghost replay**](https://github.com/vabold/Kinoko) - Re-implements Mario Kart Wii’s physics engine in C++ as a command-line simulator, continuing stblr/Hanachan’s goal of perfectly accurate time-trial ghost replay. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/kinoko-mkwii-physics-reimplementation-case/)</sub>
 - [**LBA2 Remake: a Little Big Adventure 1 and 2 reimplementation in TypeScript and Three.js**](https://github.com/LBALab/lba2remake) - Reimplements the engine of Little Big Adventure 2, and now also Little Big Adventure 1, in TypeScript, Three.js and React so that it runs in a browser on resources imported from the user’s copy of the game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/lba2remake-little-big-adventure-case/)</sub>

@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "jazz2-resurrection": {
+    "name": "Jazz² Resurrection",
+    "requirements": [
+      "需要原版《爵士杰克兔 2》文件。从 deathkiller/jazz2-native 构建。发行版在这个仓库。",
+      "许可证：GNU General Public License v3.0。"
+    ]
   }
 }
