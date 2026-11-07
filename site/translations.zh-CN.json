@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "tecmo-super-bowl-nes-case": {
+    "name": "Tecmo 超级碗 NES 反汇编",
+    "requirements": [
+      "把 tools 文件夹里的 asm6f_32.exe 复制到 master_build.asm 旁边，并把原始 ROM 放在同一处，命名为 TSB.nes。",
+      "用 asm6f_32.exe master_build.asm -L 构建。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
