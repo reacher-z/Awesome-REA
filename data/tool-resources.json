@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "namco-2x-systems",
+    "name": "Namco 2x Systems",
+    "url": "https://github.com/spacestate1/namco22-decompile",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "Namco 2x Systems rebuilds Namco System 21, 22, and 23 arcade games for Linux and Windows from MAME ROM sets, version 0.271 or later. The reviewed playable list includes Prop Cycle, Rave Racer, Tokyo Wars, Dirt Dash, Armadillo Racing, Time Crisis, Ace Driver, Cyber Commando, Ridge Racer 2, Cyber Sled, Time Crisis II, Crisis Zone, and Angler King. Each game names its zip, such as propcycl.zip or timecrs2.zip. Checksums are in docs/ROM_CHECKSUMS.md. The DSP BIOS is built in, so namcoc71.zip is not required.",
+    "description_zh": "Namco 2x Systems 用 MAME 0.271 或更高版本的 ROM 集，把南梦宫 System 21、22 和 23 的街机游戏重建到 Linux 和 Windows。审阅的可玩列表包括 Prop Cycle、Rave Racer、Tokyo Wars、Dirt Dash、Armadillo Racing、Time Crisis、Ace Driver、Cyber Commando、Ridge Racer 2、Cyber Sled、Time Crisis II、Crisis Zone 和 Angler King。每个游戏写明了自己的 zip，例如 propcycl.zip 或 timecrs2.zip。校验值在 docs/ROM_CHECKSUMS.md。DSP BIOS 已经内置，因此不需要 namcoc71.zip。",
+    "requirements": [
+      "The MAME zip named for each game. Linux build scripts such as ./build.sh take that zip.",
+      "License: MIT for this repository's code. Nuklear is MIT or public domain. The Windows programs also include SDL2 and zlib under the zlib license, and Mesa."
+    ],
+    "evidence_url": "https://github.com/spacestate1/namco22-decompile/blob/8f2ed7f4ed5c3fb5fecbbd29bbf6a6bf13876b2c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
