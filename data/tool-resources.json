@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "buckshot-decomp",
+    "name": "Buckshot Roulette Decompilation",
+    "url": "https://github.com/uncreativeCultist/buckshot-decomp-public",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a decompilation of Buckshot Roulette by Mike Klubnika. The README calls it full and marks that word with an asterisk, without explaining the mark. It says the repository contains assets the author does not own.",
+    "description_zh": "该仓库是 Mike Klubnika 的 Buckshot Roulette 的反编译。README 称之为完整，并在这个词上加了星号，但没有解释星号。它写明仓库里有作者并不拥有的资源。",
+    "requirements": [
+      "The original game is published at mikeklubnika.itch.io/buckshot-roulette.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/uncreativeCultist/buckshot-decomp-public/blob/5da18fc8aae5c4209ffee6b80b282e4301cf763f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
