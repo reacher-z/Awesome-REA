@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "space-channel-5-native": {
+    "name": "太空频道 5 原生移植",
+    "requirements": [
+      "需要带全部音轨的美版 Dreamcast GDI，以及 OpenGL 3.3 驱动。",
+      "许可证：GPL-2.0-or-later。源自 Flycast 的组件为 GPL-2.0-or-later。Dreamcast-Forge 仍为 MIT。"
+    ]
   }
 }

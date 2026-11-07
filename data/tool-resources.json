@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "space-channel-5-native",
+    "name": "Space Channel 5 native port",
+    "url": "https://github.com/ZoomiesZaggy/Space-Channel-5",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This translates the USA Dreamcast release of Space Channel 5 ahead of time into native modules. Preview v0.1.0-preview.2 runs SpaceChannel5.exe on Windows x64, SpaceChannel5 on Linux x64 and ARM64, and SpaceChannel5.app on Apple silicon and Intel macOS. The launcher checks a USA GDI and its track files. Gameplay does not use an SH4 interpreter. Flycast supplies device, rendering, and audio components. OpenGL 3.3 is required. Original 4:3 framing is the default.",
+    "description_zh": "该项目把 Dreamcast 美版《太空频道 5》提前翻译成原生模块。预览版 v0.1.0-preview.2 在 Windows x64 上运行 SpaceChannel5.exe，在 Linux x64 和 ARM64 上运行 SpaceChannel5，在 Apple silicon 和 Intel macOS 上运行 SpaceChannel5.app。启动器检查美版 GDI 及其音轨文件。游戏过程不使用 SH4 解释器。Flycast 提供设备、渲染和音频组件。需要 OpenGL 3.3。默认是原始 4:3 画幅。",
+    "requirements": [
+      "A USA Dreamcast GDI with all track files, and an OpenGL 3.3 driver.",
+      "License: GPL-2.0-or-later. Flycast-derived components are GPL-2.0-or-later. Dreamcast-Forge remains MIT."
+    ],
+    "evidence_url": "https://github.com/ZoomiesZaggy/Space-Channel-5/blob/ff246d27baabeee6c7a342fd7ce69f6755e2d5cd/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
