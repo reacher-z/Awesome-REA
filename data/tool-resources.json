@@ -140636,5 +140636,27 @@
     "additional_evidence_urls": [
       "https://github.com/synamaxmusic/bar-decomp/blob/bd312023654ed73596026fee93128f1939cc3a17/LICENSE"
     ]
+  },
+  {
+    "id": "smw-recomp",
+    "name": "Super Mario World recompilation",
+    "url": "https://github.com/mstan/SuperMarioWorldRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Super Mario World for the SNES into C with snesrecomp. The 65816 code becomes functions in src/gen. PPU, APU, DMA, and registers stay in a C reimplementation of the SNES hardware. SuperMarioWorldSNESRecomp.exe or the Linux AppImage asks for a USA ROM in sfc or smc form and remembers the path in rom.cfg. The reviewed page says Yoshi's Island and Donut Plains were played through, and Vanilla Dome was in progress. Worlds 4 through 7 were not hand-verified.",
+    "description_zh": "该项目用 snesrecomp 把超级任天堂游戏《超级马里奥世界》重编译成 C。65816 代码变成 src/gen 里的函数。PPU、APU、DMA 和寄存器留在 SNES 硬件的 C 重实现里。SuperMarioWorldSNESRecomp.exe 或 Linux AppImage 要求一份 sfc 或 smc 格式的美版 ROM，并把路径记在 rom.cfg。审阅页面写明耀西岛和甜甜圈平原已经通关，香草圆顶当时仍在进行。第 4 到第 7 世界还没有手工核过。",
+    "requirements": [
+      "A USA Super Mario World ROM in sfc or smc form. Windows for the zip release, or Linux for the AppImage.",
+      "License: PolyForm Noncommercial 1.0.0 for this project's covered code. Vendored code under third_party keeps its own licenses."
+    ],
+    "evidence_url": "https://github.com/mstan/SuperMarioWorldRecomp/blob/2c52fbc3a16f32217ee75fb8bfd20fd924d09b98/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
