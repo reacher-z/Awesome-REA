@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "apk2gold",
+    "name": "apk2gold",
+    "url": "https://github.com/lxdvs/apk2gold",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "apk2gold is a command-line wrapper that decompiles an Android APK toward a single source tree. The README says it combines apktool, dex2jar, and JD-GUI, keeps the Smali output, and tries to restore R.* resource names from inlined resource integers. It says the result is for reading and is not meant to compile.",
+    "description_zh": "apk2gold 是一个命令行包装，把 Android APK 反编译成尽量集中的源码树。README 写明它组合 apktool、dex2jar 和 JD-GUI，保留 Smali 输出，并尝试把内联的资源整数还原成 R.* 资源名。它说明结果用于阅读，并不以重新编译为目标。",
+    "evidence_url": "https://github.com/lxdvs/apk2gold/blob/b4695e174bdb96ae4bc3ec52f899db9edb32cd4d/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The documented command is apk2gold followed by the target APK path.",
+      "The README says the decompiled result will almost certainly not compile.",
+      "GitHub reports no license file."
+    ],
+    "verification": "source-reviewed"
   }
 ]
