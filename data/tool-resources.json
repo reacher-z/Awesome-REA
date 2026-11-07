@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mercenaries-recompiled-case",
+    "name": "Mercenaries Recompiled: native Windows port",
+    "url": "https://github.com/KraftMacAndChee/Mercenaries-Recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Mercenaries Recompiled is a native Windows port of Mercenaries: Playground of Destruction, built with xboxrecomp. The README says the original Xbox executable is translated into C, with compatibility layers for graphics, audio, input, memory, and kernel services.",
+    "description_zh": "Mercenaries Recompiled 是《佣兵战场》的 Windows 原生移植，使用 xboxrecomp 构建。README 写明原版 Xbox 可执行文件被翻译成 C，并配有图形、音频、输入、内存和内核服务的兼容层。",
+    "requirements": [
+      "You must supply your own supported retail Xbox copy. A PS2 disc is not a substitute. The source repository does not include a disc image, extracted game-data tree, or generated game executable.",
+      "The build guide is ports/mercenaries/README.md.",
+      "The README says the project was built with assistance from Codex 5.6 Sol and Astra.",
+      "License: MIT."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/KraftMacAndChee/Mercenaries-Recompiled/blob/f513ae4e041401b7b032410016940971488d523b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
