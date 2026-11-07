@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "bigodao": {
+    "name": "Bigodão",
+    "requirements": [
+      "需要校验值如上的世界版 ROM 和 v1.2 IPS 补丁。README 先做 gb-recompiled 步骤，然后做原生 Linux 构建、MinGW Windows 构建或 Android 构建。Linux 和 Windows 发布包把 tools/wl_sm3_dx_v12_patch.json 放在可执行文件旁边。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
