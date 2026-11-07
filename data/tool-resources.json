@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dnzh-recomp",
+    "name": "Duke Nukem Zero Hour: Recompiled",
+    "url": "https://github.com/sonicdcer/DNZHRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Duke Nukem Zero Hour: Recompiled statically recompiles the US Nintendo 64 ROM with N64Recomp and renders it with RT64. The main menu loads that ROM. Formats other than z64 are converted when the ROM is the US release. It needs a GPU with Direct3D 12.0 shader model 6, Vulkan 1.2, or Metal argument buffers tier 2. x86-64 CPUs need SSE4.1. ARM64 builds run on ARM64 CPUs. Releases include a Linux binary and a Flatpak, including Steam Deck. A portable.txt file beside the executable keeps saves, config, and mods in that folder. Build steps are in BUILDING.md.",
+    "description_zh": "Duke Nukem Zero Hour: Recompiled 用 N64Recomp 静态重编译美版 Nintendo 64 ROM，并用 RT64 渲染。主菜单加载该 ROM。只要是美版，非 z64 格式会被转换。它需要支持 Direct3D 12.0 着色器模型 6、Vulkan 1.2，或 Metal 参数缓冲区第 2 级的显卡。x86-64 CPU 需要 SSE4.1。ARM64 构建在 ARM64 CPU 上运行。发行版包含 Linux 二进制和 Flatpak，包括 Steam Deck。可执行文件旁边的 portable.txt 会把存档、配置和模组放在同一文件夹。构建步骤在 BUILDING.md。",
+    "requirements": [
+      "The US Nintendo 64 ROM. A GPU and CPU meeting the limits above.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/sonicdcer/DNZHRecomp/blob/54e61d02f236687fbc93760afce6bff4aa8df24f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
