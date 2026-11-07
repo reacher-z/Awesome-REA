@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "glkeeper",
+    "name": "GLKeeper",
+    "url": "https://github.com/codenamecpp/GLKeeper",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "GLKeeper, also titled Grim Lands Keeper, is an open-source reimplementation of Dungeon Keeper 2. The README says it is not playable yet.",
+    "description_zh": "GLKeeper，也称 Grim Lands Keeper，是《地下城守护者2》的开源重实现。README 写明它还不能玩。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/codenamecpp/GLKeeper/blob/0fb689cc3e7850d1b19c425e7a7e193717c8c7a9/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
