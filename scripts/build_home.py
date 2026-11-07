@@ -51,6 +51,12 @@ EVIDENCE_DETAIL = {
     2: ('code & docs, no demo or download', '有代码和文档，缺演示或下载'),
     3: ('notes only', '仅笔记或进度记录'),
 }
+# Release packages, in the order the filter lists them.
+PLATFORM_ORDER = ('windows', 'macos', 'linux', 'android', 'ios', 'web', 'freebsd', 'source', 'other')
+PLATFORM_LABELS = {'windows': ('Windows', 'Windows'), 'macos': ('macOS', 'macOS'), 'linux': ('Linux', 'Linux'),
+                   'android': ('Android', 'Android'), 'ios': ('iOS', 'iOS'), 'web': ('Web', 'Web'),
+                   'freebsd': ('FreeBSD', 'FreeBSD'), 'source': ('Source / package manager', '源码 / 包管理器'),
+                   'other': ('Other', '其他')}
 COPY = {
     'en': {
         'h1': 'Reverse engineer <em>anything</em>',
@@ -68,6 +74,7 @@ COPY = {
         'preview_image_alt': "Demo screenshot from the project's public documentation",
         'preview_video_alt': "Demo video thumbnail from the project's public documentation",
         'demo_note': 'Demo available · no screenshot',
+        'platforms_label': 'Release packages',
     },
     'zh': {
         'h1': '逆向<em>一切</em>',
@@ -85,6 +92,7 @@ COPY = {
         'preview_image_alt': '项目公开文档中的演示截图',
         'preview_video_alt': '项目公开文档中演示视频的封面',
         'demo_note': '有 demo · 暂无截图',
+        'platforms_label': '发行包',
     },
 }
 
@@ -167,6 +175,20 @@ def preview_figure(record: dict, language: str) -> str:
     return ''
 
 
+def platform_text(record: dict, language: str) -> str:
+    """Release packages per platform, each with its package count, in the filter's order."""
+    counts = record.get('platform_counts') or {}
+    return ' · '.join(f'{PLATFORM_LABELS[key][language == "zh"]} ({counts[key]})'
+                      for key in PLATFORM_ORDER if key in counts)
+
+
+def platform_line(record: dict, language: str) -> str:
+    text = platform_text(record, language)
+    if not text:
+        return ''
+    return f'<p class="card-platforms"><span class="card-platforms-label">{COPY[language]["platforms_label"]}: </span>{_e(text)}</p>'
+
+
 def index_card(record: dict, language: str, targets: list[str], *, prefix: str = '') -> str:
     """One catalogue row. site.js renders the same markup in cardHTML() for search results."""
     text = COPY[language]
@@ -183,7 +205,7 @@ def index_card(record: dict, language: str, targets: list[str], *, prefix: str =
     return (f'<li class="card{case}" id="r-{identifier}" data-id="{identifier}"><article class="card-face">'
             f'<p class="callno" title="{_e(label)}"><span class="vh">{_e(label)}: </span><span aria-hidden="true">{DOMAIN_CODES[targets[0]]}·{KIND_CODES[kind]}</span></p>'
             f'<h3 class="card-name"><a class="stretch" href="{prefix}/resources/{identifier}/">{_e(_name(record, language))}</a>{evidence_chip(record, language)}</h3>'
-            f'<p class="card-desc">{_e(_lead(record, language))}</p>{preview_figure(record, language)}'
+            f'<p class="card-desc">{_e(_lead(record, language))}</p>{platform_line(record, language)}{preview_figure(record, language)}'
             f'<ul class="card-targets" aria-label="{text["targets"]}">{items}</ul>'
             f'<p class="stamp">{icon("check")}<span>{text["reviewed"]} <time datetime="{reviewed}">{reviewed}</time></span>'
             f'<a class="ev" href="{_e(record["evidence_url"])}" rel="noopener"><span class="ev-repo">{_e(evidence["repo"])}</span>{revision}</a></p>'
@@ -354,7 +376,8 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
                      connections.index(CONNECTION_OF[record['relationship']]),
                      -1 if record.get('evidence_class') is None else int(record['evidence_class']),
                      'unknown' if record.get('evidence_status') == 'unknown' else '',
-                     record.get('preview') or '', record.get('preview_kind') or ''])
+                     record.get('preview') or '', record.get('preview_kind') or '',
+                     platform_text(record, language)])
     paper_rows = []
     for paper in papers_newest_first(papers):
         paper_rows.append([paper['id'], paper['title_zh'] if zh else paper['title'], paper['year'], paper['venue'],

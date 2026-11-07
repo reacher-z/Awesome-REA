@@ -164,7 +164,7 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .card-class-3::before { background: var(--class-3); }
 .card-class-unknown::before { background: var(--ink-2); }
 /* Documented demo preview, below the description and inside the same paper edge as the row. */
-.card-preview { grid-area: prev; position: relative; margin-top: 6px; max-width: 420px; aspect-ratio: 16 / 9;
+.card-preview { grid-column: 2 / -1; position: relative; margin-top: 6px; max-width: 420px; aspect-ratio: 16 / 9;
   border: 1px solid var(--line-strong); border-radius: 2px; background: var(--surface-2); overflow: hidden; }
 .card-preview img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .card-preview-play { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 26px; height: 26px;
@@ -173,7 +173,10 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .card-preview-demo { display: flex; align-items: center; gap: 9px; max-width: max-content; padding: 6px 10px 6px 6px; aspect-ratio: auto;
   color: var(--ink-2-panel); font: 500 .8125rem/1.4 var(--font-mono); }
 .card-preview-demo > .card-preview-play { position: static; }
-.card-face:has(.card-preview) { grid-template-areas: "call name stamp" "call desc targets" "call prev prev"; }
+/* The package line and the preview drop into implicit rows below the row's own cells. */
+.card-platforms { grid-column: 2 / -1; margin-top: 4px; color: var(--ink-2-panel); font: 400 .8125rem/1.4 var(--font-mono);
+  font-variant-numeric: tabular-nums; }
+.card-platforms-label { color: var(--ink-2); font-weight: 500; }
 /* Signature: the corner folds back on hover/focus and the evidence slip slides out from under it. */
 .card:hover .card-face, .card:focus-within .card-face { border-color: var(--border-input); }
 .card-face::after { content: ""; position: absolute; top: -1px; right: -1px; z-index: 2; width: 30px; height: 30px;
@@ -196,13 +199,12 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 /* Narrow columns (tablet home, /resources/ beside the facets, related lists): description takes the full width. */
 @container (max-width: 900px) {
   .card-face { grid-template-areas: "call name stamp" "call desc desc" "call targets targets"; }
-  .card-face:has(.card-preview) { grid-template-areas: "call name stamp" "call desc desc" "call targets targets" "call prev prev"; }
   .card-targets { justify-content: flex-start; max-width: none; margin-right: 0; padding-top: 2px; }
 }
 /* Phones: stacked, with the review date beside the call number. */
 @container (max-width: 560px) {
   .card-face { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "call stamp" "name name" "desc desc" "targets targets"; padding: 9px 12px 10px; row-gap: 3px; }
-  .card-face:has(.card-preview) { grid-template-areas: "call stamp" "name name" "desc desc" "targets targets" "prev prev"; }
+  .card-preview, .card-platforms { grid-column: 1 / -1; }
   .card-class { margin-left: 7px; }
   .card-preview { max-width: none; margin-top: 4px; }
   .card-face::before { display: none; }
