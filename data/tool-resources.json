@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "luigis-mansion-recompiled",
+    "name": "Luigi's Mansion Recompiled",
+    "url": "https://github.com/rob646464/luigis-mansion-recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "Luigi's Mansion Recompiled asks on first start for a disc image or extracted folder of the USA release GLME01, the European release GLMP01, or both. ISO and RVZ are accepted. A bundled compiler then builds the game for the PC, listed at about 20 to 60 seconds. With both discs, E. Gadd's lab offers the USA mansion and the European Hidden Mansion. Frame logic stays at 30 updates per second, with interpolated frames up to 320 fps. An F1 menu holds the options.",
+    "description_zh": "Luigi's Mansion Recompiled 在第一次启动时要求提供美版 GLME01、欧版 GLMP01，或两者的光盘镜像或已提取文件夹。接受 ISO 和 RVZ。随后用随附的编译器为 PC 构建游戏，写出的时间大约是 20 到 60 秒。两张光盘都在时，E. Gadd 的实验室提供美版洋馆和欧版隐藏洋馆。游戏逻辑保持每秒 30 次更新，插帧最高到 320 fps。F1 菜单里是选项。",
+    "requirements": [
+      "A personal USA and/or European Luigi's Mansion disc, as ISO, RVZ, or an extracted folder.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/rob646464/luigis-mansion-recompiled/blob/efdace99c746b7360b82dee3d9c25b03990c5b01/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
