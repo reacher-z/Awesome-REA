@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "dqix-decomp-case": {
+    "name": "勇者斗恶龙 IX 反编译",
+    "requirements": [
+      "需要 Python 3.11 或更新版本、GCC 9 或更新版本，以及 Ninja。",
+      "把干净的 ROM 放在 extract 中，命名为 baserom_dqix_usa.nds、baserom_dqix_jpn.nds 或 baserom_dqix_eur.nds。支持美版、日版和欧版 ROM。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
