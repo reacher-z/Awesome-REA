@@ -12817,5 +12817,49 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-malware-detection-analysis-survey",
+    "title": "A Survey on Malware Detection and Analysis",
+    "authors": [
+      "Joshua Smallman"
+    ],
+    "year": 2024,
+    "publication_date": "2024-07-10",
+    "date_precision": "day",
+    "date_basis": "Crossref issued date",
+    "venue": "Journal of Science & Technology",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.55662/jst.2024.5401",
+    "url": "https://doi.org/10.55662/jst.2024.5401",
+    "pdf_url": "https://thesciencebrigade.com/jst/article/download/240/233",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This survey reviews malware detection and analysis methods, with the fetched abstract emphasizing data-mining approaches. It categorizes detection and analysis techniques rather than releasing a new detector.",
+    "description_zh": "这篇综述回顾恶意软件检测与分析方法，已获取的摘要强调数据挖掘途径。它给检测和分析技术分类，而不是发布一个新的检测器。",
+    "scope_limitations_en": "The summary uses the opening of the fetched PDF and the Crossref date 2024-07-10. No detection experiment was repeated.",
+    "scope_limitations_zh": "摘要使用已获取 PDF 的开头和 Crossref 日期 2024-07-10。没有重复检测实验。",
+    "why_fits_en": "Malware detection and analysis of binaries is adjacent to reverse engineering, and the paper is explicitly a survey of those methods.",
+    "why_fits_zh": "对二进制做恶意软件检测和分析与逆向工程相邻，而本文明确是这些方法的综述。",
+    "evidence_urls": [
+      "https://thesciencebrigade.com/jst/article/download/240/233",
+      "https://api.crossref.org/works/10.55662/jst.2024.5401",
+      "https://doi.org/10.55662/jst.2024.5401"
+    ],
+    "metadata_notes": "The DOI is recorded in the lowercase Crossref form.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "恶意软件检测与分析综述",
+    "date_basis_zh": "日期取自 Crossref 登记的出版日期",
+    "metadata_notes_zh": "DOI 按 Crossref 的小写形式记录。"
   }
 ]

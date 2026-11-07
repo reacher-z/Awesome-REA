@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -106,6 +106,7 @@
 - [**代码并非自然语言：释放面向语义的图表示在二进制代码相似性检测中的潜力**](https://www.usenix.org/conference/usenixsecurity24/presentation/he-haojie) - HermesSim 将每个函数提升为 Ghidra P-code，并构建面向语义的图，以显式表示指令内部的操作数结构、定义—使用关系、控制流及副作用顺序，同时舍弃与语义无关的细节，例如由哪个寄存器临时保存某个值。 <sub>原题：*Code is not Natural Language: Unlock the Power of Semantics-Oriented Graph Representation for Binary Code Similarity Detection* · USENIX Security 2024 · 会议论文 · Haojie He 等 · [PDF](https://www.usenix.org/system/files/usenixsecurity24-he-haojie.pdf) · [代码](https://github.com/NSSL-SJTU/HermesSim) · [完整条目](https://awesomerea.org/zh/papers/paper-hermessim/)</sub>
 - [**C 语言反编译器保真度问题分类**](https://www.usenix.org/conference/usenixsecurity24/presentation/dramko) - 对反编译所得与原始 C 函数构成的代码对进行开放式编码，归纳反编译器输出在缺失名称与类型之外如何偏离源码。 <sub>原题：*A Taxonomy of C Decompiler Fidelity Issues* · USENIX Security 2024 · 会议论文 · Luke Dramko 等 · [PDF](https://www.usenix.org/system/files/usenixsecurity24-dramko.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-decompiler-fidelity-taxonomy/)</sub>
 - [**CodeArt：在缺少符号时通过注意力正则化改进代码模型**](https://dl.acm.org/doi/10.1145/3643752) - CodeArt 基于 jTrans 的 BinaryCorp 构建的 2,600 万个剥离符号的 x86-64 函数，从零开始预训练一个 BERT 规模的编码器。 <sub>原题：*CodeArt: Better Code Models by Attention Regularization When Symbols Are Lacking* · Proceedings of the ACM on Software Engineering (FSE 2024) · 期刊论文 · Zian Su 等 · [PDF](https://arxiv.org/pdf/2402.11842v1) · [代码](https://github.com/ziansu/codeart) · [完整条目](https://awesomerea.org/zh/papers/paper-codeart/)</sub>
+- [**恶意软件检测与分析综述**](https://doi.org/10.55662/jst.2024.5401) - 这篇综述回顾恶意软件检测与分析方法，已获取的摘要强调数据挖掘途径。 <sub>原题：*A Survey on Malware Detection and Analysis* · Journal of Science &amp; Technology 2024 · 期刊论文 · Joshua Smallman · [PDF](https://thesciencebrigade.com/jst/article/download/240/233) · [完整条目](https://awesomerea.org/zh/papers/paper-malware-detection-analysis-survey/)</sub>
 - [**StackSight：借助大语言模型与神经符号思维链反编译揭示 WebAssembly**](https://proceedings.mlr.press/v235/fang24e.html) - StackSight 借助大语言模型提示，将 WebAssembly 文本格式（WAT）函数反编译为 C++。 <sub>原题：*StackSight: Unveiling WebAssembly through Large Language Models and Neurosymbolic Chain-of-Thought Decompilation* · ICML 2024 · 会议论文 · Weike Fang 等 · [PDF](https://raw.githubusercontent.com/mlresearch/v235/main/assets/fang24e/fang24e.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-stacksight/)</sub>
 - [**STRIDE：反编译可执行文件中的简单类型识别**](https://arxiv.org/abs/2407.02733) - STRIDE 不使用神经网络模型，而是预测反编译器输出中变量的名称和类型。 <sub>原题：*STRIDE: Simple Type Recognition In Decompiled Executables* · arXiv 2024 · 预印本 · Harrison Green 等 · [PDF](https://arxiv.org/pdf/2407.02733v1) · [代码](https://github.com/hgarrereyn/STRIDE) · [完整条目](https://awesomerea.org/zh/papers/paper-stride/)</sub>
 - [**探索大型语言模型（GPT-4）在二进制逆向工程中的效能**](https://arxiv.org/abs/2406.06637) - 论文评估 GPT-4 在二进制逆向工程中的表现，考察其对人工编写代码和反编译代码的理解与解释，涵盖基础代码解读和恶意软件分析。 <sub>原题：*Exploring the Efficacy of Large Language Models (GPT-4) in Binary Reverse Engineering* · arXiv 2024 · 预印本 · Saman Pordanesh 等 · [PDF](https://arxiv.org/pdf/2406.06637) · [完整条目](https://awesomerea.org/zh/papers/paper-gpt4-binary-re/)</sub>
