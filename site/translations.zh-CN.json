@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sk20-nebula-esphome": {
+    "name": "涂鸦 SK20 的 ESPHome",
+    "requirements": [
+      "需要一台装有 ESPHome 命令行、Python、Docker 和 PlatformIO 的 Linux 电脑。README 选择的设备是 Tuya Generic、SK20 Smart Star Projector、版本 1.1.2、BK7231T。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
