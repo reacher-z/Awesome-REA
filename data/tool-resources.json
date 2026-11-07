@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openjkdf2",
+    "name": "OpenJKDF2: C reimplementation of Jedi Knight: Dark Forces II",
+    "url": "https://github.com/shinyquagsire23/OpenJKDF2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenJKDF2 is a function-by-function reimplementation of Jedi Knight: Dark Forces II in C. The README lists 64-bit Windows, macOS, and Linux builds that use SDL2, OpenAL, and OpenGL 3.3, plus ARM64 Android, Nintendo DSi, Dreamcast, 32-bit Windows, and an Emscripten WebAssembly build. Source files follow the original game layout, using symbols from the Grim Fandango Remaster ports and assertions from other games, and the tree includes the byacc and flex versions used to parse COG scripts.",
+    "description_zh": "OpenJKDF2 用 C 语言逐函数重新实现 Jedi Knight: Dark Forces II。README 列出使用 SDL2、OpenAL 和 OpenGL 3.3 的 64 位 Windows、macOS 与 Linux 构建，以及 ARM64 Android、Nintendo DSi、Dreamcast、32 位 Windows 和 Emscripten WebAssembly 构建。源文件布局贴近原版游戏，依据 Grim Fandango Remaster 移植中的符号以及其他游戏中的断言，并包含解析 COG 脚本所用的 byacc 和 flex。",
+    "evidence_url": "https://github.com/shinyquagsire23/OpenJKDF2/blob/ae6ed8a81b316421f08a46719b12a4fa9e2fbed9/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "Running it requires game data from a valid copy of Jedi Knight: Dark Forces II. Original game assets are not in the repository. The README names the GOG and Steam releases and recommends GOG because that release is DRM-free and includes an Ogg Vorbis soundtrack.",
+      "The README lists these supported configurations: 64-bit Windows, macOS x86_64 and AArch64, and 64-bit Linux with SDL2, OpenAL, and OpenGL 3.3; ARM64 Android with OpenGL ES 3; Nintendo DSi and Dreamcast with custom renderers; 32-bit Windows with OpenGL 1.1; and Emscripten with WebGL 2. On Linux, paths and filenames may be case-sensitive.",
+      "GitHub reports the repository license as NOASSERTION."
+    ],
+    "verification": "source-reviewed"
   }
 ]
