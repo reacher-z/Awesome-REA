@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "kisakcod-case",
+    "name": "KisakCOD",
+    "url": "https://github.com/SwagSoftware/KisakCOD",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "KisakCOD is an open-source, fully buildable reimplementation of Call of Duty 4, aimed at mod developers and players of that game.",
+    "description_zh": "KisakCOD 是《Call of Duty 4》的开源、可完整构建的重实现，面向模组开发者和这款游戏的玩家。",
+    "requirements": [
+      "Windows, Visual Studio 2022, CMake 3.16 or newer, and the DirectX SDK from June 2010.",
+      "A Steam copy of Call of Duty 4. After generate-project.bat, copy the game files into bin/(BUILD_TYPE), including small files such as localization.txt, plus binkw32.dll, the Miles Sound System DLLs, and steam_api.dll from deps.",
+      "The README shows a GPLv3 logo."
+    ],
+    "evidence_url": "https://github.com/SwagSoftware/KisakCOD/blob/a8ce50cb456874c213a5ff552c47ab8568e8c17b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
