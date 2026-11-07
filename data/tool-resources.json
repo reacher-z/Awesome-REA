@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mhforever-case",
+    "name": "MHForever",
+    "url": "https://github.com/Mango77x/MHForever",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "MHForever is a native PC port of Monster Hunter Freedom Unite for the PSP, made by static recompilation. The README says the European, North American, and Japanese releases are supported and complete.",
+    "description_zh": "MHForever 是 PSP《怪物猎人：自由联合》的 PC 原生移植，通过静态重编译完成。README 写明欧洲、北美和日本版本都已支持并且完整。",
+    "requirements": [
+      "The launcher sets the game up from the player's own disc image.",
+      "License: GPL-3.0-or-later."
+    ],
+    "evidence_url": "https://github.com/Mango77x/MHForever/blob/61e7faaed97073239fc1473af8dd7bde67199460/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
