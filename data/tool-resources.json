@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ida-semray",
+    "name": "SemRay",
+    "url": "https://github.com/19h/ida-semray",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "SemRay is an IDA Pro plugin that sends decompiler context to the Gemini API and applies reviewed names back to the IDB. It needs IDA Pro 7.6 or newer with Python 3 and PyQt5, plus the Hex-Rays decompiler for decompilation mode. The Python packages are google-genai and pydantic. A Google AI API key is required.",
+    "description_zh": "SemRay 是一个 IDA Pro 插件，把反编译器的上下文发给 Gemini API，再把审阅过的名称写回 IDB。它需要 IDA Pro 7.6 或更新版本，以及 Python 3 和 PyQt5，反编译模式还需要 Hex-Rays 反编译器。Python 包是 google-genai 和 pydantic。需要一个 Google AI API 密钥。",
+    "requirements": [
+      "Copy the semray directory into the IDA plugins directory. pip install google-genai pydantic. Provide a Google AI API key.",
+      "The reviewed README does not name a license. It says the plugin is provided as-is."
+    ],
+    "evidence_url": "https://github.com/19h/ida-semray/blob/3b4c01cea1958f3aa2a67d115634f008cd25b5c6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
