@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "betrayal-at-krondor": {
+    "name": "Betrayal at Krondor 重建",
+    "requirements": [
+      "构建步骤在 docs/BUILDING.md。查看器命令是 uv run bak viewer。",
+      "许可证：本仓库的原创部分为 MIT。"
+    ]
   }
 }
