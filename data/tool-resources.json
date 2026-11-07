@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "las-marionetas",
+    "name": "Las Marionetas",
+    "url": "https://github.com/OmniBlade/LasMarionetas",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Las Marionetas is an open-source reimplementation of The Sims 2. Unimplemented functions still come from the original binary. The README says it currently runs on Windows and needs The Sims 2: Ultimate Edition installed.",
+    "description_zh": "Las Marionetas 是《模拟人生 2》的开源重实现。尚未实现的函数仍来自原始二进制。README 写明它目前只能在 Windows 上运行，并且需要已安装的《模拟人生 2：终极版》。",
+    "requirements": [
+      "Windows, with The Sims 2: Ultimate Edition installed.",
+      "License: GNU GPL version 2."
+    ],
+    "evidence_url": "https://github.com/OmniBlade/LasMarionetas/blob/b1f378c92dca777b31cc8dfe0cebe3f8f6c345c7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
