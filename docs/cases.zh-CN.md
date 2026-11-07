@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -188,7 +188,7 @@
 - [**Zelda 64: Recompiled：无需完整源码反编译的《姆吉拉的假面》原生移植**](https://github.com/Zelda64Recomp/Zelda64Recomp) - 通过 N64Recomp 将《姆吉拉的假面》转为原生应用，并使用 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zelda64recomp-case/)</sub>
 
 <a id="game-port"></a>
-### 基于重建源码的移植 (33)
+### 基于重建源码的移植 (34)
 
 - [**2 Ship 2 Harkinian：基于反编译的《姆吉拉的假面》原生移植**](https://github.com/2ship2harkinian/2ship2harkinian) - 以改编自 zeldaret/mm 反编译的源码为基础，构建《塞尔达传说：姆吉拉的假面》的原生 Windows、Linux 和 macOS 版本，并由 libultraship 重新实现 N64 SDK 函数。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/2ship2harkinian-mm-port-case/)</sub>
 - [**3SX：延续 PS2 反编译的《街头霸王 III：3rd Strike》原生移植**](https://github.com/crowded-street/3sx) - 延续 3s-decomp 的 PS2 反编译成果，将《街头霸王 III：3rd Strike》构建为可在 Windows、macOS 和 Linux 上运行的原生 C 程序，以 SDL3 处理画面、输入和声音，以 GekkoNet 实现回滚联机。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/3sx-third-strike-native-port-case/)</sub>
@@ -214,6 +214,7 @@
 - [**MikuPan：基于 Himuro 反编译的 Fatal Frame 原生 PC 移植**](https://github.com/Mikompilation/MikuPan) - 将 PS2 游戏 Fatal Frame（《零》）移植为无需模拟器的原生 PC 版本；仓库简介称其基于 Himuro 反编译项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mikupan-fatal-frame-port-case/)</sub>
 - [**PaperBoat：基于反编译成果的 Paper Mario 原生移植**](https://github.com/HarbourMasters/PaperBoat) - 以 pmret 和 Paper Mario DX 项目为基础，将 Paper Mario 反编译源码编译为基于 libultraship 的原生美版应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/paperboat-paper-mario-port-case/)</sub>
 - [**Pokémon Platinum PC Port：基于 pret 反编译的原生移植**](https://github.com/cybervisi0n/pokeplatinum) - 基于 pret 反编译项目的分支，为《宝可梦 白金》构建原生 64 位 Windows 和 Linux 可执行文件，并以作者的 libntr 库替代 NitroSDK；同一源码树仍保留 DS ROM 构建和实验性的 Switch 目标。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokemon-platinum-pc-port-case/)</sub>
+- [**Recharged：《马力欧激战前锋：充能》原生 PC 移植**](https://github.com/previouslevelgames/recharged) - Recharged 把《马力欧激战前锋：充能》的重建源码编译成 Windows、Linux、macOS 和 Steam Deck 上的原生程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/recharged-strikers-case/)</sub>
 - [**Salamander UEFI：《沙罗曼蛇》的反汇编驱动 UEFI 移植**](https://github.com/MikeWuPing/UEFI_Salamander) - Salamander UEFI 将红白机游戏《沙罗曼蛇》的 6502 反汇编翻译成平台无关的 C 核心，移植为原生 UEFI Shell 应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/salamander-uefi-case/)</sub>
 - [**Ship of Harkinian：基于反编译源码的《时之笛》原生移植**](https://github.com/HarbourMasters/Shipwright) - 以《时之笛》反编译项目的源码为基础，将游戏构建为原生 PC 程序，用 libultraship 替代 N64 的 libultra SDK，并以 DirectX 11、OpenGL 或 Metal 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ship-of-harkinian-oot-port-case/)</sub>
 - [**sm64ex：基于反编译成果的 Super Mario 64 增强版 PC 移植**](https://github.com/sm64pc/sm64ex) - 基于反编译源码构建原生 Super Mario 64 可执行文件，在 n64decomp 重建成果的 sm64-port 分支之上，增加渲染器、输入、视角、存档格式和外部数据等选项。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sm64ex-pc-port-case/)</sub>

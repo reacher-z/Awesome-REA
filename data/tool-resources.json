@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "recharged-strikers-case",
+    "name": "Recharged: native PC port of Mario Strikers Charged",
+    "url": "https://github.com/previouslevelgames/recharged",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "description_en": "Recharged compiles reconstructed source for Mario Strikers Charged into a native program for Windows, Linux, macOS, and Steam Deck. The README says the game's own code runs unchanged while Recharged supplies graphics, sound, controllers, disc access, and saves.",
+    "description_zh": "Recharged 把《马力欧激战前锋：充能》的重建源码编译成 Windows、Linux、macOS 和 Steam Deck 上的原生程序。README 写明游戏自身的代码保持不变运行，由 Recharged 提供图形、声音、手柄、光盘访问和存档。",
+    "requirements": [
+      "You need your own disc image as .iso, .rvz, or .wbfs. The README names USA R4QE01 revision 1, European R4QP01 revision 1 or 2, and Japanese R4QJ01.",
+      "Downloads contain no game files.",
+      "License: CC0-1.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/previouslevelgames/recharged/blob/0c321106b22b9e3cee46531de4de0b02d24e4dc8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
