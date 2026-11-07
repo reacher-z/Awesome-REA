@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "hexpyrion": {
+    "name": "HEXPYRION",
+    "requirements": [
+      "运行 pip install -r requirements.txt。README 列出 pefile、capstone、zstandard、xdis、uncompyle6 和 decompyle3。",
+      "许可证：MIT。"
+    ]
   }
 }
