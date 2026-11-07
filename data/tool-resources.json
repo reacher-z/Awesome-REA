@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ida-pro-loadmap",
+    "name": "ida-pro-loadmap",
+    "url": "https://github.com/mefistotelis/ida-pro-loadmap",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "ida-pro-loadmap is an IDA Pro plugin that loads VC, Borland, Dede, GCC, and IDA .map symbol files into an IDA database. The README says those files can carry function names, globals, and sometimes locals.",
+    "description_zh": "ida-pro-loadmap 是一个 IDA Pro 插件，把 VC、Borland、Dede、GCC 和 IDA 的 .map 符号文件载入 IDA 数据库。README 写明这些文件可以包含函数名、全局符号，有时还有局部符号。",
+    "requirements": [
+      "Copy loadmap.dll into IDA's plugins folder, open a PE or LE file, and use Load MAP.",
+      "Credits, license, and changelog are in src/LoadMap.cpp."
+    ],
+    "evidence_url": "https://github.com/mefistotelis/ida-pro-loadmap/blob/8433b8e961f045db5af3e42a5d808e1ae0b5f2a8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
