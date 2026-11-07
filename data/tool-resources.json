@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mupen64plus-next",
+    "name": "Mupen64Plus-Next",
+    "url": "https://github.com/libretro/mupen64plus-libretro-nx",
+    "category": "dynamic-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Mupen64Plus-Next is a Nintendo 64 emulation library for the libretro API and the successor of the older Mupen64Plus libretro core. The reviewed tree incorporates mupen64plus, GLideN64, cxd4, parallel-rsp, and the ParaLLEl variant of angrylion-rdp-plus.",
+    "description_zh": "Mupen64Plus-Next 是面向 libretro API 的 Nintendo 64 模拟库，也是旧版 Mupen64Plus libretro 核心的后继。审阅的代码树包含 mupen64plus、GLideN64、cxd4、parallel-rsp，以及 angrylion-rdp-plus 的 ParaLLEl 变体。",
+    "requirements": [
+      "A libretro frontend.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/libretro/mupen64plus-libretro-nx/blob/15bada85906593376e8fd697f1b0b3af3a20f512/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
