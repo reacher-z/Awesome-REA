@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "manic-miner-disasm",
+    "name": "Manic Miner disassembly",
+    "url": "https://github.com/skoolkid/manicminer",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is a SkoolKit disassembly of Manic Miner for the ZX Spectrum. skool2html.py sources/mm.skool builds the HTML disassembly. skool2asm.py sources/mm.skool writes mm.asm for an assembler. The published HTML is at skoolkid.github.io/manicminer, with a hexadecimal view and a decimal view.",
+    "description_zh": "这是 ZX Spectrum 游戏 Manic Miner 的 SkoolKit 反汇编。skool2html.py sources/mm.skool 构建 HTML 反汇编。skool2asm.py sources/mm.skool 写出供汇编器使用的 mm.asm。已发布的 HTML 在 skoolkid.github.io/manicminer，有十六进制视图和十进制视图。",
+    "requirements": [
+      "The development version of SkoolKit. Run skool2html.py sources/mm.skool or skool2asm.py sources/mm.skool.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/skoolkid/manicminer/blob/f16ea609a735f67811313c495377b9bebfaa5120/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
