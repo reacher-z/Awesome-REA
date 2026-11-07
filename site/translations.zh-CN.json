@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mgs-recomp": {
+    "name": "合金装备重编译",
+    "requirements": [
+      "解压安装包，启动 Metal_Gear_Solid_Recompiled，并选择 CUE 和 BIOS。Linux 和 macOS 需要 CMake、Ninja、Python 3 和 C/C++ 编译器。",
+      "审阅的 README 没有给这个项目写出许可证。它写明 PSXRecomp 和 recomp-ui 的许可证留在各自的源码目录。"
+    ]
   }
 }
