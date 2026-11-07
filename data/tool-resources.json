@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gow2-native",
+    "name": "God of War II native port",
+    "url": "https://github.com/cxldsakeb/GoW2-nativo-PS2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles God of War II for the PlayStation 2, NTSC-U SCUS-97481 v1.01, into a Windows executable with PS2Recomp. The function map has 6,607 functions, 76 Sony library stubs, and 240 hardware-register accesses. The current build reaches the first playable area, Rhodes, with sound, cutscenes at 30 fps, and memory-card save and load. The menu is reported at 60 fps, and combat in that area at about 44 to 59 fps.",
+    "description_zh": "该项目用 PS2Recomp 把 PlayStation 2 美版《战神 II》NTSC-U SCUS-97481 v1.01 静态重编译成 Windows 可执行文件。函数表有 6,607 个函数、76 个索尼库桩和 240 处硬件寄存器访问。当前构建能进入第一处可玩区域罗德岛，带声音、30 帧过场，以及存储卡的存读。菜单报告为 60 帧，该区域的战斗大约 44 到 59 帧。",
+    "requirements": [
+      "Windows and Visual Studio 2022. scripts/extract-iso.ps1 checks the ELF SHA-1 against NOTES.md. Then run scripts/recompile.ps1 and scripts/run.ps1 -Config RelWithDebInfo.",
+      "License: GPLv3, the same license the README names for PS2Recomp."
+    ],
+    "evidence_url": "https://github.com/cxldsakeb/GoW2-nativo-PS2/blob/5145dad446d2deb9276238e8d646c915bce988fb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
