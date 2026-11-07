@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gtasa-reversed",
+    "name": "GTA San Andreas reversed",
+    "url": "https://github.com/gta-reversed/gta-reversed",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This project rewrites Grand Theft Auto: San Andreas function by function. The build is a DLL whose reversed functions replace the ones in the game, with a standalone executable as the stated end goal. The supported executable is the compact exe, 5,189,632 bytes. python setup.py configures a windows-msvc x86 Debug build by default, and python setup.py --build compiles it. The README estimates that about 50 to 60 percent of the code is done.",
+    "description_zh": "这个项目逐个函数重写《侠盗猎车手：圣安地列斯》。构建结果是一个 DLL，用重写后的函数替换游戏里的函数，写明的最终目标是一个独立可执行文件。支持的可执行文件是紧凑版 exe，5,189,632 字节。python setup.py 默认配置 windows-msvc x86 Debug 构建，python setup.py --build 进行编译。README 估计大约完成了 50% 到 60% 的代码。",
+    "requirements": [
+      "The compact executable of that size, plus Visual Studio 2026, Python 3, Conan 2.x, and CMake 4.2.0 or newer.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/gta-reversed/gta-reversed/blob/afbc26d70675b9138b740b857ffdcaeaa7c5ca7c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

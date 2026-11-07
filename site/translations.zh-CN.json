@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "gtasa-reversed": {
+    "name": "侠盗猎车手：圣安地列斯逆向",
+    "requirements": [
+      "需要上述大小的紧凑版可执行文件，以及 Visual Studio 2026、Python 3、Conan 2.x 和 CMake 4.2.0 或更新版本。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
