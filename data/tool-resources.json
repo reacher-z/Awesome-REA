@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "console-skill",
+    "name": "Console skill",
+    "url": "https://github.com/Jakeschincariol/console-skill",
+    "category": "agent-workflows",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "The Console skill is a set of eleven skill folders and Python 3.8 tools for driving a PlayStation 2 port. The recompiler is PS2Recomp, which needs CMake 3.20 or newer and a C++20 compiler. The reverse skill maps the boot ELF and functions. Separate skills cover the IOP backend, graphics, controllers, mods, levels, sound, physics, saves, and packaging for Windows, macOS, Linux, Steam Deck, Android, and PS Vita. Ghidra with the EmotionEngine Reloaded extension is recommended. Claude Code can install the pack with /plugin marketplace add Jakeschincariol/console-skill.",
+    "description_zh": "Console skill 是十一组技能文件夹和 Python 3.8 工具，用来推动一个 PlayStation 2 移植。重编译器是 PS2Recomp，需要 CMake 3.20 或更高版本和 C++20 编译器。逆向技能标出启动 ELF 和函数。其他技能分别处理 IOP 后端、图形、手柄、模组、关卡、声音、物理、存档，以及面向 Windows、macOS、Linux、Steam Deck、Android 和 PS Vita 的打包。推荐使用带 EmotionEngine Reloaded 扩展的 Ghidra。Claude Code 可以用 /plugin marketplace add Jakeschincariol/console-skill 安装这套技能。",
+    "requirements": [
+      "Python 3.8 or newer, a personal PlayStation 2 disc image, and a built PS2Recomp tree.",
+      "License: MIT. The underlying PS2Recomp project is GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/Jakeschincariol/console-skill/blob/a508929f1e8f5dd6f54afe489fd74340df3b6f74/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
