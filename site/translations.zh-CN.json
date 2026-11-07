@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "rockstar-table-tennis-case": {
+    "name": "Rockstar 乒乓球 PC 重编译",
+    "requirements": [
+      "1.5.3 发布中的安装器 Install-Table-Tennis.exe 会用玩家的零售版 Table Tennis ISO 构建游戏。",
+      "README 写明 120、144 和 240 FPS 的游戏节奏尚未开放。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
