@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "fzerox-expansion-kit": {
+    "name": "F-Zero X 扩展包反编译",
+    "requirements": [
+      "需要 make、git、build-essential、binutils-mips-linux-gnu、Python 3 和 libpng。在 macOS 上，README 使用 Homebrew 的 mips64-elf-binutils。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
