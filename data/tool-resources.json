@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "zelda-alttp-snes-recomp-case",
+    "name": "Zelda ALttP SNES Recomp",
+    "url": "https://github.com/mstan/ZeldaAlttPSNESRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Zelda ALttP SNES Recomp statically translates the 65816 CPU code of The Legend of Zelda: A Link to the Past into C with snesrecomp. PPU rendering, APU and SPC700 audio, DMA, and hardware registers run through an embedded snes9x core. The README says boot, the overworld, and dungeon sword combat have been checked, and that this is not a complete playthrough.",
+    "description_zh": "Zelda ALttP SNES Recomp 用 snesrecomp 把《塞尔达传说：众神的三角神力》的 65816 CPU 代码静态翻译成 C。PPU 渲染、APU 与 SPC700 音频、DMA 和硬件寄存器通过内嵌的 snes9x 核心运行。README 写明已经检查过启动、地上世界和迷宫中的剑战斗，这还不是一次完整通关。",
+    "requirements": [
+      "The Windows release asks for the player's own USA ROM, .sfc or .smc. The expected CRC32 is 0x777AAC2F, the 1 MiB LoROM no-intro dump. A 512-byte SMC header is stripped before hashing.",
+      "Only the main branch is guaranteed to build.",
+      "Project code covered by the repository LICENSE is PolyForm Noncommercial 1.0.0. The bundled MSU-1 patch is MIT. Vendored code under third_party/ keeps its own licenses."
+    ],
+    "evidence_url": "https://github.com/mstan/ZeldaAlttPSNESRecomp/blob/1c9f0853cd9a81b7c11d98e4ce2bfb6b0e1c340f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
