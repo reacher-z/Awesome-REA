@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "puzzleleague64": {
+    "name": "Pokémon Puzzle League 反编译",
+    "requirements": [
+      "Python 依赖用 uv sync 安装。Rust 用 rustup 安装。",
+      "许可证：MIT，src/ 除外，那里是 CC0。"
+    ]
   }
 }

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "puzzleleague64",
+    "name": "Pokémon Puzzle League decompilation",
+    "url": "https://github.com/AngheloAlf/puzzleleague64",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Pokémon Puzzle League for the Nintendo 64. The default build is the USA version. A big-endian ROM is named baserom.usa.z64 under config/usa. The build uses splat and reports a matching ROM.",
+    "description_zh": "这是任天堂 64 游戏 Pokémon Puzzle League 的匹配反编译。默认构建是美版。大端 ROM 放在 config/usa，命名为 baserom.usa.z64。构建使用 splat，并报告匹配的 ROM。",
+    "requirements": [
+      "Python dependencies are installed with uv sync. Rust is installed with rustup.",
+      "License: MIT, except src/, which is CC0."
+    ],
+    "evidence_url": "https://github.com/AngheloAlf/puzzleleague64/blob/cd3d7311e097341eb61f27b7c5f076b2c31d5f09/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
