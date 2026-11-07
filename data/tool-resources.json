@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "colosseum-mb",
+    "name": "Pokémon Colosseum multiboot",
+    "url": "https://github.com/pret/colosseum-mb",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This builds the Pokémon Colosseum multiboot image that ships compressed inside Pokémon FireRed, LeafGreen, and Emerald. The README lists checksum 6cf444e998c39b74046c9715f3a07033b3262d12 for colosseum-mb.gba and 4f2dffaada52af7a64574d3c539f6329c3e63d00 for colosseum-mb-frlg.gba.",
+    "description_zh": "该项目构建压在宝可梦火红、叶绿和绿宝石里的宝可梦竞技场多引导镜像。README 列出 colosseum-mb.gba 的校验值 6cf444e998c39b74046c9715f3a07033b3262d12，以及 colosseum-mb-frlg.gba 的校验值 4f2dffaada52af7a64574d3c539f6329c3e63d00。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/pret/colosseum-mb/blob/65ef452784d15091028c202b85fe05bdae0ae690/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
