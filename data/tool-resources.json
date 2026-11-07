@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "coney",
+    "name": "Coney",
+    "url": "https://github.com/Ryubara/coney",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Coney reimplements The Warriors (2005) in C++ for Windows, Linux, and macOS. The PlayStation 2 version is the reference for how the game plays, and the Xbox port is a second source for rendering and assets. With a disc it plays the startup movies and the front end, and runs levels as far as the missions page records.",
+    "description_zh": "Coney 用 C++ 重实现 2005 年的《The Warriors》，平台是 Windows、Linux 和 macOS。PlayStation 2 版是玩法参照，Xbox 移植是渲染和素材的第二来源。有光盘时，它可以播放开场影片和主界面，并按任务页记录的进度运行关卡。",
+    "requirements": [
+      "Windows needs MSVC 19.38 or newer, Linux needs GCC 13 or Clang 19 or newer, and macOS needs Xcode 16 or newer. Also CMake 3.28 or newer, Ninja, Git, and OpenGL 3.3 to open a window. The documented commands are cmake --preset dev, cmake --build --preset dev, and ctest --preset dev.",
+      "License: GPL-3.0-or-later for the code. Documentation in docs/ is CC-BY-SA-4.0."
+    ],
+    "evidence_url": "https://github.com/Ryubara/coney/blob/eb07fc0f9d69e62c7aeee6307be5c2ef162f4ee6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
