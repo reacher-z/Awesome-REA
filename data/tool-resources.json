@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "demons-souls-recomp-case",
+    "name": "Demon's Souls: native Windows port of the PS3 game",
+    "url": "https://github.com/timboat/demons-souls-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "This is a native Windows build of Demon's Souls for the PlayStation 3, USA release BLUS-30443. The README says PPU and SPU code is statically recompiled to C and C++ with ps3recomp and rendered with Direct3D 12.",
+    "description_zh": "这是 PlayStation 3 美版《恶魔之魂》BLUS-30443 的 Windows 原生构建。README 写明 PPU 和 SPU 代码用 ps3recomp 静态重编译为 C 和 C++，并用 Direct3D 12 渲染。",
+    "requirements": [
+      "No game files are included. SETUP builds the game on your PC from your own disc image.",
+      "The README says the whole game seems playable, with sound, music, and movies, on keyboard and mouse or an Xbox controller.",
+      "The repository's code and patches are MIT-licensed. ps3recomp is credited as MIT."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/timboat/demons-souls-recomp/blob/51f864092f0ef3c0e4f623d7dff660b0b517fbd4/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
