@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "goldenrecomp",
+    "name": "GoldenRecomp",
+    "url": "https://github.com/kholdfuzion/GoldenRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "GoldenRecomp is a recompilation of GoldenEye 007 built with a modified N64Recomp. It needs ge007.tlbfree.elf and ge007.tlbfree.z64 from the TBLFREE_NOCOMPRESSION branch of kholdfuzion/goldeneye_src. That branch removes the TLB and leaves the ROM decompressed, so a console build of the ROM needs 8 MB of RAM. N64Recomp.exe us.toml and RSPRecomp.exe aspMain.us.toml generate the code. Visual Studio then builds GoldenRecomp.exe. The reviewed page says the game runs stably and the sound works. Multiplayer UI, the dam and frigate sky and water, and some weapon fire rates are still open.",
+    "description_zh": "GoldenRecomp 用修改过的 N64Recomp 重编译《007：黄金眼》。它需要 kholdfuzion/goldeneye_src 的 TBLFREE_NOCOMPRESSION 分支产出的 ge007.tlbfree.elf 和 ge007.tlbfree.z64。该分支去掉了 TLB，并让 ROM 保持未压缩，因此在主机上运行这份 ROM 需要 8 MB 内存。N64Recomp.exe us.toml 和 RSPRecomp.exe aspMain.us.toml 生成代码。然后用 Visual Studio 构建 GoldenRecomp.exe。审阅页面写明游戏运行稳定，声音正常。多人界面、大坝和护卫舰的天空与水面，以及部分武器射速仍未完成。",
+    "requirements": [
+      "The TLB-free ELF and ROM named above. Visual Studio, or the included Windows N64Recomp binaries.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/kholdfuzion/GoldenRecomp/blob/f31b5d1e214f57c9ddb3dc598daa688bccffdd4f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
