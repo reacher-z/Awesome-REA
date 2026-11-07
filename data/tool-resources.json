@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nightfire-recomp-case",
+    "name": "007: NightFire XBE Recomp",
+    "url": "https://github.com/hk21x/nightfire-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "007: NightFire XBE Recomp is a native PC port of the original Xbox game. Xbox XBE Recomp statically recompiles the game's x86 code into Windows executables, and the Xbox graphics, sound, and system libraries are reimplemented with Direct3D 12 or 11, XAudio2, and SDL.",
+    "description_zh": "007: NightFire XBE Recomp 是初代 Xbox《007：夜火》的 PC 原生移植。Xbox XBE Recomp 把游戏的 x86 代码静态重编译成 Windows 可执行文件，Xbox 的图形、声音和系统库用 Direct3D 12 或 11、XAudio2 和 SDL 重实现。",
+    "requirements": [
+      "The player supplies files from their own copy. Supported releases are Europe and USA, title ID 45410026. The on-foot default.xbe SHA-1 is 796222e048be3595c323b4c6d9795107132dc4ca for Europe and 7e4b8f8a54bacc61a5897ba5245fdd65bddc0752 for the USA.",
+      "The port's own code is under the MIT License. The SDK and third-party parts keep their own licenses."
+    ],
+    "evidence_url": "https://github.com/hk21x/nightfire-recomp/blob/cadfb467ddc41aa50d4291a08c28344bab14a87d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
