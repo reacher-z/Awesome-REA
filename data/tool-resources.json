@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "tobiichi-gow-case",
+    "name": "God of War — Tobiichi Port",
+    "url": "https://github.com/YYOzcan/Tobiichi-Port",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "God of War — Tobiichi Port is a native Linux and Windows port of God of War for the PlayStation 2, NTSC-U SCUS-97399. The game's MIPS code is statically recompiled to C++ with PS2Recomp. Rendering uses OpenGL, and the launcher uses Qt 6.",
+    "description_zh": "God of War — Tobiichi Port 是《战神》PlayStation 2 美版 NTSC-U SCUS-97399 的 Linux 和 Windows 原生移植。游戏的 MIPS 代码用 PS2Recomp 静态重编译为 C++。渲染使用 OpenGL，启动器使用 Qt 6。",
+    "requirements": [
+      "The player supplies their own USA disc image. The installer builds the game on that computer.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/YYOzcan/Tobiichi-Port/blob/471c83180a8df575cff4abd3fae6c043b5096925/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
