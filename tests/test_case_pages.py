@@ -142,7 +142,7 @@ class CasePageTests(unittest.TestCase):
                     self.assertEqual(rendered['times'], [record['verified_at']])
                 self.assertIn('Binary · Game' if language == 'en' else '二进制 · 游戏', content)
                 self.assertIn('Game · Website' if language == 'en' else '游戏 · 网站', content)
-                self.assertIn('https://example.org/ordinary-tool', (output / prefix / 'resources/index.html').read_text())
+                self.assertIn(f'href="/{prefix}resources/ordinary-tool/"', (output / prefix / 'resources/index.html').read_text())
 
     def test_game_cases_are_grouped_by_method_and_ordered_by_name(self):
         records = [resource('zeta', name='zeta port', reconstruction_method='port'),

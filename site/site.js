@@ -16,14 +16,14 @@
     set(k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { /* storage blocked */ } },
   };
   const T = zh ? {
-    theme: '颜色主题', system: '跟随系统', light: '浅色', dark: '深色', reviewed: '已复核', targets: '目标', copied: '已复制',
+    featured: '精选', theme: '颜色主题', system: '跟随系统', light: '浅色', dark: '深色', reviewed: '已复核', targets: '目标', copied: '已复制',
     showing: (a, n) => `显示 <strong>${fmt(a)}</strong> / <strong>${fmt(n)}</strong>`, range: (a, b, n) => `显示第 <strong>${fmt(a)}–${fmt(b)}</strong> 项，共 <strong>${fmt(n)}</strong> 项`,
     results: (n) => `${fmt(n)} 条结果`, more: (n) => `再显示 ${fmt(n)} 项`, all: (n) => `查看全部 ${fmt(n)} 项资源`, seeAll: (n) => `在资源页查看全部 ${fmt(n)} 条结果`,
     none: (q) => `没有与“${esc(q)}”匹配的记录。`, near: '相近名称：', noneFilters: '没有符合这些筛选条件的记录。', clearSearch: '清除搜索', sources: (q) => `在仓库目录中搜索“${esc(q)}”`, discoveries: '查看未审核的发现', keyMove: '移动', keyOpen: '打开', keyClear: '清除', suggest: '推荐收录这个资源', clear: '清除筛选', loading: '正在载入索引…', failed: '索引载入失败，请检查网络后重试。',
     recent: '最近搜索', popular: '常用入口', groups: { tool: '工具', 'case-study': '案例', integration: '集成', other: '学习与参考', paper: '论文' }, papers: '论文',
     remove: (l) => `移除筛选：${l}`, page: (a, b) => `第 ${a}/${b} 页`, shelf: (a, n) => `${fmt(a)} / ${fmt(n)} 个案例`,
   } : {
-    theme: 'Colour theme', system: 'system', light: 'light', dark: 'dark', reviewed: 'Reviewed', targets: 'Targets', copied: 'Copied',
+    featured: 'Featured', theme: 'Colour theme', system: 'system', light: 'light', dark: 'dark', reviewed: 'Reviewed', targets: 'Targets', copied: 'Copied',
     showing: (a, n) => `Showing <strong>${fmt(a)}</strong> of <strong>${fmt(n)}</strong>`, range: (a, b, n) => `Showing <strong>${fmt(a)}–${fmt(b)}</strong> of <strong>${fmt(n)}</strong>`,
     results: (n) => `${fmt(n)} result${n === 1 ? '' : 's'}`, more: (n) => `Show ${fmt(n)} more`, all: (n) => `Show all ${fmt(n)} resources`, seeAll: (n) => `See all ${fmt(n)} results on the resources page`,
     none: (q) => `Nothing in the catalogue matches “${esc(q)}”.`, near: 'Close names:', noneFilters: 'Nothing in the catalogue matches these filters.', clearSearch: 'Clear search', sources: (q) => `Search the repository directory for “${esc(q)}”`, discoveries: 'See the unreviewed discoveries', keyMove: 'move', keyOpen: 'open', keyClear: 'clear', suggest: 'Suggest this resource', clear: 'Clear filters', loading: 'Loading the index…', failed: 'The search index did not load. Check your connection and try again.',
@@ -154,14 +154,14 @@
     return out;
   }
   async function prep(raw) {
-    const res = await chunked(raw.r, ([id, name, k, tg, c, lead, host, ev, rev, added, feat, alias, conn]) => {
+    const res = await chunked(raw.r, ([id, name, k, tg, c, lead, host, ev, rev, added, feat, alias, conn, sec]) => {
       const targets = [...tg].map(Number);
       // GitHub evidence is stored as owner/repo/blob/<sha>/path; anything else keeps its full URL and a label.
       const seg = /^https?:/.test(ev) ? null : ev.split('/');
       const repo = seg ? `${seg[0]}/${seg[1]}` : host;
       const sha = seg && /^(blob|tree)$/.test(seg[2]) ? seg[3].slice(0, 7) : '';
       const tags = [raw.kindLabels[k], raw.kindPlural[k], raw.kinds[k], raw.categoryLabels[c], ...targets.map((i) => `${raw.targetLabels[i]} ${raw.targets[i]}`)].join(' ');
-      const r = { type: 'r', id, name, k, kind: raw.kinds[k], targets, c, lead, repo, sha, ev, rev, added, feat, alias, conn,
+      const r = { type: 'r', id, name, k, kind: raw.kinds[k], targets, c, lead, repo, sha, ev, rev, added, feat, alias, conn, sec, pin: raw.pinned.includes(id),
         nName: norm(name), nAlias: norm(`${alias} ${repo}`), nTags: norm(tags), nDesc: norm(lead) };
       r.nw = words(r.nName); r.aw = words(r.nAlias); r.tw = words(r.nTags); r.dw = words(r.nDesc);
       return r;
@@ -240,7 +240,7 @@
   const byName = (a, b) => a.name.localeCompare(b.name, zh ? 'zh-CN' : 'en', { sensitivity: 'base' }) || (a.id < b.id ? -1 : 1);
   const KIND_RANK = { tool: 0, integration: 1, project: 2, 'case-study': 3, collection: 4, research: 5, 'learning-resource': 6, documentation: 7 };
   const ORDERS = {
-    featured: (a, b) => ((a.feat < 0 ? 999 : a.feat) - (b.feat < 0 ? 999 : b.feat)) || (KIND_RANK[a.kind] - KIND_RANK[b.kind]) || byName(a, b),
+    featured: (a, b) => (b.pin - a.pin) || ((a.feat < 0 ? 999 : a.feat) - (b.feat < 0 ? 999 : b.feat)) || (KIND_RANK[a.kind] - KIND_RANK[b.kind]) || byName(a, b),
     reviewed: (a, b) => (b.rev > a.rev ? 1 : b.rev < a.rev ? -1 : 0) || byName(a, b),
     added: (a, b) => ((b.added || '') > (a.added || '') ? 1 : (b.added || '') < (a.added || '') ? -1 : 0) || ORDERS.featured(a, b),
     name: byName,
@@ -292,7 +292,7 @@
     const ev = /^https?:/.test(r.ev) ? r.ev : `https://github.com/${r.ev}`;
     return `<li class="card${r.kind === 'case-study' ? ' is-case' : ''}" id="r-${esc(r.id)}" data-id="${esc(r.id)}"><article class="card-face">`
       + `<p class="callno" title="${esc(label)}"><span class="vh">${esc(label)}: </span><span aria-hidden="true">${callno(r)}</span></p>`
-      + `<h3 class="card-name"><a class="stretch" href="${href(r)}">${hl(r.name, toks)}</a></h3><p class="card-desc">${hl(r.lead, toks)}</p>`
+      + `<h3 class="card-name"><a class="stretch" href="${href(r)}">${hl(r.name, toks)}</a>${r.pin ? `<span class="row-mark">${T.featured}</span>` : ''}</h3><p class="card-desc">${hl(r.lead, toks)}</p>`
       + `<ul class="card-targets" aria-label="${T.targets}">${tg}</ul>`
       + `<p class="stamp">${ico('check')}<span>${T.reviewed} <time datetime="${r.rev}">${r.rev}</time></span>`
       + `<a class="ev" href="${esc(ev)}" rel="noopener"><span class="ev-repo">${esc(r.repo)}</span>${r.sha ? `<span class="sha">@${esc(r.sha)}</span>` : ''}</a></p></article></li>`;
@@ -312,7 +312,15 @@
       + `<p><a href="${ISSUE}" rel="noopener">${T.suggest}</a></p></${tag}>`;
   }
   // Exposed for the search-quality test (tests/e2e/search_queries.json) and for debugging ranking.
-  window.REA_SEARCH = { loadIndex, search, tokens, norm, score: (r, q) => score(r, norm(q), variants(tokens(q))), sortHits };
+  // A small remainder stays on the page before it, so a last page never holds fewer than five rows.
+  const pageRange = (total, per, requested) => {
+    const rest = total % per;
+    const pages = Math.max(1, rest && rest < 5 ? Math.floor(total / per) : Math.ceil(total / per));
+    const page = Math.min(requested, pages);
+    const start = (page - 1) * per;
+    return { pages, page, start, end: page === pages ? total : start + per };
+  };
+  window.REA_SEARCH = { loadIndex, search, tokens, norm, score: (r, q) => score(r, norm(q), variants(tokens(q))), sortHits, pageRange };
   // Warm the index once the page has loaded and gone idle (or on first focus/keystroke, whichever is first).
   const idle = (f) => {
     const go = () => (window.requestIdleCallback ? requestIdleCallback(f, { timeout: 4000 }) : setTimeout(f, 1500));
@@ -496,10 +504,10 @@
       const ex = new URLSearchParams();
       if (st.q) ex.set('q', st.q);
       if (st.target !== 'all') ex.set('target', st.target);
-      if (st.kinds.size === 1) ex.set('kind', [...st.kinds][0]);
-      if (st.sort !== 'featured') ex.set('order', st.sort);
+      if (st.kinds.size) ex.set('kind', [...st.kinds].join(','));
+      if (st.sort !== 'featured') ex.set('sort', st.sort);
       if (langLink) langLink.href = langBase + (hp.toString() ? `?${hp}` : '');
-      showAll.href = pristine() ? `${P}/resources/` : `${P}/explore/?view=curated${ex.toString() ? `&${ex}` : ''}`;
+      showAll.href = `${P}/resources/${ex.toString() ? `?${ex}` : ''}`;
       if (pristine()) {
         list.innerHTML = init.list; meta.innerHTML = init.meta; showAll.innerHTML = init.all; count.textContent = '';
         tabs.forEach((t, i) => { $('.count', t).textContent = init.tabs[i]; });
@@ -615,18 +623,19 @@
     const input = $('[data-list-input]');
     const tabs = $$('.page-head .folder');
     const init = { list: list.innerHTML, meta: meta.innerHTML, pager: pagerEl.outerHTML };
-    const MULTI = ['kind', 'category', 'connection'];
+    const sections = $$('[data-section-link]', listing);
+    const counted = [...$$('.opt-n', facetForm), ...tabs.map((t) => $('.count', t)), ...sections.map((a) => $('.count', a))].map((el) => [el, el.textContent]);
+    let narrowed = false;
+    const MULTI = ['kind', 'category', 'connection', 'section'];
     const st = {};
     const read = () => {
       const u = new URL(location.href);
-      const m = u.pathname.match(/\/resources\/(website|game|app|binary|firmware|protocol)\//);
-      const pg = u.pathname.match(/\/page\/(\d+)\//);
       st.q = u.searchParams.get('q') || '';
-      st.targets = new Set((u.searchParams.get('target') || (m ? m[1] : '')).split(',').filter(Boolean));
+      st.targets = new Set((u.searchParams.get('target') || '').split(',').filter(Boolean));
       MULTI.forEach((k) => { st[k] = new Set((u.searchParams.get(k) || '').split(',').filter(Boolean)); });
       st.reviewed = u.searchParams.get('reviewed') || '';
       st.sort = u.searchParams.get('sort') || 'featured';
-      st.page = Math.max(1, +(u.searchParams.get('page') || (pg ? pg[1] : 1)));
+      st.page = Math.max(1, +(u.searchParams.get('page') || 1));
       if (input) input.value = st.q;
       sort.value = st.sort;
       $$('input', facetForm).forEach((el) => {
@@ -645,7 +654,7 @@
       if (st.reviewed) p.set('reviewed', st.reviewed);
       if (st.sort !== 'featured') p.set('sort', st.sort);
       if (st.page > 1) p.set('page', st.page);
-      const url = `${P}/resources/${p.toString() ? `?${p}` : ''}`;
+      const url = `${P}/resources/${p.toString() ? `?${p}` : location.hash}`;
       if (push) history.pushState(null, '', url); else history.replaceState(null, '', url);
     };
     const pagerHTML = (page, pages) => {
@@ -662,6 +671,10 @@
       return `<nav class="pager" aria-label="Pages" data-pager>${step(page - 1, zh ? '上一页' : 'Previous', 'prev')}<ol>${items}</ol>${step(page + 1, zh ? '下一页' : 'Next', 'next')}</nav>`;
     };
     const labelFor = (name, value) => {
+      if (name === 'section') {
+        const link = sections.find((a) => a.dataset.section === value);
+        return link ? link.firstChild.textContent : value;
+      }
       const el = $(`input[name="${name}"][value="${CSS.escape(value)}"]`, facetForm);
       return el ? $('.opt-l', el.closest('.opt')).textContent : value;
     };
@@ -675,10 +688,18 @@
       clearBtn.hidden = !n && !st.q;
       write(push);
       if (pristine()) {
+        if (!narrowed) return;
+        narrowed = false;
         list.innerHTML = init.list; meta.innerHTML = init.meta; activeEl.hidden = true;
         $('[data-pager]', listing).outerHTML = init.pager;
+        counted.forEach(([el, text]) => { el.textContent = text; });
+        $$('.opt.is-zero', facetForm).forEach((opt) => opt.classList.remove('is-zero'));
+        sections.forEach((a) => { a.classList.remove('is-zero'); a.removeAttribute('aria-current'); });
+        listing.classList.remove('is-narrowed');
         return;
       }
+      narrowed = true;
+      listing.classList.add('is-narrowed');
       let X;
       try { X = await loadIndex(); } catch (e) { meta.textContent = T.failed; return; }
       const R = X.raw;
@@ -688,6 +709,7 @@
         kind: (r) => !st.kind.size || st.kind.has(r.kind),
         category: (r) => !st.category.size || st.category.has(R.categories[r.c]),
         connection: (r) => !st.connection.size || st.connection.has(R.connections[r.conn]),
+        section: (r) => !st.section.size || st.section.has(R.sections[r.sec]),
         reviewed: (r) => !st.reviewed || r.rev >= since(+st.reviewed),
       };
       const base = search(X.res, st.q);
@@ -703,15 +725,21 @@
         nEl.textContent = fmt(c);
         opt.classList.toggle('is-zero', !c);
       });
+      sections.forEach((a) => {
+        const v = a.dataset.section;
+        const c = base.filter(({ r }) => pass(r, 'section') && R.sections[r.sec] === v).length;
+        $('.count', a).textContent = fmt(c);
+        a.classList.toggle('is-zero', !c);
+        if (st.section.has(v)) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+      });
       tabs.forEach((t) => {
         const i = R.targets.indexOf(t.dataset.target);
         $('.count', t).textContent = fmt(base.filter(({ r }) => pass(r, 'target') && (i < 0 || r.targets.includes(i))).length);
       });
       const hits = sortHits(base.filter(({ r }) => pass(r)), st.sort, st.q);
-      const pages = Math.max(1, Math.ceil(hits.length / per));
-      st.page = Math.min(st.page, pages);
-      const a = (st.page - 1) * per;
-      const slice = hits.slice(a, a + per);
+      const { pages, page, start: a, end } = pageRange(hits.length, per, st.page);
+      st.page = page;
+      const slice = hits.slice(a, end);
       const toks = tokens(st.q);
       list.innerHTML = slice.length ? slice.map((h) => cardHTML(h.r, toks)).join('') : emptyHTML(st.q, X.res, 'li');
       meta.innerHTML = hits.length ? T.range(a + 1, a + slice.length, hits.length) : T.results(0);
@@ -759,12 +787,20 @@
         st.page = 1; render();
       }
     });
-    clearBtn.addEventListener('click', () => {
+    const reset = () => {
       st.q = ''; if (input) input.value = '';
-      st.targets.clear(); MULTI.forEach((k) => st[k].clear()); st.reviewed = ''; st.page = 1;
+      st.targets.clear(); MULTI.forEach((k) => st[k].clear()); st.reviewed = ''; st.page = 1; st.sort = 'featured'; sort.value = 'featured';
       $$('input', facetForm).forEach((el) => { el.checked = el.type === 'radio' && el.value === ''; });
       render();
-    });
+    };
+    clearBtn.addEventListener('click', reset);
+    // On the whole list a section link jumps to its heading. On a narrowed list its count promises those rows, so it filters to them.
+    sections.forEach((a) => a.addEventListener('click', (e) => {
+      if (pristine() || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      st.section = new Set(st.section.has(a.dataset.section) ? [] : [a.dataset.section]);
+      st.page = 1; render();
+    }));
     $$('[data-facets-open]').forEach((b) => b.addEventListener('click', () => facetsDlg.showModal()));
     $$('[data-facets-close]').forEach((b) => b.addEventListener('click', () => facetsDlg.close()));
     facetsDlg.addEventListener('click', (e) => { if (e.target === facetsDlg) facetsDlg.close(); });

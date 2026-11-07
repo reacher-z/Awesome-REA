@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "websitebench": {
+    "name": "WebsiteBench 网站重建基准",
+    "requirements": [
+      "通过 Harbor 和 Docker 运行：每次试验的智能体与验证器使用各自独立的环境，每个任务为每个环境申请 8 个 CPU、8 GiB 内存和 20 GiB 磁盘，智能体最长 16 小时，验证器最长 8 小时。需要智能体及其凭据。PyPI 包要求 Python 3.12–3.14。",
+      "70 个任务的下载总量为 9.7 GB。任务发布在 Harbor Hub 和 Hugging Face 上。",
+      "验证器需要 Landlock ABI 4 或更高版本（Linux 6.7+）和 seccomp 用户通知，主机内核需要支持 nftables fib。较旧的内核（包括 Debian 12 的 6.1 和 Ubuntu 22.04 的 5.15）会使每次试验都产生 INVALID_RUN 且没有奖励分数。",
+      "基准代码、任务定义和验证器采用 Apache-2.0 许可。参考网站复刻了第三方站点，其内容归各自所有者所有，仅供非商业研究使用。"
+    ]
   }
 }

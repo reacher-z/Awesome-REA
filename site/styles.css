@@ -96,11 +96,11 @@ input::placeholder{color:var(--muted);opacity:1}
   .site-header{position:static!important;background:#fff!important;border-bottom:1pt solid #999!important;box-shadow:none!important}
   .skip-link,.browse-actions,.papers-actions,.paper-search,.paper-search-empty,.browse-category-nav,.papers-topic-nav,.entry-detail-link,.paper-citation-download{display:none!important}
   .shell{width:auto!important;max-width:none!important;margin-inline:0!important}
-  .resource-grid,.source-results,.paper-grid{display:block!important}
-  .resource-card,.source-card,.paper-card,.case-row{margin:0 0 8pt!important;padding:8pt 10pt!important;box-shadow:none!important;background:transparent!important;border-color:#bbb!important}
+  .source-results,.paper-grid{display:block!important}
+  .source-card,.paper-card,.case-row{margin:0 0 8pt!important;padding:8pt 10pt!important;box-shadow:none!important;background:transparent!important;border-color:#bbb!important}
   /* Long cards may continue on the next page; headings stay with their text and short items stay whole. */
-  :is(.card-heading,.source-card-head,.paper-card>header,.case-heading,.source-card,li,dt,dd){break-inside:avoid}
-  :is(h1,h2,h3,h4,summary,.browse-topline,.card-heading,.source-card-head,.paper-card>header,.case-heading){break-after:avoid}
+  :is(.source-card-head,.paper-card>header,.case-heading,.source-card,li,dt,dd){break-inside:avoid}
+  :is(h1,h2,h3,h4,summary,.browse-topline,.source-card-head,.paper-card>header,.case-heading){break-after:avoid}
   :is(p,li,dd){orphans:3;widows:3}
   main :is(a,summary,button){min-height:0!important}
   details:not([open]):not(.browse-provenance,.cases-note,.paper-details){display:none!important}
@@ -109,13 +109,13 @@ input::placeholder{color:var(--muted);opacity:1}
   details>summary{list-style:none!important;width:auto!important;padding:4pt 0 2pt!important;color:#111!important;font-weight:650!important;text-decoration:none!important}
   details>summary::-webkit-details-marker{display:none}
   main a{color:#111!important}
-  main :is(.entry-link,.paper-link,.case-source,.resource-evidence-link){display:inline!important;min-height:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+  main :is(.entry-link,.paper-link,.case-source){display:inline!important;min-height:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
   main :is(a,dd,code){overflow-wrap:anywhere!important}
-  main :is(.card-title-link,.source-title-link,.case-heading a,.paper-card h3 a,.paper-link,.resource-evidence-link,.case-source,.source-card-footer a,.entry-link,.entry-sources a)[href^="http"]::after{content:" <" attr(href) ">";font-size:8.5pt;font-weight:400;color:#444}
-  :is(.browse-main:has(.resource-requirements-link),.cases-main) .browse-intro::after,.papers-intro::after{display:block;margin-top:6pt;padding:5pt 8pt;border:1pt solid #999;font-size:9pt;line-height:1.5;color:#333}
-  :is(.browse-main:has(.resource-requirements-link),.cases-main) .browse-intro::after{content:"Printed listing: every entry’s title, description, targets, primary source, requirement and source counts, and review date. Each entry’s full page prints all of its requirements, limitations and sources."}
+  main :is(.source-title-link,.case-heading a,.paper-card h3 a,.paper-link,.case-source,.source-card-footer a,.entry-link,.entry-sources a)[href^="http"]::after{content:" <" attr(href) ">";font-size:8.5pt;font-weight:400;color:#444}
+  .cases-main .browse-intro::after,.papers-intro::after{display:block;margin-top:6pt;padding:5pt 8pt;border:1pt solid #999;font-size:9pt;line-height:1.5;color:#333}
+  .cases-main .browse-intro::after{content:"Printed listing: every entry’s title, description, targets, primary source, requirement and source counts, and review date. Each entry’s full page prints all of its requirements, limitations and sources."}
   .papers-intro::after{content:"Printed listing: every paper with its scope and limitations, source count and review date, plus the authors and citation you opened before printing. Each paper’s full page prints its sources, publication details and review notes."}
-  html[lang="zh-CN"] :is(.browse-main:has(.resource-requirements-link),.cases-main) .browse-intro::after{content:"打印说明：列出每个条目的标题、简介、目标领域、一手来源、条件与来源数量及复核日期。每个条目的完整页面会打印其全部条件、局限与来源。"}
+  html[lang="zh-CN"] .cases-main .browse-intro::after{content:"打印说明：列出每个条目的标题、简介、目标领域、一手来源、条件与来源数量及复核日期。每个条目的完整页面会打印其全部条件、局限与来源。"}
   html[lang="zh-CN"] .papers-intro::after{content:"打印说明：列出每篇论文及其研究范围与局限、来源数量与复核日期，以及打印前展开的作者与引文信息。每篇论文的完整页面会打印其来源、发表详情与复核说明。"}
 }
 
