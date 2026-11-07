@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "g-diffuser": {
+    "name": "G-Diffuser",
+    "requirements": [
+      "需要美版第 0 修订 ROM、扩展包磁盘镜像，以及上面写出的 64DD IPL ROM。",
+      "许可证：MIT。gdiffuser.o2r 里的 Fast3D 着色器也被写为 MIT。"
+    ]
   }
 }

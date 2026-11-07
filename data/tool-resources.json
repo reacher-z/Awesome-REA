@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "g-diffuser",
+    "name": "G-Diffuser",
+    "url": "https://github.com/Zorkats/G-Diffuser",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "G-Diffuser is a PC port of F-Zero X with the 64DD Expansion Kit. It requires a big-endian US revision 0 ROM, a .z64 file. Setup looks for baserom.us.rev0.z64 beside the executable. It also requires the Expansion Kit disk baserom.translated.ek.ndd or baserom.jp.ek.ndd, and a 64DD IPL ROM named N64DDIPLROM.n64 or 64DD_IPL_US_MJR.n64. F1 opens the enhancement menu. The release includes gdiffuser.o2r, which holds the Fast3D shaders used to start the renderer.",
+    "description_zh": "G-Diffuser 是带 64DD 扩展包的《F-Zero X》PC 移植。它需要大端序的美版第 0 修订 ROM，文件为 .z64。安装程序会在可执行文件旁边查找 baserom.us.rev0.z64。它还需要扩展包磁盘 baserom.translated.ek.ndd 或 baserom.jp.ek.ndd，以及名为 N64DDIPLROM.n64 或 64DD_IPL_US_MJR.n64 的 64DD IPL ROM。F1 打开增强菜单。发行版包含 gdiffuser.o2r，里面是用来启动渲染器的 Fast3D 着色器。",
+    "requirements": [
+      "The US revision 0 ROM, the Expansion Kit disk image, and the 64DD IPL ROM named above.",
+      "License: MIT. The Fast3D shaders in gdiffuser.o2r are also described as MIT."
+    ],
+    "evidence_url": "https://github.com/Zorkats/G-Diffuser/blob/6ba017418c1c124abcbe4c01450a27f931a57d8c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
