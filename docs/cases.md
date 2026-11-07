@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -225,7 +225,7 @@
 - [**Vandal Hearts: native PC port built on matching decompilations**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - Builds on shao113’s matching decompilation of PlayStation Vandal Hearts, adds a Japanese matching tree, and carries both through to a native Windows and Linux port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### Engine reimplementations (47)
+### Engine reimplementations (48)
 
 - [**Age of Empires Free Software Remake: a re-implementation on the original data**](https://github.com/FolkertVanVerseveld/aoe) - Re-implements Microsoft’s Age of Empires and its Rise of Rome expansion as a cross-platform C++17 engine on SDL2 and OpenGL that loads the original game’s DRS archives and language.dll resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo: a reverse-engineered Minecraft server**](https://github.com/bravoserver/bravo) - Reimplements the server side of Minecraft’s Alpha- and Beta-era multiplayer in Python on Twisted; its documentation calls it a reverse-engineered implementation written from scratch, credits network traffic dumps and says general Minecraft data went to a community wiki. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/bravo-minecraft-server-case/)</sub>
@@ -257,6 +257,7 @@
 - [**OpenMW: replacing Morrowind’s engine while reusing original content**](https://github.com/OpenMW/openmw) - Provides an independent engine for playing Morrowind and an alternative editor, OpenMW-CS. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openmw-engine-case/)</sub>
 - [**OpenRA: an engine reimplementation reimagining early Westwood RTS games**](https://github.com/OpenRA/OpenRA) - Provides a C# engine for early Westwood real-time strategy games, with mods that reimagine Command &amp; Conquer: Red Alert, Tiberian Dawn and Dune 2000. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openra-engine-case/)</sub>
 - [**OpenRCT2: an open re-implementation of RollerCoaster Tycoon 2**](https://github.com/OpenRCT2/OpenRCT2) - Re-implements RollerCoaster Tycoon 2, originally written in x86 assembly, as a C++ engine that runs on the original game’s data. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openrct2-engine-case/)</sub>
+- [**OpenRealm**](https://github.com/corepunch/open-realm) - OpenRealm is an open-source engine and compatibility project for Blizzard-era game data. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/open-realm/)</sub>
 - [**OpenRiseOfNations: a native macOS engine reimplementation**](https://github.com/ben-wright-1/OpenRiseOfNations) - Reimplements the Rise of Nations: Extended Edition engine as a native macOS app with a Metal renderer, a deterministic simulation, a computer opponent and a compatible BigHugeScript compiler and virtual machine, loading art, maps, rules and scripts from the user’s own Windows installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openriseofnations-engine-case/)</sub>
 - [**OpenRW: an open re-implementation of the Grand Theft Auto III engine**](https://github.com/rwengine/openrw) - Re-implements Rockstar Games’ Grand Theft Auto III (2001) as a cross-platform C++ engine that runs on the data of a legitimate PC copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openrw-gta3-engine-case/)</sub>
 - [**OpenSC4: an early open-source reimplementation of SimCity 4**](https://github.com/OpenSC4-org/OpenSC4) - Reimplements SimCity 4 as a Godot project in GDScript that reads DBPF archives, region folders and city saves from the user’s own SimCity 4 installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opensc4-simcity-4-reimplementation-case/)</sub>
