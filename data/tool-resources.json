@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dimensions-recomp",
+    "name": "Dimensions Recompiled",
+    "url": "https://github.com/NeverCookFirst/DimensionsRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Dimensions Recompiled is a native Windows build of the Xbox 360 game LEGO Dimensions. ReXGlue translates the PowerPC executable to C++ ahead of time, and the GPU command stream is translated to Direct3D 12 at runtime. DimensionsRecompiled-Setup.exe takes an extracted original-release folder that contains Default.xex, GAME.DAT, and GAME.HDR, plus Title Update 23. The installer refuses a different build or another title update. A companion app can stand in for the Toy Pad, and the Wii U, PlayStation 3, PlayStation 4, Xbox 360, and Xbox One pads are also supported. Releases are built from the toypad-ui branch of NeverCookFirst/rexglue-sdk.",
+    "description_zh": "Dimensions Recompiled 是 Xbox 360 游戏《乐高次元》的 Windows 原生构建。ReXGlue 预先把 PowerPC 可执行文件译成 C++，GPU 命令流在运行时译成 Direct3D 12。DimensionsRecompiled-Setup.exe 接受含 Default.xex、GAME.DAT 和 GAME.HDR 的原版解压文件夹，以及 Title Update 23。安装器会拒绝其他构建或其他标题更新。配套应用可以代替 Toy Pad，Wii U、PlayStation 3、PlayStation 4、Xbox 360 和 Xbox One 的实体底座也受支持。发行版从 NeverCookFirst/rexglue-sdk 的 toypad-ui 分支构建。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, a CPU with SSE4.2, and a Direct3D 12 GPU at feature level 11_0. The extracted original Xbox 360 disc folder and Title Update 23.",
+      "License: MIT for the code in this repository."
+    ],
+    "evidence_url": "https://github.com/NeverCookFirst/DimensionsRecomp/blob/a56de4245dbe2ea7f0d7aa6fb7637ebc29a3bed7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
