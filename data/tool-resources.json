@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "opentriad",
+    "name": "OpenTriad",
+    "url": "https://github.com/benjaminfoo/OpenTriad",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenTriad reimplements Triple Triad, the card game from Final Fantasy VIII. The engine is separate from a terminal app, a JavaFX app, and an Android app.",
+    "description_zh": "OpenTriad 重实现《最终幻想VIII》里的卡牌游戏 Triple Triad。引擎与终端程序、JavaFX 程序和 Android 程序是分开的。",
+    "requirements": [
+      "The README lists Java, Gradle, Gson, and JUnit.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/benjaminfoo/OpenTriad/blob/544303825c3253d2670064a4549b808346365aac/readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -225,7 +225,7 @@
 - [**Vandal Hearts: native PC port built on matching decompilations**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - Builds on shao113’s matching decompilation of PlayStation Vandal Hearts, adds a Japanese matching tree, and carries both through to a native Windows and Linux port. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### Engine reimplementations (47)
+### Engine reimplementations (48)
 
 - [**Age of Empires Free Software Remake: a re-implementation on the original data**](https://github.com/FolkertVanVerseveld/aoe) - Re-implements Microsoft’s Age of Empires and its Rise of Rome expansion as a cross-platform C++17 engine on SDL2 and OpenGL that loads the original game’s DRS archives and language.dll resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo: a reverse-engineered Minecraft server**](https://github.com/bravoserver/bravo) - Reimplements the server side of Minecraft’s Alpha- and Beta-era multiplayer in Python on Twisted; its documentation calls it a reverse-engineered implementation written from scratch, credits network traffic dumps and says general Minecraft data went to a community wiki. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/bravo-minecraft-server-case/)</sub>
@@ -261,6 +261,7 @@
 - [**OpenRW: an open re-implementation of the Grand Theft Auto III engine**](https://github.com/rwengine/openrw) - Re-implements Rockstar Games’ Grand Theft Auto III (2001) as a cross-platform C++ engine that runs on the data of a legitimate PC copy. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openrw-gta3-engine-case/)</sub>
 - [**OpenSC4: an early open-source reimplementation of SimCity 4**](https://github.com/OpenSC4-org/OpenSC4) - Reimplements SimCity 4 as a Godot project in GDScript that reads DBPF archives, region folders and city saves from the user’s own SimCity 4 installation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opensc4-simcity-4-reimplementation-case/)</sub>
 - [**OpenTomb: Tomb Raider engine reimplementation**](https://github.com/opentomb/OpenTomb) - OpenTomb is an open-source reimplementation of the classic Tomb Raider engine for playing levels from Tomb Raider 1–5 and custom TRLE levels. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opentomb/)</sub>
+- [**OpenTriad**](https://github.com/benjaminfoo/OpenTriad) - OpenTriad reimplements Triple Triad, the card game from Final Fantasy VIII. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opentriad/)</sub>
 - [**OpenXcom: an open-source clone of X-COM: UFO Defense and Terror from the Deep**](https://github.com/OpenXcom/OpenXcom) - Reimplements MicroProse’s UFO: Enemy Unknown (X-COM: UFO Defense) and X-COM: Terror from the Deep as a C++/SDL engine that runs on the user’s original game resources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/openxcom-engine-case/)</sub>
 - [**P.T. for PC: a behavior-based engine reimplementation that reads the PS4 data**](https://github.com/LoreanXavier/pt-pc) - Reimplements P.T.’s game logic in C++ on a new Vulkan engine that reads levels, models, textures, sounds, scripts and cutscenes from the user’s own PS4 copy at run time. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pt-pc-port-case/)</sub>
 - [**re2ds: a native Nintendo DS engine for Resident Evil 2**](https://github.com/eray1605/re2ds) - Reimplements Resident Evil 2’s PS1 game rules in a native Nintendo DS engine, with converters that turn data from the user’s own disc into DS formats. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/re2ds-nds-engine-case/)</sub>
