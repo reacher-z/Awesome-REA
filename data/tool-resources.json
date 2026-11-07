@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "vscode-decompiler",
+    "name": "vscode-decompiler",
+    "url": "https://github.com/tintinweb/vscode-decompiler",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "vscode-decompiler is a Visual Studio Code extension that decompiles binaries through Ghidra or an experimental Windows-only IDA Pro path, plus Java jars and classes, Android APKs, Python .pyc and .pyo files, and Ethereum smart contracts.",
+    "description_zh": "vscode-decompiler 是一个 Visual Studio Code 扩展，可通过 Ghidra 或实验性的仅 Windows 的 IDA Pro 路径反编译二进制文件，也可处理 Java jar 和 class、Android APK、Python 的 .pyc 与 .pyo，以及以太坊智能合约。",
+    "requirements": [
+      "Ghidra use follows Ghidra's installation guide, including its Java setup. Both ghidraRun and support/analyzeHeadless need to run.",
+      "IDA Pro support is optional, experimental, and Windows-only, and needs a licensed IDA Pro with a decompiler. Python decompilation needs pip3 install uncompyle6.",
+      "Ethereum smart-contract decompilation is marked experimental and Linux or macOS only.",
+      "The README does not name a license for the extension."
+    ],
+    "evidence_url": "https://github.com/tintinweb/vscode-decompiler/blob/fb499bd90e8bb0607e5581659d602cc7af5d90e3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
