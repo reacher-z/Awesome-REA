@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "new-super-paper-bros-case": {
+    "name": "New Super Paper Bros.：《超级纸片马里奥》原生移植",
+    "requirements": [
+      "在 Windows 上游玩需要 64 位的 Windows 10 或 11、支持 DirectX 12 或 Vulkan 的显卡，以及自备的美版光盘 R8PE01 修订 0 或欧版光盘 R8PP01，格式为 .iso、.ciso 或 .wbfs。",
+      "不包含游戏数据。启动器从你的光盘镜像安装游戏。",
+      "许可证：README 写明为 GPLv3。附带的第三方组件保留各自的许可证。"
+    ]
   }
 }
