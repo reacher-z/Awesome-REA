@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "malimite",
+    "name": "Malimite",
+    "url": "https://github.com/LaurieWired/Malimite",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "iOS and macOS decompiler for IPA files and application bundles, built on Ghidra, with the README naming Swift, Objective-C, and Apple resources. It lists Mac, Windows, and Linux, decoding of iOS resources, skipping library decompilation, reconstructing Swift classes, and built-in LLM method translation.",
+    "description_zh": "面向 IPA 和应用包的 iOS 与 macOS 反编译器，README 写明它基于 Ghidra，并点名 Swift、Objective-C 和 Apple 资源。它列出 Mac、Windows 和 Linux，能解码 iOS 资源、跳过库代码反编译、重建 Swift 类，并带有内置的 LLM 方法翻译。",
+    "evidence_url": "https://github.com/LaurieWired/Malimite/blob/f25b0a6267a2ae069cfac758362cd18b2072a276/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A precompiled JAR is on the releases page. The README says full installation steps are on the project wiki.",
+      "The README license badge reads Apache 2.0."
+    ]
   }
 ]

@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "malimite": {
+    "name": "Malimite",
+    "requirements": [
+      "发布页提供预编译 JAR。README 写明完整安装步骤在项目 wiki。",
+      "README 的许可徽章写的是 Apache 2.0。"
+    ]
   }
 }
