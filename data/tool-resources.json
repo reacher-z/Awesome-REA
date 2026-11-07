@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "burnout2-recomp",
+    "name": "Burnout 2 recompilation",
+    "url": "https://github.com/timftw21/burnout2-recompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a static recompilation of the original Xbox game Burnout 2: Point of Impact. The Windows build is the main target. Linux, Steam Deck, and macOS builds are described as experimental and still needing gameplay, sound, and performance checks. Release 1.14 adds a camera field-of-view slider, texture-pack installation, and initial scripting.",
+    "description_zh": "这是原版 Xbox 游戏 Burnout 2: Point of Impact 的静态重编译。Windows 构建是主要目标。Linux、Steam Deck 和 macOS 构建被写成实验性的，游戏过程、声音和性能仍需检查。1.14 发布增加了镜头视野滑块、贴图包安装和初步的脚本支持。",
+    "requirements": [
+      "The player supplies a US Xbox XISO, as .iso or .xiso. Windows setup is Install.cmd. Linux uses Install.desktop. macOS uses Install.command.",
+      "The reviewed README does not name a license for the project. Dependency licenses are listed in THIRD_PARTY_NOTICES.txt."
+    ],
+    "evidence_url": "https://github.com/timftw21/burnout2-recompilation/blob/a12075b88311ec7027b745a69941634cc4a381b7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
