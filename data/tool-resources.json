@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ndsrecomp",
+    "name": "ndsrecomp",
+    "url": "https://github.com/RetroPortingToolKit/ndsrecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "ndsrecomp is a pre-alpha static recompiler for the Nintendo DS. It lifts guest ARM code to C ahead of time, and a runtime supplies the memory bus, two-CPU scheduling, and hardware models. The README's demonstrated path includes the original firmware menu and experimental Mario Kart DS online play through Wiimmfi.",
+    "description_zh": "ndsrecomp 是任天堂 DS 的 pre-alpha 静态重编译器。它把客户机 ARM 代码提前提升为 C，运行时提供内存总线、双 CPU 调度和硬件模型。README 写明已经演示的路径包括原始固件菜单，以及通过 Wiimmfi 的实验性《Mario Kart DS》联机。",
+    "requirements": [
+      "The README labels version 0.6.11 as a very early pre-alpha developer snapshot, with no compatibility promise and no stable API.",
+      "Current project code covered by LICENSE is PolyForm Noncommercial 1.0.0. Commits and releases from before that change remain under the MIT License they used."
+    ],
+    "evidence_url": "https://github.com/RetroPortingToolKit/ndsrecomp/blob/369d7fa34d32cda0ca77d30272b5c50c00f40dd2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
