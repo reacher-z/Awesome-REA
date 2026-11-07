@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sonic-clean-engine",
+    "name": "Sonic Clean Engine",
+    "url": "https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "Sonic Clean Engine is a cleaned and modified disassembly of Sonic 3 & Knuckles. It removes hardcoded addresses from the original disassembly and uses a two-byte chunk ID in the level layout.",
+    "description_zh": "Sonic Clean Engine 是整理并修改过的《索尼克 3 与纳克尔斯》反汇编。它去掉了原版反汇编中的硬编码地址，关卡布局使用两字节的块 ID。",
+    "requirements": [
+      "Current source and releases are linked from the README.",
+      "The README points at LICENSE and does not name the license terms in the project description."
+    ],
+    "evidence_url": "https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/16c4e00b15a625931f67d6a0126cb65c8611be7f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
