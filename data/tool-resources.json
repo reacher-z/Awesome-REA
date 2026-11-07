@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "silver-sct",
+    "name": "Silver SCT tool",
+    "url": "https://github.com/nadavshemesh/silver-reversing-sct",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "This tool reads and writes .sct script files from Silver, the 1999 action RPG. sct.exe decompile turns a .sct file into .tsct, and sct.exe compile turns .tsct back into .sct. Decompiled examples in the repository include veranda.tsct, gnolib2.tsct, davhouse.tsct, and courtyrd.tsct.",
+    "description_zh": "这个工具读写 1999 年动作角色扮演游戏 Silver 的 .sct 脚本。sct.exe decompile 把 .sct 转成 .tsct，sct.exe compile 把 .tsct 转回 .sct。仓库里的反编译例子包括 veranda.tsct、gnolib2.tsct、davhouse.tsct 和 courtyrd.tsct。",
+    "requirements": [
+      "Build sct.exe with gcc from the C sources listed in the README. The commands overwrite the file they are given.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/nadavshemesh/silver-reversing-sct/blob/b4a1a8d1c3621fed15554de36d7464035d6e2893/readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
