@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "zelda-alttp-snes-recomp-case": {
+    "name": "塞尔达传说：众神的三角神力 SNES 重编译",
+    "requirements": [
+      "Windows 发布版需要玩家自己的美版 ROM，.sfc 或 .smc。期望的 CRC32 是 0x777AAC2F，即 1 MiB 的 LoROM no-intro 转储。512 字节的 SMC 头会在校验前去掉。",
+      "只有 main 分支保证可以构建。",
+      "仓库 LICENSE 覆盖的项目代码使用 PolyForm Noncommercial 1.0.0。附带的 MSU-1 补丁使用 MIT。third_party/ 中的第三方代码保留各自的许可证。"
+    ]
   }
 }
