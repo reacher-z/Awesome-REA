@@ -256,6 +256,7 @@ def render_homepage(*, site_dir: Path, explorer_html: str, resources: list[dict]
     body = (f'<a class="skip" href="#main">{"跳到正文" if zh else "Skip to content"}</a>'
             + announcement_bar(language)
             + header(language, '', plain_language_link(language, '/' if zh else '/zh/'), repository_url)
+            + mobile_bar(language, repository_url)
             + f'<main id="main">{_masthead(resources, papers, discovery_count, last_scan, language, prefix, repository_url)}{_drawer(resources, order, language, prefix)}{_featured_projects(language)}'
             + guides(in_stored_order, papers, language) + case_band(in_stored_order, language)
             + latest(in_stored_order, discovery_queue, language, callno) + categories(in_stored_order, language, FEATURED) + papers_block(papers, language)
