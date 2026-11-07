@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "zelda2-disasm",
+    "name": "Zelda II disassembly",
+    "url": "https://github.com/FiendsOfTheElements/z2disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This disassembles Zelda II: The Adventure of Link for the NES. rip-chr.sh extracts the CHR banks from an original ROM. build.sh assembles the ROM with ca65 and ld65.",
+    "description_zh": "该项目反汇编 NES 游戏《塞尔达传说 2：林克的冒险》。rip-chr.sh 从原版 ROM 提取 CHR 库。build.sh 用 ca65 和 ld65 汇编 ROM。",
+    "requirements": [
+      "Bash, ca65, and ld65. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/FiendsOfTheElements/z2disassembly/blob/c4c3a4c7d4156b41f54f726dc40644d45812ad29/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
