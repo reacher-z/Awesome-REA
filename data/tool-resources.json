@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "cv64-recomp-remaster",
+    "name": "Castlevania 64 remaster",
+    "url": "https://github.com/spacefarergames/CV64-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "class": "game",
+    "description_en": "This is a Windows x64 port of Castlevania 64, version 1.0. The README says gameplay and menus run at 60 fps, the renderer comes from Mupen, and 12 performance-critical functions are recompiled. It builds from a Visual Studio 2026 SLNX file.",
+    "description_zh": "这是《恶魔城 64》1.0 版的 Windows x64 移植。README 写明游戏和菜单以 60 帧运行，渲染器来自 Mupen，并重编译了 12 个对性能关键的函数。它从 Visual Studio 2026 的 SLNX 文件构建。",
+    "requirements": [
+      "Visual Studio 2026 on Windows x64. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/spacefarergames/CV64-Recomp/blob/7cd38d720fb1ec395c2da0ad1fb6291cad3f1f9a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
