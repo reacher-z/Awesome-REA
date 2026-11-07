@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "heroes-of-jinyong": {
+    "name": "金庸群侠传",
+    "requirements": [
+      "需要 CMake，以及 GCC 8 或更新版本、Clang 7 或更新版本，或者 MSVC 2019 或更新版本。克隆时使用 --recurse-submodules。",
+      "许可证：GPLv3。"
+    ]
   }
 }

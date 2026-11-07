@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "heroes-of-jinyong",
+    "name": "Heroes of Jin Yong",
+    "url": "https://github.com/soarqin/HeroesOfJinYong",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "This reimplements the DOS game 金庸群侠传 (The Legend of Jin Yong Heroes). The program is hojy.exe. With -DBUILD_TOOLS=ON, makedata takes the original game directory, a target directory, and a font file, then writes data, config.toml, and the merged map pictures. SDL2 is zlib-licensed. libADLMIDI and zita-resampler are GPLv3. soxr is LGPLv2.1.",
+    "description_zh": "该项目重新实现 DOS 游戏《金庸群侠传》。程序是 hojy.exe。加上 -DBUILD_TOOLS=ON 后，makedata 接收原版游戏目录、目标目录和一个字体文件，然后写出 data、config.toml 和合并后的地图图片。SDL2 是 zlib 许可证。libADLMIDI 和 zita-resampler 是 GPLv3。soxr 是 LGPLv2.1。",
+    "requirements": [
+      "CMake and GCC 8 or newer, Clang 7 or newer, or MSVC 2019 or newer. Clone with --recurse-submodules.",
+      "License: GPLv3."
+    ],
+    "evidence_url": "https://github.com/soarqin/HeroesOfJinYong/blob/6ace86bc9f74c5e54892e92b1ad5045094f6f389/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
