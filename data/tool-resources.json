@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pyre",
+    "name": "Pyre",
+    "url": "https://github.com/ant4g0nist/pyre",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Pyre runs Ghidra's C++ decompiler in the browser. The README says you drag in an ELF, Mach-O, PE, or .wasm file, the SLEIGH spec is loaded for that architecture, and functions are decompiled on demand without uploading the binary.",
+    "description_zh": "Pyre 在浏览器中运行 Ghidra 的 C++ 反编译器。README 写明把 ELF、Mach-O、PE 或 .wasm 文件拖进去，会按架构加载 SLEIGH 规范，并按需反编译函数，而且不会上传二进制。",
+    "requirements": [
+      "Everything runs in the browser. The README says there is no server, upload, or telemetry.",
+      "The alpha pipeline is described as working on x86, x86-64, AArch64, and WebAssembly.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/ant4g0nist/pyre/blob/835d7dd871304966165339d8cc7ae2deb0d00789/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

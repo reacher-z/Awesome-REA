@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pyre": {
+    "name": "Pyre",
+    "requirements": [
+      "全部在浏览器中运行。README 写明没有服务器、上传或遥测。",
+      "Alpha 流水线被描述为可处理 x86、x86-64、AArch64 和 WebAssembly。",
+      "许可证：MIT。"
+    ]
   }
 }
