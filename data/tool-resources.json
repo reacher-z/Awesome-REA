@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bk360",
+    "name": "Banjo-Kazooie XBLA decompilation",
+    "url": "https://github.com/banjo360/bk360",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This decompiles the Xbox Live Arcade version of Banjo-Kazooie. The expected default.xex has SHA-1 24f81f8058d1be416d95ccfcb5ebd2503eb4fd47. make split reads bk.yaml, and make regenerates merged.xex. The documented Xbox 360 SDK is version 7645. Comparisons use Visual Studio 2005 SP1 output against GCC for PowerPC, so objdiff shows function-call relocations as different.",
+    "description_zh": "该项目反编译 Xbox Live Arcade 版 Banjo-Kazooie。期望的 default.xex SHA-1 是 24f81f8058d1be416d95ccfcb5ebd2503eb4fd47。make split 读取 bk.yaml，make 重新生成 merged.xex。文档中的 Xbox 360 SDK 是 7645 版。比较使用 Visual Studio 2005 SP1 的输出对照 PowerPC 的 GCC，因此 objdiff 会把函数调用的重定位显示为不同。",
+    "requirements": [
+      "split360 and coff-linker on PATH, Visual Studio 2005 SP1, the Xbox 360 SDK, Python, and a PowerPC GCC. Linux builds use WINE.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/banjo360/bk360/blob/dc021c2fd04fcae54b51ec2bb0c426a09b295d88/readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
