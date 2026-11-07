@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -40,7 +40,7 @@
 [↑ 返回目录](#目录)
 
 <a id="game-matching-decompilation"></a>
-### 匹配反编译与反汇编 (69)
+### 匹配反编译与反汇编 (70)
 
 - [**3S Decomp：逐字比对的《街头霸王 III：3rd Strike》PS2 反编译重建**](https://github.com/crowded-street/3s-decomp) - 将 Street Fighter Anniversary Collection 中《街头霸王 III：3rd Strike》的 PlayStation 2 可执行文件反编译为 C 源码，用当年的 Metrowerks 与 EE GCC 编译器重新构建，再将重建出的可执行文件与使用者自备的原文件逐字比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)</sub>
@@ -59,6 +59,7 @@
 - [**Himuro：Fatal Frame（《零》）PS2 一致性反编译**](https://github.com/Mikompilation/Himuro) - 将 Fatal Frame（《零》）PS2 可执行文件的美版、欧版和日版重建为 C，使用原始的 EE-GCC 2.9 工具链构建，并以使用者自备可执行文件的 SHA-1 校验结果。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/himuro-fatal-frame-decomp-case/)</sub>
 - [**《ICO》反编译：逐字节一致的 PAL 与日版 PlayStation 2 启动 ELF**](https://github.com/nathanialf/ico) - 以同一套源码和游戏原用的编译器版本，重建《ICO》PAL 版（SCES-50760）与日版（SCPS-11003）PlayStation 2 光盘的启动 ELF，并检查载入的每个字节以及整个 ELF 文件都与光盘的 SHA-1 一致。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ico-matching-decomp-case/)</sub>
 - [**《王国之心 358/2 Days》：逐字节一致的 Nintendo DS 反编译重建**](https://github.com/Yokimitsuro/khdays-decomp) - 将 Nintendo DS 欧版《王国之心 358/2 Days》的 ARM9 程序及覆盖模块重建为 C 源码，以 CodeWarrior 重新编译后逐字节一致。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kingdom-hearts-days-matching-decomp-case/)</sub>
+- [**Klonoa 2 反编译**](https://github.com/entriphy/kl2_lv_decomp) - 这是 PlayStation 2 游戏 Klonoa 2: Lunatea's Veil 的匹配反编译，NTSC 编号 SLUS\_201.51。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kl2-lv-decomp/)</sub>
 - [**LEGO Island：源码重建与单独记录的精确重构建**](https://github.com/isledecomp/isle) - 针对英文版 LEGO Island 1.1 的原始 32 位 Windows 目标重建源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lego-island-decomp-case/)</sub>
 - [**《姆吉拉的假面》：生成一致美版 N64 ROM 的反编译重建**](https://github.com/zeldaret/mm) - 依据游戏内信息和静态或动态分析，为《塞尔达传说：姆吉拉的假面》重建 C 源码库，并重新构建美版 Nintendo 64 ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zelda-mm-decomp-case/)</sub>
 - [**《马力欧卡丁车 Wii》：进行中的 PAL 版一致性反编译**](https://github.com/snailspeed3/mkw) - 《马力欧卡丁车 Wii》的进行中一致性反编译，目标为 PAL 版（RMCP01）：用 Metrowerks 编译器从 C 与 C++ 源码重建 main.dol 和 StaticR.rel 模块，并与仓库保存的 SHA-1 比对。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mario-kart-wii-decomp-case/)</sub>
