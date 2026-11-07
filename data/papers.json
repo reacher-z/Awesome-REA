@@ -12878,6 +12878,7 @@
     "kind": "research",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
-    "runtime_tested": false
+    "runtime_tested": false,
+    "added_at": "2026-10-18"
   }
 ]

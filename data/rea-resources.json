@@ -4120,6 +4120,7 @@
     "description_zh": "BitterSecurity 的 Decepticon 将 rea-agents 与 Ghidra 封装在独立的 HTTP/MCP 容器中，作为可选逆向工作负载向 reverser 子智能体暴露三个工具。该集成按 SHA-256 固定待查二进制，并在返回结果前将 REA Evidence 文件导出到共享工作区。",
     "evidence_url": "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/docs/features/rea-reversing.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "Covers only the optional REA reversing integration in Decepticon’s reverser subagent, not the repository’s broader offensive-security workflows. The reviewed container image installs Node.js 22, OpenJDK 21, Python 3, Ghidra 12.1.4 and rea-agents@6.3.0, serving FastMCP and a health endpoint on port 8892 over a shared /workspace mount.",

@@ -36543,6 +36543,7 @@
     "description_zh": "使用 SQL 查询 Android APK 与 DEX 文件中的类、方法、字段、字符串、调用边及 Smali 反汇编。以单个预构建二进制发布，既可作为本地 stdio MCP 服务（`dexsql mcp`）运行，也可作为独立命令行工具（`dexsql query`）使用。",
     "evidence_url": "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/README.md",
     "verified_at": "2026-10-18",
+    "added_at": "2026-10-18",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed release repository publishes prebuilt binaries for Linux, macOS and Windows on x86_64 and arm64 (latest release v0.1.5 at review time) without core engine source code. Running requires downloading the matching platform archive and supplying local APK or DEX files.",
