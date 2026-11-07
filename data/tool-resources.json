@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "freedom-binnavi",
+    "name": "fREedom",
+    "url": "https://github.com/cseagle/fREedom",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "fREedom extracts disassembly from executables into the Postgres tables that BinNavi reads, without IDA Pro. It parses PE32, PE32+, and ELF binaries and disassembles x86 and x86-64 with Capstone. The repository includes BinNavi's Postgres setup script. python fREedom.py takes a database name, user, host, and binary path. It needs psycopg2. The reviewed page says it does not recover data types or library signatures.",
+    "description_zh": "fREedom 在不使用 IDA Pro 的情况下，把可执行文件的反汇编提取成 BinNavi 读取的 Postgres 表。它解析 PE32、PE32+ 和 ELF，并用 Capstone 反汇编 x86 和 x86-64。仓库包含 BinNavi 的 Postgres 建库脚本。python fREedom.py 接受数据库名、用户、主机和二进制路径。它需要 psycopg2。审阅页面写明它不恢复数据类型或库函数签名。",
+    "requirements": [
+      "PostgreSQL, psycopg2, and Capstone. A PE32, PE32+, or ELF binary with x86 or x86-64 code.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/cseagle/fREedom/blob/49dda0d4579952ac451746608588f9ed04aa1121/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
