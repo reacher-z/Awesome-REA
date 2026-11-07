@@ -12817,5 +12817,53 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-binary-vuln-mining-survey",
+    "title": "A Survey on Binary Code Vulnerability Mining Technology",
+    "authors": [
+      "Pengzhi Xu",
+      "Zetian Mai",
+      "Yuhao Lin",
+      "Zhen Guo",
+      "Victor S. Sheng"
+    ],
+    "year": 2021,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "Crossref records the publication year only",
+    "venue": "Journal of Information Hiding and Privacy Protection",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.32604/jihpp.2021.027280",
+    "url": "https://doi.org/10.32604/jihpp.2021.027280",
+    "pdf_url": "https://www.techscience.com/uploads/attached/file/20220322/20220322064556_97550.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This article surveys technologies for finding vulnerabilities in binary code rather than by scanning source. The checked artifact is the publisher PDF named by that title.",
+    "description_zh": "本文综述在二进制代码中发现漏洞的技术，而不是通过扫描源代码。核对过的文献是以该题名发布的出版方 PDF。",
+    "scope_limitations_en": "Crossref gives the year 2021 without a month or day, so no finer date is recorded. Findings inside the PDF were not reproduced.",
+    "scope_limitations_zh": "Crossref 只给出 2021 年，没有月份或日期，因此不记录更细的日期。PDF 中的结果没有复现。",
+    "why_fits_en": "Vulnerability mining on binaries is a reverse-engineering task that starts from compiled code.",
+    "why_fits_zh": "在二进制上挖掘漏洞是从编译后代码出发的逆向工程任务。",
+    "evidence_urls": [
+      "https://www.techscience.com/uploads/attached/file/20220322/20220322064556_97550.pdf",
+      "https://api.crossref.org/works/10.32604/jihpp.2021.027280",
+      "https://doi.org/10.32604/jihpp.2021.027280"
+    ],
+    "metadata_notes": "The public PDF URL is the Tech Science file that was fetched.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "二进制代码漏洞挖掘技术综述",
+    "date_basis_zh": "Crossref 只登记了出版年份，没有更细的日期",
+    "metadata_notes_zh": "公开 PDF 网址是已获取的 Tech Science 文件。"
   }
 ]
