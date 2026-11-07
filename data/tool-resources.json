@@ -36543,6 +36543,7 @@
     "description_zh": "Trail of Bits 基于 Remill 开发的机器码提升器，目标是生成高质量的 LLVM bitcode，使其接近 Clang 编译语义等价的 C 函数时产生的结果，再交由 Rellic 进一步反编译为 C。其 anvill-decompile-spec 工具读取描述二进制底层 ABI 信息的 Protobuf 规格文件，把其中的函数和全局变量提升为 LLVM IR 或 bitcode；一组 LLVM 遍负责降级 Remill 内建函数，并恢复栈帧、跳转表和 switch 结构。README 称 main 分支读取的规格文件由一个仍在开发、尚未开源的 Ghidra 插件生成，开源的 Binary Ninja 规格生成脚本则保留在 binja-final-version 标签中。",
     "evidence_url": "https://github.com/lifting-bits/anvill/blob/9948d26cd993952d6010a59f27a198cbe3c79c1d/README.md",
     "verified_at": "2026-10-27",
+    "added_at": "2026-10-27",
     "verification": "source-reviewed",
     "requirements": [
       "Latest GitHub release at review: v0.1.39, published 2021-02-22. Later tags reach v0.2.1 (a 2022-11-14 commit) without release entries, and the reviewed master commit is six commits ahead of it; its last code change dates from 2022-12-06, and the reviewed commit itself, from 2023-07-05, only updates a README link. GitHub does not mark the repository archived. This entry pins that commit for documentation only.",
