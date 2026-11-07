@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "woodyre",
+    "name": "WoodyRE",
+    "url": "https://github.com/jjmhalew/WoodyRE",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "WoodyRE reimplements the engine of Woody Woodpecker: Escape from Buzz Buzzard Park, the 2001 PC game. It checks the player's CD against the English 1.00 release and also accepts the Spanish CD and three February 2002 discs. Releases cover Windows, Linux, Android 7.0 or later on 64-bit devices, and an experimental Switch build.",
+    "description_zh": "WoodyRE 重实现 2001 年 PC 游戏《Woody Woodpecker: Escape from Buzz Buzzard Park》的引擎。它按英文 1.00 版检查玩家的光盘，也接受西班牙文光盘和三张 2002 年 2 月的光盘。发布包覆盖 Windows、Linux、64 位设备上的 Android 7.0 及以上，以及一个实验性的 Switch 构建。",
+    "requirements": [
+      "Download WoodyRE.exe, the Linux archive, or the Android APK from Releases. The first start copies about 640 MB from the CD and checks the files.",
+      "License: GPL-3.0-or-later. The README says stb image code is public domain or MIT, SMAA is MIT, and the Android SDL code is zlib."
+    ],
+    "evidence_url": "https://github.com/jjmhalew/WoodyRE/blob/6eae3d4f77a9e8506b0113b2cd98a5c4239dc139/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
