@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nehebn2",
+    "name": "Nehebn2",
+    "url": "https://github.com/ElykDeer/nehebn2",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Nehebn2 is a Python 3 command-line interface for Binary Ninja. The reviewed README lists a linear disassembly view, cross-references, a function list, a hex view, and customizable key bindings.",
+    "description_zh": "Nehebn2 是 Binary Ninja 的 Python 3 命令行界面。审阅的 README 列出线性反汇编视图、交叉引用、函数列表、十六进制视图和可自定义的按键绑定。",
+    "requirements": [
+      "Python 3, the Binary Ninja API, and a Binary Ninja headless license.",
+      "The reviewed README does not name a license for this project."
+    ],
+    "evidence_url": "https://github.com/ElykDeer/nehebn2/blob/a92096d634e9a06456c862bc7f786e16188ee702/readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
