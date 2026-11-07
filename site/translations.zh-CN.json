@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "black-2006-recomp": {
+    "name": "Black 2006 Recomp：BLACK 的 Windows 重编译",
+    "requirements": [
+      "README 指向发布下载，并写明用户自备游戏文件。",
+      "Windows 构建可以通过 Wine 或 Proton 在 x86_64 Linux 上运行。说明在 docs/linux.md。",
+      "GitHub 报告该仓库的许可证为 MIT。"
+    ]
   }
 }

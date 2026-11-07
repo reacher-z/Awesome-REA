@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "black-2006-recomp",
+    "name": "Black 2006 Recomp: Windows recompilation of BLACK",
+    "url": "https://github.com/portingpete/Black-2006-Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Black 2006 Recomp is an experimental Windows recompilation of the original Xbox release of BLACK (2006), built with XboxRecomp. The README lists a Direct3D 11 renderer, keyboard and mouse, XInput, video settings, a PC launcher, and native audio, and says movies are enabled by default.",
+    "description_zh": "Black 2006 Recomp 是初代 Xbox 游戏 BLACK（2006）的实验性 Windows 重编译，使用 XboxRecomp 构建。README 列出 Direct3D 11 渲染器、键盘和鼠标、XInput、视频设置、PC 启动器和原生音频，并写明影片默认开启。",
+    "evidence_url": "https://github.com/portingpete/Black-2006-Recomp/blob/2041e5a97f1300dca128d51fc06e1ae32cea9f21/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The README points to the release downloads and says the user brings their own game files.",
+      "The Windows build can run on x86_64 Linux through Wine or Proton. Setup is in docs/linux.md.",
+      "GitHub reports the repository license as MIT."
+    ],
+    "verification": "source-reviewed",
+    "class": "game",
+    "reconstruction_method": "static-recompilation"
   }
 ]
