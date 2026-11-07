@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mcla-recomp",
+    "name": "Midnight Club: Los Angeles recompilation",
+    "url": "https://github.com/holdmysocks/mcla-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Midnight Club: Los Angeles Complete Edition for Xbox 360, title id 545407F8, with the ReXGlue SDK. Only the USA and Europe disc image is supported. On Windows, scripts/make_pc.ps1 takes that ISO and builds mcla.exe with Direct3D 12. Career, races, and the garage play at 30 FPS by default, and the frame-rate option also lists 60 and 120. The Linux build uses Clang 20, Vulkan 1.3, and ReXGlue v0.10.0, then scripts/play_linux.sh. A separate build targets a PS5 that already runs homebrew.",
+    "description_zh": "该项目用 ReXGlue SDK 静态重编译 Xbox 360 游戏《午夜俱乐部：洛杉矶》完整版，标题编号 545407F8。只支持美版和欧版光盘镜像。在 Windows 上，scripts/make_pc.ps1 接受该 ISO，并用 Direct3D 12 构建 mcla.exe。生涯、比赛和车库默认以 30 帧运行，帧率选项还包括 60 和 120。Linux 构建使用 Clang 20、Vulkan 1.3 和 ReXGlue v0.10.0，然后运行 scripts/play_linux.sh。另有一个构建面向已经能运行自制软件的 PS5。",
+    "requirements": [
+      "A USA or Europe Xbox 360 ISO of title 545407F8. Windows 10 or 11 with Direct3D 12, or Linux with Clang 20 and Vulkan 1.3. About 20 GB free on Windows.",
+      "License: GPL-3.0-or-later. ReXGlue is BSD-3. PS5_Vulkan is GPL-3."
+    ],
+    "evidence_url": "https://github.com/holdmysocks/mcla-recomp/blob/2ed208199fcab064e67a83c5ab8f7e8f2aece444/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
