@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "real-dsound-case": {
+    "name": "reAL：对照 Windows 与 ALchemy 检查的 dsound.dll",
+    "requirements": [
+      "./build.sh 构建 dsound.dll、跟踪器、测试程序，并运行本机单元测试。README 写明仓库不含 Creative 或微软的代码或二进制，因此与那些 DLL 比较需要 Windows 安装中的 DLL。",
+      "README 描述了对照 Windows 7 检查的 DirectSound 返回，以及它称为微软效果逐位移植的 SetFX 效果。它还描述了可选的 HRTF 路径。内置集合是它署名的 MIT KEMAR 测量。",
+      "README 写明测试程序对两种实现运行并逐行比较输出，离线捕获则逐事件比较。它点名 tests/comcmp.sh 和 tests/fuzzcmp.py。",
+      "LICENSE 是 MIT 许可证，版权 2026 Neth。README 写明 ALchemy 的版权属于 Creative Technology。"
+    ]
   }
 }

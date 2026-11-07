@@ -36528,5 +36528,38 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "real-dsound-case",
+    "name": "reAL: a dsound.dll checked against Windows and ALchemy",
+    "url": "https://github.com/PlayNeth/reAL",
+    "description_en": "A drop-in dsound.dll that reimplements Creative ALchemy and DirectSound behavior, including DirectMusic pieces the README names. ./build.sh builds the DLL and runs the native unit tests. The README says comparisons with Microsoft's DLLs are line-by-line and event-by-event.",
+    "description_zh": "可替换的 dsound.dll，重建 Creative ALchemy 与 DirectSound 行为，包括 README 点名的 DirectMusic 部分。./build.sh 构建 DLL 并运行本机单元测试。README 写明与微软 DLL 的比较是逐行和逐事件的。",
+    "evidence_url": "https://github.com/PlayNeth/reAL/blob/b68e4d12c526c0155af702e92b95dcf78c0e790b/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/PlayNeth/reAL/blob/b68e4d12c526c0155af702e92b95dcf78c0e790b/build.sh",
+      "https://github.com/PlayNeth/reAL/blob/b68e4d12c526c0155af702e92b95dcf78c0e790b/LICENSE"
+    ],
+    "requirements": [
+      "./build.sh builds dsound.dll, the tracers, the test programs, and runs the native unit tests. The README says the repository contains no Creative or Microsoft code or binaries, so a comparison with those DLLs needs the DLLs from a Windows install.",
+      "The README describes DirectSound answers checked against Windows 7, and SetFX effects it calls bit-exact ports of Microsoft's effects. It also describes an optional HRTF path. The built-in set is the MIT KEMAR measurements it credits.",
+      "The README says test programs are run against both implementations and their output is compared line by line, and that offline captures are compared event by event. It names tests/comcmp.sh and tests/fuzzcmp.py.",
+      "LICENSE is the MIT License, copyright 2026 Neth. The README says ALchemy is copyright Creative Technology."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "targets": [
+      "binary"
+    ]
   }
 ]
