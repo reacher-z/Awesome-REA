@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "regoth",
+    "name": "REGoth",
+    "url": "https://github.com/REGoth-project/REGoth",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "REGoth reimplements the zEngine used by Gothic and Gothic II. The reviewed README says the project restarted at REGoth-project/REGoth-bs. This tree's latest tagged Windows and Android builds are version 0.4. git clone --recursive, CMake 3.1 or newer, and a C++14 compiler are required, along with libsndfile. The tested compilers are GCC 6, MinGW, and Visual Studio 2015 or 2017. REGoth -g takes a Gothic I or II installation and -w takes a zen file such as newworld.zen. The binary is in build/bin.",
+    "description_zh": "REGoth 重实现《哥特王朝》和《哥特王朝2》使用的 zEngine。审阅的 README 写明项目已在 REGoth-project/REGoth-bs 重新开始。这棵树最新的带标签 Windows 和 Android 构建是 0.4 版。需要 git clone --recursive、CMake 3.1 或更高版本，以及 C++14 编译器和 libsndfile。测试过的编译器是 GCC 6、MinGW，以及 Visual Studio 2015 或 2017。REGoth -g 接受哥特王朝 I 或 II 的安装目录，-w 接受 zen 文件，例如 newworld.zen。二进制在 build/bin。",
+    "requirements": [
+      "A Gothic I or II installation and libsndfile. Clone with --recursive, then configure with CMake.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/REGoth-project/REGoth/blob/b6d91b8107bfeae1431dfd11af5a20545b3e7643/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
