@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "skullburglar-case": {
+    "name": "Skullburglar",
+    "requirements": [
+      "玩家提供自己的游戏副本。https://skullburglar.stz.sh 上的启动器会用这张光盘完成安装。",
+      "从源码构建的步骤写在 BUILDING.md。",
+      "许可证：BSD 3-Clause。"
+    ]
   }
 }
