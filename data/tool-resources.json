@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rockstar-table-tennis-case",
+    "name": "Rockstar Table Tennis PC recompilation",
+    "url": "https://github.com/davidptrssvea/Table-Tennis-Rockstar-PC",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a Windows x64 recompilation of Rockstar Games presents Table Tennis for the Xbox 360. The game code is recompiled with ReXGlue SDK 0.10.0 and rendered with DirectX 12. Gameplay is paced at 60 FPS.",
+    "description_zh": "这是 Xbox 360《Rockstar Games presents Table Tennis》的 Windows x64 重编译。游戏代码用 ReXGlue SDK 0.10.0 重编译，并用 DirectX 12 渲染。游戏节奏固定为 60 FPS。",
+    "requirements": [
+      "The installer, Install-Table-Tennis.exe from release 1.5.3, builds the game from the player's retail Table Tennis ISO.",
+      "The README says 120, 144, and 240 FPS gameplay is not unlocked.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/davidptrssvea/Table-Tennis-Rockstar-PC/blob/753765bfa044c15487fa9a6a6829e34532fac9df/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
