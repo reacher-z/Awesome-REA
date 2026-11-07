@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "renut",
+    "name": "reNut",
+    "url": "https://github.com/masterspike52/reNut",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "reNut recompiles the USA release of Banjo-Kazooie: Nuts & Bolts with the ReXGlue SDK. The current release hooks the game's D3D calls through Plume and compiles shaders from XenosRecomp into the executable. The launcher extracts a USA ISO and Title Update 3, and can add a DLC package. It runs on Windows and Linux. The reviewed page says physics misbehave above 60 FPS, and the frame limit is set to 60 under F4, Performance. Online play uses RexLiveless, opened with F10 or the guide button.",
+    "description_zh": "reNut 用 ReXGlue SDK 重编译美版《Banjo-Kazooie: Nuts & Bolts》。当前发行版通过 Plume 挂钩游戏的 D3D 调用，并把 XenosRecomp 的着色器编译进可执行文件。启动器提取美版 ISO 和 Title Update 3，也可以加入 DLC 包。它在 Windows 和 Linux 上运行。审阅页面写明超过 60 帧时物理会异常，帧率上限在 F4 的 Performance 里设为 60。在线游玩使用 RexLiveless，用 F10 或 Guide 键打开。",
+    "requirements": [
+      "A USA ISO of Banjo-Kazooie: Nuts & Bolts and Title Update 3. Windows or Linux.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/masterspike52/reNut/blob/e5c57e71c2c08e0e7703b7fd5835d0356683ab87/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
