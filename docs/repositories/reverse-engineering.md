@@ -203,7 +203,7 @@ These projects were discovered automatically and are unreviewed. Categories deri
 - [naivenom/reversing-list](https://github.com/naivenom/reversing-list) — Reversing list **[148 stars]**
 - [pret/pokepinballrs](https://github.com/pret/pokepinballrs) — Decompilation of Pokémon Pinball: Ruby &amp; Sapphire **[148 stars]**
 - [dashr9230/SA-MP](https://github.com/dashr9230/SA-MP) — A work-in-progress matching decompilation of the 0.3.7 version of San Andreas Multiplayer **[147 stars]**
-- [dreamingmoths/memory-of-alessa](https://github.com/dreamingmoths/memory-of-alessa) — In-progress matching decompilation of Silent Hill 3 **[145 stars]**
+- [dreamingmoths/memory-of-alessa](https://github.com/dreamingmoths/memory-of-alessa) — In-progress matching decompilation of Silent Hill 3 **[145 stars]** · Curated: [memory of alessa: an in-progress Silent Hill 3 PS2 matching decompilation](https://awesomerea.org/resources/silent-hill-3-memory-of-alessa-decomp-case/)
 - [AsenOsen/frida-stealth](https://github.com/AsenOsen/frida-stealth) — Stealth patch for Frida, stealth knowledge collection **[144 stars]**
 - [xbret/xenoblade](https://github.com/xbret/xenoblade) — Decompilation of Xenoblade (JP) **[142 stars]**
 - [camden-smallwood/pdb-decompiler](https://github.com/camden-smallwood/pdb-decompiler) — A tool to decompile MSVC PDB files to C++ source code. **[139 stars]**
