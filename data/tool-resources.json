@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "scion-maxis",
+    "name": "Scion",
+    "url": "https://github.com/nsgomez/scion",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "software",
+    "description_en": "Scion is a reference implementation of the Gonzo/Rizzo framework used by Maxis. It aims at the version in SimCity 4 Deluxe Edition. The README also names SimCity 3000, The Sims 2, and Spore as games that used the framework, and says identical machine code is a stretch goal.",
+    "description_zh": "Scion 是 Maxis 所用 Gonzo/Rizzo 框架的参考实现。它以《模拟城市 4 豪华版》中的版本为目标。README 还列出使用过该框架的《模拟城市 3000》、《模拟人生 2》和《孢子》，并写明逐指令相同的机器码是一个延伸目标。",
+    "requirements": [
+      "Windows. Project files are for Visual Studio .NET 2003. Build STLport with nmake -f vc7.mak from src/stlport/src, then build the framework solution.",
+      "License: GNU LGPL 2.1 or any later version."
+    ],
+    "evidence_url": "https://github.com/nsgomez/scion/blob/67bf1c49664ef0c95b6b3f40e3d93ad609ca5b45/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

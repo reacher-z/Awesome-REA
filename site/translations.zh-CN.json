@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "scion-maxis": {
+    "name": "Scion",
+    "requirements": [
+      "需要 Windows。工程文件面向 Visual Studio .NET 2003。在 src/stlport/src 用 nmake -f vc7.mak 构建 STLport，然后构建框架解决方案。",
+      "许可证：GNU LGPL 2.1 或任何更高版本。"
+    ]
   }
 }
