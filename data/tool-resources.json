@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "lce-renewed",
+    "name": "LCE Renewed",
+    "url": "https://github.com/Patoke/LCERenewed",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "LCE Renewed is a decompilation effort for later releases of Minecraft: Legacy Console Edition. The README says it starts from a December PS Vita leaked source tree from 4J Studios and backports title updates, currently tracking the Xbox 360 updates.",
+    "description_zh": "LCE Renewed 是《我的世界：主机遗产版》后续版本的反编译工作。README 写明它从 4J Studios 的一份十二月泄露的 PS Vita 源码树开始，并回移标题更新，目前跟踪 Xbox 360 的更新。",
+    "requirements": [
+      "Contribution steps are in CONTRIBUTING.md. The README points to an IDA database under tools/disassembly.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Patoke/LCERenewed/blob/9c8ad8ac700de22a29109c172cecf61f842a27b6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
