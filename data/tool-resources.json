@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "smt1-j10-disasm",
+    "name": "Shin Megami Tensei J1.0 disassembly",
+    "url": "https://github.com/spannerisms/smt1dasm",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is an incomplete disassembly of Shin Megami Tensei for the Super Nintendo, Japanese version 1.0. Each line starts with an address label of the form #_AAAAAA, where AAAAAA is the 24-bit ROM address. One instruction is written per line. MVN and MVP are written with a macro so the standard form assembles. The README says unused code from overwritten builds remains in the ROM.",
+    "description_zh": "这是超级任天堂日版 1.0《真·女神转生》的未完成反汇编。每一行以 #_AAAAAA 形式的地址标签开头，AAAAAA 是 24 位 ROM 地址。每行写一条指令。MVN 和 MVP 用宏写出，这样标准形式也能汇编。README 写明被覆盖的旧构建留下的未使用代码仍在 ROM 里。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/spannerisms/smt1dasm/blob/6d950c02be4b24adb07f8e024db26ce38b1554e3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
