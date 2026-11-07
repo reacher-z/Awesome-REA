@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mksc-decomp",
+    "name": "Mario Kart: Super Circuit decompilation",
+    "url": "https://github.com/jellees/mksc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This decompiles Mario Kart: Super Circuit, US release. It builds mksc.gba, SHA-1 9d327c030c3e2d9007990518594f70c3340ac56f.",
+    "description_zh": "该项目反编译美版《马里奥卡丁车：超级赛道》。它构建 mksc.gba，SHA-1 为 9d327c030c3e2d9007990518594f70c3340ac56f。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/jellees/mksc/blob/3df8932105c91f8e9e1ad72801ea13ff74339fe1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

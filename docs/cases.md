@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -63,6 +63,7 @@
 - [**Majora’s Mask: matching US N64 decompilation**](https://github.com/zeldaret/mm) - Recreates a C source base for The Legend of Zelda: Majora’s Mask from information in the game and static or dynamic analysis, then rebuilds the US Nintendo 64 ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/zelda-mm-decomp-case/)</sub>
 - [**Mario Kart Wii: an in-progress matching decompilation of the PAL release**](https://github.com/snailspeed3/mkw) - A work-in-progress matching decompilation of Mario Kart Wii that targets the PAL release (RMCP01), rebuilding main.dol and the StaticR.rel module from C and C++ with Metrowerks compilers and checking both against stored SHA-1 values. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mario-kart-wii-decomp-case/)</sub>
 - [**Mario Kart: Double Dash!!: a matching GameCube decompilation of the debug build**](https://github.com/doldecomp/mkdd) - A work-in-progress 1:1 decompilation of Mario Kart: Double Dash!! <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mario-kart-double-dash-decomp-case/)</sub>
+- [**Mario Kart: Super Circuit decompilation**](https://github.com/jellees/mksc) - This decompiles Mario Kart: Super Circuit, US release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mksc-decomp/)</sub>
 - [**Mario Party 4: matching GameCube decompilation of the USA releases**](https://github.com/mariopartyrd/marioparty4) - Reconstructs Mario Party 4’s GameCube main executable and REL modules as C source that rebuilds both USA releases. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/mario-party-4-decomp-case/)</sub>
 - [**MediEvil decompilation: an early checksum-gated PlayStation project**](https://github.com/MediEvilDecompilation/medievil-decomp) - Decompiles the US PlayStation release of MediEvil toward C source that rebuilds its main executable, game executable and 26 overlays. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/medievil-decomp-case/)</sub>
 - [**Metroid Prime: the PrimeDecomp matching GameCube decompilation**](https://github.com/PrimeDecomp/prime) - Reconstructs C++ source for Metroid Prime’s GameCube executable and its NES-emulator module so that CodeWarrior builds match the originals, across the USA, Korean, PAL and Japanese releases, with early configurations for demo discs and three Wii releases. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/primedecomp-metroid-prime-decomp-case/)</sub>
