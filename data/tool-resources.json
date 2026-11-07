@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "strikers-quest-mr",
+    "name": "Quest 3 Strikers",
+    "url": "https://github.com/LanceSweatpants/Strikers-Quest-MR",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This runs Super Mario Strikers for the GameCube on a Meta Quest 3 as a mixed-reality app. It is a fork of the Android port, compiled for the headset and drawn through OpenXR. The README describes a floating screen, a life-size stadium, and a tabletop pitch. The player installs the APK from Releases and supplies their own copy of the game.",
+    "description_zh": "该项目把 GameCube 版《超级马里奥前锋》做成 Meta Quest 3 上的混合现实应用。它是 Android 移植的分支，为头显编译，并通过 OpenXR 绘制。README 描述了悬浮屏幕、等身球场和桌面球场。玩家从 Releases 安装 APK，并提供自己的游戏副本。",
+    "requirements": [
+      "A Meta Quest 3 and the APK from Releases.",
+      "License: the README says there is no single license. This fork's Quest additions are GPL-3.0-or-later."
+    ],
+    "evidence_url": "https://github.com/LanceSweatpants/Strikers-Quest-MR/blob/22f93312d1c417486391bdff96e4eb1760125ba1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
