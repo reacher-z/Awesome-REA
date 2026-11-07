@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "kirby-epic-yarn-decomp",
+    "name": "Kirby's Epic Yarn decompilation",
+    "url": "https://github.com/Swiftshine/key",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository is a work-in-progress decompilation of Kirby's Epic Yarn. The supported version is RK5E01, the USA revision 0. The tree contains no game assets or assembly.",
+    "description_zh": "该仓库是《毛线卡比》的进行中反编译。支持的版本是美版第 0 修订 RK5E01。仓库里没有游戏资源和汇编。",
+    "requirements": [
+      "Extract the game with Dolphin into orig/RK5E01. Only sys/main.dol is required. Then run python configure.py and ninja.",
+      "Diffing uses objdiff. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Swiftshine/key/blob/7f2a9ab9ad66d8e2f6eac52acc2c01dff0bd03a2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
