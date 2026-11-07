@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "idp-hexagon",
+    "name": "Hexagon processor module",
+    "url": "https://github.com/n-o-o-n/idp_hexagon",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "idp_hexagon is an IDA Pro processor module for Qualcomm Hexagon, also called QDSP6. The README lists support for Hexagon versions from V4 through V79, including HVX, audio, HMX, and V66 neural-network extensions, plus ELF relocations.",
+    "description_zh": "idp_hexagon 是高通 Hexagon（也称 QDSP6）的 IDA Pro 处理器模块。README 列出从 V4 到 V79 的 Hexagon 版本支持，包括 HVX、音频、HMX 和 V66 神经网络扩展，以及 ELF 重定位。",
+    "requirements": [
+      "It supports IDA 7.0 through 9.1.",
+      "License: LGPL-3.0."
+    ],
+    "evidence_url": "https://github.com/n-o-o-n/idp_hexagon/blob/197cf9515c71dd9d9ee81586ca244a8171b09f6f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
