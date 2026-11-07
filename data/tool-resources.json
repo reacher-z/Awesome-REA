@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "chernobog",
+    "name": "chernobog",
+    "url": "https://github.com/19h/chernobog",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "chernobog is a Hex-Rays decompiler plugin for Hikari LLVM obfuscation. The reviewed notes for 6.5 use CoBRA to propose mixed Boolean-arithmetic candidates and Z3 to check the candidate and the emitted microcode or ctree. CHERNOBOG_MBA_BACKEND=legacy keeps the previous generator. A deep-deobfuscation action raises the per-function semantic budget from 1 second to 30 seconds. The plugin also covers opaque predicates, string decryption, and x86 flag and memory models.",
+    "description_zh": "chernobog 是针对 Hikari LLVM 混淆的 Hex-Rays 反编译器插件。审阅的 6.5 说明用 CoBRA 提出混合布尔算术候选，并用 Z3 检查候选以及生成的微码或 ctree。CHERNOBOG_MBA_BACKEND=legacy 保留以前的生成器。深度去混淆动作把每个函数的语义分析预算从 1 秒提高到 30 秒。插件还处理不透明谓词、字符串解密，以及 x86 标志和内存模型。",
+    "requirements": [
+      "IDA Pro with the Hex-Rays decompiler.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/19h/chernobog/blob/579c1c08f953011298e32d43bb4c752a30b06b34/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
