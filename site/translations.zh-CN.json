@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "waterbear": {
+    "name": "waterbear",
+    "requirements": [
+      "用 waterbear assemble example.s -o example.vms 汇编。加上 --optimize-jumps 可以在目标处于范围内时折叠跳转和调用。",
+      "文档在 https://wtetzner.github.io/waterbear/。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "waterbear",
+    "name": "waterbear",
+    "url": "https://github.com/wtetzner/waterbear",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "waterbear is an assembler for the Dreamcast VMU. It can be used as a library or as the command-line program waterbear. Version 0.18.0 can assemble a source file and optionally select smaller jump and call encodings.",
+    "description_zh": "waterbear 是 Dreamcast VMU 的汇编器。它可以作为库使用，也可以作为命令行程序 waterbear。0.18.0 可以汇编源文件，并可选地选用更短的跳转和调用编码。",
+    "requirements": [
+      "Assemble with waterbear assemble example.s -o example.vms. Add --optimize-jumps to fold jumps and calls when the target is in range.",
+      "Documentation is at https://wtetzner.github.io/waterbear/.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/wtetzner/waterbear/blob/9d7a2536ed7234965417adf2fe619e6301c352a2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
