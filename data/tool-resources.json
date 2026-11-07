@@ -36528,5 +36528,24 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "warband-module-decomp",
+    "name": "Warband module decompiler",
+    "url": "https://github.com/cuellius/decomp",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "This decompiles Mount & Blade: Warband modules. It converts a module's .txt files into the modular system's .py files. The reviewed README says the program is published for personal use.",
+    "description_zh": "该工具反编译《骑马与砍杀：战团》的模组。它把模组的 .txt 文件转换成模块系统的 .py 文件。审阅的 README 写明这个程序是供个人使用而发布的。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/cuellius/decomp/blob/a5fc4e757e6e0a25b38e97719f0be141ceb09389/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
