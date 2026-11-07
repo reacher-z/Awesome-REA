@@ -36543,6 +36543,7 @@
     "description_zh": "以 Rust 和 Bevy 重建《辐射：新维加斯》引擎，读取使用者自有的游戏数据，目标是与原版 1:1 一致；README 称开场、古德斯普林斯和两个任务已可游玩。自 2026-10-05 起，其记录在案的方法是将从 FalloutNV.exe 1.4.0.525 反编译出的函数（包括 Havok SDK 单元）逐个翻译成 Rust，并按地址标注每个函数，同时使用来自非官方流出的 Xbox 360 原型版调试符号的名称。README 称几乎全部代码由 AI 编码智能体（主要是 Claude，部分为 Codex）编写，并通过测试、脚本化通关流程以及针对原程序运行的对照工具进行检查。",
     "evidence_url": "https://github.com/slaterain/nv-rs/blob/6c6f89b259e445b54768094cb7ee6a9fb2c3a70c/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed main snapshot (2026-10-18) is experimental. README lists the opening, character creation, Goodsprings and the quests Back in the Saddle and Ghost Town Gunfight, with combat, NPC AI, dialogue, barter, the Pip-Boy, radio, physics and terminals in play; a full playthrough, original saves, NVSE plugins, Linux, macOS and VR are not supported yet. Its progress figure reports 72.6% of the original program’s functions covered.",
