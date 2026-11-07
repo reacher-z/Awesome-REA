@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bt3-decompiled",
+    "name": "Budokai Tenkaichi 3 decompilation",
+    "url": "https://github.com/z3xox/BT3-Decompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Dragon Ball Z: Budokai Tenkaichi 3 for the PlayStation 2, USA SLUS-21678. The main program SLUS_216.78 is 99.92 percent matching C, with four author-written assembly routines left. The menu program BIN/DBZP.BIN is 99.97 percent matching C. Both rebuilt binaries are byte-identical to the originals.",
+    "description_zh": "这是 PlayStation 2 美版《龙珠 Z：电光火石 3》（SLUS-21678）的匹配反编译。主程序 SLUS_216.78 有 99.92% 是匹配的 C，还剩作者手写的 4 个汇编例程。菜单程序 BIN/DBZP.BIN 有 99.97% 是匹配的 C。两个重建的二进制都与原版逐字节相同。",
+    "requirements": [
+      "7z, ninja, Python 3 with splat, Sony ee-gcc 2.96, and PS2 MIPS binutils. Name the USA ISO as configure.py expects, then run .venv/bin/python configure.py and ninja.",
+      "License: CC0 1.0 for the names, comments, documentation, scripts, build configuration, and reconstruction work in this repository."
+    ],
+    "evidence_url": "https://github.com/z3xox/BT3-Decompiled/blob/27a748bdac299e930a43580c08159cb90d91fc71/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
