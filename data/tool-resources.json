@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "liberty-recomp-pal",
+    "name": "Liberty Recompiled PAL",
+    "url": "https://github.com/hamishakl/LibertyRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Liberty Recompiled, PAL and macOS edition, is a fork of OZORDI/LibertyRecomp for the Xbox 360 version of Grand Theft Auto IV. It recompiles the PAL release, media ID 0x7CF4679F, base version 7, with Title Update 5, and the tested path is macOS Apple Silicon with the gta4-metal renderer. The installer checks the media ID, region, and hashes, and rejects the US release. python3 tools/setup_repo.py fetches pinned dependencies. cmake --preset macos-release builds LibertyRecomp.",
+    "description_zh": "Liberty Recompiled 的 PAL 与 macOS 版本是 OZORDI/LibertyRecomp 的分支，针对 Xbox 360 版《侠盗猎车手 IV》。它重编译 PAL 版本，媒体 ID 为 0x7CF4679F，基础版本 7，并带第 5 号标题更新。已测试的路径是 macOS Apple Silicon 和 gta4-metal 渲染器。安装程序核对媒体 ID、区域和校验值，并拒绝美版。python3 tools/setup_repo.py 获取固定版本的依赖。cmake --preset macos-release 构建 LibertyRecomp。",
+    "requirements": [
+      "A PAL Xbox 360 copy plus Title Update 5. macOS 26, Xcode with the Metal toolchain, CMake, Ninja, LLVM, SPIRV-Cross, and glslang.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/hamishakl/LibertyRecomp/blob/b1e1bb538b55f1ff83b7cb9d790eb32acdff70a6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
