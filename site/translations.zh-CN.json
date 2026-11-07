@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "blinx2-recomp": {
+    "name": "BLiNX 2 重编译",
+    "requirements": [
+      "向导包是 blinx2-wizard-<version>-windows-x64.zip、blinx2-wizard-<version>-macos.zip 和 blinx2-wizard-<version>-linux-x64.tar.gz。./blinx2 fingerprint 检查光盘镜像。",
+      "许可证：MIT。静态链接的工具包包含来自 xemu 的 LGPL-2.1 APU 代码。分发构建好的二进制文件时看 NOTICE。"
+    ]
   }
 }
