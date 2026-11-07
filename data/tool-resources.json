@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "windowsmash",
+    "name": "WindowSmash",
+    "url": "https://github.com/OpenSmash-Ultimate/WindowSmash",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "WindowSmash translates Super Smash Bros. Ultimate version 13.0.5 from AArch64 to C and builds a native Windows program with a DirectX 11 runtime. The reviewed README says new versions moved to OpenSmash-Ultimate/OpenSmash-Ultimate. Install WindowSmash.bat installs Python 3.10 or newer and a compiler, then builds the game. Windows 10 or 11 x64, AVX2, and about 60 GB free are listed. Experimental Linux and Apple silicon macOS 14.5 scripts are install-windowsmash.sh and Install WindowSmash.command.",
+    "description_zh": "WindowSmash 把《任天堂明星大乱斗 特别版》13.0.5 从 AArch64 翻译成 C，并用 DirectX 11 运行时构建原生 Windows 程序。审阅的 README 写明新版本已迁到 OpenSmash-Ultimate/OpenSmash-Ultimate。Install WindowSmash.bat 会安装 Python 3.10 或更高版本和编译器，然后构建游戏。列出的要求是 Windows 10 或 11 x64、AVX2，以及大约 60 GB 空闲空间。实验性的 Linux 和 Apple silicon macOS 14.5 脚本是 install-windowsmash.sh 和 Install WindowSmash.command。",
+    "requirements": [
+      "A personal copy of Super Smash Bros. Ultimate at version 13.0.5, plus the keys and firmware that belong to that console. Windows 10 or 11 x64 with AVX2.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/OpenSmash-Ultimate/WindowSmash/blob/598d05240fc146f7184b3450653e2eec2ee97312/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
