@@ -36544,6 +36544,7 @@
     "description_zh": "纯 Python 3 实现的库和命令行工具，可在 Windows、Linux 或 macOS 上与 iPhone、iPad 等 iOS 设备通信，实现了 usbmux、lockdown 及其服务、基于 DTX 的开发者（DVT）服务，以及 iOS 17+ 开发者访问所用的 RemoteXPC 隧道。命令涵盖设备发现与端口转发、syslog 和崩溃报告收集、AFC 文件访问、应用与描述文件管理、设备流量 PCAP 抓包、蓝牙 HCI 日志、借助 Chrome DevTools 协议桥调试 Safari 和 WebView 的 WebInspector 自动化，以及进程监控、截图等 DVT 工具；也支持固件更新、恢复／DFU 模式和备份。其协议内部文档逐层讲解 usbmux、lockdown、DTX 和 RemoteXPC，misc/ 中的辅助脚本可嗅探 plist 和 RemoteXPC 流量。",
     "evidence_url": "https://github.com/doronz88/pymobiledevice3/blob/9ea94919e4740256ddd4fa13e3e5872d43851ff0/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "Release at review: v11.38.0, published to GitHub and PyPI on 2026-10-19; the reviewed master commit is that tag. The README names PyPI as the only official distribution channel and says third-party packages such as the AUR's may be outdated. Requires Python 3.9+.",
