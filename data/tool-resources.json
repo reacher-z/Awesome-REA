@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "saturnrecomp",
+    "name": "SaturnRecomp",
+    "url": "https://github.com/sonsegajp/SaturnRecomp",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "SaturnRecomp is a Sega Saturn research toolkit with a disc CLI, an SH-2 execution core, and a Windows SDL2 runner. The playable path runs SH-2 code through an interpreter and a fast path. The ahead-of-time decoder and module analysis are present, and a complete public AOT emitter is not. The Windows launcher uses Qt through PySide6. It boots a player-supplied game with a player-supplied Saturn BIOS.",
+    "description_zh": "SaturnRecomp 是世嘉土星研究工具包，包含光盘命令行、SH-2 执行核心和 Windows SDL2 运行器。当前可玩路径通过解释器和快速路径运行 SH-2 代码。提前编译的解码器和模块分析已经存在，完整的公开 AOT 发射器还没有。Windows 启动器通过 PySide6 使用 Qt。它用玩家提供的土星 BIOS 启动玩家提供的游戏。",
+    "requirements": [
+      "64-bit Windows, PowerShell 5.1 or newer, MSYS2 MinGW-w64 GCC, and the MSYS2 SDL2 package. The launcher build is python -m pip install -r launcher/requirements.txt, then tools/build_launcher.ps1.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/sonsegajp/SaturnRecomp/blob/26c9715e5493054b8a205aa31d73d8f125fdd8f5/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
