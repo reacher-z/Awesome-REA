@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "severed-chains",
+    "name": "Severed Chains",
+    "url": "https://github.com/Legend-of-Dragoon-Modding/Severed-Chains",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "Severed Chains rewrites Legend of Dragoon from its assembly into Java and adds a modding API. The reviewed README says the game is fully playable with no known crashes. Java 25 is required. Disc images go in the isos directory, and Gradle configures the IntelliJ project. Assets are extracted from those images at runtime. Controllers, including rumble, and keyboard controls are supported.",
+    "description_zh": "Severed Chains 把《传奇之龙》的汇编重写成 Java，并加入模组 API。审阅的 README 写明游戏可以完整游玩，没有已知崩溃。需要 Java 25。光盘镜像放在 isos 目录，Gradle 配置 IntelliJ 项目。资源在运行时从这些镜像提取。支持带震动的手柄和键盘。",
+    "requirements": [
+      "Java 25, Git, and Gradle. Copy the disc images into isos.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Legend-of-Dragoon-Modding/Severed-Chains/blob/0c08c679b6b54e167b00851f1f1458d4dea3eade/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
