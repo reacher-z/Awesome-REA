@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "crackdown-recomp",
+    "name": "Crackdown recompilation",
+    "url": "https://github.com/SkiddyToast/Crackdown",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Crackdown title update 0 for the Xbox 360 with ReXGlue SDK 0.2.2. The README says the project is unfinished.",
+    "description_zh": "该项目用 ReXGlue SDK 0.2.2 重编译 Xbox 360 版《Crackdown》的标题更新 0。README 写明项目尚未完成。",
+    "requirements": [
+      "CMake, the ReXGlue SDK, and a 2007 Xbox 360 copy of Crackdown. Copy the disc into assets, then run cmake configure, cmake --build . --target crackdown_codegen, and cmake --build .. Launch with crackdown --assets and the assets folder.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/SkiddyToast/Crackdown/blob/1b89e0f0ece75178a97bbf9fef210764bfe1d4f2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
