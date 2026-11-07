@@ -4,7 +4,7 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -14,7 +14,7 @@
 - [Decompilation and symbol recovery](#decompilation-and-symbol-recovery) (110)
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
-- [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
+- [App reconstruction and analysis](#app-reconstruction-and-analysis) (17)
 - [Firmware analysis and rehosting](#firmware-analysis-and-rehosting) (27)
 - [Protocol inference and analysis](#protocol-inference-and-analysis) (22)
 
@@ -225,6 +225,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**From Visual Widgets to UI Code: Efficient Tool-Grounded Generation**](https://arxiv.org/abs/2608.12611) - WidgetGen reconstructs widget screenshots as React JSX. <sub>MUCG <span>@</span> ECCV 2026 · Conference accepted · Houston H. Zhang et al. · [PDF](https://arxiv.org/pdf/2608.12611v1) · [Full entry](https://awesomerea.org/papers/paper-widgetgen/)</sub>
 - [**Agentic Reverse Engineering: From I/O to Code with Discovery Agent**](https://arxiv.org/abs/2605.15334) - Synthesizes executable programs from input/output observations using LLM-guided evolutionary search, progressively revealed examples, simple-to-complex mutations and execution-error feedback. <sub>NeurIPS 2026 · Conference accepted · Yihong Dong et al. · [PDF](https://arxiv.org/pdf/2605.15334v2) · [Code](https://github.com/JiaruQian/IO2Code) · [Full entry](https://awesomerea.org/papers/paper-dio-agent/)</sub>
 - [**UIOrchestra: Generating High-Fidelity Code from UI Designs with a Multi-agent System**](https://aclanthology.org/2025.findings-emnlp.150/) - UIOrchestra converts static mobile UI designs into React/CSS through layout-description, code-generation and rendered-image comparison agents. <sub>Findings of EMNLP 2025 · Conference paper · Chuhuai Yue et al. · [PDF](https://aclanthology.org/2025.findings-emnlp.150.pdf) · [Full entry](https://awesomerea.org/papers/paper-uiorchestra/)</sub>
+- [**Feature-Centric Approaches to Android Malware Analysis: A Survey**](https://arxiv.org/abs/2509.10709v1) - This systematic review compares feature-centric Android malware analysis across static, dynamic, hybrid, and graph-based methods. <sub>arXiv 2025 · Preprint · Shama Maganur et al. · [PDF](https://arxiv.org/pdf/2509.10709v1) · [Full entry](https://awesomerea.org/papers/paper-android-feature-survey/)</sub>
 - [**DeclarUI: Bridging Design and Development with Automated Declarative UI Code Generation**](https://doi.org/10.1145/3715726) - Combines visual component extraction, multimodal models, page-transition graphs and iterative checks to reconstruct multi-page mobile UI code from designs or screenshots, evaluated with React Native, Flutter and ArkUI. <sub>Proceedings of the ACM on Software Engineering (FSE 2025) · Journal article · Ting Zhou et al. · [PDF](https://xinyi-hou.github.io/files/zhou2024bridging.pdf) · [Code](https://github.com/security-pride/DeclarUI) · [Full entry](https://awesomerea.org/papers/paper-declarui/)</sub>
 - [**On Benchmarking Code LLMs for Android Malware Analysis**](https://dl.acm.org/doi/10.1145/3713081.3731745) - CAMA is a framework for benchmarking how code LLMs read decompiled Android malware. <sub>ISSTA Companion 2025 (LLMSC Workshop) · Conference paper · Yiling He et al. · [PDF](https://arxiv.org/pdf/2504.00694v2) · [Full entry](https://awesomerea.org/papers/paper-cama/)</sub>
 - [**Machine Learning-Based Prototyping of Graphical User Interfaces for Mobile Apps**](https://doi.org/10.1109/TSE.2018.2844788) - ReDraw turns screenshots or design mock-ups into native Android GUI prototypes by detecting components, classifying widget types with a CNN, and assembling a plausible view hierarchy with a data-driven nearest-neighbor method. <sub>IEEE Transactions on Software Engineering 2020 · Journal article · Kevin Moran et al. · [PDF](https://arxiv.org/pdf/1802.02312v2) · [Full entry](https://awesomerea.org/papers/paper-redraw/)</sub>

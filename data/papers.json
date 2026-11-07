@@ -12817,5 +12817,52 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-android-feature-survey",
+    "title": "Feature-Centric Approaches to Android Malware Analysis: A Survey",
+    "authors": [
+      "Shama Maganur",
+      "Yili Jiang",
+      "Jiaqi Huang",
+      "Fangtian Zhong"
+    ],
+    "year": 2025,
+    "publication_date": "2025-09-12",
+    "date_precision": "day",
+    "date_basis": "arXiv first-submission date; the reviewed file is v1",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2509.10709",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2025-09-12",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2509.10709v1",
+    "pdf_url": "https://arxiv.org/pdf/2509.10709v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "app"
+    ],
+    "description_en": "This systematic review compares feature-centric Android malware analysis across static, dynamic, hybrid, and graph-based methods. The abstract contrasts cheaper static features, which obfuscation can evade, with costlier dynamic analysis.",
+    "description_zh": "这篇系统综述比较以特征为中心的安卓恶意软件分析，涵盖静态、动态、混合和基于图的方法。摘要把更便宜但容易被混淆绕过的静态特征，与成本更高的动态分析相对照。",
+    "scope_limitations_en": "The reviewed file is arXiv:2509.10709v1. It is a literature review, and none of the surveyed detectors were rerun.",
+    "scope_limitations_zh": "审阅的文件是 arXiv:2509.10709v1。这是文献综述，被综述的检测器都没有重跑。",
+    "why_fits_en": "Static and dynamic feature extraction from Android apps is a reverse-engineering analysis workflow.",
+    "why_fits_zh": "从安卓应用提取静态和动态特征，是一种逆向工程分析流程。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2509.10709v1",
+      "https://arxiv.org/pdf/2509.10709v1",
+      "https://export.arxiv.org/api/query?id_list=2509.10709"
+    ],
+    "metadata_notes": "The arXiv record calls the paper both a survey and a systematic literature review.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "以特征为中心的安卓恶意软件分析方法综述",
+    "date_basis_zh": "日期取自 arXiv 首次提交日，审阅的文件是 v1",
+    "metadata_notes_zh": "arXiv 记录同时把这篇论文称为综述和系统文献回顾。"
   }
 ]
