@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ocarina-mq-debug-disasm": {
+    "name": "时之笛大师任务调试版反汇编",
+    "requirements": [
+      "需要 Linux，或带 WSL 的 Windows 10。需要 GCC、GNU Make、Python、mips64-elf binutils、仓库发布里的 IDO 5.3 编译器、irixemu，以及 Mono C# 运行时。ROM 命名为 baserom.z64。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
