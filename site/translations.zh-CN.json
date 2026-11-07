@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "openrayman": {
+    "name": "OpenRayman",
+    "requirements": [
+      "用 Python 2 从 lib/gl3w/gl3w_gen.py 生成 gl3w。Linux 用 CMake 和 make 构建。Windows 用 MinGW 构建，不能用 MSVC。不支持 macOS。",
+      "许可证：GPLv3，libopenrayman 里的文件除外，README 没有写出它们的许可证。"
+    ]
   }
 }

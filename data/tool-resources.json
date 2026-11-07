@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openrayman",
+    "name": "OpenRayman",
+    "url": "https://github.com/imaginaryPineapple/OpenRayman",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenRayman is a C++11 and OpenGL reimplementation of the Rayman 2: The Great Escape engine. It needs a PC installation of the game and converts it into a rayman2 data directory. The only tested source is the GOG version.",
+    "description_zh": "OpenRayman 用 C++11 和 OpenGL 重实现 Rayman 2: The Great Escape 的引擎。它需要游戏的 PC 安装版，并把它转换成 rayman2 数据目录。唯一测试过的来源是 GOG 版。",
+    "requirements": [
+      "Generate gl3w with Python 2 from lib/gl3w/gl3w_gen.py. Linux builds with CMake and make. Windows builds with MinGW, not MSVC. macOS is not supported.",
+      "License: GPLv3, except the files in libopenrayman, whose license the README does not name."
+    ],
+    "evidence_url": "https://github.com/imaginaryPineapple/OpenRayman/blob/04026967c46e3e35f18a08f8d2cf6b41fb82b494/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
