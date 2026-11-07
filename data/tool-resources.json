@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "megaman3-disassembly",
+    "name": "Mega Man 3 disassembly",
+    "url": "https://github.com/refreshing-lemonade/megaman3-disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of Mega Man 3 for the NES, NTSC-U. The README says code and data are finished and that xkas-plus assembles a clean ROM. Not all of the code is documented. The game uses MMC3, with 32 PRG banks and 16 CHR banks of 0x2000 bytes.",
+    "description_zh": "这是 NES 美版《洛克人 3》的反汇编。README 写明代码和数据已经完成，xkas-plus 能汇编出干净的 ROM。并非所有代码都有注释。游戏使用 MMC3，有 32 个 PRG bank 和 16 个 CHR bank，每个 0x2000 字节。",
+    "requirements": [
+      "Assemble with ./xkas -o mm3.nes assemble.asm. The repository includes an xkas-plus build.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/refreshing-lemonade/megaman3-disassembly/blob/1d4420011dfa3d2be82ce670b6bc8f6bae9a683f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
