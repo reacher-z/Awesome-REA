@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gauntlet-legends-decomp",
+    "name": "Gauntlet Legends decompilation",
+    "url": "https://github.com/Drahsid/gauntlet-legends",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is an in-progress decompilation of Gauntlet Legends for the Nintendo 64, US release. The ROM is named baserom.z64. A matching build reports CIC-NUS-6102, CRC 0x729B5E32 and 0xB728D980, and OK for the boot, tower, transitions, boss, and game segments.",
+    "description_zh": "这是 Nintendo 64 美版《Gauntlet Legends》的进行中反编译。ROM 命名为 baserom.z64。匹配的构建会报告 CIC-NUS-6102、CRC 0x729B5E32 和 0xB728D980，以及 boot、tower、transitions、boss 和 game 段为 OK。",
+    "requirements": [
+      "On Debian, git, build-essential, binutils-mips-linux-gnu, Python 3, ninja, cargo, and wget. Clone with submodules, name the US ROM baserom.z64, then run python3 ./build.py initial, python3 ./build.py setup, and python3 ./build.py.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Drahsid/gauntlet-legends/blob/ab64e91062ae872fe7208dd362033e4328d31bfb/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
