@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "wario-land-disasm",
+    "name": "Wario Land disassembly",
+    "url": "https://github.com/Kak2X/wl",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a disassembly of Super Mario Land 3: Wario Land. It builds a bit-perfect ROM. The comparison ROM is named Wario Land - Super Mario Land 3 (W) [!].gb and is supplied as original.gb.",
+    "description_zh": "这是《超级马力欧大陆3：瓦里奥大陆》的反汇编。它构建出逐字节一致的 ROM。对照 ROM 的名称是 Wario Land - Super Mario Land 3 (W) [!].gb，作为 original.gb 提供。",
+    "requirements": [
+      "Assemble with the included build.cmd.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Kak2X/wl/blob/2e2f3095c07d36bef85951e6ed981275bf4fcb88/README.MD",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
