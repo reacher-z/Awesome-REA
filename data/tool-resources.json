@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "castlevania-chronicles-recomp",
+    "name": "Castlevania Chronicles recompilation",
+    "url": "https://github.com/Spicywonda/castlevania-chronicles-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles Castlevania Chronicles for Windows, macOS, and Linux with RecompOne. Release 0.3.10 has packages for Windows x64, macOS on Apple Silicon, and Linux x64, and each package includes the .NET runtime. The player selects a USA SLUS-01384 disc image, CUE/BIN or CHD. The first launch prepares the game code.",
+    "description_zh": "该项目用 RecompOne 把《恶魔城年代记》重编译到 Windows、macOS 和 Linux。0.3.10 发布包覆盖 Windows x64、Apple 芯片的 macOS 和 Linux x64，每个包都带有 .NET 运行时。玩家选择美版 SLUS-01384 光盘镜像，格式为 CUE/BIN 或 CHD。第一次启动会先准备游戏代码。",
+    "requirements": [
+      "Git, Bash, Python 3, the .NET SDK named in global.json, and RecompOne pinned at d81dec8c9622fdcd0865d73588a3baa8d3c3a605. Put the CUE at disc/chronicles.cue, then run git submodule update --init --recursive and ./scripts/recompile.sh.",
+      "The reviewed README does not name a license for this project. It points at the bundled dependency licenses."
+    ],
+    "evidence_url": "https://github.com/Spicywonda/castlevania-chronicles-recomp/blob/99ac8ae85e679ad60eadb7cc86be4f59bd4580ce/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
