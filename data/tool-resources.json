@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "wii-sports-ogws-case",
+    "name": "Wii Sports: decompilation",
+    "url": "https://github.com/doldecomp/ogws",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "description_en": "ogws is a work-in-progress decompilation of Wii Sports. The README names one supported version, US Revision 1, and points build steps to docs/getting_started.md after the disc is dumped.",
+    "description_zh": "ogws 是《Wii Sports》进行中的反编译。README 列出一个受支持版本，即美版修订 1，并在转储光盘后把构建步骤指向 docs/getting_started.md。",
+    "requirements": [
+      "An existing copy of the game is required. The repository does not contain game assets or assembly.",
+      "The supported version in the README is US Revision 1, SHA-1 8bb422971b88b5551a37de98db69557df7b46637.",
+      "License: CC0-1.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/doldecomp/ogws/blob/e5a4d369011062fe243aa63f6c2e2853854c395d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
