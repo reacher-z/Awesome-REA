@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokeplatinum-3ds",
+    "name": "Pokémon Platinum 3DS",
+    "url": "https://github.com/GabeSud0/pokeplatinum-3ds",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "port",
+    "class": "game",
+    "description_en": "This is a native Nintendo 3DS port of Pokémon Platinum, built from the pret/pokeplatinum decompilation. The remastered display targets a New 3DS, New 3DS XL, or New 2DS XL. The ROM is Pokémon Platinum, USA, revision 0 or revision 1. A browser builder makes the SD card files locally. A source build uses devkitPro's 3ds-dev group, Python 3.10 or newer, and Git.",
+    "description_zh": "这是基于 pret/pokeplatinum 反编译的《宝可梦 白金》原生任天堂 3DS 移植。重制画面面向 New 3DS、New 3DS XL 或 New 2DS XL。ROM 是美版《宝可梦 白金》修订 0 或修订 1。浏览器构建器在本地生成 SD 卡文件。源码构建使用 devkitPro 的 3ds-dev 组、Python 3.10 或更新版本，以及 Git。",
+    "requirements": [
+      "A USA Platinum revision 0 or 1 ROM. The web builder at gabesud0.github.io/pokeplatinum-3ds makes the SD card ZIP in the browser.",
+      "License: GPL-3.0."
+    ],
+    "evidence_url": "https://github.com/GabeSud0/pokeplatinum-3ds/blob/0446dad9a53200dad8408cff7ec74aece0641461/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
