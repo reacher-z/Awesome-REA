@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "deltamodkit",
+    "name": "DELTAModKit",
+    "url": "https://github.com/deltamodders/deltamodkit",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "DELTAModKit is a GameMaker Studio 2 project for DELTARUNE. The reviewed README calls it a decompilation and port, and says to open it in GameMaker after copying the mus folder from a Steam DELTARUNE install into datafiles/mus. Debug mode uses the Debug config.",
+    "description_zh": "DELTAModKit 是 DELTARUNE 的 GameMaker Studio 2 工程。审阅的 README 称它为反编译和移植，并写明把 Steam 版 DELTARUNE 安装里的 mus 文件夹复制到 datafiles/mus 后，用 GameMaker 打开。调试模式使用 Debug 配置。",
+    "requirements": [
+      "GameMaker. The README says a recent release such as the 2026 LTS works. The project was first made on GameMaker Beta.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/deltamodders/deltamodkit/blob/c61032a2a6370706242f625b992132ed23b9bd7b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
