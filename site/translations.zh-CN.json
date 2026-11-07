@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "unluac-rs": {
+    "name": "unluac-rs",
+    "requirements": [
+      "命令行工具可以从检出的源码用 cargo install --path packages/unluac-cli 安装，或从 GitHub Releases 下载。",
+      "网页应用 https://unluac.x3zvawq.com 在浏览器中处理文件。",
+      "许可证：MIT。"
+    ]
   }
 }

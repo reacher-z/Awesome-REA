@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "unluac-rs",
+    "name": "unluac-rs",
+    "url": "https://github.com/x3zvawq/unluac-rs",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "unluac-rs is a Rust decompiler for Lua bytecode. It covers Lua 5.1 through 5.5, LuaJIT 2.1, and Luau, detects the dialect from the chunk, and can run as a command-line tool, a Rust or JavaScript library, or a browser workspace.",
+    "description_zh": "unluac-rs 是用 Rust 编写的 Lua 字节码反编译器。它覆盖 Lua 5.1 到 5.5、LuaJIT 2.1 和 Luau，能从字节码块判断方言，并可以作为命令行工具、Rust 或 JavaScript 库，或浏览器工作区运行。",
+    "requirements": [
+      "The CLI can be installed from a checkout with cargo install --path packages/unluac-cli, or downloaded from GitHub Releases.",
+      "The web app at https://unluac.x3zvawq.com processes files in the browser.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/x3zvawq/unluac-rs/blob/3186d2e392e44a2ddaadd1826a779c98c718be53/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
