@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "kisakblack",
+    "name": "KisakBlack",
+    "url": "https://github.com/SwagSoftware/KisakBlack",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "KisakBlack is a buildable reimplementation of the Call of Duty: Black Ops multiplayer executable, aimed at mod developers. It builds on Windows with Visual Studio 2022, CMake 3.16 or newer, and the DirectX SDK from 2010. The CMake generator is Visual Studio 17 2022 for Win32. After the build, the game files and the listed runtime DLLs, including binkw32.dll, steam_api.dll, and tier0_s.dll, go in the build output directory. It needs a Steam copy of Call of Duty: Black Ops.",
+    "description_zh": "KisakBlack 是《使命召唤：黑色行动》多人可执行文件的可构建重实现，面向模组开发。它在 Windows 上用 Visual Studio 2022、CMake 3.16 或更高版本，以及 2010 年的 DirectX SDK 构建。CMake 生成器是面向 Win32 的 Visual Studio 17 2022。构建后，游戏文件和列出的运行时 DLL，包括 binkw32.dll、steam_api.dll 和 tier0_s.dll，放进构建输出目录。它需要 Steam 上的《使命召唤：黑色行动》。",
+    "requirements": [
+      "Windows, Visual Studio 2022, CMake 3.16 or newer, the DirectX SDK from 2010, and a Steam copy of Call of Duty: Black Ops.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/SwagSoftware/KisakBlack/blob/306bb14a8e052a6244bd1df4e4df7d8504c04ef4/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
