@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gow-native-pc-case",
+    "name": "God of War — Native PC: static recompilation of the PS2 game",
+    "url": "https://github.com/Vnnc1/gow-native-pc",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "description_en": "God of War — Native PC is a native Windows port of God of War for the PlayStation 2, NTSC-U SCUS-97399, built by statically recompiling MIPS R5900 code to C++. The README also describes an experimental Linux and Steam Deck launcher and build pipeline.",
+    "description_zh": "God of War — Native PC 是《God of War》PlayStation 2 美版 NTSC-U SCUS-97399 的 Windows 原生移植，通过把 MIPS R5900 代码静态重编译为 C++ 完成。README 还描述了实验性的 Linux 与 Steam Deck 启动器和构建流程。",
+    "requirements": [
+      "Running it requires your own copy of God of War. The repository contains no game files.",
+      "The PS2Recomp runtime is required. The launcher downloads it, and it is not stored in this repository.",
+      "The README says the game is playable, a locked 60 fps is not reached in every scene, and only the opening areas have been measured in depth.",
+      "License: GPL-3.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/Vnnc1/gow-native-pc/blob/d28a63d3fd0f2a412ff9018b52d2a9a3cbdb18fd/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
