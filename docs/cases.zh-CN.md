@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -40,7 +40,7 @@
 [↑ 返回目录](#目录)
 
 <a id="game-matching-decompilation"></a>
-### 匹配反编译与反汇编 (69)
+### 匹配反编译与反汇编 (70)
 
 - [**3S Decomp：逐字比对的《街头霸王 III：3rd Strike》PS2 反编译重建**](https://github.com/crowded-street/3s-decomp) - 将 Street Fighter Anniversary Collection 中《街头霸王 III：3rd Strike》的 PlayStation 2 可执行文件反编译为 C 源码，用当年的 Metrowerks 与 EE GCC 编译器重新构建，再将重建出的可执行文件与使用者自备的原文件逐字比较。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)</sub>
@@ -72,6 +72,7 @@
 - [**《纸片马力欧 RPG》：早期阶段的 GameCube 一致性反编译**](https://github.com/doldecomp/ttyd) - 《纸片马力欧 RPG》（Paper Mario: The Thousand-Year Door）的进行中一致性反编译，目标为日版 Rev 0 GameCube 版本（G8MJ01）：用原版 Metrowerks 编译器重建 MarioSt.dol 和 31 个 REL 模块，并逐一与仓库保存的 SHA-1 比对。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/paper-mario-ttyd-decomp-case/)</sub>
 - [**Perfect Dark：生成一致 ROM 的 Nintendo 64 反编译重建**](https://github.com/n64decomp/perfect_dark) - 重建 Perfect Dark 的 Nintendo 64 代码，并提供生成一致 ROM 的构建流程。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/perfect-dark-matching-decomp-case/)</sub>
 - [**Petari：Super Mario Galaxy 一致性反编译重建**](https://github.com/SMGCommunity/Petari) - 将 Super Mario Galaxy 的 Wii 代码重建为 C++，并以使用者从自有日版、北美版、PAL 版或韩版光盘中提取的 main.dol 为目标，逐个目标文件重建。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/petari-smg-decomp-case/)</sub>
+- [**梦幻之星 Online 第一章＆第二章 Plus 反编译**](https://github.com/zeroz41/pso-decomp) - 这是 GameCube 美版 1.02《梦幻之星 Online 第一章＆第二章 Plus》的匹配反编译，产品代码为 GPOE8P。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pso-gc-decomp/)</sub>
 - [**《幻影沙漏》：早期阶段的 Nintendo DS 一致性反编译**](https://github.com/zeldaret/ph) - 通过手工反编译，为《塞尔达传说 幻影沙漏》的欧版与美版 Nintendo DS 重建 C++ 源码：借助 dsd 工具集从使用者自备的 ROM 中拆分代码，再重新构建 ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/phantom-hourglass-ds-decomp-case/)</sub>
 - [**《皮克敏2》：覆盖五个版本、已完全匹配的 GameCube 反编译**](https://github.com/projectPiki/pikmin2) - 由爱好者进行的《皮克敏2》反编译项目：用原版 Metrowerks 编译器为五个 GameCube 版本（美版零售版、两个美版体验版、PAL 版和日版）重建 main.dol，并逐一与仓库保存的 SHA-1 比对。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pikmin-2-matching-decomp-case/)</sub>
 - [**pokecrystal：一致构建的《精灵宝可梦 水晶》反汇编**](https://github.com/pret/pokecrystal) - 以 RGBDS 汇编重建 Game Boy Color 游戏《精灵宝可梦 水晶》，图像、地图和数据以可编辑的源文件保存。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pokecrystal-disassembly-case/)</sub>

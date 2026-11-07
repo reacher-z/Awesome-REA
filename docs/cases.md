@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -72,6 +72,7 @@
 - [**Paper Mario: The Thousand-Year Door: an early matching GameCube decompilation**](https://github.com/doldecomp/ttyd) - A work-in-progress matching decompilation of Paper Mario: The Thousand-Year Door that targets the Japanese Rev 0 GameCube release (G8MJ01), rebuilding MarioSt.dol and 31 REL modules with the original Metrowerks compilers and checking each against a stored SHA-1. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/paper-mario-ttyd-decomp-case/)</sub>
 - [**Perfect Dark: matching Nintendo 64 decompilation**](https://github.com/n64decomp/perfect_dark) - Reconstructs Perfect Dark’s Nintendo 64 code with a documented matching-ROM build. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/perfect-dark-matching-decomp-case/)</sub>
 - [**Petari: a matching Super Mario Galaxy decompilation**](https://github.com/SMGCommunity/Petari) - Reconstructs Super Mario Galaxy’s Wii code as C++ that rebuilds, object by object, against main.dol files extracted from the user’s own Japanese, North American, PAL or Korean disc. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/petari-smg-decomp-case/)</sub>
+- [**Phantasy Star Online Episode I &amp; II Plus decompilation**](https://github.com/zeroz41/pso-decomp) - This is a matching decompilation of Phantasy Star Online Episode I &amp; II Plus for the GameCube, USA version 1.02, product code GPOE8P. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pso-gc-decomp/)</sub>
 - [**Phantom Hourglass: an early-stage matching Nintendo DS decompilation**](https://github.com/zeldaret/ph) - Recreates C++ source for The Legend of Zelda: Phantom Hourglass by hand-decompiling its European and US Nintendo DS releases, using the dsd toolkit to delink code from a user-supplied ROM and rebuild the ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/phantom-hourglass-ds-decomp-case/)</sub>
 - [**Pikmin 2: a fully matched GameCube decompilation across five releases**](https://github.com/projectPiki/pikmin2) - A fan decompilation of Pikmin 2 that rebuilds main.dol for five GameCube releases (USA retail, two USA demos, PAL and Japan) with the original Metrowerks compilers, checking each against a stored SHA-1. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pikmin-2-matching-decomp-case/)</sub>
 - [**pokecrystal: a matching Pokémon Crystal disassembly**](https://github.com/pret/pokecrystal) - Reconstructs the Game Boy Color game Pokémon Crystal as RGBDS assembly, with graphics, maps and data stored as editable sources. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokecrystal-disassembly-case/)</sub>

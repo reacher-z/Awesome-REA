@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pso-gc-decomp": {
+    "name": "梦幻之星 Online 第一章＆第二章 Plus 反编译",
+    "requirements": [
+      "需要 Python 3.10 或更新版本，以及 Ninja。把光盘镜像放到 orig/GPOE8P/，然后运行 python configure.py 和 ninja。第一次构建会下载 CodeWarrior 编译器。",
+      "许可证：MIT。从其他项目改编的代码保留原来的声明。"
+    ]
   }
 }

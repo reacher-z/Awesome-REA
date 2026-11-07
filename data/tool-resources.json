@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pso-gc-decomp",
+    "name": "Phantasy Star Online Episode I & II Plus decompilation",
+    "url": "https://github.com/zeroz41/pso-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Phantasy Star Online Episode I & II Plus for the GameCube, USA version 1.02, product code GPOE8P. The disc SHA-1 is 0ff155311f4cc57951c03baeb1a8cc15de5fe1cd. The executable files/PsoV3.dol has SHA-1 0d85744b51d7379efb025a943d0cd5aaae2191a3.",
+    "description_zh": "这是 GameCube 美版 1.02《梦幻之星 Online 第一章＆第二章 Plus》的匹配反编译，产品代码为 GPOE8P。光盘 SHA-1 为 0ff155311f4cc57951c03baeb1a8cc15de5fe1cd。可执行文件 files/PsoV3.dol 的 SHA-1 为 0d85744b51d7379efb025a943d0cd5aaae2191a3。",
+    "requirements": [
+      "Python 3.10 or newer and Ninja. Put the disc image in orig/GPOE8P/, then run python configure.py and ninja. The first build downloads the CodeWarrior compilers.",
+      "License: MIT. Code adapted from other projects keeps its original notices."
+    ],
+    "evidence_url": "https://github.com/zeroz41/pso-decomp/blob/ae797d392bb93d5bf7164341870f78f864da23b0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
