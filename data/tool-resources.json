@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "urbz-recomp",
+    "name": "The Urbz recomp",
+    "url": "https://github.com/abilliontokens/urbz-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This static recompilation of the original Xbox game The Urbz: Sims in the City, North America, builds Urbz.exe for Windows with Direct3D 12 and XAudio2, and Urbz for Linux with Vulkan and SDL3. default.xbe is 3,035,136 bytes, SHA-1 5712b6a3e2eaaacfcae228cf6154ade499a0033c, title ID 0x45410060, linked 2004-10-07 against XDK 1.0.5849. xiso_extract.py extracts the disc, xbe_info.py checks that SHA-1, and build.bat or build.sh recompiles 15,942 functions.",
+    "description_zh": "这个原版 Xbox 游戏《模拟人生：城里人》北美版的静态重编译，为 Windows 构建带 Direct3D 12 和 XAudio2 的 Urbz.exe，为 Linux 构建带 Vulkan 和 SDL3 的 Urbz。default.xbe 为 3,035,136 字节，SHA-1 是 5712b6a3e2eaaacfcae228cf6154ade499a0033c，标题 ID 为 0x45410060，于 2004-10-07 针对 XDK 1.0.5849 链接。xiso_extract.py 提取光盘，xbe_info.py 核对这个 SHA-1，build.bat 或 build.sh 重编译 15,942 个函数。",
+    "requirements": [
+      "Windows 10 or 11 x64 with Direct3D 12, or an x86-64 Linux machine with a Vulkan 1.3 driver. Place the disc image in assets.",
+      "The vendored XboxXBERecomp SDK is MIT licensed. The reviewed README does not name a separate license for the port."
+    ],
+    "evidence_url": "https://github.com/abilliontokens/urbz-recomp/blob/aac2198e767fece3d690863fab6ff3d42776fb3f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
