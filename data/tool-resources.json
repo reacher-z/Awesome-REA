@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "ida-pro-guide",
+    "name": "IDA Pro guide",
+    "url": "https://github.com/shiedless/ida-pro-guide",
+    "category": "learning",
+    "kind": "learning-resource",
+    "relationship": "learning",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This is a practical guide to reading a binary in IDA Pro. It covers opening a Mach-O, PE, or ELF file and waiting for auto-analysis, the windows and keys used to move around, walking from an anchor function, reading pseudocode, and using cross-references. A later section covers patching and scripting.",
+    "description_zh": "这是一份在 IDA Pro 里阅读二进制文件的实用指南。它涵盖打开 Mach-O、PE 或 ELF 并等待自动分析、用来移动的窗口和按键、从一个锚点函数往外走、阅读伪代码，以及使用交叉引用。后面一节讲补丁和脚本。",
+    "requirements": [
+      "IDA Pro.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/shiedless/ida-pro-guide/blob/925dc73cff62a45d97da5e79c36ba092ec4b53a4/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
