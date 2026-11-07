@@ -4,7 +4,7 @@
 
 [← Back to the README](../README.md#papers) · **English** · [简体中文](papers.zh-CN.md)
 
-**235 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
+**236 papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](../data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -15,7 +15,7 @@
 - [Website reconstruction](#website-reconstruction) (31)
 - [Game reconstruction and reverse engineering](#game-reconstruction-and-reverse-engineering) (15)
 - [App reconstruction and analysis](#app-reconstruction-and-analysis) (16)
-- [Firmware analysis and rehosting](#firmware-analysis-and-rehosting) (27)
+- [Firmware analysis and rehosting](#firmware-analysis-and-rehosting) (28)
 - [Protocol inference and analysis](#protocol-inference-and-analysis) (22)
 
 Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation.
@@ -261,6 +261,7 @@ Each paper’s “Full entry” holds its complete summary, scope and limitation
 - [**DICE: Automatic Emulation of DMA Input Channels for Dynamic Firmware Analysis**](https://ieeexplore.ieee.org/document/9519398) - DICE adds DMA input emulation to microcontroller firmware emulators that model neither peripherals nor DMA controllers. <sub>IEEE S&amp;P 2021 · Conference paper · Alejandro Mera et al. · [PDF](https://arxiv.org/pdf/2007.01502v3) · [Code](https://github.com/RiS3-Lab/DICE-DMA-Emulation/tree/2b3b8c8b722abdbd7ff9e35fc7b02914fddf75df) · [Full entry](https://awesomerea.org/papers/paper-dice/)</sub>
 - [**From Library Portability to Para-rehosting: Natively Executing Microcontroller Software on Commodity Hardware**](https://doi.org/10.14722/ndss.2021.24308) - The paper uses a POSIX-based portable MCU and replaceable peripheral drivers to rehost MCU software for native execution and security testing on commodity hardware. <sub>Proceedings 2021 Network and Distributed System Security Symposium · Conference paper · Wenqiang Li et al. · [PDF](https://arxiv.org/pdf/2107.12867) · [Full entry](https://awesomerea.org/papers/paper-para-rehosting/)</sub>
 - [**FirmAE: Towards Large-Scale Emulation of IoT Firmware for Dynamic Analysis**](https://doi.org/10.1145/3427228.3427294) - Extends Firmadyne with empirically derived interventions for boot, networking, NVRAM, kernel behavior, and other runtime failures, enabling Linux router and IP-camera firmware web services to run for dynamic analysis. <sub>ACSAC 2020 · Conference paper · Mingeun Kim et al. · [PDF](https://syssec.kaist.ac.kr/pub/2020/kim_acsac2020.pdf) · [Code](https://github.com/pr0v3rbs/FirmAE) · [Full entry](https://awesomerea.org/papers/paper-firmae/)</sub>
+- [**P2IM: Scalable and Hardware-independent Firmware Testing via Automatic Peripheral Interface Modeling**](https://www.usenix.org/conference/usenixsecurity20/presentation/feng) - P2IM emulates monolithic ARM Cortex-M firmware in a modified QEMU by classifying memory-mapped I/O registers as control-status, status, data or control-data during speculative execution runs and feeding fuzzer inputs through data registers and round-robin interrupts. <sub>USENIX Security 2020 · Conference paper · Bo Feng et al. · [PDF](https://www.usenix.org/system/files/sec20-feng.pdf) · [Code](https://github.com/RiS3-Lab/p2im) · [Full entry](https://awesomerea.org/papers/paper-p2im/)</sub>
 - [**HALucinator: Firmware Re-hosting Through Abstraction Layer Emulation**](https://www.usenix.org/conference/usenixsecurity20/presentation/clements) - HALucinator rehosts monolithic ARM Cortex-M firmware by identifying hardware-abstraction-library functions and replacing them with authored Python handlers and peripheral models. <sub>USENIX Security 2020 · Conference paper · Abraham A Clements et al. · [PDF](https://www.usenix.org/system/files/sec20-clements.pdf) · [Code](https://github.com/embedded-sec/halucinator) · [Full entry](https://awesomerea.org/papers/paper-halucinator/)</sub>
 - [**On Manually Reverse Engineering Communication Protocols of Linux Based IoT Systems**](https://arxiv.org/abs/2007.11981) - Presents a manual framework for reverse engineering communication protocols in embedded Linux IoT systems. <sub>arXiv 2020 · Preprint · Kaizheng Liu et al. · [PDF](https://arxiv.org/pdf/2007.11981) · [Full entry](https://awesomerea.org/papers/paper-manually-re-iot-protocols/)</sub>
 - [**BaseSAFE: Baseband SAnitized Fuzzing through Emulation**](https://doi.org/10.1145/3395351.3399360) - BaseSAFE partially rehosts closed-source cellular baseband firmware for instrumented fuzzing and uses a sanitizing allocator to detect heap buffer overflows. <sub>Proceedings of the 13th ACM Conference on Security and Privacy in Wireless and Mobile Networks 2020 · Conference paper · Dominik Maier et al. · [PDF](https://arxiv.org/pdf/2005.07797) · [Full entry](https://awesomerea.org/papers/paper-basesafe/)</sub>
