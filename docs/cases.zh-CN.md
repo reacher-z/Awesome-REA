@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
 - [Game · 游戏](#game) (239)
 - [App · 应用](#app) (62)
-- [Native Binary · 原生二进制](#native-binary) (7)
+- [Native Binary · 原生二进制](#native-binary) (8)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
 - [Protocol · 协议](#protocol) (91)
 
@@ -382,6 +382,7 @@
 - [**Windows 加载器：借助 REA 与 Codex 的静态恶意软件分析**](https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/) - Fedele Mantuano 报告在离线 Docker 实验环境中让 Codex 借助 REA，对一个公开的 Windows 恶意软件样本做静态分析，全程不执行样本。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/windows-loader-static-analysis-case/)</sub>
 - [**Show Your Work：对 REA 证据架构的实测剖析**](https://no-flag.com/2026/10/18/REA-paper/) - 一篇非官方的实测研究：先阅读 REA 源码，再在 27 类分析对象上对运行中的服务器发出 1,012 次有记录的调用，测量其按内容寻址的 Evidence 记录、按修订串联的未知项台账、带类型的拒绝、冷启动及响应上限。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/noflag-rea-evidence-architecture-study/)</sub>
 - [**DownUnderCTF：masked-squares 校验器**](https://rea.tools/showcase/ctf/) - 官方教育 CTF 案例：从检查函数得到方程，并记录原程序验证过程。 <sub>案例 · REA 官方 · [完整条目](https://awesomerea.org/zh/resources/rea-ctf-case/)</sub>
+- [**Eidolon：智能体完成的 64k intro 逐字节一致 Rust 移植**](https://github.com/RovshanMuradov/eidolon-64k-rs) - 把 Poo-Brain 在 Revision 2017 夺得 PC 64k 组冠军的 Eidolon，从经过压缩的 60,928 字节 Windows 可执行文件移植到 Rust，并附有说明原二进制工作原理的章节和单独的体积优化版本。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/eidolon-64k-rust-port-case/)</sub>
 
 <a id="firmware"></a>
 ## Firmware and Hardware · 固件与硬件
