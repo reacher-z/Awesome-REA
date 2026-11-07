@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bigodao",
+    "name": "Bigodão",
+    "url": "https://github.com/GABRIELNNK/Bigodao",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Bigodão statically recompiles Wario Land: Super Mario Land 3 for Linux, Windows, and Android. The World ROM SHA-256 is ac1682f17abcf590311a233289ee325214c2d71ab3a5aa175004002d85075e56. The IPS patch Wario Land - Super Mario Land 3 DX (World).ips v1.2 has SHA-256 599d9f59090df3e1e77c1678e069290a2cd9ce59c71cf58d66c4dc3db8b7facd. Widescreen 16:9 is on by default. The OpenGL renderer can run at 120 fps. The patch is applied in memory.",
+    "description_zh": "Bigodão 把《瓦里奥大陆：超级马里奥大陆 3》静态重编译到 Linux、Windows 和 Android。世界版 ROM 的 SHA-256 是 ac1682f17abcf590311a233289ee325214c2d71ab3a5aa175004002d85075e56。IPS 补丁 Wario Land - Super Mario Land 3 DX (World).ips v1.2 的 SHA-256 是 599d9f59090df3e1e77c1678e069290a2cd9ce59c71cf58d66c4dc3db8b7facd。16:9 宽屏默认打开。OpenGL 渲染器可以跑到 120 帧。补丁在内存里应用。",
+    "requirements": [
+      "The World ROM and the v1.2 IPS patch with those hashes. The README builds a gb-recompiled step, then a native Linux build, a MinGW Windows build, or an Android build. Linux and Windows releases keep tools/wl_sm3_dx_v12_patch.json beside the executable.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/GABRIELNNK/Bigodao/blob/c67ff008b1561dce079781603f9b5da3c1320f5e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
