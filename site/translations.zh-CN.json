@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "freegunman": {
+    "name": "FreeGunman",
+    "requirements": [
+      "需要配好 fteqw 和 fteqcc 的 Nuclide SDK。把这个仓库克隆为该 SDK 里的 rewolf，然后运行 ./build_game.sh，或在 rewolf/src 里运行 make。",
+      "许可证：ISC。"
+    ]
   }
 }

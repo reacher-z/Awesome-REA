@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "freegunman",
+    "name": "FreeGunman",
+    "url": "https://github.com/eukara/freegunman",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "FreeGunman is a clean-room reimplementation of Gunman Chronicles in QuakeC. It is cloned into the Nuclide SDK as the directory rewolf. The build is Nuclide's build_game.sh, or make inside rewolf/src. Nuclide needs fteqw and fteqcc set up.",
+    "description_zh": "FreeGunman 是用 QuakeC 对 Gunman Chronicles 做的净室重新实现。它被克隆到 Nuclide SDK 里，目录名为 rewolf。构建使用 Nuclide 的 build_game.sh，或者在 rewolf/src 里运行 make。Nuclide 需要配好 fteqw 和 fteqcc。",
+    "requirements": [
+      "The Nuclide SDK with fteqw and fteqcc. Clone this repository as rewolf inside that SDK, then run ./build_game.sh or make in rewolf/src.",
+      "License: ISC."
+    ],
+    "evidence_url": "https://github.com/eukara/freegunman/blob/c1457896fdc5848e2b154184b9fa3abb42d4e898/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
