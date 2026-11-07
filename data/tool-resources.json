@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "yukatool2",
+    "name": "YukaTool",
+    "url": "https://github.com/AtomCrafty/yukatool2",
+    "category": "game-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "game"
+    ],
+    "description_en": "YukaTool reads archives from the Yuka System visual-novel engine. The GUI opens an archive, previews images and text, shows a hex dump, and can export or import files. The CLI is yuka.exe. yuka help lists the commands. The README says a Yuka game folder usually contains one executable, and that the GUI's full-archive export is raw and does not convert files.",
+    "description_zh": "YukaTool 读取 Yuka System 视觉小说引擎的档案。图形界面打开档案、预览图像和文本、显示十六进制转储，并可以导出或导入文件。命令行程序是 yuka.exe。yuka help 列出命令。README 写明 Yuka 游戏目录通常包含一个可执行文件，而且图形界面的整包导出是原始导出，不会转换文件。",
+    "requirements": [
+      "Place yuka.exe in the game directory and run yuka help.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/AtomCrafty/yukatool2/blob/fd8f445dfe685f5d0b724cfecbcbc91963a87376/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
