@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -53,6 +53,7 @@
 - [**DX-Ball: an REA-guided function-level reconstruction with Codex**](https://github.com/N0zoM1z0/dx-ball) - The author has Codex use REA’s Ghidra tools to inspect the English DX-Ball 1.07 executable and recover it as typed C/C++, then compiles each function with the original-era Visual C++ 4.0 and compares it byte for byte with the original after mapping relocations. <sub>Case study · Mixed workflow · Also: Binary · [Full entry](https://awesomerea.org/resources/dx-ball-rea-reconstruction-case/)</sub>
 - [**DX-Ball: reconstruct sound panning**](https://rea.tools/showcase/dx-ball/) - Recover one sound-pan function from instructions and constants; upstream cites 3,205 cases and a 63-byte match. <sub>Case study · Official REA · Also: Binary · [Full entry](https://awesomerea.org/resources/rea-dxball-case/)</sub>
 - [**Final Fantasy VII: a matching PlayStation decompilation**](https://github.com/Xeeynamo/ff7-decomp) - Reconstructs C source for the US PlayStation release of Final Fantasy VII, aiming for code that compiles back to the original main executable and its game overlays. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ff7-ps1-matching-decomp-case/)</sub>
+- [**Gex 64 decompilation**](https://github.com/MatBourgon/Gex64Decomp) - This is a matching decompilation of Gex 64: Enter the Gecko for the Nintendo 64, USA release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/gex64-decomp/)</sub>
 - [**GoldenEye 007: matching Nintendo 64 decompilation for three releases**](https://github.com/n64decomp/007) - Reconstructs GoldenEye 007’s Nintendo 64 code as C source that rebuilds the US, Japanese and PAL ROMs. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/goldeneye-007-matching-decomp-case/)</sub>
 - [**Gran Turismo 4: an agent-assisted PS2 engine matching decompilation**](https://github.com/gustavocanepa/gt4-decomp) - Decompiles Gran Turismo 4’s PS2 engine executable (CORE.GT4, NTSC-U v1.01) into one C or C++ source per function for Sony’s ee-gcc 2.96, matching public libraries such as newlib and Expat from their own source. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/gran-turismo-4-matching-decomp-case/)</sub>
 - [**Halo 2: an agent-assisted matching decompilation of an LTCG Xbox build**](https://github.com/kirklandsig/halo2-decompiled) - A work-in-progress matching decompilation of Halo 2 for the original Xbox: contributors write C and C++ that the period compiler, building the whole program with link-time code generation, must turn back into the retail executable's bytes function by function. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/halo2-matching-decomp-case/)</sub>

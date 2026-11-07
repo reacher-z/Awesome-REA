@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gex64-decomp",
+    "name": "Gex 64 decompilation",
+    "url": "https://github.com/MatBourgon/Gex64Decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Gex 64: Enter the Gecko for the Nintendo 64, USA release. The ROM is named gex64.z64 and must be big-endian Z64. make split extracts it, make build rebuilds it, and make diff must match the original before a change is submitted. Most of the game compiles without -mips3. Some files require -mips3.",
+    "description_zh": "这是 Nintendo 64 美版《Gex 64: Enter the Gecko》的匹配反编译。ROM 命名为 gex64.z64，并且必须是大端 Z64。make split 提取它，make build 重新构建，提交改动前 make diff 必须与原版一致。游戏的大部分不需要 -mips3 就能编译。有些文件需要 -mips3。",
+    "requirements": [
+      "Docker image matbourgon/gex64-decomp, or python3, pip, and binutils-mips-linux-gnu. Place the USA ROM at gex64.z64.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/MatBourgon/Gex64Decomp/blob/7f48432de8cad85db6d777397a9cb41005f82250/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
