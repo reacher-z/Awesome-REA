@@ -4,13 +4,13 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
 - [Game · 游戏](#game) (239)
-- [App · 应用](#app) (62)
+- [App · 应用](#app) (63)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
 - [Protocol · 协议](#protocol) (91)
@@ -333,6 +333,7 @@
 - [**SoundConnect Desktop：复用已调查耳机引擎的 Windows 客户端**](https://github.com/B-Howell/soundconnect-desktop) - Windows 索尼耳机客户端在 REA 辅助二进制清点及源码检查后采用既有 libmdr/libmdr-bt 引擎 DLL，桌面界面参考 Sound Connect；协议实现和设备支持来自上游复用，并非本项目重新恢复。 <sub>案例 · 混合工具流程 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/soundconnect-desktop-rea-engine-case/)</sub>
 - [**NOOP：基于蓝牙协议研究构建的离线 WHOOP 手环客户端**](https://github.com/ryanbr/noop) - 以离线的 macOS、Android 和 iOS 客户端取代 WHOOP 官方配套应用：通过蓝牙与 WHOOP 4.0 及 5.0/MG 手环配对，解析其厂商自定义 GATT 帧，将手环中的历史数据转存到本地 SQLite，并在设备上计算恢复度、负荷、HRV 和睡眠。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/noop-whoop-ble-client-case/)</sub>
 - [**Notes CSV 导出：作者报告的 REA 重建验收器检查**](https://x.com/i/article/2110962506604929025) - 一篇中文文章把复刻 REA 自带 Notes 教学应用的 Python CSV 导出器故意改坏三个版本，展示简单的“导出再读回”测试能让三者全部通过，而以官方 JavaScript 格式化函数为参照、在 215 组固定输入上逐字节比较则能逐一识破。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/rea-notes-csv-oracle-mutation-case/)</sub>
+- [**Pocket Libre：重建 Pocket AI 录音笔的蓝牙与 Wi-Fi 传输协议**](https://github.com/shahcolate/pocket-libre) - 以一个 Python 命令行工具和本地网页界面替代 Pocket AI 录音笔（PKT01）的厂商应用，从设备上取回录音并在使用者自己的电脑上处理。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/pocket-libre-recorder-protocol-case/)</sub>
 - [**usque：Cloudflare WARP MASQUE 模式的开源再实现**](https://github.com/Diniboy1123/usque) - 用 Go 重新实现 Cloudflare WARP 客户端的 MASQUE 模式：通过基于 QUIC/HTTP/3 的 Connect-IP（RFC 9484）隧道传输 IP 流量，并以原生 TUN 设备、SOCKS5 或 HTTP 代理、仅 TCP 的 L4 代理或端口转发等形式提供。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/usque-warp-masque-client-case/)</sub>
 - [**Webamp：在浏览器中重新实现 Winamp 2**](https://github.com/captbaritone/webamp) - 用 HTML5 和 JavaScript 重新实现 Winamp 2 的主窗口、均衡器和播放列表窗口，借助 Web Audio 实现播放、音量、声道平衡和均衡器，并渲染原有的经典 .wsz 皮肤，其文档称渲染效果与 Winamp 2.9 逐像素一致；Milkdrop 预设通过 Butterchurn 的 WebGL 移植版运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/webamp-winamp-reimplementation-case/)</sub>
 - [**WristBeam：为 Mac 配套应用重建佳明手表协议**](https://github.com/kongdayan/wristbeam) - 以原生 macOS 菜单栏应用实现佳明手表的配套客户端：通过蓝牙配对，接收实时健康通知和原始 FIT 文件，并可上传至 Garmin Connect。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/wristbeam-garmin-watch-protocol-case/)</sub>
