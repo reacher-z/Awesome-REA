@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "medarot3-disasm",
+    "name": "Medarot 3 disassembly",
+    "url": "https://github.com/Medabots/medarot3",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This repository is a Game Boy Color disassembly of Medarot 3, with translation branches. It builds the Kabuto and Kuwagata versions from the original ROMs.",
+    "description_zh": "该仓库是 Game Boy Color 版《勋章战士3》的反汇编，并带有翻译分支。它用原版 ROM 构建甲虫版和锹形虫版。",
+    "requirements": [
+      "Kabuto ROM MD5 cbc55f3bb98f8c0443917ae477e56e51, named baserom_kabuto.gbc. Kuwagata ROM MD5 dabfbdc9aba5f2edc21f884c52881e0d, named baserom_kuwagata.gbc.",
+      "Make 4 or newer, Python 3.10.6 or newer as python3, and RGBDS 1.0.1 or newer.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Medabots/medarot3/blob/a711cce35d8107d39094fa57aa7ffc8b54d5cdd0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
