@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "poketcg",
+    "name": "Pokémon TCG disassembly",
+    "url": "https://github.com/pret/poketcg",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This disassembles Pokémon Trading Card Game. It builds Pokémon Trading Card Game (U) [C][!].gbc, SHA-1 0f8670a583255cff3e5b7ca71b5d7454d928fc48, and the patch DMGAXQE0.I78.patch, SHA-1 3efeae633fde122e2651502aecbb2614131d1327. Install RGBDS, put it on the path, and run make. The output file is poketcg.gbc.",
+    "description_zh": "该项目反汇编《宝可梦集换式卡牌游戏》。它构建 Pokémon Trading Card Game (U) [C][!].gbc，SHA-1 为 0f8670a583255cff3e5b7ca71b5d7454d928fc48，以及补丁 DMGAXQE0.I78.patch，SHA-1 为 3efeae633fde122e2651502aecbb2614131d1327。安装 RGBDS，把它加入路径，然后运行 make。输出文件是 poketcg.gbc。",
+    "requirements": [
+      "RGBDS on the path. Run make.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/pret/poketcg/blob/3054a4465938cfd744bab6f976c090884561d433/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
