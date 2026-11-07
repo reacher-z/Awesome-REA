@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "vandal-hearts-decomp",
+    "name": "Vandal Hearts decompilation",
+    "url": "https://github.com/shao113/vh",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is an in-progress decompilation of Vandal Hearts for the PlayStation, US release. The executable is SLUS_004.47, checksum 596bb082a2de5f1fe977dd3d7e160b03. The README also lists ASPSX.EXE v2.21 from PSY-Q v3.3, checksum e3ae8aea2623b916f89384bf70f55487, and LIB34.ZIP, checksum d25fd757e944a05369e8fb003a007dd2.",
+    "description_zh": "这是 PlayStation 美版《Vandal Hearts》的进行中反编译。可执行文件是 SLUS_004.47，校验值 596bb082a2de5f1fe977dd3d7e160b03。README 还列出 PSY-Q v3.3 的 ASPSX.EXE v2.21，校验值 e3ae8aea2623b916f89384bf70f55487，以及 LIB34.ZIP，校验值 d25fd757e944a05369e8fb003a007dd2。",
+    "requirements": [
+      "The page points at splat, asm-differ, and the Ghidra PS1 loader as tools used to start the project.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/shao113/vh/blob/a9e53de9484d4b42b023411617fe6d44acf592bc/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
