@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "xenogears-recomp-case",
+    "name": "XenogearsRecomp",
+    "url": "https://github.com/OpokXeno/xenogears-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "XenogearsRecomp is a static recompilation of Xenogears (USA) for the PlayStation. It uses PSXRecomp to turn MIPS R3000A code into C and then native x64, and it recompiles an OpenBIOS or retail SCPH1001.BIN backend with the game executable.",
+    "description_zh": "XenogearsRecomp 是《Xenogears》美版 PlayStation 的静态重编译。它用 PSXRecomp 把 MIPS R3000A 代码转成 C 再转成原生 x64，并把 OpenBIOS 或零售版 SCPH1001.BIN 后端与游戏可执行文件一起重编译。",
+    "requirements": [
+      "A release needs the player's own Xenogears (USA) disc 1 and disc 2 images, preferably .cue and .bin.",
+      "The README says the project is in alpha: the game boots, reaches the title screen and intro FMV, and is playable, and it is not fully validated end to end.",
+      "A source build needs a C or C++ compiler, CMake 3.20 or newer, Python 3.11 or newer, and SDL3 3.4 or newer. Ninja is recommended.",
+      "Release packages include the redistributable OpenBIOS image and its MIT notice. The reviewed README does not name a license for the recompilation itself."
+    ],
+    "evidence_url": "https://github.com/OpokXeno/xenogears-recomp/blob/131614f70abdc4e36c70e63e8f5be33f8dcd8013/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
