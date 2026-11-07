@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bookstory-en",
+    "name": "BookStory English",
+    "url": "https://github.com/xraymemory/bookstory-en",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "class": "game",
+    "description_en": "BookStory English is an English translation of Kairosoft's freeware BookStory, which the README says had only been available in Japanese. Menus and interface text are translated, and a Windows alpha build is on the Releases page. German and Romanian translations are listed as not playable yet.",
+    "description_zh": "BookStory English 是 Kairosoft 免费游戏 BookStory 的英文翻译。README 写明这款游戏此前只有日文版。菜单和界面文字已经翻译，Releases 页面有一个 Windows alpha 构建。德文和罗马尼亚文翻译列为还不能游玩。",
+    "requirements": [
+      "Run BookStory_en.exe. The README says it was tried on Windows 95, 2000, and 10. If MSVBVM50.DLL is missing, install the VB6 runtime.",
+      "Translated strings are in translation.csv. Translated sources and playable binaries are in the en directory.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/xraymemory/bookstory-en/blob/0f52546e064ccb7b76c23cc9b87df218ed9e8a24/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
