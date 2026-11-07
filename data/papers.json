@@ -12817,5 +12817,55 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-exhib-bench",
+    "title": "EXHIB: A Benchmark for Realistic and Diverse Evaluation of Function Similarity in the Wild",
+    "authors": [
+      "Yiming Fan",
+      "Jun Yeon Won",
+      "Ding Zhu",
+      "Melih Sirlanci",
+      "Mahdi Khalili",
+      "Zhiqiang Lin",
+      "Carter Yagemann"
+    ],
+    "year": 2026,
+    "publication_date": "2026-04-02",
+    "date_precision": "day",
+    "date_basis": "arXiv first-submission date; the reviewed file is v2",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2604.01554",
+    "arxiv_version_reviewed": "v2",
+    "first_arxiv_date": "2026-04-02",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2604.01554v2",
+    "pdf_url": "https://arxiv.org/pdf/2604.01554v2",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "EXHIB is a benchmark for binary function similarity detection, built as five datasets collected in the wild rather than as one narrow transformation. The abstract says the authors compare representative similarity models on it, including firmware and semantically changed cases.",
+    "description_zh": "EXHIB 是二进制函数相似性检测的基准，由五个来自真实环境的数据集构成，而不是只覆盖一种狭窄变换。摘要说作者在其上比较有代表性的相似性模型，包括固件和语义发生变化的情形。",
+    "scope_limitations_en": "The reviewed file is arXiv:2604.01554v2. Model scores in the abstract were not recomputed.",
+    "scope_limitations_zh": "审阅的文件是 arXiv:2604.01554v2。摘要中的模型分数没有重新计算。",
+    "why_fits_en": "Binary function similarity is a reverse-engineering comparison task, and EXHIB is offered as a benchmark for it.",
+    "why_fits_zh": "二进制函数相似性是逆向工程中的比较任务，EXHIB 被作为这项任务的基准提出。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2604.01554v2",
+      "https://arxiv.org/pdf/2604.01554v2",
+      "https://export.arxiv.org/api/query?id_list=2604.01554"
+    ],
+    "metadata_notes": "The fetched PDF is v2. The first submission date is kept separately.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "EXHIB：面向真实环境中函数相似性的多样评测基准",
+    "date_basis_zh": "日期取自 arXiv 首次提交日，审阅的文件是 v2",
+    "metadata_notes_zh": "获取的 PDF 是 v2。首次提交日期另行保留。"
   }
 ]
