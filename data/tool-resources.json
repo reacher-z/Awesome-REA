@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "droidsaw",
+    "name": "droidsaw",
+    "url": "https://github.com/droidsaw/droidsaw",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "droidsaw is a Rust decompiler for Android DEX files and Hermes bundles. It decompiles DEX classes to Java and Hermes functions to JavaScript, and it can follow a value from JavaScript across the React Native bridge into Java. The README says preservation mode recovered 5,767 F-Droid DEX files bit for bit, and that Hermes bytecode round-trips on versions 84, 96, 98, and 99.",
+    "description_zh": "droidsaw 是用 Rust 写的 Android DEX 和 Hermes 包反编译器。它把 DEX 类反编译成 Java，把 Hermes 函数反编译成 JavaScript，并能把一个值从 JavaScript 穿过 React Native 桥跟到 Java。README 写明保存模式逐位恢复了 5,767 个 F-Droid 的 DEX 文件，Hermes 字节码在 84、96、98 和 99 版上可以往返。",
+    "requirements": [
+      "A Rust toolchain and a C compiler. The documented install is cargo install droidsaw. cargo install droidsaw --features mcp also installs the MCP server.",
+      "License: BSD-3-Clause."
+    ],
+    "evidence_url": "https://github.com/droidsaw/droidsaw/blob/50eb045b5672431ea787c2696100baed44163918/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

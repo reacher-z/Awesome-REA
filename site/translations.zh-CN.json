@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "droidsaw": {
+    "name": "droidsaw",
+    "requirements": [
+      "需要 Rust 工具链和 C 编译器。文档中的安装命令是 cargo install droidsaw。cargo install droidsaw --features mcp 还会安装 MCP 服务器。",
+      "许可证：BSD-3-Clause。"
+    ]
   }
 }
