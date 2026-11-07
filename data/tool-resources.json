@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "decbench",
+    "name": "DecBench",
+    "url": "https://github.com/Noelo-Lab/decbench",
+    "category": "learning",
+    "kind": "research",
+    "relationship": "learning",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "DecBench is an experimental benchmark for comparing decompilers and language models on recovering exact source code. The README defines metrics and datasets for structure, types, and precise recompilability, and says scores can be updated as new decompilers appear.",
+    "description_zh": "DecBench 是一个实验性基准，用来比较反编译器和语言模型在恢复精确源代码上的表现。README 为结构、类型和可精确再编译性定义了指标和数据集，并写明随着新反编译器出现可以更新分数。",
+    "requirements": [
+      "The benchmark compares decompilers and language models.",
+      "The README calls the project experimental and living.",
+      "The README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Noelo-Lab/decbench/blob/27c0cae6abb39147cc5325e8497c1a8f51a905c2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
