@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "zelda-nes-recomp",
+    "name": "LegendOfZeldaNESRecomp: static recompilation of The Legend of Zelda",
+    "url": "https://github.com/mstan/LegendOfZeldaNESRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "LegendOfZeldaNESRecomp is a static recompilation of The Legend of Zelda for the NES, built with nesrecomp and described as an in-development preview. The Windows quick start asks for a Legend of Zelda (USA) ROM, and the cycle build uses the original USA PRG0 ROM. Project code covered by the README is under the PolyForm Noncommercial License 1.0.0.",
+    "description_zh": "LegendOfZeldaNESRecomp 用 nesrecomp 对 NES 版《塞尔达传说》做静态重编译，README 称之为仍在开发中的预览。Windows 快速开始要求一份《塞尔达传说》（美国）ROM，cycle 构建使用原始美国版 PRG0 ROM。README 所涵盖的项目代码采用 PolyForm Noncommercial License 1.0.0。",
+    "evidence_url": "https://github.com/mstan/LegendOfZeldaNESRecomp/blob/4db4ffcffe910809532fd95202ab8d6d05a5323c/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "A Legend of Zelda (USA) ROM. The cycle configuration generates native code from the supplied ROM. The README documents a Windows release zip and CMake builds for Windows, Linux, and macOS.",
+      "The README calls the ports in-development previews. Seamless Overworld is marked experimental, and legacy binary save states do not transfer to the cycle backend.",
+      "The README licenses covered project code under PolyForm Noncommercial 1.0.0. PERMISSIONS.md records standing permission for voluntary donations, sponsorships, and advertising. Third-party components keep their own licenses."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]

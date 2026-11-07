@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -136,7 +136,7 @@
 - [**《风之杖 HD》反编译：与重编译的 Wii U 版逐函数比对验证**](https://github.com/ZeldaWWHDDecomp/wwhd) - 将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### 静态重编译 (48)
+### 静态重编译 (49)
 
 - [**Banjo: Recompiled：基于 N64Recomp 的《Banjo-Kazooie》原生移植**](https://github.com/BanjoRecomp/BanjoRecomp) - 使用 N64Recomp 将美版 1.0 Nintendo 64《Banjo-Kazooie》静态重编译为基于 N64ModernRuntime 的原生移植版，由 RT64 渲染并加入模组支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/banjo-recompiled-case/)</sub>
 - [**C2C：《古惑狼 2》的混合重编译与手工反编译**](https://github.com/ughman/c2c) - 一个早期的 PlayStation《古惑狼 2》逆向工程项目：把引擎的 MIPS 机器码直接转换为一个体量巨大的 C 文件，并调用改造后的 PCSX-R 模拟器库处理硬件 I/O。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -157,6 +157,7 @@
 - [**KartPad：Mario Kart Wii 重编译的平台集成**](https://github.com/chrissotraidis/kartpad) - 围绕 WiiCompiled 对 Mario Kart Wii 的提前转换实现 Apple 与 Android 平台集成，提供原生图形、输入及可选 Retro Rewind 支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kartpad-case/)</sub>
 - [**King Kong Recompiled：由 AI 开发的 Xbox 360 静态重编译**](https://github.com/TekRantGaming/king-kong-recompiled) - 借助 ReXGlue 静态重编译 SDK，将 Xbox 360 版 Peter Jackson's King Kong 转译为原生 Windows 代码，并加入启动器以及显示、操控和图形选项。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/king-kong-recompiled-case/)</sub>
 - [**LASRecomp：《织梦岛》静态重编译案例**](https://github.com/peiikai/LASRecomp) - 通过静态重编译，将 2019 年 Switch 版《塞尔达传说：织梦岛》重建为原生桌面程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lasrecomp/)</sub>
+- [**LegendOfZeldaNESRecomp：NES《塞尔达传说》的静态重编译**](https://github.com/mstan/LegendOfZeldaNESRecomp) - LegendOfZeldaNESRecomp 用 nesrecomp 对 NES 版《塞尔达传说》做静态重编译，README 称之为仍在开发中的预览。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/zelda-nes-recomp/)</sub>
 - [**Little Planet：由一致性反汇编重编译的 Sonic CD**](https://github.com/carlosrmz009/littleplanet) - 依据运行覆盖率和递归下降，反汇编 Sonic CD 光盘上的全部可执行文件并逐字节一致地重新汇编，再将代码静态翻译为 C，运行于从零编写、以高层实现替代 BIOS 的 Mega-CD 运行时。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/little-planet-sonic-cd-recomp-case/)</sub>
 - [**Lost Odyssey Recomp：将 Xbox 360 角色扮演游戏静态重编译为原生移植**](https://github.com/freefrank/LostOdysseyRecomp) - 使用打过补丁的 XenonRecomp 工具转换 Lost Odyssey 的 Xbox 360 PowerPC 可执行文件，并在原生运行时上运行生成代码，经 Direct3D 12、Vulkan 或 Metal 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lost-odyssey-recomp-case/)</sub>
 - [**MarioKart 64: Recompiled：通过 N64Recomp 静态重编译实现的原生移植**](https://github.com/sonicdcer/MarioKart64Recomp) - 使用 N64Recomp 将北美版 Nintendo 64《马力欧卡丁车 64》静态重编译为 Windows、Linux 与 macOS 原生应用，并通过 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/mariokart64-recompiled-case/)</sub>

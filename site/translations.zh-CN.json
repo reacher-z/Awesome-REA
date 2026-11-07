@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "zelda-nes-recomp": {
+    "name": "LegendOfZeldaNESRecomp：NES《塞尔达传说》的静态重编译",
+    "requirements": [
+      "需要一份《塞尔达传说》（美国）ROM。cycle 配置从提供的 ROM 生成原生代码。README 记录了 Windows 发行压缩包，以及 Windows、Linux 和 macOS 的 CMake 构建。",
+      "README 把这些移植称为开发中的预览。无缝地上世界被标为实验功能，旧的二进制即时存档不能转移到 cycle 后端。",
+      "README 将所涵盖的项目代码许可为 PolyForm Noncommercial 1.0.0。PERMISSIONS.md 记录了对自愿捐赠、赞助和广告收入的既有许可。第三方组件保留各自的许可证。"
+    ]
   }
 }
