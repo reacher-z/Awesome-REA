@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokemon-moon-decomp",
+    "name": "Pokémon Moon decompilation",
+    "url": "https://github.com/gradenGnostic/pokemoon",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This reconstructs the European base release of Pokémon Moon for the Nintendo 3DS. The title ID is 0004000000175E00 and the product code is CTR-P-BNEA, title version 0. Retail code.bin has SHA-256 fbe0ce6da21542542f49645fff78ba1b7e5e7cc172ce4daceeb5c26ab54adba1. Retail static.crs has SHA-256 e18db06b0609739e8e62cd4786c6b2da838d20347050e4c2ac822bf35c016957. The manifest lists 2,984 source-backed functions out of 18,945, including 298 exact ARM matches.",
+    "description_zh": "该项目重建 Nintendo 3DS 欧版《精灵宝可梦 月亮》的基础发行版。标题 ID 是 0004000000175E00，产品代码是 CTR-P-BNEA，标题版本 0。零售版 code.bin 的 SHA-256 是 fbe0ce6da21542542f49645fff78ba1b7e5e7cc172ce4daceeb5c26ab54adba1。零售版 static.crs 的 SHA-256 是 e18db06b0609739e8e62cd4786c6b2da838d20347050e4c2ac822bf35c016957。清单列出 18,945 个函数中的 2,984 个已有源码，其中 298 个是精确的 ARM 匹配。",
+    "requirements": [
+      "Python 3, GNU Make, arm-none-eabi-g++ 16.2.0, and ARM GNU binutils 2.47. make verify builds the exact profile. A separate PC runtime uses CMake 3.20 or newer, C++17, SDL2, OpenGL, and Ninja.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/gradenGnostic/pokemoon/blob/7a5936eee5d08889d6cc534e6916a86b39fde694/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
