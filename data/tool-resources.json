@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "blinx2-recomp",
+    "name": "BLiNX 2 recompilation",
+    "url": "https://github.com/apexJCL/blinx2-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles BLiNX 2: Masters of Time & Space for the original Xbox. The supported release is title ID 0x4D530065, version 1, region-free. default.xbe has one of two SHA-256 values: 0c57fd72053077bc938876d1f2477b937e1f70566500c0e020bb45bbfa4ddc5e or aa186954c47d9f0a98f8690948e8c43bae15201aa49c3457a42402a142b0c60e. Scripted runs reach every stage and boss, at 30 fps and 4:3. Windows uses Direct3D 11, Steam Deck and Linux use Direct3D 11 through Proton, and Apple silicon uses Metal.",
+    "description_zh": "该项目重编译原版 Xbox 游戏《BLiNX 2: Masters of Time & Space》。支持的发行版标题 ID 是 0x4D530065，版本 1，无区域限制。default.xbe 的 SHA-256 是这两个值之一：0c57fd72053077bc938876d1f2477b937e1f70566500c0e020bb45bbfa4ddc5e 或 aa186954c47d9f0a98f8690948e8c43bae15201aa49c3457a42402a142b0c60e。脚本化运行能到达每个关卡和头目，帧率 30，画面 4:3。Windows 使用 Direct3D 11，Steam Deck 和 Linux 通过 Proton 使用 Direct3D 11，Apple silicon 使用 Metal。",
+    "requirements": [
+      "The wizard archives are blinx2-wizard-<version>-windows-x64.zip, blinx2-wizard-<version>-macos.zip, and blinx2-wizard-<version>-linux-x64.tar.gz. ./blinx2 fingerprint checks a disc image.",
+      "License: MIT. The statically linked toolkit includes LGPL-2.1 APU code from xemu. NOTICE covers distributing a built binary."
+    ],
+    "evidence_url": "https://github.com/apexJCL/blinx2-recomp/blob/b8e9857febb308a59c90471013dc137569c9d7b0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
