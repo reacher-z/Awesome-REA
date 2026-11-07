@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "show-java": {
+    "name": "Show Java",
+    "requirements": [
+      "需要 Android 4.1 或更高版本。3.0 版列出的范围是 Jelly Bean 及以上。",
+      "许可证：GNU GPL 第 3 版。"
+    ]
   }
 }

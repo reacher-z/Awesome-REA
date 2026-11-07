@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "show-java",
+    "name": "Show Java",
+    "url": "https://github.com/niranjan94/show-java",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Show Java decompiles APK, JAR, and dex files on an Android device, including layouts, drawables, menus, AndroidManifest, and image assets. Version 3.0 can use CFR 0.140, JaDX 0.9.0, or Fernflower commit a0a8f0a. CFR runs from Jelly Bean upward. JaDX and Fernflower run on Nougat and Oreo. Output is written to a show-java folder on the device storage. The Play Store listing reviewed here is 3.0.5, and the GitHub build is 3.0.6.",
+    "description_zh": "Show Java 在 Android 设备上反编译 APK、JAR 和 dex，包括布局、drawable、菜单、AndroidManifest 和图像资源。3.0 版可以使用 CFR 0.140、JaDX 0.9.0 或 Fernflower 提交 a0a8f0a。CFR 从 Jelly Bean 起可以运行。JaDX 和 Fernflower 运行在 Nougat 和 Oreo 上。输出写到设备存储里的 show-java 文件夹。这里审阅的 Play 商店版本是 3.0.5，GitHub 构建是 3.0.6。",
+    "requirements": [
+      "Android 4.1 or newer. Version 3.0 is listed for Jelly Bean and above.",
+      "License: GNU GPL version 3."
+    ],
+    "evidence_url": "https://github.com/niranjan94/show-java/blob/f2f71dcd0955f21c8a9538322137a7961d33e792/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
