@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -136,11 +136,12 @@
 - [**《风之杖 HD》反编译：与重编译的 Wii U 版逐函数比对验证**](https://github.com/ZeldaWWHDDecomp/wwhd) - 将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### 静态重编译 (48)
+### 静态重编译 (49)
 
 - [**Banjo: Recompiled：基于 N64Recomp 的《Banjo-Kazooie》原生移植**](https://github.com/BanjoRecomp/BanjoRecomp) - 使用 N64Recomp 将美版 1.0 Nintendo 64《Banjo-Kazooie》静态重编译为基于 N64ModernRuntime 的原生移植版，由 RT64 渲染并加入模组支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/banjo-recompiled-case/)</sub>
 - [**C2C：《古惑狼 2》的混合重编译与手工反编译**](https://github.com/ughman/c2c) - 一个早期的 PlayStation《古惑狼 2》逆向工程项目：把引擎的 MIPS 机器码直接转换为一个体量巨大的 C 文件，并调用改造后的 PCSX-R 模拟器库处理硬件 I/O。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
 - [**Castlevania 64: Recompiled：测试版静态重编译移植**](https://github.com/RevoSucks/CV64Recomp) - 使用 N64Recomp 将 Nintendo 64 版 Castlevania 美版 1.0 静态重编译为原生 PC 移植，并以 RT64 渲染。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cv64-recompiled-case/)</sub>
+- [**CoD3Recomp：使命召唤 3 的静态重编译**](https://github.com/FrankHUN88453/CoD3Recomp) - CoD3Recomp 使用 XenonRecomp，把 Xbox 360 版《使命召唤 3》静态重编译为原生 x86-64。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cod3recomp/)</sub>
 - [**Conker's Bad Fur Day: Recompiled：基于 N64Recomp 的原生移植**](https://github.com/sciaschi/CBFD-Recompiled) - 使用 N64Recomp 将美版 Nintendo 64《Conker's Bad Fur Day》静态重编译为基于 N64ModernRuntime 和 RT64 的原生 Windows、Linux 与 macOS 移植版。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cbfd-recompiled-case/)</sub>
 - [**CPS-2 Recomp：Capcom CPS-2 与 CPS-1 街机游戏的静态重编译**](https://github.com/tmcleroy/cps2recomp) - 将 Capcom 街机基板上的 68000 游戏程序与 Z80 声音程序预先转译为 C++，并在为本项目编写的机器模型上运行，尚未转译的代码则交给解释器执行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cps2recomp-arcade-static-recomp-case/)</sub>
 - [**Crash Bandicoot 2 Recompiled：基于 PSXRecomp 的原生构建**](https://github.com/Zumbo06/Crash2Recomp) - 一个 Windows 启动器，借助 PSXRecomp 重编译器与运行时，将用户自备的《古惑狼 2》光盘转换为 C 代码并在本地编译，使游戏以原生代码配合模拟的 PlayStation 硬件层运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crash2recomp-case/)</sub>

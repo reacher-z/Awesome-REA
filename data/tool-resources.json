@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "url": "https://github.com/FrankHUN88453/CoD3Recomp",
+    "evidence_url": "https://github.com/FrankHUN88453/CoD3Recomp/blob/3c3178a85075cfa6e0703de5e553ff472acc7916/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "id": "cod3recomp",
+    "name": "CoD3Recomp: static recompilation of Call of Duty 3",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "static-recompilation",
+    "description_en": "CoD3Recomp is a static recompilation of Call of Duty 3 for Xbox 360 to native x86-64, using XenonRecomp. The README says the PowerPC code translates to C++, that 19,462 functions are translated, and that all 179 Xbox 360 kernel imports are implemented. It says the project is still in development.",
+    "description_zh": "CoD3Recomp 使用 XenonRecomp，把 Xbox 360 版《使命召唤 3》静态重编译为原生 x86-64。README 写明 PowerPC 代码被翻译成 C++，19,462 个函数已翻译，并且 179 个 Xbox 360 内核导入都已实现。它写明项目仍在开发中。",
+    "requirements": [
+      "The README says a playable build on the releases page uses the user's own Xbox 360 disc image.",
+      "It says bugs can occur because the project is still in development.",
+      "GitHub reports no license file."
+    ]
   }
 ]
