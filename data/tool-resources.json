@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "svr2010-recomp",
+    "name": "WWE SmackDown vs. Raw 2010 recompilation",
+    "url": "https://github.com/nefariousjosiah/WWE-SVR2010-RECOMP",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles the Xbox 360 version of WWE SmackDown vs. Raw 2010. The game code is recompiled and drawn by a native renderer: Direct3D 12 on Windows, and Vulkan on Linux and the Steam Deck. The README says it runs at 60 fps, with resolution choices from 480p to 8K. Windows runs the release directly. The Linux and Steam Deck steps run that Windows release through Proton.",
+    "description_zh": "该项目重编译 Xbox 360 版《WWE SmackDown vs. Raw 2010》。游戏代码被重编译，并由原生渲染器绘制：Windows 上是 Direct3D 12，Linux 和 Steam Deck 上是 Vulkan。README 写明它以 60 帧运行，分辨率可选 480p 到 8K。Windows 直接运行发布包。Linux 和 Steam Deck 的步骤通过 Proton 运行同一份 Windows 发布包。",
+    "requirements": [
+      "Windows 10 or 11, 64-bit, and a Direct3D 12 or Vulkan graphics card. The disc image is the USA or Europe release, title ID 54510844 and media ID 518DE415. Download SVR2010-NATIVE.zip from Releases and place the .iso next to svr2010.exe.",
+      "License: GPL-3.0 for this project's code. The README says releases include FFmpeg and libmspack under the LGPL, and that the renderer builds on re:Blue's BSD-3-Clause core."
+    ],
+    "evidence_url": "https://github.com/nefariousjosiah/WWE-SVR2010-RECOMP/blob/356b8364ea6023f20c3179cdaa2b39cfba2c8c9a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
