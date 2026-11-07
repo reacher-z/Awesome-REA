@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "trials-hd-recomp",
+    "name": "Trials HD recompilation",
+    "url": "https://github.com/snufflyyy/trials-hd-recompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Trials HD for the Xbox 360, title ID 5841095A, to Linux x86-64 and macOS with ReXGlue. Physics stay at 60 Hz while rendering can run at a higher refresh rate. The GPU backend is WebGPU or Vulkan. ./build.sh --game takes the game directory or the STFS package and reads default.xex from it. Later builds omit --game.",
+    "description_zh": "该项目用 ReXGlue 把 Xbox 360 的《Trials HD》标题 ID 5841095A 静态重编译到 Linux x86-64 和 macOS。物理保持 60 Hz，渲染可以跑到更高刷新率。GPU 后端是 WebGPU 或 Vulkan。./build.sh --game 接收游戏目录或 STFS 包，并从中读取 default.xex。之后的构建可以省略 --game。",
+    "requirements": [
+      "Linux x86-64 with SSE4.2 and Vulkan 1.2 or newer, or macOS 12 or newer. Clang 19 or newer, CMake 3.25 or newer, Ninja, Python 3, and Git. Clone with --recursive.",
+      "License: MIT for this repository. The ReXGlue SDK is BSD-3-Clause."
+    ],
+    "evidence_url": "https://github.com/snufflyyy/trials-hd-recompiled/blob/17a76f5e674c6132d74f587567e0ecc1624ce3e6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

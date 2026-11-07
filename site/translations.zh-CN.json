@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "trials-hd-recomp": {
+    "name": "Trials HD 重编译",
+    "requirements": [
+      "需要带 SSE4.2 和 Vulkan 1.2 或更新版本的 Linux x86-64，或者 macOS 12 或更新版本。需要 Clang 19 或更新版本、CMake 3.25 或更新版本、Ninja、Python 3 和 Git。克隆时使用 --recursive。",
+      "许可证：本仓库为 MIT。ReXGlue SDK 为 BSD-3-Clause。"
+    ]
   }
 }
