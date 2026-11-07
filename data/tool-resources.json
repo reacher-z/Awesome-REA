@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "regaiden-recomp-case",
+    "name": "Resident Evil Gaiden: Recompiled",
+    "url": "https://github.com/sergiomanzur/regaiden-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Resident Evil Gaiden: Recompiled is a native static recompilation of Resident Evil Gaiden for the Game Boy Color. Release 0.4.1 targets Windows and Android ARM64, with Linux marked as work in progress. Rendering uses SDL2, OpenGL ES 3, and Dear ImGui.",
+    "description_zh": "Resident Evil Gaiden: Recompiled 是 Game Boy Color《生化危机 Gaiden》的原生静态重编译。0.4.1 面向 Windows 和 Android ARM64，Linux 标为进行中。渲染使用 SDL2、OpenGL ES 3 和 Dear ImGui。",
+    "requirements": [
+      "The player supplies the ROM and any music files. The default boot uses native Game Boy Color aspect and colors. Enhancements are optional from the F10 menu.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/sergiomanzur/regaiden-recomp/blob/2b1bd51e09c8599d5436ba56f5ad17bd22550d2e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
