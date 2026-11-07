@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "maniac-mansion-disasm",
+    "name": "Maniac Mansion script disassembly",
+    "url": "https://github.com/segrax/Maniac.Mansion.Disassembly",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "class": "game",
+    "description_en": "This repository is a commented disassembly of Maniac Mansion scripts for the v0 demo and the retail release, plus spreadsheets of rooms, objects, variables, and sounds. The README says the files are not meant to be recompiled. The .c extension is only for highlighting.",
+    "description_zh": "该仓库是疯狂大厦 v0 试玩版和零售版脚本的注释反汇编，并附有房间、物体、变量和声音的表格。README 写明这些文件不打算重新编译。.c 扩展名只是为了语法高亮。",
+    "requirements": [
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/segrax/Maniac.Mansion.Disassembly/blob/0e4a04768e2a11eb869e1ba3c6a5b6429ef2c6c9/Readme.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

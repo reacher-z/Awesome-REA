@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -276,7 +276,7 @@
 - [**z2rs：以模拟器对照逐步重建《塞尔达传说 II》的 Rust 项目**](https://github.com/troyedwardsjr/z2rs) - 以 Rust 重建 NES 游戏《塞尔达传说 II：林克的冒险》，逐个替换游戏的 6502 例程，可运行于桌面、浏览器和 Android。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/z2rs-zelda2-reconstruction-case/)</sub>
 
 <a id="game-other"></a>
-### 其他方法与分析 (23)
+### 其他方法与分析 (24)
 
 - [**ArkWeb：双游戏动作与碰撞桥接实验**](https://github.com/luki-1/ArkWeb) - 同时运行《漫威蜘蛛侠：重制版》与《蝙蝠侠：阿卡姆骑士》，将哥谭碰撞数据传入蜘蛛侠的物理世界，再将其渲染画面合成到阿卡姆中。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/arkweb-two-game-case/)</sub>
 - [**Batla 3D 服务端模拟器（2015 年客户端）**](https://github.com/Serega25511s/Batla-3D-server-emu) - 面向 Batla 3D 2015 年 Steam 客户端的 C# 服务端模拟器，涵盖账户、商店、房间 HTTP 服务与 Lidgren UDP 对战。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/batla-3d-server-emulator-case/)</sub>
@@ -290,6 +290,7 @@
 - [**GTA Mode：逆向 SimCity 3000 Unlimited 并开发原生插件**](https://github.com/DenisSergeevitch/simcity3000-gta-mode) - GTA Mode 是为《SimCity 3000 Unlimited》加入可操控行人和车辆的原生插件，这些行人和车辆由插件生成。 <sub>案例 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/simcity-3000-gta-mode-case/)</sub>
 - [**《声名狼藉：次子》原生 PC 移植**](https://github.com/HayatoG/iss_pc) - 在 Windows 与 Linux 上原生运行 PS4 版《声名狼藉：次子》自身的 x86-64 代码：由运行时重新实现游戏所用的 PS4 系统库，并以源自 shadPS4 的核心将其 GPU 命令与着色器转换为 Vulkan。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/infamous-second-son-pc-port-case/)</sub>
 - [**Left 4 Dead 2：还原 AI Director 的运行机制**](https://github.com/zeljkovranjes/l4d2-director-system-research) - 这项 Left 4 Dead 2 研究依据指定的 x86 server.dll 和脱敏运行轨迹，还原 AI Director 的节奏、强度、遭遇布置及音乐规则。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/l4d2-director-research-case/)</sub>
+- [**疯狂大厦脚本反汇编**](https://github.com/segrax/Maniac.Mansion.Disassembly) - 该仓库是疯狂大厦 v0 试玩版和零售版脚本的注释反汇编，并附有房间、物体、变量和声音的表格。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/maniac-mansion-disasm/)</sub>
 - [**MTG Arena Collection Export：重建 Frontdoor 卡牌收藏请求**](https://github.com/Ikreb1/mtg-arena-collection-export) - MTG Arena Collection Export 重建 Magic: The Gathering Arena 的 Frontdoor 卡牌收藏请求。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/mtg-arena-collection-export-case/)</sub>
 - [**OpenPigeon：重建 GamePigeon iMessage 游戏消息**](https://github.com/time-attack/OpenPigeon) - OpenPigeon 是 TypeScript 编解码器，可读取十一款 GamePigeon 回合制 iMessage 游戏的状态，并将调用方提供的操作编码为消息。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/openpigeon-case/)</sub>
 - [**ProjectCane：《Sly Cooper and the Thievius Raccoonus》原生 PC 移植**](https://github.com/theclub654/ProjectCane) - 将 PlayStation 2 版《Sly Cooper and the Thievius Raccoonus》美版重建为 Windows 和 Linux 上的原生 C++ 游戏，运行时使用从玩家自有光盘镜像中提取的数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/projectcane-sly1-pc-port-case/)</sub>
