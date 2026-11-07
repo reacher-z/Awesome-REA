@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "sdlpal",
+    "name": "SDLPAL",
+    "url": "https://github.com/sdlpal/sdlpal",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "SDLPAL is an SDL reimplementation of the Chinese RPG Legend of Sword and Fairy, also called PAL. It builds for Windows desktop and UWP, GNU/Linux, macOS, Android, iOS, and several consoles. Windows desktop opens win32/sdlpal.sln in Visual Studio 2017 or later. GNU/Linux runs cd unix && make and needs SDL 2.0. The original resource files are copied into the same directory as the executable. On case-sensitive filesystems those filenames are lower-case. Versions are selected in the first-launch window or in sdlpal.cfg.",
+    "description_zh": "SDLPAL 是基于 SDL 的《仙剑奇侠传》重实现，英文也称为 PAL。它为 Windows 桌面和 UWP、GNU/Linux、macOS、Android、iOS 以及几种主机构建。Windows 桌面在 Visual Studio 2017 或更高版本中打开 win32/sdlpal.sln。GNU/Linux 运行 cd unix && make，并需要 SDL 2.0。原版资源文件复制到可执行文件所在的目录。在区分大小写的文件系统上，这些文件名使用小写。版本在首次启动窗口或 sdlpal.cfg 里选择。",
+    "requirements": [
+      "The original game data files, placed beside the executable. git submodule update --init --recursive before the platform build.",
+      "License: GNU GPL version 3."
+    ],
+    "evidence_url": "https://github.com/sdlpal/sdlpal/blob/d4bf69b64d335cd680555af9df90e7ec4f3006a3/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
