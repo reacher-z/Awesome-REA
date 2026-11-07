@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "reblue",
+    "name": "re:Blue — a static recompilation of Blue Dragon",
+    "url": "https://github.com/zolaware/reblue",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "static-recompilation",
+    "description_en": "Static recompilation that rebuilds Blue Dragon as a native application. The README says the repository contains no assets from the original game, and that Asia and Japan support is still to come. It says 64-bit ARM is supported on Linux and macOS, and Windows is x86-64 only.",
+    "description_zh": "通过静态重编译把《蓝龙》重建为原生程序。README 写明仓库不含原作素材，亚洲和日本版本的支持尚未完成。它写明 Linux 和 macOS 支持 64 位 ARM，Windows 仅支持 x86-64。",
+    "evidence_url": "https://github.com/zolaware/reblue/blob/85aae686489dff775890fb8100ab525d7b7427b0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires all three retail Blue Dragon discs or their disc images from the Global (US/EU) release. Steam Deck is listed as supported.",
+      "The reviewed page points to a LICENSE file and does not name the license."
+    ]
   }
 ]
