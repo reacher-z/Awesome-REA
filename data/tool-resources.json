@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "shiloh",
+    "name": "Shiloh",
+    "url": "https://github.com/Asterber/shiloh",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Shiloh is a Rust engine for The X-Files Game (1998), with an SDL2 window and a WebAssembly browser build. Complete playthroughs are reported for the English DVD Edition, program build 2.05, the Russian 1.00 release, and the German 7-CD release, program build 1.00.19. The browser build is served at 127.0.0.1:8640. Tables such as the computer, phone, and notes are read from the player's copy at run time.",
+    "description_zh": "Shiloh 是 1998 年游戏《X档案》的 Rust 引擎，带 SDL2 窗口和 WebAssembly 浏览器构建。README 报告英文 DVD 版（程序构建 2.05）、俄语 1.00 版和德语 7 张光盘版（程序构建 1.00.19）都完成了全程游玩。浏览器构建在 127.0.0.1:8640 提供。电脑、电话和笔记等表在运行时从玩家的副本读取。",
+    "requirements": [
+      "Stable Rust. The native window needs SDL2. The browser build needs the wasm32-unknown-unknown target. cargo run --release --bin xf -- --data takes a game directory or a disc image. Optional ffmpeg is used by xf-prep for music.",
+      "License: Apache-2.0 or MIT, at the user's option. The save-container code in port/src/neodb.rs is based on MIT code."
+    ],
+    "evidence_url": "https://github.com/Asterber/shiloh/blob/e3dfde0d098b25135a5243839d44842ccbc5fe91/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
