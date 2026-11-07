@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sacred-stones-recomp": {
+    "name": "火焰纹章 圣魔之光石重编译",
+    "requirements": [
+      "需要 SHA-1 如上的美版 ROM，并在启动器里选择一份 GBA BIOS。Windows 从 0.1.20 的压缩包运行 SacredStonesRecomp.exe。",
+      "审阅的 README 没有给这个仓库写出许可证。它写明固定的 gbarecomp 和 recomp-ui 分叉保留上游许可证。"
+    ]
   }
 }

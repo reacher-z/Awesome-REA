@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -136,7 +136,7 @@
 - [**Wind Waker HD decompilation: functions verified against the recompiled Wii U game**](https://github.com/ZeldaWWHDDecomp/wwhd) - Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wind-waker-hd-decomp-case/)</sub>
 
 <a id="game-static-recompilation"></a>
-### Static recompilations (48)
+### Static recompilations (49)
 
 - [**Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port**](https://github.com/BanjoRecomp/BanjoRecomp) - Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Banjo-Kazooie into a native port on N64ModernRuntime, rendered by RT64 and extended with mod support. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/banjo-recompiled-case/)</sub>
 - [**C2C: hybrid recompilation and hand decompilation of Crash Bandicoot 2**](https://github.com/ughman/c2c) - An early reverse-engineering effort on PlayStation Crash Bandicoot 2 that converts the engine’s MIPS machine code directly into a very large C file and runs it against a modified PCSX-R emulator library for hardware I/O. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/c2c-crash2-hybrid-recompilation-case/)</sub>
@@ -180,6 +180,7 @@
 - [**SVR2011-Recomp: a ReXGlue recompilation of WWE SmackDown vs. Raw 2011**](https://github.com/shaneomac1337/SVR2011-Recomp) - Translates the Xbox 360 executable of WWE SmackDown vs. Raw 2011 to C++ ahead of time with ReXGlue and builds it as a Windows program on a Vulkan runtime derived from Xenia. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/svr2011-recomp-case/)</sub>
 - [**SymphonyRecomp: a RecompOne static recompilation of Symphony of the Night**](https://github.com/BlackLabelHQ/SymphonyRecomp) - Statically recompiles the North American PlayStation release of Castlevania: Symphony of the Night into C# with BlackLabelHQ’s RecompOne, whose runtime simulates the BIOS, memory-mapped I/O, GPU and CD-ROM so the game runs natively without a console BIOS. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/symphonyrecomp-case/)</sub>
 - [**The Darkness Recomp: an Xbox 360 static recompilation with a native D3D11 renderer**](https://github.com/portingpete/The-Darkness-Recomp) - Builds a native Windows x64 port of The Darkness by translating its Xbox 360 executable to C++ ahead of time with a patched XenonRecomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/the-darkness-recomp-case/)</sub>
+- [**The Sacred Stones recompilation**](https://github.com/Lordingard/SacredStonesRecomp) - This statically recompiles Fire Emblem: The Sacred Stones for the Game Boy Advance to Windows x64 and Android ARM64. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sacred-stones-recomp/)</sub>
 - [**The Simpsons Wrestling Recompiled: a psxrecomp PlayStation static recompilation**](https://github.com/TekRantGaming/simpsons-wrestling-recompiled) - Translates the PlayStation game’s MIPS code to C with a pinned psxrecomp fork and builds Windows and Linux programs on its hardware-modelling runtime, with a launcher and a game-specific plugin. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/simpsons-wrestling-recompiled-case/)</sub>
 - [**The Two Towers Recompiled: an original Xbox static-recompilation port**](https://github.com/Gumpolas/TooTawersRecomp) - Statically recompiles the x86 code of The Lord of the Rings: The Two Towers (Xbox, USA, 2002) into C with the bundled xboxrecomp toolkit, producing native Windows, Linux and experimental macOS builds. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/two-towers-recompiled-case/)</sub>
 - [**Unleashed Recompiled: translating Xbox 360 game code and shaders**](https://github.com/hedge-dev/UnleashedRecomp) - Builds an unofficial Sonic Unleashed PC port by statically recompiling Xbox 360 PowerPC code with XenonRecomp and Xenos shaders with XenosRecomp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/unleashed-recompiled-case/)</sub>
