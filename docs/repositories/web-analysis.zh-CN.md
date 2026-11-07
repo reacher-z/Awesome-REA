@@ -32,7 +32,7 @@
 - [ben-sb/obfuscator-io-deobfuscator](https://github.com/ben-sb/obfuscator-io-deobfuscator) — 用于还原经 Obfuscator.io 混淆的脚本的去混淆工具。 **[807 星标]** · 精选：[Obfuscator.io 专用反混淆工具](https://awesomerea.org/zh/resources/obfuscator-io-deobfuscator/)
 - [decompme/decomp.me](https://github.com/decompme/decomp.me) — 协作式反编译与逆向工程网站。 **[632 星标]**
 - [aoyunyang/spider-king-skill](https://github.com/aoyunyang/spider-king-skill) — 以协议为先的逆向工程技能，将具有对抗性的网页客户端转化为纯协议 Python 采集器。 **[515 星标]**
-- [wwwg/wasmdec](https://github.com/wwwg/wasmdec) — 将 WebAssembly 反编译为 C 的工具。 **[428 星标]**
+- [wwwg/wasmdec](https://github.com/wwwg/wasmdec) — 将 WebAssembly 反编译为 C 的工具。 **[428 星标]** · 精选：[wasmdec：WebAssembly 到 C 的反编译器](https://awesomerea.org/zh/resources/wasmdec/)
 - [igorlira/dirplayer-rs](https://github.com/igorlira/dirplayer-rs) — 用 Rust 编写、兼容 Web 的 Shockwave Player 模拟器。 **[417 星标]**
 - [numandev1/react-native-decompiler](https://github.com/numandev1/react-native-decompiler) — 反编译 React Native Android/iOS Bundle。 **[371 星标]** · 精选：[React Native 反编译器](https://awesomerea.org/zh/resources/react-native-decompiler/)
 - [AngeloD2022/jsxer](https://github.com/AngeloD2022/jsxer) — 快速且准确的 JSXBIN 反编译器。 **[327 星标]** · 精选：[Jsxer JSXBIN 反编译器](https://awesomerea.org/zh/resources/jsxer/)
