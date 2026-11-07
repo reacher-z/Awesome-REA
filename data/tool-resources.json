@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mario-golf-64",
+    "name": "Mario Golf 64 decompilation",
+    "url": "https://github.com/monde-lointain/mariogolf64",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This matching decompilation of Mario Golf for the Nintendo 64, North America NMFE revision 0, rebuilds the original ROM byte for byte. baserom.z64 has SHA-1 e2c4e7a905b29529b49a1619a401fe699224829b. make setup downloads the KMC GCC 2.7.2 and binutils 2.6 toolchain. make extract splits the ROM with splat. make writes build/mariogolf64.z64 and checks it against the baserom.",
+    "description_zh": "这个 Nintendo 64 北美版《马里奥高尔夫》NMFE 修订 0 的匹配反编译逐字节重建原版 ROM。baserom.z64 的 SHA-1 是 e2c4e7a905b29529b49a1619a401fe699224829b。make setup 下载 KMC GCC 2.7.2 和 binutils 2.6 工具链。make extract 用 splat 拆分 ROM。make 写出 build/mariogolf64.z64 并对照 baserom 检查。",
+    "requirements": [
+      "mips-linux-gnu binutils, Python 3 with venv, and wget. Run make setup, make extract, and make.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/monde-lointain/mariogolf64/blob/5014056b8ac5c26178e299bbdaede70c0d318910/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
