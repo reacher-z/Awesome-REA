@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nfsmw-ios-case",
+    "name": "NFSMW Recompiled for iOS",
+    "url": "https://github.com/bep1s69/nfsmw-ios",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "NFSMW Recompiled for iOS runs Need for Speed: Most Wanted from 2005, the Xbox 360 version, natively on iPhone and iPad. ReXGlue recompiles the PowerPC code ahead of time for Apple arm64, and a Metal renderer draws the shaders.",
+    "description_zh": "NFSMW Recompiled for iOS 在 iPhone 和 iPad 上原生运行 2005 年 Xbox 360 版《极品飞车：最高通缉》。ReXGlue 把 PowerPC 代码提前重编译到 Apple arm64，Metal 渲染器绘制着色器。",
+    "requirements": [
+      "iOS or iPadOS 18 or later. The player supplies an ISO of the USA Xbox 360 game.",
+      "Version 0.6.0 adds LAN racing. Releases are on the repository Releases page.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/bep1s69/nfsmw-ios/blob/e403ff907c4c9f99c413cd72214acdad0500ce50/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
