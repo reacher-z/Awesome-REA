@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "wii-party-recomp",
+    "name": "Wii Party recompilation",
+    "url": "https://github.com/arelkair/wiiparty-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Wii Party to Windows and experimental Linux. The DOL and all 115 REL modules translate. 4,152 tests check every instruction kind the game uses. Graphics go from GX to Direct3D 11. The frame rate is locked at 60 fps PAL60, at up to 6 times the console resolution, using about 600 MB of RAM. Every one of the 79 Free Play minigames and a full 17-round Board Game Island session have been played. The offline Windows archive is wiipartyrecomp-offline-windows.zip, about 185 MB.",
+    "description_zh": "该项目把《Wii 派对》静态重编译到 Windows 和实验性的 Linux。DOL 和全部 115 个 REL 模块都会翻译。4,152 项测试检查游戏使用的每一种指令。图形从 GX 转到 Direct3D 11。帧率锁定在 60 帧的 PAL60，最高到主机分辨率的 6 倍，大约使用 600 MB 内存。79 个自由游玩小游戏全部玩过，也玩过一整局 17 回合的 Board Game Island。离线 Windows 包是 wiipartyrecomp-offline-windows.zip，大约 185 MB。",
+    "requirements": [
+      "Windows 10 or 11, or the experimental Linux AppImage. A source build needs Python 3.11 or newer, CMake 3.20 or newer, Ninja, MinGW-w64 GCC 13 or newer, and nodtool.",
+      "License: GPL-3.0-or-later. Third-party code is listed in THIRD_PARTY_NOTICES.md."
+    ],
+    "evidence_url": "https://github.com/arelkair/wiiparty-recomp/blob/5c5d544f49412a5e54a658839e98ddd7b5326013/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
