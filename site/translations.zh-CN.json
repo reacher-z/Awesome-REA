@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "rpfm": {
+    "name": "Rusted PackFile Manager",
+    "requirements": [
+      "需要一份要编辑其 pack 的全面战争安装。按手册里的编译页面构建。",
+      "许可证：MIT。"
+    ]
   }
 }
