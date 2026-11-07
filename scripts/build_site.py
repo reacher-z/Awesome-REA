@@ -52,7 +52,15 @@ TARGETS = {"website", "game", "app", "binary", "firmware", "protocol"}
 LISTED_BADGE = "featured-by-awesome-rea-inline.svg"
 # Record fields the homepage needs for its first render; catalog.json keeps every field.
 CATALOG_INDEX_FIELDS = ("id", "name", "name_zh", "url", "evidence_url", "description_en", "description_zh", "kind",
-                        "category", "group", "relationship", "targets", "verified_at")
+                        "category", "group", "relationship", "targets", "verified_at", "evidence_class",
+                        "evidence_status", "scope", "runtime_status", "evidence_review", "preview", "preview_kind")
+EVIDENCE_CLASSES = (0, 1, 2, 3)
+EVIDENCE_CLASSES_PATH = ROOT / "data" / "evidence-classes.json"
+SCAN_CLASSES_PATH = ROOT / "data" / "scan-evidence-classes.json"
+PREVIEWS_PATH = ROOT / "data" / "evidence-previews.json"
+PREVIEW_CACHE = ROOT / ".cache" / "previews"
+
+
 def catalog_index(catalog: dict) -> dict:
     """Project the complete catalog onto the lean index the homepage renders first."""
     # source_category_labels name the repository view's Category filter options, which app.js builds from this file.
@@ -105,14 +113,93 @@ def explorer_page(html: str) -> str:
     return html.replace('</title>', '</title><meta name="robots" content="noindex">', 1)
 
 
+def cached_preview(url: str) -> Path | None:
+    """The locally downloaded preview for a URL, if scripts/fetch_previews.py ran."""
+    digest = hashlib.sha256(url.encode("utf-8")).hexdigest()
+    matches = sorted(PREVIEW_CACHE.glob(digest + ".*"))
+    return matches[0] if matches else None
+
+
+def scan_class_mapping(source_resources: list[dict]) -> tuple[dict[str, object], dict]:
+    """Read the separate scan-class mapping and check it covers this scan snapshot."""
+    if not SCAN_CLASSES_PATH.is_file():
+        raise ValueError("Missing data/scan-evidence-classes.json. Run scripts/classify_scan_evidence.py.")
+    document = json.loads(SCAN_CLASSES_PATH.read_text(encoding="utf-8"))
+    entries = document.get("entries")
+    if not isinstance(entries, list):
+        raise ValueError("Scan evidence classes must contain an entries list")
+    classes = {}
+    for entry in entries:
+        identifier = entry.get("id")
+        if not isinstance(identifier, str) or identifier in classes:
+            raise ValueError("Scan evidence classes need unique string IDs")
+        value = entry.get("evidence_class")
+        if value is not None and value not in EVIDENCE_CLASSES:
+            raise ValueError(f"Invalid scan evidence class for {identifier}: {value}")
+        classes[identifier] = value
+    expected = {record.get("id") for record in source_resources if record.get("scan_status") == "readme-scanned"}
+    missing = sorted(expected - set(classes))
+    if missing:
+        raise ValueError(f"Scan evidence classes do not cover the scan snapshot (missing {missing[:5]})")
+    return classes, document
+
+
+def write_scan_classes(output: Path, document: dict) -> Path:
+    """Write the compact client mapping; the full reasons stay in data/."""
+    payload = {
+        "schema_version": 1,
+        "meta": {key: document["meta"].get(key) for key in
+                 ("spec_version", "entry_count", "class_counts", "unknown_count", "class_zero_count", "method")},
+        "classes": {entry["id"]: entry["evidence_class"] for entry in document["entries"]},
+    }
+    path = output / "scan-classes.json"
+    path.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+    return path
+
+
 def build_site(output: Path) -> tuple[int, int, int]:
     """Render a complete site into a fresh, caller-owned staging directory."""
     translations = json.loads((SOURCE / "translations.zh-CN.json").read_text(encoding="utf-8"))
     papers = json.loads((ROOT / "data" / "papers.json").read_text(encoding="utf-8"))
+    if not EVIDENCE_CLASSES_PATH.is_file():
+        raise ValueError("Missing data/evidence-classes.json. Run scripts/classify_evidence_classes.py.")
+    evidence_document = json.loads(EVIDENCE_CLASSES_PATH.read_text(encoding="utf-8"))
+    evidence_entries = {entry["id"]: entry for entry in evidence_document["entries"]}
+    previews = {}
+    if PREVIEWS_PATH.is_file():
+        previews = {entry["id"]: entry for entry
+                    in json.loads(PREVIEWS_PATH.read_text(encoding="utf-8"))["entries"]}
+    preview_files = []
     resources = []
     for filename in ("rea-resources.json", "tool-resources.json"):
         for original in json.loads((ROOT / "data" / filename).read_text(encoding="utf-8")):
             record = dict(original)
+            if record["id"] not in evidence_entries:
+                raise ValueError(f"Evidence class missing: {record['id']}. Rerun scripts/classify_evidence_classes.py.")
+            evidence_entry = evidence_entries[record["id"]]
+            evidence_class = evidence_entry.get("evidence_class")
+            evidence_status = evidence_entry.get("evidence_status", "observed")
+            if evidence_class is None:
+                if evidence_status != "unknown":
+                    raise ValueError(f"Evidence class is null but the status is not unknown: {record['id']}")
+            elif evidence_class not in EVIDENCE_CLASSES:
+                raise ValueError(f"Invalid evidence class for {record['id']}: {evidence_class}")
+            record["evidence_class"] = evidence_class
+            record["evidence_status"] = evidence_status
+            record["scope"] = evidence_entry.get("scope")
+            record["runtime_status"] = evidence_entry.get("runtime_status", "not-run")
+            if evidence_entry.get("review"):
+                record["evidence_review"] = evidence_entry["review"]
+            if record["evidence_class"] in (0, 1):
+                preview = previews.get(record["id"])
+                cached = cached_preview(preview["image_url"]) if preview else None
+                if cached:
+                    relative = f"previews/{record['id']}{cached.suffix}"
+                    record["preview"] = "/" + relative
+                    record["preview_kind"] = preview["kind"]
+                    preview_files.append((cached, relative))
+                elif evidence_entry.get("signals", {}).get("demo"):
+                    record["preview_kind"] = "demo"
             translation = translations.get(record["id"], {})
             record["requirements_zh"] = record.get("requirements_zh") or translation.get("requirements", record["requirements"])
             record["name_zh"] = record.get("name_zh") or translation.get("name", record["name"])
@@ -137,6 +224,10 @@ def build_site(output: Path) -> tuple[int, int, int]:
             shutil.copy2(path, output / path.name)
     (output / "badges").mkdir()
     shutil.copy2(ROOT / "assets" / LISTED_BADGE, output / "badges" / LISTED_BADGE)
+    if preview_files:
+        (output / "previews").mkdir()
+        for cached, relative in preview_files:
+            shutil.copy2(cached, output / relative)
     html = (output / "index.html").read_text(encoding="utf-8")
     for key, value in {"RESOURCE_COUNT": len(resources), "INTEGRATION_COUNT": metadata["independent_integration_count"], "REVIEWED_AT": latest_review}.items():
         html = html.replace("{{" + key + "}}", str(value))
@@ -152,6 +243,8 @@ def build_site(output: Path) -> tuple[int, int, int]:
     source_index_path = ROOT / "data" / "source-index.json"
     source_index_output = output / "source-index.json"
     browse_document = None
+    scan_classes = None
+    scan_document = None
     metadata["source_index"] = {"available": False, "resource_count": 0}
     if source_index_path.is_file():
         try:
@@ -159,6 +252,7 @@ def build_site(output: Path) -> tuple[int, int, int]:
         except json.JSONDecodeError:
             print("Optional source index is not a complete JSON snapshot yet; using the curated collection only.")
         else:
+            scan_classes, scan_document = scan_class_mapping(index_data.get("resources", []))
             successful = [record for record in index_data.get("resources", []) if record.get("scan_status") == "readme-scanned"]
             if successful:
                 repository_locales = read_localizations(ROOT)
@@ -200,8 +294,10 @@ def build_site(output: Path) -> tuple[int, int, int]:
                     write_source_browser(output, published_export)
                 else:
                     write_source_browser(output, canonical_export)
+                write_scan_classes(output, scan_document)
     if not metadata["source_index"]["available"]:
         source_index_output.unlink(missing_ok=True)
+        (output / "scan-classes.json").unlink(missing_ok=True)
         html = html.replace('id="download-source-index"', 'id="download-source-index" hidden')
         write_source_browser(output, None)
     topic_labels_path = SOURCE / "topics.i18n.json"
@@ -236,7 +332,7 @@ def build_site(output: Path) -> tuple[int, int, int]:
     social_revision = hashlib.sha256((output / "social-card.png").read_bytes()).hexdigest()[:16]
     html = html.replace(f'{SITE_URL}/social-card.png"', f'{SITE_URL}/social-card.png?v={social_revision}"')
     data_digest = hashlib.sha256()
-    for filename in ("catalog.json", "source-index.json", "source-published.json", "source-browser.json", "papers.json"):
+    for filename in ("catalog.json", "source-index.json", "source-published.json", "source-browser.json", "scan-classes.json", "papers.json"):
         path = output / filename
         if path.is_file():
             data_digest.update(filename.encode("utf-8") + b"\0" + path.read_bytes())
@@ -265,6 +361,7 @@ def build_site(output: Path) -> tuple[int, int, int]:
         favicon_href=asset_hrefs["favicon.svg"],
         social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
         data_revision=data_revision, icon_stylesheet_href=icon_stylesheet,
+        scan_classes=scan_classes or {},
     )
     # Withdrawn evidence archives come from their registry, whatever the state of the batches citing them:
     # /about/ lists each one, and its old address redirects there.

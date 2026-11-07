@@ -44,6 +44,13 @@ CONNECTIONS = {
     'learning': (('Learning', '学习资源'), ('learning',)),
 }
 CONNECTION_OF = {relationship: key for key, (_, relationships) in CONNECTIONS.items() for relationship in relationships}
+# C0–C3 on the homepage cards; the legend on /explore/ carries the same wording.
+EVIDENCE_DETAIL = {
+    0: ('full software reconstruction', '完整软件复现'),
+    1: ('partial scope or analysis entry', '部分范围或非复现条目'),
+    2: ('code & docs, no demo or download', '有代码和文档，缺演示或下载'),
+    3: ('notes only', '仅笔记或进度记录'),
+}
 COPY = {
     'en': {
         'h1': 'Reverse engineer <em>anything</em>',
@@ -55,6 +62,12 @@ COPY = {
         'showing': 'Showing <strong>{n}</strong> of <strong>{total}</strong>', 'show_all': 'Show all {n} resources',
         'drawer_note': 'Each card links to its entry: description, requirements and the primary source it was reviewed against.',
         'reviewed': 'Reviewed', 'targets': 'Targets', 'licence': 'Original content: MIT. Linked projects keep their own licenses.',
+        'class_label': 'Evidence class', 'class_unknown': 'Unknown · source unavailable',
+        'all_classes': 'All classes', 'class_unknown_short': 'Unknown', 'class_info_label': 'What the evidence classes mean',
+        'unknown_title': 'Source unavailable or unreadable at review time',
+        'preview_image_alt': "Demo screenshot from the project's public documentation",
+        'preview_video_alt': "Demo video thumbnail from the project's public documentation",
+        'demo_note': 'Demo available · no screenshot',
     },
     'zh': {
         'h1': '逆向<em>一切</em>',
@@ -66,6 +79,12 @@ COPY = {
         'showing': '显示 <strong>{n}</strong> / <strong>{total}</strong>', 'show_all': '查看全部 {n} 项资源',
         'drawer_note': '每张卡片都链接到完整条目：说明、使用条件，以及复核所依据的原始来源。',
         'reviewed': '已复核', 'targets': '目标', 'licence': '原创内容采用 MIT 许可。链接项目保留各自的许可。',
+        'class_label': '证据档位', 'class_unknown': '未知 · 来源不可读',
+        'all_classes': '全部档位', 'class_unknown_short': '未知', 'class_info_label': '证据档位说明',
+        'unknown_title': '复核时来源不可达或不可读',
+        'preview_image_alt': '项目公开文档中的演示截图',
+        'preview_video_alt': '项目公开文档中演示视频的封面',
+        'demo_note': '有 demo · 暂无截图',
     },
 }
 
@@ -121,6 +140,33 @@ def _target_label(target: str, language: str) -> str:
     return TARGETS[target][language == 'zh']
 
 
+def evidence_chip(record: dict, language: str) -> str:
+    """The C0–C3 badge carried by the catalogue cards; site.js renders the same one from the search index."""
+    text = COPY[language]
+    if record.get('evidence_status') == 'unknown':
+        return f'<span class="card-class card-class-unknown" title="{_e(text["unknown_title"])}">?</span>'
+    value = record.get('evidence_class')
+    if value is None:
+        return ''
+    detail = EVIDENCE_DETAIL[int(value)][language == 'zh']
+    return f'<span class="card-class card-class-{int(value)}" title="{_e(text["class_label"])} {int(value)} · {_e(detail)}">C{int(value)}</span>'
+
+
+def preview_figure(record: dict, language: str) -> str:
+    """A documented demo preview for Class 0/1 entries; a demo without a screenshot gets a placeholder."""
+    text = COPY[language]
+    if record.get('preview'):
+        kind = record.get('preview_kind')
+        alt = text['preview_video_alt'] if kind == 'video' else text['preview_image_alt']
+        play = '<span class="card-preview-play" aria-hidden="true">▶</span>' if kind == 'video' else ''
+        return (f'<figure class="card-preview">{play}<img src="{_e(record["preview"])}" alt="{_e(alt)}" '
+                f'loading="lazy" decoding="async"></figure>')
+    if record.get('preview_kind') == 'demo':
+        return (f'<figure class="card-preview card-preview-demo"><span class="card-preview-play" aria-hidden="true">▶</span>'
+                f'<span>{_e(text["demo_note"])}</span></figure>')
+    return ''
+
+
 def index_card(record: dict, language: str, targets: list[str], *, prefix: str = '') -> str:
     """One catalogue row. site.js renders the same markup in cardHTML() for search results."""
     text = COPY[language]
@@ -136,8 +182,8 @@ def index_card(record: dict, language: str, targets: list[str], *, prefix: str =
         items += f'<li class="more">+{len(targets) - 3}</li>'
     return (f'<li class="card{case}" id="r-{identifier}" data-id="{identifier}"><article class="card-face">'
             f'<p class="callno" title="{_e(label)}"><span class="vh">{_e(label)}: </span><span aria-hidden="true">{DOMAIN_CODES[targets[0]]}·{KIND_CODES[kind]}</span></p>'
-            f'<h3 class="card-name"><a class="stretch" href="{prefix}/resources/{identifier}/">{_e(_name(record, language))}</a></h3>'
-            f'<p class="card-desc">{_e(_lead(record, language))}</p>'
+            f'<h3 class="card-name"><a class="stretch" href="{prefix}/resources/{identifier}/">{_e(_name(record, language))}</a>{evidence_chip(record, language)}</h3>'
+            f'<p class="card-desc">{_e(_lead(record, language))}</p>{preview_figure(record, language)}'
             f'<ul class="card-targets" aria-label="{text["targets"]}">{items}</ul>'
             f'<p class="stamp">{icon("check")}<span>{text["reviewed"]} <time datetime="{reviewed}">{reviewed}</time></span>'
             f'<a class="ev" href="{_e(record["evidence_url"])}" rel="noopener"><span class="ev-repo">{_e(evidence["repo"])}</span>{revision}</a></p>'
@@ -180,12 +226,29 @@ def _drawer(resources, order, language, prefix) -> str:
     zh = language == 'zh'
     chips = ''.join(f'<button class="chip" type="button" data-kind="{kind}" aria-pressed="false">{icon("check")}{KIND_PLURAL[kind][zh]} <span class="count">{_count(kinds[kind])}</span></button>' for kind in present)
     options = ''.join(f'<option value="{kind}">{KIND_PLURAL[kind][zh]} ({_count(kinds[kind])})</option>' for kind in present)
+    classes = Counter()
+    for record in resources:
+        if record.get('evidence_status') == 'unknown':
+            classes['unknown'] += 1
+        elif record.get('evidence_class') is not None:
+            classes[str(int(record['evidence_class']))] += 1
+    class_names = {str(value): f'C{value}' for value in range(4)} | {'unknown': text['class_unknown_short']}
+    class_options = ''.join(f'<option value="{key}">{class_names[key]} ({_count(classes[key])})</option>'
+                            for key in ('0', '1', '2', '3', 'unknown') if classes[key])
+    class_rows = ''.join(f'<li><span class="card-class card-class-{value}">C{value}</span>{_e(EVIDENCE_DETAIL[value][zh])}</li>'
+                         for value in sorted(EVIDENCE_DETAIL))
+    class_info = (f'<span class="info-wrap"><button type="button" class="info-btn" aria-expanded="false" aria-controls="class-info" '
+                  f'aria-label="{text["class_info_label"]}">i</button><span class="info-pop" id="class-info" role="tooltip">'
+                  f'<strong>{text["class_label"]}</strong><ul>{class_rows}'
+                  f'<li><span class="card-class card-class-unknown">?</span>{_e(text["unknown_title"])}</li></ul></span></span>')
     cards = ''.join(index_card(record, language, _ordered_targets(record, order), prefix=prefix) for record in featured)
     total = len(resources)
     return (f'<section class="wrap drawer-wrap" id="catalog" aria-labelledby="catalogue-title"><div class="drawer" id="catalogue" data-drawer>'
             f'<h2 class="vh" id="catalogue-title">{text["catalogue"]}</h2><div class="drawer-bar">'
             f'<div class="chips" role="group" aria-label="{text["kind"]}" data-kind-chips>{chips}</div>'
             f'<label class="select kind-select"><span class="vh">{text["kind"]}</span><select data-kind-select aria-label="{text["kind"]}"><option value="">{text["all_kinds"]}</option>{options}</select>{icon("chevron")}</label>'
+            f'<span class="class-filter"><label class="select"><span class="select-label">{text["class_label"]}</span>'
+            f'<select data-class-select aria-label="{text["class_label"]}"><option value="">{text["all_classes"]}</option>{class_options}</select>{icon("chevron")}</label>{class_info}</span>'
             f'<label class="select"><span class="select-label">{text["sort"]}</span><select data-sort aria-label="{text["sort"]}">'
             f'<option value="featured">{text["featured"]}</option><option value="reviewed">{text["recent"]}</option><option value="name">{text["az"]}</option></select>{icon("chevron")}</label>'
             f'<p class="drawer-meta" data-drawer-meta aria-live="polite">{text["showing"].format(n=len(featured), total=_count(total))}</p></div>'
@@ -288,7 +351,10 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
                      '' if short != record['evidence_url'] else evidence['repo'], short,
                      str(record['verified_at'])[:10], record.get('added_at') or '', ranks.get(record['id'], -1),
                      alias if alias.lower() != record['name'].lower() else '',
-                     connections.index(CONNECTION_OF[record['relationship']])])
+                     connections.index(CONNECTION_OF[record['relationship']]),
+                     -1 if record.get('evidence_class') is None else int(record['evidence_class']),
+                     'unknown' if record.get('evidence_status') == 'unknown' else '',
+                     record.get('preview') or '', record.get('preview_kind') or ''])
     paper_rows = []
     for paper in papers_newest_first(papers):
         paper_rows.append([paper['id'], paper['title_zh'] if zh else paper['title'], paper['year'], paper['venue'],

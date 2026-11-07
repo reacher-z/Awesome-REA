@@ -1,0 +1,162 @@
+{
+ "schema_version": 1,
+ "meta": {
+  "spec_version": "evidence-class-zero-v1",
+  "reviewed_at": "2026-11-02",
+  "method": "Manual review of reproduction scope, target version and primary evidence. Only scope=full entries become Class 0; the automatic rubric caps at Class 1. Every Class 0 entry must appear here as scope=full. Binary-targeted entries never become Class 0."
+ },
+ "entries": [
+  {
+   "id": "cadcraft-case",
+   "scope": "full",
+   "version": "README commit 2099288f5449b1602d2e2eedca92fe99fb19b973",
+   "primary_evidence": "https://github.com/storytold/cadcraft/blob/2099288f5449b1602d2e2eedca92fe99fb19b973/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
+  },
+  {
+   "id": "deckcraft-case",
+   "scope": "full",
+   "version": "README commit 23ac4f7efdbd1e538bd9a7869584d4adeb9039b0",
+   "primary_evidence": "https://github.com/storytold/deckcraft/blob/23ac4f7efdbd1e538bd9a7869584d4adeb9039b0/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
+  },
+  {
+   "id": "designcraft-case",
+   "scope": "full",
+   "version": "README commit a4017a3cda704850fcb6ed9f8513fdb2e7fb04c1",
+   "primary_evidence": "https://github.com/storytold/designcraft/blob/a4017a3cda704850fcb6ed9f8513fdb2e7fb04c1/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
+  },
+  {
+   "id": "effectcraft-case",
+   "scope": "full",
+   "version": "README commit 58ca9c1c1b163fdada41291847f3d0f7559339b2",
+   "primary_evidence": "https://github.com/storytold/effectcraft/blob/58ca9c1c1b163fdada41291847f3d0f7559339b2/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
+  },
+  {
+   "id": "figcraft-case",
+   "scope": "full",
+   "version": "README commit 6f780211dda0706aa474bcc9be4cec99149acef3",
+   "primary_evidence": "https://github.com/storytold/figcraft/blob/6f780211dda0706aa474bcc9be4cec99149acef3/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
+  },
+  {
+   "id": "filmcraft-case",
+   "scope": "full",
+   "version": "README commit c9be14245a6c9da585ff906a6e0ca9c8200652ea",
+   "primary_evidence": "https://github.com/storytold/filmcraft/blob/c9be14245a6c9da585ff906a6e0ca9c8200652ea/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
+  },
+  {
+   "id": "gridcraft-case",
+   "scope": "full",
+   "version": "README commit 632e4a1bc51ee86b3f0a55e95ee78def391aab30",
+   "primary_evidence": "https://github.com/storytold/gridcraft/blob/632e4a1bc51ee86b3f0a55e95ee78def391aab30/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
+  },
+  {
+   "id": "lightcraft-case",
+   "scope": "full",
+   "version": "README commit 4d42507bbcc180df831435c8ef2c29740b5216aa",
+   "primary_evidence": "https://github.com/storytold/lightcraft/blob/4d42507bbcc180df831435c8ef2c29740b5216aa/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
+  },
+  {
+   "id": "pdfcraft-case",
+   "scope": "full",
+   "version": "README commit 9bbcde4699c9cb472d9b579fb04e19c6b493d435",
+   "primary_evidence": "https://github.com/storytold/pdfcraft/blob/9bbcde4699c9cb472d9b579fb04e19c6b493d435/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
+  },
+  {
+   "id": "photocraft-case",
+   "scope": "full",
+   "version": "README commit 37a01ca8746c121170644a07968d11263ef64407",
+   "primary_evidence": "https://github.com/storytold/photocraft/blob/37a01ca8746c121170644a07968d11263ef64407/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
+  },
+  {
+   "id": "soundcraft-case",
+   "scope": "full",
+   "version": "README commit 5fabf28c315ee72ad5c0234beeb35ec832c11476",
+   "primary_evidence": "https://github.com/storytold/soundcraft/blob/5fabf28c315ee72ad5c0234beeb35ec832c11476/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
+  },
+  {
+   "id": "vectorcraft-case",
+   "scope": "full",
+   "version": "README commit 6bde3c59a544873a32537b557e97a582dbb6e912",
+   "primary_evidence": "https://github.com/storytold/vectorcraft/blob/6bde3c59a544873a32537b557e97a582dbb6e912/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
+  },
+  {
+   "id": "wordcraft-case",
+   "scope": "full",
+   "version": "README commit 08afab50b6a1ed19f9af55bb9f74d18f5e17bfa0",
+   "primary_evidence": "https://github.com/storytold/wordcraft/blob/08afab50b6a1ed19f9af55bb9f74d18f5e17bfa0/README.md",
+   "note": "Complete clean-room ArtCraft application: the default-branch README documents the feature set, installation/usage and a non-branding demo image, and releases carry download assets. Re-evaluated against the 2026-11-04 README. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-04"
+  },
+  {
+   "id": "lego-island-portable-case",
+   "scope": "full",
+   "version": "portable build of LEGO Island 1.1 (isle-portable, README commit d0bf04f)",
+   "primary_evidence": "https://github.com/isledecomp/isle-portable/blob/d0bf04fe605d7ec2a291e65df08bf26712452379/README.md",
+   "note": "Full multi-platform port of the decompiled LEGO Island 1.1 with release assets and a video demo; runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "openrct2-engine-case",
+   "scope": "full",
+   "version": "v0.5.6 (2026-10-10)",
+   "primary_evidence": "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/readme.md",
+   "note": "Full re-implementation of the RollerCoaster Tycoon 2 engine; release assets and demo screenshots; runtime not verified here.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "woxi-case",
+   "scope": "partial",
+   "version": "README commit 09b106c5509b373b95b72fc6709a5a60c1b595f6",
+   "primary_evidence": "https://github.com/ad-si/Woxi/blob/09b106c5509b373b95b72fc6709a5a60c1b595f6/readme.md",
+   "note": "Binary-targeted Wolfram Language subset interpreter; v4 reserves Class 0 for non-binary full reconstructions, and the README does not claim full compatibility. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-03"
+  },
+  {
+   "id": "infamous-second-son-pc-port-case",
+   "scope": "partial",
+   "version": "as of 2026-10-19",
+   "primary_evidence": "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/README.md",
+   "note": "Documented progress covers only the early chapters; keep at Class 1.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "san-andreas-unity-engine-case",
+   "scope": "partial",
+   "version": "as of 2026-10-19",
+   "primary_evidence": "https://github.com/in0finite/SanAndreasUnity/blob/f685c437f48721afc0787f27d22c85d96e8684c7/README.md",
+   "note": "The README states the project will not fully remake the game; keep at Class 1.",
+   "reviewed_at": "2026-11-02"
+  },
+  {
+   "id": "pictureman-case",
+   "scope": "partial",
+   "version": "README commit 95c0ce0b8a9ec3156dfae3c01cd3bc4d1fe53739",
+   "primary_evidence": "https://github.com/yovico-ai/pictureman/blob/95c0ce0b8a9ec3156dfae3c01cd3bc4d1fe53739/README.md",
+   "note": "No prebuilt binaries: the README documents a source build and a hosted WebAssembly demo. Without a downloadable artifact it stays below Class 0 and is marked Class 2. Runtime not verified by this catalog.",
+   "reviewed_at": "2026-11-03"
+  }
+ ]
+}
