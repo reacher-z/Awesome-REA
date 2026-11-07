@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "megaman-x2-recomp-case",
+    "name": "MegaManX2SNESRecomp",
+    "url": "https://github.com/mstan/MegaManX2Recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "MegaManX2SNESRecomp is a static recompilation of Mega Man X2 (USA) built on snesrecomp. Version 0.1.5 is a playable Windows release. The ROM file is mmx2.sfc, headerless, CRC32 0x947B0355.",
+    "description_zh": "MegaManX2SNESRecomp 是美版《洛克人X2》的静态重编译，基于 snesrecomp。0.1.5 是可玩的 Windows 发布。ROM 文件是 mmx2.sfc，无头，CRC32 为 0x947B0355。",
+    "requirements": [
+      "The player supplies their own ROM. SHA-256 f3246755f608a1e1dc9c848b61da3b824c7853b29b3be40df6fc7f2793a887ed. A 512-byte SMC header is stripped automatically.",
+      "License: PolyForm Noncommercial 1.0.0."
+    ],
+    "evidence_url": "https://github.com/mstan/MegaManX2Recomp/blob/622aa882881a07c8238ce17a14381c7d75a979d7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
