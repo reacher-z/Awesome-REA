@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "mbased": {
+    "name": "MBASED",
+    "requirements": [
+      "需要 Binary Ninja、Z3 和 SymPy。把仓库克隆到 Binary Ninja 的插件目录，然后使用插件菜单里的 MBASED: Simplify all MBA expressions。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

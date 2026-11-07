@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "mbased",
+    "name": "MBASED",
+    "url": "https://github.com/bliutech/mbased",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "MBASED is a Binary Ninja plugin that simplifies mixed Boolean-arithmetic expressions. It parses an MLIL instruction into a tree and simplifies it with SymPy and Z3, then prints the result in the Binary Ninja log.",
+    "description_zh": "MBASED 是一个 Binary Ninja 插件，用来化简混合布尔算术表达式。它把一条 MLIL 指令解析成树，用 SymPy 和 Z3 化简，然后把结果打印到 Binary Ninja 的日志。",
+    "requirements": [
+      "Binary Ninja, Z3, and SymPy. Clone the repository into the Binary Ninja plugins directory, then use Plugins, MBASED: Simplify all MBA expressions.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/bliutech/mbased/blob/fb8315f2b23e73b127ec7ccc78c58bf34b6e923c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
