@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "zoom-all-views",
+    "name": "ZoomAllViews",
+    "url": "https://github.com/Dump-GUY/ZoomAllViews",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "ZoomAllViews is a single-file IDA Pro plugin that resizes fonts with Ctrl and the scroll wheel in disassembly, pseudocode, hex, imports, exports, functions, strings, and chooser windows. It supports IDA 8.x through 9.3 and later, using PyQt5 before 9.2 and PySide6 from 9.2.",
+    "description_zh": "ZoomAllViews 是单文件的 IDA Pro 插件，用 Ctrl 加滚轮调整反汇编、伪代码、十六进制、导入、导出、函数、字符串和选择器窗口的字体。它支持 IDA 8.x 到 9.3 及以后，9.2 之前用 PyQt5，从 9.2 起用 PySide6。",
+    "requirements": [
+      "IDA Pro 8.x or newer and Python 3.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/Dump-GUY/ZoomAllViews/blob/234e194768fd54263b538794708672825537c7ac/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
