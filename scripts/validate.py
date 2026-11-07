@@ -698,7 +698,10 @@ def validate_scan_discovery(meta, records, errors, failures=()):
             else:
                 allowed = set()
                 for method in reference_methods:
-                    allowed |= evidence.get('curated' if method == 'curated-reference' else 'tracker', set())
+                    observed = evidence.get('curated' if method == 'curated-reference' else 'tracker', set())
+                    if not observed:
+                        errors.append(f'{where}: {method} discovery needs matching seed observations')
+                    allowed |= observed
                 if not set(references) <= allowed:
                     errors.append(f'{where}: seed discovery needs matching seed observations')
         elif 'seed_reference_ids' in record:

@@ -107,6 +107,37 @@ class SeedDiscoveryRegressionTests(unittest.TestCase):
             'curated-repository-reference', 'paper-artifact-reference', 'tracker-audit-reference'])
         self.assertEqual(document['meta']['attempted_readme_scans'], 1)
 
+    def test_each_claimed_seed_method_needs_its_own_observation(self):
+        for options, unsupported in (({'tracker': True}, 'curated-reference'),
+                                     ({'curated': True}, 'tracker-audit-reference')):
+            with self.subTest(unsupported=unsupported):
+                document = self.scan(**options)
+                record = document['resources'][0]
+                record['discovery_methods'].append(unsupported)
+                errors = []
+                validate_scan_discovery(document['meta'], [record], errors)
+                self.assertTrue(errors, 'An unobserved seed method must be rejected')
+
+    def test_resume_rejects_seed_methods_without_observation_support(self):
+        for options, unsupported in (({'tracker': True}, 'curated-reference'),
+                                     ({'curated': True}, 'tracker-audit-reference')):
+            with self.subTest(unsupported=unsupported):
+                document = self.scan(**options)
+                path = self.root / 'scan.json'
+                accepted, _ = scanner.load_resume(path)
+                self.assertEqual(accepted, document)
+                document['resources'][0]['discovery_methods'].append(unsupported)
+                path.write_text(json.dumps(document), encoding='utf-8')
+                with self.assertRaisesRegex(ValueError, 'invalid evidence'):
+                    scanner.load_resume(path)
+
+    def test_mixed_seed_observations_allow_a_retained_reference_subset(self):
+        document = self.scan(curated=True, tracker=True)
+        document['resources'][0]['seed_reference_ids'] = ['tracker-example-tool']
+        errors = []
+        validate_scan_discovery(document['meta'], document['resources'], errors)
+        self.assertEqual(errors, [])
+
     def test_paper_and_tracker_seed_methods_are_not_relabelled_as_curated(self):
         for options, method in (({'papers': True}, 'paper-artifact-reference'),
                                 ({'tracker': True}, 'tracker-audit-reference')):
