@@ -373,8 +373,10 @@ async function homepage(page, language, viewport, data, requested) {
   assert.equal(await hidden(page, '#source-error'), true, `${label}: the repository index loads`);
   assert.equal(await count(page, '#source-results .source-card'), Math.min(24, repositories), `${label}: initial repository cards`);
   if (viewport.width >= 1101) {
+    await page.select('#layout-select', 'compact');
     const gaps = await toggleDrift(page, '#source-results .source-card', '.source-card-footer', 'details.source-record-details:not([open]) > summary');
     assert(gaps.length && gaps.every(gap => gap >= -1 && gap <= 8), `${label}: repository details toggles sit under the README links (${gaps.join(', ')} px)`);
+    await page.select('#layout-select', 'cards');
   }
   assert(numbers(await text(page, '#source-status')).includes(repositories), `${label}: status names all ${repositories} repositories`);
   assert.equal(await text(page, '#source-more-count'), '+' + Math.min(24, Math.max(0, repositories - 24)));

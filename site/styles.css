@@ -628,7 +628,7 @@ html[lang="zh-CN"][data-layout="compact"] .collection-home .card-description,htm
    height goes to the third, flexible row, so the closed toggle stays directly under the links (as on /papers/);
    a "Matched in" line takes a fourth, auto row. */
 @media(min-width:1101px){
-  html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{grid-template-columns:minmax(0,1fr) minmax(18rem,34%);grid-template-rows:auto auto auto 1fr;grid-template-areas:"heading meta" "preview preview" "description meta" "description details";gap:0 40px}
+  html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{grid-template-columns:minmax(0,1fr) minmax(18rem,34%);grid-template-rows:auto auto auto 1fr;grid-template-areas:"heading heading" "preview preview" "description meta" "description details";gap:0 40px}
   html[data-layout="compact"] .collection-home .card-preview{grid-area:preview;margin:8px 0 4px}
   html[data-layout="compact"] .collection-home .card-preview img{max-height:200px}
   html[data-layout="compact"] .collection-home .card-description,html[data-layout="compact"] .collection-home .source-card-description{margin-top:6px}
