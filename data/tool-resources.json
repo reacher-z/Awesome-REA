@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "road-trip-recomp",
+    "name": "Road Trip recompilation",
+    "url": "https://github.com/silentsudin/RoadTripAdventure-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Road Trip, Choro Q HG 2 for the PlayStation 2, USA SLUS-20398, to Windows, macOS, and Android with PS2Recomp. The first launch reads the player's disc image and compiles the game on the device. Render scale goes up to 4x. Extra frames at 120 and 240 Hz are redrawn from the game's geometry. The Windows archive is RoadTripRecomp-<version>-Windows-x64.zip. The disc check compares the image with the Redump dump.",
+    "description_zh": "该项目用 PS2Recomp 把 PlayStation 2 美版《Road Trip》（Choro Q HG 2）SLUS-20398 静态重编译到 Windows、macOS 和 Android。第一次启动读取玩家的光盘镜像，并在设备上编译游戏。渲染倍率最高到 4 倍。120 和 240 Hz 的额外帧用游戏自己的几何重新绘制。Windows 包是 RoadTripRecomp-<version>-Windows-x64.zip。光盘检查把镜像与 Redump 转储比较。",
+    "requirements": [
+      "A USA SLUS-20398 image as CUE/BIN, ISO, or CHD.",
+      "License: GNU GPL version 3.0. Third-party notices ship with the apps and include LGPL, MIT, BSD, zlib, Apache-2.0, and SIL OFL."
+    ],
+    "evidence_url": "https://github.com/silentsudin/RoadTripAdventure-recomp/blob/0f6d3613e8e32ccda5305227a578b1fb659983a8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

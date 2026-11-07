@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "road-trip-recomp": {
+    "name": "Road Trip 重编译",
+    "requirements": [
+      "需要美版 SLUS-20398 镜像，格式为 CUE/BIN、ISO 或 CHD。",
+      "许可证：GNU GPL 第 3.0 版。第三方声明随应用附带，包括 LGPL、MIT、BSD、zlib、Apache-2.0 和 SIL OFL。"
+    ]
   }
 }
