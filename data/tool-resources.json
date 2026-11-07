@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "reksio-engine",
+    "name": "ReksioEngine",
+    "url": "https://github.com/ReksioEngine/ReksioEngine",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "ReksioEngine reimplements the BlooMoo and Piklib engines used by the Przygody Reksia games. It runs the original assets and scripts in a web browser.",
+    "description_zh": "ReksioEngine 重实现《Przygody Reksia》系列使用的 BlooMoo 和 Piklib 引擎。它在网页浏览器里运行原来的资源和脚本。",
+    "requirements": [
+      "The README dated 2025-03-12 says Reksio i Skarb Piratów scenes appear to work and are still being tested. Reksio i Ufo reaches about 85 percent of scenes and stops before the digging minigame.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ReksioEngine/ReksioEngine/blob/57871e8368b70a8229b835221b5ae57abadafc05/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
