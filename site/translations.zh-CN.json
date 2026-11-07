@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "yoshis-island-disassembly-case": {
+    "name": "Super Mario World 2: Yoshi's Island：反汇编",
+    "requirements": [
+      "用 asar/asar disassembly/assemble.asm yi.sfc 汇编。",
+      "README 写明反汇编已经完成，但并非所有代码都有文档。",
+      "README 没有写许可证。"
+    ]
   }
 }

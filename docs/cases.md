@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -97,6 +97,7 @@
 - [**Super Mario Odyssey: per-function matching decompilation of the Switch executable**](https://github.com/MonsterDruide1/OdysseyDecomp) - Reconstructs C++ source for Super Mario Odyssey’s Switch 1.0 main executable and checks each function against the original AArch64 machine code with the shared nx-decomp-tools checker. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/odyssey-decomp-case/)</sub>
 - [**Super Mario Sunshine (USA): an AI-assisted matching decompilation fork**](https://github.com/chasem-dev/sms-english) - Extends the doldecomp Super Mario Sunshine decompilation to the North American GMSE01 release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sms-english-gmse01-decomp-case/)</sub>
 - [**Super Mario Sunshine: an in-progress matching GameCube decompilation**](https://github.com/doldecomp/sms) - Reconstructs Super Mario Sunshine’s C++ source so that the original Metrowerks compiler reproduces byte-identical object files for four GameCube releases and the Switch 3D All-Stars build. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sms-matching-decomp-case/)</sub>
+- [**Super Mario World 2: Yoshi's Island disassembly**](https://github.com/brunovalads/yoshisisland-disassembly) - This repository is a finished disassembly of Super Mario World 2: Yoshi's Island for the SNES, covering 65816, Super FX, and SPC-700 code plus data. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/yoshis-island-disassembly-case/)</sub>
 - [**Super Smash Bros. Brawl: an early matching Wii decompilation**](https://github.com/doldecomp/brawl) - A work-in-progress matching decompilation of Super Smash Bros. Brawl that targets the USA Rev 2 Wii release (RSBE01\_02), splitting main.dol and 126 REL modules from a user-supplied disc image and checking the rebuilt binaries against stored SHA-1 values. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/smash-bros-brawl-decomp-case/)</sub>
 - [**Super Smash Bros. Melee: a matching GameCube decompilation with a shiftable build**](https://github.com/doldecomp/melee) - A matching decompilation of Super Smash Bros. Melee's US 1.02 release (GALE01) that rebuilds main.dol from C with the original Metrowerks compilers and checks it against the retail SHA-1. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/melee-matching-decomp-case/)</sub>
 - [**Syphon Filter: The Omega Strain — matching PS2 executable decompilation**](https://github.com/zm2283145/syphon-filter-omega-strain-decomp) - Reconstructs much of the NTSC-U PlayStation 2 executable of Syphon Filter: The Omega Strain as C; with the remaining functions kept as split assembly, the build reproduces the retail SCUS\_972.64 byte for byte. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/syphon-filter-omega-strain-decomp-case/)</sub>
