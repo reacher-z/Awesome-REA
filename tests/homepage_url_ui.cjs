@@ -191,9 +191,9 @@ const tests = {
       expect('?q=mitm+proxy&target=binary&layout=compact&view=source-index#catalog');
       // Fragment navigation does not pass through replaceState.
       app.context.location.hash = '#shelf-title'; app.windowListeners.hashchange();
-      expect('?q=mitm+proxy&target=binary&layout=cards&view=source-index#shelf-title');
+      expect('?q=mitm+proxy&target=binary&layout=compact&view=source-index#shelf-title');
       element(app, '#mode-curated').emit('click'); element(app, '#empty-reset').emit('click');
-      input(app, '#layout-select', 'compact', 'change');
+      input(app, '#layout-select', 'cards', 'change');
       expect('#shelf-title');
       assert.equal(app.context.location.lastNavigation, undefined, 'the links navigate only when activated');
     }
