@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rood-reverse-case",
+    "name": "Rood Reverse: decompilation of Vagrant Story",
+    "url": "https://github.com/ser-pounce/rood-reverse",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "description_en": "Rood Reverse is a reverse engineering of Vagrant Story for the PlayStation. The README describes splitting and building with make, then decompiling individual functions, including scratches created with make decompme.",
+    "description_zh": "Rood Reverse 是 PlayStation 游戏《放浪冒险谭》的逆向工程。README 描述用 make 进行拆分和构建，再逐个函数反编译，包括用 make decompme 创建的草稿。",
+    "requirements": [
+      "You must own a copy of the game. The repository does not contain the original disc files.",
+      "The quickstart says to install the system dependencies and copy a disc image as described under Setup, then run make for the initial split and build.",
+      "License: CC0-1.0."
+    ],
+    "class": "game",
+    "evidence_url": "https://github.com/ser-pounce/rood-reverse/blob/b46306b66b183b915fd41d02daa0db241096dec0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
