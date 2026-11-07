@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**837 repositories** · 2026-10-20 UTC
+**836 repositories** · 2026-10-20 UTC
 
 These projects were discovered automatically and are unreviewed. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -92,7 +92,6 @@ These projects were discovered automatically and are unreviewed. Categories deri
 - [NaC-L/Mergen](https://github.com/NaC-L/Mergen) — Deobfuscation via optimization with usage of LLVM IR and parsing assembly. **[912 stars]** · Curated: [Mergen](https://awesomerea.org/resources/mergen/)
 - [HackOvert/GhidraSnippets](https://github.com/HackOvert/GhidraSnippets) — Python snippets for Ghidra's Program and Decompiler APIs **[893 stars]** · Curated: [Ghidra Snippets](https://awesomerea.org/resources/ghidra-snippets/)
 - [vulhunt-re/vulhunt](https://github.com/vulhunt-re/vulhunt) — Vulnerability detection framework by Binarly's REsearch team **[893 stars]** · Curated: [VulHunt Community Edition](https://awesomerea.org/resources/vulhunt/)
-- [mrexodia/dumpulator](https://github.com/mrexodia/dumpulator) — An easy-to-use library for emulating memory dumps. Useful for malware analysis (config extraction, unpacking) and dynamic analysis in general (sandboxing). **[887 stars]**
 - [n0mi1k/apk2url](https://github.com/n0mi1k/apk2url) — An OSINT tool to quickly extract IP and URL endpoints from APKs by disassembling and decompiling **[880 stars]**
 - [symgraph/IDAssist](https://github.com/symgraph/IDAssist) — AI-Powered Reverse Engineering Plugin for IDA Pro **[880 stars]** · Curated: [IDAssist](https://awesomerea.org/resources/idassist/)
 - [GrammaTech/ddisasm](https://github.com/GrammaTech/ddisasm) — A fast and accurate disassembler **[876 stars]** · Curated: [Ddisasm](https://awesomerea.org/resources/ddisasm/)
