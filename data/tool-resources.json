@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "naruto-broken-bond-pc-case",
+    "name": "Naruto: The Broken Bond PC port",
+    "url": "https://github.com/Auremana666/Naruto-The-Broken-Bond-PC-Port",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is an unofficial PC port of Naruto: The Broken Bond for the Xbox 360. Version 2 is built on jorjbarbosa's Broken Bond recompilation, including its audio fixes and native Direct3D 12 renderer, and adds a PC options menu.",
+    "description_zh": "这是 Xbox 360《火影忍者：破碎的羁绊》的非官方 PC 移植。第 2 版基于 jorjbarbosa 的 Broken Bond 重编译，包括其音频修复和原生 Direct3D 12 渲染器，并增加了 PC 选项菜单。",
+    "requirements": [
+      "The player supplies an Xbox 360 disc image.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Auremana666/Naruto-The-Broken-Bond-PC-Port/blob/570142f98b7f852fce944776bee2dd3369d1cd10/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
