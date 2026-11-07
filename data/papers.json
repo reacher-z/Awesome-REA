@@ -12817,5 +12817,55 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-function-similarity-bench",
+    "title": "Is Function Similarity Over-Engineered? Building a Benchmark",
+    "authors": [
+      "Rebecca Saul",
+      "Chang Liu",
+      "Noah Fleischmann",
+      "Richard Zak",
+      "Kristopher Micinski",
+      "Edward Raff",
+      "James Holt"
+    ],
+    "year": 2024,
+    "publication_date": "2024-10-30",
+    "date_precision": "day",
+    "date_basis": "arXiv first-submission date; the reviewed file is v1",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2410.22677",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2024-10-30",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2410.22677v1",
+    "pdf_url": "https://arxiv.org/pdf/2410.22677v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "This paper builds a benchmark for binary function similarity and questions pipelines that spend heavily on disassembly, decompilation, and graph preprocessing before the comparison. The task is recognizing previously seen functions inside a new binary so that manual reverse engineering takes less time.",
+    "description_zh": "本文为二进制函数相似性构建基准，并质疑在比较之前大量投入反汇编、反编译和图预处理的流程。任务是在新的二进制里识别曾经见过的函数，从而缩短手工逆向的时间。",
+    "scope_limitations_en": "The reviewed file is arXiv:2410.22677v1. Benchmark numbers were not recomputed.",
+    "scope_limitations_zh": "审阅的文件是 arXiv:2410.22677v1。基准数字没有重新计算。",
+    "why_fits_en": "Binary function similarity is a reverse-engineering shortcut, and the paper contributes a benchmark for that task.",
+    "why_fits_zh": "二进制函数相似性是逆向工程中的一种捷径，本文为该任务贡献基准。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2410.22677v1",
+      "https://arxiv.org/pdf/2410.22677v1",
+      "https://export.arxiv.org/api/query?id_list=2410.22677"
+    ],
+    "metadata_notes": "The paper is about compiled functions, as stated in the fetched abstract, not source-level clone detection.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "函数相似性是否被过度设计：构建一个基准",
+    "date_basis_zh": "日期取自 arXiv 首次提交日，审阅的文件是 v1",
+    "metadata_notes_zh": "已获取的摘要说明论文讨论的是编译后的函数，而不是源代码级克隆检测。"
   }
 ]
