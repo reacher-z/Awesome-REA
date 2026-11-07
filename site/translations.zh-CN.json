@@ -11023,5 +11023,15 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "xenosaga-ep1-matching-decomp-case": {
+    "name": "Xenosaga Episode I：AI 辅助的 PS2 匹配反编译",
+    "requirements": [
+      "所审阅的提交针对 NTSC-U 版：SLUS_204.69 及 OV01、OV02、OV10、OV11、OV12 覆盖模块；SSD.IRX 与 RSSD.IRX 两个 IOP 模块列为 0%。README 报告已恢复 7,645 个范围内游戏函数中的 5,852 个（76.547%）；2026-09-24 的论坛公告报告，开工一周多时为 3,669 个（47.992%）。Sony SDK 与公共库不在恢复范围内，以汇编形式构建。原生 PC 移植是作者声明的后续目标，不包含在此仓库中。",
+      "需要使用者自有的 NTSC-U 光盘中的 SLUS_204.69、五个 .OVL 覆盖模块及 IOP/ 目录。config/originals.json 记录这六个文件的大小和 SHA-256，构建会拒绝其他版本。仓库声明不分发任何原始游戏二进制文件或受版权保护的游戏素材。",
+      "构建需要 32 位 Linux 编译器支持（64 位 Ubuntu 上需 libc6-i386；Windows 上使用 WSL，并把检出放在 Linux 文件系统中）、用于基于 splat 反汇编的 Python 3 虚拟环境，以及 ninja。工具链不随仓库提供：config/toolchain-identity.json 记录各工具的版本、哈希与来源，包括带十五处有文档记录的 cc1 补丁的 ee-gcc 2.96、用于 SDK 代码的 Sony ee-gcc 2.9-991111、两个 GNU as 2.9-ee 构建（其一打过补丁）以及 ps2dev binutils 2.45.1；tools/tu/toolchain.py --check 会拒绝不一致的工具。",
+      "ninja 将重新构建的六个文件与原始文件比较，ninja gate 写出 build/gate.json，结果为 pass 表示每个文件都逐字节一致；只有当函数所在翻译单元的源码以 C 定义该函数、且整文件校验通过时，才计入进度。decomp.dev 报告来自在作者自托管运行器上构建的工作流，该运行器持有原始文件和工具链，只公开哈希与计数；对所审阅的提交，decomp.dev 显示 53.10% 的代码已反编译、19.44% 已完全链接，这些度量与 README 的函数计数不同。",
+      "所审阅的提交中没有许可证文件。除匹配的 C 源码外，仓库还收录 599 个 Java 场景与过场脚本（约 24 MB），作者在论坛回复中称其为反编译得到的游戏脚本代码；这些文件不在字节校验范围内，其再分发权利并不明确。README 声明借助 AI 开发但未量化，也未说明使用 REA。"
+    ]
   }
 }
