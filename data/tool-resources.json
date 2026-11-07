@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "starcraft64-recomp",
+    "name": "StarCraft 64 native port",
+    "url": "https://github.com/n0madic/StarCraft64-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a native port of StarCraft 64, NTSC-U. N64Recomp translates the MIPS code to C, and a software renderer draws the game's display lists. The ROM must match SHA-1 a36d91b5aac7bb95df0d7de5f9814f5270e25c2b after byte-order normalization. The README says the single-player campaign, menus, Encyclopedia, saves, and sound work. macOS on Apple Silicon and Android arm64 from Android 9 are the accepted platforms. Windows x86_64 and Linux x86_64 packages are cross-built.",
+    "description_zh": "这是 NTSC-U 版《星际争霸 64》的原生移植。N64Recomp 把 MIPS 代码翻译成 C，软件渲染器绘制游戏的显示列表。ROM 在字节序规范化后必须匹配 SHA-1 a36d91b5aac7bb95df0d7de5f9814f5270e25c2b。README 写明单人战役、菜单、百科、存档和声音可用。Apple Silicon 上的 macOS，以及 Android 9 起的 arm64，是已接受的平台。Windows x86_64 和 Linux x86_64 安装包是交叉构建的。",
+    "requirements": [
+      "CMake, Ninja, and Python 3.10 or newer. The documented launcher build is make doctor, make bootstrap, make build-recompiler, and make package. z64, v64, and n64 dumps are accepted.",
+      "License: MIT for the original source and documentation. The README says launcher packages statically link N64ModernRuntime under GPL-3.0, and tools/bolt_extract.py plus tools/research/bolt_audit.py are GPL-3.0-or-later."
+    ],
+    "evidence_url": "https://github.com/n0madic/StarCraft64-recomp/blob/fd190148ed6f2d3c688890ed4ce9144769bfc344/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

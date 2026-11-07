@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "starcraft64-recomp": {
+    "name": "星际争霸 64 原生移植",
+    "requirements": [
+      "需要 CMake、Ninja 和 Python 3.10 或更新版本。文档中的启动器构建是 make doctor、make bootstrap、make build-recompiler 和 make package。接受 z64、v64 和 n64 转储。",
+      "许可证：原创源码和文档为 MIT。README 写明启动器安装包静态链接 GPL-3.0 的 N64ModernRuntime，tools/bolt_extract.py 和 tools/research/bolt_audit.py 为 GPL-3.0-or-later。"
+    ]
   }
 }
