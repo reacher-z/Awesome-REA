@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -113,7 +113,7 @@
 - [**wii-ipl: a decompilation of the Wii Menu (System Menu 4.3)**](https://github.com/koopthekoopa/wii-ipl) - A work-in-progress decompilation of the Wii Menu, the console’s System Menu (IPL), targeting version 4.3 in its USA, European, Japanese and Korean builds. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/wii-menu-ipl-decomp-case/)</sub>
 
 <a id="game-decompilation"></a>
-### Non-matching decompilations (19)
+### Non-matching decompilations (20)
 
 - [**c1: a C port of PlayStation Crash Bandicoot**](https://github.com/wurlyfox/c1) - Ports the original PlayStation Crash Bandicoot game code to C function by function; its coding standard labels functions with the addresses of their original implementations. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/crash-bandicoot-c1-port-case/)</sub>
 - [**Firefighter: a decompiled DOS game ported to Rust**](https://gitlab.com/esr/firefighter) - Eric S. Raymond’s terminal port of Firefighter, Eben Sprinsock’s 1985 DOS shareware game. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/firefighter-rust-port-case/)</sub>
@@ -122,6 +122,7 @@
 - [**Metroid Dread: a hand decompilation in progress**](https://github.com/tsuyoi-w/DreadComp) - DreadComp is an in-progress hand decompilation of Metroid Dread that recreates game source code in C++. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/dreadcomp-case/)</sub>
 - [**OpenGOAL: recovering GOAL code and rebuilding the Jak games**](https://github.com/open-goal/jak-project) - Reconstructs readable GOAL code from the original Jak binaries and compiles it with a new GOAL compiler for modern PCs. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opengoal-jak-case/)</sub>
 - [**Paleblood: a functional decompilation of Bloodborne with its own runtime**](https://github.com/Yharnam-Hunters/Paleblood) - Rewrites code from Bloodborne’s PS4 executable (CUSA03173 with update 1.09) as readable C++, one function at a time, aiming at a native PC source port on a clean-room runtime of its own. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/paleblood-bloodborne-functional-decomp-case/)</sub>
+- [**PokePlat**](https://github.com/JimB16/PokePlat) - PokePlat disassembles the code and data of Pokémon Platinum. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pokeplat-case/)</sub>
 - [**R.E.L.I.V.E.: an Oddworld Abe’s Oddysee and Abe’s Exoddus engine reimplementation**](https://github.com/AliveTeam/alive_reversing) - Reimplements the engine of Oddworld: Abe’s Oddysee and Abe’s Exoddus as an open-source replacement executable that runs from the user’s own game folder. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/relive-oddworld-abe-engine-case/)</sub>
 - [**re-plants-vs-zombies: decompiling and modernizing Plants vs. Zombies GOTY**](https://github.com/Patoke/re-plants-vs-zombies) - Reconstructs C++ source for Plants vs. Zombies on PopCap’s open-source SexyAppFramework, starting from an earlier community decompilation of version 0.9.9 and adding functionality reversed from the Game of the Year edition, with functions annotated by GOTY addresses. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/re-plants-vs-zombies-decomp-case/)</sub>
 - [**REDRIVER2: reconstructing Driver 2 through a PlayStation compatibility layer**](https://github.com/OpenDriver2/REDRIVER2) - Translates reverse-engineered Driver 2 MIPS routines into C/C++ and uses Psy-X/Psy-Cross to adapt PlayStation interfaces for desktop systems. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/redriver2-case/)</sub>

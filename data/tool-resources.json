@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokeplat-case",
+    "name": "PokePlat",
+    "url": "https://github.com/JimB16/PokePlat",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "PokePlat disassembles the code and data of Pokémon Platinum. The baserom it compiles is Pokémon Platinum Version (USA) (Rev 1), and the README says the extracted code can be compiled into a playable ROM.",
+    "description_zh": "PokePlat 反汇编《Pokémon Platinum》的代码和数据。它编译所用的基础 ROM 是 Pokémon Platinum Version (USA) (Rev 1)，README 写明提取出的代码可以编译成可玩的 ROM。",
+    "requirements": [
+      "DevKitARM, Python, and the USA Rev 1 baserom. Setup steps are in INSTALL.md.",
+      "The baserom MD5 is ab828b0d13f09469a71460a34d0de51b and the SHA-1 is 0862ec35b24de5c7e2dcb88c9eea0873110d755c.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/JimB16/PokePlat/blob/ccbdf7ea8b08f23d3adcb6baa7d1f2b8dc24bbc1/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

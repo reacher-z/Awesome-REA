@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pokeplat-case": {
+    "name": "PokePlat",
+    "requirements": [
+      "需要 DevKitARM、Python 和美版 Rev 1 基础 ROM。安装步骤在 INSTALL.md。",
+      "基础 ROM 的 MD5 为 ab828b0d13f09469a71460a34d0de51b，SHA-1 为 0862ec35b24de5c7e2dcb88c9eea0873110d755c。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
