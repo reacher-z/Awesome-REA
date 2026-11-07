@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "open-realm": {
+    "name": "OpenRealm",
+    "requirements": [
+      "使用玩家合法拥有的游戏数据运行。",
+      "原生构建需要 C 编译器、make、SDL2 和系统 OpenGL，在支持的 Linux 系统上也可以用 GLES3。Windows 构建使用带 SDL2 开发库的 MSYS2/MinGW 或 Visual Studio。",
+      "许可证：MIT。"
+    ]
   }
 }

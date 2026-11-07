@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "open-realm",
+    "name": "OpenRealm",
+    "url": "https://github.com/corepunch/open-realm",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "OpenRealm is an open-source engine and compatibility project for Blizzard-era game data. Warcraft III is the primary playable target, including the client and server runtime, JASS, and campaign flow, and it also builds as an iPad app. World of Warcraft and StarCraft II are additional format and renderer targets.",
+    "description_zh": "OpenRealm 是面向暴雪时期游戏数据的开源引擎和兼容项目。《Warcraft III》是主要可玩目标，包括客户端与服务器运行时、JASS 和战役流程，也可构建为 iPad 应用。《World of Warcraft》和《StarCraft II》是额外的格式与渲染目标。",
+    "requirements": [
+      "Run it with game data the player legally owns.",
+      "A native build needs a C compiler, make, SDL2, and system OpenGL, or GLES3 on supported Linux systems. Windows builds use MSYS2/MinGW or Visual Studio with the SDL2 development libraries.",
+      "License: MIT."
+    ],
+    "evidence_url": "https://github.com/corepunch/open-realm/blob/859e822ff1aa9509dca4a95e123729490a248b80/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
