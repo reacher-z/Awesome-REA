@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "iridis-alpha",
+    "name": "Iridis Alpha",
+    "url": "https://github.com/mwenge/iridisalpha",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This is commented 6502 source for Iridis Alpha, the 1986 Commodore 64 game. make writes the compiled game to bin, and make iridisalpha.prg writes iridisalpha.prg. The final binary is packed with Exomizer. A Windows build is iridisalpha.exe from release v0.2, using the arrow keys and Ctrl.",
+    "description_zh": "这是 1986 年 Commodore 64 游戏 Iridis Alpha 的带注释 6502 源码。make 把编译结果写到 bin，make iridisalpha.prg 写出 iridisalpha.prg。最终二进制用 Exomizer 压缩。Windows 构建是 v0.2 发布里的 iridisalpha.exe，用方向键和 Ctrl。",
+    "requirements": [
+      "64tass v1.54 r1900, VICE, and Exomizer.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/mwenge/iridisalpha/blob/2d52a71bafe019c460ade3a76e5f292c26ffa518/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
