@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "bomberman-nes-decomp",
+    "name": "Bomberman NES decompilation",
+    "url": "https://github.com/emu-russia/bomberman-nes",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "This decompiles Bomberman for the NES, USA release NES-BM-USA. The README lists PRG CRC32 A913A222 and CHR CRC32 1DB14E97. MAKE.BAT builds the NES file.",
+    "description_zh": "该项目反编译 NES 美版《炸弹人》，编号 NES-BM-USA。README 列出 PRG 的 CRC32 为 A913A222，CHR 的 CRC32 为 1DB14E97。MAKE.BAT 构建 NES 文件。",
+    "requirements": [
+      "Run MAKE.BAT. The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/emu-russia/bomberman-nes/blob/61b62c8d35e6972d5e11abeec876dfd558b7510d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
