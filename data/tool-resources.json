@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "cryogenic-dune",
+    "name": "Cryogenic",
+    "url": "https://github.com/OpenRakis/Cryogenic",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Cryogenic is a C# reimplementation of Cryo's Dune, the 1992 CD version, running on Spice86. Builds target Linux, macOS, and Windows on .NET 10.",
+    "description_zh": "Cryogenic 是 Cryo 1992 年 CD 版《沙丘》的 C# 重实现，运行在 Spice86 上。构建面向 Linux、macOS 和 Windows，使用 .NET 10。",
+    "requirements": [
+      "License: Apache License 2.0."
+    ],
+    "evidence_url": "https://github.com/OpenRakis/Cryogenic/blob/113bd4922aa7d38ec1bcdc6bd7c0c47473dc63f2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
