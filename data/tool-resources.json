@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dkb-recomp",
+    "name": "DKB Recomp",
+    "url": "https://github.com/Lucas-blip-png/dkb-pc-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "DKB Recomp statically recompiles Donkey Kong Bananza for Nintendo Switch 2 into a Windows x86-64 executable with a Vulkan renderer. It translates the game's ARM64 code to C and answers NVN 2 calls on the host. It is built on TotK Recomp. The reviewed page supports base version 1.0.0. The game boots into the tutorial cave and can be walked through the mining tunnel. It is not playable through the whole game, and there is no shared download. The build uses MSYS2 UCRT64 Clang, Ninja, Python 3.12, and the .NET SDK, with the ExeFS and RomFS from a personal dump.",
+    "description_zh": "DKB Recomp 把任天堂 Switch 2 游戏《咚奇刚 蕉力全开》静态重编译成带 Vulkan 渲染器的 Windows x86-64 可执行文件。它把游戏的 ARM64 代码译成 C，并在宿主上应答 NVN 2 调用。它基于 TotK Recomp。审阅页面支持本体 1.0.0。游戏能进入教程洞穴，并走过采矿隧道。它还不能通关，也没有可分享的下载。构建使用 MSYS2 UCRT64 Clang、Ninja、Python 3.12 和 .NET SDK，以及自己转储的 ExeFS 和 RomFS。",
+    "requirements": [
+      "A personal dump of Donkey Kong Bananza 1.0.0, with ExeFS and RomFS. Windows, MSYS2 UCRT64, Python 3.12, and the .NET SDK. At least 16 GB of RAM.",
+      "License: GPL-3.0-or-later for the project as a whole. Files from TotK Recomp stay MIT. Eglantine's Ampere shader lowering is GPL-3.0-or-later."
+    ],
+    "evidence_url": "https://github.com/Lucas-blip-png/dkb-pc-recomp/blob/0f854a4c9db407f1c0d656fce7489f72f3238fb0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

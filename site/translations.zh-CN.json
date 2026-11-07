@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "dkb-recomp": {
+    "name": "DKB Recomp",
+    "requirements": [
+      "需要自己的《咚奇刚 蕉力全开》1.0.0 转储，含 ExeFS 和 RomFS。系统为 Windows，并需要 MSYS2 UCRT64、Python 3.12 和 .NET SDK。至少 16 GB 内存。",
+      "许可证：项目整体为 GPL-3.0 或更高版本。来自 TotK Recomp 的文件仍为 MIT。Eglantine 的 Ampere 着色器降级为 GPL-3.0 或更高版本。"
+    ]
   }
 }
