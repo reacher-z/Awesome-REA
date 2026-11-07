@@ -11023,5 +11023,11 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "sdlpop": {
+    "name": "SDLPoP：波斯王子的开源移植",
+    "requirements": [
+      "GNU GPL，README 指向 COPYING 和 src/GPLv3.h。它写明 src/opl3.c、src/opl3.h 和 src/stb_vorbis.c 是带有各自许可的外部库。"
+    ]
   }
 }
