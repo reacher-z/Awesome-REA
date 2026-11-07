@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dinosaur-planet-decomp",
+    "name": "Dinosaur Planet decompilation",
+    "url": "https://github.com/zestydevy/dinosaur-planet",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of the Nintendo 64 game Dinosaur Planet, from the ROM released by Forest of Illusion on 20 February 2021. The ROM is named baserom.z64 and its MD5 is 49f7bb346ade39d1915c22e090ffd748. ./dino.py setup extracts it and ./dino.py build rebuilds it and checks the match. The reviewed page says the ROM is not shiftable yet. Linux needs a MIPS GNU binutils package, gcc, ninja, and Python 3. Windows setup uses MSYS2 and Python 3.12 or newer.",
+    "description_zh": "这是任天堂 64 游戏 Dinosaur Planet 的进行中反编译，ROM 来自 Forest of Illusion 在 2021 年 2 月 20 日发布的版本。ROM 命名为 baserom.z64，MD5 为 49f7bb346ade39d1915c22e090ffd748。./dino.py setup 提取它，./dino.py build 重建并检查是否匹配。审阅页面写明这份 ROM 还不能随意移动地址。Linux 需要 MIPS GNU binutils、gcc、ninja 和 Python 3。Windows 安装使用 MSYS2 和 Python 3.12 或更高版本。",
+    "requirements": [
+      "The unmodified ROM named above. Linux or WSL with the packages in packages.txt, or MSYS2 on Windows.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/zestydevy/dinosaur-planet/blob/d616a6381e87ae6cab557e8f70458a07d5a48084/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
