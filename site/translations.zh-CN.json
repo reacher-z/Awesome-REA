@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "twisted-metal-4-recomp": {
+    "name": "扭曲金属4重编译",
+    "requirements": [
+      "初始化子模块，然后用 game.toml 和 disc/ 下的 CUE 运行 psxrecomp_cli.py generate，再运行 cmake --build build-release --target psx-runtime。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
