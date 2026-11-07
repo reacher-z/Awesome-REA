@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "url": "https://github.com/muellerberndt/apkx",
+    "evidence_url": "https://github.com/muellerberndt/apkx/blob/fcb74ff37c9fe4428d7ff11a4863c273096698e8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "id": "apkx",
+    "name": "apkx",
+    "category": "android",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "apkx is a Python wrapper around free dex converters and Java decompilers that extracts Java source from an APK. The README's install steps clone the repository and run sudo ./install.sh, and they require a JRE on PATH. enjarify additionally requires Python.",
+    "description_zh": "apkx 是围绕免费 dex 转换器和 Java 反编译器的 Python 包装，可从 APK 提取 Java 源码。README 的安装步骤是克隆仓库并运行 sudo ./install.sh，并且要求 PATH 中有 JRE。enjarify 还需要 Python。",
+    "requirements": [
+      "Install with sudo ./install.sh from the repository. A JRE must be on PATH.",
+      "enjarify requires Python.",
+      "GitHub reports no license file."
+    ]
   }
 ]

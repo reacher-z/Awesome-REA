@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "apkx": {
+    "name": "apkx（APK Java 源码提取包装）",
+    "requirements": [
+      "在仓库中用 sudo ./install.sh 安装。PATH 中必须有 JRE。",
+      "enjarify 需要 Python。",
+      "GitHub 未报告许可证文件。"
+    ]
   }
 }
