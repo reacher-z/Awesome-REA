@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "gd-2206-decompiled",
+    "name": "GD-Decompiled",
+    "url": "https://github.com/CallocGD/GD-2.206-Decompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "GD-Decompiled is an attempt to recover the source of Geometry Dash 2.206 and 2.2074. The README names Ghidra and a companion repository of decompilation scripts. Listed work includes naming GameObject members and opening the game's HTTP requests.",
+    "description_zh": "GD-Decompiled 试图恢复 Geometry Dash 2.206 和 2.2074 的源码。README 提到 Ghidra 和一个配套的反编译脚本仓库。列出的工作包括给 GameObject 的成员命名，以及公开游戏的 HTTP 请求。",
+    "requirements": [
+      "The reviewed README does not name a license or a build command for the game."
+    ],
+    "evidence_url": "https://github.com/CallocGD/GD-2.206-Decompiled/blob/2eb92bb20bb56431eea32a032f1ccc3154578a8b/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
