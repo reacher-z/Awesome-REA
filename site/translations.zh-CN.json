@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "reblue": {
+    "name": "re:Blue",
+    "requirements": [
+      "需要《蓝龙》三张零售光盘的镜像。源码构建需要 CMake 和 vcpkg。",
+      "审阅的 README 指向 LICENSE，没有写出许可证名称。"
+    ]
   }
 }

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "reblue",
+    "name": "re:Blue",
+    "url": "https://github.com/zolaware/reblue",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "re:Blue statically recompiles Blue Dragon into a native program. The setup checks a disc image from each of the three retail discs. Windows is x86-64 with DirectX 12. Linux covers AMD64 and ARM64, including SteamOS 3.6. macOS is ARM64 and needs macOS 13.3 or later. cmake --preset win-amd64-release and cmake --build --preset win-amd64-release build it. The same presets exist for linux-amd64, linux-arm64, mac-amd64, and mac-arm64. The build uses the ReXGlue SDK.",
+    "description_zh": "re:Blue 把《蓝龙》静态重编译成本地程序。安装程序会逐一核对三张零售光盘的镜像。Windows 是 x86-64，使用 DirectX 12。Linux 覆盖 AMD64 和 ARM64，包括 SteamOS 3.6。macOS 是 ARM64，需要 macOS 13.3 或更高版本。cmake --preset win-amd64-release 和 cmake --build --preset win-amd64-release 进行构建。linux-amd64、linux-arm64、mac-amd64 和 mac-arm64 也有同样的预设。构建使用 ReXGlue SDK。",
+    "requirements": [
+      "Disc images of all three retail Blue Dragon discs. CMake and vcpkg for a source build.",
+      "The reviewed README points at LICENSE and does not name the license."
+    ],
+    "evidence_url": "https://github.com/zolaware/reblue/blob/85aae686489dff775890fb8100ab525d7b7427b0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
