@@ -36528,5 +36528,26 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "binaryaudit",
+    "name": "BinaryAudit",
+    "url": "https://github.com/QuesmaOrg/BinaryAudit",
+    "category": "native-analysis",
+    "kind": "project",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "BinaryAudit is a benchmark of AI agents looking for backdoors in compiled binaries of open-source software. Agents receive stripped binaries and Ghidra or Radare2 inside Docker. The task set covers lighttpd, dnsmasq, Dropbear, Sozu, and Caddy, including clean binaries and timebomb tasks. The README says the backdoors were artificially injected.",
+    "description_zh": "BinaryAudit 是一个基准，用来评估 AI 代理在开源软件的编译二进制中查找后门的能力。代理在 Docker 里拿到去掉符号的二进制，以及 Ghidra 或 Radare2。任务覆盖 lighttpd、dnsmasq、Dropbear、Sozu 和 Caddy，包括干净二进制和时间炸弹任务。README 写明这些后门是人工注入的。",
+    "requirements": [
+      "Harbor, installed with uv tool install harbor, plus Docker and an API key for the chosen model.",
+      "Before Docker tasks, build the image binaryaudit-base:latest from docker/base.Dockerfile.",
+      "License: Apache 2.0."
+    ],
+    "evidence_url": "https://github.com/QuesmaOrg/BinaryAudit/blob/175b7ec1a39b7ba1545ae008a9e93106348c3b4e/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

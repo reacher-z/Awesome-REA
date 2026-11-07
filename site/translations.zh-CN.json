@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "binaryaudit": {
+    "name": "BinaryAudit",
+    "requirements": [
+      "需要 Harbor（用 uv tool install harbor 安装）、Docker，以及所选模型的 API 密钥。",
+      "运行 Docker 任务前，用 docker/base.Dockerfile 构建镜像 binaryaudit-base:latest。",
+      "许可证：Apache 2.0。"
+    ]
   }
 }
