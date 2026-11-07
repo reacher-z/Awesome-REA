@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "minish-cap-recomp",
+    "name": "The Minish Cap recompilation",
+    "url": "https://github.com/mstan/MinishCapRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This recompiles The Legend of Zelda: The Minish Cap for the Game Boy Advance with gbarecomp. The USA ROM SHA-1 is b4bd50e4131b027c334547b4524e2dbbd4227130, and the runtime refuses any other checksum. The GBA BIOS is recompiled and executed. The save chip is EEPROM. The Windows release archive is MinishCapRecomp-windows-x64. Debug port 19842.",
+    "description_zh": "该项目用 gbarecomp 重编译 Game Boy Advance 版《塞尔达传说 缩小帽》。美版 ROM 的 SHA-1 是 b4bd50e4131b027c334547b4524e2dbbd4227130，运行时拒绝任何其他校验值。GBA BIOS 被重编译并执行。存档芯片是 EEPROM。Windows 发布包是 MinishCapRecomp-windows-x64。调试端口是 19842。",
+    "requirements": [
+      "A USA ROM named roms/minishcap_usa.gba with that SHA-1. A source build uses PowerShell, mingw64, gba_recompile, CMake, and Ninja.",
+      "License: PolyForm Noncommercial 1.0.0 for this project's code. Third-party components keep their own licenses."
+    ],
+    "evidence_url": "https://github.com/mstan/MinishCapRecomp/blob/c0cb98cc5585719b59e5d9e22cf0ca98d872c957/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
