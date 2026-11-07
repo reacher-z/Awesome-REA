@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "lba-engine-architecture": {
+    "name": "小小大冒险引擎结构文档",
+    "requirements": [
+      "需要 Jekyll 和 Bundler。文档中的预览命令是 bundle install 和 bundle exec jekyll serve --watch。",
+      "许可证：本文档为 MIT。README 写明权利人发布的游戏源码是 GPL，游戏素材不在许可范围内。"
+    ]
   }
 }
