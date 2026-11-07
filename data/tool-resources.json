@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "eosdecomp",
+    "name": "EoSDecomp",
+    "url": "https://github.com/wearrrrr/EoSDecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "EoSDecomp is a decompilation of Touhou Koumakyou, the Embodiment of Scarlet Devil, the sixth Touhou game. The README says the goals are to document the game, fix identified bugs, and keep it playable on later Windows versions.",
+    "description_zh": "EoSDecomp 是东方Project第六作《东方红魔乡》的反编译。README 写明目标是记录这款游戏、修复已经找出的错误，并让它在更新的 Windows 上仍能玩。",
+    "requirements": [
+      "Contribution steps are in CONTRIBUTING.md.",
+      "The reviewed README does not name a license or a build command."
+    ],
+    "evidence_url": "https://github.com/wearrrrr/EoSDecomp/blob/182da715f9d777bea6c49e1a860b31adc4fe6123/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
