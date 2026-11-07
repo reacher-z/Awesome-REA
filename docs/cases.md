@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -55,6 +55,7 @@
 - [**Final Fantasy VII: a matching PlayStation decompilation**](https://github.com/Xeeynamo/ff7-decomp) - Reconstructs C source for the US PlayStation release of Final Fantasy VII, aiming for code that compiles back to the original main executable and its game overlays. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ff7-ps1-matching-decomp-case/)</sub>
 - [**GoldenEye 007: matching Nintendo 64 decompilation for three releases**](https://github.com/n64decomp/007) - Reconstructs GoldenEye 007’s Nintendo 64 code as C source that rebuilds the US, Japanese and PAL ROMs. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/goldeneye-007-matching-decomp-case/)</sub>
 - [**Gran Turismo 4: an agent-assisted PS2 engine matching decompilation**](https://github.com/gustavocanepa/gt4-decomp) - Decompiles Gran Turismo 4’s PS2 engine executable (CORE.GT4, NTSC-U v1.01) into one C or C++ source per function for Sony’s ee-gcc 2.96, matching public libraries such as newlib and Expat from their own source. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/gran-turismo-4-matching-decomp-case/)</sub>
+- [**Gyakuten Saiban decompilation**](https://github.com/atasro2/pwaa1) - This is a decompilation of Gyakuten Saiban, the Japanese Game Boy Advance release. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/pwaa1-decomp-case/)</sub>
 - [**Halo 2: an agent-assisted matching decompilation of an LTCG Xbox build**](https://github.com/kirklandsig/halo2-decompiled) - A work-in-progress matching decompilation of Halo 2 for the original Xbox: contributors write C and C++ that the period compiler, building the whole program with link-time code generation, must turn back into the retail executable's bytes function by function. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/halo2-matching-decomp-case/)</sub>
 - [**Himuro: a matching Fatal Frame PS2 decompilation**](https://github.com/Mikompilation/Himuro) - Reconstructs Fatal Frame’s PS2 executable as C for the US, EU and Japanese releases, built with the original EE-GCC 2.9 toolchain and checked by SHA-1 against the user’s own executables. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/himuro-fatal-frame-decomp-case/)</sub>
 - [**ICO decompilation: byte-identical PAL and Japanese PlayStation 2 boot ELFs**](https://github.com/nathanialf/ico) - Rebuilds the boot ELFs of ICO’s PAL (SCES-50760) and Japanese (SCPS-11003) PlayStation 2 discs from one source tree with the game’s original compiler versions, and checks that every loaded byte and the whole ELF file match the disc’s SHA-1. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/ico-matching-decomp-case/)</sub>
