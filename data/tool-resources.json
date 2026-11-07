@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "srw64-recomp",
+    "name": "Marchwind 64",
+    "url": "https://github.com/dyzz/srw64-recomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "Marchwind 64 is a native recompilation of Super Robot Wars 64, the 1999 Nintendo 64 game. It runs on Windows, macOS, Linux, Steam Deck, Android, and Nintendo Switch, with English, Simplified Chinese, Traditional Chinese, and Korean text, plus widescreen and an optional HD art pack.",
+    "description_zh": "Marchwind 64 是 1999 年任天堂 64 游戏《超级机器人大战64》的原生重编译。它可以在 Windows、macOS、Linux、Steam Deck、Android 和任天堂 Switch 上运行，带有英文、简体中文、繁体中文和韩文，以及宽屏和可选的高清画面包。",
+    "requirements": [
+      "The player supplies a Japanese Super Robot Taisen 64 revision 0 ROM. Downloads contain no game data.",
+      "License: GPL-3.0-or-later for the project's own source and tools."
+    ],
+    "evidence_url": "https://github.com/dyzz/srw64-recomp/blob/909c1c8452fffa09614056a454834207f0aa92b0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
