@@ -36528,5 +36528,24 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "repkg",
+    "name": "RePKG",
+    "url": "https://github.com/notscuffed/repkg",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "C# unpacker for Wallpaper Engine PKG files and a TEX-to-image converter. The README says the PKG and TEX formats were reverse engineered by the author, and lists extracting PKG files, converting a PKG into a Wallpaper Engine project, converting TEX to an image, and dumping PKG or TEX info.",
+    "description_zh": "用 C# 编写的 Wallpaper Engine PKG 解包工具和 TEX 转图像转换器。README 写明 PKG 和 TEX 格式由作者逆向得到，功能包括提取 PKG、把 PKG 转成 Wallpaper Engine 工程、把 TEX 转成图像，以及导出 PKG 或 TEX 信息。",
+    "evidence_url": "https://github.com/notscuffed/repkg/blob/8005eb271f4cb5b9e375bafa912029a0d67b5eb8/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed page states no license."
+    ]
   }
 ]
