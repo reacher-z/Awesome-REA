@@ -11023,5 +11023,14 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "impostor": {
+    "name": "Impostor",
+    "requirements": [
+      "服务器安装步骤写在 docs/Running-the-server.md。",
+      "加入他人服务器时，按 https://impostor.github.io/Impostor 的说明配置 Among Us 客户端。",
+      "较旧的 Among Us 版本可使用仓库 Releases 中的旧版本；README 写明这些版本的支持较少。",
+      "许可证：GNU GPLv3。"
+    ]
   }
 }

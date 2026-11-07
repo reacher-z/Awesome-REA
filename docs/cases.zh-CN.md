@@ -4,12 +4,12 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
-- [Game · 游戏](#game) (239)
+- [Game · 游戏](#game) (240)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
@@ -225,7 +225,7 @@
 - [**Vandal Hearts：基于一致性反编译的原生 PC 移植**](https://github.com/HalmyLyseas/VandalHearts-PcPort) - 以 shao113 的 PlayStation 版 Vandal Hearts 一致性反编译为基础，新增日版一致性代码树，并将两者延伸为原生 Windows 与 Linux 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vandal-hearts-pc-port-case/)</sub>
 
 <a id="game-engine-reimplementation"></a>
-### 引擎重实现 (47)
+### 引擎重实现 (48)
 
 - [**Age of Empires Free Software Remake：基于原版数据的重新实现**](https://github.com/FolkertVanVerseveld/aoe) - 以基于 SDL2 和 OpenGL 的跨平台 C++17 引擎重新实现 Microsoft 的《帝国时代》及其资料片《罗马复兴》，载入原版游戏的 DRS 归档和 language.dll 资源。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aoe-free-software-remake-case/)</sub>
 - [**Bravo：逆向实现的 Minecraft 服务端**](https://github.com/bravoserver/bravo) - 以 Python 基于 Twisted 重新实现 Minecraft Alpha 与 Beta 时期多人游戏的服务端；其文档称这是从零编写的逆向实现，致谢了网络流量转储的提供者，并说明通用的 Minecraft 资料已贡献给社区 wiki。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/bravo-minecraft-server-case/)</sub>
@@ -238,6 +238,7 @@
 - [**GunZRs：GunZ: The Duel 的 Rust 重实现**](https://github.com/OpenRsG/GunZRs) - Rust/Bevy 移植从用户安装中读取 GunZ: The Duel 数据，提供原生发布包、浏览器构建工具、截图及 REA/Ghidra 调查框架；自有局域网协议和推断的移动行为不代表兼容零售服务器或已证明玩法一致。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/gunzrs-rea-rust-reimplementation-case/)</sub>
 - [**Horizon：借助 REA 字节码查询的 Minecraft: Java Edition 26.3 Rust 重写**](https://github.com/ludovic111/horizon) - 以原生 Rust 客户端、专用服务器和启动器重写 Minecraft: Java Edition 26.3，资源均由使用者自有的游戏副本生成。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/horizon-minecraft-rust-rewrite-case/)</sub>
 - [**impacto：MAGES. 视觉小说引擎的重新实现**](https://github.com/CommitteeOfZero/impacto) - 以 C++ 和 OpenGL 重新实现《科学冒险》系列和《告别回忆》系列所用的 MAGES. 视觉小说引擎，通过按游戏划分的 Lua 配置，在同一个程序中运行使用者原版数据文件里的受支持作品。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/impacto-mages-engine-case/)</sub>
+- [**Impostor**](https://github.com/Impostor/Impostor) - Impostor 是用 C# 编写的《Among Us》私有服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/impostor/)</sub>
 - [**IW4L：用使用者已安装的游戏运行《现代战争 2》的 Rust 运行时**](https://github.com/vladtrc/iw4L) - 以 Rust 基于 Bevy 和 wgpu 实现《使命召唤：现代战争 2》（2009）的独立运行时：通过原生 FastFile 读取器从使用者已安装的游戏中载入地图、模型、纹理和武器，并将其 Direct3D 9 着色器转换为 WGSL。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/iw4l-mw2-rust-runtime-case/)</sub>
 - [**Jazz² Resurrection：《爵士兔 2》的原生 C++ 重新实现**](https://github.com/deathkiller/jazz2-native) - 以原生 C++ 在深度修改的 nCine 引擎上重新实现《爵士兔 2》（Jazz Jackrabbit 2，1998），首次启动时把使用者的原版游戏文件转换为自己的缓存。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/jazz2-resurrection-engine-case/)</sub>
 - [**Kinoko：为精确回放幽灵记录而重新实现 Mario Kart Wii 物理引擎**](https://github.com/vabold/Kinoko) - 以 C++ 将 Mario Kart Wii 的物理引擎重新实现为命令行模拟器，延续 stblr/Hanachan 的目标：完全准确地回放计时赛幽灵记录。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/kinoko-mkwii-physics-reimplementation-case/)</sub>

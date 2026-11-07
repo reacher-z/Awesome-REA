@@ -36528,5 +36528,29 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "impostor",
+    "name": "Impostor",
+    "url": "https://github.com/Impostor/Impostor",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "Impostor is a C# private server for Among Us. The README says every Among Us feature is implemented and that the server is a full replacement for the official server, with plugin support and a server-sided anticheat.",
+    "description_zh": "Impostor 是用 C# 编写的《Among Us》私有服务器。README 写明 Among Us 的功能都已实现，该服务器可完整替代官方服务器，并支持插件和服务器端反作弊。",
+    "requirements": [
+      "Server setup is documented in docs/Running-the-server.md.",
+      "Players joining a server someone else hosts configure the Among Us client with the instructions at https://impostor.github.io/Impostor.",
+      "Older Among Us versions can use older releases from the repository releases page; the README says those releases are less supported.",
+      "License: GNU GPLv3."
+    ],
+    "evidence_url": "https://github.com/Impostor/Impostor/blob/118d32fb9c4a4c3c38e56c0eb94dee3343c62122/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
