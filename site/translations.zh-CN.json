@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "metroid-nes-recomp": {
+    "name": "密特罗德 NES 重编译",
+    "requirements": [
+      "需要 Windows 10 或 11、Visual Studio 2022 Build Tools 和 CMake 3.20 或更新版本。setup.bat 初始化子模块。CMake 选项 NESRECOMP_ROM 选择 ROM，METROID_VARIANT 为 usa 或 europe。",
+      "许可证：本项目代码为 PolyForm Noncommercial 1.0.0。nesrecomp 子模块另行授权。"
+    ]
   }
 }

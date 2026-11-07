@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "metroid-nes-recomp",
+    "name": "Metroid NES recompilation",
+    "url": "https://github.com/mstan/MetroidNESRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Metroid for the NES with nesrecomp. The USA headerless PRG+CHR CRC32 is 70080810, and the whole .nes file is A2C89CB9. The European headerless CRC32 is 7751588D, and the whole file is A591CC24. Each executable accepts only its matching ROM. The game uses MMC1 with 8 PRG banks. Bank 7 stays mapped at $C000-$FFFF.",
+    "description_zh": "该项目用 nesrecomp 静态重编译 NES 版《密特罗德》。美版去掉文件头的 PRG+CHR CRC32 是 70080810，整个 .nes 文件是 A2C89CB9。欧版去掉文件头的 CRC32 是 7751588D，整个文件是 A591CC24。每个可执行文件只接受匹配的 ROM。游戏使用 MMC1，有 8 个 PRG 库。库 7 固定映射在 $C000-$FFFF。",
+    "requirements": [
+      "Windows 10 or 11, Visual Studio 2022 Build Tools, and CMake 3.20 or newer. setup.bat initializes submodules. The CMake option NESRECOMP_ROM selects the ROM, and METROID_VARIANT is usa or europe.",
+      "License: PolyForm Noncommercial 1.0.0 for this project's code. The nesrecomp submodule is licensed separately."
+    ],
+    "evidence_url": "https://github.com/mstan/MetroidNESRecomp/blob/f3ed94f521e9666874947d77c774b76ca23c8bdf/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
