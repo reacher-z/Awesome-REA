@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "botwrecomp-android": {
+    "name": "BOTWRecompAndroid：旷野之息的 Android 移植",
+    "requirements": [
+      "发布物是适用于 Android 11 或更新版本、ARM64 和 Vulkan 的 APK。用户需要提供包含 exefs 和 romfs 的已提取游戏目录。README 写明不包含游戏文件或 DLC，应用也不会打开 NSP 或 XCI 文件，也不使用 prod.keys。",
+      "Recompiled 模式会在手机上构建一次游戏代码。Native 模式跳过该构建。README 写明测试主要在一台配备 Adreno 830 GPU 和 Mesa Turnip 驱动的 POCO F7 Ultra 上进行。",
+      "GitHub 报告该仓库的许可证为 NOASSERTION。README 写明项目所基于的 LAS Recomp 运行时为 MIT，并指向 LICENSE。"
+    ]
   }
 }

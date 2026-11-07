@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "botwrecomp-android",
+    "name": "BOTWRecompAndroid: Android port of Breath of the Wild",
+    "url": "https://github.com/mamcjr/BOTWRecompAndroid",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "reconstruction_method": "static-recompilation",
+    "description_en": "BOTWRecompAndroid is an Android port of The Legend of Zelda: Breath of the Wild for Switch versions 1.0.0, 1.6.0, 1.8.2, and 1.9.0. The README says the game code can be recompiled into C on the phone, or run directly on the phone's ARM64 CPU in an experimental Native Mode, with the NVN graphics API translated to Vulkan. It is built on LAS Recomp and LASRecompAndroid.",
+    "description_zh": "BOTWRecompAndroid 是《塞尔达传说：旷野之息》Switch 版 1.0.0、1.6.0、1.8.2 和 1.9.0 的 Android 移植。README 写明游戏代码可以在手机上重编译为 C，也可以在实验性的 Native Mode 中直接在手机的 ARM64 CPU 上运行，并把 NVN 图形接口转换到 Vulkan。它基于 LAS Recomp 和 LASRecompAndroid。",
+    "evidence_url": "https://github.com/mamcjr/BOTWRecompAndroid/blob/8f5b9a6a64d95cd0ae75dbe42cc5a86a943c12bf/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The release is an APK for Android 11 or newer on ARM64 with Vulkan. The user supplies an extracted game folder containing exefs and romfs. The README says no game files or DLC are included, and the app does not open NSP or XCI files or use prod.keys.",
+      "Recompiled mode builds the game code once on the phone. Native mode skips that build. The README says testing was primarily on a POCO F7 Ultra with an Adreno 830 GPU and the Mesa Turnip driver.",
+      "GitHub reports the repository license as NOASSERTION. The README says the LAS Recomp runtime the project starts from is MIT and points to LICENSE."
+    ],
+    "verification": "source-reviewed"
   }
 ]
