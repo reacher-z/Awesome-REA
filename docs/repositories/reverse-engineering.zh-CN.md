@@ -203,7 +203,7 @@
 - [naivenom/reversing-list](https://github.com/naivenom/reversing-list) — 逆向工程资源列表 **[148 星标]**
 - [pret/pokepinballrs](https://github.com/pret/pokepinballrs) — 《宝可梦弹珠台：红宝石与蓝宝石》反编译项目 **[148 星标]**
 - [dashr9230/SA-MP](https://github.com/dashr9230/SA-MP) — San Andreas Multiplayer 0.3.7 版本的匹配反编译项目，仍在开发中 **[147 星标]**
-- [dreamingmoths/memory-of-alessa](https://github.com/dreamingmoths/memory-of-alessa) — 《寂静岭 3》的匹配反编译项目，仍在开发中 **[145 星标]**
+- [dreamingmoths/memory-of-alessa](https://github.com/dreamingmoths/memory-of-alessa) — 《寂静岭 3》的匹配反编译项目，仍在开发中 **[145 星标]** · 精选：[memory of alessa：进行中的 Silent Hill 3 PS2 匹配反编译](https://awesomerea.org/zh/resources/silent-hill-3-memory-of-alessa-decomp-case/)
 - [AsenOsen/frida-stealth](https://github.com/AsenOsen/frida-stealth) — Frida 隐身补丁及隐身技术知识集合。 **[144 星标]**
 - [xbret/xenoblade](https://github.com/xbret/xenoblade) — 《异度之刃》日版反编译项目 **[142 星标]**
 - [camden-smallwood/pdb-decompiler](https://github.com/camden-smallwood/pdb-decompiler) — 将 MSVC PDB 文件反编译为 C++ 源码的工具。 **[139 星标]**
