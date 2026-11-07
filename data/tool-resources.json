@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pokeswift",
+    "name": "PokeSwift",
+    "url": "https://github.com/Dimillian/PokeSwift",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "PokeSwift is a native macOS app that reinterprets Pokémon Red in Swift and SwiftUI. Milestones M1 and M2 are complete, and the app reaches the title menu. It targets macOS 26.0 or later. ./scripts/build_app.sh, ./scripts/extract_red.sh, and ./scripts/launch_app.sh build and launch it. The repository still builds the pret Pokémon Red and Blue ROMs. Red (UE) has SHA-1 ea9bcae617fdf159b045185467ae58b2e4a48b9a. Blue (UE) has SHA-1 d7037c83e1ae5b39bde3c30787637ba1d4c48ce2. The debug ROM BLUEMONS.GB has SHA-1 5b1456177671b79b263c614ea0e7cc9ac542e9c4. Assembly setup is in docs/INSTALL.md.",
+    "description_zh": "PokeSwift 是用 Swift 和 SwiftUI 重新解释《宝可梦 红》的原生 macOS 应用。里程碑 M1 和 M2 已完成，应用可以到达标题菜单。它针对 macOS 26.0 或更高版本。./scripts/build_app.sh、./scripts/extract_red.sh 和 ./scripts/launch_app.sh 用来构建和启动。仓库仍能构建 pret 的宝可梦红版和蓝版 ROM。红版（UE）的 SHA-1 是 ea9bcae617fdf159b045185467ae58b2e4a48b9a。蓝版（UE）的 SHA-1 是 d7037c83e1ae5b39bde3c30787637ba1d4c48ce2。调试 ROM BLUEMONS.GB 的 SHA-1 是 5b1456177671b79b263c614ea0e7cc9ac542e9c4。汇编安装步骤在 docs/INSTALL.md。",
+    "requirements": [
+      "macOS 26.0 or later and Tuist for the Swift app. RGBDS setup for the original ROM targets is in docs/INSTALL.md.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/Dimillian/PokeSwift/blob/8fc87c2903462b1b0275b5fff345219e53d2f4fd/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
