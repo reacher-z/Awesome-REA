@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "reevengi",
+    "name": "Reevengi",
+    "url": "https://github.com/pmandin/reevengi",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "other",
+    "class": "game",
+    "description_en": "Reevengi is a background image viewer for Resident Evil, Resident Evil 2, and Resident Evil 3. The listed targets are the PlayStation and PC games, plus some demos. SDL is required. SDL_image with JPEG is required for the PC version of Resident Evil 3. FFmpeg is optional for movies.",
+    "description_zh": "Reevengi 是《生化危机》《生化危机2》和《生化危机3》的背景图像查看器。列出的目标包括 PlayStation 和 PC 版游戏，以及部分试玩版。必须有 SDL。PC 版《生化危机3》还需要带 JPEG 的 SDL_image。播放影片时 FFmpeg 是可选的。",
+    "requirements": [
+      "Filesystem access uses PhysicsFS 2.x. Resident Evil 3 PC archives need the patch in the diff directory applied to PhysicsFS 1.0. Libxml2 is optional for editing XML.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/pmandin/reevengi/blob/8130d5fd029a7548135bdbbff19b0b8e338bd42d/README",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "reevengi": {
+    "name": "Reevengi",
+    "requirements": [
+      "文件系统访问使用 PhysicsFS 2.x。PC 版《生化危机3》的存档包需要把 diff 目录里的补丁打到 PhysicsFS 1.0。编辑 XML 时 Libxml2 是可选的。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
