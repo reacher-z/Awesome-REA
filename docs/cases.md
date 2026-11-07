@@ -4,12 +4,12 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
-- [Game](#game) (239)
+- [Game](#game) (240)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
@@ -40,7 +40,7 @@
 [↑ Contents](#contents)
 
 <a id="game-matching-decompilation"></a>
-### Matching decompilations and disassemblies (69)
+### Matching decompilations and disassemblies (70)
 
 - [**3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike**](https://github.com/crowded-street/3s-decomp) - Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sfiii-3rd-strike-ps2-decomp-case/)</sub>
 - [**Agent decompilation: a byte-matching retrospective**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/agent-decompilation-oracle-case/)</sub>
@@ -109,6 +109,7 @@
 - [**Touhou 6: reconstructing Embodiment of Scarlet Devil 1.02h source**](https://github.com/GensokyoClub/th06) - Reconstructs C++ source for the Windows executable of Touhou 6: Embodiment of Scarlet Devil version 1.02h, aiming at an exact rebuild with the original Visual Studio .NET 2002 and DirectX 8 toolchain. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/th06-decomp-case/)</sub>
 - [**Touhou 7: reconstructing Perfect Cherry Blossom 1.00b source**](https://github.com/some100/th07) - Reconstructs C++ source for the Windows executable of Touhou 7: Perfect Cherry Blossom 1.00b and its custom.exe configuration tool, built with the original Visual Studio .NET 2002 and DirectX 8 toolchain and compared function by function with the user’s originals through reccmp. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/th07-decomp-case/)</sub>
 - [**Twilight Princess: a decompilation with fully matching GameCube code**](https://github.com/zeldaret/tp) - Reconstructs Twilight Princess source that compiles back to binaries identical to the originals, building GameCube, Wii and Nvidia Shield releases from one codebase through conditional compilation. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/twilight-princess-decomp-case/)</sub>
+- [**Ultima VI decompiled**](https://github.com/ergonomy-joe/u6-decompiled) - This repository decompiles the PC and MS-DOS version of Ultima VI: The False Prophet, version 4.5. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/u6-decompiled-case/)</sub>
 - [**Underworld Exhumed: reconstructing Ultima Underworld I and II**](https://github.com/abedegno/underworld-exhumed) - Pairs reconstructed DOS sources with native ports of Ultima Underworld I and II. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/underworld-exhumed-case/)</sub>
 - [**wii-ipl: a decompilation of the Wii Menu (System Menu 4.3)**](https://github.com/koopthekoopa/wii-ipl) - A work-in-progress decompilation of the Wii Menu, the console’s System Menu (IPL), targeting version 4.3 in its USA, European, Japanese and Korean builds. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/wii-menu-ipl-decomp-case/)</sub>
 

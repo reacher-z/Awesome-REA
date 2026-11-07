@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "u6-decompiled-case": {
+    "name": "创世纪 VI 反编译",
+    "requirements": [
+      "汇编文件需要 TASM 2.0 和 MASM 3.0。先运行 SRC/OSILIB/doit.bat，再按使用 MAKEFILE 的 SRC/doit.bat 进行。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

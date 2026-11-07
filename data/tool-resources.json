@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "u6-decompiled-case",
+    "name": "Ultima VI decompiled",
+    "url": "https://github.com/ergonomy-joe/u6-decompiled",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This repository decompiles the PC and MS-DOS version of Ultima VI: The False Prophet, version 4.5. It builds GAME.EXE and compares the result with the original. The C portions were built with Borland Turbo C 2.0.",
+    "description_zh": "该仓库反编译 PC 和 MS-DOS 版《创世纪 VI：伪先知》4.5。它构建 GAME.EXE，并把结果与原版比较。C 语言部分原来用 Borland Turbo C 2.0 构建。",
+    "requirements": [
+      "Assembly files need TASM 2.0 and MASM 3.0. Run SRC/OSILIB/doit.bat, then follow SRC/doit.bat, which uses MAKEFILE.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/ergonomy-joe/u6-decompiled/blob/1ff7a6dffb8e83404019e350861161f3d246b9d7/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
