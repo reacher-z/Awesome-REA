@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "snesrecomp",
+    "name": "SNESRecomp",
+    "url": "https://github.com/RetroPortingToolKit/snesrecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "SNESRecomp is a beta static-recompilation framework for the Super Nintendo and Super Famicom. It translates 65816 machine code into C and builds native applications around a shared SNES hardware runtime. Unresolved code can run through an interpreter tier.",
+    "description_zh": "SNESRecomp 是面向超级任天堂和 Super Famicom 的 beta 静态重编译框架。它把 65816 机器码翻译成 C，并围绕共享的 SNES 硬件运行时构建原生应用。还不能解析的代码可以走解释器层。",
+    "requirements": [
+      "Creating a port is documented in docs/GETTING_STARTED.md. Playing an existing port requires the player's own ROM.",
+      "The README says the framework is in beta and that each game keeps its own release and validation status.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/RetroPortingToolKit/snesrecomp/blob/ccfc12996df05ee0ffab7cdd82b1e1d78c64481c/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

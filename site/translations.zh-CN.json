@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "snesrecomp": {
+    "name": "SNESRecomp",
+    "requirements": [
+      "创建移植的步骤写在 docs/GETTING_STARTED.md。游玩已有移植需要玩家自己的 ROM。",
+      "README 写明框架处于 beta，每款游戏保留自己的发布和验证状态。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
