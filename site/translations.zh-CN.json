@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "ndsrecomp": {
+    "name": "ndsrecomp",
+    "requirements": [
+      "README 把 0.6.11 标为非常早期的 pre-alpha 开发快照，没有兼容性承诺，也没有稳定的 API。",
+      "LICENSE 覆盖的当前项目代码使用 PolyForm Noncommercial 1.0.0。那次变更之前的提交和发布仍使用它们当时的 MIT 许可证。"
+    ]
   }
 }
