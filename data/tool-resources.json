@@ -36528,5 +36528,25 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "r2ghidra",
+    "name": "r2ghidra",
+    "url": "https://github.com/radareorg/r2ghidra",
+    "category": "native-analysis",
+    "kind": "tool",
+    "relationship": "foundation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "r2ghidra integrates the Ghidra decompiler into radare2. The plugin is built from the C++ decompiler, so a Ghidra install is not required. r2pm -ci r2ghidra installs it. After af analyzes a function, pdg decompiles it. pdga shows disassembly beside the decompilation, pdgj dumps JSON, and pdgs lists Sleigh languages. It is known to build on Termux, macOS, iOS, GNU/Linux, Windows, and FreeBSD x86-64. ACR/make or Meson/Ninja can build it.",
+    "description_zh": "r2ghidra 把 Ghidra 反编译器接到 radare2。插件由 C++ 反编译器构建，因此不需要安装 Ghidra。r2pm -ci r2ghidra 进行安装。af 分析函数之后，pdg 反编译它。pdga 把反汇编和反编译并排显示，pdgj 导出 JSON，pdgs 列出 Sleigh 语言。已知能在 Termux、macOS、iOS、GNU/Linux、Windows 和 FreeBSD x86-64 上构建。可以用 ACR/make 或 Meson/Ninja 构建。",
+    "requirements": [
+      "radare2, pkg-config, a C++ compiler, and either ACR/make or Meson/Ninja. git and Python 3 prepare ghidra-native.",
+      "License: LGPL-3.0-only for r2ghidra. The linked ghidra-native tree is Apache License 2.0. zlib is vendored under the zlib license."
+    ],
+    "evidence_url": "https://github.com/radareorg/r2ghidra/blob/edc6310be8d76d912d7fd96eda266e77610788c6/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
