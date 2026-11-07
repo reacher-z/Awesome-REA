@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "openshao",
+    "name": "OpenShao",
+    "url": "https://github.com/OAleex/OpenShao",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "OpenShao statically recompiles the original Xbox game Mortal Kombat: Shaolin Monks with XboxXBERecomp. The launcher accepts an ISO, XISO, ZIP, extracted folder, or default.xbe and reads it in place. Windows 10 version 1903 or Linux with glibc 2.38 is required, plus an x64 CPU with SSE4.2 and POPCNT, and Direct3D 12 or Vulkan 1.2. A source build checks out XboxXBERecomp at 40e9c35451305f09ca9d86f677e4b9c2c37ff26b and runs python tools/build_recomp.py --xbe with that XBE and --test.",
+    "description_zh": "OpenShao 用 XboxXBERecomp 静态重编译原版 Xbox 游戏《真人快打：少林武僧》。启动器接受 ISO、XISO、ZIP、已提取的文件夹或 default.xbe，并就地读取。需要 Windows 10 版本 1903，或带 glibc 2.38 的 Linux，以及带 SSE4.2 和 POPCNT 的 x64 CPU，和 Direct3D 12 或 Vulkan 1.2。源码构建把 XboxXBERecomp 检出到 40e9c35451305f09ca9d86f677e4b9c2c37ff26b，并用该 XBE 和 --test 运行 python tools/build_recomp.py --xbe。",
+    "requirements": [
+      "The original default.xbe or a disc image. Python 3.11, Git, and Visual Studio 2022 with LLVM 21 on Windows, or Clang 18 on Linux.",
+      "License: GPL-2.0-or-later."
+    ],
+    "evidence_url": "https://github.com/OAleex/OpenShao/blob/0bd55e4cc27cdf1eae470b49226dfa404f8d785d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
