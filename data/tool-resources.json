@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pbr-decomp",
+    "name": "Pokémon Battle Revolution decompilation",
+    "url": "https://github.com/pbr-ret/pbr-decomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Pokémon Battle Revolution for the Wii, PAL RPBP01 revision 0. On 2026-10-12, 6,410 of 13,890 functions matched (21.05 percent), and 2.32 percent was in finished units linked into the build. python configure.py and ninja check main.dol against config/RPBP01/build.sha1. The disc image starts in orig/RPBP01/.",
+    "description_zh": "这是 Wii 版《宝可梦 战斗革命》PAL RPBP01 修订 0 的匹配反编译。2026-10-12 时，13,890 个函数中的 6,410 个已匹配（21.05%），已完成并链进构建的单元占 2.32%。python configure.py 和 ninja 会用 config/RPBP01/build.sha1 核对 main.dol。光盘镜像放在 orig/RPBP01/。",
+    "requirements": [
+      "Python 3 and Ninja. Linux and macOS run the Metrowerks compiler through wibo. Windows runs the compiler natively.",
+      "License: CC0. The Bluetooth stack headers in libs/RVL_SDK/include/private/bte/ are Apache-2.0."
+    ],
+    "evidence_url": "https://github.com/pbr-ret/pbr-decomp/blob/20b4d71a453fc99979624db2fb395dd00c52318f/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
