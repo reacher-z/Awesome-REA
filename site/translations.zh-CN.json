@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "pkmn-colosseum-decomp": {
+    "name": "Pokémon Colosseum 反编译",
+    "requirements": [
+      "把光盘镜像或已提取的光盘放在 orig/GC6E01/。然后运行 python configure.py 和 ninja。没有提供本地路径时，构建会下载固定版本的 dtk-template 工具。",
+      "许可证：逆向得到的代码和编写的工具为 MIT。README 写明原来的消息文本没有被重新许可。"
+    ]
   }
 }

@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pkmn-colosseum-decomp",
+    "name": "Pokémon Colosseum decompilation",
+    "url": "https://github.com/dougchansan/pkmn-colosseum",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a matching decompilation of Pokémon Colosseum for GameCube, NTSC-U GC6E01, using the dtk-template workflow. The README says all 8,677 tracked functions and all tracked code and data bytes match and link from source, across the DOL and 25 REL modules.",
+    "description_zh": "这是 GameCube 美版 Pokémon Colosseum（GC6E01）的匹配反编译，使用 dtk-template 流程。README 写明全部 8,677 个被跟踪的函数，以及全部被跟踪的代码和数据字节，都从源码匹配并链接，覆盖 DOL 和 25 个 REL 模块。",
+    "requirements": [
+      "Place a disc image or extracted disc at orig/GC6E01/. Then run python configure.py and ninja. The build downloads pinned dtk-template tools when local paths are not supplied.",
+      "License: MIT for the reverse-engineered code and authored tools. The README says the original message text is not relicensed."
+    ],
+    "evidence_url": "https://github.com/dougchansan/pkmn-colosseum/blob/ad02df4900c623d16d02b9a8ddd9c53ea0cd3db2/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
