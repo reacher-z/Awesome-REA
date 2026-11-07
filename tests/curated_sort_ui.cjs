@@ -82,14 +82,14 @@ const tests = {
     }
   },
   async controlRoundTripsThroughTheURL() {
-    const app = application('?q=fixture&target=app&kind=tool&layout=compact#catalog');
+    const app = application('?q=fixture&target=app&kind=tool&layout=cards#catalog');
     await app.api.load();
     app.api.state.visible = 30;
     choose(app, 'reviewed');
     assert.equal(app.api.state.order, 'reviewed');
     assert.equal(app.api.state.visible, 15, 'a new order starts again from the first results');
     assert.equal(param(app, 'order'), 'reviewed');
-    for (const [key, expected] of [['q', 'fixture'], ['target', 'app'], ['kind', 'tool'], ['layout', 'compact']]) assert.equal(param(app, key), expected);
+    for (const [key, expected] of [['q', 'fixture'], ['target', 'app'], ['kind', 'tool'], ['layout', 'cards']]) assert.equal(param(app, key), expected);
     assert.equal(app.context.location.hash, '#catalog');
     const shared = application(app.context.location.search + app.context.location.hash);
     await shared.api.load();

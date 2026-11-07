@@ -22,6 +22,8 @@
     none: (q) => `没有与“${esc(q)}”匹配的记录。`, near: '相近名称：', noneFilters: '没有符合这些筛选条件的记录。', clearSearch: '清除搜索', sources: (q) => `在仓库目录中搜索“${esc(q)}”`, discoveries: '查看未审核的发现', keyMove: '移动', keyOpen: '打开', keyClear: '清除', suggest: '推荐收录这个资源', clear: '清除筛选', loading: '正在载入索引…', failed: '索引载入失败，请检查网络后重试。',
     recent: '最近搜索', popular: '常用入口', groups: { tool: '工具', 'case-study': '案例', integration: '集成', other: '学习与参考', paper: '论文' }, papers: '论文',
     remove: (l) => `移除筛选：${l}`, page: (a, b) => `第 ${a}/${b} 页`, shelf: (a, n) => `${fmt(a)} / ${fmt(n)} 个案例`,
+    classLabel: '证据档位', classDetail: ['完整软件复现', '部分范围或非复现条目', '有代码和文档，缺演示或下载', '仅笔记或进度记录'],
+    unknownTitle: '复核时来源不可达或不可读', previewAlt: '项目公开文档中的演示截图', previewVideoAlt: '项目公开文档中演示视频的封面', demoNote: '有 demo · 暂无截图',
   } : {
     theme: 'Colour theme', system: 'system', light: 'light', dark: 'dark', reviewed: 'Reviewed', targets: 'Targets', copied: 'Copied',
     showing: (a, n) => `Showing <strong>${fmt(a)}</strong> of <strong>${fmt(n)}</strong>`, range: (a, b, n) => `Showing <strong>${fmt(a)}–${fmt(b)}</strong> of <strong>${fmt(n)}</strong>`,
@@ -29,6 +31,8 @@
     none: (q) => `Nothing in the catalogue matches “${esc(q)}”.`, near: 'Close names:', noneFilters: 'Nothing in the catalogue matches these filters.', clearSearch: 'Clear search', sources: (q) => `Search the repository directory for “${esc(q)}”`, discoveries: 'See the unreviewed discoveries', keyMove: 'move', keyOpen: 'open', keyClear: 'clear', suggest: 'Suggest this resource', clear: 'Clear filters', loading: 'Loading the index…', failed: 'The search index did not load. Check your connection and try again.',
     recent: 'Recent searches', popular: 'Popular', groups: { tool: 'Tools', 'case-study': 'Case studies', integration: 'Integrations', other: 'Learning and reference', paper: 'Papers' }, papers: 'Papers',
     remove: (l) => `Remove filter: ${l}`, page: (a, b) => `Page ${a} of ${b}`, shelf: (a, n) => `${fmt(a)} of ${fmt(n)} cases`,
+    classLabel: 'Evidence class', classDetail: ['full software reconstruction', 'partial scope or analysis entry', 'code & docs, no demo or download', 'notes only'],
+    unknownTitle: 'Source unavailable or unreadable at review time', previewAlt: "Demo screenshot from the project's public documentation", previewVideoAlt: "Demo video thumbnail from the project's public documentation", demoNote: 'Demo available · no screenshot',
   };
   const ISSUE = 'https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml';
   const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
@@ -154,7 +158,7 @@
     return out;
   }
   async function prep(raw) {
-    const res = await chunked(raw.r, ([id, name, k, tg, c, lead, host, ev, rev, added, feat, alias, conn]) => {
+    const res = await chunked(raw.r, ([id, name, k, tg, c, lead, host, ev, rev, added, feat, alias, conn, cls, st, prev, prevKind]) => {
       const targets = [...tg].map(Number);
       // GitHub evidence is stored as owner/repo/blob/<sha>/path; anything else keeps its full URL and a label.
       const seg = /^https?:/.test(ev) ? null : ev.split('/');
@@ -162,6 +166,7 @@
       const sha = seg && /^(blob|tree)$/.test(seg[2]) ? seg[3].slice(0, 7) : '';
       const tags = [raw.kindLabels[k], raw.kindPlural[k], raw.kinds[k], raw.categoryLabels[c], ...targets.map((i) => `${raw.targetLabels[i]} ${raw.targets[i]}`)].join(' ');
       const r = { type: 'r', id, name, k, kind: raw.kinds[k], targets, c, lead, repo, sha, ev, rev, added, feat, alias, conn,
+        cls, st, prev, prevKind,
         nName: norm(name), nAlias: norm(`${alias} ${repo}`), nTags: norm(tags), nDesc: norm(lead) };
       r.nw = words(r.nName); r.aw = words(r.nAlias); r.tw = words(r.nTags); r.dw = words(r.nDesc);
       return r;
@@ -283,6 +288,23 @@
     return r.type === 'p' ? `${X.targetCodes[r.t]}·PAPR` : `${X.targetCodes[r.targets[0]]}·${X.kindCodes[r.k]}`;
   }
   const href = (r) => (r.type === 'p' ? `${P}/papers/${r.id}/` : `${P}/resources/${r.id}/`);
+  function classChip(r) {
+    if (r.st === 'unknown') return `<span class="card-class card-class-unknown" title="${esc(T.unknownTitle)}">?</span>`;
+    if (r.cls == null || r.cls < 0) return '';
+    const detail = T.classDetail[r.cls] || '';
+    return `<span class="card-class card-class-${r.cls}" title="${esc(`${T.classLabel} ${r.cls} · ${detail}`)}">C${r.cls}</span>`;
+  }
+  function previewHTML(r) {
+    if (r.prev) {
+      const video = r.prevKind === 'video';
+      return `<figure class="card-preview">${video ? '<span class="card-preview-play" aria-hidden="true">▶</span>' : ''}`
+        + `<img src="${esc(r.prev)}" alt="${esc(video ? T.previewVideoAlt : T.previewAlt)}" loading="lazy" decoding="async"></figure>`;
+    }
+    if (r.prevKind === 'demo') {
+      return `<figure class="card-preview card-preview-demo"><span class="card-preview-play" aria-hidden="true">▶</span><span>${esc(T.demoNote)}</span></figure>`;
+    }
+    return '';
+  }
   function cardHTML(r, toks) {
     const X = IDX.raw;
     const t0 = r.targets[0];
@@ -292,7 +314,8 @@
     const ev = /^https?:/.test(r.ev) ? r.ev : `https://github.com/${r.ev}`;
     return `<li class="card${r.kind === 'case-study' ? ' is-case' : ''}" id="r-${esc(r.id)}" data-id="${esc(r.id)}"><article class="card-face">`
       + `<p class="callno" title="${esc(label)}"><span class="vh">${esc(label)}: </span><span aria-hidden="true">${callno(r)}</span></p>`
-      + `<h3 class="card-name"><a class="stretch" href="${href(r)}">${hl(r.name, toks)}</a></h3><p class="card-desc">${hl(r.lead, toks)}</p>`
+      + `<h3 class="card-name"><a class="stretch" href="${href(r)}">${hl(r.name, toks)}</a>${classChip(r)}</h3>`
+      + `<p class="card-desc">${hl(r.lead, toks)}</p>${previewHTML(r)}`
       + `<ul class="card-targets" aria-label="${T.targets}">${tg}</ul>`
       + `<p class="stamp">${ico('check')}<span>${T.reviewed} <time datetime="${r.rev}">${r.rev}</time></span>`
       + `<a class="ev" href="${esc(ev)}" rel="noopener"><span class="ev-repo">${esc(r.repo)}</span>${r.sha ? `<span class="sha">@${esc(r.sha)}</span>` : ''}</a></p></article></li>`;

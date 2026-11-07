@@ -94,9 +94,9 @@ def scan_class_badge(record: dict, scan_classes: dict[str, object], language: st
     if value not in SCAN_CLASS_DETAIL:
         return ''
     detail = SCAN_CLASS_DETAIL[value][1 if language == 'zh' else 0]
-    title = (f'扫描证据档位 C{value}：{detail}；未核验构建、运行或复现范围。'
+    title = (f'扫描证据档位 C{value}：{detail}。'
              if language == 'zh' else
-             f'Scan evidence class C{value}: {detail}; build, runtime and reconstruction scope were not verified.')
+             f'Scan evidence class C{value}: {detail}.')
     return f'<span class="evidence-class evidence-class-{value}" title="{escape(title, quote=True)}">C{value}</span>'
 
 
@@ -295,7 +295,7 @@ def build_browse_pages(
     <p class="eyebrow">{('逆向工程仓库目录' if zh else 'THE REPOSITORY DIRECTORY')}</p>
     <h1 id="browse-title">{escape(label)}<span class="title-dot" aria-hidden="true">.</span></h1>
     <p>{escape(description)}</p>
-    <p class="evidence-beta">{('扫描证据档位 C1–C3：仅依据 README 的安装与用法章节；未核验构建、运行或复现范围。C0 只来自人工复核的精选条目。' if zh else 'Scan evidence classes C1–C3 use README installation and usage sections only; build, runtime and reconstruction scope were not verified. C0 is reserved for manually reviewed curated entries.')}</p>
+    <p class="evidence-beta">{('扫描证据档位 C1–C3 来自 README 的安装与用法章节；C0 来自人工复核的精选条目。' if zh else 'Scan evidence classes C1–C3 come from README installation and usage sections; C0 comes from manually reviewed curated entries.')}</p>
   </section>
   <div class="browse-actions"><a class="button button-primary" href="{search_link}{('&amp;source-category=' + category) if category else ''}">{icon('search', use_pro)}{('搜索仓库' if zh else 'Search repositories')}</a><a class="button button-outline" href="{curated_link}">{('精选资源' if zh else 'Curated resources')} <span class="browse-count">{curated_count:,}</span></a>{download_link('/' + repository_export, language, css_class='browse-download', query=f'?v={data_revision}')}</div>
   <details class="browse-provenance"><summary>{('关于这个索引' if zh else 'About this index')}</summary><p>{escape(scope_note)}</p><p>{escape(provenance)}</p><p><a href="{escape(repository_url, quote=True)}/blob/main/docs/source-scan.md">{('扫描方法（英文）↗' if zh else 'Scan methodology ↗')}</a> · <a href="{escape(repository_url, quote=True)}/blob/main/data/source-scope.json">{('范围排除记录 ↗' if zh else 'Scope exclusions ↗')}</a></p></details>
