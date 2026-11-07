@@ -4,7 +4,7 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
@@ -12,7 +12,7 @@
 - [Game · 游戏](#game) (239)
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
-- [Firmware and Hardware · 固件与硬件](#firmware) (19)
+- [Firmware and Hardware · 固件与硬件](#firmware) (20)
 - [Protocol · 协议](#protocol) (91)
 
 <a id="website"></a>
@@ -404,6 +404,7 @@
 - [**TeddyCloud：可自托管的 Toniebox 云端替代服务器**](https://github.com/toniebox-reverse-engineering/teddycloud) - 以可自托管的 C 服务器重新实现 Toniebox 所连接的 Boxine 云服务，使盒子能在本地获取音频、设置和无线下发内容，同时由用户控制哪些数据发往厂商。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/teddycloud-toniebox-server-case/)</sub>
 - [**OpenDMCUFirm：重新实现的 Wii U DMCU 显示固件**](https://github.com/GaryOderNichts/OpenDMCUFirm) - 用 C 语言重新实现 Wii U 的 DMCU 固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendmcufirm-wii-u-dmcu-firmware-case/)</sub>
 - [**reflecticon-224：在模拟硬件上运行 Lexicon 224 混响器固件**](https://github.com/joelanders/reflecticon-224) - 模拟 Lexicon 224、224X 与 224XL 数字混响器，使其原厂固件能在浏览器页面或 JUCE 插件中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reflecticon-224-lexicon-emulation-case/)</sub>
+- [**Open Steam Controller：逆向工程得来的 Steam Controller 固件**](https://github.com/greggersaurus/OpenSteamController) - 记录对 Valve 初代 Steam Controller 的逆向工程：作者在修改版 pinkySim 模拟器中运行其 LPC11U37F 主处理器固件并记录硬件访问，再据此编写替代固件。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/open-steam-controller-firmware-case/)</sub>
 - [**Supermodel：Real3D Pro-1000 图像生成器的初步模拟**](https://github.com/trzy/Supermodel) - 为 Supermodel 街机模拟器加入对 Real3D Pro-1000 的模拟。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/supermodel-real3d-pro1000-emulation-case/)</sub>
 - [**flipper-telink：Tuya Zigbee 遥控器的替换固件**](https://github.com/ngxson/flipper-telink) - 一款 Flipper Zero 应用，以位操作驱动 Telink 的 SWire 调试接口，用于转储并重刷 TLSR825x Zigbee 设备；仓库还附有对转储固件的静态分析笔记，以及为其中两款设备全新编写的固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/flipper-telink-tuya-remote-firmware-case/)</sub>
 - [**ThinkPad IMX471：为 Linux 恢复相机调校信息**](https://github.com/cschalle/mipi-fixes-x1-aura) - 从 Intel Windows 驱动包中恢复选定的相机调校结构，用于修复一个 ThinkPad 型号在 Linux 下的图像采集。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/thinkpad-imx471-camera-case/)</sub>

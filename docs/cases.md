@@ -4,7 +4,7 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
@@ -12,7 +12,7 @@
 - [Game](#game) (239)
 - [App](#app) (62)
 - [Native Binary](#native-binary) (7)
-- [Firmware and Hardware](#firmware-and-hardware) (19)
+- [Firmware and Hardware](#firmware-and-hardware) (20)
 - [Protocol](#protocol) (91)
 
 <a id="website"></a>
@@ -404,6 +404,7 @@
 - [**TeddyCloud: a self-hosted replacement for the Toniebox cloud**](https://github.com/toniebox-reverse-engineering/teddycloud) - Reimplements the Boxine cloud services a Toniebox talks to as a self-hosted C server, so the box can fetch audio, settings and over-the-air content locally while the owner controls what reaches the manufacturer. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/teddycloud-toniebox-server-case/)</sub>
 - [**OpenDMCUFirm: a reimplemented Wii U DMCU display firmware**](https://github.com/GaryOderNichts/OpenDMCUFirm) - Reimplements in C the firmware of the Wii U’s DMCU, the M68HC11-compatible display microcontroller in its AMD graphics controller, which in Wii mode reads the Video Interface state and configures display output, deinterlacing, scaling and overscan. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opendmcufirm-wii-u-dmcu-firmware-case/)</sub>
 - [**reflecticon-224: running Lexicon 224 reverb firmware on emulated hardware**](https://github.com/joelanders/reflecticon-224) - Emulates the Lexicon 224, 224X and 224XL digital reverbs so that their own firmware runs in a browser page or a JUCE plugin. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reflecticon-224-lexicon-emulation-case/)</sub>
+- [**Open Steam Controller: reverse-engineered Steam Controller firmware**](https://github.com/greggersaurus/OpenSteamController) - Documents the reverse engineering of Valve's original Steam Controller, whose LPC11U37F main-processor firmware the author ran in a modified pinkySim simulator to log its hardware accesses, and uses the findings to write replacement firmware. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/open-steam-controller-firmware-case/)</sub>
 - [**Supermodel: initial Real3D Pro-1000 image-generator emulation**](https://github.com/trzy/Supermodel) - Adds emulation of Real3D’s Pro-1000, the SCSI-attached image generator from which Sega’s Model 3 graphics hardware derives, to the Supermodel arcade emulator. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/supermodel-real3d-pro1000-emulation-case/)</sub>
 - [**flipper-telink: replacement firmware for Tuya Zigbee remotes**](https://github.com/ngxson/flipper-telink) - A Flipper Zero app that bit-bangs Telink’s SWire debug interface to dump and reflash TLSR825x Zigbee devices, with static-analysis notes on the dumps and freshly written firmware for two of them. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/flipper-telink-tuya-remote-firmware-case/)</sub>
 - [**ThinkPad IMX471: recovering camera tuning for Linux**](https://github.com/cschalle/mipi-fixes-x1-aura) - Recovers selected camera-tuning structures from an Intel Windows driver package and uses them to repair Linux image capture on one ThinkPad model. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/thinkpad-imx471-camera-case/)</sub>
