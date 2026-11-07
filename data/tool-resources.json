@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "klonoa-dtp-recomp",
+    "name": "Klonoa: Door to Phantomile recompiled",
+    "url": "https://github.com/TechnicallyComputers/Klonoa-Door-to-Phantomile",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This is a static recompilation of Klonoa: Door to Phantomile, the 1997 Namco platform game, built on psxrecomp and recomp-ui. The documented region is USA.",
+    "description_zh": "这是 1997 年南梦宫平台游戏 Klonoa: Door to Phantomile 的静态重编译，基于 psxrecomp 和 recomp-ui。文档中的区域是美版。",
+    "requirements": [
+      "The player supplies the original disc. Disc images under disc/ are ignored by git. The documented configure command passes game.toml and a cue file.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/TechnicallyComputers/Klonoa-Door-to-Phantomile/blob/99a7ccc15375f0a7773f8ab5a607caeb9c85e02d/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
