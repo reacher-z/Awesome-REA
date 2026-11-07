@@ -36543,6 +36543,7 @@
     "description_zh": "依据原始二进制文件还原《辐射 2》Windows 引擎的 C 源码，力求连同原有缺陷在内尽量贴近原版。构建出的 fallout2-re.exe 可直接替换 fallout2.exe，运行使用者自己的 GOG 或 Steam 版游戏。README 称仍有少数非关键函数尚未反编译，也不主张与原文件逐字节一致；这份代码后来成为独立的 Fallout 2 Community Edition 的基础，作者本人则认为向公众广泛发布在法律上存疑。",
     "evidence_url": "https://github.com/alexbatalov/fallout2-re/blob/b135fc46ef40c4aecd156f3cebcf88ec531bb8ac/README.md",
     "verified_at": "2026-10-19",
+    "added_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "The reviewed main pin, a README update of 2023-01-20, is the latest commit; the only release is a 2022-05-03 nightly zip of the project’s own fallout2-re.exe, and README sends players to Fallout 2 Community Edition, which it says is based on this project. README calls the goal of restoring the original source largely achieved, with some Fallout 1 leftovers and partly used APIs not yet decompiled. Converting the code to C89 for the Watcom compiler, which might allow binary-identical builds, is described as low priority and probably never to be completed.",
