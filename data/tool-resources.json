@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "picolove",
+    "name": "PICOLOVE: a LÖVE implementation of the PICO-8 API",
+    "url": "https://github.com/picolove/picolove",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "software",
+    "reconstruction_method": "engine-reimplementation",
+    "description_en": "Implementation of the PICO-8 API in LÖVE, for running PICO-8 games and programs with free and open-source software. The README says it can publish those games on other platforms, including mobile packaging, and that it removes PICO-8's CPU, memory, and code-size limits.",
+    "description_zh": "在 LÖVE 中实现的 PICO-8 API，用来用自由开源软件运行 PICO-8 游戏和程序。README 写明可以把这些游戏发布到其他平台，包括移动端打包，并且去掉了 PICO-8 的 CPU、内存和代码体积限制。",
+    "evidence_url": "https://github.com/picolove/picolove/blob/97075db4a8e50107ed3e2a864667b6ebe25cdbbf/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires LÖVE 11.5 by default, or 0.10.2 or 0.9.2.",
+      "The reviewed page states no license."
+    ]
   }
 ]
