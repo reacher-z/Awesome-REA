@@ -36528,5 +36528,33 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "wipeoutxl-recomp",
+    "name": "Wipeout XL Recompiled: PSXRecomp port of Wipeout XL",
+    "url": "https://github.com/NJH-1001/Wipeout2K97XL",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "Wipeout XL Recompiled is an unofficial PSXRecomp project for Wipeout XL (USA), SCUS-94351. Setup kits for Windows 10/11 x64, Linux x64, and macOS 15 on Intel and Apple Silicon generate the game code on the user's machine from a Redump-style CUE and all 12 BIN tracks. The runtime uses OpenBIOS and SDL3.",
+    "description_zh": "Wipeout XL Recompiled 是针对美国版 Wipeout XL（SCUS-94351）的非官方 PSXRecomp 项目。Windows 10/11 x64、Linux x64，以及 Intel 和 Apple Silicon 上的 macOS 15 安装包都在用户机器上，根据 Redump 风格的 CUE 和全部 12 条 BIN 音轨生成游戏代码。运行时使用 OpenBIOS 和 SDL3。",
+    "evidence_url": "https://github.com/NJH-1001/Wipeout2K97XL/blob/464def7d7d95d46a548863475cdccee1e1ea31b3/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "A legally obtained USA disc image: a Redump-style CUE and all 12 BIN tracks. Other regions and revisions are not supported. Python 3.11 or newer is required. The wizard can obtain CMake, Ninja, and Clang.",
+      "The README says the 0.2.0 Windows kit has user-tested racing and controllers, the Linux kit has native CI and a prior release tested on Steam Deck by the owner, and macOS gameplay remains unverified.",
+      "GitHub's license metadata for this repository is empty."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "license"
+    ],
+    "verification": "source-reviewed"
   }
 ]
