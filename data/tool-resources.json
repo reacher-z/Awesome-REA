@@ -36528,5 +36528,28 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "cv64-decomp-case",
+    "name": "Castlevania 64 decompilation",
+    "url": "https://github.com/k64ret/cv64",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "matching-decompilation",
+    "class": "game",
+    "description_en": "This is a work-in-progress decompilation of Castlevania for the Nintendo 64. The aim is C that compiles to assembly matching the ROM. The README says hardcoded addresses still limit large-scale mods, so the tree is useful as documentation of the game code.",
+    "description_zh": "这是任天堂 64《恶魔城》的进行中反编译。目标是编译后与 ROM 中汇编匹配的 C。README 写明硬编码地址仍然限制大规模模组，因此目前这棵树适合作为游戏代码的文档。",
+    "requirements": [
+      "Place a Castlevania 64 (USA v1.0) ROM at baserom.z64.",
+      "Configure with cmake -S . -B build -G Ninja, or Unix Makefiles. If the build fails, the README says to set disassemble_all to True in castlevania.yaml, clean, build, then set it back to False and build again.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/k64ret/cv64/blob/5307217aa772019b7576cad3cb2c545e88e0394a/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
