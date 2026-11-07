@@ -4,13 +4,13 @@
 
 [← Back to the README](../README.md#resources) · **English** · [简体中文](cases.zh-CN.md)
 
-**431 case studies**, grouped by section.
+**432 case studies**, grouped by section.
 
 ## Contents
 
 - [Website](#website) (13)
 - [Game](#game) (239)
-- [App](#app) (62)
+- [App](#app) (63)
 - [Native Binary](#native-binary) (7)
 - [Firmware and Hardware](#firmware-and-hardware) (19)
 - [Protocol](#protocol) (91)
@@ -369,6 +369,7 @@
 - [**Notion: trace the clipboard bridge**](https://rea.tools/showcase/notion/) - Trace a packaged Electron clipboard path using REA findings and separate source inspection; the dynamic wrapper remains a stated limit. <sub>Case study · Official REA · [Full entry](https://awesomerea.org/resources/rea-notion-case/)</sub>
 - [**PicoPrint: LX-D02 printer investigation**](https://github.com/bigtower17/picoprint) - The author describes REA-assisted Android investigation followed by separate Hermes decompilation to support a Windows BLE printer. <sub>Case study · Mixed workflow · Also: Protocol · [Full entry](https://awesomerea.org/resources/picoprint-rea-investigation/)</sub>
 - [**ReaCut: video-editor reconstruction**](https://github.com/Xiangyu-CAS/rea-capcut) - An independent video editor whose authors document REA-assisted investigation of Jianying/CapCut behavior and project formats. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/reacut-reconstruction/)</sub>
+- [**Pocket Libre: reconstructing the Pocket AI voice recorder's BLE and Wi-Fi transfer protocol**](https://github.com/shahcolate/pocket-libre) - Replaces the vendor app for the Pocket AI voice recorder (PKT01) with a Python command-line tool and local web interface that pull recordings off the device and process them on the user's machine. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/pocket-libre-recorder-protocol-case/)</sub>
 
 <a id="native-binary"></a>
 ## Native Binary
