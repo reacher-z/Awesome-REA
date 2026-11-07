@@ -11023,5 +11023,13 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "terraria-ogc-case": {
+    "name": "TerrariaOGC",
+    "requirements": [
+      "玩家提供官方旧世代主机版的资源。Windows 构建步骤在 WINBUILD.md。其他平台没有直接支持。",
+      "README 写明可以构建 1.00 和 1.01。1.03 和 1.09 仍列为后续版本。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }
