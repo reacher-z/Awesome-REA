@@ -4,7 +4,7 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**432 个案例**，按分区列出。
 
 ## 目录
 
@@ -13,7 +13,7 @@
 - [App · 应用](#app) (62)
 - [Native Binary · 原生二进制](#native-binary) (7)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
-- [Protocol · 协议](#protocol) (91)
+- [Protocol · 协议](#protocol) (92)
 
 <a id="website"></a>
 ## Website · 网站
@@ -504,4 +504,5 @@
 - [**hw-harness：扫描仪 USB 协议调查**](https://github.com/cschalle/hw-harness) - 记录作者报告的扫描仪调查：比较厂商驱动的 USB 控制传输与 Linux 驱动的记录，推断初始化、时序及分辨率参数。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/hw-harness-reference-case/)</sub>
 - [**NJFE：用于电脑检查的 Soulear 相机协议桥接**](https://github.com/WildweaselMS/NJFE) - 在 ESP32-C3 桥接器与 Python 电脑查看器中复用 otoscope 经逆向得到的 i4season／Soulear 协议。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/njfe-ear-camera-bridge-case/)</sub>
 - [**open-appleremote：Siri Remote 协议重建**](https://github.com/a-funk/open-appleremote) - 重建第一代 Siri Remote 在 Linux 上的蓝牙报告，解析按键、触摸与 tvOS 风格手势。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/open-appleremote-case/)</sub>
+- [**Ember Mug：逆向分析得出的低功耗蓝牙特征**](https://github.com/orlopau/ember-mug) - 记录 Ember 智能马克杯的低功耗蓝牙 GATT 接口，依据一只 Ember Mug 2 和反编译的 Android 版 Ember 应用推断得出。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ember-mug-ble-protocol-case/)</sub>
 <!-- END GENERATED CASES -->
