@@ -36528,5 +36528,31 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "scumm-decompile-archive",
+    "name": "SCUMM Decompilation Archive",
+    "url": "https://github.com/EricOakford/SCUMM-Decompilation-Archive",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "reconstruction_method": "decompilation",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "class": "game",
+    "description_en": "Eric Oakford's archive collects decompiled scripts for Lucasfilm and Humongous Entertainment SCUMM games. Current files come from NUTcracker, which the README says supports script versions v5 through v8, including the Humongous games. The README says the author does not know whether the scripts can be recompiled.",
+    "description_zh": "Eric Oakford 的归档收集 Lucasfilm 与 Humongous Entertainment 的 SCUMM 游戏反编译脚本。README 写明当前文件由 NUTcracker 生成，支持 v5 到 v8，包括 Humongous 的游戏。README 也写明作者尚不清楚这些脚本能否重新编译。",
+    "evidence_url": "https://github.com/EricOakford/SCUMM-Decompilation-Archive/blob/30760875a7b7dec71d036d72e63ef49e7d1afd11/README.md",
+    "verified_at": "2026-11-07",
+    "requirements": [
+      "The README says NUTcracker currently decompiles SCUMM v5 through v8, including Humongous Entertainment games, and that earlier versions are still hoped for.",
+      "The README says the author does not know how, or whether, the decompiled scripts can be recompiled."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits"
+    ],
+    "verification": "source-reviewed"
   }
 ]

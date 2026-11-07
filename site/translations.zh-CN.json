@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "scumm-decompile-archive": {
+    "name": "SCUMM 脚本反编译归档",
+    "requirements": [
+      "README 写明 NUTcracker 目前反编译 SCUMM v5 到 v8，包括 Humongous Entertainment 的游戏，更早版本仍在期待中。",
+      "README 写明作者尚不清楚这些反编译脚本能否、以及如何重新编译。"
+    ]
   }
 }
