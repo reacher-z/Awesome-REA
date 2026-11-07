@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "helpdeco": {
+    "name": "HELPDECO",
+    "requirements": [
+      "用帮助文件名运行 HELPDECO。文件写在当前目录。选项 -y 会直接覆盖已有文件。",
+      "许可证：GPL-2.0-or-later。"
+    ]
   }
 }
