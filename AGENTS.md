@@ -35,3 +35,11 @@ python3 scripts/validate.py
 Follow CONTRIBUTING.md for paper, case-ledger, code and site checks, including `python3 scripts/build_production.py`. Run the full unit suite for code changes; do not run or install an upstream resource just to mark it source-reviewed.
 
 Use the existing PR template. State the problem and resulting behavior, canonical resource URL, pinned evidence, review date, relevant limits and checks actually run. Push to a fork if you lack upstream write access. Creating an issue or PR is a public submission: respect the user's authorization and the target repository's contribution rules. Passing checks does not authorize merging or publication.
+
+## Visual identity
+
+Style: "the archive's specimen drawer". Warm, quiet and hand-made; technical drawings, drawer tabs, index cards and stamps on cream paper. Titles use EB Garamond; body and data use IBM Plex Sans and IBM Plex Mono.
+
+Palette: cream `#FAF3DD` (main), raised cards `#FFFAEB`, sage panels `#D8E2DC`, rose `#F4ACB7` (signature), pink `#FFCAD4` for marks, with ink `#212632`, link `#755B63`, primary buttons `#674D55` and footer `#4A3740`. Mauve `#9D8189` is for fills and type of 24 px or larger. The dark theme uses `#1C1316` with cream text and rose links. README and website share this palette. Awesome CUA is the sister site: same type and spacing logic, its own palette.
+
+Art is hand-authored inline SVG with real meaning. Avoid decorative gradients, glass effects, stock illustration and emoji. Every text pair meets WCAG AA in light and dark. Change colours through the design tokens in `site/shell.css`.
