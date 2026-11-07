@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "killzone-liberation-recomp": {
+    "name": "杀戮地带：解放重编译",
+    "requirements": [
+      "需要 Windows 10 或 11 x64、Python 3.11 或更新版本、CMake 3.25 或更新版本、Ninja，以及带 clang-cl 的 Visual Studio 2022 生成工具。",
+      "许可证：项目编写的代码和源自 PPSSPP 的代码为 GPL-2.0-or-later。链接后的二进制文件还包含 GPL-3.0-or-later 的 libkirk。"
+    ]
   }
 }
