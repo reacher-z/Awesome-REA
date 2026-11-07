@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "firered-leafgreen-recomp",
+    "name": "FireRed and LeafGreen recompilation",
+    "url": "https://github.com/mstan/FireRedLeafGreenRecomp",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles Pokémon FireRed and Pokémon LeafGreen, USA version 1.0, to native PC with gbarecomp. FireRed SHA-1 is 41cb23d8dccc8ebd7c649cd8fbb58eeace6e2fdc. LeafGreen SHA-1 is 574fa542ffebb14be69902d1d36f1ec0a4afd71e. The README says both games boot through the BIOS intro into gameplay. Code the static recompiler has not covered runs in an interpreter the first time, then is JIT-compiled and remembered.",
+    "description_zh": "该项目用 gbarecomp 把美版 1.0 的宝可梦火红和叶绿静态重编译到 PC。火红的 SHA-1 为 41cb23d8dccc8ebd7c649cd8fbb58eeace6e2fdc。叶绿的 SHA-1 为 574fa542ffebb14be69902d1d36f1ec0a4afd71e。README 写明两款游戏都能从 BIOS 开场进入游戏。静态重编译还没覆盖的代码第一次用解释器运行，然后被即时编译并记住。",
+    "requirements": [
+      "Download the FireRedRecomp or LeafGreenRecomp Windows x64 zip from Releases and supply the matching USA ROM. The runtime refuses a ROM whose SHA-1 does not match.",
+      "License: PolyForm Noncommercial 1.0.0."
+    ],
+    "evidence_url": "https://github.com/mstan/FireRedLeafGreenRecomp/blob/03ab83043b0695987c943cdf8f0eccb95b4f9dab/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
