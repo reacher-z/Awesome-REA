@@ -12817,5 +12817,53 @@
     "date_basis_zh": "arXiv 首次提交日期。",
     "metadata_notes_zh": "日期和发表场所来自 arXiv 记录。",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "paper-droidsentry-survey",
+    "title": "DroidSentry: A Survey of Android Malware Dynamic Analysis Techniques",
+    "authors": [
+      "Amritha R.",
+      "Shashank Gowda U.",
+      "Rudresh S C.",
+      "Sanketh Kumar K R.",
+      "Darshan K R"
+    ],
+    "year": 2026,
+    "publication_date": "2026-05",
+    "date_precision": "month",
+    "date_basis": "May 2026 issue line on the fetched PDF (Volume XIII, Issue V). Crossref records the year only.",
+    "venue": "International Journal of Research and Scientific Innovation",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.51244/ijrsi.2026.1305000168",
+    "url": "https://doi.org/10.51244/ijrsi.2026.1305000168",
+    "pdf_url": "https://rsisinternational.org/journals/ijrsi/uploads/vol13-iss5-pg1876-1885-202606_pdf.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "app"
+    ],
+    "description_en": "This survey reviews dynamic analysis techniques for Android malware, set against static inspection that the opening pages say is strained by obfuscation, native code, and runtime payloads. The fetched PDF places the article in the May 2026 issue.",
+    "description_zh": "这篇综述讨论安卓恶意软件的动态分析技术。首页认为静态检查会受到混淆、原生代码和运行时载荷的限制。已获取 PDF 把文章放在 2026 年 5 月这一期。",
+    "scope_limitations_en": "Author names follow the byline on the fetched PDF, without the courtesy title printed before the first name. Crossref's trailing comma on one name was not kept. No dynamic analysis run was repeated.",
+    "scope_limitations_zh": "作者姓名依据已获取 PDF 的署名，去掉了第一个名字前的称呼。Crossref 里某个姓名末尾的逗号没有保留。没有重复动态分析实验。",
+    "why_fits_en": "Dynamic analysis of Android apps is a reverse-engineering method for inspecting behavior that static views miss.",
+    "why_fits_zh": "对安卓应用做动态分析，是用来观察静态视图看不到的行为的逆向工程方法。",
+    "evidence_urls": [
+      "https://rsisinternational.org/journals/ijrsi/uploads/vol13-iss5-pg1876-1885-202606_pdf.pdf",
+      "https://api.crossref.org/works/10.51244/ijrsi.2026.1305000168",
+      "https://doi.org/10.51244/ijrsi.2026.1305000168"
+    ],
+    "metadata_notes": "The month comes from the PDF issue line, not from a day that the PDF does not state.",
+    "kind": "research",
+    "verified_at": "2026-11-04",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "runtime_tested": false,
+    "title_zh": "DroidSentry：安卓恶意软件动态分析技术综述",
+    "date_basis_zh": "已获取 PDF 的期次行为 2026 年 5 月（第 XIII 卷第 V 期）。Crossref 只登记了年份。",
+    "metadata_notes_zh": "月份来自 PDF 的期次行，PDF 没有给出的具体日没有写入。"
   }
 ]

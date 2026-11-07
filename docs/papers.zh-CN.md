@@ -4,7 +4,7 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -14,7 +14,7 @@
 - [反编译与符号恢复](#papers-decompilation) (110)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
-- [应用重建与分析](#papers-app-reconstruction) (16)
+- [应用重建与分析](#papers-app-reconstruction) (17)
 - [固件分析与重托管](#papers-firmware-analysis) (27)
 - [协议推断与分析](#papers-protocol-analysis) (22)
 
@@ -222,6 +222,7 @@
 - [**从失效代码与静态需求到可运行引擎：利用编程智能体恢复软件**](https://arxiv.org/abs/2609.36161) - ReviveBench 利用隐藏的参考检查，评估无法运行的软件修复，以及依据公开规范、在无法访问目标源码时实现限定范围的计算与事务引擎；同时审计可能误收或误拒重建结果的评分缺陷。 <sub>原题：*From Dead Code and Static Requirements to Working Engines: Software Revival with Coding Agents* · arXiv 2026 · 预印本 · Tianyu Liu 等 · [PDF](https://arxiv.org/pdf/2609.36161v1) · [完整条目](https://awesomerea.org/zh/papers/paper-revivebench/)</sub>
 - [**从代码到需求：企业规模的智能体业务规则逆向恢复**](https://arxiv.org/abs/2609.22719) - 利用七个智能体与人工审查，从源码、测试、配置及文档恢复业务需求；企业迁移案例以生产缺陷记录核对提取的规则。 <sub>原题：*From Code to Requirements: Agentic Reverse Engineering of Business Rules at Enterprise Scale* · arXiv 2026 · 预印本 · Garima Agrawal 等 · [PDF](https://arxiv.org/pdf/2609.22719v1) · [完整条目](https://awesomerea.org/zh/papers/paper-agentic-business-rule-recovery/)</sub>
 - [**从代码生成需求是否可行：一份经验报告**](https://doi.org/10.1109/REW72749.2026.00023) - 研究以 RAG 和人工监督从两个项目恢复需求与代码追踪关系的流程，并测试刻意生成未实现需求及需求异味（潜在质量问题），揭示验证与标注的困难。 <sub>原题：*On the Viability of Requirements Generation from Code: An Experience Report* · IEEE REW 2026 / AIRE · 会议论文 · Alexander Korn 等 · [PDF](https://arxiv.org/pdf/2606.25550v1) · [完整条目](https://awesomerea.org/zh/papers/paper-requirements-generation-viability/)</sub>
+- [**DroidSentry：安卓恶意软件动态分析技术综述**](https://doi.org/10.51244/ijrsi.2026.1305000168) - 这篇综述讨论安卓恶意软件的动态分析技术。 <sub>原题：*DroidSentry: A Survey of Android Malware Dynamic Analysis Techniques* · International Journal of Research and Scientific Innovation 2026 · 期刊论文 · Amritha R. 等 · [PDF](https://rsisinternational.org/journals/ijrsi/uploads/vol13-iss5-pg1876-1885-202606_pdf.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-droidsentry-survey/)</sub>
 - [**从视觉组件到界面代码：借助工具证据的高效生成**](https://arxiv.org/abs/2608.12611) - WidgetGen 将组件截图重建为 React JSX，利用 OCR 文本框与调色板支持整体布局推理及可选图表生成，最后渲染一次；生成的渲染图与代码配对还用于模型微调。 <sub>原题：*From Visual Widgets to UI Code: Efficient Tool-Grounded Generation* · MUCG <span>@</span> ECCV 2026 · 会议已接收 · Houston H. Zhang 等 · [PDF](https://arxiv.org/pdf/2608.12611v1) · [完整条目](https://awesomerea.org/zh/papers/paper-widgetgen/)</sub>
 - [**智能体逆向工程：利用发现智能体从输入输出行为恢复代码**](https://arxiv.org/abs/2605.15334) - 通过 LLM 引导的演化搜索、逐步展示的样例、由简到繁的修改及执行错误反馈，从输入输出观察合成可执行程序；主动变体自行选择输入并查询隐藏的参考程序。 <sub>原题：*Agentic Reverse Engineering: From I/O to Code with Discovery Agent* · NeurIPS 2026 · 会议已接收 · Yihong Dong 等 · [PDF](https://arxiv.org/pdf/2605.15334v2) · [代码](https://github.com/JiaruQian/IO2Code) · [完整条目](https://awesomerea.org/zh/papers/paper-dio-agent/)</sub>
 - [**UIOrchestra：通过多智能体系统将 UI 设计转换为高保真代码**](https://aclanthology.org/2025.findings-emnlp.150/) - UIOrchestra 通过布局描述、代码生成及渲染图像比较三个智能体，将静态移动 UI 设计转换为 React/CSS。 <sub>原题：*UIOrchestra: Generating High-Fidelity Code from UI Designs with a Multi-agent System* · Findings of EMNLP 2025 · 会议论文 · Chuhuai Yue 等 · [PDF](https://aclanthology.org/2025.findings-emnlp.150.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-uiorchestra/)</sub>
