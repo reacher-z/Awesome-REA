@@ -681,7 +681,7 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 - [Full repository index JSON]({site_url}/source-index.json): All scan records, original descriptions, translations, hashes, and exclusions; omit scope_status=excluded when reconstructing the browse list.
 - [Browsable repository JSON]({site_url}/source-browser.json): Compact visible records. Follow `meta.full_export` for the complete companion and verify `meta.full_export_sha256`; the metadata selects the preserved baseline or a ready published selection.
 - [Paper metadata JSON]({site_url}/papers.json): The separate research bibliography.
-- [Hugging Face dataset mirror](https://huggingface.co/datasets/AgPerry/awesome-rea): Read-only Parquet and JSONL mirror of these exports, one config per record type (resources, papers, cases, repositories, discoveries, leads), refreshed every 2 hours; repositories, discoveries and leads are unreviewed.
+- [Hugging Face dataset mirror](https://huggingface.co/datasets/TIGER-Lab/AwesomeREA): Parquet and JSONL exports for resources, papers, cases, repositories, discoveries and leads, refreshed every 2 hours.
 - [Public source repository]({repository_url}): Bilingual READMEs, contribution rules, code, and data definitions.
 - [Scan methodology]({repository_url}/blob/main/docs/source-scan.md): Collection and scope-review methods.
 

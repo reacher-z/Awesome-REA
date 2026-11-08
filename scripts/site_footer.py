@@ -30,7 +30,7 @@ DOWNLOADS = {
 }
 REPOSITORY_EXPORTS = ('source-index.json', 'source-published.json')
 TAGLINE = ('A resource collection, updated in public.', '资源合集，在公开协作中持续更新。')
-HUGGING_FACE_URL = 'https://huggingface.co/datasets/AgPerry/awesome-rea'
+HUGGING_FACE_URL = 'https://huggingface.co/datasets/TIGER-Lab/AwesomeREA'
 FOOTER_TEXT = (
     {'sections': 'More from the collection', 'catalogue': 'Catalogue', 'data': 'Data', 'project': 'Project',
      'discoveries': 'Unreviewed discoveries', 'feed': 'Atom feed', 'dataset': 'Hugging Face dataset', 'cite': 'Cite',

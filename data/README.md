@@ -205,10 +205,10 @@ Preserve stable IDs, evidence URLs, review dates and limitations. Source review 
 
 For direct HTTP access, the [data manifest](https://awesomerea.org/data-manifest.json) describes curated-resource and paper JSON, typed JSONL and BibTeX exports, with separate counts, byte lengths and SHA-256 checksums. It does not inventory the wider repository-discovery exports described above. These curated-resource and paper exports use explicit field allowlists and do not include private scan checkpoints, drafts, logs, credentials, licensed fonts, upstream software, PDFs or datasets. Original collection text is MIT-licensed; linked works retain their own licenses.
 
-The public exports are mirrored read-only on Hugging Face as [AgPerry/awesome-rea](https://huggingface.co/datasets/AgPerry/awesome-rea), one config per record type in Parquet and JSON Lines, refreshed every 2 hours. Each Hugging Face commit message names the source commit. This repository stays the source of truth; `repositories`, `discoveries` and `leads` are unreviewed, not curated.
+The public exports are mirrored on Hugging Face as [TIGER-Lab/AwesomeREA](https://huggingface.co/datasets/TIGER-Lab/AwesomeREA), one config per record type in Parquet and JSON Lines, refreshed every 2 hours. Each Hugging Face commit message names the source commit. Curated resources, papers and cases have separate configs from repository and discovery records.
 
 中文：在官网「获取数据」中复制 Git 克隆命令，再直接读取上述 JSON，无需安装依赖或运行脚本。精选资源的中英简介已在记录内；中文名称与使用条件需按 ID 合并 `site/translations.zh-CN.json` 中的 `name`、`requirements`。保留作者顺序、来源、复核状态与适用范围；论文数与资源数不能相加作为唯一项目数。公开导出不包含私人扫描缓存、草稿、日志、凭据、字体或链接作品本身。
 
 更广的仓库发现索引另读网站的 `source-browser.json`，它只包含可浏览条目。按 `meta.full_export` 读取完整配套 JSON，并核对 `meta.full_export_sha256`；schema 1 使用原始 `source-index.json` 基线，schema 2 仅在补充批次获准发布后使用 `source-published.json`。完整选集保留排除记录，`meta.scope` 是发布选集数量，`published_at` 是选集发布时间；原始采集累计数可能重叠，不得相加或当作发布数量。`data-manifest.json` 仅描述精选资源与论文，不包含这套仓库发现导出。
 
-网站公开导出同时只读镜像到 Hugging Face：[AgPerry/awesome-rea](https://huggingface.co/datasets/AgPerry/awesome-rea)，每种记录类型一个 config，提供 Parquet 与 JSON Lines，每 2 小时同步，提交信息写明来源 commit。本仓库仍是唯一数据源；`repositories`、`discoveries` 和 `leads` 未经审阅，不是精选条目。
+网站公开导出同时镜像到 Hugging Face：[TIGER-Lab/AwesomeREA](https://huggingface.co/datasets/TIGER-Lab/AwesomeREA)，每种记录类型一个 config，提供 Parquet 与 JSON Lines，每 2 小时同步，提交信息写明来源 commit。精选资源、论文和案例与仓库及发现记录分别存放在对应 config 中。
