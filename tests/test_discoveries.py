@@ -65,6 +65,14 @@ def make_batch(records, *, run_id=42063733237, existing=None, ingested='2026-11-
 
 
 class SelectionTest(unittest.TestCase):
+    def test_reconstruction_phrase_capture_is_an_eligible_data_asset(self):
+        record = capture(10, name='storytold/photocraft', topics=['game'],
+                         matched_queries=['"clean-room reimplementation" in:readme,description '
+                                          'is:public fork:false archived:false'])
+        selected, eligible, _ = discoveries.select_records([record], empty_existing(), set(), limit=10)
+        self.assertEqual((selected, eligible), ([record], 1))
+        self.assertEqual(discoveries.record_problems(record), [])
+
     def test_newest_first_with_every_skip_reason_counted(self):
         existing = {'ids': {'scan-9000000001'}, 'names': {'other/renamed': 'scan-1'},
                     'readmes': {hashlib.sha256(b'readme 4').hexdigest()}, 'records': 0, 'bytes': 0}

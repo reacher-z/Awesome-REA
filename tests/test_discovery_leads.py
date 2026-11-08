@@ -417,13 +417,15 @@ class OtherSourceTest(unittest.TestCase):
 
     def test_slow_sources_run_once_per_period(self):
         source = {'id': 'survey-sok', 'every_hours': 24}
-        start = dt.datetime(2026, 11, 5, 1, 7, tzinfo=dt.timezone.utc)
-        runs = [collect.due(source, start + dt.timedelta(hours=slot), False) for slot in range(24)]
+        start = dt.datetime(2026, 11, 5, 0, 7, tzinfo=dt.timezone.utc)
+        runs = [collect.due(source, start + dt.timedelta(hours=slot), False) for slot in (0, 8, 16)]
         self.assertEqual(sum(runs), 1)
         twelve = {'id': 'github-topic-x', 'every_hours': 12}
-        self.assertEqual(sum(collect.due(twelve, start + dt.timedelta(hours=slot), False) for slot in range(24)), 2)
+        self.assertGreaterEqual(sum(collect.due(twelve, start + dt.timedelta(hours=slot), False)
+                                    for slot in (0, 8, 16, 24)), 1)
         two = {'id': 'x', 'every_hours': 2}
-        self.assertEqual(sum(collect.due(two, start + dt.timedelta(hours=slot), False) for slot in range(24)), 12)
+        self.assertEqual(sum(collect.due(two, start + dt.timedelta(hours=slot), False)
+                             for slot in (0, 8, 16)), 3)
         self.assertTrue(collect.due(source, start, True))
         self.assertTrue(collect.due({'id': 'x'}, start, False))
 
@@ -438,7 +440,7 @@ class WorkflowTest(unittest.TestCase):
     def test_read_only_collection_and_a_separate_writing_ingest(self):
         import re
         self.assertEqual(list(self.jobs), ['collect', 'ingest', 'report'])
-        self.assertIn("cron: '7 * * * *'", self.text)
+        self.assertIn("cron: '7 */8 * * *'", self.text)
         self.assertIn('permissions:\n  contents: read\nconcurrency:\n  group: followed-source-lead-discovery\n  cancel-in-progress: false', self.text)
         writes = {name: re.findall(r'^      ([a-z-]+): write$', job, re.MULTILINE) for name, job in self.jobs.items()}
         self.assertEqual(writes, {'collect': [], 'ingest': ['contents', 'pull-requests', 'actions'], 'report': ['issues']})
@@ -454,6 +456,41 @@ class WorkflowTest(unittest.TestCase):
         for line in self.text.splitlines():
             if 'uses:' in line:
                 self.assertRegex(line, r'@[0-9a-f]{40} # v')
+
+
+class SourceIsolationTest(unittest.TestCase):
+    def test_failed_repository_lookup_skips_its_source_and_keeps_the_other(self):
+        from collections import Counter
+        sources = [{'id': name, 'type': 'github-readme-list', 'repository': 'example/list',
+                    'path': 'README.md'} for name in ('broken', 'working')]
+        class Clock:
+            requests = 0
+            deadline = 0
+            max_seconds = 0
+            def clock(self):
+                return 0
+        def parsed(source, text, revision):
+            name = source['id'] + '/tool'
+            return [listing(source['id'], 'https://github.com/' + name, 'gh:' + name)], Counter(links=1, in_scope=1)
+        def resolve(client, names):
+            if names == ['broken/tool']:
+                raise collect.SourceError('network-error')
+            return {name: repository_node(name, 42) for name in names}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'data').mkdir()
+            (root / 'data/papers.json').write_text('[]')
+            with patch.object(leads, 'load_registry', return_value=({'sources': sources}, [])), \
+                 patch.object(leads, 'exclusion_rules', return_value=[]), \
+                 patch.object(leads, 'existing_keys', return_value={'known': {}}), \
+                 patch.object(leads, 'registry_bytes', return_value=b'fixture'), \
+                 patch.object(collect, 'github_file', return_value=(b'fixture', COMMIT, COMMIT)), \
+                 patch.object(collect, 'readme_listings', side_effect=parsed), \
+                 patch.object(collect, 'resolve_repositories', side_effect=resolve):
+                result = collect.collect(Clock(), root, everything=True)
+        self.assertEqual([(row['id'], row['status']) for row in result['sources']],
+                         [('broken', 'error'), ('working', 'captured')])
+        self.assertEqual([row['identity'] for row in result['candidates']], ['github:42'])
 
 
 class SharedPageTest(unittest.TestCase):

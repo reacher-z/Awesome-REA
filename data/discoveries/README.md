@@ -17,7 +17,7 @@ A capture enters a batch only when all of these hold. They are this repository's
 
 1. It is a successful README read with an explicit Git blob hash match (`readme_git_sha_matches_content: true` and equal advertised and computed blob identifiers), the qualification that the scheduled scan's goal counts.
 2. It passes the publication validator's record checks: scanner record schema, public non-fork non-archived repository, consistent URLs and README evidence, bounded description capture, valid automatic labels and timestamps.
-3. It has at least one topic from the `strong-reverse-engineering-topics-v1` screen that the public supplements use (`reverse-engineering`, `binary-analysis`, `decompiler`, `ghidra`, `frida`, `firmware-analysis`, `protocol-analysis` and the others listed in [public_source_supplements.py](../../scripts/public_source_supplements.py)).
+3. It has at least one topic from the `strong-reverse-engineering-topics-v1` screen that the public supplements use (`reverse-engineering`, `binary-analysis`, `decompiler`, `ghidra`, `frida`, `firmware-analysis`, `protocol-analysis` and the others listed in [public_source_supplements.py](../../scripts/public_source_supplements.py)), or a matched reconstruction phrase query from [scan_sources.py](../../scripts/scan_sources.py).
 4. Its numeric ID is new to the source index (successes and failures), every public supplement batch, held or ready, and every earlier discovery batch.
 5. It is not already a curated resource (exact repository URL), its repository name is not recorded under another numeric ID, its README SHA-256 is not already published by another record, and it raises no credential or personal-path finding.
 
@@ -38,7 +38,7 @@ Each batch is about 0.85 MB of JSON for 300 records and about 130 KB compressed 
 
 ## Followed-source leads
 
-The README scanner only sees GitHub repositories that its searches reach and that carry a strong reverse-engineering topic. Other reverse-engineering lists, registries and bibliographies list many more resources, including websites, books, courses and papers. The `Followed-source lead discovery` workflow ([discovery-leads.yml](../../.github/workflows/discovery-leads.yml)) follows the public sources registered in [discovery-sources.json](../discovery-sources.json) every hour and keeps what they list here as **leads**: `verification: automated-source-lead`, `review_status: unreviewed`. A listing by a secondary source is never evidence for curation ([AGENTS.md](../../AGENTS.md)); a lead only says where a resource was listed.
+The README scanner only sees GitHub repositories that its searches reach and that carry a strong reverse-engineering topic or match a reconstruction phrase search. Other reverse-engineering lists, registries and bibliographies list many more resources, including websites, books, courses and papers. The `Followed-source lead discovery` workflow ([discovery-leads.yml](../../.github/workflows/discovery-leads.yml)) follows the public sources registered in [discovery-sources.json](../discovery-sources.json) every eight hours and keeps what they list here as **leads**: `verification: automated-source-lead`, `review_status: unreviewed`. A listing by a secondary source is never evidence for curation ([AGENTS.md](../../AGENTS.md)); a lead only says where a resource was listed.
 
 **Sources.** Each registry entry names its type, why it is followed and its scope rules:
 

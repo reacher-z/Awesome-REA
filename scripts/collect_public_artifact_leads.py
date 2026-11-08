@@ -486,6 +486,8 @@ def main():
         summary = (f"Public artifact leads: {report['counts']['unique_url_leads']} unique URLs; "
                    f"{report['counts']['x_original_excerpts']} X excerpts available; "
                    f"{report['counts']['source_errors']} source errors; status={report['status']}.\n")
+        failed_sources = [source['id'] for source in report['sources'] if source['status'] == 'error']
+        summary += 'Failed sources: ' + (', '.join(failed_sources) if failed_sources else 'none') + '.\n'
         print(summary + SCOPE_NOTE, flush=True)
         if os.environ.get('GITHUB_STEP_SUMMARY'):
             with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as stream:

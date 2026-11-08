@@ -2,7 +2,7 @@
 
 [Workflow](../.github/workflows/public-artifact-discovery.yml) · [Collector](../scripts/collect_public_artifact_leads.py) · [Source review rules](agent-contributing.md)
 
-This workflow follows public source links every hour, at minute 7 UTC (`7 * * * *`). It can also be dispatched from the default branch. This is a separate, small discovery snapshot; the existing README scanner and its checkpoint are unchanged. GitHub schedules can be delayed and are not an exact-time service.
+This workflow follows public source links every eight hours, at minute 7 UTC (`7 */8 * * *`). It can also be dispatched from the default branch. This is a separate, small discovery snapshot; the existing README scanner and its checkpoint are unchanged. GitHub schedules can be delayed and are not an exact-time service.
 
 The snapshot follows these sources:
 

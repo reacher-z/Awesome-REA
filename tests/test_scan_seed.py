@@ -201,7 +201,7 @@ class PrivateBootstrapRuntimeTests(SeedFixture):
         appended = json.loads((directory / 'checkpoint/frontier.json').read_text())
         self.assertEqual(appended['partitions'][0], self.frontier['partitions'][0])
         self.assertEqual(appended['observations'], self.frontier['observations'])
-        self.assertEqual(len(appended['roots']), 52)
+        self.assertEqual(len(appended['roots']), len(scheduled.APPROVED_QUERIES))
         archive = io.BytesIO()
         with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED) as bundle:
             for path in (directory / 'checkpoint').iterdir():

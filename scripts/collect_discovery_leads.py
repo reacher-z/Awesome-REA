@@ -805,12 +805,13 @@ def huggingface_listings(client: Client, source: dict) -> tuple[list[dict], Coun
 # --- collection -------------------------------------------------------------------------------------
 
 def due(source: dict, moment: dt.datetime, everything: bool) -> bool:
-    """A slow source runs in one UTC hour per period, chosen from its ID so sources spread out."""
+    """Assign slower sources to reachable eight-hour workflow slots."""
     hours = source.get('every_hours', 1)
-    if everything or hours <= 1:
+    if everything or hours <= 8:
         return True
-    slot = (moment.toordinal() * 24 + moment.hour) % hours
-    return slot == int(hashlib.sha256(source['id'].encode()).hexdigest(), 16) % hours
+    period = (hours + 7) // 8
+    slot = moment.toordinal() * 3 + moment.hour // 8
+    return slot % period == int(hashlib.sha256(source['id'].encode()).hexdigest(), 16) % period
 
 
 def source_result(source: dict, status: str, counts: Counter | None = None, extra: dict | None = None,
@@ -1040,26 +1041,35 @@ def collect(client: Client, root: Path = ROOT, *, everything: bool = False, now:
                 found, counts, extra = arxiv_listings(client, source)
             else:
                 found, counts, extra = huggingface_listings(client, source)
-        except SourceError as error:
-            results.append(source_result(source, 'error', error=error.reason))
-            log(f"SOURCE {source['id']} error={error.reason} requests={client.requests}")
+        except (SourceError, ValueError, TypeError, UnicodeError) as error:
+            reason = error.reason if isinstance(error, SourceError) else 'invalid-upstream'
+            results.append(source_result(source, 'error', error=reason))
+            log(f"SOURCE {source['id']} error={reason} requests={client.requests}")
             continue
         listings.extend(found)
         results.append(source_result(source, 'captured', counts, extra))
         log(f"SOURCE {source['id']} links={counts.get('links', 0)} in_scope={counts.get('in_scope', 0)} "
             f"requests={client.requests} seconds={round(client.clock() - client.deadline + client.max_seconds)}")
-    split_shared_pages(listings)
-    names = {listing['key'][3:] for listing in listings if listing['key'].startswith('gh:') and listing['key'] not in topic_metadata}
-    names |= {listing['flags']['ghpages_alias'][3:] for listing in listings if (listing.get('flags') or {}).get('ghpages_alias')}
     known = leads.existing_keys(root)['known']
-    # Repositories already held under their listed name need no lookup; renamed ones are caught by numeric ID.
-    lookup = sorted(name for name in names if 'gh:' + name not in known)
     repositories = {key[3:]: node for key, node in topic_metadata.items()}
-    log(f'RESOLVE {len(lookup)} repositories ({len(names) - len(lookup)} already held by name)')
-    try:
-        repositories.update(resolve_repositories(client, lookup))
-    except SourceError as error:
-        raise ValueError(f'GitHub repository lookups failed ({error.reason}); no batch is prepared from partial identities') from None
+    # Resolve each source independently so a failed lookup cannot discard other sources.
+    for result in results:
+        if result['status'] != 'captured':
+            continue
+        source_rows = [row for row in listings if row['source_id'] == result['id']]
+        names = {row['key'][3:] for row in source_rows if row['key'].startswith('gh:')}
+        names |= {row['flags']['ghpages_alias'][3:] for row in source_rows if (row.get('flags') or {}).get('ghpages_alias')}
+        lookup = sorted(name for name in names if name not in repositories and 'gh:' + name not in known)
+        try:
+            repositories.update(resolve_repositories(client, lookup))
+        except SourceError as error:
+            result.update(status='error', error=error.reason, links=0, in_scope=0,
+                          evidence_url=None, revision=None, content_sha256=None)
+            listings = [row for row in listings if row['source_id'] != result['id']]
+            log(f"SOURCE {result['id']} error={error.reason} during repository lookup requests={client.requests}")
+    split_shared_pages(listings)
+    names = {listing['key'][3:] for listing in listings if listing['key'].startswith('gh:')}
+    names |= {listing['flags']['ghpages_alias'][3:] for listing in listings if (listing.get('flags') or {}).get('ghpages_alias')}
     held = [listing for listing in listings if not (listing['key'].startswith('gh:') and listing['key'] in known
                                                     and listing['key'][3:] not in repositories)]
     skipped_known = len(listings) - len(held)
@@ -1326,7 +1336,8 @@ def main() -> int:
         line = (f"Followed {captured} source(s), {len(errors)} unavailable; {len(collection['candidates']):,} in-scope "
                 f"candidates, {collection['unavailable']} unavailable repositories, {collection['requests']} requests.")
         print(line + (f" Unavailable: {', '.join(errors)}." if errors else ''), flush=True)
-        step_summary(['## Followed-source lead discovery', '', line])
+        step_summary(['## Followed-source lead discovery', '', line,
+                      'Failed sources: ' + (', '.join(errors) if errors else 'none') + '.'])
         output('collection', path)
         output('collection_ready', 'true')
         return 1 if captured == 0 else 0
