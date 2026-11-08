@@ -94,7 +94,7 @@ Use these public files and pages to read the catalog, follow changes, or work wi
 - [JSON and CSV API](https://awesomerea.org/api/) - Static JSON and CSV exports of resources, papers and categories, plus unreviewed candidates.
 - [catalog.json](https://awesomerea.org/catalog.json) - Curated catalog in one JSON file.
 - [JSON Feed](https://awesomerea.org/feed.json) - New and changed entries in JSON Feed format.
-- [Hugging Face dataset](https://huggingface.co/datasets/AgPerry/awesome-rea) - Read-only Parquet and JSONL mirror; repositories, discoveries and leads are unreviewed.
+- [Hugging Face dataset](https://huggingface.co/datasets/TIGER-Lab/AwesomeREA) - Parquet and JSONL exports for resources, papers, cases and discovery records.
 - [Catalog format](https://github.com/reacher-z/Awesome-REA/blob/main/data/README.md) - Fields, vocabulary and review rules for every record.
 
 <a id="resource-catalog"></a>

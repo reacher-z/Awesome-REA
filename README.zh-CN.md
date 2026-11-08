@@ -94,7 +94,7 @@
 - [JSON 与 CSV API](https://awesomerea.org/api/) - 资源、论文和分类的静态 JSON 与 CSV 导出文件，以及未经复核的候选条目。
 - [catalog.json](https://awesomerea.org/catalog.json) - 汇集精选目录的单份 JSON 文件。
 - [JSON Feed](https://awesomerea.org/feed.json) - 以 JSON Feed 格式列出新增和变更的条目。
-- [Hugging Face 数据集](https://huggingface.co/datasets/AgPerry/awesome-rea) - 只读的 Parquet 与 JSONL 镜像；仓库、发现记录和线索均未经复核。
+- [Hugging Face 数据集](https://huggingface.co/datasets/TIGER-Lab/AwesomeREA) - 提供资源、论文、案例与发现记录的 Parquet 和 JSONL 导出。
 - [目录格式](data/README.md) - 目录格式与字段定义。
 
 <a id="资源目录"></a>
