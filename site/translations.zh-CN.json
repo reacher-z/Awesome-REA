@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "nfs-carbon-mac-case": {
+    "name": "极品飞车：卡本 Mac 版",
+    "requirements": [
+      "需要 Apple Silicon Mac、Xcode 命令行工具和 Python 3。玩家提供 1.4 版 PC 游戏，以及未加壳的 NFSC.exe。它的 SHA-256 是 baaaaec33873d4ba7e4dbae6a5212049ffdcf9679a35d865d7625b4189952fd3。",
+      "审阅的 README 没有写许可证。"
+    ]
   }
 }

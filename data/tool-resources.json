@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nfs-carbon-mac-case",
+    "name": "Need for Speed: Carbon for Mac",
+    "url": "https://github.com/vasist15-source/nfs-carbon-mac",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This repository is a native Apple Silicon build of Need for Speed: Carbon, the 2006 PC game. The x86 code is translated to C ahead of time and compiled with a Metal renderer, native audio, and controller support. The README says career, races, the garage, and the menus run at 60 frames per second with sound.",
+    "description_zh": "该仓库是 2006 年 PC 版《极品飞车：卡本》的 Apple Silicon 原生构建。x86 代码被提前翻译成 C，并用 Metal 渲染器、原生音频和手柄支持编译。README 写明生涯、比赛、车库和菜单可以带声音以每秒 60 帧运行。",
+    "requirements": [
+      "An Apple Silicon Mac, the Xcode Command Line Tools, and Python 3. The player supplies the PC game, version 1.4, with an unwrapped NFSC.exe. Its SHA-256 is baaaaec33873d4ba7e4dbae6a5212049ffdcf9679a35d865d7625b4189952fd3.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/vasist15-source/nfs-carbon-mac/blob/3e6c60c2fb0c2c6e95ad8e90781458cb3afd7fe0/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
