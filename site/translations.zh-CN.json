@@ -11023,5 +11023,12 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "retrokit": {
+    "name": "retrokit",
+    "requirements": [
+      "需要 Ghidra 12.x、JDK 21 或更新版本，以及 Python 3.10 或更新版本。retrokit install-loader 为每次 Ghidra 安装注册一次 DOS 加载器。",
+      "许可证：Apache-2.0。"
+    ]
   }
 }
