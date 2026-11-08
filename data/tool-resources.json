@@ -1765,6 +1765,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -2776,6 +2777,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/README.md",
       "https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/AGENTS.md",
@@ -2799,6 +2801,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -2846,6 +2849,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "app",
       "protocol"
@@ -2928,6 +2932,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "app",
       "protocol"
@@ -2972,6 +2977,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "app",
       "protocol"
@@ -3021,6 +3027,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3065,6 +3072,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3104,6 +3112,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "app"
     ],
@@ -3151,6 +3160,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "other",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "binary",
       "game"
@@ -3192,6 +3202,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3237,6 +3248,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3279,6 +3291,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3321,6 +3334,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3363,6 +3377,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3404,6 +3419,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3444,6 +3460,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "website",
     "targets": [
       "website",
       "app"
@@ -3492,6 +3509,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3530,6 +3548,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3566,6 +3585,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3604,6 +3624,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3645,6 +3666,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3688,6 +3710,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3731,6 +3754,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3772,6 +3796,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3815,6 +3840,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3856,6 +3882,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3899,6 +3926,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3940,6 +3968,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -3981,6 +4010,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4027,6 +4057,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4076,6 +4107,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4118,6 +4150,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4156,6 +4189,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4195,6 +4229,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4241,6 +4276,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4279,6 +4315,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4322,6 +4359,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4363,6 +4401,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4408,6 +4447,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4447,6 +4487,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4492,6 +4533,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4532,6 +4574,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4569,6 +4612,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4611,6 +4655,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4651,6 +4696,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "other",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4691,6 +4737,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4731,6 +4778,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware"
     ],
@@ -4774,6 +4822,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4816,6 +4865,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4859,6 +4909,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4903,6 +4954,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4943,6 +4995,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4993,6 +5046,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5036,6 +5090,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "other",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5076,6 +5131,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5122,6 +5178,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5163,6 +5220,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5211,6 +5269,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5253,6 +5312,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5295,6 +5355,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5337,6 +5398,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5378,6 +5440,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5420,6 +5483,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5464,6 +5528,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5506,6 +5571,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5548,6 +5614,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5593,6 +5660,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5634,6 +5702,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5673,6 +5742,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5715,6 +5785,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5758,6 +5829,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5800,6 +5872,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5841,6 +5914,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5886,6 +5960,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5929,6 +6004,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -5974,6 +6050,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6015,6 +6092,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6057,6 +6135,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6100,6 +6179,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6140,6 +6220,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6185,6 +6266,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6227,6 +6309,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6269,6 +6352,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6312,6 +6396,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6354,6 +6439,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6397,6 +6483,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6504,6 +6591,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6545,6 +6633,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6584,6 +6673,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6627,6 +6717,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6669,6 +6760,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6776,6 +6868,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6821,6 +6914,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -6895,6 +6989,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7013,6 +7108,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7117,6 +7213,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7161,6 +7258,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7204,6 +7302,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7307,6 +7406,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7410,6 +7510,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7451,6 +7552,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7493,6 +7595,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7571,6 +7674,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "app"
     ],
@@ -7643,6 +7747,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7685,6 +7790,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7732,6 +7838,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7776,6 +7883,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "app",
       "protocol"
@@ -7852,6 +7960,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7929,6 +8038,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -7971,6 +8081,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -8043,6 +8154,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "other",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -8086,6 +8198,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -8156,6 +8269,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "app"
     ],
@@ -8230,6 +8344,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -8272,6 +8387,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -8313,6 +8429,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -8355,6 +8472,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware"
     ],
@@ -8547,6 +8665,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "other",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -8588,6 +8707,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -8668,6 +8788,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -8802,6 +8923,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -10011,6 +10133,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "website",
     "targets": [
       "protocol",
       "website"
@@ -11823,6 +11946,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -11863,6 +11987,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol",
       "app"
@@ -11941,6 +12066,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "software",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-19",
     "verification": "source-reviewed",
@@ -11975,6 +12101,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -12044,6 +12171,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "other",
     "kind": "case-study",
+    "class": "game",
     "evidence_url": "https://github.com/Serega25511s/Batla-3D-server-emu/blob/c70f254ee86b3fa7363b5afb98541bcaa9e6c751/README.md",
     "additional_evidence_urls": [
       "https://github.com/Serega25511s/Batla-3D-server-emu/blob/c70f254ee86b3fa7363b5afb98541bcaa9e6c751/LICENSE",
@@ -12096,6 +12224,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -12406,6 +12535,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -12565,6 +12695,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "website",
       "game"
@@ -12675,6 +12806,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "app",
       "protocol"
@@ -12745,6 +12877,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware"
     ],
@@ -12799,6 +12932,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "evidence_url": "https://github.com/Nilbong/COD4-Rewrite/blob/bd03eb07f2b2ec84dd33946bfc2b8163fc49c480/README.md",
     "additional_evidence_urls": [
       "https://github.com/Nilbong/COD4-Rewrite/blob/bd03eb07f2b2ec84dd33946bfc2b8163fc49c480/Cargo.toml",
@@ -12833,6 +12967,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "evidence_url": "https://github.com/jaenster/libd2/blob/bc21bb924b9238def4907bd2b3f79e8041a5fc0a/README.md",
     "additional_evidence_urls": [
       "https://github.com/jaenster/libd2/blob/bc21bb924b9238def4907bd2b3f79e8041a5fc0a/LICENSE",
@@ -12875,7 +13010,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "linewars-ii-sdl-case",
@@ -12906,7 +13042,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "bfm-decomp-case",
@@ -12937,7 +13074,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "logic-lens",
@@ -13005,6 +13143,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "website",
     "targets": [
       "website"
     ],
@@ -13208,6 +13347,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -13242,6 +13382,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware"
     ],
@@ -13280,6 +13421,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -13309,6 +13451,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "app",
       "protocol"
@@ -13346,6 +13489,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -13379,6 +13523,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol",
       "app"
@@ -13453,6 +13598,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "protocol"
     ],
@@ -13554,6 +13700,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware",
       "game"
@@ -13733,6 +13880,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "firmware",
       "game"
@@ -13772,6 +13920,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "protocol",
       "app"
@@ -13869,6 +14018,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "app"
     ],
@@ -13967,6 +14117,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14000,6 +14151,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol",
       "firmware"
@@ -14066,6 +14218,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14133,6 +14286,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -14231,6 +14385,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14268,6 +14423,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14363,6 +14519,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14397,6 +14554,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14438,6 +14596,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14475,6 +14634,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14539,6 +14699,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14586,6 +14747,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14621,6 +14783,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14657,6 +14820,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14718,6 +14882,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14757,6 +14922,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14794,6 +14960,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14829,6 +14996,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14867,6 +15035,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14903,6 +15072,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14942,6 +15112,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -14977,6 +15148,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -15018,6 +15190,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -15056,6 +15229,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -15091,6 +15265,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -15129,6 +15304,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -15167,6 +15343,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -15235,6 +15412,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -15311,6 +15489,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -15350,6 +15529,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -15488,6 +15668,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -15522,6 +15703,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "protocol"
     ],
@@ -15629,6 +15811,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol",
       "firmware"
@@ -15703,6 +15886,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -15909,6 +16093,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -16117,6 +16302,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -16153,6 +16339,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -16286,6 +16473,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -16452,6 +16640,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -16667,6 +16856,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol",
       "app"
@@ -16873,6 +17063,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -16979,6 +17170,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -17032,6 +17224,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/codingncaffeine/SiegeFX/releases/tag/v0.5.0"
     ]
@@ -17065,6 +17258,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://andrewaltimit.github.io/legend-of-legaia-re/"
     ]
@@ -17143,6 +17337,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -17177,6 +17372,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "matching-decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -17283,6 +17479,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "app",
       "protocol"
@@ -17353,6 +17550,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol",
       "app"
@@ -18127,6 +18325,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "app",
       "protocol"
@@ -19634,6 +19833,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -19921,6 +20121,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -20473,6 +20674,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -20647,6 +20849,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -20687,6 +20890,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -20733,6 +20937,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -21039,6 +21244,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -21143,6 +21349,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game",
       "protocol"
@@ -21462,6 +21669,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -21877,6 +22085,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -22196,6 +22405,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol",
       "app"
@@ -22305,6 +22515,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware"
     ],
@@ -22727,6 +22938,7 @@
     "url": "https://github.com/xaionaro/reverse-engineering-dji",
     "category": "reconstruction-cases",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -22960,6 +23172,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -23025,6 +23238,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -23689,6 +23903,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -23920,6 +24135,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -24472,6 +24688,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -24847,6 +25064,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -25626,6 +25844,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "protocol"
     ],
@@ -28120,6 +28339,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -28212,6 +28432,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "other",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game",
       "protocol"
@@ -28307,6 +28528,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -28364,6 +28586,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -28430,6 +28653,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -28460,6 +28684,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware",
       "protocol"
@@ -28491,6 +28716,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -28617,6 +28843,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "other",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game",
       "protocol"
@@ -28650,6 +28877,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "app"
     ],
@@ -28682,6 +28910,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware",
       "protocol"
@@ -28715,6 +28944,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware"
     ],
@@ -28805,6 +29035,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -28837,6 +29068,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware"
     ],
@@ -28866,7 +29098,8 @@
     "url": "https://github.com/rubenthampy890-del/qemu-rtd2841",
     "category": "firmware",
     "relationship": "foundation",
-    "kind": "tool",
+    "kind": "project",
+    "class": "hardware",
     "targets": [
       "firmware"
     ],
@@ -28899,6 +29132,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -28929,6 +29163,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "app"
     ],
@@ -28959,6 +29194,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -29020,6 +29256,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -29050,6 +29287,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -29105,6 +29343,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -29135,6 +29374,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -29169,6 +29409,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -29201,6 +29442,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -29231,6 +29473,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware"
     ],
@@ -29288,6 +29531,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "binary",
       "protocol"
@@ -29352,6 +29596,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -29443,6 +29688,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "website",
     "targets": [
       "website"
     ],
@@ -29474,6 +29720,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -29507,6 +29754,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -29539,6 +29787,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -29599,6 +29848,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "website",
     "targets": [
       "app",
       "website",
@@ -29630,6 +29880,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -29662,6 +29913,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -29727,6 +29979,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -29755,6 +30008,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "other",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -29782,6 +30036,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -29814,6 +30069,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -29879,6 +30135,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -29912,6 +30169,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -30088,6 +30346,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -30371,6 +30630,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "apps",
     "targets": [
       "app"
     ],
@@ -30454,6 +30714,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -30481,6 +30742,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "binary"
     ],
@@ -30508,6 +30770,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -30772,6 +31035,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -30983,6 +31247,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "other",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game",
       "protocol"
@@ -31068,6 +31333,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware",
       "protocol"
@@ -31155,6 +31421,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -31188,6 +31455,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -31217,6 +31485,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -31296,6 +31565,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -31409,6 +31679,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "app",
       "protocol"
@@ -31555,6 +31826,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -31583,6 +31855,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -31784,6 +32057,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -31811,6 +32085,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -31976,6 +32251,7 @@
     "category": "protocol-analysis",
     "relationship": "foundation",
     "kind": "project",
+    "class": "hardware",
     "targets": [
       "protocol",
       "firmware",
@@ -32187,6 +32463,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -32278,7 +32555,8 @@
     "url": "https://github.com/mnaberez/premium5",
     "category": "firmware",
     "relationship": "foundation",
-    "kind": "tool",
+    "kind": "project",
+    "class": "hardware",
     "targets": [
       "firmware"
     ],
@@ -32308,6 +32586,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -32399,6 +32678,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -32431,6 +32711,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -32463,6 +32744,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -32495,6 +32777,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware",
       "protocol"
@@ -32526,6 +32809,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -32706,6 +32990,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -32736,6 +33021,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -32763,6 +33049,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -32822,6 +33109,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -32855,6 +33143,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "other",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game",
       "protocol"
@@ -32886,6 +33175,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -32920,6 +33210,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -33008,6 +33299,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -33040,6 +33332,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -33383,6 +33676,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -33443,6 +33737,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "other",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game",
       "protocol"
@@ -33476,6 +33771,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -33508,6 +33804,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "website",
     "targets": [
       "protocol"
     ],
@@ -33572,6 +33869,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware",
       "protocol"
@@ -33779,6 +34077,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -33812,6 +34111,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "apps",
     "targets": [
       "app",
       "protocol"
@@ -33877,6 +34177,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -33934,6 +34235,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34023,6 +34325,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34050,6 +34353,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34111,6 +34415,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34204,6 +34509,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34268,6 +34574,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34300,6 +34607,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34332,6 +34640,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34363,6 +34672,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34395,6 +34705,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34422,6 +34733,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34449,6 +34761,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34512,6 +34825,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "other",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game",
       "binary"
@@ -34546,6 +34860,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "apps",
     "targets": [
       "app"
     ],
@@ -34574,6 +34889,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -34599,6 +34915,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "firmware",
       "protocol"
@@ -34663,6 +34980,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34697,6 +35015,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "port",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game",
       "binary"
@@ -34760,6 +35079,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34791,6 +35111,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -34854,6 +35175,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "static-recompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -35093,6 +35415,7 @@
     "relationship": "independent-reconstruction",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -35115,6 +35438,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -35145,6 +35469,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "hardware",
     "targets": [
       "protocol"
     ],
@@ -35172,6 +35497,7 @@
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "app",
       "protocol"
@@ -35658,6 +35984,7 @@
     "url": "https://github.com/XProger/OpenLara",
     "category": "reconstruction-cases",
     "kind": "case-study",
+    "class": "game",
     "relationship": "independent-reconstruction",
     "targets": [
       "game"
@@ -35673,7 +36000,6 @@
     "additional_evidence_urls": [
       "https://github.com/XProger/OpenLara/blob/3b268ca4bf986c380f44a26ffd9218bf6d376249/src/format.h"
     ],
-    "class": "game",
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
   },
@@ -35683,6 +36009,7 @@
     "url": "https://github.com/TheAssemblyArmada/Thyme",
     "category": "reconstruction-cases",
     "kind": "case-study",
+    "class": "game",
     "relationship": "independent-reconstruction",
     "targets": [
       "game"
@@ -35699,7 +36026,6 @@
       "The repository is archived.",
       "License: GPL-2.0."
     ],
-    "class": "game",
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
   },
@@ -35709,6 +36035,7 @@
     "url": "https://github.com/ChariotEngine/Chariot",
     "category": "reconstruction-cases",
     "kind": "case-study",
+    "class": "game",
     "relationship": "independent-reconstruction",
     "targets": [
       "game"
@@ -35724,7 +36051,6 @@
       "The README reports that the project was not yet playable as of 2016-07-08.",
       "The README declares an MIT license."
     ],
-    "class": "game",
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
   },
@@ -35734,6 +36060,7 @@
     "url": "https://github.com/OpenDiablo2/OpenDiablo2",
     "category": "reconstruction-cases",
     "kind": "case-study",
+    "class": "game",
     "relationship": "independent-reconstruction",
     "targets": [
       "game"
@@ -35749,7 +36076,6 @@
       "The repository is archived.",
       "License: GPL-3.0."
     ],
-    "class": "game",
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
   },
@@ -35846,7 +36172,8 @@
     "name": "NearDrop",
     "url": "https://github.com/grishka/NearDrop",
     "category": "protocol-analysis",
-    "kind": "tool",
+    "kind": "project",
+    "class": "apps",
     "relationship": "foundation",
     "targets": [
       "protocol"
@@ -36254,6 +36581,7 @@
     "url": "https://github.com/opentomb/OpenTomb",
     "category": "reconstruction-cases",
     "kind": "case-study",
+    "class": "game",
     "relationship": "independent-reconstruction",
     "targets": [
       "game"
@@ -36269,7 +36597,6 @@
       "License: LGPL-3.0."
     ],
     "reconstruction_method": "engine-reimplementation",
-    "class": "game",
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
   },
@@ -36279,6 +36606,7 @@
     "url": "https://github.com/Revivedx/SavageWindRecomp",
     "category": "reconstruction-cases",
     "kind": "case-study",
+    "class": "game",
     "relationship": "independent-reconstruction",
     "targets": [
       "game"
@@ -36294,7 +36622,6 @@
       "The project is in alpha; later parts of the main story may have bugs or crashes.",
       "MIT per LICENSE."
     ],
-    "class": "game",
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
   },
@@ -36304,6 +36631,7 @@
     "url": "https://github.com/mindflower/retruxx",
     "category": "reconstruction-cases",
     "kind": "case-study",
+    "class": "game",
     "relationship": "independent-reconstruction",
     "targets": [
       "game"
@@ -36319,7 +36647,6 @@
       "The executable and driver DLLs must have compatible bitness.",
       "The repository has no license file."
     ],
-    "class": "game",
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
   },
@@ -36536,6 +36863,7 @@
     "category": "web-analysis",
     "relationship": "learning",
     "kind": "project",
+    "class": "website",
     "targets": [
       "website"
     ],
