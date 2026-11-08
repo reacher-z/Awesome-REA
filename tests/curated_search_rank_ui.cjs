@@ -100,7 +100,8 @@ const tests = {
     for (const pathname of ['/', '/zh/']) {
       const app = await application(records, {pathname});
       const top = (query, count) => search(app, query).slice(0, count);
-      for (const id of ['binary-ninja-api', 'binary-ninja-official-mcp', 'binary-ninja-community-mcp']) assert(top('binary ninja', 5).includes(id), `${pathname} ${id}`);
+      const named = records.filter(record => /binary ninja/i.test(record.name)).length;
+      for (const id of ['binary-ninja-api', 'binary-ninja-official-mcp', 'binary-ninja-community-mcp']) assert(top('binary ninja', named).includes(id), `${pathname} ${id}`);
       assert(top('ghidra mcp', 3).includes('ghidramcp'), pathname);
       assert.equal(top('n64', 1)[0], 'n64recomp', pathname);
       const debuggers = search(app, 'dbg');
