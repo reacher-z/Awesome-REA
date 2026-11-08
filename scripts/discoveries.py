@@ -60,6 +60,15 @@ def strong_topics():
     return STRONG_TOPICS
 
 
+def data_asset_query_match(record: dict) -> bool:
+    from scan_sources import DATA_ASSET_QUERY_BASES
+    queries = record.get('matched_queries')
+    if not isinstance(queries, list):
+        return False
+    return any(isinstance(query, str) and any(query.startswith(base + ' ') or query == base
+               for base in DATA_ASSET_QUERY_BASES) for query in queries)
+
+
 def digest(value) -> str:
     """The same canonical capture fingerprint as the public supplement layer."""
     return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'),
@@ -123,8 +132,8 @@ def record_problems(record, *, privacy: bool = True) -> list[str]:
             or record.get('readme_git_sha') != record.get('readme_content_git_sha')):
         problems.append('capture needs an explicit README Git blob hash match')
     topics = record.get('topics')
-    if not isinstance(topics, list) or not strong_topics().intersection(topics):
-        problems.append('capture does not meet the reverse-engineering topic screen')
+    if not isinstance(topics, list) or not (strong_topics().intersection(topics) or data_asset_query_match(record)):
+        problems.append('capture needs a reverse-engineering topic or reconstruction phrase query')
     errors = []
     validate_description_capture(record, errors, 'capture')
     validate_readme_evidence(record, 'capture', errors)
@@ -341,10 +350,11 @@ def select_records(resources: list, existing: dict, curated: set[str], limit: in
     skipped = Counter({reason: 0 for reason in SKIP_REASONS})
     topics, eligible = strong_topics(), []
     for record in resources:
-        # Cheap qualification and topic screen first; the full record checks run on the remainder.
+        # Cheap qualification and query/topic screen first; the full record checks run on the remainder.
         if (not isinstance(record, dict) or record.get('scan_status') != 'readme-scanned'
                 or record.get('readme_git_sha_matches_content') is not True
-                or not isinstance(record.get('topics'), list) or not topics.intersection(record['topics'])
+                or not isinstance(record.get('topics'), list)
+                or not (topics.intersection(record['topics']) or data_asset_query_match(record))
                 or record_problems(record, privacy=False)):
             continue
         if record['id'] in existing['ids']:

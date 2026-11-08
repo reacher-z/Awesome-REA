@@ -1,9 +1,9 @@
 name: Scheduled README discovery
 on:
   workflow_dispatch:
-  # Every hour at minute 7 UTC; GitHub can delay scheduled starts.
+  # Every eight hours at minute 7 UTC; GitHub can delay scheduled starts.
   schedule:
-    - cron: '7 * * * *'
+    - cron: '7 */8 * * *'
 permissions:
   contents: read
   actions: read

@@ -70,6 +70,13 @@ QUERY_BASES = [
     '"disassembler" in:name,description',
     '"decompiler" in:name,description',
 ]
+DATA_ASSET_QUERY_BASES = [
+    f'"{phrase}" in:readme,description' for phrase in (
+        'clean-room reimplementation', 'reimplementation of', 'open-source reimplementation',
+        'decompilation', 'decompiled', 'reverse-engineered', 'recreation of', 'clone of',
+        'port of', 'matching decomp', 're-implementation')
+]
+QUERY_BASES.extend(DATA_ASSET_QUERY_BASES)
 QUERIES = [query + ' is:public fork:false archived:false' for query in QUERY_BASES]
 MAX_README_BYTES = 8 * 1024 * 1024
 MAX_API_BYTES = 12 * 1024 * 1024

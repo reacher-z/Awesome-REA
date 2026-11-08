@@ -11,6 +11,7 @@ from urllib.parse import parse_qs, urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import search_frontier as frontier
+from scan_sources import DATA_ASSET_QUERY_BASES
 
 BASES = ['topic:reverse-engineering', 'topic:decompiler']
 LOW, HIGH = '2026-01-01T00:00:00Z', '2026-01-01T00:00:07Z'
@@ -31,6 +32,14 @@ def response(items=(), total=None, incomplete=False):
 
 
 class PartitionTests(unittest.TestCase):
+    def test_reimplementation_phrase_uses_the_same_paged_frontier(self):
+        document = state([DATA_ASSET_QUERY_BASES[0]])
+        request = frontier.next_request(document)
+        self.assertIn('"clean-room reimplementation" in:readme,description', request['query'])
+        self.assertEqual(request['per_page'], 100)
+        frontier.record_response(document, request, response([repo(i) for i in range(1, 101)], total=101))
+        self.assertEqual(frontier.next_request(document)['page'], 2)
+
     def test_request_preserves_scope_and_eligibility_while_adding_dates(self):
         document = state()
         original = copy.deepcopy(document)

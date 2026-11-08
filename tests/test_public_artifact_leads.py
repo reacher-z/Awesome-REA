@@ -261,9 +261,9 @@ class PublicLeadTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 discovery.write_report(report, Path(temporary) / 'data')
 
-    def test_workflow_is_hourly_read_only_default_branch_and_artifact_only(self):
+    def test_workflow_runs_every_eight_hours_read_only_default_branch_and_artifact_only(self):
         workflow = (ROOT / '.github/workflows/public-artifact-discovery.yml').read_text()
-        self.assertIn("cron: '7 * * * *'", workflow)
+        self.assertIn("cron: '7 */8 * * *'", workflow)
         self.assertNotIn('timezone:', workflow)
         # Only the failure-tracking job may write, and only issues.
         text, report = workflow.split('\n  report:\n', 1)

@@ -85,7 +85,7 @@ class QueueTest(unittest.TestCase):
         self.assertNotIn('"verification": "source-reviewed"', json.dumps(export))
         status = site.status_document(queue, 'https://awesomerea.org')
         self.assertEqual((status['last_successful_ingest_at'], status['last_scan_run_id'], status['stale_after_hours']),
-                         ('2026-11-05T17:00:00Z', 200, 4))
+                         ('2026-11-05T17:00:00Z', 200, 9))
         self.assertEqual(site.badge_document(queue)['message'], '2026-11-05 17:00 UTC')
 
     def test_list_page_cards_feed_and_llms_section(self):
