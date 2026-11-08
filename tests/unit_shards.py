@@ -13,20 +13,31 @@ import os
 import sys
 import unittest
 
-# Approximate seconds per group on a GitHub-hosted runner, from the unit logs of October 2026.
+# Approximate seconds per group on a GitHub-hosted runner, from the unit logs of November 2026.
 # They only balance the shards: an unlisted group weighs FALLBACK_SECONDS per test, and the coverage
 # checks below never depend on them. Re-measure from a run's timestamped unit logs when shards drift.
 WEIGHTS = {
-    'test_public_source_supplements.PublicSourceSupplementTests': 74,
-    'test_link_fragments.LinkFragmentTest': 39,
-    'test_review_supplements.PublicSupplementReviewerTests': 32,
-    'test_catalog_revision.CatalogRevisionTests': 18,
-    'test_evidence_pins.EvidencePinTests': 17,
+    'test_public_source_supplements.PublicSourceSupplementTests': 369,
+    'test_link_fragments.LinkFragmentTest': 273,
+    'test_language_fragment.LanguageFragmentTests': 76,
+    'test_copy_permalinks.CopyPermalinkTests': 74,
+    'test_print_layout.PrintLayoutTests': 73,
+    'test_discovery_leads.TrustedReviewTest': 32,
+    'test_discovery_ingest.TrackerTest': 29,
+    'test_review_pr.ReviewerDataSelectionTest': 17,
+    'test_catalog_revision.CatalogRevisionTests': 16,
+    'test_discoveries.TrustedReviewTest': 16,
     'test_requirement_budget.RequirementBudgetTests': 15,
-    'test_review_pr.ReviewerDataSelectionTest': 12,
-    'test_readme_size.ReadmeSizeBudgetTest': 10,
-    'test_repository_index': 6,
-    'test_readme_totals.ReadmeTotalsTest': 6,
+    'test_evidence_pins.EvidencePinTests': 11,
+    'test_discoveries.BatchValidationTest': 8,
+    'test_review_supplements.PublicSupplementReviewerTests': 6,
+    'test_readme_secondary_targets.ReadmeSecondaryTargetTest': 4,
+    'test_rest_readme_validation.RecoveryProvenanceTests': 4,
+    'test_scheduled_source_scan.NestedSchemaTests': 4,
+    'test_review_pr.PrivateFileRulesTest': 4,
+    'test_privacy_guard.PrivacyGuardTests': 4,
+    'test_review_dispatch.DispatchedReviewTest': 4,
+    'test_evidence_withdrawal.WithdrawnEvidenceTests': 3,
 }
 FALLBACK_SECONDS = 0.1
 
