@@ -784,12 +784,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**PMCA-RE RELOADED 索尼相机分析与管理工具**](https://github.com/masterflai/pmca-re-reloaded) - PMCA-RE RELOADED 是面向 Sony 相机的 Rust 桌面与命令行工具，实验性功能可分析菜单设置在相机设置存储区中的位置。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/pmca-re-reloaded/)</sub>
 - [**ThisFirmwareDoesNotExist MicroFreak 固件分析与补丁工具**](https://github.com/ThisFreakDoesntExist/ThisFirmwareDoesNotExist) - ThisFirmwareDoesNotExist 分析 Arturia MicroFreak 5.0.0.2084 固件，并用 freakpatch 修改用户自备的官方更新文件。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/thisfirmwaredoesnotexist/)</sub>
 - [**intel\_ma：管理固件分析与修改工具**](https://github.com/seuros/intel_ma) - intel\_ma 检查 ME/TXE/CSME 区域镜像和完整 SPI 转储中的 PC 管理固件。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/intel-ma/)</sub>
-- [**qemu-rtd2841 Realtek RTD2841 芯片组模拟器**](https://github.com/rubenthampy890-del/qemu-rtd2841) - qemu-rtd2841 为 QEMU 添加 Realtek RTD2841/RTK284x 电视硬件模型，用于裸机诊断和本地固件实验。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/qemu-rtd2841/)</sub>
+- [**qemu-rtd2841 Realtek RTD2841 芯片组模拟器**](https://github.com/rubenthampy890-del/qemu-rtd2841) - qemu-rtd2841 为 QEMU 添加 Realtek RTD2841/RTK284x 电视硬件模型，用于裸机诊断和本地固件实验。 <sub>项目 · [完整条目](https://awesomerea.org/zh/resources/qemu-rtd2841/)</sub>
 - [**MS4X Siemens 发动机控制单元逆向工具与文档**](https://github.com/therudywolf/MS4X) - MS4X 分析 BMW M52TU、M54 发动机所用 Siemens MS42/MS43 控制单元固件。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/ms4x/)</sub>
 - [**AC46 Firmware Tool JieLi 固件解包工具**](https://github.com/0x0-nyan/AC46-Firmware-Tool) - AC46 Firmware Tool 用于解包 JieLi AC4600/BT15 设备固件。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/ac46-firmware-tool/)</sub>
 - [**Bin X-ray 二进制数据可视化分析工具**](https://github.com/russlank/BinXray) - Bin X-ray 用 256×256 字节对矩阵和三维字节三元组图展示未知文件及固件数据中的模式。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/bin-xray/)</sub>
 - [**PIC microcontrollers disassembler PIC 单片机反汇编工具**](https://github.com/c-not-around/pic-disasm) - PIC microcontrollers disassembler 将 MidRange 和 Enhanced MidRange PIC12/PIC16 设备的 Intel HEX 转储转换为反汇编列表、HI-TECH PICC 汇编文件，或同时输出两者。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/pic-disasm/)</sub>
-- [**premium5 Volkswagen Premium 5 收音机固件仿真器**](https://github.com/mnaberez/premium5) - premium5 在寄存器与信号层仿真 Volkswagen Premium 5 汽车收音机，使原版固件无需修改即可运行。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/premium5-radio-emulator/)</sub>
+- [**premium5 Volkswagen Premium 5 收音机固件仿真器**](https://github.com/mnaberez/premium5) - premium5 在寄存器与信号层仿真 Volkswagen Premium 5 汽车收音机，使原版固件无需修改即可运行。 <sub>项目 · [完整条目](https://awesomerea.org/zh/resources/premium5-radio-emulator/)</sub>
 - [**SPRD Flash Tool SPRD/UNISOC 固件读取与分区分析工具**](https://github.com/ajsb85/sprdflash-rs) - SPRD Flash Tool 用 Rust 实现面向 RDA8910 和 UIS8910 设备的 SPRD/UNISOC PAC 下载协议。 <sub>工具 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/sprdflash-rs/)</sub>
 - [**PCM Explorer 车机镜像与固件分析工具**](https://github.com/dspl1236/PCM-Explorer) - PCM Explorer 是只读的 Python 车机镜像浏览器，面向 Porsche PCM 和 Audi MMI。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/pcm-explorer/)</sub>
 - [**me\_cleaner Intel ME 固件精简脚本**](https://github.com/corna/me_cleaner) - me\_cleaner 是一个修改 Intel ME 固件映像的 Python 脚本，旨在减少该固件与系统交互的能力。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/me-cleaner/)</sub>
@@ -865,7 +865,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**RoflLens《英雄联盟》回放协议分析工具**](https://github.com/ss26367098/rofllens) - RoflLens 是分析《英雄联盟》ROFL v2 回放容器与网络传输的 Python 库和命令行工具。 <sub>工具 · 也适用：游戏、二进制 · [完整条目](https://awesomerea.org/zh/resources/rofllens/)</sub>
 - [**LogicAnalyzer 逻辑分析仪**](https://github.com/gusmanb/logicanalyzer) - LogicAnalyzer 是一套用于采集数字信号和解析通信协议的软硬件工具。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/logicanalyzer/)</sub>
 - [**BtleJuice 框架**](https://github.com/DigitalSecurity/btlejuice) - BtleJuice 是用于拦截设备间蓝牙低功耗 GATT 操作的框架。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/btlejuice/)</sub>
-- [**NearDrop Nearby Share 协议实现**](https://github.com/grishka/NearDrop) - macOS 菜单栏应用，部分实现 Nearby Share 和 Quick Share，可与 Android 设备交换文件和链接。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/neardrop/)</sub>
+- [**NearDrop Nearby Share 协议实现**](https://github.com/grishka/NearDrop) - macOS 菜单栏应用，部分实现 Nearby Share 和 Quick Share，可与 Android 设备交换文件和链接。 <sub>项目 · [完整条目](https://awesomerea.org/zh/resources/neardrop/)</sub>
 - [**Impacket 网络协议库**](https://github.com/fortra/impacket) - Impacket 是用于构造、解析网络数据包及使用协议实现的 Python 库。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/impacket/)</sub>
 
 <a id="agents-and-mcp"></a>
