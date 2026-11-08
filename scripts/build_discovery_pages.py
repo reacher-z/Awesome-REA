@@ -251,6 +251,45 @@ def _requirements_link(record: dict, language: str, name: str, css: str) -> str:
     return f'<a class="{css}" href="{href}" aria-label="{escape(label, quote=True)}">{text}<span aria-hidden="true">&nbsp;→</span></a>'
 
 
+CLASS_DETAIL = {
+    0: ('完整软件复现', 'full software reconstruction'),
+    1: ('部分范围或非复现条目', 'partial scope or analysis entry'),
+    2: ('有代码和文档，缺演示或下载', 'code & docs, no demo or download'),
+    3: ('仅笔记或进度记录', 'notes only'),
+}
+
+
+def evidence_badge(record: dict, language: str) -> str:
+    """The curated C0–C3 badge on collection cards; the homepage and search render the same class."""
+    if record.get('evidence_status') == 'unknown':
+        title = '复核时来源不可达或不可读' if language == 'zh' else 'Source unavailable or unreadable at review time'
+        return f'<span class="evidence-class evidence-class-unknown" title="{escape(title, quote=True)}">?</span>'
+    value = record.get('evidence_class')
+    if value is None:
+        return ''
+    detail = CLASS_DETAIL[int(value)][1 if language == 'zh' else 0]
+    label = '证据档位' if language == 'zh' else 'Evidence class'
+    return (f'<span class="evidence-class evidence-class-{int(value)}" '
+            f'title="{escape(f"{label} {int(value)} · {detail}", quote=True)}">C{int(value)}</span>')
+
+
+def _resource_card(record: dict, language: str, heading: str = 'h3') -> str:
+    zh = language == 'zh'
+    detail_path = f"{'/zh' if zh else ''}/resources/{record['id']}/"
+    name = (record.get('name_zh') or record['name']) if zh else record['name']
+    detail_label = f'完整条目：{name}' if zh else f'Full entry: {name}'
+    description = record[f'description_{language}']
+    kind = KIND_LABELS[record['kind']][1 if zh else 0]
+    targets = ' · '.join(TARGETS[target][1 if zh else 0] for target in record['targets'])
+    reviewed = str(record['verified_at'])
+    return f'''<article class="resource-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}" data-resource-id="{escape(record['id'], quote=True)}">
+  <div class="card-heading"><{heading}><a class="card-title-link" href="{_url(record['url'])}" target="_blank" rel="noopener">{escape(name)}{EXTERNAL_TITLE_ARROW}</a>{evidence_badge(record, language)}</{heading}><span class="resource-kind">{escape(kind)}</span></div>
+  <p class="card-description">{escape(description)}</p>
+  <div class="card-meta"><span>{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{escape(record['id'], quote=True)}" href="{escape(detail_path, quote=True)}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a></div>
+  <div class="resource-detail-meta"><a class="resource-evidence-link" href="{_url(record['evidence_url'])}" target="_blank" rel="noopener">{PRIMARY_SOURCE_LABEL[zh]} ↗</a>{_requirements_link(record, language, name, 'resource-requirements-link')}<time datetime="{escape(reviewed, quote=True)}">{('来源复核于' if zh else 'Source-reviewed')} {escape(reviewed[:10])}</time></div>
+</article>'''
+
+
 def _target_coverage(section: str, records: list[dict], language: str, *, cases: bool = False) -> str:
     """State how many listed entries carry a target section's tag and link the homepage filter for all of them.
 

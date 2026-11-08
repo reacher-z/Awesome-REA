@@ -248,6 +248,27 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   assert.match(new URL(page.url()).pathname, /\/resources\/[a-z0-9-]+\/$/, `${label}: Enter opens the selected result`);
 }
 
+// The evidence-class select narrows the drawer in place, and the info button explains the classes.
+async function homepageClassFilter(page, language, viewport) {
+  const label = `${language} homepage evidence-class filter ${viewport.name}`;
+  assert.equal(await page.$eval('[data-class-select]', select => select.options[0].value), '', `${label}: all classes is the default`);
+  await page.select('[data-class-select]', '0');
+  await page.waitForFunction(() => {
+    const cards = [...document.querySelectorAll('[data-cards] > .card')];
+    return new URL(location.href).searchParams.get('class') === '0' && cards.length && cards.every(card => card.querySelector('.card-class-0'));
+  }, {timeout: 15000});
+  const classes = await page.$$eval('[data-cards] > .card .card-class', nodes => nodes.map(node => node.textContent.trim()));
+  assert(classes.length > 0, `${label}: rows render`);
+  assert(classes.every(text => text === 'C0'), `${label}: only C0 rows remain`);
+  assert.equal(await page.$eval('[data-class-select]', select => select.value), '0', `${label}: the select keeps its choice`);
+  await page.click('.info-btn');
+  assert.equal(await page.$eval('.info-btn', button => button.getAttribute('aria-expanded')), 'true', `${label}: the info button opens the class criteria`);
+  assert.equal(await page.$eval('.info-pop', node => getComputedStyle(node).visibility), 'visible', `${label}: the criteria are visible`);
+  await page.keyboard.press('Escape');
+  await page.select('[data-class-select]', '');
+  await page.waitForFunction(() => !new URL(location.href).searchParams.get('class') && document.querySelectorAll('[data-cards] > .card').length === 7);
+}
+
 // Past the hero field the sticky bar offers search; it opens over the page and closes back to the same place.
 // /resources/ holds every record; filters change the list in place, and section links return to the whole list.
 async function resourceListing(page, language, viewport, data) {
@@ -636,6 +657,8 @@ async function staticPage(page, route, viewport) {
       for (const language of ['en', 'zh']) {
         await check(`${language} new homepage at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
           `${language} new homepage ${viewport.name}`, (page, requested) => newHomepage(page, language, viewport, data, requested)));
+        await check(`${language} homepage evidence-class filter at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+          `${language} homepage evidence-class filter ${viewport.name}`, page => homepageClassFilter(page, language, viewport)));
         await check(`${language} scrolled homepage search at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
           `${language} scrolled homepage search ${viewport.name}`, page => homepageScrolledSearch(page, language, viewport)));
         await check(`${language} new homepage without JavaScript at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
