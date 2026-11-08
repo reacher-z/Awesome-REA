@@ -104,7 +104,7 @@ RUN_SCHEMA = {
              'retained_unattempted_repository_ids seed_observation_start_index resume_observation_start_index '
              'query_count seed_observation_count resume_observation_count new_successful_readme_scans '
              'new_failed_readme_scans', int),
-    **fields('seed_curated seed_papers', bool), 'query_plan': [str], 'held_repository_ids': [str],
+    **fields('seed_curated seed_papers seed_tracker skip_retained_metadata', bool), 'query_plan': [str], 'held_repository_ids': [str],
     'readme_transport': TRANSPORT_SCHEMA,
     'scanner_provenance': {'policy': str, **fields('implementation seed_inputs', [{**fields('path sha256', str), 'bytes': int}])},
 }
@@ -734,7 +734,7 @@ def scanner_child(seed, output, frontier_path, discovery_seconds=SCAN_SECONDS - 
                            pending_metadata_budget=200, search_request_budget=360,
                            discovery_deadline=time.monotonic() + discovery_seconds,
                            failed_batch_skips=5, failed_batch_pause=5,
-                           seed_curated=True, seed_papers=True,
+                           seed_curated=True, seed_papers=True, seed_tracker=True,
                            queries=[query + ' ' + search_frontier.GATES for query in APPROVED_QUERIES], output=output)
     rest = GitHub(token, 2)
     transport = ScheduledTransport(GraphQLReadmeTransport(token, batch_size=16, interval=1.0), rest)

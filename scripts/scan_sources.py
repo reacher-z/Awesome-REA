@@ -91,6 +91,7 @@ MCP_WORDING = r'model[\s-]*context[\s-]*protocol|\bmodelcontextprotocol\b|\bmcp\
 RUN_PROVENANCE_POLICY = 'scanner-files-and-seed-inputs-sha256-v1'
 CURATED_SEED_FILES = ('data/rea-resources.json', 'data/tool-resources.json')
 PAPER_SEED_FILE = 'data/papers.json'
+TRACKER_SEED_FILE = 'data/tracker-seeds.json'
 SEED_INPUT_DIGESTS = {}
 
 
@@ -286,6 +287,38 @@ def paper_references():
             if paper['id'] not in reference['ids']:
                 reference['ids'].append(paper['id'])
             reference['artifacts'].append({'paper_id': paper['id'], 'field': field, 'url': url})
+    return result
+
+
+@lru_cache(maxsize=1)
+def tracker_references():
+    """Seed repositories explicitly reviewed in the public rea-tracker audit."""
+    document = read_seed_input(TRACKER_SEED_FILE)
+    if document is None:
+        return {}
+    if (not isinstance(document, dict) or set(document) != {'schema_version', 'source', 'reviewed_at', 'repositories'}
+            or document.get('schema_version') != 1 or not isinstance(document.get('source'), str)
+            or not re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}', str(document.get('reviewed_at')))
+            or not isinstance(document.get('repositories'), list) or not document['repositories']):
+        raise ValueError('data/tracker-seeds.json needs schema_version 1, a source, a review date and repositories')
+    result = {}
+    seen_references = set()
+    for entry in document['repositories']:
+        if (not isinstance(entry, dict) or set(entry) != {'repo', 'reference_ids'}
+                or not isinstance(entry.get('repo'), str)
+                or not re.fullmatch(r'[a-z0-9-]+/[a-z0-9_.-]+', entry['repo'].casefold())
+                or not isinstance(entry.get('reference_ids'), list) or not entry['reference_ids']
+                or any(not isinstance(value, str) or not re.fullmatch(r'tracker-[a-z0-9]+(?:-[a-z0-9]+)*', value)
+                       for value in entry['reference_ids'])):
+            raise ValueError('data/tracker-seeds.json repositories need a GitHub name and tracker-* reference IDs')
+        name = entry['repo'].casefold()
+        if name in result:
+            raise ValueError(f'data/tracker-seeds.json repeats {name}')
+        if (len(set(entry['reference_ids'])) != len(entry['reference_ids'])
+                or seen_references.intersection(entry['reference_ids'])):
+            raise ValueError('data/tracker-seeds.json repeats a reference ID')
+        seen_references.update(entry['reference_ids'])
+        result[name] = {'ids': list(entry['reference_ids'])}
     return result
 
 
@@ -996,7 +1029,8 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
         'retained_failed_readme_scans': retained_failures,
         'requested_new_successful_scans': max(0, args.target - retained_successes),
         'readme_queue_candidates': 0, 'seed_curated': args.seed_curated,
-        'seed_papers': args.seed_papers,
+        'seed_papers': args.seed_papers, 'seed_tracker': getattr(args, 'seed_tracker', False),
+        'skip_retained_metadata': getattr(args, 'skip_retained_metadata', False),
         'classification_engine_version': CLASSIFICATION_ENGINE_VERSION,
         'retained_unattempted_repository_ids': len(known_ids - attempted_ids),
         'query_plan': list(args.queries),
@@ -1060,7 +1094,7 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
                 return 'frontier-deferred'
         return None
 
-    def add_candidate(repo, observed_at, query=None, seed_ids=None, paper=None, resumed_id=None):
+    def add_candidate(repo, observed_at, query=None, seed_ids=None, seed_method='curated-reference', paper=None, resumed_id=None):
         if repository_ineligibility(repo):
             return 'ineligible'
         if (type(repo.get('id')) is not int or repo['id'] <= 0
@@ -1094,8 +1128,8 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
         if seed_ids is not None:
             references = candidate.setdefault('_seed_reference_ids', [])
             references.extend(value for value in seed_ids if value not in references)
-            if 'curated-reference' not in candidate['_discovery_methods']:
-                candidate['_discovery_methods'].append('curated-reference')
+            if seed_method not in candidate['_discovery_methods']:
+                candidate['_discovery_methods'].append(seed_method)
         if paper is not None:
             references = candidate.setdefault('_seed_paper_ids', [])
             references.extend(value for value in paper['ids'] if value not in references)
@@ -1134,7 +1168,7 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
             if len(pending_page) < page_limit:
                 break
         checkpoint()
-    if resumed:
+    if resumed and not getattr(args, 'skip_retained_metadata', False):
         pending_legacy = known_ids - attempted_ids - set(candidates) - held_ids
         if frontier_api is not None:
             pending_legacy -= {'scan-' + key for key in frontier_state['candidates']}
@@ -1166,9 +1200,14 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
     if args.seed_papers:
         seed_groups.append(('paper-artifact-reference', paper_references()))
         seed_files.append(PAPER_SEED_FILE)
+    if getattr(args, 'seed_tracker', False):
+        seed_groups.append(('tracker-audit-reference', tracker_references()))
+        seed_files.append(TRACKER_SEED_FILE)
     meta['current_run']['scanner_provenance']['seed_inputs'] = [
         SEED_INPUT_DIGESTS[relative] for relative in seed_files if relative in SEED_INPUT_DIGESTS]
     for method, references in seed_groups:
+        # Curated observations and record discovery provenance use distinct labels.
+        discovery_method = 'curated-reference' if method == 'curated-repository-reference' else method
         for name, reference in sorted(references.items()):
             if name in retained_names:
                 continue
@@ -1179,8 +1218,8 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
                 entry['artifact_references'] = copy.deepcopy(paper['artifacts'])
             try:
                 repo = api.json('/repos/' + quote(name, safe='/'))
-                entry['status'] = add_candidate(repo, entry['observed_at'],
-                                                seed_ids=reference['ids'] if paper is None else None, paper=paper)
+                entry['status'] = add_candidate(repo, entry['observed_at'], seed_ids=reference['ids'] if paper is None else None,
+                                                seed_method=discovery_method, paper=paper)
                 if entry['status'] != 'ineligible':
                     entry['repository_id'] = 'scan-' + str(repo['id'])
                 else:
@@ -1477,6 +1516,9 @@ def main():
     parser.add_argument('--resume', type=Path, help='Retain an existing snapshot/checkpoint and resolve its unattempted repository IDs')
     parser.add_argument('--seed-curated', action='store_true', help='Discover missing curated GitHub repositories before search candidates')
     parser.add_argument('--seed-papers', action='store_true', help='Discover GitHub roots from bibliography code_url/project_url fields before search candidates')
+    parser.add_argument('--seed-tracker', action='store_true', help='Discover repositories listed in data/tracker-seeds.json before search candidates')
+    parser.add_argument('--skip-retained-metadata', action='store_true',
+                        help='Leave retained unattempted repository IDs pending; use only enabled seeds and queries')
     parser.add_argument('--hold-repository-id', action='append', dest='hold_repository_ids', default=[],
                         help='Keep this positive numeric repository ID pending for this run; repeat for more IDs')
     parser.add_argument('--query', action='append', help='Ordered search base; repeat to replace defaults. Public/non-fork/non-archived gates are always added.')
