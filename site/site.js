@@ -22,6 +22,8 @@
     none: (q) => `没有与“${esc(q)}”匹配的记录。`, near: '相近名称：', noneFilters: '没有符合这些筛选条件的记录。', clearSearch: '清除搜索', sources: (q) => `在仓库目录中搜索“${esc(q)}”`, discoveries: '查看未审核的发现', keyMove: '移动', keyOpen: '打开', keyClear: '清除', suggest: '推荐收录这个资源', clear: '清除筛选', loading: '正在载入索引…', failed: '索引载入失败，请检查网络后重试。',
     recent: '最近搜索', popular: '常用入口', groups: { tool: '工具', 'case-study': '案例', integration: '集成', other: '学习与参考', paper: '论文' }, papers: '论文',
     remove: (l) => `移除筛选：${l}`, page: (a, b) => `第 ${a}/${b} 页`, shelf: (a, n) => `${fmt(a)} / ${fmt(n)} 个案例`,
+    classLabel: '证据档位', classDetail: ['完整软件复现', '部分范围或非复现条目', '有代码和文档，缺演示或下载', '仅笔记或进度记录'],
+    unknownTitle: '复核时来源不可达或不可读', previewAlt: '项目公开文档中的演示截图', previewVideoAlt: '项目公开文档中演示视频的封面', demoNote: '有 demo · 暂无截图',
   } : {
     featured: 'Featured', theme: 'Colour theme', system: 'system', light: 'light', dark: 'dark', reviewed: 'Reviewed', targets: 'Targets', copied: 'Copied',
     showing: (a, n) => `Showing <strong>${fmt(a)}</strong> of <strong>${fmt(n)}</strong>`, range: (a, b, n) => `Showing <strong>${fmt(a)}–${fmt(b)}</strong> of <strong>${fmt(n)}</strong>`,
@@ -29,6 +31,8 @@
     none: (q) => `Nothing in the catalogue matches “${esc(q)}”.`, near: 'Close names:', noneFilters: 'Nothing in the catalogue matches these filters.', clearSearch: 'Clear search', sources: (q) => `Search the repository directory for “${esc(q)}”`, discoveries: 'See the unreviewed discoveries', keyMove: 'move', keyOpen: 'open', keyClear: 'clear', suggest: 'Suggest this resource', clear: 'Clear filters', loading: 'Loading the index…', failed: 'The search index did not load. Check your connection and try again.',
     recent: 'Recent searches', popular: 'Popular', groups: { tool: 'Tools', 'case-study': 'Case studies', integration: 'Integrations', other: 'Learning and reference', paper: 'Papers' }, papers: 'Papers',
     remove: (l) => `Remove filter: ${l}`, page: (a, b) => `Page ${a} of ${b}`, shelf: (a, n) => `${fmt(a)} of ${fmt(n)} cases`,
+    classLabel: 'Evidence class', classDetail: ['full software reconstruction', 'partial scope or analysis entry', 'code & docs, no demo or download', 'notes only'],
+    unknownTitle: 'Source unavailable or unreadable at review time', previewAlt: "Demo screenshot from the project's public documentation", previewVideoAlt: "Demo video thumbnail from the project's public documentation", demoNote: 'Demo available · no screenshot',
   };
   const ISSUE = 'https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml';
   const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
@@ -154,14 +158,15 @@
     return out;
   }
   async function prep(raw) {
-    const res = await chunked(raw.r, ([id, name, k, tg, c, lead, host, ev, rev, added, feat, alias, conn, sec]) => {
+    const res = await chunked(raw.r, ([id, name, k, tg, c, lead, host, ev, rev, added, feat, alias, conn, cls, st, prev, prevKind, sec]) => {
       const targets = [...tg].map(Number);
       // GitHub evidence is stored as owner/repo/blob/<sha>/path; anything else keeps its full URL and a label.
       const seg = /^https?:/.test(ev) ? null : ev.split('/');
       const repo = seg ? `${seg[0]}/${seg[1]}` : host;
       const sha = seg && /^(blob|tree)$/.test(seg[2]) ? seg[3].slice(0, 7) : '';
       const tags = [raw.kindLabels[k], raw.kindPlural[k], raw.kinds[k], raw.categoryLabels[c], ...targets.map((i) => `${raw.targetLabels[i]} ${raw.targets[i]}`)].join(' ');
-      const r = { type: 'r', id, name, k, kind: raw.kinds[k], targets, c, lead, repo, sha, ev, rev, added, feat, alias, conn, sec, pin: raw.pinned.includes(id),
+      const r = { type: 'r', id, name, k, kind: raw.kinds[k], targets, c, lead, repo, sha, ev, rev, added, feat, alias, conn,
+        sec, pin: raw.pinned.includes(id), cls, st, prev, prevKind,
         nName: norm(name), nAlias: norm(`${alias} ${repo}`), nTags: norm(tags), nDesc: norm(lead) };
       r.nw = words(r.nName); r.aw = words(r.nAlias); r.tw = words(r.nTags); r.dw = words(r.nDesc);
       return r;
@@ -283,6 +288,23 @@
     return r.type === 'p' ? `${X.targetCodes[r.t]}·PAPR` : `${X.targetCodes[r.targets[0]]}·${X.kindCodes[r.k]}`;
   }
   const href = (r) => (r.type === 'p' ? `${P}/papers/${r.id}/` : `${P}/resources/${r.id}/`);
+  function classChip(r) {
+    if (r.st === 'unknown') return `<span class="card-class card-class-unknown" title="${esc(T.unknownTitle)}">?</span>`;
+    if (r.cls == null || r.cls < 0) return '';
+    const detail = T.classDetail[r.cls] || '';
+    return `<span class="card-class card-class-${r.cls}" title="${esc(`${T.classLabel} ${r.cls} · ${detail}`)}">C${r.cls}</span>`;
+  }
+  function previewHTML(r) {
+    if (r.prev) {
+      const video = r.prevKind === 'video';
+      return `<figure class="card-preview">${video ? '<span class="card-preview-play" aria-hidden="true">▶</span>' : ''}`
+        + `<img src="${esc(r.prev)}" alt="${esc(video ? T.previewVideoAlt : T.previewAlt)}" loading="lazy" decoding="async"></figure>`;
+    }
+    if (r.prevKind === 'demo') {
+      return `<figure class="card-preview card-preview-demo"><span class="card-preview-play" aria-hidden="true">▶</span><span>${esc(T.demoNote)}</span></figure>`;
+    }
+    return '';
+  }
   function cardHTML(r, toks) {
     const X = IDX.raw;
     const t0 = r.targets[0];
@@ -292,7 +314,8 @@
     const ev = /^https?:/.test(r.ev) ? r.ev : `https://github.com/${r.ev}`;
     return `<li class="card${r.kind === 'case-study' ? ' is-case' : ''}" id="r-${esc(r.id)}" data-id="${esc(r.id)}"><article class="card-face">`
       + `<p class="callno" title="${esc(label)}"><span class="vh">${esc(label)}: </span><span aria-hidden="true">${callno(r)}</span></p>`
-      + `<h3 class="card-name"><a class="stretch" href="${href(r)}">${hl(r.name, toks)}</a>${r.pin ? `<span class="row-mark">${T.featured}</span>` : ''}</h3><p class="card-desc">${hl(r.lead, toks)}</p>`
+      + `<h3 class="card-name"><a class="stretch" href="${href(r)}">${hl(r.name, toks)}</a>${r.pin ? `<span class="row-mark">${T.featured}</span>` : ''}${classChip(r)}</h3>`
+      + `<p class="card-desc">${hl(r.lead, toks)}</p>${previewHTML(r)}`
       + `<ul class="card-targets" aria-label="${T.targets}">${tg}</ul>`
       + `<p class="stamp">${ico('check')}<span>${T.reviewed} <time datetime="${r.rev}">${r.rev}</time></span>`
       + `<a class="ev" href="${esc(ev)}" rel="noopener"><span class="ev-repo">${esc(r.repo)}</span>${r.sha ? `<span class="sha">@${esc(r.sha)}</span>` : ''}</a></p></article></li>`;
@@ -461,6 +484,8 @@
     const chips = $$('[data-kind-chips] .chip');
     const sort = $('[data-sort]', drawer);
     const kindSel = $('[data-kind-select]', drawer);
+    const classSel = $('[data-class-select]', drawer);
+    const info = $('.info-btn', drawer);
     const init = { list: list.innerHTML, meta: meta.innerHTML, all: showAll.innerHTML, tabs: tabs.map((t) => $('.count', t).textContent), chips: chips.map((c) => $('.count', c).textContent) };
     const more = Object.assign(document.createElement('button'), { type: 'button', className: 'btn', hidden: true });
     list.after(more);
@@ -469,10 +494,13 @@
     papersBox.hidden = true;
     more.after(papersBox);
     const u = new URL(location.href);
-    const st = { q: u.searchParams.get('q') || '', target: u.searchParams.get('target') || 'all', kinds: new Set((u.searchParams.get('kind') || '').split(',').filter(Boolean)), sort: u.searchParams.get('sort') || 'featured', shown: 10 };
+    const wantedClass = u.searchParams.get('class');
+    const st = { q: u.searchParams.get('q') || '', target: u.searchParams.get('target') || 'all', kinds: new Set((u.searchParams.get('kind') || '').split(',').filter(Boolean)),
+      cls: ['0', '1', '2', '3', 'unknown'].includes(wantedClass) ? wantedClass : '', sort: u.searchParams.get('sort') || 'featured', shown: 10 };
     input.value = st.q;
     sort.value = st.sort;
-    const pristine = () => !st.q && st.target === 'all' && !st.kinds.size && st.sort === 'featured';
+    classSel.value = st.cls;
+    const pristine = () => !st.q && st.target === 'all' && !st.kinds.size && !st.cls && st.sort === 'featured';
     const foot = $('.drawer-foot', drawer);
     $('.hs-side', form).insertAdjacentHTML('afterbegin', `<span class="hs-keys" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> ${T.keyMove} <kbd>↵</kbd> ${T.keyOpen} <kbd>Esc</kbd> ${T.keyClear}</span>`);
     let selected = -1;
@@ -490,6 +518,7 @@
       const p = new URLSearchParams();
       if (st.q) p.set('q', st.q);
       if (st.kinds.size) p.set('kind', [...st.kinds].join(','));
+      if (st.cls) p.set('class', st.cls);
       if (st.sort !== 'featured') p.set('sort', st.sort);
       return p;
     };
@@ -498,6 +527,7 @@
       tabs.forEach((t) => { if (t.dataset.target === st.target) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current'); });
       chips.forEach((c) => c.setAttribute('aria-pressed', String(st.kinds.has(c.dataset.kind))));
       kindSel.value = st.kinds.size === 1 ? [...st.kinds][0] : '';
+      classSel.value = st.cls;
       const hp = params();
       if (st.target !== 'all') hp.set('target', st.target);
       history.replaceState(null, '', location.pathname + (hp.toString() ? `?${hp}` : '') + location.hash);
@@ -505,6 +535,7 @@
       if (st.q) ex.set('q', st.q);
       if (st.target !== 'all') ex.set('target', st.target);
       if (st.kinds.size) ex.set('kind', [...st.kinds].join(','));
+      if (st.cls) ex.set('class', st.cls);
       if (st.sort !== 'featured') ex.set('sort', st.sort);
       if (langLink) langLink.href = langBase + (hp.toString() ? `?${hp}` : '');
       showAll.href = `${P}/resources/${ex.toString() ? `?${ex}` : ''}`;
@@ -525,18 +556,19 @@
       const ti = X.raw.targets.indexOf(st.target);
       const base = search(X.res, st.q);
       const kindOK = (h) => !st.kinds.size || st.kinds.has(h.r.kind);
+      const classOK = (h) => !st.cls || (st.cls === 'unknown' ? h.r.st === 'unknown' : String(h.r.cls) === st.cls);
       const targetOK = (h) => st.target === 'all' || h.r.targets.includes(ti);
       tabs.forEach((t) => {
         const i = X.raw.targets.indexOf(t.dataset.target);
-        $('.count', t).textContent = fmt(base.filter((h) => kindOK(h) && (i < 0 || h.r.targets.includes(i))).length);
+        $('.count', t).textContent = fmt(base.filter((h) => kindOK(h) && classOK(h) && (i < 0 || h.r.targets.includes(i))).length);
       });
       const inTarget = base.filter(targetOK);
       chips.forEach((c) => {
-        const n = inTarget.filter((h) => h.r.kind === c.dataset.kind).length;
+        const n = inTarget.filter((h) => classOK(h) && h.r.kind === c.dataset.kind).length;
         $('.count', c).textContent = fmt(n);
         c.disabled = !n && !st.kinds.has(c.dataset.kind);
       });
-      const hits = sortHits(inTarget.filter(kindOK), st.sort, st.q);
+      const hits = sortHits(inTarget.filter((h) => kindOK(h) && classOK(h)), st.sort, st.q);
       const shown = hits.slice(0, st.shown);
       list.innerHTML = hits.length ? shown.map((h) => cardHTML(h.r, toks)).join('') : emptyHTML(st.q, X.res, 'li', true);
       select(st.q && hits.length ? 0 : -1);
@@ -603,6 +635,13 @@
     }));
     sort.addEventListener('change', () => { st.sort = sort.value; render(); });
     kindSel.addEventListener('change', () => { st.kinds = new Set(kindSel.value ? [kindSel.value] : []); st.shown = 10; render(); });
+    classSel.addEventListener('change', () => { st.cls = classSel.value; st.shown = 10; render(); });
+    if (info) {
+      const setInfo = (open) => info.setAttribute('aria-expanded', String(open));
+      info.addEventListener('click', () => setInfo(info.getAttribute('aria-expanded') !== 'true'));
+      document.addEventListener('click', (e) => { if (!e.target.closest('.info-wrap')) setInfo(false); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setInfo(false); });
+    }
     more.addEventListener('click', () => { st.shown += 10; render(); });
     if (!pristine()) render();
   }
@@ -634,6 +673,7 @@
       st.targets = new Set((u.searchParams.get('target') || '').split(',').filter(Boolean));
       MULTI.forEach((k) => { st[k] = new Set((u.searchParams.get(k) || '').split(',').filter(Boolean)); });
       st.reviewed = u.searchParams.get('reviewed') || '';
+      st.cls = u.searchParams.get('class') || '';
       st.sort = u.searchParams.get('sort') || 'featured';
       st.page = Math.max(1, +(u.searchParams.get('page') || 1));
       if (input) input.value = st.q;
@@ -644,7 +684,7 @@
       });
     };
     read();
-    const nActive = () => MULTI.reduce((n, k) => n + st[k].size, 0) + (st.reviewed ? 1 : 0) + st.targets.size;
+    const nActive = () => MULTI.reduce((n, k) => n + st[k].size, 0) + (st.reviewed ? 1 : 0) + (st.cls ? 1 : 0) + st.targets.size;
     const pristine = () => !st.q && !nActive() && st.sort === 'featured' && st.page === 1;
     const write = (push) => {
       const p = new URLSearchParams();
@@ -652,6 +692,7 @@
       if (st.targets.size) p.set('target', [...st.targets].join(','));
       MULTI.forEach((k) => { if (st[k].size) p.set(k, [...st[k]].join(',')); });
       if (st.reviewed) p.set('reviewed', st.reviewed);
+      if (st.cls) p.set('class', st.cls);
       if (st.sort !== 'featured') p.set('sort', st.sort);
       if (st.page > 1) p.set('page', st.page);
       const url = `${P}/resources/${p.toString() ? `?${p}` : location.hash}`;
@@ -711,6 +752,7 @@
         connection: (r) => !st.connection.size || st.connection.has(R.connections[r.conn]),
         section: (r) => !st.section.size || st.section.has(R.sections[r.sec]),
         reviewed: (r) => !st.reviewed || r.rev >= since(+st.reviewed),
+        class: (r) => !st.cls || (st.cls === 'unknown' ? r.st === 'unknown' : r.cls === Number(st.cls)),
       };
       const base = search(X.res, st.q);
       const pass = (r, skip) => Object.entries(tests).every(([k, f]) => k === skip || f(r));
@@ -746,7 +788,8 @@
       $('[data-pager]', listing).outerHTML = pagerHTML(st.page, pages);
       const chipsHTML = [...[...st.targets].map((v) => ['target', v, R.targetLabels[R.targets.indexOf(v)]]),
         ...MULTI.flatMap((k) => [...st[k]].map((v) => [k, v, labelFor(k, v)])),
-        ...(st.reviewed ? [['reviewed', st.reviewed, labelFor('reviewed', st.reviewed)]] : [])]
+        ...(st.reviewed ? [['reviewed', st.reviewed, labelFor('reviewed', st.reviewed)]] : []),
+        ...(st.cls ? [['class', st.cls, st.cls === 'unknown' ? T.unknownTitle : `${T.classLabel} ${st.cls}`]] : [])]
         .map(([k, v, l]) => `<button class="chip" type="button" data-unset="${k}" data-v="${esc(v)}" aria-label="${esc(T.remove(l))}">${esc(l)}${ico('close')}</button>`).join('');
       activeEl.innerHTML = chipsHTML;
       activeEl.hidden = !chipsHTML;
@@ -782,14 +825,14 @@
       const u = e.target.closest('[data-unset]');
       if (u) {
         const { unset: k, v } = u.dataset;
-        if (k === 'target') st.targets.delete(v); else if (k === 'reviewed') st.reviewed = ''; else st[k].delete(v);
+        if (k === 'target') st.targets.delete(v); else if (k === 'reviewed') st.reviewed = ''; else if (k === 'class') st.cls = ''; else st[k].delete(v);
         $$('input', facetForm).forEach((el) => { if (el.type === 'radio') el.checked = el.value === st.reviewed; else el.checked = st[el.name].has(el.value); });
         st.page = 1; render();
       }
     });
     const reset = () => {
       st.q = ''; if (input) input.value = '';
-      st.targets.clear(); MULTI.forEach((k) => st[k].clear()); st.reviewed = ''; st.page = 1; st.sort = 'featured'; sort.value = 'featured';
+      st.targets.clear(); MULTI.forEach((k) => st[k].clear()); st.reviewed = ''; st.cls = ''; st.page = 1; st.sort = 'featured'; sort.value = 'featured';
       $$('input', facetForm).forEach((el) => { el.checked = el.type === 'radio' && el.value === ''; });
       render();
     };

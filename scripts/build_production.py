@@ -18,8 +18,13 @@ def main():
     parser.add_argument('--fontawesome-assets-url', help=argparse.SUPPRESS)
     parser.parse_args()
     commands = [
+        # The scan mapping is deterministic over the committed scan snapshot.
+        [sys.executable, 'scripts/classify_scan_evidence.py'],
         [sys.executable, 'scripts/validate.py'],
         ['node', '--check', 'site/app.js'],
+        # Preview images are downloaded into .cache/previews; build_site then
+        # copies them into dist so the page never hotlinks an external image.
+        [sys.executable, 'scripts/fetch_previews.py'],
     ]
     commands.append(['node', '--check', 'site/site.js'])
     commands.append([sys.executable, 'scripts/build_site.py'])
