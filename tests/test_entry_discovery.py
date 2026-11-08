@@ -11,7 +11,8 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_browse_pages import CATEGORIES
-from build_discovery_pages import _resource_card, jsonld_script
+from build_discovery_pages import jsonld_script
+from build_home import index_card
 from build_entry_pages import build_entry_pages
 from build_paper_pages import paper_card
 from validate_discovery import ORIGIN, expected_entry_routes, validate_route_inventory
@@ -36,7 +37,7 @@ class EntryDiscoveryValidationTests(unittest.TestCase):
             for route in expected_entry_routes(self.resources, self.papers):
                 self.html[route] = (root / route.lstrip('/') / 'index.html').read_text()
         for language, prefix in (('en', ''), ('zh', '/zh')):
-            self.html[f'{prefix}/resources/'] = '\n'.join(_resource_card(r, language) for r in self.resources)
+            self.html[f'{prefix}/resources/'] = '\n'.join(index_card(r, language, r['targets'], prefix=prefix, listing=True) for r in self.resources)
             self.html[f'{prefix}/papers/'] = '\n'.join(paper_card(p, language, False) for p in self.papers)
 
     def validate(self, html=None):
@@ -65,13 +66,16 @@ class EntryDiscoveryValidationTests(unittest.TestCase):
                 page = Page(self.html[f'{prefix}/{directory}/'])
                 for record in records:
                     self.assertIn(record['id'], page.ids)
-                    self.assertIn(record['url'], page.links)
                     self.assertIn(f"{prefix}/{directory}/{record['id']}/", page.links)
                     link = next(link for link in page.detail_links if link['id'] == record['id'])
+                    if directory == 'resources':
+                        self.assertIn(record['evidence_url'], page.links)
+                        self.assertEqual(''.join(link['text']), (record.get('name_zh') or record['name']) if prefix else record['name'])
+                        continue
+                    self.assertIn(record['url'], page.links)
                     label = '完整条目' if prefix else 'Full entry'
-                    title = ((record.get('name_zh') or record['name']) if prefix else record['name']) if directory == 'resources' else record['title_zh' if prefix else 'title']
                     self.assertEqual(''.join(link['text']), label)
-                    self.assertEqual(link['aria_label'], label + ('：' if prefix else ': ') + title)
+                    self.assertEqual(link['aria_label'], label + ('：' if prefix else ': ') + record['title_zh' if prefix else 'title'])
 
     def test_sitemap_inventory_is_derived_and_rejects_missing_extra_duplicate_pages(self):
         base = [ORIGIN + prefix + path for prefix in ('', '/zh')
@@ -112,7 +116,7 @@ class EntryDiscoveryValidationTests(unittest.TestCase):
         identifier = self.resources[0]['id']; route = '/zh/resources/'
         for before, after in [(f'href="/zh/resources/{identifier}/"', f'href="/resources/{identifier}/"'),
                               (f'href="/zh/resources/{identifier}/"', f'target="_blank" href="/zh/resources/{identifier}/"'),
-                              (f'id="{identifier}"', 'id="missing-anchor"')]:
+                              (f' id="{identifier}"', ' id="missing-anchor"')]:
             broken = dict(self.html); broken[route] = broken[route].replace(before, after, 1)
             with self.assertRaises(AssertionError): self.validate(broken)
 
@@ -129,9 +133,9 @@ class EntryDiscoveryValidationTests(unittest.TestCase):
         with self.assertRaises(AssertionError): self.validate(broken)
 
     def test_full_entry_link_label_and_accessible_title_are_required(self):
-        for route in ('/resources/', '/zh/papers/'):
+        for route, patterns in (('/resources/', 1), ('/zh/papers/', 2)):
             for pattern, replacement in [(r'(class="[^\"]*entry-detail-link[^>]*>)([^<]+)', r'\1Details'),
-                                         (r'aria-label="(?:Full entry:|完整条目：)[^\"]*"', 'aria-label="Full entry"')]:
+                                         (r'aria-label="(?:Full entry:|完整条目：)[^\"]*"', 'aria-label="Full entry"')][:patterns]:
                 broken = dict(self.html)
                 broken[route], count = re.subn(pattern, replacement, broken[route], count=1)
                 self.assertEqual(count, 1)

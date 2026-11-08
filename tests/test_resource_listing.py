@@ -1,4 +1,4 @@
-"""The /resources/ ItemList identifies the site's detail pages; card titles still link upstream."""
+"""The /resources/ ItemList identifies the site's detail pages in the order of the rows."""
 from pathlib import Path
 import sys
 from tempfile import TemporaryDirectory
@@ -34,11 +34,11 @@ class ResourceListingTests(unittest.TestCase):
             items = next(schema_entities(page.schemas, 'CollectionPage'))['mainEntity']['itemListElement']
             self.assertEqual([item['url'] for item in items],
                              [f'{ORIGIN}{prefix}/resources/{identifier}/' for identifier in page.record_ids])
-            # Games holds a case study and a tool, so it lists its case-studies sub-group first, as the README does.
-            self.assertEqual(page.record_ids, ['web-case', 'game-case', 'game-tool'])
+            # Games holds a case study and a tool, and rows put tools first.
+            self.assertEqual(page.record_ids, ['web-case', 'game-tool', 'game-case'])
             for record in resources:
-                # Visible title and source links keep pointing at the original resource.
-                self.assertEqual(page.record_links[record['id']][0], record['url'])
+                # Each row links to its entry page and its pinned evidence.
+                self.assertEqual(page.record_links[record['id']][0], f"{prefix}/resources/{record['id']}/")
                 self.assertIn(record['evidence_url'], page.record_links[record['id']])
 
     def test_validator_rejects_upstream_or_reordered_items(self):

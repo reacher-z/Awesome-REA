@@ -25,7 +25,7 @@ from source_scope import read_scope, validate_scope
 from validate_papers import validate_papers
 from review_dates import inclusion_date_error, review_date_is_future
 from source_descriptions import validate_description_capture
-from scan_sources import CURATED_SEED_FILES, PAPER_SEED_FILE, RUN_PROVENANCE_POLICY
+from scan_sources import CURATED_SEED_FILES, PAPER_SEED_FILE, TRACKER_SEED_FILE, RUN_PROVENANCE_POLICY
 from case_coverage import catalog_revision_warning, read_case_coverage, validate_case_coverage
 from data_classes import class_errors
 import strict_json
@@ -487,7 +487,8 @@ def scan_run_entries(meta):
 
 def validate_run_provenance(meta, errors):
     """Recorded run provenance names only repository files: scanner code and the seed inputs the run enabled."""
-    seed_flags = {**dict.fromkeys(CURATED_SEED_FILES, 'seed_curated'), PAPER_SEED_FILE: 'seed_papers'}
+    seed_flags = {**dict.fromkeys(CURATED_SEED_FILES, 'seed_curated'), PAPER_SEED_FILE: 'seed_papers',
+                  TRACKER_SEED_FILE: 'seed_tracker'}
     for location, run in scan_run_entries(meta):
         if not isinstance(run, dict) or 'scanner_provenance' not in run:
             continue  # Earlier runs did not record it; absence is never backfilled.
@@ -515,7 +516,7 @@ def validate_scan_discovery(meta, records, errors, failures=()):
     def nonnegative_integer(value):
         return type(value) is int and value >= 0
 
-    methods = {'github-search', 'curated-reference', 'paper-artifact-reference', 'retained-repository-id'}
+    methods = {'github-search', 'curated-reference', 'paper-artifact-reference', 'tracker-audit-reference', 'retained-repository-id'}
     statuses = {'candidate', 'retained-attempt', 'name-collision', 'ineligible', 'failed', 'held', 'frontier-deferred'}
     ledger = meta.get('discovered_repository_ids', [])
     known = {value for value in ledger if isinstance(value, str)} if isinstance(ledger, list) else set()
@@ -630,10 +631,12 @@ def validate_scan_discovery(meta, records, errors, failures=()):
                 if not isinstance(name, str) or not re.fullmatch(r'[a-z0-9-]+/[a-z0-9_.-]+', name):
                     errors.append(f'{where}: expected a lowercase GitHub seed repository name')
                 method = entry.get('method')
-                if method not in ('curated-repository-reference', 'paper-artifact-reference'):
+                if method not in ('curated-repository-reference', 'paper-artifact-reference', 'tracker-audit-reference'):
                     errors.append(f'{where}: invalid seed discovery method')
                 references = entry.get('reference_ids')
-                if not identifier_list(references, r'[a-z0-9]+(?:-[a-z0-9]+)*'):
+                reference_pattern = (r'tracker-[a-z0-9]+(?:-[a-z0-9]+)*'
+                                     if method == 'tracker-audit-reference' else r'[a-z0-9]+(?:-[a-z0-9]+)*')
+                if not identifier_list(references, reference_pattern):
                     errors.append(f'{where}: expected unique reference IDs')
                 artifacts = set()
                 if method == 'paper-artifact-reference':
@@ -644,9 +647,11 @@ def validate_scan_discovery(meta, records, errors, failures=()):
                 if status in {'failed', 'ineligible'} and identifier is not None:
                     errors.append(f'{where}: unsuccessful seed lookups must not expose repository metadata')
                 if status == 'candidate' and isinstance(identifier, str):
-                    evidence = seeds.setdefault(identifier, {'curated': set(), 'papers': set()})
+                    evidence = seeds.setdefault(identifier, {'curated': set(), 'papers': set(), 'tracker': set()})
                     if method == 'curated-repository-reference' and isinstance(references, list):
                         evidence['curated'].update(value for value in references if isinstance(value, str))
+                    elif method == 'tracker-audit-reference' and isinstance(references, list):
+                        evidence['tracker'].update(value for value in references if isinstance(value, str))
                     elif method == 'paper-artifact-reference':
                         evidence['papers'].update(artifacts)
             if status == 'failed' and not nonempty_string(entry.get('reason')):
@@ -685,13 +690,22 @@ def validate_scan_discovery(meta, records, errors, failures=()):
             errors.append(f'{where}: matched queries require search discovery')
         if 'retained-repository-id' in discovery and (not isinstance(identifier, str) or identifier not in resumed):
             errors.append(f'{where}: retained discovery needs a candidate metadata observation')
-        if 'curated-reference' in discovery:
+        reference_methods = [method for method in ('curated-reference', 'tracker-audit-reference') if method in discovery]
+        if reference_methods:
             references = record.get('seed_reference_ids')
-            if (not identifier_list(references, r'[a-z0-9]+(?:-[a-z0-9]+)*')
-                    or not set(references) <= evidence.get('curated', set())):
-                errors.append(f'{where}: curated discovery needs matching seed observations')
+            if not identifier_list(references, r'[a-z0-9]+(?:-[a-z0-9]+)*'):
+                errors.append(f'{where}: seed discovery needs unique reference IDs')
+            else:
+                allowed = set()
+                for method in reference_methods:
+                    observed = evidence.get('curated' if method == 'curated-reference' else 'tracker', set())
+                    if not observed:
+                        errors.append(f'{where}: {method} discovery needs matching seed observations')
+                    allowed |= observed
+                if not set(references) <= allowed:
+                    errors.append(f'{where}: seed discovery needs matching seed observations')
         elif 'seed_reference_ids' in record:
-            errors.append(f'{where}: curated reference IDs require curated discovery')
+            errors.append(f'{where}: reference IDs require a seed discovery method')
         if 'paper-artifact-reference' in discovery:
             artifacts = artifact_references(record.get('seed_paper_references'), record.get('seed_paper_ids'), where)
             if not artifacts or not artifacts <= evidence.get('papers', set()):
@@ -854,7 +868,7 @@ def validate_source_index(document, errors, *, allow_incomplete=False):
                 if (all(nonnegative_integer(value) for value in (queued, retained_successes, retained_failures, meta.get('unique_repos')))
                         and queued > meta['unique_repos'] - retained_successes - retained_failures):
                     errors.append('Source index current_run README queue exceeds known unretained repository IDs.')
-            for field in ('seed_curated', 'seed_papers'):
+            for field in ('seed_curated', 'seed_papers', 'seed_tracker', 'skip_retained_metadata'):
                 if field in run and not isinstance(run[field], bool):
                     errors.append(f'Source index current_run {field} must be a boolean.')
             if 'retained_unattempted_repository_ids' in run:
@@ -1270,6 +1284,125 @@ def read_array(path, errors):
     return value
 
 
+def validate_evidence_classes(records, errors):
+    """Curated C0–C3 and scan C1–C3 mappings must cover exactly the current data."""
+    catalog = {record.get('id'): record for record in records}
+    try:
+        document = strict_json.load_path(ROOT / 'data/evidence-classes.json')
+        reviews_document = strict_json.load_path(ROOT / 'data/evidence-class-zero-reviews.json')
+    except (OSError, ValueError) as error:
+        errors.append(f'Evidence classes could not be read: {error}')
+        return
+    entries = document.get('entries')
+    if not isinstance(entries, list):
+        errors.append('data/evidence-classes.json must contain an entries list')
+        return
+    identifiers = [entry.get('id') for entry in entries]
+    if len(identifiers) != len(set(identifiers)) or set(identifiers) != set(catalog):
+        errors.append('data/evidence-classes.json must cover exactly the curated catalog IDs')
+    counts = {}
+    unknown = 0
+    for entry in entries:
+        value = entry.get('evidence_class')
+        if value is None:
+            unknown += 1
+        elif value not in (0, 1, 2, 3):
+            errors.append(f"Invalid evidence class for {entry.get('id')}: {value}")
+        else:
+            counts[str(value)] = counts.get(str(value), 0) + 1
+    meta = document.get('meta', {})
+    if meta.get('spec_version') != 'evidence-class-v4':
+        errors.append('Evidence class spec_version must be evidence-class-v4')
+    if meta.get('entry_count') != len(entries):
+        errors.append('Evidence class entry_count does not match its entries')
+    if {str(value): counts.get(str(value), 0) for value in range(4)} != meta.get('class_counts'):
+        errors.append('Evidence class class_counts do not match its entries')
+    if meta.get('unknown_count') != unknown:
+        errors.append('Evidence class unknown_count does not match its entries')
+    reviews = {entry.get('id'): entry for entry in reviews_document.get('entries', [])}
+    full_reviews = {identifier for identifier, review in reviews.items() if review.get('scope') == 'full'}
+    class_zero = {entry.get('id') for entry in entries if entry.get('evidence_class') == 0}
+    if class_zero != full_reviews:
+        errors.append('Every Class 0 entry needs a scope=full review, and every full review must be Class 0')
+    for identifier in full_reviews:
+        record = catalog.get(identifier)
+        if not record:
+            errors.append(f'Class 0 review names an unknown resource: {identifier}')
+        elif record.get('kind') != 'case-study' or 'binary' in (record.get('targets') or []):
+            errors.append(f'Class 0 must be a non-binary case study: {identifier}')
+
+    scan_path = ROOT / 'data' / 'scan-evidence-classes.json'
+    source_path = ROOT / 'data' / 'source-index.json'
+    if not scan_path.is_file() or not source_path.is_file():
+        return
+    try:
+        scan_document = strict_json.load_path(scan_path)
+        source = strict_json.load_path(source_path)
+    except (OSError, ValueError) as error:
+        errors.append(f'Scan evidence classes could not be read: {error}')
+        return
+    scan_entries = scan_document.get('entries')
+    if not isinstance(scan_entries, list):
+        errors.append('data/scan-evidence-classes.json must contain an entries list')
+        return
+    expected = {record.get('id') for record in source.get('resources', []) if record.get('scan_status') == 'readme-scanned'}
+    supplement_index = ROOT / 'data' / 'source-supplements' / 'index.json'
+    if supplement_index.is_file():
+        for batch in json.loads(supplement_index.read_text(encoding='utf-8')).get('batches') or []:
+            supplement = json.loads((supplement_index.parent / f'{batch}.json').read_text(encoding='utf-8'))
+            expected.update(record.get('id') for record in supplement.get('resources', [])
+                            if record.get('scan_status') == 'readme-scanned')
+    scan_ids = [entry.get('id') for entry in scan_entries]
+    if len(scan_ids) != len(set(scan_ids)) or set(scan_ids) != expected:
+        errors.append('data/scan-evidence-classes.json must cover exactly the scanned repositories')
+    if any(entry.get('evidence_class') is not None and entry.get('evidence_class') not in (1, 2, 3)
+           for entry in scan_entries):
+        errors.append('Scan evidence classes may only assign C1, C2, C3 or unknown')
+    scan_meta = scan_document.get('meta', {})
+    if scan_meta.get('spec_version') != 'scan-evidence-class-v1':
+        errors.append('Scan evidence class spec_version must be scan-evidence-class-v1')
+    if scan_meta.get('class_zero_count') != 0:
+        errors.append('Scan evidence classes must never assign Class 0')
+    if scan_meta.get('entry_count') != len(scan_entries):
+        errors.append('Scan evidence class entry_count does not match its entries')
+
+
+EVIDENCE_FILES = ('data/evidence-classes.json', 'data/evidence-previews.json',
+                  'data/scan-evidence-classes.json', 'data/evidence-class-zero-reviews.json')
+
+
+def validate_evidence_media(errors):
+    """Evidence data and published previews must not carry private repository material."""
+    from media_privacy import public_media_url
+    try:
+        from review_pr import private_json_locations, private_text
+    except ImportError:
+        private_json_locations = private_text = None
+    for relative in EVIDENCE_FILES:
+        path = ROOT / relative
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding='utf-8')
+        try:
+            document = json.loads(text)
+        except ValueError as error:
+            errors.append(f'{relative} could not be read: {error}')
+            continue
+        if private_text is None:
+            continue
+        if private_text(text) or private_json_locations(document):
+            errors.append(f'{relative} contains a credential-like value or personal path; values withheld')
+    previews_path = ROOT / 'data' / 'evidence-previews.json'
+    if not previews_path.is_file():
+        return
+    for entry in json.loads(previews_path.read_text(encoding='utf-8')).get('entries') or []:
+        if not public_media_url(entry.get('image_url') or ''):
+            errors.append(f"Preview image for {entry.get('id')} is not a public media URL")
+        source = entry.get('source_url')
+        if not isinstance(source, str) or not source.startswith(('http://', 'https://')):
+            errors.append(f"Preview source for {entry.get('id')} is not an absolute URL")
+
+
 def main():
     errors = []
     records = [record for path in RESOURCE_FILES for record in read_array(path, errors)]
@@ -1277,6 +1410,8 @@ def main():
     papers = read_array(ROOT / 'data/papers.json', errors)
     validate_papers(papers, errors, url_check=public_https_error)
     validate_resources(records, errors)
+    validate_evidence_classes(records, errors)
+    validate_evidence_media(errors)
     for warning in unknown_field_warnings(records) + evidence_pin_warnings(records):
         print(f'Warning: {warning}', file=sys.stderr)
     validate_requirement_facets(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), errors)

@@ -93,12 +93,12 @@ class RequirementFacetTests(unittest.TestCase):
                 with self.subTest(page=prefix + 'resources/' + record['id']):
                     html = (output / prefix / 'resources' / record['id'] / 'index.html').read_text(encoding='utf-8')
                     self.assertIn(''.join(expected), html)
-                # The listings link to the entry page's requirements instead of repeating them.
-                for page in ('resources', 'cases'):
+                # The listings link to the entry page instead of repeating the requirements; /cases/ links straight to them.
+                for page, fragment in (('resources', ''), ('cases', '#entry-requirements')):
                     with self.subTest(page=prefix + page):
                         html = (output / prefix / page / 'index.html').read_text(encoding='utf-8')
                         self.assertNotIn('requirement-facet', html)
-                        self.assertIn(f'href="{"/zh" if prefix else ""}/resources/{record["id"]}/#entry-requirements"', html)
+                        self.assertIn(f'href="{"/zh" if prefix else ""}/resources/{record["id"]}/{fragment}"', html)
 
     def test_homepage_labels_match_the_vocabulary(self):
         strings = _ui_strings(APP)

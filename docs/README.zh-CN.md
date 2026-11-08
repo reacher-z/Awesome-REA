@@ -15,6 +15,7 @@
 | [安全策略](../SECURITY.md#中文摘要) | 英文，附中文摘要 | 当前 | 私下报告安全问题 |
 | 论文更新指南：[中文](paper-updates.zh-CN.md)、[英文](paper-updates.md) | 中英 | 当前 | 预印本被接收或发表后原地更新记录，附完整示例 |
 | [目录格式](../data/README.md) | 英文 | 当前 | 精选、论文、对标、扫描与案例覆盖数据 |
+| 证据档位：[中文](evidence-classes.zh-CN.md)、[英文](evidence-classes.md) | 中英 | 当前 | 精选条目的 C0–C3、扫描仓库的 C1–C3，以及信号、Class 0 复核与局限 |
 | 研究产物与许可证据：[中文](artifact-evidence.zh-CN.md)、[英文](artifact-evidence.md) | 中英 | 当前 | 不可用、受限或仅有演示的研究产物、版本差异与许可冲突的措辞 |
 | [仓库简介本地化](../data/locales/README.md) | 英文 | 当前 | 自动扫描仓库的中英文简介 |
 | 仓库索引转精选复核工作表：[中文](promotion-worksheet.zh-CN.md)、[英文](promotion-worksheet.md) | 中英 | 当前 | 把已扫描仓库追溯为精选记录或暂缓，附完整示例 |

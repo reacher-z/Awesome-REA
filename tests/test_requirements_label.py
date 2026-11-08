@@ -32,13 +32,13 @@ class RequirementsLabelTests(unittest.TestCase):
             build_discovery_pages(output, {'resources': self.records, 'meta': {'site_url': 'https://awesomerea.org'}}, None)
             build_entry_pages(output, self.records, [])
             for prefix, label in (('', REQUIREMENTS_LABEL[0]), ('zh/', REQUIREMENTS_LABEL[1])):
-                for page, records in (('resources', self.records), ('cases', self.records[:1])):
+                for page, records, fragment in (('resources', self.records, ''), ('cases', self.records[:1], '#entry-requirements')):
                     with self.subTest(page=prefix + page):
-                        # Listings no longer disclose requirements; each entry links to the labelled entry-page section.
+                        # Listings no longer disclose requirements. Each row links to the entry page; /cases/ links to its labelled section.
                         html = (output / prefix / page / 'index.html').read_text(encoding='utf-8')
                         self.assertNotIn(escape(label), re.findall(r'<summary>([^<]*)</summary>', html))
                         for record in records:
-                            self.assertEqual(html.count(f'href="{"/zh" if prefix else ""}/resources/{record["id"]}/#entry-requirements"'), 1)
+                            self.assertEqual(html.count(f'href="{"/zh" if prefix else ""}/resources/{record["id"]}/{fragment}"'), 1)
                 for record in self.records:
                     with self.subTest(entry=prefix + record['id']):
                         html = (output / prefix / 'resources' / record['id'] / 'index.html').read_text(encoding='utf-8')

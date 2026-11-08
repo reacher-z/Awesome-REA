@@ -83,10 +83,27 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 /* ---------- drawer (sage panel holding the cards) ---------- */
 .drawer { --card-ground: var(--surface); position: relative; z-index: 1; padding: 20px 24px 24px; background: var(--surface);
   border: 1px solid var(--line-strong); border-radius: 0 var(--r-panel) var(--r-panel) var(--r-panel); }
-.drawer-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "chips meta sort"; align-items: center; gap: 6px 14px; margin-bottom: 12px; }
+.drawer-bar { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "chips chips chips" "meta class sort"; align-items: center; gap: 6px 14px; margin-bottom: 12px; }
 .drawer-bar .chips { grid-area: chips; }
 .drawer-bar .select { grid-area: sort; }
 .drawer-bar .drawer-meta { grid-area: meta; }
+.class-filter { grid-area: class; display: inline-flex; align-items: center; gap: 6px; }
+/* The info button beside the class filter lists the class criteria on hover or focus. */
+.info-wrap { display: inline-flex; }
+.info-btn { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; flex: none;
+  border: 1px solid var(--line-strong); border-radius: 50%; background: var(--bg-raised); color: var(--ink-2-panel);
+  font: 600 .75rem/1 var(--font-body); cursor: help; }
+.info-btn:hover, .info-btn:focus-visible { color: var(--ink-strong); border-color: var(--focus); }
+.info-pop { position: absolute; top: calc(100% + 8px); right: 0; z-index: 30; width: max-content; max-width: min(320px, calc(100vw - 32px));
+  padding: 12px 14px; background: var(--bg-raised); border: 1px solid var(--line-strong); border-radius: var(--r-control);
+  box-shadow: 0 8px 24px rgb(0 0 0 / .14); opacity: 0; visibility: hidden; transform: translateY(-4px);
+  transition: opacity var(--t-base) var(--ease), transform var(--t-base) var(--ease); }
+.info-wrap:hover .info-pop, .info-wrap:focus-within .info-pop, .info-wrap:has(.info-btn[aria-expanded="true"]) .info-pop {
+  opacity: 1; visibility: visible; transform: none; }
+.info-pop strong { display: block; margin-bottom: 8px; font: 600 .8125rem/1.3 var(--font-body); color: var(--ink-strong); }
+.info-pop ul { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; font-size: .8125rem; line-height: 1.35; color: var(--ink); }
+.info-pop li { display: flex; align-items: baseline; gap: 8px; }
+.info-pop .card-class { margin-left: 0; flex: none; }
 .drawer-meta { font-size: .8125rem; color: var(--ink-2-panel); white-space: nowrap; }
 .drawer-meta strong { color: var(--ink-strong); font-weight: 600; font-variant-numeric: tabular-nums; }
 .chips { display: flex; flex-wrap: wrap; gap: 2px; }
@@ -118,7 +135,7 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 /* ---------- index card (catalogue row) ---------- */
 .cards { list-style: none; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; container-type: inline-size; }
 .card { position: relative; min-width: 0; }
-.card-face { position: relative; z-index: 1; display: grid; grid-template-columns: 92px minmax(0, 1fr) minmax(0, max-content);
+.card-face { position: relative; z-index: 1; display: grid; grid-template-columns: 104px minmax(0, 1fr) minmax(0, max-content);
   grid-template-areas: "call name stamp" "call desc targets"; column-gap: 20px; row-gap: 2px; padding: 12px 20px 12px 18px;
   background: var(--bg-raised); border: 1px solid var(--line-strong); border-radius: var(--r-card); box-shadow: 2px 2px 0 var(--sheet); }
 .callno { grid-area: call; padding-top: 3px; color: var(--callno); font: 500 .8125rem/1.5 var(--font-mono); letter-spacing: .04em; white-space: nowrap; }
@@ -136,6 +153,27 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
   gap: 4px 14px; max-width: 270px; padding-top: 3px; margin-right: 12px; color: var(--ink); font-size: .875rem; line-height: 1.4; }
 .card-targets li { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
 .card-targets .i { width: 15px; height: 15px; }
+/* Evidence class rides on the name line: a coloured dot and C0–C3, with the class spelled out in the title. */
+.card-class { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 5px; margin-left: 9px; padding: 1px 6px 1px 5px;
+  border: 1px solid var(--line-strong); border-radius: 2px; background: var(--surface-2); color: var(--ink-2-panel);
+  font: 500 .6875rem/1.5 var(--font-mono); letter-spacing: .03em; vertical-align: 2px; white-space: nowrap; cursor: help; }
+.card-class::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--class-3); }
+.card-class-0::before { background: var(--class-0); }
+.card-class-1::before { background: var(--class-1); }
+.card-class-2::before { background: var(--class-2); }
+.card-class-3::before { background: var(--class-3); }
+.card-class-unknown::before { background: var(--ink-2); }
+/* Documented demo preview, below the description and inside the same paper edge as the row. */
+.card-preview { grid-area: prev; position: relative; margin-top: 6px; max-width: 420px; aspect-ratio: 16 / 9;
+  border: 1px solid var(--line-strong); border-radius: 2px; background: var(--surface-2); overflow: hidden; }
+.card-preview img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.card-preview-play { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 26px; height: 26px;
+  border-radius: 50%; background: var(--btn-bg); color: var(--btn-ink); font-size: .6875rem; }
+.card-preview > .card-preview-play { position: absolute; left: 10px; bottom: 8px; z-index: 1; }
+.card-preview-demo { display: flex; align-items: center; gap: 9px; max-width: max-content; padding: 6px 10px 6px 6px; aspect-ratio: auto;
+  color: var(--ink-2-panel); font: 500 .8125rem/1.4 var(--font-mono); }
+.card-preview-demo > .card-preview-play { position: static; }
+.card-face:has(.card-preview) { grid-template-areas: "call name stamp" "call desc targets" "call prev prev"; }
 /* Signature: the corner folds back on hover/focus and the evidence slip slides out from under it. */
 .card:hover .card-face, .card:focus-within .card-face { border-color: var(--border-input); }
 .card-face::after { content: ""; position: absolute; top: -1px; right: -1px; z-index: 2; width: 30px; height: 30px;
@@ -158,11 +196,15 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 /* Narrow columns (tablet home, /resources/ beside the facets, related lists): description takes the full width. */
 @container (max-width: 900px) {
   .card-face { grid-template-areas: "call name stamp" "call desc desc" "call targets targets"; }
+  .card-face:has(.card-preview) { grid-template-areas: "call name stamp" "call desc desc" "call targets targets" "call prev prev"; }
   .card-targets { justify-content: flex-start; max-width: none; margin-right: 0; padding-top: 2px; }
 }
 /* Phones: stacked, with the review date beside the call number. */
 @container (max-width: 560px) {
   .card-face { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "call stamp" "name name" "desc desc" "targets targets"; padding: 9px 12px 10px; row-gap: 3px; }
+  .card-face:has(.card-preview) { grid-template-areas: "call stamp" "name name" "desc desc" "targets targets" "prev prev"; }
+  .card-class { margin-left: 7px; }
+  .card-preview { max-width: none; margin-top: 4px; }
   .card-face::before { display: none; }
   .stamp { margin-right: 14px; padding-top: 2px; }
   .ev { display: none; }
@@ -213,12 +255,14 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 }
 
 /* library-card margin rule between the call-number gutter and the entry */
-.card-face::before { content: ""; position: absolute; top: 0; bottom: 0; left: 122px; width: 1px; background: color-mix(in srgb, var(--secondary) 70%, transparent); }
+.card-face::before { content: ""; position: absolute; top: 0; bottom: 0; left: 134px; width: 1px; background: color-mix(in srgb, var(--secondary) 70%, transparent); }
 @media (max-width: 767px) {
-  .drawer-bar { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "kind sort" "meta meta"; gap: 8px; margin-bottom: 10px; }
+  .drawer-bar { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "kind sort" "class meta"; gap: 8px; margin-bottom: 10px; }
   .drawer-bar .chips { display: none; }
   .drawer-bar .drawer-meta { font-size: .8125rem; }
   .drawer-bar .kind-select { display: inline-flex; grid-area: kind; }
+  .class-filter { width: 100%; }
+  .class-filter .select { flex: 1; }
   .drawer-bar .select select { width: 100%; height: 44px; font-size: .9375rem; }
   .drawer-bar .select { width: 100%; }
   .drawer-bar .chips::-webkit-scrollbar { display: none; }
@@ -461,6 +505,11 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 :root[data-site="rea"] { --band-1: #9D8189; --band-2: #F4ACB7; --band-3: #93A69B; --band-4: #C2AFAB; --band-5: #8C4D59; --band-6: #747A89; }
 :root[data-site="rea"][data-theme="dark"] { --band-1: #CDB6BE; --band-2: #F4ACB7; --band-3: #A9BDB2; --band-4: #8F7A7F; --band-5: #D98E9B; --band-6: #9EA3B0; }
 @media (prefers-color-scheme: dark) { :root[data-site="rea"]:not([data-theme="light"]) { --band-1: #CDB6BE; --band-2: #F4ACB7; --band-3: #A9BDB2; --band-4: #8F7A7F; --band-5: #D98E9B; --band-6: #9EA3B0; } }
+
+/* evidence class dots (C0–C3); same four hues as the /explore/ legend */
+:root[data-site="rea"] { --class-0: #35704A; --class-1: #8A6A14; --class-2: #3B6694; --class-3: #5F6878; }
+:root[data-site="rea"][data-theme="dark"] { --class-0: #5BC987; --class-1: #D3AC4E; --class-2: #79ABE0; --class-3: #9EA6B4; }
+@media (prefers-color-scheme: dark) { :root[data-site="rea"]:not([data-theme="light"]) { --class-0: #5BC987; --class-1: #D3AC4E; --class-2: #79ABE0; --class-3: #9EA6B4; } }
 .cases-intro { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px 56px; align-items: end; margin-top: 14px; }
 .cases-intro .list-search { margin-top: 22px; max-width: 520px; }
 .cases-intro .hs-count { margin-left: auto; }
@@ -678,7 +727,7 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 /* hero: Fig. 1 at the top right, the standfirst moves under the search so the search stays high */
 .xv { display: none; }
 @media (min-width: 900px) {
-  .page-home .masthead { --xv-w: clamp(230px, 27vw, 340px); }
+  .page-home .masthead { --xv-w: clamp(200px, 23vw, 290px); }
   .page-home .hero-top { display: contents; }
   .page-home .hero-title { order: 1; }
   .page-home .masthead .hero-search { order: 2; width: calc(100% - var(--xv-w) - 24px); margin-top: 26px; }
@@ -953,3 +1002,80 @@ html:lang(zh-CN) .cb-n { font-family: "EB Garamond Accent", var(--font-display);
 @media (max-width: 899px) { .has-hits .hs-keys { display: none; } }
 .empty .btn { margin-top: 12px; }
 
+/* /resources/: dense rows, sections on the left, every record in the HTML. */
+.page-resources .page-head { padding-top: 8px; }
+.crumbs { display: flex; gap: 8px; font-size: .8125rem; color: var(--ink-2); }
+.crumbs a { color: var(--brand-ink); }
+.page-resources .ph-row { margin-top: 2px; align-items: center; }
+.ph-title { display: flex; align-items: flex-start; gap: 4px; min-width: 0; }
+.ph-title .h-count { flex: none; margin-top: .3em; }
+.page-resources .ph-row h1 { font-size: clamp(1.625rem, 1.3rem + 1.4vw, 2.5rem); }
+.page-resources .list-search { height: 44px; }
+.page-resources .page-head .folders { margin-top: 8px; }
+.page-resources .listing { padding-top: 10px; }
+.listing-side { min-width: 0; }
+.list-sections h2 { font-size: 1.125rem; padding-bottom: 8px; border-bottom: 1px solid var(--line-strong); }
+.list-sections ul { list-style: none; margin: 6px 0 14px; padding: 0; }
+.list-sections a { display: flex; justify-content: space-between; gap: 8px; padding: 4px 0; font-size: .875rem; color: var(--ink); text-decoration: none; }
+.list-sections a:hover { color: var(--brand-ink); text-decoration: underline; }
+.list-sections .count { color: var(--ink-2-panel); }
+.list-note { margin: 6px 0 0; font-size: .75rem; line-height: 1.45; color: var(--ink-2-panel); }
+.list-sections a[aria-current] { color: var(--ink-strong); font-weight: 600; }
+.list-sections a.is-zero { color: var(--ink-2-panel); pointer-events: none; }
+.row-mark { position: relative; z-index: 2; display: inline-block; margin-left: 8px; padding: 2px 6px; background: var(--stamp-case-bg); color: var(--stamp-case-ink); border-radius: 2px; font: 500 .6875rem/1.2 var(--font-mono); letter-spacing: .02em; vertical-align: 2px; white-space: nowrap; }
+.page-resources .results-bar { margin-bottom: 2px; }
+.listing-links { display: flex; gap: 14px; margin: 0; font-size: .875rem; }
+.listing-links a { display: inline-flex; align-items: center; gap: 4px; color: var(--brand-ink); }
+.listing-links .i { width: 14px; height: 14px; }
+.list-section { display: flex; align-items: baseline; gap: 10px; padding: 16px 2px 4px; }
+.list-section:first-child { padding-top: 0; }
+.list-section h2 { font-size: 1.25rem; scroll-margin-top: 76px; }
+.list-section .count { color: var(--ink-2-panel); }
+.listing .cards { gap: 2px; }
+.listing .card { content-visibility: auto; contain-intrinsic-size: auto 84px; padding: 0 4px 4px 0; scroll-margin-top: 76px; }
+.listing .card:target .card-face, .listing .card-face:target { background: var(--secondary-soft); }
+.listing .card-face:target { scroll-margin-top: 76px; }
+.listing .card:focus-within { content-visibility: visible; }
+html:has(.page-resources) { scroll-behavior: auto; }
+.listing .card-face::after { width: 20px; height: 20px; }
+.no-js .list-search, .no-js .results-bar .select, .no-js .filters-btn, .no-js .pager { display: none; }
+@container (min-width: 561px) {
+  .listing .card-face { grid-template-columns: 100px minmax(0, 1fr) minmax(0, max-content); grid-template-areas: "call name stamp" "call desc targets"; column-gap: 14px; row-gap: 0; padding: 7px 12px; }
+  .listing .card-face::before { left: 119px; }
+  .listing .callno { padding-top: 2px; font-size: .75rem; }
+  .listing .card-name { font-size: 1rem; line-height: 1.35; }
+  .listing .card-desc { font-size: .875rem; line-height: 1.45; -webkit-line-clamp: 2; line-clamp: 2; }
+  .listing .card-targets { flex-wrap: nowrap; justify-content: flex-end; gap: 4px 10px; margin-right: 8px; padding-top: 1px; font-size: .8125rem; }
+  .listing .card-targets li:nth-child(n+3) { display: none; }
+  .listing .stamp { margin-right: 8px; padding-top: 2px; }
+}
+@media (min-width: 900px) {
+  .listing-side { position: sticky; top: calc(var(--header-h) + 12px); align-self: start; max-height: calc(100vh - var(--header-h) - 24px); overflow-y: auto; scrollbar-width: thin; padding-right: 4px; }
+}
+@media (max-width: 899px) {
+  .page-resources .listing { gap: 8px; padding-top: 10px; }
+  .list-sections h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .list-note { display: none; }
+  .list-sections ul { display: flex; gap: 6px; margin: 0; overflow-x: auto; scrollbar-width: none; }
+  .list-sections a { flex: none; gap: 6px; padding: 6px 10px; border: 1px solid var(--line-strong); border-radius: var(--r-control); background: var(--bg-raised); white-space: nowrap; }
+  .page-resources .listing-links { order: 5; flex-basis: 100%; }
+}
+@media (max-width: 767px) {
+  .page-resources .crumbs, html:not(.no-js) .page-resources .listing:not(.is-narrowed) .list-sections { display: none; }
+  .page-resources .select-label, .page-resources .listing-links a + a { display: none; }
+  .page-resources .results-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px 10px; }
+  .page-resources .results-meta { grid-area: 1 / 1; }
+  .page-resources .listing-links { grid-area: 1 / 2; order: 0; flex-basis: auto; }
+  .page-resources .results-bar .select { grid-area: 2 / 1; display: flex; }
+  .page-resources .results-bar .select select { width: 100%; height: 38px; }
+  .page-resources .filters-btn { grid-area: 2 / 2; }
+}
+@media print {
+  .page-resources :is(.listing-side, .folders, .list-search, .results-bar, .pager, .stamp .ev) { display: none !important; }
+  .listing { display: block; padding: 0; border: 0; background: none; }
+  .listing .card { content-visibility: visible; padding: 0; }
+  .listing .card-face { box-shadow: none; }
+  .listing .card-name .entry-detail-link { display: inline !important; }
+  .listing .card-desc { display: block; }
+  .listing .card-targets li:nth-child(n+3) { display: inline-flex; }
+}

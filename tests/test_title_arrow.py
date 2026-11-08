@@ -9,7 +9,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_browse_pages import icon, repository_card
-from build_discovery_pages import EXTERNAL_TITLE_ARROW, _case_row, _resource_card
+from build_discovery_pages import EXTERNAL_TITLE_ARROW, _case_row
 
 
 class TitleArrowTests(unittest.TestCase):
@@ -25,7 +25,7 @@ class TitleArrowTests(unittest.TestCase):
         self.assertEqual(EXTERNAL_TITLE_ARROW, '<span class="browse-text-arrow" aria-hidden="true">&#8288;↗</span>')
         for language in ('en', 'zh'):
             name = self.record['name_zh'] if language == 'zh' else self.record['name']
-            for html in (_resource_card(self.record, language), _case_row(self.record, language, 'game')):
+            for html in (_case_row(self.record, language, 'game'),):
                 with self.subTest(language=language, html=html[:40]):
                     self.assertIn(escape(name) + EXTERNAL_TITLE_ARROW + '</a></h3>', html)
                     self.assertEqual(html.count('browse-text-arrow'), 1)

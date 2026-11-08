@@ -638,7 +638,8 @@
       "app",
       "protocol"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "hardware"
   },
   {
     "id": "morluto-awesome-re",
@@ -700,6 +701,7 @@
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "app"
     ],
@@ -754,6 +756,7 @@
       "protocol"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/a-funk/open-appleremote/blob/1e6e190c3c29a3d2d8cad2c38c09f8953e9633e3/docs/PROTOCOL.md",
       "https://github.com/a-funk/open-appleremote/blob/1e6e190c3c29a3d2d8cad2c38c09f8953e9633e3/pyproject.toml",
@@ -790,6 +793,7 @@
       "protocol"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/dvdarkin/gamekb-k17/blob/e61f444793857c0e10a31692674335ee4ee9c89e/docs/PROTOCOL.md",
       "https://github.com/dvdarkin/gamekb-k17/blob/e61f444793857c0e10a31692674335ee4ee9c89e/pyproject.toml",
@@ -827,6 +831,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/guyru/cf632ble/blob/c029ef5cfefbd323ffe2a194a75db5cc47aa6d5c/package.json"
     ]
@@ -861,6 +866,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/LilZeeCN/zee-rp/blob/473761e6a08f051e1666944db690332ef27a6038/docs/validation.md",
       "https://github.com/LilZeeCN/zee-rp/blob/473761e6a08f051e1666944db690332ef27a6038/docs/release-evidence.json",
@@ -899,6 +905,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/port/README.md",
       "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/notes/link-verification.md",
@@ -937,6 +944,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/NOTICE",
       "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/LICENSE",
@@ -974,6 +982,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/BUILDING.md",
       "https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/LICENSE"
@@ -1010,6 +1019,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/RIGHTS_AND_LICENSES.md",
       "https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/docs/STATUS.md",
@@ -1046,6 +1056,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/BUILDING.md",
       "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/LICENSE",
@@ -1113,6 +1124,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/",
       "https://blog.chrislewis.au/the-unexpected-effectiveness-of-one-shot-decompilation-with-claude/",
@@ -1182,6 +1194,7 @@
       "protocol"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/Cargo.toml",
       "https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/src/device.rs",
@@ -1219,6 +1232,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/LICENSE",
       "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/CMakeLists.txt",
@@ -1255,6 +1269,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/cudanexus/vd-streamer-linux/blob/e65c302f13639f044742bdc4951ab1a424c1c929/LICENSE"
     ]
@@ -1289,6 +1304,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/Caho1/open-claude-ui/blob/ddf3aea1711db62fd6d24343bbab500a5ae69f64/package.json",
       "https://github.com/Caho1/open-claude-ui/blob/ddf3aea1711db62fd6d24343bbab500a5ae69f64/assets/README.md",
@@ -1327,6 +1343,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/go.mod",
       "https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/NOTICE.md",
@@ -1365,6 +1382,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "apps",
     "additional_evidence_urls": [
       "https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/docs/building.md",
       "https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/docs/install-and-verify.md",
@@ -1404,6 +1422,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/BUILD_MATCHING.md",
       "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/REPLAY_RESULTS.md",
@@ -1536,6 +1555,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/CMakeLists.txt",
       "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/COPYING",
@@ -1574,6 +1594,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/CMakeLists.txt",
       "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/LICENSE",
@@ -1612,6 +1633,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/CMakeLists.txt",
       "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/LICENSE"
@@ -1648,6 +1670,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/Cargo.toml",
       "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/LICENSE.md",
@@ -1688,6 +1711,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/CMakeLists.txt",
       "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/LICENSE",
@@ -1727,6 +1751,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Makefile",
       "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Jenkinsfile",
@@ -1765,6 +1790,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/docs/BUILDING.md",
       "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/CMakeLists.txt",
@@ -1802,6 +1828,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/CMakeLists.txt",
       "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/LICENSE",
@@ -1841,6 +1868,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/src_rebuild/premake5.lua",
       "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/data/install/conv.sh",
@@ -1880,6 +1908,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/Cargo.toml",
       "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/docs/target-app-parity.md",
@@ -1921,6 +1950,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/Cargo.toml",
       "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/docs/target-app-parity.md",
@@ -1962,6 +1992,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/Cargo.toml",
       "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/.github/workflows/ci.yml",
@@ -2005,6 +2036,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/Cargo.toml",
       "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/.github/workflows/ci.yml",
@@ -2052,6 +2084,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/docs/BACKGROUND.md",
       "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/VERSION",
@@ -2096,6 +2129,7 @@
       "firmware"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/findings/WINDOWS-DRIVER.md",
       "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/findings/TESTING.md",
@@ -2143,6 +2177,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/lxistired/ledger-reborn/blob/d7f6b8a1f4ad6c4ae8b10100d1c93cf15940c21d/README.md",
       "https://github.com/lxistired/ledger-reborn/blob/d7f6b8a1f4ad6c4ae8b10100d1c93cf15940c21d/ENGINE_README.md",
@@ -2190,6 +2225,7 @@
       "website"
     ],
     "kind": "case-study",
+    "class": "website",
     "additional_evidence_urls": [
       "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/README.en.md",
       "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/case-studies/rsc-reconstruction.md",
@@ -2232,6 +2268,7 @@
       "protocol"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/NOTICE",
       "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/REUSE.toml",
@@ -2302,6 +2339,7 @@
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "app"
     ],
@@ -2351,6 +2389,7 @@
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
     "kind": "case-study",
+    "class": "software",
     "targets": [
       "app"
     ],
@@ -2602,6 +2641,7 @@
     "relationship": "community-reported-mixed-workflow",
     "reconstruction_method": "decompilation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -2734,6 +2774,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/docs/STATUS.md",
       "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/docs/SETUP.md",
@@ -2924,6 +2965,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://x.com/HanZhang415188/status/2109843188341207283"
     ]
@@ -3001,6 +3043,7 @@
       "binary"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/REA.md",
       "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/MATCHING.md",
@@ -3046,6 +3089,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/eray1605/re2ds/blob/f1e120ec50f6b072d7283a2d3dd35611d656c9b7/ROADMAP.md",
       "https://github.com/eray1605/re2ds/blob/f1e120ec50f6b072d7283a2d3dd35611d656c9b7/Makefile",
@@ -3237,6 +3281,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/tools/rea_vanilla.py",
       "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/CONTRIBUTING.md",
@@ -3280,6 +3325,7 @@
       "binary"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://az9713.github.io/untangle-rebuild/receipt/rebuild-receipt.html",
       "https://az9713.github.io/untangle-rebuild/rebuild/index.html"
@@ -3313,6 +3359,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "apps",
     "additional_evidence_urls": [
       "https://www.reddit.com/r/AndroidTVApps/comments/1xa9tv3/i_had_ai_reverseengineer_tcls_browsehere_and/",
       "https://github.com/sonalder-darlene/sofa-tv-browser/releases"
@@ -3375,6 +3422,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "science",
     "additional_evidence_urls": [
       "https://github.com/dmytrobsp/fastview-rea/releases"
     ]
@@ -3411,6 +3459,7 @@
       "binary"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/CLAUDE.md",
       "https://github.com/Moxnatiy/OpenBattlefield2/blob/1486ef18f52cb0070c8ae8ae06277a413ecb3977/docs/functions/hud-crosshair.md"
@@ -3445,7 +3494,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "samp-client-rea-partial-reconstruction-case",
@@ -3476,7 +3526,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "desktop-games-nostalgia-rea-port-case",
@@ -3507,7 +3558,8 @@
       "game",
       "binary"
     ],
-    "kind": "case-study"
+    "kind": "case-study",
+    "class": "game"
   },
   {
     "id": "gunzrs-rea-rust-reimplementation-case",
@@ -3538,6 +3590,7 @@
       "game"
     ],
     "kind": "case-study",
+    "class": "game",
     "additional_evidence_urls": [
       "https://github.com/OpenRsG/GunZRs/releases/tag/v0.1.0"
     ]
@@ -3672,6 +3725,7 @@
       "binary"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/KarlssonChristoffer/DiskLens/blob/c7d67f4b084b408d9b3e1bb22ee8723727494488/docs/research.md"
     ]
@@ -3705,6 +3759,7 @@
       "binary"
     ],
     "kind": "case-study",
+    "class": "hardware",
     "additional_evidence_urls": [
       "https://github.com/B-Howell/soundconnect-desktop/blob/481f4af2da2c96026bd14d19f366c76aa737ccd0/docs/research/SoundConnect%20Desktop%20-%20Upstream%20Security%20Review.md"
     ]
@@ -3774,6 +3829,7 @@
       "app"
     ],
     "kind": "case-study",
+    "class": "software",
     "additional_evidence_urls": [
       "https://github.com/michaelshimeles/sketch/blob/af814b7ab2bd77328a906a1986a048c233e25f9c/analysis/PAPER_ARCHITECTURE.md",
       "https://github.com/michaelshimeles/sketch/releases/tag/v0.1.0"
@@ -4080,6 +4136,7 @@
     "relationship": "community-reported-mixed-workflow",
     "reconstruction_method": "engine-reimplementation",
     "kind": "case-study",
+    "class": "game",
     "targets": [
       "game"
     ],
@@ -4104,6 +4161,395 @@
     "additional_evidence_urls": [
       "https://github.com/ankushKun/sh23ds/blob/08673f69aa99b4f3c00a181b31c7adc26c186408/docs/RESEARCH.md",
       "https://github.com/ankushKun/sh23ds/blob/08673f69aa99b4f3c00a181b31c7adc26c186408/port/STATUS.md"
+    ]
+  },
+  {
+    "id": "cadcraft-case",
+    "name": "CADCraft: a clean-room CAD and drafting application in Rust",
+    "url": "https://github.com/storytold/cadcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe CADCraft as an open-source, clean-room computer-aided design and drafting application built in pure Rust. The README documents a 2D/3D CAD workflow with a command line, object snaps, layers, dimensions, hatches, blocks and DXF, and calls the project early development.",
+    "description_zh": "作者将 CADCraft 描述为用纯 Rust 构建的开源净室计算机辅助设计与制图应用。README 记录包含命令行、对象捕捉、图层、标注、填充、块与 DXF 的 2D/3D CAD 工作流，并自述项目处于早期开发阶段。",
+    "evidence_url": "https://github.com/storytold/cadcraft/blob/b639b18f69bfefd58f866fd0dc04940d0c6aa6e6/README.md",
+    "verified_at": "2026-11-03",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
+      "The README calls CADCraft early development and links a parity checklist and gap list; it does not claim complete CAD compatibility.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/cadcraft/b639b18f69bfefd58f866fd0dc04940d0c6aa6e6/docs/images/ui-apartment.png",
+      "https://github.com/storytold/cadcraft/releases/tag/v0.17.0",
+      "https://github.com/storytold/cadcraft/blob/b639b18f69bfefd58f866fd0dc04940d0c6aa6e6/docs/target-app-parity.md",
+      "https://github.com/storytold/cadcraft/blob/b639b18f69bfefd58f866fd0dc04940d0c6aa6e6/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "designcraft-case",
+    "name": "DesignCraft: a clean-room page layout and publishing studio in Rust",
+    "url": "https://github.com/storytold/designcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe DesignCraft as an open-source, clean-room page layout and desktop publishing studio built in pure Rust. The README documents native and WebAssembly builds and calls the project pre-alpha.",
+    "description_zh": "作者将 DesignCraft 描述为用纯 Rust 构建的开源净室页面版式与桌面出版工作室。README 记录原生与 WebAssembly 构建，并自述项目处于 pre-alpha 阶段。",
+    "evidence_url": "https://github.com/storytold/designcraft/blob/f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e/README.md",
+    "verified_at": "2026-11-03",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
+      "The README calls the project pre-alpha and links a parity checklist and gap list; it does not claim complete publishing-workflow compatibility.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/designcraft/f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e/docs/images/ui-spread.png",
+      "https://github.com/storytold/designcraft/releases/tag/v0.17.0",
+      "https://github.com/storytold/designcraft/blob/f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e/docs/target-app-parity.md",
+      "https://github.com/storytold/designcraft/blob/f1bdec7fee7a5dfb58c35b6e056b3f9c9bd5110e/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "effectcraft-case",
+    "name": "EffectCraft: a clean-room motion graphics and compositing studio in Rust",
+    "url": "https://github.com/storytold/effectcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe EffectCraft as an open-source, clean-room motion graphics and visual effects studio built in pure Rust. The README documents native and WebAssembly builds and estimates about 91% of its tracked features.",
+    "description_zh": "作者将 EffectCraft 描述为用纯 Rust 构建的开源净室动效图形与视觉特效工作室。README 记录原生与 WebAssembly 构建，并估计已覆盖约 91% 的跟踪功能。",
+    "evidence_url": "https://github.com/storytold/effectcraft/blob/b7dee07cf44fcb42e0afa662043c0dc3bf3f8553/README.md",
+    "verified_at": "2026-11-03",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
+      "The README calls the project alpha and estimates about 91% of its tracked features; the linked parity document lists remaining gaps, and complete compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/effectcraft/b7dee07cf44fcb42e0afa662043c0dc3bf3f8553/docs/images/effectcraft-hero.png",
+      "https://github.com/storytold/effectcraft/releases/tag/v0.21.0",
+      "https://github.com/storytold/effectcraft/blob/b7dee07cf44fcb42e0afa662043c0dc3bf3f8553/docs/target-app-parity.md",
+      "https://github.com/storytold/effectcraft/blob/b7dee07cf44fcb42e0afa662043c0dc3bf3f8553/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "figcraft-case",
+    "name": "FigCraft: a clean-room interface design and prototyping tool in Rust",
+    "url": "https://github.com/storytold/figcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe FigCraft as an open-source, clean-room interface design and prototyping tool built in pure Rust. The README documents native and WebAssembly builds and estimates about 49% of the parity needed to replace proprietary design tools for real work.",
+    "description_zh": "作者将 FigCraft 描述为用纯 Rust 构建的开源净室界面设计与原型工具。README 记录原生与 WebAssembly 构建，并估计在真实工作中替代专有设计工具的完成度约为 49%。",
+    "evidence_url": "https://github.com/storytold/figcraft/blob/35684eaa028e636d264073a666ef11881620fa0e/README.md",
+    "verified_at": "2026-11-03",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
+      "The README calls the project alpha and estimates about 49% of the parity needed to replace proprietary design tools for real work; complete compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/figcraft/35684eaa028e636d264073a666ef11881620fa0e/docs/images/shot-1-hero.png",
+      "https://github.com/storytold/figcraft/releases/tag/v0.15.0",
+      "https://github.com/storytold/figcraft/blob/35684eaa028e636d264073a666ef11881620fa0e/docs/target-app-parity.md",
+      "https://github.com/storytold/figcraft/blob/35684eaa028e636d264073a666ef11881620fa0e/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "filmcraft-case",
+    "name": "FilmCraft: a clean-room nonlinear video editor in Rust",
+    "url": "https://github.com/storytold/filmcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe FilmCraft as an open-source, clean-room nonlinear video editor built in pure Rust. The README documents native and WebAssembly builds and reports about 86% feature breadth and about 56% readiness for real production work.",
+    "description_zh": "作者将 FilmCraft 描述为用纯 Rust 构建的开源净室非线性视频编辑器。README 记录原生与 WebAssembly 构建，并报告约 86% 的功能覆盖与约 56% 的真实制作可用度。",
+    "evidence_url": "https://github.com/storytold/filmcraft/blob/57dc82ea2046c2ec479ab4d4d8167d90e5500b49/README.md",
+    "verified_at": "2026-11-03",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
+      "The README calls the project alpha and reports about 86% feature breadth and about 56% readiness for real production work; complete compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/filmcraft/57dc82ea2046c2ec479ab4d4d8167d90e5500b49/docs/images/filmcraft-hero.png",
+      "https://github.com/storytold/filmcraft/releases/tag/v0.17.0",
+      "https://github.com/storytold/filmcraft/blob/57dc82ea2046c2ec479ab4d4d8167d90e5500b49/docs/target-app-parity.md",
+      "https://github.com/storytold/filmcraft/blob/57dc82ea2046c2ec479ab4d4d8167d90e5500b49/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "lightcraft-case",
+    "name": "LightCraft: a clean-room photo library and raw developer in Rust",
+    "url": "https://github.com/storytold/lightcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe LightCraft as an open-source, clean-room non-destructive photo library and raw developer built in pure Rust. The README documents native and WebAssembly builds and calls the project alpha.",
+    "description_zh": "作者将 LightCraft 描述为用纯 Rust 构建的开源净室非破坏性照片库与 RAW 显影器。README 记录原生与 WebAssembly 构建，并自述项目处于 alpha 阶段。",
+    "evidence_url": "https://github.com/storytold/lightcraft/blob/389ab177db87694ce71d54a1adb9546772e483b6/README.md",
+    "verified_at": "2026-11-03",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
+      "The README calls the project alpha and documents remaining gaps in professional photo workflows; complete compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/lightcraft/389ab177db87694ce71d54a1adb9546772e483b6/docs/images/hero-tetons.jpg",
+      "https://github.com/storytold/lightcraft/releases/tag/v0.18.0",
+      "https://github.com/storytold/lightcraft/blob/389ab177db87694ce71d54a1adb9546772e483b6/docs/target-app-parity.md",
+      "https://github.com/storytold/lightcraft/blob/389ab177db87694ce71d54a1adb9546772e483b6/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "pdfcraft-case",
+    "name": "PdfCraft: a clean-room PDF reader and editor in Rust",
+    "url": "https://github.com/storytold/pdfcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe PdfCraft as an open-source, clean-room PDF reader and editor built in pure Rust. The README documents native and WebAssembly builds and reports 57% of tracked features and 94% of commands.",
+    "description_zh": "作者将 PdfCraft 描述为用纯 Rust 构建的开源净室 PDF 阅读与编辑器。README 记录原生与 WebAssembly 构建，并报告 57% 的跟踪功能与 94% 的命令。",
+    "evidence_url": "https://github.com/storytold/pdfcraft/blob/3709926f39039b57e71644227aa8b41b46bde940/README.md",
+    "verified_at": "2026-11-03",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
+      "The README calls the project alpha and reports 57% of tracked features and 94% of commands; complete PDF compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/pdfcraft/3709926f39039b57e71644227aa8b41b46bde940/docs/images/pdfcraft-viewer.png",
+      "https://github.com/storytold/pdfcraft/releases/tag/v0.18.0",
+      "https://github.com/storytold/pdfcraft/blob/3709926f39039b57e71644227aa8b41b46bde940/docs/target-app-parity.md",
+      "https://github.com/storytold/pdfcraft/blob/3709926f39039b57e71644227aa8b41b46bde940/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "soundcraft-case",
+    "name": "SoundCraft: a clean-room digital audio workstation in Rust",
+    "url": "https://github.com/storytold/soundcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe SoundCraft as an open-source, clean-room digital audio workstation built in pure Rust. The README documents native and WebAssembly builds and reports 94% menu coverage, about 70% feature presence and roughly 40% readiness for real work.",
+    "description_zh": "作者将 SoundCraft 描述为用纯 Rust 构建的开源净室数字音频工作站。README 记录原生与 WebAssembly 构建，并报告 94% 的菜单覆盖、约 70% 的功能存在度与约 40% 的真实工作可用度。",
+    "evidence_url": "https://github.com/storytold/soundcraft/blob/b11ffe73ae2e9804377c6cb37be45edf3058ac0d/README.md",
+    "verified_at": "2026-11-03",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
+      "The README calls the project pre-alpha and reports 94% menu coverage, about 70% feature presence and roughly 40% readiness for real work; complete compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/soundcraft/b11ffe73ae2e9804377c6cb37be45edf3058ac0d/docs/images/edit.png",
+      "https://github.com/storytold/soundcraft/releases/tag/v0.17.0",
+      "https://github.com/storytold/soundcraft/blob/b11ffe73ae2e9804377c6cb37be45edf3058ac0d/docs/target-app-parity.md",
+      "https://github.com/storytold/soundcraft/blob/b11ffe73ae2e9804377c6cb37be45edf3058ac0d/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "vectorcraft-case",
+    "name": "VectorCraft: a clean-room vector illustration application in Rust",
+    "url": "https://github.com/storytold/vectorcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe VectorCraft as an open-source, clean-room vector illustration application built in pure Rust. The README documents native and WebAssembly builds and reports about 88% of core menu items.",
+    "description_zh": "作者将 VectorCraft 描述为用纯 Rust 构建的开源净室矢量插画应用。README 记录原生与 WebAssembly 构建，并报告约 88% 的核心菜单项。",
+    "evidence_url": "https://github.com/storytold/vectorcraft/blob/999f4e6478e19b7139db70a3f2a0a5b0669ffcaf/README.md",
+    "verified_at": "2026-11-03",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Source builds use Rust and Cargo; release assets exist for macOS (universal DMG), Windows, Linux and FreeBSD, and the README documents a WebAssembly browser build.",
+      "The README calls the project alpha and reports about 88% of core menu items; complete compatibility is not claimed.",
+      "The README describes the project as a clean-room implementation built from public documentation and observed behaviour, not from the target application's source.",
+      "Code is MIT OR Apache-2.0, with NOTICE and brand assets under separate terms. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "scope",
+      "license"
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/storytold/vectorcraft/999f4e6478e19b7139db70a3f2a0a5b0669ffcaf/docs/images/shot-2-ribbons.png",
+      "https://github.com/storytold/vectorcraft/releases/tag/v0.21.0",
+      "https://github.com/storytold/vectorcraft/blob/999f4e6478e19b7139db70a3f2a0a5b0669ffcaf/docs/target-app-parity.md",
+      "https://github.com/storytold/vectorcraft/blob/999f4e6478e19b7139db70a3f2a0a5b0669ffcaf/LICENSE-MIT"
+    ]
+  },
+  {
+    "id": "woxi-case",
+    "name": "Woxi: a Wolfram Language interpreter in Rust",
+    "url": "https://github.com/ad-si/Woxi",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe Woxi as a Rust interpreter for a subset of the Wolfram Language, focused on CLI scripting and Jupyter notebooks. The README does not claim full Mathematica compatibility.",
+    "description_zh": "作者将 Woxi 描述为用 Rust 实现的 Wolfram Language 子集解释器，面向 CLI 脚本与 Jupyter Notebook。README 未声明完整 Mathematica 兼容。",
+    "evidence_url": "https://github.com/ad-si/Woxi/blob/09b106c5509b373b95b72fc6709a5a60c1b595f6/readme.md",
+    "verified_at": "2026-11-03",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Install with cargo, pip, the npm WebAssembly package, or GitHub release archives; releases include Linux, macOS (not notarized) and Windows builds for x86-64 and arm64.",
+      "Implements a subset of the Wolfram Language; the README links CLI tests and a functions.csv implementation-status list. Full Mathematica compatibility is not claimed.",
+      "The macOS Woxi Studio bundle is not notarized and is quarantined after download; the README documents this limit.",
+      "AGPL-3.0; REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "binary"
+    ],
+    "kind": "case-study",
+    "class": "science",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/ad-si/Woxi/09b106c5509b373b95b72fc6709a5a60c1b595f6/images/2026-02-12t1501_jupyter.png",
+      "https://github.com/ad-si/Woxi/releases/tag/v0.3.0",
+      "https://github.com/ad-si/Woxi/blob/09b106c5509b373b95b72fc6709a5a60c1b595f6/functions.csv",
+      "https://github.com/ad-si/Woxi/blob/09b106c5509b373b95b72fc6709a5a60c1b595f6/license.txt"
+    ]
+  },
+  {
+    "id": "pictureman-case",
+    "name": "Picture Man: a Rust rebuild of the Windows 3.x image editor",
+    "url": "https://github.com/yovico-ai/pictureman",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A cross-platform Rust rebuild of Picture Man 1.55 (1991-1993), the true-color image editor for Windows 3.x, per the project README. The README says no original source survived and the algorithms were recovered by disassembling PMAN.EXE and its converter DLLs.",
+    "description_zh": "据项目 README，这是对 Windows 3.x 真彩色图像编辑器 Picture Man 1.55（1991-1993）的跨平台 Rust 重建。README 说明原始源码已失传，算法通过反汇编 PMAN.EXE 及其转换器 DLL 恢复。",
+    "evidence_url": "https://github.com/yovico-ai/pictureman/blob/95c0ce0b8a9ec3156dfae3c01cd3bc4d1fe53739/README.md",
+    "verified_at": "2026-11-03",
+    "added_at": "2026-11-06",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No prebuilt binaries; the README documents source builds with Rust 1.94+ and a hosted WebAssembly demo. The desktop app opens user-supplied image files.",
+      "The README says the original source was lost and the algorithms were recovered by disassembling PMAN.EXE and its converter DLLs, with recovered specifications under re/.",
+      "The rebuild is an independent implementation and does not include the original proprietary application or its assets; complete behavioral equivalence is not claimed.",
+      "Code is MIT; NOTICE and the original Picture Man rights remain with their owners. REA use is not established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "kind": "case-study",
+    "class": "software",
+    "additional_evidence_urls": [
+      "https://raw.githubusercontent.com/yovico-ai/pictureman/95c0ce0b8a9ec3156dfae3c01cd3bc4d1fe53739/docs/screenshot.png",
+      "https://github.com/yovico-ai/pictureman/blob/95c0ce0b8a9ec3156dfae3c01cd3bc4d1fe53739/re/README.md",
+      "https://yovico-ai.github.io/pictureman/",
+      "https://github.com/yovico-ai/pictureman/blob/95c0ce0b8a9ec3156dfae3c01cd3bc4d1fe53739/LICENSE",
+      "https://github.com/yovico-ai/pictureman/blob/95c0ce0b8a9ec3156dfae3c01cd3bc4d1fe53739/NOTICE"
     ]
   }
 ]

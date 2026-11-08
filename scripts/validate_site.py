@@ -1227,7 +1227,7 @@ class SectionTargetCounts(HTMLParser):
 def validate_section_target_counts(output, resources):
     """Every target section's count line reconciles with its cards: tagged, minus filed elsewhere, plus listed here untagged."""
     output = Path(output)
-    subsets = {'resources': resources, 'cases': [record for record in resources if record['kind'] == 'case-study']}
+    subsets = {'cases': [record for record in resources if record['kind'] == 'case-study']}
     for route, records in subsets.items():
         for prefix in ('', 'zh/'):
             sections = SectionTargetCounts((output / f'{prefix}{route}' / 'index.html').read_text(encoding='utf-8')).sections
@@ -1411,7 +1411,7 @@ def validate_resource_listing(pages, resources):
             record = records[identifier]
             name = (record.get('name_zh') or record['name']) if language == 'zh' else record['name']
             expected.append({'@type': 'ListItem', 'position': position, 'name': name,
-                             'url': f'{ORIGIN}{prefix}/resources/{identifier}/', 'description': record[f'description_{language}']})
+                             'url': f'{ORIGIN}{prefix}/resources/{identifier}/'})
         assert items.get('@type') == 'ItemList' and items.get('numberOfItems') == len(expected), f'Resource schema count mismatch: {route}'
         assert items.get('itemListElement') == expected, f'Resource structured list differs from visible cards or detail pages: {route}'
 
@@ -1441,9 +1441,11 @@ def validate_entry_outputs(pages, resources, papers):
                     title = record['title_zh'] if language == 'zh' else record['title']
                 label = '完整条目' if language == 'zh' else 'Full entry'
                 accessible = f'{label}：{title}' if language == 'zh' else f'{label}: {title}'
-                assert normalize(' '.join(link['text'])) == label and link['aria_label'] == accessible, f'Detail link label must identify its localized entry: {expected}'
-                upstream = ({record['url'], record['evidence_url'], expected + '#entry-requirements'} if kind == 'resource'
-                            else {record['url'], record['pdf_url'], expected + '#entry-sources'})
+                if kind == 'resource':
+                    assert normalize(' '.join(link['text'])) == title, f'Resource rows name their entry: {expected}'
+                else:
+                    assert normalize(' '.join(link['text'])) == label and link['aria_label'] == accessible, f'Detail link label must identify its localized entry: {expected}'
+                upstream = ({record['evidence_url']} if kind == 'resource' else {record['url'], record['pdf_url'], expected + '#entry-sources'})
                 recorded_links = listing.record_links if kind == 'resource' else listing.paper_links
                 assert upstream <= set(recorded_links.get(link['id'], [])), f'External listing title/source links missing: {expected}'
 

@@ -17,6 +17,7 @@ from build_readme import (KIND_LABELS, METHOD_HEADINGS, METHOD_SECTIONS, RELATIO
 from agent_formats import MARKDOWN, alternate_links, collection_markdown
 from contribution_pages import TITLES as CONTRIBUTION_TITLES, contribution_content
 from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
+from resource_listing import TEXT as RESOURCE_TEXT, in_listing_order, resource_listing, resource_page_head
 from page_metadata import meta_description, page_title
 from sitemaps import latest, record_date
 from structured_data import dataset_node, publisher_reference
@@ -47,13 +48,6 @@ SECTIONS = {
 # Target sections and the target tag each one corresponds to; the other sections are not target-based.
 SECTION_TARGETS = {'website': 'website', 'game': 'game', 'app': 'app', 'native-binary': 'binary',
                    'firmware': 'firmware', 'protocol': 'protocol'}
-# Up to this many entries filed under other sections, or listed in a section without its tag, are named individually.
-# As in the README, a section holding both case studies and other kinds lists them in two sub-groups, cases first.
-# Sub-group IDs use a double hyphen, which record IDs and section keys cannot contain.
-SUBGROUPS = (
-    ('case-studies', ('Case studies', '案例'), lambda record: record['kind'] == 'case-study'),
-    ('tools', ('Tools, projects and integrations', '工具、项目与集成'), lambda record: record['kind'] != 'case-study'),
-)
 
 
 def jsonld_script(value: dict) -> str:
@@ -257,6 +251,28 @@ def _requirements_link(record: dict, language: str, name: str, css: str) -> str:
     return f'<a class="{css}" href="{href}" aria-label="{escape(label, quote=True)}">{text}<span aria-hidden="true">&nbsp;→</span></a>'
 
 
+CLASS_DETAIL = {
+    0: ('完整软件复现', 'full software reconstruction'),
+    1: ('部分范围或非复现条目', 'partial scope or analysis entry'),
+    2: ('有代码和文档，缺演示或下载', 'code & docs, no demo or download'),
+    3: ('仅笔记或进度记录', 'notes only'),
+}
+
+
+def evidence_badge(record: dict, language: str) -> str:
+    """The curated C0–C3 badge on collection cards; the homepage and search render the same class."""
+    if record.get('evidence_status') == 'unknown':
+        title = '复核时来源不可达或不可读' if language == 'zh' else 'Source unavailable or unreadable at review time'
+        return f'<span class="evidence-class evidence-class-unknown" title="{escape(title, quote=True)}">?</span>'
+    value = record.get('evidence_class')
+    if value is None:
+        return ''
+    detail = CLASS_DETAIL[int(value)][1 if language == 'zh' else 0]
+    label = '证据档位' if language == 'zh' else 'Evidence class'
+    return (f'<span class="evidence-class evidence-class-{int(value)}" '
+            f'title="{escape(f"{label} {int(value)} · {detail}", quote=True)}">C{int(value)}</span>')
+
+
 def _resource_card(record: dict, language: str, heading: str = 'h3') -> str:
     zh = language == 'zh'
     detail_path = f"{'/zh' if zh else ''}/resources/{record['id']}/"
@@ -267,7 +283,7 @@ def _resource_card(record: dict, language: str, heading: str = 'h3') -> str:
     targets = ' · '.join(TARGETS[target][1 if zh else 0] for target in record['targets'])
     reviewed = str(record['verified_at'])
     return f'''<article class="resource-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}" data-resource-id="{escape(record['id'], quote=True)}">
-  <div class="card-heading"><{heading}><a class="card-title-link" href="{_url(record['url'])}" target="_blank" rel="noopener">{escape(name)}{EXTERNAL_TITLE_ARROW}</a></{heading}><span class="resource-kind">{escape(kind)}</span></div>
+  <div class="card-heading"><{heading}><a class="card-title-link" href="{_url(record['url'])}" target="_blank" rel="noopener">{escape(name)}{EXTERNAL_TITLE_ARROW}</a>{evidence_badge(record, language)}</{heading}><span class="resource-kind">{escape(kind)}</span></div>
   <p class="card-description">{escape(description)}</p>
   <div class="card-meta"><span>{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{escape(record['id'], quote=True)}" href="{escape(detail_path, quote=True)}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a></div>
   <div class="resource-detail-meta"><a class="resource-evidence-link" href="{_url(record['evidence_url'])}" target="_blank" rel="noopener">{PRIMARY_SOURCE_LABEL[zh]} ↗</a>{_requirements_link(record, language, name, 'resource-requirements-link')}<time datetime="{escape(reviewed, quote=True)}">{('来源复核于' if zh else 'Source-reviewed')} {escape(reviewed[:10])}</time></div>
@@ -308,13 +324,6 @@ def _target_coverage(section: str, records: list[dict], language: str, *, cases:
             f' data-target-elsewhere="{len(elsewhere)}" data-target-untagged-here="{len(untagged)}">{text}</p>')
 
 
-def _subgroup_count(slug: str, count: int, zh: bool) -> str:
-    if slug == 'case-studies':
-        return f'{count} 个案例' if zh else f'{count} {"case study" if count == 1 else "case studies"}'
-    return f'{count} 项资源' if zh else f'{count} {"resource" if count == 1 else "resources"}'
-
-
-# One sentence under each method heading in a /cases/ section grouped by reconstruction method (data/README.md).
 METHOD_NOTES = {
     'matching-decompilation': ('Source or a full disassembly that the original toolchain rebuilds byte for byte, '
                                'checked per function or against hashes of the original binaries.',
@@ -428,7 +437,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
               title: str, description: str, content: str, schema: dict | None,
               assets: dict, icon_stylesheet: str | None, noindex: bool = False,
               main_class: str = '', extra_styles: tuple[str, ...] = (),
-              source_export: str = 'source-index.json', alternates: str = '') -> str:
+              source_export: str = 'source-index.json', alternates: str = '', page_head: str = '') -> str:
     if source_export not in ('source-index.json', 'source-published.json'):
         raise ValueError('Unsupported repository export route')
     zh = language == 'zh'
@@ -459,6 +468,9 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
               else 'Original editorial content and code: MIT. Upstream descriptions and linked projects retain their own licenses.')
     extra_css = ''.join(f'\n  <link rel="stylesheet" href="{escape(href, quote=True)}">' for href in extra_styles)
     page_class = ' ' + escape(main_class, quote=True) if main_class else ''
+    main_open = (f'<main id="discovery-content" class="{page_class.strip()}">{page_head}' if page_head else f'''<main id="discovery-content" class="shell browse-main{page_class}">
+  <nav class="browse-breadcrumbs" aria-label="{('当前位置' if zh else 'Breadcrumb')}"><a href="{root}">{('首页' if zh else 'Home')}</a><span aria-hidden="true">/</span><span aria-current="page">{escape(title)}</span></nav>
+  <section class="collection-intro browse-intro"><p class="eyebrow">{('逆向工程资源集合' if zh else 'THE REVERSE ENGINEERING COLLECTION')}</p><h1>{escape(title)}<span class="title-dot" aria-hidden="true">.</span></h1><p>{escape(description)}</p></section>''')
     return f'''<!doctype html>
 <html lang="{locale}"{(' data-icon-set="fontawesome"' if icon_stylesheet else '')}>
 <head>
@@ -482,9 +494,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
   <a class="wordmark" href="{root}" aria-label="{('AwesomeREA.org 首页' if zh else 'AwesomeREA.org home')}"><img class="brand-mark" src="{assets['favicon']}" alt="" width="33" height="33" aria-hidden="true"><span>Awesome<span class="wordmark-rea">REA</span><span class="wordmark-domain">.org</span></span></a>
   <nav class="header-nav" aria-label="{('主导航' if zh else 'Main navigation')}">{language_link}<a class="github-link" href="{_url(repository_url)}" target="_blank" rel="noopener" aria-label="GitHub">{github_icon}<span>GitHub</span></a></nav>
 </div></header>
-<main id="discovery-content" class="shell browse-main{page_class}">
-  <nav class="browse-breadcrumbs" aria-label="{('当前位置' if zh else 'Breadcrumb')}"><a href="{root}">{('首页' if zh else 'Home')}</a><span aria-hidden="true">/</span><span aria-current="page">{escape(title)}</span></nav>
-  <section class="collection-intro browse-intro"><p class="eyebrow">{('逆向工程资源集合' if zh else 'THE REVERSE ENGINEERING COLLECTION')}</p><h1>{escape(title)}<span class="title-dot" aria-hidden="true">.</span></h1><p>{escape(description)}</p></section>
+{main_open}
   {content}
 </main>
 {site_footer(language, note=escape(footer), repository_url=repository_url, repository_export=source_export)}
@@ -523,6 +533,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         raise ValueError('papers.json must contain a separate array of paper records')
     scan_date = str((source_index or {}).get('meta', {}).get('published_at' if published else 'completed_at') or '')[:10]
     assets = {key: _asset(site_dir, filename) for key, filename in (
+        ('rea', 'rea.css'),
         ('styles', 'styles.css'), ('browse', 'browse.css'), ('favicon', 'favicon.svg'), ('social', 'social-card.png'))}
     icons = _IconStylesheet()
     index = site_dir / 'index.html'
@@ -546,37 +557,17 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         locale = 'zh-CN' if zh else 'en'
         prefix = '/zh' if zh else ''
         path = prefix + '/resources/'
-        title = '精选逆向工程资源' if zh else 'Curated reverse engineering resources'
+        title = RESOURCE_TEXT[language]['title']
         description = (f'{len(resources):,} 项工具、项目、集成、案例与参考资源，覆盖网站、游戏、应用、原生二进制、固件及通信协议。每个条目都保留一手来源链接、使用要求与复核日期。'
                        if zh else f'{len(resources):,} tools, projects, integrations, case studies, and references for websites, games, apps, native binaries, firmware, and communication protocols.')
         note = ('“来源已复核”表示说明已依据一手文档核对。完整的使用条件与来源列在各条目页面，本页显示其数量和复核日期。'
                 if zh else 'Source-reviewed means descriptions were checked against primary documentation. Each entry page lists the full requirements and sources; this page shows their counts and the review date.')
-        sections, items, navigation = [], [], []
-        for key, labels in SECTIONS.items():
-            if not groups[key]:
-                continue
-            label = labels[1 if zh else 0]
-            navigation.append(f'<a href="#{key}">{escape(label)}<span>{len(groups[key])}</span></a>')
-            subgroups = [(slug, labels, [record for record in groups[key] if belongs(record)]) for slug, labels, belongs in SUBGROUPS]
-            if all(entries for _, _, entries in subgroups):
-                # h2 section, h3 sub-group, h4 card: heading levels never skip. Each sub-group region is named by its
-                # section heading and its own ("Websites Case studies"), so the six "Case studies" regions stay distinct.
-                body = ''.join(
-                    f'<section class="resource-subgroup" aria-labelledby="heading-{key} {key}--{slug}"><div class="browse-topline resource-subgroup-topline"><h3 id="{key}--{slug}">{escape(names[1 if zh else 0])}</h3>'
-                    f'<p>{_subgroup_count(slug, len(entries), zh)}</p></div><div class="resource-grid">' + '\n'.join(_resource_card(record, language, 'h4') for record in entries) + '</div></section>'
-                    for slug, names, entries in subgroups)
-                ordered = [record for _, _, entries in subgroups for record in entries]
-            else:
-                body = '<div class="resource-grid">' + '\n'.join(_resource_card(record, language) for record in groups[key]) + '</div>'
-                ordered = groups[key]
-            sections.append(f'<section aria-labelledby="heading-{key}"><div class="browse-topline"><h2 id="heading-{key}"><a id="{key}"></a>{escape(label)}</h2><p>{len(groups[key])} {("项资源" if zh else "resources")}</p>{_section_index_link('resource-categories', zh)}</div>{_target_coverage(key, resources, language)}{body}</section>')
-            for record in ordered:
-                name = (record.get('name_zh') or record['name']) if zh else record['name']
-                # Items identify the site's own entry pages, as /cases/ does; card titles still link upstream.
-                items.append({'name': name, 'url': f"{site_url}{prefix}/resources/{record['id']}/", 'description': record[f'description_{language}']})
-        content = f'''<div class="browse-actions"><a class="button button-primary" href="{('/zh/?view=curated' if zh else '/?view=curated&amp;lang=en')}">{('搜索与筛选' if zh else 'Search and filter')}</a><a class="button button-outline" href="{prefix}/browse/">{('浏览仓库' if zh else 'Browse repositories')}</a><a class="button button-outline" href="{prefix}/papers/">{('研究论文' if zh else 'Research papers')}</a>{_suggest_link(repository_url, 'resource.yml', '推荐资源' if zh else 'Suggest a resource')}{download_link('/catalog.json', language, css_class='browse-download')}</div>
-<details class="browse-provenance"><summary>{("来源复核与验证范围" if zh else "Source review and testing limits")}</summary><p>{escape(note)}</p></details><nav class="browse-category-nav" id="resource-categories" aria-label="{('资源分类' if zh else 'Resource categories')}">{''.join(navigation)}</nav>{''.join(sections)}'''
+        # Items identify the site's own entry pages, in the order the rows appear.
+        items = [{'name': (record.get('name_zh') or record['name']) if zh else record['name'], 'url': f"{site_url}{prefix}/resources/{record['id']}/"}
+                 for record in in_listing_order(groups, SECTIONS)]
+        content = resource_listing(resources, groups, SECTIONS, language, repository_url)
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=collection_page_schema(site_url + path, title, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href, source_export=source_export,
+                                   main_class='page-resources', page_head=resource_page_head(resources, language), extra_styles=(assets['rea'],),
                                    alternates=alternate_links(markdown=path + MARKDOWN, json_href='/api/v1/resources.json'))
         twins[path] = _collection_twin(site_url, path, language, title, description, groups, note, json_url=site_url + '/api/v1/resources.json')
         paths.append(path)
@@ -729,7 +720,7 @@ Every listing, category and entry page has a Markdown version named `index.md` b
 - [Full repository index JSON]({site_url}/source-index.json): All scan records, original descriptions, translations, hashes, and exclusions; omit scope_status=excluded when reconstructing the browse list.
 - [Browsable repository JSON]({site_url}/source-browser.json): Compact visible records. Follow `meta.full_export` for the complete companion and verify `meta.full_export_sha256`; the metadata selects the preserved baseline or a ready published selection.
 - [Paper metadata JSON]({site_url}/papers.json): The separate research bibliography.
-- [Hugging Face dataset mirror](https://huggingface.co/datasets/AgPerry/awesome-rea): Read-only Parquet and JSONL mirror of these exports, one config per record type (resources, papers, cases, repositories, discoveries, leads), refreshed every 2 hours; repositories, discoveries and leads are unreviewed.
+- [Hugging Face dataset mirror](https://huggingface.co/datasets/TIGER-Lab/AwesomeREA): Parquet and JSONL exports for resources, papers, cases, repositories, discoveries and leads, refreshed every 2 hours.
 - [Public source repository]({repository_url}): Bilingual READMEs, contribution rules, code, and data definitions.
 - [Scan methodology]({repository_url}/blob/main/docs/source-scan.md): Collection and scope-review methods.
 

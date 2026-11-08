@@ -31,6 +31,7 @@ from data_classes import DATA_CLASSES
 from requirement_facets import FACETS
 from review_pr import private_json_locations
 from sitemaps import instant, latest, normalized_date
+from site_footer import HUGGING_FACE_URL
 from structured_data import dataset_id, publisher_reference
 
 API_VERSION = '1.0.0'
@@ -383,7 +384,7 @@ def api_page(language: str, index: dict, site_url: str) -> tuple[str, str, str, 
         f"以 JSON 或 CSV 读取精选目录：{records['resources']:,} 项资源、{records['papers']:,} 篇论文、分类、未审核候选与最近 30 天的变更。所有文件均为静态内容，可直接下载。")
     rows = [
         ('resources', choose('Curated resources: stable IDs, bilingual names and descriptions, requirements, evidence and review dates.', '精选资源：稳定 ID、中英文名称与说明、使用条件、证据与复核日期。')),
-        ('papers', choose('The research bibliography: identifiers, dates and their basis, limits and sources; no names where authors are omitted.', '研究文献：标识、日期及其依据、研究边界与来源；作者省略的论文不列姓名。')),
+        ('papers', choose('The research bibliography: identifiers, dates and their basis, limits, sources and recorded authors.', '研究文献：标识、日期及其依据、研究边界、来源和已记录的作者。')),
         ('categories', choose('Curated categories, sections, kinds, targets and relationships with counts, plus the repository categories.', '精选分类、分区、类型、目标与关联及其数量，以及仓库分类。')),
         ('candidates', choose('Unreviewed automated discoveries and followed-source leads, newest first.', '未审核的自动发现与关注来源线索，按时间从新到旧。')),
         ('changes', choose('Additions, later source reviews and discovery batches in the 30 days before generated_at.', 'generated_at 之前 30 天内的新增、后续来源复核与发现批次。')),
@@ -395,23 +396,25 @@ def api_page(language: str, index: dict, site_url: str) -> tuple[str, str, str, 
     notes = [
         choose(f'Every file carries version ({index["version"]}), generated_at and the schema definition it follows; CSV rows repeat version and generated_at. IDs are the catalog’s stable IDs.',
                f'每个文件都带有 version（{index["version"]}）、generated_at 以及所遵循的 schema 定义；CSV 每行重复 version 与 generated_at。ID 即目录的稳定 ID。'),
-        choose(f'generated_at ({index["generated_at"]}) is the newest recorded time in the data, not the build time, so a commit always rebuilds the same files. The files change whenever the catalog changes: every merged pull request and every hourly discovery ingest that adds records.',
-               f'generated_at（{index["generated_at"]}）是数据中最新的记录时间而非构建时间，因此同一提交总能重建出相同的文件。目录每次变化时文件随之更新：每个合并的 PR，以及每小时一次新增记录的自动发现入库。'),
-        choose('Responses allow any origin (CORS *) and carry an ETag. No key or account is needed; please cache and send If-None-Match.',
-               '响应允许任意来源（CORS *）并带 ETag。无需密钥或账号；请缓存并发送 If-None-Match。'),
+        choose(f'generated_at ({index["generated_at"]}) records the newest time in the data. Rebuilding the same commit produces identical files. The files update with merged pull requests and hourly discovery ingests that add records.',
+               f'generated_at（{index["generated_at"]}）记录数据中的最新时间。同一提交可重建出相同的文件。合并的 PR 和每小时新增记录的自动发现入库会更新文件。'),
+        choose('Responses allow any origin (CORS *) and carry an ETag. Cache responses and send If-None-Match.',
+               '响应允许任意来源（CORS *）并带 ETag。请缓存响应并发送 If-None-Match。'),
         REVIEW_NOTE[zh],
     ]
     example = f'curl -s {site_url}{API_PATH}resources.json | jq \'.resources[] | select(.targets | index("protocol")) | {{id, name, entry_url}}\''
     content = (f'<div class="source-results"><section class="source-card browse-repository" aria-labelledby="api-endpoints"><h2 id="api-endpoints">{choose("Endpoints", "端点")}</h2>'
                f'<ul class="card-description">{endpoints}</ul>'
-               f'<p class="card-description"><a href="{API_PATH}schema.json">schema.json</a> · <a href="{API_PATH}index.json">index.json</a> ({choose("sizes and SHA-256 of every file", "全部文件的大小与 SHA-256")})</p></section>'
+               f'<p class="card-description"><a href="{API_PATH}schema.json">schema.json</a> · <a href="{API_PATH}index.json">index.json</a> ({choose("sizes and SHA-256 of every file", "全部文件的大小与 SHA-256")})</p>'
+               f'<p class="card-description"><a href="{HUGGING_FACE_URL}">{choose("Hugging Face dataset", "Hugging Face 数据集")}</a> · Parquet · JSONL</p></section>'
                f'<section class="source-card browse-repository" aria-labelledby="api-notes"><h2 id="api-notes">{choose("Versions, freshness and reuse", "版本、更新与复用")}</h2>'
                + ''.join(f'<p class="card-description">{escape(note)}</p>' for note in notes)
                + f'<p class="card-description"><code>{escape(example)}</code></p></section></div>')
     markdown = '\n'.join([
         f'# {title}', '', f'> {description}', '',
         f'- HTML: <{site_url}{"/zh" if zh else ""}{DOCS_PATH}>', f'- {choose("Index of files", "文件索引")}: <{site_url}{API_PATH}index.json>',
-        f'- JSON Schema: <{site_url}{API_PATH}schema.json>', '', f'## {choose("Endpoints", "端点")}', '',
+        f'- JSON Schema: <{site_url}{API_PATH}schema.json>',
+        f'- {choose("Hugging Face dataset", "Hugging Face 数据集")}: <{HUGGING_FACE_URL}>', '', f'## {choose("Endpoints", "端点")}', '',
         *(f'- [{name}.json]({site_url}{API_PATH}{name}.json) ({records[name]:,}; CSV: {site_url}{API_PATH}{name}.csv): {text}' for name, text in rows),
         '', f'## {choose("Versions, freshness and reuse", "版本、更新与复用")}', '',
         *(line for note in notes for line in (note, '')), '```sh', example, '```', ''])

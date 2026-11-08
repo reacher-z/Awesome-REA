@@ -316,7 +316,7 @@ kbd { display: inline-flex; align-items: center; justify-content: center; min-wi
 .pal-group { padding-top: 8px; }
 .pal-gh { display: flex; align-items: baseline; gap: 8px; padding: 6px 10px 6px; font: 500 .75rem/1 var(--font-body); color: var(--ink-2); }
 .pal-gh .count { font-family: var(--font-mono); }
-.pal-opt { display: grid; grid-template-columns: 76px minmax(0, 1fr) auto; align-items: center; gap: 2px 14px; padding: 9px 10px; border-radius: 6px; cursor: pointer; color: var(--ink); }
+.pal-opt { display: grid; grid-template-columns: 88px minmax(0, 1fr) auto; align-items: center; gap: 2px 14px; padding: 9px 10px; border-radius: 6px; cursor: pointer; color: var(--ink); }
 .pal-opt .lt-call { align-self: start; padding-top: 4px; }
 .pal-name { font-weight: 600; color: var(--ink-strong); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .pal-desc { grid-column: 2; font-size: .8125rem; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

@@ -77,9 +77,13 @@ class EvidenceLabelTests(unittest.TestCase):
                     with self.subTest(language=language, page=page):
                         content = (output / prefix / page / 'index.html').read_text()
                         self.assertIsNone(re.search(r'(Additional source|补充来源) \d', content), 'numbered evidence names remain')
-                        # Further evidence is listed, with these labels, only on the entry page; the listing links there
-                        # and counts every source the entry page names.
+                        # Further evidence is listed, with these labels, only on the entry page. Both listings link there,
+                        # and /cases/ also counts every source the entry page names.
                         self.assertEqual([link for link in links(content) if link.get('href') in additional], [])
+                        if page == 'resources':
+                            target = f"{'/zh' if language == 'zh' else ''}/resources/{record['id']}/"
+                            self.assertEqual(len([link for link in links(content) if link.get('href') == target]), 1)
+                            continue
                         target = f"{'/zh' if language == 'zh' else ''}/resources/{record['id']}/#entry-requirements"
                         counted = [link['text'] for link in links(content) if link.get('href') == target]
                         self.assertEqual(len(counted), 1)

@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#资源) · [English](cases.md) · **简体中文**
 
-**431 个案例**，按分区列出。
+**442 个案例**，按分区列出。
 
 ## 目录
 
 - [Website · 网站](#website) (13)
 - [Game · 游戏](#game) (239)
-- [App · 应用](#app) (62)
-- [Native Binary · 原生二进制](#native-binary) (7)
+- [App · 应用](#app) (72)
+- [Native Binary · 原生二进制](#native-binary) (8)
 - [Firmware and Hardware · 固件与硬件](#firmware) (19)
 - [Protocol · 协议](#protocol) (91)
 
@@ -309,17 +309,27 @@
 
 - [**AOL 7.0 Retro Server：复现 P3 服务端会话**](https://github.com/pioneerman2k1/AOL7-Retro-Server) - AOL 7.0 Retro Server 为 2001 年的 AOL 7.0 客户端实现本地 Python 服务端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/aol7-retro-server-case/)</sub>
 - [**Benro Polaris Firmware Patcher：重建相机控制并解析应用协议**](https://github.com/blaineam/benro-polaris-firmware-patcher) - Benro Polaris Firmware Patcher 研究 Polaris 相机控制器，将新版 libgphoto2 组件和针对 pgphoto 的修改打包进用户自备固件镜像。 <sub>案例 · 独立重建 · 也适用：固件、协议 · [完整条目](https://awesomerea.org/zh/resources/benro-polaris-firmware-patcher-case/)</sub>
+- [**CADCraft：纯 Rust 净室 CAD 与制图应用**](https://github.com/storytold/cadcraft) - 作者将 CADCraft 描述为用纯 Rust 构建的开源净室计算机辅助设计与制图应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cadcraft-case/)</sub>
 - [**Clickwill：重建 iPod 音乐库数据库编辑功能**](https://github.com/jakubwarzecha00/clickwill) - Clickwill 以 Swift Mac 应用重建 iPod classic 和 iPod nano 音乐库的直接编辑功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/clickwill-case/)</sub>
 - [**ddg-tenor-bridge：替换 Gboard 的 Tenor 搜索端点**](https://github.com/hxreborn/ddg-tenor-bridge) - ddg-tenor-bridge 将 Gboard 的 Tenor GIF 搜索指向一个以 Tenor v2 响应格式返回 DuckDuckGo 动图结果的服务。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/ddg-tenor-bridge-case/)</sub>
+- [**DesignCraft：纯 Rust 净室页面版式与出版工作室**](https://github.com/storytold/designcraft) - 作者将 DesignCraft 描述为用纯 Rust 构建的开源净室页面版式与桌面出版工作室。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/designcraft-case/)</sub>
+- [**EffectCraft：纯 Rust 净室动效图形与合成工作室**](https://github.com/storytold/effectcraft) - 作者将 EffectCraft 描述为用纯 Rust 构建的开源净室动效图形与视觉特效工作室。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/effectcraft-case/)</sub>
+- [**FigCraft：纯 Rust 净室界面设计与原型工具**](https://github.com/storytold/figcraft) - 作者将 FigCraft 描述为用纯 Rust 构建的开源净室界面设计与原型工具。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/figcraft-case/)</sub>
+- [**FilmCraft：纯 Rust 净室非线性视频编辑器**](https://github.com/storytold/filmcraft) - 作者将 FilmCraft 描述为用纯 Rust 构建的开源净室非线性视频编辑器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/filmcraft-case/)</sub>
 - [**grsimwrite-mac：重建适用于 macOS 的 GRSIMWrite**](https://github.com/eliel9012/grsimwrite-mac) - grsimwrite-mac 用 Python 为 macOS 重建 Windows 工具 GRSIMWrite 4.4.10 的 SIM 写卡流程。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/grsimwrite-mac-case/)</sub>
+- [**LightCraft：纯 Rust 净室照片库与 RAW 显影器**](https://github.com/storytold/lightcraft) - 作者将 LightCraft 描述为用纯 Rust 构建的开源净室非破坏性照片库与 RAW 显影器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/lightcraft-case/)</sub>
 - [**Malware Analysis：木马化 FL Studio 安装包与 Go 窃密程序分析**](https://github.com/AllobatesZaparo/malware-analysis) - 这份恶意软件分析报告研究一个木马化的 FL Studio 安装包，其中包含 Electron/NSIS 包装程序和 Go 信息窃取载荷。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/fl-studio-stealer-analysis-case/)</sub>
 - [**MSP CSV Export Format：My Stocks Portfolio 导出格式重建**](https://github.com/Izero/msp-csv-format) - MSP CSV Export Format 还原 My Stocks Portfolio &amp; Market 应用未公开的 CSV 导出格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/msp-csv-format-case/)</sub>
 - [**OpenTracks：OpenTracks7 BETA1 的 UWP 移植**](https://github.com/mediaexplorer74/OpenTracks) - OpenTracks 是基于作者对 OpenTracks7 BETA1 的逆向研究所做的早期 UWP 移植。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opentracks-uwp-case/)</sub>
+- [**PdfCraft：纯 Rust 净室 PDF 阅读与编辑器**](https://github.com/storytold/pdfcraft) - 作者将 PdfCraft 描述为用纯 Rust 构建的开源净室 PDF 阅读与编辑器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pdfcraft-case/)</sub>
+- [**Picture Man：Windows 3.x 图像编辑器的 Rust 重建**](https://github.com/yovico-ai/pictureman) - 据项目 README，这是对 Windows 3.x 真彩色图像编辑器 Picture Man 1.55（1991-1993）的跨平台 Rust 重建。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/pictureman-case/)</sub>
 - [**RTO eChalan：调查 BankBot 安卓 APK**](https://github.com/Gautam-CyberSec/Android-Malware-Analysis-Report) - RTO eChalan 报告通过检查 AndroidManifest.xml、使用 JADX 反编译及沙箱分析，调查一个冒充印度政府交通罚单服务的 APK。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rto-echalan-android-analysis-case/)</sub>
 - [**Siriously：恢复 macOS Writing Tools 的调用入口**](https://github.com/bo2themax/Siriously) - Siriously 研究 macOS 27 中 Writing Tools 调用入口的变化，并通过 Services 客户端恢复弹窗。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/siriously-writing-tools-case/)</sub>
+- [**SoundCraft：纯 Rust 净室数字音频工作站**](https://github.com/storytold/soundcraft) - 作者将 SoundCraft 描述为用纯 Rust 构建的开源净室数字音频工作站。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/soundcraft-case/)</sub>
 - [**Spark Mail：借助 Wine 兼容层在 Linux 上运行 Windows 桌面应用**](https://github.com/kyryl-bogach/spark-mail-linux) - spark-mail-linux 通过 Wine、两个兼容 DLL 和启动脚本在 Linux 上运行 Windows 版 Spark Mail。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/spark-mail-linux-case/)</sub>
 - [**SteelSeries Overlay Hook：解析并挂钩 GameOverlay 交换链**](https://github.com/meowdiocre/ss-overlay-hook) - SteelSeries Overlay Hook 记录了用 IDA 分析 SteelSeriesGameOverlay.dll 的窗口、对象布局和 Direct3D 11 交换链，并在 C++ DLL 钩子中使用恢复的偏移。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/steelseries-overlay-hook-case/)</sub>
 - [**tuya-mobile：Tuya 应用签名与 API 调用的 Python 重建**](https://github.com/AboveColin/tuya-mobile) - tuya-mobile 以 Python 重建 Tuya 移动应用的请求签名、加密 API 调用和 MQTT 信令凭据派生。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/tuya-mobile-security-layer-case/)</sub>
+- [**VectorCraft：纯 Rust 净室矢量插画应用**](https://github.com/storytold/vectorcraft) - 作者将 VectorCraft 描述为用纯 Rust 构建的开源净室矢量插画应用。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/vectorcraft-case/)</sub>
 - [**WeChat：通过 CommonCrypto 钩子提取 SQLCipher 密钥**](https://github.com/Evanyuan-builder/wechat-4.1.10-macos-key) - 这项研究针对 macOS 版 WeChat 4.1.10，作者报告通过 LLDB 在 CommonCrypto 加密调用处设置断点，提取各数据库的 SQLCipher 密钥。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/wechat-4-1-10-macos-key-case/)</sub>
 - [**cbyge：重建 C by GE 智能灯泡云端协议**](https://github.com/unixpickle/cbyge) - 以 Go 库和一个可自行部署的小型网页应用，重新实现 C by GE（现名 Cync）智能灯泡应用的云端控制通道。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/cbyge-c-by-ge-protocol-case/)</sub>
 - [**NiimBlue：NIIMBOT 标签打印机的独立网页客户端**](https://github.com/MultiMote/niimblue) - 以浏览器客户端替代 NIIMBOT 官方标签应用，可设计标签并通过 Web Bluetooth 或 Web Serial 打印，同一界面另有 Android（Capacitor）和 Windows（Tauri）版本。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/niimblue-niimbot-printer-client-case/)</sub>
@@ -378,6 +388,7 @@
 - [**CPQ IO Scheduler：还原小米的块设备调度器**](https://github.com/Rasenkai/CPQ_IOSched) - CPQ IO Scheduler 从已剥离符号的 ARM64 cpq.ko 内核模块还原小米的 Linux 块设备调度器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cpq-iosched-case/)</sub>
 - [**m0rph：追踪混淆 ELF 程序的字符串校验逻辑**](https://github.com/UmbertoDellaMonica/m0rph-CTF-CyberChallenge.IT) - m0rph 调查使用 readelf、strings、Cutter 和 Radare2 分析一款经过混淆的 x86-64 ELF CTF 字符串校验程序。 <sub>案例 · [完整条目](https://awesomerea.org/zh/resources/m0rph-ctf-analysis-case/)</sub>
 - [**Malware Analysis：njRAT 与 Casdet 行为研究**](https://github.com/phour44/Malware-Analysis) - 该恶意软件研究用 PEStudio 静态检查和 ANY.RUN 沙箱遥测分析 njRAT 与经 UPX 打包的 Casdet 可执行文件，同时检查恶意 PDF 和良性对照文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/malware-analysis-njrat-casdet-case/)</sub>
+- [**Woxi：用 Rust 实现的 Wolfram Language 解释器**](https://github.com/ad-si/Woxi) - 作者将 Woxi 描述为用 Rust 实现的 Wolfram Language 子集解释器，面向 CLI 脚本与 Jupyter Notebook。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/woxi-case/)</sub>
 - [**OpenBSD netcat：REA 与 Ghidra 静态调查**](https://github.com/NullLabTests/OpenBSD_netcat_REA) - REA/Ghidra 报告研究 Ubuntu netcat-openbsd 1.234-1 ELF 二进制，公开证据封套、反编译函数及函数清单；产物是静态调查，而非重建后的 netcat 应用。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/netcat-openbsd-rea-static-case/)</sub>
 - [**Windows 加载器：借助 REA 与 Codex 的静态恶意软件分析**](https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/) - Fedele Mantuano 报告在离线 Docker 实验环境中让 Codex 借助 REA，对一个公开的 Windows 恶意软件样本做静态分析，全程不执行样本。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/windows-loader-static-analysis-case/)</sub>
 - [**Show Your Work：对 REA 证据架构的实测剖析**](https://no-flag.com/2026/10/18/REA-paper/) - 一篇非官方的实测研究：先阅读 REA 源码，再在 27 类分析对象上对运行中的服务器发出 1,012 次有记录的调用，测量其按内容寻址的 Evidence 记录、按修订串联的未知项台账、带类型的拒绝、冷启动及响应上限。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/noflag-rea-evidence-architecture-study/)</sub>

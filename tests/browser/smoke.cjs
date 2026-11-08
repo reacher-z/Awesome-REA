@@ -248,7 +248,73 @@ async function newHomepage(page, language, viewport, data, requested, javascript
   assert.match(new URL(page.url()).pathname, /\/resources\/[a-z0-9-]+\/$/, `${label}: Enter opens the selected result`);
 }
 
+// The evidence-class select narrows the drawer in place, and the info button explains the classes.
+async function homepageClassFilter(page, language, viewport) {
+  const label = `${language} homepage evidence-class filter ${viewport.name}`;
+  assert.equal(await page.$eval('[data-class-select]', select => select.options[0].value), '', `${label}: all classes is the default`);
+  await page.select('[data-class-select]', '0');
+  await page.waitForFunction(() => {
+    const cards = [...document.querySelectorAll('[data-cards] > .card')];
+    return new URL(location.href).searchParams.get('class') === '0' && cards.length && cards.every(card => card.querySelector('.card-class-0'));
+  }, {timeout: 15000});
+  const classes = await page.$$eval('[data-cards] > .card .card-class', nodes => nodes.map(node => node.textContent.trim()));
+  assert(classes.length > 0, `${label}: rows render`);
+  assert(classes.every(text => text === 'C0'), `${label}: only C0 rows remain`);
+  assert.equal(await page.$eval('[data-class-select]', select => select.value), '0', `${label}: the select keeps its choice`);
+  await page.click('.info-btn');
+  assert.equal(await page.$eval('.info-btn', button => button.getAttribute('aria-expanded')), 'true', `${label}: the info button opens the class criteria`);
+  assert.equal(await page.$eval('.info-pop', node => getComputedStyle(node).visibility), 'visible', `${label}: the criteria are visible`);
+  await page.keyboard.press('Escape');
+  await page.select('[data-class-select]', '');
+  await page.waitForFunction(() => !new URL(location.href).searchParams.get('class') && document.querySelectorAll('[data-cards] > .card').length === 7);
+}
+
 // Past the hero field the sticky bar offers search; it opens over the page and closes back to the same place.
+// /resources/ holds every record; filters change the list in place, and section links return to the whole list.
+async function resourceListing(page, language, viewport, data) {
+  const label = `${language} resources ${viewport.name}`;
+  const total = data.catalog.resources.length;
+  const route = language === 'zh' ? '/zh/resources/' : '/resources/';
+  const rows = () => count(page, '[data-cards] > .card');
+  assert.equal(await rows(), total, `${label}: every record is in the page`);
+  await noOverflow(page, label);
+  const before = await page.$eval('[data-results-meta]', node => node.textContent);
+  await press(page, '.page-head .folder[data-target="protocol"]');
+  await page.waitForFunction(all => document.querySelectorAll('[data-cards] > .card').length < all, {timeout: 20000}, total);
+  assert.equal(new URL(page.url()).searchParams.get('target'), 'protocol', `${label}: the filter is in the URL`);
+  assert.notEqual(await page.$eval('[data-results-meta]', node => node.textContent), before, `${label}: the count follows the filter`);
+  await page.goto(page.url().split('?')[0] + '?target=protocol&kind=tool');
+  await page.waitForFunction(all => document.querySelectorAll('[data-cards] > .card').length < all, {timeout: 20000}, total);
+  const opened = await page.$$eval('[data-cards] > .card .callno', nodes => nodes.map(node => node.textContent));
+  assert.ok(opened.length && opened.every(text => /tool|工具/i.test(text)), `${label}: a shared link opens the same filter`);
+  // On a narrowed list a section's count follows the filters, and its link filters to that many rows.
+  const sectionCounts = () => page.$$eval('[data-section-link]', links => links.map(link => [link.dataset.section, Number(link.querySelector('.count').textContent.replace(/\D/g, ''))]));
+  const narrowed = await sectionCounts();
+  const narrowedTotal = narrowed.reduce((sum, [, number]) => sum + number, 0);
+  assert.ok(narrowedTotal < total, `${label}: section counts follow the filters`);
+  const [section, sectionTotal] = narrowed.find(([, number]) => number > 0);
+  await page.$eval(`[data-section-link][data-section="${section}"]`, node => node.click());
+  await page.waitForFunction(key => new URL(location.href).searchParams.get('section') === key, {}, section);
+  assert.deepEqual(numbers(await text(page, '[data-results-meta]')).slice(-1), [sectionTotal], `${label}: the section filter shows the rows its count promised`);
+  assert.equal(await page.$eval(`[data-section-link][data-section="${section}"]`, node => node.getAttribute('aria-current')), 'true', `${label}: the chosen section is marked`);
+  await page.$eval(`[data-section-link][data-section="${section}"]`, node => node.click());
+  await page.waitForFunction(() => !new URL(location.href).searchParams.has('section'));
+  // Clearing returns to the whole list, where the same link jumps to its heading and is shareable.
+  await page.goto(page.url().split('?')[0]);
+  assert.equal(await rows(), total, `${label}: clearing the filters returns the whole list`);
+  await page.$eval('[data-section-link]', node => node.click());
+  await page.waitForFunction(() => location.hash.startsWith('#heading-'));
+  assert.equal(new URL(page.url()).search, '', `${label}: on the whole list a section link only jumps`);
+  assert.equal(new URL(page.url()).pathname, route);
+  assert.equal(await rows(), total, `${label}: a section jump keeps every row`);
+  assert.deepEqual(await page.evaluate(() => [[61, 1], [64, 1], [65, 1], [65, 2], [121, 2], [120, 2], [0, 1], [3, 1]].map(([rows, page]) => {
+    const {pages, start, end} = window.REA_SEARCH.pageRange(rows, 60, page);
+    return [pages, end - start];
+  })), [[1, 61], [1, 64], [2, 60], [2, 5], [2, 61], [2, 60], [1, 0], [1, 3]], `${label}: a last page never holds under five rows`);
+  await page.goto(page.url().split('#')[0] + '#' + data.catalog.resources[data.catalog.resources.length - 1].id);
+  await page.waitForFunction(() => { const top = document.getElementById(location.hash.slice(1)).getBoundingClientRect().top; return top >= 0 && top < innerHeight; }, {timeout: 5000});
+}
+
 async function homepageScrolledSearch(page, language, viewport) {
   const label = `${language} scrolled search ${viewport.name}`;
   const phone = viewport.width < 768;
@@ -554,7 +620,7 @@ async function staticPage(page, route, viewport) {
   assert((await page.$eval('h1', heading => heading.textContent.trim())).length > 0, `${label}: visible heading`);
   await noOverflow(page, label);
   if (route === '/papers/' || route === '/zh/papers/') await paperDirectory(page, route, viewport);
-  if (/^(\/zh)?\/(resources|cases)\/$/.test(route)) await sectionTargetCounts(page, label);
+  if (route === '/cases/' || route === '/zh/cases/') await sectionTargetCounts(page, label);
   if (route === '/cases/' || route === '/zh/cases/') {
     const review = await page.$eval('#review-method', section => ({
       title: section.querySelector('h2').textContent,
@@ -591,10 +657,14 @@ async function staticPage(page, route, viewport) {
       for (const language of ['en', 'zh']) {
         await check(`${language} new homepage at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
           `${language} new homepage ${viewport.name}`, (page, requested) => newHomepage(page, language, viewport, data, requested)));
+        await check(`${language} homepage evidence-class filter at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
+          `${language} homepage evidence-class filter ${viewport.name}`, page => homepageClassFilter(page, language, viewport)));
         await check(`${language} scrolled homepage search at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
           `${language} scrolled homepage search ${viewport.name}`, page => homepageScrolledSearch(page, language, viewport)));
         await check(`${language} new homepage without JavaScript at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/' : '/', viewport,
           `${language} new homepage ${viewport.name} without JavaScript`, (page, requested) => newHomepage(page, language, viewport, data, requested, false), {javascript: false}));
+        await check(`${language} resources at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/resources/' : '/resources/', viewport,
+          `${language} resources ${viewport.name}`, page => resourceListing(page, language, viewport, data)));
         await check(`${language} old homepage link at ${viewport.width}px`, () => visit(context, origin, (language === 'zh' ? '/zh/' : '/') + '?category=game-analysis', viewport,
           `${language} old homepage link ${viewport.name}`, page => oldHomepageLink(page, language)));
         await check(`${language} explorer at ${viewport.width}px`, () => visit(context, origin, language === 'zh' ? '/zh/explore/' : '/explore/', viewport,
