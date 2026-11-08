@@ -118,7 +118,10 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 **13 个案例**，下方列出最新的 10 个。[完整案例列表](docs/cases.zh-CN.md#website)
 
-#### 案例
+[13 个案例](#website-cases) · [48 个工具、项目与集成](#website-tools)
+
+<a id="website-cases"></a>
+#### 案例 (10)
 
 - [**Power BI API Scraper：解析公开报表查询格式**](https://github.com/artemiyDev/powerbi_api_scraper) - Power BI API Scraper 还原公开报表所用的网页客户端查询与响应格式。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/power-bi-report-query-case/)</sub>
 - [**Sheypoor MCP：从浏览器流量还原分类信息网站接口**](https://github.com/FarhamAghdasi/sheypoor-mcp) - Sheypoor MCP 根据浏览器流量记录的接口行为，为 Sheypoor 分类信息网站实现客户端和 MCP 服务器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/sheypoor-mcp-case/)</sub>
@@ -131,7 +134,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**BaoCut Design：移植重建的设计稿与设计系统编辑器**](https://github.com/JimLiu/baocut/tree/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-runtime) - 记录 BaoCut 的设计稿（画布）与设计系统编辑器；项目称其按 1:1 移植自 Claude Design 编辑器的 TypeScript 重建，并在智能体会话中提供标注与导出。 <sub>案例 · 独立重建 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/baocut-design-canvas-case/)</sub>
 - [**Claude Code 中的 REA：隔离配置下的静态分析 A/B 试验**](https://zenn.dev/keigoly/articles/8738d8d241b5a1) - 一篇日文实践报告在单独的项目目录中把 REA 6.4.0 接入 Claude Code，屏蔽其 170 个工具中的 43 个以及常见的命令行启动方式，并在两个真实任务上比较启用与禁用 REA 的运行：一个 Electron 终端的分发文件，以及一份保存的 HAR 通信记录。 <sub>案例 · 混合工具流程 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/rea-claude-code-isolated-ab-case/)</sub>
 
-#### 工具、项目与集成
+<a id="website-tools"></a>
+#### 工具、项目与集成 (48)
 
 - [**webcrack**](https://github.com/j4k0xb/webcrack) - 识别支持的 JavaScript 混淆模式，并拆解 webpack/Browserify 打包文件，改善代码可读性。 <sub>工具 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/webcrack/)</sub>
 - [**humanify JavaScript 标识符重命名工具**](https://github.com/jehna/humanify) - 借助 LLM 为压缩后的 JavaScript 标识符建议名称，并通过遵循作用域的 AST 改写完成重命名，程序结构保持不变。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/humanify/)</sub>
@@ -191,7 +195,10 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 **按重建方式：** <a id="game-matching-decompilation"></a>[匹配反编译与反汇编](docs/cases.zh-CN.md#game-matching-decompilation) (69) · <a id="game-decompilation"></a>[非匹配反编译](docs/cases.zh-CN.md#game-decompilation) (19) · <a id="game-static-recompilation"></a>[静态重编译](docs/cases.zh-CN.md#game-static-recompilation) (48) · <a id="game-port"></a>[基于重建源码的移植](docs/cases.zh-CN.md#game-port) (33) · <a id="game-engine-reimplementation"></a>[引擎重实现](docs/cases.zh-CN.md#game-engine-reimplementation) (47) · <a id="game-other"></a>[其他方法与分析](docs/cases.zh-CN.md#game-other) (23)
 
-#### 案例
+[239 个案例](#game-cases) · [79 个工具、项目与集成](#game-tools)
+
+<a id="game-cases"></a>
+#### 案例 (10)
 
 - [**Atlantis Native：将 Atlantis 与 Atlantis II 引擎移植到 Rust**](https://github.com/ripleyXLR8/atlantis-native) - Atlantis Native 把经逆向重建的 CryOmni3D Atlantis 引擎移植到 Rust，支持 Atlantis: The Lost Tales 与 Atlantis II。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/atlantis-native-case/)</sub>
 - [**bf-private-server：《Brave Frontier》服务端重建**](https://github.com/joppe2001/bf-private-server) - bf-private-server 为《Brave Frontier》2.19.6 客户端重建可自行部署的服务端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/bf-private-server-case/)</sub>
@@ -204,7 +211,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**FreeRS42：重实现《Ricochet Xtreme》**](https://github.com/NuVelocity/FRS42) - FreeRS42 是使用 NuVelocity 引擎、以 C++ 重现 PC 游戏《Ricochet Xtreme》的项目。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/freers42-ricochet-xtreme-case/)</sub>
 - [**GTA Mode：逆向 SimCity 3000 Unlimited 并开发原生插件**](https://github.com/DenisSergeevitch/simcity3000-gta-mode) - GTA Mode 是为《SimCity 3000 Unlimited》加入可操控行人和车辆的原生插件，这些行人和车辆由插件生成。 <sub>案例 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/simcity-3000-gta-mode-case/)</sub>
 
-#### 工具、项目与集成
+<a id="game-tools"></a>
+#### 工具、项目与集成 (79)
 
 - [**RenderDoc**](https://github.com/baldurk/renderdoc) - 检查自己游戏或图形应用的帧捕获、绘制调用、着色器和图形资源。 <sub>工具 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/renderdoc/)</sub>
 - [**AssetRipper**](https://github.com/AssetRipper/AssetRipper) - 分析 Unity 游戏文件，检查资源依赖并将支持的资源转换为 Unity 工程格式。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/assetripper/)</sub>
@@ -293,7 +301,10 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 **62 个案例**，下方列出最新的 10 个。[完整案例列表](docs/cases.zh-CN.md#app)
 
-#### 案例
+[62 个案例](#app-cases) · [112 个工具、项目与集成](#app-tools)
+
+<a id="app-cases"></a>
+#### 案例 (10)
 
 - [**AOL 7.0 Retro Server：复现 P3 服务端会话**](https://github.com/pioneerman2k1/AOL7-Retro-Server) - AOL 7.0 Retro Server 为 2001 年的 AOL 7.0 客户端实现本地 Python 服务端。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/aol7-retro-server-case/)</sub>
 - [**Benro Polaris Firmware Patcher：重建相机控制并解析应用协议**](https://github.com/blaineam/benro-polaris-firmware-patcher) - Benro Polaris Firmware Patcher 研究 Polaris 相机控制器，将新版 libgphoto2 组件和针对 pgphoto 的修改打包进用户自备固件镜像。 <sub>案例 · 独立重建 · 也适用：固件、协议 · [完整条目](https://awesomerea.org/zh/resources/benro-polaris-firmware-patcher-case/)</sub>
@@ -306,7 +317,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**RTO eChalan：调查 BankBot 安卓 APK**](https://github.com/Gautam-CyberSec/Android-Malware-Analysis-Report) - RTO eChalan 报告通过检查 AndroidManifest.xml、使用 JADX 反编译及沙箱分析，调查一个冒充印度政府交通罚单服务的 APK。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/rto-echalan-android-analysis-case/)</sub>
 - [**Siriously：恢复 macOS Writing Tools 的调用入口**](https://github.com/bo2themax/Siriously) - Siriously 研究 macOS 27 中 Writing Tools 调用入口的变化，并通过 Services 客户端恢复弹窗。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/siriously-writing-tools-case/)</sub>
 
-#### 工具、项目与集成
+<a id="app-tools"></a>
+#### 工具、项目与集成 (112)
 
 - [**JADX-AI-MCP**](https://github.com/zinja-coder/jadx-ai-mcp) - 结合 JADX 插件与 Python MCP 服务，读取 Android 反编译代码、资源、交叉引用和调试上下文。 <sub>集成 · 独立 MCP · [完整条目](https://awesomerea.org/zh/resources/jadx-ai-mcp/)</sub>
 - [**apktool-mcp-server Apktool MCP 服务**](https://github.com/zinja-coder/apktool-mcp-server) - 基于 Python 的 MCP 服务，调用本地安装的 Apktool，使智能体能够解码 APK，列出、读取、搜索和修改 smali 与资源文件，读取 AndroidManifest.xml 与 apktool.yml，并重新构建项目。 <sub>集成 · 独立 MCP · [完整条目](https://awesomerea.org/zh/resources/apktool-mcp-server/)</sub>
@@ -426,7 +438,10 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 [↑ 返回目录](#目录)
 
-#### 案例
+[7 个案例](#native-binary-cases) · [262 个工具、项目与集成](#native-binary-tools)
+
+<a id="native-binary-cases"></a>
+#### 案例 (7)
 
 - [**CPQ IO Scheduler：还原小米的块设备调度器**](https://github.com/Rasenkai/CPQ_IOSched) - CPQ IO Scheduler 从已剥离符号的 ARM64 cpq.ko 内核模块还原小米的 Linux 块设备调度器。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cpq-iosched-case/)</sub>
 - [**m0rph：追踪混淆 ELF 程序的字符串校验逻辑**](https://github.com/UmbertoDellaMonica/m0rph-CTF-CyberChallenge.IT) - m0rph 调查使用 readelf、strings、Cutter 和 Radare2 分析一款经过混淆的 x86-64 ELF CTF 字符串校验程序。 <sub>案例 · [完整条目](https://awesomerea.org/zh/resources/m0rph-ctf-analysis-case/)</sub>
@@ -436,7 +451,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Show Your Work：对 REA 证据架构的实测剖析**](https://no-flag.com/2026/10/18/REA-paper/) - 一篇非官方的实测研究：先阅读 REA 源码，再在 27 类分析对象上对运行中的服务器发出 1,012 次有记录的调用，测量其按内容寻址的 Evidence 记录、按修订串联的未知项台账、带类型的拒绝、冷启动及响应上限。 <sub>案例 · 混合工具流程 · [完整条目](https://awesomerea.org/zh/resources/noflag-rea-evidence-architecture-study/)</sub>
 - [**DownUnderCTF：masked-squares 校验器**](https://rea.tools/showcase/ctf/) - 官方教育 CTF 案例：从检查函数得到方程，并记录原程序验证过程。 <sub>案例 · REA 官方 · [完整条目](https://awesomerea.org/zh/resources/rea-ctf-case/)</sub>
 
-#### 工具、项目与集成
+<a id="native-binary-tools"></a>
+#### 工具、项目与集成 (262)
 
 - [**Ghidra**](https://github.com/NationalSecurityAgency/ghidra) - 开源二进制分析套件，提供反汇编、反编译、图形分析及 Java/Python 自动化接口。 <sub>工具 · 也适用：游戏、固件 · [完整条目](https://awesomerea.org/zh/resources/ghidra/)</sub>
 - [**radare2**](https://github.com/radareorg/radare2) - 可脚本化的命令行逆向框架，支持多架构二进制检查、反汇编、调试和修改。 <sub>工具 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/radare2/)</sub>
@@ -708,7 +724,10 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 **19 个案例**，下方列出最新的 10 个。[完整案例列表](docs/cases.zh-CN.md#firmware)
 
-#### 案例
+[19 个案例](#firmware-cases) · [70 个工具、项目与集成](#firmware-tools)
+
+<a id="firmware-cases"></a>
+#### 案例 (10)
 
 - [**Hisense AEH-W41H1：基于还原的 RS-485 总线实现空调本地控制**](https://github.com/AndrewDemsDS/hisense-w41h1) - Hisense AEH-W41H1 本地控制项目通过 ESP32 板替换空调原有的 Wi-Fi 模块，或在原装 RTL8710C 模块上刷入 ESPHome 固件。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/hisense-aeh-w41h1-local-control-case/)</sub>
 - [**nRF52 e-paper tag：重建无文档电子纸显示接口**](https://github.com/niazlv/nrf52-eink-price-tag) - nRF52 e-paper tag 重建采用 nRF52832 电路板和 SSD1675A 类面板的无文档电子价签控制方式。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/nrf52-eink-price-tag-case/)</sub>
@@ -721,7 +740,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Virtual MPC Sample：在 QEMU 中运行 Akai MPC Sample 固件**](https://github.com/orrpunk-art/virtual-mpc-sample) - Virtual MPC Sample 使用定制实验内核和浏览器控制面板，在 QEMU 中运行 Akai MPC Sample 1.3.0.12 固件。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/virtual-mpc-sample-case/)</sub>
 - [**EchoMuse：把第二代 Echo Dot 变成 Home Assistant 语音终端的替换软件**](https://github.com/wilbowes/EchoMuse) - 替换已解锁的第二代 Amazon Echo Dot（2016 年款，代号 biscuit）上的软件，使其通过 ESPHome API 成为本地 Home Assistant 语音终端：EchoMuse 自己的 Go 固件驱动麦克风、扬声器、LED 灯环和按键，局域网中的控制器负责唤醒词、设备管理和仪表盘。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/echomuse-echo-dot-voice-satellite-case/)</sub>
 
-#### 工具、项目与集成
+<a id="firmware-tools"></a>
+#### 工具、项目与集成 (70)
 
 - [**Binwalk**](https://github.com/ReFirmLabs/binwalk) - 识别固件中的嵌入格式并按需提取内容，辅以熵分析帮助初步分诊。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/binwalk/)</sub>
 - [**unblob**](https://github.com/onekey-sec/unblob) - 递归提取二进制数据中的归档与文件系统，同时报告数据块边界和未识别区域。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/unblob/)</sub>
@@ -801,7 +821,10 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 **91 个案例**，下方列出最新的 10 个。[完整案例列表](docs/cases.zh-CN.md#protocol)
 
-#### 案例
+[91 个案例](#protocol-cases) · [49 个工具、项目与集成](#protocol-tools)
+
+<a id="protocol-cases"></a>
+#### 案例 (10)
 
 - [**A.O. Smith 热水器：CTA-2045 本地控制与协议研究**](https://github.com/ericboehs/aosmith-water-heater) - 该项目通过 HPS10-50H45DV 热水器的 CTA-2045 RS-485 端口实现本地监测与需求响应控制，并将读数发布到 MQTT。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aosmith-water-heater-case/)</sub>
 - [**ACiQ K18W：还原分体空调 UART 协议**](https://github.com/codypendant/aciq-minisplit-protocol) - ACiQ K18W 记录分体空调室内板与 TCL WBR1 Wi-Fi 模块之间的 UART 协议。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/aciq-minisplit-protocol-case/)</sub>
@@ -814,7 +837,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**claude-rc-api：还原 Claude Code Remote Control 接口**](https://github.com/ThatCrispyToast/claude-rc-api) - claude-rc-api 还原 claude.ai/code 控制本地 Claude Code 会话所用的私有 HTTP 接口。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/claude-rc-api-case/)</sub>
 - [**Cooper Hunter AC：UART 与红外协议调查**](https://github.com/kronhait/cooper-hunter-ac-esphome) - Cooper Hunter AC 记录了使用 Gree GRZQ3-R V1 板卡的 CH-IF140RK 与 CH-IF140RK2 空调的 COM1 UART 和红外控制消息。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cooper-hunter-ac-protocol-case/)</sub>
 
-#### 工具、项目与集成
+<a id="protocol-tools"></a>
+#### 工具、项目与集成 (49)
 
 - [**Wireshark 协议分析工具**](https://gitlab.com/wireshark/wireshark) - 将捕获的应用与设备流量解析为协议字段，支持过滤，并由 GUI 与 TShark 共用解析逻辑；自定义解析器可将新识别的报文格式固化下来，辅助比较协议实现。 <sub>工具 · 也适用：应用、固件 · [完整条目](https://awesomerea.org/zh/resources/wireshark/)</sub>
 - [**Netzob 协议建模与推断框架**](https://github.com/netzob/netzob) - 对通信协议建模并从流量记录推断报文布局，通过配置主动学习来推断协议状态机。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/netzob/)</sub>

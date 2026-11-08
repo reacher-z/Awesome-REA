@@ -31,7 +31,11 @@ class ReadmeCasesTest(unittest.TestCase):
                 cases = [record for record in records if record['kind'] == 'case-study']
                 tools = [record for record in records if record['kind'] != 'case-study']
                 expected = recent_cases(cases)
-                block = text.split(f'<a id="{section}"></a>', 1)[1].split('\n<a id="', 1)[0] if records else ''
+                # Sub-heading anchors ({section}-cases, {section}-tools, method groups) live inside the block,
+                # so cut at the next section-level anchor instead of the next anchor of any kind.
+                rest = text.split(f'<a id="{section}"></a>', 1)[1] if records else ''
+                cuts = [rest.find(f'\n<a id="{key}"></a>') for key in COLLECTION_SECTIONS if key != section]
+                block = rest[:min((cut for cut in cuts if cut >= 0), default=len(rest))]
                 ids = re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', block, re.M)
                 with self.subTest(language=language, section=section):
                     self.assertLessEqual(len(expected), RECENT_CASES)
