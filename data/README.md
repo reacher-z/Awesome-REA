@@ -144,6 +144,10 @@ The schema-2 companion is emitted only when a supplement is ready for publicatio
 
 [discovery-reviews.json](discovery-reviews.json) records the exclude and hold decisions made on [discovery queue](discoveries/README.md#review-decisions) records, keyed by scan ID; a decided record leaves the unreviewed queue and its batch stays unchanged.
 
+[discovery-classes.json](discovery-classes.json) records Data class decisions for discovery IDs. A `data` row has one `class` from the table above and a short `reproduced` description; an `outside` row has only its decision. The discovery page and feeds show data points; the queue JSON and its per-batch files retain outside and unclassified records.
+
+The website's `/discoveries/status.json` summarizes the queue. `listed` counts records awaiting Data review: data points plus unclassified records. `data_points` counts records classified as Data, `other_captures` counts records classified outside Data, and `captures_listed` counts all listed capture records across those groups.
+
 [source-scope.json](source-scope.json) records evidence-bound exclusions for the baseline; published supplements retain their own scope decisions. The website and [bilingual GitHub directory](../docs/repositories/README.md) omit excluded records from browsing. Each complete export keeps the records in its selection and their exclusion reasons; the separate curated catalog contains only curated entries.
 
 `case-coverage.json` is a separate inventory of entries in pinned upstream case collections. Its [English](../docs/case-coverage.md) and [Chinese](../docs/case-coverage.zh-CN.md) summaries distinguish collection occurrences, deduplicated report units, typed catalog matches, and unresolved project identities. A README scan does not establish case review or runtime reproduction. After changing entries, run `python3 scripts/build_case_coverage.py`: it validates the ledger, rewrites its derived `counts` block and regenerates both summaries, so the counts are never edited by hand. Its `--check` option only reports stale counts or summaries, and catalog validation also checks the ledger and its mappings.

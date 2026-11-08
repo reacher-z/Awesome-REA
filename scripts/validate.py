@@ -1477,6 +1477,8 @@ def main():
     errors.extend(registry_problems)
     lead_batches, lead_problems = discovery_leads.load_batches(ROOT)
     errors.extend(lead_problems)
+    import discovery_classes
+    discovery_classes.validate_classes(discovery_batches, discovery_classes.read_classes(ROOT), errors, lead_batches)
     followed = sum(len(batch['leads']) for batch in lead_batches)
     validate_citation((ROOT / 'CITATION.cff').read_text(encoding='utf-8'), errors)
     count = validate_markdown(ROOT, errors)
