@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / 'tests'))
 import build_discoveries as site
 import discoveries
 import discovery_reviews as reviews
+import discovery_classes as classes
 from test_discoveries import capture, make_batch
 
 NOW = datetime(2026, 11, 7, tzinfo=timezone.utc)
@@ -69,6 +70,35 @@ class ValidationTest(unittest.TestCase):
             with self.subTest(name):
                 self.assertTrue(any(expected in problem for problem in self.problems(entries)), self.problems(entries))
 
+    def test_machine_class_decisions(self):
+        identifier = capture(1)['id']
+        batch = make_batch([capture(1)], run_id=100, ingested='2026-11-05T17:00:00Z')
+        valid = {identifier: {'decision': 'data', 'class': 'game', 'reproduced': 'A game engine'},
+                 'lead-' + 'a' * 24: {'decision': 'outside'},
+                 'scan-9999999999': {'decision': 'outside'}}
+        errors = []
+        classes.validate_classes([batch], valid, errors)
+        self.assertEqual(errors, [])
+        cases = {
+            'bad ID': ({'wrong': {'decision': 'outside'}}, 'invalid discovery ID'),
+            'bad decision': ({identifier: {'decision': 'maybe'}}, 'decision must be data or outside'),
+            'missing class': ({identifier: {'decision': 'data', 'reproduced': 'A game'}}, 'class must be exactly one'),
+            'multiple classes': ({identifier: {'decision': 'data', 'class': ['game', 'apps'], 'reproduced': 'A game'}}, 'class must be exactly one'),
+            'empty reproduced': ({identifier: {'decision': 'data', 'class': 'game', 'reproduced': '  '}}, 'reproduced must be nonempty'),
+            'outside class': ({identifier: {'decision': 'outside', 'class': 'game'}}, 'unknown fields'),
+            'outside reproduced': ({identifier: {'decision': 'outside', 'reproduced': 'A game'}}, 'unknown fields'),
+            'extra': ({identifier: {'decision': 'data', 'class': 'game', 'reproduced': 'A game', 'extra': 1}}, 'unknown fields'),
+        }
+        for name, (rows, expected) in cases.items():
+            with self.subTest(name):
+                errors = []
+                classes.validate_classes([batch], rows, errors)
+                self.assertTrue(any(expected in error for error in errors), errors)
+
+    def test_class_file_can_be_absent(self):
+        with tempfile.TemporaryDirectory() as directory:
+            self.assertEqual(classes.read_classes(directory), {})
+
 
 class QueueTest(unittest.TestCase):
     def test_decided_records_leave_the_list_and_are_exported_with_their_reasons(self):
@@ -99,11 +129,11 @@ class QueueTest(unittest.TestCase):
         self.assertEqual(queue['since_published'], 0)
         self.assertEqual([row['id'] for row in queue['listed']], [capture(2)['id']])
 
-    def test_the_page_states_the_reviewed_counts(self):
+    def test_the_page_links_review_decisions(self):
         with tempfile.TemporaryDirectory() as directory:
             queue = queue_with(directory, {capture(1)['id']: decision(1)})
         text = site.page_content(queue, 'en', False, 'https://awesomerea.org', 'https://github.com/reacher-z/Awesome-REA')
-        self.assertIn('1 have been reviewed and left this list: 0 curated, 1 excluded and 0 held.', text)
+        self.assertIn('Data points: 0 listed, 0 shown here.', text)
         self.assertIn('/discoveries/reviews.json', text)
 
     def test_status_and_export_count_them(self):

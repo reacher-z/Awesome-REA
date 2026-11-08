@@ -390,7 +390,7 @@ def build_home(site_dir: Path, *, explorer_pages: dict[str, str], resources: lis
     last_scan = max((str(batch['ingested_at']) for batch in batches), default=None)
     if last_scan and not last_scan.endswith('Z'):
         last_scan = re.sub(r'\+00:00$', 'Z', last_scan)
-    discovery_count = len((discovery_queue or {}).get('listed', ()))
+    discovery_count = sum(record.get('data_decision') != 'outside' for record in (discovery_queue or {}).get('listed', ()))
     for language, route in (('en', 'index.html'), ('zh', 'zh/index.html')):
         page = site_dir / route
         page.parent.mkdir(parents=True, exist_ok=True)

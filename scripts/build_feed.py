@@ -33,7 +33,7 @@ FEED_RIGHTS = {
 PAPER_LABELS = ('Research paper', '研究论文')
 DISCOVERY_PATHS = {'en': '/discoveries/', 'zh': '/zh/discoveries/'}
 DISCOVERY_TERM = 'unreviewed-discovery'
-DISCOVERY_LABELS = ('Unreviewed automated discovery', '未审核的自动发现')
+DISCOVERY_LABELS = ('Unreviewed data point', '未审核的数据点')
 DISCOVERY_NAMES = 8
 
 
@@ -80,11 +80,11 @@ def discovery_summary(batch: dict, language: str) -> tuple[str, str]:
     count, names = len(batch['records']), [record['full_name'] for record in batch['records'][:DISCOVERY_NAMES]]
     more = count - len(names)
     if zh:
-        title = f'未审核的自动发现：扫描运行 {batch["run_id"]} 新增 {count:,} 个仓库'
-        summary = '、'.join(names) + (f' 等 {count:,} 个' if more else '') + '。自动 README 扫描结果，未审核。'
+        title = f'扫描运行 {batch["run_id"]} 发现 {count:,} 个数据点'
+        summary = '、'.join(names) + (f' 等 {count:,} 个' if more else '') + '。自动 README 扫描结果。'
     else:
-        title = f'Unreviewed discoveries: {count:,} repositories from scan run {batch["run_id"]}'
-        summary = ', '.join(names) + (f' and {more:,} more' if more else '') + '. Automated README scans, unreviewed.'
+        title = f'{count:,} data points from scan run {batch["run_id"]}'
+        summary = ', '.join(names) + (f' and {more:,} more' if more else '') + '. Automated README scans.'
     return title, summary
 
 

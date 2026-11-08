@@ -1357,7 +1357,8 @@ def validate_discovery_outputs(output, pages, queue):
         assert route in pages, f'Discovery list missing from the sitemap: {route}'
         text = (output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')
         shown = re.findall(r'<article class="source-card browse-repository" id="(scan-[0-9]+)"', text)
-        assert shown == [record['id'] for record in listed[:build_discoveries.PAGE_RECORDS]], f'Discovery list order differs from the queue: {route}'
+        expected_page = [record['id'] for _, _, records, _ in build_discoveries.page_groups(queue) for record in records]
+        assert shown == expected_page, f'Discovery data points differ from the class groups: {route}'
         assert html_unescape(build_discoveries.NOTE[int(zh)]) in html_unescape(text), f'Discovery list must say the records are unreviewed: {route}'
         assert '<h1' in text and text.count('<h2') >= 1, route
         feed_path = build_discoveries.FEED_PATHS[language]
@@ -1366,7 +1367,7 @@ def validate_discovery_outputs(output, pages, queue):
         assert root.findtext(atom + 'id') == ORIGIN + feed_path, feed_path
         assert [(link.get('rel'), link.get('href')) for link in root.findall(atom + 'link')] == [('self', ORIGIN + feed_path), ('alternate', ORIGIN + route)], feed_path
         entries = root.findall(atom + 'entry')
-        expected = listed[:build_discoveries.FEED_RECORDS]
+        expected = [record for record in listed if record.get('data_decision') == 'data'][:build_discoveries.FEED_RECORDS]
         assert len(entries) == len(expected), f'Discovery feed entry count mismatch: {feed_path}'
         for entry, record in zip(entries, expected):
             category = entry.find(atom + 'category')
@@ -1392,6 +1393,9 @@ def validate_discovery_outputs(output, pages, queue):
     assert export['counts']['records'] == queue['record_count'] and export['counts']['listed'] == len(listed)
     status = json.loads((output / 'discoveries/status.json').read_text(encoding='utf-8'))
     assert status == export['status'] and status['last_successful_ingest_at'] == build_discoveries.timestamp(queue['latest']['ingested_at'])
+    assert (status['listed'] == status['data_points'] + sum(record.get('data_decision') is None for record in listed)
+            and status['other_captures'] == sum(record.get('data_decision') == 'outside' for record in listed)
+            and status['captures_listed'] == len(listed)), 'Discovery status counts differ from the queue'
     badge = json.loads((output / 'discoveries/badge.json').read_text(encoding='utf-8'))
     assert badge == build_discoveries.badge_document(queue), 'Discovery badge differs from the latest ingest'
 
