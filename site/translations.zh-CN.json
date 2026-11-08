@@ -11023,5 +11023,113 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "cadcraft-case": {
+    "name": "CADCraft：纯 Rust 净室 CAD 与制图应用",
+    "requirements": [
+      "源码构建使用 Rust 与 Cargo；发布资产包含 macOS（universal DMG）、Windows、Linux 与 FreeBSD 版本，README 也记录了 WebAssembly 浏览器构建。",
+      "README 自述 CADCraft 处于早期开发阶段，并链接对照清单与缺口列表；未声明完整的 CAD 兼容性。",
+      "README 将项目描述为净室实现，依据公开文档与可观察行为编写，而非目标应用的源码。",
+      "代码许可为 MIT OR Apache-2.0，NOTICE 与品牌资产另受条款约束。未确立 REA 的参与。"
+    ]
+  },
+  "designcraft-case": {
+    "name": "DesignCraft：纯 Rust 净室页面版式与出版工作室",
+    "requirements": [
+      "源码构建使用 Rust 与 Cargo；发布资产包含 macOS（universal DMG）、Windows、Linux 与 FreeBSD 版本，README 也记录了 WebAssembly 浏览器构建。",
+      "README 自述项目处于 pre-alpha 阶段，并链接对照清单与缺口列表；未声明完整的出版工作流兼容性。",
+      "README 将项目描述为净室实现，依据公开文档与可观察行为编写，而非目标应用的源码。",
+      "代码许可为 MIT OR Apache-2.0，NOTICE 与品牌资产另受条款约束。未确立 REA 的参与。"
+    ]
+  },
+  "effectcraft-case": {
+    "name": "EffectCraft：纯 Rust 净室动效图形与合成工作室",
+    "requirements": [
+      "源码构建使用 Rust 与 Cargo；发布资产包含 macOS（universal DMG）、Windows、Linux 与 FreeBSD 版本，README 也记录了 WebAssembly 浏览器构建。",
+      "README 自述项目处于 alpha 阶段，并估计已覆盖约 91% 的跟踪功能；链接的对照文档列出剩余缺口，未声明完整兼容。",
+      "README 将项目描述为净室实现，依据公开文档与可观察行为编写，而非目标应用的源码。",
+      "代码许可为 MIT OR Apache-2.0，NOTICE 与品牌资产另受条款约束。未确立 REA 的参与。"
+    ]
+  },
+  "figcraft-case": {
+    "name": "FigCraft：纯 Rust 净室界面设计与原型工具",
+    "requirements": [
+      "源码构建使用 Rust 与 Cargo；发布资产包含 macOS（universal DMG）、Windows、Linux 与 FreeBSD 版本，README 也记录了 WebAssembly 浏览器构建。",
+      "README 自述项目处于 alpha 阶段，并估计在真实工作中替代专有设计工具的完成度约为 49%；未声明完整兼容。",
+      "README 将项目描述为净室实现，依据公开文档与可观察行为编写，而非目标应用的源码。",
+      "代码许可为 MIT OR Apache-2.0，NOTICE 与品牌资产另受条款约束。未确立 REA 的参与。"
+    ]
+  },
+  "filmcraft-case": {
+    "name": "FilmCraft：纯 Rust 净室非线性视频编辑器",
+    "requirements": [
+      "源码构建使用 Rust 与 Cargo；发布资产包含 macOS（universal DMG）、Windows、Linux 与 FreeBSD 版本，README 也记录了 WebAssembly 浏览器构建。",
+      "README 自述项目处于 alpha 阶段，并报告约 86% 的功能覆盖与约 56% 的真实制作可用度；未声明完整兼容。",
+      "README 将项目描述为净室实现，依据公开文档与可观察行为编写，而非目标应用的源码。",
+      "代码许可为 MIT OR Apache-2.0，NOTICE 与品牌资产另受条款约束。未确立 REA 的参与。"
+    ]
+  },
+  "lightcraft-case": {
+    "name": "LightCraft：纯 Rust 净室照片库与 RAW 显影器",
+    "requirements": [
+      "源码构建使用 Rust 与 Cargo；发布资产包含 macOS（universal DMG）、Windows、Linux 与 FreeBSD 版本，README 也记录了 WebAssembly 浏览器构建。",
+      "README 自述项目处于 alpha 阶段，并记录专业照片工作流中的剩余缺口；未声明完整兼容。",
+      "README 将项目描述为净室实现，依据公开文档与可观察行为编写，而非目标应用的源码。",
+      "代码许可为 MIT OR Apache-2.0，NOTICE 与品牌资产另受条款约束。未确立 REA 的参与。"
+    ]
+  },
+  "pdfcraft-case": {
+    "name": "PdfCraft：纯 Rust 净室 PDF 阅读与编辑器",
+    "requirements": [
+      "源码构建使用 Rust 与 Cargo；发布资产包含 macOS（universal DMG）、Windows、Linux 与 FreeBSD 版本，README 也记录了 WebAssembly 浏览器构建。",
+      "README 自述项目处于 alpha 阶段，并报告 57% 的跟踪功能与 94% 的命令；未声明完整的 PDF 兼容性。",
+      "README 将项目描述为净室实现，依据公开文档与可观察行为编写，而非目标应用的源码。",
+      "代码许可为 MIT OR Apache-2.0，NOTICE 与品牌资产另受条款约束。未确立 REA 的参与。"
+    ]
+  },
+  "soundcraft-case": {
+    "name": "SoundCraft：纯 Rust 净室数字音频工作站",
+    "requirements": [
+      "源码构建使用 Rust 与 Cargo；发布资产包含 macOS（universal DMG）、Windows、Linux 与 FreeBSD 版本，README 也记录了 WebAssembly 浏览器构建。",
+      "README 自述项目处于 pre-alpha 阶段，并报告 94% 的菜单覆盖、约 70% 的功能存在度与约 40% 的真实工作可用度；未声明完整兼容。",
+      "README 将项目描述为净室实现，依据公开文档与可观察行为编写，而非目标应用的源码。",
+      "代码许可为 MIT OR Apache-2.0，NOTICE 与品牌资产另受条款约束。未确立 REA 的参与。"
+    ]
+  },
+  "vectorcraft-case": {
+    "name": "VectorCraft：纯 Rust 净室矢量插画应用",
+    "requirements": [
+      "源码构建使用 Rust 与 Cargo；发布资产包含 macOS（universal DMG）、Windows、Linux 与 FreeBSD 版本，README 也记录了 WebAssembly 浏览器构建。",
+      "README 自述项目处于 alpha 阶段，并报告约 88% 的核心菜单项；未声明完整兼容。",
+      "README 将项目描述为净室实现，依据公开文档与可观察行为编写，而非目标应用的源码。",
+      "代码许可为 MIT OR Apache-2.0，NOTICE 与品牌资产另受条款约束。未确立 REA 的参与。"
+    ]
+  },
+  "woxi-case": {
+    "name": "Woxi：用 Rust 实现的 Wolfram Language 解释器",
+    "requirements": [
+      "可通过 cargo、pip、npm WebAssembly 包或 GitHub 发布归档安装；发布包含 Linux、macOS（未公证）与 Windows 的 x86-64 和 arm64 构建。",
+      "实现 Wolfram Language 的一个子集；README 链接 CLI 测试与 functions.csv 实现状态清单。未声明完整 Mathematica 兼容。",
+      "macOS 的 Woxi Studio 包未公证，下载后会被系统隔离；README 记录了这一限制。",
+      "AGPL-3.0；未确立 REA 的参与。"
+    ]
+  },
+  "pictureman-case": {
+    "name": "Picture Man：Windows 3.x 图像编辑器的 Rust 重建",
+    "requirements": [
+      "没有预构建二进制；README 记录使用 Rust 1.94+ 从源码构建，并提供托管的 WebAssembly 演示。桌面应用打开用户提供的图像文件。",
+      "README 说明原始源码已失传，算法通过反汇编 PMAN.EXE 及其转换器 DLL 恢复，恢复的规格位于 re/。",
+      "该重建是独立实现，不包含原始专有应用或其资产；未声明完整的行为等价。",
+      "代码许可为 MIT；NOTICE 与 Picture Man 原作的各项权利仍归其所有者。未确立 REA 的参与。"
+    ]
+  },
+  "websitebench": {
+    "name": "WebsiteBench 网站重建基准",
+    "requirements": [
+      "通过 Harbor 和 Docker 运行：每次试验的智能体与验证器使用各自独立的环境，每个任务为每个环境申请 8 个 CPU、8 GiB 内存和 20 GiB 磁盘，智能体最长 16 小时，验证器最长 8 小时。需要智能体及其凭据。PyPI 包要求 Python 3.12–3.14。",
+      "70 个任务的下载总量为 9.7 GB。任务发布在 Harbor Hub 和 Hugging Face 上。",
+      "验证器需要 Landlock ABI 4 或更高版本（Linux 6.7+）和 seccomp 用户通知，主机内核需要支持 nftables fib。较旧的内核（包括 Debian 12 的 6.1 和 Ubuntu 22.04 的 5.15）会使每次试验都产生 INVALID_RUN 且没有奖励分数。",
+      "基准代码、任务定义和验证器采用 Apache-2.0 许可。参考网站复刻了第三方站点，其内容归各自所有者所有，仅供非商业研究使用。"
+    ]
   }
 }

@@ -1,4 +1,4 @@
-"""Every section heading row on /resources/ and /cases/ links back to the section index above the first section."""
+"""Every section heading row on /cases/ links back to the section index above the first section."""
 from html.parser import HTMLParser
 from pathlib import Path
 import re
@@ -10,10 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_discovery_pages import build_discovery_pages
 
-INDEXES = {'/resources/': 'resource-categories', '/zh/resources/': 'resource-categories',
-           '/cases/': 'case-subjects', '/zh/cases/': 'case-subjects'}
-LABELS = {'/resources/': 'All sections', '/zh/resources/': '全部分类',
-          '/cases/': 'All sections', '/zh/cases/': '全部主题'}
+INDEXES = {'/cases/': 'case-subjects', '/zh/cases/': 'case-subjects'}
+LABELS = {'/cases/': 'All sections', '/zh/cases/': '全部主题'}
 
 
 def record(identifier, targets, kind='case-study'):
@@ -92,11 +90,7 @@ class SectionIndexLinkTests(unittest.TestCase):
                     self.assertEqual(back[0]['text'].replace('↑', '').strip(), LABELS[route])
 
     def test_headings_ids_and_counts_are_unchanged(self):
-        expected = {'/resources/': [('heading-website', '1 resources'), ('heading-game', '1 resources'),
-                                    ('heading-native-binary', '1 resources')],
-                    '/zh/resources/': [('heading-website', '1 项资源'), ('heading-game', '1 项资源'),
-                                       ('heading-native-binary', '1 项资源')],
-                    '/cases/': [('case-heading-website', '1 case'), ('case-heading-game', '1 case')],
+        expected = {'/cases/': [('case-heading-website', '1 case'), ('case-heading-game', '1 case')],
                     '/zh/cases/': [('case-heading-website', '1 个案例'), ('case-heading-game', '1 个案例')]}
         for route, rows in expected.items():
             with self.subTest(route=route):

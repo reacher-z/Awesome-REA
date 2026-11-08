@@ -14,17 +14,17 @@ import re
 from urllib.parse import urlsplit
 
 from asset_paths import fingerprinted_href
-from build_readme import CATEGORIES, KIND_LABELS, TARGETS, lead_sentence, paper_section, papers_newest_first
+from build_readme import CATEGORIES, KIND_LABELS, TARGETS, collection_section, lead_sentence, paper_section, papers_newest_first
 from home_art import exploded_view
 from site_footer import site_footer
 from site_shell import announcement_bar, header, head_early, icon, mobile_bar, palette, plain_language_link, shell_assets, sprite, star_button, star_count
 
 ROOT = Path(__file__).resolve().parents[1]
-# Three-letter domain and four-letter kind codes form the call number on every card, such as BIN·TOOL.
-DOMAIN_CODES = {'website': 'WEB', 'game': 'GAM', 'app': 'APP', 'binary': 'BIN', 'firmware': 'FMW', 'protocol': 'PRT'}
+# Short domain and kind codes form the call number on every card, such as BIN·TOOL.
+DOMAIN_CODES = {'website': 'WEB', 'game': 'GAME', 'app': 'APP', 'binary': 'BIN', 'firmware': 'FIRM', 'protocol': 'PROTO'}
 DOMAIN_ORDER = ('website', 'game', 'app', 'binary', 'firmware', 'protocol')
-KIND_CODES = {'tool': 'TOOL', 'case-study': 'CASE', 'integration': 'INTG', 'learning-resource': 'LERN',
-              'collection': 'LIST', 'documentation': 'DOCS', 'research': 'RSCH', 'project': 'PROJ'}
+KIND_CODES = {'tool': 'TOOL', 'case-study': 'CASE', 'integration': 'INTEG', 'learning-resource': 'LEARN',
+              'collection': 'LIST', 'documentation': 'DOCS', 'research': 'RSRCH', 'project': 'PROJ'}
 KIND_ORDER = tuple(KIND_CODES)
 KIND_PLURAL = {'tool': ('Tools', '工具'), 'case-study': ('Case studies', '案例'), 'integration': ('Integrations', '集成'),
                'learning-resource': ('Learning', '学习资源'), 'collection': ('Collections', '合集'),
@@ -34,6 +34,8 @@ KIND_PLURAL = {'tool': ('Tools', '工具'), 'case-study': ('Case studies', '案�
 FEATURED = ('ghidra', 'hex-rays-ida-mcp', 'frida', 'jadx', 'chrome-devtools-mcp', 'il2cppdumper', 'binwalk',
             'mitmproxy', 'renderdoc', 'even-g2-ble-protocol-case')
 DRAWER_ROWS = 7
+# Records that open their section and lead the Featured order, marked Featured.
+PINNED = ('websitebench',)
 # The /resources/ section each target tab opens until /resources/<target>/ pages exist.
 TARGET_ANCHORS = {'website': 'website', 'game': 'game', 'app': 'app', 'binary': 'native-binary', 'firmware': 'firmware', 'protocol': 'protocol'}
 CONNECTIONS = {
@@ -121,8 +123,11 @@ def _target_label(target: str, language: str) -> str:
     return TARGETS[target][language == 'zh']
 
 
-def index_card(record: dict, language: str, targets: list[str], *, prefix: str = '') -> str:
-    """One catalogue row. site.js renders the same markup in cardHTML() for search results."""
+def index_card(record: dict, language: str, targets: list[str], *, prefix: str = '', listing: bool = False) -> str:
+    """One catalogue row. site.js renders the same markup in cardHTML() for search results.
+
+    Rows on /resources/ also carry the record's bare ID, the anchor older links into that page use.
+    """
     text = COPY[language]
     identifier = _e(record['id'])
     kind = record['kind']
@@ -134,9 +139,12 @@ def index_card(record: dict, language: str, targets: list[str], *, prefix: str =
     items = ''.join(f'<li>{icon(target)}{_e(_target_label(target, language))}</li>' for target in targets[:3])
     if len(targets) > 3:
         items += f'<li class="more">+{len(targets) - 3}</li>'
-    return (f'<li class="card{case}" id="r-{identifier}" data-id="{identifier}"><article class="card-face">'
+    article = f' id="{identifier}" data-record-id="{identifier}" data-resource-id="{identifier}"' if listing else ''
+    entry = f' entry-detail-link" data-entry-link="{identifier}' if listing else ''
+    mark = f'<span class="row-mark">{text["featured"]}</span>' if record['id'] in PINNED else ''
+    return (f'<li class="card{case}" id="r-{identifier}" data-id="{identifier}"><article class="card-face"{article}>'
             f'<p class="callno" title="{_e(label)}"><span class="vh">{_e(label)}: </span><span aria-hidden="true">{DOMAIN_CODES[targets[0]]}·{KIND_CODES[kind]}</span></p>'
-            f'<h3 class="card-name"><a class="stretch" href="{prefix}/resources/{identifier}/">{_e(_name(record, language))}</a></h3>'
+            f'<h3 class="card-name"><a class="stretch{entry}" href="{prefix}/resources/{identifier}/">{_e(_name(record, language))}</a>{mark}</h3>'
             f'<p class="card-desc">{_e(_lead(record, language))}</p>'
             f'<ul class="card-targets" aria-label="{text["targets"]}">{items}</ul>'
             f'<p class="stamp">{icon("check")}<span>{text["reviewed"]} <time datetime="{reviewed}">{reviewed}</time></span>'
@@ -148,8 +156,8 @@ def _folder_tabs(resources: list[dict], language: str, prefix: str) -> str:
     text = COPY[language]
     counts = Counter(target for record in resources for target in record['targets'])
     tabs = [f'<a class="folder" href="{prefix}/resources/" data-target="all" aria-current="true">{text["all"]} <span class="count">{_count(len(resources))}</span></a>']
-    for target in DOMAIN_ORDER:
-        tabs.append(f'<a class="folder" href="{prefix}/resources/#{TARGET_ANCHORS[target]}" data-target="{target}">{icon(target)}{_e(_target_label(target, language))} '
+    for target in [target for target in DOMAIN_ORDER if counts[target]] + sorted(set(counts) - set(DOMAIN_ORDER)):
+        tabs.append(f'<a class="folder" href="{prefix}/resources/#{TARGET_ANCHORS.get(target, "catalog")}" data-target="{target}">{icon(target)}{_e(_target_label(target, language))} '
                     f'<span class="count">{_count(counts[target])}</span></a>')
     return f'<nav class="folders" aria-label="{text["domains"]}">{"".join(tabs)}</nav>'
 
@@ -269,6 +277,7 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
     categories = sorted(CATEGORIES)
     connections = list(CONNECTIONS)
     ranks = {identifier: rank for rank, identifier in enumerate(FEATURED)}
+    sections = sorted({collection_section(record) for record in resources})
     rows = []
     for record in resources:
         evidence = evidence_label(record['evidence_url'])
@@ -288,7 +297,7 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
                      '' if short != record['evidence_url'] else evidence['repo'], short,
                      str(record['verified_at'])[:10], record.get('added_at') or '', ranks.get(record['id'], -1),
                      alias if alias.lower() != record['name'].lower() else '',
-                     connections.index(CONNECTION_OF[record['relationship']])])
+                     connections.index(CONNECTION_OF[record['relationship']]), sections.index(collection_section(record))])
     paper_rows = []
     for paper in papers_newest_first(papers):
         paper_rows.append([paper['id'], paper['title_zh'] if zh else paper['title'], paper['year'], paper['venue'],
@@ -300,6 +309,7 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
         'targetCodes': [DOMAIN_CODES[target] for target in DOMAIN_ORDER],
         'categories': categories, 'categoryLabels': [CATEGORIES[category][zh] for category in categories],
         'connections': connections, 'connectionLabels': [CONNECTIONS[key][0][zh] for key in connections],
+        'sections': sections, 'pinned': list(PINNED),
         'r': rows, 'p': paper_rows,
     }
 

@@ -71,8 +71,9 @@ class TargetCardHighlightTests(unittest.TestCase):
 
     def test_generated_listing_cards_carry_their_fragment_ids(self):
         discovery = (ROOT / 'scripts' / 'build_discovery_pages.py').read_text(encoding='utf-8')
+        home = (ROOT / 'scripts' / 'build_home.py').read_text(encoding='utf-8')
         papers = (ROOT / 'scripts' / 'build_paper_pages.py').read_text(encoding='utf-8')
-        self.assertIn('<article class="resource-card browse-repository" id="{escape(record[\'id\'], quote=True)}"', discovery)
+        self.assertIn('id="{identifier}" data-record-id="{identifier}"', home)
         self.assertIn('<article class="case-row" id="{identifier}"', discovery)
         self.assertIn('<article class="paper-card" id="{paper[\'id\']}"', papers)
 

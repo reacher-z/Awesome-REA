@@ -30,10 +30,13 @@ class ListingSuggestionTests(unittest.TestCase):
             for route, (template, label) in expected.items():
                 text = (output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')
                 pages[route] = Page(text)
-                link = f'<a class="button button-outline" href="{FORMS}{template}" target="_blank" rel="noopener">{label} <span aria-hidden="true">↗</span></a>'
+                if route.endswith('/resources/'):
+                    link, start, end = f'<a href="{FORMS}{template}" rel="noopener">{label}', '<p class="listing-links">', '</p>'
+                else:
+                    link, start, end = f'<a class="button button-outline" href="{FORMS}{template}" target="_blank" rel="noopener">{label} <span aria-hidden="true">↗</span></a>', '<div class="browse-actions">', '</div>'
                 self.assertEqual(text.count(link), 1, route)
-                actions = text[text.index('<div class="browse-actions">'):]
-                self.assertIn(link, actions[:actions.index('</div>')])
+                actions = text[text.index(start):]
+                self.assertIn(link, actions[:actions.index(end)])
                 self.assertTrue((ROOT / '.github/ISSUE_TEMPLATE' / template).is_file())
             for route in ('/papers/', '/zh/papers/'):
                 pages[route] = Page(f'<a href="{FORMS}paper.yml">x</a>')
