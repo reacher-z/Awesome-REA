@@ -36528,5 +36528,27 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "zgloom",
+    "name": "ZGloom",
+    "url": "https://github.com/Swizpig/ZGloom",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "engine-reimplementation",
+    "class": "game",
+    "description_en": "ZGloom reimplements the Amiga first-person game Gloom, including Zombie Massacre. Windows builds need the Visual Studio 2013 runtime. Linux builds use SDL2, SDL2_mixer, and libXMP.",
+    "description_zh": "ZGloom 重实现 Amiga 第一人称游戏 Gloom，包括 Zombie Massacre。Windows 构建需要 Visual Studio 2013 运行库。Linux 构建使用 SDL2、SDL2_mixer 和 libXMP。",
+    "requirements": [
+      "The original developers released Gloom at earok/GloomAmiga. Place the ZGloom binary in that directory. On Linux, compile with make.",
+      "The reviewed README does not name a license for ZGloom. It says the licence of the included DeCrunchmania code is unknown."
+    ],
+    "evidence_url": "https://github.com/Swizpig/ZGloom/blob/84326745e54d36c6531bfacdaf524f638e9d8349/README.md",
+    "verified_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
