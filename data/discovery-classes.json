@@ -3127,9 +3127,7 @@
   "decision": "outside"
  },
  "scan-291849183": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Google CTF 2020 Sprint binary"
+  "decision": "outside"
  },
  "scan-291951245": {
   "decision": "outside"
@@ -3302,9 +3300,7 @@
   "decision": "outside"
  },
  "scan-306884503": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "Rainfall challenge binaries"
+  "decision": "outside"
  },
  "scan-308050815": {
   "decision": "data",
@@ -8143,9 +8139,7 @@
   "decision": "outside"
  },
  "scan-748389995": {
-  "decision": "data",
-  "class": "software",
-  "reproduced": "OverRide challenge binaries"
+  "decision": "outside"
  },
  "scan-748760786": {
   "decision": "outside"
@@ -13996,9 +13990,7 @@
   "decision": "outside"
  },
  "scan-1174795271": {
-  "decision": "data",
-  "class": "game",
-  "reproduced": "Weedhack Minecraft mod malware"
+  "decision": "outside"
  },
  "scan-1174922075": {
   "decision": "outside"

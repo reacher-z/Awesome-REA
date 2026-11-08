@@ -5151,5 +5151,274 @@
     "additional_evidence_urls": [
       "https://github.com/iammukeshm/hexgrab/blob/511c58078776af4fb0d2e3601e098f98e9f90c9a/README.md"
     ]
+  },
+  {
+    "id": "wlm2012-research-case",
+    "name": "Windows Live Mail 2012: UI and resource format reconstruction",
+    "url": "https://github.com/hinatamaxxx/wlm2012-research",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Windows Live Mail 2012 research reconstructs the Japanese edition's UI layout, resource and message-store formats from an owned installation. The author used REA for PE resource inventory, Ghidra for DLL loader analysis and Python decoders to document UIB layouts, RLE images, ribbon definitions and ESE read status. The rebuilt mail app remains private; the repository publishes tools, specifications and findings.",
+    "description_zh": "该研究从合法持有的安装文件中还原日文版 Windows Live Mail 2012 的界面布局、资源及邮件存储格式。作者用 REA 清点 PE 资源，以 Ghidra 分析 DLL 加载函数，再编写 Python 解码器整理 UIB 布局、RLE 图片、功能区定义与 ESE 已读状态。仓库公开工具、规格和研究记录；重建的邮件应用仅供私人使用。",
+    "evidence_url": "https://github.com/hinatamaxxx/wlm2012-research/blob/2b630499c25216228af7db98e53c1cf2a5f352e0/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-08",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The tools use a locally owned Windows Live Mail 2012 installation; target files are placed under targets/Windows Live/.",
+      "Python 3 is required; the ESE reader additionally needs dissect.esedb.",
+      "The rebuilt mail application is not distributed.",
+      "MIT license for the authored tools and documentation."
+    ],
+    "class": "software",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/hinatamaxxx/wlm2012-research/blob/2b630499c25216228af7db98e53c1cf2a5f352e0/tools/README.md"
+    ]
+  },
+  {
+    "id": "ff-recomp-freedom-fighters-case",
+    "name": "ff-recomp: Freedom Fighters statically recompiled for native hosts",
+    "url": "https://github.com/HenryKun55/ff-vita",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "static-recompilation",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "ff-recomp statically translates the Windows x86 executable of Freedom Fighters into C for a native host runtime. The runtime loads the player's executable and game data, while shims supply Windows APIs, Direct3D 8, sound and input services. The author reports that the macOS build reaches the title screen; the PlayStation Vita build remains unfinished. Its function-rewrite plan uses Ghidra through ReVa and REA MCP servers.",
+    "description_zh": "ff-recomp 将《Freedom Fighters》的 Windows x86 可执行文件静态翻译为 C，由原生运行时加载玩家提供的可执行文件，游戏则读取玩家安装目录中的数据。兼容层提供 Windows API、Direct3D 8、声音和输入服务。作者报告 macOS 版本可到达标题画面，PlayStation Vita 版本仍未完成。函数改写计划拟通过 ReVa 和 REA MCP 服务使用 Ghidra。",
+    "evidence_url": "https://github.com/HenryKun55/ff-vita/blob/69ad43df5afc86c2a710349addbdbf1fd5a24914/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-08",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A local Freedom Fighters installation containing Freedom.Exe is required.",
+      "Building requires CMake 3.20 or newer, Ninja, Python 3 with capstone and platform dependencies; Vita builds additionally need VitaSDK.",
+      "The Vita build, render-to-texture and AVI playback remain unfinished.",
+      "MIT license."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HenryKun55/ff-vita/blob/69ad43df5afc86c2a710349addbdbf1fd5a24914/docs/NATIVE_PLAN.md"
+    ]
+  },
+  {
+    "id": "anova-power-cli-case",
+    "name": "anova-power-cli: reconstructing G*Power one-way ANOVA calculations",
+    "url": "https://github.com/gorkemedizozpekmezci-del/anova-power-cli",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "anova-power-cli reconstructs G*Power 3.1.9.7's one-way ANOVA power calculations in a Python CLI and MCP service. The author describes inspecting G*Power with REA and Ghidra, collecting GUI outputs, and implementing five calculation modes; the author reports 245 matching fields across the stated comparison set. The optional Claude agent and its evaluation code are present, with a live LLM evaluation still pending.",
+    "description_zh": "anova-power-cli 以 Python CLI 和 MCP 服务重建 G*Power 3.1.9.7 的单因素 ANOVA 功效计算。作者记录了使用 REA 和 Ghidra 分析程序、收集界面输出并实现五种计算模式的过程，报告指定对照集的 245 个字段均匹配。可选 Claude 智能体及评估代码已提供，真实 LLM 评估仍待进行。",
+    "evidence_url": "https://github.com/gorkemedizozpekmezci-del/anova-power-cli/blob/a67377c7980a28a3ab4e01b2234b3684a2d45860/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-08",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.9 or later is required for the CLI and MCP service.",
+      "The optional agent requires the anthropic package and ANTHROPIC_API_KEY.",
+      "Only one-way ANOVA is implemented; four other test families return UNSUPPORTED.",
+      "The live LLM agent evaluation and measured MCP versus GUI token comparison have not been performed.",
+      "No licence file in the repository."
+    ],
+    "class": "science",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/gorkemedizozpekmezci-del/anova-power-cli/blob/a67377c7980a28a3ab4e01b2234b3684a2d45860/AGENT_COST.md",
+      "https://github.com/gorkemedizozpekmezci-del/anova-power-cli/blob/a67377c7980a28a3ab4e01b2234b3684a2d45860/tests/conformance_report.md"
+    ]
+  },
+  {
+    "id": "rtx-3070-ti-vbios-re-case",
+    "name": "RTX 3070 Ti VBIOS Reverse Engineering: mapping and analyzing GA104 firmware",
+    "url": "https://github.com/jingx8885/rtx3070ti-vbios-re",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "firmware",
+      "binary"
+    ],
+    "description_en": "RTX 3070 Ti VBIOS Reverse Engineering documents analysis of an MSI GA104 VBIOS, covering its ROM layout, NPDE and BIT structures, x86 BIOS, compressed UEFI GOP and Falcon fuc5 microcode. Its workflow combines ROM parsers, REA with Ghidra, EfiCompress decompression, envydis and a Falcon MMIO probe; the repository includes scripts, format notes and an envydis ISA patch.",
+    "description_zh": "RTX 3070 Ti VBIOS Reverse Engineering 记录了对 MSI GA104 VBIOS 的分析，涵盖 ROM 布局、NPDE 与 BIT 结构、x86 BIOS、压缩的 UEFI GOP 和 Falcon fuc5 微码。项目结合 ROM 解析器、REA 与 Ghidra、EfiCompress 解压、envydis 及 Falcon MMIO 探针，并提供脚本、格式文档和 envydis 指令集补丁。",
+    "evidence_url": "https://github.com/jingx8885/rtx3070ti-vbios-re/blob/d481a28618fb3dd4b99858646422ddbcdc7ac277/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-08",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a dump of the user’s own RTX 3070 Ti VBIOS; the repository includes no NVIDIA ROM or firmware blobs.",
+      "The documented workflow uses REA, Ghidra, EDK2 EfiDecompress and envydis; its REA scripts target WSL.",
+      "The author reports that the encrypted Falcon HS block cannot be decrypted by static analysis; the MMIO debug test writes to Falcon registers and is documented for a bare card without a driver.",
+      "MIT licence."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jingx8885/rtx3070ti-vbios-re/blob/d481a28618fb3dd4b99858646422ddbcdc7ac277/scripts/README.md",
+      "https://github.com/jingx8885/rtx3070ti-vbios-re/blob/d481a28618fb3dd4b99858646422ddbcdc7ac277/LICENSE"
+    ]
+  },
+  {
+    "id": "attack-shark-k86-case",
+    "name": "Attack Shark K86: recovering HID controls from the official driver",
+    "url": "https://github.com/brunoalbertdf-oss/attack-shark-k86",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Attack Shark K86 reconstructs the yc3121 keyboard's HID controls from analysis of its official driver with REA. The notes describe 64-byte feature reports, checksums and commands; a Windows Electron client uses them to set lighting, per-key colours and the 240 × 135 display.",
+    "description_zh": "Attack Shark K86 使用 REA 分析官方驱动，还原 yc3121 版本键盘的 HID 控制方式。文档记录 64 字节 feature report、校验和与命令；Windows Electron 客户端据此设置灯效、逐键颜色和 240 × 135 屏幕。",
+    "evidence_url": "https://github.com/brunoalbertdf-oss/attack-shark-k86/blob/29d9cf5354ce178cccaea28e60cdb93c0d36c842/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-08",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows and an Attack Shark K86 with yc3121 chip, VID 3151 and PID 4015; USB cable use was tested.",
+      "Node.js 24 is required to run the source version.",
+      "The yc3123 model uses a different protocol; 2.4 GHz and Bluetooth connections were not tested.",
+      "MIT licence."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/brunoalbertdf-oss/attack-shark-k86/blob/29d9cf5354ce178cccaea28e60cdb93c0d36c842/docs/PROTOCOLO.md",
+      "https://github.com/brunoalbertdf-oss/attack-shark-k86/blob/29d9cf5354ce178cccaea28e60cdb93c0d36c842/docs/ENGENHARIA-REVERSA.md"
+    ]
+  },
+  {
+    "id": "plaude-archiver-case",
+    "name": "Plaude Archiver: local Plaud Note Pro recording transfer",
+    "url": "https://github.com/roopen219/plaude-archiver",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "Plaude Archiver reconstructs the Plaud Note Pro recording transfer protocol from analysis of the Android app, using REA and JADX in the documented workflow. Its macOS client obtains account keys once, establishes the encrypted BLE session, downloads recordings and decrypts them to Ogg Opus files. Protocol notes cover GATT characteristics, packet framing and handshake variants.",
+    "description_zh": "Plaude Archiver 根据对 Plaud Android 应用的分析重建 Note Pro 录音传输协议，文档记录使用 REA 和 JADX 的过程。macOS 客户端获取账号密钥后建立加密 BLE 会话，下载录音并解密为 Ogg Opus 文件；协议笔记涵盖 GATT 特征、报文格式和握手变体。",
+    "evidence_url": "https://github.com/roopen219/plaude-archiver/blob/e87f34536623b204a60296057e53d7747ac1e0d3/PLAUD_NOTE_PRO_PROTOCOL.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-08",
+    "verification": "source-reviewed",
+    "requirements": [
+      "macOS 13 or later, a Plaud Note Pro, Bluetooth access and a Plaud account for the initial key fetch.",
+      "The protocol notes describe a blocker for the Python BLE script on newer protocol-30 firmware.",
+      "MIT license."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/roopen219/plaude-archiver/blob/e87f34536623b204a60296057e53d7747ac1e0d3/README.md"
+    ]
+  },
+  {
+    "id": "redragon-k652-macos-case",
+    "name": "Redragon K652: macOS control from driver and HID analysis",
+    "url": "https://github.com/samuelpjacobsen/redragon-k652-macos",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Redragon K652 macOS control reconstructs the keyboard's HID configuration protocol from decompilation of its Windows driver with REA and Ghidra. A SwiftUI app and k652ctl CLI use IOKit reports for wired lighting and key settings, while the protocol document ties fields to driver functions and records device observations. The tested model is the Azure K652GG-RGB-PRO.",
+    "description_zh": "Redragon K652 macOS 控制项目使用 REA 和 Ghidra 反编译 Windows 驱动，重建键盘的 HID 配置协议。SwiftUI 应用和 k652ctl 命令行工具通过 IOKit 报告控制有线灯效及按键设置；协议文档将字段对应到驱动函数，并记录设备观测。已测试型号为 Azure K652GG-RGB-PRO。",
+    "evidence_url": "https://github.com/samuelpjacobsen/redragon-k652-macos/blob/54f847a4a915564e9846bc682aed8608626175d4/docs/PROTOCOLO.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-08",
+    "verification": "source-reviewed",
+    "requirements": [
+      "macOS 14 or later, Apple Command Line Tools and a Redragon K652 Azure keyboard for the documented hardware path.",
+      "Some hardware effects blanked the tested keyboard; wired key-matrix writing and speed direction remain untested.",
+      "MIT license."
+    ],
+    "class": "hardware",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/samuelpjacobsen/redragon-k652-macos/blob/54f847a4a915564e9846bc682aed8608626175d4/README.md"
+    ]
+  },
+  {
+    "id": "pokemon-x-reconstruction-case",
+    "name": "Pokémon X: native C reconstruction of game logic and field data",
+    "url": "https://github.com/chanadinh/pokemon-x-decomp",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "reconstruction_method": "port",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Pokémon X reconstruction rebuilds selected Nintendo 3DS game logic and asset handling in portable C, with an SDL2 field slice for walking, dialogue and wild battles. Its native tools decode local game data, and the analysis notes document a live REA MCP workflow for move-resource investigation. The author reports extensive checks of reconstructed subsystems; the field slice remains incomplete.",
+    "description_zh": "Pokémon X 重建项目以可移植 C 实现部分 3DS 游戏逻辑和资源处理，并用 SDL2 场景片段支持行走、对话及野外战斗。原生工具读取用户本地游戏数据；分析笔记记录了用 REA MCP 研究招式资源的过程。作者报告了多个子系统的检查结果，场景片段仍未完成。",
+    "evidence_url": "https://github.com/chanadinh/pokemon-x-decomp/blob/f99e9d6e2459deaa63d04a4efc519b9b159c5a5a/README.md",
+    "verified_at": "2026-11-06",
+    "added_at": "2026-11-08",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Linux or WSL, SDL2 development files and extracted Pokémon X game data for the native field viewer.",
+      "Menus, story events, battle effects and original sound are missing from the field slice.",
+      "No licence file in the repository."
+    ],
+    "class": "game",
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "license"
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/chanadinh/pokemon-x-decomp/blob/f99e9d6e2459deaa63d04a4efc519b9b159c5a5a/docs/ANALYSIS_WORKSPACE.md"
+    ]
   }
 ]
