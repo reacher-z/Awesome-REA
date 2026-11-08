@@ -849,6 +849,29 @@
     facetsDlg.addEventListener('click', (e) => { if (e.target === facetsDlg) facetsDlg.close(); });
     window.addEventListener('popstate', () => { read(); render(); });
     if (!pristine()) render();
+    // Deferred card layout can move a distant fragment after the browser's initial hash jump.
+    const hashTarget = () => {
+      try { return document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch { return null; }
+    };
+    const revealHash = () => {
+      const target = hashTarget();
+      if (!target || !list.contains(target)) return;
+      let frames = 0, stopped = false;
+      const stop = () => { stopped = true; };
+      const inputs = ['wheel', 'touchstart', 'keydown', 'pointerdown'];
+      inputs.forEach((t) => window.addEventListener(t, stop, { once: true, passive: true }));
+      const settle = () => {
+        if (stopped || target !== hashTarget()) return;
+        const top = target.getBoundingClientRect().top;
+        if (top < 0 || top >= innerHeight) target.scrollIntoView({ block: 'start', behavior: 'instant' });
+        if (++frames < 120) requestAnimationFrame(settle);
+        else inputs.forEach((t) => window.removeEventListener(t, stop));
+      };
+      requestAnimationFrame(settle);
+    };
+    window.addEventListener('hashchange', revealHash);
+    if (document.readyState === 'complete') revealHash();
+    else window.addEventListener('load', revealHash, { once: true });
     idle(warm);
   }
 
