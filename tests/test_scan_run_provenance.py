@@ -18,7 +18,7 @@ from review_pr import private_json_locations
 import scan_sources as scanner
 from scan_graphql_transport import GraphQLReadmeTransport
 from scheduled_source_scan import RUN_SCHEMA, validate_shape
-from validate import validate_run_provenance
+from validate import validate_run_provenance, validate_scan_discovery
 
 QUERY = 'topic:reverse-engineering is:public fork:false archived:false'
 BODY = b'# Example\n\n## Usage\nInspect a firmware image.\n'
@@ -66,9 +66,11 @@ def digest(relative, root=ROOT):
 
 
 class ScanRunProvenanceTests(unittest.TestCase):
-    def scan(self, directory, *, target=1, resumed=None, seed_curated=False, seed_papers=False, **options):
+    def scan(self, directory, *, target=1, resumed=None, seed_curated=False, seed_papers=False,
+             seed_tracker=False, skip_retained_metadata=False, **options):
         args = SimpleNamespace(target=target, workers=1, requests_per_second=1, max_pages=1, candidate_buffer=0,
-                               seed_curated=seed_curated, seed_papers=seed_papers, queries=[QUERY],
+                               seed_curated=seed_curated, seed_papers=seed_papers, seed_tracker=seed_tracker,
+                               skip_retained_metadata=skip_retained_metadata, queries=[QUERY],
                                output=Path(directory) / f'scan-{target}.json')
         raw = json.dumps(resumed).encode() if resumed else None
         with contextlib.redirect_stdout(io.StringIO()):
@@ -125,6 +127,71 @@ class ScanRunProvenanceTests(unittest.TestCase):
         # The temporary root holds no scanner scripts, so only the seed rule applies here.
         self.assertNotIn('Source index current_run scanner_provenance lists a seed input the run did not enable.',
                          self.provenance_errors(both))
+
+    def test_tracker_seed_input_is_recorded_from_parsed_bytes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'data').mkdir()
+            (root / 'data/tracker-seeds.json').write_text(json.dumps({
+                'schema_version': 1, 'source': 'https://github.com/example/tracker',
+                'reviewed_at': '2026-11-03',
+                'repositories': [{'repo': 'example/tool-1', 'reference_ids': ['tracker-example-tool-1']}]}))
+            scanner.tracker_references.cache_clear()
+            self.addCleanup(scanner.tracker_references.cache_clear)
+            with patch.object(scanner, 'ROOT', root), patch.dict(scanner.SEED_INPUT_DIGESTS, clear=True):
+                document = json.loads(self.scan(directory, seed_tracker=True))
+            expected = [digest('data/tracker-seeds.json', root)]
+        self.assertEqual(document['meta']['current_run']['scanner_provenance']['seed_inputs'], expected)
+        self.assertTrue(document['meta']['current_run']['seed_tracker'])
+        # The temporary root holds no scanner scripts, so only the seed rule applies here.
+        self.assertNotIn('Source index current_run scanner_provenance lists a seed input the run did not enable.',
+                         self.provenance_errors(document))
+
+    def test_tracker_seed_file_rejects_duplicate_repositories_and_bad_references(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'data').mkdir()
+            scanner.tracker_references.cache_clear()
+            self.addCleanup(scanner.tracker_references.cache_clear)
+            base = {'schema_version': 1, 'source': 'https://github.com/example/tracker',
+                    'reviewed_at': '2026-11-03'}
+            for repositories in (
+                    [{'repo': 'example/tool-1', 'reference_ids': ['tracker-example-tool-1']},
+                     {'repo': 'example/tool-1', 'reference_ids': ['tracker-example-tool-2']}],
+                    [{'repo': 'example/tool-1', 'reference_ids': ['not-a-tracker-id']}],
+                    [{'repo': 'example/tool-1', 'reference_ids': ['tracker-example-tool-1', 'tracker-example-tool-1']}]):
+                (root / 'data/tracker-seeds.json').write_text(json.dumps({**base, 'repositories': repositories}))
+                with patch.object(scanner, 'ROOT', root), patch.dict(scanner.SEED_INPUT_DIGESTS, clear=True), \
+                        self.assertRaises(ValueError):
+                    scanner.tracker_references()
+
+    def test_tracker_discovery_requires_matching_seed_observation(self):
+        meta = {'discovered_repository_ids': ['scan-1'], 'queries': [], 'resume_observations': [],
+                'seed_observations': [{'full_name': 'example/tool-1', 'observed_at': '2026-11-03T00:00:00Z',
+                                       'run_id': '2026-11-03T00:00:00Z', 'method': 'tracker-audit-reference', 'status': 'candidate',
+                                       'reference_ids': ['tracker-example-tool-1'], 'repository_id': 'scan-1'}]}
+        record = {'id': 'scan-1', 'discovery_methods': ['tracker-audit-reference'], 'matched_queries': [],
+                  'seed_reference_ids': ['tracker-example-tool-1']}
+        errors = []
+        validate_scan_discovery(meta, [record], errors)
+        self.assertEqual(errors, [])
+        broken = copy.deepcopy(record)
+        broken['seed_reference_ids'] = ['tracker-other-tool']
+        errors = []
+        validate_scan_discovery(meta, [broken], errors)
+        self.assertTrue(any('seed discovery needs matching seed observations' in error for error in errors))
+
+    def test_skip_retained_metadata_is_recorded_and_leaves_pending_ids(self):
+        with tempfile.TemporaryDirectory() as directory:
+            first = json.loads(self.scan(directory, target=2))
+            pending = copy.deepcopy(first)
+            pending['meta']['discovered_repository_ids'].append('scan-99')
+            pending['meta']['unique_repos'] += 1
+            pending['meta']['unattempted_candidates'] += 1
+            document = json.loads(self.scan(directory, target=3, resumed=pending, skip_retained_metadata=True))
+        run = document['meta']['current_run']
+        self.assertTrue(run['skip_retained_metadata'])
+        self.assertEqual(run['resume_observation_count'], 0)
 
     def test_resume_keeps_legacy_records_and_run_metadata_unchanged(self):
         with tempfile.TemporaryDirectory() as directory:

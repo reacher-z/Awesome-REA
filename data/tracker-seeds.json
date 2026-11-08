@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "source": "https://github.com/ruoxining/rea-tracker",
+  "reviewed_at": "2026-11-03",
+  "repositories": [
+    {
+      "repo": "ad-si/woxi",
+      "reference_ids": [
+        "tracker-ad-si-woxi"
+      ]
+    },
+    {
+      "repo": "storytold/cadcraft",
+      "reference_ids": [
+        "tracker-storytold-cadcraft"
+      ]
+    },
+    {
+      "repo": "storytold/designcraft",
+      "reference_ids": [
+        "tracker-storytold-designcraft"
+      ]
+    },
+    {
+      "repo": "storytold/effectcraft",
+      "reference_ids": [
+        "tracker-storytold-effectcraft"
+      ]
+    },
+    {
+      "repo": "storytold/figcraft",
+      "reference_ids": [
+        "tracker-storytold-figcraft"
+      ]
+    },
+    {
+      "repo": "storytold/filmcraft",
+      "reference_ids": [
+        "tracker-storytold-filmcraft"
+      ]
+    },
+    {
+      "repo": "storytold/lightcraft",
+      "reference_ids": [
+        "tracker-storytold-lightcraft"
+      ]
+    },
+    {
+      "repo": "storytold/pdfcraft",
+      "reference_ids": [
+        "tracker-storytold-pdfcraft"
+      ]
+    },
+    {
+      "repo": "storytold/soundcraft",
+      "reference_ids": [
+        "tracker-storytold-soundcraft"
+      ]
+    },
+    {
+      "repo": "storytold/vectorcraft",
+      "reference_ids": [
+        "tracker-storytold-vectorcraft"
+      ]
+    },
+    {
+      "repo": "ankiotomas/qqpet",
+      "reference_ids": [
+        "tracker-ankiotomas-qqpet"
+      ]
+    },
+    {
+      "repo": "codenamecpp/carnage3d",
+      "reference_ids": [
+        "tracker-codenamecpp-carnage3d"
+      ]
+    },
+    {
+      "repo": "crgimenes/neko",
+      "reference_ids": [
+        "tracker-crgimenes-neko"
+      ]
+    },
+    {
+      "repo": "dail8859/notepadnext",
+      "reference_ids": [
+        "tracker-dail8859-notepadnext"
+      ]
+    },
+    {
+      "repo": "mrmilenko/theseus",
+      "reference_ids": [
+        "tracker-mrmilenko-theseus"
+      ]
+    },
+    {
+      "repo": "openenroth/openenroth",
+      "reference_ids": [
+        "tracker-openenroth-openenroth"
+      ]
+    },
+    {
+      "repo": "shinyquagsire23/openjkdf2",
+      "reference_ids": [
+        "tracker-shinyquagsire23-openjkdf2"
+      ]
+    },
+    {
+      "repo": "th0rgal/open_health",
+      "reference_ids": [
+        "tracker-th0rgal-open-health"
+      ]
+    },
+    {
+      "repo": "try/opengothic",
+      "reference_ids": [
+        "tracker-try-opengothic"
+      ]
+    },
+    {
+      "repo": "wquguru/cameo",
+      "reference_ids": [
+        "tracker-wquguru-cameo"
+      ]
+    },
+    {
+      "repo": "adamws/kle-ng",
+      "reference_ids": [
+        "tracker-adamws-kle-ng"
+      ]
+    },
+    {
+      "repo": "bennyborn/xbox-boot-re",
+      "reference_ids": [
+        "tracker-bennyborn-xbox-boot-re"
+      ]
+    },
+    {
+      "repo": "dipa-studio/ios-sweet",
+      "reference_ids": [
+        "tracker-dipa-studio-ios-sweet"
+      ]
+    },
+    {
+      "repo": "dpjudas/surrealengine",
+      "reference_ids": [
+        "tracker-dpjudas-surrealengine"
+      ]
+    },
+    {
+      "repo": "generalatrox/decomppipeline",
+      "reference_ids": [
+        "tracker-generalatrox-decomppipeline"
+      ]
+    },
+    {
+      "repo": "haleclipse/cometixcode",
+      "reference_ids": [
+        "tracker-haleclipse-cometixcode"
+      ]
+    },
+    {
+      "repo": "kaimen-inc/co-scientist",
+      "reference_ids": [
+        "tracker-kaimen-inc-co-scientist"
+      ]
+    },
+    {
+      "repo": "maryncrt/ultimate-mortal-kombat-3-ios-decompiled",
+      "reference_ids": [
+        "tracker-maryncrt-ultimate-mortal-kombat-3-ios-decompiled"
+      ]
+    },
+    {
+      "repo": "matteo-pacini/theme-hospital-decomp",
+      "reference_ids": [
+        "tracker-matteo-pacini-theme-hospital-decomp"
+      ]
+    },
+    {
+      "repo": "openrac/rac4-decomp",
+      "reference_ids": [
+        "tracker-openrac-rac4-decomp"
+      ]
+    },
+    {
+      "repo": "pasta-lab/edit-my-app",
+      "reference_ids": [
+        "tracker-pasta-lab-edit-my-app"
+      ]
+    },
+    {
+      "repo": "sdlpal/sdlpal",
+      "reference_ids": [
+        "tracker-sdlpal-sdlpal"
+      ]
+    },
+    {
+      "repo": "sjmelia/civd",
+      "reference_ids": [
+        "tracker-sjmelia-civd"
+      ]
+    },
+    {
+      "repo": "swagsoftware/kisakblack",
+      "reference_ids": [
+        "tracker-swagsoftware-kisakblack"
+      ]
+    },
+    {
+      "repo": "swagsoftware/kisakcod",
+      "reference_ids": [
+        "tracker-swagsoftware-kisakcod"
+      ]
+    },
+    {
+      "repo": "t4t5/bitcoin-0.1-rebuilt",
+      "reference_ids": [
+        "tracker-t4t5-bitcoin-0-1-rebuilt"
+      ]
+    },
+    {
+      "repo": "typecraft-dev/oma-cast",
+      "reference_ids": [
+        "tracker-typecraft-dev-oma-cast"
+      ]
+    },
+    {
+      "repo": "uutils/util-linux",
+      "reference_ids": [
+        "tracker-uutils-util-linux"
+      ]
+    },
+    {
+      "repo": "xbirimensah/opensetter",
+      "reference_ids": [
+        "tracker-xbirimensah-opensetter"
+      ]
+    },
+    {
+      "repo": "felipemikeias/pes21-ml-editor",
+      "reference_ids": [
+        "tracker-felipemikeias-pes21-ml-editor"
+      ]
+    },
+    {
+      "repo": "gta-reversed/gta-reversed",
+      "reference_ids": [
+        "tracker-gta-reversed-gta-reversed"
+      ]
+    },
+    {
+      "repo": "maanhimself/opendlss-nr",
+      "reference_ids": [
+        "tracker-maanhimself-opendlss-nr"
+      ]
+    },
+    {
+      "repo": "sums001/deepseek-api",
+      "reference_ids": [
+        "tracker-sums001-deepseek-api"
+      ]
+    },
+    {
+      "repo": "sums001/windows-copilot-api",
+      "reference_ids": [
+        "tracker-sums001-windows-copilot-api"
+      ]
+    },
+    {
+      "repo": "trotsky1997/openfugu",
+      "reference_ids": [
+        "tracker-trotsky1997-openfugu"
+      ]
+    }
+  ]
+}
