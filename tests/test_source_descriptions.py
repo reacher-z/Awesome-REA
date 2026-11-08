@@ -14,6 +14,7 @@ import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from source_descriptions import SOURCE_DESCRIPTION_POLICY, capture_description, description_fallback, validate_description_capture
 from scan_sources import initial_meta, run_scan, scan_readme
+from review_pr import private_json_locations
 from localization import localized_records
 from build_browse_pages import repository_card
 
@@ -132,6 +133,27 @@ class DescriptionCaptureTests(unittest.TestCase):
             self.assertEqual(record['readme_bytes'], len(body))
             self.assertEqual(record['description_en'], '')
             self.assertIn('description_omission', record)
+
+    def test_scan_rejects_private_upstream_description_before_checkpointing(self):
+        body = b'# Example\n'
+        oid = hashlib.sha1(b'blob ' + str(len(body)).encode() + b'\0' + body).hexdigest()
+        url = 'https://github.com/example/demo'
+        class FakeAPI:
+            def json(self, path):
+                if path.startswith('/repositories/'):
+                    return {'id': 1, 'full_name': 'example/demo', 'html_url': url,
+                            'private': False, 'archived': False, 'fork': False}
+                return {'type': 'file', 'size': len(body), 'encoding': 'base64',
+                        'content': base64.b64encode(body).decode(), 'sha': oid,
+                        'path': 'README.md', 'html_url': url + '/blob/main/README.md'}
+        repository = {'id': 1, 'full_name': 'example/demo', 'html_url': url,
+                      'description': '/' + 'home' + '/fixture/project',
+                      '_metadata_observed_at': '2026-10-16T00:00:00Z',
+                      '_matched_queries': [], 'topics': []}
+        record, failure = scan_readme(FakeAPI(), repository)
+        self.assertIsNone(record)
+        self.assertEqual(failure['reason'], 'unsafe-repository-metadata')
+        self.assertEqual(private_json_locations(failure), [])
 
 
 if __name__ == '__main__':

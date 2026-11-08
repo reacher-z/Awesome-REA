@@ -237,7 +237,8 @@ def read_seed_input(relative):
 
 def scanner_implementation(*components):
     """Digest this scanner, its imported helpers and the modules defining the run's transport and frontier."""
-    modules = [sys.modules[name] for name in ('source_descriptions', 'source_scope', 'strict_json')]
+    import review_pr
+    modules = [review_pr, *[sys.modules[name] for name in ('source_descriptions', 'source_scope', 'strict_json')]]
     modules += [inspect.getmodule(component) for component in components if component is not None]
     files = {Path(__file__).resolve()} | {Path(module.__file__).resolve() for module in modules
                                           if getattr(module, '__file__', None)}
@@ -750,6 +751,9 @@ def readme_record(repo, metadata, content, *, api_url=None):
         record['seed_paper_references'] = repo['_seed_paper_references']
     if api_url is not None:
         record['readme_api_url'] = api_url
+    from review_pr import private_json_locations
+    if private_json_locations(record):
+        raise ScanError('unsafe-repository-metadata')
     return record
 
 
