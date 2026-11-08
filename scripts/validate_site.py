@@ -29,7 +29,7 @@ from source_browser import BROWSER_FILENAME, FULL_EXPORT_FILENAME, validate_sour
 from public_source_supplements import (PUBLISHED_FILENAME, compose_published, json_bytes, load_supplements,
                                       owned_file, bounded_bytes, project_additions, read_withdrawals)
 from validate_discovery import expected_entry_routes, validate_route_inventory
-from build_readme import (CATEGORIES, METHOD_SECTIONS, PAPER_SECTIONS, REQUIREMENTS_LABEL, case_method,
+from build_readme import (CASE_FILES, README_SIZE_WARNING, CATEGORIES, METHOD_SECTIONS, PAPER_SECTIONS, REQUIREMENTS_LABEL, case_method,
                           collection_section, method_groups, paper_section)
 from build_discovery_pages import ABOUT_EXCLUDED_SECTIONS, SECTION_TARGETS, file_size_label
 from build_feed import (DISCOVERY_LABELS, DISCOVERY_PATHS, DISCOVERY_TERM, FEED_PAGES, FEED_PATHS, FEED_SIZE,
@@ -1552,6 +1552,13 @@ def validate_entry_outputs(pages, resources, papers):
 
 
 def main():
+    case_pages = [ROOT / path for path in CASE_FILES.values()] + sorted((ROOT / 'docs/cases').glob('*.md'))
+    assert case_pages and all(path.is_file() and path.stat().st_size <= README_SIZE_WARNING for path in case_pages), \
+        'A generated case page is missing or exceeds the Markdown page budget'
+    for path in case_pages[2:]:
+        counterpart = path.with_name(path.name.removesuffix('.zh-CN.md') + '.md') if path.name.endswith('.zh-CN.md') \
+            else path.with_name(path.stem + '.zh-CN.md')
+        assert counterpart.is_file(), f'Missing case page translation: {path}'
     urls = sitemap_urls(OUTPUT, ORIGIN)
     resources = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['resources']
     papers = json.loads((OUTPUT / 'papers.json').read_text(encoding='utf-8'))

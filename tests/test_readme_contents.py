@@ -236,15 +236,19 @@ class ReadmeContentsTest(unittest.TestCase):
                                len(body))
                     entries = len(re.findall(r'^- \[\*\*', body[heading.end():end], re.MULTILINE))
                     if heading[1] == '###' or heading[2] in ('Resources', '资源'):
-                        case_text = (ROOT / ('docs/cases.zh-CN.md' if name.endswith('zh-CN.md') else 'docs/cases.md')).read_text(encoding='utf-8')
+                        language = 'zh' if name.endswith('zh-CN.md') else 'en'
+                        paths = [path for path in (ROOT / 'docs/cases').glob('*.md')
+                                 if path.name.endswith('.zh-CN.md' if language == 'zh' else '.md')
+                                 and (language == 'zh' or not path.name.endswith('.zh-CN.md'))]
+                        case_text = '\n'.join(path.read_text(encoding='utf-8') for path in paths)
                         case_ids = set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', case_text, re.M))
                         if heading[1] == '###':
                             anchor = re.search(r'<a id="([^"]+)"></a>\s*$', body[:heading.start()])
-                            if anchor and f'<a id="{anchor[1]}"></a>' in case_text:
-                                section = case_text.split(f'<a id="{anchor[1]}"></a>', 1)[1]
-                                next_heading = re.search(r'\n<a id="[a-z-]+"></a>\n## ', section)
-                                section = section[:next_heading.start()] if next_heading else section
-                                case_ids = set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', section, re.M))
+                            if anchor:
+                                section_paths = [path for path in paths if path.name.startswith(anchor[1] + '.')
+                                                 or path.name.startswith(anchor[1] + '-')]
+                                section_text = '\n'.join(path.read_text(encoding='utf-8') for path in section_paths)
+                                case_ids = set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', section_text, re.M))
                             else:
                                 case_ids = set()
                         shown = set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', body[heading.end():end], re.M))

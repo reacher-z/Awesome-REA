@@ -2,7 +2,7 @@ name: README lint
 # A report, not a gate: this workflow is separate from `Catalog checks`, and its job must not
 # join the required `validate` aggregate or the branch's required checks.
 # Both triggers use the files awesome-lint reads and the files that produce or report them: README.md
-# and docs/papers.md and docs/cases.md, the English lists that build_readme.py writes. The
+# and docs/papers.md, docs/cases.md and docs/cases/ pages, the English lists that build_readme.py writes. The
 # repository-metadata rule also reads repository settings; rerun manually after changing them.
 on:
   push:
@@ -11,6 +11,7 @@ on:
       - 'README*.md'
       - 'docs/papers*.md'
       - 'docs/cases*.md'
+      - 'docs/cases/**'
       - CONTRIBUTING.md
       - scripts/build_readme.py
       - scripts/awesome_lint_report.py
@@ -21,6 +22,7 @@ on:
       - 'README*.md'
       - 'docs/papers*.md'
       - 'docs/cases*.md'
+      - 'docs/cases/**'
       - CONTRIBUTING.md
       - scripts/build_readme.py
       - scripts/awesome_lint_report.py
@@ -65,6 +67,14 @@ jobs:
         env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
         run: node tests/awesome-lint/lint.mjs docs/cases.md .cache/awesome-lint/cases-findings.json
+      - name: Lint case section pages
+        if: ${{ !cancelled() }}
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for page in docs/cases/*.md; do
+            node tests/awesome-lint/lint.mjs "$page" ".cache/awesome-lint/$(basename "$page").json"
+          done
       - name: Summarize findings per rule
         if: ${{ !cancelled() }}
         run: python3 scripts/awesome_lint_report.py .cache/awesome-lint/findings.json --summary "$GITHUB_STEP_SUMMARY"
@@ -83,6 +93,7 @@ jobs:
             .cache/awesome-lint/findings.json
             .cache/awesome-lint/papers-findings.json
             .cache/awesome-lint/cases-findings.json
+            .cache/awesome-lint/*.md.json
           include-hidden-files: true
           if-no-files-found: warn
           retention-days: 14

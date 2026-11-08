@@ -1492,7 +1492,8 @@ def main():
                                 env={**os.environ, 'PYTHONIOENCODING': 'utf-8'})
         if result.returncode:
             errors.append((result.stderr or result.stdout).strip() or f'{script}: generated content check failed.')
-    # Advisory: a README near GitHub's rendering limit is reported, never failed, so open pull requests keep passing.
+    # The README builder check above verifies both case indexes and every generated section page.
+    # README size remains advisory; case pages must fit the builder's page budget.
     for warning in readme_size_warnings(ROOT):
         print(f'Warning: {warning}', file=sys.stderr)
     # Advisory, for the same reason: Game case studies without a reconstruction method are listed last.
@@ -1503,7 +1504,7 @@ def main():
         for error in errors:
             print(f'- {error}', file=sys.stderr)
         return 1
-    print(f'Validated {len(records)} curated resources, {len(papers)} research papers, {scanned} scanned sources, {discovered} unreviewed discoveries, {followed} unreviewed followed-source leads, {len(benchmarks)} benchmark snapshots, {count} Markdown files, both generated catalogs, and the bilingual repository index.')
+    print(f'Validated {len(records)} curated resources, {len(papers)} research papers, {scanned} scanned sources, {discovered} unreviewed discoveries, {followed} unreviewed followed-source leads, {len(benchmarks)} benchmark snapshots, {count} Markdown files, generated case indexes and section pages, and the bilingual repository index.')
     return 0
 
 

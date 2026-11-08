@@ -5,11 +5,14 @@ from pathlib import Path
 import re
 import sys
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
+import build_readme
 from build_readme import (CASE_FILES, COLLECTION_SECTIONS, METHOD_SECTIONS, READMES, RECENT_CASES,
-                          case_method, collection_section, method_groups, recent_cases, render_cases)
+                          README_SIZE_WARNING, case_method, case_order, collection_section, method_groups, recent_cases,
+                          render_case_pages)
 from catalog import load_resources
 from validate_papers import read_papers
 
@@ -43,7 +46,11 @@ class ReadmeCasesTest(unittest.TestCase):
 
     def test_case_files_have_every_case_once_under_its_section(self):
         for language, name in CASE_FILES.items():
-            text = (ROOT / name).read_text(encoding='utf-8')
+            index = (ROOT / name).read_text(encoding='utf-8')
+            paths = sorted((ROOT / 'docs/cases').glob('*.zh-CN.md' if language == 'zh' else '*.md'))
+            if language == 'en':
+                paths = [path for path in paths if not path.name.endswith('.zh-CN.md')]
+            text = '\n'.join(path.read_text(encoding='utf-8') for path in paths)
             ids = re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', text, re.M)
             expected = [record for record in self.records if record['kind'] == 'case-study']
             self.assertEqual(Counter(ids), Counter(record['id'] for record in expected))
@@ -51,16 +58,13 @@ class ReadmeCasesTest(unittest.TestCase):
                 cases = [record for record in self.groups[section] if record['kind'] == 'case-study']
                 if not cases:
                     continue
-                block = text.split(f'<a id="{section}"></a>', 1)[1].split('\n<a id="', 1)[0]
-                # Method headings introduce anchors, so inspect the range through the next section instead.
-                following = [key for key in COLLECTION_SECTIONS if key != section and f'<a id="{key}"></a>' in text
-                             and text.index(f'<a id="{key}"></a>') > text.index(f'<a id="{section}"></a>')]
-                if following:
-                    block = text.split(f'<a id="{section}"></a>', 1)[1].split(f'<a id="{following[0]}"></a>', 1)[0]
+                block = '\n'.join(path.read_text(encoding='utf-8') for path in paths
+                                  if path.name.startswith(section + '.') or path.name.startswith(section + '-'))
                 self.assertEqual(set(re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', block, re.M)),
                                  {record['id'] for record in cases})
-            self.assertIn(f"](../{READMES[language]}#{'资源' if language == 'zh' else 'resources'})", text)
-            self.assertIn('cases.zh-CN.md' if language == 'en' else 'cases.md', text)
+            self.assertIn(f"](../{READMES[language]}#{'资源' if language == 'zh' else 'resources'})", index)
+            self.assertIn('cases.zh-CN.md' if language == 'en' else 'cases.md', index)
+            self.assertIn('../cases' + ('.zh-CN' if language == 'zh' else '') + '.md', text)
             urls = re.findall(r'^- \[\*\*.*?\*\*\]\((https?://[^)]+)\) - ', text, re.M)
             self.assertEqual(len(urls), len(set(urls)))
 
@@ -84,10 +88,35 @@ class ReadmeCasesTest(unittest.TestCase):
         duplicate = deepcopy(original)
         duplicate['id'] = 'duplicate-case-fixture'
         for language in READMES:
-            text = render_cases([original, duplicate], language)
+            pages = render_case_pages([original, duplicate])
+            text = '\n'.join(content for path, content in pages.items() if path.startswith('docs/cases/')
+                             and path.endswith('.zh-CN.md' if language == 'zh' else '.md')
+                             and (language == 'zh' or not path.endswith('.zh-CN.md')))
             self.assertEqual(text.count(f']({original["url"]})'), 1)
             self.assertIn('**' + original['name'].split(':', 1)[0], text)
             self.assertIn(f'/resources/{duplicate["id"]}/)', text)
+
+    def test_every_generated_case_file_is_below_budget(self):
+        for path in [ROOT / name for name in CASE_FILES.values()] + list((ROOT / 'docs/cases').glob('*.md')):
+            with self.subTest(path=path):
+                self.assertLessEqual(path.stat().st_size, README_SIZE_WARNING)
+
+    def test_large_section_splits_in_both_languages(self):
+        original = next(record for record in self.records if record['kind'] == 'case-study'
+                        and collection_section(record) == 'protocol')
+        records = [dict(original, id=f'large-case-{number}', url=f'https://example.com/large-{number}',
+                        name=f'Large case {number}') for number in range(100)]
+        budget = 8_000
+        with patch.object(build_readme, 'README_SIZE_WARNING', budget):
+            pages = render_case_pages(records)
+        for language in ('en', 'zh'):
+            suffix = '.zh-CN.md' if language == 'zh' else '.md'
+            names = [name for name in pages if re.fullmatch(r'docs/cases/protocol-\d+' + re.escape(suffix), name)]
+            self.assertGreater(len(names), 1)
+            self.assertTrue(all(len(pages[name].encode('utf-8')) <= budget for name in names))
+            listed = [identifier for name in sorted(names, key=lambda value: int(re.search(r'-(\d+)\.', value)[1]))
+                      for identifier in re.findall(r'resources/(large-case-\d+)/', pages[name])]
+            self.assertEqual(listed, [record['id'] for record in sorted(records, key=case_order)])
 
 
 if __name__ == '__main__':

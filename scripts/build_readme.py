@@ -760,44 +760,128 @@ def render_paper_file(papers, language):
     return PAPERS_BEGIN + '\n' + source_note('data/papers.json', part='file') + body + PAPERS_END + '\n'
 
 
-def render_cases(records, language, paper_urls=frozenset()):
-    """Every case under its catalog section, grouped by method where applicable."""
-    zh = language == 'zh'
+def case_groups(records, paper_urls=frozenset()):
     groups = defaultdict(list)
     for record in records:
         if record['kind'] == 'case-study' and record['url'] not in paper_urls:
             groups[collection_section(record)].append(record)
-    translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')) if zh else {}
+    return groups
+
+
+def case_page_name(section, language, part=None):
+    suffix = '.zh-CN' if language == 'zh' else ''
+    return f'docs/cases/{section}{f"-{part}" if part is not None else ""}{suffix}.md'
+
+
+def case_page(section, entries, language, filename, translations, seen_urls, first_methods):
+    """Render one bounded section page. Entries retain the catalog's section and method order."""
+    zh = language == 'zh'
+    other = 'en' if zh else 'zh'
+    part_match = re.search(r'-(\d+)\.(?:zh-CN\.)?md$', filename)
+    other_name = case_page_name(section, other, int(part_match[1]) if part_match else None)
+    lines = [f"# {section_heading(section, language)}", '',
+             f"[{'← 返回案例目录' if zh else '← Back to case index'}](../cases{'.zh-CN' if zh else ''}.md#{section})",
+             '', f"[{'English' if zh else '简体中文'}]({other_name.rsplit('/', 1)[1]})", '',
+             f"**{len(entries):,} {'个案例' if zh else 'case studies'}**", '']
+    previous = None
+    for method, record in entries:
+        if method != previous and method is not None:
+            anchor = f'{section}-{method}'
+            if method in first_methods:
+                lines.append(f'<a id="{anchor}"></a>')
+            lines.extend([f'## {METHOD_HEADINGS[method][zh]}', ''])
+            previous = method
+        lines.append(resource_line(record, section, language, translations, record['url'] not in seen_urls))
+        seen_urls.add(record['url'])
+    body = '\n'.join(lines).rstrip() + '\n'
+    return CASES_BEGIN + '\n' + source_note(*RESOURCE_SOURCES, part='file') + body + CASES_END + '\n'
+
+
+def render_case_pages(records, paper_urls=frozenset()):
+    """Return both case indexes and every bounded section page."""
+    groups = case_groups(records, paper_urls)
+    translations = {'en': {}, 'zh': json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8'))}
+    pages = {}
+    section_parts = {}
+    method_paths = {'en': {}, 'zh': {}}
+    seen = {'en': set(), 'zh': set()}
+    for section in COLLECTION_SECTIONS:
+        cases = groups[section]
+        if not cases:
+            continue
+        blocks = method_groups(cases) if section in METHOD_SECTIONS else [
+            (None, sorted(cases, key=lambda record: (-int(record.get('added_at', '0000')[:10].replace('-', '')), case_order(record))))]
+        ordered = [(method, record) for method, block in blocks for record in block]
+        parts = []
+        current = []
+        current_bytes = 0
+        for item in ordered:
+            method, record = item
+            line_bytes = max(len(resource_line(record, section, lang, translations[lang]).encode('utf-8'))
+                             for lang in ('en', 'zh')) + (300 if method is not None else 0)
+            if line_bytes + 3_000 > README_SIZE_WARNING:
+                raise ValueError(f'{section}: one case exceeds the {README_SIZE_WARNING:,}-byte page budget')
+            if current and current_bytes + line_bytes + 3_000 > README_SIZE_WARNING:
+                parts.append(current)
+                current = []
+                current_bytes = 0
+            current.append(item)
+            current_bytes += line_bytes
+        if current:
+            parts.append(current)
+        section_parts[section] = len(parts)
+        for number, entries in enumerate(parts, 1):
+            first = {method for method, _ in entries if method is not None and method not in
+                     {m for part in parts[:number - 1] for m, _ in part}}
+            for language in ('en', 'zh'):
+                name = case_page_name(section, language, number if len(parts) > 1 else None)
+                pages[name] = case_page(section, entries, language, name, translations[language], seen[language], first)
+                if len(pages[name].encode('utf-8')) > README_SIZE_WARNING:
+                    raise ValueError(f'{name} exceeds the {README_SIZE_WARNING:,}-byte page budget')
+                for method in first:
+                    method_paths[language][f'{section}-{method}'] = name
+    for language, name in CASE_FILES.items():
+        pages[name] = render_case_file(groups, language, section_parts, method_paths[language])
+        if len(pages[name].encode('utf-8')) > README_SIZE_WARNING:
+            raise ValueError(f'{name} exceeds the {README_SIZE_WARNING:,}-byte page budget')
+    return pages
+
+
+def render_cases(groups, language, section_parts, method_paths):
+    """The compact entry page with stable section and method anchors."""
+    zh = language == 'zh'
     count = sum(map(len, groups.values()))
     switch = '[English](cases.md) · **简体中文**' if zh else '**English** · [简体中文](cases.zh-CN.md)'
     lines = [f"[{'← 返回 README' if zh else '← Back to the README'}](../{READMES[language]}#{'资源' if zh else 'resources'}) · {switch}", '',
              f'**{count} 个案例**，按分区列出。' if zh else f'**{count} case studies**, grouped by section.', '',
              '## ' + ('目录' if zh else 'Contents'), '']
-    # As in the paper files, English links use the heading slugs awesome-lint's ToC check resolves.
-    lines += [f"- [{section_heading(section, language)}]({f'#{section}' if zh else heading_anchor(section_heading(section, 'en'))}) ({len(groups[section])})"
+    lines += [f"- [{section_heading(section, language)}](#{section}) ({len(groups[section])})"
               for section in COLLECTION_SECTIONS if groups[section]]
     lines.append('')
-    seen_urls = set()
     for section in COLLECTION_SECTIONS:
         cases = groups[section]
         if not cases:
             continue
-        lines.extend([f'<a id="{section}"></a>', f'## {section_heading(section, language)}', '',
-                      '[↑ 返回目录](#目录)' if zh else '[↑ Contents](#contents)', ''])
-        blocks = method_groups(cases) if section in METHOD_SECTIONS else [(None, sorted(cases, key=lambda record: (-int(record.get('added_at', '0000')[:10].replace('-', '')), case_order(record))))]
-        for method, block in blocks:
-            if method:
-                lines.extend([f'<a id="{section}-{method}"></a>',
-                              f'### {METHOD_HEADINGS[method][zh]} ({len(block):,})', ''])
-            for record in block:
-                lines.append(resource_line(record, section, language, translations, record['url'] not in seen_urls))
-                seen_urls.add(record['url'])
+        lines.extend([f'<a id="{section}"></a>', f'## {section_heading(section, language)} ({len(cases):,})', ''])
+        names = [case_page_name(section, language, part if section_parts[section] > 1 else None)
+                 for part in range(1, section_parts[section] + 1)]
+        label = '案例列表' if zh else 'Case studies'
+        for part, name in enumerate(names, 1):
+            title = (f'{label}（第 {part} 部分）' if zh else f'{label}, part {part}') if len(names) > 1 else label
+            lines.append(f'- [{title}](cases/{name.rsplit("/", 1)[1]})')
+        lines.append('')
+        if section in METHOD_SECTIONS:
+            for method, block in method_groups(cases):
+                anchor = f'{section}-{method}'
+                path = method_paths[anchor].rsplit('/', 1)[1]
+                lines.extend([f'<a id="{anchor}"></a>',
+                              f'- [{METHOD_HEADINGS[method][zh]}](cases/{path}#{anchor}) ({len(block):,})'])
             lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
 
 
-def render_case_file(records, language, paper_urls=frozenset()):
-    body = f"# {('Awesome REA Case Studies', 'Awesome REA 案例')[language == 'zh']}\n\n" + render_cases(records, language, paper_urls)
+def render_case_file(groups, language, section_parts, method_paths):
+    body = f"# {('Awesome REA Case Studies', 'Awesome REA 案例')[language == 'zh']}\n\n" + render_cases(groups, language, section_parts, method_paths)
     return CASES_BEGIN + '\n' + source_note(*RESOURCE_SOURCES, part='file') + body + CASES_END + '\n'
 
 
@@ -866,7 +950,8 @@ def size_warning(name, size):
 
 def readme_size_warnings(root=ROOT):
     """Size notes for READMEs and case files on disk; validate.py prints them without failing."""
-    notes = (size_warning(name, (root / name).stat().st_size) for name in (*READMES.values(), *CASE_FILES.values()) if (root / name).is_file())
+    names = (*READMES.values(), *CASE_FILES.values(), *(str(path.relative_to(root)) for path in (root / 'docs/cases').glob('*.md')))
+    notes = (size_warning(name, (root / name).stat().st_size) for name in names if (root / name).is_file())
     return [note for note in notes if note]
 
 
@@ -895,8 +980,7 @@ def rendered_files(records, papers, index_count):
                                      + render_badges(records, papers, language))
     for language, name in PAPER_FILES.items():
         files[name] = render_paper_file(papers, language)
-    for language, name in CASE_FILES.items():
-        files[name] = render_case_file(records, language, {paper['url'] for paper in papers})
+    files.update(render_case_pages(records, {paper['url'] for paper in papers}))
     return files
 
 
@@ -909,6 +993,9 @@ def main():
         papers = read_papers(ROOT)
         files = rendered_files(records, papers, browsable_index_count())
         stale = []
+        generated_case_paths = set(files) & {name for name in files if name.startswith('docs/cases/')}
+        extra = sorted(str(path.relative_to(ROOT)) for path in (ROOT / 'docs/cases').glob('*.md')
+                       if str(path.relative_to(ROOT)) not in generated_case_paths)
         for name, expected in files.items():
             path = ROOT / name
             if not path.is_file() or path.read_text(encoding='utf-8') != expected:
@@ -916,8 +1003,12 @@ def main():
                 if not args.check:
                     path.parent.mkdir(parents=True, exist_ok=True)
                     path.write_text(expected, encoding='utf-8')
+        stale.extend(extra)
+        if not args.check:
+            for name in extra:
+                (ROOT / name).unlink()
         size = {name: len(content.encode('utf-8')) for name, content in files.items()}
-        for name in (*READMES.values(), *CASE_FILES.values()):
+        for name in (*READMES.values(), *(name for name in files if name.startswith('docs/cases'))):
             note = size_warning(name, size[name])
             if note:
                 print(f'Warning: {note}', file=sys.stderr)
@@ -927,7 +1018,8 @@ def main():
             return 1
         budget = (', '.join(f'{name} {size[name]:,} bytes' for name in READMES.values())
                   + f' (budget {README_SIZE_WARNING:,}); '
-                  + ', '.join(f'{name} {size[name]:,} bytes' for name in (*PAPER_FILES.values(), *CASE_FILES.values())))
+                  + ', '.join(f'{name} {size[name]:,} bytes' for name in (*PAPER_FILES.values(), CASE_FILES['en'], CASE_FILES['zh']))
+                  + f'; {len(generated_case_paths)} section pages, largest {max(size[name] for name in generated_case_paths):,} bytes')
         if args.check:
             print(f'READMEs, paper files and case files match {len(records)} resources and {len(papers)} separate research papers; {budget}.')
         else:
