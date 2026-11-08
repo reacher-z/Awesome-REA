@@ -438,8 +438,8 @@ def files_under(path: Path) -> list[Path]:
 
 
 def default_paths(root: Path = ROOT) -> list[Path]:
-    """Every git-tracked file, then the production build in dist/ when it exists."""
-    paths = tracked_files(root)
+    """Tracked files, generated case pages, then the production build when it exists."""
+    paths = sorted(set(tracked_files(root)) | set((root / 'docs/cases').glob('*.md')))
     if (root / 'dist').is_dir():
         paths += files_under(root / 'dist')
     return paths

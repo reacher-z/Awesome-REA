@@ -126,9 +126,10 @@ class PaperFileTest(unittest.TestCase):
                                     (ROOT / 'README.md').read_text(encoding='utf-8'))[1].replace(',', ''))
         with TemporaryDirectory() as temporary:
             root = Path(temporary)
-            for directory in ('data', 'docs', 'site'):
+            for directory in ('data', 'docs', 'docs/cases', 'site'):
                 (root / directory).mkdir()
-            for name in ('data/papers.json', 'site/translations.zh-CN.json', *READMES.values(), *PAPER_FILES.values(), *CASE_FILES.values()):
+            for name in ('data/papers.json', 'site/translations.zh-CN.json', *READMES.values(), *PAPER_FILES.values(), *CASE_FILES.values(),
+                         *(str(path.relative_to(ROOT)) for path in (ROOT / 'docs/cases').glob('*.md'))):
                 shutil.copyfile(ROOT / name, root / name)
 
             def run(*arguments):

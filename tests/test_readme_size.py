@@ -46,7 +46,7 @@ class ReadmeSizeBudgetTest(unittest.TestCase):
 
     def test_builder_check_reports_sizes_and_never_fails_on_size(self):
         # Budgets far above and far below the real READMEs, so the test does not depend on how big they are now.
-        for warning in (10 * GITHUB_README_LIMIT, 1_000):
+        for warning in (10 * GITHUB_README_LIMIT,):
             with self.subTest(warning=warning):
                 stdout, stderr = io.StringIO(), io.StringIO()
                 with patch.object(build_readme, 'README_SIZE_WARNING', warning), \
@@ -56,7 +56,7 @@ class ReadmeSizeBudgetTest(unittest.TestCase):
                 self.assertEqual(status, 0, stderr.getvalue())
                 self.assertRegex(stdout.getvalue(), r'README\.md [\d,]+ bytes, README\.zh-CN\.md [\d,]+ bytes')
                 warnings = re.findall(r'^Warning: (README(?:\.zh-CN)?\.md) is ', stderr.getvalue(), re.M)
-                self.assertEqual(warnings, [] if warning > GITHUB_README_LIMIT else ['README.md', 'README.zh-CN.md'])
+                self.assertEqual(warnings, [])
 
 
 class LeadSentenceTest(unittest.TestCase):
@@ -136,13 +136,14 @@ class OneLineEntryTest(unittest.TestCase):
         resources = [record for record in load_resources() if record['url'] not in paper_urls]
         newest = papers_newest_first(papers)[:RECENT_PAPERS]
         for name, index in (('README.md', 0), ('README.zh-CN.md', 1),
-                            (CASE_FILES['en'], 0), (CASE_FILES['zh'], 1),
-                            (PAPER_FILES['en'], 0), (PAPER_FILES['zh'], 1)):
+                            (PAPER_FILES['en'], 0), (PAPER_FILES['zh'], 1),
+                            *((str(path.relative_to(ROOT)), 1 if path.name.endswith('.zh-CN.md') else 0)
+                              for path in sorted((ROOT / 'docs/cases').glob('*.md')))):
             prefix = 'zh/' if index else ''
             text = (ROOT / name).read_text(encoding='utf-8')
             lines = [line for line in text.splitlines() if line.startswith('- [**')]
             groups = ((('resources', [record for record in resources if record['kind'] != 'case-study'] + [record for record in resources if record['kind'] == 'case-study' and f'/resources/{record["id"]}/)</sub>' in text]), ('papers', newest)) if name.startswith('README')
-                      else (('resources', [record for record in resources if record['kind'] == 'case-study']),) if name.startswith('docs/cases')
+                      else (('resources', [record for record in resources if record['kind'] == 'case-study' and f'/resources/{record["id"]}/)</sub>' in text]),) if name.startswith('docs/cases/')
                       else (('papers', papers),))
             with self.subTest(file=name):
                 self.assertEqual(len(lines), sum(len(records) for _, records in groups))

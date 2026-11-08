@@ -118,21 +118,18 @@ class ReadmeCaseMethodTests(unittest.TestCase):
                  if record['kind'] == 'case-study' and collection_section(record) == 'game']
         self.assertTrue(cases)
         listed = {}
-        for name, language in (('docs/cases.md', 'en'), ('docs/cases.zh-CN.md', 'zh')):
-            with self.subTest(file=name):
-                text = (ROOT / name).read_text(encoding='utf-8')
-                game = text.split('<a id="game"></a>', 1)[1].split('<a id="app"></a>', 1)[0]
-                groups = re.split(r'\n<a id="game-([a-z-]+)"></a>\n### ', game)[1:]
-                order = []
-                for method, block in zip(groups[::2], groups[1::2]):
-                    heading, _, body = block.partition('\n')
-                    ids = re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', body, re.MULTILINE)
-                    self.assertEqual(heading, f'{METHOD_HEADINGS[method][language == "zh"]} ({len(ids)})')
-                    expected = sorted((record for record in cases if case_method(record) == method), key=case_order)
-                    self.assertEqual(ids, [record['id'] for record in expected])
-                    order += ids
-                self.assertEqual(sorted(order), sorted(record['id'] for record in cases))
-                listed[language] = order
+        for language in ('en', 'zh'):
+            suffix = '.zh-CN.md' if language == 'zh' else '.md'
+            paths = sorted(path for path in (ROOT / 'docs/cases').glob('game*.md')
+                           if path.name.endswith(suffix) and (language == 'zh' or not path.name.endswith('.zh-CN.md')))
+            text = '\n'.join(path.read_text(encoding='utf-8') for path in paths)
+            order = re.findall(r'^- .*resources/([a-z0-9-]+)/\)</sub>$', text, re.MULTILINE)
+            expected = [record['id'] for method, block in __import__('build_readme').method_groups(cases)
+                        for record in block]
+            self.assertEqual(order, expected)
+            for method, block in __import__('build_readme').method_groups(cases):
+                self.assertIn(f'<a id="game-{method}"></a>', text)
+            listed[language] = order
         self.assertEqual(listed['en'], listed['zh'])
 
     def test_a_stale_order_or_count_is_rewritten(self):

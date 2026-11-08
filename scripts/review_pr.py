@@ -44,6 +44,7 @@ DISCOVERY_CLASSES = 'data/discovery-classes.json'
 REVIEW_FILES = frozenset((*CURATED_INPUTS, 'data/benchmarks.json', 'data/papers.json',
                           *SOURCE_INPUTS, CASE_COVERAGE, *SUPPLEMENT_INPUTS, EVIDENCE_WITHDRAWALS, DISCOVERY_REVIEWS,
                           DISCOVERY_CLASSES))
+CASE_PAGE = re.compile(r'docs/cases/[a-z0-9-]+(?:\.zh-CN)?\.md')
 # Automated discovery batches are added one file per scan run and reviewed as data by trusted base code.
 DISCOVERY_BATCH = re.compile(r'data/discoveries/run-[1-9][0-9]{0,19}-[1-9][0-9]{0,2}\.json')
 # Followed-source lead batches: one file per lead-discovery run, in a directory per collection month.
@@ -787,6 +788,8 @@ def main():
         errors.append('This PR exceeds the 300-file automatic review limit; split it for a complete review.')
     for entry in files:
         path = entry['filename']
+        if path.startswith('docs/cases/') and not CASE_PAGE.fullmatch(path):
+            errors.append(f'{path}: generated case pages belong in docs/cases/ as Markdown files.')
         # Removing such a file is a cleanup, not a new commit of it.
         rule = path_rule(path) if entry['status'] != 'removed' else None
         if rule:
