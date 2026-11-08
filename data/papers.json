@@ -92,6 +92,7 @@
     ],
     "metadata_notes": "The published ACL record and PDF use 'Zhang Bolun'; the arXiv record uses 'Bolun Zhang'. The paper's Jennieett/DecompileBench link now redirects to vul337/DecompileBench. This is distinct from Tan et al.'s Decompile-Bench (arXiv:2505.12668).",
     "kind": "research",
+    "class": "software",
     "verified_at": "2026-10-16",
     "added_at": "2026-10-16",
     "verification": "source-reviewed",
@@ -522,6 +523,7 @@
     ],
     "metadata_notes": "Use the final NAACL 2025 title and six-author list. arXiv v1 (2024-03-05) and the project page’s BibTeX use the earlier title “Design2Code: How Far Are We From Automating Front-End Engineering?” and list five authors without Ryan Li; v2 and the reviewed v3 match the final title and authors. SALT-NLP/Design2Code hosts the project website, whereas NoviScl/Design2Code is the verified research-code repository.",
     "kind": "research",
+    "class": "website",
     "verified_at": "2026-10-17",
     "added_at": "2026-10-16",
     "verification": "source-reviewed",
@@ -532,6 +534,7 @@
   },
   {
     "kind": "research",
+    "class": "website",
     "verified_at": "2026-10-16",
     "added_at": "2026-10-16",
     "verification": "source-reviewed",
@@ -588,6 +591,7 @@
   },
   {
     "kind": "research",
+    "class": "website",
     "verified_at": "2026-10-16",
     "added_at": "2026-10-16",
     "verification": "source-reviewed",
@@ -655,6 +659,7 @@
   },
   {
     "kind": "research",
+    "class": "website",
     "verified_at": "2026-10-16",
     "added_at": "2026-10-16",
     "verification": "source-reviewed",
@@ -798,6 +803,7 @@
     "metadata_notes": "The official project page marks the work as under review. arXiv reports the v1 submission on 2026-09-15 and displays its arXiv DOI as pending registration. The project link is a showcase with demos, not a verified release of the full evaluation framework.",
     "metadata_notes_zh": "官方项目页将该工作标注为审稿中。arXiv 记载 v1 于 2026-09-15 提交，并将其 arXiv DOI 标注为待注册。项目链接为含演示的展示页，不代表已核实发布完整评测框架。",
     "kind": "research",
+    "class": "game",
     "verified_at": "2026-10-16",
     "added_at": "2026-10-16",
     "verification": "source-reviewed",
@@ -1136,6 +1142,7 @@
   },
   {
     "kind": "research",
+    "class": "software",
     "verified_at": "2026-10-16",
     "added_at": "2026-10-17",
     "verification": "source-reviewed",
@@ -1201,6 +1208,7 @@
   },
   {
     "kind": "research",
+    "class": "software",
     "verified_at": "2026-10-16",
     "added_at": "2026-10-17",
     "verification": "source-reviewed",
@@ -1485,6 +1493,7 @@
   },
   {
     "kind": "research",
+    "class": "website",
     "verified_at": "2026-10-17",
     "added_at": "2026-10-17",
     "verification": "source-reviewed",
@@ -1839,6 +1848,7 @@
     "metadata_notes": "Use v2’s 95 applications and 600 screenshots, not v1’s 45/327 counts. The arXiv DOI is registered. Public code is MIT; the dataset and reference annotations are CC BY 4.0, with upstream code and third-party asset rights separate. The documented pipeline needs Python 3.10+, Node/npm, pnpm, Chromium, Tesseract and model access; Auto IIS additionally needs an authenticated Codex CLI.",
     "metadata_notes_zh": "采用 v2 的 95 个应用与 600 张截图，不混用 v1 的 45/327 数量。arXiv DOI 已注册。公开代码采用 MIT，数据集和参考标注采用 CC BY 4.0；上游代码及第三方资产权利另行处理。文档所述流水线需要 Python 3.10+、Node/npm、pnpm、Chromium、Tesseract 和模型访问权限；Auto IIS 还需要已登录的 Codex CLI。",
     "kind": "research",
+    "class": "website",
     "verified_at": "2026-10-17",
     "added_at": "2026-10-17",
     "verification": "source-reviewed",
@@ -2074,6 +2084,7 @@
     "metadata_notes": "The official EMNLP 2026 detailed program lists paper 7281-MAIN as a poster on 2026-10-26; this records acceptance, not proceedings publication. The arXiv v2 comment 'ScreenCoder-v2' is a version label, not a venue, and an earlier ICLR 2026 submission was withdrawn. The abstract-linked repository is Apache-2.0 at the pinned commit and bundles UIED, LLaMA-Factory and VLM-R1 code with their own license files. ScreenBench is published on Hugging Face under Apache-2.0.",
     "metadata_notes_zh": "EMNLP 2026 官方详细日程将论文 7281-MAIN 列为 2026-10-26 的海报报告；本条记录接收状态，不视为论文集已出版。arXiv v2 备注“ScreenCoder-v2”是版本标签而非会议名称；此前提交 ICLR 2026 的版本已撤回。摘要所链接的仓库在固定提交中采用 Apache-2.0 许可，并内含带有各自许可证文件的 UIED、LLaMA-Factory 与 VLM-R1 代码。ScreenBench 以 Apache-2.0 许可发布于 Hugging Face。",
     "kind": "research",
+    "class": "website",
     "verified_at": "2026-10-17",
     "added_at": "2026-10-17",
     "verification": "source-reviewed",
@@ -3016,6 +3027,7 @@
       "https://gjyin.github.io/"
     ],
     "kind": "research",
+    "class": "apps",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -4350,6 +4362,7 @@
       "https://github.com/CGCL-codes/naturalcc/blob/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/LICENSE"
     ],
     "kind": "research",
+    "class": "website",
     "verified_at": "2026-10-18",
     "added_at": "2026-10-19",
     "verification": "source-reviewed",
@@ -6238,6 +6251,7 @@
       "https://api.datacite.org/dois/10.48550/arxiv.2609.33678"
     ],
     "kind": "research",
+    "class": "game",
     "verified_at": "2026-10-20",
     "added_at": "2026-10-20",
     "verification": "source-reviewed",
@@ -6291,6 +6305,7 @@
       "https://github.com/epoch-research/MirrorCode/blob/5c9d7b00b0c6d7609003e33896cd41d28f092fcb/LICENSE"
     ],
     "kind": "research",
+    "class": "software",
     "verified_at": "2026-10-20",
     "added_at": "2026-10-20",
     "verification": "source-reviewed",
@@ -7436,6 +7451,7 @@
       "https://api.datacite.org/dois/10.48550/arxiv.2609.32413"
     ],
     "kind": "research",
+    "class": "website",
     "verified_at": "2026-10-20",
     "added_at": "2026-10-20",
     "verification": "source-reviewed",
@@ -9572,6 +9588,7 @@
       "https://huggingface.co/datasets/xcodemind/CC-HARD/blob/f9339b3d2098fd856bef000d9ce6234032176f7b/README.md"
     ],
     "kind": "research",
+    "class": "website",
     "verified_at": "2026-10-20",
     "added_at": "2026-11-02",
     "verification": "source-reviewed",
@@ -9909,6 +9926,7 @@
       "https://arxiv.org/pdf/2605.29059v1"
     ],
     "kind": "research",
+    "class": "software",
     "verified_at": "2026-10-20",
     "added_at": "2026-11-02",
     "verification": "source-reviewed",
@@ -10735,6 +10753,7 @@
       "https://huggingface.co/datasets/SALT-NLP/Sketch2Code/blob/ce28bf4e62f9242cde5c5beaa8775efccfa8502b/README.md"
     ],
     "kind": "research",
+    "class": "website",
     "verified_at": "2026-10-27",
     "added_at": "2026-11-03",
     "verification": "source-reviewed",
