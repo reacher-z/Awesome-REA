@@ -140636,5 +140636,28 @@
     "additional_evidence_urls": [
       "https://github.com/synamaxmusic/bar-decomp/blob/bd312023654ed73596026fee93128f1939cc3a17/LICENSE"
     ]
+  },
+  {
+    "id": "army-of-two-recomp",
+    "name": "Army of Two recompilation",
+    "url": "https://github.com/OpenPortroid/ArmyOfTwoRecompilation",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "static-recompilation",
+    "class": "game",
+    "description_en": "This statically recompiles the European Xbox 360 release of Army of Two into a Windows x64 executable with ReXGlue and a Direct3D 12 renderer. ArmyOfTwoLauncher.exe takes an ISO or default.xex plus the Title Update 2 package TU_12K222C_0000004000000.00000000000G1. DLC is optional. The reviewed page says the campaign can be finished solo or in online co-op, tested on a GeForce RTX 2060 and an RTX 4060. A source build uses Visual Studio 2022, Clang, CMake, and Ninja, then rexglue codegen and build.cmd. CPUs without AVX2 use the AVX1 package.",
+    "description_zh": "该项目用 ReXGlue 把 Xbox 360 欧版《战地双雄》静态重编译成 Windows x64 可执行文件，并用 Direct3D 12 渲染。ArmyOfTwoLauncher.exe 接受 ISO 或 default.xex，加上 Title Update 2 包 TU_12K222C_0000004000000.00000000000G1。DLC 可选。审阅页面写明战役可以单人或在线合作通关，测试机是 GeForce RTX 2060 和 RTX 4060。源码构建使用 Visual Studio 2022、Clang、CMake 和 Ninja，然后 rexglue codegen 和 build.cmd。没有 AVX2 的 CPU 使用 AVX1 包。",
+    "requirements": [
+      "Windows 10 or 11 x64, a Direct3D 12 GPU, and a CPU with AVX2 or the AVX1 package. The European Xbox 360 disc and Title Update 2. About 6 GB free, plus 1.3 GB if DLC is installed.",
+      "The reviewed README does not name a license."
+    ],
+    "evidence_url": "https://github.com/OpenPortroid/ArmyOfTwoRecompilation/blob/3934acbe07eca3d0fcd9e23be929fe18718089aa/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]
