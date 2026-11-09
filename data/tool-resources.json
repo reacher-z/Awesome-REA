@@ -143849,5 +143849,28 @@
     "verified_at": "2026-11-07",
     "verification": "source-reviewed",
     "added_at": "2026-11-09"
+  },
+  {
+    "id": "cse2",
+    "name": "CSE2",
+    "url": "https://github.com/gameblabla/CSE2",
+    "category": "reconstruction-cases",
+    "kind": "case-study",
+    "relationship": "independent-reconstruction",
+    "targets": [
+      "game"
+    ],
+    "reconstruction_method": "decompilation",
+    "class": "game",
+    "description_en": "CSE2 decompiles Cave Story. The reviewed portable branch moves the engine off WinAPI and DirectX. cmake -B build -DCMAKE_BUILD_TYPE=Release configures a desktop build. The page lists Windows, Linux, macOS, Wii U, 3DS, and RISC OS. SDL2, GLFW3, and FreeType are optional backends and are built locally when they are missing. The Wii U port expects its data folder on the SD card as CSE2-portable-en or CSE2-portable-jp.",
+    "description_zh": "CSE2 反编译《洞窟物语》。审阅的 portable 分支把引擎从 WinAPI 和 DirectX 移开。cmake -B build -DCMAKE_BUILD_TYPE=Release 配置桌面构建。页面列出 Windows、Linux、macOS、Wii U、3DS 和 RISC OS。SDL2、GLFW3 和 FreeType 是可选后端，找不到时会在本地构建。Wii U 移植期望数据文件夹在 SD 卡上，名为 CSE2-portable-en 或 CSE2-portable-jp。",
+    "requirements": [
+      "CMake. A data folder for the console ports.",
+      "License: MIT for modifications and custom code, in LICENCE.txt. The decompiled game code belongs to Daisuke Amaya."
+    ],
+    "evidence_url": "https://github.com/gameblabla/CSE2/blob/f957b05ad29dd19e30c53c99fb312f444d769149/README.md",
+    "verified_at": "2026-11-07",
+    "added_at": "2026-11-07",
+    "verification": "source-reviewed"
   }
 ]

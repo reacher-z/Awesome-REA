@@ -40712,5 +40712,12 @@
       "把 yuka.exe 放进游戏目录并运行 yuka help。",
       "README 未注明许可证。"
     ]
+  },
+  "cse2": {
+    "name": "CSE2",
+    "requirements": [
+      "需要 CMake。主机移植需要数据文件夹。",
+      "许可证：修改和自定义代码为 MIT，见 LICENCE.txt。反编译出的游戏代码属于 Daisuke Amaya。"
+    ]
   }
 }

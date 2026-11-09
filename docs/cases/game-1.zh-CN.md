@@ -611,6 +611,7 @@
 - [**Crash Tag Team Racing：GameCube 游戏反编译**](https://github.com/bluisblu/cttr) - Crash Tag Team Racing 是进行中的 GameCube 游戏反编译项目，提供 C/C++ 源码、符号表及美版和日版构建配置。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crash-tag-team-racing-decomp-case/)</sub>
 - [**Crash Twinsanity：PAL 版 PS2 可执行文件的 C++ 重建**](https://github.com/Smartkin/twinsanity-reversed) - Crash Twinsanity 以 C++ 重建《Crash Twinsanity》PAL 版 PS2 可执行文件，通过平台层调用硬件功能，并从用户的原版可执行文件提取所需数据。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crash-twinsanity-decomp-case/)</sub>
 - [**Crazy Taxi decomp：从 C 代码重建欧洲版 Dreamcast 游戏**](https://github.com/consolesplayingconsoles/crazy-taxi-decomp) - Crazy Taxi decomp 使用从用户光盘生成的逐函数 SH-4 汇编和恢复的 C 代码，重建欧洲版 Dreamcast 游戏可执行文件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/crazy-taxi-decomp-case/)</sub>
+- [**CSE2**](https://github.com/gameblabla/CSE2) - CSE2 反编译《洞窟物语》。审阅的 portable 分支把引擎从 WinAPI 和 DirectX 移开。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cse2/)</sub>
 - [**Dance Central 3：反编译 Xbox 360 游戏**](https://github.com/rjkiv/dc3-decomp) - 该仓库反编译 Xbox 360 游戏 Dance Central 3，构建日期是 2012 年 9 月 16 日。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dc3-decomp/)</sub>
 - [**Dark Rift：游戏反编译与战斗状态分析**](https://github.com/Unnunu/darkrift) - Dark Rift 是游戏反编译项目，包含玩法、音频、模型及系统模块的重建源码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dark-rift-case/)</sub>
 - [**Decompiling Sonic 1：将 68K 反汇编译为 C++**](https://github.com/JarrettBillingsley/DecompilingSonic1) - Decompiling Sonic 1 将《索尼克 1》的 68K 汇编反汇编整理为 C++11，以研究游戏行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/decompiling-sonic-1-case/)</sub>
@@ -632,5 +633,4 @@
 - [**dynamitedan：《Dynamite Dan》反汇编与注释**](https://github.com/Ritchie333/dynamitedan) - dynamitedan 收录了 1985 年电脑游戏《Dynamite Dan》的带注释反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dynamitedan-case/)</sub>
 - [**Eltale Monsters：基于 ROM 的反编译项目**](https://github.com/Mallos31/EM) - 该项目利用用户提供的《Eltale Monsters》原版 ROM 进行反编译。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/eltale-monsters-decomp-case/)</sub>
 - [**Everyone's A Wally：ZX Spectrum 游戏反汇编**](https://github.com/Ritchie333/wally) - wally 是 ZX Spectrum 游戏《Everyone's A Wally》的反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/everyones-a-wally-disassembly-case/)</sub>
-- [**Extreme-G 2：N64 功能性反编译**](https://github.com/Teraunce/xg-2-decomp) - 使用 IDO 7.1 将 N64 游戏《Extreme-G 2》重建为 C 和汇编代码，目标是功能等效，而非使 C 代码的构建结果逐字节一致。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/extreme-g-2-n64-decomp-case/)</sub>
 <!-- END GENERATED CASES -->
