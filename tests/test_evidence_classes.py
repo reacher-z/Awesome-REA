@@ -7,7 +7,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 
-from classify_evidence_classes import github_api_fetch, is_demo_image  # noqa: E402
+import classify_evidence_classes  # noqa: E402
+from classify_evidence_classes import github_api_fetch, gitlab_api_fetch, is_demo_image  # noqa: E402
 SCOPES = ('full', 'partial', 'analysis', 'unknown', 'notes')
 
 
@@ -89,6 +90,83 @@ class EvidenceClassDataTests(unittest.TestCase):
         self.assertFalse(is_demo_image('https://private-user-images.githubusercontent.com/1/a.png', 'demo'))
         self.assertFalse(is_demo_image('https://user-images.githubusercontent.com/1/a.png?jwt=secret', 'demo'))
         self.assertTrue(is_demo_image('https://user-images.githubusercontent.com/1/a.png', 'demo'))
+
+
+class GitLabReadmeTests(unittest.TestCase):
+    def test_extensionless_readme_is_read(self):
+        readme = 'Disassembly notes. ' * 40
+        responses = {
+            '/projects/group%2Fgame': {'default_branch': 'main'},
+            '/projects/group%2Fgame/releases': [],
+            '/projects/group%2Fgame/repository/tree?per_page=100&ref=main': [
+                {'name': 'README', 'type': 'tree'}, {'name': 'README', 'type': 'blob'}, {'name': 'src', 'type': 'tree'}],
+        }
+
+        class Client:
+            def get(self, url, timeout=30, page=False):
+                path = url.split('/api/v4', 1)[1]
+                if path == '/projects/group%2Fgame/repository/files/README/raw?ref=main':
+                    return 200, readme.encode(), {}
+                if path in responses:
+                    return 200, json.dumps(responses[path]).encode(), {}
+                return 404, b'', {}
+
+        original = classify_evidence_classes.cached, classify_evidence_classes.store_cache
+        classify_evidence_classes.cached = lambda key: None
+        classify_evidence_classes.store_cache = lambda key, payload: None
+        try:
+            meta = gitlab_api_fetch(Client(), 'group/game')
+        finally:
+            classify_evidence_classes.cached, classify_evidence_classes.store_cache = original
+        self.assertEqual(meta['readme_bytes'], len(readme.encode()))
+
+    def test_readme_url_names_the_file(self):
+        readme = 'Decompilation notes. ' * 40
+
+        class Client:
+            def get(self, url, timeout=30, page=False):
+                path = url.split('/api/v4', 1)[1]
+                if path == '/projects/group%2Fgame':
+                    return 200, json.dumps({'default_branch': 'master',
+                                            'readme_url': 'https://gitlab.com/group/game/-/blob/master/readme.md'}).encode(), {}
+                if path == '/projects/group%2Fgame/releases':
+                    return 200, b'[]', {}
+                if path == '/projects/group%2Fgame/repository/files/readme.md/raw?ref=master':
+                    return 200, readme.encode(), {}
+                return 404, b'', {}
+
+        original = classify_evidence_classes.cached, classify_evidence_classes.store_cache
+        classify_evidence_classes.cached = lambda key: None
+        classify_evidence_classes.store_cache = lambda key, payload: None
+        try:
+            meta = gitlab_api_fetch(Client(), 'group/game')
+        finally:
+            classify_evidence_classes.cached, classify_evidence_classes.store_cache = original
+        self.assertEqual(meta['readme_bytes'], len(readme.encode()))
+
+
+class GitLabThrottleTests(unittest.TestCase):
+    def test_throttled_readme_is_not_recorded_as_missing(self):
+        stored = []
+
+        class Client:
+            def get(self, url, timeout=30, page=False):
+                path = url.split('/api/v4', 1)[1]
+                if path == '/projects/group%2Fgame':
+                    return 200, json.dumps({'default_branch': 'main'}).encode(), {}
+                if path == '/projects/group%2Fgame/releases':
+                    return 200, b'[]', {}
+                return 429, b'', {}
+
+        original = classify_evidence_classes.cached, classify_evidence_classes.store_cache
+        classify_evidence_classes.cached = lambda key: None
+        classify_evidence_classes.store_cache = lambda key, payload: stored.append(key)
+        try:
+            meta = gitlab_api_fetch(Client(), 'group/game')
+        finally:
+            classify_evidence_classes.cached, classify_evidence_classes.store_cache = original
+        self.assertTrue(meta['unavailable'])
+        self.assertEqual(stored, [])
 
 
 class _FakeClient:

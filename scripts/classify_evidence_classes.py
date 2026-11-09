@@ -376,7 +376,7 @@ def github_api_fetch(client: HttpClient, slug: str) -> dict:
 
 def gitlab_api_fetch(client: HttpClient, path: str) -> dict:
     """The GitLab v4 API mirror of github_api_fetch, for the few GitLab entries."""
-    cached_payload = cached("gl:v2:" + path)
+    cached_payload = cached("gl:v3:" + path)
     if cached_payload:
         return cached_payload
     encoded = urllib.parse.quote(path, safe="")
@@ -388,21 +388,32 @@ def gitlab_api_fetch(client: HttpClient, path: str) -> dict:
     branch = project.get("default_branch") or "master"
     release_status, release_body, _ = client.get(api + "/releases")
     releases = json.loads(release_body.decode("utf-8", "replace")) if release_status == 200 else []
+    complete = release_status in (200, 404)
     readme_text = ""
+    # The project's readme_url names the file GitLab renders (any case or extension); README.md is the fallback.
+    marker = f"/-/blob/{branch}/"
+    readme_path = (project.get("readme_url") or "").partition(marker)[2] or "README.md"
     readme_status, readme_body, _ = client.get(
-        api + f"/repository/files/{urllib.parse.quote('README.md', safe='')}/raw?ref=" + urllib.parse.quote(branch, safe=""))
+        api + f"/repository/files/{urllib.parse.quote(readme_path, safe='')}/raw?ref=" + urllib.parse.quote(branch, safe=""))
     if readme_status == 200:
         readme_text = readme_body.decode("utf-8", "replace")
     else:
-        tree_status, tree_body, _ = client.get(api + f"/repository/tree?ref={urllib.parse.quote(branch, safe='')}")
+        complete = complete and readme_status == 404
+        tree_status, tree_body, _ = client.get(api + f"/repository/tree?per_page=100&ref={urllib.parse.quote(branch, safe='')}")
+        complete = complete and tree_status in (200, 404)
         for entry in json.loads(tree_body.decode("utf-8", "replace")) if tree_status == 200 else []:
-            if entry.get("name", "").upper().startswith("README."):
+            name = entry.get("name", "").upper()
+            if entry.get("type", "blob") == "blob" and (name == "README" or name.startswith("README.")):
                 raw_status, raw_body, _ = client.get(
                     api + "/repository/files/" + urllib.parse.quote(entry["name"], safe="")
                     + "/raw?ref=" + urllib.parse.quote(branch, safe=""))
                 if raw_status == 200:
                     readme_text = raw_body.decode("utf-8", "replace")
+                complete = complete and raw_status in (200, 404)
                 break
+    if not complete:
+        # A throttled subrequest must not record half a project as real data (see github_api_fetch).
+        return {"unavailable": True, "fetched_at": now_utc()}
     asset_count = sum(len((release.get("assets") or {}).get("links") or []) for release in releases)
     payload = {
         "unavailable": False,
@@ -413,7 +424,7 @@ def gitlab_api_fetch(client: HttpClient, path: str) -> dict:
         "readme_text": readme_text[:400_000],
         "fetched_at": now_utc(),
     }
-    store_cache("gl:v2:" + path, payload)
+    store_cache("gl:v3:" + path, payload)
     return payload
 
 

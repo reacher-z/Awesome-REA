@@ -20,6 +20,13 @@ class EvidencePreviewTests(unittest.TestCase):
                         for entry in json.loads((ROOT / 'data/evidence-classes.json').read_text(encoding='utf-8'))['entries']}
         self.targets = {entry_id for entry_id, level in self.classes.items() if level in (0, 1)}
 
+
+    def test_github_blob_image_becomes_a_pinned_raw_file(self):
+        base = 'https://raw.githubusercontent.com/DenSinH/DSHBA/' + 'b' * 40 + '/'
+        self.assertEqual(usable_image('https://github.com/DenSinH/DSHBA/blob/master/files/DSHBA_unlocked.png', base),
+                         'https://raw.githubusercontent.com/DenSinH/DSHBA/' + 'b' * 40 + '/files/DSHBA_unlocked.png')
+        self.assertEqual(usable_image('https://github.com/other/repo/blob/main/a.png?raw=true', base),
+                         'https://raw.githubusercontent.com/other/repo/main/a.png')
     def test_schema_and_counts_agree(self):
         self.assertEqual(self.document['schema_version'], 1)
         meta = self.document['meta']
