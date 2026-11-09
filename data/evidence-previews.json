@@ -490,7 +490,7 @@
     },
     {
       "id": "asm-dude2",
-      "image_url": "https://github.com/HJLebbink/asm-dude/blob/master/Images/AsmDude2-descriptions.png?raw=true",
+      "image_url": "https://raw.githubusercontent.com/HJLebbink/asm-dude/93b566916fa1d3cf306a945459f2ec0f6e7aa541/Images/AsmDude2-descriptions.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/HJLebbink/asm-dude",
@@ -1075,7 +1075,7 @@
     },
     {
       "id": "capa",
-      "image_url": "https://github.com/mandiant/capa/blob/master/doc/img/capa_web_explorer.png",
+      "image_url": "https://raw.githubusercontent.com/mandiant/capa/0735bf77c1534e58aab458c25c6f76578233eacc/doc/img/capa_web_explorer.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/mandiant/capa",
@@ -1210,7 +1210,7 @@
     },
     {
       "id": "cinnamon-gamemaker-runner-case",
-      "image_url": "https://github.com/Project-Sunshine-Native/cinnamon/blob/db8de335d5067d628d3bae1c90a705a57db3dbf9/resources/readme/screenshots/1000057247.jpg",
+      "image_url": "https://raw.githubusercontent.com/Project-Sunshine-Native/cinnamon/db8de335d5067d628d3bae1c90a705a57db3dbf9/resources/readme/screenshots/1000057247.jpg",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/Project-Sunshine-Native/cinnamon",
@@ -1273,7 +1273,7 @@
     },
     {
       "id": "classyshark",
-      "image_url": "https://github.com/borisf/classyshark-user-guide/blob/master/images/5%20ClassesDexData.png",
+      "image_url": "https://raw.githubusercontent.com/borisf/classyshark-user-guide/master/images/5%20ClassesDexData.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/google/android-classyshark",
@@ -1606,7 +1606,7 @@
     },
     {
       "id": "de4py",
-      "image_url": "https://github.com/Fadi002/de4py/blob/main/Pictures/de4py.jpg?raw=true",
+      "image_url": "https://raw.githubusercontent.com/Fadi002/de4py/0f66191b514e8c5a4de82aef7b01704385066629/Pictures/de4py.jpg",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/Fadi002/de4py",
@@ -1768,7 +1768,7 @@
     },
     {
       "id": "devilution-case",
-      "image_url": "https://github.com/diasurgical/scalpel/blob/master/screens/mod1.png",
+      "image_url": "https://raw.githubusercontent.com/diasurgical/scalpel/master/screens/mod1.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/diasurgical/devilution",
@@ -2290,7 +2290,7 @@
     },
     {
       "id": "emudbg",
-      "image_url": "https://github.com/mojtabafalleh/emudbg/blob/master/doc/Screenshot%202025-07-25%20184628.png",
+      "image_url": "https://raw.githubusercontent.com/mojtabafalleh/emudbg/4e095c3bf70894f8fe7610c0bdc9911866345c99/doc/Screenshot%202025-07-25%20184628.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/mojtabafalleh/emudbg",
@@ -2335,7 +2335,7 @@
     },
     {
       "id": "esp-dc1-power-strip-case",
-      "image_url": "https://github.com/qlwz/esp_dc1/blob/master/file/images/tab1.png",
+      "image_url": "https://raw.githubusercontent.com/qlwz/esp_dc1/eefd75a06523c791d9d881ff31f31ee4a93ac5ec/file/images/tab1.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/qlwz/esp_dc1",
@@ -2506,7 +2506,7 @@
     },
     {
       "id": "findcrypt-ghidra",
-      "image_url": "https://github.com/d3v1l401/FindCrypt-Ghidra/blob/master/Misc/demo.gif",
+      "image_url": "https://raw.githubusercontent.com/d3v1l401/FindCrypt-Ghidra/71660fddbe7300acb39e013ad6ad96cd001c0d99/Misc/demo.gif",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/d3v1l401/FindCrypt-Ghidra",
@@ -2848,7 +2848,7 @@
     },
     {
       "id": "gda-android-decompiler",
-      "image_url": "https://github.com/charles2gan/GDA-android-reversing-Tool/blob/master/GDA_PIC/mainpage.png",
+      "image_url": "https://raw.githubusercontent.com/charles2gan/GDA-android-reversing-Tool/20f8ce8d51b0dc032c08e009e28ea76995d71889/GDA_PIC/mainpage.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/charles2gan/GDA-android-reversing-Tool",
@@ -2947,7 +2947,7 @@
     },
     {
       "id": "ghidrassistmcp",
-      "image_url": "https://github.com/jtang613/GhidrAssistMCP/blob/master/res/Screenshot1.png",
+      "image_url": "https://raw.githubusercontent.com/jtang613/GhidrAssistMCP/master/res/Screenshot1.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/symgraph/GhidrAssistMCP",
@@ -3478,7 +3478,7 @@
     },
     {
       "id": "iblessing",
-      "image_url": "https://github.com/Soulghost/iblessing/blob/master/resource/images/objc_msgSend_xref_server.png?raw=true",
+      "image_url": "https://raw.githubusercontent.com/Soulghost/iblessing/master/resource/images/objc_msgSend_xref_server.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/Soulghost/iblessing",
@@ -3739,7 +3739,7 @@
     },
     {
       "id": "java-decompile-tool-gui",
-      "image_url": "https://github.com/MountCloud/JavaDecompileTool-GUI/blob/main/previeV1.1.png",
+      "image_url": "https://raw.githubusercontent.com/MountCloud/JavaDecompileTool-GUI/2be32aaa61e0e957a3330015c068e16bc0f6666d/previeV1.1.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/MountCloud/JavaDecompileTool-GUI",
@@ -4099,7 +4099,7 @@
     },
     {
       "id": "lief",
-      "image_url": "https://github.com/lief-project/LIEF/blob/main/.github/images/architecture.png",
+      "image_url": "https://raw.githubusercontent.com/lief-project/LIEF/a3c9ca3a36a3b1ad6d099c8e3318175c175918fb/.github/images/architecture.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/lief-project/LIEF",
@@ -4270,7 +4270,7 @@
     },
     {
       "id": "malimite",
-      "image_url": "https://github.com/LaurieWired/Malimite/blob/main/media/malimite_features_github.png",
+      "image_url": "https://raw.githubusercontent.com/LaurieWired/Malimite/f25b0a6267a2ae069cfac758362cd18b2072a276/media/malimite_features_github.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/LaurieWired/Malimite",
@@ -6456,7 +6456,7 @@
     },
     {
       "id": "pyeilik-case",
-      "image_url": "https://github.com/aklto/PyEilik/blob/main/cover.png?raw=true",
+      "image_url": "https://raw.githubusercontent.com/aklto/PyEilik/b1bf7ea6f29b939cddee66ffadd498ad32d02aa0/cover.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/aklto/PyEilik",
@@ -6978,7 +6978,7 @@
     },
     {
       "id": "reburn3-case",
-      "image_url": "https://github.com/reburndev/reburn3/blob/master/src/res/r3.png?raw=true",
+      "image_url": "https://raw.githubusercontent.com/reburndev/reburn3/4be1c36e09504d8d426f290eff7580c31796ca32/src/res/r3.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/reburndev/reburn3",
@@ -9183,7 +9183,7 @@
     },
     {
       "id": "vcmi-case",
-      "image_url": "https://github.com/vcmi/VCMI.eu/blob/master/static/img/screenshots/1.3.0/Castle%20Siege.jpg?raw=true",
+      "image_url": "https://raw.githubusercontent.com/vcmi/VCMI.eu/master/static/img/screenshots/1.3.0/Castle%20Siege.jpg",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/vcmi/vcmi",
@@ -9597,7 +9597,7 @@
     },
     {
       "id": "xapkdetector",
-      "image_url": "https://github.com/horsicq/XAPKDetector/blob/master/mascots/version.png",
+      "image_url": "https://raw.githubusercontent.com/horsicq/XAPKDetector/f7f8c91628e8db8c45458b9ddc8bd5945dd4fc89/mascots/version.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/horsicq/XAPKDetector",
@@ -9660,7 +9660,7 @@
     },
     {
       "id": "xpeviewer",
-      "image_url": "https://github.com/horsicq/XPEViewer/blob/master/mascots/xpeviewer.png",
+      "image_url": "https://raw.githubusercontent.com/horsicq/XPEViewer/ec4bc8fef1e1592f62ae344212b740cdab35f829/mascots/xpeviewer.png",
       "kind": "image",
       "basis": "readme-image",
       "source_url": "https://github.com/horsicq/XPEViewer",

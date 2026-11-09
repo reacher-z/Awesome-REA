@@ -69,6 +69,23 @@ def store_cache(key: str, payload: dict) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def raw_github_file(url: str, base: str) -> str:
+    """A github.com /blob/ link serves an HTML page; the image itself is on raw.githubusercontent.com.
+    A branch name in a link to the README's own repository is pinned to the README's revision."""
+    parts = urllib.parse.urlsplit(url)
+    segments = parts.path.split("/")
+    if (parts.hostname or "").lower() != "github.com" or len(segments) < 6 or segments[3] != "blob":
+        return url
+    owner, repo, ref, path = segments[1], segments[2], segments[4], "/".join(segments[5:])
+    base_parts = urllib.parse.urlsplit(base)
+    base_segments = base_parts.path.split("/")
+    if (base_parts.hostname == "raw.githubusercontent.com" and len(base_segments) > 3
+            and [base_segments[1].lower(), base_segments[2].lower()] == [owner.lower(), repo.lower()]
+            and not re.fullmatch(r"[0-9a-f]{40}", ref)):
+        ref = base_segments[3]
+    return f"https://raw.githubusercontent.com/{owner}/{repo}/{ref}/{path}"
+
+
 def usable_image(raw: str, base: str) -> str | None:
     """Resolve one markdown/HTML image reference to a thumbnail-able URL."""
     if not raw or raw.startswith(("data:", "blob:")):
@@ -79,6 +96,7 @@ def usable_image(raw: str, base: str) -> str | None:
         url = base.rstrip("/") + raw
     else:
         url = urllib.parse.urljoin(base, raw)
+    url = raw_github_file(url, base)
     parts = urllib.parse.urlsplit(url)
     if parts.scheme not in ("http", "https") or not parts.hostname:
         return None
