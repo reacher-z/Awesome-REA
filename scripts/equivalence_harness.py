@@ -33,8 +33,9 @@ NAMES = ('Page', 'VisibleBreadcrumb', 'FooterLinks', 'Stylesheets', 'DocumentTit
 
 def canonical(value):
     if isinstance(value, dict):
-        return {'dict': sorted([canonical(k), canonical(v)] for k, v in value.items())} if not all(isinstance(k, str) for k in value) \
-            else {k: canonical(value[k]) for k in sorted(value)}
+        if all(isinstance(k, str) for k in value):
+            return {k: canonical(value[k]) for k in sorted(value)}
+        return {'dict': sorted(([canonical(k), canonical(v)] for k, v in value.items()), key=repr)}
     if isinstance(value, (list, tuple)):
         return [canonical(item) for item in value]
     if isinstance(value, (set, frozenset)):
