@@ -6,7 +6,7 @@
 
 [English](firmware.md)
 
-**161 个案例**
+**165 个案例**
 
 - [**6502 Model：重建 65C02 芯片的逐周期行为**](https://github.com/EmulationOnline/model_6502) - 6502 Model 用 Rust 根据实体 65C02 芯片运行程序时采集的外部总线跟踪记录，重建其逐周期行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/6502-model-case/)</sub>
 - [**B3603：研究控制板行为并编写替代固件**](https://github.com/baruch/b3603) - B3603 研究降压模块的控制板，以编写 STM8 替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/b3603-case/)</sub>
@@ -21,13 +21,16 @@
 - [**Digimon V-Pet：1997 年固件的注释式反汇编**](https://github.com/willmcginnis/digimon-vpet-1997-disassembly) - Digimon V-Pet 研究 1997 年 Digital Monster 固件，以 Ver. 1 为主并对照 Ver. 2。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/digimon-vpet-1997-disassembly-case/)</sub>
 - [**Echo Show 相机：重建 LineageOS 相机支持**](https://github.com/jxlarrea/lineageos-echo-show-camera) - Echo Show 相机项目为 Echo Show 5 和 8 的 LineageOS 18.1 重建相机支持。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/echo-show-lineageos-camera-case/)</sub>
 - [**EchoPod：Snowsky Echo Mini 8 GB 替代固件**](https://github.com/BasilSkyWalk/echopod) - Snowsky（FiiO）Echo Mini 8 GB 播放器的替代固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/echopod-echo-mini-firmware-case/)</sub>
+- [**EP4CE6 Bitstream Reverse Engineering：映射 Cyclone IV 配置位**](https://github.com/14sea/Cyclone_CRAM_Mapper) - EP4CE6 Bitstream Reverse Engineering 研究 Cyclone IV EP4CE6F17C8 FPGA 的 .rbf 配置格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/cyclone-cram-mapper-case/)</sub>
 - [**F3DEX2：任天堂 64 RSP 微码的匹配反汇编**](https://github.com/Mr-Wiseguy/f3dex2) - F3DEX2 是任天堂 64 的 F3DEX2 和 F3DZEX2 RSP 微码家族的匹配反汇编。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/f3dex2-disasm/)</sub>
 - [**FPGABoy：基于 FPGA 的 Game Boy 硬件实现**](https://github.com/trun/fpgaboy) - FPGABoy 以 FPGA 设计重建 Nintendo Game Boy 硬件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/fpgaboy-game-boy-case/)</sub>
 - [**Game Boy DMG-CPU Schematics：重建 DMG-CPU B 芯片电路**](https://github.com/msinger/dmg-schematics) - Game Boy DMG-CPU Schematics 将 Game Boy 的 DMG-CPU B 芯片及 SM83 核心整理为 KiCad 电路图、Electric VLSI 布局和文本网表。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/dmg-schematics-case/)</sub>
+- [**GameCube IPL：研究并重建主机 BootROM**](https://github.com/ogamespec/gc-ipl) - GameCube IPL 研究美版零售主机的 BootROM，并开发替代 IPL 代码。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/gamecube-ipl-case/)</sub>
 - [**GLaBIOS：从零编写的 8K ROM BIOS**](https://github.com/640-KB/GLaBIOS) - 面向老式 PC、XT 和 8088 机器、从零编写的开源 ROM BIOS。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/glabios-rom-bios-case/)</sub>
 - [**hantek-dso：还原 Hantek DSO5000P 的 USB 控制**](https://github.com/kooscode/hantek-dso5000p-linux) - hantek-dso 在 Linux Python 客户端中还原 Hantek DSO5000P 示波器的 USB 控制，并提供图形界面、命令行和 API。 <sub>案例 · 混合工具流程 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/hantek-dso5000p-linux-case/)</sub>
 - [**HH41V：重建 GOTU/SUDH 更新流程**](https://github.com/devopnem/hh41v-fota) - HH41V 梳理 TCL/Alcatel 移动热点的 FOTA 更新流程，包括 AP 与调制解调器包结构，以及 GOTU/SUDH 请求。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/hh41v-fota-case/)</sub>
 - [**ILME-FX30：测绘服务命令与固件设置**](https://github.com/t2r05/fx30-senser-map) - ILME-FX30 Service Mode Research 测绘 FX30 固件 6.00 的 USB 服务会话与设置区。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/ilme-fx30-service-mode-case/)</sub>
+- [**LaiNES：NES 硬件逐周期模拟**](https://github.com/AndreaOrru/LaiNES) - LaiNES 通过逐周期模拟器重建 NES 主机行为。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/laines-nes-emulation-case/)</sub>
 - [**libElysianVMU：重建 Dreamcast Visual Memory Unit**](https://github.com/gyrovorbis/libevmu) - libElysianVMU 以 C17 模拟核心重建 Sega Dreamcast Visual Memory Unit，模拟 VMU 的 CPU、内存、屏幕、蜂鸣器和闪存文件系统，支持原版 BIOS，并处理 VMI、VMS、DCI、DCM 等格式。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/libelysianvmu-case/)</sub>
 - [**m-bootloader：重建 JieLi 合成器启动与闪存接口**](https://github.com/jvitkauskas/m-bootloader) - m-bootloader 重建 M-VAVE FM-1 和 SMK-37 Pro/Elite 所用 JieLi AC791N 的启动与闪存接口。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/m-bootloader-case/)</sub>
 - [**Macrosilicon Custom Firmware：重建 USB 视频芯片 EEPROM 固件**](https://github.com/kraln/macrosilicon_firmware) - Macrosilicon Custom Firmware 研究 MS2107、MS2109 和 MS9123 USB 视频芯片的 8051 掩膜 ROM 与 EEPROM 加载行为，并构建替代 EEPROM 镜像。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/macrosilicon-custom-firmware-case/)</sub>
@@ -45,6 +48,7 @@
 - [**Orbital：面向虚拟化的 PlayStation 4 硬件重建**](https://github.com/AlexAltea/orbital) - Orbital 以虚拟化方式重建 PlayStation 4 硬件，用于启动解密后的主机内核。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/orbital-ps4-reconstruction-case/)</sub>
 - [**orsala\_hack：重建 IKEA ORSALA 台灯控制逻辑**](https://github.com/j-zero/orsala_hack) - orsala\_hack 为 IKEA ORSALA 台灯编写 STM8 替代固件，并记录原有旋转编码器操作、MCU 与 LED 驱动连接。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/orsala-hack-case/)</sub>
 - [**osdbits：重建 PlayStation 2 OSDSYS 开机动画**](https://github.com/aap/osdbits) - osdbits 从零售版 PS2 启动 ROM 的 OSDSYS 镜像重建开机动画，生成独立的 Emotion Engine 程序。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/osdbits-case/)</sub>
+- [**Powar：模拟 Pokéwalker**](https://github.com/UnrealPowerz/powar) - Powar 使用用户自备的 ROM 与 EEPROM 镜像模拟 Pokéwalker。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/powar-pokewalker-case/)</sub>
 - [**Predator Sense for Linux：重建 PHN16-72 固件控制**](https://github.com/aishend/predator-sense) - Predator Sense for Linux 为 Predator Helios Neo 16 PHN16-72 重建 Acer PredatorSense 控制功能。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/predator-sense-phn16-72-linux-case/)</sub>
 - [**pw\_firm：Pokéwalker 固件反编译**](https://github.com/UnrealPowerz/pw_firm) - pw\_firm 为 Pokéwalker 的 Renesas H8 微控制器重建 C 固件，涵盖设备驱动、游戏逻辑、界面和红外通信。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/pw-firm-pokewalker-decomp-case/)</sub>
 - [**Quansheng UV-K5 Hardware Reverse Engineering Project：V1.4 对讲机电路板重建**](https://github.com/mentalDetector/Quansheng_UV-K5_PCB_R51-V1.4_PCB_Reversing_Rev._0.9) - Quansheng UV-K5 Hardware Reverse Engineering Project 将对讲机的 V1.4 电路板重建为 KiCad 原理图和板图。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/quansheng-uv-k5-hardware-case/)</sub>
