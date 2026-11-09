@@ -2,10 +2,11 @@
 """Steps of the unattended IndexNow run (.github/workflows/indexnow.yml).
 
 ``wait SHA DIST`` waits, bounded, until https://awesomerea.org serves the build in DIST: its public
-build-manifest.json must equal DIST/build-manifest.json byte for byte. The Cloudflare Pages check run on SHA
-tells a deployment still in progress from one that failed or that a newer commit replaced. It writes
-``state=live`` or ``state=superseded`` to $GITHUB_OUTPUT and exits 1 when the deployment failed, did not go
-live in time, or went live with bytes this build does not reproduce.
+source-commit.txt must name SHA and its build-manifest.json must equal DIST/build-manifest.json byte for byte.
+Both are read with a query no edge cache has seen, so the GitHub Pages origin answers. It writes ``state=live``,
+``state=superseded`` (the site serves another commit and SHA is no longer the head of main, so the newer
+commit's run notifies) or ``state=pending`` (SHA was not published in time; the scheduled run notifies it) to
+$GITHUB_OUTPUT. It exits 1 only when the site serves SHA with bytes this build does not reproduce.
 
 ``previous OUT`` downloads the receipt of the newest earlier successful run of the workflow on the default
 branch into OUT and writes that build's manifest digest as ``previous_sha256``. It writes an empty value when
@@ -24,6 +25,7 @@ import json
 import os
 from pathlib import Path
 import re
+import secrets
 import sys
 import time
 import zipfile
@@ -36,12 +38,12 @@ from submit_indexnow import ORIGIN, fetch_bytes  # noqa: E402
 WORKFLOW = 'indexnow.yml'
 RECEIPT_ARTIFACT = 'indexnow-receipt'
 RECEIPT_FILES = ('receipt.json', MANIFEST_NAME)
-CLOUDFLARE_APP = 'cloudflare-workers-and-pages'
-CLOUDFLARE_CHECK = 'Cloudflare Pages'
+SOURCE_COMMIT = 'source-commit.txt'
 POLL_SECONDS = 30
 WAIT_SECONDS = 25 * 60
-# Time for the edge to serve a deployment that Cloudflare Pages reports complete.
-PROPAGATION_SECONDS = 3 * 60
+# Time for GitHub Pages to serve every file of a deployment once it serves its source-commit.txt.
+PROPAGATION_SECONDS = 10 * 60
+MAX_COMMIT_BYTES = 256
 MAX_RECEIPT_ARCHIVE = 16 * 1024 * 1024
 MAX_MANIFEST_BYTES = 8_000_000
 
@@ -62,56 +64,48 @@ def api() -> ActionsAPI:
     return ActionsAPI(repository, token)
 
 
-def deployment_state(github, sha: str) -> str:
-    """'success', 'failure', 'replaced' or 'pending' from the newest Cloudflare Pages check run on ``sha``."""
-    runs = github.get(f'commits/{sha}/check-runs?check_name={CLOUDFLARE_CHECK.replace(" ", "%20")}&per_page=30')['check_runs']
-    runs = [run for run in runs if (run.get('app') or {}).get('slug') == CLOUDFLARE_APP]
-    if not runs:
-        return 'pending'
-    latest = max(runs, key=lambda run: run['id'])
-    if latest.get('status') != 'completed':
-        return 'pending'
-    conclusion = latest.get('conclusion')
-    if conclusion == 'success':
-        return 'success'
-    return 'replaced' if conclusion in ('cancelled', 'skipped', 'stale', 'neutral') else 'failure'
-
-
 def default_head(github) -> str:
     repository = github.get('')
     return github.get(f"branches/{repository['default_branch']}")['commit']['sha']
 
 
+def uncached(name: str) -> str:
+    """A URL of a public file with a query no edge cache has seen, so the origin serves it."""
+    return f'{ORIGIN}/{name}?indexnow={secrets.token_hex(8)}'
+
+
 def wait_for_deployment(sha: str, dist: Path, *, github=None, fetch=fetch_bytes, clock=time.monotonic,
                         sleep=time.sleep, wait_seconds=WAIT_SECONDS) -> str:
-    """Return 'live' or 'superseded'; raise when the deployment cannot be confirmed as this build."""
+    """Return 'live', 'superseded' or 'pending'; raise when the site serves SHA with other bytes."""
     if not re.fullmatch(r'[0-9a-f]{40}', sha):
         raise ValueError('Expected a full commit SHA')
     expected = (Path(dist) / MANIFEST_NAME).read_bytes()
     github = github or api()
-    deadline, deployed_since = clock() + wait_seconds, None
+    deadline, served_since = clock() + wait_seconds, None
     while True:
         try:
-            live = fetch(ORIGIN + '/' + MANIFEST_NAME, MAX_MANIFEST_BYTES)
+            served = fetch(uncached(SOURCE_COMMIT), MAX_COMMIT_BYTES).decode('ascii').strip()
         except Exception as error:  # A transient fetch failure is retried until the deadline.
-            print(f'Live manifest not readable yet: {type(error).__name__}', flush=True)
-            live = None
-        if live == expected:
-            return 'live'
-        state = deployment_state(github, sha)
-        if state == 'failure':
-            raise ValueError(f'Cloudflare Pages reports a failed deployment of {sha[:12]}')
-        if state in ('success', 'replaced'):
-            if default_head(github) != sha:
-                # A newer commit is or will be live; its own run notifies everything since the last receipt.
-                return 'superseded'
-            deployed_since = deployed_since if deployed_since is not None else clock()
-            if state == 'replaced' or clock() - deployed_since > PROPAGATION_SECONDS:
-                raise ValueError(f'awesomerea.org serves a different build than a fresh build of {sha[:12]}; '
+            print(f'Served commit not readable yet: {type(error).__name__}', flush=True)
+            served = None
+        if served == sha:
+            try:
+                live = fetch(uncached(MANIFEST_NAME), MAX_MANIFEST_BYTES)
+            except Exception as error:
+                print(f'Live manifest not readable yet: {type(error).__name__}', flush=True)
+                live = None
+            if live == expected:
+                return 'live'
+            served_since = served_since if served_since is not None else clock()
+            if clock() - served_since > PROPAGATION_SECONDS:
+                raise ValueError(f'awesomerea.org serves {sha[:12]} with a different build than a fresh build of it; '
                                  'the site build must be reproducible for IndexNow verification')
+        elif served is not None and default_head(github) != sha:
+            # The publication follows the head of main; that commit's own run notifies everything since the last receipt.
+            return 'superseded'
         if clock() > deadline:
-            raise ValueError(f'The deployment of {sha[:12]} did not go live within {wait_seconds // 60} minutes')
-        print(f'Waiting for the deployment of {sha[:12]} (Cloudflare Pages: {state})', flush=True)
+            return 'pending'
+        print(f'Waiting for awesomerea.org to serve {sha[:12]} (it serves {(served or "nothing readable")[:12]})', flush=True)
         sleep(POLL_SECONDS)
 
 
@@ -179,7 +173,11 @@ def main() -> int:
     args = parser.parse_args()
     try:
         if args.command == 'wait':
-            output('state', wait_for_deployment(args.sha, args.dist))
+            state = wait_for_deployment(args.sha, args.dist)
+            output('state', state)
+            if state == 'pending':
+                print(f'::warning::awesomerea.org did not serve {args.sha[:12]} within {WAIT_SECONDS // 60} minutes; '
+                      'the scheduled run notifies its pages once it is published.')
         else:
             output('previous_sha256', previous_receipt(args.directory, current_run=os.environ.get('GITHUB_RUN_ID')))
     except (ValueError, KeyError, OSError, zipfile.BadZipFile, json.JSONDecodeError) as error:
