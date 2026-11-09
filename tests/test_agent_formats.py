@@ -53,6 +53,14 @@ class TwinTests(unittest.TestCase):
         self.assertIn('The description was reviewed against primary sources.', text)
         self.assertNotIn('never published', text)
 
+    def test_unavailable_source_is_a_source_status_fact_in_both_languages(self):
+        self.assertNotIn('Source status', resource_markdown(RESOURCE, 'en', site_url=ORIGIN))
+        gone = {**RESOURCE, 'source_unavailable': {'checked_at': '2026-11-09T17:20:00Z', 'outcome': 'not-found', 'http_status': 404}}
+        self.assertIn('- Sources reviewed: 2026-10-15\n- Source status: Unavailable · HTTP 404 on 2026-11-09\n',
+                      resource_markdown(gone, 'en', site_url=ORIGIN))
+        self.assertIn('- 来源状态：无法访问 · 2026-11-09 返回 HTTP 404\n', resource_markdown(gone, 'zh', site_url=ORIGIN))
+        self.assertEqual(resource_record(gone, ORIGIN)['source_unavailable'], gone['source_unavailable'])
+
     def test_chinese_twin_and_section_links(self):
         siblings = {'section': 'native-binary', 'siblings': [{'id': 'radare2', 'name': 'radare2', 'name_zh': 'radare2', 'kind': 'tool'}]}
         related = [('paper', PAPER)]

@@ -67,6 +67,24 @@ class CuratedFieldTests(unittest.TestCase):
             for field in ('archived_at', 'mirror_urls')
         ])
 
+    def test_source_unavailable_records_a_checked_http_status(self):
+        check = {'checked_at': '2026-09-30T18:00:00Z', 'outcome': 'not-found', 'http_status': 404}
+        self.assertEqual(errors_for(deepcopy(RECORD) | {'source_unavailable': check}), [])
+        self.assertEqual(errors_for(deepcopy(RECORD) | {'source_unavailable': check | {'outcome': 'blocked', 'http_status': 451}}), [])
+        where = "resource 'field-fixture'.source_unavailable: "
+        for value, problem in (
+                ('gone', 'use an object with exactly checked_at, http_status, outcome'),
+                ({'checked_at': '2026-09-30T18:00:00Z', 'outcome': 'not-found'}, 'use an object with exactly checked_at, http_status, outcome'),
+                (check | {'outcome': 'archived'}, 'outcome must be one of not-found, blocked'),
+                (check | {'http_status': 403}, 'http_status must be 404 or 410 for outcome not-found'),
+                (check | {'http_status': '404'}, 'http_status must be 404 or 410 for outcome not-found'),
+                (check | {'checked_at': '2026-09-30'}, 'checked_at must be a timezone-aware ISO timestamp'),
+                (check | {'checked_at': '2026-10-03T00:00:00Z'}, 'checked_at is in the future'),
+                (check | {'checked_at': '2026-09-29T23:00:00Z'}, 'checked_at must not precede verified_at; the source was read at review')):
+            with self.subTest(value=value):
+                self.assertEqual(errors_for(deepcopy(RECORD) | {'source_unavailable': value}), [where + problem])
+        self.assertEqual(unknown_field_warnings([deepcopy(RECORD) | {'source_unavailable': check}]), [])
+
     def test_pull_request_review_applies_the_same_rule(self):
         self.assertIs(review_pr.validate_resources, validate_resources)
 

@@ -250,7 +250,12 @@ def schema_document(site_url: str) -> dict:
             'description_en': string, 'description_zh': string, 'requirements': strings, 'requirements_zh': strings,
             'requirement_facets': {'type': 'array', 'items': {'enum': list(FACETS)}}, 'reconstruction_method': string,
             'evidence_url': url, 'additional_evidence_urls': {'type': 'array', 'items': url},
-            'added_at': date, 'verified_at': day_or_time, 'verification': {'const': 'source-reviewed'}, **entry_urls},
+            'added_at': date, 'verified_at': day_or_time, 'verification': {'const': 'source-reviewed'},
+            'source_unavailable': {'type': 'object', 'additionalProperties': False,
+                                   'required': ['checked_at', 'outcome', 'http_status'],
+                                   'properties': {'checked_at': string, 'outcome': {'enum': ['not-found', 'blocked']},
+                                                  'http_status': {'enum': [404, 410, 451]}}},
+            **entry_urls},
     }
     paper = {
         'type': 'object', 'additionalProperties': False,
