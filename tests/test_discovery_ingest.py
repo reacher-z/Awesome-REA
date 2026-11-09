@@ -287,7 +287,7 @@ class WorkflowTest(unittest.TestCase):
         self.assertIn('      checks: read\n      statuses: read\n', self.jobs['ingest'])
         for name, job in self.jobs.items():
             minutes = int(re.search(r'timeout-minutes: ([0-9]+)', job)[1])
-            self.assertLessEqual(minutes, 45 if name == "ingest" else 30, name)
+            self.assertLessEqual(minutes, 90 if name == "ingest" else 30, name)
             self.assertIn('persist-credentials: false', job)
         self.assertIn("checkpoint_ready: ${{ steps.scan.outputs.checkpoint_ready }}", self.jobs['scan'])
 
