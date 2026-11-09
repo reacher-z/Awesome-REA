@@ -80,6 +80,7 @@ class EntryDiscoveryValidationTests(unittest.TestCase):
     def test_sitemap_inventory_is_derived_and_rejects_missing_extra_duplicate_pages(self):
         base = [ORIGIN + prefix + path for prefix in ('', '/zh')
                 for path in ('/', '/resources/', '/cases/', '/papers/', '/survey/', '/about/', '/contribute/', '/api/', '/browse/',
+                             *(f'/data/{key}/' for key in ('software', 'game', 'apps', 'website', 'hardware', 'science')),
                              *(f'/browse/{category}/' for category in CATEGORIES))]
         urls = base + self.detail_urls
         validate_route_inventory(urls, self.resources, self.papers)

@@ -9,7 +9,7 @@
 | `url` | Canonical public destination |
 | `category` | Task or tool family; `python3 scripts/catalog.py --list-categories` prints the values in use |
 | `kind` | Resource type: project, tool, integration, case-study, collection, documentation, learning-resource, or research |
-| `class` | Data records only: exactly one of `software`, `game`, `apps`, `website`, `science`, `hardware`, as defined below |
+| `class` | Data records only: exactly one of `software`, `game`, `apps`, `website`, `hardware`, `science`, as defined below |
 | `targets` | One or more browsing domains: `website`, `game`, `app`, `binary`, `firmware`, `protocol`; these describe task fit, not verified REA integration. `protocol` is the record's Protocol tag |
 | `relationship` | Connection to REA, or the independent role the evidence establishes; one of the values listed below |
 | `reconstruction_method` | Game case studies only, recommended: how the project reconstructs its game, one of the methods listed below |

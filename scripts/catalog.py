@@ -7,6 +7,7 @@ import re
 import unicodedata
 
 from artifact_links import with_curated_labels
+from data_classes import DATA_CLASSES
 from localization import localized_records, read_localizations
 from source_scope import apply_scope, read_scope
 from validate_papers import read_papers
@@ -34,6 +35,7 @@ def main():
     parser.add_argument('--category', help='Exact category; use --list-categories to see available values')
     parser.add_argument('--relationship', help='Exact relationship to REA')
     parser.add_argument('--target', choices=['website', 'game', 'app', 'binary', 'firmware', 'protocol'], help='Type of target to investigate')
+    parser.add_argument('--class', dest='data_class', choices=list(DATA_CLASSES), help='Data class: data points that reproduce this kind of thing')
     parser.add_argument('--language', choices=['en', 'zh'], default='en')
     parser.add_argument('--json', action='store_true', help='Print full records with provenance')
     mode = parser.add_mutually_exclusive_group()
@@ -59,6 +61,7 @@ def main():
                if all(term in normalize_search_text(json.dumps(record, ensure_ascii=False)) for term in terms)
                and (args.category is None or record['category'] == args.category)
                and (args.target is None or args.target in record.get('targets', []))
+               and (args.data_class is None or record.get('class') == args.data_class)
                and (args.relationship is None or record.get('relationship') == args.relationship)]
     if args.json:
         print(json.dumps(records, ensure_ascii=False, indent=2))

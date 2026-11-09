@@ -194,14 +194,14 @@
     r.nAlias = norm(`${r.alias} ${r.repo}`); r.aw = words(r.nAlias);
   }
   async function prep(raw) {
-    const res = await chunked(raw.r, ([idc, name, k, tg, c, label, feat, al, conn, cls, st, sec, rev, added]) => {
+    const res = await chunked(raw.r, ([idc, name, k, tg, c, label, feat, al, conn, cls, st, sec, rev, added, cl, paperEntry]) => {
       const targets = [...tg].map(Number);
       const base = label.split('/').pop();
       const id = typeof idc === 'string' ? idc : slug(base) + (idc === 1 ? '-case' : '');
       const alias = al === 1 ? base : al;
-      const tags = [raw.kindLabels[k], raw.kindPlural[k], raw.kinds[k], raw.categoryLabels[c], ...targets.map((i) => `${raw.targetLabels[i]} ${raw.targets[i]}`)].join(' ');
+      const tags = [raw.kindLabels[k], raw.kindPlural[k], raw.kinds[k], raw.categoryLabels[c], ...targets.map((i) => `${raw.targetLabels[i]} ${raw.targets[i]}`), cl >= 0 ? raw.classLabels[cl] : ''].join(' ');
       const r = { type: 'r', id, name, k, kind: raw.kinds[k], targets, c, lead: '', label, repo: label, sha: '', ev: '', rev, added, feat, alias, conn,
-        sec, pin: raw.pinned.includes(id), cls, st, prev: '', prevKind: '',
+        sec, cl, paperEntry, pin: raw.pinned.includes(id), cls, st, prev: '', prevKind: '',
         nName: norm(name), nAlias: norm(`${alias} ${label}`), nTags: norm(tags), nDesc: '' };
       r.nw = words(r.nName); r.aw = words(r.nAlias); r.tw = words(r.nTags); r.dw = [];
       return r;
@@ -424,9 +424,9 @@
   }
   function callno(r) {
     const X = IDX.raw;
-    return r.type === 'p' ? `${X.targetCodes[r.t]}·PAPR` : `${X.targetCodes[r.targets[0]]}·${X.kindCodes[r.k]}`;
+    return r.type === 'p' ? `${X.targetCodes[r.t]}·PAPR` : `${r.cl >= 0 ? X.classCodes[r.cl] : X.targetCodes[r.targets[0]]}·${X.kindCodes[r.k]}`;
   }
-  const href = (r) => (r.type === 'p' ? `${P}/papers/${r.id}/` : `${P}/resources/${r.id}/`);
+  const href = (r) => (r.type === 'p' || r.paperEntry ? `${P}/papers/${r.id}/` : `${P}/resources/${r.id}/`);
   function classChip(r) {
     if (r.st === 'unknown') return `<span class="card-class card-class-unknown" title="${esc(T.unknownTitle)}">?</span>`;
     if (r.cls == null || r.cls < 0) return '';
@@ -447,12 +447,20 @@
     }
     return '';
   }
+  const inTab = (r, tab) => (tab === 'all' ? r.cl >= 0 :
+    tab === 'tools' || tab === 'tutorial' ? r.cl < 0 && IDX.raw.sectionTabs[r.sec] === tab :
+    IDX.raw.classes[r.cl] === tab);
   function cardHTML(r, toks, thumb = false) {
     const X = IDX.raw;
     const t0 = r.targets[0];
-    const label = `${X.targetLabels[t0]} · ${X.kindLabels[r.k]}`;
-    const tg = r.targets.slice(0, 3).map((i) => `<li>${ico(X.targets[i])}${esc(X.targetLabels[i])}</li>`).join('')
-      + (r.targets.length > 3 ? `<li class="more">+${r.targets.length - 3}</li>` : '');
+    const data = r.cl >= 0;
+    const label = `${data ? X.classLabels[r.cl] : X.targetLabels[t0]} · ${X.kindLabels[r.k]}`;
+    const protocol = X.targets.indexOf('protocol');
+    // A data point has one class; Protocol is its only other label.
+    const tg = data
+      ? `<li>${ico(X.classIcons[r.cl])}${esc(X.classLabels[r.cl])}</li>${r.targets.includes(protocol) ? `<li>${ico('protocol')}${esc(X.targetLabels[protocol])}</li>` : ''}`
+      : r.targets.slice(0, 3).map((i) => `<li>${ico(X.targets[i])}${esc(X.targetLabels[i])}</li>`).join('')
+        + (r.targets.length > 3 ? `<li class="more">+${r.targets.length - 3}</li>` : '');
     const ev = !r.ev || /^https?:/.test(r.ev) ? r.ev : `https://github.com/${r.ev}`;
     const repo = `<span class="ev-repo">${esc(r.repo)}</span>${r.sha ? `<span class="sha">@${esc(r.sha)}</span>` : ''}`;
     return `<li class="card${r.kind === 'case-study' ? ' is-case' : ''}" id="r-${esc(r.id)}" data-id="${esc(r.id)}"><article class="card-face">`
@@ -661,7 +669,7 @@
     const kindSel = $('[data-kind-select]', drawer);
     const classSel = $('[data-class-select]', drawer);
     const info = $('.info-btn', drawer);
-    const init = { list: list.innerHTML, meta: meta.innerHTML, all: showAll.innerHTML, tabs: tabs.map((t) => $('.count', t).textContent), chips: chips.map((c) => $('.count', c).textContent) };
+    const init = { list: list.innerHTML, meta: meta.innerHTML, all: showAll.innerHTML, tabs: tabs.map((t) => $('.count', t).textContent), chips: chips.map((c) => $('.count', c).textContent), hidden: chips.map((c) => c.hidden) };
     const more = Object.assign(document.createElement('button'), { type: 'button', className: 'btn', hidden: true });
     list.after(more);
     const papersBox = document.createElement('div');
@@ -670,12 +678,12 @@
     more.after(papersBox);
     const u = new URL(location.href);
     const wantedClass = u.searchParams.get('class');
-    const st = { q: u.searchParams.get('q') || '', target: u.searchParams.get('target') || 'all', kinds: new Set((u.searchParams.get('kind') || '').split(',').filter(Boolean)),
+    const st = { q: u.searchParams.get('q') || '', tab: u.searchParams.get('tab') || 'all', target: u.searchParams.get('target') || 'all', kinds: new Set((u.searchParams.get('kind') || '').split(',').filter(Boolean)),
       cls: ['0', '1', '2', '3', 'unknown'].includes(wantedClass) ? wantedClass : '', sort: u.searchParams.get('sort') || 'featured', shown: 10 };
     input.value = st.q;
     sort.value = st.sort;
     classSel.value = st.cls;
-    const pristine = () => !st.q && st.target === 'all' && !st.kinds.size && !st.cls && st.sort === 'featured';
+    const pristine = () => !st.q && st.tab === 'all' && st.target === 'all' && !st.kinds.size && !st.cls && st.sort === 'featured';
     const foot = $('.drawer-foot', drawer);
     $('.hs-side', form).insertAdjacentHTML('afterbegin', `<span class="hs-keys" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> ${T.keyMove} <kbd>↵</kbd> ${T.keyOpen} <kbd>Esc</kbd> ${T.keyClear}</span>`);
     let selected = -1;
@@ -703,11 +711,12 @@
     const flushURL = () => { clearTimeout(urlT); if (urlNext) urlNext(); };
     const render = async () => {
       form.classList.toggle('has-query', !!st.q);
-      tabs.forEach((t) => { if (t.dataset.target === st.target) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current'); });
+      tabs.forEach((t) => { if (t.dataset.tab === st.tab) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current'); });
       chips.forEach((c) => c.setAttribute('aria-pressed', String(st.kinds.has(c.dataset.kind))));
       kindSel.value = st.kinds.size === 1 ? [...st.kinds][0] : '';
       classSel.value = st.cls;
       const hp = params();
+      if (st.tab !== 'all') hp.set('tab', st.tab);
       if (st.target !== 'all') hp.set('target', st.target);
       // The browser URL follows once typing pauses: history.replaceState costs more than the search itself.
       const url = location.pathname + (hp.toString() ? `?${hp}` : '') + location.hash;
@@ -716,6 +725,7 @@
       if (typingNow) urlT = setTimeout(urlNext, 300); else urlNext();
       const ex = new URLSearchParams();
       if (st.q) ex.set('q', st.q);
+      if (st.tab !== 'all') ex.set('tab', st.tab);
       if (st.target !== 'all') ex.set('target', st.target);
       if (st.kinds.size) ex.set('kind', [...st.kinds].join(','));
       if (st.cls) ex.set('class', st.cls);
@@ -727,7 +737,7 @@
         put(list, (rec.length ? `<li class="drawer-recent"><span class="pal-gh">${T.recent}</span> <span class="pal-recent">${rec.map((q) => `<button class="chip" type="button" data-recent="${esc(q)}">${esc(q)}</button>`).join(' ')}</span></li>` : '') + init.list);
         put(meta, init.meta); showAll.innerHTML = init.all; count.textContent = '';
         tabs.forEach((t, i) => { $('.count', t).textContent = init.tabs[i]; });
-        chips.forEach((c, i) => { $('.count', c).textContent = init.chips[i]; c.disabled = false; });
+        chips.forEach((c, i) => { $('.count', c).textContent = init.chips[i]; c.hidden = init.hidden[i]; c.disabled = init.hidden[i]; });
         more.hidden = true; papersBox.hidden = true; foot.hidden = false;
         select(-1);
         return;
@@ -743,24 +753,28 @@
       const kindOK = (h) => !st.kinds.size || st.kinds.has(h.r.kind);
       const classOK = (h) => !st.cls || (st.cls === 'unknown' ? h.r.st === 'unknown' : String(h.r.cls) === st.cls);
       const targetOK = (h) => st.target === 'all' || h.r.targets.includes(ti);
-      // One pass counts every tab and chip.
-      const perTarget = new Array(X.raw.targets.length).fill(0);
+      // One pass counts every tab and chip: a data point belongs to All and to its class tab, the rest to Tools or Tutorial.
+      const tabCounts = {};
       const perKind = {};
-      let inAll = 0;
       for (const h of base) {
-        if (!classOK(h)) continue;
-        if (kindOK(h)) { inAll += 1; for (const i of new Set(h.r.targets)) perTarget[i] += 1; }
-        if (targetOK(h)) perKind[h.r.kind] = (perKind[h.r.kind] || 0) + 1;
+        if (!classOK(h) || !targetOK(h)) continue;
+        const r = h.r;
+        if (kindOK(h)) {
+          if (r.cl >= 0) tabCounts.all = (tabCounts.all || 0) + 1;
+          const key = r.cl >= 0 ? X.raw.classes[r.cl] : (X.raw.sectionTabs[r.sec] || 'tools');
+          tabCounts[key] = (tabCounts[key] || 0) + 1;
+        }
+        if (inTab(r, st.tab)) perKind[r.kind] = (perKind[r.kind] || 0) + 1;
       }
       tabs.forEach((t) => {
-        const i = X.raw.targets.indexOf(t.dataset.target);
-        $('.count', t).textContent = fmt(i < 0 ? inAll : perTarget[i]);
+        if (!t.hasAttribute('data-link')) $('.count', t).textContent = fmt(tabCounts[t.dataset.tab] || 0);
       });
-      const inTarget = base.filter(targetOK);
+      const inTarget = base.filter((h) => targetOK(h) && inTab(h.r, st.tab));
       chips.forEach((c) => {
         const n = perKind[c.dataset.kind] || 0;
         $('.count', c).textContent = fmt(n);
-        c.disabled = !n && !st.kinds.has(c.dataset.kind);
+        // A kind with nothing under the open tab is hidden, unless it is the active filter.
+        c.hidden = c.disabled = !n && !st.kinds.has(c.dataset.kind);
       });
       const hits = inTarget.filter((h) => kindOK(h) && classOK(h));
       const shown = topHits(hits, st.sort, st.q, st.shown);
@@ -839,8 +853,8 @@
       }
     });
     tabs.forEach((t) => t.addEventListener('click', (e) => {
-      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
-      e.preventDefault(); st.target = t.dataset.target; st.shown = 10; render();
+      if (t.hasAttribute('data-link') || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault(); st.tab = t.dataset.tab; st.shown = 10; render();
     }));
     chips.forEach((c) => c.addEventListener('click', () => {
       const k = c.dataset.kind;
@@ -896,15 +910,19 @@
     const facetForm = $('[data-facets-form]', listing);
     const input = $('[data-list-input]');
     const tabs = $$('.page-head .folder');
+    // All opens on the data points: the other rows, there for readers without scripts, come from the index on request.
+    $$('[data-other]', list).forEach((row) => row.remove());
     const init = { list: list.innerHTML, meta: meta.innerHTML, pager: pagerEl.outerHTML };
     const sections = $$('[data-section-link]', listing);
     const counted = [...$$('.opt-n', facetForm), ...tabs.map((t) => $('.count', t)), ...sections.map((a) => $('.count', a))].map((el) => [el, el.textContent]);
     let narrowed = false;
     const MULTI = ['kind', 'category', 'connection', 'section'];
     const st = {};
+    const otherSections = new Set(sections.filter((a) => !a.hasAttribute('data-data-section')).map((a) => a.dataset.section));
     const read = () => {
       const u = new URL(location.href);
       st.q = u.searchParams.get('q') || '';
+      st.tab = u.searchParams.get('tab') || 'all';
       st.targets = new Set((u.searchParams.get('target') || '').split(',').filter(Boolean));
       MULTI.forEach((k) => { st[k] = new Set((u.searchParams.get(k) || '').split(',').filter(Boolean)); });
       st.reviewed = u.searchParams.get('reviewed') || '';
@@ -913,6 +931,9 @@
       if (classSel) classSel.value = st.cls;
       st.sort = u.searchParams.get('sort') || 'featured';
       st.page = Math.max(1, +(u.searchParams.get('page') || 1));
+      // A link to a section outside Data, such as the Tools navigation link, opens that section.
+      const anchor = location.hash.slice(1).replace(/^heading-/, '');
+      if (otherSections.has(anchor)) { st.tab = sections.find((a) => a.dataset.section === anchor).dataset.tab; st.section = new Set([anchor]); }
       if (input) input.value = st.q;
       sort.value = st.sort;
       $$('input', facetForm).forEach((el) => {
@@ -921,11 +942,12 @@
       });
     };
     read();
-    const nActive = () => MULTI.reduce((n, k) => n + st[k].size, 0) + (st.reviewed ? 1 : 0) + (st.cls ? 1 : 0) + st.targets.size;
+    const nActive = () => MULTI.reduce((n, k) => n + st[k].size, 0) + (st.reviewed ? 1 : 0) + st.targets.size + (st.cls ? 1 : 0) + (st.tab === 'all' ? 0 : 1);
     const pristine = () => !st.q && !nActive() && st.sort === 'featured' && st.page === 1;
     const write = (push) => {
       const p = new URLSearchParams();
       if (st.q) p.set('q', st.q);
+      if (st.tab !== 'all') p.set('tab', st.tab);
       if (st.targets.size) p.set('target', [...st.targets].join(','));
       MULTI.forEach((k) => { if (st[k].size) p.set(k, [...st[k]].join(',')); });
       if (st.reviewed) p.set('reviewed', st.reviewed);
@@ -960,7 +982,7 @@
     const render = async (push = false, scroll = false) => {
       if (classSel) classSel.value = st.cls;
       tabs.forEach((t) => {
-        const on = t.dataset.target === 'all' ? !st.targets.size : st.targets.size === 1 && st.targets.has(t.dataset.target);
+        const on = t.dataset.tab === st.tab;
         if (on) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current');
       });
       const n = nActive();
@@ -973,7 +995,7 @@
         list.innerHTML = init.list; meta.innerHTML = init.meta; activeEl.hidden = true;
         $('[data-pager]', listing).outerHTML = init.pager;
         counted.forEach(([el, text]) => { el.textContent = text; });
-        $$('.opt.is-zero', facetForm).forEach((opt) => opt.classList.remove('is-zero'));
+        $$('.opt', facetForm).forEach((opt) => { const zero = opt.hasAttribute('data-zero'); opt.classList.toggle('is-zero', zero); opt.hidden = zero; });
         sections.forEach((a) => { a.classList.remove('is-zero'); a.removeAttribute('aria-current'); });
         listing.classList.remove('is-narrowed');
         return;
@@ -987,6 +1009,7 @@
       const R = X.raw;
       const since = (days) => new Date(Date.parse(R.generated_at) - days * 864e5).toISOString().slice(0, 10);
       const tests = {
+        tab: (r) => inTab(r, st.tab),
         target: (r) => !st.targets.size || [...st.targets].some((t) => r.targets.includes(R.targets.indexOf(t))),
         kind: (r) => !st.kind.size || st.kind.has(r.kind),
         category: (r) => !st.category.size || st.category.has(R.categories[r.c]),
@@ -1007,6 +1030,7 @@
           : name === 'connection' ? R.connections[r.conn] === v : name === 'reviewed' ? r.rev >= since(+v) : true)).length;
         nEl.textContent = fmt(c);
         opt.classList.toggle('is-zero', !c);
+        opt.hidden = !c && !el.checked;
       });
       sections.forEach((a) => {
         const v = a.dataset.section;
@@ -1016,8 +1040,7 @@
         if (st.section.has(v)) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
       });
       tabs.forEach((t) => {
-        const i = R.targets.indexOf(t.dataset.target);
-        $('.count', t).textContent = fmt(base.filter(({ r }) => pass(r, 'target') && (i < 0 || r.targets.includes(i))).length);
+        if (!t.hasAttribute('data-link')) $('.count', t).textContent = fmt(base.filter(({ r }) => inTab(r, t.dataset.tab)).length);
       });
       const hits = sortHits(base.filter(({ r }) => pass(r)), st.sort, st.q);
       const { pages, page, start: a, end } = pageRange(hits.length, per, st.page);
@@ -1052,9 +1075,10 @@
     sort.addEventListener('change', () => { st.sort = sort.value; st.page = 1; render(); });
     if (classSel) classSel.addEventListener('change', () => { st.cls = classSel.value; st.page = 1; render(); });
     tabs.forEach((t) => t.addEventListener('click', (e) => {
-      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+      if (t.hasAttribute('data-link') || e.metaKey || e.ctrlKey || e.shiftKey) return;
       e.preventDefault();
-      st.targets = new Set(t.dataset.target === 'all' ? [] : [t.dataset.target]);
+      st.tab = t.dataset.tab;
+      st.section.clear();
       st.page = 1; render();
     }));
     listing.addEventListener('click', (e) => {
@@ -1075,7 +1099,7 @@
     });
     const reset = () => {
       st.q = ''; if (input) input.value = '';
-      st.targets.clear(); MULTI.forEach((k) => st[k].clear()); st.reviewed = ''; st.cls = ''; st.page = 1; st.sort = 'featured'; sort.value = 'featured';
+      st.tab = 'all'; st.targets.clear(); MULTI.forEach((k) => st[k].clear()); st.reviewed = ''; st.cls = ''; st.page = 1; st.sort = 'featured'; sort.value = 'featured';
       if (classSel) classSel.value = '';
       $$('input', facetForm).forEach((el) => { el.checked = el.type === 'radio' && el.value === ''; });
       render();
@@ -1083,8 +1107,10 @@
     clearBtn.addEventListener('click', reset);
     // On the whole list a section link jumps to its heading. On a narrowed list its count promises those rows, so it filters to them.
     sections.forEach((a) => a.addEventListener('click', (e) => {
-      if (pristine() || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      const outside = otherSections.has(a.dataset.section);
+      if ((pristine() && !outside) || e.metaKey || e.ctrlKey || e.shiftKey) return;
       e.preventDefault();
+      if (outside) st.tab = a.dataset.tab;
       st.section = new Set(st.section.has(a.dataset.section) ? [] : [a.dataset.section]);
       st.page = 1; render();
     }));
@@ -1092,6 +1118,7 @@
     $$('[data-facets-close]').forEach((b) => b.addEventListener('click', () => facetsDlg.close()));
     facetsDlg.addEventListener('click', (e) => { if (e.target === facetsDlg) facetsDlg.close(); });
     window.addEventListener('popstate', () => { read(); render(); });
+    window.addEventListener('hashchange', () => { read(); render(); });
     if (!pristine()) render();
     // Deferred card layout can move a distant fragment after the browser's initial hash jump.
     const hashTarget = () => {

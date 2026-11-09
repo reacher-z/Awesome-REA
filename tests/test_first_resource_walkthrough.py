@@ -46,17 +46,17 @@ class WalkthroughTests(unittest.TestCase):
 
     def test_the_output_table_matches_what_the_generators_wrote(self):
         record = next(record for record in catalog_records() if record['id'] == EXAMPLE)
-        self.assertEqual(collection_section(record), 'native-binary')
+        self.assertEqual(collection_section(record), 'tools')
         translation = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8'))[EXAMPLE]
-        # Both guides say the entry sits under Native Binary with "Also: App" / "也适用：应用"; the line links its entry page.
-        for page, name, labels, prefix, language in (('README.md', record['name'], 'Tool · Also: App', '', 0),
-                                                     ('README.zh-CN.md', translation['name'], '工具 · 也适用：应用', '/zh', 1)):
+        # Both guides place the tool under Tools with its target labels; the line links its entry page.
+        for page, name, labels, prefix, language in (('README.md', record['name'], 'Tool · Targets: App, Binary', '', 0),
+                                                     ('README.zh-CN.md', translation['name'], '工具 · 目标：应用、二进制', '/zh', 1)):
             with self.subTest(readme=page):
                 readme = (ROOT / page).read_text(encoding='utf-8')
                 entry = readme[readme.index(f'- [**{name}**]({record["url"]})'):]
                 self.assertIn(f'{labels} · [{FULL_ENTRY[language]}](https://awesomerea.org{prefix}/resources/{EXAMPLE}/)',
                               entry.split('\n- ', 1)[0])
-                self.assertLess(readme.index('<a id="native-binary"></a>'),
+                self.assertLess(readme.index('<a id="tools"></a>'),
                                 readme.index(f'(https://awesomerea.org{prefix}/resources/{EXAMPLE}/)'))
         for page, label in (('dynamic-analysis.md', 'Curated'), ('dynamic-analysis.zh-CN.md', '精选')):
             text = (ROOT / 'docs/repositories' / page).read_text(encoding='utf-8')

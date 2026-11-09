@@ -54,6 +54,8 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .hero-star { height: 44px; padding: 0 16px; gap: 9px; font-size: .9375rem; }
 .hero-star::after { inset: 0; }
 .hero-star .i { width: 17px; height: 17px; }
+/* The header carries the star button; the hero repeats it only on phones. */
+@media (min-width: 768px) { .hero-star { display: none; } }
 .hero-stats { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 24px; font-size: .9375rem; color: var(--ink); }
 .hero-stats strong { color: var(--ink-strong); font-weight: 600; font-variant-numeric: tabular-nums; }
 .hero-stats a { color: var(--brand-ink); }
@@ -65,7 +67,7 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 /* ---------- folder tabs (target domains) ---------- */
 .folders { position: relative; z-index: 2; display: flex; gap: 0; margin: 32px 0 -1px; padding: 0 8px; overflow-x: auto; scrollbar-width: none; }
 .folders::-webkit-scrollbar { display: none; }
-.folder { position: relative; z-index: 0; display: inline-flex; flex: none; align-items: center; gap: 8px; height: 46px; padding: 2px 20px 0;
+.folder { position: relative; z-index: 0; display: inline-flex; flex: none; align-items: center; gap: 6px; height: 46px; padding: 2px 12px 0;
   margin-right: -6px; color: var(--ink-2); font-size: 1rem; font-weight: 500; text-decoration: none; white-space: nowrap; }
 .folder::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--bg); border: 1px solid var(--line-strong);
   border-bottom: 0; border-radius: 7px 7px 0 0; transform: perspective(36px) rotateX(2.4deg); transform-origin: 50% 100%; }
@@ -79,6 +81,7 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .folder[aria-current="true"] .i, .folder[aria-current="true"] .count { color: var(--ink-strong); }
 .folder:focus-visible { outline-offset: -5px; box-shadow: none; }
 .folder:focus-visible::before { background: var(--secondary-soft); }
+.folder-aside[data-tab="tools"] { margin-left: 14px; }
 
 /* ---------- drawer (sage panel holding the cards) ---------- */
 .drawer { --card-ground: var(--surface); position: relative; z-index: 1; padding: 20px 24px 24px; background: var(--surface);
@@ -163,8 +166,8 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .card-class-2::before { background: var(--class-2); }
 .card-class-3::before { background: var(--class-3); }
 .card-class-unknown::before { background: var(--ink-2); }
-/* Documented demo preview, below the description and inside the same paper edge as the row. */
-.card-preview { grid-area: prev; position: relative; margin-top: 6px; max-width: 420px; aspect-ratio: 16 / 9;
+/* Demo thumbnails sit inside the card grid. */
+.card-preview { grid-area: prev; position: relative; justify-self: end; width: 160px; aspect-ratio: 16 / 9;
   border: 1px solid var(--line-strong); border-radius: 2px; background: var(--surface-2); overflow: hidden; }
 .card-preview img { display: block; width: 100%; height: 100%; object-fit: cover; }
 /* Above the title link's card-wide click area, so a click on a screenshot thumbnail opens the full image. */
@@ -173,10 +176,10 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 .card-preview-play { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 26px; height: 26px;
   border-radius: 50%; background: var(--btn-bg); color: var(--btn-ink); font-size: .6875rem; }
 .card-preview > .card-preview-play { position: absolute; left: 10px; bottom: 8px; z-index: 1; }
-.card-preview-demo { display: flex; align-items: center; gap: 9px; max-width: max-content; padding: 6px 10px 6px 6px; aspect-ratio: auto;
+.card-preview-demo { display: flex; align-items: center; gap: 9px; padding: 6px; aspect-ratio: 16 / 9;
   color: var(--ink-2-panel); font: 500 .8125rem/1.4 var(--font-mono); }
 .card-preview-demo > .card-preview-play { position: static; }
-.card-face:has(.card-preview) { grid-template-areas: "call name stamp" "call desc targets" "call prev prev"; }
+.card-face:has(.card-preview) { grid-template-columns: 104px minmax(0, 1fr) 160px; grid-template-areas: "call name stamp" "call desc prev" "call targets prev"; }
 .evidence-legend { margin: 8px 0 14px; color: var(--ink-2-panel); font-size: .8125rem; }
 .evidence-legend ul { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 5px 0 0; padding: 0; list-style: none; }
 .evidence-legend li { display: inline-flex; align-items: center; gap: 5px; }
@@ -205,20 +208,25 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 /* Narrow columns (tablet home, /resources/ beside the facets, related lists): description takes the full width. */
 @container (max-width: 900px) {
   .card-face { grid-template-areas: "call name stamp" "call desc desc" "call targets targets"; }
-  .card-face:has(.card-preview) { grid-template-areas: "call name stamp" "call desc desc" "call targets targets" "call prev prev"; }
+  .card-face:has(.card-preview) { grid-template-columns: 104px minmax(0, 1fr) 112px; grid-template-areas: "call name stamp" "call desc prev" "call targets prev"; }
+  .card-preview { width: 112px; }
   .card-targets { justify-content: flex-start; max-width: none; margin-right: 0; padding-top: 2px; }
 }
 /* Phones: stacked, with the review date beside the call number. */
 @container (max-width: 560px) {
   .card-face { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "call stamp" "name name" "desc desc" "targets targets"; padding: 9px 12px 10px; row-gap: 3px; }
-  .card-face:has(.card-preview) { grid-template-areas: "call stamp" "name name" "desc desc" "targets targets" "prev prev"; }
+  .card-face:has(.card-preview) { grid-template-columns: minmax(0, 1fr) 112px; grid-template-areas: "call stamp" "name name" "desc prev" "targets prev"; }
   .card-class { margin-left: 7px; }
-  .card-preview { max-width: none; margin-top: 4px; }
+  .card-preview { width: 112px; margin-top: 4px; }
   .card-face::before { display: none; }
   .stamp { margin-right: 14px; padding-top: 2px; }
   .ev { display: none; }
   .card-targets { gap: 4px 12px; padding-top: 4px; }
   .card-targets li:nth-child(n+4) { display: none; }
+}
+@media (min-width: 900px) {
+  .card-face:has(.card-preview) { grid-template-columns: 104px minmax(0, 1fr) 160px; grid-template-areas: "call name stamp" "call desc prev" "call targets prev"; }
+  .card-preview { width: 160px; }
 }
 
 /* ---------- sections ---------- */
@@ -440,6 +448,7 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
 
 /* ---------- listing: facets + results inside the drawer ---------- */
 .listing { display: grid; grid-template-columns: 248px minmax(0, 1fr); gap: 28px; padding-top: 24px; }
+.listing-class { grid-template-columns: minmax(0, 1fr); }
 .facets { position: static; display: block; width: auto; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: none; color: inherit; }
 .facets-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--line-strong); }
 .facets-head h2 { font-size: 1.375rem; }
@@ -691,8 +700,10 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
   .hero-search input { font-size: 1.0625rem; padding: 0 10px; }
   .hero-search > .i { margin-left: 14px; }
   .hs-kbd { display: none; }
-  .folders { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; margin: 16px 0 0; padding: 0; overflow: visible; }
+  /* Ten tabs in two rows of five: the six classes with All, then Tools, Paper and Tutorial. */
+  .folders { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; margin: 16px 0 0; padding: 0; overflow: visible; }
   .folder { flex-direction: column; justify-content: center; gap: 1px; height: 46px; padding: 0 2px; margin: 0; font-size: .875rem; line-height: 1.15; }
+  .folder-aside[data-tab="tools"] { margin-left: 0; }
   .folder::before { transform: none; border: 1px solid var(--line-strong); border-radius: var(--r-control); }
   .folder .i { display: none; }
   .folder .count { font-size: .75rem; }
@@ -702,9 +713,15 @@ html:lang(zh-CN) .hero-title em { font-style: normal; }
   .drawer-wrap { margin-top: 10px; }
 }
 
+/* Ten tabs fit the row at full width with icons; narrower desktops drop the icons. */
+@media (min-width: 1100px) and (max-width: 1339px) { .folder { padding: 2px 11px 0; } .folder .i { display: none; } }
+
 /* ---------- tablets (768–1099): folder tabs without icons; kind as a select under 920 ---------- */
 @media (min-width: 768px) and (max-width: 1099px) {
-  .folder { padding: 2px 11px 0; gap: 5px; font-size: .9063rem; }
+  .folders { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; padding: 0; overflow: visible; }
+  .folder { justify-content: center; padding: 2px 6px 0; gap: 5px; margin: 0; font-size: .9063rem; }
+  .folder::before { transform: none; border-radius: var(--r-control); }
+  .folder-aside[data-tab="tools"] { margin-left: 0; }
   .folder .i { display: none; }
 }
 @media (min-width: 768px) and (max-width: 919px) {
@@ -1037,6 +1054,7 @@ html:lang(zh-CN) .cb-n { font-family: "EB Garamond Accent", var(--font-display);
 .listing-links a { display: inline-flex; align-items: center; gap: 4px; color: var(--brand-ink); }
 .listing-links .i { width: 14px; height: 14px; }
 .list-section { display: flex; align-items: baseline; gap: 10px; padding: 16px 2px 4px; }
+.list-group { margin-top: 16px; padding: 12px 2px 4px; border-top: 1px solid var(--line-strong); color: var(--ink-2); font: 500 .75rem/1.4 var(--font-mono); letter-spacing: .04em; text-transform: uppercase; }
 .list-section:first-child { padding-top: 0; }
 .list-section h2 { font-size: 1.25rem; scroll-margin-top: 76px; }
 .list-section .count { color: var(--ink-2-panel); }

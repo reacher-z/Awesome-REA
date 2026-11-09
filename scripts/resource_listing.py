@@ -9,23 +9,24 @@ from collections import Counter
 from html import escape
 
 from build_home import FEATURED, KIND_ORDER, PINNED, _folder_tabs, _ordered_targets, evidence_legend, index_card, stored_targets
-from build_readme import CATEGORIES, KIND_LABELS
+from build_readme import CATEGORIES, KIND_LABELS, SECTION_TABS
+from data_classes import DATA_CLASSES, NON_DATA_TABS
 from site_shell import icon
 
 # Rows per page, for the static pages and for filtered results alike.
 PER_PAGE = 100
 TEXT = {
     'en': {
-        'crumbs': 'Breadcrumb', 'home': 'Home', 'title': 'Curated reverse engineering resources', 'search_label': 'Filter resources', 'placeholder': 'Filter by name, tool or target',
-        'sections': 'Filed under', 'sections_note': 'Each record is filed once. Tabs count every target it covers.', 'filters': 'Filters', 'clear': 'Clear all', 'close': 'Close filters', 'show': 'Show results', 'kind': 'Kind', 'category': 'Category',
-        'show_all': 'Show all {n}', 'all': 'All <strong>{n}</strong> resources', 'results': 'Results', 'sort': 'Sort', 'featured': 'Featured', 'reviewed': 'Recently reviewed',
+        'crumbs': 'Breadcrumb', 'home': 'Home', 'title': 'Reverse engineering data and tools', 'entries': '{n} entries', 'points': '{n} data points', 'search_label': 'Filter resources', 'placeholder': 'Filter by name, tool or target',
+        'sections': 'Filed under', 'sections_note': 'Data points are grouped by class. Tools and tutorials follow.', 'filters': 'Filters', 'clear': 'Clear all', 'close': 'Close filters', 'show': 'Show results', 'kind': 'Kind', 'category': 'Category',
+        'show_all': 'Show all {n}', 'all': 'All <strong>{n}</strong> data points', 'results': 'Results', 'sort': 'Sort', 'featured': 'Featured', 'reviewed': 'Recently reviewed',
         'added': 'Recently added', 'name': 'Name A–Z', 'suggest': 'Suggest a resource', 'data': 'Download the data', 'evidence_class': 'Evidence class', 'all_classes': 'All classes', 'unknown': 'Unknown',
         'range': 'Showing <strong>{a}–{b}</strong> of <strong>{n}</strong>', 'pages': 'Pages', 'previous': 'Previous', 'next': 'Next', 'page_title': 'page {n}',
     },
     'zh': {
-        'crumbs': '当前位置', 'home': '首页', 'title': '精选逆向工程资源', 'search_label': '筛选资源', 'placeholder': '按名称、工具或目标筛选',
-        'sections': '归类', 'sections_note': '每条记录只归入一处；标签页统计它涉及的所有目标。', 'filters': '筛选', 'clear': '清除全部', 'close': '关闭筛选', 'show': '查看结果', 'kind': '类型', 'category': '类别',
-        'show_all': '显示全部 {n} 项', 'all': '共 <strong>{n}</strong> 项资源', 'results': '结果', 'sort': '排序', 'featured': '精选', 'reviewed': '最近复核',
+        'crumbs': '当前位置', 'home': '首页', 'title': '逆向工程数据与工具', 'entries': '{n} 条', 'points': '{n} 个数据点', 'search_label': '筛选资源', 'placeholder': '按名称、工具或目标筛选',
+        'sections': '归类', 'sections_note': '数据点按类别分组，后面是工具与教程。', 'filters': '筛选', 'clear': '清除全部', 'close': '关闭筛选', 'show': '查看结果', 'kind': '类型', 'category': '类别',
+        'show_all': '显示全部 {n} 项', 'all': '共 <strong>{n}</strong> 个数据点', 'results': '结果', 'sort': '排序', 'featured': '精选', 'reviewed': '最近复核',
         'added': '最近新增', 'name': '名称 A–Z', 'suggest': '推荐资源', 'data': '下载数据', 'evidence_class': '证据档位', 'all_classes': '全部档位', 'unknown': '未知',
         'range': '显示第 <strong>{a}–{b}</strong> 项，共 <strong>{n}</strong> 项', 'pages': '分页', 'previous': '上一页', 'next': '下一页', 'page_title': '第 {n} 页',
     },
@@ -44,7 +45,8 @@ def in_section_order(records: list[dict]) -> list[dict]:
 
 def facet(name: str, legend: str, options: list[tuple[str, str, int]], language: str, more_after: int | None = None) -> str:
     def option(value: str, label: str, number: int) -> str:
-        return (f'<label class="opt"><input type="checkbox" name="{name}" value="{escape(value, quote=True)}">'
+        zero = '' if number else ' is-zero" hidden data-zero="'
+        return (f'<label class="opt{zero}"><input type="checkbox" name="{name}" value="{escape(value, quote=True)}">'
                 f'<span class="opt-box" aria-hidden="true">{icon("check")}</span><span class="opt-l">{escape(label)}</span>'
                 f'<span class="opt-n">{_count(number)}</span></label>')
     head, tail = (options[:more_after], options[more_after:]) if more_after else (options, [])
@@ -105,17 +107,17 @@ def _pager(page: int, pages: int, language: str) -> str:
             f'<ol>{items}</ol>{step(page + 1, text["next"], "next")}</nav>')
 
 
-def resource_page_head(resources: list[dict], language: str, page: int = 1) -> str:
+def resource_page_head(resources: list[dict], language: str, page: int = 1, paper_count: int = 0) -> str:
     text = TEXT[language]
     prefix = '/zh' if language == 'zh' else ''
     # A later page's trail names the listing, then the page.
     current = (f'<span aria-current="page">{text["title"]}</span>' if page == 1 else
                f'<a href="{prefix}/resources/">{text["title"]}</a><span aria-hidden="true">/</span><span aria-current="page">{text["page_title"].format(n=page).capitalize()}</span>')
     return (f'<div class="page-head wrap"><nav class="crumbs" aria-label="{text["crumbs"]}"><a href="{prefix}/">{text["home"]}</a><span aria-hidden="true">/</span>{current}</nav>'
-            f'<div class="ph-row"><div class="ph-title"><h1>{text["title"]}</h1><span class="h-count">{_count(len(resources))}</span></div>'
+            f'<div class="ph-row"><div class="ph-title"><h1>{text["title"]}</h1><span class="h-count">{text["entries"].format(n=_count(len(resources)))}</span></div>'
             f'<form class="list-search" role="search" data-list-search><label class="vh" for="lq">{text["search_label"]}</label>{icon("search")}'
             f'<input id="lq" name="q" type="search" placeholder="{text["placeholder"]}" autocomplete="off" spellcheck="false" data-list-input><kbd class="hs-kbd">/</kbd></form></div>'
-            f'{_folder_tabs(resources, language, prefix)}</div>')
+            f'{_folder_tabs(resources, language, prefix, paper_count)}</div>')
 
 
 def resource_listing(resources: list[dict], groups: dict[str, list[dict]], section_labels: dict[str, tuple[str, str]], language: str, repository_url: str,
@@ -131,9 +133,14 @@ def resource_listing(resources: list[dict], groups: dict[str, list[dict]], secti
     pages = page_count(total)
     if not 1 <= page <= pages:
         raise ValueError(f'No resource listing page {page}')
+    # Each non-data tab heads its own sections: Tools, then Tutorial.
+    first_of_tab = {}
+    for key, _ in sections:
+        if key not in DATA_CLASSES:
+            first_of_tab.setdefault(SECTION_TABS[key], key)
     # A section that starts on another page keeps its old fragment here, on its link, which leads to that page.
     navigation = ''.join(f'<li><a href="{section_href(key, section_pages[key], language, page)}"{"" if section_pages[key] == page else f' id="{key}"'}'
-                         f' data-section-link data-section="{key}">{escape(label)}<span class="count">{_count(len(groups[key]))}</span></a></li>'
+                         f' data-section-link data-section="{key}"{" data-data-section" if key in DATA_CLASSES else f' data-tab="{SECTION_TABS[key]}"'}>{escape(label)}<span class="count">{_count(len(groups[key]))}</span></a></li>'
                          for key, label in sections)
     start, end = (page - 1) * PER_PAGE, page * PER_PAGE
     rows, position = [], 0
@@ -141,16 +148,24 @@ def resource_listing(resources: list[dict], groups: dict[str, list[dict]], secti
         records = in_section_order(groups[key])
         shown = records[max(0, start - position):max(0, end - position)]
         if shown:
+            # No-script readers get every row. With scripts, All opens on the data points and the other rows come from the index.
+            other = '' if key in DATA_CLASSES else ' data-other'
+            if key not in DATA_CLASSES and first_of_tab[SECTION_TABS[key]] == key:
+                rows.append(f'<li class="list-group" data-other data-tab="{SECTION_TABS[key]}"><p>{NON_DATA_TABS[SECTION_TABS[key]][zh]}</p></li>')
             # The heading carries its anchors only on the page where the section starts.
             anchors = f' id="heading-{key}"' if section_pages[key] == page else ''
             legacy = f'<a id="{key}"></a>' if section_pages[key] == page else ''
-            rows.append(f'<li class="list-section"><h2{anchors}>{legacy}{escape(label)}</h2><span class="count">{_count(len(groups[key]))}</span></li>')
-            rows.extend(index_card(record, language, _ordered_targets(record, order), prefix=prefix, listing=True) for record in shown)
+            rows.append(f'<li class="list-section"{other}><h2{anchors}>{legacy}{escape(label)}</h2><span class="count">{_count(len(groups[key]))}</span></li>')
+            rows.extend(index_card(record, language, _ordered_targets(record, order), prefix=prefix, listing=True, other=bool(other)) for record in shown)
         position += len(records)
     shown_count = min(end, total) - start
     meta = text['all'].format(n=_count(total)) if pages == 1 else text['range'].format(a=_count(start + 1), b=_count(start + shown_count), n=_count(total))
-    kinds = Counter(record['kind'] for record in resources)
-    categories = Counter(record['category'] for record in resources)
+    # All opens on the data points, so the facets count those; site.js recounts them for the open tab.
+    data_points = [record for record in resources if 'class' in record]
+    kinds = Counter(record['kind'] for record in data_points)
+    categories = Counter(record['category'] for record in data_points)
+    kinds.update({record['kind']: 0 for record in resources})
+    categories.update({record['category']: 0 for record in resources})
     kind_options = [(kind, KIND_LABELS[kind][zh], number) for kind, number in kinds.most_common()]
     category_options = [(key, CATEGORIES[key][zh], number) for key, number in sorted(categories.items(), key=lambda item: (-item[1], item[0]))]
     evidence_counts = Counter('unknown' if record.get('evidence_status') == 'unknown' else str(record['evidence_class'])

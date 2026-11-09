@@ -15,7 +15,8 @@ import re
 from urllib.parse import urlsplit
 
 from asset_paths import fingerprinted_href
-from build_readme import CATEGORIES, KIND_LABELS, TARGETS, collection_section, lead_sentence, paper_section, papers_newest_first
+from data_classes import DATA_CLASSES, FEATURED_DATA, NON_DATA_TABS, listed_records, record_tags
+from build_readme import CATEGORIES, KIND_LABELS, SECTION_TABS, TARGETS, collection_section, lead_sentence, paper_section, papers_newest_first
 from home_art import exploded_view
 from site_footer import site_footer
 from repository_stats import REPOSITORY, compact_count, repository_stars
@@ -33,13 +34,18 @@ KIND_PLURAL = {'tool': ('Tools', '工具'), 'case-study': ('Case studies', '案�
                'documentation': ('Docs', '文档'), 'research': ('Research', '研究'), 'project': ('Projects', '项目')}
 # The drawer's opening rows: flagship records across the six domains. Collections that point to individuals'
 # repositories are deliberately not featured.
-FEATURED = ('ghidra', 'hex-rays-ida-mcp', 'frida', 'jadx', 'chrome-devtools-mcp', 'il2cppdumper', 'binwalk',
+# One flagship data point per class comes first, in the classes' order; the flagship tools follow.
+FEATURED = ('photocraft-case', 'openrct2-engine-case', 'plx-native-case', 'littlebird-static-rebuild-case',
+            'open-oura-ring-protocol-case', 'fastview-rea-relay-analysis-rebuild-case',
+            'ghidra', 'hex-rays-ida-mcp', 'frida', 'jadx', 'chrome-devtools-mcp', 'il2cppdumper', 'binwalk',
             'mitmproxy', 'renderdoc', 'even-g2-ble-protocol-case')
 DRAWER_ROWS = 7
 # Records that open their section and lead the Featured order, marked Featured.
-PINNED = ('websitebench',)
-# The /resources/ section each target tab opens until /resources/<target>/ pages exist.
-TARGET_ANCHORS = {'website': 'website', 'game': 'game', 'app': 'app', 'binary': 'native-binary', 'firmware': 'firmware', 'protocol': 'protocol'}
+PINNED = FEATURED_DATA
+# Filter row: three-letter class codes open a data point's call number, and each class borrows or adds one icon.
+CLASS_CODES = {'software': 'SFT', 'game': 'GAM', 'apps': 'APP', 'website': 'WEB', 'hardware': 'HDW', 'science': 'SCI'}
+CLASS_ICONS = {'software': 'binary', 'game': 'game', 'apps': 'app', 'website': 'website', 'hardware': 'firmware', 'science': 'science'}
+TAB_ICONS = {'tools': 'tools', 'paper': 'paper', 'tutorial': 'book'}
 CONNECTIONS = {
     'official': (('Official REA', 'REA 官方'), ('official-core', 'official-skill', 'official-documentation', 'official-guide', 'official-case-study', 'upstream-maintainer-companion-list')),
     'community': (('Community REA work', 'REA 社区'), ('community-integration', 'community-learning-resource', 'community-reported-mixed-workflow')),
@@ -61,9 +67,9 @@ COPY = {
         'lede': 'Awesome REA (Awesome Reverse Engineering Anything) is a bilingual catalog of {res} source-reviewed tools, projects and case studies and {pap} research papers for taking apart binaries, games, apps, firmware, protocols and websites{stars}. Every entry links the primary source it was checked against.',
         'search_label': 'Search the catalogue', 'placeholder': 'Try Ghidra, IL2CPP or BLE', 'clear': 'Clear search', 'focus': 'Press / to focus',
         'stats': '<span class="s-lg"><strong>{res}</strong> curated resources and <strong>{pap}</strong> papers, each reviewed against its source. Plus <a href="/discoveries/"><strong>{idx}</strong> unreviewed discoveries</a> from the scans.</span><span class="s-sm"><strong>{res}</strong> resources, <strong>{pap}</strong> papers, <a href="/discoveries/"><strong>{idx}</strong> unreviewed</a></span>',
-        'updated': 'Last scan', 'all': 'All', 'domains': 'Target domains', 'catalogue': 'Catalogue',
+        'updated': 'Last scan', 'all': 'All', 'domains': 'Data classes', 'catalogue': 'Catalogue',
         'kind': 'Kind', 'all_kinds': 'All kinds', 'sort': 'Sort', 'featured': 'Featured', 'recent': 'Recently reviewed', 'az': 'Name A–Z',
-        'showing': 'Showing <strong>{n}</strong> of <strong>{total}</strong>', 'show_all': 'Show all {n} resources',
+        'showing': 'Showing <strong>{n}</strong> of <strong>{total}</strong>', 'show_all': 'Show all {n} data points',
         'drawer_note': 'Each card links to its entry: description, requirements and the primary source it was reviewed against.',
         'reviewed': 'Reviewed', 'targets': 'Targets', 'licence': 'Original content: MIT. Linked projects keep their own licenses.',
         'class_label': 'Evidence class', 'class_unknown': 'Unknown · source unavailable',
@@ -80,9 +86,9 @@ COPY = {
         'lede': 'Awesome REA（Awesome Reverse Engineering Anything）是中英双语目录，收录 {res} 项经来源复核的工具、项目与案例，以及 {pap} 篇研究论文，涵盖二进制、游戏、应用、固件、协议与网站的逆向{stars}。每个条目都链接其核查所依据的一手来源。',
         'search_label': '搜索目录', 'placeholder': '试试 Ghidra、IL2CPP 或 BLE', 'clear': '清除搜索', 'focus': '按 / 键聚焦',
         'stats': '<span class="s-lg"><strong>{res}</strong> 项精选资源与 <strong>{pap}</strong> 篇论文，均已对照来源复核。另有 <a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核发现</a>来自自动扫描。</span><span class="s-sm"><strong>{res}</strong> 项资源、<strong>{pap}</strong> 篇论文、<a href="/zh/discoveries/"><strong>{idx}</strong> 条未审核</a></span>',
-        'updated': '最近扫描', 'all': '全部', 'domains': '目标领域', 'catalogue': '目录',
+        'updated': '最近扫描', 'all': '全部', 'domains': '数据类别', 'catalogue': '目录',
         'kind': '类型', 'all_kinds': '全部类型', 'sort': '排序', 'featured': '精选', 'recent': '最近复核', 'az': '名称 A–Z',
-        'showing': '显示 <strong>{n}</strong> / <strong>{total}</strong>', 'show_all': '查看全部 {n} 项资源',
+        'showing': '显示 <strong>{n}</strong> / <strong>{total}</strong>', 'show_all': '查看全部 {n} 个数据点',
         'drawer_note': '每张卡片都链接到完整条目：说明、使用条件，以及复核所依据的原始来源。',
         'reviewed': '已复核', 'targets': '目标', 'licence': '原创内容采用 MIT 许可。链接项目保留各自的许可。',
         'class_label': '证据档位', 'class_unknown': '未知 · 来源不可读',
@@ -194,7 +200,7 @@ def preview_figure(record: dict, language: str, *, thumb: bool = False) -> str:
     return ''
 
 
-def index_card(record: dict, language: str, targets: list[str], *, prefix: str = '', listing: bool = False) -> str:
+def index_card(record: dict, language: str, targets: list[str], *, prefix: str = '', listing: bool = False, other: bool = False) -> str:
     """One catalogue row. site.js renders the same markup in cardHTML() for search results.
 
     Rows on /resources/ also carry the record's bare ID, the anchor older links into that page use.
@@ -202,20 +208,27 @@ def index_card(record: dict, language: str, targets: list[str], *, prefix: str =
     text = COPY[language]
     identifier = _e(record['id'])
     kind = record['kind']
-    label = f"{_target_label(targets[0], language)} · {KIND_LABELS[kind][language == 'zh']}"
+    zh = language == 'zh'
+    data_class = record.get('class')
+    place = DATA_CLASSES[data_class][zh] if data_class else _target_label(targets[0], language)
+    label = f"{place} · {KIND_LABELS[kind][zh]}"
     case = ' is-case' if kind == 'case-study' else ''
     evidence = evidence_label(record['evidence_url'])
     revision = f'<span class="sha">@{_e(evidence["sha"])}</span>' if evidence['sha'] else ''
     reviewed = str(record['verified_at'])[:10]
-    items = ''.join(f'<li>{icon(target)}{_e(_target_label(target, language))}</li>' for target in targets[:3])
-    if len(targets) > 3:
-        items += f'<li class="more">+{len(targets) - 3}</li>'
+    if data_class:
+        # A data point has one class; Protocol is its only other label.
+        items = f'<li>{icon(CLASS_ICONS[data_class])}{_e(place)}</li>' + ''.join(f'<li>{icon(tag)}{_e(_target_label(tag, language))}</li>' for tag in record_tags(record))
+    else:
+        items = ''.join(f'<li>{icon(target)}{_e(_target_label(target, language))}</li>' for target in targets[:3])
+        if len(targets) > 3:
+            items += f'<li class="more">+{len(targets) - 3}</li>'
     article = f' id="{identifier}" data-record-id="{identifier}" data-resource-id="{identifier}"' if listing else ''
     entry = f' entry-detail-link" data-entry-link="{identifier}' if listing else ''
     mark = f'<span class="row-mark">{text["featured"]}</span>' if record['id'] in PINNED else ''
-    return (f'<li class="card{case}" id="r-{identifier}" data-id="{identifier}"><article class="card-face"{article}>'
-            f'<p class="callno" title="{_e(label)}"><span class="vh">{_e(label)}: </span><span aria-hidden="true">{DOMAIN_CODES[targets[0]]}·{KIND_CODES[kind]}</span></p>'
-            f'<h3 class="card-name"><a class="stretch{entry}" href="{prefix}/resources/{identifier}/">{_e(_name(record, language))}</a>{mark}{evidence_chip(record, language)}</h3>'
+    return (f'<li class="card{case}" id="r-{identifier}" data-id="{identifier}"{" data-other" if other else ""}><article class="card-face"{article}>'
+            f'<p class="callno" title="{_e(label)}"><span class="vh">{_e(label)}: </span><span aria-hidden="true">{CLASS_CODES[data_class] if data_class else DOMAIN_CODES[targets[0]]}·{KIND_CODES[kind]}</span></p>'
+            f'<h3 class="card-name"><a class="stretch{entry}" href="{prefix}/{record.get('route', 'resources')}/{identifier}/">{_e(_name(record, language))}</a>{mark}{evidence_chip(record, language)}</h3>'
             f'<p class="card-desc">{_e(_lead(record, language))}</p>{preview_figure(record, language, thumb=listing)}'
             f'<ul class="card-targets" aria-label="{text["targets"]}">{items}</ul>'
             f'<p class="stamp">{icon("check")}<span>{text["reviewed"]} <time datetime="{reviewed}">{reviewed}</time></span>'
@@ -223,13 +236,26 @@ def index_card(record: dict, language: str, targets: list[str], *, prefix: str =
             f'</article></li>')
 
 
-def _folder_tabs(resources: list[dict], language: str, prefix: str) -> str:
+def _folder_tabs(listed: list[dict], language: str, prefix: str, paper_count: int) -> str:
+    """All counts data points and each class is one filter. Tools and Tutorial filter the other resources; Paper opens /papers/."""
     text = COPY[language]
-    counts = Counter(target for record in resources for target in record['targets'])
-    tabs = [f'<a class="folder" href="{prefix}/resources/" data-target="all" aria-current="true">{text["all"]} <span class="count">{_count(len(resources))}</span></a>']
-    for target in [target for target in DOMAIN_ORDER if counts[target]] + sorted(set(counts) - set(DOMAIN_ORDER)):
-        tabs.append(f'<a class="folder" href="{prefix}/resources/#{TARGET_ANCHORS.get(target, "catalog")}" data-target="{target}">{icon(target)}{_e(_target_label(target, language))} '
-                    f'<span class="count">{_count(counts[target])}</span></a>')
+    zh = language == 'zh'
+    counts = Counter(record.get('class') or SECTION_TABS[collection_section(record)] for record in listed)
+    tabs = [f'<a class="folder" href="{prefix}/resources/" data-tab="all" aria-current="true">{text["all"]} <span class="count">{_count(sum(counts[key] for key in DATA_CLASSES))}</span></a>']
+    for key, labels in DATA_CLASSES.items():
+        tabs.append(f'<a class="folder" href="{prefix}/data/{key}/" data-tab="{key}" data-link>{icon(CLASS_ICONS[key])}{_e(labels[zh])} <span class="count">{_count(counts[key])}</span></a>')
+    # The non-data sections can start on a later static page, so their tab opens the page that holds the heading.
+    from resource_listing import PER_PAGE
+    data_rows = sum('class' in record for record in listed)
+    tool_rows = sum('class' not in record and SECTION_TABS[collection_section(record)] == 'tools' for record in listed)
+    page_of = lambda position: f'/resources/page/{position // PER_PAGE + 1}/' if position >= PER_PAGE else '/resources/'
+    targets = {'tools': f'{page_of(data_rows)}#heading-tools', 'paper': '/papers/',
+               'tutorial': f'{page_of(data_rows + tool_rows)}#heading-related-collections'}
+    for key, labels in NON_DATA_TABS.items():
+        number = paper_count if key == 'paper' else counts[key]
+        # Paper is a link: the papers have their own page and search.
+        link = ' data-link' if key == 'paper' else ''
+        tabs.append(f'<a class="folder folder-aside" href="{prefix}{targets[key]}" data-tab="{key}"{link}>{icon(TAB_ICONS[key])}{_e(labels[zh])} <span class="count">{_count(number)}</span></a>')
     return f'<nav class="folders" aria-label="{text["domains"]}">{"".join(tabs)}</nav>'
 
 
@@ -265,18 +291,20 @@ def _masthead(resources, papers, discovery_count, last_scan, language, prefix, r
             f'<span class="hs-side"><span class="hs-count" id="hs-count" aria-live="polite" data-search-count></span>'
             f'<button class="hs-clear" type="button" aria-label="{text["clear"]}" data-search-clear>{icon("close")}</button>'
             f'<kbd class="hs-kbd" title="{text["focus"]}">/</kbd></span></form>'
-            f'<div class="hero-meta">{star_button(language, repository_url, "hero-star")}<div class="hero-stats"><p>{stats}</p>{updated}</div></div>{_folder_tabs(resources, language, prefix)}'
+            f'<div class="hero-meta">{star_button(language, repository_url, "hero-star")}<div class="hero-stats"><p>{stats}</p>{updated}</div></div>{_folder_tabs(listed_records(resources, papers), language, prefix, len(papers))}'
             f'</div></section>')
 
 
 def _drawer(resources, order, language, prefix) -> str:
     text = COPY[language]
     by_id = {record['id']: record for record in resources}
-    featured = [by_id[identifier] for identifier in FEATURED if identifier in by_id][:DRAWER_ROWS]
-    kinds = Counter(record['kind'] for record in resources)
-    present = [kind for kind in KIND_ORDER if kinds[kind]]
+    featured = [by_id[identifier] for identifier in (*PINNED, *FEATURED) if identifier in by_id][:DRAWER_ROWS]
+    # The opening view is All, so the chips count data points; site.js recounts them for whichever tab is open.
+    data_points = [record for record in resources if 'class' in record]
+    kinds = Counter(record['kind'] for record in data_points)
+    present = [kind for kind in KIND_ORDER if any(record['kind'] == kind for record in resources)]
     zh = language == 'zh'
-    chips = ''.join(f'<button class="chip" type="button" data-kind="{kind}" aria-pressed="false">{icon("check")}{KIND_PLURAL[kind][zh]} <span class="count">{_count(kinds[kind])}</span></button>' for kind in present)
+    chips = ''.join(f'<button class="chip" type="button" data-kind="{kind}" aria-pressed="false"{"" if kinds[kind] else " disabled hidden"}>{icon("check")}{KIND_PLURAL[kind][zh]} <span class="count">{_count(kinds[kind])}</span></button>' for kind in present)
     options = ''.join(f'<option value="{kind}">{KIND_PLURAL[kind][zh]} ({_count(kinds[kind])})</option>' for kind in present)
     classes = Counter()
     for record in resources:
@@ -294,7 +322,7 @@ def _drawer(resources, order, language, prefix) -> str:
                   f'<strong>{text["class_label"]}</strong><ul>{class_rows}'
                   f'<li><span class="card-class card-class-unknown">?</span>{_e(text["unknown_title"])}</li></ul></span></span>')
     cards = ''.join(index_card(record, language, _ordered_targets(record, order), prefix=prefix) for record in featured)
-    total = len(resources)
+    total = len(data_points)
     return (f'<section class="wrap drawer-wrap" id="catalog" aria-labelledby="catalogue-title"><div class="drawer" id="catalogue" data-drawer>'
             f'<h2 class="vh" id="catalogue-title">{text["catalogue"]}</h2><div class="drawer-bar">'
             f'<div class="chips" role="group" aria-label="{text["kind"]}" data-kind-chips>{chips}</div>'
@@ -405,7 +433,7 @@ def render_homepage(*, site_dir: Path, explorer_html: str, resources: list[dict]
             + announcement_bar(language)
             + header(language, '', plain_language_link(language, '/' if zh else '/zh/'), repository_url)
             + mobile_bar(language, repository_url)
-            + f'<main id="main">{_masthead(resources, papers, discovery_count, last_scan, language, prefix, repository_url)}{_drawer(resources, order, language, prefix)}{_featured_projects(language)}</main>'
+            + f'<main id="main">{_masthead(resources, papers, discovery_count, last_scan, language, prefix, repository_url)}{_drawer(listed_records(resources, papers), order, language, prefix)}{_featured_projects(language)}</main>'
             + site_footer(language, note=_e(text['licence']), repository_url=repository_url, repository_export=repository_export)
             + palette(language))
     return (f'<!doctype html>\n<html lang="{locale}" data-site="rea" class="no-js">\n<head>{head}\n'
@@ -438,7 +466,7 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
     """The lazy index behind the palette and the home drawer: compact arrays, one file per language.
 
     It holds what ranking and filtering read. Row:
-    [id, name, kind, targets, category, repository, featured rank, alias, connection, class, status, section, reviewed, added].
+    [id, name, kind, targets, category, repository, featured rank, alias, connection, evidence class, status, section, reviewed, added, data class, paper route].
     "repository" is the GitHub repository name, or the host label for other evidence. id is 0 when it is the slug of that
     repository name and 1 when it is that slug plus "-case"; alias is 1 when it is the repository name.
     Descriptions, owners, evidence paths and previews follow in search_text(), row for row; "b" pairs the two files.
@@ -449,6 +477,7 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
     connections = list(CONNECTIONS)
     ranks = {identifier: rank for rank, identifier in enumerate(FEATURED)}
     sections = sorted({collection_section(record) for record in resources})
+    classes = list(DATA_CLASSES)
     rows = []
     for record in resources:
         label, _, _, evidence = _search_parts(record, language)
@@ -468,9 +497,11 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
                      -1 if record.get('evidence_class') is None else int(record['evidence_class']),
                      'unknown' if record.get('evidence_status') == 'unknown' else '',
                      sections.index(collection_section(record)),
-                     str(record['verified_at'])[:10], record.get('added_at') or ''])
+                     str(record['verified_at'])[:10], record.get('added_at') or '',
+                     classes.index(record['class']) if 'class' in record else -1, int(record.get('route') == 'papers')])
     paper_rows = []
-    for paper in papers_newest_first(papers):
+    # A benchmark or dataset paper is a data point, so it is a row above, once.
+    for paper in papers_newest_first([paper for paper in papers if 'class' not in paper]):
         paper_rows.append([paper['id'], paper['title_zh'] if zh else paper['title'], paper['year'], paper['venue'],
                            DOMAIN_ORDER.index(paper['targets'][0]), paper.get('arxiv_id') or '', paper_section(paper)])
     return {
@@ -480,7 +511,8 @@ def search_index(resources: list[dict], papers: list[dict], language: str, order
         'targetCodes': [DOMAIN_CODES[target] for target in DOMAIN_ORDER],
         'categories': categories, 'categoryLabels': [CATEGORIES[category][zh] for category in categories],
         'connections': connections, 'connectionLabels': [CONNECTIONS[key][0][zh] for key in connections],
-        'sections': sections, 'pinned': list(PINNED),
+        'sections': sections, 'sectionTabs': [SECTION_TABS.get(section, '') for section in sections], 'pinned': list(PINNED), 'classes': classes, 'classLabels': [DATA_CLASSES[key][zh] for key in classes],
+        'classCodes': [CLASS_CODES[key] for key in classes], 'classIcons': [CLASS_ICONS[key] for key in classes],
         'b': search_stamp(resources), 'r': rows, 'p': paper_rows,
     }
 
@@ -541,5 +573,6 @@ def build_home(site_dir: Path, *, explorer_pages: dict[str, str], resources: lis
                                         discovery_count=discovery_count, last_scan=last_scan, language=language, repository_url=repository_url,
                                         repository_export=repository_export, order=order), encoding='utf-8')
         suffix = '.zh' if language == 'zh' else ''
-        (site_dir / f'search-index{suffix}.json').write_text(json.dumps(search_index(resources, papers, language, order), ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
-        (site_dir / f'search-text{suffix}.json').write_text(json.dumps(search_text(resources, language), ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+        listed = listed_records(resources, papers)
+        (site_dir / f'search-index{suffix}.json').write_text(json.dumps(search_index(listed, papers, language, order), ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+        (site_dir / f'search-text{suffix}.json').write_text(json.dumps(search_text(listed, language), ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')

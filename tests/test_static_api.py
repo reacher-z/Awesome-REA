@@ -102,7 +102,7 @@ class StaticApiTests(unittest.TestCase):
         self.assertEqual(resources[0]['requirements'], 'A JDK. | Release package.')
         self.assertTrue((self.folder / 'resources.csv').read_bytes().endswith(b'\r\n'))
         scopes = {row['scope'] for row in csv.DictReader(io.StringIO((self.folder / 'categories.csv').read_text(encoding='utf-8'), newline=''))}
-        self.assertEqual(scopes, {'curated-category', 'curated-section', 'curated-kind', 'curated-target', 'curated-relationship',
+        self.assertEqual(scopes, {'curated-class', 'curated-category', 'curated-section', 'curated-kind', 'curated-target', 'curated-relationship',
                                   'repository-category'})
 
     def test_index_lists_every_file_with_its_checksum(self):

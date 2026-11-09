@@ -293,7 +293,7 @@ async function homepageClassFilter(page, language, viewport) {
 // and a record or section link finds the page that lists it.
 async function resourceListing(page, language, viewport, data) {
   const label = `${language} resources ${viewport.name}`;
-  const total = data.catalog.resources.length;
+  const total = data.catalog.resources.filter(record => record.class).length;
   const route = language === 'zh' ? '/zh/resources/' : '/resources/';
   const perPage = 100;
   const staticPages = Math.max(1, Math.ceil(total / perPage));
@@ -307,21 +307,14 @@ async function resourceListing(page, language, viewport, data) {
   }
   await noOverflow(page, label);
   const before = await page.$eval('[data-results-meta]', node => node.textContent);
-  await press(page, '.page-head .folder[data-target="protocol"]');
-  await page.waitForFunction(() => new URL(location.href).searchParams.get('target') === 'protocol', {timeout: 20000});
-  // The search index loads on the first interaction, so the count changes once it arrives.
-  await page.waitForFunction(text => document.querySelector('[data-results-meta]').textContent !== text, {timeout: 20000}, before)
-    .catch(() => assert.fail(`${label}: the count follows the filter`));
-  if (staticPages > 1) {
-    const shown = await page.$$eval('[data-cards] > .card[data-id]', nodes => nodes.map(node => node.dataset.id));
-    assert.ok(shown.some(id => pageMap[id] > 1), `${label}: the filter searches rows from every static page`);
-  }
-  await page.goto(page.url().split('?')[0] + '?target=protocol&kind=tool');
-  // The static rows show first; the filtered rows replace them once the search index arrives.
-  await page.waitForFunction(() => {
-    const kinds = [...document.querySelectorAll('[data-cards] > .card .callno')].map(node => node.textContent);
-    return kinds.length > 0 && kinds.every(text => /tool|工具/i.test(text));
-  }, {timeout: 20000}).catch(() => assert.fail(`${label}: a shared link opens the same filter`));
+  await press(page, '.page-head .folder[data-tab="tools"]');
+  await page.waitForFunction(all => document.querySelectorAll('[data-cards] > .card').length < all, {timeout: 20000}, total);
+  assert.equal(new URL(page.url()).searchParams.get('tab'), 'tools', `${label}: the filter is in the URL`);
+  assert.notEqual(await page.$eval('[data-results-meta]', node => node.textContent), before, `${label}: the count follows the filter`);
+  await page.goto(page.url().split('?')[0] + '?tab=tools&target=protocol&kind=tool');
+  await page.waitForFunction(all => document.querySelectorAll('[data-cards] > .card').length < all, {timeout: 20000}, total);
+  const opened = await page.$$eval('[data-cards] > .card .callno', nodes => nodes.map(node => node.textContent));
+  assert.ok(opened.length && opened.every(text => /tool|工具/i.test(text)), `${label}: a shared link opens the same filter`);
   // On a narrowed list a section's count follows the filters, and its link filters to that many rows.
   const sectionCounts = () => page.$$eval('[data-section-link]', links => links.map(link => [link.dataset.section, Number(link.querySelector('.count').textContent.replace(/\D/g, ''))]));
   const narrowed = await sectionCounts();
@@ -356,7 +349,7 @@ async function resourceListing(page, language, viewport, data) {
     return [pages, end - start];
   })), [[1, 61], [1, 64], [2, 60], [2, 5], [2, 61], [2, 60], [1, 0], [1, 3]], `${label}: a last page never holds under five rows`);
   // A legacy /resources/#id link opens the static page that lists that record.
-  const last = data.catalog.resources[data.catalog.resources.length - 1].id;
+  const last = data.catalog.resources.find(record => record.class).id;
   const lastPage = pageMap[last];
   await page.goto(`${new URL(page.url()).origin}${route}#${last}`);
   await page.waitForFunction(expected => location.pathname === expected, {timeout: 10000}, lastPage > 1 ? `${route}page/${lastPage}/` : route);
@@ -683,7 +676,6 @@ async function staticPage(page, route, viewport) {
   assert((await page.$eval('h1', heading => heading.textContent.trim())).length > 0, `${label}: visible heading`);
   await noOverflow(page, label);
   if (route === '/papers/' || route === '/zh/papers/') await paperDirectory(page, route, viewport);
-  if (route === '/cases/' || route === '/zh/cases/') await sectionTargetCounts(page, label);
   if (route === '/cases/' || route === '/zh/cases/') {
     const review = await page.$eval('#review-method', section => ({
       title: section.querySelector('h2').textContent,
@@ -700,7 +692,9 @@ async function staticPage(page, route, viewport) {
   const read = file => JSON.parse(fs.readFileSync(path.join(dist, file), 'utf8'));
   const data = {catalog: read('catalog.json'), browser: read('source-browser.json')};
   const category = fs.readdirSync(path.join(dist, 'zh/browse')).filter(name => fs.statSync(path.join(dist, 'zh/browse', name)).isDirectory()).sort()[0];
-  const routes = ['/papers/', '/zh/papers/', '/resources/', '/zh/resources/', '/cases/', '/zh/cases/', '/about/', '/zh/about/', '/contribute/', '/zh/contribute/',
+  const routes = ['/papers/', '/zh/papers/', '/resources/', '/zh/resources/',
+    ...['software', 'game', 'apps', 'website', 'hardware', 'science'].flatMap(cls => [`/data/${cls}/`, `/zh/data/${cls}/`]),
+    '/cases/', '/zh/cases/', '/about/', '/zh/about/', '/contribute/', '/zh/contribute/',
     '/browse/', `/zh/browse/${category}/`, `/resources/${data.catalog.resources[0].id}/`];
   fs.rmSync(screenshots, {recursive: true, force: true}); fs.mkdirSync(screenshots, {recursive: true});
   const site = server(headerRules(fs.readFileSync(path.join(dist, '_headers'), 'utf8')));

@@ -48,7 +48,7 @@ def dated_path(path: str) -> str:
 def section_for(path: str) -> str:
     """The sitemap that lists a root-relative page path."""
     english = english_path(path)
-    if english in ('/resources/', '/cases/') or english.startswith(('/resources/', '/cases/page/')):
+    if english in ('/resources/', '/cases/') or english.startswith(('/resources/', '/cases/page/', '/data/')):
         return 'resources'
     if english.startswith('/papers/'):
         return 'papers'
@@ -105,6 +105,11 @@ def page_dates(*, resources: list[dict], papers: list[dict], repository_document
     for path, value in (('/resources/', curated), ('/cases/', cases), ('/papers/', research)):
         if value:
             dates[path] = value
+    from data_classes import DATA_CLASSES
+    for key in DATA_CLASSES:
+        value = latest(record_date(record) for record in [*resources, *papers] if record.get('class') == key)
+        if value:
+            dates[f'/data/{key}/'] = value
     meta = (repository_document or {}).get('meta', {})
     published = meta.get('kind') == 'published-repository-selection'
     repositories = normalized_date(meta.get('published_at' if published else 'completed_at'))

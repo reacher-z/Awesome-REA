@@ -40,7 +40,7 @@ Agent 请先阅读 [AGENTS.md（英文）](AGENTS.md)和 [Agent 投稿与 PR 指
 - `targets`：帮助分析或重建的对象领域。
 - `class`：仅用于数据点，即它复刻的原始对象属于哪一类，只能选一个。
 
-一条记录的主要成果复刻了一个具体的真实对象，它就是数据点，定义见[目录格式（英文）](data/README.md#data-records)。数据点选且只选一个 `class`：`software`、`game`、`apps`、`website`、`science` 或 `hardware`。适用于任意目标的工具没有 `class`。Protocol 是来自 `targets` 的标签，协议记录按协议所属的对象归类。
+一条记录的主要成果复刻了一个具体的真实对象，它就是数据点，定义见[目录格式（英文）](data/README.md#data-records)。数据点选且只选一个 `class`：`software`、`game`、`apps`、`website`、`hardware` 或 `science`。适用于任意目标的工具没有 `class`。Protocol 是来自 `targets` 的标签，协议记录按协议所属的对象归类。
 
 当前可用值见[目录格式（英文）](data/README.md)。证据支持多个领域时可以选择多个 targets。为条目补充新的已复核领域时，保留原有 targets；不要自动重新归类历史扫描记录。
 

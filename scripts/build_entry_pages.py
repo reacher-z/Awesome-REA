@@ -11,6 +11,7 @@ from artifact_links import github_repository
 from build_home import COPY as HOME_COPY, EVIDENCE_DETAIL, PINNED
 from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, case_page_path, case_pages, jsonld_script, publication_keys
 from build_paper_pages import AUTHORS_OMITTED, STATUS_LABELS, authors_omitted, bibtex_text, formatted_date, scholarly_article
+from data_classes import paper_data_record, placement_facts
 from resource_listing import listing_pages, record_href, section_href
 from build_readme import (CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section,
                           section_order)
@@ -256,7 +257,7 @@ def _related_entries(entries: list[tuple[str, dict]], language: str) -> str:
 SIBLING_LIMIT = 6
 
 
-def section_siblings(resources: list[dict], limit: int = SIBLING_LIMIT) -> dict[str, dict]:
+def section_siblings(resources: list[dict], papers: list[dict] = (), limit: int = SIBLING_LIMIT) -> dict[str, dict]:
     """Map each resource ID to its README section and up to ``limit`` following entries there.
 
     Sections list case studies first, then the other entries, in README order (section_order:
@@ -267,8 +268,13 @@ def section_siblings(resources: list[dict], limit: int = SIBLING_LIMIT) -> dict[
     groups = defaultdict(list)
     for record in resources:
         groups[collection_section(record)].append(record)
-    # The /resources/ page that lists each entry and the page where each section starts.
-    record_pages, section_pages = listing_pages(groups, SECTIONS)
+    # The /resources/ page that lists each entry and the page where each section starts. The listing also
+    # carries a row for every benchmark and dataset paper, so those rows count towards the page numbers.
+    listed_groups = defaultdict(list, {section: list(records) for section, records in groups.items()})
+    for paper in papers:
+        if 'class' in paper:
+            listed_groups[paper['class']].append(paper_data_record(paper))
+    record_pages, section_pages = listing_pages(listed_groups, SECTIONS)
     # The /cases/ page of each case study and of each subject section's first case.
     case_anchor_pages = case_pages(resources)
     related = {}
@@ -418,7 +424,7 @@ def _resource_content(record: dict, language: str, discussion: str = '', feedbac
     # The kind is the eyebrow; the other classification facts and the review date sit under the
     # description so they stay above long requirement lists. Each fact appears only here.
     reviewed = f'<time datetime="{escape(record["verified_at"], quote=True)}">{escape(record["verified_at"][:10])}</time>'
-    facts = [(label('Targets', '目标'), escape(' · '.join(TARGETS[t][int(zh)] for t in record['targets']))),
+    facts = [*((name, escape(value)) for name, value in placement_facts(record, zh, TARGETS)),
              (label('Category', '类别'), escape(CATEGORIES[record['category']][int(zh)])),
              (label('Relationship', '关联'), escape(RELATIONSHIPS[record['relationship']][int(zh)])),
              (label('Sources reviewed', '来源复核于'), reviewed)]
@@ -590,7 +596,7 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
                    related_entries=matching_entries(resources, papers), repository_export=repository_export,
                    evidence_notes=evidence_notes or {})
     rendered, twins, records_json = {}, {}, {}
-    siblings = section_siblings(resources)
+    siblings = section_siblings(resources, papers)
     for kind, records in (('resource', resources), ('paper', papers)):
         identifiers = set()
         for record in records:

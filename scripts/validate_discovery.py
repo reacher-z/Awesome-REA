@@ -11,6 +11,7 @@ from build_browse_pages import CATEGORIES
 from build_discovery_pages import CASE_PER_PAGE, case_order, case_page_path
 from resource_listing import page_count, page_path
 import forked_checks
+from data_classes import DATA_CLASSES, listed_records
 from crawl_policy import CRAWLERS, REQUIRED_AI_CRAWLERS, TRAINING_PREFERENCE_TOKEN
 from sitemaps import (SECTION_FILES, SITEMAP_INDEX, dated_path, english_path, instant, language_alternates, latest,
                       normalized_date, page_dates, read_sitemaps, record_date, section_for)
@@ -58,10 +59,12 @@ def validate_route_inventory(urls, resources, papers, *, include_browse=True, in
     expected = set(routes)
     for prefix in ("", "/zh"):
         expected.update(prefix + path for path in ("/", "/resources/", "/cases/", "/papers/", "/survey/", "/about/", "/contribute/", "/api/"))
-        # The later static pages of /resources/ and /cases/, each indexed with its own address.
-        expected.update(page_path(page, "zh" if prefix else "en") for page in range(2, page_count(len(resources)) + 1))
+        # The later static pages of /resources/ and /cases/, each indexed with its own address, and the Data class pages.
+        # /resources/ lists the classed papers with the resources, so the page count follows the same listed records.
+        expected.update(page_path(page, "zh" if prefix else "en") for page in range(2, page_count(len(listed_records(resources, papers))) + 1))
         cases = len(case_order(resources))
         expected.update(case_page_path(page, "zh" if prefix else "en") for page in range(2, -(-cases // CASE_PER_PAGE) + 1))
+        expected.update(f'{prefix}/data/{key}/' for key in DATA_CLASSES)
         if include_browse:
             expected.add(prefix + "/browse/")
             expected.update(f"{prefix}/browse/{category}/" for category in CATEGORIES)
@@ -228,7 +231,9 @@ def main():
             other = documents.get(link["href"])
             assert other is not None, f"Language alternative absent from sitemap: {url}"
             assert any(item.get("rel") == "alternate" and item.get("href") == url for item in other.links), url
-    expected = {r["id"] for r in records}
+    paper_list = papers["papers"] if isinstance(papers, dict) else papers
+    # /resources/ lists every curated resource and, in its class, every benchmark or dataset paper.
+    expected = {r["id"] for r in records} | {p["id"] for p in paper_list if "class" in p}
     for path in ("/resources/", "/zh/resources/"):
         # The static pages together list every record once.
         listed = list(documents[ORIGIN + path].resources)
